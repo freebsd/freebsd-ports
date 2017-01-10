@@ -1,6 +1,6 @@
---- Plugins/PointSprite/ParaViewPlugin/CMakeLists.txt.orig	2014-01-11 14:59:58.000000000 +0100
-+++ Plugins/PointSprite/ParaViewPlugin/CMakeLists.txt	2014-01-29 23:36:14.000000000 +0100
-@@ -6,6 +6,9 @@
+--- Plugins/PointSprite/ParaViewPlugin/CMakeLists.txt.orig	2016-11-14 15:41:57 UTC
++++ Plugins/PointSprite/ParaViewPlugin/CMakeLists.txt
+@@ -6,6 +6,9 @@ include_directories(${VTK_INCLUDE_DIRS}
    ${PointSpritePlugin_SOURCE_DIR}/Qvis
    ${PointSpritePlugin_BINARY_DIR}/Qvis)
  
