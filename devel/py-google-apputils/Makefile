@@ -3,6 +3,7 @@
 
 PORTNAME=	google-apputils
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Google Application Utilities for Python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gflags>2:devel/py-gflags \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-gflags>2:devel/py-python-gflags \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}dateutil>2:devel/py-dateutil
 
