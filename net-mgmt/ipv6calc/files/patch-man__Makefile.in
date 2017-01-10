@@ -1,11 +1,11 @@
---- man/Makefile.in.orig	2009-01-06 16:37:45 UTC
+--- man/Makefile.in.orig	2016-12-29 08:56:34 UTC
 +++ man/Makefile.in
 @@ -25,7 +25,7 @@ clean:
  test:		
  
  install:
 -		mkdir -p $(DESTDIR)$(mandir)/man8
-+		mkdir -p $(DESTDIR)${PREFIX}/man//man8
++		mkdir -p $(DESTDIR)${PREFIX}/man/man8
  		for f in *.8; do \
 -			install -m 644 $$f $(DESTDIR)$(mandir)/man8; \
 +			install -m 644 $$f $(DESTDIR)${PREFIX}/man/man8; \
