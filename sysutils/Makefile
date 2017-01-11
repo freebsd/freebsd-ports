@@ -1039,6 +1039,7 @@
     SUBDIR += shlock
     SUBDIR += shmcat
     SUBDIR += showbeastie
+    SUBIDR += siegfried
     SUBDIR += sievelog
     SUBDIR += skill
     SUBDIR += slack
