@@ -11,35 +11,30 @@
 #
 
 . /etc/rc.subr
-. %%GNOME_SUBR%%
 
-dbus_enable=${dbus_enable-${gnome_enable}}
-dbus_flags=${dbus_flags-"--system"}
+: ${dbus_enable=${gnome_enable-NO}} ${dbus_flags="--system"}
 
 name=dbus
 rcvar=dbus_enable
 
 command="%%PREFIX%%/bin/dbus-daemon"
-pidfile="/var/run/dbus/${name}.pid"
+pidfile="/var/run/dbus/pid"
 
 start_precmd="dbus_prestart"
 stop_postcmd="dbus_poststop"
 
 dbus_prestart()
 {
-    if [ ! -d /var/db/dbus ]; then
-        mkdir -p /var/db/dbus
-    fi
     %%PREFIX%%/bin/dbus-uuidgen --ensure
-
-    mkdir -p $(dirname $pidfile)
 }
 
 dbus_poststop()
 {
     rm -f $pidfile
+# The following two lines may be removed after 2018-01-01
+    rm -f /var/db/dbus/machine-id
+    [ ! -d /var/db/dbus ] || rmdir /var/db/dbus
 }
-
 
 load_rc_config ${name}
 run_rc_command "$1"
