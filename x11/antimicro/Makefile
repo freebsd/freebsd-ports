@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	antimicro
-PORTVERSION=	2.22
+PORTVERSION=	2.23
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
