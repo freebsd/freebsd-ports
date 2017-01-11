@@ -1,2 +1,2 @@
-To run nzbget as an unprivileged user you can set the nzbget_user
-variable in %%ETCDIR%%/nzbget.conf
+To run nzbget as an unprivileged user you can set the Daemonuser
+variable in %%LOCALBASE%%/etc/nzbget.conf
