@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
 
@@ -13,12 +13,12 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	checkmk:devel/libcheck
 LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
-		libmsgpackc.so:devel/msgpack		\
 		libsndfile.so:audio/libsndfile		\
 		libsodium.so:security/libsodium		\
-		libportaudio.so:audio/portaudio		\
 		libopencv_core.so:graphics/opencv2-core	\
 		libopus.so:audio/opus
+TEST_TARGET=	libmsgpackc.so:devel/msgpack		\
+		libportaudio.so:audio/portaudio
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
@@ -34,6 +34,8 @@ OPTIONS_SUB=		yes
 DAEMON_DESC=		Bootstrap daemon
 DAEMON_CMAKE_ON=	-DBOOTSTRAP_DAEMON=on
 DAEMON_LIB_DEPENDS=	libconfig.so:devel/libconfig
+
+TEST_TARGET=	test
 
 .include <bsd.port.options.mk>
 
