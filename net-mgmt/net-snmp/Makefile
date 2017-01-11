@@ -16,8 +16,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	IPV6 MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
-		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL AX_DISABLE_TRAP
+		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL AX_DISABLE_TRAP \
+		TLS
 OPTIONS_DEFAULT=PERL PERL_EMBEDDED DUMMY SMUX
+OPTIONS_SUB=	yes
 
 MFD_REWRITES_DESC=	Build with 64-bit Interface Counters
 PERL_EMBEDDED_DESC=	Build embedded perl
@@ -36,9 +38,8 @@ PORTSCOUT=	skipv:5.7.2.1
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd snmptrapd
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		cpe libtool perl5
+USES=		cpe libtool perl5 ssl
 CPE_VENDOR=	net-snmp
 USE_PERL5=	build run
 USE_CSTD=	c99
@@ -63,6 +64,8 @@ CONFIGURE_ARGS+=--with-libs="-lssp_nonshared"
 .if defined(BATCH)
 CONFIGURE_ARGS+=--with-defaults
 .endif
+
+TLS_CONFIGURE_ON=	--with-security-modules=tsm --with-transports=TLSTCP,DTLSUDP
 
 .include <bsd.port.options.mk>
 
