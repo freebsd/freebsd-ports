@@ -17,7 +17,7 @@ LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
 		libsodium.so:security/libsodium		\
 		libopencv_core.so:graphics/opencv2-core	\
 		libopus.so:audio/opus
-TEST_TARGET=	libmsgpackc.so:devel/msgpack		\
+TEST_DEPENDS=	libmsgpackc.so:devel/msgpack		\
 		libportaudio.so:audio/portaudio
 
 USE_GITHUB=	yes
