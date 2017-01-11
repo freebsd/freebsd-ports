@@ -68,7 +68,8 @@ BDB_CONFIGURE_ENV=	ac_cv_header_db${BDB_VER}_db_h=yes \
 			ac_cv_funclib_db_create="-l${BDB_LIB_NAME}"
 BDB_CONFIGURE_ON=	--disable-ndbm-db
 BDB_CONFIGURE_ENV_OFF=	ac_cv_header_db_h=yes \
-			ac_cv_func_db_create=no
+			ac_cv_func_db_create=no \
+			ac_cv_funclib_db_create=no
 BDB_CONFIGURE_OFF=	--enable-ndbm-db
 
 LMDB_DESC=		Enable LMDB KDC backend support
