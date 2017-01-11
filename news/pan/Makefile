@@ -1,10 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/news/pan/Makefile,v 1.7 2008/01/19 22:45:42 mezz Exp $
 
 PORTNAME=	pan
-PORTVERSION=	0.140
-PORTREVISION=	2
+PORTVERSION=	0.141
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -15,10 +13,13 @@ COMMENT=	Threaded GTK+ newsreader based on Agent for Windows
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
+		libenchant.so:textproc/enchant \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libgmime-2.6.so:mail/gmime26
 
 USES=		gmake iconv localbase pathfix pkgconfig tar:bzip2
-USE_GNOME=	intlhack
+USE_GNOME=	cairo gdkpixbuf2 intlhack
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lgnuregex ${ICONV_LIB}
 
