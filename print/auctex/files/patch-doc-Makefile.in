@@ -1,73 +1,28 @@
---- doc/Makefile.in.orig	2014-10-30 04:21:17.000000000 +0900
-+++ doc/Makefile.in	2014-11-04 07:02:49.000000000 +0900
-@@ -38,18 +38,19 @@
- # If `texi2html' is not available, use `makeinfo' when possible.  Set the ToC
- # file accordingly.  Actually, makeinfo >= 5 is needed, but we don't check the
- # version.
--ifneq (@TEXI2HTML@,:)
--	TEXI2HTML=@TEXI2HTML@
--	TEXI2HTML_TOC=auctex_toc.html
--else
--	ifneq (@MAKEINFO@,:)
--		TEXI2HTML=@MAKEINFO@ --html
--		TEXI2HTML_TOC=index.html
--	else
--		TEXI2HTML=@TEXI2HTML@
--		TEXI2HTML_TOC=auctex_toc.html
--	endif
--endif
-+COLON=:
-+.if ${COLON} != "@TEXI2HTML@"
-+TEXI2HTML=@TEXI2HTML@
-+TEXI2HTML_TOC=auctex_toc.html
-+.else
-+.	if ${COLON} != "@MAKEINFO@"
-+TEXI2HTML=@MAKEINFO@ --html
-+TEXI2HTML_TOC=index.html
-+.	else
-+TEXI2HTML=@TEXI2HTML@
-+TEXI2HTML_TOC=auctex_toc.html
-+.	endif
-+.endif
- TEXI2DVI=@TEXI2DVI@
- TEXI2PDF=@TEXI2PDF@
- MKINSTALLDIRS = ../mkinstalldirs
-@@ -85,7 +86,11 @@
- 	done ; \
- 	}
- 
-+.if defined(WITHOUT_AUCTEX_DOCSDIR)
-+dist: $(DISTTEXTS) preview-latex.info auctex.info
-+.else
- dist: $(DISTTEXTS) preview-latex.info auctex.info tex-ref.pdf
-+.endif
- 
- extradist: html/$(TEXI2HTML_TOC) auctex.ps auctex.pdf tex-ref.ps tex-ref.pdf
- 
-@@ -125,6 +130,18 @@
+--- doc/Makefile.in.orig	2017-01-10 21:35:28 UTC
++++ doc/Makefile.in
+@@ -126,7 +126,11 @@ auctex.ps: auctex.dvi
  auctex.info: $(AUCTEXTEXIFILES)
  	$(MAKEINFO) auctex.texi
  
-+.if defined(WITHOUT_AUCTEX_DOCSDIR)
-+install-auctex: auctex.info
-+	-$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
-+	rm -f $(DESTDIR)$(infodir)/auctex $(DESTDIR)$(infodir)/auctex-*
-+	$(INSTALL_DATA) auctex.info $(DESTDIR)$(infodir)
-+	for x in auctex.info-*; do \
-+	  if [ -r $$x ]; then \
-+	    $(INSTALL_DATA) $$x $(DESTDIR)$(infodir) ; \
-+	  fi; \
-+	done
-+	-$(INSTALL_INFO)  --info-dir=$(DESTDIR)$(infodir) auctex.info
-+.else
++ifneq ($(WITHOUT_AUCTEX_DOCSDIR),yes)
  install-auctex: auctex.info tex-ref.pdf
++else
++install-auctex: auctex.info
++endif
  	-$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
  	rm -f $(DESTDIR)$(infodir)/auctex $(DESTDIR)$(infodir)/auctex-*
-@@ -140,6 +157,7 @@
+ 	$(INSTALL_DATA) auctex.info $(DESTDIR)$(infodir)
+@@ -136,11 +140,13 @@ install-auctex: auctex.info tex-ref.pdf
+ 	  fi; \
+ 	done
+ 	-$(INSTALL_INFO)  --info-dir=$(DESTDIR)$(infodir) auctex.info
++ifneq ($(WITHOUT_AUCTEX_DOCSDIR),yes)
+ 	test X$(packagedir) != Xno || { \
+ 	  $(MKINSTALLDIRS) $(DESTDIR)$(docdir); \
  	  rm -f $(DESTDIR)$(docdir)/tex-ref.pdf; \
  	  $(INSTALL_DATA) tex-ref.pdf $(DESTDIR)$(docdir); \
  	}
-+.endif
++endif
  
  # preview
  
