@@ -171,5 +171,6 @@ man/man5/router.db.5.gz
 %%DATADIR%%/lgnotes.html
 %%DATADIR%%/rancid-cvspurge
 %%DATADIR%%/rancid.conf.sample
+%%DATADIR%%/rancid.types.conf
 %%DATADIR%%/rtrfilter
 @dir(rancid,rancid,755) var/rancid
