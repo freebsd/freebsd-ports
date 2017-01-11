@@ -43,12 +43,6 @@ GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 1000000
-CFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/osquery|/var/db/osquery|g' \
 		${WRKSRC}/osquery/core/init.cpp
@@ -74,4 +68,4 @@ do-install:
 
 	${MKDIR} ${STAGEDIR}/var/db/osquery
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

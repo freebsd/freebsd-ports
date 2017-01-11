@@ -33,11 +33,7 @@ OPENMPI_DESC=		MPI support (with OpenMPI)
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} < 1000000
-MPI_DEFAULT=	OPENMPI
-.  else
 MPI_DEFAULT=	MPICH2
-.  endif
 .endif
 
 .if ${PORT_OPTIONS:MMPICH2} || ${PORT_OPTIONS:MOPENMPI}

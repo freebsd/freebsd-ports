@@ -42,11 +42,4 @@ INSTALL_TARGET=	install-strip
 PLIST_SUB=	GLUSTERLIBDIR="lib/${PORTNAME}/3.7.6"
 KMODDIR?=	/boot/modules
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=	yes
-RUN_DEPENDS+=	${KMODDIR}/fuse.ko:sysutils/fusefs-kmod
-.endif
-
 .include <bsd.port.mk>

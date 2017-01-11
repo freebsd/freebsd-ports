@@ -52,14 +52,6 @@ PAM_CONFIGURE_WITH=	auth-pam=smtpd
 SSL_PORT_VARS=		with_openssl_port=yes
 TABLE_DB_CONFIGURE_WITH=	table-db
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1000015
-WITH_OPENSSL_PORT=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 			--with-libevent=${LOCALBASE} \
 			--with-libssl=${OPENSSLBASE} \
@@ -68,9 +60,7 @@ CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 post-patch:
 	${REINPLACE_CMD} -e '/chmod 2555/d' ${WRKSRC}/mk/smtpctl/Makefile.in
 
-.if ${PORT_OPTIONS:MTABLE_DB}
-post-install:
+post-install-TABLE_DB-on:
 	@${LN} -sf ${PREFIX}/sbin/smtpctl ${STAGEDIR}${PREFIX}/libexec/opensmtpd/makemap
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

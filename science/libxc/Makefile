@@ -24,11 +24,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^pkgconfigdir =/s,libdir),prefix)/libdata,' \
 		${WRKSRC}/build/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000034
-LIB_DEPENDS+=	libml.so:math/ldouble
-LDFLAGS+=	-lml
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

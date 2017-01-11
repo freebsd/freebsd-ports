@@ -406,12 +406,6 @@ BROKEN=		Lemon has not supported yet because depended by libnl
 BROKEN=		Otlozhu has not supported yet (not ported liblaretz)
 .endif
 
-.if ${OSVERSION} < 1000000
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
-PORT_OPTIONS:=	${PORT_OPTIONS:NBITTORRENT}
-USE_GCC=	yes
-.endif
-
 post-install:
 	@${FIND} -d ${STAGEDIR}${PREFIX}/include/leechcraft \
 		-type d -empty -exec ${RMDIR} {} \;

@@ -123,11 +123,6 @@ REMOVE_FILES=	bin/df bin/su etc/exports etc/group etc/gshadow etc/motd \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} < 1002507 || \
-	( ${OSVERSION} >= 1100000 && ${OSVERSION} < 1100074 ))
-IGNORE=		Requires FreeBSD 10.3 or higher
-.endif
-
 .if ${LINUX_ARCH} == x86_64 && ${OPSYS} == FreeBSD && ${OSVERSION} >= 11000105
 SYSCTLMIB=	kern.features.linux64
 .else

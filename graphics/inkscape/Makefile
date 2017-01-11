@@ -68,18 +68,6 @@ WPG_LIB_DEPENDS=	libwpg-0.3.so:graphics/libwpg03
 CPPFLAGS+=	-Wno-mismatched-tags -Wno-unknown-attributes
 .endif
 
-# Base clang 3.4.1 in FreeBSD 9.3 fails to compile this code on i386
-# but base clang 3.4.1 in FreeBSD 10.1 succeeds.  The difference *appears*
-# to be the patch applied in r271597 (head) / r271739 (stable/10).  The
-# latter happened shortly before 10.1 was branched.
-.if ${ARCH} == i386 && ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000 && \
-    ( ${COMPILER_TYPE} == clang || ${ALT_COMPILER_TYPE} == clang )
-BUILD_DEPENDS+=	clang34:lang/clang34
-CPP=    ${LOCALBASE}/bin/clang-cpp34
-CC=     ${LOCALBASE}/bin/clang34
-CXX=    ${LOCALBASE}/bin/clang++34
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
 		${WRKSRC}/configure

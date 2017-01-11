@@ -40,13 +40,6 @@ LDFLAGS+=		-L${OPENSSLLIB}
 BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
 CPPFLAGS+=		-I${WRKDIR}/libressl/include
 LDFLAGS+=		-L${WRKDIR}/libressl/lib
-# security/libressl ignores implicit SSP_UNSAFE, see Mk/bsd.ssp.mk
-. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000036 && ${ARCH} == i386
-SSP_CFLAGS?=	-fstack-protector
-CFLAGS+=	${SSP_CFLAGS}
-LDFLAGS+=	-fstack-protector
-LIBS+=		-lssp_nonshared
-. endif
 
 # Don't use COPYTREE_SHARE here as it hard links files, and the original files
 # are owned by root, which creates problems of its own.

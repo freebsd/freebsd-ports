@@ -110,8 +110,6 @@ LIRC_RUN_DEPENDS=	lircd:comms/lirc
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_PulseAudio:BOOL=true
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} 's/[[:<:]]ARCH[[:>:]]/FFMPEG_ARCH/' \
 		${WRKSRC}/lib/ffmpeg/Makefile \
@@ -122,15 +120,6 @@ post-patch:
 		${WRKSRC}/plex/CMakeModules/FindIconv.cmake
 	@${REINPLACE_CMD} 's/COMMAND\ make/COMMAND\ gmake/g' \
 		${WRKSRC}/lib/ffmpeg/CMakeLists.txt
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000024
-	@${REINPLACE_CMD} 's/__builtin_bswap/__bswap/g' \
-		${WRKSRC}/plex/Third-Party/hash-library/crc32.cpp \
-		${WRKSRC}/plex/Third-Party/hash-library/keccak.cpp \
-		${WRKSRC}/plex/Third-Party/hash-library/md5.cpp \
-		${WRKSRC}/plex/Third-Party/hash-library/sha1.cpp \
-		${WRKSRC}/plex/Third-Party/hash-library/sha256.cpp \
-		${WRKSRC}/plex/Third-Party/hash-library/sha3.cpp
-.endif
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/*.so
