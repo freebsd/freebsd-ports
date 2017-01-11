@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.4.17
+PORTVERSION=	3.5.8
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
@@ -10,12 +10,13 @@ COMMENT=	GNU Transport Layer Security library
 
 LICENSE=	GPLv3 LGPL21
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LESSER
+LICENSE_FILE_GPLv3=	${WRKSRC}/doc/COPYING
+LICENSE_FILE_LGPL21=	${WRKSRC}/doc/COPYING.LESSER
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libnettle.so:security/nettle \
-		libtasn1.so:security/libtasn1
+		libtasn1.so:security/libtasn1 \
+		libunistring.so:devel/libunistring
 BUILD_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
