@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcmc-jags
-PORTVERSION=	4.0.0
-PORTREVISION=	3
+PORTVERSION=	4.2.0
 CATEGORIES=	math
 MASTER_SITES=	SF/mcmc-jags/JAGS/${S}.x/Source/:1 \
 		SF/mcmc-jags/Examples/${S}.x/:2 \
@@ -22,40 +21,34 @@ GNU_CONFIGURE=	yes
 USES=		bison compiler:features fortran gmake libtool localbase pathfix
 USE_GCC=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 WRKSRC=		${WRKDIR}/JAGS-${PORTVERSION}
 
-OPTIONS_SINGLE=		BLAS
+OPTIONS_SINGLE=	BLAS
 OPTIONS_SINGLE_BLAS=	ATLAS OPENBLAS NETLIB
 
-OPTIONS_DEFAULT+= OPENBLAS
+OPTIONS_DEFAULT+=	OPENBLAS
 
-ATLAS_USES=		blaslapack:atlas
-ATLAS_VARS=		MANUAL_PACKAGE_BUILD=\
+ATLAS_USES=	blaslapack:atlas
+ATLAS_VARS=	MANUAL_PACKAGE_BUILD=\
 "Choose a BLAS option other than ATLAS for package building."
-NETLIB_USES=		blaslapack:netlib
-OPENBLAS_USES=		blaslapack:openblas
+NETLIB_USES=	blaslapack:netlib
+OPENBLAS_USES=	blaslapack:openblas
+DOCS_DISTFILES=	jags_developer_manual.pdf:3 jags_installation_manual.pdf:4 \
+		jags_user_manual.pdf:4
+DOCS_PORTDOCS=	${DISTFILES:M*[34]:C|:.*||}
+EXAMPLES_DISTFILES=	classic-bugs.tar.gz:2
+EXAMPLES_PORTEXAMPLES=	*
 
-CONFIGURE_ARGS+= --with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
+CONFIGURE_ARGS+=	--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 		 --with-lapack="${LAPACKLIB}"
 
-OPTIONS_SUB=		YES
+OPTIONS_SUB=	YES
 PLIST_SUB=	MODULEVERSION=${S}
 S=		${PORTVERSION:C|\..*||}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS} || make(makesum)
-DISTFILES+=	jags_developer_manual.pdf:3 jags_installation_manual.pdf:4 \
-		jags_user_manual.pdf:4
-PORTDOCS=	${DISTFILES:M*[34]:C|:.*||}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES} || make(makesum)
-DISTFILES+=	classic-bugs.tar.gz:2
-PORTEXAMPLES=	*
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -65,20 +58,18 @@ post-patch:
 		-e '/@WINDOWS_FALSE@.*rm -f jags/s/jags/mcmc-&/' \
 		-e '/@WINDOWS_FALSE@.*mv jags.tmp jags/s/jags/mcmc-&/2' \
 		${WRKSRC}/src/terminal/Makefile.in
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-patch-EXAMPLES-on:
 	@${SED} -i '' -e '\|JAGS ?=|{s|jags|mcmc-&|;s|/usr/local|${PREFIX}|;}' \
 		${WRKDIR}/classic-bugs/vol[12]/Makefile
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKDIR}/classic-bugs; ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:math/R-cran-coda
