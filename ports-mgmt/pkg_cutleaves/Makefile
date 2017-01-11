@@ -10,6 +10,8 @@ DISTFILES=	# none
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Interactive script for deinstalling 'leaf' packages
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
