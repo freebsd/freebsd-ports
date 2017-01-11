@@ -24,12 +24,6 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	cypherpunks
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000036 && ${ARCH} == i386
-LDFLAGS+=	-lssp_nonshared
-.endif
-
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 

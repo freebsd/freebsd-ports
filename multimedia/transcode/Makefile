@@ -114,11 +114,6 @@ V4L_CONFIGURE_ENABLE=		v4l
 
 .include <bsd.port.pre.mk>
 
-#Disable mmx on FreeBSD 10.1 due to a transient bug in clang
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
-CONFIGURE_ARGS+=	--disable-mmx
-.endif
-
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \
 		ac_cv_lib_iconv_libiconv_open=no

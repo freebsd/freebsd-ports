@@ -27,7 +27,7 @@ lib/collectd/csv.so
 %%CURL_XML%%lib/collectd/curl_xml.so
 %%DBI%%lib/collectd/dbi.so
 lib/collectd/df.so
-%%DISK%%lib/collectd/disk.so
+lib/collectd/disk.so
 lib/collectd/dns.so
 lib/collectd/email.so
 lib/collectd/exec.so

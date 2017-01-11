@@ -32,16 +32,8 @@ INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=2.91
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-but-set-variable||g' \
 		${WRKSRC}/src/Makefile.in
-# borrowed osversion from bsd.ssp.mk
-.if ${OSVERSION} < 1000036 && ${ARCH} == i386
-	@${REINPLACE_CMD} -e 's|-fstack-protector-strong||g; \
-		s|-fstack-protector||g' \
-		${WRKSRC}/configure
-.endif
 
 .include <bsd.port.mk>

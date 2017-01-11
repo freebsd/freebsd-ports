@@ -187,12 +187,6 @@ GN_ARGS+=	is_clang=true
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-GN_ARGS+=	extra_cxxflags="-stdlib=libc++ -isystem ${LOCALBASE}/include/c++/v1" \
-		extra_ldflags="-L${LOCALBASE}/lib"
-.endif
-
 .if ${OSVERSION} < 1100000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-10
 .endif

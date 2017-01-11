@@ -36,12 +36,6 @@ MOVIES_CMAKE_ON=	-DWITH_MOVIES=ON
 MOVIES_CMAKE_OFF=	-DWITH_MOVIES=OFF
 MOVIES_LIB_DEPENDS=	libswresample.so:multimedia/ffmpeg
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000024 && ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
 post-patch:
 # Allow the game to find its resources without wrapper scripts
 	@${REINPLACE_CMD} -e \
@@ -55,4 +49,4 @@ do-install:
 	cd ${WRKSRC}/CorsixTH && ${COPYTREE_SHARE} "Bitmap Levels Lua" \
 		${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

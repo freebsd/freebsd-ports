@@ -36,12 +36,7 @@ DESKTOP_ENTRIES="Vulture's Eye" "" "" "vulture-nethack" "" ""
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>0:textproc/flex
-MAKE_ENV+=	FLEX="${LOCALBASE}/bin/flex"
-.else
 MAKE_ENV+=	FLEX="${FLEX}"
-.endif
 
 pre-patch:
 	@(cd ${WRKSRC}/win && ${LN} -sf ../../vulture)

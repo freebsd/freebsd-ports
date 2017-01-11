@@ -88,11 +88,6 @@ CFLAGS+=	-mminimal-toc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=0:textproc/flex
-CONFIGURE_ENV+=	FLEX="${LOCALBASE}/bin/flex"
-.endif
-
 .if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
 # Needed for __atomic_fetch_add_8
 CFLAGS+=	-march=i586

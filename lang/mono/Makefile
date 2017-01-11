@@ -39,8 +39,6 @@ MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!/usr/bin/env bash|g' \
 		${WRKSRC}/scripts/mono-find-provides.in \
@@ -53,14 +51,9 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e 's|share\/man|man|g' \
 		${WRKSRC}/mcs/jay/Makefile
-# Fix build on FreeBSD 9.3 (and maybe other unsupported releases)
-.if ${OSVERSION} < 1000000
-	@${REINPLACE_CMD} 's/^#define HAVE_LOCALCHARSET_H 1/#undef HAVE_LOCALCHARSET_H/' \
-		${WRKSRC}/eglib/config.h
-.endif
 
 do-test:
 	@(cd ${WRKSRC}/mono/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

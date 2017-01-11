@@ -34,12 +34,6 @@ USES=		bison cmake:outsource compiler:c11
 USE_GCC=	yes
 .endif
 
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=2.5.37:textproc/flex
-CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex
-CXXFLAGS+=	-I${LOCALBASE}/include/flex
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' \
 		${WRKSRC}/src/liboslexec/serialize-bc.bash

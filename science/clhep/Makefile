@@ -15,19 +15,11 @@ LICENSE_COMB=	multi
 
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:tu}
 
-USES=		cmake:outsource perl5 tar:tgz
+USES=		cmake:outsource compiler:openmp perl5 tar:tgz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000000
-USES+=	compiler:c++11-lib
-.else
-USES+=	compiler:openmp
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
