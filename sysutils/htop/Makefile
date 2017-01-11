@@ -17,9 +17,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
 CONFIGURE_ARGS=	--enable-unicode
-USES=		autoreconf execinfo libtool ncurses python:2,build shebangfix
-SHEBANG_LANG=	python2
-SHEBANG_FILES=	scripts/MakeHeader.py
+USES=		autoreconf execinfo libtool ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	hishamhm
 PLIST_FILES=	bin/htop \
