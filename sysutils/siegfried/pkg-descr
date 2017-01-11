@@ -1,0 +1,5 @@
+Siegfried is a signature-based file format identification tool, 
+implementing the National Archives UK's PRONOM file format 
+signatures and freedesktop.org's MIME-info file format signatures.
+
+WWW: http://www.itforarchivists.com/siegfried
