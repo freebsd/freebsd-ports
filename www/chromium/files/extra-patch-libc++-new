@@ -1,0 +1,14 @@
+--- services/ui/ws/BUILD.gn.orig	2016-12-09 17:47:26.343517000 +0000
++++ services/ui/ws/BUILD.gn	2016-12-09 17:48:45.323876000 +0000
+@@ -103,6 +103,11 @@
+     "window_tree_host_factory.h",
+   ]
+ 
++  # Work around base r261801
++  if (is_bsd) {
++    defines = ["_LIBCPP_ABI_UNSTABLE=1"]
++  }
++
+   deps = [
+     # TODO(sad): Temporary, until the GPU process is split out of ws.
+     "//services/ui/gpu",
