@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Drop in replacement for the "dialog" or "cdialog" programs
 
 LICENSE=	GPLv2

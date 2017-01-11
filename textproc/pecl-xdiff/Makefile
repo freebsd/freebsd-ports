@@ -1,4 +1,4 @@
-# Created by: Larry Rosenman <ler@lerctr.org>
+# Created by: Larry Rosenman <ler@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xdiff
