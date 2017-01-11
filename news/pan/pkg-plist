@@ -33,6 +33,7 @@ share/appdata/pan.appdata.xml
 %%NLS%%share/locale/nb/LC_MESSAGES/pan.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/pan.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/pan.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pan.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/pan.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pan.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/pan.mo
