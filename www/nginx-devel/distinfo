@@ -1,6 +1,6 @@
-TIMESTAMP = 1482079559
-SHA256 (nginx-1.11.7.tar.gz) = 0d55beb52b2126a3e6c7ae40f092986afb89d77b8062ca0974512b8c76d9300e
-SIZE (nginx-1.11.7.tar.gz) = 962302
+TIMESTAMP = 1484089142
+SHA256 (nginx-1.11.8.tar.gz) = 53aef3715d79015314c2dcb18f2b185a0c64368cc01b30bdf0737a215f666b34
+SIZE (nginx-1.11.8.tar.gz) = 964918
 SHA256 (ngx_http_auth_pam_module-1.2.tar.gz) = 5a85970ba61a99f55a26d2536a11d512b39bbd622f5737d25a9a8c10db81efa9
 SIZE (ngx_http_auth_pam_module-1.2.tar.gz) = 5424
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c

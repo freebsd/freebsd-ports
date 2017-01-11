@@ -407,6 +407,7 @@
     SUBDIR += midori
     SUBDIR += mimetex
     SUBDIR += mini_httpd
+    SUBDIR += miniminiweb
     SUBDIR += minio
     SUBDIR += mitmproxy
     SUBDIR += mkapachepw

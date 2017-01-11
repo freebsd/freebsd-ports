@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	astro geography
 MASTER_SITES=	LOCAL/madpilot/xearth
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Set the root window to the image of earth
 
 USE_XORG=	x11 xext sm ice xt

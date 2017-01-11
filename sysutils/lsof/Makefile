@@ -22,7 +22,7 @@ MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://ftp.tau.ac.il/pub/unix/admin/
 DISTNAME=	${PORTNAME}_${DISTVERSION}${DISTNAME_SUFFIX}
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Lists information about open files (similar to fstat(1))
 
 LICENSE=lsof

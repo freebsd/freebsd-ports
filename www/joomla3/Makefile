@@ -6,7 +6,7 @@ PORTVERSION=	3.6.5
 CATEGORIES=	www
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Dynamic web content management system (CMS)
 
 LICENSE=	GPLv2
