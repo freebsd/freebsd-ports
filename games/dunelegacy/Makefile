@@ -20,16 +20,6 @@ USE_SDL=	sdl mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-EXTRA_PATCHES=	files/extra-patch-include__misc__functional.h files/extra-patch-include__misc__memory.h
-.endif
-
-.include <bsd.port.post.mk>
-=======
 .include <bsd.port.mk>
->>>>>>> upstream/master
