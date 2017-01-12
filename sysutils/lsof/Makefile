@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
-		http://www.lerctr.org/lsof/ \
+		LOCAL/ler/lsof \
 		ftp://ftp.ayamura.org/pub/lsof/ \
 		ftp://ftp.ayamura.org/pub/lsof/NEW/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
@@ -46,10 +46,6 @@ USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	scripts/sort_res.perl5
 
 .include <bsd.port.pre.mk>
-
-.if !empty(ARCH:Marm*) && ((${OSVERSION} < 1001505) || (${OSVERSION} > 1100000 && ${OSVERSION} < 1100052))
-BROKEN=	Not supported on ARM platform below release 10.1 or a more recent current
-.endif
 
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd

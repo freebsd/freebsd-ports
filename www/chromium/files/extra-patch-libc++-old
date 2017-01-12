@@ -1,5 +1,5 @@
---- services/ui/ws/BUILD.gn.orig	2016-10-06 04:02:24.000000000 +0300
-+++ services/ui/ws/BUILD.gn	2016-10-19 11:13:25.102806000 +0300
+--- services/ui/ws/BUILD.gn.orig	2016-12-09 17:47:26.343517000 +0000
++++ services/ui/ws/BUILD.gn	2016-12-09 17:50:06.387679000 +0000
 @@ -103,6 +103,11 @@
      "window_tree_host_factory.h",
    ]

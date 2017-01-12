@@ -13,8 +13,8 @@ LICENSE=	GPLv2
 
 CONFLICTS=	ace+tao-[0-9]*
 MAKE_JOBS_UNSAFE=	yes
-# avoid GPL3
-PORTSCOUT=	skipv:3.0.4
+# avoid GPLv3 in generated code
+PORTSCOUT=	ignore
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}

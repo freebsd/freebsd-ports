@@ -108,7 +108,8 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-lvm \
 		--without-mic \
 		--without-oracle \
-		--disable-turbostat
+		--disable-turbostat \
+		--enable-disk
 
 CGI_RUN_DEPENDS=		p5-URI>=0:net/p5-URI \
 				p5-CGI>=0:www/p5-CGI \
@@ -322,15 +323,6 @@ CONFIGURE_ARGS+=--enable-aggregation \
 		--enable-write_graphite \
 		--enable-write_log \
 		--enable-zfs_arc \
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-PLIST_SUB+=	DISK="@comment "
-.else
-CONFIGURE_ARGS+=--enable-disk
-PLIST_SUB+=	DISK=""
-.endif
 
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	contrib/collection.cgi

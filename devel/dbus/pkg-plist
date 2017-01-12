@@ -9,8 +9,6 @@ bin/dbus-update-activation-environment
 bin/dbus-uuidgen
 etc/dbus-1/session.conf
 etc/dbus-1/system.conf
-share/dbus-1/session.conf
-share/dbus-1/system.conf
 include/dbus-%%VERSION%%/dbus/dbus-address.h
 include/dbus-%%VERSION%%/dbus/dbus-bus.h
 include/dbus-%%VERSION%%/dbus/dbus-connection.h
@@ -35,9 +33,6 @@ lib/libdbus-1.so.3
 lib/libdbus-1.so.3.14.9
 libdata/pkgconfig/dbus-1.pc
 @(,%%GROUPS%%,4750) libexec/dbus-daemon-launch-helper
-share/doc/dbus/examples/GetAllMatchRules.py
-share/doc/dbus/examples/example-session-disable-stats.conf
-share/doc/dbus/examples/example-system-enable-stats.conf
 %%MANPAGES%%man/man1/dbus-cleanup-sockets.1.gz
 %%MANPAGES%%man/man1/dbus-daemon.1.gz
 %%MANPAGES%%man/man1/dbus-launch.1.gz
@@ -47,10 +42,17 @@ share/doc/dbus/examples/example-system-enable-stats.conf
 %%MANPAGES%%man/man1/dbus-test-tool.1.gz
 %%MANPAGES%%man/man1/dbus-update-activation-environment.1.gz
 %%MANPAGES%%man/man1/dbus-uuidgen.1.gz
+share/dbus-1/session.conf
+share/dbus-1/system.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/GetAllMatchRules.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-session-disable-stats.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-system-enable-stats.conf
 @dir share/dbus-1/system-services
-@dir share/dbus-1/interfaces
 @dir share/dbus-1/services
 @dir share/dbus-1/session.d
 @dir share/dbus-1/system.d
-@dir /var/db/dbus
+@dir /var/lib/dbus
+@dir /var/lib
 @dir /var/run/dbus
+@comment The following line may be removed after 2018-01-01
+@postexec [ -f /var/lib/dbus/machine-id -o ! -f /var/db/dbus/machine-id ] || cp -p /var/db/dbus/machine-id /var/lib/dbus/

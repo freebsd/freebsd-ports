@@ -22,17 +22,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-# base flex(1) v2.5.4 is not sufficient
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-
-post-patch:
-	@${REINPLACE_CMD} -e 's!flex!${LOCALBASE}/bin/&!' \
-		${BUILD_WRKSRC}/xxdiff.pro
-.endif
-
 pre-build:
 	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} QMAKE=${QMAKE} \
 		${MAKE_CMD} -f Makefile.bootstrap ${MAKE_ARGS} Makefile)
@@ -44,4 +33,4 @@ do-install-DOCS-on:
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "${PORTDOCS} ! -name Makefile" \
 		${STAGEDIR}/${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

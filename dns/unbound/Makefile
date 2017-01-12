@@ -66,14 +66,6 @@ PYTHON_USES=		python:2
 PYTHON_VARS=		STRIP_FILES+=.libs/_unbound.so
 THREADS_CONFIGURE_WITH=	pthreads
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGOST}
-. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
-. endif
-.endif
-
 post-patch:
 	@${RM} ${WRKSRC}/util/configlexer.c
 	@${REINPLACE_CMD} -e 's|if test ! -e $$(DESTDIR)$$(configfile); then || ; \

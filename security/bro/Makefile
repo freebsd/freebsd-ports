@@ -84,18 +84,6 @@ LBL_CF_RUN_DEPENDS=	${LOCALBASE}/bin/cf:sysutils/lbl-cf
 PERFTOOLS_CMAKE_BOOL=	ENABLE_PERFTOOLS
 PERFTOOLS_RUN_DEPENDS=	${LOCALBASE}/bin/pprof:devel/google-perftools
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBROKER}
-.  if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000
-# Bro 2.4 with BROKER requires caf, clang and libc++
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang++34:lang/clang34 \
-		${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1 -L${LOCALBASE}/lib
-CXX=		${LOCALBASE}/bin/clang++34
-.  endif
-.endif
-
 post-install-BROCTL-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/logs
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/tmp

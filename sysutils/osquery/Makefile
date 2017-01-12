@@ -43,6 +43,7 @@ GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
 MAKE_JOBS_UNSAFE=	yes
 
+<<<<<<< HEAD
 NOPIE_PORTS=	yes
 
 .include <bsd.port.pre.mk>
@@ -51,6 +52,8 @@ NOPIE_PORTS=	yes
 CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
+=======
+>>>>>>> upstream/master
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/osquery|/var/db/osquery|g' \
 		${WRKSRC}/osquery/core/init.cpp
@@ -77,4 +80,4 @@ do-install:
 post-stage:
 	${MKDIR} ${STAGEDIR}/var/db/osquery
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

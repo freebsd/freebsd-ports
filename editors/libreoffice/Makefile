@@ -270,11 +270,6 @@ _MAKE_JOBS=	#
 .if ${COMPILER_FEATURES:Mlibstdc++}
 BROKEN=		Build with system libstdc++ is unsupported
 .endif
-
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
-.endif
 .endif # FreeBSD
 
 .if ${COMPILER_TYPE} == "clang"

@@ -43,10 +43,6 @@ OPTIONS_DEFAULT=	FULL_SDK
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-PATCH_DEPENDS+=	gpatch:devel/patch
-PATCH=		gpatch
-.endif
 PATCH_STRIP=	-p1
 
 .if ${PORT_OPTIONS:MSWT_GTK3_SUPPORT}

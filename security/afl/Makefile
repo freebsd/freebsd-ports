@@ -34,13 +34,6 @@ MINIMIZE_CORPUS_RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000013
-# Broken on FreeBSD 9
-PLIST_SUB+=	LLVM_SUB="@comment "
-.else
-PLIST_SUB+=	LLVM_SUB=""
-.endif
-
 .if ${ARCH} == "i386"
 # Clang i386 emits .cfi_sections which base as(1) doesn't understand
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
@@ -69,8 +62,6 @@ post-patch-LLVM-on:
 		-e 's|"clang\+\+"|"clang\+\+${LLVM_VERSION}"|g' \
 		${WRKSRC}/llvm_mode/afl-clang-fast.c
 
-.if ! ${OSVERSION} < 1000013
-# Broken on FreeBSD 9
 post-build-LLVM-on:
 	@(cd ${WRKSRC}/llvm_mode; ${SETENV} \
 		CC=clang${LLVM_VERSION} \
@@ -79,7 +70,6 @@ post-build-LLVM-on:
 		CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		${GMAKE})
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/COPYING ${STAGEDIR}${DOCSDIR}/

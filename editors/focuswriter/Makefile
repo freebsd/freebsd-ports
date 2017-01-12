@@ -31,26 +31,15 @@ PORTDOCS=	CREDITS NEWS README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTALLS/s/man //' \
 		${WRKSRC}/focuswriter.pro
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
-	@${REINPLACE_CMD} -e 's/std::lround/lround/g' \
-		${WRKSRC}/src/daily_progress_dialog.cpp \
-		${WRKSRC}/src/scene_list.cpp \
-		${WRKSRC}/src/theme_dialog.cpp \
-		${WRKSRC}/src/fileformats/docx_reader.cpp \
-		${WRKSRC}/src/fileformats/odt_reader.cpp \
-		${WRKSRC}/src/fileformats/rtf_reader.cpp
-.endif
-
-do-install-DOCS-on:
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/resources/unix/focuswriter.1 \
 		${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+post-install-DOCS-on:
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>

@@ -1,0 +1,21 @@
+Suil is a lightweight C library for loading and wrapping LV2 plugin UIs.
+
+Suil makes it possible to load a UI of any toolkit in a host using any
+other toolkit (assuming the toolkits are both supported by Suil).
+Hosts do not need to build against or link to foreign toolkit libraries
+to use UIs written with that toolkit; all the necessary magic is performed
+by dynamically loaded modules. The API is designed such that hosts do not
+need to explicitly support specific toolkits at all - if Suil supports
+a particular toolkit, then UIs in that toolkit will work in all hosts
+that use Suil automatically.
+
+Suil currently supports every combination of Gtk 2, Qt 4, and X11, e.g. with
+Suil a Gtk program can embed a Qt plugin UI without depending on Qt,
+and a Qt program can embed a Gtk plugin UI without depending on Gtk.
+On Windows, embedding native UIs in Gtk is also supported.
+I (David Robillard) would be happy to work with plugin authors
+to add support for new toolkits, please contact me if you're interested
+in writing a plugin UI using a toolkit that is not yet
+supported in the LV2 ecosystem.
+
+WWW: http://drobilla.net/software/suil/

@@ -7,7 +7,7 @@ PORTREVISION?=	5
 CATEGORIES=	graphics
 PKGNAMESUFFIX?=	2
 
-MAINTAINER=	mbaxter@uw.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Computer Vision library
 
 LICENSE=	BSD3CLAUSE

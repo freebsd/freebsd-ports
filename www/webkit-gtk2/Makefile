@@ -86,11 +86,6 @@ CFLAGS+=	-mminimal-toc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=0:textproc/flex
-CONFIGURE_ENV+=	FLEX="${LOCALBASE}/bin/flex"
-.endif
-
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-c++11-extensions # Shutup warning spam
 CXXFLAGS+=	-Qunused-arguments

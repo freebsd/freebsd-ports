@@ -1,15 +1,6 @@
 --- configure.orig	2016-12-20 04:24:03 UTC
 +++ configure
-@@ -9588,7 +9588,7 @@ $as_echo_n "checking whether the $compil
-   hardcode_minus_L=no
-   hardcode_shlibpath_var=unsupported
-   inherit_rpath=no
--  link_all_deplibs=unknown
-+  link_all_deplibs=no
-   module_cmds=
-   module_expsym_cmds=
-   old_archive_from_new_cmds=
-@@ -16126,7 +16126,7 @@ case "$host" in
+@@ -16126,7 +16126,7 @@
      ;;
  *-*-freebsd*)
  	native_pthread_support=yes
@@ -18,7 +9,16 @@
  	;;
  *-*-openbsd*)
  	native_pthread_support=yes
-@@ -16935,6 +16935,9 @@ esac
+@@ -16362,7 +16362,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-if eval "test \"\$ac_cv_func_db_create\" != yes" ; then
++if eval "test \"\$ac_cv_func_db_create\" = yes" ; then
+ 	ac_save_LIBS="$LIBS"
+ 	for ac_lib in "" $dbheader db-5 db5 db4 db3 db; do
+ 		case "$ac_lib" in
+@@ -16935,6 +16935,9 @@
  
  $as_echo "#define HAVE_NDBM 1" >>confdefs.h
        have_ndbm=yes
@@ -28,7 +28,7 @@
      else
  
        $as_unset ac_cv_func_dbm_firstkey
-@@ -28685,7 +28688,7 @@ fi
+@@ -28685,7 +28688,7 @@
  
  krb_cv_compile_et="no"
  krb_cv_com_err_need_r=""
