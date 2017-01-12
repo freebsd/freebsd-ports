@@ -39,7 +39,7 @@ PORTDOCS=	*
 
 DYNAMIPS_CODE=	stable
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD
 DYNAMIPS_ARCH=	nojit
 .endif
 

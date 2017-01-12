@@ -4,7 +4,7 @@ lib/opera/gstreamer/plugins/libgstoperamatroska.so
 lib/opera/gstreamer/plugins/libgstoperavp8.so
 lib/opera/liboperagtk2.so
 lib/opera/liboperakde4.so
-%%LIBSTDC%%lib/opera/libstdc++.so.6
+lib/opera/libstdc++.so.6
 lib/opera/opera
 lib/opera/plugins/README
 lib/opera/pluginwrapper/operapluginwrapper

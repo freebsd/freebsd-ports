@@ -42,8 +42,8 @@ JAM?=		${LOCALBASE}/bin/jam
 
 .include <bsd.port.pre.mk>
 
-# force Clang when on FreeBSD 10+
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+# force Clang when on FreeBSD
+.if ${OPSYS} == FreeBSD
 JAMARG=	"-sCLANG=1"
 .endif
 

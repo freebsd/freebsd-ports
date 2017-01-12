@@ -1,5 +1,3 @@
 TIMESTAMP = 1466708294
 SHA256 (dnetc521-freebsd9-x86.tar.gz) = 45f210311bdff7a898b14404fe9683dfe5e4246d97ae3cb68b9e62bd4f45593c
 SIZE (dnetc521-freebsd9-x86.tar.gz) = 909376
-SHA256 (dnetc519-freebsd8-x86.tar.gz) = 7f79fa206e43fbf17637124802993909d198c1150c9bfaf3f4c82eefd408fffb
-SIZE (dnetc519-freebsd8-x86.tar.gz) = 897231

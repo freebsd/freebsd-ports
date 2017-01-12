@@ -53,9 +53,7 @@ CONFIGURE_ARGS+=	--with-svn
 BUILD_DEPENDS+=		svn:devel/subversion
 .else
 CONFIGURE_ARGS+=	--without-svn
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-RUN_DEPENDS+=	cvs>0:devel/cvs
-.endif
+RUN_DEPENDS+=		cvs:devel/cvs
 .endif
 
 pre-everything::
