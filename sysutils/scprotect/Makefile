@@ -17,11 +17,14 @@ CFLAGS+=	-DWITH_SCPROTECT_LIST
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1100000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 BROKEN=		does not build on 11.x
 .endif
 
 post-extract:
 	@cd ${WRKSRC}/kmod && ${RM} machine
+
+post-install:
+	@${RM} -r ${STAGEDIR}/usr/lib/debug
 
 .include <bsd.port.post.mk>
