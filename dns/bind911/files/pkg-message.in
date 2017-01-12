@@ -10,13 +10,6 @@
 *   'rndc-confgen -a' to generate the proper conf file, with a new   *
 *            random key, and appropriate file permissions.           *
 *                                                                    *
-%%NOBASE%%*     The %%PREFIX%%/etc/rc.d/named script will do that for you.     *
-%%BASE%%*    The /etc/rc.d/named script in the base will do that for you.    *
-%%BASE%%*                                                                    *
-%%BASE%%*   You will need to make sure that you have the following line      *
-%%BASE%%*   in your /etc/rc.conf in order to have the startup script         *
-%%BASE%%*   run the named version from the port:                             *
-%%BASE%%*                                                                    *
-%%BASE%%*   named_program="%%PREFIX%%/sbin/named"                            *
+*     The %%PREFIX%%/etc/rc.d/named script will do that for you.     *
 *                                                                    *
 **********************************************************************
