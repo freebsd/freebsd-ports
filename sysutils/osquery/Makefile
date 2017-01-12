@@ -43,17 +43,8 @@ GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
 MAKE_JOBS_UNSAFE=	yes
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 1000000
-CFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
-=======
->>>>>>> upstream/master
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/osquery|/var/db/osquery|g' \
 		${WRKSRC}/osquery/core/init.cpp
