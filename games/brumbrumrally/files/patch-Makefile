@@ -1,6 +1,6 @@
 --- Makefile.orig	2016-03-23 12:05:46 UTC
 +++ Makefile
-@@ -1,17 +1,14 @@
+@@ -1,19 +1,18 @@
  OBJS := $(patsubst %.cpp,%.o,$(wildcard src/*.cpp src/hqx/*.cpp))
  
 -DESTDIR = 
@@ -17,7 +17,12 @@
 -CXXFLAGS = -Wall -std=c++98 -pedantic `sdl-config --cflags` -pipe
 -all   : CXXFLAGS += -O2 -s -DNDEBUG -fno-threadsafe-statics -march=native -fomit-frame-pointer -ffast-math -fno-exceptions -fno-rtti
 -debug : CXXFLAGS += -O0 -g
++all   : CXXFLAGS ?= -pipe -O2 -s -DNDEBUG -fno-threadsafe-statics -march=native -fomit-frame-pointer -ffast-math -fno-exceptions -fno-rtti
++debug : CXXFLAGS ?= -pipe -O0 -g
 +CXXFLAGS += -Wall -std=c++98 -pedantic `sdl-config --cflags`
  
- LDFLAGS = `sdl-config --libs` -lSDL_image -lSDL_net
+-LDFLAGS = `sdl-config --libs` -lSDL_image -lSDL_net
++LDFLAGS += `sdl-config --libs` -lSDL_image -lSDL_net
  
+ # lto is supported in g++ version 4.5.0 or higher
+ CXX_MAJOR := $(shell $(CXX) -dumpversion | cut -d'.' -f1)
