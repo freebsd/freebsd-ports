@@ -23,9 +23,9 @@ post-extract:
 	@${MV} ${WRKSRC}/src/lib/sfio/Sfio_t/tmmap2read.c \
 		${WRKSRC}/src/lib/sfio/Sfio_t/.tmmap2read.c
 
-.if ${OSVERSION} >= 1100093
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100093
 post-patch:
-	${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
+	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
 		${WRKSRC}/src/lib/sfio/*.[ch]
 .endif
 
@@ -33,7 +33,7 @@ do-build:
 	@cd ${WRKSRC}/src/lib/sfio && ${MAKE} all -f makefile
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/sfio
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/sfio
 	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include/sfio
 	(cd ${WRKSRC}/lib && ${INSTALL_DATA} libsfio.a libstdio.a ${STAGEDIR}${PREFIX}/lib)
 	${INSTALL_MAN} ${WRKSRC}/man/man1/iffe.1 ${STAGEDIR}${PREFIX}/man/man1
