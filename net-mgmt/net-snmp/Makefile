@@ -160,11 +160,11 @@ NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
 NET_SNMP_WITH_MIB_MODULE_LIST+=	host disman/event-mib mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio sctp-mib
 
-.if ${OSVERSION} >= 1000000 && ${OSVERSION} < 1100062
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100062
 CFLAGS+=	-D_WANT_IFADDR
 .endif
 
-.if ${OSVERSION} >= 1100062
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100062
 NET_SNMP_WITHOUT_MIB_MODULE_LIST+=	mibII/ipv6
 .endif
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	libtasn1
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org

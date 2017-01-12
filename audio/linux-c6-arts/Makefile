@@ -3,7 +3,7 @@
 
 PORTNAME=		arts
 PORTVERSION=		1.5.10
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		audio kde linux
 
 MAINTAINER=		emulation@FreeBSD.org

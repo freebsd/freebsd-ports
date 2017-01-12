@@ -41,11 +41,6 @@ DEFAULT_KERN_HZ=1024
 # Build system handling (including OPTIONS)
 # =========================================
 
-# Support for aligned_alloc
-.if ${OSVERSION} >= 1000000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aligned_alloc
-.endif
-
 .if ${CHOSEN_COMPILER_TYPE} == clang
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
 # Require 16 byte stack realignment on i386 to interface

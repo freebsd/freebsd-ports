@@ -320,6 +320,7 @@
     SUBDIR += cpp-netlib
     SUBDIR += cppcheck
     SUBDIR += cppi
+    SUBDIR += cpprestsdk
     SUBDIR += cpptest
     SUBDIR += cppunit
     SUBDIR += cpputest

@@ -39,10 +39,6 @@ BROKEN_aarch64=		Fails to link: missing sbrk
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == "DragonFly" || ${OSVERSION} >= 1000000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mixfix-lexerAux
-.endif
-
 .if ${PORT_OPTIONS:MFULL_MAUDE}
 MASTER_SITES+=	http://maude.lcc.uma.es/FullMaude/FM${FULL_MAUDE_VER}/:fm
 FULL_MAUDE=	full-maude${FULL_MAUDE_VER}.maude
@@ -56,10 +52,8 @@ PLIST_SUB+=	FULL_MAUDE_VER="${FULL_MAUDE_VER}"
 PLIST_SUB+=	FULL_MAUDE="@comment "
 .endif
 
-post-extract:
-.if ${PORT_OPTIONS:MFULL_MAUDE}
+post-extract-FULL_MAUDE-on:
 	${UNZIP_CMD} ${DISTDIR}/${FULL_MAUDE_DIST} ${FULL_MAUDE} -d ${WRKDIR}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
@@ -67,11 +61,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|g' \
 		${WRKSRC}/configure.ac
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.if ${PORT_OPTIONS:MFULL_MAUDE}
+
+post-install-FULL_MAUDE-on:
 	${INSTALL_DATA} ${WRKDIR}/${FULL_MAUDE} ${STAGEDIR}${DATADIR}
-.endif
 
 .include <bsd.port.mk>

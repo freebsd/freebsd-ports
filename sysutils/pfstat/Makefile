@@ -30,7 +30,7 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 		${WRKSRC}/pfstat.[c8]
-.if ${OSVERSION} >= 1100070
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100070
 	@${REINPLACE_CMD} 's|altq/|net/&|' ${WRKSRC}/pf.c
 .endif
 

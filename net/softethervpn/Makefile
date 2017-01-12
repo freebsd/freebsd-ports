@@ -10,7 +10,8 @@ COMMENT=	Cross-platform Multi-protocol VPN Software
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake iconv localbase readline ssl
+USES=		dos2unix gmake iconv localbase readline ssl
+DOS2UNIX_FILES=	src/Mayaqua/Network.c
 USE_GITHUB=	yes
 GH_ACCOUNT=	SoftEtherVPN
 GH_PROJECT=	SoftEtherVPN

@@ -5,14 +5,15 @@ PORTNAME=	gzstream
 DISTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	http://www.cs.unc.edu/Research/compgeom/gzstream/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides zlib functionality in an iostream
 
 LICENSE=	LGPL21
 
-BROKEN=		unfetchable (apparently abandoned upstream)
+USES=		tar:tgz
 
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

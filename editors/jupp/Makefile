@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jupp
-PORTVERSION=	3.1.29
+PORTVERSION=	3.1.30
 CATEGORIES=	editors
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/jupp/ \
 		http://pub.allbsd.org/MirOS/dist/jupp/
@@ -13,7 +13,7 @@ COMMENT=	Portable version of Joe's Own Editor from MirBSD
 
 LICENSE=	GPLv1
 
-CONFLICTS=	joe-[23]*
+CONFLICTS=	joe-[24]*
 
 USES=		tar:tgz
 GNU_CONFIGURE=	yes

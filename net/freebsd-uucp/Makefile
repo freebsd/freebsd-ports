@@ -38,7 +38,7 @@ VAR_LOG_DESC=			put logfiles into /var/log
 .if ${PORT_OPTIONS:MPAM}
 PAM_SUFFIX=	-pam
 MAKE_ENV+=	WITH_PAM=${WITH_PAM}
-.if ${OSVERSION} >= 110000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 110000
 MAKE_ENV+=	MINUSLPAM=-lpam
 .endif
 CONFLICTS?=	freebsd-uucp-1.*

@@ -2,6 +2,7 @@
 
 PORTNAME=	pixman
 PORTVERSION=	0.32.8
+PORTREVISION=	1
 CATEGORIES=	x11 linux
 
 MAINTAINER=	emulation@FreeBSD.org

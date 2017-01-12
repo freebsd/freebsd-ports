@@ -3,7 +3,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.4.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org

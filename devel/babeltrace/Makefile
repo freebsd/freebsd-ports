@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	babeltrace
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 USE_GITHUB=	yes
 GH_ACCOUNT=	efficios
 
-USES=		autoreconf:build bison gettext-runtime gmake libtool pathfix pkgconfig
+USES=		autoreconf:build bison gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug-info
 USE_GNOME=	glib20
