@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Open source clone of Dune II
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf compiler:c++11-lib tar:bzip2
@@ -20,10 +20,4 @@ USE_SDL=	sdl mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-EXTRA_PATCHES=	files/extra-patch-include__misc__functional.h files/extra-patch-include__misc__memory.h
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
