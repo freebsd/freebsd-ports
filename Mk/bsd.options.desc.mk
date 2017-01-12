@@ -307,6 +307,7 @@ LSOF_DESC?=		LiSt Open Files utility support
 LUA_DESC?=		Lua scripting language support
 LZ4_DESC?=		LZ4 compression support
 LZMA_DESC?=		LZMA compression support
+LZO_DESC?=		LZO compression support
 MAD_DESC?=		MAD MP3 audio decoder support
 MAGICK_DESC?=		ImageMagick image processing library support
 MANPAGES_DESC?=		Build and/or install manual pages

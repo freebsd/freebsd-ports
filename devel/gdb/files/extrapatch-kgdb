@@ -1,8 +1,8 @@
 diff --git gdb/Makefile.in gdb/Makefile.in
-index dfaa8a3..182d875 100644
+index 5b6ccea764..f501cf29d1 100644
 --- gdb/Makefile.in
 +++ gdb/Makefile.in
-@@ -207,7 +207,8 @@
+@@ -212,7 +212,8 @@ INCGNU = -I$(srcdir)/gnulib/import -I$(GNULIB_BUILDDIR)/import
  
  # Generated headers in the gnulib directory.  These must be listed
  # so that they are generated before other files are compiled.
@@ -12,7 +12,7 @@ index dfaa8a3..182d875 100644
  
  #
  # CLI sub directory definitons
-@@ -650,7 +650,8 @@ ALL_64_TARGET_OBS = \
+@@ -653,7 +654,8 @@ ALL_64_TARGET_OBS = \
  	ia64-linux-tdep.o ia64-vms-tdep.o ia64-tdep.o \
  	mips64obsd-tdep.o \
  	sparc64fbsd-tdep.o sparc64-linux-tdep.o sparc64nbsd-tdep.o \
@@ -22,15 +22,16 @@ index dfaa8a3..182d875 100644
  
  # All other target-dependent objects files (used with --enable-targets=all).
  ALL_TARGET_OBS = \
-@@ -672,6 +673,7 @@ ALL_TARGET_OBS = \
+@@ -676,6 +678,8 @@ ALL_TARGET_OBS = \
  	i386-sol2-tdep.o i386-tdep.o i387-tdep.o \
  	i386-dicos-tdep.o i386-darwin-tdep.o \
  	iq2000-tdep.o \
 +	fbsd-kld.o fbsd-kthr.o fbsd-kvm.o i386fbsd-kern.o ppcfbsd-kern.o \
++	mipsfbsd-kern.o \
  	linux-tdep.o \
  	lm32-tdep.o \
  	m32c-tdep.o \
-@@ -1123,7 +1125,7 @@ generated_files = config.h observer.h observer.inc ada-lex.c jit-reader.h \
+@@ -1133,7 +1137,7 @@ generated_files = config.h observer.h observer.inc ada-lex.c jit-reader.h \
  	$(COMPILE) $<
  	$(POSTCOMPILE)
  
@@ -39,7 +40,7 @@ index dfaa8a3..182d875 100644
  	@$(MAKE) $(FLAGS_TO_PASS) DO=all "DODIRS=`echo $(SUBDIRS) | sed 's/testsuite//'`" subdir_do
  
  installcheck:
-@@ -1393,6 +1395,12 @@ gdb$(EXEEXT): gdb.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
+@@ -1412,6 +1416,12 @@ gdb$(EXEEXT): gdb.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
  		-o gdb$(EXEEXT) gdb.o $(LIBGDB_OBS) \
  		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
  
@@ -52,7 +53,7 @@ index dfaa8a3..182d875 100644
  # Convenience rule to handle recursion.
  $(LIBGNU) $(GNULIB_H): all-lib
  all-lib: $(GNULIB_BUILDDIR)/Makefile
-@@ -1437,7 +1445,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
+@@ -1456,7 +1466,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
  	@$(MAKE) $(FLAGS_TO_PASS) DO=clean "DODIRS=$(CLEANDIRS)" subdir_do
  	rm -f *.o *.a $(ADD_FILES) *~ init.c-tmp init.l-tmp version.c-tmp
  	rm -f init.c version.c observer.h observer.inc
@@ -61,17 +62,17 @@ index dfaa8a3..182d875 100644
  	rm -f gdb[0-9]$(EXEEXT)
  	rm -f test-cp-name-parser$(EXEEXT)
  	rm -f xml-builtin.c stamp-xml
-@@ -1667,6 +1675,9 @@ ALLDEPFILES = \
+@@ -1688,6 +1698,9 @@ ALLDEPFILES = \
  	core-regset.c \
  	dcache.c dicos-tdep.c darwin-nat.c \
  	exec.c \
 +	fbsd-kld.c fbsd-kthr.c fbsd-kvm.c \
-+	amd64fbsd-kern.c i386fbsd-kern.c ppcfbsd-kern.c \
++	amd64fbsd-kern.c i386fbsd-kern.c mipsfbsd-kern.c ppcfbsd-kern.c \
 +	sparc64fbsd-kern.c \
  	fbsd-nat.c \
  	fbsd-tdep.c \
  	fork-child.c \
-@@ -2740,7 +2752,7 @@
+@@ -2761,7 +2774,7 @@ py-varobj.o: $(srcdir)/python/py-varobj.c
  
  # A list of all the objects we might care about in this build, for
  # dependency tracking.
@@ -81,10 +82,10 @@ index dfaa8a3..182d875 100644
  
  # Ensure that generated files are created early.  Use order-only
 diff --git gdb/config.in gdb/config.in
-index 9ef53b3..c55c01b 100644
+index c82a5b4bac..34140b2d59 100644
 --- gdb/config.in
 +++ gdb/config.in
-@@ -216,6 +216,9 @@
+@@ -219,6 +219,9 @@
  /* Define to 1 if your system has the kinfo_getvmmap function. */
  #undef HAVE_KINFO_GETVMMAP
  
@@ -95,10 +96,10 @@ index 9ef53b3..c55c01b 100644
  #undef HAVE_LANGINFO_CODESET
  
 diff --git gdb/configure gdb/configure
-index 48acfe5..f0cd958 100755
+index b5c045cf10..68299ff16c 100755
 --- gdb/configure
 +++ gdb/configure
-@@ -7104,6 +7104,66 @@ $as_echo "#define HAVE_KINFO_GETVMMAP 1" >>confdefs.h
+@@ -7112,6 +7112,66 @@ $as_echo "#define HAVE_KINFO_GETVMMAP 1" >>confdefs.h
  fi
  
  
@@ -163,13 +164,13 @@ index 48acfe5..f0cd958 100755
 +
 +
  
- 
- 
+       if test "X$prefix" = "XNONE"; then
+     acl_final_prefix="$ac_default_prefix"
 diff --git gdb/configure.ac gdb/configure.ac
-index a40860a..9035d48 100644
+index f774db7ea6..efccdd3fb1 100644
 --- gdb/configure.ac
 +++ gdb/configure.ac
-@@ -539,6 +539,11 @@ AC_SEARCH_LIBS(kinfo_getvmmap, util,
+@@ -540,6 +540,11 @@ AC_SEARCH_LIBS(kinfo_getvmmap, util util-freebsd,
    [AC_DEFINE(HAVE_KINFO_GETVMMAP, 1,
              [Define to 1 if your system has the kinfo_getvmmap function. ])])
  
@@ -181,11 +182,71 @@ index a40860a..9035d48 100644
  AM_ICONV
  
  # GDB may fork/exec the iconv program to get the list of supported character
+diff --git gdb/configure.tgt gdb/configure.tgt
+index 9ee9f7a799..fb14b19405 100644
+--- gdb/configure.tgt
++++ gdb/configure.tgt
+@@ -190,7 +190,13 @@ i[34567]86-*-dicos*)
+ i[34567]86-*-freebsd* | i[34567]86-*-kfreebsd*-gnu)
+ 	# Target: FreeBSD/i386
+ 	gdb_target_obs="i386-tdep.o i387-tdep.o i386bsd-tdep.o i386fbsd-tdep.o \
+-			bsd-uthread.o fbsd-tdep.o solib-svr4.o"
++			bsd-uthread.o fbsd-tdep.o solib-svr4.o \
++			fbsd-kld.o fbsd-kthr.o fbsd-kvm.o i386fbsd-kern.o"
++	if test "x$enable_64_bit_bfd" = "xyes"; then
++	    # Target: FreeBSD amd64
++	    gdb_target_obs="amd64-tdep.o amd64fbsd-tdep.o amd64fbsd-kern.o \
++			    ${gdb_target_obs}"
++	fi
+ 	;;
+ i[34567]86-*-netbsd* | i[34567]86-*-knetbsd*-gnu)
+ 	# Target: NetBSD/i386
+@@ -360,7 +366,8 @@ mips*-*-netbsd* | mips*-*-knetbsd*-gnu)
+ 	;;
+ mips*-*-freebsd*)
+ 	# Target: MIPS running FreeBSD
+-	gdb_target_obs="mips-tdep.o mips-fbsd-tdep.o solib-svr4.o fbsd-tdep.o"
++	gdb_target_obs="mips-tdep.o mips-fbsd-tdep.o solib-svr4.o fbsd-tdep.o \
++			fbsd-kld.o fbsd-kthr.o fbsd-kvm.o mipsfbsd-kern.o"
+ 	gdb_sim=../sim/mips/libsim.a
+ 	;;
+ mips64*-*-openbsd*)
+@@ -419,7 +426,8 @@ powerpc*-*-freebsd*)
+ 	# Target: FreeBSD/powerpc
+ 	gdb_target_obs="rs6000-tdep.o ppc-sysv-tdep.o ppc64-tdep.o \
+ 		        ppcfbsd-tdep.o fbsd-tdep.o solib-svr4.o \
+-			ravenscar-thread.o ppc-ravenscar-thread.o"
++			ravenscar-thread.o ppc-ravenscar-thread.o \
++			fbsd-kld.o fbsd-kthr.o fbsd-kvm.o ppcfbsd-kern.o"
+ 	;;
+ 
+ powerpc-*-netbsd* | powerpc-*-knetbsd*-gnu)
+@@ -543,7 +551,8 @@ sparc*-*-freebsd* | sparc*-*-kfreebsd*-gnu)
+ 	# Target: FreeBSD/sparc64
+ 	gdb_target_obs="sparc-tdep.o sparc64-tdep.o sparc64fbsd-tdep.o \
+ 			fbsd-tdep.o solib-svr4.o \
+-			ravenscar-thread.o sparc-ravenscar-thread.o"
++			ravenscar-thread.o sparc-ravenscar-thread.o \
++			fbsd-kld.o fbsd-kthr.o fbsd-kvm.o sparc64fbsd-kern.o"
+ 	;;
+ sparc-*-netbsd* | sparc-*-knetbsd*-gnu)
+ 	# Target: NetBSD/sparc
+@@ -674,7 +683,9 @@ x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu)
+ 	# Target: FreeBSD/amd64
+ 	gdb_target_obs="amd64-tdep.o amd64fbsd-tdep.o i386-tdep.o \
+ 			i387-tdep.o i386bsd-tdep.o i386fbsd-tdep.o \
+-			bsd-uthread.o fbsd-tdep.o solib-svr4.o"
++			bsd-uthread.o fbsd-tdep.o solib-svr4.o \
++			fbsd-kld.o fbsd-kthr.o fbsd-kvm.o amd64fbsd-kern.o \
++			i386fbsd-kern.o"
+ 	;;
+ x86_64-*-mingw* | x86_64-*-cygwin*)
+         # Target: MingW/amd64
 diff --git gdb/defs.h gdb/defs.h
-index ccdab18..499944f 100644
+index 9b44f44349..f176be1108 100644
 --- gdb/defs.h
 +++ gdb/defs.h
-@@ -549,6 +549,7 @@ enum gdb_osabi
+@@ -598,6 +598,7 @@ enum gdb_osabi
    GDB_OSABI_LINUX,
    GDB_OSABI_FREEBSD_AOUT,
    GDB_OSABI_FREEBSD_ELF,
@@ -194,7 +255,7 @@ index ccdab18..499944f 100644
    GDB_OSABI_NETBSD_ELF,
    GDB_OSABI_OPENBSD_ELF,
 diff --git gdb/osabi.c gdb/osabi.c
-index f7d4e74..130ffef 100644
+index f7d4e74239..130ffef37e 100644
 --- gdb/osabi.c
 +++ gdb/osabi.c
 @@ -66,6 +66,7 @@ static const struct osabi_names gdb_osabi_names[] =
@@ -206,7 +267,7 @@ index f7d4e74..130ffef 100644
    { "NetBSD/ELF", NULL },
    { "OpenBSD/ELF", NULL },
 diff --git gdb/regcache.c gdb/regcache.c
-index a5c90a6..05044e5 100644
+index a5c90a6314..05044e5293 100644
 --- gdb/regcache.c
 +++ gdb/regcache.c
 @@ -1083,6 +1083,20 @@ regcache_raw_supply (struct regcache *regcache, int regnum, const void *buf)
@@ -231,10 +292,10 @@ index a5c90a6..05044e5 100644
  
  void
 diff --git gdb/regcache.h gdb/regcache.h
-index a9fb44b..a156918 100644
+index 1bb0ce0ec8..65783b6355 100644
 --- gdb/regcache.h
 +++ gdb/regcache.h
-@@ -147,6 +147,8 @@ extern void regcache_write_pc (struct regcache *regcache, CORE_ADDR pc);
+@@ -135,6 +135,8 @@ extern void regcache_write_pc (struct regcache *regcache, CORE_ADDR pc);
  
  extern void regcache_raw_supply (struct regcache *regcache,
  				 int regnum, const void *buf);
@@ -243,53 +304,3 @@ index a9fb44b..a156918 100644
  extern void regcache_raw_collect (const struct regcache *regcache,
  				  int regnum, void *buf);
  
-diff --git gdb/configure.tgt gdb/configure.tgt
-index 4e4d6a9..57e4b3a 100644
---- gdb/configure.tgt
-+++ gdb/configure.tgt
-@@ -185,7 +185,13 @@ i[34567]86-*-dicos*)
- i[34567]86-*-freebsd* | i[34567]86-*-kfreebsd*-gnu)
- 	# Target: FreeBSD/i386
- 	gdb_target_obs="i386-tdep.o i387-tdep.o i386bsd-tdep.o i386fbsd-tdep.o \
--			bsd-uthread.o fbsd-tdep.o solib-svr4.o"
-+			bsd-uthread.o fbsd-tdep.o solib-svr4.o \
-+			fbsd-kld.o fbsd-kthr.o fbsd-kvm.o i386fbsd-kern.o"
-+	if test "x$enable_64_bit_bfd" = "xyes"; then
-+	    # Target: FreeBSD amd64
-+	    gdb_target_obs="amd64-tdep.o amd64fbsd-tdep.o amd64fbsd-kern.o \
-+			    ${gdb_target_obs}"
-+	fi
- 	;;
- i[34567]86-*-netbsd* | i[34567]86-*-knetbsd*-gnu)
- 	# Target: NetBSD/i386
-@@ -405,7 +411,8 @@ powerpc*-*-freebsd*)
- 	# Target: FreeBSD/powerpc
- 	gdb_target_obs="rs6000-tdep.o ppc-sysv-tdep.o ppc64-tdep.o \
- 		        ppcfbsd-tdep.o fbsd-tdep.o solib-svr4.o \
--			ravenscar-thread.o ppc-ravenscar-thread.o"
-+			ravenscar-thread.o ppc-ravenscar-thread.o \
-+			fbsd-kld.o fbsd-kthr.o fbsd-kvm.o ppcfbsd-kern.o"
- 	;;
- 
- powerpc-*-netbsd* | powerpc-*-knetbsd*-gnu)
-@@ -534,7 +541,8 @@ sparc*-*-freebsd* | sparc*-*-kfreebsd*-gnu)
- 	# Target: FreeBSD/sparc64
- 	gdb_target_obs="sparc-tdep.o sparc64-tdep.o sparc64fbsd-tdep.o \
- 			fbsd-tdep.o solib-svr4.o \
--			ravenscar-thread.o sparc-ravenscar-thread.o"
-+			ravenscar-thread.o sparc-ravenscar-thread.o \
-+			fbsd-kld.o fbsd-kthr.o fbsd-kvm.o sparc64fbsd-kern.o"
- 	;;
- sparc-*-netbsd* | sparc-*-knetbsd*-gnu)
- 	# Target: NetBSD/sparc
-@@ -662,7 +670,9 @@ x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu)
- 	# Target: FreeBSD/amd64
- 	gdb_target_obs="amd64-tdep.o amd64fbsd-tdep.o i386-tdep.o \
- 			i387-tdep.o i386bsd-tdep.o i386fbsd-tdep.o \
--			bsd-uthread.o fbsd-tdep.o solib-svr4.o"
-+			bsd-uthread.o fbsd-tdep.o solib-svr4.o \
-+			fbsd-kld.o fbsd-kthr.o fbsd-kvm.o amd64fbsd-kern.o \
-+			i386fbsd-kern.o"
- 	;;
- x86_64-*-mingw* | x86_64-*-cygwin*)
-         # Target: MingW/amd64

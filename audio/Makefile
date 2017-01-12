@@ -26,6 +26,7 @@
     SUBDIR += ample
     SUBDIR += aqualung
     SUBDIR += ardour
+    SUBDIR += ardour5
     SUBDIR += ario
     SUBDIR += arss
     SUBDIR += ascd
