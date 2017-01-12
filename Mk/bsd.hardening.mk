@@ -27,6 +27,12 @@ PIE_USES=		pie
 NOPIE_PORTS=	yes
 .endif
 .endif
+
+.if ${PORTNAME:Mlib*} || (defined(PKGNAMESUFFIX) && (${PKGNAMESUFFIX:Mlib*}))
+CFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC
+.endif
+
 .endif
 
 .if defined(USES)
