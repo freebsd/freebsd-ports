@@ -91,8 +91,8 @@ CONFIGURE_ARGS+=	--enable-gles2
 # Clover (OpenCL).
 .if ${OPSYS} == DragonFly || \
 	(${OPSYS} == FreeBSD && \
-		(${OSVERSION} >= 1001000 && ${ARCH} == amd64 || \
-		${OSVERSION} >= 1001000 && ${ARCH} == i386))
+		(${ARCH} == amd64 || \
+		${ARCH} == i386))
 
 BUILD_DEPENDS+=	libclc>=0.0.r222830:devel/libclc
 
