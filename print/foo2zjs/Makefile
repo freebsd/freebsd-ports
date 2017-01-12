@@ -3,9 +3,14 @@
 
 PORTNAME=	foo2zjs
 PORTVERSION=	20161203
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/bsam/${PORTNAME} \
 		ftp://ftp.wart.ru/pub/FreeBSD/ports/distfiles/
+
+# Obtained from https://www.cybercom.net/~dcoffin/hbpl/
+PATCH_SITES=	LOCAL/tijl
+PATCHFILES=	hbpl1-20160830.patch.xz:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for printers that use the ZjStream wire protocol
@@ -18,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:print/foomatic-db \
 		foomatic-rip:print/cups-filters \
 		gsed:textproc/gsed
 
-PROJECTHOST=	bsdistfiles
 USES=		ghostscript gmake shebangfix
 SHEBANG_FILES=	msexpand printer-profile.sh
 SUB_FILES=	pkg-message ${DEVDCONF_FILE}
