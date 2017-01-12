@@ -55,7 +55,7 @@ sparc64fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 {
 	struct pcb pcb;
 
-	if (target_read_memory(pcb_addr, &pcb, sizeof(pcb)) != 0)
+	if (target_read_memory(pcb_addr, (gdb_byte *)&pcb, sizeof(pcb)) != 0)
 		memset(&pcb, 0, sizeof(pcb));
 
 	regcache_raw_supply(regcache, SPARC_SP_REGNUM, (char *)&pcb.pcb_sp);
@@ -252,14 +252,14 @@ kgdb_trgt_trapframe_prev_register(struct frame_info *next_frame,
 			ofs = (regnum - SPARC_L0_REGNUM) * 8;
 			*addrp = cache->sp + BIAS + ofs;
 			*lvalp = lval_memory;
-			target_read_memory(*addrp, valuep, regsz);
+			target_read_memory(*addrp, (gdb_byte *)valuep, regsz);
 		}
 		return;
 	}
 
 	*addrp = cache->fp + ofs;
 	*lvalp = lval_memory;
-	target_read_memory(*addrp, valuep, regsz);
+	target_read_memory(*addrp, (gdb_byte *)valuep, regsz);
 }
 
 static const struct frame_unwind kgdb_trgt_trapframe_unwind = {
