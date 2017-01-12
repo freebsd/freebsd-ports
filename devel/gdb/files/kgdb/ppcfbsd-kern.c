@@ -58,7 +58,7 @@ ppcfbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 
 	tdep = gdbarch_tdep (target_gdbarch());
 
-	if (target_read_memory(pcb_addr, &pcb, sizeof(pcb)) != 0)
+	if (target_read_memory(pcb_addr, (gdb_byte *)&pcb, sizeof(pcb)) != 0)
 		memset(&pcb, 0, sizeof(pcb));
 
 	/*
