@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nano
-PORTVERSION=	2.7.3
+PORTVERSION=	2.7.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ GNU
 
@@ -35,15 +35,15 @@ post-configure:
 	${REINPLACE_CMD} -e 's/update_revision//g' ${WRKSRC}/src/Makefile
 
 post-build:
-	cd ${WRKSRC}/doc/man; ${REINPLACE_CMD} \
+	cd ${WRKSRC}/doc; ${REINPLACE_CMD} \
 		-e 's:SYSCONFDIR:${PREFIX}/etc:g' \
 		-e 's:EXAMPLESDIR:${EXAMPLESDIR}:g' \
-		nano.1 rnano.1 nanorc.5 ${WRKSRC}/doc/texinfo/${INFO:=.info}
+		nano.1 rnano.1 nanorc.5 ${WRKSRC}/doc/${INFO:=.info}
 	${REINPLACE_CMD} -e 's/\\</[[:<:]]/g' -e 's/\\>/[[:>:]]/g' \
-		${WRKSRC}/doc/syntax/*.nanorc
+		${WRKSRC}/syntax/*.nanorc
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/nanorc.sample ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/sample.nanorc ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
