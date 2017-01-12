@@ -2,36 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	libkml
-PORTVERSION=	1.2
-DISTVERSIONPREFIX=	release-
-PORTREVISION=	6
+PORTVERSION=	1.3.0
 CATEGORIES=	science
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Library for parse, generate, and operate on KML
+COMMENT=	Reference implementation of OGC KML 2.2
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	curl-config:ftp/curl
-LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+BUILD_DEPENDS=	boost-libs>=1.44.0:devel/boost-libs \
+		googletest>=1.7.0:devel/googletest \
+		minizip>=1.2.8:archivers/minizip
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libexpat.so:textproc/expat2 \
+		libgtest.so:devel/googletest \
+		libminizip.so:archivers/minizip \
 		liburiparser.so:net/uriparser
 
-OPTIONS_DEFINE=	SWIG
+OPTIONS_DEFINE=	EXAMPLES
 
-CONFIGURE_ARGS=	--disable-java --disable-python
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+CMAKE_ARGS=	-DWITH_JAVA=OFF -DWITH_PYTHON=OFF -DWITH_SWIG=OFF
 USE_LDCONFIG=	yes
-USES=		autoreconf gmake libtool localbase
+USES=		cmake pathfix
 
-GH_ACCOUNT=	google
+PORTEXAMPLES=	*
+
 USE_GITHUB=	yes
 
-SWIG_BUILD_DEPENDS=	swig:devel/swig13
-SWIG_CONFIGURE_OFF=	--disable-swig
+EXAMPLES_CMAKE_OFF=	-DBUILD_EXAMPLES=OFF -DINSTALL_EXAMPLES=OFF
+EXAMPLES_CMAKE_ON=	-DBUILD_EXAMPLES=ON -DINSTALL_EXAMPLES=ON -DKML_EXAMPLES_DIR=${EXAMPLESDIR}
+EXAMPLES_LIB_DEPENDS=	libcurl.so:ftp/curl
 
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.am -exec ${REINPLACE_CMD} -e 's|-Werror||; s| -ansi -pedantic||' {} +
+post-patch-EXAMPLES-on:
+	@${REINPLACE_CMD} -e 's|DESTINATION examples/|DESTINATION $${KML_EXAMPLES_DIR}/|' ${WRKSRC}/examples/*/CMakeLists.txt
 
 .include <bsd.port.mk>
