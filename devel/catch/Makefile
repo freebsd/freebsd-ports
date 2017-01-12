@@ -3,7 +3,7 @@
 
 PORTNAME=	catch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.9
+DISTVERSION=	1.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -29,7 +29,7 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/include
 
 do-test:
-	cd ${WRKSRC}/projects/CMake && \
+	cd ${WRKSRC} && \
 	    ${LOCALBASE}/bin/cmake . && ${MAKE_CMD} && ./SelfTest
 
 .include <bsd.port.mk>
