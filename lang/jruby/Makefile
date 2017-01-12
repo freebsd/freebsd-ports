@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby
-PORTVERSION=	9.1.6.0
+PORTVERSION=	9.1.7.0
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
@@ -39,6 +39,7 @@ post-patch:
 	@${RM} -r \
 		${WRKSRC}/lib/jni/*AIX \
 		${WRKSRC}/lib/jni/*Linux \
+		${WRKSRC}/lib/jni/*OpenBSD \
 		${WRKSRC}/lib/jni/*SunOS \
 		${WRKSRC}/lib/jni/*Windows \
 		${WRKSRC}/lib/jni/Darwin \
