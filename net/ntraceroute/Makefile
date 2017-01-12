@@ -24,7 +24,7 @@ PLIST_FILES=	sbin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1100030
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100030
 BUILD_FLAGS=	-DBYTESWAP_IP_FLAGS -DBYTESWAP_IP_LEN
 .endif
 
