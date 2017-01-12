@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	librdkafka
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	luca.pizzamiglio@gmail.com
 COMMENT=	Apache Kafka C/C++ library
 
 LICENSE=	BSD2CLAUSE
@@ -24,6 +25,7 @@ USES=		gmake perl5 python shebangfix ssl
 SHEBANG_FILES=	lds-gen.py
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS+=	--disable-sasl --enable-ssl
 
 USE_LDCONFIG=	yes
 
