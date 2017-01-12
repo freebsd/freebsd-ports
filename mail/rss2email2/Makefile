@@ -37,14 +37,17 @@ post-patch:
 		${WRKSRC}/rss2email.py
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/rss2email.py ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/r2e ${STAGEDIR}${PREFIX}/bin
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/config.py.example ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1100077
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
 # chmod -R bug.
 post-extract:
 	@${CHMOD} 0755 ${WRKSRC}
