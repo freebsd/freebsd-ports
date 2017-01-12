@@ -3,6 +3,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	910
@@ -38,13 +39,13 @@ ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS+=	bind-tools bind99 bind911 bind9-devel
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message named.conf
 
 OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE JSON \
 			DLZ_FILESYSTEM RPZ_NSIP RPZ_NSDNAME
 OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON JSON \
 			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA \
-			LINKS RPZ_NSIP RPZ_NSDNAME DOCS GEOIP \
+			RPZ_NSIP RPZ_NSDNAME DOCS GEOIP \
 			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE \
 			START_LATE
 OPTIONS_RADIO=	CRYPTO GOSTDEF
@@ -77,7 +78,6 @@ PORTREVISION_DESC=	Show PORTREVISION in the version string
 FETCHLIMIT_DESC=	Enable the query quotas for resolvers
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 
-LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
 DLZ_DESC=		Dynamically Loadable Zones
@@ -170,28 +170,13 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 CONFIGURE_ARGS+=	--without-gost
 .endif
 
-.if !${PORT_OPTIONS:MLINKS}
-PKGINSTALL=${NONEXISTENT}
-.endif
-
 .if ${PORT_OPTIONS:MTHREADS} && !${PORT_OPTIONS:MDLZ_MYSQL}
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100)
-PKGINSTALL=	${NONEXISTENT}
-PLIST_SUB+=	NOBASE="" BASE="@comment "
-SUB_LIST+=	NOBASE="" BASE="@comment "
-USE_RC_SUBR+=	named
-SUB_FILES+=	named.conf
-.else
-PLIST_SUB+=	NOBASE="@comment " BASE=""
-SUB_LIST+=	NOBASE="@comment " BASE=""
-.endif
-
-PKGDEINSTALL=	${PKGINSTALL}
+USE_RC_SUBR=	named
 
 MAKE_JOBS_UNSAFE=	yes
 
