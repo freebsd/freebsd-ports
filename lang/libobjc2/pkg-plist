@@ -18,6 +18,3 @@ include/objc/slot.h
 lib/libobjc.so
 lib/libobjc.so.%%SHLIB_MAJOR%%
 lib/libobjc.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
-%%WITH_SEPARATECXX%%lib/libobjcxx.so
-%%WITH_SEPARATECXX%%lib/libobjcxx.so.%%SHLIB_MAJOR%%
-%%WITH_SEPARATECXX%%lib/libobjcxx.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
