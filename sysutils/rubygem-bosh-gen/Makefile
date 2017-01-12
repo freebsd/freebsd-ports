@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh-gen
-PORTVERSION=	0.23.0
+PORTVERSION=	0.24.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -24,9 +24,10 @@ RUN_DEPENDS=	rubygem-activesupport4>=4.0:devel/rubygem-activesupport4 \
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	lib/bosh/gen/generators/new_release_generator/templates/templates/make_manifest.tt \
-		spec/fixtures/releases/s3test-boshrelease/templates/make_manifest
 
 PLIST_FILES=	bin/bosh-gen
+
+SHEBANG_FILES=	lib/bosh/gen/generators/new_release_generator/templates/templates/make_manifest.tt \
+		spec/fixtures/releases/s3test-boshrelease/templates/make_manifest
 
 .include <bsd.port.mk>
