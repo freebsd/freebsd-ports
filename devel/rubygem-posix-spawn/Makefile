@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	posix-spawn
-PORTVERSION=	0.3.12
+PORTVERSION=	0.3.13
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
