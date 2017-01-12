@@ -18,7 +18,7 @@ CFLAGS+=	-DWITH_SCPROTECT_LIST
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
-BROKEN=		does not build on 11.x
+BROKEN=		does not build on FreeBSD 11.x+
 .endif
 
 post-extract:
