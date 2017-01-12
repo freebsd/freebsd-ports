@@ -3,7 +3,7 @@
 
 PORTNAME=	qt47
 PORTVERSION=	4.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel linux
 MASTER_SITES=	https://www.mirrorservice.org/sites/dl.atrpms.net/el6-i386/atrpms/testing/ \
 		https://www.mirrorservice.org/sites/dl.atrpms.net/el6-x86_64/atrpms/testing/ \

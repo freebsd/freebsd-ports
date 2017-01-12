@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	3.6.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases linux
 
 MAINTAINER=	emulation@FreeBSD.org

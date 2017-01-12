@@ -2,7 +2,7 @@
 
 PORTNAME=	libgfortran
 PORTVERSION=	4.4.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org

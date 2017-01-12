@@ -41,8 +41,13 @@ FPC_DEFAULT?=		3.0.0
 GCC_DEFAULT?=		4.9
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
+.if ${ARCH} == amd64
 # Possible values: c6, c6_64, c7, c7_64
+LINUX_DEFAULT?=		c6_64
+.else
+# Possible values: c6, c7
 LINUX_DEFAULT?=		c6
+.endif
 .if defined(OVERRIDE_LINUX_BASE_PORT)
 LINUX_DEFAULT:=		${OVERRIDE_LINUX_BASE_PORT}
 WARNING+=		"OVERRIDE_LINUX_BASE_PORT is deprecated, please use DEFAULT_VERSIONS+=linux=${OVERRIDE_LINUX_BASE_PORT}."

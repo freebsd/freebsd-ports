@@ -3,7 +3,7 @@
 
 PORTNAME=	libsigc++20
 PORTVERSION=	2.2.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org

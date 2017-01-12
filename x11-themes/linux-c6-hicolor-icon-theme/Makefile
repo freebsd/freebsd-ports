@@ -3,7 +3,7 @@
 
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes linux
 MASTER_SITES=	# empty
 DISTFILES=	# empty

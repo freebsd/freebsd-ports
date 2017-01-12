@@ -3,7 +3,7 @@
 
 PORTNAME=	avahi-libs
 PORTVERSION=	0.6.25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net linux
 
 MAINTAINER=	emulation@FreeBSD.org

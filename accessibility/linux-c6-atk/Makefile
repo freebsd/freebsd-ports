@@ -3,6 +3,7 @@
 
 PORTNAME=	atk
 PORTVERSION=	1.30.0
+PORTREVISION=	1
 CATEGORIES=	accessibility linux
 
 MAINTAINER=	emulation@FreeBSD.org
