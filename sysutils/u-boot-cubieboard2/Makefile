@@ -1,15 +1,10 @@
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-cubieboard2
+MAINTAINER=	imp@FreeBSD.org
+MASTERDIR=	${.CURDIR}/../u-boot-master
 
-COMMENT=	Cross-build U-Boot loader for Cubieboard2
-
-LICENSE=	GPLv2
-
-# Local overrides
-MASTERDIR=	${.CURDIR}/../u-boot-cubieboard
-DESCR=		${.CURDIR}/pkg-descr
 MODEL=		cubieboard2
-CONF_TARGET=	Cubieboard2_defconfig
+BOARD_CONFIG=	Cubieboard2_defconfig
+FAMILY=		allwinner
 
 .include "${MASTERDIR}/Makefile"
