@@ -1,4 +1,4 @@
---- bin/named/config.c.orig	2016-10-21 05:12:02 UTC
+--- bin/named/config.c.orig	2016-12-11 22:02:39 UTC
 +++ bin/named/config.c
 @@ -141,6 +141,8 @@ options {\n\
  	min-roots 2;\n\
@@ -9,9 +9,9 @@
  	max-cache-ttl 604800; /* 1 week */\n\
  	transfer-format many-answers;\n\
  	max-cache-size 0;\n\
---- bin/named/server.c.orig	2016-10-21 05:12:02 UTC
+--- bin/named/server.c.orig	2017-01-11 11:22:46 UTC
 +++ bin/named/server.c
-@@ -2559,6 +2559,16 @@ configure_view(dns_view_t *view, cfg_obj
+@@ -2683,6 +2683,16 @@ configure_view(dns_view_t *view, cfg_obj
  	}
  
  	obj = NULL;
@@ -28,7 +28,7 @@
  	result = ns_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asuint32(obj);
---- lib/dns/include/dns/view.h.orig	2016-10-21 05:12:02 UTC
+--- lib/dns/include/dns/view.h.orig	2017-01-11 11:22:46 UTC
 +++ lib/dns/include/dns/view.h
 @@ -148,6 +148,8 @@ struct dns_view {
  	isc_boolean_t			provideixfr;
@@ -39,7 +39,7 @@
  	dns_ttl_t			maxncachettl;
  	in_port_t			dstport;
  	dns_aclenv_t			aclenv;
---- lib/dns/resolver.c.orig	2016-10-21 05:12:02 UTC
+--- lib/dns/resolver.c.orig	2016-12-11 22:02:39 UTC
 +++ lib/dns/resolver.c
 @@ -5116,6 +5116,18 @@ cache_name(fetchctx_t *fctx, dns_name_t 
  		}
@@ -60,9 +60,9 @@
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl)
---- lib/isccfg/namedconf.c.orig	2016-10-21 05:12:02 UTC
+--- lib/isccfg/namedconf.c.orig	2017-01-11 11:22:46 UTC
 +++ lib/isccfg/namedconf.c
-@@ -1459,6 +1459,8 @@ view_clauses[] = {
+@@ -1464,6 +1464,8 @@ view_clauses[] = {
  	{ "lame-ttl", &cfg_type_uint32, 0 },
  	{ "max-acache-size", &cfg_type_sizenodefault, 0 },
  	{ "max-cache-size", &cfg_type_sizenodefault, 0 },

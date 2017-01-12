@@ -5,6 +5,15 @@ bin/host
 bin/isc-config.sh
 bin/nslookup
 bin/nsupdate
+etc/mtree/BIND.chroot.dist
+etc/mtree/BIND.chroot.local.dist
+%%ETCDIR%%/bind.keys
+%%ETCDIR%%/master/empty.db
+%%ETCDIR%%/master/localhost-forward.db
+%%ETCDIR%%/master/localhost-reverse.db
+@sample %%ETCDIR%%/named.conf.sample
+%%ETCDIR%%/named.root
+%%ETCDIR%%/rndc.conf.sample
 include/bind9/check.h
 include/bind9/getaddresses.h
 include/bind9/version.h
@@ -372,13 +381,13 @@ man/man8/named-compilezone.8.gz
 man/man8/named-journalprint.8.gz
 man/man8/named.8.gz
 man/man8/nsec3hash.8.gz
-man/man8/tsig-keygen.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-destroy.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-keygen.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-list.8.gz
 %%NATIVE_PKCS11%%man/man8/pkcs11-tokens.8.gz
 man/man8/rndc-confgen.8.gz
 man/man8/rndc.8.gz
+man/man8/tsig-keygen.8.gz
 sbin/arpaname
 sbin/ddns-confgen
 %%PYTHON%%sbin/dnssec-checkds
@@ -408,16 +417,7 @@ sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
 sbin/tsig-keygen
-%%ETCDIR%%/rndc.conf.sample
-%%ETCDIR%%/bind.keys
-%%NOBASE%%etc/mtree/BIND.chroot.dist
-%%NOBASE%%etc/mtree/BIND.chroot.local.dist
-%%NOBASE%%@sample %%ETCDIR%%/named.conf.sample
-%%NOBASE%%%%ETCDIR%%/named.root
-%%NOBASE%%%%ETCDIR%%/master/empty.db
-%%NOBASE%%%%ETCDIR%%/master/localhost-forward.db
-%%NOBASE%%%%ETCDIR%%/master/localhost-reverse.db
-%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/dynamic
-%%NOBASE%%@dir %%ETCDIR%%/master
-%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/slave
-%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/working
+@dir(bind,bind,) %%ETCDIR%%/dynamic
+@dir %%ETCDIR%%/master
+@dir(bind,bind,) %%ETCDIR%%/slave
+@dir(bind,bind,) %%ETCDIR%%/working
