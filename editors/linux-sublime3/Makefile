@@ -3,6 +3,7 @@
 
 PORTNAME=	sublime
 PORTVERSION=	3.1.26
+PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
 PKGNAMEPREFIX=	linux-

@@ -3,7 +3,7 @@
 
 PORTNAME=	libxml2
 PORTVERSION=	2.7.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc linux
 
 MAINTAINER=	emulation@FreeBSD.org

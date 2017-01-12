@@ -3,7 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.8.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts linux
 
 MAINTAINER=	emulation@FreeBSD.org

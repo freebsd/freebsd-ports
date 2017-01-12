@@ -3,7 +3,7 @@
 
 PORTNAME=	cups-libs
 PORTVERSION=	1.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print linux
 
 MAINTAINER=	emulation@FreeBSD.org

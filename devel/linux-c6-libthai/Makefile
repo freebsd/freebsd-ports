@@ -2,6 +2,7 @@
 
 PORTNAME=	libthai
 PORTVERSION=	0.1.12
+PORTREVISION=	1
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org

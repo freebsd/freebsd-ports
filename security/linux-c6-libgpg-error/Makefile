@@ -3,7 +3,7 @@
 
 PORTNAME=	libgpg-error
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
