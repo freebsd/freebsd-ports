@@ -37,9 +37,14 @@ post-build:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fltk/_fltk.so
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/html/ ${STAGEDIR}${EXAMPLESDIR}/
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/html/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README TODO ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/fltk/docs/ && ${INSTALL_DATA} *.html *.jpg ${STAGEDIR}${DOCSDIR}/html/
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/fltk/test/ && ${INSTALL_DATA} *.py HelpDialog.html ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
