@@ -26,8 +26,6 @@ NO_CDROM=	May not be redistributed in binary form
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		installs incompatible binaries for FreeBSD
-.elif ${OSVERSION} < 1000000
-DIST_OSVER=	9
 .else
 DIST_OSVER=	10
 .endif
