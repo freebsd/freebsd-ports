@@ -18,8 +18,9 @@ GH_PROJECT=	PHPMailer
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		dos2unix php
+USES=		cpe dos2unix php
 
+CPE_VENDOR=	phpmailer_project
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	EXAMPLES
