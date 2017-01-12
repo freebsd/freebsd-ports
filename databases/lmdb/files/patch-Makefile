@@ -1,6 +1,6 @@
---- Makefile.orig	2016-02-05 21:22:15 UTC
+--- Makefile.orig	2017-01-11 16:19:33 UTC
 +++ Makefile
-@@ -23,7 +23,7 @@ AR	= ar
+@@ -23,17 +23,17 @@ AR	= ar
  W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast -Wuninitialized
  THREADS = -pthread
  OPT = -O2 -g
@@ -8,8 +8,11 @@
 +CFLAGS	+= $(THREADS) $(W)
  LDLIBS	=
  SOLIBS	=
+-SOEXT	= .so
++SOEXT	= .so.0
  prefix	= /usr/local
-@@ -32,26 +32,26 @@ bindir = $(exec_prefix)/bin
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
  libdir = $(exec_prefix)/lib
  includedir = $(prefix)/include
  datarootdir = $(prefix)/share
@@ -18,9 +21,7 @@
  
  ########################################################################
  
- IHDRS	= lmdb.h
--ILIBS	= liblmdb.a liblmdb.so
-+ILIBS	= liblmdb.a liblmdb.so.0
+@@ -42,17 +42,17 @@ ILIBS	= liblmdb.a liblmdb$(SOEXT)
  IPROGS	= mdb_stat mdb_copy mdb_dump mdb_load
  IDOCS	= mdb_stat.1 mdb_copy.1 mdb_dump.1 mdb_load.1
  PROGS	= $(IPROGS) mtest mtest2 mtest3 mtest4 mtest5
@@ -43,12 +44,9 @@
  
  clean:
  	rm -rf $(PROGS) *.[ao] *.[ls]o *~ testdb
-@@ -63,14 +63,18 @@ test:	all
- liblmdb.a:	mdb.o midl.o
- 	$(AR) rs $@ mdb.o midl.o
+@@ -66,12 +66,16 @@ liblmdb.a:	mdb.o midl.o
  
--liblmdb.so:	mdb.lo midl.lo
-+liblmdb.so.0:	mdb.lo midl.lo
+ liblmdb$(SOEXT):	mdb.lo midl.lo
  #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
 -	$(CC) $(LDFLAGS) -pthread -shared -o $@ mdb.lo midl.lo $(SOLIBS)
 +	$(CC) $(LDFLAGS) -pthread -shared -Wl,-soname,$@ -o $@ mdb.lo midl.lo $(SOLIBS)
