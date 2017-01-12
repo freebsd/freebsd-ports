@@ -3,7 +3,7 @@
 
 PORTNAME=	ansible
 PORTVERSION?=	2.2.0.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -18,7 +18,10 @@ RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
 
-EXTRA_PATCHES?=	${FILESDIR}/extra-patch-872594b
+EXTRA_PATCHES?=	${FILESDIR}/extra-patch-872594b \
+		${FILESDIR}/extra-patch-ec84ff6 \
+		${FILESDIR}/extra-patch-eb8c26c \
+		${FILESDIR}/extra-patch-cc4634a
 
 NO_ARCH=	yes
 USES?=		cpe python shebangfix
