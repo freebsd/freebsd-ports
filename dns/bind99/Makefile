@@ -15,7 +15,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.9-P4
+ISCVERSION=	9.9.9-P5
 
 USES=	cpe libedit
 
@@ -39,13 +39,13 @@ ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS=	bind-tools bind9-devel bind910 bind911
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message named.conf
 
 OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE RRL DLZ_FILESYSTEM \
 			RPZ_NSIP RPZ_NSDNAME
-OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE FIXED_RRSET SIGCHASE \
+OPTIONS_DEFINE=		SSL IDN LARGE_FILE FIXED_RRSET SIGCHASE \
 			IPV6 THREADS FILTER_AAAA GOST PYTHON START_LATE MINCACHE \
-			LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS \
+			RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS \
 			PORTREVISION FETCHLIMIT QUERYTRACE
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
@@ -56,7 +56,6 @@ OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_SUB=	yes
 
 SSL_DESC=		Build with OpenSSL (Required for DNSSEC)
-REPLACE_BASE_DESC=	EOL, no longer supported
 LARGE_FILE_DESC=	64-bit file support
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
@@ -69,7 +68,6 @@ PORTREVISION_DESC=	Show PORTREVISION in the version string
 FETCHLIMIT_DESC=	Enable the query quotas for resolvers
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 
-LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
@@ -159,32 +157,13 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 
 .include <bsd.port.options.mk>
 
-.if !${PORT_OPTIONS:MLINKS}
-PKGINSTALL=${NONEXISTENT}
-.endif
-
 .if ${PORT_OPTIONS:MTHREADS} && !${PORT_OPTIONS:MDLZ_MYSQL}
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if ${PORT_OPTIONS:MREPLACE_BASE}
-IGNORE=		REPLACE_BASE is no longer supported
-.endif # REPLACE_BASE
-
-.if ${OPSYS} == DragonFly || (${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100)
-PKGINSTALL=	${NONEXISTENT}
-PLIST_SUB+=	NOBASE="" BASE="@comment "
-SUB_LIST+=	NOBASE="" BASE="@comment "
-USE_RC_SUBR+=	named
-SUB_FILES+=	named.conf
-.else
-PLIST_SUB+=	NOBASE="@comment " BASE=""
-SUB_LIST+=	NOBASE="@comment " BASE=""
-.endif
-
-PKGDEINSTALL=	${PKGINSTALL}
+USE_RC_SUBR=	named
 
 MAKE_JOBS_UNSAFE=	yes
 

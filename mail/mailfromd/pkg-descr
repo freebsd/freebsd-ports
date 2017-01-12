@@ -1,0 +1,14 @@
+Mailfromd is a general-purpose mail filtering daemon for Sendmail, Postfix,
+and MeTA1.  It is able to filter both incoming and outgoing messages using
+criteria of arbitrary complexity, supplied by the administrator in the form
+of a script file.  The daemon interacts with the MTA via Milter or PMilter
+protocols.  Some of its features:
+
+  - Flexible programming language for writing MTA extensions
+  - Sender address verification (call-out)
+  - Greylisting and whitelisting
+  - Mail sending rate control
+  - Local account verification
+  - Native language support
+
+WWW: http://puszcza.gnu.org.ua/software/mailfromd/

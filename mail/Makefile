@@ -216,6 +216,7 @@
     SUBDIR += maildrop
     SUBDIR += mailest
     SUBDIR += mailfmt
+    SUBDIR += mailfromd
     SUBDIR += mailfront
     SUBDIR += mailgraph
     SUBDIR += mailman

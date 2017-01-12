@@ -37,9 +37,11 @@ include/jrtplib3/rtprandomrand48.h
 include/jrtplib3/rtprandomrands.h
 include/jrtplib3/rtprandomurandom.h
 include/jrtplib3/rtprawpacket.h
+include/jrtplib3/rtpsecuresession.h
 include/jrtplib3/rtpsession.h
 include/jrtplib3/rtpsessionparams.h
 include/jrtplib3/rtpsessionsources.h
+include/jrtplib3/rtpsocketutil.h
 include/jrtplib3/rtpsourcedata.h
 include/jrtplib3/rtpsources.h
 include/jrtplib3/rtpstructs.h
