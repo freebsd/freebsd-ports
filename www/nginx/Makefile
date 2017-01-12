@@ -1159,7 +1159,7 @@ GROUPS?=${WWWGRP}
 
 .if defined(NGINX_OPENSSL)
 USE_OPENSSL=	yes
-.if ${OSVERSION} < 1100000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
 WITH_OPENSSL_PORT=yes
 .endif
 .endif
