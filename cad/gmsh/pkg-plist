@@ -151,6 +151,7 @@ bin/onelab.py
 %%SHARED%%include/gmsh/orthogonalTerm.h
 %%SHARED%%include/gmsh/partitionEdge.h
 %%SHARED%%include/gmsh/periodical.h
+%%SHARED%%include/gmsh/pointsGenerators.h
 %%SHARED%%include/gmsh/polynomialBasis.h
 %%SHARED%%include/gmsh/simple3D.h
 %%SHARED%%include/gmsh/simpleFunction.h
