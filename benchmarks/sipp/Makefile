@@ -3,6 +3,7 @@
 
 PORTNAME=	sipp
 PORTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -29,7 +30,7 @@ SCTP_CONFIGURE_WITH=	sctp
 RTPSTREAM_CONFIGURE_WITH=	rtpstream
 OPENSSL_CONFIGURE_WITH=	openssl
 
-OPENSSL_USE=	openssl=yes
+OPENSSL_USES=		ssl
 GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 
 PCAP_FILES=	dtmf_2833_0.pcap dtmf_2833_1.pcap dtmf_2833_2.pcap \
@@ -41,7 +42,7 @@ PCAP_FILES=	dtmf_2833_0.pcap dtmf_2833_1.pcap dtmf_2833_2.pcap \
 PCAP_PLIST_FILES=	${PCAP_FILES:S|^|${DATADIR}/pcap/|}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|[[:<:]]curses|ncurses|' ${WRKSRC}/configure.ac
 
 post-patch-PCAP-on:
 	@${REINPLACE_CMD} \
@@ -50,7 +51,7 @@ post-patch-PCAP-on:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sipp.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/include/sipp.1 ${STAGEDIR}${PREFIX}/man/man1
 
 do-install-PCAP-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}/pcap

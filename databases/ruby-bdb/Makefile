@@ -57,10 +57,6 @@ SHEBANG_FILES=	examples/record.rb \
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} >= 2.1
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-bdbxml2-bdbxml.h
-.endif
-
 .if ${RUBY_VER} == 2.1
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-common.c-21
 .endif
@@ -76,9 +72,13 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/bdb.so
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/docs/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/doc)
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -empty")
 

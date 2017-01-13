@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	omxplayer
-PORTVERSION=	20151109
-PORTREVISION=	4
+PORTVERSION=	20161004
 CATEGORIES=	multimedia
 
 MAINTAINER=	mikael.urankar@gmail.com
 COMMENT=	Raspberry Pi video player
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libboost_thread.so:devel/boost-libs \
 		libdbus-1.so:devel/dbus \
 		libpcre.so:devel/pcre \
 		libEGL.so:misc/raspberrypi-userland \
@@ -27,10 +28,9 @@ ALL_TARGET=	omxplayer.bin
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	popcornmix
-GH_TAGNAME=	6f073c9
+GH_TAGNAME=	12b472e
 
 USES=		gmake shebangfix
-USE_GCC=	yes
 SHEBANG_FILES=	omxplayer
 
 PLIST_FILES=	bin/omxplayer bin/omxplayer.bin

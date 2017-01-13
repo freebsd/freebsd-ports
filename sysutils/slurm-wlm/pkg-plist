@@ -601,4 +601,3 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/usage_pies.gif
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/user_permissions.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/wckey.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/wiki.conf.html

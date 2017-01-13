@@ -1,5 +1,5 @@
-TIMESTAMP = 1481626268
-SHA256 (haproxy-1.7.1.tar.gz) = 56a7f5e919755d9b01b64f91b497c2c4eabdbe3a6fd84f7e5192a264097d8759
-SIZE (haproxy-1.7.1.tar.gz) = 1730401
+TIMESTAMP = 1484303469
+SHA256 (haproxy-1.7.2.tar.gz) = f95b40f52a4d61feaae363c9b15bf411c16fe8f61fddb297c7afcca0072e4b2f
+SIZE (haproxy-1.7.2.tar.gz) = 1735073
 SHA256 (deviceatlas-enterprise-c-2.1.zip) = a02fc29486d245b1c8d946c663b71ba981e88fee8d037f5bc1bf255deb287974
 SIZE (deviceatlas-enterprise-c-2.1.zip) = 504286

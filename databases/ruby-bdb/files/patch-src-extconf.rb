@@ -1,5 +1,5 @@
---- src/extconf.rb.orig	2015-01-22 16:09:31.000000000 +0000
-+++ src/extconf.rb	2015-01-22 16:09:34.000000000 +0000
+--- src/extconf.rb.orig	2015-01-22 16:09:31 UTC
++++ src/extconf.rb
 @@ -36,16 +36,16 @@
  
  if unknown = enable_config("unknown")

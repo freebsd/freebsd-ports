@@ -11,6 +11,15 @@
  my $is_developer = (-d ".svn" || -d ".git");
  
  my ($lmcd_h) = eval { build_libmemcached() };
+@@ -54,7 +54,7 @@ if (my $gccversion = $Config{gccversion}
+         $opts{DEFINE} .= ' -Wmissing-prototypes';
+     }
+ }
+-$opts{LIBS} = ["-lstdc++"]; # else error: libmemcached.so: undefined symbol: __gxx_personality_v0
++$opts{LIBS} = ["-lc++"]; # else error: libmemcached.so: undefined symbol: __gxx_personality_v0
+ $opts{OPTIMIZE} = "-g"  if $opt_g;
+ $opts{CCFLAGS}  = "-pg" if $opt_pg;
+ my $coverage_flags = "";
 @@ -76,7 +76,7 @@ WriteMakefile(
      AUTHOR              => 'Tim Bunce <Tim.Bunce@pobox.com>',
      VERSION_FROM        => 'libmemcached.pm',

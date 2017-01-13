@@ -1,6 +1,6 @@
---- Makefile.include.orig	2015-10-24 12:09:14 UTC
+--- Makefile.include.orig	2017-01-03 14:55:21 UTC
 +++ Makefile.include
-@@ -1,40 +1,7 @@
+@@ -1,40 +1,3 @@
 -USE_BUILDROOT=0
 -FLOAT=hard
 -
@@ -34,14 +34,13 @@
 -RANLIB			:= $(TOOLCHAIN)/bin/$(HOST)-ranlib
 -STRIP				:= $(TOOLCHAIN)/bin/$(HOST)-strip
 -AR 					:= $(TOOLCHAIN)/bin/$(HOST)-ar
-+LDFLAGS			:= -L$(LOCALBASE)/lib -L$(LOCALBASE)/lib/ffmpeg
- CXXCP 			:= $(CXX) -E
+-CXXCP 			:= $(CXX) -E
 -PATH 				:= $(PREFIX)/bin:$(BUILDROOT)/output/host/usr/bin:$(PATH)
-+STRIP			:= strip
-+FLOAT			:= softfp
- 
- CFLAGS			+= -pipe -mfloat-abi=$(FLOAT) -mcpu=arm1176jzf-s -fomit-frame-pointer -mabi=aapcs-linux -mtune=arm1176jzf-s -mfpu=vfp -Wno-psabi -mno-apcs-stack-check -g -mstructure-size-boundary=32 -mno-sched-prolog
+-
+-CFLAGS			+= -pipe -mfloat-abi=$(FLOAT) -mcpu=arm1176jzf-s -fomit-frame-pointer -mabi=aapcs-linux -mtune=arm1176jzf-s -mfpu=vfp -Wno-psabi -mno-apcs-stack-check -g -mstructure-size-boundary=32 -mno-sched-prolog
 -LDFLAGS			+= -L$(SDKSTAGE)/lib -L$(SDKSTAGE)/usr/lib -L$(SDKSTAGE)/opt/vc/lib/ -Lpcre/build
 -#INCLUDES		+= -isystem$(SDKSTAGE)/usr/include -isystem$(SDKSTAGE)/opt/vc/include -isystem$(SYSROOT)/usr/include -isystem$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -isystem$(SDKSTAGE)/usr/include/freetype2
 -INCLUDES		+= -isystem$(SDKSTAGE)/opt/vc/include -isystem$(SYSROOT)/usr/include -isystem$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -Ipcre/build -Iboost-trunk -Ifreetype2/include
++CFLAGS			+= -fomit-frame-pointer
++LDFLAGS			+= -L$(LOCALBASE)/lib -L$(LOCALBASE)/lib/ffmpeg
 +INCLUDES		+= -I$(LOCALBASE)/include -I$(LOCALBASE)/include/interface/vcos/pthreads -I$(LOCALBASE)/include/interface/vmcs_host/linux -I$(LOCALBASE)/lib/dbus-1.0/include
