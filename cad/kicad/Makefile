@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	20140622%2Bbzr4027
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://launchpadlibrarian.net/179199115/
@@ -19,14 +19,8 @@ RUN_DEPENDS=	xpdf:graphics/xpdf
 
 CONFLICTS=	kicad-devel*
 
-USES=		cmake desktop-file-utils dos2unix shared-mime-info tar:xz
-
-# Does not compile with Gcc48
-USE_GCC=	4.7
-#USES+=		compiler:gcc-c++11-lib
-LDFLAGS+=	-L${LOCALBASE}/lib/c++
-CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
+USES=		cmake compiler:gcc-c++11-lib desktop-file-utils dos2unix \
+		shared-mime-info tar:xz
 
 DOS2UNIX_GLOB=	*.cmake sch_bus_entry.h sch_line.h sch_no_connect.h
 USE_XORG=	ice x11 xext
