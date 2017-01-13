@@ -1,0 +1,13 @@
+Bug 1153151 - make libcubeb sndio use non-blocking i/o
+
+--- mozilla/media/libcubeb/src/cubeb_sndio.c.orig	2017-01-12 17:53:15 UTC
++++ mozilla/media/libcubeb/src/cubeb_sndio.c
+@@ -187,7 +187,7 @@ sndio_stream_init(cubeb *context,
+   if (s == NULL)
+     return CUBEB_ERROR;
+   s->context = context;
+-  s->hdl = sio_open(NULL, SIO_PLAY, 0);
++  s->hdl = sio_open(NULL, SIO_PLAY, 1);
+   if (s->hdl == NULL) {
+     free(s);
+     DPR("sndio_stream_init(), sio_open() failed\n");
