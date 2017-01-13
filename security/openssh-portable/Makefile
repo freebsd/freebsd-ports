@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	7.3p1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -69,7 +69,7 @@ X509_PATCHFILES=	${PORTNAME}-7.3p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 #SCTP_PATCHFILES=	${PORTNAME}-7.2_p1-sctp.patch.gz:-p1
 SCTP_CONFIGURE_WITH=	sctp
 #SCTP_BROKEN=		does not apply to 7.3+
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-sctp:-p1
+SCTP_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sctp:-p1
 
 MIT_LIB_DEPENDS=		libkrb5.so.3:security/krb5
 HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:security/heimdal
