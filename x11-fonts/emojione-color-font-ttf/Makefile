@@ -4,7 +4,7 @@
 PORTNAME=	emojione-color-font-ttf
 PORTVERSION=	1.3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://github.com/eosrei/emojione-color-font/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/eosrei/emojione-color-font/releases/download/v${PORTVERSION}/
 DISTNAME=	EmojiOneColor-SVGinOT-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
