@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2015-03-03 05:17:45 UTC
+--- src/Makefile.in.orig	2016-11-22 04:55:36 UTC
 +++ src/Makefile.in
-@@ -344,7 +344,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/include $(
+@@ -357,7 +357,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/include $(
  # _ladir passes a dummy rpath to libtool so the thing will actually link
  # TODO: -nostdlib/-Bstatic/-lgcc platform magic, not installing the .a, etc.
  @DRIVER_NAME@_drv_la_LTLIBRARIES = @DRIVER_NAME@_drv.la

@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-input-mouse-1.9.1.tar.bz2) = 3485d375779c08406f0789feedde15933dc703158a086ddac638598f479fc5ce
-SIZE (xorg/driver/xf86-input-mouse-1.9.1.tar.bz2) = 348244
+TIMESTAMP = 1479392438
+SHA256 (xorg/driver/xf86-input-mouse-1.9.2.tar.bz2) = f425d5b05c6ab412a27e0a1106bb83f9e2662b307210abbe48270892387f4b2f
+SIZE (xorg/driver/xf86-input-mouse-1.9.2.tar.bz2) = 377685
