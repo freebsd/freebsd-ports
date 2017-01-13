@@ -39,7 +39,7 @@ APE_DESC=	Depend on mac for Monkey's Audio transcoding #'
 OPTIONS_DEFAULT=	FFMPEG JETTY
 OPTIONS_SUB=	yes
 
-RUN_DEPENDS+=	${JAVAJARDIR}/servlet-api.jar:www/servlet-api \
+RUN_DEPENDS+=	${JAVALIBDIR}/servlet-api.jar:www/servlet-api \
 	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 TOMCAT8_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8
 TOMCAT8_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8

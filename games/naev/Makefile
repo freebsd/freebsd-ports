@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbisfile.so:audio/libvorbis \
 		libzip.so:archivers/libzip \
 		libcsparse.so:math/suitesparse
-RUN_DEPENDS=	${DATADIR}/ndata-${PORTVERSION}.zip:games/naev-data
+RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/ndata-${PORTVERSION}.zip:games/naev-data
 
 USES=		autoreconf:build compiler:features gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes

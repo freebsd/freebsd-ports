@@ -28,7 +28,7 @@ FOP_DESC=		textproc/fop plugin (required for math/scilab)
 FOP_BUILD_DEPENDS=	fop:textproc/fop \
 			${JAVALIBDIR}/xmlgraphics-commons.jar:graphics/xmlgraphics-commons
 FOP_RUN_DEPENDS:=	${FOP_BUILD_DEPENDS} \
-			${JAVASHAREDIR}/batik/batik.jar:graphics/batik \
+			${JAVALIBDIR}/../batik/batik.jar:graphics/batik \
 			${JAVALIBDIR}/avalon-framework.jar:devel/avalon-framework \
 			${JAVALIBDIR}/commons-io.jar:devel/jakarta-commons-io \
 			${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \

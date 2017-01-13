@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-7.66-linux20130827
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (native version)
 
-RUN_DEPENDS=	${DATADIR}/data1/default.cfg:games/alienarena-data
+RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/data1/default.cfg:games/alienarena-data
 
 USES=		compiler:c++11-lib dos2unix gmake
 USE_CXXSTD=	c++11

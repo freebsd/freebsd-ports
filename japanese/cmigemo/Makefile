@@ -17,7 +17,7 @@ COMMENT=	C implementation of Migemo Japanese incremental search tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE_MIT.txt
 
-RUN_DEPENDS=	${DATADIR}/cp932/migemo-dict:japanese/cmigemo-dict
+RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/cp932/migemo-dict:japanese/cmigemo-dict
 
 USE_LDCONFIG=	yes
 

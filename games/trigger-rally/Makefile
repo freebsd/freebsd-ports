@@ -12,7 +12,7 @@ COMMENT=	Rally car racing game
 
 BUILD_DEPENDS=	jam:devel/jam
 LIB_DEPENDS=	libphysfs.so:devel/physfs
-RUN_DEPENDS=	${DATADIR}/trigger.config.defs:games/trigger-data
+RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/trigger.config.defs:games/trigger-data
 
 USES=		openal:al,alut tar:bzip2
 USE_SDL=	sdl image

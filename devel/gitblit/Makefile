@@ -55,13 +55,13 @@ RUN_DEPENDS+=	nginx:www/nginx
 
 .if ${PORT_OPTIONS:MTOMCAT6}
 GB_HOME=	${PREFIX}/apache-tomcat-6.0/webapps/${PORTNAME}
-RUN_DEPENDS+=	${PREFIX}/etc/rc.d/tomcat6:www/tomcat6
+RUN_DEPENDS+=	${LOCALBASE}/etc/rc.d/tomcat6:www/tomcat6
 .elif ${PORT_OPTIONS:MTOMCAT7}
 GB_HOME=	${PREFIX}/apache-tomcat-7.0/webapps/${PORTNAME}
-RUN_DEPENDS+=	${PREFIX}/etc/rc.d/tomcat7:www/tomcat7
+RUN_DEPENDS+=	${LOCALBASE}/etc/rc.d/tomcat7:www/tomcat7
 .elif ${PORT_OPTIONS:MTOMCAT8}
 GB_HOME=	${PREFIX}/apache-tomcat-8.0/webapps/${PORTNAME}
-RUN_DEPENDS+=	${PREFIX}/etc/rc.d/tomcat8:www/tomcat8
+RUN_DEPENDS+=	${LOCALBASE}/etc/rc.d/tomcat8:www/tomcat8
 .endif
 
 do-extract:

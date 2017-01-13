@@ -15,7 +15,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:devel/itext			\
 		${JAVALIBDIR}/crimson.jar:textproc/crimson		\
 		${JAVALIBDIR}/poi.jar:textproc/apache-poi		\
 		${JAVALIBDIR}/jfreechart.jar:java/jfreechart	\
-		${JAVASHAREDIR}/batik/batik.jar:graphics/batik	\
+		${JAVALIBDIR}/../batik/batik.jar:graphics/batik	\
 		${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils\
 		${JAVALIBDIR}/commons-digester.jar:textproc/jakarta-commons-digester
 
