@@ -1,5 +1,18 @@
---- actioncompiler/swf4compiler.y.orig	Mon Dec  2 11:10:00 2002
-+++ actioncompiler/swf4compiler.y	Mon Dec  2 11:12:15 2002
+--- actioncompiler/swf4compiler.y.orig	2002-06-24 12:21:54 UTC
++++ actioncompiler/swf4compiler.y
+@@ -6,10 +6,10 @@
+ #include <string.h>
+ #include "compile.h"
+ 
+-#define YYPARSE_PARAM buffer
+-
+ %}
+ 
++%parse-param {void *buffer}
++
+ %union {
+   Buffer action;
+   char *str;
 @@ -119,7 +119,6 @@
  %type <action> expr_opt
  %type <action> void_function_call
@@ -16,7 +29,7 @@
  
  elems
  	: elem
-@@ -277,6 +277,7 @@
+@@ -277,6 +277,7 @@ if_stmt
  		  bufferWriteS16($3, bufferLength($5));
  		  bufferConcat($3, $5);
  		  $$ = $3; }
