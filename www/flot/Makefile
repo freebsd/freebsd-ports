@@ -9,29 +9,32 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript plotting library for jQuery
 
 LICENSE=	MIT
-
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		zip
+WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES JQUERY
-JQUERY_DESC=	Include provided JQuery 1.8.3
 OPTIONS_DEFAULT=	JQUERY
 OPTIONS_SUB=	yes
 
+JQUERY_DESC=	Include provided JQuery 1.8.3
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.js \
-		${STAGEDIR}${WWWDIR})
+	${INSTALL_DATA} ${WRKSRC}/*.js ${STAGEDIR}${WWWDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.md \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "*" \
-		${STAGEDIR}${EXAMPLESDIR})
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
