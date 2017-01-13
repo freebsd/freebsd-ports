@@ -56,7 +56,7 @@ CHECK_PORT=	nc -z localhost $$\1 2>\&1
 OPTIONS_DEFINE=		IMAGEMAGICK KERBEROS LDAP IODBC
 
 post-patch:
-	${REINPLACE_CMD} -e 's,-lruby,-lruby${RUBY_VER:S,.,,},g'\
+	${REINPLACE_CMD} -e 's,-lruby,-lruby${RUBY_SUFFIX},g'\
 			${WRKSRC}/configure
 	${FIND} ${WRKSRC} -name '*.sh' | ${XARGS} ${GREP} -l 'netstat -an.*grep LISTEN' |\
 	    ${XARGS} ${REINPLACE_CMD}\
