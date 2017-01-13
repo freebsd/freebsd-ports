@@ -18,7 +18,7 @@ BUILD_DEPENDS=	arm-none-eabi-gcc:devel/arm-none-eabi-gcc \
 		gsed:textproc/gsed \
 		swig3.0:devel/swig30 \
 		python:lang/python2 \
-		${PREFIX}/bin/dtc:sysutils/dtc
+		${LOCALBASE}/bin/dtc:sysutils/dtc
 
 USES=		gmake
 
