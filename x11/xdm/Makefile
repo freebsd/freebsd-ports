@@ -2,7 +2,7 @@
 
 PORTNAME=	xdm
 PORTVERSION=	1.1.11
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,7 +13,9 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	xmu x11 xau xinerama xpm xdmcp xt xext xaw
 CONFIGURE_ARGS+=	--with-xdmconfigdir=${PREFIX}/lib/X11/xdm \
-			--with-xdmscriptdir=${PREFIX}/lib/X11/xdm
+			--with-xdmscriptdir=${PREFIX}/lib/X11/xdm \
+			--with-authdir=/var/db/xdm
+
 USES=		cpe libtool
 CPE_PRODUCT=	x_display_manager
 CPE_VENDOR=	x
@@ -23,10 +25,14 @@ CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 
 OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	XDMSHELL
+OPTIONS_DEFINE=	XDMSHELL XFT
+OPTIONS_DEFAULT=	XFT
 XDMSHELL_DESC=	Install xdmshell
 
 XDMSHELL_CONFIGURE_ENABLE=	xdmshell
+
+XFT_USE=	xorg=xft
+XFT_CONFIGURE_WITH=	xft
 
 INSTALL_TARGET=	install-strip
 
@@ -44,7 +50,6 @@ post-install:
 .for f in ${CFFILES}
 	@${MV} ${STAGEDIR}${PREFIX}/lib/X11/xdm/${f} ${STAGEDIR}${PREFIX}/lib/X11/xdm/${f}.sample
 .endfor
-	@${MKDIR} ${STAGEDIR}/var/lib/xdm/authdir
-	@${LN} -sf /var/lib/xdm/authdir ${STAGEDIR}${PREFIX}/lib/X11/xdm/authdir
+	@${MKDIR} ${STAGEDIR}/var/db/xdm
 
 .include <bsd.port.mk>
