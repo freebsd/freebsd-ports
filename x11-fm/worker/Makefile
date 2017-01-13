@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	worker
-PORTVERSION=	3.8.4
+PORTVERSION=	3.8.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
@@ -31,7 +31,11 @@ AVFS_DESC=	Use AVFS library to access an archives
 AVFS_LIB_DEPENDS=	libavfs.so:sysutils/avfs
 
 HAL_LIB_DEPENDS=	libhal-storage.so:sysutils/hal \
-			libdbus-glib-1.so:devel/dbus-glib
+			libdbus-glib-1.so:devel/dbus-glib \
+			libdbus-1.so:devel/dbus
+HAL_USE=	gnome=glib20 xorg=sm,ice
+HAL_USES=	gettext-runtime
+
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 INOTIFY_LDFLAGS=	-L${LOCALBASE}/lib
 
@@ -39,6 +43,6 @@ LUA_CONFIGURE_OFF=	--disable-lua
 LUA_USES=	lua:51
 
 XFT_CONFIGURE_OFF=	--disable-xft
-XFT_USE=	XORG=xft
+XFT_USE=	xorg=xft
 
 .include <bsd.port.mk>
