@@ -5,4 +5,4 @@ file loads directly. Modules loaded with parent or base, for instance,
 will will be in the import list for those pragmas but won't have separate
 entries in the data this module returns.
 
-WWW: http://github.com/briandfoy/module-extract-use/tree/master
+WWW: https://github.com/briandfoy/module-extract-use/tree/master

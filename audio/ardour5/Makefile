@@ -4,8 +4,7 @@
 PORTNAME=	ardour5
 PORTVERSION=	5.5.0
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/ \
-		http://github.com/beerml/ardour_releases/raw/master/
+MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
 # The original master side points to the latest release only:
 # MASTER_SITES=	https://community.ardour.org/srctar/
 DISTNAME=	Ardour-${PORTVERSION}
