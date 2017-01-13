@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmms-flac
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 DISTNAME=	flac-${PORTVERSION}
@@ -16,8 +16,11 @@ LIB_DEPENDS=	libxmms.so:multimedia/xmms \
 		libFLAC.so:audio/flac \
 		libogg.so:audio/libogg
 
-USES=		iconv libtool tar:xz
+USES=		gettext-runtime iconv libtool tar:xz
+USE_GNOME=	gtk12
+USE_XORG=	xi xext x11
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 MAKEFILE=	${FILESDIR}/Makefile
 
