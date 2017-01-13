@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1100077
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
 # chmod -R bug
 post-extract:
 	@${CHMOD} 755 ${WRKSRC}
