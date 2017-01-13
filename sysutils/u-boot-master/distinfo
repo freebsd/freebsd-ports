@@ -1,3 +1,3 @@
-TIMESTAMP = 1484005629
-SHA256 (bsdimp-u-boot-ports-v2017.01_GH0.tar.gz) = 016e65be71a9d3c4c3fca171ffe631f835868c6a248906770c42dcc2c4ef3161
-SIZE (bsdimp-u-boot-ports-v2017.01_GH0.tar.gz) = 15522828
+TIMESTAMP = 1484197628
+SHA256 (bsdimp-u-boot-ports-v2017.01.00.1_GH0.tar.gz) = bd88d48482f9db45b88e1bb487e784793b729307e5a8a7e4b048c92d419321d3
+SIZE (bsdimp-u-boot-ports-v2017.01.00.1_GH0.tar.gz) = 15521395
