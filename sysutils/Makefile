@@ -754,6 +754,7 @@
     SUBDIR += packetbeat
     SUBDIR += pacman
     SUBDIR += paicc
+    SUBDIR += paladin
     SUBDIR += pam_mount
     SUBDIR += panicmail
     SUBDIR += parafly

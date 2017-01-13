@@ -1,0 +1,3 @@
+To run paladin:
+- Edit /usr/local/etc/paladin.conf 
+- Add paladin_enable="YES" to /etc/rc.conf

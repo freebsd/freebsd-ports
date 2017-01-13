@@ -1,0 +1,3 @@
+bin/paladin
+@sample etc/paladin.conf.sample
+etc/rc.d/paladin
