@@ -1,26 +1,26 @@
---- Makefile.orig	2015-10-24 12:09:14 UTC
+--- Makefile.orig	2016-09-14 UTC
 +++ Makefile
 @@ -2,9 +2,9 @@ include Makefile.include
  
  CFLAGS+=-std=c++0x -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS -DTARGET_POSIX -DTARGET_LINUX -fPIC -DPIC -D_REENTRANT -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CMAKE_CONFIG -D__VIDEOCORE4__ -U_FORTIFY_SOURCE -Wall -DHAVE_OMXLIB -DUSE_EXTERNAL_FFMPEG  -DHAVE_LIBAVCODEC_AVCODEC_H -DHAVE_LIBAVUTIL_OPT_H -DHAVE_LIBAVUTIL_MEM_H -DHAVE_LIBAVUTIL_AVUTIL_H -DHAVE_LIBAVFORMAT_AVFORMAT_H -DHAVE_LIBAVFILTER_AVFILTER_H -DHAVE_LIBSWRESAMPLE_SWRESAMPLE_H -DOMX -DOMX_SKIP64BIT -ftree-vectorize -DUSE_EXTERNAL_OMX -DTARGET_RASPBERRY_PI -DUSE_EXTERNAL_LIBBCM_HOST
  
--LDFLAGS+=-L./ -Lffmpeg_compiled/usr/local/lib/ -lc -lWFC -lGLESv2 -lEGL -lbcm_host -lopenmaxil -lfreetype -lz
-+LDFLAGS+=-L./ -lWFC -lGLESv2 -lEGL -lbcm_host -lopenmaxil -lfreetype -lz
+-LDFLAGS+=-L./ -Lffmpeg_compiled/usr/local/lib/ -lc -lWFC -lGLESv2 -lEGL -lbcm_host -lopenmaxil -lfreetype -lz -lasound
++LDFLAGS+=-L./ -lWFC -lGLESv2 -lEGL -lbcm_host -lopenmaxil -lfreetype -lz -lasound
  
 -INCLUDES+=-I./ -Ilinux -Iffmpeg_compiled/usr/local/include/ -I /usr/include/dbus-1.0 -I /usr/lib/arm-linux-gnueabihf/dbus-1.0/include
 +INCLUDES+=-I./ -Ilinux -I$(LOCALBASE)/include/dbus-1.0 -I$(LOCALBASE)/include/dbus-1.0/include -I$(LOCALBASE)/include/freetype2 -I$(LOCALBASE)/include/ffmpeg
  
  DIST ?= omxplayer-dist
  
-@@ -48,11 +48,10 @@ all: dist
+@@ -49,11 +49,10 @@ all: dist
  omxplayer.o: help.h keys.h
  
  version:
 -	bash gen_version.sh > version.h 
-+	sh gen_version.sh > version.h 
++	sh gen_version.sh > version.h
  
  omxplayer.bin: version $(OBJS)
--	$(CXX) $(LDFLAGS) -o omxplayer.bin $(OBJS) -lvchiq_arm -lvcos -ldbus-1 -lrt -lpthread -lavutil -lavcodec -lavformat -lswscale -lswresample -lpcre
+-	$(CXX) $(LDFLAGS) -o omxplayer.bin $(OBJS) -lvchiq_arm -lvchostif -lvcos -ldbus-1 -lrt -lpthread -lavutil -lavcodec -lavformat -lswscale -lswresample -lpcre
 -	$(STRIP) omxplayer.bin
 +	$(CXX) $(CFLAGS) $(LDFLAGS) -o omxplayer.bin $(OBJS) -lvchiq_arm -lvcos -ldbus-1 -lrt -lthr -lavutil -lavcodec -lavformat -lswscale -lswresample -lpcre
  
