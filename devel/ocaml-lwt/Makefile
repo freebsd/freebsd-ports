@@ -38,7 +38,7 @@ CONFIGURE_ARGS=		--destdir "${STAGEDIR}" \
 			--disable-glib
 
 DOCSDIR=		${PREFIX}/share/doc/ocaml/${PORTNAME}
-SA_DIR=			${PREFIX}/${OCAML_SITELIBDIR}
+SA_DIR=			${LOCALBASE}/${OCAML_SITELIBDIR}
 
 OPTIONS_DEFINE=		DOCS
 
@@ -61,7 +61,7 @@ do-build:
 	cd ${WRKSRC}; ocaml setup.ml -build
 
 do-install:
-	${MKDIR} ${STAGEDIR}${SA_DIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}
 	cd ${WRKSRC}; ocaml setup.ml -install
 
 .include <bsd.port.mk>

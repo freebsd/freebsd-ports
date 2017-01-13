@@ -25,7 +25,7 @@ TEST_DEPENDS=	bash:shells/bash \
 		gsed:sysutils/coreutils \
 		gsha256sum:sysutils/coreutils \
 		gpg:security/gnupg \
-		${PREFIX}/bin/gdb:devel/gdb
+		${LOCALBASE}/bin/gdb:devel/gdb
 
 BROKEN_powerpc64=	Does not build
 
@@ -41,7 +41,7 @@ TEST_ENV+=	NOTMUCH_SKIP_TESTS="basic count insert smime atomicity \
 		message-property" \
 		V=1 \
 		TEST_CFLAGS="-g -O0 -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
-		BSD_GDB=${PREFIX}/bin/gdb
+		BSD_GDB=${LOCALBASE}/bin/gdb
 
 TEST_TARGET=	test
 

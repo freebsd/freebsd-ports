@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-pipeline
-PORTVERSION=	1.6.9
+PORTVERSION=	1.6.10
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,6 @@ COMMENT=	Asset (css/js) packaging library for Django
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18
 
 NO_ARCH=	yes
 USES=		python:2.7+

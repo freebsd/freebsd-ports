@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES+=	cpe
 CPE_PRODUCT=	commons-httpclient
 CPE_VENDOR=	apache
-RUN_DEPENDS=	${JAVAJARDIR}/httpcore.jar:www/httpcore \
-		${JAVAJARDIR}/commons-logging.jar:java/jakarta-commons-logging \
-		${JAVAJARDIR}/commons-codec.jar:java/jakarta-commons-codec
+RUN_DEPENDS=	${JAVALIBDIR}/httpcore.jar:www/httpcore \
+		${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \
+		${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 USE_JAVA=	yes

@@ -1,0 +1,40 @@
+Bug 1153179 - fix latency reporting in libcubeb sndio
+
+--- media/libcubeb/src/cubeb_sndio.c.orig	2017-01-12 17:53:15 UTC
++++ media/libcubeb/src/cubeb_sndio.c
+@@ -67,7 +67,7 @@ sndio_onmove(void *arg, int delta)
+ {
+   cubeb_stream *s = (cubeb_stream *)arg;
+ 
+-  s->rdpos += delta;
++  s->rdpos += delta * s->bpf;
+ }
+ 
+ static void *
+@@ -135,7 +135,7 @@ sndio_mainloop(void *arg)
+         state = CUBEB_STATE_ERROR;
+         break;
+       }
+-      s->wrpos = 0;
++      s->wrpos += n;
+       start += n;
+     }
+   }
+@@ -326,7 +336,7 @@ sndio_stream_get_position(cubeb_stream *
+ {
+   pthread_mutex_lock(&s->mtx);
+   DPR("sndio_stream_get_position() %lld\n", s->rdpos);
+-  *p = s->rdpos;
++  *p = s->rdpos / s->bpf;
+   pthread_mutex_unlock(&s->mtx);
+   return CUBEB_OK;
+ }
+@@ -346,7 +356,7 @@ sndio_stream_get_latency(cubeb_stream * 
+ {
+   // http://www.openbsd.org/cgi-bin/man.cgi?query=sio_open
+   // in the "Measuring the latency and buffers usage" paragraph.
+-  *latency = stm->wrpos - stm->rdpos;
++  *latency = (stm->wrpos - stm->rdpos) / stm->bpf;
+   return CUBEB_OK;
+ }
+ 

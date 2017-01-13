@@ -3,7 +3,7 @@
 
 PORTNAME=	libxul
 DISTVERSION=	45.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build1/source

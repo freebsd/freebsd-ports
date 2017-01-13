@@ -46,7 +46,7 @@ RESTRICTED=	Commercial license
 
 .include <bsd.port.options.mk>
 
-APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat6 -VAPP_HOME
+APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat6 -VAPP_HOME PREFIX=${LOCALBASE}
 
 CNFLSTS=	account/admin.ndt	\
 		account/license.dat	\

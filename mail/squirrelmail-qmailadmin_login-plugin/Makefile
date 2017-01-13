@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.4.3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Using the QmailAdmin cgi interface from SquirrelMail
 
-RUN_DEPENDS=	${PREFIX}/www/cgi-bin.default/qmailadmin/qmailadmin:mail/qmailadmin
+RUN_DEPENDS=	${LOCALBASE}/www/cgi-bin.default/qmailadmin/qmailadmin:mail/qmailadmin
 
 USE_GENERIC_PKGMESSAGE=	yes
 
