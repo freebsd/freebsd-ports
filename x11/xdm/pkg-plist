@@ -1,6 +1,5 @@
 bin/xdm
 %%XDMSHELL%%bin/xdmshell
-lib/X11/xdm/authdir
 lib/X11/xdm/chooser
 lib/X11/xdm/libXdmGreet.so
 lib/X11/xdm/pixmaps/xorg-bw.xpm
@@ -19,7 +18,6 @@ share/X11/app-defaults/Chooser
 @sample lib/X11/xdm/Xstartup.sample
 @sample lib/X11/xdm/Xwilling.sample
 @sample lib/X11/xdm/xdm-config.sample
-@unexec rm -rf /var/lib/xdm/authdir/* 2>/dev/null || true
-@dir /var/lib/xdm/authdir
-@dir /var/lib/xdm
-@dir /var/lib
+@postunexec rm -rf /var/db/xdm/* 2>/dev/null || true
+@dir /var/db/xdm
+@dir /var/db
