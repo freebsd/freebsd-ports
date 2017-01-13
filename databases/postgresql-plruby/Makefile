@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	CraigCottingham
 GH_TAGNAME=	f8d9ced
 
-USES+=		uidfix tar:bzip2 pgsql
+USES=		uidfix pgsql
 WANT_PGSQL=	server
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -36,27 +36,25 @@ OPTIONS_DEFINE=	DOCS
 
 PKGMESSAGE=	${WRKDIR}/createlang.sql
 
-.include <bsd.port.options.mk>
-
 post-fetch:
 	cd ${PGSQL_PORTDIR} && ${MAKE} -DBATCH patch
 
 post-build:
 	${SED} 's,!!PLRUBY_SO!!,${RUBY_SITEARCHLIBDIR}/plruby.so,' \
 		${FILESDIR}/createlang.sql > ${WRKDIR}/createlang.sql
-.if ${PORT_OPTIONS:MDOCS}
+
+post-build-DOCS-on:
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKDIR}/createlang.sql ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} docs/doc ${STAGEDIR}${RUBY_MODDOCDIR}/ README.markdown && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${RUBY_MODDOCDIR}/
 	${FIND} -ds ${STAGEDIR}${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.pre.mk>
 
