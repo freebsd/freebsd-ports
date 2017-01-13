@@ -1,5 +1,5 @@
---- ./src/bdb.c.orig	2011-04-06 19:35:39.000000000 +0000
-+++ ./src/bdb.c	2014-01-03 01:45:56.336210315 +0000
+--- src/bdb.c.orig	2011-04-06 19:35:39 UTC
++++ src/bdb.c
 @@ -166,11 +166,10 @@
  	rb_raise(rb_eNameError, "module already defined");
      }

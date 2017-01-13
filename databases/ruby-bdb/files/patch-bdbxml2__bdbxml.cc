@@ -1,5 +1,5 @@
---- ./bdbxml2/bdbxml.cc.orig	2011-04-06 19:35:39.000000000 +0000
-+++ ./bdbxml2/bdbxml.cc	2014-01-03 01:49:02.080197786 +0000
+--- bdbxml2/bdbxml.cc.orig	2011-04-06 19:35:39 UTC
++++ bdbxml2/bdbxml.cc
 @@ -5536,18 +5536,16 @@
  	major = NUM2INT(rb_const_get(xb_mDb, rb_intern("VERSION_MAJOR")));
  	minor = NUM2INT(rb_const_get(xb_mDb, rb_intern("VERSION_MINOR")));
