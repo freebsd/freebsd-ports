@@ -56,10 +56,8 @@ post-install-DOCS-on:
 	${FIND} -ds ${STAGEDIR}${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
 
-.include <bsd.port.pre.mk>
+BROKEN_RUBY22=	yes
+BROKEN_RUBY23=	yes
+BROKEN_RUBY24=	yes
 
-.if ${RUBY_VER} >= 2.2
-BROKEN=		Does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
