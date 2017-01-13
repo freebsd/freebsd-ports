@@ -1,9 +1,9 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION=	304.131
+DISTVERSION=	304.134
 # Explicitly set PORTREVISION as it can be overridden by the master port
-PORTREVISION=	4
+PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 PKGNAMESUFFIX=	-304
