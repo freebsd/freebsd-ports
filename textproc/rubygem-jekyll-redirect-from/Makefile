@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-redirect-from
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
