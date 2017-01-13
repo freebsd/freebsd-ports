@@ -40,7 +40,7 @@ CONFFILES+=	dma.conf auth.conf
 .include <bsd.port.pre.mk>
 
 # 11.x has dma imported into base and /var/spool/dma added to mtree
-.if ${OSVERSION} < 1100009
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100009
 PLIST_SUB+=	VARDIR=""
 .else
 PLIST_SUB+=	VARDIR="@comment "
