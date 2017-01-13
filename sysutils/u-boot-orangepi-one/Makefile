@@ -1,14 +1,10 @@
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-${MODEL}
+MAINTAINER=	imp@FreeBSD.org
+MASTERDIR=	${.CURDIR}/../u-boot-master
 
-COMMENT=	Cross-build U-Boot loader for OrangePi One
-
-LICENSE=	GPLv2
-
-MASTERDIR=	${.CURDIR}/../u-boot-olimex-a20-som-evb
-DESCR=		${.CURDIR}/pkg-descr
 MODEL=		orangepi-one
 BOARD_CONFIG=	orangepi_one_defconfig
+FAMILY=		allwinner
 
 .include "${MASTERDIR}/Makefile"
