@@ -12,7 +12,8 @@ DISTFILES=	BDB-${PORTVERSION}-src.tgz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface to Berkeley DB for GNUstep
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		bdb gnustep
 USE_GNUSTEP=	back build
@@ -29,7 +30,9 @@ ADDITIONAL_LDFLAGS+=	-L${BDB_LIB_DIR}
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Library/Frameworks/BDB.framework/Versions/0/libBDB.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Library/Frameworks/BDB.framework/Versions/0/libBDB.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/BDB-0.2.0-api-ref && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 

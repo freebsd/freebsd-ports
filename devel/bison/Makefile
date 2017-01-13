@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bison
-PORTVERSION=	2.7.1
-PORTREVISION=	1
+PORTVERSION=	3.0.4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -11,32 +10,31 @@ MASTER_SITES=	GNU
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser generator from FSF, (mostly) compatible with Yacc
 
-BUILD_DEPENDS=	m4>=1.4.16,1:devel/m4
-RUN_DEPENDS=	m4>=1.4.16,1:devel/m4
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	EXAMPLES NLS
+BUILD_DEPENDS=	m4>=1.4.16,1:devel/m4
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-CONFIGURE_ARGS+=--disable-yacc
-CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--disable-yacc
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
 TEST_TARGET=	check
 USE_PERL5=	build
-USES=		charsetfix makeinfo perl5 tar:xz
+USES=		charsetfix localbase makeinfo perl5 tar:xz
 
 INFO=		bison
-PORTEXAMPLES=	calc++
+PORTDATA=	*
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 post-patch:
-	@${RM} ${WRKSRC}/doc/bison.info*
-	@${REINPLACE_CMD} 's/MANS = yacc.1/MANS =/' ${WRKSRC}/doc/Makefile.in
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/calc++
-	${INSTALL_DATA} ${WRKSRC}/examples/calc++/*.[chly]* ${STAGEDIR}${EXAMPLESDIR}/calc++
+	@${REINPLACE_CMD} -e 's|$$(docdir)\(/examples\)|$$(datarootdir)\1/bison|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/\(.*\) _Noreturn void/_Noreturn \1 void/' ${WRKSRC}/data/*.c ${WRKSRC}/lib/*.[ch]
 
 .include <bsd.port.mk>
