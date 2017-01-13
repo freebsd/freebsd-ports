@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-input-keyboard-1.8.1.tar.bz2) = 1ac8ff39bf9da7d2fc7fd6c24515726e8138340c0518ab8c606e008cf93ca211
-SIZE (xorg/driver/xf86-input-keyboard-1.8.1.tar.bz2) = 319232
+TIMESTAMP = 1484349230
+SHA256 (xorg/driver/xf86-input-keyboard-1.9.0.tar.bz2) = f7c900f21752683402992b288d5a2826de7a6c0c0abac2aadd7e8a409e170388
+SIZE (xorg/driver/xf86-input-keyboard-1.9.0.tar.bz2) = 341693
