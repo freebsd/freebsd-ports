@@ -1,0 +1,873 @@
+From 9ee55407a8a0fbaa0be5b5a70c6907f7a3fd061f Mon Sep 17 00:00:00 2001
+From: rse <seggelmann@fh-muenster.de>
+Date: Thu, 19 Mar 2015 20:08:09 -0400
+Subject: [PATCH] add sctp support
+
+https://bugzilla.mindrot.org/show_bug.cgi?id=1604
+https://bugzilla.mindrot.org/show_bug.cgi?id=2016
+
+People who have helped out:
+Jan F. Chadima <jchadima@redhat.com>
+rse <seggelmann@fh-muenster.de>
+<openssh@ml.breakpoint.cc>
+Joshua Kinard <kumba@gentoo.org>
+Mike Frysinger <vapier@gentoo.org>
+---
+ configure.ac  |  14 ++++++
+ misc.c        |  39 +++++++++++++---
+ readconf.c    |  23 ++++++++++
+ readconf.h    |   5 +++
+ scp.1         |   5 ++-
+ scp.c         |   7 +++
+ servconf.c    | 123 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ servconf.h    |   8 ++++
+ ssh.1         |   5 ++-
+ ssh.c         |  14 +++++-
+ ssh_config.5  |   6 +++
+ sshconnect.c  |  55 +++++++++++++++++++++++
+ sshd.c        | 140 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ sshd_config.5 |  11 +++++
+ 14 files changed, 445 insertions(+), 10 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 7258cc0..2cb034b 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -4054,6 +4054,19 @@ AC_ARG_WITH([selinux],
+ AC_SUBST([SSHLIBS])
+ AC_SUBST([SSHDLIBS])
+ 
++#check whether user wants SCTP support
++SCTP_MSG="no"
++AC_ARG_WITH(sctp,
++	[  --with-sctp             Enable SCTP support],
++	[ if test "x$withval" != "xno" ; then
++		AC_DEFINE(SCTP,1,[Define if you want SCTP support.])
++		AC_CHECK_FUNCS(sctp_recvmsg, , AC_CHECK_LIB(sctp, sctp_recvmsg, ,
++			       [AC_MSG_ERROR([*** Can not use SCTP - maybe libsctp-dev is missing ***])]
++			       ))
++		SCTP_MSG="yes"
++	fi ]
++)
++
+ # Check whether user wants Kerberos 5 support
+ KRB5_MSG="no"
+ AC_ARG_WITH([kerberos5],
+@@ -4977,6 +4990,7 @@ echo "                       PAM support: $PAM_MSG"
+ echo "                   OSF SIA support: $SIA_MSG"
+ echo "                 KerberosV support: $KRB5_MSG"
+ echo "                   SELinux support: $SELINUX_MSG"
++echo "                      SCTP support: $SCTP_MSG"
+ echo "                 Smartcard support: $SCARD_MSG"
+ echo "                     S/KEY support: $SKEY_MSG"
+ echo "              MD5 password support: $MD5_MSG"
+diff --git a/misc.c b/misc.c
+index de7e1fa..17973d0 100644
+--- a/misc.c
++++ b/misc.c
+@@ -62,6 +62,10 @@
+ #include "log.h"
+ #include "ssh.h"
+ 
++#ifdef SCTP
++#include <netinet/sctp.h>
++#endif
++
+ /* remove newline at end of string */
+ char *
+ chop(char *s)
+@@ -140,21 +144,46 @@ void
+ set_nodelay(int fd)
+ {
+ 	int opt;
++	int is_tcp = 1;
++	int ret;
+ 	socklen_t optlen;
+ 
+ 	optlen = sizeof opt;
+ 	if (getsockopt(fd, IPPROTO_TCP, TCP_NODELAY, &opt, &optlen) == -1) {
+-		debug("getsockopt TCP_NODELAY: %.100s", strerror(errno));
++#ifdef SCTP
++		/* TCP_NODELAY failed, try SCTP_NODELAY */
++		if (getsockopt(fd, IPPROTO_SCTP, SCTP_NODELAY, &opt, &optlen) == -1) {
++			debug("getsockopt TCP_NODELAY/SCTP_NODELAY: %.100s", strerror(errno));
++			return;
++		}
++		is_tcp = 0;
++#else
+ 		return;
++#endif
+ 	}
+ 	if (opt == 1) {
+-		debug2("fd %d is TCP_NODELAY", fd);
++		debug2("fd %d is TCP_NODELAY/SCTP_NODELAY", fd);
+ 		return;
+ 	}
+ 	opt = 1;
+-	debug2("fd %d setting TCP_NODELAY", fd);
+-	if (setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, &opt, sizeof opt) == -1)
+-		error("setsockopt TCP_NODELAY: %.100s", strerror(errno));
++	debug2("fd %d setting TCP_NODELAY/SCTP_NODELAY", fd);
++
++	if (is_tcp) {
++		ret = setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, &opt,
++				sizeof(opt));
++		if (ret < 0)
++			error("setsockopt TCP_NODELAY: %.100s",
++					strerror(errno));
++	}
++#ifdef SCTP
++	else {
++		ret = setsockopt(fd, IPPROTO_SCTP, SCTP_NODELAY, &opt,
++				sizeof(opt));
++		if (ret < 0)
++			error("setsockopt SCTP_NODELAY: %.100s",
++					strerror(errno));
++	}
++#endif
+ }
+ 
+ /* Characters considered whitespace in strsep calls. */
+diff --git a/readconf.c b/readconf.c
+index 69d4553..83a2c06 100644
+--- a/readconf.c
++++ b/readconf.c
+@@ -136,6 +136,7 @@ typedef enum {
+ 	oChallengeResponseAuthentication, oXAuthLocation,
+ 	oIdentityFile, oHostName, oPort, oCipher, oRemoteForward, oLocalForward,
+ 	oCertificateFile, oAddKeysToAgent, oIdentityAgent,
++	oTransport,
+ 	oUser, oEscapeChar, oRhostsRSAAuthentication, oProxyCommand,
+ 	oGlobalKnownHostsFile, oUserKnownHostsFile, oConnectionAttempts,
+ 	oBatchMode, oCheckHostIP, oStrictHostKeyChecking, oCompression,
+@@ -208,6 +209,11 @@ static struct {
+ 	{ "hostname", oHostName },
+ 	{ "hostkeyalias", oHostKeyAlias },
+ 	{ "proxycommand", oProxyCommand },
++#ifdef SCTP
++	{ "transport", oTransport },
++#else
++	{ "transport", oUnsupported },
++#endif
+ 	{ "port", oPort },
+ 	{ "cipher", oCipher },
+ 	{ "ciphers", oCiphers },
+@@ -1094,6 +1100,20 @@ parse_command:
+ 			*charptr = xstrdup(s + len);
+ 		return 0;
+ 
++	case oTransport:
++		arg = strdelim(&s);
++		if (!arg || *arg == '\0')
++			fatal("%s line %d: missing transport protocol specification",
++			    filename, linenum);
++		if (strcasecmp(arg, "tcp") == 0)
++			options->transport = TRANSPORT_TCP;
++		else if (strcasecmp(arg, "sctp") == 0)
++			options->transport = TRANSPORT_SCTP;
++		else
++			fatal("%s line %d: unknown transport protocol specified",
++			    filename, linenum);
++		break;
++
+ 	case oPort:
+ 		intptr = &options->port;
+ parse_int:
+@@ -1660,6 +1680,7 @@ initialize_options(Options * options)
+ 	options->compression = -1;
+ 	options->tcp_keep_alive = -1;
+ 	options->compression_level = -1;
++	options->transport = -1;
+ 	options->port = -1;
+ 	options->address_family = -1;
+ 	options->connection_attempts = -1;
+@@ -1799,6 +1820,8 @@ fill_default_options(Options * options)
+ 		options->tcp_keep_alive = 1;
+ 	if (options->compression_level == -1)
+ 		options->compression_level = 6;
++	if (options->transport == -1)
++		options->transport = TRANSPORT_TCP;
+ 	if (options->port == -1)
+ 		options->port = 0;	/* Filled in ssh_connect. */
+ 	if (options->address_family == -1)
+diff --git a/readconf.h b/readconf.h
+index c84d068..28fa3ec 100644
+--- a/readconf.h
++++ b/readconf.h
+@@ -28,6 +28,10 @@ struct allowed_cname {
+ 	char *target_list;
+ };
+ 
++/* Transport protocols */
++#define TRANSPORT_TCP  1
++#define TRANSPORT_SCTP 2
++
+ typedef struct {
+ 	int     forward_agent;	/* Forward authentication agent. */
+ 	int     forward_x11;	/* Forward X11 display. */
+@@ -61,6 +65,7 @@ typedef struct {
+ 	int	ip_qos_bulk;		/* IP ToS/DSCP/class for bulk traffic */
+ 	LogLevel log_level;	/* Level for logging. */
+ 
++	int     transport; /* Transport protocol used. */
+ 	int     port;		/* Port to connect. */
+ 	int     address_family;
+ 	int     connection_attempts;	/* Max attempts (seconds) before
+diff --git a/scp.1 b/scp.1
+index 54ea352..d12802e 100644
+--- a/scp.1
++++ b/scp.1
+@@ -19,7 +19,7 @@
+ .Sh SYNOPSIS
+ .Nm scp
+ .Bk -words
+-.Op Fl 12346BCpqrv
++.Op Fl 12346BCpqrvz
+ .Op Fl c Ar cipher
+ .Op Fl F Ar ssh_config
+ .Op Fl i Ar identity_file
+@@ -181,6 +181,7 @@ For full details of the options listed below, and their possible values, see
+ .It ServerAliveCountMax
+ .It StrictHostKeyChecking
+ .It TCPKeepAlive
++.It Transport
+ .It UpdateHostKeys
+ .It UsePrivilegedPort
+ .It User
+@@ -222,6 +223,8 @@ and
+ to print debugging messages about their progress.
+ This is helpful in
+ debugging connection, authentication, and configuration problems.
++.It Fl z
++Use the SCTP protocol for connection instead of TCP which is the default.
+ .El
+ .Sh EXIT STATUS
+ .Ex -std scp
+diff --git a/scp.c b/scp.c
+index 0bdd7cb..8c456d4 100644
+--- a/scp.c
++++ b/scp.c
+@@ -396,7 +396,11 @@ main(int argc, char **argv)
+ 	addargs(&args, "-oClearAllForwardings=yes");
+ 
+ 	fflag = tflag = 0;
++#ifdef SCTP
++	while ((ch = getopt(argc, argv, "dfl:prtvBCc:i:P:q12346S:o:F:z")) != -1)
++#else
+ 	while ((ch = getopt(argc, argv, "dfl:prtvBCc:i:P:q12346S:o:F:")) != -1)
++#endif
+ 		switch (ch) {
+ 		/* User-visible flags. */
+ 		case '1':
+@@ -404,6 +408,9 @@ main(int argc, char **argv)
+ 		case '4':
+ 		case '6':
+ 		case 'C':
++#ifdef SCTP
++		case 'z':
++#endif
+ 			addargs(&args, "-%c", ch);
+ 			addargs(&remote_remote_args, "-%c", ch);
+ 			break;
+diff --git a/servconf.c b/servconf.c
+index b19d30e..14b0a0f 100644
+--- a/servconf.c
++++ b/servconf.c
+@@ -138,6 +138,7 @@ initialize_server_options(ServerOptions *options)
+ 	options->ciphers = NULL;
+ 	options->macs = NULL;
+ 	options->kex_algorithms = NULL;
++	options->transport = -1;
+ 	options->protocol = SSH_PROTO_UNKNOWN;
+ 	options->fwd_opts.gateway_ports = -1;
+ 	options->fwd_opts.streamlocal_bind_mask = (mode_t)-1;
+@@ -315,6 +316,8 @@ fill_default_server_options(ServerOptions *options)
+ 		options->allow_streamlocal_forwarding = FORWARD_ALLOW;
+ 	if (options->allow_agent_forwarding == -1)
+ 		options->allow_agent_forwarding = 1;
++	if (options->transport == -1)
++		options->transport = TRANSPORT_TCP;
+ 	if (options->fwd_opts.gateway_ports == -1)
+ 		options->fwd_opts.gateway_ports = 0;
+ 	if (options->max_startups == -1)
+@@ -406,6 +409,7 @@ typedef enum {
+ 	sKerberosTgtPassing, sChallengeResponseAuthentication,
+ 	sPasswordAuthentication, sKbdInteractiveAuthentication,
+ 	sListenAddress, sAddressFamily,
++	sTransport, sListenMultipleAddresses,
+ 	sPrintMotd, sPrintLastLog, sIgnoreRhosts,
+ 	sX11Forwarding, sX11DisplayOffset, sX11UseLocalhost,
+ 	sPermitTTY, sStrictModes, sEmptyPasswd, sTCPKeepAlive,
+@@ -504,6 +508,13 @@ static struct {
+ 	{ "skeyauthentication", sChallengeResponseAuthentication, SSHCFG_GLOBAL }, /* alias */
+ 	{ "checkmail", sDeprecated, SSHCFG_GLOBAL },
+ 	{ "listenaddress", sListenAddress, SSHCFG_GLOBAL },
++#ifdef SCTP
++	{ "listenmultipleaddresses", sListenMultipleAddresses, SSHCFG_GLOBAL },
++	{ "transport", sTransport, SSHCFG_GLOBAL },
++#else
++	{ "listenmultipleaddresses", sUnsupported, SSHCFG_GLOBAL },
++	{ "transport", sUnsupported, SSHCFG_GLOBAL },
++#endif
+ 	{ "addressfamily", sAddressFamily, SSHCFG_GLOBAL },
+ 	{ "printmotd", sPrintMotd, SSHCFG_GLOBAL },
+ #ifdef DISABLE_LASTLOG
+@@ -717,6 +728,79 @@ get_connection_info(int populate, int use_dns)
+ 	return &ci;
+ }
+ 
++#ifdef SCTP
++static void
++add_one_listen_multiple_addr(ServerOptions *options, char *addr, int port, int last)
++{
++	struct addrinfo hints, *ai, *aitop;
++	char strport[NI_MAXSERV];
++	int gaierr;
++
++	memset(&hints, 0, sizeof(hints));
++	hints.ai_family = options->address_family;
++	hints.ai_socktype = SOCK_STREAM;
++	hints.ai_flags = (addr == NULL) ? AI_PASSIVE : 0;
++	snprintf(strport, sizeof strport, "%d", port);
++	if ((gaierr = getaddrinfo(addr, strport, &hints, &aitop)) != 0)
++		fatal("bad addr or host: %s (%s)",
++				addr ? addr : "<NULL>",
++				ssh_gai_strerror(gaierr));
++	/* Mark addresses as multihomed */
++	for (ai = aitop; ai->ai_next; ai = ai->ai_next)
++		ai->ai_flags = IS_MULTIPLE_ADDR;
++	ai->ai_flags = IS_MULTIPLE_ADDR;
++	ai->ai_next = options->listen_addrs;
++	options->listen_addrs = aitop;
++
++	if (last) {
++		aitop->ai_flags = 0;
++	}
++}
++
++static void
++add_listen_multiple_addrs(ServerOptions *options, char *addrs, int port)
++{
++	u_int i, num_addrs;
++	char **addrsptr, *p;
++
++	if (options->num_ports == 0)
++		options->ports[options->num_ports++] = SSH_DEFAULT_PORT;
++	if (options->address_family == -1)
++		options->address_family = AF_UNSPEC;
++
++	num_addrs = 1;
++	p = addrs;
++	while ((p = strchr(p, ',')) != NULL) {
++		num_addrs++;
++		p++;
++	}
++	debug("found %d addresses for multi-homing", num_addrs);
++
++	addrsptr = xmalloc(num_addrs * sizeof(char*));
++	p = addrs;
++	for (i = 0; i < num_addrs; i++) {
++		addrsptr[i] = p;
++		p = strchr(p+1, ',');
++		if (p != NULL)
++			*(p++) = '\0';
++	}
++
++	if (port == 0)
++		for (i = 0; i < options->num_ports; i++) {
++			while (--num_addrs)
++				add_one_listen_multiple_addr(options, addrsptr[num_addrs], options->ports[i], 0);
++			add_one_listen_multiple_addr(options, addrs, options->ports[i], 1);
++		}
++	else {
++		while (--num_addrs)
++			add_one_listen_multiple_addr(options, addrsptr[num_addrs], port, 0);
++		add_one_listen_multiple_addr(options, addrs, port, 1);
++	}
++
++	free(addrsptr);
++}
++#endif
++
+ /*
+  * The strategy for the Match blocks is that the config file is parsed twice.
+  *
+@@ -1061,6 +1145,25 @@ process_server_config_line(ServerOptions *options, char *line,
+ 		intptr = &options->key_regeneration_time;
+ 		goto parse_time;
+ 
++#ifdef SCTP
++	case sListenMultipleAddresses:
++		arg = strdelim(&cp);
++		if (arg == NULL || *arg == '\0')
++			fatal("%s line %d: missing addresses",
++				filename, linenum);
++
++		/* Check for appended port */
++		p = strchr(arg, ';');
++		if (p != NULL) {
++			if ((port = a2port(p + 1)) <= 0)
++				fatal("%s line %d: bad port number", filename, linenum);
++			*p = '\0';
++		} else
++			port = 0;
++		add_listen_multiple_addrs(options, arg, port);
++		break;
++#endif
++
+ 	case sListenAddress:
+ 		arg = strdelim(&cp);
+ 		if (arg == NULL || *arg == '\0')
+@@ -1478,6 +1581,22 @@ process_server_config_line(ServerOptions *options, char *line,
+ 			options->kex_algorithms = xstrdup(arg);
+ 		break;
+ 
++	case sTransport:
++		arg = strdelim(&cp);
++		if (!arg || *arg == '\0')
++			fatal("%s line %d: missing transport protocol specification",
++			    filename, linenum);
++		if (strcasecmp(arg, "all") == 0)
++			options->transport = TRANSPORT_ALL;
++		else if (strcasecmp(arg, "tcp") == 0)
++			options->transport = TRANSPORT_TCP;
++		else if (strcasecmp(arg, "sctp") == 0)
++			options->transport = TRANSPORT_SCTP;
++		else
++			fatal("%s line %d: unknown transport protocol specified",
++			    filename, linenum);
++		break;
++
+ 	case sProtocol:
+ 		intptr = &options->protocol;
+ 		arg = strdelim(&cp);
+@@ -1992,6 +2111,7 @@ copy_set_server_options(ServerOptions *dst, ServerOptions *src, int preauth)
+ 	M_CP_INTOPT(allow_streamlocal_forwarding);
+ 	M_CP_INTOPT(allow_agent_forwarding);
+ 	M_CP_INTOPT(permit_tun);
++	M_CP_INTOPT(transport);
+ 	M_CP_INTOPT(fwd_opts.gateway_ports);
+ 	M_CP_INTOPT(x11_display_offset);
+ 	M_CP_INTOPT(x11_forwarding);
+@@ -2286,6 +2406,9 @@ dump_config(ServerOptions *o)
+ 	dump_cfg_fmtint(sPermitUserEnvironment, o->permit_user_env);
+ 	dump_cfg_fmtint(sUseLogin, o->use_login);
+ 	dump_cfg_fmtint(sCompression, o->compression);
++#ifdef SCTP
++	dump_cfg_fmtint(sTransport, o->transport);
++#endif
+ 	dump_cfg_fmtint(sGatewayPorts, o->fwd_opts.gateway_ports);
+ 	dump_cfg_fmtint(sUseDNS, o->use_dns);
+ 	dump_cfg_fmtint(sAllowTcpForwarding, o->allow_tcp_forwarding);
+diff --git a/servconf.h b/servconf.h
+index f4137af..63a0637 100644
+--- a/servconf.h
++++ b/servconf.h
+@@ -54,6 +54,13 @@
+ /* Magic name for internal sftp-server */
+ #define INTERNAL_SFTP_NAME	"internal-sftp"
+ 
++/* Transport protocols */
++#define TRANSPORT_TCP  1
++#define TRANSPORT_SCTP 2
++#define TRANSPORT_ALL  (TRANSPORT_TCP | TRANSPORT_SCTP)
++
++#define IS_MULTIPLE_ADDR 0x1000
++
+ typedef struct {
+ 	u_int	num_ports;
+ 	u_int	ports_from_cmdline;
+@@ -93,6 +100,7 @@ typedef struct {
+ 	char   *ciphers;	/* Supported SSH2 ciphers. */
+ 	char   *macs;		/* Supported SSH2 macs. */
+ 	char   *kex_algorithms;	/* SSH2 kex methods in order of preference. */
++	int transport;	/* Transport protocol(s) used */
+ 	int	protocol;	/* Supported protocol versions. */
+ 	struct ForwardOptions fwd_opts;	/* forwarding options */
+ 	SyslogFacility log_facility;	/* Facility for system logging. */
+diff --git a/ssh.1 b/ssh.1
+index cc53343..b1a45e8 100644
+--- a/ssh.1
++++ b/ssh.1
+@@ -43,7 +43,7 @@
+ .Sh SYNOPSIS
+ .Nm ssh
+ .Bk -words
+-.Op Fl 1246AaCfGgKkMNnqsTtVvXxYy
++.Op Fl 1246AaCfGgKkMNnqsTtVvXxYyz
+ .Op Fl b Ar bind_address
+ .Op Fl c Ar cipher_spec
+ .Op Fl D Oo Ar bind_address : Oc Ns Ar port
+@@ -536,6 +536,7 @@ For full details of the options listed below, and their possible values, see
+ .It StreamLocalBindUnlink
+ .It StrictHostKeyChecking
+ .It TCPKeepAlive
++.It Transport
+ .It Tunnel
+ .It TunnelDevice
+ .It UpdateHostKeys
+@@ -770,6 +771,8 @@ controls.
+ .Pp
+ .It Fl y
+ Send log information using the
++.It Fl z
++Use the SCTP protocol for connection instead of TCP which is the default.
+ .Xr syslog 3
+ system module.
+ By default this information is sent to stderr.
+diff --git a/ssh.c b/ssh.c
+index f9ff91f..d0d92ce 100644
+--- a/ssh.c
++++ b/ssh.c
+@@ -195,12 +195,17 @@ extern int muxserver_sock;
+ extern u_int muxclient_command;
+ 
+ /* Prints a help message to the user.  This function never returns. */
++#ifdef SCTP
++#define SCTP_OPT	"z"
++#else
++#define SCTP_OPT	""
++#endif
+ 
+ static void
+ usage(void)
+ {
+ 	fprintf(stderr,
+-"usage: ssh [-1246AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]\n"
++"usage: ssh [-1246AaCfGgKkMNnqsTtVvXxYy" SCTP_OPT "] [-b bind_address] [-c cipher_spec]\n"
+ "           [-D [bind_address:]port] [-E log_file] [-e escape_char]\n"
+ "           [-F configfile] [-I pkcs11] [-i identity_file] [-L address]\n"
+ "           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]\n"
+@@ -605,7 +610,7 @@ main(int ac, char **av)
+ 	argv0 = av[0];
+ 
+  again:
+-	while ((opt = getopt(ac, av, "1246ab:c:e:fgi:kl:m:no:p:qstvx"
++	while ((opt = getopt(ac, av, "1246ab:c:e:fgi:kl:m:no:p:qstvx" SCTP_OPT
+ 	    "ACD:E:F:GI:J:KL:MNO:PQ:R:S:TVw:W:XYy")) != -1) {
+ 		switch (opt) {
+ 		case '1':
+@@ -845,6 +850,11 @@ main(int ac, char **av)
+ 			else
+ 				options.control_master = SSHCTL_MASTER_YES;
+ 			break;
++#ifdef SCTP
++		case 'z':
++			options.transport = TRANSPORT_SCTP;
++			break;
++#endif
+ 		case 'p':
+ 			options.port = a2port(optarg);
+ 			if (options.port <= 0) {
+diff --git a/ssh_config.5 b/ssh_config.5
+index caf13a6..a088f30 100644
+--- a/ssh_config.5
++++ b/ssh_config.5
+@@ -1597,6 +1597,12 @@ This is important in scripts, and many users want it too.
+ .Pp
+ To disable TCP keepalive messages, the value should be set to
+ .Dq no .
++.It Cm Transport
++Specifies the transport protocol while connecting. Valid values are
++.Dq TCP
++and
++.Dq SCTP .
++The default is TCP.
+ .It Cm Tunnel
+ Request
+ .Xr tun 4
+diff --git a/sshconnect.c b/sshconnect.c
+index 356ec79..21b3f54 100644
+--- a/sshconnect.c
++++ b/sshconnect.c
+@@ -66,6 +66,10 @@
+ #include "ssherr.h"
+ #include "authfd.h"
+ 
++#ifdef SCTP
++#include <netinet/sctp.h>
++#endif
++
+ char *client_version_string = NULL;
+ char *server_version_string = NULL;
+ Key *previous_host_key = NULL;
+@@ -275,6 +279,9 @@ ssh_create_socket(int privileged, struct addrinfo *ai)
+ {
+ 	int sock, r, gaierr;
+ 	struct addrinfo hints, *res = NULL;
++#ifdef SCTP
++	char *more_addrs, *next_addr;
++#endif
+ 
+ 	sock = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol);
+ 	if (sock < 0) {
+@@ -288,10 +295,21 @@ ssh_create_socket(int privileged, struct addrinfo *ai)
+ 		return sock;
+ 
+ 	if (options.bind_address) {
++#ifdef SCTP
++		/* Check if multiple addresses have been specified */
++		if ((more_addrs = strchr(options.bind_address, ',')) != NULL) {
++			*(more_addrs++) = '\0';
++		}
++#endif
+ 		memset(&hints, 0, sizeof(hints));
+ 		hints.ai_family = ai->ai_family;
+ 		hints.ai_socktype = ai->ai_socktype;
++#ifndef SCTP
++		/* Only specify protocol if SCTP is not used, due
++		 * to the lack of SCTP support for getaddrinfo()
++		 */
+ 		hints.ai_protocol = ai->ai_protocol;
++#endif
+ 		hints.ai_flags = AI_PASSIVE;
+ 		gaierr = getaddrinfo(options.bind_address, NULL, &hints, &res);
+ 		if (gaierr) {
+@@ -324,6 +342,34 @@ ssh_create_socket(int privileged, struct addrinfo *ai)
+ 			return -1;
+ 		}
+ 	}
++#ifdef SCTP
++	/* If there are multiple addresses, bind them too */
++	if (more_addrs) {
++		do {
++			next_addr = strchr(more_addrs, ',');
++			if (next_addr != NULL) {
++				*(next_addr++) = '\0';
++			}
++
++			gaierr = getaddrinfo(more_addrs, NULL, &hints, &res);
++			if (gaierr) {
++				error("getaddrinfo: %s: %s", more_addrs,
++					  ssh_gai_strerror(gaierr));
++				close(sock);
++				return -1;
++			}
++			if (sctp_bindx(sock, (struct sockaddr *)res->ai_addr,
++						   1, SCTP_BINDX_ADD_ADDR) != 0) {
++				error("bind: %s: %s", options.bind_address, strerror(errno));
++				close(sock);
++				freeaddrinfo(res);
++				return -1;
++			}
++
++			more_addrs = next_addr;
++		} while (next_addr != NULL);
++	}
++#endif
+ 	if (res != NULL)
+ 		freeaddrinfo(res);
+ 	return sock;
+@@ -437,6 +483,15 @@ ssh_connect_direct(const char *host, struct addrinfo *aitop,
+ 	memset(ntop, 0, sizeof(ntop));
+ 	memset(strport, 0, sizeof(strport));
+ 
++#ifdef SCTP
++	/* Use SCTP if requested */
++	if (options.transport == TRANSPORT_SCTP) {
++		for (ai = aitop; ai; ai = ai->ai_next) {
++			ai->ai_protocol = IPPROTO_SCTP;
++		}
++	}
++#endif
++
+ 	for (attempt = 0; attempt < connection_attempts; attempt++) {
+ 		if (attempt > 0) {
+ 			/* Sleep a moment before retrying. */
+diff --git a/sshd.c b/sshd.c
+index 430569c..4ca58ed 100644
+--- a/sshd.c
++++ b/sshd.c
+@@ -125,6 +125,10 @@
+ #include "version.h"
+ #include "ssherr.h"
+ 
++#ifdef SCTP
++#include <netinet/sctp.h>
++#endif
++
+ #ifndef O_NOCTTY
+ #define O_NOCTTY	0
+ #endif
+@@ -1164,6 +1168,12 @@ server_listen(void)
+ 	for (ai = options.listen_addrs; ai; ai = ai->ai_next) {
+ 		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
+ 			continue;
++#ifdef SCTP
++		/* Ignore multi-homing addresses for TCP */
++		if (ai->ai_flags & IS_MULTIPLE_ADDR ||
++		   (ai->ai_next != NULL && ai->ai_next->ai_flags & IS_MULTIPLE_ADDR))
++			continue;
++#endif
+ 		if (num_listen_socks >= MAX_LISTEN_SOCKS)
+ 			fatal("Too many listen sockets. "
+ 			    "Enlarge MAX_LISTEN_SOCKS");
+@@ -1222,6 +1232,127 @@ server_listen(void)
+ 		fatal("Cannot bind any address.");
+ }
+ 
++#ifdef SCTP
++/*
++ * Listen for SCTP connections
++ */
++static void
++server_listen_sctp(void)
++{
++	int ret, listen_sock, on = 1;
++	struct addrinfo *ai, *aiv6;
++	char ntop[NI_MAXHOST], strport[NI_MAXSERV];
++
++	for (ai = options.listen_addrs; ai; ai = ai->ai_next) {
++		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
++			continue;
++		/* Ignore multi-homing addresses at this point */
++		if (ai->ai_flags & IS_MULTIPLE_ADDR)
++			continue;
++		if (num_listen_socks >= MAX_LISTEN_SOCKS)
++			fatal("Too many listen sockets. "
++			    "Enlarge MAX_LISTEN_SOCKS");
++		if ((ret = getnameinfo(ai->ai_addr, ai->ai_addrlen,
++		    ntop, sizeof(ntop), strport, sizeof(strport),
++		    NI_NUMERICHOST|NI_NUMERICSERV)) != 0) {
++			error("getnameinfo failed: %.100s",
++			    ssh_gai_strerror(ret));
++			continue;
++		}
++		/* Check for multi-homed IPv6 addresses if family is IPv4 */
++		if (ai->ai_family == AF_INET) {
++			aiv6 = ai->ai_next;
++			while (aiv6 != NULL && aiv6->ai_flags & IS_MULTIPLE_ADDR) {
++				if (aiv6->ai_family == AF_INET6) {
++					ai->ai_family = AF_INET6;
++					break;
++				}
++				aiv6 = aiv6->ai_next;
++			}
++		}
++
++		/* Create socket for listening. */
++		listen_sock = socket(ai->ai_family, ai->ai_socktype,
++		    IPPROTO_SCTP);
++		if (listen_sock < 0) {
++			/* kernel may not support ipv6 */
++			verbose("SCTP socket: %.100s", strerror(errno));
++			continue;
++		}
++		if (set_nonblock(listen_sock) == -1) {
++			close(listen_sock);
++			continue;
++		}
++		/*
++		 * Set socket options.
++		 * Allow local port reuse in TIME_WAIT.
++		 */
++		if (setsockopt(listen_sock, SOL_SOCKET, SO_REUSEADDR,
++		    &on, sizeof(on)) == -1)
++			error("SCTP setsockopt SO_REUSEADDR: %s", strerror(errno));
++
++		/* Only communicate in IPv6 over AF_INET6 sockets if not multi-homed. */
++		if (ai->ai_family == AF_INET6 && (ai->ai_next == NULL ||
++		    (ai->ai_next != NULL && ai->ai_next->ai_flags == 0)))
++			sock_set_v6only(listen_sock);
++
++		if (ai->ai_next != NULL && ai->ai_next->ai_flags & IS_MULTIPLE_ADDR)
++			debug("Bind multi-homed to SCTP port %s on %s.", strport, ntop);
++		else
++			debug("Bind to SCTP port %s on %s.", strport, ntop);
++
++		/* Bind the socket to the desired port. */
++		if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) < 0) {
++			error("Bind to SCTP port %s on %s failed: %.200s.",
++			    strport, ntop, strerror(errno));
++			close(listen_sock);
++			continue;
++		}
++
++		/* Bind multi-homing addresses */
++		while (ai->ai_next != NULL &&
++		       ai->ai_next->ai_flags & IS_MULTIPLE_ADDR) {
++			ai = ai->ai_next;
++
++			if ((ret = getnameinfo(ai->ai_addr, ai->ai_addrlen,
++				ntop, sizeof(ntop), strport, sizeof(strport),
++				NI_NUMERICHOST|NI_NUMERICSERV)) != 0) {
++				error("getnameinfo failed: %.100s",
++					ssh_gai_strerror(ret));
++				continue;
++			}
++
++			debug("Bind multi-homed to SCTP port %s on %s.", strport, ntop);
++
++			if (sctp_bindx(listen_sock, (struct sockaddr *)ai->ai_addr, 1, SCTP_BINDX_ADD_ADDR) != 0) {
++				error("Bind to SCTP port %s on %s failed: %.200s.",
++					strport, ntop, strerror(errno));
++				close(listen_sock);
++				continue;
++			}
++		}
++
++		listen_socks[num_listen_socks] = listen_sock;
++		num_listen_socks++;
++
++		/* Start listening on the port. */
++		if (listen(listen_sock, SSH_LISTEN_BACKLOG) < 0)
++			fatal("SCTP listen on [%s]:%s: %.100s",
++			    ntop, strport, strerror(errno));
++		if (ai->ai_flags & IS_MULTIPLE_ADDR)
++			logit("Server listening multi-homed with SCTP on port %s.", strport);
++		else
++			logit("Server listening with SCTP on %s port %s.", ntop, strport);
++	}
++	/* Only free addresses if SCTP is the only used protocol */
++	if (options.transport == TRANSPORT_SCTP)
++		freeaddrinfo(options.listen_addrs);
++
++	if (!num_listen_socks)
++		fatal("Cannot bind any address for SCTP.");
++}
++#endif
++
+ /*
+  * The main TCP accept loop. Note that, for the non-debug case, returns
+  * from this function are in a forked subprocess.
+@@ -2007,7 +2138,14 @@ main(int ac, char **av)
+ 		server_accept_inetd(&sock_in, &sock_out);
+ 	} else {
+ 		platform_pre_listen();
+-		server_listen();
++
++#ifdef SCTP
++		if (options.transport & TRANSPORT_SCTP)
++			server_listen_sctp();
++
++		if (options.transport & TRANSPORT_TCP)
++#endif
++			server_listen();
+ 
+ 		if (options.protocol & SSH_PROTO_1)
+ 			generate_ephemeral_server_key();
+diff --git a/sshd_config.5 b/sshd_config.5
+index a37a3ac..24e3826 100644
+--- a/sshd_config.5
++++ b/sshd_config.5
+@@ -1508,6 +1508,17 @@ This avoids infinitely hanging sessions.
+ .Pp
+ To disable TCP keepalive messages, the value should be set to
+ .Dq no .
++.It Cm Transport
++Specifies the transport protocol that should be used by
++.Xr sshd 8 .
++Valid values are
++.Dq TCP ,
++.Dq SCTP ,
++.Dq all.
++The value
++.Dq all
++means to listen on TCP and SCTP sockets. The default is to listen only on
++TCP sockets.
+ .It Cm TrustedUserCAKeys
+ Specifies a file containing public keys of certificate authorities that are
+ trusted to sign user certificates for authentication, or
+-- 
+2.6.2
+
