@@ -160,6 +160,7 @@
     SUBDIR += ppunpack
     SUBDIR += pxz
     SUBDIR += py-attic
+    SUBDIR += py-backports.lzma
     SUBDIR += py-borgbackup
     SUBDIR += py-brotli
     SUBDIR += py-bz2file
