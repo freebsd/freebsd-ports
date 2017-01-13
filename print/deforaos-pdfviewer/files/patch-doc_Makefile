@@ -1,0 +1,27 @@
+--- doc/Makefile.orig	2017-01-13 17:04:41 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)pdfviewer.1 $(OBJDIR)pdfviewer.html $(OBJDIR)pdfviewer.xml
++TARGETS	= $(OBJDIR)pdfviewer.1 $(OBJDIR)pdfviewer.xml
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -22,7 +22,6 @@ $(OBJDIR)pdfviewer.xml: pdfviewer.xml.in
+ clean:
+ 	$(RM) -- $(pdfviewer.1_OBJS) $(pdfviewer.html_OBJS) $(pdfviewer.xml_OBJS)
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)pdfviewer.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)pdfviewer.html"
+ 	../tools/subst.sh -c -P "$(PREFIX)" -- "$(OBJDIR)pdfviewer.xml"
+ 
+ distclean: clean
+@@ -30,10 +29,8 @@ distclean: clean
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)pdfviewer.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)pdfviewer.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "pdfviewer.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "pdfviewer.html"
+ 
+ .PHONY: all clean distclean install uninstall
