@@ -1,11 +1,9 @@
 bin/editor
 bin/filter
 share/applications/deforaos-editor.desktop
-share/doc/html/Editor/editor.html
-share/doc/html/Editor/filter.html
-share/locale/de/LC_MESSAGES/Editor.mo
-share/locale/es/LC_MESSAGES/Editor.mo
-share/locale/fr/LC_MESSAGES/Editor.mo
-share/locale/it/LC_MESSAGES/Editor.mo
-share/man/man1/editor.1.gz
-share/man/man1/filter.1.gz
+%%PORTDOCS%%man/man1/editor.1.gz
+%%PORTDOCS%%man/man1/filter.1.gz
+%%NLS%%share/locale/de/LC_MESSAGES/Editor.mo
+%%NLS%%share/locale/es/LC_MESSAGES/Editor.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/Editor.mo
+%%NLS%%share/locale/it/LC_MESSAGES/Editor.mo
