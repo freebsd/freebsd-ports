@@ -21,7 +21,7 @@ PLIST_FILES=	bin/${PORTNAME}
 OPTIONS_DEFINE=	DOCS
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${NCURSESINC} -L${NCURSESLIB} -lcurses -o ${PORTNAME} ${PORTNAME}.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${NCURSESINC} -L${NCURSESLIB} -lncurses -o ${PORTNAME} ${PORTNAME}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
