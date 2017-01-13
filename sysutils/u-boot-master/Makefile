@@ -17,15 +17,15 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	arm-none-eabi-gcc:devel/arm-none-eabi-gcc \
 		gsed:textproc/gsed \
 		swig3.0:devel/swig30 \
-		python:lang/python2 \
 		${LOCALBASE}/bin/dtc:sysutils/dtc
 
-USES=		gmake
+USES=		gmake python:build shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdimp
 GH_PROJECT=	u-boot
 
+SHEBANG_FILES=	tools/binman/binman.py
 SSP_UNSAFE=	yes
 UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
@@ -37,13 +37,13 @@ NO_ARCH=	yes
 
 # Sanity checks
 .if !defined(MODEL)
-IGNORE+=	"MODEL is not defined"
+IGNORE+=	MODEL is not defined
 .endif
 .if !defined(BOARD_CONFIG)
-IGNORE+=	"BOARD_CONFIG is not defined"
+IGNORE+=	BOARD_CONFIG is not defined
 .endif
 .if !defined(FAMILY)
-IGNORE+=	"FAMILY is not defined"
+IGNORE+=	FAMILY is not defined
 .endif
 
 # Defines for OMAP family
