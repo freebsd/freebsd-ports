@@ -1,0 +1,107 @@
+--- hlaparse.bsn.orig	2017-01-09 13:30:03 UTC
++++ hlaparse.bsn
+@@ -1,4 +1,4 @@
+-%pure_parser
++%define api.pure
+ 			   		   		   			 			 
+ 				  		  						 
+ /*****************************/				  
+@@ -2749,7 +2749,7 @@ doTextBlock:
+ 
+ 			_here;
+ 			doTextBlock7( $<idStr>3, YYS &$<v>6 ); 
+-			YYACCEPT
++			YYACCEPT;
+ 		}
+ 
+ 
+@@ -2763,7 +2763,7 @@ doTextBlock:
+ 
+ 			_here;
+ 			doTextBlock7a( $<s>3, YYS &$<v>6 );
+-			YYACCEPT
++			YYACCEPT;
+ 		}
+ 	;
+ 
+@@ -2811,7 +2811,7 @@ doStringBlock:
+ 
+ 			_here;
+ 			doStringBlock( $<idStr>3, YYS &$<v>6 ); 
+-			YYACCEPT
++			YYACCEPT;
+ 		}
+ 
+ 
+@@ -2825,7 +2825,7 @@ doStringBlock:
+ 
+ 			_here;
+ 			doStringBlocka( $<s>3, YYS &$<v>6 );
+-			YYACCEPT
++			YYACCEPT;
+ 		}
+ 	;
+ 
+@@ -2865,7 +2865,7 @@ doMatchBlock:
+ 
+ 			_here;
+ 			doMatchBlock( $<s>3, YYS &$<v>6 );
+-			YYACCEPT
++			YYACCEPT;
+ 		}
+ 	;
+ 
+@@ -2900,7 +2900,7 @@ doPrint:
+ 				fputs( "\n", PrintOut );
+ 				
+ 			_endif
+-			YYACCEPT 
++			YYACCEPT; 
+ 		}
+ 	;
+ 
+@@ -2961,7 +2961,7 @@ doParseObjID:
+ 			_here;
+ 			memcpy( &d1dnReturnVal, &$<dotName>2, sizeof( union YYSTYPE ));
+ 			_here; 
+-			YYACCEPT
++			YYACCEPT;
+ 		}
+ 	;
+ 	
+@@ -2972,7 +2972,7 @@ doParseClassID:
+ 			_here;
+ 			memcpy( &d1dnReturnVal, &$<dotName>2, sizeof( union YYSTYPE ));
+ 			_here;
+-			YYACCEPT 
++			YYACCEPT; 
+ 		}
+ 	;
+ 	
+@@ -10577,7 +10577,7 @@ OptionalInherit:
+ 				
+ 			Empty
+ 			{
+-				$<s>$ = NULL
++				$<s>$ = NULL;
+ 			}
+ 
+ 
+@@ -10657,7 +10657,7 @@ OptInherits:
+ 				
+ 			Empty
+ 			{
+-				$<ru.base>-1 = NULL				  
++				$<ru.base>-1 = NULL;
+ 			}
+ 			
+ 			/*
+@@ -28209,7 +28209,7 @@ OneOrMoreParms:
+ 		varTkn			/* $4 */
+ 		{
+ 			ProcGlobal = $<s>3;
+-			fastLookup = 1
++			fastLookup = 1;
+ 		}
+ 		';' 			/* $6 */
+ 		{				/* $7 */

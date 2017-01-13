@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${PORTNAME}src${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Level Assembly
 
-USES=		bison zip:infozip
+USES=		bison dos2unix zip:infozip
 
 WRKSRC=		${WRKDIR}/hlasrc/trunk/trunk
 MAKEFILE=	makefile.bsd
