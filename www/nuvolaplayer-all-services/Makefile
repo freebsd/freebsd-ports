@@ -24,7 +24,7 @@ OPTIONS_DEFAULT=${OPTIONS_DEFINE}
 
 . for o in ${OPTIONS_DEFINE}
 ${o}_DESC=	${NV_${o}_DESC} support
-${o}_RUN_DEPENDS=${_DATADIR}/web_apps/${NV_${o}_NAME:S/-/_/g}/metadata.json:www/${PORTNAME}-${NV_${o}_NAME}
+${o}_RUN_DEPENDS=${_DATADIR:S,^${PREFIX}/,${LOCALBASE}/,}/web_apps/${NV_${o}_NAME:S/-/_/g}/metadata.json:www/${PORTNAME}-${NV_${o}_NAME}
 . endfor
 .else
 NV_ID=		${${.CURDIR:T:S/${PORTNAME}-//}_ID}

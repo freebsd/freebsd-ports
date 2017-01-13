@@ -12,7 +12,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java Windowing Toolkit for Text Terminals
 
 BUILD_DEPENDS=	gmake:devel/gmake
-RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:java/jakarta-commons-logging
+RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
 
 OPTIONS_DEFINE=	DOCS
 

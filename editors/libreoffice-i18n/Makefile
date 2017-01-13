@@ -38,7 +38,7 @@ OPTIONS_MULTI_LANG=	${LO_LANG_ALL:tu}
 OPTIONS_DEFAULT=	${LO_LANG_ALL:tu}
 
 .for lang in ${LO_LANG_ALL}
-${lang}_DETECT?=	${PREFIX}/lib/${PORTNAME}/readmes/README_${lang:S/_/-/}
+${lang}_DETECT?=	${LOCALBASE}/lib/${PORTNAME}/readmes/README_${lang:S/_/-/}
 ${lang}_NAME?=		${lang}
 ${lang:tu}_PORT?=	editors/${PORTNAME}-${lang}
 ${lang:tu}_DESC=	${${lang}_NAME} localization data

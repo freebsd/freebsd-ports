@@ -8,8 +8,8 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org drivers meta-port
 
-VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
-INPUTDIR=	${PREFIX}/lib/xorg/modules/input
+VIDEODIR=	${LOCALBASE}/lib/xorg/modules/drivers
+INPUTDIR=	${LOCALBASE}/lib/xorg/modules/input
 
 USES=		metaport
 

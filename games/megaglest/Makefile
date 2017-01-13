@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libminiupnpc.so:net/miniupnpc
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:irc/libircclient \
 		${LOCALBASE}/include/miniupnpc/miniupnpc.h:net/miniupnpc
-RUN_DEPENDS=	${DATADIR}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:games/megaglest-data
+RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:games/megaglest-data
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MegaGlest

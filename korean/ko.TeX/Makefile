@@ -21,7 +21,7 @@ CONFLICTS=	hlatex-[0-9]*
 NO_WRKSUBDIR=	yes
 
 TEXMF=		${PREFIX}/share/texmf-local
-BASE_MAP=	${TEXMF}/fonts/map/dvips/kotex/base/kotex-base.map
+BASE_MAP=	${LOCALBASE}/share/texmf-local/fonts/map/dvips/kotex/base/kotex-base.map
 KOTEX_BIBTEX=	${TEXMF}/bibtex/bst/kotex
 KOTEX_DOC=	${TEXMF}/doc/latex/kotex
 KOTEX_LATEX=	${TEXMF}/tex/latex/kotex
