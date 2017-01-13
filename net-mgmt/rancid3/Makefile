@@ -3,7 +3,7 @@
 
 PORTNAME=	rancid
 PORTVERSION=	3.6.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	3
@@ -67,6 +67,7 @@ post-patch:
 .endif
 	${REINPLACE_CMD} "s|par.1|rancid-par.1|" ${WRKSRC}/man/Makefile.in
 	${MV} ${WRKSRC}/man/par.1 ${WRKSRC}/man/rancid-par.1
+	${REINPLACE_CMD} 's|uid=`perl|uid=`${PERL}|' ${WRKSRC}/etc/rancid.conf.sample.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/periodic/hourly
