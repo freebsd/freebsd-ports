@@ -10,7 +10,8 @@ MASTER_SITES=	https://github.com/OpenTSDB/opentsdb/releases/download/v${PORTVERS
 MAINTAINER=	johannes@perceivon.net
 COMMENT=	OpenTSDB is the Scalable Timeseries Database
 
-LICENSE=	LGPL3
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \
@@ -23,6 +24,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 SHEBANG_FILES=	tools/check_tsd tools/opentsdb_restart.py \
 		tools/tsddrain.py
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		GNUPLOT
 OPTIONS_DEFAULT=	GNUPLOT
