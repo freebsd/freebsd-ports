@@ -1,0 +1,10 @@
+Cinder is a Block Storage service for OpenStack. It's designed to present
+storage resources to end users that can be consumed by the OpenStack Compute
+Project (Nova). This is done through the use of either a reference
+implementation (LVM) or plugin drivers for other storage. The short
+description of Cinder is that it virtualizes the management of block storage
+devices and provides end users with a self service API to request and consume
+those resources without requiring any knowledge of where their storage is
+actually deployed or on what type of device.
+
+WWW: http://openstack.org/cinder

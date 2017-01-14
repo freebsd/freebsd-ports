@@ -372,6 +372,7 @@
     SUBDIR += pspresent
     SUBDIR += py-YABT
     SUBDIR += py-crudini
+    SUBDIR += py-cinder
     SUBDIR += py-fuzzy
     SUBDIR += py-glance
     SUBDIR += py-osd
