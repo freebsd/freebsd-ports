@@ -71,10 +71,10 @@ genplist: do-clean stage
 
 maketar: do-clean
 	@${MKDIR} ${MS_WRKSRC}/
-	@${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_RELEASES} ${GITHUB_RELEASES}
+	@${FETCH_CMD} -o ${MS_RELEASES} ${GITHUB_RELEASES}
 	@${GREP} -o '/${GITHUB_USER}/${GITHUB_PROJECT}/archive/[^"]*\.tar\.gz' ${MS_RELEASES} | ${HEAD} -1 | ${CUT} -d/ -f5 | ${SED} 's|^v||; s|\.tar\.gz$$||' > ${MS_VERSIONFILE}
 	@${ECHO_MSG} "*** Updating from ${PORTVERSION} to ${MS_VERSION} ..."
-	@${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz ${GITHUB_TARBALL}
+	@${FETCH_CMD} -o ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz ${GITHUB_TARBALL}
 	@${MKDIR} ${MS_WRKSRC}/${MS_DISTNAME}/
 	@${TAR} -xf ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz -C ${MS_WRKSRC}/${MS_DISTNAME}/ --strip-components 1
 	@${REINPLACE_CMD} -e 's|${MAKE}|${GMAKE}|g; /^install: / s| docclean||' ${MS_WRKSRC}/${MS_DISTNAME}/Makefile
