@@ -1,6 +1,6 @@
---- configure.orig
+--- configure.orig	2005-06-07 15:29:14 UTC
 +++ configure
-@@ -22091,14 +22091,13 @@
+@@ -22091,14 +22091,13 @@ fi
    if test ! x$silent = xyes; then
      exec 6>&1
    fi
