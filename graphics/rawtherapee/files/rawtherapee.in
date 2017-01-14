@@ -1,8 +1,0 @@
-#!/bin/csh
-#
-# $FreeBSD$
-
-set RTH = "%%RTDIR%%/rth"
-set CONFDIR = "%%RTDIR%%"
-
-exec "${RTH}" ${CONFDIR}
