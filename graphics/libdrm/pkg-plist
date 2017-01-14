@@ -34,6 +34,9 @@ include/libdrm/savage_drm.h
 include/libdrm/sis_drm.h
 include/libdrm/tegra_drm.h
 include/libdrm/via_drm.h
+include/libdrm/vc4_drm.h
+include/libdrm/virtgpu_drm.h
+include/libsync.h
 %%KMS%%include/libkms/libkms.h
 include/xf86drm.h
 include/xf86drmMode.h
