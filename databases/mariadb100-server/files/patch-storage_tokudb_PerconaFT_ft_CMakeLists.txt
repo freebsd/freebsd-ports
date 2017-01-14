@@ -1,6 +1,6 @@
---- storage/tokudb/PerconaFT/ft/CMakeLists.txt.orig	2016-02-17 21:59:56.000000000 +0100
-+++ storage/tokudb/PerconaFT/ft/CMakeLists.txt	2016-02-21 20:51:12.317052693 +0100
-@@ -84,8 +84,8 @@ set_target_properties(ft_static PROPERTI
+--- storage/tokudb/PerconaFT/ft/CMakeLists.txt.orig	2017-01-12 01:45:22 UTC
++++ storage/tokudb/PerconaFT/ft/CMakeLists.txt
+@@ -85,8 +85,8 @@ set_target_properties(ft_static PROPERTI
  maybe_add_gcov_to_libraries(ft ft_static)
  
  ## depend on other generated targets

@@ -10,4 +10,3 @@ remove older cache directories.
 Also, after configurations have been moved to the new version's
 directory, older $HOME/.config/RawTherapee* directories may be removed.
 ======================================================================
-

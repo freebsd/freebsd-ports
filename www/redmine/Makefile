@@ -3,7 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	3.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.redmine.org/releases/
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-mimemagic>=0:misc/rubygem-mimemagic \
 		rubygem-protected_attributes>=0:devel/rubygem-protected_attributes \
 		rubygem-actionpack-action_caching>=0:devel/rubygem-actionpack-action_caching \
-		rubygem-actionpack-xml_parser>=0:textproc/rubygem-actionpack-xml_parser \
+		rubygem-actionpack-xml_parser1>=0:textproc/rubygem-actionpack-xml_parser1 \
 		rubygem-roadie-rails>=0:mail/rubygem-roadie-rails \
 		rubygem-rbpdf>=1.19.0:print/rubygem-rbpdf \
 		rubygem-rake>=0:devel/rubygem-rake \

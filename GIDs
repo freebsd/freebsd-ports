@@ -144,7 +144,7 @@ mcserver:*:199:
 sympa:*:200:
 privoxy:*:201:
 dspam:*:202:
-# free: 203
+cinder:*:203:
 yate:*:204:
 gnugk:*:205:
 gini:*:206:
