@@ -80,7 +80,7 @@ LLD_DESC=		Install lld, the LLVM linker
 LLD_GH_PROJECT=		lld:lld
 LLD_GH_SUBDIR=		tools/lld:lld
 LLD_GH_TAGNAME=		${LLD_COMMIT}:lld
-LLDB_DESC=		Install lldb, the LLVM debugger (ignored on 9.x)
+LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_GH_PROJECT=	lldb:lldb
 LLDB_GH_SUBDIR=		tools/lldb:lldb
@@ -100,7 +100,9 @@ OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
 
-PLIST_SUB+=	LLVM_MAJOR=${LLVM_MAJOR} LLVM_RELEASE=${LLVM_RELEASE}
+PLIST_SUB+=	LLVM_LIB_VER=${LLVM_MAJOR:C/\.//} \
+		LLVM_MAJOR=${LLVM_MAJOR} \
+		LLVM_RELEASE=${LLVM_RELEASE}
 
 COMMANDS=	bugpoint \
 		llc \
@@ -178,6 +180,7 @@ COMMANDS+=	c-index-test \
 		clang-check \
 		clang-cpp \
 		clang-format \
+		clang-import-test \
 		clang-offload-bundler \
 		scan-build \
 		scan-view
@@ -390,7 +393,8 @@ build-plist:
 	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' \
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
-	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' | \
+	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' \
+	    -e 's|${LLVM_MAJOR:C/\.//}|%%LLVM_LIB_VER%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
