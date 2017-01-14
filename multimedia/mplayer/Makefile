@@ -46,6 +46,8 @@ CONFLICTS=	mplayer2-2.*
 CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 USES+=		iconv pkgconfig
 
+OPTIONS_SUB=	yes
+
 .include "${.CURDIR}/../../multimedia/mplayer/Makefile.optvars"
 .include <bsd.port.options.mk>
 
@@ -62,20 +64,6 @@ CONFIGURE_ARGS+=	--disable-arts \
 			--disable-mpg123 \
 			--disable-musepack \
 			--disable-theora
-
-.if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
-PLIST_SUB+=	GMPLAYER=""
-DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
-.if ${PORT_OPTIONS:MSKINS}
-RUN_DEPENDS+=	mplayer-skins>=0:multimedia/mplayer-skins
-.endif
-
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=	--enable-gui
-
-.else
-PLIST_SUB+=	GMPLAYER="@comment "
-.endif #GUI && X11
 
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 xext xproto xscrnsaver
