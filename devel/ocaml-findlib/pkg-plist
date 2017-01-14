@@ -18,7 +18,10 @@ bin/safe_camlp4
 %%OCAML_SITELIBDIR%%/findlib/findlib_dynload.cma
 %%OCAML_SITELIBDIR%%/findlib/findlib_dynload.cmxa
 %%OCAML_SITELIBDIR%%/findlib/findlib_dynload.cmxs
+%%OCAML_SITELIBDIR%%/findlib/findlib_top.a
 %%OCAML_SITELIBDIR%%/findlib/findlib_top.cma
+%%OCAML_SITELIBDIR%%/findlib/findlib_top.cmxa
+%%OCAML_SITELIBDIR%%/findlib/findlib_top.cmxs
 %%OCAML_SITELIBDIR%%/findlib/fl_dynload.cmi
 %%OCAML_SITELIBDIR%%/findlib/fl_dynload.mli
 %%OCAML_SITELIBDIR%%/findlib/fl_metascanner.cmi
