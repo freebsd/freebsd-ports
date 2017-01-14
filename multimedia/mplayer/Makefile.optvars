@@ -52,6 +52,11 @@ GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 GSM_CONFIGURE_OFF=	--disable-libgsm
 
+GUI_CONFIGURE_ENABLE=	gui
+GUI_USE=		GNOME=gtk20
+GUI_DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
+GUI_IMPLIES=		ASS X11
+
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_OFF=	--disable-inet6
 
@@ -103,6 +108,9 @@ SDL_CONFIGURE_OFF=	--disable-sdl
 
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CONFIGURE_OFF=	--disable-sndio
+
+SKINS_RUN_DEPENDS=	mplayer-skins>=0:multimedia/mplayer-skins
+SKINS_IMPLIES=		GUI
 
 SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 SMB_CONFIGURE_OFF=	--disable-smb
