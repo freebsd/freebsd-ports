@@ -1,3 +1,3 @@
-TIMESTAMP = 1483749581
-SHA256 (xorg/xserver/xorg-server-1.19.0.tar.bz2) = 149a708b50befc2d5a40b98d45ddd2ebe0beec018e6d0c663c43bad6210e4da3
-SIZE (xorg/xserver/xorg-server-1.19.0.tar.bz2) = 6051462
+TIMESTAMP = 1484388904
+SHA256 (xorg/xserver/xorg-server-1.19.1.tar.bz2) = 79ae2cf39d3f6c4a91201d8dad549d1d774b3420073c5a70d390040aa965a7fb
+SIZE (xorg/xserver/xorg-server-1.19.1.tar.bz2) = 6041792
