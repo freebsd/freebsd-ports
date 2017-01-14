@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.1.16
-PORTREVISION=	2
+PORTVERSION=	2.1.17
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -32,12 +31,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ntbtls --enable-symcryptrun --disable-wks-tools
 INFO=		gnupg
 
-OPTIONS_DEFINE=	GNUTLS LDAP SCDAEMON KDNS NLS DOCS SUID_GPG
+OPTIONS_DEFINE=	GNUTLS LDAP SCDAEMON NLS DOCS SUID_GPG
 OPTIONS_DEFAULT=GNUTLS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 
-KDNS_DESC=	Use DNS CERT helper
 LDAP_DESC=	LDAP keyserver interface
 SCDAEMON_DESC=	Enable Smartcard daemon (with libusb)
 SUID_GPG_DESC=	Install GPG with suid
@@ -45,9 +43,6 @@ SUID_GPG_DESC=	Install GPG with suid
 
 GNUTLS_CONFIGURE_ENABLE=gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-
-KDNS_LIB_DEPENDS=	libadns.so:dns/adns
-KDNS_CONFIGURE_WITH=	adns=${LOCALBASE}
 
 LDAP_CONFIGURE_WITH=	ldap=${LOCALBASE}
 LDAP_LIBS=		-L${LOCALBASE}/lib
