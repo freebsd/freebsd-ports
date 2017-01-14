@@ -12,6 +12,8 @@ COMMENT=	Linux-compatibility ktrace.out processor
 
 BUILD_DEPENDS=	${RUN_DEPENDS} # USE_LINUX only sets RUN_DEPENDS
 
+BROKEN=		does not build, try base system kdump(1) instead
+
 USES=		linux uidfix
 USE_LINUX=	devtools
 
