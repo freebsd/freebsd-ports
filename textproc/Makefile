@@ -1409,6 +1409,7 @@
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
     SUBDIR += rubygem-actionpack-xml_parser
+    SUBDIR += rubygem-actionpack-xml_parser1
     SUBDIR += rubygem-albino
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
