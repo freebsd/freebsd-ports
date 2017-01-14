@@ -81,6 +81,10 @@ NAS_CONFIGURE_OFF=	--disable-nas
 OPENAL_USES=		openal:soft
 OPENAL_CONFIGURE_OFF=	--disable-openal
 
+OPENGL_USE=		GL=gl
+OPENGL_CONFIGURE_OFF=	--disable-gl
+OPENGL_IMPLIES=		X11
+
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_OFF=	--disable-libopenjpeg
 
@@ -138,8 +142,31 @@ VDPAU_CONFIGURE_OFF=	--disable-vdpau
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CONFIGURE_OFF=	--disable-libvpx-lavc
 
+X11_USE=		XORG=x11,xext,xproto,xscrnsaver
+X11_CONFIGURE_OFF=	--disable-x11
+
+X11DGA_USE=		XORG=xxf86dga
+X11DGA_CONFIGURE_OFF=	--disable-dga1 --disable-dga2
+X11DGA_IMPLIES=		X11
+
+X11VM_USE=		XORG=xxf86vm
+X11VM_CONFIGURE_OFF=	--disable-vm
+X11VM_IMPLIES=		X11
+
 X264_LIB_DEPENDS=	libx264.so:multimedia/libx264
 X264_CONFIGURE_OFF=	--disable-x264
 
+XINERAMA_USE=		XORG=xinerama,xineramaproto
+XINERAMA_CONFIGURE_OFF=	--disable-xinerama
+XINERAMA_IMPLIES=	X11
+
 XVID_LIB_DEPENDS=	libxvidcore.so:multimedia/xvid
 XVID_CONFIGURE_OFF=	--disable-xvid
+
+XVIDEO_USE=		XORG=xv
+XVIDEO_CONFIGURE_OFF=	--disable-xv
+XVIDEO_IMPLIES=		X11
+
+XVMC_USE=		XORG=xvmc
+XVMC_CONFIGURE_ON=	--enable-xvmc --with-xvmclib=XvMCW
+XVMC_IMPLIES=		X11
