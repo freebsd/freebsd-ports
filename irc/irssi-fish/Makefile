@@ -3,6 +3,7 @@
 
 PORTNAME=	irssi-fish
 DISTVERSION=	1.4.20160122
+PORTREVISION=	1
 CATEGORIES=	irc security
 
 MAINTAINER=	ashish@FreeBSD.org

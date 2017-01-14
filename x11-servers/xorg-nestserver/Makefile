@@ -3,7 +3,7 @@
 
 PORTNAME=	xorg-nestserver
 PORTVERSION=	1.19.0
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
 DISTNAME=	xorg-server-${PORTVERSION}
@@ -15,6 +15,7 @@ COMMENT=	Nesting X server from X.Org
 LICENSE=	MIT
 
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
+RUN_DEPENDS=	xkeyboard-config>=2.5:x11/xkeyboard-config
 
 USES=		tar:bzip2 pkgconfig ssl
 INSTALL_WRKSRC= ${WRKSRC}/hw/xnest

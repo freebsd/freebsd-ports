@@ -1,4 +1,4 @@
---- src/bsd_mouse.c.orig	2014-08-12 06:36:34 UTC
+--- src/bsd_mouse.c.orig	2015-04-20 01:07:33 UTC
 +++ src/bsd_mouse.c
 @@ -26,6 +26,24 @@
   * authorization from the copyright holder(s) and author(s).
@@ -476,12 +476,21 @@
 +			xf86FlushInput(pInfo->fd);
 +			if (!xf86InstallSIGIOHandler (pInfo->fd, usbSigioReadInput, 
 +						      pInfo))
-+			    AddEnabledDevice(pInfo->fd);
++			    xf86AddEnabledDevice(pInfo);
 +		    }
 +		}
          }
          pMse->lastButtons = 0;
          pMse->lastMappedButtons = 0;
+@@ -560,7 +737,7 @@ usbMouseProc(DeviceIntPtr pPointer, int 
+     case DEVICE_OFF:
+     case DEVICE_CLOSE:
+         if (pInfo->fd != -1) {
+-            RemoveEnabledDevice(pInfo->fd);
++            xf86RemoveEnabledDevice(pInfo);
+             if (pUsbMse->packetSize > 8 && pUsbMse->buffer) {
+                 free(pUsbMse->buffer);
+             }
 @@ -571,6 +748,7 @@ usbMouseProc(DeviceIntPtr pPointer, int 
              xf86CloseSerial(pInfo->fd);
              pInfo->fd = -1;

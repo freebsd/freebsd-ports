@@ -2,3 +2,4 @@ include/xorg/evdev-properties.h
 lib/xorg/modules/input/evdev_drv.so
 libdata/pkgconfig/xorg-evdev.pc
 man/man4/evdev.4x.gz
+share/X11/xorg.conf.d/10-evdev.conf

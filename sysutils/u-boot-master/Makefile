@@ -46,19 +46,17 @@ IGNORE+=	BOARD_CONFIG is not defined
 IGNORE+=	FAMILY is not defined
 .endif
 
-# Defines for OMAP family
+# Overrides for OMAP family
 UBOOT_PLIST_OMAP=u-boot.img MLO
-UBOOT_VERSION_OMAP=2017.01
 
-# Defines for ALLWINNER family
+# Overrides for ALLWINNER family
 UBOOT_PLIST_ALLWINNER=u-boot.img u-boot-sunxi-with-spl.bin
-UBOOT_VERSION_ALLWINNER=2017.01
 
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2017.01
+UBOOT_VERSION?=	2017.01.00.1
 
 .if !defined(UBOOT_PLIST) && defined(UBOOT_PLIST_${FAMILY:tu})
 UBOOT_PLIST=${UBOOT_PLIST_${FAMILY:tu}}
