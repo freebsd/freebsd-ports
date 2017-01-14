@@ -10,9 +10,7 @@ MASTER_SITES=	http://camlp5.gforge.inria.fr/distrib/src/ \
 PKGNAMEPREFIX=	ocaml-
 DIST_SUBDIR=	${PKGBASE}
 
-PATCH_SITES=	${MASTER_SITES}
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Preprocessor-pretty-printer of OCaml
 
 LICENSE=	INRIA
@@ -20,12 +18,12 @@ LICENSE_NAME=	INRIA permissive license with copyright notice requirements
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		tar:tgz
+USE_OCAML=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix ${PREFIX}
 ALL_TARGET=	world.opt
-MAKE_JOBS_UNSAFE=	yes
-USES=			tar:tgz
-USE_OCAML=		yes
-HAS_CONFIGURE=		yes
-CONFIGURE_ARGS=		--prefix ${PREFIX}
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_SINGLE=		MODE
 OPTIONS_SINGLE_MODE=	TRANSITIONAL STRICT
@@ -42,8 +40,10 @@ STRICT_CONFIGURE_ON=	--strict
 TRANSITIONAL_CONFIGURE_ON=	--transitional
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/etc/META ${STAGEDIR}${PREFIX}/lib/ocaml/camlp5
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/camlp5*.opt ${STAGEDIR}${PREFIX}/${OCAML_LIBDIR}/camlp5/*.o
+	${INSTALL_DATA} ${WRKSRC}/etc/META \
+	    ${STAGEDIR}${PREFIX}/lib/ocaml/camlp5
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/camlp5*.opt \
+	    ${STAGEDIR}${PREFIX}/${OCAML_LIBDIR}/camlp5/*.o
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

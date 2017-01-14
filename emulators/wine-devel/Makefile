@@ -123,10 +123,7 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
 PLIST_SUB+=		WINE32="@comment " WINE64=""
 
-# On FreeBSD 9.x, even when CHOSEN_COMPILER_TYPE from Mk/Uses/compiler.mk
-# is set to clang, COMPILER_VERSION is still at 42 from the system compiler
-# that is GCC 4.2.  Hack around this a bit.
-.if ${CHOSEN_COMPILER_TYPE} == clang && ( ${COMPILER_VERSION} < 38 || ${COMPILER_VERSION} == 42 )
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 38
 CPPFLAGS+=		-D__builtin_ms_va_list=__builtin_va_list \
 			-D__builtin_ms_va_start=__builtin_va_start \
 			-D__builtin_ms_va_end=__builtin_va_end \

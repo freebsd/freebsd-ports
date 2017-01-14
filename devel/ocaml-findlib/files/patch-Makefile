@@ -1,5 +1,5 @@
---- Makefile.orig	2016-03-07 14:46:34.000000000 +0100
-+++ Makefile	2016-03-10 22:51:25.356292000 +0100
+--- Makefile.orig	2016-11-18 13:04:45 UTC
++++ Makefile
 @@ -17,14 +17,14 @@ opt:
  	for p in $(PARTS); do ( cd src/$$p; $(MAKE) opt ) || exit; done
  
@@ -18,11 +18,20 @@
  	fi
  	$(MAKE) install-doc
  
+@@ -55,7 +55,7 @@ findlib.conf: findlib.conf.in
+ 	USE_CYGPATH="$(USE_CYGPATH)"; \
+ 	export USE_CYGPATH; \
+ 	cat findlib.conf.in | \
+-		tools/patch '@SITELIB@' '$(OCAML_SITELIB)' >findlib.conf
++		tools/patch '@SITELIB@' '$(OCAML_SITELIB):$(OCAML_LIBDIR)' >findlib.conf
+ 	if ./tools/cmd_from_same_dir ocamlc; then \
+ 		echo 'ocamlc="ocamlc.opt"' >>findlib.conf; \
+ 	fi
 @@ -71,9 +71,9 @@ findlib.conf: findlib.conf.in
  
  .PHONY: install-doc
  install-doc:
--	mkdir -p "$(prefix)$(OCAMLFIND_MAN)/man1" "$(prefix)$(OCAMLFIND_MAN)/man3 $(prefix)$(OCAMLFIND_MAN)/man5"
+-	mkdir -p "$(prefix)$(OCAMLFIND_MAN)/man1" "$(prefix)$(OCAMLFIND_MAN)/man3" "$(prefix)$(OCAMLFIND_MAN)/man5"
 -	-cp doc/ref-man/ocamlfind.1 "$(prefix)$(OCAMLFIND_MAN)/man1"
 -	-cp doc/ref-man/META.5 doc/ref-man/site-lib.5 doc/ref-man/findlib.conf.5 "$(prefix)$(OCAMLFIND_MAN)/man5"
 +	mkdir -p "$(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man1" "$(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man3" "$(DESTDIR)$(prefix)$(OCAMLFIND_MAN)/man5"

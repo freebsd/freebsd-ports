@@ -1,2 +1,3 @@
-SHA256 (libdrm-2.4.66.tar.bz2) = 79cb8e988749794edfb2d777b298d5292eff353bbbb71ed813589e61d2bc2d76
-SIZE (libdrm-2.4.66.tar.bz2) = 694574
+TIMESTAMP = 1484389267
+SHA256 (libdrm-2.4.74.tar.bz2) = d80dd5a76c401f4c8756dcccd999c63d7e0a3bad258d96a829055cfd86ef840b
+SIZE (libdrm-2.4.74.tar.bz2) = 781730

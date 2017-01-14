@@ -49,7 +49,7 @@ USES+=		iconv pkgconfig
 OPTIONS_SUB=	yes
 
 .include "${.CURDIR}/../../multimedia/mplayer/Makefile.optvars"
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--disable-arts \
 			--disable-directfb \
@@ -65,42 +65,6 @@ CONFIGURE_ARGS+=	--disable-arts \
 			--disable-musepack \
 			--disable-theora
 
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xext xproto xscrnsaver
-.if ${PORT_OPTIONS:MXVIDEO}
-USE_XORG+=	xv
-.else
-CONFIGURE_ARGS+=--disable-xv
-.endif
-.if ${PORT_OPTIONS:MX11DGA}
-USE_XORG+=	xxf86dga
-.else
-CONFIGURE_ARGS+=--disable-dga1 --disable-dga2
-.endif
-.if ${PORT_OPTIONS:MOPENGL}
-USE_GL+=	gl
-.else
-CONFIGURE_ARGS+=--disable-gl
-.endif
-.if ${PORT_OPTIONS:MXINERAMA}
-USE_XORG+=	xinerama xineramaproto
-.else
-CONFIGURE_ARGS+=--disable-xinerama
-.endif
-.if ${PORT_OPTIONS:MX11VM}
-USE_XORG+=	xxf86vm
-.else
-CONFIGURE_ARGS+=--disable-vm
-.endif
-.if ${PORT_OPTIONS:MXVMC}
-USE_XORG+=	xvmc
-CONFIGURE_ARGS+=--enable-xvmc --with-xvmclib=XvMCW
-.endif
-.else	#X11
-CONFIGURE_ARGS+=--disable-x11
-.endif
-
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../multimedia/mplayer/Makefile.options"
 
 BROKEN_armv6=		Fails to compile: Error: garbage following instruction -- vmov s16,SCALE
