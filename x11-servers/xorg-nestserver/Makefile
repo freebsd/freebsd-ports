@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorg-nestserver
-PORTVERSION=	1.19.0
+PORTVERSION=	1.19.1
 PORTEPOCH=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
