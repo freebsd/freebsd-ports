@@ -17,8 +17,6 @@ LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
-BROKEN_FreeBSD_11=Will not start on 11, Bug 212493
-
 USES=		tar:bz2
 NO_BUILD=	yes
 USE_LDCONFIG=	${LIBDIR}
@@ -45,6 +43,10 @@ SUB_LIST+=	DBDIR=${DBDIR} \
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000 && ${OSVERSION} < 1100507
+BROKEN=	Will not start on FreeBSD 11, Bug 212493
+.endif
 
 .if ${ARCH} ==	"i386"
 TEAMSPEAK_ARCH=	x86
