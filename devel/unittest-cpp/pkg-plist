@@ -37,3 +37,4 @@ lib/cmake/UnitTest++/UnitTest++Config.cmake
 lib/cmake/UnitTest++/UnitTest++Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/UnitTest++/UnitTest++Targets.cmake
 lib/libUnitTest++.a
+libdata/pkgconfig/UnitTest++.pc
