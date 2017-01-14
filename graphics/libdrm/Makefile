@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libdrm
-PORTVERSION=	2.4.66
+PORTVERSION=	2.4.74
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 		libpthread-stubs.so:devel/libpthread-stubs
