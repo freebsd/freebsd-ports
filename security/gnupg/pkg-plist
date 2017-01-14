@@ -52,6 +52,7 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/README
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/dirmngr.service
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/dirmngr.socket
+%%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent-browser.socket
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent-extra.socket
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent-ssh.socket
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent.service
