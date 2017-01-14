@@ -21,6 +21,7 @@ CLIENT_ONLY=	yes
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/aclocal/mysql.m4
+	${RM} ${STAGEDIR}${PREFIX}/bin/mysqld_safe_helper
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/private
 
 .include "${MASTERDIR}/Makefile"
