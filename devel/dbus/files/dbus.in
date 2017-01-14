@@ -26,6 +26,7 @@ stop_postcmd="dbus_poststop"
 dbus_prestart()
 {
     %%PREFIX%%/bin/dbus-uuidgen --ensure
+    mkdir -p /var/run/dbus
 }
 
 dbus_poststop()
