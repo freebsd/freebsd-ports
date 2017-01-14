@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-01-14 03:31:12 UTC
++++ CMakeLists.txt
+@@ -36,7 +36,7 @@ endif()
+ # * https://github.com/forexample/package-example
+ set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
+ 
+-set(config_install_dir "lib/cmake/${PROJECT_NAME}")
++set(config_install_dir "share/cmake/Modules/${PROJECT_NAME}")
+ set(include_install_dir "include")
+ set(pkgconfig_install_dir "libdata/pkgconfig")
+ 
