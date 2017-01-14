@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	2.4
-PORTREVISION=	10
+PORTVERSION=	3.0
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
-PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
@@ -19,28 +18,31 @@ BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale:x11-fonts/mkfontscale
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libgif.so:graphics/giflib \
+		libportaudio.so:audio/portaudio \
 		libmp3lame.so:audio/lame \
-		libavcodec.so:multimedia/ffmpeg
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libavcodec.so:multimedia/ffmpeg \
+		libFLAC.so:audio/flac \
+		libpci.so:devel/libpci \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
-USES=		iconv:patch gmake pkgconfig makeinfo
-USE_XORG=	xpm ice sm xext xv xt x11 xmu
+USES=		dos2unix pkgconfig makeinfo gmake iconv jpeg
+USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
+DOS2UNIX_FILES=	doc/vice.texi src/arch/unix/io-access.c
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 \
+			--enable-external-ffmpeg \
+			--with-uithreads \
 			--disable-dependency-tracking
-#CONFIGURE_ARGS+=	--enable-ethernet
-# libpcap or libnet
-#CONFIGURE_ARGS+=	--enable-sdlui
-#CONFIGURE_ARGS+=	--enable-gp2x
-#CONFIGURE_ARGS+=	--enable-wiz
-#CONFIGURE_ARGS+=	--enable-parsid
-#CONFIGURE_ARGS+=	--enable-memmap
 
 LMLINKS=	vice.1 x64.1 \
 		vice.1 x128.1 \
@@ -49,39 +51,23 @@ LMLINKS=	vice.1 x64.1 \
 		vice.1 xplus4.1 \
 		vice.1 xcbm2.1
 
-FIX_XAW=	src/arch/unix/x11/xaw/about.c \
-		src/arch/unix/x11/xaw/uicartridge.c \
-		src/arch/unix/x11/xaw/uiedisk.c \
-		src/arch/unix/x11/xaw/uimenu.c \
-		src/arch/unix/x11/xaw/uipalcontrol.c \
-		src/arch/unix/x11/xaw/uiscreenshot.c \
-		src/arch/unix/x11/xaw/uisnapshot.c \
-		src/arch/unix/x11/xaw/uivsidcontrol.c \
-		src/arch/unix/x11/xaw/x11ui.c \
-		src/arch/unix/x11/xaw/widgets/FileSel.c \
-		src/arch/unix/x11/xaw/widgets/FileSelP.h \
-		src/arch/unix/x11/xaw/widgets/MultiList.h \
-		src/arch/unix/x11/xaw/widgets/MultiListP.h \
-		src/arch/unix/x11/xaw/widgets/ScrList.c \
-
 OPTIONS_DEFINE=	SDL ASOUND PULSE DOCS
-OPTIONS_SINGLE= GUI
-OPTIONS_SINGLE_GUI=	GNOMEUI XAW3D XAW
-OPTIONS_DEFAULT?=	GNOMEUI SDL
+OPTIONS_SINGLE=	GUI
+OPTIONS_SINGLE_GUI=	GNOMEUI3 GNOMEUI2 XAW
+OPTIONS_DEFAULT?=	GNOMEUI3 SDL ASOUND
 NO_OPTIONS_SORT=yes
-GNOMEUI_DESC=	use gnomeui toolkit
-XAW3D_DESC=	use Xaw3d library
+OPTIONS_SUB=	yes
+GNOMEUI3_DESC=	use gnome3 user interface
+GNOMEUI2_DESC=	use gnome2 user interface
 XAW_DESC=	use plain Xaw library
-SDL_DESC=	build with SDL sound system support
+SDL_DESC=	build with SDL2 sound system support
 ASOUND_DESC=	build with asound support
 PULSE_DESC=	build with pulseaudio support
 
-GNOMEUI_CONFIGURE_ENABLE=	gnomeui
-XAW3D_CONFIGURE_WITH=	xaw3d
-XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
-SDL_USE=		SDL=sdl
+GNOMEUI2_CONFIGURE_ENABLE=	gnomeui
+GNOMEUI3_CONFIGURE_ENABLE=	gnomeui3
+SDL_USE=		SDL=sdl2
 SDL_CONFIGURE_ON=	--with-sdlsound
-SDL_CPPFLAGS=		-I${LOCALBASE}/include/SDL
 ASOUND_CONFIGURE_OFF=	--without-alsa
 ASOUND_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSE_CONFIGURE_OFF=	--without-pulse
@@ -90,7 +76,7 @@ PULSE_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 .include <bsd.port.options.mk>
 
 .if !defined(BUILDING_INDEX)
-__pmlinks1!= ${ECHO_CMD} '${LMLINKS:S/    / /}' | ${AWK} \
+__pmlinks1!=	${ECHO_CMD} '${LMLINKS:S/    / /}' | ${AWK} \
 	'{ if (NF % 2 != 0) { print "broken"; exit; } \
 	for (i=1; i<=NF; i++) { \
 		if ( i % 2 == 0) { print " " $$i " ;"; } \
@@ -98,36 +84,27 @@ __pmlinks1!= ${ECHO_CMD} '${LMLINKS:S/    / /}' | ${AWK} \
 	} }'
 .endif
 
-.if ${PORT_OPTIONS:MXAW3D}
-GNOME_SUFFIX=   -xaw3d
-CONFLICTS?=     vice-gnome-1.* vice-1.*
-USES+=		perl5
+.if ${PORT_OPTIONS:MGNOMEUI2}
+USE_GNOME+=	gtk20 vte cairo gdkpixbuf2 pangox-compat
+USE_GL+=	glu gl
+LIB_DEPENDS+=	libgdkglext-x11-1.0.so:x11-toolkits/gtkglext
 .endif
 
-.if ${PORT_OPTIONS:MGNOMEUI}
-GNOME_SUFFIX=   -gnome
-USE_GNOME=      gtk20 vte
-CONFLICTS?=     vice-1.* vice-xaw3d-1.*
+.if ${PORT_OPTIONS:MGNOMEUI3}
+.if ${PORT_OPTIONS:MNLS}
+USES+=		gettext-runtime
+.endif
+USE_GNOME+=	gtk30 vte3 cairo gdkpixbuf2
+USE_GL+=	glu gl
 .endif
 
 .if ${PORT_OPTIONS:MXAW}
-CONFLICTS?=     vice-xaw3d-1.* vice-gnome-1.*
-USE_XORG+=      xaw
-.endif
-
-.if exists(${LOCALBASE}/bin/fc-cache)
-PLIST_SUB+=		FCCACHE=""
-PLIST_SUB+=		NOFCCACHE="@comment "
-.else
-PLIST_SUB+=		FCCACHE="@comment "
-PLIST_SUB+=		NOFCCACHE=""
+USE_XORG+=	xaw
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CONFIGURE_ARGS+=	--enable-nls --localedir=${LOCALBASE}/share/locale
-# causes vice to crash:
-#LDFLAGS+=		-lgettextlib
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -139,54 +116,39 @@ INFO+=		vice
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
+USE_SDL=	sdl2
 .endif
 
-post-extract:
-	@${RM} ${WRKSRC}/doc/vice.info*
-
 post-patch:
-	${CHMOD} +x "${WRKSRC}/doc/html/texi2html"
+	${REINPLACE_CMD} \
+		-e 's|enum PixelFormat|enum AVPixelFormat|g' \
+		${WRKSRC}/src/gfxoutputdrv/ffmpeglib.h
+.for i in da.po de.po es.po fr.po hu.po it.po nl.po pl.po sv.po tr.po
+	${MV} "${WRKSRC}/po/${i}" "${WRKSRC}/po/${i}.latin"
+	${ICONV_CMD} -f latin1 -t utf-8 < "${WRKSRC}/po/${i}.latin" > "${WRKSRC}/po/${i}"
+.endfor
+
+pre-configure:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/man/vice.1
 	${REINPLACE_CMD} -e 's|^localedir.*|localedir = $$(DESTDIR)${LOCALBASE}/share/locale|' \
 		${WRKSRC}/po/Makefile.in.in
-	${REINPLACE_CMD} -e 's|lungif|lgif|g' -e 's|== "x|= "x|' \
-		-e 's|"DATADIRNAME"/locale|share/locale|' \
-		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|CODEC_ID_|AV_CODEC_ID_|' \
-		-e 's|PIX_FMT_|AV_PIX_FMT_|' \
-		${WRKSRC}/src/gfxoutputdrv/ffmpegdrv.c
-	${REINPLACE_CMD} \
-		-e 's|enum PixelFormat|enum AVPixelFormat|g' \
-		${WRKSRC}/src/gfxoutputdrv/ffmpeglib.h
-.for i in da.po de.po fr.po hu.po it.po nl.po pl.po sv.po tr.po
-	${MV} "${WRKSRC}/po/${i}" "${WRKSRC}/po/${i}.latin"
-	${ICONV_CMD} -f latin1 -t utf-8 < "${WRKSRC}/po/${i}.latin" > "${WRKSRC}/po/${i}"
-.endfor
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
-.endif
-.if ${PORT_OPTIONS:MXAW3D}
-.for i in ${FIX_XAW}
-	${REINPLACE_CMD} -e 's|X11/Xaw/|X11/Xaw3d/|' ${WRKSRC}/${i}
-.endfor
 .endif
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vice/fonts
-.if exists(${LOCALBASE}/bin/fc-cache)
 	${INSTALL_DATA} ${WRKSRC}/data/fonts/vice-cbm.bdf \
 		${STAGEDIR}${PREFIX}/lib/vice/fonts/
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+pre-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.endif
 
 post-install:
 	( cd ${STAGEDIR}${PREFIX}/man/man1 && ${__pmlinks1} )
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${LN} -sf vice_toc.html ${STAGEDIR}${DOCSDIR}/index.html
-.endif
 
 .include <bsd.port.mk>
