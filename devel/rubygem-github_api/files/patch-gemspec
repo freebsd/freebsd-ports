@@ -1,0 +1,11 @@
+--- github_api.gemspec.orig	2017-01-15 03:51:29 UTC
++++ github_api.gemspec
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.4.0"])
+       s.add_runtime_dependency(%q<hashie>.freeze, [">= 3.4"])
+-      s.add_runtime_dependency(%q<faraday>.freeze, ["< 0.10", "~> 0.8"])
++      s.add_runtime_dependency(%q<faraday>.freeze, [">= 0.8"])
+       s.add_runtime_dependency(%q<oauth2>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<descendants_tracker>.freeze, ["~> 0.0.4"])
+       s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
