@@ -993,6 +993,7 @@
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
     SUBDIR += rubygem-teamocil
+    SUBDIR += rubygem-tmuxinator
     SUBDIR += rubygem-vagrant-bhyve
     SUBDIR += rubygem-vagrant-mutate
     SUBDIR += rubygem-vagrant-vbguest
