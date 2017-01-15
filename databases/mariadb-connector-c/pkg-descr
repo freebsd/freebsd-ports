@@ -1,0 +1,8 @@
+The MariaDB Connector/C is used to connect applications developed in C/C++
+to MariaDB and MySQL databases. MySQL Connector/C is LGPL licensed.
+
+Parts of MariaDB Connector/C are derived from PHP\'s mysqlnd extension and
+the original LGPL MySQL client library for MySQL 3.23. The rest of the code
+is written by developers at MariaDB Corporation Ab.
+
+WWW: https://www.mariadb.com/kb/en/mariadb/about-mariadb-connector-c/
