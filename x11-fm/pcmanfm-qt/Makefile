@@ -4,8 +4,7 @@
 PORTNAME=	pcmanfm-qt
 PORTVERSION=	0.11.3
 CATEGORIES=	x11-fm
-#MASTER_SITES=	LXQT/${PORTNAME}
-MASTER_SITES=	https://github.com/lxde/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	LXQT/${PORTNAME}
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	LXQt file manager
