@@ -1,6 +1,6 @@
---- sql/CMakeLists.txt.orig	2014-09-05 22:49:59.808332000 +0200
-+++ sql/CMakeLists.txt	2014-09-05 22:50:18.768326206 +0200
-@@ -226,9 +226,9 @@
+--- sql/CMakeLists.txt.orig	2017-01-12 01:45:19 UTC
++++ sql/CMakeLists.txt
+@@ -247,9 +247,9 @@ RUN_BISON(
  )
  
  # Gen_lex_hash
