@@ -28,7 +28,7 @@ Avoid accidental rounding from abs()
  {
 -    size_t len = 0, i = 0;
 +    size_t len = 0;
-+    int i = 0;
++    long i = 0;
      ptrdiff_t pos = 0;
      char *newbuf = NULL;
  
