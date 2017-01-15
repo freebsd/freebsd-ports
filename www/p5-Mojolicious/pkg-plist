@@ -31,6 +31,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/IOLoop/Server.pm
 %%SITE_PERL%%/Mojo/IOLoop/Stream.pm
 %%SITE_PERL%%/Mojo/IOLoop/Subprocess.pm
+%%SITE_PERL%%/Mojo/IOLoop/TLS.pm
 %%SITE_PERL%%/Mojo/IOLoop/resources/server.crt
 %%SITE_PERL%%/Mojo/IOLoop/resources/server.key
 %%SITE_PERL%%/Mojo/JSON.pm
@@ -168,6 +169,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::IOLoop::Server.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::Stream.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::Subprocess.3.gz
+%%PERL5_MAN3%%/Mojo::IOLoop::TLS.3.gz
 %%PERL5_MAN3%%/Mojo::JSON.3.gz
 %%PERL5_MAN3%%/Mojo::JSON::Pointer.3.gz
 %%PERL5_MAN3%%/Mojo::Loader.3.gz
