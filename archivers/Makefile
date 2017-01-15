@@ -205,7 +205,6 @@
     SUBDIR += stuffit
     SUBDIR += szip
     SUBDIR += tardy
-    SUBDIR += tclmkziplib
     SUBDIR += thunar-archive-plugin
     SUBDIR += torrentzip
     SUBDIR += ucl
