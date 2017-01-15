@@ -8,7 +8,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Create/update ZIP files compatible with PKZIP
 
 # License is BSD-based, but not identical, so install with documentation
