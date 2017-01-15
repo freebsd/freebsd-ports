@@ -1116,6 +1116,7 @@
     SUBDIR += tmpreaper
     SUBDIR += tmpwatch
     SUBDIR += tmux
+    SUBDIR += tmux-mem-cpu-load
     SUBDIR += topless
     SUBDIR += torque
     SUBDIR += toshctl
