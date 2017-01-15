@@ -8989,3 +8989,4 @@ x11-drivers/drm-kmod||2017-01-15|Has expired: this port is only for 9.3 systems
 audio/xmms-openspc||2017-01-15|Has expired: does not build on FreeBSD 10.x and later
 audio/aureal-kmod||2017-01-15|Has expired: does not build (and fetch)
 emulators/doscmd||2017-01-15|Has expired: does not build (accesses field of opaque structure)
+sysutils/fusefs-kmod||2017-01-15|Has expired: integrated into base
