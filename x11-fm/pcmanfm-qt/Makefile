@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanfm-qt
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.3
 CATEGORIES=	x11-fm
 #MASTER_SITES=	LXQT/${PORTNAME}
 MASTER_SITES=	https://github.com/lxde/${PORTNAME}/releases/download/${PORTVERSION}/
