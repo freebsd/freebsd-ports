@@ -26,7 +26,6 @@
     SUBDIR += aft
     SUBDIR += agrep
     SUBDIR += aiksaurus
-    SUBDIR += aiksaurus-gtk
     SUBDIR += align
     SUBDIR += am-aspell
     SUBDIR += amberfish
