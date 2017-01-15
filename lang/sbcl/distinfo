@@ -1,10 +1,3 @@
-SHA256 (sbcl-1.3.1-source.tar.bz2) = a2e547e471a368349a43b1feee78ca6139aae0c60b8fcaa6ab0fd0e5b8e0ed3d
-SIZE (sbcl-1.3.1-source.tar.bz2) = 5725055
-SHA256 (sbcl-1.3.1-documentation-html.tar.bz2) = 2c1cb5cf404761e4705a83acfe9d495f9716b6d0fe14499ad314e1b78b3cf828
-SIZE (sbcl-1.3.1-documentation-html.tar.bz2) = 220952
-SHA256 (sbcl-1.0.31-amd64-freebsd8-binary.tar.bz2) = 06a1e4e3a5f5f8e012ff6037a51624d7d1f34bff0979ce45e70418a293412b4e
-SIZE (sbcl-1.0.31-amd64-freebsd8-binary.tar.bz2) = 8397764
-SHA256 (sbcl-1.0.31-i386-freebsd8-binary.tar.bz2) = fd2348749a2babf301a99449d246b349a1285fc0bca8b83bde0bfa7187cf3dd7
-SIZE (sbcl-1.0.31-i386-freebsd8-binary.tar.bz2) = 8475244
-SHA256 (sbcl-1.2.9-x86_64-dragonfly4-binary.tar.bz2) = 2e32a22ef3a528d7247c0e3a72a3ac672b8b6848ac2d35fbad52a3d1475130dc
-SIZE (sbcl-1.2.9-x86_64-dragonfly4-binary.tar.bz2) = 10224580
+TIMESTAMP = 1483706842
+SHA256 (sbcl-1.3.13-source.tar.bz2) = 4c6935e4a9022637da95f2aab04d08326762f55a35942b40cb6a4276838c76cc
+SIZE (sbcl-1.3.13-source.tar.bz2) = 5783599
