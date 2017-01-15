@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serviio
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8
 PORTREVISION=	1
 #PORTREVISION=	0
 CATEGORIES=	net multimedia java www

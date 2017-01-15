@@ -24,6 +24,7 @@ IGNORE=	Incorrect 'USES+=lxqt:${lxqt_ARGS} takes no arguments
 .endif
 
 MASTER_SITE_LXQT+= \
+	https://github.com/lxde/%SUBDIR%/releases/download/${PORTVERSION}/ \
 	http://downloads.lxqt.org/%SUBDIR%/${PORTVERSION}/
 MASTER_SITE_LXQT_SUBDIR=	lxqt
 
