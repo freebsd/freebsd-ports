@@ -88,7 +88,6 @@
     SUBDIR += ctrace
     SUBDIR += cvsup-static
     SUBDIR += cvsync
-    SUBDIR += cyphesis
     SUBDIR += czmq
     SUBDIR += daemonlogger
     SUBDIR += dante
@@ -119,6 +118,7 @@
     SUBDIR += dshell
     SUBDIR += dtcp
     SUBDIR += dtcpclient
+    SUBDIR += dual-dhclient
     SUBDIR += e169-stats
     SUBDIR += easysoap
     SUBDIR += echoping
@@ -188,7 +188,6 @@
     SUBDIR += googlecl
     SUBDIR += gopher
     SUBDIR += gotthard
-    SUBDIR += gpxe
     SUBDIR += gq
     SUBDIR += grdesktop
     SUBDIR += grilo
@@ -505,7 +504,6 @@
     SUBDIR += openmq-client
     SUBDIR += openntpd
     SUBDIR += opennx
-    SUBDIR += openospfd
     SUBDIR += openpgm
     SUBDIR += openradius
     SUBDIR += opensips

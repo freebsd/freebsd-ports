@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geminabox
-PORTVERSION=	0.13.4
+PORTVERSION=	0.13.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

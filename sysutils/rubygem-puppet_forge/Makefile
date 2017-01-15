@@ -2,6 +2,7 @@
 
 PORTNAME=	puppet_forge
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

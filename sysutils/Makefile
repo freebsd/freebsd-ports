@@ -40,7 +40,6 @@
     SUBDIR += apachetop
     SUBDIR += apcpwr
     SUBDIR += apcupsd
-    SUBDIR += apt
     SUBDIR += arcconf
     SUBDIR += archivemount
     SUBDIR += areca-cli
@@ -343,7 +342,6 @@
     SUBDIR += fusefs-gunzip
     SUBDIR += fusefs-httpfs
     SUBDIR += fusefs-ifuse
-    SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-lkl
     SUBDIR += fusefs-mhddfs
