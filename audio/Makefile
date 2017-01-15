@@ -43,7 +43,6 @@
     SUBDIR += audiere
     SUBDIR += audiotag
     SUBDIR += aumix
-    SUBDIR += aureal-kmod
     SUBDIR += autocd
     SUBDIR += autotalent
     SUBDIR += autozen
@@ -837,7 +836,6 @@
     SUBDIR += xmms-mailnotify
     SUBDIR += xmms-nas
     SUBDIR += xmms-nsf
-    SUBDIR += xmms-openspc
     SUBDIR += xmms-sapplug
     SUBDIR += xmms-scrobbler
     SUBDIR += xmms-sexypsf

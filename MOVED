@@ -8978,3 +8978,14 @@ www/httpie|www/py-httpie|2017-01-09|Renamed to match upstream (PyPI) name
 sysutils/istatd|sysutils/istatserver|2017-01-09|Project was renamed
 devel/py-gflags|devel/py-python-gflags|2017-01-10|Rename to match PyPI naming
 java/wildfly100|java/wildfly10|2017-01-10|Remove minor version number from port name
+net/cyphesis||2017-01-15|Has expired: Does not compile on FreeBSD 10+
+net/gpxe||2017-01-15|Has expired: does not build on FreeBSD 10.x and later
+net/openospfd||2017-01-15|Has expired: requires old CARP implementation (interface layer)
+security/openbsm-devel||2017-01-15|Has expired: is not needed under FreeBSD 10.x or higher
+security/ssh-copy-id||2017-01-15|Has expired: is already in the base system
+sysutils/apt||2017-01-15|Has expired: does not build on 10+
+archivers/tclmkziplib||2017-01-15|Has expired: Abandonware, please use bundled zlib package [http://tcl.tk/man/tcl8.6/TclCmd/zlib.htm]
+x11-drivers/drm-kmod||2017-01-15|Has expired: this port is only for 9.3 systems
+audio/xmms-openspc||2017-01-15|Has expired: does not build on FreeBSD 10.x and later
+audio/aureal-kmod||2017-01-15|Has expired: does not build (and fetch)
+emulators/doscmd||2017-01-15|Has expired: does not build (accesses field of opaque structure)

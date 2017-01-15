@@ -1,7 +1,0 @@
---- buildlib/archtable.orig	Thu Mar  2 06:26:52 2006
-+++ buildlib/archtable	Wed Nov 15 13:08:39 2006
-@@ -27,3 +27,4 @@
- s390	s390
- s390x	s390x
- x86_64	amd64
-+amd64	amd64

@@ -40,7 +40,6 @@
     SUBDIR += apachetop
     SUBDIR += apcpwr
     SUBDIR += apcupsd
-    SUBDIR += apt
     SUBDIR += arcconf
     SUBDIR += archivemount
     SUBDIR += areca-cli
