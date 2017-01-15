@@ -28,7 +28,13 @@ PLIST_FILES=	bin/traindir3
 
 MAKEFILE=	Makefile.fc9
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1200017
+BROKEN=		Fails to compile with clang 3.9.x and later
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/traindir3 ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

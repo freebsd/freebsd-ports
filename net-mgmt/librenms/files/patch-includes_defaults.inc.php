@@ -1,17 +1,8 @@
---- includes/defaults.inc.php.orig	2015-10-16 23:09:41 UTC
-+++ includes/defaults.inc.php
-@@ -40,7 +40,7 @@ $config['project_name'] = 'LibreNMS';
- $config['project_id']   = strtolower($config['project_name']);
- 
- $config['temp_dir']    = '/tmp';
--$config['install_dir'] = '/opt/'.$config['project_id'];
-+$config['install_dir'] = '/usr/local/www/'.$config['project_id'];
- $config['log_dir']     = $config['install_dir'].'/logs';
- 
- // MySQL extension to use
-@@ -50,26 +50,26 @@ $config['db']['extension']       = 'mysq
+--- includes/defaults.inc.php.orig      2017-01-01 15:50:41.000000000 +0000
++++ includes/defaults.inc.php   2017-01-09 13:24:06.964918000 +0000
+@@ -36,26 +36,26 @@
  $config['own_hostname'] = 'localhost';
- 
+
  // Location of executables
 -$config['rrdtool']                  = '/usr/bin/rrdtool';
 +$config['rrdtool']                  = '/usr/local/bin/rrdtool';
@@ -47,6 +38,6 @@
 +$config['virsh']          = '/usr/local/bin/virsh';
 +$config['dot']            = '/usr/local/bin/dot';
 +$config['sfdp']           = '/usr/local/bin/sfdp';
- 
+
  // Memcached - Keep immediate statistics
  $config['memcached']['enable'] = false;
