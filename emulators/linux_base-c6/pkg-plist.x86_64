@@ -2772,7 +2772,7 @@ usr/share/man/man8/x86_64.8.gz
 usr/tmp
 @rmtry var/cache/ldconfig/aux-cache
 var/mail
-@dir dev/shm
+@dir dev
 @dir etc/X11/applnk
 @dir etc/X11/fontpath.d
 @dir etc/blkid
@@ -2792,10 +2792,8 @@ var/mail
 @dir lib64/tls
 @dir mnt
 @dir opt
-@dir(,,555) proc
 @dir selinux
 @dir srv
-@dir(,,555) sys
 @dir usr/etc
 @dir usr/games
 @dir usr/lib/games
@@ -3343,4 +3341,12 @@ var/mail
 @dir var/spool/mail
 @dir var/yp
 @dir %%LINUXBASE%%
+@comment These directories may have filesystems mounted and then it may not be
+@comment possible to change their mode and timestamp like @dir tries to do.
+@postexec mkdir -p %D/dev/shm
+@postunexec rmdir %D/dev/shm 2>/dev/null || true
+@postexec mkdir -p %D/proc
+@postunexec rmdir %D/proc 2>/dev/null || true
+@postexec mkdir -p %D/sys
+@postunexec rmdir %D/sys 2>/dev/null || true
 @postexec %D/sbin/ldconfig
