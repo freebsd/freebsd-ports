@@ -21,10 +21,9 @@ USES=		cmake pkgconfig gettext tar:bzip2
 LDFLAGS+=	-lintl
 
 post-patch:
-	@${REINPLACE_CMD} -e '/NOT MATCHES "Debug"/d ; \
-		 /"-O2"/d ; \
-		's,share/man,man,g' ; \
-		 /FILES INSTALL/d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's,share/man,man,g ; \
+		/-O2/d ; \
+		/FILES INSTALL/d' ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
