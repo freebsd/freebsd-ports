@@ -2,9 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	201607
+PORTVERSION=	1.23
+PORTEPOCH=  1
+PORTREVISION=   1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.librenms.org/
+
+USE_GITHUB= yes
+GH_ACCOUNT= librenms
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
@@ -15,22 +19,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
 
 USES=		python shebangfix
-SHEBANG_FILES=	html/js/makemini.pl mibs/process.pl scripts/agent-local/bind \
-		scripts/agent-local/dmi scripts/agent-local/dpkg \
-		scripts/agent-local/drbd scripts/agent-local/hddtemp \
-		scripts/agent-local/memcached scripts/agent-local/mysql \
-		scripts/agent-local/rpm scripts/agent-local/temperature \
-		scripts/agent-local/tinydns scripts/apache-stats.py \
-		scripts/check_mk_agent scripts/cron.sh scripts/cron-hourly.sh \
-		scripts/cron-minute.sh scripts/get-geshi.sh \
-		scripts/get-jpgraph.sh scripts/ifAlias \
+SHEBANG_FILES=	html/js/makemini.pl mibs/process.pl \
+		scripts/cron-hourly.sh scripts/cron-minute.sh \
+		scripts/cron.sh scripts/deploy-docs.sh scripts/ifAlias \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
 		scripts/Migration/XML_Conversion/convert.sh \
 		scripts/Migration/XML_Conversion/destwork.sh \
 		scripts/Migration/XML_Conversion/mkdir.sh validate.php \
-		scripts/postfix-queues scripts/removespikes.php \
+		scripts/removespikes.php scripts/agent-local/nfs-stats.sh \
 		scripts/removespikes.pl scripts/watchmaillog/watchmaillog.pl
 USE_PHP=	ctype filter gd json mcrypt mysql session snmp tokenizer xml
 WANT_PHP_CLI=	yes
@@ -78,7 +76,7 @@ ROOT_FILES=	addhost.php adduser.php	alerts.php build-base.php build.sql \
 		poll-billing.php poller.php poller-service.py poller-wrapper.py renamehost.php \
 		snmp-scan.php snmptrap.php syslog.php validate.php
 
-ROOT_DIRS=	contrib html includes lib mibs scripts sql-schema
+ROOT_DIRS=	LibreNMS contrib html includes lib mibs scripts sql-schema
 
 DOCS=		AUTHORS.md CHANGELOG CONTRIBUTING.md LICENSE.txt README.md
 PORTDOCS=	*
@@ -96,6 +94,8 @@ WANT_PHP_WEB=	yes
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	       ${WRKSRC}/poller-wrapper.py ${WRKSRC}/poller.php
+	${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|g' \
+	       ${WRKSRC}/includes/common.php
 
 do-install:
 	@${MKDIR} ${STAGEDIR}/${WWWDIR}
@@ -108,6 +108,7 @@ do-install:
 .endfor
 # Create empty rrd dir writable by www
 	@${MKDIR} ${STAGEDIR}/${WWWDIR}/rrd
+	@${CHMOD} 0775 ${STAGEDIR}/${WWWDIR}/rrd
 # Files in scripts dir should be executable
 	@${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
 # Ensure PHP and Python scripts are executable
