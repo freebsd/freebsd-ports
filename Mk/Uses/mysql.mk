@@ -58,7 +58,6 @@ DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # MySQL client version currently supported.
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-MYSQL51_LIBVER=		16
 MYSQL55_LIBVER=		18
 MYSQL55m_LIBVER=	18
 MYSQL55p_LIBVER=	18
