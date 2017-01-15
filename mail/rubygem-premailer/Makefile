@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	premailer
-PORTVERSION=	1.8.7
+PORTVERSION=	1.9.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
