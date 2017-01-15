@@ -1,0 +1,9 @@
+--- apps/CMakeLists.txt.orig	2016-12-30 11:49:15 UTC
++++ apps/CMakeLists.txt
+@@ -42,5 +42,5 @@ IF(PYTHON)
+     IF(NOT DEFINED SETUP_PY_INSTALL_PREFIX)
+       SET(SETUP_PY_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
+     ENDIF()
+-    INSTALL(CODE "execute_process(COMMAND ${PYTHON} ${SETUP_PY} install --prefix=${SETUP_PY_INSTALL_PREFIX})")
++    INSTALL(CODE "execute_process(COMMAND ${PYTHON} ${SETUP_PY} install --prefix=${SETUP_PY_INSTALL_PREFIX} --root=${STAGEDIR})")
+ ENDIF(PYTHON)
