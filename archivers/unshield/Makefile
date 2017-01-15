@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unshield
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	archivers
 
 MAINTAINER=	sunpoet@FreeBSD.org
