@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9.7v1
+DISTVERSION=	0.9.7v2
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${PORTVERSION:R}
 .if defined(BUILD_PYTHON_MODULE)
