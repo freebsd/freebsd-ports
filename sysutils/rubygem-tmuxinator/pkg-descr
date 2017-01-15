@@ -1,0 +1,4 @@
+Tmuxinator allows complex tmux sessions to be defined using YAML and ERB,
+and handles launching and reattaching those session.
+
+WWW: https://github.com/tmuxinator/tmuxinator
