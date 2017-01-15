@@ -2,14 +2,17 @@ bin/mujstest
 bin/mupdf
 bin/mupdf-gl
 bin/mupdf-x11-curl
+bin/muraster
 bin/mutool
 include/mupdf/fitz.h
 include/mupdf/fitz/annotation.h
+include/mupdf/fitz/archive.h
 include/mupdf/fitz/bidi.h
 include/mupdf/fitz/bitmap.h
 include/mupdf/fitz/buffer.h
 include/mupdf/fitz/colorspace.h
 include/mupdf/fitz/compressed-buffer.h
+include/mupdf/fitz/config.h
 include/mupdf/fitz/context.h
 include/mupdf/fitz/crypt.h
 include/mupdf/fitz/device.h
@@ -45,12 +48,13 @@ include/mupdf/fitz/string.h
 include/mupdf/fitz/structured-text.h
 include/mupdf/fitz/system.h
 include/mupdf/fitz/text.h
+include/mupdf/fitz/track-usage.h
 include/mupdf/fitz/transition.h
 include/mupdf/fitz/tree.h
 include/mupdf/fitz/ucdn.h
-include/mupdf/fitz/unzip.h
 include/mupdf/fitz/util.h
 include/mupdf/fitz/version.h
+include/mupdf/fitz/writer.h
 include/mupdf/fitz/xml.h
 include/mupdf/html.h
 include/mupdf/memento.h
@@ -65,7 +69,6 @@ include/mupdf/pdf/document.h
 include/mupdf/pdf/event.h
 include/mupdf/pdf/field.h
 include/mupdf/pdf/font.h
-include/mupdf/pdf/graft.h
 include/mupdf/pdf/interpret.h
 include/mupdf/pdf/javascript.h
 include/mupdf/pdf/name-table.h
@@ -76,7 +79,7 @@ include/mupdf/pdf/parse.h
 include/mupdf/pdf/resource.h
 include/mupdf/pdf/widget.h
 include/mupdf/pdf/xref.h
-include/mupdf/xps.h
+include/mupdf/svg.h
 lib/libmupdf.a
 lib/libmupdfthird.a
 lib/libmupdfthird_pic.a
@@ -91,3 +94,4 @@ man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/progressive.txt
 %%PORTDOCS%%%%DOCSDIR%%/refcount.txt
 %%PORTDOCS%%%%DOCSDIR%%/thirdparty.txt
+%%PORTDOCS%%%%DOCSDIR%%/types.txt
