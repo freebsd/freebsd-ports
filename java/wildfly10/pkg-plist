@@ -22,32 +22,50 @@
 @sample %%APP_HOME%%/standalone/configuration/standalone-full.xml.sample
 @sample %%APP_HOME%%/standalone/configuration/standalone-ha.xml.sample
 @sample %%APP_HOME%%/standalone/configuration/standalone.xml.sample
+@mode 700
+@dir %%APP_HOME%%/standalone/tmp/auth
+@dir %%APP_HOME%%/standalone/tmp
+@dir %%APP_HOME%%/standalone/lib/ext
+@dir %%APP_HOME%%/standalone/lib
+@dir %%APP_HOME%%/standalone/deployments
+@dir %%APP_HOME%%/standalone/configuration
+@dir %%APP_HOME%%/standalone
+@dir %%APP_HOME%%/domain/tmp/auth
+@dir %%APP_HOME%%/domain/tmp
+@dir %%APP_HOME%%/domain/data/content
+@dir %%APP_HOME%%/domain/data
+@dir %%APP_HOME%%/domain/configuration
+@dir %%APP_HOME%%/domain
+@dir %%APP_HOME%%/appclient/configuration
+@dir %%APP_HOME%%/appclient
+@owner
+@group
 @mode
 %%APP_HOME%%/LICENSE.txt
 %%APP_HOME%%/README.txt
 %%APP_HOME%%/bin/.jbossclirc
 %%APP_HOME%%/bin/add-user.properties
-@(www,www,555) %%APP_HOME%%/bin/add-user.sh
 %%APP_HOME%%/bin/appclient.conf
-@(www,www,555) %%APP_HOME%%/bin/appclient.sh
 %%APP_HOME%%/bin/client/README-CLI-JCONSOLE.txt
 %%APP_HOME%%/bin/client/README-EJB-JMS.txt
 %%APP_HOME%%/bin/client/jboss-cli-client.jar
 %%APP_HOME%%/bin/client/jboss-client.jar
 %%APP_HOME%%/bin/domain.conf
-@(www,www,555) %%APP_HOME%%/bin/domain.sh
 %%APP_HOME%%/bin/jboss-cli-logging.properties
-@(www,www,555) %%APP_HOME%%/bin/jboss-cli.sh
 %%APP_HOME%%/bin/jboss-cli.xml
-@(www,www,555) %%APP_HOME%%/bin/jconsole.sh
-@(www,www,555) %%APP_HOME%%/bin/jdr.sh
 %%APP_HOME%%/bin/launcher.jar
 %%APP_HOME%%/bin/product.conf
 %%APP_HOME%%/bin/standalone.conf
-@(www,www,555) %%APP_HOME%%/bin/standalone.sh
-@(www,www,555) %%APP_HOME%%/bin/vault.sh
-@(www,www,555) %%APP_HOME%%/bin/wsconsume.sh
-@(www,www,555) %%APP_HOME%%/bin/wsprovide.sh
+@(,,555) %%APP_HOME%%/bin/add-user.sh
+@(,,555) %%APP_HOME%%/bin/appclient.sh
+@(,,555) %%APP_HOME%%/bin/domain.sh
+@(,,555) %%APP_HOME%%/bin/jboss-cli.sh
+@(,,555) %%APP_HOME%%/bin/jconsole.sh
+@(,,555) %%APP_HOME%%/bin/jdr.sh
+@(,,555) %%APP_HOME%%/bin/standalone.sh
+@(,,555) %%APP_HOME%%/bin/vault.sh
+@(,,555) %%APP_HOME%%/bin/wsconsume.sh
+@(,,555) %%APP_HOME%%/bin/wsprovide.sh
 %%APP_HOME%%/copyright.txt
 %%APP_HOME%%/docs/contrib/scripts/README.md
 %%APP_HOME%%/docs/contrib/scripts/init.d/wildfly-init-debian.sh
@@ -61,44 +79,40 @@
 %%APP_HOME%%/docs/contrib/scripts/systemd/launch.sh
 %%APP_HOME%%/docs/contrib/scripts/systemd/wildfly.conf
 %%APP_HOME%%/docs/contrib/scripts/systemd/wildfly.service
+%%APP_HOME%%/docs/examples/configs/standalone-activemq-colocated.xml
+%%APP_HOME%%/docs/examples/configs/standalone-azure-full-ha.xml
+%%APP_HOME%%/docs/examples/configs/standalone-azure-ha.xml
 %%APP_HOME%%/docs/examples/configs/standalone-ec2-full-ha.xml
 %%APP_HOME%%/docs/examples/configs/standalone-ec2-ha.xml
 %%APP_HOME%%/docs/examples/configs/standalone-genericjms.xml
 %%APP_HOME%%/docs/examples/configs/standalone-gossip-full-ha.xml
 %%APP_HOME%%/docs/examples/configs/standalone-gossip-ha.xml
 %%APP_HOME%%/docs/examples/configs/standalone-jts.xml
+%%APP_HOME%%/docs/examples/configs/standalone-load-balancer.xml
 %%APP_HOME%%/docs/examples/configs/standalone-minimalistic.xml
 %%APP_HOME%%/docs/examples/configs/standalone-picketlink.xml
 %%APP_HOME%%/docs/examples/configs/standalone-rts.xml
 %%APP_HOME%%/docs/examples/configs/standalone-xts.xml
-%%APP_HOME%%/docs/licenses/apache license 2.0 - license-2.0.txt
-%%APP_HOME%%/docs/licenses/apache license, version 2.0 - apache2.0.php
 %%APP_HOME%%/docs/licenses/apache software license, version 2.0 - apache-2.0.txt
 %%APP_HOME%%/docs/licenses/bouncy castle licence - licence.html
-%%APP_HOME%%/docs/licenses/cddl 1.1 - cddl+gpl_1_1.html
-%%APP_HOME%%/docs/licenses/cddl+gpl license - cddl+gpl_1_1.html
 %%APP_HOME%%/docs/licenses/common development and distribution license - cddl.txt
 %%APP_HOME%%/docs/licenses/common public license, version 1.0 - cpl-1.0.txt
 %%APP_HOME%%/docs/licenses/creative commons attribution 2.5 - jcip-cc-by-2.5.txt
 %%APP_HOME%%/docs/licenses/eclipse distribution license, version 1.0 - edl-1.0.txt
 %%APP_HOME%%/docs/licenses/eclipse public license, version 1.0 - epl-1.0.txt
-%%APP_HOME%%/docs/licenses/eclipse public license, version 1.0 - epl-v10.html
 %%APP_HOME%%/docs/licenses/gnu general public license, version 2 with the classpath exception - gpl-2.0-ce.txt
-%%APP_HOME%%/docs/licenses/gnu lesser general public license - lgpl-3.0.txt
 %%APP_HOME%%/docs/licenses/gnu lesser general public license, version 2.1 - lgpl-2.1.txt
-%%APP_HOME%%/docs/licenses/gpl - gplv2+ce.html
+%%APP_HOME%%/docs/licenses/gnu lesser general public license, version 3 - lgpl-3.0.txt
 %%APP_HOME%%/docs/licenses/h2 license, version 1.0 - h2.txt
 %%APP_HOME%%/docs/licenses/jdom license - jdom-1.0.txt
-%%APP_HOME%%/docs/licenses/lgpl - lgpl.txt
 %%APP_HOME%%/docs/licenses/licenses.xml
 %%APP_HOME%%/docs/licenses/mozilla public license, version 1.1 - mpl-1.1.txt
 %%APP_HOME%%/docs/licenses/public domain - cc0-1.0.txt
 %%APP_HOME%%/docs/licenses/the apache software license, version 2.0 - license-2.0.txt
 %%APP_HOME%%/docs/licenses/the bsd license - bsd.txt
-%%APP_HOME%%/docs/licenses/the gnu lesser general public license, version 2.1 - lgpl-2.1.html
-%%APP_HOME%%/docs/licenses/the mit license - license.txt
+%%APP_HOME%%/docs/licenses/the jaxen license - license.html
+%%APP_HOME%%/docs/licenses/the jsoup mit license - license.html
 %%APP_HOME%%/docs/licenses/the mit license - mit.txt
-%%APP_HOME%%/docs/licenses/the werken company license - license.html
 %%APP_HOME%%/docs/schema/application-client_6.xsd
 %%APP_HOME%%/docs/schema/application-client_7.xsd
 %%APP_HOME%%/docs/schema/application_1_4.xsd
@@ -140,6 +154,7 @@
 %%APP_HOME%%/docs/schema/jboss-as-config_1_5.xsd
 %%APP_HOME%%/docs/schema/jboss-as-config_1_6.xsd
 %%APP_HOME%%/docs/schema/jboss-as-config_1_7.xsd
+%%APP_HOME%%/docs/schema/jboss-as-config_1_8.xsd
 %%APP_HOME%%/docs/schema/jboss-as-config_2_0.xsd
 %%APP_HOME%%/docs/schema/jboss-as-config_2_1.xsd
 %%APP_HOME%%/docs/schema/jboss-as-config_2_2.xsd
@@ -336,6 +351,8 @@
 %%APP_HOME%%/docs/schema/wildfly-cli_3_0.xsd
 %%APP_HOME%%/docs/schema/wildfly-config_3_0.xsd
 %%APP_HOME%%/docs/schema/wildfly-config_4_0.xsd
+%%APP_HOME%%/docs/schema/wildfly-config_4_1.xsd
+%%APP_HOME%%/docs/schema/wildfly-config_4_2.xsd
 %%APP_HOME%%/docs/schema/wildfly-datasources_2_0.xsd
 %%APP_HOME%%/docs/schema/wildfly-datasources_3_0.xsd
 %%APP_HOME%%/docs/schema/wildfly-datasources_4_0.xsd
@@ -372,23 +389,28 @@
 %%APP_HOME%%/docs/schema/wildfly-undertow_1_2.xsd
 %%APP_HOME%%/docs/schema/wildfly-undertow_2_0.xsd
 %%APP_HOME%%/docs/schema/wildfly-undertow_3_0.xsd
+%%APP_HOME%%/docs/schema/wildfly-undertow_3_1.xsd
 %%APP_HOME%%/docs/schema/xml.xsd
 %%APP_HOME%%/jboss-modules.jar
 %%APP_HOME%%/modules/system/layers/base/asm/asm/main/asm-3.3.1.jar
 %%APP_HOME%%/modules/system/layers/base/asm/asm/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/ch/qos/cal10n/main/cal10n-api-0.8.1.jar
 %%APP_HOME%%/modules/system/layers/base/ch/qos/cal10n/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/com/fasterxml/classmate/main/classmate-1.1.0.jar
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/classmate/main/classmate-1.3.1.jar
 %%APP_HOME%%/modules/system/layers/base/com/fasterxml/classmate/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-annotations/main/jackson-annotations-2.5.4.jar
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-annotations/main/jackson-annotations-2.7.4.jar
 %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-annotations/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-core/main/jackson-core-2.5.4.jar
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-core/main/jackson-core-2.7.4.jar
 %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-core/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-databind/main/jackson-databind-2.5.4.jar
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-databind/main/jackson-databind-2.7.4.jar
 %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-databind/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/jackson-jaxrs-base-2.5.4.jar
-%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/jackson-jaxrs-json-provider-2.5.4.jar
-%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/jackson-module-jaxb-annotations-2.5.4.jar
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/main/jackson-datatype-jdk8-2.7.4.jar
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/main/jackson-datatype-jsr310-2.7.4.jar
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/jackson-jaxrs-base-2.7.4.jar
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/jackson-jaxrs-json-provider-2.7.4.jar
+%%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/jackson-module-jaxb-annotations-2.7.4.jar
 %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/com/github/relaxng/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/com/github/relaxng/main/relaxngDatatype-2011.1.jar
@@ -398,10 +420,12 @@
 %%APP_HOME%%/modules/system/layers/base/com/google/guava/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/com/h2database/h2/main/h2-1.3.173.jar
 %%APP_HOME%%/modules/system/layers/base/com/h2database/h2/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/com/microsoft/azure/storage/main/azure-storage-4.0.0.jar
+%%APP_HOME%%/modules/system/layers/base/com/microsoft/azure/storage/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/com/sun/istack/main/istack-commons-runtime-2.21.jar
 %%APP_HOME%%/modules/system/layers/base/com/sun/istack/main/istack-commons-tools-2.21.jar
 %%APP_HOME%%/modules/system/layers/base/com/sun/istack/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/main/jsf-impl-2.2.12-jbossorg-2.jar
+%%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/main/jsf-impl-2.2.13.SP1.jar
 %%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/com/sun/xml/bind/main/codemodel-2.2.11.jbossorg-1.jar
 %%APP_HOME%%/modules/system/layers/base/com/sun/xml/bind/main/jaxb-core-2.2.11.jbossorg-1.jar
@@ -422,17 +446,17 @@
 %%APP_HOME%%/modules/system/layers/base/gnu/getopt/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/ibm/jdk/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/io/netty/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/io/netty/main/netty-all-4.0.32.Final.jar
+%%APP_HOME%%/modules/system/layers/base/io/netty/main/netty-all-4.0.33.Final.jar
 %%APP_HOME%%/modules/system/layers/base/io/undertow/core/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/io/undertow/core/main/undertow-core-1.3.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/io/undertow/core/main/undertow-core-1.4.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/io/undertow/js/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/io/undertow/js/main/undertow-js-1.0.1.Final.jar
-%%APP_HOME%%/modules/system/layers/base/io/undertow/jsp/main/jastow-2.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/io/undertow/js/main/undertow-js-1.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/io/undertow/jsp/main/jastow-2.0.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/io/undertow/jsp/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/io/undertow/servlet/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/io/undertow/servlet/main/undertow-servlet-1.3.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/io/undertow/servlet/main/undertow-servlet-1.4.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/io/undertow/websocket/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/io/undertow/websocket/main/undertow-websockets-jsr-1.3.15.Final.jar
+%%APP_HOME%%/modules/system/layers/base/io/undertow/websocket/main/undertow-websockets-jsr-1.4.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javaee/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/javax/activation/api/main/activation-1.1.1.jar
 %%APP_HOME%%/modules/system/layers/base/javax/activation/api/main/module.xml
@@ -443,13 +467,13 @@
 %%APP_HOME%%/modules/system/layers/base/javax/batch/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/javax/ejb/api/main/jboss-ejb-api_3.2_spec-1.0.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/ejb/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/javax/el/api/main/jboss-el-api_3.0_spec-1.0.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/el/api/main/jboss-el-api_3.0_spec-1.0.7.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/el/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/javax/enterprise/api/main/cdi-api-1.2.jar
 %%APP_HOME%%/modules/system/layers/base/javax/enterprise/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/javax/enterprise/concurrent/api/main/jboss-concurrency-api_1.0_spec-1.0.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/enterprise/concurrent/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/javax/faces/api/main/jboss-jsf-api_2.2_spec-2.2.12.jar
+%%APP_HOME%%/modules/system/layers/base/javax/faces/api/main/jboss-jsf-api_2.2_spec-2.2.13.jar
 %%APP_HOME%%/modules/system/layers/base/javax/faces/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/javax/inject/api/main/javax.inject-1.jar
 %%APP_HOME%%/modules/system/layers/base/javax/inject/api/main/module.xml
@@ -465,7 +489,7 @@
 %%APP_HOME%%/modules/system/layers/base/javax/management/j2ee/api/main/jboss-j2eemgmt-api_1.1_spec-1.0.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/management/j2ee/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/javax/orb/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/javax/orb/api/main/openjdk-orb-8.0.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/orb/api/main/openjdk-orb-8.0.6.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/persistence/api/main/hibernate-jpa-2.1-api-1.0.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/persistence/api/main/jbosgi-xservice.properties
 %%APP_HOME%%/modules/system/layers/base/javax/persistence/api/main/module.xml
@@ -480,9 +504,8 @@
 %%APP_HOME%%/modules/system/layers/base/javax/servlet/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp/api/main/jboss-jsp-api_2.3_spec-1.0.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl/api/main/jboss-jstl-api_1.2_spec-1.1.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl/api/main/jboss-jstl-api_1.2_spec-1.1.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/javax/sql/api/main/jboss-javax-sql-api_7.0_spec-2.0.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/sql/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/javax/transaction/api/main/jboss-transaction-api_1.2_spec-1.0.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/transaction/api/main/module.xml
@@ -501,7 +524,7 @@
 %%APP_HOME%%/modules/system/layers/base/javax/xml/soap/api/main/jboss-saaj-api_1.3_spec-1.0.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/xml/soap/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/javax/xml/stream/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/javax/xml/ws/api/main/jboss-jaxws-api_2.2_spec-2.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/javax/xml/ws/api/main/jboss-jaxws-api_2.2_spec-2.0.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/javax/xml/ws/api/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/net/jcip/main/jcip-annotations-1.0.jar
 %%APP_HOME%%/modules/system/layers/base/net/jcip/main/module.xml
@@ -509,29 +532,29 @@
 %%APP_HOME%%/modules/system/layers/base/nu/xom/main/xom-1.2.10.jar
 %%APP_HOME%%/modules/system/layers/base/org/antlr/main/antlr-2.7.7.jar
 %%APP_HOME%%/modules/system/layers/base/org/antlr/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-cli-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-commons-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-core-client-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-dto-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-hqclient-protocol-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-jms-client-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-jms-server-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-journal-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-native-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-selector-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-server-1.1.0.wildfly-011.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-cli-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-commons-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-core-client-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-dto-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-hqclient-protocol-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-jms-client-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-jms-server-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-journal-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-native-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-selector-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/artemis-server-1.1.0.wildfly-017.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/lib/linux-i686/libartemis-native-32.so
 %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/lib/linux-x86_64/libartemis-native-64.so
 %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/amqp/main/artemis-amqp-protocol-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/amqp/main/artemis-proton-plug-1.1.0.wildfly-011.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/amqp/main/artemis-amqp-protocol-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/amqp/main/artemis-proton-plug-1.1.0.wildfly-017.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/amqp/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/hornetq/main/artemis-hornetq-protocol-1.1.0.wildfly-011.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/hornetq/main/artemis-hornetq-protocol-1.1.0.wildfly-017.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/hornetq/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/stomp/main/artemis-stomp-protocol-1.1.0.wildfly-011.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/stomp/main/artemis-stomp-protocol-1.1.0.wildfly-017.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/stomp/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/ra/main/artemis-ra-1.1.0.wildfly-011.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/ra/main/artemis-service-extensions-1.1.0.wildfly-011.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/ra/main/artemis-ra-1.1.0.wildfly-017.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/ra/main/artemis-service-extensions-1.1.0.wildfly-017.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/ra/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/apache/avro/main/avro-1.7.6.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/avro/main/module.xml
@@ -550,45 +573,48 @@
 %%APP_HOME%%/modules/system/layers/base/org/apache/commons/logging/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/apache/commons/pool/main/commons-pool-1.6.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/commons/pool/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-coloc-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-object-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-soap-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-xml-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-aegis-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-jaxb-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-jaxws-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-simple-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-management-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-security-3.1.4-jandex.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-security-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-security-saml-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-hc-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-jms-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-local-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-addr-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-mex-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-policy-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-rm-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-security-3.1.4-jandex.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-security-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-wsdl-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-services-sts-core-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-services-ws-discovery-api-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-common-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-java2ws-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-validator-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-core-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-databinding-jaxb-3.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-frontend-jaxws-3.1.4.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-coloc-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-object-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-soap-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-xml-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-aegis-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-jaxb-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-features-clustering-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-jaxws-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-simple-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-management-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-security-3.1.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-security-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-security-saml-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-hc-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-jms-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-local-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-addr-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-mex-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-policy-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-rm-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-wsdl-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-services-ws-discovery-api-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-common-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-java2ws-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-validator-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-core-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-databinding-jaxb-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-frontend-jaxws-3.1.6.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-boolean-3.0.5.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-bug986-3.0.5.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-dv-3.0.5.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-runtime-3.0.5.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-ts-3.0.5.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/main/cxf-core-3.1.4.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/main/cxf-core-3.1.6.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/services-sts/main/cxf-services-sts-core-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/services-sts/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/ws-security/main/cxf-rt-ws-security-3.1.6-jandex.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/ws-security/main/cxf-rt-ws-security-3.1.6.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/cxf/ws-security/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents/main/httpasyncclient-4.1.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents/main/httpclient-4.5.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents/main/httpcore-4.4.1.jar
@@ -609,23 +635,23 @@
 %%APP_HOME%%/modules/system/layers/base/org/apache/lucene/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/apache/neethi/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/apache/neethi/main/neethi-3.0.3.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/openjpa/main/jipijapa-openjpa-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/openjpa/main/jipijapa-openjpa-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/openjpa/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/apache/qpid/proton/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/apache/qpid/proton/main/proton-j-0.8.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/qpid/proton/main/proton-jms-0.8.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/santuario/xmlsec/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/apache/santuario/xmlsec/main/xmlsec-2.0.5.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/santuario/xmlsec/main/xmlsec-2.0.6.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/velocity/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/apache/velocity/main/velocity-1.7.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/jasypt-1.9.1.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-bindings-2.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-policy-2.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-common-2.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-dom-2.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-policy-stax-2.1.4.jar
-%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-stax-2.1.4.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-bindings-2.1.5.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-policy-2.1.5.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-common-2.1.5.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-dom-2.1.5.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-policy-stax-2.1.5.jar
+%%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main/wss4j-ws-security-stax-2.1.5.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/ws/xmlschema/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/apache/ws/xmlschema/main/xmlschema-core-2.2.1.jar
 %%APP_HOME%%/modules/system/layers/base/org/apache/xalan/main/module.xml
@@ -654,9 +680,9 @@
 %%APP_HOME%%/modules/system/layers/base/org/codehaus/woodstox/main/woodstox-core-asl-4.4.1.jar
 %%APP_HOME%%/modules/system/layers/base/org/dom4j/main/dom4j-1.6.1.jar
 %%APP_HOME%%/modules/system/layers/base/org/dom4j/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/eclipse/jdt/ecj/main/ecj-4.4.2.jar
+%%APP_HOME%%/modules/system/layers/base/org/eclipse/jdt/ecj/main/ecj-4.5.1.jar
 %%APP_HOME%%/modules/system/layers/base/org/eclipse/jdt/ecj/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/eclipse/persistence/main/jipijapa-eclipselink-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/eclipse/persistence/main/jipijapa-eclipselink-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/eclipse/persistence/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/fusesource/jansi/main/jansi-1.11.jar
 %%APP_HOME%%/modules/system/layers/base/org/fusesource/jansi/main/module.xml
@@ -666,191 +692,190 @@
 %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/enterprise/concurrent/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/json/main/javax.json-1.0.3.jar
 %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/json/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/4.1/jipijapa-hibernate4-1-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/4.1/jipijapa-hibernate4-1-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/4.1/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/4.3/jipijapa-hibernate4-3-10.0.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/4.3/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/5.0/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/commons-annotations/main/hibernate-commons-annotations-5.0.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/commons-annotations/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/envers/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/infinispan/main/hibernate-infinispan-5.0.7.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/infinispan/main/hibernate-infinispan-5.0.10.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/infinispan/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate4-3/main/jipijapa-hibernate4-3-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate4-3/main/jipijapa-hibernate4-3-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate4-3/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate5/main/jipijapa-hibernate5-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate5/main/jipijapa-hibernate5-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate5/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-core-5.0.7.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-entitymanager-5.0.7.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-envers-5.0.7.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-java8-5.0.7.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-core-5.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-entitymanager-5.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-envers-5.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/main/hibernate-java8-5.0.10.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jgroups/main/hibernate-search-backend-jgroups-5.5.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jgroups/main/hibernate-search-backend-jgroups-5.5.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jgroups/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jms/main/hibernate-search-backend-jms-5.5.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jms/main/hibernate-search-backend-jms-5.5.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jms/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/engine/main/hibernate-search-engine-5.5.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/engine/main/hibernate-search-engine-5.5.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/engine/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/orm/main/hibernate-search-orm-5.5.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/orm/main/hibernate-search-orm-5.5.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/orm/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/serialization-avro/main/hibernate-search-serialization-avro-5.5.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/search/serialization-avro/main/hibernate-search-serialization-avro-5.5.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/serialization-avro/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/cdi/main/hibernate-validator-cdi-5.2.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/cdi/main/hibernate-validator-cdi-5.2.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/cdi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/main/hibernate-validator-5.2.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/main/hibernate-validator-5.2.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/hornetq/client/main/hornetq-commons-2.4.7.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hornetq/client/main/hornetq-core-client-2.4.7.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hornetq/client/main/hornetq-jms-client-2.4.7.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/hornetq/client/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/jdbc/main/infinispan-cachestore-jdbc-8.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/jdbc/main/infinispan-cachestore-jdbc-8.2.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/jdbc/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/remote/main/infinispan-cachestore-remote-8.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/remote/main/infinispan-cachestore-remote-8.2.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/remote/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/infinispan/client/hotrod/main/infinispan-client-hotrod-8.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/client/hotrod/main/infinispan-client-hotrod-8.2.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/infinispan/client/hotrod/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/infinispan/commons/main/infinispan-commons-8.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/commons/main/infinispan-commons-8.2.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/infinispan/commons/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/infinispan/main/infinispan-core-8.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/infinispan/main/infinispan-core-8.2.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/infinispan/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/javassist/main/javassist-3.18.1-GA.jar
 %%APP_HOME%%/modules/system/layers/base/org/javassist/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jaxen/main/jaxen-1.1.6.jar
 %%APP_HOME%%/modules/system/layers/base/org/jaxen/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jberet/jberet-core/main/jberet-core-1.2.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jberet/jberet-core/main/jberet-core-1.2.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jberet/jberet-core/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/aesh/main/aesh-0.66.4.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/aesh/main/aesh-0.66.8.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/aesh/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/appclient/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/appclient/main/wildfly-appclient-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/appclient/main/wildfly-appclient-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cli/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/cli/main/wildfly-cli-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/cli/main/wildfly-cli-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/common/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/common/main/wildfly-clustering-common-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/common/main/wildfly-clustering-common-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/ejb3/infinispan/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/infinispan/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/infinispan/main/wildfly-clustering-infinispan-extension-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/infinispan/main/wildfly-clustering-infinispan-extension-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/jgroups/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/jgroups/main/wildfly-clustering-jgroups-extension-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/jgroups/main/wildfly-clustering-jgroups-extension-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/infinispan/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cmp/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/cmp/main/wildfly-cmp-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/cmp/main/wildfly-cmp-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/configadmin/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/configadmin/main/wildfly-configadmin-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/configadmin/main/wildfly-configadmin-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/connector/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/connector/main/wildfly-connector-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/connector/main/wildfly-connector-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/console/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/console/main/release-stream-2.8.19.Final-resources.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/console/main/release-stream-2.8.27.Final-resources.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller-client/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller-client/main/wildfly-controller-client-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller-client/main/wildfly-controller-client-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller/main/wildfly-controller-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller/main/wildfly-controller-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security-api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security-api/main/wildfly-core-security-api-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security-api/main/wildfly-core-security-api-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security/main/wildfly-core-security-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security/main/wildfly-core-security-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-repository/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-repository/main/wildfly-deployment-repository-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-repository/main/wildfly-deployment-repository-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-scanner/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-scanner/main/wildfly-deployment-scanner-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-scanner/main/wildfly-deployment-scanner-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-add-user/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-error-context/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-error-context/main/wildfly-domain-http-error-context-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-error-context/main/wildfly-domain-http-error-context-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-interface/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-interface/main/wildfly-domain-http-interface-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-interface/main/wildfly-domain-http-interface-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-management/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-management/main/wildfly-domain-management-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-management/main/wildfly-domain-management-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/main/wildfly-ee-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/main/wildfly-ee-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3/main/timers/timer-sql.properties
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3/main/wildfly-ejb3-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3/main/wildfly-ejb3-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/host-controller/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/host-controller/main/wildfly-host-controller-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/host-controller/main/wildfly-host-controller-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jacorb/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jacorb/main/wildfly-jacorb-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jacorb/main/wildfly-jacorb-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxr/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxr/main/wildfly-jaxr-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxr/main/wildfly-jaxr-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxrs/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxrs/main/wildfly-jaxrs-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxrs/main/wildfly-jaxrs-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main/resources/plugins.properties
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main/wildfly-jdr-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main/wildfly-jdr-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jmx/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jmx/main/wildfly-jmx-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jmx/main/wildfly-jmx-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate/4/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/main/wildfly-jpa-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/main/wildfly-jpa-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/openjpa/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/spi/main/jipijapa-spi-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/spi/main/jipijapa-spi-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/spi/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/main/weld-core-jsf-2.3.2.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/main/wildfly-jsf-injection-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/main/weld-core-jsf-2.3.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/main/wildfly-jsf-injection-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf/main/wildfly-jsf-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf/main/wildfly-jsf-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsr77/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsr77/main/wildfly-jsr77-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsr77/main/wildfly-jsr77-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/logging/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/logging/main/wildfly-logging-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/logging/main/wildfly-logging-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/mail/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/mail/main/wildfly-mail-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/mail/main/wildfly-mail-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/management-client-content/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/management-client-content/main/wildfly-management-client-content-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/management-client-content/main/wildfly-management-client-content-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/messaging/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/messaging/main/wildfly-messaging-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/messaging/main/wildfly-messaging-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/naming/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/naming/main/wildfly-naming-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/naming/main/wildfly-naming-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/network/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/network/main/wildfly-network-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/network/main/wildfly-network-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/patching/cli/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/patching/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/patching/main/wildfly-patching-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/patching/main/wildfly-patching-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/platform-mbean/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/platform-mbean/main/wildfly-platform-mbean-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/platform-mbean/main/wildfly-platform-mbean-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/pojo/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/pojo/main/wildfly-pojo-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/pojo/main/wildfly-pojo-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/process-controller/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/process-controller/main/wildfly-process-controller-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/process-controller/main/wildfly-process-controller-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/product/wildfly-full/dir/META-INF/MANIFEST.MF
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/product/wildfly-full/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/protocol/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/protocol/main/wildfly-protocol-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/protocol/main/wildfly-protocol-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/remoting/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/remoting/main/wildfly-remoting-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/remoting/main/wildfly-remoting-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/sar/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/sar/main/wildfly-sar-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/sar/main/wildfly-sar-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/security-api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/security-api/main/wildfly-security-api-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/security-api/main/wildfly-security-api-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/security/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/security/main/wildfly-security-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/security/main/wildfly-security-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/self-contained/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/self-contained/main/wildfly-self-contained-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/self-contained/main/wildfly-self-contained-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/server/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/server/main/wildfly-server-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/server/main/wildfly-server-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/standalone/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/system-jmx/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/system-jmx/main/wildfly-system-jmx-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/system-jmx/main/wildfly-system-jmx-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/threads/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/threads/main/wildfly-threads-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/threads/main/wildfly-threads-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/transactions/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/transactions/main/wildfly-transactions-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/transactions/main/wildfly-transactions-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/vault-tool/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/version/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/version/main/wildfly-version-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/version/main/wildfly-version-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web-common/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web-common/main/wildfly-web-common-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web-common/main/wildfly-web-common-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/wildfly-web-10.0.0.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main/jbossws-cxf-resources-5.1.3.Final-wildfly1000.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main/wildfly-web-10.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main/jbossws-cxf-resources-5.1.5.Final-wildfly1000.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main/wildfly-webservices-server-integration-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main/wildfly-webservices-server-integration-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server/integration/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/weld/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/weld/main/wildfly-weld-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/weld/main/wildfly-weld-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/as/xts/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/as/xts/main/wildfly-xts-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/as/xts/main/wildfly-xts-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/classfilewriter/main/jboss-classfilewriter-1.1.2.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/classfilewriter/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/common-beans/main/jboss-common-beans-2.0.0.Final.jar
@@ -872,38 +897,38 @@
 %%APP_HOME%%/modules/system/layers/base/org/jboss/integration/ext-content/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/invocation/main/jboss-invocation-1.4.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/invocation/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-api-1.3.2.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-spi-1.3.2.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-core-api-1.3.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-api-1.3.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-spi-1.3.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-core-api-1.3.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-common-impl-1.3.2.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-core-impl-1.3.2.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-deployers-common-1.3.2.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-validator-1.3.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-common-impl-1.3.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-core-impl-1.3.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-deployers-common-1.3.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-validator-1.3.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main/ironjacamar-jdbc-1.3.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main/ironjacamar-jdbc-1.3.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/jandex/main/jandex-2.0.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jandex/main/jandex-2.0.2.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/jandex/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/jaxbintros/main/jboss-jaxb-intros-1.0.2.GA.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/jaxbintros/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/jboss-transaction-spi/main/jboss-transaction-spi-7.3.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/jboss-transaction-spi/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/jts/integration/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/jts/integration/main/narayana-jts-integration-5.2.12.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jts/integration/main/narayana-jts-integration-5.3.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/jts/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/jts/main/narayana-jts-idlj-5.2.12.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/jts/main/narayana-jts-idlj-5.3.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/log4j/logmanager/main/log4j-jboss-logmanager-1.1.2.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/log4j/logmanager/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub/main/jul-to-slf4j-stub-1.0.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/main/jboss-logging-3.3.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/logmanager/main/jboss-logmanager-2.0.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/logmanager/main/jboss-logmanager-2.0.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/logmanager/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/main/jboss-marshalling-1.4.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/main/jboss-marshalling-1.4.11.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/river/main/jboss-marshalling-river-1.4.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/river/main/jboss-marshalling-river-1.4.11.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/river/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/appclient/main/jboss-metadata-appclient-10.0.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/appclient/main/module.xml
@@ -916,68 +941,68 @@
 %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/web/main/jboss-metadata-web-10.0.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/web/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/container/spi/main/mod_cluster-container-spi-1.3.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/container/spi/main/mod_cluster-container-spi-1.3.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/container/spi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/core/main/mod_cluster-core-1.3.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/core/main/mod_cluster-core-1.3.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/core/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/modules/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/msc/main/jboss-msc-1.2.6.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/msc/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/compensations/main/compensations-5.2.12.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/compensations/main/compensations-5.3.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/compensations/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main/restat-api-5.2.12.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main/restat-bridge-5.2.12.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main/restat-integration-5.2.12.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main/restat-util-5.2.12.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main/restat-api-5.3.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main/restat-bridge-5.3.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main/restat-integration-5.3.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main/restat-util-5.3.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/txframework/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/txframework/main/txframework-5.2.12.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/txframework/main/txframework-5.3.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/remote-naming/main/jboss-remote-naming-2.0.4.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/remote-naming/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting-jmx/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting-jmx/main/remoting-jmx-2.0.1.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/remoting/main/jboss-remoting-4.0.18.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/remoting/main/jboss-remoting-4.0.21.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/remoting-jmx/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/jose-jwt/main/jose-jwt-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/jose-jwt/main/jose-jwt-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/jose-jwt/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main/resteasy-atom-provider-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main/resteasy-atom-provider-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main/resteasy-cdi-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main/resteasy-cdi-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-crypto/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-crypto/main/resteasy-crypto-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-crypto/main/resteasy-crypto-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main/resteasy-jackson-provider-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main/resteasy-jackson-provider-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson2-provider/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson2-provider/main/resteasy-jackson2-provider-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson2-provider/main/resteasy-jackson2-provider-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-3.0.14.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/async-http-servlet-3.0-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-3.0.19.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/async-http-servlet-3.0-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-client-3.0.14.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-client-3.0.19.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main/resteasy-jettison-provider-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main/resteasy-jettison-provider-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main/resteasy-jsapi-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main/resteasy-jsapi-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-json-p-provider/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-json-p-provider/main/resteasy-json-p-provider-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-json-p-provider/main/resteasy-json-p-provider-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-3.0.14.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-spring/main/bundled/resteasy-spring-jar/resteasy-spring-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-3.0.19.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-spring/main/bundled/resteasy-spring-jar/resteasy-spring-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-spring/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-validator-provider-11/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-validator-provider-11/main/resteasy-validator-provider-11-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-validator-provider-11/main/resteasy-validator-provider-11-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main/resteasy-yaml-provider-3.0.14.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main/resteasy-yaml-provider-3.0.19.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/sasl/main/jboss-sasl-1.0.5.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/sasl/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-common-3.0.0.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-extras-3.0.0.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-ntlm-3.0.0.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-spnego-3.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-common-3.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-extras-3.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-ntlm-3.0.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-spnego-3.0.2.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/security/xacml/main/jbossxacml-2.0.8.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/security/xacml/main/module.xml
@@ -987,53 +1012,56 @@
 %%APP_HOME%%/modules/system/layers/base/org/jboss/stdio/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/threads/main/jboss-threads-2.2.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/threads/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/vfs/main/jboss-vfs-3.2.11.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/vfs/main/jboss-vfs-3.2.12.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/vfs/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/api/main/weld-api-2.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/api/main/weld-api-2.3.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/core/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/core/main/weld-core-impl-2.3.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/core/main/weld-core-impl-2.3.5.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/probe/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/probe/main/weld-probe-core-2.3.2.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/probe/main/weld-probe-core-2.3.5.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/spi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/spi/main/weld-spi-2.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/weld/spi/main/weld-spi-2.3.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/api/main/jbossws-api-1.0.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/common/main/jbossws-common-3.1.1.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/common/main/jbossws-common-3.1.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/common/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-client/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main/jbossws-cxf-factories-5.1.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main/jbossws-cxf-factories-5.1.5.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main/jbossws-cxf-server-5.1.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main/jbossws-cxf-server-5.1.5.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-udp/main/jbossws-cxf-transports-udp-5.1.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-udp/main/jbossws-cxf-transports-udp-5.1.5.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-udp/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-undertow/main/jbossws-cxf-transports-undertow-5.1.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-undertow/main/jbossws-cxf-transports-undertow-5.1.5.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-undertow/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client/main/jbossws-cxf-client-5.1.3.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client/main/jbossws-cxf-jaspi-5.1.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/sts/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client/main/jbossws-cxf-client-5.1.5.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client/main/jbossws-cxf-jaspi-5.1.5.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-undertow-httpspi/main/jaxws-undertow-httpspi-1.0.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-undertow-httpspi/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/saaj-impl/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/spi/main/jbossws-spi-3.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/ws/spi/main/jbossws-spi-3.1.2.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/spi/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/common/main/jbossws-common-tools-1.2.2.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/common/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsconsume/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsprovide/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/main/xnio-api-3.3.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/main/xnio-api-3.4.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/netty/netty-xnio-transport/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/netty/netty-xnio-transport/main/netty-xnio-transport-0.1.1.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/nio/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/nio/main/xnio-nio-3.3.4.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main/jbosstxbridge-5.2.12.Final.jar
-%%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main/jbossxts-5.2.12.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/nio/main/xnio-nio-3.4.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main/jbosstxbridge-5.3.3.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main/jbossxts-5.3.3.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/jdom/main/jdom-1.1.3.jar
 %%APP_HOME%%/modules/system/layers/base/org/jdom/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/jgroups/main/jgroups-3.6.6.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jgroups/azure/main/jgroups-azure-1.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/jgroups/azure/main/module.xml
+%%APP_HOME%%/modules/system/layers/base/org/jgroups/main/jgroups-3.6.10.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/jgroups/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/joda/time/main/joda-time-2.7.jar
 %%APP_HOME%%/modules/system/layers/base/org/joda/time/main/module.xml
@@ -1057,30 +1085,28 @@
 %%APP_HOME%%/modules/system/layers/base/org/opensaml/main/opensaml-xmlsec-api-3.1.1.jar
 %%APP_HOME%%/modules/system/layers/base/org/opensaml/main/opensaml-xmlsec-impl-3.1.1.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketbox/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketbox/main/picketbox-4.9.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketbox/main/picketbox-4.9.6.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketbox/main/picketbox-commons-1.0.0.final.jar
-%%APP_HOME%%/modules/system/layers/base/org/picketbox/main/picketbox-infinispan-4.9.4.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketbox/main/picketbox-infinispan-4.9.6.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/common/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketlink/common/main/picketlink-common-2.5.5.SP1.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/common/main/picketlink-common-2.5.5.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/config/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketlink/config/main/picketlink-config-2.5.5.SP1.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/config/main/picketlink-config-2.5.5.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/core/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketlink/core/api/main/picketlink-api-2.5.5.SP1.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/core/api/main/picketlink-api-2.5.5.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/core/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketlink/core/main/picketlink-impl-2.5.5.SP1.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/core/main/picketlink-impl-2.5.5.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/federation/bindings/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketlink/federation/bindings/main/picketlink-wildfly8-2.5.5.SP1.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/federation/bindings/main/picketlink-wildfly8-2.5.5.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/federation/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketlink/federation/main/picketlink-federation-2.5.5.SP1.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/federation/main/picketlink-federation-2.5.5.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/api/main/picketlink-idm-api-2.5.5.SP1.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/api/main/picketlink-idm-api-2.5.5.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/main/picketlink-idm-impl-2.5.5.SP1.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/main/picketlink-idm-impl-2.5.5.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/schema/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/schema/main/picketlink-idm-simple-schema-2.5.5.SP1.jar
+%%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/schema/main/picketlink-idm-simple-schema-2.5.5.SP2.jar
 %%APP_HOME%%/modules/system/layers/base/org/picketlink/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/scannotation/scannotation/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/scannotation/scannotation/main/scannotation-1.0.3.jar
 %%APP_HOME%%/modules/system/layers/base/org/slf4j/ext/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/slf4j/ext/main/slf4j-ext-1.7.7.jbossorg-1.jar
 %%APP_HOME%%/modules/system/layers/base/org/slf4j/impl/main/jbosgi-xservice.properties
@@ -1091,76 +1117,77 @@
 %%APP_HOME%%/modules/system/layers/base/org/slf4j/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/slf4j/main/slf4j-api-1.7.7.jbossorg-1.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/api/main/wildfly-clustering-api-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/api/main/wildfly-clustering-api-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/infinispan/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/infinispan/main/wildfly-clustering-ee-infinispan-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/infinispan/main/wildfly-clustering-ee-infinispan-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/spi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/spi/main/wildfly-clustering-ee-spi-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/spi/main/wildfly-clustering-ee-spi-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/infinispan/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/infinispan/main/wildfly-clustering-ejb-infinispan-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/infinispan/main/wildfly-clustering-ejb-infinispan-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/spi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/spi/main/wildfly-clustering-ejb-spi-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/spi/main/wildfly-clustering-ejb-spi-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/infinispan/spi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/infinispan/spi/main/wildfly-clustering-infinispan-spi-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/infinispan/spi/main/wildfly-clustering-infinispan-spi-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/api/main/wildfly-clustering-jgroups-api-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/api/main/wildfly-clustering-jgroups-api-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/spi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/spi/main/wildfly-clustering-jgroups-spi-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/spi/main/wildfly-clustering-jgroups-spi-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/api/main/wildfly-clustering-marshalling-api-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/api/main/wildfly-clustering-marshalling-api-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/jboss/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/jboss/main/wildfly-clustering-marshalling-jboss-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/jboss/main/wildfly-clustering-marshalling-jboss-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/server/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/server/main/wildfly-clustering-server-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/server/main/wildfly-clustering-server-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/service/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/service/main/wildfly-clustering-service-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/service/main/wildfly-clustering-service-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/singleton/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/singleton/main/wildfly-clustering-singleton-api-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/singleton/main/wildfly-clustering-singleton-api-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/spi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/spi/main/wildfly-clustering-spi-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/spi/main/wildfly-clustering-spi-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/api/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/api/main/wildfly-clustering-web-api-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/api/main/wildfly-clustering-web-api-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/infinispan/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/infinispan/main/wildfly-clustering-web-infinispan-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/infinispan/main/wildfly-clustering-web-infinispan-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/spi/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/spi/main/wildfly-clustering-web-spi-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/spi/main/wildfly-clustering-web-spi-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/undertow/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/undertow/main/wildfly-clustering-web-undertow-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/undertow/main/wildfly-clustering-web-undertow-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/common/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/common/main/wildfly-common-1.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/embedded/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/embedded/main/wildfly-embedded-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/embedded/main/wildfly-embedded-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch/jberet/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch/jberet/main/wildfly-batch-jberet-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch/jberet/main/wildfly-batch-jberet-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch/main/wildfly-batch-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch/main/wildfly-batch-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/bean-validation/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/bean-validation/main/wildfly-bean-validation-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/bean-validation/main/wildfly-bean-validation-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/clustering/singleton/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/clustering/singleton/main/wildfly-clustering-singleton-extension-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/clustering/singleton/main/wildfly-clustering-singleton-extension-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/io/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/io/main/wildfly-io-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/io/main/wildfly-io-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/messaging-activemq/main/artemis-wildfly-integration-1.0.2.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/messaging-activemq/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/messaging-activemq/main/wildfly-messaging-activemq-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/messaging-activemq/main/wildfly-messaging-activemq-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/mod_cluster/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/mod_cluster/main/wildfly-mod_cluster-extension-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/mod_cluster/main/wildfly-mod_cluster-extension-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/picketlink/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/picketlink/main/wildfly-picketlink-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/picketlink/main/wildfly-picketlink-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/request-controller/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/request-controller/main/wildfly-request-controller-2.0.10.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/request-controller/main/wildfly-request-controller-2.2.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/rts/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/rts/main/wildfly-rts-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/rts/main/wildfly-rts-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/security/manager/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/security/manager/main/wildfly-security-manager-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/security/manager/main/wildfly-security-manager-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/undertow/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/undertow/main/wildfly-undertow-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/undertow/main/wildfly-undertow-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/iiop-openjdk/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/iiop-openjdk/main/wildfly-iiop-openjdk-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/iiop-openjdk/main/wildfly-iiop-openjdk-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/jberet/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/jberet/main/wildfly-jberet-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/jberet/main/wildfly-jberet-10.1.0.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/mod_cluster/undertow/main/module.xml
-%%APP_HOME%%/modules/system/layers/base/org/wildfly/mod_cluster/undertow/main/wildfly-mod_cluster-undertow-10.0.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/mod_cluster/undertow/main/wildfly-mod_cluster-undertow-10.1.0.Final.jar
+%%APP_HOME%%/modules/system/layers/base/org/wildfly/naming/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/security/elytron/main/module.xml
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/security/elytron/main/wildfly-elytron-1.0.2.Final.jar
 %%APP_HOME%%/modules/system/layers/base/org/wildfly/security/manager/main/module.xml
@@ -1181,885 +1208,3 @@
 %%APP_HOME%%/welcome-content/noredirect.html
 %%APP_HOME%%/welcome-content/wildfly.css
 %%APP_HOME%%/welcome-content/wildfly_logo.png
-@dir %%APP_HOME%%/appclient
-@dir %%APP_HOME%%/appclient/configuration
-@dir %%APP_HOME%%/bin
-@dir %%APP_HOME%%/bin/client
-@dir %%APP_HOME%%/docs
-@dir %%APP_HOME%%/docs/contrib
-@dir %%APP_HOME%%/docs/contrib/scripts
-@dir %%APP_HOME%%/docs/contrib/scripts/init.d
-@dir %%APP_HOME%%/docs/contrib/scripts/service
-@dir %%APP_HOME%%/docs/contrib/scripts/service/amd64
-@dir %%APP_HOME%%/docs/contrib/scripts/systemd
-@dir %%APP_HOME%%/docs/examples
-@dir %%APP_HOME%%/docs/examples/configs
-@dir %%APP_HOME%%/docs/licenses
-@dir %%APP_HOME%%/docs/schema
-@dir %%APP_HOME%%/domain
-@dir %%APP_HOME%%/domain/configuration
-@dir %%APP_HOME%%/domain/data
-@dir %%APP_HOME%%/domain/data/content
-@dir %%APP_HOME%%/domain/tmp
-@dir %%APP_HOME%%/domain/tmp/auth
-@dir %%APP_HOME%%/modules
-@dir %%APP_HOME%%/modules/system
-@dir %%APP_HOME%%/modules/system/layers
-@dir %%APP_HOME%%/modules/system/layers/base
-@dir %%APP_HOME%%/modules/system/layers/base/asm
-@dir %%APP_HOME%%/modules/system/layers/base/asm/asm
-@dir %%APP_HOME%%/modules/system/layers/base/asm/asm/main
-@dir %%APP_HOME%%/modules/system/layers/base/ch
-@dir %%APP_HOME%%/modules/system/layers/base/ch/qos
-@dir %%APP_HOME%%/modules/system/layers/base/ch/qos/cal10n
-@dir %%APP_HOME%%/modules/system/layers/base/ch/qos/cal10n/main
-@dir %%APP_HOME%%/modules/system/layers/base/com
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/classmate
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/classmate/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-annotations
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-annotations/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-core
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-core/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-databind
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/core/jackson-databind/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider
-@dir %%APP_HOME%%/modules/system/layers/base/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/github
-@dir %%APP_HOME%%/modules/system/layers/base/com/github/relaxng
-@dir %%APP_HOME%%/modules/system/layers/base/com/github/relaxng/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/github/spullara
-@dir %%APP_HOME%%/modules/system/layers/base/com/github/spullara/mustache
-@dir %%APP_HOME%%/modules/system/layers/base/com/github/spullara/mustache/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/google
-@dir %%APP_HOME%%/modules/system/layers/base/com/google/guava
-@dir %%APP_HOME%%/modules/system/layers/base/com/google/guava/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/h2database
-@dir %%APP_HOME%%/modules/system/layers/base/com/h2database/h2
-@dir %%APP_HOME%%/modules/system/layers/base/com/h2database/h2/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/istack
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/istack/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/jsf-impl/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml/bind
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml/bind/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml/fastinfoset
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml/fastinfoset/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml/messaging
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml/messaging/saaj
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml/messaging/saaj/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml/txw2
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xml/txw2/main
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xsom
-@dir %%APP_HOME%%/modules/system/layers/base/com/sun/xsom/main
-@dir %%APP_HOME%%/modules/system/layers/base/gnu
-@dir %%APP_HOME%%/modules/system/layers/base/gnu/getopt
-@dir %%APP_HOME%%/modules/system/layers/base/gnu/getopt/main
-@dir %%APP_HOME%%/modules/system/layers/base/ibm
-@dir %%APP_HOME%%/modules/system/layers/base/ibm/jdk
-@dir %%APP_HOME%%/modules/system/layers/base/ibm/jdk/main
-@dir %%APP_HOME%%/modules/system/layers/base/io
-@dir %%APP_HOME%%/modules/system/layers/base/io/netty
-@dir %%APP_HOME%%/modules/system/layers/base/io/netty/main
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/core
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/core/main
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/js
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/js/main
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/jsp
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/jsp/main
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/servlet
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/servlet/main
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/websocket
-@dir %%APP_HOME%%/modules/system/layers/base/io/undertow/websocket/main
-@dir %%APP_HOME%%/modules/system/layers/base/javaee
-@dir %%APP_HOME%%/modules/system/layers/base/javaee/api
-@dir %%APP_HOME%%/modules/system/layers/base/javaee/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax
-@dir %%APP_HOME%%/modules/system/layers/base/javax/activation
-@dir %%APP_HOME%%/modules/system/layers/base/javax/activation/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/activation/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/annotation
-@dir %%APP_HOME%%/modules/system/layers/base/javax/annotation/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/annotation/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/batch
-@dir %%APP_HOME%%/modules/system/layers/base/javax/batch/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/batch/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/ejb
-@dir %%APP_HOME%%/modules/system/layers/base/javax/ejb/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/ejb/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/el
-@dir %%APP_HOME%%/modules/system/layers/base/javax/el/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/el/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/enterprise
-@dir %%APP_HOME%%/modules/system/layers/base/javax/enterprise/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/enterprise/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/enterprise/concurrent
-@dir %%APP_HOME%%/modules/system/layers/base/javax/enterprise/concurrent/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/enterprise/concurrent/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/faces
-@dir %%APP_HOME%%/modules/system/layers/base/javax/faces/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/faces/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/inject
-@dir %%APP_HOME%%/modules/system/layers/base/javax/inject/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/inject/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/interceptor
-@dir %%APP_HOME%%/modules/system/layers/base/javax/interceptor/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/interceptor/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/jms
-@dir %%APP_HOME%%/modules/system/layers/base/javax/jms/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/jms/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/json
-@dir %%APP_HOME%%/modules/system/layers/base/javax/json/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/json/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/jws
-@dir %%APP_HOME%%/modules/system/layers/base/javax/jws/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/jws/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/mail
-@dir %%APP_HOME%%/modules/system/layers/base/javax/mail/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/mail/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/management
-@dir %%APP_HOME%%/modules/system/layers/base/javax/management/j2ee
-@dir %%APP_HOME%%/modules/system/layers/base/javax/management/j2ee/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/management/j2ee/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/orb
-@dir %%APP_HOME%%/modules/system/layers/base/javax/orb/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/orb/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/persistence
-@dir %%APP_HOME%%/modules/system/layers/base/javax/persistence/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/persistence/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/resource
-@dir %%APP_HOME%%/modules/system/layers/base/javax/resource/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/resource/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/rmi
-@dir %%APP_HOME%%/modules/system/layers/base/javax/rmi/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/rmi/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/security
-@dir %%APP_HOME%%/modules/system/layers/base/javax/security/auth
-@dir %%APP_HOME%%/modules/system/layers/base/javax/security/auth/message
-@dir %%APP_HOME%%/modules/system/layers/base/javax/security/auth/message/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/security/auth/message/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/security/jacc
-@dir %%APP_HOME%%/modules/system/layers/base/javax/security/jacc/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/security/jacc/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/servlet
-@dir %%APP_HOME%%/modules/system/layers/base/javax/servlet/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/servlet/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp
-@dir %%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/servlet/jsp/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl
-@dir %%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/servlet/jstl/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/sql
-@dir %%APP_HOME%%/modules/system/layers/base/javax/sql/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/sql/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/transaction
-@dir %%APP_HOME%%/modules/system/layers/base/javax/transaction/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/transaction/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/validation
-@dir %%APP_HOME%%/modules/system/layers/base/javax/validation/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/validation/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/websocket
-@dir %%APP_HOME%%/modules/system/layers/base/javax/websocket/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/websocket/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/ws
-@dir %%APP_HOME%%/modules/system/layers/base/javax/ws/rs
-@dir %%APP_HOME%%/modules/system/layers/base/javax/ws/rs/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/ws/rs/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/wsdl4j
-@dir %%APP_HOME%%/modules/system/layers/base/javax/wsdl4j/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/wsdl4j/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/bind
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/bind/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/bind/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/rpc
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/rpc/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/rpc/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/soap
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/soap/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/soap/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/stream
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/stream/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/stream/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/ws
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/ws/api
-@dir %%APP_HOME%%/modules/system/layers/base/javax/xml/ws/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/net
-@dir %%APP_HOME%%/modules/system/layers/base/net/jcip
-@dir %%APP_HOME%%/modules/system/layers/base/net/jcip/main
-@dir %%APP_HOME%%/modules/system/layers/base/nu
-@dir %%APP_HOME%%/modules/system/layers/base/nu/xom
-@dir %%APP_HOME%%/modules/system/layers/base/nu/xom/main
-@dir %%APP_HOME%%/modules/system/layers/base/org
-@dir %%APP_HOME%%/modules/system/layers/base/org/antlr
-@dir %%APP_HOME%%/modules/system/layers/base/org/antlr/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/lib
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/lib/linux-i686
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/main/lib/linux-x86_64
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/amqp
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/amqp/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/hornetq
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/hornetq/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/stomp
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/protocol/stomp/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/ra
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/activemq/artemis/ra/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/avro
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/avro/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/beanutils
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/beanutils/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/cli
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/cli/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/codec
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/codec/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/collections
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/collections/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/io
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/io/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/lang
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/lang/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/logging
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/logging/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/pool
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/commons/pool/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/cxf
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/impl/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/cxf/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/httpcomponents/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/james
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/james/mime4j
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/james/mime4j/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/log4j
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/log4j/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/lucene
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/lucene/internal
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/lucene/internal/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/lucene/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/neethi
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/neethi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/openjpa
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/openjpa/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/qpid
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/qpid/proton
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/qpid/proton/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/santuario
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/santuario/xmlsec
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/santuario/xmlsec/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/velocity
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/velocity/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/ws
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/ws/security
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/ws/security/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/ws/xmlschema
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/ws/xmlschema/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/xalan
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/xalan/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/xerces
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/xerces/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/xml-resolver
-@dir %%APP_HOME%%/modules/system/layers/base/org/apache/xml-resolver/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/bouncycastle
-@dir %%APP_HOME%%/modules/system/layers/base/org/bouncycastle/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-core-asl
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-core-asl/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-jaxrs
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-jaxrs/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-mapper-asl
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-mapper-asl/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-xc
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jackson/jackson-xc/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jettison
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/jettison/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/woodstox
-@dir %%APP_HOME%%/modules/system/layers/base/org/codehaus/woodstox/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/dom4j
-@dir %%APP_HOME%%/modules/system/layers/base/org/dom4j/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/eclipse
-@dir %%APP_HOME%%/modules/system/layers/base/org/eclipse/jdt
-@dir %%APP_HOME%%/modules/system/layers/base/org/eclipse/jdt/ecj
-@dir %%APP_HOME%%/modules/system/layers/base/org/eclipse/jdt/ecj/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/eclipse/persistence
-@dir %%APP_HOME%%/modules/system/layers/base/org/eclipse/persistence/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/fusesource
-@dir %%APP_HOME%%/modules/system/layers/base/org/fusesource/jansi
-@dir %%APP_HOME%%/modules/system/layers/base/org/fusesource/jansi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/glassfish
-@dir %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax
-@dir %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/el
-@dir %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/el/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/enterprise
-@dir %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/enterprise/concurrent
-@dir %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/enterprise/concurrent/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/json
-@dir %%APP_HOME%%/modules/system/layers/base/org/glassfish/javax/json/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/4.1
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/4.3
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/5.0
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/commons-annotations
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/commons-annotations/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/envers
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/envers/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/infinispan
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/infinispan/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate4-3
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate4-3/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate5
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/jipijapa-hibernate5/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jgroups
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jgroups/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jms
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/backend-jms/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/engine
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/engine/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/orm
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/orm/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/serialization-avro
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/search/serialization-avro/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/validator
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/cdi
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/cdi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hibernate/validator/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/hornetq
-@dir %%APP_HOME%%/modules/system/layers/base/org/hornetq/client
-@dir %%APP_HOME%%/modules/system/layers/base/org/hornetq/client/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/jdbc
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/jdbc/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/remote
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/cachestore/remote/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/client
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/client/hotrod
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/client/hotrod/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/commons
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/commons/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/infinispan/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/javassist
-@dir %%APP_HOME%%/modules/system/layers/base/org/javassist/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jaxen
-@dir %%APP_HOME%%/modules/system/layers/base/org/jaxen/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jberet
-@dir %%APP_HOME%%/modules/system/layers/base/org/jberet/jberet-core
-@dir %%APP_HOME%%/modules/system/layers/base/org/jberet/jberet-core/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/aesh
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/aesh/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/appclient
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/appclient/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cli
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cli/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/common
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/common/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/ejb3
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/ejb3/infinispan
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/ejb3/infinispan/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/infinispan
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/infinispan/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/jgroups
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/jgroups/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/infinispan
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/clustering/web/infinispan/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cmp
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/cmp/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/configadmin
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/configadmin/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/connector
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/connector/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/console
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/console/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller-client
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller-client/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/controller/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security-api
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security-api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/core-security/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-repository
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-repository/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-scanner
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/deployment-scanner/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-add-user
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-add-user/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-error-context
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-error-context/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-interface
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-http-interface/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-management
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/domain-management/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ee/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/ejb3/main/timers
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/host-controller
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/host-controller/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jacorb
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jacorb/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxr
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxr/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxrs
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jaxrs/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jdr/main/resources
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jmx
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jmx/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/hibernate/4
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/openjpa
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/openjpa/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jpa/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf-injection/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsf/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsr77
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/jsr77/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/logging
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/logging/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/mail
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/mail/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/management-client-content
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/management-client-content/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/messaging
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/messaging/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/modcluster/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/naming
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/naming/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/network
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/network/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/patching
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/patching/cli
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/patching/cli/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/patching/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/platform-mbean
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/platform-mbean/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/pojo
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/pojo/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/process-controller
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/process-controller/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/product
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/product/wildfly-full
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/product/wildfly-full/dir
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/product/wildfly-full/dir/META-INF
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/protocol
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/protocol/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/remoting
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/remoting/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/sar
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/sar/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/security
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/security-api
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/security-api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/security/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/self-contained
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/self-contained/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/server
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/server/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/standalone
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/standalone/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/system-jmx
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/system-jmx/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/threads
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/threads/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/transactions
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/transactions/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/vault-tool
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/vault-tool/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/version
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/version/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web-common
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web-common/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/web/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server/integration
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/webservices/server/integration/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/weld
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/weld/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/xts
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/as/xts/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/classfilewriter
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/classfilewriter/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/common-beans
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/common-beans/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/deployers
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/deployers/jboss-service-deployer
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/deployers/jboss-service-deployer/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/dmr
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/dmr/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb-client
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb-client/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb/remote
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb/remote/protocol
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb/remote/protocol/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb3
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ejb3/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/genericjms
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/genericjms/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/genericjms/main/META-INF
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/iiop-client
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/iiop-client/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/integration
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/integration/ext-content
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/integration/ext-content/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/integration/ext-content/main/bundled
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/invocation
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/invocation/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/impl/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jandex
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jandex/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jaxbintros
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jaxbintros/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jboss-transaction-spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jboss-transaction-spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jts
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jts/integration
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jts/integration/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/jts/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/log4j
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/log4j/logmanager
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/log4j/logmanager/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/logging
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/logging/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/logmanager
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/logmanager/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/river
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/marshalling/river/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/appclient
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/appclient/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/common
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/common/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/ear
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/ear/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/ejb
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/ejb/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/web
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/metadata/web/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/container
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/container/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/container/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/core
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/mod_cluster/core/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/modules
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/modules/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/msc
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/msc/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/compensations
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/compensations/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/rts/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/txframework
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/narayana/txframework/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remote-naming
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remote-naming/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting-jmx
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting-jmx/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/remoting-jmx
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/remoting3/remoting-jmx/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/jose-jwt
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/jose-jwt/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-crypto
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-crypto/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson2-provider
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson2-provider/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-json-p-provider
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-json-p-provider/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-spring
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-spring/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-spring/main/bundled
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-spring/main/bundled/resteasy-spring-jar
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-validator-provider-11
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-validator-provider-11/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/sasl
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/sasl/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/security
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/security/negotiation/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/security/xacml
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/security/xacml/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/staxmapper
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/staxmapper/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/stdio
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/stdio/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/threads
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/threads/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/vfs
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/vfs/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/weld
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/core
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/core/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/probe
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/probe/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/weld/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/common
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/common/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-client
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-client/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-udp
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-udp/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-undertow
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-undertow/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-client/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-undertow-httpspi
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/jaxws-undertow-httpspi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/saaj-impl
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/saaj-impl/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/common
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/common/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsconsume
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsconsume/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsprovide
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/ws/tools/wsprovide/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/netty
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/netty/netty-xnio-transport
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/netty/netty-xnio-transport/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/nio
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/xnio/nio/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/xts
-@dir %%APP_HOME%%/modules/system/layers/base/org/jboss/xts/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jdom
-@dir %%APP_HOME%%/modules/system/layers/base/org/jdom/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jgroups
-@dir %%APP_HOME%%/modules/system/layers/base/org/jgroups/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/joda
-@dir %%APP_HOME%%/modules/system/layers/base/org/joda/time
-@dir %%APP_HOME%%/modules/system/layers/base/org/joda/time/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/jsoup
-@dir %%APP_HOME%%/modules/system/layers/base/org/jsoup/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/omg
-@dir %%APP_HOME%%/modules/system/layers/base/org/omg/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/omg/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/opensaml
-@dir %%APP_HOME%%/modules/system/layers/base/org/opensaml/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketbox
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketbox/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/common
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/common/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/config
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/config/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/core
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/core/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/core/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/core/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/federation
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/federation/bindings
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/federation/bindings/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/federation/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/idm
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/schema
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/idm/schema/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/picketlink/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/scannotation
-@dir %%APP_HOME%%/modules/system/layers/base/org/scannotation/scannotation
-@dir %%APP_HOME%%/modules/system/layers/base/org/scannotation/scannotation/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/slf4j
-@dir %%APP_HOME%%/modules/system/layers/base/org/slf4j/ext
-@dir %%APP_HOME%%/modules/system/layers/base/org/slf4j/ext/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/slf4j/impl
-@dir %%APP_HOME%%/modules/system/layers/base/org/slf4j/impl/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/slf4j/jcl-over-slf4j
-@dir %%APP_HOME%%/modules/system/layers/base/org/slf4j/jcl-over-slf4j/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/slf4j/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/infinispan
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/infinispan/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ee/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/infinispan
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/infinispan/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/ejb/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/infinispan
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/infinispan/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/infinispan/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/jgroups/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/jboss
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/marshalling/jboss/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/server
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/server/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/service
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/service/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/singleton
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/singleton/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/api
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/api/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/infinispan
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/infinispan/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/spi
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/spi/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/undertow
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/clustering/web/undertow/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/common
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/common/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/embedded
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/embedded/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch/jberet
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch/jberet/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/batch/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/bean-validation
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/bean-validation/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/clustering
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/clustering/singleton
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/clustering/singleton/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/io
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/io/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/messaging-activemq
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/messaging-activemq/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/mod_cluster
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/mod_cluster/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/picketlink
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/picketlink/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/request-controller
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/request-controller/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/rts
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/rts/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/security
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/security/manager
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/security/manager/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/undertow
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/extension/undertow/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/iiop-openjdk
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/iiop-openjdk/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/jberet
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/jberet/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/mod_cluster
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/mod_cluster/undertow
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/mod_cluster/undertow/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/security
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/security/elytron
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/security/elytron/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/security/manager
-@dir %%APP_HOME%%/modules/system/layers/base/org/wildfly/security/manager/main
-@dir %%APP_HOME%%/modules/system/layers/base/org/yaml
-@dir %%APP_HOME%%/modules/system/layers/base/org/yaml/snakeyaml
-@dir %%APP_HOME%%/modules/system/layers/base/org/yaml/snakeyaml/main
-@dir %%APP_HOME%%/modules/system/layers/base/sun
-@dir %%APP_HOME%%/modules/system/layers/base/sun/jdk
-@dir %%APP_HOME%%/modules/system/layers/base/sun/jdk/main
-@dir %%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources
-@dir %%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources/META-INF
-@dir %%APP_HOME%%/modules/system/layers/base/sun/jdk/main/service-loader-resources/META-INF/services
-@dir %%APP_HOME%%/modules/system/layers/base/sun/scripting
-@dir %%APP_HOME%%/modules/system/layers/base/sun/scripting/main
-@dir %%APP_HOME%%/modules/system/layers/base/sun/scripting/main/service-loader-resources
-@dir %%APP_HOME%%/modules/system/layers/base/sun/scripting/main/service-loader-resources/META-INF
-@dir %%APP_HOME%%/modules/system/layers/base/sun/scripting/main/service-loader-resources/META-INF/services
-@dir %%APP_HOME%%/standalone
-@dir %%APP_HOME%%/standalone/configuration
-@dir %%APP_HOME%%/standalone/deployments
-@dir %%APP_HOME%%/standalone/lib
-@dir %%APP_HOME%%/standalone/lib/ext
-@dir %%APP_HOME%%/standalone/tmp
-@dir %%APP_HOME%%/standalone/tmp/auth
-@dir %%APP_HOME%%/welcome-content
-@owner
-@group
