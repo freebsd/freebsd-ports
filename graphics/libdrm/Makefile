@@ -12,7 +12,9 @@ COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	libdevq>=0.0.4:devel/libdevq
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
+		libdevq.so:devel/libdevq \
 		libpthread-stubs.so:devel/libpthread-stubs
 
 USES=		libtool pkgconfig tar:bzip2
@@ -33,10 +35,10 @@ USES+=		gmake
 # KMS support in the kernel is only build on these archs, disable others
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-libkms
-PLIST_SUB+=	KMS="" NOUVEAU=""
+PLIST_SUB+=	KMS=""
 .else
 CONFIGURE_ARGS+=--disable-libkms
-PLIST_SUB+=	KMS="@comment " NOUVEAU="@comment "
+PLIST_SUB+=	KMS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
@@ -51,13 +53,24 @@ PLIST_SUB+=	MAN="@comment "
 CONFIGURE_ARGS+=--disable-vmwgfx
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB+=	ARM_DRIVERS="@comment "
 PLIST_SUB+=	INTEL_DRIVER=""
+PLIST_SUB+=	NOUVEAU_DRIVER=""
 PLIST_SUB+=	RADEON_DRIVERS=""
-.elif ${ARCH} == ia64 || ${ARCH} == powerpc || ${ARCH} == powerpc64
+.elif ${ARCH} == powerpc || ${ARCH} == powerpc64
+PLIST_SUB+=	ARM_DRIVERS="@comment "
 PLIST_SUB+=	INTEL_DRIVER="@comment "
+PLIST_SUB+=	NOUVEAU_DRIVER=""
 PLIST_SUB+=	RADEON_DRIVERS=""
+.elif ${ARCH} == arm6 || ${ARCH} == aarch64
+PLIST_SUB+=	ARM_DRIVERS=""
+PLIST_SUB+=	INTEL_DRIVER="@comment "
+PLIST_SUB+=	NOUVEAU_DRIVER="@comment "
+PLIST_SUB+=	RADEON_DRIVERS="@comment "
 .else
+PLIST_SUB+=	ARM_DRIVERS="@comment "
 PLIST_SUB+=	INTEL_DRIVER="@comment "
+PLIST_SUB+=	NOUVEAU_DRIVER="@comment "
 PLIST_SUB+=	RADEON_DRIVERS="@comment "
 .endif
 

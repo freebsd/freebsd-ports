@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2016-11-29 13:34:56 UTC
++++ Makefile.in
+@@ -564,8 +564,8 @@ SUBDIRS = \
+ libdrm_la_LTLIBRARIES = libdrm.la
+ libdrm_ladir = $(libdir)
+ libdrm_la_LDFLAGS = -version-number 2:4:0 -no-undefined
+-libdrm_la_LIBADD = @CLOCK_LIB@ -lm
+-libdrm_la_CPPFLAGS = -I$(top_srcdir)/include/drm
++libdrm_la_LIBADD = @CLOCK_LIB@ -lm @LIBDEVQ_LIBS@
++libdrm_la_CPPFLAGS = -I$(top_srcdir)/include/drm @LIBDEVQ_CFLAGS@
+ AM_CFLAGS = \
+ 	$(WARN_CFLAGS) \
+ 	$(VALGRIND_CFLAGS)

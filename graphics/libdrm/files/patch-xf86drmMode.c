@@ -2,8 +2,8 @@ Disable checking for hw.dri.%d.modesetting.
 This sysctl is only available if a KMS module is loaded. But the libdrm
 check happens before X got a chance of loading the KMS module.
 
---- xf86drmMode.c.orig	2015-08-21 16:50:01.000000000 +0200
-+++ xf86drmMode.c	2015-10-20 17:34:48.000000000 +0200
+--- xf86drmMode.c.orig	2016-11-29 11:15:10 UTC
++++ xf86drmMode.c
 @@ -47,6 +47,7 @@
  #include <stdlib.h>
  #include <sys/ioctl.h>
@@ -12,7 +12,7 @@ check happens before X got a chance of loading the KMS module.
  #include <sys/sysctl.h>
  #endif
  #include <stdio.h>
-@@ -781,38 +782,7 @@ int drmCheckModesettingSupported(const c
+@@ -797,38 +798,7 @@ int drmCheckModesettingSupported(const c
  	if (found)
  		return 0;
  #elif defined (__FreeBSD__) || defined (__FreeBSD_kernel__)
