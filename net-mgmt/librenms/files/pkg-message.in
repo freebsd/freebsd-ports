@@ -1,4 +1,10 @@
 === Configuration details ===
+The following is recommended for /var/db/mysql/my.cnf
+
+[mysqld]
+innodb_file_per_table=1
+sql-mode=""
+
 You can mostly follow the guide at:
 http://docs.librenms.org/
 
