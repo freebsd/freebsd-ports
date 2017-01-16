@@ -18,8 +18,6 @@ LICENSE_TEXT=	Source recipient must acknowledge license.\
 
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/Pages/user/eula.aspx
-
 USES=		zip
 
 # i386 binary should work on ia64, but not tested
