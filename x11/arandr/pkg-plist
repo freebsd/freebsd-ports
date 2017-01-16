@@ -35,10 +35,12 @@ share/locale/ar/LC_MESSAGES/arandr.mo
 share/locale/br/LC_MESSAGES/arandr.mo
 share/locale/bs/LC_MESSAGES/arandr.mo
 share/locale/ca/LC_MESSAGES/arandr.mo
+share/locale/cs/LC_MESSAGES/arandr.mo
 share/locale/da/LC_MESSAGES/arandr.mo
 share/locale/de/LC_MESSAGES/arandr.mo
 share/locale/el/LC_MESSAGES/arandr.mo
 share/locale/es/LC_MESSAGES/arandr.mo
+share/locale/et/LC_MESSAGES/arandr.mo
 share/locale/fa/LC_MESSAGES/arandr.mo
 share/locale/fr/LC_MESSAGES/arandr.mo
 share/locale/gl/LC_MESSAGES/arandr.mo
@@ -53,7 +55,10 @@ share/locale/pl/LC_MESSAGES/arandr.mo
 share/locale/pt_BR/LC_MESSAGES/arandr.mo
 share/locale/ro/LC_MESSAGES/arandr.mo
 share/locale/ru/LC_MESSAGES/arandr.mo
+share/locale/sc/LC_MESSAGES/arandr.mo
 share/locale/sk/LC_MESSAGES/arandr.mo
+share/locale/sq/LC_MESSAGES/arandr.mo
+share/locale/sr/LC_MESSAGES/arandr.mo
 share/locale/sv/LC_MESSAGES/arandr.mo
 share/locale/tr/LC_MESSAGES/arandr.mo
 share/locale/uk/LC_MESSAGES/arandr.mo
