@@ -1,24 +1,24 @@
---- content/test/BUILD.gn.orig	2016-10-06 04:02:19.000000000 +0300
-+++ content/test/BUILD.gn	2016-10-27 21:01:00.854720000 +0300
-@@ -377,7 +377,7 @@
-                         ".",
-                         "//content")
+--- content/test/BUILD.gn.orig	2016-12-01 23:02:13 UTC
++++ content/test/BUILD.gn
+@@ -661,7 +661,7 @@ test("content_browsertests") {
+     "../test/webui_resource_browsertest.cc",
+   ]
  
 -  if (is_android || is_linux || is_mac || is_win) {
 +  if (is_android || is_linux || is_bsd || is_mac || is_win) {
      data = [
        "$root_out_dir/content_shell.pak",
        "data/",
-@@ -615,7 +615,7 @@
-                         ".",
-                         "//content")
+@@ -1349,7 +1349,7 @@ test("content_unittests") {
+     sources += [ "../browser/memory/memory_monitor_linux_unittest.cc" ]
+   }
  
 -  if (is_android || is_linux || is_mac || is_win) {
 +  if (is_android || is_linux || is_bsd || is_mac || is_win) {
      data = [
        "$root_out_dir/content_shell.pak",
        "data/",
-@@ -738,7 +738,7 @@
+@@ -1534,7 +1534,7 @@ test("content_unittests") {
        "//ui/shell_dialogs:shell_dialogs",
      ]
  
@@ -27,8 +27,8 @@
        sources +=
            [ "../browser/media/capture/desktop_capture_device_unittest.cc" ]
        deps += [ "//third_party/webrtc/modules/desktop_capture" ]
-@@ -772,7 +772,7 @@
-                     "//content")
+@@ -1570,7 +1570,7 @@ test("content_unittests") {
+     ]
    }
  
 -  if (is_linux) {
@@ -36,14 +36,3 @@
      if (use_dbus) {
        deps += [ "//dbus:test_support" ]
      }
-@@ -855,6 +855,10 @@
-     sources -= [ "../common/plugin_list_unittest.cc" ]
-   }
- 
-+  if (is_bsd) {
-+    sources -= [ "../browser/download/file_metadata_unittest_linux.cc"]
-+  }
-+
-   if (use_ozone) {
-     deps += [ "//ui/ozone" ]
-   } else {

@@ -1,11 +1,11 @@
---- chrome/browser/ui/BUILD.gn.orig	2016-08-03 22:02:13.000000000 +0300
-+++ chrome/browser/ui/BUILD.gn	2016-09-03 00:04:02.109457000 +0300
-@@ -503,7 +503,7 @@
-       "//ui/events:dom_keycode_converter",
-     ]
+--- chrome/browser/ui/BUILD.gn.orig	2016-12-01 23:02:08 UTC
++++ chrome/browser/ui/BUILD.gn
+@@ -3024,7 +3024,7 @@ split_static_library("ui") {
+       ]
+     }
    }
 -  if (is_linux) {  # Both desktop Linux and ChromeOS.
 +  if (is_linux || is_bsd) {  # Both desktop Linux and ChromeOS.
-     sources += rebase_path(gypi_values.chrome_browser_ui_linux_sources,
-                            ".",
-                            "//chrome")
+     sources += [
+       "certificate_dialogs.cc",
+       "certificate_dialogs.h",

@@ -1,15 +1,28 @@
---- content/browser/BUILD.gn.orig	2016-10-06 04:02:18.000000000 +0300
-+++ content/browser/BUILD.gn	2016-10-13 10:50:30.206508000 +0300
-@@ -196,7 +196,7 @@
-       "//third_party/webrtc/media:rtc_media",
-       "//third_party/webrtc/modules/desktop_capture:primitives",
+--- content/browser/BUILD.gn.orig	2016-12-01 23:02:12.000000000 +0000
++++ content/browser/BUILD.gn	2016-12-14 14:34:21.739126000 +0000
+@@ -1399,6 +1399,12 @@
      ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "download/quarantine_linux.cc",
++    ]
++  }
++
+   if (!is_win) {
+     sources += [
+       "file_descriptor_info_impl.cc",
+@@ -1462,7 +1468,7 @@
+     if (!is_ios) {
+       defines += [ "ENABLE_SCREEN_CAPTURE=1" ]
+     }
 -    if (is_linux || is_mac || is_win) {
 +    if (is_linux || is_bsd || is_mac || is_win) {
        sources += [
          "media/capture/desktop_capture_device.cc",
          "media/capture/desktop_capture_device.h",
-@@ -288,7 +288,7 @@
+@@ -1629,7 +1635,7 @@
      }
    }
  
@@ -18,7 +31,7 @@
      deps += [ "//build/linux:fontconfig" ]
    }
  
-@@ -368,6 +368,19 @@
+@@ -1782,6 +1788,17 @@
        "//chromeos",
        "//chromeos:power_manager_proto",
      ]
@@ -32,23 +45,17 @@
 +        "../zygote/zygote_linux.cc",
 +        "../zygote/zygote_linux.h",
 +        "../zygote/zygote_main_linux.cc",
-+        "download/file_metadata_linux.cc",
-+        "download/file_metadata_linux.h",
 +    ]
    }
  
    if (use_aura) {
-@@ -450,7 +463,7 @@
+@@ -1899,11 +1916,11 @@
      deps += [ "//third_party/flac" ]
    }
  
 -  if (is_linux && use_dbus) {
 +  if ((is_linux || is_bsd) && use_dbus) {
      deps += [ "//dbus" ]
-   }
- 
-@@ -461,7 +474,7 @@
-     ]
    }
  
 -  if (is_linux) {

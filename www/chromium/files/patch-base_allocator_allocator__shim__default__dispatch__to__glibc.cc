@@ -1,9 +1,11 @@
---- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2016-08-03 22:02:10.000000000 +0300
-+++ base/allocator/allocator_shim_default_dispatch_to_glibc.cc	2016-09-21 22:14:12.220734000 +0300
-@@ -3,17 +3,28 @@
+--- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2016-12-01 23:02:05 UTC
++++ base/allocator/allocator_shim_default_dispatch_to_glibc.cc
+@@ -3,19 +3,28 @@
  // found in the LICENSE file.
  
  #include "base/allocator/allocator_shim.h"
+-
+-#include <malloc.h>
 +#include <stdio.h>
 +#include <stdlib.h>
 +#include <malloc_np.h>
@@ -25,17 +27,17 @@
 +void* __memalign(size_t alignment, size_t size) {
 +  void *ret;
 +  if (__posix_memalign(&ret, alignment, size) != 0) {
-+    return nullptr;
++      return nullptr;
 +  } else {
-+    return ret;
++      return ret;
 +  }
 +}
-+int  __posix_memalign(void **ptr, size_t alignment, size_t size);
++int __posix_memalign(void **ptr, size_t alignment, size_t size);
 +void __free(void* ptr);
  }  // extern "C"
  
  namespace {
-@@ -21,23 +32,27 @@
+@@ -23,23 +32,23 @@ namespace {
  using base::allocator::AllocatorDispatch;
  
  void* GlibcMalloc(const AllocatorDispatch*, size_t size) {
@@ -58,13 +60,9 @@
 +  return __memalign(alignment, size);
  }
  
-+/* int GlibcPosixMemalign(const AllocatorDispatch*, void** ptr, size_t alignment, size_t size) { */
-+/*   return __posix_memalign(ptr, alignment, size); */
-+/* } */
-+
  void GlibcFree(const AllocatorDispatch*, void* address) {
 -  __libc_free(address);
 +  __free(address);
  }
  
- }  // namespace
+ size_t GlibcGetSizeEstimate(const AllocatorDispatch*, void* address) {

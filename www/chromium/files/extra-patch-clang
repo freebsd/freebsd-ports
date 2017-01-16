@@ -52,17 +52,6 @@
    }
 
    // Helper function to verify the most common test expectations.
---- components/sync_sessions/synced_session_tracker.cc.orig	2016-01-21 13:04:41.772845558 +0100
-+++ components/sync_sessions/synced_session_tracker.cc	2016-01-21 13:05:17.652842509 +0100
-@@ -286,7 +286,7 @@
-   }
-   DCHECK(window_ptr);
-   DCHECK_EQ(window_ptr->window_id.id(), window_id);
--  DCHECK_EQ(reinterpret_cast<sessions::SessionWindow*>(NULL),
-+  DCHECK_EQ(static_cast<sessions::SessionWindow*>(NULL),
-             GetSession(session_tag)->windows[window_id]);
-   GetSession(session_tag)->windows[window_id] = window_ptr;
- }
 --- media/audio/audio_output_proxy_unittest.cc	2015-04-15 00:18:55.000000000 +0200
 +++ media/audio/audio_output_proxy_unittest.cc	2015-04-18 22:02:38.000000000 +0200
 @@ -387,7 +387,7 @@
