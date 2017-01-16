@@ -3,12 +3,18 @@
 
 PORTNAME=	pftop
 PORTVERSION=	0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
+
+LICENSE=	BSD2CLAUSE
+
+OPTIONS_DEFINE=	ALTQ
+
+ALTQ_DESC=	ALTQ support for queue statistics
 
 .include <bsd.port.pre.mk>
 
@@ -18,7 +24,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bpf_dump.c \
 .endif
 
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=45
-CFLAGS+=	-DHAVE_ALTQ=1 -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1
+CFLAGS+=	-DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1
+.if ${PORT_OPTIONS:MALTQ}
+CFLAGS+=	-DHAVE_ALTQ=1
+.endif
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cache.c \
 		${FILESDIR}/extra-patch-cache.h \
 		${FILESDIR}/extra-patch-config.h \
