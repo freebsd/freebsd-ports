@@ -155,6 +155,10 @@ GROUPS=	${MPDGROUP}
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 1100000
+USE_GCC=	5+
+.endif
+
 .ifdef MPDCONF
 IGNORE=Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/${MPDCONF} to musicpd.conf, if it exists
 .endif
