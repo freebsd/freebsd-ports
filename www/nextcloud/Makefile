@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloud
-PORTVERSION=	11.0.0
+PORTVERSION=	11.0.1
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 
@@ -10,7 +10,7 @@ COMMENT=	Personal cloud which runs on your own server
 
 LICENSE=	AGPLv3
 
-USES=		cpe php:web tar:bzip2 ssl
+USES=		cpe gettext-runtime php:web tar:bzip2 ssl
 USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \
 		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
 		xsl wddx zip zlib

@@ -2677,7 +2677,11 @@
 %%WWWDIR%%/apps/activity/appinfo/update.php
 %%WWWDIR%%/apps/activity/css/settings.css
 %%WWWDIR%%/apps/activity/css/style.css
+%%WWWDIR%%/apps/activity/docs/create.md
 %%WWWDIR%%/apps/activity/docs/endpoint-v2.md
+%%WWWDIR%%/apps/activity/docs/filter.md
+%%WWWDIR%%/apps/activity/docs/provider.md
+%%WWWDIR%%/apps/activity/docs/setting.md
 %%WWWDIR%%/apps/activity/img/activity-dark.svg
 %%WWWDIR%%/apps/activity/img/activity.svg
 %%WWWDIR%%/apps/activity/img/add-color.svg
@@ -3073,6 +3077,8 @@
 %%WWWDIR%%/apps/dav/appinfo/v2/remote.php
 %%WWWDIR%%/apps/dav/bin/chunkperf.php
 %%WWWDIR%%/apps/dav/l10n/.gitkeep
+%%WWWDIR%%/apps/dav/l10n/bg_BG.js
+%%WWWDIR%%/apps/dav/l10n/bg_BG.json
 %%WWWDIR%%/apps/dav/l10n/cs_CZ.js
 %%WWWDIR%%/apps/dav/l10n/cs_CZ.json
 %%WWWDIR%%/apps/dav/l10n/de.js
@@ -3211,6 +3217,8 @@
 %%WWWDIR%%/apps/dav/lib/Files/Sharing/PublicLinkCheckPlugin.php
 %%WWWDIR%%/apps/dav/lib/HookManager.php
 %%WWWDIR%%/apps/dav/lib/Migration/FixBirthdayCalendarComponent.php
+%%WWWDIR%%/apps/dav/lib/Migration/ValueFix.php
+%%WWWDIR%%/apps/dav/lib/Migration/ValueFixInsert.php
 %%WWWDIR%%/apps/dav/lib/RootCollection.php
 %%WWWDIR%%/apps/dav/lib/Server.php
 %%WWWDIR%%/apps/dav/lib/SystemTag/SystemTagMappingNode.php
@@ -8007,6 +8015,8 @@
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/pt_BR.json
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/ru.js
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/ru.json
+%%WWWDIR%%/apps/twofactor_backupcodes/l10n/sv.js
+%%WWWDIR%%/apps/twofactor_backupcodes/l10n/sv.json
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/tr.js
 %%WWWDIR%%/apps/twofactor_backupcodes/l10n/tr.json
 %%WWWDIR%%/apps/twofactor_backupcodes/lib/Controller/SettingsController.php
@@ -8602,6 +8612,12 @@
 %%WWWDIR%%/apps/workflowengine/l10n/pt_BR.json
 %%WWWDIR%%/apps/workflowengine/l10n/ru.js
 %%WWWDIR%%/apps/workflowengine/l10n/ru.json
+%%WWWDIR%%/apps/workflowengine/l10n/sk_SK.js
+%%WWWDIR%%/apps/workflowengine/l10n/sk_SK.json
+%%WWWDIR%%/apps/workflowengine/l10n/sq.js
+%%WWWDIR%%/apps/workflowengine/l10n/sq.json
+%%WWWDIR%%/apps/workflowengine/l10n/sv.js
+%%WWWDIR%%/apps/workflowengine/l10n/sv.json
 %%WWWDIR%%/apps/workflowengine/l10n/zh_TW.js
 %%WWWDIR%%/apps/workflowengine/l10n/zh_TW.json
 %%WWWDIR%%/apps/workflowengine/lib/AppInfo/Application.php
@@ -9606,12 +9622,16 @@
 %%WWWDIR%%/core/l10n/pt_PT.json
 %%WWWDIR%%/core/l10n/ru.js
 %%WWWDIR%%/core/l10n/ru.json
+%%WWWDIR%%/core/l10n/sk_SK.js
+%%WWWDIR%%/core/l10n/sk_SK.json
 %%WWWDIR%%/core/l10n/sl.js
 %%WWWDIR%%/core/l10n/sl.json
 %%WWWDIR%%/core/l10n/sq.js
 %%WWWDIR%%/core/l10n/sq.json
 %%WWWDIR%%/core/l10n/sv.js
 %%WWWDIR%%/core/l10n/sv.json
+%%WWWDIR%%/core/l10n/th_TH.js
+%%WWWDIR%%/core/l10n/th_TH.json
 %%WWWDIR%%/core/l10n/tr.js
 %%WWWDIR%%/core/l10n/tr.json
 %%WWWDIR%%/core/l10n/uk.js
@@ -9751,6 +9771,8 @@
 %%WWWDIR%%/lib/composer/composer/autoload_real.php
 %%WWWDIR%%/lib/composer/composer/autoload_static.php
 %%WWWDIR%%/lib/composer/composer/installed.json
+%%WWWDIR%%/lib/l10n/bg_BG.js
+%%WWWDIR%%/lib/l10n/bg_BG.json
 %%WWWDIR%%/lib/l10n/cs_CZ.js
 %%WWWDIR%%/lib/l10n/cs_CZ.json
 %%WWWDIR%%/lib/l10n/de.js
@@ -9777,6 +9799,12 @@
 %%WWWDIR%%/lib/l10n/pt_BR.json
 %%WWWDIR%%/lib/l10n/ru.js
 %%WWWDIR%%/lib/l10n/ru.json
+%%WWWDIR%%/lib/l10n/sk_SK.js
+%%WWWDIR%%/lib/l10n/sk_SK.json
+%%WWWDIR%%/lib/l10n/sq.js
+%%WWWDIR%%/lib/l10n/sq.json
+%%WWWDIR%%/lib/l10n/sv.js
+%%WWWDIR%%/lib/l10n/sv.json
 %%WWWDIR%%/lib/l10n/zh_TW.js
 %%WWWDIR%%/lib/l10n/zh_TW.json
 %%WWWDIR%%/lib/private/Accounts/AccountManager.php
@@ -10758,4 +10786,3 @@
 @dir(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,) %%WWWDIR%%/apps
 @dir(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,) %%WWWDIR%%/config
 @dir(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,) %%WWWDIR%%/data
-
