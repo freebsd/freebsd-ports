@@ -35,7 +35,7 @@ INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	ABIVERSION=3.0
 
-OPTIONS_DEFINE=	AIKSAURUS CLIPART DEBUG MATHVIEW NLS OTS PSION \
+OPTIONS_DEFINE=	CLIPART DEBUG MATHVIEW NLS OTS PSION \
 		TEMPLATES WP
 OPTIONS_DEFAULT=CLIPART COLSERVICE COLSUGAR COLTCP SPELLCHECK TEMPLATES
 OPTIONS_SUB=	yes
@@ -44,7 +44,6 @@ OPTIONS_GROUP=	DICT COLLAB
 OPTIONS_GROUP_DICT=	GRAMMAR SPELLCHECK
 OPTIONS_GROUP_COLLAB=	COLFAKE COLSERVICE COLSIP COLSUGAR COLTCP COLTELEPATHY COLXMPP
 
-AIKSAURUS_DESC=		Thesaurus plugin
 CLIPART_DESC=		Include clipart
 COLLAB_DESC=		Collaboration backend
 COLFAKE_DESC=		Fake collaboration for debugging purposes only
@@ -74,8 +73,6 @@ ABIWORD_PLUGINS=	garble loadbindings opml xslfo bmp iscii sdw babelfish \
 # opendocument enabled by default, rsvg plugin isn't needed on unix.
 # Plugins we don't support:
 # gda
-
-AIKSAURUS_LIB_DEPENDS=		libAiksaurusGTK-1.2.so:textproc/aiksaurus-gtk
 
 CLIPART_CONFIGURE_ENABLE=	clipart
 
@@ -127,10 +124,6 @@ WP_LIB_DEPENDS=	libwpg-0.3.so:graphics/libwpg03 \
 		libwps-0.4.so:textproc/libwps
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAIKSAURUS}
-ABIWORD_PLUGINS+=	aiksaurus
-.endif
 
 .if ${PORT_OPTIONS:MCOL*}
 PLIST_SUB+=		COLLAB=""

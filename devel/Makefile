@@ -5549,6 +5549,7 @@
     SUBDIR += smokeqt
     SUBDIR += smv
     SUBDIR += soapui
+    SUBDIR += sonar-ant-task
     SUBDIR += sonarqube
     SUBDIR += sope2
     SUBDIR += sope3

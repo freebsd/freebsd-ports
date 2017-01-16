@@ -3,7 +3,7 @@
 
 PORTNAME=	ansible
 PORTVERSION?=	2.2.0.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
