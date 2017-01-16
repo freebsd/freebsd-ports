@@ -115,3 +115,7 @@ fi
 
 patch_from_directory "${dp_PATCHDIR}" "${dp_OPSYS}"
 
+if [ -n "${dp_EXTRA_PATCH_TREE}" ]; then
+	patch_from_directory "${dp_EXTRA_PATCH_TREE}/${dp_PKGORIGIN}" "local"
+fi
+

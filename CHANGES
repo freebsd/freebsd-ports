@@ -13,6 +13,18 @@ All ports committers are allowed to commit to this file.
 20160116:
 AUTHOR: mat@FreeBSD.org
 
+  A new EXTRA_PATCH_TREE has been added.  Points to a directory hierarchy with
+  the same layout as the ports tree, where local patches can be found.  This
+  allows a third party to keep their patches in some other source control
+  system if needed.
+
+  For example, if you have EXTRA_PATCH_TREE=/patches, when building
+  lang/perl5.24, any file named patch-* in /patches/lang/perl5.24/ will be used
+  to patch the Perl distribution.
+
+20160116:
+AUTHOR: mat@FreeBSD.org
+
   During extraction of the do-patch target into a separate script, the "-d
   PATCH_WRKSRC" had to be removed from the PATCH_ARGS and PATCH_DIST_ARGS
   variables.  If using these variables directly, you will need to adapt the
