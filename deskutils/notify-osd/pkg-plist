@@ -1,5 +1,7 @@
 libexec/notify-osd
 share/dbus-1/services/org.freedesktop.Notifications.service
+share/GConf/gsettings/notify-osd.convert
+share/glib-2.0/schemas/com.canonical.NotifyOSD.gschema.xml
 %%DATADIR%%/icons/hicolor/scalable/status/README
 %%DATADIR%%/icons/hicolor/scalable/status/notification-audio-next.svg
 %%DATADIR%%/icons/hicolor/scalable/status/notification-audio-play.svg
