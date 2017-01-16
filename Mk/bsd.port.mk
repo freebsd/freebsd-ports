@@ -749,6 +749,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  The patches specified by this variable will be
 #				  applied after the normal distribution patches but
 #				  before those in ${PATCHDIR}.
+# EXTRA_PATCH_TREE - where to find extra 'out-of-tree' patches
+#				  Points to a directory hierarchy with the same layout
+#				  as the ports tree, where local patches can be found.
+#				  This allows a third party to keep their patches in
+#				  some other source control system if needed.
 # PATCH_WRKSRC	- Directory to apply patches in.
 #				  Default: ${WRKSRC}
 #
