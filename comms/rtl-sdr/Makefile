@@ -3,7 +3,7 @@
 
 PORTNAME=	rtl-sdr
 PORTVERSION=	20140210
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 USES=		autoreconf gmake pkgconfig libtool pathfix tar:tgz
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+CFLAGS+=	-fgnu89-inline
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
