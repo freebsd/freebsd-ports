@@ -11,6 +11,10 @@ you update your ports collection, before attempting any port upgrades.
 
   The following is recommended for /var/db/mysql/my.cnf
 
+  NOTE: these are global settings.  Please read this first:
+
+  http://dev.mysql.com/doc/refman/5.7/en/sql-mode.html
+
   [mysqld]
   innodb_file_per_table=1
   sql-mode=""
