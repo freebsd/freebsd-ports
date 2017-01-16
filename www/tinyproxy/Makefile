@@ -6,7 +6,7 @@ PORTVERSION=	1.8.4
 PORTEPOCH=	1
 CATEGORIES=	www
 
-MAINTAINER=	jason.mann+freebsd-ports@gmail.com
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, efficient HTTP proxy server
 
 LICENSE=	GPLv2
