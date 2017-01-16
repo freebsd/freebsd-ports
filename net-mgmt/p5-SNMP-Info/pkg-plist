@@ -101,6 +101,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/VMware.pm
 %%SITE_PERL%%/SNMP/Info/Layer7.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/APC.pm
+%%SITE_PERL%%/SNMP/Info/Layer7/CiscoIPS.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/Neoteris.pm
 %%SITE_PERL%%/SNMP/Info/Layer7/Netscaler.pm
 %%SITE_PERL%%/SNMP/Info/MAU.pm
@@ -212,6 +213,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer3::VMware.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::APC.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer7::CiscoIPS.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Neoteris.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Netscaler.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Aggregate.3.gz
