@@ -2,37 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	rar2fs
-PORTVERSION=	1.15.1
-PORTREVISION=	1
+PORTVERSION=	1.23.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE:rar2fs http://www.rarlab.com/rar/:unrarsrc
 PKGNAMEPREFIX=	fusefs-
-DISTFILES=	rar2fs-1.15.1.tar.gz:rar2fs unrarsrc-4.2.4.tar.gz:unrarsrc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Mount rar archives as filesystem
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable (google code has gone away)
+LIB_DEPENDS=	libunrar.so.5:${LIBUNRAR_PORT}
+BUILD_DEPENDS=	${NONEXISTENT}:${LIBUNRAR_PORT}:patch
 
-LIB_DEPENDS=	libunrar.so:archivers/libunrar4
+USE_GITHUB=	yes
+GH_ACCOUNT=	hasse69
+
+USES=		autoreconf execinfo gmake fuse
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \
-	--with-fuse=${LOCALBASE}/include/fuse \
-	--with-unrar=${WRKDIR}/unrar \
-	--with-unrar-lib=${LOCALBASE}/lib
+		--with-fuse=${LOCALBASE}/include/fuse \
+		--with-unrar=`${MAKE} -C ${PORTSDIR}/${LIBUNRAR_PORT} -VWRKSRC` \
+		--with-unrar-lib=${LOCALBASE}/lib
+CONFIGURE_ENV=	LIBUNRAR_PKG=${LIBUNRAR_PKG}
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/rar2fs.1.gz
-USES=		execinfo fuse gmake
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/mkr2i \
+		man/man1/rar2fs.1.gz
+
+LIBUNRAR_PORT=	archivers/libunrar5
+LIBUNRAR_PKG=	${LIBUNRAR_PORT:S|archivers/||}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-lstdc++/-lexecinfo/' -e '/_LINK =/s/CC/CXX/' \
-		${WRKSRC}/Makefile.in
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/rar2fs.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${REINPLACE_CMD} -e 's|-lstdc++||g' -e '/rar2fs_LINK =/s|CC|CXX|' \
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
