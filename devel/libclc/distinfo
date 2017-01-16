@@ -1,2 +1,3 @@
-SHA256 (llvm-mirror-libclc-0.2.0.20151006-6d78407_GH0.tar.gz) = 1a1d5d0b00560cf5d4784110f22ef8ade121c4a703a3622e0be85989eca3e4ba
-SIZE (llvm-mirror-libclc-0.2.0.20151006-6d78407_GH0.tar.gz) = 102996
+TIMESTAMP = 1480100311
+SHA256 (llvm-mirror-libclc-0.2.0.20160915-b091e26_GH0.tar.gz) = 821a4b7aa0fa84b1a790b72ba9e2df2820f0d4f565df1027eaad206d688ea741
+SIZE (llvm-mirror-libclc-0.2.0.20160915-b091e26_GH0.tar.gz) = 127259
