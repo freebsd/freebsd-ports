@@ -1,4 +1,3 @@
-SHA256 (rar2fs-1.15.1.tar.gz) = 1ae1df5b8eda3d954740010e931e16342957a8b6cd41676a017fc9bbcd900973
-SIZE (rar2fs-1.15.1.tar.gz) = 205577
-SHA256 (unrarsrc-4.2.4.tar.gz) = 9432bf798e5f7123f3060f37b75b7c07f36f0091305f46473dcae9154f8cd686
-SIZE (unrarsrc-4.2.4.tar.gz) = 164641
+TIMESTAMP = 1483210781
+SHA256 (hasse69-rar2fs-v1.23.1_GH0.tar.gz) = 2dab03c8c58379b0ddda798ca909ac48bf0445b2400eee706c91c3efe28caf4c
+SIZE (hasse69-rar2fs-v1.23.1_GH0.tar.gz) = 126375
