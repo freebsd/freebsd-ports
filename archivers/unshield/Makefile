@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unshield
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	archivers
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
-USES=		cmake pathfix
+USES=		cmake pathfix ssl
 
 GH_ACCOUNT=	twogood
 USE_GITHUB=	yes

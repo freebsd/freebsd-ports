@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phplist
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.7
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 
@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request
 
-USES=		cpe tar:tgz
+USES=		cpe tar:tgz php:web
 USE_PHP=	hash iconv imap mysqli pcre session xml zlib
-WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -35,6 +34,7 @@ post-extract:
 #
 do-install:
 	@${FIND} ${WRKSRC}/public_html/ -type f -regex '.*[^!-~].*' -delete
+	@${FIND} ${WRKSRC}/public_html/ -type l -delete
 	${MKDIR} ${STAGEDIR}${WWWDIR}/
 	(cd ${WRKSRC}/public_html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/phplist ${STAGEDIR}${PREFIX}/bin

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wildfly10
-PORTVERSION=	10.0.0
-PORTREVISION=   3
+PORTVERSION=	10.1.0
 CATEGORIES=	java www
 MASTER_SITES=	http://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -29,8 +28,8 @@ SUB_LIST=	APP_SHORTNAME=${PORTNAME} \
 		USER=${USER} \
 		GROUP=${GROUP} \
 		PID_FILE=${PID_FILE} \
-		APP_HOME=${PREFIX}/wildfly-${PORTVERSION}
-PLIST_SUB=	APP_HOME=wildfly-${PORTVERSION}
+		APP_HOME=${PREFIX}/${PORTNAME}
+PLIST_SUB=	APP_HOME=${PORTNAME}
 
 CONFIG_FILES=	appclient/configuration/appclient.xml \
 		appclient/configuration/logging.properties \
@@ -64,12 +63,12 @@ do-build:
 	${RM} -r ${WRKSRC}/bin/init.d
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION})
-	${RMDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/.installation
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${PORTNAME})
+	${RMDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/.installation
 .for FILE in ${CONFIG_FILES}
-	${MV} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/${FILE} \
-		${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}/${FILE}.sample
+	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/${FILE} \
+		${STAGEDIR}${PREFIX}/${PORTNAME}/${FILE}.sample
 .endfor
 
 .include <bsd.port.mk>
