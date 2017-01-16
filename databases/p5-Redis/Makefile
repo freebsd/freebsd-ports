@@ -13,7 +13,8 @@ COMMENT=	Perl binding for Redis database
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-IO-Socket-Timeout>=0.29:net/p5-IO-Socket-Timeout
+BUILD_DEPENDS=	p5-IO-Socket-Timeout>=0.29:net/p5-IO-Socket-Timeout \
+		p5-Try-Tiny>=0.24:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-String>=0:devel/p5-IO-String \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
