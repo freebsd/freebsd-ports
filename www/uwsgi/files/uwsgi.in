@@ -24,6 +24,8 @@
 #				Default is "-M -L".
 # uwsgi_procname (str):		Define to "uWSGI" if you start uwsgi with
 #				--auto-procname option.
+# uwsgi_emperor (str):		Setup uwsgi to run as emperor in the
+#				given directory.
 #
 # If you would like to have multiple uWSGI instances running, you can
 # define multiple profiles:
@@ -51,6 +53,7 @@ command=%%PREFIX%%/bin/uwsgi
 : ${uwsgi_gid="80"}
 : ${uwsgi_flags="-M -L"}
 : ${uwsgi_procname="${command}"}
+: ${uwsgi_emperor=""}
 
 is_uwsgi_profile() {
     local profile
@@ -78,6 +81,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 		eval uwsgi_gid=\${uwsgi_${profile}_gid:-"${uwsgi_uid}"}
 		eval uwsgi_flags=\${uwsgi_${profile}_flags:-"${uwsgi_flags}"}
 		eval uwsgi_procname=\${uwsgi_${profile}_procname:-"${uwsgi_procname}"}
+		eval uwsgi_emperor=\${uwsgi_${profile}_emperor:-"${uwsgi_emperor}"}
 	elif [ -n "$1" ]; then
 		for profile in ${uwsgi_profiles}; do
 	            echo "Processing ${name} profile: ${profile}"
@@ -88,7 +92,11 @@ if [ -n "${uwsgi_profiles}" ]; then
 fi
 
 command=%%PREFIX%%/bin/uwsgi
-command_args="--pidfile ${uwsgi_pidfile} -s ${uwsgi_socket} -d ${uwsgi_logfile} --uid ${uwsgi_uid} --gid ${uwsgi_gid}"
+if [ -n "${uwsgi_emperor}" ]; then
+   command_args="--emperor-pidfile ${uwsgi_pidfile} -d ${uwsgi_logfile} --emperor ${uwsgi_emperor} --vassals-set uid=${uwsgi_uid} --vassals-set gid=${uwsgi_gid}"
+else
+   command_args="--pidfile ${uwsgi_pidfile} -s ${uwsgi_socket} -d ${uwsgi_logfile} --uid ${uwsgi_uid} --gid ${uwsgi_gid}"
+fi
 pidfile=${uwsgi_pidfile}
 stop_postcmd=stop_postcmd
 reload_precmd=reload_precmd
