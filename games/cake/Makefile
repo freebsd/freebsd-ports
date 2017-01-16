@@ -19,7 +19,7 @@ USE_XORG=	x11 xext xmu xt xi sm ice
 
 # Need to pass `-l', but PATCH_ARGS+= won't work because of PATCH_ARGS?=
 # in bsd.port.mk
-PATCH_ARGS=	-d ${PATCH_WRKSRC} -N -s -E ${PATCH_STRIP} -l
+PATCH_ARGS=	-N -s -E ${PATCH_STRIP} -l
 
 ALL_TARGET=	main
 WRKSRC=		${WRKDIR}/cake_src

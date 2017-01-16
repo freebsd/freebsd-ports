@@ -21,7 +21,7 @@ PLIST_FILES=	bin/mlr man/man1/mlr.1.gz
 BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
 
 post-configure:
-	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-c_Makefile
-	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-libtool
+	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-c_Makefile
+	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-libtool
 
 .include <bsd.port.mk>

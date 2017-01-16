@@ -36,7 +36,7 @@ post-patch::
 	@${REINPLACE_CMD} -e '/^mutt_SOURCES/s/\\$$/ myiconv.c \\/' ${WRKSRC}/Makefile.am
 	@for i in ${.CURDIR}/files/patch-*; do \
 		${ECHO_MSG} "===>  Applying extra patch $$i"; \
-		${PATCH} ${PATCH_ARGS} < $$i; \
+		${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < $$i; \
 	done
 	@${REINPLACE_CMD} -e 's|裏|裡|' ${WRKSRC}/po/zh_TW.po
 

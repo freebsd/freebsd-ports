@@ -1993,12 +1993,11 @@ PATCH_STRIP?=	-p0
 PATCH_DIST_STRIP?=	-p0
 .if defined(PATCH_DEBUG)
 PATCH_DEBUG_TMP=	yes
-PATCH_ARGS?=	-d ${PATCH_WRKSRC} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	--suffix ${DISTORIG} -d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP}
+PATCH_ARGS?=	-E ${PATCH_STRIP}
+PATCH_DIST_ARGS?=	--suffix ${DISTORIG} -E ${PATCH_DIST_STRIP}
 .else
-PATCH_DEBUG_TMP=	no
-PATCH_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	--suffix ${DISTORIG} -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_ARGS?=	--forward --quiet -E ${PATCH_STRIP}
+PATCH_DIST_ARGS?=	--suffix ${DISTORIG} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 .if !defined(QUIET)
 PATCH_SILENT=		PATCH_SILENT=yes
@@ -2010,6 +2009,7 @@ PATCH_DIST_ARGS+=	--batch
 
 # Prevent breakage with VERSION_CONTROL=numbered
 PATCH_ARGS+=	-V simple
+PATCH_DIST_ARGS+=		-V simple
 
 .if defined(PATCH_CHECK_ONLY)
 PATCH_ARGS+=	-C
@@ -2372,8 +2372,10 @@ _PATCH_SITES_ALL+=	${_PATCH_SITES_${_group}}
 .		endfor
 .	endif
 _PATCHFILES:=	${_PATCHFILES} ${_P_file}
-.	if !empty(_P_strip)
-_PATCH_DIST_STRIP_CASES:=	${_PATCH_DIST_STRIP_CASES} ("${_P_file}") printf %s "${_P_strip}" ;;
+.	if empty(_P_strip)
+_PATCHFILES2:=	${_PATCHFILES2} ${_P_file}
+.	else
+_PATCHFILES2:=	${_PATCHFILES2} ${_P_file}:${_P_strip}
 .	endif
 .endfor
 _P_groups=
@@ -3076,73 +3078,29 @@ do-extract:
 
 .if !target(do-patch)
 do-patch:
-.if defined(PATCHFILES)
-	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@(set -e; \
-	cd ${_DISTDIR}; \
-	patch_dist_strip () { \
-		case "$$1" in \
-		${_PATCH_DIST_STRIP_CASES} \
-		esac; \
-	}; \
-	for i in ${_PATCHFILES}; do \
-		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-			${ECHO_MSG} "===>   Applying distribution patch $$i" ; \
-		fi ; \
-		case $$i in \
-		*.Z|*.gz) ${GZCAT} $$i ;; \
-		*.bz2) ${BZCAT} $$i ;; \
-		*.xz) ${XZCAT} $$i ;; \
-		*.zip) ${UNZIP_NATIVE_CMD} -p $$i ;; \
-		*) ${CAT} $$i ;; \
-		esac | ${PATCH} ${PATCH_DIST_ARGS} `patch_dist_strip $$i` ; \
-	done )
-.endif
-.if defined(EXTRA_PATCHES)
-	@set -e ; \
-	for i in ${EXTRA_PATCHES}; do \
-		case $$i in \
-		*:-p[0-9]) patch_file=$${i%:*} ; patch_strip=$${i##*:} ;; \
-		*) patch_file=$$i ;; \
-		esac ; \
-		${ECHO_MSG} "===>  Applying extra patch $$patch_file" ; \
-		case $$patch_file in \
-		*.Z|*.gz) ${GZCAT} $$patch_file ;; \
-		*.bz2) ${BZCAT} $$patch_file ;; \
-		*.xz) ${XZCAT} $$patch_file ;; \
-		*.zip) ${UNZIP_NATIVE_CMD} -p $$patch_file ;; \
-		*) ${CAT} $$patch_file ;; \
-		esac | ${PATCH} ${PATCH_ARGS} $$patch_strip ; \
-	done
-.endif
-	@set -e ;\
-	if [ -d ${PATCHDIR} ]; then \
-		if [ "`${ECHO_CMD} ${PATCHDIR}/patch-*`" != "${PATCHDIR}/patch-*" ]; then \
-			${ECHO_MSG} "===>  Applying ${OPSYS} patches for ${PKGNAME}" ; \
-			PATCHES_APPLIED="" ; \
-			for i in ${PATCHDIR}/patch-*; do \
-				case $$i in \
-					*.orig|*.rej|*~|*,v) \
-						${ECHO_MSG} "===>   Ignoring patchfile $$i" ; \
-						;; \
-					*) \
-						if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-							${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ; \
-						fi; \
-						if ${PATCH} ${PATCH_ARGS} < $$i ; then \
-							PATCHES_APPLIED="$$PATCHES_APPLIED $$i" ; \
-						else \
-							${ECHO_MSG} `${ECHO_CMD} "=> Patch $$i failed to apply cleanly." | ${SED} "s|${PATCHDIR}/||"` ; \
-							if [ x"$$PATCHES_APPLIED" != x"" -a ${PATCH_SILENT} != "yes" ]; then \
-								${ECHO_MSG} `${ECHO_CMD} "=> Patch(es) $$PATCHES_APPLIED applied cleanly." | ${SED} "s|${PATCHDIR}/||g"` ; \
-							fi; \
-							${FALSE} ; \
-						fi; \
-						;; \
-				esac; \
-			done; \
-		fi; \
-	fi
+	@${SETENV} \
+			dp_BZCAT="${BZCAT}" \
+			dp_CAT="${CAT}" \
+			dp_DISTDIR="${_DISTDIR}" \
+			dp_ECHO_MSG="${ECHO_MSG}" \
+			dp_EXTRA_PATCHES="${EXTRA_PATCHES}" \
+			dp_EXTRA_PATCH_TREE="${EXTRA_PATCH_TREE}" \
+			dp_GZCAT="${GZCAT}" \
+			dp_OPSYS="${OPSYS}" \
+			dp_PATCH="${PATCH}" \
+			dp_PATCHDIR="${PATCHDIR}" \
+			dp_PATCHFILES="${_PATCHFILES2}" \
+			dp_PATCH_ARGS=${PATCH_ARGS:Q} \
+			dp_PATCH_DEBUG_TMP="${PATCH_DEBUG_TMP}" \
+			dp_PATCH_DIST_ARGS="${PATCH_DIST_ARGS}" \
+			dp_PATCH_SILENT="${PATCH_SILENT}" \
+			dp_PATCH_WRKSRC=${PATCH_WRKSRC} \
+			dp_PKGNAME="${PKGNAME}" \
+			dp_PKGORIGIN="${PKGORIGIN}" \
+			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			dp_UNZIP_NATIVE_CMD="${UNZIP_NATIVE_CMD}" \
+			dp_XZCAT="${XZCAT}" \
+			${SH} ${SCRIPTSDIR}/do-patch.sh
 .endif
 
 .if !target(run-autotools-fixup)
