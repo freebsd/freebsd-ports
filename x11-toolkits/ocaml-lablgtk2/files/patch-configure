@@ -1,0 +1,11 @@
+--- configure.orig	2014-10-29 07:51:05 UTC
++++ configure
+@@ -2677,7 +2677,7 @@ if test "$OCAMLFIND" = no; then
+ FINDLIBDIR=""
+ OCAMLLDCONF=""
+ else
+-FINDLIBDIR="`ocamlfind printconf destdir | tr -d '\\r'`"
++FINDLIBDIR="`ocamlfind printconf destdir | sed 's/:.*//' | tr -d '\\r'`"
+ echo "$OCAMLFIND library path is $FINDLIBDIR"
+ OCAMLLDCONF="`ocamlfind printconf ldconf | tr -d '\\r'`"
+ echo "$OCAMLFIND ldconf path is $OCAMLLDCONF"
