@@ -30,8 +30,8 @@ MAKEFILE=	Makefile.fc9
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1200017
-BROKEN=		Fails to compile with clang 3.9.x and later
+.if ${OPSYS} == "FreeBSD" && (${OSVERSION} >= 1200017 || ${OSVERSION} >= 1100508)
+BROKEN=		Fails to compile with libc++ 3.9.0 and later
 .endif
 
 do-install:
