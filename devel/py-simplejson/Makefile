@@ -15,7 +15,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # 2.5-2.7,3.3+
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 
 post-install:
