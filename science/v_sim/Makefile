@@ -3,9 +3,9 @@
 
 PORTNAME=	v_sim
 PORTVERSION=	3.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
+MASTER_SITES=	http://inac.cea.fr/L_Sim/V_Sim/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Visualization of atomic structures
@@ -15,7 +15,12 @@ LICENSE_NAME=	CeCILL
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
+		libfreetype.so:print/freetype2	\
+		libftgl.so:graphics/ftgl
+
 USES=		fortran gmake libtool pkgconfig tar:bzip2
+USE_XORG=	x11
 USE_GNOME=	gtk20 intltool cairo
 USE_GL=		yes
 GNU_CONFIGURE=	yes

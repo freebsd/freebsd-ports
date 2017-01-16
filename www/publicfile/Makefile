@@ -35,23 +35,23 @@ BROKEN=	redirect slash and auth patches are currently in conflict
 
 .if ${PORT_OPTIONS:MREDIRECT_SLASH}
 pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/redirect-slash-patch
+	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${PATCHDIR}/redirect-slash-patch
 .endif
 
 .if ${PORT_OPTIONS:MENV_FILETYPES}
 pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/publicfile-0.52-filetype-diff
+	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${PATCHDIR}/publicfile-0.52-filetype-diff
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
 pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/publicfile.sslserver
+	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${PATCHDIR}/publicfile.sslserver
 RUN_DEPENDS+=	sslserver:sysutils/ucspi-ssl
 .endif
 
 .if ${PORT_OPTIONS:MBASICAUTH}
 pre-configure::
-	@${PATCH} ${PATCH_ARGS} -p1 < \
+	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < \
 		${PATCHDIR}/publicfile-0.52_basicauth.patch
 PATCH_DEPENDS+=	${NONEXISTENT}:databases/cdb:extract
 PLIST_SUB+=	BASICAUTH=""
@@ -61,7 +61,7 @@ PLIST_SUB+=	BASICAUTH="@comment "
 
 .if ${PORT_OPTIONS:MCOMMONLOG}
 pre-configure::
-	@${PATCH} ${PATCH_ARGS} -p1 < \
+	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < \
 		${PATCHDIR}/publicfile-0.52-commonlog-2.patch
 .endif
 

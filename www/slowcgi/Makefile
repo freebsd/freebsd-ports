@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slowcgi
-PORTVERSION=	5.8.20160114
+PORTVERSION=	6.0.20161031
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net

@@ -1,5 +1,6 @@
 bin/perlinfo
 %%PERL5_MAN3%%/HTML::Perlinfo.3.gz
+%%PERL5_MAN3%%/HTML::Perlinfo::Base.3.gz
 %%PERL5_MAN3%%/HTML::Perlinfo::HTML.3.gz
 %%PERL5_MAN3%%/HTML::Perlinfo::Loaded.3.gz
 %%PERL5_MAN3%%/HTML::Perlinfo::Modules.3.gz

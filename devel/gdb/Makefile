@@ -86,7 +86,7 @@ post-patch:
 
 post-patch-KGDB-on:
 	@${CP} -r ${FILESDIR}/kgdb/*.[ch] ${WRKSRC}/gdb/
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-kgdb
+	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-kgdb
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \

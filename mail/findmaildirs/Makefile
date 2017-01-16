@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	findmaildirs
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	mail
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -21,7 +21,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
