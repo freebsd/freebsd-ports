@@ -4,12 +4,9 @@ r226103 | des | 2011-10-07 08:10:16 -0500 (Fri, 07 Oct 2011) | 5 lines
 Add a -x option that causes ssh-agent(1) to exit when all clients have
 disconnected.
 
-Add a -P option to specify PKCS11_WHITELIST
-
-
---- ssh-agent.1.orig	2016-07-27 17:54:27.000000000 -0500
-+++ ssh-agent.1	2017-01-11 19:05:12.513900000 -0600
-@@ -43,10 +43,11 @@
+--- ssh-agent.1.orig	2015-05-29 03:27:21.000000000 -0500
++++ ssh-agent.1	2015-06-02 09:45:37.025390000 -0500
+@@ -43,7 +43,7 @@
  .Sh SYNOPSIS
  .Nm ssh-agent
  .Op Fl c | s
@@ -18,30 +15,7 @@ Add a -P option to specify PKCS11_WHITELIST
  .Op Fl a Ar bind_address
  .Op Fl E Ar fingerprint_hash
  .Op Fl t Ar life
-+.Op Fl P Ar pkcs11_whitelist
- .Op Ar command Op Ar arg ...
- .Nm ssh-agent
- .Op Fl c | s
-@@ -121,6 +122,18 @@
- Kill the current agent (given by the
- .Ev SSH_AGENT_PID
- environment variable).
-+.It Fl P
-+Specify a pattern-list of acceptable paths for PKCS#11 shared libraries
-+that may be added using the
-+.Fl s
-+option to
-+.Xr ssh-add 1 .
-+The default is to allow loading PKCS#11 libraries from
-+.Dq /usr/lib/*,/usr/local/lib/* .
-+PKCS#11 libraries that do not match the whitelist will be refused.
-+See PATTERNS in
-+.Xr ssh_config 5
-+for a description of pattern-list syntax.
- .It Fl s
- Generate Bourne shell commands on
- .Dv stdout .
-@@ -135,6 +148,8 @@
+@@ -128,6 +128,8 @@
  .Xr ssh-add 1
  overrides this value.
  Without this option the default maximum lifetime is forever.
@@ -49,4 +23,4 @@ Add a -P option to specify PKCS11_WHITELIST
 +Exit after the last client has disconnected.
  .El
  .Pp
- If a command line is given, this is executed as a subprocess of the agent.
+ If a commandline is given, this is executed as a subprocess of the agent.

@@ -1,0 +1,39 @@
+--- session.c.orig	2017-01-12 11:58:30.754769000 -0800
++++ session.c	2017-01-12 11:58:35.360654000 -0800
+@@ -1252,36 +1252,6 @@ do_setup_env(Session *s, const char *she
+ 	if (getenv("TZ"))
+ 		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
+ 
+-#ifdef __ANDROID__
+-{
+-#define COPY_ANDROID_ENV(name)	{			\
+-	char *s = getenv(name);				\
+-	if (s)	child_set_env(&env, &envsize, name, s); }
+-
+-	/* from /init.rc */
+-	COPY_ANDROID_ENV("ANDROID_BOOTLOGO");
+-	COPY_ANDROID_ENV("ANDROID_ROOT");
+-	COPY_ANDROID_ENV("ANDROID_ASSETS");
+-	COPY_ANDROID_ENV("ANDROID_DATA");
+-	COPY_ANDROID_ENV("ASEC_MOUNTPOINT");
+-	COPY_ANDROID_ENV("LOOP_MOUNTPOINT");
+-	COPY_ANDROID_ENV("BOOTCLASSPATH");
+-
+-	/* FIXME: keep android property workspace open
+-	 * (see openbsd-compat/bsd-closefrom.c)
+-	 */
+-	COPY_ANDROID_ENV("ANDROID_PROPERTY_WORKSPACE");
+-
+-	COPY_ANDROID_ENV("EXTERNAL_STORAGE");		/* ??? */
+-	COPY_ANDROID_ENV("SECONDARY_STORAGE");		/* ??? */
+-	COPY_ANDROID_ENV("SD_EXT_DIRECTORY");		/* ??? */
+-
+-	/* may contain path to custom libraries */
+-	COPY_ANDROID_ENV("LD_LIBRARY_PATH");
+-#undef COPY_ANDROID_ENV
+-}
+-#endif
+-
+ 	/* Set custom environment options from RSA authentication. */
+ 	while (custom_environment) {
+ 		struct envstring *ce = custom_environment;

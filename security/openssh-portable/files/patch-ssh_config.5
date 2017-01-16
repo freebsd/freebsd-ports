@@ -6,12 +6,21 @@ rev 1.2 of readconf.c.
 
 --- ssh_config.5.orig	2010-08-04 21:03:13.000000000 -0600
 +++ ssh_config.5	2010-09-14 16:14:13.000000000 -0600
-@@ -164,7 +164,7 @@
- .Dq no ,
+@@ -377,8 +377,7 @@ or
+ .Cm no .
+ .It Cm CheckHostIP
+ If set to
+-.Cm yes
+-(the default),
++.Cm yes ,
+ .Xr ssh 1
+ will additionally check the host IP address in the
+ .Pa known_hosts
+@@ -390,6 +389,7 @@ in the process, regardless of the settin
+ .Cm StrictHostKeyChecking .
+ If the option is set to
+ .Cm no ,
++(the default),
  the check will not be executed.
- The default is
--.Dq yes .
-+.Dq no .
  .It Cm Cipher
  Specifies the cipher to use for encrypting the session
- in protocol version 1.

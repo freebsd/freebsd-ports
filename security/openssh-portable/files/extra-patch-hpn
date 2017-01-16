@@ -695,7 +695,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  #define	atime	tv[0]
 --- work/openssh/servconf.c.orig	2015-05-29 03:27:21.000000000 -0500
 +++ work/openssh/servconf.c	2015-06-02 09:56:36.041601000 -0500
-@@ -163,6 +163,14 @@ initialize_server_options(ServerOptions 
+@@ -159,6 +159,14 @@ initialize_server_options(ServerOptions 
  	options->authorized_principals_file = NULL;
  	options->authorized_principals_command = NULL;
  	options->authorized_principals_command_user = NULL;
@@ -710,7 +710,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	options->ip_qos_interactive = -1;
  	options->ip_qos_bulk = -1;
  	options->version_addendum = NULL;
-@@ -329,6 +337,57 @@ fill_default_server_options(ServerOption
+@@ -319,6 +327,57 @@ fill_default_server_options(ServerOption
  	}
  	if (options->permit_tun == -1)
  		options->permit_tun = SSH_TUNMODE_NO;
@@ -768,7 +768,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	if (options->ip_qos_interactive == -1)
  		options->ip_qos_interactive = IPTOS_LOWDELAY;
  	if (options->ip_qos_bulk == -1)
-@@ -406,6 +465,12 @@ typedef enum {
+@@ -412,6 +471,12 @@ typedef enum {
  	sUsePrivilegeSeparation, sAllowAgentForwarding,
  	sHostCertificate,
  	sRevokedKeys, sTrustedUserCAKeys, sAuthorizedPrincipalsFile,
@@ -781,7 +781,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	sAuthorizedPrincipalsCommand, sAuthorizedPrincipalsCommandUser,
  	sKexAlgorithms, sIPQoS, sVersionAddendum,
  	sAuthorizedKeysCommand, sAuthorizedKeysCommandUser,
-@@ -537,6 +602,14 @@ static struct {
+@@ -548,6 +613,14 @@ static struct {
  	{ "revokedkeys", sRevokedKeys, SSHCFG_ALL },
  	{ "trustedusercakeys", sTrustedUserCAKeys, SSHCFG_ALL },
  	{ "authorizedprincipalsfile", sAuthorizedPrincipalsFile, SSHCFG_ALL },
@@ -796,7 +796,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	{ "kexalgorithms", sKexAlgorithms, SSHCFG_GLOBAL },
  	{ "ipqos", sIPQoS, SSHCFG_ALL },
  	{ "authorizedkeyscommand", sAuthorizedKeysCommand, SSHCFG_ALL },
-@@ -1156,6 +1229,25 @@ process_server_config_line(ServerOptions
+@@ -1153,6 +1226,25 @@ process_server_config_line(ServerOptions
  		intptr = &options->ignore_user_known_hosts;
  		goto parse_flag;
  
@@ -819,8 +819,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +		goto parse_int;
 +#endif
 +
- 	case sRhostsRSAAuthentication:
- 		intptr = &options->rhosts_rsa_authentication;
+ 	case sHostbasedAuthentication:
+ 		intptr = &options->hostbased_authentication;
  		goto parse_flag;
 --- work.clean/openssh-6.8p1/servconf.h	2015-03-17 00:49:20.000000000 -0500
 +++ work/openssh-6.8p1/servconf.h	2015-04-03 13:48:37.316827000 -0500
@@ -842,7 +842,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	int	num_permitted_opens;
 --- work.clean/openssh-6.8p1/serverloop.c	2015-03-17 00:49:20.000000000 -0500
 +++ work/openssh-6.8p1/serverloop.c	2015-04-03 17:14:15.182548000 -0500
-@@ -1051,6 +1051,12 @@
+@@ -526,6 +526,12 @@ server_request_tun(void)
  	sock = tun_open(tun, mode);
  	if (sock < 0)
  		goto done;
@@ -855,7 +855,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	c = channel_new("tun", SSH_CHANNEL_OPEN, sock, sock, -1,
  	    CHAN_TCP_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT, 0, "tun", 1);
  	c->datagram = 1;
-@@ -1088,6 +1094,10 @@
+@@ -563,6 +569,10 @@ server_request_session(void)
  	c = channel_new("session", SSH_CHANNEL_LARVAL,
  	    -1, -1, -1, /*window size*/0, CHAN_SES_PACKET_DEFAULT,
  	    0, "server-session", 1);
@@ -1101,7 +1101,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	    strlen(client_version_string)) != strlen(client_version_string))
 --- work.clean/openssh-7.2p1/sshconnect2.c.orig	2016-02-25 19:40:04.000000000 -0800
 +++ work.clean/openssh-7.2p1/sshconnect2.c	2016-02-29 08:06:31.134954000 -0800
-@@ -80,6 +80,14 @@
+@@ -81,6 +81,14 @@
  extern char *client_version_string;
  extern char *server_version_string;
  extern Options options;
@@ -1116,7 +1116,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  /*
   * SSH2 key exchange
-@@ -153,14 +161,17 @@ order_hostkeyalgs(char *host, struct soc
+@@ -154,14 +162,17 @@ order_hostkeyalgs(char *host, struct soc
  	return ret;
  }
  
@@ -1145,10 +1145,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  }
  
  /*
-@@ -404,6 +418,29 @@ ssh_userauth2(const char *local_user, co
- 	pubkey_cleanup(&authctxt);
- 	ssh_dispatch_range(ssh, SSH2_MSG_USERAUTH_MIN, SSH2_MSG_USERAUTH_MAX, NULL);
+@@ -407,6 +421,29 @@ ssh_userauth2(const char *local_user, co
  
+ 	if (!authctxt.success)
+ 		fatal("Authentication failed.");
 +#ifdef NONE_CIPHER_ENABLED
 +	/*
 +	 * if the user wants to use the none cipher do it
@@ -1177,13 +1177,13 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
 --- work.clean/openssh-7.1p1/sshd.c.orig	2015-08-20 21:49:03.000000000 -0700
 +++ work.clean/openssh-7.1p1/sshd.c	2015-11-11 12:45:48.202186000 -0800
-@@ -431,8 +431,13 @@ sshd_exchange_identification(int sock_in
- 		minor = PROTOCOL_MINOR_1;
- 	}
+@@ -373,8 +373,13 @@ sshd_exchange_identification(struct ssh 
+ 	char buf[256];			/* Must not be larger than remote_version. */
+ 	char remote_version[256];	/* Must be at least as big as buf. */
  
 -	xasprintf(&server_version_string, "SSH-%d.%d-%.100s%s%s%s",
 +	xasprintf(&server_version_string, "SSH-%d.%d-%.100s%s%s%s%s",
- 	    major, minor, SSH_VERSION,
+ 	    PROTOCOL_MAJOR_2, PROTOCOL_MINOR_2, SSH_VERSION,
 +#ifdef HPN_ENABLED
 +	    options.hpn_disabled ? "" : SSH_HPN,
 +#else
@@ -1192,7 +1192,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	    *options.version_addendum == '\0' ? "" : " ",
  	    options.version_addendum, newline);
  
-@@ -1155,6 +1160,10 @@ server_listen(void)
+@@ -1027,6 +1032,10 @@ server_listen(void)
  	int ret, listen_sock, on = 1;
  	struct addrinfo *ai;
  	char ntop[NI_MAXHOST], strport[NI_MAXSERV];
@@ -1203,7 +1203,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  	for (ai = options.listen_addrs; ai; ai = ai->ai_next) {
  		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
-@@ -1195,6 +1204,13 @@ server_listen(void)
+@@ -1067,6 +1076,13 @@ server_listen(void)
  
  		debug("Bind to port %s on %s.", strport, ntop);
  
@@ -1217,7 +1217,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		/* Bind the socket to the desired port. */
  		if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) < 0) {
  			error("Bind to port %s on %s failed: %.200s.",
-@@ -1693,6 +1709,15 @@ main(int ac, char **av)
+@@ -1591,6 +1607,15 @@ main(int ac, char **av)
  	/* Fill in default values for those options not explicitly set. */
  	fill_default_server_options(&options);
  
@@ -1233,9 +1233,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/* challenge-response is implemented via keyboard interactive */
  	if (options.challenge_response_authentication)
  		options.kbd_interactive_authentication = 1;
-@@ -2123,6 +2148,11 @@ main(int ac, char **av)
- 		cleanup_exit(255);
+@@ -2085,6 +2110,11 @@ main(int ac, char **av)
  	}
+ #endif
  
 +#ifdef HPN_ENABLED
 +	/* set the HPN options for the child */
@@ -1243,9 +1243,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#endif
 +
  	/*
- 	 * We use get_canonical_hostname with usedns = 0 instead of
- 	 * get_remote_ipaddr here so IP options will be checked.
-@@ -2539,6 +2569,11 @@ do_ssh2_kex(void)
+ 	 * In privilege separation, we fork another child and prepare
+ 	 * file descriptor passing.
+@@ -2163,6 +2193,11 @@ do_ssh2_kex(void)
  	struct kex *kex;
  	int r;
  
@@ -1259,7 +1259,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	myproposal[PROPOSAL_ENC_ALGS_CTOS] = compat_cipher_proposal(
 --- work.clean/openssh-6.8p1/sshd_config	2015-04-01 22:07:18.248858000 -0500
 +++ work/openssh-6.8p1/sshd_config	2015-04-01 22:16:49.932279000 -0500
-@@ -127,6 +127,20 @@
+@@ -111,6 +111,20 @@ AuthorizedKeysFile	.ssh/authorized_keys
  # override default of no subsystems
  Subsystem	sftp	/usr/libexec/sftp-server
  

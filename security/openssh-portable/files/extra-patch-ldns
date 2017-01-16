@@ -35,17 +35,17 @@ be verified, OpenSSH will print a message and prompt the user as usual.
 +#   VerifyHostKeyDNS yes
  #   ProxyCommand ssh -q -W %h:%p gateway.example.com
  #   RekeyLimit 1G 1h
---- ssh_config.5.orig	2016-02-25 19:40:04.000000000 -0800
-+++ ssh_config.5	2016-02-29 07:57:41.763889000 -0800
-@@ -1715,7 +1715,10 @@
- or
- .Dq ask .
+--- ssh_config.5.orig	2016-12-18 20:59:41.000000000 -0800
++++ ssh_config.5	2017-01-11 11:24:25.573200000 -0800
+@@ -1635,7 +1635,10 @@ need to confirm new host keys according 
+ .Cm StrictHostKeyChecking
+ option.
  The default is
--.Dq no .
-+.Dq yes
+-.Cm no .
++.Cm yes
 +if compiled with LDNS and
-+.Dq no
++.Cm no
 +otherwise.
  .Pp
- See also VERIFYING HOST KEYS in
- .Xr ssh 1 .
+ See also
+ .Sx VERIFYING HOST KEYS
