@@ -2,6 +2,7 @@
 
 PORTNAME=	cego
 PORTVERSION=	2.32.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -13,15 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblfcbase.so:devel/lfcbase \
 		liblfcxml.so:devel/lfcxml
-RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo
+RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo \
+		bash:shells/bash
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
+TEST_TARGET=	check
 
 USE_LDCONFIG=	yes
 
-USES=		libtool ncurses readline shebangfix
-SHEBANG_FILES=	tools/cgbackup tools/cgrecover
+USES=		libtool localbase ncurses readline shebangfix
+SHEBANG_FILES=	tools/cgbackup tools/cgrecover tools/cgsimload
 
 USERS=		cego
 GROUPS=		cego
@@ -43,8 +45,5 @@ post-install:
 
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcego.so.2.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgwrap.so.2.0.0
-
-do-test:
-	cd ${WRKSRC} && ${MAKE} check
 
 .include <bsd.port.mk>
