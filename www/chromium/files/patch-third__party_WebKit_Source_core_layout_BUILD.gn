@@ -1,0 +1,11 @@
+--- third_party/WebKit/Source/core/layout/BUILD.gn.orig	2016-12-15 15:07:51.031899000 +0000
++++ third_party/WebKit/Source/core/layout/BUILD.gn	2016-12-15 15:08:04.975660000 +0000
+@@ -341,7 +341,7 @@
+     sources += [ "LayoutThemeFontProviderDefault.cpp" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     sources += [
+       "LayoutThemeLinux.cpp",
+       "LayoutThemeLinux.h",

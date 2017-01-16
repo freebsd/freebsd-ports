@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2016-10-06 04:02:08.000000000 +0300
-+++ build/config/compiler/BUILD.gn	2016-10-24 23:25:32.101459000 +0300
-@@ -141,7 +141,7 @@
+--- build/config/compiler/BUILD.gn.orig	2016-12-01 23:02:05 UTC
++++ build/config/compiler/BUILD.gn
+@@ -153,7 +153,7 @@ config("compiler") {
      configs += [ "//build/config/win:compiler" ]
    } else if (is_android) {
      configs += [ "//build/config/android:compiler" ]
@@ -9,7 +9,7 @@
      configs += [ "//build/config/linux:compiler" ]
    } else if (is_nacl) {
      configs += [ "//build/config/nacl:compiler" ]
-@@ -271,7 +271,7 @@
+@@ -280,7 +280,7 @@ config("compiler") {
  
    # Linux/Android common flags setup.
    # ---------------------------------
@@ -18,7 +18,7 @@
      cflags += [
        "-fPIC",
        "-pipe",  # Use pipes for communicating between sub-processes. Faster.
-@@ -376,14 +376,14 @@
+@@ -407,14 +407,14 @@ config("compiler") {
    # clang-cl (used if is_win) doesn't expose this flag.
    # Currently disabled for nacl since its toolchain lacks this flag (too old).
    # TODO(zforman): Once nacl's toolchain is updated, remove check.
@@ -35,16 +35,16 @@
      # gnu++11 instead of c++11 is needed because some code uses typeof() (a
      # GNU extension).
      # TODO(thakis): Eventually switch this to c++11 instead,
-@@ -441,7 +441,7 @@
-     ldflags += [ "-flto" ]
+@@ -464,7 +464,7 @@ config("compiler") {
+       ]
  
-     # Apply a lower LTO optimization level as the default is too slow.
--    if (is_linux) {
-+    if (is_linux || is_bsd) {
-       if (use_lld) {
-         ldflags += [ "-Wl,--lto-O1" ]
-       } else {
-@@ -460,7 +460,7 @@
+       # Apply a lower LTO optimization level as the default is too slow.
+-      if (is_linux) {
++      if (is_linux || is_bsd) {
+         if (use_lld) {
+           ldflags += [ "-Wl,--lto-O1" ]
+         } else {
+@@ -484,7 +484,7 @@ config("compiler") {
      # targeting ARM, without this flag, LTO produces a .text section that is
      # larger than the maximum call displacement, preventing the linker from
      # relocating calls (http://llvm.org/PR22999).
@@ -52,8 +52,8 @@
 +    if (is_linux || is_bsd) {
        ldflags += [ "-Wl,-plugin-opt,-function-sections" ]
      }
- 
-@@ -738,7 +738,7 @@
+   }
+@@ -755,7 +755,7 @@ config("compiler_codegen") {
  #   configs -= [ "//build/config/compiler:clang_stackrealign" ]
  # See https://crbug.com/556393 for details of where it must be avoided.
  config("clang_stackrealign") {
@@ -62,7 +62,7 @@
      cflags = [
        # Align the stack on 16-byte boundaries, http://crbug.com/418554.
        "-mstack-alignment=16",
-@@ -773,7 +773,7 @@
+@@ -790,7 +790,7 @@ config("runtime_library") {
    # smaller.
    if (is_win) {
      configs += [ "//build/config/win:runtime_library" ]
@@ -71,7 +71,7 @@
      configs += [ "//build/config/linux:runtime_library" ]
    } else if (is_ios) {
      configs += [ "//build/config/ios:runtime_library" ]
-@@ -1032,7 +1032,7 @@
+@@ -1050,7 +1050,7 @@ config("default_warnings") {
          "-Wno-nonportable-include-path",
  
          # TODO(hans): https://crbug.com/637306
@@ -80,7 +80,7 @@
        ]
      }
    }
-@@ -1064,7 +1064,7 @@
+@@ -1082,7 +1082,7 @@ config("chromium_code") {
      ]
  
      if (!is_debug && !using_sanitizer &&
@@ -89,7 +89,7 @@
        # _FORTIFY_SOURCE isn't really supported by Clang now, see
        # http://llvm.org/bugs/show_bug.cgi?id=16821.
        # It seems to work fine with Ubuntu 12 headers though, so use it in
-@@ -1124,7 +1124,7 @@
+@@ -1140,7 +1140,7 @@ config("no_chromium_code") {
      ]
    }
  

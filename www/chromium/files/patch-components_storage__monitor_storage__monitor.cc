@@ -1,4 +1,4 @@
---- components/storage_monitor/storage_monitor.cc.orig	2016-05-11 19:02:19 UTC
+--- components/storage_monitor/storage_monitor.cc.orig	2016-12-01 23:02:12 UTC
 +++ components/storage_monitor/storage_monitor.cc
 @@ -85,6 +85,7 @@ std::vector<StorageInfo> StorageMonitor:
  
