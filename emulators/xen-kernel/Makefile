@@ -40,14 +40,14 @@ PLIST_FILES=	/boot/xen \
 EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patch:-p1 \
 		${FILESDIR}/0002-xen-rework-paging_log_dirty_op-to-work-with-hvm-gues.patch:-p1 \
 		${FILESDIR}/kconf_arch.patch:-p1 \
-		${FILESDIR}/xsa191.patch \
-		${FILESDIR}/xsa192.patch \
-		${FILESDIR}/xsa193-4.7.patch \
-		${FILESDIR}/xsa194.patch \
-		${FILESDIR}/xsa195.patch \
-		${FILESDIR}/xsa200-4.7.patch \
-		${FILESDIR}/xsa204-4.7.patch \
-		${FILESDIR}/xsa202.patch
+		${FILESDIR}/xsa191.patch:-p1 \
+		${FILESDIR}/xsa192.patch:-p1 \
+		${FILESDIR}/xsa193-4.7.patch:-p1 \
+		${FILESDIR}/xsa194.patch:-p1 \
+		${FILESDIR}/xsa195.patch:-p1 \
+		${FILESDIR}/xsa200-4.7.patch:-p1 \
+		${FILESDIR}/xsa204-4.7.patch:-p1 \
+		${FILESDIR}/xsa202.patch:-p1
 
 .include <bsd.port.options.mk>
 

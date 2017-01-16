@@ -45,9 +45,9 @@ QEMU_ARGS=	--disable-gtk \
 
 EXTRA_PATCHES=	${FILESDIR}/var_paths.patch:-p1 \
 		${FILESDIR}/xsa198.patch:-p1 \
-		${FILESDIR}/0001-libxl-fix-creation-of-pkgconf-install-dir.patch \
-		${FILESDIR}/0001-tools-configure-fix-pkg-config-install-path-for-Free.patch \
-		${FILESDIR}/0001-libs-xenstore-set-correct-FreeBSD-device.patch
+		${FILESDIR}/0001-libxl-fix-creation-of-pkgconf-install-dir.patch:-p1 \
+		${FILESDIR}/0001-tools-configure-fix-pkg-config-install-path-for-Free.patch:-p1 \
+		${FILESDIR}/0001-libs-xenstore-set-correct-FreeBSD-device.patch:-p1
 
 CONFIGURE_ARGS+=	--with-extra-qemuu-configure-args="${QEMU_ARGS}" \
 			--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin
