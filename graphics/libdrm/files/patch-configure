@@ -1,0 +1,182 @@
+--- configure.orig	2017-01-15 13:16:10 UTC
++++ configure
+@@ -646,6 +646,10 @@ HAVE_MANPAGES_STYLESHEET_TRUE
+ MANPAGES_STYLESHEET
+ BUILD_MANPAGES_FALSE
+ BUILD_MANPAGES_TRUE
++HAVE_LIBDEVQ_FALSE
++HAVE_LIBDEVQ_TRUE
++LIBDEVQ_LIBS
++LIBDEVQ_CFLAGS
+ HAVE_LIBUDEV_FALSE
+ HAVE_LIBUDEV_TRUE
+ LIBUDEV_LIBS
+@@ -842,6 +846,7 @@ with_gnu_ld
+ with_sysroot
+ enable_libtool_lock
+ enable_udev
++enable_devq
+ enable_libkms
+ enable_intel
+ enable_radeon
+@@ -885,6 +890,8 @@ CAIRO_CFLAGS
+ CAIRO_LIBS
+ LIBUDEV_CFLAGS
+ LIBUDEV_LIBS
++LIBDEVQ_CFLAGS
++LIBDEVQ_LIBS
+ VALGRIND_CFLAGS
+ VALGRIND_LIBS'
+ 
+@@ -1519,6 +1526,8 @@ Optional Features:
+   --disable-libtool-lock  avoid locking (might break parallel builds)
+   --enable-udev           Enable support for using udev instead of mknod
+                           (default: disabled)
++  --enable-devq           Enable support for using devq for device detection
++                          (default: disabled)
+   --disable-libkms        Disable KMS mm abstraction library (default: auto,
+                           enabled on supported platforms)
+   --disable-intel         Enable support for intel's KMS API (default: auto,
+@@ -1602,6 +1611,10 @@ Some influential environment variables:
+               C compiler flags for LIBUDEV, overriding pkg-config
+   LIBUDEV_LIBS
+               linker flags for LIBUDEV, overriding pkg-config
++  LIBDEVQ_CFLAGS
++              C compiler flags for LIBDEVQ, overriding pkg-config
++  LIBDEVQ_LIBS
++              linker flags for LIBDEVQ, overriding pkg-config
+   VALGRIND_CFLAGS
+               C compiler flags for VALGRIND, overriding pkg-config
+   VALGRIND_LIBS
+@@ -13440,6 +13453,14 @@ else
+ fi
+ 
+ 
++# Check whether --enable-devq was given.
++if test "${enable_devq+set}" = set; then :
++  enableval=$enable_devq; DEVQ=$enableval
++else
++  DEVQ=no
++fi
++
++
+ # Check whether --enable-libkms was given.
+ if test "${enable_libkms+set}" = set; then :
+   enableval=$enable_libkms; LIBKMS=$enableval
+@@ -13976,6 +13997,12 @@ $as_echo "#define UDEV 1" >>confdefs.h
+ 
+ fi
+ 
++if test "x$DEVQ" = xyes; then
++
++$as_echo "#define DEVQ 1" >>confdefs.h
++
++fi
++
+ 
+ if test "x$LIBKMS" = xauto ; then
+ 	case $host_os in
+@@ -14520,6 +14547,92 @@ else
+ fi
+ 
+ 
++# For FreeBSD support
++
++pkg_failed=no
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for LIBDEVQ" >&5
++$as_echo_n "checking for LIBDEVQ... " >&6; }
++
++if test -n "$LIBDEVQ_CFLAGS"; then
++    pkg_cv_LIBDEVQ_CFLAGS="$LIBDEVQ_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libdevq-1.0 >= 0.0.4\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libdevq-1.0 >= 0.0.4") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_LIBDEVQ_CFLAGS=`$PKG_CONFIG --cflags "libdevq-1.0 >= 0.0.4" 2>/dev/null`
++		      test "x$?" != "x0" && pkg_failed=yes
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$LIBDEVQ_LIBS"; then
++    pkg_cv_LIBDEVQ_LIBS="$LIBDEVQ_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libdevq-1.0 >= 0.0.4\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libdevq-1.0 >= 0.0.4") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_LIBDEVQ_LIBS=`$PKG_CONFIG --libs "libdevq-1.0 >= 0.0.4" 2>/dev/null`
++		      test "x$?" != "x0" && pkg_failed=yes
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        LIBDEVQ_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libdevq-1.0 >= 0.0.4" 2>&1`
++        else
++	        LIBDEVQ_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libdevq-1.0 >= 0.0.4" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$LIBDEVQ_PKG_ERRORS" >&5
++
++	HAVE_LIBDEVQ=no
++elif test $pkg_failed = untried; then
++     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++	HAVE_LIBDEVQ=no
++else
++	LIBDEVQ_CFLAGS=$pkg_cv_LIBDEVQ_CFLAGS
++	LIBDEVQ_LIBS=$pkg_cv_LIBDEVQ_LIBS
++        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++	HAVE_LIBDEVQ=yes
++fi
++if test "x$HAVE_LIBDEVQ" = xyes; then
++
++$as_echo "#define HAVE_LIBDEVQ 1" >>confdefs.h
++
++fi
++ if test "x$HAVE_LIBDEVQ" = xyes; then
++  HAVE_LIBDEVQ_TRUE=
++  HAVE_LIBDEVQ_FALSE='#'
++else
++  HAVE_LIBDEVQ_TRUE='#'
++  HAVE_LIBDEVQ_FALSE=
++fi
++
++
+ # xsltproc for docbook manpages
+ # Check whether --enable-manpages was given.
+ if test "${enable_manpages+set}" = set; then :
+@@ -14930,6 +15043,10 @@ if test -z "${HAVE_LIBUDEV_TRUE}" && tes
+   as_fn_error $? "conditional \"HAVE_LIBUDEV\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+ fi
++if test -z "${HAVE_LIBDEVQ_TRUE}" && test -z "${HAVE_LIBDEVQ_FALSE}"; then
++  as_fn_error $? "conditional \"HAVE_LIBDEVQ\" was never defined.
++Usually this means the macro was only invoked conditionally." "$LINENO" 5
++fi
+ if test -z "${BUILD_MANPAGES_TRUE}" && test -z "${BUILD_MANPAGES_FALSE}"; then
+   as_fn_error $? "conditional \"BUILD_MANPAGES\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
