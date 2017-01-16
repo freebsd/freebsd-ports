@@ -30,7 +30,7 @@ MAKEFILE=	Makefile.fc9
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == "FreeBSD" && (${OSVERSION} >= 1200017 || ${OSVERSION} >= 1100508)
+.if ${OPSYS} == "FreeBSD" && ((${OSVERSION} >= 1100508 && ${OSVERSION} < 1200000) || ${OSVERSION} >= 1200017)
 BROKEN=		Fails to compile with libc++ 3.9.0 and later
 .endif
 
