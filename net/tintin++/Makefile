@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tintin++
-PORTVERSION=	2.01.1
-PORTREVISION=	1
+PORTVERSION=	2.01.2
 CATEGORIES+=	net games
 MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION}/
 DISTNAME=	tintin-${PORTVERSION}
@@ -22,7 +21,9 @@ BIG5_DESC=	Big5 support
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
 		--libdir=${LOCALBASE}/lib \
 		--prefix=${PREFIX}
-CONFIGURE_ENV=	ac_cv_file__dev_ptmx=no
+CONFIGURE_ENV=	ac_cv_file__dev_ptmx=no \
+		ac_cv_header_gnutls_gnutls_h=no \
+		ac_cv_lib_gnutls_gnutls_init=no
 GNU_CONFIGURE=	yes
 USES=		gmake localbase
 WRKSRC=		${WRKDIR}/tt/src
