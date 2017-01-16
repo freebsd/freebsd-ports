@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170115:
+  AFFECTS: users of net-mgmt/librenms
+  AUTHOR: dvl@FreeBSD.org
+
+  The following is recommended for /var/db/mysql/my.cnf
+
+  [mysqld]
+  innodb_file_per_table=1
+  sql-mode=""
+
 20170109:
   AFFECTS: users of lang/ruby22
   AUTHOR: swills@FreeBSD.org
