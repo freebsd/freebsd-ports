@@ -3,7 +3,7 @@
 
 PORTNAME=	pipelight
 PORTVERSION=	0.2.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	https://bitbucket.org/mmueller2012/pipelight/get/ \
 		http://repos.fds-team.de/pluginloader/v${DISTVERSION}/:plg
@@ -29,20 +29,17 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/bin/gpg2:security/gnupg
 
 WRKSRC=		${WRKDIR}/mmueller2012-pipelight-792e7a4885a6
-USE_GCC=	yes
-USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		compiler:c++11-lib gmake localbase:ldflags shebangfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--verbose --wine-path=${LOCALBASE}/bin/wine --win32-prebuilt \
+CONFIGURE_ARGS=	--verbose --wine-path=${LOCALBASE}/bin/wine --win32-prebuilt \
 		--win64-prebuilt --moz-plugin-path=${LOCALBASE}/lib/browser_plugins \
 		--cxx=${CXX} --bash-interp=${LOCALBASE}/bin/bash \
 		--gpg-exec=${LOCALBASE}/bin/gpg2
-USE_XORG=	x11
-USES=		compiler:gcc-c++11-lib gmake shebangfix
-MAKE_JOBS_UNSAFE=yes
 SHEBANG_FILES=	configure \
 		share/install-dependency
+USE_XORG=	x11
+MAKE_JOBS_UNSAFE=yes
+USE_LDCONFIG=	yes
 
 SUB_FILES=	pipelight-mkufs
 
@@ -57,16 +54,14 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/wine:emulators/i386-wine-staging
 .endif
 
 pre-configure:
-	${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz \
+	@${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz \
 		${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz
-	${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz.sig \
+	@${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz.sig \
 		${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz.sig
-	${MKDIR} ${WRKDIR}/.gnupg
+	@${MKDIR} ${WRKDIR}/.gnupg
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pipelight-mkufs ${STAGEDIR}${PREFIX}/bin/
-
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pipelight/libpipelight.so
-
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pipelight/libpipelight.so
 
 .include <bsd.port.post.mk>
