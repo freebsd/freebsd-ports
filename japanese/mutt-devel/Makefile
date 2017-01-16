@@ -82,6 +82,8 @@ CYRUS_SASL2_DESC=	SASL2 authentication
 IMAP_HEADER_CACHE_DESC=	imap header cache
 MAILDIR_HEADER_CACHE_DESC=	maildir header cache
 
+DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-nodoc-contrib
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -128,9 +130,6 @@ post-patch:
 .if defined(CONFIGURE_SED)
 	@${REINPLACE_CMD} -E ${CONFIGURE_SED} \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.ac
-.endif
-.if ! ${PORT_OPTIONS:MDOCS}
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
 
 post-configure:

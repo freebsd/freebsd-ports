@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20160116:
+AUTHOR: mat@FreeBSD.org
+
+  During extraction of the do-patch target into a separate script, the "-d
+  PATCH_WRKSRC" had to be removed from the PATCH_ARGS and PATCH_DIST_ARGS
+  variables.  If using these variables directly, you will need to adapt the
+  Makefile. For example:
+
+    ${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch
+
+    needs to be changed to:
+
+    ${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extra-patch
+
 20161218:
 AUTHOR: tcberner@FreeBSD.org
 

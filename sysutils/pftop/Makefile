@@ -39,7 +39,7 @@ post-patch:
 .if ${OSVERSION} >= 1100000
 	@${ECHO_MSG} "===> Applying FairQ/Codel patches to ${PORTNAME}."
 	@${CAT} ${FILESDIR}/extra-patch-fairq_codel.diff | \
-		${PATCH} ${PATCH_ARGS}
+		${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS}
 .endif
 	@${REINPLACE_CMD} -e 's|<sys/queue.h>|"${FILESDIR}/queue.h"|g' \
 	    ${WRKSRC}/engine.c
