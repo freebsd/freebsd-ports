@@ -113,8 +113,7 @@ CONFIGURE_ARGS+=	--with-passfile=.alpine.pwd
 
 .if ${PORT_OPTIONS:MMAILDIR}
 PATCH_SITES=		http://patches.freeiz.com/alpine/patches/alpine-${PORTVERSION}/
-PATCHFILES+=		maildir.patch.gz
-PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
+PATCHFILES+=		maildir.patch.gz:-p1
 .endif
 
 .if ${PORT_OPTIONS:MCONS25}
