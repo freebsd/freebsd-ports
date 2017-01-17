@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	APCu
-PORTVERSION=	5.1.7
+PORTVERSION=	5.1.8
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	php70-
