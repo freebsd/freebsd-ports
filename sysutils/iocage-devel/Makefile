@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Full featured, no dependency Jail container manager - devel build
 
+DEPRECATED=	Outdated version. Please use sysutils/py-iocage instead
+EXPIRATION_DATE=	2017-04-01
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
