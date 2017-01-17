@@ -5,4 +5,3 @@ man/man5/chrony.conf.5.gz
 man/man8/chronyd.8.gz
 sbin/chronyd
 @dir /var/db/chrony
-@dir /var/db
