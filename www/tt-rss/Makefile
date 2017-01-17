@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	29.12.2016.04.37
+PORTVERSION=	2017.01.16
 CATEGORIES=	www
 MASTER_SITES=	https://tt-rss.org/gitlab/fox/tt-rss/repository/archive${EXTRACT_SUFX}?ref=${GL_TAGNAME}&num;/
 
@@ -11,7 +11,7 @@ COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 
 LICENSE=	GPLv2
 
-GL_TAGNAME=	 832aa249
+GL_TAGNAME=	db92edd1
 
 NO_BUILD=	yes
 NO_ARCH=	yes
