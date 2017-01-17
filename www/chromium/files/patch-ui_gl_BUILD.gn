@@ -1,15 +1,15 @@
---- ui/gl/BUILD.gn.orig	2016-08-03 22:02:41.000000000 +0300
-+++ ui/gl/BUILD.gn	2016-09-03 00:16:34.776838000 +0300
-@@ -5,7 +5,7 @@
- import("//build/config/ui.gni")
- import("//testing/test.gni")
+--- ui/gl/BUILD.gn.orig	2016-12-12 22:13:27 UTC
++++ ui/gl/BUILD.gn
+@@ -13,7 +13,7 @@ declare_args() {
+   enable_swiftshader = is_chrome_branded && is_win
+ }
  
 -use_egl = is_win || is_android || is_linux
 +use_egl = is_win || is_android || is_linux || is_bsd
- use_glx = use_x11
+ use_glx = use_x11 || ozone_platform_x11
  
  if (is_android) {
-@@ -163,7 +163,7 @@
+@@ -170,7 +170,7 @@ component("gl") {
        "gl_surface_egl.h",
      ]
    }

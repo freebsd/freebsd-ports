@@ -1,0 +1,18 @@
+--- services/ui/BUILD.gn.orig	2016-12-09 05:04:22.000000000 +0000
++++ services/ui/BUILD.gn	2016-12-19 19:02:41.332230000 +0000
+@@ -13,7 +13,6 @@
+   testonly = true
+   deps = [
+     ":ui",
+-    "//services/ui/ime/test_ime_driver",
+     "//services/ui/test_wm",
+   ]
+ }
+@@ -38,7 +37,6 @@
+ 
+   data_deps = [
+     ":manifest",
+-    "//services/ui/ime/test_ime_driver",
+   ]
+ 
+   resources = [

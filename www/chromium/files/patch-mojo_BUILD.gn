@@ -1,11 +1,11 @@
---- mojo/BUILD.gn.orig	2016-10-06 04:02:21.000000000 +0300
-+++ mojo/BUILD.gn	2016-10-13 07:50:28.562419000 +0300
-@@ -12,7 +12,7 @@
+--- mojo/BUILD.gn.orig	2016-12-12 22:10:20 UTC
++++ mojo/BUILD.gn
+@@ -12,7 +12,7 @@ group("mojo") {
      "//mojo/common",
    ]
  
 -  if (!(is_linux && current_cpu == "x86")) {
 +  if (!((is_linux || is_bsd) && current_cpu == "x86")) {
-     # TODO(GYP): Figure out if this needs to be supported. Right now
-     # it won't work on x86 official builds because it needs stuff in the
-     # sysroot that doesn't exist.
+     deps += [ "//mojo/public" ]
+   }
+ 

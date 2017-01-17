@@ -1,6 +1,6 @@
---- ui/views/BUILD.gn.orig	2016-08-03 22:02:41.000000000 +0300
-+++ ui/views/BUILD.gn	2016-09-03 00:17:57.369360000 +0300
-@@ -60,7 +60,7 @@
+--- ui/views/BUILD.gn.orig	2016-12-12 22:16:29 UTC
++++ ui/views/BUILD.gn
+@@ -424,7 +424,7 @@ component("views") {
    if (use_x11 && !is_chromeos) {
      deps += [ "//ui/display/util" ]
    }
@@ -9,12 +9,12 @@
      sources -= [ "window/window_button_order_provider.cc" ]
      deps += [ "//ui/shell_dialogs" ]
    } else {
-@@ -128,7 +128,7 @@
-       } else if (use_ozone) {
-         sources += gypi_values.views_desktop_aura_ozone_sources
+@@ -614,7 +614,7 @@ component("views") {
+           "widget/desktop_aura/desktop_window_tree_host_ozone.cc",
+         ]
        }
 -      if (is_linux) {
 +      if (is_linux || is_bsd) {
-         sources += gypi_values.views_desktop_aura_linux_sources
-       }
-     }
+         sources += [
+           "style/platform_style_linux.cc",
+           "widget/desktop_aura/desktop_cursor_loader_updater_auralinux.cc",
