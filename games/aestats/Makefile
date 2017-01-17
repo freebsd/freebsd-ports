@@ -12,13 +12,13 @@ COMMENT=	Advanced HTML statistics generator for various games
 
 NO_CDROM=	Commercial use is prohibited
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		zip
 WRKSRC=		${WRKDIR}/${DISTNAME}/Linux-o
 LINUXBINDIR=	${WRKSRC}/../Linux-Bin
 MAKEFILE=	makefile
-MAKE_ARGS=	cc=${CC}
+MAKE_ARGS=	cc="${CC} -m32"
 
 post-extract: .SILENT
 	${CP} ${FILESDIR}/fbsd_stub.c ${WRKSRC}
@@ -30,7 +30,7 @@ post-extract: .SILENT
 # us Linux .o files instead.  With some hacking, we can build native FreeBSD
 # executables from those .o files.
 pre-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -c fbsd_stub.c
+	cd ${WRKSRC} && ${CC} -m32 ${CFLAGS} -c fbsd_stub.c
 	${OBJCOPY} --redefine-sym stdout=__stdoutp ${WRKSRC}/aespages.o
 	${OBJCOPY} --redefine-sym stdout=__stdoutp ${WRKSRC}/paessubs.o
 
