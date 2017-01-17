@@ -2,30 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	driftnet
-PORTVERSION=	0.1.6
-PORTREVISION=	12
+PORTVERSION=	1.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.ex-parrot.com/~chris/driftnet/ \
-		http://www.vanheusden.com/mirrors/
+MASTER_SITES=	http://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
+		LOCAL/ehaupt
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to grab images out of (your) TCP connections
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgif.so:graphics/giflib
+LIB_DEPENDS=	libgif.so:graphics/giflib \
+		libpng16.so:graphics/png
 BUILD_DEPENDS=	makedepend:devel/makedepend
 
-USES=		gettext-runtime gmake jpeg
-USE_GNOME=	gtk12
+GNU_CONFIGURE=	yes
+USES=		compiler:gcc-c++11-lib gettext-runtime gmake jpeg localbase:ldflags pkgconfig
+USE_GNOME=	gtk20
 USE_XORG=	x11 xext xi
 
-ALL_TARGET=	default
 PLIST_FILES=	bin/driftnet man/man1/driftnet.1.gz
+PORTDOCS=	*
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/driftnet ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/driftnet.1 ${STAGEDIR}${MANPREFIX}/man/man1
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
