@@ -2,12 +2,12 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.19.15
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Remote-controllable music daemon
 
 LICENSE=	GPLv2
@@ -20,7 +20,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
 USE_RC_SUBR=	${PORTNAME}
-CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar
+CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar \
+		--disable-libwrap
 CFLAGS+=	-I${PREFIX}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/sidplay/builders
