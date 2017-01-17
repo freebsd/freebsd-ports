@@ -11,27 +11,3 @@
  all_platforms="${all_platforms} generic-gnu"
  
  # all_targets is a list of all targets that can be configured
-@@ -585,15 +589,14 @@ process_toolchain() {
-         check_add_cflags -Wimplicit-function-declaration
-         check_add_cflags -Wuninitialized
-         check_add_cflags -Wunused-variable
--        case ${CC} in
--          *clang*)
--              # libvpx and/or clang have issues with aliasing:
--              # https://code.google.com/p/webm/issues/detail?id=603
--              # work around them until they are fixed
--              check_add_cflags -fno-strict-aliasing
--          ;;
--          *) check_add_cflags -Wunused-but-set-variable ;;
--        esac
-+        if ${CC} -v 2>&1 | grep "clang version" >/dev/null; then
-+          # libvpx and/or clang have issues with aliasing:
-+          # https://code.google.com/p/webm/issues/detail?id=603
-+          # work around them until they are fixed
-+          check_add_cflags -fno-strict-aliasing
-+        else
-+          check_add_cflags -Wunused-but-set-variable
-+        fi
-         if enabled mips || [ -z "${INLINE}" ]; then
-           enabled extra_warnings || check_add_cflags -Wno-unused-function
-         else
