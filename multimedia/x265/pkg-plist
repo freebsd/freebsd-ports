@@ -3,5 +3,5 @@ include/x265.h
 include/x265_config.h
 lib/libx265.a
 lib/libx265.so
-lib/libx265.so.79
+lib/libx265.so.102
 libdata/pkgconfig/x265.pc
