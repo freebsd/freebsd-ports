@@ -52,10 +52,9 @@ INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="cups"
-.if ${OSVERSION} > 1000000
+# XXX: check for DragonFly
 PLIST_FILES+=	libexec/cups/backend/gutenprint52+usb \
 		share/cups/usb/net.sf.gimp-print.usb-quirks
-.endif
 LIB_DEPENDS+=	libcupsimage.so:print/cups
 RUN_DEPENDS+=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters
 CONFIGURE_ARGS+=	--with-cups=${PREFIX} \
