@@ -2,6 +2,7 @@
 
 PORTNAME=	rundeck
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://dl.bintray.com/rundeck/rundeck-maven/
 DISTNAME=	rundeck-launcher-${PORTVERSION}
@@ -15,10 +16,10 @@ LICENSE=	APACHE20
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
+NO_ARCH=	yes
 NO_BUILD=	yes
-PLIST_FILES=	rundeck/server/lib/.keep \
-		share/rundeck/rundeck-launcher.jar
 
+PLIST_SUB=	RUNDECK_USER=${RUNDECK_USER} RUNDECK_GROUP=${RUNDECK_GROUP}
 USE_RC_SUBR=	rundeck
 
 RUNDECK_HOME=	${PREFIX}/rundeck
@@ -38,8 +39,7 @@ SUB_LIST+=	RUNDECK_HOME=${RUNDECK_HOME} RUNDECK_USER=${RUNDECK_USER} \
 		RUNDECK_LOG_FILE=${RUNDECK_LOG_FILE}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${RUNDECK_HOME}/server/lib
-	${TOUCH} ${STAGEDIR}${RUNDECK_HOME}/server/lib/.keep
+	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${RUNDECK_HOME}/server/lib
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${STAGEDIR}${DATADIR}/rundeck-launcher${EXTRACT_SUFX}
 
