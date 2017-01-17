@@ -196,7 +196,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-10
 .endif
 
-.if ${OSVERSION} >= 1200017 || (${OSVERSION} >= 1100508 && ${OSVERSION} <= 1200000)
+.if ${OSVERSION} >= 1200017 || (${OSVERSION} >= 1100508 && ${OSVERSION} < 1200000)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++-new
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libc++-old
