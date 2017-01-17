@@ -11,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 
 USES=		gmake qmake tar:bzip2
-USE_QT4=	gui opengl svg xml moc_build
+USE_QT4=	corelib gui opengl svg xml moc_build
+USE_GL=		gl
 USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/share/doc/qwt6
 
@@ -24,12 +25,11 @@ PLIST_SUB=	INCLUDEDIR=include/qwt6 \
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	cd ${WRKSRC} && \
-	${REINPLACE_CMD} -e 's,qwtAddLibrary(qwt),qwtAddLibrary(qwt6),g' \
-		qwt.prf textengines/textengines.pri && \
-	${REINPLACE_CMD} -e '/INSTALLS.*doc/d' doc/doc.pro
+	@${REINPLACE_CMD} -e 's,qwtAddLibrary(qwt),qwtAddLibrary(qwt6),g' \
+		${WRKSRC}/qwt.prf ${WRKSRC}/textengines/textengines.pri
+	@${REINPLACE_CMD} -e '/INSTALLS.*doc/d' ${WRKSRC}/doc/doc.pro
 
 post-install-DOCS-on:
-	(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
