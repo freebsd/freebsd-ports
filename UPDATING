@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170117:
+  AFFECTS: users of EoL'ed FreeBSD versions (<10.3, 11 prior to 11.0)
+  AUTHOR: amdmi3@FreeBSD.org
+
+  The ports system will now refuse to build anything if it's run on
+  outdated system version. This protects users from unexpected build
+  failures after code to support EoL'ed systems is removed from the
+  tree. You may define ALLOW_UNSUPPORTED_SYSTEM to override this and
+  allow builds, but no support will be provided in case of failures.
+
 20170116:
   AFFECTS: users of java/wildfly10
   AUTHOR: olgeni@FreeBSD.org
