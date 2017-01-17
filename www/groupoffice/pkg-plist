@@ -2364,6 +2364,7 @@
 %%WWWDIR%%/modules/dav/DavModule.php
 %%WWWDIR%%/modules/dav/ObjectTree.php
 %%WWWDIR%%/modules/dav/auth/Backend.php
+%%WWWDIR%%/modules/dav/auth/BasicBackend.php
 %%WWWDIR%%/modules/dav/davacl/PrincipalBackend.php
 %%WWWDIR%%/modules/dav/files.php
 %%WWWDIR%%/modules/dav/fs/Directory.php
