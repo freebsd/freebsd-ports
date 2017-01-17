@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	50.1.0
+DISTVERSION=	51.0
 DISTVERSIONSUFFIX=.source
-PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -47,9 +46,8 @@ MOZ_OPTIONS=	--enable-application=browser \
 
 OPTIONS_DEFINE=		RUST
 OPTIONS_DEFAULT=	BUNDLED_CAIRO GTK3
-# XXX lang/rust currently builds only on these platforms
+# XXX lang/rust and devel/cargo currently build only on these platforms
 OPTIONS_DEFAULT_amd64=	RUST
-OPTIONS_DEFAULT_i386=	RUST
 
 OPTIONS_SINGLE+=	TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3

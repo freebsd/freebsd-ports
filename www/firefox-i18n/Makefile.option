@@ -9,7 +9,6 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_AS \
 		LANG_AST \
 		LANG_AZ \
-		LANG_BE \
 		LANG_BG \
 		LANG_BB \
 		LANG_BN \
