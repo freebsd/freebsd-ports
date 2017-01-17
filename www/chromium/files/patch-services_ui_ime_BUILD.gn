@@ -1,0 +1,10 @@
+--- services/ui/ime/BUILD.gn.orig	2016-12-19 15:26:06.098748000 +0000
++++ services/ui/ime/BUILD.gn	2016-12-19 15:26:20.556851000 +0000
+@@ -49,7 +49,6 @@
+     ":test_manifest",
+     ":lib",
+     "//services/ui",
+-    "//services/ui/ime/test_ime_driver",
+   ]
+ }
+ 

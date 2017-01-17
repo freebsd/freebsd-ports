@@ -23,7 +23,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/locales/es.pak
 %%DATADIR%%/locales/et.pak
 %%DATADIR%%/locales/fa.pak
-%%DATADIR%%/locales/fake-bidi.pak
 %%DATADIR%%/locales/fi.pak
 %%DATADIR%%/locales/fil.pak
 %%DATADIR%%/locales/fr.pak
@@ -186,12 +185,12 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/emulated_devices/iPhone6-portrait.svg
 %%DATADIR%%/resources/inspector/emulated_devices/iPhone6Plus-landscape.svg
 %%DATADIR%%/resources/inspector/emulated_devices/iPhone6Plus-portrait.svg
-%%DATADIR%%/resources/inspector/es_tree/es_tree_module.js
 %%DATADIR%%/resources/inspector/formatter_worker.js
 %%DATADIR%%/resources/inspector/gonzales/gonzales_module.js
 %%DATADIR%%/resources/inspector/heap_snapshot_worker.js
 %%DATADIR%%/resources/inspector/inspector.html
 %%DATADIR%%/resources/inspector/inspector.js
+%%DATADIR%%/resources/inspector/layer_viewer/layer_viewer_module.js
 %%DATADIR%%/resources/inspector/layers/layers_module.js
 %%DATADIR%%/resources/inspector/network/network_module.js
 %%DATADIR%%/resources/inspector/profiler/profiler_module.js
@@ -199,11 +198,14 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/sass/sass_module.js
 %%DATADIR%%/resources/inspector/screencast/screencast_module.js
 %%DATADIR%%/resources/inspector/security/security_module.js
+%%DATADIR%%/resources/inspector/services/services_module.js
 %%DATADIR%%/resources/inspector/settings/settings_module.js
 %%DATADIR%%/resources/inspector/snippets/snippets_module.js
 %%DATADIR%%/resources/inspector/source_frame/source_frame_module.js
 %%DATADIR%%/resources/inspector/sources/sources_module.js
 %%DATADIR%%/resources/inspector/temp_storage_shared_worker.js
+%%DATADIR%%/resources/inspector/terminal/terminal_module.js
+%%DATADIR%%/resources/inspector/text_editor/text_editor_module.js
 %%DATADIR%%/resources/inspector/timeline/timeline_module.js
 %%DATADIR%%/resources/inspector/timeline_model/timeline_model_module.js
 %%DATADIR%%/resources/inspector/toolbox.html

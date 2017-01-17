@@ -1,0 +1,22 @@
+--- config.h.in.orig	2016-11-29 13:34:54 UTC
++++ config.h.in
+@@ -8,6 +8,9 @@
+ /* Define to 1 if using `alloca.c'. */
+ #undef C_ALLOCA
+ 
++/* Have DEVQ support */
++#undef DEVQ
++
+ /* Define to 1 if you have `alloca', as a function or macro. */
+ #undef HAVE_ALLOCA
+ 
+@@ -51,6 +54,9 @@
+ /* Define to 1 if you have the <inttypes.h> header file. */
+ #undef HAVE_INTTYPES_H
+ 
++/* Have libdevq support */
++#undef HAVE_LIBDEVQ
++
+ /* Enable if your compiler supports the Intel __sync_* atomic primitives */
+ #undef HAVE_LIBDRM_ATOMIC_PRIMITIVES
+ 

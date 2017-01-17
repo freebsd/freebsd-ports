@@ -1,0 +1,13 @@
+--- third_party/WebKit/Source/wtf/BUILD.gn.orig	2016-12-14 18:31:06.308889000 +0000
++++ third_party/WebKit/Source/wtf/BUILD.gn	2016-12-14 18:32:07.771435000 +0000
+@@ -286,6 +286,10 @@
+     libs = [ "dl" ]
+   }
+ 
++  if (is_bsd) {
++    libs = [ "execinfo" ]
++  }
++
+   if (is_mac) {
+     libs = [
+       "CoreFoundation.framework",

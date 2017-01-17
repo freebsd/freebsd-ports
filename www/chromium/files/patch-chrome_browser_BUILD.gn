@@ -1,6 +1,6 @@
---- chrome/browser/BUILD.gn.orig	2016-08-03 22:02:11.000000000 +0300
-+++ chrome/browser/BUILD.gn	2016-09-27 09:40:30.879973000 +0300
-@@ -540,7 +540,7 @@
+--- chrome/browser/BUILD.gn.orig	2016-12-01 23:02:06 UTC
++++ chrome/browser/BUILD.gn
+@@ -2105,7 +2105,7 @@ split_static_library("browser") {
      deps += [ "//device/udev_linux" ]
    }
  
@@ -9,44 +9,12 @@
      deps += [ "//third_party/speech-dispatcher" ]
    }
  
-@@ -730,6 +730,22 @@
-     sources += rebase_path(gypi_values.chrome_browser_non_mobile_sources,
-                            ".",
-                            "//chrome")
-+    if (is_bsd) {
-+      sources -= [
-+        "media_galleries/linux/mtp_device_delegate_impl_linux.cc",
-+        "media_galleries/linux/mtp_device_delegate_impl_linux.h",
-+        "media_galleries/linux/mtp_device_object_enumerator.cc",
-+        "media_galleries/linux/mtp_device_object_enumerator.h",
-+        "media_galleries/linux/mtp_device_task_helper.cc",
-+        "media_galleries/linux/mtp_device_task_helper.h",
-+        "media_galleries/linux/mtp_device_task_helper_map_service.cc",
-+        "media_galleries/linux/mtp_device_task_helper_map_service.h",
-+        "media_galleries/linux/mtp_read_file_worker.cc",
-+        "media_galleries/linux/mtp_read_file_worker.h",
-+        "media_galleries/linux/snapshot_file_details.cc",
-+        "media_galleries/linux/snapshot_file_details.h",
-+      ]
-+    }
-   }
- 
-   if (!is_chrome_branded) {
-@@ -857,7 +873,7 @@
+@@ -3439,7 +3439,7 @@ split_static_library("browser") {
      }
    }
  
 -  if (is_linux) {
 +  if (is_linux || is_bsd) {
      if (use_aura) {
-       configs += [ "//build/config/linux/dbus" ]
-       deps += [
-@@ -871,7 +887,7 @@
-     }
-   }
- 
--  if (is_linux || is_win) {
-+  if (is_linux || is_bsd || is_win) {
-     sources += rebase_path(gypi_values.chrome_browser_non_mac_desktop_sources,
-                            ".",
-                            "//chrome")
+       deps += [ "//build/linux:fontconfig" ]
+       if (use_dbus) {

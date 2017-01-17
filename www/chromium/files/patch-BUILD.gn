@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2016-10-06 04:02:07.000000000 +0300
-+++ BUILD.gn	2016-10-13 10:32:25.742762000 +0300
-@@ -201,7 +201,7 @@
+--- BUILD.gn.orig	2016-12-01 23:02:04 UTC
++++ BUILD.gn
+@@ -215,7 +215,7 @@ group("both_gn_and_gyp") {
      ]
    }
  
@@ -9,7 +9,7 @@
      deps += [
        "//chrome",
        "//chrome/test:browser_tests",
-@@ -260,7 +260,7 @@
+@@ -274,7 +274,7 @@ group("both_gn_and_gyp") {
      ]
    }
  
@@ -18,7 +18,7 @@
      # TODO(GYP): Figure out which of these should actually build on iOS,
      # and whether there should be other targets that are iOS-only and missing.
      deps += [
-@@ -300,7 +300,7 @@
+@@ -316,7 +316,7 @@ group("both_gn_and_gyp") {
        "//ui/touch_selection:ui_touch_selection_unittests",
        "//url/ipc:url_ipc_unittests",
      ]
@@ -27,7 +27,7 @@
      deps += [ "//ios:all" ]
    }
  
-@@ -457,7 +457,7 @@
+@@ -474,7 +474,7 @@ group("both_gn_and_gyp") {
      ]
    }
  
@@ -36,7 +36,7 @@
      # The following are definitely linux-only.
      deps += [
        "//chrome:manpage",
-@@ -484,9 +484,16 @@
+@@ -501,9 +501,16 @@ group("both_gn_and_gyp") {
        # TODO(dpranke): add the linux_dump_symbols flag?
        deps += [ "//chrome:linux_symbols" ]
      }
@@ -54,7 +54,7 @@
      deps += [
        "//base:base_i18n_perftests",
        "//base:base_perftests",
-@@ -555,7 +562,7 @@
+@@ -574,7 +581,7 @@ group("both_gn_and_gyp") {
      if (enable_nacl) {
        deps += [ "//components/nacl/loader:nacl_loader_unittests" ]
  
@@ -63,7 +63,7 @@
          # TODO(dpranke): Figure out what platforms should actually have this.
          deps += [ "//components/nacl/loader:nacl_helper" ]
  
-@@ -664,7 +671,7 @@
+@@ -688,7 +695,7 @@ group("both_gn_and_gyp") {
        deps +=
            [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
      }
@@ -72,8 +72,8 @@
      deps += [ "//breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -713,7 +720,7 @@
-     deps += [ "//chrome/tools/disable_outdated_build_detector" ]
+@@ -736,7 +743,7 @@ group("gn_only") {
+     ]
    }
  
 -  if (is_win || is_linux) {
@@ -81,7 +81,7 @@
      deps += [
        "//mash:all",
        "//media/mojo/services:media_mojo_shell_unittests",
-@@ -726,7 +733,7 @@
+@@ -749,7 +756,7 @@ group("gn_only") {
      ]
    }
  
@@ -90,7 +90,7 @@
      # TODO(GYP): Figure out if any of these should be in gn_all
      # and figure out how cross-platform they are
      deps += [
-@@ -793,7 +800,7 @@
+@@ -816,7 +823,7 @@ group("gn_only") {
      ]
  
      if (target_cpu == "x86" || target_cpu == "x64") {
@@ -99,7 +99,7 @@
          deps += [ "//chrome/test:load_library_perf_tests" ]
        }
        deps += [
-@@ -801,7 +808,7 @@
+@@ -824,7 +831,7 @@ group("gn_only") {
          "//third_party/libjpeg_turbo:simd_asm",
        ]
      }
@@ -108,7 +108,7 @@
        deps += [ "//v8:v8_shell" ]
      }
    }
-@@ -811,7 +818,7 @@
+@@ -834,7 +841,7 @@ group("gn_only") {
    }
  
    if ((is_linux && !is_chromeos && !is_chromecast) || (is_win && use_drfuzz) ||
@@ -117,7 +117,7 @@
      deps += [
        "//testing/libfuzzer/fuzzers",
        "//testing/libfuzzer/tests:libfuzzer_tests",
-@@ -847,7 +854,7 @@
+@@ -876,7 +883,7 @@ group("gn_only") {
  
  group("gn_mojo_targets") {
    testonly = true
@@ -126,7 +126,7 @@
      # TODO(GYP): Figure out if any of these should be in gn_all
      # and figure out how cross-platform they are
      deps = [
-@@ -872,7 +879,7 @@
+@@ -901,7 +908,7 @@ group("gn_visibility") {
    }
  }
  
@@ -135,7 +135,7 @@
    # This group includes all of the targets needed to build and test Blink,
    # including running the layout tests (see below).
    group("blink_tests") {
-@@ -906,7 +913,7 @@
+@@ -935,7 +942,7 @@ if (!is_ios) {
        ]
      }
  
@@ -144,21 +144,21 @@
        deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
  
-@@ -935,7 +942,7 @@
+@@ -961,7 +968,7 @@ group("chromium_swarm_tests") {
  group("chromium_builder_perf") {
    testonly = true
  
 -  if (!is_ios && !is_android && !is_chromecast) {
 +  if (!is_ios && !is_android && !is_chromecast && !is_bsd) {
-     deps = [
+     data_deps = [
        "//cc:cc_perftests",
        "//chrome/test:load_library_perf_tests",
-@@ -965,7 +972,7 @@
+@@ -992,7 +999,7 @@ group("chromium_builder_perf") {
          "//chrome/installer/mini_installer:mini_installer",
          "//third_party/angle/src/tests:angle_perftests",
        ]
 -    } else {
 +    } else if (!is_bsd) {
-       deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
+       data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
    }

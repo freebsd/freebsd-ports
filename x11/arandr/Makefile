@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arandr
-PORTVERSION=	0.1.7.1
-PORTREVISION=	2
+PORTVERSION=	0.1.9
 CATEGORIES=	x11 deskutils
 MASTER_SITES=	http://christian.amsuess.com/tools/arandr/files/ \
 		LOCAL/sbz
