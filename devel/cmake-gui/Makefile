@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/Copyright.txt
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libjsoncpp.so:devel/jsoncpp
+		libjsoncpp.so:devel/jsoncpp \
+		libuv.so:devel/libuv
 
 USE_QT5=	core gui widgets buildtools_build qmake_build
 USES=		cmake:run desktop-file-utils execinfo libarchive \
