@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and minimal IRC client for X
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
@@ -20,14 +20,11 @@ USE_GNOME=	gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kde
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in AUTHORS ChangeLog TODO README INSTALL
+.for file in AUTHORS ChangeLog TODO README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
