@@ -148,7 +148,7 @@ do-install:
 .endfor
 
 test:
-	(cd ${WRKSRC} && ${SETENV} LANG=C ${MAKE_ENV} \
-	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} r)
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} r)
 
 .include <bsd.port.mk>

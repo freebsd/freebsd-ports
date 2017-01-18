@@ -37,7 +37,7 @@ CMAKE_ARGS=	-DLIBCXX_CXX_ABI=libcxxrt -DLIBCXX_LIBCXXRT_INCLUDE_PATHS=${CXXRT_IN
 
 .if !defined(SVN_REV)
 .if defined(BOOTSTRAP)
-SVN_REV!=       LC_ALL=C svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d' ' -f2
+SVN_REV!=       svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d' ' -f2
 .else
 .include "Makefile.svn_rev"
 .endif

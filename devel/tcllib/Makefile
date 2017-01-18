@@ -21,10 +21,11 @@ OPTIONS_SUB=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	tcltk
 USES+=		tcl
+USE_LOCALE=	en_US.UTF-8
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
-MAKE_ENV+=	LANG=C
-TEST_TARGET=	do-test
+TEST_TARGET=	test
+TEST_ENV=	${MAKE_ENV} DISPLAY= TZ=utc
 PORTDOCS=	*
 
 INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
@@ -103,8 +104,5 @@ post-patch:
 do-install:
 	cd ${WRKSRC} && ${TCLSH} ./installer.tcl ${INSTALL_ARGS}
 .endif
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=en_US.UTF-8 DISPLAY= TZ=utc ${MAKE} test
 
 .include <bsd.port.mk>

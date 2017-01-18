@@ -53,7 +53,7 @@ post-configure:
 		-e 's,-DPACKAGE_[^=]*=."[^"]*",,g' ${WRKSRC}/Makefile
 
 post-build test:
-	${SETENV} LANG=C HOME=${WRKDIR} ${MAKE_CMD} -C ${WRKSRC} test | ${AWK} '\
+	${SETENV} HOME=${WRKDIR} ${MAKE_CMD} -C ${WRKSRC} test | ${AWK} '\
 		/Failed/ && $$NF {failed=1}	\
 		END {exit failed}	\
 		{print}'

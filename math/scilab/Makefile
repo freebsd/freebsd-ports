@@ -25,6 +25,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		cpe desktop-file-utils fortran gettext gmake iconv \
 		libtool ncurses pathfix pkgconfig shared-mime-info
+USE_LOCALE=	en_US.UTF-8
 GNU_CONFIGURE=	yes
 
 INSTALLS_ICONS=	yes
@@ -35,8 +36,6 @@ CONFIGURE_ARGS=	--with-gfortran \
 		--without-emf \
 		-disable-static-system-lib
 CONFIGURE_ENV=	BLAS_LIBS="${BLASLIB}" LAPACK_LIBS="${LAPACKLIB}"
-MAKE_ENV=	LANG=en_US.UTF-8 \
-		LC_ALL=en_US.UTF-8
 INSTALL_TARGET=	install-strip
 
 MAKE_JOBS_UNSAFE=	yes

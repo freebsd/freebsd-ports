@@ -29,12 +29,9 @@ CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
 # Set location for .wapi creation.
 MONO_SHARED_DIR=${WRKDIR}
 
-# LC_ALL is set in order to work around issues people are having when using
-# other languages.  This has shown itself in build fails and possibly other
-# strange crashes.
 MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 		INSTALL_STRIP_FLAG="${STRIP}" \
-		LC_ALL=C TZ=UTC
+		TZ=UTC
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*

@@ -2361,7 +2361,6 @@ var/mail
 @dir etc/xinetd.d
 @dir lib/modules
 @dir lib/tls
-@dir mnt
 @dir opt
 @dir selinux
 @dir srv

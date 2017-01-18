@@ -39,7 +39,7 @@ VIRTUALCHROOT_DESC=	Follow symlinks outside a chroot jail
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-altlog --with-cookie --with-diraliases \
 		--with-everything --with-extauth --with-ftpwho \
-		--with-language=${LANG} --with-paranoidmsg --with-puredb \
+		--with-language=${LANGUAGE} --with-paranoidmsg --with-puredb \
 		--with-quotas --with-ratios
 GNU_CONFIGURE=	yes
 USE_PERL5=	run
@@ -60,7 +60,7 @@ SUB_LIST=	PAM_DIR=${PAM_DIR} PAM_TARGET=${PAM_TARGET}
 SHEBANG_FILES=	contrib/pure-stat.pl contrib/pure-vpopauth.pl
 
 CONTRIB=	pure-stat.pl pure-vpopauth.pl xml_python_processors.txt
-LANG?=		english
+LANGUAGE?=	english
 PAM_DIR?=	${EXAMPLESDIR}/pam
 PAM_TARGET?=	pure-ftpd
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
@@ -100,7 +100,7 @@ CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \
 pre-fetch:
 	@${ECHO_MSG} "You can use the following additional options:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "LANG=lang (default: english)"
+	@${ECHO_MSG} "LANGUAGE=lang (default: english)"
 	@${ECHO_MSG} "- Enable compilation of one language support"
 	@${ECHO_MSG} "  available lang: brazilian-portuguese, catalan, czech, danish, dutch,"
 	@${ECHO_MSG} "  english, french, french-funny, german, hungarian, italian, korean,"

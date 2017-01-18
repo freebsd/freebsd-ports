@@ -22,7 +22,6 @@ USE_GITHUB=	yes
 CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
 
 TEST_TARGET=	test
-TEST_ENV=	LANG=C
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

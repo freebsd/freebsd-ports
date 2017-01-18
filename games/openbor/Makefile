@@ -52,15 +52,14 @@ TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 TREMOR_MAKE_ARGS=	BUILD_TREMOR=1 BUILD_VORBIS=""
 TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:audio/libvorbis
 
+.include <bsd.port.options.mk>
+
 #
 # To update snapshot: make makesum BOOTSTRAP=
 # Specific snapshot:  make makesum SVN_FETCH= PORTVERSION=1.0.r1234
 #
 .if defined(BOOTSTRAP)
-# XXX SED and _MASTER_SITES_svn aren't defined yet
-SED?=		/usr/bin/sed
-SVN_REV!=	${SETENV} LC_ALL=C svn info \
-			${MASTER_SITES:M*\:svn:S/:svn//} | \
+SVN_REV!=	svn info ${MASTER_SITES:M*\:svn:S/:svn//} | \
 		${SED} -n 's/^Last Changed Rev: //p'
 PORTVERSION:=	${PORTVERSION:R}.r${SVN_REV}
 .else

@@ -17,15 +17,14 @@ MAKE_ARGS=	INCLUDEDIR="${PREFIX}/include" LIBDIR="${PREFIX}/lib" \
 		MANDIR="${PREFIX}/man/man"
 USE_LDCONFIG=	yes
 
+.include <bsd.port.options.mk>
+
 #
 # To update snapshot: make makesum BOOTSTRAP=
 # Specific snapshot:  make makesum SVN_FETCH= PORTVERSION=r1234
 #
 .if defined(BOOTSTRAP)
-# XXX SED and _MASTER_SITES_svn aren't defined yet
-SED?=		/usr/bin/sed
-SVN_REV!=	${SETENV} LC_ALL=C svn info \
-			${MASTER_SITES:M*\:svn:S/:svn//} | \
+SVN_REV!=	svn info ${MASTER_SITES:M*\:svn:S/:svn//} | \
 		${SED} -n 's/^Last Changed Rev: //p'
 PORTVERSION:=	r${SVN_REV}
 .else

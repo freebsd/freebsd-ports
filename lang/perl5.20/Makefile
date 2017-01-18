@@ -90,7 +90,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
 	-Dcf_by=${MAINTAINER:C,@.*,,} -Dcf_email=${MAINTAINER} \
-	-Dcf_time="`env LANG=C ${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
+	-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
 # Keep the following two in sync.
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
@@ -101,11 +101,7 @@ CONFIGURE_ARGS+= \
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
 
-LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
-		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
-		LC_TIME=""
-CONFIGURE_ENV+=	${LOCALE_CLEANUP} UNAME_v="$$(uname -v | sed 'y/=/ /')"
-MAKE_ENV+=	${LOCALE_CLEANUP}
+CONFIGURE_ENV+=	UNAME_v="$$(uname -v | sed 'y/=/ /')"
 
 SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \

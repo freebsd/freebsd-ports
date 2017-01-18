@@ -20,7 +20,6 @@ USE_GNOME=	gdkpixbuf2 gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --disable-warnings
-MAKE_ENV=	LANG=C
 MAKE_JOBS_UNSAFE=yes
 INSTALL_TARGET=	install-strip
 

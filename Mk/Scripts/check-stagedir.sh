@@ -12,7 +12,6 @@
 #  c. Files in plist which are owned by dependencies/MTREEs
 
 set -e
-export LC_ALL=C
 
 . ${SCRIPTSDIR}/functions.sh
 

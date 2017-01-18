@@ -2790,7 +2790,6 @@ var/mail
 @dir lib64/rtkaio
 @dir lib64/security
 @dir lib64/tls
-@dir mnt
 @dir opt
 @dir selinux
 @dir srv

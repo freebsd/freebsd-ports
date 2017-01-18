@@ -28,7 +28,6 @@ MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 USES=		gettext tk:wrapper,run
 TEST_TARGET=	test
-TEST_ENV=	LC_ALL=C
 
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes

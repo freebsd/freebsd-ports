@@ -153,11 +153,11 @@ do-install:
 .endif
 
 install-user: extract
-.if !defined(LANG)
-	@${ECHO_MSG} "Please call as:  make install-user LANG=<lang>"
+.if !defined(LANGUAGE)
+	@${ECHO_MSG} "Please call as:  make install-user LANGUAGE=<lang>"
 	@${ECHO_MSG} "with <lang> one of en,de,fr,fr.noaccents,sp !"
 .else
-	@${CP} ${WRKSRC}/distrib/i18n/gui_messages.ini.${LANG}\
+	@${CP} ${WRKSRC}/distrib/i18n/gui_messages.ini.${LANGUAGE}\
 		${HOME}/.mldonkey_gui_messages.ini
 .endif
 

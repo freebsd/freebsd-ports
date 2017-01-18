@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
 
 USES=		gmake
-MAKE_ENV=	LANG=en_US.UTF-8
+USE_LOCALE=	en_US.UTF-8
 ALL_TARGET=	# empty
 REINPLACE_ARGS=	-i ""
 NO_ARCH=	yes

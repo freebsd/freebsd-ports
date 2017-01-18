@@ -40,7 +40,6 @@ PLIST_SUB+=	MASTER="@comment "
 .endif
 
 # For the slave ports
-LANG=	language=${WITH_LANG}
 .if ${WITH_LANG} != "en"
 PKGNAMEPREFIX=	${WITH_LANG}-
 .endif

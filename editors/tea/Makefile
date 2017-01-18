@@ -19,11 +19,10 @@ OPTIONS_DEFAULT=	ASPELL
 
 USES=		pkgconfig:build qmake tar:bzip2
 USE_GL=		gl
+USE_LOCALE=	en_US.UTF-8
 USE_QT4=	corelib gui moc_build network rcc_build
 
 LDFLAGS+=	-lz
-MAKE_ENV+=	LANG=en_US.UTF-8
-CONFIGURE_ENV+=	LANG=en_US.UTF-8
 PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png
 PORTDOCS=	*
 

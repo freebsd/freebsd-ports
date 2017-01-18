@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 ALL_TARGET=	lspci lspci.8 setpci setpci.8
 CPPFLAGS+=	-fPIC
 LDFLAGS+=	-lpci
-MAKE_ENV=	LANG=C
 USES=		gmake localbase:ldflags tar:xz
 
 PLIST_FILES=	bin/lspci \

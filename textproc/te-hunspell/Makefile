@@ -26,7 +26,7 @@ PLIST_FILES=	%%DATADIR%%/te_IN.aff \
 do-build:
 	@cd ${WRKSRC}; \
 		${LOCALBASE}/bin/prezip-bin -d < te.cwl > te.txt; \
-		${SETENV} LANG=te_IN.utf8 ${LOCALBASE}/bin/wordlist2hunspell te.txt te_IN
+		${SETENV} LANG=te_IN.utf8 LC_ALL=te_IN.utf8 ${LOCALBASE}/bin/wordlist2hunspell te.txt te_IN
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

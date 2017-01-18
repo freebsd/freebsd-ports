@@ -18,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 
 ALL_TARGET=	lib/libpci.a
 CPPFLAGS+=	-fPIC
-MAKE_ENV=	LANG=C
 USE_LDCONFIG=	yes
 USES=		gmake tar:xz
 
