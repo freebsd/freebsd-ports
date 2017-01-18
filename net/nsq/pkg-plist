@@ -1,0 +1,10 @@
+bin/%%GO_PKGNAME%%_pubsub
+bin/%%GO_PKGNAME%%_stat
+bin/%%GO_PKGNAME%%_tail
+bin/%%GO_PKGNAME%%_to_file
+bin/%%GO_PKGNAME%%_to_http
+bin/%%GO_PKGNAME%%_to_%%GO_PKGNAME%%
+bin/%%GO_PKGNAME%%admin
+bin/%%GO_PKGNAME%%d
+bin/%%GO_PKGNAME%%lookupd
+bin/to_%%GO_PKGNAME%%
