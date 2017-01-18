@@ -466,6 +466,7 @@
     SUBDIR += nos-ttb
     SUBDIR += nph
     SUBDIR += ns3
+    SUBDIR += nsq
     SUBDIR += nss-pam-ldapd
     SUBDIR += nss-pam-ldapd-sasl
     SUBDIR += nss_ldap
