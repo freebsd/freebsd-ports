@@ -3,6 +3,7 @@
 
 PORTNAME=	vagrant
 PORTVERSION=	1.8.7
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
