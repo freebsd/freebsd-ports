@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libidn2
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	dns
 MASTER_SITES=	GNU_ALPHA/libidn \
 		https://ftp.iana.org/assignments/idna-tables-6.3.0/:idna_table \
