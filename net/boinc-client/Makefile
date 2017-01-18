@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/rene
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
 GNU_CONFIGURE=	yes
