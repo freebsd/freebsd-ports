@@ -1,0 +1,22 @@
+Configuring Synapse:
+
+You may use the sample config located at %%ETCDIR%% to get started. It
+already is configured to find the configuration in that location and
+places the database in %%DBDIR%% and the logs in %%LOGDIR%%, but there
+are some crucial values you will need to populate with unique data:
+registration_shared_secret and macaroon_secret_key. Both of these
+by default are 50 character random strings. These are by default set to
+CHANGEME_50CHAR_RANDOM in the sample homeserver.yaml.
+
+If you wish to have Synapse handle this for you including generation of
+self-signed TLS certificates and dhparams you can use the following
+command:
+
+%%PYTHON_CMD%% -B -m synapse.app.homeserver -c %%ETCDIR%%/homeserver.yaml --generate-config --server-name=example.com
+
+Please note that you will still need to manually configure paths to log
+directory, database, and media storage with this method.
+
+It is also important that you deploy a TLS certificate that your
+clients accept as valid or some functionality will fail to work
+correctly (eg, media file retrieval).
