@@ -24,6 +24,7 @@ bin/mysql_zap
 bin/mysqlbug
 bin/mysqld_multi
 bin/mysqld_safe
+bin/mysqld_safe_helper
 bin/mysqldumpslow
 bin/mysqlhotcopy
 bin/mysqltest
