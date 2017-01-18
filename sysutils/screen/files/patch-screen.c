@@ -1,11 +1,11 @@
---- screen.c.orig	2014-04-26 09:22:09.000000000 -0700
-+++ screen.c	2014-04-30 23:34:47.613803805 -0700
-@@ -2257,7 +2257,7 @@
+--- screen.c.orig	2017-01-17 11:28:29.397404660 -0800
++++ screen.c	2017-01-18 04:54:50.874421000 -0800
+@@ -2222,7 +2222,7 @@
+   pn2 = pn = p + padlen;
    r = winmsg_numrend;
-   while (p >= buf)
-     {
--      if (r && *p != 127 && p - buf == winmsg_rendpos[r - 1])
-+      if (r && p - buf == winmsg_rendpos[r - 1])
- 	{
- 	  winmsg_rendpos[--r] = pn - buf;
- 	  continue;
+   while (p >= buf) {
+-    if (r && *p != 127 && p - buf == winmsg_rendpos[r - 1]) {
++    if (r && p - buf == winmsg_rendpos[r - 1]) {
+       winmsg_rendpos[--r] = pn - buf;
+       continue;
+     }
