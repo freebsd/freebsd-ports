@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	4.0.1
-PORTREVISION=	3
+PORTVERSION=	4.0.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -17,14 +16,12 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not compile: error: to_string is not a member of std
 
-USES=		compiler:c++11-lib cpe gmake libtool pathfix pkgconfig ssl \
+USES=		compiler:c++11-lib cpe gmake libtool localbase:ldflags pathfix pkgconfig ssl \
 		tar:bzip2
 USE_LDCONFIG=	YES
 USE_SUBMAKE=	YES
 GNU_CONFIGURE=	YES
 INSTALL_TARGET=	install-strip
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-static \
 		--with-modules="" \
 		--with-dynmodules="pipe bind ${MODULES}" \
