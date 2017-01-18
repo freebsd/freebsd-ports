@@ -50,6 +50,7 @@ LLVM38_DESC=	LLVM 3.8
 LLVM39_DESC=	LLVM 3.9
 
 USES=		execinfo gmake perl5 readline tar:bzip2 libedit
+USE_LOCALE=	en_US.UTF-8
 USE_OPENSSL=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -69,9 +70,6 @@ MAKE_ENV+=	HOME=${WRKSRC}
 
 # Hack to switch to a local gem path so locally activated rake can be used
 MAKE_ENV+=	GEM_PATH=${GEM_PATH}
-
-# Hack to build under a UTF-8 locale
-MAKE_ENV+=	LANG=en_US.UTF-8
 
 F_OS=		${OPSYS:tl}
 F_MAJOR=	${OSREL:C/\..*$//}

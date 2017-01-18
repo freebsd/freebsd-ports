@@ -31,12 +31,9 @@ CONFLICTS=	ghc-7.4.* ghc-7.6.* ghc-7.8.*
 
 LIB_DEPENDS+=	libgmp.so:math/gmp
 
+USES=		autoreconf gmake iconv:translit ncurses perl5 tar:xz
+USE_LOCALE=	en_US.UTF-8
 USE_PERL5=		build
-USES=			autoreconf gmake iconv:translit ncurses perl5 tar:xz
-
-MAKE_ENV+=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-# This is needed on FreeBSD 9.x due to the bootstrap tarball.
-TAR=		env LC_ALL=en_US.UTF-8 /usr/bin/tar
 
 # The configure process accepts,filters and canonicalises
 # the CONFIGURE_TARGET variable. You can read the files

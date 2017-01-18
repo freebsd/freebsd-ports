@@ -24,7 +24,7 @@ USES=		gmake
 .include <bsd.port.pre.mk>
 
 CCOM!=		${BASENAME} ${CC}
-MAKE_ENV=	CCOM=${CCOM} LANG=C
+MAKE_ENV=	CCOM=${CCOM}
 SFMTTARGET=	${ARCH:S/powerpc64/powerpc/}-freebsd-${CCOM}
 
 post-extract:

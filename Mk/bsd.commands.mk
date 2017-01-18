@@ -88,7 +88,7 @@ SU_CMD?=		/usr/bin/su root -c
 SYSCTL?=		/sbin/sysctl
 TAIL?=			/usr/bin/tail
 TEST?=			test	# Shell builtin
-TR?=			LANG=C /usr/bin/tr
+TR?=			/usr/bin/tr
 TRUE?=			true	# Shell builtin
 UMOUNT?=		/sbin/umount
 UNAME?=			/usr/bin/uname

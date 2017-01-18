@@ -40,7 +40,7 @@ MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 genplist: do-clean extract
 	${ECHO_CMD} '@owner www' > ${MS_PLIST}
 	${ECHO_CMD} '@group www' >> ${MS_PLIST}
-	cd ${WRKSRC}/ && ${FIND} * -type f | ${SETENV} LC_ALL=C ${SORT} | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
+	cd ${WRKSRC}/ && ${FIND} * -type f | ${SORT} | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
 .for dir in ${MS_DIR}
 	${ECHO_CMD} '@dir %%WWWDIR%%/${dir}' >> ${MS_PLIST}
 .endfor

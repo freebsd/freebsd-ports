@@ -43,7 +43,6 @@ CONFIGURE_ARGS+=	--enable-static
 # Python is not required, because fc-blanks.h is available in distfile
 CONFIGURE_ENV=	PYTHON=":"
 
-MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 INSTALL_TARGET=install-strip
 

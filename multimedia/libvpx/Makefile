@@ -41,7 +41,6 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--enable-vp8 \
 		--enable-vp9
 MAKE_ARGS+=	verbose=yes
-MAKE_ENV=	LC_ALL=C
 
 OPTIONS_SUB=		SHARED
 

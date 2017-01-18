@@ -20,14 +20,12 @@ USES=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	intlhack glib20 gtk20
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	GOFFICE SOUP LCOV
 GOFFICE_DESC=	GOffice support
 SOUP_DESC=	libsoup support
 LCOV_DESC=	Force dependency on lcov
-
-regression-test: build
-	@${SETENV} LC_ALL=C ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} check
 
 .include <bsd.port.options.mk>
 

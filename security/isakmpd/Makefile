@@ -22,7 +22,7 @@ BUILD_DEPENDS+=	keynote:security/keynote
 
 USES=		uidfix
 USE_RC_SUBR=	isakmpd
-MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man LC_ALL=C
+MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 USE_OPENSSL=	yes
 

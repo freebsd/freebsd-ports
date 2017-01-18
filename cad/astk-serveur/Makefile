@@ -56,6 +56,12 @@ C_SCRIPTS=	bin/astk bin/bsf
 tools_dir=	${LOCALBASE}/aster/outils
 conf_dir=	${WRKSRC}/etc/astkrc
 
+.if defined(LANG) && ${LANG:Mfr*} != ""
+ASTK_LANG=	FR
+.else
+ASTK_LANG=	ENG
+.endif
+
 .include <bsd.port.pre.mk>
 
 WRKCONF=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/configuration
@@ -162,12 +168,6 @@ DOMAIN_NAME=	${SERVER_NAME:S|${HOST_NAME}.||}
 SERVER_NAME=	put.your.fdqn
 HOST_NAME=	this-hostname
 DOMAIN_NAME=	your.domain-name
-.endif
-
-.if defined(LANG) && ${LANG:Mfr*} != ""
-ASTK_LANG=	FR
-.else
-ASTK_LANG=	ENG
 .endif
 
 pre-configure:

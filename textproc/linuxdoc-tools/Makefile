@@ -36,6 +36,5 @@ DOCS_BUILD_DEPENDS=	bash:shells/bash
 DOCS_USE=		tex=latex:build tex=pdftex:build tex=dvipsk:build
 DOCS_USES=		makeinfo
 DOCS_CONFIGURE_ENABLE=	docs
-DOCS_MAKE_ENV=		LANG=C
 
 .include <bsd.port.mk>

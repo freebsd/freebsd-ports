@@ -400,7 +400,7 @@ do-build:
 	fi ;								  \
 	cd ${WRKSRC}/instsetoo_native ;					  \
 	. ../${FREEBSD_ENV_SET} ;					  \
-	LANG=C LC_ALL=C build.pl --all -P$${numproc} -- -P$${dmproc}
+	build.pl --all -P$${numproc} -- -P$${dmproc}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR} \

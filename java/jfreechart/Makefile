@@ -24,9 +24,9 @@ COMPILE_DESC=	Build from source
 
 .if ${PORT_OPTIONS:MCOMPILE}
 USE_ANT=	yes
+USE_LOCALE=	en_US.UTF-8
 ALL_TARGET=	compile
 BUILD_WRKSRC=	${WRKSRC}/ant
-MAKE_ENV=	LANG=en_US.UTF-8
 .else
 NO_BUILD=	yes
 .endif

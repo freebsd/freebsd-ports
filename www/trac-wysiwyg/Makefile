@@ -24,7 +24,6 @@ NO_ARCH=	yes
 .if !defined(SVN_REV)
 .if defined(BOOTSTRAP)
 SVN_URL=	http://trac-hacks.org/svn/tracwysiwygplugin/0.12/
-LANG=		"C"
 SVN_REV!=	svn info ${SVN_URL} | ${GREP} Revision | cut -d' ' -f2
 .else
 .include "Makefile.svn_rev"

@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 CPE_VENDOR=	nih
 
 GNU_CONFIGURE=	yes
-MAKE_ENV=	LC_ALL="C"
 USES=		cpe libtool pathfix perl5 tar:xz
 USE_PERL5=	build
 USE_LDCONFIG=	yes

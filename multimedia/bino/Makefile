@@ -34,9 +34,4 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=nls
 
-# fixes build on non UTF-8 enviroments
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo $<|LANG=C; LC_ALL=C; &|' \
-		${WRKSRC}/src/Makefile.in
-
 .include <bsd.port.mk>
