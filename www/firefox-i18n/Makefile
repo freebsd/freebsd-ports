@@ -15,7 +15,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:archivers/zip
 
-USES=		zip:infozip gecko:firefox,50,build
+USES=		zip:infozip gecko:firefox,51,build
 USE_XPI=	firefox
 
 NO_ARCH=	yes
