@@ -52,11 +52,6 @@ WCCP_CONFIGURE_ENABLE=	wccp
 SPDY_CONFIGURE_ENABLE=	spdy
 SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 
-.if ! exists(/var/cache)
-# FreeBSD 8.x
-PLIST_DIRS+=	/var/cache
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '/cachedir:/s,$${localstatedir}+,$${localstatedir}/cache+,' \
