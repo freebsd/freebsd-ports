@@ -38,8 +38,6 @@ EXTRA_PATCHES+= ${FILESDIR}/freebsd-format-extensions
 .endif
 .endif
 
-CONFIGURE_ENV=	LC_ALL=C
-MAKE_ENV=	LC_ALL=C
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \

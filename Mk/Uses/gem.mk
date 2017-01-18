@@ -44,23 +44,8 @@ GEM_CACHE?=	${CACHE_DIR}/${GEM_NAME}.gem
 GEMSPEC=	${PORTNAME}.gemspec
 GEM_ENV+=	RB_USER_INSTALL=yes
 
-.if defined(LANG) && !empty(LANG)
-GEM_ENV+=		LANG=${LANG}
-.else
-GEM_ENV+=		LANG=en_US.UTF-8
-.endif
-
-.if defined(LC_ALL) && !empty(LC_ALL)
-GEM_ENV+=		LC_ALL=${LC_ALL}
-.else
-GEM_ENV+=		LC_ALL=en_US.UTF-8
-.endif
-
-.if defined(LC_CTYPE) && !empty(LC_CTYPE)
-GEM_ENV+=		LC_CTYPE=${LC_CTYPE}
-.else
-GEM_ENV+=		LC_CTYPE=UTF-8
-.endif
+USE_LOCALE?=	en_US.UTF-8
+GEM_ENV+=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		REV="${RUBY_GEM}" \

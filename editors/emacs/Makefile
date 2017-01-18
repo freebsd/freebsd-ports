@@ -35,8 +35,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
 
-MAKE_ENV=	LC_ALL=C
-
 INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
 	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc	\
 	ert eshell eudc eww flymake forms gnus htmlfontify idlwave ido info	\

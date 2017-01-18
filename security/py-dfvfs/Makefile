@@ -36,8 +36,9 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 
 NO_ARCH=	yes
 USES=		python:2.7
+USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	distutils autoplist
-TEST_ENV=	${MAKE_ENV} LANG=en_US.UTF-8 PYTHONHTTPSVERIFY=0
+TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_tests.py)

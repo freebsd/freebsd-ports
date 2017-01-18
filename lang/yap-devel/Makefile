@@ -45,10 +45,6 @@ swipl_OLD_CMD=	/usr/bin/swipl
 swipl_CMD=	${LOCALBASE}/bin/swipl # installed by lang/swi-pl
 USE_GCC=	any
 
-EXTRACT_CMD=	${GZIP_CMD}
-EXTRACT_BEFORE_ARGS=	-dc
-EXTRACT_AFTER_ARGS=	| ${SETENV} LC_ALL=en_US.UTF-8 ${TAR} -xf -
-
 DOCSDIR=	${PREFIX}/share/doc/Yap
 DATADIR=	${PREFIX}/share/Yap
 

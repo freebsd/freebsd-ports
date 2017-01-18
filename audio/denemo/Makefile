@@ -23,7 +23,6 @@ LIB_DEPENDS=	libaubio.so:audio/aubio \
 		libfftw3.so:math/fftw3
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 ${TAR}
 EXTRACT_BEFORE_ARGS=\
 		-s '!\(/Clarinet in B\).*\(\.denemo\)$$!\1b\2!p' -xf
 

@@ -22,7 +22,6 @@ NO_ARCH=	yes
 
 .if !defined(SVN_REV)
 .if defined(BOOTSTRAP)
-LANG=		"C"
 SVN_REV!=	svn info http://trac-hacks.org/svn/tagsplugin/trunk/ | ${GREP} Revision | cut -d' ' -f2
 .else
 .include "Makefile.svn_rev"

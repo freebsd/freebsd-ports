@@ -25,7 +25,6 @@ LIB_DEPENDS=	libXp.so:x11/libXp \
 		libpng16.so:graphics/png
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_ENV=	LANG=C
 CPPFLAGS+=	-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI -I${PREFIX}/include
 USE_CSTD=	gnu89
 INSTALL_TARGET=	install-strip

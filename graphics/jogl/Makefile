@@ -34,12 +34,12 @@ USE_XORG=	x11 xau xdamage xdmcp xext xf86vidmodeproto xfixes xproto xt \
 USE_GL=		gl
 USE_ANT=	yes
 USE_LDCONFIG=	yes
+USE_LOCALE=	en_US.UTF-8
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
 BUILD_WRKSRC=	${WRKSRC}/jogl/make
 BUILD_BINPATH=	${WRKSRC}/bin
-MAKE_ENV+=	LANG=en_US.UTF-8
 MAKE_ENV+=	PATH="${BUILD_BINPATH}:${PATH}"
 
 OPTIONS_DEFINE=	DOCS

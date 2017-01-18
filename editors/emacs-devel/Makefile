@@ -29,12 +29,9 @@ CPE_VENDOR=	gnu
 SUB_FILES=	sources.el
 SUB_LIST=	EMACS_VER=${EMACS_VER}
 
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-gameuser=games:games
+CONFIGURE_ARGS=	--with-gameuser=games:games
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
-
-MAKE_ENV=	LC_ALL=C
 
 INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
 	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc	\

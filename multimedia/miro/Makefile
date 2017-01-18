@@ -67,7 +67,7 @@ post-patch:
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
-	LANG=C LC_ALL=C ${PREFIX}/bin/miro --unittest
+	${PREFIX}/bin/miro --unittest
 .endif
 
 .include <bsd.port.post.mk>
