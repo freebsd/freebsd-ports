@@ -58,6 +58,9 @@ bin/vmware-cmd
 %%PERL5_MAN3%%/VMware::VIM25Stub.3.gz
 %%PERL5_MAN3%%/VMware::VIM2Runtime.3.gz
 %%PERL5_MAN3%%/VMware::VIM2Stub.3.gz
+%%SITE_PERL%%/AppUtil/HostUtil.pm
+%%SITE_PERL%%/AppUtil/VMUtil.pm
+%%SITE_PERL%%/AppUtil/XMLInputUtil.pm
 %%SITE_PERL%%/WSMan/WSBasic.pm
 %%SITE_PERL%%/WSMan/Stubs/vmware_storagepool.pm
 %%SITE_PERL%%/WSMan/Stubs/vmware_storageextent.pm
@@ -1045,6 +1048,8 @@ bin/vmware-cmd
 %%SITE_PERL%%/WSMan/StubOps.pm
 %%SITE_PERL%%/WSMan/IdentifyResponse.pm
 %%SITE_PERL%%/WSMan/GenericOps.pm
+%%SITE_PERL%%/VMware/LookupService.pm
+%%SITE_PERL%%/VMware/SSOConnection.pm
 %%SITE_PERL%%/VMware/VIRuntime.pm
 %%SITE_PERL%%/VMware/VIMRuntime.pm
 %%SITE_PERL%%/VMware/VIM2Stub.pm
@@ -1090,6 +1095,6 @@ bin/vmware-cmd
 %%EXAMPLESDIR%%/general/extractlog.pl
 %%EXAMPLESDIR%%/general/credstore_admin.pl
 %%EXAMPLESDIR%%/general/connect.pl
-%%EXAMPLESDIR%%/AppUtil/XMLInputUtil.pm
-%%EXAMPLESDIR%%/AppUtil/VMUtil.pm
-%%EXAMPLESDIR%%/AppUtil/HostUtil.pm
+@comment %%EXAMPLESDIR%%/AppUtil/XMLInputUtil.pm
+@comment %%EXAMPLESDIR%%/AppUtil/VMUtil.pm
+@comment %%EXAMPLESDIR%%/AppUtil/HostUtil.pm
