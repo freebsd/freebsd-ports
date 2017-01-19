@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		https://mirrors.rit.edu/zi/ \
