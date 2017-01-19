@@ -3,6 +3,7 @@
 
 PORTNAME=	libpciaccess
 PORTVERSION=	0.13.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org

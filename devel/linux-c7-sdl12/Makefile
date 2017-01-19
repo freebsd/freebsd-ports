@@ -3,13 +3,14 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.15
+PORTREVISION=	1
 CATEGORIES=	devel linux
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 LINUX_NAME=	SDL
 RPMVERSION=	14.el7

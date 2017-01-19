@@ -3,6 +3,7 @@
 
 PORTNAME=	graphite2
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org

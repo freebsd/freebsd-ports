@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alsa-lib
-PORTVERSION=	1.0.28
+PORTVERSION=	1.1.1
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,12 +12,12 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	alsa-lib>0:audio/alsa-lib
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
+RPMVERSION=	1.el7
 USES=		linux:c7
-USE_LINUX_RPM=	yes
-RPMVERSION=	2.el7
 USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
 
 # We will use native configuration file, so delete a linux one
 post-extract:
