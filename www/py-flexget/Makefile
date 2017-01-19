@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.6
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar \
 		${PYTHON_PKGNAMEPREFIX}guessit>=2.0.4:multimedia/py-guessit \
 		${PYTHON_PKGNAMEPREFIX}pynzb>0:news/py-pynzb \
-		${PYTHON_PKGNAMEPREFIX}safe>=0.4:security/py-safe \
+		${PYTHON_PKGNAMEPREFIX}zxcvbn-python>0:security/py-zxcvbn-python \
 		${PYTHON_PKGNAMEPREFIX}plumbum>=1.2:sysutils/py-plumbum \
 		${PYTHON_PKGNAMEPREFIX}colorclass>=2.2.0:textproc/py-colorclass \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=5.2.1:textproc/py-feedparser \
