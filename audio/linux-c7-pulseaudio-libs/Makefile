@@ -3,6 +3,7 @@
 
 PORTNAME=	pulseaudio-libs
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	audio linux
 LIB_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-glib2-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX}
@@ -13,7 +14,7 @@ COMMENT=	Libraries for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
-RPMVERSION=	7.el7
+RPMVERSION=	8.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	dbuslibs libasyncns libsndfile tcp_wrappers-libs xorglibs

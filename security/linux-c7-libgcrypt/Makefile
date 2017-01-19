@@ -3,15 +3,13 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security linux
-MASTER_SITES=	CENTOS_LINUX/centos/${LINUX_DIST_VER}/cr/x86_64/Packages
-SRC_DISTFILES=	# not available
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Crypto library based on code used in GnuPG (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 LICENSE=	LGPL21+
 

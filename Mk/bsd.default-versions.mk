@@ -42,10 +42,10 @@ GCC_DEFAULT?=		4.9
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
 .if defined(ARCH) && ${ARCH} == amd64
-# Possible values: c6, c6_64, c7, c7_64
+# Possible values: c6, c6_64, c7
 LINUX_DEFAULT?=		c6_64
 .else
-# Possible values: c6, c7
+# Possible values: c6
 LINUX_DEFAULT?=		c6
 .endif
 .if defined(OVERRIDE_LINUX_BASE_PORT)

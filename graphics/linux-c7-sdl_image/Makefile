@@ -3,6 +3,7 @@
 
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.12
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	EPEL7/s
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
@@ -10,7 +11,7 @@ DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Simple library to load images as SDL interfaces (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 LINUX_NAME=	SDL_image
 ONLY_FOR_ARCHS=	amd64

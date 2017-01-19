@@ -1,8 +1,10 @@
 etc/alsa/alsactl.conf
 usr/bin/aconnect
 usr/bin/alsa-delay
+usr/bin/alsabat
 usr/bin/alsaloop
 usr/bin/alsamixer
+usr/bin/alsatplg
 usr/bin/alsaucm
 usr/bin/alsaunmute
 usr/bin/amidi
@@ -27,10 +29,10 @@ usr/lib/systemd/system/alsa-state.service
 usr/lib/systemd/system/alsa-store.service
 usr/lib/systemd/system/basic.target.wants/alsa-restore.service
 usr/lib/systemd/system/basic.target.wants/alsa-state.service
-usr/lib/systemd/system/shutdown.target.wants/alsa-store.service
 usr/lib/udev/rules.d/90-alsa-restore.rules
 usr/sbin/alsa-info
 usr/sbin/alsa-info.sh
+usr/sbin/alsabat-test.sh
 usr/sbin/alsactl
 usr/share/alsa/init
 usr/share/alsa/speaker-test/sample_map.csv
@@ -42,6 +44,9 @@ usr/share/locale/de/LC_MESSAGES/alsa-utils.mo
 usr/share/locale/fr/LC_MESSAGES/alsa-utils.mo
 usr/share/locale/ja/LC_MESSAGES/alsa-utils.mo
 usr/share/man/man1/aconnect.1.gz
+usr/share/man/man1/alsa-delay.1.gz
+usr/share/man/man1/alsa-info.sh.1.gz
+usr/share/man/man1/alsabat.1.gz
 usr/share/man/man1/alsactl.1.gz
 usr/share/man/man1/alsaloop.1.gz
 usr/share/man/man1/alsamixer.1.gz

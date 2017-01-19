@@ -3,6 +3,7 @@
 
 PORTNAME=	libasyncns
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	dns devel linux
 
 MAINTAINER=	emulation@FreeBSD.org

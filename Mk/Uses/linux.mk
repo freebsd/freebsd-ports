@@ -31,21 +31,26 @@ linux_ARGS=		${LINUX_DEFAULT:S/_64//}
 
 .if ${linux_ARGS} == c6
 LINUX_DIST_VER?=	6.8
-.elif ${linux_ARGS} == c7
-LINUX_DIST_VER?=	7.2.1511
-.else
-IGNORE=			Invalid Linux distribution: ${linux_ARGS}
-.endif
-
-.if ${LINUX_DEFAULT:M*_64}
+.if ${ARCH} == amd64 && ${LINUX_DEFAULT} != c6
 LINUX_ARCH=		x86_64
 LINUX_ARCH32=		i386
-.if ${ARCH} != amd64 || ${OPSYS} != FreeBSD \
- || ( ${OSVERSION} >= 1100000 && ${OSVERSION} < 1100105 )
-IGNORE=			Linux ${LINUX_DEFAULT} is unsupported on pre-release versions of FreeBSD 11. Update to 11.0-RELEASE or higher.
+.elif ${ARCH} == amd64 || ${ARCH} == i386
+LINUX_ARCH=		i386
+.else
+LINUX_ARCH=		${ARCH}
+IGNORE=			Linux CentOS ${LINUX_DIST_VER} is unsupported on ${ARCH}
+.endif
+.elif ${linux_ARGS} == c7
+LINUX_DIST_VER?=	7.3.1611
+.if ${ARCH} == amd64
+LINUX_ARCH=		x86_64
+LINUX_ARCH32=		i386
+.else
+LINUX_ARCH=		${ARCH}
+IGNORE=			Linux CentOS ${LINUX_DIST_VER} is unsupported on ${ARCH}
 .endif
 .else
-LINUX_ARCH=		i386
+IGNORE=			Invalid Linux distribution: ${linux_ARGS}
 .endif
 
 linux_allegro_DEP=		linux-${linux_ARGS}-allegro>0:devel/linux-${linux_ARGS}-allegro
@@ -186,7 +191,7 @@ MASTER_SITE_SUBDIR=	altarch/${LINUX_DIST_VER}/os/${LINUX_ARCH}/Packages \
 MASTER_SITE_SUBDIR+=	centos/${LINUX_DIST_VER}/os/Source/SPackages/:SOURCE \
 			centos/${LINUX_DIST_VER}/updates/Source/SPackages/:SOURCE
 .endif
-DIST_SUBDIR?=		rpm/centos/${LINUX_DIST_VER}/${LINUX_ARCH}
+DIST_SUBDIR?=		centos
 
 .if ${USE_LINUX_RPM} == noarch
 LINUX_RPM_ARCH?=	noarch
@@ -230,19 +235,13 @@ LIB_DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 .else
 BIN_DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 .endif
-.ifdef LINUX_ARCH32 && EXTRACT_SUFX32
-.for fmakehack in ${LINUX_ARCH32}
-.if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:M${fmakehack})) \
- && empty(NOT_FOR_ARCHS:M${fmakehack})
+.if defined(LINUX_ARCH32) && defined(EXTRACT_SUFX32) \
+ && !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:M${LINUX_ARCH32})) \
+ && empty(NOT_FOR_ARCHS:M${LINUX_ARCH32})
 DISTFILES?=		${LIB_DISTFILES:S/${EXTRACT_SUFX}/${EXTRACT_SUFX32}/} \
 			${LIB_DISTFILES} ${BIN_DISTFILES}
 EXTRACT_ONLY?=		${LIB_DISTFILES:S/${EXTRACT_SUFX}/${EXTRACT_SUFX32}/} \
 			${LIB_DISTFILES} ${BIN_DISTFILES}
-.else
-DISTFILES?=		${LIB_DISTFILES} ${BIN_DISTFILES}
-EXTRACT_ONLY?=		${LIB_DISTFILES} ${BIN_DISTFILES}
-.endif
-.endfor
 .else
 DISTFILES?=		${LIB_DISTFILES} ${BIN_DISTFILES}
 EXTRACT_ONLY?=		${LIB_DISTFILES} ${BIN_DISTFILES}
@@ -291,12 +290,9 @@ DISTFILES?=		${DISTFILES_${LINUX_ARCH}}
 .endif
 .endif
 
-# With fmake :M${var} only works when ${var} is a for loop variable.
-.for fmakehack in ${LINUX_ARCH:S/x86_64/amd64/}
-.if (defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:M${fmakehack})) \
- || !empty(NOT_FOR_ARCHS:M${fmakehack})
+.if (defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:M${LINUX_ARCH:S/x86_64/amd64/})) \
+ || !empty(NOT_FOR_ARCHS:M${LINUX_ARCH:S/x86_64/amd64/})
 IGNORE=			does not run on Linux/${LINUX_ARCH}
 .endif
-.endfor
 
 .endif # _POSTMKINCLUDED && ! _INCLUDE_USES_LINUX_POST_MK

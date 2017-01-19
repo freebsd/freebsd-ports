@@ -989,6 +989,7 @@ usr/include/demangle.h
 usr/include/dirent.h
 usr/include/dis-asm.h
 usr/include/dlfcn.h
+usr/include/drm/amdgpu_drm.h
 usr/include/drm/drm.h
 usr/include/drm/drm_fourcc.h
 usr/include/drm/drm_mode.h
@@ -1005,6 +1006,7 @@ usr/include/drm/savage_drm.h
 usr/include/drm/sis_drm.h
 usr/include/drm/tegra_drm.h
 usr/include/drm/via_drm.h
+usr/include/drm/virtgpu_drm.h
 usr/include/drm/vmwgfx_drm.h
 usr/include/elf.h
 usr/include/endian.h
@@ -1202,6 +1204,7 @@ usr/include/linux/if_hippi.h
 usr/include/linux/if_infiniband.h
 usr/include/linux/if_link.h
 usr/include/linux/if_ltalk.h
+usr/include/linux/if_macsec.h
 usr/include/linux/if_packet.h
 usr/include/linux/if_phonet.h
 usr/include/linux/if_plip.h
@@ -1261,6 +1264,7 @@ usr/include/linux/limits.h
 usr/include/linux/llc.h
 usr/include/linux/loop.h
 usr/include/linux/lp.h
+usr/include/linux/lwtunnel.h
 usr/include/linux/magic.h
 usr/include/linux/major.h
 usr/include/linux/map_to_7segment.h
@@ -1268,6 +1272,7 @@ usr/include/linux/matroxfb.h
 usr/include/linux/mdio.h
 usr/include/linux/media.h
 usr/include/linux/mei.h
+usr/include/linux/memfd.h
 usr/include/linux/mempolicy.h
 usr/include/linux/meye.h
 usr/include/linux/mii.h
@@ -1287,6 +1292,7 @@ usr/include/linux/ncp.h
 usr/include/linux/ncp_fs.h
 usr/include/linux/ncp_mount.h
 usr/include/linux/ncp_no.h
+usr/include/linux/ndctl.h
 usr/include/linux/neighbour.h
 usr/include/linux/net.h
 usr/include/linux/net_dropmon.h
@@ -1449,7 +1455,7 @@ usr/include/linux/nfsd/nfsfh.h
 usr/include/linux/nfsd/stats.h
 usr/include/linux/nl80211.h
 usr/include/linux/nubus.h
-usr/include/linux/nvme.h
+usr/include/linux/nvme_ioctl.h
 usr/include/linux/nvram.h
 usr/include/linux/omap3isp.h
 usr/include/linux/omapfb.h
@@ -1571,6 +1577,7 @@ usr/include/linux/un.h
 usr/include/linux/unistd.h
 usr/include/linux/unix_diag.h
 usr/include/linux/usb/audio.h
+usr/include/linux/usb/cdc-wdm.h
 usr/include/linux/usb/cdc.h
 usr/include/linux/usb/ch11.h
 usr/include/linux/usb/ch9.h
@@ -1601,6 +1608,7 @@ usr/include/linux/virtio_balloon.h
 usr/include/linux/virtio_blk.h
 usr/include/linux/virtio_config.h
 usr/include/linux/virtio_console.h
+usr/include/linux/virtio_gpu.h
 usr/include/linux/virtio_ids.h
 usr/include/linux/virtio_input.h
 usr/include/linux/virtio_net.h
@@ -1681,6 +1689,7 @@ usr/include/protocols/timed.h
 usr/include/pthread.h
 usr/include/pty.h
 usr/include/pwd.h
+usr/include/rdma/hfi/hfi1_user.h
 usr/include/rdma/ib_user_cm.h
 usr/include/rdma/ib_user_mad.h
 usr/include/rdma/ib_user_sa.h
@@ -1746,6 +1755,7 @@ usr/include/rpcsvc/yppasswd.h
 usr/include/rpcsvc/yppasswd.x
 usr/include/rpcsvc/ypupd.h
 usr/include/sched.h
+usr/include/scsi/cxlflash_ioctl.h
 usr/include/scsi/fc/fc_els.h
 usr/include/scsi/fc/fc_fs.h
 usr/include/scsi/fc/fc_gs.h
@@ -1977,6 +1987,7 @@ usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/mm_malloc.h
 usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/mmintrin.h
 usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/nmmintrin.h
 usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/omp.h
+usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/pkuintrin.h
 usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/pmmintrin.h
 usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/popcntintrin.h
 usr/lib/gcc/x86_64-redhat-linux/4.8.2/include/prfchwintrin.h
@@ -2069,7 +2080,7 @@ usr/lib64/crtn.o
 usr/lib64/gcrt1.o
 usr/lib64/libBrokenLocale.so
 usr/lib64/libanl.so
-usr/lib64/libbfd-2.23.52.0.1-55.el7.so
+usr/lib64/libbfd-2.25.1-22.base.el7.so
 usr/lib64/libbfd.a
 usr/lib64/libbfd.so
 usr/lib64/libbsd-compat.a
@@ -2098,7 +2109,7 @@ usr/lib64/libnss_files.so
 usr/lib64/libnss_hesiod.so
 usr/lib64/libnss_nis.so
 usr/lib64/libnss_nisplus.so
-usr/lib64/libopcodes-2.23.52.0.1-55.el7.so
+usr/lib64/libopcodes-2.25.1-22.base.el7.so
 usr/lib64/libopcodes.a
 usr/lib64/libopcodes.so
 usr/lib64/libpthread.so
@@ -2119,7 +2130,7 @@ usr/libexec/gcc/x86_64-redhat-linux/4.8.2/lto-wrapper
 usr/libexec/gcc/x86_64-redhat-linux/4.8.2/lto1
 usr/libexec/gcc/x86_64-redhat-linux/4.8.5
 usr/libexec/getconf/default
-%%PORTDOCS%%usr/share/doc/binutils-2.23.52.0.1/README
+%%PORTDOCS%%usr/share/doc/binutils-2.25.1/README
 %%PORTDOCS%%usr/share/doc/gcc-4.8.5/COPYING
 %%PORTDOCS%%usr/share/doc/gcc-4.8.5/COPYING.LIB
 %%PORTDOCS%%usr/share/doc/gcc-4.8.5/COPYING.RUNTIME
@@ -2238,7 +2249,6 @@ usr/libexec/getconf/default
 usr/share/info/as.info.gz
 usr/share/info/bfd.info.gz
 usr/share/info/binutils.info.gz
-usr/share/info/configure.info.gz
 usr/share/info/cpp.info.gz
 usr/share/info/cppinternals.info.gz
 usr/share/info/gcc.info.gz
@@ -2264,7 +2274,6 @@ usr/share/info/libc.info-8.gz
 usr/share/info/libc.info-9.gz
 usr/share/info/libc.info.gz
 usr/share/info/libgomp.info.gz
-usr/share/info/standards.info.gz
 usr/share/locale/be/LC_MESSAGES/cpplib.mo
 usr/share/locale/be/LC_MESSAGES/gcc.mo
 usr/share/locale/bg/LC_MESSAGES/binutils.mo
@@ -2317,6 +2326,7 @@ usr/share/locale/ga/LC_MESSAGES/ld.mo
 usr/share/locale/ga/LC_MESSAGES/opcodes.mo
 usr/share/locale/hr/LC_MESSAGES/binutils.mo
 usr/share/locale/hr/LC_MESSAGES/gcc.mo
+usr/share/locale/hu/LC_MESSAGES/gprof.mo
 usr/share/locale/id/LC_MESSAGES/bfd.mo
 usr/share/locale/id/LC_MESSAGES/binutils.mo
 usr/share/locale/id/LC_MESSAGES/cpplib.mo
@@ -2361,6 +2371,7 @@ usr/share/locale/rw/LC_MESSAGES/binutils.mo
 usr/share/locale/rw/LC_MESSAGES/gas.mo
 usr/share/locale/rw/LC_MESSAGES/gprof.mo
 usr/share/locale/sk/LC_MESSAGES/binutils.mo
+usr/share/locale/sr/LC_MESSAGES/binutils.mo
 usr/share/locale/sr/LC_MESSAGES/cpplib.mo
 usr/share/locale/sr/LC_MESSAGES/gcc.mo
 usr/share/locale/sr/LC_MESSAGES/gprof.mo
@@ -2382,6 +2393,7 @@ usr/share/locale/tr/LC_MESSAGES/opcodes.mo
 usr/share/locale/uk/LC_MESSAGES/bfd.mo
 usr/share/locale/uk/LC_MESSAGES/binutils.mo
 usr/share/locale/uk/LC_MESSAGES/cpplib.mo
+usr/share/locale/uk/LC_MESSAGES/gas.mo
 usr/share/locale/uk/LC_MESSAGES/gprof.mo
 usr/share/locale/uk/LC_MESSAGES/ld.mo
 usr/share/locale/uk/LC_MESSAGES/opcodes.mo

@@ -3,14 +3,14 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.36.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
 
 COMMENT=	Pango library (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 RPMVERSION=	2.el7
 USES=		linux:c7

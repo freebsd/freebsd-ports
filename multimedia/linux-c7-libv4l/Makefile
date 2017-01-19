@@ -3,6 +3,7 @@
 
 PORTNAME=	libv4l
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	multimedia linux
 SRC_DISTFILES=	v4l-utils-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 
@@ -11,7 +12,7 @@ COMMENT=	Collection of video4linux support libraries (CentOS ${LINUX_DIST_VER})
 
 LICENSE=	LGPL20+
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 RPMVERSION=	4.el7
 USES=		linux:c7
