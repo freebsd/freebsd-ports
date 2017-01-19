@@ -1,0 +1,9 @@
+--- test/testharness.h	2016-12-23 00:57:39.000000000 -0500
++++ test/testharness.h	2017-01-17 15:46:38.623298000 -0500
+@@ -69,5 +69,5 @@
+ #elif HAVE_RDTSC
+ #include <intrin.h>
+-#elif defined(__GNUC__)
++#elif defined(__GNUC__) && (!defined(__clang__) || __clang_major__ < 4)
+ /* fallback for older GCC/MinGW */
+ static inline uint32_t __rdtsc(void)
