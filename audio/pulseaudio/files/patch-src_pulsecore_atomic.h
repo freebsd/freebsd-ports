@@ -1,4 +1,4 @@
---- src/pulsecore/atomic.h.orig	2015-09-10 04:51:41 UTC
+--- src/pulsecore/atomic.h.orig	2016-08-23 12:50:11 UTC
 +++ src/pulsecore/atomic.h
 @@ -185,39 +185,6 @@ static inline bool pa_atomic_ptr_cmpxchg
  #include <sys/param.h>
@@ -20,7 +20,7 @@
 -
 -    return (v);
 -}
--#elif defined(__sparc64__)
+-#elif defined(__sparc__) && defined(__arch64__)
 -#define atomic_load_acq_64      atomic_load_acq_long
 -#define atomic_fetchadd_int     atomic_add_int
 -#elif defined(__ia64__)
