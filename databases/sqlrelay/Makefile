@@ -11,10 +11,12 @@ COMMENT=	Persistent DB connection pooling/proxying/load balancing system
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	librudiments.so:devel/rudiments
+LIB_DEPENDS=	librudiments.so:devel/rudiments \
+		libkrb5.so:security/krb5 \
+		libcurl.so:ftp/curl
 
 WANT_GNOME=	yes
-USES=		gmake libtool pathfix python
+USES=		gmake libtool pathfix python readline
 PATHFIX_MAKEFILEIN=	Makefile
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
@@ -46,17 +48,17 @@ TOSTRIP=	bin/sqlr-start \
 		bin/sqlr-pwdenc \
 		bin/sqlr-status \
 		bin/sqlrsh \
-		lib/libsqlrodbc.so.2.0.0 \
-		lib/libsqlrutil.so.2.0.0 \
-		lib/libsqlrclient.so.2.0.0 \
-		lib/libsqlrclientwrapper.so.2.0.0 \
-		lib/libpqsqlrelay.so.2.0.0 \
-		lib/libmysql3sqlrelay.so.2.0.0 \
-		lib/libmysql40sqlrelay.so.2.0.0 \
-		lib/libmysql41sqlrelay.so.2.0.0 \
-		lib/libmysql50sqlrelay.so.2.0.0 \
-		lib/libmysql51sqlrelay.so.2.0.0 \
-		lib/libsqlrserver.so.2.0.0 \
+		lib/libsqlrodbc.so.4.0.0 \
+		lib/libsqlrutil.so.4.0.0 \
+		lib/libsqlrclient.so.4.0.0 \
+		lib/libsqlrclientwrapper.so.4.0.0 \
+		lib/libpqsqlrelay.so.4.0.0 \
+		lib/libmysql3sqlrelay.so.4.0.0 \
+		lib/libmysql40sqlrelay.so.4.0.0 \
+		lib/libmysql41sqlrelay.so.4.0.0 \
+		lib/libmysql50sqlrelay.so.4.0.0 \
+		lib/libmysql51sqlrelay.so.4.0.0 \
+		lib/libsqlrserver.so.4.0.0 \
 		libexec/sqlrelay/sqlrauth_database.so \
 		libexec/sqlrelay/sqlrauth_krb_userlist.so \
 		libexec/sqlrelay/sqlrauth_proxied.so \
@@ -73,6 +75,7 @@ TOSTRIP=	bin/sqlr-start \
 		libexec/sqlrelay/sqlrlogger_custom_sc.so \
 		libexec/sqlrelay/sqlrlogger_debug.so \
 		libexec/sqlrelay/sqlrlogger_slowqueries.so \
+		libexec/sqlrelay/sqlrnotification_events.so \
 		libexec/sqlrelay/sqlrparser_default.so \
 		libexec/sqlrelay/sqlrprotocol_sqlrclient.so \
 		libexec/sqlrelay/sqlrpwdenc_crypt.so \
@@ -81,6 +84,11 @@ TOSTRIP=	bin/sqlr-start \
 		libexec/sqlrelay/sqlrquery_sqlrcmdcstat.so \
 		libexec/sqlrelay/sqlrquery_sqlrcmdgstat.so \
 		libexec/sqlrelay/sqlrresultsettranslation_reformatdatetime.so \
+		libexec/sqlrelay/sqlrresultsettranslation_test.so \
+		libexec/sqlrelay/sqlrrouter_clientiplist.so \
+		libexec/sqlrelay/sqlrrouter_regex.so \
+		libexec/sqlrelay/sqlrrouter_userlist.so \
+		libexec/sqlrelay/sqlrschedule_cron_userlist.so \
 		libexec/sqlrelay/sqlrtranslation_normalize.so
 
 .include "${.CURDIR}/Makefile.common"

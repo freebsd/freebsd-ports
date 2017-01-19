@@ -5,8 +5,7 @@
 # PORTREVISION bumps of depending ports.
 
 PORTNAME=	pulseaudio
-PORTVERSION=	9.0
-PORTREVISION=	3
+PORTVERSION=	10.0
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -19,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/LGPL
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
-		libjson-c.so:devel/json-c \
 		libdbus-1.so:devel/dbus \
 		libltdl.so:devel/libltdl \
 		libck-connector.so:sysutils/consolekit

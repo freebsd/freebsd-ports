@@ -1,4 +1,4 @@
---- src/Makefile.in.orig	2016-02-06 03:58:09 UTC
+--- src/Makefile.in.orig	2016-12-18 06:50:16 UTC
 +++ src/Makefile.in
 @@ -11,7 +11,7 @@ LOBJS = @LOBJS@
  .SUFFIXES: .lo
@@ -10,7 +10,7 @@
  .cpp.obj:
  	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(COMPILE) $<
 @@ -22,7 +22,7 @@ clean:
- 	$(LTCLEAN) $(RM) *.lo *.o *.obj *.$(LIBEXT) *.lib *.exp *.idb *.pdb *.manifest
+ 	$(LTCLEAN) $(RM) *.lo *.o *.obj *.$(LIBEXT) *.lib *.exp *.idb *.pdb *.manifest *.ii
  
  librudiments.$(LIBEXT): $(SRCS) $(LOBJS)
 -	$(LTLINK) $(LINK) $(OUT)$@ $(LOBJS) $(LDFLAGS) $(LIBS) $(LINKFLAGS)
