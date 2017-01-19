@@ -9,6 +9,8 @@ CATEGORIES=	dns net perl5
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fingerprinting DNS servers
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
