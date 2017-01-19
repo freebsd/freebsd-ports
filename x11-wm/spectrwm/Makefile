@@ -11,8 +11,6 @@ COMMENT=	Small, dynamic tiling window manager for X11
 
 LICENSE=	ISCL
 
-EXPLICIT_SAFESTACK=		yes
-
 LIB_DEPENDS+=	libxcb-util.so:x11/xcb-util \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
