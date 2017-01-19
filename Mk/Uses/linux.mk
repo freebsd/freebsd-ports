@@ -96,6 +96,7 @@ linux_libmng_DEP=		linux-${linux_ARGS}-libmng>0:graphics/linux-${linux_ARGS}-lib
 linux_libogg_DEP=		linux-${linux_ARGS}-libogg>0:audio/linux-${linux_ARGS}-libogg
 linux_libpciaccess_DEP=		linux-${linux_ARGS}-libpciaccess>0:devel/linux-${linux_ARGS}-libpciaccess
 linux_libsndfile_DEP=		linux-${linux_ARGS}-libsndfile>0:audio/linux-${linux_ARGS}-libsndfile
+linux_libsoup_DEP=		linux-${linux_ARGS}-libsoup>0:devel/linux-${linux_ARGS}-libsoup
 linux_libssh2_DEP=		linux-${linux_ARGS}-libssh2>0:security/linux-${linux_ARGS}-libssh2
 linux_libtasn1_DEP=		linux-${linux_ARGS}-libtasn1>0:security/linux-${linux_ARGS}-libtasn1
 linux_libthai_DEP=		linux-${linux_ARGS}-libthai>0:devel/linux-${linux_ARGS}-libthai
