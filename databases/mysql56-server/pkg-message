@@ -1,6 +1,19 @@
-************************************************************************
+*****************************************************************************
 
 Remember to run mysql_upgrade the first time you start the MySQL server
 after an upgrade from an earlier version.
 
-************************************************************************
+Initial password for first time use of MySQL is saved in $HOME/.mysql_secret
+ie. when you want to use "mysql -u root -p" first you should see password
+in /root/.mysql_secret
+
+*****************************************************************************
+
+*****************************************************************************
+
+Please keep in mind that the default location for my.cnf will be changed
+from "/var/db/mysql/my.cnf" to "/usr/local/etc/mysql/my.cnf" in the near
+future.  If you do not want to move your my.cnf to the new location then
+you must set "mysql_optfile" in /etc/rc.conf to "/var/db/mysql/my.cnf".
+
+*****************************************************************************
