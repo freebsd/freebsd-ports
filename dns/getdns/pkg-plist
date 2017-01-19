@@ -5,9 +5,10 @@ include/getdns/getdns_extra.h
 %%LIBUV%%include/getdns/getdns_ext_libuv.h
 lib/libgetdns.so
 lib/libgetdns.so.1
-lib/libgetdns.so.1.4.0
+lib/libgetdns.so.1.4.1
 lib/libgetdns.a
 libdata/pkgconfig/getdns.pc
+libdata/pkgconfig/getdns_ext_event.pc
 %%LIBEV%%lib/libgetdns_ext_ev-%%PORTVERSION%%.so
 %%LIBEV%%lib/libgetdns_ext_ev-%%PORTVERSION%%.so.0
 %%LIBEV%%lib/libgetdns_ext_ev.a

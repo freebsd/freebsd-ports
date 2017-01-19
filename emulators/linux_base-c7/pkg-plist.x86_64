@@ -64,6 +64,8 @@ etc/shells
 etc/skel/.bash_logout
 etc/skel/.bash_profile
 etc/skel/.bashrc
+etc/subgid
+etc/subuid
 etc/system-release
 etc/system-release-cpe
 etc/yum.repos.d/CentOS-Base.repo
@@ -148,6 +150,7 @@ usr/bin/env
 usr/bin/eu-addr2line
 usr/bin/eu-ar
 usr/bin/eu-elfcmp
+usr/bin/eu-elfcompress
 usr/bin/eu-elflint
 usr/bin/eu-findtextrel
 usr/bin/eu-make-debug-archive
@@ -227,8 +230,10 @@ usr/bin/lsattr
 usr/bin/lsb_release
 usr/bin/lsblk
 usr/bin/lscpu
+usr/bin/lsipc
 usr/bin/lslocks
 usr/bin/lslogins
+usr/bin/lsns
 usr/bin/makedb
 usr/bin/mcookie
 usr/bin/md5sum
@@ -612,7 +617,6 @@ usr/lib/i686/nosegneg/librt-2.17.so
 usr/lib/i686/nosegneg/librt.so.1
 usr/lib/i686/nosegneg/libthread_db-1.0.so
 usr/lib/i686/nosegneg/libthread_db.so.1
-usr/lib/krb5/plugins/kdb/db2.so
 usr/lib/krb5/plugins/tls/k5tls.so
 usr/lib/ld-2.17.so
 usr/lib/ld-linux.so.2
@@ -669,33 +673,29 @@ usr/lib/libgdbm.so.4.0.0
 usr/lib/libgdbm_compat.so.4
 usr/lib/libgdbm_compat.so.4.0.0
 usr/lib/libgio-2.0.so.0
-usr/lib/libgio-2.0.so.0.4200.2
+usr/lib/libgio-2.0.so.0.4600.2
 usr/lib/libglib-2.0.so.0
-usr/lib/libglib-2.0.so.0.4200.2
+usr/lib/libglib-2.0.so.0.4600.2
 usr/lib/libgmodule-2.0.so.0
-usr/lib/libgmodule-2.0.so.0.4200.2
+usr/lib/libgmodule-2.0.so.0.4600.2
 usr/lib/libgmp.so.10
 usr/lib/libgmp.so.10.2.0
 usr/lib/libgmpxx.so.4
 usr/lib/libgmpxx.so.4.4.0
 usr/lib/libgobject-2.0.so.0
-usr/lib/libgobject-2.0.so.0.4200.2
+usr/lib/libgobject-2.0.so.0.4600.2
 usr/lib/libgssapi_krb5.so.2
 usr/lib/libgssapi_krb5.so.2.2
 usr/lib/libgssrpc.so.4
 usr/lib/libgssrpc.so.4.2
 usr/lib/libgthread-2.0.so.0
-usr/lib/libgthread-2.0.so.0.4200.2
+usr/lib/libgthread-2.0.so.0.4600.2
 usr/lib/libhistory.so.6
 usr/lib/libhistory.so.6.2
 usr/lib/libidn.so.11
 usr/lib/libidn.so.11.6.11
 usr/lib/libk5crypto.so.3
 usr/lib/libk5crypto.so.3.1
-usr/lib/libkadm5clnt_mit.so.8
-usr/lib/libkadm5clnt_mit.so.8.0
-usr/lib/libkadm5srv_mit.so.9
-usr/lib/libkadm5srv_mit.so.9.0
 usr/lib/libkdb5.so.8
 usr/lib/libkdb5.so.8.0
 usr/lib/libkeyutils.so.1
@@ -707,7 +707,7 @@ usr/lib/libkrb5.so.3.3
 usr/lib/libkrb5support.so.0
 usr/lib/libkrb5support.so.0.1
 usr/lib/liblzma.so.5
-usr/lib/liblzma.so.5.0.99
+usr/lib/liblzma.so.5.2.2
 usr/lib/libm-2.17.so
 usr/lib/libm.so.6
 usr/lib/libmemusage.so
@@ -1064,7 +1064,6 @@ usr/lib64/gconv/libISOIR165.so
 usr/lib64/gconv/libJIS.so
 usr/lib64/gconv/libJISX0213.so
 usr/lib64/gconv/libKSC.so
-usr/lib64/krb5/plugins/kdb/db2.so
 usr/lib64/krb5/plugins/tls/k5tls.so
 usr/lib64/ld-2.17.so
 usr/lib64/ld-linux-x86-64.so.2
@@ -1121,33 +1120,29 @@ usr/lib64/libgdbm.so.4.0.0
 usr/lib64/libgdbm_compat.so.4
 usr/lib64/libgdbm_compat.so.4.0.0
 usr/lib64/libgio-2.0.so.0
-usr/lib64/libgio-2.0.so.0.4200.2
+usr/lib64/libgio-2.0.so.0.4600.2
 usr/lib64/libglib-2.0.so.0
-usr/lib64/libglib-2.0.so.0.4200.2
+usr/lib64/libglib-2.0.so.0.4600.2
 usr/lib64/libgmodule-2.0.so.0
-usr/lib64/libgmodule-2.0.so.0.4200.2
+usr/lib64/libgmodule-2.0.so.0.4600.2
 usr/lib64/libgmp.so.10
 usr/lib64/libgmp.so.10.2.0
 usr/lib64/libgmpxx.so.4
 usr/lib64/libgmpxx.so.4.4.0
 usr/lib64/libgobject-2.0.so.0
-usr/lib64/libgobject-2.0.so.0.4200.2
+usr/lib64/libgobject-2.0.so.0.4600.2
 usr/lib64/libgssapi_krb5.so.2
 usr/lib64/libgssapi_krb5.so.2.2
 usr/lib64/libgssrpc.so.4
 usr/lib64/libgssrpc.so.4.2
 usr/lib64/libgthread-2.0.so.0
-usr/lib64/libgthread-2.0.so.0.4200.2
+usr/lib64/libgthread-2.0.so.0.4600.2
 usr/lib64/libhistory.so.6
 usr/lib64/libhistory.so.6.2
 usr/lib64/libidn.so.11
 usr/lib64/libidn.so.11.6.11
 usr/lib64/libk5crypto.so.3
 usr/lib64/libk5crypto.so.3.1
-usr/lib64/libkadm5clnt_mit.so.8
-usr/lib64/libkadm5clnt_mit.so.8.0
-usr/lib64/libkadm5srv_mit.so.9
-usr/lib64/libkadm5srv_mit.so.9.0
 usr/lib64/libkdb5.so.8
 usr/lib64/libkdb5.so.8.0
 usr/lib64/libkeyutils.so.1
@@ -1159,7 +1154,7 @@ usr/lib64/libkrb5.so.3.3
 usr/lib64/libkrb5support.so.0
 usr/lib64/libkrb5support.so.0.1
 usr/lib64/liblzma.so.5
-usr/lib64/liblzma.so.5.0.99
+usr/lib64/liblzma.so.5.2.2
 usr/lib64/libm-2.17.so
 usr/lib64/libm.so.6
 usr/lib64/libmemusage.so
@@ -1447,9 +1442,9 @@ usr/share/doc/e2fsprogs-1.42.9/COPYING
 usr/share/doc/e2fsprogs-1.42.9/README
 usr/share/doc/e2fsprogs-1.42.9/RELEASE-NOTES
 usr/share/doc/e2fsprogs-libs-1.42.9/COPYING
-usr/share/doc/elfutils-0.163/CONTRIBUTING
-usr/share/doc/elfutils-0.163/README
-usr/share/doc/elfutils-0.163/TODO
+usr/share/doc/elfutils-0.166/CONTRIBUTING
+usr/share/doc/elfutils-0.166/README
+usr/share/doc/elfutils-0.166/TODO
 usr/share/doc/findutils-4.5.11/AUTHORS
 usr/share/doc/findutils-4.5.11/COPYING
 usr/share/doc/findutils-4.5.11/ChangeLog
@@ -1498,10 +1493,10 @@ usr/share/doc/gdbm-1.10/NEWS
 usr/share/doc/gdbm-1.10/NOTE-WARNING
 usr/share/doc/gdbm-1.10/README
 usr/share/doc/gdbm-1.10/THANKS
-usr/share/doc/glib2-2.42.2/AUTHORS
-usr/share/doc/glib2-2.42.2/COPYING
-usr/share/doc/glib2-2.42.2/NEWS
-usr/share/doc/glib2-2.42.2/README
+usr/share/doc/glib2-2.46.2/AUTHORS
+usr/share/doc/glib2-2.46.2/COPYING
+usr/share/doc/glib2-2.46.2/NEWS
+usr/share/doc/glib2-2.46.2/README
 usr/share/doc/glibc-2.17/BUGS
 usr/share/doc/glibc-2.17/CONFORMANCE
 usr/share/doc/glibc-2.17/COPYING
@@ -1533,11 +1528,8 @@ usr/share/doc/info-5.1/COPYING
 usr/share/doc/keyutils-1.5.8/LICENCE.GPL
 usr/share/doc/keyutils-1.5.8/README
 usr/share/doc/keyutils-libs-1.5.8/LICENCE.LGPL
-usr/share/doc/krb5-libs-1.13.2/NOTICE
-usr/share/doc/krb5-libs-1.13.2/README
-usr/share/doc/krb5-libs-1.13.2/examples/kdc.conf
-usr/share/doc/krb5-libs-1.13.2/examples/krb5.conf
-usr/share/doc/krb5-libs-1.13.2/examples/services.append
+usr/share/doc/krb5-libs-1.14.1/NOTICE
+usr/share/doc/krb5-libs-1.14.1/README
 usr/share/doc/less-458/LICENSE
 usr/share/doc/libblkid-2.23.2/COPYING
 usr/share/doc/libcap-2.22/License
@@ -1620,10 +1612,10 @@ usr/share/doc/which-2.20/COPYING
 usr/share/doc/which-2.20/EXAMPLES
 usr/share/doc/which-2.20/NEWS
 usr/share/doc/which-2.20/README
-usr/share/doc/xz-libs-5.1.2/COPYING
-usr/share/doc/xz-libs-5.1.2/COPYING.GPLv2
-usr/share/doc/xz-libs-5.1.2/COPYING.GPLv3
-usr/share/doc/xz-libs-5.1.2/COPYING.LGPLv2.1
+usr/share/doc/xz-libs-5.2.2/COPYING
+usr/share/doc/xz-libs-5.2.2/COPYING.GPLv2
+usr/share/doc/xz-libs-5.2.2/COPYING.GPLv3
+usr/share/doc/xz-libs-5.2.2/COPYING.LGPLv2.1
 usr/share/doc/zlib-1.2.7/ChangeLog
 usr/share/doc/zlib-1.2.7/FAQ
 usr/share/doc/zlib-1.2.7/README
@@ -2201,14 +2193,15 @@ usr/share/info/rluserman.info.gz
 usr/share/info/sed.info.gz
 usr/share/info/which.info.gz
 usr/share/keyutils/request-key-debug.sh
-usr/share/licenses/elfutils-0.163/COPYING
-usr/share/licenses/elfutils-0.163/COPYING-GPLV2
-usr/share/licenses/elfutils-0.163/COPYING-LGPLV3
+usr/share/licenses/elfutils-0.166/COPYING
+usr/share/licenses/elfutils-0.166/COPYING-GPLV2
+usr/share/licenses/elfutils-0.166/COPYING-LGPLV3
 usr/share/licenses/gmp-6.0.0/COPYING
 usr/share/licenses/gmp-6.0.0/COPYING.LESSERv3
 usr/share/licenses/gmp-6.0.0/COPYINGv2
 usr/share/licenses/gmp-6.0.0/COPYINGv3
-usr/share/licenses/krb5-libs-1.13.2/LICENSE
+usr/share/licenses/krb5-libs-1.14.1/LICENSE
+usr/share/licenses/libsepol-2.5/COPYING
 usr/share/locale/af/LC_MESSAGES/bash.mo
 usr/share/locale/af/LC_MESSAGES/coreutils.mo
 usr/share/locale/af/LC_MESSAGES/glib20.mo
@@ -2803,6 +2796,7 @@ usr/share/man/man1/ls.1.gz
 usr/share/man/man1/lsattr.1.gz
 usr/share/man/man1/lsb_release.1.gz
 usr/share/man/man1/lscpu.1.gz
+usr/share/man/man1/lsipc.1.gz
 usr/share/man/man1/lslogins.1.gz
 usr/share/man/man1/mapfile.1.gz
 usr/share/man/man1/mcookie.1.gz
@@ -2983,6 +2977,7 @@ usr/share/man/man8/logsave.8.gz
 usr/share/man/man8/losetup.8.gz
 usr/share/man/man8/lsblk.8.gz
 usr/share/man/man8/lslocks.8.gz
+usr/share/man/man8/lsns.8.gz
 usr/share/man/man8/mke2fs.8.gz
 usr/share/man/man8/mkfs.8.gz
 usr/share/man/man8/mkfs.cramfs.8.gz
@@ -3027,6 +3022,7 @@ var/mail
 @dir etc/X11/fontpath.d
 @dir etc/bash_completion.d
 @dir etc/gss/mech.d
+@dir etc/krb5.conf.d
 @dir etc/ld.so.conf.d
 @dir etc/opt
 @dir etc/pm/config.d
@@ -3037,7 +3033,6 @@ var/mail
 @dir etc/sysconfig
 @dir etc/xdg/autostart
 @dir etc/xinetd.d
-@dir mnt
 @dir opt
 @dir srv
 @dir usr/etc
@@ -3047,12 +3042,14 @@ var/mail
 @dir usr/lib/games
 @dir usr/lib/gio/modules
 @dir usr/lib/krb5/plugins/authdata
+@dir usr/lib/krb5/plugins/kdb
 @dir usr/lib/krb5/plugins/libkrb5
 @dir usr/lib/krb5/plugins/preauth
 @dir usr/lib64/X11
 @dir usr/lib64/games
 @dir usr/lib64/gio/modules
 @dir usr/lib64/krb5/plugins/authdata
+@dir usr/lib64/krb5/plugins/kdb
 @dir usr/lib64/krb5/plugins/libkrb5
 @dir usr/lib64/krb5/plugins/preauth
 @dir usr/lib64/sse2

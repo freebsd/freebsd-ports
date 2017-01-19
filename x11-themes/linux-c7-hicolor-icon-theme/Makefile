@@ -3,6 +3,7 @@
 
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	x11-themes linux
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -11,7 +12,7 @@ PKGNAMEPREFIX=	linux-c7-
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	High-color icon theme shell from the FreeDesktop project
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 

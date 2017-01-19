@@ -3,7 +3,6 @@
 
 PORTNAME=	linux-c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	2
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org

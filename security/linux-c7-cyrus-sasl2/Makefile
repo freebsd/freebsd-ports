@@ -3,6 +3,7 @@
 
 PORTNAME=	cyrus-sasl2
 PORTVERSION=	2.1.26
+PORTREVISION=	1
 CATEGORIES=	security linux
 DISTNAME=	cyrus-sasl-lib-${PORTVERSION}-${RPMVERSION}
 SRC_DISTFILES=	cyrus-sasl-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
@@ -10,9 +11,9 @@ SRC_DISTFILES=	cyrus-sasl-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer) (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICT=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICT=	linux-c6-${PORTNAME}-[0-9]*
 
-RPMVERSION=	19.2.el7
+RPMVERSION=	20.el7_2
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes

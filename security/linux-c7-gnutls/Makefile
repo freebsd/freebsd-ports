@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.3.8
+PORTVERSION=	3.3.24
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
-RPMVERSION=	14.el7_2
+RPMVERSION=	1.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	libtasn1 libgcrypt libgpg-error

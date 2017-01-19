@@ -3,12 +3,13 @@
 
 PORTNAME=	libgpg-error
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 LICENSE=	LGPL21+
 

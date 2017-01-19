@@ -589,6 +589,7 @@
     SUBDIR += maitretarot
     SUBDIR += manaplus
     SUBDIR += mangband
+    SUBDIR += mari0
     SUBDIR += marsnomercy
     SUBDIR += masterserver
     SUBDIR += maxr

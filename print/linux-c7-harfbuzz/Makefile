@@ -2,6 +2,7 @@
 
 PORTNAME=	harfbuzz
 PORTVERSION=	0.9.36
+PORTREVISION=	1
 CATEGORIES=	print linux
 
 MAINTAINER=	emulation@FreeBSD.org

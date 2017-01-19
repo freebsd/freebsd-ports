@@ -3,6 +3,7 @@
 
 PORTNAME=	libssh2
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Library implementing the SSH2 protocol (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
 
-RPMVERSION=	10.el7
+RPMVERSION=	10.el7_2.1
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	openssl

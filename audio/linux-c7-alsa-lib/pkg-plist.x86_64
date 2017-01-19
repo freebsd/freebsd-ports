@@ -87,8 +87,9 @@ usr/share/alsa/pcm/surround50.conf
 usr/share/alsa/pcm/surround51.conf
 usr/share/alsa/pcm/surround71.conf
 usr/share/alsa/smixer.conf
+usr/share/alsa/topology/broadwell/broadwell.conf
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/asoundrc.txt
-%%PORTDOCS%%%%DOCSDIR%%/modprobe-dist-oss.conf
+usr/share/doc/alsa-lib/modprobe-dist-oss.conf
 @dir usr/share/alsa/ucm

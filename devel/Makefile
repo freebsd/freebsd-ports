@@ -1105,6 +1105,7 @@
     SUBDIR += ipython
     SUBDIR += ireport
     SUBDIR += isl
+    SUBDIR += ispc
     SUBDIR += it-eric6
     SUBDIR += itext
     SUBDIR += ivykis

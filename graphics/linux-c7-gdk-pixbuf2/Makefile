@@ -3,12 +3,13 @@
 
 PORTNAME=	gdk-pixbuf2
 PORTVERSION=	2.31.6
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the gdk-pixbuf lib (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-f10-${PORTNAME}-[0-9]* linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 RPMVERSION=	3.el7
 USES=		linux:c7
