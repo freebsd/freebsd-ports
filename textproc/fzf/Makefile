@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fzf
-PORTVERSION=	0.15.8
+PORTVERSION=	0.16.1
 CATEGORIES=	textproc
 
 MAINTAINER=	sascha@root-login.org
@@ -19,7 +19,8 @@ GH_SUBDIR:=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 GH_TUPLE=	junegunn:go-runewidth:63c378b:runwidth/src/github.com/junegunn/go-runewidth \
     		junegunn:go-shellwords:35d512a:shellwords/src/github.com/junegunn/go-shellwords \
-		junegunn:go-isatty:66b8e73:isatty/src/github.com/junegunn/go-isatty
+		junegunn:go-isatty:66b8e73:isatty/src/github.com/junegunn/go-isatty \
+		golang:crypto:b8a2a83:terminal/src/golang.org/x/crypto
 MAKE_ENV+=	CGO_CPPFLAGS="-I${NCURSESINC} -I${NCURSESBASE}/include" \
 		CGO_LDFLAGS="-L${NCURSESLIB}"
 
