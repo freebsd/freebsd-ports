@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		vmware-vsphere-cli
-PORTVERSION=		5.5.0
-PORTREVISION=		4
+PORTVERSION=		6.5.0
 CATEGORIES=		net perl5
 MASTER_SITES=		#http://communities.vmware.com/community/vmtn/developer/downloads
 DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
@@ -31,7 +30,7 @@ NO_CDROM=		May not be redistributed.  Must accept license to download.
 NO_PACKAGE=		May not be redistributed.  Must accept license to download.
 SHEBANG_FILES=		bin/* apps/host/* apps/general/* apps/vm/*
 
-DISTREL=		1384587
+DISTREL=		4566394
 
 .include <bsd.port.pre.mk>
 
@@ -58,12 +57,15 @@ pre-fetch:
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-distrib ${WRKSRC}
 	@${RM} ${WRKSRC}/vmware-install.pl
+	@${RM} -r ${WRKSRC}/lib/VMware/share/VMware/pyexe
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%EXAMPLESDIR%%|${STAGEDIR}${EXAMPLESDIR}|g' ${WRKSRC}/Makefile.PL
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/AppUtil
+	(cd ${WRKSRC}/apps/AppUtil && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/AppUtil)
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/vicfg-* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/svmotion ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/vmware-cmd ${STAGEDIR}${PREFIX}/bin
