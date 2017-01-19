@@ -1,8 +1,8 @@
---- configure.orig	2010-12-29 18:51:59.000000000 +0300
-+++ configure	2010-12-29 18:52:22.000000000 +0300
-@@ -2256,7 +2256,7 @@
-   */*) mkdir_p="\$(top_builddir)/$mkdir_p" ;;
- esac
+--- configure.orig	2016-12-27 15:20:15 UTC
++++ configure
+@@ -2763,7 +2763,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $MKDIR_P" >&5
+ $as_echo "$MKDIR_P" >&6; }
  
 -for ac_prog in gawk mawk nawk awk
 +for ac_prog in awk
