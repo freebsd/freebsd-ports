@@ -3,6 +3,7 @@
 
 PORTNAME=	efl
 PORTVERSION=	1.18.4
+PORTREVISION=	1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 
