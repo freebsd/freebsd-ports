@@ -1040,7 +1040,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 
 LANG=		C
 LC_ALL=		C
+.if defined(.PARSEDIR)
 .export		LANG LC_ALL
+.endif
 
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
