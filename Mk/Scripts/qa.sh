@@ -737,6 +737,20 @@ sonames() {
 	EOT
 }
 
+perlcore_port_module_mapping() {
+	case "$1" in
+		Net)
+			echo "Net::Config"
+			;;
+		libwww)
+			echo "LWP"
+			;;
+		*)
+			echo "$1" | sed -e 's/-/::/g'
+			;;
+	esac
+}
+
 perlcore() {
 	local portname version module gotsome
 	[ -x "${LOCALBASE}/bin/corelist" ] || return 0
@@ -744,7 +758,7 @@ perlcore() {
 		portname=$(expr "${dep}" : ".*/p5-\(.*\)")
 		if [ -n "${portname}" ]; then
 			gotsome=1
-			module=$(echo ${portname}|sed -e 's/-/::/g')
+			module=$(perlcore_port_module_mapping "${portname}")
 			version=$(expr "${dep}" : ".*>=*\([^:<]*\)")
 
 			while read l; do
