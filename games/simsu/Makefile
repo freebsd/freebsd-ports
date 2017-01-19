@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simsu
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
@@ -16,7 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		compiler:c++11-lib qmake tar:bzip2
-USE_QT5=	buildtools_build widgets
+USE_GL=		gl
+USE_QT5=	core gui widgets \
+		buildtools_build linguisttools_build
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
