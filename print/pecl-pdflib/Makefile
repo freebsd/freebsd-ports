@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdflib
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.1
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
