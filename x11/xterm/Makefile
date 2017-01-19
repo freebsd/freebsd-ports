@@ -12,6 +12,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src1 \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	MIT
 
 CONFLICTS=	x11iraf-[0-9]*
