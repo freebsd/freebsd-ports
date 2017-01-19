@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libwww
-PORTVERSION=	6.15
+PORTVERSION=	6.16
 DISTVERSIONPREFIX=	perl-
 CATEGORIES=	www devel perl5
-MASTER_SITES=	CPAN/LWP
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:OALDERS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,6 +14,7 @@ COMMENT=	Perl5 library for WWW access
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Authen-NTLM>=1.02:security/p5-Authen-NTLM \
 		p5-Encode-Locale>=0:converters/p5-Encode-Locale \
@@ -28,10 +30,13 @@ BUILD_DEPENDS=	p5-Authen-NTLM>=1.02:security/p5-Authen-NTLM \
 		p5-URI>=1.10:net/p5-URI \
 		p5-WWW-RobotRules>=6:www/p5-WWW-RobotRules
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+		p5-Test-RequiresInternet>=0:devel/p5-Test-RequiresInternet
 
 OPTIONS_DEFINE=	HTTPS
 
 CONFIGURE_ARGS=	--aliases
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

@@ -14,7 +14,6 @@ bin/lwp-request
 %%SITE_PERL%%/LWP/DebugFile.pm
 %%SITE_PERL%%/LWP/MemberMixin.pm
 %%SITE_PERL%%/LWP/Protocol.pm
-%%SITE_PERL%%/LWP/Protocol/GHTTP.pm
 %%SITE_PERL%%/LWP/Protocol/cpan.pm
 %%SITE_PERL%%/LWP/Protocol/data.pm
 %%SITE_PERL%%/LWP/Protocol/file.pm
