@@ -1,6 +1,6 @@
---- setupwfc.orig	2015-06-26 11:30:02 UTC
+--- setupwfc.orig	2016-08-19 13:26:37 UTC
 +++ setupwfc
-@@ -526,6 +526,12 @@ get_OS(){
+@@ -547,6 +547,12 @@ get_OS(){
  		PLATFORM=hp
  		DISP_PLATFORM="Hewlett-Packard (HP-UX)"
  		;;
