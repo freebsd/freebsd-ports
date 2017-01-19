@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lpeg
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ USES?=		lua
 PLIST_FILES=	%%LUA_MODLIBDIR%%/lpeg.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
+	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
 	${INSTALL_LIB} ${WRKSRC}/${PORTNAME}.so ${STAGEDIR}${LUA_MODLIBDIR}
 
 .include <bsd.port.mk>
