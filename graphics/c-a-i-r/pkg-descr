@@ -2,4 +2,4 @@ CAIR is an image resizing library that is based on the works of Shai Avidan and
 Ariel Shamir.  It is a high-performance multi-threaded library written in C++.
 It is intended to be multi-platform and multi-architecture.
 
-WWW: http://sourceforge.net/projects/c-a-i-r/
+WWW: https://sourceforge.net/projects/c-a-i-r/

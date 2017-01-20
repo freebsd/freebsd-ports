@@ -2,4 +2,4 @@ This package provides a container class for generating pdf documents
 directly from Tcl scripts. It's self-contained and requires only the
 snit package from tcllib.
 
-WWW: http://sourceforge.net/projects/pdf4tcl/
+WWW: https://sourceforge.net/projects/pdf4tcl/

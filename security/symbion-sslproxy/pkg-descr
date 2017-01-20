@@ -1,4 +1,4 @@
 The Symbion SSL Proxy listens on a TCP port, accepts SSL connections, and
 forwards them to an other (local or remote) TCP port, or UNIX domain socket.
 
-WWW: http://sourceforge.net/projects/sslproxy/
+WWW: https://sourceforge.net/projects/sslproxy/

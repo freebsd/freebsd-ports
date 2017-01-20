@@ -4,4 +4,4 @@ script that runs common make targets on batches of ports, scripts to set
 variables for make jobs (like portconf, but with more possibilities).
 And scripts to check for broken packages and missing libraries.
 
-WWW: http://sourceforge.net/projects/bsdadminscripts/
+WWW: https://sourceforge.net/projects/bsdadminscripts/

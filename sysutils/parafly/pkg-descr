@@ -2,4 +2,4 @@ Given a file containing a list of Unix commands, multithreading is used to
 process the commands in parallel on a single server. Success/failure is
 captured, and failed commands are retained and reported.
 
-WWW: http://sourceforge.net/projects/parafly/
+WWW: https://sourceforge.net/projects/parafly/

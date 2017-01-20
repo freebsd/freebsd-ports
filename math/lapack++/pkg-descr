@@ -9,4 +9,4 @@ of the capabilities of original f77 LAPACK. Emphasis is given to routines
 for solving linear systems consisting of non-symmetric matrices,
 symmetric positive definite systems, and solving linear least-square systems.
 
-WWW: http://sourceforge.net/projects/lapackpp
+WWW: https://sourceforge.net/projects/lapackpp/

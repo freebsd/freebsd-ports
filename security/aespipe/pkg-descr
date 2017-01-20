@@ -3,4 +3,4 @@ input and writes to standard output. It can be used to create and restore
 encrypted tar or cpio archives. It can be used to encrypt and decrypt
 loop-AES compatible encrypted disk images.
 
-WWW: http://sourceforge.net/projects/loop-aes/
+WWW: https://sourceforge.net/projects/loop-aes/

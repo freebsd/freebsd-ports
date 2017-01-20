@@ -7,4 +7,4 @@ more convenient in most cases.
 For strace to work, procfs has to be mounted. FreeBSD does not mount it by
 default. For more information, man procfs.
 
-WWW: http://sourceforge.net/projects/strace/
+WWW: https://sourceforge.net/projects/strace/

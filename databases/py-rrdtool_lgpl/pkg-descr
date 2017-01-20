@@ -3,4 +3,4 @@ wonderful graphing and logging utility. This wrapper
 implementation has worked from the scratch (without SWIG),
 and it's under LGPL.
 
-WWW: http://sourceforge.net/projects/py-rrdtool/
+WWW: https://sourceforge.net/projects/py-rrdtool/

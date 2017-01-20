@@ -6,4 +6,4 @@ engine. This module calls your perl callbacks using interpreters from a
 threaded persistent interpreter pool. Milter contexts are presented using an
 object-oriented style interface for performing operations on a Milter context.
 
-WWW: http://sourceforge.net/projects/sendmail-milter/
+WWW: https://sourceforge.net/projects/sendmail-milter/
