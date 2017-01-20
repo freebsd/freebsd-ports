@@ -41,7 +41,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 
 P11_DESC=		PKCS#11 support via libp11
-P11_LIB_DEPENDS=	libp11.so:${PORTSDIR}/security/libp11
+P11_LIB_DEPENDS=	libp11.so:security/libp11
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

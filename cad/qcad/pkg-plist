@@ -24,7 +24,6 @@ lib/libqcadzip.so.0
 lib/libspatialindexnavel.so
 lib/libspatialindexnavel.so.0
 lib/libstemmer.a
-share/applications/usr_local_bin_qcadbin.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.dxf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.dxf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example00.dxf

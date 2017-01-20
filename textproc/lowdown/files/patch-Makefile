@@ -1,0 +1,19 @@
+--- Makefile.orig	2017-01-19 23:17:59 UTC
++++ Makefile
+@@ -21,7 +21,7 @@ LIBDIR 		 = $(PREFIX)/lib
+ INCLUDEDIR	 = $(PREFIX)/include
+ MANDIR 		 = $(PREFIX)/man
+ WWWDIR		 = /var/www/vhosts/kristaps.bsd.lv/htdocs/lowdown
+-HTMLS		 = archive.html index.html lowdown.1.html lowdown.3.html README.html
++HTMLS		 = archive.html index.html lowdown.1.html README.html
+ PDFS		 = index.pdf README.pdf
+ MDS		 = index.md README.md
+ CSSS		 = template.css mandoc.css
+@@ -54,7 +54,6 @@ install: all
+ 	install -m 0644 liblowdown.a $(DESTDIR)$(LIBDIR)
+ 	install -m 0644 lowdown.h $(DESTDIR)$(INCLUDEDIR)
+ 	install -m 0644 lowdown.1 $(DESTDIR)$(MANDIR)/man1
+-	install -m 0644 lowdown.3 $(DESTDIR)$(MANDIR)/man3
+ 
+ index.xml README.xml index.pdf README.pdf: lowdown
+ 

@@ -15,6 +15,7 @@ COMMENT=	Perl5 NTLM authentication module
 BUILD_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC
 RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
