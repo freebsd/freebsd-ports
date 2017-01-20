@@ -119,6 +119,7 @@
     SUBDIR += dshell
     SUBDIR += dtcp
     SUBDIR += dtcpclient
+    SUBDIR += dual-dhclient
     SUBDIR += e169-stats
     SUBDIR += easysoap
     SUBDIR += echoping
