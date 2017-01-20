@@ -38,7 +38,7 @@ CFLAGS+=	-DNDEBUG
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,/usr/share,${LOCALBASE}/share,g; s,fonts2,fonts,' ${WRKSRC}/Unix-only/fontinfo.pl
-	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS|OPT)/d; s,/usr/share,${PREFIX}/share,g; s|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS|OPT)/d; s,/usr/share,${PREFIX}/share,g; s|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/Makefile.Linux
 	@${REINPLACE_CMD} -E 's,/usr/share,${PREFIX}/share,g' ${WRKSRC}/antiword.h
 
 post-install:
