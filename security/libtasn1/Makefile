@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtasn1
-PORTVERSION=	4.9
+PORTVERSION=	4.10
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 USE_LDCONFIG=	yes
 USES=		cpe pkgconfig pathfix gmake libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-gcc-warnings
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	gnu
 
