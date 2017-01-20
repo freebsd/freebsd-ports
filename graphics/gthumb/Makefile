@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	gthumb
-PORTVERSION=	3.4.3
-PORTREVISION=	2
+PORTVERSION=	3.4.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		bison compiler:c++11-lib desktop-file-utils gettext gmake \
-		libtool pathfix pkgconfig tar:xz
+		libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intltool librsvg2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_jpeg_jpeg_destroy_decompress=yes \
@@ -30,9 +29,6 @@ CONFIGURE_ARGS=	--disable-libchamplain \
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	GTHUMB_VER="3.4"
 
