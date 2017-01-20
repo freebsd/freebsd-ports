@@ -1,0 +1,11 @@
+TIMESTAMP = 1484951365
+SHA256 (simeji-jid-0.6.3_GH0.tar.gz) = a8f60c3aaf1ebe78bfc3c20e1b0ff06f0879c78f52901759f030166acb9353ca
+SIZE (simeji-jid-0.6.3_GH0.tar.gz) = 11979
+SHA256 (bitly-go-simplejson-aabad6e_GH0.tar.gz) = 37fd05170e7c632bfb85ce6646ce2bfbc4c3e50610bbfa9922f98d1f749ef754
+SIZE (bitly-go-simplejson-aabad6e_GH0.tar.gz) = 5992
+SHA256 (mattn-go-runewidth-d6bea18f_GH0.tar.gz) = 7ad847cd4cba8007609f8e0d42f90ff6220ae63c85a0e441eb10558859226fef
+SIZE (mattn-go-runewidth-d6bea18f_GH0.tar.gz) = 5877
+SHA256 (nsf-termbox-go-abe82ce_GH0.tar.gz) = d74082bddc8d7de6f2444cdbb553e6bd409bf93e8fe76ca4eff4911ccdbd9726
+SIZE (nsf-termbox-go-abe82ce_GH0.tar.gz) = 30258
+SHA256 (pkg-errors-645ef00_GH0.tar.gz) = b2e989515688d916216dd0a1b82cd9b18e8fb4fdf0370473996bdde41b83a41f
+SIZE (pkg-errors-645ef00_GH0.tar.gz) = 11342
