@@ -85,7 +85,9 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/spamassassin.lua
 %%DATADIR%%/lua/trie.lua
+%%DATADIR%%/lua/url_reputation.lua
 %%DATADIR%%/lua/whitelist.lua
+%%DATADIR%%/rules/global_functions.lua
 %%DATADIR%%/rules/forwarding.lua
 %%DATADIR%%/rules/html.lua
 %%DATADIR%%/rules/http_headers.lua
@@ -104,8 +106,6 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/css/bootstrap.min.css
 %%DATADIR%%/www/css/d3evolution.css
 %%DATADIR%%/www/css/datatables.min.css
-%%DATADIR%%/www/css/glyphicons-halflings-regular.woff
-%%DATADIR%%/www/css/glyphicons-halflings-regular.woff2
 %%DATADIR%%/www/css/rspamd.css
 %%DATADIR%%/www/favicon.ico
 %%DATADIR%%/www/fonts/glyphicons-halflings-regular.ttf
@@ -122,8 +122,8 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/js/bootstrap.min.js
 %%DATADIR%%/www/js/d3.min.js
 %%DATADIR%%/www/js/jquery-3.1.1.min.js
-%%DATADIR%%/www/js/jquery.cookie.min.js
 %%DATADIR%%/www/js/rspamd.js
+%%DATADIR%%/www/js/visibility.min.js
 %%DATADIR%%/www/plugins.txt
 %%DATADIR%%/www/react-index.html
 man/man1/rspamadm.1.gz
