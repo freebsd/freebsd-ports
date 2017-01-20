@@ -3,6 +3,7 @@
 
 PORTNAME=	synth
 PORTVERSION=	1.66
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libncurses.a:devel/ncurses \
 USES=		ada:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
+GH_TAGNAME=	4d9f5ea
 
 GPR=		${LOCALBASE}/lib/gnat
 MAKE_ENV=	NCURSES_LINK=static

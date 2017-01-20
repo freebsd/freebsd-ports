@@ -2,37 +2,59 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.6.34
+PORTVERSION=	5.6.35
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.6
 PKGNAMESUFFIX?=	56-server
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	mokhi64@gmail.com
 COMMENT?=	Multithreaded SQL database (server)
 
-BROKEN_powerpc64=	Does not build
+LICENSE=	GPLv2
 
 SLAVEDIRS=	databases/mysql56-client
-USES=		cmake shebangfix
+USES=		bison:build cmake:outsource compiler:c11 compiler:c++11-lib \
+		cpe libedit localbase perl5 shebangfix ssl
 
-CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
+USE_PERL5=	run
+
+MY_DBDIR=	/var/db/mysql
+MY_SECDIR=	/var/db/mysql_secure
+MY_TMPDIR=	/var/db/mysql_tmpdir
+
+LIB_DEPENDS+=	libevent.so:devel/libevent2 \
+		liblz4.so:archivers/liblz4
+
+CMAKE_BUILD_TYPE=	Release
+
+CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
+		-DINSTALL_LDCONFIGDIR="${LOCALBASE}/libdata/ldconfig" \
+		-DINSTALL_PKGCONFIGDIR="${LOCALBASE}/libdata/pkgconfig" \
+		-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
 		-DINSTALL_INCLUDEDIR="include/mysql" \
 		-DINSTALL_INFODIR="info" \
 		-DINSTALL_LIBDIR="lib/mysql" \
 		-DINSTALL_MANDIR="man" \
-		-DINSTALL_MYSQLDATADIR="/var/db/mysql" \
+		-DINSTALL_MYSQLDATADIR="${MY_DBDIR}" \
+		-DINSTALL_MYSQLKEYRINGDIR="etc/mysql/keyring" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
 		-DINSTALL_MYSQLTESTDIR="share/mysql/tests" \
 		-DINSTALL_PLUGINDIR="lib/mysql/plugin" \
 		-DINSTALL_SBINDIR="libexec" \
 		-DINSTALL_SCRIPTDIR="bin" \
+		-DINSTALL_SECURE_FILE_PRIVDIR="${MY_SECDIR}" \
 		-DINSTALL_SHAREDIR="share" \
 		-DINSTALL_SQLBENCHDIR="share/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
+		-DMYSQL_KEYRINGDIR="${ETCDIR}/keyring" \
+		-DWITH_BOOST="${WRKSRC}/boost" \
 		-DWITH_EDITLINE=system \
-		-DWITH_LIBWRAP=1
+		-DWITH_LIBEVENT=system \
+		-DWITH_LZ4=system \
+		-DWITH_ZLIB=system \
+		-DINSTALL_MYSQLTESTDIR=0
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
@@ -40,22 +62,31 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+SUB_LIST=	MY_DBDIR=${MY_DBDIR} \
+		MY_SECDIR=${MY_SECDIR} \
+		MY_TMPDIR=${MY_TMPDIR}
+
+PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
+		MY_SECDIR=${MY_SECDIR} \
+		MY_TMPDIR=${MY_TMPDIR}
+
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
-USE_MYSQL=	yes
-WANT_MYSQL_VER=	56
-
-USES+=		perl5
-USE_PERL5=	run
+USES+=		mysql:56
 
 CONFLICTS_INSTALL=	mysql5[0-57-9]-server-* \
-			mariadb*-server-* \
-			percona*-server-*
+			mysql[0-46-9][0-9]-server-* \
+			mariadb[0-9][0-9]-server-* \
+			percona[0-9][0-9]-server-*
 
 USE_RC_SUBR=	mysql-server
 
+SUB_FILES=	my.cnf.sample
+
 USERS=		mysql
 GROUPS=		mysql
+
+USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 
 MMAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 \
 		mysql.server.1 mysql_convert_table_format.1 mysql_fix_extensions.1 \
@@ -65,14 +96,57 @@ MMAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1
 		mysqltest.1 perror.1 replace.1 resolve_stack_dump.1 resolveip.1
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
+
+OPTIONS_GROUP=		STORAGE
+OPTIONS_GROUP_STORAGE=	ARCHIVE BLACKHOLE EXAMPLE FEDERATED INNOBASE PARTITION PERFSCHEMA
+OPTIONS_SUB=		YES
+STORAGE_DESC=		Permissible "Storage Engines" (to compile statically into the server)
+ARCHIVE_DESC=		Compile "Archive Storage" statically in server
+BLACKHOLE_DESC=		Compile "Blackhole Storage" statically in server
+EXAMPLE_DESC=		Compile "Example Storage" statically in server
+FEDERATED_DESC=		Compile "Federated Storage" statically in server
+INNOBASE_DESC=		Compile "InnoDB Storage" statically in server
+PARTITION_DESC=		Compile "Partitioning support Storage" statically in server
+PERFSCHEMA_DESC=	Compile "Performance Schema Storage" statically in server
+
+ARCHIVE_CMAKE_ON=	-DWITH_ARCHIVE_STORAGE_ENGINE=1
+BLACKHOLE_CMAKE_ON=	-DWITH_BLACKHOLE_STORAGE_ENGINE=1
+EXAMPLE_CMAKE_ON=	-DWITH_EXAMPLE_STORAGE_ENGINE=1
+FEDERATED_CMAKE_ON=	-DWITH_FEDERATED_STORAGE_ENGINE=1
+INNOBASE_CMAKE_ON=	-DWITH_INNOBASE_STORAGE_ENGINE=1
+PARTITION_CMAKE_ON=	-DWITH_PARTITION_STORAGE_ENGINE=1
+PERFSCHEMA_CMAKE_ON=	-DWITH_PERFSCHEMA_STORAGE_ENGINE=1
+
+OPTIONS_GROUP+=		FEATURES
+OPTIONS_GROUP_FEATURES=	PERFSCHM
+FEATURES_DESC=		Default features knobs
+PERFSCHM_DESC=		Enable "Performance Schema" by default (High RAM usage)
+OPTIONS_DEFAULT+=	PERFSCHM
+
+PERFSCHM_SUB_LIST+=	PERFSCHEMRC=""
+PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+CMAKE_ARGS+=		-DWITH_SSL=system
 .else
-USES+=		libedit
+CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
 
-.include <bsd.port.pre.mk>
+.if !defined(CLIENT_ONLY)
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKDIR}/my.cnf.sample ${STAGEDIR}${ETCDIR}/my.cnf.sample
+
+	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
+	${MKDIR} ${STAGEDIR}${MY_SECDIR}
+	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
+.endif
 
 .if ${ARCH} == "armv6"
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-config.h.cmake

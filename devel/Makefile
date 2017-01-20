@@ -1104,6 +1104,7 @@
     SUBDIR += ioncube
     SUBDIR += ipython
     SUBDIR += ireport
+    SUBDIR += isa-l
     SUBDIR += isl
     SUBDIR += ispc
     SUBDIR += it-eric6
