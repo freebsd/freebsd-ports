@@ -10,6 +10,8 @@ MASTER_SITES=	http://christian.amsuess.com/tools/arandr/files/ \
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Another XRandR GUI
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0.6:textproc/py-docutils
