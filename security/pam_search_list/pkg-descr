@@ -2,4 +2,4 @@ This PAM service module allows PAM-enabled applications to check if
 the target user is in some arbitrary plaintext list. Similar to module
 pam_ftpusers from the FreeBSD Project and is based on it's code.
 
-WWW: http://sourceforge.net/projects/pam-search-list/
+WWW: https://sourceforge.net/projects/pam-search-list/

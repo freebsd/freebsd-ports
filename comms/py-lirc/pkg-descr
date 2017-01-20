@@ -2,4 +2,4 @@ Python module to interact with remote controls via lirc. Currently only
 Linux version exists, but porters for winLirc or other systems are
 welcome.
 
-WWW: http://sourceforge.net/projects/pylirc/
+WWW: https://sourceforge.net/projects/pylirc/

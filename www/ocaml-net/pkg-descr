@@ -15,4 +15,4 @@ Ocamlnet consists of a number of libraries:
     * netsys contains bindings for system functions
     * smtp and pop are two further client implementations
 
-WWW: http://sourceforge.net/projects/ocamlnet
+WWW: https://sourceforge.net/projects/ocamlnet/

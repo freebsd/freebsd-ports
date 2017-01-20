@@ -5,4 +5,4 @@ each thread in that process.
 It's useful for finding out what wedged processes are up to, getting
 profiles of what applications, and just satisfying one's curiosity.
 
-WWW: http://sourceforge.net/projects/bsd-pstack/
+WWW: https://sourceforge.net/projects/bsd-pstack/

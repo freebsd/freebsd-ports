@@ -8,4 +8,4 @@ Known limitations:
 	- Cannot write to port 2. Libraries will eat up your RAM.
 	- HPGCC2/3 SD I/O is unstable.
 
-WWW: http://sourceforge.net/projects/x49gp/
+WWW: https://sourceforge.net/projects/x49gp/

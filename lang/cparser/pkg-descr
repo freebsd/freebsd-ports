@@ -20,4 +20,4 @@ external preprocessor.
 * compiler driver compatible with GCC (-fxxx, -Wxxx, -M, ...)
 * uses libFIRM for optimization and code generation (devel/libfirm)
 
-WWW: http://sourceforge.net/projects/cparser/
+WWW: https://sourceforge.net/projects/cparser/

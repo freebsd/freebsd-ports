@@ -4,4 +4,4 @@ to handle configuration and negotiation in user land, while routing
 all data packets strictly in the kernel. It is configured via an
 XML configuration file.
 
-WWW: http://sourceforge.net/projects/libpdel/
+WWW: https://sourceforge.net/projects/libpdel/
