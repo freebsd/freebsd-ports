@@ -45,7 +45,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '/^CONLY =/s|^CONLY =.*|CONLY = ${CC}|' \
 		-e '/^CPLUS =/s|^CPLUS =.*|CPLUS = ${CXX}|' \
-			${WRKSRC}/build/FreeBSD.${CC_BASENAME}.inc
+			${WRKSRC}/build/FreeBSD.${COMPILER_TYPE}.inc
 
 do-install:
 	cd ${WRKSRC}; \
