@@ -453,6 +453,7 @@
     SUBDIR += linuxdoc-tools
     SUBDIR += localize
     SUBDIR += loook
+    SUBDIR += lowdown
     SUBDIR += lt-aspell
     SUBDIR += lt-hyphen
     SUBDIR += lttoolbox
