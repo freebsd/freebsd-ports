@@ -3,7 +3,7 @@
 PORTNAME=	grafana
 PORTVERSION=	2.6.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://files.bartelmess.io/public/:static_assets
 PKGNAMESUFFIX=	2

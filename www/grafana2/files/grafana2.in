@@ -41,7 +41,7 @@ grafana_precmd()
     chown ${grafana2_user}:${grafana2_group} %%GRAFANADATADIR%%
     chown ${grafana2_user}:${grafana2_group} %%GRAFANALOGDIR%%
     chown ${grafana2_user}:${grafana2_group} %%GRAFANAHOMEDIR%%data/log/
-    install -d -o ${grafana3_user} %%GRAFANAPIDDIR%%
+    install -d -o ${grafana2_user} %%GRAFANAPIDDIR%%
     install -o ${grafana2_user} /dev/null ${pidfile}
 }
 
