@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.5
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
 
@@ -27,6 +27,7 @@ GH_TAGNAME=	v${PORTVERSION}
 
 USES=		cmake compiler:c11 libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+PLIST_SUB=	VER=${PORTVERSION:C/0.//}.0 SO=1
 
 OPTIONS_DEFINE=		DAEMON
 OPTIONS_SUB=		yes
