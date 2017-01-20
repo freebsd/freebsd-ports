@@ -55,6 +55,8 @@ NATIVE_IMPLIES=	HIPE
 
 OPTIONS_DEFAULT=HIPE KQUEUE OPENSSL SCTP SMP THREADS DTRACE
 OPTIONS_EXCLUDE_DragonFly=	HIPE NATIVE SCTP
+# ld(1) fails to link probes: missing __dtrace_erlang___* symbols
+OPTIONS_EXCLUDE_aarch64=	DTRACE
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
