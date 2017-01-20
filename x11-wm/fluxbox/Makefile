@@ -12,6 +12,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Small and fast window manager based on BlackBox
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
