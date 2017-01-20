@@ -9,15 +9,11 @@ MASTER_SITES=	http://download.drobilla.net/
 MAINTAINER=	meka@tilda.center
 COMMENT=	C library for RDF syntax
 
-LICENSE=	ISC
-LICENSE_NAME=	ISC
-LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig tar:bzip2 waf
 USE_LDCONFIG=	yes
-PKG_CONFIG_PATH=	${PREFIX}/libdata/pkgconfig
-CONFIGURE_ARGS+=	PKG_CONFIG_PATH=${PKG_CONFIG_PATH}
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata/
