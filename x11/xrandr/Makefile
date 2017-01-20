@@ -7,6 +7,8 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Primitive command line interface to the RandR extension
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	MIT
 
 XORG_CAT=	app
