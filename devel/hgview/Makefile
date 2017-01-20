@@ -30,10 +30,6 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/python-support/mercurial-common|${PYTHON_SITELIBDIR:C,^${PYTHONBASE}/,,}|' \
-		${WRKSRC}/hgviewlib/__pkginfo__.py
-	@${FIND} ${WRKSRC} -name __pkginfo__.py | ${XARGS} \
-		${REINPLACE_CMD} -e 's|share/man|man|'
 	@${REINPLACE_CMD} -e 's|path/to.*hgview.py|${PYTHON_SITELIBDIR}/hgext/hgview.py|' \
 		${WRKSRC}/README
 	@${REINPLACE_CMD} -e 's|'make'|'${MAKE_CMD}'|' ${WRKSRC}/setup.py
