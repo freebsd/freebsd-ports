@@ -6,4 +6,4 @@ A companion to [incr Tcl] called [incr Tk] builds a ``mega-widget''
 framework into Tk. The [incr Tk] extension is also known as
 ``itk'' and is available in x11-toolkits.
 
-WWW: http://sourceforge.net/projects/incrtcl/
+WWW: https://sourceforge.net/projects/incrtcl/

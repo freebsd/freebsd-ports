@@ -132,7 +132,7 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/spanish/errmsg.sys
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
-@sample(root,wheel,0644) %%ETCDIR%%/my.cnf.sample
+%%ETCDIR%%/my.cnf.sample
 @dir(mysql,mysql,0750) %%ETCDIR%%/keyring
 @dir(mysql,mysql,0750) %%MY_SECDIR%%
 @dir(mysql,mysql,0750) %%MY_TMPDIR%%

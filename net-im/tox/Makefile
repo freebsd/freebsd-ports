@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.5
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
 
@@ -17,8 +17,8 @@ LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
 		libsodium.so:security/libsodium		\
 		libopencv_core.so:graphics/opencv2-core	\
 		libopus.so:audio/opus
-TEST_DEPENDS=	libmsgpackc.so:devel/msgpack		\
-		libportaudio.so:audio/portaudio
+TEST_DEPENDS=	${LOCALBASE}/lib/libmsgpackc.so:devel/msgpack	\
+		${LOCALBASE}/lib/libportaudio.so:audio/portaudio
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
@@ -27,6 +27,7 @@ GH_TAGNAME=	v${PORTVERSION}
 
 USES=		cmake compiler:c11 libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+PLIST_SUB=	VER=${PORTVERSION:C/0.//}.0 SO=1
 
 OPTIONS_DEFINE=		DAEMON
 OPTIONS_SUB=		yes

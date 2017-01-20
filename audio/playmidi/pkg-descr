@@ -8,4 +8,4 @@ ready running, it will allow you to control the currently running invoca-
 tion until its death, after which time all waiting invocations fight to
 go first.
 
-WWW: http://sourceforge.net/projects/playmidi/
+WWW: https://sourceforge.net/projects/playmidi/

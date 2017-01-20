@@ -2,4 +2,4 @@ mail2nntp is a bridge from email realm to the newsgroup one.
 It can be used to replicate a mailing-list on a newsgroup server.
 It is a generic toot, using NNTP network commands
 
-WWW: http://sourceforge.net/projects/mail2nntp/
+WWW: https://sourceforge.net/projects/mail2nntp/

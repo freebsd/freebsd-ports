@@ -3,4 +3,4 @@ over ssh on multiple hosts with one command. When possible mussh will use
 ssh-agent and RSA/DSA keys to minimize the need to enter your password
 more than once.
 
-WWW: http://sourceforge.net/projects/mussh/
+WWW: https://sourceforge.net/projects/mussh/

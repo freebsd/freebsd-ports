@@ -2,38 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	usbutils
-PORTVERSION=	0.86
-PORTREVISION=	2
+PORTVERSION=	0.91
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/linux-usb/${PORTNAME} \
-		http://pkgs.fedoraproject.org/repo/pkgs/usbutils/usbutils-0.86.tar.gz/34979f675d2bcb3e1b45012fa830a53f/ \
-		http://ftp.be.debian.org/pub/linux/utils/usb/usbutils/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility for listing USB devices
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pathfix pkgconfig
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--datadir=${DATADIR} --enable-zlib
-
-PORTDOCS=	AUTHORS ChangeLog NEWS README
+RUN_DEPENDS=	usbhid-dump:sysutils/usbhid-dump \
+		${LOCALBASE}/share/usbids/usb.ids:misc/usbids
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e '/PKG_CONFIG.*libusb/s/ >= 0\.1\.[0-9]*/-0.1/' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -i '' \
-		-e 's|/bin/bash|/bin/sh|' \
-		${WRKSRC}/usb-devices
+CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share/usbids --enable-zlib
+CONFIGURE_ENV=	LIBUSB_CFLAGS="-I/usr/include" LIBUSB_LIBS="-L/usr/lib -lusb"
+GNU_CONFIGURE=	yes
+USES=		autoreconf gmake pkgconfig shebangfix
+
+PORTDOCS=	AUTHORS ChangeLog NEWS README
+
+GH_ACCOUNT=	gregkh
+USE_GITHUB=	yes
+
+SHEBANG_FILES=	usb-devices
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

@@ -3,4 +3,4 @@ match free tiles of the same type to eliminate them from the board.
 Tiles may only be eliminated if a line can be made between between
 the matched pair not exceeding two turns.
 
-WWW: http://sourceforge.net/projects/llk-linux
+WWW: https://sourceforge.net/projects/llk-linux/

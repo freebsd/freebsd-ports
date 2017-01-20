@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170120:
+  AFFECTS: users of databases/mysql56-server
+  AUTHOR: feld@FreeBSD.org
+
+  databases/mysql56-server was updated to 5.6.35 which included backported
+  rc script changes from the mysql57-server port. This broke mysql_optfile in
+  rc.conf and also forced a sample my.cnf if none existed. MySQL has
+  some parameters which cannot be changed after a database has been
+  created, so this caused MySQL to fail to start.
+
+  This change was reverted in mysql56-server-5.6.35_1
+
+  An additional change was made in mysql56-server-5.6.35_2 to prevent
+  automatic loading of a sample my.cnf which was causing issues for
+  users who were running without a my.cnf.
+
 20170117:
   AFFECTS: users of EoL'ed FreeBSD versions (<10.3, 11 prior to 11.0)
   AUTHOR: amdmi3@FreeBSD.org

@@ -2,4 +2,4 @@ This is a simple tool that dumps System V shared memory segments, files and
 text. It might be useful when you have to debug programs that use System V
 shared memory.
 
-WWW: http://sourceforge.net/projects/shmcat/
+WWW: https://sourceforge.net/projects/shmcat/

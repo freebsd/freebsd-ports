@@ -3,4 +3,4 @@ into executables using many of techniques found in
 Thomas Heller's py2exe, Godon McMillan's Installer and
 the Freeze utility that ships with Python itself.
 
-WWW: http://sourceforge.net/projects/cx-freeze/
+WWW: https://sourceforge.net/projects/cx-freeze/

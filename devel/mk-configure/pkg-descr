@@ -2,4 +2,4 @@ mk-configure is a lightweight replacement for GNU autotools, written in bmake
 (portable version of NetBSD make) and POSIX shell. mk-configure also provides
 standalone mkc_check_xxx scripts that can be used without bmake.
 
-WWW: http://sourceforge.net/projects/mk-configure/
+WWW: https://sourceforge.net/projects/mk-configure/

@@ -2,4 +2,4 @@ BWA is a program for aligning sequencing reads against a large reference
 genome (e.g. human genome). It has two major components, one for read shorter
 than 150bp and the other for longer reads.
 
-WWW: http://sourceforge.net/projects/bio-bwa/
+WWW: https://sourceforge.net/projects/bio-bwa/

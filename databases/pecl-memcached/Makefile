@@ -37,7 +37,7 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 .include <bsd.port.pre.mk>
 
-.if ${PHP_VER} == 70
+.if ${PHP_VER} >= 70
 WRKSRC_SUBDIR=	../php-${PORTNAME}-${PHP7_TAGNAME}
 .endif
 

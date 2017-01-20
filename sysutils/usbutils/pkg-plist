@@ -1,8 +1,5 @@
 bin/usb-devices
 libdata/pkgconfig/usbutils.pc
-sbin/lsusb
-sbin/update-usbids.sh
 man/man1/usb-devices.1.gz
 man/man8/lsusb.8.gz
-%%DATADIR%%/usb.ids
-%%DATADIR%%/usb.ids.gz
+sbin/lsusb
