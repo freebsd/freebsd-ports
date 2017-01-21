@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: jackd
+# REQUIRE: LOGIN
+#
+# Add the following line to /etc/rc.conf to enable jackd:
+#
+# jackd_enable="YES"
+#
+
+: ${jackd_enable="NO"}
+: ${jackd_user="root"}
+: ${jackd_rtprio="NO"}
+: ${jackd_args="-r -doss -r44100 -p1024 -n3 -w16"}
+
+. /etc/rc.subr
+
+name=jackd
+rcvar=jackd_enable
+procname=%%PREFIX%%/bin/jackd
+start_cmd="start_jackd"
+
+start_jackd() {
+  echo "Starting ${name}."
+  if [ $jackd_rtprio = "YES" ]; then
+    local rt="rtprio 1"
+  fi
+  # daemon(8) should be able to set the realtime priority, but it isn't
+  $rt daemon -p /var/run/${name}.pid -u ${jackd_user} %%PREFIX%%/bin/jackd ${jackd_args} >/var/log/${name}.log 2>&1
+}
+
+load_rc_config ${name}
+run_rc_command "$1"
