@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunnel a TCP/IP connection through a HTTP/TCP/IP connection
 
+EXPLICIT_SAFESTACK=		yes
+
 OPTIONS_DEFINE=	DEBUG
 
 GNU_CONFIGURE=	yes
