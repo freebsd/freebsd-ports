@@ -51,7 +51,7 @@ NETADDR_DESC=	Dependency on py-netaddr for ipaddr() filter
 NETADDR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr
 
 post-patch:
-.for f in bin/* docs/man/man1/* examples/* lib/ansible/*.py \
+.for f in bin/ansible docs/man/man1/* examples/* lib/ansible/*.py \
 	lib/ansible/*/*.py lib/ansible/*/*/*.py lib/ansible/*/*/*/*.py
 	@${REINPLACE_CMD} -e 's|/etc/ansible|${ETCDIR}|' ${WRKSRC}/${f}
 .endfor
