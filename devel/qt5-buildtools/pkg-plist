@@ -1,6 +1,6 @@
-%%QT_LIBDIR%%/libQt5Bootstrap.a
-%%QT_LIBDIR%%/libQt5Bootstrap.prl
 %%QT_BINDIR%%/moc
 %%QT_BINDIR%%/rcc
 %%QT_BINDIR%%/syncqt.pl
+%%QT_LIBDIR%%/libQt5Bootstrap.a
+%%QT_LIBDIR%%/libQt5Bootstrap.prl
 %%QT_MKSPECDIR%%/modules/qt_lib_bootstrap_private.pri

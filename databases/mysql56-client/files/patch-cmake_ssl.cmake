@@ -5,7 +5,11 @@
         OPENSSL_LIBRARY   AND
         CRYPTO_LIBRARY      AND
 -       OPENSSL_MAJOR_VERSION STREQUAL "1"
+<<<<<<< HEAD
 +       OPENSSL_MAJOR_VERSION VERSION_GREATER "1"
+=======
++       OPENSSL_MAJOR_VERSION VERSION_GREATER_EQUAL "1"
+>>>>>>> upstream/master
        )
        SET(OPENSSL_FOUND TRUE)
      ELSE()

@@ -1,4 +1,4 @@
---- Makefile.orig	2017-01-19 23:17:59 UTC
+--- Makefile.orig	2017-01-20 14:49:54 UTC
 +++ Makefile
 @@ -21,7 +21,7 @@ LIBDIR 		 = $(PREFIX)/lib
  INCLUDEDIR	 = $(PREFIX)/include

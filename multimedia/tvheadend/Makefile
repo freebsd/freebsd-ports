@@ -32,9 +32,9 @@ NOPIE_PORTS=	yes
 
 SHEBANG_FILES=	${WRKSRC}/Autobuild.sh \
 		${WRKSRC}/configure \
+		${WRKSRC}/support/apt-update \
 		${WRKSRC}/support/configure.inc \
 		${WRKSRC}/support/getmuxlist \
-		${WRKSRC}/support/pbuilder \
 		${WRKSRC}/support/version
 
 TVHUSER?=	tvheadend

@@ -3,6 +3,7 @@
 
 PORTNAME=	diligent
 PORTVERSION=	0.2.7
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -11,11 +12,9 @@ COMMENT=	Unofficial Qt Slack client
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libQt5WebKitWidgets.so:www/webkit-qt5
-
 USE_LDCONFIG=	yes
-USE_QT5=	core gui network svg linguist \
-		buildtools x11extras widgets
+USE_QT5=	core gui linguist network svg \
+		webkit widgets x11extras buildtools_build
 USE_GL=		gl
 USES=		compiler:c++11-lang qmake
 
