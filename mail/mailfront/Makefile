@@ -11,12 +11,10 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail server network protocol front-ends
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libcvm-v2client.so:security/cvm
-
-OPTIONS_DEFINE=	LUA DOCS
-
-OPTIONS_DEFAULT=LUA
-OPTIONS_SUB=	yes
 
 USES=		qmail:vars
 
@@ -32,19 +30,17 @@ MODULES_DIR=	${PREFIX}/libexec/${PORTNAME}
 ALL_TARGET=	all
 LATE_INSTALL_ARGS=	install_prefix=${STAGEDIR}
 
-DOCS=		NEWS README TODO *.html
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLUA}
-ALL_TARGET+=	lua
-USES+=		lua:51
-CFLAGS+=	-I${LUA_INCDIR}
-CFLAGS_SO+=	-L${LUA_LIBDIR}
-LDFLAGS+=	-L${LUA_LIBDIR}
-.endif
+PORTDOCS=	NEWS README TODO *.html
 
 LDFLAGS+=	-rdynamic
+
+OPTIONS_DEFINE=	LUA DOCS
+OPTIONS_DEFAULT=LUA
+OPTIONS_SUB=	yes
+
+LUA_ALL_TARGET=	lua
+LUA_USES=	lua:51
+LUA_VARS=	CFLAGS+=-I${LUA_INCDIR} LUA_CFLAGS_SO+=-L${LUA_LIBDIR} LUA_LDFLAGS+=-L${LUA_LIBDIR}
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
@@ -60,10 +56,8 @@ do-configure:
 post-patch:
 	@${REINPLACE_CMD} 's,-llua,-llua-${LUA_VER},' ${WRKSRC}/Makefile
 
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
