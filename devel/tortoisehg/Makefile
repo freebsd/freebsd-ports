@@ -2,6 +2,7 @@
 
 PORTNAME=	tortoisehg
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
 #MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
@@ -38,6 +39,9 @@ USE_PYTHON=	distutils
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
+
+# Do not conflict with devel/mercurial, which also installs hgext3rd/__init__.py
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/hgext3rd/__init__.py
 
 post-patch:
 	@${REINPLACE_CMD} -e '/_path/ s|/usr|${PREFIX}|' ${WRKSRC}/${PYSETUP}
