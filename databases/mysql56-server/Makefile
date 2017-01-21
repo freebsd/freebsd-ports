@@ -1,5 +1,5 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/databases/mysql56-server/Makefile 431975 2017-01-20 18:21:49Z feld $
 
 PORTNAME?=	mysql
 PORTVERSION=	5.6.35
@@ -54,6 +54,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
 		-DWITH_ZLIB=system \
+		-DWITH_SSL=${OPENSSLBASE} \
 		-DINSTALL_MYSQLTESTDIR=0
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
@@ -128,12 +129,6 @@ PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-CMAKE_ARGS+=		-DWITH_SSL=system
-.else
-CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
