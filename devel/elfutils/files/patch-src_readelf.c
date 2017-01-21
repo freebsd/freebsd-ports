@@ -1,8 +1,8 @@
---- src/readelf.c.orig	2015-06-19 11:17:42 UTC
+--- src/readelf.c.orig	2016-12-28 09:32:01 UTC
 +++ src/readelf.c
-@@ -7911,6 +7911,7 @@ print_debug_exception_table (Dwfl_Module
- 	  break;
+@@ -8037,6 +8037,7 @@ print_debug_exception_table (Dwfl_Module
  	default:
+ 	  dsize = 0;
  	  error (1, 0, gettext ("invalid TType encoding"));
 +	  abort();
  	}

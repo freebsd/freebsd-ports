@@ -354,6 +354,7 @@
     SUBDIR += jaxup
     SUBDIR += jdictionary
     SUBDIR += jdictionary-int-eng
+    SUBDIR += jid
     SUBDIR += jing
     SUBDIR += jo
     SUBDIR += jq
