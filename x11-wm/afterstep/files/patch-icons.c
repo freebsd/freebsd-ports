@@ -1,6 +1,6 @@
---- afterstep/icons.c.orig	Thu Mar 20 19:09:21 1997
-+++ afterstep/icons.c	Sun May 26 18:15:10 2002
-@@ -779,10 +779,12 @@
+--- afterstep/icons.c.orig	1997-03-21 00:09:21 UTC
++++ afterstep/icons.c
+@@ -779,10 +779,12 @@ void Iconify(ASWindow *tmp_win, int def_
  	}
      } 
  

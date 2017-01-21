@@ -1,5 +1,5 @@
---- afterstep/alpha_header.h.orig	Thu Aug 22 20:48:18 1996
-+++ afterstep/alpha_header.h	Mon Sep 13 14:35:09 2004
+--- afterstep/alpha_header.h.orig	1996-08-22 20:48:18 UTC
++++ afterstep/alpha_header.h
 @@ -7,11 +7,6 @@
  
  extern int select(int, fd_set *, fd_set *, fd_set *, struct timeval *);

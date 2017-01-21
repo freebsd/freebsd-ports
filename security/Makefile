@@ -406,6 +406,7 @@
     SUBDIR += openca-tools-forked
     SUBDIR += opencdk
     SUBDIR += openconnect
+    SUBDIR += openconnect-gui
     SUBDIR += opencryptoki
     SUBDIR += openct
     SUBDIR += openiked
