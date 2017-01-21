@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jun 27 19:55:26 2003
-+++ Makefile	Fri Jan  2 14:21:02 2004
+--- Makefile.orig	2003-06-27 17:55:26 UTC
++++ Makefile
 @@ -1,5 +1,5 @@
 -SENDMAILBASE=/system/compile/sendmail-8.12.9
 -SENDMAILOBJ=obj.Linux.2.2.19.i686
@@ -8,7 +8,7 @@
  
  INCDIRS=\
    -I$(SENDMAILBASE)/include/libmilter/ \
-@@ -10,8 +10,8 @@
+@@ -10,8 +10,8 @@ LIBDIRS=\
    -L$(SENDMAILBASE)/$(SENDMAILOBJ)/libsm/
  
  # Linux
