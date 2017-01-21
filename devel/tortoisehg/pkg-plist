@@ -1,5 +1,8 @@
 bin/thg
 %%NAUTILUS%%share/nautilus-python/extensions/nautilus-thg.py
+%%PYTHON_SITELIBDIR%%/hgext3rd/thg.py
+%%PYTHON_SITELIBDIR%%/hgext3rd/thg.pyc
+%%PYTHON_SITELIBDIR%%/hgext3rd/thg.%%PYTHON_PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/tortoisehg/__init__.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/__init__.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/__init__.pyo
