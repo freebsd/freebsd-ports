@@ -20,6 +20,6 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} 's/g++/$$CXX/' \
 		${WRKSRC}/phc_compile_plugin.in
 	${REINPLACE_CMD} 's/insert/this->&/' \
-		${WRKSRC}/include/phc/lib/List.h
+		${WRKSRC}/lib/List.h
 
 .include <bsd.port.mk>
