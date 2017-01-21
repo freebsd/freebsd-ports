@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nova
-PORTVERSION=	14.0.2
+PORTVERSION=	14.0.3
 CATEGORIES=	emulators python
 MASTER_SITES=	https://fossies.org/linux/misc/openstack/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -79,7 +79,8 @@ EXTRA_PATCHES=	${FILESDIR}/01-firewall-manager.patch:-p1 \
 		${FILESDIR}/03-nova-conf.patch:-p1 \
 		${FILESDIR}/04-xen-phy.patch:-p1 \
 		${FILESDIR}/05-online-cpus.patch:-p1 \
-		${FILESDIR}/06-freebsd-net.patch:-p1
+		${FILESDIR}/06-freebsd-net.patch:-p1 \
+		${FILESDIR}/07-fix-xen-xvd.patch:-p1
 
 ONLY_FOR_ARCHS=	amd64
 
@@ -94,7 +95,8 @@ USE_RC_SUBR=	nova-api \
 		nova-compute \
 		nova-cert \
 		nova-cells \
-		nova-serialproxy
+		nova-serialproxy \
+		nova-novncproxy
 USERS=		nova
 GROUPS=		nova
 
