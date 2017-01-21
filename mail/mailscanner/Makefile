@@ -43,7 +43,8 @@ CONFLICTS=	MailScanner-devel-[0-9]*
 PATCHLEVEL=	3
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	bin/[^c]* bin/clean* \
+SHEBANG_FILES=	bin/[^acu]* bin/analyse_SpamAssassin_cache bin/clean* \
+		bin/update* \
 		lib/[^M]* lib/${PORTNAME}/[^C]* lib/${PORTNAME}/*.p[ml] \
 		lib/${PORTNAME}.pm lib/${PORTNAME}/CustomFunctions/*
 
