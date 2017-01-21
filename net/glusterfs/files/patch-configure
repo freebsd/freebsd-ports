@@ -1,6 +1,6 @@
---- configure.orig	2015-11-08 21:57:53 UTC
+--- configure.orig	2016-11-15 14:54:31 UTC
 +++ configure
-@@ -17172,6 +17172,9 @@ case $host_os in
+@@ -13428,6 +13428,9 @@ case $host_os in
       linux*)
  #do nothing
         ;;
@@ -10,12 +10,3 @@
       netbsd*)
  #do nothing
         ;;
-@@ -20758,7 +20761,7 @@ CPPFLAGS=$CFLAGS
- LDFLAGS="${PYTHON_LIBS} -L`${PYTHON}-config --prefix`/lib -L`${PYTHON}-config --prefix`/$libdir `${PYTHON}-config --ldflags`"
- 
- 
--for ac_header in python$PYTHON_VERSION/Python.h
-+for ac_header in python$PYTHON_VERSION/Python.h Python.h
- do
- as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
