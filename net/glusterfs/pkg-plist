@@ -1,5 +1,6 @@
 bin/glusterfind
 @sample etc/ganesha/ganesha-ha.conf.sample
+%%ETCDIR%%/eventsconfig.json
 %%ETCDIR%%/gluster-rsyslog-5.8.conf
 %%ETCDIR%%/gluster-rsyslog-7.2.conf
 @sample %%ETCDIR%%/glusterd.vol.sample
@@ -9,6 +10,28 @@ bin/glusterfind
 %%ETCDIR%%/logger.conf.example
 include/glusterfs/api/glfs-handles.h
 include/glusterfs/api/glfs.h
+include/glusterfs/byte-order.h
+include/glusterfs/call-stub.h
+include/glusterfs/checksum.h
+include/glusterfs/circ-buff.h
+include/glusterfs/cli1-xdr.h
+include/glusterfs/client_t.h
+include/glusterfs/cluster-syncop.h
+include/glusterfs/common-utils.h
+include/glusterfs/compat-errno.h
+include/glusterfs/compat-uuid.h
+include/glusterfs/compat.h
+include/glusterfs/compound-fop-utils.h
+include/glusterfs/daemon.h
+include/glusterfs/default-args.h
+include/glusterfs/defaults.h
+include/glusterfs/dict.h
+include/glusterfs/event-history.h
+include/glusterfs/event.h
+include/glusterfs/events.h
+include/glusterfs/fd-lk.h
+include/glusterfs/fd.h
+include/glusterfs/gf-dirent.h
 include/glusterfs/gfchangelog/changelog.h
 include/glusterfs/gfdb/gfdb_data_store.h
 include/glusterfs/gfdb/gfdb_data_store_helper.h
@@ -16,6 +39,82 @@ include/glusterfs/gfdb/gfdb_data_store_types.h
 include/glusterfs/gfdb/gfdb_mem-types.h
 include/glusterfs/gfdb/gfdb_sqlite3.h
 include/glusterfs/gfdb/gfdb_sqlite3_helper.h
+include/glusterfs/gidcache.h
+include/glusterfs/glfs-message-id.h
+include/glusterfs/globals.h
+include/glusterfs/glusterfs-acl.h
+include/glusterfs/glusterfs-fops.h
+include/glusterfs/glusterfs.h
+include/glusterfs/graph-utils.h
+include/glusterfs/hashfn.h
+include/glusterfs/iatt.h
+include/glusterfs/inode.h
+include/glusterfs/iobuf.h
+include/glusterfs/latency.h
+include/glusterfs/libglusterfs-messages.h
+include/glusterfs/list.h
+include/glusterfs/lkowner.h
+include/glusterfs/locking.h
+include/glusterfs/logging.h
+include/glusterfs/lvm-defaults.h
+include/glusterfs/mem-pool.h
+include/glusterfs/mem-types.h
+include/glusterfs/options.h
+include/glusterfs/parse-utils.h
+include/glusterfs/quota-common-utils.h
+include/glusterfs/rbthash.h
+include/glusterfs/refcount.h
+include/glusterfs/revision.h
+include/glusterfs/rot-buffs.h
+include/glusterfs/rpc/acl3-xdr.h
+include/glusterfs/rpc/changelog-xdr.h
+include/glusterfs/rpc/cli1-xdr.h
+include/glusterfs/rpc/glusterd1-xdr.h
+include/glusterfs/rpc/glusterfs-fops.h
+include/glusterfs/rpc/glusterfs3-xdr.h
+include/glusterfs/rpc/glusterfs3.h
+include/glusterfs/rpc/mount3udp.h
+include/glusterfs/rpc/msg-nfs3.h
+include/glusterfs/rpc/nlm4-xdr.h
+include/glusterfs/rpc/nsm-xdr.h
+include/glusterfs/rpc/portmap-xdr.h
+include/glusterfs/rpc/protocol-common.h
+include/glusterfs/rpc/rpc-clnt-ping.h
+include/glusterfs/rpc/rpc-clnt.h
+include/glusterfs/rpc/rpc-common-xdr.h
+include/glusterfs/rpc/rpc-drc.h
+include/glusterfs/rpc/rpc-lib-messages.h
+include/glusterfs/rpc/rpc-transport.h
+include/glusterfs/rpc/rpcsvc-common.h
+include/glusterfs/rpc/rpcsvc.h
+include/glusterfs/rpc/xdr-common.h
+include/glusterfs/rpc/xdr-generic.h
+include/glusterfs/rpc/xdr-nfs3.h
+include/glusterfs/rpc/xdr-rpc.h
+include/glusterfs/rpc/xdr-rpcclnt.h
+include/glusterfs/run.h
+include/glusterfs/server/authenticate.h
+include/glusterfs/server/server-common.h
+include/glusterfs/server/server-helpers.h
+include/glusterfs/server/server-mem-types.h
+include/glusterfs/server/server-messages.h
+include/glusterfs/server/server.h
+include/glusterfs/stack.h
+include/glusterfs/statedump.h
+include/glusterfs/store.h
+include/glusterfs/strfd.h
+include/glusterfs/syncop-utils.h
+include/glusterfs/syncop.h
+include/glusterfs/syscall.h
+include/glusterfs/template-component-messages.h
+include/glusterfs/throttle-tbf.h
+include/glusterfs/timer.h
+include/glusterfs/timespec.h
+include/glusterfs/trie.h
+include/glusterfs/tw.h
+include/glusterfs/upcall-utils.h
+include/glusterfs/xlator.h
+include/glusterfs/y.tab.h
 %%GLUSTERLIBDIR%%/auth/addr.so
 %%GLUSTERLIBDIR%%/auth/login.so
 %%GLUSTERLIBDIR%%/rpc-transport/socket.so
@@ -43,7 +142,6 @@ include/glusterfs/gfdb/gfdb_sqlite3_helper.h
 %%GLUSTERLIBDIR%%/xlator/features/cdc.so
 %%GLUSTERLIBDIR%%/xlator/features/changelog.so
 %%GLUSTERLIBDIR%%/xlator/features/changetimerecorder.so
-%%GLUSTERLIBDIR%%/xlator/features/ganesha.so
 %%GLUSTERLIBDIR%%/xlator/features/gfid-access.so
 %%GLUSTERLIBDIR%%/xlator/features/glupy.so
 %%GLUSTERLIBDIR%%/xlator/features/glupy/debug-trace.py
@@ -56,6 +154,7 @@ include/glusterfs/gfdb/gfdb_sqlite3_helper.h
 %%GLUSTERLIBDIR%%/xlator/features/glupy/negative.pyc
 %%GLUSTERLIBDIR%%/xlator/features/glupy/negative.pyo
 %%GLUSTERLIBDIR%%/xlator/features/index.so
+%%GLUSTERLIBDIR%%/xlator/features/leases.so
 %%GLUSTERLIBDIR%%/xlator/features/locks.so
 %%GLUSTERLIBDIR%%/xlator/features/mac-compat.so
 %%GLUSTERLIBDIR%%/xlator/features/marker.so
@@ -63,7 +162,6 @@ include/glusterfs/gfdb/gfdb_sqlite3_helper.h
 %%GLUSTERLIBDIR%%/xlator/features/prot_client.so
 %%GLUSTERLIBDIR%%/xlator/features/prot_dht.so
 %%GLUSTERLIBDIR%%/xlator/features/prot_server.so
-%%GLUSTERLIBDIR%%/xlator/features/qemu-block.so
 %%GLUSTERLIBDIR%%/xlator/features/quiesce.so
 %%GLUSTERLIBDIR%%/xlator/features/quota.so
 %%GLUSTERLIBDIR%%/xlator/features/quotad.so
@@ -79,6 +177,7 @@ include/glusterfs/gfdb/gfdb_sqlite3_helper.h
 %%GLUSTERLIBDIR%%/xlator/mount/api.so
 %%GLUSTERLIBDIR%%/xlator/mount/fuse.so
 %%GLUSTERLIBDIR%%/xlator/nfs/server.so
+%%GLUSTERLIBDIR%%/xlator/performance/decompounder.so
 %%GLUSTERLIBDIR%%/xlator/performance/io-cache.so
 %%GLUSTERLIBDIR%%/xlator/performance/io-threads.so
 %%GLUSTERLIBDIR%%/xlator/performance/md-cache.so
@@ -120,6 +219,12 @@ lib/ocf/resource.d/heartbeat/ganesha_nfsd
 %%PYTHON_SITELIBDIR%%/gluster/__init__.py
 %%PYTHON_SITELIBDIR%%/gluster/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gluster/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gluster/cliutils/__init__.py
+%%PYTHON_SITELIBDIR%%/gluster/cliutils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gluster/cliutils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gluster/cliutils/cliutils.py
+%%PYTHON_SITELIBDIR%%/gluster/cliutils/cliutils.pyc
+%%PYTHON_SITELIBDIR%%/gluster/cliutils/cliutils.pyo
 %%PYTHON_SITELIBDIR%%/gluster/glupy/__init__.py
 %%PYTHON_SITELIBDIR%%/gluster/glupy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gluster/glupy/__init__.pyo
@@ -129,6 +234,26 @@ libdata/pkgconfig/libgfdb.pc
 libexec/ganesha/create-export-ganesha.sh
 libexec/ganesha/dbus-send.sh
 libexec/ganesha/ganesha-ha.sh
+libexec/ganesha/generate-epoch.py
+libexec/glusterfs/events/__init__.py
+libexec/glusterfs/events/__init__.pyc
+libexec/glusterfs/events/__init__.pyo
+libexec/glusterfs/events/eventsapiconf.py
+libexec/glusterfs/events/eventsapiconf.pyc
+libexec/glusterfs/events/eventsapiconf.pyo
+libexec/glusterfs/events/eventtypes.py
+libexec/glusterfs/events/eventtypes.pyc
+libexec/glusterfs/events/eventtypes.pyo
+libexec/glusterfs/events/gf_event.py
+libexec/glusterfs/events/gf_event.pyc
+libexec/glusterfs/events/gf_event.pyo
+libexec/glusterfs/events/glustereventsd.py
+libexec/glusterfs/events/handlers.py
+libexec/glusterfs/events/handlers.pyc
+libexec/glusterfs/events/handlers.pyo
+libexec/glusterfs/events/utils.py
+libexec/glusterfs/events/utils.pyc
+libexec/glusterfs/events/utils.pyo
 libexec/glusterfs/gfind_missing_files/gcrawler
 libexec/glusterfs/gfind_missing_files/gfid_to_path.py
 libexec/glusterfs/gfind_missing_files/gfid_to_path.sh
@@ -157,40 +282,65 @@ libexec/glusterfs/glusterfind/utils.py
 libexec/glusterfs/glusterfind/utils.pyc
 libexec/glusterfs/glusterfind/utils.pyo
 libexec/glusterfs/peer_add_secret_pub
+libexec/glusterfs/peer_eventsapi.py
 man/man8/gluster.8.gz
 man/man8/glusterd.8.gz
 man/man8/glusterfs.8.gz
 man/man8/glusterfsd.8.gz
 man/man8/mount.glusterfs.8.gz
+sbin/conf.py
 sbin/gcron.py
 sbin/gfind_missing_files
 sbin/glfsheal
 sbin/gluster
+sbin/gluster-eventsapi
 sbin/glusterd
+sbin/glustereventsd
 sbin/glusterfs
 sbin/glusterfsd
 sbin/mount_glusterfs
 sbin/snap_scheduler.py
 sbin/umountd
-%%DOCSDIR%%/benchmarking/README
-%%DOCSDIR%%/benchmarking/glfs-bm.c
-%%DOCSDIR%%/benchmarking/launch-script.sh
-%%DOCSDIR%%/benchmarking/local-script.sh
-%%DOCSDIR%%/benchmarking/rdd.c
-%%DOCSDIR%%/glusterfs-mode.el
-%%DOCSDIR%%/glusterfs.vim
+%%PORTDOCS%%%%DOCSDIR%%/benchmarking/README
+%%PORTDOCS%%%%DOCSDIR%%/benchmarking/glfs-bm.c
+%%PORTDOCS%%%%DOCSDIR%%/benchmarking/launch-script.sh
+%%PORTDOCS%%%%DOCSDIR%%/benchmarking/local-script.sh
+%%PORTDOCS%%%%DOCSDIR%%/benchmarking/rdd.c
+%%PORTDOCS%%%%DOCSDIR%%/glusterfs-mode.el
+%%PORTDOCS%%%%DOCSDIR%%/glusterfs.vim
+%%DATADIR%%/scripts/eventsdash.py
 %%DATADIR%%/scripts/post-upgrade-script-for-quota.sh
 %%DATADIR%%/scripts/pre-upgrade-script-for-quota.sh
 %%DATADIR%%/scripts/stop-all-gluster-processes.sh
 @sample /var/db/glusterd/groups/virt.sample
-/var/db/glusterd/hooks/1/delete/post/S57glusterfind-delete-post.py
+/var/db/glusterd/hooks/1/add-brick/post/disabled-quota-root-xattr-heal.sh
+/var/db/glusterd/hooks/1/add-brick/pre/S28Quota-enable-root-xattr-heal.sh
+/var/db/glusterd/hooks/1/delete/post/S57glusterfind-delete-post
+/var/db/glusterd/hooks/1/reset/post/S31ganesha-reset.sh
+/var/db/glusterd/hooks/1/set/post/S30samba-set.sh
+/var/db/glusterd/hooks/1/set/post/S32gluster_enable_shared_storage.sh
+/var/db/glusterd/hooks/1/start/post/S29CTDBsetup.sh
+/var/db/glusterd/hooks/1/start/post/S30samba-start.sh
+/var/db/glusterd/hooks/1/start/post/S31ganesha-start.sh
+/var/db/glusterd/hooks/1/stop/pre/S29CTDB-teardown.sh
+/var/db/glusterd/hooks/1/stop/pre/S30samba-stop.sh
+@dir /var/db/glusterd/events
 @dir /var/db/glusterd/glusterfind/.keys
 @dir /var/db/glusterd/glusterfind
 @dir /var/db/glusterd/groups
+@dir /var/db/glusterd/hooks/1/add-brick/post
+@dir /var/db/glusterd/hooks/1/add-brick/pre
+@dir /var/db/glusterd/hooks/1/add-brick
 @dir /var/db/glusterd/hooks/1/delete/post
 @dir /var/db/glusterd/hooks/1/delete
-@dir /var/db/glusterd/hooks/1/gsync-create/post
-@dir /var/db/glusterd/hooks/1/gsync-create
+@dir /var/db/glusterd/hooks/1/reset/post
+@dir /var/db/glusterd/hooks/1/reset
+@dir /var/db/glusterd/hooks/1/set/post
+@dir /var/db/glusterd/hooks/1/set
+@dir /var/db/glusterd/hooks/1/start/post
+@dir /var/db/glusterd/hooks/1/start
+@dir /var/db/glusterd/hooks/1/stop/pre
+@dir /var/db/glusterd/hooks/1/stop
 @dir /var/db/glusterd/hooks/1
 @dir /var/db/glusterd/hooks
 @dir /var/db/glusterd

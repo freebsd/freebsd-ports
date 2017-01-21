@@ -1,2 +1,3 @@
-SHA256 (glusterfs-3.7.6.tar.gz) = bb83f0b6bd95599d3742d1c7c12dbbe7b4ef4d4908c5056ee97b3f32c508cf05
-SIZE (glusterfs-3.7.6.tar.gz) = 7690697
+TIMESTAMP = 1479924003
+SHA256 (glusterfs-3.9.0.tar.gz) = b417c674454b17d1851828a1ca395cb9e7ab198378391da04e2fb8911cc1fb14
+SIZE (glusterfs-3.9.0.tar.gz) = 8709782
