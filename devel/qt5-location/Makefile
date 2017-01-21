@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=  	location
+PORTNAME=	location
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
