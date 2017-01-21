@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-vnc
+PORTREVISION=	1
 
 COMMENT=	Remmina plugin for VNC protocol
 

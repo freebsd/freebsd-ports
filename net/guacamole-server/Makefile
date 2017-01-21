@@ -3,7 +3,7 @@
 
 PORTNAME=	guacamole-server
 PORTVERSION=	0.9.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	ultima1252@gmail.com
