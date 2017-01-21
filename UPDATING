@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170121:
+  AFFECTS: users of security/tinc
+  AUTHOR: dinoex@FreeBSD.org
+
+  this version of tinc requires all nodes in the VPN to be linked with a
+  version of OpenSSL or LibreSSL that supports the AES256 and SHA256
+  algorithms.
+
+
 20170120:
   AFFECTS: users of databases/mysql56-server
   AUTHOR: feld@FreeBSD.org
