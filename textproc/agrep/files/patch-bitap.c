@@ -1,5 +1,5 @@
---- bitap.c.orig	1992-01-17 22:00:15.000000000 +0100
-+++ bitap.c	2011-11-27 13:33:41.000000000 +0100
+--- bitap.c.orig	1992-01-17 21:00:15 UTC
++++ bitap.c
 @@ -13,6 +13,8 @@
  
  #include "agrep.h"
@@ -9,7 +9,7 @@
  extern unsigned Init1, D_endpos, endposition, Init[], Mask[], Bit[];
  extern int DELIMITER, FILENAMEONLY, D_length, I, AND, REGEX, JUMP, INVERSE; 
  extern char D_pattern[];
-@@ -22,7 +24,7 @@
+@@ -22,7 +24,7 @@ extern int num_of_matched;
  
  /* bitap dispatches job */
  
@@ -18,7 +18,7 @@
  char old_D_pat[], *Pattern;  int fd, M, D;  
  {
  char c;  
-@@ -143,7 +145,7 @@
+@@ -143,7 +145,7 @@ char buffer[Max_record+Max_record+BlockS
    return;
  }
  

@@ -1,6 +1,6 @@
---- asearch1.c.orig	1992-01-17 22:00:38.000000000 +0100
-+++ asearch1.c	2011-11-27 12:07:32.000000000 +0100
-@@ -8,7 +8,7 @@
+--- asearch1.c.orig	1992-01-17 21:00:38 UTC
++++ asearch1.c
+@@ -8,7 +8,7 @@ extern char CurrentFileName[];
  extern int num_of_matched;
  
  
