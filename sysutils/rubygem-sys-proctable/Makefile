@@ -14,7 +14,6 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
 
-GEM_NAME=	${PORTNAME}-${DISTVERSIONFULL}
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
