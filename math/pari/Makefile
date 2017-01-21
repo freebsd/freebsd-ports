@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	pari
-PORTVERSION=	2.3.5
+PORTVERSION=	2.9.0
 PORTEPOCH=	2
 CATEGORIES=	math
-MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/ \
+MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/ \
 		http://mirrors.rit.edu/zi/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@rawbw.com
 COMMENT=	Mathematics library and advanced calculator package
 
 LICENSE=	GPLv2
@@ -30,7 +30,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 USES=		perl5
 
-OPTIONS_DEFINE=		OPTIMIZED_CFLAGS X11
+OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS X11
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS X11
 .ifndef WITH_DEBUG
 OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fno-strict-aliasing -fomit-frame-pointer
@@ -47,12 +47,12 @@ PORTEXAMPLES=	*
 GP_VERSION=	${PORTVERSION:R}
 
 post-patch:
-	@${REINPLACE_CMD} -E '/^list=/s/(ld|ranlib|perl|emacs)//g' \
+	${REINPLACE_CMD} -E '/^list=/s/(ld|ranlib|perl|emacs)//g' \
 		${WRKSRC}/Configure
-	@${REINPLACE_CMD} -e '/^CFLAGS=/s/\$$cflags//' \
+	${REINPLACE_CMD} -e '/^CFLAGS=/s/\$$cflags//' \
 		${WRKSRC}/config/get_cc
 
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/*/libpari-gmp.so.*
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpari-gmp.so.*
 
 .include <bsd.port.mk>
