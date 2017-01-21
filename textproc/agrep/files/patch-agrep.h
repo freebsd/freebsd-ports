@@ -1,5 +1,5 @@
---- agrep.h.orig	1992-01-17 20:15:13.000000000 +0100
-+++ agrep.h	2011-11-27 13:35:40.000000000 +0100
+--- agrep.h.orig	1992-01-17 19:15:13 UTC
++++ agrep.h
 @@ -1,10 +1,10 @@
  #include <stdio.h>
 +#include <stdlib.h>
@@ -13,7 +13,7 @@
  #define CHAR	unsigned char
  #define MAXPAT 128
  #define MAXPATT 256
-@@ -52,3 +52,37 @@
+@@ -52,3 +52,37 @@ extern int strlen();
  #define NNLINE    239   /* special symbol for newline in begin of pattern*/
                         /* matches '\n' and NNLINE */
  
