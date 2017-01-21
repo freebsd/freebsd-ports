@@ -131,6 +131,7 @@
     SUBDIR += etrace
     SUBDIR += exabgp
     SUBDIR += exaddos
+    SUBDIR += fb
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += fonulator
