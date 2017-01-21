@@ -3,7 +3,7 @@
 
 PORTNAME=	python
 PORTVERSION=	${PYTHON_DEFAULT}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	# empty
@@ -11,10 +11,11 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	The "meta-port" for the default version of Python interpreter
+COMMENT=	"meta-port" for the default version of Python interpreter
 
-USES=			python:run
-NO_BUILD=		yes
+USES=		python:run
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/2to3 \
 		bin/idle \
@@ -31,20 +32,11 @@ RUN_DEPENDS+=	python3:lang/python3
 .endif
 
 do-install:
-	${LN} -sf python${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/python
 	${LN} -sf 2to3-${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/2to3
-.if ${PYTHON_MAJOR_VER} == 2
-.for file in idle pydoc
+.for file in idle pydoc python
 	${LN} -sf ${file}${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
-.elif ${PYTHON_MAJOR_VER} == 3
-.for file in idle pydoc
-	${LN} -sf ${file}${PYTHON_MAJOR_VER}-${PYTHON_VER} \
-		${STAGEDIR}${PREFIX}/bin/${file}
-.endfor
-.endif
-	${LN} -sf python${PYTHON_MAJOR_VER}-config \
-		${STAGEDIR}${PREFIX}/bin/python-config
+	${LN} -sf python${PYTHON_MAJOR_VER}-config ${STAGEDIR}${PREFIX}/bin/python-config
 
 # Major upgrade support
 PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portupgrade
