@@ -11,6 +11,11 @@ bin/rva2ofs
 lib/libpe.so
 lib/libpe.so.1
 lib/libpe.so.1.0
+lib/pev/plugins/csv_plugin.so
+lib/pev/plugins/html_plugin.so
+lib/pev/plugins/json_plugin.so
+lib/pev/plugins/text_plugin.so
+lib/pev/plugins/xml_plugin.so
 man/man1/ofs2rva.1.gz
 man/man1/pedis.1.gz
 man/man1/pehash.1.gz
