@@ -13,6 +13,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	"meta-port" for the default version of Python interpreter
 
+RUN_DEPENDS=	python${PYTHON_MAJOR_VER}:lang/python${PYTHON_MAJOR_VER}
+
 USES=		python:run
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -22,14 +24,6 @@ PLIST_FILES=	bin/2to3 \
 		bin/pydoc \
 		bin/python \
 		bin/python-config
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_MAJOR_VER} == 2
-RUN_DEPENDS+=	python2:lang/python2
-.elif ${PYTHON_MAJOR_VER} == 3
-RUN_DEPENDS+=	python3:lang/python3
-.endif
 
 do-install:
 	${LN} -sf 2to3-${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/2to3
@@ -71,4 +65,4 @@ upgrade-site-packages:
 		fi; \
 	fi; \
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
