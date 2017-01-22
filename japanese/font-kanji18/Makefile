@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}
 DISTFILES?=	573.z 574.z 575.z 576.z 577.z 578.z 579.z 580.z 581.z
 DIST_SUBDIR=	${DISTNAME}
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	${PKGNAMESUFFIX}-dot Kanji font
 
 BUILD_DEPENDS=	mkbold:x11-fonts/mkbold-mkitalic \

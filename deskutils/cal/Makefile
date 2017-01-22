@@ -7,7 +7,7 @@ PORTREVISION=		1
 CATEGORIES=		deskutils
 MASTER_SITES=		SUNSITE/utils/shell
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced color version of standard calendar utility
 
 WRKSRC=		${WRKDIR}/cal-3.5/source
