@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/sanpei
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplexes MPEG component streams into system layers
 
 CONFLICTS=	mjpegtools-*

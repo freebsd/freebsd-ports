@@ -44,7 +44,14 @@ bin/drawelements-large
 bin/drawoverhead
 bin/drawpix
 bin/drawrange
+bin/eglgears_x11
+bin/eglinfo
+bin/eglkms
+bin/egltri_x11
 bin/engine
+bin/es2_info
+bin/es2gears_x11
+bin/es2tri
 bin/fbo_firecube
 bin/fbobind
 bin/fbotexture
@@ -126,6 +133,7 @@ bin/overlay
 bin/paltex
 bin/pbdemo
 bin/pbinfo
+bin/peglgears
 bin/pgon-mode
 bin/pixeltest
 bin/point
@@ -303,6 +311,8 @@ bin/vp-unfilled
 bin/vsraytrace
 bin/wincopy
 bin/winpos
+bin/xeglgears
+bin/xeglthreads
 bin/xfont
 bin/xrotfontdemo
 %%DATADIR%%/arch.rgb

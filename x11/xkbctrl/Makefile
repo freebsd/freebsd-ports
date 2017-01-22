@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	XORG/unsupported/test/Xkb/programs
 DISTFILES=	Imakefile xkbctrl.c
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display and manipulate XKB keyboard controls from the commandline
 
 DIST_SUBDIR=	xkbctrl

@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.dd.iij4u.or.jp/~briareos/soft/ \
 		LOCAL/sanpei
 DISTNAME=	usbrh-${PORTVERSION}
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another reads temperatures and humidity from a Strawberry Linux USB-RH
 
 PLIST_FILES=	bin/usbrh
