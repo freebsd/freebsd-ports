@@ -2610,6 +2610,7 @@ aster/%%VE%%/lib/aster/aster_pkginfo.pyo
 aster/%%VE%%/lib/aster/aster_settings.py
 aster/%%VE%%/lib/aster/aster_settings.pyc
 aster/%%VE%%/lib/aster/aster_settings.pyo
+aster/%%VE%%/lib/aster/libAsterBehaviour.so
 aster/%%VE%%/lib/aster/elem.1
 aster/%%VE%%/profile.sh
 aster/%%VE%%/share/aster/CTestTestfile.cmake
