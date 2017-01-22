@@ -3,6 +3,7 @@
 
 PORTNAME=	dwarves
 PORTVERSION=	1.10.20160713
+PORTREVISION=	1
 CATEGORIES=	devel
 #MASTER_SITES=	https://fedorapeople.org/~acme/dwarves/
 MASTER_SITES=	http://repo.or.cz/dwarves.git/snapshot/
@@ -22,8 +23,10 @@ PATCH_DEPENDS=	gnulib>=0:devel/gnulib
 
 WRKSRC=		${WRKDIR}/dwarves-b52386d
 
-USES=		cmake:outsource localbase tar:bzip2
+USES=		cmake:outsource localbase shebangfix tar:bzip2
 USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	ostra/ostra-cg
 
 post-patch:
 	@${CP} -a \
