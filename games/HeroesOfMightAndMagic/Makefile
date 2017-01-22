@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=
 DISTFILES=
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD Installation of the Linux game "Heroes of Might and Magic III"
 
 ONLY_FOR_ARCHS=	i386 amd64

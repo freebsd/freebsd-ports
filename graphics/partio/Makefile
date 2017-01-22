@@ -5,7 +5,7 @@ PORTVERSION=	1.1.0.20150221
 PORTREVISION=	2
 CATEGORIES=	graphics math
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for manipulating animation particle formats
 
 LICENSE=	BSD3CLAUSE

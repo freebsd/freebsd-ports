@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://bitbucket.org/marcusva/py-dynrules/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Scripting for adaptive AI systems
 
 LICENSE=	ZLIB

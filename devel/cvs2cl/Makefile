@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.pl
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS-log-message-to-ChangeLog conversion script
 
 LICENSE=	GPLv2
