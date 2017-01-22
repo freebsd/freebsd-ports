@@ -1,0 +1,25 @@
+--- src/plugins/Makefile.orig	2017-01-06 22:27:18 UTC
++++ src/plugins/Makefile
+@@ -57,6 +57,8 @@ json: $(json_OBJS)
+ $(PLUGINS):
+ ifeq ($(PLATFORM_OS), Linux)
+ 	$(LINK) -shared -Wl,-soname,$(LIBNAME).so.1 $(LDFLAGS) -o ${plugins_BUILDDIR}/$(LIBNAME).so $^
++else ifeq ($(PLATFORM_OS), FreeBSD)
++	$(LINK) -shared -Wl,-soname,$(LIBNAME).so.1 $(LDFLAGS) -o ${plugins_BUILDDIR}/$(LIBNAME).so $^
+ else ifeq ($(PLATFORM_OS), Darwin)
+ 	$(LINK) -headerpad_max_install_names -dynamiclib \
+ 		-undefined dynamic_lookup -fno-common \
+@@ -83,6 +85,13 @@ install: installdirs
+ 	$(INSTALL_PROGRAM) -m 755 $(plugins_BUILDDIR)/$(xml_LIBNAME).* $(pluginsdir)
+ 	$(INSTALL_PROGRAM) -m 755 $(plugins_BUILDDIR)/$(json_LIBNAME).* $(pluginsdir)
+ 
++install-strip: installdirs
++	$(INSTALL_PROGRAM) -s -m 755 $(plugins_BUILDDIR)/$(csv_LIBNAME).* $(pluginsdir)
++	$(INSTALL_PROGRAM) -s -m 755 $(plugins_BUILDDIR)/$(html_LIBNAME).* $(pluginsdir)
++	$(INSTALL_PROGRAM) -s -m 755 $(plugins_BUILDDIR)/$(text_LIBNAME).* $(pluginsdir)
++	$(INSTALL_PROGRAM) -s -m 755 $(plugins_BUILDDIR)/$(xml_LIBNAME).* $(pluginsdir)
++	$(INSTALL_PROGRAM) -s -m 755 $(plugins_BUILDDIR)/$(json_LIBNAME).* $(pluginsdir)
++
+ installdirs:
+ 	@$(CHK_DIR_EXISTS) $(pluginsdir) || $(MKDIR) $(pluginsdir)
+ 
