@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Apr  9 10:26:51 2001
-+++ Makefile	Sun Mar  7 12:06:36 2004
+--- Makefile.orig	2001-04-09 01:26:51 UTC
++++ Makefile
 @@ -1,10 +1,9 @@
  # Edited for Debian GNU/Linux
  DESTDIR=
@@ -12,7 +12,7 @@
  
  SRCS=add.c  mtrxmath.c  mult.c  sub.c inverse.c
  
-@@ -14,7 +13,7 @@
+@@ -14,7 +13,7 @@ EXE=mtrxmath
  all: ${EXE}
  
  ${EXE}: ${OBJS}

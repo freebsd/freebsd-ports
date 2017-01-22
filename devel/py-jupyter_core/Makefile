@@ -20,8 +20,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython \
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+USE_LOCALE=	en_US.UTF-8
 NO_ARCH=	yes
-TEST_ENV=	${MAKE_ENV} LANG=en_US.UTF-8
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest-${PYTHON_VER})

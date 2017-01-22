@@ -1,0 +1,39 @@
+Index: desktop/source/app/officeipcthread.cxx
+===================================================================
+--- desktop/source/app/officeipcthread.cxx	(revision 1779757)
++++ desktop/source/app/officeipcthread.cxx	(revision 1779758)
+@@ -225,7 +225,7 @@ String CreateMD5FromString( const OUString& aMsg )
+ 	// BACK: Str "ababab....0f" Hexcode String
+ 
+ 	rtlDigest handle = rtl_digest_create( rtl_Digest_AlgorithmMD5 );
+-	if ( handle > 0 )
++	if ( handle != NULL )
+ 	{
+ 		const sal_uInt8* pData = (const sal_uInt8*)aMsg.getStr();
+ 		sal_uInt32		 nSize = ( aMsg.getLength() * sizeof( sal_Unicode ));
+Index: desktop/source/deployment/misc/dp_misc.cxx
+===================================================================
+--- desktop/source/deployment/misc/dp_misc.cxx	(revision 1779671)
++++ desktop/source/deployment/misc/dp_misc.cxx	(revision 1779695)
+@@ -103,7 +103,7 @@ const OUString OfficePipeId::operator () ()
+ 	}
+     
+     rtlDigest digest = rtl_digest_create( rtl_Digest_AlgorithmMD5 );
+-    if (digest <= 0) {
++    if (digest == NULL) {
+         throw RuntimeException(
+             OUSTR("cannot get digest rtl_Digest_AlgorithmMD5!"), 0 );
+     }
+Index: sd/source/ui/view/viewshe3.cxx
+===================================================================
+--- sd/source/ui/view/viewshe3.cxx	(revision 1779671)
++++ sd/source/ui/view/viewshe3.cxx	(revision 1779695)
+@@ -226,7 +226,7 @@ SdPage* ViewShell::CreateOrDuplicatePage (
+     // When the given page is NULL then use the first page of the document.
+     SdPage* pTemplatePage = pPage;
+     if (pTemplatePage == NULL)
+-        if (pDocument->GetSdPage(0, ePageKind) > 0)
++        if (pDocument->GetSdPage(0, ePageKind) != NULL)
+             pTemplatePage = pDocument->GetSdPage(0, ePageKind); 
+     if (pTemplatePage != NULL && pTemplatePage->TRG_HasMasterPage())
+         aVisibleLayers = pTemplatePage->TRG_GetMasterPageVisibleLayers();
