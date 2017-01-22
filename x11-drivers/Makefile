@@ -24,7 +24,6 @@
     SUBDIR += xf86-video-chips
     SUBDIR += xf86-video-cirrus
     SUBDIR += xf86-video-dummy
-    SUBDIR += xf86-video-fbdev
     SUBDIR += xf86-video-glint
     SUBDIR += xf86-video-i128
     SUBDIR += xf86-video-i740
