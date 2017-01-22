@@ -3,7 +3,7 @@
 
 PORTNAME=	rkward
 PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
@@ -23,7 +23,6 @@ USE_QT4=	corelib dbus gui qmake_build moc_build network phonon rcc_build	\
 		script svg uic_build webkit xml
 USE_XORG=	x11
 USE_KDE=	automoc4 kdelibs
-INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 
