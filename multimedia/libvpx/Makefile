@@ -22,18 +22,7 @@ CPE_VENDOR=	john_koleszar
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	DEBUG MULTIRES POSTPROC RUNTIME SHARED SIZE_LIMIT TEST THREADS
-OPTIONS_DEFAULT=MULTIRES POSTPROC RUNTIME SHARED SIZE_LIMIT THREADS
-OPTIONS_EXCLUDE_aarch64=RUNTIME
-OPTIONS_EXCLUDE_armv6=	RUNTIME
-MULTIRES_DESC=	Enable multi-resolution encoding
-POSTPROC_DESC=	Enable postprocessing
-RUNTIME_DESC=	Enable runtime CPU detection
-SHARED_DESC=	Enable shared-library support
-SIZE_LIMIT_DESC=Maximum size allowed by decoder: ${SIZE_LIMIT}
-
-ALL_TARGET=
+SHEBANG_FILES=	build/make/ads2gas.pl
 CONFIGURE_ENV=	ASFLAGS="${ASFLAGS}"
 # Only explicitly list ARCHs with SIMD optimizations
 CONFIGURE_ARGS_aarch64=	--target=arm64-linux-gcc
@@ -51,21 +40,36 @@ CONFIGURE_ARGS+=${CONFIGURE_ARGS_${ARCH}} \
 		--enable-vp8 \
 		--enable-vp9
 MAKE_ARGS+=	verbose=yes
+ALL_TARGET=	# empty
 
+OPTIONS_DEFINE=	DEBUG MULTIRES POSTPROC RUNTIME SHARED SIZE_LIMIT TEST THREADS
+OPTIONS_DEFAULT=MULTIRES POSTPROC RUNTIME SHARED SIZE_LIMIT THREADS
+OPTIONS_EXCLUDE_aarch64=RUNTIME
+OPTIONS_EXCLUDE_armv6=	RUNTIME
 OPTIONS_SUB=		SHARED
 
 DEBUG_CONFIGURE_ON=	--enable-debug
+
+MULTIRES_DESC=		Enable multi-resolution encoding
 MULTIRES_CONFIGURE_ON=	--enable-multi-res-encoding
+
+POSTPROC_DESC=		Enable postprocessing
 POSTPROC_CONFIGURE_ON=	--enable-postproc --enable-vp9-postproc	\
 			--enable-vp9-temporal-denoising
+
+RUNTIME_DESC=		Enable runtime CPU detection
 RUNTIME_CONFIGURE_ON=	--enable-runtime-cpu-detect
+
+SHARED_DESC=		Enable shared-library support
 SHARED_CONFIGURE_ON=	--enable-shared
+
+SIZE_LIMIT_DESC=	Maximum size allowed by decoder: ${SIZE_LIMIT}
 SIZE_LIMIT_CONFIGURE_ON=--size-limit=${SIZE_LIMIT}
 SIZE_LIMIT?=		16384x16384 # Chromium; Firefox has 4000x3000
-TEST_CONFIGURE_OFF=	--disable-unit-tests
-THREADS_CONFIGURE_OFF=	--disable-multithread
 
-SHEBANG_FILES=	build/make/ads2gas.pl
+TEST_CONFIGURE_OFF=	--disable-unit-tests
+
+THREADS_CONFIGURE_OFF=	--disable-multithread
 
 post-patch:
 	@${REINPLACE_CMD} 's|\(link_with_cc\)=gcc|\1=$${CC}|' \
