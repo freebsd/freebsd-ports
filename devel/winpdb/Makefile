@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Python debugger
 
 LICENSE=	GPLv2

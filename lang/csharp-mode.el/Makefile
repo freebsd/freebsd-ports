@@ -6,7 +6,7 @@ PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang elisp
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs/XEmacs major mode for editing C\# source code
 
 LICENSE=	GPLv2
