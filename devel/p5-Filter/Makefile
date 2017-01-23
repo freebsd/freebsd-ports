@@ -14,6 +14,8 @@ COMMENT=	Number of source filters for perl5 programs
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USES=		perl5
 USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
