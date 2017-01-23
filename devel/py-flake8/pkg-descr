@@ -8,4 +8,4 @@ Flake8 runs all tools by launching the single 'flake8' script, but ignores pep8
 and PyFlakes extended options and just uses defaults. It displays the warnings
 in a per-file, merged output.
 
-WWW: https://bitbucket.org/tarek/flake8
+WWW: https://gitlab.com/pycqa/flake8
