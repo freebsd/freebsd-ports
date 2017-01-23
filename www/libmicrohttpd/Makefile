@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.9.37
-PORTREVISION=	2
+PORTVERSION=	0.9.52
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -17,7 +16,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		cpe libtool pathfix
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 CPE_VENDOR=	gnu
 
@@ -31,17 +29,11 @@ GNUTLS_CONFIGURE_ENABLE=https
 INFO=		libmicrohttpd libmicrohttpd-tutorial
 
 PLIST_FILES=	include/microhttpd.h \
-		include/microspdy.h \
 		lib/libmicrohttpd.a \
 		lib/libmicrohttpd.so \
-		lib/libmicrohttpd.so.10 \
-		lib/libmicrohttpd.so.10.27.0 \
-		lib/libmicrospdy.a \
-		lib/libmicrospdy.so \
-		lib/libmicrospdy.so.0 \
-		lib/libmicrospdy.so.0.0.0 \
+		lib/libmicrohttpd.so.12 \
+		lib/libmicrohttpd.so.12.40.0 \
 		libdata/pkgconfig/libmicrohttpd.pc \
-		libdata/pkgconfig/libmicrospdy.pc \
 		man/man3/libmicrohttpd.3.gz
 
 post-patch:
