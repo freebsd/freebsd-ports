@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	Radiator
-PORTVERSION=	4.14
+PORTVERSION=	4.17
 CATEGORIES=	net
 MASTER_SITES=	# fetch manually
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	Radiator Radius Server by Open System Consultants
+
+LICENSE=	radiator
+LICENSE_NAME=	Radiator
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 OPTIONS_DEFINE=	MYSQL
 MYSQL_DESC=	MySQL support

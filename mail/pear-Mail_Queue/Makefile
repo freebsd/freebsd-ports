@@ -3,6 +3,7 @@
 
 PORTNAME=	Mail_Queue
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 CATEGORIES=	mail www pear
 
 MAINTAINER=	joneum@bsdproject.de
