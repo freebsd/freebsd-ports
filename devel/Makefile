@@ -4483,6 +4483,7 @@
     SUBDIR += py-pycapsicum
     SUBDIR += py-pycerberus
     SUBDIR += py-pycmd
+    SUBDIR += py-pycodestyle
     SUBDIR += py-pycparser
     SUBDIR += py-pydenticon
     SUBDIR += py-pydoop
@@ -4855,6 +4856,7 @@
     SUBDIR += py3-lxml
     SUBDIR += py3-nose
     SUBDIR += py3-py
+    SUBDIR += py3-pycodestyle
     SUBDIR += py3-pyicu
     SUBDIR += py3-pylru-cache
     SUBDIR += py3-pytest
