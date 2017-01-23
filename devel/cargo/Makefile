@@ -3,6 +3,7 @@
 
 PORTNAME=	cargo
 PORTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -33,7 +34,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 #   This is a collection of mainly shell scripts which are used to
 #   install Cargo.
 
-MASTER_SITES=	https://static.rust-lang.org/cargo-dist/2016-11-02/:bootstrap \
+MASTER_SITES=	https://static.rust-lang.org/cargo-dist/:bootstrap \
 		LOCAL/dumbbell/rust:registry
 .if !defined(SKIP_CARGO_REGISTRY)
 DISTFILES+=	${CARGO_REGISTRY}:registry
@@ -54,7 +55,7 @@ RUST_ARCH_x86_64=	x86_64 # dragonfly
 RUST_ARCH_amd64=	x86_64
 RUST_ARCH_i386=		i686
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
-CARGO_BOOT=	${PORTNAME}-nightly-${RUST_TARGET}${EXTRACT_SUFX}
+CARGO_BOOT=	2016-11-02/${PORTNAME}-nightly-${RUST_TARGET}${EXTRACT_SUFX}
 CARGO_REGISTRY=	${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
 
 # We don't USES=cmake here, because cmake is not Cargo's build system.
@@ -69,7 +70,8 @@ RUST_PORT?=	lang/rust
 USES=		gmake python:-2.7,build pkgconfig ssl
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${MANPREFIX}/man"
-MAKE_ENV=	ARGS="${CARGO_ARGS}"
+MAKE_ENV=	ARGS="${CARGO_ARGS}" \
+		OPENSSL_DIR="${OPENSSLBASE}"
 CARGO_ARGS=	--jobs ${MAKE_JOBS_NUMBER}
 
 MAKE_ARGS+=	VERBOSE=1
@@ -82,12 +84,6 @@ BOOTSTRAP_CONFIGURE_ON=	--cargo="${WRKDIR}/${PORTNAME}-nightly-${RUST_TARGET}/ca
 BOOTSTRAP_CONFIGURE_OFF=--cargo="$$(command -v cargo)" # respect PATH
 BOOTSTRAP_DISTFILES=	${CARGO_BOOT}:bootstrap
 BOOTSTRAP_MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/target/snapshot/cargo/lib"
-.if !exists(/usr/lib/libssl.so.8) # OPENSSL_SHLIBVER
-BOOTSTRAP_VARS+=	WITH_OPENSSL_PORT=yes
-BOOTSTRAP_MAKE_ENV+=	OPENSSL_DIR=${LOCALBASE}
-.else
-BOOTSTRAP_MAKE_ENV+=	OPENSSL_DIR=/usr
-.endif
 
 post-extract-BOOTSTRAP-on:
 	@${MKDIR} ${WRKSRC}/target/dl
