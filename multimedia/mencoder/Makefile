@@ -80,8 +80,6 @@ ALL_TARGET=	mencoder
 
 .include "${.CURDIR}/../mplayer/Makefile.options"
 
-BROKEN_aarch64=		Fails to compile: error: invalid operand for instruction
-
 pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""

@@ -1,0 +1,7 @@
+pycodestyle is a tool to check your Python code against some of the
+style conventions in PEP 8.
+
+This package used to be called pep8 but was renamed to pycodestyle
+to reduce confusion
+
+WWW: https://pycodestyle.readthedocs.io/en/latest/
