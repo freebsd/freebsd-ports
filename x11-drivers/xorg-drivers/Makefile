@@ -2,7 +2,7 @@
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -34,7 +34,6 @@ VIDEO_DRIVERS=		mach64 \
 			ark \
 			chips \
 			dummy \
-			fbdev \
 			glint \
 			i128 \
 			i740 \
