@@ -1,4 +1,3 @@
-bin/c2ph%%BINSUFFIX%%
 bin/corelist%%BINSUFFIX%%
 bin/cpan%%BINSUFFIX%%
 bin/enc2xs%%BINSUFFIX%%
@@ -24,7 +23,6 @@ bin/pod2usage%%BINSUFFIX%%
 bin/podchecker%%BINSUFFIX%%
 bin/podselect%%BINSUFFIX%%
 bin/prove%%BINSUFFIX%%
-bin/pstruct%%BINSUFFIX%%
 bin/ptar%%BINSUFFIX%%
 bin/ptardiff%%BINSUFFIX%%
 bin/ptargrep%%BINSUFFIX%%
@@ -928,7 +926,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/overload/numbers.pm
 %%PRIV_LIB%%/overloading.pm
 %%PRIV_LIB%%/parent.pm
-%%MAN1%%/c2ph.1.gz
 %%MAN1%%/corelist.1.gz
 %%MAN1%%/cpan.1.gz
 %%MAN1%%/enc2xs.1.gz
@@ -973,6 +970,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5240delta.1.gz
 %%MAN1%%/perl5241delta.1.gz
 %%MAN1%%/perl5250delta.1.gz
+%%MAN1%%/perl52510delta.1.gz
 %%MAN1%%/perl5251delta.1.gz
 %%MAN1%%/perl5252delta.1.gz
 %%MAN1%%/perl5253delta.1.gz
@@ -1018,6 +1016,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perldebtut.1.gz
 %%MAN1%%/perldebug.1.gz
 %%MAN1%%/perldelta.1.gz
+%%MAN1%%/perldeprecation.1.gz
 %%MAN1%%/perldiag.1.gz
 %%MAN1%%/perldoc.1.gz
 %%MAN1%%/perldos.1.gz
@@ -1147,7 +1146,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/podchecker.1.gz
 %%MAN1%%/podselect.1.gz
 %%MAN1%%/prove.1.gz
-%%MAN1%%/pstruct.1.gz
 %%MAN1%%/ptar.1.gz
 %%MAN1%%/ptardiff.1.gz
 %%MAN1%%/ptargrep.1.gz
@@ -1760,6 +1758,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5240delta.pod
 %%PRIV_LIB%%/pod/perl5241delta.pod
 %%PRIV_LIB%%/pod/perl5250delta.pod
+%%PRIV_LIB%%/pod/perl52510delta.pod
 %%PRIV_LIB%%/pod/perl5251delta.pod
 %%PRIV_LIB%%/pod/perl5252delta.pod
 %%PRIV_LIB%%/pod/perl5253delta.pod
@@ -1804,6 +1803,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perldebtut.pod
 %%PRIV_LIB%%/pod/perldebug.pod
 %%PRIV_LIB%%/pod/perldelta.pod
+%%PRIV_LIB%%/pod/perldeprecation.pod
 %%PRIV_LIB%%/pod/perldiag.pod
 %%PRIV_LIB%%/pod/perldoc.pod
 %%PRIV_LIB%%/pod/perldos.pod
