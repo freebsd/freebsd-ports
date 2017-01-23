@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvsutils/releases/
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS utilities which facilitate working with local working directories
 
 LICENSE=	GPLv2

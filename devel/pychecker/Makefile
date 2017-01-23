@@ -6,7 +6,7 @@ PORTVERSION=	0.8.19
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python source code checking tool to help hunting common bugs
 
 LICENSE=	BSD3CLAUSE

@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-mga-1.6.4.tar.bz2) = 48c6690b6751c76f53de64f8dbeaa9d6c62dbcfe890c768fd87167951247d44f
-SIZE (xorg/driver/xf86-video-mga-1.6.4.tar.bz2) = 475858
+TIMESTAMP = 1484715465
+SHA256 (xorg/driver/xf86-video-mga-1.6.5.tar.bz2) = b663cd8e6364f7c4e2637b9fcab9861d0e3971518c73b00d213f6545a1289422
+SIZE (xorg/driver/xf86-video-mga-1.6.5.tar.bz2) = 478350

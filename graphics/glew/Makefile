@@ -6,7 +6,7 @@ PORTVERSION=	1.13.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The OpenGL Extension Wrangler Library
 
 LICENSE=	MIT BSD3CLAUSE

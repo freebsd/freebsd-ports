@@ -2,25 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-client
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
+DISTVERSIONSUFFIX=	-incubating
 CATEGORIES=	www java
 MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
 		http://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo
-DISTNAME=	${PORTVERSION}
-DISTFILES=	${PORTVERSION}_GH${EXTRACT_SUFX} \
-		repository-${PORTVERSION}${EXTRACT_SUFX}:repo
+DISTFILES=	repository-${PORTVERSION}${EXTRACT_SUFX}:repo
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ultima1252@gmail.com
 COMMENT=	HTML5 Clientless Remote Desktop
 
-LICENSE=	MIT
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	glyptodon
+GH_ACCOUNT=	apache
+GH_PROJECT=	incubator-guacamole-client
 
 MVN=		mvn
 MVN_ARGS=	package -Duser.home=${WRKDIR}
@@ -49,13 +49,13 @@ do-install:
 		@${MKDIR} ${STAGEDIR}${GUACAMOLE_DATA}
 		@${MKDIR} ${STAGEDIR}${GUACAMOLE_CONF}
 
-		@${CP} ${WRKSRC}/guacamole/target/guacamole-${PORTVERSION}.war \
+		@${CP} ${WRKSRC}/guacamole/target/guacamole-${DISTVERSIONFULL}.war \
 			${STAGEDIR}${GUACAMOLE_DATA}/guacamole.war
-		@${CP} ${WRKSRC}/extensions/guacamole-auth-jdbc/target/guacamole-auth-jdbc-${PORTVERSION}.tar.gz \
+		@${CP} ${WRKSRC}/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-dist/target/guacamole-auth-jdbc-${DISTVERSIONFULL}.tar.gz \
 			${STAGEDIR}/${GUACAMOLE_DATA}/guacamole-auth-jdbc.tar.gz
-		@${CP} ${WRKSRC}/extensions/guacamole-auth-ldap/target/guacamole-auth-ldap-${PORTVERSION}.tar.gz \
+		@${CP} ${WRKSRC}/extensions/guacamole-auth-ldap/target/guacamole-auth-ldap-${DISTVERSIONFULL}.tar.gz \
 			 ${STAGEDIR}/${GUACAMOLE_DATA}/guacamole-auth-ldap.tar.gz
-		@${CP} ${WRKSRC}/extensions/guacamole-auth-noauth/target/guacamole-auth-noauth-${PORTVERSION}.tar.gz \
+		@${CP} ${WRKSRC}/extensions/guacamole-auth-noauth/target/guacamole-auth-noauth-${DISTVERSIONFULL}.tar.gz \
 			 ${STAGEDIR}/${GUACAMOLE_DATA}/guacamole-auth-noauth.tar.gz
 
 .if ${PORT_OPTIONS:MMK_LINK}

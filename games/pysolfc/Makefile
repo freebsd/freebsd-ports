@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/PySolFC/PySolFC-${PORTVERSION} \
 DISTFILES=	PySolFC-${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire game, written in Python and the successor of PySol
 
 LICENSE=	GPLv3
