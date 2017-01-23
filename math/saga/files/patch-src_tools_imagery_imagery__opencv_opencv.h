@@ -1,5 +1,5 @@
---- src/modules/imagery/imagery_opencv/opencv.h.orig	2015-12-21 09:38:29 UTC
-+++ src/modules/imagery/imagery_opencv/opencv.h
+--- src/tools/imagery/imagery_opencv/opencv.h.orig	2016-06-29 05:55:46 UTC
++++ src/tools/imagery/imagery_opencv/opencv.h
 @@ -74,7 +74,8 @@
  
  //---------------------------------------------------------

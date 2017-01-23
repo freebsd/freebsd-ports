@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	github-backup-utils
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	GitHub Enterprise Backup Utilities
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	git>0:devel/git \
 		rsync>0:net/rsync

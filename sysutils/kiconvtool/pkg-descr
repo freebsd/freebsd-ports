@@ -13,4 +13,4 @@ kernel, so usermounts with file name conversions won't fail and in
 the same time it's not possible to bring the system down by filling
 kernel memory.
 
-WWW: http://wiki.freebsd.org/DmitryMarakasov/kiconvtool
+WWW: https://wiki.freebsd.org/DmitryMarakasov/kiconvtool

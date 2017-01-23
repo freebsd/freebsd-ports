@@ -1,22 +1,6 @@
 bin/isoqlog
 @sample etc/isoqlog.conf-dist etc/isoqlog.conf
-@sample etc/isoqlog.domains-dist  etc/isoqlog.domains
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/EnderUNIX
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.Turkish
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/tr/BENIOKU
-%%PORTDOCS%%%%DOCSDIR%%/tr/DEGISIKLIKLER
-%%PORTDOCS%%%%DOCSDIR%%/tr/HABERLER
-%%PORTDOCS%%%%DOCSDIR%%/tr/KOPYALAMA
-%%PORTDOCS%%%%DOCSDIR%%/tr/KURULUM
-%%PORTDOCS%%%%DOCSDIR%%/tr/YAZARLAR
+@sample etc/isoqlog.domains-dist etc/isoqlog.domains
 %%DATADIR%%/htmltemp/daily.html
 %%DATADIR%%/htmltemp/domain.html
 %%DATADIR%%/htmltemp/index.html
