@@ -1,4 +1,4 @@
---- src/nv_driver.c.orig	2012-07-17 06:47:02 UTC
+--- src/nv_driver.c.orig	2017-01-17 22:41:33 UTC
 +++ src/nv_driver.c
 @@ -1543,7 +1543,11 @@ NVPreInit(ScrnInfoPtr pScrn, int flags)
  	xf86FreeInt10(pNv->pInt);
@@ -12,11 +12,3 @@
      
      /* We use a programmable clock */
      pScrn->progClock = TRUE;
-@@ -2550,7 +2554,6 @@ NVScreenInit(SCREEN_INIT_ARGS_DECL)
-     if (!pNv->NoAccel)
- 	NVAccelInit(pScreen);
-     
--    miInitializeBackingStore(pScreen);
-     xf86SetBackingStore(pScreen);
-     xf86SetSilkenMouse(pScreen);
- 
