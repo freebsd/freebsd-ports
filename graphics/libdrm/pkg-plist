@@ -1,3 +1,5 @@
+%%ARM_DRIVERS%%include/freedreno/freedreno_drmif.h
+%%ARM_DRIVERS%%include/freedreno/freedreno_ringbuffer.h
 %%RADEON_DRIVERS%%include/libdrm/amdgpu.h
 %%RADEON_DRIVERS%%include/libdrm/amdgpu_drm.h
 include/libdrm/drm.h
@@ -35,7 +37,7 @@ include/libdrm/sis_drm.h
 include/libdrm/tegra_drm.h
 include/libdrm/vc4_drm.h
 %%ARM_DRIVERS%%include/libdrm/vc4_packet.h
-%%ARM_DRIVERS%%include/libdrm/vc4_gpq_defines.h
+%%ARM_DRIVERS%%include/libdrm/vc4_qpu_defines.h
 include/libdrm/via_drm.h
 include/libdrm/virtgpu_drm.h
 %%KMS%%include/libkms/libkms.h
@@ -48,6 +50,9 @@ lib/libdrm.so.2.4.0
 %%RADEON_DRIVERS%%lib/libdrm_amdgpu.so
 %%RADEON_DRIVERS%%lib/libdrm_amdgpu.so.1
 %%RADEON_DRIVERS%%lib/libdrm_amdgpu.so.1.0.0
+%%ARM_DRIVERS%%lib/libdrm_freedreno.so
+%%ARM_DRIVERS%%lib/libdrm_freedreno.so.1
+%%ARM_DRIVERS%%lib/libdrm_freedreno.so.1.0.0
 %%INTEL_DRIVER%%lib/libdrm_intel.so
 %%INTEL_DRIVER%%lib/libdrm_intel.so.1
 %%INTEL_DRIVER%%lib/libdrm_intel.so.1.0.0
@@ -57,14 +62,12 @@ lib/libdrm.so.2.4.0
 %%RADEON_DRIVERS%%lib/libdrm_radeon.so
 %%RADEON_DRIVERS%%lib/libdrm_radeon.so.1
 %%RADEON_DRIVERS%%lib/libdrm_radeon.so.1.0.1
-%%ARM_DRIVERS%%lib/libdrm_vc4.so
-%%ARM_DRIVERS%%lib/libdrm_vc4.so.1
-%%ARM_DRIVERS%%lib/libdrm_vc4.so.1.0.0
 %%KMS%%lib/libkms.so
 %%KMS%%lib/libkms.so.1
 %%KMS%%lib/libkms.so.1.0.0
 libdata/pkgconfig/libdrm.pc
 %%RADEON_DRIVERS%%libdata/pkgconfig/libdrm_amdgpu.pc
+%%ARM_DRIVERS%%libdata/pkgconfig/libdrm_freedreno.pc
 %%INTEL_DRIVER%%libdata/pkgconfig/libdrm_intel.pc
 %%NOUVEAU_DRIVER%%libdata/pkgconfig/libdrm_nouveau.pc
 %%RADEON_DRIVERS%%libdata/pkgconfig/libdrm_radeon.pc
