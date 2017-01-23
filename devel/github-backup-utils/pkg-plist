@@ -17,11 +17,13 @@ bin/ghe-restore
 %%DATADIR%%/ghe-backup-redis
 %%DATADIR%%/ghe-backup-redis-cluster
 %%DATADIR%%/ghe-backup-repositories-cluster
+%%DATADIR%%/ghe-backup-repositories-cluster-ng
 %%DATADIR%%/ghe-backup-repositories-rsync
 %%DATADIR%%/ghe-backup-repositories-tarball
 %%DATADIR%%/ghe-backup-settings
 %%DATADIR%%/ghe-backup-store-version
 %%DATADIR%%/ghe-backup-userdata
+%%DATADIR%%/ghe-cluster-hostnames
 %%DATADIR%%/ghe-detect-leaked-ssh-keys
 %%DATADIR%%/ghe-gc-disable
 %%DATADIR%%/ghe-gc-enable
