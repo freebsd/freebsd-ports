@@ -10,7 +10,7 @@ this permanently by adding the following command to your .bashrc file
 or by defining it temporarily on the command line before executing
 SAGA CMD:
 
-  export SAGA_MLB=/yourPathToSAGA_modules
+  export SAGA_MLB=/yourPathToSAGA_tools
 
 e.g.:
   export SAGA_MLB=%%PREFIX%%/lib/saga
@@ -26,7 +26,7 @@ Predefined ToolChains are located at
   %%DATADIR%%/toolchains/
 
 Python scripts with examples, helpers and test data reside at
-  %%DATADIR%%/scripting/python/
+  %%DATADIR%%/accessories/python/
 
 ######################################################################
 
