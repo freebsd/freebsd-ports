@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-server
-PORTVERSION=	0.9.9
-PORTREVISION=	2
+PORTVERSION=	0.9.10
+DISTVERSIONSUFFIX=	-incubating
 CATEGORIES=	net
 
 MAINTAINER=	ultima1252@gmail.com
 COMMENT=	HTML5 Clientless Remote Desktop
 
-LICENSE=	MIT
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libossp-uuid.so:misc/ossp-uuid \
@@ -18,16 +18,19 @@ LIB_DEPENDS=	libossp-uuid.so:misc/ossp-uuid \
 CONFLICTS_BUILD=pulseaudio-*+jack_* ffmpeg-*+jack_*
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	glyptodon
+GH_ACCOUNT=	apache
+GH_PROJECT=	incubator-guacamole-server
 
-USES=		autoreconf jpeg libtool localbase pkgconfig shebangfix ssl
+USES=		autoreconf gettext-runtime jpeg libtool localbase \
+		pkgconfig shebangfix ssl
 USE_GNOME=	cairo
 SHEBANG_FILES=	${WRKSRC}/src/protocols/rdp/keymaps/generate.pl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-guacd-conf=${PREFIX}/etc/guacd/guacd.conf
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
+
 USERS=		guacamole
 GROUPS=		guacamole
 
@@ -35,9 +38,11 @@ USE_RC_SUBR=	guacd
 SUB_LIST+=	GUACD_USER=${USERS} \
 		GUACD_GROUP=${GROUPS}
 
-OPTIONS_DEFINE=		RDP SSH VNC VORBIS PULSEAUDIO WEBP
-OPTIONS_DEFAULT=	RDP SSH VNC VORBIS PULSEAUDIO WEBP
+OPTIONS_DEFINE=		RDP SSH VNC VORBIS PULSEAUDIO WEBP GUACENC
+OPTIONS_DEFAULT=	RDP SSH VNC VORBIS PULSEAUDIO WEBP GUACENC
 OPTIONS_SUB=		yes
+GUACENC_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+GUACENC_DESC?=		Video Encoding Utility
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_DESC?=	VNC audio support (Experimental)
 RDP_LIB_DEPENDS=	libfreerdp1.so:net/freerdp1
@@ -53,25 +58,11 @@ VORBIS_DESC?=		Ogg Vorbis for compression
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_DESC?=		WebP support
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/ssl|${PREFIX}/etc/ssl|g ; \
 			 s|/etc/guacamole|${PREFIX}/etc/guacd|g' \
 			 ${WRKSRC}/src/guacd/man/guacd.conf.5
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libguac.so.*
-.if ${PORT_OPTIONS:MSSH}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libguac-client-ssh.so.*
-.endif
-.if ${PORT_OPTIONS:MRDP}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/freerdp/guacsnd-client.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/freerdp/guacdr-client.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/freerdp/guacsvc-client.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libguac-client-rdp.so.*
-.endif
-.if ${PORT_OPTIONS:MVNC}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libguac-client-vnc.so.*
-.endif
+	@${REINPLACE_CMD} 's/-Werror//' \
+			  ${WRKSRC}/src/guacenc/Makefile.am
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

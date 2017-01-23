@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-openchrome-0.3.3.tar.bz2) = e49e2f1e5dac86408e5a74b87038cc4082d2c3fba4e0579823161991432412ed
-SIZE (xorg/driver/xf86-video-openchrome-0.3.3.tar.bz2) = 518705
+TIMESTAMP = 1480077395
+SHA256 (xorg/driver/xf86-video-openchrome-0.5.0.tar.bz2) = 49fdd613975a332a0a64720b382420354aecaf2fcbb4920efd094d5a0ac955bb
+SIZE (xorg/driver/xf86-video-openchrome-0.5.0.tar.bz2) = 542713

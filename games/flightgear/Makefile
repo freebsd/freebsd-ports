@@ -3,6 +3,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	2016.4.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 

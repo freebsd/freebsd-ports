@@ -6,7 +6,7 @@ PORTVERSION=	2.0.4
 CATEGORIES=	japanese mail rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides 'mail' gem with iso-2022-jp conversion capability
 
 LICENSE=	MIT

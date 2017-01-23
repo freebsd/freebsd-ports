@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 		http://www.reynoldsnet.org/flexbackup/tarball/
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl-based flexible backup system that can use dump/afio/cpio/tar
 
 LICENSE=	GPLv2

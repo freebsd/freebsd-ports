@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cli53
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.7
 CATEGORIES=	dns
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Command line management of Route53 domains
 
 LICENSE=	MIT

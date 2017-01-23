@@ -71,7 +71,5 @@ post-patch:
 	@${REINPLACE_CMD} -e '/${d}/ d' \
 		${WRKSRC}/qtmultimedia.pro
 .endfor
-	@${REINPLACE_CMD} -e 's|<linux/types.h>|<sys/types.h>|' \
-		${WRKSRC}/src/plugins/v4l/radio/v4lradiocontrol.h
 
 .include <bsd.port.mk>

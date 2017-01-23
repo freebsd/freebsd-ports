@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://opsec.eu/src/
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Round Trip Time and Packet Loss Probe for MRTG
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:net-mgmt/mrtg

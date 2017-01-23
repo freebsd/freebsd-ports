@@ -1224,7 +1224,6 @@
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
     SUBDIR += rude
-    SUBDIR += rwhoisd
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
     SUBDIR += samba-smbclient

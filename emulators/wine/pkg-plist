@@ -1782,6 +1782,8 @@ lib/wine/fakedlls/xaudio2_3.dll
 lib/wine/fakedlls/xaudio2_4.dll
 lib/wine/fakedlls/xaudio2_5.dll
 lib/wine/fakedlls/xaudio2_6.dll
+%%OPENAL%%lib/wine/fakedlls/xaudio2_7.dll
+%%OPENAL%%lib/wine/fakedlls/xaudio2_8.dll
 lib/wine/fakedlls/xcopy.exe
 lib/wine/fakedlls/xinput1_1.dll
 lib/wine/fakedlls/xinput1_2.dll
@@ -2393,6 +2395,8 @@ lib/wine/xaudio2_3.dll.so
 lib/wine/xaudio2_4.dll.so
 lib/wine/xaudio2_5.dll.so
 lib/wine/xaudio2_6.dll.so
+%%OPENAL%%lib/wine/xaudio2_7.dll.so
+%%OPENAL%%lib/wine/xaudio2_8.dll.so
 lib/wine/xcopy.exe.so
 lib/wine/xinput1_1.dll.so
 lib/wine/xinput1_2.dll.so

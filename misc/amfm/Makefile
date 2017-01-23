@@ -9,7 +9,7 @@ MASTER_SITES=	https://github.com/ikegam/amfm/raw/9679aa06eead7ed3571480e892f4268
 DISTNAME=	amfm
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	THANKO USB AM/FM Radio controller
 
 LIB_DEPENDS=	libhid.so:devel/libhid

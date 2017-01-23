@@ -2683,7 +2683,7 @@ lib/python%%XYDOT%%/lib-dynload/fcntl.so
 lib/python%%XYDOT%%/lib-dynload/grp.so
 lib/python%%XYDOT%%/lib-dynload/math.so
 lib/python%%XYDOT%%/lib-dynload/mmap.so
-lib/python%%XYDOT%%/lib-dynload/nis.so
+%%NO_NIS%%lib/python%%XYDOT%%/lib-dynload/nis.so
 lib/python%%XYDOT%%/lib-dynload/ossaudiodev.so
 lib/python%%XYDOT%%/lib-dynload/parser.so
 lib/python%%XYDOT%%/lib-dynload/pyexpat.so

@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	12
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python package for creating encapsulated PostScript figures
 
 LICENSE=	GPLv2

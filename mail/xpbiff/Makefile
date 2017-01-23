@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/sanpei
 DISTNAME=	xpbiff
 DISTFILES=	xpbiff-1.27-with-YOUBIN.tar.gz.uu
 
-MAINTAINER?=	sanpei@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Replacement for xbiff that handles popup window with mail header
 
 USES=		imake:noman

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 EXTRACT_SUFX=	.sh
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time action strategy with programs
 
 ONLY_FOR_ARCHS=	i386 amd64

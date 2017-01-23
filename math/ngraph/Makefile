@@ -8,7 +8,7 @@ MASTER_SITES=	http://www2e.biglobe.ne.jp/~isizaka/bin/ \
 		PORTS_JP
 DISTNAME=	Ngraph-${PORTVERSION}-src
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XY plotting tool for students, scientists, and engineers
 
 LICENSE=	GPLv2

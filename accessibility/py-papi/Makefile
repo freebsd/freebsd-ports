@@ -8,7 +8,7 @@ CATEGORIES=	accessibility devel python
 MASTER_SITES=	SF/ocemp/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ATK accessibility wrapper for python
 
 USES=		pkgconfig python:2

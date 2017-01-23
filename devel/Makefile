@@ -203,7 +203,6 @@
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += bullet
-    SUBDIR += bunny
     SUBDIR += busybee
     SUBDIR += byacc
     SUBDIR += byaccj

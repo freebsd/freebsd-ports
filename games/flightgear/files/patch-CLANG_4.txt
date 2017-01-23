@@ -1,0 +1,41 @@
+Fix build with Clang 4.0
+
+--- src/FDM/JSBSim/FGFDMExec.cpp	2017-01-20 21:38:08.784722000 +0000
++++ src/FDM/JSBSim/FGFDMExec.cpp	2017-01-20 22:55:24.501656000 +0000
+@@ -211,7 +211,7 @@ 
+   
+   SetGroundCallback(0);
+ 
+-  if (FDMctr > 0) (*FDMctr)--;
++  if (FDMctr != 0) (*FDMctr)--;
+ 
+   Debug(1);
+ }
+--- src/FDM/JSBSim/input_output/FGInputSocket.cpp.orig	2017-01-21 20:58:27.676020000 +0100
++++ src/FDM/JSBSim/input_output/FGInputSocket.cpp	2017-01-21 21:02:08.818597000 +0100
+@@ -192,7 +192,7 @@
+           } else {
+             socket->Reply("Must be in HOLD to search properties\n");
+           }
+-        } else if (node > 0) {
++        } else {
+           ostringstream buf;
+           buf << argument << " = " << setw(12) << setprecision(6) << node->getDoubleValue() << endl;
+           socket->Reply(buf.str());
+--- src/Network/native_ctrls.cxx.orig	2017-01-21 21:06:09.165609000 +0100
++++ src/Network/native_ctrls.cxx	2017-01-21 21:10:14.120123000 +0100
+@@ -428,10 +428,10 @@
+ //    node->setDoubleValue( net->brake_right );
+ 
+     node = fgGetNode( "/controls/switches", true );
+-    node->setBoolValue( "master-bat", net->master_bat > 0 );
+-    node->setBoolValue( "master-alt", net->master_alt > 0);
+-    node->setBoolValue( "master-avionics", net->master_avionics > 0);
+-    
++    node->setBoolValue( "master-bat", net->master_bat != 0 );
++    node->setBoolValue( "master-alt", net->master_alt != 0 );
++    node->setBoolValue( "master-avionics", net->master_avionics > 0 );
++
+     node = fgGetNode( "/environment", true );
+     node->setDoubleValue( "wind-speed-kt", net->wind_speed_kt );
+     node->setDoubleValue( "wind-from-heading-deg", net->wind_dir_deg );

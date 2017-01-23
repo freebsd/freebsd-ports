@@ -6,7 +6,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang python
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the Python language for microcontrollers
 
 LICENSE=	MIT

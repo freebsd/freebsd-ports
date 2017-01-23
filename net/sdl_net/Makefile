@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL_net-${PORTVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small sample cross-platform networking library
 
 LICENSE=	ZLIB

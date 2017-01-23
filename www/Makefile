@@ -1481,7 +1481,6 @@
     SUBDIR += piwik
     SUBDIR += planet
     SUBDIR += plexwatchweb
-    SUBDIR += pligg
     SUBDIR += plone
     SUBDIR += plugger
     SUBDIR += pmwiki

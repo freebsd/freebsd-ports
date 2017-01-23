@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 
 LICENSE=	LGPL21

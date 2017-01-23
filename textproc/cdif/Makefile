@@ -7,7 +7,7 @@ CATEGORIES=		textproc
 MASTER_SITES=		LOCAL/sanpei
 EXTRACT_SUFX=		# empty
 
-MAINTAINER=		sanpei@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Word context diff
 
 USES=		perl5 shebangfix
