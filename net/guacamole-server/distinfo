@@ -1,2 +1,3 @@
-SHA256 (glyptodon-guacamole-server-0.9.9_GH0.tar.gz) = 53d26e2e7e028b0d9fbc502b94acd02e2d04e3a491c8be4a3e16290c2ec58321
-SIZE (glyptodon-guacamole-server-0.9.9_GH0.tar.gz) = 265031
+TIMESTAMP = 1485059653
+SHA256 (apache-incubator-guacamole-server-0.9.10-incubating_GH0.tar.gz) = e123d1a43d03b0104dc41c480612e0757cd34a636dee538b62a6c4f810efd65e
+SIZE (apache-incubator-guacamole-server-0.9.10-incubating_GH0.tar.gz) = 377895
