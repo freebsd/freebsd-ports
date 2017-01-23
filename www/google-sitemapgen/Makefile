@@ -10,12 +10,9 @@ DISTNAME=	sitemap_gen_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to analyze web server and generate Google Sitemap files
 
-PROJECTHOST=	sitemap-generators
-
-NO_WRKSUBDIR=
-
-USES=		python
-USE_PYTHON=	distutils
-PYDISTUTILS_PKGNAME=	sitemap_gen
+NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
