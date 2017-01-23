@@ -30,8 +30,8 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.12.0a.2017.01.12
-HASH=		d2e1b47
+ISCVERSION=	9.12.0a.2017.01.21
+HASH=		4502e3c
 
 USES=	cpe libedit
 
@@ -203,6 +203,7 @@ QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
 			libprotobuf-c.so:devel/protobuf-c
+DNSTAP_IMPLIES=		THREADS
 
 .include <bsd.port.options.mk>
 
