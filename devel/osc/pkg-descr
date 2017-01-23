@@ -6,4 +6,4 @@ osc is a subversion-like client. It serves as client for the source
 code repository component of the build service, and it is used to
 edit metadata or query about build results.
 
-WWW: http://en.opensuse.org/openSUSE:OSC
+WWW: https://en.opensuse.org/openSUSE:OSC
