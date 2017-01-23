@@ -6,8 +6,8 @@ PORTVERSION=	1.1.29
 PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://anyterm.org/download/ \
-		http://apt.douglasthrift.net/files/${PORTNAME}/ \
-		http://code.douglasthrift.net/files/${PORTNAME}/
+		http://dl1.douglasthrift.net/${PORTNAME}/ \
+		http://dl2.douglasthrift.net/${PORTNAME}/
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Terminal emulator on a Web page
@@ -15,9 +15,9 @@ COMMENT=	Terminal emulator on a Web page
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
+
+BROKEN_powerpc64=	Does not build
 
 USE_RC_SUBR=	anytermd
 USES=		gmake iconv localbase tar:tbz2
