@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.8.50.g20170121
+PORTVERSION=	2.8.50.g20170123
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -72,7 +72,7 @@ USE_GNOME+=	glib20
 CONFIGURE_ARGS+=	--localstatedir=/var
 CONFIGURE_ARGS+=	--extra-ldflags=-L\"${LOCALBASE}/lib\"
 CONFIGURE_ARGS+=	--disable-libssh2
-PORTDOCS=	docs qemu-doc.html qmp-commands.txt
+PORTDOCS=	docs qemu-doc.html
 
 .if defined(QEMU_USER_STATIC)
 .if ${ARCH} != "amd64"

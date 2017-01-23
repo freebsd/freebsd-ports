@@ -1,5 +1,5 @@
---- Makefile.orig	2017-01-21 14:04:07.000000000 -0700
-+++ Makefile	2017-01-21 14:18:18.199722000 -0700
+--- Makefile.orig	2017-01-21 21:04:07.000000000 +0000
++++ Makefile	2017-01-23 17:32:06.512839000 +0000
 @@ -90,9 +90,13 @@
  HELPERS-$(CONFIG_LINUX) = qemu-bridge-helper$(EXESUF)
  
@@ -14,7 +14,7 @@
  ifdef CONFIG_VIRTFS
  DOCS+=fsdev/virtfs-proxy-helper.1
  endif
-@@ -436,10 +440,12 @@
+@@ -436,15 +440,19 @@
  
  install-doc: $(DOCS)
  	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"
@@ -27,3 +27,24 @@
  ifdef CONFIG_POSIX
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
  	$(INSTALL_DATA) qemu.1 "$(DESTDIR)$(mandir)/man1"
+ 	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man7"
++ifndef NOPORTDOCS
+ 	$(INSTALL_DATA) docs/qemu-qmp-ref.7 "$(DESTDIR)$(mandir)/man7"
++endif
+ ifneq ($(TOOLS),)
+ 	$(INSTALL_DATA) qemu-img.1 "$(DESTDIR)$(mandir)/man1"
+ 	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man8"
+@@ -452,11 +460,13 @@
+ endif
+ ifneq (,$(findstring qemu-ga,$(TOOLS)))
+ 	$(INSTALL_DATA) qemu-ga.8 "$(DESTDIR)$(mandir)/man8"
++ifndef NOPORTDOCS
+ 	$(INSTALL_DATA) docs/qemu-ga-ref.html "$(DESTDIR)$(qemu_docdir)"
+ 	$(INSTALL_DATA) docs/qemu-ga-ref.txt "$(DESTDIR)$(qemu_docdir)"
+ 	$(INSTALL_DATA) docs/qemu-ga-ref.7 "$(DESTDIR)$(mandir)/man7"
+ endif
+ endif
++endif
+ ifdef CONFIG_VIRTFS
+ 	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
+ 	$(INSTALL_DATA) fsdev/virtfs-proxy-helper.1 "$(DESTDIR)$(mandir)/man1"
