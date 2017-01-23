@@ -548,6 +548,7 @@
     SUBDIR += p5-Task-Math-Symbolic
     SUBDIR += p5-Text-AsciiTeX
     SUBDIR += p5-bignum
+    SUBDIR += pantheon-calculator
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += parmgridgen
