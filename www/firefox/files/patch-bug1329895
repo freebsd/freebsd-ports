@@ -1,0 +1,13 @@
+Apply Linux fieldtext opacity for all GTK platforms. r=dao
+
+--- browser/themes/shared/icon-colors.inc.svg
++++ browser/themes/shared/icon-colors.inc.svg
+@@ -2,7 +2,7 @@
+ 
+ .fieldtext {
+   fill: -moz-fieldtext;
+-#ifdef XP_LINUX
++#ifdef MOZ_WIDGET_GTK
+   /* The fill-opacity needs to be sufficient for high-contrast settings, and
+      pathological Gtk themes where -moz-fieldtext provides low contrast by
+      default. */

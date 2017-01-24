@@ -1,0 +1,103 @@
+Revert bug 1299919 due to a failure building with CPP in environemnt.
+
+diff --git build/autoconf/toolchain.m4 build/autoconf/toolchain.m4
+index 8353967a180c..c8503e5d63f5 100644
+--- build/autoconf/toolchain.m4
++++ build/autoconf/toolchain.m4
+@@ -2,14 +2,6 @@
+ dnl License, v. 2.0. If a copy of the MPL was not distributed with this
+ dnl file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ 
+-dnl Several autoconf functions AC_REQUIRE AC_PROG_CPP/AC_PROG_CXXCPP,
+-dnl meaning they are called even when we don't call them explicitly.
+-dnl However, theses checks are not necessary and python configure sets
+-dnl the corresponding variables already, so just skip those tests
+-dnl entirely.
+-define([AC_PROG_CPP],[])
+-define([AC_PROG_CXXCPP],[])
+-
+ AC_DEFUN([MOZ_TOOL_VARIABLES],
+ [
+ GNU_AS=
+diff --git build/moz.configure/toolchain.configure build/moz.configure/toolchain.configure
+index c69b5d12daf4..bba62023c836 100644
+--- build/moz.configure/toolchain.configure
++++ build/moz.configure/toolchain.configure
+@@ -754,23 +754,6 @@
+     valid_compiler.try_compile(check_msg='%s works' % what,
+                                onerror=compiler_error)
+ 
+-
+-    # Set CPP/CXXCPP for both the build system and old-configure. We don't
+-    # need to check this works for preprocessing, because we already relied
+-    # on $CC -E/$CXX -E doing preprocessing work to validate the compiler
+-    # in the first place.
+-    if host_or_target == target:
+-        pp_var = {
+-            'C': 'CPP',
+-            'C++': 'CXXCPP',
+-        }[language]
+-
+-        preprocessor = depends_if(valid_compiler)(
+-                lambda x: list(x.wrapper) + [x.compiler, '-E'] + list(x.flags))
+-
+-        set_config(pp_var, preprocessor)
+-        add_old_configure_assignment(pp_var, preprocessor)
+-
+     return valid_compiler
+ 
+ 
+diff --git dom/bindings/GenerateCSS2PropertiesWebIDL.py dom/bindings/GenerateCSS2PropertiesWebIDL.py
+index 73e1541c13b0..58ec60c29b10 100644
+--- dom/bindings/GenerateCSS2PropertiesWebIDL.py
++++ dom/bindings/GenerateCSS2PropertiesWebIDL.py
+@@ -16,7 +16,7 @@
+     return "  [%s] attribute DOMString %s;\n" % (", ".join(extendedAttrs),
+                                                  propName)
+ def generate(output, idlFilename, preprocessorHeader):
+-    cpp = list(buildconfig.substs['CPP'])
++    cpp = shellutil.split(buildconfig.substs['CPP'])
+     cpp += shellutil.split(buildconfig.substs['ACDEFINES'])
+     cpp.append(preprocessorHeader)
+     preprocessed = subprocess.check_output(cpp)
+diff --git js/src/old-configure.in js/src/old-configure.in
+index 79541bdeb986..1cb4204aeeb3 100644
+--- js/src/old-configure.in
++++ js/src/old-configure.in
+@@ -140,6 +140,9 @@
+ 
+ MOZ_TOOL_VARIABLES
+ 
++AC_PROG_CPP
++AC_PROG_CXXCPP
++
+ dnl Special win32 checks
+ dnl ========================================================
+ 
+diff --git layout/style/GenerateCSSPropsGenerated.py layout/style/GenerateCSSPropsGenerated.py
+index 4dc2a253a811..5038e9afe726 100644
+--- layout/style/GenerateCSSPropsGenerated.py
++++ layout/style/GenerateCSSPropsGenerated.py
+@@ -10,7 +10,7 @@
+ from mozbuild import shellutil
+ 
+ def get_properties(preprocessorHeader):
+-    cpp = list(buildconfig.substs['CPP'])
++    cpp = shellutil.split(buildconfig.substs['CPP'])
+     cpp += shellutil.split(buildconfig.substs['ACDEFINES'])
+     cpp.append(preprocessorHeader)
+     preprocessed = subprocess.check_output(cpp)
+diff --git old-configure.in old-configure.in
+index 863235e13176..545e82f83d56 100644
+--- old-configure.in
++++ old-configure.in
+@@ -241,6 +241,9 @@
+ 
+ MOZ_TOOL_VARIABLES
+ 
++AC_PROG_CPP
++AC_PROG_CXXCPP
++
+ dnl ========================================================
+ dnl Special win32 checks
+ dnl ========================================================
