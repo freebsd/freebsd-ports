@@ -1266,6 +1266,7 @@
     SUBDIR += libeio
     SUBDIR += libelf
     SUBDIR += libepp-nicbr
+    SUBDIR += libepoll-shim
     SUBDIR += libesedb
     SUBDIR += libestr
     SUBDIR += libev
