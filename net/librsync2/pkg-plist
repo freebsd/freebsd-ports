@@ -1,7 +1,6 @@
 bin/rdiff
 include/librsync.h
 include/librsync-config.h
-lib/librsync.a
 lib/librsync.so
 lib/librsync.so.2
 lib/librsync.so.2.0.0

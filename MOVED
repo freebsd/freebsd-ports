@@ -8995,3 +8995,4 @@ net/rwhoisd||2017-01-22|Has expired: No more public distfiles
 devel/bunny||2017-01-22|Has expired: Superseded by a different project
 www/pligg||2017-01-22|Has expired: Abandonware
 x11-drivers/xf86-video-fbdev||2017-01-22|Linux only driver
+net/librsync1|net/librsync2|2017-01-24|Port renamed to librsync2
