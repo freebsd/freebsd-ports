@@ -797,6 +797,8 @@
     SUBDIR += php56-posix
     SUBDIR += php70-fileinfo
     SUBDIR += php70-posix
+    SUBDIR += php71-fileinfo
+    SUBDIR += php71-posix
     SUBDIR += phybs
     SUBDIR += pick
     SUBDIR += pidof

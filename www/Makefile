@@ -1465,6 +1465,9 @@
     SUBDIR += php70-opcache
     SUBDIR += php70-session
     SUBDIR += php70-tidy
+    SUBDIR += php71-opcache
+    SUBDIR += php71-session
+    SUBDIR += php71-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb3
     SUBDIR += phpgroupware
