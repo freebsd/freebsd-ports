@@ -1,6 +1,6 @@
-TIMESTAMP = 1481330255
-SHA256 (firefox-45.6.0esr.tar.bz2) = dcee8c2fdd0b55395c18bb75ec06bad95b6665f45ef33123f679a68f0a732d82
-SIZE (firefox-45.6.0esr.tar.bz2) = 52341247
+TIMESTAMP = 1484786354
+SHA256 (firefox-45.7.0esr.tar.bz2) = 6096f2c2e9fc3d611ae2629f3f71f9465eb80b03d89fa5cc28ef9c668214e569
+SIZE (firefox-45.7.0esr.tar.bz2) = 52355533
 SHA256 (glib2-2.22.2-2.fc12.i686.rpm) = e3b459c245ec14e7248e9de4b506963a4773407f3e58835db5070d0ed02ecc99
 SIZE (glib2-2.22.2-2.fc12.i686.rpm) = 1162908
 SHA256 (gtk2-2.18.3-19.fc12.i686.rpm) = aea9cf7ffe9c8dae0faa2bf3d2aa1b2117c55dce03da72dcce8c268279ec0a4b
