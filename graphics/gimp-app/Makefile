@@ -51,6 +51,8 @@ LIBS+=		-lexecinfo
 CPE_PRODUCT=	gimp
 CPE_VENDOR=	gnu
 
+EXPLICIT_SAFESTACK=	yes
+
 PLIST_SUB+=	LIBVER=0.800.18
 
 .if !defined(GIMP_SLAVE)
