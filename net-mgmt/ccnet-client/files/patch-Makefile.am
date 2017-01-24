@@ -1,13 +1,12 @@
---- Makefile.am.orig	2015-11-26 15:34:14 UTC
+--- Makefile.am.orig	2017-01-15 15:09:00 UTC
 +++ Makefile.am
-@@ -24,9 +24,13 @@ ACLOCAL_AMFLAGS = -I m4
- install-data-local:
+@@ -15,8 +15,12 @@ install-data-local:
  if MACOS
  	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
-+else 
+ else
 +if BSD
 +	sed -i '' "s|(DESTDIR)|${PREFIX}|g" $(pcfiles)
- else
++else
  	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
  endif
 +endif
