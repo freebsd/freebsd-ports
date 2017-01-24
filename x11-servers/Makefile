@@ -3,6 +3,7 @@
 
     COMMENT = X11 servers
 
+    SUBDIR += wayland
     SUBDIR += Xfstt
     SUBDIR += x11rdp
     SUBDIR += x2vnc
