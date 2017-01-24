@@ -183,12 +183,12 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 .if ${ARCH} == amd64
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86-64
-.else
+.elif ${ARCH} == i386
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86
-.endif
-.if ${ARCH} == powerpc64
+.elif ${ARCH} == powerpc64
 FREEBSD_ENV_SET=	FreeBSDPPC64Env.Set.sh
+PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_ppc64
 .endif
 PACKAGE_PREFIX=		Apache_OpenOffice
 

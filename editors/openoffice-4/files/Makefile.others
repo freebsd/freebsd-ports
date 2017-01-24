@@ -21,11 +21,11 @@ languagepack:
 	@${RM} -fr ${WRKDIR}/langpack_tmp
 	@${MKDIR} ${WRKDIR}/langpack_tmp
 .if defined (LOCALIZED_LANG)
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice_languagepack/archive/install/${LOCALIZED_LANG} ; ls Apache_OpenOffice*tar.* > ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd*.pro/Apache_OpenOffice_languagepack/archive/install/${LOCALIZED_LANG} ; ls Apache_OpenOffice*tar.* > ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK
 	@cd ${WRKDIR}/langpack_tmp ; \
 	for i in `${CAT} ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK`; do \
                 ${ECHO_CMD} "extracting $$i" ; \
-                cd ${WRKDIR}/langpack_tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice_languagepack/archive/install/${LOCALIZED_LANG}/$$i ; \
+                cd ${WRKDIR}/langpack_tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd*.pro/Apache_OpenOffice_languagepack/archive/install/${LOCALIZED_LANG}/$$i ; \
         done
 	@cd ${WRKDIR}/langpack_tmp/Apache_OpenOffice*/ ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
