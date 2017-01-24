@@ -3,8 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	5
-#PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -118,7 +117,7 @@ XDGDIR=			${OOPATH}/share/xdg
 XDGREL=			../../${INSTALLATION_BASEDIR}/openoffice${AOOVERSION1}/share/xdg
 EXECBASE?=		openoffice-${AOOSUFFIX}
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64
 
 USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
@@ -187,6 +186,9 @@ PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86-64
 .else
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86
+.endif
+.if ${ARCH} == powerpc64
+FREEBSD_ENV_SET=	FreeBSDPPC64Env.Set.sh
 .endif
 PACKAGE_PREFIX=		Apache_OpenOffice
 
@@ -405,7 +407,7 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
 		${STAGEDIR}${PREFIX}/share/mime/packages
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd*.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; \
 		for i in *.tar.?z ; do \
 			${ECHO_CMD} "extracting $$i" ; \
 			${TAR} -s '|./[^/]*/||' -xz -f $$i \
@@ -429,7 +431,7 @@ do-install:
 	done
 	@${ECHO_CMD} "adding desktop support"
 	@${LN} -sf ${XDGREL} ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
-	@cd ${WRKSRC}/sysui/unxfbsd?.pro/misc/openoffice ;	\
+	@cd ${WRKSRC}/sysui/unxfbsd*.pro/misc/openoffice ;	\
 	    DESTDIR=${STAGEDIR}					\
 		GNOMEDIR=${PREFIX}				\
 		ICON_PREFIX=openoffice${AOOVERSION1}		\
@@ -443,7 +445,7 @@ do-install:
 
 do-install-SDK-on:
 	${TAR} -s '|./[^/]*/||' -xz -C ${STAGEDIR}${PRINSTALLATION_BASEDIR} \
-		-f ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice_SDK/archive/install/${LOCALIZED_LANG}/*.tar.gz
+		-f ${WRKSRC}/instsetoo_native/unxfbsd*.pro/Apache_OpenOffice_SDK/archive/install/${LOCALIZED_LANG}/*.tar.gz
 	@f=${STAGEDIR}${OOPATH}/sdk/bin/unoapploader ; \
 		${CHMOD} 644 $${f} ; ${STRIP_CMD} $${f} ; ${CHMOD} 444 $${f}
 
