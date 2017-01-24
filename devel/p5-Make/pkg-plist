@@ -1,4 +1,5 @@
 bin/perlmake
 %%SITE_PERL%%/Make.pm
+%%SITE_PERL%%/test_driver.pl
 %%PERL5_MAN1%%/perlmake.1.gz
 %%PERL5_MAN3%%/Make.3.gz
