@@ -8,6 +8,9 @@ CATEGORIES=	x11
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Lumina desktop environment localization files
 
+DEPRECATED=	Obsolete, i18n files included in x11/lumina
+EXPIRATION_DATE=	2017-04-01
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

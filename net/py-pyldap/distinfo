@@ -1,2 +1,3 @@
-SHA256 (pyldap-2.4.25.1.tar.gz) = fdc46e9cad1fd515017b6109edd8d35a5ab655daa2708743285e8356bb5c2bee
-SIZE (pyldap-2.4.25.1.tar.gz) = 124042
+TIMESTAMP = 1485192076
+SHA256 (pyldap-2.4.28.tar.gz) = d38f31018f0c15925f50aec39f7255c15463f98797af53931e0e2a9ac21f6661
+SIZE (pyldap-2.4.28.tar.gz) = 130651

@@ -96,6 +96,7 @@
     SUBDIR += cryptlib
     SUBDIR += cryptopp
     SUBDIR += cvm
+    SUBDIR += cyberchef
     SUBDIR += cyrus-sasl2
     SUBDIR += cyrus-sasl2-gssapi
     SUBDIR += cyrus-sasl2-ldapdb

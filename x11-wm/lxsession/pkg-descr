@@ -1,4 +1,4 @@
-lxsession is a standard-compliant X11 session manager with
-shutdown/reboot/suspend supports via HAL and gdm.
+LXSession is a lightweight X11 session manager, designed for use with
+the Lightweight X11 Desktop Environment (LXDE).
 
-WWW: http://lxde.sourceforge.net/
+WWW: http://lxde.org/

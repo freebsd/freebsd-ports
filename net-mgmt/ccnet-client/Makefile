@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet-client
-PORTVERSION=	6.0.1
+PORTVERSION=	6.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt devel
 
@@ -9,7 +9,7 @@ MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Framework for writing networked applications
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENCE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
@@ -26,11 +26,10 @@ GH_ACCOUNT=	haiwen
 GH_PROJECT=	ccnet
 
 USES=		autoreconf gettext libtool localbase pathfix pkgconfig \
-		python:-2.7 shebangfix ssl
+		python:-2.7 ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
-SHEBANG_FILES=	tools/*.py
 
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 GNU_CONFIGURE=	yes

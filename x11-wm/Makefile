@@ -71,6 +71,7 @@
     SUBDIR += libdockapp
     SUBDIR += libwraster
     SUBDIR += lwm
+    SUBDIR += lxappearance-obconf
     SUBDIR += lxmed
     SUBDIR += lxsession
     SUBDIR += marco
