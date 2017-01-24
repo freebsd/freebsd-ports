@@ -3,7 +3,7 @@
 
 PORTNAME=	libpciaccess
 PORTVERSION=	0.13.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,7 +13,7 @@ CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 # LICENSE=	Various GNU
 
-RPMVERSION=	2.el7
+RPMVERSION=	3.el7_3
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
