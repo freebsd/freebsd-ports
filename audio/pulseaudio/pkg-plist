@@ -69,8 +69,9 @@ lib/libpulse-simple.so.0
 lib/libpulse-simple.so.0.1.0
 lib/libpulse.so
 lib/libpulse.so.0
-lib/libpulse.so.0.20.0
+lib/libpulse.so.0.20.1
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/libavahi-wrap.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-allow-passthrough.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-device-manager.so
 %%ALSA%%lib/pulse-%%PULSE_VERSION%%/modules/libalsa-util.so
 lib/pulse-%%PULSE_VERSION%%/modules/libcli.so
@@ -231,6 +232,7 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/sb-omni-surround-5.1.conf
 %%ZSH%%share/zsh/site-functions/_pulseaudio
 share/locale/as/LC_MESSAGES/pulseaudio.mo
+share/locale/be/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
 share/locale/ca/LC_MESSAGES/pulseaudio.mo
 share/locale/cs/LC_MESSAGES/pulseaudio.mo
@@ -241,6 +243,7 @@ share/locale/es/LC_MESSAGES/pulseaudio.mo
 share/locale/fi/LC_MESSAGES/pulseaudio.mo
 share/locale/fr/LC_MESSAGES/pulseaudio.mo
 share/locale/gu/LC_MESSAGES/pulseaudio.mo
+share/locale/gl/LC_MESSAGES/pulseaudio.mo
 share/locale/he/LC_MESSAGES/pulseaudio.mo
 share/locale/hi/LC_MESSAGES/pulseaudio.mo
 share/locale/hu/LC_MESSAGES/pulseaudio.mo
@@ -249,6 +252,7 @@ share/locale/it/LC_MESSAGES/pulseaudio.mo
 share/locale/ja/LC_MESSAGES/pulseaudio.mo
 share/locale/kn/LC_MESSAGES/pulseaudio.mo
 share/locale/ko/LC_MESSAGES/pulseaudio.mo
+share/locale/lt/LC_MESSAGES/pulseaudio.mo
 share/locale/ml/LC_MESSAGES/pulseaudio.mo
 share/locale/mr/LC_MESSAGES/pulseaudio.mo
 share/locale/nl/LC_MESSAGES/pulseaudio.mo

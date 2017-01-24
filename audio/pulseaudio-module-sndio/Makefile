@@ -3,6 +3,7 @@
 
 PORTNAME=	pulseaudio-module-sndio
 PORTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	t@tobik.me
