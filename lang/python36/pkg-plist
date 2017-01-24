@@ -2,8 +2,8 @@ bin/2to3-%%XYDOT%%
 bin/idle%%XYDOT%%
 bin/pydoc%%XYDOT%%
 bin/python%%XYDOT%%
-bin/pyvenv-%%XYDOT%%
 bin/python%%XYDOT%%-config
+bin/pyvenv-%%XYDOT%%
 include/python%%XYDOT%%%%ABI%%/Python-ast.h
 include/python%%XYDOT%%%%ABI%%/Python.h
 include/python%%XYDOT%%%%ABI%%/abstract.h
@@ -2693,7 +2693,7 @@ lib/python%%XYDOT%%/lib-dynload/select.so
 lib/python%%XYDOT%%/lib-dynload/syslog.so
 lib/python%%XYDOT%%/lib-dynload/termios.so
 lib/python%%XYDOT%%/lib-dynload/unicodedata.so
-lib/python%%XYDOT%%/lib-dynload/xxlimited.so
+%%NO_DEBUG%%lib/python%%XYDOT%%/lib-dynload/xxlimited.so
 lib/python%%XYDOT%%/lib-dynload/zlib.so
 lib/python%%XYDOT%%/lib2to3/Grammar.txt
 lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.final.0.pickle
@@ -6659,5 +6659,5 @@ lib/python%%XYDOT%%/xmlrpc/client.py
 lib/python%%XYDOT%%/xmlrpc/server.py
 lib/python%%XYDOT%%/zipapp.py
 lib/python%%XYDOT%%/zipfile.py
-man/man1/python%%XYDOT%%.1.gz
 libdata/pkgconfig/python-%%XYDOT%%.pc
+man/man1/python%%XYDOT%%.1.gz
