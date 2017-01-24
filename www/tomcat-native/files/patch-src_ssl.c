@@ -1,6 +1,5 @@
 --- src/ssl.c.orig	2016-04-19 10:08:10 UTC
 +++ src/ssl.c
-<<<<<<< HEAD
 @@ -34,7 +34,7 @@ tcn_pass_cb_t tcn_password_callback;
  static jclass byteArrayClass;
  static jclass stringClass;
@@ -44,16 +43,6 @@
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
      ERR_remove_thread_state(NULL);
-=======
-@@ -428,6 +428,8 @@ static unsigned long ssl_thread_id(void)
-     uint64_t tid;
-     pthread_threadid_np(NULL, &tid);
-     return (unsigned long)tid;
-+#elif defined(__FreeBSD__)
-+    return (unsigned long)pthread_getthreadid_np();
- #elif defined(__linux__)
-     return (unsigned long)syscall(SYS_gettid);
->>>>>>> upstream/master
  #else
      ERR_remove_thread_state();
 @@ -387,7 +387,7 @@ static ENGINE *ssl_try_load_engine(const
