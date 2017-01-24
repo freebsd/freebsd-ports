@@ -205,6 +205,7 @@
     SUBDIR += lumina-i18n
     SUBDIR += lupe
     SUBDIR += lxde-meta
+    SUBDIR += lxhotkey
     SUBDIR += lxmenu-data
     SUBDIR += lxpanel
     SUBDIR += lxqt-l10n
