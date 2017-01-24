@@ -13,6 +13,7 @@
 %%ASS%%%%DATADIR%%/libsubtext.so
 %%EEDI3%%%%DATADIR%%/libeedi3.so
 %%IMAGEMAGICK%%%%DATADIR%%/libimwri.so
+%%MISCFILTERS%%%%DATADIR%%/libmiscfilters.so
 %%MORPHO%%%%DATADIR%%/libmorpho.so
 %%TESSERACT%%%%DATADIR%%/libocr.so
 %%REMOVEGRAIN%%%%DATADIR%%/libremovegrain.so
