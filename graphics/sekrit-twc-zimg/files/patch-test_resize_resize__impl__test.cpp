@@ -23,11 +23,11 @@ test/resize/resize_impl_test.cpp:37:3: error: no matching conversion for functio
            ^
 1 error generated.
 
---- test/resize/resize_impl_test.cpp.orig	2016-01-22 18:12:28 UTC
+--- test/resize/resize_impl_test.cpp.orig	2017-01-21 18:59:03 UTC
 +++ test/resize/resize_impl_test.cpp
-@@ -34,7 +34,7 @@ void test_case(const zimg::PixelFormat &
- 			set_shift(shift).
- 			set_subwidth(subwidth_factor * (horizontal ? src_w : src_h)).create();
+@@ -35,7 +35,7 @@ void test_case(const zimg::PixelFormat &
+ 			.set_subwidth(subwidth_factor * (horizontal ? src_w : src_h))
+ 			.create();
  
 -		ASSERT_TRUE(filter);
 +		ASSERT_TRUE(static_cast<bool>(filter));
