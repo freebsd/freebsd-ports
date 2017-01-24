@@ -57,7 +57,4 @@ post-install:
 	${INSTALL_LIB} ${PARI_WRKSRC}/build/libpari-gmp.so.2.3.5 ${STAGEDIR}${SITE_ARCH}/auto/Math/Pari
 	${LN} -s libpari-gmp.so.2.3.5 ${STAGEDIR}${SITE_ARCH}/auto/Math/Pari/libpari-gmp.so.2
 
-post-clean:
-	@${MAKE_CMD} -C ${PORTSDIR}/math/pari -DBATCH clean
-
 .include <bsd.port.mk>
