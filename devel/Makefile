@@ -4855,6 +4855,7 @@
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
     SUBDIR += py3-lxml
+    SUBDIR += py3-mccabe
     SUBDIR += py3-nose
     SUBDIR += py3-py
     SUBDIR += py3-pycodestyle
