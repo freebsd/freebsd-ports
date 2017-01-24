@@ -634,6 +634,7 @@
     SUBDIR += php70-sqlite3
     SUBDIR += php71-dba
     SUBDIR += php71-interbase
+    SUBDIR += php71-memcache
     SUBDIR += php71-mysqli
     SUBDIR += php71-odbc
     SUBDIR += php71-pdo
