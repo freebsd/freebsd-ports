@@ -263,6 +263,7 @@
     SUBDIR += pftabled
     SUBDIR += php56-snmp
     SUBDIR += php70-snmp
+    SUBDIR += php71-snmp
     SUBDIR += phpip
     SUBDIR += phpipam
     SUBDIR += phpweathermap

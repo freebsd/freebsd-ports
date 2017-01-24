@@ -3,10 +3,11 @@
 
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	devel
 BIN_DISTFILES=	binutils-2.25.1-22.base.el7${EXTRACT_SUFX} \
 		glibc-headers-2.17-157.el7_3.1${EXTRACT_SUFX} \
-		kernel-headers-3.10.0-514.2.2.el7${EXTRACT_SUFX} \
+		kernel-headers-3.10.0-514.6.1.el7${EXTRACT_SUFX} \
 		mpfr-3.1.1-4.el7${EXTRACT_SUFX} \
 		cpp-4.8.5-11.el7${EXTRACT_SUFX} \
 		gcc-4.8.5-11.el7${EXTRACT_SUFX} \
@@ -19,7 +20,7 @@ LIB_DISTFILES=	binutils-devel-2.25.1-22.base.el7${EXTRACT_SUFX} \
 		libmpc-1.0.1-3.el7${EXTRACT_SUFX}
 SRC_DISTFILES=	binutils-2.25.1-22.base.el7${SRC_SUFX}:SOURCE \
 		glibc-2.17-157.el7_3.1${SRC_SUFX}:SOURCE \
-		kernel-3.10.0-514.2.2.el7${SRC_SUFX}:SOURCE \
+		kernel-3.10.0-514.6.1.el7${SRC_SUFX}:SOURCE \
 		libmpc-1.0.1-3.el7${SRC_SUFX}:SOURCE \
 		mpfr-3.1.1-4.el7${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-11.el7${SRC_SUFX}:SOURCE
