@@ -17,12 +17,12 @@ CONFLICTS=	emacs25-[0-9]* emacs-nox11-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	2dae636
+GH_TAGNAME=	ad29e14
 
 EMACS_VER=	26.0.50
-EMACS_REV=	20161225
+EMACS_REV=	20170121
 GNU_CONFIGURE=	yes
-USES=		autoreconf cpe gmake makeinfo ncurses pkgconfig
+USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
 CPE_VENDOR=	gnu
 
@@ -173,8 +173,13 @@ XPM_CONFIGURE_WITH=	xpm
 XPM_IMPLIES=		X11
 XWIDGETS_USE=		XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=xwidgets
+XWIDGETS_IGNORE=	Cannot build with XWIDGETS, because the version of \
+WebKit GTK3 in the ports tree is too old
 XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 XWIDGETS_IMPLIES=	GTK3
+
+pre-configure:
+	@(cd ${WRKSRC} && ./autogen.sh all)
 
 # With a desktop entry stage-qa will give a warning about requiring
 # desktop-file-utils and portlint -C will give a warning about INSTALL_ICONS,

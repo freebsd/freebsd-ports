@@ -2296,8 +2296,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/lao-util.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/lao.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/lao.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/ldefs-boot-auto.el
-%%DATADIR%%/%%EMACS_VER%%/lisp/ldefs-boot-manual.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/misc-lang.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/misc-lang.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/romanian.el.gz
@@ -2326,7 +2324,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/viet-util.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/vietnamese.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/vietnamese.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/ldefs-boot.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/ldefs-boot-auto.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/ldefs-boot-manual.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/ja-dic/ja-dic.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/ja-dic/ja-dic.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/leim-list.el
@@ -3631,6 +3630,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/timezone.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tmm.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tmm.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/tmux.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/tmux.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tool-bar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tool-bar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tooltip.el.gz
