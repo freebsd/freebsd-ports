@@ -199,7 +199,7 @@ index e762576..196dafd 100644
 +def check_for_harfbuzz(value, compile_env):
 +    return value and compile_env
 +
-+system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 1.2.6',
++system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 1.3.3',
 +                                    check_for_harfbuzz)
 +
 +set_config('MOZ_SYSTEM_HARFBUZZ', system_harfbuzz)
