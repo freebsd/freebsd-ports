@@ -72,8 +72,8 @@ lib/libquagga_pb.so.0
 lib/libquagga_pb.so.0.0.0
 lib/libzebra.a
 lib/libzebra.so
-lib/libzebra.so.0
-lib/libzebra.so.0.0.0
+lib/libzebra.so.1
+lib/libzebra.so.1.0.0
 man/man1/vtysh.1.gz
 man/man8/bgpd.8.gz
 %%ISISD%%man/man8/isisd.8.gz
