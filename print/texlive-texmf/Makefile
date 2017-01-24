@@ -24,6 +24,7 @@ TEXHASHDIRS=	${TEXMFDIR} ${TEXMFDISTDIR}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
+PKG_CREATE_VERBOSE=	yes
 
 EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/ls-R \
