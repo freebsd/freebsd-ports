@@ -5,7 +5,7 @@
      pthread_threadid_np(NULL, &tid);
      return (unsigned long)tid;
 +#elif defined(__FreeBSD__)
-+    return (unsigned long)pthread_threadid_np();
++    return (unsigned long)pthread_getthreadid_np();
  #elif defined(__linux__)
      return (unsigned long)syscall(SYS_gettid);
  #else
