@@ -4850,6 +4850,7 @@
     SUBDIR += py3-babel
     SUBDIR += py3-click
     SUBDIR += py3-dbus
+    SUBDIR += py3-flake8
     SUBDIR += py3-gobject3
     SUBDIR += py3-hgtools
     SUBDIR += py3-jsonschema
