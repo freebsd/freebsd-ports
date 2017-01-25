@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-djvu
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.6
 CATEGORIES=	graphics
-MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
+MASTER_SITES=	https://pwmt.org/projects/zathura/plugins/download/ \
+		http://www.madpilot.net/~mad/pwmt.org/
 
 MAINTAINER=	alexander.4mail@gmail.com
 COMMENT=	DjVu support for zathura

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-pdf-mupdf
-PORTVERSION=	0.3.0
-PORTREVISION=	3
+PORTVERSION=	0.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://pwmt.org/projects/zathura-pdf-mupdf/download/
+MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-mupdf/download/ \
+		http://www.madpilot.net/~mad/pwmt.org/
 
 MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	MuPDF render PDF plugin for Zathura PDF viewer
@@ -17,6 +17,8 @@ BUILD_DEPENDS=	zathura:graphics/zathura \
 		mupdf>=1.8,1:graphics/mupdf
 RUN_DEPENDS=	zathura:graphics/zathura
 LIB_DEPENDS=	libjbig2dec.so:graphics/jbig2dec \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libopenjp2.so:graphics/openjpeg \
 		libgirara-gtk3.so:x11-toolkits/girara
 

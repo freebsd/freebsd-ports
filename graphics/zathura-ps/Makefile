@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-ps
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://pwmt.org/projects/zathura-ps/download/
+MASTER_SITES=	https://pwmt.org/projects/zathura-ps/download/ \
+		http://www.madpilot.net/~mad/pwmt.org/
 
 MAINTAINER=	mike.d.ft402@gmail.com
 COMMENT=	PostScript support for Zathura PDF viewer
