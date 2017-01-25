@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.muhri.net/
 MAINTAINER=	oleg@bsdpower.com
 COMMENT=	Command line tool for switching GTK+ 2.0 themes
 
+EXPLICIT_SAFESTACK=		yes
+
 USES=		gmake pkgconfig
 USE_XORG=	x11
 USE_GNOME=	gtk20
