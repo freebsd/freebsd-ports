@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2 BSD2CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
