@@ -7,6 +7,8 @@ PORTEPOCH=	0
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	# empty
 
+EXPLICIT_SAFESTACK=	yes
+
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	Gimp print plug-in
 
