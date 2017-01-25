@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-Strptime
-PORTVERSION=	1.70
+PORTVERSION=	1.72
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -15,10 +15,11 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-DateTime>=1:devel/p5-DateTime \
-		p5-DateTime-Locale>=0.45:devel/p5-DateTime-Locale \
-		p5-DateTime-TimeZone>=0.79:devel/p5-DateTime-TimeZone \
+		p5-DateTime-Locale>=1.05:devel/p5-DateTime-Locale \
+		p5-DateTime-TimeZone>=2.09:devel/p5-DateTime-TimeZone \
 		p5-Package-DeprecationManager>=0.15:devel/p5-Package-DeprecationManager \
-		p5-Params-Validate>=1.20:devel/p5-Params-Validate \
+		p5-Params-ValidationCompiler>=0:devel/p5-Params-ValidationCompiler \
+		p5-Specio>=0.33:devel/p5-Specio \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
