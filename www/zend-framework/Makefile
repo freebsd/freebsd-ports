@@ -11,9 +11,11 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 CONFLICTS=	ZendFramework-1.*
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
@@ -32,7 +34,7 @@ ODBC_DESC=	Enable ODBC PDO support
 SQLITE_DESC=	Enable SQLite v3 PDO support
 REQPHP_DESC=	Install required PHP dependencies
 OPTPHP_DESC=	Install optional PHP dependencies
-MEMCACHE_DESC= Enable memcache support
+MEMCACHE_DESC=	Enable memcache support
 
 PORTDOCS=	CHANGELOG.md INSTALL.md README-GIT.md CONTRIBUTING.md README.md
 
@@ -49,9 +51,9 @@ USE_PHP+=	ctype curl dom gd hash iconv mbstring ldap mcrypt \
 USE_PHP+=	bcmath bitset json posix
 .endif
 
-.if ${PORT_OPTIONS:MMCACHE}
-RUN_DEPENDS+=	pecl-memcache>=0:databases/pecl-memcache \
-		pecl-memcached>=0:databases/pecl-memcached
+.if ${PORT_OPTIONS:MMEMCACHE}
+USE_PHP+=	memcache
+RUN_DEPENDS+=	pecl-memcached>=0:databases/pecl-memcached
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
