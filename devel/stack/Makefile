@@ -26,7 +26,7 @@ LIB_DEPENDS=	libiconv.so:converters/libiconv \
 		libgmp.so:math/gmp \
 		libffi.so:devel/libffi
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
-		gcc:lang/gcc \
+		${LOCALBASE}/bin/gcc:lang/gcc \
 		gmake:devel/gmake
 USES=		gmake perl5
 
