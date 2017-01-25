@@ -33,7 +33,7 @@ LIB_DEPENDS= libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi \
 		libepoll-shim.so:devel/libepoll-shim
 
-CFLAGS+= "-I${PREFIX}/include/libepoll-shim"
+CFLAGS+=	"-I${LOCALBASE}/include/libepoll-shim"
 
 WITH_DEBUG=	1
 
