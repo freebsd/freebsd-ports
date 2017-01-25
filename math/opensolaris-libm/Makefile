@@ -13,6 +13,7 @@ LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/usr/src/OPENSOLARIS.LICENSE
 
 ONLY_FOR_ARCHS=	amd64	# i386 and sparc possible with much work
+PORTSCOUT=	ignore:1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
