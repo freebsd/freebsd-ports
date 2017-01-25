@@ -12,7 +12,7 @@ MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
 BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
-		nss>=3.21.1:security/nss \
+		nss>=3.21.3:security/nss \
 		libevent2>=2.0.21_2:devel/libevent2 \
 		soundtouch>=1.9.0:audio/soundtouch \
 		harfbuzz>=1.1.0:print/harfbuzz \
