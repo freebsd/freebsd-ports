@@ -11,7 +11,9 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
@@ -52,12 +54,11 @@ INSTALL_DIRS=	library extras/library externals/dojo/dijit \
 # for a table of what PHP extensions are required for what ZF classes.
 
 .if ${PORT_OPTIONS:MREQPHP}
-USE_PHP+=	ctype curl dom gd hash iconv mbstring ldap mcrypt \
+USE_PHP+=	ctype curl dom gd hash iconv mbstring ldap mcrypt memcache \
 		opcache pcre pdo session simplexml soap sqlite3 \
 		wddx xml zlib
 
-RUN_DEPENDS+=	pecl-memcache>=0:databases/pecl-memcache \
-		pecl-memcached>=0:databases/pecl-memcached
+RUN_DEPENDS+=	pecl-memcached>=0:databases/pecl-memcached
 .endif
 .if ${PORT_OPTIONS:MOPTPHP}
 USE_PHP+=	bcmath bitset json posix
