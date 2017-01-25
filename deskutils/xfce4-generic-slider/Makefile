@@ -15,6 +15,10 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
+BROKEN=		crashes when trying to open properties
+DEPRECATED=	crashes when trying to open properties
+EXPIRATION_DATE=	2017-04-25
+
 USES=		gettext-runtime pkgconfig xfce
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_XFCE=	libgui panel
