@@ -27,7 +27,7 @@ GTK2_LIB_DEPENDS=	libgtk-x11-2.0.so:x11-toolkits/gtk20
 
 .include <bsd.port.options.mk>
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES+=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-gimp --without-gimp2
 USE_LDCONFIG=	yes
