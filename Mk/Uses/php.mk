@@ -338,7 +338,11 @@ json_DEPENDS=	devel/php${PHP_VER}-json
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
+.    if ${PHP_VER} >= 70
+memcache_DEPENDS=	databases/php${PHP_VER}-memcache
+.    else
 memcache_DEPENDS=	databases/pecl-memcache
+.    endif
 mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysql_DEPENDS=	databases/php${PHP_VER}-mysql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
