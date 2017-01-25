@@ -1,3 +1,3 @@
-TIMESTAMP = 1484330467
-SHA256 (icing-mod_h2-v1.8.8_GH0.tar.gz) = 03c2fce3e06aa435454fa3d0e6911d3cc08e8396e60299af9d3918ca6de60cf8
-SIZE (icing-mod_h2-v1.8.8_GH0.tar.gz) = 195927
+TIMESTAMP = 1485260908
+SHA256 (mod_http2-1.8.10_GH0.tar.gz) = e03bc6733f883f63262a4151ca71308b30d15176f65ad5f3ff52fc7fa08eed60
+SIZE (mod_http2-1.8.10_GH0.tar.gz) = 194700
