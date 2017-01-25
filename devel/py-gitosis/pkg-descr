@@ -7,4 +7,4 @@ identify users. End users do not need shell accounts on the server,
 they will talk to one shared account that will not let them run
 arbitrary commands.
 
-WWW: http://eagain.net/gitweb/?p=gitosis.git
+WWW: https://github.com/tv42/gitosis

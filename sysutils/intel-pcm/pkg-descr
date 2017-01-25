@@ -1,14 +1,7 @@
-This is the Intel Performance Counter Monitoring toolkit.
-
-The original software is available here:
-
-http://software.intel.com/en-us/articles/intel-performance-counter-monitor
-
-This install comes from Adrian Chadd's copy, which includes some portability
-fixes related to FreeBSD.  This can be found in the local/freebsd branch of:
-
-https://github.com/erikarn/intel-pcm
+Processor Counter Monitor (PCM) is an application programming interface (API)
+and a set of tools based on the API to monitor performance and energy metrics
+of Intel(r) Core(tm), Xeon(r) and Atom(tm) processors.
 
 This requires the 'cpuctl' module to be loaded.
 
-WWW: https://github.com/erikarn/intel-pcm
+WWW: https://github.com/opcm/pcm
