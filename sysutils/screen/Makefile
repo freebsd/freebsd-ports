@@ -3,6 +3,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
