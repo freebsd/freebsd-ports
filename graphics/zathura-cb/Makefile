@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-cb
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	0.1.6
 CATEGORIES=	graphics
-MASTER_SITES=	http://pwmt.org/projects/zathura-cb/download/
+MASTER_SITES=	https://pwmt.org/projects/zathura-cb/download/ \
+		http://www.madpilot.net/~mad/pwmt.org/
 
 MAINTAINER=	mike.d.ft402@gmail.com
 COMMENT=	Comic book plugin for Zathura PDF viewer
