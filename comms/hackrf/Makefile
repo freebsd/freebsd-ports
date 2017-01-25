@@ -18,6 +18,8 @@ USES=		cmake:outsource
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 CMAKE_ARGS=	-DLIBUSB_LIBRARIES=/usr/lib/libusb.so
 
+EXPLICIT_SAFESTACK=	yes
+
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
