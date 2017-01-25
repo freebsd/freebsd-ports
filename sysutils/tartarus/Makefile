@@ -3,7 +3,7 @@
 
 PORTNAME=	tartarus
 PORTVERSION=	0.9.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wertarbyte.de/tartarus/ \
 		http://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/bin/gtar:archivers/gtar \
-		${LOCALBASE}/bin/curl:ftp/curl
+		${LOCALBASE}/bin/curl:ftp/curl \
+		${LOCALBASE}/bin/getopt:misc/getopt
 
 USES=		gmake perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/bin/*
