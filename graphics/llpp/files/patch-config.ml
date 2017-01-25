@@ -1,6 +1,15 @@
---- config.ml.orig	2015-10-13 20:12:27 UTC
+--- config.ml.orig	2016-11-29 15:11:31 UTC
 +++ config.ml
-@@ -1420,17 +1420,7 @@ let do_load f contents =
+@@ -10,7 +10,7 @@ type fontstate =
+ ;;
+ 
+ let fstate =
+-  { fontsize = 14
++  { fontsize = 18
+   ; wwidth = nan
+   ; maxrows = -1
+   }
+@@ -1461,17 +1461,7 @@ let do_load f contents =
  ;;
  
  let defconfpath =
