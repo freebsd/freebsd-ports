@@ -923,6 +923,7 @@
     SUBDIR += php70-soap
     SUBDIR += php70-sockets
     SUBDIR += php70-xmlrpc
+    SUBDIR += php71-ldap
     SUBDIR += php71-soap
     SUBDIR += php71-sockets
     SUBDIR += php71-xmlrpc
