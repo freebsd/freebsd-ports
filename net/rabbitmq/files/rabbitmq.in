@@ -62,7 +62,7 @@ rabbitmq_start()
 		chmod 600 ${RABBITMQ_HOME}/.erlang.cookie
 	fi
 
-	env HOME=${RABBITMQ_HOME} daemon -c -f -u ${rabbitmq_user} -p ${pidfile} -P ${daemon_pidfile} ${rabbitmq_server}
+	env HOME=${RABBITMQ_HOME} /usr/sbin/daemon -c -f -u ${rabbitmq_user} -p ${pidfile} -P ${daemon_pidfile} ${rabbitmq_server}
 	debug "Running: rabbitmqctl wait ${pidfile}"
 	${rabbitmq_ctl} wait ${pidfile} >/dev/null 2>&1
 }
