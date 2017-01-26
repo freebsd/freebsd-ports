@@ -9,6 +9,8 @@ DISTNAME=	youtube-dl-${PORTVERSION}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Program for downloading videos from YouTube.com
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	UNLICENSE
 LICENSE_NAME=	The Unlicense
 LICENSE_FILE=	${WRKSRC}/LICENSE
