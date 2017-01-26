@@ -11,13 +11,18 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - IP television plugin
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		tar:tgz
 PATCH_STRIP=	-p1
-HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README HISTORY
-PORTEXAMPLES=	channels.conf.iptv
-MAKE_ARGS+=	IPTV_EXTSHELL=/bin/sh
+MAKE_ARGS=	IPTV_EXTSHELL=/bin/sh
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
+
+PORTDOCS=	README HISTORY
+PORTEXAMPLES=	channels.conf.iptv
+
+OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
@@ -27,28 +32,32 @@ post-patch: post-patch-plugin
 		${WRKSRC}/iptv/vlc2iptv
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
 
 post-install: post-install-pluginlocales
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlcinput
-	@${INSTALL_DATA} ${FILESDIR}/vlcinput/*.conf ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlcinput
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/image.sh \
+	${INSTALL_DATA} ${FILESDIR}/vlcinput/*.conf ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlcinput
+	${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/image.sh \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/image.sh.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/internetradio.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/internetradio.sh \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/internetradio.sh.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream-notrap.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream-notrap.sh \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/iptvstream-notrap.sh.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/iptvstream.sh \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/iptvstream.sh.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/linein.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/linein.sh \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/linein.sh.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/vlc2iptv \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/vlc2iptv \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/vlc2iptv.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/webcam.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}/webcam.sh \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/webcam.sh.sample
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/channels.conf.iptv ${STAGEDIR}${EXAMPLESDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
