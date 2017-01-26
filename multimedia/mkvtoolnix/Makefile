@@ -3,7 +3,7 @@
 
 PORTNAME=	mkvtoolnix
 PORTVERSION=	9.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg \
 		libebml.so:textproc/libebml \
 		libboost_regex.so:devel/boost-libs \
+		libpugixml.so:textproc/pugixml \
 		libmatroska.so:multimedia/libmatroska
 
 BROKEN_sparc64=	does not install
