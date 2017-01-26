@@ -3,7 +3,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.6.35
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.6
 PKGNAMESUFFIX?=	56-server
@@ -54,6 +54,9 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
 		-DWITH_ZLIB=system \
+		-DWITH_SSL=${OPENSSLBASE} \
+		-DCRYPTO_LIBRARY=${OPENSSLLIB}/libcrypto.so \
+		-DOPENSSL_LIBRARY=${OPENSSLLIB}/libssl.so \
 		-DINSTALL_MYSQLTESTDIR=0
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
@@ -128,12 +131,6 @@ PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-CMAKE_ARGS+=		-DWITH_SSL=system
-.else
-CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt

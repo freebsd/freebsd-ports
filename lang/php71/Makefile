@@ -95,8 +95,8 @@ CONFIGURE_ARGS+=--with-apxs2=${APXS}
 .endif
 PLIST=		${PKGDIR}/pkg-plist.mod
 PKGMESSAGE=	${PKGDIR}/pkg-message.mod
-MODULENAME=	libphp71
-SHORTMODNAME=	php71
+MODULENAME=	libphp7
+SHORTMODNAME=	php7
 WARNING=	"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS support to enable thread-safety in extensions !!!"
 .endif
 

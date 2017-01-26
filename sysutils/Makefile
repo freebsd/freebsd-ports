@@ -642,6 +642,7 @@
     SUBDIR += mtxorbd
     SUBDIR += multitail
     SUBDIR += munin-common
+    SUBDIR += munin-contrib
     SUBDIR += munin-master
     SUBDIR += munin-node
     SUBDIR += muse
