@@ -40,6 +40,7 @@ CONFIGURE_ENV=	LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config" \
 		CLANGXX_FLAGS=-std=gnu++11
 # needed for the libltdl configure check
 LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_SUB=	OPSYS=${OPSYS:tl} ARCH=${ARCH}
 
 ALL_TARGET=	all
 
