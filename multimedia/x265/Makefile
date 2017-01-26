@@ -26,13 +26,8 @@ EXTRACT_AFTER_ARGS+=	--exclude "md5*"
 
 WRKSRC=		${WRKDIR}/multicoreware-${PORTNAME}-be14a7e9755e/source
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
 
-BROKEN_mips64=		Fails to link: Nonrepresentable section on output
-
-=======
->>>>>>> upstream/master
 do-test:
 	${WRKSRC}/test/TestBench
 
