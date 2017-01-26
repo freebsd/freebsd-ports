@@ -14,12 +14,10 @@ LICENSE=	PHP301
 USES=		php:ext
 USE_PHP=	session:build
 PHP_VER=	70
-IGNORE_WITH_PHP=	56
+IGNORE_WITH_PHP=	56 71
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phpredis
 GH_PROJECT=	phpredis
-
-PHP_MODNAME=	redis
 
 .include <bsd.port.mk>
