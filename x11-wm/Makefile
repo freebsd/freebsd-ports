@@ -104,6 +104,7 @@
     SUBDIR += ratmenu
     SUBDIR += ratpoison
     SUBDIR += rubygem-uh-layout
+    SUBDIR += rubygem-uh-wm
     SUBDIR += sawfish
     SUBDIR += selectwm
     SUBDIR += simple-ccsm
