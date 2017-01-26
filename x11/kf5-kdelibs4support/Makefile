@@ -16,7 +16,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		i18n iconthemes itemviews jobwidgets kded kio notifications \
 		parts service solid sonnet textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
-		designerplugin_build designerplugin_run
+		designerplugin_build designerplugin_run emoticons_run \
+		itemmodels_run
 USE_QT5=	buildtools_build core dbus designer gui network \
 		printsupport qmake_build svg testlib widgets \
 		x11extras xml

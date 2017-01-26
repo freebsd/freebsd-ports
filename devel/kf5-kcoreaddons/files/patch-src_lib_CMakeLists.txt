@@ -4,9 +4,9 @@
     set(kcoreaddons_OPTIONAL_LIBS ${kcoreaddons_OPTIONAL_LIBS} ${FAM_LIBRARIES})
  endif ()
 
-+if (LIBINOTIFY_FOUND)
-+   include_directories(${LIBINOTIFY_INCLUDE_DIRS})
-+   set(kcoreaddons_OPTIONAL_LIBS ${kcoreaddons_OPTIONAL_LIBS} ${LIBINOTIFY_LIBRARIES})
++if (Inotify_FOUND)
++   include_directories(${Inotify_INCLUDE_DIRS})
++   set(kcoreaddons_OPTIONAL_LIBS ${kcoreaddons_OPTIONAL_LIBS} ${Inotify_LIBRARIES})
 +endif ()
 +
  if(NOT WIN32)

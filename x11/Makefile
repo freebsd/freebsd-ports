@@ -132,6 +132,7 @@
     SUBDIR += kf5-kglobalaccel
     SUBDIR += kf5-kinit
     SUBDIR += kf5-krunner
+    SUBDIR += kf5-kwayland
     SUBDIR += kf5-kwindowsystem
     SUBDIR += kf5-plasma-framework
     SUBDIR += kgamma

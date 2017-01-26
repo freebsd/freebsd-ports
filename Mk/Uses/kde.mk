@@ -65,7 +65,7 @@ KDE4_APPLICATIONS_VERSION?=	15.04.3
 KDE4_BRANCH?=			stable
 
 # Current KDE desktop.
-KDE_FRAMEWORKS_VERSION?=	5.29.0
+KDE_FRAMEWORKS_VERSION?=	5.30.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -211,9 +211,9 @@ _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
 _USE_FRAMEWORKS_TIER1=	apidox archive attica5 breeze-icons codecs config \
 			coreaddons dbusaddons dnssd i18n idletime itemmodels \
 			itemviews oxygen-icons5 plotting prison solid sonnet \
-			syntaxhighlighting threadweaver widgetsaddons windowsystem
+			syntaxhighlighting threadweaver wayland widgetsaddons \
+			windowsystem
 # NOT LISTED TIER1: modemmanagerqt networkmanagerqt (not applicable)
-# NOT LISTED TIER1: wayland (needs graphics/wayland)
 
 _USE_FRAMEWORKS_TIER2=	auth completion crash doctools filemetadata5 \
 			kimageformats jobwidgets notifications package \
@@ -583,6 +583,9 @@ unitconversion_LIB=	libKF5UnitConversion.so
 
 wallet_PORT=		sysutils/kf5-kwallet
 wallet_LIB=		libKF5Wallet.so
+
+wayland_PORT=		x11/kf5-kwayland
+wayland_LIB=		libKF5WaylandClient.so
 
 widgetsaddons_PORT=	x11-toolkits/kf5-kwidgetsaddons
 widgetsaddons_LIB=	libKF5WidgetsAddons.so

@@ -51,6 +51,7 @@ include/KF5/KIOCore/KIO/TransferJob
 include/KF5/KIOCore/KIO/UDSEntry
 include/KF5/KIOCore/KMountPoint
 include/KF5/KIOCore/KNFSShare
+include/KF5/KIOCore/KPasswdServerClient
 include/KF5/KIOCore/KProtocolInfo
 include/KF5/KIOCore/KProtocolManager
 include/KF5/KIOCore/KRecentDocument
@@ -113,6 +114,7 @@ include/KF5/KIOCore/kio/udsentry.h
 include/KF5/KIOCore/kiocore_export.h
 include/KF5/KIOCore/kmountpoint.h
 include/KF5/KIOCore/knfsshare.h
+include/KF5/KIOCore/kpasswdserverclient.h
 include/KF5/KIOCore/kprotocolinfo.h
 include/KF5/KIOCore/kprotocolmanager.h
 include/KF5/KIOCore/krecentdocument.h
@@ -586,6 +588,8 @@ share/doc/HTML/sr/kcontrol5/smb/index.cache.bz2
 share/doc/HTML/sr/kcontrol5/smb/index.docbook
 share/doc/HTML/sr/kcontrol5/useragent/index.cache.bz2
 share/doc/HTML/sr/kcontrol5/useragent/index.docbook
+share/doc/HTML/sr/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/sr/kcontrol5/webshortcuts/index.docbook
 share/doc/HTML/sr/kioslave5/data/index.cache.bz2
 share/doc/HTML/sr/kioslave5/data/index.docbook
 share/doc/HTML/sr/kioslave5/file/index.cache.bz2
@@ -616,6 +620,8 @@ share/doc/HTML/sr@latin/kcontrol5/smb/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol5/smb/index.docbook
 share/doc/HTML/sr@latin/kcontrol5/useragent/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol5/useragent/index.docbook
+share/doc/HTML/sr@latin/kcontrol5/webshortcuts/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol5/webshortcuts/index.docbook
 share/doc/HTML/sr@latin/kioslave5/data/index.cache.bz2
 share/doc/HTML/sr@latin/kioslave5/data/index.docbook
 share/doc/HTML/sr@latin/kioslave5/file/index.cache.bz2

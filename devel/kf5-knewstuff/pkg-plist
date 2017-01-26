@@ -38,6 +38,7 @@ include/KF5/KNewStuff3/knscore/engine.h
 include/KF5/KNewStuff3/knscore/entryinternal.h
 include/KF5/KNewStuff3/knscore/installation.h
 include/KF5/KNewStuff3/knscore/itemsmodel.h
+include/KF5/KNewStuff3/knscore/knewstuffcore_export.h
 include/KF5/KNewStuff3/knscore/provider.h
 include/KF5/KNewStuff3/knscore/question.h
 include/KF5/KNewStuff3/knscore/questionlistener.h
@@ -66,6 +67,7 @@ lib/libKF5NewStuffCore.so
 lib/libKF5NewStuffCore.so.5
 lib/libKF5NewStuffCore.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KNewStuff.pri
+%%QT_MKSPECDIR%%/modules/qt_KNewStuffCore.pri
 %%QT_QMLDIR%%/org/kde/newstuff/libnewstuffqmlplugin.so
 %%QT_QMLDIR%%/org/kde/newstuff/qml/NewStuffItem.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/NewStuffList.qml
