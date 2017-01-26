@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	databases java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 
-MAINTAINER=	xaque208@gmail.com
+MAINTAINER=	freebsd@zleslie.info
 COMMENT=	PuppetDB storeconfigs backend
 
 LICENSE=	APACHE20
