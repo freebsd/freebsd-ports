@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	skem
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	mail
 MASTER_SITES=	http://virtual-estates.net/skem/
 
@@ -27,7 +26,6 @@ SKEM_NETINET6_DESC=	Support IPv6 addresses (not tested)
 SKEM_NETINET_DESC=	Support IPv4 addresses
 
 OPTIONS_DEFAULT=	SKEM_NETINET
-NO_WRKSUBDIR=	yes
 
 .include <bsd.port.options.mk>
 
@@ -36,8 +34,5 @@ NO_WRKSUBDIR=	yes
 MAKE_ARGS+=	-D$o
 .	endif
 .endfor
-
-post-patch:
-	@${REINPLACE_CMD} -E 's/char[[:blank:]]+c;/int c;/' ${WRKSRC}/milter.c
 
 .include <bsd.port.mk>
