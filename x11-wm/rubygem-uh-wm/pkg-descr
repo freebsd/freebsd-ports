@@ -1,0 +1,5 @@
+uhwm is a minimalistic tiling and stacking window manager for X. It shares some
+similarities with dwm and wmii, but is written in ruby so you can configure and
+extend features directly with ruby code.
+
+WWW: https://rubygems.org/gems/uh-wm
