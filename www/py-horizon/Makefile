@@ -3,6 +3,7 @@
 
 PORTNAME=	horizon
 PORTVERSION=	10.0.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	https://fossies.org/linux/misc/openstack/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -70,7 +71,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel \
 		${PYTHON_PKGNAMEPREFIX}XStatic-term.js>=0.0.4:devel/py-XStatic-term.js \
 		${PYTHON_PKGNAMEPREFIX}XStatic-tv4>=1.2.7.0:devel/py-XStatic-tv4
 
-EXTRA_PATCHES=	 ${FILESDIR}/01-django.patch:-p1
+EXTRA_PATCHES=	${FILESDIR}/01-django.patch:-p1 \
+		${FILESDIR}/02-fix-floating-ips.patch:-p1
 
 NO_ARCH=	yes
 
