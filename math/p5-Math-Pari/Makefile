@@ -5,7 +5,7 @@ PORTNAME=	Math-Pari
 PORTVERSION=	2.01080900
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN  \
-		http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/:pari \
+		http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/2.3/:pari \
 		http://mirrors.rit.edu/zi/:pari
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}.zip \
