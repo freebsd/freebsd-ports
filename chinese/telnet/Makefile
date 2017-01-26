@@ -28,6 +28,8 @@ IGNORE=		need to build this port with the source code of telnet
 BROKEN=		does not build
 .endif
 
+BROKEN_DragonFly=	does not build
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} -R ${SRCDIR} ${WRKSRC}

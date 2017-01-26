@@ -645,6 +645,7 @@
     SUBDIR += php71-pdo_pgsql
     SUBDIR += php71-pdo_sqlite
     SUBDIR += php71-pgsql
+    SUBDIR += php71-redis
     SUBDIR += php71-sqlite3
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin

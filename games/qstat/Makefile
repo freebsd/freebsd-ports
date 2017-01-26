@@ -2,18 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	qstat
-PORTVERSION=	2.11
-PORTREVISION=	1
+PORTVERSION=	2.14
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games net
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Command-line program to query game servers on the net
 
+LICENSE=	ART20
+
 CONFLICTS_INSTALL=	torque-[0-9]*
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	multiplay
+
+USES=		autoreconf
 GNU_CONFIGURE=	yes
 
+PLIST_FILES=	bin/qstat \
+		@sample\ etc/qstat.cfg.sample
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -22,12 +29,13 @@ post-extract:
 	@${MV} ${WRKSRC}/qstat.cfg ${WRKSRC}/qstat.cfg.sample
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|qstat\.cfg|&.sample|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|qstat\.cfg|&.sample|' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|' ${WRKSRC}/qstat.c
 
-post-install:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/info ${STAGEDIR}${DOCSDIR}/template
-	${INSTALL_DATA} ${WRKSRC}/qstatdoc.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES.txt ${WRKSRC}/qstatdoc.html \
+		${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/template/*.html ${WRKSRC}/template/*.txt \
 		${STAGEDIR}${DOCSDIR}/template
 	${INSTALL_DATA} ${WRKSRC}/info/*.txt ${STAGEDIR}${DOCSDIR}/info

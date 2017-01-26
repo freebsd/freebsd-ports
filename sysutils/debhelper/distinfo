@@ -1,3 +1,3 @@
-TIMESTAMP = 1485355041
-SHA256 (debhelper_10.2.4.tar.xz) = 72ffc3327baae880b10f6cf519e9d848734d853905a3b79948a67019048e8d10
-SIZE (debhelper_10.2.4.tar.xz) = 357664
+TIMESTAMP = 1485435452
+SHA256 (debhelper_10.2.5.tar.xz) = c376f523ab9c1fcdfb371e92eb419519dcbaa6800d10d5e6ec80e583c9e4d054
+SIZE (debhelper_10.2.5.tar.xz) = 393740
