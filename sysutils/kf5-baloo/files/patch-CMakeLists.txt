@@ -8,12 +8,12 @@
 -if(CMAKE_SYSTEM_NAME MATCHES "Linux")
 -    set(BUILD_KINOTIFY True)
 -endif()
-+find_package(Libinotify)
-+set_package_properties(Libinotify PROPERTIES
++find_package(Inotify)
++set_package_properties(Inotify PROPERTIES
 +    PURPOSE "Filesystem alteration notifications using inotify"
 +    TYPE REQUIRED
 +)
-+set(BUILD_KINOTIFY ${LIBINOTIFY_FOUND})
++set(BUILD_KINOTIFY ${Inotify_FOUND})
 
  include_directories(
      ${CMAKE_BINARY_DIR}
@@ -21,7 +21,7 @@
      ${CMAKE_SOURCE_DIR}/src/file
      ${CMAKE_BINARY_DIR}/src/dbus
      ${CMAKE_SOURCE_DIR}/src/dbus
-+    ${LIBINOTIFY_INCLUDE_DIRS}
++    ${Inotify_INCLUDE_DIRS}
  )
 
  # targets

@@ -24,4 +24,4 @@ libdata/pkgconfig/pocl.pc
 %%DATADIR%%/include/pocl_device.h
 %%DATADIR%%/include/pocl_tests.h
 %%DATADIR%%/include/pocl_types.h
-%%DATADIR%%/kernel-amd64-portbld-freebsd%%OSREL%%.bc
+%%DATADIR%%/kernel-%%ARCH%%-portbld-%%OPSYS%%%%OSREL%%.bc

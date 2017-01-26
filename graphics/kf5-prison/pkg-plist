@@ -10,5 +10,5 @@ lib/cmake/KF5Prison/KF5PrisonTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Prison/KF5PrisonTargets.cmake
 lib/libKF5Prison.so
 lib/libKF5Prison.so.5
-lib/libKF5Prison.so.5.28.0
+lib/libKF5Prison.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Prison.pri

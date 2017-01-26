@@ -4,7 +4,7 @@
      KF5::Crash
      KF5::ConfigCore
      KF5::BalooEngine
-+    ${LIBINOTIFY_LIBRARIES}
++    ${Inotify_LIBRARIES}
  )
- 
+
  set(file_SRCS

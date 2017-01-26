@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.9.0
+PORTVERSION=	4.9.1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	qt5-
@@ -16,7 +16,8 @@ LICENSE=	LGPL21
 
 USES=		cmake:outsource kde:5 tar:xz
 USE_KDE=	ecm
-USE_QT5=	buildtools_build qmake_build designer phonon4
+USE_QT5=	core designer gui phonon4 widgets xml \
+		buildtools_build qmake_build
 CMAKE_ARGS=	-DPHONON_QT_PLUGIN_INSTALL_DIR=${PREFIX}/${QT_PLUGINDIR_REL}/designer \
 		-DPHONON_BUILD_PHONON4QT5=ON
 

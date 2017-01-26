@@ -2,16 +2,12 @@ bin/skrooge
 bin/skroogeconvert
 etc/xdg/skrooge_monthly.knsrc
 etc/xdg/skrooge_unit.knsrc
-lib/libskgbankgui.so
 lib/libskgbankgui.so.2
 lib/libskgbankgui.so.%%SHLIB_VER%%
-lib/libskgbankmodeler.so
 lib/libskgbankmodeler.so.2
 lib/libskgbankmodeler.so.%%SHLIB_VER%%
-lib/libskgbasegui.so
 lib/libskgbasegui.so.2
 lib/libskgbasegui.so.%%SHLIB_VER%%
-lib/libskgbasemodeler.so
 lib/libskgbasemodeler.so.2
 lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/designer/libskgbankguidesigner.so
@@ -60,7 +56,7 @@ lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/skrooge_search.so
 %%QT_PLUGINDIR%%/skrooge_tracker.so
 %%QT_PLUGINDIR%%/skrooge_unit.so
-%%SQLCIPHER%%%%QT_PLUGINDIR%%/sqldrivers/libskgsqlcipher.so
+%%QT_PLUGINDIR%%/sqldrivers/libskgsqlcipher.so
 share/applications/org.kde.skrooge.desktop
 share/config.kcfg/skgbasegui_settings.kcfg
 share/config.kcfg/skgbookmark_settings.kcfg
@@ -858,5 +854,4 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/quotes/BitcoinCharts.txt
 %%DATADIR%%/quotes/GrandTrunk.txt
 %%DATADIR%%/quotes/Skrooge.txt
-%%DATADIR%%/quotes/Stooq monthly history.txt
 %%DATADIR%%/quotes/Stooq.txt

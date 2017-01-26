@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- tools/clang/tools/scan-build/libexec/ccc-analyzer.orig
++++ tools/clang/tools/scan-build/libexec/ccc-analyzer
+@@ -81,6 +81,9 @@
+   if (-x "/usr/bin/xcrun") {
+     $UseXCRUN = 1;
+   }
++} elsif (`uname -s` eq "FreeBSD\n") {
++  $DefaultCCompiler = 'cc';
++  $DefaultCXXCompiler = 'c++';
+ } else {
+   $DefaultCCompiler = 'gcc';
+   $DefaultCXXCompiler = 'g++';
