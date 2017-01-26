@@ -13,6 +13,8 @@ COMMENT=	Validating XML parser for OCaml
 BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:www/ocaml-net
 RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:www/ocaml-net
 
+BROKEN=		does not build
+
 OPTIONS_DEFINE=	ULEX
 OPTIONS_DEFAULT=ULEX
 ULEX_DESC=	Include UTF-8 lexical analyzer support
