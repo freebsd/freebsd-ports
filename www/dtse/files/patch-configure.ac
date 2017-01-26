@@ -1,6 +1,6 @@
---- ./configure.ac.orig	2008-08-23 03:29:42.000000000 -0700
-+++ ./configure.ac	2011-12-30 17:37:16.000000000 -0800
-@@ -9,36 +9,22 @@
+--- configure.ac.orig	2008-08-23 10:29:42 UTC
++++ configure.ac
+@@ -9,36 +9,21 @@ AC_CONFIG_SRCDIR(Search.cpp)
  AC_PREFIX_DEFAULT(/usr/local/dtse)
  AC_PROG_INSTALL
  
@@ -11,7 +11,6 @@
 +AX_CHECK_GNU_MAKE
 +AC_SUBST([GNUMAKE], [$_cv_gnu_make_command])
 +AS_IF([test "x$GNUMAKE" = x], [AC_MSG_ERROR([You need GNU make])])
-+AX_WITH_PERL
 +AX_PROG_PERL_MODULES([File::Temp], [], [AC_MSG_ERROR([You need File::Temp.])])
 +AC_LANG([C++])
  AC_PROG_CXX
@@ -46,7 +45,7 @@
  ], [
  	AC_MSG_RESULT(yes)
  	AC_MSG_CHECKING(for OpenSSL)
-@@ -62,7 +48,7 @@
+@@ -62,7 +47,7 @@ AC_ARG_WITH(openssl, [[  --with-openssl[
  		AC_SUBST(OpenSSL, -D_OpenSSL_)
  	else
  		AC_MSG_RESULT(not found);
