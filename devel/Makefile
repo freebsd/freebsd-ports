@@ -4722,7 +4722,7 @@
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
     SUBDIR += py-txaio
-    SUBDIR += py-typed-asp
+    SUBDIR += py-typed-ast
     SUBDIR += py-typing
     SUBDIR += py-tzlocal
     SUBDIR += py-ua_parser
