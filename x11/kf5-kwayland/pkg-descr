@@ -1,0 +1,8 @@
+As the names suggest they implement a Client respectively a Server API for the
+Wayland protocol. The API is Qt-styled removing the needs to interact with a
+for a Qt developer uncomfortable low-level C-API. For example the callback
+mechanism from the Wayland API is replaced by signals; data types are adjusted
+to be what a Qt developer expects, e.g. two arguments of int are represented by
+a QPoint or a QSize.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kwayland/html/index.html

@@ -3,7 +3,6 @@
 
 PORTNAME=	kfilemetadata
 PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,6 +22,6 @@ USE_QT5=	buildtools_build core qmake_build xml
 
 # Frameworks ports install localization files that conflict with some
 # KDE4 localization ports
-CONFLICTS_INSTALL=	kde4-l10n-*
+CONFLICTS_INSTALL=     kde4-l10n-*
 
 .include <bsd.port.mk>
