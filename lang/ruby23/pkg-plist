@@ -1,3 +1,4 @@
+%%IF_DEFAULT%%bin/erb
 bin/erb%%RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/irb
 bin/irb%%RUBY_SUFFIX%%
