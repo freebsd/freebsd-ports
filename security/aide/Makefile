@@ -24,6 +24,9 @@ CONFIGURE_ARGS+=--with-mhash \
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
+NORELRO_PORTS=	yes
+NOPIE_PORTS=	yes
+
 SUB_FILES=	pkg-message
 
 post-install:
