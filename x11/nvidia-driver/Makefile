@@ -108,13 +108,13 @@ MAKE_ENV+=	WITHOUT_LINUX=yes
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} -e '24,26d' ${WRKSRC}/src/${NVSRC}/nv-freebsd.h
-# Adjust Linux headers #include's after FreeBSD src SVN r246085
+# Adjust Linux headers #include's after FreeBSD src r246085
 .if ${OSVERSION} > 1000027
 	${REINPLACE_CMD} -E '/#include "machine\/\.\.\/linux(32)?\/linux.h"/ \
 		{ x ; s/.*/#include "machine\/..\/..\/compat\/linux\/linux_ioctl.h"/ ; H ; x ; }' \
 			${WRKSRC}/src/${NVSRC}/nvidia_linux.c
 .endif
-# Adjust vm_object locking after FreeBSD src SVN r248084
+# Adjust `vm_object' locking after FreeBSD src r248084
 .if ${OSVERSION} > 1000029
 	${REINPLACE_CMD} -e '/#include <vm\/vm_object.h>/ \
 		{ x ; s/.*/#include <sys\/rwlock.h>/ ; G ; }' \
@@ -122,7 +122,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/(VM_OBJECT_)(UN)?(LOCK)/\1W\2\3/' \
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 .endif
-# Adjust kmem(9) calls after FreeBSD src SVN r254025
+# Adjust kmem(9) calls after FreeBSD src r254025
 .if ${OSVERSION} > 1000040 && ${NVVERSION} < 331.067
 	${REINPLACE_CMD} -e '/kmem_/s/kernel_map/kernel_arena/' \
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
@@ -136,13 +136,13 @@ post-patch: .SILENT
 		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
 .  endif
 .endif
-# Fix CTLFLAG_* values for SYSCTL_ADD_PROC() after FreeBSD src SVN r273377
+# Fix CTLFLAG_* values for SYSCTL_ADD_PROC() after FreeBSD src r273377
 .if ${OSVERSION} > 1100039 || ${OSVERSION} > 1001501 && ${OSVERSION} < 1100000
 	${REINPLACE_CMD} -e '/SYSCTL_ADD_PROC/,/;/ \
 		s/^[[:blank:]]*CTLFLAG_RD/CTLTYPE_STRING |&/' \
 			${WRKSRC}/src/${NVSRC}/nvidia_sysctl.c
 .endif
-# Replace d_thread_t (compat shim to support FreeBSD 4) with `struct thread'
+# Replace `d_thread_t' (FreeBSD 4 support compat shim) with `struct thread'
 	${REINPLACE_CMD} -e 's/d_thread_t/struct thread/' \
 		${WRKSRC}/src/${NVSRC}/nvidia_ctl.c \
 		${WRKSRC}/src/${NVSRC}/nvidia_dev.c \
@@ -189,7 +189,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's,/usr/share/nvidia,${STAGEDIR}${DOCSDIR},' \
 		${WRKSRC}/lib/libGL/Makefile ${WRKSRC}/doc/Makefile
 .endif
-# New cap_rights_t structure was introduced in FreeBSD r255219 (FreeBSD 10.0).
+# New `cap_rights_t' structure was introduced in FreeBSD src r255219
 .if ${OSVERSION} < 1000053 && ${NVVERSION} >= 358.009
 	${REINPLACE_CMD} '/<sys\/caprights.h>/d ; /cap_rights_t rights/d ; s/cap_rights_init(&rights, CAP_IOCTL)/CAP_IOCTL/' \
 		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
