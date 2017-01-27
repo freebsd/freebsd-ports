@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wcd
-PORTVERSION=	5.3.3
+PORTVERSION=	5.3.4
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/doc/copying.txt
 USES=		gmake ncurses
 MAKE_ARGS=	EXT= PREFIX=${PREFIX} docsubdir=${PORTNAME} \
 		mandir=${PREFIX}/man
+CFLAGS+=	-I${NCURSESINC}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
