@@ -106,6 +106,7 @@
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/PNG.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/PNM.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/TIFF.pm
+%%SITE_PERL%%/PDF/API2/Resource/XObject/Image/TIFF/File.pm
 %%SITE_PERL%%/PDF/API2/Resource/uniglyph.txt
 %%SITE_PERL%%/PDF/API2/UniWrap.pm
 %%SITE_PERL%%/PDF/API2/Util.pm
