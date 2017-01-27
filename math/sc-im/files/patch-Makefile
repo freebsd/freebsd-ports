@@ -1,0 +1,65 @@
+--- Makefile.orig	2016-11-28 12:29:27 UTC
++++ Makefile
+@@ -34,12 +34,12 @@ LIBDIR=$(prefix)/share/doc/$(name)
+ LIBRARY=-DLIBDIR=\"$(LIBDIR)\"
+ 
+ # For Building SC-IM in LINUX, set LINUX variable below
+-LINUX := -DLINUX
+-#LINUX :=
++#LINUX := -DLINUX
++LINUX :=
+ 
+ # For Building SC-IM in FREEBSD, set FREEBSD variable below
+-#FREEBSD := -DFREEBSD
+-FREEBSD :=
++FREEBSD := -DFREEBSD
++#FREEBSD :=
+ 
+ # For Building SC-IM in NETBSD, set NETBSD variable below
+ #NETBSD := -DNETBSD
+@@ -115,15 +115,15 @@ SED := sed
+ # Uncomment below if you want basic XLS import support.
+ # Requires libxlsreader.
+ # Add -lxlsreader in LDLIBS as well.
+-XLS := 
+-#XLS := -DXLS
++#XLS := 
++XLS := -DXLS
+ 
+ # Uncomment below if you want basic XLSX import support.
+ # Requires libzip-dev and libxml2-dev
+ # Add -lzip -xml2 to LDLIBS as well.
+ # and -I/usr/include/libxml2 or the acording path to the libxml headers, in CFLAGS
+-XLSX :=
+-#XLSX := -DXLSX
++#XLSX :=
++XLSX := -DXLSX
+ 
+ # Set UNDO variable to enable this feature
+ #UNDO :=
+@@ -134,12 +134,12 @@ UNDO := -DUNDO
+ MAXROWS := 65536
+ 
+ #CFLAGS := -O2 -Wall -pipe -g
+-CFLAGS := $(LINUX) $(FREEBSD) $(NETBSD) $(MACOSX) -O2 -Wall -pipe -g -I/usr/include/libxml2 $(shell pkg-config --cflags ncursesw)
++CFLAGS := $(LINUX) $(FREEBSD) $(NETBSD) $(MACOSX) $(CFLAGS) #-O2 -Wall -pipe -g -I/usr/include/libxml2 $(shell pkg-config --cflags ncursesw)
+ CFLAGS := $(CFLAGS) $(USECOLORS) $(USELOCALE) $(UNDO) $(SIGVOID) $(DFLT_PAGER)
+ CFLAGS := $(CFLAGS) $(IEEE_MATH) $(RINT) $(REGEX) $(LIBRARY) -DMAXROWS=$(MAXROWS)
+ CFLAGS := $(CFLAGS) $(HELP_PATH) $(SNAME) $(NO_NOTIMEOUT) $(SIMPLE) $(XLS) $(XLSX) $(HISTORY_FILE)
+ 
+-LDLIBS := -lm $(shell pkg-config --libs ncursesw)
++LDLIBS := -lm $(LDLIBS) -lncursesw -lxlsreader -lzip -lxml2 # $(shell pkg-config --libs ncursesw)
+ #LDLIBS := -lm -lncurses -lxlsreader
+ #LDLIBS := -lm -lncurses -lxlsreader -lzip -lxml2
+ 
+@@ -157,8 +157,8 @@ install :
+ 	install $(name) $(DESTDIR)$(prefix)/bin/$(name)
+ 	install -d $(DESTDIR)$(HELPDIR)
+ 	install doc $(DESTDIR)$(HELPDIR)/$(name)_help
+-	install -d $(DESTDIR)$(prefix)/share/man/man1
+-	install -m 644 sc-im.1 $(DESTDIR)$(prefix)/share/man/man1/$(name).1
++	install -d $(DESTDIR)$(MANDIR)
++	install -m 644 sc-im.1 $(DESTDIR)$(MANDIR)/$(name).1
+ 
+ 
+ uninstall :
