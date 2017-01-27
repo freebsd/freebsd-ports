@@ -4,6 +4,7 @@ PORTNAME=	seafile-server
 PORTVERSION=	6.0.7
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima1252@gmail.com
@@ -93,6 +94,7 @@ post-patch:
 			${WRKSRC}/scripts/seaf-cli-wrapper.sh
 	${REINPLACE_CMD} 's/<evhtp.h>/<evhtp\/evhtp.h>/' ${WRKSRC}/server/upload-file.c \
 			${WRKSRC}/server/access-file.c ${WRKSRC}/server/http-server.c
+	${REINPLACE_CMD} -E 's/stat.+\$$/stat -f %Su $$/' ${WRKSRC}/scripts/seafile.sh
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEABIN} ${STAGEDIR}${PREFIX}/${SEALIB} \
 		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile \
@@ -111,8 +113,6 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX}/lib && \
 		${COPYTREE_SHARE} ${PYTHON_VERSION} ${STAGEDIR}${PREFIX}/${SEALIB})
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION} \
-		${WRKSRC}/scripts/sqlite2mysql.[ps][yh] \
-		${WRKSRC}/scripts/setup-seafile.sh \
 		${STAGEDIR}${PREFIX}/bin/seafile-admin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.[ps][yh] ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/upgrade/*.[ps][yh] \
