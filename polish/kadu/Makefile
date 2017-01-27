@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kadu
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -18,7 +18,7 @@ COMMENT=	Internet communicator supporting Gadu-Gadu and Jabber/XMPP
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash \
-		pl-libgadu>=1.12.1:polish/libgadu
+		pl-libgadu>=1.12.2:polish/libgadu
 LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libsndfile.so:audio/libsndfile \
 		libinjeqt.so:devel/injeqt \
