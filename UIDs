@@ -248,7 +248,7 @@ ntopng:*:288:288::0:0:ntopng daemon user:/nonexistent:/usr/sbin/nologin
 # free: 299
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 # free: 301
-# free: 302
+netdata:*:302:302::0:0:NetData Daemon:/var/cache/netdata:/usr/sbin/nologin
 # free: 303
 # free: 304
 # free: 305
