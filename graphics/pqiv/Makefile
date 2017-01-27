@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pqiv
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.7.2
 CATEGORIES=	graphics
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -11,10 +10,9 @@ COMMENT=	Pretty Quick Image Viewer
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:shells/bash
-
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
+BUILD_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phillipberndt
@@ -23,7 +21,8 @@ OPTIONS_SINGLE=		GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3
 
 OPTIONS_GROUP=		BACKENDS
-OPTIONS_GROUP_BACKENDS=	LIBAV PIXBUF POPPLER SPECTRE WAND
+OPTIONS_GROUP_BACKENDS=	LIBARCHIVE LIBAV PIXBUF POPPLER SPECTRE WAND
+LIBARCHIVE_DESC=	Libarchive formats support
 LIBAV_DESC=		Video support
 SPECTRE_DESC=		PS/EPS support
 WAND_DESC=		ImageMagick image processing support
@@ -34,6 +33,9 @@ USES=		gettext-runtime gmake pkgconfig
 USE_XORG=	x11
 USE_GNOME=	cairo gdkpixbuf2
 HAS_CONFIGURE=	yes
+
+LIBARCHIVE_CONFIGURE_WITH=	archive archive_cbx
+LIBARCHIVE_USES=	libarchive
 
 LIBAV_CONFIGURE_WITH=	libav
 LIBAV_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
