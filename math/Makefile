@@ -259,6 +259,7 @@
     SUBDIR += librsb
     SUBDIR += libtommath
     SUBDIR += libtsnnls
+    SUBDIR += libxls
     SUBDIR += linpack
     SUBDIR += lll_spect
     SUBDIR += lp_solve
@@ -666,6 +667,7 @@
     SUBDIR += saga
     SUBDIR += sage
     SUBDIR += sc
+    SUBDIR += sc-im
     SUBDIR += scalapack
     SUBDIR += scilab
     SUBDIR += scilab-toolbox-sivp

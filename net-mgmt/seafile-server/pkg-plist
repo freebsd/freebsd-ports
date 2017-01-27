@@ -41,8 +41,11 @@ libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/breakpad.py
 %%SEAFILE_SERVER%%/seafobj_migrate.py
 %%SEAFILE_SERVER%%/seahub.sh
+%%SEAFILE_SERVER%%/setup-seafile.sh
 %%SEAFILE_SERVER%%/setup-seafile-mysql.py
 %%SEAFILE_SERVER%%/setup-seafile-mysql.sh
+%%SEAFILE_SERVER%%/sqlite2mysql.py
+%%SEAFILE_SERVER%%/sqlite2mysql.sh
 %%SEAFILE_SERVER%%/upgrade/add_collate.sh
 %%SEAFILE_SERVER%%/upgrade/db_update_1.3_1.4.py
 %%SEAFILE_SERVER%%/upgrade/db_update_helper.py
