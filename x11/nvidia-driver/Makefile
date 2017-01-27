@@ -127,6 +127,15 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/kmem_/s/kernel_map/kernel_arena/' \
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 .endif
+# Chase `sys/capability.h' rename to `sys/capsicum.h' in FreeBSD src r263232
+.if ${OSVERSION} > 1100013 || ${OSVERSION} > 1001510 && ${OSVERSION} < 1100000
+	${REINPLACE_CMD} -e 's:sys/capability\.h:sys/capsicum.h:' \
+		${WRKSRC}/src/${NVSRC}/nv-freebsd.h
+.  if ${NVVERSION} >= 358.009
+	${REINPLACE_CMD} -e 's:sys/capability\.h:sys/capsicum.h:' \
+		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
+.  endif
+.endif
 # Fix CTLFLAG_* values for SYSCTL_ADD_PROC() after FreeBSD src SVN r273377
 .if ${OSVERSION} > 1100039 || ${OSVERSION} > 1001501 && ${OSVERSION} < 1100000
 	${REINPLACE_CMD} -e '/SYSCTL_ADD_PROC/,/;/ \
@@ -135,7 +144,8 @@ post-patch: .SILENT
 .endif
 # Replace d_thread_t (compat shim to support FreeBSD 4) with `struct thread'
 	${REINPLACE_CMD} -e 's/d_thread_t/struct thread/' \
-		${WRKSRC}/src/${NVSRC}/nvidia_ctl.c ${WRKSRC}/src/${NVSRC}/nvidia_dev.c \
+		${WRKSRC}/src/${NVSRC}/nvidia_ctl.c \
+		${WRKSRC}/src/${NVSRC}/nvidia_dev.c \
 		${WRKSRC}/src/${NVSRC}/nvidia_linux.c
 .if ${NVVERSION} >= 358.009
 	${REINPLACE_CMD} -e 's/d_thread_t/struct thread/' \
