@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imagick
-DISTVERSION=	3.4.1
-PORTREVISION=	1
+DISTVERSION=	3.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
