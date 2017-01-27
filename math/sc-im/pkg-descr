@@ -1,0 +1,24 @@
+SC-IM is a spreadsheet program that is based on SC
+
+Some of the features of SC-IM
+ * UNDO / REDO.
+ * 65.536 rows and 702 columns supported. (The number of rows can be expanded
+  to 1.048.576 if wished).
+ * CSV / TAB delimited file import and export.
+ * XLS / XLSX file import.
+ * Key-mappings.
+ * Sort of rows.
+ * Filter of rows.
+ * Cell shifting.
+ * 256 color support - screen colors can be customized by user, even at runtime.
+ * Colorize cells or give them format such as bold or underline.
+ * Wide character support. The following alphabets are supported: English,
+   Spanish, French, Italian, German, Portuguese, Russian, Ukrainian, Greek,
+   Turkish, Czech, Japanese, Chinese.
+ * Implement external functions in the language you prefer and use them in SC-IM
+ * Use SC-IM as a non-interactive calculator, reading its input from a external
+   script.
+ * More movements commands implemented !
+ * Input and Output was completely rewritten
+
+WWW: https://github.com/andmarti1424/sc-im

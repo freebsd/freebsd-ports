@@ -667,6 +667,7 @@
     SUBDIR += saga
     SUBDIR += sage
     SUBDIR += sc
+    SUBDIR += sc-im
     SUBDIR += scalapack
     SUBDIR += scilab
     SUBDIR += scilab-toolbox-sivp
