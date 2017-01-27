@@ -9,6 +9,8 @@ DISTFILES=	# none
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Portable foreign function interface for Common Lisp
 
+BROKEN=		does not build with new sbcl 1.13
+
 BUILD_DEPENDS=	cl-cffi>=0:devel/cl-cffi \
 		cl-alexandria-sbcl>=0:devel/cl-alexandria-sbcl \
 		cl-trivial-features-sbcl>=0:devel/cl-trivial-features-sbcl \
