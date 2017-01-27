@@ -2,10 +2,13 @@
 
 PORTNAME=	sbcl
 PORTVERSION=	1.3.13
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/sbcl/sbcl/${PORTVERSION}
+MASTER_SITES=	SF/sbcl/sbcl/${PORTVERSION} \
+		LOCAL/marino:binaries
+DISTFILES=	sbcl-${PORTVERSION}-source.tar.bz2
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Common Lisp development system derived from the CMU CL system
@@ -22,7 +25,16 @@ USES=		gmake makeinfo tar:bzip2
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+SBCL_BOOT_LIST=	1.0.31-amd64-freebsd8 \
+		1.0.31-i386-freebsd8 \
+		1.2.9-x86_64-dragonfly4
+
+CONMODULES=	asdf sb-aclrepl sb-bsd-sockets sb-cltl2 sb-concurrency \
+		sb-cover sb-executable sb-gmp sb-grovel sb-introspect \
+		sb-md5 sb-mpfr sb-posix sb-queue sb-rotate-byte sb-rt \
+		sb-simple-streams sb-sprof
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_SH_ARGS?=	--prefix="${PREFIX}" \
 		--xc-host="${XC_HOST}"
@@ -35,7 +47,7 @@ MAKE_SH_ARGS+=	--dynamic-space-size=${DYNAMIC_SPACE_SIZE}
 
 # All options explained into file: ${WRKSRC}/base-target-features.lisp-expr
 OPTIONS_DEFINE=	DOCS QSHOW RENAME SAFEPOINT THREADS UNICODE XREF ZLIB
-OPTIONS_DEFAULT=CCL UNICODE
+OPTIONS_DEFAULT=	RENAME SBCL UNICODE
 
 QSHOW_DESC=	C runtime with low-level debugging output
 RENAME_DESC=	Rename suffix .core to _core
@@ -51,47 +63,68 @@ CCL_DESC=	Clozure Common Lisp
 CMUCL_DESC=	Carnegie Mellon University Common Lisp
 SBCL_DESC=	Steel Bank Common Lisp
 
-# On this moment CMUCL - don't builds sbcl correctly, ABCL - I don't tested. Welcome volunteers.
-OPTIONS_EXCLUDE=ABCL CMUCL
+# On this moment CMUCL doesn't builds sbcl correctly
+# ABCL - I haven't tested. Welcome volunteers.
+OPTIONS_EXCLUDE=	ABCL CMUCL
 
-ABCL_VARS=	XC_HOST="abcl"
+ABCL_VARS=		XC_HOST="abcl"
 ABCL_BUILD_DEPENDS=	abcl:lang/abcl
 
-CCL_VARS=	XC_HOST="ccl --no-init --batch --quiet"
+CCL_VARS=		XC_HOST="ccl --no-init --batch --quiet"
 CCL_BUILD_DEPENDS=	ccl:lang/ccl
 
-CMUCL_VARS=	XC_HOST="lisp -nositeinit -noinit -batch -quiet"
+CMUCL_VARS=		XC_HOST="lisp -nositeinit -noinit -batch -quiet"
 CMUCL_BUILD_DEPENDS=	lisp:lang/cmucl
 
-DOCS_VARS=	INFO="asdf sbcl"
+DOCS_VARS=		INFO="asdf sbcl"
 
-QSHOW_VARS=	MAKE_SH_ARGS+="--with-sb-qshow"
-QSHOW_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-qshow"
+QSHOW_VARS=		MAKE_SH_ARGS+="--with-sb-qshow"
+QSHOW_VARS_OFF=		MAKE_SH_ARGS+="--without-sb-qshow"
 
-RENAME_PLIST_SUB=	RENAME_DLM="_"
-RENAME_PLIST_SUB_OFF=	RENAME_DLM="."
-RENAME_VARS=	RENAME_DLM="_"
-RENAME_VARS_OFF=RENAME_DLM="."
+RENAME_PLIST_SUB=	CORE_SUFFIX="_core"
+RENAME_PLIST_SUB_OFF=	CORE_SUFFIX=".core"
 
-SAFEPOINT_VARS=	MAKE_SH_ARGS+="--with-sb-safepoint --with-sb-thruption --with-sb-wtimer"
+SAFEPOINT_VARS=		MAKE_SH_ARGS+="--with-sb-safepoint --with-sb-thruption --with-sb-wtimer"
 SAFEPOINT_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-safepoint --without-sb-thruption --without-sb-wtimer"
 SAFEPOINT_IMPLIES=	THREADS
 
-SBCL_VARS=	XC_HOST="sbcl --noinform --disable-debugger --no-sysinit --no-userinit"
+SBCL_VARS=		XC_HOST="${BOOT_WRKSRC}/src/runtime/sbcl --core ${BOOT_WRKSRC}/output/${CORE} --noinform --disable-debugger --no-sysinit --no-userinit"
+SBCL_DISTFILES=		sbcl-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}-binary.tar.bz2:binaries
 
-THREADS_VARS=	MAKE_SH_ARGS+="--with-sb-thread --with-restore-fs-segment-register-from-tls"
+THREADS_VARS=		MAKE_SH_ARGS+="--with-sb-thread --with-restore-fs-segment-register-from-tls"
 THREADS_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-thread --without-restore-fs-segment-register-from-tls"
 
-UNICODE_VARS=	MAKE_SH_ARGS+="--with-sb-unicode"
+UNICODE_VARS=		MAKE_SH_ARGS+="--with-sb-unicode"
 UNICODE_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-unicode"
 
-XREF_VARS=	MAKE_SH_ARGS+="--with-sb-xref-for-internals"
-XREF_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-xref-for-internals"
+XREF_VARS=		MAKE_SH_ARGS+="--with-sb-xref-for-internals"
+XREF_VARS_OFF=		MAKE_SH_ARGS+="--without-sb-xref-for-internals"
 
-ZLIB_VARS=	MAKE_SH_ARGS+="--with-sb-core-compression"
-ZLIB_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-core-compression"
+ZLIB_VARS=		MAKE_SH_ARGS+="--with-sb-core-compression"
+ZLIB_VARS_OFF=		MAKE_SH_ARGS+="--without-sb-core-compression"
 
 PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+ARCHOS_PATTERN=	*-${ARCH}-${OPSYS:tl}*
+BOOT_WRKSRC=	${WRKDIR}/sbcl-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}
+
+# for port maintenance, invoke "make makesum PLUS_BOOTSTRAPS=1"
+.if defined (PLUS_BOOTSTRAPS)
+. for B in ${SBCL_BOOT_LIST}
+.  if ! ${DISTFILES:Msbcl-${B}-*}
+DISTFILES:=	${DISTFILES} sbcl-${B}-binary.tar.bz2:binaries
+.  endif
+. endfor
+.endif
+
+# Old FreeBSD bootstraps feature the older core name for SBCL bootstrap
+.if ${OPSYS} == FreeBSD
+CORE=	sbcl.core
+.else
+CORE=	sbcl_core
+.endif
 
 post-patch-RENAME-on:
 	${GREP} -Frl '.core' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|\.core|_core|g'
@@ -106,6 +139,11 @@ do-install:
 	INFO_DIR="${STAGEDIR}${PREFIX}/${INFO_PATH}" \
 	DOC_DIR="${STAGEDIR}${DOCSDIR}" \
 	${SH} install.sh)
+.for M in ${CONMODULES}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/sbcl/${M}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${M}/*.[la]* \
+		${STAGEDIR}${PREFIX}/lib/sbcl/${M}/
+.endfor
 
 post-build-DOCS-on:
 	${DO_MAKE_BUILD} -C ${WRKSRC}/doc/manual info html
