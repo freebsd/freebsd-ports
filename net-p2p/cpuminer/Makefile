@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cpuminer
-PORTVERSION=	2.4
-PORTREVISION=	3
+PORTVERSION=	2.4.5
 CATEGORIES=	net-p2p math
 MASTER_SITES=	SF/cpuminer
 DISTNAME=	pooler-${PORTNAME}-${PORTVERSION}
@@ -16,17 +15,23 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjansson.so:devel/jansson
 
+OPTIONS_DEFINE=	GCC
+OPTIONS_DEFAULT=GCC
+
 USES=		autoreconf cpe
 GNU_CONFIGURE=	yes
 CPE_VENDOR=	cpuminer_project
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-# gcc 4.6 yields higher hashrates on newer CPUs, gcc 4.8 even better
-USE_GCC?=	yes
 
 PLIST_FILES=	bin/minerd man/man1/minerd.1.gz
 PORTDOCS=	NEWS README
 
-OPTIONS_DEFINE=	DOCS
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGCC}
+# gcc yields higher hashrates on newer CPUs
+USE_GCC?=	yes
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
