@@ -259,6 +259,7 @@
     SUBDIR += librsb
     SUBDIR += libtommath
     SUBDIR += libtsnnls
+    SUBDIR += libxls
     SUBDIR += linpack
     SUBDIR += lll_spect
     SUBDIR += lp_solve
