@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	2.99003.1
+PORTVERSION=	2.99005
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,5 @@ TEST_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
 .include <bsd.port.mk>
