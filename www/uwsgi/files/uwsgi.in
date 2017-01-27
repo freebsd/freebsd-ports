@@ -12,6 +12,8 @@
 #				Default is "NO".
 # uwsgi_socket (path/str):	Set the path to the uwsgi unix socket
 #				Default is /tmp/uwsgi.sock.
+# uwsgi_socket_mode (int):	Set the mode of the socket.
+#				Default is 600.
 # uwsgi_logfile (path):		Set the path to the uwsgi log file
 #				Default is /var/log/uwsgi.log.
 # uwsgi_pidfile (path):		Set the path to the uwsgi pid file
@@ -45,6 +47,7 @@ command=%%PREFIX%%/bin/uwsgi
 : ${uwsgi_enable="NO"}
 : ${uwsgi_profiles=""}
 : ${uwsgi_socket="/tmp/${name}.sock"}
+: ${uwsgi_socket_mode="600"}
 : ${uwsgi_logfile="/var/log/${name}.log"}
 : ${uwsgi_pidfile="/var/run/${name}.pid"}
 : ${uwsgi_uid="80"}
@@ -72,6 +75,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 		        exit 1
 		fi
 		eval uwsgi_socket=\${uwsgi_${profile}_socket:-"/tmp/${name}-${profile}.sock"}
+		eval uwsgi_socket_mode=\${uwsgi_${profile}_socket_mode:-"600"}
 		eval uwsgi_logfile=\${uwsgi_${profile}_logfile:-"/var/log/${name}-${profile}.log"}
 		eval uwsgi_pidfile=\${uwsgi_${profile}_pidfile:-"/var/run/${name}-${profile}.pid"}
 		eval uwsgi_uid=\${uwsgi_${profile}_uid:-"${uwsgi_uid}"}
@@ -88,7 +92,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 fi
 
 command=%%PREFIX%%/bin/uwsgi
-command_args="--pidfile ${uwsgi_pidfile} -s ${uwsgi_socket} -d ${uwsgi_logfile} --uid ${uwsgi_uid} --gid ${uwsgi_gid}"
+command_args="--pidfile ${uwsgi_pidfile} -s ${uwsgi_socket} --chmod-socket=${uwsgi_socket_mode} -d ${uwsgi_logfile} --uid ${uwsgi_uid} --gid ${uwsgi_gid}"
 pidfile=${uwsgi_pidfile}
 stop_postcmd=stop_postcmd
 reload_precmd=reload_precmd
