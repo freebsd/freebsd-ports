@@ -1,0 +1,22 @@
+https://github.com/xcllnt/openiked/issues/11
+
+--- configure.ac.orig	2017-01-13 04:16:22 UTC
++++ configure.ac
+@@ -2232,7 +2232,7 @@ AC_RUN_IFELSE(
+ 	if(fd == NULL)
+ 		return(1);
+ 
+-	if ((rc = fprintf(fd ,"%s\n", _EVENT_VERSION)) <0)
++	if ((rc = fprintf(fd ,"%s\n", LIBEVENT_VERSION)) <0)
+ 		return(1);
+ 
+ 	return(0);
+@@ -2308,7 +2308,7 @@ AC_RUN_IFELSE(
+ #include <stdlib.h>
+ #include <string.h>
+ 	]], [[
+-	exit(strcmp(event_get_version(), _EVENT_VERSION) == 0 ? 0 : 1);
++	exit(strcmp(event_get_version(), LIBEVENT_VERSION) == 0 ? 0 : 1);
+ 	]])],
+ 	[
+ 		AC_MSG_RESULT([yes])
