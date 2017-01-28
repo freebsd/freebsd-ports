@@ -13,6 +13,9 @@ COMMENT=	Full featured BSON specification implementation in Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/rubygem-bson instead
+EXPIRATION_DATE=2017-02-28
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
