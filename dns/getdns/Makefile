@@ -25,8 +25,10 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libidn=${LOCALBASE} --docdir=${DOCSDIR} \
 		--with-trust-anchor=${LOCALBASE}/etc/unbound/root.key
+SOVERSION=	1.4.1
+SOMAJVER=	${SOVERSION:C/([0-9]).*/\1/1}
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+PLIST_SUB+=	SOVERSION="${SOVERSION}" SOMAJVER="${SOMAJVER}"
 SUB_FILES+=	pkg-message
 
 OPTIONS_SUB=	yes
@@ -44,6 +46,7 @@ LIBUV_CONFIGURE_WITH=	libuv
 LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
 LIBEVENT_CONFIGURE_WITH=libevent
 DIAGS_VARS=		PLIST_FILES+=bin/${PORTNAME}_query
+DIAGS_LIB_DEPENDS=	libcheck.so:devel/libcheck
 
 do-build-DIAGS-on:
 	(cd ${WRKSRC}/src/test && ${MAKE})
@@ -56,7 +59,7 @@ post-patch:
 		-e '/echo .\*\*\*/d' ${WRKSRC}/Makefile.in
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns.so.*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns*.so.*
 
 post-install-DIAGS-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/getdns_query
