@@ -4,7 +4,7 @@
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.8.1
 DISTVERSIONSUFFIX=	-gtk3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 PKGNAMESUFFIX=	${DISTVERSIONSUFFIX}
@@ -25,6 +25,7 @@ CONFLICTS_INSTALL=	audacious-plugins-3.*
 
 MASTERDIR=	${.CURDIR}/../audacious-plugins
 DISTINFO_FILE=	${.CURDIR}/distinfo
+FILESDIR=	${MASTERDIR}/files
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lib execinfo gettext-tools gmake iconv \
