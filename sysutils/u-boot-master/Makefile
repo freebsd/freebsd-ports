@@ -56,7 +56,7 @@ UBOOT_PLIST_ALLWINNER=u-boot.img u-boot-sunxi-with-spl.bin
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2017.01.00.1
+UBOOT_VERSION?=	2017.01.00.2
 
 .if !defined(UBOOT_PLIST) && defined(UBOOT_PLIST_${FAMILY:tu})
 UBOOT_PLIST=${UBOOT_PLIST_${FAMILY:tu}}
