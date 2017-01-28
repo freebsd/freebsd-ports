@@ -3,7 +3,7 @@
 
 PORTNAME=	bsfilter
 PORTVERSION=	1.0.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ruby
 MASTER_SITES=	SFJP/bsfilter/59804
 
@@ -19,15 +19,7 @@ USE_RUBY=	yes
 USES=		shebangfix tar:tgz
 SHEBANG_FILES=	bsfilter/bsfilter
 
-OPTIONS_DEFINE=	EXAMPLES MECAB
-
-MECAB_DESC=	Part-of-Speech and Morphological Analyzer
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMECAB}
-RUN_DEPENDS+=	ja-${RUBY_PKGNAMEPREFIX}mecab>=0:japanese/ruby-mecab
-.endif
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bsfilter/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
