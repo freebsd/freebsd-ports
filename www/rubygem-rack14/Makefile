@@ -19,6 +19,9 @@ COMMENT=	Rack, a Ruby Webserver Interface
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Use www/rubygem-rack or www/rubygem-rack16 instead
+EXPIRATION_DATE=2017-02-28
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
