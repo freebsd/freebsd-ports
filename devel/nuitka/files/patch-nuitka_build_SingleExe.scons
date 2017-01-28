@@ -1,20 +1,18 @@
---- nuitka/build/SingleExe.scons.orig	2016-12-10 11:05:24 UTC
+--- nuitka/build/SingleExe.scons.orig	2017-01-24 05:15:25 UTC
 +++ nuitka/build/SingleExe.scons
-@@ -108,9 +108,11 @@ uninstalled_python = getBoolOption("unin
+@@ -109,9 +109,9 @@ uninstalled_python = getBoolOption("unin
  # Unstriped mode: Do not remove debug symbols.
  unstripped_mode = getBoolOption("unstripped_mode", False)
  
--# Clang compiler mode, default on MacOS X and FreeBSD, optional on Linux.
-+# Clang compiler mode, default on MacOS X and FreeBSD (unless PowerPC),
-+# optional on Linux.
+-# Clang compiler mode, forced on MacOS X and FreeBSD, optional on Linux.
++# Clang compiler mode, forced on MacOS X and FreeBSD (unless PowerPC), optional on Linux.
  clang_mode = getBoolOption("clang_mode", False)
 -if sys.platform == "darwin" or "freebsd" in sys.platform:
-+if sys.platform == "darwin" or ("freebsd" in sys.platform and
-+  platform.machine() != "powerpc"):
++if sys.platform == "darwin" or ("freebsd" in sys.platform and platform.machine() != "powerpc"):
      clang_mode = True
  
  # MinGW compiler mode, optional and interesting to Windows only.
-@@ -618,11 +620,11 @@ if gcc_mode and "clang" not in the_compi
+@@ -624,11 +624,11 @@ if gcc_mode and "clang" not in the_compi
      # binary if it's not high enough. This is esp. useful under Debian which
      # allows all compiler to exist next to each other and where g++ might not be
      # good enough, but g++-4.5 would be.
