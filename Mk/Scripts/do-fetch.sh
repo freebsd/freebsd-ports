@@ -44,11 +44,11 @@ for _file in "${@}"; do
 			fi
 		done
 	fi
-	if [ '(' -f "${file}" -o -f "$filebasename" ')' -a "$force_fetch" != "true" ]; then
+	if [ -f "${file}" -a "$force_fetch" != "true" ]; then
 		continue
 	fi
 	full_file="${dp_DIST_SUBDIR:+${dp_DIST_SUBDIR}/}${file}"
-	if [ -L "$file" -o -L "$filebasename" ]; then
+	if [ -L "$file" ]; then
 		${dp_ECHO_MSG} "=> ${dp_DISTDIR}/$file is a broken symlink."
 		${dp_ECHO_MSG} "=> Perhaps a filesystem (most likely a CD) isn't mounted?"
 		${dp_ECHO_MSG} "=> Please correct this problem and try again."
