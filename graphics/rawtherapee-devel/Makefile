@@ -3,10 +3,10 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	5.0
+DISTVERSIONSUFFIX=	-gtk3
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
-DISTVERSIONSUFFIX=	-gtk3
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
 		libsigc-2.0.so:devel/libsigc++20 \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:outsource compiler:gcc-c++11-lib desktop-file-utils dos2unix \
+USES=		cmake:outsource desktop-file-utils dos2unix \
 		jpeg localbase:ldflags pkgconfig tar:xz
 DOS2UNIX_REGEX=	.*\.(cc|h)
 LDFLAGS+=	-Wl,--as-needed # fontconfig, freetype, gettext, libX11
@@ -68,9 +68,8 @@ NATIVE_DESC=		Use -march=native for compilation (do not use for generic packages
 
 OPENMP_CMAKE_BOOL=	OPTION_OMP
 
-OPTIMIZED_CFLAGS_CFLAGS=	-O3 -funroll-loops -msse2 \
-			${OPTIMIZED_CFLAGS_CFLAGS_${CHOSEN_COMPILER_TYPE}}
-OPTIMIZED_CFLAGS_CFLAGS_gcc=	-fexpensive-optimizations
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -funroll-loops -msse2
+# GCC 5.4 includes -fexpensive-optimizations in -O2 already
 
 .include <bsd.port.options.mk>
 
@@ -92,14 +91,27 @@ CMAKE_BUILD_TYPE=	RelWithDebInfo
 STRIP=
 .endif
 
+.if ${ARCH} == i386
+USES+=		compiler:c++11-lib
+# FIXME: if we were to use GCC on i386, we'd need to use -mstackrealign
+# or similar options, else we get SIGBUS when SSE2 is enabled due to
+# improper alignment. Base clang is good enough though, i386 does not
+# support OpenMP, and those seeking ultimate performance need to use
+# amd64.
+.else
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 # -------------------------------------------------------------------
 
 .include <bsd.port.pre.mk>
 
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 # Workaround: this needs to be late because Mk/Uses/compiler.mk tramples
 # over previously set values with gcc-libc++-configure as of r432539.
 # GCC 4.9 doesn't generate usable code on FreeBSD 11.0.
 USE_GCC=	5+
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${MANPREFIX}/man/man1/"#' \

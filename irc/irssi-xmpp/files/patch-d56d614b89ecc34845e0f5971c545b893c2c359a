@@ -1,0 +1,41 @@
+From d56d614b89ecc34845e0f5971c545b893c2c359a Mon Sep 17 00:00:00 2001
+From: benaryorg <binary@benary.org>
+Date: Fri, 20 Jan 2017 06:31:28 +0100
+Subject: [PATCH] fix #18 - build with irssi 1.0
+
+Signed-off-by: benaryorg <binary@benary.org>
+---
+ src/core/xmpp-servers.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/core/xmpp-servers.c b/src/core/xmpp-servers.c
+index 405ecd9..b6d9bd5 100644
+--- src/core/xmpp-servers.c
++++ src/core/xmpp-servers.c
+@@ -151,7 +151,7 @@ xmpp_server_init_connect(SERVER_CONNECT_REC *connrec)
+ 	server->connect_pid = -1;
+ 
+ 	if (server->connrec->port <= 0)
+-		server->connrec->port = (server->connrec->use_ssl) ?
++		server->connrec->port = (server->connrec->use_tls) ?
+ 		    LM_CONNECTION_DEFAULT_PORT_SSL : LM_CONNECTION_DEFAULT_PORT;
+ 
+ 	if (conn->real_jid == NULL)
+@@ -335,7 +335,7 @@ lm_open_cb(LmConnection *connection, gboolean success,
+ 		g_free(host);
+ 	} else
+ 		signal_emit("server connecting", 1, server);
+-	if (server->connrec->use_ssl)
++	if (server->connrec->use_tls)
+ 		signal_emit("xmpp server status", 2, server, 
+ 		    "Using SSL encryption.");
+ 	else if (lm_ssl_get_use_starttls(lm_connection_get_ssl(server->lmconn)))
+@@ -470,7 +470,7 @@ xmpp_server_connect(XMPP_SERVER_REC *server)
+ 		return;
+ 	error = NULL;
+ 	err_msg = NULL;
+-	if (server->connrec->use_ssl) {
++	if (server->connrec->use_tls) {
+ 		if (!set_ssl(server->lmconn, &error, server, FALSE)) {
+ 			err_msg = "Cannot init ssl";
+ 			goto err;

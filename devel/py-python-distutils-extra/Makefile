@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-distutils-extra
-PORTVERSION=	2.38
+PORTVERSION=	2.39
 CATEGORIES=	devel python
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/ \
 		LOCAL/sunpoet

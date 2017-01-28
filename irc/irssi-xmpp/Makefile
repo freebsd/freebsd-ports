@@ -3,6 +3,7 @@
 
 PORTNAME=	irssi-xmpp
 PORTVERSION=	0.53
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://cybione.org/~irssi-xmpp/files/
 
@@ -15,7 +16,8 @@ BUILD_DEPENDS=	irssi:irc/irssi
 LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		pkgconfig
+USES=		gettext-runtime pkgconfig
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 DATADIR=	${PREFIX}/share/irssi
@@ -29,5 +31,8 @@ post-patch:
 # Try to unbreak parallel builds (-jX)
 	@${REINPLACE_CMD} -E 's|cd (.+) && (\$${MAKE})|\2 -C \1|' \
 		${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/irssi/modules/*.so
 
 .include <bsd.port.mk>

@@ -22,6 +22,9 @@ RUN_DEPENDS=	rubygem-domain_name>=0.5.1:net/rubygem-domain_name \
 		rubygem-ntlm-http>=0.1.1:www/rubygem-ntlm-http \
 		rubygem-webrobots>=0.0.9:www/rubygem-webrobots
 
+DEPRECATED=	Use www/rubygem-mechanize instead
+EXPIRATION_DATE=2017-02-28
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
