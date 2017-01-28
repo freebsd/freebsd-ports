@@ -1,4 +1,4 @@
---- rtengine/opthelper.h.orig	2017-01-05 02:25:57 UTC
+--- rtengine/opthelper.h.orig	2017-01-26 22:12:23 UTC
 +++ rtengine/opthelper.h
 @@ -69,7 +69,7 @@
          #define ALIGNED64

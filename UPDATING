@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170127:
+  AFFECTS: users of www/uwsgi
+  AUTHOR: feld@FreeBSD.org
+
+  The default socket mode for uwsgi as 777 is a severe security concern.
+  This has been remediated by changing the rc script to default to 600.
+  The mode is configurable with rc.conf values: uwsgi_socket_mode="600"
+  or for a profile named "www", uwsgi_www_socket_mode="600".
+
 20170121:
   AFFECTS: users of security/tinc
   AUTHOR: dinoex@FreeBSD.org
