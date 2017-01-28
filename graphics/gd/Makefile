@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgd
-PORTVERSION=	2.2.3
-PORTREVISION?=	1
+PORTVERSION=	2.2.4
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/gd-${PORTVERSION}/
@@ -89,6 +88,6 @@ pre-build:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/gdhelpers.h \
 		${STAGEDIR}${PREFIX}/include/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgd.so.6.0.3
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgd.so.6.0.4
 
 .include <bsd.port.mk>
