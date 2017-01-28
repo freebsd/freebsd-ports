@@ -238,10 +238,8 @@
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
     SUBDIR += ruby-eb
-    SUBDIR += ruby-mecab
     SUBDIR += ruby-romkan
     SUBDIR += ruby-uconv
-    SUBDIR += ruby-usersguide
     SUBDIR += rubygem-jpmobile-ipaddresses
     SUBDIR += rubygem-jpmobile-terminfo
     SUBDIR += rubygem-jpmobile4

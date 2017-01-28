@@ -2,6 +2,7 @@
 
 PORTNAME=	libfastcommon
 PORTVERSION=	1.0.30
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	daniel@blodan.se

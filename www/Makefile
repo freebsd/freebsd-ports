@@ -1907,7 +1907,6 @@
     SUBDIR += rt44
     SUBDIR += rtv
     SUBDIR += ruby-aws
-    SUBDIR += ruby-google
     SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actioncable5
     SUBDIR += rubygem-actionpack4

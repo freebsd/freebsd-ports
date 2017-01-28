@@ -276,7 +276,6 @@
     SUBDIR += roxterm
     SUBDIR += rsibreak-kde4
     SUBDIR += rstart
-    SUBDIR += ruby-X11
     SUBDIR += rubygem-gnome2
     SUBDIR += rxvt
     SUBDIR += rxvt-unicode

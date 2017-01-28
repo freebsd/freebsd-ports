@@ -1,6 +1,0 @@
-bin/rdict
-%%RUBY_SITELIBDIR%%/dict.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Changelog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/dict.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdict.html

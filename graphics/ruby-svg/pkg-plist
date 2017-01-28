@@ -1,5 +1,0 @@
-%%RUBY_SITELIBDIR%%/svg/core.rb
-%%RUBY_SITELIBDIR%%/svg/element.rb
-%%RUBY_SITELIBDIR%%/svg/misc.rb
-%%RUBY_SITELIBDIR%%/svg/style.rb
-%%RUBY_SITELIBDIR%%/svg/svg.rb

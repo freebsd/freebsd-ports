@@ -1,8 +1,0 @@
-%%RUBY_SITELIBDIR%%/property.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/property-example.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/test.default
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/property.README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Properties.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubyapi.css
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/property.README.ja
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Properties-ja.html

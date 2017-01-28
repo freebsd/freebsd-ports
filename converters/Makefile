@@ -157,7 +157,6 @@
     SUBDIR += py-zfec
     SUBDIR += rcctools
     SUBDIR += recode
-    SUBDIR += ruby-dump.rb
     SUBDIR += rubygem-base32
     SUBDIR += rubygem-bsdconv
     SUBDIR += shftool
