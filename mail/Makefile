@@ -611,8 +611,6 @@
     SUBDIR += rspamd-devel
     SUBDIR += rss2email2
     SUBDIR += rss2email3
-    SUBDIR += ruby-rfilter
-    SUBDIR += ruby-rmail
     SUBDIR += rubygem-actionmailer4
     SUBDIR += rubygem-actionmailer5
     SUBDIR += rubygem-email_reply_parser

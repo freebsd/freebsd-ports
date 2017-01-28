@@ -933,7 +933,6 @@
     SUBDIR += rsyncrypto
     SUBDIR += rsyslog8
     SUBDIR += rtty
-    SUBDIR += ruby-quota
     SUBDIR += rubygem-SyslogLogger
     SUBDIR += rubygem-backup
     SUBDIR += rubygem-bosh-gen

@@ -932,9 +932,6 @@
     SUBDIR += rigsofrods-pagedgeometry
     SUBDIR += ristretto
     SUBDIR += ruby-gd
-    SUBDIR += ruby-image_size
-    SUBDIR += ruby-imlib2
-    SUBDIR += ruby-svg
     SUBDIR += rubygem-cairo
     SUBDIR += rubygem-captcha
     SUBDIR += rubygem-chunky_png

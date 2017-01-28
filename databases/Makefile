@@ -863,14 +863,10 @@
     SUBDIR += rrdtool
     SUBDIR += rrdtool12
     SUBDIR += ruby-bdb
-    SUBDIR += ruby-cdb
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-mysql
-    SUBDIR += ruby-o_dbm
     SUBDIR += ruby-odbc
     SUBDIR += ruby-qdbm
-    SUBDIR += ruby-rdbc1
-    SUBDIR += ruby-sybct
     SUBDIR += ruby-tokyocabinet
     SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activemodel5

@@ -1,6 +1,0 @@
-Wirble is a set of enhancements to Irb all included together in one easy-to-use
-package.  Specifically, Wirble adds a saved history, a couple of useful
-shortcuts, and color to Irb.  Wirble also enables a Irb's built-in
-tab-completion and a simpler prompt.
-
-WWW: http://pablotron.org/software/wirble/

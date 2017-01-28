@@ -678,8 +678,6 @@
     SUBDIR += rplay
     SUBDIR += rsynth
     SUBDIR += rubberband
-    SUBDIR += ruby-audiofile
-    SUBDIR += ruby-mp3tag
     SUBDIR += ruby-smf
     SUBDIR += ruby-taglib
     SUBDIR += ruby-xmms2
