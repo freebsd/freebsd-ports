@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stunnel
-PORTVERSION=	5.39
+PORTVERSION=	5.40
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/%SUBDIR%/ \
@@ -87,7 +87,7 @@ post-patch:
 # place files under /var/tmp so that this can be run by an unprivileged
 # user stunnel and group stunnel
 	@${REINPLACE_CMD} -E -e 's|\@prefix\@/var/lib/stunnel/|/var/tmp/stunnel|; \
-		s|nobody|stunnel|;s|nogroup|stunnel|' \
+		s|nobody|stunnel|;s|nogroup|stunnel|;s|;include |include |' \
 		${WRKSRC}/tools/stunnel.conf-sample.in
 	@${REINPLACE_CMD} -E -e 's|\$$\(prefix\)/var/run/stunnel/stunnel.pid|$$(localstatedir)/stunnel.pid|' \
 		${WRKSRC}/src/Makefile.in
@@ -107,6 +107,10 @@ post-patch:
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/src/.libs/libstunnel.so
+
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d/
+	${INSTALL_DATA} ${FILESDIR}/pid.conf ${STAGEDIR}${ETCDIR}/conf.d/
 
 cert:
 	@${ECHO} ""
