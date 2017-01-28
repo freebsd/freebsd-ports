@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zap
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -15,11 +15,12 @@ NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jehops
 
-PLIST_FILES=	bin/zap
+PLIST_FILES=	bin/zap man/man1/zap.1.gz
 PORTDOCS=	README.org
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zap ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/zap.1.gz ${STAGEDIR}${PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
