@@ -1,5 +1,5 @@
---- drivers/rtaudio/RtAudio.h.orig	2016-08-09 07:52:15 UTC
-+++ drivers/rtaudio/RtAudio.h
+--- thirdparty/rtaudio/RtAudio.h.orig	2016-08-09 07:52:15 UTC
++++ thirdparty/rtaudio/RtAudio.h
 @@ -5,7 +5,13 @@
  #if defined(OSX_ENABLED)
      #define __MACOSX_CORE__
