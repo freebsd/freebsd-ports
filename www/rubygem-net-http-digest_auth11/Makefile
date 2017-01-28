@@ -11,8 +11,10 @@ COMMENT=	Implementation of RFC 2617 - Digest Access Authentication
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
+DEPRECATED=	Use www/rubygem-net-http-digest_auth instead
+EXPIRATION_DATE=2017-02-28
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
