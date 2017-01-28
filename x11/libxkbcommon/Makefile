@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxkbcommon
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xkbcommon.org/download/
 
