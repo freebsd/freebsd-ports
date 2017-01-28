@@ -18,10 +18,12 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Canon EOS 400D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 40D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 450D.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS 50D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 550D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 5D Mark III.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 5D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 6D.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS 7D Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS D60.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS Digital Rebel XSi.dcp
@@ -37,9 +39,10 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Fujifilm FinePix S9500.dcp
 %%DATADIR%%/dcpprofiles/Fujifilm X-E1.dcp
 %%DATADIR%%/dcpprofiles/Fujifilm X-E2.dcp
-%%DATADIR%%/dcpprofiles/Fujifilm X-T1.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-Pro2.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-T1.dcp
 %%DATADIR%%/dcpprofiles/Fujifilm X-T10.dcp
-%%DATADIR%%/dcpprofiles/Fujifilm X100T.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X100T.dcp
 %%DATADIR%%/dcpprofiles/Leaf Aptus 75.dcp
 %%DATADIR%%/dcpprofiles/Nikon D200.dcp
 %%DATADIR%%/dcpprofiles/Nikon D300.dcp
@@ -48,14 +51,17 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Nikon D3S.dcp
 %%DATADIR%%/dcpprofiles/Nikon D50.dcp
 %%DATADIR%%/dcpprofiles/Nikon D5100.dcp
+%%DATADIR%%/dcpprofiles/NIKON D600.dcp
 %%DATADIR%%/dcpprofiles/Nikon D700.dcp
 %%DATADIR%%/dcpprofiles/Nikon D7000.dcp
-%%DATADIR%%/dcpprofiles/Nikon D7200.dcp
-%%DATADIR%%/dcpprofiles/Nikon D750.dcp
+%%DATADIR%%/dcpprofiles/NIKON D7200.dcp
+%%DATADIR%%/dcpprofiles/NIKON D750.dcp
 %%DATADIR%%/dcpprofiles/Nikon D800.dcp
+%%DATADIR%%/dcpprofiles/NIKON D810.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-1.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-510.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-520.dcp
+%%DATADIR%%/dcpprofiles/OLYMPUS E-M10.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-M5.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-P2.dcp
 %%DATADIR%%/dcpprofiles/Olympus XZ-1.dcp
@@ -67,18 +73,21 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Panasonic DMC-G5.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GH1.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GH2.dcp
-%%DATADIR%%/dcpprofiles/Pentax K-5 II.dcp
-%%DATADIR%%/dcpprofiles/Pentax K-5.dcp
+%%DATADIR%%/dcpprofiles/PENTAX K-5 II.dcp
+%%DATADIR%%/dcpprofiles/PENTAX K-5.dcp
 %%DATADIR%%/dcpprofiles/Pentax K-r.dcp
-%%DATADIR%%/dcpprofiles/Pentax K10D.dcp
+%%DATADIR%%/dcpprofiles/PENTAX K10D.dcp
 %%DATADIR%%/dcpprofiles/Pentax K200D.dcp
-%%DATADIR%%/dcpprofiles/Ricoh Pentax K-3.dcp
+%%DATADIR%%/dcpprofiles/RICOH PENTAX K-1.dcp
+%%DATADIR%%/dcpprofiles/RICOH PENTAX K-3.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A700.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A900.dcp
-%%DATADIR%%/dcpprofiles/Sony ILCE-6000.dcp
-%%DATADIR%%/dcpprofiles/Sony ILCE-7M2.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-6000.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-7M2.dcp
 %%DATADIR%%/dcpprofiles/Sony NEX-5N.dcp
 %%DATADIR%%/dcpprofiles/Sony SLT-A55V.dcp
+%%DATADIR%%/dcpprofiles/SONY SLT-A99V.dcp
+%%DATADIR%%/dcpprofiles/YI TECHNOLOGY M1.dcp
 %%DATADIR%%/iccprofiles/input/Canon EOS 20D.icc
 %%DATADIR%%/iccprofiles/input/Canon EOS 40D.icc
 %%DATADIR%%/iccprofiles/input/Canon EOS 450D.icc
@@ -867,28 +876,4 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/themes/RawTherapee-GTK3-_19.css
 %%DATADIR%%/themes/TooWaBlue-Dark-GTK3-20_.css
 %%DATADIR%%/themes/TooWaBlue-GTK3-20_.css
-%%DATADIR%%/themes/images/svg/twb/checkbox-checked-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-checked.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-inconsistent-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-inconsistent.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-unchecked-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-unchecked.svg
-%%DATADIR%%/themes/images/svg/twb/radio-checked-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/radio-checked.svg
-%%DATADIR%%/themes/images/svg/twb/radio-inconsistent-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/radio-inconsistent.svg
-%%DATADIR%%/themes/images/svg/twb/radio-unchecked-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/radio-unchecked.svg
-%%DATADIR%%/themes/images/twb/checkbox-checked-disabled.png
-%%DATADIR%%/themes/images/twb/checkbox-checked.png
-%%DATADIR%%/themes/images/twb/checkbox-inconsistent-disabled.png
-%%DATADIR%%/themes/images/twb/checkbox-inconsistent.png
-%%DATADIR%%/themes/images/twb/checkbox-unchecked-disabled.png
-%%DATADIR%%/themes/images/twb/checkbox-unchecked.png
-%%DATADIR%%/themes/images/twb/radio-checked-disabled.png
-%%DATADIR%%/themes/images/twb/radio-checked.png
-%%DATADIR%%/themes/images/twb/radio-inconsistent-disabled.png
-%%DATADIR%%/themes/images/twb/radio-inconsistent.png
-%%DATADIR%%/themes/images/twb/radio-unchecked-disabled.png
-%%DATADIR%%/themes/images/twb/radio-unchecked.png
 %%DATADIR%%/themes/system.iconset
