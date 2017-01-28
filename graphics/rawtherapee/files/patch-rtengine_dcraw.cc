@@ -1,12 +1,11 @@
---- rtengine/dcraw.cc.orig	2017-01-14 17:35:19 UTC
+--- rtengine/dcraw.cc.orig	2016-12-30 15:28:53 UTC
 +++ rtengine/dcraw.cc
-@@ -8726,7 +8726,8 @@ static void decodeFPDeltaRow(Bytef * src
-       dst[col*3 + 2] = src[col + realTileWidth*2];
-     }
-   } else {
--    if (((union { uint32_t x; uint8_t c; }){1}).c) {
-+    union X { uint32_t x; uint8_t c; };
-+    if (((union X){1}).c) {
- 		for (size_t col = 0; col < tileWidth; ++col) {
- 			for (size_t byte = 0; byte < bytesps; ++byte)
- 				dst[col*bytesps + byte] = src[col + realTileWidth*(bytesps-byte-1)];  // Little endian
+@@ -2011,7 +2011,7 @@ void CLASS hasselblad_correct()
+                                             {bhu-1,0},{bhu-1,bwu/2},{bhu-1,bwu-1}};
+             for (col = 0; col < bw; col++) {
+                 for (i = 0; i < 9; i++) {
+-                    ushort dist = (ushort)sqrt(abs(corners[i][0] - row) * abs(corners[i][0] - row) + abs(corners[i][1] - col) * abs(corners[i][1] - col));
++                    ushort dist = (ushort)sqrt(std::fabs(corners[i][0] - row) * std::fabs(corners[i][0] - row) + std::fabs(corners[i][1] - col) * std::fabs(corners[i][1] - col));
+                     ushort weight = dist > maxdist ? 0 : maxdist - dist;
+                     corners_weight[9*(row*bw+col)+i] = weight;
+                 }
