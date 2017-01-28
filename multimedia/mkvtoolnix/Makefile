@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	9.7.1
-PORTREVISION=	2
+PORTVERSION=	9.8.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -14,6 +13,7 @@ COMMENT=	Tools to extract from/get info about/create Matroska media streams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	rake:devel/rubygem-rake
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg \
 		libebml.so:textproc/libebml \
@@ -25,15 +25,15 @@ BROKEN_sparc64=	does not install
 
 USES=		compiler:c++14-lang iconv localbase pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-USE_RUBY=	yes
-RUBY_NO_RUN_DEPENDS=	yes
 CONFIGURE_ENV+=	ac_cv_path_PO4A=no
-CONFIGURE_ARGS=	--without-curl \
-		--with-boost=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-system=boost_system \
 		--with-boost-regex=boost_regex
 MAKE_ENV=	V=1
+MAKE_CMD=	rake -v
+MAKEFILE=	Rakefile
+ALL_TARGET=	#Empty
 
 OPTIONS_DEFINE=	FLAC NLS QT5
 OPTIONS_DEFAULT=	FLAC QT5
@@ -60,12 +60,5 @@ post-configure-NLS-off:
 	@${REINPLACE_CMD} -e 's|LIBINTL_LIBS =|#LIBINTL_LIBS =|g' ${WRKSRC}/build-config
 	@${REINPLACE_CMD} -e 's|#define HAVE_LIBINTL_H|//#define HAVE_LIBINTL_H|g' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e 's|S["LIBINTL_LIBS"]=|#S["LIBINTL_LIBS"]=|g' ${WRKSRC}/config.status
-
-do-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV:NPREFIX=*} ./drake ${_MAKE_JOBS})
-
-do-install:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV:NPREFIX=*} \
-		./drake ${_MAKE_JOBS} ${MAKE_ARGS} install)
 
 .include <bsd.port.mk>
