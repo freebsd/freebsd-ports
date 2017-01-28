@@ -8996,3 +8996,49 @@ devel/bunny||2017-01-22|Has expired: Superseded by a different project
 www/pligg||2017-01-22|Has expired: Abandonware
 x11-drivers/xf86-video-fbdev||2017-01-22|Linux only driver
 net/librsync1|net/librsync2|2017-01-24|Port renamed to librsync2
+databases/ruby-rdbc1||2017-01-28|Has expired: Upstream no longer active
+databases/ruby-sybct||2017-01-28|Has expired: Upstream no longer active
+databases/ruby-o_dbm||2017-01-28|Has expired: Upstream no longer active
+databases/ruby-cdb||2017-01-28|Has expired: Upstream no longer active
+devel/ruby-rbison||2017-01-28|Has expired: Does not work on modern ruby
+devel/ruby-property||2017-01-28|Has expired: Upstream no longer exists
+devel/ruby-dialogs||2017-01-28|Has expired: Upstream no longer active
+devel/ruby-byaccr||2017-01-28|Has expired: Upstream no longer active
+devel/ruby-aspectr|devel/rubygem-aspectr|2017-01-28|Has expired: Use rubygem-aspectr instead
+devel/ruby-locale||2017-01-28|Has expired: No longer useful
+devel/ruby-wirble||2017-01-28|Has expired: Upstream no longer active
+devel/ruby-tzfile||2017-01-28|Has expired: Upstream no longer exists
+devel/ruby-rreadline||2017-01-28|Has expired: Upstream no longer exists
+devel/ruby-intl|devel/rubygem-gettext|2017-01-28|Has expired: Use devel/rubygem-gettext instead
+graphics/ruby-imlib2||2017-01-28|Has expired: Upstream no longer active
+graphics/ruby-image_size||2017-01-28|Has expired: Upstream no longer active
+graphics/ruby-svg|graphics/rubygem-rsvg2|2017-01-28|Has expired: Use graphics/rubygem-rsvg2 instead
+irc/ruby-rice||2017-01-28|Has expired: Upstream no longer active
+irc/ruby-rica||2017-01-28|Has expired: Upstream no longer active
+irc/ruby-irc||2017-01-28|Has expired: Upstream no longer active
+japanese/ruby-usersguide||2017-01-28|Has expired: Does not exist upstream
+japanese/ruby-mecab||2017-01-28|Has expired: Upstream no longer active
+mail/ruby-rmail||2017-01-28|Has expired: Upstream no longer active
+mail/ruby-rfilter||2017-01-28|Has expired: Upstream no longer active
+math/ruby-algebra|math/rubygem-algebra|2017-01-28|Has expired: Use rubygem-algebra instead
+net/ruby-tserver||2017-01-28|Has expired: Upstream no longer active
+net/ruby-tcpsocketpipe||2017-01-28|Has expired: Upstream no longer active
+net/ruby-icmp||2017-01-28|Has expired: Upstream no longer active
+net/ruby-dict||2017-01-28|Has expired: Upstream no longer active
+palm/palmos-sdk||2017-01-28|Has expired: Upstream no longer exists
+security/ruby-hmac|security/rubygem-ruby-hmac|2017-01-28|Has expired: Use www/rubygem-ruby-hmac instead
+security/ruby-tcpwrap||2017-01-28|Has expired: Upstream no longer active
+security/ruby-password||2017-01-28|Has expired: Upstream no longer active
+sysutils/ruby-quota||2017-01-28|Has expired: Upstream no longer active
+textproc/ruby-rss.alt||2017-01-28|Has expired: Upstream no longer active
+textproc/ruby-rss||2017-01-28|Has expired: Upstream no longer exists
+textproc/ruby-htmlrepair||2017-01-28|Has expired: Upstream no longer exists
+textproc/ruby-xmlscan||2017-01-28|Has expired: Upstream no longer active
+textproc/ruby-xml-configfile||2017-01-28|Has expired: Upstream no longer exists
+textproc/ruby-htmlsplit||2017-01-28|Has expired: Upstream no longer exists
+www/ruby-google||2017-01-28|Has expired: Upstream no longer active
+archivers/ruby-lha||2017-01-28|Has expired: Upstream no longer active
+x11/ruby-X11||2017-01-28|Has expired: Upstream no longer active
+audio/ruby-audiofile||2017-01-28|Has expired: Broken on modern versions of Ruby
+audio/ruby-mp3tag||2017-01-28|Has expired: Upstream no longer active
+converters/ruby-dump.rb||2017-01-28|Has expired: Upstream no longer active

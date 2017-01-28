@@ -1,4 +1,0 @@
-This module provides Ruby interface to D. J. Bernstein's cdb (constant
-database) library.
-
-WWW: http://www.ruby-lang.org/raa/list.rhtml?name=cdb

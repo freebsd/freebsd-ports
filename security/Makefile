@@ -988,9 +988,6 @@
     SUBDIR += rkhunter
     SUBDIR += rndpassw
     SUBDIR += ruby-camellia
-    SUBDIR += ruby-hmac
-    SUBDIR += ruby-password
-    SUBDIR += ruby-tcpwrap
     SUBDIR += rubygem-airbrussh
     SUBDIR += rubygem-attr_encrypted
     SUBDIR += rubygem-bcrypt
