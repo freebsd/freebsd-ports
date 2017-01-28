@@ -11,6 +11,9 @@ MASTER_SITES=	http://www.sepia.dti.ne.jp/inoue/software/xyaku/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General dictionary/search engine front-end for X
 
+DEPRECATED=	Unmaintained, depends on expired japanese/ruby-eb
+EXPIRATION_DATE=2017-03-01
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gawk:lang/gawk
