@@ -9042,3 +9042,4 @@ x11/ruby-X11||2017-01-28|Has expired: Upstream no longer active
 audio/ruby-audiofile||2017-01-28|Has expired: Broken on modern versions of Ruby
 audio/ruby-mp3tag||2017-01-28|Has expired: Upstream no longer active
 converters/ruby-dump.rb||2017-01-28|Has expired: Upstream no longer active
+x11-servers/wayland|graphics/wayland|2017-01-30|Better location for wayland
