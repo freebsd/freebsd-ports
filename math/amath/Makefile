@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amath
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	math
 MASTER_SITES=	http://suyai.innolan.net/
 
@@ -15,6 +15,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-Wno-inline-new-delete
 MAKE_ARGS=	CC=${CC} CXX=${CXX}
 PLIST_FILES=	bin/${PORTNAME}
+ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 i386 powerpc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
