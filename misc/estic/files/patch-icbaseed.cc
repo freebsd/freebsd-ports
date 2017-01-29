@@ -1,6 +1,6 @@
---- estic/icbaseed.cc.orig	Sat Nov 30 01:00:44 1996
-+++ estic/icbaseed.cc	Tue Sep  6 09:54:21 2005
-@@ -451,26 +451,26 @@
+--- estic/icbaseed.cc.orig	1996-11-30 00:00:44 UTC
++++ estic/icbaseed.cc
+@@ -451,26 +451,26 @@ void EditBaseConfig (IstecConfig& Config
  // otherwise, Changed is left untouched.
  {
      // ID's of menue items for EditBaseConfig

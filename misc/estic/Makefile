@@ -3,7 +3,7 @@
 
 PORTNAME=		estic
 PORTVERSION=		1.61
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		misc comms
 MASTER_SITES=		LOCAL/dinoex
 PKGNAMESUFFIX?=		${NOX11_SUFFIX}${PKGNAMESUFFIX2}
@@ -11,6 +11,8 @@ DISTFILES=		estic-1.60-sources.zip estic-1.61-patch-from-1.60.zip
 
 MAINTAINER=		dinoex@FreeBSD.org
 COMMENT=		Controller for ISDN TK-Anlage (PBX) made by Istec
+
+LICENSE=	BSD2CLAUSE
 
 USES=		ncurses zip
 USE_CSTD=	gnu89
@@ -27,7 +29,6 @@ PBX_DOC=${STAGEDIR}${DOCSDIR}
 ESTIC=${WRKSRC}/estic
 AREACODE_DATAFILE=${PREFIX}/etc/pbx/areacodes
 MAKEFILE=make/freebsd${X_OR_NOT}.mak
-AUTHOR=		"Ullrich von Bassewitz" <uz@ibb.schwaben.com>
 
 OPTIONS_DEFINE=	X11 DTR_OFF DOCS
 OPTIONS_DEFAULT=X11
@@ -56,7 +57,7 @@ EXTRA_PATCHES+=		${FILESDIR}/dtr-off.patch
 
 pre-patch:
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-#	@${PATCH} -d ${PATCH_WRKSRC}/estic --forward --quiet -E -p0 --batch < ${WRKDIR}/estic.diff
+	${PATCH} -d ${PATCH_WRKSRC}/estic --forward --quiet -E -p0 --batch < ${WRKSRC}/estic.diff
 
 do-configure:
 .for i in ${FIXME}
@@ -84,8 +85,7 @@ do-install:
 	@# estic doc says estic.res must be in bin path or current directory
 	${MKDIR} ${PBX_DOC}
 	${INSTALL_MAN} ${ESTIC}/estic.doc ${PBX_DOC}/
-	@# estic.doc is not nroff format, & is in German, volunteers to create
-	@# _and maintain_ nroff formatted English should contact ${AUTHOR}
+	@# estic.doc is not nroff format, & is in German
 	${INSTALL_MAN} ${FILESDIR}/README ${PBX_DOC}/
 .endif
 	@# ${FILESDIR}/README is not in nroff, but is a temporary document.
@@ -93,23 +93,7 @@ do-install:
 	${INSTALL_DATA} ${ESTIC}/samples/estic.ini ${PBX_ETC}/estic.ini.generic_example
 	${INSTALL_DATA} ${FILESDIR}/estic.ini ${PBX_ETC}/estic.ini.freebsd_example
 	${INSTALL_DATA} ${ESTIC}/samples/alias.dat ${PBX_ETC}/aliases.example
-	@# create config & debug so we can change mode to private
-	${TOUCH} ${PBX_ETC}/config ${PBX_VAR}/debug
-	${CHMOD} 600 ${PBX_VAR}/debug ${PBX_ETC}/config
-	${CHMOD} 700 ${PBX_VAR} # estic will create ./1996.11 etc
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " Suggestion, try:	make demo"
-
-demo:
-	@${ECHO_MSG} "If you want to try this under X-Windows, do this:"
-	@${ECHO_MSG} " ${SETENV} SPUNK_LANGUAGE 001"
-	@${ECHO_MSG} " ${SETENV} SPUNK_XFONT 8x13"
-	@${ECHO_MSG} " cd ${PBX_ETC}"
-	@${ECHO_MSG} " vi estic.ini"
-	@${ECHO_MSG} " ${CHMOD} 666 /dev/cuaaX, or su"
-	@${ECHO_MSG} " ${ESTIC}/xestic -display :0"
-	@${ECHO_MSG} " (If you have no Istec 100[38] connected, append -n )"
-	@${ECHO_MSG} " A BUGS & PROBLEMS section exists in ${FILESDIR}/README == man estic_freebsd"
+	${TOUCH} ${PBX_ETC}/config.example
 
 # Ref. NO_CDROM= & NO_PACKAGE=
 # It is not necessary to prevent inclusion of source or binary on FreeBSD
