@@ -16,10 +16,10 @@ COMMENT=	Multichannel digital audio workstation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to configure: Could not find the program gas,as,gcc
-
 BUILD_DEPENDS=	lv2>=1.18.0:audio/lv2 \
-		itstool>2.0.0:textproc/itstool
+		itstool>2.0.0:textproc/itstool \
+		${BUILD_DEPENDS_${ARCH}}
+BUILD_DEPENDS_aarch64=	as:devel/binutils
 LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libsord-0.so:devel/sord \
 		libsratom-0.so:audio/sratom \
