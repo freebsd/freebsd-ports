@@ -1448,6 +1448,7 @@
     SUBDIR += libtpl
     SUBDIR += libtuntap
     SUBDIR += libublio
+    SUBDIR += libudev-devd
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libuninum
