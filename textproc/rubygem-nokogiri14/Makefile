@@ -12,6 +12,9 @@ COMMENT=	HTML, XML, SAX, and Reader parser
 
 LICENSE=	MIT
 
+DEPRECATED=	Use textproc/rubygem-nokogiri instead
+EXPIRATION_DATE=2017-02-28
+
 USE_RUBY=	yes
 USES=		gem pkgconfig
 USE_GNOME=	libxml2 libxslt
