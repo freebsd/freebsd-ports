@@ -1,3 +1,3 @@
-TIMESTAMP = 1479813995
-SHA256 (oslo.db-4.14.0.tar.gz) = 1a348f09aa910f4dba8992ccf3edc3b9e3bd87990d129bfa60096e4341edf052
-SIZE (oslo.db-4.14.0.tar.gz) = 147984
+TIMESTAMP = 1485280619
+SHA256 (oslo.db-4.17.0.tar.gz) = e25bfea8393bdbecba84cf82910378c34d646e930e9bedd5e8bf7b20a73f3ba7
+SIZE (oslo.db-4.17.0.tar.gz) = 158388

@@ -1,5 +1,4 @@
 bin/asn1c
-bin/clyx2asn1.pl
 bin/crfc2asn1.pl
 bin/enber
 bin/unber
@@ -113,9 +112,6 @@ man/man1/unber.1.gz
 %%DATADIR%%/per_support.h
 %%DATADIR%%/converter-sample.c
 %%DATADIR%%/file-dependencies
-%%DATADIR%%/standard-modules/README
-%%DATADIR%%/standard-modules/ASN1-Object-Identifier-Module.asn1
-%%DATADIR%%/standard-modules/ASN1C-UsefulInformationObjectClasses.asn1
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/BUGS
 %%DOCSDIR%%/ChangeLog

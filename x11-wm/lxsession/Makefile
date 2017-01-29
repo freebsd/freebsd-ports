@@ -20,7 +20,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libck-connector.so:sysutils/consolekit
 
-USES=		gmake localbase pkgconfig tar:xz
+USES=		autoreconf gmake localbase pkgconfig tar:xz
 USE_GNOME=	glib20 gtk20 intltool cairo gdkpixbuf2 libxslt
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
@@ -30,7 +30,7 @@ INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--enable-buildin-clipboard \
-	--enable-buildin-polkit
+		--enable-buildin-polkit
 
 OPTIONS_DEFINE=	NLS UPOWER
 OPTIONS_SUB=	yes
@@ -41,7 +41,7 @@ UPOWER_LIB_DEPENDS=	libupower-glib.so:sysutils/upower
 UPOWER_DESC=	Suspend/Hibernate support
 
 post-patch:
-	${FIND} ${WRKSRC} -type f | ${XARGS} \
+	@${FIND} ${WRKSRC} -type f | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/etc/xdg|${PREFIX}/etc/xdg|g ;\
 			s|%%PREFIX%%|${PREFIX}| ;\
 			s|/usr/bin/pkexec|${PREFIX}/bin/pkexec|g ;\

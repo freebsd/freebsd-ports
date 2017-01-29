@@ -1,6 +1,6 @@
---- spunk/stream.cc.orig	Sat Feb 26 18:03:19 2000
-+++ spunk/stream.cc	Sat Feb 26 18:03:35 2000
-@@ -245,7 +245,7 @@
+--- spunk/stream.cc.orig	1996-12-18 12:09:02 UTC
++++ spunk/stream.cc
+@@ -347,7 +347,7 @@ void Stream::Write (const void*, size_t)
  
  void Stream::CopyFrom (Stream& S, size_t Count)
  {

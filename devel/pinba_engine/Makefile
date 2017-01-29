@@ -3,7 +3,7 @@
 
 PORTNAME=	pinba_engine
 PORTVERSION=	2011.08.18
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	raven428@gmail.com
@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:devel/protobuf 
 		bison:devel/bison \
 		cmake:devel/cmake
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+
+BROKEN=		fails to configure (error: Failed to find required header file include/mysql_version.h)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tony2001

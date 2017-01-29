@@ -1,6 +1,30 @@
---- asclock.c
-+++ work/asclock/asclock.c	2008-11-30 23:32:41.000000000 -0800
-@@ -302,8 +302,8 @@
+--- asclock.c.orig	1996-08-25 22:35:49 UTC
++++ asclock.c
+@@ -1,4 +1,7 @@
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
+ #include <X11/Xlib.h>
+ #include <X11/xpm.h>
+ #include <X11/extensions/shape.h>
+@@ -245,6 +248,7 @@ int main(int argc,char *argv[])
+ 	      InsertTime();
+ 	    }
+ 	  if (ITBLINKS)
++           {
+ 	    if (actualtime % 2)
+ 	      /* Sekunden Doppelpunkt ein */
+ 	      XCopyArea(dpy, led.pixmap, visible.pixmap, NormalGC,
+@@ -253,6 +257,7 @@ int main(int argc,char *argv[])
+ 	      /* Sekunden Doppelpunkt aus */
+ 	      XCopyArea(dpy, asclock.pixmap, visible.pixmap, NormalGC,
+ 			27,6,3,11,posx[2], posy[0]);
++	   }
+ 	  
+ 	  RedrawWindow(&visible);
+ 
+@@ -302,8 +307,8 @@ void GetXPM(void)
    static char **clock_xpm;
    XColor col;
    XWindowAttributes attributes;
@@ -11,7 +35,7 @@
    int ret;
  
    clock_xpm =ONLYSHAPE ? mask_xpm : clk_xpm;
-@@ -317,51 +317,49 @@
+@@ -317,51 +322,49 @@ void GetXPM(void)
        nocolor("parse",LedColor);
      }
  

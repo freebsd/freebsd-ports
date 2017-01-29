@@ -17,6 +17,8 @@ COMMENT=	Debugging Information Manipulation Tools
 LICENSE=	GPLv2
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
+BROKEN=		does not build (/usr/local/include/libelf.h:308:8: error: unknown type name 'Elf32_Chdr')
+
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libdw.so:devel/elfutils
 PATCH_DEPENDS=	gnulib>=0:devel/gnulib

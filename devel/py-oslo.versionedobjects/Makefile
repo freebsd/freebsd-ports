@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.versionedobjects
-PORTVERSION=	1.18.0
+PORTVERSION=	1.21.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,9 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>=0:net/py-netaddr \
 		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601 \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.16.0:devel/py-oslo.utils \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=1.10.0:devel/py-oslo.serialization \
-		${PYTHON_PKGNAMEPREFIX}oslo.messaging>=5.2.0:devel/py-oslo.messaging \
+		${PYTHON_PKGNAMEPREFIX}oslo.messaging>=5.14.0:devel/py-oslo.messaging \
 		${PYTHON_PKGNAMEPREFIX}oslo.context>=2.9.0:devel/py-oslo.context \
-		${PYTHON_PKGNAMEPREFIX}oslo.config>=3.14.0:devel/py-oslo.config \
+		${PYTHON_PKGNAMEPREFIX}oslo.config>=3.18.0:devel/py-oslo.config \
 		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=3.8.0:devel/py-oslo.concurrency \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six
 
