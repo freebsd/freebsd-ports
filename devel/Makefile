@@ -1312,6 +1312,7 @@
     SUBDIR += libgsf
     SUBDIR += libgta
     SUBDIR += libgtop
+    SUBDIR += libgudev
     SUBDIR += libgutenfetch
     SUBDIR += libhash
     SUBDIR += libhid
