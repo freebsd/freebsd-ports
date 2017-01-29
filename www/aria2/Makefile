@@ -3,6 +3,7 @@
 
 PORTNAME=	aria2
 PORTVERSION=	1.31.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -53,5 +54,9 @@ SSH2_CONFIGURE_WITH=	libssh2
 SSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
 
 ARIA2_DISK_CACHE?=	16M
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+	${INSTALL_DATA} ${WRKSRC}/doc/bash_completion/aria2c ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 
 .include <bsd.port.mk>
