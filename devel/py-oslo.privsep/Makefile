@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.privsep
-PORTVERSION=	1.14.0
+PORTVERSION=	1.16.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enum34>=0:devel/py-enum34 \
 		${PYTHON_PKGNAMEPREFIX}greenlet>=0.3.2:devel/py-greenlet \
 		${PYTHON_PKGNAMEPREFIX}eventlet>=0:net/py-eventlet \
 		${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi \
-		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.16.0:devel/py-oslo.utils \
+		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.18.0:devel/py-oslo.utils \
 		${PYTHON_PKGNAMEPREFIX}oslo.config>=3.14.0:devel/py-oslo.config \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=2.1.0:devel/py-oslo.i18n \
 		${PYTHON_PKGNAMEPREFIX}oslo.log>=3.11.0:devel/py-oslo.log
