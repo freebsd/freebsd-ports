@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	os-vif
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=       os_vif-${DISTVERSION}
+DISTNAME=	os_vif-${DISTVERSION}
 
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Library for plugging and unplugging virtual interfaces in openstack
@@ -14,7 +14,7 @@ COMMENT=	Library for plugging and unplugging virtual interfaces in openstack
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stevedore>=1.16.0:devel/py-stevedore \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stevedore>=1.17.1:devel/py-stevedore \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}oslo.versionedobjects>=1.13.0:devel/py-oslo.versionedobjects \
 		${PYTHON_PKGNAMEPREFIX}oslo.privsep>=1.9.0:devel/py-oslo.privsep \
