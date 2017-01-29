@@ -46,6 +46,8 @@ USE_GNOME=	atk cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 pango
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
+BROKEN_aarch64=		Fails to configure: Could not find the program gas,as,gcc
+
 PLIST_SUB=	ARDOURVERSION=${PORTVERSION}
 CONFLICTS_BUILD=	 libsmf-*
 
@@ -93,11 +95,11 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=i386          
-.elif ${ARCH} == "amd64"                                                        
+WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=i386
+.elif ${ARCH} == "amd64"
 WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=x86_64
 .endif
-                                                                                
+
 .if defined(WITH_ARCH_FLAGS)
 CONFIGURE_ARGS+=	${WITH_ARCH_FLAGS}
 .endif
