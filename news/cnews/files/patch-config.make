@@ -1,6 +1,5 @@
-diff -urN ../pre-conf/include/config.make include/config.make
---- ../pre-conf/include/config.make	Thu Jan  1 01:00:00 1970
-+++ include/config.make	Mon Aug  2 20:36:19 1999
+--- include/config.make.orig	1970-01-01 01:00:00 UTC
++++ include/config.make
 @@ -0,0 +1,58 @@
 +# make header file
 +# pathname variables
