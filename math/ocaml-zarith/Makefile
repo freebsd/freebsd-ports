@@ -13,8 +13,6 @@ COMMENT=	OCaml arithmetic library for arbitrary precision integers
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		does not build
-
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=			gmake perl5 shebangfix tar:tgz
