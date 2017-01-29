@@ -76,7 +76,8 @@ OPTIMIZED_CFLAGS_CFLAGS=	-O3 -funroll-loops -msse2
 # -------------------------------------------------------------------
 #
 
-.if ${OSVERSION} < 1030000
+.if ${OPSYS} == FreeBSD
+.if ${OSVERSION} < 1003000
 IGNORE=	is only for supported FreeBSD releases
 .endif
 
@@ -86,6 +87,7 @@ IGNORE=	is only for supported FreeBSD releases
 # time FreeBSD 12 is out.
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=Only amd64 is supported on non-released FreeBSD versions.
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MNATIVE}
