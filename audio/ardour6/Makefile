@@ -57,7 +57,11 @@ BINARY_ALIAS+=	gas=${CC}
 PLIST_SUB=	ARDOURVERSION=${PORTVERSION}
 
 CONFIGURE_ARGS=	--optimize --ptformat --freedesktop --no-phone-home \
-		--with-backends=jack,dummy --internal-shared-libs --no-vst3
+		--with-backends=jack,dummy --internal-shared-libs --no-vst3 \
+		${CONFIGURE_ARGS_${ARCH}}
+CONFIGURE_ARGS_amd64=	--arch='-msse -mfpmath=sse -DARCH_X86' --dist-target=x86_64
+# only support for i686 or better
+CONFIGURE_ARGS_i386=	--arch='-msse -mfpmath=sse -march=i686 -DARCH_X86' --dist-target=i686
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/obj\.use            = '\''libsmf libpbd'\''/obj\.use            = '\''libsmf_internal libpbd'\''/g' ${WRKSRC}/libs/evoral/wscript
@@ -103,17 +107,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/hardour-${PORTVERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/luasession
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-# only support for i686 or better
-WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse -march=i686 -DARCH_X86' --dist-target=i686
-.elif ${ARCH} == "amd64"
-WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse -DARCH_X86' --dist-target=x86_64
-.endif
-
-.if defined(WITH_ARCH_FLAGS)
-CONFIGURE_ARGS+=	${WITH_ARCH_FLAGS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
