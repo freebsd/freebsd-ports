@@ -3,7 +3,7 @@
 
 PORTNAME=	cargo
 PORTVERSION=	0.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -56,7 +56,7 @@ RUST_ARCH_amd64=	x86_64
 RUST_ARCH_i386=		i686
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
 CARGO_BOOT=	2016-11-02/${PORTNAME}-nightly-${RUST_TARGET}${EXTRACT_SUFX}
-CARGO_REGISTRY=	${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
+CARGO_REGISTRY=	${PORTNAME}-registry-${DISTVERSIONFULL}_${PORTREVISION}.tar.xz
 
 # We don't USES=cmake here, because cmake is not Cargo's build system.
 # It's used by a bundled dependency (libgit2).

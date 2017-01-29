@@ -1,6 +1,6 @@
-TIMESTAMP = 1484954237
-SHA256 (cargo-registry-0.15.0.tar.xz) = 9dcc9747b86f6e647ad429de5df854c69fb4d259c2f4619f22a02a8af6bb6d92
-SIZE (cargo-registry-0.15.0.tar.xz) = 21559740
+TIMESTAMP = 1485297292
+SHA256 (cargo-registry-0.15.0_2.tar.xz) = 513eead0d81a73c23a3f3a79cac66370f2e3f1557204965a594088b2a85de050
+SIZE (cargo-registry-0.15.0_2.tar.xz) = 21517360
 SHA256 (2016-11-02/cargo-nightly-x86_64-unknown-freebsd.tar.gz) = 4d5e6203d8f6825debb99b4a9e4c8ac2177c55dd2d13458ad6fb972e947bf933
 SIZE (2016-11-02/cargo-nightly-x86_64-unknown-freebsd.tar.gz) = 4516956
 SHA256 (rust-lang-cargo-0.15.0_GH0.tar.gz) = 6ebe9e0de255d5bd912528bef0f57db7746e162c6d9875a89c6c8b2b40a21d64
