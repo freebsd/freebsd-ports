@@ -1,5 +1,5 @@
---- areacode/make/freebsd.mak.orig	2014-03-28 16:39:11.000000000 +0100
-+++ areacode/make/freebsd.mak	2014-03-28 16:39:50.000000000 +0100
+--- areacode/make/freebsd.mak.orig	2014-03-28 15:39:11 UTC
++++ areacode/make/freebsd.mak
 @@ -0,0 +1,115 @@
 +# *****************************************************************************
 +# *									      *

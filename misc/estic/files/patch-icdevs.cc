@@ -1,6 +1,6 @@
---- estic/icdevs.cc.orig	Wed Mar  5 21:48:44 1997
-+++ estic/icdevs.cc	Tue Sep  6 09:54:21 2005
-@@ -157,8 +157,8 @@
+--- estic/icdevs.cc.orig	1997-03-05 20:48:44 UTC
++++ estic/icdevs.cc
+@@ -157,8 +157,8 @@ const String& DevListBox::ServiceName (u
  String DevListBox::RerouteName (const String& Num)
  // Map the reroute capability to a string with fixed length
  {
@@ -11,7 +11,7 @@
      String Res (PadLength);
  
      if (Num.IsEmpty ()) {
-@@ -269,9 +269,9 @@
+@@ -269,9 +269,9 @@ static int ExtRerouteOk (const String& P
  static void EditExtReroute (const Point& Pos, IstecDevConfig& Config)
  // Edit the extended reroute capabilities of FW 2.0 in a separate menu
  {
@@ -24,7 +24,7 @@
  
      // Load the menu
      Menue* M = (Menue*) LoadResource ("@ICDEVS.RerouteMenue");
-@@ -407,38 +407,38 @@
+@@ -407,38 +407,38 @@ static void EditDevConfig (IstecDevConfi
      static const String StgPosName = "EditDevConfig.ConfigMenue.Position";
  
      // Menue constants

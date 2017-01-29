@@ -1,6 +1,6 @@
---- spunk/resitem.cc.orig	Sat Feb 26 18:07:02 2000
-+++ spunk/resitem.cc	Sat Feb 26 18:07:39 2000
-@@ -1403,16 +1403,16 @@
+--- spunk/resitem.cc.orig	1997-02-21 11:05:30 UTC
++++ spunk/resitem.cc
+@@ -1539,16 +1539,16 @@ void ResEditApp::ItemMenue (WindowItem* 
  // Data edit menue
  {
      // Menue IDs
@@ -27,7 +27,7 @@
  
      // Load the menue from the resource
      Menue* M = (Menue*) LoadResource ("@RESITEM.ItemDataMenue");
-@@ -1639,13 +1639,13 @@
+@@ -1785,13 +1785,13 @@ void ResEditApp::ChangeLimits (WindowIte
  
  void ResEditApp::ChangeCharset (WindowItem* Item)
  {

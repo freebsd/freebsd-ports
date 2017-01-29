@@ -1,6 +1,6 @@
---- estic/icshort.cc.orig	Tue Sep  6 09:54:20 2005
-+++ estic/icshort.cc	Tue Sep  6 09:54:21 2005
-@@ -578,17 +578,17 @@
+--- estic/icshort.cc.orig	1997-01-31 03:29:12 UTC
++++ estic/icshort.cc
+@@ -574,17 +574,17 @@ void ShortNumberListBox::Print (int Inde
  
  
  // Item numbers for the short number edit menu
