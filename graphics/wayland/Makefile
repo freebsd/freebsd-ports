@@ -20,7 +20,7 @@
 
 PORTNAME=	wayland
 PORTVERSION=	1.12.0
-CATEGORIES=	x11-servers wayland
+CATEGORIES=	graphics wayland
 MASTER_SITES=	http://wayland.freedesktop.org/releases/
 
 MAINTAINER=	x11@FreeBSD.org
