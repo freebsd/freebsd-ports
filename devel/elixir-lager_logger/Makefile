@@ -11,8 +11,6 @@ COMMENT=	Lager backend for Elixir's Logger
 
 LICENSE=	APACHE20
 
-BROKEN=		does not build with elixir 1.4.1
-
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	PSPDFKit-labs
