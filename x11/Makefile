@@ -184,6 +184,7 @@
     SUBDIR += liboldX
     SUBDIR += libsx
     SUBDIR += libsynaptics
+    SUBDIR += libwacom
     SUBDIR += libxcb
     SUBDIR += libxdg-basedir
     SUBDIR += libxfce4menu
