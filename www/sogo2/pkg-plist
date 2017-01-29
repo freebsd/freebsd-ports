@@ -229,6 +229,7 @@ GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Dominica.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Edmonton.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Eirunepe.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/El_Salvador.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Fort_Nelson.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Fortaleza.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Glace_Bay.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Godthab.ics
@@ -351,6 +352,7 @@ GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Baghdad.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Bahrain.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Baku.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Bangkok.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Barnaul.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Beirut.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Bishkek.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Brunei.ics
@@ -414,12 +416,14 @@ GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Tbilisi.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Tehran.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Thimphu.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Tokyo.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Tomsk.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Ulaanbaatar.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Urumqi.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Ust-Nera.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Vientiane.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Vladivostok.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Yakutsk.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Yangon.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Yekaterinburg.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Asia/Yerevan.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Atlantic/Azores.ics
@@ -446,6 +450,7 @@ GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Australia/Perth.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Australia/Sydney.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Amsterdam.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Andorra.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Astrakhan.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Athens.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Belgrade.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Berlin.ics
@@ -465,6 +470,7 @@ GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Istanbul.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Jersey.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Kaliningrad.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Kiev.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Kirov.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Lisbon.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Ljubljana.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/London.ics
@@ -491,6 +497,7 @@ GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Sofia.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Stockholm.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Tallinn.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Tirane.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Ulyanovsk.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Uzhgorod.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Vaduz.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Europe/Vatican.ics
@@ -1629,11 +1636,11 @@ GNUstep/Local/Library/SOGo/WebServerResources/iefixes.css
 GNUstep/Local/Library/SOGo/WebServerResources/important.png
 GNUstep/Local/Library/SOGo/WebServerResources/input_bg.gif
 GNUstep/Local/Library/SOGo/WebServerResources/inverse.png
-GNUstep/Local/Library/SOGo/WebServerResources/jquery-ui.js
+GNUstep/Local/Library/SOGo/WebServerResources/jquery-ui.min.js
 GNUstep/Local/Library/SOGo/WebServerResources/jquery.fileupload.css
 GNUstep/Local/Library/SOGo/WebServerResources/jquery.fileupload.js
 GNUstep/Local/Library/SOGo/WebServerResources/jquery.iframe-transport.js
-GNUstep/Local/Library/SOGo/WebServerResources/jquery.js
+GNUstep/Local/Library/SOGo/WebServerResources/jquery.min.js
 GNUstep/Local/Library/SOGo/WebServerResources/js_color_picker_v2.js
 GNUstep/Local/Library/SOGo/WebServerResources/last.gif
 GNUstep/Local/Library/SOGo/WebServerResources/layout2or3_xlib.js
