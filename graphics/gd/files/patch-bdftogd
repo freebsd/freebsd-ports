@@ -1,6 +1,6 @@
---- src/bdftogd.orig	2013-06-25 11:58:23.000000000 +0200
-+++ src/bdftogd	2013-08-15 21:03:29.000000000 +0200
-@@ -24,6 +24,9 @@
+--- src/bdftogd.orig	2017-01-29 09:45:57 UTC
++++ src/bdftogd
+@@ -24,6 +24,9 @@ $gdname = 'gd' . $gdname unless $gdname 
  my $filename = shift;
  $filename = 'gd' . $filename unless $filename =~ /^gd/i;
  
@@ -10,7 +10,7 @@
  if (-f "$filename.c") { die "File $filename.c already exists, won't overwrite\n"; }
  if (-f "$filename.h") { die "File $filename.h already exists, won't overwrite\n"; }
  
-@@ -139,6 +142,10 @@
+@@ -139,6 +142,10 @@ print FILEC <<"EOF";
  
  $info
  
@@ -21,7 +21,7 @@
  #include "$filename.h"
  
  char ${gdname}Data[] = {
-@@ -177,28 +184,40 @@
+@@ -177,28 +184,40 @@ gdFont ${gdname}Rep = {
  	${gdname}Data
  };
  
