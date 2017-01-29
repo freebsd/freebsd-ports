@@ -1,2 +1,3 @@
-SHA256 (rubygem/amq-protocol-2.0.1.gem) = fd5c0ef0f01c040529a6ddbc12cbdde3e40f63d5045c08b13a03f803df4ef6e6
-SIZE (rubygem/amq-protocol-2.0.1.gem) = 43008
+TIMESTAMP = 1485699951
+SHA256 (rubygem/amq-protocol-2.1.0.gem) = d2404af88d5bee649ecf198e9d33d98fe9b9e69dc5f7441e3cdd77322266c395
+SIZE (rubygem/amq-protocol-2.1.0.gem) = 43520
