@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:devel/protobuf 
 		cmake:devel/cmake
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
+BROKEN=		fails to configure (error: Failed to find required header file include/mysql_version.h)
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tony2001
 GH_TAGNAME=	3a0cb51
