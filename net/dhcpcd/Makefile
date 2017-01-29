@@ -13,6 +13,8 @@ MASTER_SITES=	http://roy.marples.name/downloads/dhcpcd/ \
 MAINTAINER=	roy@marples.name
 COMMENT=	DHCP/IPv4LL/IPv6RS/DHCPv6 client
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	BSD2CLAUSE
 
 USES=		cpe tar:xz
