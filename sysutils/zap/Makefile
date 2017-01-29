@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zap
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	jrm@FreeBSD.org
