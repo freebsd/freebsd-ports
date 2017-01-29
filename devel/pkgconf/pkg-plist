@@ -8,7 +8,7 @@ lib/libpkgconf.a
 lib/libpkgconf.so
 lib/libpkgconf.so.2
 lib/libpkgconf.so.2.0.0
-lib/pkgconfig/libpkgconf.pc
+libdata/pkgconfig/libpkgconf.pc
 man/man1/pkgconf.1.gz
 share/aclocal/pkg.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
