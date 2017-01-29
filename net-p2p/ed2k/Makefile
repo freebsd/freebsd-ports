@@ -13,6 +13,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Calculates 'eMule' hashes or producing ed2k:// file links
 
 LICENSE=	PD BSD3CLAUSE
+LICENSE_COMB=	multi
 
 CONFLICTS=	amule-*
 
