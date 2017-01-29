@@ -2,6 +2,7 @@
 
 PORTNAME=	pkgconf
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.dereferenced.org/pkgconf/ \
 		http://files.etoilebsd.net/pkgconf/
@@ -13,7 +14,7 @@ EXPLICIT_SAFESTACK=		yes
 
 LICENSE=	ISCL
 
-USES=		tar:xz libtool
+USES=		tar:xz libtool pathfix
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

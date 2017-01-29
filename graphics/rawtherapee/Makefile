@@ -74,6 +74,20 @@ OPTIMIZED_CFLAGS_CFLAGS=	-O3 -funroll-loops -msse2
 # -------------------------------------------------------------------
 #
 
+.if ${OPSYS} == FreeBSD
+.if ${OSVERSION} < 1003000
+IGNORE=	is only for supported FreeBSD releases
+.endif
+
+.if ${OSVERSION} >= 1200000
+# don't waste everybody's time with Tier-2 and moving targets.
+# might add ARM64 or SPARC64 later on if they are established by the
+# time FreeBSD 12 is out.
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=Only amd64 is supported on non-released FreeBSD versions.
+.endif
+.endif
+
 .if ${PORT_OPTIONS:MNATIVE}
 CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="2"
 .endif
@@ -109,6 +123,11 @@ USES+=		compiler:gcc-c++11-lib
 # over previously set values with gcc-libc++-configure as of r432539.
 # GCC 4.9 doesn't generate usable code on FreeBSD 11.0.
 USE_GCC=	5+
+
+# work around compiler faults
+.if ${ARCH} == i386
+CFLAGS+=	-mstackrealign
+.endif
 .endif
 
 post-patch:
