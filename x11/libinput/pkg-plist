@@ -1,0 +1,14 @@
+bin/libinput-debug-events
+bin/libinput-list-devices
+include/libinput.h
+lib/libinput.so
+lib/libinput.so.10
+lib/libinput.so.10.9.1
+lib/udev/hwdb.d/90-libinput-model-quirks.hwdb
+lib/udev/libinput-device-group
+lib/udev/libinput-model-quirks
+lib/udev/rules.d/80-libinput-device-groups.rules
+lib/udev/rules.d/90-libinput-model-quirks.rules
+libdata/pkgconfig/libinput.pc
+man/man1/libinput-debug-events.1.gz
+man/man1/libinput-list-devices.1.gz
