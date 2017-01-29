@@ -1,6 +1,14 @@
---- src/qt/qtbase/configure.orig	2015-05-24 22:39:30.864797690 +0900
-+++ src/qt/qtbase/configure	2015-08-29 19:51:35.227904574 +0900
-@@ -2617,11 +2617,19 @@
+--- src/qt/qtbase/configure.orig	2015-12-12 12:58:05 UTC
++++ src/qt/qtbase/configure
+@@ -51,6 +51,7 @@ mactests="$relpath/config.tests/mac"
+ WHICH="$unixtests/which.test"
+ 
+ PERL=`$WHICH perl 2>/dev/null`
++export CXX=${CXX}
+ 
+ # find out which awk we want to use, prefer gawk, then nawk, then regular awk
+ AWK=
+@@ -2791,11 +2792,19 @@ if [ -z "$PLATFORM" ]; then
       ULTRIX:*)
          PLATFORM=ultrix-g++
          ;;
@@ -21,15 +29,7 @@
          ;;
       OpenBSD:*)
          PLATFORM=openbsd-g++
-@@ -3971,6 +3979,7 @@
-     fi
- fi
- 
-+export CXX="${CXX}"
- # detect availability of float math.h functions
- if compileTest unix/floatmath "floatmath"; then
-     CFG_USE_FLOATMATH=yes
-@@ -5793,7 +5802,7 @@
+@@ -6359,7 +6368,7 @@ case "$XPLATFORM" in
  	;;
      *-g++*)
  	# Check gcc's version
