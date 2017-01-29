@@ -13,6 +13,8 @@ COMMENT=	Message queue that works as a pluggable storage engine of MySQL
 
 FETCH_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:build
 
+BROKEN=		does not build (ha_queue.cc:35:27: fatal error: mysql_version.h: No such file or directory)
+
 USES=		gmake perl5 libtool
 USE_MYSQL=	server
 USE_GCC=	any
