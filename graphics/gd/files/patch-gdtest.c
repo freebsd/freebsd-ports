@@ -1,6 +1,6 @@
---- src/gdtest.c.orig	2013-06-25 11:58:23.000000000 +0200
-+++ src/gdtest.c	2013-08-01 07:12:08.000000000 +0200
-@@ -35,6 +35,8 @@
+--- src/gdtest.c.orig	2015-09-16 11:34:29 UTC
++++ src/gdtest.c
+@@ -35,6 +35,8 @@ main (int argc, char **argv)
  	gdSink imgsnk;
  	int foreground;
  	int i;
@@ -9,7 +9,7 @@
  	if (argc != 2) {
  		fprintf(stderr, "Usage: gdtest filename.png\n");
  		exit (1);
-@@ -55,6 +57,35 @@
+@@ -63,6 +65,35 @@ main (int argc, char **argv)
  
  	CompareImages ("Initial Versions", ref, im);
  
@@ -45,7 +45,7 @@
  
  	/* */
  	/* Send to PNG File then Ptr */
-@@ -268,6 +299,10 @@
+@@ -334,6 +365,10 @@ main (int argc, char **argv)
  	printf ("[Merged Image has %d colours]\n", im2->colorsTotal);
  	CompareImages ("Merged (gdtest.png, gdtest_merge.png)", im2, im3);
  
