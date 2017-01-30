@@ -1,6 +1,6 @@
---- t/porting/customized.dat.orig	2016-12-11 21:33:47 UTC
+--- t/porting/customized.dat.orig	2017-01-30 04:05:54 UTC
 +++ t/porting/customized.dat
-@@ -4,6 +4,7 @@ CPAN cpan/CPAN/scripts/cpan 22610ed0301d
+@@ -1,6 +1,7 @@
  Digest cpan/Digest/Digest.pm 43f7f544cb11842b2f55c73e28930da50774e081
  Encode cpan/Encode/Unicode/Unicode.pm 9749692c67f7d69083034de9184a93f070ab4799
  ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t a0369c919e216fb02767a637666bb4577ad79b02
