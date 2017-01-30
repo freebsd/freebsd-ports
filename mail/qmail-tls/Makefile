@@ -13,7 +13,7 @@ CONFLICTS=	*qmail-[0-9]* qmail-ldap-[0-9]* *qmail-mysql-[0-9]* qmail-spamcontrol
 
 SLAVE_TLS=	yes
 
-TLS_PATCH_DATE=	20110119
+TLS_PATCH_DATE=	20160918
 
 USE_OPENSSL=	yes
 
