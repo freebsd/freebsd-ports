@@ -1312,6 +1312,7 @@
     SUBDIR += libgsf
     SUBDIR += libgta
     SUBDIR += libgtop
+    SUBDIR += libgudev
     SUBDIR += libgutenfetch
     SUBDIR += libhash
     SUBDIR += libhid
@@ -1448,6 +1449,7 @@
     SUBDIR += libtpl
     SUBDIR += libtuntap
     SUBDIR += libublio
+    SUBDIR += libudev-devd
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libuninum

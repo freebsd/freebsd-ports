@@ -32,6 +32,7 @@ VIDEO_DRIVERS=		mach64 \
 			vesa \
 			apm \
 			ark \
+			ast \
 			chips \
 			dummy \
 			glint \
