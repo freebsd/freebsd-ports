@@ -1,6 +1,6 @@
---- utility.c.orig      Fri Jul  2 18:26:30 2004
-+++ utility.c   Mon Oct 10 01:19:02 2005
-@@ -33,6 +33,10 @@
+--- utility.c.orig	2012-09-16 04:09:09 UTC
++++ utility.c
+@@ -40,6 +40,10 @@ die2(const char* p_text1, const char* p_
  void
  bug(const char* p_text)
  {
