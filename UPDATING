@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170129:
+  AFFECTS: users of multimedia/motion
+  AUTHOR: jhale@FreeBSD.org
+
+  Version 3.x expected the configuration files to reside in:
+	${LOCALBASE}/etc
+  Version 4.x expects the configuration files to reside in:
+	${LOCALBASE}/etc/motion
+  This was unfortunately overlooked when the port was updated to 4.x, but it
+  has now been fixed to install the default configuration file in the new
+  location. The rc script now checks for motion.conf in the new location.
+
+  While you may be able to simply copy your old motion.conf to the new location,
+  it is recommended to review ${LOCALBASE}/etc/motion/motion.conf and make
+  changes to it based on your old ${LOCALBASE}/etc/motion.conf as some options
+  have been added and removed.
+
+  Further, if you use motion with multiple cameras and have
+  ${LOCALBASE}/etc/thread[0-9].conf files, they should be moved to
+  ${LOCALBASE}/etc/motion as well. These files are deprecated and should be
+  renamed to camera[0-9].conf and in motion.conf, lines like:
+	thread /usr/local/etc/thread1.conf
+  Should be converted to:
+	camera /usr/local/etc/motion/camera1.conf
+
 20170127:
   AFFECTS: users of www/uwsgi
   AUTHOR: feld@FreeBSD.org

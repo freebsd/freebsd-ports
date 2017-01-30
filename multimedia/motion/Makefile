@@ -3,7 +3,7 @@
 
 PORTNAME=	motion
 PORTVERSION=	4.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	multimedia
 
@@ -31,17 +31,19 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/motion \
 		man/man1/motion.1.gz \
-		"@sample etc/motion.conf.sample"
+		"@sample ${ETCDIR}/motion.conf.sample" \
+		"@dir ${ETCDIR}/conf.d"
 PORTDOCS=	CHANGELOG CREDITS README.md README.FreeBSD \
-		motion_guide.html
+		motion_guide.html mask1.png normal.jpg \
+		outputmotion1.jpg outputnormal1.jpg
 PORTEXAMPLES=	camera1-dist.conf camera2-dist.conf \
 		camera3-dist.conf camera4-dist.conf
 
 OPTIONS_DEFINE=		DOCS EXAMPLES FFMPEG MYSQL PGSQL SQLITE3
-OPTIONS_SINGLE=		VIDEO
-OPTIONS_SINGLE_VIDEO=	BKTR PWCBSD
+OPTIONS_RADIO=		VIDEO
+OPTIONS_RADIO_VIDEO=	BKTR PWCBSD
 OPTIONS_DEFAULT=	BKTR FFMPEG
-VIDEO_DESC=		Video capture driver
+VIDEO_DESC=		Video capture driver (Netcam support only if none selected)
 
 BKTR_DESC=		BKTR based TV capture cards
 BKTR_CONFIGURE_WITH=	bktr
@@ -87,12 +89,13 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/motion ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/motion.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d
 	${INSTALL_DATA} ${WRKSRC}/motion-dist.conf \
-		${STAGEDIR}${PREFIX}/etc/motion.conf.sample
+		${STAGEDIR}${ETCDIR}/motion.conf.sample
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
