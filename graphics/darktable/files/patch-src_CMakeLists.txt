@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2016-12-31 12:42:13 UTC
+--- src/CMakeLists.txt.orig	2017-01-27 11:03:43 UTC
 +++ src/CMakeLists.txt
-@@ -254,7 +254,7 @@ if(USE_OPENJPEG)
+@@ -257,7 +257,7 @@ if(USE_OPENJPEG)
      add_definitions("-DHAVE_OPENJPEG")
      list(APPEND SOURCES "common/imageio_j2k.c")
  
@@ -9,7 +9,7 @@
      list(APPEND LIBS ${OpenJPEG_LIBRARIES})
    endif(OpenJPEG_FOUND)
  endif(USE_OPENJPEG)
-@@ -415,8 +415,9 @@ if(NOT CUSTOM_CFLAGS)
+@@ -418,8 +418,9 @@ if(NOT CUSTOM_CFLAGS)
    #-g MUST be set for ALL builds, or there will be no support for them when bugs happen
    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${MARCH} ${DT_REQ_INSTRUCTIONS} -g")
    set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2")
@@ -20,7 +20,7 @@
      if(BUILD_SSE2_CODEPATHS)
        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfpmath=sse")
      endif()
-@@ -429,8 +430,9 @@ if(NOT CUSTOM_CFLAGS)
+@@ -432,8 +433,9 @@ if(NOT CUSTOM_CFLAGS)
  
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${MARCH} ${DT_REQ_INSTRUCTIONS} -g")
    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2")
