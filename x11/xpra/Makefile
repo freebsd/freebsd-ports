@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
-MAINTAINER=	matthew@reztek.cz
+MAINTAINER=	rezny@FreeBSD.org
 COMMENT=	Xpra gives you persistent remote applications for X
 
 LICENSE=	GPLv2
