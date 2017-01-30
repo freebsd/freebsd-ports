@@ -87,14 +87,11 @@ do-configure:
 	# This step helps non-i386 systems and is harmless on i386
 	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH:S/armv6/arm/}_unknown.mak
 .endfor
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 	    -e '/^CFLAGS *=/s|$$| ${CFLAGS}|' \
 	    -e '/^CXXFLAGS *=/s|$$| ${CXXFLAGS}|' \
 	    -e 's,^OPTIMI,#OPTIMI,' \
 	    ${WRKSRC}/speech_tools/config/compilers/gcc*.mak
-	# This step helps to use a compiler, the vendor has not seen before:
-	${TEST} -e ${WRKDIR}/speech_tools/config/compilers/${CC}.mak ||	\
-		${LN} -s gcc_defaults.mak ${WRKDIR}/speech_tools/config/compilers/${CC}.mak
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
