@@ -1,13 +1,13 @@
 libexec/vsftpd
 man/man5/vsftpd.conf.5.gz
 man/man8/vsftpd.8.gz
-@exec if ! pw groupshow ftp 2>/dev/null; then pw groupadd ftp -g 14; fi
-@exec if ! pw usershow ftp 2>/dev/null; then pw useradd ftp -g ftp -u 14 -h - -d /var/ftp -s /nonexistent -c "Anonymous FTP"; fi
-@unexec if diff -q %D/etc/vsftpd.conf %D/etc/vsftpd.conf.dist; then rm %D/etc/vsftpd.conf; fi
+@preexec if ! pw groupshow ftp 2>/dev/null; then pw groupadd ftp -g 14; fi
+@preexec if ! pw usershow ftp 2>/dev/null; then pw useradd ftp -g ftp -u 14 -h - -d /var/ftp -s /nonexistent -c "Anonymous FTP"; fi
+@preunexec if diff -q %D/etc/vsftpd.conf %D/etc/vsftpd.conf.dist; then rm %D/etc/vsftpd.conf; fi
 etc/vsftpd.conf.dist
-@exec if [ ! -f %B/vsftpd.conf ]; then cp %B/vsftpd.conf.dist %B/vsftpd.conf; fi
-@unexec rmdir /var/ftp 2>/dev/null || true
-@exec if [ ! -d /var/ftp ]; then mkdir /var/ftp ; fi
+@postexec if [ ! -f %B/vsftpd.conf ]; then cp %B/vsftpd.conf.dist %B/vsftpd.conf; fi
+@postunexec rmdir /var/ftp 2>/dev/null || true
+@postexec if [ ! -d /var/ftp ]; then mkdir /var/ftp ; fi
 @dir %%DATADIR%%/empty
 %%PORTDOCS%%%%DOCSDIR%%/AUDIT
 %%PORTDOCS%%%%DOCSDIR%%/BENCHMARKS

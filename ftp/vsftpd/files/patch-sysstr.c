@@ -1,6 +1,6 @@
---- sysstr.c.orig	2011-12-14 18:26:39.000000000 +0800
-+++ sysstr.c	2012-07-24 11:27:18.000000000 +0800
-@@ -74,7 +74,7 @@
+--- sysstr.c.orig	2011-12-14 10:26:39 UTC
++++ sysstr.c
+@@ -74,7 +74,7 @@ str_chdir(const struct mystr* p_str)
  int
  str_open(const struct mystr* p_str, const enum EVSFSysStrOpenMode mode)
  {
