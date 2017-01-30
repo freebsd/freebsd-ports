@@ -26,7 +26,7 @@
 +	echo ' echo "BitMessage directory not found"' >> ${DESTDIR}${PREFIX}/bin/${APP}
 +	echo '  exit 1' >> ${DESTDIR}${PREFIX}/bin/${APP}
  	echo 'fi' >> ${DESTDIR}${PREFIX}/bin/${APP}
-+	echo 'exec /usr/local/bin/python2.7 bitmessagemain.py' >> ${DESTDIR}${PREFIX}/bin/${APP}
++	echo 'exec @PYTHON@ bitmessagemain.py' >> ${DESTDIR}${PREFIX}/bin/${APP}
  	chmod +x ${DESTDIR}${PREFIX}/bin/${APP}
  uninstall:
 -	rm -f ${PREFIX}/share/man/man1/${APP}.1.gz
