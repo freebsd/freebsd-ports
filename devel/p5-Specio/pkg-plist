@@ -15,6 +15,8 @@
 %%SITE_PERL%%/Specio/Constraint/Role/Interface.pm
 %%SITE_PERL%%/Specio/Constraint/Role/IsaType.pm
 %%SITE_PERL%%/Specio/Constraint/Simple.pm
+%%SITE_PERL%%/Specio/Constraint/Structurable.pm
+%%SITE_PERL%%/Specio/Constraint/Structured.pm
 %%SITE_PERL%%/Specio/Constraint/Union.pm
 %%SITE_PERL%%/Specio/Declare.pm
 %%SITE_PERL%%/Specio/DeclaredAt.pm
@@ -25,6 +27,10 @@
 %%SITE_PERL%%/Specio/Library/Numeric.pm
 %%SITE_PERL%%/Specio/Library/Perl.pm
 %%SITE_PERL%%/Specio/Library/String.pm
+%%SITE_PERL%%/Specio/Library/Structured.pm
+%%SITE_PERL%%/Specio/Library/Structured/Dict.pm
+%%SITE_PERL%%/Specio/Library/Structured/Map.pm
+%%SITE_PERL%%/Specio/Library/Structured/Tuple.pm
 %%SITE_PERL%%/Specio/OO.pm
 %%SITE_PERL%%/Specio/PartialDump.pm
 %%SITE_PERL%%/Specio/Registry.pm
@@ -48,6 +54,8 @@
 %%PERL5_MAN3%%/Specio::Constraint::Role::Interface.3.gz
 %%PERL5_MAN3%%/Specio::Constraint::Role::IsaType.3.gz
 %%PERL5_MAN3%%/Specio::Constraint::Simple.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Structurable.3.gz
+%%PERL5_MAN3%%/Specio::Constraint::Structured.3.gz
 %%PERL5_MAN3%%/Specio::Constraint::Union.3.gz
 %%PERL5_MAN3%%/Specio::Declare.3.gz
 %%PERL5_MAN3%%/Specio::DeclaredAt.3.gz
@@ -58,6 +66,10 @@
 %%PERL5_MAN3%%/Specio::Library::Numeric.3.gz
 %%PERL5_MAN3%%/Specio::Library::Perl.3.gz
 %%PERL5_MAN3%%/Specio::Library::String.3.gz
+%%PERL5_MAN3%%/Specio::Library::Structured.3.gz
+%%PERL5_MAN3%%/Specio::Library::Structured::Dict.3.gz
+%%PERL5_MAN3%%/Specio::Library::Structured::Map.3.gz
+%%PERL5_MAN3%%/Specio::Library::Structured::Tuple.3.gz
 %%PERL5_MAN3%%/Specio::OO.3.gz
 %%PERL5_MAN3%%/Specio::PartialDump.3.gz
 %%PERL5_MAN3%%/Specio::Registry.3.gz
