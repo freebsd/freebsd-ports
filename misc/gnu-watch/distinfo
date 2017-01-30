@@ -1,2 +1,3 @@
-SHA256 (procps-3.2.8.tar.gz) = 11ed68d8a4433b91cd833deb714a3aa849c02aea738c42e6b4557982419c1535
-SIZE (procps-3.2.8.tar.gz) = 285758
+TIMESTAMP = 1485505846
+SHA256 (procps-ng-3.3.12.tar.xz) = 6ed65ab86318f37904e8f9014415a098bec5bc53653e5d9ab404f95ca5e1a7d4
+SIZE (procps-ng-3.3.12.tar.xz) = 845484
