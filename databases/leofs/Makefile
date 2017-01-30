@@ -110,16 +110,7 @@ LEOFS_DEPS=	\
 	leo-project/savanna_commons=0.10.3:savanna_commons \
 	manopapad/proper=f558989:proper \
 
-.for dep in ${LEOFS_DEPS}
-account=	${dep:C,/.*$,,}
-project=	${dep:C,^[^/]+/([^=]+)=.*$,\1,}
-tagname=	${dep:C,^[^=]+=([^:]+):.*$,\1,}
-label=		${dep:C,^.*:,,}
-GH_ACCOUNT:=	${GH_ACCOUNT} ${account}:${label}
-GH_PROJECT:=	${GH_PROJECT} ${project}:${label}
-GH_TAGNAME:=	${GH_TAGNAME} ${tagname}:${label}
-GH_SUBDIR:=	${GH_SUBDIR} deps/${label}:${label}
-.endfor
+GH_TUPLE=	${LEOFS_DEPS:C,(.*)/(.*)=(.*):(.*),\1:\2:\3:\4/deps/\4,}
 
 post-extract:
 .for dep in ${LEOFS_DEPS}
