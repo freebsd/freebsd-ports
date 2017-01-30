@@ -6,7 +6,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://losslessaudio.org/Downloads/A1C0/${DISTVERSION:S/.//}/FreeBSD/
 DISTNAME=	# OptimFROG_FreeBSD_${ARCH}_${DISTVERSION:S/.//}
 
-MAINTAINER=	matthew@reztek.cz
+MAINTAINER=	rezny@FreeBSD.org
 COMMENT?=	Best-ratio lossless audio codec
 
 LICENSE=	OptimFROG

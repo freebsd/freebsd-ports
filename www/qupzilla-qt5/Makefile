@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/QupZilla/${PORTNAME}/releases/download/v${PORTV
 PKGNAMESUFFIX=	-qt5
 DISTNAME=	QupZilla-${PORTVERSION}
 
-MAINTAINER=	matthew@reztek.cz
+MAINTAINER=	rezny@FreeBSD.org
 COMMENT=	Web browser based on WebKit engine and Qt Framework
 
 LICENSE=	GPLv3

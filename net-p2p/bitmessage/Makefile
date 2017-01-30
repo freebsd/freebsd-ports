@@ -3,6 +3,7 @@
 
 PORTNAME=	bitmessage
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
@@ -32,12 +33,11 @@ OPTIONS_SUB=	yes
 REINPLACE_ARGS=	-i ''
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|python2|${PYTHON_CMD}| ; s|share/man|man|' \
+	@${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_CMD}|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|\((CCFLAGS)\)|\1 -I${OPENSSLINC} |g" \
 		-e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
 		${WRKSRC}/src/bitmsghash/Makefile
-	@${REINPLACE_CMD} -e 's|python2|${PYTHON_CMD}| ; s|share/man|man|' ${WRKSRC}/Makefile ${WRKSRC}/src/depends.py
 	@${REINPLACE_CMD} -e 's|^#!.*$$|#!${PYTHON_CMD}|' \
 		${WRKSRC}/compiletest.py ${WRKSRC}/src/bitmessagecli.py ${WRKSRC}/src/bitmessagemain.py \
 		${WRKSRC}/src/depends.py \
