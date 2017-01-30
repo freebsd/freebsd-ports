@@ -1,0 +1,97 @@
+--- Makefile.am.orig	2016-07-09 22:40:44 UTC
++++ Makefile.am
+@@ -1,7 +1,4 @@
+-CYGWINFLAGS =
+-if CYGWIN
+-  CYGWINFLAGS += -lintl
+-endif
++CYGWINFLAGS = -lintl
+ 
+ AM_CPPFLAGS = \
+ 	-include $(top_builddir)/config.h \
+@@ -24,19 +21,9 @@ LDADD = ./proc/libprocps.la $(CYGWINFLAG
+ transform = s/pscommand/ps/; $(program_transform_name)
+ 
+ bin_PROGRAMS = \
+-	ps/pscommand \
+-	free \
+-	pgrep \
+-	pkill \
+-	pmap \
+-	pwdx \
+-	tload \
+-	uptime \
+-	vmstat \
+-	w
++	ps/pscommand
+ 
+-sbin_PROGRAMS = \
+-	sysctl
++sbin_PROGRAMS = #
+ 
+ lib_LTLIBRARIES = \
+ 	proc/libprocps.la
+@@ -73,29 +60,10 @@ dist_procpsng_DATA = \
+ 	Documentation/bugs.md \
+ 	Documentation/FAQ
+ 
+-if BUILD_PIDOF
+-bin_PROGRAMS += pidof
+-dist_man_MANS += pidof.1
+-pidof_SOURCES = pidof.c lib/fileutils.c
+-else
+-  EXTRA_DIST += pidof.1
+-endif
+-
+-if BUILD_KILL
+-bin_PROGRAMS += kill
+-dist_man_MANS += kill.1
+-kill_SOURCES = skill.c lib/strutils.c lib/fileutils.c lib/nsutils.c
+-else
+-  EXTRA_DIST += kill.1
+-endif
+-
+ if WITH_NCURSES
+ bin_PROGRAMS += \
+-	slabtop \
+-	watch \
+-	top/top
++	watch
+ dist_man_MANS += \
+-	slabtop.1 \
+ 	watch.1 \
+ 	top/top.1
+ slabtop_SOURCES = slabtop.c lib/strutils.c lib/fileutils.c
+@@ -115,21 +83,6 @@ endif
+ top_top_LDADD = $(LDADD) @NCURSES_LIBS@ $(DL_LIB)
+ endif
+ 
+-if BUILD_SKILL
+-bin_PROGRAMS += \
+-	skill \
+-	snice
+-skill_SOURCES = skill.c lib/strutils.c lib/fileutils.c lib/nsutils.c
+-snice_SOURCES = skill.c lib/strutils.c lib/fileutils.c lib/nsutils.c
+-dist_man_MANS += \
+-	skill.1 \
+-	snice.1
+-else
+-  EXTRA_DIST += \
+-	skill.1 \
+-	snice.1
+-endif
+-
+ free_SOURCES = free.c lib/strutils.c lib/fileutils.c
+ pgrep_SOURCES = pgrep.c lib/fileutils.c lib/nsutils.c
+ pkill_SOURCES = pgrep.c lib/fileutils.c lib/nsutils.c
+@@ -182,9 +135,7 @@ proc_libprocps_la_SOURCES = \
+ 	proc/version.c \
+ 	proc/version.h \
+ 	proc/wchan.c \
+-	proc/wchan.h \
+-	proc/whattime.c \
+-	proc/whattime.h
++	proc/wchan.h
+ 
+ proc_libprocps_la_includedir = $(includedir)/proc/
+ proc_libprocps_la_include_HEADERS = \
