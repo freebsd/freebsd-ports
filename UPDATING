@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170130:
+  AFFECTS: users of devel/ice, devel/py-ice, devel/php5-ice
+  AUTHOR: grembo@FreeBSD.org
+
+  Since __WORDSIZE as defined by <stdint.h> always reports 32 when using
+  C++98/03 (unless __STDC_LIMIT_MACROS is set explictly), Ice 3.6.3 used
+  "long long" for Int64 instead of "long" on 64-bit platforms by mistake.
+  A workaround has been added in version 3.6.3_2 of these three ports,
+  requiring to upgrade all of them at the same time and to rebuild all
+  custom code that links against them.
+
 20170129:
   AFFECTS: users of multimedia/motion
   AUTHOR: jhale@FreeBSD.org
