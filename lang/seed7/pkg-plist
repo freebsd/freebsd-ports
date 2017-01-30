@@ -102,10 +102,12 @@ lib/seed7/lib/environment.s7i
 lib/seed7/lib/external_file.s7i
 lib/seed7/lib/field.s7i
 lib/seed7/lib/file.s7i
+lib/seed7/lib/filesys.s7i
 lib/seed7/lib/float.s7i
 lib/seed7/lib/font.s7i
 lib/seed7/lib/forloop.s7i
 lib/seed7/lib/ftp.s7i
+lib/seed7/lib/ftpserv.s7i
 lib/seed7/lib/getf.s7i
 lib/seed7/lib/gethttp.s7i
 lib/seed7/lib/gethttps.s7i
@@ -122,6 +124,7 @@ lib/seed7/lib/httpserv.s7i
 lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
 lib/seed7/lib/inflate.s7i
+lib/seed7/lib/inflatefile.s7i
 lib/seed7/lib/inifile.s7i
 lib/seed7/lib/integer.s7i
 lib/seed7/lib/keybd.s7i
@@ -182,6 +185,7 @@ lib/seed7/lib/struct.s7i
 lib/seed7/lib/subrange.s7i
 lib/seed7/lib/syntax.s7i
 lib/seed7/lib/tar.s7i
+lib/seed7/lib/tar_cmds.s7i
 lib/seed7/lib/tdes.s7i
 lib/seed7/lib/tee.s7i
 lib/seed7/lib/text.s7i
