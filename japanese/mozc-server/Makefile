@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	ninja:devel/ninja \
 		gyp:devel/py-gyp
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
-LIB_DEPENDS=	libprotobuf.so.11:devel/protobuf \
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
