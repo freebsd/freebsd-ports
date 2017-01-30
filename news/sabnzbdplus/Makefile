@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	news
-MASTER_SITES=	SF
-DISTNAME=	SABnzbd-${PORTVERSION}-src
 
 MAINTAINER=	joshruehlig@gmail.com
 COMMENT=	Web-interface based binary newsgrabber in python, with nzb support
@@ -17,11 +14,13 @@ RUN_DEPENDS=	cheetah:devel/py-cheetah \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:devel/py-utils \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	sabnzbd
+GH_PROJECT=	sabnzbd
+
 USES=		python:2.7
 
-NO_BUILD=	yes
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/SABnzbd-${PORTVERSION}
 PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_LIST=	PORTNAME=${PORTNAME} PYTHON_CMD=${PYTHON_CMD}
 SUB_FILES=	pkg-message
@@ -31,13 +30,13 @@ PORTDOCS=	ABOUT.txt \
 		COPYRIGHT.txt \
 		INSTALL.txt \
 		ISSUES.txt \
-		README.txt
+		README.mkd
 
 USERS=		_sabnzbd
 GROUPS=		_sabnzbd
 
-OPTIONS_DEFINE=	PAR2CMDLINE UNRAR 7ZIP FEEDPARSER YENC OPENSSL DOCS
-OPTIONS_DEFAULT=	PAR2CMDLINE UNRAR 7ZIP FEEDPARSER YENC OPENSSL
+OPTIONS_DEFINE=	PAR2CMDLINE UNRAR 7ZIP FEEDPARSER YENC SSL DOCS
+OPTIONS_DEFAULT=	PAR2CMDLINE UNRAR 7ZIP FEEDPARSER YENC SSL
 PAR2CMDLINE_DESC=	Required for postprocessing of par files
 UNRAR_DESC=	Often required for unpacking many downloads
 7ZIP_DESC=	Needed for unpacking 7-Zip posts
@@ -47,7 +46,7 @@ YENC_DESC=	yenc support
 PAR2CMDLINE_RUN_DEPENDS=	par2repair:archivers/par2cmdline-tbb
 FEEDPARSER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=0:textproc/py-feedparser
 YENC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yenc>=0:news/py-yenc
-OPENSSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl
+SSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography
 UNRAR_RUN_DEPENDS=	unrar:archivers/unrar
 7ZIP_RUN_DEPENDS=	7za:archivers/p7zip
 
@@ -57,8 +56,12 @@ post-patch:
 	@${REINPLACE_CMD} -e "s:%%DATADIR%%:'${DATADIR}':g" \
 		 ${WRKSRC}/SABnzbd.py
 
-# the NO_BUILD option stops execution after configure. This should really be
-# post-build
+# Generate locale files
+do-build:
+	@${REINPLACE_CMD} -e "s:/usr/bin/env[[:space:]]python:${PYTHON_CMD}:g" \
+		 ${WRKSRC}/tools/msgfmt.py
+	cd ${WRKSRC} && ${PYTHON_CMD} tools/make_mo.py
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/SABnzbd.py ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sabnzbd

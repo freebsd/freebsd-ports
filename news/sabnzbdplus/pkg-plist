@@ -46,7 +46,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/json.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/listquote.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/ordered.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pathbrowser.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pybonjour.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pystone.py
@@ -54,19 +53,16 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rsslib.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/servertests.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/sslinfo.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/ssmtplib.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/systrayiconthread.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/version.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/wizard.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/zconfig.py
-%%DATADIR%%/cherrypy/LICENSE.txt
 %%DATADIR%%/cherrypy/VERSION.txt
 %%DATADIR%%/cherrypy/__init__.py
 %%DATADIR%%/cherrypy/__main__.py
 %%DATADIR%%/cherrypy/_cpchecker.py
 %%DATADIR%%/cherrypy/_cpcompat.py
-%%DATADIR%%/cherrypy/_cpcompat_subprocess.py
 %%DATADIR%%/cherrypy/_cpconfig.py
 %%DATADIR%%/cherrypy/_cpdispatch.py
 %%DATADIR%%/cherrypy/_cperror.py
@@ -76,7 +72,6 @@ bin/SABnzbd.py
 %%DATADIR%%/cherrypy/_cpreqbody.py
 %%DATADIR%%/cherrypy/_cprequest.py
 %%DATADIR%%/cherrypy/_cpserver.py
-%%DATADIR%%/cherrypy/_cpthreadinglocal.py
 %%DATADIR%%/cherrypy/_cptools.py
 %%DATADIR%%/cherrypy/_cptree.py
 %%DATADIR%%/cherrypy/_cpwsgi.py
@@ -95,7 +90,6 @@ bin/SABnzbd.py
 %%DATADIR%%/cherrypy/lib/cptools.py
 %%DATADIR%%/cherrypy/lib/encoding.py
 %%DATADIR%%/cherrypy/lib/gctools.py
-%%DATADIR%%/cherrypy/lib/http.py
 %%DATADIR%%/cherrypy/lib/httpauth.py
 %%DATADIR%%/cherrypy/lib/httputil.py
 %%DATADIR%%/cherrypy/lib/jsontools.py
@@ -114,8 +108,7 @@ bin/SABnzbd.py
 %%DATADIR%%/cherrypy/wsgiserver/__init__.py
 %%DATADIR%%/cherrypy/wsgiserver/ssl_builtin.py
 %%DATADIR%%/cherrypy/wsgiserver/ssl_pyopenssl.py
-%%DATADIR%%/cherrypy/wsgiserver/wsgiserver2.py
-%%DATADIR%%/cherrypy/wsgiserver/wsgiserver3.py
+%%DATADIR%%/cherrypy/wsgiserver/test_wsgiserver.py
 %%DATADIR%%/gntp/__init__.py
 %%DATADIR%%/gntp/notifier.py
 %%DATADIR%%/interfaces/Config/README.txt
@@ -151,7 +144,9 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-arrow.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-full.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/images/logo-small.svg
-%%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-1.11.2.min.js
+%%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-3.1.1.min.js
+%%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery-ui.min.js
+%%DATADIR%%/interfaces/Config/templates/staticcfg/js/jquery.tablesort.min.js
 %%DATADIR%%/interfaces/Config/templates/staticcfg/js/script.js
 %%DATADIR%%/interfaces/Glitter/licenses/LICENSE-Apache.txt
 %%DATADIR%%/interfaces/Glitter/licenses/LICENSE-CC.txt
@@ -311,8 +306,6 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/wizard/index.html
 %%DATADIR%%/interfaces/wizard/one.html
 %%DATADIR%%/interfaces/wizard/static/javascript/checkserver.js
-%%DATADIR%%/interfaces/wizard/static/javascript/jquery.js
-%%DATADIR%%/interfaces/wizard/static/javascript/restart.js
 %%DATADIR%%/interfaces/wizard/static/style.css
 %%DATADIR%%/interfaces/wizard/two.html
 %%DATADIR%%/locale/da/LC_MESSAGES/SABnzbd.mo
@@ -378,6 +371,7 @@ bin/SABnzbd.py
 %%DATADIR%%/po/nsis/sr.po
 %%DATADIR%%/po/nsis/sv.po
 %%DATADIR%%/po/nsis/zh_CN.po
+%%DATADIR%%/tools/extract_pot.py
 %%DATADIR%%/tools/make_mo.py
 %%DATADIR%%/tools/msgfmt.py
 %%DATADIR%%/util/__init__.py
