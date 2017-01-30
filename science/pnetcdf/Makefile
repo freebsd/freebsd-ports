@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://cucis.ece.northwestern.edu/projects/PnetCDF/Release/ \
 		LOCAL/sunpoet
