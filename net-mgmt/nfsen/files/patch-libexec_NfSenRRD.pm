@@ -5,7 +5,7 @@
  		$RRDoffset = 77;
  	}
 -	if ( $rrd_version >= 1.2 && $rrd_version < 1.6 ) {
-+	if ( $rrd_version >= 1.2 {
++	if ( $rrd_version >= 1.2 ) {
  		$RRDoffset = 67;
  	}
  
