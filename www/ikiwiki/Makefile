@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20161219
+PORTVERSION=	3.20170111
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN_POOL \
 		LOCAL/mat/${PORTNAME}
@@ -34,7 +34,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gettext perl5 gmake cpe
+USES=		gettext perl5 gmake cpe tar:xz
 USE_PERL5=	configure
 NO_ARCH=	yes
 
