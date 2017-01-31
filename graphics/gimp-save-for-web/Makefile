@@ -20,4 +20,6 @@ USES=		gettext gmake perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 USE_GNOME=	intltool
 
+EXPLICIT_SAFESTACK=	yes
+
 .include <bsd.port.mk>
