@@ -192,13 +192,13 @@ CONFIGURE_ARGS+=--install_path lib="${PREFIX}/${SITE_PERL_REL}" \
 		--install_path script="${PREFIX}/bin" \
 		--install_path bin="${PREFIX}/bin" \
 		--install_path libdoc="${MAN3PREFIX}/man/man3" \
-		--install_path bindoc="${MAN1PREFIX}/man/man1" \
-		--perl="${PERL}"
+		--install_path bindoc="${MAN1PREFIX}/man/man1"
 CONFIGURE_SCRIPT?=	Build.PL
 PL_BUILD?=	Build
 CONFIGURE_ARGS+=--destdir ${STAGEDIR}
 DESTDIRNAME=	--destdir
 .    if ${_USE_PERL5:Mmodbuild}
+CONFIGURE_ARGS+=--perl="${PERL}"
 .      if ${PORTNAME} != Module-Build
 BUILD_DEPENDS+=	p5-Module-Build>=0.4206:devel/p5-Module-Build
 .      endif
