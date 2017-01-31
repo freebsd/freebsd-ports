@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for implementing Subversion hooks
 
+DEPRECATED=	Depends on expired devel/p5-JIRA-Client
+EXPIRATION_DATE=2017-04-01
+
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
