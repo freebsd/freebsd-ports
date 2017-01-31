@@ -22,6 +22,9 @@ LDFLAGS+=	-lpthread
 
 OPTIONS_DEFINE=	DOCS
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|h|txt)" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
