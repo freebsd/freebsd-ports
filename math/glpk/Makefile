@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glpk
-PORTVERSION=	4.55
-PORTREVISION=	1
+PORTVERSION=	4.61
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -48,7 +47,7 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} cnfsat.pdf glpk.pdf gmpl.pdf \
 		graphs.pdf miplib2.txt miplib3.txt netlib.txt ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc/notes && ${INSTALL_DATA} dfeas.pdf gomory.pdf \
-		keller.pdf scaling.pdf ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/notes && ${INSTALL_DATA} gomory.pdf keller.pdf \
+		scf.pdf simplex1.pdf simplex2.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
