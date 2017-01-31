@@ -31,6 +31,8 @@ OPTIONS_SUB=	yes
 
 OPTIMIZED_CFLAGS_CFLAGS=	-O3
 
+EXPLICIT_SAFESTACK=	yes
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|gimptool-2.0|${LOCALBASE}/bin/gimptool-2.0|' \
