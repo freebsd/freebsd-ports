@@ -3,6 +3,7 @@
 
 PORTNAME=	opensolaris-libm
 PORTVERSION=	2006.01.31
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -17,22 +18,14 @@ PORTSCOUT=	ignore:1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
-GH_TAGNAME=	2017.01.24
+GH_TAGNAME=	2017.01.31
 
 BUILD_WRKSRC=	${WRKSRC}/usr/src/libm/wos64
 INSTALL_WRKSRC=	${WRKSRC}/usr/src/libm/wos64
 MAKEFILE=	Makefile.bsd
 MAKE_ENV=	ARCH=${ARCH} USE_ASSEMBLY_VERSIONS=yes
 
-# On FreeBSD 11+, libm will build on base clang.  Using OpenLibm testsuite,
-# all float tests pass on both clang and gcc.  On the "double" tests, all
-# tests pass when built by gcc save 4 gamma tests off by 1e-16, also seen
-# on Illumos.  However, on Clang and gcc with -fno-builtin set, 27 other
-# tests fail with results off by values ranging from e-17 to e-14.  All of
-# these extremely slightly inaccurate results seem to be caused by the j0
-# Bessel function implementation.  Fix that and likely all 27 tests
-# involving j0, j1, jn, y0, y1, yn pass.
-
+# On FreeBSD 11+, libm will build on base clang.
 # On FreeBSD 10, the base clang (v3.4) cannot even build libm without emitting
 # Internal Compiler Errors, so GCC is required and does not appear as an
 # option.  Similarly, the GCC option does not appear on DragonFly as the

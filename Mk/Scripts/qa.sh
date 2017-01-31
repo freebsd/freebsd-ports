@@ -45,6 +45,11 @@ shebangonefile() {
 	case "${interp}" in
 	"") ;;
 	${LINUXBASE}/*) ;;
+	${LOCALBASE}/bin/perl5.* | ${PREFIX}/bin/perl5.*)
+		err "'${interp}' is an invalid shebang for '${f#${STAGEDIR}${PREFIX}/}' you must use ${LOCALBASE}/bin/perl."
+		err "Either pass \${PERL} to the build or use USES=shebangfix"
+		rc=1
+		;;
 	${LOCALBASE}/*) ;;
 	${PREFIX}/*) ;;
 	/bin/csh) ;;

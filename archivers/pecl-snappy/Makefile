@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php5-snappy
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	archivers
 
 MAINTAINER=	joneum@bsdproject.de

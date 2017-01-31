@@ -1,5 +1,0 @@
-TIMESTAMP = 1482094064
-SHA256 (centos/glx-utils-8.2.0-3.el7.x86_64.rpm) = 914a13daa9ca6c6f4495097a33a94633ac634dfe702b6d40e22189a3afb42ae5
-SIZE (centos/glx-utils-8.2.0-3.el7.x86_64.rpm) = 32688
-SHA256 (centos/mesa-11.2.2-2.20160614.el7.src.rpm) = 918e7e18abf348d18e2cdab93705c7c16060690d0027346327941847917a8e88
-SIZE (centos/mesa-11.2.2-2.20160614.el7.src.rpm) = 7068461

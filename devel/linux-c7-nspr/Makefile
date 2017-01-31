@@ -11,11 +11,10 @@ COMMENT=	Netscape Portable Runtime (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	1.el7_2
 USES=		linux:c7
-USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
-
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+USE_LINUX_RPM=	yes
 
 .include <bsd.port.mk>

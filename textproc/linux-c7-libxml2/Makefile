@@ -13,12 +13,10 @@ LICENSE=	MIT
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	6.el7_2.3
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
-
-PORTDOCS=	AUTHORS Copyright NEWS README TODO
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

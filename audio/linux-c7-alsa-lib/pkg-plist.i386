@@ -1,0 +1,11 @@
+etc/asound.conf
+usr/bin/aserver
+usr/lib/alsa-lib/smixer/smixer-ac97.so
+usr/lib/alsa-lib/smixer/smixer-hda.so
+usr/lib/alsa-lib/smixer/smixer-sbase.so
+usr/lib/libasound.so.2
+usr/lib/libasound.so.2.0.0
+usr/share/alsa
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/asoundrc.txt

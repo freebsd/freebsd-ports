@@ -2,9 +2,9 @@ usr/bin/wish
 usr/bin/wish8.5
 usr/lib/libtk8.5.so
 usr/lib/tk8.5/pkgIndex.tcl
-usr/share/doc/tk-8.5.7/README
-usr/share/doc/tk-8.5.7/changes
-usr/share/doc/tk-8.5.7/license.terms
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/changes
+%%PORTDOCS%%%%DOCSDIR%%/license.terms
 usr/share/man/man1/wish.1.gz
 usr/share/man/mann/bell.n.gz
 usr/share/man/mann/bind.n.gz
