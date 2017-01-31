@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -20,7 +20,7 @@ EXTRACT_ONLY=	${AOOSRC}
 
 MAINTAINER=	office@FreeBSD.org
 #de facto maintainer is truckman@FreeBSD.org
-#Frequent Patch submitters should optionally sign Apache iCLA
+#Frequent Patch submitters should (optionally) sign the Apache iCLA
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
 LICENSE=		APACHE20 ADOBE BSD3CLAUSE BSD4CLAUSE BSL ICU MIT MPL \
@@ -48,9 +48,6 @@ LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
-		p5-libwww>=0:www/p5-libwww				\
-		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https	\
-		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
 		${LOCALBASE}/bin/unzip:archivers/unzip			\
 		zip:archivers/zip					\
 		ant:devel/apache-ant					\
@@ -68,14 +65,15 @@ BUILD_DEPENDS=								\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		bash:shells/bash					\
 		${JAVALIBDIR}/lucene-core-3.6.2.jar:textproc/lucene	\
-		p5-libwww>=0:www/p5-libwww
+		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
+		p5-libwww>=0:www/p5-libwww				\
+		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https
 LIB_DEPENDS=								\
 		libapr-1.so:devel/apr1					\
 		libnspr4.so:devel/nspr					\
 		libcurl.so:ftp/curl					\
 		libcairo.so:graphics/cairo				\
 		libpng.so:graphics/png					\
-		libpoppler-glib.so:graphics/poppler-glib		\
 		libgraphite.so:graphics/silgraphite			\
 		libCoinMP.so:math/coinmp				\
 		libfreetype.so:print/freetype2				\
@@ -178,6 +176,9 @@ TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
 
 .if ${COMPILER_TYPE} == clang
 CPPFLAGS+=		-I${LOCALBASE}/include
+. if ${COMPILER_VERSION} >= 40 && ${ARCH} == amd64
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-align16
+. endif
 .endif
 
 .if ${ARCH} == amd64
@@ -216,6 +217,7 @@ SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR} \
 
 CONFIGURE_ARGS+=							\
 			--with-unix-wrapper=${EXECBASE}			\
+			--with-alloc=system				\
 			--with-system-apache-commons=yes		\
 			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar \
@@ -260,14 +262,13 @@ CONFIGURE_ARGS+=							\
 			--enable-opengl					\
 			--with-system-openssl				\
 			--with-package-format="archive"			\
-			--with-system-poppler				\
 			--with-system-python				\
 			--with-system-redland				\
 			--with-system-sane				\
 			--with-system-serf				\
 			--with-system-stdlibs				\
-			--without-stlport				\
 			--with-vendor="FreeBSD ports system"		\
+			--with-build-version="PKGNAME: ${PKGNAME:S/,/@/g}" \
 			--enable-verbose				\
 			--with-system-vigra				\
 			--with-system-xrender				\
