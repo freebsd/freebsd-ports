@@ -3,6 +3,9 @@
 
 MASTERDIR=	${.CURDIR}/../../shells/bash
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 OPTIONS_SLAVE=	STATIC
 
 PKGNAMESUFFIX=	-static
