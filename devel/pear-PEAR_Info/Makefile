@@ -3,6 +3,7 @@
 
 PORTNAME=	PEAR_Info
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	joneum@bsdproject.de
@@ -11,12 +12,12 @@ COMMENT=	Show Information about your PEAR install and its packages
 BUILD_DEPENDS=	${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs
 RUN_DEPENDS=	${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs
 
-OPTIONS_DEFINE=	PEAR_PHPUNIT3
-OPTIONS_DEFAULT=	PEAR_PHPUNIT3
-PEAR_PHPUNIT3_DESC=	PEAR::PHPUnit3 support
+OPTIONS_DEFINE=	PHPUNIT
+OPTIONS_DEFAULT=PHPUNIT
+PHPUNIT_DESC=	PEAR::PHPUnit support
 
 USES=	pear
 
-PEAR_PHPUNIT3_RUN_DEPENDS=	${PEARDIR}/PHPUnit/Autoload.php:devel/pear-PHPUnit3
+PHPUNIT_RUN_DEPENDS=	phpunit:devel/phpunit
 
 .include <bsd.port.mk>
