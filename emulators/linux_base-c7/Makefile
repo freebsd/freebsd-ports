@@ -138,7 +138,11 @@ post-extract:
 	@(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${DIST_SUBDIR}/filesystem-3.2-21.el7${EXTRACT_SUFX_${LINUX_ARCH:S/x86_64/amd64/}} \
 		${EXTRACT_AFTER_ARGS})
+.if ${LINUX_ARCH} == i386
+	@${CHMOD} u+w ${WRKSRC}/usr/lib/pm-utils
+.elif ${LINUX_ARCH} == x86_64
 	@${CHMOD} u+w ${WRKSRC}/usr/lib64/pm-utils
+.endif
 
 post-patch:
 	@${RM} -r ${REMOVE_DIRS:S|^|${WRKSRC}/|}
