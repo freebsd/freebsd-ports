@@ -27,6 +27,9 @@ MAKE_ARGS=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${CLANG_VERSION} \
 
 PLIST_FILES=	bin/ispc
 
+ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS_REASON=	only available for x86 architectures
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}| ; s|@$$(C|$$(C|' \
 		${WRKSRC}/Makefile
