@@ -2,5 +2,5 @@ bin/glpsol
 include/glpk.h
 lib/libglpk.a
 lib/libglpk.so
-lib/libglpk.so.36
-lib/libglpk.so.36.1.2
+lib/libglpk.so.40
+lib/libglpk.so.40.2.0
