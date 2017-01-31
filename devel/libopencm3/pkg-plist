@@ -248,7 +248,6 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/desig.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/dma.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/dma2d.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/dsi.h
-gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/ethernet.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/exti.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/f0/adc.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/libopencm3/stm32/f0/cec.h
