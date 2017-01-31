@@ -2,7 +2,7 @@
 
 .include "Makefile.inc"
 
-MULTILIB_LIST=	armv6-m,armv7-m,armv7e-m,armv7-r,armv8-m.base,armv8-m.main
+MULTILIB_LIST=	rmprofile
 PKGVERSION=	GNU Tools for ARM Embedded Processors
 
 BUILD_PREFIX=	${WRKDIR}/build
@@ -29,12 +29,9 @@ PREREQUISITES=		expat \
 			gmp \
 			mpfr \
 			mpc \
-			isl \
-			cloog
-ISL_CHECK_VERSION=
+			isl
 .else
 PREREQUISITES=
-ISL_CHECK_VERSION=	--disable-isl-version-check
 .endif
 
 .if ${PORT_OPTIONS:MPYGDB}
@@ -192,24 +189,6 @@ isl:
 	@${ECHO_MSG} "=====>  Install into intermediate directory"
 	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/isl install ${MAKE_ARGS}
 
-cloog:
-	@${ECHO_MSG} "====>  Build cloog"
-	@${RM} -rf ${BUILD_PREFIX}/cloog
-	@${MKDIR} ${BUILD_PREFIX}/cloog
-	@${ECHO_MSG} "=====>  Configure"
-	@cd ${BUILD_PREFIX}/cloog && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/cloog-${BUNDLED_VERSION_CLOOG}/configure \
-	 --prefix=${INTERIM_WORLD} \
-	 --with-bits=gmp \
-	 --with-gmp-prefix=${INTERIM_WORLD} \
-	 --with-isl-prefix=${INTERIM_WORLD} \
-	 --disable-shared \
-	 --disable-nls
-	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/cloog all ${MAKE_ARGS}
-	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/cloog install ${MAKE_ARGS}
-
 build-binutils:
 	@${ECHO_MSG} "====>  Build binutils"
 	@${RM} -rf ${BUILD_PREFIX}/binutils
@@ -271,8 +250,6 @@ build-gcc-first:
 	 --with-mpfr=${WORLD_LIB} \
 	 --with-mpc=${WORLD_LIB} \
 	 --with-isl=${WORLD_LIB} \
-	 ${ISL_CHECK_VERSION} \
-	 --with-cloog=${WORLD_LIB} \
 	 --with-libelf=${WORLD_LIB} \
 	 --enable-languages=c \
 	 --disable-decimal-float \
@@ -392,8 +369,6 @@ build-gcc-final:
 	 --with-mpfr=${WORLD_LIB} \
 	 --with-mpc=${WORLD_LIB} \
 	 --with-isl=${WORLD_LIB} \
-	 ${ISL_CHECK_VERSION} \
-	 --with-cloog=${WORLD_LIB} \
 	 --with-libelf=${WORLD_LIB} \
 	 --enable-languages=c,c++ \
 	 --enable-plugins \
@@ -458,8 +433,6 @@ build-libstdcxx:
 	 --with-mpfr=${WORLD_LIB} \
 	 --with-mpc=${WORLD_LIB} \
 	 --with-isl=${WORLD_LIB} \
-	 ${ISL_CHECK_VERSION} \
-	 --with-cloog=${WORLD_LIB} \
 	 --with-libelf=${WORLD_LIB} \
 	 --enable-languages=c++ \
 	 --disable-decimal-float \
