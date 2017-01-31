@@ -2,10 +2,6 @@ etc/pki/nssdb/cert8.db
 etc/pki/nssdb/key3.db
 etc/pki/nssdb/secmod.db
 etc/prelink.conf.d/nss-softokn-prelink.conf
-lib/libfreebl3.chk
-lib/libfreebl3.so
-lib/libfreeblpriv3.chk
-lib/libfreeblpriv3.so
 usr/lib/libfreebl3.chk
 usr/lib/libfreebl3.so
 usr/lib/libfreeblpriv3.chk

@@ -1,9 +1,9 @@
 usr/bin/tclsh
 usr/bin/tclsh8.5
 usr/lib/libtcl8.5.so
-usr/share/doc/tcl-8.5.7/README
-usr/share/doc/tcl-8.5.7/changes
-usr/share/doc/tcl-8.5.7/license.terms
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/changes
+%%PORTDOCS%%%%DOCSDIR%%/license.terms
 usr/share/man/man1/tclsh.1.gz
 usr/share/man/man3/TCL_MEM_DEBUG.3.gz
 usr/share/man/man3/Tcl_Access.3.gz

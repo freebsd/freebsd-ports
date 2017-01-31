@@ -1,21 +1,23 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
 # $FreeBSD$
 
-PORTNAME=	ncurses-base
+PORTNAME=	ncurses
 PORTVERSION=	5.9
 PORTREVISION=	1
 CATEGORIES=	devel linux
-SRC_DISTFILES=	ncurses-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
+PKGNAMESUFFIX=	-base
+SHARE_DISTNAMES=${LINUXNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Terminfo database required by Linux ncurses programs
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
+LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
 RPMVERSION=	13.20130511.el7
 USES=		linux:c7
 USE_LINUX_RPM=	noarch
-
-DESCR=		${.CURDIR}/../ncurses/pkg-descr
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ USES+=		cpe linux
 CPE_VENDOR?=	mozilla
 CPE_TARGET_SW?=	linux
 USE_LINUX+=	alsalib alsa-plugins-oss atk dbusglib dbuslibs \
-		fontconfig gtk2 hicontheme pango
+		fontconfig gtk2 pango
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 APP_NAME=	${PKGBASE}

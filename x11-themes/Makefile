@@ -128,9 +128,6 @@
     SUBDIR += kf5-kemoticons
     SUBDIR += kf5-kiconthemes
     SUBDIR += kf5-oxygen-icons5
-    SUBDIR += linux-c6-hicolor-icon-theme
-    SUBDIR += linux-c7-hicolor-icon-theme
-    SUBDIR += linux-hicolor-icon-theme
     SUBDIR += lxappearance
     SUBDIR += lxde-icon-theme
     SUBDIR += mate-backgrounds

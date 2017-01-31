@@ -7,15 +7,15 @@ etc/pki/tls/misc/c_info
 etc/pki/tls/misc/c_issuer
 etc/pki/tls/misc/c_name
 etc/pki/tls/openssl.cnf
-usr/lib/libcrypto.so.%%PORTVERSION%%
-usr/lib/libcrypto.so.10
-usr/lib/libssl.so.%%PORTVERSION%%
-usr/lib/libssl.so.10
-usr/lib/.libcrypto.so.%%PORTVERSION%%.hmac
-usr/lib/.libcrypto.so.10.hmac
-usr/lib/.libssl.so.%%PORTVERSION%%.hmac
-usr/lib/.libssl.so.10.hmac
 usr/bin/openssl
+usr/lib/.libcrypto.so.1.0.1e.hmac
+usr/lib/.libcrypto.so.10.hmac
+usr/lib/.libssl.so.1.0.1e.hmac
+usr/lib/.libssl.so.10.hmac
+usr/lib/libcrypto.so.1.0.1e
+usr/lib/libcrypto.so.10
+usr/lib/libssl.so.1.0.1e
+usr/lib/libssl.so.10
 usr/lib/openssl/engines/lib4758cca.so
 usr/lib/openssl/engines/libaep.so
 usr/lib/openssl/engines/libatalla.so
@@ -42,14 +42,8 @@ usr/lib/openssl/engines/libubsec.so
 usr/share/man/man1/asn1parse.1ssl.gz
 usr/share/man/man1/ca.1ssl.gz
 usr/share/man/man1/ciphers.1ssl.gz
-usr/share/man/man1/crl.1ssl.gz
 usr/share/man/man1/cms.1ssl.gz
-usr/share/man/man1/genpkey.1ssl.gz
-usr/share/man/man1/pkey.1ssl.gz
-usr/share/man/man1/pkeyparam.1ssl.gz
-usr/share/man/man1/pkeyutl.1ssl.gz
-usr/share/man/man1/ts.1ssl.gz
-usr/share/man/man1/tsget.1ssl.gz
+usr/share/man/man1/crl.1ssl.gz
 usr/share/man/man1/crl2pkcs7.1ssl.gz
 usr/share/man/man1/dgst.1ssl.gz
 usr/share/man/man1/dhparam.1ssl.gz
@@ -60,6 +54,7 @@ usr/share/man/man1/ecparam.1ssl.gz
 usr/share/man/man1/enc.1ssl.gz
 usr/share/man/man1/errstr.1ssl.gz
 usr/share/man/man1/gendsa.1ssl.gz
+usr/share/man/man1/genpkey.1ssl.gz
 usr/share/man/man1/genrsa.1ssl.gz
 usr/share/man/man1/md2.1ssl.gz
 usr/share/man/man1/md4.1ssl.gz
@@ -71,6 +66,9 @@ usr/share/man/man1/openssl.1ssl.gz
 usr/share/man/man1/pkcs12.1ssl.gz
 usr/share/man/man1/pkcs7.1ssl.gz
 usr/share/man/man1/pkcs8.1ssl.gz
+usr/share/man/man1/pkey.1ssl.gz
+usr/share/man/man1/pkeyparam.1ssl.gz
+usr/share/man/man1/pkeyutl.1ssl.gz
 usr/share/man/man1/req.1ssl.gz
 usr/share/man/man1/ripemd160.1ssl.gz
 usr/share/man/man1/rsa.1ssl.gz
@@ -86,6 +84,8 @@ usr/share/man/man1/speed.1ssl.gz
 usr/share/man/man1/spkac.1ssl.gz
 usr/share/man/man1/sslpasswd.1ssl.gz
 usr/share/man/man1/sslrand.1ssl.gz
+usr/share/man/man1/ts.1ssl.gz
+usr/share/man/man1/tsget.1ssl.gz
 usr/share/man/man1/verify.1ssl.gz
 usr/share/man/man1/version.1ssl.gz
 usr/share/man/man1/x509.1ssl.gz
@@ -93,8 +93,8 @@ usr/share/man/man5/config.5ssl.gz
 usr/share/man/man5/openssl.cnf.5ssl.gz
 usr/share/man/man5/x509v3_config.5ssl.gz
 usr/share/man/man7/des_modes.7ssl.gz
-@dir etc/pki/CA/private
 @dir etc/pki/CA/certs
 @dir etc/pki/CA/crl
 @dir etc/pki/CA/newcerts
+@dir etc/pki/CA/private
 @dir etc/pki/tls/private

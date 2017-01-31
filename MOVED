@@ -9044,3 +9044,11 @@ audio/ruby-mp3tag||2017-01-28|Has expired: Upstream no longer active
 converters/ruby-dump.rb||2017-01-28|Has expired: Upstream no longer active
 x11-servers/wayland|graphics/wayland|2017-01-30|Better location for wayland
 graphics/hsetroot|x11/hsetroot|2017-01-31|Moved to a better category
+x11-themes/linux-c6-hicolor-icon-theme||2017-01-31|Merged into linux_base port
+x11-themes/linux-c7-hicolor-icon-theme||2017-01-31|Merged into linux_base port
+x11-themes/linux-hicolor-icon-theme||2017-01-31|Merged into linux_base port
+audio/linux-c6-arts||2017-01-31|Old KDE3 component
+audio/linux-c6-esound||2017-01-31|Old sound daemon
+audio/linux-c7-esound||2017-01-31|Old sound daemon
+audio/linux-c6-openssl-compat||2017-01-31|Old OpenSSL
+audio/linux-c7-openssl-compat||2017-01-31|Old OpenSSL

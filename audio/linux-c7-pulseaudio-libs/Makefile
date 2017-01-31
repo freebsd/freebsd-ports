@@ -1,26 +1,30 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
 # $FreeBSD$
 
-PORTNAME=	pulseaudio-libs
+PORTNAME=	pulseaudio
 PORTVERSION=	6.0
 PORTREVISION=	1
 CATEGORIES=	audio linux
-LIB_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-glib2-${PORTVERSION}-${RPMVERSION}${EXTRACT_SUFX}
-SRC_DISTFILES=	pulseaudio-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
+PKGNAMESUFFIX=	-libs
+LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL} \
+		${LINUXNAME}-glib2-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+CONFLICTS=	linux-c6-${LINUXNAME}-[0-9]*
 
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
+LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
 RPMVERSION=	8.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	dbuslibs libasyncns libsndfile tcp_wrappers-libs xorglibs
 USE_LINUX_RPM=	yes
 
-DESCR=		${.CURDIR}/../pulseaudio/pkg-descr
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
 post-patch:
 	@${RM} ${WRKSRC}/etc/pulse/client.conf.orig \

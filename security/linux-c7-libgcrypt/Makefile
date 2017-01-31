@@ -13,15 +13,10 @@ CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 LICENSE=	LGPL21+
 
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	13.el7_3.1
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
-
-PORTDOCS=	AUTHORS COPYING.LIB NEWS THANKS
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-
-post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

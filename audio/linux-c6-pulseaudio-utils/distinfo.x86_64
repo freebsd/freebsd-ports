@@ -1,7 +1,0 @@
-TIMESTAMP = 1466257311
-SHA256 (rpm/x86_64/centos/6.8/pulseaudio-utils-0.9.21-24.el6.x86_64.rpm) = fc0c61ac740953695ad5de56995baf04754a134b9b0091a0276f5793406c4ff0
-SIZE (rpm/x86_64/centos/6.8/pulseaudio-utils-0.9.21-24.el6.x86_64.rpm) = 73064
-SHA256 (rpm/x86_64/centos/6.8/pulseaudio-utils-0.9.21-24.el6.i686.rpm) = 32de7887a9cc5ddfd301c790376404d91690b4ba309201b8247676d3c61bcab1
-SIZE (rpm/x86_64/centos/6.8/pulseaudio-utils-0.9.21-24.el6.i686.rpm) = 72484
-SHA256 (rpm/x86_64/centos/6.8/pulseaudio-0.9.21-24.el6.src.rpm) = 2f389e54669332bdc4676fb2c62520a6f71aa54a153bfbbc5c89f5de9f84834e
-SIZE (rpm/x86_64/centos/6.8/pulseaudio-0.9.21-24.el6.src.rpm) = 2387179

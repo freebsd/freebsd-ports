@@ -3,7 +3,7 @@
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.69
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinternights/updates/linux/${PORTVERSION:S/.//}/:CLIENT \
 		http://nwdownloads.bioware.com/neverwinternights/linux/129/:ORIG \

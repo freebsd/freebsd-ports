@@ -11,13 +11,10 @@ COMMENT=	Generic PCI access library (CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
-# LICENSE=	Various GNU
-
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	3.el7_3
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
-
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>
