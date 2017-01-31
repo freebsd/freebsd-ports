@@ -1,4 +1,12 @@
 %%SITE_PERL%%/Exporter/Shiny.pm
 %%SITE_PERL%%/Exporter/Tiny.pm
+%%SITE_PERL%%/Exporter/Tiny/Manual/Etc.pod
+%%SITE_PERL%%/Exporter/Tiny/Manual/Exporting.pod
+%%SITE_PERL%%/Exporter/Tiny/Manual/Importing.pod
+%%SITE_PERL%%/Exporter/Tiny/Manual/QuickStart.pod
 %%PERL5_MAN3%%/Exporter::Shiny.3.gz
 %%PERL5_MAN3%%/Exporter::Tiny.3.gz
+%%PERL5_MAN3%%/Exporter::Tiny::Manual::Etc.3.gz
+%%PERL5_MAN3%%/Exporter::Tiny::Manual::Exporting.3.gz
+%%PERL5_MAN3%%/Exporter::Tiny::Manual::Importing.3.gz
+%%PERL5_MAN3%%/Exporter::Tiny::Manual::QuickStart.3.gz
