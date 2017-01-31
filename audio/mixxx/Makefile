@@ -25,6 +25,8 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+BROKEN_aarch64=		Fails to compile: Exception("invalid machine type")
+
 USES=		scons iconv
 USE_QT4=	corelib gui network opengl script sql svg xml \
 		linguisttools_build moc_build qmake_build rcc_build uic_build

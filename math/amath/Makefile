@@ -23,4 +23,7 @@ do-install:
 do-test:
 	${WRKSRC}/${PORTNAME} test
 
+BROKEN_aarch64=		Fails to compile: must define endianness
+BROKEN_armv6=		Fails to configure: what cpu is this ?!
+
 .include <bsd.port.mk>

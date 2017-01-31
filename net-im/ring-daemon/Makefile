@@ -57,6 +57,8 @@ DBUS_LIB_DEPENDS=	\
 	libdbus-c++-1.so:devel/dbus-c++
 OPTIONS_SUB=	yes
 
+BROKEN_aarch64=		Fails to configure: machine arm64-portbld not recognized
+
 .include <bsd.port.pre.mk>
 
 post-extract:

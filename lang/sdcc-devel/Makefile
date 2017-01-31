@@ -55,6 +55,8 @@ Z80_CONFIGURE_OFF=	--disable-z80 --disable-z80-port		\
 			--disable-r2k-port --disable-r3ka-port		\
 			--disable-tlcs90-port
 
+BROKEN_aarch64=		Fails to configure: BFD does not support target aarch64-portbld-freebsd11.0
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"

@@ -24,4 +24,6 @@ MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
 TEST_TARGET=	test
 TEST_WRKSRC=	${WRKSRC}/tests/unit
 
+BROKEN_aarch64=		fails to compile: error: use of undeclared identifier tcg_op_defs
+
 .include <bsd.port.mk>

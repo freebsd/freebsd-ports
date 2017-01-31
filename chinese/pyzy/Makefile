@@ -21,6 +21,9 @@ SHEBANG_FILES=	data/db/android/create_db.py
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
+BROKEN_aarch64=		Fails to compile: error: constant expression evaluates to -1
+BROKEN_armv6=		Fails to compile: error: constant expression evaluates to -1
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking --disable-boost
 

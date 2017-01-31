@@ -10,8 +10,6 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A toolkit for building randomized language models
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/sparsehash
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/sparsehash
@@ -25,6 +23,10 @@ MAKE_JOBS_UNSAFE=yes
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+BROKEN_aarch64=		Fails to compile: invalid output constraint =a in asm
+BROKEN_armv6=		Fails to compile: invalid output constraint =a in asm
+BROKEN_powerpc64=	Does not build
 
 post-patch:
 	cd ${WRKSRC}/hadoop && ${MV} strings.cpp strings.cc && ${MV} strings.h s.h

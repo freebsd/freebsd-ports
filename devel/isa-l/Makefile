@@ -23,4 +23,6 @@ USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 
+BROKEN_aarch64=		Fails to compile: invalid conversion between vector type and integer type
+
 .include <bsd.port.mk>

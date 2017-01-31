@@ -29,6 +29,8 @@ WRKSRC=		${WRKDIR}/blobby-1.0rc3
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
+BROKEN_aarch64=		Fails to compile: I can't tell what endian-ness to use for your architecture
+
 post-install:
 	@${MKDIR}  ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

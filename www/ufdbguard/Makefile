@@ -12,6 +12,8 @@ COMMENT=	URL filter for the Squid web proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to compile: error: regparm is not valid on this platform
+
 USES=		perl5 shebangfix ssl
 SHEBANG_FILES=	samples/URLblocked.cgi
 GNU_CONFIGURE=	yes

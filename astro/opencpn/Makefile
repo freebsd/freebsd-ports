@@ -32,6 +32,8 @@ CMAKE_ARGS=	-DBUNDLE_DOCS=ON -DBUNDLE_GSHHS=CRUDE -DBUNDLE_TCDATA=ON
 LDFLAGS+=	-Wl,-E # plugins
 LDFLAGS+=	-Wl,--as-needed # ICE, SM, Xext
 
+BROKEN_aarch64=		Fails to compile: use of undeclared identifier rand
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/src/mygdal/cpl_csv.cpp \
