@@ -13,12 +13,10 @@ LICENSE=	PD
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
+DESCR=		${.CURDIR}/../${PORTNAME}3/pkg-descr
 RPMVERSION=	8.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
-
-PORTDOCS=	README
-DESCR=		${.CURDIR}/../${PORTNAME}3/pkg-descr
 
 .include <bsd.port.mk>

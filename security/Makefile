@@ -346,7 +346,6 @@
     SUBDIR += linux-c6-libtasn1
     SUBDIR += linux-c6-nss
     SUBDIR += linux-c6-openssl
-    SUBDIR += linux-c6-openssl-compat
     SUBDIR += linux-c7-cyrus-sasl2
     SUBDIR += linux-c7-gnutls
     SUBDIR += linux-c7-libgcrypt
@@ -355,7 +354,6 @@
     SUBDIR += linux-c7-libtasn1
     SUBDIR += linux-c7-nss
     SUBDIR += linux-c7-openssl
-    SUBDIR += linux-c7-openssl-compat
     SUBDIR += lockdown
     SUBDIR += log2timeline
     SUBDIR += logcheck
