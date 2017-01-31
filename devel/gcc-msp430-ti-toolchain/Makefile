@@ -24,6 +24,7 @@ EXTRACT_ONLY=	gcc-${GCC_VERSION}.tar.bz2 \
 		newlib-${NEWLIB_VERSION}.tar.gz \
 		msp430-gcc-${PATCHSET_VERSION}_source-patches.tar.bz2 \
 		msp430-gcc-support-files-${SUPPORT_VERSION}.zip
+
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Complete gcc-based toolcahin for TI MSP430 uC
 
@@ -34,6 +35,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc \
 		libisl.so:devel/isl
+
+BROKEN_aarch64=		fails to compile: c++: error: unsupported option -print-multi-os-directory
 
 USES=		bison compiler cpe gmake iconv libtool makeinfo ncurses \
 		tar:bzip2

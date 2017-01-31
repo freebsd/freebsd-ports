@@ -33,6 +33,8 @@ DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	doc
 DOXYGEN_PORTDOCS=	html latex
 
+BROKEN_armv6=		Fails to compile: undefined reference to cbrtl
+
 post-patch-EXAMPLES-off:
 	${REINPLACE_CMD} \
 		-e 's/add_subdirectory(example)//g' \

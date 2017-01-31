@@ -19,4 +19,6 @@ USES=		bison:build cmake perl5 tar:xz
 USE_PERL5=	build
 CMAKE_ARGS=	-DFL_LIBRARY=/usr/lib/libfl.a
 
+BROKEN_aarch64=		Fails to compile: undefined reference to sbrk
+
 .include <bsd.port.mk>

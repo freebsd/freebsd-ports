@@ -66,6 +66,8 @@ WXLAUNCHER_VARS=	PORTDATA+="resources *.ini *.png *.bmp"
 
 POST_PLIST+=	build-plist-empty
 
+BROKEN_aarch64=		Fails to compile: cast from pointer to smaller type loses information
+
 post-extract: .SILENT
 .for v in 1.1 1.1.1
 	(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \

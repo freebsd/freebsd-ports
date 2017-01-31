@@ -64,6 +64,8 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=\
 			--without-libpulse
 
+BROKEN_aarch64=		Fails to compile: no support for this architecture (yet)
+
 # src/audio_display.o: undefined reference to symbol '__atomic_load_8@@LIBATOMIC_1.0'
 .if empty(CFLAGS:M-march=*)
 CFLAGS+=		${CFLAGS_${ARCH}_${CHOSEN_COMPILER_TYPE}}

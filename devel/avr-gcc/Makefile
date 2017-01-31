@@ -47,6 +47,9 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
+BROKEN_aarch64=		Fails to package: cannot find manpages
+BROKEN_mips64=		Fails to configure: cannot compute suffix of object files
+
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64")

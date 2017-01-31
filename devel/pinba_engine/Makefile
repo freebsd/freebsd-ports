@@ -42,6 +42,8 @@ CFLAGS+=	-I${LOCALBASE}/include/mysql
 SUB_FILES=	pkg-message
 PORTDOCS=	NEWS TODO README
 
+BROKEN_aarch64=		Fails to configure: failed to find required header file include/mysql_version.h
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${INSTALL} ${WRKSRC}/default_tables.sql ${STAGEDIR}${DATADIR}

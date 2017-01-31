@@ -34,6 +34,8 @@ OPTIONS_DEFINE=		GNOME
 GNOME_USE=		gnome=libgnomeui
 GNOME_CONFIGURE_ENABLE=	gnome
 
+BROKEN_aarch64=		Fails to compile: variable has incomplete type union compat_IEEEl2bits
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's| _GCS_| __GCS_|' ${WRKSRC}/src/gcs-conf.h

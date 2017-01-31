@@ -36,6 +36,9 @@ USE_PERL5=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 
+BROKEN_aarch64=		Fails to package: cannot find manpages
+BROKEN_mips64=		Fails to configure: cannot compute suffix of object files
+
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64")

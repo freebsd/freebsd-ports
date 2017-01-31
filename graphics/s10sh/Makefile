@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	Fails to build: error: can not find the byte order for this architecture, fix bytesex.h
+BROKEN_armv6=	Fails to build: error: can not find the byte order for this architecture, fix bytesex.h
 
 USES=		ncurses readline
 

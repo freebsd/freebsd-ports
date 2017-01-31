@@ -35,6 +35,8 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN_aarch64=		Fails to compile: unknown register name %xmm0 in asm
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/Resources/DevPak
 	@${MV} ${WRKDIR}/*.pak ${WRKSRC}/Resources/DevPak/
