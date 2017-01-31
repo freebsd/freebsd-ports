@@ -2,10 +2,12 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	7.1.7.2606
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	https://dl.google.com/dl/earth/client/current/
-DISTFILES=	google-earth-stable_current_i386.rpm
+DISTFILES_amd64=google-earth-stable_current_x86_64.rpm
+DISTFILES_i386=	google-earth-stable_current_i386.rpm
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
