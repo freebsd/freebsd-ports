@@ -3,6 +3,7 @@
 
 PORTNAME=	wysiwyg
 DISTVERSION=	7.x-2.3
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	joneum@bsdproject.de
@@ -66,17 +67,17 @@ MODULE_DIRS=	editors/css editors/js editors plugins/break/images \
 
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
-OPTIONS_DEFINE=	TINYMCE3 CKEDITOR DOCS
+OPTIONS_DEFINE=	TINYMCE CKEDITOR DOCS
 
 CKEDITOR_DESC=	Install CKEditor
 CKEDITOR_RUN_DEPENDS=	CKEditor>0:www/ckeditor
 CKEDITOR_PLIST_FILES=	${DRUPAL_MODLIB}/ckeditor
 
-TINYMCE3_DESC=	Install TinyMCE3 Editor
-TINYMCE3_RUN_DEPENDS=	tinymce3>0:www/tinymce3
-TINYMCE3_PLIST_FILES=	${DRUPAL_MODLIB}/tinymce
+TINYMCE_DESC=	Install TinyMCE Editor
+TINYMCE_RUN_DEPENDS=	tinymce>0:www/tinymce
+TINYMCE_PLIST_FILES=	${DRUPAL_MODLIB}/tinymce
 
-post-install-TINYMCE3-on:
+post-install-TINYMCE-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}
 	${LN} -fs ${PREFIX}/www/tinymce ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}
 
