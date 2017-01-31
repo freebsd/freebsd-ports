@@ -181,7 +181,6 @@ _USES_PYTHON=	python
 .if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
 # Hack to disable COMPILER_RT in plist of unsupported architectures
 PLIST_SUB+=    COMPILER_RT="@comment "
-.else
 .endif
 
 .if ! ${OPTIONS_DEFINE:MGOLD}
@@ -426,7 +425,6 @@ build-plist:
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${RM} ${PLIST}.tmp
-
 
 check-commands:
 .for command in ${COMMANDS}
