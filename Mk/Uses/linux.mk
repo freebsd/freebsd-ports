@@ -50,6 +50,8 @@ IGNORE=			Linux CentOS ${LINUX_DIST_VER} is unsupported on ${ARCH}
 LINUX_DIST_VER?=	7.3.1611
 .if ${ARCH} == amd64
 LINUX_ARCH=		x86_64
+.elif ${ARCH} == i386
+LINUX_ARCH=		i386
 .else
 LINUX_ARCH=		${ARCH}
 IGNORE=			Linux CentOS ${LINUX_DIST_VER} is unsupported on ${ARCH}
@@ -238,7 +240,7 @@ DISTFILES_amd64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}/} \
 .endif
 .endif
 .if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Mi386)) \
- && empty(NOT_FOR_ARCHS:Mi386) && ${linux_ARGS} != c7
+ && empty(NOT_FOR_ARCHS:Mi386)
 DISTFILES_i386?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 			${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:i386/} \
 			${SHARE_DISTNAMES:S/$/${EXTRACT_SUFX_noarch}/}

@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	devel
 BIN_DISTNAMES=	binutils-2.25.1-22.base.el7 \
 		glibc-headers-2.17-157.el7_3.1 \
-		kernel-headers-3.10.0-514.6.1.el7 \
 		mpfr-3.1.1-4.el7 \
 		cpp-4.8.5-11.el7 \
 		gcc-4.8.5-11.el7 \
@@ -18,6 +17,13 @@ LIB_DISTNAMES=	binutils-devel-2.25.1-22.base.el7 \
 		libstdc++-devel-4.8.5-11.el7 \
 		libgomp-4.8.5-11.el7 \
 		libmpc-1.0.1-3.el7
+DISTFILES_amd64=${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
+		${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
+		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
+		kernel-headers-3.10.0-514.6.1.el7${EXTRACT_SUFX_amd64}:amd64
+DISTFILES_i386=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
+		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:i386/} \
+		kernel-headers-3.10.0-514.6.1.el7.centos.plus${EXTRACT_SUFX_i386}:i386
 SRC_DISTFILES=	binutils-2.25.1-22.base.el7${SRC_SUFX}:SOURCE \
 		glibc-2.17-157.el7_3.1${SRC_SUFX}:SOURCE \
 		kernel-3.10.0-514.6.1.el7${SRC_SUFX}:SOURCE \
