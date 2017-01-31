@@ -3,9 +3,8 @@
 
 PORTNAME=	hsetroot
 PORTVERSION=	1.0.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
-MASTER_SITES=	http://cdn.thegraveyard.org/releases/hsetroot/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wallpaper manipulation utility for X11
@@ -14,13 +13,20 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
-BROKEN=		unfetchable (apparently abandoned upstream)
+USE_GITHUB=	yes
+GH_ACCOUNT=	himdel
+GH_TAGNAME=	47d887b
 
-GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		pkgconfig
 USE_XORG=	x11
-LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 
 PLIST_FILES=	bin/hsetroot
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

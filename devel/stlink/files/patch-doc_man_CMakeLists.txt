@@ -1,0 +1,11 @@
+--- doc/man/CMakeLists.txt.orig	2017-01-30 06:06:25 UTC
++++ doc/man/CMakeLists.txt
+@@ -31,7 +31,7 @@ foreach(manpage ${MANPAGES})
+ 	endif()
+ 
+ 	if (f AND NOT WIN32)
+-		install(FILES ${f} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
++		install(FILES ${f} DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
+ 		unset(f)
+ 	endif()
+ endforeach()

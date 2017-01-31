@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.areca.us/support/s_freebsd/cli/ \
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	freebsdcli_V${CLI_VER}_${CLI_REV}
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line Interface for the Areca ARC-xxxx RAID controllers
 
 ONLY_FOR_ARCHS=	i386 amd64

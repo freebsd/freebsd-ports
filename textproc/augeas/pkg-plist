@@ -6,11 +6,11 @@ include/fa.h
 lib/libaugeas.a
 lib/libaugeas.so
 lib/libaugeas.so.0
-lib/libaugeas.so.0.20.0
+lib/libaugeas.so.0.21.1
 lib/libfa.a
 lib/libfa.so
 lib/libfa.so.1
-lib/libfa.so.1.4.1
+lib/libfa.so.1.4.4
 libdata/pkgconfig/augeas.pc
 man/man1/augparse.1.gz
 man/man1/augtool.1.gz
@@ -46,7 +46,9 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/collectd.aug
 %%DATADIR%%/lenses/dist/cpanel.aug
 %%DATADIR%%/lenses/dist/cron.aug
+%%DATADIR%%/lenses/dist/cron_user.aug
 %%DATADIR%%/lenses/dist/crypttab.aug
+%%DATADIR%%/lenses/dist/csv.aug
 %%DATADIR%%/lenses/dist/cups.aug
 %%DATADIR%%/lenses/dist/cyrus_imapd.aug
 %%DATADIR%%/lenses/dist/darkice.aug
@@ -107,6 +109,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/lvm.aug
 %%DATADIR%%/lenses/dist/mailscanner.aug
 %%DATADIR%%/lenses/dist/mailscanner_rules.aug
+%%DATADIR%%/lenses/dist/masterpasswd.aug
 %%DATADIR%%/lenses/dist/mcollective.aug
 %%DATADIR%%/lenses/dist/mdadm_conf.aug
 %%DATADIR%%/lenses/dist/memcached.aug
@@ -129,6 +132,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/ntp.aug
 %%DATADIR%%/lenses/dist/ntpd.aug
 %%DATADIR%%/lenses/dist/odbc.aug
+%%DATADIR%%/lenses/dist/opendkim.aug
 %%DATADIR%%/lenses/dist/openshift_config.aug
 %%DATADIR%%/lenses/dist/openshift_http.aug
 %%DATADIR%%/lenses/dist/openshift_quickstarts.aug
@@ -145,6 +149,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/postfix_access.aug
 %%DATADIR%%/lenses/dist/postfix_main.aug
 %%DATADIR%%/lenses/dist/postfix_master.aug
+%%DATADIR%%/lenses/dist/postfix_passwordmap.aug
 %%DATADIR%%/lenses/dist/postfix_sasl_smtpd.aug
 %%DATADIR%%/lenses/dist/postfix_transport.aug
 %%DATADIR%%/lenses/dist/postfix_virtual.aug
@@ -163,6 +168,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/redis.aug
 %%DATADIR%%/lenses/dist/reprepro_uploaders.aug
 %%DATADIR%%/lenses/dist/resolv.aug
+%%DATADIR%%/lenses/dist/rhsm.aug
 %%DATADIR%%/lenses/dist/rmt.aug
 %%DATADIR%%/lenses/dist/rsyncd.aug
 %%DATADIR%%/lenses/dist/rsyslog.aug
@@ -189,6 +195,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/ssh.aug
 %%DATADIR%%/lenses/dist/sshd.aug
 %%DATADIR%%/lenses/dist/sssd.aug
+%%DATADIR%%/lenses/dist/star.aug
 %%DATADIR%%/lenses/dist/stunnel.aug
 %%DATADIR%%/lenses/dist/subversion.aug
 %%DATADIR%%/lenses/dist/sudoers.aug
@@ -208,7 +215,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_aptcacherngsecurity.aug
 %%DATADIR%%/lenses/dist/tests/test_aptconf.aug
 %%DATADIR%%/lenses/dist/tests/test_aptpreferences.aug
-%%DATADIR%%/lenses/dist/tests/test_aptsource.aug
+%%DATADIR%%/lenses/dist/tests/test_aptsources.aug
 %%DATADIR%%/lenses/dist/tests/test_authorized_keys.aug
 %%DATADIR%%/lenses/dist/tests/test_automaster.aug
 %%DATADIR%%/lenses/dist/tests/test_automounter.aug
@@ -229,7 +236,9 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_collectd.aug
 %%DATADIR%%/lenses/dist/tests/test_cpanel.aug
 %%DATADIR%%/lenses/dist/tests/test_cron.aug
+%%DATADIR%%/lenses/dist/tests/test_cron_user.aug
 %%DATADIR%%/lenses/dist/tests/test_crypttab.aug
+%%DATADIR%%/lenses/dist/tests/test_csv.aug
 %%DATADIR%%/lenses/dist/tests/test_cups.aug
 %%DATADIR%%/lenses/dist/tests/test_cyrus_imapd.aug
 %%DATADIR%%/lenses/dist/tests/test_darkice.aug
@@ -291,6 +300,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_lvm.aug
 %%DATADIR%%/lenses/dist/tests/test_mailscanner.aug
 %%DATADIR%%/lenses/dist/tests/test_mailscanner_rules.aug
+%%DATADIR%%/lenses/dist/tests/test_masterpasswd.aug
 %%DATADIR%%/lenses/dist/tests/test_mcollective.aug
 %%DATADIR%%/lenses/dist/tests/test_mdadm_conf.aug
 %%DATADIR%%/lenses/dist/tests/test_memcached.aug
@@ -313,6 +323,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_ntp.aug
 %%DATADIR%%/lenses/dist/tests/test_ntpd.aug
 %%DATADIR%%/lenses/dist/tests/test_odbc.aug
+%%DATADIR%%/lenses/dist/tests/test_opendkim.aug
 %%DATADIR%%/lenses/dist/tests/test_openshift_config.aug
 %%DATADIR%%/lenses/dist/tests/test_openshift_http.aug
 %%DATADIR%%/lenses/dist/tests/test_openshift_quickstarts.aug
@@ -329,6 +340,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_postfix_access.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_main.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_master.aug
+%%DATADIR%%/lenses/dist/tests/test_postfix_passwordmap.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_sasl_smtpd.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_transport.aug
 %%DATADIR%%/lenses/dist/tests/test_postfix_virtual.aug
@@ -347,6 +359,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_redis.aug
 %%DATADIR%%/lenses/dist/tests/test_reprepro_uploaders.aug
 %%DATADIR%%/lenses/dist/tests/test_resolv.aug
+%%DATADIR%%/lenses/dist/tests/test_rhsm.aug
 %%DATADIR%%/lenses/dist/tests/test_rmt.aug
 %%DATADIR%%/lenses/dist/tests/test_rsyncd.aug
 %%DATADIR%%/lenses/dist/tests/test_rsyslog.aug
@@ -372,6 +385,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_ssh.aug
 %%DATADIR%%/lenses/dist/tests/test_sshd.aug
 %%DATADIR%%/lenses/dist/tests/test_sssd.aug
+%%DATADIR%%/lenses/dist/tests/test_star.aug
 %%DATADIR%%/lenses/dist/tests/test_stunnel.aug
 %%DATADIR%%/lenses/dist/tests/test_subversion.aug
 %%DATADIR%%/lenses/dist/tests/test_sudoers.aug
@@ -381,6 +395,8 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_syslog.aug
 %%DATADIR%%/lenses/dist/tests/test_systemd.aug
 %%DATADIR%%/lenses/dist/tests/test_thttpd.aug
+%%DATADIR%%/lenses/dist/tests/test_tmpfiles.aug
+%%DATADIR%%/lenses/dist/tests/test_trapperkeeper.aug
 %%DATADIR%%/lenses/dist/tests/test_tuned.aug
 %%DATADIR%%/lenses/dist/tests/test_up2date.aug
 %%DATADIR%%/lenses/dist/tests/test_updatedb.aug
@@ -396,8 +412,11 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_xorg.aug
 %%DATADIR%%/lenses/dist/tests/test_xymon.aug
 %%DATADIR%%/lenses/dist/tests/test_xymon_alerting.aug
+%%DATADIR%%/lenses/dist/tests/test_yaml.aug
 %%DATADIR%%/lenses/dist/tests/test_yum.aug
 %%DATADIR%%/lenses/dist/thttpd.aug
+%%DATADIR%%/lenses/dist/tmpfiles.aug
+%%DATADIR%%/lenses/dist/trapperkeeper.aug
 %%DATADIR%%/lenses/dist/tuned.aug
 %%DATADIR%%/lenses/dist/up2date.aug
 %%DATADIR%%/lenses/dist/updatedb.aug
@@ -413,6 +432,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/xorg.aug
 %%DATADIR%%/lenses/dist/xymon.aug
 %%DATADIR%%/lenses/dist/xymon_alerting.aug
+%%DATADIR%%/lenses/dist/yaml.aug
 %%DATADIR%%/lenses/dist/yum.aug
 share/vim/vimfiles/ftdetect/augeas.vim
 share/vim/vimfiles/syntax/augeas.vim
