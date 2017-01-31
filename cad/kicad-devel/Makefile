@@ -16,7 +16,6 @@ COMMENT=		Schematic and PCB editing software
 LICENSE=	GPLv3
 
 BUILD_DEPENDS= ${LOCALBASE}/include/glm/glm.hpp:math/glm
-
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
@@ -32,6 +31,8 @@ USE_WX=		3.0
 WX_COMPS=	wx
 WX_UNICODE=	yes
 USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
+
+BROKEN_aarch64=		Fails to compile: use of undeclared identifier builtin_ia32_emms
 
 OPTIONS_DEFINE=	DOCS
 

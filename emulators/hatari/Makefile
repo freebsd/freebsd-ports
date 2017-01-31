@@ -27,6 +27,9 @@ CMAKE_ARGS=	-DETCDIR:PATH="${PREFIX}/etc" \
 		-DREADLINE_FOUND:BOOL=ON
 INSTALLS_ICONS=	yes
 
+BROKEN_aarch64=		Fails to configure: error: unrecognized CPU type
+BROKEN_armv6=		Fails to configure: CMake Error: Generator: execution of make failed
+
 OPTIONS_DEFINE=		DEBUG DOCS SDL2 WINUAE
 
 DEBUG_CFLAGS_OFF=	-DNDEBUG

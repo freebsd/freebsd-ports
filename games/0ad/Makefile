@@ -41,6 +41,9 @@ USE_WX=		2.8+
 WX_COMPS=	wx:lib
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 
+BROKEN_aarch64=		Fails to compile: no member named verifyHeapAccessDisassembly
+BROKEN_armv6=		Fails to link: fatal error: conftest: Unknown error: -1
+
 PORTDATA=	*
 
 .include <bsd.port.pre.mk>

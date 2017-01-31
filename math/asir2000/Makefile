@@ -35,6 +35,8 @@ ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}${EXTRACT_SUFX}
 GC_SRC=		gc-${GC_VERSION}.tar.gz
 WRKSRC=		${WRKDIR}/asir2000
 
+BROKEN_aarch64=		Fails to compile: the collector has not been ported to this machine/OS combination
+
 LIB_DATA= alpi bfct bgk const cyclic defs.h dfff dmul dmul102 fctrdata \
 	fctrtest fff glib gr ifplot katsura launch mat nf num primdec \
 	primdec_lex primdec_mod ratint robot solve sp sturm sym weight xm

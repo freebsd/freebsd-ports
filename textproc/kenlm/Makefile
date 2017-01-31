@@ -11,8 +11,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	KenLM Language Model Toolkit
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	bjam:devel/boost-jam \
 		bash:shells/bash
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
@@ -21,6 +19,9 @@ USES+=		compiler:c++11-lib
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	BOOST_BUILD_PATH=${WRKSRC}/jam-files/boost-build
+
+BROKEN_aarch64=		Fails to compile: target architecture was not detected as supported by Double-Conversion
+BROKEN_powerpc64=	Does not build
 
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/bjam --toolset=${CHOSEN_COMPILER_TYPE} --with-boost=${LOCALBASE} ${_MAKE_JOBS})

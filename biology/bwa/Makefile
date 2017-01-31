@@ -11,6 +11,8 @@ COMMENT=	Burrows-Wheeler sequence aligner
 
 LICENSE=	GPLv3
 
+BROKEN_aarch64=		fails to compile: error: invalid conversion between vector type and integer type
+
 USES=		perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	qualfa2fq.pl xa2multi.pl
 USE_PERL5=	run
