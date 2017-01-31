@@ -4,7 +4,7 @@
 PORTNAME=	hsetroot
 PORTVERSION=	1.0.2
 PORTREVISION=	12
-CATEGORIES=	graphics
+CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wallpaper manipulation utility for X11
