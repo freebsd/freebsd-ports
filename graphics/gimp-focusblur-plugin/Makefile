@@ -25,6 +25,8 @@ USE_GNOME=	gtk20 intltool
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}
 
+EXPLICIT_SAFESTACK=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lm -L${LOCALBASE}/lib
 
