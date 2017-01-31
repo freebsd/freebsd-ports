@@ -107,6 +107,9 @@ OPTIONS_DEFAULT=	CTYPE \
 			XMLREADER \
 			XMLWRITER
 
+NOPIE_PORTS=		yes
+NORELRO_PORTS=		yes
+
 .include <bsd.port.options.mk>
 
 .for opt in ${OPTIONS_DEFINE}
