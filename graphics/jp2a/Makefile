@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	jp2a
-PORTVERSION=	1.0.6
-PORTREVISION=	7
+PORTVERSION=	1.0.7
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
-MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts JPG images to ASCII
@@ -15,8 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		jpeg tar:bzip2
+USES=		autoreconf jpeg
 GNU_CONFIGURE=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	cslarsen
 
 CONFIGURE_ARGS=	--with-jpeg-prefix=${LOCALBASE} \
 		--with-curl-config=${LOCALBASE}/bin/curl-config
