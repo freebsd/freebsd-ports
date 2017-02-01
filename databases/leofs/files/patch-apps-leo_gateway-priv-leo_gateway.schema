@@ -1,5 +1,5 @@
---- deps/leo_gateway/priv/leo_gateway.schema.orig	2014-08-06 05:56:49.000000000 +0300
-+++ deps/leo_gateway/priv/leo_gateway.schema	2014-08-13 23:13:17.000000000 +0300
+--- apps/leo_gateway/priv/leo_gateway.schema.orig	2014-08-06 05:56:49.000000000 +0300
++++ apps/leo_gateway/priv/leo_gateway.schema	2014-08-13 23:13:17.000000000 +0300
 @@ -37,7 +37,7 @@
   "sasl.sasl_error_logger",
   [

@@ -1,5 +1,5 @@
---- deps/leo_manager/priv/leo_manager_1.schema.orig	2014-06-15 20:05:45.000000000 +0300
-+++ deps/leo_manager/priv/leo_manager_1.schema	2014-06-15 20:06:47.000000000 +0300
+--- apps/leo_manager/priv/leo_manager_1.schema.orig	2014-06-15 20:05:45.000000000 +0300
++++ apps/leo_manager/priv/leo_manager_1.schema	2014-06-15 20:06:47.000000000 +0300
 @@ -37,7 +37,7 @@
   "sasl.sasl_error_logger",
   [
