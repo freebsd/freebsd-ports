@@ -27,6 +27,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 GLIB_SCHEMAS=	org.gnome.Goobox.gschema.xml
 
 OPTIONS_DEFINE=	NOTIFY
