@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwww
-PORTVERSION=	6.16
+PORTVERSION=	6.17
 DISTVERSIONPREFIX=	perl-
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
@@ -27,6 +27,7 @@ BUILD_DEPENDS=	p5-Authen-NTLM>=1.02:security/p5-Authen-NTLM \
 		p5-HTTP-Negotiate>=6:www/p5-HTTP-Negotiate \
 		p5-LWP-MediaTypes>=6:www/p5-LWP-MediaTypes \
 		p5-Net-HTTP>=6.07:net/p5-Net-HTTP \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-URI>=1.10:net/p5-URI \
 		p5-WWW-RobotRules>=6:www/p5-WWW-RobotRules
 RUN_DEPENDS:=	${BUILD_DEPENDS}
