@@ -61,6 +61,9 @@ ADDRSTD_LIB_DEPENDS=	libpcre.so:devel/pcre
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.pre.mk>
 
 post-patch:
