@@ -29,6 +29,8 @@ GH_TAGNAME=	d0a0bd2
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLUGINS=	gimp-lensfun
 
+EXPLICIT_SAFESTACK=	yes
+
 # installed files
 .for plugin in ${PLUGINS}
 PLIST_FILES+=	${PLUGIN_DIR}/${plugin}
