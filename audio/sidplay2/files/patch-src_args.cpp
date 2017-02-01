@@ -14,8 +14,9 @@
      {   // Read in MM:SS format
          int val;
 -        *sep = '\0';
+-        val  = atoi (str);
 +        char *tmp = strndup(str, sep - str);
-         val  = atoi (str);
++        val  = atoi (tmp);
 +        free(tmp);
          if (val < 0 || val > 99)
              return false;
