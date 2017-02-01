@@ -1,4 +1,4 @@
---- src/njamedit.cpp.orig	2008-06-26 22:38:47.000000000 +0000
+--- src/njamedit.cpp.orig	2008-06-26 22:38:47 UTC
 +++ src/njamedit.cpp
 @@ -114,7 +114,7 @@ void NjamEngine::LevelEditor()
  				key = SDLK_a;
