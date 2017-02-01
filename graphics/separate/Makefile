@@ -39,6 +39,8 @@ MAKE_ENV=	TARGETS="${BIN_TARGETS}" \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+EXPLICIT_SAFESTACK=	yes
+
 post-patch:
 	@${REINPLACE_CMD} \
 		'/^CC/s|=|?=|; s| make| ${MAKE_CMD}|; /^LIBS/s/$$/ -lm/;' \
