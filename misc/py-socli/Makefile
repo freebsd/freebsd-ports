@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	socli
-PORTVERSION=	2.9
+PORTVERSION=	3.0
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,8 @@ COMMENT=	Stack overflow command line interface
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests
 
 USES=		dos2unix python
