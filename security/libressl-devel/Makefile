@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTVERSION=	2.5.1
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -25,11 +24,13 @@ CONFLICTS_INSTALL=	libressl-[0-9]* \
 			openssl-[0-9]* \
 			openssl-devel-[0-9]*
 
+MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-MAN3
+
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
-CFLAGS+=	-fpic -DPIC
+CFLAGS+=	-fpic -DPIC -Wl,-rpath,${PREFIX}/lib -Wl,--as-needed
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
