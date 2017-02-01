@@ -28,3 +28,5 @@
 %%LIBAWLDIR%%/inc/iCalendar.php
 %%LIBAWLDIR%%/inc/vCalendar.php
 %%LIBAWLDIR%%/inc/vComponent.php
+%%LIBAWLDIR%%/inc/vObject.php
+%%LIBAWLDIR%%/inc/vProperty.php
