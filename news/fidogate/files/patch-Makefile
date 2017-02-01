@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Oct 17 13:49:26 1999
-+++ Makefile	Fri Jan 21 18:04:46 2000
-@@ -9,7 +9,7 @@
+--- Makefile.orig	2003-06-08 21:01:25 UTC
++++ Makefile
+@@ -9,7 +9,7 @@ TOPDIR		= .
  include $(TOPDIR)/config.make
  include $(TOPDIR)/rules.make
  
