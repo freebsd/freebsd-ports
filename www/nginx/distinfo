@@ -1,4 +1,4 @@
-TIMESTAMP = 1485913782
+TIMESTAMP = 1485989796
 SHA256 (nginx-1.10.3.tar.gz) = 75020f1364cac459cb733c4e1caed2d00376e40ea05588fb8793076a4c69dd90
 SIZE (nginx-1.10.3.tar.gz) = 911509
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1
@@ -41,8 +41,8 @@ SHA256 (anomalizer-ngx_aws_auth-1e62670_GH0.tar.gz) = db7ceef4ae22cf5bfaf5abae64
 SIZE (anomalizer-ngx_aws_auth-1e62670_GH0.tar.gz) = 8260
 SHA256 (nginx-clojure-nginx-clojure-v0.4.4_GH0.tar.gz) = 642ebf4724fa7c3efd5349e60b442ac8671497406834804c903ec548bfdcb691
 SIZE (nginx-clojure-nginx-clojure-v0.4.4_GH0.tar.gz) = 603856
-SHA256 (grahamedgecombe-nginx-ct-f3cad5e_GH0.tar.gz) = 846e148f09ffea2ffc1b09b20c84408e23c170313f967513a85009717227c13a
-SIZE (grahamedgecombe-nginx-ct-f3cad5e_GH0.tar.gz) = 5521
+SHA256 (grahamedgecombe-nginx-ct-v1.3.2_GH0.tar.gz) = b4ceae549b9dbf84b2e511633982e4efeee0388e3b7a038a8bac555008a77b88
+SIZE (grahamedgecombe-nginx-ct-v1.3.2_GH0.tar.gz) = 6844
 SHA256 (openresty-echo-nginx-module-46334b3_GH0.tar.gz) = 00d42a5f562a0be5570110d9b70c8f2cace93b292421a6f994cf4ec76a8979f0
 SIZE (openresty-echo-nginx-module-46334b3_GH0.tar.gz) = 52766
 SHA256 (happyfish100-fastdfs-nginx-module-5a8110f_GH0.tar.gz) = 58daa08a5ab9b9de5459817fc088230f4092fb818b87a2cb61b217952a5af54d
