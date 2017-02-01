@@ -19,4 +19,7 @@ USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
 .include <bsd.port.mk>
