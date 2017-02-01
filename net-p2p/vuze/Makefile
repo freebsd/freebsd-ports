@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	vuze
-PORTVERSION=	5.7.0.0
+PORTVERSION=	5.7.4.0
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
 DISTNAME=	Vuze_${PORTVERSION:S/.//g}_source
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client written in Java
 
 LICENSE=	GPLv2
@@ -21,10 +21,10 @@ RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_ANT=	yes
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 INSTALLS_ICONS=	yes
 
 JARFILE=	${PORTNAME}.jar
