@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppetserver
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -27,8 +27,6 @@ GROUPS=		puppet
 
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 SUB_FILES=	pkg-message
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFAULT=	RFACTER
 OPTIONS_RADIO=		FACTER
@@ -58,14 +56,11 @@ post-patch:
 .endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${DATADIR}/cli
 	@${MKDIR} ${STAGEDIR}${DATADIR}/cli/apps
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/services.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/puppet/code
-	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}/var/log/puppetserver
 	@${MKDIR} ${STAGEDIR}/var/puppet/server
 	${INSTALL_DATA} ${WRKSRC}/puppet-server-release.jar ${STAGEDIR}${DATADIR}/puppet-server-release.jar
