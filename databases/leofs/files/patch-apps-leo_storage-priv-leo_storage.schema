@@ -1,5 +1,5 @@
---- deps/leo_storage/priv/leo_storage.schema.orig	2014-12-17 11:21:38.000000000 +0200
-+++ deps/leo_storage/priv/leo_storage.schema	2014-12-20 00:06:58.000000000 +0200
+--- apps/leo_storage/priv/leo_storage.schema.orig	2014-12-17 11:21:38.000000000 +0200
++++ apps/leo_storage/priv/leo_storage.schema	2014-12-20 00:06:58.000000000 +0200
 @@ -37,7 +37,7 @@
   "sasl.sasl_error_logger",
   [
