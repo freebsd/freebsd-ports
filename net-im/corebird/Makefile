@@ -3,6 +3,7 @@
 
 PORTNAME=	corebird
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 USE_GITHUB=	yes
 GH_ACCOUNT=	baedert
 
-USES=		autoreconf gettext gmake libtool pkgconfig sqlite
+USES=		autoreconf gmake libtool pkgconfig sqlite
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 pango
@@ -28,7 +29,7 @@ INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS=	--disable-spellcheck # spellchecking depends on gspell >= 1.0.x
 
-OPTIONS_DEFINE=		GSTREAMER
+OPTIONS_DEFINE=		GSTREAMER NLS
 OPTIONS_DEFAULT=	GSTREAMER
 OPTIONS_SUB=		yes
 
@@ -36,6 +37,9 @@ GSTREAMER_LIB_DEPENDS=		libgstbase-1.0.so:multimedia/gstreamer1 \
 				libgstreamer-1.0.so:multimedia/gstreamer1
 GSTREAMER_USE=			gstreamer1=yes,bad,good,gtksink,hls,libav,x,ximagesrc
 GSTREAMER_CONFIGURE_OFF=	--disable-video
+
+NLS_USES=			gettext
+NLS_CONFIGURE_OFF=		--disable-nls
 
 GLIB_SCHEMAS=	org.baedert.corebird.gschema.xml
 
