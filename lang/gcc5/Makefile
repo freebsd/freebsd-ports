@@ -28,7 +28,7 @@ CPE_VERSION=	${GCC_VERSION}
 
 GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64 arm armv6 armv6hf
+ONLY_FOR_ARCHS=	amd64 arm armv6 armv6hf i386 powerpc powerpc64 sparc64
 USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
