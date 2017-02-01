@@ -53,8 +53,6 @@ GTK2_DATA_FILES=	${WRKSRC}/src/gtk/vba.glade
 post-patch:
 	@${REINPLACE_CMD} -e '/for(int i = 0; i < 16; i++/s| i|&_|g' \
 		${WRKSRC}/src/sdl/debugger.cpp
-	@${REINPLACE_CMD} -e '/^namespace std/ { x; \
-		s|^|#include <sys/types.h>|; H; x; }' ${WRKSRC}/src/expr.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${PROG_FILES} ${STAGEDIR}${PREFIX}/bin
