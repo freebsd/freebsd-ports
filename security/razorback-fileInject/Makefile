@@ -28,4 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DEBUG_CONFIGURE_ENABLE=	debug
 ASSERT_CONFIGURE_ENABLE=assert
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 .include <bsd.port.mk>
