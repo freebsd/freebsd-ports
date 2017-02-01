@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.3.0.1-alpha
+DISTVERSION=	0.3.0.2-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -22,19 +22,20 @@ CPE_VENDOR=	torproject
 #CPE_VERSION=	${DISTVERSION:C/-.*//}
 #CPE_UPDATE=	${DISTVERSION:C/.*-//}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
+CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}"
 CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
-OPTIONS_DEFINE=	STATIC_TOR TCMALLOC TOR2WEB TRANSPARENT
+OPTIONS_DEFINE=	MANPAGES STATIC_TOR TCMALLOC TOR2WEB TRANSPARENT
+OPTIONS_SUB=	yes
 
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 TOR2WEB_DESC=		(EXPERT OPTION) Faster but non-anonymous hidden services
 TRANSPARENT_DESC=	Transparent proxy support
 
-OPTIONS_DEFAULT=	TRANSPARENT
+OPTIONS_DEFAULT=	MANPAGES TRANSPARENT
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
@@ -46,6 +47,9 @@ CONFLICTS=	tor-[0-9]*
 
 STATIC_TOR_USES=	ssl:build
 STATIC_TOR_USES_OFF=	ssl
+
+MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
+MANPAGES_CONFIGURE_OFF=	--disable-asciidoc
 
 .include <bsd.port.options.mk>
 
