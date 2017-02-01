@@ -2,6 +2,7 @@
 
 PORTNAME=	stlink
 PORTVERSION=	1.3.0.20170131
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -25,7 +26,7 @@ PORTDOCS=	README.md tested-boards.md tutorial.md
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/README.md
 	${INSTALL_DATA} ${WRKSRC}/doc/tested-boards.md ${STAGEDIR}${DOCSDIR}/tested-boards.md
 	${INSTALL_DATA} ${WRKSRC}/doc/tutorial.md ${STAGEDIR}${DOCSDIR}/tutorial.md
 
