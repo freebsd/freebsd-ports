@@ -45,7 +45,7 @@ RUN_DEPENDS=	linux-c6-libasyncns>0:dns/linux-c6-libasyncns \
 		linux-c6-libmikmod>0:audio/linux-c6-mikmod \
 		linux-c6-openal-soft>0:audio/linux-c6-openal-soft \
 		linux-c6-libvorbis>0:audio/linux-c6-libvorbis \
-		linux-c6-nas-libs>0:audio/linux-c6-nas-libs \
+		linux-c6-nas>0:audio/linux-c6-nas-libs \
 		linux-c6-libtheora>0:multimedia/linux-c6-libtheora \
 		linux-c6-libv4l>0:multimedia/linux-c6-libv4l \
 		linux-c6-qt47-webkit>0:www/linux-c6-qt47-webkit \
