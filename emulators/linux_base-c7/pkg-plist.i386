@@ -606,6 +606,7 @@ usr/lib/gconv/libISOIR165.so
 usr/lib/gconv/libJIS.so
 usr/lib/gconv/libJISX0213.so
 usr/lib/gconv/libKSC.so
+@rmtry usr/lib/gio/modules/giomodule.cache
 usr/lib/i686/nosegneg/libc-2.17.so
 usr/lib/i686/nosegneg/libc.so.6
 usr/lib/i686/nosegneg/libm-2.17.so
@@ -2593,6 +2594,7 @@ var/mail
 @dir etc/xinetd.d
 @dir opt
 @dir srv
+@dir usr/lib/gio/modules
 @dir var/adm
 @dir var/cache/ldconfig
 @dir var/empty
@@ -2619,3 +2621,4 @@ var/mail
 @postexec mkdir -p %D/sys
 @postunexec rmdir %D/sys 2>/dev/null || true
 @postexec %D/usr/sbin/ldconfig
+@postexec %D/usr/bin/gio-querymodules-32 /usr/lib/gio/modules
