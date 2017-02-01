@@ -1062,7 +1062,7 @@ CONFIGURE_ARGS+=--with-http_v2_module
 .if ${PORT_OPTIONS:MNJS}
 GH_ACCOUNT+=	nginx:njs
 GH_PROJECT+=	njs:njs
-GH_TAGNAME+=	f8c642a:njs
+GH_TAGNAME+=	f106743:njs
 .if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_njs}/nginx
 .else
