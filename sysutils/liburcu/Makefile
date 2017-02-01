@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liburcu
-PORTVERSION=	0.7.17
+PORTVERSION=	0.9.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${PORTVERSION}
@@ -11,8 +11,6 @@ MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	Userspace read-copy-update (RCU) data synchronization library
 
 LICENSE=	LGPL21
-
-PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
 
 BROKEN_aarch64=	Fails to build: Cannot build: unrecognized architecture detected
 BROKEN_armv6=	Fails to build: address argument to atomic builtin must be a pointer

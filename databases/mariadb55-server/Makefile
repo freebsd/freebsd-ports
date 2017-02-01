@@ -15,7 +15,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/sourc
 		http://mirror.switch.ch/mirror/mariadb/${PORTNAME}-${PORTVERSION}/source/
 PKGNAMESUFFIX?=	55-server
 
-MAINTAINER=	never@nevermind.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2

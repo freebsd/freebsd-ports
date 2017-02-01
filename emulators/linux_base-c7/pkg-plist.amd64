@@ -609,6 +609,7 @@ usr/lib/gconv/libISOIR165.so
 usr/lib/gconv/libJIS.so
 usr/lib/gconv/libJISX0213.so
 usr/lib/gconv/libKSC.so
+@rmtry usr/lib/gio/modules/giomodule.cache
 usr/lib/i686/nosegneg/libc-2.17.so
 usr/lib/i686/nosegneg/libc.so.6
 usr/lib/i686/nosegneg/libm-2.17.so
@@ -1066,6 +1067,7 @@ usr/lib64/gconv/libISOIR165.so
 usr/lib64/gconv/libJIS.so
 usr/lib64/gconv/libJISX0213.so
 usr/lib64/gconv/libKSC.so
+@rmtry usr/lib64/gio/modules/giomodule.cache
 usr/lib64/krb5/plugins/tls/k5tls.so
 usr/lib64/ld-2.17.so
 usr/lib64/ld-linux-x86-64.so.2
@@ -3038,6 +3040,8 @@ var/mail
 @dir etc/xinetd.d
 @dir opt
 @dir srv
+@dir usr/lib/gio/modules
+@dir usr/lib64/gio/modules
 @dir var/adm
 @dir var/cache/ldconfig
 @dir var/empty
@@ -3064,3 +3068,5 @@ var/mail
 @postexec mkdir -p %D/sys
 @postunexec rmdir %D/sys 2>/dev/null || true
 @postexec %D/usr/sbin/ldconfig
+@postexec %D/usr/bin/gio-querymodules-32 /usr/lib/gio/modules
+@postexec %D/usr/bin/gio-querymodules-64 /usr/lib64/gio/modules

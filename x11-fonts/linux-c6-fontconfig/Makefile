@@ -3,7 +3,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -16,15 +16,12 @@ USE_LDCONFIG=	yes
 USE_LINUX=	expat
 USE_LINUX_RPM=	yes
 
-# We will use some other configuration file, so delete a linux one
-# Don't let the linux fc-cache mess up the native cache file
 post-patch:
-	@${RM} -r ${WRKSRC}/etc ${WRKSRC}/usr/share/fonts ${WRKSRC}/var \
-		${WRKSRC}/usr/bin/fc-cache \
-		${WRKSRC}/usr/share/man/man1/fc-cache.1.gz
+	@${RM} -r ${WRKSRC}/etc ${WRKSRC}/usr/share/fonts ${WRKSRC}/var
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc
 	${LN} -s ${LOCALBASE}/etc/fonts ${STAGEDIR}${PREFIX}/etc/
+	${MKDIR} ${STAGEDIR}${PREFIX}/var/db/fontconfig
 
 .include <bsd.port.mk>

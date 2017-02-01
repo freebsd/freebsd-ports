@@ -27,3 +27,21 @@
  	}
  	else
  	{
+@@ -2017,7 +2017,7 @@ static int revcmp(const char *rev1, cons
+ 	char *tmp;
+ 	int v1, v2;
+ 
+-	if((tmp = strchr(r1, '.')) != 0L)
++	if((tmp = strchr((char *)r1, '.')) != 0L)
+ 	{
+ 		tmp[0] = '\0';
+ 		q1 = tmp + 1;
+@@ -2025,7 +2025,7 @@ static int revcmp(const char *rev1, cons
+ 
+ 	v1 = atoi(r1);
+ 
+-	if((tmp = strchr(r2, '.')) != 0L)
++	if((tmp = strchr((char *)r2, '.')) != 0L)
+ 	{
+ 		tmp[0] = '\0';
+ 		q2 = tmp + 1;

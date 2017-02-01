@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTSCOUT=	limit:^2\.
 
-IGNORE_WITH_PHP=70
+IGNORE_WITH_PHP=70 71
 USES=		php:ext tar:tgz
 
 .include <bsd.port.mk>
