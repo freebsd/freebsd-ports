@@ -19,9 +19,7 @@ CONFLICTS_INSTALL=	mariadb5[0-46-9]-client-* \
 			percona*-client-*
 
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1
-
 USE_LDCONFIG=	${PREFIX}/lib/mysql
-
 CLIENT_ONLY=	yes
 
 .include "${MASTERDIR}/Makefile"
