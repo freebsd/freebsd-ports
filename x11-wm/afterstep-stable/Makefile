@@ -3,7 +3,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	AFTERSTEP/stable
 DISTNAME=	AfterStep-${PORTVERSION}
@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 SHEBANG_FILES=	tools/ascommand.pl \
 		tools/importasmenu
 MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=	-fgnu89-inline
 CONFIGURE_ARGS+=--disable-ascp \
 		--enable-i18n \
 		--disable-send-postcard-to-developer \
