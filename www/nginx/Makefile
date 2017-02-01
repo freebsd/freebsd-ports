@@ -434,10 +434,10 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_clojure}/src/c
 .endif
 
 .if ${PORT_OPTIONS:MCT}
-GIT_CT_VERSION=	f3cad5e
+GIT_CT_VERSION=	1.3.2
 GH_ACCOUNT+=	grahamedgecombe:ct
 GH_PROJECT+=	nginx-ct:ct
-GH_TAGNAME+=	${GIT_CT_VERSION}:ct
+GH_TAGNAME+=	v${GIT_CT_VERSION}:ct
 .if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_ct}
 .else
