@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Payment_DTA
-PORTVERSION=	1.2.1
+PORTVERSION=	1.4.3
 CATEGORIES=	finance pear
 
 MAINTAINER=	rottner@punkt.de
