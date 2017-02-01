@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	centos-release-7-3.1611.el7.centos \
@@ -147,7 +147,7 @@ post-extract:
 post-patch:
 	@${RM} -r ${REMOVE_DIRS:S|^|${WRKSRC}/|}
 	@${RM} ${REMOVE_FILES:S|^|${WRKSRC}/|}
-	@${FIND} ${WRKSRC}/usr -type d -empty -delete
+	@${FIND} ${WRKSRC}/usr -type d -empty -not -path '*/lib*/gio/*' -delete
 	@${BRANDELF} -t Linux ${WRKSRC}/usr/lib/ld-2.17.so
 .if ${LINUX_ARCH} == x86_64
 	@${BRANDELF} -t Linux ${WRKSRC}/usr/lib64/ld-2.17.so
