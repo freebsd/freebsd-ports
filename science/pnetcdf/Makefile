@@ -13,8 +13,10 @@ COMMENT=	Library providing high-performance I/O
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=	MPI
-OPTIONS_SINGLE_MPI=	OPENMPI MPICH2
+OPTIONS_SINGLE_MPI=	OPENMPI OPENMPI2 MPICH2
 OPTIONS_DEFAULT=OPENMPI
+OPENMPI_DESC=		Parallel processing support via Open MPI 1.x
+OPENMPI2_DESC=		Parallel processing support via Open MPI 2.x
 
 CONFLICTS_INSTALL=	hdf-4.*
 
@@ -31,6 +33,8 @@ MPICH2_CONFIGURE_ON=	--with-mpi=${LOCALBASE}
 MPICH2_LIB_DEPENDS=	libmpich.so:net/mpich2
 OPENMPI_CONFIGURE_ON=	--with-mpi=${LOCALBASE}/mpi/openmpi
 OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+OPENMPI2_CONFIGURE_ON=	--with-mpi=${LOCALBASE}/mpi/openmpi2
+OPENMPI2_LIB_DEPENDS=	libmpi.so:net/openmpi2
 
 post-patch:
 	@${REINPLACE_CMD} -e '/$$(INSTALL.*$$(PREFIX)/ s|$$(PREFIX)|$$(DESTDIR)&|' ${WRKSRC}/Makefile.in
