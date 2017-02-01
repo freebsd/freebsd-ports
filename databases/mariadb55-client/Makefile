@@ -22,4 +22,8 @@ CMAKE_ARGS+=	-DWITHOUT_SERVER=1
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 CLIENT_ONLY=	yes
 
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/mysqld_safe_helper
+	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/private
+
 .include "${MASTERDIR}/Makefile"
