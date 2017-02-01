@@ -3,7 +3,7 @@
 
 PORTNAME=	alsa-lib
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -22,10 +22,9 @@ USE_LINUX_RPM=	yes
 
 post-patch:
 	@${RM} -r ${WRKSRC}/etc/* ${WRKSRC}/lib/modprobe.d \
-		${WRKSRC}/usr/share/alsa ${WRKSRC}/usr/share/doc/alsa-lib
+		${WRKSRC}/usr/share/doc/alsa-lib
 
 post-install:
 	${LN} -sf ${LOCALBASE}/etc/asound.conf ${STAGEDIR}${PREFIX}/etc
-	${LN} -sf ${LOCALBASE}/share/alsa ${STAGEDIR}${PREFIX}/usr/share
 
 .include <bsd.port.mk>
