@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -13,7 +13,7 @@ COMMENT=	Alternate menu for the Xfce Desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limit:^1\.6\.
+PORTSCOUT=	limit:^1\.7\.
 
 USES=		cmake:outsource gettext localbase pkgconfig tar:bzip2 xfce
 USE_GNOME=	gtk20 cairo
