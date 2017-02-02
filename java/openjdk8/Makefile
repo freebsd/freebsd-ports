@@ -364,9 +364,9 @@ CONFIGURE_ENV+=	LIBCXX="-lc++"
 .if ${COMPILER_TYPE} == gcc
 .if ${ARCH} == "powerpc64"
 MAKE_ARGS+=	USE_PRECOMPILED_HEADER=1
-.endif
 .else
 MAKE_ARGS+=	USE_PRECOMPILED_HEADER=0
+.endif
 .endif
 
 .if empty(ICONV_LIB)
