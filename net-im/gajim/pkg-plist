@@ -1012,9 +1012,6 @@ share/applications/gajim-remote.desktop
 %%DATADIR%%/src/common/ged.py
 %%DATADIR%%/src/common/ged.pyc
 %%DATADIR%%/src/common/ged.pyo
-%%DATADIR%%/src/common/gnupg.py
-%%DATADIR%%/src/common/gnupg.pyc
-%%DATADIR%%/src/common/gnupg.pyo
 %%DATADIR%%/src/common/gpg.py
 %%DATADIR%%/src/common/gpg.pyc
 %%DATADIR%%/src/common/gpg.pyo
@@ -1291,9 +1288,8 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%NLS%%share/locale/ja/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gajim.mo
-%%NLS%%share/locale/no/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gajim.mo
