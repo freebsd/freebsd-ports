@@ -17,10 +17,10 @@ CONFLICTS=	emacs25-[0-9]* emacs-nox11-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	ad29e14
+GH_TAGNAME=	e280b94
 
 EMACS_VER=	26.0.50
-EMACS_REV=	20170121
+EMACS_REV=	20170202
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
