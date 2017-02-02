@@ -12,6 +12,10 @@ COMMENT=	Ubiquitous network traffic analysis tool - FreeBSD 7 version for FreeBS
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/contrib/LICENSE
 
+FORBIDDEN=	multiple security vulnerabilities
+DEPRECATED=	multiple security vulnerabilities; not updated since 2009
+EXPIRATION_DATE=2017-03-05
+
 USES=		ssl tar:bzip2
 
 PLIST_FILES=	bin/tcpdump398 man/man1/tcpdump398.1.gz
