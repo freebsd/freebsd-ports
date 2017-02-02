@@ -1,5 +1,5 @@
---- src/gdb/gdb/python/python-config.py.orig	2015-11-19 18:54:06.000000000 +0300
-+++ src/gdb/gdb/python/python-config.py	2016-04-20 01:07:39.352468000 +0300
+--- src/gdb/gdb/python/python-config.py.orig	2015-04-14 04:27:11 UTC
++++ src/gdb/gdb/python/python-config.py
 @@ -58,7 +58,7 @@ for opt in opt_flags:
          print (to_unix_path(' '.join(flags)))
  
