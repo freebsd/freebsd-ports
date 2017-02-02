@@ -106,7 +106,7 @@ solr:*:161:
 octoprint:*:162:
 _iked:*:163:
 lightdm:*:164:
-# free: 165
+uwsgi:*:165:
 # free: 166
 # free: 167
 # free: 168
