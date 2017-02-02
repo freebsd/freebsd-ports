@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170202:
+  AFFECTS: users of www/uwsgi
+  AUTHOR: feld@FreeBSD.org
+
+  The previous disruptive changes to uwsgi for security have been remediated
+  through creation of a dedicated uwsgi user/group and utilizing the
+  uwsgi feature to set socket ownership. The uwsgi daemon by default now
+  has the following properties:
+
+  * Process runs as uwsgi user and group (UID/GID 165)
+  * Socket mode is 660, still protecting unauthorized access from "other"
+  * Socket ownership is www:www, restoring compatibility
+
 20170130:
   AFFECTS: users of devel/ice, devel/py-ice, devel/php5-ice
   AUTHOR: grembo@FreeBSD.org

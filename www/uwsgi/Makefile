@@ -3,7 +3,7 @@
 
 PORTNAME=	uwsgi
 PORTVERSION=	2.0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python ssl
 USE_PYTHON=	distutils
 USE_RC_SUBR=	uwsgi
+
+USERS=	uwsgi
+GROUPS=	uwsgi
 
 OPTIONS_DEFINE=	DEBUG JSON PCRE XML
 
