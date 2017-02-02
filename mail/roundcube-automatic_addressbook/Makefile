@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	automatic_addressbook
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 
