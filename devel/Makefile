@@ -1123,6 +1123,7 @@
     SUBDIR += jech-dht
     SUBDIR += jenkins
     SUBDIR += jenkins-lts
+    SUBDIR += jfrog-cli
     SUBDIR += jiic
     SUBDIR += jline
     SUBDIR += jna
