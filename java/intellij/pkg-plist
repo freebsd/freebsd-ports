@@ -94,7 +94,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/coverage-agent.jar
 %%IDEA_HOME%%/lib/coverage-instrumenter.jar
 %%IDEA_HOME%%/lib/coverage-util.jar
-%%IDEA_HOME%%/lib/ecj-4.6.1.jar
+%%IDEA_HOME%%/lib/ecj-4.6.2.jar
 %%IDEA_HOME%%/lib/extensions.jar
 %%IDEA_HOME%%/lib/external-system-rt.jar
 %%IDEA_HOME%%/lib/fluent-hc-4.5.2.jar
