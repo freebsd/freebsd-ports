@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-cors
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
