@@ -63,7 +63,7 @@ DOS2UNIX_FILES=	apps/leo_*/snmp/snmpa_*/leo_*_snmp.config
 
 ALL_TARGET=	release
 MAKE_JOBS_UNSAFE=yes
-MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang17/bin:${PATH}
+MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang18/bin:${PATH}
 
 LEOFS_DEPS=	\
 	basho/bitcask=2.0.7:bitcask \
