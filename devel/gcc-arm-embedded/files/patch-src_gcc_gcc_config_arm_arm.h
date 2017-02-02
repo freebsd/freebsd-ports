@@ -1,6 +1,6 @@
---- src/gcc/gcc/config/arm/arm.h.orig	2016-03-30 20:55:09.000000000 +0300
-+++ src/gcc/gcc/config/arm/arm.h	2016-04-19 22:13:19.910442000 +0300
-@@ -2414,7 +2414,7 @@ extern const char *arm_rewrite_mcpu (int
+--- src/gcc/gcc/config/arm/arm.h.orig	2016-12-05 16:07:09 UTC
++++ src/gcc/gcc/config/arm/arm.h
+@@ -2273,7 +2273,7 @@ extern const char *arm_target_thumb_only
  
  /* -mcpu=native handling only makes sense with compiler running on
     an ARM chip.  */

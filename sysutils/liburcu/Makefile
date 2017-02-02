@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${PORTVERSION}
 
-MAINTAINER=	freebsd@dns-lab.com
+MAINTAINER=	mokhi64@gmail.com
 COMMENT=	Userspace read-copy-update (RCU) data synchronization library
 
 LICENSE=	LGPL21

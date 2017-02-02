@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gbsplay
-PORTVERSION=	0.0.93
-PORTREVISION=	1
+PORTVERSION=	0.0.93.20161217
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,6 +12,7 @@ LICENSE=	GPLv2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmitch
+GH_TAGNAME=	2c4486e
 
 HAS_CONFIGURE=	yes
 USES=		gmake compiler:gcc-c++11-lib

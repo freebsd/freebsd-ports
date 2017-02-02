@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-String
-PORTVERSION=	1.28
-PORTREVISION=	2
+PORTVERSION=	1.29
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +10,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to calculate with strings as if they were big integers
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Math-BigInt>=1.999802:math/p5-Math-BigInt
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
