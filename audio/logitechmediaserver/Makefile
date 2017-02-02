@@ -98,12 +98,6 @@ PLIST_SUB+=	AMD64_ONLY=""
 PLIST_SUB+=	AMD64_ONLY="@comment "
 .endif
 
-.if ${ARCH} == "i386" && ${OSREL:R:R} == "9"
-PLIST_SUB+=	NOT_9I386="@comment "
-.else
-PLIST_SUB+=	NOT_9I386=""
-.endif
-
 do-build:
 	cd ${WRKSRC_vendor}/CPAN && ./buildme.sh
 	cd ${WRKSRC}/CPAN/arch && ${CP} -R 5.22 5.24
