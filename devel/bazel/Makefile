@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=		bazel
-PORTVERSION=		0.4.2r # rc2 of 0.4.2
+PORTVERSION=		0.4.4
 CATEGORIES=		devel java
-MASTER_SITES=		https://storage.googleapis.com/bazel/0.4.2/rc2/
-DISTNAME=		bazel-0.4.2rc2-dist
+MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
+DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
 
 MAINTAINER=		aehlig@linta.de
 COMMENT=		Fast and correct build system
@@ -16,6 +16,13 @@ LICENSE_FILE=		${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=		bash:shells/bash \
 			zip:archivers/zip
 
+# In bazel, a release is always code-wise identical to the final release candidate.
+# Hence we can also download that one and so have a simple way to also test earlier release
+# candidates.
+FINALRC=		1
+
+BROKEN_FreeBSD_9=	fails with static_assert expression error in src/main/cpp/util/numbers.cc
+
 NO_WRKSUBDIR=		YES
 USES=			shebangfix zip
 SHEBANG_FILES=		${WRKSRC}/tools/cpp/link_dynamic_library.sh
@@ -25,16 +32,26 @@ JAVA_VERSION=		1.8
 JAVA_BUILD=		yes
 JAVA_RUN=		yes
 
-PLIST_FILES=		bin/bazel
+# Have the location of the system-wide rc file reside ${ETCDIR}.
+# Also adapt the sample file to disable persistent java workers as they
+# do not work reliably on FreeBSD.
+post-patch:
+	@${REINPLACE_CMD} \
+	-e "s|\"/etc/bazel.bazelrc\"|\"${ETCDIR}/bazel.bazelrc\"|" \
+	${WRKSRC}/src/main/cpp/workspace_layout.cc
+	@${ECHO_CMD} build --strategy=Javac=standalone >> ${WRKSRC}/scripts/packages/debian/bazel.bazelrc
 
 do-build:
 	@${MKDIR} ${WRKDIR}/bazel_tmp
 	(cd ${WRKSRC} && \
 	${SETENV} BAZEL_SH=${LOCALBASE}/bin/bash \
 	TMPDIR=${WRKDIR}/bazel_tmp \
+	EMBED_LABEL='${PORTVERSION}' \
 	${LOCALBASE}/bin/bash ./compile.sh)
 
 do-install:
-	@${CP} ${WRKSRC}/output/bazel ${STAGEDIR}${PREFIX}/bin
+	${CP} ${WRKSRC}/output/bazel ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/scripts/packages/debian/bazel.bazelrc ${STAGEDIR}${ETCDIR}/bazel.bazelrc.sample
 
 .include <bsd.port.mk>
