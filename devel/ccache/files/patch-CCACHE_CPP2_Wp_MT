@@ -1,0 +1,75 @@
+From 026ba6b9fdbeb3ab57d9eb424025a0a0850baae6 Mon Sep 17 00:00:00 2001
+From: Joel Rosdahl <joel@rosdahl.net>
+Date: Wed, 7 Sep 2016 20:46:18 +0200
+Subject: [PATCH] Only pass -Wp,-MT and similar to the preprocessor
+
+This fixes an issue when compiler option -Wp,-MT,path is used instead of
+-MT path (and similar for -MF, -MP and -MQ) and run_second_cpp
+(CCACHE_CPP2) is enabled.
+
+Fixes #129.
+---
+ NEWS.txt                        | 4 ++++
+ ccache.c                        | 9 +++++++++
+ test/test_argument_processing.c | 9 +++++----
+ 3 files changed, 18 insertions(+), 4 deletions(-)
+
+diff --git a/ccache.c b/ccache.c
+index 591c7d7..5635cc1 100644
+--- ccache.c
++++ ccache.c
+@@ -2249,6 +2249,11 @@ cc_process_args(struct args *args, struct args **preprocessor_args,
+ 				output_dep = make_relative_path(x_strdup(argv[i] + 9));
+ 				args_add(dep_args, argv[i]);
+ 				continue;
++			} else if (str_startswith(argv[i], "-Wp,-M")) {
++				/* -MF, -MP, -MQ, -MT, etc. TODO: Make argument to MF/MQ/MT
++				 * relative. */
++				args_add(dep_args, argv[i]);
++				continue;
+ 			} else if (conf->direct_mode) {
+ 				/*
+ 				 * -Wp, can be used to pass too hard options to
+@@ -2258,6 +2263,10 @@ cc_process_args(struct args *args, struct args **preprocessor_args,
+ 				cc_log("Unsupported compiler option for direct mode: %s", argv[i]);
+ 				conf->direct_mode = false;
+ 			}
++
++			/* Any other -Wp,* arguments are only relevant for the preprocessor. */
++			args_add(cpp_args, argv[i]);
++			continue;
+ 		}
+ 		if (str_eq(argv[i], "-MP")) {
+ 			args_add(dep_args, argv[i]);
+diff --git a/test/test_argument_processing.c b/test/test_argument_processing.c
+index 0ecefd1..a1b6ecb 100644
+--- test/test_argument_processing.c
++++ test/test_argument_processing.c
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2010-2015 Joel Rosdahl
++ * Copyright (C) 2010-2016 Joel Rosdahl
+  *
+  * This program is free software; you can redistribute it and/or modify it
+  * under the terms of the GNU General Public License as published by the Free
+@@ -57,7 +57,7 @@ TEST(dependency_flags_should_only_be_sent_to_the_preprocessor)
+ {
+ #define CMD \
+ 	"cc -MD -MMD -MP -MF foo.d -MT mt1 -MT mt2 -MQ mq1 -MQ mq2" \
+-	" -Wp,-MD,wpmd -Wp,-MMD,wpmmd"
++	" -Wp,-MD,wpmd -Wp,-MMD,wpmmd -Wp,-MP -Wp,-MT,wpmt -Wp,-MQ,wpmq -Wp,-MF,wpf"
+ 	struct args *orig = args_init_from_string(CMD " -c foo.c -o foo.o");
+ 	struct args *exp_cpp = args_init_from_string(CMD);
+ #undef CMD
+@@ -79,8 +79,9 @@ TEST(preprocessor_only_flags_should_only_be_sent_to_the_preprocessor)
+ 	" -include test.h -include-pch test.pch -iprefix . -iquote ." \
+ 	" -isysroot . -isystem . -iwithprefix . -iwithprefixbefore ." \
+ 	" -DTEST_MACRO -DTEST_MACRO2=1 -F. -trigraphs -fworking-directory" \
+-	" -fno-working-directory -MD -MMD -MP -MF foo.d -MT mt1 -MT mt2 " \
+-	" -MQ mq1 -MQ mq2 -Wp,-MD,wpmd -Wp,-MMD,wpmmd"
++	" -fno-working-directory -MD -MMD -MP -MF foo.d -MT mt1 -MT mt2" \
++	" -MQ mq1 -MQ mq2 -Wp,-MD,wpmd -Wp,-MMD,wpmmd -Wp,-MP -Wp,-MT,wpmt" \
++	" -Wp,-MQ,wpmq -Wp,-MF,wpf"
+ 	struct args *orig = args_init_from_string(CMD " -c foo.c -o foo.o");
+ 	struct args *exp_cpp = args_init_from_string(CMD);
+ #undef CMD
