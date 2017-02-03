@@ -323,6 +323,7 @@
     SUBDIR += froxlor
     SUBDIR += fsbackup
     SUBDIR += fsc
+    SUBDIR += fsearch
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
