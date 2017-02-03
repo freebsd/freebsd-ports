@@ -13,8 +13,6 @@ COMMENT=	PHP Scripting Language
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
-
 USES+=		tar:xz cpe
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
@@ -23,6 +21,8 @@ USE_AUTOTOOLS=	autoconf
 #NOTE: libtools ends with Version mismatch error
 #USES+=		autoreconf gmake
 #GNU_CONFIGURE=	yes
+
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFIGURE_ARGS+=--with-layout=GNU \
 		--localstatedir=/var \
