@@ -16,10 +16,10 @@ GH_TAGNAME=	348f038
 
 USES=		gmake python
 
-.if ${ARCH} == amd64
+.if ${ARCH} == "amd64"
 PLIST_SUB=	ARCH=amd64
 .endif
-.if ${ARCH} == i386
+.if ${ARCH} == "i386"
 PLIST_SUB=	ARCH=386
 .endif
 
