@@ -15,6 +15,10 @@ BUILD_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
 		p5-UDCode>=0:devel/p5-UDCode
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		perl5
 USE_PERL5=	configure
 
