@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Array-Heap
-PORTVERSION=	3.1
+PORTVERSION=	3.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,8 @@ COMMENT=	Perl module implementing fast binary heaps/priority queues
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Canary-Stability>=0:devel/p5-Canary-Stability
 
 USES=		perl5
 USE_PERL5=	configure
