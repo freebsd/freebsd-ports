@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170203:
+  AFFECTS: users of security/libressl-devel
+  AUTHOR: brnrd@FreeBSD.org
+
+  The version 2.5.1 bumps the libcrypto, libssl and libtls shared library
+  versions. You will have to rebuild all packages that depend on
+  libressl-devel. Check the 20160811 libressl entry for more detailed
+  guidance on rebuilding.
+
 20170202:
   AFFECTS: users of www/uwsgi
   AUTHOR: feld@FreeBSD.org
