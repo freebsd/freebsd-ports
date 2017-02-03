@@ -1,7 +1,6 @@
 bin/regfexport
 bin/regfinfo
 bin/regfmount
-bin/regfreport
 include/libregf.h
 include/libregf/codepage.h
 include/libregf/definitions.h
