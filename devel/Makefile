@@ -5235,6 +5235,7 @@
     SUBDIR += rubygem-ice_cube
     SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-inflecto
+    SUBDIR += rubygem-insist
     SUBDIR += rubygem-instance_storage
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
@@ -5437,7 +5438,6 @@
     SUBDIR += rubygem-simplecov
     SUBDIR += rubygem-slack-notifier
     SUBDIR += rubygem-slim
-    SUBDIR += rubygem-stud
     SUBDIR += rubygem-slop
     SUBDIR += rubygem-slop3
     SUBDIR += rubygem-soap4r
@@ -5460,6 +5460,7 @@
     SUBDIR += rubygem-streetaddress
     SUBDIR += rubygem-stringex
     SUBDIR += rubygem-structured_warnings
+    SUBDIR += rubygem-stud
     SUBDIR += rubygem-subexec
     SUBDIR += rubygem-sugar-high
     SUBDIR += rubygem-sumbur
