@@ -13,6 +13,8 @@ COMMENT=	PGP International version - Public-Key encryption for the masses
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 BROKEN_amd64=	unable to validate signatures
+DEPRECATED=	Software released in 1996 has no place in the security category. Use GnuPG in stead
+EXPIRATION_DATE=	2017-04-01
 
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile
