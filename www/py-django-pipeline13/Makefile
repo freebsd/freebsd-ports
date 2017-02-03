@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	13
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asset (css/js) packaging library for Django
 
+DEPRECATED=	Depends on expired www/py-django16, and expired upstream
+EXPIRATION_DATE=2017-04-01
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
