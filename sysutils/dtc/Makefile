@@ -1,11 +1,9 @@
 # $FreeBSD$
-#
-# Device Tree Compiler, tweaked for FreeBSD
-#
 
 PORTNAME=	dtc
 PORTVERSION=	1.4.2
-DISTVERSIONPREFIX= ports-v
+DISTVERSIONPREFIX=	ports-v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org
@@ -13,7 +11,9 @@ COMMENT=	Device Tree Compiler
 
 LICENSE=	GPLv2
 
-USES=		bison gmake
+USES=		bison gmake shebangfix
+USE_LDCONFIG=	yes
+SHEBANG_FILES=	dtdiff
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdimp
