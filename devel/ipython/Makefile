@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipython
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator \
 		${PYTHON_PKGNAMEPREFIX}pickleshare>=0:databases/py-pickleshare \
-		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=1.0.3:devel/py-prompt_toolkit \
+		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=1.0.4:devel/py-prompt_toolkit \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}simplegeneric>0.8:devel/py-simplegeneric \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2:devel/py-traitlets

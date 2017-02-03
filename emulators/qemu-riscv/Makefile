@@ -2,7 +2,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.7.50
-PORTREVISION=	20170130
+PORTREVISION=	20170203
 CATEGORIES=	emulators
 PKGNAMESUFFIX?=	-riscv
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	riscv
 GH_PROJECT=	riscv-qemu
-GH_TAGNAME=	fd2025e
+GH_TAGNAME=	e28f4c8
 
 HAS_CONFIGURE=	yes
 USES=	gmake libtool makeinfo pkgconfig python:2,build
