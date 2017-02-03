@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP crawler with an easy interface
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		makedepend:devel/makedepend
@@ -60,12 +61,11 @@ post-patch:
 		 s|\([[:blank:]]\)endl|\1std::endl|g'
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} larbin \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_DATA} larbin.conf \
-		${STAGEDIR}${PREFIX}/etc/larbin.conf.sample)
+	${INSTALL_PROGRAM} ${WRKSRC}/larbin ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/larbin.conf ${STAGEDIR}${PREFIX}/etc/larbin.conf.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} * \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
