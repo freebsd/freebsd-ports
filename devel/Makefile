@@ -5335,6 +5335,7 @@
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
+    SUBDIR += rubygem-pleaserun
     SUBDIR += rubygem-plist
     SUBDIR += rubygem-pluggaloid
     SUBDIR += rubygem-polyamorous
