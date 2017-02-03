@@ -25,12 +25,11 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 CONFLICTS=	gcc49*
 CPE_VENDOR=	gnu
 
-# DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
-# of executables and directories once installed.
-DISTVERSION=	${PORTVERSION}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
+# GCC_VERSION and SUFFIX relate to names of executables and directories
+# once installed.
+GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
-ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386 powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS=	amd64 armv6 i386 powerpc powerpc64 sparc64
 USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
@@ -65,7 +64,7 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
 .endif
 
-.if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
+.if ${ARCH} == "armv6"
 # Override sys.mk including -O in CFLAGS which breaks libgomp building.
 CFLAGS:=	${CFLAGS:S/-O/-O2/g}
 . if ${COMPILER_TYPE} == clang
