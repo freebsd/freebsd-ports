@@ -23,6 +23,7 @@
 %%SITE_PERL%%/Bread/Board/Service/Deferred/Thunk.pm
 %%SITE_PERL%%/Bread/Board/Service/Inferred.pm
 %%SITE_PERL%%/Bread/Board/Service/WithClass.pm
+%%SITE_PERL%%/Bread/Board/Service/WithConstructor.pm
 %%SITE_PERL%%/Bread/Board/Service/WithDependencies.pm
 %%SITE_PERL%%/Bread/Board/Service/WithParameters.pm
 %%SITE_PERL%%/Bread/Board/SetterInjection.pm
@@ -53,6 +54,7 @@
 %%PERL5_MAN3%%/Bread::Board::Service::Deferred::Thunk.3.gz
 %%PERL5_MAN3%%/Bread::Board::Service::Inferred.3.gz
 %%PERL5_MAN3%%/Bread::Board::Service::WithClass.3.gz
+%%PERL5_MAN3%%/Bread::Board::Service::WithConstructor.3.gz
 %%PERL5_MAN3%%/Bread::Board::Service::WithDependencies.3.gz
 %%PERL5_MAN3%%/Bread::Board::Service::WithParameters.3.gz
 %%PERL5_MAN3%%/Bread::Board::SetterInjection.3.gz
