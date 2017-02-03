@@ -110,6 +110,9 @@
     SUBDIR += ghc
     SUBDIR += gjs
     SUBDIR += gnat_util
+    SUBDIR += gnatcross-aarch64
+    SUBDIR += gnatcross-binutils-aarch64
+    SUBDIR += gnatcross-sysroot-aarch64
     SUBDIR += gnatdroid-armv7
     SUBDIR += gnatdroid-binutils
     SUBDIR += gnatdroid-binutils-x86
