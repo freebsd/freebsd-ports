@@ -1,5 +1,5 @@
---- install/install.sh.orig	2011-11-21 08:06:56.000000000 -0800
-+++ install/install.sh	2014-06-21 10:37:36.784492831 -0700
+--- installer/install.sh.orig	2011-11-21 08:06:56.000000000 -0800
++++ installer/install.sh	2014-06-21 10:37:36.784492831 -0700
 @@ -19,10 +19,6 @@
  
  PATH='.:/bin:/usr/bin'
