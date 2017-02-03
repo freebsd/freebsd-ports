@@ -25,7 +25,6 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
 CPE_VENDOR=	gnu
-CPE_VERSION=	${GCC_VERSION}
 
 # GCC_VERSION and SUFFIX relate to names of executables and directories
 # once installed.

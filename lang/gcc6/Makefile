@@ -24,7 +24,6 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
 CPE_VENDOR=	gnu
-CPE_VERSION=	${GCC_VERSION}
 
 GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
