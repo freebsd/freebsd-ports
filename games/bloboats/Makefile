@@ -15,12 +15,14 @@ COMMENT=	Boat racing game in the spirit of Elasto Mania or X-Moto
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-USES=		gmake
+USES=		dos2unix gmake
 USE_SDL=	mixer image net sdl
 USE_GL=		gl glu
 
 MAKE_ENV+=	DATADIR="${DATADIR}" STAGEDIR=${STAGEDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+DOS2UNIX_FILES=	src/*.cpp
 
 .include <bsd.port.mk>
