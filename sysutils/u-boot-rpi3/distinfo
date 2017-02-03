@@ -1,5 +1,7 @@
-TIMESTAMP = 1479225351
+TIMESTAMP = 1486071382
 SHA256 (u-boot-2016.11.tar.bz2) = 45813e6565dcc0436abe6752624324cdbf5f3ac106570d76d32b46ec529bcdc8
 SIZE (u-boot-2016.11.tar.bz2) = 12019669
 SHA256 (rpi3-boot-files-2016.05.tar.bz2) = 8d5a2e453c9140d989133bc7cd991456138f4eb6c9722cd9eee4af4c1722e216
 SIZE (rpi3-boot-files-2016.05.tar.bz2) = 6905733
+SHA256 (rpi3-psci-monitor-master.tgz) = 47bbda7baede4e0a018869e9a7a9a05e37de5f8255ce6b5939c90bbd4f42f5a2
+SIZE (rpi3-psci-monitor-master.tgz) = 5033

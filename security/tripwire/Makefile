@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tripwire
-PORTVERSION=	2.4.3.1
+PORTVERSION=	2.4.3.2
 CATEGORIES=	security
 
 MAINTAINER=	cy@FreeBSD.org
@@ -16,7 +16,7 @@ GH_PROJECT=	tripwire-open-source
 
 NO_LICENSES_INSTALL=	yes
 MAKE_JOBS_UNSAFE=	yes
-USES=		gmake
+USES=		gmake ssl
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd \
 		DESTDIR=${STAGEDIR}
@@ -105,19 +105,19 @@ pre-configure:
 	@ ${LN} -s ${WRKSRC}/contrib ${WRKSRC}/install
 
 install-config-files:
-	@ ${ECHO_CMD} TWPOLICY=${TWPOLICY} >> ${WRKSRC}/install/install.cfg
-	@ ${ECHO_CMD} TWSITEKEYDIR=${TWSITEKEYDIR} >> ${WRKSRC}/install/install.cfg
-	@ ${ECHO_CMD} TWLOCALKEYDIR=${TWLOCALKEYDIR} >> ${WRKSRC}/install/install.cfg
-	@ ${ECHO_CMD} TWDB=${TWDB} >> ${WRKSRC}/install/install.cfg
-	@ ${ECHO_CMD} TWREPORT=${TWREPORT} >> ${WRKSRC}/install/install.cfg
-	@ ${ECHO_CMD} TWEDITOR=${TWEDITOR} >> ${WRKSRC}/install/install.cfg
+	@ ${ECHO_CMD} TWPOLICY=${TWPOLICY} >> ${WRKSRC}/installer/install.cfg
+	@ ${ECHO_CMD} TWSITEKEYDIR=${TWSITEKEYDIR} >> ${WRKSRC}/installer/install.cfg
+	@ ${ECHO_CMD} TWLOCALKEYDIR=${TWLOCALKEYDIR} >> ${WRKSRC}/installer/install.cfg
+	@ ${ECHO_CMD} TWDB=${TWDB} >> ${WRKSRC}/installer/install.cfg
+	@ ${ECHO_CMD} TWREPORT=${TWREPORT} >> ${WRKSRC}/installer/install.cfg
+	@ ${ECHO_CMD} TWEDITOR=${TWEDITOR} >> ${WRKSRC}/installer/install.cfg
 .ifdef TW_SITE_PASS
-	@ ${ECHO_CMD} TW_SITE_PASS=${TW_SITE_PASS} >> ${WRKSRC}/install/install.cfg
+	@ ${ECHO_CMD} TW_SITE_PASS=${TW_SITE_PASS} >> ${WRKSRC}/installer/install.cfg
 .endif
 .ifdef TW_LOCAL_PASS
-	@ ${ECHO_CMD} TW_LOCAL_PASS=${TW_LOCAL_PASS} >> ${WRKSRC}/install/install.cfg
+	@ ${ECHO_CMD} TW_LOCAL_PASS=${TW_LOCAL_PASS} >> ${WRKSRC}/installer/install.cfg
 .endif
-	@ cd ${WRKSRC} && ${LN} -sf install/install.cfg install/install.sh .
+	@ cd ${WRKSRC} && ${LN} -sf installer/install.cfg installer/install.sh .
 .ifdef PACKAGE_BUILDING
 	@ cd ${WRKSRC} && DESTDIR=${STAGEDIR} PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} DO_NOT_CONFIG="yes" TW_PROMPT="false" ${MAKE_CMD} install-data-hook
 .else
@@ -155,11 +155,11 @@ make-pkg-install:
 .ifdef TW_LOCAL_PASS
 	@ ${ECHO_CMD} TW_LOCAL_PASS=${TW_LOCAL_PASS} >> ${PKGPOSTINSTALL}
 .endif
-	@ ${CAT} ${WRKSRC}/install/install.cfg >> ${PKGPOSTINSTALL}
+	@ ${CAT} ${WRKSRC}/installer/install.cfg >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} ${CAT} "> /tmp/$$$$.tmp <<'EOF'" >> ${PKGPOSTINSTALL}
 	@ ${M4} -DFREEBSD_VERSION=`${ECHO_CMD} ${OSREL} | ${CUT} -d. -f1` < ${TWPOL_TXT} >> ${PKGPOSTINSTALL}
 	@ ${ECHO_CMD} EOF >> ${PKGPOSTINSTALL}
-	@ ${SED} "/^\. /s/^/: /;/^BASE_DIR=/d;s/BIN_DIR=/: BIN_DIR=/;/^POLICYSRC/d" ${WRKSRC}/install/install.sh >> ${PKGPOSTINSTALL}
+	@ ${SED} "/^\. /s/^/: /;/^BASE_DIR=/d;s/BIN_DIR=/: BIN_DIR=/;/^POLICYSRC/d" ${WRKSRC}/installer/install.sh >> ${PKGPOSTINSTALL}
 
 create-database:
 .ifndef PACKAGE_BUILDING
