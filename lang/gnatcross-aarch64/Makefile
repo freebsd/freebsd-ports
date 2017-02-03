@@ -21,4 +21,6 @@ MASTERDIR=	${.CURDIR}/../../lang/gnatdroid-armv7
 PATCHDIR=	${.CURDIR}/files
 DESCR=		${.CURDIR}/pkg-descr
 
+ARG_TARGET_SPECIFIC=	# override ARM settings
+
 .include "${MASTERDIR}/Makefile"
