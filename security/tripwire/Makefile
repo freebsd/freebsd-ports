@@ -3,6 +3,7 @@
 
 PORTNAME=	tripwire
 PORTVERSION=	2.4.3.1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	cy@FreeBSD.org
@@ -16,7 +17,7 @@ GH_PROJECT=	tripwire-open-source
 
 NO_LICENSES_INSTALL=	yes
 MAKE_JOBS_UNSAFE=	yes
-USES=		gmake
+USES=		gmake ssl
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd \
 		DESTDIR=${STAGEDIR}
