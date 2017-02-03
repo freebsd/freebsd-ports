@@ -3,6 +3,7 @@
 PORTNAME=	neomutt
 PORTVERSION=	20170128
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -44,9 +45,9 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-pop \
 		--enable-nntp \
 		--enable-compressed \
-		--enable-hcache \
 		--enable-sidebar \
 		--disable-fcntl \
+		--enable-locales-fix \
 		--enable-external-dotlock
 
 # Header cache
