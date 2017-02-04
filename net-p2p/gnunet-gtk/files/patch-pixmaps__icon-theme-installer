@@ -1,12 +1,12 @@
---- pixmaps/icon-theme-installer.orig	2010-06-17 03:36:53.000000000 -0400
-+++ pixmaps/icon-theme-installer	2012-05-31 17:42:11.000000000 -0400
+--- pixmaps/icon-theme-installer.orig	2014-01-07 10:40:01 UTC
++++ pixmaps/icon-theme-installer
 @@ -1,4 +1,4 @@
--#!/bin/bash
+-#!/usr/bin/env bash
 +#!/bin/sh
  
  # icon-theme-installer
  # Copyright (C) 2006 Novell, Inc.
-@@ -112,7 +112,7 @@
+@@ -112,7 +112,7 @@ pass -m \$(mkinstalldirs)"
  	exit 1
  fi
  
@@ -15,7 +15,7 @@
  	echo "Cannot find '$INSTALL_DATA_EXEC'; You probably want to 
  pass -x \$(INSTALL_DATA)"
  	exit 1
-@@ -173,7 +173,7 @@
+@@ -173,7 +173,7 @@ $THEME_NAME icon theme"
  done
  
  if test "x$INSTALL" = "xyes"; then
