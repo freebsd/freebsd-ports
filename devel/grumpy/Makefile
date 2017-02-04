@@ -16,6 +16,8 @@ GH_TAGNAME=	348f038
 
 USES=		gmake python
 
+.include <bsd.port.options.mk>
+
 .if ${ARCH} == "amd64"
 PLIST_SUB=	ARCH=amd64
 .endif
