@@ -38,6 +38,8 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 # with RELRO + BIND_NOW.
 NORELRO_PORTS=	yes
 
+EXPLICIT_SAFESTACK=	yes
+
 .include <bsd.port.options.mk>
 
 USES+=		gmake libtool perl5 tar:bzip2
