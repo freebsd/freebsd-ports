@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	MochiKit packaged as TurboGears widgets
 
+DEPRECATED=	Development of this branch ceased
+EXPIRATION_DATE=	2017-03-03
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 

@@ -13,6 +13,9 @@ DISTNAME=	TurboMail-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Multi-threaded mail queue manager for TurboGears applications
 
+DEPRECATED=	Development of this branch ceased
+EXPIRATION_DATE=	2017-03-03
+
 LICENSE=	MIT
 
 BUILD_DEPENDS=	tg-admin:www/py-turbogears

@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hybrid of WIKI and BLOG system
 
+DEPRECATED=	Upstream disappeared, last release from 2009
+EXPIRATION_DATE=	2017-03-04
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mez_xml/__init__.py:devel/py-mez_xml
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \

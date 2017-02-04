@@ -82,8 +82,8 @@ SCAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 SCAN_CONFIGURE_ENABLE=	scan-build
 
 X11_DESC=		Graphical User Interface (Qt 4)
-X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
-			${PYTHON_PKGNAMEPREFIX}qt4-dbussupport>=0:devel/py-qt4-dbussupport
+X11_USES=		pyqt:4
+X11_USE=		PYQT=dbussupport_run,gui_run
 X11_CONFIGURE_ENABLE=	qt4 gui-build
 
 XSANE_DESC=		Install XSane for scanning (implies SCAN)

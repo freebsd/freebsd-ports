@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility functions and classes used by the other LivingLogic packages
 
+DEPRECATED=	Long unmaintained, abandoned upstream
+EXPIRATION_DATE=	2017-03-04
+
 LICENSE=	MIT
 
 USES=		python zip

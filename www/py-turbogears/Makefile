@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python-Based Framework for Rapid Web Development
 
+DEPRECATED=	Development of this branch ceased. Use devel/py-turbogears2
+EXPIRATION_DATE=	2017-03-03
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.1.2:www/py-cherrypy \
 		${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.1:www/py-formencode \

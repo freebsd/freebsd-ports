@@ -15,7 +15,6 @@ BUILD_DEPENDS=	sdl-config:devel/sdl12 \
 		swig2.0:devel/swig20 \
 		cheetah:devel/py-cheetah \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}qt4>0:devel/py-qt4 \
 		xdg-open:devel/xdg-utils \
 		guile:lang/guile \
 		aconnect:audio/alsa-utils \
@@ -41,7 +40,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # volk/lib/volk_cpu.c: In function 'i_can_has_3dnow':
 # volk/lib/volk_cpu.c:62: error: can't find a register in class 'BREG' while reloading 'asm'
 # volk/lib/volk_cpu.c:62: error: 'asm' operand has impossible constraints
-USES=		cmake:outsource compiler:c11 iconv perl5 pkgconfig python:2.7 shebangfix
+USES=		cmake:outsource compiler:c11 iconv perl5 pkgconfig pyqt:4 python:2.7 shebangfix
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in
 CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"\
 		-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
@@ -54,6 +53,7 @@ CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"\
 MAJOR_SUB_VER=	${PORTVERSION}
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	pygtk2
+USE_PYQT=	core gui opengl
 USE_WX=		3.0+
 USE_QT4=	corelib gui xml qmake moc rcc uic
 WX_COMPS=	wx wx:build wx:run python:build python:run

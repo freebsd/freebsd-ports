@@ -1,5 +1,6 @@
 include/isa-l.h
 include/isa-l/crc.h
+include/isa-l/crc64.h
 include/isa-l/gf_vect_mul.h
 include/isa-l/raid.h
 include/isa-l/types.h
@@ -10,4 +11,4 @@ lib/libisal.a
 lib/libisal.la
 lib/libisal.so
 lib/libisal.so.2
-lib/libisal.so.2.0.16
+lib/libisal.so.2.0.17

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/sbcl/sbcl/${PORTVERSION} \
 		LOCAL/marino:binaries
 DISTFILES=	sbcl-${PORTVERSION}-source.tar.bz2
 
-MAINTAINER=	pavelivolkov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
 
 LICENSE=	sbcl

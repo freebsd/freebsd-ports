@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	TurboGears plugin to support use of Cheetah templates
 
+DEPRECATED=	Development of this branch ceased
+EXPIRATION_DATE=	2017-03-03
+
 RUN_DEPENDS=	cheetah:devel/py-cheetah
 
 USES=		python

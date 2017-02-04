@@ -9,4 +9,6 @@ PATCHDIR=	${.CURDIR}/files
 
 CONFLICTS_INSTALL=	${PKGNAMEPREFIX}${PORTNAME}
 
+PORTSCOUT=	limit:^1\.5\.
+
 .include "${MASTERDIR}/Makefile"
