@@ -12,6 +12,9 @@ DISTNAME=	TGWebServices-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Multiprotocol Web Services for TurboGears
 
+DEPRECATED=	Development of this branch ceased
+EXPIRATION_DATE=	2017-03-03
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:www/py-turbogears \
 		${PYTHON_PKGNAMEPREFIX}Genshi>=0.3.6:textproc/py-genshi
 RUN_DEPENDS:=	${BUILD_DEPENDS}
