@@ -19,6 +19,9 @@ RUN_DEPENDS?=	rubygem-railties4>=4.0.0:www/rubygem-railties4 \
 		rubygem-sprockets>=2.8:devel/rubygem-sprockets \
 		rubygem-sprockets-rails>=2.0:devel/rubygem-sprockets-rails
 
+DEPRECATED=	Use textproc/rubygem-sass-rails5 instead
+EXPIRATION_DATE=2017-02-28
+
 PORTSCOUT=	limit:^4\.
 
 NO_ARCH=	yes
