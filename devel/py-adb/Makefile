@@ -3,6 +3,7 @@
 PORTNAME=	adb
 DISTVERSION=	1.1.1-37
 DISTVERSIONSUFFIX=	-gfb09de9
+PORTREVISION=	1
 CATEGORIES=	devel comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +12,7 @@ COMMENT=	Pure-python implementation of ADB and Fastboot protocols
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libusb1>=1.0.16:devel/py-libusb1 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libusb115>=1.0.16:devel/py-libusb115 \
 		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.21.1:security/py-m2crypto
 
 USE_GITHUB=	yes
