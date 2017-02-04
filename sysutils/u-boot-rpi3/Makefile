@@ -1,15 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	u-boot
-PORTVERSION=	2016.11
-PORTREVISION=	1
+PORTVERSION=	2017.01
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/ \
 		LOCAL/db:bootfiles
 PKGNAMESUFFIX=	-rpi3
-DISTFILES=	u-boot-${PORTVERSION}.tar.bz2 \
+DISTFILES=	u-boot-${PORTVERSION}.tar.bz2:uboot \
 		rpi3-boot-files-2016.05.tar.bz2:bootfiles \
-		rpi3-psci-monitor-master.tgz:bootfiles
+		rpi3-psci-monitor-master.tgz:pscimon
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Cross-build U-Boot loader for RPi3
@@ -18,6 +17,12 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
 
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	gonzoua:pscimon
+GH_PROJECT=	rpi3-psci-monitor:pscimon
+GIT_TAG=	5782052
+GH_TAGNAME=	${GIT_TAG}:pscimon
+
 NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/u-boot-${DISTVERSION}
@@ -25,7 +30,7 @@ USES=		gmake tar:bzip2
 SSP_UNSAFE=	yes # cross-LD does not support -fstack-protector
 
 WRK_BOOTFILES=	${WRKDIR}/rpi3-boot-files-2016.05
-PSCI_MONITOR=	rpi3-psci-monitor-master
+PSCI_MONITOR=	rpi3-psci-monitor-${GIT_TAG}
 PSCI_DIR=	${WRKDIR}/${PSCI_MONITOR}
 
 U_BOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
@@ -48,7 +53,6 @@ MAKE_ARGS+=	ARCH=arm \
 		CONFIG_EFI=y
 
 do-configure:
-	(cd ${WRKDIR}; tar xvf ${DISTDIR}/${PSCI_MONITOR}.tgz)
 	(cd ${WRKSRC}; ${GMAKE} rpi_3_defconfig)
 
 do-build:
@@ -60,6 +64,7 @@ do-build:
 # are capable of booting u-boot.bin directly.  Also copy the entire
 # contents of the bootfiles distribution (these are proprietary binary
 # files required to boot).
+# Also include the armstub8.bin needed to go SMP on RPI3
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}
 	${INSTALL_DATA} ${WRKSRC}/u-boot.bin ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/
