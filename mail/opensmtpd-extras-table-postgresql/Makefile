@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-table-postgresql
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	PostgreSQL table support for OpenSMTPD
 

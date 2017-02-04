@@ -3,6 +3,7 @@
 
 PORTNAME=		libswift
 PORTVERSION=	20160817
+PORTREVISION=	1
 CATEGORIES=		net-p2p
 
 MAINTAINER=		dch@skunkwerks.at

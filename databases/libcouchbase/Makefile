@@ -2,6 +2,7 @@
 
 PORTNAME=	libcouchbase
 DISTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://packages.couchbase.com/clients/c/
 
