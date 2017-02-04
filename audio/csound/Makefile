@@ -3,7 +3,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	5.19.01
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R} \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R}/manual:manual
@@ -27,7 +27,8 @@ CONFLICTS_INSTALL=	outguess-* csound6
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/c/C/}${PORTVERSION}
 
-USES=		bison cpe gettext scons compiler:openmp python
+USES=		bison cpe gettext scons compiler:gcc-c++11-lib python
+USE_CSTD=	gnu89
 # math/gmm++ requires c++11
 USE_CXXSTD=	c++11
 CPE_VENDOR=	csounds

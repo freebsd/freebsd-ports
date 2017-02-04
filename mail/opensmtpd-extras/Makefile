@@ -3,7 +3,7 @@
 
 PORTNAME=	opensmtpd-extras
 PORTVERSION=	201606230001
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
 

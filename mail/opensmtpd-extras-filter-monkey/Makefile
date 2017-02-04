@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-monkey
-PORTREVISION=		0
+PORTREVISION=		1
 
 COMMENT=		Arbitrary delay or reject filter for OpenSMTPD
 

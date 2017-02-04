@@ -12,7 +12,7 @@ MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	DNS checker from the folks that run the .SE top level domain
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random \
 		p5-Digest-BubbleBabble>=0:security/p5-Digest-BubbleBabble \

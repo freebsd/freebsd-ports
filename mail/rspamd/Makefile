@@ -2,6 +2,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 

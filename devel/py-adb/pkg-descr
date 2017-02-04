@@ -6,4 +6,4 @@ same device. It does support any number of devices and never
 communicates with a device that it wasn't intended to, unlike the
 Android project's ADB.
 
-WWW: https://pypi.python.org/pypi/adb
+WWW: https://github.com/google/python-adb

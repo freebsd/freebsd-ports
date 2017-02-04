@@ -2,6 +2,7 @@
 
 PORTNAME=	tmate
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org

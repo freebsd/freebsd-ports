@@ -11,7 +11,7 @@ MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Simplified PostgreSQL client built upon Psycopg2
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.1:databases/py-psycopg2
 
