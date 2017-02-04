@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	converseen
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.6.1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%20${PORTVERSION:R}/
+MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%20${PORTVERSION:R:R}/
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Easy to use graphics conversion utility
