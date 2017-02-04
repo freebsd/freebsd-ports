@@ -3,6 +3,7 @@
 PORTNAME=	ccnet-client
 PORTVERSION=	6.0.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima1252@gmail.com

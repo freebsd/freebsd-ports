@@ -3,7 +3,7 @@
 
 PORTNAME=	spybye
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security www
 MASTER_SITES=	http://www.monkey.org/~provos/
 

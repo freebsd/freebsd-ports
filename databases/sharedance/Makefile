@@ -3,7 +3,7 @@
 
 PORTNAME=	sharedance
 PORTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://download.pureftpd.org/pub/sharedance/
 

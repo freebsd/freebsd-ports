@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-table-sqlite
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	SQLite table support for OpenSMTPD
 

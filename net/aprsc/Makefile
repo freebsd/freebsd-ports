@@ -3,6 +3,7 @@
 PORTNAME=	aprsc
 PORTVERSION=	2.1.4
 DISTVERSIONSUFFIX=	.g408ed49
+PORTREVISION=	1
 CATEGORIES=	net hamradio
 MASTER_SITES=	http://he.fi/aprsc/down/ \
 		LOCAL/db

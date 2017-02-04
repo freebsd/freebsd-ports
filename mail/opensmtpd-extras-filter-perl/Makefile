@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-perl
-PORTREVISION=		0
+PORTREVISION=		1
 
 COMMENT=		Perl-script filter support for OpenSMTPD
 

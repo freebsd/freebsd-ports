@@ -3,7 +3,7 @@
 
 PORTNAME=	stegdetect
 PORTVERSION=	0.6
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	security
 MASTER_SITES=	http://www.sourcefiles.org/Graphics/Tools/Miscellaneous/
 

@@ -3,6 +3,7 @@
 PORTNAME=	seafile-gui
 PORTVERSION=	6.0.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima1252@gmail.com

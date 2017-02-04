@@ -2,6 +2,7 @@
 
 PORTNAME=	slowcgi
 PORTVERSION=	6.0.20161031
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
