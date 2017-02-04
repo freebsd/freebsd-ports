@@ -3,7 +3,7 @@
 
 PORTNAME=	rich
 PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-jquery-rails4>=4.0:www/rubygem-jquery-rails4 \
 		rubygem-paperclip>=0:devel/rubygem-paperclip \
 		rubygem-rack-raw-upload>=0:devel/rubygem-rack-raw-upload \
 		rubygem-rails4>=4.0:www/rubygem-rails4 \
-		rubygem-sass-rails4>=4.0:textproc/rubygem-sass-rails4
+		rubygem-sass-rails5>=0:textproc/rubygem-sass-rails5
 
 NO_ARCH=	yes
 USE_RUBY=	yes
