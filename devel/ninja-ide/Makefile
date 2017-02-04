@@ -13,13 +13,8 @@ COMMENT=	Cross-platform integrated development environment (IDE)
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5,1:net/py-qt4-network \
-		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=4.8.5:www/py-qt4-webkit
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-declarative>=4.10.2:devel/py-qt4-declarative \
-		${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5,1:net/py-qt4-network \
-		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=4.8.5:www/py-qt4-webkit
-
-USES=		python:2
+USES=		pyqt:4 python:2
+USE_PYQT=	declarative_run network  webkit
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

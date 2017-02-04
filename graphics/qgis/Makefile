@@ -29,7 +29,9 @@ USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
 
 USES=		bison cmake cpe desktop-file-utils execinfo fortran \
-		gmake python:2.7 sqlite
+		gmake pyqt:4 python:2.7 sqlite
+USE_PYQT=	core gui network qscintilla2 sip sql svg xml webkit_run
+
 USE_QT4=	corelib designer doc gui linguist_build moc_build \
 		network qmake_build rcc_build script sql sql-pgsql \
 		sql-sqlite3 svg testlib uic_build webkit xml
@@ -99,15 +101,7 @@ PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
 			${PYTHON_PKGNAMEPREFIX}pygments>=2.1.3:textproc/py-pygments \
 			${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:databases/pyspatialite \
 			${PYTHON_PKGNAMEPREFIX}pytz>=2016.6.1,1:devel/py-pytz \
-			${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:devel/py-qt4-core \
-			${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:x11-toolkits/py-qt4-gui \
-			${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5:net/py-qt4-network \
-			${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.8.3:devel/py-qt4-qscintilla2 \
-			${PYTHON_PKGNAMEPREFIX}qt4-sql>=4.11.3:databases/py-qt4-sql \
-			${PYTHON_PKGNAMEPREFIX}qt4-svg>=4.8.5:graphics/py-qt4-svg \
-			${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.5.4:textproc/py-qt4-xml \
 			${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests \
-			${PYTHON_PKGNAMEPREFIX}sip>=4.14.6:devel/py-sip \
 			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:databases/py-sqlite3 \
 			${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml
@@ -124,16 +118,7 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
 			${PYTHON_PKGNAMEPREFIX}pygments>=2.1.3:textproc/py-pygments \
 			${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:databases/pyspatialite \
 			${PYTHON_PKGNAMEPREFIX}pytz>=2016.6.1,1:devel/py-pytz \
-			${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.5:devel/py-qt4-core \
-			${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.8.5:x11-toolkits/py-qt4-gui \
-			${PYTHON_PKGNAMEPREFIX}qt4-network>=4.8.5:net/py-qt4-network \
-			${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.8.3:devel/py-qt4-qscintilla2 \
-			${PYTHON_PKGNAMEPREFIX}qt4-sql>=4.11.3:databases/py-qt4-sql \
-			${PYTHON_PKGNAMEPREFIX}qt4-svg>=4.8.5:graphics/py-qt4-svg \
-			${PYTHON_PKGNAMEPREFIX}qt4-webkit>=4.11.1:www/py-qt4-webkit \
-			${PYTHON_PKGNAMEPREFIX}qt4-xml>=4.5.4:textproc/py-qt4-xml \
 			${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests \
-			${PYTHON_PKGNAMEPREFIX}sip>=4.14.6:devel/py-sip \
 			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:databases/py-sqlite3 \
 			${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor \

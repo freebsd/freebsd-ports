@@ -15,11 +15,10 @@ LICENSE=	GPLv3
 
 BROKEN=		Unfetchable (google code has gone away)
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara
 
-USES=		python:2
+USES=		pyqt:4 python:2
+USE_PYQT=	core_run gui_run
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS
