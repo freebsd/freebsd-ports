@@ -47,7 +47,7 @@
  #include <errno.h>
 --- libstdc++-v3/src/filesystem/dir.cc.orig
 +++ libstdc++-v3/src/filesystem/dir.cc
-@@ -147,7 +147,13 @@
+@@ -146,7 +146,13 @@
  
    int err = std::exchange(errno, 0);
    const auto entp = readdir(dirp);

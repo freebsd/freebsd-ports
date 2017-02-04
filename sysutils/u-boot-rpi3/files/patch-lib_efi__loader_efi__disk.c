@@ -1,4 +1,4 @@
---- lib/efi_loader/efi_disk.c.orig	2016-11-14 16:27:11 UTC
+--- lib/efi_loader/efi_disk.c.orig	2017-01-09 16:57:05 UTC
 +++ lib/efi_loader/efi_disk.c
 @@ -197,11 +197,13 @@ static void efi_disk_add_dev(const char 
  			     const char *if_typename,

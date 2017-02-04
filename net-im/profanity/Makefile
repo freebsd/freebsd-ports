@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	profanity
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.profanity.im/
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libstrophe.so:net-im/libstrophe \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libgpgme.so:security/gpgme
 
-USES=		ncurses pkgconfig
+USES=		ncurses pkgconfig ssl python readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-otr
 CONFIGURE_ENV=	LIBS="${CFLAGS} -lcrypto"
