@@ -12,12 +12,11 @@ COMMENT=	Scientific plotting package
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-svg>0:graphics/py-qt4-svg
+RUN_DEPENDS=	${PYNUMPY}
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		python
+USES=		pyqt:4 python
+USE_PYQT=	gui svg
 USE_PYTHON=	distutils autoplist
 
 post-patch:

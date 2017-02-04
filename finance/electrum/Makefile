@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}slowaes>0:security/py-slowaes \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.10.3:x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}qrcode>=5.1:textproc/py-qrcode \
 		${PYTHON_PKGNAMEPREFIX}tlslite>=0.4.6:security/py-tlslite \
@@ -25,7 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}slowaes>0:security/py-slowaes \
 		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}jsonrpclib>0:devel/py-jsonrpclib
 
-USES=		desktop-file-utils python:-2.7
+USES=		desktop-file-utils pyqt:4 python:-2.7
+USE_PYQT=	gui_run
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	Electrum
 NO_ARCH=	yes

@@ -13,8 +13,6 @@ COMMENT=	Fast Mercurial log navigator written in pyqt4
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	hg:devel/mercurial \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>0:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>0:devel/py-qt4-qscintilla2 \
 		${PYTHON_PKGNAMEPREFIX}mx-base>0:lang/py-mx-base \
 		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils
 BUILD_DEPENDS=	hg:devel/mercurial \
@@ -23,8 +21,9 @@ BUILD_DEPENDS=	hg:devel/mercurial \
 		asciidoc:textproc/asciidoc
 
 NO_ARCH=	yes
+USES=		gmake pyqt:4 python:2
+USE_PYQT=	gui_run qscintilla2_run
 USE_PYTHON=	distutils
-USES=		gmake python:2
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
