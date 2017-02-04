@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Turbogears Scheduler
 
+DEPRECATED=	Development of this branch ceased
+EXPIRATION_DATE=	2017-03-03
+
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil \

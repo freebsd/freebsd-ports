@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python template plugin for TurboGears that supports json
 
+DEPRECATED=	Development of this branch ceased
+EXPIRATION_DATE=	2017-03-03
+
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=1.9.1:devel/py-simplejson \

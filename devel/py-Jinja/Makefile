@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Fast and easy to use stand-alone template engine
 
+DEPRECATED=	Development of this branch ceased. Use devel/py-Jinja2 instead
+EXPIRATION_DATE=	2017-03-03
+
 LICENSE=	BSD3CLAUSE
 
 USES=		python:2

@@ -13,6 +13,9 @@ DISTNAME=	Scriptaculous-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Scriptaculous packaged as TurboGears widgets
 
+DEPRECATED=	Development of this branch ceased
+EXPIRATION_DATE=	2017-03-03
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:www/py-turbogears
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
