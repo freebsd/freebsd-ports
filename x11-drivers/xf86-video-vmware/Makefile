@@ -8,7 +8,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vmware display driver
 
 LICENSE=	MIT
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 INSTALL_TARGET=	install-strip
 XORG_CAT=	driver

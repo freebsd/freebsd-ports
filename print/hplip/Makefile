@@ -7,11 +7,11 @@ CATEGORIES=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	woodsb02@FreeBSD.org
-COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
+COMMENT=	Drivers and utilities for HP printers and All-in-One devices
 
 LICENSE=	GPLv2 MIT BSD3CLAUSE
 LICENSE_COMB=	multi
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcupsimage.so:print/cups \
 		libdbus-1.so:devel/dbus
@@ -86,7 +86,7 @@ X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui \
 			${PYTHON_PKGNAMEPREFIX}qt4-dbussupport>=0:devel/py-qt4-dbussupport
 X11_CONFIGURE_ENABLE=	qt4 gui-build
 
-XSANE_DESC=		Install XSane for scanning (requires SCAN)
+XSANE_DESC=		Install XSane for scanning (implies SCAN)
 XSANE_IMPLIES=		SCAN
 XSANE_RUN_DEPENDS=	xsane:graphics/xsane
 
@@ -127,9 +127,10 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/hp/hplip.conf.sample
 	${MKDIR} ${STAGEDIR}${DATADIR}/ui4/plugins
 	${MKDIR} ${STAGEDIR}/var/lib/hp
-	${MKDIR} ${STAGEDIR}/var/lib
+
 post-install-SCAN-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.d
-	${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.conf ${STAGEDIR}${PREFIX}/etc/sane.d/dll.d/hpaio
+	${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.conf \
+		${STAGEDIR}${PREFIX}/etc/sane.d/dll.d/hpaio
 
 .include <bsd.port.mk>
