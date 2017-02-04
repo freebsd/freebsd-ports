@@ -9,7 +9,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Search utility focusing on performance and advanced features
 
 LICENSE=	GPLv2+
-LICENSE_FILES=	${WRKSRC}/License
+LICENSE_FILE=	${WRKSRC}/License
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_compile_flag.m4:devel/autoconf-archive
 LIB_DEPENDS=	libpcre.so:devel/pcre

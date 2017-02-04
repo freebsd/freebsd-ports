@@ -11,7 +11,7 @@ MAINTAINER=	yuri@rawbw.com
 COMMENT=	Gnome client of the Ring VoIP SIP phone and IM
 
 LICENSE=	GPLv3
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libringclient.so:net-im/ring-libclient \
 		libqrencode.so:graphics/libqrencode \
