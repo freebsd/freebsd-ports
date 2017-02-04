@@ -1,6 +1,6 @@
---- configure.orig
+--- configure.orig	2014-04-08 09:07:45 UTC
 +++ configure
-@@ -14716,17 +14716,14 @@
+@@ -14716,17 +14716,14 @@ if test "${with_gtk_version+set}" = set;
    withval=$with_gtk_version; { $as_echo "$as_me:${as_lineno-$LINENO}: result: $with_gtk_version" >&5
  $as_echo "$with_gtk_version" >&6; }
      case $with_gtk_version in
