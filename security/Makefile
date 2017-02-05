@@ -36,6 +36,7 @@
     SUBDIR += bcrypt
     SUBDIR += bcwipe
     SUBDIR += bdc
+    SUBDIR += bdes
     SUBDIR += bearssl
     SUBDIR += beecrypt
     SUBDIR += belier
