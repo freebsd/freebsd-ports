@@ -1267,8 +1267,8 @@
     SUBDIR += libee
     SUBDIR += libeio
     SUBDIR += libelf
-    SUBDIR += libepp-nicbr
     SUBDIR += libepoll-shim
+    SUBDIR += libepp-nicbr
     SUBDIR += libesedb
     SUBDIR += libestr
     SUBDIR += libev
@@ -4242,6 +4242,7 @@
     SUBDIR += py-five.globalrequest
     SUBDIR += py-five.localsitemanager
     SUBDIR += py-flake8
+    SUBDIR += py-flake8-import-order
     SUBDIR += py-flake8-quotes
     SUBDIR += py-flask-babel
     SUBDIR += py-flexmock
@@ -4868,6 +4869,7 @@
     SUBDIR += py3-click
     SUBDIR += py3-dbus
     SUBDIR += py3-flake8
+    SUBDIR += py3-flake8-import-order
     SUBDIR += py3-flake8-quotes
     SUBDIR += py3-gobject3
     SUBDIR += py3-hgtools
