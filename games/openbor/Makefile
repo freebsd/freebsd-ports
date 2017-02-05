@@ -20,14 +20,13 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libvpx.so:multimedia/libvpx
 
 USES=		gmake pkgconfig tar:xz
+USE_CSTD=	gnu89
 USE_SDL=	gfx2
 MAKE_ENV=	BUILD_LINUX=1 SDKPATH="${LOCALBASE}" \
 		GCC_TARGET="${CONFIGURE_TARGET:S/amd64/x86_64/}"
 MAKE_ARGS=	CC="${CC}" LIBRARIES="${LOCALBASE}/lib" \
 		TARGET_ARCH=${ARCH:S/i386/x86/} ARCHFLAGS="" \
 		TARGET_FINAL='${TARGET}' BUILD_MMX="" ECHO="${ECHO}"
-CFLAGS+=	-fgnu89-inline ${CFLAGS_${OPSYS}}
-CFLAGS_DragonFly=	-D_GCC_MAX_ALIGN_T # system stddef.h
 LDFLAGS+=	-Wl,--as-needed # ogg, pthread, zlib
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png

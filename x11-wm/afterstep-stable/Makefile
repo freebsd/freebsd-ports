@@ -20,6 +20,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 RUN_DEPENDS=	xli:graphics/xli
 
 USES=		execinfo gmake jpeg pkgconfig shebangfix tar:bzip2
+USE_CSTD=	gnu89
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 librsvg2 pango
 USE_XORG+=	ice sm x11 xcomposite xcursor xdamage xext xfixes xi xinerama \
 		xrandr xrender
@@ -27,7 +28,6 @@ GNU_CONFIGURE=	yes
 SHEBANG_FILES=	tools/ascommand.pl \
 		tools/importasmenu
 MAKE_JOBS_UNSAFE=	yes
-CFLAGS+=	-fgnu89-inline
 CONFIGURE_ARGS+=--disable-ascp \
 		--enable-i18n \
 		--disable-send-postcard-to-developer \

@@ -17,8 +17,8 @@ OPTIONS_DEFINE=	MYSQL OPENSSL PGSQL
 CONFLICTS=	flow-tools-ng-[0-9]*
 
 USES=		python:run
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-CFLAGS+=	-fgnu89-inline
 CONFIGURE_ARGS+=--localstatedir="${PREFIX}"
 MAKE_ARGS=	AM_CFLAGS="${CFLAGS}"
 
