@@ -3,7 +3,7 @@
 
 PORTNAME=	vagrant
 PORTVERSION=	1.8.7
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
@@ -13,7 +13,7 @@ COMMENT=	Vagrant Virtual Machine Manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	rubygem-builder32>=2.1.2:devel/rubygem-builder32 \
+BUILD_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-main>=1.0:devel/rubygem-main
 RUN_DEPENDS=	rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \

@@ -13,6 +13,9 @@ COMMENT=	Facilitate programmatic generation of XML markup
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
+DEPRECATED=	Use devel/rubygem-builder instead
+EXPIRATION_DATE=2017-02-28
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem

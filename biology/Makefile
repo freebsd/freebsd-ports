@@ -88,6 +88,7 @@
     SUBDIR += python-nexus
     SUBDIR += recombine
     SUBDIR += ruby-bio
+    SUBDIR += rubygem-bio
     SUBDIR += samtools
     SUBDIR += seaview
     SUBDIR += seqan

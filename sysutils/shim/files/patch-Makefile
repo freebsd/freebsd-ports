@@ -1,12 +1,6 @@
 --- Makefile.orig	2014-10-13 22:41:51.000000000 +0200
 +++ Makefile	2014-12-21 16:18:40.000000000 +0100
-@@ -1,16 +1,22 @@
--CC		= $(CROSS_COMPILE)gcc
-+CROSS_COMPILE	= $(LOCALBASE)/bin/
-+
-+CC		= $(CROSS_COMPILE)%%CC%%
- LD		= $(CROSS_COMPILE)ld
- OBJCOPY		= $(CROSS_COMPILE)objcopy
+@@ -4,13 +1,17 @@
  
  ARCH		= $(shell $(CC) -dumpmachine | cut -f1 -d- | sed s,i[3456789]86,ia32,)
  
