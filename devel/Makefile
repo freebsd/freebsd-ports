@@ -5070,7 +5070,6 @@
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
     SUBDIR += rubygem-binding_of_caller
-    SUBDIR += rubygem-bio
     SUBDIR += rubygem-bit-struct
     SUBDIR += rubygem-blankslate
     SUBDIR += rubygem-blobstore_client

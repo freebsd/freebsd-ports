@@ -4,7 +4,7 @@
 PORTNAME=	bio
 PORTVERSION=	1.4.3.0001
 PORTREVISION=	1
-CATEGORIES=	devel rubygems
+CATEGORIES=	biology rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
