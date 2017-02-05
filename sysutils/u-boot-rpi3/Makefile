@@ -3,7 +3,7 @@
 PORTNAME=	u-boot
 PORTVERSION=	2017.01
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/ \
+MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/:uboot \
 		LOCAL/db:bootfiles
 PKGNAMESUFFIX=	-rpi3
 DISTFILES=	u-boot-${PORTVERSION}.tar.bz2:uboot \
