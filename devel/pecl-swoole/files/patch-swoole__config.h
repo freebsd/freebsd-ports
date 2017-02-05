@@ -1,4 +1,4 @@
---- swoole_config.h.orig	2015-09-03 15:27:08 UTC
+--- swoole_config.h.orig	2017-01-24 02:05:48 UTC
 +++ swoole_config.h
 @@ -19,7 +19,7 @@
  #ifndef __clang__
