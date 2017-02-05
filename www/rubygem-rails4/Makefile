@@ -3,7 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	4.2.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -21,7 +21,7 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:mail/rubygem-actionmailer4 \
 		rubygem-activerecord4>=${PORTVERSION}:databases/rubygem-activerecord4 \
 		rubygem-activeresource4>=4.0.0:www/rubygem-activeresource4 \
 		rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4 \
-		rubygem-builder32>=3.2.2:devel/rubygem-builder32 \
+		rubygem-builder>=3.2.2:devel/rubygem-builder \
 		rubygem-bundler>=1.3.0:sysutils/rubygem-bundler \
 		rubygem-byebug>=5.0.0:devel/rubygem-byebug \
 		rubygem-coffee-rails41>=4.1.1:devel/rubygem-coffee-rails41 \
