@@ -1,15 +1,14 @@
---- Makefile.in.orig	2013-05-12 16:33:18 UTC
-+++ Makefile.in
-@@ -258,7 +258,7 @@ top_srcdir = @top_srcdir@
- SUBDIRS = src
+--- Makefile.am.orig	2013-05-12 15:16:43 UTC
++++ Makefile.am
+@@ -4,13 +4,13 @@ SUBDIRS = src
  dist_doc_DATA = README TODO
  EXTRA_DIST = driftnet.1.in CHANGES CREDITS
+ 
 -MANPAGE = driftnet.1.gz
 +MANPAGE = driftnet.1
  MAN1DIR = $(DESTDIR)$(mandir)/man1/
- all: all-recursive
  
-@@ -773,7 +773,7 @@ clean-local:
+ clean-local:
  	rm -f $(MANPAGE)
  
  install-data-local: driftnet.1.in
@@ -17,4 +16,3 @@
 +	cat $(srcdir)/driftnet.1.in | sed s/@*VERSION@*/$(VERSION)/ > $(MANPAGE)
  	$(MKDIR_P) $(MAN1DIR)
  	$(INSTALL_DATA) $(MANPAGE) $(MAN1DIR) || exit $$?
- 
