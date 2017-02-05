@@ -12,7 +12,7 @@ COMMENT=	Static site generator written in Python
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rst2html:textproc/py-docutils \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}feedgenerator>=1.6:www/py-feedgenerator \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
