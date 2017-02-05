@@ -17,8 +17,8 @@ COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 BROKEN_powerpc64=	Does not build
 
-USE_GCC=	any
-USES=		bison gmake tar:bzip2
+USE_CSTD=	gnu89
+USES=		bison compiler:nestedfct gmake tar:bzip2
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 
