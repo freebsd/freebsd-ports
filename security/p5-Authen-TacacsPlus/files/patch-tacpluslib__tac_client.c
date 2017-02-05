@@ -1,5 +1,5 @@
---- ./tacpluslib/tac_client.c.orig	2009-07-10 00:34:49.000000000 +0200
-+++ ./tacpluslib/tac_client.c	2011-08-11 20:22:06.000000000 +0200
+--- tacpluslib/tac_client.c.orig	2012-08-23 07:25:52 UTC
++++ tacpluslib/tac_client.c
 @@ -1,6 +1,8 @@
  
  /* (C) 1997 Mike Shoyher msh@corbina.net, msh@apache.lexa.ru */
