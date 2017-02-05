@@ -1,4 +1,4 @@
-%%GUI%%bin/cadabra-gtk
+%%GUI%%bin/cadabra2-gtk
 bin/cadabra-server
 bin/cadabra2
 bin/cadabra2html
@@ -7,23 +7,21 @@ lib/libcadabra_server.so
 %%GUI%%lib/libtexengine.so
 %%PYTHON_SITELIBDIR%%/cadabra2.so
 %%PYTHON_SITELIBDIR%%/cadabra2_defaults.py
-%%PYTHON_SITELIBDIR%%/cdb/gr.py
-%%GUI%%share/applications/cadabra2.desktop
-%%GUI%%%%DATADIR%%/images/cadabra2.png
+%%PYTHON_SITELIBDIR%%/cdb/gauge_theory/__init__.py
+%%PYTHON_SITELIBDIR%%/cdb/gauge_theory/instantons.py
+%%PYTHON_SITELIBDIR%%/cdb/relativity/__init__.py
+%%PYTHON_SITELIBDIR%%/cdb/relativity/schwarzschild.py
+%%GUI%%share/applications/cadabra2-gtk.desktop
+%%GUI%%%%DATADIR%%/images/cadabra2-gtk.png
 %%GUI%%%%DATADIR%%/manual/algorithms/distribute.cnb
-%%GUI%%share/icons/hicolor/256x256/apps/cadabra2.png
-%%GUI%%share/icons/hicolor/64x64/apps/cadabra2.png
-%%GUI%%share/icons/hicolor/scalable/apps/cadabra2.svgz
+%%GUI%%share/icons/hicolor/256x256/apps/cadabra2-gtk.png
 %%GUI%%share/icons/hicolor/256x256/apps/cadabra-gtk.png
+%%GUI%%share/icons/hicolor/128x128/apps/cadabra2-gtk.png
+%%GUI%%share/icons/hicolor/128x128/apps/cadabra-gtk.png
+%%GUI%%share/icons/hicolor/64x64/apps/cadabra2-gtk.png
 %%GUI%%share/icons/hicolor/64x64/apps/cadabra-gtk.png
+%%GUI%%share/icons/hicolor/scalable/apps/cadabra2-gtk.svgz
 %%GUI%%share/icons/hicolor/scalable/apps/cadabra-gtk.svgz
-%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/breqn.sty
-%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/cmbase.sym
-%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/flexisym.sty
-%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/mathpazo.sym
-%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/mathptmx.sym
-%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/mathstyle.sty
-%%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/msabm.sym
 %%GUI%%%%TEXMFLOCALDIR%%/tex/latex/cadabra2/tableaux.sty
 %%GUI%%@dir %%DATADIR%%/manual/properties
 %%GUI%%%%DATADIR%%/manual/algorithms/asym.cnb
@@ -97,3 +95,4 @@ lib/libcadabra_server.so
 %%GUI%%%%DATADIR%%/manual/properties/Spinor.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Symmetric.cnb
 %%GUI%%%%DATADIR%%/manual/properties/TableauSymmetry.cnb
+%%GUI%%%%DATADIR%%/texengine/preamble.tex
