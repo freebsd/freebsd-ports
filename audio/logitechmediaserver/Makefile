@@ -43,8 +43,8 @@ SHEBANG_FILES=	Bin/darwin/check-update.pl \
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
-OPTIONS_DEFINE=	APE FAAD FLAC LAME SHORTEN SOX DOCS
-OPTIONS_DEFAULT=APE FAAD FLAX SOX
+OPTIONS_DEFINE=	APE FAAD FLAC LAME SHORTEN SOX TEST DOCS
+OPTIONS_DEFAULT=APE FAAD FLAX SOX TEST
 SHORTEN_DESC=	Support Shorten input
 SOX_DESC=	Support OGG Vorbis input via SoX (SliMP3 and SB1)
 
@@ -54,6 +54,7 @@ FLAC_RUN_DEPENDS=	flac:audio/flac
 LAME_RUN_DEPENDS=	lame:audio/lame
 SHORTEN_RUN_DEPENDS=	shorten:audio/shorten
 SOX_RUN_DEPENDS=	sox:audio/sox
+TEST_VARS_OFF=		CONTRIB_FLAGS=-t
 
 USE_RC_SUBR=	logitechmediaserver
 DOCFILES=	Changelog*.html Installation.txt License*.txt
@@ -101,7 +102,7 @@ PLIST_SUB+=	AMD64_ONLY="@comment "
 .endif
 
 do-build:
-	cd ${WRKSRC_vendor}/CPAN && ./buildme.sh
+	cd ${WRKSRC_vendor}/CPAN && ./buildme.sh ${CONTRIB_FLAGS}
 	cd ${WRKSRC}/CPAN/arch && ${CP} -R 5.22 5.24
 
 do-install:
