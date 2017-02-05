@@ -19,6 +19,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gmake pkgconfig
+USE_CXXSTD=	c++11
 USE_GCC=	yes
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
