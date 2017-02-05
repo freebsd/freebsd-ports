@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.10.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -445,6 +446,9 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_ct}
 .endif
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 && ${SSL_DEFAULT} == base
+IGNORE=		CT option requires OpenSSL 1.0.2, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
@@ -1157,9 +1161,9 @@ USERS?=	${WWWOWN}
 GROUPS?=${WWWGRP}
 
 .if defined(NGINX_OPENSSL)
-USE_OPENSSL=	yes
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-WITH_OPENSSL_PORT=yes
+USES+=		ssl
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
 .endif
 .endif
 
@@ -1365,10 +1369,4 @@ post-install:
 	${CAT} ${WRKSRC}/conf/nginx.conf \
 		>>${STAGEDIR}${ETCDIR}/nginx.conf-dist
 
-.include <bsd.port.pre.mk>
-
-.if defined(NGINX_OPENSSL) && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

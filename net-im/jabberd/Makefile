@@ -101,10 +101,6 @@ EXPERIMENTAL_DESC=	Enable experimental features (TLS-Everywhere)
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} != FreeBSD
-WITH_OPENSSL_PORT=	yes
-.endif
-
 .if ${PORT_OPTIONS:MPGSQL}
 _REQUIRE+=		postgresql
 .endif

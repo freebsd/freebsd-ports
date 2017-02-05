@@ -2,6 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.0.29
+PORTREVISION=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -95,8 +96,6 @@ OPTIONS_SUB=	yes
 .endif
 
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
-# See PR209419, MariaDB 10.0 fails to build with base SSL libs
-WITH_OPENSSL_PORT=	yes
 
 .if defined(CLIENT_ONLY)
 # MySQL-Client part

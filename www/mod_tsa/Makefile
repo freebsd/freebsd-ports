@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_tsa
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://am.nesiac.org/static/ \
 		http://ubique.spb.ru/src/
@@ -21,8 +21,7 @@ CONFIGURE_ARGS=	--with-openssl-incdir=${OPENSSLINC} \
 				--with-apxs=${APXS}
 MAKE_ARGS+=	APXS=${APXS}
 
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
+USES=		ssl
 USE_APACHE=	22+
 AP_EXTRAS+=	-DMOD_TSA_VERSION=\\\"mod_tsa/${PORTVERSION}\\\"
 AP_FAST_BUILD=	yes
@@ -51,7 +50,7 @@ AP_LIB+=	-lpq
 .endif
 
 .if ${PORT_OPTIONS:MFIREBIRD}
-USE+=			firebird
+USES+=			firebird
 CONFIGURE_ARGS+=	--enable-firebird=yes
 SRC_FILE+=	db_firebird.c
 AP_LIB+=	-lgds
