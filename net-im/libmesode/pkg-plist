@@ -1,0 +1,6 @@
+include/mesode.h
+lib/libmesode.so.0.0.0
+lib/libmesode.so.0
+lib/libmesode.so
+lib/libmesode.a
+libdata/pkgconfig/libmesode.pc
