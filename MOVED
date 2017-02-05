@@ -117,7 +117,6 @@ x11-toolkits/qwt|x11-toolkits/qwt4|2008-04-02|Renamed for better naming
 x11-toolkits/qwt-devel|x11-toolkits/qwt5|2008-04-02|Renamed for better naming
 audio/csound-manual||2008-04-04|Merged with main port
 security/acid||2008-04-04|Has expired: development has ceased, use security/base
-devel/check|devel/libcheck|2008-04-07|Removed in favor to devel/libcheck
 archivers/deepforest||2008-04-09|Has expired: development stalled for years, outdated, unmaintained
 graphics/libimg-tkstep80||2008-04-09|Has expired: tkstep80 scheduled for expiration
 x11-toolkits/tkstep80||2008-04-09|Has expired: development stalled for years, outdated, unmaintained
@@ -9058,3 +9057,4 @@ www/tinymce3|www/tinymce|2017-01-31|Has expired: Use www/tinymce instead
 devel/p5-IO-Detect|devel/p5-Scalar-Does|2017-01-31|Has expired: Use devel/p5-Scalar-Does instead
 devel/pear-PHPUnit3|devel/phpunit|2017-01-31|Has expired: Deprecated by upstream, use devel/phpunit instead
 devel/rubygem-bio|biology/rubygem-bio|2017-02-05|Move to a better place
+devel/libcheck|devel/check|2017-02-05|Rename to match upstream naming
