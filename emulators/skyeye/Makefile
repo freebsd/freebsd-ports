@@ -13,6 +13,7 @@ COMMENT=	Environment simulates typical ARM-base embedded computer systems
 
 LICENSE=	GPLv2
 
+USE_CSTD=	gnu89
 USE_BINUTILS=	yes
 USE_GCC=	any
 GNU_CONFIGURE=	yes
