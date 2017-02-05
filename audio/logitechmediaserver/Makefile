@@ -84,15 +84,17 @@ SLIMGROUP?=	${SLIMUSER}
 
 .include <bsd.port.pre.mk>
 
-ARCHNAME!=	${PERL} -V:archname | ${AWK} -F"'" '{print $$2}'
+ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${ARCH} == "i386"
+ARCHNAME=	i386-freebsd-thread-multi-64int
 PLIST_SUB+=	I386_ONLY=""
 .else
 PLIST_SUB+=	I386_ONLY="@comment "
 .endif
 
 .if ${ARCH} == "amd64"
+ARCHNAME=	amd64-freebsd-thread-multi
 PLIST_SUB+=	AMD64_ONLY=""
 .else
 PLIST_SUB+=	AMD64_ONLY="@comment "
