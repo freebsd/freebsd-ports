@@ -3,7 +3,7 @@
 
 MASTERDIR=	${.CURDIR}/../py-flake8-import-order
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py3-flake8
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycodestyle>=0:devel/py3-pycodestyle
 
 USES=		python:3
 
