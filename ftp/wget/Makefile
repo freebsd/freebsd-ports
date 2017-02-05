@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wget
-DISTVERSION=	1.18
-PORTREVISION=	2
+DISTVERSION=	1.19
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	GNU
 
@@ -50,6 +49,8 @@ PSL_CONFIGURE_WITH=	libpsl
 PSL_LIB_DEPENDS=	libpsl.so:dns/libpsl
 
 .include <bsd.port.options.mk>
+
+CONFIGURE_ARGS+=--with-included-libunistring
 
 .if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
