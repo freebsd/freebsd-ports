@@ -23,6 +23,7 @@ SHEBANG_FILES=	makedep
 USE_PERL5=	build
 USE_SDL=	image ttf sdl
 USE_GCC=	any
+USE_CSTD=	gnu89
 MAKEFILE=	makefile
 MAKE_ARGS=	NEO="" VERBOSE=1 HAS_CONSOLE=""
 
