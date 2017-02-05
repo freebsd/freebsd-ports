@@ -3,6 +3,7 @@
 
 PORTNAME=	foreman-proxy
 PORTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.theforeman.org/foreman-proxy/
 
@@ -18,11 +19,8 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		rubygem-sinatra>=1.4.3:www/rubygem-sinatra \
 		wget:ftp/wget
 
-OPTIONS_DEFINE=	BMC
-OPTIONS_RADIO=	PUPPET
-OPTIONS_RADIO_PUPPET=	PUPPET3 PUPPET4
+OPTIONS_DEFINE=	BMC PUPPET4
 BMC_DESC=	Depend on rubyipmi for BMC support
-PUPPET3_DESC=	Depend on Puppet 3.8
 PUPPET4_DESC=	Depend on Puppet 4
 
 USES=		tar:bzip2
@@ -48,8 +46,6 @@ SUB_LIST=	RUBY="${RUBY}" \
 PLIST_SUB=	${SUB_LIST} MKDIR="${MKDIR}"
 
 BMC_RUN_DEPENDS=	rubygem-rubyipmi>=0.10.0:sysutils/rubygem-rubyipmi
-PUPPET3_RUN_DEPENDS=	puppet:sysutils/puppet38 \
-			rubygem-ruby-augeas>=0.5:textproc/rubygem-ruby-augeas
 PUPPET4_RUN_DEPENDS=	puppet:sysutils/puppet4 \
 			rubygem-ruby-augeas>=0.5:textproc/rubygem-ruby-augeas
 
