@@ -3,6 +3,7 @@
 
 PORTNAME=	rbvmomi
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ COMMENT=	Ruby interface to the VMware vSphere API
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-builder32>=0:devel/rubygem-builder32 \
+RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-json>=1.8:devel/rubygem-json \
 		rubygem-nokogiri>=1.5:textproc/rubygem-nokogiri \
 		rubygem-trollop>=2.1:devel/rubygem-trollop

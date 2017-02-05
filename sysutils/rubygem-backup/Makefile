@@ -3,6 +3,7 @@
 
 PORTNAME=	backup
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:devel/rubygem-CFPropertyList \
 		rubygem-atomic>=1.1.14:devel/rubygem-atomic \
 		rubygem-aws-ses>=0.5.0:net/rubygem-aws-ses \
 		rubygem-buftok>=0.2.0:devel/rubygem-buftok \
-		rubygem-builder32>=3.2.2:devel/rubygem-builder32 \
+		rubygem-builder>=3.2.2:devel/rubygem-builder \
 		rubygem-descendants_tracker>=0.0.3:devel/rubygem-descendants_tracker \
 		rubygem-dogapi>=1.11.0:net/rubygem-dogapi \
 		rubygem-dropbox-sdk>=1.6.5:net/rubygem-dropbox-sdk \
