@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 HUGS_DATE=	Sep2006
 USES=		bison gmake openal:al,alut
+USE_CSTD=	gnu89
 USE_GCC=	yes
 
 GNU_CONFIGURE=		yes
