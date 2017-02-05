@@ -833,7 +833,6 @@
     SUBDIR += ptools
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
-    SUBDIR += puppet37
     SUBDIR += puppet38
     SUBDIR += puppet4
     SUBDIR += puppetserver

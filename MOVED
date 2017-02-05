@@ -9058,3 +9058,6 @@ devel/p5-IO-Detect|devel/p5-Scalar-Does|2017-01-31|Has expired: Use devel/p5-Sca
 devel/pear-PHPUnit3|devel/phpunit|2017-01-31|Has expired: Deprecated by upstream, use devel/phpunit instead
 devel/rubygem-bio|biology/rubygem-bio|2017-02-05|Move to a better place
 devel/libcheck|devel/check|2017-02-05|Rename to match upstream naming
+devel/p5-JIRA-Client||2017-02-05|Has expired: Deprecated by upstream due to deprecated JIRA's SOAP API
+sysutils/puppet37||2017-02-05|Has expired: Upstream support ended, see http://tinyurl.com/puppet3eol
+net-im/ttytter||2017-02-05|Has expired: Upstream no longer active, see net-im/oysttyer
