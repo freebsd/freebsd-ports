@@ -1,8 +1,8 @@
 # Allow building when an older version of libbde is installed
 
---- pybde/Makefile.in.orig	2016-08-01 20:29:29 UTC
+--- pybde/Makefile.in.orig	2017-02-05 12:42:14 UTC
 +++ pybde/Makefile.in
-@@ -192,7 +192,7 @@ AM_V_at = $(am__v_at_@AM_V@)
+@@ -191,7 +191,7 @@ AM_V_at = $(am__v_at_@AM_V@)
  am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
  am__v_at_0 = @
  am__v_at_1 = 
