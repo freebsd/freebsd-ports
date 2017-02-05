@@ -1,7 +1,8 @@
-include/plplotada/plplot.adb
 include/plplotada/plplot.ads
 include/plplotada/plplot_auxiliary.adb
 include/plplotada/plplot_auxiliary.ads
+include/plplotada/plplot_standard.adb
+include/plplotada/plplot_standard.ads
 include/plplotada/plplot_thin.adb
 include/plplotada/plplot_thin.ads
 include/plplotada/plplot_traditional.adb
@@ -10,5 +11,6 @@ lib/gnat/plplot.gpr
 lib/plplotada/libplplotada.a
 lib/plplotada/plplot.ali
 lib/plplotada/plplot_auxiliary.ali
+lib/plplotada/plplot_standard.ali
 lib/plplotada/plplot_thin.ali
 lib/plplotada/plplot_traditional.ali

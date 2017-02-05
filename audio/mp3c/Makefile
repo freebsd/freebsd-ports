@@ -33,6 +33,6 @@ post-patch:
 		${WRKSRC}/src/conf.c
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/cdrip.sh ${STAGEDIR}${LOCALBASE}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/cdrip.sh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

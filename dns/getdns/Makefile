@@ -3,7 +3,7 @@
 
 PORTNAME=	getdns
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		https://mirrors.rit.edu/zi/ \
@@ -47,7 +47,7 @@ LIBUV_CONFIGURE_WITH=	libuv
 LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
 LIBEVENT_CONFIGURE_WITH=libevent
 DIAGS_VARS=		PLIST_FILES+=bin/${PORTNAME}_query
-DIAGS_LIB_DEPENDS=	libcheck.so:devel/libcheck
+DIAGS_LIB_DEPENDS=	libcheck.so:devel/check
 
 do-build-DIAGS-on:
 	(cd ${WRKSRC}/src/test && ${MAKE})

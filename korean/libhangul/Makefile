@@ -12,7 +12,7 @@ COMMENT=	Library for Hangul processing
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/check.pc:devel/libcheck
+TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/check.pc:devel/check
 
 GH_ACCOUNT=	choehwanjin
 GH_TAGNAME=	9fe2d4e

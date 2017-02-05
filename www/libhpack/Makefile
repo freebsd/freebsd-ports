@@ -3,6 +3,7 @@
 
 PORTNAME=	libhpack
 PORTVERSION=	0.0.20140710
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://raw.github.com/http2/http2-spec/master/:ec_xml
 DISTFILES=	draft-ietf-httpbis-header-compression.xml:ec_xml
@@ -14,7 +15,7 @@ COMMENT=	Implementation of HPACK (Header compression for HTTP/2.0)
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcheck.so:devel/libcheck
+LIB_DEPENDS=	libcheck.so:devel/check
 
 CMAKE_ARGS=	-DBUILD_DOCS=OFF \
 		-DBUILD_TESTS=OFF \

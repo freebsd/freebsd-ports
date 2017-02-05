@@ -250,6 +250,7 @@
     SUBDIR += cgit
     SUBDIR += cgprof
     SUBDIR += charva
+    SUBDIR += check
     SUBDIR += checkbashisms
     SUBDIR += checkheaders
     SUBDIR += cheritrace-devel
@@ -1227,7 +1228,6 @@
     SUBDIR += libccid
     SUBDIR += libcfg
     SUBDIR += libcfu
-    SUBDIR += libcheck
     SUBDIR += libchipcard
     SUBDIR += libcidr
     SUBDIR += libcii
@@ -1267,8 +1267,8 @@
     SUBDIR += libee
     SUBDIR += libeio
     SUBDIR += libelf
-    SUBDIR += libepp-nicbr
     SUBDIR += libepoll-shim
+    SUBDIR += libepp-nicbr
     SUBDIR += libesedb
     SUBDIR += libestr
     SUBDIR += libev
@@ -4242,6 +4242,11 @@
     SUBDIR += py-five.globalrequest
     SUBDIR += py-five.localsitemanager
     SUBDIR += py-flake8
+    SUBDIR += py-flake8-builtins
+    SUBDIR += py-flake8-docstrings
+    SUBDIR += py-flake8-import-order
+    SUBDIR += py-flake8-polyfill
+    SUBDIR += py-flake8-quotes
     SUBDIR += py-flask-babel
     SUBDIR += py-flexmock
     SUBDIR += py-foolscap
@@ -4501,6 +4506,7 @@
     SUBDIR += py-pycodestyle
     SUBDIR += py-pycparser
     SUBDIR += py-pydenticon
+    SUBDIR += py-pydocstyle
     SUBDIR += py-pydoop
     SUBDIR += py-pyechonest
     SUBDIR += py-pyee
@@ -4867,6 +4873,11 @@
     SUBDIR += py3-click
     SUBDIR += py3-dbus
     SUBDIR += py3-flake8
+    SUBDIR += py3-flake8-builtins
+    SUBDIR += py3-flake8-docstrings
+    SUBDIR += py3-flake8-import-order
+    SUBDIR += py3-flake8-polyfill
+    SUBDIR += py3-flake8-quotes
     SUBDIR += py3-gobject3
     SUBDIR += py3-hgtools
     SUBDIR += py3-jsonschema
@@ -4876,6 +4887,7 @@
     SUBDIR += py3-nose
     SUBDIR += py3-py
     SUBDIR += py3-pycodestyle
+    SUBDIR += py3-pydocstyle
     SUBDIR += py3-pyflakes
     SUBDIR += py3-pyicu
     SUBDIR += py3-pylru-cache

@@ -11,7 +11,7 @@ COMMENT=	ProjectTox-Core library, a decentralized and secure messenger
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	checkmk:devel/libcheck
+BUILD_DEPENDS=	checkmk:devel/check
 LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
 		libsndfile.so:audio/libsndfile		\
 		libsodium.so:security/libsodium		\

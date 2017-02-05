@@ -146,6 +146,6 @@ share/gnome/help/gnotepad+/C/topic.dat
 %%DATADIR%%/xpm/tb_unordered.xpm
 %%DATADIR%%/xpm/tb_winclose.xpm
 %%DATADIR%%/xpm/tb_winnew.xpm
-share/locale/da/LC_MESSAGES/gnotepad+.mo
-share/locale/fr/LC_MESSAGES/gnotepad+.mo
-share/locale/ja/LC_MESSAGES/gnotepad+.mo
+%%NLS%%share/locale/da/LC_MESSAGES/gnotepad+.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gnotepad+.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gnotepad+.mo

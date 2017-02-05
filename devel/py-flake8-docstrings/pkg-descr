@@ -1,0 +1,3 @@
+Extension for flake8 which uses pydocstyle to check docstrings
+
+WWW: https://pypi.python.org/pypi/flake8-docstrings

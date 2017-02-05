@@ -13,7 +13,7 @@ COMMENT=	Synchronous multi-master replication engine
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	checkmk:devel/libcheck \
+BUILD_DEPENDS=	checkmk:devel/check \
 		doxygen:devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>=0:textproc/py-cloud_sptheme
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
