@@ -18,8 +18,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mjg59
 
 USES=		gmake
+USE_CSTD=	gnu89
 USE_GCC=	yes
 USE_GITHUB=	yes
+MAKE_ARGS=	CC="${CC} ${CFLAGS:M-std=*}" LD="${LD}" OBJCOPY="${OBJCOPY}"
 MAKE_JOBS_UNSAFE=	yes
 ONLY_FOR_ARCHS=	amd64
 
@@ -28,7 +30,6 @@ PLIST_FILES=	lib/shim/shim.pem lib/shim/shim.key \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" ${WRKSRC}/make-certs
-	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/Makefile
 
 do-install:
 	# Note that before this step, the shim.pem contains the _private_ key.
