@@ -3,6 +3,7 @@
 
 PORTNAME=	softhsm
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://dist.opendnssec.org/source/ \
 		http://dist.opendnssec.org/source/testing/
@@ -35,13 +36,12 @@ OPTIONS_DEFAULT=	CRYP_OPEN
 CRYP_BOTAN_CONFIGURE_ON=	--with-crypto-backend=botan
 CRYP_BOTAN_LIB_DEPENDS=	libbotan-1.10.so:security/botan110
 CRYP_OPEN_USE=		openssl=yes
-CRYP_OPEN_VARS=		WITH_OPENSSL_PORT=yes
 CRYP_OPEN_CONFIGURE_ON=	--with-crypto-backend=openssl
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${SSL_DEFAULT:Mlibressl*}
 CONFIGURE_ARGS+=	--disable-gost
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

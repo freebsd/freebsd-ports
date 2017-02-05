@@ -3,6 +3,7 @@
 
 PORTNAME=	virt-viewer
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 
@@ -18,9 +19,6 @@ LIB_DEPENDS=	libvirt.so:devel/libvirt \
 		libvirt-glib-1.0.so:devel/libvirt-glib \
 		libgtk-vnc-2.0.so:net/gtk-vnc \
 		libspice-client-glib-2.0.so:deskutils/spice-gtk
-
-USE_OPENSSL=yes
-WITH_OPENSSL_PORT=yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

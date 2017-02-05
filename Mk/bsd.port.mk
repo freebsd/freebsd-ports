@@ -1266,8 +1266,6 @@ GROUPS_BLACKLIST=	_dhcp _pflogd _ypldap audit authpf bin bind daemon dialer ftp 
 LDCONFIG_DIR=	libdata/ldconfig
 LDCONFIG32_DIR=	libdata/ldconfig32
 
-.endif
-
 # At least KDE needs TMPDIR for the package building,
 # so we're setting it to the known default value.
 .if defined(PACKAGE_BUILDING)
@@ -1280,7 +1278,11 @@ WITH_DEBUG=	yes
 .endif
 .endif
 
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 .include "${PORTSDIR}/Mk/bsd.options.mk"
+
+.endif
+# End of options section.
 
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK) && !defined(INOPTIONSMK)
@@ -1290,8 +1292,6 @@ WITH_DEBUG=	yes
 .endif
 
 _PREMKINCLUDED=	yes
-
-.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 .if defined(PORTVERSION)
 .if ${PORTVERSION:M*[-_,]*}x != x

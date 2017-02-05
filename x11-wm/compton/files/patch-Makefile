@@ -1,6 +1,6 @@
---- Makefile.orig	2015-09-20 09:16:54 UTC
+--- Makefile.orig	2016-09-07 08:23:44 UTC
 +++ Makefile
-@@ -143,29 +143,30 @@ compton: $(OBJS)
+@@ -143,29 +143,31 @@ compton: $(OBJS)
  	$(CC) $(CFG) $(CPPFLAGS) $(LDFLAGS) $(CFLAGS) -o $@ $(OBJS) $(LIBS)
  
  man/%.1: man/%.1.asciidoc
@@ -20,7 +20,8 @@
 -endif
 +install: $(BINS)
 +	@install -d "$(DESTDIR)$(BINDIR)" "$(DESTDIR)$(APPDIR)" "$(DESTDIR)$(XDGDIR)"
-+	install -m755 $(BINS) "$(DESTDIR)$(BINDIR)"/
++	install -m755 $(filter-out compton,$(BINS)) "$(DESTDIR)$(BINDIR)"/
++	$(BSD_INSTALL_PROGRAM) compton "$(DESTDIR)$(BINDIR)"/
  	@install -d \
  		"$(DESTDIR)$(ICODIR)/scalable/apps" \
  		"$(DESTDIR)$(ICODIR)/48x48/apps"

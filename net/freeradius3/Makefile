@@ -43,7 +43,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT LDAP MYSQL \
 		PGSQL UNIXODBC FIREBIRD REDIS PYTHON RUBY \
 		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR PERL REST \
-		FREETDS IDN SSL_PORT DOCS SQLITE3
+		FREETDS IDN DOCS SQLITE3
 OPTIONS_DEFAULT=USER PERL
 
 USER_DESC=		Run as user freeradius, group freeradius
@@ -56,7 +56,6 @@ UDPFROMTO_DESC=		Compile in UDPFROMTO support
 DEVELOPER_DESC=		Enable developer options
 EDIR_DESC=		Enable eDirectory support (implies LDAP)
 REST_DESC=		Enable RESTful API support
-SSL_PORT_DESC=		Use OpenSSL from the ports collection
 
 SQLITE3_CONFIGURE_WITH=rlm_sql_sqlite
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
@@ -280,10 +279,6 @@ CONFIGURE_ARGS+=--quiet
 # Compile in UDPFROMTO support
 .if ${PORT_OPTIONS:MUDPFROMTO}
 CONFIGURE_ARGS+=--with-udpfromto
-.endif
-
-.if ${PORT_OPTIONS:MSSL_PORT}
-WITH_OPENSSL_PORT=yes
 .endif
 
 .include <bsd.port.pre.mk>

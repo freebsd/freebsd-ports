@@ -29,9 +29,8 @@ CONFLICTS_INSTALL=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 USE_RC_SUBR=	radiusd
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool shebangfix tar:bzip2
+USES=		autoreconf gmake libtool shebangfix ssl tar:bzip2
 SHEBANG_FILES=	scripts/radsqlrelay src/modules/rlm_counter/rad_counter
-USE_OPENSSL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}
 LIBS+=		-L${LOCALBASE}/lib
@@ -82,7 +81,7 @@ _REQUIRE=	NETWORKING SERVERS
 
 OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT LDAP MYSQL \
 		PGSQL UNIXODBC FIREBIRD PERL PYTHON OCI8 RUBY DHCP \
-		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR SSL_PORT DOCS
+		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR DOCS
 OPTIONS_DEFAULT=USER PERL PYTHON
 
 DHCP_DESC=		With DHCP support (EXPERIMENTAL)
@@ -96,7 +95,6 @@ EXPERIMENTAL_DESC=	Build experimental modules
 UDPFROMTO_DESC=		Compile in UDPFROMTO support
 DEVELOPER_DESC=		Enable developer options
 EDIR_DESC=		Enable eDirectory support (implies LDAP)
-SSL_PORT_DESC=		Use OpenSSL from the ports collection
 
 .include <bsd.port.options.mk>
 
@@ -283,10 +281,6 @@ CFLAGS!=	${ECHO} ${CFLAGS} | ${SED} -Ee 's:-O[0-9]?[[:space:]]*::g'
 # Compile in UDPFROMTO support
 .if ${PORT_OPTIONS:MUDPFROMTO}
 CONFIGURE_ARGS+=--with-udpfromto
-.endif
-
-.if ${PORT_OPTIONS:MSSL_PORT}
-WITH_OPENSSL_PORT=yes
 .endif
 
 .if empty(PORT_OPTIONS:MDOCS)

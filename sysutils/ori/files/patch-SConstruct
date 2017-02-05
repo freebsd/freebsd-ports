@@ -1,0 +1,18 @@
+--- SConstruct.orig	2014-01-17 06:40:03 UTC
++++ SConstruct
+@@ -302,15 +302,6 @@ if (env["WITH_MDNS"]) and (sys.platform 
+ 	print 'Please install libdns_sd'
+ 	Exit(1)
+ 
+-if env["HAS_PKGCONFIG"]:
+-    if not conf.CheckPkg("openssl"):
+-        print 'openssl is not registered in pkg-config'
+-        Exit(1)
+-    if not conf.CheckPkgMinVersion("openssl", "1.0.0"):
+-        print 'openssl version 1.0.0 or above required'
+-        Exit(1)
+-    env.ParseConfig('pkg-config --libs --cflags openssl')
+-
+ conf.Finish()
+ 
+ Export('env')

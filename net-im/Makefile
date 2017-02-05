@@ -58,6 +58,7 @@
     SUBDIR += libaccounts-glib
     SUBDIR += libaccounts-qt5
     SUBDIR += libjreen
+    SUBDIR += libmesode
     SUBDIR += libnice
     SUBDIR += libnice-gst010
     SUBDIR += libnice-gst1
@@ -188,7 +189,6 @@
     SUBDIR += tkabber-plugins
     SUBDIR += tox
     SUBDIR += toxic
-    SUBDIR += ttytter
     SUBDIR += turpial
     SUBDIR += twirssi
     SUBDIR += twitmail
