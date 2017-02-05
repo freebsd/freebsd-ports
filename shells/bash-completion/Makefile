@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bash-completion
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 PORTEPOCH=	1
 CATEGORIES=	shells
 
