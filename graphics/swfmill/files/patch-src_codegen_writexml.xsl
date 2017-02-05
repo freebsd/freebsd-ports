@@ -5,7 +5,7 @@
  		size_t len = strlen(from_str);
  		iconv_t cd = iconv_open("UTF-8", ctx-&gt;swf_encoding);
 -		if (cd &lt; 0) {
-+		if (cd == NULL) {
++		if (cd == (iconv_t)-1) {
  			fprintf(stderr, "iconv_open failed.\n");
  			return xmlCharStrdup("");
  		}
