@@ -250,6 +250,7 @@
     SUBDIR += cgit
     SUBDIR += cgprof
     SUBDIR += charva
+    SUBDIR += check
     SUBDIR += checkbashisms
     SUBDIR += checkheaders
     SUBDIR += cheritrace-devel
@@ -1227,7 +1228,6 @@
     SUBDIR += libccid
     SUBDIR += libcfg
     SUBDIR += libcfu
-    SUBDIR += libcheck
     SUBDIR += libchipcard
     SUBDIR += libcidr
     SUBDIR += libcii

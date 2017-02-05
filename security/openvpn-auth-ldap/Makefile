@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	re2c:devel/re2c \
 		${NONEXISTENT}:security/openvpn:extract \
-		libcheck>=0:devel/libcheck
+		check>=0:devel/check
 
 USES=		objc tar:xz
 

@@ -11,7 +11,7 @@ COMMENT=	C library and command-line tool for Riemann
 
 LICENSE=	LGPL3+
 
-BUILD_DEPENDS=	libcheck>0:devel/libcheck
+BUILD_DEPENDS=	check>0:devel/check
 LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c \
 		libgnutls.so:security/gnutls \
 		libjson-c.so:devel/json-c
