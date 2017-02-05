@@ -38,17 +38,6 @@ DEBUG_CMAKE_ON=		-DCMAKE_BUILD_TYPE:STRING=Debug
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} != FreeBSD
-WITH_OPENSSL_PORT=	yes
-
-# CMake 3.3.x will use $PATH when looking for headers and libraries by default,
-# and OpenSSL from base will end up being used. Make sure ${LOCALBASE} is
-# preferred over $PATH.
-CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|.lst |.lst.sample |' ${WRKSRC}/CMakeLists.txt

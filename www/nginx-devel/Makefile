@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.11.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -450,6 +451,9 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_ct}
 .endif
 NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 && ${SSL_DEFAULT} == base
+IGNORE=		CT option requires OpenSSL 1.0.2, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
@@ -1173,10 +1177,7 @@ USERS?=	${WWWOWN}
 GROUPS?=${WWWGRP}
 
 .if defined(NGINX_OPENSSL)
-USE_OPENSSL=	yes
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-WITH_OPENSSL_PORT=yes
-.endif
+USES+=		ssl
 .endif
 
 pre-everything::
