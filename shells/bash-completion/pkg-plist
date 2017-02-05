@@ -136,6 +136,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/dcop
 %%DATADIR%%/completions/dd
 %%DATADIR%%/completions/declare
+%%DATADIR%%/completions/deja-dup
 %%DATADIR%%/completions/desktop-file-validate
 %%DATADIR%%/completions/dfutool
 %%DATADIR%%/completions/dhclient
@@ -355,6 +356,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/mount.linux
 %%DATADIR%%/completions/mplayer
 %%DATADIR%%/completions/mplayer2
+%%DATADIR%%/completions/mr
 %%DATADIR%%/completions/msgsnarf
 %%DATADIR%%/completions/msynctool
 %%DATADIR%%/completions/mtx
@@ -510,6 +512,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/setquota
 %%DATADIR%%/completions/sftp
 %%DATADIR%%/completions/sh
+%%DATADIR%%/completions/sidedoor
 %%DATADIR%%/completions/sitecopy
 %%DATADIR%%/completions/slackpkg
 %%DATADIR%%/completions/slapt-get
