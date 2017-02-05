@@ -78,6 +78,7 @@ post-patch:
 			 -e 's,@file{},@file{${PREFIX}},' \
 		${WRKSRC}/doc/sample.wgetrc* ${WRKSRC}/doc/wget.texi
 	${REINPLACE_CMD} -e '/ac_fn_c_check_header_mongrel.*uuid\/uuid.h/ d' \
+			 -e 's|-R$$found_dir|-Wl,-rpath=$$found_dir|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
