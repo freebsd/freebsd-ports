@@ -16,22 +16,26 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GITHASH=	e4cab47
 PATCH_STRIP=	-p1
-HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README HISTORY
 WRKSRC=		${WRKDIR}/pipelka-${PORTNAME}-${GITHASH}
+
+PORTDOCS=	README HISTORY
+
+OPTIONS_DEFINE=	DOCS
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}
 	${INSTALL_DATA} ${WRKSRC}/${PLUGIN}/allowed_hosts.conf \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}/allowed_hosts.conf.sample
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
