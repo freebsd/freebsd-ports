@@ -4,7 +4,7 @@
 PORTNAME=	wizznic
 PORTVERSION=	0.9.9
 DISTVERSIONSUFFIX=-src
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Source%20Releases/
 
@@ -18,10 +18,10 @@ LIB_DEPENDS=	libpng.so:graphics/png
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 USES=		gmake tar:bzip2
+USE_CSTD=	gnu89
 USE_SDL=	image mixer sdl
 MAKE_ENV=	DATADIR=${DATADIR}/ BINDIR=${PREFIX}/bin
 ALL_TARGET=	sdl
-USE_GCC=	yes
 
 PORTDOCS=	changelog.txt credits.txt music-score-credits.txt readme.txt
 
