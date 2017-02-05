@@ -12,33 +12,29 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK-based text/HTML editor
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XORG=	xpm
 USE_GNOME=	gnomeprefix gtk12
-USES=		gettext
+USES=		gettext localbase:ldflags
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--disable-gnome
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-gnome --disable-nls
 
 DOCVERSION=	1.2.0
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 DOCS_DISTFILES=	${PORTNAME}-help-${DOCVERSION}${EXTRACT_SUFX}:doc
 
-.include <bsd.port.options.mk>
-
-post-extract:
-.if ${PORT_OPTIONS:MDOCS}
+post-extract-DOCS-on:
 	@${MV} ${WRKSRC}/docs ${WRKSRC}/docs.old
 	@${CP} -R ${WRKDIR}/${PORTNAME}-help-${DOCVERSION}/docs ${WRKSRC}/docs
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(use_gtkhtml=\)yes|\1no|g' ${WRKSRC}/configure
