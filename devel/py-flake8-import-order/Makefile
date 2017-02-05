@@ -13,7 +13,7 @@ COMMENT=	Flake8 and pylama plugin that checks the ordering of import statements
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pycodestyle>=0:devel/py-pycodestyle
 
 USES?=		python
 USE_PYTHON=	autoplist distutils
