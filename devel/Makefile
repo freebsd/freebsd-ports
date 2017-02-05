@@ -4505,6 +4505,7 @@
     SUBDIR += py-pycodestyle
     SUBDIR += py-pycparser
     SUBDIR += py-pydenticon
+    SUBDIR += py-pydocstyle
     SUBDIR += py-pydoop
     SUBDIR += py-pyechonest
     SUBDIR += py-pyee
@@ -4884,6 +4885,7 @@
     SUBDIR += py3-nose
     SUBDIR += py3-py
     SUBDIR += py3-pycodestyle
+    SUBDIR += py3-pydocstyle
     SUBDIR += py3-pyflakes
     SUBDIR += py3-pyicu
     SUBDIR += py3-pylru-cache
