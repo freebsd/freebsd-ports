@@ -9,6 +9,9 @@ MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 MAINTAINER=	freebsd@zleslie.info
 COMMENT=	PuppetDB storeconfigs backend
 
+DEPRECATED=	Depends on expired sysutils/puppet38, use puppetdb[34] instead
+EXPIRATION_DATE=2017-04-05
+
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash:shells/bash \
