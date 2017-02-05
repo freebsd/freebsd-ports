@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Astro-Catalog
-PORTVERSION=	4.3.1
-PORTREVISION=	1
+PORTVERSION=	4.31
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generic stellar catalogue object
@@ -27,9 +25,8 @@ BUILD_DEPENDS=	p5-Astro-Coords>=0.12:astro/p5-Astro-Coords \
 		p5-libwww>=5.53:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		perl5
+NO_ARCH=	yes
+USES=		localbase perl5
 USE_PERL5=	modbuild
 
 post-patch:
