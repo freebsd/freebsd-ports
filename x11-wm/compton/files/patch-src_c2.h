@@ -1,6 +1,6 @@
---- src/c2.h.orig	2013-02-06 01:40:34.000000000 +0800
-+++ src/c2.h	2013-02-06 01:40:53.000000000 +0800
-@@ -35,10 +35,8 @@
+--- src/c2.h.orig	2016-09-07 08:23:44 UTC
++++ src/c2.h
+@@ -35,10 +35,8 @@ typedef struct _c2_l c2_l_t;
  /// Pointer to a condition tree.
  typedef struct {
    bool isbranch : 1;
