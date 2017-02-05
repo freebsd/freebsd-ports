@@ -53,6 +53,8 @@ CONFIGURE_ARGS=	--without-dps
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
+EXPLICIT_SAFESTACK=	yes
+
 SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
 		policy.xml quantization-table.xml thresholds.xml type-apple.xml \
 		type-dejavu.xml type-ghostscript.xml type-windows.xml type.xml
