@@ -14,9 +14,9 @@ COMMENT=	Commandline tool that performs SDR with RTL2832-based USB sticks
 LICENSE=	GPLv2
 
 USES=		autoreconf gmake pkgconfig libtool pathfix tar:tgz
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-CFLAGS+=	-fgnu89-inline
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes

@@ -13,8 +13,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license/LICENSE
 
 USES=		gmake
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	CFLAGS="${CFLAGS} -fgnu89-inline"
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's/g++/$$CXX/' \

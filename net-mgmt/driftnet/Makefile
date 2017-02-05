@@ -3,6 +3,7 @@
 
 PORTNAME=	driftnet
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
 		LOCAL/ehaupt
@@ -19,7 +20,8 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 BUILD_DEPENDS=	makedepend:devel/makedepend
 
 GNU_CONFIGURE=	yes
-USES=		compiler:gcc-c++11-lib gettext-runtime gmake jpeg localbase:ldflags pkgconfig
+USES=		autoreconf gettext-runtime gmake jpeg localbase:ldflags pkgconfig
+USE_CSTD=	gnu89
 USE_GNOME=	gtk20
 USE_XORG=	x11 xext xi
 

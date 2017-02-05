@@ -3,7 +3,7 @@
 
 PORTNAME=	gcl
 PORTVERSION=	2.6.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	GNU
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		gmake readline
-USE_GCC=	yes
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_AWK="${LOCALBASE}/bin/gawk" \
 		C_INCLUDE_PATH="${PREFIX}/include" LIBRARY_PATH="${PREFIX}/lib"
