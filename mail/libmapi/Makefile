@@ -3,7 +3,7 @@
 
 PORTNAME=	libmapi
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/openchange/openchange/archive/
 DISTNAME=	openchange-${PORTVERSION}-${CODENAME}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${SAMBA_DEP} \
 LIB_DEPENDS=	libical.so:devel/libical \
 		libnanomsg.so:net/nanomsg \
 		libmemcached.so:databases/libmemcached \
-		libcheck.so:devel/libcheck \
+		libcheck.so:devel/check \
 		libtdb.so:databases/tdb \
 		libtevent.so:devel/tevent \
 		libtalloc.so:devel/talloc

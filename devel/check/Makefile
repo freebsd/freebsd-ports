@@ -1,11 +1,10 @@
 # Created by: mikeh@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME=	libcheck
+PORTNAME=	check
 PORTVERSION=	0.10.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/check/check/${PORTVERSION}
-DISTNAME=	check-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unit test framework for C

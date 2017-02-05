@@ -2,6 +2,7 @@
 
 PORTNAME=	axa
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	net dns
 MASTER_SITES=	FARSIGHT/${PORTNAME} LOCAL/truckman/farsight
 
@@ -15,7 +16,7 @@ LICENSE_FILE_PD=	${WRKSRC}/license_pd
 
 BUILD_DEPENDS=	bash:shells/bash \
 		sie-nmsg>0:net/sie-nmsg
-LIB_DEPENDS=	libcheck.so:devel/libcheck \
+LIB_DEPENDS=	libcheck.so:devel/check \
 		libprotobuf-c.so:devel/protobuf-c \
 		libnmsg.so:net/nmsg \
 		libwdns.so:dns/wdns \
