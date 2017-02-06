@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libsfml-system.so:devel/sfml
 
 USE_GITHUB=	yes
-GH_TUPLE=	daid:EmptyEpsilon:${DISTVERSIONFULL}
-GH_TUPLE+=	daid:SeriousProton:${DISTVERSIONFULL}:sproton
+GH_ACCOUNT=	daid
+GH_PROJECT=	EmptyEpsilon SeriousProton:sproton
 
 USES=		cmake compiler:c++11-lib
 USE_GL=		gl glu
