@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sslscan
-PORTVERSION=	1.11.6
+PORTVERSION=	1.11.8
 DISTVERSIONSUFFIX=	-${GH_ACCOUNT}
 CATEGORIES=	security
 
@@ -11,8 +11,7 @@ COMMENT=	SSLScan is a fast SSL port scanner
 
 LICENSE=	GPLv3
 
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbsec
 

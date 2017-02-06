@@ -1,4 +1,4 @@
---- Makefile.orig	2016-03-24 21:02:55 UTC
+--- Makefile.orig	2016-11-06 13:27:11 UTC
 +++ Makefile
 @@ -3,7 +3,7 @@ ifndef CC
    CC=gcc
@@ -21,9 +21,9 @@
  MAN1DIR   = $(MANDIR)/man1
  
  WARNINGS  = -Wall -Wformat=2
-@@ -68,6 +68,9 @@ install:
- ifeq ($(OS), Darwin)
+@@ -70,6 +70,9 @@ ifeq ($(OS), Darwin)
  	install sslscan $(DESTDIR)$(BINDIR)/sslscan;
+ 	install -d $(DESTDIR)$(MAN1DIR)/;
  	install sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
 +else ifeq ($(OS), FreeBSD)
 +	install -s -m 755 sslscan $(DESTDIR)$(BINDIR)
