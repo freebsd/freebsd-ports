@@ -159,7 +159,7 @@ do_http_request() {
   if [ -n "${http_header_proxy_auth}" ]; then txt="${txt}${CR}${NL}Proxy-Authorization: ${http_header_proxy_auth}"; fi
   txt="${txt}${CR}${NL}User-Agent: bsdstats-${CURR_VERSION}"
   txt="${txt}${CR}${NL}Connection: close"
-  if [ -n "${content_type}" ]; then txt="${txt}${NL}Content-Type: ${content_type}"; fi
+  if [ -n "${content_type}" ]; then txt="${txt}${CR}${NL}Content-Type: ${content_type}"; fi
   if [ -n "${body}" ]; then txt="${txt}${CR}${NL}Content-Length: ${#body}"; fi
   txt="${txt}${CR}${NL}${CR}${NL}${body}"
 
