@@ -1,5 +1,5 @@
---- v8/src/base/platform/platform-posix.cc.orig	2016-10-06 04:05:41.000000000 +0300
-+++ v8/src/base/platform/platform-posix.cc	2016-10-13 09:39:34.732843000 +0300
+--- v8/src/base/platform/platform-posix.cc.orig	2017-01-26 00:50:20 UTC
++++ v8/src/base/platform/platform-posix.cc
 @@ -27,6 +27,10 @@
  #include <sys/sysctl.h>  // NOLINT, for sysctl
  #endif
@@ -11,7 +11,7 @@
  #undef MAP_TYPE
  
  #if defined(ANDROID) && !defined(V8_ANDROID_LOG_STDOUT)
-@@ -329,6 +333,12 @@
+@@ -329,6 +333,12 @@ int OS::GetCurrentThreadId() {
    return static_cast<int>(syscall(__NR_gettid));
  #elif V8_OS_ANDROID
    return static_cast<int>(gettid());

@@ -1,6 +1,6 @@
---- third_party/libusb/BUILD.gn.orig	2016-10-06 04:02:41.000000000 +0300
-+++ third_party/libusb/BUILD.gn	2016-10-13 08:47:17.152284000 +0300
-@@ -6,8 +6,25 @@
+--- third_party/libusb/BUILD.gn.orig	2017-01-26 00:49:30 UTC
++++ third_party/libusb/BUILD.gn
+@@ -6,8 +6,25 @@ assert(!is_android && !is_ios)
  
  import("//build/config/features.gni")
  
@@ -28,7 +28,7 @@
  }
  
  config("libusb_warnings") {
-@@ -21,118 +38,119 @@
+@@ -21,118 +38,119 @@ config("libusb_warnings") {
    }
  }
  
@@ -67,32 +67,6 @@
 -  ]
 -  deps = []
 -  include_dirs = [ "src/libusb/os" ]
--
--  configs -= [ "//build/config/compiler:chromium_code" ]
--  configs += [
--    "//build/config/compiler:no_chromium_code",
--
--    # Must be after no_chromium_code for warning flags to be ordered correctly.
--    ":libusb_warnings",
--  ]
--
--  public_configs = [ ":libusb_config" ]
--
--  if (is_posix) {
--    defines = [
--      "DEFAULT_VISIBILITY=",
--      "HAVE_GETTIMEOFDAY=1",
--      "HAVE_POLL_H=1",
--      "HAVE_SYS_TIME_H=1",
--      "LIBUSB_DESCRIBE=\"1.0.16\"",
--      "POLL_NFDS_TYPE=nfds_t",
--      "THREADS_POSIX=1",
--    ]
--  }
--
--  if (is_mac) {
--    defines += [
--      "OS_DARWIN=1",
 +if (!use_system_libusb) {
 +  static_library("libusb") {
 +    sources = [
@@ -129,17 +103,35 @@
 +      ]
 +        deps = []
 +        include_dirs = [ "src/libusb/os" ]
-+
+ 
+-  configs -= [ "//build/config/compiler:chromium_code" ]
+-  configs += [
+-    "//build/config/compiler:no_chromium_code",
 +        configs -= [ "//build/config/compiler:chromium_code" ]
 +        configs += [
 +        "//build/config/compiler:no_chromium_code",
-+
+ 
+-    # Must be after no_chromium_code for warning flags to be ordered correctly.
+-    ":libusb_warnings",
+-  ]
 +# Must be after no_chromium_code for warning flags to be ordered correctly.
 +      ":libusb_warnings",
 +        ]
-+
+ 
+-  public_configs = [ ":libusb_config" ]
 +          public_configs = [ ":libusb_config" ]
-+
+ 
+-  if (is_posix) {
+-    defines = [
+-      "DEFAULT_VISIBILITY=",
+-      "HAVE_GETTIMEOFDAY=1",
+-      "HAVE_POLL_H=1",
+-      "HAVE_SYS_TIME_H=1",
+-      "LIBUSB_DESCRIBE=\"1.0.16\"",
+-      "POLL_NFDS_TYPE=nfds_t",
+-      "THREADS_POSIX=1",
+-    ]
+-  }
 +          if (is_posix) {
 +            defines = [
 +              "DEFAULT_VISIBILITY=",
@@ -151,7 +143,10 @@
 +            "THREADS_POSIX=1",
 +            ]
 +          }
-+
+ 
+-  if (is_mac) {
+-    defines += [
+-      "OS_DARWIN=1",
 +    if (is_mac) {
 +      defines += [
 +        "OS_DARWIN=1",
@@ -250,7 +245,7 @@
        "src/libusb/os/poll_windows.h",
        "src/libusb/os/threads_windows.c",
        "src/libusb/os/threads_windows.h",
-@@ -142,6 +160,7 @@
+@@ -142,6 +160,7 @@ static_library("libusb") {
        "src/msvc/config.h",
        "src/msvc/inttypes.h",
        "src/msvc/stdint.h",

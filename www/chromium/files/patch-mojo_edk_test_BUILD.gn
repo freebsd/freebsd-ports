@@ -1,6 +1,6 @@
---- mojo/edk/test/BUILD.gn.orig	2016-08-03 22:02:20.000000000 +0300
-+++ mojo/edk/test/BUILD.gn	2016-09-02 23:44:49.826221000 +0300
-@@ -43,7 +43,7 @@
+--- mojo/edk/test/BUILD.gn.orig	2017-01-26 00:49:15 UTC
++++ mojo/edk/test/BUILD.gn
+@@ -48,7 +48,7 @@ source_set("run_all_unittests") {
      "//testing/gtest",
    ]
  
@@ -9,7 +9,7 @@
      public_configs = [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
    }
  }
-@@ -63,7 +63,7 @@
+@@ -68,7 +68,7 @@ source_set("run_all_perftests") {
      "run_all_perftests.cc",
    ]
  

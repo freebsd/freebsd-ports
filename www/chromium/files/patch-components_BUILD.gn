@@ -1,6 +1,6 @@
---- components/BUILD.gn.orig	2016-12-01 23:02:10 UTC
+--- components/BUILD.gn.orig	2017-01-26 00:49:11 UTC
 +++ components/BUILD.gn
-@@ -174,8 +174,8 @@ test("components_unittests") {
+@@ -168,8 +168,8 @@ test("components_unittests") {
        "//components/certificate_reporting:unit_tests",
        "//components/certificate_transparency:unit_tests",
        "//components/contextual_search:unit_tests",
@@ -9,5 +9,5 @@
 +      #"//components/crash/content/app:unit_tests",
 +      #"//components/crash/core/common:unit_tests",
        "//components/data_reduction_proxy/content/browser:unit_tests",
-       "//components/data_use_measurement/content:unit_tests",
-       "//components/display_compositor:unit_tests",
+       "//components/data_reduction_proxy/core/browser:unit_tests",
+       "//components/data_reduction_proxy/core/common:unit_tests",

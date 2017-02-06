@@ -1,6 +1,6 @@
---- chrome/browser/net/async_dns_field_trial.cc.orig	2016-12-16 03:12:55.927001000 +0000
-+++ chrome/browser/net/async_dns_field_trial.cc	2016-12-16 03:13:16.445410000 +0000
-@@ -61,7 +61,7 @@
+--- chrome/browser/net/async_dns_field_trial.cc.orig	2017-01-26 00:49:08 UTC
++++ chrome/browser/net/async_dns_field_trial.cc
+@@ -61,7 +61,7 @@ void HistogramPrefSource(PrefSource sour
  }  // namespace
  
  bool ConfigureAsyncDnsFieldTrial() {

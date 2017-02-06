@@ -1,4 +1,4 @@
---- third_party/WebKit/Source/wtf/ByteSwap.h.orig	2016-12-13 00:09:55 UTC
+--- third_party/WebKit/Source/wtf/ByteSwap.h.orig	2017-01-26 00:49:28 UTC
 +++ third_party/WebKit/Source/wtf/ByteSwap.h
 @@ -60,15 +60,21 @@ ALWAYS_INLINE uint16_t bswap16(uint16_t 
  

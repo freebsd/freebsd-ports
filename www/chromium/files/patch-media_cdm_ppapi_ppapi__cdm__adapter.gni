@@ -1,15 +1,15 @@
---- media/cdm/ppapi/ppapi_cdm_adapter.gni.orig	2016-08-03 22:02:20.000000000 +0300
-+++ media/cdm/ppapi/ppapi_cdm_adapter.gni	2016-09-03 01:55:54.607135000 +0300
-@@ -7,7 +7,7 @@
- # depend on media/media_cdm_adapter.gyp:cdmadapter which would in turn modify
- # your target with direct_dependent_settings.
+--- media/cdm/ppapi/ppapi_cdm_adapter.gni.orig	2017-01-26 00:49:15 UTC
++++ media/cdm/ppapi/ppapi_cdm_adapter.gni
+@@ -5,7 +5,7 @@
+ # This template defines a CDM adapter target. Just use this as you would a
+ # normal target and everything should work correctly.
  template("ppapi_cdm_adapter") {
 -  if (is_mac || is_linux) {
 +  if (is_mac || is_linux || is_bsd) {
      _target_type = "loadable_module"
    } else {
      _target_type = "shared_library"
-@@ -59,7 +59,7 @@
+@@ -57,7 +57,7 @@ template("ppapi_cdm_adapter") {
        libs += [ "rt" ]
      }
  

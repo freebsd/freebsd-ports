@@ -1,6 +1,6 @@
---- third_party/glslang/BUILD.gn.orig	2016-08-03 22:02:38.000000000 +0300
-+++ third_party/glslang/BUILD.gn	2016-09-03 01:42:51.603010000 +0300
-@@ -8,7 +8,7 @@
+--- third_party/glslang/BUILD.gn.orig	2017-01-26 00:49:29 UTC
++++ third_party/glslang/BUILD.gn
+@@ -8,7 +8,7 @@ config("glslang_config") {
    include_dirs = [ "src" ]
  
    defines = []
@@ -9,7 +9,7 @@
      defines += [ "GLSLANG_OSINCLUDE_UNIX" ]
    } else if (is_win) {
      defines += [ "GLSLANG_OSINCLUDE_WIN32" ]
-@@ -132,7 +132,7 @@
+@@ -132,7 +132,7 @@ static_library("glslang") {
      "src/glslang/Public/ShaderLang.h",
    ]
  

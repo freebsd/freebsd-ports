@@ -1,6 +1,6 @@
---- device/usb/usb_device_handle_impl.cc.orig	2016-05-11 19:02:22 UTC
+--- device/usb/usb_device_handle_impl.cc.orig	2017-01-26 00:49:14 UTC
 +++ device/usb/usb_device_handle_impl.cc
-@@ -24,7 +24,11 @@
+@@ -25,7 +25,11 @@
  #include "device/usb/usb_error.h"
  #include "device/usb/usb_service.h"
  #include "net/base/io_buffer.h"

@@ -1,15 +1,6 @@
---- build/config/features.gni.orig	2016-08-03 22:02:10.000000000 +0300
-+++ build/config/features.gni	2016-09-01 02:42:02.955488000 +0300
-@@ -22,7 +22,7 @@
- 
- declare_args() {
-   # Multicast DNS.
--  enable_mdns = is_win || is_linux
-+  enable_mdns = is_win || is_linux || is_bsd
- 
-   enable_extensions = !is_android && !is_ios
-   enable_plugins = (!is_android && !is_ios) || is_chromecast
-@@ -100,13 +100,13 @@
+--- build/config/features.gni.orig	2017-01-26 00:49:07 UTC
++++ build/config/features.gni
+@@ -67,13 +67,13 @@ declare_args() {
    # libudev usage. This currently only affects the content layer.
    use_udev = is_linux && !is_chromecast
  
@@ -24,14 +15,5 @@
 -  use_gio = is_linux && !is_chromeos && !is_chromecast
 +  use_gio = (is_linux || is_bsd) && !is_chromeos && !is_chromecast
  
-   # Enable basic printing support and UI.
-   enable_basic_printing = !is_chromeos && !is_chromecast && !is_ios
-@@ -126,7 +126,7 @@
- 
- # Enables the use of CDMs in pepper plugins.
- enable_pepper_cdms =
--    enable_plugins && (is_linux || is_mac || is_win) && !is_chromecast
-+    enable_plugins && (is_linux || is_bsd || is_mac || is_win) && !is_chromecast
- 
- # The seccomp-bpf sandbox is only supported on five architectures
- # currently.
+   # Whether or not to use external popup menu.
+   use_external_popup_menu = is_android || is_mac

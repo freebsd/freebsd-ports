@@ -1,6 +1,6 @@
---- third_party/webrtc/base/BUILD.gn.orig	2016-08-03 22:04:03.000000000 +0300
-+++ third_party/webrtc/base/BUILD.gn	2016-09-25 15:11:54.051352000 +0300
-@@ -525,7 +525,6 @@
+--- third_party/webrtc/base/BUILD.gn.orig	2017-01-26 00:50:17 UTC
++++ third_party/webrtc/base/BUILD.gn
+@@ -650,7 +650,6 @@ rtc_static_library("rtc_base") {
        "x11windowpicker.h",
      ]
      libs += [

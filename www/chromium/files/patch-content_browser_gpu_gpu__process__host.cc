@@ -1,6 +1,6 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2016-07-20 22:03:24.000000000 +0300
-+++ content/browser/gpu/gpu_process_host.cc	2016-08-18 02:45:06.533983000 +0300
-@@ -968,7 +968,7 @@
+--- content/browser/gpu/gpu_process_host.cc.orig	2017-01-26 00:49:13 UTC
++++ content/browser/gpu/gpu_process_host.cc
+@@ -984,7 +984,7 @@ bool GpuProcessHost::LaunchGpuProcess(gp
    base::CommandLine* cmd_line =
        new base::CommandLine(base::CommandLine::NO_PROGRAM);
  #else

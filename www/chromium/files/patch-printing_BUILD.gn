@@ -1,6 +1,6 @@
---- printing/BUILD.gn.orig	2016-10-06 04:02:23.000000000 +0300
-+++ printing/BUILD.gn	2016-10-13 08:13:38.178051000 +0300
-@@ -125,7 +125,7 @@
+--- printing/BUILD.gn.orig	2017-01-26 00:49:17 UTC
++++ printing/BUILD.gn
+@@ -129,7 +129,7 @@ component("printing") {
    if (use_cups) {
      configs += [ ":cups" ]
  
@@ -9,7 +9,7 @@
        # rebase_path does not accept an empty string
        if (use_sysroot) {
          cups_sysroot = rebase_path(sysroot)
-@@ -202,7 +202,7 @@
+@@ -206,7 +206,7 @@ component("printing") {
        "printing_context_no_system_dialog.cc",
        "printing_context_no_system_dialog.h",
      ]

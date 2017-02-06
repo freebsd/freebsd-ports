@@ -1,6 +1,15 @@
---- third_party/WebKit/Source/platform/fonts/FontCache.h.orig	2016-12-13 00:42:58 UTC
+--- third_party/WebKit/Source/platform/fonts/FontCache.h.orig	2017-01-26 00:49:28 UTC
 +++ third_party/WebKit/Source/platform/fonts/FontCache.h
-@@ -217,7 +217,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -121,7 +121,7 @@ class PLATFORM_EXPORT FontCache {
+ #else
+   static const AtomicString& legacySystemFontFamily();
+ #endif
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(FREEBSD)
+   static void setSystemFontFamily(const AtomicString&);
+ #endif
+ 
+@@ -231,7 +231,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     CString& name);
  

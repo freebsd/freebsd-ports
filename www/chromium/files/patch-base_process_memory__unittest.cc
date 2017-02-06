@@ -1,6 +1,6 @@
---- base/process/memory_unittest.cc.orig	2016-10-06 04:02:08.000000000 +0300
-+++ base/process/memory_unittest.cc	2016-10-13 04:32:50.457987000 +0300
-@@ -82,10 +82,10 @@
+--- base/process/memory_unittest.cc.orig	2017-01-26 00:49:07 UTC
++++ base/process/memory_unittest.cc
+@@ -82,10 +82,10 @@ TEST(MemoryTest, AllocatorShimWorking) {
    ASSERT_TRUE(base::allocator::IsAllocatorInitialized());
  }
  
@@ -13,7 +13,7 @@
      BUILDFLAG(ENABLE_WIN_ALLOCATOR_SHIM_TESTS) && \
      !defined(MEMORY_TOOL_REPLACES_ALLOCATOR)
  
-@@ -439,5 +439,5 @@
+@@ -439,5 +439,5 @@ TEST_F(OutOfMemoryHandledTest, Unchecked
    EXPECT_FALSE(base::UncheckedCalloc(1, test_size_, &value_));
    EXPECT_TRUE(value_ == NULL);
  }

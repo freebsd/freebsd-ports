@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/chrome_views_delegate.cc.orig	2016-05-11 19:02:16 UTC
+--- chrome/browser/ui/views/chrome_views_delegate.cc.orig	2017-01-26 00:49:09 UTC
 +++ chrome/browser/ui/views/chrome_views_delegate.cc
-@@ -48,7 +48,7 @@
+@@ -57,7 +57,7 @@
  #include "ui/views/widget/native_widget_aura.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -295,7 +295,7 @@ HICON ChromeViewsDelegate::GetSmallWindo
+@@ -308,7 +308,7 @@ HICON ChromeViewsDelegate::GetSmallWindo
    return GetSmallAppIcon();
  }
  
@@ -18,7 +18,7 @@
  gfx::ImageSkia* ChromeViewsDelegate::GetDefaultWindowIcon() const {
    ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
    return rb.GetImageSkiaNamed(IDR_PRODUCT_LOGO_64);
-@@ -443,7 +443,7 @@ void ChromeViewsDelegate::OnBeforeWidget
+@@ -447,7 +447,7 @@ void ChromeViewsDelegate::OnBeforeWidget
  #endif
  }
  

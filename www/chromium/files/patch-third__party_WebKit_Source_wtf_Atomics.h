@@ -1,4 +1,4 @@
---- third_party/WebKit/Source/wtf/Atomics.h.orig	2016-12-13 00:13:22 UTC
+--- third_party/WebKit/Source/wtf/Atomics.h.orig	2017-01-26 00:49:28 UTC
 +++ third_party/WebKit/Source/wtf/Atomics.h
 @@ -176,7 +176,7 @@ ALWAYS_INLINE void atomicSetOneToZero(in
  #if defined(THREAD_SANITIZER)

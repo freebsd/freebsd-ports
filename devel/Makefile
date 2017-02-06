@@ -4145,6 +4145,7 @@
     SUBDIR += py-circuits
     SUBDIR += py-cjson
     SUBDIR += py-cld
+    SUBDIR += py-cliapp
     SUBDIR += py-click
     SUBDIR += py-click-log
     SUBDIR += py-click-threading
@@ -4155,6 +4156,7 @@
     SUBDIR += py-cluster
     SUBDIR += py-cmd2
     SUBDIR += py-cmdln
+    SUBDIR += py-cmdtest
     SUBDIR += py-codecov
     SUBDIR += py-codegen
     SUBDIR += py-cog
@@ -4714,6 +4716,7 @@
     SUBDIR += py-traits
     SUBDIR += py-transaction
     SUBDIR += py-trollius
+    SUBDIR += py-ttystatus
     SUBDIR += py-turbocheetah
     SUBDIR += py-turbojson
     SUBDIR += py-turbojson11

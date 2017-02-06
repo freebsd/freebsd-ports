@@ -1,6 +1,6 @@
---- ppapi/tests/extensions/BUILD.gn.orig	2016-10-06 04:02:23.000000000 +0300
-+++ ppapi/tests/extensions/BUILD.gn	2016-10-13 08:10:32.687869000 +0300
-@@ -20,7 +20,7 @@
+--- ppapi/tests/extensions/BUILD.gn.orig	2017-01-26 00:49:16 UTC
++++ ppapi/tests/extensions/BUILD.gn
+@@ -20,7 +20,7 @@ group("extensions") {
      ":ppapi_tests_extensions_popup($newlib)",
      ":ppapi_tests_extensions_socket_permissions($newlib)",
    ]

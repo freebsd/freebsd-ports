@@ -1,6 +1,6 @@
---- ui/message_center/views/message_center_button_bar.cc.orig	2016-05-11 19:02:35 UTC
+--- ui/message_center/views/message_center_button_bar.cc.orig	2017-01-26 00:49:32 UTC
 +++ ui/message_center/views/message_center_button_bar.cc
-@@ -96,7 +96,7 @@ MessageCenterButtonBar::MessageCenterBut
+@@ -95,7 +95,7 @@ MessageCenterButtonBar::MessageCenterBut
      const base::string16& title)
      : message_center_view_(message_center_view),
        message_center_(message_center),
@@ -9,7 +9,7 @@
        close_bubble_button_(NULL),
  #endif
        title_arrow_(NULL),
-@@ -171,7 +171,7 @@ MessageCenterButtonBar::MessageCenterBut
+@@ -170,7 +170,7 @@ MessageCenterButtonBar::MessageCenterBut
                                     IDS_MESSAGE_CENTER_SETTINGS_BUTTON_LABEL);
    button_container_->AddChildView(settings_button_);
  
@@ -18,7 +18,7 @@
    close_bubble_button_ = new views::ImageButton(this);
    close_bubble_button_->SetImage(
        views::Button::STATE_NORMAL,
-@@ -233,7 +233,7 @@ void MessageCenterButtonBar::ViewVisibil
+@@ -232,7 +232,7 @@ void MessageCenterButtonBar::ViewVisibil
                      0,
                      0);
  
@@ -27,7 +27,7 @@
    // The close-bubble button.
    column->AddColumn(views::GridLayout::LEADING,
                      views::GridLayout::LEADING,
-@@ -248,7 +248,7 @@ void MessageCenterButtonBar::ViewVisibil
+@@ -247,7 +247,7 @@ void MessageCenterButtonBar::ViewVisibil
      layout->AddView(title_arrow_);
    layout->AddView(notification_label_);
    layout->AddView(button_container_);
@@ -36,7 +36,7 @@
    layout->AddView(close_bubble_button_);
  #endif
  }
-@@ -295,7 +295,7 @@ void MessageCenterButtonBar::ButtonPress
+@@ -297,7 +297,7 @@ void MessageCenterButtonBar::ButtonPress
      else
        message_center()->EnterQuietModeWithExpire(base::TimeDelta::FromDays(1));
      quiet_mode_button_->SetToggled(message_center()->IsQuietMode());

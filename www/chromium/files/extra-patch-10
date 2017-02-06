@@ -1,10 +1,11 @@
---- content/renderer/devtools/v8_sampling_profiler.cc.orig	2016-10-06 04:02:19.000000000 +0300
-+++ content/renderer/devtools/v8_sampling_profiler.cc	2016-10-30 03:00:33.775227000 +0300
-@@ -22,6 +22,7 @@
-
- #if defined(OS_POSIX)
- #include <signal.h>
-+#include <ucontext.h>
- #define USE_SIGNALS
- #endif
-
+--- third_party/skia/src/core/SkSmallAllocator.h.orig	2017-02-01 20:16:14.715097000 +0100
++++ third_party/skia/src/core/SkSmallAllocator.h	2017-02-01 20:24:56.680605000 +0100
+@@ -20,7 +20,7 @@
+ // abstract type. The complication with max_align_t is that it is defined differently for
+ // different builds.
+ namespace {
+-#if defined(SK_BUILD_FOR_WIN32) || defined(SK_BUILD_FOR_MAC)
++#if defined(SK_BUILD_FOR_WIN32) || defined(SK_BUILD_FOR_MAC) || defined(__FreeBSD__)
+     // Use std::max_align_t for compiles that follow the standard.
+     #include <cstddef>
+     using SystemAlignment = std::max_align_t;

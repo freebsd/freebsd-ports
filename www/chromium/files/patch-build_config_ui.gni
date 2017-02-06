@@ -1,6 +1,6 @@
---- build/config/ui.gni.orig	2016-10-06 04:02:08.000000000 +0300
-+++ build/config/ui.gni	2016-10-13 05:04:25.545377000 +0300
-@@ -31,7 +31,7 @@
+--- build/config/ui.gni.orig	2017-01-26 00:49:07 UTC
++++ build/config/ui.gni
+@@ -31,7 +31,7 @@ declare_args() {
  
    # Indicates if Aura is enabled. Aura is a low-level windowing library, sort
    # of a replacement for GDI or GTK.
@@ -9,7 +9,7 @@
  
    # True means the UI is built using the "views" framework.
    toolkit_views =
-@@ -47,7 +47,7 @@
+@@ -47,7 +47,7 @@ declare_args() {
    use_xkbcommon = false
  
    # Whether we should use glib, a low level C utility library.
@@ -18,14 +18,12 @@
  
    # Indicates if Wayland display server support is enabled.
    enable_wayland_server = is_chromeos
-@@ -65,19 +65,19 @@
+@@ -62,17 +62,17 @@ declare_args() {
  
  # Use GPU accelerated cross process image transport by default on linux builds
  # with the Aura window manager.
 -ui_compositor_image_transport = use_aura && is_linux
 +ui_compositor_image_transport = use_aura && (is_linux || is_bsd)
- 
- use_default_render_theme = use_aura && !is_android
  
  # Indicates if the UI toolkit depends on X11.
 -use_x11 = is_linux && !use_ozone

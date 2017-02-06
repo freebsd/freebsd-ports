@@ -1,6 +1,6 @@
---- chrome/browser/download/download_prefs.cc.orig	2016-04-08 16:02:07 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2017-01-26 00:49:08 UTC
 +++ chrome/browser/download/download_prefs.cc
-@@ -55,7 +55,7 @@ namespace {
+@@ -56,7 +56,7 @@ namespace {
  // Consider downloads 'dangerous' if they go to the home directory on Linux and
  // to the desktop on any platform.
  bool DownloadPathIsDangerous(const base::FilePath& download_path) {
@@ -9,16 +9,16 @@
    base::FilePath home_dir = base::GetHomeDir();
    if (download_path == home_dir) {
      return true;
-@@ -135,7 +135,7 @@ DownloadPrefs::DownloadPrefs(Profile* pr
+@@ -136,7 +136,7 @@ DownloadPrefs::DownloadPrefs(Profile* pr
                   GetDefaultDownloadDirectoryForProfile()));
  #endif  // defined(OS_CHROMEOS)
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    should_open_pdf_in_system_reader_ =
-       prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
- #endif
-@@ -211,7 +211,7 @@ void DownloadPrefs::RegisterProfilePrefs
+       prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader) ||
+       prefs->GetBoolean(prefs::kPluginsAlwaysOpenPdfExternally);
+@@ -215,7 +215,7 @@ void DownloadPrefs::RegisterProfilePrefs
                                   default_download_path);
    registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
                                   default_download_path);
@@ -27,7 +27,7 @@
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  }
-@@ -288,7 +288,7 @@ bool DownloadPrefs::IsDownloadPathManage
+@@ -292,7 +292,7 @@ bool DownloadPrefs::IsDownloadPathManage
  }
  
  bool DownloadPrefs::IsAutoOpenUsed() const {
@@ -36,7 +36,7 @@
    if (ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -302,7 +302,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBas
+@@ -306,7 +306,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBas
      return false;
    DCHECK(extension[0] == base::FilePath::kExtensionSeparator);
    extension.erase(0, 1);
@@ -45,16 +45,16 @@
    if (extension == FILE_PATH_LITERAL("pdf") && ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -335,7 +335,7 @@ void DownloadPrefs::DisableAutoOpenBased
+@@ -340,7 +340,7 @@ void DownloadPrefs::DisableAutoOpenBased
    SaveAutoOpenState();
  }
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
-   if (should_open_pdf_in_system_reader_ == should_open)
-     return;
-@@ -356,7 +356,7 @@ bool DownloadPrefs::ShouldOpenPdfInSyste
+   should_open_pdf_in_system_reader_ = should_open ||
+      profile_->GetPrefs()->GetBoolean(prefs::kPluginsAlwaysOpenPdfExternally);
+@@ -365,7 +365,7 @@ void DownloadPrefs::DisableAdobeVersionC
  #endif
  
  void DownloadPrefs::ResetAutoOpen() {

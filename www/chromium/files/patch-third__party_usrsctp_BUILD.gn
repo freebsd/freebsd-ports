@@ -1,6 +1,6 @@
---- third_party/usrsctp/BUILD.gn.orig	2016-08-03 22:02:40.000000000 +0300
-+++ third_party/usrsctp/BUILD.gn	2016-09-20 02:42:29.328962000 +0300
-@@ -112,6 +112,12 @@
+--- third_party/usrsctp/BUILD.gn.orig	2017-01-26 00:49:31 UTC
++++ third_party/usrsctp/BUILD.gn
+@@ -112,6 +112,12 @@ static_library("usrsctp") {
        "__Userspace_os_Linux",
        "_GNU_SOURCE",
      ]
