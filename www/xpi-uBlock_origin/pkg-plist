@@ -3,7 +3,7 @@
 %%XPI_XPIDIR%%/about.html
 %%XPI_XPIDIR%%/advanced-settings.html
 %%XPI_XPIDIR%%/asset-viewer.html
-%%XPI_XPIDIR%%/assets/checksums.txt
+%%XPI_XPIDIR%%/assets/assets.json
 %%XPI_XPIDIR%%/assets/thirdparties/easylist-downloads.adblockplus.org/easylist.txt
 %%XPI_XPIDIR%%/assets/thirdparties/easylist-downloads.adblockplus.org/easyprivacy.txt
 %%XPI_XPIDIR%%/assets/thirdparties/mirror1.malwaredomains.com/files/justdomains
@@ -15,7 +15,6 @@
 %%XPI_XPIDIR%%/assets/thirdparties/www.malwaredomainlist.com/hostslist/README.md
 %%XPI_XPIDIR%%/assets/ublock/badware.txt
 %%XPI_XPIDIR%%/assets/ublock/experimental.txt
-%%XPI_XPIDIR%%/assets/ublock/filter-lists.json
 %%XPI_XPIDIR%%/assets/ublock/filters.txt
 %%XPI_XPIDIR%%/assets/ublock/privacy.txt
 %%XPI_XPIDIR%%/assets/ublock/resources.txt
