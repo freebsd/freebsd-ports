@@ -9,6 +9,8 @@ CATEGORIES=	net
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	Marco d'Itri whois client
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
