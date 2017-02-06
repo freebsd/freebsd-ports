@@ -3,7 +3,7 @@
 
 PORTNAME=	gprolog
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gprolog.org/
 
@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USES=		gmake
 USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
+CFLAGS+=	-O3 # gcc5/gcc6 + -O2 = pl2wam hangs
 CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}"
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 MAKE_JOBS_UNSAFE=	yes
