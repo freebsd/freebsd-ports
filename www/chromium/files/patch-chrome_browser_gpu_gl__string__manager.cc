@@ -1,6 +1,6 @@
---- chrome/browser/gpu/gl_string_manager.cc.orig	2016-04-08 16:02:07 UTC
+--- chrome/browser/gpu/gl_string_manager.cc.orig	2017-01-26 00:49:08 UTC
 +++ chrome/browser/gpu/gl_string_manager.cc
-@@ -28,7 +28,7 @@ GLStringManager::~GLStringManager() {
+@@ -33,7 +33,7 @@ GLStringManager::~GLStringManager() {
  
  void GLStringManager::Initialize() {
    // On MacOSX or Windows, preliminary GPUInfo is enough.

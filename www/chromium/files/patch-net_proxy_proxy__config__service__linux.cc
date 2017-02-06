@@ -1,5 +1,5 @@
---- net/proxy/proxy_config_service_linux.cc.orig	2016-10-06 04:02:23.000000000 +0300
-+++ net/proxy/proxy_config_service_linux.cc	2016-10-13 08:05:04.653281000 +0300
+--- net/proxy/proxy_config_service_linux.cc.orig	2017-01-26 00:49:16 UTC
++++ net/proxy/proxy_config_service_linux.cc
 @@ -11,7 +11,14 @@
  #include <limits.h>
  #include <stdio.h>
@@ -15,7 +15,7 @@
  #include <unistd.h>
  
  #include <map>
-@@ -863,6 +870,7 @@
+@@ -863,6 +870,7 @@ class SettingGetterImplKDE : public Prox
   public:
    explicit SettingGetterImplKDE(base::Environment* env_var_getter)
        : inotify_fd_(-1),
@@ -23,7 +23,7 @@
          notify_delegate_(nullptr),
          debounce_timer_(new base::OneShotTimer()),
          indirect_manual_(false),
-@@ -937,9 +945,10 @@
+@@ -937,9 +945,10 @@ class SettingGetterImplKDE : public Prox
      // and pending tasks may then be deleted without being run.
      // Here in the KDE version, we can safely close the file descriptor
      // anyway. (Not that it really matters; the process is exiting.)
@@ -35,7 +35,7 @@
    }
  
    bool Init(const scoped_refptr<base::SingleThreadTaskRunner>& glib_task_runner,
-@@ -948,9 +957,17 @@
+@@ -948,9 +957,17 @@ class SettingGetterImplKDE : public Prox
      // This has to be called on the UI thread (http://crbug.com/69057).
      base::ThreadRestrictions::ScopedAllowIO allow_io;
      DCHECK_LT(inotify_fd_, 0);
@@ -53,7 +53,7 @@
        return false;
      }
      if (!base::SetNonBlocking(inotify_fd_)) {
-@@ -974,22 +991,40 @@
+@@ -974,22 +991,40 @@ class SettingGetterImplKDE : public Prox
        close(inotify_fd_);
        inotify_fd_ = -1;
      }
@@ -94,7 +94,7 @@
      notify_delegate_ = delegate;
      if (!base::MessageLoopForIO::current()->WatchFileDescriptor(
              inotify_fd_, true, base::MessageLoopForIO::WATCH_READ,
-@@ -1010,7 +1045,19 @@
+@@ -1010,7 +1045,19 @@ class SettingGetterImplKDE : public Prox
    void OnFileCanReadWithoutBlocking(int fd) override {
      DCHECK_EQ(fd, inotify_fd_);
      DCHECK(file_task_runner_->BelongsToCurrentThread());
@@ -114,7 +114,7 @@
    }
    void OnFileCanWriteWithoutBlocking(int fd) override { NOTREACHED(); }
  
-@@ -1283,8 +1330,11 @@
+@@ -1283,8 +1330,11 @@ class SettingGetterImplKDE : public Prox
    void OnChangeNotification() {
      DCHECK_GE(inotify_fd_,  0);
      DCHECK(file_task_runner_->BelongsToCurrentThread());
@@ -127,7 +127,7 @@
      ssize_t r;
      while ((r = read(inotify_fd_, event_buf, sizeof(event_buf))) > 0) {
        // inotify returns variable-length structures, which is why we have
-@@ -1321,6 +1371,7 @@
+@@ -1321,6 +1371,7 @@ class SettingGetterImplKDE : public Prox
          inotify_fd_ = -1;
        }
      }
@@ -135,7 +135,7 @@
      if (kioslaverc_touched) {
        // We don't use Reset() because the timer may not yet be running.
        // (In that case Stop() is a no-op.)
-@@ -1336,6 +1387,7 @@
+@@ -1336,6 +1387,7 @@ class SettingGetterImplKDE : public Prox
                     std::vector<std::string> > strings_map_type;
  
    int inotify_fd_;

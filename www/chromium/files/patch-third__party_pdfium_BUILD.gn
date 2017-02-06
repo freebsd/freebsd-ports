@@ -1,6 +1,6 @@
---- third_party/pdfium/BUILD.gn.orig	2016-10-06 04:05:20.000000000 +0300
-+++ third_party/pdfium/BUILD.gn	2016-10-13 08:51:40.306487000 +0300
-@@ -40,7 +40,7 @@
+--- third_party/pdfium/BUILD.gn.orig	2017-01-26 00:50:14 UTC
++++ third_party/pdfium/BUILD.gn
+@@ -44,7 +44,7 @@ config("pdfium_core_config") {
    cflags = []
    configs = [ ":pdfium_common_config" ]
    defines = [ "V8_DEPRECATION_WARNINGS" ]

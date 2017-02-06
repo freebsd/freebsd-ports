@@ -1,6 +1,6 @@
---- chrome/common/extensions/chrome_extensions_client.cc.orig	2016-12-16 03:27:01.063936000 +0000
-+++ chrome/common/extensions/chrome_extensions_client.cc	2016-12-16 03:29:25.710522000 +0000
-@@ -103,7 +103,10 @@
+--- chrome/common/extensions/chrome_extensions_client.cc.orig	2017-01-26 00:49:09 UTC
++++ chrome/common/extensions/chrome_extensions_client.cc
+@@ -105,7 +105,10 @@ ChromeChannelForHistogram GetChromeChann
  static base::LazyInstance<ChromeExtensionsClient> g_client =
      LAZY_INSTANCE_INITIALIZER;
  

@@ -1,4 +1,4 @@
---- content/browser/download/base_file.cc.orig	2016-12-12 21:09:50 UTC
+--- content/browser/download/base_file.cc.orig	2017-01-26 00:49:13 UTC
 +++ content/browser/download/base_file.cc
 @@ -373,7 +373,7 @@ DownloadInterruptReason BaseFile::LogInt
    return reason;

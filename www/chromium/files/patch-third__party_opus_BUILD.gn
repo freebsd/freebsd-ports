@@ -1,6 +1,6 @@
---- third_party/opus/BUILD.gn.orig	2016-10-06 04:02:42.000000000 +0300
-+++ third_party/opus/BUILD.gn	2016-10-13 08:49:39.874353000 +0300
-@@ -14,7 +14,7 @@
+--- third_party/opus/BUILD.gn.orig	2017-01-26 00:49:30 UTC
++++ third_party/opus/BUILD.gn
+@@ -14,7 +14,7 @@ use_opus_arm_optimization = current_cpu 
  # If OPUS Run Time CPU Detections (RTCD) shall be used.
  # Based on the conditions in celt/arm/armcpu.c:
  # defined(_MSC_VER) || defined(__linux__).

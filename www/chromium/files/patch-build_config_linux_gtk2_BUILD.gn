@@ -1,5 +1,5 @@
---- build/config/linux/gtk2/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
-+++ build/config/linux/gtk2/BUILD.gn	2016-09-02 22:54:36.628597000 +0300
+--- build/config/linux/gtk2/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ build/config/linux/gtk2/BUILD.gn
 @@ -4,7 +4,7 @@
  
  import("//build/config/linux/pkg_config.gni")

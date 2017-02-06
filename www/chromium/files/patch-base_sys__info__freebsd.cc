@@ -1,5 +1,5 @@
---- base/sys_info_freebsd.cc.orig	2016-10-06 04:02:08.000000000 +0300
-+++ base/sys_info_freebsd.cc	2016-10-13 10:20:37.344204000 +0300
+--- base/sys_info_freebsd.cc.orig	2017-01-26 00:49:07 UTC
++++ base/sys_info_freebsd.cc
 @@ -12,12 +12,34 @@
  
  namespace base {
@@ -39,7 +39,7 @@
      NOTREACHED();
      return 0;
    }
-@@ -25,14 +47,24 @@
+@@ -25,14 +47,24 @@ int64_t SysInfo::AmountOfPhysicalMemory(
  }
  
  // static

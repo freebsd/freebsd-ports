@@ -1,5 +1,5 @@
---- components/os_crypt/os_crypt.h.orig	2016-10-06 04:02:17.000000000 +0300
-+++ components/os_crypt/os_crypt.h	2016-10-13 11:41:26.429931000 +0300
+--- components/os_crypt/os_crypt.h.orig	2017-01-26 00:49:12 UTC
++++ components/os_crypt/os_crypt.h
 @@ -13,7 +13,7 @@
  #include "base/strings/string16.h"
  #include "build/build_config.h"

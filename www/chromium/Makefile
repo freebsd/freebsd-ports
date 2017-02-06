@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	55.0.2883.87
+PORTVERSION=	56.0.2924.87
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -13,46 +13,48 @@ COMMENT=	Google web browser based on WebKit
 LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	bash:shells/bash \
+BUILD_DEPENDS=	gperf:devel/gperf \
 		clang39:devel/llvm39 \
-		python:lang/python \
-		flock:sysutils/flock \
-		gperf:devel/gperf \
 		yasm:devel/yasm \
+		python:lang/python \
+		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
+		bash:shells/bash \
+		flock:sysutils/flock \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib
 
-LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libcups.so:print/cups \
+LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
+		libsnappy.so:archivers/snappy \
+		libFLAC.so:audio/flac \
+		libspeex.so:audio/speex \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libdrm.so:graphics/libdrm \
-		libexpat.so:textproc/expat2 \
-		libFLAC.so:audio/flac \
-		libfreetype.so:print/freetype2 \
-		libgnome-keyring.so:security/libgnome-keyring \
-		libharfbuzz.so:print/harfbuzz \
-		libexif.so:graphics/libexif \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libgcrypt.so:security/libgcrypt \
 		libicuuc.so:devel/icu \
 		libjsoncpp.so:devel/jsoncpp \
-		libnspr4.so:devel/nspr \
-		libnss3.so:security/nss \
 		libpci.so:devel/libpci \
-		libpng.so:graphics/png \
+		libnspr4.so:devel/nspr \
 		libre2.so:devel/re2 \
-		libsnappy.so:archivers/snappy \
-		libspeechd.so:accessibility/speech-dispatcher \
-		libspeex.so:audio/speex \
+		libcairo.so:graphics/cairo \
+		libdrm.so:graphics/libdrm \
+		libexif.so:graphics/libexif \
+		libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
-		libxml2.so:textproc/libxml2
+		libavcodec.so:multimedia/ffmpeg \
+		libcups.so:print/cups \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libgcrypt.so:security/libgcrypt \
+		libgnome-keyring.so:security/libgnome-keyring \
+		libnss3.so:security/nss \
+		libexpat.so:textproc/expat2 \
+		libxml2.so:textproc/libxml2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
-RUN_DEPENDS=	droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf \
-		xdg-open:devel/xdg-utils
+RUN_DEPENDS=	xdg-open:devel/xdg-utils \
+		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		compiler bison cpe desktop-file-utils execinfo jpeg \
@@ -63,7 +65,7 @@ CPE_PRODUCT=	chrome
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xdamage xfixes xi \
 		xproto xrandr xrender xscrnsaver xtst
-USE_GNOME=	atk glib20 gtk20 dconf libxslt libxml2
+USE_GNOME=	atk glib20 gtk20 gtk30 dconf libxslt libxml2
 MAKE_ARGS=	-C out/${BUILDTYPE}
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 ALL_TARGET=	chrome
@@ -110,7 +112,7 @@ OPTIONS_GROUP=		AUDIO TESTS
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
 OPTIONS_GROUP_TESTS=	DEBUG TEST
 
-OPTIONS_DEFAULT=	CODECS GCONF KERBEROS ALSA PULSEAUDIO
+OPTIONS_DEFAULT=	ALSA CODECS DRIVER GCONF KERBEROS
 OPTIONS_SUB=		yes
 
 GCONF_USE=	GNOME=gconf2
@@ -224,7 +226,7 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		flac harfbuzz-ng libwebp libxml libxslt snappy yasm || ${FALSE}
+		ffmpeg flac harfbuzz-ng libwebp libxml libxslt snappy yasm || ${FALSE}
 
 do-configure:
 	# GN generator bootstrapping and generating ninja files

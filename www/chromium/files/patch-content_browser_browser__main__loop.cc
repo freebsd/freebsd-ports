@@ -1,6 +1,6 @@
---- content/browser/browser_main_loop.cc.orig	2016-12-15 13:00:14.708308000 +0000
-+++ content/browser/browser_main_loop.cc	2016-12-15 13:05:18.516426000 +0000
-@@ -196,6 +196,10 @@
+--- content/browser/browser_main_loop.cc.orig	2017-01-26 00:49:13 UTC
++++ content/browser/browser_main_loop.cc
+@@ -203,6 +203,10 @@
  #include "gpu/vulkan/vulkan_implementation.h"
  #endif
  
@@ -11,7 +11,7 @@
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -204,7 +208,7 @@
+@@ -211,7 +215,7 @@
  namespace content {
  namespace {
  
@@ -20,7 +20,7 @@
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    if (parsed_command_line.HasSwitch(switches::kNoZygote)) {
-@@ -475,10 +479,15 @@
+@@ -482,10 +486,15 @@ void BrowserMainLoop::Init() {
  void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  

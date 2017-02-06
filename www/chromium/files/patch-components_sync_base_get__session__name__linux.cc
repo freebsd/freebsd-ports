@@ -1,5 +1,5 @@
---- components/sync/base/get_session_name_linux.cc.orig	2016-10-06 04:02:17.000000000 +0300
-+++ components/sync/base/get_session_name_linux.cc	2016-10-13 13:40:16.075193000 +0300
+--- components/sync/base/get_session_name_linux.cc.orig	2017-01-26 00:49:12 UTC
++++ components/sync/base/get_session_name_linux.cc
 @@ -4,7 +4,7 @@
  
  #include "components/sync/base/get_session_name_linux.h"
@@ -9,7 +9,7 @@
  #include <unistd.h>  // for gethostname()
  
  #include "base/linux_util.h"
-@@ -13,8 +13,8 @@
+@@ -13,8 +13,8 @@ namespace syncer {
  namespace internal {
  
  std::string GetHostname() {

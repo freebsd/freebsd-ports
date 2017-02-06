@@ -1,6 +1,6 @@
---- gpu/vulkan/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
-+++ gpu/vulkan/BUILD.gn	2016-09-02 23:57:07.910753000 +0300
-@@ -13,7 +13,7 @@
+--- gpu/vulkan/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ gpu/vulkan/BUILD.gn
+@@ -14,7 +14,7 @@ if (enable_vulkan) {
    component("vulkan") {
      output_name = "vulkan_wrapper"
  

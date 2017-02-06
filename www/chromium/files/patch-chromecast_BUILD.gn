@@ -1,8 +1,8 @@
---- chromecast/BUILD.gn.orig	2016-08-03 22:02:15.000000000 +0300
-+++ chromecast/BUILD.gn	2016-09-03 01:38:51.775473000 +0300
-@@ -44,7 +44,7 @@
-     "//ui/base:ui_base_unittests",
-   ]
+--- chromecast/BUILD.gn.orig	2017-01-26 00:49:11 UTC
++++ chromecast/BUILD.gn
+@@ -51,7 +51,7 @@ cast_test_group("cast_tests") {
+     tests += [ "//gpu:gpu_unittests" ]
+   }
  
 -  if (is_linux) {
 +  if (is_linux || is_bsd) {

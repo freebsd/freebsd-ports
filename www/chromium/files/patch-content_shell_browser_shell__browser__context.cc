@@ -1,6 +1,6 @@
---- content/shell/browser/shell_browser_context.cc.orig	2016-07-20 22:03:24.000000000 +0300
-+++ content/shell/browser/shell_browser_context.cc	2016-08-01 04:13:15.131738000 +0300
-@@ -24,7 +24,7 @@
+--- content/shell/browser/shell_browser_context.cc.orig	2017-01-26 00:49:13 UTC
++++ content/shell/browser/shell_browser_context.cc
+@@ -25,7 +25,7 @@
  
  #if defined(OS_WIN)
  #include "base/base_paths_win.h"
@@ -9,7 +9,7 @@
  #include "base/nix/xdg_util.h"
  #elif defined(OS_MACOSX)
  #include "base/base_paths_mac.h"
-@@ -80,7 +80,7 @@
+@@ -97,7 +97,7 @@ void ShellBrowserContext::InitWhileIOAll
  #if defined(OS_WIN)
    CHECK(PathService::Get(base::DIR_LOCAL_APP_DATA, &path_));
    path_ = path_.Append(std::wstring(L"content_shell"));

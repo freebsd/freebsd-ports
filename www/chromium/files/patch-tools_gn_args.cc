@@ -1,6 +1,6 @@
---- tools/gn/args.cc.orig	2016-08-13 15:22:20.957491000 +0300
-+++ tools/gn/args.cc	2016-08-13 15:22:40.739449000 +0300
-@@ -222,6 +222,8 @@
+--- tools/gn/args.cc.orig	2017-01-26 00:49:31 UTC
++++ tools/gn/args.cc
+@@ -254,6 +254,8 @@ void Args::SetSystemVarsLocked(Scope* de
    os = "mac";
  #elif defined(OS_LINUX)
    os = "linux";
@@ -8,4 +8,4 @@
 +  os = "bsd";
  #elif defined(OS_ANDROID)
    os = "android";
- #else
+ #elif defined(OS_NETBSD)

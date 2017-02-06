@@ -1,6 +1,6 @@
---- chrome/browser/renderer_context_menu/render_view_context_menu.cc.orig	2016-12-18 00:37:45.100012000 +0100
-+++ chrome/browser/renderer_context_menu/render_view_context_menu.cc	2016-12-18 00:42:54.851203000 +0100
-@@ -1325,7 +1325,7 @@
+--- chrome/browser/renderer_context_menu/render_view_context_menu.cc.orig	2017-01-26 00:49:08 UTC
++++ chrome/browser/renderer_context_menu/render_view_context_menu.cc
+@@ -1367,7 +1367,7 @@ void RenderViewContextMenu::AppendEditab
  // 'Undo' and 'Redo' for text input with no suggestions and no text selected.
  // We make an exception for OS X as context clicking will select the closest
  // word. In this case both items are always shown.
@@ -9,7 +9,7 @@
    menu_model_.AddItemWithStringId(IDC_CONTENT_CONTEXT_UNDO,
                                    IDS_CONTENT_CONTEXT_UNDO);
    menu_model_.AddItemWithStringId(IDC_CONTENT_CONTEXT_REDO,
-@@ -1361,7 +1361,7 @@
+@@ -1403,7 +1403,7 @@ void RenderViewContextMenu::AppendLangua
    if (!use_spelling)
      return;
  
@@ -18,7 +18,7 @@
    menu_model_.AddItemWithStringId(IDC_CONTENT_CONTEXT_LANGUAGE_SETTINGS,
                                    IDS_CONTENT_CONTEXT_LANGUAGE_SETTINGS);
  #else
-@@ -1602,7 +1602,7 @@
+@@ -1645,7 +1645,7 @@ bool RenderViewContextMenu::IsCommandIdE
      case IDC_CHECK_SPELLING_WHILE_TYPING:
        return prefs->GetBoolean(spellcheck::prefs::kEnableSpellcheck);
  

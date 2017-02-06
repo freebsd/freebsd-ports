@@ -1,6 +1,6 @@
---- ui/app_list/app_list_constants.cc.orig	2016-05-11 19:02:35 UTC
+--- ui/app_list/app_list_constants.cc.orig	2017-01-26 00:49:31 UTC
 +++ ui/app_list/app_list_constants.cc
-@@ -144,7 +144,7 @@ const char kSearchQueryLength[] = "Apps.
+@@ -140,7 +140,7 @@ const char kSearchQueryLength[] = "Apps.
  const char kSearchResultDistanceFromOrigin[] =
      "Apps.AppListSearchResultDistanceFromOrigin";
  

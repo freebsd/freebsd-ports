@@ -1,6 +1,6 @@
---- net/base/network_change_notifier.h.orig	2016-08-03 22:02:21.000000000 +0300
-+++ net/base/network_change_notifier.h	2016-09-26 03:54:03.417293000 +0300
-@@ -26,7 +26,7 @@
+--- net/base/network_change_notifier.h.orig	2017-01-26 00:49:16 UTC
++++ net/base/network_change_notifier.h
+@@ -26,7 +26,7 @@ struct NetworkInterface;
  typedef std::vector<NetworkInterface> NetworkInterfaceList;
  class URLRequest;
  
@@ -9,7 +9,7 @@
  namespace internal {
  class AddressTrackerLinux;
  }
-@@ -329,7 +329,7 @@
+@@ -332,7 +332,7 @@ class NET_EXPORT NetworkChangeNotifier {
    // a large HOSTS file.
    static void GetDnsConfig(DnsConfig* config);
  
@@ -18,7 +18,7 @@
    // Returns the AddressTrackerLinux if present.
    static const internal::AddressTrackerLinux* GetAddressTracker();
  #endif
-@@ -485,7 +485,7 @@
+@@ -488,7 +488,7 @@ class NET_EXPORT NetworkChangeNotifier {
        const NetworkChangeCalculatorParams& params =
            NetworkChangeCalculatorParams());
  

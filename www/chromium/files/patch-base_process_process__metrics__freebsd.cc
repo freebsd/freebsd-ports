@@ -1,7 +1,7 @@
---- base/process/process_metrics_freebsd.cc.orig	2016-03-25 13:04:44 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2017-01-26 00:49:07 UTC
 +++ base/process/process_metrics_freebsd.cc
-@@ -12,6 +12,9 @@
- #include "base/macros.h"
+@@ -13,6 +13,9 @@
+ #include "base/memory/ptr_util.h"
  #include "base/sys_info.h"
  
 +#include <unistd.h> /* getpagesize() */
@@ -10,7 +10,7 @@
  namespace base {
  
  ProcessMetrics::ProcessMetrics(ProcessHandle process)
-@@ -121,4 +124,23 @@ size_t GetSystemCommitCharge() {
+@@ -122,4 +125,23 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  

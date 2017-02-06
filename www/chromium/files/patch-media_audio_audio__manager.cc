@@ -1,6 +1,6 @@
---- media/audio/audio_manager.cc.orig	2016-07-20 22:03:25.000000000 +0300
-+++ media/audio/audio_manager.cc	2016-08-01 04:22:25.372043000 +0300
-@@ -92,7 +92,7 @@
+--- media/audio/audio_manager.cc.orig	2017-01-26 00:49:15 UTC
++++ media/audio/audio_manager.cc
+@@ -95,7 +95,7 @@ class AudioManagerHelper : public base::
    }
  #endif
  
@@ -9,7 +9,7 @@
    void set_app_name(const std::string& app_name) { app_name_ = app_name; }
    const std::string& app_name() const { return app_name_; }
  #endif
-@@ -250,7 +250,7 @@
+@@ -253,7 +253,7 @@ class AudioManagerHelper : public base::
    std::unique_ptr<base::win::ScopedCOMInitializer> com_initializer_for_testing_;
  #endif
  
@@ -18,7 +18,7 @@
    std::string app_name_;
  #endif
  
-@@ -359,7 +359,7 @@
+@@ -365,7 +365,7 @@ void AudioManager::EnableCrashKeyLogging
    g_helper.Pointer()->enable_crash_key_logging();
  }
  

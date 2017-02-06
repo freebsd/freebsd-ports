@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2016-10-06 04:02:22.000000000 +0300
-+++ net/BUILD.gn	2016-10-18 00:25:21.260605000 +0300
-@@ -175,6 +175,11 @@
+--- net/BUILD.gn.orig	2017-01-26 00:49:16 UTC
++++ net/BUILD.gn
+@@ -153,6 +153,11 @@ component("net") {
        ]
        if (is_android) {
          sources -= [ "base/openssl_private_key_store_android.cc" ]
@@ -12,7 +12,7 @@
        }
      } else {
        if (is_android) {
-@@ -298,6 +303,13 @@
+@@ -278,6 +283,13 @@ component("net") {
        sources -= [ "disk_cache/blockfile/file_posix.cc" ]
      }
  
@@ -26,7 +26,7 @@
      if (is_ios || is_mac) {
        sources += gypi_values.net_base_mac_ios_sources
      }
-@@ -1025,7 +1037,7 @@
+@@ -966,7 +978,7 @@ if (!is_ios && !is_android) {
    }
  }
  
@@ -35,7 +35,7 @@
    executable("cachetool") {
      testonly = true
      sources = [
-@@ -1054,7 +1066,7 @@
+@@ -995,7 +1007,7 @@ if (is_linux || is_mac) {
    }
  }
  
@@ -44,7 +44,7 @@
    static_library("epoll_server") {
      sources = [
        "tools/epoll_server/epoll_server.cc",
-@@ -1160,7 +1172,7 @@
+@@ -1098,7 +1110,7 @@ if (is_android) {
    }
  }
  
@@ -53,7 +53,7 @@
    executable("disk_cache_memory_test") {
      testonly = true
      sources = [
-@@ -1353,7 +1365,7 @@
+@@ -1276,7 +1288,7 @@ test("net_unittests") {
      "third_party/nist-pkits/",
    ]
  
@@ -62,7 +62,7 @@
      deps += [
        "//third_party/pyftpdlib/",
        "//third_party/pywebsocket/",
-@@ -1376,7 +1388,7 @@
+@@ -1299,7 +1311,7 @@ test("net_unittests") {
    if (is_desktop_linux) {
      deps += [ ":epoll_quic_tools" ]
    }
@@ -71,7 +71,7 @@
      sources += gypi_values.net_linux_test_sources
      deps += [
        ":epoll_quic_tools",
-@@ -1392,6 +1404,12 @@
+@@ -1319,6 +1331,12 @@ test("net_unittests") {
      sources -= [ "proxy/proxy_config_service_linux_unittest.cc" ]
    }
  

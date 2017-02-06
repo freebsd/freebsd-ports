@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.h.orig	2016-10-06 04:02:11.000000000 +0300
-+++ chrome/browser/browser_process_impl.h	2016-10-16 22:37:41.017296000 +0300
-@@ -336,7 +336,7 @@
+--- chrome/browser/browser_process_impl.h.orig	2017-01-26 00:49:08 UTC
++++ chrome/browser/browser_process_impl.h
+@@ -340,7 +340,7 @@ class BrowserProcessImpl : public Browse
  
    std::unique_ptr<ChromeDeviceClient> device_client_;
  

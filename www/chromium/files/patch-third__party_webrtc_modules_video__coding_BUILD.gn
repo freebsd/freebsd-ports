@@ -1,6 +1,6 @@
---- third_party/webrtc/modules/video_coding/BUILD.gn.orig	2016-12-13 00:29:05 UTC
+--- third_party/webrtc/modules/video_coding/BUILD.gn.orig	2017-01-26 00:50:17 UTC
 +++ third_party/webrtc/modules/video_coding/BUILD.gn
-@@ -140,9 +140,7 @@ rtc_static_library("webrtc_h264") {
+@@ -137,9 +137,7 @@ rtc_static_library("webrtc_h264") {
    }
  
    defines = []
@@ -9,9 +9,9 @@
 -  ]
 +  deps = []
  
-   if (is_ios) {
-     sources += [ "codecs/h264/h264_objc.mm" ]
-@@ -161,9 +159,9 @@ rtc_static_library("webrtc_h264") {
+   if (rtc_use_h264) {
+     defines += [ "WEBRTC_USE_H264" ]
+@@ -153,9 +151,9 @@ rtc_static_library("webrtc_h264") {
        "codecs/h264/h264_encoder_impl.h",
      ]
      deps += [

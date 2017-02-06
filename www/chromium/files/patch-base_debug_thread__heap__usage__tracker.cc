@@ -1,5 +1,5 @@
---- base/debug/scoped_thread_heap_usage.cc.orig	2016-12-12 23:57:03 UTC
-+++ base/debug/scoped_thread_heap_usage.cc
+--- base/debug/thread_heap_usage_tracker.cc.orig	2017-01-26 00:49:07 UTC
++++ base/debug/thread_heap_usage_tracker.cc
 @@ -14,11 +14,13 @@
  #include "base/threading/thread_local_storage.h"
  #include "build/build_config.h"

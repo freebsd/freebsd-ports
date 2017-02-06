@@ -1,6 +1,6 @@
---- chrome/browser/download/download_commands.h.orig	2016-03-25 13:04:45 UTC
+--- chrome/browser/download/download_commands.h.orig	2017-01-26 00:49:08 UTC
 +++ chrome/browser/download/download_commands.h
-@@ -42,7 +42,8 @@ class DownloadCommands {
+@@ -43,7 +43,8 @@ class DownloadCommands {
    void ExecuteCommand(Command command);
  
  #if defined(OS_WIN) || defined(OS_LINUX) || \

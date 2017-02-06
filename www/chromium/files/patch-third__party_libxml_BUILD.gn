@@ -1,5 +1,5 @@
---- third_party/libxml/BUILD.gn.orig	2016-08-03 22:02:38.000000000 +0300
-+++ third_party/libxml/BUILD.gn	2016-09-02 23:25:19.267995000 +0300
+--- third_party/libxml/BUILD.gn.orig	2017-01-26 00:49:30 UTC
++++ third_party/libxml/BUILD.gn
 @@ -4,7 +4,7 @@
  
  # Define an "os_include" variable that points at the OS-specific generated

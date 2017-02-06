@@ -1,6 +1,6 @@
---- build/config/crypto.gni.orig	2016-08-03 22:02:10.000000000 +0300
-+++ build/config/crypto.gni	2016-09-03 01:37:11.785915000 +0300
-@@ -20,4 +20,4 @@
+--- build/config/crypto.gni.orig	2017-01-26 00:49:07 UTC
++++ build/config/crypto.gni
+@@ -20,4 +20,4 @@ use_openssl_certs = is_android || is_nac
  
  # True if NSS is used for certificate handling. It is possible to use OpenSSL
  # for the crypto library, but NSS for the platform certificate library.

@@ -1,6 +1,6 @@
---- media/audio/audio_manager.h.orig	2016-05-11 19:02:23 UTC
+--- media/audio/audio_manager.h.orig	2017-01-26 00:49:15 UTC
 +++ media/audio/audio_manager.h
-@@ -68,7 +68,7 @@ class MEDIA_EXPORT AudioManager {
+@@ -84,7 +84,7 @@ class MEDIA_EXPORT AudioManager {
    // See http://crbug.com/422522
    static void EnableCrashKeyLoggingForAudioThreadHangs();
  

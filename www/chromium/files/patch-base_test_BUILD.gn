@@ -1,6 +1,6 @@
---- base/test/BUILD.gn.orig	2016-08-03 22:02:10.000000000 +0300
-+++ base/test/BUILD.gn	2016-09-02 23:56:39.647089000 +0300
-@@ -249,7 +249,7 @@
+--- base/test/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ base/test/BUILD.gn
+@@ -303,7 +303,7 @@ static_library("run_all_base_unittests")
    ]
  }
  

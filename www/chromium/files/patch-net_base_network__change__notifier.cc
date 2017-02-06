@@ -1,6 +1,6 @@
---- net/base/network_change_notifier.cc.orig	2016-10-06 04:02:22.000000000 +0300
-+++ net/base/network_change_notifier.cc	2016-10-14 20:28:12.376281000 +0300
-@@ -533,7 +533,6 @@
+--- net/base/network_change_notifier.cc.orig	2017-01-26 00:49:16 UTC
++++ net/base/network_change_notifier.cc
+@@ -533,7 +533,6 @@ NetworkChangeNotifier* NetworkChangeNoti
  #elif defined(OS_MACOSX)
    return new NetworkChangeNotifierMac();
  #else
@@ -8,7 +8,7 @@
    return NULL;
  #endif
  }
-@@ -753,7 +752,7 @@
+@@ -753,7 +752,7 @@ void NetworkChangeNotifier::LogOperatorC
  #endif
  }
  
@@ -17,7 +17,7 @@
  // static
  const internal::AddressTrackerLinux*
  NetworkChangeNotifier::GetAddressTracker() {
-@@ -978,7 +977,7 @@
+@@ -978,7 +977,7 @@ NetworkChangeNotifier::NetworkChangeNoti
    network_change_calculator_->Init();
  }
  

@@ -1,6 +1,6 @@
---- components/variations/proto/study.proto.orig	2016-10-06 04:02:18.000000000 +0300
-+++ components/variations/proto/study.proto	2016-10-13 13:02:20.586397000 +0300
-@@ -189,6 +189,7 @@
+--- components/variations/proto/study.proto.orig	2017-01-26 00:49:13 UTC
++++ components/variations/proto/study.proto
+@@ -186,6 +186,7 @@ message Study {
      PLATFORM_CHROMEOS = 3;
      PLATFORM_ANDROID  = 4;
      PLATFORM_IOS      = 5;

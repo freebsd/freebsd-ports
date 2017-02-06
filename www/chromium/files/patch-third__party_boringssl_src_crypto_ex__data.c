@@ -1,6 +1,6 @@
---- third_party/boringssl/src/crypto/ex_data.c.orig	2016-08-03 22:03:20.000000000 +0300
-+++ third_party/boringssl/src/crypto/ex_data.c	2016-09-17 04:02:25.959140000 +0300
-@@ -188,7 +188,9 @@
+--- third_party/boringssl/src/crypto/ex_data.c.orig	2017-01-26 00:50:08 UTC
++++ third_party/boringssl/src/crypto/ex_data.c
+@@ -188,7 +188,9 @@ int CRYPTO_set_ex_data(CRYPTO_EX_DATA *a
      }
    }
  

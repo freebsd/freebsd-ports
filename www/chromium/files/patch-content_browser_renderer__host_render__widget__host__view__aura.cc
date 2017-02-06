@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2016-10-06 04:02:18.000000000 +0300
-+++ content/browser/renderer_host/render_widget_host_view_aura.cc	2016-10-13 07:01:47.728403000 +0300
-@@ -106,7 +106,7 @@
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2017-01-26 00:49:13 UTC
++++ content/browser/renderer_host/render_widget_host_view_aura.cc
+@@ -107,7 +107,7 @@
  #include "ui/gfx/gdi_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
-@@ -2479,7 +2479,7 @@
+@@ -1961,7 +1961,7 @@ bool RenderWidgetHostViewAura::NeedsInpu
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -18,7 +18,7 @@
    return NeedsInputGrab();
  #endif
    return false;
-@@ -2711,7 +2711,7 @@
+@@ -2158,7 +2158,7 @@ void RenderWidgetHostViewAura::ForwardKe
    if (!target_host)
      return;
  
