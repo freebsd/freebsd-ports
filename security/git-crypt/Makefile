@@ -16,18 +16,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	git:devel/git \
 		gpg:security/gnupg
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	MANPAGES
 
 LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ENV+=	PREFIX=${PREFIX} "CXXFLAGS=${CXXFLAGS}" \
 		"LDFLAGS=${LDFLAGS}"
 
-DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			docbook-xsl>=0:textproc/docbook-xsl
-DOCS_MAKE_ARGS=		ENABLE_MAN=yes \
+MANPAGES_MAKE_ARGS=		ENABLE_MAN=yes \
 			MANDIR=${MANPREFIX}/man \
 			DOCBOOK_XSL=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
-DOCS_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
 USES=		gmake ssl
 
