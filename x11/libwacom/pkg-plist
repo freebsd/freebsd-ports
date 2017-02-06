@@ -3,5 +3,5 @@ include/libwacom-1.0/libwacom/libwacom.h
 lib/libwacom.a
 lib/libwacom.so
 lib/libwacom.so.2
-lib/libwacom.so.2.5.0
+lib/libwacom.so.2.5.1
 libdata/pkgconfig/libwacom.pc
