@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/chrome_views_delegate.h.orig	2016-05-11 19:02:16 UTC
+--- chrome/browser/ui/views/chrome_views_delegate.h.orig	2017-01-26 00:49:09 UTC
 +++ chrome/browser/ui/views/chrome_views_delegate.h
-@@ -35,7 +35,7 @@ class ChromeViewsDelegate : public views
+@@ -37,7 +37,7 @@ class ChromeViewsDelegate : public views
  #if defined(OS_WIN)
    HICON GetDefaultWindowIcon() const override;
    HICON GetSmallWindowIcon() const override;
@@ -9,7 +9,7 @@
    gfx::ImageSkia* GetDefaultWindowIcon() const override;
  #endif
  
-@@ -48,7 +48,7 @@ class ChromeViewsDelegate : public views
+@@ -50,7 +50,7 @@ class ChromeViewsDelegate : public views
    void OnBeforeWidgetInit(
        views::Widget::InitParams* params,
        views::internal::NativeWidgetDelegate* delegate) override;

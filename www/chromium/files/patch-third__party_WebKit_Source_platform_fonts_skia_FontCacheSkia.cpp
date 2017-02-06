@@ -1,4 +1,4 @@
---- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig	2016-12-13 00:51:35 UTC
+--- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig	2017-01-26 00:49:28 UTC
 +++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp
 @@ -63,7 +63,7 @@ static sk_sp<SkTypeface> typefaceForFont
  
@@ -9,7 +9,7 @@
  // Android special locale for retrieving the color emoji font
  // based on the proposed changes in UTR #51 for introducing
  // an Emoji script code:
-@@ -229,7 +229,7 @@ sk_sp<SkTypeface> FontCache::createTypef
+@@ -230,7 +230,7 @@ sk_sp<SkTypeface> FontCache::createTypef
    }
  #endif
  

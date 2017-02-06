@@ -1,6 +1,6 @@
---- third_party/webrtc/system_wrappers/BUILD.gn.orig	2016-10-06 04:05:36.000000000 +0300
-+++ third_party/webrtc/system_wrappers/BUILD.gn	2016-10-14 17:26:56.594097000 +0300
-@@ -105,7 +105,7 @@
+--- third_party/webrtc/system_wrappers/BUILD.gn.orig	2017-01-26 00:50:17 UTC
++++ third_party/webrtc/system_wrappers/BUILD.gn
+@@ -90,7 +90,7 @@ rtc_static_library("system_wrappers") {
      libs += [ "log" ]
    }
  
@@ -9,7 +9,7 @@
      defines += [ "WEBRTC_THREAD_RR" ]
  
      if (!build_with_chromium) {
-@@ -115,7 +115,7 @@
+@@ -100,7 +100,7 @@ rtc_static_library("system_wrappers") {
      libs += [ "rt" ]
    }
  

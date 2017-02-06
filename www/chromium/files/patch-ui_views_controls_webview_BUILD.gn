@@ -1,6 +1,6 @@
---- ui/views/controls/webview/BUILD.gn.orig	2016-08-03 22:02:41.000000000 +0300
-+++ ui/views/controls/webview/BUILD.gn	2016-09-03 00:18:20.159623000 +0300
-@@ -39,7 +39,7 @@
+--- ui/views/controls/webview/BUILD.gn.orig	2017-01-26 00:49:32 UTC
++++ ui/views/controls/webview/BUILD.gn
+@@ -39,7 +39,7 @@ component("webview") {
      "//ui/views",
    ]
  

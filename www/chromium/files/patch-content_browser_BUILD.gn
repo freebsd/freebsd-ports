@@ -1,19 +1,22 @@
---- content/browser/BUILD.gn.orig	2016-12-01 23:02:12.000000000 +0000
-+++ content/browser/BUILD.gn	2016-12-14 14:34:21.739126000 +0000
-@@ -1399,6 +1399,12 @@
+--- content/browser/BUILD.gn.orig	2017-01-26 00:49:13 UTC
++++ content/browser/BUILD.gn
+@@ -1421,10 +1421,11 @@ source_set("browser") {
+       "memory/memory_monitor_chromeos.cc",
+       "memory/memory_monitor_chromeos.h",
      ]
-   }
- 
+-  } else {
+-    sources += [
+-      "memory/memory_monitor_linux.cc",
+-      "memory/memory_monitor_linux.h",
++  }
++
 +  if (is_bsd) {
 +    sources -= [
 +      "download/quarantine_linux.cc",
-+    ]
-+  }
-+
-   if (!is_win) {
-     sources += [
-       "file_descriptor_info_impl.cc",
-@@ -1462,7 +1468,7 @@
+     ]
+   }
+ 
+@@ -1490,7 +1491,7 @@ source_set("browser") {
      if (!is_ios) {
        defines += [ "ENABLE_SCREEN_CAPTURE=1" ]
      }
@@ -22,7 +25,7 @@
        sources += [
          "media/capture/desktop_capture_device.cc",
          "media/capture/desktop_capture_device.h",
-@@ -1629,7 +1635,7 @@
+@@ -1657,7 +1658,7 @@ source_set("browser") {
      }
    }
  
@@ -31,7 +34,7 @@
      deps += [ "//build/linux:fontconfig" ]
    }
  
-@@ -1782,6 +1788,17 @@
+@@ -1807,6 +1808,17 @@ source_set("browser") {
        "//chromeos",
        "//chromeos:power_manager_proto",
      ]
@@ -48,8 +51,8 @@
 +    ]
    }
  
-   if (use_aura) {
-@@ -1899,11 +1916,11 @@
+   if (enable_mojo_media) {
+@@ -1930,11 +1942,11 @@ source_set("browser") {
      deps += [ "//third_party/flac" ]
    }
  

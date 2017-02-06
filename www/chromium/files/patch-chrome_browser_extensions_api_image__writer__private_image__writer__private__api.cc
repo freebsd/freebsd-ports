@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc.orig	2016-05-11 19:02:14 UTC
+--- chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc.orig	2017-01-26 00:49:08 UTC
 +++ chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc
 @@ -166,10 +166,12 @@ ImageWriterPrivateListRemovableStorageDe
  }

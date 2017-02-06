@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc.orig	2016-05-11 19:02:16 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc.orig	2017-01-26 00:49:09 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc
 @@ -20,7 +20,7 @@ namespace {
  

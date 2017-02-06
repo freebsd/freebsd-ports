@@ -1,6 +1,6 @@
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h.orig	2016-05-27 10:37:19.349853000 -0400
-+++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h	2016-05-27 10:37:52.605308000 -0400
-@@ -37,7 +37,7 @@
+--- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h.orig	2017-01-26 00:50:13 UTC
++++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h
+@@ -37,7 +37,7 @@ typedef boost::mutex::scoped_lock AutoLo
  // Dummy lock implementation on non-POSIX platforms. If you are running on a
  // different platform and care about thread-safety, please compile with
  // -DI18N_PHONENUMBERS_USE_BOOST.

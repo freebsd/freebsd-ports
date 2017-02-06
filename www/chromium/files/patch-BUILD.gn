@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2016-12-01 23:02:04 UTC
+--- BUILD.gn.orig	2017-01-26 00:49:06 UTC
 +++ BUILD.gn
-@@ -215,7 +215,7 @@ group("both_gn_and_gyp") {
+@@ -217,7 +217,7 @@ group("both_gn_and_gyp") {
      ]
    }
  
@@ -9,7 +9,7 @@
      deps += [
        "//chrome",
        "//chrome/test:browser_tests",
-@@ -274,7 +274,7 @@ group("both_gn_and_gyp") {
+@@ -277,7 +277,7 @@ group("both_gn_and_gyp") {
      ]
    }
  
@@ -18,7 +18,7 @@
      # TODO(GYP): Figure out which of these should actually build on iOS,
      # and whether there should be other targets that are iOS-only and missing.
      deps += [
-@@ -316,7 +316,7 @@ group("both_gn_and_gyp") {
+@@ -320,7 +320,7 @@ group("both_gn_and_gyp") {
        "//ui/touch_selection:ui_touch_selection_unittests",
        "//url/ipc:url_ipc_unittests",
      ]
@@ -27,7 +27,7 @@
      deps += [ "//ios:all" ]
    }
  
-@@ -474,7 +474,7 @@ group("both_gn_and_gyp") {
+@@ -488,7 +488,7 @@ group("both_gn_and_gyp") {
      ]
    }
  
@@ -36,7 +36,7 @@
      # The following are definitely linux-only.
      deps += [
        "//chrome:manpage",
-@@ -501,9 +501,16 @@ group("both_gn_and_gyp") {
+@@ -515,9 +515,16 @@ group("both_gn_and_gyp") {
        # TODO(dpranke): add the linux_dump_symbols flag?
        deps += [ "//chrome:linux_symbols" ]
      }
@@ -54,7 +54,7 @@
      deps += [
        "//base:base_i18n_perftests",
        "//base:base_perftests",
-@@ -574,7 +581,7 @@ group("both_gn_and_gyp") {
+@@ -588,7 +595,7 @@ group("both_gn_and_gyp") {
      if (enable_nacl) {
        deps += [ "//components/nacl/loader:nacl_loader_unittests" ]
  
@@ -63,7 +63,7 @@
          # TODO(dpranke): Figure out what platforms should actually have this.
          deps += [ "//components/nacl/loader:nacl_helper" ]
  
-@@ -688,7 +695,7 @@ group("both_gn_and_gyp") {
+@@ -698,7 +705,7 @@ group("both_gn_and_gyp") {
        deps +=
            [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
      }
@@ -72,8 +72,8 @@
      deps += [ "//breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -736,7 +743,7 @@ group("gn_only") {
-     ]
+@@ -743,7 +750,7 @@ group("gn_only") {
+     deps += [ "//components/proximity_auth:proximity_auth_unittests" ]
    }
  
 -  if (is_win || is_linux) {
@@ -81,8 +81,8 @@
      deps += [
        "//mash:all",
        "//media/mojo/services:media_mojo_shell_unittests",
-@@ -749,7 +756,7 @@ group("gn_only") {
-     ]
+@@ -763,7 +770,7 @@ group("gn_only") {
+     }
    }
  
 -  if (is_linux && !is_chromeos && !is_chromecast) {
@@ -117,7 +117,7 @@
      deps += [
        "//testing/libfuzzer/fuzzers",
        "//testing/libfuzzer/tests:libfuzzer_tests",
-@@ -876,7 +883,7 @@ group("gn_only") {
+@@ -877,7 +884,7 @@ group("gn_only") {
  
  group("gn_mojo_targets") {
    testonly = true
@@ -126,7 +126,7 @@
      # TODO(GYP): Figure out if any of these should be in gn_all
      # and figure out how cross-platform they are
      deps = [
-@@ -901,7 +908,7 @@ group("gn_visibility") {
+@@ -903,7 +910,7 @@ group("gn_visibility") {
    }
  }
  
@@ -135,16 +135,25 @@
    # This group includes all of the targets needed to build and test Blink,
    # including running the layout tests (see below).
    group("blink_tests") {
-@@ -935,7 +942,7 @@ if (!is_ios) {
-       ]
+@@ -949,7 +956,7 @@ if (!is_ios) {
+       data_deps += [ "//content/shell:content_shell_crash_service" ]
      }
  
 -    if (!is_win && !is_android) {
 +    if (!is_win && !is_android && !is_bsd) {
-       deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
+       data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
  
-@@ -961,7 +968,7 @@ group("chromium_swarm_tests") {
+@@ -957,7 +964,7 @@ if (!is_ios) {
+       data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
+     }
+ 
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
+     }
+ 
+@@ -979,7 +986,7 @@ group("chromium_swarm_tests") {
  group("chromium_builder_perf") {
    testonly = true
  
@@ -153,9 +162,9 @@
      data_deps = [
        "//cc:cc_perftests",
        "//chrome/test:load_library_perf_tests",
-@@ -992,7 +999,7 @@ group("chromium_builder_perf") {
+@@ -1009,7 +1016,7 @@ group("chromium_builder_perf") {
          "//chrome/installer/mini_installer:mini_installer",
-         "//third_party/angle/src/tests:angle_perftests",
+         "//chrome/test:angle_perftests",
        ]
 -    } else {
 +    } else if (!is_bsd) {

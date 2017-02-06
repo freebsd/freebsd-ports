@@ -1,4 +1,4 @@
---- components/plugins/renderer/plugin_placeholder.cc.orig	2016-03-25 13:04:48 UTC
+--- components/plugins/renderer/plugin_placeholder.cc.orig	2017-01-26 00:49:12 UTC
 +++ components/plugins/renderer/plugin_placeholder.cc
 @@ -11,7 +11,11 @@
  #include "gin/object_template_builder.h"

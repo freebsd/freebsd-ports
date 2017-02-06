@@ -1,4 +1,4 @@
---- gpu/tools/compositor_model_bench/BUILD.gn.orig	2016-12-12 22:09:19 UTC
+--- gpu/tools/compositor_model_bench/BUILD.gn.orig	2017-01-26 00:49:14 UTC
 +++ gpu/tools/compositor_model_bench/BUILD.gn
 @@ -4,7 +4,7 @@
  

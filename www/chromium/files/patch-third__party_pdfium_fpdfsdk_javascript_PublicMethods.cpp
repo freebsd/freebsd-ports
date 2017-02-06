@@ -1,9 +1,9 @@
---- third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp.orig	2016-07-20 22:04:51.000000000 +0300
-+++ third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp	2016-08-01 18:53:01.768097000 +0300
-@@ -62,6 +62,103 @@
+--- third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp.orig	2017-01-26 00:50:15 UTC
++++ third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp
+@@ -68,6 +68,103 @@ const FX_WCHAR* const fullmonths[] = {L"
                                        L"July",    L"August",   L"September",
                                        L"October", L"November", L"December"};
-
+ 
 +#if defined(__FreeBSD__)
 +/*
 + * cvt.c - IEEE floating point formatting routines for FreeBSD

@@ -1,4 +1,4 @@
---- chrome/browser/plugins/plugins_resource_service.cc.orig	2016-04-08 16:02:07 UTC
+--- chrome/browser/plugins/plugins_resource_service.cc.orig	2017-01-26 00:49:08 UTC
 +++ chrome/browser/plugins/plugins_resource_service.cc
 @@ -31,7 +31,7 @@ GURL GetPluginsServerURL() {
    std::string filename;

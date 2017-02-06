@@ -1,5 +1,5 @@
---- crypto/nss_util.cc.orig	2016-10-06 04:02:19.000000000 +0300
-+++ crypto/nss_util.cc	2016-10-13 07:19:30.151634000 +0300
+--- crypto/nss_util.cc.orig	2017-01-26 00:49:14 UTC
++++ crypto/nss_util.cc
 @@ -20,7 +20,7 @@
  #include "base/threading/thread_task_runner_handle.h"
  #include "crypto/nss_util_internal.h"
@@ -9,7 +9,7 @@
  #include <sys/mount.h>
  #include <sys/param.h>
  #endif
-@@ -150,10 +150,10 @@
+@@ -150,10 +150,10 @@ void UseLocalCacheOfNSSDatabaseIfNFS(con
    base::FileSystemType fs_type = base::FILE_SYSTEM_UNKNOWN;
    if (base::GetFileSystemType(database_dir, &fs_type))
      db_on_nfs = (fs_type == base::FILE_SYSTEM_NFS);

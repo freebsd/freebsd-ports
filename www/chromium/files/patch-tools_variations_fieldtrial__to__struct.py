@@ -1,6 +1,6 @@
---- tools/variations/fieldtrial_to_struct.py.orig	2016-12-13 00:00:14 UTC
+--- tools/variations/fieldtrial_to_struct.py.orig	2017-01-26 00:49:31 UTC
 +++ tools/variations/fieldtrial_to_struct.py
-@@ -113,7 +113,7 @@ def main(arguments):
+@@ -116,7 +116,7 @@ def main(arguments):
    if not opts.platform:
      parser.error('You must specify a --platform.')
  

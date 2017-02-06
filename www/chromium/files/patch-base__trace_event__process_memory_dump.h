@@ -1,6 +1,6 @@
---- base/trace_event/process_memory_dump.h.orig	2016-05-25 15:00:55.000000000 -0400
-+++ base/trace_event/process_memory_dump.h	2016-05-27 01:46:53.167565000 -0400
-@@ -23,7 +23,7 @@
+--- base/trace_event/process_memory_dump.h.orig	2017-01-26 00:49:07 UTC
++++ base/trace_event/process_memory_dump.h
+@@ -24,7 +24,7 @@
  
  // Define COUNT_RESIDENT_BYTES_SUPPORTED if platform supports counting of the
  // resident memory.

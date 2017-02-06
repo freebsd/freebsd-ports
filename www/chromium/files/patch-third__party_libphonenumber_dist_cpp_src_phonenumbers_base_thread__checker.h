@@ -1,5 +1,5 @@
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h.orig	2016-05-27 10:38:59.514474000 -0400
-+++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h	2016-05-27 10:40:19.234261000 -0400
+--- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h.orig	2017-01-26 00:50:13 UTC
++++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h
 @@ -23,6 +23,7 @@
  // user of the library know that it can't be used in a thread-safe manner when
  // it is not depending on Boost.

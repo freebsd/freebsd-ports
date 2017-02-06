@@ -1,6 +1,6 @@
---- third_party/zlib/BUILD.gn.orig	2016-08-03 22:02:40.000000000 +0300
-+++ third_party/zlib/BUILD.gn	2016-09-29 17:46:32.878236000 +0300
-@@ -115,7 +115,7 @@
+--- third_party/zlib/BUILD.gn.orig	2017-01-26 00:49:31 UTC
++++ third_party/zlib/BUILD.gn
+@@ -115,7 +115,7 @@ static_library("minizip") {
        "contrib/minizip/iowin32.h",
      ]
    }

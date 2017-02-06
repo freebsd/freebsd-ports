@@ -1,5 +1,5 @@
---- base/process/process_metrics.h.orig	2016-10-06 04:02:08.000000000 +0300
-+++ base/process/process_metrics.h	2016-10-13 12:58:13.818273000 +0300
+--- base/process/process_metrics.h.orig	2017-01-26 00:49:07 UTC
++++ base/process/process_metrics.h
 @@ -22,6 +22,12 @@
  #include "base/values.h"
  #include "build/build_config.h"
@@ -13,7 +13,7 @@
  #if defined(OS_MACOSX)
  #include <mach/mach.h>
  #include "base/process/port_provider_mac.h"
-@@ -326,13 +332,17 @@
+@@ -326,13 +332,17 @@ BASE_EXPORT bool GetSystemMemoryInfo(Sys
  // CPU-related ticks.  Returns -1 on parse error.
  // Exposed for testing.
  BASE_EXPORT int ParseProcStatCPU(const std::string& input);

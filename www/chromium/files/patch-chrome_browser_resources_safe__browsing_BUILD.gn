@@ -1,6 +1,6 @@
---- chrome/browser/resources/safe_browsing/BUILD.gn.orig	2016-08-03 22:02:13.000000000 +0300
-+++ chrome/browser/resources/safe_browsing/BUILD.gn	2016-09-20 02:51:43.112078000 +0300
-@@ -26,6 +26,8 @@
+--- chrome/browser/resources/safe_browsing/BUILD.gn.orig	2017-01-26 00:49:09 UTC
++++ chrome/browser/resources/safe_browsing/BUILD.gn
+@@ -29,6 +29,8 @@ action("make_file_types_protobuf") {
      target_arch = "mac"
    } else if (is_linux) {
      target_arch = "linux"

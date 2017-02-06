@@ -1,6 +1,6 @@
---- base/process/process_posix.cc.orig	2016-08-03 22:02:10.000000000 +0300
-+++ base/process/process_posix.cc	2016-09-11 02:18:36.481940000 +0300
-@@ -20,8 +20,18 @@
+--- base/process/process_posix.cc.orig	2017-01-26 00:49:07 UTC
++++ base/process/process_posix.cc
+@@ -21,8 +21,18 @@
  #include <sys/event.h>
  #endif
  
@@ -19,7 +19,7 @@
  #if !defined(OS_NACL_NONSFI)
  
  bool WaitpidWithTimeout(base::ProcessHandle handle,
-@@ -183,13 +193,13 @@
+@@ -184,13 +194,13 @@ bool WaitForExitWithTimeoutImpl(base::Pr
    base::ProcessHandle parent_pid = base::GetParentProcessId(handle);
    base::ProcessHandle our_pid = base::GetCurrentProcessHandle();
    if (parent_pid != our_pid) {
@@ -36,26 +36,26 @@
    }
  
    int status;
-@@ -256,12 +266,16 @@
+@@ -257,12 +267,16 @@ Process Process::DeprecatedGetProcessFro
    return Process(handle);
  }
  
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_FREEBSD)
+-#if !defined(OS_LINUX) && !defined(OS_MACOSX)
++#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_FREEBSD)
  // static
  bool Process::CanBackgroundProcesses() {
    return false;
  }
--#endif  // !defined(OS_LINUX)
+-#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
 +#elif defined(OS_FREEBSD)
 +bool Process::CanBackgroundProcesses() {
 +  return true;
 +}
-+#endif  // !defined(OS_LINUX) && !defined(OS_FREEBSD)
++#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_FREEBSD)
  
  bool Process::IsValid() const {
    return process_ != kNullProcessHandle;
-@@ -361,15 +375,32 @@
+@@ -365,15 +379,32 @@ bool Process::WaitForExitWithTimeout(Tim
  bool Process::IsProcessBackgrounded() const {
    // See SetProcessBackgrounded().
    DCHECK(IsValid());
@@ -68,9 +68,9 @@
  
  bool Process::SetProcessBackgrounded(bool value) {
 +#if !defined(OS_FREEBSD)
-   // Not implemented for POSIX systems other than Linux. With POSIX, if we were
-   // to lower the process priority we wouldn't be able to raise it back to its
-   // initial priority.
+   // Not implemented for POSIX systems other than Linux and Mac. With POSIX, if
+   // we were to lower the process priority we wouldn't be able to raise it back
+   // to its initial priority.
    NOTIMPLEMENTED();
    return false;
 +#else
@@ -86,5 +86,5 @@
 +  return result == 0;
 +#endif // !defined(OS_FREEBSD)
  }
- #endif  // !defined(OS_LINUX)
+ #endif  // !defined(OS_LINUX) && !defined(OS_MACOSX)
  

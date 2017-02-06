@@ -89,8 +89,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/fileSystem.png
 %%DATADIR%%/resources/inspector/Images/forward.png
 %%DATADIR%%/resources/inspector/Images/frame.png
-%%DATADIR%%/resources/inspector/Images/graphLabelCalloutLeft.png
-%%DATADIR%%/resources/inspector/Images/graphLabelCalloutRight.png
 %%DATADIR%%/resources/inspector/Images/ic_info_black_18dp.svg
 %%DATADIR%%/resources/inspector/Images/ic_warning_black_18dp.svg
 %%DATADIR%%/resources/inspector/Images/navigationControls.png
@@ -140,11 +138,12 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/accessibility/accessibility_module.js
 %%DATADIR%%/resources/inspector/animation/animation_module.js
 %%DATADIR%%/resources/inspector/audits/audits_module.js
+%%DATADIR%%/resources/inspector/audits2/audits2_module.js
 %%DATADIR%%/resources/inspector/cm_modes/cm_modes_module.js
 %%DATADIR%%/resources/inspector/components_lazy/components_lazy_module.js
 %%DATADIR%%/resources/inspector/console/console_module.js
 %%DATADIR%%/resources/inspector/devices/devices_module.js
-%%DATADIR%%/resources/inspector/devtools.js
+%%DATADIR%%/resources/inspector/devtools_compatibility.js
 %%DATADIR%%/resources/inspector/devtools_extension_api.js
 %%DATADIR%%/resources/inspector/diff/diff_module.js
 %%DATADIR%%/resources/inspector/elements/elements_module.js
@@ -198,12 +197,10 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/sass/sass_module.js
 %%DATADIR%%/resources/inspector/screencast/screencast_module.js
 %%DATADIR%%/resources/inspector/security/security_module.js
-%%DATADIR%%/resources/inspector/services/services_module.js
 %%DATADIR%%/resources/inspector/settings/settings_module.js
 %%DATADIR%%/resources/inspector/snippets/snippets_module.js
 %%DATADIR%%/resources/inspector/source_frame/source_frame_module.js
 %%DATADIR%%/resources/inspector/sources/sources_module.js
-%%DATADIR%%/resources/inspector/temp_storage_shared_worker.js
 %%DATADIR%%/resources/inspector/terminal/terminal_module.js
 %%DATADIR%%/resources/inspector/text_editor/text_editor_module.js
 %%DATADIR%%/resources/inspector/timeline/timeline_module.js
@@ -211,6 +208,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/toolbox.html
 %%DATADIR%%/resources/inspector/toolbox.js
 %%DATADIR%%/resources/inspector/ui_lazy/ui_lazy_module.js
+%%DATADIR%%/resources/inspector/utility_shared_worker.js
 %%DRIVER%%bin/chromedriver
 share/icons/hicolor/128x128/apps/chrome.png
 share/icons/hicolor/22x22/apps/chrome.png

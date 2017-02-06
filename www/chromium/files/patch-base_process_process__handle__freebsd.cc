@@ -1,6 +1,6 @@
---- base/process/process_handle_freebsd.cc.orig	2016-10-06 04:02:08.000000000 +0300
-+++ base/process/process_handle_freebsd.cc	2016-10-26 19:55:22.341492000 +0300
-@@ -16,7 +16,7 @@
+--- base/process/process_handle_freebsd.cc.orig	2017-01-26 00:49:07 UTC
++++ base/process/process_handle_freebsd.cc
+@@ -16,7 +16,7 @@ namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {
    struct kinfo_proc info;

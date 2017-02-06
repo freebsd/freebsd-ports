@@ -1,6 +1,6 @@
---- chrome/app/resources/locale_settings.grd.orig	2016-05-11 19:02:13 UTC
+--- chrome/app/resources/locale_settings.grd.orig	2017-01-26 00:49:08 UTC
 +++ chrome/app/resources/locale_settings.grd
-@@ -156,7 +156,7 @@
+@@ -151,7 +151,7 @@
          55
        </message>
  

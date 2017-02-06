@@ -1,5 +1,5 @@
---- device/usb/usb_service_impl.cc.orig	2016-10-06 04:02:19.000000000 +0300
-+++ device/usb/usb_service_impl.cc	2016-10-13 07:29:44.662206000 +0300
+--- device/usb/usb_service_impl.cc.orig	2017-01-26 00:49:14 UTC
++++ device/usb/usb_service_impl.cc
 @@ -26,7 +26,11 @@
  #include "device/usb/usb_error.h"
  #include "device/usb/webusb_descriptors.h"
@@ -13,7 +13,7 @@
  
  #if defined(OS_WIN)
  #include <setupapi.h>
-@@ -213,6 +217,7 @@
+@@ -213,6 +217,7 @@ UsbServiceImpl::UsbServiceImpl(
    }
    context_ = new UsbContext(platform_context);
  
@@ -21,7 +21,7 @@
    rv = libusb_hotplug_register_callback(
        context_->context(),
        static_cast<libusb_hotplug_event>(LIBUSB_HOTPLUG_EVENT_DEVICE_ARRIVED |
-@@ -225,6 +230,8 @@
+@@ -225,6 +230,8 @@ UsbServiceImpl::UsbServiceImpl(
    }
  
    RefreshDevices();
@@ -30,7 +30,7 @@
  #if defined(OS_WIN)
    DeviceMonitorWin* device_monitor = DeviceMonitorWin::GetForAllInterfaces();
    if (device_monitor) {
-@@ -234,8 +241,10 @@
+@@ -234,8 +241,10 @@ UsbServiceImpl::UsbServiceImpl(
  }
  
  UsbServiceImpl::~UsbServiceImpl() {
@@ -41,7 +41,7 @@
    for (auto* platform_device : ignored_devices_)
      libusb_unref_device(platform_device);
  }
-@@ -477,6 +486,7 @@
+@@ -477,6 +486,7 @@ void UsbServiceImpl::RemoveDevice(scoped
    device->OnDisconnect();
  }
  
@@ -49,7 +49,7 @@
  // static
  int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb_context* context,
                                                  PlatformUsbDevice device,
-@@ -514,6 +524,7 @@
+@@ -514,6 +524,7 @@ int LIBUSB_CALL UsbServiceImpl::HotplugC
  
    return 0;
  }

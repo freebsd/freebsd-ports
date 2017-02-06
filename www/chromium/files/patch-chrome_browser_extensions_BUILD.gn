@@ -1,6 +1,6 @@
---- chrome/browser/extensions/BUILD.gn.orig	2016-10-06 04:02:11.000000000 +0300
-+++ chrome/browser/extensions/BUILD.gn	2016-10-13 05:50:49.572236000 +0300
-@@ -186,7 +186,7 @@
+--- chrome/browser/extensions/BUILD.gn.orig	2017-01-26 00:49:08 UTC
++++ chrome/browser/extensions/BUILD.gn
+@@ -1024,7 +1024,7 @@ static_library("extensions") {
      sources -= [ "global_shortcut_listener_ozone.cc" ]
    }
  
@@ -9,7 +9,7 @@
      deps += [ "//build/linux:fontconfig" ]
  
      if (use_dbus) {
-@@ -252,6 +252,12 @@
+@@ -1115,6 +1115,12 @@ static_library("extensions") {
      defines += [ "ENABLE_HOTWORDING" ]
    }
  
@@ -20,5 +20,5 @@
 +  }
 +
    if (enable_service_discovery) {
-     sources += rebase_path(
-             gypi_values.chrome_browser_extensions_service_discovery_sources,
+     sources += [
+       "api/gcd_private/gcd_private_api.cc",

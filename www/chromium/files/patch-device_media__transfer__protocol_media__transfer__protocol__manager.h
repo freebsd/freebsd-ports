@@ -1,5 +1,5 @@
---- device/media_transfer_protocol/media_transfer_protocol_manager.h.orig	2016-07-17 14:17:13.836047000 +0300
-+++ device/media_transfer_protocol/media_transfer_protocol_manager.h	2016-07-17 14:16:48.004323000 +0300
+--- device/media_transfer_protocol/media_transfer_protocol_manager.h.orig	2017-01-26 00:49:14 UTC
++++ device/media_transfer_protocol/media_transfer_protocol_manager.h
 @@ -15,7 +15,7 @@
  #include "base/memory/ref_counted.h"
  #include "build/build_config.h"

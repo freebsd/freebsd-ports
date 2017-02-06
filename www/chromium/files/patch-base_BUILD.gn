@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2016-10-06 04:02:08.000000000 +0300
-+++ base/BUILD.gn	2016-10-25 21:49:35.259700000 +0300
-@@ -1051,6 +1051,35 @@
+--- base/BUILD.gn.orig	2017-01-26 00:49:07 UTC
++++ base/BUILD.gn
+@@ -1076,6 +1076,35 @@ component("base") {
      public_deps += [ "//base/allocator:unified_allocator_shim" ]
    }
  
@@ -36,7 +36,7 @@
    # Allow more direct string conversions on platforms with native utf8
    # strings
    if (is_mac || is_ios || is_chromeos || is_chromecast) {
-@@ -1322,7 +1351,7 @@
+@@ -1347,7 +1376,7 @@ component("base") {
    }
  
    # Linux.
@@ -45,7 +45,7 @@
      if (is_asan || is_lsan || is_msan || is_tsan) {
        # For llvm-sanitizer.
        data += [ "//third_party/llvm-build/Release+Asserts/lib/libstdc++.so.6" ]
-@@ -1347,7 +1376,7 @@
+@@ -1372,7 +1401,7 @@ component("base") {
        "//base/third_party/xdg_user_dirs",
      ]
    } else {
@@ -54,7 +54,7 @@
      sources -= [
        "nix/mime_util_xdg.cc",
        "nix/mime_util_xdg.h",
-@@ -1363,6 +1392,13 @@
+@@ -1388,6 +1417,13 @@ component("base") {
      }
    }
  
@@ -68,7 +68,7 @@
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2117,6 +2153,12 @@
+@@ -2154,6 +2190,12 @@ test("base_unittests") {
      set_sources_assignment_filter(sources_assignment_filter)
    }
  

@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2016-05-11 19:02:14 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2017-01-26 00:49:08 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -38,12 +38,14 @@
+@@ -42,12 +42,14 @@
  
  #if defined(OS_LINUX) && !defined(OS_CHROMEOS)
  #include <gnu/libc-version.h>
@@ -15,4 +15,4 @@
 +#endif
  
  #if defined(USE_OZONE) || defined(USE_X11)
- #include "ui/events/devices/device_data_manager.h"
+ #include "ui/events/devices/input_device_event_observer.h"

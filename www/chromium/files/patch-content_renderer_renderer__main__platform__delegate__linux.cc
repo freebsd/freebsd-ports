@@ -1,4 +1,4 @@
---- content/renderer/renderer_main_platform_delegate_linux.cc.orig	2016-04-08 16:02:09 UTC
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig	2017-01-26 00:49:13 UTC
 +++ content/renderer/renderer_main_platform_delegate_linux.cc
 @@ -29,6 +29,7 @@ void RendererMainPlatformDelegate::Platf
  }

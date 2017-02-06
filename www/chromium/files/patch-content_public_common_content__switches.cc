@@ -1,6 +1,6 @@
---- content/public/common/content_switches.cc.orig	2016-05-11 19:02:21 UTC
+--- content/public/common/content_switches.cc.orig	2017-01-26 00:49:13 UTC
 +++ content/public/common/content_switches.cc
-@@ -978,7 +978,7 @@ const char kDisableVaapiAcceleratedVideo
+@@ -992,7 +992,7 @@ const char kDisableVaapiAcceleratedVideo
      "disable-vaapi-accelerated-video-encode";
  #endif
  

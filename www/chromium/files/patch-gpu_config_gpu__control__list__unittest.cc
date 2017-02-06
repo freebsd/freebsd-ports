@@ -1,4 +1,4 @@
---- gpu/config/gpu_control_list_unittest.cc.orig	2016-05-11 19:02:23 UTC
+--- gpu/config/gpu_control_list_unittest.cc.orig	2017-01-26 00:49:14 UTC
 +++ gpu/config/gpu_control_list_unittest.cc
 @@ -175,8 +175,7 @@ TEST_F(GpuControlListTest, VendorOnAllOs
    features = control_list->MakeDecision(

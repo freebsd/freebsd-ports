@@ -1,8 +1,8 @@
---- net/base/network_interfaces_linux.cc.orig	2016-05-11 19:02:24 UTC
+--- net/base/network_interfaces_linux.cc.orig	2017-01-26 00:49:16 UTC
 +++ net/base/network_interfaces_linux.cc
-@@ -4,12 +4,14 @@
+@@ -6,12 +6,14 @@
  
- #include "net/base/network_interfaces_linux.h"
+ #include <memory>
  
 +#if !defined(OS_FREEBSD)
  #if !defined(OS_ANDROID)
@@ -15,7 +15,7 @@
  #include <set>
  #include <sys/ioctl.h>
  #include <sys/types.h>
-@@ -44,6 +46,7 @@ bool TryConvertNativeToNetIPAttributes(i
+@@ -49,6 +51,7 @@ bool TryConvertNativeToNetIPAttributes(i
    // are still progressing through duplicated address detection (DAD)
    // and shouldn't be used by the application layer until DAD process
    // is completed.
@@ -23,7 +23,7 @@
    if (native_attributes & (
  #if !defined(OS_ANDROID)
                                IFA_F_OPTIMISTIC | IFA_F_DADFAILED |
-@@ -61,6 +64,10 @@ bool TryConvertNativeToNetIPAttributes(i
+@@ -66,6 +69,10 @@ bool TryConvertNativeToNetIPAttributes(i
    }
  
    return true;
@@ -34,7 +34,7 @@
  }
  
  }  // namespace
-@@ -79,13 +86,15 @@ NetworkChangeNotifier::ConnectionType Ge
+@@ -80,13 +87,15 @@ NetworkChangeNotifier::ConnectionType Ge
    if (!s.is_valid())
      return NetworkChangeNotifier::CONNECTION_UNKNOWN;
  
@@ -51,7 +51,7 @@
    // Test ethtool for CONNECTION_ETHERNET
    struct ethtool_cmd ecmd = {};
    ecmd.cmd = ETHTOOL_GSET;
-@@ -94,12 +103,13 @@ NetworkChangeNotifier::ConnectionType Ge
+@@ -95,12 +104,13 @@ NetworkChangeNotifier::ConnectionType Ge
    strncpy(ifr.ifr_name, ifname.c_str(), IFNAMSIZ - 1);
    if (ioctl(s.get(), SIOCETHTOOL, &ifr) != -1)
      return NetworkChangeNotifier::CONNECTION_ETHERNET;
@@ -66,7 +66,7 @@
    base::ScopedFD ioctl_socket(socket(AF_INET, SOCK_DGRAM, 0));
    if (!ioctl_socket.is_valid())
      return "";
-@@ -111,9 +121,11 @@ std::string GetInterfaceSSID(const std::
+@@ -112,9 +122,11 @@ std::string GetInterfaceSSID(const std::
    wreq.u.essid.length = IW_ESSID_MAX_SIZE;
    if (ioctl(ioctl_socket.get(), SIOCGIWESSID, &wreq) != -1)
      return ssid;
@@ -78,7 +78,7 @@
  bool GetNetworkListImpl(
      NetworkInterfaceList* networks,
      int policy,
-@@ -182,6 +194,7 @@ bool GetNetworkListImpl(
+@@ -183,6 +195,7 @@ bool GetNetworkListImpl(
  
    return true;
  }
@@ -86,7 +86,7 @@
  
  std::string GetWifiSSIDFromInterfaceListInternal(
      const NetworkInterfaceList& interfaces,
-@@ -206,12 +219,16 @@ bool GetNetworkList(NetworkInterfaceList
+@@ -207,12 +220,16 @@ bool GetNetworkList(NetworkInterfaceList
    if (networks == NULL)
      return false;
  

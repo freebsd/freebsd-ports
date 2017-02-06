@@ -1,4 +1,4 @@
---- chrome/browser/extensions/external_provider_impl.cc.orig	2016-12-01 23:02:07 UTC
+--- chrome/browser/extensions/external_provider_impl.cc.orig	2017-01-26 00:49:08 UTC
 +++ chrome/browser/extensions/external_provider_impl.cc
 @@ -638,7 +638,7 @@ void ExternalProviderImpl::CreateExterna
          Manifest::EXTERNAL_PREF, Manifest::EXTERNAL_PREF_DOWNLOAD,

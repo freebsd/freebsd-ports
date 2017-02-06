@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/web_app.cc.orig	2016-05-11 19:02:17 UTC
+--- chrome/browser/web_applications/web_app.cc.orig	2017-01-26 00:49:09 UTC
 +++ chrome/browser/web_applications/web_app.cc
-@@ -514,7 +514,7 @@ void GetIconsInfo(const WebApplicationIn
+@@ -507,7 +507,7 @@ void GetIconsInfo(const WebApplicationIn
  }
  #endif
  

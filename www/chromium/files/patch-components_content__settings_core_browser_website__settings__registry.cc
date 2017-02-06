@@ -1,6 +1,6 @@
---- components/content_settings/core/browser/website_settings_registry.cc.orig	2016-10-06 04:02:16.000000000 +0300
-+++ components/content_settings/core/browser/website_settings_registry.cc	2016-10-13 13:04:35.828985000 +0300
-@@ -88,6 +88,9 @@
+--- components/content_settings/core/browser/website_settings_registry.cc.orig	2017-01-26 00:49:11 UTC
++++ components/content_settings/core/browser/website_settings_registry.cc
+@@ -88,6 +88,9 @@ const WebsiteSettingsInfo* WebsiteSettin
    // doesn't allow the settings to be managed in the same way. See
    // crbug.com/642184.
    sync_status = WebsiteSettingsInfo::UNSYNCABLE;

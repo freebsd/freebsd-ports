@@ -1,6 +1,6 @@
---- build/toolchain/gcc_toolchain.gni.orig	2016-12-09 05:04:14.000000000 +0000
-+++ build/toolchain/gcc_toolchain.gni	2016-12-21 23:03:46.063519000 +0000
-@@ -11,6 +11,11 @@
+--- build/toolchain/gcc_toolchain.gni.orig	2017-01-26 00:49:07 UTC
++++ build/toolchain/gcc_toolchain.gni
+@@ -11,6 +11,11 @@ import("//build/toolchain/cc_wrapper.gni
  import("//build/toolchain/goma.gni")
  import("//build/toolchain/toolchain.gni")
  
@@ -12,7 +12,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -482,14 +487,23 @@
+@@ -482,14 +487,23 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
@@ -20,10 +20,6 @@
 -    cc = "$prefix/clang"
 -    cxx = "$prefix/clang++"
 -    ld = cxx
--
--    readelf = "${toolprefix}readelf"
--    ar = "${toolprefix}ar"
--    nm = "${toolprefix}nm"
 +    if (is_bsd) {
 +      cc = "${toolprefix}clang39"
 +      cxx = "${toolprefix}clang++39"
@@ -36,7 +32,10 @@
 +      cc = "$prefix/clang"
 +      cxx = "$prefix/clang++"
 +      ld = cxx
-+
+ 
+-    readelf = "${toolprefix}readelf"
+-    ar = "${toolprefix}ar"
+-    nm = "${toolprefix}nm"
 +      readelf = "${toolprefix}readelf"
 +      ar = "${toolprefix}ar"
 +      nm = "${toolprefix}nm"

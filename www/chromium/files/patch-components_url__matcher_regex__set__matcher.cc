@@ -1,7 +1,7 @@
---- components/url_matcher/regex_set_matcher.cc.orig	2016-03-25 13:04:48 UTC
+--- components/url_matcher/regex_set_matcher.cc.orig	2017-01-26 00:49:13 UTC
 +++ components/url_matcher/regex_set_matcher.cc
 @@ -10,8 +10,13 @@
- #include "base/stl_util.h"
+ #include "base/memory/ptr_util.h"
  #include "base/strings/string_util.h"
  #include "components/url_matcher/substring_set_matcher.h"
 +#if defined(OS_BSD)

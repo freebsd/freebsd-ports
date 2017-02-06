@@ -1,4 +1,4 @@
---- third_party/webrtc/base/ipaddress.h.orig	2016-05-11 19:04:03 UTC
+--- third_party/webrtc/base/ipaddress.h.orig	2017-01-26 00:50:17 UTC
 +++ third_party/webrtc/base/ipaddress.h
 @@ -17,6 +17,10 @@
  #include <arpa/inet.h>

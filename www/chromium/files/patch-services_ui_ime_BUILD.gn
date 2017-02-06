@@ -1,6 +1,6 @@
---- services/ui/ime/BUILD.gn.orig	2016-12-19 15:26:06.098748000 +0000
-+++ services/ui/ime/BUILD.gn	2016-12-19 15:26:20.556851000 +0000
-@@ -49,7 +49,6 @@
+--- services/ui/ime/BUILD.gn.orig	2017-01-26 00:49:17 UTC
++++ services/ui/ime/BUILD.gn
+@@ -50,7 +50,6 @@ test("mus_ime_unittests") {
      ":test_manifest",
      ":lib",
      "//services/ui",
