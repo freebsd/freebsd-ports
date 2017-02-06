@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwacom
-PORTVERSION=	0.22
-PORTREVISION=	1
+PORTVERSION=	0.23
 CATEGORIES=	x11
 MASTER_SITES=	https://sourceforge.net/projects/linuxwacom/files/libwacom/
 
