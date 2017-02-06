@@ -1,2 +1,3 @@
-SHA256 (requests-kerberos-0.7.0.tar.gz) = 741848f86f4046acece245aa9a1189470152f1949c1454aedb283ff5f3735c92
-SIZE (requests-kerberos-0.7.0.tar.gz) = 7217
+TIMESTAMP = 1486408186
+SHA256 (requests-kerberos-0.11.0.tar.gz) = ae734f71f46a7b205a74fb90e160c7ba4cc4e0dff2d4f3129cf74806b51b94ba
+SIZE (requests-kerberos-0.11.0.tar.gz) = 10742
