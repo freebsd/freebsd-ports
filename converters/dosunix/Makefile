@@ -9,6 +9,8 @@ MASTER_SITES=	http://dosunix.sourceforge.net/
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Manipulation of text files in a mixed DOS/Windows and Unix environment
 
+EXPLICIT_SAFESTACK=	yes
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
