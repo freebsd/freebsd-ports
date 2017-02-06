@@ -1,0 +1,4 @@
+NetworkMgr is an open source, Network Manager based on the look of the Linux
+Network Manager user interface. It use ifconfig and netif if make all work.
+
+WWW: https://github.com/GhostBSD/networkmgr
