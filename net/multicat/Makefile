@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	multicat
-PORTVERSION=	git20161007
+PORTVERSION=	2.2
 CATEGORIES=	net multimedia
+MASTER_SITES=	https://get.videolan.org/multicat/${PORTVERSION}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple and efficient multicast and transport stream manipulation
@@ -13,11 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/bitstream/mpeg/ts.h:multimedia/bitstream
 
-USE_GITHUB=	yes # XXX: FreeBSD fixes not upstreamed yet
-GH_ACCOUNT=	AMDmi3
-GH_TAGNAME=	b551ed4
-
-USES=		localbase
+USES=		localbase tar:bzip2
 ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	AUTHORS Changelog NEWS README
