@@ -1,6 +1,6 @@
---- chrome/test/BUILD.gn.orig	2016-12-01 23:02:09 UTC
+--- chrome/test/BUILD.gn.orig	2017-01-26 00:49:10 UTC
 +++ chrome/test/BUILD.gn
-@@ -179,7 +179,7 @@ static_library("test_support") {
+@@ -186,7 +186,7 @@ static_library("test_support") {
      ]
    }
  
@@ -9,7 +9,7 @@
      public_deps += [ "//crypto:platform" ]
    }
    if (is_mac) {
-@@ -449,7 +449,7 @@ if (!is_android) {
+@@ -461,7 +461,7 @@ if (!is_android) {
        "$root_out_dir/test_page.css.mock-http-headers",
        "$root_out_dir/ui_test.pak",
      ]
@@ -18,7 +18,7 @@
        data += [
          "$root_out_dir/chrome_100_percent.pak",
          "$root_out_dir/chrome_200_percent.pak",
-@@ -458,7 +458,7 @@ if (!is_android) {
+@@ -470,7 +470,7 @@ if (!is_android) {
          "$root_out_dir/resources.pak",
        ]
      }
@@ -27,7 +27,7 @@
        data += [ "$root_out_dir/libppapi_tests.so" ]
      }
  
-@@ -559,7 +559,7 @@ if (!is_android) {
+@@ -577,7 +577,7 @@ if (!is_android) {
            "base/interactive_test_utils_views.cc",
          ]
        }
@@ -36,7 +36,7 @@
          if (!is_chromeos) {
            # Desktop linux.
            sources -= [
-@@ -1992,7 +1992,7 @@ test("browser_tests") {
+@@ -2010,14 +2010,14 @@ test("browser_tests") {
          sources += [ "//third_party/liblouis/nacl_wrapper/liblouis_wrapper_browsertest.cc" ]
          deps += [ "//chrome/browser/chromeos" ]
          data_deps += [ "//third_party/liblouis:liblouis_test_data" ]
@@ -45,16 +45,15 @@
          sources += [
            "../browser/ui/views/ime/ime_warning_bubble_browsertest.cc",
            "../browser/ui/views/ime/ime_window_browsertest.cc",
-@@ -2003,7 +2003,7 @@ test("browser_tests") {
-         data += [ "//testing/buildbot/filters/browser-side-navigation.linux.browser_tests.filter" ]
+         ]
        }
  
 -      if (is_win || is_linux) {
 +      if (is_win || is_linux || is_bsd) {
          sources += [ "../browser/nacl_host/test/nacl_gdb_browsertest.cc" ]
          data_deps += [ "//chrome/browser/nacl_host/test:mock_nacl_gdb" ]
-         data += [ "//testing/buildbot/filters/site-per-process.browser_tests.filter" ]
-@@ -2016,7 +2016,7 @@ test("browser_tests") {
+       }
+@@ -2029,7 +2029,7 @@ test("browser_tests") {
          configs +=
              [ "//build/config/win:default_large_module_incremental_linking" ]
        }
@@ -63,7 +62,7 @@
          data_deps += [ "//components/nacl/loader:nacl_helper" ]
  
          if (enable_nacl_nonsfi) {
-@@ -2124,7 +2124,7 @@ test("browser_tests") {
+@@ -2136,7 +2136,7 @@ test("browser_tests") {
        }
      }
  
@@ -72,7 +71,7 @@
        # Set rpath to find the CDM adapter even in a non-component build.
        configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
      }
-@@ -2347,7 +2347,7 @@ test("browser_tests") {
+@@ -2363,7 +2363,7 @@ test("browser_tests") {
        if (toolkit_views) {
          sources -= [ "../browser/ui/views/select_file_dialog_extension_browsertest.cc" ]
        }
@@ -81,7 +80,7 @@
          sources +=
              [ "../browser/ui/views/ime/input_ime_apitest_nonchromeos.cc" ]
        }
-@@ -2541,7 +2541,7 @@ test("browser_tests") {
+@@ -2558,7 +2558,7 @@ test("browser_tests") {
          "../browser/extensions/api/networking_private/networking_private_chromeos_apitest.cc",
        ]
      }
@@ -90,7 +89,7 @@
        sources += [
          # Tests for non mobile and non CrOS (includes Linux, Win, Mac).
          "../browser/metrics/desktop_session_duration/audible_contents_tracker_browsertest.cc",
-@@ -2729,7 +2729,7 @@ if (!is_android) {
+@@ -2746,7 +2746,7 @@ if (!is_android) {
        "$root_out_dir/pyproto/",
      ]
  
@@ -99,7 +98,7 @@
        data += [
          "$root_out_dir/chrome_100_percent.pak",
          "$root_out_dir/chrome_200_percent.pak",
-@@ -3377,7 +3377,7 @@ test("unit_tests") {
+@@ -3411,7 +3411,7 @@ test("unit_tests") {
        "$root_out_dir/resources.pak",
      ]
    }
@@ -108,7 +107,7 @@
      data += [ "$root_out_dir/chrome_200_percent.pak" ]
    }
  
-@@ -4060,7 +4060,7 @@ test("unit_tests") {
+@@ -4111,7 +4111,7 @@ test("unit_tests") {
        "//ui/wm",
      ]
    }
@@ -117,16 +116,16 @@
      sources += [
        "../browser/password_manager/native_backend_kwallet_x_unittest.cc",
        "../browser/shell_integration_linux_unittest.cc",
-@@ -4080,7 +4080,7 @@ test("unit_tests") {
+@@ -4131,7 +4131,7 @@ test("unit_tests") {
    if (use_gio) {
      deps += [ "//build/linux/libgio" ]
    }
 -  if (!is_chromeos && !use_ozone && is_linux) {
 +  if (!is_chromeos && !use_ozone && (is_linux || is_bsd)) {
-     deps += [ "//chrome/browser/ui/libgtk2ui" ]
-   }
- 
-@@ -4357,18 +4357,18 @@ test("unit_tests") {
+     if (use_gtk3) {
+       deps += [ "//chrome/browser/ui/libgtkui:libgtk3ui" ]
+     } else {
+@@ -4424,18 +4424,18 @@ test("unit_tests") {
        "//components/os_crypt:gnome_keyring_direct",
      ]
    }
@@ -148,7 +147,7 @@
      ldflags = [ "-Wl,--strip-debug" ]
    }
    if (is_mac) {
-@@ -4869,7 +4869,7 @@ if (safe_browsing_mode == 1 && is_mac) {
+@@ -4941,7 +4941,7 @@ if (safe_browsing_mode == 1 && is_mac) {
    }
  }
  
@@ -157,7 +156,7 @@
    # TODO(609855): Make this compile on Android and run on the bots.
    test("chrome_app_unittests") {
      sources = [
-@@ -4895,7 +4895,7 @@ if (!is_android) {
+@@ -4967,7 +4967,7 @@ if (!is_android) {
    }
  }
  

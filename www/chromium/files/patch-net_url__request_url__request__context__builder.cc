@@ -1,6 +1,6 @@
---- net/url_request/url_request_context_builder.cc.orig	2016-12-16 03:18:23.560330000 +0000
-+++ net/url_request/url_request_context_builder.cc	2016-12-16 03:19:00.302261000 +0000
-@@ -326,7 +326,7 @@
+--- net/url_request/url_request_context_builder.cc.orig	2017-01-26 00:49:16 UTC
++++ net/url_request/url_request_context_builder.cc
+@@ -327,7 +327,7 @@ std::unique_ptr<URLRequestContext> URLRe
    if (!proxy_service_) {
      // TODO(willchan): Switch to using this code when
      // ProxyService::CreateSystemProxyConfigService()'s signature doesn't suck.

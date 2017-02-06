@@ -1,6 +1,6 @@
---- ui/app_list/app_list_constants.h.orig	2016-03-25 13:05:03 UTC
+--- ui/app_list/app_list_constants.h.orig	2017-01-26 00:49:31 UTC
 +++ ui/app_list/app_list_constants.h
-@@ -92,8 +92,8 @@ APP_LIST_EXPORT extern const char kSearc
+@@ -89,8 +89,8 @@ APP_LIST_EXPORT extern const char kSearc
  APP_LIST_EXPORT extern const char kSearchQueryLength[];
  APP_LIST_EXPORT extern const char kSearchResultDistanceFromOrigin[];
  

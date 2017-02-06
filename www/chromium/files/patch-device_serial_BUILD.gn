@@ -1,6 +1,6 @@
---- device/serial/BUILD.gn.orig	2016-08-03 22:02:18.000000000 +0300
-+++ device/serial/BUILD.gn	2016-09-24 04:10:00.137337000 +0300
-@@ -6,7 +6,7 @@
+--- device/serial/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ device/serial/BUILD.gn
+@@ -6,7 +6,7 @@ import("//build/config/features.gni")
  import("//mojo/public/tools/bindings/mojom.gni")
  
  # Library works only on desktop platforms.
@@ -9,7 +9,7 @@
  
  config("platform_support") {
    visibility = [ ":serial" ]
-@@ -70,6 +70,12 @@
+@@ -55,6 +55,12 @@ static_library("serial") {
    if (use_udev) {
      deps += [ "//device/udev_linux" ]
    }

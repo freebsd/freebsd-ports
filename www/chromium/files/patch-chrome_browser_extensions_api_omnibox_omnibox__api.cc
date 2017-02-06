@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/omnibox/omnibox_api.cc.orig	2016-12-16 03:22:03.040835000 +0000
-+++ chrome/browser/extensions/api/omnibox/omnibox_api.cc	2016-12-16 03:22:24.317714000 +0000
-@@ -45,7 +45,7 @@
+--- chrome/browser/extensions/api/omnibox/omnibox_api.cc.orig	2017-01-26 00:49:08 UTC
++++ chrome/browser/extensions/api/omnibox/omnibox_api.cc
+@@ -45,7 +45,7 @@ const char kBackgroundTabDisposition[] =
  // Pref key for omnibox.setDefaultSuggestion.
  const char kOmniboxDefaultSuggestion[] = "omnibox_default_suggestion";
  

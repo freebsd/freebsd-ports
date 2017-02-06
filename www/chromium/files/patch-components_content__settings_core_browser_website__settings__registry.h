@@ -1,6 +1,6 @@
---- components/content_settings/core/browser/website_settings_registry.h.orig	2016-10-06 04:02:16.000000000 +0300
-+++ components/content_settings/core/browser/website_settings_registry.h	2016-10-13 13:24:49.647706000 +0300
-@@ -36,10 +36,11 @@
+--- components/content_settings/core/browser/website_settings_registry.h.orig	2017-01-26 00:49:11 UTC
++++ components/content_settings/core/browser/website_settings_registry.h
+@@ -36,10 +36,11 @@ class WebsiteSettingsRegistry {
      PLATFORM_MAC = 1 << 3,
      PLATFORM_ANDROID = 1 << 4,
      PLATFORM_IOS = 1 << 5,

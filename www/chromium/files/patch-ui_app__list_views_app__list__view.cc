@@ -1,6 +1,6 @@
---- ui/app_list/views/app_list_view.cc.orig	2016-10-06 04:02:44.000000000 +0300
-+++ ui/app_list/views/app_list_view.cc	2016-10-13 09:16:02.654490000 +0300
-@@ -70,7 +70,7 @@
+--- ui/app_list/views/app_list_view.cc.orig	2017-01-26 00:49:31 UTC
++++ ui/app_list/views/app_list_view.cc
+@@ -70,7 +70,7 @@ const int kArrowOffset = 10;
  
  // Determines whether the current environment supports shadows bubble borders.
  bool SupportsShadow() {
@@ -9,7 +9,7 @@
    // Shadows are not supported on (non-ChromeOS) Linux.
    return false;
  #endif
-@@ -567,7 +567,7 @@
+@@ -538,7 +538,7 @@ void AppListView::OnBeforeBubbleWidgetIn
    if (!params->native_widget && delegate_ && delegate_->ForceNativeDesktop())
      params->native_widget = new views::DesktopNativeWidgetAura(widget);
  #endif

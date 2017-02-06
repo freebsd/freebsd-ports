@@ -1,4 +1,4 @@
---- third_party/webrtc/voice_engine/voice_engine_defines.h.orig	2016-05-11 19:04:03 UTC
+--- third_party/webrtc/voice_engine/voice_engine_defines.h.orig	2017-01-26 00:50:17 UTC
 +++ third_party/webrtc/voice_engine/voice_engine_defines.h
 @@ -210,7 +210,7 @@ inline int VoEChannelId(int moduleId) {
  #include <pthread.h>

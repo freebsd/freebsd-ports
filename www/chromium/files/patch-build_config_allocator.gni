@@ -1,6 +1,6 @@
---- build/config/allocator.gni.orig	2016-10-06 04:02:08.000000000 +0300
-+++ build/config/allocator.gni	2016-10-13 10:29:19.634367000 +0300
-@@ -44,7 +44,7 @@
+--- build/config/allocator.gni.orig	2017-01-26 00:49:07 UTC
++++ build/config/allocator.gni
+@@ -44,7 +44,7 @@ assert(use_allocator == "none" || use_al
  assert(!is_win || use_allocator == "none", "Tcmalloc doesn't work on Windows.")
  
  assert(

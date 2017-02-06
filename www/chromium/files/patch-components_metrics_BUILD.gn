@@ -1,4 +1,4 @@
---- components/metrics/BUILD.gn.orig	2016-12-12 20:38:32 UTC
+--- components/metrics/BUILD.gn.orig	2017-01-26 00:49:12 UTC
 +++ components/metrics/BUILD.gn
 @@ -107,6 +107,13 @@ static_library("metrics") {
    if (is_win) {

@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2016-12-01 23:02:09 UTC
+--- chrome/common/pref_names.h.orig	2017-01-26 00:49:10 UTC
 +++ chrome/common/pref_names.h
-@@ -312,7 +312,7 @@ extern const char kForceGoogleSafeSearch
+@@ -322,7 +322,7 @@ extern const char kForceGoogleSafeSearch
  extern const char kForceYouTubeRestrict[];
  extern const char kForceSessionSync[];
  extern const char kAllowedDomainsForApps[];
@@ -9,7 +9,7 @@
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -345,7 +345,7 @@ extern const char kDefaultBrowserSetting
+@@ -355,7 +355,7 @@ extern const char kDefaultBrowserSetting
  #if defined(OS_MACOSX)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -18,7 +18,7 @@
  extern const char kUseCustomChromeFrame[];
  #endif
  extern const char kBackShortcutBubbleShownCount[];
-@@ -493,7 +493,7 @@ extern const char kAppWindowPlacement[];
+@@ -510,7 +510,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];

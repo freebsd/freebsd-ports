@@ -1,4 +1,4 @@
---- components/drive/drive_api_util.cc.orig	2016-05-11 19:02:18 UTC
+--- components/drive/drive_api_util.cc.orig	2017-01-26 00:49:11 UTC
 +++ components/drive/drive_api_util.cc
 @@ -22,7 +22,11 @@
  #include "google_apis/drive/drive_api_parser.h"

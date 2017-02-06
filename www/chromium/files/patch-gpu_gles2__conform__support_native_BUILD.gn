@@ -1,6 +1,6 @@
---- gpu/gles2_conform_support/native/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
-+++ gpu/gles2_conform_support/native/BUILD.gn	2016-09-02 23:58:43.787930000 +0300
-@@ -21,7 +21,7 @@
+--- gpu/gles2_conform_support/native/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ gpu/gles2_conform_support/native/BUILD.gn
+@@ -20,7 +20,7 @@ source_set("native") {
      "//gpu/gles2_conform_support/egl",
      "//ui/gl",
    ]

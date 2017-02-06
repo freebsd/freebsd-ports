@@ -1,6 +1,6 @@
---- ui/compositor/BUILD.gn.orig	2016-08-03 22:02:41.000000000 +0300
-+++ ui/compositor/BUILD.gn	2016-09-03 00:17:02.164382000 +0300
-@@ -199,7 +199,7 @@
+--- ui/compositor/BUILD.gn.orig	2017-01-26 00:49:31 UTC
++++ ui/compositor/BUILD.gn
+@@ -201,7 +201,7 @@ test("compositor_unittests") {
      "//ui/gl",
      "//ui/resources",
    ]

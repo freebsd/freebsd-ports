@@ -1,6 +1,6 @@
---- base/test/test_file_util_posix.cc.orig	2016-10-06 04:02:08.000000000 +0300
-+++ base/test/test_file_util_posix.cc	2016-10-25 21:44:27.287523000 +0300
-@@ -79,7 +79,7 @@
+--- base/test/test_file_util_posix.cc.orig	2017-01-26 00:49:07 UTC
++++ base/test/test_file_util_posix.cc
+@@ -79,7 +79,7 @@ bool DieFileDie(const FilePath& file, bo
    return DeleteFile(file, recurse);
  }
  

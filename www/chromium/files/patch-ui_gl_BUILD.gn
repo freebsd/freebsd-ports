@@ -1,4 +1,4 @@
---- ui/gl/BUILD.gn.orig	2016-12-12 22:13:27 UTC
+--- ui/gl/BUILD.gn.orig	2017-01-26 00:49:31 UTC
 +++ ui/gl/BUILD.gn
 @@ -13,7 +13,7 @@ declare_args() {
    enable_swiftshader = is_chrome_branded && is_win

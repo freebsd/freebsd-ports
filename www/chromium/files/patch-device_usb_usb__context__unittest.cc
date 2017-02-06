@@ -1,4 +1,4 @@
---- device/usb/usb_context_unittest.cc.orig	2016-03-25 13:04:49 UTC
+--- device/usb/usb_context_unittest.cc.orig	2017-01-26 00:49:14 UTC
 +++ device/usb/usb_context_unittest.cc
 @@ -7,7 +7,11 @@
  #include "build/build_config.h"

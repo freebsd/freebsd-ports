@@ -1,6 +1,6 @@
---- components/feedback/anonymizer_tool.cc.orig	2016-05-11 19:02:18 UTC
+--- components/feedback/anonymizer_tool.cc.orig	2017-01-26 00:49:11 UTC
 +++ components/feedback/anonymizer_tool.cc
-@@ -9,7 +9,11 @@
+@@ -10,7 +10,11 @@
  #include "base/strings/string_number_conversions.h"
  #include "base/strings/string_util.h"
  #include "base/strings/stringprintf.h"

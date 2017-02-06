@@ -1,4 +1,4 @@
---- ui/resources/ui_resources.grd.orig	2016-05-11 19:02:35 UTC
+--- ui/resources/ui_resources.grd.orig	2017-01-26 00:49:32 UTC
 +++ ui/resources/ui_resources.grd
 @@ -15,7 +15,7 @@
        <!-- KEEP THESE IN ALPHABETICAL ORDER!  DO NOT ADD TO RANDOM PLACES JUST

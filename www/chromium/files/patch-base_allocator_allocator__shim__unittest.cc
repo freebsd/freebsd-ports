@@ -1,5 +1,5 @@
---- base/allocator/allocator_shim_unittest.cc.orig	2016-10-06 04:02:08.000000000 +0300
-+++ base/allocator/allocator_shim_unittest.cc	2016-10-25 21:48:23.218013000 +0300
+--- base/allocator/allocator_shim_unittest.cc.orig	2017-01-26 00:49:07 UTC
++++ base/allocator/allocator_shim_unittest.cc
 @@ -4,7 +4,6 @@
  
  #include "base/allocator/allocator_shim.h"
@@ -8,7 +8,7 @@
  #include <stdlib.h>
  #include <string.h>
  
-@@ -193,11 +192,13 @@
+@@ -193,11 +192,13 @@ TEST_F(AllocatorShimTest, InterceptLibcS
    ASSERT_GE(zero_allocs_intercepted_by_size[2 * 23], 1u);
  
  #if !defined(OS_WIN)
@@ -22,7 +22,7 @@
  
    void* posix_memalign_ptr = nullptr;
    int res = posix_memalign(&posix_memalign_ptr, 256, 59);
-@@ -214,12 +215,14 @@
+@@ -214,12 +215,14 @@ TEST_F(AllocatorShimTest, InterceptLibcS
    ASSERT_GE(aligned_allocs_intercepted_by_alignment[kPageSize], 1u);
    ASSERT_GE(aligned_allocs_intercepted_by_size[61], 1u);
  
@@ -37,7 +37,7 @@
  #endif  // OS_WIN
  
    char* realloc_ptr = static_cast<char*>(realloc(nullptr, 71));
-@@ -240,8 +243,10 @@
+@@ -240,8 +243,10 @@ TEST_F(AllocatorShimTest, InterceptLibcS
    ASSERT_GE(frees_intercepted_by_addr[Hash(zero_alloc_ptr)], 1u);
  
  #if !defined(OS_WIN)
@@ -48,7 +48,7 @@
  
    free(posix_memalign_ptr);
    ASSERT_GE(frees_intercepted_by_addr[Hash(posix_memalign_ptr)], 1u);
-@@ -249,8 +254,10 @@
+@@ -249,8 +254,10 @@ TEST_F(AllocatorShimTest, InterceptLibcS
    free(valloc_ptr);
    ASSERT_GE(frees_intercepted_by_addr[Hash(valloc_ptr)], 1u);
  

@@ -1,6 +1,6 @@
---- sdch/BUILD.gn.orig	2016-08-03 22:02:22.000000000 +0300
-+++ sdch/BUILD.gn	2016-09-13 17:24:52.015350000 +0300
-@@ -11,7 +11,7 @@
+--- sdch/BUILD.gn.orig	2017-01-26 00:49:17 UTC
++++ sdch/BUILD.gn
+@@ -11,7 +11,7 @@ config("sdch_config") {
  # from a config and can't be on the target directly.
  config("sdch_warnings") {
    cflags = []
@@ -9,7 +9,7 @@
      # TODO(mostynb): remove this if open-vcdiff is ever updated for c++11:
      cflags += [ "-Wno-deprecated-declarations" ]
    }
-@@ -61,7 +61,7 @@
+@@ -59,7 +59,7 @@ static_library("sdch") {
      "//third_party/zlib",
    ]
  

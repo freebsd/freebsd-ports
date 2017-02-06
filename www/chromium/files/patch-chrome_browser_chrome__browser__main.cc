@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main.cc.orig	2016-05-25 15:00:57.000000000 -0400
-+++ chrome/browser/chrome_browser_main.cc	2016-05-27 09:43:16.154885000 -0400
-@@ -173,7 +173,7 @@
+--- chrome/browser/chrome_browser_main.cc.orig	2017-01-26 00:49:08 UTC
++++ chrome/browser/chrome_browser_main.cc
+@@ -181,7 +181,7 @@
  #include "chrome/browser/feedback/feedback_profile_observer.h"
  #endif  // defined(OS_ANDROID)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -1109,11 +1109,11 @@
+@@ -1194,11 +1194,11 @@ int ChromeBrowserMainParts::PreCreateThr
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  

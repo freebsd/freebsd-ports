@@ -1,6 +1,6 @@
---- gpu/gles2_conform_support/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
-+++ gpu/gles2_conform_support/BUILD.gn	2016-09-02 23:59:14.071065000 +0300
-@@ -62,7 +62,7 @@
+--- gpu/gles2_conform_support/BUILD.gn.orig	2017-01-26 00:49:14 UTC
++++ gpu/gles2_conform_support/BUILD.gn
+@@ -60,7 +60,7 @@ executable("gles2_conform_support") {
      "//gpu/gles2_conform_support/egl",
      "//ui/gl",
    ]
@@ -9,7 +9,7 @@
      sources += [
        "native/egl_native_aura.cc",
        "native/egl_native_x11.cc",
-@@ -132,7 +132,7 @@
+@@ -413,7 +413,7 @@ if (internal_gles2_conform_tests) {
        # Must be done this way for warning flags to be ordered correctly.
        ":gles2_conform_test_warnings",
      ]

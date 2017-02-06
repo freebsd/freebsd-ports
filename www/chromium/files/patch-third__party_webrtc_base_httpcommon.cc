@@ -1,4 +1,4 @@
---- third_party/webrtc/base/httpcommon.cc.orig	2016-05-11 19:04:03 UTC
+--- third_party/webrtc/base/httpcommon.cc.orig	2017-01-26 00:50:17 UTC
 +++ third_party/webrtc/base/httpcommon.cc
 @@ -384,7 +384,7 @@ bool HttpDateToSeconds(const std::string
      gmt = non_gmt + kTimeZoneOffsets[zindex] * 60 * 60;
