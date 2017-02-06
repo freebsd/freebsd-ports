@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcelog
-PORTVERSION=	147
+PORTVERSION=	148
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -25,6 +25,7 @@ SHEBANG_FILES=	tests/cache/inject tests/memdb/inject tests/page/inject \
 		tests/trigger tests/unknown/inject
 
 MAKE_ENV+=	FREEBSD=1
+MAKE_ARGS+=	CFLAGS="${CFLAGS}" prefix="${PREFIX}"
 LDFLAGS+=	-lkvm
 
 PLIST_FILES=	bin/mcelog man/man8/mcelog.8.gz

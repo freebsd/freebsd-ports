@@ -1,13 +1,6 @@
---- Makefile.orig	2016-10-18 22:32:19 UTC
+--- Makefile.orig	2017-02-04 00:51:04 UTC
 +++ Makefile
-@@ -1,5 +1,4 @@
--CFLAGS := -g -Os
--prefix := /usr
-+prefix := /usr/local
- etcprefix :=
- MANDIR := ${prefix}/share/man
- # Define appropiately for your distribution
-@@ -27,14 +26,21 @@ all: mcelog
+@@ -27,14 +27,21 @@ all: mcelog
  
  .PHONY: install clean depend FORCE
  
@@ -32,7 +25,7 @@
  CLEAN := mcelog dmi tsc dbquery .depend .depend.X dbquery.o \
  	version.o version.c version.tmp
  DOC := mce.pdf
-@@ -43,7 +49,7 @@ ADD_DEFINES :=
+@@ -43,7 +50,7 @@ ADD_DEFINES :=
  
  SRC := $(OBJ:.o=.c)
  
@@ -41,16 +34,16 @@
  
  # dbquery intentionally not installed by default
  install: mcelog mcelog.conf mcelog.conf.5 mcelog.triggers.5
-@@ -82,7 +88,7 @@ depend: .depend
+@@ -82,7 +89,7 @@ depend: .depend
  
  version.tmp: FORCE
  	( echo -n "char version[] = \"" ; 	\
--	if type -p git >/dev/null; then 	\
-+	if command -v git >/dev/null; then 	\
+-	if command -v git >/dev/null; then 	\
++	if false; then 	\
  	if [ -d .git ] ; then 			\
  		git describe --tags HEAD | tr -d '\n'; 	\
  	else 					\
-@@ -98,8 +104,6 @@ version.c: version.tmp
+@@ -98,8 +105,6 @@ version.c: version.tmp
  .depend: ${SRC}
  	${CC} -MM -I. ${SRC} > .depend.X && mv .depend.X .depend
  
