@@ -2,23 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	bio
-PORTVERSION=	1.4.3.0001
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	biology rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Integrated environment for Bioinformatics written in Ruby
 
-LICENSE=	GPLv2 RUBY
+LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
+LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
-USES=		gem shebangfix
-SHEBANG_FILES=	sample/biofetch.rb
-ruby_OLD_CMD=	/usr/proj/bioruby/bin/ruby
+USES=		gem
 
 PLIST_FILES=	bin/bioruby \
 		bin/br_biofetch.rb \
