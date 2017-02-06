@@ -10,6 +10,8 @@ COMMENT=	C99 implementation of the TLS/SSL protocols
 
 LICENSE=	APACHE20
 
+ONLY_FOR_ARCHS=	amd64
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
 GH_TAGNAME=	c8e42e2

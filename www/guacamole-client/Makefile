@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-client
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 DISTVERSIONSUFFIX=	-incubating
 CATEGORIES=	www java
 MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
@@ -27,9 +27,11 @@ MVN_ARGS=	package -Duser.home=${WRKDIR}
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 
+OPTIONS_SUB=	yes
+SUB_FILES=	pkg-message
+
 OPTIONS_DEFINE=		MK_LINK SERVER TOMCAT
 OPTIONS_DEFAULT=	MK_LINK SERVER TOMCAT
-OPTIONS_SUB=		yes
 MK_LINK_DESC=		Make sybolic links
 TOMCAT_RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-8.0/bin/bootstrap.jar:www/tomcat8
 TOMCAT_DESC=		Use Tomcat as your servlet
@@ -51,6 +53,8 @@ do-install:
 
 		@${CP} ${WRKSRC}/guacamole/target/guacamole-${DISTVERSIONFULL}.war \
 			${STAGEDIR}${GUACAMOLE_DATA}/guacamole.war
+		@${CP} ${WRKSRC}/extensions/guacamole-auth-duo/target/guacamole-auth-duo-${DISTVERSIONFULL}.tar.gz \
+			${STAGEDIR}/${GUACAMOLE_DATA}/guacamole-auth-duo.tar.gz
 		@${CP} ${WRKSRC}/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-dist/target/guacamole-auth-jdbc-${DISTVERSIONFULL}.tar.gz \
 			${STAGEDIR}/${GUACAMOLE_DATA}/guacamole-auth-jdbc.tar.gz
 		@${CP} ${WRKSRC}/extensions/guacamole-auth-ldap/target/guacamole-auth-ldap-${DISTVERSIONFULL}.tar.gz \

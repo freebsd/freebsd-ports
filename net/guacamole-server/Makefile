@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-server
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 DISTVERSIONSUFFIX=	-incubating
 CATEGORIES=	net
 

@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	16.7.2
+PORTVERSION=	17.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	SMPlayer YouTube browser
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/Copying.txt
+
 RUN_DEPENDS=	smplayer:multimedia/smplayer
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	#empty
-USE_QT4=	linguisttools_build moc_build qmake_build \
+USE_QT4=	corelib gui linguisttools_build moc_build network qmake_build \
 		rcc_build script uic_build webkit
 MAKE_ARGS=	DATA_PATH=${DATADIR} DOC_PATH=${DOCSDIR} \
 		LRELEASE=${LRELEASE} MAKE=${MAKE_CMD}
