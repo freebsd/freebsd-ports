@@ -4715,6 +4715,7 @@
     SUBDIR += py-traits
     SUBDIR += py-transaction
     SUBDIR += py-trollius
+    SUBDIR += py-ttystatus
     SUBDIR += py-turbocheetah
     SUBDIR += py-turbojson
     SUBDIR += py-turbojson11
