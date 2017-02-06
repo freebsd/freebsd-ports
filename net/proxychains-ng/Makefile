@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Redirect connection through proxy servers
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 
 USES=		gmake tar:bzip2
