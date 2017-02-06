@@ -12,6 +12,8 @@ MASTER_SITES=	http://arthur.barton.de/pub/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
+EXPLICIT_SAFESTACK=		yes
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
