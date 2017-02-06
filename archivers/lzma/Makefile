@@ -10,6 +10,8 @@ DISTNAME=	lzma${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
 
+EXPLICIT_SAFESTACK=		yes
+
 CONFLICTS=	lzmautils-[0-9]* xz-[0-9]*
 
 USES=		tar:bzip2 gmake dos2unix
