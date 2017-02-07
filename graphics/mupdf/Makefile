@@ -4,6 +4,7 @@
 PORTNAME=	mupdf
 PORTVERSION=	1.10a
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mupdf.com/downloads/ \
@@ -21,12 +22,14 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjbig2dec.so:graphics/jbig2dec \
 		libopenjp2.so:graphics/openjpeg
 
-CFLAGS+=	-I${WRKSRC}/include/mupdf
+CFLAGS+=	-I${WRKSRC}/include/mupdf -fPIC
 LIBS+=		-L${LOCALBASE}/lib
-MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
+MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes \
+		SOVERSION=${PORTVERSION}
 USES=		cpe compiler:c++11-lang gmake jpeg pkgconfig
 USE_XORG=	x11 xcursor xext xinerama xrandr
 USE_GL=		gl
+USE_LDCONFIG=	yes
 
 CPE_VENDOR=	artifex
 
@@ -39,6 +42,8 @@ SCROLL_DESC=	Build with scroll hacks
 JS_LIB_DEPENDS=	libv8.so:lang/v8
 JS_MAKE_ARGS=	V8_PRESENT=1 V8LIBS=-lv8
 SCROLL_EXTRA_PATCHES=	${FILESDIR}/scroll_hack-platform__x11__pdfapp.c
+
+PLIST_SUB=	SOVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-pipe -O2 //' \
@@ -53,15 +58,11 @@ post-patch:
 	 	${WRKSRC}/thirdparty/openjpeg \
 	 	${WRKSRC}/thirdparty/zlib
 
-post-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} OUT=build/pic XCFLAGS=-fpic libs)
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdf.a \
-		${STAGEDIR}${PREFIX}/lib/libmupdf_pic.a
-	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdfthird.a \
-		${STAGEDIR}${PREFIX}/lib/libmupdfthird_pic.a
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 ${STAGEDIR}${PREFIX}/bin/mupdf
+	${LN} -s libmupdf.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmupdf.so
+	${LN} -s libmupdfthird.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmupdfthird.so
 
 .include <bsd.port.mk>

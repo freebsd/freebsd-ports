@@ -80,10 +80,10 @@ include/mupdf/pdf/resource.h
 include/mupdf/pdf/widget.h
 include/mupdf/pdf/xref.h
 include/mupdf/svg.h
-lib/libmupdf.a
-lib/libmupdfthird.a
-lib/libmupdfthird_pic.a
-lib/libmupdf_pic.a
+lib/libmupdf.so
+lib/libmupdf.so.%%SOVERSION%%
+lib/libmupdfthird.so
+lib/libmupdfthird.so.%%SOVERSION%%
 man/man1/mupdf.1.gz
 man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
