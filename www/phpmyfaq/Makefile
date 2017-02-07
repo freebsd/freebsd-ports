@@ -5,7 +5,6 @@ PORTNAME=	phpmyfaq
 PORTVERSION=	2.9.6
 CATEGORIES=	www
 MASTER_SITES=	http://download.phpmyfaq.de/files/
-DISTNAME=	phpMyFAQ-${PORTVERSION}
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Multilingual, completely database-driven FAQ-system
