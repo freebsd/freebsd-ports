@@ -2,6 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
+PORTREVISION=	1
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -32,7 +33,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
-		liborcus-0.11.so:devel/liborcus \
+		liborcus-0.12.so:devel/liborcus \
 		libcurl.so:ftp/curl \
 		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \
@@ -116,7 +117,7 @@ CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 GNOME_CONFIGURE_ENABLE=	dbus dconf
-GNOME_IMPLIES=	GTK3
+GNOME_IMPLIES=	GTK2
 GNOME_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 GNOME_USE=	GNOME=dconf
 
