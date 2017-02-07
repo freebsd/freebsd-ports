@@ -18,6 +18,6 @@ LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
 
 USE_CSTD=	c99
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

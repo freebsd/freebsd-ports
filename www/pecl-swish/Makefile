@@ -18,7 +18,7 @@ BUILD_DEPENDS=	swish-config:www/swish-e
 RUN_DEPENDS:=	swish-config:www/swish-e
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--enable-swish --with-swish=${LOCALBASE}/bin
 

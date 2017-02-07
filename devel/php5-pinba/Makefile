@@ -18,6 +18,6 @@ GH_PROJECT=	pinba_extension
 GH_TAGNAME=	f76b673
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

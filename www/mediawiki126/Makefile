@@ -45,7 +45,7 @@ IMAGICK_DESC=	Use ImageMagick
 SOCKETS_DESC=	Use sockets
 
 MYSQL_USE=	mysql=client php=mysql
-MYSQL_VARS=	IGNORE_WITH_PHP+=70
+MYSQL_VARS=	IGNORE_WITH_PHP+="70 71"
 PGSQL_USE=	php=pgsql
 SQLITE_USE=	php=sqlite3
 LDAP_USE=	php=ldap

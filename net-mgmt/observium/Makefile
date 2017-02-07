@@ -55,7 +55,7 @@ SHEBANG_FILES=	mibs/process.pl \
 	poller-wrapper.py
 
 USE_PHP=	ctype filter gd iconv json mcrypt mysql mysqli posix session snmp tokenizer xml zlib
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 NO_BUILD=	yes
 
