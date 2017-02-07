@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.12 2016/12/12 10:54:39 sthen Exp $
+--- Makefile.orig	2016-11-28 13:34:04 UTC
++++ Makefile
+@@ -152,14 +152,17 @@ $(FONT_GEN_SIL) : $(FONT_BIN_SIL)
+ 
+ # --- Library ---
+ 
+-MUPDF_LIB = $(OUT)/libmupdf.a
+-THIRD_LIB = $(OUT)/libmupdfthird.a
++MUPDF_LIB = libmupdf.so.$(SOVERSION)
++THIRD_LIB = libmupdfthird.so.$(SOVERSION)
+ 
+ MUPDF_OBJ := $(FITZ_OBJ) $(FONT_OBJ) $(PDF_OBJ) $(XPS_OBJ) $(SVG_OBJ) $(CBZ_OBJ) $(HTML_OBJ) $(GPRF_OBJ)
+ THIRD_OBJ := $(FREETYPE_OBJ) $(HARFBUZZ_OBJ) $(JBIG2DEC_OBJ) $(JPEG_OBJ) $(JPEGXR_OBJ) $(LURATECH_OBJ) $(MUJS_OBJ) $(OPENJPEG_OBJ) $(ZLIB_OBJ)
+ 
+ $(MUPDF_LIB) : $(MUPDF_OBJ)
++	$(CC) $(LDFLAGS) -shared -Wl,-soname=$@ -o $@ $^ $(LIBS)
++
+ $(THIRD_LIB) : $(THIRD_OBJ)
++	$(CC) $(LDFLAGS) -shared -Wl,-soname=$@ -o $@ $^ $(LIBS)
+ 
+ INSTALL_LIBS := $(MUPDF_LIB) $(THIRD_LIB)
+ 

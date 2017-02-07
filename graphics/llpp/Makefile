@@ -3,6 +3,7 @@
 
 PORTNAME=	llpp
 PORTVERSION=	25
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://repo.or.cz/llpp.git/snapshot/
 DISTNAME=	v${PORTVERSION}
@@ -12,20 +13,19 @@ MAINTAINER=	t@tobik.me
 COMMENT=	PDF pager
 
 # llpp itself is in the public domain, but it bundles lablGL which
-# uses a BSD 3-clause license and statically links to mupdf which is
-# AGPLv3 licensed.
-LICENSE=	PUBLIC_DOMAIN BSD3CLAUSE AGPLv3
+# uses a BSD 3-clause license
+LICENSE=	PUBLIC_DOMAIN BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_NAME_PUBLIC_DOMAIN=	Public Domain
 LICENSE_FILE_PUBLIC_DOMAIN=	${WRKSRC}/README
 LICENSE_PERMS_PUBLIC_DOMAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	gsed:textproc/gsed \
-		${LOCALBASE}/lib/libmupdf_pic.a:graphics/mupdf
+BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libjbig2dec.so:graphics/jbig2dec \
+		libmupdf.so:graphics/mupdf \
 		libopenjp2.so:graphics/openjpeg
 RUN_DEPENDS=	xsel:x11/xsel-conrad
 

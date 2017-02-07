@@ -18,6 +18,6 @@ LIB_DEPENDS=	libevent.so:devel/libevent2
 
 USES=	php:ext tar:tgz
 
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

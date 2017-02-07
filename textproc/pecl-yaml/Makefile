@@ -19,6 +19,6 @@ LIB_DEPENDS=	libyaml.so:textproc/libyaml
 PORTSCOUT=	limit:^1.*
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

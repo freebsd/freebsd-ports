@@ -5,7 +5,6 @@ PORTNAME=	phpmyfaq
 PORTVERSION=	2.9.6
 CATEGORIES=	www
 MASTER_SITES=	http://download.phpmyfaq.de/files/
-DISTNAME=	phpMyFAQ-${PORTVERSION}
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Multilingual, completely database-driven FAQ-system
@@ -17,7 +16,7 @@ USE_PHP=	filter json mysql pcre pdf session xml xmlrpc xmlwriter zlib
 FAQ_DIR=	attachments data images inc pdf xml
 NO_BUILD=	YES
 NO_ARCH=	YES
-IGNORE_WITH_PHP=70
+IGNORE_WITH_PHP=70 71
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

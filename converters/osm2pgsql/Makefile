@@ -2,51 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	osm2pgsql
-PORTVERSION=	0.87.2
-PORTREVISION=	3
+PORTVERSION=	0.92.0
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OSM XML data to PostgreSQL database
 
-BROKEN=		Last update of graphics/geos broke compatibility
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libproj.so:graphics/proj \
-		libgeos.so:graphics/geos \
-		libprotobuf-c.so:devel/protobuf-c \
-		libboost_thread.so:devel/boost-libs
+		libgeos35.so:graphics/geos35 \
+		libboost_system.so:devel/boost-libs \
+		libexpat.so:textproc/expat2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 
-USES=		autoreconf gmake libtool lua pgsql
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	LUA="${LUA_CMD}" \
-		LUA_INCLUDE="-I${LUA_INCDIR}" \
-		LUA_LIB="-L${LUA_LIBDIR} -llua-${LUA_VER}" \
-		--without-lockfree # workaround for build error
-USE_GNOME=	libxml2
+USES=		cmake:outsource lua:53 pgsql
 
-PLIST_FILES=	bin/nodecachefilereader \
-		bin/osm2pgsql \
-		man/man1/nodecachefilereader.1.gz \
+PLIST_FILES=	bin/osm2pgsql \
 		man/man1/osm2pgsql.1.gz
 
-PORTDOCS=	ChangeLog README AUTHORS TODO
+PORTDOCS=	AUTHORS ChangeLog README.md
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/m4/*.m4
-	@${REINPLACE_CMD} -e 's|AC_MSG_WARN|AC_MSG_ERROR|' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|-lstdc++||' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|include <geos|&35/geos|' \
+		${WRKSRC}/contrib/libosmium/osmium/geom/geos.hpp \
+		${WRKSRC}/geometry-builder.cpp
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor

@@ -18,6 +18,6 @@ LIB_DEPENDS=	libgearman.so:devel/gearmand
 
 USES=		php:ext tar:tgz
 CONFIGURE_ARGS=	--with-gearman
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

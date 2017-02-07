@@ -63,14 +63,6 @@ FFMPEG_CFLAGS_OFF+=-msse
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == armv6
-CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
-CFLAGS+=	-no-integrated-as
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-.endif
-
 .if ! ${PORT_OPTIONS:MFFMPEG}
 
 .if ${ARCH} == powerpc64

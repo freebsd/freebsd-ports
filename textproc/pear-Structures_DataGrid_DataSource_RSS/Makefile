@@ -13,6 +13,6 @@ RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-
 
 USES=	pear
 USE_PHP=	mysql
-IGNORE_WITH_PHP=70
+IGNORE_WITH_PHP=70 71
 
 .include <bsd.port.mk>
