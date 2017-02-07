@@ -21,8 +21,9 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_FreeBSD_11=	does not build
-BROKEN_FreeBSD_12=	does not build
+BROKEN_FreeBSD_10=	does not build (error: use of undeclared identifier 'SYS_NAME_ID_amd64_fbsd_103')
+BROKEN_FreeBSD_11=	does not build (error: no member named 'b_saveaddr' in 'struct buf')
+BROKEN_FreeBSD_12=	does not build (don't know how to make ./param.amd64_fbsd_120.h. Stop)
 
 AFS_DISTVERSION=	1.6.18
 DBVERSION=	2016-01-01
