@@ -13,7 +13,8 @@ COMMENT=	PGP International version - Public-Key encryption for the masses
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 BROKEN_amd64=	unable to validate signatures
-DEPRECATED=	Software released in 1996 has no place in the security category. Use GnuPG in stead
+DEPRECATED=	This software was last updated in 1996, use security/gnupg1 as a\
+		drop-in replacement with legacy PGP support.
 EXPIRATION_DATE=	2017-04-01
 
 WRKSRC=		${WRKDIR}/src
