@@ -1,6 +1,6 @@
---- pjmedia/build/os-auto.mak.in.orig	2016-06-28 14:32:08 UTC
+--- pjmedia/build/os-auto.mak.in.orig	2016-08-25 01:36:33 UTC
 +++ pjmedia/build/os-auto.mak.in
-@@ -203,50 +203,7 @@ export CFLAGS += -I$(THIRD_PARTY)/yuv/in
+@@ -215,50 +215,7 @@ export CFLAGS += -I$(THIRD_PARTY)/webrtc
  endif
  endif
  
