@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glances
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
-PLIST_FILES=	%%ETCDIR%%/glances.conf.sample \
+PLIST_FILES=	${ETCDIR}/glances.conf.sample \
 		man/man1/glances.1.gz
 
 post-install:
