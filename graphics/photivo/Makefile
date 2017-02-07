@@ -24,10 +24,19 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 USES=		cmake compiler:c++11-lib desktop-file-utils dos2unix \
 		gettext-runtime jpeg pkgconfig zip
 USE_GNOME=	glib20
-USE_QT5=	qmake_build buildtools_build core gui network widgets
 DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+_QT4_DEPS=	qmake_build moc_build rcc_build uic_build corelib gui network
+_QT5_DEPS=	qmake_build buildtools_build core gui network widgets
+
+OPTIONS_DEFINE=	QT4
+QT4_DESC=	Build against Qt 4 instead of Qt 5
+
+QT4_USE=	QT4=${_QT4_DEPS:ts,}
+QT4_USE_OFF=	QT5=${_QT5_DEPS:ts,}
+QT4_CMAKE_ON=	-DFORCE_QT4:BOOL=true
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,#define cimg_use_openmp 1,//&,' \
