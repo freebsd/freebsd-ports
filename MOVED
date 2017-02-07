@@ -5313,6 +5313,7 @@ x11-fonts/etlfonts||2013-12-31|Has expired: master site gone
 net/gateway6||2013-12-31|Has expired: Unsupported upstream, consider using net/gogoc
 misc/bibletime-devel|misc/bibletime|2013-12-31|Has expired: use misc/bibletime
 multimedia/linux-ov511-kmod||2013-12-31|Removed: broken and only for FreeBSD 6.x and 7.x
+net-mgmt/unifi|net-mgmt/unifi3|2014-01-01|Rename to unifi3; unifi2 is coming to ports tree as well
 net/pypvm||2014-01-01|Has expired: Dead upstream and suspected that there are no users of port
 www/mawstats||2014-01-01|Has expired: Upstream development dead, use www/[j]awstats instead
 devel/p5-Dialog|devel/p5-UI-Dialog|2014-01-01|Has expired
@@ -8053,6 +8054,7 @@ lang/perl5.16||2015-12-31|Has expired: Unsupported, please upgrade to a more rec
 devel/py-distutils-extra|devel/py-python-distutils-extra|2015-12-31|Renamed to match upstream naming
 irc/irssi-devel||2016-01-01|Has expired: Older than irc/irssi
 multimedia/spotify-websocket-api||2016-01-01|Has expired: login fails due to protocol changes
+net-mgmt/unifi2|net-mgmt/unifi3|2016-01-01|Has expired: Unifi 2.x is EoL. Please upgrade to net-mgmt/unifi3
 misc/kde4-l10n-th||2016-01-01|Has expired: Upstream ceased maintainance of this translation
 misc/kde4-l10n-tg||2016-01-01|Has expired: Upstream ceased maintainance of this translation
 misc/kde4-l10n-si||2016-01-01|Has expired: Upstream ceased maintainance of this translation
@@ -8587,6 +8589,7 @@ sysutils/moosefs-metalogger|sysutils/moosefs2-metalogger|2016-07-07|Moved to a n
 sysutils/moosefs-netdump|sysutils/moosefs2-netdump|2016-07-07|Moved to a numbered port name
 devel/gmake-lite|devel/gmake|2016-07-08|No longer needed
 devel/capstone|devel/capstone3|2016-07-10|Moved to a numbered port name to make place for capstone4
+net-mgmt/unifi3|net-mgmt/unifi4|2016-07-10|Has expired: Unifi 3.x is EoL. Please upgrade to net-mgmt/unifi4
 net/lam||2016-07-12|Has expired: Broken for more than 6 months
 java/wildfly82||2016-07-17|Has expired: Fully EOL when version 10.0 was released
 print/tex|print/texlive-base|2016-07-30|Superceeded by texlive
