@@ -129,6 +129,8 @@
     SUBDIR += qtemu
     SUBDIR += quasi88
     SUBDIR += raine
+    SUBDIR += riscv-fesvr
+    SUBDIR += riscv-isa-sim
     SUBDIR += rtc
     SUBDIR += rubygem-fission
     SUBDIR += simh
