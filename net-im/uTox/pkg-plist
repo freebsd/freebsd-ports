@@ -1,3 +1,4 @@
 bin/utox
 share/applications/utox.desktop
+share/pixmaps/utox.png
 man/man1/utox.1.gz
