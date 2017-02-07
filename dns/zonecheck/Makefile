@@ -37,7 +37,7 @@ CGI_VARS=	ZONECHECK_TARGET+=cgi
 
 do-install:
 	cd ${INSTALL_WRKSRC} && \
-		${SETENV} LANG=en_US.UTF-8 ${RUBY} ./installer.rb ${ZONECHECK_TARGET} \
+		${SETENV} LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 ${RUBY} ./installer.rb ${ZONECHECK_TARGET} \
 		-DETCDIST='-dist' -DRUBY="${RUBY}" -DPREFIX="${PREFIX}" \
 		-DWWWDIR="${PREFIX}/www/${PORTNAME}" -DCHROOT="${STAGEDIR}"
 
