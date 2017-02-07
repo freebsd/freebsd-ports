@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1807
+PORTVERSION=	2.2004
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -24,16 +24,16 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Devel-StackTrace>=1.33:devel/p5-Devel-StackTrace \
 		p5-Eval-Closure>=0.04:devel/p5-Eval-Closure \
 		p5-MRO-Compat>=0.05:devel/p5-MRO-Compat \
-		p5-Module-Runtime>=0.012:devel/p5-Module-Runtime \
+		p5-Module-Runtime>=0.014:devel/p5-Module-Runtime \
 		p5-Module-Runtime-Conflicts>=0.002:devel/p5-Module-Runtime-Conflicts \
-		p5-Package-DeprecationManager>=0.10:devel/p5-Package-DeprecationManager \
+		p5-Package-DeprecationManager>=0.11:devel/p5-Package-DeprecationManager \
 		p5-Package-Stash>=0.32:devel/p5-Package-Stash \
 		p5-Package-Stash-XS>=0.24:devel/p5-Package-Stash-XS \
 		p5-Params-Util>=1.00:devel/p5-Params-Util \
 		p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils \
 		p5-Sub-Exporter>=0.980:devel/p5-Sub-Exporter \
 		p5-Sub-Identify>=0:devel/p5-Sub-Identify \
-		p5-Sub-Name>=0.05:devel/p5-Sub-Name \
+		p5-Sub-Name>=0.20:devel/p5-Sub-Name \
 		p5-Try-Tiny>=0.17:lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
