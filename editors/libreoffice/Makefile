@@ -105,6 +105,7 @@ OPTIONS_DEFINE=	CUPS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
 		TEST VERBOSE WEBDAV
 OPTIONS_DEFAULT=	CUPS GTK2
 
+GTK3_DESC=	GTK+ 3 GUI toolkit support (experimental)
 JAVA_DESC=	Add Java support (XML filters, macros)
 MMEDIA_DESC=	Enable multimedia backend for impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
