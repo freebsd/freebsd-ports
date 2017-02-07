@@ -17,6 +17,8 @@ LICENSE_NAME=	Molden
 LICENSE_FILE=	${WRKSRC}/CopyRight
 LICENSE_PERMS=	auto-accept
 
+BROKEN=		does not fetch, size/checksum mismatch
+
 RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
