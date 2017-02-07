@@ -140,6 +140,7 @@
     SUBDIR += py-slackclient
     SUBDIR += py-sleekxmpp
     SUBDIR += py-telepot
+    SUBDIR += py-toxcore-c
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
