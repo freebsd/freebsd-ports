@@ -2,6 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
+PORTREVISION=	2
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -32,7 +33,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
-		liborcus-0.11.so:devel/liborcus \
+		liborcus-0.12.so:devel/liborcus \
 		libcurl.so:ftp/curl \
 		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \
@@ -70,7 +71,8 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libmythes-1.2.so:textproc/mythes \
 		librdf.so:textproc/redland \
 		libserf-1.so:www/serf
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
+RUN_DEPENDS=	xdg-open:devel/xdg-utils \
+		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
 		${LOCALBASE}/share/fonts/GentiumBasic/GenBasI.ttf:x11-fonts/gentium-basic \
@@ -116,7 +118,7 @@ CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 GNOME_CONFIGURE_ENABLE=	dbus dconf
-GNOME_IMPLIES=	GTK3
+GNOME_IMPLIES=	GTK2
 GNOME_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 GNOME_USE=	GNOME=dconf
 
@@ -280,6 +282,10 @@ CXXFLAGS_WARN+=	-Wno-unused-local-typedefs
 .else
 CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	    ${WRKSRC}/shell/source/unix/exec/shellexec.cxx
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun

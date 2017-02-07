@@ -1010,6 +1010,7 @@
     SUBDIR += s6-rc
     SUBDIR += safe-rm
     SUBDIR += safecat
+    SUBDIR += safecopy
     SUBDIR += samefile
     SUBDIR += samesame
     SUBDIR += sample

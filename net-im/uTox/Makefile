@@ -2,6 +2,7 @@
 
 PORTNAME=	uTox
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -41,5 +42,6 @@ pre-configure:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/utox
+	${INSTALL_DATA} ${WRKSRC}/icons/utox-128x128.png ${STAGEDIR}${PREFIX}/share/pixmaps/utox.png
 
 .include <bsd.port.mk>

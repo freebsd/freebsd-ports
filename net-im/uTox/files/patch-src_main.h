@@ -7,7 +7,7 @@
 -#ifndef __OBJC__
 -#define volatile(x)(x)
 +#if !defined(__OBJC__) || defined(__NetBSD__) || defined(__FreeBSD__)
-+#define volatile(x) x
++#define volatile(x)(x)
  #endif
  
  #define SCALE(x) (((int)((ui_scale / 10.0) * ((double)x))) ?: 1)

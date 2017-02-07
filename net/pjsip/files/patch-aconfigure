@@ -1,6 +1,6 @@
---- aconfigure.orig	2016-07-20 07:03:49 UTC
+--- aconfigure.orig	2017-01-25 11:23:08 UTC
 +++ aconfigure
-@@ -6234,14 +6234,7 @@ $as_echo "Checking sound device backend.
+@@ -6310,14 +6310,7 @@ $as_echo "Checking sound device backend.
  	;;
    *)
  		ac_pjmedia_snd=alsa
@@ -15,7 +15,7 @@
  
  
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Checking sound device backend... unix" >&5
-@@ -6865,7 +6858,7 @@ else
+@@ -6941,7 +6934,7 @@ else
  			FFMPEG_PREFIX=$with_ffmpeg
  			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Using ffmpeg prefix... $FFMPEG_PREFIX" >&5
  $as_echo "Using ffmpeg prefix... $FFMPEG_PREFIX" >&6; }
@@ -24,3 +24,12 @@
  		fi
  
  		for ac_prog in pkg-config "python pkgconfig.py"
+@@ -8493,7 +8486,7 @@ $as_echo "Checking if libwebrtc is disab
+ 			ac_webrtc_instset=sse2
+ 			ac_webrtc_cflags="-msse2"
+ 			;;
+-		     *win32* | *w32* | *darwin* | *linux*)
++		     *win32* | *w32* | *darwin* | *linux* | *amd64*freebsd* )
+ 			ac_webrtc_instset=sse2
+ 			;;
+ 		     *)

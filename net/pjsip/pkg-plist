@@ -46,6 +46,8 @@ include/pj/compat/os_sunos.h
 include/pj/compat/os_symbian.h
 include/pj/compat/os_win32.h
 include/pj/compat/os_win32_wince.h
+include/pj/compat/os_winphone8.h
+include/pj/compat/os_winuwp.h
 include/pj/compat/rand.h
 include/pj/compat/setjmp.h
 include/pj/compat/size_t.h
@@ -351,6 +353,9 @@ lib/libpjsua2-%%CONFIGURE_TARGET%%.a
 %%NO_EXTSRTP%%lib/libsrtp-%%CONFIGURE_TARGET%%.a
 %%NO_EXTSRTP%%%%SHARED%%lib/libsrtp.so
 %%NO_EXTSRTP%%%%SHARED%%lib/libsrtp.so.2
+%%WEBRTC%%lib/libwebrtc-%%CONFIGURE_TARGET%%.a
+%%WEBRTC%%%%SHARED%%lib/libwebrtc.so
+%%WEBRTC%%%%SHARED%%lib/libwebrtc.so.2
 libdata/pkgconfig/libpjproject.pc
 %%PJSUA%%bin/pjsua
 %%PJSUA%%bin/pjsystest

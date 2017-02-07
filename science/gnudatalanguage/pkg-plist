@@ -1,17 +1,12 @@
 bin/gdl
 man/man1/gdl.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeLists.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CVS/Entries
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CVS/Repository
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CVS/Root
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Makefile.am.~1.155.~
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Saturn.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/add_error.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/banner_for_testsuite.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/benchmark/CVS/Entries
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/benchmark/CVS/Repository
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/benchmark/CVS/Root
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/benchmark/bench_matrix_multiply.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/byte_array.h5
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/checks
@@ -227,6 +222,7 @@ man/man1/gdl.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_python_module_1.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_python_module_2.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_qhull.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_qhull.pro.~1.1.~
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_qromb.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_qromo.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_random.pro
@@ -262,6 +258,7 @@ man/man1/gdl.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_titles.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_trisol.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_tv.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_tv.pro.~1.12.~
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_tv_ps.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_tvlct.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_typename.pro
@@ -289,6 +286,7 @@ man/man1/gdl.1.gz
 %%DATADIR%%/lib/calendar.pro
 %%DATADIR%%/lib/congrid.pro
 %%DATADIR%%/lib/correlate.pro
+%%DATADIR%%/lib/correlate.pro.~1.2.~
 %%DATADIR%%/lib/delvar.pro
 %%DATADIR%%/lib/deriv.pro
 %%DATADIR%%/lib/diag_matrix.pro

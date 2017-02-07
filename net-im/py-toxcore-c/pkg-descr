@@ -1,0 +1,4 @@
+PyTox provides a Pythonic binding, i.e Object-oriented instead of C style,
+raise exception instead of returning error code.
+
+WWW: https://github.com/TokTok/py-toxcore-c
