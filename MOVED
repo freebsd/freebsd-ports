@@ -9061,3 +9061,6 @@ devel/libcheck|devel/check|2017-02-05|Rename to match upstream naming
 devel/p5-JIRA-Client||2017-02-05|Has expired: Deprecated by upstream due to deprecated JIRA's SOAP API
 sysutils/puppet37||2017-02-05|Has expired: Upstream support ended, see http://tinyurl.com/puppet3eol
 net-im/ttytter||2017-02-05|Has expired: Upstream no longer active, see net-im/oysttyer
+java/jboss7||2017-02-07|Has expired: Unsupported, replaced by wildfly
+java/jboss71||2017-02-07|Has expired: Unsupported, replaced by wildfly
+java/jboss72||2017-02-07|Has expired: Unsupported, replaced by wildfly
