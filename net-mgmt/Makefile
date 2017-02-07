@@ -320,6 +320,7 @@
     SUBDIR += sjitter
     SUBDIR += slate
     SUBDIR += smokeping
+    SUBDIR += snap
     SUBDIR += snmp++
     SUBDIR += snmp4nagios
     SUBDIR += snmptt

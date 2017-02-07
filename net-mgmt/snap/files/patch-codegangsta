@@ -1,0 +1,165 @@
+--- cmd/snapctl/commands.go.orig	2017-01-20 05:00:46 UTC
++++ cmd/snapctl/commands.go
+@@ -24,7 +24,7 @@ import (
+ 	"strings"
+ 	"text/tabwriter"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ )
+ 
+ var (
+--- cmd/snapctl/config.go.orig	2017-01-20 05:00:46 UTC
++++ cmd/snapctl/config.go
+@@ -28,7 +28,7 @@ import (
+ 	"strconv"
+ 	"text/tabwriter"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ 	"github.com/intelsdi-x/snap/core/ctypes"
+ )
+ 
+--- cmd/snapctl/flags.go.orig	2017-01-20 05:00:46 UTC
++++ cmd/snapctl/flags.go
+@@ -19,7 +19,7 @@ limitations under the License.
+ 
+ package main
+ 
+-import "github.com/codegangsta/cli"
++import "github.com/urfave/cli"
+ 
+ var (
+ 
+--- cmd/snapctl/main.go.orig	2017-01-20 05:00:46 UTC
++++ cmd/snapctl/main.go
+@@ -28,7 +28,7 @@ import (
+ 
+ 	"golang.org/x/crypto/ssh/terminal"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ 	"github.com/intelsdi-x/snap/mgmt/rest/client"
+ )
+ 
+--- cmd/snapctl/metric.go.orig	2017-01-20 05:00:46 UTC
++++ cmd/snapctl/metric.go
+@@ -28,7 +28,7 @@ import (
+ 	"text/tabwriter"
+ 	"time"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ 	"github.com/intelsdi-x/snap/mgmt/rest/client"
+ 	"github.com/intelsdi-x/snap/mgmt/rest/rbody"
+ 
+--- cmd/snapctl/plugin.go.orig	2017-01-20 05:00:46 UTC
++++ cmd/snapctl/plugin.go
+@@ -28,7 +28,7 @@ import (
+ 	"text/tabwriter"
+ 	"time"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ )
+ 
+ func loadPlugin(ctx *cli.Context) error {
+--- cmd/snapctl/task.go.orig	2017-01-20 05:00:46 UTC
++++ cmd/snapctl/task.go
+@@ -33,7 +33,7 @@ import (
+ 	"text/tabwriter"
+ 	"time"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ 	"github.com/intelsdi-x/snap/mgmt/rest/client"
+ 	"github.com/intelsdi-x/snap/scheduler/wmap"
+ 	"github.com/robfig/cron"
+--- cmd/snapctl/tribe.go.orig	2017-01-20 05:00:46 UTC
++++ cmd/snapctl/tribe.go
+@@ -27,7 +27,7 @@ import (
+ 	"sort"
+ 	"text/tabwriter"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ 	"github.com/intelsdi-x/snap/mgmt/tribe/agreement"
+ )
+ 
+--- control/flags.go.orig	2017-01-20 05:00:46 UTC
++++ control/flags.go
+@@ -22,7 +22,7 @@ package control
+ import (
+ 	"fmt"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ )
+ 
+ var (
+--- mgmt/rest/flags.go.orig	2017-01-20 05:00:46 UTC
++++ mgmt/rest/flags.go
+@@ -22,7 +22,7 @@ package rest
+ import (
+ 	"fmt"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ )
+ 
+ var (
+--- mgmt/rest/log_handler.go.orig	2017-01-20 05:00:46 UTC
++++ mgmt/rest/log_handler.go
+@@ -23,7 +23,7 @@ import (
+ 	"net/http"
+ 
+ 	log "github.com/Sirupsen/logrus"
+-	"github.com/codegangsta/negroni"
++	"github.com/urfave/negroni"
+ )
+ 
+ // Logger is a snap middleware that logs to a logrus facility
+--- mgmt/rest/server.go.orig	2017-02-06 20:08:19 UTC
++++ mgmt/rest/server.go
+@@ -32,7 +32,7 @@ import (
+ 	"time"
+ 
+ 	log "github.com/Sirupsen/logrus"
+-	"github.com/codegangsta/negroni"
++	"github.com/urfave/negroni"
+ 	"github.com/julienschmidt/httprouter"
+ 
+ 	"github.com/intelsdi-x/snap/core"
+--- mgmt/tribe/flags.go.orig	2017-01-20 05:00:46 UTC
++++ mgmt/tribe/flags.go
+@@ -22,7 +22,7 @@ package tribe
+ import (
+ 	"fmt"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ )
+ 
+ var (
+--- scheduler/flags.go.orig	2017-01-20 05:00:46 UTC
++++ scheduler/flags.go
+@@ -22,7 +22,7 @@ package scheduler
+ import (
+ 	"fmt"
+ 
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ )
+ 
+ var (
+--- snapd.go.orig	2017-01-20 05:00:46 UTC
++++ snapd.go
+@@ -37,7 +37,7 @@ import (
+ 	"golang.org/x/crypto/ssh/terminal"
+ 
+ 	log "github.com/Sirupsen/logrus"
+-	"github.com/codegangsta/cli"
++	"github.com/urfave/cli"
+ 	"github.com/vrischmann/jsonutil"
+ 
+ 	"github.com/intelsdi-x/snap/control"
