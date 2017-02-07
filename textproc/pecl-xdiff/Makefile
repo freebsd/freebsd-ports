@@ -19,7 +19,7 @@ LIB_DEPENDS=	libxdiff.so:textproc/libxdiff
 PORTSCOUT=	limit:^1.*
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

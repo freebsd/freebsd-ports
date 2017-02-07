@@ -13,7 +13,7 @@ MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PECL extension for a userspace equivalent of zend_parse_parameters()
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--enable-params
 

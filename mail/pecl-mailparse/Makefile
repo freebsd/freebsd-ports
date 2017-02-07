@@ -18,6 +18,6 @@ PORTSCOUT=	limit:^2.*
 
 USES=		php:ext tar:tgz
 USE_PHP=	mbstring:build
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

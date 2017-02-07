@@ -19,7 +19,7 @@ GH_ACCOUNT=	buganini
 GH_PROJECT=	php-${PORTNAME}
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 CONFIGURE_ARGS=	--with-bsdconv=${LOCALBASE}
 
 .include <bsd.port.mk>
