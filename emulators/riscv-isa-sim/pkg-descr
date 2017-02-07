@@ -1,0 +1,6 @@
+Spike, a RISC-V ISA Simulator
+
+The RISC-V ISA Simulator implements a functional model of one or more RISC-V
+processors.
+
+WWW: https://github.com/freebsd-riscv/riscv-isa-sim
