@@ -1704,7 +1704,7 @@ man/man7/des_modes.7.gz
 %%OPENSSLDIR%%/misc/c_issuer
 %%OPENSSLDIR%%/misc/c_name
 %%OPENSSLDIR%%/misc/tsget
-%%OPENSSLDIR%%/openssl.cnf.sample
+@sample %%OPENSSLDIR%%/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
 @dir %%OPENSSLDIR%%/certs
 @dir %%OPENSSLDIR%%/private
