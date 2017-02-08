@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.2.2
+PORTVERSION=	19.2.3
 PORTEPOCH=	3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -20,7 +20,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-19.2.1 patch-otp-19.2.2
+PATCHFILES=	patch-otp-19.2.1 patch-otp-19.2.2 patch-otp-19.2.3
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -236,12 +236,16 @@ post-install:
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.2/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.2.1
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.2.2
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.2
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/mnesia-4.14.2/* \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/mnesia-4.14.3
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/mnesia-4.14.2
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.4/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.5
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.4
 
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
