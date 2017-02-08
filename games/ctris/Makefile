@@ -13,6 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses
+MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dominikhackl
