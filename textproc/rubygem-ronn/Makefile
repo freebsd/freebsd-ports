@@ -10,7 +10,7 @@ COMMENT=	Builds manuals
 
 RUN_DEPENDS=	rubygem-hpricot>=0.8.2:www/rubygem-hpricot \
 		rubygem-rdiscount>=1.5.8:textproc/rubygem-rdiscount \
-		rubygem-mustache>=0.7.0:textproc/rubygem-mustache
+		rubygem-mustache>=0.7.0:devel/rubygem-mustache
 
 USE_RUBY=	yes
 USES=		gem
