@@ -3,9 +3,9 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	dns net ipv6
-MASTER_SITES=	ISC/bind9/${ISCVERSION}
+MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/private/ad5e615f60e2f4e1/ ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	910
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
@@ -15,7 +15,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.10.4-P5
+ISCVERSION=	9.10.4-P6
 
 USES=	cpe libedit
 
