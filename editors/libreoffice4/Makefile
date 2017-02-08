@@ -78,6 +78,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosext
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
+DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=	2017-03-31
+
 CONFLICTS_INSTALL=	libreoffice-5.*
 ONLY_FOR_ARCHS=	amd64 i386
 
