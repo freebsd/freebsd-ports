@@ -3,7 +3,7 @@
 
 PORTNAME=	unifi5
 PORTVERSION=	5.4.11
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}-${UNIFI_TAG}/ \
 		LOCAL/feld/${PORTNAME}-${PORTVERSION}/
