@@ -19,6 +19,8 @@ LICENSE_PERMS=	auto-accept no-dist-sell no-pkg-sell
 
 RESTRICTED=	No resale, contact author for commercial usage
 
+BROKEN=		does not fetch (404 not found)
+
 USE_XORG=	x11
 USES=		gmake tar:tgz
 ALL_TARGET=	${PORTNAME}
