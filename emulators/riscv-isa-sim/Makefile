@@ -12,6 +12,8 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libfesvr.so:emulators/riscv-fesvr
 
+ONLY_FOR_ARCHS=	amd64
+
 GH_ACCOUNT=	freebsd-riscv
 GH_TAGNAME=	11ec3a3
 
