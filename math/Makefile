@@ -22,7 +22,6 @@
     SUBDIR += R-cran-RcppEigen
     SUBDIR += R-cran-Rmpfr
     SUBDIR += R-cran-SparseM
-    SUBDIR += R-cran-SuppDists
     SUBDIR += R-cran-VGAM
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-assertthat
