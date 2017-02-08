@@ -1,0 +1,7 @@
+======================================================================
+Some users have reported mouse lag problem with aseprite.
+
+Please add the argument -F 250 or -F 500 for moused(8) to work around
+such problems. These options  can be added in the  variable
+moused_flags in /etc/rc.conf
+======================================================================
