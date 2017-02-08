@@ -5,7 +5,7 @@
  #include <syscall.h>
  
 -#elif defined(__CYGWIN__) || defined(__APPLE__)
-+#elif defined(__CYGWIN__) || defined(__APPLE__) || defined(__FreeBSD__)
++#elif defined(__CYGWIN__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__DragonFly__)
  /* Don't include anything on Cygwin or MacOSX. */
  
  #else

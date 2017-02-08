@@ -9064,3 +9064,8 @@ net-im/ttytter||2017-02-05|Has expired: Upstream no longer active, see net-im/oy
 java/jboss7||2017-02-07|Has expired: Unsupported, replaced by wildfly
 java/jboss71||2017-02-07|Has expired: Unsupported, replaced by wildfly
 java/jboss72||2017-02-07|Has expired: Unsupported, replaced by wildfly
+misc/teslams||2017-02-08|Has expired: Broken for more than 6 months
+devel/libdict||2017-02-08|Has expired: Broken for more than 6 months
+math/R-cran-SuppDists||2017-02-08|Has expired: Broken for more than 6 months
+devel/py-re2||2017-02-08|Has expired: Broken for more than 6 months
+net-p2p/digitalcoin||2017-02-08|Has expired: Broken for more than 6 months

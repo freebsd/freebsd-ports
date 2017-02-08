@@ -154,10 +154,12 @@ EXTRAS_COMMANDS+= \
 		find-all-symbols \
 		modularize
 EXTRAS_LIBS=	libclangApplyReplacements \
+		libclangChangeNamespace \
 		libclangIncludeFixer \
-		libclangRename \
+		libclangMove \
 		libclangQuery \
 		libclangRename \
+		libclangReorderFields \
 		libclangTidy \
 		libclangTidyGoogleModule \
 		libclangTidyLLVMModule \

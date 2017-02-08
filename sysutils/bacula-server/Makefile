@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-DISTVERSION=	7.4.4
-PORTREVISION=   2
+DISTVERSION=	7.4.5
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -115,7 +114,7 @@ MYSQL_USE=		MYSQL=yes
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=yes
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 PGSQL_CONFIGURE_ON=	--with-postgresql=yes
-PGSQL_USES=		pgsql
+#PGSQL_USE=		USES+=pgsql
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 
@@ -129,6 +128,7 @@ DBTYPE=			sqlite3
 .else
 DBTYPE=			postgresql
 SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
+USES+=  pgsql
 .endif
 PLIST_SUB+=		DBTYPE=${DBTYPE}
 .endif

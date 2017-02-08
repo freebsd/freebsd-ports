@@ -42,9 +42,9 @@
 -           nPort = atoi(port);
 +       size_t pos = buffer.find(':');
 +       if (pos != string::npos) {
-+	   proxyAddr = buffer.substr(0, pos++);
-+	   if (pos < buffer.size())
-+	       nPort = stoi(buffer.substr(pos));
++          proxyAddr = buffer.substr(0, pos++);
++          if (pos < buffer.size())
++              nPort = atoi(buffer.substr(pos).c_str());
 +       }
      }
  

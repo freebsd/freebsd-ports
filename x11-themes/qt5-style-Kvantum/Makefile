@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Kvantum
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 DISTVERSIONPREFIX=	V
 CATEGORIES=	x11-themes
 PKGNAMEPREFIX=	qt5-style-
@@ -19,7 +19,6 @@ USES=		compiler:c++11-lang qmake
 USE_QT5=	core gui svg widgets x11extras buildtools_build
 USE_XORG=	x11 xext
 USE_GL=		gl
-INSTALLS_ICONS=	yes
 
 WRKSRC_SUBDIR=	${PORTNAME}
 

@@ -1250,7 +1250,6 @@
     SUBDIR += libdbusmenu-qt5
     SUBDIR += libdevq
     SUBDIR += libdfui
-    SUBDIR += libdict
     SUBDIR += libdisasm
     SUBDIR += libdisorder
     SUBDIR += libdispatch
@@ -4598,7 +4597,6 @@
     SUBDIR += py-rauth
     SUBDIR += py-raven
     SUBDIR += py-rcsparse
-    SUBDIR += py-re2
     SUBDIR += py-rebulk
     SUBDIR += py-rednose
     SUBDIR += py-repl
@@ -4779,6 +4777,7 @@
     SUBDIR += py-xerox
     SUBDIR += py-xmltodict
     SUBDIR += py-xoltar-toolkit
+    SUBDIR += py-xxhash
     SUBDIR += py-yaml
     SUBDIR += py-yandex-money-sdk
     SUBDIR += py-yappi
@@ -5748,6 +5747,7 @@
     SUBDIR += xtl
     SUBDIR += xwpe
     SUBDIR += xxgdb
+    SUBDIR += xxhash
     SUBDIR += xxl
     SUBDIR += yaggo
     SUBDIR += yajl

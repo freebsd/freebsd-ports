@@ -1,0 +1,13 @@
+======================================================================
+You installed MORPHiS: Secure decentralized data store and mail.
+
+It is recommended to run MORPHiS as a service:
+# sysrc morphis_enable="YES"
+# service morphis start
+
+To access MORPHiS please navigate to:
+http://localhost:4251
+
+You can also run MORPHiS manually (not recommended) with the command:
+# su -m %%USER%% -c morphis
+======================================================================
