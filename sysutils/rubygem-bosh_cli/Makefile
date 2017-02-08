@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh_cli
-PORTVERSION=	1.3262.24.0
-PORTREVISION=	1
+PORTVERSION=	1.3262.25.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +10,9 @@ COMMENT=	BOSH CLI
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-blobstore_client>=${PORTVERSION}:devel/rubygem-blobstore_client \
-		rubygem-bosh_common>=${PORTVERSION}:devel/rubygem-bosh_common \
-		rubygem-bosh-template>=${PORTVERSION}:devel/rubygem-bosh-template \
+RUN_DEPENDS=	rubygem-blobstore_client>=1.3262.24.0:devel/rubygem-blobstore_client \
+		rubygem-bosh_common>=1.3262.24.0:devel/rubygem-bosh_common \
+		rubygem-bosh-template>=1.3262.24.0:devel/rubygem-bosh-template \
 		rubygem-cf-uaa-lib>=3.2.1:devel/rubygem-cf-uaa-lib \
 		rubygem-highline>=1.6.2:devel/rubygem-highline \
 		rubygem-httpclient>=2.4.0:www/rubygem-httpclient \
