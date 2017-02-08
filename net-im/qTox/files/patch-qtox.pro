@@ -1,6 +1,6 @@
---- qtox.pro.orig	2016-12-25 17:46:01 UTC
+--- qtox.pro.orig	2017-01-29 12:48:48 UTC
 +++ qtox.pro
-@@ -68,11 +68,11 @@ include(translations/i18n.pri)
+@@ -75,11 +75,11 @@ include(translations/i18n.pri)
  system($$fromfile(translations/i18n.pri, updateallqm))
  
  isEmpty(GIT_VERSION) {
@@ -14,10 +14,10 @@
  }
  DEFINES += GIT_DESCRIBE=\"\\\"$$quote($$GIT_DESCRIBE)\\\"\"
  # date works on linux/mac, but it would hangs qmake on windows
-@@ -510,3 +510,15 @@ SOURCES += \
-     src/widget/form/groupinviteform.cpp \
-     src/widget/tool/profileimporter.cpp \
-     src/widget/passwordedit.cpp
+@@ -663,3 +663,15 @@ SOURCES += \
+     src/widget/tool/toolboxgraphicsitem.cpp \
+     src/widget/translator.cpp \
+     src/widget/widget.cpp
 +
 +unix {
 +    target.path  = $$PREFIX/bin
