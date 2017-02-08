@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fpm
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Build packages for multiple platforms with great ease and sanity
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-archive-tar-minitar>=0:archivers/rubygem-archive-tar-minitar \
+RUN_DEPENDS=	rubygem-archive-tar-minitar>=0.5.2:archivers/rubygem-archive-tar-minitar \
 		rubygem-arr-pm>=0.0.10:devel/rubygem-arr-pm \
 		rubygem-backports>0:devel/rubygem-backports \
 		rubygem-cabin>=0.6.0:devel/rubygem-cabin \
