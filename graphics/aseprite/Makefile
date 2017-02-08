@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		aseprite
-PORTVERSION=		1.1.9
+PORTVERSION=		1.1.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=		graphics
 
@@ -28,16 +28,20 @@ OPTIONS_DEFAULT=	WEBP
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 USE_GITHUB=		yes
-GH_TUPLE=		aseprite:clip:3e9533e:clip/src/clip
+GH_TUPLE=		aseprite:clip:926e3cf:clip/src/clip
 GH_TUPLE+=		aseprite:flic:65a6072:flic/src/flic
 GH_TUPLE+=		aseprite:gtest:d63c625:gtest/third_party/gtest
+GH_TUPLE+=		aseprite:cmark:5255e2d:cmark/third_party/cmark
 GH_TUPLE+=		aseprite:simpleini:0687587:simpleini/third_party/simpleini
 GH_TUPLE+=		aseprite:duktape:0de771c:duktape/third_party/duktape
 GH_TUPLE+=		aseprite:undo:f39b188:undo/src/undo
-GH_TUPLE+=		dacap:observable:83dfe27:observable/src/observable
+GH_TUPLE+=		aseprite:laf:e6d79aa:laf/laf
+GH_TUPLE+=		aseprite:stringencoders:f963507:stringencoders/laf/third_party/stringencoders
+GH_TUPLE+=		dacap:observable:27fa7f6:observable/src/observable
 
 USES=			cmake:outsource compiler:c++11-lib jpeg ninja pkgconfig
 USE_XORG=		x11 xcursor xext xpm ice pixman sm xxf86dga xxf86vm
+USE_LDCONFIG=		yes
 
 CMAKE_ARGS+=		-DUSE_SHARED_ALLEGRO4=1
 CMAKE_ARGS+=		-DUSE_SHARED_GIFLIB=1
@@ -60,9 +64,14 @@ BROKEN_aarch64=		Fails to build: undefined reference to __va_copy
 BROKEN_sparc64=		Fails to build: error: vsnprintf is not a member of std
 
 post-extract:
+	@${RM} -r ${WRKSRC}/src/allegro
 	@${MKDIR} ${WRKSRC}/third_party/pixman/pixman
 	@${CP} `${MAKE} -C ${PORTSDIR}/x11/pixman -V WRKSRC`/pixman/pixman-combine32.h \
 		${WRKSRC}/third_party/pixman/pixman/
+	@${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKDIR}/cmark-*/src/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_MANDIR}|${PREFIX}/man|' \
+		${WRKDIR}/cmark-*/man/CMakeLists.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.1.6-dev|${PORTVERSION}|' ${WRKSRC}/src/config.h ${WRKSRC}/data/gui.xml
