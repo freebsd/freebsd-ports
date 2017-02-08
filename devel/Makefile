@@ -5748,6 +5748,7 @@
     SUBDIR += xtl
     SUBDIR += xwpe
     SUBDIR += xxgdb
+    SUBDIR += xxhash
     SUBDIR += xxl
     SUBDIR += yaggo
     SUBDIR += yajl
