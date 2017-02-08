@@ -4779,6 +4779,7 @@
     SUBDIR += py-xerox
     SUBDIR += py-xmltodict
     SUBDIR += py-xoltar-toolkit
+    SUBDIR += py-xxhash
     SUBDIR += py-yaml
     SUBDIR += py-yandex-money-sdk
     SUBDIR += py-yappi
