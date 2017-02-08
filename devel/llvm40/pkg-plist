@@ -2438,7 +2438,7 @@ llvm%%LLVM_LIB_VER%%/lib/libLTO.so.4
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangAnalysis.a
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libclangApplyReplacements.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangBasic.a
-%%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangChangeNamespace.a
+%%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libclangChangeNamespace.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangCodeGen.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangDriver.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangDynamicASTMatchers.a
@@ -2450,11 +2450,11 @@ llvm%%LLVM_LIB_VER%%/lib/libLTO.so.4
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libclangIncludeFixerPlugin.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangIndex.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangLex.a
-%%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangMove.a
+%%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libclangMove.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangParse.a
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libclangQuery.a
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libclangRename.a
-%%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangReorderFields.a
+%%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libclangReorderFields.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangRewrite.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangRewriteFrontend.a
 %%CLANG%%llvm%%LLVM_LIB_VER%%/lib/libclangSema.a
