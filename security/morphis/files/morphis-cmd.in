@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd %%LOCALBASE%%/share/morphis && su -m %%USER%% -c "./run.sh $@"

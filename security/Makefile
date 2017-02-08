@@ -380,6 +380,7 @@
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += monkeysphere
+    SUBDIR += morphis
     SUBDIR += munge
     SUBDIR += mussh
     SUBDIR += nacl
