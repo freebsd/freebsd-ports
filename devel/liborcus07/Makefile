@@ -15,6 +15,9 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${LOCALBASE}/include/mdds/global.hpp:devel/mdds0
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
+DEPRECATED=	Deprecated by upstream, use devel/liborcus
+EXPIRATION_DATE=	2017-03-31
+
 BROKEN_sparc64=	cannot link with boost
 BROKEN_powerpc64=	Does not build
 
