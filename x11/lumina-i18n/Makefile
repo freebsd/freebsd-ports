@@ -8,6 +8,7 @@ CATEGORIES=	x11
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Lumina desktop environment localization files
 
+BROKEN=		fails to install, conflicts with its run depends
 DEPRECATED=	Obsolete, i18n files included in x11/lumina
 EXPIRATION_DATE=	2017-04-01
 

@@ -10,6 +10,8 @@ COMMENT=	RISC-V Frontend Server
 
 LICENSE=	BSD3CLAUSE
 
+ONLY_FOR_ARCHS=	amd64
+
 GH_ACCOUNT=	freebsd-riscv
 GH_TAGNAME=	10a0333
 
