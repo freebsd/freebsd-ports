@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpd
-PORTVERSION=	5.8.20151202
+PORTVERSION=	6.0.20170207
 CATEGORIES=	net
 
 MAINTAINER=	koue@chaosophia.net
@@ -16,8 +16,7 @@ GH_ACCOUNT=	koue
 
 CONFLICTS=	isc-dhcp4[1-3]-server*
 
-USES=		uidfix
-USE_OPENSSL=	yes
+USES=		ssl uidfix
 USE_RC_SUBR=	dhcpd
 
 CFLAGS+=	-Wall
