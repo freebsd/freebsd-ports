@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	3
+PORTREVISION=	4
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -272,6 +272,13 @@ _MAKE_JOBS=	#
 .if ${OPSYS} == FreeBSD
 .if ${COMPILER_FEATURES:Mlibstdc++}
 BROKEN=		Build with system libstdc++ is unsupported
+.endif
+.if (${OSVERSION} >= 1200000 && ${OSVERSION} < 1200003) || \
+    (${OSVERSION} >= 1100500 && ${OSVERSION} < 1100501) || \
+    (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100122) || \
+    ${OSVERSION} < 1003506
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch-vcl_inc_unx_gtk_gtkinst.hxx \
+		${PATCHDIR}/extrapatch-vcl_unx_gtk_gtkinst.cxx
 .endif
 .endif # FreeBSD
 

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.76rc2
+DISTVERSION=	2.77test2
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
-#MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
+#MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
+MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -14,7 +14,7 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-IGNORE=		build stable version instead, it is newer than this release candidate
+#IGNORE=		build stable version instead, it is newer than this release candidate
 CONFLICTS_INSTALL=dnsmasq-2*
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
@@ -99,8 +99,8 @@ post-patch:
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
 .if empty(PORT_OPTIONS:MNLS)
-	@if ${OBJDUMP} -p ${LOCALBASE}/lib/libidn.so \
-		| ${EGREP} -q 'NEEDED[[:space:]]+libintl\.so' ; \
+	@if ${READELF} -d ${LOCALBASE}/lib/libidn.so \
+		| ${EGREP} -q '\<NEEDED\>.*\[libintl\.so' ; \
 	then ${ECHO} ; ${ECHO} 'WARNING: dns/libidn was compiled with NLS support!' ; \
 	${ECHO} 'Recompile libidn WITHOUT_NLS to get rid of NLS dependencies.' ; ${ECHO} ; \
 	fi
