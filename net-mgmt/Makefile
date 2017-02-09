@@ -87,6 +87,7 @@
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
     SUBDIR += iftop
+    SUBDIR += intel-snap
     SUBDIR += iog
     SUBDIR += ipacctd
     SUBDIR += ipaudit
@@ -320,7 +321,6 @@
     SUBDIR += sjitter
     SUBDIR += slate
     SUBDIR += smokeping
-    SUBDIR += snap
     SUBDIR += snmp++
     SUBDIR += snmp4nagios
     SUBDIR += snmptt
