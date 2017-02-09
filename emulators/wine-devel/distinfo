@@ -1,5 +1,5 @@
-TIMESTAMP = 1485079225
-SHA256 (wine-2.0-rc6.tar.bz2) = 1e0521cd622ee4a9fbdd63b905ec21b3b3ca1d0f37ccd4a1449f0a8b122eb405
-SIZE (wine-2.0-rc6.tar.bz2) = 23676397
-SHA256 (v2.0-rc6.tar.gz) = a8a4f8bae3ccfbac1f5560cceef69df27b371050eca6e00b5ab95e9fbac21cbd
-SIZE (v2.0-rc6.tar.gz) = 10172738
+TIMESTAMP = 1486631031
+SHA256 (wine-2.1.tar.xz) = bfb9abf63691c93df28d9599aaa866dc2b4e27209b3b7b546df8a37d7d9d1e6e
+SIZE (wine-2.1.tar.xz) = 18887032
+SHA256 (v2.1.tar.gz) = 1d193be2734ea495df2cae1dc54ce89204ca68699979174b0bd726d2e5e0576b
+SIZE (v2.1.tar.gz) = 10101781
