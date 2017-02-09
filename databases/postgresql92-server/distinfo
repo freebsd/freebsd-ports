@@ -1,5 +1,5 @@
-TIMESTAMP = 1477347738
-SHA256 (postgresql/postgresql-9.2.19.tar.bz2) = 1d29d73a4f590fcc348280f13ac2ff6a0f72c94908c54e3c20b7ab1560e8dbad
-SIZE (postgresql/postgresql-9.2.19.tar.bz2) = 16466698
+TIMESTAMP = 1486640625
+SHA256 (postgresql/postgresql-9.2.20.tar.bz2) = 0b8abdae8400cabea5587a726003c9dd71c73c049bdae523abc35f9312dd8f26
+SIZE (postgresql/postgresql-9.2.20.tar.bz2) = 16480653
 SHA256 (postgresql/pg-9218-icu-2016-08-10.diff.gz) = 2f9c831b3dff866f0b2f6f2a9ef771a4045486bc252a851aadc73c50d376319d
 SIZE (postgresql/pg-9218-icu-2016-08-10.diff.gz) = 5587

@@ -1,7 +1,7 @@
 # Created by: Brad Davis <brd@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	snap
+PORTNAME=	intel-snap
 PORTVERSION=	0.0.1
 CATEGORIES=	net-mgmt
 
@@ -50,17 +50,17 @@ PLIST_FILES=	bin/snapctl bin/snapd
 do-build:
 	( cd ${WRKSRC}; ${LN} -s ${WRKSRC} ${WRKSRC}/src/github.com/intelsdi-x/snap )
 	( cd ${WRKSRC}/src/github.com/appc/spec; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} GOOS=freebsd CC=clang \
+		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} CC=clang \
 		go build -o bin/actool github.com/appc/spec/actool )
 	( cd ${WRKSRC}; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} GOOS=freebsd CC=clang \
+		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} CC=clang \
 		go build ${BUILD_FLAGS} -o bin/snapd )
 	( cd ${WRKSRC}/cmd/snapctl; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} GOOS=freebsd CC=clang \
+		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} CC=clang \
 		go build ${BUILD_FLAGS} -o bin/snapctl )
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cmd/${PORTNAME}ctl/bin/${PORTNAME}ctl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}ctl
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME}d ${STAGEDIR}${PREFIX}/bin/${PORTNAME}d
+	${INSTALL_PROGRAM} ${WRKSRC}/cmd/snapctl/bin/snapctl ${STAGEDIR}${PREFIX}/bin/snapctl
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/snapd ${STAGEDIR}${PREFIX}/bin/snapd
 
 .include <bsd.port.mk>

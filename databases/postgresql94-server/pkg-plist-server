@@ -369,6 +369,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Aqtobe
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Ashgabat
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Ashkhabad
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Atyrau
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Baghdad
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Bahrain
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Baku
@@ -389,6 +390,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Dili
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Dubai
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Dushanbe
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Famagusta
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Gaza
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Harbin
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Hebron
@@ -453,8 +455,8 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Ust-Nera
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Vientiane
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Vladivostok
-%%TZDATA%%%%DATADIR%%/timezone/Asia/Yangon
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Yakutsk
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Yangon
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Yekaterinburg
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Yerevan
 %%TZDATA%%%%DATADIR%%/timezone/Atlantic/Azores
@@ -594,6 +596,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Samara
 %%TZDATA%%%%DATADIR%%/timezone/Europe/San_Marino
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Sarajevo
+%%TZDATA%%%%DATADIR%%/timezone/Europe/Saratov
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Simferopol
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Skopje
 %%TZDATA%%%%DATADIR%%/timezone/Europe/Sofia
