@@ -1,11 +1,5 @@
-share/icons/128x128/apps/syncplay.png
-share/icons/16x16/apps/syncplay.png
-share/icons/24x24/apps/syncplay.png
-share/icons/256x256/apps/syncplay.png
-share/icons/32x32/apps/syncplay.png
-share/icons/48x48/apps/syncplay.png
-share/icons/64x64/apps/syncplay.png
-share/icons/96x96/apps/syncplay.png
+%%CLIENT%%bin/syncplay
+%%SERVER%%bin/syncplay-server
 lib/syncplay/resources/accept.png
 lib/syncplay/resources/application_get.png
 lib/syncplay/resources/arrow_refresh.png
@@ -36,6 +30,7 @@ lib/syncplay/resources/house.png
 lib/syncplay/resources/key_go.png
 lib/syncplay/resources/lock.png
 lib/syncplay/resources/lock_open.png
+lib/syncplay/resources/lua/intf/syncplay.lua
 lib/syncplay/resources/mpc-hc.png
 lib/syncplay/resources/mpc-hc64.png
 lib/syncplay/resources/mplayer.png
@@ -53,7 +48,6 @@ lib/syncplay/resources/vlc.png
 lib/syncplay/resources/world_add.png
 lib/syncplay/resources/world_explore.png
 lib/syncplay/resources/world_go.png
-lib/syncplay/resources/lua/intf/syncplay.lua
 lib/syncplay/syncplay/__init__.py
 lib/syncplay/syncplay/client.py
 lib/syncplay/syncplay/clientManager.py
@@ -71,6 +65,8 @@ lib/syncplay/syncplay/players/playerFactory.py
 lib/syncplay/syncplay/players/vlc.py
 lib/syncplay/syncplay/protocols.py
 lib/syncplay/syncplay/server.py
+%%CLIENT%%lib/syncplay/syncplayClient.py
+%%SERVER%%lib/syncplay/syncplayServer.py
 lib/syncplay/syncplay/ui/ConfigurationGetter.py
 lib/syncplay/syncplay/ui/GuiConfiguration.py
 lib/syncplay/syncplay/ui/__init__.py
@@ -79,37 +75,16 @@ lib/syncplay/syncplay/ui/gui.py
 lib/syncplay/syncplay/utils.py
 lib/syncplay/syncplay/vendor/__init__.py
 lib/syncplay/syncplay/vendor/qt4reactor.py
-%%SERVER%%lib/syncplay/syncplayServer.py
-share/app-install/icons/syncplay.png
-share/pixmaps/syncplay.png
-%%CLIENT%%bin/syncplay
-%%CLIENT%%lib/syncplay/syncplayClient.py
-%%CLIENT%%share/applications/syncplay.desktop
 %%CLIENT%%%%VLC%%lib/vlc/lua/intf/syncplay.lua
-%%SERVER%%bin/syncplay-server
+share/app-install/icons/syncplay.png
+%%CLIENT%%share/applications/syncplay.desktop
 %%SERVER%%share/applications/syncplay-server.desktop
-@dir share/applications
-@dir share/icons/128x128/apps
-@dir share/icons/128x128
-@dir share/icons/16x16/apps
-@dir share/icons/16x16
-@dir share/icons/24x24/apps
-@dir share/icons/24x24
-@dir share/icons/256x256/apps
-@dir share/icons/256x256
-@dir share/icons/32x32/apps
-@dir share/icons/32x32
-@dir share/icons/48x48/apps
-@dir share/icons/48x48
-@dir share/icons/64x64/apps
-@dir share/icons/64x64
-@dir share/icons/96x96/apps
-@dir share/icons/96x96
-@dir share/icons
-@dir lib/syncplay/resources/lua/intf
-@dir lib/syncplay/resources/lua
-@dir lib/syncplay/resources
-@dir lib/syncplay
-%%CLIENT%%%%VLC%%@dir lib/vlc/lua/intf
-%%CLIENT%%%%VLC%%@dir lib/vlc/lua
-%%CLIENT%%%%VLC%%@dir lib/vlc
+share/icons/128x128/apps/syncplay.png
+share/icons/16x16/apps/syncplay.png
+share/icons/24x24/apps/syncplay.png
+share/icons/256x256/apps/syncplay.png
+share/icons/32x32/apps/syncplay.png
+share/icons/48x48/apps/syncplay.png
+share/icons/64x64/apps/syncplay.png
+share/icons/96x96/apps/syncplay.png
+share/pixmaps/syncplay.png

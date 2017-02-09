@@ -21,7 +21,16 @@
  	chmod 755 $(BIN_PATH)/syncplay
  	cp syncplayClient.py $(LIB_PATH)/syncplay/
  	cp resources/syncplay.desktop $(APP_SHORTCUT_PATH)/
-@@ -85,8 +89,8 @@ u-client:
+@@ -72,8 +76,6 @@ endif
+ ifeq ($(VLC_SUPPORT),true)
+ 	-mkdir -p ${DESTDIR}$(VLC_LIB_PATH)/vlc/lua/intf/
+ 	cp resources/lua/intf/syncplay.lua ${DESTDIR}$(VLC_LIB_PATH)/vlc/lua/intf/
+-	-mkdir -p ${DESTDIR}$(VLC_LIB_PATH64)/vlc/lua/intf/
+-	cp resources/lua/intf/syncplay.lua ${DESTDIR}$(VLC_LIB_PATH64)/vlc/lua/intf/
+ endif
+ 
+ u-client:
+@@ -85,8 +87,8 @@ u-client:
  
  server:
  	-mkdir -p $(BIN_PATH)
