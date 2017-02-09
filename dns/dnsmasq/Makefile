@@ -96,8 +96,8 @@ post-patch:
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
 .if empty(PORT_OPTIONS:MNLS)
-	@if ${OBJDUMP} -p ${LOCALBASE}/lib/libidn.so \
-		| ${EGREP} -q 'NEEDED[[:space:]]+libintl\.so' ; \
+	@if ${READELF} -d ${LOCALBASE}/lib/libidn.so \
+		| ${EGREP} -q '\<NEEDED\>.*\[libintl\.so' ; \
 	then ${ECHO} ; ${ECHO} 'WARNING: dns/libidn was compiled with NLS support!' ; \
 	${ECHO} 'Recompile libidn WITHOUT_NLS to get rid of NLS dependencies.' ; ${ECHO} ; \
 	fi
