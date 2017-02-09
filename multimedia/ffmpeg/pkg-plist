@@ -128,7 +128,7 @@ lib/libavfilter.so.6.65.100
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.57
-lib/libavformat.so.57.56.100
+lib/libavformat.so.57.56.101
 lib/libavresample.a
 lib/libavresample.so
 lib/libavresample.so.3
@@ -136,7 +136,7 @@ lib/libavresample.so.3.1.0
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.55
-lib/libavutil.so.55.34.100
+lib/libavutil.so.55.34.101
 lib/libpostproc.a
 lib/libpostproc.so
 lib/libpostproc.so.54
