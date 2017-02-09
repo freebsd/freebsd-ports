@@ -3,20 +3,19 @@
 
 PORTNAME=	geos
 PORTVERSION=	3.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/ \
 		LOCAL/sunpoet
 PKGNAMESUFFIX=	35
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
+COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL" (legacy)
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFIGURE_ARGS=	--program-suffix=35 \
-		ac_cv_path_SWIG=${LOCALBASE}/bin/swig3.0
+CONFIGURE_ARGS=	--program-suffix=35
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
