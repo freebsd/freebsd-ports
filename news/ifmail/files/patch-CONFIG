@@ -1,6 +1,12 @@
---- CONFIG.orig	Fri Jul 16 23:26:29 1999
-+++ CONFIG	Sat Oct  2 22:15:45 1999
-@@ -8,14 +8,14 @@
+--- CONFIG.orig	1999-07-16 21:26:29 UTC
++++ CONFIG
+@@ -3,19 +3,19 @@ COPYRIGHT   = "Eugene G. Crosser, 1993-1
+ VERSION     = "2.15"
+ 
+ # Main configuration file. This default may be overwritten by -I key.
+-CONFIGFILE  = "/etc/ifmail/config"
++CONFIGFILE  = "%%PREFIX%%/etc/ifmail/config"
+ 
  # Debug messages turned on by -x key are written here.
  # Some error messages may occationally appear here too.
  # This may be changed in the 'config' file.
@@ -17,7 +23,7 @@
  
  # Use syslog() facility codes for mail gate, news gate and ifcico.
  # Define -DHAS_SYSLOG (see below)
-@@ -27,13 +27,13 @@
+@@ -27,13 +27,13 @@ NEWSLOG    = LOG_LOCAL0
  CICOLOG    = LOG_LOCAL0
  
  # Directory where UUCP lock files reside.
@@ -35,7 +41,7 @@
  
  # News spool directory (to check space only)
  #NEWSSPOOL   = "/usr/spool/news"
-@@ -152,20 +152,20 @@
+@@ -152,20 +152,20 @@ NEWSSPOOL   = "/var/spool/news"
  # system, usually "-DINT32=long -DINT16=short"
  
  # Linux/x86:  (remove -DHAS_BSD_SIGNALS if you have libc5 (not glibc2))
@@ -68,7 +74,7 @@
  
  # SVR4:
  #OPTS        = -DHAS_STATVFS -DDONT_HAVE_TM_GMTOFF -DHAS_SETSID -DHAS_NDBM_H \
-@@ -222,7 +222,7 @@
+@@ -222,7 +222,7 @@ OPTS        = -DHAS_STATFS -DSTATFS_IN_V
  #		-DNEED_BSY -DSLAVE_SENDS_NAK_TOO -DINT32=int -DINT16=short
  
  # for make install, where to put binaries and what owner to set
@@ -77,7 +83,7 @@
  OWNER = ifmail
  GROUP = uucp
  MODE = 0711
-@@ -242,7 +242,7 @@
+@@ -242,7 +242,7 @@ AWK = awk
  TAR = tar
  
  #CFLAGS = -g -Wall
@@ -86,7 +92,7 @@
  CFLAGS = -g -O2 -Wall
  # SVR4:
  #CFLAGS = -O -Xa
-@@ -261,7 +261,7 @@
+@@ -261,7 +261,7 @@ LDFLAGS =
  # Linux w/libc5
  #LIBS = -lgdbm
  # Linux w/glibc
@@ -95,7 +101,7 @@
  # SunOS:
  #LIBS =
  # Solaris:
-@@ -276,6 +276,9 @@
+@@ -276,6 +276,9 @@ LIBS = -lndbm
  #LIBS = -lcposix -lmalloc -ldbm -linet -lPW
  # NeXTSTEP
  #LIBS = -lgdbm -lposix
