@@ -626,6 +626,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.10.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.10.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.10.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.10.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.11.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.11.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
@@ -1124,8 +1125,6 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-hashmap.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-history-graph.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-history-graph.txt
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-in-core-index.html
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-in-core-index.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-index-skel.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-index.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-index.txt
@@ -1187,6 +1186,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/signature-format.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/trivial-merge.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/trivial-merge.txt
+%%HTMLDOCS%%%%DOCSDIR%%/transfer-data-leaks.txt
 %%HTMLDOCS%%%%DOCSDIR%%/urls-remotes.txt
 %%HTMLDOCS%%%%DOCSDIR%%/urls.txt
 %%HTMLDOCS%%%%DOCSDIR%%/user-manual.html

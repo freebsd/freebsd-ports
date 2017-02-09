@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:devel/ode
 USES=		python:2 tar:bzip2
 USE_PYTHON=	autoplist distutils
 
+CFLAGS_aarch64=	-fPIC
+
 OPTIONS_DEFINE=	TRIMESH
 OPTIONS_DEFAULT=TRIMESH
 TRIMESH_DESC=	Trimesh support (sync with OPCODE opt of devel/ode)

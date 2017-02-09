@@ -9,4 +9,6 @@ CATEGORIES=	mail
 
 MASTERDIR=	${.CURDIR}/../../security/courier-authlib
 
+CFLAGS_aarch64=	-fPIC
+
 .include "${MASTERDIR}/Makefile"

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ev
-PORTVERSION=	0.2.15
-PORTREVISION=	3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,6 +15,5 @@ LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
 
 .include <bsd.port.mk>

@@ -16,11 +16,14 @@ USES=		dos2unix
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/SQUIRREL2
 
+CFLAGS_aarch64=	-fPIC
+CFLAGS_amd64=	-fPIC
+CFLAGS_sparc64=	-fPIC
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == sparc64
 ALL_TARGET=	sq64
-CFLAGS+=	-fPIC
 .else
 ALL_TARGET=	sq32
 .endif

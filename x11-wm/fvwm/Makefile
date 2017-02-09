@@ -14,6 +14,8 @@ COMMENT=	Fvwm window manager
 USES=		imake
 USE_XORG=	xbitmaps xpm xext x11 xmu
 
+CFLAGS_aarch64=	-fPIC
+
 pre-configure:
 	${REINPLACE_CMD} -e '/DependSubdirs/y,/*#,   ,' ${WRKSRC}/Imakefile
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

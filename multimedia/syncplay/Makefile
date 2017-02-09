@@ -15,6 +15,7 @@ GH_ACCOUNT=	Syncplay
 
 USES=		desktop-file-utils gmake python:2 twisted
 USE_TWISTED=	run
+NO_ARCH=	yes
 
 INSTALLS_ICONS=	yes
 

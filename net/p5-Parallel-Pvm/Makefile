@@ -20,6 +20,8 @@ PVM_ROOT=	${LOCALBASE}/lib/pvm
 CONFIGURE_ENV=	PVM_ROOT="${PVM_ROOT}" PVM_ARCH="${PVM_ROOT}/lib/pvmgetarch"
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"
 
-NOT_FOR_ARCHS=	amd64 ia64
+NOT_FOR_ARCHS=	amd64
+
+CFLAGS_aarch64=	-fPIC
 
 .include <bsd.port.mk>
