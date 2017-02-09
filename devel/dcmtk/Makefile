@@ -29,9 +29,10 @@ PLIST_SUB=	SHLIBVER=${SHLIBVER}
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
-
+CFLAGS_aarch64=	-fPIC
 CFLAGS_amd64=	-fPIC
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.h.orig" -delete

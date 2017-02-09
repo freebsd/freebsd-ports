@@ -21,6 +21,9 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 USE_LDCONFIG=	yes
 
+CFLAGS_aarch64=	-fPIC
+CFLAGS_amd64=	-fPIC
+
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	00README
@@ -29,10 +32,6 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE= DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
 
 post-install:
 	@${STRIP_CMD} \

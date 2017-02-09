@@ -20,6 +20,7 @@ USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-assetdir=${DATADIR} --enable-release
 
+CFLAGS_aarch64=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -35,6 +35,8 @@ CFLAGS_aarch64=		-fPIC
 ALL_TARGET=	swig-pl-lib swig-pl
 INSTALL_TARGET=	install-swig-pl
 
+CFLAGS_aarch64=	-fPIC
+
 pre-install:
 	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile
 

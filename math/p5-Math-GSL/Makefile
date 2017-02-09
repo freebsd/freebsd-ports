@@ -25,6 +25,8 @@ USES=		perl5
 
 BROKEN_sparc64=	does not compile on sparc64
 
+CFLAGS_aarch64=	-fPIC
+
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/GSL/ -name "*.so" | ${XARGS} ${STRIP_CMD}
 

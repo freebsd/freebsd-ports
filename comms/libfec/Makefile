@@ -26,11 +26,8 @@ PLIST_FILES=	include/fec.h		\
 		man/man3/rs.3.gz	\
 		man/man3/simd-viterbi.3.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
+CFLAGS_aarch64=	-fPIC
+CFLAGS_amd64=	-fPIC
 
 post-patch:
 	@${CP} ${FILESDIR}/cpu_mode.c ${WRKSRC}
@@ -46,4 +43,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${_man} ${STAGEDIR}${MAN3PREFIX}/man/man3
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

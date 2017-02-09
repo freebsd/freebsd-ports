@@ -22,14 +22,13 @@ MAKE_ARGS=	MODE=release OBJ_DIR=. OUT_DIR=. Q2MODULE=game.so \
 WRKSRC=		${WRKDIR}/relay-${PORTVERSION}
 PORTDOCS=	FAQ README
 
+CFLAGS_aarch64=	-fPIC
+CFLAGS_amd64=	-fPIC
+
 OPTIONS_DEFINE=	DOCS
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/-ldl// ; /^include/d ; \
