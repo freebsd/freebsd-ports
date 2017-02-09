@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.7.0
+PORTVERSION=	5.7.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
@@ -13,10 +13,6 @@ COMMENT=	Systems & network statistics collection daemon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-# Only autoreconf stage and sigrok plugin need GLIB:
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/glib-2.0.m4:devel/glib20
-LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		autoreconf gmake libtool pkgconfig shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
@@ -113,7 +109,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 
 CGI_RUN_DEPENDS=		p5-URI>=0:net/p5-URI \
 				p5-CGI>=0:www/p5-CGI \
-				p5-Data-Dumper>=0:devel/p5-Data-Dumper \
 				p5-HTML-Parser>=0:www/p5-HTML-Parser
 CGI_IMPLIES=			RRDTOOL
 
@@ -136,7 +131,8 @@ DBI_CONFIGURE_WITH=		libdbi=${LOCALBASE}
 DBI_CONFIGURE_ENABLE=		dbi
 DBI_CFLAGS=			-Wno-deprecated-declarations
 
-GCRYPT_LIB_DEPENDS=		libgcrypt.so:security/libgcrypt
+GCRYPT_LIB_DEPENDS=		libgcrypt.so:security/libgcrypt \
+				libgpg-error.so:security/libgpg-error
 GCRYPT_CONFIGURE_WITH=		-with-libgcrypt=${LOCALBASE}
 GCRYPT_LIBS=			-lgcrypt
 
@@ -170,13 +166,15 @@ MQTT_LIB_DEPENDS=		libmosquitto.so:net/mosquitto
 MQTT_CONFIGURE_ENABLE=		mqtt
 MQTT_CONFIGURE_WITH=		libmosquitto=${LOCALBASE}
 
-MYSQL_USE=			mysql=yes
+MYSQL_USES=			mysql ssl
 MYSQL_CONFIGURE_ENABLE=		mysql
 MYSQL_CONFIGURE_WITH=		libmysql=${LOCALBASE}
 
 NOTIFYDESKTOP_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFYDESKTOP_CONFIGURE_ENABLE=	notify_desktop
 NOTIFYDESKTOP_CONFIGURE_WITH=	libnotify=${LOCALBASE}
+NOTIFYDESKTOP_USE=		GNOME=gdkpixbuf2
+NOTIFYDESKTOP_USES=		gettext-runtime
 
 NOTIFYEMAIL_LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 NOTIFYEMAIL_CONFIGURE_ENABLE=	notify_email
@@ -223,10 +221,13 @@ REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REDIS_CONFIGURE_ENABLE=		redis write_redis
 REDIS_CONFIGURE_WITH=		libhiredis=${LOCALBASE}
 
-RIEMANN_LIB_DEPENDS=		libriemann-client.so:net-mgmt/riemann-c-client
+RIEMANN_LIB_DEPENDS=		libriemann-client.so:net-mgmt/riemann-c-client \
+				libltdl.so:devel/libltdl
 RIEMANN_CONFIGURE_ENABLE=	write_riemann
 
-ROUTEROS_LIB_DEPENDS=		librouteros.so:net/librouteros
+ROUTEROS_LIB_DEPENDS=		librouteros.so:net/librouteros \
+				libgcrypt.so:security/libgcrypt \
+				libgpg-error.so:security/libgpg-error
 ROUTEROS_CONFIGURE_ENABLE=	routeros
 ROUTEROS_CONFIGURE_WITH=	librouteros=${LOCALBASE}
 
@@ -239,6 +240,7 @@ SIGROK_CFLAGS=			`pkg-config --cflags glib-2.0`
 SIGROK_LIB_DEPENDS=		libsigrok.so:devel/libsigrok
 SIGROK_CONFIGURE_ENABLE=	sigrok
 SIGROK_CONFIGURE_WITH=		libsigrok
+SIGROK_USES=			gettext-runtime
 
 SNMP_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=		snmp
@@ -246,7 +248,8 @@ SNMP_CONFIGURE_WITH=		libnetsnmp
 
 STATSD_CONFIGURE_ENABLE=	statsd
 
-TOKYOTYRANT_LIB_DEPENDS=	libtokyotyrant.so:databases/tokyotyrant
+TOKYOTYRANT_LIB_DEPENDS=	libtokyotyrant.so:databases/tokyotyrant \
+				libtokyocabinet.so:databases/tokyocabinet
 TOKYOTYRANT_CONFIGURE_ENABLE=	tokyotyrant
 TOKYOTYRANT_CONFIGURE_WITH=	libtokyotyrant=${LOCALBASE}
 
@@ -257,7 +260,9 @@ VARNISH_CONFIGURE_ENABLE=	varnish
 VARNISH_CONFIGURE_WITH=		libvarnish=${LOCALBASE}
 
 VIRT_IMPLIES=			XML
-VIRT_LIB_DEPENDS=		libvirt.so:devel/libvirt
+VIRT_LIB_DEPENDS=		libvirt.so:devel/libvirt \
+				libgcrypt.so:security/libgcrypt \
+				libgpg-error.so:security/libgpg-error
 VIRT_CONFIGURE_ENABLE=		virt
 VIRT_CONFIGURE_WITH=		virt=${LOCALBASE}
 
@@ -268,6 +273,7 @@ XMMS_CFLAGS=			`xmms-config --cflags`
 XMMS_LIB_DEPENDS=		libxmms.so:multimedia/xmms
 XMMS_CONFIGURE_ENABLE=		xmms
 XMMS_CONFIGURE_WITH=		libxmms=${LOCALBASE}
+XMMS_USE=			XORG=x11,xext,xi
 
 ZOOKEEPER_LIB_DEPENDS=		libzookeeper_mt.so:devel/libzookeeper
 ZOOKEEPER_CONFIGURE_ENABLE=	zookeeper
