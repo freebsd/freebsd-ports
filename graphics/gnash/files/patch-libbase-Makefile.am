@@ -1,6 +1,6 @@
---- libbase/Makefile.am.orig	2016-07-21 14:25:09.000000000 +0200
-+++ libbase/Makefile.am	2016-12-13 22:20:48.980088000 +0100
-@@ -135,6 +135,7 @@
+--- libbase/Makefile.am.orig	2016-07-21 12:25:09 UTC
++++ libbase/Makefile.am
+@@ -135,6 +135,7 @@ libgnashbase_la_SOURCES += \
  endif
  
  if HAVE_VAAPI
@@ -8,7 +8,7 @@
  libgnashbase_la_SOURCES += \
  	GnashVaapiImage.cpp \
  	GnashVaapiImage.h \
-@@ -143,6 +144,14 @@
+@@ -143,6 +144,14 @@ libgnashbase_la_SOURCES += \
  	GnashVaapiTexture.h \
  	$(NULL)
  

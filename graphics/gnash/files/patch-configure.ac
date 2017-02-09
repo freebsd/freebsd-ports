@@ -1,6 +1,6 @@
---- configure.ac.orig	2016-07-21 14:25:09.000000000 +0200
-+++ configure.ac	2016-12-13 08:41:26.852652000 +0100
-@@ -4144,7 +4144,7 @@
+--- configure.ac.orig	2016-07-21 12:25:09 UTC
++++ configure.ac
+@@ -4144,7 +4144,7 @@ if test x${build_ssl} = xyes; then
      fi
      echo "        SSL libs are: $SSL_LIBS"
    else
@@ -9,7 +9,7 @@
    fi
  fi
  
-@@ -4157,7 +4157,7 @@
+@@ -4157,7 +4157,7 @@ if test x${build_ssh} = xyes; then
      fi
      echo "        SSH libs are: $SSH_LIBS"
    else
