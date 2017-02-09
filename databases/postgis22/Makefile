@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgis
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	22
@@ -59,6 +59,8 @@ ADDRSTD_LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
