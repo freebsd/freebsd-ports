@@ -1,6 +1,6 @@
---- Display_x.i.orig	Sat Nov 30 01:11:07 2002
-+++ Display_x.i	Sat Nov 30 01:11:41 2002
-@@ -525,7 +525,7 @@
+--- Display_x.i.orig	2002-01-02 21:17:29 UTC
++++ Display_x.i
+@@ -519,7 +519,7 @@ void C64Display::draw_led(int num, int s
   *  LED error blink
   */
  

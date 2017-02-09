@@ -1,6 +1,6 @@
---- SAM.cpp.orig	Sat Nov 30 01:25:40 2002
-+++ SAM.cpp	Sat Nov 30 01:26:38 2002
-@@ -205,7 +205,7 @@
+--- SAM.cpp.orig	2002-01-02 21:20:16 UTC
++++ SAM.cpp
+@@ -205,7 +205,7 @@ static const char adr_length[] = {1, 1, 
  
  // Prototypes
  static void error(char *s);
@@ -9,7 +9,7 @@
  static void init_abort(void);
  static void exit_abort(void);
  static bool aborted(void);
-@@ -470,7 +470,7 @@
+@@ -470,7 +470,7 @@ static bool WasAborted;
  struct sigaction my_sa;
  #endif
  
