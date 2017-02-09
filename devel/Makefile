@@ -4102,6 +4102,7 @@
     SUBDIR += py-arrow
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
+    SUBDIR += py-astor
     SUBDIR += py-astroid
     SUBDIR += py-asyncio
     SUBDIR += py-atomiclong
