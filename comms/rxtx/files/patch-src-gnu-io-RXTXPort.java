@@ -1,5 +1,5 @@
---- src/gnu/io/RXTXPort.java.orig	2008-11-13 23:37:45.000000000 +0000
-+++ src/gnu/io/RXTXPort.java	2015-05-11 16:51:34.000000000 +0100
+--- src/gnu/io/RXTXPort.java.orig	2008-11-13 23:37:45 UTC
++++ src/gnu/io/RXTXPort.java
 @@ -56,6 +56,7 @@
  |   All trademarks belong to their respective owners.
  --------------------------------------------------------------------------*/
@@ -8,7 +8,7 @@
  import java.io.InputStream;
  import java.io.OutputStream;
  import java.io.IOException;
-@@ -65,93 +66,133 @@
+@@ -65,93 +66,133 @@ import java.lang.Math;
  /**
  * An extension of gnu.io.SerialPort
  * @see gnu.io.SerialPort
@@ -82,7 +82,15 @@
 -	*  @see gnu.io.SerialPort
 -	*/
 -	public RXTXPort( String name ) throws PortInUseException
--	{
++	*	Open the named port
++	*	@param	name the name of the device to open
++	*	@throws	PortInUseException
++	*	@see	gnu.io.SerialPort
++	**/
++	
++	public RXTXPort( String name )
++	throws PortInUseException
+ 	{
 -		if (debug)
 -			z.reportln( "RXTXPort:RXTXPort("+name+") called");
 -	/* 
@@ -110,15 +118,6 @@
 -		if (debug)
 -			z.reportln( "RXTXPort:RXTXPort("+name+") returns with fd = " +
 -				fd);
-+	*	Open the named port
-+	*	@param	name the name of the device to open
-+	*	@throws	PortInUseException
-+	*	@see	gnu.io.SerialPort
-+	**/
-+	
-+	public RXTXPort( String name )
-+	throws PortInUseException
-+	{
 +		if (debug) System.out.println("RXTXPort:RXTXPort(" + name + ")");
 +		
 +		/**
@@ -196,7 +195,7 @@
  	/** pid for lock files */
  	int pid = 0;
  
-@@ -160,142 +201,202 @@
+@@ -160,142 +201,202 @@ final public class RXTXPort extends Seri
  
  	/** Output stream */
  	private final SerialOutputStream out = new SerialOutputStream();
@@ -265,10 +264,6 @@
 -	public synchronized void setSerialPortParams( int b, int d, int s,
 -		int p )
 -		throws UnsupportedCommOperationException
--	{
--		if (debug)
--			z.reportln( "RXTXPort:setSerialPortParams(" +
--				b + " " + d + " " + s + " " + p + ") called");
 +	
 +	/** 
 +	*	Set the SerialPort parameters
@@ -291,7 +286,10 @@
 +		int p
 +	)
 +	throws UnsupportedCommOperationException
-+	{
+ 	{
+-		if (debug)
+-			z.reportln( "RXTXPort:setSerialPortParams(" +
+-				b + " " + d + " " + s + " " + p + ") called");
 +		if (debug) System.out.println(
 +			"RXTXPort:setSerialPortParams(b:" + b + " d:" + d + " s:" + s + " p:" + p + ")"
 +		);
@@ -466,7 +464,7 @@
  			setflowcontrol( flowcontrol );
  		}
  		catch( IOException e )
-@@ -303,61 +404,75 @@
+@@ -303,61 +404,75 @@ final public class RXTXPort extends Seri
  			e.printStackTrace();
  			return;
  		}
@@ -572,7 +570,7 @@
  		return 0;
  	}
  
-@@ -366,38 +481,49 @@
+@@ -366,38 +481,49 @@ final public class RXTXPort extends Seri
  	private int timeout;
  
  	/** 
@@ -641,7 +639,7 @@
  		if( time >= 0 )
  		{
  			timeout = time;
-@@ -411,25 +537,26 @@
+@@ -411,25 +537,26 @@ final public class RXTXPort extends Seri
  				"Unexpected negative timeout value"
  			);
  		}
@@ -675,7 +673,7 @@
  		return(NativegetReceiveTimeout( ));
  	}
  
-@@ -438,12 +565,12 @@
+@@ -438,12 +565,12 @@ final public class RXTXPort extends Seri
  	private int threshold = 0;
  
  	/** 
@@ -691,7 +689,7 @@
  		if(thresh >=0)
  		{
  			threshold=thresh;
-@@ -458,32 +585,32 @@
+@@ -458,32 +585,32 @@ final public class RXTXPort extends Seri
  			);
  		}
  		if (debug)
@@ -733,7 +731,7 @@
  		return(threshold>0);
  	}
  
-@@ -493,16 +620,17 @@
+@@ -493,16 +620,17 @@ final public class RXTXPort extends Seri
  		taj@www.linux.org.uk
  
  		These are native stubs...
@@ -755,7 +753,7 @@
  					size + ") called");
  		if( size < 0 )
  			throw new IllegalArgumentException
-@@ -511,103 +639,139 @@
+@@ -511,103 +639,139 @@ final public class RXTXPort extends Seri
  			);
  		else InputBuffer=size;
  		if (debug)
@@ -947,7 +945,7 @@
  
  
  	/** Serial Port Event listener */
-@@ -620,37 +784,43 @@
+@@ -620,37 +784,43 @@ final public class RXTXPort extends Seri
  	native void eventLoop();
  
  	/** 
@@ -1008,7 +1006,7 @@
  
  		if ( fd == 0 || SPEventListener == null || monThread == null)
  		{
-@@ -661,63 +831,63 @@
+@@ -661,63 +831,63 @@ final public class RXTXPort extends Seri
  		{
  			case SerialPortEvent.DATA_AVAILABLE:
  				if( debug_events )
@@ -1085,7 +1083,7 @@
  
  		switch( event )
  		{
-@@ -752,19 +922,19 @@
+@@ -752,19 +922,19 @@ final public class RXTXPort extends Seri
  				if( monThread.BI ) break;
  				return(false);
  			default:
@@ -1109,7 +1107,7 @@
  			return(true);
  		}
  		if( SPEventListener != null )
-@@ -773,7 +943,7 @@
+@@ -773,7 +943,7 @@ final public class RXTXPort extends Seri
  		}
  
  		if( debug_events && debug_verbose )
@@ -1118,7 +1116,7 @@
  
  		if (fd == 0 ||  SPEventListener == null || monThread == null) 
  		{
-@@ -786,22 +956,22 @@
+@@ -786,22 +956,22 @@ final public class RXTXPort extends Seri
  	}
  
  	/**
@@ -1148,7 +1146,7 @@
  		if( SPEventListener != null )
  		{
  			throw new TooManyListenersException();
-@@ -816,54 +986,66 @@
+@@ -816,54 +986,66 @@ final public class RXTXPort extends Seri
  			MonitorThreadAlive=true;
  		}
  		if (debug)
@@ -1234,16 +1232,16 @@
  
  			}
  			
-@@ -873,7 +1055,7 @@
+@@ -873,7 +1055,7 @@ final public class RXTXPort extends Seri
  		MonitorThreadLock = false;
  		MonitorThreadAlive=false;
  		monThreadisInterrupted=true;
 -		z.reportln( "RXTXPort:removeEventListener() returning");
-+		System.out.println("RXTXPort:removeEventListener:Exit");
++		if (debug) System.out.println("RXTXPort:removeEventListener:Exit");
  	}
  	/**
  	 *	Give the native code a chance to start listening to the hardware
-@@ -894,15 +1076,15 @@
+@@ -894,15 +1076,15 @@ final public class RXTXPort extends Seri
  		}
  	}
  	/**
@@ -1263,7 +1261,7 @@
  		
  		waitForTheNativeCodeSilly();
  
-@@ -911,155 +1093,172 @@
+@@ -911,155 +1093,172 @@ final public class RXTXPort extends Seri
  					enable );
  		monThread.Data = enable;
  		MonitorThreadLock = false;
@@ -1485,7 +1483,7 @@
  					// somebody called interrupt() on us
  					// we obbey and return without without closing the socket
  					Thread.currentThread().interrupt();
-@@ -1075,55 +1274,62 @@
+@@ -1075,55 +1274,62 @@ final public class RXTXPort extends Seri
  
  		if ( fd <= 0 )
  		{
@@ -1560,7 +1558,7 @@
  			if( speed == 0 ) return;
  			if ( monThreadisInterrupted == true )
  			{
-@@ -1140,7 +1346,7 @@
+@@ -1140,7 +1346,7 @@ final public class RXTXPort extends Seri
  				}
  				writeByte( b, monThreadisInterrupted );
  				if (debug_write)
@@ -1569,7 +1567,7 @@
  			} finally {
  				synchronized (IOLockedMutex) {
  					IOLocked--;
-@@ -1148,15 +1354,16 @@
+@@ -1148,15 +1354,16 @@ final public class RXTXPort extends Seri
  			}
  		}
  	/**
@@ -1590,7 +1588,7 @@
  			if( speed == 0 ) return;
  			if ( monThreadisInterrupted == true )
  			{
-@@ -1170,7 +1377,7 @@
+@@ -1170,7 +1377,7 @@ final public class RXTXPort extends Seri
  				waitForTheNativeCodeSilly();
  				writeArray( b, 0, b.length, monThreadisInterrupted );
  				if (debug_write)
@@ -1599,7 +1597,7 @@
  			} finally {
  				synchronized(IOLockedMutex) {
  					IOLocked--;
-@@ -1179,14 +1386,19 @@
+@@ -1179,14 +1386,19 @@ final public class RXTXPort extends Seri
  			
  		}
  	/**
@@ -1624,7 +1622,7 @@
  			if( speed == 0 ) return;
  			if( off + len  > b.length )
  			{
-@@ -1197,10 +1409,7 @@
+@@ -1197,10 +1409,7 @@ final public class RXTXPort extends Seri
  	 
  			byte send[] = new byte[len];
  			System.arraycopy( b, off, send, 0, len );
@@ -1636,7 +1634,7 @@
  			if ( fd == 0 ) throw new IOException();
  			if ( monThreadisInterrupted == true )
  			{
-@@ -1214,7 +1423,7 @@
+@@ -1214,7 +1423,7 @@ final public class RXTXPort extends Seri
  				waitForTheNativeCodeSilly();
  				writeArray( send, 0, len, monThreadisInterrupted );
  				if( debug_write )
@@ -1645,7 +1643,7 @@
  			} finally {
  				synchronized (IOLockedMutex) {
  					IOLocked--;
-@@ -1222,17 +1431,17 @@
+@@ -1222,17 +1431,17 @@ final public class RXTXPort extends Seri
  			}
  		}
  	/**
@@ -1666,7 +1664,7 @@
  				return;
  			}
  			synchronized(IOLockedMutex) {
-@@ -1244,17 +1453,19 @@
+@@ -1244,17 +1453,19 @@ final public class RXTXPort extends Seri
  				/* 
  				   this is probably good on all OS's but for now
  				   just sendEvent from java on Sol
@@ -1688,7 +1686,7 @@
  			}
  		}
  	}
-@@ -1263,42 +1474,42 @@
+@@ -1263,42 +1474,42 @@ final public class RXTXPort extends Seri
  	class SerialInputStream extends InputStream
  	{
  	/**
@@ -1745,7 +1743,7 @@
  				return( result );
  			}				
  			finally
-@@ -1309,9 +1520,9 @@
+@@ -1309,9 +1520,9 @@ final public class RXTXPort extends Seri
  			}
  		}
  	/**
@@ -1758,7 +1756,7 @@
  *
  *timeout threshold       Behavior
  *------------------------------------------------------------------------
-@@ -1320,12 +1531,12 @@
+@@ -1320,12 +1531,12 @@ final public class RXTXPort extends Seri
  *>0      >0      blocks until timeout or reads threshold bytes,
                   returns 0 on timeout
  *0       >0      blocks until reads threshold bytes
@@ -1773,7 +1771,7 @@
  			if ( monThreadisInterrupted == true )
  			{
  				return(0);
-@@ -1338,7 +1549,7 @@
+@@ -1338,7 +1549,7 @@ final public class RXTXPort extends Seri
  				waitForTheNativeCodeSilly();
  				result = read( b, 0, b.length);
  				if (debug_read_results)
@@ -1782,7 +1780,7 @@
  				return( result );
  			}
  			finally
-@@ -1353,11 +1564,11 @@
+@@ -1353,11 +1564,11 @@ read(byte b[], int, int)
  Documentation is at http://java.sun.com/products/jdk/1.2/docs/api/java/io/InputStream.html#read(byte[], int, int)
  */
  	/**
@@ -1799,7 +1797,7 @@
  *
  *timeout threshold       Behavior
  *------------------------------------------------------------------------
-@@ -1367,12 +1578,12 @@
+@@ -1367,12 +1578,12 @@ Documentation is at http://java.sun.com/
                   returns 0 on timeout
  *0       >0      blocks until either threshold # of bytes or len bytes,
                   whichever was lower.
@@ -1814,7 +1812,7 @@
  			int result;
  			/*
  			 * Some sanity checks
-@@ -1380,24 +1591,24 @@
+@@ -1380,24 +1591,24 @@ Documentation is at http://java.sun.com/
  			if ( fd == 0 )
  			{
  				if (debug_read)
@@ -1845,7 +1843,7 @@
  				throw new IndexOutOfBoundsException();
  			}
  
-@@ -1407,7 +1618,7 @@
+@@ -1407,7 +1618,7 @@ Documentation is at http://java.sun.com/
  			if( len==0 )
  			{
  				if (debug_read)
@@ -1854,7 +1852,7 @@
  				return 0;
  			}
  			/*
-@@ -1442,7 +1653,7 @@
+@@ -1442,7 +1653,7 @@ Documentation is at http://java.sun.com/
  			if ( monThreadisInterrupted == true )
  			{
  				if (debug_read)
@@ -1863,7 +1861,7 @@
  				return(0);
  			}
  			synchronized (IOLockedMutex) {
-@@ -1453,7 +1664,7 @@
+@@ -1453,7 +1664,7 @@ Documentation is at http://java.sun.com/
  				waitForTheNativeCodeSilly();
  				result = readArray( b, off, Minimum);
  				if (debug_read_results)
@@ -1872,7 +1870,7 @@
  				return( result );
  			}
  			finally
-@@ -1465,12 +1676,12 @@
+@@ -1465,12 +1676,12 @@ Documentation is at http://java.sun.com/
  		}
  
  	/**
@@ -1891,7 +1889,7 @@
  
  	   We are trying to catch the terminator in the native code
  	   Right now it is assumed that t[] is an array of 2 bytes.
-@@ -1479,13 +1690,13 @@
+@@ -1479,13 +1690,13 @@ Documentation is at http://java.sun.com/
  	   array will contain the terminator.  Otherwise read behavior should
  	   be the same as read( b[], off, len ).  Timeouts have not been well
  	   tested.
@@ -1907,7 +1905,7 @@
  			int result;
  			/*
  			 * Some sanity checks
-@@ -1493,24 +1704,24 @@
+@@ -1493,24 +1704,24 @@ Documentation is at http://java.sun.com/
  			if ( fd == 0 )
  			{
  				if (debug_read)
@@ -1938,7 +1936,7 @@
  				throw new IndexOutOfBoundsException();
  			}
  
-@@ -1520,7 +1731,7 @@
+@@ -1520,7 +1731,7 @@ Documentation is at http://java.sun.com/
  			if( len==0 )
  			{
  				if (debug_read)
@@ -1947,7 +1945,7 @@
  				return 0;
  			}
  			/*
-@@ -1555,7 +1766,7 @@
+@@ -1555,7 +1766,7 @@ Documentation is at http://java.sun.com/
  			if ( monThreadisInterrupted == true )
  			{
  				if (debug_read)
@@ -1956,7 +1954,7 @@
  				return(0);
  			}
  			synchronized (IOLockedMutex) {
-@@ -1566,7 +1777,7 @@
+@@ -1566,7 +1777,7 @@ Documentation is at http://java.sun.com/
  				waitForTheNativeCodeSilly();
  				result = readTerminatedArray( b, off, Minimum, t );
  				if (debug_read_results)
@@ -1965,7 +1963,7 @@
  				return( result );
  			}
  			finally
-@@ -1577,9 +1788,9 @@
+@@ -1577,9 +1788,9 @@ Documentation is at http://java.sun.com/
  			}
  		}
  	/**
@@ -1978,7 +1976,7 @@
  		public synchronized int available() throws IOException
  		{
  			if ( monThreadisInterrupted == true )
-@@ -1587,7 +1798,7 @@
+@@ -1587,7 +1798,7 @@ Documentation is at http://java.sun.com/
  				return(0);
  			}
  			if ( debug_verbose )
@@ -1987,7 +1985,7 @@
  			synchronized (IOLockedMutex) {
  				IOLocked++;
  			}
-@@ -1595,7 +1806,7 @@
+@@ -1595,7 +1806,7 @@ Documentation is at http://java.sun.com/
  			{
  				int r = nativeavailable();
  				if ( debug_verbose )
@@ -1996,7 +1994,7 @@
  						r );
  				return r;
  			}
-@@ -1608,7 +1819,7 @@
+@@ -1608,7 +1819,7 @@ Documentation is at http://java.sun.com/
  		}
  	}
  	/**
@@ -2005,7 +2003,7 @@
  	class MonitorThread extends Thread
  	{
  	/** Note: these have to be separate boolean flags because the
-@@ -1628,30 +1839,30 @@
+@@ -1628,30 +1839,30 @@ Documentation is at http://java.sun.com/
  		MonitorThread() 
  		{
  			if (debug)
@@ -2045,26 +2043,24 @@
  	public void setRcvFifoTrigger(int trigger){};  
  
  /*------------------------  END OF CommAPI -----------------------------*/
-@@ -1724,542 +1935,542 @@
+@@ -1724,542 +1935,542 @@ Documentation is at http://java.sun.com/
  		throws UnsupportedCommOperationException;
  
  	/**
 -	*  Extension to CommAPI
 -	*  This is an extension to CommAPI.  It may not be supported on
 -	*  all operating systems.
--	*
++	*	Extension to CommAPI
++	*	This is an extension to CommAPI.  It may not be supported on
++	*	all operating systems.
+ 	*
 -	*  This is only accurate up to 38600 baud currently.
--	*
++	*	This is only accurate up to 38600 baud currently.
+ 	*
 -	*  @param  port the name of the port thats been preopened
 -	*  @return BaudRate on success
 -	*  @throws UnsupportedCommOperationException;
 -	*  This will not behave as expected with custom speeds
-+	*	Extension to CommAPI
-+	*	This is an extension to CommAPI.  It may not be supported on
-+	*	all operating systems.
-+	*
-+	*	This is only accurate up to 38600 baud currently.
-+	*
 +	*	@param  port the name of the port thats been preopened
 +	*	@return BaudRate on success
 +	*	@throws UnsupportedCommOperationException;
@@ -2086,14 +2082,13 @@
 -	*  Extension to CommAPI
 -	*  This is an extension to CommAPI.  It may not be supported on
 -	*  all operating systems.
--	*
--	*  @param  port the name of the port thats been preopened
--	*  @return DataBits on success
--	*  @throws UnsupportedCommOperationException;
 +	*	Extension to CommAPI
 +	*	This is an extension to CommAPI.  It may not be supported on
 +	*	all operating systems.
-+	*
+ 	*
+-	*  @param  port the name of the port thats been preopened
+-	*  @return DataBits on success
+-	*  @throws UnsupportedCommOperationException;
 +	*	@param  port the name of the port thats been preopened
 +	*	@return DataBits on success
 +	*	@throws UnsupportedCommOperationException;
@@ -2115,14 +2110,13 @@
 -	*  Extension to CommAPI
 -	*  This is an extension to CommAPI.  It may not be supported on
 -	*  all operating systems.
--	*
--	*  @param  port the name of the port thats been preopened
--	*  @return Parity on success
--	*  @throws UnsupportedCommOperationException;
 +	*	Extension to CommAPI
 +	*	This is an extension to CommAPI.  It may not be supported on
 +	*	all operating systems.
-+	*
+ 	*
+-	*  @param  port the name of the port thats been preopened
+-	*  @return Parity on success
+-	*  @throws UnsupportedCommOperationException;
 +	*	@param  port the name of the port thats been preopened
 +	*	@return Parity on success
 +	*	@throws UnsupportedCommOperationException;
@@ -2144,14 +2138,13 @@
 -	*  Extension to CommAPI
 -	*  This is an extension to CommAPI.  It may not be supported on
 -	*  all operating systems.
--	*
--	*  @param  port the name of the port thats been preopened
--	*  @return StopBits on success
--	*  @throws UnsupportedCommOperationException;
 +	*	Extension to CommAPI
 +	*	This is an extension to CommAPI.  It may not be supported on
 +	*	all operating systems.
-+	*
+ 	*
+-	*  @param  port the name of the port thats been preopened
+-	*  @return StopBits on success
+-	*  @throws UnsupportedCommOperationException;
 +	*	@param  port the name of the port thats been preopened
 +	*	@return StopBits on success
 +	*	@throws UnsupportedCommOperationException;
@@ -2173,7 +2166,10 @@
 -	*  Extension to CommAPI
 -	*  This is an extension to CommAPI.  It may not be supported on
 -	*  all operating systems.
--	*
++	*	Extension to CommAPI
++	*	This is an extension to CommAPI.  It may not be supported on
++	*	all operating systems.
+ 	*
 -	*  Set the SerialPort parameters
 -	*  1.5 stop bits requires 5 databits
 -	*  @param  f filename
@@ -2181,14 +2177,6 @@
 -	*  @param  d databits
 -	*  @param  s stopbits
 -	*  @param  p parity
--	*
--	*  @throws UnsupportedCommOperationException
--	*  @see gnu.io.UnsupportedCommOperationException
--	*/
-+	*	Extension to CommAPI
-+	*	This is an extension to CommAPI.  It may not be supported on
-+	*	all operating systems.
-+	*
 +	*	Set the SerialPort parameters
 +	*	1.5 stop bits requires 5 databits
 +	*	@param  f filename
@@ -2196,7 +2184,10 @@
 +	*	@param  d databits
 +	*	@param  s stopbits
 +	*	@param  p parity
-+	*
+ 	*
+-	*  @throws UnsupportedCommOperationException
+-	*  @see gnu.io.UnsupportedCommOperationException
+-	*/
 +	*	@throws UnsupportedCommOperationException
 +	*	@see gnu.io.UnsupportedCommOperationException
 +	**/
@@ -2218,14 +2209,13 @@
 -	*  Extension to CommAPI
 -	*  This is an extension to CommAPI.  It may not be supported on
 -	*  all operating systems.
--	*
--	*  Open the port and set DSR.  remove lockfile and do not close
--	*  This is so some software can appear to set the DSR before 'opening'
--	*  the port a second time later on.
 +	*	Extension to CommAPI
 +	*	This is an extension to CommAPI.  It may not be supported on
 +	*	all operating systems.
-+	*
+ 	*
+-	*  Open the port and set DSR.  remove lockfile and do not close
+-	*  This is so some software can appear to set the DSR before 'opening'
+-	*  the port a second time later on.
 +	*	Open the port and set DSR.  remove lockfile and do not close
 +	*	This is so some software can appear to set the DSR before 'opening'
 +	*	the port a second time later on.
@@ -2252,14 +2242,13 @@
 -	*  Extension to CommAPI
 -	*  This is an extension to CommAPI.  It may not be supported on
 -	*  all operating systems.
--	*
--	*  Open the port and set DTR.  remove lockfile and do not close
--	*  This is so some software can appear to set the DTR before 'opening'
--	*  the port a second time later on.
 +	*	Extension to CommAPI
 +	*	This is an extension to CommAPI.  It may not be supported on
 +	*	all operating systems.
-+	*
+ 	*
+-	*  Open the port and set DTR.  remove lockfile and do not close
+-	*  This is so some software can appear to set the DTR before 'opening'
+-	*  the port a second time later on.
 +	*	Open the port and set DTR.  remove lockfile and do not close
 +	*	This is so some software can appear to set the DTR before 'opening'
 +	*	the port a second time later on.
@@ -2286,14 +2275,13 @@
 -	*  Extension to CommAPI
 -	*  This is an extension to CommAPI.  It may not be supported on
 -	*  all operating systems.
--	*
--	*  Open the port and set RTS.  remove lockfile and do not close
--	*  This is so some software can appear to set the RTS before 'opening'
--	*  the port a second time later on.
 +	*	Extension to CommAPI
 +	*	This is an extension to CommAPI.  It may not be supported on
 +	*	all operating systems.
-+	*
+ 	*
+-	*  Open the port and set RTS.  remove lockfile and do not close
+-	*  This is so some software can appear to set the RTS before 'opening'
+-	*  the port a second time later on.
 +	*	Open the port and set RTS.  remove lockfile and do not close
 +	*	This is so some software can appear to set the RTS before 'opening'
 +	*	the port a second time later on.

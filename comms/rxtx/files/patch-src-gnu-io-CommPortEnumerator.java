@@ -1,6 +1,6 @@
---- src/gnu/io/CommPortEnumerator.java.orig	2007-04-26 06:26:05.000000000 +0100
-+++ src/gnu/io/CommPortEnumerator.java	2015-05-11 16:51:34.000000000 +0100
-@@ -69,50 +69,79 @@
+--- src/gnu/io/CommPortEnumerator.java.orig	2007-04-26 05:26:05 UTC
++++ src/gnu/io/CommPortEnumerator.java
+@@ -69,50 +69,79 @@ import java.util.Enumeration;
  class CommPortEnumerator implements Enumeration
  {
  	private CommPortIdentifier index;
