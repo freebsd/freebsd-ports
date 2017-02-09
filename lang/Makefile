@@ -265,6 +265,7 @@
     SUBDIR += ptoc
     SUBDIR += pure
     SUBDIR += py-clojure
+    SUBDIR += py-hy
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
     SUBDIR += py-qt5-qml
