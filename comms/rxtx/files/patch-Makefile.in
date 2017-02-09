@@ -1,5 +1,5 @@
---- Makefile.in.orig	2008-12-31 10:29:12.000000000 +0800
-+++ Makefile.in	2014-05-23 10:05:55.350336425 +0800
+--- Makefile.in.orig	2008-12-31 02:29:12 UTC
++++ Makefile.in
 @@ -619,13 +619,15 @@ $(CLASSES): $(javafiles) $(TOP)/Makefile
  #  install librxtxSerial.so into the proper directory and copy $(JARTARGET) to its
  #  proper location

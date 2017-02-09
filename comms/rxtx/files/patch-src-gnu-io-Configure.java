@@ -1,6 +1,6 @@
---- src/gnu/io/Configure.java.orig	2007-11-18 22:32:41.000000000 +0000
-+++ src/gnu/io/Configure.java	2015-05-11 16:51:34.000000000 +0100
-@@ -61,6 +61,7 @@
+--- src/gnu/io/Configure.java.orig	2007-11-18 22:32:41 UTC
++++ src/gnu/io/Configure.java
+@@ -61,6 +61,7 @@ import java.awt.*;
  import java.awt.event.*;
  import java.io.*;
  
@@ -8,7 +8,7 @@
  class Configure extends Frame
  {
  	Checkbox cb[];
-@@ -68,7 +69,9 @@
+@@ -68,7 +69,9 @@ class Configure extends Frame
  	static final int PORT_SERIAL	=	1;
  	static final int PORT_PARALLEL	=	2;
  	int PortType = PORT_SERIAL;
@@ -19,7 +19,7 @@
  	private void saveSpecifiedPorts()
  	{
  		String filename;
-@@ -212,7 +215,9 @@
+@@ -212,7 +215,9 @@ class Configure extends Frame
  	}
  	public static void main (String[] args)
  	{
