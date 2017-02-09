@@ -87,6 +87,7 @@ lib/postgresql/postgis-2.2.so
 %%DATADIR%%/utils/test_geography_estimation.pl
 %%DATADIR%%/utils/test_geography_joinestimation.pl
 %%DATADIR%%/utils/test_joinestimation.pl
+%%LOADERGUI%%share/postgresql/applications/shp2pgsql-gui.desktop
 share/postgresql/contrib/postgis-2.2/legacy.sql
 share/postgresql/contrib/postgis-2.2/legacy_gist.sql
 share/postgresql/contrib/postgis-2.2/legacy_minimal.sql
@@ -145,7 +146,7 @@ share/postgresql/contrib/postgis-2.2/uninstall_postgis.sql
 %%RASTER%%share/postgresql/extension/postgis--2.2.1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--2.2.2--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--2.2.3--%%PORTVERSION%%.sql
-%%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis--2.2.4--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -171,7 +172,9 @@ share/postgresql/contrib/postgis-2.2/uninstall_postgis.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.1.9--%%PORTVERSION%%.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.2.0--%%PORTVERSION%%.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.2.1--%%PORTVERSION%%.sql
-%%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%--%%PORTVERSION%%.sql
+%%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.2.2--%%PORTVERSION%%.sql
+%%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.2.3--%%PORTVERSION%%.sql
+%%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--2.2.4--%%PORTVERSION%%.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%.sql
 %%RASTER%%%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -199,7 +202,7 @@ share/postgresql/contrib/postgis-2.2/uninstall_postgis.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.2.1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.2.2--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.2.3--%%PORTVERSION%%.sql
-%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--2.2.4--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -228,9 +231,19 @@ share/postgresql/contrib/postgis-2.2/uninstall_postgis.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--2.2.1--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--2.2.2--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--2.2.3--%%PORTVERSION%%.sql
-%%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%--%%PORTVERSION%%.sql
+%%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--2.2.4--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%next--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology--unpackaged--%%PORTVERSION%%.sql
 %%RASTER%%%%TOPOLOGY%%share/postgresql/extension/postgis_topology.control
+%%LOADERGUI%%share/postgresql/icons/hicolor/16x16/apps/shp2pgsql-gui.png
+%%LOADERGUI%%share/postgresql/icons/hicolor/22x22/apps/shp2pgsql-gui.png
+%%LOADERGUI%%share/postgresql/icons/hicolor/24x24/apps/shp2pgsql-gui.png
+%%LOADERGUI%%share/postgresql/icons/hicolor/32x32/apps/shp2pgsql-gui.png
+%%LOADERGUI%%share/postgresql/icons/hicolor/36x36/apps/shp2pgsql-gui.png
+%%LOADERGUI%%share/postgresql/icons/hicolor/40x40/apps/shp2pgsql-gui.png
+%%LOADERGUI%%share/postgresql/icons/hicolor/42x42/apps/shp2pgsql-gui.png
+%%LOADERGUI%%share/postgresql/icons/hicolor/48x48/apps/shp2pgsql-gui.png
+%%LOADERGUI%%share/postgresql/icons/hicolor/64x64/apps/shp2pgsql-gui.png
+%%LOADERGUI%%share/postgresql/icons/hicolor/8x8/apps/shp2pgsql-gui.png
