@@ -3,6 +3,7 @@
 
 PORTNAME=	salt
 PORTVERSION=	2016.11.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,6 +45,21 @@ CPE_VENDOR=	saltstack
 CPE_PRODUCT=	salt
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+
+# we must pass these options before the target name, and python.mk has no
+# early-arguments variable, so we have to manipulate the target
+PYDISTUTILS_INSTALL_TARGET=\
+	--salt-root-dir=/ \
+	--salt-config-dir=${ETCDIR} \
+	--salt-cache-dir=/var/cache/salt \
+	--salt-sock-dir=/var/run/salt \
+	--salt-srv-root-dir=${ETCDIR} \
+	--salt-base-file-roots-dir=${ETCDIR}/states \
+	--salt-base-pillar-roots-dir=${ETCDIR}/pillar \
+	--salt-base-master-roots-dir=${ETCDIR}/salt-master \
+	--salt-logs-dir=/var/log/salt \
+	--salt-pidfile-dir=/var/run \
+	install
 
 USE_RC_SUBR=	salt_api \
 		salt_master \
