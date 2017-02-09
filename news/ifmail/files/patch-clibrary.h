@@ -1,6 +1,6 @@
---- iflib/clibrary.h.orig	Sat Sep 11 17:16:11 1993
-+++ iflib/clibrary.h	Mon Jul 22 19:38:20 2002
-@@ -102,9 +102,11 @@
+--- iflib/clibrary.h.orig	1993-09-11 15:16:11 UTC
++++ iflib/clibrary.h
+@@ -102,9 +102,11 @@ extern unsigned long	inet_addr();
  extern FREEVAL		free();
  extern POINTER		malloc();
  extern POINTER		realloc();
@@ -12,7 +12,7 @@
  
  /* Some backward systems need this. */
  extern FILE	*popen();
-@@ -121,8 +123,10 @@
+@@ -121,8 +123,10 @@ extern int	alarm();
  extern void	exit();
  /* =()<extern @<GETPIDVAL>@	getpid();>()= */
  extern int	getpid();

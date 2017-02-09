@@ -1,5 +1,5 @@
---- iflib/directory.h.orig	Sat Nov 15 16:22:07 1997
-+++ iflib/directory.h	Sat Nov 15 16:22:17 1997
+--- iflib/directory.h.orig	1994-11-11 21:44:05 UTC
++++ iflib/directory.h
 @@ -8,6 +8,7 @@
   * Written by stefan@space.s-link.de (Stefan Westerfeld)
   */

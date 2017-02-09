@@ -1,5 +1,5 @@
---- ifcico/flaglex.l.orig	1995-03-04 10:56:34.000000000 +0100
-+++ ifcico/flaglex.l	2013-05-27 15:29:03.783061252 +0200
+--- ifcico/flaglex.l.orig	1995-03-04 09:56:34 UTC
++++ ifcico/flaglex.l
 @@ -1,3 +1,4 @@
 +%option noyywrap
  %{

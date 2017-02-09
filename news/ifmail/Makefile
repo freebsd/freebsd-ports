@@ -2,18 +2,20 @@
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	news comms
 MASTER_SITES=	SUNSITE/system/fido
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FidoNet(tm) support package for UN*X platform
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/README
+
 USES=		shebangfix
 USERS=		ifmail
 CFLAGS+=	-DHAS_STDARG_H -Wall
-GID!=		id -g
-MAKE_ARGS=	OWNER=${UID} CC="${CC}" GROUP=${GID} CFLAGS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" OWNER=${UID} GROUP=$$(id -g)
 
 LMAN3=		parsedate.3
 LMAN8=		ifmail.8 iftoss.8
@@ -43,6 +45,10 @@ SHEBANG_FILES=	misc/contrib/a2dbm \
 		misc/contrib/u-tic/u-tic.pl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+do-configure:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/CONFIG
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/ifmail

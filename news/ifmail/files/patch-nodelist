@@ -1,6 +1,6 @@
---- ifcico/nodelist.c.orig	Sat Oct  4 11:21:44 1997
-+++ ifcico/nodelist.c	Mon Jul 16 20:24:13 2001
-@@ -207,7 +207,7 @@
+--- ifcico/nodelist.c.orig	1997-10-04 09:21:44 UTC
++++ ifcico/nodelist.c
+@@ -207,7 +207,7 @@ faddr *addr;
  	debug(20,"getnlent: phone	%s",nodebuf.phone);
  	debug(20,"getnlent: speed	%u",nodebuf.speed);
  	debug(20,"getnlent: flags	0x%lx",nodebuf.flags);
@@ -9,8 +9,8 @@
  		debug(20,"getnlent: uflag	%s",nodebuf.uflags[j]);
  
  	return &nodebuf;
---- ifcico/nodelist.h.orig	Sat Oct 29 12:19:33 1994
-+++ ifcico/nodelist.h	Sun Jul  1 10:57:18 2001
+--- ifcico/nodelist.h.orig	1994-10-29 11:19:33 UTC
++++ ifcico/nodelist.h
 @@ -3,7 +3,7 @@
  
  #include "ftn.h"
