@@ -10,6 +10,11 @@ DISTNAME=	${PDISTNAME}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Web Development Framework
 
+# Cocoon version 2.2.0 released OCT 2014, makefile requires complete overhaul
+# It also requires a maintainer, it's too complex for ports@FreeBSD.org
+DEPRECATED=	Overly complex port with no maintainer since 2008, requires openjdk 1.6
+EXPIRATION_DATE=	2017-04-30
+
 USE_RC_SUBR=	${PORTNAME}
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
