@@ -185,7 +185,7 @@ CONFIGURE_ARGS+=	--enable-renderer=${GNASH_RENDERERS:S/^ //W:S/ /,/gW}
 #
 .if ${PORT_OPTIONS:MVAAPI}
 .if empty(PORT_OPTIONS:MFFMPEG)
-IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG
+IGNORE=			option VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG
 .endif
 LIB_DEPENDS+=		libva.so:multimedia/libva
 CONFIGURE_ARGS+=	--enable-device=egl,x11,vaapi

@@ -1,6 +1,6 @@
---- gui/gtk/gtk_canvas.cpp.orig	2012-01-19 19:17:48 UTC
+--- gui/gtk/gtk_canvas.cpp.orig	2016-07-21 12:25:09 UTC
 +++ gui/gtk/gtk_canvas.cpp
-@@ -212,7 +212,7 @@ gnash_canvas_setup(GnashCanvas *canvas, 
+@@ -211,7 +211,7 @@ gnash_canvas_setup(GnashCanvas *canvas, 
          renderer = "agg";
  #elif defined (RENDERER_CAIRO)
          renderer = "cairo";
