@@ -1,6 +1,6 @@
---- C64_x.i.orig	Wed Aug  6 20:56:25 1997
-+++ C64_x.i	Mon Apr 26 21:50:36 1999
-@@ -100,7 +100,7 @@
+--- C64_x.i.orig	2002-01-02 21:16:45 UTC
++++ C64_x.i
+@@ -100,7 +100,7 @@ void C64::c64_ctor1(void)
  	gui = 0;
  #else
  	// try to start up Tk gui.

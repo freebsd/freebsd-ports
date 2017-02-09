@@ -1,6 +1,6 @@
---- plugin/klash/klash_part.cpp.orig	2011-06-16 18:54:16.833252653 -0400
-+++ plugin/klash/klash_part.cpp	2011-06-16 18:54:56.913835639 -0400
-@@ -161,7 +161,7 @@
+--- plugin/klash/klash_part.cpp.orig	2016-07-21 12:25:09 UTC
++++ plugin/klash/klash_part.cpp
+@@ -160,7 +160,7 @@ KDE_NO_EXPORT void KlashPart::play ()
      QString procname;
      char *gnash_env = getenv("KLASH_PLAYER");
      if (!gnash_env) {

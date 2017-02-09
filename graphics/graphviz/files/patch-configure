@@ -1,6 +1,6 @@
---- configure.orig	2014-04-13 22:41:48.000000000 +0200
-+++ configure	2015-09-05 16:25:22.901752000 +0200
-@@ -17827,6 +17827,9 @@
+--- configure.orig	2016-12-25 03:04:52 UTC
++++ configure
+@@ -18067,6 +18067,9 @@ test -n "$RC" || RC="false"
  	        CFLAGS="${CFLAGS} -fno-common -Wall"
  	        LDFLAGS="${LDFLAGS} -Wl,-headerpad_max_install_names"
  	        ;;
@@ -10,7 +10,7 @@
  	    *-freebsd* )
  	        CFLAGS="${CFLAGS} -Wstrict-prototypes -Wpointer-arith -Wall -ffast-math"
  		    ;;
-@@ -21101,7 +21104,7 @@
+@@ -20954,7 +20957,7 @@ done
        if test "x$GUILE" = "x"; then
          use_guile="No (guile not available)"
        else
@@ -19,7 +19,7 @@
          GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
          GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
          if test 0$GUILE_VERSION_MAJOR -lt 2; then
-@@ -21669,7 +21672,9 @@
+@@ -21522,7 +21525,9 @@ fi
  
          LUA_INCLUDES=""
          LUA_LIBS=""
@@ -30,7 +30,7 @@
  
          if test -n "$lua_inc"; then
             CFLAGS="$CFLAGS -I$lua_inc"
-@@ -21731,13 +21736,13 @@
+@@ -21584,13 +21589,13 @@ $as_echo_n "checking for Lua headers and
  	            pkgconfig_lua_found=`$PKGCONFIG --exists lua$l 2>/dev/null`
  	            if test "x$?" = "x0" ; then
  		        LUA_VERSION=`$PKGCONFIG --modversion lua$l`

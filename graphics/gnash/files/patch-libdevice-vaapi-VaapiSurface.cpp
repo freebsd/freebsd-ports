@@ -1,6 +1,6 @@
---- libdevice/vaapi/VaapiSurface.cpp.orig	2012-01-19 20:17:48.000000000 +0100
-+++ libdevice/vaapi/VaapiSurface.cpp	2013-07-05 01:44:21.927681308 +0200
-@@ -62,8 +62,8 @@
+--- libdevice/vaapi/VaapiSurface.cpp.orig	2016-07-21 12:25:09 UTC
++++ libdevice/vaapi/VaapiSurface.cpp
+@@ -62,8 +62,8 @@ public:
      VAStatus status;
      VASurfaceID surface_id;
      status = vaCreateSurfaces(gvactx->display(),
