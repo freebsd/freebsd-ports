@@ -4625,6 +4625,7 @@
     SUBDIR += py-rope
     SUBDIR += py-rose
     SUBDIR += py-roxlib
+    SUBDIR += py-rply
     SUBDIR += py-rq
     SUBDIR += py-rtree
     SUBDIR += py-rtslib-fb
