@@ -21,6 +21,8 @@ USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 
+CFLAGS_aarch64=	-fPIC
+
 INFO=	talkfilters
 
 post-extract:

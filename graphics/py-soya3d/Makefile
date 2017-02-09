@@ -27,6 +27,8 @@ USE_GL=		glew glu
 USE_PYTHON=	autoplist distutils
 USE_SDL=	sdl
 
+CFLAGS_aarch64=	-fPIC
+CFLAGS_amd64=	-fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -lGLU
 
 SOYATUTVER=	0.14
@@ -44,10 +46,6 @@ DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS	+=	-fPIC
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
