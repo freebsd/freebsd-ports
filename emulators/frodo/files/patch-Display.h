@@ -1,6 +1,6 @@
---- Display.h.orig	Sat Nov 30 01:14:14 2002
-+++ Display.h	Sat Nov 30 01:14:37 2002
-@@ -112,7 +112,7 @@
+--- Display.h.orig	2002-01-02 21:31:34 UTC
++++ Display.h
+@@ -121,7 +121,7 @@ private:
  
  #ifdef __unix
  	void draw_led(int num, int state);	// Draw one LED

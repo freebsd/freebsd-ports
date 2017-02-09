@@ -32,10 +32,6 @@ USE_SDL=	sdl
 post-patch:
 	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${INSTALL_WRKSRC}/TkGui.tcl
-.if ${PORT_OPTIONS:MSDL}
-	${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|g" \
-		${WRKSRC}/configure
-.endif
 
 do-install:
 	${SED} -e 's=\$${PREFIX}=${PREFIX}=g' \
