@@ -100,6 +100,7 @@ RUBY_USE=	RUBY=yes
 LUA_USES=	lua
 TCL_USES=	tcl:build
 TK_USES=	tk:build
+TK_IMPLIES=	TCL
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 ANN_LIB_DEPENDS=	libann.so:math/ann
 GTS_LIB_DEPENDS=	libgts.so:graphics/gts
@@ -113,23 +114,30 @@ GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
 XPM_CONFIGURE_WITH=		x
 DIGCOLA_CONFIGURE_WITH=		digcola
 IPSEPCOLA_CONFIGURE_WITH=	ipsepcola
+IPSEPCOLA_IMPLIES=		DIGCOLA
 NLS_CONFIGURE_ENABLE=		nls
 PANGOCAIRO_CONFIGURE_WITH=	pangocairo
 LIBRSVG2_CONFIGURE_WITH=	rsvg
+LIBRSVG2_IMPLIES=		PANGOCAIRO
 POPPLER_CONFIGURE_WITH=		poppler
 ANN_CONFIGURE_WITH=		ann
 ANN_CONFIGURE_ENV=	ANN_CFLAGS=-I${LOCALBASE}/include ANN_LIBS=-lann
 GTS_CONFIGURE_WITH=		gts
 GTK2_CONFIGURE_WITH=		gtk
+GTK2_IMPLIES=			PANGOCAIRO
 GDK_CONFIGURE_WITH=		gdk
 GDK_PIXBUF_CONFIGURE_WITH=	gdk-pixbuf
+GDK_PIXBUF_IMPLIES=		GTK2 GDK
 GNOMEUI_CONFIGURE_WITH=		gnomeui
+GNOMEUI_IMPLIES=		GTK2
 SMYRNA_CONFIGURE_WITH=		smyrna glade gtkgl gtkglext
+SMYRNA_IMPLIES=			GTK2 GTS
 GVEDIT_CONFIGURE_ON=		--with-gvedit=yes
 GVEDIT_CONFIGURE_OFF=		--with-qt=no
 MING_CONFIGURE_WITH=		ming
 DEVIL_CONFIGURE_WITH=		devil
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-ghostscript=no
+GHOSTSCRIPT_IMPLIES=		PANGOCAIRO
 PERL_CONFIGURE_ENABLE=		perl
 PHP_CONFIGURE_ENABLE=		php
 PHP_CPPFLAGS=		-I${LOCALBASE}/include/php/Zend
@@ -172,9 +180,6 @@ BROKEN=	Ming incomplete, uses removed libgraph
 .endif
 
 .if ${PORT_OPTIONS:MTK}
-.if empty(PORT_OPTIONS:MTCL)
-IGNORE=	option TCL is required for option TK
-.endif
 # USES=tk:build is BROKEN: Does not allow to set both tcl and tk depedencies
 BUILD_DEPENDS+=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
 .endif
@@ -188,52 +193,6 @@ CONFIGURE_ARGS+=	--with-iconvlibdir=${ICONV_PREFIX}/lib
 CONFIGURE_ARGS+=	--with-iconvincludedir=${ICONV_PREFIX}/include
 .else
 CONFIGURE_ARGS+=	--without-libiconv-prefix
-.endif
-
-.if ${PORT_OPTIONS:MLIBRSVG2}
-.if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=	option PANGOCAIRO is required for option LIBRVG2
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGHOSTSCRIPT}
-.if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=	option PANGOCAIRO is required for option GHOSTSCRIPT
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-.if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=	option PANGOCAIRO is required for option GTK2
-.endif
-.else
-.if ${PORT_OPTIONS:MGNOMEUI}
-IGNORE=	option GTK2 is required for option GNOMEUI
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGDK_PIXBUF}
-.if empty(PORT_OPTIONS:MGTK2)
-IGNORE=	option GTK2 is required for option GDK_PIXBUF
-.endif
-.if empty(PORT_OPTIONS:MGDK)
-IGNORE=	option GDK is required for option GDK_PIXBUF
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MSMYRNA}
-.if empty(PORT_OPTIONS:MGTK2)
-IGNORE=	option GTK2 is required for option SMYRNA
-.endif
-.if empty(PORT_OPTIONS:MGTS)
-IGNORE=	option GTS is required for option SMYRNA
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MIPSEPCOLA}
-.if empty(PORT_OPTIONS:MDIGCOLA)
-IGNORE=		option WITH_DIGCOLA is required for option WITH_IPSEPCOLA
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MPERL} || ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || \
