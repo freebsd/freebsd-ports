@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emms
-PORTVERSION=	4.0
-PORTREVISION=	2
+PORTVERSION=	4.2
 CATEGORIES=	audio elisp
 MASTER_SITES=	GNU
 
@@ -21,7 +20,7 @@ INFO=		emms
 
 .include <bsd.port.pre.mk>
 
-.if ${EMACS_PORT_NAME} != "emacs23"
+.if ${EMACS_PORT_NAME} != "emacs25"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
@@ -35,7 +34,6 @@ post-patch:
 		 s|^\(INSTALLINFO\) =|INSTALLINFO ?=| ; \
 		 s| \($$(SITELISP)\)| $$(DESTDIR)\1|g ; \
 		 s| \($$(INFODIR)\)| $$(DESTDIR)\1|g ; \
-		 s|\($$(INFODIR)\)/emms|\1| ; \
 		 s| \($$(MAN1DIR)\)| $$(DESTDIR)\1|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
