@@ -12,6 +12,9 @@ DISTNAME=	jdk-6u30-apidocs
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
 
+DEPRECATED=	Should have been removed with linux-sun-jdk16 (2014-05-11)
+EXPIRATION_DATE=	2017-02-28 
+
 DOCSDIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 RESTRICTED=	This documentation is under license and export control.
 
