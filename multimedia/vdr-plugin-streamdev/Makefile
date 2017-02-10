@@ -12,16 +12,22 @@ DISTFILES=	${DISTNAME:S/plugin-//}${EXTRACT_SUFX}:release
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - stream device plugin
 
-RUN_DEPENDS+=	bash:shells/bash
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		shebangfix tar:tgz
 SHEBANG_FILES=	streamdev-server/externremux.sh
-PORTDOCS=	COPYING README HISTORY
-HAVE_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
-VDR_PLUGIN_MAKEFILES=	${WRKSRC}/client/Makefile \
+VDR_PLUGIN_MAKEFILES=\
+		${WRKSRC}/client/Makefile \
 		${WRKSRC}/server/Makefile
+
+PORTDOCS=	README HISTORY
+
+OPTIONS_DEFINE=	DOCS NLS
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
@@ -40,11 +46,13 @@ pre-install:
 
 post-install: post-install-pluginlocales
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}-server
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}-server/externremux.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/${PLUGIN}-server/externremux.sh \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}-server/externremux.sh.sample
-	@${INSTALL_DATA} ${WRKSRC}/${PLUGIN}-server/streamdevhosts.conf \
+	${INSTALL_DATA} ${WRKSRC}/${PLUGIN}-server/streamdevhosts.conf \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/${PLUGIN}-server/streamdevhosts.conf.sample
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
