@@ -10,6 +10,9 @@ DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VER}-docs-all
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
 
+DEPRECATED=	Should have been removed with linux-sun-jdk17 (2016-04-24)
+EXPIRATION_DATE=	2017-02-28 
+
 DOCSDIR?=	${PREFIX}/share/doc/jdk${JDK_VERSION}
 RESTRICTED=	This documentation is under license and export control.
 
