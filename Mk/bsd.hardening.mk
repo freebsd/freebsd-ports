@@ -97,4 +97,16 @@ SAFESTACK_USES=		safestack
 OPTIONS_DEFAULT+=	SAFESTACK
 .endif
 
+###################
+### CFI support ###
+###################
+
+OPTIONS_DEFINE+=	CFIHARDEN
+CFIHARDEN_DESC=		Build with CFI (Requires lld 4.0.0 in base)
+CFIHARDEN_USES=		cfi
+
+.if defined(EXPLICIT_CFIHARDEN)
+OPTIONS_DEFAULT+=	CFIHARDEN
+.endif
+
 .endif # !__BSD_PORT_HARDENING_MK
