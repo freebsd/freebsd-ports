@@ -1,4 +1,4 @@
-# Created by: Gran Runfeldt <goranrunfeldt@home.se>
+# Created by: Göran Runfeldt <goranrunfeldt@home.se>
 # $FreeBSD$
 
 PORTNAME=	xtux
