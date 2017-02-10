@@ -29,21 +29,11 @@ CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}" \
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 MAKE_JOBS_UNSAFE=	yes
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
+NOPIE_PORTS=		yes
 
-PLIST_SUB+=	GPROLOG_VER=${PORTVERSION}
-
-OPTIONS_DEFINE=	FD DOCS EXAMPLES
-OPTIONS_DEFAULT=FD
-FD_DESC=	Enable finite domain constraint solver
-
-.include <bsd.port.options.mk>
-=======
 OPTIONS_DEFINE=		FD DOCS EXAMPLES
 OPTIONS_DEFAULT=	FD
 OPTIONS_SUB=		yes
->>>>>>> upstream/master
 
 FD_DESC=		Enable finite domain constraint solver
 FD_CONFIGURE_OFF=	--disable-fd-solver
