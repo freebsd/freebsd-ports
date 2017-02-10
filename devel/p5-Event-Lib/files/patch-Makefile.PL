@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Tue Mar  7 08:37:40 2006
-+++ Makefile.PL	Mon Jun  5 23:31:13 2006
-@@ -2,7 +2,11 @@
+--- Makefile.PL.orig	2007-07-29 11:14:02 UTC
++++ Makefile.PL
+@@ -2,7 +2,11 @@ use 5.006;
  use ExtUtils::MakeMaker;
  use Config;
  
@@ -13,9 +13,7 @@
  
  # purge @ARGV of CCFLAGS
  
---- Makefile.PL
-+++ Makefile.PL
-@@ -17,8 +17,9 @@ sub have_libevent {
+@@ -13,8 +17,9 @@ sub have_libevent {
      my $LIBS = $args{ LIBS } || "-levent";
      my $INC = $args{ INC } || "-I/usr/include";
      if ($^O eq "freebsd") {
@@ -27,7 +25,7 @@
      }
      elsif ($^O eq "darwin") {
        $LIBS = "$LIBS -L/sw/lib -L/opt/local/lib";
-@@ -59,8 +60,9 @@ sub get_defines {
+@@ -55,8 +60,9 @@ sub get_defines {
      my $LIBS = $args{ LIBS } || "-levent";
      my $INC = $args{ INC } || "-I/usr/include";
      if ($^O eq "freebsd") {
@@ -39,7 +37,7 @@
      }
      elsif ($^O eq "darwin") {
        $LIBS = "-L/sw/lib -L/opt/local/lib $LIBS";
-@@ -100,6 +102,12 @@ EOD
+@@ -96,6 +102,12 @@ EOD
  
  $args{LIBS} = '-levent -lm' if ! exists $args{LIBS};
  

@@ -1685,6 +1685,7 @@
     SUBDIR += py-jonpy
     SUBDIR += py-jswebkit
     SUBDIR += py-kallithea
+    SUBDIR += py-libsass
     SUBDIR += py-mechanize
     SUBDIR += py-meld
     SUBDIR += py-meld3

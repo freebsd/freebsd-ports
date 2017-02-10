@@ -21,6 +21,7 @@ lib/cmake/FcitxQt5WidgetsAddons/FcitxQt5WidgetsAddonsConfig.cmake
 lib/cmake/FcitxQt5WidgetsAddons/FcitxQt5WidgetsAddonsConfigVersion.cmake
 lib/cmake/FcitxQt5WidgetsAddons/FcitxQt5WidgetsAddonsTargets-release.cmake
 lib/cmake/FcitxQt5WidgetsAddons/FcitxQt5WidgetsAddonsTargets.cmake
+lib/fcitx/libexec/fcitx-qt5-gui-wrapper
 lib/libFcitxQt5DBusAddons.so
 lib/libFcitxQt5DBusAddons.so.1
 lib/libFcitxQt5DBusAddons.so.1.0

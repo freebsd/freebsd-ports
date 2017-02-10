@@ -1,6 +1,6 @@
---- Makefile.in.orig
+--- Makefile.in.orig	2016-10-23 12:09:24 UTC
 +++ Makefile.in
-@@ -812,8 +812,8 @@
+@@ -851,8 +851,8 @@ endif
  #
  
  

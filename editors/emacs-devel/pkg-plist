@@ -3828,6 +3828,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/woman.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/x-dnd.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/x-dnd.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/xdg.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/xdg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/xml.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/xml.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/xt-mouse.el.gz

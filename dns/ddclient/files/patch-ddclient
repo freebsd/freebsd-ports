@@ -1,14 +1,14 @@
---- ./ddclient.orig	2011-07-25 19:41:39.000000000 -0700
-+++ ./ddclient	2011-07-25 19:41:48.000000000 -0700
-@@ -19,6 +18,7 @@
+--- ddclient.orig	2015-05-30 21:37:38.000000000 +1200
++++ ddclient	2017-02-08 11:00:23.812579000 +1300
+@@ -25,6 +25,7 @@
  use Getopt::Long;
  use Sys::Hostname;
  use IO::Socket;
 +use POSIX 'setsid';
  
- my ($VERSION) = q$Revision: 157 $ =~ /(\d+)/;
+ # my ($VERSION) = q$Revision: 184 $ =~ /(\d+)/;
  
-@@ -29,9 +29,9 @@
+@@ -35,9 +36,9 @@
  $program  =~ s/d$//;
  my $now       = time;
  my $hostname  = hostname();
@@ -21,7 +21,7 @@
  my $msgs      = '';
  my $last_msgs = '';
  
-@@ -39,7 +39,7 @@
+@@ -45,7 +46,7 @@
  local $file   = '';
  local $lineno = '';
  
@@ -30,7 +30,7 @@
  
  sub T_ANY	{'any'};
  sub T_STRING	{'string'};
-@@ -678,6 +678,9 @@
+@@ -743,6 +744,9 @@
      ;
  } elsif (opt('daemon')) {
      $SIG{'CHLD'}   = 'IGNORE';
@@ -40,7 +40,7 @@
      my $pid = fork;
      if ($pid < 0) {
  	print STDERR "${program}: can not fork ($!)\n";
-@@ -685,10 +688,9 @@
+@@ -750,10 +754,9 @@
      } elsif ($pid) {
  	exit 0;
      }
@@ -53,7 +53,7 @@
  }
  
  # write out the pid file if we're daemon'ized
-@@ -1478,17 +1480,17 @@
+@@ -1544,17 +1547,17 @@
      ## execute the command.
      local *FD;
      if (! open(FD, $cmd)) {
@@ -75,7 +75,24 @@
  
      } else {
  	$ok = 1;
-@@ -1878,6 +1880,7 @@
+@@ -1878,13 +1881,13 @@
+ ## load_json_support
+ ######################################################################
+ sub load_json_support {
+-	my $json_loaded = eval {require JSON::Any};
++	my $json_loaded = eval {require JSON::PP};
+ 	unless ($json_loaded) {
+ 		fatal(<<"EOM");
+-Error loading the Perl module JSON::Any needed for cloudflare update.
++Error loading the Perl module JSON::PP needed for cloudflare update.
+ EOM
+ 	}
+-	import JSON::Any;
++	import JSON::PP (qw/decode_json/);
+ }
+ ######################################################################
+ ## geturl
+@@ -1957,6 +1960,7 @@
  	    $sd = IO::Socket::SSL->new(
              PeerAddr => $peer,
              PeerPort => $port,
@@ -83,3 +100,29 @@
              Proto => 'tcp',
              MultiHomed => 1,
              Timeout => opt('timeout'),
+@@ -4096,9 +4100,9 @@
+ 
+ 			# Strip header
+ 			$reply =~ s/^.*?\n\n//s;
+-			my $response = JSON::Any->jsonToObj($reply);
+-			if ($response->{result} eq 'error') {
+-				failed ("%s", $response->{msg});
++			my $response = eval {decode_json($reply)};
++			if (!defined $response || !defined $response->{result}) {
++				failed ("invalid json or result.");
+ 				next; 
+ 			}
+ 
+@@ -4128,9 +4132,9 @@
+ 
+ 			# Strip header
+ 			$reply =~ s/^.*?\n\n//s;
+-			$response = JSON::Any->jsonToObj($reply);
+-			if ($response->{result} eq 'error') {
+-				failed ("%s", $response->{msg});	
++			$response = eval {decode_json($reply)}; 
++			if (!defined $response || !defined $response->{result}) {
++				failed ("invalid json or result.");
+ 			} else {
+ 				success ("%s -- Updated Successfully to %s", $domain, $ip);
+ 
