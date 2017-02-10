@@ -14,6 +14,9 @@ DIST_SUBDIR=	oracle10g
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JDBC drivers for Oracle 10g
 
+DEPRECATED=	Oracle 10g EOL almost 4 years
+EXPIRATION_DATE=	2017-03-07
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
