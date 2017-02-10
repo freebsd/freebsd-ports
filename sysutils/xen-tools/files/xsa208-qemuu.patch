@@ -1,0 +1,45 @@
+From: Li Qiang <address@hidden>
+
+When doing bitblt copy in backward mode, we should minus the
+blt width first just like the adding in the forward mode. This
+can avoid the oob access of the front of vga's vram.
+
+Signed-off-by: Li Qiang <address@hidden>
+Message-id: address@hidden
+
+{ kraxel: with backward blits (negative pitch) addr is the topmost
+          address, so check it as-is against vram size ]
+
+[ This is CVE-2017-2615 / XSA-208  - Ian Jackson ]
+
+Cc: address@hidden
+Cc: P J P <address@hidden>
+Cc: Laszlo Ersek <address@hidden>
+Cc: Paolo Bonzini <address@hidden>
+Cc: Wolfgang Bumiller <address@hidden>
+Fixes: d3532a0db02296e687711b8cdc7791924efccea0 (CVE-2014-8106)
+Signed-off-by: Gerd Hoffmann <address@hidden>
+---
+ hw/display/cirrus_vga.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/hw/display/cirrus_vga.c b/hw/display/cirrus_vga.c
+index bdb092e..3bbe3d5 100644
+--- a/hw/display/cirrus_vga.c
++++ b/hw/display/cirrus_vga.c
+@@ -277,10 +277,9 @@ static bool blit_region_is_unsafe(struct CirrusVGAState *s,
+     }
+     if (pitch < 0) {
+         int64_t min = addr
+-            + ((int64_t)s->cirrus_blt_height-1) * pitch;
+-        int32_t max = addr
+-            + s->cirrus_blt_width;
+-        if (min < 0 || max > s->vga.vram_size) {
++            + ((int64_t)s->cirrus_blt_height - 1) * pitch
++            - s->cirrus_blt_width;
++        if (min < -1 || addr >= s->vga.vram_size) {
+             return true;
+         }
+     } else {
+-- 
+1.8.3.1
