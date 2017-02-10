@@ -1702,6 +1702,7 @@
     SUBDIR += ocaml-xstr
     SUBDIR += ocaml-xstrp4
     SUBDIR += ocl-icd
+    SUBDIR += oclgrind
     SUBDIR += ode
     SUBDIR += ois
     SUBDIR += okteta
