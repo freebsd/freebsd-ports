@@ -16,4 +16,10 @@ USES=		php:ext ssl tar:tgz
 USE_PHP=	spl:build
 CFLAGS+=	-I${LOCALBASE}/include
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE=		LibreSSL not supported until version 1.3.x
+.endif
+
+.include <bsd.port.post.mk>
