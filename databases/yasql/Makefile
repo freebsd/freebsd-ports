@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another SQL*Plus Replacement
 
+DEPRECATED=	Dependent on deprecated oracle7-client
+EXPIRATION_DATE=	2017-03-07
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

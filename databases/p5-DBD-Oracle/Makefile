@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI driver for Oracle RDBMS server
 
+DEPRECATED=	Depends on deprecated Oracle 7 (or 8) client
+EXPIRATION_DATE=	2017-03-07
+
 BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
