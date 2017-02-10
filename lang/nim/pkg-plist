@@ -33,6 +33,7 @@ lib/impure/rdstdin.nim
 lib/impure/re.nim
 lib/impure/ssl.nim
 lib/js/dom.nim
+lib/js/jsconsole.nim
 lib/nimbase.h
 lib/nimrtl.nim
 lib/nimrtl.nim.cfg
@@ -64,6 +65,7 @@ lib/pure/cgi.nim
 lib/pure/collections/LockFreeHash.nim
 lib/pure/collections/chains.nim
 lib/pure/collections/critbits.nim
+lib/pure/collections/deques.nim
 lib/pure/collections/heapqueue.nim
 lib/pure/collections/intsets.nim
 lib/pure/collections/lists.nim
@@ -86,6 +88,7 @@ lib/pure/cookies.nim
 lib/pure/coro.nim
 lib/pure/coro.nimcfg
 lib/pure/db_common.nim
+lib/pure/distros.nim
 lib/pure/dynlib.nim
 lib/pure/encodings.nim
 lib/pure/endians.nim
@@ -121,6 +124,7 @@ lib/pure/nativesockets.nim
 lib/pure/net.nim
 lib/pure/nimprof.nim
 lib/pure/nimprof.nim.cfg
+lib/pure/nimtracker.nim
 lib/pure/numeric.nim
 lib/pure/oids.nim
 lib/pure/options.nim
@@ -193,6 +197,7 @@ lib/system/gc_stack.nim
 lib/system/hti.nim
 lib/system/inclrtl.nim
 lib/system/jssys.nim
+lib/system/memtracker.nim
 lib/system/mmdisp.nim
 lib/system/nimscript.nim
 lib/system/osalloc.nim
@@ -274,6 +279,7 @@ nim/compiler/lowerings.nim
 nim/compiler/magicsys.nim
 nim/compiler/main.nim
 nim/compiler/mapping.txt
+nim/compiler/modulegraphs.nim
 nim/compiler/modules.nim
 nim/compiler/msgs.nim
 nim/compiler/nim.cfg
@@ -287,7 +293,6 @@ nim/compiler/nimfix/pretty.nim
 nim/compiler/nimfix/prettybase.nim
 nim/compiler/nimlexbase.nim
 nim/compiler/nimsets.nim
-nim/compiler/nimsuggest/nimsuggest.nim
 nim/compiler/nodejs.nim
 nim/compiler/nversion.nim
 nim/compiler/options.nim
@@ -332,6 +337,7 @@ nim/compiler/semtempl.nim
 nim/compiler/semtypes.nim
 nim/compiler/semtypinst.nim
 nim/compiler/service.nim
+nim/compiler/sighashes.nim
 nim/compiler/sigmatch.nim
 nim/compiler/suggest.nim
 nim/compiler/syntaxes.nim
