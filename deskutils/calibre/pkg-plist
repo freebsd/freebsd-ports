@@ -345,7 +345,6 @@ lib/calibre/calibre/ebooks/metadata/html.py
 lib/calibre/calibre/ebooks/metadata/imp.py
 lib/calibre/calibre/ebooks/metadata/kdl.py
 lib/calibre/calibre/ebooks/metadata/kfx.py
-lib/calibre/calibre/ebooks/metadata/library_thing.py
 lib/calibre/calibre/ebooks/metadata/lit.py
 lib/calibre/calibre/ebooks/metadata/lrx.py
 lib/calibre/calibre/ebooks/metadata/meta.py
