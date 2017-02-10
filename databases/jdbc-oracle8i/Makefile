@@ -15,6 +15,9 @@ EXTRACT_ONLY=	${CLASSES}${EXTRACT_SUFX} ${PATCH_FILE}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JDBC drivers for Oracle 8i
 
+DEPRECATED=	Oracle8i unsupported and unavailable; fetch site redirects
+EXPIRATION_DATE=	2017-03-07
+
 PATCH_DEPENDS=	${LOCALBASE}/bin/zip:archivers/zip
 
 RESTRICTED=	Must be downloaded direct from Oracle via www interface
