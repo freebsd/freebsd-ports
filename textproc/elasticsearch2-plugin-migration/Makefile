@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	migration
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	elasticsearch2-plugin-
