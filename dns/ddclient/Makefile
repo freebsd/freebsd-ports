@@ -3,7 +3,7 @@
 
 PORTNAME=	ddclient
 PORTVERSION=	3.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,8 +18,6 @@ USES=		perl5 tar:bzip2
 USE_PERL5=	run
 
 USE_RC_SUBR=	${PORTNAME}
-
-RUN_DEPENDS=	p5-JSON-PP>=0:converters/p5-JSON-PP
 
 SUB_FILES=	pkg-message ddclient_force
 
