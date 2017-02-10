@@ -392,9 +392,6 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/youtubeplayer/s
 lib/emby-server/dashboard-ui/bower_components/fetch/LICENSE
 lib/emby-server/dashboard-ui/bower_components/fetch/fetch.js
 lib/emby-server/dashboard-ui/bower_components/font-roboto/roboto.html
-lib/emby-server/dashboard-ui/bower_components/hammerjs/changelog.js
-lib/emby-server/dashboard-ui/bower_components/hammerjs/hammer.js
-lib/emby-server/dashboard-ui/bower_components/hammerjs/hammer.min.js
 lib/emby-server/dashboard-ui/bower_components/headroomjs/LICENSE
 lib/emby-server/dashboard-ui/bower_components/headroomjs/dist/angular.headroom.js
 lib/emby-server/dashboard-ui/bower_components/headroomjs/dist/angular.headroom.min.js
@@ -531,6 +528,7 @@ lib/emby-server/dashboard-ui/css/images/items/list/collection.png
 lib/emby-server/dashboard-ui/css/images/items/list/person.png
 lib/emby-server/dashboard-ui/css/images/logindefault.png
 lib/emby-server/dashboard-ui/css/images/logo.png
+lib/emby-server/dashboard-ui/css/images/logoblack.png
 lib/emby-server/dashboard-ui/css/images/mblogoicon.png
 lib/emby-server/dashboard-ui/css/images/media/chapterflyout.png
 lib/emby-server/dashboard-ui/css/images/media/pause.png
