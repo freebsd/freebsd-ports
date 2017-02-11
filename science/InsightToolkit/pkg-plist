@@ -3910,7 +3910,6 @@ lib/libitkvnl-%%ITK_VER%%.so
 lib/libitkvnl-%%ITK_VER%%.so.1
 lib/libitkvnl_algo-%%ITK_VER%%.so
 lib/libitkvnl_algo-%%ITK_VER%%.so.1
-libdata/ldconfig/InsightToolkit
 share/doc/ITK-%%ITK_VER%%/LICENSE
 share/doc/ITK-%%ITK_VER%%/NOTICE
 share/doc/ITK-%%ITK_VER%%/README.txt
