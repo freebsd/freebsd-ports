@@ -55,7 +55,8 @@ CLANG_PORTDOCS=		clang
 COMPILER_RT_DESC=	Build compiler-rt (sanitizers)
 COMPILER_RT_DISTFILES=	compiler-rt-${DISTVERSION}.src${EXTRACT_SUFX}
 COMPILER_RT_EXTRA_PATCHES= \
-	${PATCHDIR}/compiler-rt-patch-svn-249051
+	${PATCHDIR}/compiler-rt-patch-svn-249051 \
+	${PATCHDIR}/compiler-rt-patch-svn-294806
 DOCS_PORTDOCS=		llvm
 DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DSPHINX_WARNINGS_AS_ERRORS=OFF \
