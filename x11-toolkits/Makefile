@@ -282,6 +282,7 @@
     SUBDIR += vte290
     SUBDIR += vte3
     SUBDIR += vtkfox
+    SUBDIR += wcl
     SUBDIR += wmapp
     SUBDIR += wxgtk28
     SUBDIR += wxgtk28-common
