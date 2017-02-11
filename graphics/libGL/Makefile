@@ -3,7 +3,7 @@
 
 PORTNAME=	libGL
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL library that renders using GLX or DRI
@@ -24,9 +24,6 @@ MESA_INSTALL_WRKSRC=	src/glx
 .include "${.CURDIR}/Makefile.targets"
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/.mesa
-	@${MV} ${STAGEDIR}${PREFIX}/lib/libGL* \
-		${STAGEDIR}${PREFIX}/lib/.mesa/
 	@cd ${WRKSRC}/src && ${SETENV} DESTDIR=${STAGEDIR} \
 		${MAKE_CMD} install-pkgconfigDATA install-glHEADERS install-glxHEADERS
 

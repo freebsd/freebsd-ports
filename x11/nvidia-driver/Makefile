@@ -12,7 +12,7 @@
 PORTNAME=	nvidia-driver
 DISTVERSION?=	375.26
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -40,7 +40,7 @@ USE_LDCONFIG=	yes
 # hack below to universally set NVIDIA_ROOT.  Also provide X11BASE value
 # since it is still used by legacy drivers.
 MAKE_ENV=	NVIDIA_ROOT=${WRKSRC} X11BASE=${LOCALBASE}
-SUB_FILES=	pkg-deinstall pkg-install pkg-message
+SUB_FILES=	pkg-deinstall pkg-install pkg-message nvidia.conf
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
 PORTDOCS=	*
@@ -55,6 +55,12 @@ NVVERSION=	${DISTVERSION:S/./.0/}		# allow minor > 99
 .  else
 NVVERSION=	${DISTVERSION}
 .  endif
+.endif
+
+.if ${NVVERSION} >= 331.013
+SUB_LIST=	NVGL=""
+.else
+SUB_LIST=	NVGL="# "
 .endif
 
 .if ${NVVERSION} < 355.006
@@ -166,17 +172,10 @@ post-patch: .SILENT
 .if ${NVVERSION} >= 346.016
 	${REINPLACE_CMD} -e '/libnvidia-gtk/d' ${WRKSRC}/lib/Makefile
 .endif
-# Adjust installation paths of some conflicting files (shared also between
-# libGL, libEGL, libGLESv2, and xorg-server) to ease package manager work
+# Adjust installation path of a conflicting file (shared between
+# nvidia-driver and xorg-server) to ease package manager work
 	${REINPLACE_CMD} -e '/LIBDIR/s:xorg/modules/extensions:&/.nvidia:' \
 		${WRKSRC}/x11/extension/Makefile
-	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
-		${WRKSRC}/lib/libGL/Makefile
-.if ${NVVERSION} >= 331.013
-	${REINPLACE_CMD} -e '/LIBDIR/s:lib:&/.nvidia:' \
-		${WRKSRC}/lib/libEGL/Makefile \
-		${WRKSRC}/lib/libGLESv2/Makefile
-.endif
 # Do not execute afterinstall target (prevent automatic module registration
 # and "smart" installation of conflicting files heuristics)
 	${REINPLACE_CMD} -e 's/afterinstall/&_dontexecute/' ${WRKSRC}/Makefile
@@ -264,6 +263,24 @@ post-install: .SILENT
 	${REINPLACE_CMD} -E '/\/lib\/libGLESv[12](_CM)?(\.so)?(_nvidia.so(\.[0-9]|\.[0-9]+\.[0-9]+)?)?$$/d ; \
 		/libEGL_nvidia\.so\.${PORTVERSION}/d' ${TMPPLIST}
 .endif
+# rename libGL.so, libEGL.so and libGLESv2.so
+	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGL.so \
+		${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so
+	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGL.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so.1
+.if ${NVVERSION} >= 331.013
+	${MV} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so \
+		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so
+	${MV} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so.1
+	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so \
+		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so
+	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so.2 \
+		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so.2
+.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/libmap.d/
+	${INSTALL_DATA} ${WRKDIR}/nvidia.conf \
+		${STAGEDIR}${PREFIX}/etc/libmap.d/
 
 # Target below can be used instead of standard `makesum' to correctly
 # update distinfo (i.e., keeping other driver version entries intact)

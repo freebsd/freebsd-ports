@@ -3,7 +3,7 @@
 
 PORTNAME=	libEGL
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenEGL library
@@ -26,10 +26,5 @@ MESA_BUILD_WRKSRC=	src/mapi src/gbm src/egl/
 MESA_INSTALL_WRKSRC=	src/egl
 
 .include "${.CURDIR}/../../graphics/libGL/Makefile.targets"
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/.mesa
-	@${MV} ${STAGEDIR}${PREFIX}/lib/libEGL* \
-		${STAGEDIR}${PREFIX}/lib/.mesa/
 
 .include <bsd.port.mk>
