@@ -13,12 +13,11 @@ COMMENT=	Partial PulseAudio API implementation using OSS backend
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:devel/linux-c6-devtools
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3erios
 
 USES=		linux
+USE_LINUX=	base devtools:build
 USE_LINUX_PREFIX=	yes
 # do not define USE_LDCONFIG, it's not for global use
 
