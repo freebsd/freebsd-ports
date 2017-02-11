@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Dec 15 14:13:16 2000
-+++ Makefile	Sun Jul 21 17:24:46 2002
+--- Makefile.orig	2000-12-15 12:13:16 UTC
++++ Makefile
 @@ -10,28 +10,36 @@
  #	SWITCHES macro definitions ... see config.eng or config.jpn.
  #-----------------------------------------------------------------------

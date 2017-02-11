@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://frama-c.com/download/
 DIST_SUBDIR=	framac-01
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Extensible platform for source-code analysis of C
 
 LICENSE=	LGPL21

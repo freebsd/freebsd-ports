@@ -3,4 +3,4 @@ defining unit tests, putting little in the way of the developer. Tests are run
 in a separate address space, so Check can catch both assertion failures and code
 errors that cause segmentation faults or other signals.
 
-WWW: http://check.sourceforge.net/
+WWW: https://libcheck.github.io/check/
