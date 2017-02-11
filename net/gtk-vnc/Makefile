@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-vnc
-PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -16,17 +15,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
 		libsasl2.so:security/cyrus-sasl2
 
-USE_GNOME=	gtk30 intltool introspection:build
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build
+USES=		gettext gmake libtool localbase pathfix pkgconfig tar:xz
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-gtk=3.0 --enable-introspection \
+CONFIGURE_ARGS=	--enable-introspection \
 		--disable-plugin --without-python
-MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PULSEAUDIO
