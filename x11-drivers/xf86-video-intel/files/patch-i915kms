@@ -1,13 +1,10 @@
---- src/intel_device.c.orig	2013-06-30 16:03:51.000000000 +0200
-+++ src/intel_device.c	2013-07-02 14:08:34.903060688 +0200
-@@ -94,8 +94,8 @@
- 			 pci->domain, pci->bus, pci->dev, pci->func);
+--- src/intel_device.c.orig	2016-02-16 09:25:09.124344000 +0100
++++ src/intel_device.c	2016-02-16 09:22:49.541922000 +0100
+@@ -204,6 +207,7 @@
+ }
  
- 		ret = drmCheckModesettingSupported(id);
--		if (ret) {
--			if (xf86LoadKernelModule("i915"))
-+		if (ret || 1) {
-+			if (xf86LoadKernelModule("i915kms"))
- 				ret = drmCheckModesettingSupported(id);
- 			if (ret)
- 				return -1;
+ static const char *kernel_module_names[] ={
++	"i915kms",
+ 	"i915",
+ 	NULL,
+ };

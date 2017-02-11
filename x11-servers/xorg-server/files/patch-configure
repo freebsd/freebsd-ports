@@ -1,6 +1,87 @@
---- configure.orig	2015-10-28 16:31:48.000000000 +0000
-+++ configure	2016-11-04 17:02:00.798706000 +0000
-@@ -22637,9 +22637,14 @@
+--- configure.orig	2016-07-19 17:27:31 UTC
++++ configure
+@@ -18019,7 +18019,7 @@ $as_echo_n "checking whether the $compil
+   hardcode_minus_L=no
+   hardcode_shlibpath_var=unsupported
+   inherit_rpath=no
+-  link_all_deplibs=unknown
++  link_all_deplibs=no
+   module_cmds=
+   module_expsym_cmds=
+   old_archive_from_new_cmds=
+@@ -18318,7 +18318,7 @@ _LT_EOF
+ 	wlarc=
+       else
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       fi
+       ;;
+ 
+@@ -18337,7 +18337,7 @@ _LT_EOF
+ _LT_EOF
+       elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs=no
+       fi
+@@ -18366,7 +18366,7 @@ _LT_EOF
+ 	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	    hardcode_libdir_flag_spec='$wl-rpath $wl$libdir'
+ 	    archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	    archive_expsym_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	    archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+ 	  else
+ 	    ld_shlibs=no
+ 	  fi
+@@ -18384,7 +18384,7 @@ _LT_EOF
+     *)
+       if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs=no
+       fi
+@@ -19032,7 +19032,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >
+ 	hardcode_direct_absolute=yes
+ 	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
+ 	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-	  archive_expsym_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-retain-symbols-file,$export_symbols'
++	  archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-version-script,$lib-ver'
+ 	  hardcode_libdir_flag_spec='$wl-rpath,$libdir'
+ 	  export_dynamic_flag_spec='$wl-E'
+ 	else
+@@ -19881,7 +19881,7 @@ freebsd* | dragonfly*)
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$release$shared_ext$major $libname$shared_ext'
++      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
+       soname_spec='$libname$release$shared_ext$major'
+       need_version=no
+       need_lib_prefix=no
+@@ -21016,7 +21016,7 @@ striplib=
+ old_striplib=
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
+ $as_echo_n "checking whether stripping libraries is possible... " >&6; }
+-if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
++if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
+   test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
+   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+@@ -21738,7 +21738,7 @@ if test `${RAWCPP} < conftest.$ac_ext | 
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+ else
+-	if test `${RAWCPP} -traditional < conftest.$ac_ext | grep -c 'preserve   \"'` -eq 1 ; then
++	if true; then
+ 		TRADITIONALCPPFLAGS="-traditional"
+ 		RAWCPPFLAGS="${RAWCPPFLAGS} -traditional"
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+@@ -23168,9 +23168,14 @@ $as_echo "#define USE_ALPHA_PIO 1" >>con
  	esac
  	GLX_ARCH_DEFINES="-D__GLX_ALIGN64 -mieee"
  	;;
@@ -16,12 +97,12 @@
  	;;
    i*86)
  	I386_VIDEO=yes
-@@ -25559,7 +25564,7 @@
+@@ -26057,7 +26062,7 @@ fi
  case "x$XTRANS_SEND_FDS" in
  xauto)
  	case "$host_os" in
 -	linux*|solaris*)
-+	linux*|solaris*|freebsd*|dragonfly*)
++	linux*|solaris*|freebsd*|dragonfly*|openbsd*)
  		XTRANS_SEND_FDS=yes
  		;;
  	*)

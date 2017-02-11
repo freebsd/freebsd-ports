@@ -1,6 +1,6 @@
---- hw/xfree86/os-support/bsd/bsd_init.c.orig	2012-05-17 19:09:03.000000000 +0200
-+++ hw/xfree86/os-support/bsd/bsd_init.c	2013-09-01 20:45:36.000000000 +0200
-@@ -230,6 +230,9 @@
+--- hw/xfree86/os-support/bsd/bsd_init.c.orig	2016-07-19 17:07:29 UTC
++++ hw/xfree86/os-support/bsd/bsd_init.c
+@@ -230,6 +230,9 @@ xf86OpenConsole()
               * Add cases for other *BSD that behave the same.
               */
  #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)

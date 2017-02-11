@@ -2,6 +2,7 @@
 
 PORTNAME=	xf86-video-openchrome
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
