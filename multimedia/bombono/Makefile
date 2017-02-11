@@ -27,6 +27,7 @@ RUN_DEPENDS=	gm:graphics/GraphicsMagick \
 
 USES=		desktop-file-utils gettext pkgconfig scons shared-mime-info \
 		tar:bzip2
+USE_CXXSTD=	gnu++98
 USE_GNOME=	gtkmm24
 INSTALLS_ICONS=	yes
 
