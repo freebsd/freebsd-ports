@@ -66,7 +66,7 @@
 -
  # if !defined(_SEQUENT_) && !defined(sequent)
 -  strncpy(u.ut_host, host, sizeof(u.ut_host));
-+  if(display)
++  if (display)
 +    strncpy(u.ut_host, D_loginhost, sizeof(u.ut_host));
  # endif
  #endif /* UTHOST */
