@@ -4,7 +4,7 @@ PORTNAME=	libcxxrt
 PORTVERSION=	20160529
 CATEGORIES=	devel
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Implementation of the Code Sourcery C++ ABI
 
 LICENSE=	BSD2CLAUSE

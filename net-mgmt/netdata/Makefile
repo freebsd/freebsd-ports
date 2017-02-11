@@ -5,7 +5,7 @@ PORTNAME=	netdata
 PORTVERSION=	1.5.0
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Scalable distributed realtime performance and health monitoring
 
 LICENSE=	GPLv3
