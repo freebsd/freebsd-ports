@@ -11,8 +11,11 @@ DISTFILES=	${CLASSES} ${OCRS_FILE}
 DIST_SUBDIR=	oracle9i
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JDBC drivers for Oracle 9i
+
+DEPRECATED=	Oracle 9i is no more supported
+EXPIRATION_DATE=	2017-03-07
 
 RESTRICTED=	This software is under license and export controls
 
