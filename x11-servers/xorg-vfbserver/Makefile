@@ -19,7 +19,8 @@ OPTIONS_EXCLUDE=DEVD HAL SUID
 
 USE_XORG=	xfont2
 
-CONFIGURE_ARGS+=--enable-xvfb --disable-dmx --disable-xephyr --disable-xnest
+CONFIGURE_ARGS+=--enable-xvfb --disable-dmx --disable-xephyr --disable-xnest \
+		--disable-xwayland
 
 PLIST_FILES=	bin/Xvfb man/man1/Xvfb.1.gz
 

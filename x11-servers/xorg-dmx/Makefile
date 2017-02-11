@@ -15,7 +15,8 @@ OPTIONS_EXCLUDE=DEVD HAL SUID
 
 USE_XORG=	dmx dmxproto x11 xaw7 xext xfixes xi xmu xpm xrender xres xt xtst
 
-CONFIGURE_ARGS+=--enable-dmx --disable-xephyr --disable-xnest --disable-xvfb
+CONFIGURE_ARGS+=--enable-dmx --disable-xephyr --disable-xnest --disable-xvfb \
+		--disable-xwayland
 
 do-install:
 	cd ${WRKSRC}/hw/dmx; DESTDIR=${STAGEDIR} ${MAKE} install

@@ -21,7 +21,8 @@ OPTIONS_EXCLUDE=DEVD HAL SUID
 
 USE_XORG=	x11 xext xfont2
 
-CONFIGURE_ARGS+=--enable-xnest --disable-dmx --disable-xephyr --disable-xvfb
+CONFIGURE_ARGS+=--enable-xnest --disable-dmx --disable-xephyr --disable-xvfb \
+		--disable-xwayland
 
 PLIST_FILES=	bin/Xnest man/man1/Xnest.1.gz
 
