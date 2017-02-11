@@ -3,7 +3,7 @@ bin/libinput-list-devices
 include/libinput.h
 lib/libinput.so
 lib/libinput.so.10
-lib/libinput.so.10.9.1
+lib/libinput.so.10.11.2
 lib/udev/hwdb.d/90-libinput-model-quirks.hwdb
 lib/udev/libinput-device-group
 lib/udev/libinput-model-quirks
