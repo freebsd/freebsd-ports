@@ -12,8 +12,8 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2
 
 USES=		ssl
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto \
-		presentproto xvmc xshmfence
+USE_XORG=	dri2proto dri3proto glproto presentproto x11 xext xdamage \
+		xfixes xshmfence xv xvmc xxf86vm 
 
 OPTIONS_DEFINE=	TEXTURE
 OPTIONS_DEFAULT=TEXTURE
