@@ -13,7 +13,7 @@ LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2
 
 # stuff not needed by libglesv2 but configure wants it
-USE_XORG+=	glproto dri2proto xext xdamage xfixes presentproto \
+USE_XORG+=	dri2proto dri3proto glproto presentproto xdamage xext xfixes \
 		xshmfence
 
 .include <bsd.port.options.mk>
