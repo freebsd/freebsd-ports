@@ -10,9 +10,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Adds a metaclass method to all Ruby objects
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
