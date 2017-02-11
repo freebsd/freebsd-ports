@@ -23,6 +23,7 @@ DOS2UNIX_FILES=	tinyxml/*.cpp tinyxml/*.h
 USE_XORG=	x11
 USE_GL=		gl
 USE_SDL=	image mixer sdl
+USE_CXXSTD=	gnu++98
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize
