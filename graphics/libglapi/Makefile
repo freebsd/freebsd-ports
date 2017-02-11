@@ -8,6 +8,8 @@ CATEGORIES=	graphics
 
 COMMENT=	Common GL api library used by Mesa based ports
 
+LICENSE=	MIT
+
 LIB_DEPENDS+=	libpthread-stubs.so:devel/libpthread-stubs
 
 USE_XORG=	x11 xau xcb xdmcp xvmc
