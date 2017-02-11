@@ -21,7 +21,7 @@ OPTIONS_EXCLUDE=DEVD HAL SUID
 USE_XORG=	x11 xcb
 
 CONFIGURE_ARGS+=--enable-xephyr --disable-dmx --disable-xnest --disable-xvfb \
-		--enable-kdrive
+		--enable-kdrive --disable-xwayland
 
 PLIST_FILES=	bin/Xephyr man/man1/Xephyr.1.gz
 

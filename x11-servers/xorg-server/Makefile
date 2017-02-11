@@ -44,10 +44,10 @@ USE_XORG+=	bigreqsproto compositeproto damageproto dri2proto dri3proto \
 		xineramaproto xkbfile xproto xshmfence xtrans
 CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
 		--localstatedir=/var --with-shared-memory-dir=/tmp \
-		--without-dtrace --disable-xwayland --enable-glamor
+		--without-dtrace --enable-glamor
 INSTALL_TARGET=	install-strip
 
-.if ${SLAVE_PORT} == "no" || ${PORTNAME} == "xephyr"
+.if ${SLAVE_PORT} == "no" || ${PORTNAME} == "xephyr" || ${PORTNAME} == "xwayland"
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy
 .else
@@ -57,7 +57,8 @@ BUILD_DEPENDS+=	libepoxy>0:graphics/libepoxy	# only for configure
 .if ${SLAVE_PORT} == "no"
 USE_GL+=	gbm
 USE_XORG+=	pciaccess xf86dgaproto xf86vidmodeproto
-CONFIGURE_ARGS+=--disable-dmx --disable-xephyr --disable-xnest --disable-xvfb
+CONFIGURE_ARGS+=--disable-dmx --disable-xephyr --disable-xnest --disable-xvfb \
+		--disable-xwayland
 SUB_FILES=	pkg-install pkg-deinstall
 .else
 CONFIGURE_ARGS+=--disable-xorg
