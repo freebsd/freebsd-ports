@@ -35,6 +35,8 @@ USE_GCC=	yes
 MAKE_ARGS=	PERL=${PERL} \
 		CC=${CC} \
 		HOST_CC=${CC} \
+		NO_WERROR=1 \
+		V=1 \
 		OBJCOPY="${LOCALBASE}/bin/objcopy" \
 		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 		LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
