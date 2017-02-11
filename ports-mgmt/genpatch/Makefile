@@ -8,7 +8,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Single patch generator tool compatible with makepatch format
 
 LICENSE=	BSD2CLAUSE

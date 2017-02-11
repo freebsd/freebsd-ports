@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	SOURCEWARE/binutils/releases
 PKGNAMEPREFIX?=	gnatdroid-
 
-MAINTAINER?=	marino@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Infrastructure for C/Ada Android cross-compiler (ARMv7)
 
 LICENSE=	GPLv3 LGPL3
