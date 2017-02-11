@@ -8,6 +8,8 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL ES v2 library
 
+LICENSE=	MIT
+
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
 		libglapi.so:graphics/libglapi \
 		libexpat.so:textproc/expat2
