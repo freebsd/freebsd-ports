@@ -21,6 +21,7 @@ INPUT_DRIVERS=		acecad \
 			hyperpen \
 			joystick \
 			keyboard \
+			libinput \
 			mouse \
 			mutouch \
 			penmount \
