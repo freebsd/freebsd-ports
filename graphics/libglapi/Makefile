@@ -8,12 +8,14 @@ CATEGORIES=	graphics
 
 COMMENT=	Common GL api library used by Mesa based ports
 
+LICENSE=	MIT
+
 LIB_DEPENDS+=	libpthread-stubs.so:devel/libpthread-stubs
 
 USE_XORG=	x11 xau xcb xdmcp xvmc
 
 # stuff not needed by libglapi but configure wants it
-USE_XORG+=	glproto dri2proto xext xdamage xfixes presentproto \
+USE_XORG+=	dri2proto dri3proto glproto presentproto xdamage xext xfixes \
 		xshmfence
 LIB_DEPENDS+=	libexpat.so:textproc/expat2 \
 		libdrm.so:graphics/libdrm

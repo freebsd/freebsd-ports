@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	libinput
-PORTVERSION=	1.4.0
+PORTVERSION=	1.6.0
 CATEGORIES=	x11
+MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Generic input library
@@ -14,15 +15,16 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
 		libmtdev.so:devel/libmtdev
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	FreeBSDDesktop
-GH_TAGNAME=	67c9796
-
-USES=		autoreconf gmake libtool pathfix pkgconfig
+USES=		autoreconf gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/libepoll-shim
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	${REINPLACE_CMD} -e 's|program_invocation_short_name|getprogname()|' \
+	    ${WRKSRC}/tools/libinput-list-devices.c \
+	    ${WRKSRC}/tools/ptraccel-debug.c ${WRKSRC}/tools/shared.c
 
 .include <bsd.port.mk>

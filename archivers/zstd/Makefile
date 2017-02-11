@@ -6,7 +6,7 @@ PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Zstandard - Fast real-time compression algorithm
 
 LICENSE=	BSD2CLAUSE

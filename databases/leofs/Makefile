@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.2.1
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -83,14 +83,14 @@ LEOFS_DEPS=	\
 	leo-project/elarm=d9e8a6f:elarm \
 	leo-project/erpcgen=0.2.5:erpcgen \
 	leo-project/folsom=0.8.2-p1:folsom \
-	leo-project/leo_backend_db=1.2.8:leo_backend_db \
+	leo-project/leo_backend_db=1.2.9:leo_backend_db \
 	leo-project/leo_cache=0.8.3:leo_cache \
 	leo-project/leo_commons=1.1.9:leo_commons \
 	leo-project/leo_dcerl=0.4.6:leo_dcerl \
 	leo-project/leo_logger=1.2.5:leo_logger \
 	leo-project/leo_mcerl=0.6.4:leo_mcerl \
 	leo-project/leo_mq=1.4.12:leo_mq \
-	leo-project/leo_object_storage=1.2.30:leo_object_storage \
+	leo-project/leo_object_storage=1.2.32:leo_object_storage \
 	leo-project/leo_ordning_reda=1.2.4:leo_ordning_reda \
 	leo-project/leo_pod=0.6.8:leo_pod \
 	leo-project/leo_redundant_manager=1.9.32:leo_redundant_manager \

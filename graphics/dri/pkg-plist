@@ -13,13 +13,12 @@
 @comment include/GL/glxext.h
 include/GL/internal/dri_interface.h
 @comment include/GL/osmesa.h
-@comment include/GL/wglext.h
-@comment include/GL/wmesa.h
 @comment include/GLES2/gl2.h
 @comment include/GLES2/gl2ext.h
 @comment include/GLES2/gl2platform.h
 @comment include/GLES3/gl3.h
 @comment include/GLES3/gl31.h
+@comment include/GLES3/gl32.h
 @comment include/GLES3/gl3ext.h
 @comment include/GLES3/gl3platform.h
 @comment include/KHR/khrplatform.h

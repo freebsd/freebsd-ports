@@ -6,9 +6,9 @@ dragonfly fixed this issue in,
 http://gitweb.dragonflybsd.org/dragonfly.git/commit/b922632f623ee2cc2c1346bb3a6894a7756676aa
 which will be included in the 4.4 release when it is released.
 
---- xf86drm.c.orig	2016-11-29 11:15:10 UTC
+--- xf86drm.c.orig	2017-01-30 13:59:15.919081000 +0100
 +++ xf86drm.c
-@@ -173,7 +173,7 @@ drmIoctl(int fd, unsigned long request, 
+@@ -197,7 +197,7 @@ drmIoctl(int fd, unsigned long request, 
  
      do {
          ret = ioctl(fd, request, arg);

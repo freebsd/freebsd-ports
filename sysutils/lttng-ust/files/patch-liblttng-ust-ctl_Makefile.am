@@ -1,0 +1,9 @@
+--- liblttng-ust-ctl/Makefile.am.orig	2017-01-31 12:55:37 UTC
++++ liblttng-ust-ctl/Makefile.am
+@@ -10,5 +10,4 @@ liblttng_ust_ctl_la_LDFLAGS = \
+ liblttng_ust_ctl_la_LIBADD = \
+ 	$(top_builddir)/liblttng-ust-comm/liblttng-ust-comm.la \
+ 	$(top_builddir)/liblttng-ust/liblttng-ust-support.la \
+-	$(top_builddir)/snprintf/libustsnprintf.la \
+-	-ldl
++	$(top_builddir)/snprintf/libustsnprintf.la

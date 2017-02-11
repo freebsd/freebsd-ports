@@ -641,22 +641,6 @@ proxydeps_suggest_uses() {
 	fi
 }
 
-subst_dep_file() {
-	local dep_file=$1
-	if expr ${dep_file} : "${LOCALBASE}/lib/libGL.so.[0-9]$" > /dev/null; then
-		if [ -f ${LOCALBASE}/lib/.mesa/libGL.so ]; then
-			echo ${LOCALBASE}/lib/.mesa/libGL.so
-			return
-		fi
-	elif expr ${dep_file} : "${LOCALBASE}/lib/libEGL.so.[0-9]$" > /dev/null; then
-		if [ -f ${LOCALBASE}/lib/.mesa/libEGL.so ]; then
-			echo ${LOCALBASE}/lib/.mesa/libEGL.so
-			return
-		fi
-	fi
-	echo ${dep_file}
-}
-
 proxydeps() {
 	local file dep_file dep_file_pkg already rc
 
@@ -670,7 +654,6 @@ proxydeps() {
 		while read dep_file; do
 			# No results presents a blank line from heredoc.
 			[ -z "${dep_file}" ] && continue
-			dep_file=$(subst_dep_file ${dep_file})
 			# Skip files we already checked.
 			if listcontains ${dep_file} "${already}"; then
 				continue

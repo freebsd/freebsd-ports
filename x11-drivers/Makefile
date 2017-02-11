@@ -11,6 +11,7 @@
     SUBDIR += xf86-input-hyperpen
     SUBDIR += xf86-input-joystick
     SUBDIR += xf86-input-keyboard
+    SUBDIR += xf86-input-libinput
     SUBDIR += xf86-input-mouse
     SUBDIR += xf86-input-mutouch
     SUBDIR += xf86-input-penmount
@@ -26,6 +27,7 @@
     SUBDIR += xf86-video-chips
     SUBDIR += xf86-video-cirrus
     SUBDIR += xf86-video-dummy
+    SUBDIR += xf86-video-geode
     SUBDIR += xf86-video-glint
     SUBDIR += xf86-video-i128
     SUBDIR += xf86-video-i740
