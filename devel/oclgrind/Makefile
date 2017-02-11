@@ -6,7 +6,7 @@ PORTVERSION=	20170122
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	jmd@freebsd.org
+MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	SPIR interpreter and virtual OpenCL device simulator
 
 LICENSE=	BSD3CLAUSE
