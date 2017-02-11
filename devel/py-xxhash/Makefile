@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xxhash
-PORTVERSION=	0.6.1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/xxhash.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/xxhash/cpython.so
 
 .include <bsd.port.mk>
