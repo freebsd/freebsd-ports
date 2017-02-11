@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170211:
+  AFFECTS: users of x11-server/xorg-server
+  AUTHOR: rezny@FreeBSD.org
+
+  Xorg server has been updated to 1.18.4 and autodetection has changed.
+  The order in which drivers are now attempted is:
+    1) vendor/model specific driver according to PCI IDs
+    2) generic modesetting driver which requires a drm driver with KMS
+    3) scfb, the generic framebuffer driver
+    4) vesa (only if arch is x86)
+
+  This should minimize the need for xorg.conf files. It is recommended to
+  load the correct KMS driver (i915kms.ko or radeonkms.ko) via rc.conf,
+  i.e. kld_list="i915kms.ko", to ensure correct functionality. Although
+  the vendor drivers may attempt to load the correct drm driver, which
+  does not always work, the modesetting driver assumes the required KMS
+  driver is already loaded and will fail if there is none. The modesetting
+  driver is now recommended as an alternative to the Intel driver; the
+  performance is comparable and stability is better with modesetting. The
+  ATI driver continues to offer better performance than modesetting.
+
 20170203:
   AFFECTS: users of security/libressl-devel
   AUTHOR: brnrd@FreeBSD.org
