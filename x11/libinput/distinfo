@@ -1,3 +1,3 @@
-TIMESTAMP = 1485733398
-SHA256 (FreeBSDDesktop-libinput-1.4.0-67c9796_GH0.tar.gz) = 05a2ad401b4969d80af3495e1e8f7577a185ae2f14e21b3d3194f98f34fac911
-SIZE (FreeBSDDesktop-libinput-1.4.0-67c9796_GH0.tar.gz) = 731516
+TIMESTAMP = 1486789508
+SHA256 (libinput-1.6.0.tar.xz) = b7534f518d735c643aedca2fb4694683dfddc8d0600cfb628c87a18e65255832
+SIZE (libinput-1.6.0.tar.xz) = 927656

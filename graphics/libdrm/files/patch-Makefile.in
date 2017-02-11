@@ -1,6 +1,6 @@
---- Makefile.in.orig	2016-11-29 13:34:56 UTC
+--- Makefile.in.orig	2017-01-28 02:00:33 UTC
 +++ Makefile.in
-@@ -564,8 +564,8 @@ SUBDIRS = \
+@@ -562,8 +562,8 @@ SUBDIRS = \
  libdrm_la_LTLIBRARIES = libdrm.la
  libdrm_ladir = $(libdir)
  libdrm_la_LDFLAGS = -version-number 2:4:0 -no-undefined

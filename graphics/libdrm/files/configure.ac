@@ -1,6 +1,6 @@
---- configure.ac.orig	2016-04-28 02:52:47.000000000 +0200
-+++ configure.ac	2016-07-09 18:53:39.021028000 +0200
-@@ -71,6 +71,11 @@
+--- configure.ac.orig	2017-01-28 02:15:16.000000000 +0100
++++ configure.ac	2017-01-30 14:00:14.452530000 +0100
+@@ -72,6 +72,11 @@
                                [Enable support for using udev instead of mknod (default: disabled)])],
                [UDEV=$enableval], [UDEV=no])
  
@@ -12,7 +12,7 @@
  AC_ARG_ENABLE(libkms,
  	      AS_HELP_STRING([--disable-libkms],
  	      [Disable KMS mm abstraction library (default: auto, enabled on supported platforms)]),
-@@ -313,6 +318,10 @@
+@@ -322,6 +327,10 @@
  	AC_DEFINE(UDEV, 1, [Have UDEV support])
  fi
  
@@ -23,9 +23,9 @@
  AC_CANONICAL_HOST
  if test "x$LIBKMS" = xauto ; then
  	case $host_os in
-@@ -444,6 +453,13 @@
- fi
- AM_CONDITIONAL(HAVE_LIBUDEV, [test "x$HAVE_LIBUDEV" = xyes])
+@@ -451,6 +460,13 @@
+ AC_MSG_RESULT([$CAIRO])
+ AM_CONDITIONAL(HAVE_CAIRO, [test "x$CAIRO" = xyes])
  
 +# For FreeBSD support
 +PKG_CHECK_MODULES([LIBDEVQ], [libdevq-1.0 >= 0.0.4], [HAVE_LIBDEVQ=yes], [HAVE_LIBDEVQ=no])

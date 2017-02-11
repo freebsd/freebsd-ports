@@ -6,7 +6,7 @@ PORTVERSION=	1.68
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Custom package repository builder for FreeBSD and DragonFly
 
 LICENSE=	ISCL

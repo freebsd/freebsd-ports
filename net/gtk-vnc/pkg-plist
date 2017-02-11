@@ -38,6 +38,7 @@ man/man1/gvnccapture.1.gz
 share/gir-1.0/GVnc-1.0.gir
 %%PULSEAUDIO%%share/gir-1.0/GVncPulse-1.0.gir
 share/gir-1.0/GtkVnc-2.0.gir
+share/locale/bs/LC_MESSAGES/gtk-vnc.mo
 share/locale/ca/LC_MESSAGES/gtk-vnc.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk-vnc.mo
 share/locale/cs/LC_MESSAGES/gtk-vnc.mo
@@ -51,6 +52,7 @@ share/locale/eu/LC_MESSAGES/gtk-vnc.mo
 share/locale/fr/LC_MESSAGES/gtk-vnc.mo
 share/locale/gd/LC_MESSAGES/gtk-vnc.mo
 share/locale/gl/LC_MESSAGES/gtk-vnc.mo
+share/locale/guc/LC_MESSAGES/gtk-vnc.mo
 share/locale/he/LC_MESSAGES/gtk-vnc.mo
 share/locale/hu/LC_MESSAGES/gtk-vnc.mo
 share/locale/id/LC_MESSAGES/gtk-vnc.mo
@@ -61,6 +63,7 @@ share/locale/lt/LC_MESSAGES/gtk-vnc.mo
 share/locale/lv/LC_MESSAGES/gtk-vnc.mo
 share/locale/nb/LC_MESSAGES/gtk-vnc.mo
 share/locale/nds/LC_MESSAGES/gtk-vnc.mo
+share/locale/oc/LC_MESSAGES/gtk-vnc.mo
 share/locale/pa/LC_MESSAGES/gtk-vnc.mo
 share/locale/pl/LC_MESSAGES/gtk-vnc.mo
 share/locale/pt/LC_MESSAGES/gtk-vnc.mo
@@ -82,5 +85,7 @@ share/locale/zh_HK/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_TW/LC_MESSAGES/gtk-vnc.mo
 share/vala/vapi/gtk-vnc-2.0.deps
 share/vala/vapi/gtk-vnc-2.0.vapi
+share/vala/vapi/gvnc-1.0.deps
 share/vala/vapi/gvnc-1.0.vapi
+%%PULSEAUDIO%%share/vala/vapi/gvncpulse-1.0.deps
 %%PULSEAUDIO%%share/vala/vapi/gvncpulse-1.0.vapi

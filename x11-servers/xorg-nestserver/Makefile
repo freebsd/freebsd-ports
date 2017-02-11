@@ -4,57 +4,28 @@
 PORTNAME=	xorg-nestserver
 PORTVERSION=	1.19.1
 PORTEPOCH=	2
-CATEGORIES=	x11-servers
-MASTER_SITES=	XORG/individual/xserver
-DISTNAME=	xorg-server-${PORTVERSION}
-DIST_SUBDIR=	xorg/xserver
 
-MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Nesting X server from X.Org
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
+MASTERDIR=	${.CURDIR}/../xorg-server
+DESCR=		${.CURDIR}/pkg-descr
+DISTINFO_FILE=	${.CURDIR}/distinfo
+PATCHDIR=	${.CURDIR}/files
+
 RUN_DEPENDS=	xkeyboard-config>=2.5:x11/xkeyboard-config
 
-USES=		tar:bzip2 pkgconfig ssl
-INSTALL_WRKSRC= ${WRKSRC}/hw/xnest
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --disable-dmx \
-		--disable-xephyr \
-		--enable-xnest \
-		--disable-xfbdev \
-		--disable-kdrive \
-		--disable-xfake \
-		--disable-screensaver \
-		--disable-xwin \
-		--disable-xwayland \
-		--disable-xorg \
-		--without-xmlto \
-		--disable-docs \
-		--disable-devel-docs \
-		--localstatedir=/var \
-		--without-dtrace \
-		--without-doxygen \
-		--disable-glx \
-		--disable-dri  \
-		--disable-config-hal \
-		--disable-libdrm \
-		--disable-glx-tls \
-		--disable-vbe \
-		--disable-vgahw \
-		--disable-xvfb \
-		--with-fontrootdir=${PREFIX}/share/fonts
+SLAVE_PORT=	yes
+OPTIONS_EXCLUDE=DEVD HAL SUID
 
-USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
-		damageproto xcmiscproto xextproto xf86miscproto inputproto \
-		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
-		dri2proto resourceproto fontsproto xf86dgaproto videoproto \
-		compositeproto trapproto recordproto resourceproto \
-		xineramaproto xinerama evieproto xkbfile xfont2 fontenc xkbui \
-		xxf86misc xxf86vm xaw7 xmu xpm xext pixman xtrans presentproto
+USE_XORG=	x11 xext xfont2
 
-PLIST_FILES=	bin/Xnest \
-		man/man1/Xnest.1.gz
+CONFIGURE_ARGS+=--enable-xnest --disable-dmx --disable-xephyr --disable-xvfb
 
-.include <bsd.port.mk>
+PLIST_FILES=	bin/Xnest man/man1/Xnest.1.gz
+
+do-install:
+	cd ${WRKSRC}/hw/xnest; DESTDIR=${STAGEDIR} ${MAKE} install
+
+.include "${MASTERDIR}/Makefile"

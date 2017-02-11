@@ -4,7 +4,7 @@ include/EGL/eglextchromium.h
 include/EGL/eglmesaext.h
 include/EGL/eglplatform.h
 include/KHR/khrplatform.h
-lib/.mesa/libEGL.so
-lib/.mesa/libEGL.so.1
-lib/.mesa/libEGL.so.1.0.0
+lib/libEGL.so
+lib/libEGL.so.1
+lib/libEGL.so.1.0.0
 libdata/pkgconfig/egl.pc

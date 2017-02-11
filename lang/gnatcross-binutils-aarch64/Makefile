@@ -5,7 +5,7 @@ PORTREVISION=	0
 PKGNAMEPREFIX=	gnatcross-
 PKGNAMESUFFIX=	-aarch64
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infrastructure for C/Ada FreeBSD cross-compiler (aarch64)
 
 BRANCH2=	# Assume aarch64 will always be only CPU for FreeBSD/ARM64

@@ -1,4 +1,4 @@
---- config.h.in.orig	2016-11-29 13:34:54 UTC
+--- config.h.in.orig	2017-01-28 02:00:33 UTC
 +++ config.h.in
 @@ -8,6 +8,9 @@
  /* Define to 1 if using `alloca.c'. */

@@ -1,0 +1,6 @@
+LTTng-UST is the user space tracing component of the LTTng project.
+It is a port to user space of the low-overhead tracing capabilities of
+the LTTng Linux kernel tracer.
+The liblttng-ust library is used to trace user applications and libraries.
+
+WWW: https://github.com/lttng/lttng-ust

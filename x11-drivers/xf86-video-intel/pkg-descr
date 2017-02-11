@@ -1,3 +1,10 @@
-Driver for Intel integrated graphics chipsets. It supports the i810,
-i810-DC100, i810e, i815, i830M, 845G, 852GM, 855GM, 865G, 915G, 915GM,
-945G, 945GM, 965G, 965Q, 946GZ and 965GM chipsets.
+Driver for Intel(R) Integrated Graphics Chipsets:
+  i810, i810-dc100, i810e, i815, i830M, 845G, 854, 852GM/855GM, 865G,
+  915G, E7221 (i915), 915GM, 945G, 945GM, 945GME, Pineview GM,
+  Pineview G, 965G, G35, 965Q, 946GZ, 965GM, 965GME/GLE, G33, Q35, Q33,
+  GM45, 4 Series, G45/G43, Q45/Q43, G41, B43
+Driver for Intel(R) HD Graphics: 2000-5000
+Driver for Intel(R) Iris(TM) Graphics: 5100
+Driver for Intel(R) Iris(TM) Pro Graphics: 5200
+
+WWW: http://www.intellinuxgraphics.com/
