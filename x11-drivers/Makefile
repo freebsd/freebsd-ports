@@ -11,6 +11,7 @@
     SUBDIR += xf86-input-hyperpen
     SUBDIR += xf86-input-joystick
     SUBDIR += xf86-input-keyboard
+    SUBDIR += xf86-input-libinput
     SUBDIR += xf86-input-mouse
     SUBDIR += xf86-input-mutouch
     SUBDIR += xf86-input-penmount
