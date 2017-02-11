@@ -1,4 +1,4 @@
---- configure.orig	2017-01-15 13:16:10 UTC
+--- configure.orig	2017-01-30 19:04:05 UTC
 +++ configure
 @@ -646,6 +646,10 @@ HAVE_MANPAGES_STYLESHEET_TRUE
  MANPAGES_STYLESHEET
@@ -8,10 +8,10 @@
 +HAVE_LIBDEVQ_TRUE
 +LIBDEVQ_LIBS
 +LIBDEVQ_CFLAGS
- HAVE_LIBUDEV_FALSE
- HAVE_LIBUDEV_TRUE
- LIBUDEV_LIBS
-@@ -842,6 +846,7 @@ with_gnu_ld
+ HAVE_CAIRO_FALSE
+ HAVE_CAIRO_TRUE
+ CAIRO_LIBS
+@@ -838,6 +842,7 @@ with_gnu_ld
  with_sysroot
  enable_libtool_lock
  enable_udev
@@ -19,16 +19,16 @@
  enable_libkms
  enable_intel
  enable_radeon
-@@ -885,6 +890,8 @@ CAIRO_CFLAGS
+@@ -877,6 +882,8 @@ CUNIT_CFLAGS
+ CUNIT_LIBS
+ CAIRO_CFLAGS
  CAIRO_LIBS
- LIBUDEV_CFLAGS
- LIBUDEV_LIBS
 +LIBDEVQ_CFLAGS
 +LIBDEVQ_LIBS
  VALGRIND_CFLAGS
  VALGRIND_LIBS'
  
-@@ -1519,6 +1526,8 @@ Optional Features:
+@@ -1511,6 +1518,8 @@ Optional Features:
    --disable-libtool-lock  avoid locking (might break parallel builds)
    --enable-udev           Enable support for using udev instead of mknod
                            (default: disabled)
@@ -37,10 +37,10 @@
    --disable-libkms        Disable KMS mm abstraction library (default: auto,
                            enabled on supported platforms)
    --disable-intel         Enable support for intel's KMS API (default: auto,
-@@ -1602,6 +1611,10 @@ Some influential environment variables:
-               C compiler flags for LIBUDEV, overriding pkg-config
-   LIBUDEV_LIBS
-               linker flags for LIBUDEV, overriding pkg-config
+@@ -1586,6 +1595,10 @@ Some influential environment variables:
+   CAIRO_CFLAGS
+               C compiler flags for CAIRO, overriding pkg-config
+   CAIRO_LIBS  linker flags for CAIRO, overriding pkg-config
 +  LIBDEVQ_CFLAGS
 +              C compiler flags for LIBDEVQ, overriding pkg-config
 +  LIBDEVQ_LIBS
@@ -48,7 +48,79 @@
    VALGRIND_CFLAGS
                C compiler flags for VALGRIND, overriding pkg-config
    VALGRIND_LIBS
-@@ -13440,6 +13453,14 @@ else
+@@ -10092,7 +10105,7 @@ $as_echo_n "checking whether the $compil
+   hardcode_minus_L=no
+   hardcode_shlibpath_var=unsupported
+   inherit_rpath=no
+-  link_all_deplibs=unknown
++  link_all_deplibs=no
+   module_cmds=
+   module_expsym_cmds=
+   old_archive_from_new_cmds=
+@@ -10391,7 +10404,7 @@ _LT_EOF
+ 	wlarc=
+       else
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       fi
+       ;;
+ 
+@@ -10410,7 +10423,7 @@ _LT_EOF
+ _LT_EOF
+       elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs=no
+       fi
+@@ -10439,7 +10452,7 @@ _LT_EOF
+ 	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	    hardcode_libdir_flag_spec='$wl-rpath $wl$libdir'
+ 	    archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	    archive_expsym_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	    archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+ 	  else
+ 	    ld_shlibs=no
+ 	  fi
+@@ -10457,7 +10470,7 @@ _LT_EOF
+     *)
+       if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
+ 	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
+-	archive_expsym_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-retain-symbols-file $wl$export_symbols -o $lib'
++	archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname $wl-version-script $wl$lib-ver -o $lib'
+       else
+ 	ld_shlibs=no
+       fi
+@@ -11105,7 +11118,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >
+ 	hardcode_direct_absolute=yes
+ 	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
+ 	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-	  archive_expsym_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-retain-symbols-file,$export_symbols'
++	  archive_expsym_cmds='echo "{ global:" > $lib-ver~		 sed -e "s|$|;|" < $export_symbols >> $lib-ver~	 echo "local: *; };" >> $lib-ver~$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags $wl-version-script,$lib-ver'
+ 	  hardcode_libdir_flag_spec='$wl-rpath,$libdir'
+ 	  export_dynamic_flag_spec='$wl-E'
+ 	else
+@@ -11954,7 +11967,7 @@ freebsd* | dragonfly*)
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+-      library_names_spec='$libname$release$shared_ext$versuffix $libname$release$shared_ext$major $libname$shared_ext'
++      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
+       soname_spec='$libname$release$shared_ext$major'
+       need_version=no
+       need_lib_prefix=no
+@@ -13089,7 +13102,7 @@ striplib=
+ old_striplib=
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
+ $as_echo_n "checking whether stripping libraries is possible... " >&6; }
+-if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
++if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
+   test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
+   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+@@ -13217,6 +13230,14 @@ else
  fi
  
  
@@ -63,7 +135,7 @@
  # Check whether --enable-libkms was given.
  if test "${enable_libkms+set}" = set; then :
    enableval=$enable_libkms; LIBKMS=$enableval
-@@ -13976,6 +13997,12 @@ $as_echo "#define UDEV 1" >>confdefs.h
+@@ -13873,6 +13894,12 @@ $as_echo "#define UDEV 1" >>confdefs.h
  
  fi
  
@@ -76,7 +148,7 @@
  
  if test "x$LIBKMS" = xauto ; then
  	case $host_os in
-@@ -14520,6 +14547,92 @@ else
+@@ -14331,6 +14358,92 @@ else
  fi
  
  
@@ -169,8 +241,8 @@
  # xsltproc for docbook manpages
  # Check whether --enable-manpages was given.
  if test "${enable_manpages+set}" = set; then :
-@@ -14930,6 +15043,10 @@ if test -z "${HAVE_LIBUDEV_TRUE}" && tes
-   as_fn_error $? "conditional \"HAVE_LIBUDEV\" was never defined.
+@@ -14737,6 +14850,10 @@ if test -z "${HAVE_CAIRO_TRUE}" && test 
+   as_fn_error $? "conditional \"HAVE_CAIRO\" was never defined.
  Usually this means the macro was only invoked conditionally." "$LINENO" 5
  fi
 +if test -z "${HAVE_LIBDEVQ_TRUE}" && test -z "${HAVE_LIBDEVQ_FALSE}"; then
