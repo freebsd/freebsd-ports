@@ -21,6 +21,7 @@ USES=		tar:bzip2
 USE_SDL=	mixer image sdl
 USE_GL=		yes
 USE_GCC=	any
+USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize
 
