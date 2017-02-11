@@ -1,6 +1,6 @@
---- Makefile.am.orig	2016-06-23 14:29:40.575882000 +0200
-+++ Makefile.am	2016-06-23 14:38:48.752016000 +0200
-@@ -108,9 +108,9 @@
+--- Makefile.am.orig	2016-12-13 03:45:20.000000000 +0100
++++ Makefile.am	2017-01-30 14:02:04.821902000 +0100
+@@ -115,9 +115,9 @@
  libdrm_la_LTLIBRARIES = libdrm.la
  libdrm_ladir = $(libdir)
  libdrm_la_LDFLAGS = -version-number 2:4:0 -no-undefined
