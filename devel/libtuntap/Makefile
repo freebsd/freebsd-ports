@@ -6,7 +6,7 @@ DISTVERSION=	0.3-23
 DISTVERSIONSUFFIX=	-ga8bcade
 CATEGORIES=	devel net
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Configuring TUN or TAP devices API in a portable manner
 
 LICENSE=	MIT

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/20030306
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/.//g}
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Humorous Arcade game for X
 
 LICENSE=	GPLv2
