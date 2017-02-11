@@ -58,6 +58,17 @@
  #endif
  	return mapaddr;
  }
+@@ -366,8 +367,8 @@ ScfbPreInit(ScrnInfoPtr pScrn, int flags
+ 	struct fbtype fb;
+ 	int default_depth, wstype;
+ 	const char *dev;
+-	char *mod = NULL, *s;
+-	const char *reqSym = NULL;
++	char *mod = NULL;
++	const char *reqSym = NULL, *s;
+ 	Gamma zeros = {0.0, 0.0, 0.0};
+ 	DisplayModePtr mode;
+ 
 @@ -633,9 +634,9 @@ ScfbShadowInit(ScreenPtr pScreen)
  }
  

@@ -2,6 +2,7 @@
 
 PORTNAME=	xf86-input-wacom
 PORTVERSION=	0.34.0
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	SF/linuxwacom/${PORTNAME}
 
@@ -13,8 +14,8 @@ LICENSE=	GPLv2+
 BUILD_DEPENDS=	v4l_compat>=1.0.20110603:multimedia/v4l_compat
 RUN_DEPENDS=	webcamd>=3.1.0.1:multimedia/webcamd
 
-USES=		tar:bzip2 pathfix pkgconfig libtool
-USE_XORG=	x11 xinerama xrandr
+USES=		pathfix
+USE_XORG=	x11 xext xinerama xrandr
 XORG_CAT=	driver
 LDFLAGS+=	-Wl,--as-needed # Xext
 USE_RC_SUBR=	wacom
@@ -23,7 +24,6 @@ CONFIGURE_ENV=	UDEV_CFLAGS=" " UDEV_LIBS=" "
 CONFIGURE_ARGS=	--without-systemd-unit-dir \
 		--without-udev-rules-dir \
 		--without-doxygen
-INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DEBUG TEST
 

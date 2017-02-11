@@ -1,0 +1,48 @@
+From f11531c99fcd6473f58b4d10efaf3efd84304d8e Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Michel=20D=C3=A4nzer?= <michel.daenzer@amd.com>
+Date: Mon, 21 Nov 2016 18:15:05 +0900
+Subject: Enable glamor by default with >= R600 and Xorg >= 1.18.3
+
+glamor should now perform at least as well as EXA in general, and this
+allows DRI3 to be enabled by default for >= R600.
+
+Reviewed-by: Alex Deucher <alexander.deucher@amd.com>
+
+diff --git a/man/radeon.man b/man/radeon.man
+index 6af7a92..8990ae2 100644
+--- man/radeon.man
++++ man/radeon.man
+@@ -293,7 +293,7 @@ Chooses between available acceleration architectures.  Valid values are
+ .B glamor
+ (for R300 or higher). The default is
+ .B glamor
+-as of TAHITI, otherwise
++with R600 or newer (with Xorg >= 1.18.3, otherwise with TAHITI or newer), otherwise
+ .B EXA.
+ 
+ .PP
+diff --git a/src/radeon_glamor.c b/src/radeon_glamor.c
+index b66848f..590c9f0 100644
+--- src/radeon_glamor.c
++++ src/radeon_glamor.c
+@@ -84,8 +84,15 @@ radeon_glamor_pre_init(ScrnInfoPtr scrn)
+ 		return FALSE;
+ 
+ 	s = xf86GetOptValString(info->Options, OPTION_ACCELMETHOD);
+-	if (s == NULL && info->ChipFamily < CHIP_FAMILY_TAHITI)
+-		return FALSE;
++	if (!s) {
++		if (xorgGetVersion() >= XORG_VERSION_NUMERIC(1,18,3,0,0)) {
++			if (info->ChipFamily < CHIP_FAMILY_R600)
++				return FALSE;
++		} else {
++			if (info->ChipFamily < CHIP_FAMILY_TAHITI)
++				return FALSE;
++		}
++	}
+ 
+ 	if (s && strcasecmp(s, "glamor") != 0) {
+ 		if (info->ChipFamily >= CHIP_FAMILY_TAHITI)
+-- 
+cgit v0.10.2
+
