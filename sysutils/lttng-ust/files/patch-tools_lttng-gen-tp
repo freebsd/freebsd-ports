@@ -1,0 +1,8 @@
+--- tools/lttng-gen-tp.orig	2017-01-08 00:38:50 UTC
++++ tools/lttng-gen-tp
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env %%PYTHON_VERSION%%
+ #
+ # Copyright (c)  2012 Yannick Brosseau <yannick.brosseau@gmail.com>
+ #

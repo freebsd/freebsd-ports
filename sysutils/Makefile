@@ -555,6 +555,8 @@
     SUBDIR += lr
     SUBDIR += lsof
     SUBDIR += ltrace
+    SUBDIR += lttng-tools
+    SUBDIR += lttng-ust
     SUBDIR += luckybackup
     SUBDIR += lxinput
     SUBDIR += lxsplit

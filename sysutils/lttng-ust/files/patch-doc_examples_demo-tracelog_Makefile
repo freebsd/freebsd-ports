@@ -1,0 +1,26 @@
+--- doc/examples/demo-tracelog/Makefile.orig	2016-08-25 21:53:05 UTC
++++ doc/examples/demo-tracelog/Makefile
+@@ -15,12 +15,8 @@
+ #
+ # This makefile is purposefully kept simple to support GNU and BSD make.
+ 
+-ifdef AM_CC
+-	CC = $(AM_CC)
+-endif
+-
+-LIBS = -ldl -llttng-ust	# On Linux
+-#LIBS = -lc	# On BSD
++#LIBS = -ldl -llttng-ust	# On Linux
++LIBS = -llttng-ust	# On FreeBSD
+ LOCAL_CPPFLAGS += -I.
+ 
+ all: demo-tracelog
+@@ -31,7 +27,7 @@ demo-tracelog.o: demo-tracelog.c
+ 
+ demo-tracelog: demo-tracelog.o
+ 	$(CC) $(LDFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(AM_CFLAGS) \
+-		-o $@ $< $(LIBS)
++		-o $@ demo-tracelog.o $(LIBS)
+ 
+ .PHONY: clean
+ clean:

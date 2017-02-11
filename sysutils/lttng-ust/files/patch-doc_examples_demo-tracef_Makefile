@@ -1,0 +1,26 @@
+--- doc/examples/demo-tracef/Makefile.orig	2016-08-08 21:25:36 UTC
++++ doc/examples/demo-tracef/Makefile
+@@ -15,12 +15,8 @@
+ #
+ # This makefile is purposefully kept simple to support GNU and BSD make.
+ 
+-ifdef AM_CC
+-	CC = $(AM_CC)
+-endif
+-
+-LIBS = -ldl -llttng-ust	# On Linux
+-#LIBS = -lc	# On BSD
++#LIBS = -ldl -llttng-ust	# On Linux
++LIBS = -llttng-ust	# On FreeBSD
+ LOCAL_CPPFLAGS += -I.
+ 
+ all: demo-tracef
+@@ -31,7 +27,7 @@ demo-tracef.o: demo-tracef.c
+ 
+ demo-tracef: demo-tracef.o
+ 	$(CC) $(LDFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(AM_CFLAGS) \
+-		-o $@ $< $(LIBS)
++		-o $@ demo-tracef.o $(LIBS)
+ 
+ .PHONY: clean
+ clean:
