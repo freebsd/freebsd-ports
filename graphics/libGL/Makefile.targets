@@ -17,7 +17,7 @@ post-patch:
 .endif
 .endif
 #	Sed on 9.x and dragonfly don't support \< or \>
-	@${REINPLACE_CMD} -e 's|\\>//|[[:>:]]//|' \
+	@${REINPLACE_CMD} -e 's|\\>//|[[:>:]]//|' -e 's|\\S\*//|[:graph:]* //|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/src/mesa/drivers/dri/common/xmlconfig.c
