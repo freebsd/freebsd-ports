@@ -30,7 +30,8 @@ BAT_DESC=	Basic Audio Tester support
 BAT_LIB_DEPENDS=libfftw3.so:math/fftw3
 BAT_CONFIGURE_ENABLE=bat
 
-MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto
+MANPAGES_BUILD_DEPENDS=	minixmlto:textproc/minixmlto
+MANPAGES_CONFIGURE_ENV=	ac_cv_prog_xmlto=minixmlto
 MANPAGES_CONFIGURE_ENABLE=xmlto
 
 NLS_USES=	gettext
@@ -42,7 +43,10 @@ SAMPLERATE_CONFIGURE_ENV_OFF=ac_cv_header_samplerate_h=no
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LIBS/s/-ldl//g; /LIBRT/s/-lrt//g;' \
+		-e '/x"$$xmlto"/s/= xyes/!= xno/' \
 		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's/	xmlto/	$$(xmlto)/' \
+		${WRKSRC}/alsactl/Makefile.in
 	${FIND} -E ${WRKSRC} -type f -regex \
 		'.*\.([[:digit:]]|spec\.in|csv|xml)' -exec \
 		${REINPLACE_CMD} -i .pathfix.bak \
