@@ -150,8 +150,8 @@ POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 IGNORE_FreeBSD_9=	Requires OpenSSL >= 1.0.1 (set DEFAULT_VERSIONS+=ssl=openssl)
 .endif
 
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	requires PSK which is unsupported by the selected LibreSSL
+.if ${SSL_DEFAULT:Mlibressl*} || defined(LIBRESSL_IS_OPENSSL)
+IGNORE=	requires PSK which is unsupported by the selected LibreSSL. Use zabbix32${PKGNAMESUFFIX} instead
 .endif
 
 post-patch:
