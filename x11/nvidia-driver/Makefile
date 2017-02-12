@@ -58,9 +58,9 @@ NVVERSION=	${DISTVERSION}
 .endif
 
 .if ${NVVERSION} >= 331.013
-SUB_LIST=	NVGL=""
+SUB_LIST+=	NVGL=""
 .else
-SUB_LIST=	NVGL="# "
+SUB_LIST+=	NVGL="\# "
 .endif
 
 .if ${NVVERSION} < 355.006
