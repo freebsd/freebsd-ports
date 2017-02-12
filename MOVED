@@ -9069,3 +9069,4 @@ devel/libdict||2017-02-08|Has expired: Broken for more than 6 months
 math/R-cran-SuppDists||2017-02-08|Has expired: Broken for more than 6 months
 devel/py-re2||2017-02-08|Has expired: Broken for more than 6 months
 net-p2p/digitalcoin||2017-02-08|Has expired: Broken for more than 6 months
+devel/php70-APCu|devel/pecl-APCu|2017-02-12|Use devel/pecl-APCu for PHP 7.0+ users
