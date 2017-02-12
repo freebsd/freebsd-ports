@@ -21,6 +21,7 @@ usr/bin/gprof
 usr/bin/i686-redhat-linux-c++
 usr/bin/i686-redhat-linux-g++
 usr/bin/i686-redhat-linux-gcc
+usr/bin/ld
 usr/bin/ld.bfd
 usr/bin/ld.gold
 usr/bin/nm
