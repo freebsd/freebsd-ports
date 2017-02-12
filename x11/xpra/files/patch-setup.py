@@ -1,15 +1,26 @@
---- setup.py.orig	2015-09-10 14:42:44 UTC
+--- setup.py.orig	2017-02-01 05:52:14 UTC
 +++ setup.py
-@@ -147,7 +147,7 @@ nvenc4_ENABLED          = pkg_config_ok(
- nvenc5_ENABLED          = pkg_config_ok("--exists", "nvenc5")
- #elif os.path.exists("C:\\nvenc_3.0_windows_sdk")
- #...
--csc_opencl_ENABLED      = pkg_config_ok("--exists", "OpenCL") and check_pyopencl_AMD()
-+csc_opencl_ENABLED      = pkg_config_ok("--exists", "OpenCL")
- memoryview_ENABLED      = PYTHON3
+@@ -218,7 +218,7 @@ else:
+     nvenc7_ENABLED          = DEFAULT and pkg_config_ok("--exists", "nvenc7")
  
- warn_ENABLED            = True
-@@ -1560,12 +1560,12 @@ if WIN32:
+ memoryview_ENABLED      = sys.version>='2.7'
+-csc_opencl_ENABLED      = DEFAULT and pkg_config_ok("--exists", "OpenCL") and check_pyopencl_AMD()
++csc_opencl_ENABLED      = DEFAULT and pkg_config_ok("--exists", "OpenCL")
+ csc_libyuv_ENABLED      = DEFAULT and memoryview_ENABLED and pkg_config_ok("--exists", "libyuv", fallback=WIN32)
+ 
+ #Cython / gcc / packaging build options:
+@@ -798,8 +798,8 @@ def get_base_conf_dir(install_dir, strip
+         elif "usr" in dirs:
+             #ie: ["some", "path", "to", "usr"] -> ["usr"]
+             #assume "/usr" or "/usr/local" is the build root
+-            while "usr" in dirs and dirs.index("usr")>0:
+-                dirs = dirs[dirs.index("usr"):]
++            while "usr" in dirs[1:]:
++                dirs = dirs[dirs[1:].index("usr")+1:]
+         elif "image" in dirs:
+             # Gentoo's "${PORTAGE_TMPDIR}/portage/${CATEGORY}/${PF}/image/_python2.7" -> ""
+             while "image" in dirs:
+@@ -1839,12 +1839,12 @@ if WIN32:
  else:
      #OSX and *nix:
      scripts += ["scripts/xpra", "scripts/xpra_launcher"]
@@ -22,14 +33,45 @@
 -    add_data_files("share/icons",         ["xdg/xpra.png"])
 +    add_data_files("share/pixmaps",       ["xdg/xpra.png"])
      add_data_files("share/appdata",       ["xdg/xpra.appdata.xml"])
-     html5_dir = "share/xpra/www"
  
-@@ -1688,7 +1688,7 @@ if html5_ENABLED:
+     #here, we override build and install so we can
+@@ -1877,7 +1877,7 @@ else:
+             if printing_ENABLED and os.name=="posix":
+                 #install "/usr/lib/cups/backend" with 0700 permissions:
+                 xpraforwarder_src = os.path.join("cups", "xpraforwarder")
+-                cups_backend_dir = os.path.join(self.install_dir, "lib", "cups", "backend")
++                cups_backend_dir = os.path.join(self.install_dir, "libexec", "cups", "backend")
+                 self.mkpath(cups_backend_dir)
+                 xpraforwarder_dst = os.path.join(cups_backend_dir, "xpraforwarder")
+                 shutil.copyfile(xpraforwarder_src, xpraforwarder_dst)
+@@ -1895,7 +1895,8 @@ else:
+                 #install xorg.conf, cuda.conf and nvenc.keys:
+                 etc_xpra = os.path.join(etc_prefix, "etc", "xpra")
+                 self.mkpath(etc_xpra)
+-                for x in ("xorg.conf", "cuda.conf", "nvenc.keys"):
++                etc_files = ["xorg.conf", "cuda.conf", "nvenc.keys"] if nvenc7_ENABLED else ["xorg.conf"]
++                for x in etc_files:
+                     shutil.copyfile("etc/xpra/%s" % x, os.path.join(etc_xpra, x))
  
- if printing_ENABLED and os.name=="posix":
-     #"/usr/lib/cups/backend":
--    cups_backend_dir = os.path.join(sys.prefix, "lib", "cups", "backend")
-+    cups_backend_dir = os.path.join(sys.prefix, "libexec", "cups", "backend")
-     add_data_files(cups_backend_dir, ["cups/xpraforwarder"])
+             if pam_ENABLED:
+@@ -1928,7 +1929,7 @@ else:
+         add_packages("xpra.platform.xposix")
+         remove_packages("xpra.platform.win32", "xpra.platform.darwin")
+         #not supported by all distros, but doesn't hurt to install it anyway:
+-        add_data_files("lib/tmpfiles.d", ["tmpfiles.d/xpra.conf"])
++        #add_data_files("lib/tmpfiles.d", ["tmpfiles.d/xpra.conf"])
  
+     #gentoo does weird things, calls --no-compile with build *and* install
+     #then expects to find the cython modules!? ie:
+@@ -2353,7 +2354,10 @@ if enc_x265_ENABLED:
  
+ toggle_packages(enc_xvid_ENABLED, "xpra.codecs.enc_xvid")
+ if enc_xvid_ENABLED:
+-    xvid_pkgconfig = pkgconfig("xvid")
++    xvid_pkgconfig = pkgconfig(optimize=3)
++    add_to_keywords(xvid_pkgconfig, 'libraries', "xvidcore")
++    add_to_keywords(xvid_pkgconfig, 'library_dirs', "%%LOCALBASE%%/lib")
++    add_to_keywords(xvid_pkgconfig, 'include_dirs', "%%LOCALBASE%%/include")
+     cython_add(Extension("xpra.codecs.enc_xvid.encoder",
+                 ["xpra/codecs/enc_xvid/encoder.pyx", buffers_c],
+                 **xvid_pkgconfig))

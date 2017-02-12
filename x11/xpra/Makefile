@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	0.15.10
-PORTREVISION=	6
+PORTVERSION=	1.0.2
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -13,63 +12,95 @@ COMMENT=	Xpra gives you persistent remote applications for X
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cython:lang/cython \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2
+		${PYTHON_PKGNAMEPREFIX}gtk2>2:x11-toolkits/py-gtk2 \
+		${PYNUMPY}
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>=0.7.0_1:archivers/py-lz4 \
-		${PYTHON_SITELIBDIR}/rencode/__init__.py:converters/py-rencode \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus \
-		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-PyOpenGL \
-		${PYTHON_SITELIBDIR}/OpenGL_accelerate/__init__.py:graphics/py-PyOpenGL-accelerate \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
-		${PYTHON_SITELIBDIR}/netifaces.so:net/py-netifaces \
+		${PYTHON_PKGNAMEPREFIX}rencode>1:converters/py-rencode \
+		${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify \
+		${PYTHON_PKGNAMEPREFIX}xxhash>0:devel/py-xxhash \
+		${PYTHON_PKGNAMEPREFIX}pillow>1:graphics/py-pillow \
+		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=3.1.0:graphics/py-PyOpenGL \
+		${PYTHON_PKGNAMEPREFIX}PyOpenGL-accelerate>=3.1.0:graphics/py-PyOpenGL-accelerate \
+		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces \
 		ssh-askpass:security/openssh-askpass \
+		${PYTHON_PKGNAMEPREFIX}cryptography>1:security/py-cryptography \
 		setxkbmap:x11/setxkbmap \
 		xauth:x11/xauth \
 		xkbcomp:x11/xkbcomp \
 		${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		Xvfb:x11-servers/xorg-vfbserver \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:x11-toolkits/py-gtkglext
+		${PYTHON_PKGNAMEPREFIX}gtk2>2:x11-toolkits/py-gtk2 \
+		${PYTHON_PKGNAMEPREFIX}gtkglext>1:x11-toolkits/py-gtkglext \
+		${PYNUMPY}
 
-USES=		desktop-file-utils pkgconfig python shared-mime-info tar:xz
-USE_GSTREAMER=	good python
+USES=		desktop-file-utils fortran gettext-runtime pkgconfig python:2 shared-mime-info tar:xz
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_PYTHON=	distutils
-USE_XORG=	x11 xcomposite xdamage xfixes xkbfile xrandr xtst
+USE_XORG=	x11 xcomposite xdamage xext xfixes xkbfile xrandr xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHON_VER=${PYTHON_VER}
 
-OPTIONS_DEFINE=		AVAHI AVCODEC CUPS OPENCL SWSCALE VPX WEBP X264 X265
-OPTIONS_DEFAULT=	AVAHI AVCODEC CUPS SWSCALE VPX WEBP X264 X265
+OPTIONS_DEFINE=		AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV OPENCL OPENCV SWSCALE VPX WEBCAM WEBP X264 X265 XVID
+OPTIONS_DEFAULT=	AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX X264
 OPTIONS_SUB=		yes
 
-AVCODEC_DESC=	Enable avcodec2 decoder
-OPENCL_DESC=	Enable OpenCL CSC module
-SWSCALE_DESC=	Enable swscale CSC module
-VPX_DESC=	Enable VP8 and VP9 encoder
-WEBP_DESC=	Enable WebP encoder
-X264_DESC=	Enable X264 encoder
-X265_DESC=	Enable X265 encoder
+AVCODEC_DESC=	Enable avcodec2 (FFmpeg) decoder
+CUPS_DESC=	Enable CUPS for printer forwarding
+FFMPEG_DESC=	Enable FFmpeg encoder
+GSTREAMER_DESC=	Enable GStreamer for sound forwarding
+HTML5_DESC=	Install HTML5 client interface
+LIBYUV_DESC=	Enable libyuv CSC module (CPU, fastest)
+OPENCL_DESC=	Enable OpenCL CSC module (GPU)
+OPENCV_DESC=	Enable OpenCV CSC module (CPU, deprecated)
+SWSCALE_DESC=	Enable swscale (FFmpeg) CSC module (CPU)
+VPX_DESC=	Enable VP8 and VP9 codec (good)
+WEBCAM_DESC=	Enable webcam forwarding (client only)
+WEBP_DESC=	Enable WebP codec (deprecated)
+X264_DESC=	Enable X264 encoder (good)
+X265_DESC=	Enable X265 encoder (slow)
+XVID_DESC=	Enable Xvid encoder (unstable, deprecated)
 
-AVAHI_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:net/py-avahi
+AVAHI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}avahi>0:net/py-avahi
+AVAHI_VARS=		XPRA_OPTIONS+=mdns
 AVCODEC_VARS=		XPRA_OPTIONS+=dec_avcodec2
-CUPS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:print/py-pycups
+CUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycups>1:print/py-pycups
+CUPS_VARS=		XPRA_OPTIONS+=printing
+FFMPEG_VARS=		XPRA_OPTIONS+=enc_ffmpeg
+GSTREAMER_BUILD_DEPENDS=${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1
+GSTREAMER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1
+GSTREAMER_USE=		GSTREAMER1=flac,lame,mad,ogg,opus,vorbis,wavpack
+GSTREAMER_VARS=		XPRA_OPTIONS+=sound
+HTML5_VARS=		XPRA_OPTIONS+=html5
+LIBYUV_LIB_DEPENDS=	libyuv.so:graphics/libyuv
+LIBYUV_VARS=		XPRA_OPTIONS+=csc_libyuv
 OPENCL_LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
-OPENCL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyopencl/__init__.py:devel/py-pyopencl
+OPENCL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyopencl>0:devel/py-pyopencl
 OPENCL_VARS=		XPRA_OPTIONS+=csc_opencl
+OPENCV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opencv2>2:graphics/py-opencv2
+OPENCV_VARS=		XPRA_OPTIONS+=csc_opencv
+SWSCALE_LIB_DEPENDS=	libswscale.so:multimedia/ffmpeg
 SWSCALE_VARS=		XPRA_OPTIONS+=csc_swscale
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_VARS=		XPRA_OPTIONS+=vpx
+WEBCAM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opencv2>2:graphics/py-opencv2
+WEBCAM_VARS=		XPRA_OPTIONS+=webcam
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_VARS=		XPRA_OPTIONS+=webp
 X264_LIB_DEPENDS=	libx264.so:multimedia/libx264
 X264_VARS=		XPRA_OPTIONS+=enc_x264
 X265_LIB_DEPENDS=	libx265.so:multimedia/x265
 X265_VARS=		XPRA_OPTIONS+=enc_x265
+XVID_LIB_DEPENDS=	libxvidcore.so:multimedia/xvid
+XVID_VARS=		XPRA_OPTIONS+=enc_xvid
 
 PYDISTUTILS_PKGNAME=	xpra_all
-XPRA_OPTIONS_ALL=	csc_opencl csc_swscale dec_avcodec2
-XPRA_OPTIONS_ALL+=	enc_x264 enc_x265 vpx webp
+XPRA_OPTIONS_ALL=	csc_libyuv csc_opencl csc_opencv csc_swscale
+XPRA_OPTIONS_ALL+=	dec_avcodec2 enc_ffmpeg enc_x264 enc_x265 enc_xvid
+XPRA_OPTIONS_ALL+=	html5 mdns sound printing vpx webcam webp
 XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED}
-XPRA_OPTIONS_DISABLED=	Xdummy Xdummy_wrapper
-XPRA_OPTIONS_DISABLED+=	nvenc3 nvenc4 nvenc5
+XPRA_OPTIONS_DISABLED=	Xdummy Xdummy_wrapper minify nvenc7
 
 .include <bsd.port.options.mk>
 
@@ -81,7 +112,7 @@ PYDISTUTILS_ARGS+=	--with-${opt}
 .endif
 .endfor
 
-.if ${PORT_OPTIONS:MAVCODEC} || ${PORT_OPTIONS:MSWSCALE}
+.if ${PORT_OPTIONS:MAVCODEC} || ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 .endif
 
@@ -92,12 +123,18 @@ PYDISTUTILS_CONFIGUREARGS+=	${PYDISTUTILS_ARGS}
 PYDISTUTILS_INSTALLARGS+=	${PYDISTUTILS_ARGS}
 
 post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e 's|%%GCC_RUNTIME%%|${LOCALBASE}/lib/gcc${_GCC_VER}|' \
+	    ${WRKSRC}/scripts/xpra ${WRKSRC}/scripts/xpra_launcher
 	${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|' \
 	    ${WRKSRC}/xpra/platform/pycups_printing.py
+	${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/sbin|' \
+	    ${WRKSRC}/etc/xpra/conf.d/16_printing.conf.in
 
 post-install:
-	${RM} ${STAGEDIR}${ETCDIR}/xpra.conf
-	${INSTALL_DATA} ${WRKSRC}/build/etc/xpra/xpra.conf \
+	${MV} ${STAGEDIR}${ETCDIR}/xorg.conf \
+	    ${STAGEDIR}${ETCDIR}/xorg.conf.sample
+	${MV} ${STAGEDIR}${ETCDIR}/xpra.conf \
 	    ${STAGEDIR}${ETCDIR}/xpra.conf.sample
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} -name '*.so' \
 	    -exec ${STRIP_CMD} {} \;
