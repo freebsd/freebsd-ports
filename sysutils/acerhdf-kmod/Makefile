@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 USES=		kmod uidfix
 KMODNAME=	acerhdf
-KERN_DEBUGDIR=
 MANDIR=		${PREFIX}/man/man4
 
 USE_GITHUB=	yes

@@ -16,8 +16,6 @@ BUILD_DEPENDS=	irssi:irc/irssi
 LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-BROKEN=		does not build (error: no member named 'use_tls' in 'struct _XMPP_SERVER_CONNECT_REC')
-
 USES=		gettext-runtime pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

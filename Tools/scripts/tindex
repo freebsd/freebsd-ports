@@ -9,7 +9,7 @@
 # on the most recent 'svn update', and put those committers "on the hook".
 # These committers all stay on the hook until INDEX is buildable again.
 #
-# MAINTAINER= erwin@FreeBSD.org
+# MAINTAINER= portmgr@FreeBSD.org
 #
 
 # --------------------------------------------------------

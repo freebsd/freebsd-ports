@@ -2,7 +2,7 @@
 #
 # Created by:	Alexander Langer <alex@big.endian.de>
 # Created on:	May 22, 2000
-# MAINTAINER=	alex@FreeBSD.org
+# MAINTAINER=	portmgr@FreeBSD.org
 
 if [ -z $1 ]; then
 	echo "Usage: $0 <portname> ..."

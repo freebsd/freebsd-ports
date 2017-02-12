@@ -4,7 +4,7 @@
 #
 # Feature:	kmod
 # Usage:	USES=kmod
-# Valid ARGS:	none
+# Valid ARGS:	(none) debug
 #
 # MAINTAINER: rene@FreeBSD.org
 
@@ -13,8 +13,12 @@ _INCLUDE_USES_KMOD_MK=	yes
 
 _USES_POST+=	kmod
 
-.if !empty(kmod_ARGS)
-IGNORE=	USES=kmod takes no arguments
+.if empty(kmod_ARGS)
+_DEBUG_KMOD=
+.elif ${kmod_ARGS} == "debug"
+_DEBUG_KMOD=	yes
+.else
+IGNORE=	USES=kmod takes either no arguments or 'debug'
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
@@ -34,21 +38,25 @@ MAKE_ENV+=	KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys" NO_XREF=yes
 PLIST_FILES+=	"@kld ${KMODDIR}"
 
 STRIP_CMD+=	--strip-debug # do not strip kernel symbols
+.if !empty(_DEBUG_KMOD)
 KERN_DEBUGDIR?=	${DEBUGDIR}
+PLIST_SUB+=	KERN_DEBUGDIR="${KERN_DEBUGDIR:C,^/,,}"
+MAKE_ENV+=	KERN_DEBUGDIR="${KERN_DEBUGDIR}"
+#XXX (rene): it would be nice to automatically add @dir entries here,
+#            they are somehow needed according to 'make makeplist'
+.endif
+
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_KMOD_POST_MK)
 _INCLUDE_USES_KMOD_POST_MK=	yes
 
 _USES_install+=	290:${STAGEDIR}${KMODDIR}
-.if !empty(KERN_DEBUGDIR)
-_USES_install+=	291:${STAGEDIR}${KERN_DEBUGDIR}${KMODDIR}
-.endif
-
 ${STAGEDIR}${KMODDIR}:
 	@${MKDIR} ${.TARGET}
 
-.if !empty(KERN_DEBUGDIR)
+.if !empty(_DEBUG_KMOD)
+_USES_install+=	291:${STAGEDIR}${KERN_DEBUGDIR}${KMODDIR}
 ${STAGEDIR}${KERN_DEBUGDIR}${KMODDIR}:
 	@${MKDIR} ${.TARGET}
 .endif
