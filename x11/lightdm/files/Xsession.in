@@ -33,7 +33,7 @@ done
 
 # Load xmodmap if not using XKB
 if [ -z "$XKB_IN_USE" ]; then
-	for file in "%%LOCALBASE%%/etc/X11/Xmodmap" "%%LOCALBASE%%/etc/X11/.Xkbmap" "%%LOCALBASE%%/etc/X11/xinit/Xkbmap" "%%LOCALBASE%%/etc/X11/xinit/.Xkbmap" "$HOME/.Xmodmap"; do
+	for file in "%%LOCALBASE%%/etc/X11/Xmodmap" "%%LOCALBASE%%/etc/X11/.Xmodmap" "%%LOCALBASE%%/etc/X11/xinit/Xmodmap" "%%LOCALBASE%%/etc/X11/xinit/.Xmodmap" "$HOME/.Xmodmap"; do
 		if [ -f "$file" ]; then
 			echo "Loading modmap: $file"
 			xmodmap "$file"
