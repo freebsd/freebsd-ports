@@ -197,6 +197,7 @@
     SUBDIR += py-preppy
     SUBDIR += py-pycups
     SUBDIR += py-pyscript
+    SUBDIR += py-python-ly
     SUBDIR += py-qt5-printsupport
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab

@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3erios
 
+CC=		${LINUXBASE}/usr/bin/gcc
 USES=		linux
 USE_LINUX=	base devtools:build
 USE_LINUX_PREFIX=	yes
@@ -26,15 +27,8 @@ PLIST_FILES=	lib/skype_oss_wrapper/libpulse.so.0
 
 LIB_DIR=	${PREFIX}/lib/${PORTNAME}
 
-# hardcode compiler path
-post-patch:
-	@${REINPLACE_CMD} -e 's|?= cc| = ${LINUXBASE}/usr/bin/gcc|' \
-			  -e 's|$${CC}|${LINUXBASE}/usr/bin/gcc|' \
-		${WRKSRC}/Makefile
-
 post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/bin/skype_oss
-	@${RMDIR} ${STAGEDIR}${PREFIX}/bin
-	@${BRANDELF} -t Linux ${STAGEDIR}${LIB_DIR}/libpulse.so.0
+	${RM} ${STAGEDIR}${PREFIX}/bin/skype_oss
+	${RMDIR} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

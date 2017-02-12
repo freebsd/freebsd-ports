@@ -18,6 +18,7 @@ usr/bin/gcc-ranlib
 usr/bin/gcov
 usr/bin/gfortran
 usr/bin/gprof
+usr/bin/ld
 usr/bin/ld.bfd
 usr/bin/ld.gold
 usr/bin/nm
