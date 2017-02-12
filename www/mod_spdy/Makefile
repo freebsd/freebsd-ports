@@ -84,7 +84,7 @@ MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT:Mlibressl*} || exists(/usr/lib/libtls.so)
+.if ${SSL_DEFAULT:Mlibressl*} || defined(LIBRESSL_IS_OPENSSL)
 IGNORE=		${PORTNAME} is incompatible with LibreSSL, please use www/apache24 with mod_http2
 .endif
 
