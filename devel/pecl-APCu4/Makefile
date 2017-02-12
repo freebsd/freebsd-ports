@@ -1,22 +1,25 @@
+# Created by: John Chen <johnpupu@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	APCu
-PORTVERSION=	5.1.8
+PORTVERSION=	4.0.11
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	php70-
+PKGNAMEPREFIX=	pecl-
+PKGNAMESUFFIX=	4
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	daniel@blodan.se
+MAINTAINER=	johnpupu@gmail.com
 COMMENT=	APC User Caching
 
 LICENSE=	PHP301
 
-CONFLICTS_INSTALL=	pecl-APC-[0-9]*
+CONFLICTS_INSTALL=	pecl-APC-
 
-IGNORE_WITH_PHP=	56
-PHP_VER=	70
+PORTSCOUT=	limit:^4\.
+
+IGNORE_WITH_PHP=70 71
 USES=		localbase php:ext tar:tgz
 PHP_MODNAME=	${PORTNAME:tl}
 
