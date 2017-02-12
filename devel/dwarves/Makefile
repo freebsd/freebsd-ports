@@ -39,4 +39,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|_GL_ATTRIBUTE_PURE|__attribute__((__pure__))|g' \
 	    ${WRKSRC}/obstack.h ${WRKSRC}/obstack.c
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1200000
+IGNORE=		requires FreeBSD 12.0 (ElfNN_Chdr)
+.endif
+
+.include <bsd.port.post.mk>
