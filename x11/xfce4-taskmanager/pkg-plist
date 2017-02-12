@@ -1,5 +1,8 @@
 bin/xfce4-taskmanager
 share/applications/xfce4-taskmanager.desktop
+share/icons/hicolor/16x16/actions/xc_crosshair.png
+share/icons/hicolor/24x24/actions/xc_crosshair.png
+share/icons/hicolor/scalable/actions/xc_crosshair.svg
 share/locale/ar/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/ast/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/be/LC_MESSAGES/xfce4-taskmanager.mo
