@@ -1,5 +1,5 @@
 # Created by: Stephane Legrand
-# $FreeBSD$
+# $FreeBSD: head/ftp/proftpd/Makefile 433053 2017-02-01 17:05:18Z marino $
 
 PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
@@ -173,9 +173,6 @@ CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 
 .if ${SSL_DEFAULT:Mopenssl-devel}
 BROKEN=		Does not build with openssl-devel
-.endif
-.if ${SSL_DEFAULT:Mlibressl*}
-BROKEN=		Does not build with libressl
 .endif
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
