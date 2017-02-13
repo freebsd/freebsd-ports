@@ -6,7 +6,7 @@ PORTVERSION=	2.9.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Set of tools to control LTTng tracing
 
 LICENSE=		LGPL21 GPLv2
