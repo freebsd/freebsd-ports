@@ -3,7 +3,7 @@
 
 PORTNAME=	AcePerl
 PORTVERSION=	1.92
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology databases perl5
 MASTER_SITES=	CPAN/Ace
 PKGNAMEPREFIX=	p5-
@@ -20,9 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-CFLAGS_aarch64=	-fPIC
-CFLAGS_amd64=	-fPIC
 
 post-patch:
 	@${SED} -e 's|XX__CC__XX|${CC}|' < ${FILESDIR}/FREEBSD_DEF \
