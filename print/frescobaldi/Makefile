@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	lilypond:print/lilypond \
 		${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:graphics/py-poppler-qt4 \
-		${PYTHON_PKGNAMEPREFIX}ly>=0:print/py-python-ly
+		${PYTHON_PKGNAMEPREFIX}python-ly>=0:print/py-python-ly
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wbsoft
