@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lttng-tools
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
