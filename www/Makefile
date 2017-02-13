@@ -56,6 +56,7 @@
     SUBDIR += bolt
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
+    SUBDIR += butterfly
     SUBDIR += c-icap
     SUBDIR += c-icap-modules
     SUBDIR += cadaver
