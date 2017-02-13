@@ -40,6 +40,7 @@ include/dns/ds.h
 include/dns/dsdigest.h
 include/dns/dyndb.h
 include/dns/ecdb.h
+include/dns/ecs.h
 include/dns/edns.h
 include/dns/enumclass.h
 include/dns/enumtype.h
