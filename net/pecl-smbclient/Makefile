@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smbclient
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
