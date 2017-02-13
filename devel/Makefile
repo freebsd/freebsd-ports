@@ -2259,6 +2259,7 @@
     SUBDIR += p5-Devel-CheckCompiler
     SUBDIR += p5-Devel-CheckLib
     SUBDIR += p5-Devel-CheckOS
+    SUBDIR += p5-Devel-Confess
     SUBDIR += p5-Devel-Constants
     SUBDIR += p5-Devel-CoreStack
     SUBDIR += p5-Devel-Cover
