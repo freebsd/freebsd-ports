@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.11.6
+PORTVERSION=	0.11.7
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
@@ -40,8 +40,6 @@ USERS=		_ocserv
 GROUPS=		_ocserv
 
 USE_RC_SUBR=	ocserv
-
-MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI
 
