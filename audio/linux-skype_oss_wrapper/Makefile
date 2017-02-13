@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3erios
 
-CC=		${LINUXBASE}/usr/bin/gcc
+MAKE_ARGS=	CC=${LINUXBASE}/usr/bin/gcc
 USES=		linux
 USE_LINUX=	base devtools:build
 USE_LINUX_PREFIX=	yes
