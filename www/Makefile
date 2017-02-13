@@ -2001,6 +2001,7 @@
     SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
+    SUBDIR += rubygem-kaminari-core
     SUBDIR += rubygem-kaminari-rails4
     SUBDIR += rubygem-kensa
     SUBDIR += rubygem-layout_yullio_generator
