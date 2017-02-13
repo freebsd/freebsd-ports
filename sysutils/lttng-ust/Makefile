@@ -6,7 +6,7 @@ PORTVERSION=	2.9.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Libraries to instrument and trace user applications
 
 LICENSE=		LGPL21 MIT GPLv2
