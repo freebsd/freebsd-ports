@@ -33,6 +33,25 @@ KMODDIR?=	/boot/modules
 .if ${KMODDIR} == /boot/kernel
 KMODDIR=	/boot/modules
 .endif
+
+_DEBUG_KMOD_SH= \
+${ECHO_CMD} -n "\"@dir /%%KERN_DEBUGDIR%%/%%KMODDIR%%\"" ; \
+skd=`${ECHO_CMD} ${KMODDIR} | ${SED} "s,/, ,g"` ; \
+l=`${ECHO_CMD} $$skd | wc -w` ; \
+while [ $$l -gt 0 ] ; do \
+	c=0 ; \
+	r="" ; \
+	for p in $$skd ; do \
+		c=$$(($$c+1)) ; \
+		if [ $$c -eq $$l ] ; then \
+			break ; \
+		fi ; \
+		r="$$r/$$p" ; \
+	done ; \
+	${ECHO_CMD} -n " \"@dir /%%KERN_DEBUGDIR%%$$r\"" ; \
+	l=$$(($$l-1)) ; \
+done
+
 PLIST_SUB+=	KMODDIR="${KMODDIR:C,^/,,}"
 MAKE_ENV+=	KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys" NO_XREF=yes
 PLIST_FILES+=	"@kld ${KMODDIR}"
@@ -42,8 +61,8 @@ STRIP_CMD+=	--strip-debug # do not strip kernel symbols
 KERN_DEBUGDIR?=	${DEBUGDIR}
 PLIST_SUB+=	KERN_DEBUGDIR="${KERN_DEBUGDIR:C,^/,,}"
 MAKE_ENV+=	KERN_DEBUGDIR="${KERN_DEBUGDIR}"
-#XXX (rene): it would be nice to automatically add @dir entries here,
-#            they are somehow needed according to 'make makeplist'
+_KMOD_DIRS!=	${_DEBUG_KMOD_SH}
+PLIST_FILES+=	${_KMOD_DIRS}
 .endif
 
 .endif
