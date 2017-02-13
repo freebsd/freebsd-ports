@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	lttng-tools
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Set of tools to control LTTng tracing
 
 LICENSE=		LGPL21 GPLv2
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 	    liburcu.so:sysutils/liburcu \
 	    liblttng-ust-ctl.so:sysutils/lttng-ust
 
-USES=		autoreconf bison libtool localbase pathfix \
+USES=		autoreconf bison libtool localbase pathfix pkgconfig \
 	    shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2

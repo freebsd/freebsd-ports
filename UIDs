@@ -795,7 +795,7 @@ subsonic:*:844:844::0:0:Subsonic standalone-server:/nonexistent:/usr/sbin/nologi
 sogod:*:846:846::0:0:SOGo groupware:/nonexistent:/usr/sbin/nologin
 domoticz:*:847:847::0:0:domoticz user:/nonexistent:/usr/sbin/nologin
 graylog:*:848:848::0:0:Graylog user:/nonexistent:/usr/sbin/nologin
-# free: 849
+chronyd:*:849:849::0:0:chronyd user:/nonexistent:/usr/sbin/nologin
 # free: 850
 # free: 851
 # free: 852

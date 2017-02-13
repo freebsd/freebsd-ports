@@ -1,6 +1,6 @@
---- src/ssl/bio.h.orig	2017-02-12 20:56:37 UTC
+--- src/ssl/bio.h.orig	2017-02-05 21:15:41 UTC
 +++ src/ssl/bio.h
-@@ -194,7 +194,7 @@ private:
+@@ -205,7 +205,7 @@ private:
  void
  applyTlsDetailsToSSL(SSL *ssl, Security::TlsDetails::Pointer const &details, Ssl::BumpMode bumpMode);
  

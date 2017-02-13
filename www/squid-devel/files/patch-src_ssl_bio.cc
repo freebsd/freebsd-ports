@@ -1,6 +1,6 @@
---- src/ssl/bio.cc.orig	2016-12-16 10:06:20 UTC
+--- src/ssl/bio.cc.orig	2017-02-05 21:15:41 UTC
 +++ src/ssl/bio.cc
-@@ -42,7 +42,7 @@ static int squid_bio_destroy(BIO *data);
+@@ -43,7 +43,7 @@ static int squid_bio_destroy(BIO *data);
  /* SSL callbacks */
  static void squid_ssl_info(const SSL *ssl, int where, int ret);
  
@@ -9,16 +9,16 @@
  /// Initialization structure for the BIO table with
  /// Squid-specific methods and BIO method wrappers.
  static BIO_METHOD SquidMethods = {
-@@ -64,7 +64,7 @@ static BIO_METHOD *SquidMethods = NULL;
+@@ -65,7 +65,7 @@ static BIO_METHOD *SquidMethods = NULL;
  BIO *
  Ssl::Bio::Create(const int fd, Ssl::Bio::Type type)
  {
 -#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
 +#if (OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER))
-     if (BIO *bio = BIO_new(&SquidMethods)) {
-         BIO_int_ctrl(bio, BIO_C_SET_FD, type, fd);
-         return bio;
-@@ -514,7 +514,7 @@ Ssl::ServerBio::resumingSession()
+     BIO_METHOD *useMethod = &SquidMethods;
+ #else
+     if (!SquidMethods) {
+@@ -562,7 +562,7 @@ Ssl::ServerBio::resumingSession()
  static int
  squid_bio_create(BIO *bi)
  {
@@ -27,7 +27,7 @@
      bi->init = 0; // set when we store Bio object and socket fd (BIO_C_SET_FD)
      bi->num = 0;
      bi->flags = 0;
-@@ -658,7 +658,7 @@ applyTlsDetailsToSSL(SSL *ssl, Security:
+@@ -706,7 +706,7 @@ applyTlsDetailsToSSL(SSL *ssl, Security:
              cbytes[0] = (cipherId >> 8) & 0xFF;
              cbytes[1] = cipherId & 0xFF;
              cbytes[2] = 0;

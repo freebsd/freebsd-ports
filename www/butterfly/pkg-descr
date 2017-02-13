@@ -1,0 +1,17 @@
+Butterfly is a xterm compatible terminal that runs in your browser.
+
+Features
+
+* xterm compatible (support for a lot of unused features)
+* Native browser scroll and search
+* Theming in css/sass (18 preset themes) endless possibilities
+* HTML in your terminal, cat images and use <table>
+* Multiple sessions support
+* Secure authentication with X509 certificates
+* 16,777,216 colors support
+* Keyboard text selection
+* Desktop notifications on terminal output
+* Geolocation from browser
+* May work on firefox too
+
+WWW: https://pypi.python.org/pypi/butterfly

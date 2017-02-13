@@ -3,6 +3,7 @@
 
 PORTNAME=	fastjar
 PORTVERSION=	0.93.20060808
+PORTREVISION=	1
 CATEGORIES=	archivers java
 MASTER_SITES=	LOCAL/maho/fastjar
 
@@ -14,8 +15,6 @@ LICENSE=	GPLv2
 USES=		gmake makeinfo perl5 tar:bzip2
 USES_PERL5=	build
 GNU_CONFIGURE=	yes
-
-CFLAGS_aarch64=	-fPIC
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	CHANGES ChangeLog NEWS README

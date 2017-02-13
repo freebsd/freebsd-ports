@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170213:
+  AFFECTS: users of graphics/libGL, graphics/libEGL, graphics/libglesv2
+  AUTHOR: kwm@FreeBSD.org
+
+  The workaround for handling conflicting libraries between the
+  nvidia-driver, libGL, libEGL and libglesv2 ports was removed. If the
+  nvidia-driver port is updated before the other ports, it will remove
+  the libraries of said ports. This is a side effect of how the workaround
+  worked. If this happens reinstalling the affected port is enough.
+
+  pkg users can run: pkg install -f libGL libEGL libglesv2
+
 20170211:
   AFFECTS: users of x11-server/xorg-server
   AUTHOR: rezny@FreeBSD.org
