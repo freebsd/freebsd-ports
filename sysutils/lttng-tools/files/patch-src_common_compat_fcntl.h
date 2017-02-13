@@ -4,7 +4,8 @@
  #include <errno.h>
  #include <sys/types.h>
  
- #if (defined(__FreeBSD__) || defined(__CYGWIN__))
+-#if (defined(__FreeBSD__) || defined(__CYGWIN__))
++#if ((defined(__FreeBSD__) && __FreeBSD__ < 11) || defined(__CYGWIN__))
  typedef long long off64_t;
  #endif
  

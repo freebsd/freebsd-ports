@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 	    liburcu.so:sysutils/liburcu \
 	    liblttng-ust-ctl.so:sysutils/lttng-ust
 
-USES=		autoreconf bison libtool localbase pathfix \
+USES=		autoreconf bison libtool localbase pathfix pkgconfig \
 	    shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
