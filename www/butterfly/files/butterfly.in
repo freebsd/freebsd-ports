@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: butterfly
+# REQUIRE: LOGIN
+#
+# Add the following line to /etc/rc.conf to enable butterfly:
+#
+# butterfly_enable="YES"
+#
+
+: ${butterfly_enable="NO"}
+: ${butterfly_user="root"}
+: ${butterfly_args="--unsecure"}
+
+. /etc/rc.subr
+
+name=butterfly
+rcvar=butterfly_enable
+pidfile=/var/run/${name}.pid
+start_cmd="start_butterfly"
+
+load_rc_config $name
+
+start_butterfly() {
+  echo "Starting ${name}."
+  if ! [ -r %%ETCDIR%%/ssl/butterfly_localhost.crt -a %%ETCDIR%%/ssl/butterfly_localhost.key -a %%ETCDIR%%/ssl/butterfly_ca.crt ]; then
+    %%PREFIX%%/bin/butterfly.server.py --generate-certs --host=localhost &&
+    echo "${name}: generated the ssl certificate in %%ETCDIR%%/ssl"
+  fi
+  daemon -p $pidfile -u ${butterfly_user} %%PREFIX%%/bin/butterfly.server.py ${butterfly_args} >/var/log/${name}.log 2>&1
+}
+
+command="%%PYTHON_CMD%%"
+run_rc_command "$1"
