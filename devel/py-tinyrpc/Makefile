@@ -13,8 +13,6 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mbr
-GH_PROJECT=	tinyrpc
-GH_TAGNAME=	0.5
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist

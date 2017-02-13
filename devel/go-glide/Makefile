@@ -3,6 +3,7 @@
 
 PORTNAME=	glide
 PORTVERSION=	0.12.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
@@ -13,7 +14,6 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Masterminds
-GH_TAGNAME=	v0.12.3
 USES=		go
 GO_PKGNAME=	github.com/Masterminds/glide
 PLIST_FILES=	bin/glide

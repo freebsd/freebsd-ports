@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	filewatcherd
-PORTVERSION=	1.0b3
+DISTVERSION=	1.0-beta3
+PORTEPOCH=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	natbsd@instinctive.eu
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	faelys
-GH_TAGNAME=	1.0-beta3
 
 USE_RC_SUBR=	filewatcherd
 
