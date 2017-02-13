@@ -3,7 +3,7 @@
 
 PORTNAME=	audiere
 PORTVERSION=	1.9.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -21,8 +21,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 CPPFLAGS+=	-I${LOCALBASE}/include/speex -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-CFLAGS_aarch64=	-fPIC
 
 PORTDOCS=	changelog.txt cvs.txt dependencies.txt faq.txt glossary.txt \
 		license.txt overview.txt readme.txt release-howto.txt \
