@@ -1,0 +1,4 @@
+kaminari-core includes pagination logic independent from ORMs and view
+libraries.
+
+WWW: https://github.com/kaminari/kaminari/tree/master/kaminari-core

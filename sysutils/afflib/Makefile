@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afflib
-PORTVERSION=	3.7.10
-DISTVERSIONPREFIX=	v
+PORTVERSION=	3.7.15
 CATEGORIES=	sysutils
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -18,6 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	sshock
 GH_PROJECT=	AFFLIBv3
+GH_TAGNAME=	4540cbd
 
 USE_LDCONFIG=	yes
 USES=		autoreconf fuse libtool pathfix readline ssl

@@ -35,6 +35,7 @@
 %%SITE_PERL%%/Specio/PartialDump.pm
 %%SITE_PERL%%/Specio/Registry.pm
 %%SITE_PERL%%/Specio/Role/Inlinable.pm
+%%SITE_PERL%%/Specio/Subs.pm
 %%SITE_PERL%%/Specio/TypeChecks.pm
 %%SITE_PERL%%/Test/Specio.pm
 %%PERL5_MAN3%%/Specio.3.gz
@@ -74,5 +75,6 @@
 %%PERL5_MAN3%%/Specio::PartialDump.3.gz
 %%PERL5_MAN3%%/Specio::Registry.3.gz
 %%PERL5_MAN3%%/Specio::Role::Inlinable.3.gz
+%%PERL5_MAN3%%/Specio::Subs.3.gz
 %%PERL5_MAN3%%/Specio::TypeChecks.3.gz
 %%PERL5_MAN3%%/Test::Specio.3.gz
