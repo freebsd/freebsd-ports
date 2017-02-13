@@ -3,7 +3,7 @@
 
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 BIN_DISTNAMES=	binutils-2.25.1-22.base.el7 \
 		glibc-headers-2.17-157.el7_3.1 \
@@ -46,7 +46,19 @@ USE_LINUX_RPM=	yes
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
+.include <bsd.port.pre.mk>
+
 post-install:
 	${LN} -sf ld.bfd ${STAGEDIR}${PREFIX}/usr/bin/ld
+.if ${LINUX_ARCH} == x86_64
+	${LN} -sfh ../../../../lib64/libgcc_s.so.1 \
+	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.8.2/libgcc_s.so
 
-.include <bsd.port.mk>
+	${LN} -sfh ../../../../libgcc_s.so.1 \
+	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.8.2/32/libgcc_s.so
+.else
+	${LN} -sfh ../../../libgcc_s.so.1 \
+	${STAGEDIR}${PREFIX}/usr/lib/gcc/i686-redhat-linux/4.8.2/libgcc_s.so
+.endif
+
+.include <bsd.port.post.mk>
