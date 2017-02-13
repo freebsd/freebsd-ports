@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hexxagon
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.nesqi.se/download/
 
