@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmobar
-PORTVERSION=	0.23.1
+PORTVERSION=	0.24.3
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
