@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		qmake tar:bzip2
-USE_QT5=	buildtools core gui svg imageformats_run linguisttools \
-		widgets
+USE_QT5=	core gui svg imageformats_run widgets \
+		linguisttools_build buildtools_build
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	ChangeLog NEWS README
