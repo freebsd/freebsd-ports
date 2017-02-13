@@ -790,7 +790,7 @@ subsonic:*:844:
 sogod:*:846:
 domoticz:*:847:
 graylog:*:848:
-# free: 849
+chronyd:*:849:
 # free: 850
 # free: 851
 # free: 852
