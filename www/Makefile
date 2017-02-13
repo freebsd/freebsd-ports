@@ -1455,6 +1455,7 @@
     SUBDIR += pecl-swish
     SUBDIR += pecl-twig
     SUBDIR += pecl-yaf
+    SUBDIR += pecl-yaf2
     SUBDIR += pecl-yar
     SUBDIR += perlbal
     SUBDIR += pglogd
