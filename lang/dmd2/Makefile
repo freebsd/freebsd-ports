@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dmd
-PORTVERSION=	2.071.1
+PORTVERSION=	2.073.0
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 PKGNAMESUFFIX=	2
@@ -58,6 +58,9 @@ MAKE_ARGS+=	DEBUG_FLAGS=-g\ -DDEBUG=1\ -DUNITTEST
 .endif
 
 MODULEDIR=	${PREFIX}/include/d/phobos2
+
+pre-patch:
+	@${MKDIR} ${WRKDIR}/dmd2/src/res
 
 post-patch:
 	@${MKDIR} ${WRKDIR}/dmd2/freebsd/bin32 \
