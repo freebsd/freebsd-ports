@@ -1,0 +1,24 @@
+--- Makefile.orig	2014-08-31 08:08:24 UTC
++++ Makefile
+@@ -10,13 +10,13 @@ CFLAGS += $(OPTFLAGS) $(WARNFLAGS) $(DEB
+ LDFLAGS += -Wl,-z,relro
+ 
+ all: pcap pcapng
+-	gcc $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) pcapfix.c pcap.o pcapng.o -o pcapfix
++	${CC} $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) pcapfix.c pcap.o pcapng.o -o pcapfix
+ 
+ pcap: pcap.c
+-	gcc $(CPPFLAGS) $(CFLAGS) -c pcap.c -o pcap.o
++	${CC} $(CPPFLAGS) $(CFLAGS) -c pcap.c -o pcap.o
+ 
+ pcapng: pcapng.c
+-	gcc $(CPPFLAGS) $(CFLAGS) -c pcapng.c -o pcapng.o
++	${CC} $(CPPFLAGS) $(CFLAGS) -c pcapng.c -o pcapng.o
+ 
+ install:
+ 	install -pDm755 pcapfix $(DESTDIR)$(BINDIR)/pcapfix
+@@ -29,4 +29,3 @@ uninstall:
+ clean:
+ 	rm -f *.o
+ 	rm -f pcapfix
+-	
