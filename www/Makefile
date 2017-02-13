@@ -2001,6 +2001,7 @@
     SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
+    SUBDIR += rubygem-kaminari-actionview
     SUBDIR += rubygem-kaminari-activerecord
     SUBDIR += rubygem-kaminari-core
     SUBDIR += rubygem-kaminari-rails4
