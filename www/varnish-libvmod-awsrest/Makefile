@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	libvmod-awsrest
-DISTVERSIONPREFIX=${PORTNAME}-
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4
+DISTVERSIONSUFFIX=	-varnish40
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -22,6 +23,5 @@ INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xcir
-GH_TAGNAME=	v${DISTVERSION}-varnish40
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	toxcore
 PORTVERSION=	0.1.5
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
 
@@ -23,7 +24,6 @@ TEST_DEPENDS=	${LOCALBASE}/lib/libmsgpackc.so:devel/msgpack	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
 GH_PROJECT=	c-toxcore
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		cmake compiler:c11 libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
