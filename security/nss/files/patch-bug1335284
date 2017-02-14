@@ -1,0 +1,11 @@
+--- lib/softoken/softoken.h.orig	2017-01-04 14:24:24 UTC
++++ lib/softoken/softoken.h
+@@ -183,7 +183,7 @@ extern PRBool sftk_fatalError;
+ 
+ #define CHECK_FORK_MIXED
+ 
+-#elif defined(LINUX)
++#elif defined(LINUX) || defined(FREEBSD) || defined(OPENBSD)
+ 
+ #define CHECK_FORK_PTHREAD
+ 
