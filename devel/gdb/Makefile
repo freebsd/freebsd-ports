@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	7.12
-PORTREVISION=	1
+PORTVERSION=	7.12.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -15,7 +14,7 @@ LICENSE=	GPLv3
 TEST_DEPENDS=	runtest:misc/dejagnu
 
 TEST_TARGET=	check
-USES=		cpe iconv gmake libtool tar:xz
+USES=		compiler:env cpe iconv gmake libtool tar:xz
 USE_CSTD=	gnu89
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -66,7 +65,7 @@ PYTHON_CONFIGURE_OFF=	--without-python
 PYTHON_USES=		python:2
 TUI_CONFIGURE_ENABLE=	tui
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MBUNDLED_READLINE}
 EXCLUDE+=	readline
@@ -76,7 +75,7 @@ EXCLUDE+=	readline
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
-.if ${ARCH} != "mips"
+.if ${COMPILER_TYPE} == "clang"
 CFLAGS+=	-Wno-extended-offsetof
 .endif
 
@@ -122,4 +121,4 @@ do-install-GUILE-on:
 	(cd ${WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-guile )
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
