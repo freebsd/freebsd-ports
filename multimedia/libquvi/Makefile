@@ -10,8 +10,7 @@ MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cross-platform library for parsing flash media stream URLs
 
-LICENSE=	LGPL21 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL21+
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	libquvi-scripts>=0.4.0:multimedia/libquvi-scripts
