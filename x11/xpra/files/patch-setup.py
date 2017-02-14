@@ -1,4 +1,4 @@
---- setup.py.orig	2017-02-01 05:52:14 UTC
+--- setup.py.orig	2017-02-06 09:47:42 UTC
 +++ setup.py
 @@ -218,7 +218,7 @@ else:
      nvenc7_ENABLED          = DEFAULT and pkg_config_ok("--exists", "nvenc7")
@@ -9,17 +9,6 @@
  csc_libyuv_ENABLED      = DEFAULT and memoryview_ENABLED and pkg_config_ok("--exists", "libyuv", fallback=WIN32)
  
  #Cython / gcc / packaging build options:
-@@ -798,8 +798,8 @@ def get_base_conf_dir(install_dir, strip
-         elif "usr" in dirs:
-             #ie: ["some", "path", "to", "usr"] -> ["usr"]
-             #assume "/usr" or "/usr/local" is the build root
--            while "usr" in dirs and dirs.index("usr")>0:
--                dirs = dirs[dirs.index("usr"):]
-+            while "usr" in dirs[1:]:
-+                dirs = dirs[dirs[1:].index("usr")+1:]
-         elif "image" in dirs:
-             # Gentoo's "${PORTAGE_TMPDIR}/portage/${CATEGORY}/${PF}/image/_python2.7" -> ""
-             while "image" in dirs:
 @@ -1839,12 +1839,12 @@ if WIN32:
  else:
      #OSX and *nix:
