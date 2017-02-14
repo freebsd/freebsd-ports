@@ -3,6 +3,7 @@
 
 PORTNAME=	relay
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/danfe http://freebsd.nsu.ru/distfiles/
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
@@ -17,13 +18,11 @@ USES=		gmake
 MAKE_ARGS=	MODE=release OBJ_DIR=. OUT_DIR=. Q2MODULE=game.so \
 		QUAKE2_DIR="${STAGEDIR}${Q2DIR}" \
 		BIN_DIR="${STAGEDIR}${PREFIX}/bin" \
-		CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}"
+		CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS} -fPIC" \
+		LDFLAGS="${LDFLAGS} -lm"
 
 WRKSRC=		${WRKDIR}/relay-${PORTVERSION}
 PORTDOCS=	FAQ README
-
-CFLAGS_aarch64=	-fPIC
-CFLAGS_amd64=	-fPIC
 
 OPTIONS_DEFINE=	DOCS
 
@@ -31,8 +30,8 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e 's/-ldl// ; /^include/d ; \
-		s/cp -p/${INSTALL_PROGRAM}/' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/^include/d ; s/cp -p/${INSTALL_PROGRAM}/' \
+		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/random/d' ${WRKSRC}/replay/rp_local.h
 	${REINPLACE_CMD} -e 's,<malloc\.h>,<stdlib\.h>,' \
 		${WRKSRC}/common/mem.c
