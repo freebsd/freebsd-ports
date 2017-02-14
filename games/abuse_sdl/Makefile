@@ -3,7 +3,7 @@
 
 PORTNAME=	abuse_sdl
 PORTVERSION=	0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	GENTOO \
 		http://abuse.zoy.org/raw-attachment/wiki/download/
@@ -20,7 +20,6 @@ USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-assetdir=${DATADIR} --enable-release
 
-CFLAGS_aarch64=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
