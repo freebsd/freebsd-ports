@@ -7,6 +7,7 @@
 @sample %%ETCDIR%%/app_mysql.conf.sample
 @sample %%ETCDIR%%/app_skel.conf.sample
 @sample %%ETCDIR%%/ari.conf.sample
+@sample %%ETCDIR%%/ast_debug_tools.conf.sample
 @sample %%ETCDIR%%/asterisk.adsi.sample
 @sample %%ETCDIR%%/asterisk.conf.sample
 @sample %%ETCDIR%%/calendar.conf.sample
@@ -360,6 +361,10 @@ sbin/safe_asterisk
 %%DATADIR%%/rest-api/recordings.json
 %%DATADIR%%/rest-api/resources.json
 %%DATADIR%%/rest-api/sounds.json
+%%DATADIR%%/scripts/ast_coredumper
+%%DATADIR%%/scripts/ast_logescalator
+%%DATADIR%%/scripts/ast_loggrabber
+%%DATADIR%%/scripts/refcounter.py
 %%DATADIR%%/static-http/appdocsxml.xslt
 %%DATADIR%%/static-http/ajamdemo.html
 %%DATADIR%%/static-http/astman.css
