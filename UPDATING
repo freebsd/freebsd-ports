@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20170213:
+  AFFECTS: users of www/node*
+  AUTHOR: bradleythughes@fastmail.fm
+
+  The BUNDLED_SSL option is now enabled by default on FreeBSD 10, since
+  Node.js requires OpenSSL 1.0.2, and FreeBSD 10 is shipped with 1.0.1.
+
+20170213:
   AFFECTS: users of graphics/libGL, graphics/libEGL, graphics/libglesv2
   AUTHOR: kwm@FreeBSD.org
 
