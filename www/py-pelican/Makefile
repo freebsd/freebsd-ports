@@ -3,8 +3,9 @@
 
 PORTNAME=	pelican
 PORTVERSION=	3.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www textproc python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Static site generator written in Python
