@@ -3,6 +3,7 @@
 
 PORTNAME=	pari
 PORTVERSION=	2.9.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/ \
@@ -18,19 +19,14 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	gp
-CONFIGURE_ENV=	ld="${LD}" perl="${PERL}" ranlib="${RANLIB}"
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man/man1 \
 		--prefix=${PREFIX} \
-		--share-prefix=${PREFIX}/share \
 		--with-gmp=${LOCALBASE}
 HAS_CONFIGURE=	yes
-MAKE_ENV+=	STRIP="${STRIP_CMD}"
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USES=		perl5
-
-CFLAGS_aarch64=	-fPIC
 
 OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS X11
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS X11
@@ -49,9 +45,7 @@ PORTEXAMPLES=	*
 GP_VERSION=	${PORTVERSION:R}
 
 post-patch:
-	${REINPLACE_CMD} -E '/^list=/s/(ld|ranlib|perl|emacs)//g' \
-		${WRKSRC}/Configure
-	${REINPLACE_CMD} -e '/^CFLAGS=/s/\$$cflags//' \
+	@${REINPLACE_CMD} -e '/^CFLAGS=/s/\$$cflags//' \
 		${WRKSRC}/config/get_cc
 
 post-install:
