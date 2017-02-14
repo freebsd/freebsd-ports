@@ -392,6 +392,7 @@
     SUBDIR += ltm
     SUBDIR += lualdap
     SUBDIR += luasocket
+    SUBDIR += luasocket-51
     SUBDIR += lvwimax
     SUBDIR += mDNSResponder
     SUBDIR += macchanger
