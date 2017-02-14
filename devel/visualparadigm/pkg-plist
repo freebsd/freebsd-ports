@@ -39,6 +39,7 @@
 %%DATADIR%%/Application/UserLanguage/Chinese Simplified.lng
 %%DATADIR%%/Application/UserLanguage/Chinese Traditional.lng
 %%DATADIR%%/Application/UserLanguage/Czech.lng
+%%DATADIR%%/Application/UserLanguage/Dutch.lng
 %%DATADIR%%/Application/UserLanguage/French.lng
 %%DATADIR%%/Application/UserLanguage/German.lng
 %%DATADIR%%/Application/UserLanguage/Japanese.lng
@@ -171,13 +172,16 @@
 %%DATADIR%%/Application/resources/am.png
 %%DATADIR%%/Application/resources/appConfig_sample.properties
 %%DATADIR%%/Application/resources/community.txt
+%%DATADIR%%/Application/resources/deliverables.docs
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ActivityDiagram.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ActivityDiagram__SysML.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Application Layer).xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Business Layer).xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Implementation and Migration).xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Motivation).xml
+%%DATADIR%%/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Physical).xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Relationships).xml
+%%DATADIR%%/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Strategy).xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ArchiMateDiagram (Technology Layer).xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/BasicPalette.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/BlockDefinitionDiagram.xml
@@ -192,10 +196,12 @@
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ConversationDiagram.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/DataFlowDiagram.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/DeploymentDiagram.xml
+%%DATADIR%%/Application/resources/diagram_palette_tooltip/DocumentationCabinet.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/EJBDiagram.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/EPCDiagram.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ERDiagram.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/FactDiagram.xml
+%%DATADIR%%/Application/resources/diagram_palette_tooltip/FreehandDiagram2.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/InformationFlows.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/InteractionDiagram.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/InteractionOverviewDiagram.xml
@@ -205,6 +211,7 @@
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ObjectDiagram.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/OrganizationChart.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/OverviewDiagram.xml
+%%DATADIR%%/Application/resources/diagram_palette_tooltip/PERTChart.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/PackageDiagram.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/PackageDiagram__SysML.xml
 %%DATADIR%%/Application/resources/diagram_palette_tooltip/ParametricDiagram.xml
@@ -670,6 +677,7 @@
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/actorsGridDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/analysisDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/archiMateDiagram.png
+%%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/architectureRoadmap.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/blockDefinitionDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/brainstorm.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/businessMotivationModelDiagram.png
@@ -703,6 +711,7 @@
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/activityDiagram.gif
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/actorsGridDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/archiMateDiagram.png
+%%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/architectureRoadmap.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/blockDefinitionDiagram.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/brainstorm.png
 %%DATADIR%%/Application/sde/sdeec/plugins/com.vp.sde.eclipse_13.0.0.0/icons/sdeec/diagram/new/businessMotivationModelDiagram.png
@@ -947,8 +956,17 @@
 %%DATADIR%%/Application/sde/sdenb69/vpupdate.xml
 %%DATADIR%%/Application/shapes/ListOfRecognizedColorKeyword.html
 %%DATADIR%%/Application/shapes/SVGSchema.dtd
+%%DATADIR%%/Application/shapes/default/Cloud And Enterprise/Cloud.vpt
+%%DATADIR%%/Application/shapes/default/Cloud And Enterprise/Enterprise.vpt
+%%DATADIR%%/Application/shapes/default/Cloud And Enterprise/General.vpt
+%%DATADIR%%/Application/shapes/default/Cloud And Enterprise/Intune.vpt
+%%DATADIR%%/Application/shapes/default/Cloud And Enterprise/Other.vpt
+%%DATADIR%%/Application/shapes/default/Cloud And Enterprise/System Center.vpt
+%%DATADIR%%/Application/shapes/default/Computers/Citrix.vpt
 %%DATADIR%%/Application/shapes/default/Computers/Folders.vpt
 %%DATADIR%%/Application/shapes/default/Computers/Hardwares.vpt
+%%DATADIR%%/Application/shapes/default/General/Basic.vpt
+%%DATADIR%%/Application/shapes/default/General/Transportation.vpt
 %%DATADIR%%/Application/shapes/default/Shapes/Animals.vpt
 %%DATADIR%%/Application/shapes/default/Shapes/Buildings.vpt
 %%DATADIR%%/Application/shapes/default/Shapes/Foods.vpt
