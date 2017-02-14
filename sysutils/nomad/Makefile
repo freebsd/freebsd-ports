@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nomad
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	go>=1.7:lang/go
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=	compiler
+USES=		compiler
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
@@ -28,10 +28,10 @@ GH_TUPLE=	kardianos:govendor:v1.0.8:govendor/src/github.com/kardianos/govendor \
 		ugorji:go:faddd61:go/src/github.com/ugorji/go
 
 
-USE_RC_SUBR= nomad
+USE_RC_SUBR=	nomad
 
-USERS=	nomad
-GROUPS=	nomad
+USERS=		nomad
+GROUPS=		nomad
 
 STRIP=
 
@@ -42,7 +42,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/nomad/bin/nomad ${STAGEDIR}${PREFIX}/bin/nomad
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/nomad
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/nomad
 	${INSTALL_DATA} ${WRKSRC}/src/github.com/hashicorp/nomad/dist/client.hcl \
 		${STAGEDIR}${PREFIX}/etc/nomad/client.hcl.sample
 	${INSTALL_DATA} ${WRKSRC}/src/github.com/hashicorp/nomad/dist/server.hcl \

@@ -9,8 +9,8 @@ CATEGORIES=	print kde
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Music score editor for lilypond
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	lilypond:print/lilypond \
 		${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:graphics/py-poppler-qt4 \

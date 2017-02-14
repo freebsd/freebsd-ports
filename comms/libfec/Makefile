@@ -3,7 +3,7 @@
 
 PORTNAME=	libfec
 PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms astro hamradio math
 MASTER_SITES=	http://www.ka9q.net/code/fec/ \
 		LOCAL/db
@@ -26,8 +26,8 @@ PLIST_FILES=	include/fec.h		\
 		man/man3/rs.3.gz	\
 		man/man3/simd-viterbi.3.gz
 
-CFLAGS_aarch64=	-fPIC
-CFLAGS_amd64=	-fPIC
+# makefile tries to create libfec.so from object files compiled without -fPIC.
+CFLAGS+=	-fPIC
 
 post-patch:
 	@${CP} ${FILESDIR}/cpu_mode.c ${WRKSRC}

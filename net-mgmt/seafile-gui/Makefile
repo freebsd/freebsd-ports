@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-gui
-PORTVERSION=	6.0.1
+PORTVERSION=	6.0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima1252@gmail.com
@@ -24,11 +23,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile-client
 
-USES=		compiler:c++11-lang cmake gettext pkgconfig shebangfix
+USES=		compiler:c++11-lang cmake gettext pkgconfig shebangfix ssl
 SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \
 		scripts/*.py
 USE_GNOME=	glib20
-USE_OPENSSL=	yes
 USE_QT5=	core dbus gui network testlib widgets \
 		qmake_build buildtools_build linguisttools_build
 INSTALLS_ICONS=	yes
