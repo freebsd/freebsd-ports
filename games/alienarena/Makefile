@@ -3,7 +3,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2013.766
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/alienarena.mirror/Alien%20Arena%207.66/ \
 		http://icculus.org/alienarena/Files/ \
@@ -52,8 +52,8 @@ USES+=		jpeg openal:soft,alut pkgconfig
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
-		libvorbis.so:audio/libvorbis
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libode.a:devel/ode
+		libvorbis.so:audio/libvorbis \
+		libode.so:devel/ode
 USE_GL=		yes
 USE_XORG=	xxf86dga xxf86vm
 .endif
