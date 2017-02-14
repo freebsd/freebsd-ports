@@ -3,7 +3,7 @@
 
 PORTNAME=	tables
 PORTVERSION=	3.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		fortran python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 PORTEXAMPLES=	*
 
