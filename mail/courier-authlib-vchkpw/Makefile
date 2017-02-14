@@ -1,14 +1,12 @@
 # Created by: Yarema <yds@CoolRat.org>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	-vchkpw
 
 COMMENT=	Vpopmail/vchkpw support for the Courier authentication library
 CATEGORIES=	mail
 
 MASTERDIR=	${.CURDIR}/../../security/courier-authlib
-
-CFLAGS_aarch64=	-fPIC
 
 .include "${MASTERDIR}/Makefile"

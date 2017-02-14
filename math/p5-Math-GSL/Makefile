@@ -3,6 +3,7 @@
 
 PORTNAME=	Math-GSL
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,8 +25,6 @@ USE_PERL5=	modbuild
 USES=		perl5
 
 BROKEN_sparc64=	does not compile on sparc64
-
-CFLAGS_aarch64=	-fPIC
 
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/GSL/ -name "*.so" | ${XARGS} ${STRIP_CMD}

@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2017-02-14 16:19:11 UTC
++++ CMakeLists.txt
+@@ -11,19 +11,9 @@ project(squirrel C CXX)
+ 
+ include_directories(${CMAKE_SOURCE_DIR}/include)
+ 
+-if(CMAKE_COMPILER_IS_GNUCXX)
++if(CMAKE_CXX_COMPILER_ID MATCHES GNU OR CMAKE_CXX_COMPILER_ID MATCHES Clang)
+   set(SQ_FLAGS -fno-exceptions -fno-strict-aliasing -Wall -Wextra -pedantic -Wcast-qual)
+ 
+-  if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-    set(SQ_FLAGS ${SQ_FLAGS} -O3)
+-  elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+-    set(SQ_FLAGS ${SQ_FLAGS} -O3 -g)
+-  elseif(CMAKE_BUILD_TYPE STREQUAL "MinSizeRel")
+-    set(SQ_FLAGS ${SQ_FLAGS} -Os)
+-  elseif(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-    set(SQ_FLAGS ${SQ_FLAGS} -pg -pie -gstabs -g3 -Og)
+-  endif()
+-
+   if(CMAKE_VERSION VERSION_GREATER 3)
+     add_compile_options(${SQ_FLAGS})
+   else()
