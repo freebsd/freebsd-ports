@@ -8,6 +8,7 @@ include/pvmproto.h
 include/pvmtev.h
 lib/libfpvm3.a
 lib/libgpvm3.a
+lib/libgpvm3.so
 lib/libpvm3.a
 lib/libpvm3.so
 lib/libpvmtrc.a
