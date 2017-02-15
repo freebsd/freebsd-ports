@@ -1,5 +1,5 @@
---- demo/Makefile.orig	Fri Jul 26 04:54:10 2002
-+++ demo/Makefile	Sun Sep  8 14:22:34 2002
+--- demo/Makefile.orig	2002-07-26 11:54:10 UTC
++++ demo/Makefile
 @@ -8,33 +8,32 @@
  # Description: Terminality demos Makefile (Unix/ncurses)
  # Author: Emil Mikulic, Michal Safranek

@@ -10,6 +10,9 @@ DISTNAME=	tn-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform terminal manipulation library
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+
 USES=		ncurses
 USE_CSTD=	gnu89
 
@@ -23,6 +26,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/tn
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/tn
 	${INSTALL_DATA} ${WRKSRC}/libtn.a ${STAGEDIR}${PREFIX}/lib
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
