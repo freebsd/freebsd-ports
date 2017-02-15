@@ -360,6 +360,7 @@
     SUBDIR += log2timeline
     SUBDIR += logcheck
     SUBDIR += luasec
+    SUBDIR += luasec-51
     SUBDIR += lynis
     SUBDIR += mac-robber
     SUBDIR += maia
