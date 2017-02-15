@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Ada thin bindings for SDL (GPLv3)
 
 LICENSE=	GPLv3

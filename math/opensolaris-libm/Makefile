@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	C99 Math and vector libraries from OpenSolaris snv_33
 
 LICENSE=	CDDL

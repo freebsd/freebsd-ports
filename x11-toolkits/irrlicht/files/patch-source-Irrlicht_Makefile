@@ -35,7 +35,7 @@
  STATIC_LIB = libIrrlicht.a
  LIB_PATH = ../../lib/$(SYSTEM)
 -INSTALL_DIR = /usr/local/lib
-+INSTALL_DIR = ${PREFIX}/lib
++INSTALL_DIR = ${DESTDIR}${PREFIX}/lib
  sharedlib install: SHARED_LIB = libIrrlicht.so
 -sharedlib: LDFLAGS += -L/usr/X11R6/lib$(LIBSELECT) -lGL -lXxf86vm
 -staticlib sharedlib: CXXINCS += -I/usr/X11R6/include
@@ -44,20 +44,3 @@
  
  #OSX specific options
  staticlib_osx sharedlib_osx install_osx: SYSTEM = MacOSX
-@@ -117,13 +114,13 @@
- 
- ####################
- # All target, builds Irrlicht as static lib (libIrrlicht.a) and copies it into lib/Linux
--all linux: staticlib
-+all linux: staticlib sharedlib
- 
- # Builds Irrlicht as shared lib (libIrrlicht.so.versionNumber) and copies it into lib/Linux
- sharedlib: $(LINKOBJ)
--	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SONAME) -o $(SHARED_FULLNAME) $^ $(LDFLAGS)
-+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(SHLIB_VER) -o $(SHARED_LIB).$(SHLIB_VER) $^ $(LDFLAGS)
- 	mkdir -p $(LIB_PATH)
--	cp $(SHARED_FULLNAME) $(LIB_PATH)
-+	cp $(SHARED_LIB).$(SHLIB_VER) $(LIB_PATH)
- 
- # Builds Irrlicht as static lib (libIrrlicht.a)
- $(STATIC_LIB): $(LINKOBJ)

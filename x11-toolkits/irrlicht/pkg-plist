@@ -180,9 +180,9 @@ include/irrlicht/rect.h
 include/irrlicht/triangle3d.h
 include/irrlicht/vector2d.h
 include/irrlicht/vector3d.h
-lib/libIrrlicht.a
 lib/libIrrlicht.so
-lib/libIrrlicht.so.%%SHARED_LIB_VER%%
+lib/libIrrlicht.so.%%SOVERSION%%
+lib/libIrrlicht.so.%%PORTVERSION%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/01.HelloWorld/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/01.HelloWorld/main.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/02.Quake3Map/Makefile
