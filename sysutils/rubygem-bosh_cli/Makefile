@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh_cli
-PORTVERSION=	1.3262.25.0
+PORTVERSION=	1.3262.26.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
