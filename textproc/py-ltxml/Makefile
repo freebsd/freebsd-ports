@@ -3,7 +3,7 @@
 
 PORTNAME=	ltxml
 PORTVERSION=	1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,17 +21,12 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 USE_LDCONFIG=	yes
 
-CFLAGS_aarch64=	-fPIC
-CFLAGS_amd64=	-fPIC
-
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	00README
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE= DOCS EXAMPLES
-
-.include <bsd.port.pre.mk>
 
 post-install:
 	@${STRIP_CMD} \
@@ -45,4 +40,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
