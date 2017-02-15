@@ -1,0 +1,11 @@
+--- Makefile.orig	2017-01-24 22:54:44.000000000 +0800
++++ Makefile	2017-02-15 17:42:22.955359000 +0800
+@@ -96,7 +96,7 @@ install-bin:	${TGT}
+ 
+ install-man:	${MAN1Z}
+ 		${MKDIR} ${DESTDIR}${MAN1DIR}
+-		${INSTALL_PROGRAM} ${MAN1Z} ${DESTDIR}${MAN1DIR}
++		${INSTALL_DATA} ${MAN1Z} ${DESTDIR}${MAN1DIR}
+ 
+ install-share:
+ 
