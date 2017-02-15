@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.61
+PORTVERSION=	2.62
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,8 +12,7 @@ COMMENT=	Suite of OO modules for logging messages to multiple outputs
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Devel-Confess>=0:devel/p5-Devel-Confess \
-		p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
+BUILD_DEPENDS=	p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
 		p5-Dist-CheckConflicts>=0.02:devel/p5-Dist-CheckConflicts \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Params-ValidationCompiler>=0:devel/p5-Params-ValidationCompiler \
