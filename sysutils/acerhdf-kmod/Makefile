@@ -6,7 +6,7 @@ PORTVERSION=	0.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Acer Aspire One fan control
 
 LICENSE=	GPLv2

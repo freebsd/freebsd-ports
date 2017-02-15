@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	security
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Create and verify cryptographic signatures
 
 # outils includes signify from OpenBSD's base system which is under an

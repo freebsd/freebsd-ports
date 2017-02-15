@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	openmw-
 PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Unofficial open source engine reimplementation of the game Morrowind
 
 LICENSE=	GPLv3

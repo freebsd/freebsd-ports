@@ -9,7 +9,7 @@ MASTER_SITES=	http://repo.or.cz/llpp.git/snapshot/
 DISTNAME=	v${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	PDF pager
 
 # llpp itself is in the public domain, but it bundles lablGL which

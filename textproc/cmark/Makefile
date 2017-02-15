@@ -5,7 +5,7 @@ PORTNAME=	cmark
 PORTVERSION=	0.27.1
 CATEGORIES=	textproc
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	CommonMark parsing and rendering library and program in C
 
 LICENSE=	BSD2CLAUSE
