@@ -3,7 +3,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	1.24r
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-1/
 PKGNAMESUFFIX=	1${PKGNAMESUFFIX2}
@@ -13,8 +13,6 @@ COMMENT=	Fvwm window manager
 
 USES=		imake
 USE_XORG=	xbitmaps xpm xext x11 xmu
-
-CFLAGS_aarch64=	-fPIC
 
 pre-configure:
 	${REINPLACE_CMD} -e '/DependSubdirs/y,/*#,   ,' ${WRKSRC}/Imakefile
