@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	gid-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Ada library for decoding various image formats inc. animations
 
 LICENSE=	MIT

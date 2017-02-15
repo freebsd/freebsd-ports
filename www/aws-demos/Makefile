@@ -6,7 +6,7 @@ PORTVERSION=	17.1.0
 CATEGORIES=	www
 PKGNAMESUFFIX=	-demos
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Adacore Ada Web Server demos
 
 LICENSE=	GPLv3 GPLv3RLE

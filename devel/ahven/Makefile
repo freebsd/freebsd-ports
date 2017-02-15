@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ahven-framework.com/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Ada unit test framework
 
 LICENSE=	ISCL

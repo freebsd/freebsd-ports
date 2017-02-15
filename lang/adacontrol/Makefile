@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	SF/adacontrol
 DISTNAME=	adactl-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Tool for detecting use or non-use of specific Ada constructs
 
 LICENSE=	GPLv2 GMGPL
