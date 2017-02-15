@@ -7,7 +7,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.oki.com/de/printing/download/
 DISTNAME=	C531_C331_C321_Linux_110_31034
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	PPDs for the Oki C321dn, C331dn, and C531dn printers
 
 LICENSE=	GPLv2

@@ -15,7 +15,7 @@ MASTER_SITES=	GH \
 		https://github.com/applicative-tech/stack-dependencies/releases/download/${PORTVERSION}/:deps
 DISTFILES=	stack-dependencies-${PORTVERSION}${EXTRACT_SUFX}:deps
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Cross-platform program for developing Haskell programs
 
 LICENSE=	BSD3CLAUSE

@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Easystroke is a gesture-recognition application for X11
 
 LICENSE=	ISCL

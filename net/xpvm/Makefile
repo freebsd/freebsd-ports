@@ -3,7 +3,7 @@
 
 PORTNAME=	xpvm
 PORTVERSION=	1.2.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net parallel
 MASTER_SITES=	NL/pvm3/xpvm
 DISTNAME=	XPVM.src.${PORTVERSION}
@@ -11,8 +11,7 @@ DISTNAME=	XPVM.src.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical console and monitor for PVM
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:net/pvm
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libpvm3.so:net/pvm
 
 USES=		tk:84 tar:tgz
 USE_GCC=	yes

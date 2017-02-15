@@ -1,0 +1,10 @@
+--- Makefile.aimk.orig	2007-03-07 18:16:06 UTC
++++ Makefile.aimk
+@@ -136,4 +136,7 @@ shared:
+ 	@ echo "building shared in src"
+ 	cd src; ../lib/aimk $(PVMOPTS) install-shared
+ 	@ echo "done building shared in src"
++	@ echo "building shared in pvmgs"
++	cd pvmgs; ../lib/aimk $(PVMOPTS) install-shared
++	@ echo "done building shared in pvmgs"
+ 

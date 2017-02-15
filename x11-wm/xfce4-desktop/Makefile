@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-desktop
 PORTVERSION=	4.12.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE/src/xfce/xfdesktop/${PORTVERSION:R}/
 DISTNAME=	xfdesktop-${PORTVERSION}
@@ -39,10 +39,6 @@ THUNAR_CONFIGURE_WITH=	file-manager-fallback=Thunar
 THUNAR_USE_OFF=	xfce=libexo
 THUNAR_DESC=	Thunar file manager support
 OPTIONS_SUB=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e 's|inode/directory|folder|' \
-		${WRKSRC}/src/xfdesktop-file-icon-manager.c
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's|po ||' ${WRKSRC}/Makefile.in

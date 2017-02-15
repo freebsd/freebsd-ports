@@ -12,6 +12,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/languages/en-GB
 %%DATADIR%%/db/languages/en-US
 %%DATADIR%%/db/languages/es
+%%DATADIR%%/db/languages/fi
 %%DATADIR%%/db/languages/fr
 %%DATADIR%%/db/languages/hu
 %%DATADIR%%/db/languages/it
@@ -23,6 +24,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/languages/pt
 %%DATADIR%%/db/languages/ru
 %%DATADIR%%/db/languages/se
+%%DATADIR%%/db/languages/tr
 %%DATADIR%%/db/malware-susp.db
 %%DATADIR%%/db/malware.db
 %%DATADIR%%/db/sbl.db

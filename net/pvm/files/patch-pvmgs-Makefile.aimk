@@ -1,0 +1,33 @@
+--- pvmgs/Makefile.aimk.orig	2001-11-30 20:33:11 UTC
++++ pvmgs/Makefile.aimk
+@@ -46,11 +46,14 @@ PROGS		=	$(PVMXDIR)/pvm_gstat$(EXESFX) \
+ LPROGS		=	$(PVMLDIR)/pvmgs$(EXESFX)
+ 
+ LIBGPVM		=	$(LIBPREFIX)gpvm3.a
++LIBGPVMSO	=	$(LIBPREFIX)gpvm3.so
+ 
+ install:	all
+ 
+ install-mpp:	all-mpp
+ 
++install-shared:	$(PVMLDIR) $(PVMLDIR)/$(LIBGPVMSO)
++
+ all:	$(DIRS) $(PROGS) $(PVMLDIR)/$(LIBGPVM) $(LPROGS)
+ 
+ all-mpp:	$(DIRS) $(PROGS) $(PVMLDIR)/$(LIBGPVM)-mpp $(LPROGS)
+@@ -103,6 +106,15 @@ $(LIBGPVM)-mpp:	$(LOBJ)
+ pvm_gstat$(EXESFX): pvm_gstat.o $(LIBGPVM) $(PVMLIBDEP)
+ 	$(CC) $(CFLAGS) -o $@ pvm_gstat.o $(LIBGPVM) $(LIBS)
+ 
++# shared library libgpvm3.so
++
++$(PVMLDIR)/$(LIBGPVMSO):	$(LIBGPVMSO)
++	cp $(LIBGPVMSO) $(PVMLDIR)
++
++$(LIBGPVMSO):	$(LOBJ)
++	rm -f $(LIBGPVMSO)
++	$(CC) $(SHAREDLDFLAGS) -o $(LIBGPVMSO) $(LOBJ) $(LIBS)
++
+ clean:
+ 	rm -f $(DOBJ) $(LOBJ) pvmgs$(EXESFX) $(LIBGPVM) \
+ 		pvm_gstat.o pvmgroups.o pvm_gstat$(EXESFX) pvmgroups$(EXESFX)
