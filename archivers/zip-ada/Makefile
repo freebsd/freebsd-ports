@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF/unzip-ada/
 DISTNAME=	zipada${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Zip compressed archive file format library written in Ada
 
 LICENSE=	MIT

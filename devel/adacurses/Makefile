@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/AdaCurses/
 DISTNAME=	AdaCurses-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Ada95 bindings for ncurses
 
 LICENSE=	MIT

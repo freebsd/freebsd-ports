@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libanet-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Networking library for Ada
 
 LICENSE=	GPLv2 GMGPL
