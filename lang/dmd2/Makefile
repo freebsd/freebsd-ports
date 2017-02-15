@@ -109,6 +109,9 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKDIR}/dmd/ini/freebsd/bin32/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd32.conf
 	${INSTALL_DATA} ${WRKDIR}/dmd/ini/freebsd/bin64/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd64.conf
 
+pre-fetch:
+	${MAKE} -f Makefile.bootstrap BOOTDIR=${WRKDIR} checksum
+
 pre-configure:
 	${MAKE} -f Makefile.bootstrap BOOTDIR=${WRKDIR}
 
