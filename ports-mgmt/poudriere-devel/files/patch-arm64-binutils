@@ -1,0 +1,29 @@
+commit 58b0c214d76525e53745133cd3de56eda5379934
+Author: Bryan Drewery <bryan@shatow.net>
+Date:   Fri Aug 26 14:23:39 2016 -0700
+
+    For arm64 copy the latest aarch64-binutils ld into the jail at startup.
+    
+    This will work like the qemu installation done at startup, and not require
+    messing with the jail creation/update or snapshots.
+
+diff --git src/share/poudriere/common.sh src/share/poudriere/common.sh
+index 4261243..8e0c8cf 100755
+--- src/share/poudriere/common.sh
++++ src/share/poudriere/common.sh
+@@ -1795,6 +1795,15 @@ jail_start() {
+ 		mkdir -p "${tomnt}${EMULATOR%/*}"
+ 		cp -f "${EMULATOR}" "${tomnt}${EMULATOR}"
+ 	fi
++	# Handle special ARM64 needs
++	if [ "${arch#*.}" = "aarch64" ] && ! [ -f "${tomnt}/usr/bin/ld" ]; then
++		if [ -f /usr/local/aarch64-freebsd/bin/ld ]; then
++			cp -f /usr/local/aarch64-freebsd/bin/ld \
++			    "${tomnt}/usr/bin/ld"
++		else
++			err 1 "Arm64 requires aarch64-binutils to be installed."
++		fi
++	 fi
+ 
+ 	if [ -d "${CCACHE_DIR:-/nonexistent}" ]; then
+ 		cat >> "${tomnt}/etc/make.conf" <<-EOF
