@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	govpn
-PORTVERSION=	7.1
+PORTVERSION=	7.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.govpn.info/download/ \
 		http://sourceforge.net/projects/govpn/files/
