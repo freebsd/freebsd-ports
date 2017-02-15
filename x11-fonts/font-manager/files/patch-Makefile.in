@@ -1,5 +1,5 @@
---- Makefile.in.orig	2010-12-20 19:01:26.000000000 -0600
-+++ Makefile.in	2011-03-26 00:38:02.410403185 -0500
+--- Makefile.in.orig	2015-05-29 06:45:34 UTC
++++ Makefile.in
 @@ -552,8 +552,9 @@ compile_po:
  install_mo:
  	for mo in `$(FIND) po -name $(PACKAGE_NAME).mo`; \
