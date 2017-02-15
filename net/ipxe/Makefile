@@ -7,7 +7,7 @@ PORTNAME=	ipxe
 PORTVERSION=	20161208
 CATEGORIES=	net
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Open source network boot firmware
 
 LICENSE=	GPLv2

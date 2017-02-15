@@ -6,7 +6,7 @@ PORTVERSION=	0.4.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Create moodbars from video files
 
 LICENSE=	GPLv2

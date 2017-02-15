@@ -6,7 +6,7 @@ DISTVERSION=	1.5a
 PORTEPOCH=	1
 CATEGORIES=	games
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Game engine for Return to Castle Wolfenstein
 
 LICENSE=	GPLv3

@@ -34,7 +34,7 @@ CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/linux/kernel/v4.x
 DISTNAME=	linux-${DISTVERSION}
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Linux kernel
 
 LICENSE=	GPLv2

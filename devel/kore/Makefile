@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-release
 PORTREVISION=	1
 CATEGORIES=	devel www
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Web application framework for writing web APIs in C
 
 LICENSE=	ISCL

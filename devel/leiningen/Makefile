@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}.tar.gz:source1 \
 		leiningen-${PORTVERSION}-standalone.zip:source2
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Automate Clojure projects
 
 LICENSE=	EPL

@@ -6,7 +6,7 @@ PORTVERSION=	2.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Simple image viewer
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	http://dl.2f30.org/releases/
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Static Git page generator
 
 LICENSE=	MIT
