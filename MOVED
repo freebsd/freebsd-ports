@@ -9072,3 +9072,6 @@ net-p2p/digitalcoin||2017-02-08|Has expired: Broken for more than 6 months
 devel/php70-APCu|devel/pecl-APCu|2017-02-12|Use devel/pecl-APCu for PHP 7.0+ users
 chinese/mutt|mail/mutt|2017-02-13|Use mail/mutt, which can handle Chinese locales
 lang/libjit||2017-02-14|Has expired: This version is severely out of date and its use is discouraged; see http://www.gnu.org/software/libjit/
+databases/php56-redis|databases/pecl-redis|2017-02-15|Merged with latest codebase that supports all php versions
+databases/php70-redis|databases/pecl-redis|2017-02-15|Merged with latest codebase that supports all php versions
+databases/php71-redis|databases/pecl-redis|2017-02-15|Merged with latest codebase that supports all php versions
