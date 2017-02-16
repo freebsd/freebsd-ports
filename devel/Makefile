@@ -2438,6 +2438,7 @@
     SUBDIR += p5-File-Remove
     SUBDIR += p5-File-SafeDO
     SUBDIR += p5-File-SearchPath
+    SUBDIR += p5-File-Share
     SUBDIR += p5-File-ShareDir
     SUBDIR += p5-File-ShareDir-Install
     SUBDIR += p5-File-ShareDir-PAR
