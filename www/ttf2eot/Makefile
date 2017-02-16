@@ -2,14 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	ttf2eot
-DISTVERSION=	0.0.2-2
+PORTVERSION=	0.0.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www converters
-MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	stb@lassitu.de
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Convert TTF font file to EOT web embeddable file
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	BSD2CLAUSE LGPL20
+LICENSE_COMB=	multi
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	wget
+GH_PROJECT=	ttf2eot
+GH_TAGNAME=	b732f41
 
 USES=		gmake
 ALL_TARGET=	ttf2eot
