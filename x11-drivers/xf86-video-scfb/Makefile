@@ -3,10 +3,10 @@
 
 PORTNAME=	xf86-video-scfb
 PORTVERSION=	0.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-drivers
 
-MAINTAINER=	ray@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org syscons display driver
 
 USE_GITHUB=     yes
