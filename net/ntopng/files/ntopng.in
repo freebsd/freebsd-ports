@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: ntopng
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN netif
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable ntopng:
@@ -34,7 +34,7 @@ user_path=%%PREFIX%%/etc/ntopng-users.conf
 
 start_precmd=ntopng_precmd
 command=%%PREFIX%%/bin/ntopng
-command_args="-e -U ntopng -G ${ntopng_pidfile} -1 ${httpdocs_path} -2 ${scripts_path} -3 ${callbacks_path}"
+command_args="-U ntopng -G ${ntopng_pidfile} -1 ${httpdocs_path} -2 ${scripts_path} -3 ${callbacks_path} -e"
 
 ntopng_precmd()
 {
