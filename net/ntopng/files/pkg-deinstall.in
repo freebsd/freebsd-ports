@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+[ "$2" != "DEINSTALL" ] && exit 0
+
+[ -f "%%DATADIR%%/GeoLiteCity.dat" ] && /bin/rm "%%DATADIR%%/GeoLiteCity.dat"
+[ -f "%%DATADIR%%/GeoLiteCityv6.dat" ] && /bin/rm "%%DATADIR%%/GeoLiteCityv6.dat"
+[ -f "%%DATADIR%%/GeoIPASNum.dat.gz" ] && /bin/rm "%%DATADIR%%/GeoIPASNum.dat.gz"
+[ -f "%%DATADIR%%/GeoIPASNumv6.dat.gz" ] && /bin/rm "%%DATADIR%%/GeoIPASNumv6.dat.gz"
+[ -d "%%DATADIR%%/httpdocs/geoip" ] && /usr/bin/find "%%DATADIR%%/httpdocs/geoip" -type d -empty -delete
