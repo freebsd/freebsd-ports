@@ -286,6 +286,7 @@
     SUBDIR += gstreamer1-plugins-pulse
     SUBDIR += gstreamer1-plugins-shout2
     SUBDIR += gstreamer1-plugins-sidplay
+    SUBDIR += gstreamer1-plugins-sndio
     SUBDIR += gstreamer1-plugins-soundtouch
     SUBDIR += gstreamer1-plugins-speex
     SUBDIR += gstreamer1-plugins-taglib

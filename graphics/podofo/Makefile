@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PDF manipulation library and tools
 
 LICENSE=	GPLv2 LGPL21

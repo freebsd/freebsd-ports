@@ -122,16 +122,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/acknowledgments.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/admin.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/advanced.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/all-about-zfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/applications.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/bibliography.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/commercial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-drives.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-kbd-mice.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-memory.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-networking.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-other.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-processors.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-sound.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/funnies.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/hardware.html
