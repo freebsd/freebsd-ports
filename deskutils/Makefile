@@ -4,6 +4,7 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
     SUBDIR += affiche
+    SUBDIR += alarm-clock-applet
     SUBDIR += anamnesis
     SUBDIR += appwrapper
     SUBDIR += aspostit
