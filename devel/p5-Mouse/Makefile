@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mouse
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.8
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
@@ -15,6 +15,7 @@ COMMENT=	Moose minus the antlers
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Module-Build-XSUtil>=0:devel/p5-Module-Build-XSUtil
 TEST_DEPENDS=	p5-Declare-Constraints-Simple>=0:devel/p5-Declare-Constraints-Simple \
