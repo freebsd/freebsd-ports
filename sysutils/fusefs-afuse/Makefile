@@ -3,17 +3,16 @@
 
 PORTNAME=	afuse
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/afuse/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	File system automounting implemented in user-space using FUSE
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES=		fuse pkgconfig
 GNU_CONFIGURE=	yes
