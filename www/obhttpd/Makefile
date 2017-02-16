@@ -2,6 +2,7 @@
 
 PORTNAME=	obhttpd
 PORTVERSION=	6.0.20161006
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
