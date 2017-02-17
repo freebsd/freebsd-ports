@@ -4,7 +4,7 @@
 #
 # Feature:	blaslapack
 # Usage:	USES=blaslapack or USES=blaslapack:ARGS
-# Valid ARGS:	atlas netlib gotoblas openblas (default)
+# Valid ARGS:	atlas gotoblas netlib (default) openblas
 #
 # Provides:	BLASLIB and LAPACKLIB
 #
