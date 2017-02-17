@@ -547,14 +547,12 @@ include/d/phobos2/std/range/interfaces.d
 include/d/phobos2/std/range/package.d
 include/d/phobos2/std/range/primitives.d
 include/d/phobos2/std/regex/internal/backtracking.d
-include/d/phobos2/std/regex/internal/bitnfa.d
 include/d/phobos2/std/regex/internal/generator.d
 include/d/phobos2/std/regex/internal/ir.d
+include/d/phobos2/std/regex/internal/kickstart.d
 include/d/phobos2/std/regex/internal/parser.d
 include/d/phobos2/std/regex/internal/shiftor.d
 include/d/phobos2/std/regex/internal/tests.d
-include/d/phobos2/std/regex/internal/tests2.d
-include/d/phobos2/std/regex/internal/tests3.d
 include/d/phobos2/std/regex/internal/thompson.d
 include/d/phobos2/std/regex/package.d
 include/d/phobos2/std/signals.d
@@ -677,6 +675,7 @@ include/d/phobos2/std/zlib.d
 %%PORTDOCS%%%%DOCSDIR%%/changelog/2.072.1.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog/2.072.2.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog/2.073.0.html
+%%PORTDOCS%%%%DOCSDIR%%/changelog/2.073.1.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog/index.html
 %%PORTDOCS%%%%DOCSDIR%%/code_coverage.html
 %%PORTDOCS%%%%DOCSDIR%%/community.html
