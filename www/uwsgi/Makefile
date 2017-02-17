@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 
 LICENSE=	GPLv2
