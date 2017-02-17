@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	diegonehab
 
 MAKE_ARGS=	LUAV=${LUA_VER}
-USES=		gmake lua pkgconfig
+USES?=		gmake lua pkgconfig
 INSTALL_TARGET=	install-unix
 
 CFLAGS+=	`pkgconf --cflags lua-${LUA_VER}`
