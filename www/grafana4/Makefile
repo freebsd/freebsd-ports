@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://grafanarel.s3.amazonaws.com/builds/:public
@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	grafana4
 
-GRAFANA_TIMESTAMP=	1484211277
+GRAFANA_TIMESTAMP=	1486989747
 
 USES=	compiler
 

@@ -7,7 +7,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/app.js.map
 %%DATADIR%%/public/app/app.ts
 %%DATADIR%%/public/app/app_bundle.js
-%%DATADIR%%/public/app/boot.b8fccc44.js
+%%DATADIR%%/public/app/boot.6d63bd8b.js
 %%DATADIR%%/public/app/boot.js
 %%DATADIR%%/public/app/core/app_events.d.ts
 %%DATADIR%%/public/app/core/app_events.js
@@ -240,7 +240,10 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/admin/adminEditOrgCtrl.js
 %%DATADIR%%/public/app/features/admin/adminEditUserCtrl.js
 %%DATADIR%%/public/app/features/admin/adminListOrgsCtrl.js
-%%DATADIR%%/public/app/features/admin/adminListUsersCtrl.js
+%%DATADIR%%/public/app/features/admin/admin_list_users_ctrl.d.ts
+%%DATADIR%%/public/app/features/admin/admin_list_users_ctrl.js
+%%DATADIR%%/public/app/features/admin/admin_list_users_ctrl.js.map
+%%DATADIR%%/public/app/features/admin/admin_list_users_ctrl.ts
 %%DATADIR%%/public/app/features/admin/partials/admin_home.html
 %%DATADIR%%/public/app/features/admin/partials/edit_org.html
 %%DATADIR%%/public/app/features/admin/partials/edit_user.html
@@ -1138,14 +1141,14 @@ bin/grafana-server
 %%DATADIR%%/public/css/fonts.min.css.map
 %%DATADIR%%/public/css/grafana.dark.css
 %%DATADIR%%/public/css/grafana.dark.css.map
+%%DATADIR%%/public/css/grafana.dark.min.b4255f90.css
+%%DATADIR%%/public/css/grafana.dark.min.b4255f90.css.map
 %%DATADIR%%/public/css/grafana.dark.min.css
 %%DATADIR%%/public/css/grafana.dark.min.css.map
-%%DATADIR%%/public/css/grafana.dark.min.ddcf0d28.css
-%%DATADIR%%/public/css/grafana.dark.min.ddcf0d28.css.map
 %%DATADIR%%/public/css/grafana.light.css
 %%DATADIR%%/public/css/grafana.light.css.map
-%%DATADIR%%/public/css/grafana.light.min.36d15d2d.css
-%%DATADIR%%/public/css/grafana.light.min.36d15d2d.css.map
+%%DATADIR%%/public/css/grafana.light.min.1422e32f.css
+%%DATADIR%%/public/css/grafana.light.min.1422e32f.css.map
 %%DATADIR%%/public/css/grafana.light.min.css
 %%DATADIR%%/public/css/grafana.light.min.css.map
 %%DATADIR%%/public/dashboards/default.json
@@ -1350,6 +1353,7 @@ bin/grafana-server
 %%DATADIR%%/public/test/mocks/dashboard-mock.js
 %%DATADIR%%/public/test/specs/app_specs.ts
 %%DATADIR%%/public/test/specs/dashboardViewStateSrv-specs.js
+%%DATADIR%%/public/test/specs/datasource_srv_specs.js
 %%DATADIR%%/public/test/specs/helpers.d.ts
 %%DATADIR%%/public/test/specs/helpers.js
 %%DATADIR%%/public/test/specs/linkSrv-specs.js
