@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-weather-plugin
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.9
 CATEGORIES=	misc xfce geography
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
