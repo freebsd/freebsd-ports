@@ -12,7 +12,7 @@
  	  };
  	  dirs = freebsd_dirs;
  	}
-@@ -232,11 +233,13 @@ static const char **get_mozilla_plugin_d
+@@ -232,11 +233,12 @@ static const char **get_mozilla_plugin_d
  	"/usr/lib32/nsbrowser/plugins",				// XXX how unfortunate
  	"/usr/lib64/nsbrowser/plugins",
  #if defined(__FreeBSD__)
@@ -25,7 +25,6 @@
 +	"%%LOCALBASE%%/lib/firefox/plugins",
 +	"%%LOCALBASE%%/lib/seamonkey/plugins",
 +	"%%LOCALBASE%%/lib/browser_plugins/linux-flashplayer",
-+	"%%LOCALBASE%%/lib/browser_plugins/symlinks/linux-firefox",
 +	"%%LOCALBASE%%/Adobe/Reader8/ENU/Adobe/Reader8/Browser/intellinux",
 +	"%%LOCALBASE%%/Adobe/Reader9/ENU/Adobe/Reader9/Browser/intellinux",
  #endif
