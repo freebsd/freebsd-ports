@@ -234,6 +234,7 @@
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += ccache
+    SUBDIR += ccache-memcached
     SUBDIR += cccc
     SUBDIR += ccdoc
     SUBDIR += ccons

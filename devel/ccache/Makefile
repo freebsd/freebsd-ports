@@ -13,25 +13,42 @@ COMMENT=	Tool to minimize the compile time of C/C++ programs
 
 LICENSE=	GPLv3
 
+CONFLICTS_INSTALL=	ccache-memcached-[0-9]*
+
 GNU_CONFIGURE=	yes
 
 HOWTO=		ccache-howto-freebsd.txt
 CCLINKDIR=	libexec/ccache
 SUB_FILES=	${HOWTO} world-ccache pkg-message ccache-update-links.sh
 
-PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html
+PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html MANUAL.txt
 
-OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC DOCS TINDERBOX
+OPTIONS_DEFINE=	CLANGLINK LLVMLINK STATIC DOCS TINDERBOX MEMCACHED
 OPTIONS_DEFAULT=CLANGLINK LLVMLINK
 
 CLANGLINK_DESC=	Create clang compiler links if clang is installed
 LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
 TINDERBOX_DESC=	Create tarball for tinderbox usage
+MEMCACHED_DESC=	Build in experimental Memcached support
 
 USES=		compiler
+
+MEMCACHED_EXTRA_PATCHES=	${FILESDIR}/extra-patch-memcached:-p1
+MEMCACHED_CONFIGURE_ENABLE=	memcached
+MEMCACHED_USES=			autoreconf pkgconfig
+MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
+MEMCACHED_LDFLAGS=		-L${LOCALBASE}/lib
+MEMCACHED_CFLAGS=		-I${LOCALBASE}/include
+
+.if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED)
 # Don't allow autoreconf. We want no dependencies on this to keep
 # WITH_CCACHE_BUILD working.
 USES:=		${USES:Nautoreconf}
+
+MEMCACHED_IGNORE=		MEMCACHED cannot be combined with WITH_CCACHE_BUILD.  Use devel/ccache-memcached
+# XXX: This needs more testing with Poudriere before enabling. Also bsd.options.mk support.
+#MEMCACHED_DEPENDS_ARGS+= NO_CCACHE=1
+.endif
 
 OPTIONS_SUB=	yes
 
@@ -93,6 +110,7 @@ do-install-TINDERBOX-on:
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MANUAL.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/MANUAL.txt ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
