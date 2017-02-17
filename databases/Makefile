@@ -428,6 +428,7 @@
     SUBDIR += p5-Data-Page
     SUBDIR += p5-Data-Pageset
     SUBDIR += p5-Exception-Class-DBI
+    SUBDIR += p5-File-Locate
     SUBDIR += p5-GDBM
     SUBDIR += p5-Genezzo
     SUBDIR += p5-GitDDL
