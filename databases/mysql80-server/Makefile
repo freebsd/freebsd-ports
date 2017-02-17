@@ -134,7 +134,6 @@ PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_9=	FreeBSD 9.x requires SSL from ports
 CMAKE_ARGS+=		-DWITH_SSL=system
 .else
 CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}

@@ -24,9 +24,6 @@ GH_ACCOUNT=	rhinstaller
 USES=		gmake localbase pkgconfig
 USE_LDCONFIG=	yes
 
-EXTRA_PATCHES=	${EXTRA_PATCHES_${OPSYS}_${OSREL:R}}
-EXTRA_PATCHES_FreeBSD_9=	${FILESDIR}/extra-patch-src_client.c
-
 ONLY_FOR_ARCHS=		aarch64 armv6 amd64 i386
 ONLY_FOR_ARCHS_REASON=	UEFI specification only supports little-endian processors
 BROKEN_armv6=		fails to compile: error: EFI_VARIABLE_NON_VOLATILE redefined

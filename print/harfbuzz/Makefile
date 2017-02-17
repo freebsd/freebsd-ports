@@ -23,7 +23,4 @@ TEST_TARGET=	check
 
 PLIST_SUB+=	LIBVER=0.10400.2
 
-EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${OSREL:R}}
-EXTRA_PATCHES_FreeBSD_9=	${PATCHDIR}/extra-src_hb-open-type-private.hh
-
 .include <bsd.port.mk>
