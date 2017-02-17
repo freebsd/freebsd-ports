@@ -21,8 +21,6 @@ BUILD_DEPENDS=		bash:shells/bash \
 # candidates.
 FINALRC=		1
 
-BROKEN_FreeBSD_9=	fails with static_assert expression error in src/main/cpp/util/numbers.cc
-
 NO_WRKSUBDIR=		YES
 USES=			shebangfix zip
 SHEBANG_FILES=		${WRKSRC}/tools/cpp/link_dynamic_library.sh
