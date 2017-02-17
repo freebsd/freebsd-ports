@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iocage
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.lzma>=0.0.6:archivers/py-backports.lzma \
 		${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click \
+		${PYTHON_PKGNAMEPREFIX}future>=0.15:devel/py-future \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.10.0:misc/py-tqdm \
 		ca_root_nss>0:security/ca_root_nss \
 		${PYTHON_PKGNAMEPREFIX}tabletext>=0.1:textproc/py-tabletext \
