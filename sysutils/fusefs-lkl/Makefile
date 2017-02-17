@@ -26,7 +26,6 @@ GH_PROJECT=	linux
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=No one has added other architecture ld formats yet
 
-IGNORE_FreeBSD_9=	requires FreeBSD 11 or newer
 IGNORE_FreeBSD_10=	requires FreeBSD 11 or newer
 
 WRKSRC_SUBDIR=	tools/lkl
