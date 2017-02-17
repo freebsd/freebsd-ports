@@ -60,7 +60,7 @@ GDB_DESC=	Install python gdb scripts
 CONFIGURE_ARGS+=--disable-dtrace
 
 .if empty(ICONV_LIB)
-CONFIGURE_ARGS+=	--with-libiconv=native
+CONFIGURE_ARGS+=	--with-libiconv=no
 .else
 CONFIGURE_ARGS+=	--with-libiconv=gnu
 .endif
