@@ -2480,6 +2480,14 @@ llvm%%LLVM_LIB_VER%%/lib/libLTO.so.4
 %%EXTRAS%%llvm%%LLVM_LIB_VER%%/lib/libfindAllSymbols.a
 %%OPENMP%%llvm%%LLVM_LIB_VER%%/lib/libgomp.so
 %%OPENMP%%llvm%%LLVM_LIB_VER%%/lib/libiomp5.so
+%%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldCOFF.a
+%%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldConfig.a
+%%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldCore.a
+%%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldDriver.a
+%%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldELF.a
+%%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldMachO.a
+%%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldReaderWriter.a
+%%LLD%%llvm%%LLVM_LIB_VER%%/lib/liblldYAML.a
 %%LLDB%%llvm%%LLVM_LIB_VER%%/lib/liblldb.so
 %%LLDB%%llvm%%LLVM_LIB_VER%%/lib/liblldb.so.%%LLVM_RELEASE%%
 %%LLDB%%llvm%%LLVM_LIB_VER%%/lib/liblldb.so.4
