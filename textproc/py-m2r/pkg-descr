@@ -1,0 +1,5 @@
+M2R is a Python module and command line utility to convert documents
+formatted with markdown that include embedded reST markups to valid
+reST formatted documents.
+
+WWW: https://github.com/miyakogi/m2r
