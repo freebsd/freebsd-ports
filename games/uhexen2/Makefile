@@ -5,7 +5,7 @@ PORTNAME=	uhexen2
 PORTVERSION=	1.5.8
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}/Source \
-		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.29:data \
+		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.29a:data \
 		SF/${PORTNAME}/Hexen2%20GameData/hexenworld-pakfiles:hw
 DISTNAME=	hexen2source-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
