@@ -91,11 +91,7 @@ INSTALL_TARGET=	install-lib install-h install-config
 BROKEN=		Does not build with openssl-devel
 .endif
 
-.if ${PORT_OPTIONS:MGOST}
-.  if !defined(SSL_DEFAULT) || ${SSL_DEFAULT} == "base"
-IGNORE_FreeBSD_9=	Requires openssl version >= 1.0.0
-. endif
-.else
+.if ! ${PORT_OPTIONS:MGOST}
 NO_GOST=	--disable-gost
 .endif
 

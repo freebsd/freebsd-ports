@@ -146,10 +146,6 @@ POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-IGNORE_FreeBSD_9=	Requires OpenSSL >= 1.0.1 (set DEFAULT_VERSIONS+=ssl=openssl)
-.endif
-
 .if ${SSL_DEFAULT:Mlibressl*} || defined(LIBRESSL_IS_OPENSSL)
 IGNORE=	requires PSK which is unsupported by the selected LibreSSL. Use zabbix32${PKGNAMESUFFIX} instead
 .endif

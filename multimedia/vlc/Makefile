@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.2.4
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -24,7 +24,13 @@ BUILD_DEPENDS=	ffmpeg>=2.0:multimedia/ffmpeg \
 		yasm:devel/yasm
 RUN_DEPENDS=	ffmpeg>=2.0:multimedia/ffmpeg
 
-USES=		compiler:c11 desktop-file-utils gmake iconv libtool pathfix \
+# VLC git (post 2.2.4) requires C++11 support and passes the appropriate flag
+# to the compiler. Until the port is updated, we explicitly pass -std=c++11 to
+# the compiler because Qt 5.7+ requires C++11 support, and FreeBSD 10.3's clang
+# does not default to C++11 mode.
+USE_CXXSTD=	c++11
+
+USES=		compiler:c++11-lib desktop-file-utils gmake iconv libtool pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

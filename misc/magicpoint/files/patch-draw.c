@@ -1,6 +1,6 @@
---- draw.c.orig	2008-01-24 16:43:17.000000000 +0100
-+++ draw.c	2013-09-03 06:48:44.000000000 +0200
-@@ -5471,12 +5471,12 @@
+--- draw.c.orig	2008-01-24 15:43:17 UTC
++++ draw.c
+@@ -5471,12 +5471,12 @@ xft_setfont(xfontarg, csize, registry)
  		    XFT_FAMILY, XftTypeString, font,
  		    XFT_ENCODING, XftTypeString, registry,
  		    XFT_STYLE, XftTypeString, style,

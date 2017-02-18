@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Import-Base
-PORTVERSION=	1.002
+PORTVERSION=	1.003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PREACTION
@@ -13,6 +13,7 @@ COMMENT=	Import a set of modules into the calling module
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Import-Into>=1.002005:devel/p5-Import-Into \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime

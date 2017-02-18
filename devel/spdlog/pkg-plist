@@ -31,6 +31,7 @@ include/spdlog/sinks/ostream_sink.h
 include/spdlog/sinks/sink.h
 include/spdlog/sinks/stdout_sinks.h
 include/spdlog/sinks/syslog_sink.h
+include/spdlog/sinks/wincolor_sink.h
 include/spdlog/spdlog.h
 include/spdlog/tweakme.h
 libdata/pkgconfig/spdlog.pc

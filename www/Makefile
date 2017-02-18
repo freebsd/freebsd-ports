@@ -412,6 +412,7 @@
     SUBDIR += mini_httpd
     SUBDIR += miniminiweb
     SUBDIR += minio
+    SUBDIR += minio-client
     SUBDIR += mitmproxy
     SUBDIR += mkapachepw
     SUBDIR += mknmz-wwwoffle

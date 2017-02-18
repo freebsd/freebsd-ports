@@ -9,4 +9,4 @@ following extensions:
 * Use config file to change the behaviour of the email2trac.py program
 * unicode support for special characters in the headers of an email message
 
-WWW: https://subtrac.sara.nl/oss/email2trac
+WWW: https://oss.trac.surfsara.nl/email2trac

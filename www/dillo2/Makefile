@@ -40,10 +40,6 @@ THREADS_CONFIGURE_ENABLE=	threaded-dns
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-IGNORE_FreeBSD_9=	Requires newer OpenSSL (set DEFAULT_VERSIONS+=ssl=openssl)
-.endif
-
 .ifdef(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-gprof --enable-rtfl
 .else

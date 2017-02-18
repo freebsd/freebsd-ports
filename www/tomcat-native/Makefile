@@ -37,7 +37,6 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
-IGNORE_FreeBSD_9=	Requires OpenSSL 1.0.2 (set DEFAULT_VERSIONS+=ssl=openssl)
 IGNORE_FreeBSD_10=	Requires OpenSSL 1.0.2 (set DEFAULT_VERSIONS+=ssl=openssl)
 .endif
 
