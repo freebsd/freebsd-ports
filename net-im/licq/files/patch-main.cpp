@@ -1,6 +1,6 @@
---- src/main.cpp.orig	Wed Jan 29 13:19:50 2003
-+++ src/main.cpp	Wed Jan 29 13:20:13 2003
-@@ -10,7 +10,6 @@
+--- src/main.cpp.orig	2014-06-01 19:16:42 UTC
++++ src/main.cpp
+@@ -31,7 +31,6 @@
  
  #ifdef USE_SOCKS5
  #define SOCKS
