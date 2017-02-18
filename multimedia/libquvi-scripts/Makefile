@@ -12,7 +12,7 @@ COMMENT=	Embedded lua scripts for libquvi and utility scripts
 LICENSE=	LGPL21+
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limit:0.4.[0-9]*
+PORTSCOUT=	limit:^0\.4\.
 
 OPTIONS_DEFINE=	NSFW
 OPTIONS_SUB=	yes
