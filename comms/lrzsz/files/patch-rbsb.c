@@ -1,6 +1,6 @@
---- src/rbsb.c.org	2010-01-15 22:41:21.000000000 +0900
-+++ src/rbsb.c	2010-01-15 22:41:34.000000000 +0900
-@@ -296,7 +296,7 @@
+--- src/rbsb.c.orig	1998-12-29 16:16:25 UTC
++++ src/rbsb.c
+@@ -296,7 +296,7 @@ io_mode(int fd, int n)
  			tty.c_iflag |= IXOFF;
  
  		 /* No echo, crlf mapping, INTR, QUIT, delays, no erase/kill */
