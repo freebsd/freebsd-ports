@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	8.5.1
+PORTVERSION=	8.6.0
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -15,12 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 IGNORE_WITH_PHP=	56
 PHP_VER=	70
 
-PORTSCOUT=	limit:^8\.5\.
+PORTSCOUT=	limit:^8\.6\.
 
 USES=		cpe php:web shebangfix
 SHEBANG_FILES=	vendor/doctrine/instantiator/.travis.install.sh \
 		typo3/sysext/core/Build/Scripts/cglFixMyCommit.sh \
-		typo3/sysext/core/Build/Scripts/splitFunctionalTests.sh \
 		typo3/sysext/core/Build/Scripts/validateRstFiles.sh \
 		typo3/sysext/core/Build/Scripts/duplicateExceptionCodeCheck.sh \
 		typo3/sysext/core/Build/Scripts/checkFilePermissions.sh \
