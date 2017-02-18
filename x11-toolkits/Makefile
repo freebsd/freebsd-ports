@@ -94,6 +94,7 @@
     SUBDIR += kf5-kwidgetsaddons
     SUBDIR += kf5-kxmlgui
     SUBDIR += kirigami
+    SUBDIR += kirigami2
     SUBDIR += lesstif
     SUBDIR += libXaw
     SUBDIR += libXmu
