@@ -1,5 +1,5 @@
---- sample/default.mgp.orig	Sat Aug 11 01:40:54 2001
-+++ sample/default.mgp	Tue Jan 25 13:56:12 2005
+--- sample/default.mgp.orig	2001-08-10 16:40:54 UTC
++++ sample/default.mgp
 @@ -12,9 +12,9 @@
  %% into the "tfdir" directory above:
  %%	ftp://ftp.mew.org/pub/mgp/ttf-jp.tar.gz
