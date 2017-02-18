@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	email2trac
-PORTVERSION=	2.9.0
+PORTVERSION=	2.10.0
 CATEGORIES=	www devel python
 MASTER_SITES=	ftp://ftp.sara.nl/pub/outgoing/
 PKGNAMEPREFIX=	trac-
