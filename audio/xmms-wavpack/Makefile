@@ -2,7 +2,7 @@
 
 PORTNAME=	xmms-wavpack
 PORTVERSION=	1.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.wavpack.com/
 
