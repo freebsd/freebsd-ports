@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170218:
+  AFFECTS: users of Qt 4 and Qt 5
+  AUTHOR: kde@FreeBSD.org
+
+  Following what is already done in Qt 5, the Qt 4 ports no longer install
+  their binaries into ${LOCALBASE}/bin (which is "/usr/local/bin" in most
+  cases). Additionally, the "-qt4" suffix has been dropped from the file names
+  of the binaries that had it, such as "qmake-qt4".
+
+  The new misc/qtchooser port is now used to choose whether a Qt 4 or Qt 5
+  version of a binary such as "moc", "qmake" or "designer" will be used. By
+  default, the Qt 5 versions are preferred, but that can be changed by setting
+  the QT_SELECT environment variable to "qt4".
+
+  qtchooser also allows one to seamlessly use other Qt installations for those
+  binaries, which is particularly beneficial to people working on Qt itself or
+  who need their own checkouts.
+
+  See qtchooser(1) for more information on how to configure qtchooser.
+
 20170213:
   AFFECTS: users of www/node*
   AUTHOR: bradleythughes@fastmail.fm

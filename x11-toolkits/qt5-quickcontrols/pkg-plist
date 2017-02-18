@@ -18,7 +18,6 @@
 %%QT_QMLDIR%%/QtQuick/Controls/Private/Control.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/EditMenu.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/EditMenu_base.qml
-%%QT_QMLDIR%%/QtQuick/Controls/Private/EditMenu_ios.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/FastGlow.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/FocusFrame.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Private/HoverButton.qml
@@ -200,6 +199,13 @@
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/qml/icons.ttf
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Dialogs/qml/qmldir
 %%QT_QMLDIR%%/QtQuick/Dialogs/qmldir
+%%QT_QMLDIR%%/QtQuick/Extras/Private/CircularButton.qml
+%%QT_QMLDIR%%/QtQuick/Extras/Private/CircularButtonStyleHelper.qml
+%%QT_QMLDIR%%/QtQuick/Extras/Private/CircularTickmarkLabel.qml
+%%QT_QMLDIR%%/QtQuick/Extras/Private/Handle.qml
+%%QT_QMLDIR%%/QtQuick/Extras/Private/PieMenuIcon.qml
+%%QT_QMLDIR%%/QtQuick/Extras/Private/TextSingleton.qml
+%%QT_QMLDIR%%/QtQuick/Extras/Private/qmldir
 %%QT_QMLDIR%%/QtQuick/Extras/designer/CircularGaugeSpecifics.qml
 %%QT_QMLDIR%%/QtQuick/Extras/designer/DelayButtonSpecifics.qml
 %%QT_QMLDIR%%/QtQuick/Extras/designer/DialSpecifics.qml
@@ -231,10 +237,6 @@
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Extras/libqtquickextrasplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Extras/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Extras/qmldir
-%%QT_QMLDIR%%/QtQuick/Layouts/libqquicklayoutsplugin.so
-%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Layouts/libqquicklayoutsplugin.so.debug
-%%QT_QMLDIR%%/QtQuick/Layouts/plugins.qmltypes
-%%QT_QMLDIR%%/QtQuick/Layouts/qmldir
 %%QT_QMLDIR%%/QtQuick/PrivateWidgets/libwidgetsplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/PrivateWidgets/libwidgetsplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/PrivateWidgets/plugins.qmltypes

@@ -31,7 +31,7 @@ USE_PYQT=	core gui \
 USE_PYTHON=	distutils autoplist
 USE_GSTREAMER=	good bad ugly
 USE_QT4=	linguist phonon-gst
-QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
+QT_LRELEASE=	${LRELEASE}
 NO_ARCH=	yes
 
 pre-build:

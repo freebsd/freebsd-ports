@@ -1,6 +1,6 @@
 %%QT_BINDIR%%/lconvert
 %%DEBUG%%%%QT_BINDIR%%/lconvert.debug
-%%QT_BINDIR%%/lrelease-qt4
-%%DEBUG%%%%QT_BINDIR%%/lrelease-qt4.debug
-%%QT_BINDIR%%/lupdate-qt4
-%%DEBUG%%%%QT_BINDIR%%/lupdate-qt4.debug
+%%QT_BINDIR%%/lrelease
+%%DEBUG%%%%QT_BINDIR%%/lrelease.debug
+%%QT_BINDIR%%/lupdate
+%%DEBUG%%%%QT_BINDIR%%/lupdate.debug

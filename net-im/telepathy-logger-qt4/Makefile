@@ -26,8 +26,6 @@ CMAKE_ARGS=	-DUSE_COMMON_CMAKE_PACKAGE_CONFIG_DIR:BOOL=True
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '/FIND_PROGRAM/ s,qmake ,,' \
-		${WRKSRC}/cmake/modules/FindQt.cmake
 	@${REINPLACE_CMD} -e '/$${QTGLIB_INCLUDE_DIR}/ s,)$$, ${LOCALBASE}/include),' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/$${GOBJECT_LIBRARIES}/ s,$$, -L${LOCALBASE}/lib,' \

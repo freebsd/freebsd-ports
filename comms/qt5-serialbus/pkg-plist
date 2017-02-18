@@ -17,6 +17,7 @@
 %%QT_INCDIR%%/QtSerialBus/QModbusDataUnit
 %%QT_INCDIR%%/QtSerialBus/QModbusDataUnitMap
 %%QT_INCDIR%%/QtSerialBus/QModbusDevice
+%%QT_INCDIR%%/QtSerialBus/QModbusDeviceIdentification
 %%QT_INCDIR%%/QtSerialBus/QModbusExceptionResponse
 %%QT_INCDIR%%/QtSerialBus/QModbusPdu
 %%QT_INCDIR%%/QtSerialBus/QModbusReply
@@ -37,6 +38,7 @@
 %%QT_INCDIR%%/QtSerialBus/qmodbusclient.h
 %%QT_INCDIR%%/QtSerialBus/qmodbusdataunit.h
 %%QT_INCDIR%%/QtSerialBus/qmodbusdevice.h
+%%QT_INCDIR%%/QtSerialBus/qmodbusdeviceidentification.h
 %%QT_INCDIR%%/QtSerialBus/qmodbuspdu.h
 %%QT_INCDIR%%/QtSerialBus/qmodbusreply.h
 %%QT_INCDIR%%/QtSerialBus/qmodbusrtuserialmaster.h
@@ -46,8 +48,8 @@
 %%QT_INCDIR%%/QtSerialBus/qmodbustcpserver.h
 %%QT_INCDIR%%/QtSerialBus/qserialbusglobal.h
 %%QT_INCDIR%%/QtSerialBus/qtserialbusversion.h
-%%QT_LIBDIR%%/cmake/Qt5SerialBus/Qt5SerialBusConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5SerialBus/Qt5SerialBusConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBusConfig.cmake
+%%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBusConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5SerialBus.prl
 %%QT_LIBDIR%%/libQt5SerialBus.so
 %%QT_LIBDIR%%/libQt5SerialBus.so.5

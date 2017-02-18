@@ -2,7 +2,6 @@
 
 PORTNAME=	core
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -22,11 +21,11 @@ HAS_CONFIGURE=	yes
 # that need to be detected).
 CONFIGURE_ARGS=	-no-accessibility -no-gif -no-libpng -no-libjpeg \
 		-no-openssl -no-gui -no-widgets -no-cups \
-		-no-iconv -no-dbus -no-xcb -no-opengl \
+		-no-iconv -no-dbus -no-opengl \
 		-no-alsa -no-egl -no-evdev -no-feature-concurrent \
-		-no-fontconfig -no-freetype -no-gtkstyle -no-harfbuzz \
-		-no-libudev -no-pulseaudio -no-xcb -no-xinput -no-xkb \
-		-no-xkbcommon -no-xrender -no-xshape -no-xsync -no-xvideo
+		-no-fontconfig -no-freetype -no-gtk -no-harfbuzz \
+		-no-libudev -no-pulseaudio -no-xcb -no-xinput2 -no-xkb -no-xcb-xlib \
+		-no-xkbcommon -no-xrender -no-xshape -no-xsync -no-libinput
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 BUILD_WRKSRC=	${WRKSRC}/src/corelib

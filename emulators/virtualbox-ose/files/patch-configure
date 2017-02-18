@@ -34,6 +34,14 @@
      test_execute
    fi
  }
+@@ -1694,6 +1701,7 @@
+         if [ $? -eq 0 ]; then
+           echo "(Qt5 from pkg-config)" >> $LOG
+           FLGQT5=`pkg-config Qt5Core --cflags`
++          FLGQT5="$FLGQT5 -std=c++11"
+           INCQT5=`strip_I "$FLGQT5"`
+           LIBDIR5=`pkg-config Qt5Core --variable=libdir`
+           LIBQT5=`pkg-config Qt5Core --libs`
 @@ -2126,8 +2133,8 @@ EOF
          echo "compiling the following source file:" >> $LOG
          cat $ODIR.tmp_src.cc >> $LOG

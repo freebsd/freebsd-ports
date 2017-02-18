@@ -31,7 +31,7 @@
 +CXX    ?= c++
 +CPP     = ${CXX}
 +LINK    = ${CXX}
-+MOC     = moc-qt4
++MOC     = moc
  INSTALL = install
 
  ####### compile and link options
