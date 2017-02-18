@@ -33,16 +33,7 @@ WRKSRC=		${WRKDIR}/icu/source
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION}
 
-.include <bsd.port.options.mk>
-
 .ifndef PKGNAMESUFFIX
-.if ${ARCH} == "mips" || ${ARCH} == "mips64" || ${ARCH} == "sparc64" \
- || ${ARCH} == "powerpc" || ${ARCH} == "powerpc64"
-PLIST_FILES+=	%%DATADIR%%/%%ICUVER%%/icudt%%ICUMAJOR%%b.dat
-.else
-PLIST_FILES+=	%%DATADIR%%/%%ICUVER%%/icudt%%ICUMAJOR%%l.dat
-.endif
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/g* \
 		${STAGEDIR}${PREFIX}/bin/*conv \
@@ -50,6 +41,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/derb \
 		${STAGEDIR}${PREFIX}/bin/pkgdata
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
+# Filename varies by endianness: icudt<major>b.dat vs. icudt<major>l.dat
+	@(cd ${STAGEDIR}${PREFIX} && ${ECHO_CMD} \
+		${DATADIR_REL}/${PORTVERSION}/icudt*.dat >>${TMPPLIST})
 .endif # PKGNAMESUFFIX
 
 .include <bsd.port.mk>
