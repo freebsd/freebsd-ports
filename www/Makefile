@@ -1910,7 +1910,6 @@
     SUBDIR += rssroll
     SUBDIR += rsstail
     SUBDIR += rsstool
-    SUBDIR += rt40
     SUBDIR += rt42
     SUBDIR += rt44
     SUBDIR += rtv

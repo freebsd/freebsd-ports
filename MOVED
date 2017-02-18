@@ -9080,3 +9080,5 @@ devel/qmake5|devel/qt5-qmake|2017-02-18|Renamed to match other Qt ports
 textproc/clucene-qt4|textproc/qt4-clucene|2017-02-18|Renamed to match other Qt ports
 www/webkit-qt4|www/qt4-webkit|2017-02-18|Renamed to match other Qt ports
 www/webkit-qt5|www/qt5-webkit|2017-02-18|Renamed to match other Qt ports
+www/rt40|www/rt44|2017-02-18|Has expired: Upstream support EoL, please migrate to rt44
+devel/m6811-binutils||2017-02-18|Has expired: multiple vulnerabilities, version is years behind upstream
