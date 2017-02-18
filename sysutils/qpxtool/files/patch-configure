@@ -26,15 +26,6 @@
  
  	if test "$__enable_debug" = "yes" ; then
  		echo "# additional debug options" >> Makefile
-@@ -491,7 +491,7 @@ else
- 		fi
- 	fi
- fi
--	echo "	lrelease -verbose qpxtool.pro" >> $mf
-+	echo "	lrelease-qt4 -verbose qpxtool.pro" >> $mf
- 
- 	echo "
- clean: Makefile.qmake
 @@ -846,7 +846,7 @@ case "$OSL" in
  		__libdir=$__prefix/lib
  		__plugindir=$__libdir/qpxtool

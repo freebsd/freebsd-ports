@@ -1871,6 +1871,8 @@
     SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
+    SUBDIR += qt4-webkit
+    SUBDIR += qt5-webkit
     SUBDIR += qt5-webchannel
     SUBDIR += qt5-websockets
     SUBDIR += quickie
@@ -1908,7 +1910,6 @@
     SUBDIR += rssroll
     SUBDIR += rsstail
     SUBDIR += rsstool
-    SUBDIR += rt40
     SUBDIR += rt42
     SUBDIR += rt44
     SUBDIR += rtv
@@ -2340,8 +2341,6 @@
     SUBDIR += webinject
     SUBDIR += webkit-gtk2
     SUBDIR += webkit-gtk3
-    SUBDIR += webkit-qt4
-    SUBDIR += webkit-qt5
     SUBDIR += webkit-sharp
     SUBDIR += webkit2-gtk3
     SUBDIR += weblint

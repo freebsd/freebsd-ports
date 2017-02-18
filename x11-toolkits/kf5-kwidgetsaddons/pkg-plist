@@ -20,6 +20,7 @@ include/KF5/KWidgetsAddons/KFontAction
 include/KF5/KWidgetsAddons/KFontChooser
 include/KF5/KWidgetsAddons/KFontRequester
 include/KF5/KWidgetsAddons/KFontSizeAction
+include/KF5/KWidgetsAddons/KGradientSelector
 include/KF5/KWidgetsAddons/KGuiItem
 include/KF5/KWidgetsAddons/KLed
 include/KF5/KWidgetsAddons/KMessageBox
@@ -27,14 +28,18 @@ include/KF5/KWidgetsAddons/KMessageBoxDontAskAgainInterface
 include/KF5/KWidgetsAddons/KMessageBoxNotifyInterface
 include/KF5/KWidgetsAddons/KMessageWidget
 include/KF5/KWidgetsAddons/KMimeTypeChooser
+include/KF5/KWidgetsAddons/KMimeTypeChooserDialog
 include/KF5/KWidgetsAddons/KMimeTypeEditor
 include/KF5/KWidgetsAddons/KMultiTabBar
+include/KF5/KWidgetsAddons/KMultiTabBarButton
+include/KF5/KWidgetsAddons/KMultiTabBarTab
 include/KF5/KWidgetsAddons/KNewPasswordDialog
 include/KF5/KWidgetsAddons/KNewPasswordWidget
 include/KF5/KWidgetsAddons/KPageDialog
 include/KF5/KWidgetsAddons/KPageModel
 include/KF5/KWidgetsAddons/KPageView
 include/KF5/KWidgetsAddons/KPageWidget
+include/KF5/KWidgetsAddons/KPageWidgetItem
 include/KF5/KWidgetsAddons/KPageWidgetModel
 include/KF5/KWidgetsAddons/KPasswordDialog
 include/KF5/KWidgetsAddons/KPixmapRegionSelectorDialog

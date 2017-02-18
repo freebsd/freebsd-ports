@@ -5,8 +5,8 @@
 %%QT_INCDIR%%/QtX11Extras/qtx11extrasglobal.h
 %%QT_INCDIR%%/QtX11Extras/qtx11extrasversion.h
 %%QT_INCDIR%%/QtX11Extras/qx11info_x11.h
-%%QT_LIBDIR%%/cmake/Qt5X11Extras/Qt5X11ExtrasConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5X11Extras/Qt5X11ExtrasConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5X11Extras/Qt5X11ExtrasConfig.cmake
+%%QT_CMAKEDIR%%/Qt5X11Extras/Qt5X11ExtrasConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5X11Extras.prl
 %%QT_LIBDIR%%/libQt5X11Extras.so
 %%QT_LIBDIR%%/libQt5X11Extras.so.5

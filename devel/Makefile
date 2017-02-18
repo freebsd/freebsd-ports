@@ -384,8 +384,6 @@
     SUBDIR += dbus
     SUBDIR += dbus-c++
     SUBDIR += dbus-glib
-    SUBDIR += dbus-qt4
-    SUBDIR += dbus-qt5
     SUBDIR += dbus-sharp
     SUBDIR += dbus-sharp-glib
     SUBDIR += dbus-tcl
@@ -1579,7 +1577,6 @@
     SUBDIR += m17n-docs
     SUBDIR += m17n-lib
     SUBDIR += m4
-    SUBDIR += m6811-binutils
     SUBDIR += magit
     SUBDIR += make++
     SUBDIR += makedepend
@@ -4941,8 +4938,6 @@
     SUBDIR += qjson
     SUBDIR += qjson-qt5
     SUBDIR += qmake
-    SUBDIR += qmake4
-    SUBDIR += qmake5
     SUBDIR += qprog
     SUBDIR += qross
     SUBDIR += qscintilla2
@@ -4954,6 +4949,7 @@
     SUBDIR += qt4-assistant
     SUBDIR += qt4-assistant-adp
     SUBDIR += qt4-corelib
+    SUBDIR += qt4-dbus
     SUBDIR += qt4-designer
     SUBDIR += qt4-help
     SUBDIR += qt4-help-tools
@@ -4965,6 +4961,7 @@
     SUBDIR += qt4-porting
     SUBDIR += qt4-qdbusviewer
     SUBDIR += qt4-qdoc3
+    SUBDIR += qt4-qmake
     SUBDIR += qt4-qmlviewer
     SUBDIR += qt4-qt3support
     SUBDIR += qt4-qtsolutions-singleapplication
@@ -4981,6 +4978,7 @@
     SUBDIR += qt5-buildtools
     SUBDIR += qt5-concurrent
     SUBDIR += qt5-core
+    SUBDIR += qt5-dbus
     SUBDIR += qt5-designer
     SUBDIR += qt5-help
     SUBDIR += qt5-linguist
@@ -4990,8 +4988,10 @@
     SUBDIR += qt5-qdbusviewer
     SUBDIR += qt5-qdoc
     SUBDIR += qt5-qdoc-data
+    SUBDIR += qt5-qmake
     SUBDIR += qt5-script
     SUBDIR += qt5-scripttools
+    SUBDIR += qt5-scxml
     SUBDIR += qt5-testlib
     SUBDIR += qt5-uitools
     SUBDIR += qtcreator

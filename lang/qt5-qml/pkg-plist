@@ -126,6 +126,7 @@
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4compileddata_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4compiler_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4context_p.h
+%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4context_p_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4dataview_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4dateobject_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4debugging_p.h
@@ -286,6 +287,7 @@
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4compileddata_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4compiler_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4context_p.h
+%%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4context_p_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4dataview_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4dateobject_p.h
 %%QT_INCDIR%%/QtQmlDevTools/%%FULLVER%%/QtQmlDevTools/private/qv4debugging_p.h
@@ -341,9 +343,9 @@
 %%QT_INCDIR%%/QtQmlDevTools/QtQmlDevToolsDepends
 %%QT_INCDIR%%/QtQmlDevTools/QtQmlDevToolsVersion
 %%QT_INCDIR%%/QtQmlDevTools/qtqmldevtoolsversion.h
-%%QT_LIBDIR%%/cmake/Qt5Qml/Qt5QmlConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5Qml/Qt5QmlConfigExtras.cmake
-%%QT_LIBDIR%%/cmake/Qt5Qml/Qt5QmlConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5Qml/Qt5QmlConfig.cmake
+%%QT_CMAKEDIR%%/Qt5Qml/Qt5QmlConfigExtras.cmake
+%%QT_CMAKEDIR%%/Qt5Qml/Qt5QmlConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5Qml.prl
 %%QT_LIBDIR%%/libQt5Qml.so
 %%QT_LIBDIR%%/libQt5Qml.so.5

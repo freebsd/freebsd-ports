@@ -40,7 +40,8 @@ RUN_DEPENDS+=	wine:emulators/wine-devel
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/version.sh
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}| ; \
-			s|swine32.png|*|' \
+			s|swine32.png|*| ; \
+			s|lrelease-qt4|lrelease|' \
 	${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/share/swine/images/swine32.png|swine|' \
 		-e 's|^Categories=.*|Categories=Wine;System;Emulator;Utility;Game;|' \

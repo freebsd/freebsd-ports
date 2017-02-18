@@ -94,6 +94,7 @@
     SUBDIR += kf5-kwidgetsaddons
     SUBDIR += kf5-kxmlgui
     SUBDIR += kirigami
+    SUBDIR += kirigami2
     SUBDIR += lesstif
     SUBDIR += libXaw
     SUBDIR += libXmu
@@ -230,12 +231,16 @@
     SUBDIR += qt4pas
     SUBDIR += qt5-canvas3d
     SUBDIR += qt5-charts
+    SUBDIR += qt5-datavis3d
     SUBDIR += qt5-declarative
+    SUBDIR += qt5-declarative-render2d
+    SUBDIR += qt5-gamepad
     SUBDIR += qt5-gui
     SUBDIR += qt5-quick
     SUBDIR += qt5-quickcontrols
     SUBDIR += qt5-quickcontrols2
     SUBDIR += qt5-uiplugin
+    SUBDIR += qt5-virtualkeyboard
     SUBDIR += qt5-widgets
     SUBDIR += qtermwidget
     SUBDIR += qwt5
