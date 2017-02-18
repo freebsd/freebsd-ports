@@ -74,6 +74,8 @@ CONFIGURE_ARGS+=--disable-poppler-qt4
 CONFIGURE_ARGS+=--enable-poppler-qt5
 CONFIGURE_ENV+=	MOCQT5=${MOC}
 USE_QT5=	core gui widgets xml buildtools_build testlib_build
+# Qt from 5.7.0 on requires c++11.
+USE_CXXSTD=	c++11
 BUILD_WRKSRC=	${WRKSRC}/qt5
 INSTALL_WRKSRC=	${WRKSRC}/qt5
 .else

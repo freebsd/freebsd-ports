@@ -10,6 +10,29 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20170218:
+AUTHOR: kde@FreeBSD.org
+
+  * Qt 4's binaries have been moved to lib/qt4/bin to match what is already done
+    to Qt 5's binaries. Since these binaries are no longer in ${LOCALBASE}/bin,
+    they also do not have the -qt4 suffix in their names any more.
+
+  * Consequently, there are no Qt 4 or Qt 5 binaries in the default $PATH, and
+    misc/qtchooser is now used to select the actual Qt binaries. In other
+    words, calling "qmake" or "moc" now goes through qtchooser, which prefers
+    Qt 5 binaries by default.
+
+    The ports framework handles this automatically. The UPDATING entry covers
+    this in more detail.
+
+  * Qt 5.7.1 requires a C++11-capable compiler to be used. qmake and CMake pass
+    the appropriate flags to the compiler (such as -std=c++11) automatically,
+    but if your port fetches Qt's build flags via pkg-config (which can be the
+    case for autotools-based ports), you might need to take care of this
+    manually by setting USE_CXXSTD in your Makefile:
+
+      USE_CXXSTD=	c++11
+
 20160116:
 AUTHOR: mat@FreeBSD.org
 

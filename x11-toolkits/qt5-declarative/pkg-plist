@@ -213,11 +213,11 @@
 %%QT_INCDIR%%/QtDeclarative/qdeclarativeview.h
 %%QT_INCDIR%%/QtDeclarative/qtdeclarativeglobal.h
 %%QT_INCDIR%%/QtDeclarative/qtdeclarativeversion.h
-%%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5DeclarativeConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5DeclarativeConfigVersion.cmake
-%%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5Declarative_QTcpServerConnection.cmake
-%%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5Declarative_QtQuick1Plugin.cmake
-%%QT_LIBDIR%%/cmake/Qt5Designer/Qt5Designer_QDeclarativeViewPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5Declarative/Qt5DeclarativeConfig.cmake
+%%QT_CMAKEDIR%%/Qt5Declarative/Qt5DeclarativeConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5Declarative/Qt5Declarative_QTcpServerConnection.cmake
+%%QT_CMAKEDIR%%/Qt5Declarative/Qt5Declarative_QtQuick1Plugin.cmake
+%%QT_CMAKEDIR%%/Qt5Designer/Qt5Designer_QDeclarativeViewPlugin.cmake
 %%QT_LIBDIR%%/libQt5Declarative.prl
 %%QT_LIBDIR%%/libQt5Declarative.so
 %%QT_LIBDIR%%/libQt5Declarative.so.5

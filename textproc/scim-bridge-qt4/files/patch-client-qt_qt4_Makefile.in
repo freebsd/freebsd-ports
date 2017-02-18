@@ -9,12 +9,3 @@
  @SCIM_BRIDGE_BUILD_QT4_IMMODULE_TRUE@module_LTLIBRARIES = im-scim-bridge.la
  @SCIM_BRIDGE_BUILD_QT4_IMMODULE_TRUE@im_scim_bridge_la_SOURCES = ../im-scim-bridge-qt.cpp \
  @SCIM_BRIDGE_BUILD_QT4_IMMODULE_TRUE@							../scim-bridge-client-qt.cpp \
-@@ -261,7 +261,7 @@
- @SCIM_BRIDGE_BUILD_QT4_IMMODULE_TRUE@im_scim_bridge_la_LIBADD = $(top_srcdir)/common/libscimbridgecommon.la \
- @SCIM_BRIDGE_BUILD_QT4_IMMODULE_TRUE@							$(top_srcdir)/client-common/libscimbridgeclientcommon.la
- 
--@SCIM_BRIDGE_BUILD_QT4_IMMODULE_TRUE@MOC = @QT4_PREFIX@/bin/moc
-+@SCIM_BRIDGE_BUILD_QT4_IMMODULE_TRUE@MOC = @QT4_PREFIX@/bin/moc-qt4
- MAINTAINERCLEANFILES = Makefile.in
- CLEANFILES = moc_scim-bridge-client-qt.cpp
- all: all-am

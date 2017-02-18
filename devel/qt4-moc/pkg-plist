@@ -1,2 +1,2 @@
-%%QT_BINDIR%%/moc-qt4
-%%DEBUG%%%%QT_BINDIR%%/moc-qt4.debug
+%%QT_BINDIR%%/moc
+%%DEBUG%%%%QT_BINDIR%%/moc.debug

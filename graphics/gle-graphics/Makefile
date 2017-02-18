@@ -20,7 +20,7 @@ BITMAP_IMAGES_LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiffxx.so:graphics/tiff
 BITMAP_IMAGES_USES=	jpeg
 
-CONFIGURE_ARGS=	--with-extrafonts=yes
+CONFIGURE_ARGS=	--with-extrafonts=yes --with-qt=${QT_ARCHDIR}
 
 ALL_TARGET=	all
 
@@ -45,7 +45,7 @@ REINPLACE_FILES=	configure
 USE_GCC=	yes
 USE_GL=	yes
 USE_LDCONFIG=	yes
-USE_QT4=	gui moc network opengl rcc qmake_build
+USE_QT4=	corelib gui moc network opengl rcc qmake_build
 USES=		gmake ncurses pathfix
 CPPFLAGS+=	-I${NCURSESINC}
 
