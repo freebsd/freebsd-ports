@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x265
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://bitbucket.org/multicoreware/${PORTNAME}/get/
 DISTNAME=	${PORTVERSION}
@@ -24,7 +23,7 @@ CFLAGS_mips=	-DNO_ATOMICS # cannot use lang/gcc
 CFLAGS_mips64=	-DNO_ATOMICS # cannot use lang/gcc
 EXTRACT_AFTER_ARGS+=	--exclude "md5*"
 
-WRKSRC=		${WRKDIR}/multicoreware-${PORTNAME}-be14a7e9755e/source
+WRKSRC=		${WRKDIR}/multicoreware-${PORTNAME}-3037c1448549/source
 
 do-test:
 	${WRKSRC}/test/TestBench
