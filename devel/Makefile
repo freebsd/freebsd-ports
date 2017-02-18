@@ -3995,6 +3995,7 @@
     SUBDIR += pwlib
     SUBDIR += py-Acquisition
     SUBDIR += py-AddOns
+    SUBDIR += py-Automat
     SUBDIR += py-Breve
     SUBDIR += py-BytecodeAssembler
     SUBDIR += py-DateTime
