@@ -3,7 +3,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -81,6 +81,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL} ${WRKSRC}/contrib/xmindpath/xmindpath \
 		${STAGEDIR}${PREFIX}/bin/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xmindpath
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
