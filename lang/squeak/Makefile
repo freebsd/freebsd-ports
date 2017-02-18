@@ -15,7 +15,7 @@ DISTFILES=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}:vmsrc \
 EXTRACT_ONLY=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	takeshi.mutoh@gmail.com
 COMMENT=	Full Smalltalk 80 with portability to Unix, Mac, and Windows
 
 LICENSE=	APACHE20 MIT
