@@ -17,7 +17,7 @@ BUILD_DEPENDS=	libquvi>=0.4.0:multimedia/libquvi
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PORTSCOUT=	limit:0.4.[0-9]*
+PORTSCOUT=	limit:^0\.4\.
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig tar:xz
