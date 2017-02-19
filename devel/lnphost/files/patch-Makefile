@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Mar 18 10:20:31 2005
-+++ Makefile	Thu Sep 13 21:14:41 2007
-@@ -8,16 +8,20 @@
+--- Makefile.orig	2005-03-18 16:20:31 UTC
++++ Makefile
+@@ -8,16 +8,20 @@ else
  endif
  
  PROGRAMS=$(patsubst %.c,%$(EXT),$(wildcard *.c))
@@ -28,22 +28,25 @@
  
  needroot:
  	@if [ ! $$UID -eq 0 ]; then \
-@@ -26,21 +30,27 @@
+@@ -25,22 +29,28 @@ needroot:
+ 	  exit 1; \
  	fi
  
- install: all needroot
+-install: all needroot
 -	make -C Docs all
 -	install -g root -o root -m 644 Docs/lnpdump.1.gz $(MANDIR)
 -	install -g root -o root -m 755 lnpdump$(EXT) $(BINDIR)
++install: all
 +	${MAKE} -C Docs all
 +	$(BSD_INSTALL_MAN) Docs/lnpdump.1 $(MANDIR)
 +	$(BSD_INSTALL_PROGRAM) lnpdump$(EXT) $(BINDIR)
 +	$(BSD_INSTALL_DATA) lnphost.a $(LIBDIR)
 +	$(BSD_INSTALL_DATA) Include/lnphost.h $(INCDIR)
  
- remove: needroot
+-remove: needroot
 -	rm -f $(MANDIR)/lnpdump.1.gz
 -	rm -f $(BINDIR)/lnpdump$(EXT)
++remove:
 +	${RM} -f $(MANDIR)/lnpdump.1.gz
 +	${RM} -f $(BINDIR)/lnpdump$(EXT)
 +	${RM} -f $(LIBDIR)/lnphost.a
