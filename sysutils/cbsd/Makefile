@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	11.0.8
+PORTVERSION=	11.0.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
