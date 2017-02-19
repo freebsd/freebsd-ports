@@ -3,7 +3,7 @@
 
 PORTNAME=	wqy-fonts
 PORTVERSION=	20100803
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/wqy/wqy-bitmapfont/1.0.0-RC1:bitmapfont \
@@ -20,12 +20,15 @@ DISTFILES=	wqy-bitmapsong-pcf-1.0.0-RC1.tar.gz:bitmapfont \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU GPL-licensed font set covering CJK and other Unicode characters
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USE_XORG=	x11
 USES=		fonts perl5
 USE_PERL5=	build
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 
 FONTNAME=	wqy
 CONFDDIR=	etc/fonts/conf.d
