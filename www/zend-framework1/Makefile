@@ -55,10 +55,8 @@ INSTALL_DIRS=	library extras/library externals/dojo/dijit \
 
 .if ${PORT_OPTIONS:MREQPHP}
 USE_PHP+=	ctype curl dom gd hash iconv mbstring ldap mcrypt memcache \
-		opcache pcre pdo session simplexml soap sqlite3 \
+		memcached opcache pcre pdo session simplexml soap sqlite3 \
 		wddx xml zlib
-
-RUN_DEPENDS+=	pecl-memcached>=0:databases/pecl-memcached
 .endif
 .if ${PORT_OPTIONS:MOPTPHP}
 USE_PHP+=	bcmath bitset json posix
