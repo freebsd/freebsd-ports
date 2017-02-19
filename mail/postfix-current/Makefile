@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.2-20170129
+DISTVERSION=	3.2.0-RC1
 PORTREVISION?=	0
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 		http://www.artfiles.org/postfix.org/postfix-release/ \
 		http://mirror.lhsolutions.nl/postfix-release/ \
 		ftp://postfix.mirrors.pair.com/
-MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
+#MASTER_SITES:=	${MASTER_SITES:S|$|experimental/|}
+MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
 PKGNAMESUFFIX?=	-current
 DIST_SUBDIR=	${PORTNAME}
 
