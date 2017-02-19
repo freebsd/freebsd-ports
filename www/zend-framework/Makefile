@@ -52,8 +52,7 @@ USE_PHP+=	bcmath bitset json posix
 .endif
 
 .if ${PORT_OPTIONS:MMEMCACHE}
-USE_PHP+=	memcache
-RUN_DEPENDS+=	pecl-memcached>=0:databases/pecl-memcached
+USE_PHP+=	memcache memcached
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
