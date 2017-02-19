@@ -1,4 +1,4 @@
---- mgba/Makefile.freebsd.orig	2015-11-10 19:32:17 UTC
+--- mgba/Makefile.freebsd.orig	2016-11-09 04:30:27 UTC
 +++ mgba/Makefile.freebsd
 @@ -0,0 +1,2 @@
 +all:

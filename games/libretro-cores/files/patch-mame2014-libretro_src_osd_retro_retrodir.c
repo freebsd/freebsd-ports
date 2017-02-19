@@ -1,4 +1,4 @@
---- mame2014-libretro/src/osd/retro/retrodir.c.orig	2015-11-04 17:31:20 UTC
+--- mame2014-libretro/src/osd/retro/retrodir.c.orig	2016-09-09 05:23:19 UTC
 +++ mame2014-libretro/src/osd/retro/retrodir.c
 @@ -37,10 +37,10 @@ typedef struct stat sdl_stat;
  #define sdl_readdir readdir
