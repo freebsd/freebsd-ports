@@ -3,6 +3,7 @@
 
 PORTNAME=	twisted
 PORTVERSION=	17.1.0
+PORTREVISION=	1
 CATEGORIES=	devel net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}constantly>=15.1:devel/py-constantly \
 		${PYTHON_PKGNAMEPREFIX}incremental>=16.10.1:devel/py-incremental
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:devel/py-zope.interface \
 		${PYTHON_PKGNAMEPREFIX}constantly>=15.1:devel/py-constantly \
-		${PYTHON_PKGNAMEPREFIX}incremental>=16.10.1:devel/py-incremental
+		${PYTHON_PKGNAMEPREFIX}incremental>=16.10.1:devel/py-incremental \
+		${PYTHON_PKGNAMEPREFIX}Automat>=0.3.0:devel/py-Automat
 
 # Actually 2.7,3.3+
 USES=		python tar:bzip2
