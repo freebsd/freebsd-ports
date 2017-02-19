@@ -2,6 +2,7 @@
 
 PORTNAME=	bosh_cli
 PORTVERSION=	1.3262.26.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -22,7 +23,7 @@ RUN_DEPENDS=	rubygem-blobstore_client>=1.3262.24.0:devel/rubygem-blobstore_clien
 		rubygem-net-scp>=1.1.0:security/rubygem-net-scp \
 		rubygem-net-ssh>=2.9.2:security/rubygem-net-ssh \
 		rubygem-net-ssh-gateway>=1.2.0:security/rubygem-net-ssh-gateway \
-		rubygem-progressbar>=0.9.0:devel/rubygem-progressbar \
+		rubygem-progressbar09>=0.9.0:devel/rubygem-progressbar09 \
 		rubygem-sshkey>=1.7.0:security/rubygem-sshkey \
 		rubygem-terminal-table>=1.4.3:textproc/rubygem-terminal-table
 
