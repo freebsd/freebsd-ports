@@ -557,7 +557,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20161029:
   AFFECTS: users of irc/quassel
-  AUTHOR: woodsb02@freebsd.org
+  AUTHOR: woodsb02@FreeBSD.org
 
   Quassel is now split into two ports / packages; one for providing
   the server backend (irc/quassel-core), and one for providing the
@@ -567,7 +567,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20161028:
   AFFECTS: users of security/openssl and security/openssl-devel
-  AUTHOR: brnrd@freebsd.org
+  AUTHOR: brnrd@FreeBSD.org
 
   The shared library versions of OpenSSL have been bumped to avoid
   issues with ports' and base's OpenSSL not being binary compatible.
