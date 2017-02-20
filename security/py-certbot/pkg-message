@@ -19,7 +19,7 @@ authentication.
 The letsencrypt plugins to support apache and nginx certificate installation
 will be made available soon in the following ports:
 
- * Apache plugin: security/py-letsencrypt-apache
- * Nginx plugin: security/py-letsencrypt-nginx
+ * Apache plugin: security/py-certbot-apache
+ * Nginx plugin: security/py-certbot-nginx
 
 ===========================================================================
