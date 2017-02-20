@@ -19,7 +19,7 @@ PORTDOCS=	AUTHORS CONTRIBUTING NEWS README.md TODO conclusion.txt \
 		performance.txt porcelain.txt protocol.txt remote.txt repo.txt tag.txt
 PORTEXAMPLES=	clone.py config.py diff.py latest_change.py
 
-USES=		cpe python:2
+USES=		cpe python
 CPE_VENDOR=	dulwich_project
 USE_PYTHON=	distutils autoplist
 
