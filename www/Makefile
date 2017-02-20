@@ -208,6 +208,7 @@
     SUBDIR += glpi
     SUBDIR += gnome-user-share
     SUBDIR += gnome-web-photo
+    SUBDIR += go-fasthttp
     SUBDIR += go-www
     SUBDIR += gohugo
     SUBDIR += google-appengine
