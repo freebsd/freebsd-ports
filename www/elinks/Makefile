@@ -10,6 +10,9 @@ MASTER_SITES=	http://elinks.or.cz/download/
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Links text WWW browser with enhancements
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USES=		bison cpe execinfo gmake localbase ssl tar:bzip2
 CONFIGURE_ARGS=	--without-zlib
