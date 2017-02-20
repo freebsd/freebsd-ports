@@ -2,5 +2,5 @@
 
 cd %%DATADIR%%
 JAVA_VERSION="%%JAVA_VERSION%%" exec %%LOCALBASE%%/bin/java \
-    -Xms128M -Xmx1G -jar MediathekView.jar "$@"
+    -jar MediathekView.jar "$@"
 
