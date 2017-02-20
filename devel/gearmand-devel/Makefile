@@ -3,7 +3,7 @@
 
 PORTNAME=	gearmand
 PORTVERSION=	1.1.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.2/${PORTVERSION}/+download/
 
@@ -12,7 +12,7 @@ COMMENT=	Gearman C Server and Library
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
-LIB_DEPENDS=	libevent.so:devel/libevent2 \
+LIB_DEPENDS=	libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.0.*

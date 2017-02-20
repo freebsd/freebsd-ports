@@ -3,6 +3,7 @@
 PORTNAME=	dnscrypt-wrapper
 PORTVERSION=	0.2.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	freebsd@toyingwithfate.com
@@ -12,7 +13,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsodium.so:security/libsodium \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cofyc

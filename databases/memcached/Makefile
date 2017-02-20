@@ -3,7 +3,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.4.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO
@@ -14,7 +14,7 @@ COMMENT=	High-performance distributed memory object cache system
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 CONFLICTS=	memcached-1.2*
 

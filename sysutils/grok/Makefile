@@ -2,7 +2,7 @@
 
 PORTNAME=	grok
 PORTVERSION=	1.20110708.1
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	DOCS
 
 BUILD_DEPENDS=	gperf>=3.0.3:devel/gperf
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libtokyocabinet.so:databases/tokyocabinet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

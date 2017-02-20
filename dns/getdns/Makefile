@@ -3,7 +3,7 @@
 
 PORTNAME=	getdns
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		https://mirrors.rit.edu/zi/ \
@@ -44,7 +44,7 @@ LIBEV_LIB_DEPENDS=	libev.so:devel/libev
 LIBEV_CONFIGURE_WITH=	libev
 LIBUV_LIB_DEPENDS=	libuv.so:devel/libuv
 LIBUV_CONFIGURE_WITH=	libuv
-LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
+LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent
 LIBEVENT_CONFIGURE_WITH=libevent
 DIAGS_VARS=		PLIST_FILES+=bin/${PORTNAME}_query
 DIAGS_LIB_DEPENDS=	libcheck.so:devel/check

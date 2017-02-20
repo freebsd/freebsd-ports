@@ -3,7 +3,7 @@
 
 PORTNAME=	forked-daapd
 PORTVERSION=	24.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	takumiiinn@gmail.com
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libavahi-client.so:net/avahi-app \
 		libavcodec.so:multimedia/ffmpeg \
 		libconfuse.so:devel/libconfuse \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libgcrypt.so:security/libgcrypt \
 		libinotify.so:devel/libinotify \
 		libmxml.so:textproc/mxml \
