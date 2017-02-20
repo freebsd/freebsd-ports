@@ -1,16 +1,10 @@
---- clfmerge.cpp.orig	Tue Jan  8 17:15:37 2002
-+++ clfmerge.cpp	Tue Jan  8 17:14:06 2002
-@@ -1,17 +1,26 @@
+--- clfmerge.cpp.orig	2016-12-25 14:50:06 UTC
++++ clfmerge.cpp
+@@ -1,17 +1,20 @@
 -#include <stdio.h>
 +#include <cstdio>
-+
-+#if defined(_LIBCPP_VERSION)
-+#include <unordered_map>
-+#else
- #include <ext/hash_map>
+ #include <unordered_map>
 -#include <stdlib.h>
-+#endif
-+
 +#include <cstdlib>
  #include <map>
  #include <cstring>
@@ -28,26 +22,22 @@
  using namespace __gnu_cxx;
 +#endif
  
- struct eqstr
- {
-@@ -19,7 +28,11 @@
-   { return strcmp(s1, s2) == 0; }
- };
- 
-+#if defined(_LIBCPP_VERSION)
-+unordered_map<const char *, const char *, hash<const char *>, eqstr> months;
-+#else
- hash_map<const char *, const char *, hash<const char *>, eqstr> months;
-+#endif
- 
- class LogFile
- {
-@@ -207,7 +220,7 @@
+ struct hashing_func {
+   unsigned long operator()(const char *key) const
+@@ -215,7 +218,7 @@ int main(int argc, char **argv)
    unsigned int map_items = 0;
-   bool set_map_items = false, domain_mangling = false;
+   bool set_map_items = false, domain_mangling = false, verbose = false;
    int int_c;
 -  optind = 0;
 +  optind = 1;
-   while(-1 != (int_c = getopt(argc, argv, "b:hd")) )
+   while(-1 != (int_c = getopt(argc, argv, "b:hdv")) )
    {
      switch(char(int_c))
+@@ -350,6 +353,6 @@ int main(int argc, char **argv)
+       } while(!items[0]->getLine());
+     }
+   }
+-  delete items;
++  delete[] items;
+   return 0;
+ }

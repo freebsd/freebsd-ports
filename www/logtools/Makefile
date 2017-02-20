@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	logtools
-PORTVERSION=	0.13d
-PORTREVISION=	1
+PORTVERSION=	0.13e
 CATEGORIES=	www
-MASTER_SITES=	http://www.coker.com.au/logtools/ \
-		LOCAL/chinsan/logtools/
+MASTER_SITES=	http://www.coker.com.au/logtools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tools to deal with CLF files (Common Log File format)
