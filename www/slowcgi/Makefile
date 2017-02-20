@@ -2,7 +2,7 @@
 
 PORTNAME=	slowcgi
 PORTVERSION=	6.0.20161031
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
@@ -10,7 +10,7 @@ COMMENT=	FastCGI interface for old CGI programs
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 WRKSRC_SUBDIR=	src/usr.sbin/${GH_PROJECT}
 

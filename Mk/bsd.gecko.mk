@@ -169,7 +169,7 @@ cairo_LIB_DEPENDS=	libcairo.so:graphics/cairo
 cairo_MOZ_OPTIONS=	--enable-system-cairo
 .endif
 
-event_LIB_DEPENDS=	libevent.so:devel/libevent2
+event_LIB_DEPENDS=	libevent.so:devel/libevent
 event_MOZ_OPTIONS=	--with-system-libevent
 
 ffi_LIB_DEPENDS=	libffi.so:devel/libffi

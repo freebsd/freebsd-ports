@@ -3,7 +3,7 @@
 
 PORTNAME=	http
 PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf2 \
 RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf2 \
 		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/propro.so:devel/pecl-propro2
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
 IGNORE_WITH_PHP=	56
 USES=		php:ext tar:tgz

@@ -2,6 +2,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -12,7 +13,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgmime-2.6.so:mail/gmime26 \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libluajit-5.1.so:lang/luajit \
 		libfann.so:math/fann
 BUILD_DEPENDS=	ragel:devel/ragel

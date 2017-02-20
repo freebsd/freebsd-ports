@@ -3,7 +3,7 @@
 
 PORTNAME=	unworkable
 PORTVERSION=	0.53
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 BROKEN=		Unfetchable (google code has gone away)
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		scons
 USE_OPENSSL=	yes

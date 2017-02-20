@@ -4,7 +4,7 @@
 PORTNAME=	opensmtpd
 PORTVERSION=	5.9.2p1
 PORTEPOCH=	1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
@@ -15,7 +15,7 @@ COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 OPTIONS_DEFINE=	CA_BUNDLE LIBASRDEVEL MAILERCONF PAM SSL_PORT TABLE_DB
 

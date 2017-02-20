@@ -2,7 +2,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		LOCAL/brix
@@ -61,7 +61,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libgcrypt.so:security/libgcrypt
 JABBER_CONFIGURE_OFF=	--jabber=0
 LIBEVENT_CONFIGURE_ON=	--events=libevent --libevent=${LOCALBASE}
-LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
+LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent
 LIBPURPLE_CONFIGURE_ON=	--purple=1
 LIBPURPLE_LIB_DEPENDS=	libpurple.so:net-im/libpurple
 MSN_CONFIGURE_OFF=	--msn=0

@@ -3,7 +3,7 @@
 
 PORTNAME=	spdylay
 PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -14,8 +14,8 @@ COMMENT=	SPDY protocol version 2, 3 and 3.1 implementation in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libevent2>=2.0.8:devel/libevent2
-LIB_DEPENDS=	libevent_openssl.so:devel/libevent2
+BUILD_DEPENDS=	libevent>=2.0.8:devel/libevent
+LIB_DEPENDS=	libevent_openssl.so:devel/libevent
 
 BROKEN_powerpc64=	does not build
 BROKEN_sparc64=		does not build: fails to link

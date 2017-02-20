@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-regex
-PORTREVISION=		1
+PORTREVISION=		2
 
 COMMENT=		Regular expression filter for OpenSMTPD
 

@@ -6,7 +6,6 @@ PORTVERSION=	2.1.8
 DISTVERSIONPREFIX=	release-
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	API for executing callback functions on events or timeouts

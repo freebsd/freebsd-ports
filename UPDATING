@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170220:
+  AFFECTS: devel/libevent2
+  AUTHOR: jbeich@FreeBSD.org
+
+  libevent2 has been renamed back to libevent as the default version.
+  If you manage out of tree ports make sure to run the following:
+
+    # pkg set -n libevent2:libevent
+    # pkg set -o devel/libevent2:devel/libevent
+
 20170218:
   AFFECTS: users of Qt 4 and Qt 5
   AUTHOR: kde@FreeBSD.org

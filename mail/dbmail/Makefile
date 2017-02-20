@@ -3,7 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/ \
 		http://www.dbmail.org/download/3.2/
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
 		libzdb.so:databases/libzdb \
 		libmhash.so:security/mhash \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xmlto:textproc/xmlto \
 		docbook-sgml>0:textproc/docbook-sgml

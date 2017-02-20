@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-table-socketmap
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Socketmap table support for OpenSMTPD
 

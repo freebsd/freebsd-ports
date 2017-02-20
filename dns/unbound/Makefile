@@ -3,7 +3,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -57,7 +57,7 @@ GOST_CONFIGURE_ENABLE=	gost
 GOST_VARS=		DEPENDS_ARGS+=WITH_GOST=yes
 LIBEVENT_CONFIGURE_WITH=libevent
 LIBEVENT_CPPFLAGS+=	$$(pkg-config libevent --cflags-only-I)
-LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
+LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent
 LIBEVENT_LDFLAGS+=	$$(pkg-config libevent --libs-only-L)
 LIBEVENT_USES=		pkgconfig
 MUNIN_PLUGIN_SUB_FILES=	pkg-message

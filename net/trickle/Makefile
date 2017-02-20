@@ -3,7 +3,7 @@
 
 PORTNAME=	trickle
 PORTVERSION=	1.07
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/trickle/
 
@@ -13,7 +13,7 @@ COMMENT=	Lightweight, portable bandwidth shaper
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		libtool localbase
 GNU_CONFIGURE=	yes

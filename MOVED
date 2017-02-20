@@ -6295,7 +6295,6 @@ sysutils/lookupd_ldap||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/p5-Sys-Utmp||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/syslog-ng2||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/yawho||2014-07-24|Has expired: Fails to build with new utmpx
-devel/libevent|devel/libevent2|2014-07-27|libevent2 replaced libevent
 devel/p5-MetaCPAN-API|devel/p5-MetaCPAN-Client|2014-07-27|Has expired: Use devel/p5-MetaCPAN-Client instead
 net-im/pidgin-facebookchat||2014-07-27|Has expired: obsolete, development has ceased, not staged
 net-im/gtkyahoo||2014-07-28|Has expired: Broken, unmaintained, unstaged, gtk12, i386 only
@@ -9082,3 +9081,4 @@ www/webkit-qt4|www/qt4-webkit|2017-02-18|Renamed to match other Qt ports
 www/webkit-qt5|www/qt5-webkit|2017-02-18|Renamed to match other Qt ports
 www/rt40|www/rt44|2017-02-18|Has expired: Upstream support EoL, please migrate to rt44
 devel/m6811-binutils||2017-02-18|Has expired: multiple vulnerabilities, version is years behind upstream
+devel/libevent2|devel/libevent|2017-02-20|Rename as only libevent 2.x is supported

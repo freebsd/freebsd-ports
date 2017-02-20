@@ -2,7 +2,7 @@
 
 PORTNAME=	openiked
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net ipv6
 
 MAINTAINER=	marcel@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	IKEv2 daemon
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xcllnt

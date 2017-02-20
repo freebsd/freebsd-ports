@@ -3,7 +3,7 @@
 
 PORTNAME=	libxul
 DISTVERSION=	45.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build1/source
@@ -14,7 +14,7 @@ COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
 BUILD_DEPENDS=	nspr>=4.12:devel/nspr \
 		nss>=3.21.3:security/nss \
-		libevent2>=2.0.21_2:devel/libevent2 \
+		libevent>=2.0.21_2:devel/libevent \
 		soundtouch>=1.9.0:audio/soundtouch \
 		harfbuzz>=1.1.0:print/harfbuzz \
 		graphite2>=1.3.6:graphics/graphite2 \

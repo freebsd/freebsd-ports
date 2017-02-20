@@ -3,7 +3,7 @@
 
 PORTNAME=	telegram
 PORTVERSION=	1.4.1.g20161227
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libjansson.so:devel/jansson
 
 BROKEN_mips=	Missing header

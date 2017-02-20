@@ -3,14 +3,14 @@
 
 PORTNAME=	pinba_engine
 PORTVERSION=	2011.08.18
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 
 MAINTAINER=	raven428@gmail.com
 COMMENT=	Mysql-engine part of statistics server for PHP
 
 BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:devel/protobuf \
-		${LOCALBASE}/include/event.h:devel/libevent2 \
+		${LOCALBASE}/include/event.h:devel/libevent \
 		${LOCALBASE}/include/Judy.h:devel/judy \
 		${LOCALBASE}/lib/mysql/plugin:${_MYSQL_SERVER} \
 		${NONEXISTENT}:${_MYSQL_SERVER}:configure \

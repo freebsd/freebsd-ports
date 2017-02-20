@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-table-ldap
-PORTREVISION=		1
+PORTREVISION=		2
 
 COMMENT=		LDAP table support for OpenSMTPD
 

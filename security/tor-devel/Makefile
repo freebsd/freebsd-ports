@@ -3,7 +3,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.3.0.2-alpha
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -62,13 +62,13 @@ CONFIGURE_ARGS+=	--disable-gcc-hardening
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC_TOR}
-BUILD_DEPENDS +=	${LOCALBASE}/lib/libevent.a:devel/libevent2
+BUILD_DEPENDS +=	${LOCALBASE}/lib/libevent.a:devel/libevent
 CONFIGURE_ARGS+=	--enable-static-tor \
 			--with-zlib-dir=/usr/lib --disable-linker-hardening
 TOR_LIBEVENT_LIBS=	${LOCALBASE}/lib/libevent.a
 .else
 CONFIGURE_ARGS+=	--enable-linker-hardening
-LIB_DEPENDS+=		libevent.so:devel/libevent2
+LIB_DEPENDS+=		libevent.so:devel/libevent
 TOR_LIBEVENT_LIBS=	-levent
 .endif
 

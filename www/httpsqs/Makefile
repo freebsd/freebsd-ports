@@ -3,7 +3,7 @@
 
 PORTNAME=	httpsqs
 PORTVERSION=	1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 BROKEN=		Unfetchable (google code has gone away)
 
 LIB_DEPENDS+=	libtokyocabinet.so:databases/tokyocabinet \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
 USES=		pkgconfig
 
