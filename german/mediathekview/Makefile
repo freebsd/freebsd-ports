@@ -1,11 +1,11 @@
 # Created by: Lars Engels <lme@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	mediathek
-PORTVERSION=	12
+PORTNAME=	mediathekview
+PORTVERSION=	13.0.1
 CATEGORIES=	german java
-MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
-DISTNAME=	MediathekView_${PORTVERSION}
+MASTER_SITES=	https://download.mediathekview.de/stabil/
+DISTNAME=	MediathekView-${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Filme der oeff. rechtlichen Sender herunterladen und ansehen
@@ -14,43 +14,32 @@ RUN_DEPENDS=	${LOCALBASE}/openjdk8/bin/javafxpackager:java/openjfx8-devel \
 		flvstreamer:multimedia/flvstreamer
 
 NO_BUILD=	yes
-USES=		zip:infozip
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
-SUB_FILES=	mediathek
+SUB_FILES=	${PORTNAME}
 
 INSTALLFILES=	MediathekView.jar MediathekView.ico
 INSTALLDOCS=	Kurzanleitung.pdf Instructions.pdf
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_MULTI=		BACKEND
-OPTIONS_MULTI_BACKEND=	MPLAYER VLC
+OPTIONS_MULTI_BACKEND=	MPLAYER MPV VLC
 
 VLC_DESC=		VLC support
+MPV_DESC=		VLC support
 
 OPTIONS_DEFAULT=	VLC
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMPLAYER}
-RUN_DEPENDS+=	mplayer:multimedia/mplayer
-.endif
-
-.if ${PORT_OPTIONS:MVLC}
-RUN_DEPENDS+=	vlc:multimedia/vlc
-.endif
+MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
+MPV_RUN_DEPENDS=	mpv:multimedia/mpv
+VLC_RUN_DEPENDS=	vlc:multimedia/vlc
 
 DESKTOP_ENTRIES="MediathekView" \
 		"Filme der oeff. rechtlichen Sender herunterladen und ansehen" \
 		"${DATADIR}/MediathekView.ico" \
-		"mediathek" \
+		"${PORTNAME}" \
 		"Video;AudioVideo;Java;" \
 		false
-
-do-extract:
-	@${RM} -r ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@${UNZIP_CMD} -q -d ${WRKSRC} ${DISTDIR}/${EXTRACT_ONLY}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -63,6 +52,6 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/Anleitung/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/lib/)
-	${INSTALL_SCRIPT} ${WRKDIR}/mediathek ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
