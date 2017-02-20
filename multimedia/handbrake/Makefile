@@ -3,7 +3,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	0.10.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.handbrake.fr/releases/${PORTVERSION}/ \
 		http://download.handbrake.fr/handbrake/contrib/:contrib \
