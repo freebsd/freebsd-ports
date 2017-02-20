@@ -752,6 +752,7 @@
     SUBDIR += go-cobra
     SUBDIR += go-codec
     SUBDIR += go-cpuid
+    SUBDIR += go-crc32
     SUBDIR += go-faker
     SUBDIR += go-form
     SUBDIR += go-glide
