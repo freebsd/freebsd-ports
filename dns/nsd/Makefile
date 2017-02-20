@@ -3,7 +3,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	4.1.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -70,7 +70,7 @@ ZONE_STATS_DESC=	Separate statistics for each zone
 MUNIN_PLUGIN_DESC=	Install Munin plugin (requires BIND8_STATS)
 RADIXTREE_DESC=		Enabled: more (15%) memory use but less CPU cycles
 
-LIB_DEPENDS+=	libevent.so:devel/libevent2
+LIB_DEPENDS+=	libevent.so:devel/libevent
 
 ROOT_SERVER_CONFIGURE_ENABLE=	root-server
 LARGEFILE_CONFIGURE_ENABLE=	largefile

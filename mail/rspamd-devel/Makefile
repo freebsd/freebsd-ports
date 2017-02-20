@@ -2,7 +2,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	1.5.0.a3.20170120
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libluajit-5.1.so:lang/luajit \
 		libfann.so:math/fann
 BUILD_DEPENDS=	ragel:devel/ragel

@@ -2,7 +2,7 @@
 
 PORTNAME=	groonga
 PORTVERSION=	6.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -38,7 +38,7 @@ MECAB_DESC=		Morphological analysis support via MeCab
 MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
 MECAB_CONFIGURE_OFF=	--without-mecab
 SUGGEST_DESC=		Suggestions support
-SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent2 \
+SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent \
 			libmsgpackc.so:devel/msgpack \
 			libzmq.so:net/libzmq2
 SUGGEST_CONFIGURE_ON=	--with-libevent=${LOCALBASE} \

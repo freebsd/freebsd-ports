@@ -4,7 +4,7 @@
 PORTNAME=	firefox
 DISTVERSION=	51.0.1
 DISTVERSIONSUFFIX=.source
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -15,7 +15,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.13.1:devel/nspr \
 		nss>=3.28.1:security/nss \
-		libevent2>=2.0.21_2:devel/libevent2 \
+		libevent>=2.0.21_2:devel/libevent \
 		harfbuzz>=1.3.3:print/harfbuzz \
 		graphite2>=1.3.8:graphics/graphite2 \
 		png>=1.6.25:graphics/png \

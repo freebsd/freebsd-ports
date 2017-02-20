@@ -1273,7 +1273,7 @@
     SUBDIR += libev
     SUBDIR += libevdev
     SUBDIR += libevent-hiphop
-    SUBDIR += libevent2
+    SUBDIR += libevent
     SUBDIR += libevt
     SUBDIR += libevtx
     SUBDIR += libewf

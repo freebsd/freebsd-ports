@@ -3,6 +3,7 @@
 PORTNAME=	seafile-gui
 PORTVERSION=	6.0.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima1252@gmail.com
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libsqlite3.so:databases/sqlite3 \
 		libccnet.so:net-mgmt/ccnet-client \
 		libjansson.so:devel/jansson \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USE_GITHUB=	yes

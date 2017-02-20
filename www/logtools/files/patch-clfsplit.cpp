@@ -1,6 +1,6 @@
---- clfsplit.cpp.orig	Tue Jan  8 17:41:53 2002
-+++ clfsplit.cpp	Tue Jan  8 17:41:18 2002
-@@ -199,7 +199,7 @@
+--- clfsplit.cpp.orig	2008-06-06 05:33:52 UTC
++++ clfsplit.cpp
+@@ -203,7 +203,7 @@ int main(int argc, char **argv)
    MAP m;
    FILE *input = stdin;
    bool new_input = false;

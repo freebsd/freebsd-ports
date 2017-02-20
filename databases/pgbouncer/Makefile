@@ -3,7 +3,7 @@
 
 PORTNAME=	pgbouncer
 PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
@@ -13,7 +13,7 @@ COMMENT=	Lightweight connection pooler for PostgreSQL
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gsed:textproc/gsed
 
 PORTSCOUT=	site:https://pgbouncer.github.io/downloads/

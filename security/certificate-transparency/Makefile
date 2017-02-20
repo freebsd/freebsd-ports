@@ -3,7 +3,7 @@
 
 PORTNAME=	certificate-transparency
 PORTVERSION=	20161015
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Open framework for monitoring and auditing SSL certificates
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS?=	libevent.so:devel/libevent2 \
+LIB_DEPENDS?=	libevent.so:devel/libevent \
 		libevhtp.so:www/libevhtp \
 		libgtest.so:devel/googletest \
 		libgflags.so:devel/gflags \

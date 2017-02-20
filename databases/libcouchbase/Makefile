@@ -2,7 +2,7 @@
 
 PORTNAME=	libcouchbase
 DISTVERSION=	2.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://packages.couchbase.com/clients/c/
 
@@ -11,7 +11,7 @@ COMMENT=	Multithreaded noSQL database (client and library)
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libevent.so:devel/libevent2 \
+LIB_DEPENDS=	libevent.so:devel/libevent \
 		libev.so:devel/libev \
 		libuv.so:devel/libuv
 

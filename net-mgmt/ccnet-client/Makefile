@@ -3,7 +3,7 @@
 PORTNAME=	ccnet-client
 PORTVERSION=	6.0.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima1252@gmail.com
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libsqlite3.so:databases/sqlite3 \
 		libzdb.so:databases/libzdb \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libjansson.so:devel/jansson
 
 CONFLICTS=	ccnet-server-[0-9]*

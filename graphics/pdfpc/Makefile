@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdfpc
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 CATEGORIES=	graphics
 DISTVERSIONPREFIX=	v
 
@@ -21,7 +21,7 @@ USES=		cmake gnome pkgconfig pathfix
 USE_GNOME=	gtk30
 USE_GSTREAMER1=	yes
 
-CMAKE_ARGS=	-DMANDIR:STRING="man/man1"
+CMAKE_ARGS=	-DMANDIR:STRING="man/"
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/pdfpcrc \

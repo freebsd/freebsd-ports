@@ -18,7 +18,6 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
-GH_PROJECT=	${PORTNAME}
 USES=		pkgconfig sqlite:3 qmake
 USE_LDCONFIG=	yes
 

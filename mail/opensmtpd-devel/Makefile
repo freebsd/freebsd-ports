@@ -4,7 +4,7 @@
 PORTNAME=	opensmtpd
 PORTVERSION=	201606220754
 DISTVERSIONSUFFIX=	p1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -17,7 +17,7 @@ COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 OPTIONS_DEFINE=		CA_BUNDLE LIBASR MAILERCONF PAM SSL_PORT TABLE_DB
 

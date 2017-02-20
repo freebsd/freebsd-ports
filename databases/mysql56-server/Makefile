@@ -3,7 +3,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.6.35
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.6
 PKGNAMESUFFIX?=	56-server
@@ -23,7 +23,7 @@ MY_DBDIR=	/var/db/mysql
 MY_SECDIR=	/var/db/mysql_secure
 MY_TMPDIR=	/var/db/mysql_tmpdir
 
-LIB_DEPENDS+=	libevent.so:devel/libevent2 \
+LIB_DEPENDS+=	libevent.so:devel/libevent \
 		liblz4.so:archivers/liblz4
 
 CMAKE_BUILD_TYPE=	Release

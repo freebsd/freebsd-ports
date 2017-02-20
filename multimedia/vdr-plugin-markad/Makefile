@@ -11,19 +11,24 @@ DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - MarkAd plugin
 
-LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		execinfo pkgconfig tar:tgz
-HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README HISTORY
-PORTDATA=	logos
-WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
-VDR_PLUGIN_MAKEFILES=	${WRKSRC}/command/Makefile ${WRKSRC}/plugin/Makefile
-DEFINES+=	-DDATADIR=\\\"${DATADIR}\\\" -DPREFIX=\\\"${PREFIX}\\\"
-MAKE_ARGS+=	DATADIR=${DATADIR} FREEBSD=1
-MAKE_ENV+=	DEFINES="${DEFINES}"
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 RESTRICTED=	Installs station logos
+
+USES=		execinfo pkgconfig tar:tgz
+WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
+VDR_PLUGIN_MAKEFILES=	${WRKSRC}/command/Makefile ${WRKSRC}/plugin/Makefile
+DEFINES=	-DDATADIR=\\\"${DATADIR}\\\" -DPREFIX=\\\"${PREFIX}\\\"
+MAKE_ARGS=	DATADIR=${DATADIR} FREEBSD=1
+MAKE_ENV=	DEFINES="${DEFINES}"
+
+PORTDOCS=	README HISTORY
+PORTDATA=	logos
+
+OPTIONS_DEFINE=	DOCS NLS
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
@@ -38,10 +43,12 @@ post-patch: post-patch-plugin
 	@${LN} -s ../lib ../locale ${WRKSRC}
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
 
 post-install: post-install-pluginlocales
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
