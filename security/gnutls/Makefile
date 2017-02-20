@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.5.8
+PORTVERSION=	3.5.9
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
@@ -27,19 +27,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-guile \
 		--enable-local-libopts \
 		--with-trousers-lib=${LOCALBASE}/lib/libtspi.so.1 \
+		--without-libidn2 \
 		ac_cv_type_max_align_t=yes
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
 INSTALL_TARGET=	install-strip
 
 CPE_VENDOR=	gnu
 
-OPTIONS_DEFINE=		CRYWRAP DANE EXAMPLES IDN NLS P11KIT TPM ZLIB
-OPTIONS_DEFAULT=	CRYWRAP IDN P11KIT TPM ZLIB
+OPTIONS_DEFINE=		DANE EXAMPLES IDN NLS P11KIT TPM ZLIB
+OPTIONS_DEFAULT=	IDN P11KIT TPM ZLIB
 OPTIONS_SUB=		yes
-
-CRYWRAP_DESC=			Enable Crywrap TLS proxy service
-CRYWRAP_IMPLIES=		IDN
-CRYWRAP_CONFIGURE_ENABLE=	crywrap
 
 DANE_DESC=		Certificate verification via DNSSEC
 DANE_LIB_DEPENDS=	libunbound.so:dns/unbound
