@@ -9081,3 +9081,4 @@ www/webkit-qt5|www/qt5-webkit|2017-02-18|Renamed to match other Qt ports
 www/rt40|www/rt44|2017-02-18|Has expired: Upstream support EoL, please migrate to rt44
 devel/m6811-binutils||2017-02-18|Has expired: multiple vulnerabilities, version is years behind upstream
 devel/libevent2|devel/libevent|2017-02-20|Rename as only libevent 2.x is supported
+german/mediathek|german/mediathekview|2017-02-20|Project renamed
