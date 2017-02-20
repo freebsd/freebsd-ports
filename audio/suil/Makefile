@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suil
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -24,9 +24,13 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 
 USE_LDCONFIG=	yes
 
+CONFIGURE_ARGS=	--no-qt5
+
+PLIST_SUB=	SUILVERSION=${PORTVERSION}
+
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/*.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsuil-0.so.0.8.2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsuil-0.so.${PORTVERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/suil-0/libsuil_gtk2_in_qt4.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/suil-0/libsuil_qt4_in_gtk2.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/suil-0/libsuil_x11_in_gtk2.so
