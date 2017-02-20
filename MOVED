@@ -5889,7 +5889,6 @@ palm/gnome-pilot-conduits||2014-04-11|Removed (depends on gnome-pilot)
 www/p5-CGI-modules||2014-04-11|Has expired: No more public distfiles
 www/p5-WWW-Link||2014-04-11|Has expired: Depends on expired www/p5-CGI-modules
 www/sbox-dtc||2014-04-11|Has expired: No more public distfiles
-sysutils/dtc||2014-04-11|Has expired: Depends on expired www/sbox-dtc
 textproc/glimpse||2014-04-11|Has expired: No more public distfiles
 ftp/ftplocate||2014-04-11|Has expired: Depends on expired textproc/glimpse
 misc/tkman||2014-04-11|Has expired: Depends on expired textproc/glimpse
