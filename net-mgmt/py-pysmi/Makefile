@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysmi
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP \
 		SF/pysmi/pysmi/${PORTVERSION}
@@ -31,10 +31,11 @@ post-patch:
 	${CP} ${FILESDIR}/tests__init__.py ${WRKSRC}/tests/__init__.py
 	${MV} ${WRKSRC}/tests ${WRKSRC}/${PORTNAME}
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${BASEDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
