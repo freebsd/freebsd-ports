@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	yaz
-PORTVERSION=	5.19.0
+PORTVERSION=	5.20.2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z39.50/SR client and API library
 
-LIB_DEPENDS=	libicuuc.so:devel/icu \
-		libgnutls.so:security/gnutls
-
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libicuuc.so:devel/icu \
+		libgnutls.so:security/gnutls
 
 USES=		execinfo iconv libtool ncurses pathfix pkgconfig readline \
 		shebangfix tcl
