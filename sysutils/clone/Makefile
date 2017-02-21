@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	clone
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	sysutils
-MASTER_SITES=	https://googledrive.com/host/0BzyUSAiURzitVGlOeXFsTW9XOVk/
+MASTER_SITES=	http://cyclaero.com/public/clone/
 
 MAINTAINER=	cyclaero@gmail.com
 COMMENT=	File tree cloning tool

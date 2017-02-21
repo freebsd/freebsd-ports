@@ -1,6 +1,6 @@
-TIMESTAMP = 1484775525
-SHA256 (junegunn-fzf-0.16.1_GH0.tar.gz) = f8a05e9e72f6e2b87bec63809843afa77fd89067722407f6f9a86299c6215fce
-SIZE (junegunn-fzf-0.16.1_GH0.tar.gz) = 134317
+TIMESTAMP = 1487638535
+SHA256 (junegunn-fzf-0.16.5_GH0.tar.gz) = 7add1b5290af779fc1c6a3e306d696fb0e833d4efb5b60d94f9c424ac1b6f9fe
+SIZE (junegunn-fzf-0.16.5_GH0.tar.gz) = 124727
 SHA256 (junegunn-go-runewidth-63c378b_GH0.tar.gz) = e7cba5116e6f7051984005f5ab6c23d448307a6fced09eb9bd1bf49f3317b36d
 SIZE (junegunn-go-runewidth-63c378b_GH0.tar.gz) = 4503
 SHA256 (junegunn-go-shellwords-35d512a_GH0.tar.gz) = ea496265b81c60c0d590e369ca7cbcf3e87ec39d6f49c7462a7ab0483582b6fa

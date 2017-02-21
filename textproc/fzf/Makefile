@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fzf
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.5
 CATEGORIES=	textproc
 
 MAINTAINER=	sascha@root-login.org
@@ -11,7 +11,7 @@ COMMENT=	Blazing fast command-line fuzzy finder
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler go ncurses
+USES=		compiler go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	junegunn
@@ -21,8 +21,6 @@ GH_TUPLE=	junegunn:go-runewidth:63c378b:runwidth/src/github.com/junegunn/go-rune
     		junegunn:go-shellwords:35d512a:shellwords/src/github.com/junegunn/go-shellwords \
 		junegunn:go-isatty:66b8e73:isatty/src/github.com/junegunn/go-isatty \
 		golang:crypto:b8a2a83:terminal/src/golang.org/x/crypto
-MAKE_ENV+=	CGO_CPPFLAGS="-I${NCURSESINC} -I${NCURSESBASE}/include" \
-		CGO_LDFLAGS="-L${NCURSESLIB}"
 
 PLIST_FILES=	bin/fzf man/man1/fzf.1.gz
 

@@ -9083,3 +9083,6 @@ devel/m6811-binutils||2017-02-18|Has expired: multiple vulnerabilities, version 
 devel/libevent2|devel/libevent|2017-02-20|Rename as only libevent 2.x is supported
 german/mediathek|german/mediathekview|2017-02-20|Project renamed
 net/nos-ttb||2017-02-20|Has expired: does not work due to protocol changes
+sysutils/filebeat|sysutils/beats|2017-02-21|merged beats to one port
+sysutils/metricbeat|sysutils/beats|2017-02-21|merged beats to one port
+sysutils/packetbeat|sysutils/beats|2017-02-21|merged beats to one port

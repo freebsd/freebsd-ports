@@ -91,6 +91,7 @@
     SUBDIR += bchunk
     SUBDIR += beadm
     SUBDIR += beadm-devel
+    SUBDIR += beats 
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
     SUBDIR += biosfont
@@ -289,7 +290,6 @@
     SUBDIR += fetchlog
     SUBDIR += ffs2recov
     SUBDIR += file
-    SUBDIR += filebeat
     SUBDIR += filedupe
     SUBDIR += filelight-kde4
     SUBDIR += fileprune
@@ -601,7 +601,6 @@
     SUBDIR += memtest86
     SUBDIR += memtest86+
     SUBDIR += metalog
-    SUBDIR += metricbeat
     SUBDIR += mfid
     SUBDIR += mgeupsd
     SUBDIR += minimunin
@@ -753,7 +752,6 @@
     SUBDIR += p5-arclog
     SUBDIR += p5-reslog
     SUBDIR += packer
-    SUBDIR += packetbeat
     SUBDIR += pacman
     SUBDIR += paicc
     SUBDIR += paladin
