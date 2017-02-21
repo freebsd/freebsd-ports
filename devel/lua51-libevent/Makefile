@@ -13,7 +13,7 @@ COMMENT=	Lua libevent binding
 LICENSE=	MIT
 
 LIB_DEPENDS=	libevent.so:devel/libevent
-RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket
+RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket-51
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	harningt
