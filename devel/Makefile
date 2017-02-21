@@ -4410,6 +4410,7 @@
     SUBDIR += py-mwlib.rl
     SUBDIR += py-mx-experimental
     SUBDIR += py-mygpoclient
+    SUBDIR += py-mypy
     SUBDIR += py-nagioscheck
     SUBDIR += py-natsort
     SUBDIR += py-natural
