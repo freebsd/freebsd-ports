@@ -11,21 +11,29 @@ DISTNAME=	${PORTNAME:S/-plugin//}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - VDR-Manager server plugin
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PATCH_STRIP=	-p1
-PORTDOCS=	COPYING README HISTORY
+
+PORTDOCS=	README HISTORY
+
+OPTIONS_DEFINE=	DOCS
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
 post-patch: post-patch-plugin
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/vdr/plugins
-	@${INSTALL_DATA} ${WRKSRC}/examples/plugin.vdrmanager.conf \
+	${INSTALL_DATA} ${WRKSRC}/examples/plugin.vdrmanager.conf \
 		${STAGEDIR}${PREFIX}/etc/vdr/plugins/plugin.vdrmanager.conf.sample
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

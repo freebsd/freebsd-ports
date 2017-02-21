@@ -845,6 +845,7 @@
     SUBDIR += py-analyzemft
     SUBDIR += py-bcfg2
     SUBDIR += py-cdmi
+    SUBDIR += py-consul
     SUBDIR += py-croniter
     SUBDIR += py-crontab
     SUBDIR += py-danzfs
@@ -862,6 +863,7 @@
     SUBDIR += py-iocage
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
+    SUBDIR += py-nomad
     SUBDIR += py-pkginfo
     SUBDIR += py-ploy
     SUBDIR += py-ploy_ansible

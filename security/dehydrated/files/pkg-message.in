@@ -1,11 +1,3 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!! WARNING: letsencrypt.sh has been renamed to dehydrated !!
-!! rename all weekly_letsencrypt_* periodic variables     !!
-!! to         weekly_dehydrated_* in your periodic.conf   !!
-|| and mv /usr/local/etc/{letsencrypt.sh,dehydrated}      ||
-|| default challenge path has been renamed as well        ||
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 To use this script you should copy the examples in
 %%PREFIX%%/etc/%%PORTNAME%%/ and at least add a
 domain and a contact mail address.
