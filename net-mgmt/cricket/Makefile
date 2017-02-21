@@ -19,7 +19,7 @@ USES=		perl5 shebangfix
 SHEBANG_FILES=	util/metaQuery.pl
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
-PLIST_SUB+=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${PORTVERSION}
 SUB_FILES=	pkg-message
 
 # UID and username comes from ports/UIDs.
@@ -29,13 +29,13 @@ GROUPS=		www
 CRICKETBASE=	${STAGEDIR}${PREFIX}/cricket
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/home/cricket,${PREFIX},g' \
+	@${REINPLACE_CMD} -e 's,/home/cricket,${PREFIX},g' \
 		${WRKSRC}/cricket-conf.pl.sample
-	${REINPLACE_CMD} -e 's,/usr/local/net/bin/ssh,/usr/bin/ssh,g' \
+	@${REINPLACE_CMD} -e 's,/usr/local/net/bin/ssh,/usr/bin/ssh,g' \
 		${WRKSRC}/sample-config/news-server/Defaults
 
 do-install:
-	${MKDIR} -m 755 ${CRICKETBASE}/cricket-${PORTVERSION}
+	@${MKDIR} ${CRICKETBASE}/cricket-${PORTVERSION}
 	${CP} -R ${WRKSRC}/* ${CRICKETBASE}/cricket-${PORTVERSION}
 	${FIND} ${CRICKETBASE}/cricket-${PORTVERSION} -name \*.orig -or \
 		-name \*.bak | ${XARGS} ${RM}
@@ -48,4 +48,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cricket-conf.pl.sample \
 		${STAGEDIR}${PREFIX}/etc/cricket-conf.pl.dist
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502200
+RUN_DEPENDS+=  p5-CGI>0:www/p5-CGI
+.endif
+
+.include <bsd.port.post.mk>
