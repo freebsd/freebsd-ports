@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amule
-PORTVERSION=	10981
+PORTVERSION=	10983
 PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
@@ -101,6 +101,7 @@ UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 UPNP_CONFIGURE_OFF=	--disable-upnp
 
 WEBSERVER_CONFIGURE_ON=	--enable-webserver
+WEBSERVER_LIB_DEPENDS=	libpng16.so:graphics/png
 
 WXCAS_CONFIGURE_ON=	--enable-wxcas
 
