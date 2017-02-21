@@ -2,6 +2,7 @@
 
 PORTNAME=	libass
 PORTVERSION=	0.13.6
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	multimedia@FreeBSD.org
