@@ -1654,6 +1654,7 @@
     SUBDIR += newtonsoft-json
     SUBDIR += nexus2-oss
     SUBDIR += nglogc
+    SUBDIR += nimble
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += ninja-ide
@@ -4908,6 +4909,7 @@
     SUBDIR += py3-python-magic
     SUBDIR += py3-pytz
     SUBDIR += py3-rubymarshal
+    SUBDIR += py3-setproctitle
     SUBDIR += py3-simplejson
     SUBDIR += py3-threema-msgapi
     SUBDIR += py3-vcversioner

@@ -19,14 +19,9 @@
 
 . /etc/rc.subr
 
-# XXX temporary workaround for a bug in Icinga 2. See
-# https://dev.icinga.org/issues/13567
-
-trap "" SIGPIPE
-
 # Add /usr/local/bin to path, so that the notification scripts 
 # can work (#!/usr/bin/env bash)
-export PATH=$PATH:%%LOCALBASE%%/bin
+export PATH=$PATH:%%LOCALBASE%%/bin:%%PREFIX%%/sbin
 
 name="icinga2"
 rcvar=icinga2_enable
