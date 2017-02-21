@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20170220:
+  AFFECTS: sysutils/filebeat sysutils/metricbeat sysutils/packetbeat
+  AUTHOR: girgen@FreeBSD.org
+
+  The three elasticsearch beats ports have merged into one single port
+  systuils/beats that installs all of the above and some more. The reason is to
+  make the port more maintainable and also that the new heartbeat beat would
+  conflict with sysutils/heartbeat.
+
+20170220:
   AFFECTS: devel/libevent2
   AUTHOR: jbeich@FreeBSD.org
 
