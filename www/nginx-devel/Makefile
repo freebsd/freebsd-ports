@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.11.9
-PORTREVISION=	1
+PORTVERSION=	1.11.10
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -792,6 +791,7 @@ GH_ACCOUNT+=	evanmiller:mod_zip
 GH_PROJECT+=	mod_zip:mod_zip
 GH_TAGNAME+=	${NGINX_ZIP_VERSION}:mod_zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
+IGNORE=	HTTP_ZIP: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MDRIZZLE}
