@@ -8,9 +8,8 @@ include/lilv-0/lilv/lilv.h
 include/lilv-0/lilv/lilvmm.hpp
 lib/liblilv-0.so
 lib/liblilv-0.so.0
-lib/liblilv-0.so.0.24.0
+lib/liblilv-0.so.%%VERSION%%
 libdata/pkgconfig/lilv-0.pc
 man/man1/lv2apply.1.gz
 man/man1/lv2info.1.gz
 man/man1/lv2ls.1.gz
-@dir lib/pkgconfig
