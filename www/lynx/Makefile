@@ -3,7 +3,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.8.2
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
@@ -14,6 +14,8 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	Non-graphical, text-based World-Wide Web client
 
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libidn.so:dns/libidn
 
 CONFLICTS=	lynx-2.8.[8-9]d*
 
@@ -59,7 +61,7 @@ SSL_USES=		ssl
 post-install-DOCS-on:
 # Fix some stage symlinks
 .for doc in COPYHEADER COPYING COPYHEADER.asc COPYING.asc
-	(cd ${STAGEDIR}${L_HELP} && ln -sf ../doc/lynx/${doc} .)
+	(cd ${STAGEDIR}${L_HELP} && ${LN} -sf ../doc/lynx/${doc} .)
 .endfor
 
 .include <bsd.port.pre.mk>
