@@ -16,7 +16,7 @@ LIB_DEPENDS=	libserialport.so:devel/libserialport \
 		libzip.so:archivers/libzip
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix libtool pkgconfig
+USES=		pathfix libtool pkgconfig
 USE_GNOME=	glib20
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes

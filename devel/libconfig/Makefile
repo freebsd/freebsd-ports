@@ -10,9 +10,11 @@ MASTER_SITES=	http://www.hyperrealm.com/libconfig/
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Simple library for manipulating structured configuration files
 
+LICENSE=	LGPL21
+
 CONFLICTS=	wand-libconfig-[0-9]*
 
-USES=		gmake libtool pathfix
+USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}

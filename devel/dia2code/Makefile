@@ -12,7 +12,7 @@ COMMENT=	Small utility used to generate code from a Dia diagram
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv
+USES=		iconv
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 

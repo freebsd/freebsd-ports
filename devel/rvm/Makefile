@@ -19,7 +19,7 @@ LIB_DEPENDS=	liblwp.so:devel/lwp
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

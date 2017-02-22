@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcppunit.so:devel/cppunit
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses x86 assembly
 
-USES=		gmake libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
