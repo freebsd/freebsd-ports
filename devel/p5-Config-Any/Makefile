@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Any
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,8 +29,8 @@ GENERAL_BUILD_DEPENDS=	p5-Config-General>=2.47:devel/p5-Config-General
 GENERAL_RUN_DEPENDS=	p5-Config-General>=2.47:devel/p5-Config-General
 INI_BUILD_DEPENDS=	p5-Config-Tiny>=0:devel/p5-Config-Tiny
 INI_RUN_DEPENDS=	p5-Config-Tiny>=0:devel/p5-Config-Tiny
-JSON_BUILD_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS
-JSON_RUN_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS
+JSON_BUILD_DEPENDS=	p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS
+JSON_RUN_DEPENDS=	p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS
 XML_BUILD_DEPENDS=	p5-XML-Simple>=0:textproc/p5-XML-Simple
 XML_RUN_DEPENDS=	p5-XML-Simple>=0:textproc/p5-XML-Simple
 YAML_BUILD_DEPENDS=	p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
