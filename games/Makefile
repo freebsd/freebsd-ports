@@ -27,6 +27,7 @@
     SUBDIR += affenspiel
     SUBDIR += afternoonstalker
     SUBDIR += agame
+    SUBDIR += ags
     SUBDIR += aisleriot
     SUBDIR += alephone
     SUBDIR += alephone-data

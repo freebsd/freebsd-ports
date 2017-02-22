@@ -89,6 +89,7 @@
     SUBDIR += confget
     SUBDIR += consul-template
     SUBDIR += crimson
+    SUBDIR += crunch
     SUBDIR += cs-aspell
     SUBDIR += cs-hunspell
     SUBDIR += cs-hyphen

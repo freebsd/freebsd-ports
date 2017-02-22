@@ -9,8 +9,14 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.jikos.cz/~mikulas/links/download/
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Lynx-like text WWW browser
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+PLIST_FILES=	man/man1/links.1.gz \
+		bin/links
 
 GNU_CONFIGURE=	yes
 
@@ -19,10 +25,4 @@ CONFLICTS=	links-2*
 
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

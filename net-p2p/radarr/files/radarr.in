@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# Author: Mark Felder <feld@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+# PROVIDE: radarr
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable radarr:
+# radarr_enable="YES"
+
+. /etc/rc.subr
+
+name="radarr"
+rcvar=radarr_enable
+
+load_rc_config $name
+
+: ${radarr_enable="NO"}
+: ${radarr_user:="radarr"}
+: ${radarr_data_dir:="%%PREFIX%%/radarr"}
+
+pidfile="${radarr_data_dir}/nzbdrone.pid"
+procname="%%PREFIX%%/bin/mono"
+command="/usr/sbin/daemon"
+command_args="-f ${procname} %%DATADIR%%/Radarr.exe --nobrowser --data=${radarr_data_dir}"
+start_precmd=radarr_precmd
+
+radarr_precmd()
+{
+	export XDG_CONFIG_HOME=${radarr_data_dir}
+
+	if [ ! -d ${radarr_data_dir} ]; then
+		install -d -o ${radarr_user} ${radarr_data_dir}
+	fi
+}
+
+run_rc_command "$1"

@@ -1,3 +1,7 @@
+FreeCAD/Mod/AddonManager/AddonManager.py
+FreeCAD/Mod/AddonManager/AddonManagerGui.py
+FreeCAD/Mod/AddonManager/Init.py
+FreeCAD/Mod/AddonManager/InitGui.py
 FreeCAD/Mod/Arch/Arch.py
 FreeCAD/Mod/Arch/ArchAxis.py
 FreeCAD/Mod/Arch/ArchBuilding.py
@@ -75,6 +79,7 @@ FreeCAD/Mod/Fem/FemMaterial.py
 FreeCAD/Mod/Fem/FemMaterialMechanicalNonlinear.py
 FreeCAD/Mod/Fem/FemMesh2Mesh.py
 FreeCAD/Mod/Fem/FemMeshGmsh.py
+FreeCAD/Mod/Fem/FemMeshGroup.py
 FreeCAD/Mod/Fem/FemMeshRegion.py
 FreeCAD/Mod/Fem/FemMeshTools.py
 FreeCAD/Mod/Fem/FemSelectionObserver.py
@@ -89,6 +94,7 @@ FreeCAD/Mod/Fem/InitGui.py
 FreeCAD/Mod/Fem/TaskPanelFemBeamSection.ui
 FreeCAD/Mod/Fem/TaskPanelFemMaterial.ui
 FreeCAD/Mod/Fem/TaskPanelFemMeshGmsh.ui
+FreeCAD/Mod/Fem/TaskPanelFemMeshGroup.ui
 FreeCAD/Mod/Fem/TaskPanelFemMeshRegion.ui
 FreeCAD/Mod/Fem/TaskPanelFemShellThickness.ui
 FreeCAD/Mod/Fem/TaskPanelFemSolverCalculix.ui
@@ -100,9 +106,11 @@ FreeCAD/Mod/Fem/_CommandClearMesh.py
 FreeCAD/Mod/Fem/_CommandConstraintSelfWeight.py
 FreeCAD/Mod/Fem/_CommandControlSolver.py
 FreeCAD/Mod/Fem/_CommandFEMMesh2Mesh.py
-FreeCAD/Mod/Fem/_CommandMaterial.py
+FreeCAD/Mod/Fem/_CommandMaterialFluid.py
 FreeCAD/Mod/Fem/_CommandMaterialMechanicalNonlinear.py
+FreeCAD/Mod/Fem/_CommandMaterialSolid.py
 FreeCAD/Mod/Fem/_CommandMeshGmshFromShape.py
+FreeCAD/Mod/Fem/_CommandMeshGroup.py
 FreeCAD/Mod/Fem/_CommandMeshNetgenFromShape.py
 FreeCAD/Mod/Fem/_CommandMeshRegion.py
 FreeCAD/Mod/Fem/_CommandPrintMeshInfo.py
@@ -117,6 +125,7 @@ FreeCAD/Mod/Fem/_FemConstraintSelfWeight.py
 FreeCAD/Mod/Fem/_FemMaterial.py
 FreeCAD/Mod/Fem/_FemMaterialMechanicalNonlinear.py
 FreeCAD/Mod/Fem/_FemMeshGmsh.py
+FreeCAD/Mod/Fem/_FemMeshGroup.py
 FreeCAD/Mod/Fem/_FemMeshRegion.py
 FreeCAD/Mod/Fem/_FemShellThickness.py
 FreeCAD/Mod/Fem/_FemSolverCalculix.py
@@ -124,6 +133,7 @@ FreeCAD/Mod/Fem/_FemSolverZ88.py
 FreeCAD/Mod/Fem/_TaskPanelFemBeamSection.py
 FreeCAD/Mod/Fem/_TaskPanelFemMaterial.py
 FreeCAD/Mod/Fem/_TaskPanelFemMeshGmsh.py
+FreeCAD/Mod/Fem/_TaskPanelFemMeshGroup.py
 FreeCAD/Mod/Fem/_TaskPanelFemMeshRegion.py
 FreeCAD/Mod/Fem/_TaskPanelFemShellThickness.py
 FreeCAD/Mod/Fem/_TaskPanelFemSolverCalculix.py
@@ -133,6 +143,7 @@ FreeCAD/Mod/Fem/_ViewProviderFemConstraintSelfWeight.py
 FreeCAD/Mod/Fem/_ViewProviderFemMaterial.py
 FreeCAD/Mod/Fem/_ViewProviderFemMaterialMechanicalNonlinear.py
 FreeCAD/Mod/Fem/_ViewProviderFemMeshGmsh.py
+FreeCAD/Mod/Fem/_ViewProviderFemMeshGroup.py
 FreeCAD/Mod/Fem/_ViewProviderFemMeshRegion.py
 FreeCAD/Mod/Fem/_ViewProviderFemShellThickness.py
 FreeCAD/Mod/Fem/_ViewProviderFemSolverCalculix.py
@@ -141,7 +152,9 @@ FreeCAD/Mod/Fem/ccxDatReader.py
 FreeCAD/Mod/Fem/ccxFrdReader.py
 FreeCAD/Mod/Fem/convert2TetGen.py
 FreeCAD/Mod/Fem/importInpMesh.py
+FreeCAD/Mod/Fem/importVTKResults.py
 FreeCAD/Mod/Fem/importZ88Mesh.py
+FreeCAD/Mod/Fem/importZ88Results.py
 FreeCAD/Mod/Fem/test_files/ccx/cube.fcstd
 FreeCAD/Mod/Fem/test_files/ccx/cube_frequency.dat
 FreeCAD/Mod/Fem/test_files/ccx/cube_frequency.frd
@@ -160,7 +173,6 @@ FreeCAD/Mod/Fem/test_files/ccx/spine_thermomech.frd
 FreeCAD/Mod/Fem/test_files/ccx/spine_thermomech.inp
 FreeCAD/Mod/Fem/test_files/ccx/spine_thermomech_expected_values
 FreeCAD/Mod/Fem/test_files/ccx/spine_volumes.csv
-FreeCAD/Mod/Fem/z88DispReader.py
 FreeCAD/Mod/Idf/Idf.py
 FreeCAD/Mod/Idf/Idflibs/0603_SMD.stp
 FreeCAD/Mod/Idf/Idflibs/0805_SMD.stp
@@ -303,17 +315,20 @@ FreeCAD/Mod/Path/PathScripts/PathFaceProfile.py
 FreeCAD/Mod/Path/PathScripts/PathFixture.py
 FreeCAD/Mod/Path/PathScripts/PathFromShape.py
 FreeCAD/Mod/Path/PathScripts/PathGeom.py
+FreeCAD/Mod/Path/PathScripts/PathHelix.py
 FreeCAD/Mod/Path/PathScripts/PathHop.py
 FreeCAD/Mod/Path/PathScripts/PathInspect.py
 FreeCAD/Mod/Path/PathScripts/PathJob.py
 FreeCAD/Mod/Path/PathScripts/PathKurveUtils.py
 FreeCAD/Mod/Path/PathScripts/PathLoadTool.py
+FreeCAD/Mod/Path/PathScripts/PathLog.py
 FreeCAD/Mod/Path/PathScripts/PathMillFace.py
 FreeCAD/Mod/Path/PathScripts/PathPlane.py
 FreeCAD/Mod/Path/PathScripts/PathPocket.py
 FreeCAD/Mod/Path/PathScripts/PathPost.py
 FreeCAD/Mod/Path/PathScripts/PathPostProcessor.py
 FreeCAD/Mod/Path/PathScripts/PathPreferences.py
+FreeCAD/Mod/Path/PathScripts/PathPreferencesPathDressup.py
 FreeCAD/Mod/Path/PathScripts/PathPreferencesPathJob.py
 FreeCAD/Mod/Path/PathScripts/PathProfile.py
 FreeCAD/Mod/Path/PathScripts/PathProfileEdges.py
@@ -323,16 +338,10 @@ FreeCAD/Mod/Path/PathScripts/PathSimpleCopy.py
 FreeCAD/Mod/Path/PathScripts/PathStock.py
 FreeCAD/Mod/Path/PathScripts/PathStop.py
 FreeCAD/Mod/Path/PathScripts/PathSurface.py
-FreeCAD/Mod/Path/PathScripts/PathTestUtils.py
 FreeCAD/Mod/Path/PathScripts/PathToolLenOffset.py
 FreeCAD/Mod/Path/PathScripts/PathToolLibraryManager.py
 FreeCAD/Mod/Path/PathScripts/PathUtils.py
 FreeCAD/Mod/Path/PathScripts/PostUtils.py
-FreeCAD/Mod/Path/PathScripts/TestPathApp.py
-FreeCAD/Mod/Path/PathScripts/TestPathDepthParams.py
-FreeCAD/Mod/Path/PathScripts/TestPathDressupHoldingTags.py
-FreeCAD/Mod/Path/PathScripts/TestPathGeom.py
-FreeCAD/Mod/Path/PathScripts/TestPathPost.py
 FreeCAD/Mod/Path/PathScripts/TooltableEditor.py
 FreeCAD/Mod/Path/PathScripts/__init__.py
 FreeCAD/Mod/Path/PathScripts/centroid_post.py
@@ -341,7 +350,7 @@ FreeCAD/Mod/Path/PathScripts/dumper_post.py
 FreeCAD/Mod/Path/PathScripts/dynapath_post.py
 FreeCAD/Mod/Path/PathScripts/example_post.py
 FreeCAD/Mod/Path/PathScripts/example_pre.py
-FreeCAD/Mod/Path/PathScripts/generic_post.py
+FreeCAD/Mod/Path/PathScripts/kdtree.py
 FreeCAD/Mod/Path/PathScripts/linuxcnc_post.py
 FreeCAD/Mod/Path/PathScripts/nc/__init__.py
 FreeCAD/Mod/Path/PathScripts/nc/format.py
@@ -350,9 +359,19 @@ FreeCAD/Mod/Path/PathScripts/nc/iso_codes.py
 FreeCAD/Mod/Path/PathScripts/nc/nc.py
 FreeCAD/Mod/Path/PathScripts/opensbp_post.py
 FreeCAD/Mod/Path/PathScripts/opensbp_pre.py
+FreeCAD/Mod/Path/PathScripts/phillips_post.py
 FreeCAD/Mod/Path/PathScripts/rml_post.py
 FreeCAD/Mod/Path/PathScripts/slic3r_pre.py
-FreeCAD/Mod/Path/PathScripts/test_linuxcnc_00.ngc
+FreeCAD/Mod/Path/PathTests/PathTestUtils.py
+FreeCAD/Mod/Path/PathTests/TestPathCore.py
+FreeCAD/Mod/Path/PathTests/TestPathDepthParams.py
+FreeCAD/Mod/Path/PathTests/TestPathDressupHoldingTags.py
+FreeCAD/Mod/Path/PathTests/TestPathGeom.py
+FreeCAD/Mod/Path/PathTests/TestPathLog.py
+FreeCAD/Mod/Path/PathTests/TestPathPost.py
+FreeCAD/Mod/Path/PathTests/__init__.py
+FreeCAD/Mod/Path/PathTests/test_linuxcnc_00.ngc
+FreeCAD/Mod/Path/TestPathApp.py
 FreeCAD/Mod/Plot/InitGui.py
 FreeCAD/Mod/Plot/Plot.py
 FreeCAD/Mod/Plot/PlotGui.py
@@ -598,6 +617,9 @@ FreeCAD/data/Mod/Drawing/Templates/A4_Portrait_plain.svg
 FreeCAD/data/Mod/Fem/Resources/icons/FemWorkbench.svg
 FreeCAD/data/Mod/Image/Resources/icons/ImageWorkbench.svg
 FreeCAD/data/Mod/Inspection/Resources/icons/InspectionWorkbench.svg
+FreeCAD/data/Mod/Material/FluidMaterial/Air.FCMat
+FreeCAD/data/Mod/Material/FluidMaterial/None.FCMat
+FreeCAD/data/Mod/Material/FluidMaterial/Water.FCMat
 FreeCAD/data/Mod/Material/StandardMaterial/ABS.FCMat
 FreeCAD/data/Mod/Material/StandardMaterial/Acrylic-Glass.FCMat
 FreeCAD/data/Mod/Material/StandardMaterial/AlMg3F24.FCMat
@@ -705,6 +727,7 @@ FreeCAD/data/Mod/Material/StandardMaterial/Steel-X5CrNiMo17-12-2.FCMat
 FreeCAD/data/Mod/Material/StandardMaterial/Steel-X6CrNiTi18-10.FCMat
 FreeCAD/data/Mod/Material/StandardMaterial/TEMPLATE.FCMat
 FreeCAD/data/Mod/Material/StandardMaterial/Wood-Generic.FCMat
+FreeCAD/data/Mod/Start/StartPage/LoadMRU3.py
 FreeCAD/data/Mod/Mesh/Resources/icons/MeshWorkbench.svg
 FreeCAD/data/Mod/OpenSCAD/Resources/icons/OpenSCADWorkbench.svg
 FreeCAD/data/Mod/Part/Resources/icons/PartWorkbench.svg
@@ -849,6 +872,7 @@ FreeCAD/lib/libSMDS.so
 FreeCAD/lib/libSMESH.so
 FreeCAD/lib/libSMESHDS.so
 FreeCAD/lib/libStdMeshers.so
+FreeCAD/lib/libarea-native.so
 bin/FreeCAD
 bin/FreeCADCmd
 @dir FreeCAD/data/Mod/Material/StandardMaterial/Tools

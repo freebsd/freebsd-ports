@@ -76,6 +76,7 @@
     SUBDIR += py-vertex
     SUBDIR += qbittorrent
     SUBDIR += qbittorrent-nox11
+    SUBDIR += radarr
     SUBDIR += retroshare
     SUBDIR += rtgui
     SUBDIR += rtorrent

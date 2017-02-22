@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
+USES=		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
 SHEBANG_FILES=	${WRKSRC}/src/spy/pcsc-spy

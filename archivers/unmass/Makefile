@@ -12,7 +12,7 @@ COMMENT=	Extract game archives such as wad, dar, mea exe's, and many more
 
 LICENSE=	GPLv2
 
-USES=		gmake dos2unix
+USES=		dos2unix
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/kdev_cmd

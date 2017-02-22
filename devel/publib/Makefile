@@ -12,7 +12,6 @@ COMMENT=	Library of C functions for various purposes
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gmake
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

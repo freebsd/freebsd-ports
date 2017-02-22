@@ -10,10 +10,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Common automake macros for GNOME 3
 
+LICENSE=	GPLv2
+LICENSE_FILES=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 RUN_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 
-USES=		gmake gnome pkgconfig tar:xz
+USES=		gnome pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-autoconf-archive
 

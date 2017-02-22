@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USES=		gmake libtool pathfix pkgconfig python:3
+USES=		libtool pathfix pkgconfig python:3
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
