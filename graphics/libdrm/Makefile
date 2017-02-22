@@ -29,8 +29,6 @@ OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT+=	MANPAGES
 .endif
 
-USES+=		gmake
-
 .include <bsd.port.options.mk>
 
 # KMS support in the kernel is only build on these archs, disable others
