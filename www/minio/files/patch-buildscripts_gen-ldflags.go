@@ -15,7 +15,7 @@
 -	ldflagsStr += " -X github.com/minio/minio/cmd.ShortCommitID=" + commitID()[:12]
 +	ldflagsStr = "-X github.com/minio/minio/cmd.Version=2017-02-16T01:47:30Z"
 +	ldflagsStr += " -X github.com/minio/minio/cmd.ReleaseTag=RELEASE.2017-02-16T01-47-30Z"
-+        ldflagsStr += " -X github.com/minio/minio/cmd.CommitID=83abb310b4ce3a0dfc6d7faf78e33cb6f9132cfe"
++        ldflagsStr += " -X github.com/minio/minio/cmd.CommitID=3d98311d9f4ceb78dba996dcdc0751253241e697"
 +	ldflagsStr += " -X github.com/minio/minio/cmd.ShortCommitID=83abb310b4ce"
  	ldflagsStr += " -X github.com/minio/minio/cmd.GOPATH=" + os.Getenv("GOPATH")
  	return ldflagsStr
