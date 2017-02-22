@@ -26,7 +26,8 @@ QT_CONFIG=	libproxy openssl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${BUILD_WRKSRC}/ssl/qsslsocket_openssl.cpp \
+		${BUILD_WRKSRC}/ssl/qsslsocket_openssl.cpp
+	@${REINPLACE_CMD} -e 's|%%OPENSSLLIB%%|${OPENSSLLIB}|g' \
 		${BUILD_WRKSRC}/ssl/qsslsocket_openssl_symbols.cpp
 
 post-build:
