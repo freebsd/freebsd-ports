@@ -21,7 +21,6 @@ CONFLICTS_INSTALL?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 LDFLAGS+=	-lpthread
 MAKE_ARGS=	CXX=${CXX} LDFLAGS="${LDFLAGS}" STRIP=${STRIP_CMD}
 MAKEFILE=	makefile
-USES+=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/unrar
