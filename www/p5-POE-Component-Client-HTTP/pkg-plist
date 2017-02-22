@@ -1,10 +1,10 @@
-%%PERL5_MAN3%%/POE::Component::Client::HTTP.3.gz
-%%PERL5_MAN3%%/POE::Component::Client::HTTP::Request.3.gz
-%%PERL5_MAN3%%/POE::Component::Client::HTTP::RequestFactory.3.gz
-%%PERL5_MAN3%%/POE::Filter::HTTPChunk.3.gz
-%%PERL5_MAN3%%/POE::Filter::HTTPHead.3.gz
 %%SITE_PERL%%/POE/Component/Client/HTTP.pm
 %%SITE_PERL%%/POE/Component/Client/HTTP/Request.pm
 %%SITE_PERL%%/POE/Component/Client/HTTP/RequestFactory.pm
 %%SITE_PERL%%/POE/Filter/HTTPChunk.pm
 %%SITE_PERL%%/POE/Filter/HTTPHead.pm
+%%PERL5_MAN3%%/POE::Component::Client::HTTP.3.gz
+%%PERL5_MAN3%%/POE::Component::Client::HTTP::Request.3.gz
+%%PERL5_MAN3%%/POE::Component::Client::HTTP::RequestFactory.3.gz
+%%PERL5_MAN3%%/POE::Filter::HTTPChunk.3.gz
+%%PERL5_MAN3%%/POE::Filter::HTTPHead.3.gz

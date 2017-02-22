@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.52.1
-PORTREVISION=	1
+PORTVERSION=	7.53.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet

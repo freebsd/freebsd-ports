@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Component-Server-SimpleHTTP
-PORTVERSION=	2.22
+PORTVERSION=	2.24
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,7 @@ COMMENT=	Perl extension to serve HTTP requests in POE
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Moose>=0.9:devel/p5-Moose \
 		p5-MooseX-POE>=0.205:devel/p5-MooseX-POE \

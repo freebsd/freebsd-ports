@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpcre.so:devel/pcre
 
-USES=		execinfo jpeg libtool pathfix pkgconfig sqlite tar:tgz
+USES=		execinfo gmake jpeg libtool pathfix pkgconfig sqlite tar:tgz
 USE_GCC=	yes
 USE_XORG=	x11
 USE_LDCONFIG=	yes
