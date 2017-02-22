@@ -3,7 +3,8 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.27
-PORTREVISION=	5
+# XXX: When removing or bumping this, remove PORTREVISION= from aarch64-binutils
+PORTREVISION?=	5
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
