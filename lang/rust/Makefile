@@ -2,16 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.14.0
+PORTVERSION?=	1.15.1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
-		http://static.rust-lang.org/dist/:bootstrap \
-		https://github.com/dhuseby/rust-manual-snapshots/raw/master/:bootstrap \
+		https://static.rust-lang.org/dist/:rust_bootstrap \
+		https://s3.amazonaws.com/rust-lang-ci/cargo-builds/:cargo_bootstrap \
 		LOCAL/marino:bootstrap
-DISTNAME?=	${PORTNAME}c-${PORTVERSION}
-DISTFILES?=	${DISTNAME}-src${EXTRACT_SUFX}:src
-DISTFILES+=	${RUST_BOOT}:bootstrap
-EXTRACT_ONLY?=	${DISTFILES:N*\:bootstrap:C/:.*//}
+DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
+BOOTSTRAP_FILES=${RUSTC_BOOTSTRAP}:rust_bootstrap \
+		${RUST_STD_BOOTSTRAP}:rust_bootstrap \
+		${CARGO_BOOTSTRAP}:cargo_bootstrap
+DISTFILES?=	${DISTNAME}${EXTRACT_SUFX}:src \
+		${BOOTSTRAP_FILES}
+.if !defined(SKIP_CARGO_REGISTRY)
+MASTER_SITES+=	LOCAL/riggs/rust:registry \
+		LOCAL/dumbbell/rust:registry
+DISTFILES+=	${CARGO_REGISTRY}:registry
+.endif
+DIST_SUBDIR?=	rust
+EXTRACT_ONLY?=	${DISTFILES:N*\:*bootstrap:C/:.*//}
+PLIST=		${.CURDIR}/pkg-plist.${ARCH}
 
 MAINTAINER?=	riggs@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
@@ -27,8 +37,6 @@ BUILD_DEPENDS=		cmake:devel/cmake
 ONLY_FOR_ARCHS?=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
-DISTINFO_FILE?=	${MASTERDIR}/distinfo.${ARCH}
-
 # FIXME: The bootstrapped rustc adds -L/usr/local/lib in front of
 # the LDFLAGS. When stage0's rustc is linked, it picks the installed
 # librust*so and fails.
@@ -36,25 +44,26 @@ CONFLICTS_BUILD?=	rust-nightly
 CONFLICTS_BUILD+=	${PKGBASE}
 CONFLICTS_INSTALL?=	rust-nightly
 
-RUST_BOOT_VERSION?=	1.13.0
-RUST_BOOT=		rustc-${RUST_BOOT_VERSION}-${RUST_TARGET}.tar.gz
+RUST_BOOTSTRAP_DIR?=		2016-12-18
+RUST_BOOTSTRAP_VERSION?=	1.14.0
+RUSTC_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR}/rustc-${RUST_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
+RUST_STD_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR}/rust-std-${RUST_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
 
-# Rust's libraries are named librustc_${component}-${RUST_VSN_HASH}.so.
-# The hash depends on Rust version and, if the channel is not "stable",
-# the channel name. See $(CFG_FILENAME_EXTRA) definition in mk/main.mk.
-RUST_VSN=	${PORTVERSION:C/\.[0-9]{8}$//}
+CARGO_BOOTSTRAP_DIR?=		fbeea902d2c9a5be6d99cc35681565d8f7832592
+CARGO_BOOTSTRAP_VERSION?=	nightly
+CARGO_BOOTSTRAP=		${CARGO_BOOTSTRAP_DIR}/cargo-${CARGO_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
+CARGO_REGISTRY=			${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
+
 .if defined(.PARSEDIR) # fixes |make describe| on 9.x (which is BROKEN)
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
 .endif
-RUST_VSN_HASH!=	/usr/bin/printf '%s' ${RUST_VSN}${PKGNAMESUFFIX} | /sbin/md5 -q | cut -c 1-8
-PLIST_SUB+=	RUST_VSN_HASH=${RUST_VSN_HASH}
 
 # Rust's target arch string is different from *BSD arch strings
 RUST_ARCH_x86_64=	x86_64 # dragonfly
 RUST_ARCH_amd64=	x86_64
 RUST_ARCH_i386=		i686
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
-PLIST_SUB+=	RUST_TARGET=${RUST_TARGET}
+PLIST_SUB+=		RUST_TARGET=${RUST_TARGET}
 
 USES=		compiler gmake libedit python:2,build
 HAS_CONFIGURE=	yes
@@ -114,11 +123,19 @@ pre-fetch:
 	fi
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/dl
-	${LN} -sf ${DISTDIR}/${RUST_BOOT} ${WRKSRC}/dl
+	@${MKDIR} \
+		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR} \
+		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR}
+	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUSTC_BOOTSTRAP} \
+		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR}
+	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP} \
+		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR}
+	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${CARGO_BOOTSTRAP} \
+		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	@test ! -f ${WRKSRC}/mk/main.mk || \
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/mk/main.mk
 	@${REINPLACE_CMD} -e 's|gdb|${LOCALBASE}/bin/gdb|' \
 		${WRKSRC}/src/etc/rust-gdb
@@ -173,6 +190,25 @@ post-install-DOCS-on:
 			${STAGEDIR}${PREFIX}/lib/rustlib/$$f; \
 		${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/$$f.bak; \
 	done
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/rust/html/extra
 
 .include <bsd.port.mk>
+
+# "make gen-registry" is a special target to ease this port update.
+#
+# After changing the version number and the Git revision, you can run
+# "make gen-registry" to update the distinfo and create a new snapshot of
+# the registry. The new registry is written to ${DISTDIR} and can be
+# uploaded.
+
+gen-registry:
+	${MAKE} -C${.CURDIR} -DSKIP_CARGO_REGISTRY makesum
+	${MAKE} -C${.CURDIR} -DSKIP_CARGO_REGISTRY
+	${TAR} cJvf ${_DISTDIR}/${DIST_SUBDIR}/${CARGO_REGISTRY} -C${WRKDIR} \
+		--uid 0 --gid 0 \
+		--exclude 'src/*/benches/' \
+		--exclude 'src/*/ci/' \
+		--exclude 'src/*/examples/' \
+		--exclude 'src/*/tests/' \
+		--exclude 'index/github.com-*/.git/' \
+		.cargo
+	${MAKE} -C${.CURDIR} makesum
