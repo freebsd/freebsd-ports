@@ -1,0 +1,5 @@
+TIMESTAMP = 1485946886
+SHA256 (registry-0.14.0.tar.gz) = 836249d4f748de6ad46605d848f2070bb70a0ab26ae9527854a29a0ef0e367cf
+SIZE (registry-0.14.0.tar.gz) = 8320537
+SHA256 (mozilla-geckodriver-0.14.0-a49be92_GH0.tar.gz) = 4b97ab904101d243e17e5851389bec7d3989dd22c1750fcbd0e4aab392f68348
+SIZE (mozilla-geckodriver-0.14.0-a49be92_GH0.tar.gz) = 41558
