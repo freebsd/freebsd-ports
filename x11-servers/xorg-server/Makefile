@@ -44,6 +44,7 @@ USE_XORG+=	bigreqsproto compositeproto damageproto dri2proto dri3proto \
 		xineramaproto xkbfile xproto xshmfence xtrans
 CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
 		--localstatedir=/var --with-shared-memory-dir=/tmp \
+		--disable-config-udev --disable-config-udev-kms \
 		--without-dtrace --enable-glamor
 INSTALL_TARGET=	install-strip
 
