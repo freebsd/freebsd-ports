@@ -3,14 +3,14 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.1e
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	OpenSSL toolkit (Linux CentOS ${LINUX_DIST_VER})
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	48.el6_8.3
+RPMVERSION=	48.el6_8.4
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
