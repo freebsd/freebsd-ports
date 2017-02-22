@@ -21,6 +21,8 @@ GH_ACCOUNT=	freebsd
 GH_TAGNAME=	3.0-1822-ge8f0d3e
 #DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 
+BROKEN=	umount -n not supported before 11, working on a fix
+
 GNU_CONFIGURE=	yes
 ETCDIR=		${PREFIX}/etc/poudriere.d
 
