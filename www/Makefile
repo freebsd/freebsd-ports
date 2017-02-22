@@ -193,6 +193,7 @@
     SUBDIR += gallery3
     SUBDIR += gatling
     SUBDIR += gecko-mediaplayer
+    SUBDIR += geckodriver
     SUBDIR += geeklog
     SUBDIR += geeknote
     SUBDIR += geneweb
