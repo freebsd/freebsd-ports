@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	undernet-ircu
-PORTVERSION=	2.10.12.14
-PORTREVISION=	1
+PORTVERSION=	2.10.12.15
 CATEGORIES=	irc net
 MASTER_SITES=	SF/${PORTNAME}/ircu/ircu${PORTVERSION} \
 		ftp://ftpmirror.uk/freebsd-ports/undernet-ircu/
@@ -11,6 +10,9 @@ DISTNAME=	ircu${PORTVERSION}
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Undernet IRCU irc daemon
+
+LICENSE=	GPLv1
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	ircd-hybrid-7.[0-9]*
 
@@ -70,7 +72,7 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/api ${STAGEDIR}${DOCSDIR}/history
-	(cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog ChangeLog.11 INSTALL \
+	(cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog.11 ChangeLog.12 INSTALL \
 		INSTALL_FR README RELEASE.NOTES ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/doc && ${INSTALL_DATA} Authors debug_memleak_gc.patch \
 		example.conf fda.txt features.txt freebsd.txt iso-time.html \
