@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libmikmod.so:audio/libmikmod \
 		libvorbis.so:audio/libvorbis
 
-USES=		alias jpeg libtool pathfix pkgconfig tar:tgz
+USES=		alias gmake jpeg libtool pathfix pkgconfig tar:tgz
 USE_XORG=	x11 xi
 USE_LDCONFIG=	yes
 USE_SDL=	gfx
