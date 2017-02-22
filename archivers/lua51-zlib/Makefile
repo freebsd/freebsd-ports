@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	brimworks
 GH_PROJECT=	lua-zlib
 
-USES=		gmake lua:51
+USES=		lua:51
 
 ALL_TARGET=	bsd
 MAKE_ENV+=      LUAPATH="${LOCALBASE}"
