@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diffoscope
-PORTVERSION=	59
+PORTVERSION=	77
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,6 @@ USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-# mount -t fdescfs fdesc /dev/fd before running tests
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test --pytest-args="-rsx -l -vv"
