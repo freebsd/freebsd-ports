@@ -13,7 +13,7 @@ COMMENT=	Flexible name to value mapping library for C variables
 
 LIB_DEPENDS=	libex.so:devel/ossp-ex
 
-USES=		gmake libtool
+USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}

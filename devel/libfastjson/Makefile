@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rsyslog
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool pathfix pkgconfig
+USES=		autoreconf libtool pathfix pkgconfig
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

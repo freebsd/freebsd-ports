@@ -12,7 +12,7 @@ COMMENT=	Framework for scalable cross-language services development
 
 LICENSE=	APACHE20
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes

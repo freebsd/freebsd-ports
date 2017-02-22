@@ -12,8 +12,6 @@ COMMENT=	Disassembler for MOS 6502 and compatible CPUs
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake
-
 PLIST_FILES=	bin/dxa65 man/man1/dxa.1.gz
 PORTDOCS=	INSTALL
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

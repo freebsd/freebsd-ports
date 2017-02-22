@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/libdsp-src-${PORTVERSION}/${PORTNAME:S/dsp/DSP/}-${PORTVERSIO
 
 MAKE_ENV=	MKDIR="${MKDIR}" INLINE_VER="${INLINE_VER}"
 MAKEFILE=	Makefile.BSD
-USES=		gmake libtool:build
+USES=		libtool:build
 USE_LDCONFIG=	yes
 
 INLINE_VER=	1.4.0

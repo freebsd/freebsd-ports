@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
 		libgpg-error.so:security/libgpg-error
 
-USES=		gettext gmake iconv libtool pathfix pkgconfig ssl
+USES=		gettext iconv libtool pathfix pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes" \
