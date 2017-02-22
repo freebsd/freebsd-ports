@@ -65,6 +65,10 @@ IP_AS_HOSTNAME_CFLAGS=		-DUSE_IP_AS_HOSTNAME
 
 .include <bsd.port.options.mk>
 
+.if empty(PORT_OPTIONS:MBDB) && empty(PORT_OPTIONS:MBDB1)
+OPTIONS_WRONG_RADIO=	BDB BDB1
+.endif
+
 .if ${PORT_OPTIONS:MGEODB} || ${PORT_OPTIONS:MGEOIP} || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
