@@ -63,6 +63,7 @@ MYSQL55m_LIBVER=	18
 MYSQL55p_LIBVER=	18
 MYSQL56_LIBVER=		18
 MYSQL56p_LIBVER=	18
+MYSQL56w_LIBVER=	18
 MYSQL57_LIBVER=		20
 MYSQL57p_LIBVER=	20
 MYSQL80_LIBVER=		21
@@ -106,15 +107,21 @@ IGNORE=		cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is i
 .endif
 
 .if (${MYSQL_VER:C/[0-9]*//} == "m")
-_MYSQL_FLAVOUR=	mariadb
+_MYSQL_SERVER_FLAVOUR=	mariadb
+_MYSQL_CLIENT_FLAVOUR=	mariadb
 .elif (${MYSQL_VER:C/[0-9]*//} == "p")
-_MYSQL_FLAVOUR=	percona
+_MYSQL_SERVER_FLAVOUR=	percona
+_MYSQL_CLIENT_FLAVOUR=	percona
+.elif (${MYSQL_VER:C/[0-9]*//} == "w")
+_MYSQL_SERVER_FLAVOUR=	mysqlwsrep
+_MYSQL_CLIENT_FLAVOUR=	mysql
 .else
-_MYSQL_FLAVOUR=	mysql
+_MYSQL_SERVER_FLAVOUR=	mysql
+_MYSQL_CLIENT_FLAVOUR=	mysql
 .endif
 
-_MYSQL_CLIENT=	databases/${_MYSQL_FLAVOUR}${MYSQL_VER:C/[mp]//}-client
-_MYSQL_SERVER=	databases/${_MYSQL_FLAVOUR}${MYSQL_VER:C/[mp]//}-server
+_MYSQL_CLIENT=	databases/${_MYSQL_CLIENT_FLAVOUR}${MYSQL_VER:C/[mp]//}-client
+_MYSQL_SERVER=	databases/${_MYSQL_SERVER_FLAVOUR}${MYSQL_VER:C/[mp]//}-server
 
 # And now we are checking if we can use it
 .if defined(MYSQL${MYSQL_VER}_LIBVER)
