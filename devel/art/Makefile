@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26
 
-USES=	pkgconfig
+USES=	gmake pkgconfig
 
 OPTIONS_DEFINE=	DOCS
 
