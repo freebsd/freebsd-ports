@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
 CONFLICTS=	libbfd-[0-9]*
 .endif
 
-OPTIONS_DEFINE=	NLS RELRO
+OPTIONS_DEFINE=	NLS RELRO STATIC
 
 RELRO_DESC=	enable -z relro in ELF linker by default
 
@@ -71,6 +71,8 @@ MAKE_ENV+=	ac_cv_func_sbrk=0
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
+
+STATIC_LDFLAGS+=	-all-static
 
 .include <bsd.port.pre.mk>
 
