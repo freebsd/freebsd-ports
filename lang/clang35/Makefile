@@ -85,10 +85,6 @@ RELTYPE=		Release
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1200017 && ${CHOSEN_COMPILER_TYPE} == "clang"
-BROKEN=	Base clang produces compiler errors
-.endif
-
 # keep in sync with /usr/src/lib/clang/clang.build.mk
 CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${OSREL}
 

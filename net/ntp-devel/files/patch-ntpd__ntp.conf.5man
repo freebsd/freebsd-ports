@@ -1,0 +1,11 @@
+--- ntpd/ntp.conf.5man.orig	2016-11-21 05:01:41.000000000 -0800
++++ ntpd/ntp.conf.5man	2017-01-01 10:49:36.857238000 -0800
+@@ -190,7 +190,7 @@
+ .NOP \f\*[B-Font]pool\f[]
+ For type s addresses, this command mobilizes a persistent
+ client mode association with a number of remote servers.
+-In this mode the local clock can synchronized to the
++In this mode the local clock can be synchronized to the
+ remote server, but the remote server can never be synchronized to
+ the local clock.
+ .TP 7
