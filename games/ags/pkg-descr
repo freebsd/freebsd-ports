@@ -1,0 +1,12 @@
+Adventure Game Studio (AGS) is an open source development tool that is
+primarily used to create graphic adventure games like e.g.
+
+- Primordia
+- King's Quest I: Quest for the Crown Enhanced Edition
+- King's Quest II: Romancing the Stones
+- King's Quest III Redux: To Heir is Human
+
+This port provides the runtime only and can be used for running games
+created with AGS.
+
+WWW: http://www.adventuregamestudio.co.uk/
