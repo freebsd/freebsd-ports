@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paramiko
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils 
+USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	py??-paramiko1-*
 
