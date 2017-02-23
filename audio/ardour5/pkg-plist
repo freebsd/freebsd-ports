@@ -86,6 +86,8 @@ lib/ardour5/vamp/libardourvampplugins.so.0.0.0
 share/appdata/ardour5.appdata.xml
 share/applications/ardour5.desktop
 %%DATADIR%%/ArdourMono.ttf
+%%DATADIR%%/export/BWAV 24bit Export.format
+%%DATADIR%%/export/BWAV 32float Export.format
 %%DATADIR%%/export/CD (Red Book).format
 %%DATADIR%%/export/CD + DVD-A.preset
 %%DATADIR%%/export/CD + FLAC (tagged).preset
@@ -215,42 +217,6 @@ share/applications/ardour5.desktop
 %%DATADIR%%/icons/wholenote.png
 %%DATADIR%%/icons/zoom_in_cursor.png
 %%DATADIR%%/icons/zoom_out_cursor.png
-%%DATADIR%%/locale/cs/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/cs/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/cs/LC_MESSAGES/gtkmm2ext3.mo
-%%DATADIR%%/locale/de/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/de/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/de/LC_MESSAGES/gtkmm2ext3.mo
-%%DATADIR%%/locale/el/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/el/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/el/LC_MESSAGES/gtkmm2ext3.mo
-%%DATADIR%%/locale/en_GB/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/en_GB/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/es/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/es/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/es/LC_MESSAGES/gtkmm2ext3.mo
-%%DATADIR%%/locale/fr/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/fr/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/fr/LC_MESSAGES/gtkmm2ext3.mo
-%%DATADIR%%/locale/it/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/it/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/nn/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/nn/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/nn/LC_MESSAGES/gtkmm2ext3.mo
-%%DATADIR%%/locale/pl/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/pl/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/pl/LC_MESSAGES/gtkmm2ext3.mo
-%%DATADIR%%/locale/pt/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/pt/LC_MESSAGES/gtkmm2ext3.mo
-%%DATADIR%%/locale/pt_PT/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/ru/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/ru/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/ru/LC_MESSAGES/gtkmm2ext3.mo
-%%DATADIR%%/locale/sv/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/sv/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/zh/LC_MESSAGES/ardour5.mo
-%%DATADIR%%/locale/zh/LC_MESSAGES/gtk2_ardour5.mo
-%%DATADIR%%/locale/zh/LC_MESSAGES/gtkmm2ext3.mo
 %%DATADIR%%/mcp/SSL Nucleus Ardour.profile
 %%DATADIR%%/mcp/artist_control.device
 %%DATADIR%%/mcp/artist_mix.device
@@ -399,10 +365,14 @@ share/applications/ardour5.desktop
 %%DATADIR%%/resources/Ardour-small-splash.png
 %%DATADIR%%/resources/Ardour-splash.png
 %%DATADIR%%/scripts/HiAndLowPass.lua
+%%DATADIR%%/scripts/add_filters.lua
 %%DATADIR%%/scripts/addscopes.lua
 %%DATADIR%%/scripts/amp4.lua
 %%DATADIR%%/scripts/bounce_replace.lua
+%%DATADIR%%/scripts/create_drum_tracks.lua
+%%DATADIR%%/scripts/delete_xrun_markers.lua
 %%DATADIR%%/scripts/export_mp4chaps.lua
+%%DATADIR%%/scripts/faders_to_trims.lua
 %%DATADIR%%/scripts/midimon.lua
 %%DATADIR%%/scripts/preare_record_example.lua
 %%DATADIR%%/scripts/remove_unknown_procs.lua
@@ -410,12 +380,15 @@ share/applications/ardour5.desktop
 %%DATADIR%%/scripts/s_chanmap.lua
 %%DATADIR%%/scripts/s_fader_automation.lua
 %%DATADIR%%/scripts/s_foreach_track.lua
+%%DATADIR%%/scripts/s_import_files.lua
 %%DATADIR%%/scripts/s_plugin_automation.lua
 %%DATADIR%%/scripts/s_pluginutils.lua
 %%DATADIR%%/scripts/s_portengine.lua
 %%DATADIR%%/scripts/s_region_gain.lua
+%%DATADIR%%/scripts/s_region_gain2.lua
 %%DATADIR%%/scripts/s_replaceplugin.lua
 %%DATADIR%%/scripts/s_selection.lua
+%%DATADIR%%/scripts/s_timecode.lua
 %%DATADIR%%/scripts/s_track_props.lua
 %%DATADIR%%/scripts/s_vamp_plugin_index.lua
 %%DATADIR%%/scripts/scope.lua
@@ -425,9 +398,9 @@ share/applications/ardour5.desktop
 %%DATADIR%%/scripts/synth1.lua
 %%DATADIR%%/scripts/tomsloop.lua
 %%DATADIR%%/scripts/voice_activate.lua
-%%DATADIR%%/themes/blueberry-milk-ardour.colors
+%%DATADIR%%/themes/blueberry_milk-ardour.colors
 %%DATADIR%%/themes/caineville-ardour.colors
-%%DATADIR%%/themes/clear-gray-ardour.colors
+%%DATADIR%%/themes/clear_gray-ardour.colors
 %%DATADIR%%/themes/cubasish-ardour.colors
 %%DATADIR%%/themes/dark-ardour.colors
 %%DATADIR%%/themes/unastudia-ardour.colors
