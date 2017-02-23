@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mtbl
-PORTVERSION=	0.8.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -12,7 +12,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
-		libsnappy.so:archivers/snappy
+		libsnappy.so:archivers/snappy \
+		libzstd.so:archivers/zstd
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
