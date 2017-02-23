@@ -1593,6 +1593,7 @@
     SUBDIR += mcpp
     SUBDIR += mdds
     SUBDIR += mdds0
+    SUBDIR += memleax
     SUBDIR += menhir
     SUBDIR += mercator
     SUBDIR += mercurial

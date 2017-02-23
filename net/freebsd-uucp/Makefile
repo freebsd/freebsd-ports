@@ -84,5 +84,8 @@ pre-install:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/info
 	${INSTALL_DATA} ${WRKSRC}/uucp/doc/uucp.info ${STAGEDIR}${PREFIX}/info/
+.if ${PORT_OPTIONS:MVAR_LOG}
+	${MKDIR} ${STAGEDIR}/var/log/uucp
+.endif
 
 .include <bsd.port.mk>
