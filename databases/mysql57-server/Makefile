@@ -152,11 +152,6 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/my.cnf.sample ${STAGEDIR}${ETCDIR}/my.cnf.sample
-<<<<<<< HEAD
-
-post-stage:
-=======
->>>>>>> upstream/master
 	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
 	${MKDIR} ${STAGEDIR}${MY_SECDIR}
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
