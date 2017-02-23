@@ -40,7 +40,7 @@ EXPLICIT_SAFESTACK=	yes
 
 .include <bsd.port.options.mk>
 
-USES=		gmake libtool perl5 ssl tar:bzip2
+USES+=		gmake libtool perl5 ssl tar:bzip2
 USE_PERL5=	build
 USE_GL+=	gl
 USE_XORG+=	bigreqsproto compositeproto damageproto dri2proto dri3proto \
