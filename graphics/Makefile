@@ -107,6 +107,7 @@
     SUBDIR += converseen
     SUBDIR += copperspice
     SUBDIR += cosmoplayer
+    SUBDIR += cptutils
     SUBDIR += crw
     SUBDIR += cthumb
     SUBDIR += cuneiform

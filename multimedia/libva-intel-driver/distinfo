@@ -1,3 +1,3 @@
-TIMESTAMP = 1473063313
-SHA256 (libva-intel-driver-1.7.2.tar.bz2) = 099e7bf6aa826971ec2caff235babf4da995f754e2ca16a73b258671130e67bc
-SIZE (libva-intel-driver-1.7.2.tar.bz2) = 1222487
+TIMESTAMP = 1487846424
+SHA256 (01org-intel-vaapi-driver-1.7.3_GH0.tar.gz) = c1f02cbdf0398f096ddc91096fac6ee62267a54955f6d235d73a8ff2ea888118
+SIZE (01org-intel-vaapi-driver-1.7.3_GH0.tar.gz) = 1648659
