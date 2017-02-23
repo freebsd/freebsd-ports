@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170223:
+  AFFECTS: users of devel/mtbl
+  AUTHOR: truckman@FreeBSD.org
+
+  There is a libmtbl shared library version bump in mtbl version 1.0.0.
+  The affected dependent ports have had PORTREVISION bumps, but you will
+  need to rebuild any applications that link to libmtbl.
+
 20170220:
   AFFECTS: sysutils/filebeat sysutils/metricbeat sysutils/packetbeat
   AUTHOR: girgen@FreeBSD.org
