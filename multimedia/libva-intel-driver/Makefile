@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libva-intel-driver
-PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTVERSION=	1.7.3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	VAAPI intel driver
@@ -21,6 +19,10 @@ USES=		alias autoreconf compiler:c11 gmake libtool localbase \
 		pkgconfig tar:bzip2
 USE_GL=		gl
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	01org
+GH_PROJECT=	intel-vaapi-driver
 
 PLIST_FILES=	lib/va/i965_drv_video.so
 
