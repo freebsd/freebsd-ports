@@ -31,7 +31,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 
 BROKEN=		does not build (error: no matching constructor for initialization of 'gflags::FlagRegisterer')
 DEPRECATED=	repeated build and dependency issues, upstream unable to assist
-EXPIRATION_DATE=2017-02-28
+EXPIRATION_DATE=2017-04-28
 
 USES=		cmake:outsource gmake libtool python:build compiler:c++11-lib
 CONFIGURE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \
