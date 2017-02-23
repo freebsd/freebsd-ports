@@ -1,11 +1,21 @@
---- Makefile.in.orig	2016-12-20 16:51:38 UTC
+--- Makefile.in.orig	2017-02-23 06:26:31 UTC
 +++ Makefile.in
-@@ -4246,7 +4246,7 @@ uninstall-am: uninstall-binPROGRAMS unin
+@@ -1438,9 +1438,7 @@ libp11_kit_testable_la_LIBADD = $(COMMON
+ @OS_WIN32_TRUE@	$(NULL)
  
- # Proxy module is actually same as library, so install a link
- @OS_WIN32_FALSE@install-exec-hook:
--@OS_WIN32_FALSE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libp11-kit.{so,dylib}` $(DESTDIR)$(libdir)/p11-kit-proxy.so
-+@OS_WIN32_FALSE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libp11-kit.so` $(DESTDIR)$(libdir)/p11-kit-proxy.so
- @OS_WIN32_FALSE@	$(MKDIR_P) $(DESTDIR)$(p11_package_config_modules)
+ systemduserdir = $(prefix)/lib/systemd/user
+-systemduser_DATA = \
+-	p11-kit/p11-kit-remote.socket \
+-	p11-kit/p11-kit-remote@.service
++systemduser_DATA = $(NULL)
  
- @WITH_TRUST_MODULE_TRUE@asn:
+ @OS_WIN32_FALSE@p11_kit_client_la_LDFLAGS = \
+ @OS_WIN32_FALSE@	-no-undefined -module -avoid-version \
+@@ -4390,7 +4388,6 @@ install-data-am: install-configDATA inst
+ 	install-moduleLTLIBRARIES install-pkgconfigDATA \
+ 	install-privatePROGRAMS install-systemduserDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-recursive
+ 
+ install-dvi-am:
