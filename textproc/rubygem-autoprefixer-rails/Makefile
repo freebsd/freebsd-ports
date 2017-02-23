@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	autoprefixer-rails
-PORTVERSION=	6.7.4
+PORTVERSION=	6.7.5
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
