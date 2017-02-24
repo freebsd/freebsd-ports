@@ -1,6 +1,6 @@
---- configure.orig	2016-03-13 10:57:40 UTC
+--- configure.orig	2017-01-07 22:24:39 UTC
 +++ configure
-@@ -21869,7 +21869,7 @@ if test "$utmp" = "yes" -a "$pty_helper"
+@@ -21932,7 +21932,7 @@ if test "$utmp" = "yes" -a "$pty_helper"
  	if test "$has_utmp" ; then
  		INSTALL_OPT="-m 2755 -g utmp"
  	else
@@ -9,7 +9,7 @@
  	fi
  else
  	INSTALL_OPT="-m 755"
-@@ -22095,6 +22095,7 @@ $as_echo "yes" >&6; }
+@@ -22158,6 +22158,7 @@ $as_echo "yes" >&6; }
  fi
  	fi
  	if test "$have_vte" = "yes" ; then

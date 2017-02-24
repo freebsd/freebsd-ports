@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlterm
-PORTVERSION=	3.7.2
+PORTVERSION=	3.8.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -11,15 +11,19 @@ COMMENT=	Multilingual X11 terminal emulator
 
 LICENSE=	BSD3CLAUSE
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
+
 USES=		gettext libtool perl5 pkgconfig
-USE_XORG=	sm xft
-USE_GNOME=	gtk20 vte
+USE_XORG=	sm x11 xft
+USE_GNOME=	cairo gdkpixbuf2 gtk20 vte
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gui=x11 --with-imagelib=gdk-pixbuf2 --enable-utmp \
-		--enable-optimize-redrawing \
-		--disable-iiimf --with-gtk=2.0
+		--enable-optimize-redrawing --disable-iiimf --with-gtk=2.0 \
+		--disable-ssh2
 EXTERNAL_TOOLS=	mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
@@ -71,9 +75,8 @@ CONFIGURE_ARGS+=--with-tools="${EXTERNAL_TOOLS}"
 
 post-configure:
 	@${REINPLACE_CMD} -e "s,@CGI_BIN@,${PREFIX}/libexec/w3mmlconfig," \
+		-e "s,@PERL @,${PERL}," \
 		${WRKSRC}/tool/w3mmlconfig/mlconfig.cgi
-	@${REINPLACE_CMD} -e 's|kik_utmp_bsd|kik_utmp_utmper|' \
-		${WRKSRC}/kiklib/src/Makefile
 
 post-install:
 	(cd ${WRKSRC}/tool/w3mmlconfig && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
