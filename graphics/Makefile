@@ -869,6 +869,7 @@
     SUBDIR += py-poppler
     SUBDIR += py-poppler-qt4
     SUBDIR += py-pycha
+    SUBDIR += py-pycollada
     SUBDIR += py-pydot
     SUBDIR += py-pygal
     SUBDIR += py-pyganim
