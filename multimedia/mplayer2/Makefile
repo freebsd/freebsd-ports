@@ -12,6 +12,9 @@ COMMENT=	Advanced general-purpose video player
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Development ceased in favour of mpv, last release from 2013
+EXPIRATION_DATE=	2017-03-25
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libavcodec.so:multimedia/ffmpeg
