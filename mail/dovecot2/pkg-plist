@@ -96,6 +96,7 @@ include/dovecot/dcrypt.h
 include/dovecot/db-checkpassword.h
 include/dovecot/db-dict.h
 include/dovecot/db-ldap.h
+include/dovecot/db-oauth2.h
 include/dovecot/db-passwd-file.h
 include/dovecot/db-sql.h
 include/dovecot/dbox-attachment.h
@@ -339,6 +340,9 @@ include/dovecot/mail-index-view-private.h
 include/dovecot/mail-index.h
 include/dovecot/mail-namespace.h
 include/dovecot/mail-search-build.h
+include/dovecot/mail-search-mime-build.h
+include/dovecot/mail-search-mime-register.h
+include/dovecot/mail-search-mime.h
 include/dovecot/mail-search-parser-private.h
 include/dovecot/mail-search-parser.h
 include/dovecot/mail-search-register.h
@@ -385,6 +389,7 @@ include/dovecot/maildir-settings.h
 include/dovecot/maildir-storage.h
 include/dovecot/maildir-sync.h
 include/dovecot/maildir-uidlist.h
+include/dovecot/malloc-overflow.h
 include/dovecot/master-auth.h
 include/dovecot/master-instance.h
 include/dovecot/master-interface.h
@@ -427,6 +432,7 @@ include/dovecot/message-header-parser.h
 include/dovecot/message-id.h
 include/dovecot/message-parser.h
 include/dovecot/message-part.h
+include/dovecot/message-part-data.h
 include/dovecot/message-part-serialize.h
 include/dovecot/message-search.h
 include/dovecot/message-size.h
@@ -443,6 +449,7 @@ include/dovecot/nfs-workarounds.h
 include/dovecot/notify-plugin-private.h
 include/dovecot/notify-plugin.h
 include/dovecot/numpack.h
+include/dovecot/oauth2.h
 include/dovecot/ostream-cmp.h
 include/dovecot/ostream-dot.h
 include/dovecot/ostream-encrypt.h
@@ -634,6 +641,7 @@ lib/dovecot/lib95_imap_stats_plugin.a
 lib/dovecot/lib95_imap_stats_plugin.so
 lib/dovecot/lib99_welcome_plugin.a
 lib/dovecot/lib99_welcome_plugin.so
+lib/dovecot/libdcrypt_openssl.a
 lib/dovecot/libdcrypt_openssl.so
 lib/dovecot/libdovecot-compression.a
 lib/dovecot/libdovecot-compression.so
