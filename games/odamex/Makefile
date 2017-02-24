@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Odamex/${PORTVERSION}
 DISTNAME=	odamex-src-${PORTVERSION}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client/server multiplayer engine for Doom
 
 LICENSE=	GPLv2
