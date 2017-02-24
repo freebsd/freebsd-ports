@@ -1226,7 +1226,6 @@
     SUBDIR += libbrotli
     SUBDIR += libbson
     SUBDIR += libburn
-    SUBDIR += libc++
     SUBDIR += libccid
     SUBDIR += libcfg
     SUBDIR += libcfu
@@ -1242,7 +1241,6 @@
     SUBDIR += libcrossguid
     SUBDIR += libcutl
     SUBDIR += libcwd
-    SUBDIR += libcxxrt
     SUBDIR += libdaemon
     SUBDIR += libdap
     SUBDIR += libdatrie
