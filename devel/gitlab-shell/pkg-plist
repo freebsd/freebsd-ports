@@ -28,6 +28,7 @@
 %%DATADIR%%/lib/gitlab_custom_hook.rb
 %%DATADIR%%/lib/gitlab_init.rb
 %%DATADIR%%/lib/gitlab_keys.rb
+%%DATADIR%%/lib/gitlab_lfs_authentication.rb
 %%DATADIR%%/lib/gitlab_logger.rb
 %%DATADIR%%/lib/gitlab_net.rb
 %%DATADIR%%/lib/gitlab_post_receive.rb
@@ -55,6 +56,7 @@
 %%DATADIR%%/spec/gitlab_access_spec.rb
 %%DATADIR%%/spec/gitlab_config_spec.rb
 %%DATADIR%%/spec/gitlab_keys_spec.rb
+%%DATADIR%%/spec/gitlab_lfs_authentication_spec.rb
 %%DATADIR%%/spec/gitlab_logger_spec.rb
 %%DATADIR%%/spec/gitlab_net_spec.rb
 %%DATADIR%%/spec/gitlab_post_receive_spec.rb
@@ -74,10 +76,13 @@
 %%DATADIR%%/spec/vcr_cassettes/denied-push.yml
 %%DATADIR%%/spec/vcr_cassettes/discover-ok.yml
 %%DATADIR%%/spec/vcr_cassettes/http-access-disabled.yml
+%%DATADIR%%/spec/vcr_cassettes/lfs-authenticate-ok.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-access-disabled.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-not-found.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-not-implemented.yml
 %%DATADIR%%/spec/vcr_cassettes/ssh-key-ok.yml
+%%DATADIR%%/spec/vcr_cassettes/two-factor-recovery-codes-fail.yml
+%%DATADIR%%/spec/vcr_cassettes/two-factor-recovery-codes.yml
 %%DATADIR%%/support/rewrite-hooks.sh
 %%DATADIR%%/support/truncate_repositories.sh
 @dir(git,,755) /var/log/gitlab-shell
