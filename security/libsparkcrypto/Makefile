@@ -19,6 +19,8 @@ DOS2UNIX_FILES=	Makefile build/libsparkcrypto.gpr \
 SPARKARCH:=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
 ALL_TARGET=	all build
 
+BROKEN_aarch64=		fails to compile: unsupported architecture: aarch64
+
 MAKE_ENV+=	SPARKARCH=${SPARKARCH} \
 		SPARK_DIR=${WRKSRC}/src/spark \
 		MODE=release \
