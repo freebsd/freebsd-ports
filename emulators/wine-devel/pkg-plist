@@ -153,6 +153,8 @@ include/wine/windows/commdlg.h
 include/wine/windows/commoncontrols.h
 include/wine/windows/commoncontrols.idl
 include/wine/windows/compobj.h
+include/wine/windows/comsvcs.h
+include/wine/windows/comsvcs.idl
 include/wine/windows/control.h
 include/wine/windows/control.idl
 include/wine/windows/cor.h
@@ -1948,6 +1950,7 @@ lib/wine/fakedlls/vdmdbg.dll
 %%WINE32%%lib/wine/fakedlls/ver.dll16
 lib/wine/fakedlls/version.dll
 lib/wine/fakedlls/view.exe
+lib/wine/fakedlls/virtdisk.dll
 %%WINE32%%lib/wine/fakedlls/vmm.vxd
 %%WINE32%%lib/wine/fakedlls/vnbt.vxd
 %%WINE32%%lib/wine/fakedlls/vnetbios.vxd
@@ -2593,6 +2596,7 @@ lib/wine/vdmdbg.dll.so
 %%WINE32%%lib/wine/ver.dll16.so
 lib/wine/version.dll.so
 lib/wine/view.exe.so
+lib/wine/virtdisk.dll.so
 %%WINE32%%lib/wine/vmm.vxd.so
 %%WINE32%%lib/wine/vnbt.vxd.so
 %%WINE32%%lib/wine/vnetbios.vxd.so
