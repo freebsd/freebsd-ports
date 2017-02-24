@@ -16,7 +16,7 @@
  &WriteMakefile(
  	       LIBS	     =>  $libs,
 -	       INC	     => $extra_inc . ' -I $(PARI_DIR)/src/headers -I $(PARI_DIR)/src -I ./libPARI',
-+	       INC	     => '-I$(PREFIX)/include/pari -I$(PARI_DIR)/src',
++	       INC	     => '-I$(PARI_DIR)/src',
  	       NAME	     => 'Math::Pari',
  	       ($common::parilib ? () :
  		 (MYEXTLIB   =>  'libPARI/libPARI$(LIB_EXT)')),
