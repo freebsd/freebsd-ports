@@ -1,4 +1,4 @@
---- config/gitlab.yml.example.orig	2016-10-11 15:15:22 UTC
+--- config/gitlab.yml.example.orig	2016-12-14 20:07:13 UTC
 +++ config/gitlab.yml.example
 @@ -433,7 +433,7 @@ production: &base
      # Paths where repositories can be stored. Give the canonicalized absolute pathname.
