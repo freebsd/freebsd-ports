@@ -154,6 +154,7 @@
     SUBDIR += rtl-sdr
     SUBDIR += rubygem-callsign
     SUBDIR += rubygem-ruby-termios
+    SUBDIR += rubygem-serialport
     SUBDIR += rxtx
     SUBDIR += scmxx
     SUBDIR += sdr-wspr
