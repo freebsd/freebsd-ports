@@ -3,7 +3,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	graphics
 MASTER_SITES=	http://git.savannah.gnu.org/cgit/gnash.git/snapshot/
 DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
@@ -15,7 +15,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libnspr4.so:devel/nspr \
-		libc++.so.1:devel/libc++ \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
