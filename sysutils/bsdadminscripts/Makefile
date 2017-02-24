@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of administration scripts
 
 LICENSE=	BSD2CLAUSE

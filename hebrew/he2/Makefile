@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	hebrew editors
 MASTER_SITES=	SF/${PORTNAME}/HebrewEditor/${PORTVERSION}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for editing (primarily LaTeX) Hebrew files
 
 LICENSE=	GPLv2
