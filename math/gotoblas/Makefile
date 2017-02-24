@@ -13,7 +13,7 @@ DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
 DIST_SUBDIR=	gotoblas
 EXTRACT_ONLY=	${GOTOBLAS2_SRCFILE}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast implementation of Basic Linear Algebra Subprograms
 
 LICENSE=	BSD2CLAUSE
