@@ -24,8 +24,4 @@ post-patch::
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 
-.if ${PORT_OPTIONS:MPCLANG} || ${PORT_OPTIONS:MBCLANG}
-LIB_DEPENDS+=	libc++.so.1:devel/libc++
-.endif
-
 .include <bsd.port.mk>

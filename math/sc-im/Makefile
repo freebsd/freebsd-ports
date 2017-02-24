@@ -19,6 +19,8 @@ USE_GNOME=	libxml2
 LIB_DEPENDS=	libxlsreader.so:math/libxls \
 		libzip.so:archivers/libzip
 
+BROKEN_aarch64=	fails to compile: conflicting types for __wcwidth
+
 WRKSRC_SUBDIR=	src
 CFLAGS+=	-I${LOCALBASE}/include/libxml2
 MAKE_ENV+=	LDLIBS="${LIBS}"

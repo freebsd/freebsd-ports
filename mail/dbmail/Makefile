@@ -32,11 +32,11 @@ SIEVE_DESC=	Sieve mail sorting language support
 OPTIONS_SUB=	yes
 
 INSTALL_TARGET=	install-strip
-USE_AUTOTOOLS=	autoheader autoconf
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
-USE_OPENSSL=	yes
-USES=		gmake libtool pkgconfig shebangfix tar:bzip2
+USES=		autoreconf gmake libtool pkgconfig shebangfix ssl tar:bzip2
+GNU_CONFIGURE=	yes
+
 SHEBANG_FILES=	man/fixsp.pl
 
 CPPFLAGS+=	-I${LOCALBASE}/include

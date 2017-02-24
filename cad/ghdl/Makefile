@@ -3,8 +3,8 @@
 
 PORTNAME=	ghdl
 PORTVERSION=	0.33
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	cad
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -21,6 +21,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 USES=		ada gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	tgingold
+
+BROKEN_aarch64=		fails to configure: Configuration aarch64-portbld-freebsd11 not supported
 
 GNU_CONFIGURE=	yes
 GCCVER=		4.9.2

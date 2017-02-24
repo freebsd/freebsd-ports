@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
 GH_PROJECT=	AdaBase
 
+BROKEN_aarch64=		fails to install: digits value out of range, maximum is 15
+
 OPTIONS_DEFINE=		DEBUG
 OPTIONS_MULTI=		DBASE
 OPTIONS_MULTI_DBASE=	MYSQL SQLITE PGSQL

@@ -1,6 +1,6 @@
---- src/dbmail.h.in.orig
+--- src/dbmail.h.in.orig	2015-01-25 10:20:50 UTC
 +++ src/dbmail.h.in
-@@ -154,6 +160,11 @@
+@@ -155,6 +155,11 @@
  #include <endian.h>
  #endif
  
@@ -10,5 +10,5 @@
 +
 +
  #define GETCONFIGVALUE(key, sect, var) \
-        config_get_value(key, sect, var); \
-        if (strlen(var) > 0) \
+ 	config_get_value(key, sect, var); \
+ 	if (strlen(var) > 0) \
