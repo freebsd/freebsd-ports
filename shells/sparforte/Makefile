@@ -23,6 +23,8 @@ HAS_CONFIGURE=	yes
 MAKE_ARGS+=	RPM_BUILD_ROOT=1
 PORTDOCS=	*
 
+BROKEN_aarch64=		fails to compile: gnat1: error: unknown value aarch64 for -march
+
 # Repurpose CXXFLAGS for gnatprep options
 CXXFLAGS:=	-DREADLINE=true \
 		-DBDB=true
@@ -148,7 +150,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spar
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}	
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 
 post-install-EXAMPLES-on:
