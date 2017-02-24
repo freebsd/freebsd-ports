@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		fstrm
-PORTVERSION=		0.3.0
+PORTVERSION=		0.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=		2
 CATEGORIES=		devel
 
 MAINTAINER=		freebsd@dns-lab.com
@@ -21,6 +20,7 @@ GH_ACCOUNT=		farsightsec
 GNU_CONFIGURE=		yes
 USES=			autoreconf gmake libtool pkgconfig
 USE_LDCONFIG=		yes
+INSTALL_TARGET=		install-strip
 TEST_TARGET=		check
 
 OPTIONS_DEFINE=		DOXYGEN
