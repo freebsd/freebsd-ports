@@ -1929,6 +1929,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/rapydscript/lib/random.pyj
 %%DATADIR%%/rapydscript/lib/re.pyj
 %%DATADIR%%/rapydscript/lib/traceback.pyj
+%%DATADIR%%/rapydscript/lib/uuid.pyj
 %%DATADIR%%/scripts.pickle
 %%DATADIR%%/template-functions.json
 %%DATADIR%%/templates/book_details.css

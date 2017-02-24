@@ -1,5 +1,5 @@
---- tool/w3mmlconfig/mlconfig.cgi.in.orig	Sat Feb 23 22:18:18 2002
-+++ tool/w3mmlconfig/mlconfig.cgi.in	Sat Feb 23 22:22:19 2002
+--- tool/w3mmlconfig/mlconfig.cgi.in.orig	2017-01-07 22:24:38 UTC
++++ tool/w3mmlconfig/mlconfig.cgi.in
 @@ -2,6 +2,7 @@
  
  $DEBUG = 1;
@@ -7,4 +7,4 @@
 +use lib '@CGI_BIN@';
  require 'mlconfig-data.pl';
  
- $CGI = $ENV{SCRIPT_NAME} || $0;
+ open(CHALLENGE, "$ENV{HOME}/.mlterm/challenge");

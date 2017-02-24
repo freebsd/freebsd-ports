@@ -10,7 +10,6 @@
 %%SITE_PERL%%/SVN/Hooks/DenyChanges.pm
 %%SITE_PERL%%/SVN/Hooks/DenyFilenames.pm
 %%SITE_PERL%%/SVN/Hooks/Generic.pm
-%%SITE_PERL%%/SVN/Hooks/JiraAcceptance.pm
 %%SITE_PERL%%/SVN/Hooks/Mailer.pm
 %%SITE_PERL%%/SVN/Hooks/Notify.pm
 %%SITE_PERL%%/SVN/Hooks/UpdateConfFile.pm
@@ -27,7 +26,6 @@
 %%PERL5_MAN3%%/SVN::Hooks::DenyChanges.3.gz
 %%PERL5_MAN3%%/SVN::Hooks::DenyFilenames.3.gz
 %%PERL5_MAN3%%/SVN::Hooks::Generic.3.gz
-%%PERL5_MAN3%%/SVN::Hooks::JiraAcceptance.3.gz
 %%PERL5_MAN3%%/SVN::Hooks::Mailer.3.gz
 %%PERL5_MAN3%%/SVN::Hooks::Notify.3.gz
 %%PERL5_MAN3%%/SVN::Hooks::UpdateConfFile.3.gz
