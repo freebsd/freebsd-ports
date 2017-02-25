@@ -1,6 +1,6 @@
---- ./kdm/kfrontend/CMakeLists.txt.orig	2008-07-30 17:02:54.000000000 +0300
-+++ ./kdm/kfrontend/CMakeLists.txt	2008-07-30 17:03:26.000000000 +0300
-@@ -113,6 +113,6 @@
+--- kdm/kfrontend/CMakeLists.txt.orig	2015-06-26 03:17:21 UTC
++++ kdm/kfrontend/CMakeLists.txt
+@@ -111,6 +111,6 @@ install(TARGETS kdmctl ${INSTALL_TARGETS
  
  
  # use 'GENKDMCONF_FLAGS=... make install' to add flags to the config generation (try genkdmconf -h)
