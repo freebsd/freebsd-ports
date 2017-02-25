@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2004-10-18 06:05:24.000000000 +0100
-+++ ./Makefile.in	2013-11-22 22:33:19.141103774 +0000
-@@ -30,11 +30,11 @@
+--- Makefile.in.orig	2004-10-18 05:05:24 UTC
++++ Makefile.in
+@@ -30,11 +30,11 @@ distclean: clean
  	rm -f Makefile config.h config.status config.log swapd.8 swapd.conf.5
  
  install: all
