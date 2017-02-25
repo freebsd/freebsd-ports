@@ -10,6 +10,8 @@ MASTER_SITES=	PORTS_JP
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Swiss railway clock emulation, and a fancy default appearance
 
+LICENSE=	NONE
+
 USES=		imake tar:Z
 USE_XORG=	ice sm x11 xext xmu xt
 
