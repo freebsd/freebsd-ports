@@ -4,7 +4,7 @@
  CFLAGS += -Wall -Werror -Wno-unused-function -g
  CFLAGS += -L ../../ -I ../../include
 -CFLAGS += -L ../../cmocka/src -I ../../cmocka/include
-+CFLAGS += -L $(PREFIX)/lib -I $(PREFIX)/include
++CFLAGS += -L $(LOCALBASE)/lib -I $(LOCALBASE)/include
  
  UNAME_S := $(shell uname -s)
  ifeq ($(UNAME_S), Linux)
