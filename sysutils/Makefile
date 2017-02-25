@@ -28,6 +28,7 @@
     SUBDIR += aird
     SUBDIR += am-utils
     SUBDIR += amazon-ssm-agent
+    SUBDIR += amdmsrtweaker
     SUBDIR += amrstat
     SUBDIR += amtc
     SUBDIR += anacron
@@ -91,7 +92,7 @@
     SUBDIR += bchunk
     SUBDIR += beadm
     SUBDIR += beadm-devel
-    SUBDIR += beats 
+    SUBDIR += beats
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
     SUBDIR += biosfont
