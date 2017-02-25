@@ -19,6 +19,7 @@ LICENSE_COMB=	dual
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Most>=0:devel/p5-Test-Most
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
