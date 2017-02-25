@@ -1,6 +1,6 @@
---- ./configure.orig	2013-10-06 17:11:43.000000000 +0100
-+++ ./configure	2013-11-22 21:48:41.875104078 +0000
-@@ -4850,6 +4850,7 @@
+--- configure.orig	2013-10-06 16:11:43 UTC
++++ configure
+@@ -4850,6 +4850,7 @@ fi
  for ac_func in swapoff
  do :
    ac_fn_c_check_func "$LINENO" "swapoff" "ac_cv_func_swapoff"
@@ -8,7 +8,7 @@
  if test "x$ac_cv_func_swapoff" = xyes; then :
    cat >>confdefs.h <<_ACEOF
  #define HAVE_SWAPOFF 1
-@@ -4861,6 +4862,7 @@
+@@ -4861,6 +4862,7 @@ done
  
  
  	ac_fn_c_check_func "$LINENO" "swapon" "ac_cv_func_swapon"
@@ -16,7 +16,7 @@
  if test "x$ac_cv_func_swapon" = xyes; then :
  
  
-@@ -5114,6 +5116,17 @@
+@@ -5114,6 +5116,17 @@ $as_echo "#define SWAPD_SWAP_PERMS 01600
  $as_echo "#define SWAPD_SWAPOFF_CMDLINE \"/sbin/swapctl -d \\\"%s\\\"\"" >>confdefs.h
  
  			;;
