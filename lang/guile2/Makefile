@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guile
-PORTVERSION=	2.0.11
-PORTREVISION=	3
+PORTVERSION=	2.0.14
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	2
@@ -13,18 +12,18 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LICENSE=	LGPL21
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libltdl.so:devel/libltdl \
 		libunistring.so:devel/libunistring \
-		libffi.so.6:devel/libffi
+		libffi.so:devel/libffi
 
 CONFLICTS_INSTALL=	guile-[0-9]*
 
+BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=	fails to compile: errors in complex.h
 
-USES=		charsetfix gmake libtool ncurses pathfix pkgconfig readline
+USES=		charsetfix gmake libtool makeinfo ncurses pathfix pkgconfig \
+		readline
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -43,8 +42,8 @@ THREADS_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
 THREADS_LIB_DEPENDS_OFF=	libgc.so:devel/boehm-gc
 
 REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
-			libguile/mallocs.c libguile/eval.c libguile/gc-malloc.c \
-			libguile/ports.c
+			libguile/mallocs.c libguile/eval.c \
+			libguile/gc-malloc.c libguile/ports.c
 
 INFO=		guile r5rs
 
