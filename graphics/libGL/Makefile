@@ -3,7 +3,7 @@
 
 PORTNAME=	libGL
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL library that renders using GLX or DRI

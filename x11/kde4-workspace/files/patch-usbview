@@ -4,7 +4,7 @@
  Old code probably works on NetBSD, but let it use libusb-1 as well.
  Use DeviceNotifier instead of polling.
 
---- /dev/null
+--- cmake/modules/FindLibUSB1.cmake.orig	2016-12-13 11:26:31 UTC
 +++ cmake/modules/FindLibUSB1.cmake
 @@ -0,0 +1,21 @@
 +# - Try to find libusb v1.0 library
@@ -28,7 +28,7 @@
 +find_package_handle_standard_args(LIBUSB1 DEFAULT_MSG LIBUSB1_LIBRARY LIBUSB1_INCLUDE_DIR)
 +
 +mark_as_advanced(LIBUSB1_INCLUDE_DIR LIBUSB1_LIBRARY)
---- kinfocenter/Modules/usbview/CMakeLists.txt
+--- kinfocenter/Modules/usbview/CMakeLists.txt.orig	2015-06-26 03:17:21 UTC
 +++ kinfocenter/Modules/usbview/CMakeLists.txt
 @@ -1,15 +1,25 @@
 +macro_optional_find_package(LibUSB1)
@@ -58,12 +58,12 @@
  
  install(TARGETS kcm_usb  DESTINATION ${PLUGIN_INSTALL_DIR} )
  
---- /dev/null
+--- kinfocenter/Modules/usbview/config-kcmusb.h.cmake.orig	2016-12-13 11:26:31 UTC
 +++ kinfocenter/Modules/usbview/config-kcmusb.h.cmake
 @@ -0,0 +1,2 @@
 +/* Defined if you have libusb */
 +#cmakedefine HAVE_LIBUSB1 1
---- kinfocenter/Modules/usbview/kcmusb.cpp
+--- kinfocenter/Modules/usbview/kcmusb.cpp.orig	2015-06-26 03:17:21 UTC
 +++ kinfocenter/Modules/usbview/kcmusb.cpp
 @@ -12,7 +12,6 @@
  #include <QLayout>
@@ -81,7 +81,7 @@
  
  #include <KPluginFactory>
  #include <KPluginLoader>
-@@ -63,11 +63,8 @@ USBViewer::USBViewer(QWidget *parent, const QVariantList &) :
+@@ -63,11 +63,8 @@ USBViewer::USBViewer(QWidget *parent, co
  	_details = new QTextEdit(splitter);
  	_details->setReadOnly(true);
  
@@ -95,7 +95,7 @@
  	connect(_devices, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)), this, SLOT(selectionChanged(QTreeWidgetItem*)));
  
  	KAboutData *about = new KAboutData(I18N_NOOP("kcmusb"), 0, ki18n("KDE USB Viewer"),
-@@ -113,8 +110,12 @@ static void delete_recursive(QTreeWidgetItem *item, const QMap<int, QTreeWidgetI
+@@ -113,8 +110,12 @@ static void delete_recursive(QTreeWidget
  void USBViewer::refresh() {
  	QMap<int, QTreeWidgetItem*> new_items;
  
@@ -108,7 +108,7 @@
  
  	int level = 0;
  	bool found = true;
---- kinfocenter/Modules/usbview/usbdevices.cpp
+--- kinfocenter/Modules/usbview/usbdevices.cpp.orig	2015-06-26 03:17:21 UTC
 +++ kinfocenter/Modules/usbview/usbdevices.cpp
 @@ -27,9 +27,9 @@
  
@@ -131,7 +131,7 @@
  static QString catFile(QString fname) {
  	char buffer[256];
  	QString result;
-@@ -129,6 +130,7 @@ void USBDevice::parseLine(const QString& line) {
+@@ -129,6 +130,7 @@ void USBDevice::parseLine(const QString&
  	} else if (line.startsWith("P:"))
  		sscanf(line.toLocal8Bit().data(), "P:  Vendor=%x ProdID=%x Rev=%x.%x", &_vendorID, &_prodID, &_revMajor, &_revMinor);
  }
@@ -275,7 +275,7 @@
  bool USBDevice::parse(const QString &fname) {
  	_devices.clear();
  
-@@ -290,146 +362,19 @@ bool USBDevice::parseSys(const QString &dname) {
+@@ -290,146 +362,19 @@ bool USBDevice::parseSys(const QString &
  	return d.count();
  }
  
@@ -428,7 +428,7 @@
 -#endif // !(defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD))
 +#endif // defined(Q_OS_LINUX)
 +#endif // defined(HAVE_LIBUSB1)
---- kinfocenter/Modules/usbview/usbdevices.h
+--- kinfocenter/Modules/usbview/usbdevices.h.orig	2015-06-26 03:17:21 UTC
 +++ kinfocenter/Modules/usbview/usbdevices.h
 @@ -14,18 +14,9 @@
  #include <QList>

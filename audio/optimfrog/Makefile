@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE_i386=	SSE2
 OPTIONS_DEFINE?=	#
-SSE2_DESCR=	Use SSE2 instructions instead of x87 FP
+SSE2_DESCR=	Use SSE2 instructions instead of x87 FPU
 
 .include <bsd.port.pre.mk>
 
@@ -43,6 +43,6 @@ DISTNAME=	OptimFROG_FreeBSD_x86_${DISTVERSION:S/.//}
 .endif
 
 do-install:
-	@(cd ${WRKSRC} && ./install.sh -d ${STAGEDIR})
+	@(cd ${WRKSRC} && ./install.sh -d "${STAGEDIR}" -p "${PREFIX}")
 
 .include <bsd.port.post.mk>

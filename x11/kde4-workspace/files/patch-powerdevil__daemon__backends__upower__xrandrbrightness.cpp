@@ -1,6 +1,6 @@
---- ./powerdevil/daemon/backends/upower/xrandrbrightness.cpp.orig	2012-11-30 08:24:40.000000000 +0100
-+++ ./powerdevil/daemon/backends/upower/xrandrbrightness.cpp	2013-01-22 20:44:13.303230302 +0100
-@@ -69,6 +69,9 @@
+--- powerdevil/daemon/backends/upower/xrandrbrightness.cpp.orig	2015-06-26 03:17:21 UTC
++++ powerdevil/daemon/backends/upower/xrandrbrightness.cpp
+@@ -62,6 +62,9 @@ XRandrBrightness::XRandrBrightness()
          qWarning("No available Randr resources");
          return;
      }
@@ -10,7 +10,7 @@
  }
  
  XRandrBrightness::~XRandrBrightness()
-@@ -85,7 +88,7 @@
+@@ -89,7 +92,7 @@ bool XRandrBrightness::isSupported() con
  
  float XRandrBrightness::brightness() const
  {
