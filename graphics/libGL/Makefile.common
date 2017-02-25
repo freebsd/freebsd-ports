@@ -18,7 +18,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	13.0.4
+MESABASEVERSION=	13.0.5
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -79,9 +79,7 @@ CONFIGURE_ARGS+=	--enable-gbm
 CONFIGURE_ARGS+=	--enable-egl --with-egl-platforms=x11,drm
 
 # we don't care about GLes v1
-CONFIGURE_ARGS+=	--disable-gles1
-
-CONFIGURE_ARGS+=	--enable-gles2
+CONFIGURE_ARGS+=	--disable-gles1 --enable-gles2
 
 # Clover (OpenCL).
 .if ${OPSYS} == DragonFly || \
@@ -104,8 +102,7 @@ clover-pre-configure:
 	fi
 .endif
 
-CONFIGURE_ARGS+=	--enable-opencl \
-			--enable-opencl-icd
+CONFIGURE_ARGS+=	--enable-opencl --enable-opencl-icd
 .else
 CONFIGURE_ARGS+=	--disable-opencl
 .endif
@@ -140,27 +137,22 @@ PLIST_SUB+=     VDPAU="@comment "
 # VAAPI support?
 CONFIGURE_ARGS+=--disable-va
 
-ALL_DRI_DRIVERS=I915 I965 R200 RADEON SWRAST
-ALL_GALLIUM_DRIVERS=R300 R600 RADEONSI SVGA SWRAST
+ALL_DRI_DRIVERS=	I915 I965 RADEON R200 SWRAST
+ALL_GALLIUM_DRIVERS=	R300 R600 RADEONSI SVGA SWRAST
 
-.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == ia64
-DRI_DRIVERS=	${ALL_DRI_DRIVERS}
-GALLIUM_DRIVERS=	${ALL_GALLIUM_DRIVERS}
+.if ${ARCH} == amd64 || ${ARCH} == i386
+DRI_DRIVERS=		I915 I965 RADEON R200
+GALLIUM_DRIVERS=	R300 R600 RADEONSI SVGA
 .endif
 
 .if ${ARCH} == powerpc || ${ARCH} == powerpc64
-DRI_DRIVERS=	RADEON R200 SWRAST
-GALLIUM_DRIVERS=	R300 R600 RADEONSI SWRAST
+DRI_DRIVERS=		RADEON R200
+GALLIUM_DRIVERS=	R300 R600 RADEONSI
 .endif
 
-.if ${ARCH} == sparc64 || ${ARCH} == armv6
-DRI_DRIVERS=	SWRAST
-GALLIUM_DRIVERS=	SWRAST
-.endif
-
-# empty for unsupported arches
-DRI_DRIVERS+=
-GALLIUM_DRIVERS+=
+# software rendering for all arches
+DRI_DRIVERS+=		SWRAST
+GALLIUM_DRIVERS+=	SWRAST
 
 .for _d in ${ALL_DRI_DRIVERS}
 . if ${DRI_DRIVERS:M${_d}}
