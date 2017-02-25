@@ -1,0 +1,14 @@
+Argdata is a binary serialisation format similar to FreeBSD's nvlists.
+It differs from nvlists in that it uses data types that are more similar
+to YAML.
+
+Argdata is used by CloudABI as a replacement for string command line
+arguments and environment variables. CloudABI processes can start new
+processes by passing them a YAML-like tree of arguments, having file
+descriptors of resources annotated to the tree.
+
+This package provides a native port of the Argdata library, so that it
+can be used in native FreeBSD applications, but also to spawn CloudABI
+processes appropriately.
+
+WWW: https://github.com/NuxiNL/argdata
