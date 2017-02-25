@@ -29,7 +29,7 @@
  # Optional gem for LDAP authentication
  group :ldap do
 -  gem "net-ldap", "~> 0.12.0"
-+  gem "net-ldap", "~> 0.15.0"
++  gem "net-ldap", "~> 0.12"
  end
  
  # Optional gem for OpenID authentication

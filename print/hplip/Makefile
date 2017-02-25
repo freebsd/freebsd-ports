@@ -3,6 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.16.11
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -21,9 +22,10 @@ RUN_DEPENDS=	cups-filters>=0:print/cups-filters \
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 INSTALL_TARGET=	install-strip
-USES=		jpeg libtool pkgconfig python
+USES=		jpeg libtool pkgconfig python shebangfix
 USE_GNOME=	pygobject
 USE_LDCONFIG=	yes
+SHEBANG_GLOB=	*.py hpps pstotiff
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
@@ -36,32 +38,6 @@ CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 		--with-drvdir=${PREFIX}/share/cups/drv
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-
-FILES4FIX=	Makefile.in \
-		base/codes.py \
-		base/g.py \
-		base/password.py \
-		base/pkit.py \
-		base/queues.py \
-		base/services.py \
-		base/utils.py \
-		check.py \
-		fax/backend/hpfax.py \
-		fax/coverpages.py \
-		fax/filters/pstotiff \
-		hplip.list.in \
-		installer/core_install.py \
-		installer/dcheck.py \
-		installer/pluginhandler.py \
-		logcapture.py \
-		prnt/cups.py \
-		prnt/filters/hpps \
-		prnt/hpcups/HPCupsFilter.cpp \
-		prnt/hpijs/globals.cpp \
-		prnt/hpijs/hpcupsfax.cpp \
-		prnt/hpijs/hpijs.cpp \
-		ui/devmgr4.py \
-		ui4/devmgr5.py
 
 OPTIONS_DEFINE=	DOCS FAX SNMP SCAN X11 XSANE
 OPTIONS_DEFAULT=SNMP SCAN X11
@@ -93,21 +69,46 @@ XSANE_RUN_DEPENDS=	xsane:graphics/xsane
 DOCS_CONFIGURE_ENABLE=	doc-build
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-ldld||g; s|-ldl||g' \
+	@${REINPLACE_CMD} -e 's|-ldld||g;' \
+		-e 's|-ldl||g' \
 		-e 's,-lusb-1.0,-lusb,g' \
 		-e 's,libusb-1.0/libusb.h,libusb.h,g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e '/[[:space:]]install-dist_rulesDATA/ s,install-dist_rulesDATA,,' \
+	@${REINPLACE_CMD} -e '/[[:space:]]install-dist_rulesDATA/ s,install-dist_rulesDATA,,' \
 		-e '/[[:space:]]install-dist_rulessystemDATA/ s,install-dist_rulessystemDATA,,' \
 		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's,/etc/hp,${PREFIX}&,g' \
+	@${REINPLACE_CMD} -e 's,/etc/hp,${PREFIX}&,g' \
 		-e 's,/etc/cups,${LOCALBASE}&,g' \
 		-e 's,/etc/init.d,${LOCALBASE}/etc/rc.d,g' \
 		-e 's,/etc/sane.d,${LOCALBASE}&,g' \
 		-e 's,/usr/share,${LOCALBASE}/share,g' \
 		-e 's,/usr/include,${LOCALBASE}/include,g' \
-		${FILES4FIX:S,^,${WRKSRC}/,}
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/base/codes.py \
+		${WRKSRC}/base/g.py \
+		${WRKSRC}/base/password.py \
+		${WRKSRC}/base/pkit.py \
+		${WRKSRC}/base/queues.py \
+		${WRKSRC}/base/services.py \
+		${WRKSRC}/base/utils.py \
+		${WRKSRC}/check.py \
+		${WRKSRC}/fax/backend/hpfax.py \
+		${WRKSRC}/fax/coverpages.py \
+		${WRKSRC}/fax/filters/pstotiff \
+		${WRKSRC}/hplip.list.in \
+		${WRKSRC}/installer/core_install.py \
+		${WRKSRC}/installer/dcheck.py \
+		${WRKSRC}/installer/pluginhandler.py \
+		${WRKSRC}/logcapture.py \
+		${WRKSRC}/prnt/cups.py \
+		${WRKSRC}/prnt/filters/hpps \
+		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
+		${WRKSRC}/prnt/hpijs/globals.cpp \
+		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \
+		${WRKSRC}/prnt/hpijs/hpijs.cpp \
+		${WRKSRC}/ui/devmgr4.py \
+		${WRKSRC}/ui4/devmgr5.py
 	@${REINPLACE_CMD} -e 's/umask(0)/umask(0o022)/' \
 		-e 's/umask(0o111)/umask(0o133)/' \
 		${WRKSRC}/base/os_utils.py \
@@ -115,12 +116,6 @@ post-patch:
 		${WRKSRC}/fax/backend/hpfax.py \
 		${WRKSRC}/hpdio.py \
 		${WRKSRC}/installer/pluginhandler.py
-	${REINPLACE_CMD} -e 's,%USB_INCLUDE%,/usr/include,' \
-		${WRKSRC}/installer/core_install.py
-	${FIND} ${WRKSRC} -name '*.py' | ${XARGS} ${SED} -i '' \
-		-e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' \
-		-e 's,^#!/usr/bin/env python,#!${PYTHON_CMD},' \
-		-e 's,^#!/bin/env python,#!${PYTHON_CMD},'
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/hp/hplip.conf \
