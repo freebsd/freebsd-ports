@@ -9,7 +9,7 @@ CATEGORIES=	shells
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:shells/bash
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
-SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh
+SUB_LIST=	RUNFILE=${DATADIR}/bash_completion.sh
 
 OPTIONS_DEFINE=	CMAKE_MODULES DOCS
 OPTIONS_DEFAULT=CMAKE_MODULES
@@ -48,7 +48,7 @@ post-configure:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in CHANGES README.md doc/bash_completion.txt doc/bashrc doc/inputrc
-		${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
