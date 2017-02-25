@@ -1,4 +1,4 @@
---- ace/OS_NS_Thread.h.orig	2015-09-17 06:55:18 UTC
+--- ace/OS_NS_Thread.h.orig	2016-05-02 07:59:38 UTC
 +++ ace/OS_NS_Thread.h
 @@ -42,6 +42,12 @@
  # endif /* VxWorks and ! SMP */

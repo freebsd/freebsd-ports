@@ -1,4 +1,4 @@
---- ace/OS_NS_signal.h.orig	2015-09-17 06:55:18 UTC
+--- ace/OS_NS_signal.h.orig	2016-05-02 07:59:38 UTC
 +++ ace/OS_NS_signal.h
 @@ -31,10 +31,10 @@
  #endif

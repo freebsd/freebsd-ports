@@ -1,6 +1,6 @@
---- ace/os_include/os_pthread.h.orig	2015-09-17 06:55:18 UTC
+--- ace/os_include/os_pthread.h.orig	2016-05-02 07:59:38 UTC
 +++ ace/os_include/os_pthread.h
-@@ -277,7 +277,11 @@
+@@ -275,7 +275,11 @@
  #  undef THR_DAEMON
  
  #  define THR_BOUND               0x00000001
