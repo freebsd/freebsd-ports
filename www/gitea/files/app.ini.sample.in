@@ -44,6 +44,7 @@ HTTP_ADDR    = 127.0.0.1
 HTTP_PORT    = 3000
 ROOT_URL     = http://localhost:3000/
 DISABLE_SSH  = false
+SSH_DOMAIN   = %(DOMAIN)s
 SSH_PORT     = 22
 OFFLINE_MODE = false
 APP_DATA_PATH = /var/db/gitea/data

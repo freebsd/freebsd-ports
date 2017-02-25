@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitea
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -12,7 +12,8 @@ COMMENT=	Compact self-hosted Git service
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	git:devel/git
+RUN_DEPENDS=	bash:shells/bash \
+		git:devel/git
 
 USES=		go
 USE_GITHUB=	yes
