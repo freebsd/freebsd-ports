@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpci
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.4
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
@@ -13,16 +13,18 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PCI configuration space I/O made easy
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 
 ALL_TARGET=	lib/libpci.a
-CPPFLAGS+=	-fPIC
+CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
 USES=		gmake tar:xz
 
 PLIST_FILES=	${LIBPCI_FILES} \
 		lib/libpci.so
+PORTDATA=	config.mk
 
 LIBPCI_FILES=	include/pci/config.h \
 		include/pci/header.h \
@@ -37,14 +39,18 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/d; /^CFLAGS=/ s|=|+=|; /^IDSDIR=/ s|$$|/pciids|; /^OPT=/d; /^PREFIX=/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|^#include "|&pci/|' ${WRKSRC}/lib/pci.h
 
+do-configure:
+	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} lib/config.h
+
 post-build:
 	@cd ${WRKSRC}/lib/ && ${CC} ${CFLAGS} ${STRIP} -Wl,-soname=libpci.so.3 -shared *.o -lz -o libpci.so.3
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/pci/
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/pci/ ${STAGEDIR}${DATADIR}/
 .for file in ${LIBPCI_FILES}
 	${INSTALL_DATA} ${WRKSRC}/lib/${file:T} ${STAGEDIR}${PREFIX}/${file}
 .endfor
 	${LN} -fs libpci.so.3 ${STAGEDIR}${PREFIX}/lib/libpci.so
+	${INSTALL_DATA} ${WRKSRC}/lib/config.mk ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
