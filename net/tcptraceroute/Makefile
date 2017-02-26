@@ -16,7 +16,7 @@ LIB_DEPENDS=	libnet.so:net/libnet
 
 OPTIONS_DEFINE=	DOCS
 
-PORTSCOUT=	limit:^[0-9]
+PORTSCOUT=	ignore:1
 
 GNU_CONFIGURE=	yes
 USES=		gmake localbase
