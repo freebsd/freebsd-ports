@@ -14,6 +14,8 @@ COMMENT=	NetBIOS auditing tool
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		does not fetch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 RESTRICTED=	Redistribution prohibited by the license
 
