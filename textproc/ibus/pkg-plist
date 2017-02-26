@@ -51,7 +51,7 @@ include/ibus-1.0/ibusenginesimple.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.511
+lib/libibus-1.0.so.5.0.514
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.py
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.pyc
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.pyo
@@ -167,6 +167,7 @@ man/man1/ibus-daemon.1.gz
 man/man1/ibus-setup.1.gz
 man/man1/ibus.1.gz
 share/applications/ibus-setup.desktop
+share/dbus-1/services/org.freedesktop.IBus.service
 %%PORTDOCS%%%%DOCSDIR%%/IBusAttrList.html
 %%PORTDOCS%%%%DOCSDIR%%/IBusAttribute.html
 %%PORTDOCS%%%%DOCSDIR%%/IBusBus.html
@@ -213,7 +214,6 @@ share/applications/ibus-setup.desktop
 %%PORTDOCS%%%%DOCSDIR%%/api-index-full.html
 %%PORTDOCS%%%%DOCSDIR%%/ibus.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/left.png
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
@@ -225,6 +225,7 @@ share/applications/ibus-setup.desktop
 %%GCONF%%%%DATADIR%%/component/gconf.xml
 %%DCONF%%%%DATADIR%%/component/dconf.xml
 %%ENGINE%%%%DATADIR%%/component/simple.xml
+%%EMOJI%%%%DATADIR%%/dicts/emoji.dict
 %%DATADIR%%/keymaps/common
 %%DATADIR%%/keymaps/in
 %%DATADIR%%/keymaps/jp
