@@ -28,6 +28,8 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 PORTDOCS=	*
 
+BROKEN_armv6=	fails to compile: invokes x86 assembler
+
 DIRECTFB_SHLIB=	6.0.11	# LT_BINARY.LT_AGE.LT_REVISION
 DIRECTFB_BIN=	${DIRECTFB_SHLIB:R:R}	# LT_BINARY
 PLIST_SUB+=	DIRECTFB_VERSION="${PORTVERSION}" \
@@ -58,13 +60,13 @@ TEST_CONFIGURE_WITH=	tests
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "arm"
+.if ${ARCH} == "armv6" || ${ARCH} == "aarch64"
 PLIST_SUB+=	ARCH_ARM=""
 .else
 PLIST_SUB+=	ARCH_ARM="@comment "
 .endif
 
-.if ${ARCH} == "powerpc"
+.if ${ARCH} == "powerpc" || ${ARCH} == "powerpc64"
 PLIST_SUB+=	ARCH_POWERPC=""
 .else
 PLIST_SUB+=	ARCH_POWERPC="@comment "

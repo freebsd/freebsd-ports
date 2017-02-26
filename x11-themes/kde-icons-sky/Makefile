@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 COMMENT=	KDE SKY iconset
 
 BROKEN=		does not fetch (403 forbidden)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

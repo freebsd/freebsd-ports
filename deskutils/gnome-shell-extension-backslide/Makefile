@@ -13,6 +13,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome-shell extension for background slideshow
 
 BROKEN=		checksum mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas

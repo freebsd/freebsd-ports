@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot-resolver
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -22,10 +21,11 @@ LIB_DEPENDS=	libknot.so:dns/knot2 \
 
 CONFLICTS=	knot-1.* knot1-[0-6].*
 
-MAKE_ARGS+=	PREFIX=${PREFIX}
+MAKE_ARGS+=	PREFIX=${LOCALBASE}
 MAKE_ARGS+=	LIBDIR=${PREFIX}/lib
-MAKE_ARGS+=	PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig
-MAKE_ARGS+=	lmdb_CFLAGS=-I${LOCALBASE}/include lmdb_LIBS=-llmdb
+MAKE_ARGS+=	MANDIR=${PREFIX}/man
+MAKE_ARGS+=	PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig
+MAKE_ARGS+=	lmdb_CFLAGS=-I${PREFIX}/include lmdb_LIBS=-llmdb
 
 USES=		gmake libtool pkgconfig tar:xz
 USE_CSTD=	c99

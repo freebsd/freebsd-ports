@@ -12,6 +12,8 @@ COMMENT=	Open source firmware for Vex robotics controllers
 LICENSE=	GPLv3
 
 BROKEN=		does not build (crt0iz.c:31: error 226: no type specifier for 'stack')
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 BROKEN_powerpc64=	does not build
 
 BUILD_DEPENDS=	sdcc:lang/sdcc \

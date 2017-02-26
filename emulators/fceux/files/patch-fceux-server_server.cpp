@@ -1,4 +1,4 @@
---- fceux-server/server.cpp.orig	2012-11-02 13:41:36 UTC
+--- fceux-server/server.cpp.orig	2017-02-26 13:33:11 UTC
 +++ fceux-server/server.cpp
 @@ -114,7 +114,7 @@ int LoadConfigFile(char *fn)
   if(fp=fopen(fn,"rb"))

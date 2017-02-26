@@ -11,6 +11,8 @@ COMMENT=	KDE Cezanne iconset
 USES=		tar:bzip2
 
 BROKEN=		does not fetch (connect timeout)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 WRKSRC=		${WRKDIR}/Cezanne
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cf
-PORTVERSION=	6.22.2
+PORTVERSION=	6.24.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -27,11 +27,10 @@ STRIP=		# stripping can break go binaries
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e "s/BUILT_FROM_SOURCE/${PORTVERSION}/g" \
-		${WRKSRC}/cf/app_constants.go
-	@: ${LN} -s ../.. ${WRKSRC}/vendor/code.cloudfoundry.org/cli
+do-build:
+	(cd ${WRKDIR}; \
+	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} \
+		install -v -ldflags="-X code.cloudfoundry.org/cli/version.binaryVersion=${PORTVERSION}" ${GO_TARGET})
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

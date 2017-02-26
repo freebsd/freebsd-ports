@@ -26,6 +26,8 @@ CMAKE_ARGS=	-DSEQAN_BUILD_SYSTEM="SEQAN_RELEASE_APPS"
 
 USE_GCC=	yes
 
+BROKEN_armv6=		fails to link: undefined reference to _Unwind_GetIP@GCC_3.0
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

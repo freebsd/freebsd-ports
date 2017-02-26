@@ -11,6 +11,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	USB radio control utility
 
 BROKEN=		unfetchable (SF project removed?)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 RUN_DEPENDS=	snack>=2.2.10_4:audio/snack
 

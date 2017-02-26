@@ -2,6 +2,14 @@ bin/ndselect
 bin/numdiff
 man/man1/ndselect.1.gz
 man/man1/numdiff.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/numdiff.html
 %%PORTDOCS%%%%DOCSDIR%%/numdiff.pdf
 %%PORTDOCS%%%%DOCSDIR%%/numdiff.txt
