@@ -58,12 +58,12 @@ sbin/tune2fs
 %%NLS%%share/locale/de/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/es/LC_MESSAGES/e2fsprogs.mo
-share/locale/fi/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/id/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/it/LC_MESSAGES/e2fsprogs.mo
-share/locale/ms/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/e2fsprogs.mo
