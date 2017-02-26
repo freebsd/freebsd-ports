@@ -3,6 +3,7 @@
 
 PORTNAME=	emkatic
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	russian emulators
 MASTER_SITES=	SF/${PORTNAME}/eMKatic%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -12,8 +13,6 @@ COMMENT=	Emulator of Elektronika RPN programmable calculator series
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
-
-BROKEN_FreeBSD_11=	does not build (Fatal: (10022) Can't find unit Serial used by Globe)
 
 BUILD_DEPENDS=	lazbuild:editors/lazarus \
 		fpcres:lang/fpc-utils
