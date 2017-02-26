@@ -1,20 +1,6 @@
---- config.m4.orig	2017-01-24 02:05:48 UTC
+--- config.m4.orig	2017-02-24 07:21:23 UTC
 +++ config.m4
-@@ -85,7 +85,13 @@ AC_DEFUN([AC_SWOOLE_CPU_AFFINITY],
-     AC_MSG_CHECKING([for cpu affinity])
-     AC_TRY_COMPILE(
-     [
-+		#ifdef __FreeBSD__
-+		#include <sys/types.h>
-+		#include <sys/cpuset.h>
-+		typedef cpuset_t cpu_set_t;
-+		#else
- 		#include <sched.h>
-+		#endif
-     ], [
- 		cpu_set_t cpu_set;
- 		CPU_ZERO(&cpu_set);
-@@ -178,7 +184,7 @@ if test "$PHP_SWOOLE" != "no"; then
+@@ -232,7 +232,7 @@ if test "$PHP_SWOOLE" != "no"; then
      AC_CHECK_LIB(c, poll, AC_DEFINE(HAVE_POLL, 1, [have poll]))
      AC_CHECK_LIB(c, sendfile, AC_DEFINE(HAVE_SENDFILE, 1, [have sendfile]))
      AC_CHECK_LIB(c, kqueue, AC_DEFINE(HAVE_KQUEUE, 1, [have kqueue]))
