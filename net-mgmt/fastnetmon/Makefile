@@ -13,8 +13,6 @@ COMMENT=	Very fast DDoS analyzer with sflow/netflow/mirror support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		liblog4cpp.so:devel/log4cpp \
 		libndpi.so:net/ndpi \
@@ -33,6 +31,9 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/src
 
 CMAKE_ARGS+=	-DDISABLE_PF_RING_SUPPORT=ON
 CMAKE_INSTALL_PREFIX=	${PREFIX}
+
+BROKEN_armv6=		Does not build: invokes x86 assembler
+BROKEN_powerpc64=	Does not build
 
 USE_RC_SUBR=	${PORTNAME}
 
