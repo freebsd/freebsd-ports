@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 CATEGORIES=	lang
-PORTREVISION=	1
 PKGNAMESUFFIX=	-rtl-extra
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org

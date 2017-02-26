@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 CATEGORIES=	devel lang
-PORTREVISION=	2
 PKGNAMESUFFIX=	-bfd
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org

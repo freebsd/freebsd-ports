@@ -2,14 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	fpc
-DISTVERSIONPREFIX=	release_
-DISTVERSION=	3_0_0
-PORTREVISION?=	1
+PORTVERSION=	3.0.2
+PORTREVISION?=	0
 CATEGORIES?=	lang
-MASTER_SITES=	http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
+MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://freepascal.stack.nl/pub/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://ftp.no.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
+		ftp://ftp.us.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
+		SF/freepascal/Source/${PORTVERSION}:source \
+		http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
 		LOCAL/acm/freepascal/:bootstrap \
-		LOCAL/marino:man
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+		LOCAL/acm/freepascal/:man
+DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	freebsd-fpc@FreeBSD.org
@@ -17,13 +23,13 @@ COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
 USES=		gmake iconv
 ONLY_FOR_ARCHS=	i386 amd64
-BOOTVER=	2.6.4
-MANVER=		3.0.0
+BOOTVER=	3.0.2
+MANVER=		3.0.2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	fpc-svn
-GH_PROJECT=	fpc
-FPCSRCDIR=	${GH_PROJECT}-${GH_TAGNAME}
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	fpc-svn
+#GH_PROJECT=	fpc
+FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -77,7 +83,7 @@ do-extract:
 	@${TAR} -xzf ${_DISTDIR}/fpc-${MANVER}.man.tar.gz --directory ${WRKDIR}
 # unpack source distribution
 	@(cd ${WRKDIR} && ${GZIP_CMD} -dc \
-		${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+		${_DISTDIR}/${DISTNAME:S/$/.source/}${EXTRACT_SUFX} | \
 		${TAR} -xf - \
 		${FPCSRCDIR}/compiler \
 		${FPCSRCDIR}/rtl \

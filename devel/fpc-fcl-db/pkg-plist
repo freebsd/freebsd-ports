@@ -87,6 +87,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpdddiff.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpdddiff.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpddfb.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpddfb.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpddmssql.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpddmssql.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpddmysql40.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpddmysql40.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpddmysql41.o
@@ -204,6 +206,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/sqliteds.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/sqlscript.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/sqlscript.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/sqlscript.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/sqltypes.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/sqltypes.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.rsj
