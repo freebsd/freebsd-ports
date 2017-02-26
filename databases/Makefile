@@ -882,6 +882,7 @@
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel-helpers
     SUBDIR += rubygem-arel6
+    SUBDIR += rubygem-arel7
     SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
