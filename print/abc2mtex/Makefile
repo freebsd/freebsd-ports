@@ -11,6 +11,9 @@ DISTNAME=		${PORTNAME}${PORTVERSION}
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Music TeX converter from "abc" to MusiXTeX format
 
+DEPRECATED=	Depends on expiring print/musixtex
+EXPIRATION_DATE=	2017-03-27
+
 RUN_DEPENDS=		musixtex:print/musixtex
 
 USE_GCC=	any

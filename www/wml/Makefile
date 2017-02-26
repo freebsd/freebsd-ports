@@ -12,6 +12,8 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 BROKEN=		SF project removed (unfetchable)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

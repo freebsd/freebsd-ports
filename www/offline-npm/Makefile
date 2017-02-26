@@ -16,6 +16,8 @@ BUILD_DEPENDS=	npm>0:www/npm
 RUN_DEPENDS=	npm>0:www/npm
 
 BROKEN=	Support for this project is broken with npm >= v3.x
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	commenthol

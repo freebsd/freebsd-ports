@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to configure
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" \

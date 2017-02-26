@@ -30,6 +30,8 @@ CONFIG_FILES=	abuse.txt.in dest.blk mix.cfg news.hlp pubring.mix type1.hlp \
 OPTIONS_DEFINE=	DOCS
 
 BROKEN=		upstream disappeared (unfetchable)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 post-patch:
 	@${RM} ${WRKSRC}/Mix/conf/mix.cfg.orig

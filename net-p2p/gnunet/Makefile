@@ -13,6 +13,8 @@ COMMENT=	Anonymous, distributed, reputation-based network
 LICENSE=	GPLv3
 
 BROKEN=		runtime malfunction caused by missing gnunet-daemon-hostlist (bugs no. 205042)
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libopus.so:audio/opus \

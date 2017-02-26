@@ -12,6 +12,8 @@ COMMENT=	Go Tools
 LICENSE=	BSD3CLAUSE
 
 BROKEN=		does not build (cannot find package "golang.org/x/net/html")
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2017-03-27
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
