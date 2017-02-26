@@ -3,12 +3,12 @@
 
 PORTNAME=	checkmol
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/checkmol/
 EXTRACT_SUFX=	.pas
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Analyze molecules for the presence of functional groups
 
 LICENSE=	GPLv2+

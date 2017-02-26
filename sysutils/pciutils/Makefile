@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pciutils
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpci.so:devel/libpci
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 
 ALL_TARGET=	lspci lspci.8 setpci setpci.8
-CPPFLAGS+=	-fPIC
+CFLAGS+=	-fPIC
 LDFLAGS+=	-lpci
 USES=		gmake localbase:ldflags tar:xz
 
@@ -29,6 +29,10 @@ PLIST_FILES=	bin/lspci \
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/d; /^CFLAGS=/ s|=|+=|; /^IDSDIR=/ s|$$|/pciids|; /^OPT=/d; /^PREFIX=/d; s| lib/$$(PCILIB)||' ${WRKSRC}/Makefile
+
+do-configure:
+	${CP} ${LOCALBASE}/include/pci/config.h ${WRKSRC}/lib/config.h
+	${CP} ${LOCALBASE}/share/libpci/config.mk ${WRKSRC}/lib/config.mk
 
 do-install:
 	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} lspci setpci ${STAGEDIR}${PREFIX}/bin/

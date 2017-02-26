@@ -179,6 +179,7 @@
     SUBDIR += formication
     SUBDIR += foswiki
     SUBDIR += fpc-fastcgi
+    SUBDIR += fpc-googleapi
     SUBDIR += fpc-httpd22
     SUBDIR += fpc-httpd24
     SUBDIR += free-sa-devel

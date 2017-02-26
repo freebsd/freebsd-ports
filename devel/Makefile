@@ -588,6 +588,7 @@
     SUBDIR += fpc-fcl-json
     SUBDIR += fpc-fcl-net
     SUBDIR += fpc-fcl-passrc
+    SUBDIR += fpc-fcl-pdf
     SUBDIR += fpc-fcl-registry
     SUBDIR += fpc-fcl-res
     SUBDIR += fpc-fcl-sdo
@@ -1512,7 +1513,6 @@
     SUBDIR += linux-c7-sdl12
     SUBDIR += linux-c7-sdl20
     SUBDIR += linux-kernel
-    SUBDIR += linux_kdump
     SUBDIR += linux_libusb
     SUBDIR += lion
     SUBDIR += listserialc

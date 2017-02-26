@@ -1,18 +1,15 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 CATEGORIES=	devel lang
-PKGNAMESUFFIX=	-bfd
+PKGNAMESUFFIX=	-fcl-pdf
 
 MAINTAINER=	freebsd-fpc@FreeBSD.org
-COMMENT=	Free Pascal interface for the GNU Binary Format description
+COMMENT=	Free Pascal pdf (FCL)
 
-USE_FPC=	yes
+USE_FPC=	fcl-base fcl-image fcl-res pasjpeg rtl-objpas
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR=	${WRKUNITDIR}
-
-RUN_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/binutils
 
 .include "${MASTERDIR}/Makefile"
