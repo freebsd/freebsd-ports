@@ -42,6 +42,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 BROKEN_aarch64=		Fails to install: runaway process
+BROKEN_armv6=		Fails to install: runaway process
 BROKEN_mips64=		Fails to install: runaway process
 
 .if !defined(WITH_TBDIR)
