@@ -1,7 +1,7 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
 # $FreeBSD$
 
-COMMENT=	32bit Wine built with the Staging patchset for 64bit FreeBSD
+COMMENT=	32-bit Wine built with the Staging patchset for 64-bit FreeBSD
 
 SLAVE_PORT=	i386-wine-devel
 
