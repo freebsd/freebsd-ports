@@ -1,4 +1,4 @@
---- src/cheat.cpp.orig	2013-04-13 02:52:13 UTC
+--- src/cheat.cpp.orig	2017-02-26 13:33:11 UTC
 +++ src/cheat.cpp
 @@ -216,7 +216,7 @@ void FCEU_LoadGameCheats(FILE *override)
  	}

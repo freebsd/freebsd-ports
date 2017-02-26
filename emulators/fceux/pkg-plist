@@ -93,6 +93,13 @@ share/applications/fceux.desktop
 %%DATADIR%%/palettes/FCEU-13-default_nitsuja.pal
 %%DATADIR%%/palettes/FCEU-15-nitsuja_new.pal
 %%DATADIR%%/palettes/FCEUX.pal
+%%DATADIR%%/palettes/RP2C03.pal
+%%DATADIR%%/palettes/RP2C04_0001.pal
+%%DATADIR%%/palettes/RP2C04_0002.pal
+%%DATADIR%%/palettes/RP2C04_0003.pal
+%%DATADIR%%/palettes/RP2C04_0004.pal
+%%DATADIR%%/palettes/SONY_CXA2025AS_US.pal
+%%DATADIR%%/palettes/Unsaturated-V6.pal
 %%DATADIR%%/palettes/nestopia_rgb.pal
 %%DATADIR%%/palettes/nestopia_yuv.pal
 %%DATADIR%%/tools/taseditor_patterns.txt
