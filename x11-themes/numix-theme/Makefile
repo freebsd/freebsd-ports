@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numix
-PORTVERSION=	2.6.5
+PORTVERSION=	2.6.6
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
