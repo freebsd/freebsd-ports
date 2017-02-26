@@ -68,11 +68,11 @@ MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
 
 _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi \
 		fcl-async fcl-base fcl-db fcl-extra fcl-fpcunit fcl-image \
-		fcl-js fcl-json fcl-net fcl-passrc fcl-registry fcl-res \
-		fcl-sdo fcl-sound fcl-stl fcl-web fcl-xml fftw \
-		fpindexer fppkg fv gdbint gdbm gmp graph gtk2 hermes \
-		httpd22 httpd24 ibase iconvenc imagemagick ldap libcurl \
-		libgd libpng libvlc libxml2 lua mad modplug mysql \
+		fcl-js fcl-json fcl-net fcl-passrc fcl-pdf fcl-registry \
+		fcl-res fcl-sdo fcl-sound fcl-stl fcl-web fcl-xml fftw \
+		fpindexer fppkg fv gdbint gdbm gmp googleapi graph gtk2 \
+		hermes httpd22 httpd24 ibase iconvenc imagemagick \
+		ldap libcurl libgd libpng libvlc libxml2 lua mad modplug mysql \
 		ncurses newt numlib odbc oggvorbis openal opengl openssl \
 		oracle pasjpeg pcap postgres proj4 pthreads pxlib regexpr \
 		rexx rsvg rtl-console rtl-extra rtl-objpas rtl-unicode sdl \
@@ -140,6 +140,7 @@ fcl_js_UNIT=	devel/fpc-fcl-js
 fcl_json_UNIT=	devel/fpc-fcl-json
 fcl_net_UNIT=	devel/fpc-fcl-net
 fcl_passrc_UNIT=	devel/fpc-fcl-passrc
+fcl_pdf_UNIT=	devel/fpc-fcl-pdf
 fcl_registry_UNIT=	devel/fpc-fcl-registry
 fcl_res_UNIT=	devel/fpc-fcl-res
 fcl_sdo_UNIT=	devel/fpc-fcl-sdo
@@ -155,6 +156,7 @@ fv_UNIT=	devel/fpc-fv
 hermes_UNIT=	graphics/fpc-hermes
 gdbm_UNIT=	databases/fpc-gdbm
 gmp_UNIT=	math/fpc-gmp
+googleapi_UNIT=	www/fpc-googleapi
 gtk2_UNIT=	x11-toolkits/fpc-gtk2
 iconvenc_UNIT=	converters/fpc-iconvenc
 imagemagick_UNIT=	graphics/fpc-imagemagick

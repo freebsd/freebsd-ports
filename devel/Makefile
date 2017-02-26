@@ -588,6 +588,7 @@
     SUBDIR += fpc-fcl-json
     SUBDIR += fpc-fcl-net
     SUBDIR += fpc-fcl-passrc
+    SUBDIR += fpc-fcl-pdf
     SUBDIR += fpc-fcl-registry
     SUBDIR += fpc-fcl-res
     SUBDIR += fpc-fcl-sdo
