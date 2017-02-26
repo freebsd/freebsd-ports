@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.txz
 DIST_SUBDIR=	freebsd:${OSREL:C/\..*//}:x86:64
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT?=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
+COMMENT?=	32-bit Microsoft Windows compatibility environment for 64-bit FreeBSD
 
 LICENSE=        LGPL21 LGPL3
 LICENSE_COMB=   dual
