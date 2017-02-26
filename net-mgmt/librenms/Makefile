@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.23
-PORTEPOCH=  1
-PORTREVISION=   3
+PORTVERSION=	1.24
+PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-
-USE_GITHUB= yes
-GH_ACCOUNT= librenms
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
@@ -18,10 +14,8 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
 
-USES=		python shebangfix
-SHEBANG_FILES=	html/js/makemini.pl mibs/process.pl \
-		scripts/cron-hourly.sh scripts/cron-minute.sh \
-		scripts/cron.sh scripts/deploy-docs.sh scripts/ifAlias \
+USES=		php:cli python shebangfix
+SHEBANG_FILES=	mibs/process.pl scripts/deploy-docs.sh scripts/ifAlias \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
@@ -30,8 +24,7 @@ SHEBANG_FILES=	html/js/makemini.pl mibs/process.pl \
 		scripts/Migration/XML_Conversion/mkdir.sh validate.php \
 		scripts/removespikes.php scripts/agent-local/nfs-stats.sh \
 		scripts/removespikes.pl scripts/watchmaillog/watchmaillog.pl
-USE_PHP=	ctype filter gd json mcrypt mysql session snmp tokenizer xml
-WANT_PHP_CLI=	yes
+USE_PHP=	ctype filter gd json mcrypt mysqli session snmp tokenizer xml
 
 NO_BUILD=	yes
 
@@ -63,8 +56,8 @@ X11_RUN_DEPENDS_OFF=	Magick-config:graphics/ImageMagick-nox11 \
 			mtr:net/mtr-nox11
 
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
-MYSQLD_USE=		MYSQL=server
-MYSQLD_USE_OFF=		MYSQL=client
+MYSQLD_USES=		mysql:server
+MYSQLD_USES_OFF=	mysql:client
 
 SUB_FILES+=	pkg-message
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
@@ -88,7 +81,7 @@ APACHEMOD_VARS_ON=	WANT_PHP_MOD=yes
 APACHEMOD_USE=		APACHE_RUN=22+
 .else
 # Package builder doesn't create php5 with module
-WANT_PHP_WEB=	yes
+USES=		php:web
 .endif
 
 post-patch:
