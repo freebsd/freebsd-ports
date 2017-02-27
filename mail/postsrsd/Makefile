@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postsrsd
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	mail
 
 MAINTAINER=	ports@bsdserwis.com
@@ -31,6 +30,6 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_CMAKE_ON=	-DENABLE_DOCS:STRING="ON"
 
-PLIST_FILES=	sbin/postsrsd man/man8/postsrsd.8.gz etc/postsrsd.secret
+PLIST_FILES=	sbin/postsrsd man/man8/postsrsd.8.gz
 
 .include <bsd.port.mk>
