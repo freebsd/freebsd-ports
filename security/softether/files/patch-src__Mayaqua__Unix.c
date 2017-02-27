@@ -1,6 +1,6 @@
---- src/Mayaqua/Unix.c.orig	2014-06-08 06:19:14 UTC
+--- src/Mayaqua/Unix.c.orig	2016-05-03 06:16:53 UTC
 +++ src/Mayaqua/Unix.c
-@@ -916,7 +916,7 @@
+@@ -931,7 +931,7 @@ void *UnixNewSingleInstance(char *instan
  	GetExeDir(dir, sizeof(dir));
  
  	// File name generation
@@ -9,16 +9,16 @@
  
  	fd = open(name, O_WRONLY);
  	if (fd == -1)
-@@ -2254,7 +2254,7 @@
+@@ -2320,7 +2320,7 @@ void UnixGenPidFileName(char *name, UINT
  	Hash(hash, exe_name, StrLen(exe_name), false);
  	BinToStr(tmp1, sizeof(tmp1), hash, sizeof(hash));
  
 -	Format(name, size, "%s/.pid_%s", dir, tmp1);
-+	Format(name, size, "/var/db/softether/.pid_%s", tmp1);
++	Format(name, size, "/var/db/softether/%s.pid", tmp1);
  }
  
  // Delete the PID file
-@@ -2299,7 +2299,7 @@
+@@ -2365,7 +2365,7 @@ void UnixGenCtlFileName(char *name, UINT
  	Hash(hash, exe_name, StrLen(exe_name), false);
  	BinToStr(tmp1, sizeof(tmp1), hash, sizeof(hash));
  

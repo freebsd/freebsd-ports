@@ -1,17 +1,20 @@
 **************************************************************************
 
+To run softether vpn client from startup, add
+softether_client_enable="YES" in your rc.conf.
+
 To run softether vpn server from startup, add
 softether_server_enable="YES" in your rc.conf.
 
 To run softether vpn bridge from startup, add
 softether_bridge_enable="YES" in your rc.conf.
 
-To run softether vpn client from startup, add
-softether_client_enable="YES" in your rc.conf.
-
 Initial and further configuration of all softether services can be
 done either by using a Windows client to connect to the running
 services or by vpncmd from command line.
+
+Please note client and bridge functionality is not fully
+supported on FreeBSD right now.
 
 When removing SoftEther VPN without the desire to reinstall, please
 ensure to remove the directory /var/db/softether as well.
