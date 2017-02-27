@@ -11,8 +11,10 @@ COMMENT=	Manages persistent connections using Net::HTTP
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
+DEPRECATED=	Use www/rubygem-net-http-persistent2 instead
+EXPIRATION_DATE=2017-02-28
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
