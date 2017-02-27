@@ -11,42 +11,27 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CTAN Fandol: Four GNU GPLv3-licensed Chinese OpenType fonts
 
 LICENSE=	GPLv3
+LICENSE_FILES=	${WRKSRC}/fandol/COPYING
 
-USE_XORG=	x11
-USES=		zip fonts
+USES=		fonts zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 FONTNAME=	fandol
 
 SUB_FILES=	pkg-message
 
-PORTDOCS=	README COPYING
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/fandol/*.otf ${STAGEDIR}${FONTSDIR}
 
-	${INSTALL_DATA} ${WRKSRC}/fandol/FandolSong-Bold.otf \
-		${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fandol/FandolSong-Regular.otf \
-		${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fandol/FandolHei-Regular.otf \
-		${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fandol/FandolHei-Bold.otf \
-		${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fandol/FandolFang-Regular.otf \
-		${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fandol/FandolKai-Regular.otf \
-		${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fandol/FandolBraille-Display.otf \
-		${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fandol/FandolBraille-Regular.otf \
-		${STAGEDIR}${FONTSDIR}
-
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/fandol/README \
-		${WRKSRC}/fandol/COPYING \
-			${STAGEDIR}${DOCSDIR}
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/fandol/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
