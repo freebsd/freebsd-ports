@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.19.15
-PORTREVISION=	9
+PORTVERSION=	0.20.5
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -15,28 +14,33 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libicudata.so:devel/icu
 
-USES=		gmake pkgconfig compiler:c++11-lib tar:xz
+USES=		compiler:c++14-lang gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
 USE_RC_SUBR=	${PORTNAME}
-CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar \
-		--disable-libwrap
+CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar
 CFLAGS+=	-I${PREFIX}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/sidplay/builders
 
+#Workaround (transient?) link error with libwrap
+CONFIGURE_ARGS+=--disable-libwrap
+
 BROKEN_powerpc64=	Does not build on powerpc64
 
-PORTDOCS=	AUTHORS README COPYING NEWS
+PORTDOCS=	AUTHORS README.md COPYING NEWS
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	ID3TAG IPV6 ARCHIVE SAMPLERATE SQLITE3 \
-		CDPARANOIA LAME MMS VORBISENC DOCS
+OPTIONS_DEFINE=	ID3TAG IPV6 ARCHIVE SQLITE3 \
+		LAME VORBISENC DOCS
 
-OPTIONS_RADIO=	ZEROCONF
+OPTIONS_RADIO=	RESAMPLER ZEROCONF
+
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
+
+OPTIONS_RADIO_RESAMPLER=	SAMPLERATE SOXR
 
 OPTIONS_MULTI=	FILE_FORMAT
 OPTIONS_MULTI_FILE_FORMAT=	AAC ADPLUG FFMPEG FLAC FLUIDSYNTH \
@@ -44,8 +48,12 @@ OPTIONS_MULTI_FILE_FORMAT=	AAC ADPLUG FFMPEG FLAC FLUIDSYNTH \
 	   OPUS SIDPLAY2 SNDFILE TREMOR TWOLAME \
 	   VORBIS WAV WAVPACK WILDMIDI
 
-OPTIONS_GROUP=	PLAYBACK
-OPTIONS_GROUP_PLAYBACK=	AO CURL HTTPD JACK OPENAL OSS PIPE PULSEAUDIO SHOUTCAST
+OPTIONS_GROUP=	ACCESS PLAYBACK
+
+OPTIONS_GROUP_ACCESS=	CDPARANOIA CURL MMS SMB YAJL
+
+OPTIONS_GROUP_PLAYBACK=	AO HTTPD JACK OPENAL OSS PIPE PULSEAUDIO \
+			SHOUTCAST SNDIO
 
 ADPLUG_DESC=	AdPlug support
 GME_DESC=	GME support (video game music files)
@@ -56,8 +64,9 @@ TREMOR_DESC=	Tremor decoder (not with SHOUTCAST; use VORBIS)
 TWOLAME_DESC=	TwoLAME support (mp2)
 VORBISENC_DESC=	Ogg Vorbis encoder
 WILDMIDI_DESC=	WildMIDI support (MIDI files)
+YAJL_DESC=	SoundCloud support via libyajl
 
-OPTIONS_DEFAULT=ID3TAG MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE CURL
+OPTIONS_DEFAULT=HTTPD ID3TAG MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE CURL
 
 AAC_CONFIGURE_ENABLE=aac
 AAC_LIB_DEPENDS=libfaad.so:audio/faad
@@ -111,8 +120,14 @@ SAMPLERATE_CONFIGURE_ENABLE=lsr
 SAMPLERATE_LIB_DEPENDS=libsamplerate.so:audio/libsamplerate
 SIDPLAY2_CONFIGURE_ENABLE=sidplay
 SIDPLAY2_LIB_DEPENDS=libsidplay2.so:audio/libsidplay2
+SMB_CONFIGURE_enable=smbclient
+SMB_LIB_DEPENDS=libsmbclient.so:net/samba-libsmbclient
 SNDFILE_CONFIGURE_ENABLE=sndfile
 SNDFILE_LIB_DEPENDS=libsndfile.so:audio/libsndfile
+SNDIO_CONFIGURE_ENABLE=sndio
+SNDIO_LIB_DEPENDS=libsndio.so:audio/sndio
+SOXR_CONFIGURE_ENABLE=soxr
+SOXR_LIB_DEPENDS=libsoxr.so:audio/libsoxr
 SQLITE3_CONFIGURE_ENABLE=sqlite
 SQLITE3_LIB_DEPENDS=libsqlite3.so:databases/sqlite3
 TREMOR_CONFIGURE_WITH=tremor
@@ -129,6 +144,8 @@ WAVPACK_CONFIGURE_ENABLE=wavpack
 WAVPACK_LIB_DEPENDS=libwavpack.so:audio/wavpack
 WILDMIDI_CONFIGURE_ENABLE=wildmidi
 WILDMIDI_LIB_DEPENDS=libWildMidi.so:audio/wildmidi
+YAJL_CONFIGURE_ENABLE=yajl
+YAJL_LIB_DEPENDS=libyajl.so:devel/yajl
 
 MPDUSER?=	mpd
 MPDGROUP?=	mpd
@@ -191,8 +208,8 @@ CONFIGURE_ARGS+=--disable-shout
 .endif
 
 post-patch:
-# Replace ~/ with /var/mpd and make musicpd run as mpd by default
-	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1/var/mpd,g' \
+# Replace ~/ with /var/mpd/ and make musicpd run as mpd by default
+	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1/var/mpd/,g' \
 		-e 's,^#\(user[^"]*"\)nobody,\1${MPDUSER},g' \
 		${WRKSRC}/doc/mpdconf.example
 # Uncomment OSS audio output part from MPDCONF; dragons!
