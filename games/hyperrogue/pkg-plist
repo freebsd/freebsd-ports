@@ -1,0 +1,15 @@
+bin/hyperrogue
+%%DATADIR%%/DejaVuSans-Bold.ttf
+%%DATADIR%%/hr3-caves.ogg
+%%DATADIR%%/hr3-crossroads.ogg
+%%DATADIR%%/hr3-desert.ogg
+%%DATADIR%%/hr3-graveyard.ogg
+%%DATADIR%%/hr3-hell.ogg
+%%DATADIR%%/hr3-icyland.ogg
+%%DATADIR%%/hr3-jungle.ogg
+%%DATADIR%%/hr3-laboratory.ogg
+%%DATADIR%%/hr3-mirror.ogg
+%%DATADIR%%/hr3-motion.ogg
+%%DATADIR%%/hr3-rlyeh.ogg
+%%DATADIR%%/hyperrogue-music.txt
+share/pixmaps/hyperrogue.ico
