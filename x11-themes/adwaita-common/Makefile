@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adwaita
-PORTVERSION=	0.97
+PORTVERSION=	0.98
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-common
 
@@ -12,8 +12,8 @@ COMMENT=	Adwaita theme for Qt applications
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	adwaita-qt4>=0.97:x11-themes/adwaita-qt4 \
-	adwaita-qt5>=0.97:x11-themes/adwaita-qt5
+RUN_DEPENDS=	adwaita-qt4>=0.98:x11-themes/adwaita-qt4 \
+	adwaita-qt5>=0.98:x11-themes/adwaita-qt5
 
 USES=	metaport
 
