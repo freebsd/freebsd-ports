@@ -2,14 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20160704
-PORTREVISION=	2
+PORTVERSION=	20170225
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNREVISION}/:eduke32 \
 		http://www.duke4.org/files/nightfright/hrp/:hrp \
 		http://burnbit.com/download/447717/:hrp \
-		https://anongoth.pl/:hrp \
-		https://anongoth.pl/:xxx \
 		http://www.duke4.org/files/nightfright/:xxx \
 		ftp://ftp.3drealms.com/share/:shareware
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}:eduke32
@@ -18,8 +15,12 @@ EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/source/gpl-2.0.txt
+LICENSE=	GPLv2 BUILDLIC
+LICENSE_FILE_GPLv2=	${WRKSRC}/source/duke3d/gpl-2.0.txt
+LICENSE_COMB=	multi
+LICENSE_PERMS_BUILDLIC= dist-mirror pkg-mirror auto-accept
+LICENSE_NAME_BUILDLIC= BUILD SOURCE CODE LICENSE
+LICENSE_FILE_BUILDLIC=${WRKSRC}/source/build/buildlic.txt
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
@@ -33,20 +34,18 @@ USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
-SVNREVISION=	5811
+SVNREVISION=	6079
 DATADIR=	${LOCALBASE}/share/duke3d
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR}
-
-CFLAGS+=	-flax-vector-conversions
+MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/eduke32 bin/mapster32
-PORTDOCS=	*
 PORTEXAMPLES=	*
 
 BROKEN_sparc64=	does not compile on sparc64
 
-OPTIONS_DEFINE=	DOCS EXAMPLES HRP OFFENSIVE SHAREWARE
+OPTIONS_DEFINE=	EXAMPLES HRP OFFENSIVE SHAREWARE
 OPTIONS_RADIO=	MIDI
 OPTIONS_RADIO_MIDI=	TIMIDITY TIMIDITYPLUS
 OPTIONS_DEFAULT=TIMIDITY
@@ -76,27 +75,21 @@ post-extract-SHAREWARE-on:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/s|gcc|${CC}|' -e '/^CXX=/s|g++|${CXX}|' \
-		${WRKSRC}/Makefile.common
+		${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} 's|/usr/share/games/eduke32|${DN3DDIR}|' \
-		${WRKSRC}/source/game.c ${WRKSRC}/source/astub.c
+		${WRKSRC}/source/duke3d/src/game.cpp ${WRKSRC}/source/duke3d/src/astub.cpp
 
 post-patch-ASM-off:
-	@${REINPLACE_CMD} '/^NOASM =/s/0/1/' ${WRKSRC}/Makefile.common
+	@${REINPLACE_CMD} '/^NOASM =/s/0/1/' ${WRKSRC}/GNUmakefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eduke32 ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mapster32 ${STAGEDIR}${PREFIX}/bin
 
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/package/sdk/samples/*.sample ${STAGEDIR}${DOCSDIR}
-
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/package/sdk/samples/*.map ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/package/sdk/samples/*.m32 ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/package/sdk/*.cfg ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/package/sdk/samples/*.txt ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/package/sdk/tiles.cfg ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/package/sdk/samples/* ${STAGEDIR}${EXAMPLESDIR}
 
 do-install-HRP-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
