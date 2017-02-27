@@ -11,7 +11,7 @@ DISTNAME=	Ngraph-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XY plotting tool for students, scientists, and engineers
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 USES=		gmake motif
