@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses program for (remote) controlling multimedia/xmms
 
 BUILD_DEPENDS=	xmms:multimedia/xmms

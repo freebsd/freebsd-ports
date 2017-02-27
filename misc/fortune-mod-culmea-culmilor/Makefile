@@ -6,7 +6,7 @@ PORTVERSION=	2005.12.15
 CATEGORIES=	misc 	# should / will (also) be romanian
 MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Romanian "Culmea culmilor" jokes (in Romanian)
 
 BROKEN=		unfetchable (tecnik93.com is down)
