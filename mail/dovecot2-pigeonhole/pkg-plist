@@ -1,6 +1,7 @@
 %%DOCSDIR%%/example-config/conf.d/20-managesieve.conf
 %%DOCSDIR%%/example-config/conf.d/90-sieve-extprograms.conf
 %%DOCSDIR%%/example-config/conf.d/90-sieve.conf
+%%DOCSDIR%%/example-config/sieve-ldap.conf
 bin/sieve-dump
 bin/sieve-filter
 bin/sieve-test
