@@ -1,6 +1,6 @@
---- poster.c.org	Thu Apr 29 00:22:46 1999
-+++ poster.c	Sun Jan 30 00:48:11 2000
-@@ -570,7 +570,7 @@
+--- poster.c.orig	1999-04-28 15:22:46 UTC
++++ poster.c
+@@ -570,7 +570,7 @@ static int dsc_infile( double ps_bb[4])
  
  	got_bb = 0;
  	dsc_cont = inbody = gotall = level = atend = 0;

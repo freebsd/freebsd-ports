@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bowtie2
-PORTVERSION=	2.2.9
+PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	biology
 
@@ -11,6 +11,8 @@ COMMENT=	Ultrafast, memory-efficient short read aligner
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS+=	libtbb.so:devel/tbb
 
 # May also work on other 64-bit platforms, but untested
 ONLY_FOR_ARCHS=	amd64

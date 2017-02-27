@@ -3,6 +3,7 @@
 
 PORTNAME=	plinkseq
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	biology science
 MASTER_SITES=	http://psychgen.u.hpc.mssm.edu/plinkseq_downloads/
 # Default DISTNAME is correct, so leave it alone.

@@ -1,4 +1,4 @@
---- Makefile.orig	2016-02-11 17:20:57 UTC
+--- Makefile.orig	2016-12-30 15:40:06 UTC
 +++ Makefile
 @@ -21,8 +21,8 @@
  # Makefile for bowtie, bowtie2-build, bowtie2-inspect
@@ -11,7 +11,34 @@
  
  INC =
  GCC_PREFIX = $(shell dirname `which gcc`)
-@@ -169,7 +169,7 @@ SSE_FLAG=-msse2 
+@@ -62,6 +62,8 @@ ifeq (1, $(POPCNT_CAPABILITY))
+     INC += -I third_party
+ endif
+ 
++INC += -I ${LOCALBASE}/include
++
+ MM_DEF =
+ 
+ ifeq (1,$(BOWTIE_MM))
+@@ -75,7 +77,7 @@ ifeq (1,$(BOWTIE_SHARED_MEM))
+ endif
+ 
+ PTHREAD_PKG =
+-PTHREAD_LIB =
++PTHREAD_LIB = 
+ 
+ #if we're not using TBB, then we can't use queuing locks
+ ifeq (1,$(NO_TBB))
+@@ -94,7 +96,7 @@ endif
+ 
+ #default is to use Intel TBB
+ ifneq (1,$(NO_TBB))
+-	LIBS = $(PTHREAD_LIB) -ltbb -ltbbmalloc_proxy
++	LIBS = $(PTHREAD_LIB) -L${LOCALBASE}/lib -ltbb -ltbbmalloc
+ 	override EXTRA_FLAGS += -DWITH_TBB
+ else
+ 	LIBS = $(PTHREAD_LIB)
+@@ -185,7 +187,7 @@ SSE_FLAG=-msse2
  
  DEBUG_FLAGS    = -O0 -g3 -m64 $(SSE_FLAG)
  DEBUG_DEFS     = -DCOMPILER_OPTIONS="\"$(DEBUG_FLAGS) $(EXTRA_FLAGS)\""

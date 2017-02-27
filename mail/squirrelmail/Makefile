@@ -11,7 +11,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webmail system which accesses mail over IMAP
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 USES=		cpe gettext perl5 php:web tar:bzip2
 USE_PHP=	session hash gettext mbstring pcre openssl xml
@@ -84,6 +85,7 @@ do-install:
 		${COPYTREE_SHARE} "attach class config data functions help images include locale plugins po scripts src themes" \
 			${STAGEDIR}${SQUIRRELDIR})
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 

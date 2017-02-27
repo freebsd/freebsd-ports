@@ -12,16 +12,15 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	THANKO USB AM/FM Radio controller
 
+LICENSE=	NONE
+
 LIB_DEPENDS=	libhid.so:devel/libhid
 
-NO_WRKSUBDIR=   yes
-
-EXTRACT_CMD=            ${CP}
-EXTRACT_BEFORE_ARGS=    -p
-EXTRACT_AFTER_ARGS=     ${WRKSRC}
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/
 
 do-install:
-	@${INSTALL} ${WRKSRC}/amfm ${STAGEDIR}${PREFIX}/bin/amfm
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/amfm
+	${INSTALL_PROGRAM} ${WRKSRC}/amfm ${STAGEDIR}${PREFIX}/bin/amfm
 
 .include <bsd.port.mk>

@@ -1,0 +1,9 @@
+bin/diction
+bin/style
+man/man1/diction.1.gz
+man/man1/style.1.gz
+%%DATADIR%%/C
+%%DATADIR%%/de
+%%DATADIR%%/en
+%%DATADIR%%/en_GB
+%%DATADIR%%/nl

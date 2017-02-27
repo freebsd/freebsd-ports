@@ -1,6 +1,6 @@
---- ./usbrh_main.c.orig	2008-03-24 23:23:26.000000000 +0900
-+++ ./usbrh_main.c	2009-07-20 23:22:59.000000000 +0900
-@@ -198,7 +198,7 @@
+--- usbrh_main.c.orig	2008-03-24 14:23:26 UTC
++++ usbrh_main.c
+@@ -198,7 +198,7 @@ int  DeviceNum;
                  break;
              default:
                  usage();
@@ -9,7 +9,7 @@
                  break;
          }
      }
-@@ -209,7 +209,7 @@
+@@ -209,7 +209,7 @@ int  DeviceNum;
  
      if(flag_l){
          listdevice(USBRH_VENDOR, USBRH_PRODUCT);
@@ -18,7 +18,7 @@
      }
  
      if(flag_d)
-@@ -217,7 +217,7 @@
+@@ -217,7 +217,7 @@ int  DeviceNum;
  
      if((dev = searchdevice(USBRH_VENDOR, USBRH_PRODUCT, DeviceNum)) == (struct usb_device *)NULL){
          puts("USBRH not found");
@@ -27,7 +27,7 @@
      } 
  
      if(flag_d){
-@@ -226,26 +226,30 @@
+@@ -226,26 +226,30 @@ int  DeviceNum;
      dh = usb_open(dev);
      if(dh == NULL){
          puts("usb_open error");
@@ -61,7 +61,7 @@
              }
          }
      }
-@@ -311,7 +315,7 @@
+@@ -311,7 +315,7 @@ int  DeviceNum;
      if((rc = usb_release_interface(dh, dev->config->interface->altsetting->bInterfaceNumber))<0){
          puts("usb_release_interface error");
          usb_close(dh);

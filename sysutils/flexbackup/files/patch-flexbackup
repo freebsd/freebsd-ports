@@ -1,6 +1,6 @@
---- flexbackup.orig	2003-10-10 16:12:09.000000000 +0200
-+++ flexbackup	2011-07-06 18:55:24.000000000 +0200
-@@ -133,6 +133,9 @@
+--- flexbackup.orig	2003-10-10 14:12:09 UTC
++++ flexbackup
+@@ -133,6 +133,9 @@ $::zsh_pipe_exit = '; x=(${pipestatus[@]
  # tar has a limit of this many chars in its volume label
  $::tar_max_label = 99;
  
@@ -10,7 +10,7 @@
  # Get commandline flags
  %::opt = ();
  if (! &::GetOptions(\%::opt,
-@@ -269,6 +272,7 @@
+@@ -269,6 +272,7 @@ if (($::mode !~ m/^(list|extract|restore
      untie(%::index);
  }
  
@@ -18,7 +18,7 @@
  exit(0);
  
  ######################################################################
-@@ -441,7 +445,7 @@
+@@ -441,7 +445,7 @@ sub backup_routine {
  		# Get rid of trailing /
  		$dir = &nuke_trailing_slash($dir);
  
@@ -27,7 +27,7 @@
  		# have a different numeric level
  		if (!defined($::set_incremental)) {
  		    $level = $::level;
-@@ -687,6 +691,8 @@
+@@ -687,6 +691,8 @@ sub backup {
  		$filename .= ".zip";
  	    } elsif ($cfg::compress eq "compress") {
  		$filename .= ".Z";
@@ -36,7 +36,7 @@
  	    }
  	} elsif ($cfg::type eq "afio") {
  	    # tag these a little different, the archive file itself isn't a
-@@ -701,6 +707,8 @@
+@@ -701,6 +707,8 @@ sub backup {
  		$filename .= "-zip";
  	    } elsif ($cfg::compress eq "compress") {
  		$filename .= "-Z";
@@ -45,7 +45,7 @@
  	    }
  	}
  
-@@ -811,6 +819,11 @@
+@@ -811,6 +819,11 @@ sub backup {
  	($remove, @cmds) = &backup_filelist($label, $localdir, $title, $level, $remote);
      }
  
@@ -57,7 +57,7 @@
      # Nuke any tmp files used in the above routines
      if ($remove ne '') {
  	push(@cmds, &maybe_remote_cmd("$::path{rm} -f $remove", $remote));
-@@ -827,6 +840,11 @@
+@@ -827,6 +840,11 @@ sub backup {
  	    push(@cmds, &maybe_remote_cmd("$::path{rm} -f $pkglist", $remote));
  	}
      }
@@ -69,7 +69,7 @@
  
      # Strip multiple spaces
      foreach my $cmd (@cmds) {
-@@ -1035,7 +1053,7 @@
+@@ -1035,7 +1053,7 @@ sub backup_dump {
      } else {
  	$prunekey = $dir;
      }
@@ -78,7 +78,7 @@
  	&log("| NOTE: \$prune is ignored for type=dump");
      }
  
-@@ -1140,7 +1158,7 @@
+@@ -1140,7 +1158,7 @@ sub backup_afio {
      $cmd .= "$::path{afio} -o ";
      $cmd .= "$no_compress ";
      $cmd .= "-z ";
@@ -87,7 +87,7 @@
      $cmd .= "$::afio_z_flag ";
      $cmd .= "$::afio_verb_flag ";
      $cmd .= "$::afio_sparse_flag ";
-@@ -1286,8 +1304,8 @@
+@@ -1286,8 +1304,8 @@ sub backup_copy_cpio {
  	$cmd .= "$::unz";
      }
      $cmd .= "(";
@@ -98,7 +98,7 @@
      $cmd .= "$::path{cpio} -i ";
      $cmd .= "-m ";
      $cmd .= "-d ";
-@@ -1336,9 +1354,8 @@
+@@ -1336,9 +1354,8 @@ sub backup_copy_rsync {
  
      # Have to take leading './' off to make rsync's include/exclude work right
      $cmd .= " | $::path{sed} -e \"s/\\.\\///g\" | ";
@@ -109,7 +109,7 @@
      $cmd .= "--archive ";
      $cmd .= "$::rsync_verb_flag ";
      $cmd .= "--delete --delete-excluded ";
-@@ -1353,7 +1370,7 @@
+@@ -1353,7 +1370,7 @@ sub backup_copy_rsync {
  	    $cmd .= "$remote:";
  	}
      }
@@ -118,7 +118,7 @@
  
      push(@cmds, $cmd);
  
-@@ -1643,7 +1660,9 @@
+@@ -1643,7 +1660,9 @@ sub backup_ar {
      my $tmpfile = "$cfg::tmpdir/ar.$PROCESS_ID";
      my $remove = '';
  
@@ -129,7 +129,7 @@
  
      if (defined($remote) and ($level != 0)) {
  	my $time = &get_last_date($label, $level, 'numeric');
-@@ -1667,11 +1686,13 @@
+@@ -1667,11 +1686,13 @@ sub backup_ar {
      $cmd = "cd \"$dir\" && ";
      $cmd .= &file_list_cmd( $dir, $stamp, 'newline', $level, $remote, '-maxdepth 1 ! -type d');
      $cmd .= "> $filelist; ";
@@ -144,7 +144,7 @@
      $cmd .= "; $::path{cat} $tmpfile $::z";
  
      # Buffer both sides if remote
-@@ -1785,12 +1806,9 @@
+@@ -1785,12 +1806,9 @@ sub backup_lha {
  
      $cmd = "cd \"$dir\" && ";
      $cmd .= &file_list_cmd( $dir, $stamp, 'newline', $level, $remote);
@@ -158,7 +158,7 @@
      $cmd .= "; $::path{cat} $tmpfile $::z";
  
      # Buffer both sides if remote
-@@ -2700,7 +2718,7 @@
+@@ -2700,7 +2718,7 @@ sub optioncheck {
      # First check if things are defined in the config file
      # Checks exist, true/false, or one of options
      &checkvar(\$cfg::type,'type','dump afio cpio tar star pax zip ar shar lha copy rsync filelist','tar');
@@ -167,7 +167,7 @@
      &checkvar(\$cfg::compr_level,'compr_level','exist','4');
      &checkvar(\$cfg::verbose,'verbose','bool','true');
      &checkvar(\$cfg::sparse,'sparse','bool','true');
-@@ -2750,8 +2768,10 @@
+@@ -2750,8 +2768,10 @@ sub optioncheck {
      $::path{'find'} = &checkinpath('find');
      $::path{'dd'} = &checkinpath('dd');
      $::path{'printf'} = &checkinpath('printf');
@@ -179,7 +179,7 @@
  
      # Check device (or dir)
      $::ftape = 0;
-@@ -3001,6 +3021,16 @@
+@@ -3001,6 +3021,16 @@ sub optioncheck {
  	    $::z = " | $::path{zip} -$cfg::compr_level - -";
  	    $::unz = "$::path{funzip} | ";
  	}
@@ -196,7 +196,7 @@
      } else {
  	$::z = "";
  	$::unz = "";
-@@ -3059,12 +3089,11 @@
+@@ -3059,12 +3089,11 @@ sub optioncheck {
  	    $::read_cmd = "$bufcmd $read_flags";
  
  	} elsif ($cfg::buffer eq "mbuffer") {
@@ -210,7 +210,7 @@
  
  	    $::buffer_cmd = " | $bufcmd";
  	    $::write_cmd = "$bufcmd -f -o ";
-@@ -3075,7 +3104,6 @@
+@@ -3075,7 +3104,6 @@ sub optioncheck {
  	    }
  	}
      } else {
@@ -218,7 +218,7 @@
  	# If buffering disabled, use dd or cat depending on if blocking turned off on not
  	if ($cfg::blksize eq '0') {
  	    $::buffer_cmd = "";
-@@ -3252,6 +3280,10 @@
+@@ -3252,6 +3280,10 @@ sub optioncheck {
  		$::afio_z_flag = "-P $::path{$cfg::compress} -Q -c -Z";
  		$::afio_unz_flag = "-P $::path{$cfg::compress} -Q -d -Q -c -Z";
  
@@ -229,7 +229,7 @@
  	    }
  	    $::unz = ""; # Reset & just use this for reading the archive file.
  
-@@ -3415,7 +3447,7 @@
+@@ -3415,7 +3447,7 @@ sub optioncheck {
  	$::path{'lha'} = &checkinpath('lha');
  	push(@::remoteprogs, $::path{'lha'});
  
@@ -238,7 +238,7 @@
  	    warn("Using type \"lha\" with compress=$cfg::compress makes no sense");
  	    warn("Setting compression to false");
  	    $::unz = "";
-@@ -3442,6 +3474,15 @@
+@@ -3442,6 +3474,15 @@ sub optioncheck {
  	push(@::errors,"\$tmpdir $cfg::tmpdir is not writable");
      }
  
@@ -254,7 +254,7 @@
      # Levels
      if (defined($::opt{'level'}) and
  	(defined($::opt{'incremental'}) or
-@@ -3781,7 +3822,7 @@
+@@ -3781,7 +3822,7 @@ sub maybe_get_filename {
  
      # Try and guess file types and commpression scheme
      # might as well since we are reading from a file in this case
@@ -263,7 +263,7 @@
  	$cfg::type = $1;
  	$cfg::compress = $2;
  	$cfg::type =~ s/^a$/ar/;
-@@ -3789,16 +3830,18 @@
+@@ -3789,16 +3830,18 @@ sub maybe_get_filename {
  	$cfg::compress =~ s/bz2/bzip2/;
  	$cfg::compress =~ s/lzo/lzop/;
  	$cfg::compress =~ s/Z/compress/;
@@ -283,7 +283,7 @@
  	&log("| Auto-set to type=$cfg::type compress=$cfg::compress");
  	&optioncheck();                  # redo to set a few variables over
  
-@@ -4841,25 +4884,32 @@
+@@ -4841,25 +4884,32 @@ sub file_list_cmd {
      } else {
  	$prunekey = $dir;
      }
@@ -327,7 +327,7 @@
  
      $cmd .= "$::mountpoint_flag ";
      $cmd .= "! -type s ";
-@@ -5229,6 +5279,7 @@
+@@ -5229,6 +5279,7 @@ sub test_bufferprog {
      my $tmp_script = "$cfg::tmpdir/buftest.$host.$PROCESS_ID.sh";
      my $retval = 0;
      my $pipecmd;
@@ -335,7 +335,7 @@
  
      $buffer_cmd =~ s:^\s*\|\s*::;
      $buffer_cmd =~ s:\s*\|\s*$::;
-@@ -5236,14 +5287,14 @@
+@@ -5236,14 +5287,14 @@ sub test_bufferprog {
      # Create a script which tests the buffer program
      open(SCR,"> $tmp_script") || die;
      print SCR "#!/bin/sh\n";
@@ -353,7 +353,7 @@
      print SCR "else\n";
      print SCR "   echo \"unsuccessful: exit code \$res: \$out\" \n";
      print SCR "fi\n";
-@@ -5254,14 +5305,22 @@
+@@ -5254,14 +5305,22 @@ sub test_bufferprog {
  	print $::msg "| Checking '$cfg::buffer' on this machine... ";
  	$pipecmd = "sh $tmp_script ";
      } else {
@@ -378,7 +378,7 @@
  	    if (/^unsuccessful: exit code (\d+): (.*)/) {
  		$retval = $1;
  		my $out = $2;
-@@ -5290,11 +5349,15 @@
+@@ -5290,11 +5349,15 @@ sub test_bufferprog {
  	print $::msg "\n(debug) $pipecmd\n";
      }
  
@@ -395,7 +395,7 @@
      unlink("$tmp_script");
  
      return($retval);
-@@ -5396,10 +5459,10 @@
+@@ -5396,10 +5459,10 @@ sub check_shell {
  	    my $shell = $1;
  	    my $ver = $2;
  	    if ($shell eq 'bash') {
@@ -409,7 +409,7 @@
  		}
  	    } else {
  		$::shelltype{$host} = $shell;
-@@ -5686,3 +5749,5 @@
+@@ -5686,3 +5749,5 @@ sub spinner {
  
      return($spinner[$index]);
  }
