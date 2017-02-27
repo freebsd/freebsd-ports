@@ -1,4 +1,4 @@
---- Makefile.orig	2013-12-16 15:18:31 UTC
+--- Makefile.orig	2015-09-06 19:45:03 UTC
 +++ Makefile
 @@ -1,6 +1,6 @@
 -PREFIX    = usr
@@ -7,24 +7,18 @@
 -MANDIR    = ${SHAREDIR}/man
 +MANDIR    = ${PREFIX}/man
  BINDIR    = ${PREFIX}/bin
- SVNREV 	  = 222 
- VER	  = 0.4.2
-@@ -13,12 +13,12 @@ endif
+ SVNREV 	  = 224 
+ VER	  = 0.4.3
+@@ -13,7 +13,7 @@ endif
  CONFDIR = ${XDG_CONFIG_HOME}/euclid-wm
  
  CC = cc -pedantic -Wall 
--CFLAGS = -O2 -g -std=c99 
-+CFLAGS = -O2 -g -std=c99 -I/usr/local/include -L/usr/local/lib
+-CFLAGS = -O3 -g -std=c99 
++CFLAGS = -O3 -g -std=c99 -I/usr/local/include -L/usr/local/lib 
  LDFLAGS = -lX11 -lXinerama
  
  .PHONY: all install install_conf clean uninstall dist dist_clean
- 
--all: euclid-wm
-+all: noxinerama
- 
- euclid-wm: euclid-wm.c
- 	${CC} $< ${LDFLAGS} ${CFLAGS} -o $@
-@@ -28,14 +28,23 @@ noxinerama: euclid-wm.c
+@@ -31,19 +31,34 @@ noxinerama: euclid-wm.c
  	cp noxinerama euclid-wm
  
  install: all
@@ -34,11 +28,18 @@
 -	@install -m644 euclid-wm.conf.sample -D -b ${DESTDIR}/${SHAREDIR}/euclid-wm/euclid-wm.conf
 -	@install -m644 euclidrc -D -b ${DESTDIR}/${SHAREDIR}/euclid-wm/euclidrc
 -	@install -m644 VERSION -D ${DESTDIR}/${SHAREDIR}/euclid-wm/VERSION 2>/dev/null || echo "From SVN: `svn info | grep Revision: | cut -d ' ' -f2`/`date +%F`" >${DESTDIR}/${SHAREDIR}/euclid-wm/VERSION
+-	@sed s_/usr/share_/${SHAREDIR}_ <start-euclid >start-euclid-local
+-	@install -m755 start-euclid-local -D ${DESTDIR}/${BINDIR}/start-euclid
+-	@install -m755 euclid-menu -D ${DESTDIR}/${BINDIR}/euclid-menu
+-	@install -m755 ./handlers/c.sh -D  ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers/c.sh
+-	@install -m755 ./handlers/default.sh -D ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers/default.sh
+-	@install -m755 ./handlers/.echo_file.sh -D ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers/.echo_file.sh
+-
 +#	@install -m755 euclid-wm -D ${DESTDIR}/${BINDIR}/euclid-wm
 +	@cp -f euclid-wm ${DESTDIR}/${BINDIR}/euclid-wm
 +#	@install -m644 euclid.desktop -D ${DESTDIR}/${SHAREDIR}/xsessions/euclid.desktop
 +	@mkdir -p ${DESTDIR}/${SHAREDIR}/xsessions
-+	@cp -f euclid.desktop ${DESTDIR}/${SHAREDIR}/xsessions/euclid.desktop 
++	@cp -f euclid.desktop ${DESTDIR}/${SHAREDIR}/xsessions/euclid.desktop
 +#	@install -m644 euclid.1 -D ${DESTDIR}/${MANDIR}/man1/euclid-wm.1
 +	@cp -f euclid.1 ${DESTDIR}/${MANDIR}/man1/euclid-wm.1
 +#	@install -m644 euclid-wm.conf.sample -D -b ${DESTDIR}/${SHAREDIR}/euclid-wm/euclid-wm.conf
@@ -47,11 +48,21 @@
 +#	@install -m644 euclidrc -D -b ${DESTDIR}/${SHAREDIR}/euclid-wm/euclidrc
 +	@cp -f euclidrc ${DESTDIR}/${SHAREDIR}/euclid-wm/euclidrc
 +#	@install -m644 VERSION -D ${DESTDIR}/${SHAREDIR}/euclid-wm/VERSION 2>/dev/null || echo "From SVN: `svn info | grep Revision: | cut -d ' ' -f2`/`date +%F`" >${DESTDIR}/${SHAREDIR}/euclid-wm/VERSION
-+	@cp -f VERSION ${DESTDIR}/${SHAREDIR}/euclid-wm/VERSION
- 	@sed s_/usr/share_/${SHAREDIR}_ <start-euclid >start-euclid-local
--	@install -m755 start-euclid-local -D ${DESTDIR}/${BINDIR}/start-euclid
++	@echo ${VER}" "${SVNREV} > ${DESTDIR}/${SHAREDIR}/euclid-wm/VERSION
++#	@cp -f VERSION ${DESTDIR}/${SHAREDIR}/euclid-wm/VERSION
++#	@sed s_/usr/share_/${SHAREDIR}_ <start-euclid >start-euclid-local
++	@sed 's /usr/share /${SHAREDIR} ' <start-euclid >start-euclid-local
 +#	@install -m755 start-euclid-local -D ${DESTDIR}/${BINDIR}/start-euclid
 +	@cp -f start-euclid-local ${DESTDIR}/${BINDIR}/start-euclid
++#	@install -m755 euclid-menu -D ${DESTDIR}/${BINDIR}/euclid-menu
++	@cp -f euclid-menu ${DESTDIR}/${BINDIR}/euclid-menu
++#	@install -m755 ./handlers/c.sh -D  ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers/c.sh
++	@mkdir -p ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers
++	@cp -f ./handlers/c.sh ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers/c.sh
++#	@install -m755 ./handlers/default.sh -D ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers/default.sh
++	@cp -f ./handlers/default.sh ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers/default.sh
++#	@install -m755 ./handlers/.echo_file.sh -D ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers/.echo_file.sh
++	@cp -f ./handlers/.echo_file.sh ${DESTDIR}/${SHAREDIR}/euclid-menu/handlers/.echo_file.sh
+ 
  
  install_conf:
- 	@install -b -D -m600 euclid-wm.conf.sample ${CONFDIR}/euclid-wm.conf
