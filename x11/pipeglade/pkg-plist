@@ -1,0 +1,8 @@
+bin/pipeglade
+man/man1/pipeglade.1.gz
+%%EXAMPLES%%%%EXAMPLESDIR%%/clock.sh
+%%EXAMPLES%%%%EXAMPLESDIR%%/clock.ui
+%%EXAMPLES%%%%EXAMPLESDIR%%/echo.sh
+%%EXAMPLES%%%%EXAMPLESDIR%%/pipeglade.ui
+%%EXAMPLES%%%%EXAMPLESDIR%%/simple_dialog.ui
+%%EXAMPLES%%%%EXAMPLESDIR%%/simple_open.ui

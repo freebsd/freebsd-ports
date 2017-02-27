@@ -6,8 +6,8 @@ include/cdialog/dlg_config.h
 include/cdialog/dlg_keys.h
 lib/libcdialog.a
 lib/libcdialog.so
-lib/libcdialog.so.12
-lib/libcdialog.so.12.0.0
+lib/libcdialog.so.13
+lib/libcdialog.so.13.0.0
 man/man1/cdialog.1.gz
 man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
@@ -51,6 +51,7 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dft-help
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dft-no
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialog.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dselect
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editbox
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editbox-utf8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editbox2

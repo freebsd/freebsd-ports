@@ -3,6 +3,7 @@
 
 PORTNAME=	gh
 PORTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4.0:www/rubygem-addressable \
 		rubygem-backports>=0:devel/rubygem-backports \
 		rubygem-faraday>=0.8:www/rubygem-faraday \
 		rubygem-multi_json>=1.0:devel/rubygem-multi_json \
-		rubygem-net-http-persistent>=2.9:www/rubygem-net-http-persistent \
+		rubygem-net-http-persistent2>=2.9:www/rubygem-net-http-persistent2 \
 		rubygem-net-http-pipeline>=0:www/rubygem-net-http-pipeline
 
 NO_ARCH=	yes

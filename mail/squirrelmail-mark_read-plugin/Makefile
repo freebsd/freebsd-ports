@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	mail www
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.2
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides one-click link to mark read/unread all mails in a folder
 
 USE_SM_COMPAT=	YES

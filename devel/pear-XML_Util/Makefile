@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML_Util
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	joneum@bsdproject.de

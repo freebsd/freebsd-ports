@@ -4,5 +4,7 @@ lib/cmake/glfw3/glfw3Config.cmake
 lib/cmake/glfw3/glfw3ConfigVersion.cmake
 lib/cmake/glfw3/glfw3Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/glfw3/glfw3Targets.cmake
-lib/libglfw3.a
+lib/libglfw.so
+lib/libglfw.so.3
+lib/libglfw.so.3.2
 libdata/pkgconfig/glfw3.pc

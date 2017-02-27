@@ -6,7 +6,7 @@ PORTVERSION=	3.14.14
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20Stable/${PORTVERSION}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of programs for controlling APC UPS
 
 LICENSE=	GPLv2

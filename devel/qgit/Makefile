@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}4/${PORTVERSION}
 PKGNAMESUFFIX=	-qt4
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to git repositories
 
 USES=		qmake tar:bzip2

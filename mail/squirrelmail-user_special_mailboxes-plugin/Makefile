@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	mail www
 DISTNAME=	${PORTNAME:S/-/_/}.${PORTVERSION}-1.4
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lets define folders to be displayed at the top of the folders list
 
 USE_SM_COMPAT=	yes

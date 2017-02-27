@@ -1,4 +1,4 @@
---- src/Cedar/Nat.h.orig	2014-06-08 06:19:15 UTC
+--- src/Cedar/Nat.h.orig	2016-05-03 06:16:53 UTC
 +++ src/Cedar/Nat.h
 @@ -115,7 +115,7 @@
  #define	NAT_H
