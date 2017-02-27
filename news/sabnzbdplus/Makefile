@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	news
 
 MAINTAINER=	joshruehlig@gmail.com
@@ -17,12 +17,13 @@ RUN_DEPENDS=	cheetah:devel/py-cheetah \
 USE_GITHUB=	yes
 GH_ACCOUNT=	sabnzbd
 GH_PROJECT=	sabnzbd
+GH_TAGNAME=	95a7924
 
-USES=		python:2.7
+USES=		python:2.7 shebangfix
+SHEBANG_FILES=	SABnzbd.py tools/msgfmt.py
 
 NO_ARCH=	yes
-PLIST_SUB=	PORTNAME=${PORTNAME}
-SUB_LIST=	PORTNAME=${PORTNAME} PYTHON_CMD=${PYTHON_CMD}
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	sabnzbd
 
@@ -51,15 +52,11 @@ UNRAR_RUN_DEPENDS=	unrar:archivers/unrar
 7ZIP_RUN_DEPENDS=	7za:archivers/p7zip
 
 post-patch:
-	@${REINPLACE_CMD} -e "s:/usr/bin/python:${PYTHON_CMD}:g" \
-		 ${WRKSRC}/SABnzbd.py
 	@${REINPLACE_CMD} -e "s:%%DATADIR%%:'${DATADIR}':g" \
 		 ${WRKSRC}/SABnzbd.py
 
 # Generate locale files
 do-build:
-	@${REINPLACE_CMD} -e "s:/usr/bin/env[[:space:]]python:${PYTHON_CMD}:g" \
-		 ${WRKSRC}/tools/msgfmt.py
 	cd ${WRKSRC} && ${PYTHON_CMD} tools/make_mo.py
 
 do-install:
