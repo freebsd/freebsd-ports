@@ -1,5 +1,5 @@
---- vendor/gtest-1.7.0/include/gtest/internal/gtest-port.h.orig	2016-03-24 21:27:13 UTC
-+++ vendor/gtest-1.7.0/include/gtest/internal/gtest-port.h
+--- vendor/gtest/include/gtest/internal/gtest-port.h.orig	2016-12-15 17:52:00 UTC
++++ vendor/gtest/include/gtest/internal/gtest-port.h
 @@ -92,6 +92,7 @@
  // the given platform; otherwise undefined):
  //   GTEST_OS_AIX      - IBM AIX
