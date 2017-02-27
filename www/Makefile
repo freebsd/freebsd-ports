@@ -2032,6 +2032,7 @@
     SUBDIR += rubygem-net-http-digest_auth
     SUBDIR += rubygem-net-http-digest_auth11
     SUBDIR += rubygem-net-http-persistent
+    SUBDIR += rubygem-net-http-persistent2
     SUBDIR += rubygem-net-http-persistent25
     SUBDIR += rubygem-net-http-pipeline
     SUBDIR += rubygem-nicovideo
