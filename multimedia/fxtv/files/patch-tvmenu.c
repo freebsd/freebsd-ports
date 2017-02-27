@@ -1,6 +1,6 @@
---- tvmenu.c.orig	Mon Feb 12 22:19:33 2001
-+++ tvmenu.c	Sun Nov 27 01:55:24 2005
-@@ -552,7 +552,7 @@
+--- tvmenu.c.orig	2001-02-12 21:19:33 UTC
++++ tvmenu.c
+@@ -552,7 +552,7 @@ static void TVTOOLSUpdateStationPopup()
      Widget popup_win, new_popup_item = NULL;
      Cardinal num_children, i;
      WidgetList children;
@@ -9,7 +9,7 @@
  #ifdef FIXME
      Pixmap pix;
  #endif
-@@ -589,7 +589,7 @@
+@@ -589,7 +589,7 @@ static void TVTOOLSUpdateStationPopup()
  
          XtVaSetValues(children[i], XtNleftBitmap, pix, NULL);
  #else
