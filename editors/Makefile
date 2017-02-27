@@ -201,6 +201,7 @@
     SUBDIR += madedit
     SUBDIR += manedit
     SUBDIR += mg
+    SUBDIR += micro
     SUBDIR += mined
     SUBDIR += morla
     SUBDIR += mousepad
