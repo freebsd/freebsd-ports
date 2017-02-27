@@ -1,6 +1,6 @@
---- ./flexbackup.conf.5.orig	2008-07-19 09:56:34.000000000 +0200
-+++ ./flexbackup.conf.5	2008-07-19 09:57:58.000000000 +0200
-@@ -24,23 +24,51 @@
+--- flexbackup.conf.5.orig	2003-10-04 15:52:00 UTC
++++ flexbackup.conf.5
+@@ -24,23 +24,51 @@ in your cwd - for debugging setup/exclus
  .TP
  \fB$set{\fI'tag'\fR}\fR = \fI'/dir'\fR;
  Configure backup \(dqsets\(dq. Not needed if \(dq-dir <dir>\(dq is used to
@@ -59,7 +59,7 @@
  .TP
  \fB$compress\fR = \fI'false|gzip|bzip2|lzop|zip|compress|hardware'\fR;
  .TQ
-@@ -205,7 +233,7 @@
+@@ -205,7 +233,7 @@ paths or just change command names. Exam
  .RS
  .TP
  If GNU \fBtar\fR is called \fB\(dqgtar\(dq\fR on your system:
@@ -68,7 +68,7 @@
  .TP
  Or it can be used to \fB\(dqsudo\(dq\fR certain commands:
  \fB$path{\fI'find'\fR}\fR = \fI'sudo find'\fR;
-@@ -302,3 +330,6 @@
+@@ -302,3 +330,6 @@ Report bugs to (flexbackup-help@lists.so
  Written by Edwin Huffstutler (edwinh@computer.org)
  .SH "SEE ALSO"
  \fBflexbackup\fR(1)
