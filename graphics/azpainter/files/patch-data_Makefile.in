@@ -1,0 +1,13 @@
+--- data/Makefile.in.orig	2017-02-18 23:19:20 UTC
++++ data/Makefile.in
+@@ -321,7 +321,9 @@ trdatadir = $(appdatadir)/tr
+ dist_trdata_DATA = \
+ tr/en.mtr \
+ tr/ja.mtr \
+-tr/pt_BR.mtr
++tr/pt_BR.mtr \
++tr/ru.mtr \
++tr/uk.mtr
+ 
+ 
+ # brush

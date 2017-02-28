@@ -63,6 +63,7 @@
     SUBDIR += autotrace
     SUBDIR += aview
     SUBDIR += ayam
+    SUBDIR += azpainter
     SUBDIR += backfract
     SUBDIR += barbecue
     SUBDIR += barcode
