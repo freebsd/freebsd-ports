@@ -5,6 +5,7 @@
 
     SUBDIR += autobench
     SUBDIR += blogbench
+    SUBDIR += bombardier
     SUBDIR += bonnie
     SUBDIR += bonnie++
     SUBDIR += clpeak
