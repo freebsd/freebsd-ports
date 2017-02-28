@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-Class-Accessor-Grouped>=0.10002:devel/p5-Class-Accessor-Grouped \
-		p5-Class-C3-Componentised>=1.0008:devel/p5-Class-C3-Componentised \
+		p5-Class-C3-Componentised>=1.000800:devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.27:devel/p5-Class-Inspector \
 		p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Class-Unload>=0:devel/p5-Class-Unload \
