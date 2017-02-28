@@ -9100,3 +9100,4 @@ devel/rubygem-minitest4|devel/rubygem-minitest|2017-02-28|Has expired: Use devel
 java/jdk16-doc||2017-02-28|Has expired: Should have been removed with linux-sun-jdk16 (2014-05-11)
 java/jdk7-doc||2017-02-28|Has expired: Should have been removed with linux-sun-jdk17 (2016-04-24)
 textproc/rubygem-sass-rails4|textproc/rubygem-sass-rails5|2017-02-28|Has expired: Use textproc/rubygem-sass-rails5 instead
+x11-toolkits/p5-Gtk|x11-toolkits/p5-Gtk-Perl|2017-02-28|Rename to match upstream naming

@@ -1,16 +1,18 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
 
-PORTNAME=	Gtk
+PORTNAME=	Gtk-Perl
 PORTVERSION=	0.7010
 PORTREVISION=	3
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The base module of Gtk-Perl
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-XML-Writer>=0:textproc/p5-XML-Writer \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser
