@@ -426,6 +426,7 @@
     SUBDIR += dreampie
     SUBDIR += drpython
     SUBDIR += ds2
+    SUBDIR += dub
     SUBDIR += dulwich
     SUBDIR += duplo
     SUBDIR += dwarfdump
