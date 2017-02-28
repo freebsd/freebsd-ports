@@ -1,0 +1,12 @@
+--- AUTHORS.orig	2017-02-18 23:19:16 UTC
++++ AUTHORS
+@@ -1,4 +1,7 @@
+ # translation
+ -------------------
+ 
+-pt_BR : Adriano Duarte
+\ No newline at end of file
++pt_BR : Adriano Duarte
++ru : Eugeniy Fedirets <evgeniy_fedirets@ukr.net>, 2017
++     Alexandre Prokoudine <alexandre.prokoudine@gmail.com>, 2017
++uk : Eugeniy Fedirets <evgeniy_fedirets@ukr.net>, 2017
