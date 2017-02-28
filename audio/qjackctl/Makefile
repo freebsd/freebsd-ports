@@ -47,9 +47,12 @@ QT4_USE=		QT4=corelib,dbus,gui,xml \
 			QT4=linguisttools_build \
 			QT4=moc_build,qmake_build,rcc_build,uic_build
 QT4_CONFIGURE_ENABLE=	qt4
+
+QT5_USES=		compiler:c++11-lib
 QT5_USE=		QT5=core,dbus,gui,widgets,x11extras,xml \
 			QT5=buildtools_build,linguisttools_build,qmake_build \
-			GL=gl
+			GL=gl \
+			CXXSTD=c++11
 
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
