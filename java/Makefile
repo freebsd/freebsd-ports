@@ -70,8 +70,6 @@
     SUBDIR += jcommon
     SUBDIR += jd-gui
     SUBDIR += jdbcpool
-    SUBDIR += jdk16-doc
-    SUBDIR += jdk7-doc
     SUBDIR += jdk8-doc
     SUBDIR += jdom
     SUBDIR += jflex

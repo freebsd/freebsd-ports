@@ -2019,7 +2019,6 @@
     SUBDIR += rubygem-link_header
     SUBDIR += rubygem-maruku
     SUBDIR += rubygem-mechanize
-    SUBDIR += rubygem-mechanize26
     SUBDIR += rubygem-merb-assets
     SUBDIR += rubygem-merb-core
     SUBDIR += rubygem-merb-haml
@@ -2030,10 +2029,8 @@
     SUBDIR += rubygem-nanoc
     SUBDIR += rubygem-nested_form
     SUBDIR += rubygem-net-http-digest_auth
-    SUBDIR += rubygem-net-http-digest_auth11
     SUBDIR += rubygem-net-http-persistent
     SUBDIR += rubygem-net-http-persistent2
-    SUBDIR += rubygem-net-http-persistent25
     SUBDIR += rubygem-net-http-pipeline
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-ntlm-http
@@ -2054,7 +2051,6 @@
     SUBDIR += rubygem-rack-protection
     SUBDIR += rubygem-rack-ssl
     SUBDIR += rubygem-rack-test
-    SUBDIR += rubygem-rack14
     SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rack16
     SUBDIR += rubygem-rails4
