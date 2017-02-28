@@ -2,6 +2,7 @@
 
 PORTNAME=	acpica
 PORTVERSION=	20170224
+PORTREVISION=	1
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL/jkim

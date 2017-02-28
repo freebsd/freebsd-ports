@@ -426,6 +426,7 @@
     SUBDIR += dreampie
     SUBDIR += drpython
     SUBDIR += ds2
+    SUBDIR += dub
     SUBDIR += dulwich
     SUBDIR += duplo
     SUBDIR += dwarfdump
@@ -559,6 +560,7 @@
     SUBDIR += fga
     SUBDIR += fhist
     SUBDIR += fib
+    SUBDIR += fifechan
     SUBDIR += firmware-utils
     SUBDIR += fistgen
     SUBDIR += flatbuffers
@@ -4564,6 +4566,7 @@
     SUBDIR += py-pytest-xdist
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-distutils-extra
+    SUBDIR += py-python-dtrace
     SUBDIR += py-python-editor
     SUBDIR += py-python-gflags
     SUBDIR += py-python-gist
@@ -4779,6 +4782,7 @@
     SUBDIR += py-weblib
     SUBDIR += py-websockify
     SUBDIR += py-wheel
+    SUBDIR += py-widgetsnbextension
     SUBDIR += py-wrapt
     SUBDIR += py-wsgi_intercept
     SUBDIR += py-wsgi_xmlrpc
