@@ -576,6 +576,7 @@
     SUBDIR += fortran-utils
     SUBDIR += fortytwo-encore
     SUBDIR += fossil
+    SUBDIR += fossology-nomos-standalone
     SUBDIR += fpc-bfd
     SUBDIR += fpc-dbus
     SUBDIR += fpc-fcl-async
@@ -1274,8 +1275,8 @@
     SUBDIR += libestr
     SUBDIR += libev
     SUBDIR += libevdev
-    SUBDIR += libevent-hiphop
     SUBDIR += libevent
+    SUBDIR += libevent-hiphop
     SUBDIR += libevt
     SUBDIR += libevtx
     SUBDIR += libewf
