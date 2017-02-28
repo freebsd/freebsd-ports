@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dnscap
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 PORTEPOCH=	1
 CATEGORIES=	dns
-MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/
+MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DNS network traffic capture utility
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS
 
-CONFIGURE_ARGS=	--enable-shared --enable-static
+CONFIGURE_ARGS=	--enable-shared --enable-static --enable-threads
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool
