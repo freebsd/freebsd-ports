@@ -33,6 +33,10 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "armv6" || ${ARCH} == "aarch64"
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-aarch64
+.endif
+
 .if ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-asm
 .endif
