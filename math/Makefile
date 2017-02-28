@@ -75,6 +75,7 @@
     SUBDIR += abacus
     SUBDIR += abakus
     SUBDIR += abs
+    SUBDIR += acalc
     SUBDIR += add
     SUBDIR += algae
     SUBDIR += algotutor
