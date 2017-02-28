@@ -9088,3 +9088,15 @@ sysutils/packetbeat|sysutils/beats|2017-02-21|merged beats to one port
 devel/libc++||2017-02-24|Obsolete, all supported FreeBSD versions have libc++ in the base system
 devel/libcxxrt||2017-02-24|Obsolete, all supported FreeBSD versions have libcxxrt in the base system
 devel/linux_kdump||2017-02-26|Broken and obsolete
+textproc/rubygem-nokogiri14|textproc/rubygem-nokogiri|2017-02-28|Has expired: Use textproc/rubygem-nokogiri instead
+textproc/rubygem-liquid2|textproc/rubygem-liquid|2017-02-28|Has expired: Use textproc/rubygem-liquid instead
+www/rubygem-rack14||2017-02-28|Has expired: Use www/rubygem-rack or www/rubygem-rack16 instead
+www/rubygem-mechanize26|www/rubygem-mechanize|2017-02-28|Has expired: Use www/rubygem-mechanize instead
+www/rubygem-net-http-persistent25|www/rubygem-net-http-persistent2|2017-02-28|Has expired: Use www/rubygem-net-http-persistent2 instead
+devel/rubygem-builder32|devel/rubygem-builder|2017-02-28|Has expired: Use devel/rubygem-builder instead
+www/rubygem-net-http-digest_auth11|www/rubygem-net-http-digest_auth|2017-02-28|Has expired: Use www/rubygem-net-http-digest_auth instead
+devel/rubygem-bson1|devel/rubygem-bson|2017-02-28|Has expired: Use devel/rubygem-bson instead
+devel/rubygem-minitest4|devel/rubygem-minitest|2017-02-28|Has expired: Use devel/rubygem-minitest instead
+java/jdk16-doc||2017-02-28|Has expired: Should have been removed with linux-sun-jdk16 (2014-05-11)
+java/jdk7-doc||2017-02-28|Has expired: Should have been removed with linux-sun-jdk17 (2016-04-24)
+textproc/rubygem-sass-rails4|textproc/rubygem-sass-rails5|2017-02-28|Has expired: Use textproc/rubygem-sass-rails5 instead

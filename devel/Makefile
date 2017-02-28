@@ -5110,11 +5110,9 @@
     SUBDIR += rubygem-bosh-template
     SUBDIR += rubygem-bosh_common
     SUBDIR += rubygem-bson
-    SUBDIR += rubygem-bson1
     SUBDIR += rubygem-buftok
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
-    SUBDIR += rubygem-builder32
     SUBDIR += rubygem-byebug
     SUBDIR += rubygem-cabin
     SUBDIR += rubygem-caesars
@@ -5318,7 +5316,6 @@
     SUBDIR += rubygem-method_source
     SUBDIR += rubygem-micromachine
     SUBDIR += rubygem-minitest
-    SUBDIR += rubygem-minitest4
     SUBDIR += rubygem-mixlib-authentication
     SUBDIR += rubygem-mixlib-cli
     SUBDIR += rubygem-mixlib-config
