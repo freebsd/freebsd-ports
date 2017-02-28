@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Business::UPS.3.gz
 %%SITE_PERL%%/Business/UPS.pm
 %%SITE_PERL%%/auto/Business/UPS/autosplit.ix
+%%PERL5_MAN3%%/Business::UPS.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.pl
