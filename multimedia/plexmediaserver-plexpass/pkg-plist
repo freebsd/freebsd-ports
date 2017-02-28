@@ -3,7 +3,7 @@
 %%DATADIR%%/Plex DLNA Server
 %%DATADIR%%/Plex Media Scanner
 %%DATADIR%%/Plex Media Server
-%%DATADIR%%/Plex Relay
+%%RELAY%%%%DATADIR%%/Plex Relay
 %%DATADIR%%/Plex Script Host
 %%DATADIR%%/Plex Transcoder
 @mode
