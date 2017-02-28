@@ -4565,6 +4565,7 @@
     SUBDIR += py-pytest-xdist
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-distutils-extra
+    SUBDIR += py-python-dtrace
     SUBDIR += py-python-editor
     SUBDIR += py-python-gflags
     SUBDIR += py-python-gist
