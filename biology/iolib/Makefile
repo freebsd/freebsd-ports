@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	io_lib
-PORTVERSION=	1.14.9
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	1-14-9
 CATEGORIES=	biology
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -14,7 +15,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jkbonfield
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	yes

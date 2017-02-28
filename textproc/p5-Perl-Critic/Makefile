@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
 		p5-Config-Tiny>=2:devel/p5-Config-Tiny \
-		p5-Email-Address>=1.88.9:mail/p5-Email-Address \
+		p5-Email-Address>=1.889:mail/p5-Email-Address \
 		p5-Exception-Class>=1.23:devel/p5-Exception-Class \
 		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		p5-File-Which>=0:sysutils/p5-File-Which \

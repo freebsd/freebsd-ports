@@ -10,7 +10,8 @@ MASTER_SITES=	https://files.dyne.org/muse/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple Streaming Engine
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis
@@ -28,10 +29,6 @@ LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lintl
 NOPIE_PORTS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS KNOWN-BUGS README TODO USAGE
-PLIST_FILES=	bin/muse man/man1/muse.1.gz
-.for lang in es it
-PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/muse.mo
-.endfor
 
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENV=	ac_cv_header_lame_lame_h=no
@@ -42,11 +39,12 @@ X11_CONFIGURE_OFF=	--without-x --with-rubik
 post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' \
 		${WRKSRC}/src/portaudio/pa_unix_oss.c
+
 post-patch-SNDFILE-off:
 	@${REINPLACE_CMD} -e '/sndfile >=/s|$$PKG_CONFIG|${FALSE}|' \
 		${WRKSRC}/configure
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

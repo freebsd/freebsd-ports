@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10012:devel/p5-Class-Accessor-Grouped \
-		p5-Class-C3-Componentised>=1.0009:devel/p5-Class-C3-Componentised \
+		p5-Class-C3-Componentised>=1.000900:devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.24:devel/p5-Class-Inspector \
 		p5-Class-Method-Modifiers>=1.06:devel/p5-Class-Method-Modifiers \
 		p5-Config-Any>=0.20:devel/p5-Config-Any \
