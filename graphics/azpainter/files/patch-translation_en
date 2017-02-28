@@ -1,0 +1,145 @@
+--- translation/en.orig	2017-02-18 23:19:17 UTC
++++ translation/en
+@@ -48,7 +48,7 @@
+ +=Overwrite
+ +=Save as
+ +=Save a copy
+-+=Show palette
+++=Show panels
+ +=Flip canvas horizontally
+ +=Show background as plaid pattern
+ +=Show grid
+@@ -76,7 +76,7 @@
+ +=[Shift:  horizontally] [Ctrl: vertically]
+ +=[+Ctrl when pressed: delete selection]
+ +=[+Shift when pressed: overwrite] [Ctrl: hide selection frame while dragging]
+-+=[click to paste if there is a image] [Ctrl: clear the image and reselect]
+++=[click to paste if there is an image] [Ctrl: clear the image and reselect]
+ +=[Ctrl: color on current layer] [Shift: set as mask color] [Alt: add to mask color]
+ 
+ +=[Shift: in denomination of 45°]
+@@ -107,7 +107,7 @@
+ +=Stamp
+ +=Move canvas
+ +=Rotate canvas
+-+=Spuit
+++=Color picker
+ 
+ #----------------
+ # tool sub
+@@ -183,7 +183,7 @@
+ [106]
+ 0=normal
+ +=multiplication
+-+=addtion
+++=addition
+ +=subtraction
+ +=screen(color filter)
+ +=overlay
+@@ -226,7 +226,7 @@
+ 
+ 
+ #**********************
+-# palette window
++# panel window
+ #**********************
+ 
+ 
+@@ -792,10 +792,10 @@
+ +=move selection position
+ 
+ #--------------------
+-# Palette setting
++# Panel setting
+ 
+ [2018]
+-0=Palette setting
++0=Panel setting
+ +=Up
+ +=Down
+ 
+@@ -811,8 +811,8 @@
+ +=System
+ +=Cursor
+ 
+-100=width at startup
+-+=height at startup
++100=image width when starting up
+++=image height when starting up
+ +=canvas background color
+ +=color of plaid background
+ +=max undo times [2-400]
+@@ -848,7 +848,7 @@
+ 500=[*] applied when next time starting up
+ +=working directory
+ +=GUI font
+-+=palette font
+++=panel font
+ +=image directory
+ +=brush
+ +=texture
+@@ -856,7 +856,7 @@
+ 600=hotspot position
+ +=load image
+ +=Default
+-+=width,height is of 1〜32px.\nblack and white color of the image will remain black and white.\nOther colors will be transfromed to transparent.
+++=width,height is of 1~32px.\nblack and white color of the image will remain black and white.\nOther colors will be transfromed to transparent.
+ 
+ 1000=a non-existing directory is set as working directory.
+ +=Units can be used for K,M,G. Byte without unit.\nMaximum 1 GB.\n0 to output to all files.
+@@ -1161,24 +1161,24 @@
+ +=Radial blur...
+ +=Lens blur...
+ 
+-+=Cloud...
+-+=Dot(1)...
+-+=Dot(2)...
+++=Clouds...
+++=Dot pattern(1)...
+++=Dot pattern(2)...
+ +=Random point draw...
+ +=Draw points along the rim...
+ +=Border...
+-+=Horizontal line&&vertical line...
+++=Horizontal&&vertical lines...
+ +=Plaid...
+ 
+ +=Concentration line...
+-+=Flash...
+-+=Solid flash...
+++=Flash (ring of fire)...
+++=Solid flash (sun)...
+ +=Uni flash...
+-+=Uni flash(wave)...
+++=Uni flash (wave)...
+ 
+ +=Mosaic...
+ +=Crystal...
+-+=Half tone
+++=Half tone...
+ 
+ +=Sharp...
+ +=Unsharp mask...
+@@ -1204,13 +1204,13 @@
+ 
+ +=Extraction of line drawing
+ +=1px dot line correction
+-+=Anti aliasing...
+++=Antialiasing...
+ +=Edging...
+ +=Three-dimensional frame...
+ +=Shift...
+ 
+ ### 表示
+-6000=Palette(&P)
++6000=Panel(&P)
+ +=Canvas flip horizontally(&Q)
+ +=Show background as check pattern(&K)
+ +=Show grid(&G)
+@@ -1250,5 +1250,5 @@
+ +=Grid setting(&G)...
+ +=Shortcut key setting(&K)...
+ +=Canvas key setting(&C)...
+-+=Palette setting(&P)...
+++=Panel setting(&P)...
+ +=Version information(&A)...
