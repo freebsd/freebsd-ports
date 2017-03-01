@@ -237,7 +237,6 @@
     SUBDIR += quit
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
-    SUBDIR += ruby-eb
     SUBDIR += ruby-romkan
     SUBDIR += ruby-uconv
     SUBDIR += rubygem-jpmobile-ipaddresses
@@ -302,7 +301,6 @@
     SUBDIR += xshodou
     SUBDIR += xtr
     SUBDIR += xv
-    SUBDIR += xyaku
     SUBDIR += yasou-fpw
     SUBDIR += yc.el
     SUBDIR += zinnia

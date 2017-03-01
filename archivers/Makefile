@@ -70,7 +70,6 @@
     SUBDIR += libpar2
     SUBDIR += librtfcomp
     SUBDIR += libunrar
-    SUBDIR += libunrar4
     SUBDIR += libunrar5
     SUBDIR += libzip
     SUBDIR += lrzip
