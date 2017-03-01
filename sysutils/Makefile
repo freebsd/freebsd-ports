@@ -613,6 +613,7 @@
     SUBDIR += mksunbootcd
     SUBDIR += mnrpes
     SUBDIR += modules
+    SUBDIR += mog
     SUBDIR += monit
     SUBDIR += monitord
     SUBDIR += monitorix
