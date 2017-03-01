@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	reduce
-PORTVERSION=	20141130
+PORTVERSION=	20170124
 CATEGORIES=	math lang
 MASTER_SITES=	SF/${PORTNAME}-algebra/${SFSUBDIR}/
-DISTNAME=	${PORTNAME}-src-2014-11-30
+DISTNAME=	Reduce-svn3877-src
 
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	Portable general-purpose computer algebra system
@@ -14,13 +14,13 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		autoreconf:build gmake ncurses tar:bzip2
+USES=		autoreconf:build gmake libtool ncurses
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--build=${TARGET_SDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 CPPFLAGS+=	-I${NCURSESINC}
 
-SFSUBDIR=	Snapshot_2014-11-30-kept-only-for-historical-interest
+SFSUBDIR=	snapshot_2017-01-24
 
 # Avoid GNU_CONFIGURE as it breaks staging
 HAS_CONFIGURE=	yes
@@ -48,7 +48,7 @@ USES+=		jpeg
 CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`
 .else
-ONLY_FOR_ARCHS= amd64
+ONLY_FOR_ARCHS=	amd64
 .endif
 
 .if ${PORT_OPTIONS:MCSL}
