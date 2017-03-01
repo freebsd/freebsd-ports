@@ -68,6 +68,8 @@
 %%DATADIR%%/NzbDrone.Update/NzbDrone.Update.exe.config
 %%DATADIR%%/NzbDrone.Update/NzbDrone.Update.exe.mdb
 %%DATADIR%%/NzbDrone.Update/Org.Mentalis.dll
+%%DATADIR%%/NzbDrone.Update/SharpRaven.dll
+%%DATADIR%%/NzbDrone.Update/SharpRaven.dll.mdb
 %%DATADIR%%/NzbDrone.Update/SocksWebProxy.dll
 %%DATADIR%%/NzbDrone.exe
 %%DATADIR%%/NzbDrone.exe.config
@@ -78,6 +80,8 @@
 %%DATADIR%%/Owin.dll
 %%DATADIR%%/Prowlin.dll
 %%DATADIR%%/RestSharp.dll
+%%DATADIR%%/SharpRaven.dll
+%%DATADIR%%/SharpRaven.dll.mdb
 %%DATADIR%%/SocksWebProxy.dll
 %%DATADIR%%/System.Data.SQLite.dll
 %%DATADIR%%/System.Data.SQLite.xml
