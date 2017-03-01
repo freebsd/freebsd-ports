@@ -17,4 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	arangodb
 GH_PROJECT=	linenoise-ng
 
+CFLAGS+=	-fPIC
+
 .include <bsd.port.mk>
