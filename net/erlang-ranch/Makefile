@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ranch
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	net
 PKGNAMEPREFIX=	erlang-
 
@@ -14,7 +13,7 @@ LICENSE=	ISCL
 USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	ninenines
-ERL_DOCS=	guide/*
+ERL_DOCS=	doc/src/guide/* doc/src/manual/*
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
