@@ -746,7 +746,7 @@ zetacoin:*:780:780::0:0:ZetaCoin Daemon:/nonexistent:/usr/sbin/nologin
 # free: 797
 # free: 798
 # free: 799
-# free: 800
+clickhouse:*:800:800::0:0:ClickHouse Daemon:/var/db/clickhouse:/usr/sbin/nologin
 # free: 801
 # free: 802
 # free: 803
