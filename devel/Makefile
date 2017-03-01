@@ -4358,6 +4358,7 @@
     SUBDIR += py-jsonrpclib
     SUBDIR += py-jsonschema
     SUBDIR += py-jupyter_client
+    SUBDIR += py-jupyter_console
     SUBDIR += py-jupyter_core
     SUBDIR += py-kaptan
     SUBDIR += py-kayako
