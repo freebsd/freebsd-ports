@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ssocr
-PORTVERSION=	2.16.3
+PORTVERSION=	2.16.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ \
 		LOCAL/ehaupt
