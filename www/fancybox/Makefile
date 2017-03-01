@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fancybox
-PORTVERSION=	2.1.6
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.1.7
+DISTVERSIONPREFIX=	V
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,7 +14,6 @@ NO_BUILD=	yes
 USES=		cpe
 
 GH_ACCOUNT=	fancyapps
-GH_PROJECT=	fancyBox
 USE_GITHUB=	yes
 
 CPE_VENDOR=	fancybox_project
