@@ -3360,6 +3360,7 @@
 %%WWWDIR%%/modules/ipwhitelist/install/install.sql
 %%WWWDIR%%/modules/ipwhitelist/install/updates.php
 %%WWWDIR%%/modules/ipwhitelist/language/bn_BD.php
+%%WWWDIR%%/modules/ipwhitelist/language/cs.php
 %%WWWDIR%%/modules/ipwhitelist/language/en.php
 %%WWWDIR%%/modules/ipwhitelist/language/fr.php
 %%WWWDIR%%/modules/ipwhitelist/language/nl.php
@@ -8021,6 +8022,7 @@
 %%WWWDIR%%/views/Extjs3/javascript/BlindPagingToolbar.js
 %%WWWDIR%%/views/Extjs3/javascript/ColumnFitLayout.js
 %%WWWDIR%%/views/Extjs3/javascript/CreateModifyTemplate.js
+%%WWWDIR%%/views/Extjs3/javascript/Cutstring.js
 %%WWWDIR%%/views/Extjs3/javascript/Date.js
 %%WWWDIR%%/views/Extjs3/javascript/DeployJava.js
 %%WWWDIR%%/views/Extjs3/javascript/DialogListeners.js
