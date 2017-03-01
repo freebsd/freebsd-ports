@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beignet
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/
 DISTVERSIONSUFFIX=	-source
@@ -23,7 +23,7 @@ USES=		cmake gmake ncurses pkgconfig shebangfix
 USE_XORG=	sm ice x11 xext xfixes
 USE_GL=		gl egl
 SHEBANG_FILES=	src/git_sha1.sh backend/kernels/compile.sh
-LLVMVER=	37
+LLVMVER=	39
 
 CMAKE_ARGS+=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config${LLVMVER}
 

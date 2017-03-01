@@ -1,11 +1,11 @@
 Flake8 is a wrapper around these tools:
 
-    - PyFlakes
-    - pep8
-    - Ned's McCabe script
+  - PyFlakes
+  - pycodestyle
+  - Ned Batchelder's McCabe script
 
-Flake8 runs all tools by launching the single 'flake8' script, but ignores pep8
-and PyFlakes extended options and just uses defaults. It displays the warnings
-in a per-file, merged output.
+Flake8 runs all tools by launching the single 'flake8' script. It
+displays the warnings in a per-file, merged output
 
+WWW: https://pypi.python.org/pypi/flake8
 WWW: https://gitlab.com/pycqa/flake8

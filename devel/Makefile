@@ -477,6 +477,7 @@
     SUBDIR += elixir-inflex
     SUBDIR += elixir-lager_logger
     SUBDIR += elixir-libring
+    SUBDIR += elixir-make
     SUBDIR += elixir-math
     SUBDIR += elixir-msgpax
     SUBDIR += elixir-nadia
@@ -4397,6 +4398,7 @@
     SUBDIR += py-manuel
     SUBDIR += py-matrix-angular-sdk
     SUBDIR += py-mccabe
+    SUBDIR += py-mdv
     SUBDIR += py-meliae
     SUBDIR += py-memory_profiler
     SUBDIR += py-mercurialserver
@@ -4612,6 +4614,7 @@
     SUBDIR += py-qt5-help
     SUBDIR += py-qt5-qscintilla2
     SUBDIR += py-qt5-test
+    SUBDIR += py-qtconsole
     SUBDIR += py-rauth
     SUBDIR += py-raven
     SUBDIR += py-rcsparse
