@@ -3,7 +3,7 @@
 
 PORTNAME=	allacrost
 PORTVERSION=	1.0.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-demo/${PORTVERSION}
 DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 USES=		gettext gmake iconv jpeg lua:51 openal:al
 USE_SDL=	sdl ttf net
 USE_GL=		yes
-USE_GCC=	any # problems in luabind
 QT_NONSTANDARD=	yes # used when EDITOR enabled
 
 CONFIGURE_ARGS=	--datadir=${DATADIR}
@@ -63,7 +62,7 @@ post-patch-EDITOR-on:
 		${WRKSRC}/Makefile.in
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MANUAL ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
