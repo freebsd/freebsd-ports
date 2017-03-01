@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.5.0.a3.20170120
-PORTREVISION=	2
+PORTVERSION=	1.5.0.b1.20170301
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -15,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libevent.so:devel/libevent \
 		libluajit-5.1.so:lang/luajit \
-		libfann.so:math/fann
+		libfann.so:math/fann \
+		libicui18n.so:devel/icu
 BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd
@@ -23,7 +23,7 @@ CONFLICTS_INSTALL=	rspamd
 RSPAMD_VERSION=	1.5.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
-GH_TAGNAME=	a037e79
+GH_TAGNAME=	fa5bd55
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN GD
 OPTIONS_DEFAULT=	GD
