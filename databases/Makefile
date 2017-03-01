@@ -33,6 +33,7 @@
     SUBDIR += cdb
     SUBDIR += cego
     SUBDIR += cegobridge
+    SUBDIR += clickhouse
     SUBDIR += couchdb
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql

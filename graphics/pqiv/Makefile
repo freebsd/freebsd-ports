@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pqiv
-PORTVERSION=	2.7.4
+PORTVERSION=	2.8.1
 CATEGORIES=	graphics
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -33,6 +33,7 @@ USES=		gettext-runtime gmake pkgconfig
 USE_XORG=	x11
 USE_GNOME=	cairo gdkpixbuf2
 HAS_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 
 LIBARCHIVE_CONFIGURE_WITH=	archive archive_cbx
 LIBARCHIVE_USES=	libarchive

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cqrlog
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
@@ -28,7 +28,7 @@ USE_FPC=	cairo fcl-base fcl-db fcl-image fcl-json fcl-net fcl-web \
 WANT_GNOME=	yes
 ALL_TARGET=	${PORTNAME}
 
-LAZARUS_VER=	1.6.2
+LAZARUS_VER=	1.6.4
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 
 OPTIONS_SINGLE=		LCL
@@ -62,10 +62,10 @@ post-patch:
 		${WRKSRC}/src/fPreferences.lfm ${WRKSRC}/src/fPreferences.pas
 	${REINPLACE_CMD} -e s!%%DATADIR%%!${DATADIR}!g \
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/fGrayline.pas
+	${REINPLACE_CMD} -e s!Linux!FreeBSD!g \
+		${WRKSRC}/src/fMain.lfm
 	${REINPLACE_CMD} -e s!%%LAZARUSDIR%%!${LAZARUS_DIR}!g \
 		${WRKSRC}/Makefile
 	${RM} -r ${WRKSRC}/src/mysql
-	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fLoTWExport.lfm
-	${LAZARUS_DIR}/tools/lazres ${WRKSRC}/src/fPreferences.lfm
 
 .include <bsd.port.mk>

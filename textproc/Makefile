@@ -1301,6 +1301,7 @@
     SUBDIR += py-python-augeas
     SUBDIR += py-python-docx
     SUBDIR += py-python-gettext
+    SUBDIR += py-python-slugify
     SUBDIR += py-pytidylib
     SUBDIR += py-pyx12
     SUBDIR += py-qrcode

@@ -538,7 +538,6 @@
     SUBDIR += lineakd
     SUBDIR += linrename
     SUBDIR += linux-crashplan
-    SUBDIR += linux-nero
     SUBDIR += linuxfdisk
     SUBDIR += livecd
     SUBDIR += lmmon
@@ -1240,7 +1239,6 @@
     SUBDIR += wtail
     SUBDIR += wuzzah
     SUBDIR += x86info
-    SUBDIR += xacpim
     SUBDIR += xbatt
     SUBDIR += xbattbar
     SUBDIR += xcdroast

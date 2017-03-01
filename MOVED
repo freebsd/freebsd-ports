@@ -9101,3 +9101,9 @@ java/jdk16-doc||2017-02-28|Has expired: Should have been removed with linux-sun-
 java/jdk7-doc||2017-02-28|Has expired: Should have been removed with linux-sun-jdk17 (2016-04-24)
 textproc/rubygem-sass-rails4|textproc/rubygem-sass-rails5|2017-02-28|Has expired: Use textproc/rubygem-sass-rails5 instead
 x11-toolkits/p5-Gtk|x11-toolkits/p5-Gtk-Perl|2017-02-28|Rename to match upstream naming
+japanese/ruby-eb||2017-03-01|Has expired: Upstream no longer active
+japanese/xyaku||2017-03-01|Has expired: Unmaintained, depends on expired japanese/ruby-eb
+archivers/libunrar4||2017-03-01|Has expired: Outdated version. Please use archivers/libunrar5 instead
+sysutils/xacpim||2017-03-01|Has expired: Mastersite disappeared
+sysutils/linux-nero||2017-03-01|Has expired: Probably cannot actually burn CD/DVD on recent FreeBSD
+audio/libofa||2017-03-01|Has expired: MusicDNS service has been discontinued
