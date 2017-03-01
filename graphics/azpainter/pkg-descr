@@ -1,6 +1,6 @@
 AzPainter is a full color painting application for Unix-like systems for
-illustration drawing.  This is not suitable for dot editing.  Since the
-color is handled internally with 16-bit precision (15-bit fixed point),
-color accuracy is increased at the expense of more memory being consumed.
+illustration drawing.  It is not suitable for "dot editing" or pixel-art.
+Since the color is handled internally with 16-bit precision (15-bit fixed
+point), color accuracy is increased at the expense of more memory usage.
 
 WWW: http://azsky2.html.xdomain.jp/linux/azpainter/
