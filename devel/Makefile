@@ -4328,6 +4328,7 @@
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
     SUBDIR += py-ipykernel
+    SUBDIR += py-ipyparallel
     SUBDIR += py-ipython_genutils
     SUBDIR += py-ipywidgets
     SUBDIR += py-iso8601
