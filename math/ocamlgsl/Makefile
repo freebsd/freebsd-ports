@@ -29,6 +29,9 @@ OCAML_PKGDIRS=		gsl
 HAS_CONFIGURE=		YES
 MAKE_JOBS_UNSAFE=	yes
 
+NOT_FOR_ARCHS=		armv6
+NOT_FOR_ARCHS_REASON=	architectures with double-word alignment for doubles are not supported
+
 DOCSDIR=	${LOCALBASE}/share/doc
 
 OPTIONS_DEFINE=	DOCS
