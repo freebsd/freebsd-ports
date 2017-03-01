@@ -23,6 +23,8 @@ GH_TUPLE=	rust-lang:rust:282fa87 \
 CONFLICTS_BUILD=	rust # see FIXME in `pre-fetch` in lang/rust/Makefile
 CONFLICTS_INSTALL=	rust
 
+PKGMESSAGE=	${.CURDIR}/../rust/pkg-message
+
 RUST_BOOTSTRAP_DIR=		2017-02-01
 RUST_BOOTSTRAP_VERSION=		beta
 
