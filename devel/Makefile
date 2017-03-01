@@ -4328,6 +4328,7 @@
     SUBDIR += py-ipdb
     SUBDIR += py-ipykernel
     SUBDIR += py-ipython_genutils
+    SUBDIR += py-ipywidgets
     SUBDIR += py-iso8601
     SUBDIR += py-isodate
     SUBDIR += py-isort
@@ -4357,6 +4358,7 @@
     SUBDIR += py-jsonrpclib
     SUBDIR += py-jsonschema
     SUBDIR += py-jupyter_client
+    SUBDIR += py-jupyter_console
     SUBDIR += py-jupyter_core
     SUBDIR += py-kaptan
     SUBDIR += py-kayako

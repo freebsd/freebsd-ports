@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	memleax
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -21,7 +21,7 @@ GH_ACCOUNT=	WuBingzheng
 
 USES=		gmake
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-debug_line
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	memleax
 
 PLIST_FILES=	bin/memleax \
