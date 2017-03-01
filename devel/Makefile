@@ -4328,6 +4328,7 @@
     SUBDIR += py-ipdb
     SUBDIR += py-ipykernel
     SUBDIR += py-ipython_genutils
+    SUBDIR += py-ipywidgets
     SUBDIR += py-iso8601
     SUBDIR += py-isodate
     SUBDIR += py-isort
