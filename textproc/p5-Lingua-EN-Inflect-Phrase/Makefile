@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Lingua-EN-FindNumber>=0:textproc/p5-Lingua-EN-FindNumber \
-	p5-Lingua-EN-Inflect>=1.89.1:textproc/p5-Lingua-EN-Inflect \
+	p5-Lingua-EN-Inflect>=1.891:textproc/p5-Lingua-EN-Inflect \
 	p5-Lingua-EN-Inflect-Number>=1.1:textproc/p5-Lingua-EN-Inflect-Number \
 	p5-Lingua-EN-Number-IsOrdinal>0:textproc/p5-Lingua-EN-Number-IsOrdinal \
 	p5-Lingua-EN-Tagger>=0.20:textproc/p5-Lingua-EN-Tagger

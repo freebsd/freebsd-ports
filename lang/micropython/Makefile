@@ -2,8 +2,8 @@
 
 PORTNAME=	micropython
 PORTVERSION=	1.5.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	lang python
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,6 +18,8 @@ USES=		gmake pkgconfig python:3,build readline shebangfix
 USE_GITHUB=	yes
 
 PLIST_FILES=	bin/micropython
+
+BROKEN_armv6=	fails to assemble: error: invalid operand for instruction
 
 WRKSRC_SUBDIR=	unix
 

@@ -46,6 +46,7 @@ MP_ALL_TARGET=	mp
 MP_INSTALL_TARGET=	mp-install
 
 BROKEN_aarch64=		Fails to configure: error: Architecture not supported
+BROKEN_armv6=		Fails to configure: error: Architecture not supported
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}

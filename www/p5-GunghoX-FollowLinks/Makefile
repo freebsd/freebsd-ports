@@ -12,7 +12,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to follow links within responses for Gungho
 
 RUN_DEPENDS=	\
-	p5-Gungho>=0.09.005:www/p5-Gungho \
+	p5-Gungho>=0.09005:www/p5-Gungho \
 	p5-HTML-Parser>0:www/p5-HTML-Parser \
 	p5-HTML-Tagset>0:www/p5-HTML-Tagset \
 	p5-MIME-Types>0:mail/p5-MIME-Types \

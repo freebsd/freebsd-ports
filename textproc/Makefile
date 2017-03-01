@@ -372,6 +372,7 @@
     SUBDIR += kibana45
     SUBDIR += kibana50
     SUBDIR += kibana50-x-pack
+    SUBDIR += kiss-templates
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
     SUBDIR += kmfl-sil-ezra

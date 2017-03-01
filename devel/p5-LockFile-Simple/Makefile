@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	LockFile-Simple
-PORTVERSION=	0.2.8
-PORTREVISION=	1
+PORTVERSION=	0.208
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}0${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing simple file locking
 
+LICENSE=	ART10 GPLv2+
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

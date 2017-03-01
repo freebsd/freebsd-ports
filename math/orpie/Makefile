@@ -20,6 +20,9 @@ USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+NOT_FOR_ARCHS=		armv6
+NOT_FOR_ARCHS_REASON=	architectures with double-word alignment for doubles are not supported
+
 PLIST_FILES=	bin/orpie bin/orpie-curses-keys etc/orpierc \
 		man/man1/orpie.1.gz man/man1/orpie-curses-keys.1.gz \
 		man/man5/orpierc.5.gz
