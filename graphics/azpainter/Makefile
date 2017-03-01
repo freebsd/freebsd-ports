@@ -4,8 +4,15 @@
 PORTNAME=	azpainter
 DISTVERSION=	2.0.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://jaist.dl.osdn.jp/azpainter/67130/ \
-		http://rwthaachen.dl.osdn.jp/azpainter/67130/
+MASTER_SITES=	http://acc.dl.osdn.jp/azpainter/67130/ \
+		http://cznic.dl.osdn.jp/azpainter/67130/ \
+		http://gigenet.dl.osdn.jp/azpainter/67130/ \
+		http://iij.dl.osdn.jp/azpainter/67130/ \
+		http://jaist.dl.osdn.jp/azpainter/67130/ \
+		http://onet.dl.osdn.jp/azpainter/67130/ \
+		http://osdn.dl.osdn.jp/azpainter/67130/ \
+		http://rwthaachen.dl.osdn.jp/azpainter/67130/ \
+		http://ymu.dl.osdn.jp/azpainter/67130/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	16-bit RGB full color painting application
