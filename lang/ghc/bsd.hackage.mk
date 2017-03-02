@@ -141,6 +141,7 @@ dia-base_port=                                  graphics/hs-dia-base
 dia-functions_port=                             graphics/hs-dia-functions
 Diff_port=                                      textproc/hs-Diff
 digest_port=                                    security/hs-digest
+directory_port=                                 devel/hs-directory
 directory-tree_port=                            devel/hs-directory-tree
 distributive_port=                              math/hs-distributive
 dlist_port=                                     devel/hs-dlist

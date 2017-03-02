@@ -20,6 +20,7 @@ man/man1/wcd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/wcd.htm
 %%PORTDOCS%%%%DOCSDIR%%/wcd.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%NLS%%share/locale/da/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wcd.mo

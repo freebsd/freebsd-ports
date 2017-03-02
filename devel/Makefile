@@ -934,6 +934,7 @@
     SUBDIR += hs-date-cache
     SUBDIR += hs-datetime
     SUBDIR += hs-deepseq-generics
+    SUBDIR += hs-directory
     SUBDIR += hs-directory-tree
     SUBDIR += hs-dlist
     SUBDIR += hs-dlist-instances
@@ -4899,6 +4900,7 @@
     SUBDIR += py3-babel
     SUBDIR += py3-click
     SUBDIR += py3-dbus
+    SUBDIR += py3-docopt
     SUBDIR += py3-flake8
     SUBDIR += py3-flake8-builtins
     SUBDIR += py3-flake8-docstrings
@@ -4925,6 +4927,7 @@
     SUBDIR += py3-rubymarshal
     SUBDIR += py3-setproctitle
     SUBDIR += py3-simplejson
+    SUBDIR += py3-six
     SUBDIR += py3-threema-msgapi
     SUBDIR += py3-vcversioner
     SUBDIR += py3-wcwidth
