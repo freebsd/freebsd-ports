@@ -314,6 +314,7 @@ MANPAGES_DESC?=		Build and/or install manual pages
 MAPSERVER_DESC?=	Mapserver support
 MATE_DESC?=		MATE desktop environment support
 MATROSKA_DESC?=		Matroska container format support
+MBEDTLS_DESC?=		SSL/TLS support via mbed TLS
 MDNSRESPONDER_DESC?=	Zeroconf support via mDNSResponder
 METALINK_DESC?=		Metalink support
 MIKMOD_DESC?=		MOD audio format support
