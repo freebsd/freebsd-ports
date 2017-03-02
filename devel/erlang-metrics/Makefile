@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang-metrics
-PORTVERSION=	1.0.1
+PORTVERSION=	2.2.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
