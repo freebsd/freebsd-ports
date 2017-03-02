@@ -11,19 +11,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT-BSD2.txt
 
-PLIST_FILES=	bin/fossil
+WRKSRC=		${WRKDIR}/Fossil_2017-01-16_205854_1669115ab9
 
+USES=		ssl
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-USE_OPENSSL=	yes
 USE_RC_SUBR=	fossil
 MAKE_JOBS_UNSAFE=yes
 
+PLIST_FILES=	bin/fossil
+
 OPTIONS_DEFINE=	JSON FUSE STATIC
 OPTIONS_DEFAULT=	JSON
-WRKSRC=		${WRKDIR}/${PORTNAME:C/^(.).*/\1/:tu}${PORTNAME:C/^.(.*)/\1/}_2017-01-16_205854_1669115ab9
 JSON_DESC=	JSON API support
 FUSE_DESC=	Enable fossil fusefs command
 
