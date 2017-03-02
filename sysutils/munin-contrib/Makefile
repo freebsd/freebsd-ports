@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	contrib
-DISTVERSION=	git.2017-01-21
+DISTVERSION=	git.2017-03-01
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	munin-
 
@@ -12,7 +12,7 @@ RUN_DEPENDS=	munin-node>=0:sysutils/munin-node
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	munin-monitoring
-GH_TAGNAME=	9990b16
+GH_TAGNAME=	893c3fa
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -27,14 +27,12 @@ python3_CMD=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}
 # Most of the installed files are scripts, so give them a "correct" mode.
 BINMODE=	755
 
-PORTDOCS=	README.md
-PORTEXAMPLES=	plugins samples templates tools
-
 SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${COPYTREE_BIN} '${PORTEXAMPLES}' ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${COPYTREE_BIN} 'plugins samples templates tools' ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} * -type f >> ${TMPPLIST}
 
 .include <bsd.port.mk>
