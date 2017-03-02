@@ -714,6 +714,7 @@
     SUBDIR += sndio
     SUBDIR += solfege
     SUBDIR += sonata
+    SUBDIR += sonic-visualiser
     SUBDIR += sooperlooper
     SUBDIR += sound-juicer
     SUBDIR += soundconverter
