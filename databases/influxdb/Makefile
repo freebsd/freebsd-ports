@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	influxdb
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases net-mgmt
 
@@ -18,24 +18,28 @@ USE_RC_SUBR=	influxd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	influxdata:DEFAULT
+
+
 GH_TUPLE=	BurntSushi:toml:9906417:toml/src/github.com/BurntSushi/toml \
 		bmizerany:pat:c068ca2:pat/src/github.com/bmizerany/pat \
-		boltdb:bolt:5cc10bb:bolt/src/github.com/boltdb/bolt \
-		davecgh:go-spew:5215b55:go_spew/src/github.com/davecgh/go-spew \
-		dgrijalva:jwt-go:63734ea:jwt_go/src/github.com/dgrijalva/jwt-go \
+		boltdb:bolt:4b1ebc1:bolt/src/github.com/boltdb/bolt \
+		cespare:xxhash:4a94f89:xxhash/src/github.com/cespare/xxhash \
+		davecgh:go-spew:346938d:go_spew/src/github.com/davecgh/go-spew \
+		dgrijalva:jwt-go:24c63f5:jwt_go/src/github.com/dgrijalva/jwt-go \
 		dgryski:go-bits:2ad8d70:go_bits/src/github.com/dgryski/go-bits \
 		dgryski:go-bitstream:7d46cd2:go_bitstream/src/github.com/dgryski/go-bitstream \
-		gogo:protobuf:0394392:protobuf/src/github.com/gogo/protobuf \
+		gogo:protobuf:a9cd0c35:protobuf/src/github.com/gogo/protobuf \
 		golang:snappy:d9eb7a3:snappy/src/github.com/golang/snappy \
 		influxdata:usage-client:6d38953:usage_client/src/github.com/influxdata/usage-client \
 		jwilder:encoding:4dada27:encoding/src/github.com/jwilder/encoding \
-		kimor79:gollectd:61d0dee:gollectd/src/github.com/kimor79/gollectd \
 		paulbellamy:ratecounter:5a11f58:ratecounter/src/github.com/paulbellamy/ratecounter \
 		peterh:liner:8975875:liner/src/github.com/peterh/liner \
-		rakyll:statik:274df12:statik/src/github.com/rakyll/statik \
+		rakyll:statik:e383bbf:statik/src/github.com/rakyll/statik \
 		retailnext:hllpp:38a7bb7:hllpp/src/github.com/retailnext/hllpp \
-		collectd:go-collectd:9fc824c:go_collectd/src/collectd.org \
-		golang:crypto:c197bcf:crypto/src/golang.org/x/crypto
+		collectd:go-collectd:e84e8af:go_collectd/src/collectd.org \
+		uber-go:atomic:74ca5ec:atomic/src/go.uber.org/atomic \
+		uber-go:zap:416270f:zap/src/go.uber.org/zap \
+		golang:crypto:9477e0b:crypto/src/golang.org/x/crypto
 
 SUB_FILES=	influxd
 SUB_LIST+=	INFLUXD_USER=${INFLUXD_USER} \
@@ -65,14 +69,15 @@ STRIP=		# stripping can break go binaries
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 	@cd ${WRKSRC} && \
-		${MV} LICENSE build.sh gobuild.sh node.go tests \
-		circle-test.sh importer package.sh toml \
-		Dockerfile Makefile circle.yml influxdb.go pkg tsdb \
-		Dockerfile_build_ubuntu32 client influxql scripts uuid \
-		Dockerfile_build_ubuntu64 cmd man services \
-		.mention-bot Dockerfile_build_ubuntu64_git appveyor.yml coordinator models stress \
-		Dockerfile_test_ubuntu32 build-docker.sh errors.go monitor tcp \
-		Godeps build.py etc nightly.sh test.sh \
+		${MV} appveyor.yml build-docker.sh build.py build.sh CHANGELOG.md \
+		circle-test.sh circle.yml client cmd CODING_GUIDELINES.md \
+		CONTRIBUTING.md coordinator DOCKER.md Dockerfile \
+		Dockerfile_build_ubuntu32 Dockerfile_build_ubuntu64 \
+		Dockerfile_build_ubuntu64_git Dockerfile_test_ubuntu32 \
+		errors.go etc gobuild.sh Godeps importer influxdb.go influxql \
+		internal LICENSE LICENSE_OF_DEPENDENCIES.md Makefile man models \
+		monitor nightly.sh node.go package.sh pkg QUERIES.md README.md \
+		scripts services stress tcp test.sh tests TODO.md toml tsdb uuid \
  		${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 
 do-build:
