@@ -13,6 +13,9 @@ COMMENT=	New IO for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Use devel/rubygem-nio4r instead
+EXPIRATION_DATE=2017-03-31
+
 USE_RUBY=	yes
 USES=		gem
 
