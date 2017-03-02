@@ -650,6 +650,7 @@
     SUBDIR += munin-node
     SUBDIR += muse
     SUBDIR += mybashburn
+    SUBDIR += myrescue
     SUBDIR += n98-magerun
     SUBDIR += nagios-statd
     SUBDIR += namefix
