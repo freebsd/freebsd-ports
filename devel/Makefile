@@ -934,6 +934,7 @@
     SUBDIR += hs-date-cache
     SUBDIR += hs-datetime
     SUBDIR += hs-deepseq-generics
+    SUBDIR += hs-directory
     SUBDIR += hs-directory-tree
     SUBDIR += hs-dlist
     SUBDIR += hs-dlist-instances
