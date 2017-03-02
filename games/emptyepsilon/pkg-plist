@@ -230,6 +230,12 @@ bin/emptyepsilon
 %%DATADIR%%/scripts/shipTemplates_StarFighters.lua
 %%DATADIR%%/scripts/shipTemplates_Stations.lua
 %%DATADIR%%/scripts/supply_drop.lua
-%%DATADIR%%/scripts/tutorial.lua
+%%DATADIR%%/scripts/tutorial_01_mainscreen.lua
+%%DATADIR%%/scripts/tutorial_02_helm.lua
+%%DATADIR%%/scripts/tutorial_03_weapons.lua
+%%DATADIR%%/scripts/tutorial_04_engineering.lua
+%%DATADIR%%/scripts/tutorial_05_science.lua
+%%DATADIR%%/scripts/tutorial_06_relay.lua
+%%DATADIR%%/scripts/tutorial_07_all.lua
 %%DATADIR%%/scripts/util_random_transports.lua
 %%DATADIR%%/scripts/utils.lua
