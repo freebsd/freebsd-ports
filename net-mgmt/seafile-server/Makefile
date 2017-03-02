@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-server
-PORTVERSION=	6.0.7
+PORTVERSION=	6.0.8
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima1252@gmail.com
@@ -107,7 +106,7 @@ post-install:
 	fi
 .endfor
 .for SERVPROG in seafile-controller seaf-server
-	${LN} -s ${PREFIX}/${SEABIN}/${SERVPROG} ${STAGEDIR}${PREFIX}/bin/
+	${LN} -s "../${SEABIN}/${SERVPROG}" ${STAGEDIR}${PREFIX}/bin/${SERVPROG}
 .endfor
 
 	(cd ${STAGEDIR}${PREFIX}/lib && \

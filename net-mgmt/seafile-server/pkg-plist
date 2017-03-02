@@ -1,12 +1,6 @@
 bin/seafile-controller
 bin/seaf-server
-include/seafile/seafile-error.h
 include/seafile/seafile-object.h
-include/seafile/seafile-rpc.h
-lib/libseafile.a
-lib/libseafile.so
-lib/libseafile.so.0
-lib/libseafile.so.0.0.0
 libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/seaf-cli-wrapper.sh
 %%SEAFILE_SERVER%%/check_init_admin.py
