@@ -7,7 +7,7 @@ bin/afl-clang++
 %%LLVM%%lib/afl/afl-llvm-rt.o
 %%LLVM%%lib/afl/afl-llvm-rt-32.o
 %%LLVM%%lib/afl/afl-llvm-rt-64.o
-%%MINIMIZE_CORPUS%%bin/afl-cmin
+bin/afl-cmin
 bin/afl-fuzz
 bin/afl-g++
 bin/afl-gcc
@@ -69,7 +69,6 @@ lib/afl/as
 %%DATADIR%%/others/sql/simple_queries.sql
 %%DATADIR%%/others/text/hello_world.txt
 %%DATADIR%%/others/xml/small_document.xml
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/env_variables.txt
