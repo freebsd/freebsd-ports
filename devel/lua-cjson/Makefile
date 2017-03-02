@@ -9,13 +9,13 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTNAME=	lua-cjson-${PORTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
-COMMENT=	Fast JSON parsing and encoding support for Lua
+COMMENT?=	Fast JSON parsing and encoding support for Lua
 
-USES=		lua:51
+USES?=		lua
 
 MAKE_ARGS=	LUA_VERSION=${LUA_VER}
 
-PLIST_FILES=	%%LUA_MODLIBDIR%%/cjson.so
+PLIST_FILES=	${LUA_MODLIBDIR}/cjson.so
 
 post-patch:
 	@${REINPLACE_CMD} '16,18d; \

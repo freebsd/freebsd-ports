@@ -1571,6 +1571,7 @@
     SUBDIR += lua-posix
     SUBDIR += lua-pty
     SUBDIR += lua-sysctl
+    SUBDIR += lua51-cjson
     SUBDIR += lua51-libevent
     SUBDIR += luabind
     SUBDIR += luafilesystem
