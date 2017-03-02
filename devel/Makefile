@@ -1571,6 +1571,7 @@
     SUBDIR += lua-posix
     SUBDIR += lua-pty
     SUBDIR += lua-sysctl
+    SUBDIR += lua51-cjson
     SUBDIR += lua51-libevent
     SUBDIR += luabind
     SUBDIR += luafilesystem
@@ -4926,6 +4927,7 @@
     SUBDIR += py3-simplejson
     SUBDIR += py3-threema-msgapi
     SUBDIR += py3-vcversioner
+    SUBDIR += py3-wcwidth
     SUBDIR += py3-xdg
     SUBDIR += py3-yaml
     SUBDIR += py_static_check
@@ -5608,6 +5610,7 @@
     SUBDIR += smv
     SUBDIR += soapui
     SUBDIR += sonar-ant-task
+    SUBDIR += sonar-scanner-cli
     SUBDIR += sonarqube
     SUBDIR += sope2
     SUBDIR += sope3
