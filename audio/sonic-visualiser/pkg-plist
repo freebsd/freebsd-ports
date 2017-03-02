@@ -1,0 +1,8 @@
+bin/sonic-visualiser
+share/applications/sonic-visualiser.desktop
+share/applications/x-sonicvisualiser.desktop
+share/applications/x-sonicvisualiser-layer.desktop
+share/pixmaps/sv-icon.svg
+%%DOCSDIR%%/CHANGELOG
+%%DOCSDIR%%/README
+%%OSC%%%%DOCSDIR%%/README.OSC
