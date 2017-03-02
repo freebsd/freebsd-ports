@@ -11,17 +11,20 @@ DISTNAME=	TleenX2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for polish IM service called Tlen.pl
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libtlen.so:polish/libtlen
 
-USES=		pkgconfig
+USES=		localbase:ldflags pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xscrnsaver
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/TleenX2-${PORTVERSION}
 
 PORTDOCS=	README gg.txt sms.txt
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -32,7 +35,7 @@ post-patch:
 		${WRKSRC}/iksemel/Makefile
 	@${REINPLACE_CMD} 's,gcc,${CC},' ${WRKSRC}/jabby/Makefile
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
