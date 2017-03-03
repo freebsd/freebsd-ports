@@ -1,0 +1,22 @@
+diff --git configure.ac configure.ac
+index 5c73168a..abbf4135 100644
+--- configure.ac
++++ configure.ac
+@@ -138,8 +138,15 @@ AC_CHECK_FUNC(dlopen, [],
+ AC_SUBST(DLOPEN_LIBS)
+
+ # checking for openssl
+-PKG_CHECK_MODULES([OPENSSL], [openssl >= 0], [],
+-  [AC_MSG_ERROR([please install libssl-dev or openssl-devel])])
++if test "x$freebsd" = "xyes"; then
++  # FreeBSD base doesn't supply "*.pc"
++  AC_CHECK_HEADER([openssl/rc4.h], [],
++    [AC_MSG_ERROR([please install libssl-dev or openssl-devel])],
++    [#include <stdlib.h>])
++else
++  PKG_CHECK_MODULES([OPENSSL], [openssl >= 0], [],
++    [AC_MSG_ERROR([please install libssl-dev or openssl-devel])])
++fi
+
+ # checking for pam variation
+ # Linux-PAM is used in Linux systems
