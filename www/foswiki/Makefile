@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foswiki
-PORTVERSION=	1.1.9
+PORTVERSION=	2.1.3
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
@@ -54,7 +54,8 @@ PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-patch:
 	@${RM} -r ${WRKSRC}/lib/CPAN
-	@${MV} ${WRKSRC}/bin-htaccess.txt ${WRKSRC}/bin/.htaccess.txt
+	@${MV} ${WRKSRC}/bin-htaccess-basic.txt ${WRKSRC}/bin/.htaccess-basic.txt
+	@${MV} ${WRKSRC}/bin-htaccess-advanced.txt ${WRKSRC}/bin/.htaccess-advanced.txt
 	@${CP} ${WRKSRC}/subdir-htaccess.txt ${WRKSRC}/working/.htaccess
 	@cd ${WRKSRC} && \
 		${REINPLACE_CMD} -i "" \
