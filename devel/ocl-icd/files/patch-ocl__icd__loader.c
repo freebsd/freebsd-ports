@@ -1,13 +1,6 @@
---- ocl_icd_loader.c.orig	2015-06-08 18:29:52 UTC
+--- ocl_icd_loader.c.orig	2017-01-19 13:55:12 UTC
 +++ ocl_icd_loader.c
-@@ -49,13 +49,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBI
- #define DEBUG_OCL_ICD_PROVIDE_DUMP_FIELD
- #include "ocl_icd_debug.h"
- 
--#define ETC_OPENCL_VENDORS "/etc/OpenCL/vendors"
-+#define ETC_OPENCL_VENDORS "/usr/local/etc/OpenCL/vendors"
- 
- int debug_ocl_icd_mask=0;
+@@ -53,7 +53,7 @@ int debug_ocl_icd_mask=0;
  
  typedef __typeof__(clGetPlatformInfo) *clGetPlatformInfo_fn;
  
