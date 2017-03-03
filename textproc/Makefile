@@ -329,6 +329,7 @@
     SUBDIR += id-aspell
     SUBDIR += id-hyphen
     SUBDIR += idnits
+    SUBDIR += ie-hunspell
     SUBDIR += igor
     SUBDIR += iksemel
     SUBDIR += info2html
