@@ -49,6 +49,7 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Range.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Raw.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Record.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.TID.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.TSVector.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Time.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.TimeTZ.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.Timestamp.beam
@@ -58,6 +59,7 @@ lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.VoidBinary.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Extensions.VoidText.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.INET.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Interval.beam
+lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Lexeme.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.Line.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.LineSegment.beam
 lib/elixir/lib/postgrex/ebin/Elixir.Postgrex.MACADDR.beam
@@ -131,6 +133,7 @@ lib/elixir/lib/postgrex/lib/postgrex/extensions/time.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/timestamp.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/timestamptz.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/timetz.ex
+lib/elixir/lib/postgrex/lib/postgrex/extensions/tsvector.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/uuid.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/void_binary.ex
 lib/elixir/lib/postgrex/lib/postgrex/extensions/void_text.ex
