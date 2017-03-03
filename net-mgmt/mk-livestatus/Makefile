@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mk-livestatus
-PORTVERSION=	1.2.8p15
+PORTVERSION=	1.2.8p16
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mathias-kettner.de/download/
 DIST_SUBDIR=	check_mk
