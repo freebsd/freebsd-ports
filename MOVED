@@ -9106,3 +9106,19 @@ archivers/libunrar4||2017-03-01|Has expired: Outdated version. Please use archiv
 sysutils/xacpim||2017-03-01|Has expired: Mastersite disappeared
 sysutils/linux-nero||2017-03-01|Has expired: Probably cannot actually burn CD/DVD on recent FreeBSD
 audio/libofa||2017-03-01|Has expired: MusicDNS service has been discontinued
+emulators/hyperv-is||2017-03-03|Has expired: does not support any actual FreeBSD release
+devel/py-mez_xml||2017-03-03|Has expired: Was only needed for deprecated www/py-GinGin
+www/py-GinGin||2017-03-03|Has expired: Upstream disappeared, last release from 2009
+www/py-scriptaculous||2017-03-03|Has expired: Development of this branch ceased
+devel/py-Jinja|devel/py-Jinja2|2017-03-03|Has expired: Development of this branch ceased. Use devel/py-Jinja2 instead
+mail/py-turbomail||2017-03-03|Has expired: Development of this branch ceased
+www/py-turbogears|www/py-turbogears2|2017-03-03|Has expired: Development of this branch ceased. Use www/py-turbogears2
+devel/py-turbojson||2017-03-03|Has expired: Development of this branch ceased
+devel/py-TurboJinja||2017-03-03|Has expired: Development of this branch ceased
+devel/py-TGScheduler||2017-03-03|Has expired: Development of this branch ceased
+devel/py-turbokid||2017-03-03|Has expired: Development of this branch ceased
+www/py-tgwebservices||2017-03-03|Has expired: Development of this branch ceased
+devel/py-turbojson11||2017-03-03|Has expired: Development of this branch ceased
+devel/py-turbocheetah||2017-03-03|Has expired: Development of this branch ceased
+devel/py-tgMochiKit||2017-03-03|Has expired: Development of this branch ceased
+www/py-Lightbox||2017-03-03|Has expired: Development of this branch ceased

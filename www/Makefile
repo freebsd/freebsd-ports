@@ -1506,9 +1506,7 @@
     SUBDIR += publicfile
     SUBDIR += punbb
     SUBDIR += pwebstats
-    SUBDIR += py-GinGin
     SUBDIR += py-HTMLgen
-    SUBDIR += py-Lightbox
     SUBDIR += py-MechanicalSoup
     SUBDIR += py-Products.CMFPlone
     SUBDIR += py-Products.PloneLDAP
@@ -1819,7 +1817,6 @@
     SUBDIR += py-routes
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
-    SUBDIR += py-scriptaculous
     SUBDIR += py-seafdav
     SUBDIR += py-seafobj
     SUBDIR += py-searx
@@ -1833,11 +1830,9 @@
     SUBDIR += py-spyne
     SUBDIR += py-surl
     SUBDIR += py-textile
-    SUBDIR += py-tgwebservices
     SUBDIR += py-tmdb3
     SUBDIR += py-tornado
     SUBDIR += py-trello
-    SUBDIR += py-turbogears
     SUBDIR += py-turbogears2
     SUBDIR += py-tvdb_api
     SUBDIR += py-twistedWeb

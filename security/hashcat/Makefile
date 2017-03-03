@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hashcat
-PORTVERSION=	3.30
+PORTVERSION=	3.40
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -22,9 +22,10 @@ USES=		gmake localbase shebangfix
 SHEBANG_FILES=	extra/tab_completion/install
 USE_CSTD=	c99
 
-MAKE_ARGS=	CC="${CC}" \
-		CFLAGS_NATIVE="${CFLAGS} -Iinclude/ -IOpenCL/" \
-		LFLAGS_NATIVE="${LDFLAGS} -lpthread"
+MAKE_ARGS=	SHARED=1 \
+		CC="${CC}" \
+		LFLAGS_NATIVE="${LDFLAGS} -lpthread" \
+		CFLAGS_NATIVE="${CFLAGS} -Iinclude -IOpenCL -Iinclude/lzma_sdk"
 
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/libhashcat.so

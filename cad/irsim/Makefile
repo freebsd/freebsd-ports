@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	irsim
-PORTVERSION=	9.7.95
+PORTVERSION=	9.7.96
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 

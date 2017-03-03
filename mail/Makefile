@@ -545,7 +545,6 @@
     SUBDIR += py-ppolicy
     SUBDIR += py-pyspf
     SUBDIR += py-spambayes
-    SUBDIR += py-turbomail
     SUBDIR += py-twistedMail
     SUBDIR += py-zope.sendmail
     SUBDIR += pymsgauth
