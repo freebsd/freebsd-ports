@@ -14,6 +14,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Mupen64Plus 2.0 GUI frontend written using wxWidgets
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \

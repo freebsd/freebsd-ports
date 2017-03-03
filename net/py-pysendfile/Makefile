@@ -14,6 +14,8 @@ COMMENT=	Python interface to sendfile(2)
 LICENSE=	MIT
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 CONFLICTS_INSTALL=	py*-sendfile-[0-9]*
 

@@ -11,6 +11,8 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Simple media player using Qt/Phonon
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		tar:bzip2 qmake
 USE_QT4=	gui xml uic_build moc_build \

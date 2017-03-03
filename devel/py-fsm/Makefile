@@ -15,6 +15,8 @@ COMMENT=	Pure Python Implementation of a Finite State Machine
 LICENSE=	BSD3CLAUSE
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.0:graphics/py-pygraphviz
 

@@ -11,6 +11,8 @@ MAINTAINER=	fernando@netfilter.com.br
 COMMENT=	Open source deep packet inspection engine
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BROKEN_powerpc64=	Does not build
 

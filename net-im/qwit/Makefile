@@ -12,6 +12,8 @@ MAINTAINER=	sokolov@TrueBSD.org
 COMMENT=	Qt4-based lightweight Twitter client
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		qmake tar:bzip2
 USE_QT4=	gui network xml moc_build rcc_build \

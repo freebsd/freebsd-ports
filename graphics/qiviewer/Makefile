@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}/COPYING
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		desktop-file-utils qmake tar:bzip2
 USE_QT4=	corelib gui imageformats_run linguisttools_build \

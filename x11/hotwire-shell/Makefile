@@ -13,6 +13,8 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Object-oriented hypershell
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus \
 		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo \

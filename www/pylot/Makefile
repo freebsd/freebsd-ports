@@ -12,6 +12,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Tool for testing performance and scalability of web services
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 OPTIONS_DEFINE=	GUI REPORTGRAPHS
 OPTIONS_DEFAULT=	REPORTGRAPHS

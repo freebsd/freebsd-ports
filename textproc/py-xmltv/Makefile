@@ -15,6 +15,8 @@ COMMENT=	Python module that provides access to XMLTV TV listings
 LICENSE=	LGPL21
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		python
 USE_PYTHON=	distutils

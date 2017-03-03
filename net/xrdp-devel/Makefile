@@ -2,92 +2,105 @@
 # $FreeBSD$
 
 PORTNAME=	xrdp
-PORTVERSION=	0.7.0.b20130912
-PORTREVISION=	4
+PORTVERSION=	0.9.1
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
+DIST_SUBDIR?=	${PORTNAME}
 
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
 
-LICENSE=	GPLv2
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+# pulseaudio's built source is required for audio redirection
+BUILD_DEPENDS=	${NONEXISTENT}:audio/pulseaudio:configure \
+		${LOCALBASE}/bin/nasm:devel/nasm
 
 USES=		autoreconf:build jpeg libtool pkgconfig ssl
-USE_XORG=	x11 xfixes
+USE_XORG=	ice pixman sm x11 xfixes xrandr
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	xrdp
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	64e2291
+GH_PROJECT=	xrdp librfxcodec:librfxcodec libpainter:libpainter
+GH_TAGNAME=	v0.1.0:librfxcodec v0.1.0:libpainter
 
 CONFIGURE_ARGS=	--localstatedir=/var \
-		--enable-jpeg
-CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
-LIBS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
+		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
+		--enable-jpeg --enable-pixman --enable-rfxcodec --enable-painter
+LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB} -lssl
+CFLAGS+=	-I${LOCALBASE}/include -L${OPENSSLINC}
 CONFLICTS=	xrdp-[0-9]*
-# xrdp v0.7 is not compatible with current net/freerdp (1.0.2)
-#BUILD_DEPENDS+=	freerdp>=1.0.2:net/freerdp
-#CONFIGURE_ARGS+=	--enable-freerdp1
+INSTALL_TARGET=	install-strip
+SUB_FILES=	pkg-install pkg-message
+SUB_LIST=	OPENSSLBASE=${OPENSSLBASE}
 
-OPTIONS_DEFINE=	DEBUG SOUND
-OPTIONS_DEFAULT=	TIGERVNC JP106
-OPTIONS_GROUP=	KEYMAP
-OPTIONS_GROUP_KEYMAP= JP106
-OPTIONS_RADIO=	XVNC
-OPTIONS_RADIO_XVNC=	TIGERVNC TIGHTVNC TRIDIAVNC
-TIGERVNC_DESC=	Use TigerVNC (recommended)
-TIGHTVNC_DESC=	Use TightVNC
-TRIDIAVNC_DESC=	Use TridiaVNC
-SOUND_DESC=	Enable sound support via pulseaudio (experimental)
-JP106_DESC=	Install Japanese JP106 keymap
+OPTIONS_DEFINE=	DEBUG FUSE IPV6 MP3LAME OPUS
+OPTIONS_DEFAULT=	OPUS MP3LAME
+FUSE_DESC=	Enable drive redirection via FUSE (experimental)
+MP3LAME_DESC=	Enable MP3 Lame for audio redirection
+OPUS_DESC=	Enable Opus for audio redirection
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+DEBUG_CONFIGURE_ENABLE=	xrdpdebug
+FUSE_CONFIGURE_ENABLE=	fuse
+MP3LAME_CONFIGURE_ENABLE=	mp3lame
+MP3LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
+OPUS_CONFIGURE_ENABLE=	opus
+OPUS_LIB_DEPENDS=	libopus.so:audio/opus
+
+# don't forget to increase PORTREVISION after pulseaudio update
+PULSE_VERSION=	${MAKE} -C ${PORTSDIR}/audio/pulseaudio -VPORTVERSION
+PULSE_WRKSRC=	${MAKE} -C ${PORTSDIR}/audio/pulseaudio -VWRKSRC
 
 .include <bsd.port.options.mk>
 
-# Which Xserver to use
-.if ${PORT_OPTIONS:MTIGERVNC}
-RUN_DEPENDS=	Xvnc:net/tigervnc
-.endif
-.if ${PORT_OPTIONS:MTIGHTVNC}
-RUN_DEPENDS=	Xvnc:net/tightvnc
-.endif
-.if ${PORT_OPTIONS:MTRIDIAVNC}
-RUN_DEPENDS=	Xvnc:net/tridiavnc
+.if ${PORT_OPTIONS:MFUSE}
+USES+=	fuse
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-xrdpdebug
-CFLAGS+=	-DXRDP_DEBUG
-.endif
-
-.if ${PORT_OPTIONS:MJP106}
-KEYMAP_FILES+=	km-0411.ini km-e0010411.ini \
-		km-e0200411.ini km-e0210411.ini
-PLIST_SUB+=	JP106=""
-.else
-PLIST_SUB+=	JP106="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSOUND}
-BUILD_DEPENDS+=	${LOCALBASE}/include/pulse/simple.h:audio/pulseaudio \
-		${LOCALBASE}/include/pulse/error.h:audio/pulseaudio
-CONFIGURE_ARGS+=	--enable-simplesound
-.endif
-
-SUB_FILES=	pkg-message
+post-extract:
+	# librfxcodec is provided as git submodule
+	@${CP} -r ${WRKSRC_librfxcodec}/ ${WRKSRC}/librfxcodec/
+	@${CP} -r ${WRKSRC_libpainter}/ ${WRKSRC}/libpainter/
 
 post-patch:
-.for f in sesman/sesman.ini sesman/startwm.sh xrdp/rsakeys.ini xrdp/xrdp.ini
-	@${MV} ${WRKSRC}/$f ${WRKSRC}/$f.sample
-.endfor
+	@${REINPLACE_CMD} \
+		-e "s|^PULSE_SCRIPT=/etc/xrdp/pulse/default.pa|PULSE_SCRIPT=${PREFIX}/etc/xrdp/pulse/default.pa|" \
+		${WRKSRC}/sesman/sesman.ini
+	@${REINPLACE_CMD} \
+		-e "s|^PULSE_DIR = .*|PULSE_DIR = `${PULSE_WRKSRC}`|" \
+		-e "s|-Wall -O2|-Wall -O2 -I${LOCALBASE}/include|" \
+		${WRKSRC}/sesman/chansrv/pulse/Makefile
 
 pre-configure:
-	@cd ${WRKSRC} && ./bootstrap
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
+
+post-build:
+	# build pulseaudio module
+	@${CP} -r "`${PULSE_WRKSRC}`" ${WRKDIR}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -C sesman/chansrv/pulse
 
 post-install:
-.for f in ${KEYMAP_FILES}
-	${INSTALL_DATA} ${FILESDIR}/$f ${STAGEDIR}${PREFIX}/etc/xrdp
+	# install pulseaudio module
+	${MKDIR} "${STAGEDIR}${PREFIX}/lib/pulse-`${PULSE_VERSION}`/modules/"
+.for f in module-xrdp-sink.so module-xrdp-source.so
+	${INSTALL_LIB} -m 0755 ${WRKSRC}/sesman/chansrv/pulse/$f \
+		"${STAGEDIR}${PREFIX}/lib/pulse-`${PULSE_VERSION}`/modules/"
+.endfor
+	# substitute pkg-plist not using PLIST_SUB
+	${REINPLACE_CMD} -e "s|%%PULSE_VERSION%%|`${PULSE_VERSION}`|g" ${TMPPLIST}
+
+post-stage:
+	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/rsakeys.ini
+	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/cert.pem
+	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/key.pem
+.for f in sesman.ini startwm.sh xrdp.ini xrdp_keyboard.ini
+	@${MV} ${STAGEDIR}${PREFIX}/etc/xrdp/$f ${STAGEDIR}${PREFIX}/etc/xrdp/$f.sample
 .endfor
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ COMMENT=	OCR engine for Japanese language
 LICENSE=	APACHE20
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsip.a:graphics/O2-tools
 LIB_DEPENDS=	libfreetype.so:print/freetype2

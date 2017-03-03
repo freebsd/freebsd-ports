@@ -13,6 +13,8 @@ COMMENT=	Fast, robust constructive solid geometry library
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
