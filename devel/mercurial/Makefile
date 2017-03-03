@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercurial
-PORTVERSION=	4.1
+PORTVERSION=	4.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial-scm.org/release/
 
