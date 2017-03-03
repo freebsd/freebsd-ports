@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.17
-PORTREVISION=	5
+PORTVERSION=	1.7.0
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -15,11 +14,11 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake libtool ssl
+USES=		cpe gmake libtool ssl perl5
 CPE_VENDOR=	nlnetlabs
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} --disable-dane-ta-usage
 
 .if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES DRILL
@@ -27,29 +26,34 @@ OPTIONS_DEFAULT=	DRILL
 
 DRILL_DESC=	With drill program
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOXYGEN_ALL_TARGET=	doc
-DOXYGEN_INSTALL_TARGET=	install-manpages
 .endif
 
-OPTIONS_DEFINE+=	GOST \
-		RRTYPENINFO RRTYPERKEY RRTYPECDS RRTYPEURI RRTYPETA
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+HTMLDOCS=	doc/html/*
 
-GOST_DESC=	GOST signatures enabled, requires openssl >= 1.0.0
+OPTIONS_DEFINE+=	GOST DANETAUSAGE \
+		RRTYPENINFO RRTYPERKEY RRTYPETA RRTYPEAVC 
+
+DANETAUSAGE_DESC=	Enable ta uasage, requires openssl >= 1.1.0
+GOST_DESC=		GOST signatures enabled, requires openssl >= 1.0.0
 RRTYPENINFO_DESC=	Enable draft RR type ninfo.
 RRTYPERKEY_DESC=	Enable draft RR type rkey.
-RRTYPECDS_DESC=		Enable draft RR type cds.
-RRTYPEURI_DESC=		Enable draft RR type uri.
 RRTYPETA_DESC=		Enable draft RR type ta.
+RRTYPEAVC_DESC=		Enable draft RR type avc.
 
 OPTIONS_SUB=	yes
 
+DANETAUSAGE_CONFIGURE_ENABLE=	dane-ta-usage
+DANETAUSAGE_IMPLIES=		RRTYPETA
 GOST_CONFIGURE_ENABLE=		gost
 RRTYPENINFO_CONFIGURE_ENABLE=	rrtype-ninfo
 RRTYPERKEY_CONFIGURE_ENABLE=	rrtype-rkey
-RRTYPECDS_CONFIGURE_ENABLE=	rrtype-cds
-RRTYPEURI_CONFIGURE_ENABLE=	rrtype-uri
 RRTYPETA_CONFIGURE_ENABLE=	rrtype-ta
+RRTYPEAVC_CONFIGURE_ENABLE=	rrtype-avc
+EXAMPLES_CONFIGURE_WITH=	examples
+DRILL_CONFIGURE_WITH=		drill
+DRILL_INSTALL_TARGET=	install-drill
+EXAMPLES_INSTALL_TARGET=	install-examples
 
 .if defined(BUILD_PYLDNS)
 USES+=		python
@@ -76,9 +80,15 @@ INSTALL_TARGET=	install-p5-dns-ldns
 
 CONFIGURE_ARGS+=--with-p5-dns-ldns
 LIB_DEPENDS+=	libldns.so:dns/ldns
+RUN_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
+BUILD_DEPENDS=${RUN_DEPENDS}
 
 post-patch:
 	@${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/perl5/site_perl/mach/5.24/auto/DNS/LDNS/LDNS.so
 .else
 ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h install-config
@@ -87,8 +97,8 @@ INSTALL_TARGET=	install-lib install-h install-config
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
+.if ${PORT_OPTIONS:MDANETAUSAGE} && ${SSL_DEFAULT} != openssl-devel
+BROKEN=		this option requires openssl >= 1.1.0
 .endif
 
 .if ! ${PORT_OPTIONS:MGOST}
@@ -97,41 +107,34 @@ NO_GOST=	--disable-gost
 
 .if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
 
-post-patch:
-# fix list CPPFLAGS in examples/configure for ssl in LOCALBASE case
-	@${REINPLACE_CMD} -e '/tmp_CPPFLAGS/d' ${WRKSRC}/examples/configure
-
-post-configure:
-# ac_cv_prog_libtool=../libtool => Always use bundled libtool
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@(cd ${WRKSRC}/examples; ./configure --prefix=${PREFIX} \
-		--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man \
-		--build=${CONFIGURE_TARGET} ${NO_GOST} ${NO_SHA2} \
-		ac_cv_prog_libtool=../libtool)
-.endif
-.if ${PORT_OPTIONS:MDRILL}
-	@(cd ${WRKSRC}/drill; ./configure --prefix=${PREFIX} \
-		--mandir=${MANPREFIX}/man \
-		--build=${CONFIGURE_TARGET} \
-		ac_cv_prog_libtool=../libtool)
-.endif
-
 post-build:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	 @(cd ${WRKSRC}/examples; ${MAKE_CMD})
-.endif
-.if ${PORT_OPTIONS:MDRILL}
-	 @(cd ${WRKSRC}/drill; ${MAKE_CMD})
+.if ${PORT_OPTIONS:MDOXYGEN}
+	@(cd  ${WRKSRC}; ${MAKE_CMD} doxygen)
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@(cd ${WRKSRC}/examples; ${MAKE_CMD} ${MAKE_ARGS} install)
-.endif
+	${INSTALL_DATA} ${WRKSRC}/packaging/libldns.pc \
+		 ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_MAN} ${WRKSRC}/packaging/ldns-config.1 \
+		${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/ldns_*.3 \
+		${STAGEDIR}${PREFIX}/man/man3
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.2
 .if ${PORT_OPTIONS:MDRILL}
-	@(cd ${WRKSRC}/drill; ${MAKE_CMD} ${MAKE_ARGS} install)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/drill
 .endif
-	${INSTALL_DATA} ${WRKSRC}/packaging/libldns.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+.if ${PORT_OPTIONS:MEXAMPLES}
+	for p in ldns-chaos ldns-compare-zones ldns-dane ldns-dpa ldns-gen-zone ldns-key2ds \
+		ldns-keyfetcher ldns-keygen ldns-mx ldns-notify ldns-nsec3-hash \
+		ldns-read-zone ldns-resolver ldns-revoke ldns-rrsig ldns-signzone \
+		ldns-test-edns ldns-testns ldns-update ldns-verify-zone ldns-version \
+		ldns-walk ldns-zcat ldns-zsplit ldnsd; do \
+			${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$$p; done
+.endif
+.if ${PORT_OPTIONS:MDOXYGEN}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${HTMLDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}/html
+.endif
 
 .endif # BUILD_PYLDNS || BUILD_P5PERL
 
