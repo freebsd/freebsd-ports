@@ -19,6 +19,7 @@
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abuse_sdl
+    SUBDIR += ace-of-penguins
     SUBDIR += acm
     SUBDIR += adgali
     SUBDIR += adom
