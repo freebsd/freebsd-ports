@@ -156,6 +156,7 @@
     SUBDIR += avro
     SUBDIR += avro-c
     SUBDIR += avro-cpp
+    SUBDIR += awless
     SUBDIR += aws-sdk-cpp
     SUBDIR += awscli
     SUBDIR += b2

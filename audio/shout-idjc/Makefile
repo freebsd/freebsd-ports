@@ -3,7 +3,7 @@
 
 PORTNAME=	libshout-idjc
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio python
 MASTER_SITES=	SF/idjc/libshout-idjc/
 

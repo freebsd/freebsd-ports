@@ -10,7 +10,7 @@ DISTNAME=	xa-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Two-pass cross-assembler for MOS 6502 and compatible CPUs
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
