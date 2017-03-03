@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	7.6.15
+PORTVERSION=	7.6.16
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 PKGNAMESUFFIX=	-lts
@@ -17,8 +17,9 @@ PORTSCOUT=	limit:^7\.6\.
 
 USES=		cpe shebangfix php:web
 SHEBANG_FILES=	vendor/doctrine/instantiator/.travis.install.sh \
-		typo3/sysext/core/Build/Scripts/xlfcheck.sh \
-		typo3/sysext/core/Build/Scripts/splitFunctionalTests.sh
+		typo3/sysext/core/Build/Scripts/cglFixMyCommit.sh \
+		typo3/sysext/core/Build/Scripts/splitFunctionalTests.sh \
+		typo3/sysext/core/Build/Scripts/xlfcheck.sh
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session simplexml soap xml zip
