@@ -3,6 +3,7 @@
 
 PORTNAME=	opendnssec
 PORTVERSION=	1.3.18
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/ \
 	http://dist.opendnssec.org/source/testing/
