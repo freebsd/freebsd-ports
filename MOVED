@@ -9106,3 +9106,4 @@ archivers/libunrar4||2017-03-01|Has expired: Outdated version. Please use archiv
 sysutils/xacpim||2017-03-01|Has expired: Mastersite disappeared
 sysutils/linux-nero||2017-03-01|Has expired: Probably cannot actually burn CD/DVD on recent FreeBSD
 audio/libofa||2017-03-01|Has expired: MusicDNS service has been discontinued
+emulators/hyperv-is||2017-03-03|Has expired: does not support any actual FreeBSD release
