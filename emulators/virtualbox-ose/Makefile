@@ -120,10 +120,6 @@ OPTIONS_DEFAULT+=	PYTHON
 CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
 .endif
 
-.if ${ARCH} == "amd64"
-_ELF32!=	kldstat -q -m elf32 && echo yes || echo no
-.endif
-
 .if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45])
 BROKEN=		NLS support requires QT frontend. Run 'make config' again!
 .endif
@@ -245,11 +241,7 @@ CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 
 pre-everything::
 .if ${ARCH} == "amd64"
-.if ${_ELF32} != yes
-	@${ECHO} 'Requires 32-bit runtime support in kernel.'
-	@${ECHO} 'Rebuild kernel with "options COMPAT_FREEBSD32" and reboot.'
-	@${FALSE}
-.elif !exists(/usr/lib32/libc.so)
+.if !exists(/usr/lib32/libc.so)
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
 	@${ECHO} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
 	@${FALSE}
