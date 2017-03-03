@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170302:
+  AFFECTS: users of mail/thunderbird with Lightning
+  AUTHOR: cmt@FreeBSD.org
+
+  After changes in the packaging of the Lightning extension, profiles
+  using this extension have to be re-created.
+
 20170102:
   AFFECTS: multimedia/ffmpeg
   AUTHOR: jbeich@FreeBSD.org
