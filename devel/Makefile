@@ -4012,7 +4012,6 @@
     SUBDIR += py-DocumentTemplate
     SUBDIR += py-ExtensionClass
     SUBDIR += py-InlineEgg
-    SUBDIR += py-Jinja
     SUBDIR += py-Jinja2
     SUBDIR += py-Jinja2-doc
     SUBDIR += py-Missing
@@ -4067,9 +4066,7 @@
     SUBDIR += py-RPyC
     SUBDIR += py-Record
     SUBDIR += py-SymbolType
-    SUBDIR += py-TGScheduler
     SUBDIR += py-ToscaWidgets
-    SUBDIR += py-TurboJinja
     SUBDIR += py-XStatic
     SUBDIR += py-XStatic-Angular
     SUBDIR += py-XStatic-Angular-Bootstrap
@@ -4407,7 +4404,6 @@
     SUBDIR += py-meliae
     SUBDIR += py-memory_profiler
     SUBDIR += py-mercurialserver
-    SUBDIR += py-mez_xml
     SUBDIR += py-microversion-parse
     SUBDIR += py-mimeparse
     SUBDIR += py-minimongo
@@ -4726,7 +4722,6 @@
     SUBDIR += py-testoob
     SUBDIR += py-testpath
     SUBDIR += py-testtools
-    SUBDIR += py-tgMochiKit
     SUBDIR += py-thrift
     SUBDIR += py-thriftpy
     SUBDIR += py-timelib
@@ -4743,10 +4738,6 @@
     SUBDIR += py-transaction
     SUBDIR += py-trollius
     SUBDIR += py-ttystatus
-    SUBDIR += py-turbocheetah
-    SUBDIR += py-turbojson
-    SUBDIR += py-turbojson11
-    SUBDIR += py-turbokid
     SUBDIR += py-tvrage
     SUBDIR += py-tw.forms
     SUBDIR += py-twext
