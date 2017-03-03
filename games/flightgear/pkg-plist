@@ -6,6 +6,7 @@ bin/fgcom
 bin/fgelev
 bin/fgfs
 bin/fgjs
+bin/fgpanel
 bin/fgtraffic
 bin/fgviewer
 bin/js_demo
