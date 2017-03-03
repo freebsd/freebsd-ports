@@ -14,6 +14,8 @@ COMMENT=	Apache module for dynamically configured mass virtual hosting with php
 LICENSE=	APACHE20
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 MANUAL_PACKAGE_BUILD=	needs apr and apache with DBD options enabled
 

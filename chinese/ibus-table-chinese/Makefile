@@ -12,6 +12,8 @@ MAINTAINER=	dennylin93@hs.ntnu.edu.tw
 COMMENT=	Chinese input tables for IBus
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Modules/ManageEnvironment.cmake:devel/cmake-fedora \
 		ibus-daemon:textproc/ibus \

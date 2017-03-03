@@ -14,6 +14,8 @@ COMMENT=	Python module for easily building good multi-command scripts
 LICENSE=	MIT
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		python:2 zip
 USE_PYTHON=	distutils

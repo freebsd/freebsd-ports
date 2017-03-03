@@ -14,6 +14,8 @@ BUILD_DEPENDS=	swig2.0:devel/swig20
 LIB_DEPENDS=	libftdi.so:devel/libftdi
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		gmake pkgconfig python:2
 USE_AUTOTOOLS=	autoconf

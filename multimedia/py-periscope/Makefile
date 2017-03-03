@@ -18,6 +18,8 @@ COMMENT=	Subtitles searching module
 LICENSE=	LGPL3
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32
 RUN_DEPENDS:=	${BUILD_DEPENDS}

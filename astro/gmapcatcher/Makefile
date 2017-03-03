@@ -11,6 +11,8 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Offline map viewer
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3

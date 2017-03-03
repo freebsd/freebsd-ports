@@ -13,6 +13,8 @@ COMMENT=	Graphical frontend to the objdump disassembler
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2 \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:www/py-webkitgtk

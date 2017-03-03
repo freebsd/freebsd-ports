@@ -13,6 +13,8 @@ COMMENT=	Alt-Tab replacement
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 

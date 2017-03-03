@@ -13,6 +13,8 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library for working with graphs in Python, core module
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 PROJECTHOST=	python-graph
 USES=		python
