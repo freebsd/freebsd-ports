@@ -1,0 +1,7 @@
+This is a very lightweight (and limited) PDF parser. If you need to
+do some simple PDF processing on a web server with limited RAM and
+CPU, and if slurping the entire file into memory is not an option,
+this module may well be for you, at the cost of far less functionality
+than other solutions out there.
+
+WWW: http://search.cpan.org/dist/PDF-Tiny/
