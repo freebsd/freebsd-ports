@@ -11,6 +11,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Universal vector graphics translator
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:graphics/sk1libs
 

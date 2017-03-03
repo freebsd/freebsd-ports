@@ -12,6 +12,8 @@ COMMENT=	MySQL and SQLite Database Visualisation Tool
 LICENSE=	GPLv3
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 NO_BUILD=	yes
 USES=	php:cli tar:bzip2

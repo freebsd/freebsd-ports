@@ -16,6 +16,8 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:devel/trio
 

@@ -12,6 +12,8 @@ COMMENT=	Apache module to enable an easy alternative to mod_chroot
 LICENSE=	APACHE20
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

@@ -13,6 +13,8 @@ COMMENT=	Simple Qt 4 based browser
 LICENSE=	GPLv3
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		desktop-file-utils qmake
 USE_QT4=	network webkit moc_build uic_build rcc_build \

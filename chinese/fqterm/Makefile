@@ -12,6 +12,8 @@ MAINTAINER=	darcsis@gmail.com
 COMMENT=	BBS client for BSD/Linux
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		cmake:outsource dos2unix zip
 USE_XORG=	x11 ice xext xt xaw xpm xi xproto xextproto

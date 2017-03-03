@@ -12,6 +12,8 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Simplified object-oriented Python extension module for libpcap
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	pyrexc:devel/pyrex
 

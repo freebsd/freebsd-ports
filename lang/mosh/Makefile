@@ -15,6 +15,8 @@ COMMENT=	Fast R6RS Scheme interpreter
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libonig.so:devel/oniguruma5

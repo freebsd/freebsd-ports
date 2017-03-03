@@ -15,6 +15,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	LICENSE.txt
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		python:build
 USE_PYTHON=	distutils noegginfo

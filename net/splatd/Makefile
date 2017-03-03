@@ -14,6 +14,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:devel/py-zconfig \
 		${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:net/py-ldap

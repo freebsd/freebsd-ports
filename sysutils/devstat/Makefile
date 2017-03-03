@@ -11,6 +11,8 @@ MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Utility to display device statistics
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 PLIST_FILES=	bin/devstat \
 		man/man8/devstat.8.gz

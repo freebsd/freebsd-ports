@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.x theme engine allowing to use Qt/KDE styles
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USE_GNOME=	gtk20
 USE_QT4=	corelib gui moc_build rcc_build uic_build qmake_build
