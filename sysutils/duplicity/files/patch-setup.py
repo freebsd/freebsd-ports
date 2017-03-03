@@ -1,4 +1,4 @@
---- setup.py.orig	2016-08-20 19:13:49 UTC
+--- setup.py.orig	2016-12-31 16:33:12 UTC
 +++ setup.py
 @@ -23,7 +23,6 @@
  import sys
@@ -18,7 +18,7 @@
  
  if os.name == 'posix':
      LIBRSYNC_DIR = os.environ.get('LIBRSYNC_DIR', '')
-@@ -47,15 +49,9 @@ if os.name == 'posix':
+@@ -47,16 +49,10 @@ if os.name == 'posix':
          incdir_list = [os.path.join(LIBRSYNC_DIR, 'include')]
          libdir_list = [os.path.join(LIBRSYNC_DIR, 'lib')]
  
@@ -32,14 +32,15 @@
 -                'README-REPO',
 -                'README-LOG',
 -                'CHANGELOG']),
-               ]
+-              ]
++                 ]
  
  top_dir = os.path.dirname(os.path.abspath(__file__))
-@@ -69,48 +65,9 @@ for root, dirs, files in os.walk(os.path
-                 ('share/locale/%s/LC_MESSAGES' % lang,
+ assert os.path.exists(os.path.join(top_dir, "po")), "Missing 'po' directory."
+@@ -70,46 +66,9 @@ for root, dirs, files in os.walk(os.path
                   ["po/%s/duplicity.mo" % lang]))
  
--
+ 
 -class TestCommand(test):
 -
 -    def run(self):
@@ -80,11 +81,10 @@
 -        if self.build_lib != top_dir:
 -            testing_dir = os.path.join(self.build_lib, 'testing')
 -            os.system("rm -rf %s" % testing_dir)
--
+ 
          install.run(self)
  
- 
-@@ -177,11 +134,7 @@ setup(name="duplicity",
+@@ -177,11 +136,7 @@ setup(name="duplicity",
        url="http://duplicity.nongnu.org/index.html",
        packages=['duplicity',
                  'duplicity.backends',
@@ -97,7 +97,7 @@
        package_dir={"duplicity": "duplicity",
                     "duplicity.backends": "duplicity/backends", },
        ext_modules=[Extension("duplicity._librsync",
-@@ -192,10 +145,7 @@ setup(name="duplicity",
+@@ -192,10 +147,7 @@ setup(name="duplicity",
        scripts=['bin/rdiffdir', 'bin/duplicity'],
        data_files=data_files,
        install_requires=['lockfile'],
