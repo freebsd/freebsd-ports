@@ -1204,6 +1204,7 @@
     SUBDIR += lasi
     SUBDIR += lcov
     SUBDIR += leaktracer
+    SUBDIR += leatherman
     SUBDIR += leiningen
     SUBDIR += lemon
     SUBDIR += lfcbase
