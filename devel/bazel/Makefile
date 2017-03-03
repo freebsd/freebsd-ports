@@ -3,6 +3,7 @@
 
 PORTNAME=		bazel
 PORTVERSION=		0.4.4
+PORTREVISION=		1
 CATEGORIES=		devel java
 MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -23,7 +24,7 @@ FINALRC=		1
 
 NO_WRKSUBDIR=		YES
 USES=			shebangfix zip
-SHEBANG_FILES=		${WRKSRC}/tools/cpp/link_dynamic_library.sh
+SHEBANG_REGEX=		.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
 USE_JAVA=		yes
 JAVA_VENDOR=		openjdk
 JAVA_VERSION=		1.8
@@ -36,7 +37,7 @@ JAVA_RUN=		yes
 post-patch:
 	@${REINPLACE_CMD} \
 	-e "s|\"/etc/bazel.bazelrc\"|\"${ETCDIR}/bazel.bazelrc\"|" \
-	${WRKSRC}/src/main/cpp/workspace_layout.cc
+	${WRKSRC}/src/main/cpp/blaze_util_posix.cc
 	@${ECHO_CMD} build --strategy=Javac=standalone >> ${WRKSRC}/scripts/packages/debian/bazel.bazelrc
 
 do-build:
