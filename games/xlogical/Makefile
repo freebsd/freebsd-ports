@@ -19,18 +19,14 @@ USES=		autoreconf dos2unix gmake tar:bzip2
 DOS2UNIX_FILES=	*.h *.cpp
 USE_SDL=	sdl image mixer
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
 
-OPTIONS_DEFINE=	DOCS
-=======
 DESKTOP_ENTRIES="XLogical" \
 		"" \
 		"" \
 		"${PORTNAME}" \
 		"Game;LogicGame;" \
 		""
->>>>>>> upstream/master
 
 OPTIONS_DEFINE=	DOCS
 
