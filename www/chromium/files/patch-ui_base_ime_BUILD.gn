@@ -1,11 +1,11 @@
---- ui/base/ime/BUILD.gn.orig	2017-01-26 00:49:31 UTC
+--- ui/base/ime/BUILD.gn.orig	2017-02-02 02:03:13 UTC
 +++ ui/base/ime/BUILD.gn
 @@ -123,7 +123,7 @@ component("ime") {
      ":text_input_types",
    ]
  
 -  if (!use_aura || (!is_linux && !use_ozone)) {
-+  if (!use_aura || (!(is_linux || is_bsd) && !use_ozone) || !is_bsd) {
++  if (!use_aura || (!(is_linux || is_bsd) && !use_ozone)) {
      sources -= [
        "input_method_auralinux.cc",
        "input_method_auralinux.h",
