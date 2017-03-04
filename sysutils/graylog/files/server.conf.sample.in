@@ -30,7 +30,7 @@ root_password_sha2 =
 #root_timezone = UTC
 
 # Set plugin directory here (relative or absolute)
-plugin_dir = plugin
+plugin_dir = %%DATADIR%%/plugin
 
 # REST API listen URI. Must be reachable by other graylog2-server nodes if you run a cluster.
 rest_listen_uri = http://127.0.0.1:12900/
@@ -247,7 +247,7 @@ message_journal_enabled = true
 
 # The directory which will be used to store the message journal. The directory must me exclusively used by Graylog and
 # must not contain any other files than the ones created by Graylog itself.
-message_journal_dir = data/journal
+message_journal_dir = %%GRAYLOG_DATA_DIR%%/journal
 
 # Journal hold messages before they could be written to Elasticsearch.
 # For a maximum of 12 hours or 5 GB whichever happens first.
@@ -372,5 +372,5 @@ mongodb_threads_allowed_to_block_multiplier = 5
 #enable_metrics_collection = false
 
 # Disable the use of SIGAR for collecting system stats
-#disable_sigar = false
+disable_sigar = true
 
