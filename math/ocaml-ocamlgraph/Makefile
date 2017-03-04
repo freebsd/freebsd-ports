@@ -3,6 +3,7 @@
 
 PORTNAME=	ocamlgraph
 PORTVERSION=	1.8.7
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/ocamlgraph/
@@ -24,9 +25,10 @@ USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAMLFIND_PLIST=	yes
+OCAML_LDLIBS=	${OCAML_LIBDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 
-PLIST_SUB+=	OCAMLGRAPHDIR="${OCAML_LIBDIR}/${PORTNAME}"
+PLIST_SUB+=	OCAMLGRAPHDIR="${OCAML_LDLIBS}"
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
@@ -51,6 +53,7 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/META ${STAGEDIR}${PREFIX}/${OCAML_LDLIBS}
 .endif
 
 .include <bsd.port.mk>
