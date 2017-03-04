@@ -1461,6 +1461,7 @@
     SUBDIR += pecl-yaf
     SUBDIR += pecl-yaf2
     SUBDIR += pecl-yar
+    SUBDIR += pecl-yar1
     SUBDIR += perlbal
     SUBDIR += pglogd
     SUBDIR += phalcon
