@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	2.5.0
+PORTVERSION=	3.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -20,8 +20,8 @@ BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
 		xsltproc:textproc/libxslt
 RUN_DEPENDS=	dnsmasq:dns/dnsmasq
 
-OPTIONS_DEFINE=	DOCS GNUTLS NLS NSS QEMU READLINE SASL
-OPTIONS_DEFAULT=	GNUTLS READLINE
+OPTIONS_DEFINE=	DOCS GNUTLS NLS NSS QEMU READLINE SASL ZFS
+OPTIONS_DEFAULT=	GNUTLS READLINE ZFS
 OPTIONS_DEFINE_amd64=	XEN
 .if exists(/usr/sbin/bhyve)
 OPTIONS_DEFINE_amd64+=	BHYVE
@@ -35,6 +35,7 @@ QEMU_DESC=	QEMU driver
 BHYVE_DESC=	bhyve driver
 XEN_DESC=	Xen support via libxl
 NSS_DESC=	Name Service Switch plugin
+ZFS_DESC=	ZFS storage driver
 
 OPTIONS_SUB=	yes
 
@@ -66,6 +67,8 @@ XEN_CONFIGURE_WITH=	libxl
 XEN_CFLAGS=	-I${LOCALBASE}/include
 XEN_LIB_DEPENDS=	libxenlight.so:sysutils/xen-tools
 
+ZFS_CONFIGURE_WITH=	storage-zfs
+
 VARDIR=		/var
 
 USE_RC_SUBR=	libvirtd virtlogd
@@ -81,6 +84,7 @@ CONFIGURE_ARGS+=	--without-avahi \
 		--without-xen \
 		--without-login-shell \
 		--without-wireshark-dissector \
+		--without-storage-scsi \
 		--with-ssh2 \
 		--localstatedir=${VARDIR}
 

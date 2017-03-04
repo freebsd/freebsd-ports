@@ -251,6 +251,7 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/schemas/storagecommon.rng
 %%DATADIR%%/schemas/storagepool.rng
 %%DATADIR%%/schemas/storagevol.rng
+%%DATADIR%%/test-screenshot.png
 %%NLS%%share/locale/af/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/am/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/anp/LC_MESSAGES/libvirt.mo
@@ -353,6 +354,8 @@ lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_storage.so
 lib/libvirt/connection-driver/libvirt_driver_vbox.so
 %%XEN%%lib/libvirt/connection-driver/libvirt_driver_libxl.so
+lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
+%%ZFS%%lib/libvirt/storage-backend/libvirt_storage_backend_zfs.so
 %%QEMU%%@dir /var/run/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel/target
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel
