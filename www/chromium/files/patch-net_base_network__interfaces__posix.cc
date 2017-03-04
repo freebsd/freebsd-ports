@@ -1,18 +1,20 @@
---- net/base/network_interfaces_posix.cc.orig	2017-01-26 00:49:16 UTC
+--- net/base/network_interfaces_posix.cc.orig	2017-02-02 02:02:56 UTC
 +++ net/base/network_interfaces_posix.cc
-@@ -20,6 +20,7 @@ namespace net {
- #if !defined(OS_NACL)
+@@ -9,7 +9,7 @@
+ #include <memory>
+ #include <set>
+ 
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+ #include "net/base/network_interfaces_posix.h"
+ #include <net/if.h>
+ #include <netinet/in.h>
+@@ -17,7 +17,7 @@
+ 
+ namespace net {
+ 
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
  namespace internal {
  
-+#if !defined(OS_BSD)
  // The application layer can pass |policy| defined in net_util.h to
- // request filtering out certain type of interfaces.
- bool ShouldIgnoreInterface(const std::string& name, int policy) {
-@@ -33,6 +34,7 @@ bool ShouldIgnoreInterface(const std::st
- 
-   return false;
- }
-+#endif
- 
- // Check if the address is unspecified (i.e. made of zeroes) or loopback.
- bool IsLoopbackOrUnspecifiedAddress(const sockaddr* addr) {

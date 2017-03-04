@@ -1,6 +1,6 @@
---- third_party/WebKit/Source/platform/fonts/FontCache.h.orig	2017-01-26 00:49:28 UTC
+--- third_party/WebKit/Source/platform/fonts/FontCache.h.orig	2017-02-02 02:03:10 UTC
 +++ third_party/WebKit/Source/platform/fonts/FontCache.h
-@@ -121,7 +121,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -122,7 +122,7 @@ class PLATFORM_EXPORT FontCache {
  #else
    static const AtomicString& legacySystemFontFamily();
  #endif
@@ -9,7 +9,7 @@
    static void setSystemFontFamily(const AtomicString&);
  #endif
  
-@@ -231,7 +231,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -232,7 +232,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     CString& name);
  

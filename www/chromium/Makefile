@@ -3,7 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	56.0.2924.87
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -82,7 +82,9 @@ GN_ARGS+=	is_clang=true \
 		clang_use_chrome_plugins=false \
 		enable_media_router=true \
 		enable_nacl=false \
+		enable_one_click_signin=true \
 		enable_remoting=false \
+		enable_webrtc=false \
 		toolkit_views=true \
 		use_allocator="none" \
 		use_aura=true \
@@ -253,11 +255,13 @@ do-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/chrome/tools/build/linux/chrome-wrapper \
 		${STAGEDIR}${DATADIR}
-.for p in chrome_100_percent chrome_200_percent keyboard_resources resources
+.for p in chrome_100_percent chrome_200_percent keyboard_resources resources \
+	mus_app_resources_100 mus_app_resources_200 mus_app_resources_strings \
+	views_mus_resources
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak \
 		${STAGEDIR}${DATADIR}
 .endfor
-.for d in icudtl.dat natives_blob.bin
+.for d in icudtl.dat natives_blob.bin snapshot_blob.bin
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \

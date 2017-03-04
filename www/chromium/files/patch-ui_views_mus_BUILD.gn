@@ -1,0 +1,11 @@
+--- ui/views/mus/BUILD.gn.orig	2017-02-02 02:03:13 UTC
++++ ui/views/mus/BUILD.gn
+@@ -91,7 +91,7 @@ component("mus") {
+     "//ui/wm",
+   ]
+ 
+-  if (is_linux && !is_android) {
++  if ((is_linux || is_bsd) && !is_android) {
+     deps += [ "//components/font_service/public/cpp" ]
+     data_deps = [
+       "//components/font_service",

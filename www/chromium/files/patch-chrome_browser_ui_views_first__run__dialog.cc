@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/first_run_dialog.cc.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/views/first_run_dialog.cc.orig	2017-02-02 02:02:50 UTC
 +++ chrome/browser/ui/views/first_run_dialog.cc
 @@ -40,8 +40,10 @@ using views::GridLayout;
  namespace {
@@ -11,3 +11,14 @@
  }
  
  }  // namespace
+@@ -121,8 +123,10 @@ views::View* FirstRunDialog::CreateExtra
+ bool FirstRunDialog::Accept() {
+   GetWidget()->Hide();
+ 
++#if !defined(OS_BSD)
+   ChangeMetricsReportingStateWithReply(report_crashes_->checked(),
+                                        base::Bind(&InitCrashReporterIfEnabled));
++#endif
+ 
+   if (make_default_->checked())
+     shell_integration::SetAsDefaultBrowser();
