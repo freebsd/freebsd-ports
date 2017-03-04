@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.23.4
+PORTVERSION=	0.23.5
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${PORTVERSION}/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libtasn1.so:security/libtasn1 \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-debug=no \
 		--with-trust-paths=${LOCALBASE}/share/certs/ca-root-nss.crt
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -DHAVE_GETPEEREID=1"
 MAKE_ENV=	exampledir=${STAGEDIR}${EXAMPLESDIR}
 INSTALL_TARGET=	install-strip
 
