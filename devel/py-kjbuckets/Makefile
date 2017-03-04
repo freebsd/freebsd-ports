@@ -10,7 +10,7 @@ MASTER_SITES=	SF/gadfly/gadfly/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gadfly-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Graph and set datatypes for Python (C extension)
 
 LICENSE=	MIT
