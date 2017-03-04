@@ -4,6 +4,7 @@
 %%GUI%%bin/graph-editor.byte
 %%GUI%%bin/graph-editor.opt
 %%GUI%%bin/graph-editor
+%%OCAMLGRAPHDIR%%/META
 %%OCAMLGRAPHDIR%%/builder.mli
 %%OCAMLGRAPHDIR%%/classic.mli
 %%OCAMLGRAPHDIR%%/clique.mli

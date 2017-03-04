@@ -1,0 +1,30 @@
+--- src/plugins/wp/Makefile.in.orig	2017-03-03 17:46:27 UTC
++++ src/plugins/wp/Makefile.in
+@@ -313,7 +313,7 @@ wp-coq-install:
+ 	$(PRINT_INSTALL) "Coq Libraries"
+ 	$(INSTALL_SHARE) -f -p -s \
+ 		-i $(Wp_DIR)/share \
+-		-d $(FRAMAC_DATADIR)/wp \
++		-d $(STAGEDIR)$(FRAMAC_DATADIR)/wp \
+ 		$(ALL_COQ_BINARIES)
+ 
+ wp-coq-uninstall:
+@@ -351,14 +351,14 @@ $(Wp_DIR)/share/why3/why3.conf:
+ 
+ install:: clean-install
+ 	$(PRINT_INSTALL) WP shared files
+-	$(MKDIR) $(FRAMAC_DATADIR)/wp
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/wp
+ 	$(INSTALL_SHARE) -p \
+ 		-i $(Wp_DIR)/share \
+-		-d $(FRAMAC_DATADIR)/wp \
++		-d $(STAGEDIR)$(FRAMAC_DATADIR)/wp \
+ 		$(ALL_RESOURCES) -f -b $(ALL_COQ_BINARIES)
+ 	$(PRINT_INSTALL) "Qed Library"
+-	$(MKDIR) $(FRAMAC_LIBDIR)
+-	$(CP) $(wildcard $(Wp_DIR)/qed/bin/Qed.*) $(FRAMAC_LIBDIR)
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_LIBDIR)
++	$(CP) $(wildcard $(Wp_DIR)/qed/bin/Qed.*) $(STAGEDIR)$(FRAMAC_LIBDIR)
+ 
+ uninstall::
+ 	$(PRINT_RM) WP shared files
