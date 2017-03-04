@@ -12,7 +12,8 @@ COMMENT=	Python image size library
 
 LICENSE=	MIT
 
-USES=		python
+NO_ARCH=	yes
+USES?=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
