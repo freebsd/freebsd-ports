@@ -1,15 +1,15 @@
---- Makefile.am.orig	2016-10-08 19:30:21 UTC
+--- Makefile.am.orig	2017-02-27 01:12:49 UTC
 +++ Makefile.am
-@@ -10,7 +10,7 @@ IMAP_SUBDIR = imap
+@@ -14,7 +14,7 @@ IMAP_SUBDIR = imap
  IMAP_INCLUDES = -I$(top_srcdir)/imap
  endif
  
--SUBDIRS = m4 po intl doc contrib $(IMAP_SUBDIR)
-+SUBDIRS = m4 po intl contrib $(IMAP_SUBDIR) . doc
+-SUBDIRS = m4 po intl $(DOC_SUBDIR) contrib $(IMAP_SUBDIR)
++SUBDIRS = m4 po intl contrib $(IMAP_SUBDIR) . $(DOC_SUBDIR)
  
  bin_SCRIPTS = muttbug flea $(SMIMEAUX_TARGET)
  
-@@ -157,18 +157,9 @@ install-exec-hook:
+@@ -161,18 +161,9 @@ install-exec-hook:
  		rm -f $(DESTDIR)$(bindir)/mutt.dotlock ;		\
  		ln -sf $(DESTDIR)$(bindir)/mutt_dotlock $(DESTDIR)$(bindir)/mutt.dotlock ; \
  	fi

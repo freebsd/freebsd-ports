@@ -3,6 +3,7 @@
 
 PORTNAME=	libqrencode
 PORTVERSION=	3.9.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 DISTNAME=	qrencode-${PORTVERSION}
 
@@ -26,6 +27,8 @@ CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
 PLIST_FILES=	bin/qrencode \
 		include/qrencode.h \
 		lib/libqrencode.so \
+		lib/libqrencode.so.3 \
+		lib/libqrencode.so.3.9.0 \
 		libdata/pkgconfig/libqrencode.pc \
 		man/man1/qrencode.1.gz
 

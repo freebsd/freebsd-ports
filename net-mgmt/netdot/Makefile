@@ -30,7 +30,7 @@ RUN_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2 \
 		p5-Net-IRR>=0:net/p5-Net-IRR \
 		p5-NetAddr-IP>=4.042:net-mgmt/p5-NetAddr-IP \
 		p5-Net-Patricia>=1.20:net/p5-Net-Patricia \
-		p5-Net-Appliance-Session>=3.113.610:net/p5-Net-Appliance-Session \
+		p5-Net-Appliance-Session>=3.113610:net/p5-Net-Appliance-Session \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
 		p5-Net-DNS-ZoneFile-Fast>=1.12:dns/p5-Net-DNS-ZoneFile-Fast \
 		p5-BIND-Config-Parser>=0:dns/p5-BIND-Config-Parser \

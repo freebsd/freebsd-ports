@@ -399,8 +399,6 @@ _LICENSE_GROUPS_ZPL21=	GPL OSI
 
 .for lic in ${_LICENSE_LIST}
 .	if !defined(_LICENSE_PERMS_${lic})
-# note that space before = is needed to correctly handle licenses
-# ending with a plus sign
-_LICENSE_PERMS_${lic} =	${_LICENSE_PERMS_DEFAULT}
+_LICENSE_PERMS_${lic}=	${_LICENSE_PERMS_DEFAULT}
 .	endif
 .endfor

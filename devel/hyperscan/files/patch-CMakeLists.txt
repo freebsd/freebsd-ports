@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2015-12-18 03:41:50.000000000 +0000
-+++ CMakeLists.txt	2016-02-22 13:28:07.548454000 +0000
-@@ -954,6 +954,6 @@
- install(TARGETS hs_shared DESTINATION lib)
+--- CMakeLists.txt.orig	2017-01-20 03:16:41 UTC
++++ CMakeLists.txt
+@@ -1217,6 +1217,6 @@ install(TARGETS hs_shared
+     LIBRARY DESTINATION lib)
  endif()
  
 -if(NOT WIN32)

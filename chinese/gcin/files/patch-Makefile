@@ -1,5 +1,5 @@
---- Makefile.orig	2014-01-26 14:41:39.000000000 +0800
-+++ Makefile	2014-04-12 10:55:35.584554559 +0800
+--- Makefile.orig	2014-01-26 06:41:39 UTC
++++ Makefile
 @@ -4,8 +4,11 @@ include config.mak
  include suffixes-rule
  
@@ -38,13 +38,13 @@
  
  gcin:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
 -	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/X11R6/$(LIB)
-+	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L%%PREFIX%%/$(LIB)
++	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/local/$(LIB)
  	rm -f core.* vgcore.*
  	ln -sf $@ $@.test
  
  gcin-nocur:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
 -	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/X11R6/$(LIB)
-+	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L%%PREFIX%%/$(LIB)
++	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/local/$(LIB)
  	rm -f core.*
  
 -tslearn:        $(OBJS_TSLEARN)
@@ -86,7 +86,7 @@
  	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_gcin_message) -L./im-client -lgcin-im-client $(LDFLAGS)
  
  pin-juyin:	$(OBJS_pin_juyin)
-@@ -223,12 +231,12 @@ install:
+@@ -223,22 +231,18 @@ install:
  	$(MAKE) -C data install
  	$(MAKE) -C im-client install
  	$(MAKE) -C gtk-im install
@@ -97,12 +97,22 @@
  	if [ $(QT4_IM) = 'Y' ]; then $(MAKE) -C qt4-im install; fi
 -	if [ $(prefix) = /usr/local ]; then \
 -	   install -m 644 gcin.png /usr/share/icons/hicolor/64x64/apps; \
+-	   install -d $(DOC_DIR); \
+-	   install -m 644 README.html Changelog.html $(DOC_DIR); \
 +	if [ $(prefix) = /nonstaged ]; then \
 +	   install -m 644 gcin.png $(prefix)/share/icons/hicolor/64x64/apps; \
- 	   install -d $(DOC_DIR); \
- 	   install -m 644 README.html Changelog.html $(DOC_DIR); \
  	   install $(PROGS) $(bindir); \
-@@ -246,6 +254,7 @@ install:
+ 	   rm -f $(bindir)/trad2sim; ln -sf sim2trad $(bindir)/trad2sim; \
+ 	   rm -f $(bindir)/ts-contribute; ln -sf ts-edit $(bindir)/ts-contribute; \
+ 	   rm -f $(bindir)/ts-contribute-en; ln -sf ts-edit $(bindir)/ts-contribute-en; \
+ 	   rm -f $(bindir)/ts-edit-en; ln -sf ts-edit $(bindir)/ts-edit-en; \
+ 	else \
+-	   install -d $(DOC_DIR_i); \
+-	   install -m 644 README.html Changelog.html $(DOC_DIR_i); \
+ 	   install -s $(PROGS) $(bindir); \
+ 	   rm -f $(bindir)/trad2sim; ln -sf sim2trad $(bindir)/trad2sim; \
+ 	   rm -f $(bindir)/ts-contribute; ln -sf ts-edit $(bindir)/ts-contribute; \
+@@ -246,6 +250,7 @@ install:
  	   rm -f $(bindir)/ts-edit-en; ln -sf ts-edit $(bindir)/ts-edit-en; \
  	fi
  	$(MAKE) -C scripts install
@@ -110,7 +120,7 @@
  	$(MAKE) -C menu install
  	if [ $(USE_I18N) = 'Y' ]; then $(MAKE) -C po install; fi
  
-@@ -279,4 +288,4 @@ gcin-fedora.spec:	gcin-fedora.spec.in VE
+@@ -279,4 +284,4 @@ gcin-fedora.spec:	gcin-fedora.spec.in VE
  	rm -f $@
  	sed -e "s/__gcin_version__/$(GCIN_VERSION)/" < $< > $@
  
