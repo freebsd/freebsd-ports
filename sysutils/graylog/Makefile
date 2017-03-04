@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graylog
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://packages.graylog2.org/releases/graylog/ \
 		http://packages.graylog2.org/releases/graylog/
@@ -35,7 +35,8 @@ SUB_LIST=	GRAYLOGUSER=${GRAYLOGUSER} \
 
 PLIST_SUB=	GRAYLOG_DATA_DIR=${GRAYLOG_DATA_DIR} \
 		GRAYLOGUSER=${GRAYLOGUSER} \
-		GRAYLOGGROUP=${GRAYLOGGROUP}
+		GRAYLOGGROUP=${GRAYLOGGROUP} \
+		PORTVERSION=${PORTVERSION}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/plugin
