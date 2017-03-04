@@ -45,7 +45,6 @@ man/man5/muttrc.5.gz
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/reference.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/security.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/tuning.html
-%%XML%%%%HTML%%%%COMPRESSED_FOLDERS%%%%PORTDOCS%%%%DOCSDIR%%/compressed-folders.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mush.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Pine.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tin.rc
