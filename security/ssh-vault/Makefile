@@ -16,8 +16,7 @@ BUILD_DEPENDS=  go>=1.7:lang/go \
 USES=           go
 
 USE_GITHUB=     yes
-GH_TUPLE=	ssh-vault:ssh-vault:0.9.1 \
-		ssh-vault:crypto:ae180e0:crypto \
+GH_TUPLE=	ssh-vault:crypto:ae180e0:crypto \
 		ssh-vault:ssh2pem:228a306:ssh2pem \
 		kr:pty:ce7fa45:pty \
 		keybase:go-keychain:fc62173:keychain
