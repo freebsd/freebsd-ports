@@ -3,6 +3,7 @@
 
 PORTNAME=	monodevelop
 PORTVERSION=	6.1.2.44
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	devel
 
 MAINTAINER=	mono@FreeBSD.org
@@ -42,8 +43,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release --disable-update-mimedb --disable-update-desktopdb \
 		--enable-maintainer-mode --enable-gnomeplatform --enable-git
 USE_GITHUB=	yes
-GH_TUPLE=	mono:${PORTNAME}:${PORTNAME}-${PORTVERSION} \
-		icsharpcode:RefactoringEssentials:cbd2d9e:RefactoringEssentials \
+GH_ACCOUNT=	mono
+GH_TUPLE=	icsharpcode:RefactoringEssentials:cbd2d9e:RefactoringEssentials \
 		mono:cecil:cd2ff63:cecil \
 		mono:debugger-libs:4a74b2c:debugger_libs \
 		mono:guiunit:2670780:guiunit \

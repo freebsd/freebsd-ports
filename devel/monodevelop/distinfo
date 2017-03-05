@@ -1,4 +1,4 @@
-TIMESTAMP = 1479565189
+TIMESTAMP = 1488700997
 SHA256 (extcore.0.8.45.nupkg) = aadcbc638765cfe4a4d1c569b721cb9a01403872cbc5071a811e04af95cea7d0
 SIZE (extcore.0.8.45.nupkg) = 2579195
 SHA256 (fsharp.compiler.codedom.0.9.2.nupkg) = 92b9a538956775efd989517a608a366b2b926beae6be752a394f7457f77ac933
@@ -25,8 +25,8 @@ SHA256 (nunit.runners.2.6.4.nupkg) = 44877aeb399ffb14b30ecca1c073813aab71dcf9a92
 SIZE (nunit.runners.2.6.4.nupkg) = 573341
 SHA256 (newtonsoft.json.6.0.8.nupkg) = 88b57d994035a83080c7f049e93f7aba2554fe14b686b678c2eb1a8be23e6851
 SIZE (newtonsoft.json.6.0.8.nupkg) = 1562062
-SHA256 (mono-monodevelop-6.1.2.44-monodevelop-6.1.2.44_GH0.tar.gz) = 06b7b21aea806be39e876635b88a2c9ced8962ead464852724134ca67214d5a5
-SIZE (mono-monodevelop-6.1.2.44-monodevelop-6.1.2.44_GH0.tar.gz) = 16476228
+SHA256 (mono-monodevelop-monodevelop-6.1.2.44_GH0.tar.gz) = 06b7b21aea806be39e876635b88a2c9ced8962ead464852724134ca67214d5a5
+SIZE (mono-monodevelop-monodevelop-6.1.2.44_GH0.tar.gz) = 16476228
 SHA256 (icsharpcode-RefactoringEssentials-cbd2d9e_GH0.tar.gz) = a51ac4e62200a51329279347e31f3233ebc8e3afa8d8bb92af33cc870b1b2074
 SIZE (icsharpcode-RefactoringEssentials-cbd2d9e_GH0.tar.gz) = 3154094
 SHA256 (mono-cecil-cd2ff63_GH0.tar.gz) = 417709d1547b1995c8a3fb787b288b78f9bf5c3605baef2f829f35ee869a9642
