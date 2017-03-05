@@ -1,0 +1,7 @@
+Sqliteconvert is a set of tools to convert SQLite3 schema files into
+documentation.  It includes sqlite2dot(1), which converts into a
+graphviz file; sqlite2html(1), which converts into an HTML5 fragment;
+and sqliteconvert(1), which pulls these tools together with some sane
+default templates.
+
+WWW: https://kristaps.bsd.lv/sqliteconvert/
