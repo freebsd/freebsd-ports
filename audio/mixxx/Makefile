@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mixxx
-PORTVERSION=	1.11.0
+PORTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	15
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
 
@@ -14,11 +13,14 @@ COMMENT=	DJ mixing application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libFLAC.so:audio/flac \
+LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
+		libFLAC.so:audio/flac \
 		libid3tag.so:audio/libid3tag \
 		libmad.so:audio/libmad \
 		libportaudio.so:audio/portaudio \
+		librubberband.so:audio/rubberband \
 		libsndfile.so:audio/libsndfile \
+		libvamp-sdk.so:audio/vamp-plugin-sdk \
 		libvorbisfile.so:audio/libvorbis \
 		libtag.so:audio/taglib \
 		libprotobuf.so:devel/protobuf
@@ -27,18 +29,20 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 BROKEN_aarch64=		Fails to compile: Exception("invalid machine type")
 
-USES=		scons iconv
-USE_QT4=	corelib gui network opengl script sql svg xml \
-		linguisttools_build moc_build qmake_build rcc_build uic_build
-USE_GL=		glu
-MAKE_ARGS=	qtdir="${PREFIX}" optimize=0
+USES=		scons iconv pkgconfig
+USE_QT4=	corelib gui network opengl script scripttools sql svg \
+		testlib xml xmlpatterns linguisttools_build moc_build \
+		qmake_build rcc_build uic_build
+USE_GL=		gl glu
+MAKE_ARGS=	qtdir="${PREFIX}" install_root="${PREFIX}" \
+		build=release optimize=native
 LATE_INSTALL_ARGS=	--install-sandbox=${STAGEDIR}
 
 PORTDATA=	*
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		DOCS FAAD GPERFTOOLS LAME SHOUTCAST WAVPACK
-OPTIONS_DEFAULT=	FAAD SHOUTCAST WAVPACK
+OPTIONS_DEFINE=		DOCS FAAD GPERFTOOLS HID LAME OPUS SHOUTCAST WAVPACK
+OPTIONS_DEFAULT=	FAAD HID SHOUTCAST OPUS WAVPACK
 OPTIONS_SUB=		yes
 
 FAAD_LIB_DEPENDS=	libfaad.so:audio/faad \
@@ -48,7 +52,14 @@ FAAD_MAKE_ARGS_OFF=	faad=0
 GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 GPERFTOOLS_MAKE_ARGS=	perftools=1
 GPERFTOOLS_MAKE_ARGS_OFF=	perftools=0
+HID_DESC=			USB HID controllers support
+HID_MAKE_ARGS=		hid=1
+HID_MAKE_ARGS_OFF=	hid=0
 LAME_RUN_DEPENDS=	lame:audio/lame
+OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
+		libopusfile.so:audio/opusfile
+OPUS_MAKE_ARGS=		opus=1
+OPUS_MAKE_ARGS_OFF=	opus=0
 SHOUTCAST_LIB_DEPENDS=	libshout.so:audio/libshout
 SHOUTCAST_MAKE_ARGS=	shoutcast=1
 SHOUTCAST_MAKE_ARGS_OFF=	shoutcast=0
@@ -66,7 +77,7 @@ post-patch:
 		${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -e "s|^Exec=.*|Exec=mixxx| ; \
 		 s|^Icon=.*|Icon=${PREFIX}/share/pixmaps/mixxx-icon.png|" \
-		${WRKSRC}/src/mixxx.desktop
+		${WRKSRC}/res/linux/mixxx.desktop
 .for i in midi/midimessage.h qtscript-bytearray/bytearrayclass.h
 	@${ECHO_CMD} >> ${WRKSRC}/src/controllers/${i}
 .endfor
@@ -76,7 +87,7 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mixxx/plugins/*/*.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mixxx/plugins/soundsource
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in Mixxx-Manual.pdf README README.macro
+.for i in Mixxx-Manual.pdf README README.md
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${DOCSDIR})
 .endfor

@@ -9123,3 +9123,4 @@ devel/py-turbocheetah||2017-03-03|Has expired: Development of this branch ceased
 devel/py-tgMochiKit||2017-03-03|Has expired: Development of this branch ceased
 www/py-Lightbox||2017-03-03|Has expired: Development of this branch ceased
 devel/py-ll-core||2017-03-04|Has expired: Long unmaintained, abandoned upstream
+net/tcpdump398|net/tcpdump|2017-03-05|Has expired: multiple security vulnerabilities; not updated since 2009

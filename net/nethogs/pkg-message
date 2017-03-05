@@ -1,0 +1,10 @@
+In order for nethogs to work properly add the following entry to 
+/etc/fstab:
+
+proc		/proc		procfs	rw,noauto	0	0
+
+noauto prevents /proc from being automatically mounted at boot.
+
+To mount the file system without rebooting:
+
+# mount /proc

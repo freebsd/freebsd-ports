@@ -448,6 +448,7 @@
     SUBDIR += netcat
     SUBDIR += netdude
     SUBDIR += netembryo
+    SUBDIR += nethogs
     SUBDIR += netmap
     SUBDIR += netpipes
     SUBDIR += netscript
@@ -1314,7 +1315,6 @@
     SUBDIR += tcpcat
     SUBDIR += tcpdstat
     SUBDIR += tcpdump
-    SUBDIR += tcpdump398
     SUBDIR += tcpflow
     SUBDIR += tcpick
     SUBDIR += tcpillust
