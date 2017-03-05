@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+# OpenRC script for NUT
+# Copyright (c) 2016 2 Clause BSD license
+
+BINARY=%%PREFIX%%/sbin/upsmon
+PID=/var/db/nut/upsmon.pid
+name="NUT UPS Monitoring Daemon"
+
+depend() {
+#        use net
+         after upsd
+}
+
+start() {
+        ebegin "Starting ${SVCNAME}"
+        start-stop-daemon --start --quiet --pidfile ${PID} --exec ${BINARY}
+        eend $? 
+}
+
+stop() {
+        ebegin "Stopping ${SVCNAME}"
+        start-stop-daemon --stop --quiet --pidfile ${PID}
+        eend $? 
+}
+
+reload() {
+	ebegin "Reloading ${SVCNAME}"
+	start-stop-daemon --stop --signal HUP --oknodo --quiet --pidfile ${PID}
+	eend $?
+}

@@ -1,0 +1,57 @@
+#!/sbin/openrc-run
+
+name=plexmediaserver
+
+command=/usr/sbin/daemon
+procname="/usr/local/share/plexmediaserver/Plex_Media_Server"
+command_args="-f ${procname}"
+pidfile=/var/run/plex/plex.pid
+start_precmd=plex_precmd
+stop_precmd=plex_stop_precmd
+stop_postcmd=plex_stop_postcmd
+
+plex_precmd()
+{
+	export SUPPORT_PATH="${plexmediaserver_support_path}"
+	export HOME="${plexmediaserver_support_path}/Plex Media Server"
+	export PYTHONHOME="/usr/local/share/plexmediaserver/Resources/Python"
+	export SCRIPTPATH="/usr/local/share/plexmediaserver"
+	export LD_LIBRARY_PATH="/usr/local/lib/compat:${SCRIPTPATH}"
+	export PLEX_MEDIA_SERVER_HOME="${SCRIPTPATH}"
+	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${plexmediaserver_maxplugins}
+	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${plexmediaserver_support_path}
+	export PLEX_MEDIA_SERVER_PIDFILE=${pidfile}
+	export PLEX_MEDIA_SERVER_LOG_DIR="${plexmediaserver_support_path}/Plex Media Server/Logs"
+	export PATH="${SCRIPTPATH}/Resources/Python/bin:${PATH}"
+	export LC_ALL="en_US.UTF-8"
+	export LANG="en_US.UTF-8"
+	ulimit -s 3000
+
+	if [ ! -d ${pidfile%/*} ]; then
+		install -d -o ${plexmediaserver_user} ${pidfile%/*};
+	fi
+	
+	if [ ! -d "${plexmediaserver_support_path}/Plex Media Server" ]; then
+		install -d -g ${plexmediaserver_group} -o ${plexmediaserver_user} "${plexmediaserver_support_path}/Plex Media Server";
+	fi
+	
+	if [ ${plexmediaserver_tmp} ]; then 
+		export TMPDIR=${plexmediaserver_tmp};
+		install -d -g ${plexmediaserver_group} -o ${plexmediaserver_user} "${plexmediaserver_tmp}";
+	fi
+}
+
+plex_stop_precmd()
+{
+	if [ -r ${pidfile} ]; then
+		export _PLEXPID=$(check_pidfile ${pidfile} ${procname})
+	fi
+}
+
+plex_stop_postcmd()
+{
+	_PLEX_CHILDREN=$(pgrep -g ${_PLEXPID})
+	echo "Cleaning up leftover child processes."
+	kill $sig_stop ${_PLEX_CHILDREN}
+	wait_for_pids ${_PLEX_CHILDREN}
+}

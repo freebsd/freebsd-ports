@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+# Note that %%...%% are substituted by the FreeBSD ports
+# system
+# (see https://www.freebsd.org/doc/en/books/porters-handbook/rc-scripts.html)
+
+# Initialize variables if they are not already set.
+: ${rsyncd_config:=%%ETCDIR%%/rsyncd.conf}
+
+
+# These assignments are sufficient for openrc to build a service.
+# See: `man openrc-run`
+
+name="rsync daemon"
+command="%%PREFIX%%/bin/rsync"
+command_args="--daemon --config ${rsyncd_config}"
+required_files=${rsyncd_config}
+
+# Open up the rsync configuration file, ignore comments, and pull out the pidfile location
+pidfile=`grep -v '^[[:space:]]*#' ${rsyncd_config} | grep 'pid file' | awk -F '=[[:space:]]*' '{print $2}'`
+
+# Service dependencies
+depend()
+{
+	need localmount
+	after network
+}

@@ -1,0 +1,42 @@
+#!/sbin/openrc-run
+#
+# consul_user (user):        Set user to run consul.
+#                               Default is "consul".
+# consul_group (group):      Set group to run consul.
+#                               Default is "consul".
+# consul_dir (dir):          Set dir to run consul in.
+#                               Default is "/var/tmp/consul".
+# consul_env (dir):          Set environment variables used with consul
+#                               Default is "".
+
+: ${consul_user:="consul"}
+: ${consul_group:="consul"}
+: ${consul_dir:="/var/tmp/consul"}
+: ${consul_env:=""}
+
+name=consul
+procname="%%PREFIX%%/bin/consul"
+pidfile=/var/run/consul.pid
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} /usr/bin/env ${consul_env} ${procname} agent -data-dir=${consul_dir} -config-dir=%%PREFIX%%/etc/consul.d ${consul_args}"
+
+depend()
+{
+	need localmount
+	use net
+}
+
+start_pre()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${consul_user} -g ${consul_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${consul_dir} ]; then
+                install -d -o ${consul_user} -g ${consul_group} ${consul_dir}
+        fi
+
+        if [ ! -d "%%PREFIX%%/etc/consul.d" ]; then
+                install -d -o ${consul_user} -g ${consul_group} "%%PREFIX%%/etc/consul.d"
+        fi
+}

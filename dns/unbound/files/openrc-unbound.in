@@ -1,0 +1,53 @@
+#!/sbin/openrc-run
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+name="unbound daemon"
+extra_commands="configtest"
+extra_started_commands="reload"
+description="Unbound is a validating, recursive, and caching DNS resolver"
+description_configtest="Check the configuration file for errors."
+description_reload="Kills all children and reloads the configuration."
+
+UNBOUND_BINARY=${UNBOUND_BINARY:-%%PREFIX%%/sbin/unbound}
+UNBOUND_CHECKCONF=${UNBOUND_CHECKCONF:-%%PREFIX%%/sbin/unbound-checkconf}
+UNBOUND_CONFFILE=${UNBOUND_CONFFILE:-%%PREFIX%%/etc/unbound/${SVCNAME}.conf}
+
+depend() {
+	need net
+	use logger
+	provide dns
+}
+
+checkconfig() {
+	UNBOUND_PIDFILE=$("${UNBOUND_CHECKCONF}" -o pidfile "${UNBOUND_CONFFILE}")
+	return $?
+}
+
+configtest() {
+	ebegin "Checking ${SVCNAME} configuration"
+	checkconfig
+	eend $?
+}
+
+start() {
+	checkconfig || return $?
+	ebegin "Starting ${SVCNAME}"
+	start-stop-daemon --start --pidfile "${UNBOUND_PIDFILE}" \
+		--exec "${UNBOUND_BINARY}" -- -c "${UNBOUND_CONFFILE}"
+	eend $?
+}
+
+stop() {
+	checkconfig || return $?
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --pidfile "${UNBOUND_PIDFILE}"
+	eend $?
+}
+
+reload() {
+	checkconfig || return $?
+	ebegin "Reloading ${SVCNAME}"
+	start-stop-daemon --signal HUP --pidfile "${UNBOUND_PIDFILE}"
+	eend $?
+}

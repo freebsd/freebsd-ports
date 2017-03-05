@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+# OpenRC script for NUT
+# Copyright (c) 2016 2 Clause BSD license
+
+BINARY=%%PREFIX%%/sbin/upsdrvctl
+name="NUT UPS Driver"
+
+depend() {
+         before upsd
+         provide upsdrv
+}
+
+start() {
+        ebegin "Starting ${SVCNAME}"
+        ${BINARY} start
+        eend $? "Failed to start UPS driver"
+}
+
+stop() {
+        ebegin "Stopping ${SVCNAME}"
+        ${BINARY} stop
+        eend $? "Failed to stop UPS driver"
+}

@@ -1,0 +1,38 @@
+#!/sbin/openrc-run
+
+: ${syncthing_user:="syncthing"}
+: ${syncthing_group:="syncthing"}
+: ${syncthing_dir:="/var/db/syncthing"}
+
+BINARY=%%PREFIX%%/bin/syncthing
+PID=/var/run/syncthing.pid
+name="Syncthing"
+command_args="-home=${syncthing_dir} -no-browser ${syncthing_args}"
+
+depend()
+{
+	need localmount net
+	after bootmisc
+}
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+        if [ ! -d ${syncthing_dir} ]; then
+                install -d -o ${syncthing_user} -g ${syncthing_group} ${syncthing_dir}
+        fi
+	start-stop-daemon --start -u ${syncthing_user}:${syncthing_group} \
+	--pidfile "${PID}" --exec "${BINARY}" -b -m -- ${command_args}
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --pidfile "${PID}"
+	eend $?
+}
+
+reload() {
+	ebegin "Reloading ${SVCNAME}"
+	start-stop-daemon --signal HUP --pidfile "${PID}"
+	eend $?
+}

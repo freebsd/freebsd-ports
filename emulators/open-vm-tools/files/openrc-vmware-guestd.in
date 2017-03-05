@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Global
+checkvm_cmd="/usr/local/bin/vmware-checkvm > /dev/null"
+
+# VMware guest daemon
+name="vmware_guestd"
+rcvar=vmware_guestd_enable
+start_precmd="${checkvm_cmd}"
+unset start_cmd
+stop_precmd="${checkvm_cmd}"
+unset stop_cmd
+command="/usr/local/bin/vmtoolsd"
+command_args="-c /usr/local/share/vmware-tools/tools.conf -p /usr/local/lib/open-vm-tools/plugins/vmsvc"
+pidfile="/var/run/${name}.pid"
+
+[ -z "$vmware_guestd_enable" ] && vmware_guestd_enable="YES"
+[ -z "$vmware_guestd_flags" ] && vmware_guestd_flags="--background ${pidfile}"

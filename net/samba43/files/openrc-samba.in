@@ -1,0 +1,121 @@
+#!/sbin/openrc-run
+
+extra_started_commands="reload"
+
+name="Samba SMB/CIFS server, version 4.2"
+SMBCONTROL="%%PREFIX%%/bin/smbcontrol"
+SAMBA_TOOL="%%PREFIX%%/bin/samba-tool"
+
+# Cleanly queries the Samba configuration file for the given option
+# Argument 1: configuration option
+# Returns: string (via `echo`)
+get_config_opt() {
+	local option="$1"
+	local retval=`${SAMBA_TOOL} testparm --parameter-name="${option}" 2>/dev/null | tail -1`
+	echo "${retval}"
+}
+
+PIDDIR=$( get_config_opt 'pid directory' )
+LOCKDIR=$( get_config_opt 'lock directory' )
+PRIVDIR=$( get_config_opt 'private dir' )
+
+# Determine the roles that need to be loaded.
+SERVER_ROLE=`${SAMBA_TOOL} testparm --parameter-name="server role"  2>/dev/null | tail -1`
+case "${SERVER_ROLE}" in
+	active\ directory\ domain\ controller)
+		daemon_list="samba"
+	;;
+	auto|*)
+		daemon_list="nmbd smbd winbindd"
+	;;
+esac
+
+depend() {
+	need localmount
+	after network
+}
+
+start_samba() {
+	mkdir -p /var/run/samba
+	start-stop-daemon --start --quiet --exec %%PREFIX%%/sbin/samba --
+}
+
+stop_samba() {
+	start-stop-daemon --stop --quiet --pidfile ${PIDDIR}/samba.pid
+}
+
+
+start_smbd() {
+	start-stop-daemon --start --quiet --exec %%PREFIX%%/sbin/smbd -- \
+	${smbd_options:-"-D"}
+}
+
+stop_smbd() {
+	start-stop-daemon --stop --quiet --pidfile ${PIDDIR}/smbd.pid
+}
+
+start_nmbd() {
+	start-stop-daemon --start --quiet --exec %%PREFIX%%/sbin/nmbd -- \
+	${nmbd_options:-"-D"}
+}
+
+stop_nmbd() {
+	start-stop-daemon --stop --quiet --pidfile ${PIDDIR}/nmbd.pid
+}
+
+start_winbindd() {
+	start-stop-daemon --start --quiet --exec %%PREFIX%%/sbin/winbindd -- \
+	$winbindd_options
+}
+
+stop_winbindd() {
+	start-stop-daemon --stop --quiet --pidfile ${PIDDIR}/winbindd.pid
+}
+
+# Creates a directory if it doesn't exist.
+# First argument: name of directory.
+# Second argument: umask
+safe_create_directory() {
+	local dirname=$1
+	local umask=$2
+	if [ -d "${dirname}" -o ! -e "${dirname}" ]; then
+		install -d -m ${umask} "${dirname}"
+	fi
+}
+
+start_pre()
+{
+	# Create required directories
+	safe_create_directory ${PIDDIR} 0755
+	safe_create_directory ${LOCKDIR} 0700
+	# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=200186
+	safe_create_directory ${PRIVDIR} 0700
+	# Verify that configuration is sane
+	ebegin "Checking Samba configuration"
+	${SAMBA_TOOL} testparm --suppress-prompt --verbose >/dev/null 2>&1
+	eend $?
+}
+
+start() {
+	for i in $daemon_list; do
+		ebegin "Starting $i"
+		start_$i
+		eend $?
+	done
+}
+
+stop() {
+	for i in $daemon_list; do
+		ebegin "Stopping $i"
+		stop_$i
+		eend $?
+	done
+}
+
+reload() {
+	for i in $daemon_list; do
+		ebegin "Reloading $i configuration"
+		${SMBCONTROL} $i reload-config >/dev/null 2>&1
+		eend $?
+	done
+}

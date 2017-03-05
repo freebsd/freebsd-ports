@@ -1,0 +1,101 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2015 The OpenRC Authors.
+# See the Authors file at the top-level directory of this distribution and
+# https://github.com/OpenRC/openrc/blob/master/AUTHORS
+#
+# $FreeBSD$
+#
+# PROVIDE: hald
+# REQUIRE: DAEMON devd dbus moused webcamd
+#
+# Add the following line to /etc/rc.conf to enable the HAL daemon:
+#
+# hald_enable="YES"
+#
+
+. /etc/rc.subr
+. %%GNOME_SUBR%%
+
+hald_enable=${hald_enable-${gnome_enable}}
+hald_flags=${hald_flags-""}
+
+name=hald
+rcvar=hald_enable
+
+command="%%PREFIX%%/sbin/hald"
+pidfile="/var/run/${name}/${name}.pid"
+
+BINARY=%%PREFIX%%/sbin/hald
+PID=/var/run/hald.pid
+name="HAL"
+
+depend()
+{
+	need localmount
+	after dbus
+}
+
+init_var_policykit()
+{
+  local USER=polkit
+  local GROUP=${USER}
+  local PREFIX=%%PREFIX%%
+
+  /usr/bin/install -d -o root -m 0770 -g ${GROUP} /var/run/PolicyKit
+  /usr/bin/install -d -o root -m 0770 -g ${GROUP} /var/lib/PolicyKit
+  /usr/bin/install -d -o ${USER} -m 0755 -g wheel /var/lib/PolicyKit-public
+  /bin/mkdir -p /var/lib/misc
+  /usr/bin/touch -f /var/lib/misc/PolicyKit.reload
+  /usr/sbin/chown ${USER}:${GROUP} /var/lib/misc/PolicyKit.reload
+  /bin/chmod 0664 /var/lib/misc/PolicyKit.reload
+}
+
+init_var_polkit()
+{
+  mkdir -p /var/lib/polkit-1/localauthority
+  for i in 10-vendor.d 20-org.d 30-site.d 50-local.d 90-mandatory.d
+  do
+    mkdir -p /var/lib/polkit-1/localauthority/${i}
+  done
+  chmod 0700 /var/lib/polkit-1
+}
+
+init_var_hal()
+{
+  local USER=haldaemon
+  local GROUP=${USER}
+
+  /usr/bin/install -d -o ${USER} -g ${GROUP} /var/run/hald
+  /usr/bin/install -d -o ${USER} -g ${GROUP} /var/cache/hald
+  /usr/bin/install -d -o ${USER} -g ${GROUP} /var/lib/hal
+  %%PREFIX%%/bin/polkit-auth --user ${USER} --grant \
+          org.freedesktop.policykit.read 1> /dev/null 2>&1
+}
+
+start_pre()
+{
+    init_var_policykit
+    init_var_polkit
+    init_var_hal
+
+    chmod 0755 /var/cache
+}
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+	start-stop-daemon --start --pidfile "${PID}" \
+		--exec "${BINARY}" -b -m -- --daemon=no
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --pidfile "${PID}"
+	eend $?
+}
+
+reload() {
+	ebegin "Reloading ${SVCNAME}"
+	start-stop-daemon --signal HUP --pidfile "${PID}"
+	eend $?
+}

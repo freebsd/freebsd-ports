@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+#
+# supervisord_config (patch):	Set to %%PREFIX%%/etc/supervisord.conf by default.
+# supervisord_user (username):	Set to root by default.
+#
+
+name="supervisord"
+
+depend()
+{
+	need localmount
+	use net logger
+	keyword -stop
+}
+
+: ${supervisord_config="%%PREFIX%%/etc/supervisord.conf"}
+: ${supervisord_user="root"}
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-u ${supervisord_user} -c ${supervisord_config}"
+pidfile="%%PIDDIR%%/${name}.pid"

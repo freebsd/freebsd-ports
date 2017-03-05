@@ -1,0 +1,78 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2015 The OpenRC Authors.
+# See the Authors file at the top-level directory of this distribution and
+# https://github.com/OpenRC/openrc/blob/master/AUTHORS
+#
+# This file is part of OpenRC. It is subject to the license terms in
+# the LICENSE file found in the top-level directory of this
+# distribution and at https://github.com/OpenRC/openrc/blob/master/LICENSE
+# This file may not be copied, modified, propagated, or distributed
+# except according to the terms contained in the LICENSE file.
+
+command=%%PREFIX%%/sbin/sshd
+command_args=$opensshd_args
+pidfile=@VARBASE@/run/opensshd.pid
+required_files=%%PREFIX%%/etc/ssh/sshd_config
+
+depend()
+{
+	use logger dns
+	need net
+}
+
+openssh_keygen()
+{
+	if [ -f %%ETCDIR%%/ssh_host_dsa_key -a \
+	    -f %%ETCDIR%%/ssh_host_rsa_key -a \
+	    -f %%ETCDIR%%/ssh_host_ecdsa_key -a \
+	    -f %%ETCDIR%%/ssh_host_ed25519_key ]; then
+		return 0
+	fi
+
+	umask 022
+
+	# Can't do anything if ssh is not installed
+	[ -x %%PREFIX%%/bin/ssh-keygen ] ||
+		err 1 "%%PREFIX%%/bin/ssh-keygen does not exist."
+
+	if [ -f %%ETCDIR%%/ssh_host_dsa_key ]; then
+		echo "You already have a DSA host key" \
+			"in %%ETCDIR%%/ssh_host_dsa_key"
+		echo "Skipping protocol version 2 DSA Key Generation"
+	else
+		%%PREFIX%%/bin/ssh-keygen -t dsa \
+			-f %%ETCDIR%%/ssh_host_dsa_key -N ''
+	fi
+
+	if [ -f %%ETCDIR%%/ssh_host_rsa_key ]; then
+		echo "You already have a RSA host key" \
+			"in %%ETCDIR%%/ssh_host_rsa_key"
+		echo "Skipping protocol version 2 RSA Key Generation"
+	else
+		%%PREFIX%%/bin/ssh-keygen -t rsa \
+			-f %%ETCDIR%%/ssh_host_rsa_key -N ''
+	fi
+
+	if [ -f %%ETCDIR%%/ssh_host_ecdsa_key ]; then
+		echo "You already have a Elliptic Curve DSA host key" \
+			"in %%ETCDIR%%/ssh_host_ecdsa_key"
+		echo "Skipping protocol version 2 Elliptic Curve DSA Key Generation"
+	else
+		%%PREFIX%%/bin/ssh-keygen -t ecdsa \
+			-f %%ETCDIR%%/ssh_host_ecdsa_key -N ''
+	fi
+
+	if [ -f %%ETCDIR%%/ssh_host_ed25519_key ]; then
+		echo "You already have a Elliptic Curve ED25519 host key" \
+			"in %%ETCDIR%%/ssh_host_ed25519_key"
+		echo "Skipping protocol version 2 Elliptic Curve ED25519 Key Generation"
+	else
+		%%PREFIX%%/bin/ssh-keygen -t ed25519 \
+			-f %%ETCDIR%%/ssh_host_ed25519_key -N ''
+	fi
+}
+
+start_pre()
+{
+	openssh_keygen
+}

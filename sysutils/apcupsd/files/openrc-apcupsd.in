@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+# BSD 2 Clause license
+#
+
+: ${apcupsd_flags:="--kill-on-powerfail"}
+
+pidfile="/var/run/apcupsd.pid"
+required_files="%%ETCDIR%%/apcupsd.conf"
+command="%%PREFIX%%/sbin/apcupsd"
+command_args="${apcupsd_flags}"
+name="APC UPS Daemon"
+
+depend()
+{
+        need localmount
+        after bootmisc
+}
+

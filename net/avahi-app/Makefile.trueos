@@ -1,0 +1,3 @@
+USE_OPENRC_SUBR=	avahi-dnsconfd openrc-avahi-dnsconfd avahi-daemon
+USE_OPENRC_SUBR=	avahi-dnsconfd openrc-openrc-avahi-daemon
+USE_OPENRC_SUBR=	openrc-avahi-dnsconfd openrc-avahi-daemon
