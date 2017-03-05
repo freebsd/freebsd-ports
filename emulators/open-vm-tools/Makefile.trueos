@@ -1,3 +1,1 @@
-USE_OPENRC_SUBR=	vmware-kmod openrc-vmware-kmod vmware-guestd
-USE_OPENRC_SUBR=	vmware-kmod openrc-openrc-vmware-guestd
 USE_OPENRC_SUBR=	openrc-vmware-kmod openrc-vmware-guestd
