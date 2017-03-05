@@ -1199,6 +1199,7 @@
     SUBDIR += kickassembler
     SUBDIR += kimwitu
     SUBDIR += kore
+    SUBDIR += ksql
     SUBDIR += kyra
     SUBDIR += kyua
     SUBDIR += lasi
