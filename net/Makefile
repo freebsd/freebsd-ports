@@ -448,6 +448,7 @@
     SUBDIR += netcat
     SUBDIR += netdude
     SUBDIR += netembryo
+    SUBDIR += nethogs
     SUBDIR += netmap
     SUBDIR += netpipes
     SUBDIR += netscript
