@@ -311,7 +311,6 @@ MASTER_SITE_GCC+= \
 	http://www.netgull.com/gcc/%SUBDIR%/ \
 	http://robotlab.itk.ppke.hu/gcc/%SUBDIR%/ \
 	http://gcc.fyxm.net/%SUBDIR%/ \
-	http://gcc.igor.onlinedirect.bg/%SUBDIR%/ \
 	http://ftp-stud.fht-esslingen.de/pub/Mirrors/sourceware.org/gcc/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/sources.redhat.com/pub/gcc/%SUBDIR%/ \
 	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
@@ -889,7 +888,6 @@ MASTER_SITE_OSSP+= \
 MASTER_SITE_PACKETSTORM+= \
 	http://dl.packetstormsecurity.net/%SUBDIR%/ \
 	http://packetstorm.codar.com.br/%SUBDIR%/ \
-	http://packetstorm.igor.onlinedirect.bg/%SUBDIR%/ \
 	http://packetstorm.interhost.co.il/%SUBDIR%/ \
 	http://packetstorm.foofus.com/%SUBDIR%/ \
 	http://packetstorm.tacticalflex.com/%SUBDIR%/ \
