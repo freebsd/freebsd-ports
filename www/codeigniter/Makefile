@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codeigniter
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	www
 
 MAINTAINER=	junovitch@FreeBSD.org
@@ -19,8 +19,8 @@ CONFLICTS=	codeigniter-1.[0-9]* codeigniter22-2.[0-9]*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+USES=		php:web
 USE_PHP=	mcrypt pcre session
-WANT_PHP_WEB=	yes
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 CI_SYS_DIR=	system
