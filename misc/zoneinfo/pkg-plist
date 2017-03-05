@@ -166,6 +166,7 @@
 %%DATADIR%%/America/Port_of_Spain
 %%DATADIR%%/America/Porto_Velho
 %%DATADIR%%/America/Puerto_Rico
+%%DATADIR%%/America/Punta_Arenas
 %%DATADIR%%/America/Rainy_River
 %%DATADIR%%/America/Rankin_Inlet
 %%DATADIR%%/America/Recife
@@ -448,7 +449,6 @@
 %%DATADIR%%/Pacific/Guadalcanal
 %%DATADIR%%/Pacific/Guam
 %%DATADIR%%/Pacific/Honolulu
-%%DATADIR%%/Pacific/Johnston
 %%DATADIR%%/Pacific/Kiritimati
 %%DATADIR%%/Pacific/Kosrae
 %%DATADIR%%/Pacific/Kwajalein
