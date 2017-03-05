@@ -11,24 +11,20 @@ DISTFILES=	${DISTNAME:S/$/-src/}${EXTRACT_SUFX}:source
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The LLVM-based D compiler
 
+LICENSE=	BSD3CLAUSE
+
+BUILD_DEPENDS=	clang39:devel/llvm39
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
-LICENSE=	BSD3CLAUSE
 USES=		cmake
 CMAKE_ARGS+=	-DD_COMPILER:STRING="${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/}/bin/ldmd2"
+CC=		clang39
 
 BOOTVER=	0.17.3
 LDCVER=		${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/-src/}
 
 DISTFILES+=	${PORTNAME}-${BOOTVER}-src.tar.gz:bootstrap
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1100101
-BUILD_DEPENDS+=	clang39:devel/llvm39
-CC=		clang39
-.endif
 
 pre-configure:
 		@cd ${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/} && ${CMAKE_BIN} .
