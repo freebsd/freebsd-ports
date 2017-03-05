@@ -15,7 +15,7 @@ BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arduino
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 GH_TUPLE=	go-errors:errors:a418503:goerrors/src/github.com/go-errors/errors \
 		stretchr:testify:v1.1.3:stretchr/src/github.com/stretchr/testify \
 		jstemmer:go-junit-report:833f8ea:jstemmer/src/github.com/jstemmer/go-junit-report

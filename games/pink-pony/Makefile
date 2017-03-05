@@ -21,7 +21,7 @@ LIB_DEPENDS=	libIL.so:graphics/devil \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ginkgo
 
-USES=		pkgconfig scons tar:bzip2
+USES=		pkgconfig scons
 USE_GL=		gl glu
 USE_SDL=	mixer
 SUB_FILES=	pink-pony.sh

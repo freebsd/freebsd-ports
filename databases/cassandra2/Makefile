@@ -13,6 +13,8 @@ COMMENT=	Open source distributed database management system
 
 LICENSE=	APACHE20
 
+BROKEN=		crash with current OpenJDK
+
 JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk
 REINPLACE_ARGS=	-i ''
