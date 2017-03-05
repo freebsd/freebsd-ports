@@ -68,6 +68,7 @@ post-patch:
 		${WRKSRC}/scripts/utf8-edit
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/X11R6/lib,${LOCALBASE}/lib,' ${WRKSRC}/im-client/Makefile
+
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} '/install.*DOC_DIR/d' ${WRKSRC}/Makefile
 

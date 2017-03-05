@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpc-qt
-DISTVERSION=	0.0.0.s20170221
+DISTVERSION=	0.0.0.s20170305
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/${PORTNAME}.desktop?h=${PORTNAME}-git&id=b1a6b91&dummy=/:desktop
 DISTFILES=	${PORTNAME}.desktop:desktop
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cmdrkotori
-GH_TAGNAME=	1aee565
+GH_TAGNAME=	7ffd261
 
 EXPLICIT_SAFESTACK=	yes
 
