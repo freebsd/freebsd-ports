@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chicken
-PORTVERSION=	4.11.0
+PORTVERSION=	4.12.0
 PORTEPOCH=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://code.call-cc.org/releases/${PORTVERSION}/
