@@ -2,40 +2,47 @@
 # $FreeBSD$
 
 PORTNAME=	trigger-rally
-PORTVERSION=	0.6.1
-DISTVERSIONSUFFIX=	-src
+PORTVERSION=	0.6.5
 CATEGORIES=	games
 MASTER_SITES=	SF/trigger-rally/trigger-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alfix86@gmail.com
 COMMENT=	Rally car racing game
 
-BUILD_DEPENDS=	jam:devel/jam
-LIB_DEPENDS=	libphysfs.so:devel/physfs
-RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/trigger.config.defs:games/trigger-data
+LICENSE=	GPLv2
 
-USES=		openal:al,alut tar:bzip2
-USE_SDL=	sdl image
-USE_GL=		glu
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${DATADIR} \
-		--with-libAlut=${LOCALBASE} \
-		--with-libPhysFS=${LOCALBASE}
+LIB_DEPENDS=	libphysfs.so:devel/physfs
+LIB_DEPENDS+=	libalut.so:audio/freealut
+
+WRKSRC_SUBDIR=	src
+USES=		gmake openal:al,alut
+USE_SDL=	sdl2 image2
+USE_GL=		glu gl glew
+MAKEFILE=	GNUmakefile
+ALL_TARGET=	build
+
+WORKINGSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+DATADIR=	${PREFIX}/share/games/trigger-rally
 
 DESKTOP_ENTRIES="Trigger" "" "trigger" \
-		"trigger" "" false
+		"trigger-rally" "" false
 
-PLIST_FILES=	bin/trigger
-PORTDOCS=	README-stereo.txt README.txt
-
-OPTIONS_DEFINE=	DOCS
-
-do-build:
-	@cd ${BUILD_WRKSRC} && ${LOCALBASE}/bin/jam
+PORTDOCS=	README-stereo.txt README.txt DATA_AUTHORS.txt
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/trigger ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WORKINGSRC}/bin/trigger-rally ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WORKINGSRC}/bin && ${CP} trigger-rally.config.defs ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WORKINGSRC}/doc && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WORKINGSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+.for i in 16 22 24 32 36 48 64 72 96 128 192 256
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps/ && \
+	${MV} ${STAGEDIR}${DATADIR}/icon/trigger-${i}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps/trigger.png
+.endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/ && \
+	${MV} ${STAGEDIR}${DATADIR}/icon/trigger-rally-icons.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/trigger-rally-icons.svg
 
 .include <bsd.port.mk>
