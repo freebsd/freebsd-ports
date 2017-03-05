@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTVERSION=	09.05.0400
+PORTVERSION=	09.06.0100
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/odbc/versions/src
 PKGNAMESUFFIX=	-odbc
