@@ -4510,10 +4510,11 @@ install-openrc-script:
 	@${ECHO_MSG} "===> Staging init.d startup script(s)"
 	@for i in ${USE_OPENRC_SUBR}; do \
 		_prefix=${PREFIX}; \
+		_nfile=`${ECHO_CMD} $${i%.sh} | ${SED} -e "s|openrc-||g"`; \
 		[ "${PREFIX}" = "/usr" ] && _prefix="" ; \
 		[ ! -d "${STAGEDIR}$${_prefix}/etc/init.d" ] && ${MKDIR} ${STAGEDIR}$${_prefix}/etc/init.d ; \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}$${_prefix}/etc/init.d/$${i%openrc-}; \
-		${ECHO_CMD} "$${_prefix}/etc/init.d/$${i%openrc-}" >> ${TMPPLIST}; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}$${_prefix}/etc/init.d/$${_nfile}; \
+		${ECHO_CMD} "$${_prefix}/etc/init.d/$${_nfile}" >> ${TMPPLIST}; \
 	done
 .endif
 .endif
