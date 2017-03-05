@@ -36,7 +36,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
-GH_TAGNAME=	20161129
+GH_TAGNAME=	20170304
 
 USES=		autoreconf compiler:c++11-lib gmake pkgconfig
 USE_GL=		gl
