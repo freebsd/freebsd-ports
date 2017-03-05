@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpegthumbnailer
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	multimedia graphics
 
 MAINTAINER=	clutton@zoho.com
