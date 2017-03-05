@@ -11,7 +11,8 @@ COMMENT=	Modified Kr Sphinx theme
 
 LICENSE=	MIT
 
-USES=		python
+NO_ARCH=	yes
+USES?=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
