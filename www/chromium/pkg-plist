@@ -62,6 +62,9 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-TW.pak
 %%DATADIR%%/mksnapshot
+%%DATADIR%%/mus_app_resources_100.pak
+%%DATADIR%%/mus_app_resources_200.pak
+%%DATADIR%%/mus_app_resources_strings.pak
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/inspector/Images/accelerometer-back.png
 %%DATADIR%%/resources/inspector/Images/accelerometer-bottom.png
@@ -209,6 +212,8 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/toolbox.js
 %%DATADIR%%/resources/inspector/ui_lazy/ui_lazy_module.js
 %%DATADIR%%/resources/inspector/utility_shared_worker.js
+%%DATADIR%%/snapshot_blob.bin
+%%DATADIR%%/views_mus_resources.pak
 %%DRIVER%%bin/chromedriver
 share/icons/hicolor/128x128/apps/chrome.png
 share/icons/hicolor/22x22/apps/chrome.png
