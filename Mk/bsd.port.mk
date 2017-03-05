@@ -4512,8 +4512,8 @@ install-openrc-script:
 		_prefix=${PREFIX}; \
 		[ "${PREFIX}" = "/usr" ] && _prefix="" ; \
 		[ ! -d "${STAGEDIR}$${_prefix}/etc/init.d" ] && ${MKDIR} ${STAGEDIR}$${_prefix}/etc/init.d ; \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}$${_prefix}/etc/init.d/$${i%.sh}; \
-		${ECHO_CMD} "$${_prefix}/etc/init.d/$${i%.sh}" >> ${TMPPLIST}; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}$${_prefix}/etc/init.d/$${i%openrc-}; \
+		${ECHO_CMD} "$${_prefix}/etc/init.d/$${i%openrc-}" >> ${TMPPLIST}; \
 	done
 .endif
 .endif
