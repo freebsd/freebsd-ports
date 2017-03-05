@@ -1216,6 +1216,10 @@ SLAVE_PORT?=	no
 MASTER_PORT?=
 .endif
 
+.if exists(${.CURDIR}/Makefile.trueos)
+.include "${.CURDIR}/Makefile.trueos"
+.endif
+
 # If they exist, include Makefile.inc, then architecture/operating
 # system specific Makefiles, then local Makefile.local.
 
@@ -1912,10 +1916,6 @@ _USES_POST+=	php
 .if exists(${PORTSDIR}/Makefile.inc)
 .include "${PORTSDIR}/Makefile.inc"
 USE_SUBMAKE=	yes
-.endif
-
-.if exists(${.CURDIR}/Makefile.notes)
-.include "${.CURDIR}/Makefile.notes"
 .endif
 
 # Loading features
