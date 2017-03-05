@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_TokenStream
-PORTVERSION=	1.1.5
+PORTVERSION=	1.4.11
 CATEGORIES=	devel pear
-MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	joneum@bsdproject.de
@@ -12,10 +11,18 @@ COMMENT=	Wrapper around PHP tokenizer extension
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
-RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+USE_GITHUB=	yes
+GH_ACCOUNT=	sebastianbergmann
+GH_PROJECT=	php-token-stream
 
-USES=	pear
-PEAR_CHANNEL=	phpunit
+NO_BUILD=	yes
+
+PHP_DIR=	share/PHP
+PLIST_FILES=	${PHP_DIR}/${PORTNAME}/Token.php
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/src/Token.php \
+	${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
 
 .include <bsd.port.mk>
