@@ -404,6 +404,7 @@
     SUBDIR += devtodo
     SUBDIR += dfuife-curses
     SUBDIR += dia2code
+    SUBDIR += dia2code+
     SUBDIR += diffuse
     SUBDIR += ding-libs
     SUBDIR += directfb
