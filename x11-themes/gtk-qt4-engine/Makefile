@@ -3,22 +3,28 @@
 
 PORTNAME=	gtk-qt-engine
 PORTVERSION=	1.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11-themes
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.x theme engine allowing to use Qt/KDE styles
 
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GNOME=	gtk20
-USE_QT4=	corelib gui moc_build rcc_build uic_build qmake_build
-USES=		cmake gettext kde:4 pkgconfig tar:bzip2
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	davidsansome
+GH_TAGNAME=	0dc6c26
+
+USES=		cmake gettext kde:4 pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_KDE=	kdelibs automoc4
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_QT4=	dbus corelib gui moc_build rcc_build uic_build qmake_build svg
+USE_XORG=	x11
+WRKSRC_SUBDIR=	${PORTNAME}
 
 OPTIONS_DEFINE=	BONOBO
 BONOBO_DESC=	Better support for Bonobo (GNOME) framework
