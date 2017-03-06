@@ -225,7 +225,6 @@
     SUBDIR += grafana3
     SUBDIR += grafana4
     SUBDIR += grails
-    SUBDIR += graylog-web-interface
     SUBDIR += gregarius
     SUBDIR += groupoffice
     SUBDIR += grr
