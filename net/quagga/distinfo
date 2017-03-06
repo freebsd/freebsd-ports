@@ -1,3 +1,3 @@
-TIMESTAMP = 1485271844
-SHA256 (quagga-1.1.1.tar.gz) = b5a94e5bdad3062e04595a5692b8cc435f0a85102f75dfdca0a06d093b4ef63f
-SIZE (quagga-1.1.1.tar.gz) = 2871705
+TIMESTAMP = 1488811701
+SHA256 (quagga-1.2.0.tar.gz) = 1043644d37975d9f920b76c593368cbe36ca43e27eb57cff316ee80ccb31dce3
+SIZE (quagga-1.2.0.tar.gz) = 2948778
