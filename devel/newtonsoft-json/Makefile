@@ -3,6 +3,7 @@
 
 PORTNAME=	newtonsoft-json
 PORTVERSION=	9.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -17,6 +18,8 @@ GH_ACCOUNT=	JamesNK
 GH_PROJECT=	Newtonsoft.Json
 
 SUB_FILES=	Newtonsoft.Json.pc
+
+NO_ARCH=	yes
 
 PLIST_FILES=	lib/mono/Newtonsoft.Json/Newtonsoft.Json.dll \
 		lib/mono/gac/Newtonsoft.Json/7.0.0.0__b9a188c8922137c6/Newtonsoft.Json.dll \
