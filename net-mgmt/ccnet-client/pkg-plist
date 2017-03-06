@@ -1,4 +1,5 @@
 bin/ccnet
+bin/ccnet-init
 include/ccnet.h
 include/ccnet/async-rpc-proc.h
 include/ccnet/ccnet-client.h
