@@ -1,5 +1,5 @@
---- src/intel_device.c.orig	2014-12-21 20:36:40.268102983 +0100
-+++ src/intel_device.c	2014-12-21 20:36:01.358104504 +0100
+--- src/intel_device.c.orig	2017-02-28 20:52:19 UTC
++++ src/intel_device.c
 @@ -28,6 +28,9 @@
  #include "config.h"
  #endif
@@ -10,3 +10,11 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <assert.h>
+@@ -204,6 +207,7 @@ static inline struct intel_device *intel
+ }
+ 
+ static const char *kernel_module_names[] ={
++	"i915kms",
+ 	"i915",
+ 	NULL,
+ };
