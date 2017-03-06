@@ -753,7 +753,6 @@ MASTER_SITE_KDE+= \
 	http://ftp.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
 	http://kde-mirror.freenux.org/%SUBDIR%/ \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
-	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/
 .endif
