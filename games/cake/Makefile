@@ -39,8 +39,9 @@ post-patch: .SILENT
 		${WRKSRC}/cake/sound.h
 # Use traditional mapping for console key (tilde)
 	${REINPLACE_CMD} -e 's/167/96/' ${WRKSRC}/main.cpp
-# Fix for GCC 4.x
+# Fixes for GCC 4.x and Clang 4.0
 	${REINPLACE_CMD} -e 's/Mat3x2:://' ${WRKSRC}/cake/math.h
+	${REINPLACE_CMD} -e '2852s/numverts/&[0]/' ${WRKSRC}/cake/q3bsp.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main ${STAGEDIR}${PREFIX}/bin/cake

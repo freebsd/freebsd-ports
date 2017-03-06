@@ -2,14 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	mc
-PORTVERSION=	4.8.18
+PORTVERSION=	4.8.19
+PORTREVISION=	1
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
-		http://ftp.osuosl.org/pub/midnightcommander/ \
-		SF/nemysisfreebsdp/misc/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.png:icons
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+		http://ftp.osuosl.org/pub/midnightcommander/
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
@@ -84,13 +81,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|SUBDIRS = intl|SUBDIRS =|' ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+post-install-X11-on:
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
