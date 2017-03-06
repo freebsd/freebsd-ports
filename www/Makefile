@@ -1942,6 +1942,7 @@
     SUBDIR += rubygem-d3_rails-rails4
     SUBDIR += rubygem-dashing
     SUBDIR += rubygem-davclient
+    SUBDIR += rubygem-deckar01-task_list
     SUBDIR += rubygem-domainatrix
     SUBDIR += rubygem-dropzonejs-rails
     SUBDIR += rubygem-em-http-request
