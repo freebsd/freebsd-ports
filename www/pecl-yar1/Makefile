@@ -7,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
+PKGNAMESUFFIX=	1
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	johnpupu@gmail.com
