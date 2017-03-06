@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet-client
-PORTVERSION=	6.0.2
+PORTVERSION=	6.0.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima1252@gmail.com
