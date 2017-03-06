@@ -2,6 +2,7 @@
 
 PORTNAME=	libsearpc
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ultima1252@gmail.com
@@ -22,23 +23,5 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-
-HAIWENDIR=	www/haiwen
-SEAFILE_SERVER=	${HAIWENDIR}/seafile-server
-SEALIB=		${SEAFILE_SERVER}/seafile/lib
-
-USERS=		seafile
-GROUPS=		${USERS}
-
-PLIST_SUB=	USERS=${USERS} \
-		GROUPS=${GROUPS} \
-		SEAFILE_SERVER=${SEAFILE_SERVER} \
-		HAIWENDIR=${HAIWENDIR}
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${SEALIB}
-	(cd ${STAGEDIR}${PREFIX}/lib && \
-		${COPYTREE_SHARE} ${PYTHON_VERSION} ${STAGEDIR}${PREFIX}/${SEALIB})
-	${RM} -r ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}
 
 .include <bsd.port.mk>
