@@ -320,6 +320,7 @@
     SUBDIR += covtool
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
+    SUBDIR += cpp-hocon
     SUBDIR += cpp-netlib
     SUBDIR += cppcheck
     SUBDIR += cppi
