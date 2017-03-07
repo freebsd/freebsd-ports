@@ -3,6 +3,7 @@
 
     COMMENT = Security tools
 
+    SUBDIR += 0d1n
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
