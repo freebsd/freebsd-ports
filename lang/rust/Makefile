@@ -95,9 +95,8 @@ LLVM_PREFIX=			${LOCALBASE}/llvm${LLVM_VER}
 TEST_TARGET=	check
 TEST_ENV+=	ALLOW_NONZERO_RLIMIT_CORE=1
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
-=======
+
 # Rust manifests list all files and directories installed by rust-installer.
 # We use them in:
 #     - pre-install to cleanup the ${STAGEDIR}
@@ -109,8 +108,6 @@ DOCS_VARS=		rust_manifests+=${RUST_DOCS_MANIFESTS}
 
 PLIST_FILES=		lib/rustlib/components \
 			lib/rustlib/rust-installer-version
->>>>>>> upstream/master
-
 pre-fetch:
 	# FIXME: This is the same check for CONFLICTS as the standard
 	# one, except port origins are not compared. This allows
