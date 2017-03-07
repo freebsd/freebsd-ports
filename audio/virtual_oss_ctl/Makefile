@@ -18,4 +18,3 @@ USES=		qmake tar:bzip2
 USE_QT4=	corelib gui qmake_build moc_build rcc_build
 
 .include <bsd.port.mk>
-
