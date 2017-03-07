@@ -5,6 +5,7 @@ bin/gcin-kbm-toggle
 bin/gcin-message
 bin/gcin-tools
 bin/gcin2tab
+bin/gtab-db-gen
 bin/gtab-merge
 bin/juyin-learn
 bin/phoa2d
@@ -132,7 +133,7 @@ share/icons/gcin/fcitx-wanfeng.png
 share/icons/gcin/full-simp.png
 share/icons/gcin/full-trad.png
 share/icons/gcin/gcb.png
-share/icons/gcin/gcin-tray.png
+share/icons/gcin/gcin_tray.png
 share/icons/gcin/gdayi3.png
 share/icons/gcin/german.png
 share/icons/gcin/greek.png
