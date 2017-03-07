@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geany
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
