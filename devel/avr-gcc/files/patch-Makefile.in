@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-06-13 16:32:16.000000000 +0200
-+++ Makefile.in	2014-08-08 20:04:46.000000000 +0200
-@@ -36809,6 +36773,14 @@
+--- Makefile.in.orig	2015-12-04 19:51:35 UTC
++++ Makefile.in
+@@ -38392,6 +38392,14 @@ all-target-libgcc: stage_current
  TARGET-target-libgcc=all
  maybe-all-target-libgcc: all-target-libgcc
  all-target-libgcc: configure-target-libgcc

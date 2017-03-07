@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.9.3
+PORTVERSION=	5.4.0
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX=	avr-
 # DISTNAME=	gcc-${DISTVERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
-COMMENT=	FSF GCC 4.x for Atmel AVR 8-bit RISC cross-development
+COMMENT=	FSF GCC for Atmel AVR 8-bit RISC cross-development
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
