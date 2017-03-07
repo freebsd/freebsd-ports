@@ -16,9 +16,8 @@ BROKEN=		Unfetchable (google code has gone away)
 DEPRECATED=	Unfetchable for more than six months (google code has gone away)
 EXPIRATION_DATE=	2017-04-30
 
-OPTIONS_DEFINE=	ORACLE_JDBC MYSQL_JDBC PGSQL_JDBC
+OPTIONS_DEFINE=	MYSQL_JDBC PGSQL_JDBC
 
-ORACLE_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/ojdbc-10.2.0.5.jar:databases/jdbc-oracle10g
 MYSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
 PGSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc
 
