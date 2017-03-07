@@ -6,6 +6,7 @@ bin/rspamadm
 bin/rspamc-%%RSPAMDVERSION%%
 bin/rspamc
 %%REDIRECTOR%%bin/rspamd-redirector
+%%CGP%%bin/rspamd-cgp-helper
 @sample %%ETCDIR%%/2tld.inc.sample
 @sample %%ETCDIR%%/mime_types.inc.sample
 @sample %%ETCDIR%%/common.conf.sample
@@ -16,11 +17,13 @@ bin/rspamc
 @sample %%ETCDIR%%/metrics.conf.sample
 @sample %%ETCDIR%%/mid.inc.sample
 @sample %%ETCDIR%%/modules.conf.sample
+%%ETCDIR%%/modules.d/antivirus.conf
 %%ETCDIR%%/modules.d/asn.conf
 %%ETCDIR%%/modules.d/chartable.conf
 %%ETCDIR%%/modules.d/clickhouse.conf
 %%ETCDIR%%/modules.d/dcc.conf
 %%ETCDIR%%/modules.d/dkim.conf
+%%ETCDIR%%/modules.d/dkim_signing.conf
 %%ETCDIR%%/modules.d/dmarc.conf
 %%ETCDIR%%/modules.d/emails.conf
 %%ETCDIR%%/modules.d/fann_redis.conf
@@ -36,16 +39,20 @@ bin/rspamc
 %%ETCDIR%%/modules.d/mime_types.conf
 %%ETCDIR%%/modules.d/mid.conf
 %%ETCDIR%%/modules.d/multimap.conf
+%%ETCDIR%%/modules.d/mx_check.conf
 %%ETCDIR%%/modules.d/once_received.conf
 %%ETCDIR%%/modules.d/phishing.conf
 %%ETCDIR%%/modules.d/ratelimit.conf
 %%ETCDIR%%/modules.d/rbl.conf
 %%ETCDIR%%/modules.d/redis.conf
 %%ETCDIR%%/modules.d/regexp.conf
+%%ETCDIR%%/modules.d/replies.conf
 %%ETCDIR%%/modules.d/rmilter_headers.conf
 %%ETCDIR%%/modules.d/rspamd_update.conf
+%%ETCDIR%%/modules.d/spamassassin.conf
 %%ETCDIR%%/modules.d/spf.conf
 %%ETCDIR%%/modules.d/surbl.conf
+%%ETCDIR%%/modules.d/trie.conf
 %%ETCDIR%%/modules.d/url_redirector.conf
 %%ETCDIR%%/modules.d/url_reputation.conf
 %%ETCDIR%%/modules.d/url_tags.conf
