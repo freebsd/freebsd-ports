@@ -13,6 +13,9 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	libGTLCore.so:graphics/opengtl
 
+DEPRECATED=	Project is dead and has had no consumer for over a year
+EXPIRATION_DATE=2017-04-15
+
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 USES=		cmake:outsource pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
