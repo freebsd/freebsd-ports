@@ -80,7 +80,7 @@ GROUPS=		${RADIUS_GROUP}
 _REQUIRE=	NETWORKING SERVERS
 
 OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT LDAP MYSQL \
-		PGSQL UNIXODBC FIREBIRD PERL PYTHON OCI8 RUBY DHCP \
+		PGSQL UNIXODBC FIREBIRD PERL PYTHON RUBY DHCP \
 		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR DOCS
 OPTIONS_DEFAULT=USER PERL PYTHON
 
@@ -90,7 +90,6 @@ HEIMDAL_DESC=		With Heimdal Kerberos support
 HEIMDAL_PORT_DESC=	With Heimdal Kerberos from ports
 UNIXODBC_DESC=		With unixODBC database support
 FIREBIRD_DESC=		With Firebird database support (EXPERIMENTAL)
-OCI8_DESC=		With Oracle support (currently experimental)
 EXPERIMENTAL_DESC=	Build experimental modules
 UDPFROMTO_DESC=		Compile in UDPFROMTO support
 DEVELOPER_DESC=		Enable developer options
@@ -252,18 +251,7 @@ EXPM=		yes
 #EXPM=		yes
 #.endif
 
-# Oracle support is experimental under FreeBSD
-.if ${PORT_OPTIONS:MOCI8}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-exec.c
-CONFIGURE_ENV+=	ORACLE_HOME="${ORACLE_HOME}"
-ORACLE_HOME?=	${LOCALBASE}/oracle8-client
-BUILD_DEPENDS+=	${ORACLE_HOME}/lib/libclntst8.a:databases/oracle8-client
-CONFIGURE_ARGS+=--with-oracle-home-dir=${ORACLE_HOME}/rdbms/demo
-PLIST_SUB+=	OCI8=""
-.else
 CONFIGURE_ARGS+=--without-rlm_sql_oracle
-PLIST_SUB+=	OCI8="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MEXPERIMENTAL} || defined(EXPM)
 CONFIGURE_ARGS+=--with-experimental-modules

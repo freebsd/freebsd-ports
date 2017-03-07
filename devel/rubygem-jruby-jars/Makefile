@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby-jars
-PORTVERSION=	9.1.7.0
+PORTVERSION=	9.1.8.0
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
@@ -12,9 +12,8 @@ COMMENT=	JAR files from the JRuby distribution
 LICENSE=	EPL GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-USE_JAVA=	yes
 NO_ARCH=	yes
-
+USE_JAVA=	yes
 USE_RUBY=	yes
 USES=		gem
 

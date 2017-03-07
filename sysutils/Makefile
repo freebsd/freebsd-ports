@@ -512,6 +512,7 @@
     SUBDIR += ksysguardd
     SUBDIR += ksystemlog
     SUBDIR += kuser
+    SUBDIR += lava
     SUBDIR += lbl-cf
     SUBDIR += lbl-hf
     SUBDIR += lcdproc

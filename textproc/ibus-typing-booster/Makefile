@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	1.5.23
+PORTVERSION=	1.5.24
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -29,7 +29,7 @@ TEST_DEPENDS=	${LOCALBASE}/share/hunspell/de_DE.dic:german/hunspell	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	mike-fabian
 
-USES=		autoreconf gettext gmake iconv pathfix python:3.3+
+USES=		autoreconf gettext gmake iconv pathfix pkgconfig python:3.3+
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 TEST_TARGET=	check
