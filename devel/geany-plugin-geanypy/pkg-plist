@@ -6,6 +6,8 @@ lib/geany/geanypy/geany/__init__.py
 lib/geany/geanypy/geany/__init__.pyc
 lib/geany/geanypy/geany/console.py
 lib/geany/geanypy/geany/console.pyc
+lib/geany/geanypy/geany/logger.py
+lib/geany/geanypy/geany/logger.pyc
 lib/geany/geanypy/geany/plugin.py
 lib/geany/geanypy/geany/plugin.pyc
 lib/geany/geanypy/geany/signalmanager.py
