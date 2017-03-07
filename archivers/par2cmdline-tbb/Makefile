@@ -3,7 +3,7 @@
 
 PORTNAME=	par2cmdline-tbb
 PORTVERSION=	20100203
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	archivers
 MASTER_SITES=	http://chuchusoft.com/par2_tbb/
 DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
