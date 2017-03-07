@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -19,10 +19,13 @@ BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd-devel
 
-OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN
+OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN GD CGP
+OPTIONS_DEFAULT=	GD
 GPERF_DESC=		Google perf-tools profiling
 REDIRECTOR_DESC=	Install HTTP redirector
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
+GD_DESC=		Enable libgd support for images fuzzy hashes
+CGP_DESC=		Install Communigate Pro(tm) helper
 
 USE_RC_SUBR=	rspamd
 
@@ -37,11 +40,10 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 		-DBUILD_PORT=yes \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
-		-DENABLE_FANN=ON \
-		-DENABLE_GD=OFF \
-		-DNO_SHARED=ON
+		-DNO_SHARED=ON \
+		-DENABLE_FANN=ON
 
-USES=		cmake:outsource gettext pkgconfig tar:xz perl5 \
+USES=		cmake:outsource gettext tar:xz pkgconfig perl5 \
 		compiler:c11 sqlite ssl
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -49,6 +51,13 @@ USE_PERL5=	build
 USE_GNOME=	glib20
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGD}
+ CMAKE_ARGS+=	-DENABLE_GD=ON
+ LIB_DEPENDS+=	libgd.so:graphics/gd
+.else
+ CMAKE_ARGS+=	-DENABLE_GD=OFF
+.endif
 
 .if ${PORT_OPTIONS:MGPERF}
  CMAKE_ARGS+=	-DENABLE_GPERF_TOOLS=ON
@@ -76,17 +85,25 @@ USE_GNOME=	glib20
 	p5-POE-Component-Server-HTTP>=0:www/p5-POE-Component-Server-HTTP \
 	p5-Cache-Memcached-Fast>=0:databases/p5-Cache-Memcached-Fast \
 	p5-Proc-PidUtil>=0:sysutils/p5-Proc-PidUtil \
-	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
-	p5-SWF-File>=0:graphics/p5-SWF-File
+	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon
 .else
  PLIST_SUB+=	REDIRECTOR="@comment "
 .endif
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
-	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+.if ${PORT_OPTIONS:MCGP}
+ USE_PERL5+=	run
+ PLIST_SUB+=	CGP=""
+ RUN_DEPENDS+=	\
+	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
+	p5-AnyEvent>=0:devel/p5-AnyEvent \
+	p5-EV>=0:devel/p5-EV \
+	p5-JSON-XS>=0:converters/p5-JSON-XS
+.else
+ PLIST_SUB+=	CGP="@comment "
+.endif
 
-	${INSTALL} -d \
+post-install:
+	@${MKDIR} \
 		${STAGEDIR}/var/log/rspamd \
 		${STAGEDIR}/var/db/rspamd \
 		${STAGEDIR}/var/run/rspamd
@@ -95,5 +112,10 @@ post-install:
 	# No need, since rspamd.conf.sample is a same
 	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.sysvinit.conf
 	${INSTALL_DATA} ${WRKDIR}/rspamd.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+.if ${PORT_OPTIONS:MCGP}
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/cgp_rspamd.pl ${STAGEDIR}${PREFIX}/bin/rspamd-cgp-helper
+.endif
 
 .include <bsd.port.mk>
