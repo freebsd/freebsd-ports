@@ -15,11 +15,16 @@ USES=		gmake
 USE_RC_SUBR=	zerotier
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	zerotier
 GH_PROJECT=	ZeroTierOne
 CFLAGS+=	-flax-vector-conversions
 
 PLIST_FILES=	bin/zerotier-cli bin/zerotier-idtool sbin/zerotier-one
+
+OPTIONS_DEFINE=	CONTROLLER
+
+CONTROLLER_DESC=	Network management controller microservice support
+CONTROLLER_USES=	sqlite
+CONTROLLER_MAKE_ARGS=	ZT_ENABLE_NETWORK_CONTROLLER=1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zerotier-one ${STAGEDIR}${PREFIX}/sbin/
