@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.15.1
-PORTREVISION=	1
+PORTVERSION=	3.17.0
 CATEGORIES=	databases
-MASTER_SITES=	https://www.sqlite.org/2016/ http://www2.sqlite.org/2016/ http://www3.sqlite.org/2016/
+MASTER_SITES=	https://www.sqlite.org/2017/ http://www2.sqlite.org/2017/ http://www3.sqlite.org/2017/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
@@ -23,7 +22,7 @@ MAKE_JOBS_UNSAFE=	yes
 # Compilation Options For SQLite https://www.sqlite.org/compile.html
 OPTIONS_DEFINE=	FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
 		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
-		EXTENSION ARMOR STMT DBSTAT FTS5 JSON1 RBU \
+		EXTENSION ARMOR STMT DBSTAT FTS5 JSON1 RBU NULL_TRIM \
 		LIKENOTBLOB STSHELL FTS3_TOKEN SESSION UNKNOWN_SQL
 OPTIONS_SINGLE=	RAMT
 OPTIONS_RADIO=	STAT
@@ -40,6 +39,9 @@ SECURE_DELETE_DESC=	Overwrite deleted information with zeros
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 EXTENSION_DESC=		Allow loadable extensions
 STSHELL_DESC=		Statically link libsqlite3 into shell
+
+# https://sqlite.org/compile.html#enable_null_trim
+NULL_TRIM_DESC=		Omits NULL columns at the ends of rows
 
 # https://www.sqlite.org/sessionintro.html
 SESSION_DESC=		Enable the Session Extension
@@ -190,6 +192,8 @@ STSHELL_CONFIGURE_ENABLE=	static-shell
 SESSION_CONFIGURE_ENABLE=	session
 
 UNKNOWN_SQL_CPPFLAGS=	-DSQLITE_ENABLE_UNKNOWN_SQL_FUNCTION=1
+
+NULL_TRIM_CPPFLAGS=	-DSQLITE_ENABLE_NULL_TRIM=1
 
 .include <bsd.port.options.mk>
 
