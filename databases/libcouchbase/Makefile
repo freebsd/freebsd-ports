@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcouchbase
-DISTVERSION=	2.6.3
-PORTREVISION=	2
+DISTVERSION=	2.6.4
 CATEGORIES=	databases
 MASTER_SITES=	http://packages.couchbase.com/clients/c/
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 
 CMAKE_ARGS+=	-DLCB_NO_TESTS=1
 
-USES=		cmake perl5
+USES=		cmake perl5 ssl
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
 
