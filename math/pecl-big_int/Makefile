@@ -12,25 +12,28 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Functions for calculations with arbitrary length integers and bitsets
 
+LICENSE=	BIG_INT
+LICENSE_NAME=	BIG_INT license
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		php:ext tar:tgz
 IGNORE_WITH_PHP=	70 71
-
-DOCS=		CREDITS INSTALL LICENSE README docs/index.html libbig_int/CREDITS \
-		libbig_int/LICENSE
-EXAMPLES=	bitset.php example.php rand.php RSA.php std_header.php
 
 CONFIGURE_ARGS=	--enable-big-int=shared
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.  for doc in ${DOCS}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in CREDITS README docs/index.html libbig_int/CREDITS
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.  endfor
-.  for test in ${STAGEDIR}${EXAMPLES}
+.endfor
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+.for test in bitset.php example.php rand.php RSA.php std_header.php
 	${INSTALL_DATA} ${WRKSRC}/tests/${test} ${STAGEDIR}${EXAMPLESDIR}
-.  endfor
+.endfor
 
 .include <bsd.port.mk>

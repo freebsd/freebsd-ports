@@ -2,56 +2,58 @@
 # $FreeBSD$
 
 PORTNAME=	vexim
-DISTVERSION=	2.2.2_rc1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3
 CATEGORIES=	mail www
-MASTER_SITES=	LOCAL/feld
-DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Web interface for managing virtual domains for exim
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB
-
-VEXIMDIR=	www/${PORTNAME}
-WRKSRC=		${WRKDIR}/vexim-release
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	${PORTNAME}2
 
 SUB_FILES=	pkg-message
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	gettext session posix
-USES=		gettext
-IGNORE_WITH_PHP=	70
+USES=		gettext php
 
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		DOCS ORDER
 OPTIONS_DEFAULT=	MYSQL
+
+ORDER_DESC=		Sort userlist by localpart istead of realname
+ORDER_EXTRA_PATCHES=	${FILESDIR}/extrapatch-order
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-USE_PHP+=	mysql
+USES+=		mysql
+USE_PHP+=	pdo_mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql
-USE_PHP+=	pgsql
+USE_PHP+=	pdo_pgsql
 .endif
 
+.if ${PORT_OPTIONS:MORDER}
 post-patch:
-	${RM} -r ${WRKSRC}/.hg ${WRKSRC}/.hgtags ${WRKSRC}/vexim/adminuserchange.phps
-	${MV} ${WRKSRC}/vexim/config/variables.php ${WRKSRC}/vexim/config/variables.php.dist
+	${RM} -rv ${WRKSRC}/vexim/*.orig
+.endif
 
 do-install:
-	@${ECHO} "Installing in ${VEXIMDIR}"
-	${MKDIR} ${STAGEDIR}${PREFIX}/${VEXIMDIR}
+	@${ECHO} "Installing in ${WWWDIR}:"
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC}/vexim && ${FIND} . \
-		-type d -exec ${MKDIR} ${STAGEDIR}${PREFIX}/${VEXIMDIR}/{} \;  \
+		-type d -exec ${MKDIR} ${STAGEDIR}${WWWDIR}/{} \;  \
 		-o -type f \
-		-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/${VEXIMDIR}/{} \;
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${WWWDIR}/{} \;
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/setup && ${FIND} . \
 		-type d -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \; \
@@ -63,7 +65,7 @@ do-install:
 		-type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
 		-o -type f \
 		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
-.for i in INSTALL README TODO
+.for i in README.md TODO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif

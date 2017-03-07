@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mustermann
-PORTVERSION=	0.4.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lbrary implementing patterns that behave like regular expressions
 
 LICENSE=	MIT
-
-RUN_DEPENDS=	rubygem-tool>=0.2:devel/rubygem-tool
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
