@@ -1,0 +1,25 @@
+--- Makefile.orig	2017-01-14 22:53:30 UTC
++++ Makefile
+@@ -1,17 +1,9 @@
+-CC=gcc
+-CFLAGS=-W -Wall -Wextra -O2 -fstack-protector-all
+-DFLAGS=-D_FORTIFY_SOURCE=2
+-UNAME_S := $(shell uname -s)
+-ifeq ($(UNAME_S),Darwin)
+-	LDFLAGS=-Wl,-lcurl
+-else
+-	LDFLAGS=-Wl,-z,relro,-z,now -lcurl
+-endif
+-
+-#LDFLAGS=-lcurl
+-
++CC?=cc
++CFLAGS+=-W -Wall -Wextra -fstack-protector-all
++DFLAGS=-D_FORTIFY_SOURCE=2 -I /usr/local/include
++LDFLAGS=-Wl,-z,relro,-z,now,-L,/usr/local/lib,-lcurl
+ 
+-0d1n: 0d1n.c 
++all: 0d1n.c
+ 	$(CC) $(CFLAGS) $(DFLAGS) -c *.c
+ 	$(CC) -o 0d1n *.o $(LDFLAGS)
+ 
