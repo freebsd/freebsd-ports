@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meson
-PORTVERSION=	0.38.1
+PORTVERSION=	0.39.0
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
 

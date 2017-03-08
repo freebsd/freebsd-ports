@@ -6,7 +6,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	jQuery plugin that implement GitHub-like mentions
+COMMENT=	jQuery plugin that implements GitHub-like mentions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
