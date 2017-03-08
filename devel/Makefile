@@ -241,6 +241,7 @@
     SUBDIR += ccdoc
     SUBDIR += ccons
     SUBDIR += ccrtp
+    SUBDIR += cctz
     SUBDIR += cdash
     SUBDIR += cdecl
     SUBDIR += cdialog
