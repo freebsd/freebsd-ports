@@ -242,11 +242,6 @@ MODPERL2_DEPS=	p5-libapreq2>0:www/p5-libapreq2 \
 
 MYSQL_DEPS=	p5-DBD-mysql>=2.1018:databases/p5-DBD-mysql
 
-### --- ORACLE ---
-### DBD::Oracle  (avoid 1.23 -- ports has 1.19)
-
-ORACLE_DEPS=	p5-DBD-Oracle>0:databases/p5-DBD-Oracle
-
 ### --- PGSQL ---
 ### DBD::Pg 3.3.1
 
@@ -292,6 +287,5 @@ GD_DEPS=	p5-GD>0:graphics/p5-GD \
 		p5-GD-TextUtil>0:graphics/p5-GD-TextUtil
 
 ### --- AVOID ---
-###     'DBD::Oracle' => [qw(1.23)],
 ###     'Devel::StackTrace' => [qw(1.28 1.29)],
 ###     'DateTime::Locale' => [qw(1.00 1.01)]
