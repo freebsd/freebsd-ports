@@ -2,7 +2,7 @@
 
 PORTNAME=	poudriere
 DISTVERSION=	3.1.99.20170308
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -46,6 +46,11 @@ PLIST_SUB+=	RM=""
 .else
 PLIST_SUB+=	RM="@comment "
 .endif
+
+pre-install:
+	${REINPLACE_CMD} \
+	    -e "s,^\(POUDRIERE_VERSION\)=.*,\1='${PKGVERSION}'," \
+	    ${WRKSRC}/src/bin/poudriere
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
