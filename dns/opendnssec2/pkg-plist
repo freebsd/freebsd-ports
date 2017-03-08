@@ -2,7 +2,6 @@ bin/ods-hsmspeed
 bin/ods-hsmutil
 bin/ods-kasp2html
 bin/ods-kaspcheck
-bin/ods-ksmutil
 @sample %%ETCDIR%%/addns.xml.sample
 @sample %%ETCDIR%%/conf.xml.sample
 @sample %%ETCDIR%%/kasp.xml.sample
@@ -10,7 +9,6 @@ bin/ods-ksmutil
 man/man1/ods-hsmspeed.1.gz
 man/man1/ods-hsmutil.1.gz
 man/man1/ods-kaspcheck.1.gz
-man/man1/ods-ksmutil.1.gz
 man/man5/ods-kasp.5.gz
 man/man5/ods-timing.5.gz
 man/man7/opendnssec.7.gz
@@ -33,6 +31,10 @@ sbin/ods-signerd
 %%PORTDOCS%%%%DOCSDIR%%/1.4-2.0_db_convert/find_problematic_zones.sql
 %%PORTDOCS%%%%DOCSDIR%%/1.4-2.0_db_convert/mysql_convert.sql
 %%PORTDOCS%%%%DOCSDIR%%/1.4-2.0_db_convert/sqlite_convert.sql
+%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/convert_mysql_to_sqlite
+%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/convert_sqlite_to_mysql
+%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/schema.mysql
+%%PORTDOCS%%%%PORTDOCS%%%%DOCSDIR%%/schema.sqlite
 %%DATADIR%%/addns.rnc
 %%DATADIR%%/addns.rng
 %%DATADIR%%/conf.rnc
