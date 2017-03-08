@@ -121,10 +121,7 @@
     SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
     SUBDIR += jdb
-    SUBDIR += jdbc-oracle10g
     SUBDIR += jdbc-oracle11g
-    SUBDIR += jdbc-oracle8i
-    SUBDIR += jdbc-oracle9i
     SUBDIR += jdbm2
     SUBDIR += jlog
     SUBDIR += jrobin
@@ -251,8 +248,6 @@
     SUBDIR += openark-kit
     SUBDIR += opendbx
     SUBDIR += opentsdb
-    SUBDIR += oracle7-client
-    SUBDIR += oracle8-client
     SUBDIR += p5-Amazon-SimpleDB
     SUBDIR += p5-Amon2-DBI
     SUBDIR += p5-AnyEvent-BDB
@@ -315,7 +310,6 @@
     SUBDIR += p5-DBD-Mock
     SUBDIR += p5-DBD-Multi
     SUBDIR += p5-DBD-ODBC
-    SUBDIR += p5-DBD-Oracle
     SUBDIR += p5-DBD-Pg
     SUBDIR += p5-DBD-PgLite
     SUBDIR += p5-DBD-PgPP
@@ -1003,7 +997,6 @@
     SUBDIR += xapian-core
     SUBDIR += xapian-core10
     SUBDIR += xtrabackup
-    SUBDIR += yasql
     SUBDIR += zodb3
 
 .include <bsd.port.subdir.mk>
