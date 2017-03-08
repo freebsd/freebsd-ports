@@ -40,16 +40,13 @@ TEST_DEPENDS=	p5-Config-General>=0:devel/p5-Config-General \
 		p5-Test-Pod>=1.14:devel/p5-Test-Pod \
 		p5-Test-Warn>=0.21:devel/p5-Test-Warn
 
-OPTIONS_DEFINE=	MYSQL ORACLE PGSQL SQLITE
-ORACLE_DESC=	Enable Oracle backend (experimental)
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE
 
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 MYSQL_USE=		MYSQL=yes
-ORACLE_BUILD_DEPENDS=	p5-DBD-Oracle>=0.19:databases/p5-DBD-Oracle
-ORACLE_RUN_DEPENDS=	p5-DBD-Oracle>=0.19:databases/p5-DBD-Oracle
 PGSQL_USES=		pgsql
 SQLITE_USES=		sqlite
 

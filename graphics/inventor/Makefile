@@ -3,7 +3,7 @@
 
 PORTNAME=	inventor
 PORTVERSION=	2.1.5.p10
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://oss.sgi.com/projects/inventor/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-/}
@@ -45,6 +45,9 @@ DEBUG_MAKE_ENV=	LIBTYPE=debug
 LDFLAGS+=	-Wl,--add-needed
 
 post-patch:
+# Fix for print/freetype2 v2.7, where FT_Done_GlyphSlot function is not exported
+	@${REINPLACE_CMD} -e '/FT_Done_GlyphSlot/s|^|//|' \
+		${WRKSRC}/libFL/ang/flfreetype.c
 	@${REINPLACE_CMD} 's|/usr\(/include/freetype2\)|${LOCALBASE}\1|' \
 		${WRKSRC}/libFL/ang/GNUmakefile
 	@${REINPLACE_CMD} -e 's|%%ICONV_LIB%%|${ICONV_LIB}|' \

@@ -1088,6 +1088,8 @@
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
+    SUBDIR += sysadm
+    SUBDIR += sysadm-client
     SUBDIR += sysgather
     SUBDIR += sysinfo
     SUBDIR += syslinux

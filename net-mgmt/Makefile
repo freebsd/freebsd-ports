@@ -83,6 +83,10 @@
     SUBDIR += icinga-core
     SUBDIR += icinga2
     SUBDIR += icingaweb2
+    SUBDIR += icingaweb2-module-businessprocess
+    SUBDIR += icingaweb2-module-cube
+    SUBDIR += icingaweb2-module-director
+    SUBDIR += icingaweb2-module-generictts
     SUBDIR += icli
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
