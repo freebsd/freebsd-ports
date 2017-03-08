@@ -33,6 +33,8 @@ include/utilspp/ThreadingSingle.inl
 include/utilspp/TypeList.hpp
 include/utilspp/TypeTrait.hpp
 include/utilspp/clone_ptr.hpp
+lib/libcurlpp.a
 lib/libcurlpp.so
-lib/static/libcurlpp_static.a
+lib/libcurlpp.so.1
+lib/libcurlpp.so.1.0.0
 libdata/pkgconfig/curlpp.pc
