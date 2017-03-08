@@ -7,7 +7,7 @@ PORTEPOCH=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://fossil-scm.org/index.html/uv/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
 
 LICENSE=	BSD2CLAUSE
