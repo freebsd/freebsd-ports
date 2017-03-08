@@ -18,7 +18,7 @@
 -#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
 -#define DRM_MAJOR 145
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-+#define DRM_MAJOR 0
++#define DRM_MAJOR 0 /* ignored */
 +#endif
 +
 +#if defined(__DragonFly__)
@@ -42,7 +42,19 @@
  
  /**
   * Open the device by bus ID.
-@@ -2833,6 +2843,15 @@ static char *drmGetMinorNameForFD(int fd
+@@ -2731,7 +2741,11 @@ int drmGetNodeTypeFromFd(int fd)
+     if (fstat(fd, &sbuf))
+         return -1;
+ 
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++    maj = DRM_MAJOR;
++#else
+     maj = major(sbuf.st_rdev);
++#endif
+     min = minor(sbuf.st_rdev);
+ 
+     if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode)) {
+@@ -2833,6 +2847,15 @@ static char *drmGetMinorNameForFD(int fd
  
  out_close_dir:
      closedir(sysdir);
@@ -191,3 +203,51 @@
          if (ret)
              goto free_device;
      }
+@@ -3783,7 +3898,11 @@ int drmGetDevice2(int fd, uint32_t flags
+         return -errno;
+ 
+     find_rdev = sbuf.st_rdev;
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++    maj = DRM_MAJOR;
++#else
+     maj = major(sbuf.st_rdev);
++#endif
+     min = minor(sbuf.st_rdev);
+ 
+     if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
+@@ -3811,7 +3930,11 @@ int drmGetDevice2(int fd, uint32_t flags
+         if (stat(node, &sbuf))
+             continue;
+ 
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++        maj = DRM_MAJOR;
++#else
+         maj = major(sbuf.st_rdev);
++#endif
+         min = minor(sbuf.st_rdev);
+ 
+         if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
+@@ -3961,7 +4084,11 @@ int drmGetDevices2(uint32_t flags, drmDe
+         if (stat(node, &sbuf))
+             continue;
+ 
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++        maj = DRM_MAJOR;
++#else
+         maj = major(sbuf.st_rdev);
++#endif
+         min = minor(sbuf.st_rdev);
+ 
+         if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
+@@ -4105,7 +4232,11 @@ char *drmGetDeviceNameFromFd2(int fd)
+     if (fstat(fd, &sbuf))
+         return NULL;
+ 
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++    maj = DRM_MAJOR;
++#else
+     maj = major(sbuf.st_rdev);
++#endif
+     min = minor(sbuf.st_rdev);
+ 
+     if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))

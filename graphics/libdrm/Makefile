@@ -3,8 +3,8 @@
 
 PORTNAME=	libdrm
 PORTVERSION=	2.4.75
+PORTREVISION=	2
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 
