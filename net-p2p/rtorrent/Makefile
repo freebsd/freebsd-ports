@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 LDFLAGS+=	-pthread
 
+EXPLICIT_SAFESTACK=	yes
+
 PLIST_FILES=	bin/rtorrent
 PORTDOCS=	README
 PORTEXAMPLES=	rtorrent.rc
