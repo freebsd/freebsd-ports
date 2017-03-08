@@ -166,10 +166,7 @@ nttcp-*			benchmarks/nttcp	No commercial use
 nwresources*.tar.gz	games/nwndata		Distribution not allowed
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from CARDCAPTOR SAKURA
 OptimFROG*		audio/optimfrog		No commercial use
-oracle/*		databases/jdbc-oracle10g	This software is under license and export controls
 oracle/*		databases/jdbc-oracle11g	This software is under license and export controls
-oracle/*		databases/jdbc-oracle8i	This software is under license and export controls
-oracle/*		databases/jdbc-oracle9i	This software is under license and export controls
 oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and export controls
 oracle/instantclient-basic-linux*	databases/linux-oracle-instantclient-basic	Packaging prohibited by Oracle license
 oracle/instantclient-sqlplus-linux*	databases/linux-oracle-instantclient-sqlplus	Packaging prohibited by Oracle license
