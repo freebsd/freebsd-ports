@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-memcached \
 		--without-sphinx-build \
+		--enable-jobserver=${MAKE_JOBS_NUMBER} \
 		--enable-libmemcachedprotocol
 
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo
