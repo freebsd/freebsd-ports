@@ -1,0 +1,24 @@
+Index: src/checkin.c
+==================================================================
+--- src/checkin.c.orig	2017-03-03 12:00:30 UTC
++++ src/checkin.c
+@@ -466,7 +466,8 @@ void status_cmd(void){
+ 
+   Blob report = BLOB_INITIALIZER;
+   enum {CHANGES, STATUS} command = *g.argv[1]=='s' ? STATUS : CHANGES;
+-  int useHash = find_option("hash", 0, 0)!=0;
++  /* --sha1sum is an undocumented alias for --hash for backwards compatiblity */
++  int useHash = find_option("hash",0,0)!=0 || find_option("sha1sum",0,0)!=0;
+   int showHdr = command==CHANGES && find_option("header", 0, 0);
+   int verboseFlag = command==CHANGES && find_option("verbose", "v", 0);
+   const char *zIgnoreFlag = find_option("ignore", 0, 1);
+@@ -2070,7 +2071,8 @@ void commit_cmd(void){
+ 
+   memset(&sCiInfo, 0, sizeof(sCiInfo));
+   url_proxy_options();
+-  useHash = find_option("hash", 0, 0)!=0;
++  /* --sha1sum is an undocumented alias for --hash for backwards compatiblity */
++  useHash = find_option("hash",0,0)!=0 || find_option("sha1sum",0,0)!=0;
+   noSign = find_option("nosign",0,0)!=0;
+   forceDelta = find_option("delta",0,0)!=0;
+   forceBaseline = find_option("baseline",0,0)!=0;
