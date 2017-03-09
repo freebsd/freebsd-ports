@@ -1,6 +1,6 @@
---- Imakefile.org	Sun Jan  9 22:48:52 2000
-+++ Imakefile	Sun Jan  9 22:49:13 2000
-@@ -7,35 +7,9 @@
+--- Imakefile.orig	2017-03-09 09:12:29 UTC
++++ Imakefile
+@@ -7,35 +7,9 @@ XCOMM $XConsortium: Imakefile /main/7 19
     DEPLIBS = $(DEPXKBFILELIB) $(DEPXONLYLIB)
     XTLOCLIBS = $(XTOOLLIB) $(XONLYLIB)
     XTDEPLIBS = $(DEPXTOOLLIB) $(DEPXONLYLIB)
