@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -56,7 +56,10 @@ CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fopenmp.diff \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt \
 	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py \
-	${PATCHDIR}/clang-patch-tools_clang_tools_scan-build_libexec_ccc-analyzer
+	${PATCHDIR}/clang-patch-tools_clang_tools_scan-build_libexec_ccc-analyzer \
+	${PATCHDIR}/clang-patch-tools_clang_include_clang_Basic_DiagnosticSemaKinds.td \
+	${PATCHDIR}/clang-patch-tools_clang_lib_Sema_SemaOverload.cpp \
+	${PATCHDIR}/config-patch-tools_clang_include_clang_Sema_Overload.h
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_DISTFILES=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
