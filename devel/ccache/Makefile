@@ -3,7 +3,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		LOCAL/bdrewery
@@ -34,7 +34,9 @@ MEMCACHED_DESC=	Build in experimental Memcached support
 USES=		compiler
 
 MEMCACHED_EXTRA_PATCHES=	${FILESDIR}/extra-patch-memcached:-p1 \
-				${FILESDIR}/extra-patch-memcached-ccache.c
+				${FILESDIR}/extra-patch-memcached-ccache.c \
+				${FILESDIR}/extra-patch-memcached-configure.ac \
+				${FILESDIR}/extra-patch-memcached-Makefile.in
 MEMCACHED_CONFIGURE_ENABLE=	memcached
 MEMCACHED_USES=			autoreconf pkgconfig
 MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
