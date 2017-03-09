@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "armv6" || ${ARCH} == "aarch64"
+.if ${ARCH} == "aarch64"
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-aarch64
 .endif
 
