@@ -306,6 +306,7 @@
     SUBDIR += flexbackup
     SUBDIR += flock
     SUBDIR += flog
+    SUBDIR += fluent-bit
     SUBDIR += flyback
     SUBDIR += fonteditfs
     SUBDIR += foremost
