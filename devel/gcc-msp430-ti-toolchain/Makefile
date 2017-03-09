@@ -4,23 +4,23 @@ PORTNAME=	gcc-msp430-ti-toolchain
 PORTVERSION=	${GCC_VERSION}.${TI_VERSION}.${RELEASE_DATE}
 PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	GCC/releases/gcc-${GCC_VERSION}:gcc \
+MASTER_SITES=	GCC/releases/gcc-${GCC_REL_VERSION}:gcc \
 		SOURCEWARE/binutils/releases:binutils \
 		ftp://sources.redhat.com/pub/:newlib \
 		GNU/gdb:gdb \
 		SOURCEWARE/newlib:newlib \
 		http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/${TI_VERSION:S/./_/g}/exports/:ti \
 		http://www.ti.com/lit/ml/slau591${DOC_VERSION}/:docs
-DISTFILES=	gcc-${GCC_VERSION}.tar.bz2:gcc \
+DISTFILES=	gcc-${GCC_REL_VERSION}.tar.bz2:gcc \
 		binutils-${BINUTILS_VERSION}.tar.bz2:binutils \
-		gdb-${GDB_VERSION}.tar.bz2:gdb \
+		gdb-${GDB_VERSION}.tar.gz:gdb \
 		newlib-${NEWLIB_VERSION}.tar.gz:newlib \
 		msp430-gcc-${PATCHSET_VERSION}_source-patches.tar.bz2:ti \
 		msp430-gcc-support-files-${SUPPORT_VERSION}.zip:ti \
 		slau591${DOC_VERSION}.pdf:docs
-EXTRACT_ONLY=	gcc-${GCC_VERSION}.tar.bz2 \
+EXTRACT_ONLY=	gcc-${GCC_REL_VERSION}.tar.bz2 \
 		binutils-${BINUTILS_VERSION}.tar.bz2 \
-		gdb-${GDB_VERSION}.tar.bz2 \
+		gdb-${GDB_VERSION}.tar.gz \
 		newlib-${NEWLIB_VERSION}.tar.gz \
 		msp430-gcc-${PATCHSET_VERSION}_source-patches.tar.bz2 \
 		msp430-gcc-support-files-${SUPPORT_VERSION}.zip
@@ -45,20 +45,21 @@ USE_CSTD=	gnu89
 GNU_CONFIGURE=		yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/${SUBPREFIX}
 
-TI_VERSION=		4.02.00.00
-GCC_VERSION=		5.3.0
-SUPPORT_VERSION=	1.194
-BINUTILS_VERSION=	2.25.1
-GDB_VERSION=		7.7
-NEWLIB_VERSION=		2.2.0
-PATCHSET_VERSION=	5.3.0.224
+TI_VERSION=		5.00.00.00
+GCC_REL_VERSION=	6.2.0
+GCC_VERSION=		6.2.1
+SUPPORT_VERSION=	1.198
+BINUTILS_VERSION=	2.26
+GDB_VERSION=		7.11
+NEWLIB_VERSION=		2.4.0
+PATCHSET_VERSION=	6.2.1.16
 DOC_VERSION=		c
-RELEASE_DATE=		20161108
+RELEASE_DATE=		20170131
 TARGET=			msp430-elf
 
 CPE_PRODUCT=	gcc
 CPE_VENDOR=	gnu
-CPE_VERSION=	${GCC_VERSION}
+CPE_VERSION=	${GCC_REL_VERSION}
 
 SUBPREFIX=	${PORTNAME}-${TI_VERSION}
 
@@ -81,8 +82,8 @@ GCC_DIRS_FROM_NEWLIB=	libgloss newlib
 pre-patch:
 	@${ECHO_MSG} "===> Apply distribution patches..."
 	@${ECHO_MSG} "====> Patch gcc"
-	@cd ${WRKDIR}/gcc-${GCC_VERSION} && \
-	 ${PATCH} ${DIST_PATCH_ARGS} < ${WRKDIR}/msp430-gcc-${PATCHSET_VERSION}_source-patches/gcc_${GCC_VERSION:S/./_/g}_release.diff
+	@cd ${WRKDIR}/gcc-${GCC_REL_VERSION} && \
+	 ${PATCH} ${DIST_PATCH_ARGS} < ${WRKDIR}/msp430-gcc-${PATCHSET_VERSION}_source-patches/gcc-${GCC_REL_VERSION:S/./_/g}-release.diff
 	# binutils patch contains chunks for files not included into distirbution
 	@${ECHO_MSG} "====> Patch binutils (ignore error message, please)"
 	-@cd ${WRKDIR}/binutils-${BINUTILS_VERSION} && \
@@ -99,16 +100,16 @@ pre-patch:
 
 pre-configure:
 .for _DIR in ${GCC_DIRS_FROM_BINUTILS}
-	@${LN} -fns ${WRKDIR}/binutils-${BINUTILS_VERSION}/${_DIR} ${WRKDIR}/gcc-${GCC_VERSION}/${_DIR}
+	@${LN} -fns ${WRKDIR}/binutils-${BINUTILS_VERSION}/${_DIR} ${WRKDIR}/gcc-${GCC_REL_VERSION}/${_DIR}
 .endfor
 .for _DIR in ${GCC_DIRS_FROM_NEWLIB}
-	@${LN} -fns ${WRKDIR}/newlib-${NEWLIB_VERSION}/${_DIR} ${WRKDIR}/gcc-${GCC_VERSION}/${_DIR}
+	@${LN} -fns ${WRKDIR}/newlib-${NEWLIB_VERSION}/${_DIR} ${WRKDIR}/gcc-${GCC_REL_VERSION}/${_DIR}
 .endfor
 	@${MKDIR} ${WRKDIR}/build/gcc ${WRKDIR}/build/gdb
 
 do-configure:
 	@cd ${WRKDIR}/build/gcc && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ${WRKDIR}/gcc-${GCC_VERSION}/configure \
+	 ${MAKE_ENV} ${CONFIGURE_ENV} ${WRKDIR}/gcc-${GCC_REL_VERSION}/configure \
 	  --prefix=${PREFIX}/${SUBPREFIX} \
 	  --target=msp430-elf \
 	  --enable-languages=c,c++ \

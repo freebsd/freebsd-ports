@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Compile
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Log-Report>=1.03:devel/p5-Log-Report \
+		p5-Types-Serialiser>=0:devel/p5-Types-Serialiser \
 		p5-XML-LibXML>=2.0107:textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0.095:devel/p5-Test-Deep \
