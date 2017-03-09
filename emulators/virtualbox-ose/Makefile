@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.1.16
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -170,7 +171,8 @@ VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1
 .if ${PORT_OPTIONS:MQT4}
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderAdditions.cpp \
-		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderExtensionPack.cpp
+		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderExtensionPack.cpp \
+		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_settings_global_UIGlobalSettingsNetworkDetailsHost.cpp
 CONFIGURE_ARGS+=	--enable-qt4
 USE_QT4=	corelib gui linguist_build moc_build network opengl
 USE_QT4+=	rcc_build uic_build

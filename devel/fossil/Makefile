@@ -3,6 +3,7 @@
 PORTNAME=	fossil
 PORTVERSION=	2.0
 DISTVERSIONPREFIX=	src-
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://fossil-scm.org/index.html/uv/download/

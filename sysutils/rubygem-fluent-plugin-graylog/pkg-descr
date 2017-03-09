@@ -1,0 +1,4 @@
+A Fluentd output plugin for Graylog. Send logging information in JSON format 
+via TCP to an instance of GrayLog
+  
+WWW: https://github.com/FundingCircle/fluent-plugin-graylog
