@@ -1,4 +1,6 @@
 # $FreeBSD$
+#-*- tab-width: 4; -*-
+# ex:ts=4
 
 COMMANDS_Include_MAINTAINER=	portmgr@FreeBSD.org
 
