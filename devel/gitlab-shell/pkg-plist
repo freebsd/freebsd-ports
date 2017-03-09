@@ -30,6 +30,7 @@
 %%DATADIR%%/lib/gitlab_keys.rb
 %%DATADIR%%/lib/gitlab_lfs_authentication.rb
 %%DATADIR%%/lib/gitlab_logger.rb
+%%DATADIR%%/lib/gitlab_metrics.rb
 %%DATADIR%%/lib/gitlab_net.rb
 %%DATADIR%%/lib/gitlab_post_receive.rb
 %%DATADIR%%/lib/gitlab_projects.rb
@@ -55,9 +56,11 @@
 %%DATADIR%%/spec/fixtures/gitlab_config_redis.yml
 %%DATADIR%%/spec/gitlab_access_spec.rb
 %%DATADIR%%/spec/gitlab_config_spec.rb
+%%DATADIR%%/spec/gitlab_custom_hook_spec.rb
 %%DATADIR%%/spec/gitlab_keys_spec.rb
 %%DATADIR%%/spec/gitlab_lfs_authentication_spec.rb
 %%DATADIR%%/spec/gitlab_logger_spec.rb
+%%DATADIR%%/spec/gitlab_metrics_spec.rb
 %%DATADIR%%/spec/gitlab_net_spec.rb
 %%DATADIR%%/spec/gitlab_post_receive_spec.rb
 %%DATADIR%%/spec/gitlab_projects_spec.rb
@@ -66,6 +69,7 @@
 %%DATADIR%%/spec/httpunix_spec.rb
 %%DATADIR%%/spec/names_helper_spec.rb
 %%DATADIR%%/spec/spec_helper.rb
+%%DATADIR%%/spec/support/gl_id_test_hook
 %%DATADIR%%/spec/vcr_cassettes/allowed-pull.yml
 %%DATADIR%%/spec/vcr_cassettes/allowed-push.yml
 %%DATADIR%%/spec/vcr_cassettes/broadcast_message-none.yml
