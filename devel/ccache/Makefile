@@ -43,15 +43,19 @@ MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 MEMCACHED_LDFLAGS=		-L${LOCALBASE}/lib
 MEMCACHED_CFLAGS=		-I${LOCALBASE}/include
 
-.if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED)
+.if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED) && \
+    !defined(NO_CCACHE_DEPEND)
 # Don't allow autoreconf. We want no dependencies on this to keep
 # WITH_CCACHE_BUILD working.
 USES:=		${USES:Nautoreconf}
 
 MEMCACHED_IGNORE=		MEMCACHED cannot be combined with WITH_CCACHE_BUILD.  Use devel/ccache-memcached
 # XXX: This needs more testing with Poudriere before enabling. Also bsd.options.mk support.
-#MEMCACHED_DEPENDS_ARGS+= NO_CCACHE=1
+#MEMCACHED_DEPENDS_ARGS+= NO_CCACHE_DEPEND=1
 .endif
+
+# Support WITH_CCACHE_BUILD but don't depend on it.
+NO_CCACHE_DEPEND=	yes
 
 OPTIONS_SUB=	yes
 
