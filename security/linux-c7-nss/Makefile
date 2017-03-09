@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.21.3
-PORTREVISION=	1
+PORTVERSION=	3.28.2
 CATEGORIES=	security linux
 LIB_DISTNAMES=	${DISTNAME} \
 		${PORTNAME}-util-${PORTVERSION}-1.1.el7_3 \
@@ -19,7 +18,7 @@ COMMENT=	Network Security Services (Linux CentOS ${LINUX_DIST_VER})
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	2.el7_3
+RPMVERSION=	1.6.el7_3
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	nspr sqlite3
