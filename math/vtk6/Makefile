@@ -17,8 +17,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
-		libexpat.so:textproc/expat2 \
-		libc++.so:devel/libc++
+		libexpat.so:textproc/expat2
 
 #
 # TODO
