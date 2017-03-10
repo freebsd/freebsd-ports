@@ -10,8 +10,6 @@ MASTER_SITES=	https://distfiles.dereferenced.org/pkgconf/ \
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to help to configure compiler and linker flags
 
-EXPLICIT_SAFESTACK=		yes
-
 LICENSE=	ISCL
 
 USES=		tar:xz libtool pathfix
