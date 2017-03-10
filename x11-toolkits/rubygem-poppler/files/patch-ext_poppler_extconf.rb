@@ -4,7 +4,7 @@
    require 'mkmf-gnome2'
  end
  
--["glib2", "atk"].each do |package|
+-["glib2", "gdk_pixbuf2"].each do |package|
 +["cairo", "glib2", "atk", "gdk_pixbuf2"].each do |package|
    directory = "#{package}#{version_suffix}"
    build_dir = "#{directory}/tmp/#{RUBY_PLATFORM}/#{package}/#{RUBY_VERSION}"
