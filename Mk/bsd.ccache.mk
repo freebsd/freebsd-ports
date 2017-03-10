@@ -33,11 +33,11 @@ WARNING+=	WITH_CCACHE_BUILD support disabled, please set CCACHE_DIR.
 BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:devel/ccache
 .	endif
 
-_CCACHE_PATH=	${LOCALBASE}/libexec/ccache
+CCACHE_WRAPPER_PATH?=	${LOCALBASE}/libexec/ccache
 
-.if exists(${_CCACHE_PATH})
+.if exists(${CCACHE_WRAPPER_PATH})
 # Prepend the ccache dir into the PATH and setup ccache env
-PATH:=	${_CCACHE_PATH}:${PATH}
+PATH:=	${CCACHE_WRAPPER_PATH}:${PATH}
 #.MAKEFLAGS:		PATH=${PATH}
 .if !${MAKE_ENV:MPATH=*} && !${CONFIGURE_ENV:MPATH=*}
 MAKE_ENV+=			PATH=${PATH}
