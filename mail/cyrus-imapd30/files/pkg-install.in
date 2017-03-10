@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+#set -vx
+
+PKG_BATCH=${BATCH:=NO}
+PKG_PREFIX=${PKG_PREFIX:=%%PREFIX%%}
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+
+#
+# Modify the 'cyrus' user created from the cyrus-sasl port
+#
+
+modify_cyrus_user() {
+	USER=${CYRUS_USER}
+	PW=/usr/sbin/pw
+	shell=/bin/csh
+	uhome=${PKG_PREFIX}/cyrus
+
+	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}"; then
+		echo "*** Failed to update user \`${USER}'."
+	else
+		echo "*** Updated user \`${USER}'."
+	fi
+}
+
+case $2 in
+	PRE-INSTALL)
+		;;
+
+	POST-INSTALL)
+		modify_cyrus_user
+		if grep 'sieve' /etc/services; then
+			echo
+		else
+			echo
+			echo "** Please add an entry for the sieve protocol (4190/tcp)"
+			echo "   to /etc/services"
+			echo
+		fi
+		;;
+esac
