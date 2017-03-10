@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -146,7 +147,7 @@ post-patch:
 .endif
 
 post-patch-CDROM_DMA-off:
-	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/hw/ide/internal.h
+	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
 
 post-patch-GNS3-on:
 	@${REINPLACE_CMD} -e 's|(buf\[0\] & 1) && (rctl & E1000_RCTL_MPE)|buf[0] \& 1|' \
