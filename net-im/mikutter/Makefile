@@ -3,6 +3,7 @@
 
 PORTNAME=	mikutter
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL/tota/${PORTNAME}
@@ -22,7 +23,7 @@ RUN_DEPENDS=	rubygem-gtk2>=3.0.8:x11-toolkits/rubygem-gtk2 \
 		rubygem-gettext>=3.0.9:devel/rubygem-gettext \
 		rubygem-httpclient>=2.7.1:www/rubygem-httpclient \
 		rubygem-instance_storage>=1.0.0:devel/rubygem-instance_storage \
-		rubygem-json_pure>=1.8.3:devel/rubygem-json_pure \
+		rubygem-json_pure1>=1.8:devel/rubygem-json_pure1 \
 		rubygem-locale>=2.1.1:devel/rubygem-locale \
 		rubygem-memoist>=0.14.0:devel/rubygem-memoist \
 		rubygem-moneta>=0.7:devel/rubygem-moneta \
