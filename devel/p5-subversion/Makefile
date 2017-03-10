@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=	p5-
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Perl bindings for Version control system
@@ -30,12 +30,8 @@ CONFIGURE_ARGS+=	--without-gnome-keyring \
 			--without-kwallet \
 			--with-apxs=no
 
-CFLAGS_aarch64=		-fPIC
-
 ALL_TARGET=	swig-pl-lib swig-pl
 INSTALL_TARGET=	install-swig-pl
-
-CFLAGS_aarch64=	-fPIC
 
 pre-install:
 	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile

@@ -1,0 +1,16 @@
+Py-StackExchange is a simple Python binding for the StackExchange API.
+
+Py-StackExchange API coverage:
+- Access any StackExchange site, with just its URL. Even those that aren't
+  online yet.
+- If you just can't decide which one to use, you can use StackAuth to look up
+  the full list of sites.
+- Once you're online, you can view everything about users, questions, answers,
+  badges, comments and tags.
+- You can even go back in time by playing with post revisions.
+- Help users by looking up every StackExchange account they have. Every single
+  one.
+- See how well an SE site is doing; check its site statistics.
+- Search the questions of StackExchange sites.
+
+WWW: https://github.com/lucjon/Py-StackExchange

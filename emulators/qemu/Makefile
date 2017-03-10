@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.8.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER?=	bofh@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator
 
 LICENSE=	GPLv2
@@ -63,7 +62,8 @@ USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
 PCAP_CONFIGURE_ON=	--enable-pcap
-PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch ${FILESDIR}/pcap-patch-net_net.c
+PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch ${FILESDIR}/pcap-patch-net_net.c \
+			${FILESDIR}/pcap-patch-net_clients.h
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK2 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
@@ -73,12 +73,12 @@ DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
 
-PORTDOCS?=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
+PORTDOCS?=	docs qemu-doc.html qmp-commands.txt
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
-		--disable-libssh2 --enable-debug \
+CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
+		--extra-ldflags=-L\"${LOCALBASE}/lib\" --disable-libssh2 --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-docs --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--smbd=${LOCALBASE}/sbin/smbd --enable-debug-info --python=${PYTHON_CMD} \
@@ -110,6 +110,13 @@ MAKE_ARGS+=	ARCH=ppc64
 CONFIGURE_ARGS+=	--sparc_cpu=v9
 .endif
 
+# clang in freebsd 10 is unable to assemble linuxboot_dma.bin 
+.if (${OSVERSION} < 1100000) 
+PLIST_SUB+=     LINUXBOOT_DMA="@comment " 
+.else 
+PLIST_SUB+=     LINUXBOOT_DMA="" 
+.endif
+
 # -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
 # but it shouldn't matter much
 post-patch:
@@ -131,6 +138,15 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
 		${WRKSRC}/scripts/texi2pod.pl
+# clang in freebsd 10 is unable to assemble linuxboot_dma.bin
+.if (${OSVERSION} < 1100000)
+	@${REINPLACE_CMD} -E \
+		-e 's|linuxboot_dma.bin||' \
+		${WRKSRC}/pc-bios/optionrom/Makefile
+	@${REINPLACE_CMD} -E \
+		-e 's|linuxboot_dma.bin||' \
+		${WRKSRC}/Makefile
+.endif
 
 post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/hw/ide/internal.h

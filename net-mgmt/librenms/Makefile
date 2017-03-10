@@ -81,7 +81,7 @@ APACHEMOD_VARS_ON=	WANT_PHP_MOD=yes
 APACHEMOD_USE=		APACHE_RUN=22+
 .else
 # Package builder doesn't create php5 with module
-USES=		php:web
+USES+=		php:web
 .endif
 
 post-patch:

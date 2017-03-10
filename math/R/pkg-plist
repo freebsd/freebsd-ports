@@ -1049,6 +1049,9 @@ lib/R/library/survival/doc/adjcurve.pdf
 lib/R/library/survival/doc/compete.R
 lib/R/library/survival/doc/compete.Rnw
 lib/R/library/survival/doc/compete.pdf
+lib/R/library/survival/doc/multi.R
+lib/R/library/survival/doc/multi.Rnw
+lib/R/library/survival/doc/multi.pdf
 lib/R/library/survival/doc/splines.R
 lib/R/library/survival/doc/splines.Rnw
 lib/R/library/survival/doc/splines.pdf

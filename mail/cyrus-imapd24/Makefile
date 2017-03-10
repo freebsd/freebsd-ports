@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libpcre.so:devel/pcre
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^4].* cyrus-imapd2[^4]-2.[^4].*
+CONFLICTS_INSTALL=	cyrus-imapd-2.[^4].* cyrus-imapd2[^4]-2.[^4].* \
+			cyrus-imapd3*
 
 USE_RC_SUBR=	imapd
 

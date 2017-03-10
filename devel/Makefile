@@ -236,7 +236,9 @@
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += ccache
+    SUBDIR += ccache-static
     SUBDIR += ccache-memcached
+    SUBDIR += ccache-memcached-static
     SUBDIR += cccc
     SUBDIR += ccdoc
     SUBDIR += ccons
@@ -4701,6 +4703,7 @@
     SUBDIR += py-speaklater
     SUBDIR += py-spyder
     SUBDIR += py-sqlcc
+    SUBDIR += py-stackexchange
     SUBDIR += py-statgrab
     SUBDIR += py-statsd
     SUBDIR += py-stdnum

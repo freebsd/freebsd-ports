@@ -1,20 +1,21 @@
 # $FreeBSD$
 
-PORTNAME=	u-boot
-PORTVERSION=	2013.10
-PORTREVISION=	2
-CATEGORIES=	sysutils
-PKGNAMESUFFIX=	-wandboard
+MAINTAINER=	imp@FreeBSD.org
+MASTERDIR=	${.CURDIR}/../u-boot-master
 
-MAINTAINER=	ian@FreeBSD.org
-COMMENT=	Cross-build U-Boot loader for Wandboard (solo, dual, and quad)
+MODEL=		wandboard
+BOARD_CONFIG=	wandboard_defconfig
+FAMILY=		imx6
 
-LICENSE=	GPLv2
+IMXFILE=	u-boot.imx
+UBOOT_PLIST=	${IMXFILE}
 
-BUILD_DEPENDS=	${CROSS_GCC}:devel/arm-none-eabi-gcc492
+ALL_TARGET=	u-boot-with-spl.imx
 
-CROSS_GCC=	arm-none-eabi-gcc-4.9.2
+pre-install: .PHONY
+	@${CP} ${WRKSRC}/u-boot-with-spl.imx ${WRKSRC}/${IMXFILE}
 
+<<<<<<< HEAD
 USE_GITHUB=	yes
 GH_ACCOUNT=	TechNexion
 GH_PROJECT=	u-boot-edm
@@ -50,3 +51,6 @@ do-install:
 	${INSTALL_DATA} ${DESCR} ${STAGEDIR}/${PREFIX}/${U_BOOT_DIR}/README
 
 .include <bsd.port.mk>
+=======
+.include "${MASTERDIR}/Makefile"
+>>>>>>> upstream/master
