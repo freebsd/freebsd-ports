@@ -159,5 +159,8 @@ bin/azpainter
 %%DATADIR%%/tr/ru.mtr
 %%DATADIR%%/tr/uk.mtr
 share/applications/azpainter.desktop
+share/icons/hicolor/48x48/apps/application-x-azpainter-apd.png
 share/icons/hicolor/48x48/apps/azpainter.png
+share/icons/hicolor/scalable/apps/application-x-azpainter-apd.svg
 share/icons/hicolor/scalable/apps/azpainter.svg
+share/mime/packages/azpainter.xml
