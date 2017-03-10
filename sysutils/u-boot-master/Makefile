@@ -34,6 +34,8 @@ DESCR?=		${.CURDIR}/pkg-descr
 MAKE_ARGS+=	V=1 ARCH=${UBOOT_ARCH} CROSS_COMPILE=${UBOOT_ARCH}-none-eabi-
 
 NO_ARCH=	yes
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
 
 # Sanity checks
 .if !defined(MODEL)
