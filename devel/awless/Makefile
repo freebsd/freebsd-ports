@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awless
-PORTVERSION=	0.0.16
+PORTVERSION=	0.0.17
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
