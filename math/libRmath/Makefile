@@ -1,33 +1,33 @@
 # Created by: Eric van Gyzen <vangyzen@stat.duke.edu>
 # $FreeBSD$
 
-PORTNAME=		libRmath
-PORTVERSION=		3.3.2
-PORTREVISION=	1
-CATEGORIES=		math lang
-MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
-DISTNAME=		R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+PORTNAME=	libRmath
+PORTVERSION=	3.3.3
+PORTREVISION=	0
+CATEGORIES=	math lang
+MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
+DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=		jrm@FreeBSD.org
-COMMENT=		Standalone math library from R
+MAINTAINER=	jrm@FreeBSD.org
+COMMENT=	Standalone math library from R
 
-LICENSE=		GPLv2
+LICENSE=	GPLv2
 
-LIB_DEPENDS=		libcurl.so:ftp/curl \
-			libpcre.so:devel/pcre
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcre.so:devel/pcre
 
-BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
-CONFIGURE_ARGS=		--disable-nls --with-ICU=no --with-cairo=no \
-			--with-jpeglib=no --with-libpng=no --with-libtiff=no \
-			--with-readline=no --with-tcltk=no --with-x=no \
-			--without-libintl-prefix
-CONFIGURE_ENV+=		ac_cv_header_iconv_h=no r_cv_header_zlib_h=yes
-GNU_CONFIGURE=		yes
-RMATH_SOVERSION=	1
-USES=			fortran localbase
-USE_LDCONFIG=		yes
+BUILD_WRKSRC=	${WRKSRC}/src/nmath/standalone
+CONFIGURE_ARGS=	--disable-nls --with-ICU=no --with-cairo=no \
+		--with-jpeglib=no --with-libpng=no --with-libtiff=no \
+		--with-readline=no --with-tcltk=no --with-x=no \
+		--without-libintl-prefix
+CONFIGURE_ENV+=	ac_cv_header_iconv_h=no r_cv_header_zlib_h=yes
+GNU_CONFIGURE=	yes
+RMATH_SOVERSION=2
+USES=		fortran localbase
+USE_LDCONFIG=	yes
 
-PLIST_SUB=		RMATH_SOVERSION="${RMATH_SOVERSION}"
+PLIST_SUB=	RMATH_SOVERSION="${RMATH_SOVERSION}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g'\
