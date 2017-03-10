@@ -676,6 +676,7 @@ include/d/phobos2/std/zlib.d
 %%PORTDOCS%%%%DOCSDIR%%/changelog/2.072.2.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog/2.073.0.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog/2.073.1.html
+%%PORTDOCS%%%%DOCSDIR%%/changelog/2.073.2.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog/index.html
 %%PORTDOCS%%%%DOCSDIR%%/code_coverage.html
 %%PORTDOCS%%%%DOCSDIR%%/community.html
