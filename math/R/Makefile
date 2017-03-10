@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		R
-PORTVERSION=		3.3.2
-PORTREVISION=		7
+PORTVERSION=		3.3.3
+PORTREVISION=		0
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -14,6 +14,7 @@ LICENSE=		GPLv2
 
 LIB_DEPENDS=		libcurl.so:ftp/curl \
 			libpcre.so:devel/pcre
+BUILD_DEPENDS=		texi2any:print/texinfo
 
 CONFIGURE_ARGS=		--disable-java \
 			--with-readline \
@@ -71,7 +72,6 @@ GHOSTSCRIPT_IMPLIES=	X11
 GHOSTSCRIPT_USES=	ghostscript
 ICU_CONFIGURE_WITH=	ICU
 ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
-INFO_BUILD_DEPENDS=	texi2any:print/texinfo
 INFO_INSTALL_TARGET=	install-info
 INFO_INFO=		R-FAQ R-admin R-data R-exts R-ints R-intro R-lang
 JPEG_IMPLIES=		X11
@@ -108,7 +108,6 @@ RPROF_CONFIGURE_ENABLE=	R-profiling
 TCLTK_IMPLIES=		X11
 TCLTK_USES=		tcl tk:84+
 TCLTK_CONFIGURE_WITH=	tcltk
-TEXDOCS_BUILD_DEPENDS=	texi2any:print/texinfo
 .for i in KPSEWHICH MAKEINDEX PDFLATEX PDFTEX TEX TEXI2DVI
 TEXDOCS_CONFIGURE_ENV_OFF+=	ac_cv_path_${i}=""
 .endfor
