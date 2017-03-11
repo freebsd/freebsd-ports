@@ -222,7 +222,7 @@ _USE_FRAMEWORKS_TIER2=	auth completion crash doctools filemetadata5 \
 
 _USE_FRAMEWORKS_TIER3=	activities baloo5 bookmarks configwidgets \
 			designerplugin emoticons globalaccel guiaddons \
-			iconthemes init kcmutils kconfigwidgets kdeclarative \
+			iconthemes init kcmutils kdeclarative \
 			kded kdesu kdewebkit kio newstuff notifyconfig parts \
 			people plasma-framework runner service texteditor \
 			textwidgets wallet xmlgui xmlrpcclient
