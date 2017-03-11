@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
 		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.291
+
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 USES=		perl5 ssl
 USE_PERL5=	configure

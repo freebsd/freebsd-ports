@@ -13,10 +13,12 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test for Singleton classes
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-Class-Singleton>=0:devel/p5-Class-Singleton
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
