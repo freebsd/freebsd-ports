@@ -45,7 +45,8 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--disable-python \
 		--with-desktop-dir=${PREFIX}/share \
 		--docdir=${PREFIX}/share/doc/gimp \
-		--enable-default-binary
+		--enable-default-binary \ 
+		--without-gvfs
 CONFIGURE_ENV=	GIMP_THREAD_LIBS=-lpthread
 LIBS+=		-lexecinfo
 CPE_PRODUCT=	gimp
