@@ -1373,6 +1373,7 @@
     SUBDIR += py3-libxml2
     SUBDIR += py3-pager
     SUBDIR += py3-sphinx_rtd_theme
+    SUBDIR += py3-texttable
     SUBDIR += pychm
     SUBDIR += qprint
     SUBDIR += qrcodegen
