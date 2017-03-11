@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.bouncycastle.org/download/ \
 PKGNAMESUFFIX=	15
 DISTNAME=	crypto-${DVERSION}
 
-MAINTAINER=	ports@grosbein.net
+MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 
 LICENSE=	MIT
