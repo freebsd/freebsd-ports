@@ -24,7 +24,7 @@ CONFLICTS_INSTALL=	cyrus-imapd-2.* cyrus-imapd2*
 
 USE_RC_SUBR=	imapd
 
-USES=		cpe gmake libtool perl5 ssl
+USES=		cpe gmake libtool perl5 pkgconfig ssl
 GNU_CONFIGURE=	yes
 CYRUS_PREFIX=	${PREFIX}/cyrus
 CONFIGURE_ARGS=	--libexecdir=${CYRUS_PREFIX}/libexec \
@@ -69,7 +69,6 @@ HTTP_LIB_DEPENDS=	libical.so:devel/libical \
 # Need additional patch to opendkim
 #HTTP_LIB_DEPENDS+=	libopendkim.so:mail/opendkim
 #HTTP_CPPFLAGS+=	-I${LOCALBASE}/include/opendkim
-HTTP_USES=		pkgconfig
 HTTP_USE=		GNOME=libxml2
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
