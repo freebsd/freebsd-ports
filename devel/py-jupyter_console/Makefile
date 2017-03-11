@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	IPython-like terminal frontend for Jupyter kernels in any language
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING.md
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter_client>=0:devel/py-jupyter_client \
 		${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython \
 		${PYTHON_PKGNAMEPREFIX}ipykernel>=0:devel/py-ipykernel \
