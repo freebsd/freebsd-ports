@@ -303,7 +303,7 @@ MASTER_SITE_FRUGALWARE+= \
 
 .if !defined(IGNORE_MASTER_SITE_GCC)
 MASTER_SITE_GCC+= \
-	http://mirrors.kernel.org/sources.redhat.com/gcc/%SUBDIR%/ \
+	http://mirrors.kernel.org/sourceware/gcc/%SUBDIR%/ \
 	http://gcc.parentingamerica.com/%SUBDIR%/ \
 	http://gcc.skazkaforyou.com/%SUBDIR%/ \
 	http://gcc.cybermirror.org/%SUBDIR%/ \
@@ -1052,7 +1052,7 @@ MASTER_SITE_SOURCEFORGE_JP+= \
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEWARE)
 MASTER_SITE_SOURCEWARE+= \
-	http://mirrors.kernel.org/sources.redhat.com/%SUBDIR%/ \
+	http://mirrors.kernel.org/sourceware/%SUBDIR%/ \
 	http://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/sourceware.org/pub/%SUBDIR%/
 .endif
