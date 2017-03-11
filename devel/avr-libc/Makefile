@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
@@ -50,12 +49,6 @@ PLIST_DOC=	${PKGDIR}/pkg-plist.doc
 CONFIGURE_ARGS=	--build=`./config.guess` --host=avr --prefix=${PREFIX}
 PLIST_DOC=
 .endif
-# Work around the braind***ness introduced by <bsd.cpu.mk> in freebsd-5.
-# Sorry, the user is no longer be able to override the optimization and
-# debugging settings now.
-MAKE_ENV=	NO_CPU_CFLAGS=true
-CFLAGS+=	-O
-CXXFLAGS+=	-O
 
 post-patch:
 .if ! ${PORT_OPTIONS:MDOXYGEN}
