@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jupyter_core
-PORTVERSION=	4.2.1
+PORTVERSION=	4.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,10 +18,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}testpath>=0:devel/py-testpath
 
-USES=		python
-USE_PYTHON=	distutils autoplist
-USE_LOCALE=	en_US.UTF-8
 NO_ARCH=	yes
+USES=		python
+USE_LOCALE=	en_US.UTF-8
+USE_PYTHON=	autoplist distutils
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest-${PYTHON_VER})
