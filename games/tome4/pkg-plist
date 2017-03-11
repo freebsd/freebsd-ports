@@ -3,7 +3,7 @@ share/pixmaps/tome4.png
 %%DATADIR%%/bootstrap/boot.lua
 %%DATADIR%%/game/addons/tome-addon-dev.teaa
 %%DATADIR%%/game/addons/tome-items-vault.teaa
-%%DATADIR%%/game/addons/tome-stone-wardens.teaa
+%%DATADIR%%/game/addons/tome-possessors.teaa
 %%DATADIR%%/game/engines/te4-%%PORTVERSION%%.teae
 %%DATADIR%%/game/loader/init.lua
 %%DATADIR%%/game/loader/pre-init.lua

@@ -278,7 +278,7 @@
     SUBDIR += rox-wallpaper
     SUBDIR += roxbg
     SUBDIR += roxterm
-    SUBDIR += rsibreak-kde4
+    SUBDIR += rsibreak
     SUBDIR += rstart
     SUBDIR += rubygem-gnome2
     SUBDIR += rxvt
