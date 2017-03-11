@@ -392,6 +392,7 @@
     SUBDIR += py-spdx-lookup
     SUBDIR += py-tqdm
     SUBDIR += py-yolk
+    SUBDIR += py3-tqdm
     SUBDIR += pylize
     SUBDIR += qbrew
     SUBDIR += qlas
