@@ -63,7 +63,7 @@ BUILD_DEPENDS=	p5-JSON-XS>=2.29:converters/p5-JSON-XS \
 		p5-YAML-Tiny>=1.32:textproc/p5-YAML-Tiny \
 		p5-HTML-Parser>=3.58:www/p5-HTML-Parser \
 		p5-libwww>=5.815:www/p5-libwww \
-		p5-Wx>=0.97:x11-toolkits/p5-Wx \
+		p5-Wx>=0.9700:x11-toolkits/p5-Wx \
 		p5-Wx-Perl-ProcessStream>=0.25:x11-toolkits/p5-Wx-Perl-ProcessStream
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	p5-Module-Build>=0.36:devel/p5-Module-Build
