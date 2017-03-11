@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	notebook
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,8 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}tornado>=4:www/py-tornado \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2.1:devel/py-traitlets
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
