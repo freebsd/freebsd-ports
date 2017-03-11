@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-video-openchrome
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -18,6 +17,8 @@ USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	x11 xext xv
 
+# Override pkg-config to prevent linking against libudev
+CONFIGURE_ENV+=	LIBUDEV_LIBS="-L${LOCALBASE}"
 MAKE_ARGS+=	drivermandir=${LOCALBASE}/man/man4
 
 .include <bsd.port.options.mk>
