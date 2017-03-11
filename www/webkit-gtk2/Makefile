@@ -3,7 +3,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	2.4.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk2
@@ -20,21 +20,26 @@ LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libsecret-1.so:security/libsecret \
 		libicutu.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz \
+		libpng16.so:graphics/png \
 		libwebp.so:graphics/webp \
 		libcurl.so:ftp/curl \
-		libsoup-2.4.so:devel/libsoup
+		libsoup-2.4.so:devel/libsoup \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgstbase-1.0.so:multimedia/gstreamer1 \
+		libgstreamer-1.0.so:multimedia/gstreamer1
 RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limit:^2\.4\.
 
 USE_GSTREAMER1=	yes
-USE_XORG=	xt xdamage xcomposite
-USES=		bison compiler:c++11-lib gettext gmake gperf libtool localbase \
-		pathfix perl5 pkgconfig shebangfix sqlite tar:xz
+USE_XORG=	x11 xcomposite xdamage xfixes xrender xt
+USES=		bison compiler:c++11-lib gettext gmake gperf jpeg libtool \
+		localbase pathfix perl5 pkgconfig shebangfix sqlite tar:xz
 PATHFIX_MAKEFILEIN=	GNUmakefile.in
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
-USE_GNOME=	cairo gtk20 introspection:build libxslt
+USE_GNOME=	cairo gdkpixbuf2 gtk20 introspection:build libxslt
 USE_GL=		gl
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -50,8 +55,6 @@ CONFIGURE_ARGS=	--with-gtk=2.0 \
 		--with-html-dir=${PREFIX}/share/gtk-doc/html/webkit1
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
-
-BROKEN_sparc64=	attempts to use x86 assembler
 
 CONFIGURE_ARGS+=--disable-egl \
 		--disable-gles2
@@ -79,6 +82,11 @@ DEBUG_CONFIGURE_ON=	--enable-debug-symbols=yes
 DEBUG_CONFIGURE_OFF=	--disable-debug-symbols
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64 || ${ARCH} == powerpc || ${ARCH} == sparc64
+CONFIGURE_ARGS+=	--disable-jit
+CFLAGS+=		-DENABLE_YARR_JIT=0
+.endif
 
 .if ${ARCH} == powerpc64
 CFLAGS+=	-mminimal-toc
