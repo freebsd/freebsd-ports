@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-input-wacom
-PORTVERSION=	0.34.0
+PORTVERSION=	0.34.2
 CATEGORIES=	x11-drivers
 MASTER_SITES=	SF/linuxwacom/${PORTNAME}
 
