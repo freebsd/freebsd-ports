@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openocd
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -19,7 +18,7 @@ CONFIGURE_ENV=	MAKEINFO=${LOCALBASE}/bin/makeinfo
 OPTIONS_DEFINE=	DOXYGEN JIMTCL VERBOSE JTAG_IO USB_IO PARPORT DUMMY FT2232 FTDI \
 	USBBLASTER EP93XX AT91RM9200 PRESTO USBPROG JLINK VSLLINK RLINK ULINK \
 	ARMJTAGEW BUSPIRATE TIICDI STLINK OSBDM OPENDOUS SYSFSGPIO RMTBITBANG \
-	MINIDRIVER CMSISDAP
+	MINIDRIVER CMSISDAP USB_COMMS
 OPTIONS_DEFAULT=JIMTCL PARPORT DUMMY FT2232 FTDI USBBLASTER EP93XX \
 	AT91RM9200 PRESTO USBPROG JLINK VSLLINK RLINK ULINK ARMJTAGEW \
 	BUSPIRATE STLINK OSBDM OPENDOUS RMTBITBANG
@@ -43,18 +42,20 @@ VSLLINK_DESC=	Support Versaloon-Link JTAG Programmer
 RLINK_DESC=	Support Raisonance RLink JTAG Programmer
 ULINK_DESC=	Support Keil ULINK-JTAG Programmer
 ARMJTAGEW_DESC=	Support Olimex ARM-JTAG-EW Programmer
-BUSPIRATE=	Support BusPirate Programmer
+BUSPIRATE_DESC=	Support BusPirate Programmer
 STLINK_DESC=	Support STLink Programmer
 TI_ICDI_DESC=	Support TI ICDI JTAG Programmer
 OSBDM_DESC=	Support OSBDM Programmer (JTAG only)
-OPENDOUS=	Support EStick/OpenDous Programmer
-SYSFSGPIO=	Support Programming via sysfs GPIOs
-RMTBITBANG_DESC=Support Remote-Bitbang Driver
-MINIDRIVER_DESC=Dummy minidriver only (will exclude others!)
-CMSISDAP_DESC=Support for CMSIS-DAP Compliant Debugger
+OPENDOUS_DESC=	Support EStick/OpenDous Programmer
+SYSFSGPIO_DESC=	Support Programming via sysfs GPIOs
+RMTBITBANG_DESC=	Support Remote-Bitbang Driver
+MINIDRIVER_DESC=	Dummy minidriver only (will exclude others!)
+CMSISDAP_DESC=	Support for CMSIS-DAP Compliant Debugger
+TIICDI_DESC=	Support for the TI ICDI JTAG Programmer
+USB_COMMS_DESC=	Enable verbose USB communication messages
 
 USES=		gmake libtool pkgconfig tar:bzip2
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -Wno-error=unused-command-line-argument
 INFO=		openocd
 
 post-patch:
