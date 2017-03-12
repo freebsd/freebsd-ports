@@ -6817,9 +6817,6 @@ security/pam_bsdbioapi||2014-09-01|Not staged
 security/php-Auth_OpenID2||2014-09-01|Not staged
 security/php-Auth_OpenID||2014-09-01|Not staged
 security/php-openid-ldap||2014-09-01|Not staged
-security/samhain-client||2014-09-01|Not staged
-security/samhain-server||2014-09-01|Not staged
-security/samhain||2014-09-01|Not staged
 security/scannedonly||2014-09-01|Not staged
 security/tinysu||2014-09-01|Not staged
 sysutils/asapm||2014-09-01|Not staged
