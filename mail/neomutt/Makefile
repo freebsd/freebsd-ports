@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	neomutt
-PORTVERSION=	20170225
+PORTVERSION=	20170306
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	mail
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
 
 USE_GITHUB=	yes
 
-USES=		autoreconf localbase ncurses shebangfix ssl
+USES=		autoreconf localbase shebangfix ssl
 GNU_CONFIGURE=	yes
 
 EXPLICIT_SAFESTACK=	yes
@@ -25,9 +25,11 @@ OPTIONS_SUB=	yes
 SHEBANG_FILES=	smime_keys.pl
 
 OPTIONS_DEFINE=	NLS DOCS SASL ICONV IDN FLOCK GPGME NOTMUCH
-OPTIONS_DEFAULT=SASL TOKYOCABINET NOTMUCH GPGME LMDB
+OPTIONS_DEFAULT=SASL TOKYOCABINET NOTMUCH GPGME LMDB NCURSES
 OPTIONS_MULTI=	HCACHE
 OPTIONS_MULTI_HCACHE=	BDB GDBM KYOTOCABINET LMDB QDBM TOKYOCABINET
+OPTIONS_SINGLE=	SCREEN
+OPTIONS_SINGLE_SCREEN=	NCURSES SLANG
 
 FLOCK_DESC=	Use flock() to lock files
 GPGME_DESC=	Use gpgme to handle pgp
@@ -37,6 +39,9 @@ KYOTOCABINET_DESC=	Kyoto Cabinet support
 LMDB_DESC=		Lightning Memory-Mapped Database support
 QDBM_DESC=		Quick DataBase Manager support
 TOKYOCABINET_DESC=	Tokyo Cabinet support
+SCREEN_DESC=	Screen options
+NCURSES_DESC=	Ncurses support
+SLANG_DESC=	SLANG support
 
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-docdir="${DOCSDIR}" \
@@ -87,6 +92,12 @@ GPGME_CONFIGURE_ENABLE=	gpgme
 
 NOTMUCH_LIB_DEPENDS=	libnotmuch.so:mail/notmuch
 NOTMUCH_CONFIGURE_ENABLE=	notmuch
+
+SLANG_CONFIGURE_ON=	--with-slang=${LOCALBASE}
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
+SLANG_VARS=	PKGMESSAGE=${FILESDIR}/pkg-message.slang
+
+NCURSES_USES=	ncurses
 
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
