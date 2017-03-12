@@ -1,9 +1,9 @@
 # Created by: Anton Shterenlikht
 # $FreeBSD$
 
-PORTNAME=	OpenCoarrays
+PORTNAME=	opencoarrays
 PORTVERSION=	1.8.4
-CATEGORIES=	lang
+CATEGORIES=	lang parallel
 
 MAINTAINER=	mexas@bris.ac.uk
 COMMENT=	Transport layer for coarray Fortran compilers
