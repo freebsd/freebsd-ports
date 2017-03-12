@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ack
-PORTVERSION=	2.14
-PORTREVISION=	1
+PORTVERSION=	2.16
 CATEGORIES=	textproc sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PETDANCE
@@ -23,6 +22,7 @@ CONFLICTS_INSTALL=	ja-ack-[0-9]*
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+NO_ARCH=	yes
 USES=		cpe perl5
 USE_PERL5=	configure
 CPE_VENDOR=	beyondgrep
