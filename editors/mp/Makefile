@@ -12,6 +12,8 @@ COMMENT=	Programming text editor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	fails to compile: error: conflicting types for __wcwidth
+
 USES=		iconv ncurses
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config.sh
@@ -34,8 +36,6 @@ PCRE_CONFIGURE_WITH=	pcre
 QT4_USE=		qt4=corelib,gui,moc_build
 QT4_CONFIGURE_ENV=	CPP="${CXX}" CCLINK="${CXX}"
 QT4_CONFIGURE_WITH=	qt4
-
-BROKEN_aarch64=		Fails to compile: error: conflicting types for __wcwidth
 
 .include <bsd.port.options.mk>
 
@@ -87,26 +87,28 @@ post-patch:
 .endfor
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} mp-5 ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/mpsl && ${INSTALL_PROGRAM} mpsl ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} mp-5.1 ${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/mp-5 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mpsl/mpsl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mp-5.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} mp_*.mpsl ${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/mp_*.mpsl ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lang
-	(cd ${WRKSRC}/lang && ${INSTALL_DATA} *.mpsl ${STAGEDIR}${DATADIR}/lang)
+	${INSTALL_DATA} ${WRKSRC}/lang/*.mpsl ${STAGEDIR}${DATADIR}/lang
 .if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MQT4}
-	(cd ${WRKSRC} && ${INSTALL_DATA} mp.png ${STAGEDIR}${PREFIX}/share/pixmaps)
+	${INSTALL_DATA} ${WRKSRC}/mp.png ${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
-.if ${PORT_OPTIONS:MNLS}
+
+do-install-NLS-on:
 .for lang in de es it nl ru sv
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
-	(cd ${WRKSRC}/po && ${INSTALL_DATA} ${lang}.mo \
-		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/minimum-profit.mo)
+	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
+		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/minimum-profit.mo
 .endfor
-.endif
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS README RELEASE_NOTES mp_templates.sample doc/*.*
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

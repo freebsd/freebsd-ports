@@ -7,12 +7,12 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.dabeaz.com/ply/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Python Lex-Yacc
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
