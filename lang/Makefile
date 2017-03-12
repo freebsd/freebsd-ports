@@ -4,7 +4,6 @@
     COMMENT = Programming languages
 
     SUBDIR += Gofer
-    SUBDIR += OpenCoarrays
     SUBDIR += abcl
     SUBDIR += adacontrol
     SUBDIR += afnix
@@ -206,6 +205,7 @@
     SUBDIR += ohugs
     SUBDIR += onyx
     SUBDIR += oo2c
+    SUBDIR += opencoarrays
     SUBDIR += opendylan
     SUBDIR += p2c
     SUBDIR += p5-Data-JavaScript
