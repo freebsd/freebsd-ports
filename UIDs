@@ -112,7 +112,7 @@ octoprint:*:162:162::0:0:OctoPrint Daemon:/usr/local/octoprint:/usr/sbin/nologin
 _iked:*:163:163::0:0:IKEv2 Daemon:/var/empty:/usr/sbin/nologin
 lightdm:*:164:164::0:0:Light Display Manager:/var/lib/lightdm-data:/usr/sbin/nologin
 uwsgi:*:165:165::0:0:uwsgi Daemon:/nonexistent:/usr/sbin/nologin
-# free: 166
+yule:*:166:166::0:0:Samhain Daemon:/nonexistent:/usr/sbin/nologin
 # free: 167
 # free: 168
 # free: 169

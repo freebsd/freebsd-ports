@@ -19,7 +19,6 @@
     SUBDIR += R-cran-xtable
     SUBDIR += R-cran-yaml
     SUBDIR += UCD
-    SUBDIR += ack
     SUBDIR += adabrowse
     SUBDIR += add-css-links
     SUBDIR += af-aspell
@@ -1133,6 +1132,7 @@
     SUBDIR += p5-YAPE-HTML
     SUBDIR += p5-YAPE-Regex
     SUBDIR += p5-YAPE-Regex-Explain
+    SUBDIR += p5-ack
     SUBDIR += p5-dTemplate
     SUBDIR += p5-libsoldout
     SUBDIR += p5-libxml

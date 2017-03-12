@@ -4,6 +4,7 @@
     COMMENT = Programming languages
 
     SUBDIR += Gofer
+    SUBDIR += OpenCoarrays
     SUBDIR += abcl
     SUBDIR += adacontrol
     SUBDIR += afnix

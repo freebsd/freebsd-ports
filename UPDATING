@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170312:
+  AFFECTS: users of textproc/ack
+  AUTHOR: sunpoet@FreeBSD.org
+
+  ack has been renamed back to p5-ack to match our perl naming. You could
+  run the following to update pkg database:
+
+    # pkg set -n ack:p5-ack
+    # pkg set -o textproc/ack:textproc/p5-ack
+
 20170311:
   AFFECTS: users of games/tome4 with paid DLCs
   AUTHOR: lifanov@FreeBSD.org

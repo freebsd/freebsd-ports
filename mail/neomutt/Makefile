@@ -40,8 +40,6 @@ LMDB_DESC=		Lightning Memory-Mapped Database support
 QDBM_DESC=		Quick DataBase Manager support
 TOKYOCABINET_DESC=	Tokyo Cabinet support
 SCREEN_DESC=	Screen options
-NCURSES_DESC=	Ncurses support
-SLANG_DESC=	SLANG support
 
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-docdir="${DOCSDIR}" \

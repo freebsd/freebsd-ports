@@ -12,7 +12,10 @@ bin/ack
 %%SITE_PERL%%/App/Ack/Filter/Inverse.pm
 %%SITE_PERL%%/App/Ack/Filter/Is.pm
 %%SITE_PERL%%/App/Ack/Filter/IsGroup.pm
+%%SITE_PERL%%/App/Ack/Filter/IsPath.pm
+%%SITE_PERL%%/App/Ack/Filter/IsPathGroup.pm
 %%SITE_PERL%%/App/Ack/Filter/Match.pm
+%%SITE_PERL%%/App/Ack/Filter/MatchGroup.pm
 %%SITE_PERL%%/App/Ack/Resource.pm
 %%SITE_PERL%%/App/Ack/Resource/Basic.pm
 %%SITE_PERL%%/App/Ack/Resources.pm
