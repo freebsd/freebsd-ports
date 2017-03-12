@@ -4366,6 +4366,7 @@
     SUBDIR += py-jsonlib2
     SUBDIR += py-jsonpatch
     SUBDIR += py-jsonpointer
+    SUBDIR += py-jsonref
     SUBDIR += py-jsonrpclib
     SUBDIR += py-jsonschema
     SUBDIR += py-jupyter_client
