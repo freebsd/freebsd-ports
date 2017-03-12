@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	6.2.20161216
+PORTVERSION=	6.3.20170223
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2016q4/
+MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/6_1-2017q1/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -47,8 +47,8 @@ GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
-GCC_VERSION=		6.2.1
-FULL_VERSION=		6_2-2016q4-20161216
+GCC_VERSION=		6.3.1
+FULL_VERSION=		6-2017-q1-update
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
