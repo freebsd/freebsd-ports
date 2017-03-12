@@ -764,6 +764,7 @@
     SUBDIR += parafly
     SUBDIR += parallel
     SUBDIR += password-store
+    SUBDIR += passwordsafe
     SUBDIR += patchelf
     SUBDIR += pax-utils
     SUBDIR += pbi-manager
