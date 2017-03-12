@@ -4628,6 +4628,7 @@
     SUBDIR += py-qt5-qscintilla2
     SUBDIR += py-qt5-test
     SUBDIR += py-qtconsole
+    SUBDIR += py-ramlfications
     SUBDIR += py-rauth
     SUBDIR += py-raven
     SUBDIR += py-rcsparse
