@@ -3953,7 +3953,6 @@ x11-themes/kde-icons-krystaline||2013-01-06|Has expired: Broken for more than 6 
 x11-themes/kde-icons-amaranth||2013-01-06|Has expired: Broken for more than 6 months
 x11-themes/kde-icons-realistic||2013-01-06|Has expired: Broken for more than 6 months
 x11/Terminal|x11/xfce4-terminal|2013-01-06|Project was renamed
-textproc/p5-ack|textproc/ack|2013-01-06|Not just a perl module
 sysutils/syslog-ng-rc|sysutils/syslog-ng-devel|2013-01-08|No longer used by our upline, use syslog-ng-devel instead
 www/openbravoerp||2013-01-12|Has expired: incompatible with ant for building
 devel/lbpp||2013-01-13|Has expired: Dead upstream since 2001
@@ -9131,3 +9130,4 @@ databases/p5-DBD-Oracle||2017-03-07|Has expired: Depends on deprecated Oracle 7 
 databases/jdbc-oracle8i||2017-03-07|Has expired: Oracle8i unsupported and unavailable; fetch site redirects
 databases/jdbc-oracle9i||2017-03-07|Has expired: Oracle 9i is no more supported
 x11/rsibreak-kde4|x11/rsibreak|2017-03-11|Renamed to drop the -kde4 suffix
+textproc/ack|textproc/p5-ack|2017-03-12|Rename to match our perl naming
