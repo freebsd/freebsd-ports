@@ -19,7 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		nosetests-${PYTHON_VER}:devel/py-nose \
 		cython:lang/cython \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy09>0:databases/py-sqlalchemy09 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}tables>=3.0.0:devel/py-tables \
@@ -44,7 +44,7 @@ OPTIONS_GROUP_ACCEL=	BTLNCK NUMEXPR
 OPTIONS_GROUP_STORAGE=	BOTO TABLES
 OPTIONS_GROUP_HTML=	LXML HTML5LIB JINJA2
 OPTIONS_GROUP_EXCEL=	XLRD XLWT OPENPYXL XLSX
-OPTIONS_RADIO_SQL=	ALCHEMY08 ALCHEMY09 ALCHEMY10 ALCHEMY11
+OPTIONS_RADIO_SQL=	ALCHEMY10 ALCHEMY11
 OPTIONS_DEFAULT=	BTLNCK NUMEXPR
 
 MPL_DESC=	Support graphical plotting output via math/py-matplotlib
@@ -60,8 +60,6 @@ OPENPYXL_DESC=	Read/write MS Excel 2007+ with textproc/py-openpyxl
 XLRD_DESC=	Read MS Excel with textproc/py-xlrd
 XLWT_DESC=	Write MS Excel with textproc/py-xlwt
 XLSX_DESC=	Write MS Excel with textproc/py-xlsxwriter
-ALCHEMY08_DESC=	Support SQL databases via databases/py-sqlalchemy08
-ALCHEMY09_DESC=	Support SQL databases via databases/py-sqlalchemy09
 ALCHEMY10_DESC=	Support SQL databases via databases/py-sqlalchemy10
 ALCHEMY11_DESC=	Support SQL databases via databases/py-sqlalchemy11
 ACCEL_DESC=	Computation Acceleration Add-ons
@@ -85,8 +83,6 @@ XLRD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlrd>0:textproc/py-xlrd
 XLWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlwt>0:textproc/py-xlwt
 XLSX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XlsxWriter>0:textproc/py-xlsxwriter
 
-ALCHEMY08_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:databases/py-sqlalchemy08
-ALCHEMY09_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy09>0:databases/py-sqlalchemy09
 ALCHEMY10_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10
 ALCHEMY11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>0:databases/py-sqlalchemy11
 
