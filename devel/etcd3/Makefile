@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	etcd
-PORTVERSION=	3.0.17
+PORTVERSION=	3.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
@@ -34,6 +34,9 @@ post-extract:
 	@${RM} ${GO_WRKDIR_SRC}/github.com/${GH_ACCOUNT}/${PORTNAME}
 	@${LN} -s ${WRKSRC} ${GO_WRKDIR_SRC}/github.com/${GH_ACCOUNT}/etcd
 	@${LN} -s ${WRKSRC}/etcdctl ${GO_WRKDIR_SRC}/github.com/${GH_ACCOUNT}/etcdctl
+
+post-patch:
+	${REINPLACE_CMD} -i '' "s@#cgo LDFLAGS: -ldl@@g;" ${GO_WRKDIR_SRC}/github.com/coreos/pkg/dlopen/dlopen.go
 
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/etcd ${STAGEDIR}${PREFIX}/bin/
