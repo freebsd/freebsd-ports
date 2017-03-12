@@ -9129,3 +9129,4 @@ databases/jdbc-oracle9i||2017-03-07|Has expired: Oracle 9i is no more supported
 x11/rsibreak-kde4|x11/rsibreak|2017-03-11|Renamed to drop the -kde4 suffix
 textproc/ack|textproc/p5-ack|2017-03-12|Rename to match our perl naming
 misc/p5-Geo-Coder-Geocoder-US||2017-03-12|Has expired: http://geocoder.us/ disappeared in late 2015
+databases/py-sqlalchemy09|databases/py-sqlalchemy10|2017-03-12|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
