@@ -2,13 +2,15 @@
 
 PORTNAME=	zoneminder-h264
 PORTVERSION=	1.30.20161104
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
 COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
+
+CONFLICTS_INSTALL=	zoneminder
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
@@ -32,6 +34,7 @@ LIB_DEPENDS=	libx264.so:multimedia/libx264 \
 RUN_DEPENDS=	${ZM_DEPENDS} \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
 		sudo:security/sudo \
+		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
 		zip:archivers/zip
 
 USE_GITHUB=	yes
@@ -40,7 +43,7 @@ GH_TUPLE=	zoneminder:ZoneMinder:a2f782d \
 
 USES=		cmake jpeg mysql perl5 php shebangfix ssl
 USE_RC_SUBR=	zoneminder
-USE_PHP=	json pdo_mysql session gd sockets
+USE_PHP=	json pdo_mysql session gd sockets ctype
 
 ONLY_FOR_ARCHS=	amd64 i386
 
