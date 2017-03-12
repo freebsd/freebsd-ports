@@ -1064,6 +1064,9 @@
     SUBDIR += s2n
     SUBDIR += safesh
     SUBDIR += samba-virusfilter
+    SUBDIR += samhain
+    SUBDIR += samhain-client
+    SUBDIR += samhain-server
     SUBDIR += sancp
     SUBDIR += sasp
     SUBDIR += scamp

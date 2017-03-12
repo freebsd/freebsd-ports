@@ -1,0 +1,15 @@
+--- config.h.in.orig	2016-11-16 12:14:22 UTC
++++ config.h.in
+@@ -349,7 +349,11 @@
+ #undef HAVE_UINT64_T
+ 
+ /* Define if you have utmpx.h.                */
+-#undef HAVE_UTMPX_H
++#define HAVE_UTMPX_H
++
++#define UTMPX_FILE "/var/log/utx.active"
++
++#define WTMPX_FILE "/var/log/utx.log"
+ 
+ /* Define if your struct utmpx has ut_xtime.  */
+ #undef HAVE_UTXTIME
