@@ -4,7 +4,7 @@ bin/poudriere
 %%ETCDIR%%/hooks/pkgbuild.sh.sample
 @sample etc/poudriered.conf.sample
 etc/rc.d/poudriered
-libexec/poudriere/clock_monotonic
+libexec/poudriere/clock
 libexec/poudriere/cpdup
 libexec/poudriere/dirempty
 libexec/poudriere/dirwatch
@@ -12,8 +12,10 @@ libexec/poudriere/jexecd
 libexec/poudriere/locked_mkdir
 libexec/poudriere/nc
 libexec/poudriere/poudriered
+libexec/poudriere/ptsort
 libexec/poudriere/rename
 libexec/poudriere/rexec
+%%RM%%libexec/poudriere/rm
 libexec/poudriere/sh
 libexec/poudriere/timeout
 libexec/poudriere/timestamp
