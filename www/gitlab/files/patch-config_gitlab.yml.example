@@ -1,15 +1,15 @@
---- config/gitlab.yml.example.orig	2017-01-21 16:35:45 UTC
+--- config/gitlab.yml.example.orig	2017-02-14 21:48:43 UTC
 +++ config/gitlab.yml.example
-@@ -434,7 +434,7 @@ production: &base
-     # Paths where repositories can be stored. Give the canonicalized absolute pathname.
-     # NOTE: REPOS PATHS MUST NOT CONTAIN ANY SYMLINK!!!
+@@ -438,7 +438,7 @@ production: &base
+     # gitlab-shell invokes Dir.pwd inside the repository path and that results
+     # real path not the symlink.
      storages: # You must have at least a `default` storage path.
 -      default: /home/git/repositories/
 +      default: /usr/home/git/repositories/
  
    ## Backup settings
    backup:
-@@ -459,12 +459,12 @@ production: &base
+@@ -463,12 +463,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -25,7 +25,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -477,7 +477,7 @@ production: &base
+@@ -481,7 +481,7 @@ production: &base
    # CAUTION!
    # Use the default values unless you really know what you are doing
    git:
