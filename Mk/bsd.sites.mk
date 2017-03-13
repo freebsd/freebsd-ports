@@ -1044,10 +1044,9 @@ MASTER_SITE_SOURCEFORGE+= ${p}://${m}.dl.sourceforge.net/project/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_JP)
-.for p in https http
-.for m in jaist
-MASTER_SITE_SOURCEFORGE_JP+= ${p}://${m}.dl.sourceforge.jp/%SUBDIR%/
-.endfor
+.for mirror in iij jaist keihanna osdn
+MASTER_SITE_SOURCEFORGE_JP+= \
+	http://${mirror}.dl.sourceforge.jp/%SUBDIR%/
 .endfor
 .endif
 
