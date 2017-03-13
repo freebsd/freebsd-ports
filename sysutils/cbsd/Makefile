@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	11.0.9
+PORTVERSION=	11.0.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -11,12 +11,12 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	rsync:net/rsync \
 		sudo:security/sudo \
-		sqlite3:databases/sqlite3
+		sqlite3:databases/sqlite3 \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 LIB_DEPENDS=	libssh2.so:security/libssh2 \
 		libsqlite3.so:databases/sqlite3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	olevole
 
 USES=	libedit
 USE_RC_SUBR=	cbsdd cbsdrsyncd
