@@ -74,6 +74,7 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/html/jail.html
 %%DATADIR%%/html/robots.txt
 %%DATADIR%%/image.sh
+%%DATADIR%%/include/cache.sh
 %%DATADIR%%/include/colors.pre.sh
 %%DATADIR%%/include/colors.sh
 %%DATADIR%%/include/common.sh.dragonfly
