@@ -8,7 +8,7 @@ MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION} \
 		LOCAL/dinoex/:man
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
