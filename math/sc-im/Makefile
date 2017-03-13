@@ -10,16 +10,13 @@ COMMENT=	Ncurses spreadsheet program for terminal
 
 LICENSE=	BSD4CLAUSE
 
-USES=		gmake localbase
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	andmarti1424
-
-USE_GNOME=	libxml2
 LIB_DEPENDS=	libxlsreader.so:math/libxls \
 		libzip.so:archivers/libzip
 
-BROKEN_aarch64=	fails to compile: conflicting types for __wcwidth
+USES=		gmake localbase
+USE_GITHUB=	yes
+GH_ACCOUNT=	andmarti1424
+USE_GNOME=	libxml2
 
 WRKSRC_SUBDIR=	src
 CFLAGS+=	-I${LOCALBASE}/include/libxml2
