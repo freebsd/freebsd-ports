@@ -3,7 +3,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.16.10.8128
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -54,7 +54,7 @@ SHEBANG_FILES=	mibs/process.pl \
 	scripts/rrdtoolx.py \
 	poller-wrapper.py
 
-USE_PHP=	ctype filter gd iconv json mcrypt mysql mysqli openssl posix session snmp tokenizer xml zlib
+USE_PHP=	ctype filter gd iconv json mcrypt mysqli openssl posix session snmp tokenizer xml zlib
 IGNORE_WITH_PHP=	71
 
 NO_BUILD=	yes

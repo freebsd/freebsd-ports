@@ -3,6 +3,7 @@
 PORTNAME=	mbedtls
 PORTVERSION=	2.4.2
 DISTVERSIONSUFFIX=	-apache
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://tls.mbed.org/download/
 
