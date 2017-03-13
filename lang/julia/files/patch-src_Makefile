@@ -1,4 +1,4 @@
---- src/Makefile.orig	2016-09-20 02:54:21 UTC
+--- src/Makefile.orig	2017-03-06 03:32:23 UTC
 +++ src/Makefile
 @@ -9,7 +9,7 @@ override CFLAGS += $(JCFLAGS)
  ifeq ($(LLVM_VER),3.3)
@@ -17,7 +17,7 @@
  	-I$(JULIAHOME)/deps/valgrind
  ifneq ($(USEMSVC), 1)
  FLAGS += -Wall -Wno-strict-aliasing -fno-omit-frame-pointer -fvisibility=hidden -fno-common \
-@@ -75,7 +76,7 @@ else
+@@ -76,7 +77,7 @@ else
  ifeq ($(OS),WINNT)
  LLVMLINK += $(shell $(LLVM_CONFIG_HOST) --ldflags) -lLLVM-$(LLVM_VER_SHORT)
  else
