@@ -21,6 +21,7 @@ GH_ACCOUNT=	freebsd
 GH_TAGNAME=	3.0-2045-gc6b1c034
 #DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 
+BROKEN=	plist broken
 GNU_CONFIGURE=	yes
 ETCDIR=		${PREFIX}/etc/poudriere.d
 
