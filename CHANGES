@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20170313:
+AUTHOR: tijl@FreeBSD.org
+
+  HTTPS certificates are now verified when "make makesum" fetches distfiles.
+  If this fails make sure you have a CA certificate bundle installed such as
+  security/ca_root_nss.  If it still fails and there are other HTTPS sites
+  with a valid certificate consider removing the site from MASTER_SITES.
+  If the site cannot be removed you can disable certificate verification by
+  adding the following line to the port Makefile:
+
+  FETCH_ENV=	SSL_NO_VERIFY_PEER=1 SSL_NO_VERIFY_HOSTNAME=1
+
 20170218:
 AUTHOR: kde@FreeBSD.org
 
