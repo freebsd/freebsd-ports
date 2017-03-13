@@ -1031,22 +1031,23 @@ MASTER_SITE_SAVANNAH+= \
 	ftp://gnu.mirrors.pair.com/savannah/%SUBDIR%/
 .endif
 
-# List:		http://sourceforge.net/apps/trac/sourceforge/wiki/Mirrors
-# Updated:	2013-03-25
+# List:		https://sourceforge.net/p/forge/documentation/Mirrors/
+# Updated:	2017-03-13
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-MASTER_SITE_SOURCEFORGE+= http://downloads.sourceforge.net/project/%SUBDIR%/
-.for mirror in heanet iweb freefr jaist master \
-	nchc ncu internode waix superb-dca3 ufpr tenet \
-	netcologne ignum kent
-MASTER_SITE_SOURCEFORGE+= \
-	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
+.for p in https http
+MASTER_SITE_SOURCEFORGE+= ${p}://downloads.sourceforge.net/project/%SUBDIR%/
+.for m in cytranet dronedata excellmedia freefr jaist kent liquidtelecom nchc \
+	netassist netcologne netix superb-dca2 superb-sea2 tenet ufpr vorboss
+MASTER_SITE_SOURCEFORGE+= ${p}://${m}.dl.sourceforge.net/project/%SUBDIR%/
+.endfor
 .endfor
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_JP)
-.for mirror in iij jaist keihanna osdn
-MASTER_SITE_SOURCEFORGE_JP+= \
-	http://${mirror}.dl.sourceforge.jp/%SUBDIR%/
+.for p in https http
+.for m in jaist
+MASTER_SITE_SOURCEFORGE_JP+= ${p}://${m}.dl.sourceforge.jp/%SUBDIR%/
+.endfor
 .endfor
 .endif
 
