@@ -35,17 +35,16 @@ CONFIGURE_ARGS+=\
 		--disable-udev \
 		--disable-goa \
 		--disable-libmtp \
-		--disable-gtk
+		--disable-gtk \
+		--disable-hal
 
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.system.gvfs.enums.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	AVAHI SAMBA GPHOTO2 CDDA HAL FUSE AFC GOOGLE
-OPTIONS_DEFAULT=AVAHI SAMBA GPHOTO2 CDDA HAL FUSE GOOGLE
-CDDA_DESC=	CDDA (enables HAL)
-GPHOTO2_DESC=	Gphoto 2 camera support (enables HAL) for PTP support
+OPTIONS_DEFINE=	AVAHI SAMBA FUSE AFC GOOGLE
+OPTIONS_DEFAULT=AVAHI SAMBA FUSE GOOGLE
 SAMBA_DESC=	Samba support
 AFC_DESC=	Apple device support
 GOOGLE_DESC=	Google backend
@@ -55,12 +54,6 @@ FUSE_CONFIGURE_ENABLE=	fuse
 
 SAMBA_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
 SAMBA_CONFIGURE_ENABLE=	samba
-
-CDDA_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
-CDDA_CONFIGURE_ENABLE=	cdda
-
-GPHOTO2_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
-GPHOTO2_CONFIGURE_ENABLE=	gphoto2
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
@@ -81,15 +74,6 @@ GLIB_SCHEMAS+=	org.gnome.system.smb.gschema.xml
 
 .if ${PORT_OPTIONS:MAVAHI}
 GLIB_SCHEMAS+=	org.gnome.system.dns_sd.gschema.xml
-.endif
-
-.if ${PORT_OPTIONS:MHAL} || ${PORT_OPTIONS:MGPHOTO2} || ${PORT_OPTIONS:MCDDA}
-LIB_DEPENDS+=	libhal.so:sysutils/hal
-RUN_DEPENDS+=	gnome-mount:sysutils/gnome-mount
-PLIST_SUB+=	HAL=""
-.else
-CONFIGURE_ARGS+=--disable-hal
-PLIST_SUB+=	HAL="@comment "
 .endif
 
 post-install:
