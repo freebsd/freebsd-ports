@@ -7,8 +7,11 @@ PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Simple image viewer
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
