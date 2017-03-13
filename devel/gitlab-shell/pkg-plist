@@ -70,6 +70,8 @@
 %%DATADIR%%/spec/names_helper_spec.rb
 %%DATADIR%%/spec/spec_helper.rb
 %%DATADIR%%/spec/support/gl_id_test_hook
+%%DATADIR%%/spec/support/hook_fail
+%%DATADIR%%/spec/support/hook_ok
 %%DATADIR%%/spec/vcr_cassettes/allowed-pull.yml
 %%DATADIR%%/spec/vcr_cassettes/allowed-push.yml
 %%DATADIR%%/spec/vcr_cassettes/broadcast_message-none.yml

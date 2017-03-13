@@ -8,10 +8,11 @@ CURDIR=`pwd`
 WRKDIR=`pwd`/work
 mkdir -p "${WRKDIR}"
 
-if [ \! -f "${WRKDIR}/master.zip" ]; then \
-  fetch --no-verify-peer -o ${WRKDIR}/master.zip https://github.com/KiCad/kicad-library/archive/master.zip
+if [ \! -d "${CURDIR}/kicad-library" ]; then
+ git clone https://github.com/KiCad/kicad-library.git "${CURDIR}/kicad-library";
 else
-  echo "master.zip already exists";
+  cd "${CURDIR}/kicad-library"
+  git pull;
 fi
 
 if [ \! -d "${CURDIR}/kicad-repo" ]; then
@@ -30,10 +31,12 @@ echo "$GIT_SRC_HASH, $GIT_SRC_DATE"
 echo "GIT_SRC_HASH=  ${GIT_SRC_HASH}"    > ${CURDIR}/Makefile.git_rev
 echo "GIT_SRC_DATE=  ${GIT_SRC_DATE}"   >> ${CURDIR}/Makefile.git_rev
 
+mkdir -p "${WRKDIR}/kicad-library-master"
 mkdir -p "${WRKDIR}/kicad-r${GIT_SRC_DATE}"
 cd "${CURDIR}/kicad-repo"
 find . -type d -name .git -prune -o -print | cpio -pdamuv "${WRKDIR}/kicad-r${GIT_SRC_DATE}";
+cd "${CURDIR}/kicad-library"
+find . -type d -name .git -prune -o -print | cpio -pdamuv "${WRKDIR}/kicad-library-master"
 cd "${WRKDIR}"
-tar xvf master.zip;
 tar cvfy /usr/ports/distfiles/kicad/kicad-r${GIT_SRC_DATE}.tar.bz2 \
   kicad-r${GIT_SRC_DATE} kicad-library-master
