@@ -29,6 +29,7 @@ USE_GL=		glew glu gl
 USE_WX=		3.0
 WX_COMPS=	wx
 USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
+USE_XORG+=	pixman
 
 BROKEN_aarch64=		Fails to compile: use of undeclared identifier builtin_ia32_emms
 
