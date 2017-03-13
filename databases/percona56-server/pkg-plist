@@ -32,6 +32,7 @@ lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/audit_log.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
+lib/mysql/plugin/connection_control.so
 lib/mysql/plugin/daemon_example.ini
 %%TOKUDB%%lib/mysql/plugin/ha_tokudb.so
 lib/mysql/plugin/handlersocket.so
@@ -47,7 +48,6 @@ lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
 lib/mysql/plugin/query_response_time.so
-lib/mysql/plugin/scalability_metrics.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/test_udf_services.so
