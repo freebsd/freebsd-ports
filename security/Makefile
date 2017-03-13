@@ -880,6 +880,7 @@
     SUBDIR += py-mixbox
     SUBDIR += py-oauth2client
     SUBDIR += py-oauthlib
+    SUBDIR += py-onetime
     SUBDIR += py-openssl
     SUBDIR += py-paramiko
     SUBDIR += py-paramiko1
