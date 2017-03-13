@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	megaglest
-PORTVERSION=	3.12.0
+PORTVERSION=	3.13.0
 CATEGORIES=	games
 PKGNAMESUFFIX=	-data
 
 MAINTAINER=	monwarez@mailoo.org
 COMMENT=	MegaGlest data files
+
+LICENSE=	CC-BY-SA-3.0
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE.data.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MegaGlest
