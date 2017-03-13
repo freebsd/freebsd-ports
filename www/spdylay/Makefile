@@ -37,4 +37,10 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/spdycli ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/shrpx.conf.sample ${STAGEDIR}${PREFIX}/etc/
 
+.include <bsd.port.options.mk>
+
+.if ${SSL_DEFAULT} == openssl-devel
+BROKEN=		Does not build.
+.endif
+
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@
  	    #define LIBCONTEXT_PLATFORM_linux_x86_64
  	    #define LIBCONTEXT_CALL_CONVENTION
 -
-+	#elif __amd64
++	#elif __amd64__
 +	    #define LIBCONTEXT_PLATFORM_linux_x86_64
 +	    #define LIBCONTEXT_CALL_CONVENTION
  	#elif __i386__

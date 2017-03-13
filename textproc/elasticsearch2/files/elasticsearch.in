@@ -113,6 +113,7 @@ if [ -n "$2" ]; then
     profile="$2"
     if [ "x${elasticsearch_profiles}" != "x" ]; then
         pidfile="${_pidprefix}.${profile}.pid"
+	command_args="-d --pidfile=${pidfile}"
         eval elasticsearch_config="\${elasticsearch_${profile}_config:-}"
         if [ "x${elasticsearch_config}" = "x" ]; then
             echo "You must define a configuration  (elasticsearch_${profile}_config)"

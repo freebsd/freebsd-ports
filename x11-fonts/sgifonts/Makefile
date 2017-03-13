@@ -5,11 +5,11 @@ PORTNAME=	sgifonts
 PORTVERSION=	1.0.1
 PORTREVISION=	4
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://patches.sgi.com/pub/linux/ProPack1.4/SRPMS/
+MASTER_SITES=	http://BSDforge.com/projects/source/x11-fonts/sgifonts/
 DISTNAME=	sgi-fonts-1.0-1.src
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Fonts from the SGI ProPack 1.4 (originally for Linux)
 
 LICENSE=	MIT
