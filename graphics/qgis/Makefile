@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	2_18_2
-PORTREVISION=	1
+DISTVERSION=	2_18_4
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -51,7 +50,8 @@ DEBUG_DESC=		Write Debugging Output to Console
 SERVER_DESC=		Enable QGIS server
 TESTS_DESC=		Run the test suite after build process
 
-CMAKE_ARGS+=	-DWITH_ORACLE:BOOL=FALSE \
+CMAKE_ARGS+=	-DENABLE_QT5=OFF -DENABLE_PYTHON3=OFF \
+		-DWITH_ORACLE:BOOL=FALSE \
 		-DWITH_GLOBE:BOOL=FALSE
 
 .if !defined(MAINTAINER_MODE)
@@ -91,36 +91,40 @@ POSTGIS_LIB_DEPENDS=	liblwgeom.so:databases/postgis22
 POSTGIS_CMAKE_ON=	-DWITH_POSTGRESQL:BOOL=TRUE
 POSTGIS_CMAKE_OFF=	-DWITH_POSTGRESQL:BOOL=FALSE
 
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future \
 			${PYTHON_PKGNAMEPREFIX}httplib2>=2-0.9.2:www/py-httplib2 \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=2.8:devel/py-Jinja2 \
-			${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.23:textproc/py-MarkupSafe \
-			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.3:math/py-matplotlib \
+			${PYTHON_PKGNAMEPREFIX}MarkupSafe>=1.0:textproc/py-MarkupSafe \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.3:math/py-matplotlib \
 			${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock \
-			${PYTHON_PKGNAMEPREFIX}pip>=8.0.2:devel/py-pip \
+			${PYTHON_PKGNAMEPREFIX}pbr>=1.8.1:devel/py-pbr \
+			${PYTHON_PKGNAMEPREFIX}pip>=9.0.1:devel/py-pip \
 			${PYTHON_PKGNAMEPREFIX}pygments>=2.1.3:textproc/py-pygments \
+			${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.5.1:graphics/py-pyproj \
 			${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:databases/pyspatialite \
-			${PYTHON_PKGNAMEPREFIX}pytz>=2016.6.1,1:devel/py-pytz \
-			${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests \
+			${PYTHON_PKGNAMEPREFIX}pytz>=2016.10:devel/py-pytz \
+			${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests \
 			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
-			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:databases/py-sqlite3 \
+			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.13:databases/py-sqlite3 \
 			${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.14.3:devel/py-future \
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future \
 			${PYTHON_PKGNAMEPREFIX}gdal>=2.0.1:graphics/py-gdal \
 			${PYTHON_PKGNAMEPREFIX}httplib2>=2-0.9.2:www/py-httplib2 \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=2.8:devel/py-Jinja2 \
-			${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.23:textproc/py-MarkupSafe \
-			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.4.3:math/py-matplotlib \
+			${PYTHON_PKGNAMEPREFIX}MarkupSafe>=1.0:textproc/py-MarkupSafe \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.3:math/py-matplotlib \
 			${PYTHON_PKGNAMEPREFIX}mock>=1.3.0:devel/py-mock \
 			${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2,1:math/py-numpy \
-			${PYTHON_PKGNAMEPREFIX}pip>=8.0.2:devel/py-pip \
+			${PYTHON_PKGNAMEPREFIX}pbr>=1.8.1:devel/py-pbr \
+			${PYTHON_PKGNAMEPREFIX}pip>=9.0.1:devel/py-pip \
 			${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.3:databases/py-psycopg2 \
 			${PYTHON_PKGNAMEPREFIX}pygments>=2.1.3:textproc/py-pygments \
+			${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.5.1:graphics/py-pyproj \
 			${PYTHON_PKGNAMEPREFIX}pyspatialite>=3.0.1:databases/pyspatialite \
-			${PYTHON_PKGNAMEPREFIX}pytz>=2016.6.1,1:devel/py-pytz \
-			${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests \
+			${PYTHON_PKGNAMEPREFIX}pytz>=2016.10:devel/py-pytz \
+			${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests \
 			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
-			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.6:databases/py-sqlite3 \
+			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.13:databases/py-sqlite3 \
 			${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor \
 			${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml
 PYTHON_CMAKE_ON=	-DWITH_BINDINGS:BOOL=TRUE
@@ -141,7 +145,7 @@ INSTALLS_ICONS=		yes
 USES+=		compiler:features
 .else
 USES+=		compiler:gcc-c++11-lib
-BUILD_DEPENDS+=	flex>=2.5.39:textproc/flex
+BUILD_DEPENDS+=	flex>=2.6.1:textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex
 CXXFLAGS+=	-I${LOCALBASE}/include/flex
 .endif
