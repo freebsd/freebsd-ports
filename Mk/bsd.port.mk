@@ -1765,10 +1765,6 @@ MAKE_ENV+=	${b}="${${b}}"
 SUB_FILES+=	${USE_RC_SUBR}
 .endif
 
-.if defined(USE_RCORDER)
-SUB_FILES+=	${USE_RCORDER}
-.endif
-
 .if defined(USE_LDCONFIG) && ${USE_LDCONFIG:tl} == "yes"
 USE_LDCONFIG=	${PREFIX}/lib
 .endif
