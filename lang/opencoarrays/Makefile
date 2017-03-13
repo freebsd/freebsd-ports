@@ -16,6 +16,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sourceryinstitute
+GH_PROJECT=	OpenCoarrays
 
 USES=		cmake:outsource fortran shebangfix
 PLIST_SUB=	GCC_VER=${_GCC_VER}
