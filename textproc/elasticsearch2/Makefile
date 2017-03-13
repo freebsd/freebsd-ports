@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.4
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
