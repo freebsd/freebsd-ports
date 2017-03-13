@@ -14,7 +14,7 @@ lib/node_modules/npm/appveyor.yml
 @(,,755) lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp.cmd
 lib/node_modules/npm/bin/npm
-lib/node_modules/npm/bin/npm-cli.js
+@(,,755) lib/node_modules/npm/bin/npm-cli.js
 lib/node_modules/npm/bin/npm.cmd
 lib/node_modules/npm/bin/read-package-json.js
 lib/node_modules/npm/changelogs/CHANGELOG-1.md
