@@ -1,5 +1,5 @@
---- lib/config/defaults.js.orig	2015-05-01 04:03:19 UTC
-+++ lib/config/defaults.js
+--- lib/node_modules/npm/lib/config/defaults.js.orig	2015-05-01 04:03:19 UTC
++++ lib/node_modules/npm/lib/config/defaults.js
 @@ -316,26 +316,7 @@ exports.types =
    }
  
