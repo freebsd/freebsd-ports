@@ -1,6 +1,6 @@
---- setup.py.orig	2016-02-20 06:59:25 UTC
+--- setup.py.orig	2017-01-04 05:33:56 UTC
 +++ setup.py
-@@ -268,5 +268,6 @@ setup(
+@@ -270,5 +270,6 @@ setup(
          'Topic :: Software Development :: Libraries :: Python Modules',
          'Topic :: Text Processing :: Filters',
          'Topic :: Text Processing :: Markup :: HTML'
