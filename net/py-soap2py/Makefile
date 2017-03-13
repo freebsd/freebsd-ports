@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	pysimplesoap
+PORTNAME=	soap2py
 PORTVERSION=	1.10
 PORTREVISION=	1
 CATEGORIES=	net www python
@@ -16,6 +16,8 @@ NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
+GH_ACCOUNT=	pysimplesoap
+GH_PROJECT=	pysimplesoap
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>
