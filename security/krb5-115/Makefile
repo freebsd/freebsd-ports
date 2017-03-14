@@ -53,6 +53,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 USE_RC_SUBR=		kpropd
+OPTIONS_SUB=		yes
 
 .include <bsd.port.options.mk>
 
@@ -80,9 +81,6 @@ CONFIGURE_ARGS+=	--enable-dns-for-realm
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
-PLIST_SUB+=		LDAP=""
-.else
-PLIST_SUB+=		LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREADLINE}
