@@ -30,7 +30,7 @@
      }
  }
  
-+#if !defined(__FreeBSD__) && !defined(__DragonFly__)
++#if !defined(__FreeBSD__) && !defined(__FreeBSD_kernel__) && !defined(__DragonFly__)
  static const char *drmGetMinorName(int type)
  {
      switch (type) {
@@ -42,11 +42,20 @@
  
  /**
   * Open the device by bus ID.
+@@ -2734,7 +2744,7 @@ int drmGetNodeTypeFromFd(int fd)
+     maj = major(sbuf.st_rdev);
+     min = minor(sbuf.st_rdev);
+ 
+-    if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode)) {
++    if (DRM_MAJOR && maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode)) {
+         errno = EINVAL;
+         return -1;
+     }
 @@ -2833,6 +2843,15 @@ static char *drmGetMinorNameForFD(int fd
  
  out_close_dir:
      closedir(sysdir);
-+#elif defined(__FreeBSD__) || defined(__DragonFly__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
 +    struct stat buf;
 +    char name[64];
 +
@@ -63,7 +72,7 @@
  
      return -EINVAL;
 -#elif defined(__OpenBSD__)
-+#elif defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__DragonFly__)
++#elif defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
      return DRM_BUS_PCI;
  #else
  #warning "Missing implementation of drmParseSubsystemType"
@@ -71,7 +80,7 @@
  #endif
  }
  
-+#if defined(__FreeBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
 +/*
 + * XXX temporary workaround, because FreeBSD doesn't provide 
 + * pcibus device sysctl trees for renderD and controlD nodes (yet)
@@ -133,7 +142,7 @@
  #endif
  }
  
-+#if defined(__FreeBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
 +static int drmParsePciDeviceInfoBSD(const char *path,
 +                                    drmPciDeviceInfoPtr device,
 +                                    uint32_t flags)
@@ -170,7 +179,7 @@
  
      dev->businfo.pci = (drmPciBusInfoPtr)addr;
  
-+#if defined(__FreeBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
 +    ret = drmParsePciBusInfoBSD(node, dev->businfo.pci);
 +#else
      ret = drmParsePciBusInfo(maj, min, dev->businfo.pci);
@@ -183,7 +192,7 @@
          addr += sizeof(drmPciBusInfo);
          dev->deviceinfo.pci = (drmPciDeviceInfoPtr)addr;
 -
-+#if defined(__FreeBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
 +        ret = drmParsePciDeviceInfoBSD(node, dev->deviceinfo.pci, flags);
 +#else
          ret = drmParsePciDeviceInfo(maj, min, dev->deviceinfo.pci, flags);
@@ -191,3 +200,39 @@
          if (ret)
              goto free_device;
      }
+@@ -3786,7 +3897,7 @@ int drmGetDevice2(int fd, uint32_t flags
+     maj = major(sbuf.st_rdev);
+     min = minor(sbuf.st_rdev);
+ 
+-    if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
++    if (DRM_MAJOR && maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
+         return -EINVAL;
+ 
+     subsystem_type = drmParseSubsystemType(maj, min);
+@@ -3814,7 +3925,7 @@ int drmGetDevice2(int fd, uint32_t flags
+         maj = major(sbuf.st_rdev);
+         min = minor(sbuf.st_rdev);
+ 
+-        if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
++        if (DRM_MAJOR && maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
+             continue;
+ 
+         if (drmParseSubsystemType(maj, min) != subsystem_type)
+@@ -3964,7 +4075,7 @@ int drmGetDevices2(uint32_t flags, drmDe
+         maj = major(sbuf.st_rdev);
+         min = minor(sbuf.st_rdev);
+ 
+-        if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
++        if (DRM_MAJOR && maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
+             continue;
+ 
+         subsystem_type = drmParseSubsystemType(maj, min);
+@@ -4108,7 +4219,7 @@ char *drmGetDeviceNameFromFd2(int fd)
+     maj = major(sbuf.st_rdev);
+     min = minor(sbuf.st_rdev);
+ 
+-    if (maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
++    if (DRM_MAJOR && maj != DRM_MAJOR || !S_ISCHR(sbuf.st_mode))
+         return NULL;
+ 
+     node_type = drmGetMinorType(min);
