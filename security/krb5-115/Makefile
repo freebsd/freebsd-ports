@@ -26,7 +26,7 @@ USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
-USES=			cpe gettext gmake perl5 libtool:build \
+USES=			cpe gmake perl5 libtool:build \
 			gssapi:bootstrap,mit pkgconfig:run ssl
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath --localstatedir="${PREFIX}/var"
@@ -37,7 +37,7 @@ CPE_VENDOR=		mit
 CPE_VERSION=		5-${PORTVERSION}
 CPE_PRODUCT=		kerberos
 
-OPTIONS_DEFINE=		EXAMPLES KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
+OPTIONS_DEFINE=		EXAMPLES NLS KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML READLINE
 OPTIONS_RADIO=		CMD_LINE_EDITING
 OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE READLINE_PORT LIBEDIT
@@ -48,6 +48,7 @@ DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
 LDAP=			Enable LDAP support
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_WITH=	ldap
+NLS_USES=		gettext
 READLINE_USES=		readline
 READLINE_PORT_DESC=	Command line editing via devel/readline
 READLINE_PORT_USES=	readline:port
