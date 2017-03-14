@@ -10,7 +10,6 @@ MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-
 PKGNAMESUFFIX=		-115
 .endif
 
-
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
 
@@ -19,14 +18,14 @@ COMMENT=		MIT implementation of RFC 4120 network authentication service
 
 LICENSE=		MIT
 
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[0-9]-*
+CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[34]-[0-9]* krb5-1.[0-9]*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
-USES=			cpe gettext gmake perl5 libtool:build \
+USES=			cpe gmake perl5 libtool:build \
 			gssapi:bootstrap,mit pkgconfig:run ssl
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath --localstatedir="${PREFIX}/var"
@@ -37,10 +36,11 @@ CPE_VENDOR=		mit
 CPE_VERSION=		5-${PORTVERSION}
 CPE_PRODUCT=		kerberos
 
-OPTIONS_DEFINE=		EXAMPLES KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
+OPTIONS_DEFINE=		EXAMPLES NLS KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML READLINE
 OPTIONS_RADIO=		CMD_LINE_EDITING
 OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE READLINE_PORT LIBEDIT
+CMD_LINE_EDITING_DESC=	Command line editing for kadmin and ktutil
 KRB5_PDF_DESC=		Install krb5 PDF documentation
 KRB5_HTML_DESC=		Install krb5 HTML documentation
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
@@ -48,6 +48,7 @@ DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
 LDAP=			Enable LDAP support
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_WITH=	ldap
+NLS_USES=		gettext
 READLINE_USES=		readline
 READLINE_PORT_DESC=	Command line editing via devel/readline
 READLINE_PORT_USES=	readline:port
@@ -62,6 +63,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 USE_RC_SUBR=		kpropd
 OPTIONS_SUB=		yes
+WRKSRC_SUBDIR=		src
 PORTEXAMPLES=		kdc.conf krb5.conf services.append
 
 .include <bsd.port.options.mk>
@@ -93,8 +95,6 @@ CONFIGURE_ARGS+=	--without-readline
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
-
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
 PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
