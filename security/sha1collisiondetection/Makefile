@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cr-marcstevens
 
 USE_LDCONFIG=	yes
-ALL_TARGET=	library tools
+ALL_TARGET=	tools
 
 USES=		gmake libtool:build
 
@@ -30,7 +30,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/sha1dc
 	${INSTALL_DATA} ${WRKSRC}/lib/sha1.h ${STAGEDIR}${PREFIX}/include/sha1dc
 	${INSTALL_LIB} ${WRKSRC}/bin/.libs/libsha1detectcoll.so.0.0.0 ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf ./libsha1detectcoll.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libsha1detectcoll.so
-	${LN} -sf ./libsha1detectcoll.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libsha1detectcoll.so.0
+	${LN} -sf libsha1detectcoll.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libsha1detectcoll.so
+	${LN} -sf libsha1detectcoll.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libsha1detectcoll.so.0
 
 .include <bsd.port.mk>
