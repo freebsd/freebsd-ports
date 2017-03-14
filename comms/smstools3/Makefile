@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smstools
-PORTVERSION=	3.1.17
+PORTVERSION=	3.1.19
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -40,7 +40,7 @@ PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
 SUB_FILES=	pkg-install pkg-deinstall
 
-LDFLAGS=	-linotify
+LDFLAGS+=	-linotify
 
 PORTDOCS=	*
 PORTEXAMPLES=	.procmailrc .qmailrc *
