@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Plugin that provides a project Blog
 
 RUN_DEPENDS=	trac-fullblog>=0.1.1:www/trac-fullblog
