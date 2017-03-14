@@ -46,7 +46,12 @@ OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE LIBEDIT
 KRB5_PDF_DESC=		Install krb5 PDF documentation
 KRB5_HTML_DESC=		Install krb5 HTML documentation
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
+DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
 LDAP=			Enable LDAP support
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	ldap
+LIBEDIT_USES=		libedit
+LIBEDIT_CONFIGURE_WITH=	libedit
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
@@ -76,27 +81,11 @@ LDFLAGS:=	-Wl,-rpath,${_RPATH}${F:S/-Wl,-rpath,//} \
 BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
 .endif
 
-.if ${PORT_OPTIONS:MDNS_FOR_REALM}
-CONFIGURE_ARGS+=	--enable-dns-for-realm
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--with-ldap
-.endif
-
 .if ${PORT_OPTIONS:MREADLINE}
 USES+=			readline
 CONFIGURE_ARGS+=	--with-readline
 .else
 CONFIGURE_ARGS+=	--without-readline
-.endif
-
-.if ${PORT_OPTIONS:MLIBEDIT}
-USES+=			libedit
-CONFIGURE_ARGS+=	--with-libedit
-.else
-CONFIGURE_ARGS+=	--without-libedit
 .endif
 
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
