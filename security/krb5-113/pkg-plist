@@ -159,9 +159,6 @@ sbin/uuserver
 share/doc/krb5/README.FreeBSD
 share/et/et_c.awk
 share/et/et_h.awk
-share/examples/krb5/kdc.conf
-share/examples/krb5/krb5.conf
-share/examples/krb5/services.append
 share/locale/en_US/LC_MESSAGES/mit-krb5.mo
 %%LDAP%%%%DATADIR%%/kerberos.schema
 %%LDAP%%%%DATADIR%%/kerberos.ldif
