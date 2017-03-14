@@ -66,6 +66,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 USE_RC_SUBR=		kpropd
 OPTIONS_SUB=		yes
+WRKSRC_SUBDIR=		src
 PORTEXAMPLES=		kdc.conf krb5.conf services.append
 
 .include <bsd.port.options.mk>
@@ -97,8 +98,6 @@ CONFIGURE_ARGS+=	--without-readline
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
-
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
 PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
