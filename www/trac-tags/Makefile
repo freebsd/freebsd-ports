@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
 DIST_SUBDIR=	trac
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Generic tags frontend for trac
 
 RUN_DEPENDS=	tracd:www/trac

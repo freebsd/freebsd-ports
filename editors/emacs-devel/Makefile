@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	emacs25-[0-9]* emacs-nox11-[0-9]*
 
+BROKEN_aarch64=		Fails to link: missing sbrk
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
 GH_TAGNAME=	55c0c3e

@@ -3,7 +3,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.14.5
-PORTREVISION=		1
+PORTREVISION=		4
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
@@ -37,14 +37,22 @@ CPE_VENDOR=		mit
 CPE_VERSION=		5-${PORTVERSION}
 CPE_PRODUCT=		kerberos
 
-OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
-OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML
+OPTIONS_DEFINE=		EXAMPLES KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
+OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML READLINE
 OPTIONS_RADIO=		CMD_LINE_EDITING
-OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE LIBEDIT
+OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE READLINE_PORT LIBEDIT
 KRB5_PDF_DESC=		Install krb5 PDF documentation
 KRB5_HTML_DESC=		Install krb5 HTML documentation
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
+DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
 LDAP=			Enable LDAP support
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	ldap
+READLINE_USES=		readline
+READLINE_PORT_DESC=	Command line editing via devel/readline
+READLINE_PORT_USES=	readline:port
+LIBEDIT_USES=		libedit
+LIBEDIT_CONFIGURE_WITH=	libedit
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
@@ -53,6 +61,8 @@ CPPFLAGS+=		-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 USE_RC_SUBR=		kpropd
+OPTIONS_SUB=		yes
+PORTEXAMPLES=		kdc.conf krb5.conf services.append
 
 .include <bsd.port.options.mk>
 
@@ -73,30 +83,11 @@ LDFLAGS:=	-Wl,-rpath,${_RPATH}${F:S/-Wl,-rpath,//} \
 BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
 .endif
 
-.if ${PORT_OPTIONS:MDNS_FOR_REALM}
-CONFIGURE_ARGS+=	--enable-dns-for-realm
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--with-ldap
-PLIST_SUB+=		LDAP=""
-.else
-PLIST_SUB+=		LDAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=			readline
+# OPTIONS helper causes conflicting with/without
+.if ${PORT_OPTIONS:MREADLINE} || ${PORT_OPTIONS:MREADLINE_PORT}
 CONFIGURE_ARGS+=	--with-readline
 .else
 CONFIGURE_ARGS+=	--without-readline
-.endif
-
-.if ${PORT_OPTIONS:MLIBEDIT}
-USES+=			libedit
-CONFIGURE_ARGS+=	--with-libedit
-.else
-CONFIGURE_ARGS+=	--without-libedit
 .endif
 
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
@@ -144,7 +135,12 @@ post-install:
 	done | ${TAIL} -r >> ${TMPPLIST}
 .endif
 	${ECHO_CMD} @dir share/doc/krb5 >> ${TMPPLIST}
-	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
-	@${CHMOD} 444 ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
+
+post-install-LDAP-on:
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/plugins/kdb/ldap/libkdb_ldap/kerberos.schema \
+		${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/plugins/kdb/ldap/libkdb_ldap/kerberos.ldif \
+		${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

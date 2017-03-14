@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Plugin for adding navigation items into Trac navigation bars
 
 RUN_DEPENDS=	tracd:www/trac
