@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libnatpmp
-PORTVERSION=	20140401
+PORTVERSION=	20150609
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
