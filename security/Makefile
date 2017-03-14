@@ -278,6 +278,7 @@
     SUBDIR += keepassx
     SUBDIR += keepassx-devel
     SUBDIR += keepassx2
+    SUBDIR += keepassxc
     SUBDIR += keybase
     SUBDIR += keychain
     SUBDIR += keynote
@@ -1082,6 +1083,7 @@
     SUBDIR += secure_delete
     SUBDIR += sguil
     SUBDIR += sha
+    SUBDIR += sha1collisiondetection
     SUBDIR += shibboleth2-sp
     SUBDIR += shimmer
     SUBDIR += shishi
