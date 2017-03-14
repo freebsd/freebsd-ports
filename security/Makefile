@@ -1083,6 +1083,7 @@
     SUBDIR += secure_delete
     SUBDIR += sguil
     SUBDIR += sha
+    SUBDIR += sha1collisiondetection
     SUBDIR += shibboleth2-sp
     SUBDIR += shimmer
     SUBDIR += shishi
