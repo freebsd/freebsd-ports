@@ -3,7 +3,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.14.5
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
@@ -131,8 +131,6 @@ post-install:
 	done | ${TAIL} -r >> ${TMPPLIST}
 .endif
 	${ECHO_CMD} @dir share/doc/krb5 >> ${TMPPLIST}
-	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
-	@${CHMOD} 444 ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
 
 post-install-LDAP-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}
