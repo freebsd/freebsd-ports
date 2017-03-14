@@ -9038,8 +9038,8 @@ x11-themes/linux-hicolor-icon-theme||2017-01-31|Merged into linux_base port
 audio/linux-c6-arts||2017-01-31|Old KDE3 component
 audio/linux-c6-esound||2017-01-31|Old sound daemon
 audio/linux-c7-esound||2017-01-31|Old sound daemon
-audio/linux-c6-openssl-compat||2017-01-31|Old OpenSSL
-audio/linux-c7-openssl-compat||2017-01-31|Old OpenSSL
+security/linux-c6-openssl-compat||2017-01-31|Old OpenSSL
+security/linux-c7-openssl-compat||2017-01-31|Old OpenSSL
 databases/rubygem-arel3|databases/rubygem-arel|2017-01-31|Has expired: Use devel/rubygem-arel or devel/rubygem-arel6 instead
 databases/rubygem-arel5|databases/rubygem-arel|2017-01-31|Has expired: Use devel/rubygem-arel or devel/rubygem-arel6 instead
 www/tinymce3|www/tinymce|2017-01-31|Has expired: Use www/tinymce instead
