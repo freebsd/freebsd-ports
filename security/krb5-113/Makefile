@@ -42,7 +42,7 @@ CPE_PRODUCT=		kerberos
 OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML READLINE
 OPTIONS_RADIO=		CMD_LINE_EDITING
-OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE LIBEDIT
+OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE READLINE_PORT LIBEDIT
 KRB5_PDF_DESC=		Install krb5 PDF documentation
 KRB5_HTML_DESC=		Install krb5 HTML documentation
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
@@ -50,6 +50,9 @@ DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
 LDAP=			Enable LDAP support
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_WITH=	ldap
+READLINE_USES=		readline
+READLINE_PORT_DESC=	Command line editing via devel/readline
+READLINE_PORT_USES=	readline:port
 LIBEDIT_USES=		libedit
 LIBEDIT_CONFIGURE_WITH=	libedit
 
@@ -81,8 +84,8 @@ LDFLAGS:=	-Wl,-rpath,${_RPATH}${F:S/-Wl,-rpath,//} \
 BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
 .endif
 
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=			readline
+# OPTIONS helper causes conflicting with/without
+.if ${PORT_OPTIONS:MREADLINE} || ${PORT_OPTIONS:MREADLINE_PORT}
 CONFIGURE_ARGS+=	--with-readline
 .else
 CONFIGURE_ARGS+=	--without-readline
