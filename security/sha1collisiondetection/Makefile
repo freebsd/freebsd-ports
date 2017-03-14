@@ -15,7 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cr-marcstevens
 
 USE_LDCONFIG=	yes
-ALL_TARGET=	tools
 
 USES=		gmake libtool:build
 
