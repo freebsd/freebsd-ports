@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	1.5.24
+PORTVERSION=	1.5.25
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/Menu.py:devel/py3-xdg		\
 		${PYTHON_SITELIBDIR}/hunspell.so:textproc/py3-hunspell	\
 		${PYTHON_SITELIBDIR}/gi/_gi.so:devel/py3-gobject3	\
 		${LOCALBASE}/share/unicode/ucd/Index.txt:textproc/UCD	\
+		${LOCALBASE}/share/unicode/cldr/readme.html:textproc/CLDR\
 		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py35-sqlite3
 TEST_DEPENDS=	${LOCALBASE}/share/hunspell/de_DE.dic:german/hunspell	\
 		${LOCALBASE}/share/hunspell/ko_KR.aff:korean/hunspell	\
@@ -42,7 +43,7 @@ HUNSPELL_RUN_DEPENDS=	hunspell:textproc/hunspell
 SPELL2FIX=	engine/hunspell_suggest.py setup/user_transliteration.py	\
 		setup/user_transliteration.py
 DATA2FIX=	setup/main.py engine/tabsqlitedb.py engine/main.py
-PY2FIX=		engine/emoji-picker setup/user_transliteration.py
+PY2FIX=		setup/user_transliteration.py
 M17N2FIX=	setup/main.py
 SHR2FIX=	engine/tabsqlitedb.py engine/itb_util.py engine/itb_emoji.py	\
 		engine/hunspell_table.py engine/main.py setup/user_transliteration.py
@@ -58,7 +59,6 @@ pre-configure:
 .for f in ${DATA2FIX}
 	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/${f}
 .endfor
-	${REINPLACE_CMD} -e 's|prefix=/usr|prefix=${PREFIX}|' ${WRKSRC}/engine/emoji-picker
 .for f in ${M17N2FIX}
 	${REINPLACE_CMD} -e 's|/usr/share/m17n|${LOCALBASE}/share/m17n|'	\
 		${WRKSRC}/${f}
