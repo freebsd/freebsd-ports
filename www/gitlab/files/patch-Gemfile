@@ -1,6 +1,6 @@
 --- Gemfile.orig	2017-02-14 21:48:43 UTC
 +++ Gemfile
-@@ -1,20 +1,19 @@
+@@ -1,20 +1,16 @@
  source 'https://rubygems.org'
  
 -gem 'rails', '4.2.7.1'
@@ -16,16 +16,15 @@
  
  # Default values for AR models
 -gem 'default_value_for', '~> 3.0.0'
-+gem 'default_value_for', '>= 3.0.0'
- 
- # Supported DBs
+-
+-# Supported DBs
 -gem 'mysql2', '~> 0.3.16', group: :mysql
 -gem 'pg', '~> 0.18.2', group: :postgres
-+gem 'pg', '>= 0.18.2', group: :postgres
++gem 'default_value_for', '>= 3.0.0'
  
  # Authentication libraries
  gem 'devise',                 '~> 4.2'
-@@ -28,16 +27,15 @@ gem 'omniauth-facebook',      '~> 4.0.0'
+@@ -28,16 +24,15 @@ gem 'omniauth-facebook',      '~> 4.0.0'
  gem 'omniauth-github',        '~> 1.1.1'
  gem 'omniauth-gitlab',        '~> 1.0.2'
  gem 'omniauth-google-oauth2', '~> 0.4.1'
@@ -45,7 +44,7 @@
  gem 'akismet', '~> 2.0'
  
  # Two-factor authentication
-@@ -64,10 +62,10 @@ gem 'gollum-lib', '~> 4.2', require: fal
+@@ -64,10 +59,10 @@ gem 'gollum-lib', '~> 4.2', require: fal
  gem 'gollum-rugged_adapter', '~> 0.4.2', require: false
  
  # Language detection
@@ -58,7 +57,7 @@
  gem 'grape-entity', '~> 0.6.0'
  gem 'rack-cors',    '~> 0.4.0', require: 'rack/cors'
  
-@@ -75,10 +73,10 @@ gem 'rack-cors',    '~> 0.4.0', require:
+@@ -75,10 +70,10 @@ gem 'rack-cors',    '~> 0.4.0', require:
  gem 'kaminari', '~> 0.17.0'
  
  # HAML
@@ -71,7 +70,7 @@
  
  # Drag and Drop UI
  gem 'dropzonejs-rails', '~> 0.7.1'
-@@ -100,28 +98,28 @@ gem 'seed-fu', '~> 2.3.5'
+@@ -100,28 +95,28 @@ gem 'seed-fu', '~> 2.3.5'
  
  # Markdown and HTML processing
  gem 'html-pipeline',      '~> 1.11.0'
@@ -106,7 +105,7 @@
    gem 'unicorn-worker-killer', '~> 0.4.4'
  end
  
-@@ -140,7 +138,7 @@ gem 'redis-namespace', '~> 1.5.2'
+@@ -140,7 +135,7 @@ gem 'redis-namespace', '~> 1.5.2'
  gem 'sidekiq-limit_fetch', '~> 3.4'
  
  # HTTP requests
@@ -115,7 +114,7 @@
  
  # Colored output to console
  gem 'rainbow', '~> 2.1.0'
-@@ -163,7 +161,7 @@ gem 'connection_pool', '~> 2.0'
+@@ -163,7 +158,7 @@ gem 'connection_pool', '~> 2.0'
  gem 'hipchat', '~> 1.5.0'
  
  # JIRA integration
@@ -124,7 +123,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -172,10 +170,10 @@ gem 'gitlab-flowdock-git-hook', '~> 1.0.
+@@ -172,10 +167,10 @@ gem 'gitlab-flowdock-git-hook', '~> 1.0.
  gem 'gemnasium-gitlab-service', '~> 0.2'
  
  # Slack integration
@@ -137,7 +136,7 @@
  
  # FogBugz integration
  gem 'ruby-fogbugz', '~> 0.2.1'
-@@ -187,17 +185,17 @@ gem 'd3_rails', '~> 3.5.0'
+@@ -187,17 +182,17 @@ gem 'd3_rails', '~> 3.5.0'
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -158,7 +157,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -217,114 +215,31 @@ gem 'chronic_duration', '~> 0.10.6'
+@@ -217,114 +212,31 @@ gem 'chronic_duration', '~> 0.10.6'
  
  gem 'sass-rails', '~> 5.0.6'
  gem 'coffee-rails', '~> 4.1.0'
@@ -281,7 +280,7 @@
  
  gem 'mail_room', '~> 0.9.0'
  
-@@ -340,8 +255,10 @@ gem 'oauth2', '~> 1.2.0'
+@@ -340,8 +252,10 @@ gem 'oauth2', '~> 1.2.0'
  gem 'paranoia', '~> 2.0'
  
  # Health check

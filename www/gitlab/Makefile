@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.14.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -13,10 +13,18 @@ COMMENT=	Web GUI for managing git repositories
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+OPTIONS_SINGLE=	DATABASE
+OPTIONS_SINGLE_DATABASE=	PGSQL MYSQL
+OPTIONS_DEFAULT=	PGSQL
+PGSQL_DESC=	Default PostgreSQL support (preferred)
+MYSQL_DESC=	Optional MySQL support
+
 BUILD_DEPENDS=	gem:devel/ruby-gems
 
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
+# only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
+# for the options
 RUN_DEPENDS=	git>=2.7.4:devel/git \
 	gitlab-shell>=4.1.1:devel/gitlab-shell\
 	gitlab-workhorse>=1.1.1:www/gitlab-workhorse \
@@ -27,7 +35,6 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-sprockets3>=3.7:devel/rubygem-sprockets3 \
 	rubygem-sprockets-es6>=0.9.2:devel/rubygem-sprockets-es6 \
 	rubygem-default_value_for>=3.0.1:devel/rubygem-default_value_for \
-	rubygem-pg>=0.18.2:databases/rubygem-pg \
 	rubygem-devise>=4.2:devel/rubygem-devise \
 	rubygem-doorkeeper>=4.2.0:security/rubygem-doorkeeper \
 	rubygem-omniauth>=1.3.2:security/rubygem-omniauth \
@@ -155,7 +162,8 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-sys-filesystem>=1.1.6:sysutils/rubygem-sys-filesystem \
 	rubygem-rinku>=1.7.3:www/rubygem-rinku
 
-USES=		pgsql
+PGSQL_RUN_DEPENDS=	rubygem-pg>=0.18.2:databases/rubygem-pg
+MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.5:databases/rubygem-mysql2
 
 USE_RUBY=	yes
 
@@ -170,6 +178,14 @@ GROUPS=	git
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+post-patch-MYSQL-on:
+	${ECHO} "gem 'mysql2', '>= 0.3.16', group: :mysql" >> ${WRKSRC}/Gemfile
+	${CP} ${WRKSRC}/config/database.yml.mysql ${WRKSRC}/config/database.yml.sample
+
+post-patch-PGSQL-on:
+	${ECHO} "gem 'pg', '>= 0.18.2', group: :postgres" >> ${WRKSRC}/Gemfile
+	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
+
 do-install:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
@@ -183,7 +199,6 @@ do-install:
 	${MV} ${WRKSRC}/config/initializers/rack_attack.rb.example ${WRKSRC}/config/initializers/rack_attack.rb.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab ${WRKSRC}/lib/support/nginx/gitlab.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab-ssl ${WRKSRC}/lib/support/nginx/gitlab-ssl.sample
-	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
 	${MKDIR} ${STAGEDIR}/home/git/repositories
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/public/assets
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/tmp/cache
