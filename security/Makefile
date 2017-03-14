@@ -278,6 +278,7 @@
     SUBDIR += keepassx
     SUBDIR += keepassx-devel
     SUBDIR += keepassx2
+    SUBDIR += keepassxc
     SUBDIR += keybase
     SUBDIR += keychain
     SUBDIR += keynote

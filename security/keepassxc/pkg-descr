@@ -1,0 +1,16 @@
+KeePassXC is a community fork of KeePassX with the goal to extend and improve
+it with new features and bugfixes to provide a feature-rich, fully
+cross-platform and modern open-source password manager.
+
+Additional features compared to KeePassX:
+  * Auto-Type on all three major platforms (Linux, Windows, OS X)
+  * Stand-alone password generator
+  * Password strength meter
+  * Using website favicons as entry icons
+  * Merging of databases
+  * Automatic reload when the database changed on disk
+  * KeePassHTTP support for use with PassIFox in Mozilla Firefox and
+    chromeIPass in Google Chrome or Chromium.
+  * Many bug fixes
+
+WWW: https://keepassxc.org/
