@@ -56,6 +56,8 @@ SSL_CONFIGURE_OFF=	--without-crypto
 SSL_USES=		ssl
 SSL_BROKEN_OFF=		Includes OpenSSL when deselected
 
+DEBUG_CONFIGURE_ON=	--enable-debug
+
 THREADS_CONFIGURE_ENABLE=	thread-support
 THREADS_CONFIGURE_WITH=		threads
 
