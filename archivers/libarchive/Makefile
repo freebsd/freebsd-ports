@@ -93,7 +93,7 @@ LZ4_CONFIGURE_WITH=	lz4
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NETTLE_CONFIGURE_WITH=	nettle
 NETTLE_CONFIGURE_ON=	--without-openssl
-NETTLE_USE_OFF=		OPENSSL=yes
+NETTLE_USES_OFF=	ssl
 NETTLE_CONFIGURE_OFF=	--with-openssl
 
 .include <bsd.port.pre.mk>
