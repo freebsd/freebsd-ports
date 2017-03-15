@@ -51,7 +51,6 @@ SQLITE3_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbdsqlite3.so
 PGSQL_USES=		pgsql
 PGSQL_ALL_TARGET=	psql
 PGSQL_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbdpostgresql.so
-PGSQL_BROKEN=		Not tested
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
