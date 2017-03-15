@@ -17,19 +17,15 @@ USES=		cmake
 
 OPTIONS_DEFINE=	PULSEAUDIO X11
 
-X11_CMAKE_BOOL=	X11_SUPPORT
-
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	PULSE_AUDIO_SUPPORT
 
-PLIST_FILES+=	bin/multimon-ng
+X11_USE=	XORG=ice,sm,x11,xext
+X11_CMAKE_BOOL=	X11_SUPPORT
 
-.include <bsd.port.pre.mk>
-.if ${PORT_OPTIONS:MX11}
-USE_XORG+=	sm ice x11 xext
-.endif
+PLIST_FILES=	bin/multimon-ng
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multimon-ng ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
