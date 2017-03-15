@@ -11,12 +11,10 @@ COMMENT=	DKIM (DomainKeys Identified Mail) library
 
 LICENSE=	APACHE20
 
-USES=		uidfix zip
+USES=		uidfix zip ssl
 USE_LDCONFIG=	YES
 SHLIB_MAJOR=	1
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
-
-USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

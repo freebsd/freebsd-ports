@@ -13,10 +13,9 @@ COMMENT=	Qt 4 support for OAuth-powered network services
 
 LIB_DEPENDS=	libqca.so:devel/qca
 
-USES=		qmake tar:bzip2
+USES=		qmake tar:bzip2 ssl
 USE_LDCONFIG=	yes
 USE_QT4=	corelib qtestlib network moc_build
-USE_OPENSSL=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,target.path}/pkgconfig,INSTALL_PREFIX}/libdata/pkgconfig,g' \

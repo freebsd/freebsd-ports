@@ -27,9 +27,8 @@ BROKEN_sparc64=		Does not compile: error: DV_INT_TAG_WORD undeclared
 NOT_FOR_ARCHS=	arm armv6 i386 mips powerpc
 NOT_FOR_ARCHS_REASON=	can only be built on 64bit platforms
 
-USES=		execinfo gmake libtool readline uidfix
+USES=		execinfo gmake libtool readline uidfix ssl
 USE_AUTOTOOLS=	autoheader aclocal
-USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline\

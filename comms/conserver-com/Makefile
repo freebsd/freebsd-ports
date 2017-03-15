@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-master=${DEFAULTHOST} --with-port=${DEFAULTPORT} \
 		--with-pam --with-libwrap --with-openssl
 
-USE_OPENSSL=	yes
+USES=		ssl
 USE_RC_SUBR=	conserver
 
 OPTIONS_DEFINE=	FREEIPMI GSSAPI GSSAPIONLY STRIPREALM UDS

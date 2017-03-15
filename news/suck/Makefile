@@ -59,7 +59,7 @@ CONFLICTS+=	suck-cnews-4.*
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 MAKE_ENV+=	SSL_LIB="-lssl -lcrypto"
 MAKE_ENV+=	SSL_DEFS="-I${OPENSSLINC} -DHAVE_LIBSSL"
 MAKE_ENV+=	SSL_LIB_LOC="-L${OPENSSLLIB}"

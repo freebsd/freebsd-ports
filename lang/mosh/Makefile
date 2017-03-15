@@ -23,8 +23,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 CONFLICTS_INSTALL=	mosh-1.[0-9].*
 
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib
 

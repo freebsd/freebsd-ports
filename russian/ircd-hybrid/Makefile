@@ -20,8 +20,7 @@ CONFLICTS=	ircd-[0-9]* irc-[0-9]* charybdis-[0-9]* Nefarious-[0-9]* ircd-hybrid-
 BROKEN_aarch64=	Fails to compile: error: passing void * to parameter of incompatible type
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-ru
-USE_OPENSSL=	yes
-USES=		bison
+USES=		bison ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru
 

@@ -24,8 +24,7 @@ GROUPS=		pgbouncer
 USE_RC_SUBR=	pgbouncer
 
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
 
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --enable-evdns
 CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread"

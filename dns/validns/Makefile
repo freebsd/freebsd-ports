@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libJudy.so:devel/judy
 
-USE_OPENSSL=	yes
+USES=		ssl
 
 ALL_TARGET=
 

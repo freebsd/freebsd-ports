@@ -13,9 +13,8 @@ COMMENT=	Portable CVS repository synchronization utility
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/COPYRIGHT
 
-USES=		gmake
+USES=		gmake ssl
 USE_RC_SUBR=	cvsyncd
-USE_OPENSSL=	yes
 
 PORTDOCS=	ChangeLog FAQ TODO
 PORTEXAMPLES=	cvsync.conf cvsyncd-FreeBSD.conf \

@@ -15,7 +15,7 @@ LICENSE_NAME=	University of Michigan License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_OPENSSL=	yes
+USES=	ssl
 USE_RC_SUBR=	radmind
 MAKE_JOBS_UNSAFE=	yes
 

@@ -12,7 +12,7 @@ PATCH_SITES=	https://gist.githubusercontent.com/mtigas/5969597/raw/e62ea9ab8a66a
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	SSLv3/TLS network protocol analyzer
 
-USE_OPENSSL=	yes
+USES=	ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \

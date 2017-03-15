@@ -17,8 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		php:ext tar:tgz
-USE_OPENSSL=	yes
+USES=		php:ext tar:tgz ssl
 CONFIGURE_ARGS=	--with-openssl-dir=${OPENSSLBASE}
 USE_PHP=	sockets:build
 

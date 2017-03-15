@@ -36,7 +36,7 @@ PLIST_SUB+=		PAD_TOOLS="@comment "
 CONFIGURE_ARGS+=	--without-ssl
 PLIST_SUB+=		DSV_TOOLS="@comment "
 .else
-USE_OPENSSL=	yes
+USES+=	ssl
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .if ! ${PORT_OPTIONS:MDSV_TOOLS} # Note: DSV requires SSL
 PLIST_SUB+=		DSV_TOOLS="@comment "

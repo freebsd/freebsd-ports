@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 
 BROKEN_powerpc64=	Does not build
 
-USES=	gmake iconv libtool:build pathfix autoreconf
-USE_OPENSSL=	yes
+USES=	gmake iconv libtool:build pathfix autoreconf ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes

@@ -11,13 +11,12 @@ COMMENT=	Personal cloud which runs on your own server
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING-AGPL
 
-USES=		cpe tar:bzip2
+USES=		cpe tar:bzip2 ssl
 IGNORE_WITH_PHP=	71
 USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \
 		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
 		xsl wddx zip zlib
 WANT_PHP_WEB=	yes
-USE_OPENSSL=	yes
 
 OWNCLOUD_USERNAME?=	${WWWOWN}
 OWNCLOUD_GROUPNAME?=	${WWWGRP}

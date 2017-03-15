@@ -67,7 +67,7 @@ PATCHFILES+=	ucspi-rss.diff:rss
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 PATCH_SITES+=	http://www.nrg4u.com/qmail/:ssl
 PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz:ssl
 .endif

@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_search_libiconv=${ICONV_LIB}
 
 USES=		iconv readline gmake
-USE_OPENSSL=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -49,7 +48,8 @@ PORTDOCS=	*
 
 .if ! ${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=	--disable-ssl
-.undef USE_OPENSSL
+.else
+USES+=		ssl
 .endif
 
 .if ! ${PORT_OPTIONS:MREADLINE}
