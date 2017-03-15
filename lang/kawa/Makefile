@@ -11,14 +11,12 @@ COMMENT=	Java-based Scheme implementation
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
-
 USES=		gmake readline
 USE_JAVA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
 		--with-java-source=${JAVA_PORT_VERSION}
-CONFIGURE_ENV=	MAKEINFO=${LOCALBASE}/bin/makeinfo
+CONFIGURE_ENV=	JAVA="${JAVA}" JAVAC="${JAVAC}"
 MAKE_ARGS=	JAR="${JAR}" READLINE_LIB_PATH="-L${LOCALBASE}/lib"
 MAKE_ENV=	JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 TEST_TARGET=	check
@@ -28,14 +26,11 @@ TEST_ENV=	# must be empty, otherwise tests fail
 MAKE_JOBS_UNSAFE=yes
 
 INFO=		kawa
-
 PLIST_FILES=	bin/kawa bin/qexo \
 		share/kawa/bin/kawa share/kawa/lib/kawa.jar \
 		man/man1/kawa.1.gz man/man1/qexo.1.gz \
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
-		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
+post-patch:
 	@${REINPLACE_CMD} -e '/life-grid.log$$/s,>&,>,' \
 		${WRKSRC}/testsuite/Makefile.in
 
