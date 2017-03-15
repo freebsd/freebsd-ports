@@ -109,7 +109,7 @@ OPENCV_CONFIGURE_ENABLE=	libopencv
 OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
-RTMP_USE=			OPENSSL=yes
+RTMP_USES=			ssl
 
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger

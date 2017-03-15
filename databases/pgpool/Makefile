@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS SSL
 OPTIONS_DEFAULT= SSL
 
 SSL_CONFIGURE_WITH=     openssl
-SSL_USE=                OPENSSL=yes
+SSL_USES=		ssl
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pgpool

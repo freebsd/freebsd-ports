@@ -23,7 +23,8 @@ OPTIONS_DEFAULT=	SSL
 SASL_USE=	my_tags=sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-SSL_USE=	openssl=yes my_tags=ssl
+SSL_USES=	ssl
+SSL_USE=	my_tags=ssl
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"

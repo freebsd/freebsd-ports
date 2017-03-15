@@ -30,7 +30,7 @@ CONTRIB=	contrib/README contrib/authenticators/bincimap-auth-teapop.sh
 OPTIONS_DEFINE=	DOCS EXAMPLES OPENSSL
 OPTIONS_DEFAULT=	OPENSSL
 
-OPENSSL_USE=	OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_OFF=	--without-ssl
 
 post-install:
