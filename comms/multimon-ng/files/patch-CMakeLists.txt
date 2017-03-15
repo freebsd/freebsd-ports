@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2015-11-09 12:57:23 UTC
++++ CMakeLists.txt
+@@ -48,7 +48,8 @@ endif( X11_SUPPORT ) 
+ 
+ if( PULSE_AUDIO_SUPPORT )
+ 	include_directories( ${PULSEAUDIO_INCLUDE_DIR} )
+-	link_libraries( ${PULSEAUDIO_LIBRARY} "-lpulse-simple" )
++	find_library( PULSE_SIMPLE NAMES pulse-simple REQUIRED )
++	link_libraries( ${PULSEAUDIO_LIBRARY} ${PULSE_SIMPLE} )
+ 	add_definitions( "-DPULSE_AUDIO" )
+ else( PULSE_AUDIO_SUPPORT )
+ 	add_definitions( "-DDUMMY_AUDIO" )
