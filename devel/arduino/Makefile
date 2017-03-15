@@ -3,6 +3,7 @@
 
 PORTNAME=	arduino
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	http://arduino.cc/download.php?f=/
@@ -11,12 +12,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-linux32
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Open-source electronics prototyping platform
 
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx \
 		${LOCALBASE}/bin/avrdude:devel/avrdude \
 		${LOCALBASE}/avr/include/avr/io.h:devel/avr-libc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		dos2unix tar:tgz
+USES=		dos2unix tar:tgz kmod
 DOS2UNIX_REGEX=	.*\(\.\(c|cpp|h|hex|html|ino|lst|txt\)|Makefile\)
 
 USE_JAVA=	yes
@@ -27,20 +31,29 @@ JAVA_RUN=	yes
 NO_BUILD=	yes
 USE_LDCONFIG=	${PREFIX}/arduino/lib
 
+PLIST_SUB=	ARCH=${ARCH:S|i386||:S|amd64|64|}
+
 SUB_FILES=	arduino pkg-message
-SUB_LIST=	PORTNAME=${PORTNAME} LINUXBASE=${LINUXBASE}
+SUB_LIST=	PORTNAME=${PORTNAME} LINUXBASE=${PREFIX}
+
+# Confirmed for ARCHS below. Arm, PowerPC and Sparc untested. (Feedback welcome)
+ONLY_FOR_ARCHS=	i386 amd64
 
 REINPLACE_ARGS=	-i ""
 
 DESKTOP_ENTRIES=	"Arduino" "Arduino IDE" \
 			${PREFIX}/${PORTNAME}/logo.png \
-			"arduino" "Development;IDE;" "false"
+			"arduino" "Development;IDE;" false
 
-OPTIONS_DEFINE=		ATMEGA644P DOCS EXAMPLES
+OPTIONS_DEFINE=		ATMEGA644P DOCS EXAMPLES UARDUNO
 ATMEGA644P_DESC=	ATmega644p patches
 DOCS_DESC=		Install the reference documents
+UARDUNO_DESC=		Kernel module for Arduino Uno USB interface
 
 INSLIST=	arduino hardware lib libraries logo.png revisions.txt tools
+
+# Add serial drivers for those who are new to this.
+UARDUNO_RUN_DEPENDS+=	${KMODDIR}/uarduno.ko:comms/uarduno
 
 .include <bsd.port.options.mk>
 
@@ -87,8 +100,24 @@ post-patch:
 	@${LN} -s ${PREFIX}/bin ${WRKSRC}/hardware/tools/avr/bin
 	@${LN} -s ${PREFIX}/etc ${WRKSRC}/hardware/tools/avr/etc
 
+	# Remove broken jar, and Linux C6 based libraries.
 	@${RM} ${WRKSRC}/lib/RXTXcomm.jar
+
+	# This port relys on comms/RXTX working without Linux C6 compatibility.
+	@${RM} ${WRKSRC}/lib/librxtxSerial.so
+	@${RM} ${WRKSRC}/lib/librxtxSerial64.so
+
+	# Map the RXTX port for our use
 	@${LN} -s ${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar ${WRKSRC}/lib/RXTXcomm.jar
+
+# Add in links to the libraries compiled in RXTX for the above jar to use based on architecture.
+.if ${ARCH} == i386
+	@${LN} -s ${JAVA_HOME}/jre/lib/i386/librxtxSerial.so ${WRKSRC}/lib/librxtxSerial.so
+.endif
+
+.if ${ARCH} == amd64
+	@${LN} -s ${JAVA_HOME}/jre/lib/amd64/librxtxSerial.so ${WRKSRC}/lib/librxtxSerial64.so
+.endif
 
 	@${MV} ${WRKSRC}/reference/img/logo.png ${WRKSRC}/
 	@${RM} -r ${WRKSRC}/reference/img/
@@ -96,7 +125,6 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${INSLIST}" ${STAGEDIR}${PREFIX}/${PORTNAME} ${FIND_EXPR})
-	${CHMOD} +x ${STAGEDIR}${PREFIX}/${PORTNAME}/arduino
 	${INSTALL_SCRIPT} ${WRKDIR}/arduino ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
