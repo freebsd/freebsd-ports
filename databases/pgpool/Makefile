@@ -3,6 +3,7 @@
 
 PORTNAME=	pgpool
 PORTVERSION=	3.4.9
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 DISTNAME=	${PORTNAME}-II-${PORTVERSION}
@@ -24,7 +25,11 @@ CONFLICTS=	pgpool-II-*
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS SSL
+OPTIONS_DEFAULT= SSL
+
+SSL_CONFIGURE_WITH=     openssl
+SSL_USE=                OPENSSL=yes
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pgpool
