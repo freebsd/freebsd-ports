@@ -31,11 +31,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
 USES=		cmake:outsource fam gettext grantlee:4 jpeg kde:4 perl5 \
-		shared-mime-info shebangfix tar:xz
+		shared-mime-info shebangfix tar:xz ssl
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	oxygen-icons4 \
 		attica automoc4 ontologies soprano strigi
-USE_OPENSSL=	yes
 USE_QT4=	corelib dbus declarative designer_build gui \
 		network opengl phonon qt3support \
 		qtestlib script sql svg webkit xml \

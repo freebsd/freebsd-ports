@@ -16,7 +16,7 @@ LIB_DEPENDS=	libPropList.so:devel/libPropList \
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib
 USE_GNOME=	gtk12
-USE_OPENSSL=	yes
+USES=		ssl
 
 PLIST_FILES=	bin/gbuffy
 

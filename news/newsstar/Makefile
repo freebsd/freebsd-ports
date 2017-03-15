@@ -38,7 +38,7 @@ INSTALL_TARGET=	install-am
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 .else
 CONFIGURE_ARGS+=--disable-ssl
 .endif

@@ -16,10 +16,9 @@ OPTIONS_DEFINE=	APACHE22
 APACHE22_DESC=	Use Apache 2.2
 
 GNU_CONFIGURE=	yes
-USES=		libtool python
+USES=		libtool python ssl
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 # Pass JAVA_HOME as determined by bsd.java.mk

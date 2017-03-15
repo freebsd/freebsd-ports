@@ -11,10 +11,9 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
 
-USES+=		libtool readline shebangfix
+USES+=		libtool readline shebangfix ssl
 SHEBANG_FILES=	scripts/dvd-handler.in src/cats/make_catalog_backup.pl.in
 python_OLD_CMD=	@PYTHON@
-USE_OPENSSL=	yes
 
 CONFLICTS?=	bacula5-server-*
 

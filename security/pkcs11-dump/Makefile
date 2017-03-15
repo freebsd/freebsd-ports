@@ -15,8 +15,7 @@ BROKEN=		Unfetchable (google code has gone away)
 DEPRECATED=	Unfetchable for more than six months (google code has gone away)
 EXPIRATION_DATE=	2017-04-30
 
-USES=	tar:bzip2
-USE_OPENSSL=	yes
+USES=	tar:bzip2 ssl
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \

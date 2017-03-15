@@ -28,8 +28,7 @@ RUN_DEPENDS=	xorg-fonts>=0:x11-fonts/xorg-fonts
 # SVN revision of x11rdp
 X11RDPREVISION=	299
 
-USES=		gmake pkgconfig perl5
-USE_OPENSSL=	yes
+USES=		gmake pkgconfig perl5 ssl
 CONFLICTS_INSTALL=	xrdp-devel-[0-9]* x11rdp-devel-[0-9]*
 
 PLIST_FILES=	bin/X11rdp

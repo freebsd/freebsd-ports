@@ -17,10 +17,9 @@ USES=		tar:bzip2
 
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
-USES+=		gettext gmake libtool:keepla pathfix pkgconfig
+USES+=		gettext gmake libtool:keepla pathfix pkgconfig ssl
 USE_GNOME=	gconf2 gnomemimedata intlhack referencehack
 INSTALL_TARGET=	install-strip
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-openssl \

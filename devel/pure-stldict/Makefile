@@ -10,8 +10,8 @@ DIST_SUBDIR=	pure
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Pure interface to C++ STL map/unordered_map
 
-LICENSE=	GPLv3 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 USES=		pkgconfig pure
 

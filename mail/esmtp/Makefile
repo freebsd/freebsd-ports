@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 
-USES=		tar:bzip2 bison
-USE_OPENSSL=	yes
+USES=		tar:bzip2 bison ssl
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README

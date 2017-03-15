@@ -20,7 +20,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 CONFLICTS=	ntp-devel-*
 
 USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
-		pkgconfig ssl
+		pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-leap-smear
@@ -56,6 +56,7 @@ PERL_UTILS_USES=	perl5
 SSL_CONFIGURE_ON=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
 SSL_CONFIGURE_OFF=	--without-crypto
+SSL_USES=		ssl
 SSL_BROKEN_OFF=		Includes OpenSSL when deselected
 
 THREADS_CONFIGURE_ENABLE=	thread-support

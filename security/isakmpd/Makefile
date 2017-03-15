@@ -20,11 +20,9 @@ BROKEN=		requires IPsec support
 BUILD_DEPENDS+=	keynote:security/keynote
 .endif
 
-USES=		uidfix
+USES=		uidfix ssl
 USE_RC_SUBR=	isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
-
-USE_OPENSSL=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.pre.mk>

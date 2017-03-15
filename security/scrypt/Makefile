@@ -14,8 +14,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${OPENSSLINC} ${CFLAGS}" \
 		LDFLAGS="-L${OPENSSLLIB} ${LDFLAGS}"
 
-USES=		gmake tar:tgz
-USE_OPENSSL=	YES
+USES=		gmake tar:tgz ssl
 
 PLIST_FILES=	bin/scrypt \
 		man/man1/scrypt.1.gz

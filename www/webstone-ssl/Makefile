@@ -15,7 +15,7 @@ COMMENT=	World wide web server benchmarking with SSL support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		perl5 shebangfix tar:tgz
+USES=		perl5 shebangfix tar:tgz ssl
 USE_PERL5=	run
 SHEBANG_FILES=	bin/*.wpl bin/*.pl
 perl_OLD_CMD=	/bin/perl5
@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${WRKSRC}/src
-USE_OPENSSL=	yes
 ALL_TARGET=	install
 MAKE_JOBS_UNSAFE=	yes
 

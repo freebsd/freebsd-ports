@@ -11,9 +11,8 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake tar:bzip2
+USES=		gmake tar:bzip2 ssl
 GROUPS=		ssmtp
 
 SUB_FILES+=	pkg-message

@@ -16,9 +16,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		iconv gmake ncurses perl5 pkgconfig python:run shebangfix
+USES=		iconv gmake ncurses perl5 pkgconfig python:run shebangfix ssl
 USE_PERL5=	run
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --with-openssl
 CPPFLAGS+=	-I${LOCALBASE}/include

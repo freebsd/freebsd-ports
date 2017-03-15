@@ -983,7 +983,6 @@
     SUBDIR += traingame
     SUBDIR += tremulous
     SUBDIR += trenchbroom
-    SUBDIR += trigger-data
     SUBDIR += trigger-rally
     SUBDIR += trimines
     SUBDIR += triplane

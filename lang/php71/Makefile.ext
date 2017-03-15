@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=--enable-ftp \
 		--with-openssl-dir=${OPENSSLBASE}
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
-USE_OPENSSL=	yes
+USES+=		ssl
 .endif
 
 .if ${PHP_MODNAME} == "gd"
@@ -144,7 +144,7 @@ CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
 		--with-imap-ssl=${OPENSSLBASE}
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .if ${PHP_MODNAME} == "interbase"
@@ -210,7 +210,7 @@ CONFIGURE_ARGS+=--enable-odbc \
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .if ${PHP_MODNAME} == "opcache"
@@ -336,7 +336,7 @@ CONFIGURE_ENV+=	ac_cv_buggy_snprint_value="no"
 
 LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .if ${PHP_MODNAME} == "soap"

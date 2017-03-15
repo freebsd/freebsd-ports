@@ -9132,3 +9132,4 @@ misc/p5-Geo-Coder-Geocoder-US||2017-03-12|Has expired: http://geocoder.us/ disap
 databases/py-sqlalchemy09|databases/py-sqlalchemy10|2017-03-12|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
 devel/avr-gcc-devel||2017-03-13|Has expired: There's no longer a point to have both, a -devel and a regular port of GCC for the AVR
 net/py-pysimplesoap|net/py-soap2py|2017-03-13|Rename to match upstream naming
+games/trigger-data|games/trigger-rally|2017-03-15|Merged into games/trigger-rally

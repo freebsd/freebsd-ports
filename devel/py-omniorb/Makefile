@@ -28,12 +28,11 @@ PLIST_SUB=	SONUM=2
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-2//}
 OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
 
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
-USES=		gmake python tar:bzip2
+USES=		gmake python tar:bzip2 ssl
 
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} --with-omniorb=${LOCALBASE}

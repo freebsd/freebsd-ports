@@ -21,8 +21,7 @@ CONFLICTS_INSTALL=	cyrus-imapd-2.[^3].* cyrus-imapd2[^3]-2.[^3].* \
 
 USE_RC_SUBR=	imapd
 
-USES=		cpe perl5
-USE_OPENSSL=	yes
+USES=		cpe perl5 ssl
 GNU_CONFIGURE=	yes
 CYRUS_PREFIX=	${PREFIX}/cyrus
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \

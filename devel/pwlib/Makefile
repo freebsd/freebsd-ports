@@ -19,11 +19,10 @@ CONFLICTS=	ptlib-2.*
 
 WRKSRC=		${WRKDIR}/ptlib_v${PORTVERSION:S/./_/g}
 
-USES=		bison gmake
+USES=		bison gmake ssl
 USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
 WANT_GNOME=	yes
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 

@@ -162,7 +162,7 @@ PLIST_SUB+=	NUT_IPMIPSU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=	ssl
 CONFIGURE_ARGS+=	--with-openssl
 .else
 CONFIGURE_ARGS+=	--without-openssl --without-ssl

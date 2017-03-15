@@ -23,10 +23,9 @@ OPTIONS_DEFINE=	ESOUND YAHOO
 OPTIONS_SUB=	yes
 YAHOO_DESC=	Include Yahoo service
 
-USES=		gettext gmake iconv libtool pkgconfig shebangfix tar:bzip2
+USES=		gettext gmake iconv libtool pkgconfig shebangfix tar:bzip2 ssl
 USE_XORG=	xpm xscrnsaver
 USE_GNOME=	gtk20
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oscar --disable-workwizu --enable-smtp --enable-lj \
 		--disable-arts

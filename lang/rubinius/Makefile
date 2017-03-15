@@ -48,9 +48,8 @@ LLVM38_DESC=	LLVM 3.8
 LLVM39_DESC=	LLVM 3.9
 LLVM40_DESC=	LLVM 4.0
 
-USES=		execinfo gmake perl5 readline tar:bzip2 libedit
+USES=		execinfo gmake perl5 readline tar:bzip2 libedit ssl
 USE_LOCALE=	en_US.UTF-8
-USE_OPENSSL=	yes
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_PERL5=	build

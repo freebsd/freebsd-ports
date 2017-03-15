@@ -18,8 +18,7 @@ USE_GITHUB=	yes
 .if !defined (MASTERDIR)
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake gettext compiler:c++11-lib
-USE_OPENSSL=	yes
+USES=		cmake gettext compiler:c++11-lib ssl
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	LUA PCRE IDN DHT MINIUPNP

@@ -17,8 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	monitoring-plugins-*
 
-USES=		charsetfix gmake perl5 libtool
-USE_OPENSSL=	yes
+USES=		charsetfix gmake perl5 libtool ssl
 USE_SUBMAKE=	yes
 
 OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 NLS DBI EXTRAOPTS SSH_PORTABLE

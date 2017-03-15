@@ -15,10 +15,9 @@ LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 		libwwwcore.so:www/libwww \
 		libadns.so:dns/adns
 
-USES=		iconv libtool ncurses
+USES=		iconv libtool ncurses ssl
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 

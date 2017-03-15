@@ -16,8 +16,7 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		zip:archivers/zip \
 		p5-MIME-Base64>=0:converters/p5-MIME-Base64
 
-USES=		perl5 tar:xz shebangfix
-USE_OPENSSL=	yes
+USES=		perl5 tar:xz shebangfix ssl
 SHEBANG_FILES=	tinyca2
 NO_BUILD=	yes
 NO_ARCH=	yes

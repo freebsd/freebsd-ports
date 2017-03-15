@@ -81,7 +81,7 @@ ONIGURUMA_BUILD_DEPENDS=	${LOCALBASE}/lib/libonig.a:devel/oniguruma5
 ONIGURUMA_CONFIGURE_ENABLE=	oniguruma
 
 SSL_CONFIGURE_ENABLE=		ssl
-SSL_USE=			openssl=yes
+SSL_USES=			ssl
 
 .include <bsd.port.options.mk>
 

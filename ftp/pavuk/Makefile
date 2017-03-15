@@ -13,8 +13,7 @@ COMMENT=	HTTP, FTP, and Gopher mirroring tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase tar:bzip2
-USE_OPENSSL=	yes
+USES=		localbase tar:bzip2 ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-locale-dir=${PREFIX}/share/locale \
 		--disable-debug --disable-gnome --disable-js \

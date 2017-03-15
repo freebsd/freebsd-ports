@@ -11,6 +11,7 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	Pure interface to C++ STL map and vectors
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib pkgconfig pure
 

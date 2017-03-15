@@ -53,7 +53,7 @@ USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
-USE_OPENSSL=	yes
+USES+=		ssl
 USE_RC_SUBR=	proftpd
 .endif
 

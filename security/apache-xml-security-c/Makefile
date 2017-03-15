@@ -12,13 +12,11 @@ COMMENT=	Apache XML security libraries - C++ version
 
 LICENSE=	APACHE20
 
-USE_OPENSSL=	yes
-
 LIB_DEPENDS+=	libxerces-c.so.3:textproc/xerces-c3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-xerces=${LOCALBASE}
-USES=		gmake libtool tar:bzip2
+USES=		gmake libtool tar:bzip2 ssl
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 

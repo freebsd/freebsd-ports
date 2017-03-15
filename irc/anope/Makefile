@@ -56,7 +56,7 @@ PLIST_SUB+=	MYSQL="@comment "
 
 .if ${PORT_OPTIONS:MOPENSSL}
 PLIST_SUB+=	OPENSSL=""
-OPENSSL_USE=	openssl=yes
+USES+=		ssl
 .else
 PLIST_SUB+=	OPENSSL="@comment "
 .endif

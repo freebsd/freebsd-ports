@@ -15,8 +15,7 @@ BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		cmake python:2 tar:bzip2
-USE_OPENSSL=	yes
+USES=		cmake python:2 tar:bzip2 ssl
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		EXAMPLES GCRYPT ICU

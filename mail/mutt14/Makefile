@@ -43,7 +43,7 @@ MUTT_XFACE_DESC=	Adds mutt X-Face support
 MUTT_FLOCK_DESC=	Use flock() for file locks
 MUTT_ICONV_DESC=	Enable mutt's iconv character conversion feature
 
-USE_OPENSSL=	yes
+USES+=	ssl
 
 .if defined (MUTT_LITE)
 PKGNAMESUFFIX=	14-lite

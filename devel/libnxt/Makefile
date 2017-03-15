@@ -4,14 +4,10 @@
 PORTNAME=	libnxt
 PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libnxt/
 
 MAINTAINER=	bacon4000@gmail.com
 COMMENT=	Lego NXT library
-
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
 
 SUB_FILES=	pkg-message
 USES=		python:build scons shebangfix

@@ -23,8 +23,7 @@ NORELRO_PORTS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
-USES=		autoreconf compiler:c11 gmake pathfix pkgconfig
-USE_OPENSSL=	yes
+USES=		autoreconf compiler:c11 gmake pathfix pkgconfig ssl
 GNU_CONFIGURE=	yes
 AUTOMAKE_ARGS=	--gnu --add-missing --copy
 CONFIGURE_ARGS+=	CFLAGS="-I${LOCALBASE}/include"

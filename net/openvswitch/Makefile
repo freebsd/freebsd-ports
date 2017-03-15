@@ -11,9 +11,8 @@ COMMENT=	Production quality, multilayer virtual switch
 
 LICENSE=	APACHE20
 
-USES=		cpe gmake libtool perl5 pkgconfig python shebangfix
+USES=		cpe gmake libtool perl5 pkgconfig python shebangfix ssl
 SHEBANG_FILES=	vtep/ovs-vtep
-USE_OPENSSL=	yes
 USE_LDCONFIG=   yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --localstatedir=/var \
