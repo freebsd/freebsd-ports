@@ -5,4 +5,4 @@
 PATH="%%LINUXBASE%%/usr/bin:${PATH}"
 export PATH
 
-exec '%%PREFIX%%/%%PORTNAME%%/arduino' $@
+exec "%%PREFIX%%/%%PORTNAME%%/arduino" "$@"
