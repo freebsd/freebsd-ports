@@ -9,6 +9,7 @@ MAINTAINER=	z7dr6ut7gs@snkmail.com
 COMMENT=	C++ library for handling dates, times, and time zones
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes

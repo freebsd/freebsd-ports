@@ -13,4 +13,4 @@ _ The Time-Zone Library - This library uses the IANA time zone
   _absolute time_ and _civil time_. This library is declared in
   time_zone.h.
 
-WWW: http://github.com/google/cctz
+WWW: https://github.com/google/cctz
