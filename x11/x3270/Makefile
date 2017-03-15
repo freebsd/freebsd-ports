@@ -29,7 +29,7 @@ LIBS+=		-L${LOCALBASE}/lib
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--disable-ssl
 .else
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 MAKE_ARGS+=	COMPRESSMANCMD="${DO_NADA}" \
 		INSTALL="${INSTALL}" INSTALLFLAGS="${COPY}" \

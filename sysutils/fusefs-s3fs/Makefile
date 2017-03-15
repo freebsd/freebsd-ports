@@ -19,9 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	s3fs-fuse
 GH_PROJECT=	s3fs-fuse
 
-USES=		autoreconf fuse pkgconfig
+USES=		autoreconf fuse pkgconfig ssl
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/s3fs man/man1/s3fs.1.gz
 

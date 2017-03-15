@@ -14,8 +14,7 @@ COMMENT=	Clone of Mdir, mc-style terminal file manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext pkgconfig gmake libtool ncurses
-USE_OPENSSL=	yes
+USES=		gettext pkgconfig gmake libtool ncurses ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cfgpath="${ETCDIR}"
 MAKE_JOBS_UNSAFE=	yes

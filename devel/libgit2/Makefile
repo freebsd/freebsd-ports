@@ -13,9 +13,8 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	libgit2
 
-USES=		cmake pathfix pkgconfig python:build
+USES=		cmake pathfix pkgconfig python:build ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_VER=${PORTVERSION:R:E}
 

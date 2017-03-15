@@ -15,8 +15,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-USES=		cmake:outsource jpeg
+USES=		cmake:outsource jpeg ssl
 CMAKE_ARGS+=	-DDCMTK_WITH_DOXYGEN:BOOL=OFF \
 		-DDCMTK_WITH_OPENSSL:BOOL=ON
 

@@ -16,8 +16,7 @@ OPTIONS_DEFINE=	DOCS
 
 CFLAGS=		-I${OPENSSLINC}
 LDFLAGS=	-L${OPENSSLLIB} -lmd -lssl
-USES=		tar:xz
-USE_OPENSSL=	yes
+USES=		tar:xz ssl
 
 PORTDOCS=	ChangeLog
 

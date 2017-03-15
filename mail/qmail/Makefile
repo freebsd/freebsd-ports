@@ -18,7 +18,7 @@ DIST_SUBDIR=	qmail
 CONFLICTS?=	qmail-ldap-[0-9]* *qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* *qmail-tls-[0-9]*
 CONFLICTS+=	qmail-vida-[0-9]*
 
-USES=		qmail:vars fakeroot
+USES+=		qmail:vars fakeroot
 PREFIX?=	${QMAIL_PREFIX}
 PLIST_SUB+=	QMAIL_PREFIX="${PREFIX}"
 

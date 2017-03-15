@@ -48,8 +48,7 @@ GDCM_PATCH=	3
 VTK5_VERSION=	5.10
 VTK6_VERSION=	6.2
 
-USES=		alias cmake:outsource tar:bzip2
-USE_OPENSSL=	yes
+USES=		alias cmake:outsource tar:bzip2 ssl
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS=	-DGDCM_USE_SYSTEM_OPENSSL:BOOL=ON \

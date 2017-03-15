@@ -39,7 +39,7 @@ NLS_USES=		gettext
 
 GNUTLS_CONFIGURE_ON=	--with-ssl=gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-OPENSSL_VARS=		USE_OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--with-ssl=openssl
 OPENSSL_CONFIGURE_ENV=	libssl_CFLAGS="-I${OPENSSLINC}" \
 			libssl_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"

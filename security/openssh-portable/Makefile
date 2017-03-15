@@ -17,9 +17,8 @@ COMMENT=	The portable version of OpenBSD's OpenSSH
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel-*
 
-USES=			alias ncurses
+USES=			alias ncurses ssl
 USE_AUTOTOOLS=		autoconf autoheader
-USE_OPENSSL=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		ac_cv_func_strnvis=no
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \

@@ -53,7 +53,7 @@ PSL_LIB_DEPENDS=	libpsl.so:dns/libpsl
 CONFIGURE_ARGS+=--with-included-libunistring
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 CONFIGURE_ARGS+=--with-ssl=openssl --with-libssl-prefix=${OPENSSLBASE}
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}

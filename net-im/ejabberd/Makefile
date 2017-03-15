@@ -25,7 +25,7 @@ USERS=		ejabberd
 GROUPS=		${USERS}
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake pkgconfig shebangfix
+USES=		cpe gmake pkgconfig shebangfix ssl
 USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 CPE_VENDOR=	process-one
@@ -70,8 +70,6 @@ SQLITE_USES=		sqlite
 ICONV_USES=		iconv:wchar_t
 ICONV_LDFLAGS=		${ICONV_LIB}
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
-
-USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 

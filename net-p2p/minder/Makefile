@@ -14,9 +14,8 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libSockets.so:net/Sockets
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig ssl
 USE_GNOME=	libxml2
-USE_OPENSSL=	yes
 
 CFLAGS+=	-DHAVE_OPENSSL
 CPPFLAGS+=	$$(pkg-config --cflags libxml-2.0) \

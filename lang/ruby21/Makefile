@@ -36,8 +36,7 @@ GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-USES=		autoreconf cpe execinfo tar:xz
+USES=		autoreconf cpe execinfo tar:xz ssl
 WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=		2.1

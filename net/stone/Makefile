@@ -14,12 +14,13 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.3d-2.3.2.7
 
 USE_RC_SUBR=	stone
-USE_OPENSSL=	yes
+.if !defined(WITHOUT_SSL)
+USES=		ssl
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_SSL)
-.undef USE_OPENSSL
 ALL_TARGET=	bsd-pop
 MAKE_ARGS=	POP_LIBS="-lmd" LIBS="-DUNIX_DAEMON"
 post-extract:

@@ -14,9 +14,8 @@ COMMENT=	Milter for BATV (Bounce Address Tag Validation)
 BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:mail/libmilter
 .endif
 
-USES=		uidfix
+USES=		uidfix ssl
 USE_RC_SUBR=	milter-batv
-USE_OPENSSL=	TRUE
 
 MAKE_ARGS=	UBINOWN=${UID} UBINGRP=${GID}
 

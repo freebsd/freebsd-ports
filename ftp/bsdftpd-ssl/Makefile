@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.sourcefiles.org/System/Daemons/FTP/ \
 MAINTAINER=	skynick@mail.sc.ru
 COMMENT=	Secure FTP client/server with TLS/SSL support
 
-USE_OPENSSL=	yes
+USES=		ssl
 MAKE_ENV+=	OBJFORMAT=elf
 MAKE_JOBS_UNSAFE=	yes
 

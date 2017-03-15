@@ -15,9 +15,8 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
 		p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 ssl
 USE_PERL5=	configure
-USE_OPENSSL=	yes
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 
 regression-test: build

@@ -19,14 +19,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
-USES=		cpe gmake shebangfix tar:xz
+USES=		cpe gmake shebangfix tar:xz ssl
 SHEBANG_FILES=	fetchmailconf.py
 
 USE_RC_SUBR=	fetchmail
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 		--without-hesiod --enable-fallback=no \
 		--with-ssl=${OPENSSLBASE}

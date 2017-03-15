@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--with-ucdsnmp=no
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=		yes
+USES+=	ssl
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--with-openssl=no

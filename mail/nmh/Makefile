@@ -61,7 +61,7 @@ OPTIONS_DEFAULT=	SMTP FLOCK
 
 .if ${PORT_OPTIONS:MTLS}
 CONFIGURE_ARGS+=	--with-tls
-USE_OPENSSL=	yes
+USES+=			ssl
 .endif
 
 .if defined(WITH_DEBUG)

@@ -17,8 +17,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libmozjs-24.so:lang/spidermonkey24 \
 		libcurl.so:ftp/curl
 
-USE_OPENSSL=	yes
-USES=		compiler:c11 readline zip
+USES=		compiler:c11 readline zip ssl
 
 OPTIONS_DEFINE=	DOCS
 

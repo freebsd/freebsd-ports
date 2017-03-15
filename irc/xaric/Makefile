@@ -10,8 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC Client similer to BitchX or ircII
 
 GNU_CONFIGURE=	yes
-USES=		gmake ncurses pathfix
-USE_OPENSSL=	yes
+USES=		gmake ncurses pathfix ssl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ggdb3||g' ${WRKSRC}/Makefile.in
