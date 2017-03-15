@@ -30,7 +30,7 @@ GCRYPT_CONFIGURE_ON=	--with-libgcrypt
 GCRYPT_CONFIGURE_OFF=	--with-openssl
 GCRYPT_CPPFLAGS=	-I${LOCALBASE}/include
 GCRYPT_LIBS=		-L${LOCALBASE}/lib
-GCRYPT_USE_OFF=	openssl=yes
+GCRYPT_USES_OFF=	ssl
 ZLIB_CONFIGURE_WITH=	libz
 
 .include <bsd.port.pre.mk>
