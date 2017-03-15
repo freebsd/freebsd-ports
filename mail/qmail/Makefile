@@ -377,7 +377,7 @@ CONFIGUREPROGRAMS=	dnsfq hostname dnsip ipmeprint dnsptr
 CONFIGURESCRIPTS=	config config-fast
 
 .if defined(SLAVE_LDAP)
-TLS_USE=	OPENSSL=yes
+TLS_USES=		ssl
 .endif
 
 # Port will control all PREFIX handling.

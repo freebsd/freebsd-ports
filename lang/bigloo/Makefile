@@ -66,7 +66,7 @@ GSTREAMER_USE=		GSTREAMER=yes
 GSTREAMER_CONFIGURE_OFF=--disable-gstreamer
 MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 MPG123_CONFIGURE_OFF=	--disable-mpg123
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_OFF=	--disable-ssl
 SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_OFF=	--disable-pkglib --disable-sqlite

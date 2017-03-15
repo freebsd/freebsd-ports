@@ -32,7 +32,7 @@ OPTIONS_SUB=	yes
 
 ALIAS_CONFIGURE_ENABLE=	alias
 
-SSL_USE=	OPENSSL=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--with-openssl \
 			--with-openssl-include=${OPENSSLINC} \
 			--with-openssl-lib=${OPENSSLLIB}

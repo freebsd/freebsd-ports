@@ -27,7 +27,7 @@ ARGS_DESC=	Enable command argument processing
 NAGPLUGINS_DESC=Use net-mgmt/nagios-plugins
 MONPLUGINS_DESC=Use net-mgmt/monitoring-plugins
 
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--enable-ssl --with-ssl=${OPENSSLDIR} \
 			--with-ssl-inc=${OPENSSLINC} \
 			--with-ssl-lib=${OPENSSLLIB}

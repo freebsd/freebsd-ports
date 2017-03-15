@@ -56,7 +56,7 @@ XML_DESC=	Support XML based playlists (XSPF, RSS)
 
 OPTIONS_SUB=	yes
 
-AIRPLAY_USE=		OPENSSL=yes
+AIRPLAY_USES=		ssl
 AIRPLAY_CONFIGURE_OFF=	--without-plugins="airplay"
 
 AO_LIB_DEPENDS=		libao.so:audio/libao
