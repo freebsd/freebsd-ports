@@ -3,7 +3,14 @@
 PORTNAME=	fb-adb
 DISTVERSION=	1.4.4-126
 DISTVERSIONSUFFIX=	-g6fd78ae
+PORTREVISION=	1
 CATEGORIES=	devel comms
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	1b5524282981.patch:-p1 \
+		8f532a9ee3a3.patch:-p1 \
+		a25602788c1b.patch:-p1 \
+		${NULL}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Better shell for Android devices
