@@ -20,7 +20,7 @@ PLIST_FILES=	man/man1/mmc.1.gz sbin/mmc
 .include <bsd.port.pre.mk>
 
 .if (${OPSYS} == FreeBSD && \
-	${OSVERSION} < 1200025)) || \
+	${OSVERSION} < 1200025) || \
 	${OPSYS} == DragonFly
 IGNORE=		only supported on recent OS versions
 .endif
