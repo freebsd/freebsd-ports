@@ -12,6 +12,6 @@ COMMENT=	Useful extra bits for Python
 LICENSE=	MIT
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils py3kplist
 
 .include <bsd.port.mk>
