@@ -13,7 +13,7 @@ COMMENT=	Python packages installer
 LICENSE=	PSFL
 
 NO_ARCH=	yes
-USES=		python
+USES?=		python:2.7
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_SETUP=	${PYSETUP}

@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170316:
+  AFFECTS: users of python setuptools
+  AUTHOR: antoine@FreeBSD.org
+
+  The python setuptools ports have been renamed to better match other python ports.
+  Ports users need to rename them so that portupgrade and portmaster do not
+  get confused.  For example:
+
+    pkg set -n py27-setuptools27:py27-setuptools
+    pkg set -o devel/py-setuptools27:devel/py27-setuptools
+  or
+    pkg set -n py35-setuptools35:py35-setuptools
+    pkg set -o devel/py-setuptools35:devel/py35-setuptools
+
 20170312:
   AFFECTS: users of textproc/ack
   AUTHOR: sunpoet@FreeBSD.org
