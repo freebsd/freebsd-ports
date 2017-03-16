@@ -1,5 +1,5 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/security/openssl/Makefile 424879 2016-10-28 20:05:48Z brnrd $
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.2j
@@ -66,6 +66,8 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
 SUB_FILES=	pkg-message
 
+MAKE_JOBS_UNSAFE=	yes
+
 ASM_CONFIGURE_OFF=	no-asm
 EC_CONFIGURE_ON=	enable-ec_nistp_64_gcc_128
 EC_CONFIGURE_OFF=	no-ec_nistp_64_gcc_128
@@ -87,7 +89,7 @@ SCTP_CONFIGURE_OFF=	no-sctp
 SHARED_CONFIGURE_ON=	shared
 SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_PLIST_SUB=	SHLIBVER=${OPENSSL_SHLIBVER}
-SHARED_USE=		ldconfig
+SHARED_USE=		ldconfig=yes
 SSE2_CONFIGURE_OFF=	no-sse2
 SSL2_CONFIGURE_ON=	enable-ssl2
 SSL2_CONFIGURE_OFF=	no-ssl2
@@ -129,7 +131,7 @@ post-patch:
 
 post-patch-MAN3-off:
 	${GREP} -L openssl_manual_section ${WRKSRC}/doc/crypto/*.pod | ${XARGS} ${RM}
-	${RM} -rf ${WRKSRC}/doc/ssl/*.pod
+	${RM} -r ${WRKSRC}/doc/ssl/*.pod
 	${REINPLACE_CMD} -e 's|pod doc/ssl/\*\.pod|pod|' ${WRKSRC}/Makefile.org
 
 do-configure:

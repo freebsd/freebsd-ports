@@ -1,8 +1,9 @@
 # Created by: Peter Schuller <peter.schuller@infidyne.com>
-# $FreeBSD$
+# $FreeBSD: head/devel/py-gevent/Makefile 431377 2017-01-13 14:43:45Z sunpoet $
 
 PORTNAME=	gevent
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libev.so:devel/libev
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.9:devel/py-greenlet
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.9:devel/py-greenlet \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.10:devel/py-greenlet
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.4.10:devel/py-greenlet \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
 
 DO_MAKE_TEST=	${SETENV} PYTHONPATH=../ ${PYTHON_CMD}
@@ -26,7 +27,14 @@ TEST_WRKSRC=	${WRKSRC}/greentest
 USE_PYTHON=	autoplist concurrent distutils
 USES=		localbase python
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gevent/*.so
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-patch:
+.if ${PYTHON_REL} >= 3000
+	@${RM} ${WRKSRC}/src/gevent/_util_py2.py
+.endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gevent/*.so ${STAGEDIR}${PYTHON_SITELIBDIR}/gevent/libev/corecext.so
+
+.include <bsd.port.post.mk>

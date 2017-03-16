@@ -1,5 +1,5 @@
 # Created by: Matt Peterson <matt@peterson.org>
-# $FreeBSD$
+# $FreeBSD: head/net-mgmt/collectd5/Makefile 414458 2016-05-02 16:08:56Z zeising $
 
 PORTNAME=	collectd
 PORTVERSION=	5.6.0
@@ -22,12 +22,12 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 USES=		autoreconf gmake libtool pkgconfig shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		CGI DEBUG GCRYPT LOGSTASH VIRT
+OPTIONS_DEFINE=		CGI DEBUG GCRYPT LIBDTRACE LIBZFS LOGSTASH VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
 OPTIONS_GROUP_OUTPUT=	KAFKA MONGODB NOTIFYDESKTOP NOTIFYEMAIL RIEMANN RRDTOOL \
 			TSDB
-OPTIONS_GROUP_INPUT=	CHRONY CURL CURL_JSON CURL_XML DBI IPMI JSON \
-			MEMCACHEC MODBUS MQTT MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP \
+OPTIONS_GROUP_INPUT=	CHRONY CURL CURL_JSON CURL_XML DBI IPMI JSON MEMCACHEC \
+			MODBUS MQTT MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP \
 			PERL PGSQL PINBA PING PYTHON RABBITMQ REDIS ROUTEROS \
 			SIGROK SNMP STATSD TOKYOTYRANT VARNISH XML \
 			XMMS ZOOKEEPER
@@ -43,6 +43,8 @@ GCRYPT_DESC=		Build with libgcrypt
 IPMI_DESC=		Enable OpenIPMI plugin
 JSON_DESC=		Enable JSON plugins
 KAFKA_DESC=		Enable write_kafka plugin
+LIBDTRACE_DESC=	Build with LibDTrace
+LIBZFS_DESC=	Build with LibZFS
 LOGSTASH_DESC=		Enable log_logstash plugin (requires json)
 MEMCACHEC_DESC=		Enable memcachec plugin
 MODBUS_DESC=		Enable modbus plugin
@@ -279,12 +281,16 @@ CONFIGURE_ARGS+=--enable-aggregation \
 		--enable-apcups \
 		--enable-contextswitch \
 		--enable-cpu \
+		--enable-cputemp \
 		--enable-csv \
+		--enable-ctl \
 		--enable-df \
+		--enable-disk \
 		--enable-dns \
 		--enable-email \
 		--enable-exec \
 		--enable-filecount \
+		--enable-geom-stat \
 		--enable-interface \
 		--enable-load \
 		--enable-logfile \
@@ -297,6 +303,7 @@ CONFIGURE_ARGS+=--enable-aggregation \
 		--enable-memcached \
 		--enable-memory \
 		--enable-network \
+		--enable-nfsstat \
 		--enable-ntpd \
 		--enable-openvpn \
 		--enable-powerdns \
@@ -324,18 +331,19 @@ CONFIGURE_ARGS+=--enable-aggregation \
 		--enable-write_graphite \
 		--enable-write_log \
 		--enable-zfs_arc \
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-PLIST_SUB+=	DISK="@comment "
-.else
-CONFIGURE_ARGS+=--enable-disk
-PLIST_SUB+=	DISK=""
-.endif
+		--enable-zfs_arc_v2 \
 
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	contrib/collection.cgi
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLIBZFS} && exists(/usr/lib/libzfs.so) && exists(/usr/lib/libzfs_core.so)
+CONFIGURE_ARGS+=	--with-libzfs
+.endif
+.if ${PORT_OPTIONS:MLIBDTRACE} && exists(/usr/lib/libdtrace.so)
+CONFIGURE_ARGS+=	--with-libdtrace
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's/-Werror//' \

@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/security/vault/Makefile 415987 2016-05-28 13:12:45Z swills $
 
 PORTNAME=	vault
 PORTVERSION=	0.5.3

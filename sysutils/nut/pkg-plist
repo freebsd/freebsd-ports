@@ -45,6 +45,7 @@ lib/libupsclient.so.4.0.0
 libdata/pkgconfig/libnutclient.pc
 libdata/pkgconfig/libnutscan.pc
 libdata/pkgconfig/libupsclient.pc
+libexec/nut/driver.list
 %%NUT_SERIAL%%libexec/nut/al175
 %%NUT_SERIAL%%libexec/nut/apcupsd-ups
 %%NUT_USB%%libexec/nut/nutdrv_atcl_usb

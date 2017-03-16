@@ -18,17 +18,6 @@
  '--online_check_url &#60;srv_name[:port] url&#62;': server name, optional port, and url to reach to confirm online status.<br><br>
  '--status_interval &#60;#&#62;': seconds [30..864000] interval at which to check online status, default 600.<br><br>
  '--alert_retries &#60;#&#62;':  network retries before audible network status alerts. [0..100], default 0.<br><br>
-@@ -388,8 +388,8 @@ DEFAULT value is intended for default se
- &nbsp;&nbsp;&nbsp;&nbsp;representing custom DDNS server non-fatal update failure return values, e.g., "dnserr,911,unknown error".<br><br>
- '--svr_ip_param &#60;custom DDNS server ip name parameter&#62;':  Optional for custom DDNS updates.  DDNS url parameter for ip address,<br> &nbsp;&nbsp;&nbsp;&nbsp;e.g., myip.<br><br>
- '--svr_ip_in_rsp': Optional for custom DDNS updates.  Flag that custom DDNS server returns your ip address on update success.<br> &nbsp;&nbsp;&nbsp;&nbsp;Defaults to false.<br><br>
--'--svr_add_cfg &#60;full path, file name&#62;': Additional servers file.  Default search for servers_additional.cfg in ./extra, /etc, /etc/inadyn-mt,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
--/etc/inadyn-mt/extra.  Contains additional preconfigured DDNS servers to be used as --dyndns_system option parameter in same<br>&nbsp;&nbsp;&nbsp;&nbsp;
-+'--svr_add_cfg &#60;full path, file name&#62;': Additional servers file.  Default search for servers_additional.cfg in ./extra, %%PREFIX%%/etc, %%PREFIX%%/etc/inadyn-mt,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
-+%%PREFIX%%/etc/inadyn-mt/extra.  Contains additional preconfigured DDNS servers to be used as --dyndns_system option parameter in same<br>&nbsp;&nbsp;&nbsp;&nbsp;
- fashion as servers inadyn-mt supports natively.  Should appear before any dyndns_system option in inadyn-mt.conf or command<br>&nbsp;&nbsp;&nbsp;&nbsp;
- line if not using inadyn-mt.conf.<br><br>
- '--if &#60;network interface name&#62;':  Name of network interface to use for ip server, and DDNS server comm.  Defaults to<br> &nbsp;&nbsp;&nbsp;&nbsp;system configured default.<br><br>
 @@ -412,7 +412,7 @@ There are two cache files: inadyn_time.c
    
    3. Update freedns.afraid.org, every minute, in daemon mode, with configuration read from file.<br><br>

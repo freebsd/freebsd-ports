@@ -171,6 +171,7 @@ pre-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${STATEDIR}
+	${CP} ${STAGEDIR}${ETCDIR}/driver.list ${STAGEDIR}${PREFIX}/libexec/nut/
 .if ${PORT_OPTIONS:MDOCS}
 .if ${PORT_OPTIONS:MBASH}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/

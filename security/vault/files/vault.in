@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD$
+# $FreeBSD: head/security/vault/files/vault.in 390897 2015-06-29 13:38:25Z swills $
 #
 # PROVIDE: vault
 # REQUIRE: LOGIN

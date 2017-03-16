@@ -1,6 +1,6 @@
---- src/daemon/collectd.h.orig	2016-09-11 08:10:25 UTC
-+++ src/daemon/collectd.h
-@@ -243,15 +243,15 @@ typedef int _Bool;
+--- src/daemon/collectd.h.orig	2016-12-05 23:16:57.702128468 -0500
++++ src/daemon/collectd.h	2016-12-05 23:18:17.932123583 -0500
+@@ -243,15 +243,15 @@
  #endif
  
  #ifndef LOCALSTATEDIR

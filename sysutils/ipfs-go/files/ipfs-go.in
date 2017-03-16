@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: head/sysutils/ipfs-go/files/ipfs-go.in 402790 2015-12-01 21:46:03Z kmoore $
 #
 
 # PROVIDE: ipfs_go

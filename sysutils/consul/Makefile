@@ -1,12 +1,10 @@
-# $FreeBSD$
+# $FreeBSD: head/sysutils/consul/Makefile 426106 2016-11-14 14:45:04Z swills $
 
 PORTNAME=	consul
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.7.1
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	https://releases.hashicorp.com/consul/${PORTVERSION}/:web_ui
-DISTFILES=	consul_${PORTVERSION}_web_ui.zip:web_ui
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Service discovery and configuration made easy
@@ -33,14 +31,11 @@ post-extract:
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/consul; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build \
-		-ldflags "-X main.GitDescribe=v${PORTVERSION}" -o bin/consul
+		-ldflags "-X github.com/hashicorp/consul/version.GitDescribe=v${PORTVERSION}" \
+		-o bin/consul
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/consul/bin/consul ${STAGEDIR}${PREFIX}/bin/consul
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${MKDIR} ${WRKDIR}/dist
-	${MV} ${WRKDIR}/index.html ${WRKDIR}/static ${WRKDIR}/dist
-	cd ${WRKDIR}/dist && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.pre.mk>
 

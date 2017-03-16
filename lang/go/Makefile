@@ -1,8 +1,8 @@
 # Created by: Devon H. O'Dell <devon.odell@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/lang/go/Makefile 434383 2017-02-18 21:30:15Z jlaffaye $
 
 PORTNAME=	go
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
@@ -26,6 +26,9 @@ sh_CMD=		${SH}
 WRKSRC=		${WRKDIR}/go
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 
+OPTIONS_DEFINE=	GO387
+GO387_DESC=	Do not generate code with SSE2 (for old x86 CPU)
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -38,6 +41,11 @@ GOARCH=arm
 IGNORE=		unknown arch ${ARCH}
 .endif
 
+.if ${PORT_OPTIONS:MGO387}
+.error wat
+GO386=387
+.endif
+
 PLIST_SUB+=	opsys_ARCH=${OPSYS:tl}_${GOARCH}
 
 post-patch:
@@ -45,11 +53,10 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC}/src && \
-		CC=${CC} \
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go \
 		GOROOT_BOOTSTRAP=${LOCALBASE}/go14 \
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
-		GO386=387 \
+		GO386=${GO386} \
 		${SH} make.bash
 
 do-install:

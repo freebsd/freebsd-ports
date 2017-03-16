@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/net/py-s3transfer/Makefile 422159 2016-09-14 19:47:43Z pawel $
 
 PORTNAME=	s3transfer
 PORTVERSION=	0.1.4

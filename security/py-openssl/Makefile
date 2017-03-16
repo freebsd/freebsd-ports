@@ -1,8 +1,8 @@
 # Created by: ijliao
-# $FreeBSD$
+# $FreeBSD: head/security/py-openssl/Makefile 422634 2016-09-22 16:15:32Z amdmi3 $
 
 PORTNAME=	openssl
-PORTVERSION=	16.0.0
+PORTVERSION=	16.2.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

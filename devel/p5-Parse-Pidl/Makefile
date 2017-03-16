@@ -12,12 +12,12 @@ COMMENT=		IDL compiler written in Perl
 
 LICENSE=		GPLv3
 
-BUILD_DEPENDS=		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
+BUILD_DEPENDS=		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 CONFLICTS=
 
-SAMBA4_PORT?=		samba43
+SAMBA4_PORT?=		samba45
 SAMBA4_SUBPORT=		yes
 
 MASTERDIR=		${.CURDIR}/../../net/${SAMBA4_PORT}
@@ -26,9 +26,12 @@ PKGDIR=			${.CURDIR}
 USES=			perl5
 USE_PERL5=		configure
 PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}
-WRKSRC=			${WRKDIR}/${DISTNAME}/pidl
 
 post-extract:
 			@${RM} -rf ${WRKSRC}/lib/Parse/Yapp ${WRKSRC}/lib/wscript_build
 
 .include "${MASTERDIR}/Makefile"
+
+# Ugly hack
+WRKSRC=			/usr/samba_src/pidl
+DISTNAME=		${SAMBA4_BASENAME}-4-5-stable

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sphinx_numfig
-PORTVERSION=	r13
+PORTVERSION=	0.1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://sourceforge.net/projects/numfig/files/latest/download/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kris@FreeBSD.org
@@ -14,14 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx
 
-USES=		python tar:tgz
-NO_BUILD=	yes
-SPHINXDIR=	${PYTHON_LIBDIR}/site-packages/sphinx
-PLIST_FILES=	${SPHINXDIR}/ext/numfig.py ${SPHINXDIR}/ext/numfig.pyc
-
-do-install:
-	cd ${WRKDIR}/sphinx_numfig-r13 && \
-		${MKDIR} ${STAGEDIR}${SPHINXDIR}/ext && \
-		${PYTHON_CMD} setup.py install ${STAGEDIR}${SPHINXDIR} ${SPHINXDIR}/ext
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

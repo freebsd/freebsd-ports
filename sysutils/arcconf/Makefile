@@ -1,5 +1,5 @@
 # Created by: michael@fuckner.net
-# $FreeBSD$
+# $FreeBSD: head/sysutils/arcconf/Makefile 412349 2016-04-01 14:25:16Z mat $
 
 PORTNAME=	arcconf
 DISTVERSION=	v1_8_21375
@@ -10,6 +10,8 @@ DISTNAME=	arcconf_${DISTVERSION}
 
 MAINTAINER=	michael@fuckner.net
 COMMENT=	Adaptec SCSI/SAS RAID administration tool
+
+RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 
 ONLY_FOR_ARCHS=	i386 amd64
 

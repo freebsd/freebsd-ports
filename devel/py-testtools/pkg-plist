@@ -1,9 +1,6 @@
 %%PYTHON_SITELIBDIR%%/testtools/__init__.py
 %%PYTHON_SITELIBDIR%%/testtools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/testtools/__init__.pyo
-%%PYTHON_SITELIBDIR%%/testtools/_compat2x.py
-%%PYTHON_SITELIBDIR%%/testtools/_compat2x.pyc
-%%PYTHON_SITELIBDIR%%/testtools/_compat2x.pyo
 %%PYTHON_SITELIBDIR%%/testtools/_compat3x.py
 %%PYTHON_SITELIBDIR%%/testtools/_compat3x.pyc
 %%PYTHON_SITELIBDIR%%/testtools/_compat3x.pyo

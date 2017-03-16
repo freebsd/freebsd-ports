@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -215,7 +215,7 @@ CONFLICTS=	ucd-snmp-4.* net-snmp-5.3.*
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} != base
+.if defined(WITH_OPENSSL_PORT) || defined(OPENSSL_PORT)
 LCRYPTO=	-lcrypto
 .else
 LCRYPTO=
