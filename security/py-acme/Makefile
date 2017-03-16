@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.8:security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}pyrfc3339>0:devel/py-pyrfc3339 \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
-		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>=1.0:devel/py-setuptools${PYTHON_SUFFIX} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=1.0:devel/${PYTHON_PKGNAMEPREFIX}setuptools \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}funcsigs>0:devel/py-funcsigs \

@@ -1,10 +1,8 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PKGNAMESUFFIX=	${PYTHON_SUFFIX}
+MASTERDIR=	${.CURDIR}/../py27-setuptools
 
-PYTHON_VERSION=	python3.5
-
-MASTERDIR=	${.CURDIR}/../py-setuptools
+USES=		python:3.4
 
 .include "${MASTERDIR}/Makefile"

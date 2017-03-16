@@ -33,7 +33,7 @@ RUN_DEPENDS+=	7z:archivers/p7zip     \
 		${PYTHON_PKGNAMEPREFIX}pycurl>0:ftp/py-pycurl             \
 		${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot         \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml               \
-		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy                   \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib         \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml                    \

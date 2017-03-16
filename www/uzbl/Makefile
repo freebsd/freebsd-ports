@@ -12,7 +12,7 @@ COMMENT=	Web interface tools which adhere to the unix philosophy
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
 LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2  \

@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme==${PKGVERSION}:security/py-acme \
 		${PYTHON_PKGNAMEPREFIX}pyrfc3339>0:devel/py-pyrfc3339 \
 		${PYTHON_PKGNAMEPREFIX}python2-pythondialog>=3.2.2r1:devel/py-python2-pythondialog \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
-		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>=1.0:devel/py-setuptools${PYTHON_SUFFIX} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=1.0:devel/${PYTHON_PKGNAMEPREFIX}setuptools \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface \

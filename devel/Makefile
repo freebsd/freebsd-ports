@@ -4675,13 +4675,7 @@
     SUBDIR += py-semantic_version
     SUBDIR += py-serpent
     SUBDIR += py-setproctitle
-    SUBDIR += py-setuptools
     SUBDIR += py-setuptools-git
-    SUBDIR += py-setuptools27
-    SUBDIR += py-setuptools33
-    SUBDIR += py-setuptools34
-    SUBDIR += py-setuptools35
-    SUBDIR += py-setuptools36
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
     SUBDIR += py-setuptools_scm
@@ -4902,6 +4896,7 @@
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zope.viewlet
+    SUBDIR += py27-setuptools
     SUBDIR += py3-Jinja2
     SUBDIR += py3-babel
     SUBDIR += py3-click
@@ -4941,6 +4936,10 @@
     SUBDIR += py3-wcwidth
     SUBDIR += py3-xdg
     SUBDIR += py3-yaml
+    SUBDIR += py33-setuptools
+    SUBDIR += py34-setuptools
+    SUBDIR += py35-setuptools
+    SUBDIR += py36-setuptools
     SUBDIR += py_static_check
     SUBDIR += pybugz
     SUBDIR += pychecker
@@ -5198,7 +5197,6 @@
     SUBDIR += rubygem-deprecated2
     SUBDIR += rubygem-descendants_tracker
     SUBDIR += rubygem-devise
-    SUBDIR += rubygem-devise-rails4
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-docile
@@ -5495,6 +5493,7 @@
     SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-simplecov
     SUBDIR += rubygem-slack-notifier
+    SUBDIR += rubygem-slack-notifier1
     SUBDIR += rubygem-slim
     SUBDIR += rubygem-slop
     SUBDIR += rubygem-slop3

@@ -13,7 +13,7 @@ COMMENT=	Plugin to integrate Ansible with ploy
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools \
 		${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:sysutils/py-ploy \
 		${PYTHON_PKGNAMEPREFIX}execnet>0:sysutils/py-execnet \
 		ansible1<2.0:sysutils/ansible1

@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	slack-notifier
-PORTVERSION=	2.1.0
+PORTVERSION=	1.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby wrapper for posting to slack webhooks
