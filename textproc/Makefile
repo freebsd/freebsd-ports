@@ -1466,7 +1466,6 @@
     SUBDIR += rubygem-gemoji
     SUBDIR += rubygem-gherkin
     SUBDIR += rubygem-github-linguist
-    SUBDIR += rubygem-github-markdown
     SUBDIR += rubygem-github-markup
     SUBDIR += rubygem-gitlab-grit
     SUBDIR += rubygem-gitlab-linguist
