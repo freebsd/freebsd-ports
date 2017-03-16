@@ -9133,3 +9133,9 @@ databases/py-sqlalchemy09|databases/py-sqlalchemy10|2017-03-12|Has expired: Upst
 devel/avr-gcc-devel||2017-03-13|Has expired: There's no longer a point to have both, a -devel and a regular port of GCC for the AVR
 net/py-pysimplesoap|net/py-soap2py|2017-03-13|Rename to match upstream naming
 games/trigger-data|games/trigger-rally|2017-03-15|Merged into games/trigger-rally
+devel/py-setuptools|devel/py27-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools27|devel/py27-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools33|devel/py33-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools34|devel/py34-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools35|devel/py35-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools36|devel/py36-setuptools|2017-03-16|Renamed to better match other python ports
