@@ -612,6 +612,7 @@
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd
     SUBDIR += mksunbootcd
+    SUBDIR += mmc-utils
     SUBDIR += mnrpes
     SUBDIR += modules
     SUBDIR += mog
