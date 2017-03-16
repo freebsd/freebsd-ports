@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.14.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -114,7 +114,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-jira-ruby>=1.1.2:devel/rubygem-jira-ruby \
 	rubygem-gitlab-flowdock-git-hook>=1.0.1:www/rubygem-gitlab-flowdock-git-hook \
 	rubygem-gemnasium-gitlab-service>=0.2:devel/rubygem-gemnasium-gitlab-service \
-	rubygem-slack-notifier>=1.2.0:devel/rubygem-slack-notifier \
+	rubygem-slack-notifier1>=1.2.0:devel/rubygem-slack-notifier1 \
 	rubygem-asana>=0.4.0:www/rubygem-asana \
 	rubygem-ruby-fogbugz>=0.2.1:devel/rubygem-ruby-fogbugz \
 	rubygem-d3_rails-rails4>=3.5.0:www/rubygem-d3_rails-rails4 \
