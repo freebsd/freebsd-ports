@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	putty
-PORTVERSION=	0.67
+PORTVERSION=	0.68
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -31,9 +31,12 @@ CONFLICTS_INSTALL?=	pssh-[0-9]* putty-nogtk-[0-9]*
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP -DIPV6
+LDFLAGS+=	-Wl,--as-needed
 
 .if ${PORT_OPTIONS:MGTK2} && !defined(WITHOUT_X11)
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_XORG=	x11
+
 PLIST_FILES+=	bin/pterm bin/putty bin/puttytel
 PLIST_FILES+=	man/man1/pterm.1.gz man/man1/putty.1.gz man/man1/puttytel.1.gz
 MAKE_ARGS+=	PUTTY_WITH_GTK=yes GTK_CONFIG="pkg-config gtk+-2.0 x11 --cflags"
