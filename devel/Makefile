@@ -5493,6 +5493,7 @@
     SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-simplecov
     SUBDIR += rubygem-slack-notifier
+    SUBDIR += rubygem-slack-notifier1
     SUBDIR += rubygem-slim
     SUBDIR += rubygem-slop
     SUBDIR += rubygem-slop3
