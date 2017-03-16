@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	restic
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -14,6 +14,7 @@ USES=		go
 USE_GITHUB=	yes
 
 STRIP=		# stripping can break go binaries
+PLIST_FILES=	bin/restic
 
 do-build:
 	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run build.go)
