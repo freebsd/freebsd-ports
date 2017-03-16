@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		kiss-templates
-PORTVERSION=		0.18
+PORTVERSION=		0.19
 CATEGORIES=		textproc
 
 MAINTAINER=		andreas.sommer87@googlemail.com
@@ -15,9 +15,12 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		rbock
 
 PLIST_FILES=		bin/kiste2cpp \
+			include/kiste/cpp.h \
 			include/kiste/html.h \
 			include/kiste/kiste.h \
 			include/kiste/raw.h \
+			include/kiste/raw_type.h \
+			include/kiste/serializer_builder.h \
 			include/kiste/terminal.h
 
 USES=			cmake
