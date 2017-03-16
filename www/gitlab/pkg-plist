@@ -5532,6 +5532,7 @@
 @dir %%WWWDIR%%/log
 @dir %%WWWDIR%%/public
 @dir %%WWWDIR%%/public/assets
+@dir(,,700) %%WWWDIR%%/public/uploads
 @dir %%WWWDIR%%/shared/artifacts/tmp/cache
 @dir %%WWWDIR%%/shared/artifacts/tmp/uploads
 @dir %%WWWDIR%%/shared/lfs-objects
