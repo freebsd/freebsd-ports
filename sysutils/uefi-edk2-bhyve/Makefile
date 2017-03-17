@@ -2,7 +2,7 @@
 
 PORTNAME=	uefi-edk2-bhyve
 PORTVERSION=	20160704
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
@@ -12,11 +12,11 @@ LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py27-sqlite3
+		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py27-sqlite3 \
+		gcc48:lang/gcc48
 
 USES=		gmake \
 		python:2,build
-USE_GCC=	4.8
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	uefi-edk2
