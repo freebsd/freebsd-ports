@@ -2,6 +2,6 @@
 
 MASTERDIR=	${.CURDIR}/../py-tqdm
 
-USES=	python:3
+USES=	python:3.3+
 
 .include "${MASTERDIR}/Makefile"
