@@ -1,6 +1,6 @@
---- ui/views/window/custom_frame_view.cc.orig	2017-01-26 00:49:32 UTC
+--- ui/views/window/custom_frame_view.cc.orig	2017-03-09 20:04:49 UTC
 +++ ui/views/window/custom_frame_view.cc
-@@ -287,7 +287,7 @@ int CustomFrameView::NonClientTopBorderH
+@@ -294,7 +294,7 @@ int CustomFrameView::NonClientTopBorderH
  int CustomFrameView::CaptionButtonY() const {
    // Maximized buttons start at window top so that even if their images aren't
    // drawn flush with the screen edge, they still obey Fitts' Law.

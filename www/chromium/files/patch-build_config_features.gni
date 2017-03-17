@@ -1,6 +1,6 @@
---- build/config/features.gni.orig	2017-01-26 00:49:07 UTC
+--- build/config/features.gni.orig	2017-03-09 20:04:27 UTC
 +++ build/config/features.gni
-@@ -67,13 +67,13 @@ declare_args() {
+@@ -57,13 +57,13 @@ declare_args() {
    # libudev usage. This currently only affects the content layer.
    use_udev = is_linux && !is_chromecast
  

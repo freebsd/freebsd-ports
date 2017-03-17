@@ -1,7 +1,7 @@
---- ui/events/event_switches.h.orig	2017-01-26 00:49:31 UTC
+--- ui/events/event_switches.h.orig	2017-03-09 20:04:49 UTC
 +++ ui/events/event_switches.h
-@@ -18,7 +18,7 @@ EVENTS_BASE_EXPORT extern const char kTo
- EVENTS_BASE_EXPORT extern const char kTouchEventsDisabled[];
+@@ -14,7 +14,7 @@ namespace switches {
+ EVENTS_BASE_EXPORT extern const char kEnableScrollPrediction[];
  EVENTS_BASE_EXPORT extern const char kCompensateForUnstablePinchZoom[];
  
 -#if defined(OS_LINUX)

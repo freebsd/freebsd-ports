@@ -1,4 +1,4 @@
---- content/browser/accessibility/browser_accessibility_manager.h.orig	2017-01-26 00:49:13 UTC
+--- content/browser/accessibility/browser_accessibility_manager.h.orig	2017-03-09 20:04:32 UTC
 +++ content/browser/accessibility/browser_accessibility_manager.h
 @@ -34,7 +34,7 @@ class BrowserAccessibilityManager;
  class BrowserAccessibilityManagerAndroid;
@@ -9,7 +9,7 @@
  class BrowserAccessibilityManagerAuraLinux;
  #elif defined(OS_MACOSX)
  class BrowserAccessibilityManagerMac;
-@@ -244,7 +244,7 @@ class CONTENT_EXPORT BrowserAccessibilit
+@@ -246,7 +246,7 @@ class CONTENT_EXPORT BrowserAccessibilit
    BrowserAccessibilityManagerAndroid* ToBrowserAccessibilityManagerAndroid();
  #endif
  

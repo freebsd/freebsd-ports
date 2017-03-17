@@ -27,17 +27,6 @@
    if (*ptr == kFinalTlsValue)
      return;  // We've been called enough times.
    ASSERT_LT(kFinalTlsValue, *ptr);
---- base/tracked_objects.cc 2015-04-15 00:31:20.000000000 +0200
-+++ base/tracked_objects.cc 2015-04-18 21:57:33.000000000 +0200
-@@ -425,7 +425,7 @@
-   }
-   // We must NOT do any allocations during this callback.
-   // Using the simple linked lists avoids all allocations.
--  DCHECK_EQ(this->next_retired_worker_, reinterpret_cast<ThreadData*>(NULL));
-+  DCHECK_EQ(this->next_retired_worker_, static_cast<ThreadData*>(NULL));
-   this->next_retired_worker_ = first_retired_worker_;
-   first_retired_worker_ = this;
- }
 --- base/tracked_objects_unittest.cc.orig   2015-08-22 15:01:51.000000000 -0400
 +++ base/tracked_objects_unittest.cc    2015-09-03 09:20:53.370191000 -0400
 @@ -58,9 +58,9 @@
@@ -63,26 +52,6 @@
 
      EXPECT_CALL(callback_, OnError(_))
          .Times(2);
---- third_party/hunspell/src/hunspell/affentry.hxx.orig 2015-07-21 18:46:37.322427000 -0400
-+++ third_party/hunspell/src/hunspell/affentry.hxx  2015-07-21 18:48:02.034251000 -0400
-@@ -27,7 +27,7 @@
-   struct hentry *      checkword(const char * word, int len, char in_compound,
-                             const FLAG needflag = FLAG_NULL);
-
--  struct hentry *      check_twosfx(const char * word, int len, char in_compound, const FLAG needflag = NULL);
-+  struct hentry *      check_twosfx(const char * word, int len, char in_compound, const FLAG needflag = 0);
-
-   char *      check_morph(const char * word, int len, char in_compound,
-                             const FLAG needflag = FLAG_NULL);
-@@ -90,7 +90,7 @@
- //                    const FLAG cclass = FLAG_NULL, const FLAG needflag = FLAG_NULL, char in_compound=IN_CPD_NOT);
-                     const FLAG cclass = FLAG_NULL, const FLAG needflag = FLAG_NULL, const FLAG badflag = 0);
-
--  struct hentry *   check_twosfx(const char * word, int len, int optflags, PfxEntry* ppfx, const FLAG needflag = NULL);
-+  struct hentry *   check_twosfx(const char * word, int len, int optflags, PfxEntry* ppfx, const FLAG needflag = 0);
-
-   char *      check_twosfx_morph(const char * word, int len, int optflags,
-                  PfxEntry* ppfx, const FLAG needflag = FLAG_NULL);
 --- third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-15 00:31:48.000000000 +0200
 +++ third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-18 22:05:41.000000000 +0200
 @@ -439,7 +439,7 @@
@@ -130,14 +99,13 @@
                      CMapFormat::kFormat4, cmap_id) {
  }
 
---- third_party/webrtc/base/taskrunner.cc	2015-04-15 00:32:17.000000000 +0200
-+++ third_party/webrtc/base/taskrunner.cc	2015-04-18 22:10:53.000000000 +0200
-@@ -102,7 +102,7 @@
+--- third_party/webrtc/base/taskrunner.cc.orig	2017-03-09 21:05:29.000000000 +0100
++++ third_party/webrtc/base/taskrunner.cc	2017-03-10 13:19:54.203141000 +0100
+@@ -96,7 +96,7 @@
    std::vector<Task *>::iterator it;
    it = std::remove(tasks_.begin(),
                     tasks_.end(),
 -                   reinterpret_cast<Task *>(NULL));
 +                   static_cast<Task *>(NULL));
-
+ 
    tasks_.erase(it, tasks_.end());
-

@@ -1,4 +1,4 @@
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig	2017-01-26 00:49:28 UTC
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig	2017-03-09 20:04:45 UTC
 +++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h
 @@ -47,9 +47,9 @@
  #include "wtf/text/CString.h"
@@ -12,7 +12,7 @@
  
  #if OS(MACOSX)
  OBJC_CLASS NSFont;
-@@ -149,7 +149,7 @@ class PLATFORM_EXPORT FontPlatformData {
+@@ -151,7 +151,7 @@ class PLATFORM_EXPORT FontPlatformData {
    PassRefPtr<OpenTypeVerticalData> verticalData() const;
    PassRefPtr<SharedBuffer> openTypeTable(SkFontTableTag) const;
  
@@ -21,7 +21,7 @@
    // The returned styles are all actual styles without
    // FontRenderStyle::NoPreference.
    const FontRenderStyle& getFontRenderStyle() const { return m_style; }
-@@ -177,7 +177,7 @@ class PLATFORM_EXPORT FontPlatformData {
+@@ -179,7 +179,7 @@ class PLATFORM_EXPORT FontPlatformData {
    FontOrientation m_orientation;
  
   private:

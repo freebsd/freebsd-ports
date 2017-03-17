@@ -1,6 +1,6 @@
---- ui/views/mus/BUILD.gn.orig	2017-02-02 02:03:13 UTC
+--- ui/views/mus/BUILD.gn.orig	2017-03-09 20:04:49 UTC
 +++ ui/views/mus/BUILD.gn
-@@ -91,7 +91,7 @@ component("mus") {
+@@ -78,7 +78,7 @@ component("mus") {
      "//ui/wm",
    ]
  

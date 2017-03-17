@@ -1,4 +1,4 @@
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2017-01-26 00:49:28 UTC
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2017-03-09 20:04:45 UTC
 +++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp
 @@ -99,7 +99,7 @@ FontPlatformData::FontPlatformData(const
        m_syntheticBold(source.m_syntheticBold),
@@ -17,7 +17,7 @@
 +#if OS(LINUX) || OS(ANDROID) || OS(BSD)
        m_style(FontRenderStyle::querySystem(m_family,
                                             m_textSize,
-                                            m_typeface->style())),
+                                            m_typeface->fontStyle())),
 @@ -155,7 +155,7 @@ FontPlatformData::FontPlatformData(sk_sp
        m_syntheticBold(syntheticBold),
        m_syntheticItalic(syntheticItalic),
@@ -26,7 +26,7 @@
 +#if OS(LINUX) || OS(ANDROID) | OS(BSD)
        m_style(FontRenderStyle::querySystem(m_family,
                                             m_textSize,
-                                            m_typeface->style())),
+                                            m_typeface->fontStyle())),
 @@ -200,7 +200,7 @@ const FontPlatformData& FontPlatformData
    m_syntheticItalic = other.m_syntheticItalic;
    m_harfBuzzFace = nullptr;

@@ -1,6 +1,6 @@
---- chrome/browser/renderer_preferences_util.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/renderer_preferences_util.cc.orig	2017-03-09 20:04:28 UTC
 +++ chrome/browser/renderer_preferences_util.cc
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  #include "third_party/WebKit/public/public_features.h"
  #include "third_party/skia/include/core/SkColor.h"
  
@@ -9,7 +9,7 @@
  #include "ui/gfx/font_render_params.h"
  #endif
  
-@@ -31,7 +31,7 @@
+@@ -32,7 +32,7 @@
  #include "ui/base/cocoa/defaults_utils.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/themes/theme_service.h"
  #include "chrome/browser/themes/theme_service_factory.h"
  #include "ui/views/linux_ui/linux_ui.h"
-@@ -133,7 +133,7 @@ void UpdateFromSystemSettings(content::R
+@@ -134,7 +134,7 @@ void UpdateFromSystemSettings(content::R
      prefs->caret_blink_interval = interval.InSecondsF();
  #endif
  
@@ -27,7 +27,7 @@
    views::LinuxUI* linux_ui = views::LinuxUI::instance();
    if (linux_ui) {
      if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
-@@ -155,7 +155,7 @@ void UpdateFromSystemSettings(content::R
+@@ -156,7 +156,7 @@ void UpdateFromSystemSettings(content::R
    }
  #endif
  

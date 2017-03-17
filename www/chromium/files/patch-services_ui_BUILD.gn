@@ -1,4 +1,4 @@
---- services/ui/BUILD.gn.orig	2017-01-26 00:49:17 UTC
+--- services/ui/BUILD.gn.orig	2017-03-09 20:04:36 UTC
 +++ services/ui/BUILD.gn
 @@ -13,7 +13,6 @@ group("all") {
    testonly = true
@@ -8,11 +8,20 @@
      "//services/ui/test_wm",
    ]
  }
-@@ -38,7 +37,6 @@ service("ui") {
- 
+@@ -36,7 +35,6 @@ service("ui") {
    data_deps = [
+     ":copy_gl_libraries",
      ":manifest",
 -    "//services/ui/ime/test_ime_driver",
    ]
  
    resources = [
+@@ -67,7 +65,7 @@ copy("copy_gl_libraries") {
+       "$root_shlib_dir/libGLESv2.dll",
+       "$root_shlib_dir/osmesa.dll",
+     ]
+-  } else if (is_android || is_linux) {
++  } else if (is_android || is_linux || is_bsd) {
+     sources = [
+       "$root_shlib_dir/libosmesa.so",
+     ]

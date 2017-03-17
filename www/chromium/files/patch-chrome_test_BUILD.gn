@@ -1,6 +1,6 @@
---- chrome/test/BUILD.gn.orig	2017-01-26 00:49:10 UTC
+--- chrome/test/BUILD.gn.orig	2017-03-09 20:04:30 UTC
 +++ chrome/test/BUILD.gn
-@@ -186,7 +186,7 @@ static_library("test_support") {
+@@ -193,7 +193,7 @@ static_library("test_support") {
      ]
    }
  
@@ -9,7 +9,7 @@
      public_deps += [ "//crypto:platform" ]
    }
    if (is_mac) {
-@@ -461,7 +461,7 @@ if (!is_android) {
+@@ -451,7 +451,7 @@ if (!is_android) {
        "$root_out_dir/test_page.css.mock-http-headers",
        "$root_out_dir/ui_test.pak",
      ]
@@ -18,7 +18,7 @@
        data += [
          "$root_out_dir/chrome_100_percent.pak",
          "$root_out_dir/chrome_200_percent.pak",
-@@ -470,7 +470,7 @@ if (!is_android) {
+@@ -460,7 +460,7 @@ if (!is_android) {
          "$root_out_dir/resources.pak",
        ]
      }
@@ -28,7 +28,7 @@
      }
  
 @@ -577,7 +577,7 @@ if (!is_android) {
-           "base/interactive_test_utils_views.cc",
+           "../browser/ui/views/payments/payment_request_interactive_uitest_base.h",
          ]
        }
 -      if (is_linux) {
@@ -36,7 +36,7 @@
          if (!is_chromeos) {
            # Desktop linux.
            sources -= [
-@@ -2010,14 +2010,14 @@ test("browser_tests") {
+@@ -2041,14 +2041,14 @@ test("browser_tests") {
          sources += [ "//third_party/liblouis/nacl_wrapper/liblouis_wrapper_browsertest.cc" ]
          deps += [ "//chrome/browser/chromeos" ]
          data_deps += [ "//third_party/liblouis:liblouis_test_data" ]
@@ -53,7 +53,7 @@
          sources += [ "../browser/nacl_host/test/nacl_gdb_browsertest.cc" ]
          data_deps += [ "//chrome/browser/nacl_host/test:mock_nacl_gdb" ]
        }
-@@ -2029,7 +2029,7 @@ test("browser_tests") {
+@@ -2060,7 +2060,7 @@ test("browser_tests") {
          configs +=
              [ "//build/config/win:default_large_module_incremental_linking" ]
        }
@@ -62,7 +62,7 @@
          data_deps += [ "//components/nacl/loader:nacl_helper" ]
  
          if (enable_nacl_nonsfi) {
-@@ -2136,7 +2136,7 @@ test("browser_tests") {
+@@ -2170,7 +2170,7 @@ test("browser_tests") {
        }
      }
  
@@ -71,7 +71,7 @@
        # Set rpath to find the CDM adapter even in a non-component build.
        configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
      }
-@@ -2363,7 +2363,7 @@ test("browser_tests") {
+@@ -2391,7 +2391,7 @@ test("browser_tests") {
        if (toolkit_views) {
          sources -= [ "../browser/ui/views/select_file_dialog_extension_browsertest.cc" ]
        }
@@ -80,7 +80,7 @@
          sources +=
              [ "../browser/ui/views/ime/input_ime_apitest_nonchromeos.cc" ]
        }
-@@ -2558,7 +2558,7 @@ test("browser_tests") {
+@@ -2568,7 +2568,7 @@ test("browser_tests") {
          "../browser/extensions/api/networking_private/networking_private_chromeos_apitest.cc",
        ]
      }
@@ -98,7 +98,7 @@
        data += [
          "$root_out_dir/chrome_100_percent.pak",
          "$root_out_dir/chrome_200_percent.pak",
-@@ -3411,7 +3411,7 @@ test("unit_tests") {
+@@ -3439,7 +3439,7 @@ test("unit_tests") {
        "$root_out_dir/resources.pak",
      ]
    }
@@ -106,8 +106,8 @@
 +  if (is_linux || is_bsd || is_win) {
      data += [ "$root_out_dir/chrome_200_percent.pak" ]
    }
- 
-@@ -4111,7 +4111,7 @@ test("unit_tests") {
+   if (is_win) {
+@@ -4177,7 +4177,7 @@ test("unit_tests") {
        "//ui/wm",
      ]
    }
@@ -116,16 +116,16 @@
      sources += [
        "../browser/password_manager/native_backend_kwallet_x_unittest.cc",
        "../browser/shell_integration_linux_unittest.cc",
-@@ -4131,7 +4131,7 @@ test("unit_tests") {
+@@ -4197,7 +4197,7 @@ test("unit_tests") {
    if (use_gio) {
      deps += [ "//build/linux/libgio" ]
    }
 -  if (!is_chromeos && !use_ozone && is_linux) {
 +  if (!is_chromeos && !use_ozone && (is_linux || is_bsd)) {
-     if (use_gtk3) {
-       deps += [ "//chrome/browser/ui/libgtkui:libgtk3ui" ]
-     } else {
-@@ -4424,18 +4424,18 @@ test("unit_tests") {
+     deps += [ "//chrome/browser/ui/libgtkui" ]
+   }
+ 
+@@ -4456,18 +4456,18 @@ test("unit_tests") {
        "//components/os_crypt:gnome_keyring_direct",
      ]
    }
@@ -147,7 +147,7 @@
      ldflags = [ "-Wl,--strip-debug" ]
    }
    if (is_mac) {
-@@ -4941,7 +4941,7 @@ if (safe_browsing_mode == 1 && is_mac) {
+@@ -4956,7 +4956,7 @@ if (safe_browsing_mode == 1 && is_mac) {
    }
  }
  
@@ -156,7 +156,7 @@
    # TODO(609855): Make this compile on Android and run on the bots.
    test("chrome_app_unittests") {
      sources = [
-@@ -4967,7 +4967,7 @@ if (!is_android) {
+@@ -4982,7 +4982,7 @@ if (!is_android) {
    }
  }
  

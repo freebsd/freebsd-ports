@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2017-01-26 00:49:13 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2017-03-09 20:04:32 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
-@@ -256,7 +256,7 @@ class CONTENT_EXPORT RendererBlinkPlatfo
+@@ -252,7 +252,7 @@ class CONTENT_EXPORT RendererBlinkPlatfo
    class FileUtilities;
    std::unique_ptr<FileUtilities> file_utilities_;
  

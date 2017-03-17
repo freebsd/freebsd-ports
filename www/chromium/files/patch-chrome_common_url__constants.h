@@ -1,6 +1,6 @@
---- chrome/common/url_constants.h.orig	2017-02-02 02:02:50 UTC
+--- chrome/common/url_constants.h.orig	2017-03-09 20:04:29 UTC
 +++ chrome/common/url_constants.h
-@@ -125,7 +125,7 @@ extern const char kChromeUIMdCupsSetting
+@@ -128,7 +128,7 @@ extern const char kChromeUIMdCupsSetting
  extern const char kChromeUIMetroFlowURL[];
  #endif
  
@@ -9,7 +9,7 @@
  extern const char kChromeUITabModalConfirmDialogURL[];
  #endif
  
-@@ -309,7 +309,7 @@ extern const char kChromeOSAssetPath[];
+@@ -313,7 +313,7 @@ extern const char kChromeOSAssetPath[];
  extern const char kChromeUIMetroFlowHost[];
  #endif
  
