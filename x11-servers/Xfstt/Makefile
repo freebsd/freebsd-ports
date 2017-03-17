@@ -9,9 +9,8 @@ MASTER_SITES=	http://archive.hadrons.org/software/xfstt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType font server for X11
 
-LICENSE=	GPLv2
-
-OPTIONS_DEFINE=	DOCS
+LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		pkgconfig tar:xz
 USE_XORG=	fontsproto xproto
@@ -23,16 +22,20 @@ TTFONTDIR=	${PREFIX}/share/fonts/TrueType
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 .for file in INSTALL doc/Makefile.in src/Makefile.in
-	${REINPLACE_CMD} -e 's|%%TTFONTDIR%%|${TTFONTDIR}|g' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|%%TTFONTDIR%%|${TTFONTDIR}|g' ${WRKSRC}/${file}
 .endfor
 
 post-install:
 	${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${FILESDIR}/xfstt.in \
 		> ${WRKSRC}/xfstt
 	${INSTALL_SCRIPT} ${WRKSRC}/xfstt ${STAGEDIR}${PREFIX}/etc/rc.d/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for _file in INSTALL THANKS
 	${INSTALL_DATA} ${WRKSRC}/${_file} ${STAGEDIR}${DOCSDIR}
 .endfor
