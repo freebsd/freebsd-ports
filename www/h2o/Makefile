@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	h2o
-PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTVERSION=	2.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -14,7 +13,8 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 
-USES=		cmake compiler:c11 perl5 shebangfix
+USES=		cmake compiler:c11 cpe perl5 shebangfix ssl
+CPE_VENDOR=	h2o_project
 USE_PERL5=	run
 SHEBANG_FILES=	share/h2o/start_server
 
@@ -36,39 +36,31 @@ H2O_LOGDIR=	/var/log/${PORTNAME}/
 
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=	LIBRESSL MRUBY
-OPTIONS_DEFAULT=	LIBRESSL MRUBY
-OPTIONS_SUB=	yes
-LIBRESSL_DESC=	Build with bundled LibreSSL instead of OpenSSL
-MRUBY_DESC=	Build with mruby handler support
+OPTIONS_DEFINE=		MRUBY
+OPTIONS_DEFAULT=	MRUBY
+OPTIONS_SUB=		yes
+MRUBY_DESC=		Build with mruby handler support
 
-CMAKE_ARGS+=	-DEXTRA_LIBRARIES=OFF -DWITHOUT_LIBS=ON
+CMAKE_ARGS+=		-DEXTRA_LIBRARIES=OFF -DWITHOUT_LIBS=ON -DWITH_BUNDLED_SSL=OFF
+CMAKE_VERBOSE=		yes
 
 .include <bsd.port.options.mk>
 
-LIBRESSL_CMAKE_ON=	-DWITH_BUNDLED_SSL=ON
-LIBRESSL_CMAKE_OFF=	-DWITH_BUNDLED_SSL=OFF
-LIBRESSL_USES_OFF=	ssl
 MRUBY_CMAKE_ON=		-DWITH_MRUBY=ON
-MRUBY_CMAKE_OFF=		-DWITH_MRUBY=OFF
-
-.if ${PORT_OPTIONS:MLIBRESSL}
-USES_SSL=	yes
-.else
-USES_SSL=	no
-.endif
+MRUBY_CMAKE_OFF=	-DWITH_MRUBY=OFF
 
 .if ${PORT_OPTIONS:MMRUBY}
 USE_RUBY=	yes
+RUBY_NO_RUN_DEPENDS=	yes
 BUILD_DEPENDS+=	bison:devel/bison
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|exec perl|exec ${LOCALBASE}/bin/perl|' \
-			${WRKSRC}/share/h2o/annotate-backtrace-symbols \
-			${WRKSRC}/share/h2o/fetch-ocsp-response \
-			${WRKSRC}/share/h2o/kill-on-close \
-			${WRKSRC}/share/h2o/start_server
+		${WRKSRC}/share/h2o/annotate-backtrace-symbols \
+		${WRKSRC}/share/h2o/fetch-ocsp-response \
+		${WRKSRC}/share/h2o/kill-on-close \
+		${WRKSRC}/share/h2o/start_server
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
