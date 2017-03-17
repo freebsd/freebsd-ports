@@ -5,7 +5,7 @@ PORTNAME=	kirigami2
 PORTVERSION=	2.0.0
 MASTER_SITES=	KDE/stable/${PORTNAME:C/2//}
 # kirigami will likely become a framework. So already put the distfile there.
-DIST_SUBDIR=	KDE/frameworks/${KDE_FRAMEWORKS_VERSION}
+DIST_SUBDIR=	KDE/kirigami
 CATEGORIES=	x11-toolkits kde # kde-framework
 
 MAINTAINER=	kde@FreeBSD.org

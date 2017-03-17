@@ -611,6 +611,7 @@ share/icons/breeze-dark/actions/16/im-user-offline.svg
 share/icons/breeze-dark/actions/16/im-user-online.svg
 share/icons/breeze-dark/actions/16/im-user.svg
 share/icons/breeze-dark/actions/16/im-yahoo.svg
+share/icons/breeze-dark/actions/16/im-youtube.svg
 share/icons/breeze-dark/actions/16/imagecomment.svg
 share/icons/breeze-dark/actions/16/initial_state.svg
 share/icons/breeze-dark/actions/16/insert-button.svg
@@ -2020,6 +2021,7 @@ share/icons/breeze-dark/actions/22/im-user-offline.svg
 share/icons/breeze-dark/actions/22/im-user-online.svg
 share/icons/breeze-dark/actions/22/im-user.svg
 share/icons/breeze-dark/actions/22/im-yahoo.svg
+share/icons/breeze-dark/actions/22/im-youtube.svg
 share/icons/breeze-dark/actions/22/imagecomment.svg
 share/icons/breeze-dark/actions/22/initial_state.svg
 share/icons/breeze-dark/actions/22/inpainting.svg
@@ -2731,6 +2733,7 @@ share/icons/breeze-dark/actions/22/tools-rip-audio-cd.svg
 share/icons/breeze-dark/actions/22/tools-rip-video-cd.svg
 share/icons/breeze-dark/actions/22/tools-rip-video-dvd.svg
 share/icons/breeze-dark/actions/22/tools-wizard.svg
+share/icons/breeze-dark/actions/22/torrents.svg
 share/icons/breeze-dark/actions/22/transform-browse.svg
 share/icons/breeze-dark/actions/22/transform-crop-and-resize.svg
 share/icons/breeze-dark/actions/22/transform-crop.svg
@@ -4307,6 +4310,7 @@ share/icons/breeze-dark/applets/256/org.kde.plasma.systemtray.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.taskmanager.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.timer.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.userswitcher.svg
+share/icons/breeze-dark/applets/256/org.kde.plasma.vault.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.volume.svg
 share/icons/breeze-dark/applets/256/org.kde.plasma.windowlist.svg
 share/icons/breeze-dark/applets/48/weather-clear-night.svg
@@ -4693,6 +4697,7 @@ share/icons/breeze-dark/apps/48/synaptic.svg
 share/icons/breeze-dark/apps/48/synfig_icon.svg
 share/icons/breeze-dark/apps/48/system-file-manager.svg
 share/icons/breeze-dark/apps/48/system-help.svg
+share/icons/breeze-dark/apps/48/system-run.svg
 share/icons/breeze-dark/apps/48/system-software-install.svg
 share/icons/breeze-dark/apps/48/system-software-update.svg
 share/icons/breeze-dark/apps/48/systemsettings.svg
@@ -6965,13 +6970,13 @@ share/icons/breeze-dark/places/64/folder-bookmark.svg
 share/icons/breeze-dark/places/64/folder-brown.svg
 share/icons/breeze-dark/places/64/folder-cloud.svg
 share/icons/breeze-dark/places/64/folder-cyan.svg
-share/icons/breeze-dark/places/64/folder-decrypt.svg
+share/icons/breeze-dark/places/64/folder-decrypted.svg
 share/icons/breeze-dark/places/64/folder-development.svg
 share/icons/breeze-dark/places/64/folder-documents.svg
 share/icons/breeze-dark/places/64/folder-download.svg
 share/icons/breeze-dark/places/64/folder-downloads.svg
 share/icons/breeze-dark/places/64/folder-dropbox.svg
-share/icons/breeze-dark/places/64/folder-encrypt.svg
+share/icons/breeze-dark/places/64/folder-encrypted.svg
 share/icons/breeze-dark/places/64/folder-favorites.svg
 share/icons/breeze-dark/places/64/folder-gdrive.svg
 share/icons/breeze-dark/places/64/folder-green.svg
@@ -7108,7 +7113,6 @@ share/icons/breeze-dark/preferences/32/preferences-web-browser-shortcuts.svg
 share/icons/breeze-dark/preferences/32/preferences-web-browser-ssl.svg
 share/icons/breeze-dark/preferences/32/preferences-web-browser-stylesheets.svg
 share/icons/breeze-dark/preferences/32/system-lock-screen.svg
-share/icons/breeze-dark/preferences/32/system-run.svg
 share/icons/breeze-dark/preferences/32/system-users.svg
 share/icons/breeze-dark/preferences/32/view-media-playlist.svg
 share/icons/breeze-dark/preferences/32/window-duplicate.svg
@@ -7208,6 +7212,21 @@ share/icons/breeze-dark/status/22/microphone-sensitivity-high.svg
 share/icons/breeze-dark/status/22/microphone-sensitivity-low.svg
 share/icons/breeze-dark/status/22/microphone-sensitivity-medium.svg
 share/icons/breeze-dark/status/22/microphone-sensitivity-muted.svg
+share/icons/breeze-dark/status/22/network-offline.svg
+share/icons/breeze-dark/status/22/network-wired-disconnected.svg
+share/icons/breeze-dark/status/22/network-wired.svg
+share/icons/breeze-dark/status/22/network-wireless-acquiring.svg
+share/icons/breeze-dark/status/22/network-wireless-connected-00.svg
+share/icons/breeze-dark/status/22/network-wireless-connected-100.svg
+share/icons/breeze-dark/status/22/network-wireless-connected-25.svg
+share/icons/breeze-dark/status/22/network-wireless-connected-50.svg
+share/icons/breeze-dark/status/22/network-wireless-connected-75.svg
+share/icons/breeze-dark/status/22/network-wireless-disconnected.svg
+share/icons/breeze-dark/status/22/network-wireless-signal-excellent.svg
+share/icons/breeze-dark/status/22/network-wireless-signal-good.svg
+share/icons/breeze-dark/status/22/network-wireless-signal-none.svg
+share/icons/breeze-dark/status/22/network-wireless-signal-ok.svg
+share/icons/breeze-dark/status/22/network-wireless-signal-weak.svg
 share/icons/breeze-dark/status/22/process-working.svg
 share/icons/breeze-dark/status/22/redshift-status-off.svg
 share/icons/breeze-dark/status/22/redshift-status-on.svg
@@ -7944,6 +7963,7 @@ share/icons/breeze/actions/16/im-user-offline.svg
 share/icons/breeze/actions/16/im-user-online.svg
 share/icons/breeze/actions/16/im-user.svg
 share/icons/breeze/actions/16/im-yahoo.svg
+share/icons/breeze/actions/16/im-youtube.svg
 share/icons/breeze/actions/16/imagecomment.svg
 share/icons/breeze/actions/16/initial_state.svg
 share/icons/breeze/actions/16/inpainting.svg
@@ -9487,6 +9507,7 @@ share/icons/breeze/actions/22/im-user-offline.svg
 share/icons/breeze/actions/22/im-user-online.svg
 share/icons/breeze/actions/22/im-user.svg
 share/icons/breeze/actions/22/im-yahoo.svg
+share/icons/breeze/actions/22/im-youtube.svg
 share/icons/breeze/actions/22/imagecomment.svg
 share/icons/breeze/actions/22/initial_state.svg
 share/icons/breeze/actions/22/inpainting.svg
@@ -10242,6 +10263,7 @@ share/icons/breeze/actions/22/tools-rip-audio-cd.svg
 share/icons/breeze/actions/22/tools-rip-video-cd.svg
 share/icons/breeze/actions/22/tools-rip-video-dvd.svg
 share/icons/breeze/actions/22/tools-wizard.svg
+share/icons/breeze/actions/22/torrents.svg
 share/icons/breeze/actions/22/transform-browse.svg
 share/icons/breeze/actions/22/transform-crop-and-resize.svg
 share/icons/breeze/actions/22/transform-crop.svg
@@ -11814,6 +11836,7 @@ share/icons/breeze/applets/256/org.kde.plasma.comic.svg
 share/icons/breeze/applets/256/org.kde.plasma.date.svg
 share/icons/breeze/applets/256/org.kde.plasma.devicenotifier.svg
 share/icons/breeze/applets/256/org.kde.plasma.digitalclock.svg
+share/icons/breeze/applets/256/org.kde.plasma.diskquota.svg
 share/icons/breeze/applets/256/org.kde.plasma.fifteenpuzzle.svg
 share/icons/breeze/applets/256/org.kde.plasma.folder.svg
 share/icons/breeze/applets/256/org.kde.plasma.frame.svg
@@ -11838,6 +11861,7 @@ share/icons/breeze/applets/256/org.kde.plasma.systemtray.svg
 share/icons/breeze/applets/256/org.kde.plasma.taskmanager.svg
 share/icons/breeze/applets/256/org.kde.plasma.timer.svg
 share/icons/breeze/applets/256/org.kde.plasma.userswitcher.svg
+share/icons/breeze/applets/256/org.kde.plasma.vault.svg
 share/icons/breeze/applets/256/org.kde.plasma.volume.svg
 share/icons/breeze/applets/256/org.kde.plasma.windowlist.svg
 share/icons/breeze/applets/48/weather-clear-night.svg
@@ -11914,6 +11938,7 @@ share/icons/breeze/apps/16/kate.svg
 share/icons/breeze/apps/16/kdeconnect.svg
 share/icons/breeze/apps/16/kwrite.svg
 share/icons/breeze/apps/16/nepomuk.svg
+share/icons/breeze/apps/16/plasmavault.svg
 share/icons/breeze/apps/16/preferences-system-bluetooth.svg
 share/icons/breeze/apps/16/system-file-manager.svg
 share/icons/breeze/apps/16/system-help.svg
@@ -11931,6 +11956,7 @@ share/icons/breeze/apps/22/korg-todo.svg
 share/icons/breeze/apps/22/ktorrent.svg
 share/icons/breeze/apps/22/kwrite.svg
 share/icons/breeze/apps/22/plasma.svg
+share/icons/breeze/apps/22/plasmavault.svg
 share/icons/breeze/apps/22/preferences-desktop-font.svg
 share/icons/breeze/apps/22/preferences-other.svg
 share/icons/breeze/apps/22/preferences-plugin.svg
@@ -11942,6 +11968,7 @@ share/icons/breeze/apps/22/vlc.svg
 share/icons/breeze/apps/32/accessories-text-editor.svg
 share/icons/breeze/apps/32/kate.svg
 share/icons/breeze/apps/32/kwrite.svg
+share/icons/breeze/apps/32/plasmavault.svg
 share/icons/breeze/apps/32/system-file-manager.svg
 share/icons/breeze/apps/32/umbrello.svg
 share/icons/breeze/apps/32/utilities-terminal.svg
@@ -12185,6 +12212,7 @@ share/icons/breeze/apps/48/planwork.svg
 share/icons/breeze/apps/48/plasma-media-center.svg
 share/icons/breeze/apps/48/plasma-mobile-phone.svg
 share/icons/breeze/apps/48/plasmadiscover.svg
+share/icons/breeze/apps/48/plasmavault.svg
 share/icons/breeze/apps/48/preferences-desktop-font-installer.svg
 share/icons/breeze/apps/48/preferences-system.svg
 share/icons/breeze/apps/48/q4wine.svg
@@ -12224,6 +12252,7 @@ share/icons/breeze/apps/48/synaptic.svg
 share/icons/breeze/apps/48/synfig_icon.svg
 share/icons/breeze/apps/48/system-file-manager.svg
 share/icons/breeze/apps/48/system-help.svg
+share/icons/breeze/apps/48/system-run.svg
 share/icons/breeze/apps/48/system-software-install.svg
 share/icons/breeze/apps/48/system-software-update.svg
 share/icons/breeze/apps/48/systemsettings.svg
@@ -12262,6 +12291,7 @@ share/icons/breeze/apps/64/accessories-text-editor.svg
 share/icons/breeze/apps/64/diaspora.svg
 share/icons/breeze/apps/64/kate.svg
 share/icons/breeze/apps/64/kwrite.svg
+share/icons/breeze/apps/64/plasmavault.svg
 share/icons/breeze/apps/64/sharedlib.svg
 share/icons/breeze/apps/64/system-file-manager.svg
 share/icons/breeze/apps/64/umbrello.svg
@@ -14516,13 +14546,13 @@ share/icons/breeze/places/64/folder-bookmark.svg
 share/icons/breeze/places/64/folder-brown.svg
 share/icons/breeze/places/64/folder-cloud.svg
 share/icons/breeze/places/64/folder-cyan.svg
-share/icons/breeze/places/64/folder-decrypt.svg
+share/icons/breeze/places/64/folder-decrypted.svg
 share/icons/breeze/places/64/folder-development.svg
 share/icons/breeze/places/64/folder-documents.svg
 share/icons/breeze/places/64/folder-download.svg
 share/icons/breeze/places/64/folder-downloads.svg
 share/icons/breeze/places/64/folder-dropbox.svg
-share/icons/breeze/places/64/folder-encrypt.svg
+share/icons/breeze/places/64/folder-encrypted.svg
 share/icons/breeze/places/64/folder-favorites.svg
 share/icons/breeze/places/64/folder-gdrive.svg
 share/icons/breeze/places/64/folder-green.svg
@@ -14659,7 +14689,6 @@ share/icons/breeze/preferences/32/preferences-web-browser-shortcuts.svg
 share/icons/breeze/preferences/32/preferences-web-browser-ssl.svg
 share/icons/breeze/preferences/32/preferences-web-browser-stylesheets.svg
 share/icons/breeze/preferences/32/system-lock-screen.svg
-share/icons/breeze/preferences/32/system-run.svg
 share/icons/breeze/preferences/32/system-users.svg
 share/icons/breeze/preferences/32/view-media-playlist.svg
 share/icons/breeze/preferences/32/window-duplicate.svg
@@ -14759,6 +14788,21 @@ share/icons/breeze/status/22/microphone-sensitivity-high.svg
 share/icons/breeze/status/22/microphone-sensitivity-low.svg
 share/icons/breeze/status/22/microphone-sensitivity-medium.svg
 share/icons/breeze/status/22/microphone-sensitivity-muted.svg
+share/icons/breeze/status/22/network-offline.svg
+share/icons/breeze/status/22/network-wired-disconnected.svg
+share/icons/breeze/status/22/network-wired.svg
+share/icons/breeze/status/22/network-wireless-acquiring.svg
+share/icons/breeze/status/22/network-wireless-connected-00.svg
+share/icons/breeze/status/22/network-wireless-connected-100.svg
+share/icons/breeze/status/22/network-wireless-connected-25.svg
+share/icons/breeze/status/22/network-wireless-connected-50.svg
+share/icons/breeze/status/22/network-wireless-connected-75.svg
+share/icons/breeze/status/22/network-wireless-disconnected.svg
+share/icons/breeze/status/22/network-wireless-signal-excellent.svg
+share/icons/breeze/status/22/network-wireless-signal-good.svg
+share/icons/breeze/status/22/network-wireless-signal-none.svg
+share/icons/breeze/status/22/network-wireless-signal-ok.svg
+share/icons/breeze/status/22/network-wireless-signal-weak.svg
 share/icons/breeze/status/22/process-working.svg
 share/icons/breeze/status/22/redshift-status-off.svg
 share/icons/breeze/status/22/redshift-status-on.svg
