@@ -6,12 +6,10 @@ PORTEPOCH=	1
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/irssi/irssi/releases/download/${PORTVERSION}/
 
-MAINTAINER?=	dor.bsd@xm0.uk
-COMMENT?=	Modular IRC client with many features
+MAINTAINER=	dor.bsd@xm0.uk
+COMMENT=	Modular IRC client with many features
 
 LICENSE=	GPLv2
-
-CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
 USES=		cpe gettext-runtime gmake libtool ncurses pkgconfig tar:xz
 GNU_CONFIGURE=	yes
