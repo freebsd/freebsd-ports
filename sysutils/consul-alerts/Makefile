@@ -2,6 +2,7 @@
 
 PORTNAME=	consul-alerts
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -22,7 +23,7 @@ GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	${PREFIX}/bin/consul-alerts
 
-USE_RC_SUBR=	consul-alerts
+USE_RC_SUBR=	consul-alerts consul-alerts-checks consul-alerts-event
 
 STRIP=
 
