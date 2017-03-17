@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/irssi/irssi/releases/download/${PORTVERSION}/
 
-MAINTAINER?=	vanilla@FreeBSD.org
+MAINTAINER?=	dor.bsd@xm0.uk
 COMMENT?=	Modular IRC client with many features
 
 LICENSE=	GPLv2
