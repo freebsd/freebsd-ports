@@ -14,7 +14,7 @@ USE_QT5=	buildtools_build core linguisttools qmake_build
 
 OPTIONS_DEFINE=		FAM INOTIFY
 OPTIONS_DEFAULT=	INOTIFY
-OPTIONS_SUB=		YES
+OPTIONS_SUB=		yes
 
 INOTIFY_DESC=		Filesystem alteration notifications using inotify
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
