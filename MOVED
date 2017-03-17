@@ -9139,6 +9139,6 @@ devel/py-setuptools33|devel/py33-setuptools|2017-03-16|Renamed to better match o
 devel/py-setuptools34|devel/py34-setuptools|2017-03-16|Renamed to better match other python ports
 devel/py-setuptools35|devel/py35-setuptools|2017-03-16|Renamed to better match other python ports
 devel/py-setuptools36|devel/py36-setuptools|2017-03-16|Renamed to better match other python ports
-devel/rubygem-devise-rails4||2017-03-16|Has expired: Please use devel/rubygem-devise instead
+devel/rubygem-devise-rails4|devel/rubygem-devise|2017-03-16|Has expired: Please use devel/rubygem-devise instead
 textproc/rubygem-github-markdown||2017-03-16|Has expired: This gem is not maintained and not supported by upstream
 chinese/irssi|irc/irssi|2017-03-17|Use irc/irssi, which can handle Chinese locales
