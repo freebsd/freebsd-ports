@@ -895,6 +895,7 @@
     SUBDIR += py-zdaemon
     SUBDIR += py-zfs
     SUBDIR += pydf
+    SUBDIR += py3-iocage
     SUBDIR += qchroot
     SUBDIR += qjail
     SUBDIR += qjail2
