@@ -13,7 +13,7 @@ COMMENT=	Module for creating simple ASCII tables
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	python
+USES?=	python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
