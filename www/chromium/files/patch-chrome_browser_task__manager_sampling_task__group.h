@@ -1,6 +1,6 @@
---- chrome/browser/task_manager/sampling/task_group.h.orig	2017-02-02 02:02:49 UTC
+--- chrome/browser/task_manager/sampling/task_group.h.orig	2017-03-09 20:04:29 UTC
 +++ chrome/browser/task_manager/sampling/task_group.h
-@@ -91,9 +91,9 @@ class TaskGroup {
+@@ -96,9 +96,9 @@ class TaskGroup {
    int nacl_debug_stub_port() const { return nacl_debug_stub_port_; }
  #endif  // !defined(DISABLE_NACL)
  
@@ -12,7 +12,7 @@
  
    int idle_wakeups_per_second() const { return idle_wakeups_per_second_; }
  
-@@ -112,9 +112,9 @@ class TaskGroup {
+@@ -121,9 +121,9 @@ class TaskGroup {
  
    void OnIdleWakeupsRefreshDone(int idle_wakeups_per_second);
  
@@ -24,7 +24,7 @@
  
    void OnProcessPriorityDone(bool is_backgrounded);
  
-@@ -159,10 +159,10 @@ class TaskGroup {
+@@ -171,10 +171,10 @@ class TaskGroup {
    int nacl_debug_stub_port_;
  #endif  // !defined(DISABLE_NACL)
    int idle_wakeups_per_second_;

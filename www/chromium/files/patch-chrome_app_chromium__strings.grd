@@ -1,6 +1,6 @@
---- chrome/app/chromium_strings.grd.orig	2017-01-26 00:49:07 UTC
+--- chrome/app/chromium_strings.grd.orig	2017-03-09 20:04:27 UTC
 +++ chrome/app/chromium_strings.grd
-@@ -939,7 +939,7 @@ Signing in anyway will merge Chromium in
+@@ -887,7 +887,7 @@ Signing in anyway will merge Chromium in
        </message>
  
        <!-- ProcessSingleton -->

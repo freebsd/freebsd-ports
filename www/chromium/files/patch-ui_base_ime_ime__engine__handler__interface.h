@@ -1,6 +1,6 @@
---- ui/base/ime/ime_engine_handler_interface.h.orig	2017-01-26 00:49:31 UTC
+--- ui/base/ime/ime_engine_handler_interface.h.orig	2017-03-09 20:04:49 UTC
 +++ ui/base/ime/ime_engine_handler_interface.h
-@@ -138,7 +138,7 @@ class UI_BASE_IME_EXPORT IMEEngineHandle
+@@ -142,7 +142,7 @@ class UI_BASE_IME_EXPORT IMEEngineHandle
    // Hides the input view window (from API call).
    virtual void HideInputView() = 0;
  

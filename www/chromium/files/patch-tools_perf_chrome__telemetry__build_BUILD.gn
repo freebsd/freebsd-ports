@@ -1,4 +1,4 @@
---- tools/perf/chrome_telemetry_build/BUILD.gn.orig	2017-02-02 02:03:13 UTC
+--- tools/perf/chrome_telemetry_build/BUILD.gn.orig	2017-03-09 20:04:48 UTC
 +++ tools/perf/chrome_telemetry_build/BUILD.gn
 @@ -93,7 +93,7 @@ group("telemetry_chrome_test") {
      data_deps += [ "//chrome:reorder_imports" ]
@@ -6,6 +6,6 @@
  
 -  if (is_linux) {
 +  if (is_linux && !is_bsd) {
-     data_deps += [
-       "//tools/xdisplaycheck",
-       "//breakpad:dump_syms($host_toolchain)",
+     data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
+   }
+ 

@@ -1,6 +1,6 @@
---- ui/views/mus/aura_init.cc.orig	2017-02-02 02:03:13 UTC
+--- ui/views/mus/aura_init.cc.orig	2017-03-09 20:04:49 UTC
 +++ ui/views/mus/aura_init.cc
-@@ -21,7 +21,7 @@
+@@ -22,7 +22,7 @@
  #include "ui/views/mus/mus_client.h"
  #include "ui/views/views_delegate.h"
  
@@ -9,7 +9,7 @@
  #include "components/font_service/public/cpp/font_loader.h"
  #endif
  
-@@ -67,7 +67,7 @@ AuraInit::AuraInit(service_manager::Conn
+@@ -69,7 +69,7 @@ AuraInit::AuraInit(service_manager::Conn
    InitializeResources(connector);
  
  // Initialize the skia font code to go ask fontconfig underneath.
@@ -18,7 +18,7 @@
    font_loader_ = sk_make_sp<font_service::FontLoader>(connector);
    SkFontConfigInterface::SetGlobal(font_loader_.get());
  #endif
-@@ -80,7 +80,7 @@ AuraInit::AuraInit(service_manager::Conn
+@@ -82,7 +82,7 @@ AuraInit::AuraInit(service_manager::Conn
  }
  
  AuraInit::~AuraInit() {

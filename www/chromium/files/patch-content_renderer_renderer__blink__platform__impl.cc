@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2017-01-26 00:49:13 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2017-03-09 20:04:32 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
 @@ -111,7 +111,7 @@
  
@@ -9,7 +9,7 @@
  #include <map>
  #include <string>
  
-@@ -201,7 +201,7 @@ class RendererBlinkPlatformImpl::FileUti
+@@ -204,7 +204,7 @@ class RendererBlinkPlatformImpl::FileUti
    scoped_refptr<ThreadSafeSender> thread_safe_sender_;
  };
  
@@ -18,7 +18,7 @@
  class RendererBlinkPlatformImpl::SandboxSupport
      : public blink::WebSandboxSupport {
   public:
-@@ -247,7 +247,7 @@ RendererBlinkPlatformImpl::RendererBlink
+@@ -250,7 +250,7 @@ RendererBlinkPlatformImpl::RendererBlink
        renderer_scheduler_(renderer_scheduler),
        blink_interface_provider_(
            new BlinkInterfaceProviderImpl(remote_interfaces)) {
@@ -27,7 +27,7 @@
    if (g_sandbox_enabled && sandboxEnabled()) {
      sandbox_support_.reset(new RendererBlinkPlatformImpl::SandboxSupport);
    } else {
-@@ -283,7 +283,7 @@ RendererBlinkPlatformImpl::~RendererBlin
+@@ -286,7 +286,7 @@ RendererBlinkPlatformImpl::~RendererBlin
  }
  
  void RendererBlinkPlatformImpl::Shutdown() {
@@ -36,7 +36,7 @@
    // SandboxSupport contains a map of WebFontFamily objects, which hold
    // WebCStrings, which become invalidated when blink is shut down. Hence, we
    // need to clear that map now, just before blink::shutdown() is called.
-@@ -331,7 +331,7 @@ blink::WebFileUtilities* RendererBlinkPl
+@@ -334,7 +334,7 @@ blink::WebFileUtilities* RendererBlinkPl
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::sandboxSupport() {
@@ -45,7 +45,7 @@
    // These platforms do not require sandbox support.
    return NULL;
  #else
-@@ -539,7 +539,7 @@ bool RendererBlinkPlatformImpl::SandboxS
+@@ -542,7 +542,7 @@ bool RendererBlinkPlatformImpl::SandboxS
    return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
  }
  

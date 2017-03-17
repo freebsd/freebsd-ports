@@ -1,6 +1,6 @@
---- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2017-03-09 20:04:28 UTC
 +++ chrome/browser/download/chrome_download_manager_delegate.cc
-@@ -778,7 +778,7 @@ void ChromeDownloadManagerDelegate::OnDo
+@@ -777,7 +777,7 @@ void ChromeDownloadManagerDelegate::OnDo
          target_info->is_filetype_handled_safely)
        DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
  
@@ -9,7 +9,7 @@
      if (item->GetOriginalMimeType() == "application/x-x509-user-cert")
        DownloadItemModel(item).SetShouldPreferOpeningInBrowser(true);
  #endif
-@@ -793,7 +793,7 @@ void ChromeDownloadManagerDelegate::OnDo
+@@ -792,7 +792,7 @@ void ChromeDownloadManagerDelegate::OnDo
  
  bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferreredForFile(
      const base::FilePath& path) {

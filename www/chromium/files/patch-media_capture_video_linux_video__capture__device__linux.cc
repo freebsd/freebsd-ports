@@ -1,4 +1,4 @@
---- media/capture/video/linux/video_capture_device_linux.cc.orig	2017-01-26 00:49:15 UTC
+--- media/capture/video/linux/video_capture_device_linux.cc.orig	2017-03-09 20:04:34 UTC
 +++ media/capture/video/linux/video_capture_device_linux.cc
 @@ -21,6 +21,7 @@
  
@@ -24,9 +24,9 @@
  void VideoCaptureDeviceLinux::AllocateAndStart(
      const VideoCaptureParams& params,
      std::unique_ptr<VideoCaptureDevice::Client> client) {
-@@ -70,7 +73,13 @@ void VideoCaptureDeviceLinux::AllocateAn
-                  params.requested_format.frame_size.height(),
-                  params.requested_format.frame_rate, base::Passed(&client)));
+@@ -74,7 +77,13 @@ void VideoCaptureDeviceLinux::AllocateAn
+     v4l2_thread_.task_runner()->PostTask(FROM_HERE, request);
+   photo_requests_queue_.clear();
  }
 +#else // !defined(OS_FREEBSD)
 +void VideoCaptureDeviceLinux::AllocateAndStart(
@@ -38,9 +38,9 @@
  void VideoCaptureDeviceLinux::StopAndDeAllocate() {
    if (!v4l2_thread_.IsRunning())
      return;  // Wrong state.
-@@ -110,7 +119,11 @@ void VideoCaptureDeviceLinux::SetPhotoOp
-       base::Bind(&V4L2CaptureDelegate::SetPhotoOptions, capture_impl_,
-                  base::Passed(&settings), base::Passed(&callback)));
+@@ -123,7 +132,11 @@ void VideoCaptureDeviceLinux::SetPhotoOp
+   }
+   v4l2_thread_.task_runner()->PostTask(FROM_HERE, std::move(functor));
  }
 +#else // !defined(OS_FREEBSD)
 +void VideoCaptureDeviceLinux::StopAndDeAllocate() {}
@@ -50,7 +50,7 @@
  void VideoCaptureDeviceLinux::SetRotation(int rotation) {
    if (v4l2_thread_.IsRunning()) {
      v4l2_thread_.task_runner()->PostTask(
-@@ -118,6 +131,9 @@ void VideoCaptureDeviceLinux::SetRotatio
+@@ -131,6 +144,9 @@ void VideoCaptureDeviceLinux::SetRotatio
          base::Bind(&V4L2CaptureDelegate::SetRotation, capture_impl_, rotation));
    }
  }

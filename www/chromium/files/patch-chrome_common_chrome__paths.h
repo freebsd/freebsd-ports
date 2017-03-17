@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.h.orig	2017-01-26 00:49:09 UTC
+--- chrome/common/chrome_paths.h.orig	2017-03-09 20:04:29 UTC
 +++ chrome/common/chrome_paths.h
 @@ -49,7 +49,7 @@ enum {
                                  // to set policies for chrome. This directory
@@ -18,7 +18,7 @@
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -112,7 +112,7 @@ enum {
+@@ -111,7 +111,7 @@ enum {
    DIR_SUPERVISED_USER_INSTALLED_WHITELISTS,  // Directory where sanitized
                                               // supervised user whitelists are
                                               // installed.

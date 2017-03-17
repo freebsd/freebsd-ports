@@ -1,4 +1,4 @@
---- tools/gn/bootstrap/bootstrap.py.orig	2017-01-26 00:49:31 UTC
+--- tools/gn/bootstrap/bootstrap.py.orig	2017-03-09 20:04:48 UTC
 +++ tools/gn/bootstrap/bootstrap.py
 @@ -23,6 +23,7 @@ import os
  import shutil
@@ -19,7 +19,7 @@
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -594,6 +596,39 @@ def write_gn_ninja(path, root_gen_dir, o
+@@ -605,6 +607,39 @@ def write_gn_ninja(path, root_gen_dir, o
          'base/third_party/libevent/epoll.c',
      ])
  

@@ -1,6 +1,6 @@
---- media/audio/alsa/audio_manager_alsa.cc.orig	2017-01-26 00:49:15 UTC
+--- media/audio/alsa/audio_manager_alsa.cc.orig	2017-03-09 20:04:34 UTC
 +++ media/audio/alsa/audio_manager_alsa.cc
-@@ -135,7 +135,9 @@ void AudioManagerAlsa::GetAlsaAudioDevic
+@@ -138,7 +138,9 @@ void AudioManagerAlsa::GetAlsaAudioDevic
    int card = -1;
  
    // Loop through the sound cards to get ALSA device hints.
@@ -10,7 +10,7 @@
      void** hints = NULL;
      int error = wrapper_->DeviceNameHint(card, kPcmInterfaceName, &hints);
      if (!error) {
-@@ -147,7 +149,9 @@ void AudioManagerAlsa::GetAlsaAudioDevic
+@@ -150,7 +152,9 @@ void AudioManagerAlsa::GetAlsaAudioDevic
        DLOG(WARNING) << "GetAlsaAudioDevices: unable to get device hints: "
                      << wrapper_->StrError(error);
      }
@@ -19,8 +19,8 @@
 +#endif
  }
  
- void AudioManagerAlsa::GetAlsaDevicesInfo(
-@@ -230,7 +234,11 @@ bool AudioManagerAlsa::IsAlsaDeviceAvail
+ void AudioManagerAlsa::GetAlsaDevicesInfo(AudioManagerAlsa::StreamType type,
+@@ -232,7 +236,11 @@ bool AudioManagerAlsa::IsAlsaDeviceAvail
      // goes through software conversion if needed (e.g. incompatible
      // sample rate).
      // TODO(joi): Should we prefer "hw" instead?
@@ -32,7 +32,7 @@
      return strncmp(kDeviceTypeDesired,
                     device_name,
                     arraysize(kDeviceTypeDesired) - 1) == 0;
-@@ -254,7 +262,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDe
+@@ -256,7 +264,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDe
    // Loop through the sound cards.
    // Don't use snd_device_name_hint(-1,..) since there is a access violation
    // inside this ALSA API with libasound.so.2.0.0.
@@ -42,7 +42,7 @@
      int error = wrapper_->DeviceNameHint(card, kPcmInterfaceName, &hints);
      if (!error) {
        for (void** hint_iter = hints; *hint_iter != NULL; hint_iter++) {
-@@ -278,7 +288,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDe
+@@ -280,7 +290,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDe
        DLOG(WARNING) << "HasAnyAudioDevice: unable to get device hints: "
                      << wrapper_->StrError(error);
      }

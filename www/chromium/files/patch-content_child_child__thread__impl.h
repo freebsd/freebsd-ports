@@ -1,8 +1,8 @@
---- content/child/child_thread_impl.h.orig	2017-02-02 02:02:53 UTC
+--- content/child/child_thread_impl.h.orig	2017-03-09 20:04:32 UTC
 +++ content/child/child_thread_impl.h
-@@ -130,7 +130,7 @@ class CONTENT_EXPORT ChildThreadImpl
-       IPC::Sender* sender,
-       bool* out_of_memory);
+@@ -116,7 +116,7 @@ class CONTENT_EXPORT ChildThreadImpl
+   static std::unique_ptr<base::SharedMemory> AllocateSharedMemory(
+       size_t buf_size);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
