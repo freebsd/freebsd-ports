@@ -3,7 +3,7 @@
 
 PORTNAME=	arduino
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	http://arduino.cc/download.php?f=/
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		dos2unix tar:tgz kmod
-DOS2UNIX_REGEX=	.*\(\.\(c|cpp|h|hex|html|ino|lst|txt\)|Makefile\)
+DOS2UNIX_REGEX=	.*(\.(c|cpp|h|hex|txt)|Makefile|makefile)
 
 USE_JAVA=	yes
 JAVA_OS=	native
