@@ -14,4 +14,7 @@ LICENSE=	MIT
 USES=		go
 GO_PKGNAME=	github.com/kr/text
 
+DEPRECATED=	Go libraries should not be packaged
+EXPIRATION_DATE=	2017-04-08
+
 .include <bsd.port.mk>

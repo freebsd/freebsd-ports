@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	ixl
-PORTVERSION?=	1.4.27
+PORTVERSION?=	1.7.11
 CATEGORIES=	net
 MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -14,6 +14,21 @@ MAINTAINER?=	freebsd@intel.com
 COMMENT?=	40 gigabit FreeBSD Base Driver for Intel(R) Network Connections
 
 LICENSE=	BSD2CLAUSE
+
+# Present version of net/intel-em-kmod has issues building with netmap(4)
+# support on 11+. Narrowing netmap(4) support to this port only
+.if ${PORTNAME} == ixl
+OPTIONS_SINGLE=		NETMAP
+OPTIONS_SINGLE_NETMAP=	NETMAP_AUTO NETMAP_ON NETMAP_OFF
+OPTIONS_DEFAULT=	NETMAP_AUTO
+
+NETMAP_AUTO_DESC=	Enable netmap(4) support on FreeBSD 11.0+
+NETMAP_ON_DESC=		Enable netmap(4) support unconditionally
+NETMAP_OFF_DESC=	Disable netmap(4) support unconditionally
+
+NETMAP_ON_CFLAGS=	-DDEV_NETMAP
+NETMAP_OFF_CFLAGS=	-UDEV_NETMAP
+.endif
 
 USES=		kmod
 WRKSRC_SUBDIR=	src
@@ -30,10 +45,10 @@ PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko \
 .if ${PORTNAME} == ixl
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 only.
-
-.if ${OSVERSION} >= 1100000
-BROKEN=		does not build
 .endif
+
+.if ${PORT_OPTIONS:MNETMAP_AUTO} && ${OSVERSION} >= 1100000
+CFLAGS+=	-DDEV_NETMAP
 .endif
 
 do-install:

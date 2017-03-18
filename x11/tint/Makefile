@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tint2
-PORTVERSION=	0.12.12
+PORTVERSION=	0.13
 CATEGORIES=	x11
 
 MAINTAINER=	yamagi@yamagi.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libImlib2.so:graphics/imlib2 \
-		libstartup-notification-1.so:x11/startup-notification \
+		libstartup-notification-1.so:x11/startup-notification
 
 USES=		alias cmake:outsource pkgconfig
 USE_GNOME=	cairo glib20 gtk20 librsvg2 pango

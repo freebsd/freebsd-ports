@@ -365,6 +365,7 @@ share/plasma/desktoptheme/default/icons/kdeconnect.svgz
 share/plasma/desktoptheme/default/icons/keyboard.svgz
 share/plasma/desktoptheme/default/icons/kget.svgz
 share/plasma/desktoptheme/default/icons/kgpg.svgz
+share/plasma/desktoptheme/default/icons/kleopatra.svgz
 share/plasma/desktoptheme/default/icons/klipper.svgz
 share/plasma/desktoptheme/default/icons/kmail.svgz
 share/plasma/desktoptheme/default/icons/konv_message.svgz
@@ -382,6 +383,8 @@ share/plasma/desktoptheme/default/icons/nepomuk.svgz
 share/plasma/desktoptheme/default/icons/network.svgz
 share/plasma/desktoptheme/default/icons/notification.svgz
 share/plasma/desktoptheme/default/icons/phone.svgz
+share/plasma/desktoptheme/default/icons/plasmavault.svgz
+share/plasma/desktoptheme/default/icons/plasmavault_error.svgz
 share/plasma/desktoptheme/default/icons/preferences.svgz
 share/plasma/desktoptheme/default/icons/printer.svgz
 share/plasma/desktoptheme/default/icons/quassel.svgz

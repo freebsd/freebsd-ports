@@ -40,4 +40,3 @@ do-extract:
 BROKEN_i386=    does not build on i386 due to openmp
 
 .include <bsd.port.mk>
-

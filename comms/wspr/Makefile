@@ -2,7 +2,7 @@
 
 PORTNAME=	wspr
 DISTVERSION=	${VERSION}.r${SVN_REV}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms hamradio
 MASTER_SITES=	LOCAL/db
 DISTNAME=	wspr-r${SVN_REV}
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib \
 		libportaudio.so:audio/portaudio
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		autoreconf dos2unix fortran gmake libtool python:3.3 tar:bzip2
+USES=		autoreconf dos2unix fortran gmake libtool python:3.3+ tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gfortran=${FC} \
 		--with-f2py=f2py-${PYTHON_VER} \

@@ -15,8 +15,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USE_OPENSSL=	yes
-USES=		libtool
+USES=		libtool ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_stdcpp_main=no
 INSTALL_TARGET=	install-strip

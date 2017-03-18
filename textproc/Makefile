@@ -4,6 +4,7 @@
     COMMENT = Text processing utilities (does not include desktop publishing)
 
     SUBDIR += 2bsd-diff
+    SUBDIR += CLDR
     SUBDIR += R-cran-DT
     SUBDIR += R-cran-R2HTML
     SUBDIR += R-cran-XML
@@ -19,7 +20,6 @@
     SUBDIR += R-cran-xtable
     SUBDIR += R-cran-yaml
     SUBDIR += UCD
-    SUBDIR += ack
     SUBDIR += adabrowse
     SUBDIR += add-css-links
     SUBDIR += af-aspell
@@ -721,6 +721,7 @@
     SUBDIR += p5-Pod-Escapes
     SUBDIR += p5-Pod-Eventual
     SUBDIR += p5-Pod-HtmlEasy
+    SUBDIR += p5-Pod-LaTeX
     SUBDIR += p5-Pod-Markdown
     SUBDIR += p5-Pod-MinimumVersion
     SUBDIR += p5-Pod-POM
@@ -1132,6 +1133,7 @@
     SUBDIR += p5-YAPE-HTML
     SUBDIR += p5-YAPE-Regex
     SUBDIR += p5-YAPE-Regex-Explain
+    SUBDIR += p5-ack
     SUBDIR += p5-dTemplate
     SUBDIR += p5-libsoldout
     SUBDIR += p5-libxml
@@ -1372,6 +1374,8 @@
     SUBDIR += py3-hunspell
     SUBDIR += py3-libxml2
     SUBDIR += py3-pager
+    SUBDIR += py3-pystemmer
+    SUBDIR += py3-snowballstemmer
     SUBDIR += py3-sphinx_rtd_theme
     SUBDIR += py3-texttable
     SUBDIR += pychm
@@ -1463,7 +1467,6 @@
     SUBDIR += rubygem-gemoji
     SUBDIR += rubygem-gherkin
     SUBDIR += rubygem-github-linguist
-    SUBDIR += rubygem-github-markdown
     SUBDIR += rubygem-github-markup
     SUBDIR += rubygem-gitlab-grit
     SUBDIR += rubygem-gitlab-linguist
@@ -1473,6 +1476,7 @@
     SUBDIR += rubygem-html-pipeline
     SUBDIR += rubygem-html-pipeline-gitlab
     SUBDIR += rubygem-html-pipeline1
+    SUBDIR += rubygem-html2text
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
@@ -1544,6 +1548,7 @@
     SUBDIR += rubygem-terminal-table
     SUBDIR += rubygem-text
     SUBDIR += rubygem-tidy
+    SUBDIR += rubygem-truncato
     SUBDIR += rubygem-twitter-text
     SUBDIR += rubygem-unf
     SUBDIR += rubygem-unf_ext

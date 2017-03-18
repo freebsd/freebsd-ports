@@ -1,7 +1,7 @@
---- chrome/browser/chrome_browser_main.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2017-03-09 20:04:28 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -181,7 +181,7 @@
- #include "chrome/browser/feedback/feedback_profile_observer.h"
+@@ -180,7 +180,7 @@
+ #include "chrome/browser/lifetime/application_lifetime.h"
  #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
@@ -9,7 +9,7 @@
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -1194,11 +1194,11 @@ int ChromeBrowserMainParts::PreCreateThr
+@@ -1173,11 +1173,11 @@ int ChromeBrowserMainParts::PreCreateThr
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  

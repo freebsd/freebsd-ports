@@ -5,3 +5,4 @@
 %%PERL5_MAN3%%/POE::Component::Server::SimpleHTTP.3.gz
 %%PERL5_MAN3%%/POE::Component::Server::SimpleHTTP::Connection.3.gz
 %%PERL5_MAN3%%/POE::Component::Server::SimpleHTTP::Response.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::SimpleHTTP::State.3.gz

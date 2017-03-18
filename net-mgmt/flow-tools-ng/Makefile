@@ -26,7 +26,7 @@ MYSQL_CONFIGURE_ON=	--with-mysql="${PREFIX}"
 MYSQL_USE=		MYSQL=yes
 OPENSSL_CONFIGURE_OFF=	--without-openssl
 OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 
 CONFLICTS=	flow-tools-[0-9]*
 

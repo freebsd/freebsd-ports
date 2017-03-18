@@ -1,6 +1,6 @@
---- remoting/host/BUILD.gn.orig	2017-01-26 00:49:17 UTC
+--- remoting/host/BUILD.gn.orig	2017-03-09 20:04:35 UTC
 +++ remoting/host/BUILD.gn
-@@ -326,7 +326,7 @@ static_library("host") {
+@@ -329,7 +329,7 @@ static_library("host") {
      deps += [ "//components/policy:generated" ]
    }
  
@@ -9,7 +9,7 @@
      libs += [ "pam" ]
    }
  
-@@ -349,7 +349,7 @@ static_library("host") {
+@@ -348,7 +348,7 @@ static_library("host") {
        "input_injector_x11.cc",
        "local_input_monitor_x11.cc",
      ]
@@ -27,16 +27,16 @@
      sources -= [ "linux/unicode_to_keysym_unittest.cc" ]
    }
    if (use_ozone || is_chromeos) {
-@@ -755,7 +755,7 @@ if (enable_me2me_host) {
-         deps += [ "//build/config/linux/gtk2" ]
-       }
+@@ -750,7 +750,7 @@ if (enable_me2me_host) {
+     if (is_desktop_linux) {
+       deps += [ "//build/config/linux/gtk" ]
      }
 -    if ((is_linux && !is_chromeos) || is_mac) {
 +    if ((is_linux && !is_chromeos) || is_mac || is_bsd) {
        libs = [ "pam" ]
      }
  
-@@ -825,7 +825,7 @@ if (enable_me2me_host) {
+@@ -820,7 +820,7 @@ if (enable_me2me_host) {
        }
      }
    }

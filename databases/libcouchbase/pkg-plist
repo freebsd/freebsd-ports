@@ -29,6 +29,7 @@ include/libcouchbase/_cxxwrap.h
 include/libcouchbase/api-legacy.h
 include/libcouchbase/api3.h
 include/libcouchbase/assert.h
+include/libcouchbase/auth.h
 include/libcouchbase/cbft.h
 include/libcouchbase/cntl-private.h
 include/libcouchbase/cntl.h
@@ -59,7 +60,7 @@ include/libcouchbase/views.h
 include/libcouchbase/visibility.h
 lib/libcouchbase.so
 lib/libcouchbase.so.2
-lib/libcouchbase.so.2.0.38
+lib/libcouchbase.so.2.0.42
 lib/libcouchbase_libev.so
 lib/libcouchbase_libevent.so
 lib/libcouchbase_libuv.so

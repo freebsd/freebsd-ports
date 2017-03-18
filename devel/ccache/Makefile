@@ -3,6 +3,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.3.4
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.samba.org/ftp/ccache/ \
 		LOCAL/bdrewery
@@ -12,7 +13,7 @@ COMMENT=	Tool to minimize the compile time of C/C++ programs
 
 LICENSE=	GPLv3
 
-CONFLICTS_INSTALL=	ccache-memcached-[0-9]*
+CONFLICTS_INSTALL=	ccache-static-[0-9]* ccache-memcached-[0-9]* ccache-memcached-static-[0-9]*
 
 GNU_CONFIGURE=	yes
 
@@ -32,22 +33,29 @@ MEMCACHED_DESC=	Build in experimental Memcached support
 
 USES=		compiler
 
-MEMCACHED_EXTRA_PATCHES=	${FILESDIR}/extra-patch-memcached:-p1
+MEMCACHED_EXTRA_PATCHES=	${FILESDIR}/extra-patch-memcached:-p1 \
+				${FILESDIR}/extra-patch-memcached-ccache.c \
+				${FILESDIR}/extra-patch-memcached-configure.ac \
+				${FILESDIR}/extra-patch-memcached-Makefile.in
 MEMCACHED_CONFIGURE_ENABLE=	memcached
 MEMCACHED_USES=			autoreconf pkgconfig
 MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 MEMCACHED_LDFLAGS=		-L${LOCALBASE}/lib
 MEMCACHED_CFLAGS=		-I${LOCALBASE}/include
 
-.if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED)
+.if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED) && \
+    !defined(NO_CCACHE_DEPEND)
 # Don't allow autoreconf. We want no dependencies on this to keep
 # WITH_CCACHE_BUILD working.
 USES:=		${USES:Nautoreconf}
 
 MEMCACHED_IGNORE=		MEMCACHED cannot be combined with WITH_CCACHE_BUILD.  Use devel/ccache-memcached
 # XXX: This needs more testing with Poudriere before enabling. Also bsd.options.mk support.
-#MEMCACHED_DEPENDS_ARGS+= NO_CCACHE=1
+#MEMCACHED_DEPENDS_ARGS+= NO_CCACHE_DEPEND=1
 .endif
+
+# Support WITH_CCACHE_BUILD but don't depend on it.
+NO_CCACHE_DEPEND=	yes
 
 OPTIONS_SUB=	yes
 

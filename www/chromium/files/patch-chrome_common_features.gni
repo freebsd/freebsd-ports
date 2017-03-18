@@ -1,6 +1,6 @@
---- chrome/common/features.gni.orig	2017-01-26 00:49:10 UTC
+--- chrome/common/features.gni.orig	2017-03-09 20:04:29 UTC
 +++ chrome/common/features.gni
-@@ -43,7 +43,7 @@ declare_args() {
+@@ -40,7 +40,7 @@ declare_args() {
    enable_hotwording = is_chrome_branded && is_chromeos
  
    enable_one_click_signin =

@@ -18,7 +18,7 @@ DIST_SUBDIR=	qmail
 CONFLICTS?=	qmail-ldap-[0-9]* *qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* *qmail-tls-[0-9]*
 CONFLICTS+=	qmail-vida-[0-9]*
 
-USES=		qmail:vars fakeroot
+USES+=		qmail:vars fakeroot
 PREFIX?=	${QMAIL_PREFIX}
 PLIST_SUB+=	QMAIL_PREFIX="${PREFIX}"
 
@@ -377,7 +377,7 @@ CONFIGUREPROGRAMS=	dnsfq hostname dnsip ipmeprint dnsptr
 CONFIGURESCRIPTS=	config config-fast
 
 .if defined(SLAVE_LDAP)
-TLS_USE=	OPENSSL=yes
+TLS_USES=		ssl
 .endif
 
 # Port will control all PREFIX handling.

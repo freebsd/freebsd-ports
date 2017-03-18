@@ -1,6 +1,6 @@
---- content/public/common/content_switches.h.orig	2017-01-26 00:49:13 UTC
+--- content/public/common/content_switches.h.orig	2017-03-09 20:04:32 UTC
 +++ content/public/common/content_switches.h
-@@ -293,7 +293,7 @@ CONTENT_EXPORT extern const char kDisabl
+@@ -296,7 +296,7 @@ CONTENT_EXPORT extern const char kDisabl
  CONTENT_EXPORT extern const char kDisableVaapiAcceleratedVideoEncode[];
  #endif
  

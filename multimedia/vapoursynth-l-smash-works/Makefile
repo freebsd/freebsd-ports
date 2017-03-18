@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	l-smash-works
-DISTVERSION=	0.0-921 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g2f9d499
+DISTVERSION=	0.0-929 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gfba174b
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 

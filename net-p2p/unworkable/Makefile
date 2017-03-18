@@ -18,8 +18,7 @@ EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		scons
-USE_OPENSSL=	yes
+USES=		scons ssl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

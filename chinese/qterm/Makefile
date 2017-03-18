@@ -27,7 +27,7 @@ PHONON_DESC=	Multimedia support via Phonon
 QTSCRIPT_DESC=	Scripting support via QtScript Bindings
 KDE_DESC=	Password management via KWallet
 
-OPENSSL_USE=	OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CMAKE_ON=	-DQTERM_ENABLE_SSH:BOOL=TRUE
 OPENSSL_CMAKE_OFF=	-DQTERM_ENABLE_SSH:BOOL=FALSE
 

@@ -3953,7 +3953,6 @@ x11-themes/kde-icons-krystaline||2013-01-06|Has expired: Broken for more than 6 
 x11-themes/kde-icons-amaranth||2013-01-06|Has expired: Broken for more than 6 months
 x11-themes/kde-icons-realistic||2013-01-06|Has expired: Broken for more than 6 months
 x11/Terminal|x11/xfce4-terminal|2013-01-06|Project was renamed
-textproc/p5-ack|textproc/ack|2013-01-06|Not just a perl module
 sysutils/syslog-ng-rc|sysutils/syslog-ng-devel|2013-01-08|No longer used by our upline, use syslog-ng-devel instead
 www/openbravoerp||2013-01-12|Has expired: incompatible with ant for building
 devel/lbpp||2013-01-13|Has expired: Dead upstream since 2001
@@ -4759,7 +4758,6 @@ x11/kdebase3||2013-07-26|Has expired: Depends on Qt 3.x
 x11/kdelibs3||2013-07-26|Has expired: Depends on Qt 3.x
 x11/kdelibs3-nocups||2013-07-26|Has expired: Depends on Qt 3.x
 x11/oooqs2||2013-07-26|Has expired: Depends on Qt 3.x
-x11/rsibreak||2013-07-26|Has expired: Depends on Qt 3.x
 x11/xscreensaver-kde||2013-07-26|Has expired: Depends on Qt 3.x
 x11/yakuake||2013-07-26|Has expired: Depends on Qt 3.x
 x11-clocks/kdetoys3||2013-07-26|Has expired: Depends on Qt 3.x
@@ -6819,9 +6817,6 @@ security/pam_bsdbioapi||2014-09-01|Not staged
 security/php-Auth_OpenID2||2014-09-01|Not staged
 security/php-Auth_OpenID||2014-09-01|Not staged
 security/php-openid-ldap||2014-09-01|Not staged
-security/samhain-client||2014-09-01|Not staged
-security/samhain-server||2014-09-01|Not staged
-security/samhain||2014-09-01|Not staged
 security/scannedonly||2014-09-01|Not staged
 security/tinysu||2014-09-01|Not staged
 sysutils/asapm||2014-09-01|Not staged
@@ -9043,8 +9038,8 @@ x11-themes/linux-hicolor-icon-theme||2017-01-31|Merged into linux_base port
 audio/linux-c6-arts||2017-01-31|Old KDE3 component
 audio/linux-c6-esound||2017-01-31|Old sound daemon
 audio/linux-c7-esound||2017-01-31|Old sound daemon
-audio/linux-c6-openssl-compat||2017-01-31|Old OpenSSL
-audio/linux-c7-openssl-compat||2017-01-31|Old OpenSSL
+security/linux-c6-openssl-compat||2017-01-31|Old OpenSSL
+security/linux-c7-openssl-compat||2017-01-31|Old OpenSSL
 databases/rubygem-arel3|databases/rubygem-arel|2017-01-31|Has expired: Use devel/rubygem-arel or devel/rubygem-arel6 instead
 databases/rubygem-arel5|databases/rubygem-arel|2017-01-31|Has expired: Use devel/rubygem-arel or devel/rubygem-arel6 instead
 www/tinymce3|www/tinymce|2017-01-31|Has expired: Use www/tinymce instead
@@ -9123,3 +9118,27 @@ devel/py-turbocheetah||2017-03-03|Has expired: Development of this branch ceased
 devel/py-tgMochiKit||2017-03-03|Has expired: Development of this branch ceased
 www/py-Lightbox||2017-03-03|Has expired: Development of this branch ceased
 devel/py-ll-core||2017-03-04|Has expired: Long unmaintained, abandoned upstream
+net/tcpdump398|net/tcpdump|2017-03-05|Has expired: multiple security vulnerabilities; not updated since 2009
+databases/oracle8-client||2017-03-07|Has expired: Oracle 8 EOL by 10 years
+databases/oracle7-client||2017-03-07|Has expired: Oracle 7 EOL by 13 years
+databases/yasql||2017-03-07|Has expired: Dependent on deprecated oracle7-client
+databases/jdbc-oracle10g||2017-03-07|Has expired: Oracle 10g EOL almost 4 years
+databases/p5-DBD-Oracle||2017-03-07|Has expired: Depends on deprecated Oracle 7 (or 8) client
+databases/jdbc-oracle8i||2017-03-07|Has expired: Oracle8i unsupported and unavailable; fetch site redirects
+databases/jdbc-oracle9i||2017-03-07|Has expired: Oracle 9i is no more supported
+x11/rsibreak-kde4|x11/rsibreak|2017-03-11|Renamed to drop the -kde4 suffix
+textproc/ack|textproc/p5-ack|2017-03-12|Rename to match our perl naming
+misc/p5-Geo-Coder-Geocoder-US||2017-03-12|Has expired: http://geocoder.us/ disappeared in late 2015
+databases/py-sqlalchemy09|databases/py-sqlalchemy10|2017-03-12|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
+devel/avr-gcc-devel||2017-03-13|Has expired: There's no longer a point to have both, a -devel and a regular port of GCC for the AVR
+net/py-pysimplesoap|net/py-soap2py|2017-03-13|Rename to match upstream naming
+games/trigger-data|games/trigger-rally|2017-03-15|Merged into games/trigger-rally
+devel/py-setuptools|devel/py27-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools27|devel/py27-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools33|devel/py33-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools34|devel/py34-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools35|devel/py35-setuptools|2017-03-16|Renamed to better match other python ports
+devel/py-setuptools36|devel/py36-setuptools|2017-03-16|Renamed to better match other python ports
+devel/rubygem-devise-rails4|devel/rubygem-devise|2017-03-16|Has expired: Please use devel/rubygem-devise instead
+textproc/rubygem-github-markdown||2017-03-16|Has expired: This gem is not maintained and not supported by upstream
+chinese/irssi|irc/irssi|2017-03-17|Use irc/irssi, which can handle Chinese locales

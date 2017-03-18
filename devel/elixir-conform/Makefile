@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	conform
-DISTVERSION=	2.2.2
+DISTVERSION=	2.3.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 

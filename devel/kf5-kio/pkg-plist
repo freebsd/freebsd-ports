@@ -278,6 +278,8 @@ lib/libexec/kf5/kpac_dhcp_helper
 %%QT_PLUGINDIR%%/kcm_webshortcuts.so
 %%QT_PLUGINDIR%%/kf5/kded/kcookiejar.so
 %%QT_PLUGINDIR%%/kf5/kded/proxyscout.so
+%%QT_PLUGINDIR%%/kf5/kded/remotenotifier.so
+%%QT_PLUGINDIR%%/kf5/kio/remote.so
 %%QT_PLUGINDIR%%/kf5/kio/file.so
 %%QT_PLUGINDIR%%/kf5/kio/ftp.so
 %%QT_PLUGINDIR%%/kf5/kio/ghelp.so

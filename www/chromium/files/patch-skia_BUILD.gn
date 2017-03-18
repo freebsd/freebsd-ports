@@ -1,6 +1,6 @@
---- skia/BUILD.gn.orig	2017-01-26 00:49:17 UTC
+--- skia/BUILD.gn.orig	2017-03-09 20:04:36 UTC
 +++ skia/BUILD.gn
-@@ -135,7 +135,7 @@ config("skia_library_config") {
+@@ -124,7 +124,7 @@ config("skia_library_config") {
    }
  
    # Settings for text blitting, chosen to approximate the system browser.
@@ -9,7 +9,7 @@
      defines += [
        "SK_GAMMA_EXPONENT=1.2",
        "SK_GAMMA_CONTRAST=0.2",
-@@ -363,7 +363,7 @@ component("skia") {
+@@ -340,7 +340,7 @@ component("skia") {
      sources -= [ "//third_party/skia/src/ports/SkFontHost_mac.cpp" ]
    }
  
@@ -18,15 +18,7 @@
      sources -= [
        "//third_party/skia/src/ports/SkFontConfigInterface.cpp",
        "//third_party/skia/src/ports/SkFontConfigInterface_direct.cpp",
-@@ -375,14 +375,14 @@ component("skia") {
- 
-   # Add the files for the SkFontMgr_Android. This is used to emulate android
-   # fonts on linux. See content/zygote/zygote_main_linux.cc
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     sources += [
-       "//third_party/skia/src/ports/SkFontMgr_android.cpp",
-       "//third_party/skia/src/ports/SkFontMgr_android_parser.cpp",
+@@ -349,7 +349,7 @@ component("skia") {
      ]
    }
  
@@ -35,7 +27,7 @@
      sources -= [
        "//third_party/skia/src/ports/SkFontHost_FreeType.cpp",
        "//third_party/skia/src/ports/SkFontHost_FreeType_common.cpp",
-@@ -421,7 +421,7 @@ component("skia") {
+@@ -387,7 +387,7 @@ component("skia") {
      "//base/third_party/dynamic_annotations",
    ]
  

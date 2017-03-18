@@ -2,7 +2,7 @@
 
 PORTNAME=	openmpi
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	2
@@ -21,7 +21,8 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
-USES=		execinfo fortran gmake libtool:keepla perl5 pkgconfig tar:bzip2
+USES=		execinfo fortran gmake libtool:keepla localbase perl5 \
+		pkgconfig tar:bzip2
 USE_PERL5=	build
 
 MPIBASE?=	mpi
@@ -33,18 +34,16 @@ PLIST_SUB+=	MPIDIR=${MPIDIR}
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--mandir=${PREFIX}/${MPIDIR}/man \
 			--program-prefix= \
-			--with-hwloc=${LOCALBASE} \
-			--with-libltdl=${LOCALBASE} \
+			--with-hwloc=external \
+			--with-libltdl \
 			--enable-mpi-fortran=usempi \
 			--enable-mpi-cxx \
 			--enable-cxx-exceptions \
 			--enable-heterogeneous \
 			--enable-mpi-thread-multiple \
-			--with-libevent=${LOCALBASE}/include \
-			--with-libevent-libdir=${LOCALBASE}/lib \
+			--with-libevent=external \
 			ompi_cv_fortran_ignore_tkr_data=0
 
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
 
@@ -60,8 +59,7 @@ DEBUG_CONFIGURE_ENABLE=	debug
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-TORQUE_CONFIGURE_ON=	--with-tm=${LOCALBASE}
-TORQUE_CONFIGURE_OFF=	--without-tm
+TORQUE_CONFIGURE_WITH=	tm
 TORQUE_LIB_DEPENDS=	libtorque.so:sysutils/torque
 TORQUE_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
 			${MPIDIR}/lib/openmpi/mca_plm_tm.la \
@@ -93,5 +91,7 @@ post-patch:
 		${WRKSRC}/opal/tools/wrappers/Makefile.in \
 		${WRKSRC}/orte/tools/wrappers/Makefile.am \
 		${WRKSRC}/orte/tools/wrappers/Makefile.in
+	@${REINPLACE_CMD} 's|define MCA_hwloc_external_.*header "|&${LOCALBASE}/include/|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

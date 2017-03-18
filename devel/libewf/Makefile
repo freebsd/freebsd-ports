@@ -16,9 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		fuse gettext iconv libtool:keepla pathfix pkgconfig python:2
+USES=		fuse gettext iconv libtool:keepla pathfix pkgconfig python:2 ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} --with-libuuid=${LOCALBASE} ${ICONV_CONFIGURE_ARG} --with-libsmdev=no

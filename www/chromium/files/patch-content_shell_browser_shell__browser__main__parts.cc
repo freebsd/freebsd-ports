@@ -1,6 +1,6 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2017-01-26 00:49:13 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2017-03-09 20:04:32 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
-@@ -44,7 +44,7 @@
+@@ -46,7 +46,7 @@
  #if defined(USE_AURA) && defined(USE_X11)
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
@@ -9,7 +9,7 @@
  #include "ui/base/ime/input_method_initializer.h"
  #endif
  #if defined(OS_CHROMEOS)
-@@ -140,7 +140,7 @@ void ShellBrowserMainParts::PostMainMess
+@@ -142,7 +142,7 @@ void ShellBrowserMainParts::PostMainMess
  }
  
  void ShellBrowserMainParts::PreEarlyInitialization() {

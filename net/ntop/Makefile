@@ -23,9 +23,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 DBDIR?=		/var/db
 
-USES=		autoreconf:build cpe gmake libtool python
+USES=		autoreconf:build cpe gmake libtool python ssl
 USE_GNOME=	libxml2
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	DBDIR=${DBDIR} \

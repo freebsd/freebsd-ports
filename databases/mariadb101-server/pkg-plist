@@ -46,7 +46,6 @@ include/mysql/private/atomic/generic-msvc.h
 include/mysql/private/atomic/nolock.h
 include/mysql/private/atomic/solaris.h
 include/mysql/private/atomic/x86-gcc.h
-include/mysql/private/base64.h
 include/mysql/private/config.h
 include/mysql/private/ft_global.h
 include/mysql/private/embedded_priv.h
@@ -90,8 +89,6 @@ include/mysql/private/probes_mysql_nodtrace.h
 include/mysql/private/queues.h
 include/mysql/private/rijndael.h
 include/mysql/private/service_versions.h
-include/mysql/private/sha1.h
-include/mysql/private/sha2.h
 include/mysql/private/t_ctype.h
 include/mysql/private/thr_alarm.h
 include/mysql/private/thr_lock.h
@@ -107,6 +104,7 @@ lib/mysql/libmysqld.so
 lib/mysql/libmysqld.so.18
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth_0x0100.so
+lib/mysql/plugin/auth_ed25519.so
 %%NO_GSSAPI_NONE%%lib/mysql/plugin/auth_gssapi.so
 lib/mysql/plugin/auth_pam.so
 lib/mysql/plugin/auth_socket.so

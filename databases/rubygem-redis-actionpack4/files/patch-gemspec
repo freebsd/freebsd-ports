@@ -1,0 +1,11 @@
+--- redis-actionpack.gemspec.orig	2017-03-15 08:52:49 UTC
++++ redis-actionpack.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<redis-store>.freeze, ["~> 1.1.0"])
++      s.add_runtime_dependency(%q<redis-store>.freeze, [">= 1.1.0"])
+       s.add_runtime_dependency(%q<redis-rack>.freeze, ["~> 1.5.0"])
+       s.add_runtime_dependency(%q<actionpack>.freeze, ["~> 4"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10"])

@@ -3,13 +3,12 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.14.5
-PORTREVISION=		1
+PORTREVISION=		4
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=		-114
 .endif
-
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -19,14 +18,14 @@ COMMENT=		MIT implementation of RFC 4120 network authentication service
 
 LICENSE=		MIT
 
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[0-9]-*
+CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[35]-[0-9]* krb5-1.[0-9]*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
-USES=			cpe gettext gmake perl5 libtool:build \
+USES=			cpe gmake perl5 libtool:build \
 			gssapi:bootstrap,mit pkgconfig:run ssl
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath --localstatedir="${PREFIX}/var"
@@ -37,14 +36,24 @@ CPE_VENDOR=		mit
 CPE_VERSION=		5-${PORTVERSION}
 CPE_PRODUCT=		kerberos
 
-OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
-OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML
+OPTIONS_DEFINE=		EXAMPLES NLS KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
+OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML READLINE
 OPTIONS_RADIO=		CMD_LINE_EDITING
-OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE LIBEDIT
+OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE READLINE_PORT LIBEDIT
+CMD_LINE_EDITING_DESC=	Command line editing for kadmin and ktutil
 KRB5_PDF_DESC=		Install krb5 PDF documentation
 KRB5_HTML_DESC=		Install krb5 HTML documentation
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
+DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
 LDAP=			Enable LDAP support
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	ldap
+NLS_USES=		gettext
+READLINE_USES=		readline
+READLINE_PORT_DESC=	Command line editing via devel/readline
+READLINE_PORT_USES=	readline:port
+LIBEDIT_USES=		libedit
+LIBEDIT_CONFIGURE_WITH=	libedit
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
@@ -53,6 +62,9 @@ CPPFLAGS+=		-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=		-L${LOCALBASE}/lib -L${OPENSSLLIB}
 
 USE_RC_SUBR=		kpropd
+OPTIONS_SUB=		yes
+WRKSRC_SUBDIR=		src
+PORTEXAMPLES=		kdc.conf krb5.conf services.append
 
 .include <bsd.port.options.mk>
 
@@ -73,37 +85,16 @@ LDFLAGS:=	-Wl,-rpath,${_RPATH}${F:S/-Wl,-rpath,//} \
 BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
 .endif
 
-.if ${PORT_OPTIONS:MDNS_FOR_REALM}
-CONFIGURE_ARGS+=	--enable-dns-for-realm
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--with-ldap
-PLIST_SUB+=		LDAP=""
-.else
-PLIST_SUB+=		LDAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=			readline
+# OPTIONS helper causes conflicting with/without
+.if ${PORT_OPTIONS:MREADLINE} || ${PORT_OPTIONS:MREADLINE_PORT}
 CONFIGURE_ARGS+=	--with-readline
 .else
 CONFIGURE_ARGS+=	--without-readline
 .endif
 
-.if ${PORT_OPTIONS:MLIBEDIT}
-USES+=			libedit
-CONFIGURE_ARGS+=	--with-libedit
-.else
-CONFIGURE_ARGS+=	--without-libedit
-.endif
-
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
-
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
 PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
@@ -144,7 +135,12 @@ post-install:
 	done | ${TAIL} -r >> ${TMPPLIST}
 .endif
 	${ECHO_CMD} @dir share/doc/krb5 >> ${TMPPLIST}
-	@${SED} "s%\${PREFIX}%${PREFIX}%" ${FILESDIR}/README.FreeBSD > ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
-	@${CHMOD} 444 ${STAGEDIR}${PREFIX}/share/doc/krb5/README.FreeBSD
+
+post-install-LDAP-on:
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/plugins/kdb/ldap/libkdb_ldap/kerberos.schema \
+		${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/plugins/kdb/ldap/libkdb_ldap/kerberos.ldif \
+		${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

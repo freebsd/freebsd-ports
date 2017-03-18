@@ -10,9 +10,8 @@ COMMENT=	Tool for measuring webserver performance
 
 LICENSE=	GPLv2
 
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool ssl
 USE_GITHUB=	yes
 GH_TAGNAME=	dcfb746
 MAKE_ARGS=	LIBUTIL_OBJS=ssl_writev.o \

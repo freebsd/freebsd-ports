@@ -1,6 +1,6 @@
---- third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig	2017-01-26 00:50:15 UTC
+--- third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig	2017-03-09 20:05:26 UTC
 +++ third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp
-@@ -458,11 +458,12 @@ v8::Local<v8::Date> CJS_Date::ToV8Date(C
+@@ -457,11 +457,12 @@ v8::Local<v8::Date> CJS_Date::ToV8Date(C
  }
  
  double _getLocalTZA() {
@@ -14,7 +14,7 @@
  #if _MSC_VER >= 1900
    // In gcc and in Visual Studio prior to VS 2015 'timezone' is a global
    // variable declared in time.h. That variable was deprecated and in VS 2015
-@@ -470,7 +471,11 @@ double _getLocalTZA() {
+@@ -469,7 +470,11 @@ double _getLocalTZA() {
    long timezone = 0;
    _get_timezone(&timezone);
  #endif

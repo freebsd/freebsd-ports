@@ -2,22 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	PHPUnit_MockObject
-PORTVERSION=	1.2.2
+PORTVERSION=	4.0.1
 CATEGORIES=	devel pear
-MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Mock Object library for PHPUnit
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PEARDIR}/Text/Template.php:textproc/pear-Text_Template \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
-RUN_DEPENDS=	${PEARDIR}/Text/Template.php:textproc/pear-Text_Template \
-		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+USE_GITHUB=	yes
+GH_ACCOUNT=	sebastianbergmann
+GH_PROJECT=	phpunit-mock-objects
 
-USES=	pear
-PEAR_CHANNEL=	phpunit
+NO_BUILD=	yes
+
+PHP_DIR=	share/PHP
+
+PLIST_FILES=	${PHP_DIR}/${PORTNAME}/MockObject.php
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/src/MockObject.php \
+		${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -65,7 +65,7 @@ KDE4_APPLICATIONS_VERSION?=	15.04.3
 KDE4_BRANCH?=			stable
 
 # Current KDE desktop.
-KDE_FRAMEWORKS_VERSION?=	5.31.0
+KDE_FRAMEWORKS_VERSION?=	5.32.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -134,8 +134,14 @@ DIST_SUBDIR?=           KDE/applications/${KDE_APPLICATIONS_VERSION}
 .    elif ${_KDE_CATEGORY:Mkde-frameworks}
 PORTVERSION?=		${KDE_FRAMEWORKS_VERSION}
 PKGNAMEPREFIX?=		kf5-
-MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R} \
-			KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}/portingAids
+# This is a slight duplication of _USE_FRAMEWORKS_PORTING -- it maybe would be
+# better to rely on ${_USE_FRAMEWORKS_PORTING:S/^/k/g}
+_PORTINGAIDS=		kjs kjsembed kdelibs4support khtml kmediaplayer kross
+.      if ${_PORTINGAIDS:M*${PORTNAME}*}
+MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}/portingAids
+.      else
+MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}
+.      endif
 DIST_SUBDIR?=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION}
 .    else
 IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
@@ -222,7 +228,7 @@ _USE_FRAMEWORKS_TIER2=	auth completion crash doctools filemetadata5 \
 
 _USE_FRAMEWORKS_TIER3=	activities baloo5 bookmarks configwidgets \
 			designerplugin emoticons globalaccel guiaddons \
-			iconthemes init kcmutils kconfigwidgets kdeclarative \
+			iconthemes init kcmutils kdeclarative \
 			kded kdesu kdewebkit kio newstuff notifyconfig parts \
 			people plasma-framework runner service texteditor \
 			textwidgets wallet xmlgui xmlrpcclient

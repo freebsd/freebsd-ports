@@ -36,7 +36,7 @@ BROKEN_aarch64=		Fails to configure: unknown or unidentifiable processor arm64
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 CONFIGURE_ARGS+=--with-openssl
 .endif
 

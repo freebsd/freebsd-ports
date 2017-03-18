@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=	--with-ssl=gnutls
 LIB_DEPENDS+=	libgnutls.so:security/gnutls
 .else
 CONFIGURE_ARGS+=	--with-ssl=openssl
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 USERS=		www

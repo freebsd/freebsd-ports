@@ -15,8 +15,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${OPENSSLINC} ${CFLAGS}" \
 		LDFLAGS="-L${OPENSSLLIB} ${LDFLAGS}"
 
-USES=		gmake tar:tgz
-USE_OPENSSL=	yes
+USES=		gmake tar:tgz ssl
 
 .include <bsd.port.pre.mk>
 

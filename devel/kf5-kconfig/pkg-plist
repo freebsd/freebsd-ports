@@ -3,7 +3,6 @@ bin/kwriteconfig5
 include/KF5/KConfigCore/ConversionCheck
 include/KF5/KConfigCore/KAuthorized
 include/KF5/KConfigCore/KConfig
-include/KF5/KConfigCore/KConfigBackend
 include/KF5/KConfigCore/KConfigBase
 include/KF5/KConfigCore/KConfigGroup
 include/KF5/KConfigCore/KCoreConfigSkeleton
@@ -13,7 +12,6 @@ include/KF5/KConfigCore/KSharedConfig
 include/KF5/KConfigCore/conversioncheck.h
 include/KF5/KConfigCore/kauthorized.h
 include/KF5/KConfigCore/kconfig.h
-include/KF5/KConfigCore/kconfigbackend.h
 include/KF5/KConfigCore/kconfigbase.h
 include/KF5/KConfigCore/kconfigcore_export.h
 include/KF5/KConfigCore/kconfiggroup.h

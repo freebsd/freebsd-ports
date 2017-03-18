@@ -5,17 +5,13 @@ PORTNAME=	grake
 PORTVERSION=	0.1.0
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/grake/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool for scanning webpages for Youtube links
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	p5-Getopt-ArgvFile>=1.11:devel/p5-Getopt-ArgvFile \
 		p5-Umph-Prompt>=0:multimedia/p5-Umph-Prompt \

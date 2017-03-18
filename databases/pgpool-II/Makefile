@@ -15,9 +15,8 @@ LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake pgsql:9.2 libtool
+USES=		gmake pgsql:9.2 libtool ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-openssl
 
 CONFLICTS=	pgpool-3.* pgpool-II-22-* pgpool-II-23-* pgpool-II-23-*
@@ -28,14 +27,9 @@ PORTDOCS+=	TODO
 PORTDOCShtml=	pgpool-en.html pgpool-ja.html pgpool.css
 PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 
-OPTIONS_DEFINE+=	DOCS SSL
+OPTIONS_DEFINE+=	DOCS
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-openssl
-.endif
 
 .if exists(${LOCALBASE}/include/postgresql/server/replication/walreceiver.h)
 FUNCTIONS=	pgpool-recovery pgpool-regclass pgpool-walrecrunning

@@ -18,12 +18,11 @@ BUILD_DEPENDS=	checkmk:devel/check \
 		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>=0:textproc/py-cloud_sptheme
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
-USES=		execinfo python:build scons shebangfix
+USES=		execinfo python:build scons shebangfix ssl
 
 USE_CXXSTD=	c++11
 USE_GCC=	yes
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 LDFLAGS+=	-lboost_program_options -lboost_system
 MAKE_ARGS+=	--config=force

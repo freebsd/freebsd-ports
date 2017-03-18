@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis-rails
-PORTVERSION=	4.0.0
+PORTVERSION=	5.0.1
 PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
@@ -12,9 +12,9 @@ COMMENT=	Redis for Ruby on Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-redis-actionpack4>=4:databases/rubygem-redis-actionpack4 \
-		rubygem-redis-activesupport>=4:devel/rubygem-redis-activesupport \
-		rubygem-redis-store>=1.1.0:devel/rubygem-redis-store
+RUN_DEPENDS=	rubygem-redis-actionpack>=5:databases/rubygem-redis-actionpack \
+		rubygem-redis-activesupport>=5:devel/rubygem-redis-activesupport \
+		rubygem-redis-store>=1.2.0:devel/rubygem-redis-store
 
 NO_ARCH=	yes
 USE_RUBY=	yes

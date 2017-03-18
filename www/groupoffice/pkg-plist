@@ -2481,6 +2481,7 @@
 %%WWWDIR%%/modules/email/AliasDialog.js
 %%WWWDIR%%/modules/email/AliasesDialog.js
 %%WWWDIR%%/modules/email/AliasesGrid.js
+%%WWWDIR%%/modules/email/AllAttachmentContextMenu.js
 %%WWWDIR%%/modules/email/AttachmentContextMenu.js
 %%WWWDIR%%/modules/email/ContactsGrid.js
 %%WWWDIR%%/modules/email/CopyMailToDialog.js
@@ -4549,6 +4550,7 @@
 %%WWWDIR%%/modules/tickets/cron/CloseInactive.php
 %%WWWDIR%%/modules/tickets/cron/ImportImap.php
 %%WWWDIR%%/modules/tickets/cron/Reminder.php
+%%WWWDIR%%/modules/tickets/cron/TicketReportMailer.php
 %%WWWDIR%%/modules/tickets/customfields/model/Ticket.php
 %%WWWDIR%%/modules/tickets/export/CurrentGrid.php
 %%WWWDIR%%/modules/tickets/install/install.sql
@@ -8508,6 +8510,7 @@
 %%WWWDIR%%/views/Extjs3/themes/Default/images/emoticons/normal/thinking.gif
 %%WWWDIR%%/views/Extjs3/themes/Default/images/emoticons/normal/tongue.gif
 %%WWWDIR%%/views/Extjs3/themes/Default/images/emoticons/normal/wink.gif
+%%WWWDIR%%/views/Extjs3/themes/Default/images/expand_more.png
 %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/basic-dialog/btn-arrow.gif
 %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/basic-dialog/btn-sprite.gif
 %%WWWDIR%%/views/Extjs3/themes/Default/images/extjs/basic-dialog/close.gif
@@ -8737,6 +8740,8 @@
 %%WWWDIR%%/views/Extjs3/themes/Default/images/hd-sprite.gif
 %%WWWDIR%%/views/Extjs3/themes/Default/images/links.png
 %%WWWDIR%%/views/Extjs3/themes/Default/images/loading.gif
+%%WWWDIR%%/views/Extjs3/themes/Default/images/menu.png
+%%WWWDIR%%/views/Extjs3/themes/Default/images/more_vert.png
 %%WWWDIR%%/views/Extjs3/themes/Default/images/reminder.ico
 %%WWWDIR%%/views/Extjs3/themes/Default/images/row-editor-bg.gif
 %%WWWDIR%%/views/Extjs3/themes/Default/images/row-editor-btns.gif
@@ -9021,11 +9026,14 @@
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/emoticons/normal/thinking.gif
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/emoticons/normal/tongue.gif
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/emoticons/normal/wink.gif
+%%WWWDIR%%/views/Extjs3/themes/ExtJS/images/expand_more.png
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/favicon.ico
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/go_logo.gif
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/groupoffice.gif
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/groupoffice.ico
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/images/hd-sprite.gif
+%%WWWDIR%%/views/Extjs3/themes/ExtJS/images/menu.png
+%%WWWDIR%%/views/Extjs3/themes/ExtJS/images/more_vert.png
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/reminder.swf
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/sounds/reminder.swf
 %%WWWDIR%%/views/Extjs3/themes/ExtJS/sounds/reminder.wav
@@ -9289,6 +9297,7 @@
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/emoticons/normal/thinking.gif
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/emoticons/normal/tongue.gif
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/emoticons/normal/wink.gif
+%%WWWDIR%%/views/Extjs3/themes/Group-Office/images/expand_more.png
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/basic-dialog/btn-arrow.gif
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/basic-dialog/btn-sprite.gif
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/extjs/basic-dialog/close.gif
@@ -9532,6 +9541,8 @@
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/groupoffice.ico
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/hd-sprite.gif
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/links.png
+%%WWWDIR%%/views/Extjs3/themes/Group-Office/images/menu.png
+%%WWWDIR%%/views/Extjs3/themes/Group-Office/images/more_vert.png
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/reminder.ico
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/row-editor-bg.gif
 %%WWWDIR%%/views/Extjs3/themes/Group-Office/images/row-editor-btns.gif

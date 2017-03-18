@@ -13,8 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 
-USES=		pkgconfig tar:bz2
-USE_OPENSSL=	yes
+USES=		pkgconfig tar:bz2 ssl
 MAKE_ENV=	THREADLIB="-lpthread"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}

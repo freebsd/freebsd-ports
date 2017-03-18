@@ -1,3 +1,3 @@
-TIMESTAMP = 1485870269
-SHA256 (gcc-arm-none-eabi-6_2-2016q4-20161216-src.tar.bz2) = 2c5bc9539786ddbe8516047b6bdef379306591b00190a61ce7d56b4204aafa3b
-SIZE (gcc-arm-none-eabi-6_2-2016q4-20161216-src.tar.bz2) = 193544367
+TIMESTAMP = 1489164554
+SHA256 (gcc-arm-none-eabi-6-2017-q1-update-src.tar.bz2) = 97e34136f1bd6ded8352e0e9fd92366de51d76a9c3b60f2728b2f8c519fb49d8
+SIZE (gcc-arm-none-eabi-6-2017-q1-update-src.tar.bz2) = 193722630

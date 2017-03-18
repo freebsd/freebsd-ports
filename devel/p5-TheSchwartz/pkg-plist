@@ -1,9 +1,6 @@
 bin/check_schwartz
 bin/schwartzmon
 bin/thetop
-%%PERL5_MAN3%%/TheSchwartz.3.gz
-%%PERL5_MAN3%%/TheSchwartz::Job.3.gz
-%%PERL5_MAN3%%/TheSchwartz::Worker.3.gz
 %%SITE_PERL%%/TheSchwartz.pm
 %%SITE_PERL%%/TheSchwartz/Error.pm
 %%SITE_PERL%%/TheSchwartz/ExitStatus.pm
@@ -12,7 +9,6 @@ bin/thetop
 %%SITE_PERL%%/TheSchwartz/JobHandle.pm
 %%SITE_PERL%%/TheSchwartz/Worker.pm
 %%PERL5_MAN1%%/schwartzmon.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/http-mappings.txt
-%%PORTDOCS%%%%DOCSDIR%%/notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/schema-postgres.sql
-%%PORTDOCS%%%%DOCSDIR%%/schema.sql
+%%PERL5_MAN3%%/TheSchwartz.3.gz
+%%PERL5_MAN3%%/TheSchwartz::Job.3.gz
+%%PERL5_MAN3%%/TheSchwartz::Worker.3.gz

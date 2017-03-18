@@ -1017,7 +1017,6 @@
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
     SUBDIR += py-pyshark
-    SUBDIR += py-pysimplesoap
     SUBDIR += py-pysmb
     SUBDIR += py-pysocks
     SUBDIR += py-pystun
@@ -1047,6 +1046,7 @@
     SUBDIR += py-s3cmd
     SUBDIR += py-s3transfer
     SUBDIR += py-smbpasswd
+    SUBDIR += py-soap2py
     SUBDIR += py-soappy
     SUBDIR += py-socketio-client
     SUBDIR += py-speedtest-cli
@@ -1145,9 +1145,12 @@
     SUBDIR += rubygem-fog-aliyun
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
+    SUBDIR += rubygem-fog-aws0
     SUBDIR += rubygem-fog-azure
     SUBDIR += rubygem-fog-brightbox
     SUBDIR += rubygem-fog-cloudatcost
+    SUBDIR += rubygem-fog-digitalocean
+    SUBDIR += rubygem-fog-dnsimple
     SUBDIR += rubygem-fog-dynect
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-google
@@ -1315,7 +1318,6 @@
     SUBDIR += tcpcat
     SUBDIR += tcpdstat
     SUBDIR += tcpdump
-    SUBDIR += tcpdump398
     SUBDIR += tcpflow
     SUBDIR += tcpick
     SUBDIR += tcpillust

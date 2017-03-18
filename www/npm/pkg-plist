@@ -1,4 +1,4 @@
-bin/npm
+@(,,755) bin/npm
 etc/man.d/npm.conf
 lib/node_modules/npm/.github/issue_template.md
 lib/node_modules/npm/.mailmap
@@ -14,7 +14,7 @@ lib/node_modules/npm/appveyor.yml
 @(,,755) lib/node_modules/npm/bin/node-gyp-bin/node-gyp
 lib/node_modules/npm/bin/node-gyp-bin/node-gyp.cmd
 lib/node_modules/npm/bin/npm
-lib/node_modules/npm/bin/npm-cli.js
+@(,,755) lib/node_modules/npm/bin/npm-cli.js
 lib/node_modules/npm/bin/npm.cmd
 lib/node_modules/npm/bin/read-package-json.js
 lib/node_modules/npm/changelogs/CHANGELOG-1.md
@@ -164,6 +164,10 @@ lib/node_modules/npm/html/static/style.css
 lib/node_modules/npm/html/static/toc.js
 lib/node_modules/npm/lib/access.js
 lib/node_modules/npm/lib/adduser.js
+lib/node_modules/npm/lib/auth/legacy.js
+lib/node_modules/npm/lib/auth/oauth.js
+lib/node_modules/npm/lib/auth/saml.js
+lib/node_modules/npm/lib/auth/sso.js
 lib/node_modules/npm/lib/bin.js
 lib/node_modules/npm/lib/bugs.js
 lib/node_modules/npm/lib/build.js
@@ -275,6 +279,8 @@ lib/node_modules/npm/lib/root.js
 lib/node_modules/npm/lib/run-script.js
 lib/node_modules/npm/lib/search.js
 lib/node_modules/npm/lib/search/all-package-metadata.js
+lib/node_modules/npm/lib/search/all-package-search.js
+lib/node_modules/npm/lib/search/esearch.js
 lib/node_modules/npm/lib/search/format-package-stream.js
 lib/node_modules/npm/lib/search/package-filter.js
 lib/node_modules/npm/lib/set.js
@@ -292,7 +298,7 @@ lib/node_modules/npm/lib/unpublish.js
 lib/node_modules/npm/lib/update.js
 lib/node_modules/npm/lib/utils/ansi-trim.js
 lib/node_modules/npm/lib/utils/child-path.js
-lib/node_modules/npm/lib/utils/completion.sh
+@(,,755) lib/node_modules/npm/lib/utils/completion.sh
 lib/node_modules/npm/lib/utils/completion/file-completion.js
 lib/node_modules/npm/lib/utils/completion/installed-deep.js
 lib/node_modules/npm/lib/utils/completion/installed-shallow.js
@@ -306,6 +312,7 @@ lib/node_modules/npm/lib/utils/escape-exec-path.js
 lib/node_modules/npm/lib/utils/gently-rm.js
 lib/node_modules/npm/lib/utils/get-publish-config.js
 lib/node_modules/npm/lib/utils/git.js
+lib/node_modules/npm/lib/utils/gunzip-maybe.js
 lib/node_modules/npm/lib/utils/is-windows-bash.js
 lib/node_modules/npm/lib/utils/is-windows-shell.js
 lib/node_modules/npm/lib/utils/is-windows.js
@@ -836,12 +843,18 @@ lib/node_modules/npm/node_modules/init-package-json/test/scope-in-config.js
 lib/node_modules/npm/node_modules/init-package-json/test/scope.js
 lib/node_modules/npm/node_modules/init-package-json/test/silent.js
 lib/node_modules/npm/node_modules/init-package-json/test/yes-defaults.js
+lib/node_modules/npm/node_modules/lazy-property/.npmignore
+lib/node_modules/npm/node_modules/lazy-property/LICENSE
+lib/node_modules/npm/node_modules/lazy-property/README.md
+lib/node_modules/npm/node_modules/lazy-property/component.json
+lib/node_modules/npm/node_modules/lazy-property/lazyProperty.js
+lib/node_modules/npm/node_modules/lazy-property/package.json
 lib/node_modules/npm/node_modules/lockfile/.npmignore
 lib/node_modules/npm/node_modules/lockfile/.travis.yml
 lib/node_modules/npm/node_modules/lockfile/CHANGELOG.md
 lib/node_modules/npm/node_modules/lockfile/LICENSE
 lib/node_modules/npm/node_modules/lockfile/README.md
-lib/node_modules/npm/node_modules/lockfile/gen-changelog.sh
+@(,,755) lib/node_modules/npm/node_modules/lockfile/gen-changelog.sh
 lib/node_modules/npm/node_modules/lockfile/lockfile.js
 lib/node_modules/npm/node_modules/lockfile/package.json
 lib/node_modules/npm/node_modules/lockfile/test/basic.js
@@ -906,55 +919,6 @@ lib/node_modules/npm/node_modules/mississippi/.npmignore
 lib/node_modules/npm/node_modules/mississippi/index.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/LICENSE
 lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/index.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/.npmignore
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/.travis.yml
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/.zuul.yml
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/LICENSE
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/doc/stream.markdown
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/duplex.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_duplex.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_passthrough.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_readable.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_transform.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/lib/_stream_writable.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is/LICENSE
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is/float.patch
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is/lib/util.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/core-util-is/test.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/.npmignore
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/.travis.yml
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/Makefile
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/component.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/index.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/isarray/test.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args/.travis.yml
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args/index.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args/license.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args/readme.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/process-nextick-args/test.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/string_decoder/.npmignore
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/string_decoder/LICENSE
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/string_decoder/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/string_decoder/index.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/string_decoder/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate/History.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate/LICENSE
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate/browser.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate/node.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/node_modules/util-deprecate/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/passthrough.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/readable.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/transform.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/readable-stream/writable.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/typedarray/.travis.yml
 lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/typedarray/LICENSE
 lib/node_modules/npm/node_modules/mississippi/node_modules/concat-stream/node_modules/typedarray/example/tarray.js
@@ -1003,6 +967,7 @@ lib/node_modules/npm/node_modules/mississippi/node_modules/flush-write-stream/.n
 lib/node_modules/npm/node_modules/mississippi/node_modules/flush-write-stream/.travis.yml
 lib/node_modules/npm/node_modules/mississippi/node_modules/flush-write-stream/LICENSE
 lib/node_modules/npm/node_modules/mississippi/node_modules/flush-write-stream/README.md
+lib/node_modules/npm/node_modules/mississippi/node_modules/flush-write-stream/example.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/flush-write-stream/index.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/flush-write-stream/package.json
 lib/node_modules/npm/node_modules/mississippi/node_modules/flush-write-stream/test.js
@@ -1012,12 +977,22 @@ lib/node_modules/npm/node_modules/mississippi/node_modules/from2/README.md
 lib/node_modules/npm/node_modules/mississippi/node_modules/from2/index.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/from2/package.json
 lib/node_modules/npm/node_modules/mississippi/node_modules/from2/test.js
+lib/node_modules/npm/node_modules/mississippi/node_modules/parallel-transform/.npmignore
+lib/node_modules/npm/node_modules/mississippi/node_modules/parallel-transform/LICENSE
+lib/node_modules/npm/node_modules/mississippi/node_modules/parallel-transform/README.md
+lib/node_modules/npm/node_modules/mississippi/node_modules/parallel-transform/index.js
+lib/node_modules/npm/node_modules/mississippi/node_modules/parallel-transform/node_modules/cyclist/.npmignore
+lib/node_modules/npm/node_modules/mississippi/node_modules/parallel-transform/node_modules/cyclist/README.md
+lib/node_modules/npm/node_modules/mississippi/node_modules/parallel-transform/node_modules/cyclist/index.js
+lib/node_modules/npm/node_modules/mississippi/node_modules/parallel-transform/node_modules/cyclist/package.json
+lib/node_modules/npm/node_modules/mississippi/node_modules/parallel-transform/package.json
 lib/node_modules/npm/node_modules/mississippi/node_modules/pump/.npmignore
 lib/node_modules/npm/node_modules/mississippi/node_modules/pump/.travis.yml
 lib/node_modules/npm/node_modules/mississippi/node_modules/pump/LICENSE
 lib/node_modules/npm/node_modules/mississippi/node_modules/pump/README.md
 lib/node_modules/npm/node_modules/mississippi/node_modules/pump/index.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/pump/package.json
+lib/node_modules/npm/node_modules/mississippi/node_modules/pump/test-browser.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/pump/test.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/pumpify/.npmignore
 lib/node_modules/npm/node_modules/mississippi/node_modules/pumpify/.travis.yml
@@ -1032,60 +1007,19 @@ lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/LICENSE
 lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/README.md
 lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/collaborators.md
 lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/index.js
+lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/node_modules/stream-shift/.npmignore
+lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/node_modules/stream-shift/.travis.yml
+lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/node_modules/stream-shift/LICENSE
+lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/node_modules/stream-shift/README.md
+lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/node_modules/stream-shift/index.js
+lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/node_modules/stream-shift/package.json
+lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/node_modules/stream-shift/test.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/package.json
 lib/node_modules/npm/node_modules/mississippi/node_modules/stream-each/test.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/through2/.npmignore
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/LICENSE
+lib/node_modules/npm/node_modules/mississippi/node_modules/through2/LICENSE.html
+lib/node_modules/npm/node_modules/mississippi/node_modules/through2/LICENSE.md
 lib/node_modules/npm/node_modules/mississippi/node_modules/through2/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/.npmignore
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/.travis.yml
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/.zuul.yml
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/LICENSE
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/doc/stream.markdown
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/duplex.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/lib/_stream_duplex.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/lib/_stream_passthrough.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/lib/_stream_readable.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/lib/_stream_transform.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/lib/_stream_writable.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/core-util-is/LICENSE
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/core-util-is/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/core-util-is/float.patch
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/core-util-is/lib/util.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/core-util-is/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/core-util-is/test.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/isarray/.npmignore
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/isarray/.travis.yml
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/isarray/Makefile
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/isarray/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/isarray/component.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/isarray/index.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/isarray/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/isarray/test.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/process-nextick-args/.travis.yml
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/process-nextick-args/index.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/process-nextick-args/license.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/process-nextick-args/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/process-nextick-args/readme.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/process-nextick-args/test.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/string_decoder/.npmignore
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/string_decoder/LICENSE
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/string_decoder/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/string_decoder/index.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/string_decoder/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/util-deprecate/History.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/util-deprecate/LICENSE
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/util-deprecate/README.md
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/util-deprecate/browser.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/util-deprecate/node.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/node_modules/util-deprecate/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/package.json
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/passthrough.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/readable.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/transform.js
-lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/readable-stream/writable.js
 lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/xtend/.npmignore
 lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/xtend/LICENCE
 lib/node_modules/npm/node_modules/mississippi/node_modules/through2/node_modules/xtend/Makefile
@@ -1213,7 +1147,7 @@ lib/node_modules/npm/node_modules/node-gyp/gyp/tools/Xcode/Specifications/gyp.xc
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/emacs/README
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/emacs/gyp-tests.el
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/emacs/gyp.el
-lib/node_modules/npm/node_modules/node-gyp/gyp/tools/emacs/run-unit-tests.sh
+@(,,755) lib/node_modules/npm/node_modules/node-gyp/gyp/tools/emacs/run-unit-tests.sh
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/emacs/testdata/media.gyp
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/emacs/testdata/media.gyp.fontified
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/graphviz.py
@@ -1261,7 +1195,7 @@ lib/node_modules/npm/node_modules/node-gyp/node_modules/nopt/package.json
 lib/node_modules/npm/node_modules/node-gyp/node_modules/nopt/test/basic.js
 lib/node_modules/npm/node_modules/node-gyp/package.json
 lib/node_modules/npm/node_modules/node-gyp/src/win_delay_load_hook.cc
-lib/node_modules/npm/node_modules/node-gyp/test/docker.sh
+@(,,755) lib/node_modules/npm/node_modules/node-gyp/test/docker.sh
 lib/node_modules/npm/node_modules/node-gyp/test/fixtures/ca-bundle.crt
 lib/node_modules/npm/node_modules/node-gyp/test/fixtures/ca.crt
 lib/node_modules/npm/node_modules/node-gyp/test/fixtures/server.crt
@@ -2673,18 +2607,18 @@ lib/node_modules/npm/node_modules/write-file-atomic/package.json
 lib/node_modules/npm/npmrc
 lib/node_modules/npm/package.json
 lib/node_modules/npm/scripts/changelog.js
-lib/node_modules/npm/scripts/clean-old.sh
+@(,,755) lib/node_modules/npm/scripts/clean-old.sh
 lib/node_modules/npm/scripts/dep-update
 lib/node_modules/npm/scripts/dev-dep-update
-lib/node_modules/npm/scripts/doc-build.sh
+@(,,755) lib/node_modules/npm/scripts/doc-build.sh
 lib/node_modules/npm/scripts/gen-changelog
 lib/node_modules/npm/scripts/index-build.js
-lib/node_modules/npm/scripts/install.sh
+@(,,755) lib/node_modules/npm/scripts/install.sh
 lib/node_modules/npm/scripts/maketest
 lib/node_modules/npm/scripts/publish-tag.js
-lib/node_modules/npm/scripts/release.sh
-lib/node_modules/npm/scripts/relocate.sh
-lib/node_modules/npm/scripts/update-authors.sh
+@(,,755) lib/node_modules/npm/scripts/release.sh
+@(,,755) lib/node_modules/npm/scripts/relocate.sh
+@(,,755) lib/node_modules/npm/scripts/update-authors.sh
 lib/node_modules/npm/test/broken-under-nyc-and-travis/lifecycle-path.js
 lib/node_modules/npm/test/broken-under-nyc-and-travis/whoami.js
 lib/node_modules/npm/test/common-tap.js
@@ -2729,6 +2663,8 @@ lib/node_modules/npm/test/tap/add-remote-git-submodule.js
 lib/node_modules/npm/test/tap/add-remote-git.js
 lib/node_modules/npm/test/tap/adduser-always-auth.js
 lib/node_modules/npm/test/tap/adduser-legacy-auth.js
+lib/node_modules/npm/test/tap/adduser-oauth.js
+lib/node_modules/npm/test/tap/adduser-saml.js
 lib/node_modules/npm/test/tap/all-package-metadata-cache-stream-unit.js
 lib/node_modules/npm/test/tap/all-package-metadata-entry-stream-unit.js
 lib/node_modules/npm/test/tap/all-package-metadata-update-stream-unit.js
@@ -2775,6 +2711,7 @@ lib/node_modules/npm/test/tap/config-project.js
 lib/node_modules/npm/test/tap/config-save.js
 lib/node_modules/npm/test/tap/correct-mkdir.js
 lib/node_modules/npm/test/tap/cruft-test.js
+lib/node_modules/npm/test/tap/debug-logs.js
 lib/node_modules/npm/test/tap/dedupe-scoped.js
 lib/node_modules/npm/test/tap/dedupe.js
 lib/node_modules/npm/test/tap/deprecate.js
@@ -2927,6 +2864,8 @@ lib/node_modules/npm/test/tap/run-script-filter-private.js
 lib/node_modules/npm/test/tap/run-script.js
 lib/node_modules/npm/test/tap/scope-header.js
 lib/node_modules/npm/test/tap/scripts-whitespace-windows.js
+lib/node_modules/npm/test/tap/search.all-package-search.js
+lib/node_modules/npm/test/tap/search.esearch.js
 lib/node_modules/npm/test/tap/search.js
 lib/node_modules/npm/test/tap/semver-doc.js
 lib/node_modules/npm/test/tap/shared-linked.js

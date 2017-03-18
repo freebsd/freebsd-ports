@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nbformat
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,9 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython_genutils>=0:devel/py-ipython_genutil
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}testpath>=0:devel/py-testpath
 
-USES=		python
-USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest-${PYTHON_VER})

@@ -24,7 +24,6 @@ BZIP2_103_SOURCE=	bzip2-${BZIP2_103}.tar.gz
 BZIP2_102=	1.0.2
 BZIP2_103=	1.0.3
 
-USE_OPENSSL=	yes
 USES=		gmake ssl
 ALL_TARGET=	deltup
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" PREFIX="${PREFIX}"

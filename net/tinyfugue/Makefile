@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink \
 		--datadir=${PREFIX}/lib --with-inclibpfx=${LOCALBASE}
-USE_OPENSSL=	yes
+USES=		ssl
 LDFLAGS+=	-L${LOCALBASE}
 
 PLIST_SUB=	DISTNAME=${DISTNAME}

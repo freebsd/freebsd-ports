@@ -21,7 +21,6 @@ DISTFILES+=	${CARGO_REGISTRY}:registry
 .endif
 DIST_SUBDIR?=	rust
 EXTRACT_ONLY?=	${DISTFILES:N*\:*bootstrap:C/:.*//}
-PLIST=		${.CURDIR}/pkg-plist.${ARCH}
 
 MAINTAINER?=	riggs@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
@@ -75,8 +74,6 @@ CONFIGURE_ARGS=	--disable-valgrind \
 		--mandir=${MANPREFIX}/man \
 		--release-channel=${RUST_CHANNEL}
 
-PORTDOCS=	*
-
 MAKE_ARGS+=	VERBOSE=1
 
 OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN PORT_LLVM
@@ -97,6 +94,18 @@ LLVM_PREFIX=			${LOCALBASE}/llvm${LLVM_VER}
 # Note that make test does not work when rust is already installed
 TEST_TARGET=	check
 TEST_ENV+=	ALLOW_NONZERO_RLIMIT_CORE=1
+
+# Rust manifests list all files and directories installed by rust-installer.
+# We use them in:
+#     - pre-install to cleanup the ${STAGEDIR}
+#     - post-install to populate the ${TMPPLIST}
+RUST_MANIFESTS=		lib/rustlib/manifest-rustc \
+			lib/rustlib/manifest-rust-std-${RUST_TARGET}
+RUST_DOCS_MANIFESTS=	lib/rustlib/manifest-rust-docs
+DOCS_VARS=		rust_manifests+=${RUST_DOCS_MANIFESTS}
+
+PLIST_FILES=		lib/rustlib/components \
+			lib/rustlib/rust-installer-version
 
 pre-fetch:
 	# FIXME: This is the same check for CONFLICTS as the standard
@@ -145,37 +154,50 @@ post-patch:
 # new ones. Otherwise, the staging directory is polluted with unneeded
 # files.
 pre-install:
-	@for f in manifest-rustc manifest-rust-std-${RUST_TARGET}; do \
-	    if test -f ${STAGEDIR}${PREFIX}/lib/rustlib/$$f; then \
-		${SED} -E -e 's,^(dir|file:),${STAGEDIR},' \
-		< ${STAGEDIR}${PREFIX}/lib/rustlib/$$f \
-		| ${XARGS} ${RM}; \
+	@for f in ${RUST_MANIFESTS} ${RUST_DOCS_MANIFESTS}; do \
+	    if test -f "${STAGEDIR}${PREFIX}/$$f"; then \
+	        ${SED} -E -e 's,^(file|dir):,${STAGEDIR},' \
+	            < "${STAGEDIR}${PREFIX}/$$f" \
+	            | ${XARGS} ${RM} -r; \
+	        ${RM} "${STAGEDIR}${PREFIX}/$$f"; \
 	    fi; \
+	done
+	@for f in ${PLIST_FILES}; do \
+	    ${RM} "${STAGEDIR}${PREFIX}/$$f"; \
+	done
+
+# In post-install, we use the manifests generated during Rust install
+# to in turn generate the PLIST. We do that, instead of the regular
+# `pkg-plist`, because several libraries have a computed filename based
+# on the absolute path of the source files. As it is user-specific, we
+# can't know their filename in advance.
+#
+# We fix manpage entries in the generated manifests because Rust
+# installs them uncompressed but the Ports framework compresses them.
+post-install:
+	for f in ${RUST_MANIFESTS}; do \
+	    ${REINPLACE_CMD} -E \
+	        -e 's|:${STAGEDIR}|:|' \
+	        -e 's|(man/man[1-9]/.*\.[0-9])|\1.gz|' \
+	        ${STAGEDIR}${PREFIX}/$$f; \
+	    ${RM} ${STAGEDIR}${PREFIX}/$$f.bak; \
+	    ${ECHO} "${PREFIX}/$$f" >> ${TMPPLIST}; \
+	    ${AWK} '\
+	        /^file:/ { \
+	            file=$$0; \
+	            sub(/^file:/, "", file); \
+	            print file; \
+	        } \
+	        /^dir:/ { \
+	            dir=$$0; \
+	            sub(/^dir:/, "", dir); \
+	            system("find ${STAGEDIR}" dir " -type f | ${SED} -E -e \"s|${STAGEDIR}||\""); \
+	        }' \
+	        ${STAGEDIR}${PREFIX}/$$f >> ${TMPPLIST}; \
 	done
 	@${RM} \
-		${STAGEDIR}${PREFIX}/lib/rustlib/components \
-		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rustc \
-		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rust-std-${RUST_TARGET} \
-		${STAGEDIR}${PREFIX}/lib/rustlib/rust-installer-version \
-		${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
-
-pre-install-DOCS-on:
-	@for f in manifest-rust-docs; do \
-	    if test -f ${STAGEDIR}${PREFIX}/lib/rustlib/$$f; then \
-		${SED} -E -e 's,^(dir|file:),${STAGEDIR},' \
-		< ${STAGEDIR}${PREFIX}/lib/rustlib/$$f \
-		| ${XARGS} ${RM}; \
-	    fi; \
-	done
-	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-rust-docs
-
-post-install:
-	@for f in manifest-rustc manifest-rust-std-${RUST_TARGET}; do \
-		${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
-			${STAGEDIR}${PREFIX}/lib/rustlib/$$f; \
-		${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/$$f.bak; \
-	done
-	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/install.log
+	    ${STAGEDIR}${PREFIX}/lib/rustlib/install.log \
+	    ${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 # FIXME: Static libraries in lib/rustlib/*/lib/*.rlib are not stripped,
 # but they contain non-object files which make strip(1) unhappy.
 	@${STRIP_CMD} \
@@ -183,13 +205,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/rustdoc \
 		${STAGEDIR}${PREFIX}/lib/*.so \
 		${STAGEDIR}${PREFIX}/lib/rustlib/*/lib/*.so
-
-post-install-DOCS-on:
-	@for f in manifest-rust-docs; do \
-		${REINPLACE_CMD} -e 's|${STAGEDIR}||' \
-			${STAGEDIR}${PREFIX}/lib/rustlib/$$f; \
-		${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/$$f.bak; \
-	done
 
 .include <bsd.port.mk>
 

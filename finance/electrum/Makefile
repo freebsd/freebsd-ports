@@ -8,7 +8,7 @@ MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
 DISTNAME=	Electrum-${PORTVERSION}
 
-MAINTAINER=	kyuupichan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use Bitcoin client
 
 LICENSE=	MIT

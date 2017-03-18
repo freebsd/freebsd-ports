@@ -1,0 +1,93 @@
+--- configure.orig	2017-03-07 17:41:15.493370000 +0800
++++ configure	2017-03-07 17:48:14.458037000 +0800
+@@ -1,4 +1,4 @@
+-##!/bin/bash
++##!/bin/sh
+ 
+ 
+ if [ "$1" = "-h" -o "$1" = "--help" -o "$1" = "-help" ]; then
+@@ -129,7 +129,7 @@ if [ -z $GTK ]; then
+   echo "According to pkg-config, GTK 2.0 or 3.0 WAS NOT FOUND."
+   echo "please install rpm/package libgtk+2.0_0-devel or libgtk+3.0_0-devel"
+   rm -f config.mak
+-  exits
++  exit
+ fi
+ 
+ echo "$GTK will be used."
+@@ -232,7 +232,7 @@ fi
+ 
+ 
+ QT4_IM='N'
+-QT4_IM_DIR=/usr/$LIB/qt4/plugins/inputmethods
++QT4_IM_DIR=$prefix/$LIB/qt4/plugins/inputmethods
+ echo "testing if you have qt4 support"
+ pkg-config --libs QtCore QtGui > /dev/null 2> /dev/null
+ if [ $? = 0 ]; then
+@@ -291,7 +291,7 @@ fi
+ 
+ bindir=$prefix/bin
+ datadir=$prefix/share
+-mandir=$datadir/man
++mandir=$prefix/man
+ libdir=$prefix/$LIB
+ includedir=$prefix/include
+ optdir=/opt
+@@ -322,9 +322,9 @@ if [ $QT4_IM = 'N' ]; then
+   mv gcin.spec gcin.spec.tmp
+   grep -v qt4/plugins/inputmethods gcin.spec.tmp > gcin.spec
+ else
+-  for i in /usr/share/qt4/bin/moc /usr/lib/qt4/bin/moc /usr/lib64/qt4/bin/moc /usr/bin/moc
++  for i in %%MOC%% /usr/share/qt4/bin/moc /usr/lib/qt4/bin/moc /usr/lib64/qt4/bin/moc /usr/bin/moc
+   do
+-    [ ! -x $i ] && continue
++    [ ! -x $i ] & continue
+     QT4_MOC=$i
+     echo "QT4_MOC=$QT4_MOC"
+     break
+@@ -347,7 +347,7 @@ else
+   cd ..
+   for i in /usr/share/qt5/bin/moc /usr/lib/qt5/bin/moc /usr/lib/x86_64-linux-gnu/qt5/bin/moc /usr/lib/i386-linux-gnu/qt5/bin/moc /usr/lib64/qt5/bin/moc /usr/bin/moc
+   do
+-    [ ! -x $i ] && continue
++    [ ! -x $i ] & continue
+     QT5_MOC=$i
+     echo "QT5_MOC=$QT5_MOC"
+     break
+@@ -356,7 +356,7 @@ fi
+ 
+ 
+ BUILD_MODULE='Y'
+-if [ $USE_ANTHY = 'Y' ] || [ $USE_CHEWING = 'Y' ]; then
++if [ $USE_ANTHY = 'Y' ]; then
+   BUILD_MODULE='Y'
+ fi
+ 
+@@ -382,7 +382,7 @@ echo "datadir_r=$datadir" >> config.mak
+ echo "libdir=\$(DESTDIR)$libdir" >> config.mak
+ echo "gcinlibdir=\$(DESTDIR)$gcinlibdir" >> config.mak
+ echo "includedir=\$(DESTDIR)$includedir" >> config.mak
+-echo "LDFLAGS=-Wl,--as-needed $GTKLDFLAGS -lX11 -ldl -lm" >> config.mak
++echo "LDFLAGS=-Wl,--as-needed $GTKLDFLAGS -lX11 -lm" >> config.mak
+ echo "GCIN_VERSION=$GCIN_VERSION" >> config.mak
+ echo "GCIN_TABLE_DIR=\$(datadir_r)/gcin/table" >> config.mak
+ echo "GCIN_OGG_DIR=\$(datadir_r)/gcin/ogg" >> config.mak
+@@ -429,9 +429,15 @@ echo "USE_INDICATOR=$USE_INDICATOR" >> c
+ echo "USE_GCB=$use_gcb" >> config.mak
+ echo "BUILD_MODULE=$BUILD_MODULE" >> config.mak
+ echo "GTK_QUERY_IM_64=$GTK_QUERY_IM_64" >> config.mak
+-[ $QT5_IM = 'Y' ] && echo "QT5_MOC=$QT5_MOC" >> config.mak
+-[ $QT4_IM = 'Y' ] && echo "QT4_MOC=$QT4_MOC" >> config.mak
+-[ $QT_IM = 'Y' ] && echo "QT_MOC=$QT_MOC" >> config.mak
++if [ $QT5_IM = 'Y' ]; then
++ echo "QT5_MOC=$QT5_MOC" >> config.mak
++fi
++if [ $QT4_IM = 'Y' ]; then
++ echo "QT4_MOC=$QT4_MOC" >> config.mak
++fi
++if [ $QT_IM = 'Y' ]; then
++ echo "QT_MOC=$QT_MOC" >> config.mak
++fi
+ 
+ echo "GCIN_DEBUG=0" >> config.mak
+ if [ $prefix = /usr/local ]; then

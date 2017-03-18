@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twoftpd
-PORTVERSION=	1.42
-PORTREVISION=	1
+PORTVERSION=	1.43
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 

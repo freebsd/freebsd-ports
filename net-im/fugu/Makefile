@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw
 
-USE_OPENSSL=	yes
-USES=		python
+USES=		python ssl
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ CATEGORIES=	www math python
 MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Support for LaTeX math formulas in wiki pages
 
 RUN_DEPENDS=	tracd:www/trac

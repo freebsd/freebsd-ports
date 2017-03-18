@@ -49,7 +49,7 @@ QT4_USE=		QT4=corelib,gui,moc_build
 QT4_MAKE_ENV=		qt=1 qt4=1 QTDIR="${PREFIX}"
 QT4_CPPFLAGS=		-I${QT_INCDIR}
 QT4_LDFLAGS=		-L${QT_LIBDIR}
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 SSL_MAKE_ENV=		ssl=1
 TK_USES=		tk
 TK_MAKE_ENV=		tk=1

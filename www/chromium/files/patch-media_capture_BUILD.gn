@@ -1,6 +1,6 @@
---- media/capture/BUILD.gn.orig	2017-01-26 00:49:15 UTC
+--- media/capture/BUILD.gn.orig	2017-03-09 20:04:34 UTC
 +++ media/capture/BUILD.gn
-@@ -127,6 +127,16 @@ component("capture") {
+@@ -135,6 +135,16 @@ component("capture") {
      ]
    }
  

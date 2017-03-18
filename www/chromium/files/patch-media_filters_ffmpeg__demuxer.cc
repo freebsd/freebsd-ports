@@ -1,6 +1,6 @@
---- media/filters/ffmpeg_demuxer.cc.orig	2017-01-26 00:49:15 UTC
+--- media/filters/ffmpeg_demuxer.cc.orig	2017-03-09 20:04:34 UTC
 +++ media/filters/ffmpeg_demuxer.cc
-@@ -1198,24 +1198,6 @@ void FFmpegDemuxer::OnFindStreamInfoDone
+@@ -1195,24 +1195,6 @@ void FFmpegDemuxer::OnFindStreamInfoDone
    // If no estimate is found, the stream entry will be kInfiniteDuration.
    std::vector<base::TimeDelta> start_time_estimates(format_context->nb_streams,
                                                      kInfiniteDuration);

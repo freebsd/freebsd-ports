@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	megaglest
-PORTVERSION=	3.12.0
-PORTREVISION=	1
+PORTVERSION=	3.13.0
 CATEGORIES=	games
 
 MAINTAINER=	monwarez@mailoo.org

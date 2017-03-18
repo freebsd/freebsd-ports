@@ -14,8 +14,7 @@ LICENSE=	LGPL3+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE}
-USES=		fuse gettext libtool pathfix pkgconfig python
-USE_OPENSSL=	yes
+USES=		fuse gettext libtool pathfix pkgconfig python ssl
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 LIBS+=		-L${OPENSSLLIB}

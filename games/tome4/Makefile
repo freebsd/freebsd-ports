@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tome4
-PORTVERSION=	1.4.9
+PORTVERSION=	1.5.1
 CATEGORIES=	games
-MASTER_SITES=	http://te4.org/dl/t-engine/ \
+MASTER_SITES=	https://te4.org/dl/t-engine/ \
+		http://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
 DISTFILES=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
@@ -31,7 +32,6 @@ USE_SDL=	image2 sdl2 ttf2
 USE_GL=		gl glu
 USE_CSTD=	gnu89
 SUB_FILES=	tome4
-MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.pre.mk>
 
@@ -41,6 +41,8 @@ pre-build:
 	(cd ${WRKSRC} && premake4 --lua=default gmake)
 .else
 	(cd ${WRKSRC} && premake4 gmake)
+	@${ECHO} '.NOTPARALLEL:' >> ${WRKSRC}/build/buildvm.make
+	@${ECHO} '.NOTPARALLEL:' >> ${WRKSRC}/build/luajit2.make
 .endif
 	@${REINPLACE_CMD} 's|-lpthread|-pthread|' ${WRKSRC}/build/TEngine.make
 

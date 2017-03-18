@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chrony
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
@@ -41,8 +41,6 @@ OPTIONS_DEFINE=		IPV6
 
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_OFF=	--disable-ipv6
-
-BROKEN_aarch64=		Fails to compile: invalid operands to binary expression (double and double)
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chronyc

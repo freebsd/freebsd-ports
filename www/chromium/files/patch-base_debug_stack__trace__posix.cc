@@ -1,6 +1,15 @@
---- base/debug/stack_trace_posix.cc.orig	2017-01-26 00:49:07 UTC
+--- base/debug/stack_trace_posix.cc.orig	2017-03-09 20:04:26 UTC
 +++ base/debug/stack_trace_posix.cc
-@@ -571,6 +571,10 @@ class SandboxSymbolizeHelper {
+@@ -33,7 +33,7 @@
+ #include <AvailabilityMacros.h>
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "base/debug/proc_maps_linux.h"
+ #endif
+ 
+@@ -574,6 +574,10 @@ class SandboxSymbolizeHelper {
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
@@ -11,7 +20,7 @@
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -586,6 +590,7 @@ class SandboxSymbolizeHelper {
+@@ -589,6 +593,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;

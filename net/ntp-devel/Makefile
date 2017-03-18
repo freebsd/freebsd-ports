@@ -3,7 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.3.93
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 CONFLICTS=	ntp-[0-9].*
 
 USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
-		pkgconfig ssl gettext-runtime
+		pkgconfig gettext-runtime
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-leap-smear
@@ -53,7 +53,10 @@ PERL_UTILS_USES=	perl5
 SSL_CONFIGURE_ON=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
 SSL_CONFIGURE_OFF=	--without-crypto
+SSL_USES=		ssl
 SSL_BROKEN_OFF=		Includes OpenSSL when deselected
+
+DEBUG_CONFIGURE_ON=	--enable-debug
 
 THREADS_CONFIGURE_ENABLE=	thread-support
 THREADS_CONFIGURE_WITH=		threads

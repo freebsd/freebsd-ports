@@ -14,10 +14,9 @@ WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
 ERL_RELEASE=	R16B02-basho5
 
-USES=		gmake ncurses perl5
+USES=		gmake ncurses perl5 ssl
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 
 CONFIGURE_ARGS+=--with-ssl=/usr \
 		--disable-hipe \

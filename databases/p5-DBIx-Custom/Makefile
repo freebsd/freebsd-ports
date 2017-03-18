@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.3300
+PORTVERSION=	0.3800
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:databases/p5-DBD-SQLite \
 		p5-Object-Simple>=3.1000:devel/p5-Object-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

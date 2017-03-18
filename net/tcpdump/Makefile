@@ -31,7 +31,7 @@ SMI_DESC=	Allow MIBs to be loaded on the fly
 USER_DESC=	Drop privileges to nobody
 CHROOT_DESC=	Chroot to /var/run/tcpdump (set CHROOTDIR to change)
 
-CRYPTO_USE=		OPENSSL=yes
+CRYPTO_USES=		ssl
 CRYPTO_CONFIGURE_WITH=	crypto
 IPV6_CONFIGURE_ENABLE=	ipv6
 SMB_CONFIGURE_ENABLE=	smb

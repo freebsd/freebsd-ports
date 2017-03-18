@@ -1,6 +1,6 @@
---- net/socket/udp_socket_posix.cc.orig	2017-01-26 00:49:16 UTC
+--- net/socket/udp_socket_posix.cc.orig	2017-03-09 20:04:35 UTC
 +++ net/socket/udp_socket_posix.cc
-@@ -58,7 +58,7 @@ const int kBindRetries = 10;
+@@ -59,7 +59,7 @@ const int kBindRetries = 10;
  const int kPortStart = 1024;
  const int kPortEnd = 65535;
  
@@ -9,7 +9,7 @@
  
  // Returns IPv4 address in network order.
  int GetIPv4AddressFromIndex(int socket, uint32_t index, uint32_t* address) {
-@@ -762,7 +762,7 @@ int UDPSocketPosix::SetMulticastOptions(
+@@ -763,7 +763,7 @@ int UDPSocketPosix::SetMulticastOptions(
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -18,7 +18,7 @@
          ip_mreqn mreq;
          mreq.imr_ifindex = multicast_interface_;
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
-@@ -837,7 +837,7 @@ int UDPSocketPosix::JoinGroup(const IPAd
+@@ -838,7 +838,7 @@ int UDPSocketPosix::JoinGroup(const IPAd
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  

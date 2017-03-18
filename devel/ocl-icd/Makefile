@@ -3,6 +3,7 @@
 
 PORTNAME=	ocl-icd
 PORTVERSION=	2.2.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://forge.imag.fr/frs/download.php/${REVID}/
 REVID=		814
@@ -23,7 +24,8 @@ RUBY_NO_RUN_DEPENDS=yes
 USES=		gmake libtool localbase pathfix
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS+=--disable-official-khronos-headers
+CONFIGURE_ARGS+=--disable-official-khronos-headers \
+		--enable-custom-vendordir
 
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES

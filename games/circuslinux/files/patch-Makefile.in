@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu May  1 22:03:11 2003
-+++ Makefile.in	Thu May  1 22:03:26 2003
-@@ -83,7 +83,7 @@
+--- Makefile.in.orig	2001-04-29 06:53:31 UTC
++++ Makefile.in
+@@ -83,7 +83,7 @@ VERSION = @VERSION@
  CC = @CC@
  DATA_PREFIX = $(pkgdatadir)/data/
  JOY = @JOY@

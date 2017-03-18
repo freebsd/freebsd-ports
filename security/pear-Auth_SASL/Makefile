@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Auth_SASL
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org

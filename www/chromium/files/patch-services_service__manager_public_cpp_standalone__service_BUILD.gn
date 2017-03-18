@@ -1,0 +1,11 @@
+--- services/service_manager/public/cpp/standalone_service/BUILD.gn.orig	2017-03-09 20:04:36 UTC
++++ services/service_manager/public/cpp/standalone_service/BUILD.gn
+@@ -23,7 +23,7 @@ source_set("standalone_service") {
+     "//services/service_manager/public/interfaces",
+   ]
+ 
+-  if (is_linux && !is_android) {
++  if (is_linux && !is_android && !is_bsd) {
+     sources += [
+       "linux_sandbox.cc",
+       "linux_sandbox.h",

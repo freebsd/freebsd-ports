@@ -1,4 +1,4 @@
---- components/metrics/BUILD.gn.orig	2017-01-26 00:49:12 UTC
+--- components/metrics/BUILD.gn.orig	2017-03-09 20:04:31 UTC
 +++ components/metrics/BUILD.gn
 @@ -107,6 +107,13 @@ static_library("metrics") {
    if (is_win) {
@@ -23,7 +23,7 @@
    static_library("serialization") {
      sources = [
        "serialization/metric_sample.cc",
-@@ -341,7 +348,7 @@ source_set("unit_tests") {
+@@ -342,7 +349,7 @@ source_set("unit_tests") {
      "//ui/gfx/geometry",
    ]
  

@@ -18,6 +18,9 @@ LICENSE=	LGPL20
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libLLVM-3.3.so:devel/llvm33
 
+DEPRECATED=	Project is dead, has no end user, and relies on EOLed LLVM
+EXPIRATION_DATE=2017-04-15
+
 USES=		cmake pathfix perl5 tar:bzip2
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config33

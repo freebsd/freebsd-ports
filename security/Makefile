@@ -3,6 +3,7 @@
 
     COMMENT = Security tools
 
+    SUBDIR += 0d1n
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
@@ -126,6 +127,7 @@
     SUBDIR += elixir-comeonin
     SUBDIR += elixir-comeonin_i18n
     SUBDIR += elixir-jose
+    SUBDIR += enchive
     SUBDIR += erlang-fast_tls
     SUBDIR += erlang-jose
     SUBDIR += eschalot
@@ -277,6 +279,7 @@
     SUBDIR += keepassx
     SUBDIR += keepassx-devel
     SUBDIR += keepassx2
+    SUBDIR += keepassxc
     SUBDIR += keybase
     SUBDIR += keychain
     SUBDIR += keynote
@@ -879,6 +882,7 @@
     SUBDIR += py-mixbox
     SUBDIR += py-oauth2client
     SUBDIR += py-oauthlib
+    SUBDIR += py-onetime
     SUBDIR += py-openssl
     SUBDIR += py-paramiko
     SUBDIR += py-paramiko1
@@ -1063,6 +1067,9 @@
     SUBDIR += s2n
     SUBDIR += safesh
     SUBDIR += samba-virusfilter
+    SUBDIR += samhain
+    SUBDIR += samhain-client
+    SUBDIR += samhain-server
     SUBDIR += sancp
     SUBDIR += sasp
     SUBDIR += scamp
@@ -1077,6 +1084,7 @@
     SUBDIR += secure_delete
     SUBDIR += sguil
     SUBDIR += sha
+    SUBDIR += sha1collisiondetection
     SUBDIR += shibboleth2-sp
     SUBDIR += shimmer
     SUBDIR += shishi

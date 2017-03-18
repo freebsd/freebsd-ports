@@ -4,5 +4,5 @@ libdir=${exec_prefix}/lib
 
 Name: Newtonsoft JSON
 Description: Popular high-performance JSON framework for .NET.
-Version: 6.0.5
-Libs: -r:${libdir}/mono/newtonsoft.json/Newtonsoft.Json.dll
+Version: 9.0.1
+Libs: -r:${libdir}/mono/Newtonsoft.Json/Newtonsoft.Json.dll

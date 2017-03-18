@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	webserver
 
 USES=		autoreconf cpe gettext gmake libtool pathfix pkgconfig \
-		python:2,build shebangfix
+		python:2,build shebangfix ssl
 SHEBANG_FILES=	admin/CTK/CTK-run.pre admin/server.py \
 		admin/upgrade_config.py cherokee/cherokee-admin-launcher \
 		cherokee/cherokee-tweak contrib/tracelor.py \
@@ -25,7 +25,6 @@ SHEBANG_FILES=	admin/CTK/CTK-run.pre admin/server.py \
 		po/admin/generate_POTFILESin.py po/po_stats.py \
 		qa/fcgi.py qa/run-tests.py
 USE_RC_SUBR=	cherokee
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--localstatedir=${CHEROKEE_VARDIR} \

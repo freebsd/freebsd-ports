@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.11.0
-PORTREVISION?=	2
+PORTVERSION=	2.12.0
+PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -43,10 +43,10 @@ CPE_VENDOR=	pidgin
 
 OPTIONS_DEFINE=	BONJOUR DBUS GNUTLS NSS SASL GSTREAMER VV IDN PERL TCLTK
 OPTIONS_GROUP=		PROTOCOLS
-OPTIONS_GROUP_PROTOCOLS=GG SAMETIME SILC IRC JABBER MSN MYSPACE \
-			NOVELL OSCAR QQ SIMPLE YAHOO ZEPHYR
-OPTIONS_DEFAULT=	BONJOUR DBUS NSS GSTREAMER VV IDN GG IRC JABBER MSN \
-			MYSPACE NOVELL OSCAR QQ SIMPLE YAHOO ZEPHYR
+OPTIONS_GROUP_PROTOCOLS=GG SAMETIME SILC IRC JABBER \
+			NOVELL OSCAR QQ SIMPLE ZEPHYR
+OPTIONS_DEFAULT=	BONJOUR DBUS NSS GSTREAMER VV IDN GG IRC JABBER \
+			NOVELL OSCAR QQ SIMPLE ZEPHYR
 BONJOUR_DESC=	mDNS support
 GNUTLS_DESC=	Use GNUTLS for encryption support
 NSS_DESC=	Use Mozilla NSS for encryption support
@@ -58,13 +58,10 @@ SILC_DESC=	The Secure Internet Live Conferencing protocol
 GG_DESC=	The Gadu-Gadu chat protocol
 IRC_DESC=	The Internet Relay Chat protocol
 JABBER_DESC=	The Jabber/XMPP/Google Talk protocol
-MSN_DESC=	The MSN Messenger protocol
-MYSPACE_DESC=	The MySpaceIM protocol
 NOVELL_DESC=	The Novell GroupWise chat protocol
 OSCAR_DESC=	The AIM/ICQ/Oscar protocol
 QQ_DESC=	The Tercent QQ chat protocol
 SIMPLE_DESC=	The SIMPLE chat protocol
-YAHOO_DESC=	The Yahoo! Messenger protocol
 ZEPHYR_DESC=	The Zephyr chat protocol
 
 .if defined(WITH_GTKUI)
@@ -260,20 +257,6 @@ PRPL_MODULES:=		jabber,${PRPL_MODULES}
 PLIST_SUB+=		JABBER="@comment not installed: "
 .endif
 
-.if ${PORT_OPTIONS:MMSN}
-PLIST_SUB+=		MSN=""
-PRPL_MODULES:=		msn,${PRPL_MODULES}
-.else
-PLIST_SUB+=		MSN="@comment not installed: "
-.endif
-
-.if ${PORT_OPTIONS:MMYSPACE}
-PLIST_SUB+=		MYSPACE=""
-PRPL_MODULES:=		myspace,${PRPL_MODULES}
-.else
-PLIST_SUB+=		MYSPACE="@comment not installed: "
-.endif
-
 .if ${PORT_OPTIONS:MNOVELL}
 PLIST_SUB+=		NOVELL=""
 PRPL_MODULES:=		novell,${PRPL_MODULES}
@@ -300,13 +283,6 @@ PLIST_SUB+=		SIMPLE=""
 PRPL_MODULES:=		simple,${PRPL_MODULES}
 .else
 PLIST_SUB+=		SIMPLE="@comment not installed: "
-.endif
-
-.if ${PORT_OPTIONS:MYAHOO}
-PLIST_SUB+=		YAHOO=""
-PRPL_MODULES:=		yahoo,${PRPL_MODULES}
-.else
-PLIST_SUB+=		YAHOO="@comment not installed: "
 .endif
 
 .if ${PORT_OPTIONS:MZEPHYR}

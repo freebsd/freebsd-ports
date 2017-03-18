@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	premailer
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.2
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,8 @@ COMMENT=	Improve the rendering of HTML emails
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-css_parser>=1.4.9:textproc/rubygem-css_parser \
+RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
+		rubygem-css_parser>=1.4.10:textproc/rubygem-css_parser \
 		rubygem-htmlentities>=4.0.0:textproc/rubygem-htmlentities
 
 NO_ARCH=	yes

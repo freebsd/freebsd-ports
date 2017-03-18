@@ -49,7 +49,7 @@ GTK1_CONFIGURE_ON=	--with-gtk1
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MGNUTLS}
-USE_OPENSSL=	yes
+USES+=	ssl
 .endif
 
 .if ${PORT_OPTIONS:MGTK1}

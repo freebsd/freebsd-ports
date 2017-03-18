@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Cpanel-JSON-XS
-PORTVERSION=	3.0227
+PORTVERSION=	3.0230
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RURBAN
@@ -18,7 +18,7 @@ TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Mojolicious>=6.11:www/p5-Mojolicious \
 		p5-Perl-MinimumVersion>=1.20:textproc/p5-Perl-MinimumVersion \
-		p5-Test-CPAN-Meta>=1.20:devel/p5-Test-CPAN-Meta \
+		p5-Test-CPAN-Meta>=0.12:devel/p5-Test-CPAN-Meta \
 		p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
 		p5-Test-Pod>=1:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage \

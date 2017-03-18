@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=	CRYP_OPEN
 
 CRYP_BOTAN_CONFIGURE_ON=	--with-crypto-backend=botan
 CRYP_BOTAN_LIB_DEPENDS=	libbotan-1.10.so:security/botan110
-CRYP_OPEN_USE=		openssl=yes
+CRYP_OPEN_USES=		ssl
 CRYP_OPEN_CONFIGURE_ON=	--with-crypto-backend=openssl
 
 .include <bsd.port.options.mk>

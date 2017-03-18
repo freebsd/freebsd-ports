@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tesseract
-PORTVERSION=	3.04.01
-PORTREVISION=	3
+PORTVERSION=	3.05.00
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -13,7 +12,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	liblept.so:graphics/leptonica
 
-USES=		localbase libtool pathfix
+USES=		autoreconf localbase libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -24,7 +23,7 @@ CONFIGURE_ENV=	LIBLEPT_HEADERSDIR="${LOCALBASE}/include/leptonica"
 
 DATADIR=	${PREFIX}/share/tessdata
 PORTDATA=	*
-PORTDOCS=	AUTHORS ChangeLog README.md ReleaseNotes
+PORTDOCS=	AUTHORS ChangeLog README.md
 PORTEXAMPLES=	eurotext.tif phototest.tif
 INSTALL_TARGET=	install-strip
 
@@ -34,11 +33,11 @@ OPTIONS_SUB=	yes
 TOOLS_DESC=	Include training tools
 TOOLS_LIB_DEPENDS=libicui18n.so:devel/icu \
 		libfontconfig.so:x11-fonts/fontconfig
-TOOLS_USES=	compiler:c++11-lib pkgconfig
+TOOLS_USES=	compiler:c++11-lib
 TOOLS_USE=	GNOME=cairo,glib20,pango
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3 -DNDEBUG||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O3 -DNDEBUG||' ${WRKSRC}/configure.ac
 
 post-build-TOOLS-on:
 	@cd ${WRKSRC} && ${MAKE} training

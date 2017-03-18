@@ -1,6 +1,6 @@
---- ui/compositor/BUILD.gn.orig	2017-01-26 00:49:31 UTC
+--- ui/compositor/BUILD.gn.orig	2017-03-09 20:04:49 UTC
 +++ ui/compositor/BUILD.gn
-@@ -201,7 +201,7 @@ test("compositor_unittests") {
+@@ -203,7 +203,7 @@ test("compositor_unittests") {
      "//ui/gl",
      "//ui/resources",
    ]

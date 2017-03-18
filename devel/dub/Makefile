@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dub
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/dlang/dub/archive/
 DISTFILES=	v${PORTVERSION}.tar.gz
@@ -17,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/LICENSE
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${WRKSRC}/source/dub/version_.d
 
 do-build:
 	@cd ${WRKSRC} && ${SH} build.sh

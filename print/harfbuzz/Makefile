@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	harfbuzz
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.5
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 
@@ -14,13 +14,14 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgraphite2.so:graphics/graphite2
 
 USE_LDCONFIG=	yes
-USES=		compiler:c++0x gmake libtool pathfix pkgconfig tar:bzip2
+USES=		compiler:c++0x gettext-runtime gmake gnome libtool \
+		pathfix pkgconfig tar:bzip2
 USE_GNOME=	cairo glib20 introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-graphite2 --with-gobject=yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PLIST_SUB+=	LIBVER=0.10400.2
+PLIST_SUB+=	LIBVER=0.10400.5
 
 .include <bsd.port.mk>

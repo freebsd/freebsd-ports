@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fancybox
-PORTVERSION=	2.1.7
-DISTVERSIONPREFIX=	V
+PORTVERSION=	3.0.47
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,6 +20,6 @@ CPE_VENDOR=	fancybox_project
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/
-	cd ${WRKSRC}/source/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
+	cd ${WRKSRC}/dist/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>

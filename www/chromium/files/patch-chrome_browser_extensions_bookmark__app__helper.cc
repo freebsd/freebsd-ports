@@ -1,6 +1,6 @@
---- chrome/browser/extensions/bookmark_app_helper.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/extensions/bookmark_app_helper.cc.orig	2017-03-09 20:04:28 UTC
 +++ chrome/browser/extensions/bookmark_app_helper.cc
-@@ -707,7 +707,7 @@ void BookmarkAppHelper::FinishInstallati
+@@ -716,7 +716,7 @@ void BookmarkAppHelper::FinishInstallati
  #if !defined(OS_MACOSX)
  #if !defined(USE_ASH)
    web_app::ShortcutLocations creation_locations;

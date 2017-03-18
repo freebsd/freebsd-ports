@@ -12,9 +12,8 @@ COMMENT=	OpenSSL-based signcode utility
 
 PLIST_FILES=	bin/osslsigncode
 
-USES=		pkgconfig
+USES=		pkgconfig ssl
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=		CURL GSF
 OPTIONS_DEFAULT=	CURL GSF

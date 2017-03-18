@@ -11,9 +11,8 @@ DISTNAME=	gogoc-1_2-RELEASE
 MAINTAINER=	kami@k5-storitve.net
 COMMENT=	GogoCLIENT, connect to Freenet6 tunnel
 
-USES=		gmake
+USES=		gmake ssl
 USE_RC_SUBR=	gogoc
-USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

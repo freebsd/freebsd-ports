@@ -3,6 +3,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.14.14
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20Stable/${PORTVERSION}
 
@@ -11,12 +12,8 @@ COMMENT=	Set of programs for controlling APC UPS
 
 LICENSE=	GPLv2
 
-USE_RC_SUBR=	apcupsd
-SUB_FILES=	pkg-message
-
-GNU_CONFIGURE=	yes
 USES=		gmake
-OPTIONS_SUB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--with-nologin=/var/run \
 		--disable-install-distdir \
@@ -25,24 +22,29 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 
 CONFIGURE_ENV+=	LD="${CXX}" \
 		ac_cv_path_SHUTDOWN="/sbin/shutdown"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	APCSMART_DRV APCDUMB_DRV CLIENT_ONLY CGI PCNET_DRV USB SNMP_DRV \
-		SNMP_DRV_OLD TCP_WRAPPERS TEST_DRV GAPCMON DOCS MODBUS
-OPTIONS_DEFAULT=	APCSMART_DRV APCDUMB_DRV PCNET_DRV USB TCP_WRAPPERS MODBUS
-APCSMART_DRV_DESC=	Compile APC SmartUPS serial driver
-APCDUMB_DRV_DESC=	Compile dumb UPS driver
+USE_RC_SUBR=	apcupsd
+SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=	APCSMART_DRV APCDUMB_DRV CLIENT_ONLY CGI PCNET_DRV USB_DRV \
+		SNMP_DRV SNMP_DRV_OLD TCP_WRAPPERS TEST_DRV GAPCMON \
+		DOCS MODBUS
+OPTIONS_DEFAULT=	APCSMART_DRV APCDUMB_DRV PCNET_DRV SNMP_DRV USB_DRV \
+		TCP_WRAPPERS MODBUS
+OPTIONS_SUB=	yes
+
+APCSMART_DRV_DESC=	APC SmartUPS serial driver support
+APCDUMB_DRV_DESC=	Dumb UPS driver support
 CLIENT_ONLY_DESC=	Only NIS client (no network server or drivers)
-CGI_DESC=		Compile with CGI programs to show status
-PCNET_DRV_DESC=		Compile PowerChute Network Shutdown driver
-USB_DESC=		Compile with USB Support driver
-SNMP_DRV_DESC=		Compile with SNMP driver
-SNMP_DRV_OLD_DESC=	Compile with old SNMP driver
-TCP_WRAPPERS_DESC=	Compile with TCP_WRAPPERS support
-TEST_DRV_DESC=		Compile TEST driver
+CGI_DESC=		Build CGI programs to show status
+PCNET_DRV_DESC=		PowerChute Network Shutdown driver support
+USB_DRV_DESC=		USB driver support
+SNMP_DRV_DESC=		SNMP driver support
+SNMP_DRV_OLD_DESC=	Old SNMP driver support
+TCP_WRAPPERS_DESC=	${LIBWRAP_DESC}
+TEST_DRV_DESC=		Test driver support
 GAPCMON_DESC=		Build GTK GUI front-end
-MODBUS_DESC=		Compile with MODBUS driver
+MODBUS_DESC=		MODBUS driver support
 
 #PORTDOCS=	${PORTNAME}.pdf
 
@@ -59,7 +61,7 @@ GAPCMON_USES=			pkgconfig
 GAPCMON_USE=			GNOME=gconf2
 GAPCMON_CONFLICTS=		gapcmon-[0-9]*
 PCNET_DRV_CONFIGURE_ENABLE=	pcnet
-USB_CONFIGURE_ENABLE=		usb
+USB_DRV_CONFIGURE_ENABLE=	usb
 SNMP_DRV_CONFIGURE_ENABLE=	snmp
 MODBUS_CONFIGURE_ENABLE=	modbus
 SNMP_DRV_OLD_CONFIGURE_ENABLE=	net-snmp
@@ -76,21 +78,12 @@ TEST_DRV_CONFIGURE_ENABLE=	test
 pre-configure:
 .if ${PORT_OPTIONS:MCLIENT_ONLY} && ( ${PORT_OPTIONS:MAPCSMART_DRV} || \
 	${PORT_OPTIONS:MAPCDUMB_DRV} || ${PORT_OPTIONS:MPCNET_DRV} || \
-	${PORT_OPTIONS:MUSB} || \
+	${PORT_OPTIONS:MUSB_DRV} || \
 	${PORT_OPTIONS:MSNMP_DRV} || ${PORT_OPTIONS:MTEST_DRV} )
 	@${ECHO_CMD} "It doesn't make sense to build drivers if all you want is"
 	@${ECHO_CMD} "the client; please do make config and select either"
 	@${ECHO_CMD} "CLIENT_ONLY or the *_DRV you need"
 	@${FALSE}
 .endif
-
-post-install:
-	@${ECHO_CMD} "@unexec if [ -d %D/${ETCDIR_REL} ]; then ${ECHO_CMD} \"If you are permanently removing this port, you should do a ``rm -rf ${ETCDIR}`` to remove config files left.\" | ${FMT} ; fi" >> ${TMPPLIST}
-#	Install sample startup script
-	for na in apcupsd.conf apcupsd.css hosts.conf multimon.conf; do \
-		if [ -f ${STAGEDIR}${ETCDIR}/$$na ]; then \
-			${MV} ${STAGEDIR}${ETCDIR}/$$na ${STAGEDIR}${ETCDIR}/$$na.sample; \
-		fi \
-	done
 
 .include <bsd.port.mk>

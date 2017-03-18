@@ -1,23 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	ipfs-go
-PORTVERSION=	0.3.10
+PORTVERSION=	0.4.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	IPFS implementation in Go
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
+LICENSE=	MIT
 
-BROKEN_i386=	does not build
+BUILD_DEPENDS=	go>=1.7:lang/go
 
-USES=		gmake
+ONLY_FOR_ARCHS=	amd64
+
+USES=		compiler go
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ipfs
-GH_PROJECT=	go-ipfs
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GH_ACCOUNT=	jhixson74
 
 MAKE_ENV+=	GOPATH=${WRKSRC}
 
@@ -27,20 +27,20 @@ USE_RC_SUBR=	${PORTNAME}
 
 STRIP=		# stripping can break go binaries
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-32bit
-.endif
-
-post-patch:
-	${GREP} -lR github.com/ipfs/go-ipfs/vendor/QmQg1J6vikuXF9oDvm4wpdeAUvvkVEKW1EYDw9HhTMnP2b/go-log ${WRKSRC} 2>/dev/null | \
-	 while read gosrc; do sed -i.bak 's#github.com/ipfs/go-ipfs/vendor/##g' $$gosrc; done
-
 do-build:
-	cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} build
+	cd ${WRKSRC}/src/github.com/ipfs/go-ipfs/cmd/ipfs; \
+		${SETENV} ${BUILD_ENV} ${MAKE_ENV} go build -v -x \
+			-ldflags "-X main.GitDescribe=${DISTVERSIONFULL}" -o bin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/cmd/ipfs/ipfs ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/ipfs/go-ipfs/cmd/ipfs/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+# golang assumes that if clang is in use, it is called "clang" and not "cc". If
+# it's called "cc", go fails.
+.if ${COMPILER_TYPE} == clang
+BUILD_ENV=  CC=clang
+.endif
 
 .include <bsd.port.post.mk>

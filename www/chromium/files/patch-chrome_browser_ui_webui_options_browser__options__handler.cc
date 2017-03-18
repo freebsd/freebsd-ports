@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/options/browser_options_handler.cc.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/webui/options/browser_options_handler.cc.orig	2017-03-09 20:04:29 UTC
 +++ chrome/browser/ui/webui/options/browser_options_handler.cc
-@@ -564,13 +564,13 @@ void BrowserOptionsHandler::GetLocalized
+@@ -565,13 +565,13 @@ void BrowserOptionsHandler::GetLocalized
      { "syncButtonTextStart", IDS_SYNC_SETUP_BUTTON_LABEL },
  #endif  // defined(OS_CHROMEOS)
  
@@ -16,7 +16,7 @@
  
  #if defined(OS_CHROMEOS) && defined(USE_ASH)
      { "setWallpaper", IDS_SET_WALLPAPER_BUTTON },
-@@ -813,7 +813,7 @@ void BrowserOptionsHandler::RegisterMess
+@@ -814,7 +814,7 @@ void BrowserOptionsHandler::RegisterMess
        "requestProfilesInfo",
        base::Bind(&BrowserOptionsHandler::HandleRequestProfilesInfo,
                   base::Unretained(this)));

@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--enable-alias
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 CONFIGURE_ARGS+=--with-openssl \
 		--with-openssl-include=${OPENSSLINC} \
 		--with-openssl-lib=${OPENSSLLIB}

@@ -13,9 +13,8 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libev.so:devel/libev
 
-USES=		gmake
+USES=		gmake ssl
 USE_GITHUB=	yes
-USE_OPENSSL=	yes
 
 GH_ACCOUNT=	wasted
 

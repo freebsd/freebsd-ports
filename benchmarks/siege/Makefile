@@ -12,8 +12,7 @@ COMMENT=	HTTP regression testing and benchmarking utility
 
 LICENSE=	GPLv2
 
-USES=		autoreconf libtool perl5
-USE_OPENSSL=	yes
+USES=		autoreconf libtool perl5 ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL="${PERL}"
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared \

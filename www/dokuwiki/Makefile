@@ -12,13 +12,12 @@ COMMENT=	Simple and easy to use wiki, no database required
 
 LICENSE=	GPLv2
 
-DIST_VER=	${PORTNAME}-2016-06-26a
+DIST_VER=	${PORTNAME}-2017-02-19b
 USE_PHP=	gd mbstring openssl pcre session xml zlib
 NO_ARCH=	YES
 NO_BUILD=	YES
-WANT_PHP_WEB=	YES
 
-USES=		cpe tar:tgz
+USES=		cpe tar:tgz php:web
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME=${PORTNAME}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 
@@ -49,7 +49,7 @@ IPMITOOL_RUN_DEPENDS=	ipmitool:sysutils/ipmitool
 LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:security/nmap
-PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb
+PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:databases/py-MySQLdb
 X11_RUN_DEPENDS=	Magick-config:graphics/ImageMagick \
 			mtr:net/mtr
 X11_RUN_DEPENDS_OFF=	Magick-config:graphics/ImageMagick-nox11 \
@@ -81,7 +81,7 @@ APACHEMOD_VARS_ON=	WANT_PHP_MOD=yes
 APACHEMOD_USE=		APACHE_RUN=22+
 .else
 # Package builder doesn't create php5 with module
-USES=		php:web
+USES+=		php:web
 .endif
 
 post-patch:

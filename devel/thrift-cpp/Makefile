@@ -54,6 +54,10 @@ CFLAGS+=	-I${OPENSSLINC}
 USE_CXXSTD=	c++11
 .endif
 
+.if ${SSL_DEFAULT} == openssl-devel
+BROKEN=		Cannot find libcrypto.
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 	${LN} -sf libthrift-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libthrift.so.0

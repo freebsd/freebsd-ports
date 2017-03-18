@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	2017.1
-PORTREVISION=	3
+PORTVERSION=	2017.5
 CATEGORIES=	devel
-MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
-		LOCAL/martymac
-DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20160916oss_src
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
 
 LICENSE=	GPLv2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	01org
+GH_TAGNAME=	${PORTVERSION:S/./_U/}
 
 SUB_FILES=	tbb.pc
 SUB_LIST=	prefix="${PREFIX}" \
@@ -30,7 +30,6 @@ USE_LDCONFIG=	yes
 USES=	compiler gmake tar:tgz
 ALL_TARGET=	default
 
-WRKSRC=	${WRKDIR}/${DISTNAME:S/_src//}
 CC_BASENAME=	${CC:C,^.*/,,}
 
 .include <bsd.port.pre.mk>

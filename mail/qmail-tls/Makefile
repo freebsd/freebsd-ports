@@ -15,7 +15,7 @@ SLAVE_TLS=	yes
 
 TLS_PATCH_DATE=	20160918
 
-USE_OPENSSL=	yes
+USES=		ssl
 
 # Local overrides
 MASTERDIR=	${.CURDIR}/../qmail

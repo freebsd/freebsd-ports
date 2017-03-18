@@ -1209,6 +1209,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/c++/%%GCC_VERSION%%/vector
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/complex.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/cpio.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/ctype.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/devctl.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/dirent.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/envlock.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/envz.h
@@ -5145,6 +5146,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/share/gcc-%%TARGET%%/libstdcxx/v6/xmethods.py
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005f_005ffsetlocking.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005f_005fmalloc_005flock.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005f_005ftz_005flock.html
+%%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005f_005fretarget_005flock_005finit.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fclose_005fr.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005fexecve_005fr.html
 %%PORTDOCS%%%%HTML%%%%DOCSDIR%%/html/libc/_005ffork_005fr.html

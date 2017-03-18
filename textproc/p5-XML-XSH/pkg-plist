@@ -1,5 +1,4 @@
 bin/xsh
-%%PERL5_MAN3%%/XSH.3.gz
 %%SITE_PERL%%/Inline/XSH.pm
 %%SITE_PERL%%/XML/XSH.pm
 %%SITE_PERL%%/XML/XSH.pod
@@ -14,3 +13,4 @@ bin/xsh
 %%SITE_PERL%%/XML/XSH/LibXMLCompat.pm
 %%SITE_PERL%%/XML/XSH/Parser.pm
 %%PERL5_MAN1%%/xsh.1.gz
+%%PERL5_MAN3%%/XSH.3.gz

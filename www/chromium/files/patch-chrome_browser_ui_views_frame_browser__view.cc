@@ -1,11 +1,11 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2017-03-09 20:04:29 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -1913,7 +1913,7 @@ void BrowserView::OnThemeChanged() {
+@@ -179,7 +179,7 @@
+ #include "chrome/browser/ui/views/sync/one_click_signin_dialog_view.h"
  #endif
- #if defined(OS_WIN)
-     ui::NativeThemeWin::instance()->NotifyObservers();
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
-     ui::NativeThemeAura::instance()->NotifyObservers();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
  #endif
-   }
+ 
+ using base::TimeDelta;

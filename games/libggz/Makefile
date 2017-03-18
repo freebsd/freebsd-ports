@@ -28,7 +28,7 @@ OPTIONS_SINGLE_TLS=	GNUTLS OPENSSL
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ARGS=	--with-tls=GnuTLS
 
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ARGS=	--with-tls=OpenSSL
 
 .include "${.CURDIR}/../libggz/bsd.ggz.mk"

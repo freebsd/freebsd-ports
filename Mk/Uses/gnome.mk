@@ -213,7 +213,8 @@ gnomemimedata_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
 gnomemimedata_BUILD_DEPENDS=${gnomemimedata_DETECT}:misc/gnome-mime-data
 gnomemimedata_RUN_DEPENDS=${gnomemimedata_DETECT}:misc/gnome-mime-data
 
-glib20_LIB_DEPENDS=	libglib-2.0.so:devel/glib20
+glib20_LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
+					libintl.so:devel/gettext-runtime
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
 
 atk_LIB_DEPENDS=	libatk-1.0.so:accessibility/atk

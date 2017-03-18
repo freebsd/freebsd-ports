@@ -3,7 +3,7 @@
 
 PORTNAME=	gtksql
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-testing/${PORTNAME}-${PORTVERSION}
 
@@ -13,20 +13,16 @@ COMMENT=	Graphical query tool for PostgreSQL/MySQL/SQLite
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libscintilla.so:x11-toolkits/scintilla
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libscintilla.so:x11-toolkits/scintilla
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-BROKEN=		does not build (incomplete definition of type 'struct CharacterRange')
-
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gtk20 cairo glib20 pango
+USES=		gettext gmake localbase pkgconfig
+USE_GNOME=	gdkpixbuf2 gtk20 cairo
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
-
-CPPFLAGS+=	-I${LOCALBASE}/include/scintilla -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lscintilla -lscintilla_lexers
-LDFLAGS+=	-lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo
 
 OPTIONS_DEFINE=	AVAHI DOCS
 OPTIONS_MULTI=	DB
@@ -49,9 +45,9 @@ SQLITE_CONFIGURE_OFF=	--without-sqlite
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/-lstdc++/s|^|#| ; \
-		 /scintilla.a/s|^|#| ; \
-		 /\/scintilla\/include/s|^|#| ; \
+		's|-lstdc++|| ; \
+		 /^PACKAGE_LIBS=/s|$${packagesrcdir}.*scintilla.a|-lscintilla -lscintilla_lexers| ; \
+		 /^CPPFLAGS=/s|../scintilla/include|${LOCALBASE}/include/scintilla| ; \
 		 /ac_header/s|postgres.h|libpq-fe.h| ; \
 		 s|/usr/local|${PREFIX}| ; \
 		 s|-R|-Wl,-rpath=| ; \
@@ -70,5 +66,10 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/gtksql|${PREFIX}/lib/gtksql|' \
 		${WRKSRC}/src/plugins.c
+# Some structure names were renamed in Scintilla.h (v3.7.1)
+	@${REINPLACE_CMD} -E \
+		's|^#include <string.h>$$|#include <stdlib.h>\${.newline}&| ; \
+		 s|(CharacterRange\|TextRange)|Sci_&|' \
+		${WRKSRC}/src/gtksql_query_scintilla.c
 
 .include <bsd.port.mk>

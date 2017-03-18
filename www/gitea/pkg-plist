@@ -21,6 +21,7 @@ sbin/gitea
 %%DATADIR%%/options/gitignore/CVS
 %%DATADIR%%/options/gitignore/CakePHP
 %%DATADIR%%/options/gitignore/ChefCookbook
+%%DATADIR%%/options/gitignore/Clojure
 %%DATADIR%%/options/gitignore/Cloud9
 %%DATADIR%%/options/gitignore/CodeIgniter
 %%DATADIR%%/options/gitignore/CodeKit
@@ -47,6 +48,7 @@ sbin/gitea
 %%DATADIR%%/options/gitignore/Espresso
 %%DATADIR%%/options/gitignore/ExpressionEngine
 %%DATADIR%%/options/gitignore/ExtJs
+%%DATADIR%%/options/gitignore/FSharp
 %%DATADIR%%/options/gitignore/Fancy
 %%DATADIR%%/options/gitignore/Finale
 %%DATADIR%%/options/gitignore/FlexBuilder
@@ -237,6 +239,7 @@ sbin/gitea
 %%DATADIR%%/public/assets/octicons-4.3.0/octicons.ttf
 %%DATADIR%%/public/assets/octicons-4.3.0/octicons.woff
 %%DATADIR%%/public/assets/octicons-4.3.0/octicons.woff2
+%%DATADIR%%/public/css/gitgraph.css
 %%DATADIR%%/public/css/github.min.css
 %%DATADIR%%/public/css/index.css
 %%DATADIR%%/public/css/semantic-2.2.1.min.css
@@ -1143,11 +1146,15 @@ sbin/gitea
 %%DATADIR%%/public/img/favicon.png
 %%DATADIR%%/public/img/gitea-large-resize.png
 %%DATADIR%%/public/img/gitea-lg.png
+%%DATADIR%%/public/img/github.png
 %%DATADIR%%/public/img/slack.png
+%%DATADIR%%/public/js/draw.js
 %%DATADIR%%/public/js/index.js
 %%DATADIR%%/public/js/jquery-1.11.3.min.js
+%%DATADIR%%/public/js/libs/autolink.js
 %%DATADIR%%/public/js/libs/clipboard-1.5.9.min.js
 %%DATADIR%%/public/js/libs/emojify-1.1.0.min.js
+%%DATADIR%%/public/js/libs/gitgraph.js
 %%DATADIR%%/public/js/libs/jquery.are-you-sure.js
 %%DATADIR%%/public/js/semantic-2.2.1.min.js
 %%DATADIR%%/public/less/_admin.less
@@ -1618,6 +1625,7 @@ sbin/gitea
 %%DATADIR%%/templates/repo/editor/edit.tmpl
 %%DATADIR%%/templates/repo/editor/upload.tmpl
 %%DATADIR%%/templates/repo/forks.tmpl
+%%DATADIR%%/templates/repo/graph.tmpl
 %%DATADIR%%/templates/repo/header.tmpl
 %%DATADIR%%/templates/repo/home.tmpl
 %%DATADIR%%/templates/repo/issue/comment_tab.tmpl
@@ -1629,6 +1637,7 @@ sbin/gitea
 %%DATADIR%%/templates/repo/issue/navbar.tmpl
 %%DATADIR%%/templates/repo/issue/new.tmpl
 %%DATADIR%%/templates/repo/issue/new_form.tmpl
+%%DATADIR%%/templates/repo/issue/search.tmpl
 %%DATADIR%%/templates/repo/issue/view.tmpl
 %%DATADIR%%/templates/repo/issue/view_content.tmpl
 %%DATADIR%%/templates/repo/issue/view_title.tmpl
@@ -1640,6 +1649,7 @@ sbin/gitea
 %%DATADIR%%/templates/repo/pulls/tab_menu.tmpl
 %%DATADIR%%/templates/repo/release/list.tmpl
 %%DATADIR%%/templates/repo/release/new.tmpl
+%%DATADIR%%/templates/repo/settings/branches.tmpl
 %%DATADIR%%/templates/repo/settings/collaboration.tmpl
 %%DATADIR%%/templates/repo/settings/deploy_keys.tmpl
 %%DATADIR%%/templates/repo/settings/githook_edit.tmpl
@@ -1667,10 +1677,15 @@ sbin/gitea
 %%DATADIR%%/templates/status/500.tmpl
 %%DATADIR%%/templates/user/auth/activate.tmpl
 %%DATADIR%%/templates/user/auth/forgot_passwd.tmpl
+%%DATADIR%%/templates/user/auth/link_account.tmpl
 %%DATADIR%%/templates/user/auth/prohibit_login.tmpl
 %%DATADIR%%/templates/user/auth/reset_passwd.tmpl
 %%DATADIR%%/templates/user/auth/signin.tmpl
+%%DATADIR%%/templates/user/auth/signin_inner.tmpl
 %%DATADIR%%/templates/user/auth/signup.tmpl
+%%DATADIR%%/templates/user/auth/signup_inner.tmpl
+%%DATADIR%%/templates/user/auth/twofa.tmpl
+%%DATADIR%%/templates/user/auth/twofa_scratch.tmpl
 %%DATADIR%%/templates/user/dashboard/dashboard.tmpl
 %%DATADIR%%/templates/user/dashboard/feeds.tmpl
 %%DATADIR%%/templates/user/dashboard/issues.tmpl
@@ -1678,7 +1693,9 @@ sbin/gitea
 %%DATADIR%%/templates/user/meta/followers.tmpl
 %%DATADIR%%/templates/user/meta/header.tmpl
 %%DATADIR%%/templates/user/meta/stars.tmpl
+%%DATADIR%%/templates/user/notification/notification.tmpl
 %%DATADIR%%/templates/user/profile.tmpl
+%%DATADIR%%/templates/user/settings/account_link.tmpl
 %%DATADIR%%/templates/user/settings/applications.tmpl
 %%DATADIR%%/templates/user/settings/avatar.tmpl
 %%DATADIR%%/templates/user/settings/delete.tmpl
@@ -1687,6 +1704,8 @@ sbin/gitea
 %%DATADIR%%/templates/user/settings/password.tmpl
 %%DATADIR%%/templates/user/settings/profile.tmpl
 %%DATADIR%%/templates/user/settings/sshkeys.tmpl
+%%DATADIR%%/templates/user/settings/twofa.tmpl
+%%DATADIR%%/templates/user/settings/twofa_enroll.tmpl
 @owner git
 @group git
 @dir /var/db/gitea

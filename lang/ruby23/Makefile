@@ -73,6 +73,10 @@ CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT} == openssl-devel
+BROKEN=		Does not detect and buid the openssl*.rb bits.
+.endif
+
 # PORTREVISION/PORTEPOCH hack
 
 .if ${PORTREVISION} != 0

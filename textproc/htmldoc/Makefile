@@ -19,8 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 OPTIONS_DEFINE=	HTMLDOCGUI
 HTMLDOCGUI_DESC=	Build GUI front-end
 
-USES=		jpeg tar:bzip2
-USE_OPENSSL=	yes
+USES=		jpeg tar:bzip2 ssl
 
 GNU_CONFIGURE=	yes
 # Configure seems broken and ignores these ATM:

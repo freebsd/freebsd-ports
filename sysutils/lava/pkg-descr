@@ -1,0 +1,6 @@
+Lava is a simple MIT-licensed shell script with 2 dependencies that
+ensures all DBs that are readable by a given user have the views
+of their corresponding design documents rebuilt. It is intended to
+be run regularly from cron.
+
+WWW: https://github.com/iwantmyname/lava
