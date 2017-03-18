@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	mednafen
-PORTVERSION=	0.9.38.7
+PORTVERSION=	0.9.43
 PORTEPOCH=	1
 CATEGORIES=	emulators games
-MASTER_SITES=	http://mednafen.fobby.net/releases/files/
+MASTER_SITES=	https://mednafen.github.io/releases/files/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
@@ -29,7 +29,7 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=--disable-alsa --disable-alsatest \
 		--with-sdl-prefix=${LOCALBASE}
 
-USES=		compiler:c++11-lib cpe iconv pkgconfig:build tar:bzip2
+USES=		compiler:c++11-lib cpe iconv pkgconfig:build tar:xz
 CPE_VENDOR=	david_shadoff
 
 OPTIONS_DEFINE=	NLS DOCS JACK
