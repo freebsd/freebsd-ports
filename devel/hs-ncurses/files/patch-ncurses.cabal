@@ -1,0 +1,10 @@
+--- ncurses.cabal.orig	2017-02-13 14:30:05 UTC
++++ ncurses.cabal
+@@ -103,6 +103,7 @@ library
+     -- platforms where the linker doesn't automatically follow dependencies.
+     if os(darwin) || os(freebsd) || flag(force-narrow-library)
+       cc-options: -DHSNCURSES_NARROW_HEADER
++      cpp-options: -std=c99
+     if os(darwin) || flag(force-narrow-library)
+       extra-libraries: panel ncurses pthread
+     else
