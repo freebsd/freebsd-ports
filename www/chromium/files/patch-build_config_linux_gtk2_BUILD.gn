@@ -1,4 +1,4 @@
---- build/config/linux/gtk2/BUILD.gn.orig	2017-01-26 00:49:07 UTC
+--- build/config/linux/gtk2/BUILD.gn.orig	2017-03-09 20:04:27 UTC
 +++ build/config/linux/gtk2/BUILD.gn
 @@ -4,7 +4,7 @@
  
@@ -7,5 +7,5 @@
 -assert(is_linux, "This file should only be referenced on Linux")
 +assert(is_linux || is_bsd, "This file should only be referenced on Linux")
  
- # Depend on //build/config/linux/gtk2 to use GTKv2.
- #
+ # Depend on //build/config/linux/gtk2 to use GTKv2. Depend on
+ # //build/config/linux/gtk to get GTK 2 or 3 depending on the build flags.

@@ -1,6 +1,6 @@
---- content/app/content_main_runner.cc.orig	2017-01-26 00:49:13 UTC
+--- content/app/content_main_runner.cc.orig	2017-03-09 20:04:32 UTC
 +++ content/app/content_main_runner.cc
-@@ -97,10 +97,10 @@
+@@ -98,10 +98,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -13,7 +13,7 @@
  #include "content/zygote/zygote_main.h"
  #endif
  
-@@ -290,7 +290,7 @@ struct MainFunction {
+@@ -298,7 +298,7 @@ struct MainFunction {
    int (*function)(const MainFunctionParams&);
  };
  
@@ -22,7 +22,7 @@
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -342,7 +342,7 @@ int RunZygote(const MainFunctionParams& 
+@@ -350,7 +350,7 @@ int RunZygote(const MainFunctionParams& 
    NOTREACHED() << "Unknown zygote process type: " << process_type;
    return 1;
  }
@@ -31,7 +31,7 @@
  
  static void RegisterMainThreadFactories() {
  #if !defined(CHROME_MULTIPLE_DLL_BROWSER) && !defined(CHROME_MULTIPLE_DLL_CHILD)
-@@ -409,7 +409,7 @@ int RunNamedProcessTypeMain(
+@@ -417,7 +417,7 @@ int RunNamedProcessTypeMain(
      }
    }
  

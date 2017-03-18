@@ -1,6 +1,6 @@
---- content/browser/download/base_file.cc.orig	2017-01-26 00:49:13 UTC
+--- content/browser/download/base_file.cc.orig	2017-03-09 20:04:32 UTC
 +++ content/browser/download/base_file.cc
-@@ -373,7 +373,7 @@ DownloadInterruptReason BaseFile::LogInt
+@@ -370,7 +370,7 @@ DownloadInterruptReason BaseFile::LogInt
    return reason;
  }
  
@@ -9,7 +9,7 @@
  
  namespace {
  
-@@ -456,7 +456,7 @@ DownloadInterruptReason BaseFile::Annota
+@@ -453,7 +453,7 @@ DownloadInterruptReason BaseFile::Annota
    }
    return DOWNLOAD_INTERRUPT_REASON_FILE_FAILED;
  }

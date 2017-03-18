@@ -1,4 +1,4 @@
---- third_party/sqlite/BUILD.gn.orig	2017-01-26 00:49:30 UTC
+--- third_party/sqlite/BUILD.gn.orig	2017-03-09 20:04:47 UTC
 +++ third_party/sqlite/BUILD.gn
 @@ -22,7 +22,7 @@ if (!use_system_sqlite) {
        # sqlite3Fts3InitTok).
@@ -9,6 +9,15 @@
        cflags += [
          # SQLite doesn"t believe in compiler warnings,
          # preferring testing.
+@@ -150,7 +150,7 @@ if (!use_system_sqlite) {
+       ":sqlite_warnings",
+     ]
+ 
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       libs = [ "dl" ]
+     } else if (is_mac || is_ios) {
+       libs = [
 @@ -187,7 +187,7 @@ if (!use_system_sqlite) {
      public_configs = [ ":sqlite_export" ]
    }

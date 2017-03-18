@@ -1,9 +1,9 @@
---- content/browser/memory/memory_coordinator_impl.cc.orig	2017-02-02 02:02:53 UTC
+--- content/browser/memory/memory_coordinator_impl.cc.orig	2017-03-09 20:04:32 UTC
 +++ content/browser/memory/memory_coordinator_impl.cc
-@@ -116,8 +116,12 @@ void RecordMetricsOnStateChange(base::Me
- struct MemoryCoordinatorSingletonTraits
-     : public base::LeakySingletonTraits<MemoryCoordinator> {
-   static MemoryCoordinator* New() {
+@@ -148,8 +148,12 @@ void MemoryCoordinatorHandleImpl::AddChi
+ struct MemoryCoordinatorImplSingletonTraits
+     : public base::LeakySingletonTraits<MemoryCoordinatorImpl> {
+   static MemoryCoordinatorImpl* New() {
 +#if defined(OS_BSD)
 +    return nullptr;
 +#else

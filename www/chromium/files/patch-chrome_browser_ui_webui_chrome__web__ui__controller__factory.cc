@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2017-03-09 20:04:29 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -286,7 +286,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -289,7 +289,7 @@ bool IsAboutUI(const GURL& url) {
  #if !defined(OS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif

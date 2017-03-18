@@ -1,7 +1,7 @@
---- third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig	2017-02-02 02:03:55 UTC
+--- third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig	2017-03-09 20:05:27 UTC
 +++ third_party/skia/src/gpu/GrAutoLocaleSetter.h
-@@ -22,7 +22,7 @@
- #include <xlocale.h>
+@@ -25,7 +25,7 @@
+ #define HAVE_XLOCALE 0
  #endif
  
 -#if defined(SK_BUILD_FOR_ANDROID) || defined(__UCLIBC__) || defined(_NEWLIB_VERSION)

@@ -1,6 +1,6 @@
---- ui/events/event_switches.cc.orig	2017-01-26 00:49:31 UTC
+--- ui/events/event_switches.cc.orig	2017-03-09 20:04:49 UTC
 +++ ui/events/event_switches.cc
-@@ -28,7 +28,7 @@ const char kTouchEventsDisabled[] = "dis
+@@ -17,7 +17,7 @@ const char kEnableScrollPrediction[] = "
  const char kCompensateForUnstablePinchZoom[] =
      "compensate-for-unstable-pinch-zoom";
  

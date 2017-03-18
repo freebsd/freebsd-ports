@@ -1,6 +1,6 @@
---- content/browser/utility_process_host_impl.cc.orig	2017-01-26 00:49:13 UTC
+--- content/browser/utility_process_host_impl.cc.orig	2017-03-09 20:04:32 UTC
 +++ content/browser/utility_process_host_impl.cc
-@@ -43,9 +43,9 @@
+@@ -44,9 +44,9 @@
  #include "services/service_manager/public/cpp/interface_provider.h"
  #include "ui/base/ui_base_switches.h"
  
@@ -12,7 +12,7 @@
  
  #if defined(OS_WIN)
  #include "sandbox/win/src/sandbox_policy.h"
-@@ -54,11 +54,11 @@
+@@ -55,11 +55,11 @@
  
  namespace content {
  
@@ -26,7 +26,7 @@
  
  // NOTE: changes to this class need to be reviewed by the security team.
  class UtilitySandboxedProcessLauncherDelegate
-@@ -73,10 +73,10 @@ class UtilitySandboxedProcessLauncherDel
+@@ -74,10 +74,10 @@ class UtilitySandboxedProcessLauncherDel
          launch_elevated_(launch_elevated)
  #elif defined(OS_POSIX)
          env_(env)
@@ -39,7 +39,7 @@
  #endif  // OS_WIN
    {}
  
-@@ -105,13 +105,13 @@ class UtilitySandboxedProcessLauncherDel
+@@ -106,13 +106,13 @@ class UtilitySandboxedProcessLauncherDel
  
  #elif defined(OS_POSIX)
  
@@ -55,7 +55,7 @@
    base::EnvironmentMap GetEnvironment() override { return env_; }
  #endif  // OS_WIN
  
-@@ -126,9 +126,9 @@ class UtilitySandboxedProcessLauncherDel
+@@ -127,9 +127,9 @@ class UtilitySandboxedProcessLauncherDel
    bool launch_elevated_;
  #elif defined(OS_POSIX)
    base::EnvironmentMap env_;
@@ -67,7 +67,7 @@
  #endif  // OS_WIN
  };
  
-@@ -153,7 +153,7 @@ UtilityProcessHostImpl::UtilityProcessHo
+@@ -154,7 +154,7 @@ UtilityProcessHostImpl::UtilityProcessHo
        is_batch_mode_(false),
        no_sandbox_(false),
        run_elevated_(false),
@@ -76,7 +76,7 @@
        child_flags_(ChildProcessHost::CHILD_ALLOW_SELF),
  #else
        child_flags_(ChildProcessHost::CHILD_NORMAL),
-@@ -235,13 +235,13 @@ void UtilityProcessHostImpl::SetName(con
+@@ -236,13 +236,13 @@ void UtilityProcessHostImpl::SetName(con
    name_ = name;
  }
  

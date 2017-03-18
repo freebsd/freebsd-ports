@@ -1,4 +1,4 @@
---- media/audio/audio_manager.cc.orig	2017-01-26 00:49:15 UTC
+--- media/audio/audio_manager.cc.orig	2017-03-09 20:04:34 UTC
 +++ media/audio/audio_manager.cc
 @@ -95,7 +95,7 @@ class AudioManagerHelper : public base::
    }
@@ -18,7 +18,7 @@
    std::string app_name_;
  #endif
  
-@@ -365,7 +365,7 @@ void AudioManager::EnableCrashKeyLogging
+@@ -369,7 +369,7 @@ void AudioManager::EnableCrashKeyLogging
    g_helper.Pointer()->enable_crash_key_logging();
  }
  

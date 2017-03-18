@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2017-01-26 00:49:13 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2017-03-09 20:04:32 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -368,11 +368,11 @@ SiteProcessMap* GetSiteProcessMapForBrow
+@@ -372,11 +372,11 @@ SiteProcessMap* GetSiteProcessMapForBrow
    return map;
  }
  
@@ -14,7 +14,7 @@
  
  // NOTE: changes to this class need to be reviewed by the security team.
  class RendererSandboxedProcessLauncherDelegate
-@@ -395,7 +395,7 @@ class RendererSandboxedProcessLauncherDe
+@@ -399,7 +399,7 @@ class RendererSandboxedProcessLauncherDe
      return GetContentClient()->browser()->PreSpawnRenderer(policy);
    }
  
@@ -23,7 +23,7 @@
    ZygoteHandle* GetZygote() override {
      const base::CommandLine& browser_command_line =
          *base::CommandLine::ForCurrentProcess();
-@@ -635,7 +635,7 @@ void RenderProcessHost::SetMaxRendererPr
+@@ -639,7 +639,7 @@ void RenderProcessHost::SetMaxRendererPr
    g_max_renderer_count_override = count;
  }
  
@@ -32,7 +32,7 @@
  // static
  void RenderProcessHostImpl::EarlyZygoteLaunch() {
    DCHECK(!g_render_zygote);
-@@ -645,7 +645,7 @@ void RenderProcessHostImpl::EarlyZygoteL
+@@ -649,7 +649,7 @@ void RenderProcessHostImpl::EarlyZygoteL
    ZygoteHostImpl::GetInstance()->SetRendererSandboxStatus(
        (*GetGenericZygote())->GetSandboxStatus());
  }
@@ -41,7 +41,7 @@
  
  RenderProcessHostImpl::RenderProcessHostImpl(
      BrowserContext* browser_context,
-@@ -788,7 +788,7 @@ bool RenderProcessHostImpl::Init() {
+@@ -796,7 +796,7 @@ bool RenderProcessHostImpl::Init() {
    renderer_prefix =
        browser_command_line.GetSwitchValueNative(switches::kRendererCmdPrefix);
  

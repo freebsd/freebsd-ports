@@ -1,6 +1,6 @@
---- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig	2017-03-09 20:04:28 UTC
 +++ chrome/browser/extensions/browser_context_keyed_service_factories.cc
-@@ -62,7 +62,7 @@
+@@ -63,7 +63,7 @@
  #include "chrome/browser/chromeos/extensions/media_player_api.h"
  #include "chrome/browser/extensions/api/input_ime/input_ime_api.h"
  #include "chrome/browser/extensions/api/log_private/log_private_api.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/extensions/api/input_ime/input_ime_api.h"
  #endif
  
-@@ -110,7 +110,7 @@ void EnsureBrowserContextKeyedServiceFac
+@@ -111,7 +111,7 @@ void EnsureBrowserContextKeyedServiceFac
  #if defined(OS_CHROMEOS)
    extensions::InputImeAPI::GetFactoryInstance();
    extensions::InputMethodAPI::GetFactoryInstance();

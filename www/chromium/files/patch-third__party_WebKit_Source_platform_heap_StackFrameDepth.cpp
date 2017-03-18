@@ -1,8 +1,8 @@
---- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig	2017-01-26 00:49:28 UTC
+--- third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp.orig	2017-03-09 20:04:45 UTC
 +++ third_party/WebKit/Source/platform/heap/StackFrameDepth.cpp
-@@ -6,6 +6,8 @@
- 
+@@ -7,6 +7,8 @@
  #include "public/platform/Platform.h"
+ #include "wtf/StackUtil.h"
  
 +#include <pthread_np.h>
 +

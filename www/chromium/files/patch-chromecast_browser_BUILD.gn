@@ -1,11 +1,11 @@
---- chromecast/browser/BUILD.gn.orig	2017-01-26 00:49:11 UTC
+--- chromecast/browser/BUILD.gn.orig	2017-03-09 20:04:31 UTC
 +++ chromecast/browser/BUILD.gn
-@@ -120,7 +120,7 @@ source_set("browser") {
+@@ -118,7 +118,7 @@ source_set("browser") {
      "//ui/gl",
    ]
  
 -  if (is_linux) {
 +  if (is_linux || is_bsd) {
      sources += [
-       "cast_memory_pressure_monitor.cc",
-       "cast_memory_pressure_monitor.h",
+       "cast_content_window_linux.cc",
+       "cast_content_window_linux.h",

@@ -1,6 +1,6 @@
---- content/gpu/gpu_main.cc.orig	2017-01-26 00:49:13 UTC
+--- content/gpu/gpu_main.cc.orig	2017-03-09 20:04:32 UTC
 +++ content/gpu/gpu_main.cc
-@@ -92,7 +92,7 @@ namespace content {
+@@ -94,7 +94,7 @@ namespace content {
  
  namespace {
  
@@ -9,7 +9,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*);
  #elif defined(OS_WIN)
  bool StartSandboxWindows(const sandbox::SandboxInterfaceInfo*);
-@@ -145,7 +145,7 @@ class ContentSandboxHelper : public gpu:
+@@ -148,7 +148,7 @@ class ContentSandboxHelper : public gpu:
  
    bool EnsureSandboxInitialized(
        gpu::GpuWatchdogThread* watchdog_thread) override {
@@ -18,7 +18,7 @@
      return StartSandboxLinux(watchdog_thread);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -292,7 +292,7 @@ int GpuMain(const MainFunctionParams& pa
+@@ -310,7 +310,7 @@ int GpuMain(const MainFunctionParams& pa
  
  namespace {
  

@@ -1,7 +1,7 @@
---- ui/base/ime/BUILD.gn.orig	2017-02-02 02:03:13 UTC
+--- ui/base/ime/BUILD.gn.orig	2017-03-09 20:04:49 UTC
 +++ ui/base/ime/BUILD.gn
-@@ -123,7 +123,7 @@ component("ime") {
-     ":text_input_types",
+@@ -124,7 +124,7 @@ component("ime") {
+     "//skia",
    ]
  
 -  if (!use_aura || (!is_linux && !use_ozone)) {
@@ -9,7 +9,7 @@
      sources -= [
        "input_method_auralinux.cc",
        "input_method_auralinux.h",
-@@ -137,7 +137,7 @@ component("ime") {
+@@ -138,7 +138,7 @@ component("ime") {
      ]
    }
  
