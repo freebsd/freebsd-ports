@@ -127,6 +127,7 @@
     SUBDIR += elixir-comeonin
     SUBDIR += elixir-comeonin_i18n
     SUBDIR += elixir-jose
+    SUBDIR += enchive
     SUBDIR += erlang-fast_tls
     SUBDIR += erlang-jose
     SUBDIR += eschalot

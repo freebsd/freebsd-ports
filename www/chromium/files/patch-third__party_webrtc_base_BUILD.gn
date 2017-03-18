@@ -1,10 +1,18 @@
---- third_party/webrtc/base/BUILD.gn.orig	2017-01-26 00:50:17 UTC
+--- third_party/webrtc/base/BUILD.gn.orig	2017-03-09 20:05:29 UTC
 +++ third_party/webrtc/base/BUILD.gn
-@@ -650,7 +650,6 @@ rtc_static_library("rtc_base") {
-       "x11windowpicker.h",
-     ]
+@@ -604,7 +604,6 @@ rtc_static_library("rtc_base") {
+ 
+   if (use_x11) {
      libs += [
 -      "dl",
        "rt",
        "Xext",
        "X11",
+@@ -615,7 +614,6 @@ rtc_static_library("rtc_base") {
+ 
+   if (is_linux) {
+     libs += [
+-      "dl",
+       "rt",
+     ]
+   }

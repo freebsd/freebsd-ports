@@ -1,0 +1,11 @@
+--- build/config/linux/gtk/BUILD.gn.orig	2017-03-09 20:04:27 UTC
++++ build/config/linux/gtk/BUILD.gn
+@@ -5,7 +5,7 @@
+ import("//build/config/linux/gtk/gtk.gni")
+ import("//build/config/linux/pkg_config.gni")
+ 
+-assert(is_linux, "This file should only be referenced on Linux")
++assert(is_linux || is_bsd, "This file should only be referenced on Linux")
+ 
+ # The target in this file will automatically reference GTK2 or GTK3 depending
+ # on the state of the build flag. Some builds reference both 2 and 3, and some

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	phpLiteAdmin
-DISTVERSION=	1.9.7.1
+DISTVERSION=	1-9-7-1
 CATEGORIES=	databases www
 MASTER_SITES=	https://bitbucket.org/phpliteadmin/public/downloads/
-DISTNAME=	${PORTNAME}_v${DISTVERSION:S/./-/g}
+DISTNAME=	${PORTNAME}_v${DISTVERSION}
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Web-based database management tool for Sqlite

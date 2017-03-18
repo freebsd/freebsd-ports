@@ -87,6 +87,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/fuzzy_collect.lua
 %%DATADIR%%/lua/greylist.lua
 %%DATADIR%%/lua/hfilter.lua
+%%DATADIR%%/lua/history_redis.lua
 %%DATADIR%%/lua/ip_score.lua
 %%DATADIR%%/lua/maillist.lua
 %%DATADIR%%/lua/metadata_exporter.lua
@@ -111,6 +112,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/whitelist.lua
 %%DATADIR%%/rules/global_functions.lua
 %%DATADIR%%/rules/forwarding.lua
+%%DATADIR%%/rules/headers_checks.lua
 %%DATADIR%%/rules/html.lua
 %%DATADIR%%/rules/http_headers.lua
 %%DATADIR%%/rules/mid.lua
@@ -124,6 +126,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/rules/regexp/upstream_spam_filters.lua
 %%DATADIR%%/rules/rspamd.classifiers.lua
 %%DATADIR%%/rules/rspamd.lua
+%%DATADIR%%/rules/subject_checks.lua
 %%DATADIR%%/www/README.md
 %%DATADIR%%/www/css/bootstrap.min.css
 %%DATADIR%%/www/css/d3evolution.css

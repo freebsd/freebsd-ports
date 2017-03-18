@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.311.0
+PORTVERSION=	5.0.341.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		http://freebsd.uzsolt.hu/src/
@@ -26,7 +26,6 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		tar:bzip2 desktop-file-utils shebangfix
 USE_JAVA=	yes
-JAVA_RUN=	jre
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SUB_FILES=	geogebra.desktop geogebra.sh

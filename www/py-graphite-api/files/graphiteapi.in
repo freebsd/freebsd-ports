@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: graphiteapi
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# graphiteapi_enable    (bool):   Set to NO by default.
+# Set it to YES to enable graphiteapi.
+#
+# graphiteapi_user      (string): optional username to run daemon under
+# graphiteapi_group     (string): optional groupname to run daemon under
+# graphiteapi_address   (string): optional IP:PORT tuple to bind to
+# graphiteapi_config    (string): optional full path for yaml config file
+# graphiteapi_flags     (string): optional flags to pass through to gunicorn
+
+. /etc/rc.subr
+
+name="%%GRAPHITEAPI_APP%%"
+rcvar="%%GRAPHITEAPI_APP%%_enable"
+
+# defaults
+: ${graphiteapi_enable:="NO"}
+: ${graphiteapi_user="%%GRAPHITEAPI_USER%%"}
+: ${graphiteapi_group="%%GRAPHITEAPI_GROUP%%"}
+: ${graphiteapi_address="127.0.0.1:5600"}
+: ${graphiteapi_config="%%ETCDIR%%/%%GRAPHITEAPI_APP%%.yaml"}
+: ${graphiteapi_flags="--workers 4"}
+
+# daemon
+command="%%PREFIX%%/bin/gunicorn"
+required_files="${graphiteapi_config}"
+command_args="graphite_api.app:app"
+command_args="${command_args} --user ${graphiteapi_user} --group ${graphiteapi_group}"
+command_args="${command_args} --bind ${graphiteapi_address}"
+command_args="${command_args} --env TZ=UTC"
+command_args="${command_args} --env GRAPHITE_API_CONFIG=${graphiteapi_config}"
+command_args="${command_args} --pid %%GRAPHITEAPI_PIDFILE%%"
+command_args="${command_args} --worker-tmp-dir %%GRAPHITEAPI_TMPDIR%%"
+command_args="${command_args} --error-logfile %%GRAPHITEAPI_LOGDIR%%/error.log"
+command_args="${command_args} --access-logfile %%GRAPHITEAPI_LOGDIR%%/access.log"
+
+# support SIGHUP to reload configuration file
+extra_commands="reload"
+
+load_rc_config $name
+run_rc_command "$1"

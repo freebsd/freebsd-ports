@@ -1,20 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	irssi
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/irssi/irssi/releases/download/${PORTVERSION}/
 
-MAINTAINER?=	dor.bsd@xm0.uk
-COMMENT?=	Modular IRC client with many features
+MAINTAINER=	dor.bsd@xm0.uk
+COMMENT=	Modular IRC client with many features
 
 LICENSE=	GPLv2
 
+<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
+=======
+>>>>>>> upstream/master
 USES=		cpe gettext-runtime gmake libtool ncurses pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

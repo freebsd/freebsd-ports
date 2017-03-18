@@ -1,6 +1,6 @@
---- components/update_client/update_query_params.cc.orig	2017-01-26 00:49:13 UTC
+--- components/update_client/update_query_params.cc.orig	2017-03-09 20:04:32 UTC
 +++ components/update_client/update_query_params.cc
-@@ -31,6 +31,8 @@ const char kOs[] =
+@@ -34,6 +34,8 @@ const char kOs[] =
      "linux";
  #elif defined(OS_OPENBSD)
      "openbsd";

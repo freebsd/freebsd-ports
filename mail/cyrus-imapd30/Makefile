@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	3.0.0rc3
-DISTVERSION=	3.0.0-rc3
+PORTVERSION=	3.0.0rc4
+DISTVERSION=	3.0.0-rc4
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
@@ -101,16 +101,11 @@ SQUAT_CONFIGURE_OFF=	--disable-squat
 #XAPIAN_CONFIGURE_ENABLE=xapian
 #XAPIAN_LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
-UNAMER!=	uname -r
-OSMAJOR=	${UNAMER:C/[.-].*//}
-
 OPTIONS_RADIO=			GSSAPI
 OPTIONS_RADIO_GSSAPI=		GSSAPI_HEIMDAL GSSAPI_MIT
 .if exists(/usr/lib/libkrb5.a)
 OPTIONS_RADIO_GSSAPI+=		GSSAPI_BASE
-.if ${OSMAJOR} >= 9
 OPTIONS_DEFAULT+=		GSSAPI_BASE
-.endif
 .endif
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \

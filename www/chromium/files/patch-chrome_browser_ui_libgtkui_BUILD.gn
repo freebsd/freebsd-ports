@@ -1,4 +1,4 @@
---- chrome/browser/ui/libgtkui/BUILD.gn.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/libgtkui/BUILD.gn.orig	2017-03-09 20:04:29 UTC
 +++ chrome/browser/ui/libgtkui/BUILD.gn
 @@ -2,7 +2,7 @@
  # Use of this source code is governed by a BSD-style license that can be
@@ -8,4 +8,4 @@
 +assert(is_linux || is_bsd, "This file should only be referenced on Linux")
  
  import("//build/config/features.gni")
- import("//build/config/ui.gni")
+ import("//build/config/linux/gtk/gtk.gni")

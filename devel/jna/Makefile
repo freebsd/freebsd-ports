@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jna
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.0
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +21,7 @@ MAKE_ARGS=	-DCC="${CC}" -DLD="${LD}"
 MAKE_ENV=	ANT_OPTS=-Drelease -DARCH=${ANT_ARCH}
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	twall
+GH_ACCOUNT=	java-native-access
 
 PORTDOCS=	javadoc platform-${PORTVERSION}-javadoc.jar
 PLIST_FILES=	%%JAVAJARDIR%%/jna-platform.jar \

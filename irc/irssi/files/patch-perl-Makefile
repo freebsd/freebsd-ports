@@ -1,6 +1,6 @@
---- src/perl/Makefile.am.orig	2017-01-03 12:47:47 UTC
+--- src/perl/Makefile.am.orig	2017-03-04 20:30:38 UTC
 +++ src/perl/Makefile.am
-@@ -135,7 +135,7 @@ all-local:
+@@ -145,7 +145,7 @@ all-local:
  
  install-exec-local:
  	for dir in $(perl_dirs); do \
@@ -9,9 +9,9 @@
  	done
  
  clean-generic:
---- src/perl/Makefile.in.orig	2017-01-03 13:25:18 UTC
+--- src/perl/Makefile.in.orig	2017-03-10 16:43:21 UTC
 +++ src/perl/Makefile.in
-@@ -848,7 +848,7 @@ all-local:
+@@ -853,7 +853,7 @@ all-local:
  
  install-exec-local:
  	for dir in $(perl_dirs); do \

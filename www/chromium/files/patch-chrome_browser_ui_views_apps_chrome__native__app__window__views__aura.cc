@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig	2017-03-09 20:04:29 UTC
 +++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
 @@ -19,7 +19,7 @@
  #include "ui/gfx/image/image_skia.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -57,7 +57,7 @@ void ChromeNativeAppWindowViewsAura::OnB
+@@ -58,7 +58,7 @@ void ChromeNativeAppWindowViewsAura::OnB
      const AppWindow::CreateParams& create_params,
      views::Widget::InitParams* init_params,
      views::Widget* widget) {

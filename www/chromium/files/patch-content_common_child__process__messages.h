@@ -1,6 +1,6 @@
---- content/common/child_process_messages.h.orig	2017-02-02 02:02:53 UTC
+--- content/common/child_process_messages.h.orig	2017-03-09 20:04:32 UTC
 +++ content/common/child_process_messages.h
-@@ -27,7 +27,7 @@
+@@ -26,7 +26,7 @@
  #include "ui/gfx/ipc/gfx_param_traits.h"
  #include "ui/gfx/ipc/skia/gfx_skia_param_traits.h"
  
@@ -9,7 +9,7 @@
  #include "base/threading/platform_thread.h"
  #endif
  
-@@ -70,7 +70,7 @@ IPC_STRUCT_TRAITS_BEGIN(tracked_objects:
+@@ -75,7 +75,7 @@ IPC_STRUCT_TRAITS_BEGIN(tracked_objects:
    IPC_STRUCT_TRAITS_MEMBER(process_id)
  IPC_STRUCT_TRAITS_END()
  
@@ -18,9 +18,9 @@
  IPC_ENUM_TRAITS_MAX_VALUE(base::ThreadPriority,
                            base::ThreadPriority::REALTIME_AUDIO)
  #endif
-@@ -218,7 +218,7 @@ IPC_SYNC_MESSAGE_CONTROL2_1(
- IPC_MESSAGE_CONTROL1(ChildProcessHostMsg_DeletedDiscardableSharedMemory,
-                      discardable_memory::DiscardableSharedMemoryId)
+@@ -171,7 +171,7 @@ IPC_SYNC_MESSAGE_CONTROL1_0(ChildProcess
+ IPC_MESSAGE_CONTROL0(ChildProcessHostMsg_ReleaseCachedFonts)
+ #endif  // defined(OS_WIN)
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
