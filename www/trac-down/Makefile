@@ -14,6 +14,9 @@ COMMENT=	Trac plugin for listing released downloads
 
 RUN_DEPENDS=	tracd:www/trac
 
+DEPRECATED=	Upstream is gone
+EXPIRATION_DATE=	2017-04-30
+
 USES=		python:2
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

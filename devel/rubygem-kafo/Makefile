@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafo
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby framework to create installers
 
 LICENSE=	GPLv3
-#LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	gsed:textproc/gsed \
 		rubygem-ansi>=0:devel/rubygem-ansi \

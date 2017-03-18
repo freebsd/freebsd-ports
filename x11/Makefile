@@ -45,6 +45,7 @@
     SUBDIR += deskpaint
     SUBDIR += dgs
     SUBDIR += dmenu
+    SUBDIR += dmenu2
     SUBDIR += dmxproto
     SUBDIR += docker-tray
     SUBDIR += dri2proto

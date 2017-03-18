@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	trac-
 DISTNAME=	TracPrivateTickets-${PORTVERSION}
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Modified ticket security for Trac
 
 RUN_DEPENDS=	tracd:www/trac
