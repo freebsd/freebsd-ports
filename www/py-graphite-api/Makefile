@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphite-api
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,17 +13,60 @@ COMMENT=	Graphite-web, without the interface - just the rendering HTTP API
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-			${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
-			${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask \
-			${PYTHON_PKGNAMEPREFIX}Flask-Cache>=0.13.1:www/py-flask-cache \
-			${PYTHON_PKGNAMEPREFIX}tzlocal>=1.1.1:devel/py-tzlocal \
-			${PYTHON_PKGNAMEPREFIX}structlog>=16.0.0:devel/py-structlog \
-			${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.0:devel/py-pyparsing \
-			${PYTHON_PKGNAMEPREFIX}yaml>3.1:devel/py-yaml \
-			${PYTHON_PKGNAMEPREFIX}cairocffi>=0.7.2:graphics/py-cairocffi \
-			${PYTHON_PKGNAMEPREFIX}gunicorn>=19.4.1:www/py-gunicorn \
-			xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
+		${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask \
+		${PYTHON_PKGNAMEPREFIX}Flask-Cache>=0.13.1:www/py-flask-cache \
+		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.1.1:devel/py-tzlocal \
+		${PYTHON_PKGNAMEPREFIX}structlog>=16.0.0:devel/py-structlog \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.0:devel/py-pyparsing \
+		${PYTHON_PKGNAMEPREFIX}yaml>3.1:devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}cairocffi>=0.7.2:graphics/py-cairocffi \
+		${PYTHON_PKGNAMEPREFIX}gunicorn>=19.4.1:www/py-gunicorn \
+		xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
+
+GRAPHITEAPI_APP=	graphiteapi
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME} \
+		PREFIX=${PREFIX} \
+		GRAPHITEAPI_APP=${GRAPHITEAPI_APP} \
+		GRAPHITEAPI_USER=${GRAPHITEAPI_USER} \
+		GRAPHITEAPI_GROUP=${GRAPHITEAPI_GROUP} \
+		GRAPHITEAPI_LOGDIR=${GRAPHITEAPI_LOGDIR} \
+		GRAPHITEAPI_TMPDIR=${GRAPHITEAPI_TMPDIR} \
+		GRAPHITEAPI_PIDFILE=${GRAPHITEAPI_PIDFILE}
+
+PLIST_SUB=	PORTNAME=${PORTNAME} \
+		PORTVERSION=${PORTVERSION} \
+		PREFIX=${PREFIX} \
+		GRAPHITEAPI_APP=${GRAPHITEAPI_APP} \
+		GRAPHITEAPI_USER=${GRAPHITEAPI_USER} \
+		GRAPHITEAPI_GROUP=${GRAPHITEAPI_GROUP} \
+		GRAPHITEAPI_LOGDIR=${GRAPHITEAPI_LOGDIR} \
+		GRAPHITEAPI_TMPDIR=${GRAPHITEAPI_TMPDIR} \
+		GRAPHITEAPI_PIDFILE=${GRAPHITEAPI_PIDFILE}
+
+GRAPHITEAPI_USER?=	carbon
+GRAPHITEAPI_GROUP?=	carbon
+
+LOCALSTATEDIR=	/var
+USE_RC_SUBR=	${GRAPHITEAPI_APP}
+
+GRAPHITEAPI_LOGDIR=	${LOCALSTATEDIR}/log/${GRAPHITEAPI_APP}
+GRAPHITEAPI_TMPDIR=	${LOCALSTATEDIR}/run/${GRAPHITEAPI_APP}
+GRAPHITEAPI_PIDFILE=	${LOCALSTATEDIR}/run/${GRAPHITEAPI_APP}/${GRAPHITEAPI_APP}.pid
+
+post-install:
+	${MKDIR} \
+	    ${STAGEDIR}${ETCDIR} \
+	    ${STAGEDIR}${GRAPHITEAPI_TMPDIR} \
+	    ${STAGEDIR}${GRAPHITEAPI_LOGDIR}
+	${INSTALL_DATA} \
+	    ${FILESDIR}/${GRAPHITEAPI_APP}.yaml.sample \
+	    ${STAGEDIR}${ETCDIR}/${GRAPHITEAPI_APP}.yaml.sample
+
 .include <bsd.port.mk>
