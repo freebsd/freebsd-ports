@@ -11,13 +11,8 @@ COMMENT=	Modular IRC client with many features
 
 LICENSE=	GPLv2
 
-<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
 
-CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
-
-=======
->>>>>>> upstream/master
 USES=		cpe gettext-runtime gmake libtool ncurses pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
