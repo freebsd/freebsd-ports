@@ -250,9 +250,11 @@ BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
 # Standard options
 MOZ_CHROME?=	omni
 MOZ_TOOLKIT?=	cairo-gtk2
+MOZ_CHANNEL?=	${PKGNAMESUFFIX:Urelease:S/^-//}
 MOZ_OPTIONS+=	\
 		--enable-chrome-format=${MOZ_CHROME} \
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
+		--enable-update-channel=${MOZ_CHANNEL} \
 		--enable-pie \
 		--with-pthreads
 # Configure options for install

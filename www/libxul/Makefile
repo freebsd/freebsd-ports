@@ -3,7 +3,7 @@
 
 PORTNAME=	libxul
 DISTVERSION=	45.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build2/source
@@ -40,6 +40,7 @@ LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
 
 MOZ_OPTIONS?=	--enable-application=xulrunner
+MOZ_CHANNEL=	esr
 USE_GECKO=	gecko
 CPE_PRODUCT=	firefox_esr
 MOZILLA_EXEC_NAME=xulrunner
