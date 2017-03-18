@@ -14,7 +14,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	melanhit
-GH_PROJECT=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
 USES=		cmake:outsource
