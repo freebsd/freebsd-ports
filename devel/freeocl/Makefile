@@ -14,8 +14,8 @@ COMMENT=	Free Open Computing Language (OpenCL) implementation for CPU
 LICENSE=	LGPL3
 
 BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
+DEPRECATED=	Unfetchable for more than six months (google code has gone away); use lang/pocl instead
+EXPIRATION_DATE=	2017-03-31
 
 BROKEN_powerpc64=	Does not build
 
