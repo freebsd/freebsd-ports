@@ -5,10 +5,13 @@
   ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
   Alias /joomla %%WWWDIR%%/
   AcceptPathInfo On
+
   <Directory %%WWWDIR%%>
       AllowOverride None
       Order Allow,Deny
       Allow from all
+      # For Apache 2.4 add:
+      Require all granted
   </Directory>
 
  2) Visit your Joomla site with a browser (i.e. http://your.server.com/joomla/),
