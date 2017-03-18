@@ -9,6 +9,9 @@ CATEGORIES=	dns net pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Resolver library used to communicate with a DNS server
 
+DEPRECATED=	This Port use PHP4.2 - This PHP-Version is not longer supporded
+EXPIRATION_DATE=2017-03-31
+
 PORTSCOUT=	skipv:1.00b2,1.00b1
 USE_PHP=	hash
 USES=	pear
