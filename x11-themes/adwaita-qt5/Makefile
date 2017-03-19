@@ -6,7 +6,7 @@ PORTVERSION=	0.98
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-qt5
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adwaita theme for Qt5 applications
 
 LICENSE=	GPLv2 LGPL20

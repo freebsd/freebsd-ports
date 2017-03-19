@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk and xfwm4 themes for the Xfce Desktop
 
 LICENSE=	GPLv2 CC-BY-SA-3.0

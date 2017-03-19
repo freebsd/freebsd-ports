@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetSurf generalised utility library
 
 LICENSE=	MIT
