@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
@@ -35,7 +35,7 @@ PLIST_FILES=	bin/bsdcat \
 		lib/libarchive.a \
 		lib/libarchive.so \
 		lib/libarchive.so.13 \
-		lib/libarchive.so.13.2.2 \
+		lib/libarchive.so.13.3.1 \
 		libdata/pkgconfig/libarchive.pc \
 		man/man1/bsdcat.1.gz \
 		man/man1/bsdcpio.1.gz \
