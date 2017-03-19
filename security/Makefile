@@ -1004,6 +1004,7 @@
     SUBDIR += rubygem-doorkeeper
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
+    SUBDIR += rubygem-googleauth
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-gssapi
     SUBDIR += rubygem-jugyo-twitter_oauth
