@@ -1059,6 +1059,7 @@
     SUBDIR += rubygem-ruby-rc4
     SUBDIR += rubygem-ruby-saml
     SUBDIR += rubygem-scrypt
+    SUBDIR += rubygem-signet
     SUBDIR += rubygem-six
     SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
