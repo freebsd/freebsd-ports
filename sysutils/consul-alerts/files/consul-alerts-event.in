@@ -1,9 +1,8 @@
 #!/bin/sh
-
 # $FreeBSD$
 #
 # PROVIDE: consul-alerts-event
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN consul-alerts
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -27,6 +26,21 @@ load_rc_config $name
 pidfile=/var/run/consul-alerts-event.pid
 procname="%%PREFIX%%/bin/consul"
 command="/usr/sbin/daemon"
-command_args="-p ${pidfile} /usr/bin/env ${consul_alerts_event_env} ${procname} watch -type event consul-alerts watch event --alert-addr=localhost:9000 ${consul_alerts_event_args}"
+command_args="-p ${pidfile} /usr/bin/env ${consul_alerts_event_env} ${procname} watch -type event %%PREFIX%%/bin/consul-alerts watch event --alert-addr=localhost:9000 ${consul_alerts_event_args}"
+start_precmd="check_consul"
+
+check_consul()
+{
+  count=0
+  # Wait for consul to finish starting
+  while :
+  do
+     sockstat | grep -q consul | grep -q "127.0.0.1:8500"
+     if [ $? -eq 0 ] ; then break ; fi
+     sleep 5
+     count=`expr $count + 1`
+     if [ $count -gt 5 ] ; then break; fi
+  done
+}
 
 run_rc_command "$1"

@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: consul-alerts
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN consul
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
