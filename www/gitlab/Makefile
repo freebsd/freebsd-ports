@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.14.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -57,7 +57,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-devise-two-factor>=3.0.0:security/rubygem-devise-two-factor \
 	rubygem-rqrcode-rails3>=0.1.7:www/rubygem-rqrcode-rails3 \
 	rubygem-attr_encrypted>=3.0.0:security/rubygem-attr_encrypted \
-	rubygem-u2f>=0.2.1:net/rubygem-u2f \
+	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
 	rubygem-browser>=2.2:www/rubygem-browser \
 	rubygem-gitlab_git>=10.7.0:devel/rubygem-gitlab_git \
 	rubygem-gitlab_omniauth-ldap>=1.2.1:net/rubygem-gitlab_omniauth-ldap \
