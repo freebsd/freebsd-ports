@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	selenium
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.3.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,6 @@ MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python bindings for Selenium
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
