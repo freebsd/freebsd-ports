@@ -7,7 +7,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetSurf public suffix list handling
 
 LICENSE=	MIT
