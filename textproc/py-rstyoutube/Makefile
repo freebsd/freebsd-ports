@@ -7,7 +7,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Embed YouTube videos in reStructuredText documents
 
 LICENSE=	MIT

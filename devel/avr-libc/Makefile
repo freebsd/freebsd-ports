@@ -3,6 +3,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
@@ -62,6 +63,7 @@ do-install:
 		 ${FIND} . -type f \
 		  \( -name '*.html' -or -name '*.css' -or \
 		     -name '*.jpg' -or -name '*.png' \) |\
+		 ${GREP} -v '/search/' |\
 		 ${SORT} |\
 		 ${SED} -e 's|^\.|share/doc/avr-libc/avr-libc-user-manual|' \
 		 >> ${TMPPLIST})
