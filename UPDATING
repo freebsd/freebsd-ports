@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170319:
+  AFFECTS: users of textproc/pecl-yaml
+  AUTHOR: dbaio@bsd.com.br
+
+  The pecl-yaml has been upgraded to version 2.0.0, and the new version is
+  not compatible with PHP5. If you need PHP5 support, you can find version
+  1.3.0 in textproc/pecl-yaml1.
+
 20170316:
   AFFECTS: users of python setuptools
   AUTHOR: antoine@FreeBSD.org
