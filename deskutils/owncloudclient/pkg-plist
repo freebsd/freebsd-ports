@@ -20,6 +20,7 @@ lib/owncloud/libocsync.so.%%VERSION%%
 %%PORTDOCS%%man/man1/owncloud.1.gz
 %%PORTDOCS%%man/man1/owncloudcmd.1.gz
 share/applications/owncloud.desktop
+share/caja-python/extensions/syncstate-ownCloud.py
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-1.png
 %%PORTDOCS%%%%DOCSDIR%%/html/unthemed/_images/client-2.png
@@ -218,8 +219,8 @@ share/icons/hicolor/72x72/apps/ownCloud_sync.png
 share/icons/hicolor/72x72/apps/ownCloud_sync_shared.png
 share/icons/hicolor/72x72/apps/ownCloud_warn.png
 share/icons/hicolor/72x72/apps/ownCloud_warn_shared.png
-share/nautilus-python/extensions/syncstate.py
-share/nemo-python/extensions/syncstate.py
+share/nautilus-python/extensions/syncstate-ownCloud.py
+share/nemo-python/extensions/syncstate-ownCloud.py
 share/owncloud/i18n/client_TW.qm
 share/owncloud/i18n/client_ca.qm
 share/owncloud/i18n/client_cs.qm
