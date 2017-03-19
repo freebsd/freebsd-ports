@@ -82,7 +82,6 @@
     SUBDIR += lzmalib
     SUBDIR += lzo2
     SUBDIR += lzop
-    SUBDIR += macutils
     SUBDIR += makeself
     SUBDIR += mar
     SUBDIR += minizip

@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpadlibrarian.net/278375346/ \
 	https://launchpad.net/${PORTNAME}/loki/${PORTVERSION}/+download/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop-wide extension service
 
 LICENSE=	GPLv3

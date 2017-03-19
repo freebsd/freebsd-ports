@@ -6,7 +6,7 @@ PORTVERSION=	0.1.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXHotkey/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keyboard shortcuts settings
 
 LICENSE=	GPLv2
