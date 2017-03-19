@@ -3444,8 +3444,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d31/structfpreg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3a/tgamma_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3a/tgamma_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/conftest_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/conftest_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/ossl__pkey_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/ossl__pkey_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3f/cls__pointer_8c.html
