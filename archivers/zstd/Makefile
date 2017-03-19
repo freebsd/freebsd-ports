@@ -12,19 +12,16 @@ COMMENT=	Zstandard - Fast real-time compression algorithm
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
-USE_GITHUB=	yes
-GH_ACCOUNT=	facebook
-
-PLIST_SUB=	LIBVER=${PORTVERSION}
 ALL_TARGET=	default
-MAKE_ARGS=	MANDIR="${PREFIX}/man/man1" \
-		LIBDIR="${PREFIX}/lib" \
-		INCLUDEDIR="${PREFIX}/include"
-MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
-		INSTALL_MAN="${INSTALL_MAN}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+MAKE_ARGS=	INCLUDEDIR="${PREFIX}/include" LIBDIR="${PREFIX}/lib" MANDIR="${PREFIX}/man/man1"
+USES=		gmake
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+GH_ACCOUNT=	facebook
+USE_GITHUB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|INSTALL_|BSD_&|' ${WRKSRC}/lib/Makefile ${WRKSRC}/programs/Makefile
 
 .include <bsd.port.mk>
