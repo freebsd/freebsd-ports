@@ -487,6 +487,7 @@
     SUBDIR += pear-Net_IMAP
     SUBDIR += pear-Net_LMTP
     SUBDIR += pecl-mailparse
+    SUBDIR += pecl-mailparse2
     SUBDIR += pecl-pop3
     SUBDIR += perdition
     SUBDIR += pflogsumm

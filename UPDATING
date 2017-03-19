@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20170319:
+  AFFECTS: users of mail/pecl-mailparse
+  AUTHOR: dbaio@bsd.com.br
+
+  The mail/pecl-mailparse has been upgraded to version 3.0.2, and the new
+  version is not compatible with PHP5. If you need PHP5 support, you can
+  find version 2.1.6 in mail/pecl-mailparse2.
+
+20170319:
   AFFECTS: users of textproc/pecl-yaml
   AUTHOR: dbaio@bsd.com.br
 
