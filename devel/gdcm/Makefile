@@ -3,7 +3,7 @@
 
 PORTNAME=	gdcm
 PORTVERSION=	${GDCM_MAJOR}.${GDCM_MINOR}.${GDCM_PATCH}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/gdcm/gdcm%202.x/GDCM%20${PORTVERSION}
 
@@ -15,20 +15,9 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
 		libexpat.so:textproc/expat2
 
-OPTIONS_DEFINE=		DOXYGEN
 OPTIONS_RADIO=		VTK
 OPTIONS_RADIO_VTK=	VTK5 VTK6
 OPTIONS_SUB=		yes
-
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			docbook-xsl-ns>0:textproc/docbook-xsl-ns
-DOXYGEN_USES=		ghostscript
-DOXYGEN_USE=		gnome=libxslt:build tex=latex:build
-DOXYGEN_CMAKE_ON=	-DGDCM_DOCUMENTATION:BOOL=ON \
-			-DGDCM_PDF_DOCUMENTATION:BOOL=OFF \
-			-DGDCM_INSTALL_MAN_DIR:PATH=man \
-			-DGDCM_INSTALL_DOC_DIR:PATH=${DOCSDIR_REL}
-DOXYGEN_CMAKE_OFF=	-DGDCM_DOCUMENTATION:BOOL=OFF
 
 VTK5_DESC=		Build VTK 5 integration classes
 VTK5_LIB_DEPENDS=	libvtkHybrid.so:math/vtk5
@@ -58,7 +47,8 @@ CMAKE_ARGS=	-DGDCM_USE_SYSTEM_OPENSSL:BOOL=ON \
 		-DGDCM_BUILD_APPLICATIONS:BOOL=ON \
 		-DGDCM_BUILD_SHARED_LIBS:BOOL=ON \
 		-DGDCM_BUILD_EXAMPLES:BOOL=OFF \
-		-DGDCM_INSTALL_DATA_DIR:PATH=${DATADIR_REL}
+		-DGDCM_INSTALL_DATA_DIR:PATH=${DATADIR_REL} \
+		-DGDCM_DOCUMENTATION:BOOL=OFF
 
 .include <bsd.port.options.mk>
 
@@ -72,13 +62,5 @@ PLIST_SUB+=	VTK="@comment "
 PLIST_SUB+=	GDCM_MAJOR="${GDCM_MAJOR}" \
 		GDCM_MINOR="${GDCM_MINOR}" \
 		GDCM_PATCH="${GDCM_PATCH}"
-
-pre-build-DOXYGEN-on:
-	(cd ${WRKSRC}/Utilities/doxygen \
-		&& ${LOCALBASE}/bin/doxygen -u doxyfile.in)
-
-post-install-DOXYGEN-on:
-	@(${FIND} ${STAGEDIR}${DOCSDIR} -type f | ${SED} -e \
-		"s|^${STAGEDIR}${PREFIX}/||" >> ${TMPPLIST})
 
 .include <bsd.port.mk>
