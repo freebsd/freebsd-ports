@@ -1188,6 +1188,7 @@
     SUBDIR += pecl-xdiff2
     SUBDIR += pecl-xslcache
     SUBDIR += pecl-yaml
+    SUBDIR += pecl-yaml1
     SUBDIR += peco
     SUBDIR += perl2html
     SUBDIR += permute
