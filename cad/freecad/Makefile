@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.17.g20170204
+DISTVERSION=	0.17.g20170310
 CATEGORIES=	cad
 
 MAINTAINER=	tj+freebsd_ports@a13.fr
@@ -32,16 +32,17 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	pivy>0:graphics/py-pivy
 
 USE_GITHUB=	yes
-GH_TAGNAME=	36b7e03
+GH_TAGNAME=	91c59c7
 
-USES=		compiler:c++11-lib cmake:outsource jpeg python localbase
+USES=		dos2unix compiler:c++11-lib cmake:outsource fortran jpeg \
+		python localbase
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT4=	qmake_build corelib gui moc_build network opengl rcc_build \
 		uic_build svg xml webkit
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
-		-DFREECAD_USE_EXTERNAL_PIVY=1
+DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
+CMAKE_ARGS=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE"
 
 # To be removed when french/med will be built against science/hdf5
 LIB_DEPENDS+=	libhdf5-18.so:science/hdf5-18
@@ -53,6 +54,11 @@ CMAKE_ARGS+=	-DHDF5_FOUND="TRUE" -DHDF5_VERSION="1.8.17"		\
 CFLAGS+=	-I${LOCALBASE}/include/hdf5-18
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
+
+OPTIONS_DEFINE=	COLLADA
+
+COLLADA_DESC=		Install pycollada for Collada files import
+COLLADA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycollada>0:graphics/py-pycollada
 
 DESKTOP_ENTRIES=${PORTNAME} "" "${PREFIX}/FreeCAD/data/freecad.svg" \
 		${PORTNAME} "Engineering;" false
