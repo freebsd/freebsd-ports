@@ -4,7 +4,7 @@
 PORTNAME=	libint
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1-1-6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +19,7 @@ GH_ACCOUNT=	evaleev
 # USE_GCC=yes is required because libint is used with mpqc which is built
 # by gfortran48 (from `lang/gcc') and these two libraries each try to pull
 # in a different version of libgcc_s.so which fails.  Forcing this port to
-# build with lang/gcc as well resolves the conflict that manifests in
+# build with `lang/gcc' as well resolves the conflict that manifests in
 # `science/libghemical' port.
 USES=		autoreconf gmake libtool perl5
 USE_GCC=	yes
@@ -27,7 +27,17 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	default
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --with-cc-optflags="${CFLAGS}" \
+		--with-cxx-optflags="${CXXFLAGS}"
+
+OPTIONS_DEFINE=	DEBUG DERIV R12
+
+DERIV_DESC=	1st- and 2nd-order derivative ERI support
+R12_DESC=	Linear R12 methods integrals support
+
+DEBUG_CONFIGURE_ON=	--enable-debug
+DERIV_CONFIGURE_ON=	--enable-deriv
+R12_CONFIGURE_ON=	--enable-r12
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -rpath|${LDFLAGS} -rpath|g' \
