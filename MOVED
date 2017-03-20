@@ -9143,3 +9143,4 @@ devel/rubygem-devise-rails4|devel/rubygem-devise|2017-03-16|Has expired: Please 
 textproc/rubygem-github-markdown||2017-03-16|Has expired: This gem is not maintained and not supported by upstream
 chinese/irssi|irc/irssi|2017-03-17|Use irc/irssi, which can handle Chinese locales
 archivers/macutils||2017-03-19|Has expired: Not maintained in 16 years, many missing header inclusions
+sysutils/ucspi-ssl-tls|sysutils/ucspi-ssl|2017-03-20|Current ucspi-ssl supports TLS
