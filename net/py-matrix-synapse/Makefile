@@ -4,7 +4,7 @@
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -64,6 +64,12 @@ PLIST_FILES+=	"@sample %%ETCDIR%%/homeserver.yaml.sample"
 PLIST_FILES+=	"@sample %%ETCDIR%%/log.config.sample"
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	PGSQL
+OPTIONS_DEFAULT=
+PGSQL_RUN_DEPENDS+= ${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2
+
+.include <bsd.port.options.mk>
 
 do-test:
 	# -epy27 added to skip running python packaging and other dist tests

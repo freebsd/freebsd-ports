@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.adebenham.com/files/mtp/
 
-MAINTAINER=	john@pcbsd.org
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	MTP device filesystem
 
 LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
