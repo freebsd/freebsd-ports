@@ -1480,6 +1480,7 @@
     SUBDIR += rubygem-html2text
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
+    SUBDIR += rubygem-inifile
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-jekyll-assets
     SUBDIR += rubygem-jekyll-feed
