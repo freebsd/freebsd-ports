@@ -79,6 +79,7 @@
     SUBDIR += c-a-i-r
     SUBDIR += cadubi
     SUBDIR += cairo
+    SUBDIR += caffe
     SUBDIR += cairo-reference
     SUBDIR += cairomm
     SUBDIR += cal3d
