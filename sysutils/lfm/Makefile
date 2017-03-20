@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lfm
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://inigo.katxi.org/devel/lfm/
 
@@ -13,26 +12,16 @@ COMMENT=	Last File Manager, a simple 'commander'-type file manager
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
-USE_PYTHON=	distutils
 NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python:3.4+
 
-PORTDOCS=	ChangeLog NEWS README README.pyview TODO
-
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	man/man1/lfm.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/DOC_FILES/d ; \
-		 /MAN_FILES/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '/print(__doc__)/d' ${WRKSRC}/${PYSETUP}
 
 post-install:
-.for f in lfm pyview
-	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.endfor
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/lfm.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
