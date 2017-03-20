@@ -8,7 +8,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	john@ixsystems.com
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	Simple, yet powerful, Django captcha application
 
 LICENSE=	MIT

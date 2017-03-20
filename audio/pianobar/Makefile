@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/projects/${PORTNAME}/
 
-MAINTAINER=	john@pcbsd.org
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	Command line Pandora player
 
 LICENSE=	MIT
