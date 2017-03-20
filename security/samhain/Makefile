@@ -62,7 +62,7 @@ DNMALLOC_CONFIGURE_ENABLE=	dnmalloc
 ENCRYPT_CONFIGURE_ENABLE=	encrypt
 
 GNUPG_CONFIGURE_WITH=		gpg=${PREFIX}/bin/gpg
-GNUPG_BUILD_DEPENDS=		gpg:${PORTSDIR}/security/gnupg
+GNUPG_BUILD_DEPENDS=		gpg:security/gnupg
 
 IPV6_CONFIGURE_ENABLE=		ipv6
 
@@ -93,7 +93,7 @@ PROCESS_CHECK_CONFIGURE_ENABLE=	process-check
 
 POSIX_ACL_CONFIGURE_ENABLE=	posix-acl
 
-PRELUDE_LIB_DEPENDS=		prelude:${PORTSDIR}/security/libprelude
+PRELUDE_LIB_DEPENDS=		prelude:security/libprelude
 PRELUDE_CONFIGURE_WITH=		prelude
 
 PTRACE_CONFIGURE_ENABLE=	ptrace
