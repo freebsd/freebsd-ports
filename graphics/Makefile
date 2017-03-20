@@ -883,6 +883,7 @@
     SUBDIR += py-qt5-svg
     SUBDIR += py-rabbyt
     SUBDIR += py-sane
+    SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
