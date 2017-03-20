@@ -452,6 +452,7 @@
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
+    SUBDIR += immortal
     SUBDIR += inotify-tools
     SUBDIR += installwatch
     SUBDIR += intel-nvmupdate
@@ -1178,6 +1179,7 @@
     SUBDIR += udfclient
     SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
+    SUBDIR += UEFITool
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso

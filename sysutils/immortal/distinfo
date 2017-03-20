@@ -1,0 +1,15 @@
+TIMESTAMP = 1490011379
+SHA256 (immortal-immortal-0.10.2_GH0.tar.gz) = ff9db09bbc34f0554ef8971fc95ccbe83035e439d7796b32ad305970a1490115
+SIZE (immortal-immortal-0.10.2_GH0.tar.gz) = 27238
+SHA256 (immortal-logrotate-3691ab5_GH0.tar.gz) = 1e9915e41e05e43be206fa5da0ca9646feea36e8433c953fc71d7ebc6d40d8d5
+SIZE (immortal-logrotate-3691ab5_GH0.tar.gz) = 3612
+SHA256 (immortal-multiwriter-2555774_GH0.tar.gz) = 0988932d02debf79c7928e307a812027b642da7e5cad8846604577ed56220d57
+SIZE (immortal-multiwriter-2555774_GH0.tar.gz) = 3060
+SHA256 (immortal-natcasesort-69368b7_GH0.tar.gz) = d05843a6bb7429ebe0e62f34ff3e75fa19327eea810f60d335a345ea9411f9e5
+SIZE (immortal-natcasesort-69368b7_GH0.tar.gz) = 2581
+SHA256 (immortal-xtime-fb1aca1_GH0.tar.gz) = b6d7b321e2feca0ec66d19e4b2feea0be88fc2b7db31e43b7f68d6f74f1a2753
+SIZE (immortal-xtime-fb1aca1_GH0.tar.gz) = 1104
+SHA256 (nbari-violetear-502d8b0_GH0.tar.gz) = 26b1bbb59ddeb5bb82a317c6a754ab6dad0a68152612e8eaaac17f3b7dacaaf2
+SIZE (nbari-violetear-502d8b0_GH0.tar.gz) = 16272
+SHA256 (go-yaml-yaml-v2_GH0.tar.gz) = 4f214b08f5ad89644bec631ca47e20ba7c1474845731925f3b38d1ecca9cca67
+SIZE (go-yaml-yaml-v2_GH0.tar.gz) = 60702

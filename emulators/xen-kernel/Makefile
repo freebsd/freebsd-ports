@@ -2,8 +2,8 @@
 
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
-PORTVERSION=	4.7.1
-PORTREVISION=   3
+PORTVERSION=	4.7.2
+PORTREVISION=   0
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -40,14 +40,8 @@ PLIST_FILES=	/boot/xen \
 EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patch:-p1 \
 		${FILESDIR}/0002-xen-rework-paging_log_dirty_op-to-work-with-hvm-gues.patch:-p1 \
 		${FILESDIR}/kconf_arch.patch:-p1 \
-		${FILESDIR}/xsa191.patch:-p1 \
-		${FILESDIR}/xsa192.patch:-p1 \
-		${FILESDIR}/xsa193-4.7.patch:-p1 \
-		${FILESDIR}/xsa194.patch:-p1 \
-		${FILESDIR}/xsa195.patch:-p1 \
-		${FILESDIR}/xsa200-4.7.patch:-p1 \
-		${FILESDIR}/xsa204-4.7.patch:-p1 \
-		${FILESDIR}/xsa202.patch:-p1
+		${FILESDIR}/0001-x86-drop-unneeded-__packed-attributes.patch:-p1 \
+		${FILESDIR}/0002-build-clang-fix-XSM-dummy-policy-when-using-clang-4..patch:-p1
 
 .include <bsd.port.options.mk>
 
