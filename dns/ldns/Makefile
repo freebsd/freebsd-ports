@@ -88,7 +88,7 @@ post-patch:
 	@${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/perl5/site_perl/mach/5.24/auto/DNS/LDNS/LDNS.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DNS/LDNS/LDNS.so
 .else
 ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h install-config
