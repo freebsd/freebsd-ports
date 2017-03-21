@@ -31,7 +31,7 @@ OPTIONS_RADIO=	DOXYWIZARD
 OPTIONS_RADIO_DOXYWIZARD=	QT4 QT5
 QT4_DESC=	Install Doxywizard GUI with Qt4
 QT5_DESC=	Install Doxywizard GUI with Qt5
-SEARCH_DESC=	Build external serach tools (doxysearch and doxyindexer)
+SEARCH_DESC=	Build external search tools (doxysearch and doxyindexer)
 
 DOCS_USES=		ghostscript:build
 DOCS_ALL_TARGET=	docs
