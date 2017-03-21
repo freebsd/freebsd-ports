@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -148,7 +148,8 @@ RTCPU_CONFIGURE_OFF=	--disable-runtime-cpudetection
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_OFF=	--disable-sdl
 
-SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+SMB_USES=		samba:lib
+SMB_CONFIGURE_ON=	--extra-cflags="-I${SAMBAINCLUDES}" --extra-ldflags="-L${SAMBALIBS}"
 SMB_CONFIGURE_OFF=	--disable-smb
 
 SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex

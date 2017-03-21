@@ -3,6 +3,7 @@
 
 PORTNAME=	backuppc
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	BackupPC-${PORTVERSION}
@@ -36,8 +37,8 @@ PLIST_SUB+=	CGIDIR=${CGIDIR:S,^${PREFIX}/,,} \
 
 PORTDOCS=	ChangeLog LICENSE README
 
-OPTIONS_DEFINE=		ARCHIVE_ZIP COMPRESS_ZLIB DOCS FILE_RSYNCP NMBLOOKUP \
-			SMBCLIENT XML_RSS
+OPTIONS_DEFINE=		ARCHIVE_ZIP COMPRESS_ZLIB DOCS FILE_RSYNCP SMB \
+			XML_RSS
 
 OPTIONS_RADIO=		GRAPHS
 OPTIONS_RADIO_GRAPHS=	RRD_GRAPHS RRDTOOL
@@ -47,18 +48,16 @@ OPTIONS_DEFAULT=	ARCHIVE_ZIP COMPRESS_ZLIB RRD_GRAPHS
 ARCHIVE_ZIP_DESC=	Perl module for Zip archive files
 COMPRESS_ZLIB_DESC=	Perl5 interface to zlib compression library
 FILE_RSYNCP_DESC=	Perl Rsync client
-NMBLOOKUP_DESC=		NetBIOS Name lookup tool
 RRD_GRAPHS_DESC=	Apply graphs patch (but not install RRDTool)
 RRDTOOL_DESC=		Use RRDTool to generate pool statistic graphs
-SMBCLIENT_DESC=		Samba client
+SMB_DESC=		NetBIOS Name lookup and Samba client
 XML_RSS_DESC=		Perl extension to manage RSS files
 
 ARCHIVE_ZIP_RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip
 COMPRESS_ZLIB_RUN_DEPENDS=	p5-IO-Compress>=0:archivers/p5-IO-Compress
 FILE_RSYNCP_RUN_DEPENDS=	p5-File-RsyncP>=0:net/p5-File-RsyncP
-NMBLOOKUP_RUN_DEPENDS=		nmblookup:net/samba-nmblookup
 RRDTOOL_RUN_DEPENDS=		rrdtool:databases/rrdtool
-SMBCLIENT_RUN_DEPENDS=		smbclient:net/samba-smbclient
+SMB_USES=			samba:run # nmblookup, smbclient
 XML_RSS_RUN_DEPENDS=		p5-XML-RSS>=0:textproc/p5-XML-RSS
 RRD_GRAPHS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-bin-BackupPC \
 				${FILESDIR}/extra-patch-lib-BackupPC-CGI-GeneralInfo.pm

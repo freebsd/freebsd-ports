@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	2.24.4
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -60,7 +60,8 @@ CONFIGURE_ARGS+=--disable-hal
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-LIB_DEPENDS+=	libsmbclient.so:net/samba-libsmbclient
+CONFIGURE_ARGS+=--with-samba-includes=${SAMBAINCLUDES} --with-samba-libs=${SAMBALIBS}
+USES+=		samba:lib
 PLIST_SUB+=	SAMBA=""
 .else
 PLIST_SUB+=	SAMBA="@comment "

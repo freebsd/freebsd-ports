@@ -3,7 +3,7 @@
 
 PORTNAME=	elinks
 DISTVERSION=	0.11.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	http://elinks.or.cz/download/
 
@@ -18,8 +18,6 @@ USES=		bison cpe execinfo gmake localbase ssl tar:bzip2
 CONFIGURE_ARGS=	--without-zlib
 
 LIBS+=		-lexecinfo
-
-SAMBA_PORT?=	net/samba36
 
 OPTIONS_DEFINE=		88COLORS 256COLORS SPIDERMONKEY XBELMARKS LOCAL_CGI \
 			FINGER GOPHER BITTORRENT NNTP FTP FSP SMB EXMODE \
@@ -64,8 +62,7 @@ HIGHLIGHT_CONFIGURE_ON=	--enable-html-highlight
 
 EXMODE_CONFIGURE_ON=	--enable-exmode
 
-SMB_RUN_DEPENDS=	smbclient:${SAMBA_PORT}
-SMB_BUILD_DEPENDS=	smbclient:${SAMBA_PORT}
+SMB_USES=		samba # smbclient
 SMB_CONFIGURE_ENABLE=	smb
 
 FSP_RUN_DEPENDS=	${LOCALBASE}/lib/libfsplib.a:net/fsplib

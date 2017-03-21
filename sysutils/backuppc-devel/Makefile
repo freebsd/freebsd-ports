@@ -3,7 +3,7 @@
 
 PORTNAME=	backuppc
 DISTVERSION=	4.0.0alpha3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-beta/${DISTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -58,14 +58,11 @@ RUN_DEPENDS+=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip
 .if ${PORT_OPTIONS:MRSYNC_BPC}
 RUN_DEPENDS+=	rsync-bpc>=3.0.9.3:net/rsync-bpc
 .endif
-.if ${PORT_OPTIONS:MNMBLOOKUP}
-RUN_DEPENDS+=	nmblookup:net/samba-nmblookup
+.if ${PORT_OPTIONS:MNMBLOOKUP} || ${PORT_OPTIONS:MSMBCLIENT}
+USES+=		samba:run # nmblookup, smbclient
 .endif
 .if ${PORT_OPTIONS:MRRDTOOL}
 RUN_DEPENDS+=	rrdtool:databases/rrdtool
-.endif
-.if ${PORT_OPTIONS:MSMBCLIENT}
-RUN_DEPENDS+=	smbclient:net/samba-smbclient
 .endif
 .if ${PORT_OPTIONS:MXML_RSS}
 RUN_DEPENDS+=	p5-XML-RSS>=0:textproc/p5-XML-RSS

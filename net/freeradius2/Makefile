@@ -236,7 +236,7 @@ EXPM=		yes
 
 # No SMB option yet; rlm_smb is still unbuildable
 #.if ${PORT_OPTIONS:MSMB}
-#LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+#USES+=	samba:lib
 #CONFIGURE_ARGS+=--with-rlm_smb
 #CONFIGURE_ARGS+=--with-rlm-smb-lib-dir=${LOCALBASE}/lib
 #CONFIGURE_ARGS+=--with-rlm-smb-include-dir=${LOCALBASE}/include

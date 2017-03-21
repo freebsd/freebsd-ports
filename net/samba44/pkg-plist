@@ -160,6 +160,8 @@ lib/samba4/libsamba-util.so
 lib/samba4/libsamba-util.so.0
 lib/samba4/libsamdb.so
 lib/samba4/libsamdb.so.0
+lib/samba4/libsmbclient.so
+lib/samba4/libsmbclient.so.0
 lib/samba4/libsmbconf.so
 lib/samba4/libsmbconf.so.0
 %%LDAP%%lib/samba4/libsmbldap.so
@@ -448,6 +450,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%PKGCONFIGDIR%%/samba-policy.pc
 %%PKGCONFIGDIR%%/samba-util.pc
 %%PKGCONFIGDIR%%/samdb.pc
+%%PKGCONFIGDIR%%/smbclient.pc
 %%PKGCONFIGDIR%%/wbclient.pc
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/dckeytab.so
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/posix_eadb.so
