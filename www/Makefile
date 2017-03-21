@@ -551,7 +551,6 @@
     SUBDIR += nginx-naxsi
     SUBDIR += nibbleblog
     SUBDIR += node
-    SUBDIR += node012
     SUBDIR += node4
     SUBDIR += node6
     SUBDIR += nostromo
