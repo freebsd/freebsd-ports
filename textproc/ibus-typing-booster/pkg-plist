@@ -21,6 +21,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/el.xml
 %%DATADIR%%/data/emoji-data.txt
 %%DATADIR%%/data/emoji-sequences.txt
+%%DATADIR%%/data/emoji-test.txt
 %%DATADIR%%/data/emoji-zwj-sequences.txt
 %%DATADIR%%/data/emojione.json
 %%DATADIR%%/data/en_001.xml
