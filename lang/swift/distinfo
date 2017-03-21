@@ -1,6 +1,6 @@
-TIMESTAMP = 1463523202
-SHA256 (apple-swift-2.2.1-swift-2.2.1-RELEASE_GH0.tar.gz) = e971e2287055da72564356f369bad97e95821afb1ef36157e954a04a7e90753a
-SIZE (apple-swift-2.2.1-swift-2.2.1-RELEASE_GH0.tar.gz) = 8443158
+TIMESTAMP = 1490087178
+SHA256 (apple-swift-swift-2.2.1-RELEASE_GH0.tar.gz) = e971e2287055da72564356f369bad97e95821afb1ef36157e954a04a7e90753a
+SIZE (apple-swift-swift-2.2.1-RELEASE_GH0.tar.gz) = 8443158
 SHA256 (apple-swift-llvm-swift-2.2.1-RELEASE_GH0.tar.gz) = f7977e5bb275494b5dac4490afc5d634f894ba5f209f3b2dbd5b7e520fa5fce2
 SIZE (apple-swift-llvm-swift-2.2.1-RELEASE_GH0.tar.gz) = 22560962
 SHA256 (apple-swift-clang-swift-2.2.1-RELEASE_GH0.tar.gz) = 40bdfa7eec0497ec69005d6a5d018b12c85aa2c0959d3408ecaaa9e34ff0415f
