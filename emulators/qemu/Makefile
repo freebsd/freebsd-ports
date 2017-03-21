@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -66,7 +66,7 @@ STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK2 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
 NCURSES_USES=		ncurses:base
-SAMBA_RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:net/samba36
+SAMBA_USES=		samba:run # smbd
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1

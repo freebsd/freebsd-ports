@@ -44,7 +44,7 @@ FreeBSD host notes
   the same way.
 
 - The -smb option (smb-export local dir to guest using the default
-  slirp networking) needs the net/samba36 port/package installed
+  slirp networking) needs the samba port/package installed
   in addition to qemu. (SAMBA knob.)
 
 - If you want to use usb devices connected to the host in the guest

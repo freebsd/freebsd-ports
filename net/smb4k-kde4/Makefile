@@ -3,7 +3,7 @@
 
 PORTNAME=	smb4k-kde4
 PORTVERSION=	0.10.9
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net kde
 MASTER_SITES=	SF/smb4k
 DISTNAME=	smb4k-${PORTVERSION}
@@ -11,12 +11,9 @@ DISTNAME=	smb4k-${PORTVERSION}
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	KDE 4.x SMB Network browser and SMB shares mounting center
 
-RUN_DEPENDS=	sudo:security/sudo \
-		smbstatus:${SAMBA_PORT}
+RUN_DEPENDS=	sudo:security/sudo
 
-SAMBA_PORT?=	net/samba36
-
-USES=		cmake gettext kde:4 tar:bzip2
+USES=		cmake gettext kde:4 samba:run tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4
 USE_KDE=	kdelibs automoc4 runtime
 USE_QT4=	corelib gui network opengl script svg webkit \

@@ -3,7 +3,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 DIST_SUBDIR=	apsfilter
@@ -51,6 +51,7 @@ DOCS_MAKE_ARGS=	-DDOCS
 PORTDOCS=	ANNOUNCE FAQ HOWTO-BUGREPORTS apsfilter4.png \
 		README.BSD handbook.html README.TeX paper
 GS_USES=	ghostscript:run
+SAMBA_USES=	samba:run
 
 .include <bsd.port.options.mk>
 
@@ -108,7 +109,6 @@ _DEPENDS_FIG2DEV= \
 _DEPENDS_HTML2PS= \
 		html2ps:print/html2ps
 _DEPENDS_ATALK=	pap:net/netatalk
-_DEPENDS_SAMBA= smbclient:net/samba36
 _DEPENDS_MP3=	mpg321:audio/mpg321
 _DEPENDS_OGG=	ogg123:audio/vorbis-tools
 _DEPENDS_WAV=	wavplay:audio/wavplay
