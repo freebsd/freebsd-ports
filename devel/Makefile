@@ -4124,6 +4124,7 @@
     SUBDIR += py-fabric
     SUBDIR += py-fake-factory
     SUBDIR += py-fam
+    SUBDIR += py-fastentrypoints
     SUBDIR += py-fastimport
     SUBDIR += py-filemagic
     SUBDIR += py-fileutils
