@@ -2,6 +2,8 @@
 
 PORTNAME=	swift
 PORTVERSION=	2.2.1
+DISTVERSIONPREFIX=	swift-
+DISTVERSIONSUFFIX=	-RELEASE
 PORTREVISION=	4
 CATEGORIES=	lang
 
@@ -25,8 +27,7 @@ GH_ACCOUNT=	apple:DEFAULT,llvm,clang,lldb,cmark,llbuild,swiftpm,xctest,xcfound
 GH_PROJECT=	swift:DEFAULT swift-llvm:llvm swift-clang:clang swift-lldb:lldb \
 		swift-cmark:cmark swift-llbuild:llbuild swift-package-manager:swiftpm \
 		swift-corelibs-xctest:xctest swift-corelibs-foundation:xcfound
-GH_TAGNAME=	swift-${PORTVERSION}-RELEASE:DEFAULT,llvm,clang,lldb,cmark \
-		swift-DEVELOPMENT-SNAPSHOT-2016-05-03-a:llbuild,swiftpm,xctest,xcfound
+GH_TAGNAME=	swift-DEVELOPMENT-SNAPSHOT-2016-05-03-a:llbuild,swiftpm,xctest,xcfound
 GH_SUBDIR=	llvm:llvm clang:clang lldb:lldb cmark:cmark llbuild:llbuild \
 		swiftpm:swiftpm swift-corelibs-xctest:xctest \
 		swift-corelibs-foundation:xcfound
