@@ -83,6 +83,12 @@ CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
+.if ${PORT_OPTIONS:MPLABEL}
+CONFIGURE_ARGS+=--enable-plabel
+.else
+CONFIGURE_ARGS+=--disable-plabel
+.endif
+
 .if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--enable-threads
 .else
@@ -93,9 +99,11 @@ CONFIGURE_ARGS+=--disable-threads
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-#.if ${PORT_OPTIONS:MMONGO}
+.if ${PORT_OPTIONS:MMONGO}
 #CONFIGURE_ARGS+=--enable-mongodb
-#.endif
+.else
+CONFIGURE_ARGS+=--disable-mongodb
+.endif
 
 .if ${PORT_OPTIONS:MRABBITMQ}
 .if ${PORT_OPTIONS:MJANSSON}
@@ -127,13 +135,13 @@ LIB_DEPENDS+=	libavro.so:devel/avro-c
 CONFIGURE_ARGS+=--enable-avro
 .endif
 
-#.if ${PORT_OPTIONS:MNFLOG}
+.if ${PORT_OPTIONS:MNFLOG}
 #CONFIGURE_ARGS+=--enable-nflog
 #PLIST_SUB+=WITH_NFLOG=""
-#.else
+.else
 CONFIGURE_ARGS+=--disable-nflog
 PLIST_SUB+=WITH_NFLOG="@comment "
-#.endif
+.endif
 
 .if ${PORT_OPTIONS:MGEOIP}
 LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
