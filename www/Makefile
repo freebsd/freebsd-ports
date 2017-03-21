@@ -1993,6 +1993,7 @@
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
     SUBDIR += rubygem-httpi
+    SUBDIR += rubygem-hurley
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-jekyll-watch
