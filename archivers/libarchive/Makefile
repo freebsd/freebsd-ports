@@ -98,10 +98,6 @@ NETTLE_CONFIGURE_OFF=	--with-openssl
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
 .if empty(ICONV_LIB)
 CONFIGURE_ENV+=	ac_cv_header_localcharset_h=no \
 		ac_cv_func_locale_charset=no \
