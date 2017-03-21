@@ -1034,6 +1034,7 @@
     SUBDIR += tilecache
     SUBDIR += tiled
     SUBDIR += timeless
+    SUBDIR += timg
     SUBDIR += tintfu
     SUBDIR += tinyows
     SUBDIR += tkpng
