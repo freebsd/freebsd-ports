@@ -28,6 +28,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -lcrypto -lssl
 USE_GITHUB=		yes
 GH_ACCOUNT=		varnish
+PORTSCOUT=		skipv:premerge
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc
