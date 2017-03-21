@@ -40,10 +40,10 @@ SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
 		contrib/dnslist/dnslist.pl
 CPE_VENDOR=	thekelleys
 
-.include <bsd.port.options.mk>
-
 IPV6_CFLAGS_OFF=-DNO_IPV6
 IPSET_CFLAGS_OFF=-DNO_IPSET
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext gmake iconv pkgconfig
