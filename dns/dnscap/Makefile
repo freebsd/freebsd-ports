@@ -14,14 +14,17 @@ COMMENT=	DNS network traffic capture utility
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS THREADS
+OPTIONS_DEFAULT=THREADS
 
-CONFIGURE_ARGS=	--enable-shared --enable-static --enable-threads
+CONFIGURE_ARGS=	--enable-shared --enable-static
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool
 
 PORTDOCS=	*
+
+THREADS_CONFIGURE_ENABLE=	threads
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-dist_docDATA||' ${WRKSRC}/Makefile.in
