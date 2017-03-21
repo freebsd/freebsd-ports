@@ -559,7 +559,6 @@
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
-    SUBDIR += npm012
     SUBDIR += npm2
     SUBDIR += npm3
     SUBDIR += nspluginwrapper
