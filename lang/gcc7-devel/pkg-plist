@@ -14,6 +14,7 @@ bin/gcc-ar%%SUFFIX%%
 bin/gcc-nm%%SUFFIX%%
 bin/gcc-ranlib%%SUFFIX%%
 bin/gcov%%SUFFIX%%
+bin/gcov-dump%%SUFFIX%%
 bin/gcov-tool%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 @comment info/gcc%%SUFFIX%%/dir

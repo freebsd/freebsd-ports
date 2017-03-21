@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.46
-PORTREVISION=	1
+PORTVERSION=	5.51
 CATEGORIES?=	x11
-MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/ \
+MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		LOCAL/jgh/x11/${PORTNAME}/
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
+
+LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
 GNU_CONFIGURE=	yes
@@ -18,7 +19,7 @@ CONFIGURE_ARGS=	--without-motif --without-ttf --without-editres \
 		--without-gtk --without-esound --disable-setuid
 
 USE_GNOME=	#
-USE_XORG=	x11 xaw ice
+USE_XORG=	x11 xaw ice sm xpm xext xinerama
 
 LIB_DEPENDS+=	libfreetype.so:print/freetype2
 
@@ -46,9 +47,9 @@ OPTIONS_RADIO_ONE=	PAM XLOCK_GROUP
 
 NO_OPTIONS_SORT=yes
 
-MAKE_ARGS+=	bindir=${STAGEDIR}${PREFIX}/bin \
-		mandir=${STAGEDIR}${PREFIX}/man/man1 \
-		datarootdir=${STAGEDIR}${PREFIX}/share \
+MAKE_ARGS+=	bindir=${PREFIX}/bin \
+		mandir=${PREFIX}/man/man1 \
+		datarootdir=${PREFIX}/share \
 		xapploaddir=${PREFIX}/lib/X11/app-defaults
 
 .include <bsd.port.options.mk>
@@ -158,6 +159,9 @@ pre-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/xglockrc/ s|PROGRAM|DATA|' ${WRKSRC}/xglock/Makefile.in
+.if ${OSVERSION} > 1003500
+	@${REINPLACE_CMD} -e 's|/usr/games/fortune|/usr/bin/fortune|' ${WRKSRC}/modes/Makefile.in
+.endif
 
 post-configure:
 	${REINPLACE_CMD} -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile

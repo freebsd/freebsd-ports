@@ -235,7 +235,9 @@
     SUBDIR += djmount
     SUBDIR += dmg2img
     SUBDIR += dmidecode
+    SUBDIR += docker
     SUBDIR += docker-freebsd
+    SUBDIR += docker-machine
     SUBDIR += doinkd
     SUBDIR += dolly
     SUBDIR += downtime
@@ -557,6 +559,7 @@
     SUBDIR += lookat
     SUBDIR += lr
     SUBDIR += lsof
+    SUBDIR += lsop
     SUBDIR += ltrace
     SUBDIR += lttng-tools
     SUBDIR += lttng-ust

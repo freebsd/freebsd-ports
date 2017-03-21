@@ -516,6 +516,7 @@ include/wine/windows/msinkaut.h
 include/wine/windows/msinkaut.idl
 include/wine/windows/msiquery.h
 include/wine/windows/mssip.h
+include/wine/windows/msstkppg.h
 include/wine/windows/mstask.h
 include/wine/windows/mstask.idl
 include/wine/windows/mstcpip.h
