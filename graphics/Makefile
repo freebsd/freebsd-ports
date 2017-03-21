@@ -329,6 +329,7 @@
     SUBDIR += gtk-update-icon-cache
     SUBDIR += gtkam
     SUBDIR += gts
+    SUBDIR += guetzli
     SUBDIR += guilib
     SUBDIR += gwenview-kde4
     SUBDIR += gx
