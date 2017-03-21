@@ -5189,6 +5189,7 @@
     SUBDIR += rubygem-debugger-linecache
     SUBDIR += rubygem-debugger-xml
     SUBDIR += rubygem-declarative
+    SUBDIR += rubygem-declarative-option
     SUBDIR += rubygem-deep_merge
     SUBDIR += rubygem-deep_test
     SUBDIR += rubygem-deface
