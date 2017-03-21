@@ -1,6 +1,6 @@
---- ezcrypto.gemspec.orig	2016-05-04 01:17:14.146797000 +0000
-+++ ezcrypto.gemspec	2016-05-04 01:19:38.574752000 +0000
-@@ -12,12 +12,12 @@
+--- ezcrypto.gemspec.orig	2017-03-21 14:03:20 UTC
++++ ezcrypto.gemspec
+@@ -12,12 +12,12 @@ Gem::Specification.new do |s|
    s.description = "Makes it easier and safer to write crypto code.".freeze
    s.email = "pelle@stakeventures.com".freeze
    s.extra_rdoc_files = ["CHANGELOG".freeze, "README.rdoc".freeze, "README_ACTIVE_CRYPTO".freeze, "README_DIGITAL_SIGNATURES".freeze]
@@ -9,7 +9,7 @@
    s.homepage = "http://ezcrypto.rubyforge.org".freeze
    s.requirements = ["none".freeze]
    s.rubyforge_project = "ezcrypto".freeze
-   s.rubygems_version = "2.6.10".freeze
+   s.rubygems_version = "2.6.11".freeze
    s.summary = "Simplified encryption library.".freeze
 -  s.test_files = ["test/active_crypto_test.rb".freeze, "test/agree2.com.cert".freeze, "test/association_key_holder_test.rb".freeze, "test/database.yml".freeze, "test/debug.log".freeze, "test/digest_test.rb".freeze, "test/dsakey.pem".freeze, "test/dsapubkey.pem".freeze, "test/dsig_test.rb".freeze, "test/encrypt_test.rb".freeze, "test/ezcrypto_test.rb".freeze, "test/key_holder_test.rb".freeze, "test/protectedsigner.pem".freeze, "test/sf-class2-root.crt".freeze, "test/sf_intermediate.crt".freeze, "test/store".freeze, "test/test_helper.rb".freeze, "test/testchild.pem".freeze, "test/testchild.req".freeze, "test/testpub.pem".freeze, "test/testsigner.cert".freeze, "test/testsigner.pem".freeze, "test/valicert_class2_root.crt".freeze]
 +  s.test_files = ["test/active_crypto_test.rb".freeze, "test/agree2.com.cert".freeze, "test/association_key_holder_test.rb".freeze, "test/database.yml".freeze, "test/debug.log".freeze, "test/digest_test.rb".freeze, "test/dsakey.pem".freeze, "test/dsapubkey.pem".freeze, "test/dsig_test.rb".freeze, "test/encrypt_test.rb".freeze, "test/ezcrypto_test.rb".freeze, "test/key_holder_test.rb".freeze, "test/protectedsigner.pem".freeze, "test/sf-class2-root.crt".freeze, "test/sf_intermediate.crt".freeze, "test/test_helper.rb".freeze, "test/testchild.pem".freeze, "test/testchild.req".freeze, "test/testpub.pem".freeze, "test/testsigner.cert".freeze, "test/testsigner.pem".freeze, "test/valicert_class2_root.crt".freeze]
