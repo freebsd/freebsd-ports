@@ -559,6 +559,7 @@
     SUBDIR += lookat
     SUBDIR += lr
     SUBDIR += lsof
+    SUBDIR += lsop
     SUBDIR += ltrace
     SUBDIR += lttng-tools
     SUBDIR += lttng-ust
