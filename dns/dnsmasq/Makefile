@@ -24,14 +24,15 @@ CFLAGS+=	-Wall -Wno-unused-value -Wno-unused-parameter
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
-OPTIONS_DEFINE=		IPV6 DBUS LUA DNSSEC DOCS
-OPTIONS_DEFAULT=	DNSSEC
+OPTIONS_DEFINE=		IPSET IPV6 DBUS LUA DNSSEC DOCS
+OPTIONS_DEFAULT=	DNSSEC IPSET
 OPTIONS_EXCLUDE+=	EXAMPLES
 OPTIONS_RADIO=		INTL
 OPTIONS_RADIO_INTL=	IDN NLS
 INTL_DESC=	Internationalization Support Level
 NLS_DESC=	IDN+NLS: Int'l Domain Names & National Language support
 IDN_DESC=	IDN: Int'l Domain Names WITHOUT full NLS
+IPSET_DESC=	Dynamic firewall managment of resolved names (require PF)
 LUA_DESC=	Support lease-change scripts written in Lua
 DNSSEC_DESC=	Enable DNSSEC caching and validation
 USES=		cpe shebangfix tar:xz
@@ -41,9 +42,8 @@ CPE_VENDOR=	thekelleys
 
 .include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MIPV6)
-CFLAGS+=	-DNO_IPV6
-.endif
+IPV6_CFLAGS_OFF=-DNO_IPV6
+IPSET_CFLAGS_OFF=-DNO_IPSET
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext gmake iconv pkgconfig
