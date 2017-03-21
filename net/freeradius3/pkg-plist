@@ -71,6 +71,7 @@ include/freeradius/rfc7055.h
 include/freeradius/rfc7155.h
 include/freeradius/rfc7268.h
 include/freeradius/rfc7499.h
+include/freeradius/rfc7930.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
@@ -470,7 +471,6 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius.schema
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/README
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/radius-mapping.sh
-%%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/kibana3-dashboard.json
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/kibana4-dashboard.json
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/log-courier.conf
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/logstash-radius.conf
@@ -774,6 +774,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.cisco.vpn5000
 %%DATADIR%%/dictionary.citrix
 %%DATADIR%%/dictionary.clavister
+%%DATADIR%%/dictionary.cnergee
 %%DATADIR%%/dictionary.colubris
 %%DATADIR%%/dictionary.columbia_university
 %%DATADIR%%/dictionary.compat
@@ -824,6 +825,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.localweb
 %%DATADIR%%/dictionary.lucent
 %%DATADIR%%/dictionary.manzara
+%%DATADIR%%/dictionary.microsemi
 %%DATADIR%%/dictionary.meinberg
 %%DATADIR%%/dictionary.meraki
 %%DATADIR%%/dictionary.merit
@@ -885,6 +887,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.rfc7155
 %%DATADIR%%/dictionary.rfc7268
 %%DATADIR%%/dictionary.rfc7499
+%%DATADIR%%/dictionary.rfc7930
 %%DATADIR%%/dictionary.riverbed
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin

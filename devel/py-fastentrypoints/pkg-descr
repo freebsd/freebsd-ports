@@ -1,0 +1,3 @@
+Makes entry_points specified in setup.py load more quickly.
+
+WWW: https://github.com/ninjaaron/fast-entry_points

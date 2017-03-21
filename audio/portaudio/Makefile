@@ -3,25 +3,23 @@
 
 PORTNAME=	portaudio
 DISTVERSION=	19_20140130
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
 DISTNAME=	pa_stable_v${DISTVERSION}
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		dos2unix gmake libtool pathfix pkgconfig tar:tgz
+USES=	autoreconf dos2unix gmake localbase:ldflags libtool pathfix \
+	pkgconfig tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	PKG_CONFIG_LIBDIR=${PREFIX}/libdata/pkgconfig \
 		--without-alsa
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -31,8 +29,7 @@ PORTEXAMPLES=	*
 DOCSRCDIR1=	${WRKSRC}
 DOC_FILES1=	README.txt index.html
 
-OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES JACK PATEST
-OPTIONS_DEFAULT=PATEST
+OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES JACK PATEST SNDIO
 
 PATEST_DESC=	PortAudio Test Programs
 DOXYGEN_DESC=	Install API documentation (requires DOCS)
@@ -40,13 +37,19 @@ DOXYGEN_DESC=	Install API documentation (requires DOCS)
 OPTIONS_SUB=	yes
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
-JACK_CONFIGURE_ON=	--with-jack
-JACK_CONFIGURE_OFF=	--without-jack
+JACK_CONFIGURE_WITH=	jack
 
 PATEST_BIN=	pa_m* paqa_* patest*
 
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CONFIGURE_WITH=	sndio
+
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/src/hostapi/sndio
+	@${CP} ${FILESDIR}/pa_sndio.c ${WRKSRC}/src/hostapi/sndio
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/configure.in \
