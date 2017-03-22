@@ -2,7 +2,7 @@
 
 PORTNAME=		Parse-Pidl
 PORTVERSION=		${SAMBA4_VERSION}
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 CATEGORIES=		devel perl5
 PKGNAMEPREFIX=		p5-
@@ -17,7 +17,7 @@ RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 CONFLICTS=
 
-SAMBA4_PORT?=		samba45
+SAMBA4_PORT?=		samba46
 SAMBA4_SUBPORT=		yes
 
 MASTERDIR=		${.CURDIR}/../../net/${SAMBA4_PORT}
@@ -34,4 +34,4 @@ post-extract:
 
 # Ugly hack
 WRKSRC=			/usr/samba_src/pidl
-DISTNAME=		${SAMBA4_BASENAME}-4-5-stable
+DISTNAME=		${SAMBA4_BASENAME}-4-6-stable
