@@ -1,0 +1,7 @@
+RadeonTop allows one to view AMD Radeon GPU utilization, both for the total
+activity percent and individual blocks.
+
+Total GPU utilization is also valid for OpenCL loads; other blocks are only
+useful in GL loads.
+
+WWW: https://github.com/clbr/radeontop

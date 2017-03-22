@@ -9,6 +9,7 @@
     SUBDIR += DTraceToolkit
     SUBDIR += LPRng
     SUBDIR += LPRngTool
+    SUBDIR += UEFITool
     SUBDIR += abck
     SUBDIR += abduco
     SUBDIR += abgx360
@@ -913,6 +914,7 @@
     SUBDIR += qzeitgeist
     SUBDIR += racktables
     SUBDIR += radeontool
+    SUBDIR += radeontop
     SUBDIR += radmind
     SUBDIR += rainbarf
     SUBDIR += raincoat
@@ -1181,7 +1183,6 @@
     SUBDIR += udfclient
     SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
-    SUBDIR += UEFITool
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso

@@ -16,6 +16,7 @@
 %%DATADIR%%/Ical.Net.dll
 %%DATADIR%%/Ical.Net.dll.mdb
 %%DATADIR%%/ImageResizer.dll
+%%DATADIR%%/Interop.NetFwTypeLib.dll
 %%DATADIR%%/LogentriesCore.dll
 %%DATADIR%%/LogentriesCore.dll.mdb
 %%DATADIR%%/LogentriesNLog.dll

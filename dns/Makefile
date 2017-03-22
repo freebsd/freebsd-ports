@@ -195,6 +195,7 @@
     SUBDIR += rubygem-public_suffix
     SUBDIR += rubygem-public_suffix_service
     SUBDIR += rubygem-simpleidn
+    SUBDIR += rubygem-validates_hostname
     SUBDIR += samba-nsupdate
     SUBDIR += scavenge
     SUBDIR += sheerdns

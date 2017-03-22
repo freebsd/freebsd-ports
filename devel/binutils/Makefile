@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.27
-# XXX: When removing or bumping this, remove PORTREVISION= from aarch64-binutils
-PORTREVISION?=	5
+PORTVERSION=	2.28
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -23,6 +21,7 @@ CONFLICTS=	libbfd-[0-9]*
 .endif
 
 OPTIONS_DEFINE=	NLS RELRO STATIC
+STATIC_PREVENTS=	NLS
 
 RELRO_DESC=	enable -z relro in ELF linker by default
 
