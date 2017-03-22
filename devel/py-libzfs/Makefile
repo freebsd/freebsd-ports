@@ -24,7 +24,7 @@ MAKE_ENV=	FREEBSD_SRC=${SRC_BASE}
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 3306
-BUILD_DEPENDS=	cython>0:lang/cython3
+BUILD_DEPENDS=	cython3>0:lang/cython3
 .else
 BUILD_DEPENDS=	cython>0:lang/cython
 .endif
