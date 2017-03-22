@@ -15,7 +15,6 @@ USES=		gmake compiler:c11
 USE_RC_SUBR=	zerotier
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	zerotier
 GH_PROJECT=	ZeroTierOne
 
 CFLAGS+=	-flax-vector-conversions
