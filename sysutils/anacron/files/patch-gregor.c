@@ -1,6 +1,6 @@
---- gregor.c.orig	Fri Jun 23 00:50:40 2000
-+++ gregor.c	Thu Jun 16 17:38:02 2005
-@@ -65,7 +65,7 @@
+--- gregor.c.orig	2000-06-22 22:50:40 UTC
++++ gregor.c
+@@ -65,7 +65,7 @@ day_num(int year, int month, int day)
  {
      int dn;
      int i;
