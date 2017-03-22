@@ -2111,6 +2111,7 @@
     SUBDIR += rubygem-webkit-gtk
     SUBDIR += rubygem-webkit-gtk2
     SUBDIR += rubygem-webmock
+    SUBDIR += rubygem-webpack-rails
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-websocket-driver
