@@ -616,6 +616,7 @@
     SUBDIR += rubygem-actionmailer5
     SUBDIR += rubygem-email_reply_parser
     SUBDIR += rubygem-email_reply_parser-discourse
+    SUBDIR += rubygem-email_reply_trimmer
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-larch
     SUBDIR += rubygem-mail
