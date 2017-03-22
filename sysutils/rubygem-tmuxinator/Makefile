@@ -6,7 +6,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Manage complex tmux sessions easily
 
 LICENSE=	MIT
