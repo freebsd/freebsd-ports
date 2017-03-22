@@ -12,6 +12,9 @@ arm-gnueabi-freebsd/bin/size
 arm-gnueabi-freebsd/lib/ldscripts/armelf.x
 arm-gnueabi-freebsd/lib/ldscripts/armelf.xbn
 arm-gnueabi-freebsd/lib/ldscripts/armelf.xc
+arm-gnueabi-freebsd/lib/ldscripts/armelf.xd
+arm-gnueabi-freebsd/lib/ldscripts/armelf.xdc
+arm-gnueabi-freebsd/lib/ldscripts/armelf.xdw
 arm-gnueabi-freebsd/lib/ldscripts/armelf.xn
 arm-gnueabi-freebsd/lib/ldscripts/armelf.xr
 arm-gnueabi-freebsd/lib/ldscripts/armelf.xs
