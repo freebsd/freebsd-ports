@@ -16,6 +16,8 @@ COMMENT=	Localized interface for Thunderbird
 USES=		gecko:thunderbird zip
 USE_XPI=	thunderbird
 
+BROKEN=		distfiles for 52.0 aren't available yet #'
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_SUBMAKE=	yes
