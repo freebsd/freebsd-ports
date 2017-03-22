@@ -37,18 +37,12 @@ USE_MOZILLA=	-soundtouch
 USE_GL=		gl
 USES=		tar:xz
 
-<<<<<<< HEAD
-MOZ_OPTIONS=	--program-transform-name='s/thunderbird/${MOZILLA}/' \
-	--enable-single-profile --disable-profilesharing \
-	--enable-application=mail --enable-official-branding \
-	--enable-pie
-=======
 MOZ_OPTIONS=	--enable-application=mail --enable-official-branding
->>>>>>> upstream/master
 MOZ_MK_OPTIONS=	MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_PKGCONFIG_FILES=
 
+MOZ_OPTIONS+=	--enable-pie
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
 
