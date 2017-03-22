@@ -87,6 +87,7 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/include/shared_hash.sh
 %%DATADIR%%/include/util.sh
 %%DATADIR%%/jail.sh
+%%DATADIR%%/logclean.sh
 %%DATADIR%%/options.sh
 %%DATADIR%%/pkgclean.sh
 %%DATADIR%%/ports.sh
