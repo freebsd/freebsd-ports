@@ -17,7 +17,6 @@ BUILD_DEPENDS=	gobject-introspection>=0.6.7:devel/gobject-introspection \
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 OPTIONS_DEFINE=	GTK3 VALA
-OPTIONS_DEFAULT=GTK3
 OPTIONS_SUB=	yes
 VALA_DESC=	Vala binding
 
