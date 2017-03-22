@@ -1,20 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.11.4
-PORTREVISION=	1
+PORTVERSION=	1.13.4
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Additional backends, filters and other software for CUPS
 
+LICENSE=	BSD4CLAUSE GPLv2 GPLv2+ GPLv3 GPLv3+ LGPL20 LGPL21+ MIT
+LICENSE_COMB=	multi
+
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libqpdf.so:print/qpdf \
 		libcupsimage.so:print/cups \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libpoppler.so:graphics/poppler
+		libpoppler.so:graphics/poppler \
+		libmupdf.so:graphics/mupdf
 
 CONFLICTS=	cups-pstoraster-[0-9]* foomatic-filters-[0-9]*
 
