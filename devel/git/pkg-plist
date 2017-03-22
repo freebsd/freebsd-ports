@@ -133,7 +133,6 @@ libexec/git-core/git-rebase--interactive
 libexec/git-core/git-rebase--merge
 libexec/git-core/git-receive-pack
 libexec/git-core/git-reflog
-libexec/git-core/git-relink
 libexec/git-core/git-remote
 libexec/git-core/git-remote-ext
 libexec/git-core/git-remote-fd
@@ -312,7 +311,6 @@ man/man1/git-read-tree.1.gz
 man/man1/git-rebase.1.gz
 man/man1/git-receive-pack.1.gz
 man/man1/git-reflog.1.gz
-man/man1/git-relink.1.gz
 man/man1/git-remote-ext.1.gz
 man/man1/git-remote-fd.1.gz
 man/man1/git-remote-testgit.1.gz
@@ -626,7 +624,11 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.10.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.10.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.10.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.10.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.11.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.11.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.12.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.12.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -905,8 +907,6 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/git-receive-pack.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-reflog.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-reflog.txt
-%%HTMLDOCS%%%%DOCSDIR%%/git-relink.html
-%%HTMLDOCS%%%%DOCSDIR%%/git-relink.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote-ext.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote-ext.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote-fd.html
@@ -1123,8 +1123,6 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-hashmap.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-history-graph.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-history-graph.txt
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-in-core-index.html
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-in-core-index.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-index-skel.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-index.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-index.txt
@@ -1186,6 +1184,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/signature-format.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/trivial-merge.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/trivial-merge.txt
+%%HTMLDOCS%%%%DOCSDIR%%/transfer-data-leaks.txt
 %%HTMLDOCS%%%%DOCSDIR%%/urls-remotes.txt
 %%HTMLDOCS%%%%DOCSDIR%%/urls.txt
 %%HTMLDOCS%%%%DOCSDIR%%/user-manual.html
@@ -1210,6 +1209,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/coccinelle/object_id.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/qsort.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/strbuf.cocci
+%%CONTRIB%%share/git-core/contrib/coccinelle/swap.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/xstrdup_or_null.cocci
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.bash
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.tcsh
@@ -1220,8 +1220,6 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts.txt
 %%CONTRIB%%share/git-core/contrib/convert-grafts-to-replace-refs.sh
-%%CONTRIB%%share/git-core/contrib/convert-objects/convert-objects.c
-%%CONTRIB%%share/git-core/contrib/convert-objects/git-convert-objects.txt
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/.gitignore
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/Makefile
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/git-credential-gnome-keyring.c
@@ -1254,6 +1252,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/examples/git-clean.sh
 %%CONTRIB%%share/git-core/contrib/examples/git-clone.sh
 %%CONTRIB%%share/git-core/contrib/examples/git-commit.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-difftool.perl
 %%CONTRIB%%share/git-core/contrib/examples/git-fetch.sh
 %%CONTRIB%%share/git-core/contrib/examples/git-gc.sh
 %%CONTRIB%%share/git-core/contrib/examples/git-log.sh
@@ -1285,8 +1284,6 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/git-shell-commands/README
 %%CONTRIB%%share/git-core/contrib/git-shell-commands/help
 %%CONTRIB%%share/git-core/contrib/git-shell-commands/list
-%%CONTRIB%%share/git-core/contrib/gitview/gitview
-%%CONTRIB%%share/git-core/contrib/gitview/gitview.txt
 %%CONTRIB%%share/git-core/contrib/hg-to-git/hg-to-git.py
 %%CONTRIB%%share/git-core/contrib/hg-to-git/hg-to-git.txt
 %%CONTRIB%%share/git-core/contrib/hooks/multimail/CHANGES
@@ -1363,6 +1360,8 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/svn-fe/svnrdump_sim.py
 %%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/README
 %%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/appp.sh
+%%CONTRIB%%share/git-core/contrib/update-unicode/README
+%%CONTRIB%%share/git-core/contrib/update-unicode/update_unicode.sh
 %%CONTRIB%%share/git-core/contrib/workdir/git-new-workdir
 share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg.sample
@@ -1411,6 +1410,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/msgs/ja.msg
 %%GUI%%share/git-gui/lib/msgs/nb.msg
 %%GUI%%share/git-gui/lib/msgs/pt_br.msg
+%%GUI%%share/git-gui/lib/msgs/pt_pt.msg
 %%GUI%%share/git-gui/lib/msgs/ru.msg
 %%GUI%%share/git-gui/lib/msgs/sv.msg
 %%GUI%%share/git-gui/lib/msgs/vi.msg
@@ -1440,6 +1440,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/gitk/lib/msgs/it.msg
 %%GUI%%share/gitk/lib/msgs/ja.msg
 %%GUI%%share/gitk/lib/msgs/pt_br.msg
+%%GUI%%share/gitk/lib/msgs/pt_pt.msg
 %%GUI%%share/gitk/lib/msgs/ru.msg
 %%GUI%%share/gitk/lib/msgs/sv.msg
 %%GUI%%share/gitk/lib/msgs/vi.msg
