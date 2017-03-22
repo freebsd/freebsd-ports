@@ -144,6 +144,7 @@ PLIST_SUB+=WITH_NFLOG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
+USES+=		pkgconfig
 LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 CONFIGURE_ARGS+=--enable-geoip
 .endif
