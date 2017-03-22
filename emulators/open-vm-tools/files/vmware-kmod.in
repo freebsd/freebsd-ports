@@ -84,18 +84,3 @@ stop_cmd=":"
 load_rc_config $name
 [ -z "$vmware_guest_vmblock_enable" ] && vmware_guest_vmblock_enable="NO"
 run_rc_command "$1"
-
-# VMware kernel module: vmhgfs
-kernel_mod="vmhgfs"
-name="vmware_guest_${kernel_mod}"
-rcvar=vmware_guest_${kernel_mod}_enable
-extra_commands="status"
-status_cmd="vmware_mod_status ${kernel_mod}"
-start_precmd="${checkvm_cmd}"
-start_cmd="vmware_mod_load ${kernel_mod}"
-stop_precmd="${checkvm_cmd}"
-stop_cmd=":"
-
-load_rc_config $name
-[ -z "$vmware_guest_vmhgfs_enable" ] && vmware_guest_vmhgfs_enable="NO"
-run_rc_command "$1"
