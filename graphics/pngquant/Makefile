@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pngquant
-PORTVERSION=	2.7.2
+PORTVERSION=	2.9.0
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	http://pngquant.org/
@@ -19,40 +19,35 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=	gmake pkgconfig
 HAS_CONFIGURE=	yes
-MAKE_ARGS+=	CC="${CC}"
-
-CPPFLAGS+=	$$(libpng-config --I_opts)
-LDFLAGS+=	$$(libpng-config --ldflags)
 
 PORTDOCS=	CHANGELOG README.md
 PLIST_FILES=	bin/pngquant \
 				man/man1/pngquant.1.gz
 
-OPTIONS_DEFINE=	OPTIMIZED_FLAGS OPENMP LCMS2 DEBUG DOCS
+OPTIONS_DEFINE=	OPTIMIZED_FLAGS LCMS2 DEBUG DOCS
 OPTIONS_DEFINE_i386=	SSE
+OPTIONS_DEFINE_amd64=	SSE
 LCMS2_DESC=	Support for ICC profiles via LCMS library
+OPTIMIZED_FLAGS_DESC= ${OPTIMIZED_CFLAGS_DESC}
+OPTIONS_DEFAULT_amd64=	SSE
 
-DEBUG_CFLAGS_OFF=	-DNDEBUG
+DEBUG_CONFIGURE_ON=	--enable-debug
 
 LCMS2_CONFIGURE_WITH=	lcms2
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
-OPENMP_CPPFLAGS=	-I${LOCALBASE}/include
-OPENMP_CONFIGURE_ON=	--with-openmp
-OPENMP_CONFIGURE_ENV=	C_INCLUDE_PATH=${LOCALBASE}/include
-
-OPTIMIZED_FLAGS_CFLAGS=	-O3 -fearly-inlining -fstrict-aliasing \
+OPTIMIZED_FLAGS_CFLAGS=	-O3 -fstrict-aliasing \
 		-ffast-math -funroll-loops -fomit-frame-pointer \
 		-fexpensive-optimizations -ffinite-math-only \
 		-funsafe-loop-optimizations -ftree-vectorize
 
-# SSE2 support is always enabled on amd64
-SSE_CFLAGS=	-DUSE_SSE=1 -msse2
+SSE_CONFIGURE_ENABLE=sse
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngquant ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pngquant.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
