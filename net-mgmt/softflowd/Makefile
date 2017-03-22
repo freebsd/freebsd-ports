@@ -4,7 +4,7 @@
 PORTNAME=	softflowd
 PORTVERSION=	0.9.9
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	http://www2.mindrot.org/files/softflowd/
+MASTER_SITES=	http://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/softflowd/
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Flow-based network traffic analyzer and exporter
