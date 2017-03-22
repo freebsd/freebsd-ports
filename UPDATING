@@ -5,6 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170321:
+  AFFECTS: users of samba36-libsmbclient, samba36-nmblookup samba36-smbclient and samba36
+  AUTHOR: antoine@FreeBSD.org
+
+  The obsolete samba36-libsmbclient, samba36-nmblookup, samba36-smbclient and samba36 packages/ports were removed
+  and USES=samba was introduced.
+  Upgrade instructions:
+
+  For package users having those ports installed indirectly (as dependencies):
+    # pkg upgrade
+
+  For package users having those ports installed directly (leaf ports):
+    # pkg upgrade
+    # pkg install samba43
+
+  For ports users:
+    Choose you samba version, for instance add DEFAULT_VERSIONS+= samba=4.3 to make.conf
+
+    Remove obsolete packages:
+    # pkg delete -f samba36-libsmbclient samba36-nmblookup samba36-smbclient samba36
+
+    Portmaster users:
+    # portmaster net/samba43
+    # portmaster -a
+
+    Portupgrade users:
+    # portupgrade net/samba43
+    # portupgrade -a
+
 20170319:
   AFFECTS: users of mail/pecl-mailparse
   AUTHOR: dbaio@bsd.com.br

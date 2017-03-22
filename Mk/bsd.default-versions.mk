@@ -83,6 +83,8 @@ PYTHON2_DEFAULT?=	2.7
 PYTHON3_DEFAULT?=	3.5
 # Possible values: 2.1, 2.2, 2.3, 2.4
 RUBY_DEFAULT?=		2.3
+# Possible values: 4.2, 4.3, 4.4
+SAMBA_DEFAULT?=		4.3
 # Possible values: base, openssl, openssl-devel, libressl, libressl-devel
 .if !defined(SSL_DEFAULT)
 #	If no preference was set, check for an installed base version

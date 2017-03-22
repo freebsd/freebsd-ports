@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.8.50.g20170307
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	GH \
 		LOCAL/nox:dtc \
@@ -214,7 +215,7 @@ CONFIGURE_ARGS+=	--static
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:net/samba36
+USES+=		samba:run # smbd
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}

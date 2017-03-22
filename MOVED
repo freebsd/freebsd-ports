@@ -9142,7 +9142,11 @@ devel/rubygem-devise-rails4|devel/rubygem-devise|2017-03-16|Has expired: Please 
 textproc/rubygem-github-markdown||2017-03-16|Has expired: This gem is not maintained and not supported by upstream
 chinese/irssi|irc/irssi|2017-03-17|Use irc/irssi, which can handle Chinese locales
 archivers/macutils||2017-03-19|Has expired: Not maintained in 16 years, many missing header inclusions
-www/npm012|www/npm|2017-03-20|Has expired: Depends on deprecated www/node012. Please use www/npm instead.
+www/npm012|www/npm|2017-03-20|Has expired: Depends on deprecated www/node012. Please use www/npm instead
 sysutils/ucspi-ssl-tls|sysutils/ucspi-ssl|2017-03-20|Current ucspi-ssl supports TLS
 net/rubygem-signet|security/rubygem-signet|2017-03-20|Duplicate
 www/node012|www/node|2017-03-21|Has expired: Upstream has placed 0.12.x in maintenance mode, see https://github.com/nodejs/LTS
+net/samba-libsmbclient|net/samba43|2017-03-21|Obsolete
+net/samba-nmblookup|net/samba43|2017-03-21|Obsolete
+net/samba-smbclient|net/samba43|2017-03-21|Obsolete
+net/samba36|net/samba43|2017-03-21|Obsolete

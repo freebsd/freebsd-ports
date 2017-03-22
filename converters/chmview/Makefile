@@ -10,7 +10,8 @@ MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Extractor from .chm files
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libchm.so:misc/chmlib
 

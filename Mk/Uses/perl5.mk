@@ -117,6 +117,8 @@ PERL?=		${LOCALBASE}/bin/perl
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL} ac_cv_path_PERL_PATH=${PERL} \
 		PERL_USE_UNSAFE_INC=1
 
+MAKE_ENV+=	PERL_USE_UNSAFE_INC=1
+
 QA_ENV+=	SITE_ARCH_REL=${SITE_ARCH_REL} LIBPERL=libperl.so.${PERL_VER}
 
 # Define the want perl first if defined

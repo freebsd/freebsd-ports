@@ -2,7 +2,7 @@
 
 PORTNAME=	kde-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +12,6 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libexiv2.so:graphics/exiv2 \
 		libwebp.so:graphics/webp \
 		libslp.so:net/openslp \
-		libsmbclient.so:net/samba-libsmbclient \
 		libssh.so:security/libssh \
 		libqzeitgeist.so:sysutils/qzeitgeist
 # Explicitly depend on libssh to avoid interference with ssh.4 from
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 RUN_DEPENDS=	cagibid:net/cagibi
 
-USES=		cmake:outsource gettext gmake jpeg kde:4 shared-mime-info \
+USES=		cmake:outsource gettext gmake jpeg kde:4 samba:lib shared-mime-info \
 		shebangfix tar:xz
 USE_KDE=	kactivities kdelibs oxygen-icons4 \
 		attica automoc4 pimlibs strigi nepomuk-core

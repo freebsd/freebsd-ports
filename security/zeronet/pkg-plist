@@ -24,6 +24,12 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/CryptMessage/__init__.py
 %%DATADIR%%/plugins/CryptMessage/__init__.pyc
 %%DATADIR%%/plugins/CryptMessage/__init__.pyo
+%%DATADIR%%/plugins/FilePack/FilePackPlugin.py
+%%DATADIR%%/plugins/FilePack/FilePackPlugin.pyc
+%%DATADIR%%/plugins/FilePack/FilePackPlugin.pyo
+%%DATADIR%%/plugins/FilePack/__init__.py
+%%DATADIR%%/plugins/FilePack/__init__.pyc
+%%DATADIR%%/plugins/FilePack/__init__.pyo
 %%DATADIR%%/plugins/MergerSite/MergerSitePlugin.py
 %%DATADIR%%/plugins/MergerSite/MergerSitePlugin.pyc
 %%DATADIR%%/plugins/MergerSite/MergerSitePlugin.pyo
@@ -33,6 +39,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/MergerSite/languages/fr.json
 %%DATADIR%%/plugins/MergerSite/languages/hu.json
 %%DATADIR%%/plugins/MergerSite/languages/it.json
+%%DATADIR%%/plugins/MergerSite/languages/pt-br.json
 %%DATADIR%%/plugins/MergerSite/languages/tr.json
 %%DATADIR%%/plugins/MergerSite/languages/zh-tw.json
 %%DATADIR%%/plugins/MergerSite/languages/zh.json
@@ -44,6 +51,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/Mute/__init__.pyo
 %%DATADIR%%/plugins/Mute/languages/hu.json
 %%DATADIR%%/plugins/Mute/languages/it.json
+%%DATADIR%%/plugins/Mute/languages/pt-br.json
 %%DATADIR%%/plugins/Mute/languages/zh-tw.json
 %%DATADIR%%/plugins/Mute/languages/zh.json
 %%DATADIR%%/plugins/Newsfeed/NewsfeedPlugin.py
@@ -73,6 +81,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/OptionalManager/__init__.pyo
 %%DATADIR%%/plugins/OptionalManager/languages/fr.json
 %%DATADIR%%/plugins/OptionalManager/languages/hu.json
+%%DATADIR%%/plugins/OptionalManager/languages/pt-br.json
 %%DATADIR%%/plugins/OptionalManager/languages/zh-tw.json
 %%DATADIR%%/plugins/OptionalManager/languages/zh.json
 %%DATADIR%%/plugins/PeerDb/PeerDbPlugin.py
@@ -94,6 +103,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/Sidebar/languages/hu.json
 %%DATADIR%%/plugins/Sidebar/languages/it.json
 %%DATADIR%%/plugins/Sidebar/languages/pl.json
+%%DATADIR%%/plugins/Sidebar/languages/pt-br.json
 %%DATADIR%%/plugins/Sidebar/languages/ru.json
 %%DATADIR%%/plugins/Sidebar/languages/tr.json
 %%DATADIR%%/plugins/Sidebar/languages/zh-tw.json
@@ -159,6 +169,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/Trayicon/languages/fr.json
 %%DATADIR%%/plugins/Trayicon/languages/hu.json
 %%DATADIR%%/plugins/Trayicon/languages/it.json
+%%DATADIR%%/plugins/Trayicon/languages/pt-br.json
 %%DATADIR%%/plugins/Trayicon/languages/tr.json
 %%DATADIR%%/plugins/Trayicon/languages/zh-tw.json
 %%DATADIR%%/plugins/Trayicon/languages/zh.json
@@ -487,7 +498,9 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/Translate/languages/fr.json
 %%DATADIR%%/src/Translate/languages/hu.json
 %%DATADIR%%/src/Translate/languages/it.json
+%%DATADIR%%/src/Translate/languages/nl.json
 %%DATADIR%%/src/Translate/languages/pl.json
+%%DATADIR%%/src/Translate/languages/pt-br.json
 %%DATADIR%%/src/Translate/languages/ru.json
 %%DATADIR%%/src/Translate/languages/tr.json
 %%DATADIR%%/src/Translate/languages/zh-tw.json
@@ -517,6 +530,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/Ui/media/img/loading.gif
 %%DATADIR%%/src/Ui/media/img/logo.psd
 %%DATADIR%%/src/Ui/media/lib/00-jquery.min.js
+%%DATADIR%%/src/Ui/media/lib/RateLimit.coffee
 %%DATADIR%%/src/Ui/media/lib/ZeroWebsocket.coffee
 %%DATADIR%%/src/Ui/media/lib/jquery.cssanim.js
 %%DATADIR%%/src/Ui/media/lib/jquery.csslater.coffee

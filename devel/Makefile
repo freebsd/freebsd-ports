@@ -4915,6 +4915,7 @@
     SUBDIR += py3-hgtools
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
+    SUBDIR += py3-libzfs
     SUBDIR += py3-lxml
     SUBDIR += py3-mccabe
     SUBDIR += py3-nose
@@ -5435,6 +5436,7 @@
     SUBDIR += rubygem-rdoc
     SUBDIR += rubygem-readwritesettings
     SUBDIR += rubygem-recaptcha
+    SUBDIR += rubygem-recursive-open-struct
     SUBDIR += rubygem-redis-activesupport
     SUBDIR += rubygem-redis-store
     SUBDIR += rubygem-redmine_plugin_support

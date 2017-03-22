@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	randomForest
-DISTVERSION=	4.6-7
-PORTREVISION=	6
+DISTVERSION=	4.6-12
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,6 +10,6 @@ COMMENT=	Classification based on a forest of trees using random inputs
 
 RUN_DEPENDS=	R-cran-RColorBrewer>=1.0.5_6:graphics/R-cran-RColorBrewer
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>

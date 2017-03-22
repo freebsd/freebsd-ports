@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.2.4
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -274,7 +274,7 @@ SHOUTCAST_CONFIGURE_ENABLE=	shout
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CONFIGURE_ENABLE=	sndio
 
-SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+SMB_USES=		samba:lib
 SMB_CONFIGURE_ENABLE=	smbclient
 
 STREAM_CONFIGURE_ENABLE=sout

@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}44
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -156,7 +156,6 @@ CONFIGURE_ARGS+=	\
 			--disable-rpath \
 			--without-gettext \
 			--with-sendfile-support \
-			--builtin-libraries=smbclient \
 			${ICONV_CONFIGURE_BASE}
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 .if ${ARCH} == "amd64"

@@ -3,7 +3,7 @@
 
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.2
+DISTVERSION=	0.19.3
 PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frozendict>=0.5:devel/py-frozendict \
 		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.0.2:security/py-pysaml2 \
 		${PYTHON_PKGNAMEPREFIX}pymacaroons-pynacl>=0.9.3:security/py-pymacaroons-pynacl \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.10.0:devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>=0.6.6:devel/py-matrix-angular-sdk \
 		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3.0:devel/py-msgpack-python \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
@@ -65,9 +64,10 @@ PLIST_FILES+=	"@sample %%ETCDIR%%/log.config.sample"
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	PGSQL
-OPTIONS_DEFAULT=
-PGSQL_RUN_DEPENDS+= ${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2
+OPTIONS_DEFINE=	PGSQL SQLITE
+OPTIONS_DEFAULT= SQLITE
+PGSQL_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2
+SQLITE_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 .include <bsd.port.options.mk>
 
