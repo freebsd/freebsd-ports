@@ -18,12 +18,18 @@ GH_ACCOUNT=	freenas
 GH_PROJECT=	py-libzfs
 GH_TAGNAME=	fb5b8f2
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 
 MAKE_ENV=	FREEBSD_SRC=${SRC_BASE}
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3306
+BUILD_DEPENDS=	cython>0:lang/cython3
+.else
+BUILD_DEPENDS=	cython>0:lang/cython
+.endif
 
 .if ${PYTHON_REL} < 3400
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>0:devel/py-enum34
