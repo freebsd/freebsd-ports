@@ -2,29 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	zerotier
-PORTVERSION=	1.1.14
+PORTVERSION=	1.2.2
 CATEGORIES=	net
 
-MAINTAINER=	corsmith@gmail.com
+MAINTAINER=	dch@skunkwerks.at
 COMMENT=	Network virtualization everywhere
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL-3
 
-USES=		gmake
+USES=		gmake compiler:c11
 USE_RC_SUBR=	zerotier
 
 USE_GITHUB=	yes
+GH_ACCOUNT=	zerotier
 GH_PROJECT=	ZeroTierOne
+
 CFLAGS+=	-flax-vector-conversions
 
 PLIST_FILES=	bin/zerotier-cli bin/zerotier-idtool sbin/zerotier-one
-
-OPTIONS_DEFINE=	CONTROLLER
-
-CONTROLLER_DESC=	Network management controller microservice support
-CONTROLLER_USES=	sqlite
-CONTROLLER_MAKE_ARGS=	ZT_ENABLE_NETWORK_CONTROLLER=1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zerotier-one ${STAGEDIR}${PREFIX}/sbin/
