@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phalcon
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -27,5 +27,9 @@ CONFIGURE_ARGS=	--enable-phalcon
 
 PBITS=		${ARCH:S/amd64/64/:S/armv6/32/:S/i386/32/:S/x86_64/64/}
 WRKSRC_SUBDIR=	build/php${PHP_VER:C/.$//}/${PBITS}bits
+
+.if ${PHP_VER} == 70 && ${PBITS} == 32
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-phalcon.zep.c
+.endif
 
 .include <bsd.port.post.mk>
