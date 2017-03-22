@@ -243,7 +243,7 @@ ntopng:*:288:
 # free: 299
 backuppc:*:300:
 # free: 301
-# free: 302
+netdata:*:302:
 # free: 303
 # free: 304
 # free: 305
