@@ -1,8 +1,28 @@
 diff --git dom/system/OSFileConstants.cpp dom/system/OSFileConstants.cpp
-index 4b21361..cb3be32 100644
+index 88bba9baa401..99f240952dfe 100644
 --- mozilla/dom/system/OSFileConstants.cpp
 +++ mozilla/dom/system/OSFileConstants.cpp
-@@ -662,7 +662,7 @@
+@@ -16,14 +16,17 @@
+ #include "dirent.h"
+ #include "poll.h"
+ #include "sys/stat.h"
+-#if defined(ANDROID)
++#if defined(XP_LINUX)
+ #include <sys/vfs.h>
+ #define statvfs statfs
++#define f_frsize f_bsize
+ #else
+ #include "sys/statvfs.h"
++#endif // defined(XP_LINUX)
++#if !defined(ANDROID)
+ #include "sys/wait.h"
+ #include <spawn.h>
+-#endif // defined(ANDROID)
++#endif // !defined(ANDROID)
+ #endif // defined(XP_UNIX)
+ 
+ #if defined(XP_LINUX)
+@@ -699,7 +702,7 @@ static const dom::ConstantSpec gLibcProperties[] =
  
    { "OSFILE_SIZEOF_STATVFS", JS::Int32Value(sizeof (struct statvfs)) },
  
@@ -12,7 +32,7 @@ index 4b21361..cb3be32 100644
  
  #endif // defined(XP_UNIX)
 diff --git toolkit/components/osfile/modules/osfile_unix_back.jsm toolkit/components/osfile/modules/osfile_unix_back.jsm
-index b59fca4..0cf220b 100644
+index a028dda7d5ec..f5c632e3d7e5 100644
 --- mozilla/toolkit/components/osfile/modules/osfile_unix_back.jsm
 +++ mozilla/toolkit/components/osfile/modules/osfile_unix_back.jsm
 @@ -228,8 +228,8 @@
@@ -27,11 +47,11 @@ index b59fca4..0cf220b 100644
                          "f_bavail", Type.fsblkcnt_t.implementation);
  
 diff --git toolkit/components/osfile/modules/osfile_unix_front.jsm toolkit/components/osfile/modules/osfile_unix_front.jsm
-index 99e5e9b..de642c5 100644
+index bd60d4d8419c..a8cd6b546b0e 100644
 --- mozilla/toolkit/components/osfile/modules/osfile_unix_front.jsm
 +++ mozilla/toolkit/components/osfile/modules/osfile_unix_front.jsm
-@@ -373,7 +373,7 @@
-        throw_on_negative("statvfs",  UnixFile.statvfs(sourcePath, fileSystemInfoPtr));
+@@ -399,7 +399,7 @@
+        throw_on_negative("statvfs",  (UnixFile.statvfs || UnixFile.statfs)(sourcePath, fileSystemInfoPtr));
  
         let bytes = new Type.uint64_t.implementation(
 -                        fileSystemInfo.f_bsize * fileSystemInfo.f_bavail);
