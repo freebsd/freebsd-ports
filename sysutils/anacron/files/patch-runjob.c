@@ -1,6 +1,6 @@
---- runjob.c.orig	Thu Jun 16 17:04:19 2005
-+++ runjob.c	Thu Jun 16 17:10:48 2005
-@@ -39,26 +39,14 @@
+--- runjob.c.orig	2000-06-20 23:12:18 UTC
++++ runjob.c
+@@ -39,26 +39,14 @@ static int
  temp_file()
  /* Open a temporary file and return its file descriptor */
  {
