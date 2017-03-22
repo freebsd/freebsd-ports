@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 LICENSE=	GPLv2
