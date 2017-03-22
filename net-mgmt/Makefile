@@ -154,6 +154,7 @@
     SUBDIR += nedi
     SUBDIR += nefu
     SUBDIR += net-snmp
+    SUBDIR += netdata
     SUBDIR += netdisco
     SUBDIR += netdisco-mibs
     SUBDIR += netdot
