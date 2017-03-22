@@ -11,8 +11,6 @@ COMMENT=	Python libzfs bindings
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	cython>0:lang/cython
-
 USE_GITHUB=     yes
 GH_ACCOUNT=	freenas
 GH_PROJECT=	py-libzfs
