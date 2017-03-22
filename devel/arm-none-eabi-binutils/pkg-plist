@@ -12,6 +12,9 @@ arm-none-eabi/bin/size
 arm-none-eabi/lib/ldscripts/armelf.x
 arm-none-eabi/lib/ldscripts/armelf.xbn
 arm-none-eabi/lib/ldscripts/armelf.xc
+arm-none-eabi/lib/ldscripts/armelf.xd
+arm-none-eabi/lib/ldscripts/armelf.xdc
+arm-none-eabi/lib/ldscripts/armelf.xdw
 arm-none-eabi/lib/ldscripts/armelf.xn
 arm-none-eabi/lib/ldscripts/armelf.xr
 arm-none-eabi/lib/ldscripts/armelf.xs
