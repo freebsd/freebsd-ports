@@ -29,12 +29,12 @@
  
  ac_fn_c_check_header_mongrel "$LINENO" "wchar.h" "ac_cv_header_wchar_h" "$ac_includes_default"
  if test "x$ac_cv_header_wchar_h" = xyes; then :
-@@ -22238,7 +22229,7 @@
- 
- ### General flags / actions
- CFLAGS="$CFLAGS -Wall"
--CFLAGS="$CFLAGS -Werror"
-+CFLAGS="$CFLAGS -Werror -Wno-unused-function"
+@@ -22242,7 +22233,7 @@
  
  # -Wno-unknown-pragmas is due to gcc not understanding '#pragma ident' in Xlib.h on OpenSolaris.
  for TEST_CFLAG in -Wno-pointer-sign -Wno-unused-value -fno-strict-aliasing \
+-    -Wno-unknown-pragmas -Wno-uninitialized; do
++    -Wno-unknown-pragmas -Wno-uninitialized -Wno-unused-function -Wno-address-of-packed-member; do
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for GCC flag $TEST_CFLAG" >&5
+ $as_echo_n "checking for GCC flag $TEST_CFLAG... " >&6; }
+     ORIGINAL_CFLAGS="$CFLAGS"

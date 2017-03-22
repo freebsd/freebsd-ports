@@ -9,7 +9,7 @@
  COMMON_HGFS_SRCS += request.c
  COMMON_HGFS_SRCS += worker.c
  COMMON_HGFS_SRCS += fsutil.c
-@@ -108,7 +108,9 @@
+@@ -108,7 +108,13 @@
  CWARNFLAGS += -Wpointer-arith
  CWARNFLAGS += -Winline
  CWARNFLAGS += -Wcast-qual
@@ -19,3 +19,7 @@
  
 +.include <bsd.own.mk>
  .include <bsd.kmod.mk>
++
++.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 40000
++CWARNFLAGS += -Wno-error-address-of-packed-member
++.endif
