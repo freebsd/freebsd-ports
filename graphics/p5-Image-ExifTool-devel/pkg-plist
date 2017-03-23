@@ -90,6 +90,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/InDesign.pm
 %%SITE_PERL%%/Image/ExifTool/JPEG.pm
 %%SITE_PERL%%/Image/ExifTool/JPEGDigest.pm
+%%SITE_PERL%%/Image/ExifTool/JSON.pm
 %%SITE_PERL%%/Image/ExifTool/JVC.pm
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
 %%SITE_PERL%%/Image/ExifTool/Kodak.pm
@@ -264,6 +265,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::InDesign.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::JPEG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::JPEGDigest.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::JSON.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::JVC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Jpeg2000.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Kodak.3.gz
