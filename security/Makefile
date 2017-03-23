@@ -897,6 +897,7 @@
     SUBDIR += py-plone.session
     SUBDIR += py-potr
     SUBDIR += py-pow
+    SUBDIR += py-pyaes
     SUBDIR += py-pyaff4
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
