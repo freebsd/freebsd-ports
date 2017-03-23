@@ -3210,7 +3210,6 @@ lib/python%%XYDOT%%/shelve.py
 lib/python%%XYDOT%%/shlex.py
 lib/python%%XYDOT%%/shutil.py
 lib/python%%XYDOT%%/signal.py
-lib/python%%XYDOT%%/site-packages/README
 lib/python%%XYDOT%%/site-packages/README.txt
 lib/python%%XYDOT%%/site.py
 lib/python%%XYDOT%%/smtpd.py
@@ -3378,9 +3377,15 @@ lib/python%%XYDOT%%/test/__pycache__/memory_watchdog.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/mock_socket.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/mock_socket.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/mock_socket.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/mod_generics_cache.cpython-36.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/mod_generics_cache.cpython-36.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/mod_generics_cache.cpython-36.pyc
 lib/python%%XYDOT%%/test/__pycache__/mp_fork_bomb.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/mp_fork_bomb.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/mp_fork_bomb.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/mp_preload.cpython-36.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/mp_preload.cpython-36.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/mp_preload.cpython-36.pyc
 lib/python%%XYDOT%%/test/__pycache__/multibytecodec_support.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/multibytecodec_support.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/multibytecodec_support.cpython-%%XY%%.pyc
@@ -5002,7 +5007,9 @@ lib/python%%XYDOT%%/test/math_testcases.txt
 lib/python%%XYDOT%%/test/memory_watchdog.py
 lib/python%%XYDOT%%/test/mime.types
 lib/python%%XYDOT%%/test/mock_socket.py
+lib/python%%XYDOT%%/test/mod_generics_cache.py
 lib/python%%XYDOT%%/test/mp_fork_bomb.py
+lib/python%%XYDOT%%/test/mp_preload.py
 lib/python%%XYDOT%%/test/multibytecodec_support.py
 lib/python%%XYDOT%%/test/nokia.pem
 lib/python%%XYDOT%%/test/nullbytecert.pem
@@ -6525,7 +6532,7 @@ lib/python%%XYDOT%%/venv/__pycache__/__init__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/venv/__pycache__/__main__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/venv/__pycache__/__main__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/venv/__pycache__/__main__.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/venv/scripts/posix/activate
+lib/python%%XYDOT%%/venv/scripts/common/activate
 lib/python%%XYDOT%%/venv/scripts/posix/activate.csh
 lib/python%%XYDOT%%/venv/scripts/posix/activate.fish
 lib/python%%XYDOT%%/warnings.py
