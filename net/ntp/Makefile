@@ -3,6 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.2.8p10
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
 		http://archive.ntp.org/ntp4/ntp-4.2/ \
@@ -12,7 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-BUILD_DEPENDS=	autogen:devel/autogen
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libmd5.so:www/libwww
 
