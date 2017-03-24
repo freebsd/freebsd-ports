@@ -1,6 +1,6 @@
---- ./buildtools/wafsamba/samba_pidl.py.orig	2013-01-27 23:15:21.739874063 +0000
-+++ ./buildtools/wafsamba/samba_pidl.py	2013-01-27 23:15:50.549893124 +0000
-@@ -88,7 +88,7 @@
+--- buildtools/wafsamba/samba_pidl.py.orig	2016-01-26 11:45:46 UTC
++++ buildtools/wafsamba/samba_pidl.py
+@@ -89,7 +89,7 @@ def SAMBA_PIDL(bld, pname, source,
      # prime the list of nodes we are dependent on with the cached pidl sources
      t.allnodes = pidl_src_nodes
  
