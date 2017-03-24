@@ -57,10 +57,6 @@ share/vmware-tools/vm-support
 @rmtry share/vmware-tools/tools.conf
 @rmtry etc/vmware-tools/plugins
 etc/pam.d/vmtoolsd
-etc/rc.conf.d/vmware_guest_vmblock
-etc/rc.conf.d/vmware_guest_vmmemctl
-etc/rc.conf.d/vmware_guest_vmxnet
-etc/rc.conf.d/vmware_guestd
 @dir %%DATADIR%%/scripts/vmware
 @dir %%DATADIR%%/tests
 @preunexec %%PREFIX%%/bin/vmware-rpctool 'tools.set.version 0' ; service vmware-guestd stop ; true

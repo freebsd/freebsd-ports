@@ -3,6 +3,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
+PORTREVISION=		1
 PORTEPOCH=		2
 MASTER_SITES=		https://github.com/vmware/open-vm-tools/files/590760/
 DISTNAME=		open-vm-tools-${RELEASE_VER}-${BUILD_VER}
@@ -92,9 +93,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/scripts/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/tests/
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.conf.d
-	${ECHO} 'vmware_guest_vmblock_enable="yes"'  > ${STAGEDIR}${PREFIX}/etc/rc.conf.d/vmware_guest_vmblock
-	${ECHO} 'vmware_guest_vmmemctl_enable="yes"' > ${STAGEDIR}${PREFIX}/etc/rc.conf.d/vmware_guest_vmmemctl
-	${ECHO} 'vmware_guest_vmxnet_enable="yes"'   > ${STAGEDIR}${PREFIX}/etc/rc.conf.d/vmware_guest_vmxnet
-	${ECHO} 'vmware_guestd_enable="yes"'         > ${STAGEDIR}${PREFIX}/etc/rc.conf.d/vmware_guestd
 
 .include <bsd.port.post.mk>
