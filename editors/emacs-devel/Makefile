@@ -19,10 +19,10 @@ BROKEN_aarch64=		Fails to link: missing sbrk
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	55c0c3e
+GH_TAGNAME=	560d6f9
 
 EMACS_VER=	26.0.50
-EMACS_REV=	20170303
+EMACS_REV=	20170323
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
@@ -42,7 +42,7 @@ INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
 	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar	\
 	srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
 
-OPTIONS_DEFINE=	ACL DBUS GNUTLS LLDB MODULES SOURCES THREADS X11 XML
+OPTIONS_DEFINE=	ACL DBUS GNUTLS MODULES SOURCES THREADS X11 XML
 
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
 OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
@@ -65,7 +65,6 @@ GFILE_DESC=	File notification via gfile
 GRAPHICS_DESC=	Graphics support (each implies X11)
 GSETTINGS_DESC=	GSettings support             (implies DBUS)
 KQUEUE_DESC=	File notification via kqueue
-LLDB_DESC=	Enable LLDB support for GUD
 #LTO_DESC=	Enable link-time optimization
 MAGICK_DESC=	ImageMagick support
 M17N_DESC=	M17N support for text-shaping (implies XFT)
@@ -119,7 +118,6 @@ JPEG_USES=		jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_IMPLIES=		X11
 KQUEUE_CONFIGURE_ON=	--with-file-notification=kqueue
-LLDB_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-lldb-gud.el
 #LTO_CONFIGURE_ON=	--enable-link-time-optimization
 M17N_LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=	m17n-flt
