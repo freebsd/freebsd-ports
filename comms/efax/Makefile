@@ -1,16 +1,16 @@
 # Created by: MITA Yoshio <mita@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	efax-0.9a
-PORTVERSION=	001114a7
-PORTREVISION=	7
+PORTNAME=	efax
+DISTVERSION=	0.9a-001114a7
+PORTREVISION=	8
 CATEGORIES=	comms
 MASTER_SITES=	http://shino.pos.to/linux/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fax send/receive program
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	xloadimage:x11/xloadimage
