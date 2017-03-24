@@ -9057,6 +9057,7 @@ devel/libdict||2017-02-08|Has expired: Broken for more than 6 months
 math/R-cran-SuppDists||2017-02-08|Has expired: Broken for more than 6 months
 devel/py-re2||2017-02-08|Has expired: Broken for more than 6 months
 net-p2p/digitalcoin||2017-02-08|Has expired: Broken for more than 6 months
+textproc/rubygem-mustache|devel/rubygem-mustache|2017-02-08|Duplicate of devel/rubygem-mustache
 devel/php70-APCu|devel/pecl-APCu|2017-02-12|Use devel/pecl-APCu for PHP 7.0+ users
 chinese/mutt|mail/mutt|2017-02-13|Use mail/mutt, which can handle Chinese locales
 lang/libjit||2017-02-14|Has expired: This version is severely out of date and its use is discouraged; see http://www.gnu.org/software/libjit/
