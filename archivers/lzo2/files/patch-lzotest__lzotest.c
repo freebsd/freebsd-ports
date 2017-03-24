@@ -1,4 +1,4 @@
---- lzotest/lzotest.c.orig	2015-02-04 11:24:51 UTC
+--- lzotest/lzotest.c.orig	2017-03-01 19:54:14 UTC
 +++ lzotest/lzotest.c
 @@ -206,7 +206,7 @@ enum {
  // command line options
@@ -16,7 +16,7 @@
 +#if 0
      printf("\nLZO real-time data compression library (v%s, %s).\n",
             lzo_version_string(), lzo_version_date());
-     printf("Copyright (C) 1996-2015 Markus Franz Xaver Johannes Oberhumer\nAll Rights Reserved.\n\n");
+     printf("Copyright (C) 1996-2017 Markus Franz Xaver Johannes Oberhumer\nAll Rights Reserved.\n\n");
 +#endif
  
  

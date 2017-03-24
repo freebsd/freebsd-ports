@@ -1,19 +1,19 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	rufus-scheduler
-PORTVERSION=	3.4.0
+PORTNAME=	et-orbi
+PORTVERSION=	1.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby job scheduler for at, cron and others
+COMMENT=	Time zones for fugit and rufus-scheduler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-et-orbi>=1.0:devel/rubygem-et-orbi
+RUN_DEPENDS=	rubygem-tzinfo>=0:devel/rubygem-tzinfo
 
-NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

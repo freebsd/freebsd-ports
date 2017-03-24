@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymarc
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.6
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -13,7 +13,7 @@ COMMENT=	Read Write And Modify MARC Bibliographic Data
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six
 
 NO_ARCH=	yes
 USES=		python
