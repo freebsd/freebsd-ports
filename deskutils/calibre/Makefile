@@ -3,6 +3,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	2.82.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -11,8 +12,7 @@ COMMENT=	Ebook management application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick \
-		libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
 		libwmflite.so:graphics/libwmf \
 		libchm.so:misc/chmlib \
