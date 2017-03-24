@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.14.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -143,7 +143,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-jquery-rails4>=4.1.0:www/rubygem-jquery-rails4 \
 	rubygem-jquery-ui-rails5-rails4>=5.0.0:www/rubygem-jquery-ui-rails5-rails4 \
 	rubygem-request_store>=1.3:devel/rubygem-request_store \
-	rubygem-select2-rails>=3.5.9:www/rubygem-select2-rails \
+	rubygem-select2-rails3>=3.5.9:www/rubygem-select2-rails3 \
 	rubygem-virtus>=1.0.1:devel/rubygem-virtus \
 	rubygem-net-ssh>=3.0.1:security/rubygem-net-ssh \
 	rubygem-base32>=0.3.2:converters/rubygem-base32 \
