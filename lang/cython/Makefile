@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES?=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON+=	autoplist distutils
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Cython \

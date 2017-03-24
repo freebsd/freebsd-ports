@@ -1,17 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	net-ssh-gateway
-PORTVERSION=	2.0.0
+PORTVERSION=	1.2.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Establish Net::SSH connections through firewalls
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-net-ssh>=4.0.0:security/rubygem-net-ssh
+RUN_DEPENDS=	rubygem-net-ssh>=2.6.5:security/rubygem-net-ssh
+
+PORTSCOUT=	limit:^1\.
 
 NO_ARCH=	yes
 USE_RUBY=	yes

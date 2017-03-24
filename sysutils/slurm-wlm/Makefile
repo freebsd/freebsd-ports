@@ -3,6 +3,7 @@
 
 PORTNAME=	slurm
 PORTVERSION=	16.05.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -17,7 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libsysinfo.so:devel/libsysinfo \
-		libmunge.so:security/munge
+		libmunge.so:security/munge \
+		liblz4.so:archivers/liblz4
 
 USERS=		slurm
 GROUPS=		${USERS}
@@ -52,7 +54,9 @@ GTK2_USE=		GNOME=cairo,gdkpixbuf2,glib20,gtk20
 GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 GTK2_USES=		gettext
-GTK2_CONFIGURE_ENV_OFF=	ac_gtk_test=no
+# Neither of these work.  See post-patch below.
+#GTK2_CONFIGURE_ENV_OFF=	ac_gtk_test=no
+#GTK2_CONFIGURE_OFF=	--disable-gtktest
 
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 			libsz.so:science/szip
@@ -66,6 +70,7 @@ IPMI_CONFIGURE_WITH=	freeipmi
 
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_with=	mysql
+MYSQL_CONFIGURE_OFF=	--with-mysql_config=/nonexistent
 
 RRD_LIB_DEPENDS=	librrd.so:databases/rrdtool
 RRD_CONFIGURE_WITH=	rrdtool
@@ -77,9 +82,32 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 # #include <pty.h> with appropriate headers will therefore not work, so instead
 # add a pty.h for the build.
 post-patch:
-	${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
+	@${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
+	@${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/bin/mail|/usr/bin/mail|g' \
+		${WRKSRC}/src/common/read_config.h \
+		${WRKSRC}/contribs/seff/smail.in \
+		${WRKSRC}/doc/html/configurator.easy.html.in \
+		${WRKSRC}/doc/html/configurator.html.in \
+		${WRKSRC}/contribs/cray/slurm.conf.template \
+		${WRKSRC}/doc/man/man1/strigger.1 \
+		${WRKSRC}/doc/man/man5/slurm.conf.5
+	@${REINPLACE_CMD} \
+		-e 's|=linux|=FreeBSD|g' \
+		-e 's|run/slurmctld.pid|run/slurm/slurmctld.pid|' \
+		-e 's|run/slurmd.pid|run/slurm/slurd.pid|' \
+		-e 's|SlurmdSpoolDir=.*|SlurmdSpoolDir=/var/spool/slurmd|' \
+		-e 's|StateSaveLocation=.*|StateSaveLocation=/var/run/slurm|' \
+		${WRKSRC}/etc/slurm.conf.example
+
+# Hack around nonfunctional --disable-gtktest flag
+post-patch-GTK2-off:
+	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
+		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/slurm.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
+		${STAGEDIR}${PREFIX}/etc/slurm.conf.sample
 
 .include <bsd.port.mk>

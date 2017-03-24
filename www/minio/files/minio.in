@@ -3,24 +3,24 @@
 # PROVIDE: minio
 # KEYWORD: shutdown
 
-minio_enable="${minio_enable-NO}"
-minio_config="${minio_config-%%PREFIX%%/etc/minio}"
-minio_disks="${minio_disks-/var/db/minio}"
-minio_address="${minio_address-:9000}"
-minio_user="${minio_user-minio}"
-minio_group="${minio_group-minio}"
-
 . /etc/rc.subr
 
 name=minio
-procname="%%PREFIX%%/bin/minio"
 rcvar=minio_enable
 
 load_rc_config ${name}
 
+: ${minio_enable:="NO"}
+: ${minio_config="%%PREFIX%%/etc/minio"}
+: ${minio_disks="/var/db/minio"}
+: ${minio_address=":9000"}
+: ${minio_user:="%%USER%%"}
+: ${minio_group:="%%GROUP%%"}
+
 pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/minio"
 command="/usr/sbin/daemon"
-command_args="-c -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" server --address=\"${minio_address}\" --quiet ${minio_disks}"
+command_args="-f -c -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" server --address=\"${minio_address}\" --quiet ${minio_disks}"
 
 start_precmd="minio_startprecmd"
 
