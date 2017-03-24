@@ -3,6 +3,7 @@
 
 PORTNAME=	lzo2
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		LOCAL/mandree
@@ -39,5 +40,9 @@ post-install:
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKSRC}/examples/[a-z]*.[ch] ${STAGEDIR}${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/lzo2.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${RM} ${STAGEDIR}${PREFIX}/lib/pkgconfig/lzo2.pc
+	d="${STAGEDIR}${PREFIX}/lib/pkgconfig" ; if test -d "$$d" ; then ${RMDIR} "$$d" ; fi
 
 .include <bsd.port.mk>

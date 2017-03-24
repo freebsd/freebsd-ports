@@ -15,7 +15,7 @@ lib/liblzo2.a
 lib/liblzo2.so
 lib/liblzo2.so.2
 lib/liblzo2.so.2.0.0
-lib/pkgconfig/lzo2.pc
+libdata/pkgconfig/lzo2.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
