@@ -64,7 +64,7 @@ THREADS_CONFIGURE_ENABLE=	thread-support
 THREADS_CONFIGURE_WITH=		threads
 
 .for D in ${NTP_DRIVERS}
-${D}_CONFIGURE_ON=	--enable-${D}
+${D}_CONFIGURE_ENABLE=	${D}
 .endfor
 
 .include <bsd.port.pre.mk>
