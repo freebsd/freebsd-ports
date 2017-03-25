@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170325:
+  AFFECTS: net/samba45, net/samba46 and devel/p5-Parse-Pidl
+  AUTHOR: timur@FreeBSD.org
+
+  While new Uses/samba.mk dosen't work well with slave ports to compile devel/p5-Parse-Pidl
+  for net/samba45 or net/samba46 you need explicitly set in the /etc/make.conf:
+
+  SAMBA4_PORT=net/samba46
+
+  explicitly. In the future that shouldn't be necessary.
+
 20170321:
   AFFECTS: users of samba36-libsmbclient, samba36-nmblookup samba36-smbclient and samba36
   AUTHOR: antoine@FreeBSD.org
