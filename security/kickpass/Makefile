@@ -5,7 +5,7 @@ PORTVERSION=	0.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
-MAINTAINER=	bapt@FreeBSD.irg
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Stupid simple password safe
 
 LICENSE=	MIT
