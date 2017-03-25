@@ -286,6 +286,7 @@
     SUBDIR += keyprint
     SUBDIR += kf5-kdesu
     SUBDIR += kgpg-kde4
+    SUBDIR += kickpass
     SUBDIR += knock
     SUBDIR += knocker
     SUBDIR += kpcli
