@@ -3,20 +3,21 @@
 
 PORTNAME=	dircproxy
 DISTVERSION=	1.2.0-RC1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
-MASTER_SITES=	http://dircproxy.googlecode.com/files/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Detachable irc proxy server with many features
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
+USE_GITHUB=	yes
+GH_ACCOUNT=	w8tvi
+GH_PROJECT=	dircproxy
+GH_TAGNAME=	dc563b3
 
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf
+AUTOMAKE_ARGS=	--add-missing --copy
 GNU_CONFIGURE=	yes
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
