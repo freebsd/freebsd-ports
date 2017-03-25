@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Moose-More
-PORTVERSION=	0.043
+PORTVERSION=	0.045
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,9 +17,9 @@ BUILD_DEPENDS=	p5-Data-OptList>=0:devel/p5-Data-OptList \
 		p5-Sub-Exporter-Progressive>=0:devel/p5-Sub-Exporter-Progressive \
 		p5-Syntax-Keyword-Junction>=0:devel/p5-Syntax-Keyword-Junction
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-CheckDeps>=0.010:devel/p5-Test-CheckDeps \
+TEST_DEPENDS=	p5-TAP-SimpleOutput>=0.009:devel/p5-TAP-SimpleOutput \
+		p5-Test-CheckDeps>=0.010:devel/p5-Test-CheckDeps \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-#		p5-TAP-SimpleOutput>=0.009:devel/p5-TAP-SimpleOutput
 
 NO_ARCH=	yes
 USES=		perl5
