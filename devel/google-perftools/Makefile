@@ -23,6 +23,7 @@ DOCSDIR=	${PREFIX}/share/doc/gperftools
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		compiler execinfo libtool
+TEST_TARGET=	check
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo
@@ -45,13 +46,13 @@ BROKEN=	Does not build, assembly not supported, see PR#94: http://code.google.co
 
 post-patch:
 .if ${COMPILER_TYPE} == "clang" && !defined(USE_GCC)
-	${REINPLACE_CMD} -Ee \
+	@${REINPLACE_CMD} -Ee \
 		's|-fno-builtin-[a-z_]+||g' \
 		${WRKSRC}/Makefile.in
 .endif
 
 post-patch-DOCS-off:
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		'/^install-data-am:/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
 
@@ -63,16 +64,10 @@ post-build:
 	@${ECHO}
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libdata
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata
 	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata
 	${MV} ${STAGEDIR}${PREFIX}/bin/pprof ${STAGEDIR}${PREFIX}/bin/perftools-pprof
 
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
-
-# Two of the tests are known to fail on FreeBSD 10, uncomment this as soon as this is fixed
-#regression-test: check
-
-check: build
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
 .include <bsd.port.post.mk>
