@@ -1,4 +1,4 @@
---- bindings/Makefile.am.orig	2017-01-01 01:25:57 UTC
+--- bindings/Makefile.am.orig	2017-03-25 12:45:27 UTC
 +++ bindings/Makefile.am
 @@ -120,7 +120,7 @@ MOSTLYCLEANFILES+= hamlibtcl_wrap.c pkgI
  
