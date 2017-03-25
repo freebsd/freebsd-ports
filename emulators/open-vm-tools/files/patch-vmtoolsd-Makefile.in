@@ -1,7 +1,7 @@
---- services/vmtoolsd/Makefile.in.orig	2009-04-06 18:40:27.000000000 -0400
-+++ services/vmtoolsd/Makefile.in	2009-04-06 18:41:16.000000000 -0400
-@@ -722,7 +722,7 @@
- 	   $@ || (rm -f $@ && exit 1)
+--- services/vmtoolsd/Makefile.in.orig	2017-01-11 21:00:01.938705000 -0500
++++ services/vmtoolsd/Makefile.in	2017-01-11 21:00:22.495767000 -0500
+@@ -761,7 +761,7 @@
+ 	@INSTVMSG@ vmtoolsd $(srcdir)/l10n $(DESTDIR)$(datadir)
  
  install-exec-hook:
 -	$(INSTALL) -d $(DESTDIR)/etc/vmware-tools

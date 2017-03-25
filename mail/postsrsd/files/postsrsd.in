@@ -71,7 +71,7 @@ postsrsd_prepcmd ()
 	chown ${postsrsd_uid} ${_piddir}
     fi
     if [ ! -f "${postsrsd_secret}" ] ; then
-	tr -cd "[:alnum:]" < /dev/urandom | head -c 24 > "${postsrsd_secret}"
+	env -i tr -cd "[:alnum:]" < /dev/urandom | head -c 24 > "${postsrsd_secret}"
     fi
 }
 

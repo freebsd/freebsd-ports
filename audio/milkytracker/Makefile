@@ -2,30 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	milkytracker
-PORTVERSION=	0.90.86
-PORTREVISION=	3
+PORTVERSION=	1.0.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
-MASTER_SITES=	http://www.milkytracker.org/files/ \
-		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music creation tool inspired by Fast Tracker 2
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS+=	libjack.so:audio/jack \
-		libzzip.so:devel/zziplib
+LIB_DEPENDS+=	liblhasa.so:archivers/lhasa \
+		libzzip.so:devel/zziplib \
+		libjack.so:audio/jack
 
-USES=		pkgconfig
-GNU_CONFIGURE=	yes
-USE_SDL=	sdl
+USES=		cmake
+USE_GITHUB=	yes
+USE_SDL=	sdl2
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GH_PROJECT=	MilkyTracker
 
-CONFIGURE_ARGS+=	--disable-alsatest --without-alsa
-
-PORTDOCS=	FAQ.html MilkyTracker.html ChangeLog.html
 ICONS=		carton.ico carton.png
 
 OPTIONS_DEFINE=	DOCS

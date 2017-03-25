@@ -5,7 +5,7 @@ PORTVERSION=	0.30
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 5 configuration tool
 
 LICENSE=	BSD2CLAUSE

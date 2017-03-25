@@ -6,7 +6,7 @@ PORTREVISION=	9
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTVERSION}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application to view PDF files
 
 LICENSE=	GPLv2

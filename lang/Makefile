@@ -50,6 +50,7 @@
     SUBDIR += cparser
     SUBDIR += csharp-mode.el
     SUBDIR += cython
+    SUBDIR += cython3
     SUBDIR += diveintopython
     SUBDIR += dlv
     SUBDIR += dmd1

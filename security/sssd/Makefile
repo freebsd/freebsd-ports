@@ -3,7 +3,7 @@
 
 PORTNAME=	sssd
 PORTVERSION=	1.11.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -69,7 +69,7 @@ OPTIONS_DEFINE=	DOCS SMB
 OPTIONS_SUB=	yes
 
 SMB_DESC=		Install IPA and AD providers (requires Samba4)
-SMB_BUILD_DEPENDS=	samba42>=4.2.11:net/samba42
+SMB_USES=		samba:lib # libndr-krb5pac libndr-nbt libndr libsamba-util
 SMB_CONFIGURE_WITH=	samba
 
 post-patch:

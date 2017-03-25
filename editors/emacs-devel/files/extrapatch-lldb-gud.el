@@ -1,14 +1,13 @@
-This diff is retrieved from http://lists.gnu.org/archive/html/emacs-devel/2015-02/msg00274.html
+This diff is a slightly modified version of the one from
+http://lists.gnu.org/archive/html/emacs-devel/2015-02/msg00274.html
 
-And traces its origin back to https://gitorious.org/lldb/lldb/commit/40e4dbf
+It traces its origin back to https://gitorious.org/lldb/lldb/commit/40e4dbf
 
 It's also present on Apple's OS site:
 
 http://www.opensource.apple.com/source/lldb/lldb-76/utils/emacs/
 
-diff --git a/lisp/progmodes/gud.el b/lisp/progmodes/gud.el
-index 42c5b20..7f2e9c0 100644
---- lisp/progmodes/gud.el
+--- lisp/progmodes/gud.el.orig	2017-03-23 15:07:51 UTC
 +++ lisp/progmodes/gud.el
 @@ -35,7 +35,7 @@
  ;; kluge with the gud-xdb-directories hack producing gud-dbx-directories.
@@ -28,7 +27,7 @@ index 42c5b20..7f2e9c0 100644
  pdb (Python), and jdb."
    :group 'processes
    :group 'tools)
-@@ -141,12 +141,12 @@ Used to gray out relevant toolbar icons.")
+@@ -141,12 +141,12 @@ Used to gray out relevant toolbar icons.
  			       (display-graphic-p)
  			       (fboundp 'x-show-tip))
  		  :visible (memq gud-minor-mode
@@ -38,12 +37,12 @@ index 42c5b20..7f2e9c0 100644
      ([refresh]	"Refresh" . gud-refresh)
      ([run]	menu-item "Run" gud-run
                    :enable (not gud-running)
--		  :visible (memq gud-minor-mode '(gdbmi gdb dbx jdb)))
-+		  :visible (memq gud-minor-mode '(lldb gdbmi gdb dbx jdb)))
-     ([go]	menu-item (if (bound-and-true-p gdb-active-process)
- 			      "Continue" "Run") gud-go
- 		  :visible (and (eq gud-minor-mode 'gdbmi)
-@@ -164,18 +164,18 @@ Used to gray out relevant toolbar icons.")
+-		  :visible (or (memq gud-minor-mode '(gdb dbx jdb))
++		  :visible (or (memq gud-minor-mode '(lldb gdb dbx jdb))
+ 			       (and (eq gud-minor-mode 'gdbmi)
+ 				    (or (not (gdb-show-run-p))
+ 					(bound-and-true-p
+@@ -168,18 +168,18 @@ Used to gray out relevant toolbar icons.
      ([tbreak]	menu-item "Temporary Breakpoint" gud-tbreak
                    :enable (not gud-running)
  		  :visible (memq gud-minor-mode
@@ -65,7 +64,7 @@ index 42c5b20..7f2e9c0 100644
      ([pp]	menu-item "Print S-expression" gud-pp
                    :enable (and (not gud-running)
  				  (bound-and-true-p gdb-active-process))
-@@ -187,7 +187,7 @@ Used to gray out relevant toolbar icons.")
+@@ -191,7 +191,7 @@ Used to gray out relevant toolbar icons.
  			      "Dump object"
  			    "Print Dereference") gud-pstar
                    :enable (not gud-running)
@@ -74,7 +73,7 @@ index 42c5b20..7f2e9c0 100644
      ([print]	menu-item "Print Expression" gud-print
                    :enable (not gud-running))
      ([watch]	menu-item "Watch Expression" gud-watch
-@@ -196,13 +196,13 @@ Used to gray out relevant toolbar icons.")
+@@ -200,13 +200,13 @@ Used to gray out relevant toolbar icons.
      ([finish]	menu-item "Finish Function" gud-finish
                    :enable (not gud-running)
  		  :visible (memq gud-minor-mode
@@ -91,7 +90,7 @@ index 42c5b20..7f2e9c0 100644
      ([step]	menu-item "Step Line" gud-step
                    :enable (not gud-running))
      ([next]	menu-item "Next Line" gud-next
-@@ -237,7 +237,7 @@ Used to gray out relevant toolbar icons.")
+@@ -241,7 +241,7 @@ Used to gray out relevant toolbar icons.
  	:visible (not (eq gud-minor-mode 'gdbmi)))
         ([menu-bar run] menu-item
  	,(propertize "run" 'face 'font-lock-doc-face) gud-run
@@ -100,7 +99,7 @@ index 42c5b20..7f2e9c0 100644
         ([menu-bar go] menu-item
  	,(propertize " go " 'face 'font-lock-doc-face) gud-go
  	:visible (and (eq gud-minor-mode 'gdbmi)
-@@ -356,6 +356,7 @@ are interpreted specially if present.  These are:
+@@ -360,6 +360,7 @@ are interpreted specially if present.  T
    %l -- Number of current source line.
    %e -- Text of the C lvalue or function-call expression surrounding point.
    %a -- Text of the hexadecimal address surrounding point.
@@ -108,7 +107,7 @@ index 42c5b20..7f2e9c0 100644
    %p -- Prefix argument to the command (if any) as a number.
    %c -- Fully qualified class name derived from the expression
          surrounding point (jdb only).
-@@ -964,6 +965,131 @@ SKIP is the number of chars to skip on each line, it defaults to 0."
+@@ -974,6 +975,131 @@ SKIP is the number of chars to skip on e
  
  
  ;; ======================================================================
@@ -240,7 +239,7 @@ index 42c5b20..7f2e9c0 100644
  ;; sdb functions
  
  ;; History of argument lists passed to sdb.
-@@ -2499,9 +2625,10 @@ gud, see `gud-mode'."
+@@ -2504,9 +2630,10 @@ gud, see `gud-mode'."
    "Major mode for interacting with an inferior debugger process.
  
     You start it up with one of the commands M-x gdb, M-x sdb, M-x dbx,
@@ -254,7 +253,7 @@ index 42c5b20..7f2e9c0 100644
  
  After startup, the following commands are available in both the GUD
  interaction buffer and any source buffer GUD visits due to a breakpoint stop
-@@ -2531,7 +2658,7 @@ Under gdb, sdb and xdb, \\[gud-tbreak] behaves exactly like \\[gud-break],
+@@ -2536,7 +2663,7 @@ Under gdb, sdb and xdb, \\[gud-tbreak] b
  except that the breakpoint is temporary; that is, it is removed when
  execution stops on it.
  
@@ -263,7 +262,7 @@ index 42c5b20..7f2e9c0 100644
  frame.  \\[gud-down] drops back down through one.
  
  If you are using gdb or xdb, \\[gud-finish] runs execution to the return from
-@@ -2858,7 +2985,7 @@ Obeying it means displaying in another window the specified file and line."
+@@ -2858,7 +2985,7 @@ Obeying it means displaying in another w
  	result)
      (while (and str
  		(let ((case-fold-search nil))
@@ -272,7 +271,7 @@ index 42c5b20..7f2e9c0 100644
        (let ((key (string-to-char (match-string 2 str)))
  	    subst)
  	(cond
-@@ -2886,6 +3013,8 @@ Obeying it means displaying in another window the specified file and line."
+@@ -2886,6 +3013,8 @@ Obeying it means displaying in another w
  	  (setq subst (gud-find-expr)))
  	 ((eq key ?a)
  	  (setq subst (gud-read-address)))
@@ -281,7 +280,7 @@ index 42c5b20..7f2e9c0 100644
  	 ((eq key ?c)
  	  (setq subst
                  (gud-find-class
-@@ -3520,6 +3649,7 @@ With arg, dereference expr if ARG is positive, otherwise do not dereference."
+@@ -3521,6 +3650,7 @@ With arg, dereference expr if ARG is pos
  (defun gud-tooltip-print-command (expr)
    "Return a suitable command to print the expression EXPR."
    (pcase gud-minor-mode

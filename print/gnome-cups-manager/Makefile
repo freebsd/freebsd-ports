@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-cups-manager
 PORTVERSION=	0.31
-PORTREVISION=	16
+PORTREVISION=	17
 PORTEPOCH=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	GNOME
@@ -16,15 +16,15 @@ COMMENT=	Administration tool for cups
 LIB_DEPENDS=	libgnomecups-1.0.so:print/libgnomecups
 RUN_DEPENDS=	gnomesu:security/libgnomesu
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig samba:lib tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnomeprintui libgnomeui
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -D_IPP_PRIVATE_STRUCTURES
-LIBS+=		-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${SAMBAINCLUDES} -D_IPP_PRIVATE_STRUCTURES
+LIBS+=		-L${LOCALBASE}/lib -L${SAMBALIBS}
 
 post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \

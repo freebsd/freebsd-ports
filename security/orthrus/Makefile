@@ -5,7 +5,7 @@ PORTNAME=	orthrus
 PORTVERSION=	0.8.0
 PORTREVISION=	3
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE  \
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/orthrus/  \
 		http://16degrees.com.au/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,10 +13,6 @@ COMMENT=	One-Time Password System (OTP) alternative to OPIE or S/Key
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 

@@ -5,6 +5,89 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170325:
+  AFFECTS: net/samba46 and devel/p5-Parse-Pidl
+  AUTHOR: timur@FreeBSD.org
+
+  New version of Samba port from 4.6 branch is added. Before upgrading please read upgrade notes:
+
+  https://www.samba.org/samba/history/samba-4.6.0.html
+
+  For the vfs_fruit users:
+
+  Users on *BSD must rename the metadata xattr used by vfs_fruit when
+  using the default setting "fruit:metadata = netatalk".
+
+  Due to a glitch in the Samba xattr API compatibility layer for FreeBSD and a
+  mistake in vfs_fruit, vfs_fruit ended up using the wrong xattr name when
+  configured with "fruit:metadata = netatalk" (default). Instead of the correct
+
+  org.netatalk.Metadata
+
+  it used
+
+  netatalk.Metadata
+
+  Starting with Samba 4.6 vfs_fruit will use the correct "org.netatalk.Metadata"
+  which means existing installations must rename this xattrs. For this purpose
+  Samba now includes a new tool `mvxattr`.
+
+20170325:
+  AFFECTS: net/samba45, net/samba46 and devel/p5-Parse-Pidl
+  AUTHOR: timur@FreeBSD.org
+
+  While new Uses/samba.mk dosen't work well with slave ports to compile devel/p5-Parse-Pidl
+  for net/samba45 or net/samba46 you need explicitly set in the /etc/make.conf:
+
+  SAMBA4_PORT=net/samba46
+
+  explicitly. In the future that shouldn't be necessary.
+
+20170321:
+  AFFECTS: users of samba36-libsmbclient, samba36-nmblookup samba36-smbclient and samba36
+  AUTHOR: antoine@FreeBSD.org
+
+  The obsolete samba36-libsmbclient, samba36-nmblookup, samba36-smbclient and samba36 packages/ports were removed
+  and USES=samba was introduced.
+  Upgrade instructions:
+
+  For package users having those ports installed indirectly (as dependencies):
+    # pkg upgrade
+
+  For package users having those ports installed directly (leaf ports):
+    # pkg upgrade
+    # pkg install samba43
+
+  For ports users:
+    Choose you samba version, for instance add DEFAULT_VERSIONS+= samba=4.3 to make.conf
+
+    Remove obsolete packages:
+    # pkg delete -f samba36-libsmbclient samba36-nmblookup samba36-smbclient samba36
+
+    Portmaster users:
+    # portmaster net/samba43
+    # portmaster -a
+
+    Portupgrade users:
+    # portupgrade net/samba43
+    # portupgrade -a
+
+20170319:
+  AFFECTS: users of mail/pecl-mailparse
+  AUTHOR: dbaio@bsd.com.br
+
+  The mail/pecl-mailparse has been upgraded to version 3.0.2, and the new
+  version is not compatible with PHP5. If you need PHP5 support, you can
+  find version 2.1.6 in mail/pecl-mailparse2.
+
+20170319:
+  AFFECTS: users of textproc/pecl-yaml
+  AUTHOR: dbaio@bsd.com.br
+
+  The pecl-yaml has been upgraded to version 2.0.0, and the new version is
+  not compatible with PHP5. If you need PHP5 support, you can find version
+  1.3.0 in textproc/pecl-yaml1.
+
 20170316:
   AFFECTS: users of python setuptools
   AUTHOR: antoine@FreeBSD.org

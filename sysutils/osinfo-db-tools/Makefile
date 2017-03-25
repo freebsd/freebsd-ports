@@ -5,7 +5,7 @@ PORTNAME=	osinfo-db-tools
 PORTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://fedorahosted.org/releases/l/i/libosinfo/
+MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Tools for managing the osinfo database

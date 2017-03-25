@@ -68,9 +68,7 @@ IGNORE=         detected LibreSSL (undefined references to MD5 symbols)
 .endif
 
 .for D in ${NTP_DRIVERS}
-.if ${PORT_OPTIONS:M${D}}
-CONFIGURE_ARGS+=	--enable-${D}
-.endif
+${D}_CONFIGURE_ENABLE=	${D}
 .endfor
 
 # XXX Temporary hack. Remember to remove this next commit.

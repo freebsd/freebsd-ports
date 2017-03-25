@@ -7,7 +7,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	https://launchpadlibrarian.net/296808043/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elegant, simple, and clean dock
 
 LICENSE=	GPLv3

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.15.1
+PORTVERSION=	0.15.2
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -19,7 +19,10 @@ USES=		cmake gettext
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
 		concurrent core gui network opengl printsupport widgets
 
-PORTDOCS=	AUTHORS ChangeLog README stellarium_user_guide-0.15.0-1.pdf
+GUIDE_VERSION=	${PORTVERSION}
+
+PORTDOCS=	AUTHORS ChangeLog README \
+		stellarium_user_guide-${GUIDE_VERSION}-1.pdf
 
 OPTIONS_DEFINE=		DOCS MORE_STARS MULTIMEDIA SCRIPTING TEXTURES \
 			TELESCOPE
@@ -31,8 +34,8 @@ MULTIMEDIA_DESC=	Sound and video support
 SCRIPTING_DESC=		Scripting support
 TELESCOPE_DESC=		Telescope control plugin
 
-DOCS_MASTER_SITES=	SF/${PORTNAME}/Stellarium-user-guide/0.15.0-1:ug
-DOCS_DISTFILES=		stellarium_user_guide-0.15.0-1.pdf:ug
+DOCS_MASTER_SITES=	SF/${PORTNAME}/Stellarium-user-guide/${GUIDE_VERSION}-1:ug
+DOCS_DISTFILES=		stellarium_user_guide-${GUIDE_VERSION}-1.pdf:ug
 
 TEXTURES_MASTER_SITES=	SF/${PORTNAME}/Extra-data-files/textures:gfx
 TEXTURES_DISTFILES=	textures-1K.zip:gfx
@@ -66,7 +69,8 @@ PLIST_SUB+=	SCRIPTS="@comment "
 .endif
 
 post-extract-DOCS-on:
-	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-0.15.0-1.pdf ${WRKSRC}
+	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-${GUIDE_VERSION}-1.pdf \
+		${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt

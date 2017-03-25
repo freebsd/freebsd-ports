@@ -7,7 +7,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python module for I/O completion events
 
 LICENSE=	GPLv3

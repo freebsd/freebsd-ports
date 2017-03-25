@@ -8,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrated LaTeX environment
 
 LICENSE=	GPLv3

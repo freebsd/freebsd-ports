@@ -227,6 +227,8 @@ lib/slurm/switch_generic.a
 lib/slurm/switch_generic.so
 lib/slurm/switch_none.a
 lib/slurm/switch_none.so
+lib/slurm/task_affinity.a
+lib/slurm/task_affinity.so
 lib/slurm/task_cgroup.a
 lib/slurm/task_cgroup.so
 lib/slurm/task_cray.a

@@ -3,7 +3,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	1.2.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -87,7 +87,9 @@ CONFIGURE_ARGS+=--disable-libtiff
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-LIB_DEPENDS+=	libsmbclient.so:net/samba-libsmbclient
+USES+=	samba:lib
+CPPFLAGS+=	-I${SAMBAINCLUDES}
+LDFLAGS+=	-L${SAMBALIBS}
 .else
 CONFIGURE_ARGS+=--disable-samba
 .endif

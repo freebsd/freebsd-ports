@@ -1188,6 +1188,7 @@
     SUBDIR += rubygem-octokit
     SUBDIR += rubygem-octopress-deploy
     SUBDIR += rubygem-omniauth-auth0
+    SUBDIR += rubygem-omniauth-authentiq
     SUBDIR += rubygem-omniauth-azure-oauth2
     SUBDIR += rubygem-omniauth-facebook
     SUBDIR += rubygem-omniauth-github
@@ -1226,16 +1227,15 @@
     SUBDIR += rubygem-twitter-stream
     SUBDIR += rubygem-twitter4r
     SUBDIR += rubygem-u2f
+    SUBDIR += rubygem-u2f0
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
     SUBDIR += rude
-    SUBDIR += samba-libsmbclient
-    SUBDIR += samba-nmblookup
-    SUBDIR += samba-smbclient
-    SUBDIR += samba36
     SUBDIR += samba42
     SUBDIR += samba43
     SUBDIR += samba44
+    SUBDIR += samba45
+    SUBDIR += samba46
     SUBDIR += samplicator
     SUBDIR += sbd
     SUBDIR += sbm

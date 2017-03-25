@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	3.2.4
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -305,7 +305,7 @@ SDL_CONFIGURE_ENABLE=	ffplay
 SDL_CONFIGURE_OFF=	--disable-outdev=sdl --disable-sdl2
 
 # smbclient
-SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+SMB_USES=		samba:lib
 SMB_CONFIGURE_ENABLE=	libsmbclient
 SMB_IMPLIES=		GPL3
 

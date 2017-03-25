@@ -1,0 +1,153 @@
+'\" t
+.\"     Title: idmap_script
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 03/21/2017
+.\"    Manual: System Administration tools
+.\"    Source: Samba 4.5
+.\"  Language: English
+.\"
+.TH "IDMAP_SCRIPT" "8" "03/21/2017" "Samba 4\&.5" "System Administration tools"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+idmap_script \- Samba\*(Aqs idmap_script Backend for Winbind
+.SH "DESCRIPTION"
+.PP
+The idmap_script plugin is a substitute for the idmap_tdb2 backend used by winbindd for storing SID/uid/gid mapping tables in clustered environments with Samba and CTDB\&. It is a read only backend that uses a script to perform mapping\&.
+.PP
+It was developed out of the idmap_tdb2 back end and does not store SID/uid/gid mappings in a TDB, since the winbind_cache tdb will store the mappings once they are provided\&.
+.SH "IDMAP OPTIONS"
+.PP
+range = low \- high
+.RS 4
+Defines the available matching uid and gid range for which the backend is authoritative\&.
+.RE
+.PP
+script
+.RS 4
+This option can be used to configure an external program for performing id mappings\&.
+.RE
+.SH "IDMAP SCRIPT"
+.PP
+The tdb2 idmap backend supports an external program for performing id mappings through the smb\&.conf option
+\fIidmap config * : script\fR
+or its deprecated legacy form
+\fIidmap : script\fR\&.
+.PP
+The mappings obtained by the script are then stored in the idmap tdb2 database instead of mappings created by the incrementing id counters\&. It is therefore important that the script covers the complete range of SIDs that can be passed in for SID to Unix ID mapping, since otherwise SIDs unmapped by the script might get mapped to IDs that had previously been mapped by the script\&.
+.PP
+The script should accept the following command line options\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+	SIDTOID S\-1\-xxxx
+	IDTOSID UID xxxx
+	IDTOSID GID xxxx
+	IDTOSID XID xxxx
+	
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+And it should return one of the following responses as a single line of text\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+	UID:yyyy
+	GID:yyyy
+	XID:yyyy
+	SID:ssss
+	ERR:yyyy
+	
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+XID indicates that the ID returned should be both a UID and a GID\&. That is, it requests an ID_TYPE_BOTH, but it is ultimately up to the script whether or not it can honor that request\&. It can choose to return a UID or a GID mapping only\&.
+.SH "EXAMPLES"
+.PP
+This example shows how script is used as a the default idmap backend using an external program via the script parameter:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+	[global]
+	idmap config * : backend = script
+	idmap config * : range = 1000000\-2000000
+	idmap config * : script = /usr/local/samba/bin/idmap_script\&.sh
+	
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+This shows a simple script to partially perform the task:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+	#!/bin/sh
+	#
+	# Uncomment this if you want some logging
+	#echo $@ >> /tmp/idmap\&.sh\&.log
+	if [ "$1" == "SIDTOID" ]
+	then
+		# Note\&. The number returned has to be within the range defined
+		#echo "Sending UID:1000005" >> /tmp/idmap\&.sh\&.log
+		echo "UID:1000005"
+		exit 0
+	else
+		#echo "Sending ERR: No idea what to do" >> /tmp/idmap\&.sh\&.log
+		echo "ERR: No idea what to do"
+		exit 1
+	fi
+	
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Clearly, this script is not enough, as it should probably use wbinfo to determine if an incoming SID is a user or group SID and then look up the mapping in a table or use some other mechanism for mapping SIDs to UIDs and etc\&.
+.PP
+Please be aware that the script is called with the _NO_WINBINDD environment variable set to 1\&. This prevents recursive calls into winbind from the script both via explicit calls to wbinfo and via implicit calls via nss_winbind\&. For example a call to
+ls \-l
+could trigger such an infinite recursion\&.
+.PP
+It is safe to call
+wbinfo \-n
+and
+wbinfo \-s
+from within an idmap script\&. To do so, the script must unset the _NO_WINBINDD environment variable right before the call to
+wbinfo
+and set it to 1 again right after
+wbinfo
+has returned to protect against the recursion\&.
+.SH "AUTHOR"
+.PP
+The original Samba software and related utilities were created by Andrew Tridgell\&. Samba is now developed by the Samba Team as an Open Source project similar to the way the Linux kernel is developed\&.

@@ -4,7 +4,7 @@
 PORTNAME?=	xmms2
 PORTVERSION=	0.8
 DISTVERSIONSUFFIX=	DrO_o
-PORTREVISION?=	19
+PORTREVISION?=	20
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 
@@ -122,7 +122,9 @@ MUSEPACK_CONFIGURE_OFF=	--without-plugins="musepack"
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--without-plugins="pulse"
 
-SAMBA_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+SAMBA_USES=	samba:lib
+SAMBA_CPPFLAGS=	-I${SAMBAINCLUDES}
+SAMBA_LDFLAGS=	-L${SAMBALIBS}
 SAMBA_CONFIGURE_OFF=	--without-plugins="samba"
 
 SID_LIB_DEPENDS=	libsidplay2.so:audio/libsidplay2

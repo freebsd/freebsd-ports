@@ -3,7 +3,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.2.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -97,9 +97,9 @@ XVMC_CONFIGURE_ON=	--with-xvmc-lib=XvMCW
 XVMC_LIB_DEPENDS=	libXvMC.so:x11/libXvMC
 .endif
 XVMC_CONFIGURE_OFF=	--disable-xvmc
-SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
-SMB_CONFIGURE_ENV=	LIBSMBCLIENT_LIBS="-L${LOCALBASE}/lib -lsmbclient" \
-			LIBSMBCLIENT_CFLAGS="-I${LOCALBASE}/include"
+SMB_USES=		samba:lib
+SMB_CONFIGURE_ENV=	LIBSMBCLIENT_LIBS="-L${SAMBALIBS} -lsmbclient" \
+			LIBSMBCLIENT_CFLAGS="-I${SAMBAINCLUDES}"
 SMB_CONFIGURE_ENABLE=	samba
 AALIB_LIB_DEPENDS=	libaa.so:graphics/aalib
 AALIB_CONFIGURE_OFF=	--disable-aalib --disable-aalibtest

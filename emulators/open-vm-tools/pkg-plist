@@ -1,9 +1,11 @@
+bin/vmhgfs-fuse
+bin/vmtoolsd
 bin/vmware-checkvm
 bin/vmware-hgfsclient
+bin/vmware-namespace-cmd
 bin/vmware-rpctool
-bin/vmware-xferlogs
-bin/vmtoolsd
 bin/vmware-toolbox-cmd
+bin/vmware-xferlogs
 %%X11%%%%FUSE%%bin/vmware-vmblock-fuse
 lib/open-vm-tools/plugins/vmsvc/libguestInfo.so
 lib/open-vm-tools/plugins/vmsvc/libpowerOps.so
@@ -29,7 +31,6 @@ lib/libguestlib.so.0
 lib/libguestlib.so.0.0.0
 libdata/pkgconfig/vmguestlib.pc
 lib/vmware-tools/modules/drivers/vmblock.ko
-lib/vmware-tools/modules/drivers/vmhgfs.ko
 lib/vmware-tools/modules/drivers/vmmemctl.ko
 lib/vmware-tools/modules/drivers/vmxnet.ko
 include/vmGuestLib/includeCheck.h
@@ -37,16 +38,15 @@ include/vmGuestLib/vmGuestLib.h
 include/vmGuestLib/vmSessionId.h
 include/vmGuestLib/vm_basic_types.h
 @dir lib/vmware-tools/modules/input
-sbin/mount_vmhgfs
 sbin/mount_vmblock
 %%X11%%bin/vmware-user-suid-wrapper
 share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
+share/vmware-tools/scripts/vmware/network
+share/vmware-tools/statechange.subr
 share/vmware-tools/suspend-vm-default
 share/vmware-tools/vm-support
-share/vmware-tools/statechange.subr
-share/vmware-tools/scripts/vmware/network
 %%DATADIR%%/messages/de/toolboxcmd.vmsg
 %%DATADIR%%/messages/de/vmtoolsd.vmsg
 %%DATADIR%%/messages/ja/toolboxcmd.vmsg
@@ -59,3 +59,4 @@ share/vmware-tools/scripts/vmware/network
 etc/pam.d/vmtoolsd
 @dir %%DATADIR%%/scripts/vmware
 @dir %%DATADIR%%/tests
+@preunexec %%PREFIX%%/bin/vmware-rpctool 'tools.set.version 0' ; service vmware-guestd stop ; true

@@ -2,7 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	16.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia java
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -136,8 +136,7 @@ PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	rtmp
 
-SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
-SMB_RUN_DEPENDS=	nmblookup:net/samba-nmblookup
+SMB_USES=		samba:lib
 SMB_CONFIGURE_ENABLE=	samba
 
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva

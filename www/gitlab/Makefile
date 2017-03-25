@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.14.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	8
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -57,7 +57,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-devise-two-factor>=3.0.0:security/rubygem-devise-two-factor \
 	rubygem-rqrcode-rails3>=0.1.7:www/rubygem-rqrcode-rails3 \
 	rubygem-attr_encrypted>=3.0.0:security/rubygem-attr_encrypted \
-	rubygem-u2f>=0.2.1:net/rubygem-u2f \
+	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
 	rubygem-browser>=2.2:www/rubygem-browser \
 	rubygem-gitlab_git>=10.7.0:devel/rubygem-gitlab_git \
 	rubygem-gitlab_omniauth-ldap>=1.2.1:net/rubygem-gitlab_omniauth-ldap \
@@ -143,7 +143,7 @@ RUN_DEPENDS=	git>=2.7.4:devel/git \
 	rubygem-jquery-rails4>=4.1.0:www/rubygem-jquery-rails4 \
 	rubygem-jquery-ui-rails5-rails4>=5.0.0:www/rubygem-jquery-ui-rails5-rails4 \
 	rubygem-request_store>=1.3:devel/rubygem-request_store \
-	rubygem-select2-rails>=3.5.9:www/rubygem-select2-rails \
+	rubygem-select2-rails3>=3.5.9:www/rubygem-select2-rails3 \
 	rubygem-virtus>=1.0.1:devel/rubygem-virtus \
 	rubygem-net-ssh>=3.0.1:security/rubygem-net-ssh \
 	rubygem-base32>=0.3.2:converters/rubygem-base32 \

@@ -487,6 +487,7 @@
     SUBDIR += pear-Net_IMAP
     SUBDIR += pear-Net_LMTP
     SUBDIR += pecl-mailparse
+    SUBDIR += pecl-mailparse2
     SUBDIR += pecl-pop3
     SUBDIR += perdition
     SUBDIR += pflogsumm
@@ -615,6 +616,7 @@
     SUBDIR += rubygem-actionmailer5
     SUBDIR += rubygem-email_reply_parser
     SUBDIR += rubygem-email_reply_parser-discourse
+    SUBDIR += rubygem-email_reply_trimmer
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-larch
     SUBDIR += rubygem-mail

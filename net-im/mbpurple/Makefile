@@ -4,15 +4,10 @@ PORTNAME=	mbpurple
 PORTVERSION=	0.3.0
 PORTREVISION=	4
 CATEGORIES=	net-im
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	microblog-purple
+MASTER_SITES=	http://BSDforge.com/projects/source/net-im/mbpurple/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Integrate Twitter with Pidgin (AKA microblog-purple)
-
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
 RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin

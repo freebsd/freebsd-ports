@@ -6,7 +6,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	MagickWand Python binding
 
 LICENSE=	MIT

@@ -11,7 +11,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/98881788/ \
 PKGNAMEPREFIX=	gtk3-
 PKGNAMESUFFIX=	-engine
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ 3.0 engine
 
 LICENSE=	LGPL3

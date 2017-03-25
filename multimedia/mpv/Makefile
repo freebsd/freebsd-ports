@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.24.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -118,7 +118,7 @@ SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
 SNDIO_CONFIGURE_ON=		--enable-sndio
 SNDIO_CONFIGURE_OFF=		--disable-sndio
 
-SMB_LIB_DEPENDS=		libsmbclient.so:net/samba-libsmbclient
+SMB_USES=			samba:lib
 SMB_CONFIGURE_OFF=		--disable-libsmbclient
 
 UCHARDET_LIB_DEPENDS=		libuchardet.so:textproc/uchardet

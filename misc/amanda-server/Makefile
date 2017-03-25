@@ -3,7 +3,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	3.3.6
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -121,9 +121,7 @@ CONFIGURE_ARGS+=	--without-gnuplot
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
-SAMBA_PORT?=	samba44
-BUILD_DEPENDS+=	smbclient:net/${SAMBA_PORT}
-RUN_DEPENDS+=	smbclient:net/${SAMBA_PORT}
+USES+=		pkgconfig samba
 CONFIGURE_ARGS+=	--with-smbclient=${LOCALBASE}/bin/smbclient
 .endif
 

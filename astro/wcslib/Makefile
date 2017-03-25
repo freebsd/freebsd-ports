@@ -30,7 +30,9 @@ PGPLOT_DESC=	Add pgplot support (for tests only)
 CFITSIO_CONFIGURE_WITH=	cfitsio
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 PGPLOT_CONFIGURE_WITH=	pgplot
-PGPLOT_LIB_DEPENDS=	libpgplot.so:graphics/pgplot
+PGPLOT_LIB_DEPENDS=	libpgplot.so:graphics/pgplot \
+			libpng16.so:graphics/png
+PGPLOT_USE=		XORG=x11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%PKGDIR%%#${STAGEDIR}${PREFIX}/libdata#g' \

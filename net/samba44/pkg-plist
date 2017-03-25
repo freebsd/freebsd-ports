@@ -160,6 +160,8 @@ lib/samba4/libsamba-util.so
 lib/samba4/libsamba-util.so.0
 lib/samba4/libsamdb.so
 lib/samba4/libsamdb.so.0
+lib/samba4/libsmbclient.so
+lib/samba4/libsmbclient.so.0
 lib/samba4/libsmbconf.so
 lib/samba4/libsmbconf.so.0
 %%LDAP%%lib/samba4/libsmbldap.so
@@ -284,8 +286,9 @@ lib/samba4/private/libwinbind-client-samba4.so
 lib/samba4/private/libwind-samba4.so.0
 lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%lib/shared-modules/bind9/dlz_bind9.so
-%%AD_DC%%lib/shared-modules/bind9/dlz_bind9_10.so
 %%AD_DC%%lib/shared-modules/bind9/dlz_bind9_9.so
+%%AD_DC%%lib/shared-modules/bind9/dlz_bind9_10.so
+%%AD_DC%%lib/shared-modules/bind9/dlz_bind9_11.so
 %%AD_DC%%lib/shared-modules/gensec/krb5.so
 %%AD_DC%%lib/shared-modules/ldb/acl.so
 %%AD_DC%%lib/shared-modules/ldb/aclread.so
@@ -448,6 +451,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%PKGCONFIGDIR%%/samba-policy.pc
 %%PKGCONFIGDIR%%/samba-util.pc
 %%PKGCONFIGDIR%%/samdb.pc
+%%PKGCONFIGDIR%%/smbclient.pc
 %%PKGCONFIGDIR%%/wbclient.pc
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/dckeytab.so
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/posix_eadb.so

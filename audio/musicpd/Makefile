@@ -2,6 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.20.6
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -121,7 +122,7 @@ SAMPLERATE_LIB_DEPENDS=libsamplerate.so:audio/libsamplerate
 SIDPLAY2_CONFIGURE_ENABLE=sidplay
 SIDPLAY2_LIB_DEPENDS=libsidplay2.so:audio/libsidplay2
 SMB_CONFIGURE_enable=smbclient
-SMB_LIB_DEPENDS=libsmbclient.so:net/samba-libsmbclient
+SMB_USES=	samba:lib
 SNDFILE_CONFIGURE_ENABLE=sndfile
 SNDFILE_LIB_DEPENDS=libsndfile.so:audio/libsndfile
 SNDIO_CONFIGURE_ENABLE=sndio

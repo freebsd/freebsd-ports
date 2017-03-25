@@ -205,8 +205,18 @@ include/syslog-ng/iv_thread.h
 include/syslog-ng/iv_tls.h
 include/syslog-ng/iv_wait.h
 include/syslog-ng/iv_work.h
-lib/libsyslog-ng-3.8.so.0.0.0
-lib/libsyslog-ng-3.8.so.0
+include/syslog-ng/compat/openssl_support.h
+include/syslog-ng/modules/add-contextual-data/add-contextual-data-parser.h
+include/syslog-ng/modules/add-contextual-data/add-contextual-data-selector.h
+include/syslog-ng/modules/add-contextual-data/add-contextual-data-template-selector.h
+include/syslog-ng/modules/add-contextual-data/add-contextual-data.h
+include/syslog-ng/modules/add-contextual-data/context-info-db.h
+include/syslog-ng/modules/add-contextual-data/contextual-data-record-scanner.h
+include/syslog-ng/modules/add-contextual-data/csv-contextual-data-record-scanner.h
+include/syslog-ng/str-repr/decode.h
+include/syslog-ng/str-repr/encode.h
+lib/libsyslog-ng-3.9.so.0.0.0
+lib/libsyslog-ng-3.9.so.0
 lib/libsyslog-ng.so
 lib/libsyslog-ng-native-connector.a
 lib/syslog-ng/libtest/libsyslog-ng-test.a
@@ -234,6 +244,7 @@ lib/syslog-ng/libkvformat.so
 libdata/pkgconfig/syslog-ng.pc
 libdata/pkgconfig/syslog-ng-test.pc
 libdata/pkgconfig/syslog-ng-native-connector.pc
+libdata/pkgconfig/syslog-ng-add-contextual-data.pc
 man/man1/loggen.1.gz
 man/man1/pdbtool.1.gz
 man/man1/syslog-ng-ctl.1.gz
@@ -250,7 +261,6 @@ share/syslog-ng/include/scl/rewrite/cc-mask.conf
 share/syslog-ng/include/scl/nodejs/plugin.conf
 share/syslog-ng/include/scl/graphite/README
 share/syslog-ng/include/scl/graphite/plugin.conf
-share/syslog-ng/include/scl/cim/template.conf
 share/syslog-ng/include/scl/solaris/plugin.conf
 share/syslog-ng/include/scl/mbox/mbox.conf
 share/syslog-ng/include/scl/elasticsearch/plugin.conf

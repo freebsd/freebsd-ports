@@ -9,14 +9,14 @@ WRKDIR=`pwd`/work
 mkdir -p "${WRKDIR}"
 
 if [ \! -d "${CURDIR}/kicad-library" ]; then
- git clone https://github.com/KiCad/kicad-library.git "${CURDIR}/kicad-library";
+ git clone https://github.com/KiCad/kicad-library.git -b master "${CURDIR}/kicad-library";
 else
   cd "${CURDIR}/kicad-library"
   git pull;
 fi
 
 if [ \! -d "${CURDIR}/kicad-repo" ]; then
- git clone https://git.launchpad.net/kicad "${CURDIR}/kicad-repo";
+ git clone https://git.launchpad.net/kicad -b master "${CURDIR}/kicad-repo";
 else
   cd "${CURDIR}/kicad-repo"
   git pull https://git.launchpad.net/kicad;

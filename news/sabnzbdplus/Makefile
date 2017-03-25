@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	news
 
 MAINTAINER=	joshruehlig@gmail.com
@@ -17,7 +17,7 @@ RUN_DEPENDS=	cheetah:devel/py-cheetah \
 USE_GITHUB=	yes
 GH_ACCOUNT=	sabnzbd
 GH_PROJECT=	sabnzbd
-GH_TAGNAME=	95a7924
+GH_TAGNAME=	a894ca5
 
 USES=		python:2.7 shebangfix
 SHEBANG_FILES=	SABnzbd.py tools/msgfmt.py

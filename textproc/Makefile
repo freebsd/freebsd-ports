@@ -962,6 +962,7 @@
     SUBDIR += p5-Text-Wrapper
     SUBDIR += p5-Text-Xslate
     SUBDIR += p5-Text-Xslate-Bridge-TT2Like
+    SUBDIR += p5-Text-Unaccent-PurePerl
     SUBDIR += p5-Text-vCard
     SUBDIR += p5-Tiffany
     SUBDIR += p5-Time-Human
@@ -1188,6 +1189,7 @@
     SUBDIR += pecl-xdiff2
     SUBDIR += pecl-xslcache
     SUBDIR += pecl-yaml
+    SUBDIR += pecl-yaml1
     SUBDIR += peco
     SUBDIR += perl2html
     SUBDIR += permute
@@ -1257,6 +1259,7 @@
     SUBDIR += py-elasticsearch-curator-py
     SUBDIR += py-elasticsearch-dsl-py
     SUBDIR += py-elasticsearch-py
+    SUBDIR += py-elasticsearch2-dsl-py
     SUBDIR += py-elib.intl
     SUBDIR += py-empy
     SUBDIR += py-enchant
@@ -1435,6 +1438,7 @@
     SUBDIR += rubygem-albino
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
+    SUBDIR += rubygem-asciidoctor-plantuml
     SUBDIR += rubygem-autoprefixer-rails
     SUBDIR += rubygem-babel-source
     SUBDIR += rubygem-babel-transpiler
@@ -1479,6 +1483,7 @@
     SUBDIR += rubygem-html2text
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
+    SUBDIR += rubygem-inifile
     SUBDIR += rubygem-itextomml
     SUBDIR += rubygem-jekyll-assets
     SUBDIR += rubygem-jekyll-feed
@@ -1519,6 +1524,7 @@
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-rdtool
     SUBDIR += rubygem-redcarpet
+    SUBDIR += rubygem-representable
     SUBDIR += rubygem-reverse_markdown
     SUBDIR += rubygem-ri_cal
     SUBDIR += rubygem-rich

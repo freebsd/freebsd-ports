@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mediathekview
-PORTVERSION=	13.0.1
+PORTVERSION=	13.0.2
 CATEGORIES=	german java
 MASTER_SITES=	https://download.mediathekview.de/stabil/
 DISTNAME=	MediathekView-${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Filme der oeff. rechtlichen Sender herunterladen und ansehen
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/Copyright/_mediathekView-LICENSE.txt
 
 RUN_DEPENDS=	${LOCALBASE}/openjdk8/bin/javafxpackager:java/openjfx8-devel \
 		flvstreamer:multimedia/flvstreamer
@@ -17,6 +20,8 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 SUB_FILES=	${PORTNAME}
+
+NO_ARCH=	yes
 
 INSTALLFILES=	MediathekView.jar MediathekView.ico
 INSTALLDOCS=	Kurzanleitung.pdf Instructions.pdf
