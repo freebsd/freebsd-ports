@@ -16,7 +16,7 @@ BUILD_DEPENDS=	go>=1.7:lang/go \
 USES=		compiler gmake
 
 USE_GITHUB=	yes
-GH_TAGNAME=	RELEASE.2017-02-16T01-47-30Z
+GH_TAGNAME=	RELEASE.2017-03-16T21-50-32Z
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 GH_TUPLE=	\
 		minio:mc:RELEASE.2017-02-06T20-16-19Z:mc/src/github.com/minio/mc \
