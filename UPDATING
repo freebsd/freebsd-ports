@@ -6,6 +6,33 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20170325:
+  AFFECTS: net/samba46 and devel/p5-Parse-Pidl
+  AUTHOR: timur@FreeBSD.org
+
+  New version of Samba port from 4.6 branch is added. Before upgrading please read upgrade notes:
+
+  https://www.samba.org/samba/history/samba-4.6.0.html
+
+  For the vfs_fruit users:
+
+  Users on *BSD must rename the metadata xattr used by vfs_fruit when
+  using the default setting "fruit:metadata = netatalk".
+
+  Due to a glitch in the Samba xattr API compatibility layer for FreeBSD and a
+  mistake in vfs_fruit, vfs_fruit ended up using the wrong xattr name when
+  configured with "fruit:metadata = netatalk" (default). Instead of the correct
+
+  org.netatalk.Metadata
+
+  it used
+
+  netatalk.Metadata
+
+  Starting with Samba 4.6 vfs_fruit will use the correct "org.netatalk.Metadata"
+  which means existing installations must rename this xattrs. For this purpose
+  Samba now includes a new tool `mvxattr`.
+
+20170325:
   AFFECTS: net/samba45, net/samba46 and devel/p5-Parse-Pidl
   AUTHOR: timur@FreeBSD.org
 
