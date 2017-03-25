@@ -260,7 +260,6 @@
     SUBDIR += mpgtx
     SUBDIR += mplayer
     SUBDIR += mplayer-skins
-    SUBDIR += mplayer2
     SUBDIR += mplex
     SUBDIR += mps-youtube
     SUBDIR += mpv
