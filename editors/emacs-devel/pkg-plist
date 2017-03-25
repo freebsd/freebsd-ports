@@ -2326,6 +2326,7 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/viet-util.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/vietnamese.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/vietnamese.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/ldefs-boot.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/ja-dic/ja-dic.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/ja-dic/ja-dic.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/leim-list.el
