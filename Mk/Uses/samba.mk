@@ -33,6 +33,10 @@ SAMBAPORT=	net/samba43
 SAMBAINCLUDES=	${LOCALBASE}/include/samba4
 SAMBALIBS=	${LOCALBASE}/lib/samba4
 SAMBAPORT=	net/samba44
+.elif ${SAMBA_DEFAULT} == 4.5
+SAMBAINCLUDES=	${LOCALBASE}/include/samba4
+SAMBALIBS=	${LOCALBASE}/lib/samba4
+SAMBAPORT=	net/samba44
 .else
 IGNORE=		Invalid version of samba: ${SAMBA_DEFAULT}
 .endif
