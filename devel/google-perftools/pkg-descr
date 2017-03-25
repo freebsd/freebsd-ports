@@ -4,4 +4,4 @@ Perf Tools is the fastest memory allocation library available,
 it also often allows applications to have smaller memory
 footprint.
 
-WWW: http://code.google.com/p/google-perftools
+WWW: https://github.com/gperftools/gperftools
