@@ -85,7 +85,7 @@ BUILD_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 # External Samba dependencies
 # IDL compiler
-BUILD_DEPENDS+=		p5-Parse-Pidl>=4.3.1:devel/p5-Parse-Pidl
+BUILD_DEPENDS+=		p5-Parse-Pidl44>=4.3.1:devel/p5-Parse-Pidl44
 # External Python modules
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
