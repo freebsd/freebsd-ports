@@ -16,12 +16,12 @@ LICENSE=	GPLv2
 
 USES=		libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR} --with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-DOCS_INSTALL_TARGET_OFF=	install-exec install-pkgincludeHEADERS
+DOCS_INSTALL_TARGET_OFF=	install-exec install-pkgincludeHEADERS install-pkgconfigDATA
 
 post-build:
 .if !defined(WITHOUT_CHECKS)
@@ -40,9 +40,5 @@ post-install:
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKSRC}/examples/[a-z]*.[ch] ${STAGEDIR}${EXAMPLESDIR}/
-	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/lzo2.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${RM} ${STAGEDIR}${PREFIX}/lib/pkgconfig/lzo2.pc
-	d="${STAGEDIR}${PREFIX}/lib/pkgconfig" ; if test -d "$$d" ; then ${RMDIR} "$$d" ; fi
 
 .include <bsd.port.mk>
