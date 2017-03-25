@@ -3,7 +3,7 @@
 
 PORTNAME?=			${SAMBA4_BASENAME}45
 PORTVERSION?=			${SAMBA4_VERSION}
-PORTREVISION?=			0
+PORTREVISION?=			1
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -223,6 +223,8 @@ MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="true"
 .include <bsd.port.options.mk>
 ##############################################################################
 
+.if !defined(SAMBA4_SUBPORT)
+
 .if ${PORT_OPTIONS:MEXP_MODULES}
 .	if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
 WANT_EXP_MODULES=		vfs_cacheprime gpext_scripts gpext_security gpext_registry
@@ -255,6 +257,8 @@ CONFIGURE_ARGS+=		--with-shared-modules="${SAMBA4_MODULES:Q:C|(\\\\ )+|,|g:S|\\|
 .for module in ${SAMBA4_MODULES}
 PLIST_FILES+=			lib/shared-modules/${module:C,_,/,:C,-,_,}.so
 .endfor
+# !SAMBA4_SUBPORT
+.endif
 
 ##############################################################################
 .include <bsd.port.pre.mk>
