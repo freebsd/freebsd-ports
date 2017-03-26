@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	kde-runtime
-PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	7
-CATEGORIES=	x11 kde kde-kde4
+PORTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	x11 kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Runtime components for KDE Plasma Desktop
@@ -13,7 +12,12 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libwebp.so:graphics/webp \
 		libslp.so:net/openslp \
 		libssh.so:security/libssh \
-		libqzeitgeist.so:sysutils/qzeitgeist
+		libqzeitgeist.so:sysutils/qzeitgeist \
+		libImath-2_2.so:graphics/ilmbase \
+		libassuan.so:security/libassuan \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
+		libgpgme.so:security/gpgme
 # Explicitly depend on libssh to avoid interference with ssh.4 from
 # compat7x.
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
@@ -22,11 +26,11 @@ RUN_DEPENDS=	cagibid:net/cagibi
 USES=		cmake:outsource gettext gmake jpeg kde:4 samba:lib shared-mime-info \
 		shebangfix tar:xz
 USE_KDE=	kactivities kdelibs oxygen-icons4 \
-		attica automoc4 pimlibs strigi nepomuk-core
+		attica automoc4 pimlibs soprano strigi nepomuk-core
 USE_QT4=	corelib dbus declarative designer_build gui phonon \
 		network qtestlib script svg webkit xml \
 		moc_build qmake_build rcc_build uic_build
-USE_XORG=	x11 xcursor
+USE_XORG=	ice sm x11 xau xcursor xext xft xdmcp xpm
 USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 SHEBANG_FILES=	khelpcenter/searchhandlers/*.pl \
