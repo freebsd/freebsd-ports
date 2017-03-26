@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -34,6 +34,6 @@ SSL_CONFIGURE_ON=	--with-ssl-includes=-I${OPENSSLINC} \
 			--with-ssl-libs=-L${OPENSSLLIB}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments.so.4.0.2
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments.so.4.0.4
 
 .include <bsd.port.mk>
