@@ -40,8 +40,4 @@ post-install:
 IGNORE_FreeBSD_10=	Requires OpenSSL 1.0.2 (set DEFAULT_VERSIONS+=ssl=openssl)
 .endif
 
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Detected LibreSSL (missing numerous symbols during linking)
-.endif
-
 .include <bsd.port.post.mk>
