@@ -1,0 +1,20 @@
+--- Makefile.orig	2005-08-12 23:40:51 UTC
++++ Makefile
+@@ -19,7 +19,7 @@ compile: conf-cc conf-bgincs
+ 	  echo '#!/bin/sh'; \
+ 	  echo 'source=$$1; shift'; \
+ 	  echo 'base=`echo "$$source" | sed -e s:\\\\.c$$::`'; \
+-	  echo exec `head -n 1 conf-cc` -I. "-I'$${bgincs}'" '-o $${base}.o -c $$source $${1+"$$@"}'; \
++	  echo exec `head -n 1 conf-cc` -I. "-I'$${bgincs}'" "-I /usr/local/include/" '-o $${base}.o -c $$source $${1+"$$@"}'; \
+ 	) >compile
+ 	chmod 755 compile
+ 
+@@ -37,7 +37,7 @@ load: conf-ld conf-bglibs
+ 	( bglibs=`head -n 1 conf-bglibs`; \
+ 	  echo '#!/bin/sh';\
+ 	  echo 'main="$$1"; shift';\
+-	  echo exec `head -n 1 conf-ld` -L. "-L'$${bglibs}'" '-o "$$main" "$$main.o" $${1+"$$@"}' -lbg-sysdeps; \
++	  echo exec `head -n 1 conf-ld` -L. "-L'$${bglibs}'" "-Wl,-R'$${bglibs}'" '-o "$$main" "$$main.o" $${1+"$$@"}'; \
+ 	) >load
+ 	chmod 755 load
+ 
