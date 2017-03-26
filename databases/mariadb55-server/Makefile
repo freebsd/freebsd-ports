@@ -2,7 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	5.5.54
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/sourc
 		http://mirror.switch.ch/mirror/mariadb/${PORTNAME}-${PORTVERSION}/source/
 PKGNAMESUFFIX?=	55-server
 
-MAINTAINER=	never@nevermind.kiev.ua
+MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
@@ -101,7 +101,7 @@ OQGRAPH_DESC=	Open Query Graph Computation engine
 
 OQGRAPH_USE=	GCC=yes
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs
-OQGRAPH_BROKEN=	yes
+OQGRAPH_BROKEN=	OQGraph does not build
 
 MAXKEY_EXTRA_PATCHES=	${FILESDIR}/extra-patch-include_my_compare.h
 .endif
