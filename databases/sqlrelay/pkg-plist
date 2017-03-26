@@ -64,43 +64,43 @@ include/sqlrelay/sqlrclient.h
 include/sqlrelay/sqlrclientwrapper.h
 include/sqlrelay/sqlrserver.h
 include/sqlrelay/sqlrutil.h
-lib/libmysql3sqlrelay.so
-lib/libmysql3sqlrelay.so.4
-lib/libmysql3sqlrelay.so.4.0.0
-lib/libmysql40sqlrelay.so
-lib/libmysql40sqlrelay.so.4
-lib/libmysql40sqlrelay.so.4.0.0
-lib/libmysql41sqlrelay.so
-lib/libmysql41sqlrelay.so.4
-lib/libmysql41sqlrelay.so.4.0.0
-lib/libmysql50sqlrelay.so
-lib/libmysql50sqlrelay.so.4
-lib/libmysql50sqlrelay.so.4.0.0
-lib/libmysql51sqlrelay.so
-lib/libmysql51sqlrelay.so.4
-lib/libmysql51sqlrelay.so.4.0.0
-lib/libpqsqlrelay.so
+%%MYSQL%%lib/libmysql3sqlrelay.so
+%%MYSQL%%lib/libmysql3sqlrelay.so.4
+%%MYSQL%%lib/libmysql3sqlrelay.so.4.0.1
+%%MYSQL%%lib/libmysql40sqlrelay.so
+%%MYSQL%%lib/libmysql40sqlrelay.so.4
+%%MYSQL%%lib/libmysql40sqlrelay.so.4.0.1
+%%MYSQL%%lib/libmysql41sqlrelay.so
+%%MYSQL%%lib/libmysql41sqlrelay.so.4
+%%MYSQL%%lib/libmysql41sqlrelay.so.4.0.1
+%%MYSQL%%lib/libmysql50sqlrelay.so
+%%MYSQL%%lib/libmysql50sqlrelay.so.4
+%%MYSQL%%lib/libmysql50sqlrelay.so.4.0.1
+%%MYSQL%%lib/libmysql51sqlrelay.so
+%%MYSQL%%lib/libmysql51sqlrelay.so.4
+%%MYSQL%%lib/libmysql51sqlrelay.so.4.0.1
+%%PGSQL%%lib/libpqsqlrelay.so
 lib/libpqsqlrelay.so.4
-lib/libpqsqlrelay.so.4.0.0
+lib/libpqsqlrelay.so.4.0.1
 lib/libsqlrclient.a
 lib/libsqlrclient.so
 lib/libsqlrclient.so.4
-lib/libsqlrclient.so.4.0.0
+lib/libsqlrclient.so.4.0.1
 lib/libsqlrclientwrapper.a
 lib/libsqlrclientwrapper.so
 lib/libsqlrclientwrapper.so.4
-lib/libsqlrclientwrapper.so.4.0.0
+lib/libsqlrclientwrapper.so.4.0.1
 %%ODBC%%lib/libsqlrodbc.so
 %%ODBC%%lib/libsqlrodbc.so.4
-%%ODBC%%lib/libsqlrodbc.so.4.0.0
+%%ODBC%%lib/libsqlrodbc.so.4.0.1
 lib/libsqlrserver.a
 lib/libsqlrserver.so
 lib/libsqlrserver.so.4
-lib/libsqlrserver.so.4.0.0
+lib/libsqlrserver.so.4.0.1
 lib/libsqlrutil.a
 lib/libsqlrutil.so
 lib/libsqlrutil.so.4
-lib/libsqlrutil.so.4.0.0
+lib/libsqlrutil.so.4.0.1
 libdata/pkgconfig/sqlrelay-c++.pc
 libdata/pkgconfig/sqlrelay-c.pc
 libexec/sqlrelay/sqlrauth_database.so
@@ -152,11 +152,7 @@ man/man8/sqlr-stop.8.gz
 %%DATADIR%%/examples/sample-mssqlserver-mysql-errors.map
 %%DATADIR%%/examples/sample-oracle-mysql-errors.map
 @dir %%ETCDIR%%
-@dir /var/sqlrelay/tmp/sockets
-@dir /var/sqlrelay/tmp/pids
-@dir /var/sqlrelay/tmp/ipc
-@dir /var/sqlrelay/tmp
-@dir /var/sqlrelay/log
-@dir /var/sqlrelay/debug
-@dir /var/sqlrelay/cache
-@dir /var/sqlrelay
+@dir /var/cache/sqlrelay
+@dir /var/log/sqlrelay/debug
+@dir /var/log/sqlrelay
+@dir /var/run/sqlrelay
