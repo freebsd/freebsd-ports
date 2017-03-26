@@ -1,6 +1,6 @@
-TIMESTAMP = 1490011379
-SHA256 (immortal-immortal-0.10.2_GH0.tar.gz) = ff9db09bbc34f0554ef8971fc95ccbe83035e439d7796b32ad305970a1490115
-SIZE (immortal-immortal-0.10.2_GH0.tar.gz) = 27238
+TIMESTAMP = 1490459975
+SHA256 (immortal-immortal-0.10.3_GH0.tar.gz) = ea5f2359909b2eeac9a388b6da61349b819809a6df6e28d73448f1a0c567e8ad
+SIZE (immortal-immortal-0.10.3_GH0.tar.gz) = 29254
 SHA256 (immortal-logrotate-3691ab5_GH0.tar.gz) = 1e9915e41e05e43be206fa5da0ca9646feea36e8433c953fc71d7ebc6d40d8d5
 SIZE (immortal-logrotate-3691ab5_GH0.tar.gz) = 3612
 SHA256 (immortal-multiwriter-2555774_GH0.tar.gz) = 0988932d02debf79c7928e307a812027b642da7e5cad8846604577ed56220d57
