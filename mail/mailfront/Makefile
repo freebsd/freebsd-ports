@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	mailfront
-PORTVERSION=	2.01
-PORTREVISION=	1
+PORTVERSION=	2.12
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Mail server network protocol front-ends
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcvm-v2client.so:security/cvm
+LIB_DEPENDS=	libcvm-v2client.so:security/cvm \
+		libbg.so:devel/bglibs
 
 USES=		qmail:vars
 
@@ -39,8 +39,13 @@ OPTIONS_DEFAULT=LUA
 OPTIONS_SUB=	yes
 
 LUA_ALL_TARGET=	lua
-LUA_USES=	lua:51
+LUA_USES=	lua
 LUA_VARS=	CFLAGS+=-I${LUA_INCDIR} LUA_CFLAGS_SO+=-L${LUA_LIBDIR} LUA_LDFLAGS+=-L${LUA_LIBDIR}
+
+CPPFLAGS+=      -I${LUA_INCDIR}
+CFLAGS+=        -DHAVE_LUASCRIPT
+LDFLAGS+=       -L${LUA_LIBDIR} -llua-${LUA_VER}
+USES+=          lua:51
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
@@ -54,7 +59,7 @@ do-configure:
 	${ECHO_CMD} "${QMAIL_PREFIX}"	> ${WRKSRC}/conf-qmail
 
 post-patch:
-	@${REINPLACE_CMD} 's,-llua,-llua-${LUA_VER},' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's,-llua-,-llua-${LUA_VER},' ${WRKSRC}/Makefile
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
