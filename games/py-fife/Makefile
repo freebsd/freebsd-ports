@@ -2,53 +2,67 @@
 # $FreeBSD$
 
 PORTNAME=		fife
-PORTVERSION=		0.3.5
-PORTREVISION=		7
+PORTVERSION=		0.4.1
 CATEGORIES=		games
-MASTER_SITES=		http://sourceforge.net/projects/${PORTNAME}/files/active/src/:source \
-			http://sourceforge.net/projects/${PORTNAME}/files/active/demos/:demo \
-			http://sourceforge.net/projects/${PORTNAME}/files/active/tools/:tools
+MASTER_SITES=		https://github.com/fifengine/fifengine/archive/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
-DISTNAME=		${PORTNAME}_${PORTVERSION}
-DISTFILES+=		${DISTNAME}.tar.gz:source \
-			${DISTNAME}_demos.tar.gz:demo \
-			${DISTNAME}_tools.tar.gz:tools
+DISTFILES=		${PORTVERSION}.tar.gz
 
 MAINTAINER=		fiziologus@gmail.com
 COMMENT=		Flexible Isometric Free Engine
 
 LICENSE=		LGPL21
 
-BUILD_DEPENDS=		${LOCALBASE}/bin/swig2.0:devel/swig20
 LIB_DEPENDS=		libvorbisfile.so:audio/libvorbis \
-			libguichan.so:devel/guichan \
+			libtinyxml.so:textproc/tinyxml \
 			libboost_filesystem.so:devel/boost-libs \
 			libpng.so:graphics/png
 
-USES=			openal:al pkgconfig python:2 scons
+USES=			openal:al pkgconfig cmake:outsource
 USE_GL=			gl
-USE_SDL=		sdl ttf image
+USE_SDL=		sdl2 ttf2 image2
 USE_XORG=		xcursor
 
-ALL_TARGET=		fife-python
-INSTALL_TARGET=		install-python
-MAKE_ENV+=		SWIG=${LOCALBASE}/bin/swig2.0
+WRKSRC=			${WRKDIR}/fifengine-${PORTVERSION}
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		ZIP LOGGING
 
-post-patch:
-	${REINPLACE_CMD} -e 's/X11R6/local/g; s/libpng/ligpng15/g' ${WRKSRC}/build/openbsd4-config.py && \
-		${MV} ${WRKSRC}/build/openbsd4-config.py ${WRKSRC}/build/${PYTHON_PLATFORM}-config.py
+OPTIONS_MULTI=		GUISS COMP
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=		yes
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${MV} ${WRKDIR}/tools ${STAGEDIR}${DATADIR}
-	${MV} ${WRKDIR}/demos ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for FILE in README AUTHORS CHANGES COPYING
-	${MV} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
-.endfor
+OPTIONS_MULTI_GUISS=	FIFECHAN CEGUI
+GUISS_DESC=		GUI subsystem
+FIFECHAN_DESC=		Fifechan GUI subsystem
+CEGUI_DESC=		Crazy Eddi's GUI subsystem (must be build with OpenGL)
+
+ZIP_DESC=		ZIP archive support
+LOGGING_DESC=		Logging
+
+OPTIONS_MULTI_COMP=	PYTHON LIBRARY
+COMP_DESC=		Building components
+PYTHON_DESC=		Build python extension module (need for unknown-horizons)
+LIBRARY_DESC=		Build and install files for directly develop with C++ 
+
+OPTIONS_DEFAULT=	FIFECHAN ZIP LOGGING PYTHON
+
+FIFECHAN_CMAKE_BOOL=	fifechan
+FIFECHAN_LIB_DEPENDS=	libfifechan_sdl.so:devel/fifechan
+
+CEGUI_CMAKE_BOOL=	cegui
+CEGUI_LIB_DEPENDS=	libCEGUIBase-0.so:graphics/cegui
+CEGUI_USE=		gl=glew
+
+ZIP_CMAKE_BOOL=		zip
+LOGGING_CMAKE_BOOL=	logging
+
+PYTHON_CMAKE_BOOL=	build-python
+PYTHON_USES=		python:2
+PYTHON_BUILD_DEPENDS=	${LOCALBASE}/bin/swig3.0:devel/swig30
+
+LIBRARY_CMAKE_BOOL=	build-library
+# For static library build
+# LIBRARY_CMAKE_ON=	-Dbuild-library=ON -DBUILD_SHARED_LIBS=OFF
+# LIBRARY_CMAKE_OFF=	-Dbuild-library=OFF
 
 .include <bsd.port.mk>
