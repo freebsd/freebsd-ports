@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.24.5
+PORTVERSION=	0.26.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
-MAINTAINER=	cmt@burggraben.net
+MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Open source photo manager for GNOME
 
 LICENSE=	LGPL21+
@@ -17,10 +17,13 @@ BUILD_DEPENDS=	vala>=0.20.1:lang/vala \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libexiv2.so:graphics/exiv2 \
+		libgcr-ui-3.so:security/gcr \
+		libgdata.so:devel/libgdata \
 		libgee-0.8.so:devel/libgee \
 		libgstreamer-1.0.so:multimedia/gstreamer1 \
 		liblcms2.so:graphics/lcms2 \
 		libjson-glib-1.0.so:devel/json-glib \
+		libp11-kit.so:security/p11-kit \
 		libsoup-2.4.so:devel/libsoup \
 		libgexiv2.so:graphics/gexiv2 \
 		libexif.so:graphics/libexif \
@@ -30,7 +33,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libraw.so:graphics/libraw \
 		librest-0.7.so:devel/librest
 
-USES=		gettext desktop-file-utils gmake libtool pkgconfig \
+USES=		autoreconf gettext desktop-file-utils gmake libtool pkgconfig \
 		sqlite tar:xz
 USE_GNOME=	cairo dconf gtk30 gnomedocutils
 USE_GSTREAMER1=	yes
@@ -38,16 +41,21 @@ USE_LDCONFIG=	yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	--define=NO_CAMERA
+CONFIGURE_ARGS+=	--enable-publishers=all --enable-extra-plugins
 INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
 PORTSCOUT=	limitw:1,even
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	OPENMP
-OPTIONS_DEFAULT=
-OPENMP_DESC=	libraw uses OpenMP (implies GCC 4.6+)
+OPTIONS_DEFINE=	OPENMP NLS
+OPTIONS_DEFAULT=	NLS
+OPENMP_DESC=	libraw uses OpenMP (implies GCC 4.9+)
 
-OPENMP_USES=		compiler:gcc-c++11-lib
+NLS_CONFIGURE_ENABLE=   nls
+NLS_USES=		gettext
+NLS_LIBS=		-L${LOCALBASE}/lib -lintl
+
+OPENMP_USES=		compiler:openmp
 OPENMP_USES_OFF=	compiler:c++11-lib
 
 GLIB_SCHEMAS=	org.yorba.shotwell.gschema.xml org.yorba.shotwell-extras.gschema.xml
