@@ -3,22 +3,25 @@
 
 PORTNAME=	twoftpd
 PORTVERSION=	1.43
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Simple, secure, efficient FTP server
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bg-installer:devel/bglibs
-LIB_DEPENDS=	libcvm-v2client.so:security/cvm
+LIB_DEPENDS=	libcvm-v2client.so:security/cvm \
+		libbg.so.2:devel/bglibs
 
 USES=		localbase:ldflags
 
-BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 BGLIBS_INCLUDE=	${LOCALBASE}/include/bglibs
+BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
+USE_LDCONFIG=	${BGLIBS_LIB}
 
 PORTDOCS=	NEWS README TODO
 PLIST_FILES=	bin/twoftpd-anon bin/twoftpd-anon-conf \
