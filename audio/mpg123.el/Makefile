@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpg123.el
-PORTVERSION=	1.52
-PORTREVISION=	1
+PORTVERSION=	1.60
 CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gentei.org/~yuuji/software/mpg123el/
 EXTRACT_SUFX=	# empty
@@ -15,7 +14,6 @@ COMMENT=	Front-end to mpg123/ogg123 audio player for Emacsen
 
 RUN_DEPENDS=	mpg123:audio/mpg123
 
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${PORTNAME}-${PORTVERSION}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
@@ -30,6 +28,6 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/mpg123el.cgi?${PORTVERSION} ${STAGEDIR}${ELISPDIR}/${PORTNAME}
 # For XEmacs
 	@${MKDIR} ${STAGEDIR}${XELISPDIR}
-	${LN} -sf ${ELISPDIR}/${PORTNAME} ${STAGEDIR}${XELISPDIR}/${PORTNAME}
+	${INSTALL} -lr ${STAGEDIR}${ELISPDIR}/${PORTNAME} ${STAGEDIR}${XELISPDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
