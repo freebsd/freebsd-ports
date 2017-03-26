@@ -163,10 +163,17 @@ include/vmime/security/authenticator.hpp
 include/vmime/security/cert/X509Certificate.hpp
 include/vmime/security/cert/certificate.hpp
 include/vmime/security/cert/certificateChain.hpp
+include/vmime/security/cert/certificateException.hpp
+include/vmime/security/cert/certificateExpiredException.hpp
+include/vmime/security/cert/certificateIssuerVerificationException.hpp
+include/vmime/security/cert/certificateNotTrustedException.hpp
+include/vmime/security/cert/certificateNotYetValidException.hpp
 include/vmime/security/cert/certificateVerifier.hpp
 include/vmime/security/cert/defaultCertificateVerifier.hpp
 include/vmime/security/cert/gnutls/X509Certificate_GnuTLS.hpp
 include/vmime/security/cert/openssl/X509Certificate_OpenSSL.hpp
+include/vmime/security/cert/serverIdentityException.hpp
+include/vmime/security/cert/unsupportedCertificateTypeException.hpp
 include/vmime/security/defaultAuthenticator.hpp
 include/vmime/security/digest/md5/md5MessageDigest.hpp
 include/vmime/security/digest/messageDigest.hpp
@@ -178,6 +185,8 @@ include/vmime/security/sasl/SASLMechanism.hpp
 include/vmime/security/sasl/SASLMechanismFactory.hpp
 include/vmime/security/sasl/SASLSession.hpp
 include/vmime/security/sasl/SASLSocket.hpp
+include/vmime/security/sasl/XOAuth2SASLAuthenticator.hpp
+include/vmime/security/sasl/XOAuth2SASLMechanism.hpp
 include/vmime/security/sasl/builtinSASLMechanism.hpp
 include/vmime/security/sasl/defaultSASLAuthenticator.hpp
 include/vmime/streamContentHandler.hpp
@@ -230,6 +239,6 @@ include/vmime/word.hpp
 include/vmime/wordEncoder.hpp
 lib/libvmime.a
 lib/libvmime.so
-lib/libvmime.so.0
-lib/libvmime.so.0.0.0
+lib/libvmime.so.1
+lib/libvmime.so.1.0.0
 libdata/pkgconfig/vmime.pc
