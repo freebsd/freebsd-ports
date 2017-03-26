@@ -3,7 +3,7 @@
 
 PORTNAME?=			${SAMBA4_BASENAME}45
 PORTVERSION?=			${SAMBA4_VERSION}
-PORTREVISION?=			1
+PORTREVISION?=			2
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -13,7 +13,7 @@ COMMENT?=			Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=			GPLv3
 
-CONFLICTS?=			*samba3[2-6]-3.* samba4-4.0.* samba4[1-46]-4.*
+CONFLICTS?=			*samba3[2-6]-3.* samba4-4.0.* samba4[1-46]-4.* p5-Parse-Pidl-4.*
 
 #EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
 
@@ -119,9 +119,9 @@ LIB_DEPENDS+=			libsunacl.so:sysutils/libsunacl
 BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 # External Samba dependencies
-# IDL compiler
-BUILD_DEPENDS+=			p5-Parse-Pidl>=4.5.0:devel/p5-Parse-Pidl
-PLIST_SUB+=			PIDL="@comment "
+# Needed for IDL compiler
+BUILD_DEPENDS+=			p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
+PLIST_SUB+=			PIDL=""
 # External Python modules
 BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
 RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
@@ -165,8 +165,7 @@ BIND910_RUN_DEPENDS=		bind910>=9.10.0.0:dns/bind910
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 
-DEBUG_CONFIGURE_ENABLE=		debug
-DEBUG_CONFIGURE_ON=		--verbose
+DEBUG_CONFIGURE_ON=		--verbose --enable-debug
 DEBUG_MAKE_ARGS=		--verbose
 DEBUG_VARS=			WITH_DEBUG=yes
 
@@ -308,7 +307,7 @@ SAMBA_MAN5+=			lmhosts.5 smbgetrc.5 smbpasswd.5 pam_winbind.conf.5 \
 SAMBA_MAN7+=			samba.7 winbind_krb5_locator.7
 
 SAMBA_MAN8+=			cifsdd.8 eventlogadm.8 idmap_ad.8 idmap_autorid.8 idmap_hash.8 \
-				idmap_ldap.8 idmap_nss.8 idmap_rfc2307.8 idmap_rid.8 \
+				idmap_ldap.8 idmap_nss.8 idmap_rfc2307.8 idmap_rid.8 idmap_script.8 \
 				idmap_tdb.8 idmap_tdb2.8 net.8 nmbd.8 pam_winbind.8 pdbedit.8 \
 				samba-regedit.8 samba-tool.8 samba.8 smbd.8 smbpasswd.8 \
 				smbspool_krb5_wrapper.8 smbspool.8 smbta-util.8 vfs_acl_tdb.8 vfs_acl_xattr.8 \
@@ -330,13 +329,12 @@ PORTDOCS=			README.FreeBSD
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 post-extract:
-				@${RM} -r ${WRKSRC}/pidl
+				@${RM} -r ${WRKSRC}/pidl/lib/Parse/Yapp
 
 post-patch:
 				@${REINPLACE_CMD} -e 's|$${PKGCONFIGDIR}|${PKGCONFIGDIR}|g' \
 					${PATCH_WRKSRC}/buildtools/wafsamba/pkgconfig.py
 				@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-					${PATCH_WRKSRC}/buildtools/wafsamba/samba_pidl.py \
 					${PATCH_WRKSRC}/buildtools/wafsamba/wafsamba.py
 				@${REINPLACE_CMD} -e 's|%%GDB_CMD%%|${GDB_CMD}|g' \
 					${PATCH_WRKSRC}/buildtools/scripts/abi_gen.sh
@@ -364,8 +362,7 @@ pre-build-MANPAGES-off:
 				source4/torture/man/masktest.1 \
 				source4/torture/man/smbtorture.1 \
 				source4/utils/man/ntlm_auth4.1 \
-				source4/utils/man/oLschema2ldif.1 \
-				docs-xml/manpages/idmap_script.8
+				source4/utils/man/oLschema2ldif.1
 					-@${MKDIR} `dirname ${BUILD_WRKSRC}/bin/default/${man}`
 					${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
 .endfor
