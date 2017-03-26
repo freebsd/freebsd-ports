@@ -1,5 +1,5 @@
---- src/vmime/platforms/posix/posixHandler.cpp.orig	2014-07-22 15:24:26.000000000 +0200
-+++ src/vmime/platforms/posix/posixHandler.cpp	2014-07-22 15:59:33.000000000 +0200
+--- src/vmime/platforms/posix/posixHandler.cpp.orig	2017-01-03 20:00:08 UTC
++++ src/vmime/platforms/posix/posixHandler.cpp
 @@ -41,6 +41,7 @@
  #include <errno.h>
  
@@ -8,7 +8,7 @@
  #include <sys/stat.h>
  
  #if VMIME_HAVE_SYSCALL
-@@ -238,7 +239,9 @@
+@@ -240,7 +241,9 @@ unsigned int posixHandler::getThreadId()
  #elif VMIME_HAVE_SYSCALL && VMIME_HAVE_SYSCALL_GETTID
  	return static_cast <unsigned int>(::syscall(SYS_gettid));
  #else

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libvmime
-PORTVERSION=	0.9.2.s20140721
-PORTREVISION=	3
+PORTVERSION=	0.9.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 USE_GITHUB=	yes
 GH_ACCOUNT=	kisli
 GH_PROJECT=	vmime
-GH_TAGNAME=	03a0e36
 
 USES=		cmake:outsource compiler:c++11-lib iconv pkgconfig
 USE_LDCONFIG=	yes
@@ -28,8 +27,13 @@ CMAKE_ARGS=	-DLIB_SUFFIX:STRING="" \
 		-DVMIME_SHARED_PTR_USE_BOOST:BOOL=NO \
 		-DVMIME_SHARED_PTR_USE_CXX:BOOL=YES
 
+INSTALL_TARGET=	install
+
 post-patch:
 	@${REINPLACE_CMD} 's,$${VMIME_INSTALL_LIBDIR}/pkgconfig,${PREFIX}/libdata/pkgconfig,' \
 		${WRKSRC}/CMakeLists.txt
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvmime.so.1.0.0
 
 .include <bsd.port.mk>
