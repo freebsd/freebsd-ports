@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	cvm
-PORTVERSION=	0.96
-PORTREVISION=	3
+PORTVERSION=	0.97
 CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Credential Validation Modules
 
 LICENSE=	GPLv2
@@ -17,10 +16,10 @@ LIB_DEPENDS=	libbg.so:devel/bglibs
 
 CONFLICTS=	bglibs-1.00*
 
-USES=		libtool:build
-USE_LDCONFIG=	yes
+USES=		libtool:build localbase:ldflags
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
+USE_LDCONFIG=	yes
 
 DOCS=		NEWS README TODO *.html
 
