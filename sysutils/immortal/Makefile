@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	immortal
-PORTVERSION=	0.10.3
+PORTVERSION=	0.10.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io
