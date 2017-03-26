@@ -1,4 +1,4 @@
---- src/misc/newinstall.cxx.orig	2016-08-07 11:40:51 UTC
+--- src/misc/newinstall.cxx.orig	2017-01-29 13:26:25 UTC
 +++ src/misc/newinstall.cxx
 @@ -67,7 +67,7 @@ text[3] = " btu <NAME> <CALL> de <MYCALL
  

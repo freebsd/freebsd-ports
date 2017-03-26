@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.23.20
+PORTVERSION=	3.23.21
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -13,13 +13,16 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc\
 		docbook-xsl>=1.0:textproc/docbook-xsl\
 		xsltproc:textproc/libxslt
-LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate\
-		libboost_system.so:devel/boost-libs\
-		libfltk.so:x11-toolkits/fltk
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs\
+		libpng16.so:graphics/png \
+		libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libsamplerate.so:audio/libsamplerate
 
 USE_CXXSTD=	gnu++0x
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib execinfo gmake perl5 pkgconfig shebangfix
+USES=		compiler:c++11-lib execinfo jpeg gmake perl5 pkgconfig shebangfix
+USE_XORG=	x11 xft xext xfixes xcursor xinerama
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config" \
 		    EXTRA_LIBS="-lexecinfo"
 
