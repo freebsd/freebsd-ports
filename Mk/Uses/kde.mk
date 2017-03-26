@@ -55,7 +55,7 @@ _KDE_RELNAME=		KDE${_KDE_VERSION}
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Old KDE desktop.
 KDE4_VERSION?=			4.14.3
-KDE4_KDELIBS_VERSION=		4.14.10
+KDE4_KDELIBS_VERSION=		4.14.30
 KDE4_ACTIVITIES_VERSION=	4.13.3
 KDE4_WORKSPACE_VERSION=		4.11.21
 KDE4_KDEPIM_VERSION?=		4.14.10
@@ -69,7 +69,7 @@ KDE_FRAMEWORKS_VERSION?=	5.32.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=      16.12.0
+KDE_APPLICATIONS_VERSION?=      16.12.3
 KDE_APPLICATIONS_BRANCH?=       stable
 # Upstream moves old software to Attic/. Specify the newest applications release there.
 # Only the major version is used for the comparison.

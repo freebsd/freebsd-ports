@@ -3,6 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.9.4
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 
@@ -163,8 +164,8 @@ post-stage:
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
 	# This is the canonical GCC port, so add key commands without
 	# version numbers as part of their names.
-	for c in gfortran g++ gcc; do \
-	    ${LN} -s ${PREFIX}/bin/"$$c"${SUFFIX} ${STAGEDIR}${PREFIX}/bin/$$c ; \
-	done
+.for c in gfortran g++ gcc
+	    ${LN} -s ${c}${SUFFIX} ${STAGEDIR}${PREFIX}/bin/${c}
+.endfor
 
 .include <bsd.port.post.mk>
