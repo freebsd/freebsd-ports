@@ -11,13 +11,13 @@ COMMENT=	Bash script to run sudo command on multiple remote computers
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
+RUN_DEPENDS=	bash:shells/bash \
 		sshpass>=0:security/sshpass
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gaod
-GH_PROJECT=	sshsudo
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
