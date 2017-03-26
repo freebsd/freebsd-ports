@@ -1,4 +1,5 @@
-gexiv2 is a GObject-based wrapper around the Exiv2 library.  It makes the
-basic features of Exiv2 available to GNOME applications.
+gexiv2 is a GObject wrapper around the Exiv2 photo metadata library.
+It allows for GNOME applications to easily inspect and update EXIF, IPTC,
+and XMP metadata in photo and video files of various formats.
 
-WWW: http://trac.yorba.org/wiki/gexiv2/
+WWW: https://wiki.gnome.org/Projects/gexiv2
