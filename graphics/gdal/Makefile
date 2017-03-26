@@ -3,6 +3,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -101,7 +102,8 @@ PGSQL_CONFIGURE_ON=	--with-pg=${LOCALBASE}/bin/pg_config
 PGSQL_USES=		pgsql
 PODOFO_CONFIGURE_WITH=	podofo
 PODOFO_LIB_DEPENDS=	libpodofo.so:graphics/podofo
-POPPLER_CONFIGURE_WITH=	poppler
+POPPLER_CONFIGURE_OFF=	--without-poppler
+POPPLER_CONFIGURE_ON=	--with-poppler=${LOCALBASE}
 POPPLER_LIB_DEPENDS=	libpoppler.so:graphics/poppler
 SPATIALITE_CONFIGURE_WITH=	spatialite
 SPATIALITE_LIB_DEPENDS=	libspatialite.so:databases/spatialite
@@ -115,7 +117,7 @@ XERCES_LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} -e 's|-lminizip|-lkmlminizip|' ${WRKSRC}/configure
-# Cleanup bundled libraries
+# Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/frmts/gif/giflib/
 	@${RM} -r ${WRKSRC}/frmts/gtiff/libgeotiff/
 	@${RM} -r ${WRKSRC}/frmts/gtiff/libtiff/
