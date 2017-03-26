@@ -21,22 +21,12 @@ samba_ARGS=	build run
 IGNORE=		USES=samba has invalid arguments: ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
 .endif
 
-.if ${SAMBA_DEFAULT} == 4.2
+SAMBAPORT=	net/samba${SAMBA_DEFAULT:S/.//}
 SAMBAINCLUDES=	${LOCALBASE}/include/samba4
+.if ${SAMBA_DEFAULT} == 4.2 || ${SAMBA_DEFAULT} == 4.3
 SAMBALIBS=	${LOCALBASE}/lib
-SAMBAPORT=	net/samba42
-.elif ${SAMBA_DEFAULT} == 4.3
-SAMBAINCLUDES=	${LOCALBASE}/include/samba4
-SAMBALIBS=	${LOCALBASE}/lib
-SAMBAPORT=	net/samba43
-.elif ${SAMBA_DEFAULT} == 4.4
-SAMBAINCLUDES=	${LOCALBASE}/include/samba4
+.elif ${SAMBA_DEFAULT} == 4.4 || ${SAMBA_DEFAULT} == 4.5 || ${SAMBA_DEFAULT} == 4.6
 SAMBALIBS=	${LOCALBASE}/lib/samba4
-SAMBAPORT=	net/samba44
-.elif ${SAMBA_DEFAULT} == 4.5
-SAMBAINCLUDES=	${LOCALBASE}/include/samba4
-SAMBALIBS=	${LOCALBASE}/lib/samba4
-SAMBAPORT=	net/samba45
 .else
 IGNORE=		Invalid version of samba: ${SAMBA_DEFAULT}
 .endif
