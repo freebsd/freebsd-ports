@@ -2,14 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	bglibs
-PORTVERSION=	1.106
-PORTREVISION=	6
-PORTEPOCH=	1
+PORTVERSION=	2.03
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
 		http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
 LICENSE=	LGPL21+
