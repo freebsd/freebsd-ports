@@ -29,6 +29,15 @@
  
  bg-installer.o: compile bg-installer.c sysdeps.h include/bglibs/cli.h include/bglibs/fmt.h include/bglibs/ibuf.h include/bglibs/iobuf_common.h include/bglibs/obuf.h sysdeps.h include/iobuf_common.h include/bglibs/iobuf.h include/ibuf.h include/obuf.h sysdeps.h include/bglibs/msg.h sysdeps.h include/bglibs/debug.h include/bglibs/wrap.h include/bglibs/path.h include/bglibs/str.h sysdeps.h include/str.h sysdeps.h include/bglibs/striter.h bg-installer-cli.h
  	./compile bg-installer.c
+@@ -152,7 +152,7 @@ compile: conf-cc
+ 	( echo '#!/bin/sh'; \
+ 	  echo 'source=$$1; shift'; \
+ 	  echo 'base=`echo "$$source" | sed -e s:\\\\.c$$::`'; \
+-	  echo exec `head -n 1 conf-cc` -I.  "-I'include/bglibs'" "-I'include'" '-o $${base}.o -c $$source $${1+"$$@"}'; \
++	  echo exec `head -n 1 conf-cc` -I. "-I'include/bglibs'" "-I'/usr/local/include'" '-o $${base}.o -c $$source $${1+"$$@"}'; \
+ 	) >compile
+ 	chmod 755 compile
+ 
 @@ -864,7 +864,7 @@ path/mktemp.lo path/mktemp.o: ltcompile 
  
  perl-head.pl: 
