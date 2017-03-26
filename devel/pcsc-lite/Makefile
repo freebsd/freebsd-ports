@@ -3,6 +3,7 @@
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.8.20
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/39/
@@ -26,6 +27,11 @@ CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_GROUP=		FEATURES
+OPTIONS_GROUP_FEATURES=	FILTER
+FEATURES_DESC=		Default features knobs
+FILTER_DESC=		Control (Ignore or Extend) reader names reported by PCSC
+FILTER_CONFIGURE_ENABLE=	filter
 
 .include <bsd.port.options.mk>
 
