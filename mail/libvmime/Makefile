@@ -27,13 +27,8 @@ CMAKE_ARGS=	-DLIB_SUFFIX:STRING="" \
 		-DVMIME_SHARED_PTR_USE_BOOST:BOOL=NO \
 		-DVMIME_SHARED_PTR_USE_CXX:BOOL=YES
 
-INSTALL_TARGET=	install
-
 post-patch:
 	@${REINPLACE_CMD} 's,$${VMIME_INSTALL_LIBDIR}/pkgconfig,${PREFIX}/libdata/pkgconfig,' \
 		${WRKSRC}/CMakeLists.txt
-
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvmime.so.1.0.0
 
 .include <bsd.port.mk>
