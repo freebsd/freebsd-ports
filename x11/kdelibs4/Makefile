@@ -3,15 +3,13 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_KDELIBS_VERSION}
-PORTREVISION=	10
-CATEGORIES=	x11 kde
-MASTER_SITES=   KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	x11 kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
 LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+		libImath-2_2.so.12:graphics/ilmbase \
 		libjasper.so:graphics/jasper \
 		libpcre.so:devel/pcre \
 		libenchant.so:textproc/enchant \
@@ -20,7 +18,8 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libhal.so:sysutils/hal \
 		libqca.so:devel/qca \
 		libpolkit-qt-core-1.so:sysutils/polkit-qt \
-		libdbusmenu-qt.so:devel/libdbusmenu-qt
+		libdbusmenu-qt.so:devel/libdbusmenu-qt \
+		libstreams.so:deskutils/libstreams
 
 BUILD_DEPENDS=	docbook-xml>0:textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
@@ -40,7 +39,7 @@ USE_QT4=	corelib dbus declarative designer_build gui \
 		qtestlib script sql svg webkit xml \
 		moc_build qmake_build rcc_build uic_build \
 		imageformats_run qdbusviewer_run
-USE_XORG=	sm x11 xcursor xext xfixes xft xpm xrender xtst
+USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xft xpm xrender xtst
 USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 
