@@ -13,6 +13,8 @@ COMMENT=	Native C client for Let's Encrypt, designed for security
 
 LICENSE=	ISCL
 
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+
 USES=		gmake tar:tgz ssl
 
 MAKEFILE=	GNUmakefile
