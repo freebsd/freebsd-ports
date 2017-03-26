@@ -1055,6 +1055,7 @@
     SUBDIR += p5-Image-Delivery
     SUBDIR += p5-Interchange6
     SUBDIR += p5-JE
+    SUBDIR += p5-JSON-API
     SUBDIR += p5-Jemplate
     SUBDIR += p5-Jifty
     SUBDIR += p5-Kwiki
