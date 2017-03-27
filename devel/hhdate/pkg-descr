@@ -1,0 +1,3 @@
+A date and time library based on the C++11 (and beyond) <chrono> header.
+
+WWW: https://github.com/HowardHinnant/date

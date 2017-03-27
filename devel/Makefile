@@ -852,6 +852,7 @@
     SUBDIR += hgreviewboard
     SUBDIR += hgsvn
     SUBDIR += hgview
+    SUBDIR += hhdate
     SUBDIR += highlighterkit
     SUBDIR += hive
     SUBDIR += horde-content
