@@ -102,8 +102,7 @@ PGSQL_CONFIGURE_ON=	--with-pg=${LOCALBASE}/bin/pg_config
 PGSQL_USES=		pgsql
 PODOFO_CONFIGURE_WITH=	podofo
 PODOFO_LIB_DEPENDS=	libpodofo.so:graphics/podofo
-POPPLER_CONFIGURE_OFF=	--without-poppler
-POPPLER_CONFIGURE_ON=	--with-poppler=${LOCALBASE}
+POPPLER_CONFIGURE_WITH=	poppler=${LOCALBASE}
 POPPLER_LIB_DEPENDS=	libpoppler.so:graphics/poppler
 SPATIALITE_CONFIGURE_WITH=	spatialite
 SPATIALITE_LIB_DEPENDS=	libspatialite.so:databases/spatialite
