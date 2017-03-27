@@ -9165,3 +9165,4 @@ net-mgmt/nat||2017-03-27|Has expired: Broken for more than 6 months
 net-p2p/gnunet-gtk||2017-03-27|Has expired: Depends on expiring net-p2p/gnunet
 net-p2p/gnunet||2017-03-27|Has expired: Broken for more than 6 months
 print/abc2mtex||2017-03-27|Has expired: Depends on expiring print/musixtex
+ftp/bareftp||2017-03-27|Has expired: Broken for more than 6 months

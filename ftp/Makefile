@@ -7,7 +7,6 @@
     SUBDIR += R-cran-curl
     SUBDIR += atftp
     SUBDIR += axel
-    SUBDIR += bareftp
     SUBDIR += bbftp
     SUBDIR += bftpd
     SUBDIR += bsdftpd-ssl
