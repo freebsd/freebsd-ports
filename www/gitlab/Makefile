@@ -5,7 +5,6 @@ PORTNAME=	gitlab
 PORTVERSION=	8.15.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
-CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
