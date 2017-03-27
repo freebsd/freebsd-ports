@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exit.com/Archives/FreeBSD/
 
-MAINTAINER=	sten@blinkenlights.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to recover UFS2 filesystems
 
 USES=		tar:bzip2 uidfix
