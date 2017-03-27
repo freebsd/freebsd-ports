@@ -1,8 +1,10 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-MASTERDIR=	${.CURDIR}/../py-cssutils
-
 USES=		python:3.3+
+
+PORTSCOUT=	ignore:1
+
+MASTERDIR=	${.CURDIR}/../py-cssutils
 
 .include "${MASTERDIR}/Makefile"
