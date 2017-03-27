@@ -3,19 +3,15 @@
 
 PORTNAME=	splatd
 PORTVERSION=	1.2
-PORTREVISION=	6
+DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	7
 CATEGORIES=	net
-MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Splat is the Scalable Periodic LDAP Attribute Transmogrifier
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:devel/py-zconfig \
 		${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:net/py-ldap
@@ -28,6 +24,8 @@ PYDISTUTILS_PKGNAME=	splat
 USE_RC_SUBR=	splatd
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 NO_ARCH=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	threerings
 
 OPTIONS_DEFINE=	DOCS
 
