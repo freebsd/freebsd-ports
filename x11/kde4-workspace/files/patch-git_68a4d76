@@ -1,0 +1,28 @@
+Fixes the build with x11/kdelibs4 4.14.30.
+
+commit 68a4d76ceb7e9b8aa9f15f2231f806e74c91ec6d
+Author: Kevin Ottens <ervin@kde.org>
+Date:   Mon Jul 20 19:11:37 2015 +0200
+
+    Avoid target name clash
+
+diff --git a/libs/ksysguard/tests/CMakeLists.txt b/libs/ksysguard/tests/CMakeLists.txt
+index d472fd7e0a..2269b18ee1 100644
+--- libs/ksysguard/tests/CMakeLists.txt
++++ libs/ksysguard/tests/CMakeLists.txt
+@@ -12,13 +12,13 @@ target_link_libraries(processtest processui ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIB
+ 
+ # KSignalPlotter benchmark
+ set( signalplotterbenchmark_SRCS signalplotterbenchmark.cpp ../signalplotter/ksignalplotter.cpp)
+-kde4_add_unit_test( signalplotterbenchmark TESTNAME ksysguard-signalplottertest ${signalplotterbenchmark_SRCS} )
++kde4_add_unit_test( signalplotterbenchmark TESTNAME ksysguard-signalplotterbenchmark ${signalplotterbenchmark_SRCS} )
+ target_link_libraries( signalplotterbenchmark ${KDE4_KDEUI_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTBENCHMARK_LIBRARY} )
+ 
+ 
+ # KGraphicsSignalPlotter benchmark
+ set( graphicssignalplotterbenchmark_SRCS graphicssignalplotterbenchmark.cpp ../signalplotter/kgraphicssignalplotter.cpp)
+-kde4_add_unit_test( graphicssignalplotterbenchmark TESTNAME ksysguard-signalplottertest ${graphicssignalplotterbenchmark_SRCS} )
++kde4_add_unit_test( graphicssignalplotterbenchmark TESTNAME ksysguard-graphicssignalplotterbenchmark ${graphicssignalplotterbenchmark_SRCS} )
+ target_link_libraries( graphicssignalplotterbenchmark ${KDE4_KDEUI_LIBS} ${QT_QTTEST_LIBRARY} ${QT_QTBENCHMARK_LIBRARY} )
+ 
+ 

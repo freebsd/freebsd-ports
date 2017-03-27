@@ -33,8 +33,6 @@
     SUBDIR += frost
     SUBDIR += gkremldk
     SUBDIR += gnewtellium
-    SUBDIR += gnunet
-    SUBDIR += gnunet-gtk
     SUBDIR += go-ethereum
     SUBDIR += gtk-gnutella
     SUBDIR += gtorrentviewer

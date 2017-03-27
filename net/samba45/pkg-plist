@@ -183,7 +183,7 @@ lib/pam_winbind.so
 %%AD_DC%%lib/samba4/private/libprocess-model-samba4.so
 %%AD_DC%%lib/samba4/private/libservice-samba4.so
 lib/samba4/private/libCHARSET3-samba4.so
-@comment lib/samba4/private/libHDB-SAMBA4-samba4.so
+%%AD_DC%%lib/samba4/private/libHDB-SAMBA4-samba4.so
 lib/samba4/private/libLIBWBCLIENT-OLD-samba4.so
 lib/samba4/private/libMESSAGING-samba4.so
 lib/samba4/private/libaddns-samba4.so
@@ -205,7 +205,7 @@ lib/samba4/private/libcliauth-samba4.so
 lib/samba4/private/libcluster-samba4.so
 lib/samba4/private/libcmdline-credentials-samba4.so
 lib/samba4/private/libcom_err-samba4.so.0
-@comment lib/samba4/private/libdb-glue-samba4.so
+%%AD_DC%%lib/samba4/private/libdb-glue-samba4.so
 lib/samba4/private/libdbwrap-samba4.so
 lib/samba4/private/libdcerpc-samba-samba4.so
 lib/samba4/private/libdcerpc-samba4.so
@@ -247,7 +247,7 @@ lib/samba4/private/libnetif-samba4.so
 lib/samba4/private/libnon-posix-acls-samba4.so
 lib/samba4/private/libnpa-tstream-samba4.so
 lib/samba4/private/libnss-info-samba4.so
-@comment lib/samba4/private/libpac-samba4.so
+%%AD_DC%%lib/samba4/private/libpac-samba4.so
 lib/samba4/private/libpopt-samba3-samba4.so
 lib/samba4/private/libprinting-migrate-samba4.so
 lib/samba4/private/libregistry-samba4.so

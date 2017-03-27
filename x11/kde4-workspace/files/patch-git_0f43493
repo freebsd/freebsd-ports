@@ -1,0 +1,34 @@
+Fixes the build with kdelibs 4.14.30.
+
+commit 0f4349389875fa7452ec0a9d0a468be1e14cda33
+Author: Kevin Ottens <ervin@kde.org>
+Date:   Mon Jul 20 19:56:53 2015 +0200
+
+    Link to proper targets
+
+diff --git a/plasma/generic/dataengines/akonadi/CMakeLists.txt b/plasma/generic/dataengines/akonadi/CMakeLists.txt
+index 7f0dd346a4..091e76bd00 100644
+--- plasma/generic/dataengines/akonadi/CMakeLists.txt
++++ plasma/generic/dataengines/akonadi/CMakeLists.txt
+@@ -21,7 +21,7 @@ target_link_libraries(
+     ${KDE4_AKONADI_KMIME_LIBS}
+     ${KDE4_KABC_LIBS}
+     ${QT_QTXML_LIBRARY}
+-    microblog
++    ${KDE4_MICROBLOG_LIBS}
+ )
+ 
+ install(TARGETS plasma_engine_akonadi DESTINATION ${PLUGIN_INSTALL_DIR})
+diff --git a/plasma/generic/dataengines/calendar/CMakeLists.txt b/plasma/generic/dataengines/calendar/CMakeLists.txt
+index 6ad3b61046..fb0893da0e 100644
+--- plasma/generic/dataengines/calendar/CMakeLists.txt
++++ plasma/generic/dataengines/calendar/CMakeLists.txt
+@@ -33,7 +33,7 @@ target_link_libraries(
+ if(Akonadi_FOUND)
+     target_link_libraries(
+         plasma_engine_calendar
+-        akonadi-calendar
++        ${KDEPIMLIBS_AKONADI_CALENDAR_LIBS}
+         ${KDE4_AKONADI_LIBS}
+         ${KDEPIMLIBS_AKONADI_KCAL_LIBS}
+     )
