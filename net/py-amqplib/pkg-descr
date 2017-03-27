@@ -1,4 +1,4 @@
 Implements a simple non-threaded Python client library for AMQP 0-8,
 tested with RabbitMQ.
 
-WWW: http://code.google.com/p/py-amqplib/
+WWW: https://code.google.com/archive/p/py-amqplib/
