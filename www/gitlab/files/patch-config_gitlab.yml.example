@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2017-02-14 21:48:43 UTC
+--- config/gitlab.yml.example.orig	2017-03-19 14:19:38 UTC
 +++ config/gitlab.yml.example
-@@ -438,7 +438,7 @@ production: &base
+@@ -454,7 +454,7 @@ production: &base
      # gitlab-shell invokes Dir.pwd inside the repository path and that results
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
@@ -9,7 +9,7 @@
  
    ## Backup settings
    backup:
-@@ -463,12 +463,12 @@ production: &base
+@@ -479,12 +479,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -25,7 +25,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -481,7 +481,7 @@ production: &base
+@@ -497,7 +497,7 @@ production: &base
    # CAUTION!
    # Use the default values unless you really know what you are doing
    git:
