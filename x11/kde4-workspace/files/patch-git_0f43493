@@ -8,8 +8,8 @@ Date:   Mon Jul 20 19:56:53 2015 +0200
 
 diff --git a/plasma/generic/dataengines/akonadi/CMakeLists.txt b/plasma/generic/dataengines/akonadi/CMakeLists.txt
 index 7f0dd346a4..091e76bd00 100644
---- a/plasma/generic/dataengines/akonadi/CMakeLists.txt
-+++ b/plasma/generic/dataengines/akonadi/CMakeLists.txt
+--- plasma/generic/dataengines/akonadi/CMakeLists.txt
++++ plasma/generic/dataengines/akonadi/CMakeLists.txt
 @@ -21,7 +21,7 @@ target_link_libraries(
      ${KDE4_AKONADI_KMIME_LIBS}
      ${KDE4_KABC_LIBS}
@@ -21,8 +21,8 @@ index 7f0dd346a4..091e76bd00 100644
  install(TARGETS plasma_engine_akonadi DESTINATION ${PLUGIN_INSTALL_DIR})
 diff --git a/plasma/generic/dataengines/calendar/CMakeLists.txt b/plasma/generic/dataengines/calendar/CMakeLists.txt
 index 6ad3b61046..fb0893da0e 100644
---- a/plasma/generic/dataengines/calendar/CMakeLists.txt
-+++ b/plasma/generic/dataengines/calendar/CMakeLists.txt
+--- plasma/generic/dataengines/calendar/CMakeLists.txt
++++ plasma/generic/dataengines/calendar/CMakeLists.txt
 @@ -33,7 +33,7 @@ target_link_libraries(
  if(Akonadi_FOUND)
      target_link_libraries(
