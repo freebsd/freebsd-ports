@@ -201,6 +201,7 @@
     SUBDIR += bugzilla50
     SUBDIR += build
     SUBDIR += buildbot
+    SUBDIR += buildbot-pkg
     SUBDIR += buildbot-worker
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
