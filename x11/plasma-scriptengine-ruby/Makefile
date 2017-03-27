@@ -10,6 +10,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma scriptengine for Ruby
 
+NO_ARCH=	yes
 USES=		cmake:outsource kde:4 tar:xz
 USE_KDE=	kdelibs korundum automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build
