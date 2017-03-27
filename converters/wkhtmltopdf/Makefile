@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wkhtmltopdf
-PORTVERSION=	0.12.3.2
+PORTVERSION=	0.12.4
 CATEGORIES=	converters
 
 MAINTAINER=	mm@FreeBSD.org
@@ -20,7 +20,7 @@ USE_XORG=	x11 xext xrender
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-WKQT_TAGNAME=	fe194f9
+WKQT_TAGNAME=	c0cfa03
 GH_TUPLE=	${PORTNAME}:qt:${WKQT_TAGNAME}:qt
 HAS_CONFIGURE=	yes
 
@@ -77,5 +77,10 @@ post-build:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} \
 		${ALL_TARGET}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wkhtmltoimage \
+		${STAGEDIR}${PREFIX}/bin/wkhtmltopdf \
+		${STAGEDIR}${PREFIX}/lib/libwkhtmltox.so.0.12.4
 
 .include <bsd.port.mk>
