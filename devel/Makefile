@@ -205,6 +205,7 @@
     SUBDIR += buildbot-pkg
     SUBDIR += buildbot-waterfall-view
     SUBDIR += buildbot-worker
+    SUBDIR += buildbot-www
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += bullet
