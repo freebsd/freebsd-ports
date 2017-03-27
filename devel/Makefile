@@ -203,6 +203,7 @@
     SUBDIR += buildbot
     SUBDIR += buildbot-console-view
     SUBDIR += buildbot-pkg
+    SUBDIR += buildbot-waterfall-view
     SUBDIR += buildbot-worker
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
