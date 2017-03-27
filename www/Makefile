@@ -579,7 +579,6 @@
     SUBDIR += nuvolaplayer-youtube
     SUBDIR += obhttpd
     SUBDIR += ocaml-net
-    SUBDIR += offline-npm
     SUBDIR += opencart
     SUBDIR += openxmldir
     SUBDIR += opera
@@ -2361,7 +2360,6 @@
     SUBDIR += webtrees
     SUBDIR += wgetpaste
     SUBDIR += wikicalc
-    SUBDIR += wml
     SUBDIR += woof
     SUBDIR += wordpress
     SUBDIR += wsdlpull

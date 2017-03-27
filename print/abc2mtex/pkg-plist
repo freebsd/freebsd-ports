@@ -1,9 +1,0 @@
-bin/abc2mtex
-bin/abc_search
-bin/abc_sort_in
-share/texmf/doc/abc2mtex/usrguide.ps
-share/texmf/doc/abc2mtex/examples/English.abc
-share/texmf/doc/abc2mtex/examples/Jigs.abc
-share/texmf/doc/abc2mtex/examples/Reels.abc
-share/texmf/doc/abc2mtex/examples/Strspys.abc
-share/texmf/tex/abc2mtex_header.tex
