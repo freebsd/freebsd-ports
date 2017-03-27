@@ -201,7 +201,7 @@
     SUBDIR += bugzilla50
     SUBDIR += build
     SUBDIR += buildbot
-    SUBDIR += buildbot-slave
+    SUBDIR += buildbot-worker
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += bullet

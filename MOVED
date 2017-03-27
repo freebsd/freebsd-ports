@@ -9152,3 +9152,4 @@ net/samba-nmblookup|net/samba43|2017-03-21|Obsolete
 net/samba-smbclient|net/samba43|2017-03-21|Obsolete
 net/samba36|net/samba43|2017-03-21|Obsolete
 multimedia/mplayer2|multimedia/mpv|2017-03-25|Has expired: Development ceased in favour of mpv, last release from 2013
+devel/buildbot-slave|devel/buildbot-worker|2017-03-27|Renamed to match new upstream package name/terminology
