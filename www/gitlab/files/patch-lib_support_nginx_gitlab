@@ -1,4 +1,4 @@
---- lib/support/nginx/gitlab.orig	2017-02-14 21:48:43 UTC
+--- lib/support/nginx/gitlab.orig	2017-03-19 14:19:38 UTC
 +++ lib/support/nginx/gitlab
 @@ -17,7 +17,7 @@
  ## See installation.md#using-https for additional HTTPS configuration details.
@@ -8,8 +8,8 @@
 +  server unix:/usr/local/www/gitlab/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
  }
  
- ## Normal HTTP host
-@@ -63,7 +63,7 @@ server {
+ map $http_upgrade $connection_upgrade_gitlab {
+@@ -70,7 +70,7 @@ server {
    error_page 502 /502.html;
    error_page 503 /503.html;
    location ~ ^/(404|422|500|502|503)\.html$ {

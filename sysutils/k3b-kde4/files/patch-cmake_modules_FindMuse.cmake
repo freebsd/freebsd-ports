@@ -1,6 +1,6 @@
 --- cmake/modules/FindMuse.cmake.orig	2014-11-04 18:37:31 UTC
 +++ cmake/modules/FindMuse.cmake
-@@ -15,13 +15,10 @@ if( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES 
+@@ -15,9 +15,7 @@ if( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES 
  endif( MUSE_INCLUDE_DIR AND MUSE_LIBRARIES )
  
  include(CheckIncludeFiles)
@@ -10,9 +10,4 @@
 +set ( HAVE_MPC_MPCDEC_H 1 )
  
  if( HAVE_MPC_MPCDEC_H )
--    find_path( MUSE_INCLUDE_DIR mpc/mpcdec.h )
--    find_library( MUSE_LIBRARIES NAMES mpcdec )
-+    set( MUSE_LIBRARIES mpcdec )
-     set( MPC_HEADER_FILE "<mpc/mpcdec.h>" )
- elseif( HAVE_MPCDEC_MPCDEC_H )
-     find_path( MUSE_INCLUDE_DIR mpcdec/mpcdec.h )
+     find_path( MUSE_INCLUDE_DIR mpc/mpcdec.h )

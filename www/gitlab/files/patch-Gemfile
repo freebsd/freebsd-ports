@@ -1,4 +1,4 @@
---- Gemfile.orig	2017-02-14 21:48:43 UTC
+--- Gemfile.orig	2017-03-19 14:19:38 UTC
 +++ Gemfile
 @@ -1,20 +1,16 @@
  source 'https://rubygems.org'
@@ -24,7 +24,7 @@
  
  # Authentication libraries
  gem 'devise',                 '~> 4.2'
-@@ -28,16 +24,15 @@ gem 'omniauth-facebook',      '~> 4.0.0'
+@@ -27,17 +23,16 @@ gem 'omniauth-facebook',      '~> 4.0.0'
  gem 'omniauth-github',        '~> 1.1.1'
  gem 'omniauth-gitlab',        '~> 1.0.2'
  gem 'omniauth-google-oauth2', '~> 0.4.1'
@@ -34,7 +34,9 @@
 -gem 'omniauth-twitter',       '~> 1.2.0'
 +gem 'omniauth-twitter',       '>= 1.2.0'
  gem 'omniauth_crowd',         '~> 2.2.0'
+-gem 'omniauth-authentiq',     '~> 0.2.0'
 -gem 'rack-oauth2',            '~> 1.2.1'
++gem 'omniauth-authentiq',     '>= 0.2.0'
 +gem 'rack-oauth2',            '>= 1.2.1'
  gem 'jwt'
  
@@ -52,8 +54,8 @@
 +gem 'github-linguist', '>= 4.7.0', require: 'linguist'
  
  # API
--gem 'grape',        '~> 0.15.0'
-+gem 'grape',        '>= 0.15.0'
+-gem 'grape',        '~> 0.18.0'
++gem 'grape',        '>= 0.18.0'
  gem 'grape-entity', '~> 0.6.0'
  gem 'rack-cors',    '~> 0.4.0', require: 'rack/cors'
  
@@ -70,7 +72,16 @@
  
  # Drag and Drop UI
  gem 'dropzonejs-rails', '~> 0.7.1'
-@@ -100,28 +95,28 @@ gem 'seed-fu', '~> 2.3.5'
+@@ -92,7 +87,7 @@ gem 'fog-openstack', '~> 0.1'
+ gem 'fog-rackspace', '~> 0.1.1'
+ 
+ # for Google storage
+-gem 'google-api-client', '~> 0.8.6'
++gem 'google-api-client', '>= 0.8.6'
+ 
+ # for aws storage
+ gem 'unf', '~> 0.1.4'
+@@ -102,28 +97,28 @@ gem 'seed-fu', '~> 2.3.5'
  
  # Markdown and HTML processing
  gem 'html-pipeline',      '~> 1.11.0'
@@ -105,7 +116,7 @@
    gem 'unicorn-worker-killer', '~> 0.4.4'
  end
  
-@@ -140,7 +135,7 @@ gem 'redis-namespace', '~> 1.5.2'
+@@ -142,7 +137,7 @@ gem 'redis-namespace', '~> 1.5.2'
  gem 'sidekiq-limit_fetch', '~> 3.4'
  
  # HTTP requests
@@ -114,7 +125,7 @@
  
  # Colored output to console
  gem 'rainbow', '~> 2.1.0'
-@@ -163,7 +158,7 @@ gem 'connection_pool', '~> 2.0'
+@@ -165,7 +160,7 @@ gem 'connection_pool', '~> 2.0'
  gem 'hipchat', '~> 1.5.0'
  
  # JIRA integration
@@ -123,12 +134,8 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -172,10 +167,10 @@ gem 'gitlab-flowdock-git-hook', '~> 1.0.
- gem 'gemnasium-gitlab-service', '~> 0.2'
- 
- # Slack integration
--gem 'slack-notifier', '~> 1.2.0'
-+gem 'slack-notifier', '>= 1.2.0'
+@@ -177,13 +172,13 @@ gem 'gemnasium-gitlab-service', '~> 0.2'
+ gem 'slack-notifier', '~> 1.5.1'
  
  # Asana integration
 -gem 'asana', '~> 0.4.0'
@@ -136,7 +143,14 @@
  
  # FogBugz integration
  gem 'ruby-fogbugz', '~> 0.2.1'
-@@ -187,17 +182,17 @@ gem 'd3_rails', '~> 3.5.0'
+ 
+ # Kubernetes integration
+-gem 'kubeclient', '~> 2.2.0'
++gem 'kubeclient', '>= 2.2.0'
+ 
+ # d3
+ gem 'd3_rails', '~> 3.5.0'
+@@ -192,17 +187,17 @@ gem 'd3_rails', '~> 3.5.0'
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -157,7 +171,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -217,114 +212,31 @@ gem 'chronic_duration', '~> 0.10.6'
+@@ -222,116 +217,31 @@ gem 'chronic_duration', '~> 0.10.6'
  
  gem 'sass-rails', '~> 5.0.6'
  gem 'coffee-rails', '~> 4.1.0'
@@ -216,14 +230,14 @@
 -end
 -
 -group :development, :test do
--  gem 'byebug', '~> 8.2.1', platform: :mri
+-  gem 'pry-byebug', '~> 3.4.1', platform: :mri
 -  gem 'pry-rails', '~> 0.3.4'
 -
 -  gem 'awesome_print', '~> 1.2.0', require: false
 -  gem 'fuubar', '~> 2.0.0'
 -
 -  gem 'database_cleaner',   '~> 1.5.0'
--  gem 'factory_girl_rails', '~> 4.6.0'
+-  gem 'factory_girl_rails', '~> 4.7.0'
 -  gem 'rspec-rails',        '~> 3.5.0'
 -  gem 'rspec-retry',        '~> 0.4.5'
 -  gem 'spinach-rails',      '~> 0.2.1'
@@ -261,6 +275,8 @@
 -  gem 'knapsack', '~> 1.11.0'
 -
 -  gem 'activerecord_sane_schema_dumper', '0.2'
+-
+-  gem 'stackprof', '~> 0.2.10'
 -end
 -
 -group :test do
@@ -280,8 +296,8 @@
  
  gem 'mail_room', '~> 0.9.0'
  
-@@ -340,8 +252,10 @@ gem 'oauth2', '~> 1.2.0'
- gem 'paranoia', '~> 2.0'
+@@ -347,8 +257,10 @@ gem 'oauth2', '~> 1.2.0'
+ gem 'paranoia', '~> 2.2'
  
  # Health check
 -gem 'health_check', '~> 2.2.0'

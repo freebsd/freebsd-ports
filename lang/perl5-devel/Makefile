@@ -34,7 +34,7 @@ TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.25.10-90-gffb91b6
+GH_TAGNAME=	v5.25.11-22-g2e3b2a1
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -82,7 +82,7 @@ DOT_INC_CONFIGURE_ON=		-Ddefault_inc_excludes_dot=n
 #PORTSCOUT=	limit:^${PERL_VER}.
 
 .include "version.mk"
-PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
+PERL_VER=	5.25 # ${PERL_VERSION:C/\.[0-9]+$//} # XXX 5.26 release
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl
 SITE_PERL?=	${PREFIX}/${SITE_PERL_REL}

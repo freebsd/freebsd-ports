@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmail
-PORTVERSION=	5.2.17
+PORTVERSION=	5.2.18
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
