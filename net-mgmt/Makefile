@@ -155,7 +155,6 @@
     SUBDIR += nagstamon
     SUBDIR += nagtail
     SUBDIR += nagvis
-    SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += ndoutils
     SUBDIR += ndpmon
