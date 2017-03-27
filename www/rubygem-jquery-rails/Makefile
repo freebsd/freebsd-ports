@@ -5,7 +5,6 @@ PORTNAME=	jquery-rails
 PORTVERSION=	4.3.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	4
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a Rails generator for jQuery

@@ -4,6 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.15.8
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -140,7 +141,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-gemojione>=3:graphics/rubygem-gemojione \
 	rubygem-gon>=6.1.0:www/rubygem-gon \
 	rubygem-jquery-atwho-rails>=1.3.2:www/rubygem-jquery-atwho-rails \
-	rubygem-jquery-rails4>=4.1.0:www/rubygem-jquery-rails4 \
+	rubygem-jquery-rails>=4.1.0:www/rubygem-jquery-rails \
 	rubygem-jquery-ui-rails5-rails4>=5.0.0:www/rubygem-jquery-ui-rails5-rails4 \
 	rubygem-request_store>=1.3:devel/rubygem-request_store \
 	rubygem-select2-rails3>=3.5.9:www/rubygem-select2-rails3 \

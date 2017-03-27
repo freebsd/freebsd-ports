@@ -3,7 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	3.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	http://www.redmine.org/releases/
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-rails4>=4.2.5:www/rubygem-rails4 \
-		rubygem-jquery-rails4>=3.1.4:www/rubygem-jquery-rails4 \
+		rubygem-jquery-rails>=3.1.4:www/rubygem-jquery-rails \
 		rubygem-coderay>=1.1.0:textproc/rubygem-coderay \
 		rubygem-builder>=3.0.4:devel/rubygem-builder \
 		rubygem-request_store>=1.0.5:devel/rubygem-request_store \
