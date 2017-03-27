@@ -2,7 +2,7 @@
 
 PORTNAME=	libkexiv2
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 
 pre-configure:
 	${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_INSTALL_DIR}/libdata/' \
-		-e 's/${PORTNAME}.pc\([^.]\)/${PORTNAME}-kde4.pc\1/g' \
 		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
