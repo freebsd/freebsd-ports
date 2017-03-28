@@ -944,6 +944,7 @@
     SUBDIR += rinse
     SUBDIR += rmonitor
     SUBDIR += roottail
+    SUBDIR += rovclock
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncrypto

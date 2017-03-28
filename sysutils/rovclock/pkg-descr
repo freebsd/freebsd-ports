@@ -1,0 +1,6 @@
+Utility to control frequency rates of one's ATI Radeon video card.  It is
+very helpful for underclocking the Radeon chip in order to save power when
+running on batteries.  Also, by underclocking it is possible to prevent the
+fan from running.  It can also be used to gain performance by overclocking.
+
+WWW: http://www.hasw.net/linux/
