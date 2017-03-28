@@ -53,5 +53,6 @@
     SUBDIR += xf86-video-vmware
     SUBDIR += xf86-video-voodoo
     SUBDIR += xorg-drivers
+    SUBDIR += xorgxrdp
 
 .include <bsd.port.subdir.mk>
