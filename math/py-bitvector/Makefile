@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitvector
-PORTVERSION=	3.4.5
+PORTVERSION=	3.4.7
 CATEGORIES=	math python
 MASTER_SITES=	https://engineering.purdue.edu/kak/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
