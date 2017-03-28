@@ -1,5 +1,3 @@
-TIMESTAMP = 1488903232
-SHA256 (buildbot-0.9.4.tar.gz) = 068161cd9ada10b87f40117c768a37ce796ebf5e7bf08f224f4c7ded88cd7472
-SIZE (buildbot-0.9.4.tar.gz) = 3020851
-SHA256 (buildbot-www-0.9.4.tar.gz) = eb2f48aabee5e840aa8a4fce1f95f2fe4e2ae98045f9465d275ee5e263ae04b3
-SIZE (buildbot-www-0.9.4.tar.gz) = 691706
+TIMESTAMP = 1490709808
+SHA256 (buildbot-0.9.5.tar.gz) = c6408c5abe78f17e92750e1e462d4cfc8a79558dcc7354ea4dea2058ed282587
+SIZE (buildbot-0.9.5.tar.gz) = 3071500
