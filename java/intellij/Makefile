@@ -5,7 +5,7 @@
 # Vadim Zhukov <zhuk@openbsd.org>
 
 PORTNAME=	intellij
-PORTVERSION=	2016.3.5
+PORTVERSION=	2017.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
@@ -24,8 +24,9 @@ JAVA_VERSION=	1.7+
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+INSTALL_TARGET=	install-strip
 
-WRKDIST=	${WRKDIR}/idea-IC-163.13906.18
+WRKDIST=	${WRKDIR}/idea-IC-171.3780.107
 
 .include "common.mk"
 
@@ -48,7 +49,7 @@ do-install:
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
 	@${RM} -r ${STAGEDIR}${IDEA_HOME}/lib/libpty
-	@${RM} -r ${STAGEDIR}${IDEA_HOME}/jre/jre
+	@${RM} -r ${STAGEDIR}${IDEA_HOME}/jre
 	${INSTALL_SCRIPT} ${WRKDIR}/idea ${STAGEDIR}${PREFIX}/bin/idea
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/idea.desktop ${STAGEDIR}${PREFIX}/share/applications/
