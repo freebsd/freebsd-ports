@@ -1,6 +1,6 @@
 --- libsndio/sio_oss.c.orig	2016-11-06 11:21:59 UTC
 +++ libsndio/sio_oss.c
-@@ -108,6 +108,8 @@ static int sio_oss_xrun(struct sio_oss_h
+@@ -108,6 +108,8 @@ static int sio_oss_xrun(struct sio_oss_hdl *);
  static size_t sio_oss_read(struct sio_hdl *, void *, size_t);
  static size_t sio_oss_write(struct sio_hdl *, const void *, size_t);
  static void sio_oss_close(struct sio_hdl *);
@@ -20,7 +20,7 @@
  };
  
  /*
-@@ -228,12 +230,10 @@ sio_oss_getcap(struct sio_hdl *sh, struc
+@@ -228,12 +230,10 @@ sio_oss_getcap(struct sio_hdl *sh, struct sio_cap *cap
  }
  
  static int
@@ -34,7 +34,7 @@
  
  	p = _sndio_parsetype(str, "rsnd");
  	if (p == NULL) {
-@@ -253,7 +253,24 @@ sio_oss_getfd(const char *str, unsigned 
+@@ -253,7 +253,24 @@ sio_oss_getfd(const char *str, unsigned int mode, int 
  		DPRINTF("sio_oss_getfd: %s: number expected after '/'\n", str);
  		return -1;
  	}
@@ -60,7 +60,7 @@
  	if (mode == (SIO_PLAY | SIO_REC))
  		flags = O_RDWR;
  	else
-@@ -264,6 +281,19 @@ sio_oss_getfd(const char *str, unsigned 
+@@ -264,6 +281,19 @@ sio_oss_getfd(const char *str, unsigned int mode, int 
  		DPERROR(path);
  		return -1;
  	}
@@ -80,10 +80,41 @@
  	val = 1;
  	if (ioctl(fd, SNDCTL_DSP_LOW_WATER, &val) < 0) {
  		DPERROR("sio_oss_start: LOW_WATER");
-@@ -736,4 +766,40 @@ sio_oss_revents(struct sio_hdl *sh, stru
- 	return revents;
- }
+@@ -383,13 +413,25 @@ sio_oss_setpar(struct sio_hdl *sh, struct sio_par *par
+ 	struct sio_oss_hdl *hdl = (struct sio_oss_hdl *)sh;
+ 	unsigned int i, round, bufsz;
+ 	int frag_max, frag_shift, frag_count, frag;
++	unsigned int le, sig, msb;
  
++	le = par->le;
++	sig = par->sig;
++	msb = par->msb;
++
++	if (le == ~0U)
++		le = 0;
++	if (sig == ~0U)
++		sig = 0;
++	if (msb == ~0U)
++		msb = 0;
++
+ 	hdl->fmt = AFMT_S16_LE;
+ 	for (i = 0; i < sizeof(formats)/sizeof(formats[0]); i++) {
+ 		if (formats[i].bits == par->bits &&
+-		    formats[i].le == par->le &&
+-		    formats[i].sig == par->sig &&
+-		    formats[i].msb == par->msb) {
++		    formats[i].le == le &&
++		    formats[i].sig == sig &&
++		    formats[i].msb == msb) {
+ 			hdl->fmt = formats[i].fmt;
+ 			break;
+ 		}
+@@ -734,6 +776,42 @@ sio_oss_revents(struct sio_hdl *sh, struct pollfd *pfd
+ 		hdl->odelta -= delta;
+ 	}
+ 	return revents;
++}
++
 +static int
 +sio_oss_setvol(struct sio_hdl *sh, unsigned int vol)
 +{
@@ -118,6 +149,6 @@
 +	/* Use left channel volume and scale to SIO_MAXVOL */
 +	vol = SIO_MAXVOL * 1.0 * (vol & 0x7f) / 100;
 +	_sio_onvol_cb(&hdl->sio, vol);
-+}
-+
+ }
+ 
  #endif /* defined USE_OSS */
