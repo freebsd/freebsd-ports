@@ -13,7 +13,7 @@ COMMENT=	Autocompletion tool for Python
 USE_GITHUB=	yes
 GH_ACCOUNT=	davidhalter
 
-USES=		python:2
+USES?=		python:2
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
