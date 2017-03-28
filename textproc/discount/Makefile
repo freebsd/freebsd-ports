@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	discount
-DISTVERSION=	2.1.6
-PORTREVISION=	1
+DISTVERSION=	2.2.2
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/discount/ \
 		LOCAL/jlaffaye
@@ -44,6 +43,8 @@ EXTRA_CONFIGURE_ON=	--with-dl=both --with-fenced-code --with-github-tags \
 			--with-id-anchor
 
 TAB8_CONFIGURE_ON=	--with-tabstops=8
+
+CFLAGS+=	-fPIC
 
 SAMPLES_INSTALL_TARGET=	install install.samples
 SAMPLES_PLIST_FILES=	bin/makepage bin/mkd2html bin/theme \
