@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htmlpurifier
-PORTVERSION=	4.9.1
+PORTVERSION=	4.9.2
 PORTREVISION=	0
 CATEGORIES=	devel pear www
 MASTER_SITES=	http://htmlpurifier.org/get/ \
