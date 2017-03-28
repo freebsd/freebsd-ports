@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-api-client
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -23,5 +23,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
+
+PLIST_FILES=	bin/generate-api
 
 .include <bsd.port.mk>
