@@ -144,5 +144,20 @@ BUILD_WRKSRC=	${WRKSRC}/${${KIPI_PLUGIN}_DIR}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 ${KIPI_PLUGIN}_DIR?=		${KIPI_PLUGIN}
+
+.if ${KIPI_PLUGIN} != "libkipiplugins"
+# Each plugin is built separately from the same tarball. The upstream build
+# process expects a single build for all plugins, which includes building
+# libkipiplugins itself.
+# Adjust it (together with extrapatch-CMakeLists.txt in
+# graphics/kipi-plugins-kde4) by actually looking for libkipiplugins with
+# find_library() and linking against it instead of ending up just passing
+# "-lkipiplugins" to the linker because of the way we build these ports.
+post-patch: kipi-plugin-post-patch
+kipi-plugin-post-patch:
+	${FIND} ${BUILD_WRKSRC} -name CMakeLists.txt | ${XARGS} ${REINPLACE_CMD} -e \
+		's, kipiplugins, $${LIBKIPIPLUGINS_LIBRARIES},' \
+		${BUILD_WRKSRC}/CMakeLists.txt
+.endif
 . endif # defined(KIPI_PLUGIN)
 .endif # !defined(NO_BUILD)
