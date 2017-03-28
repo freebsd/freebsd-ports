@@ -5,8 +5,8 @@ PORTNAME=	sk1libs
 PORTVERSION=	0.9.1
 PORTREVISION=	2
 CATEGORIES=	graphics python
-MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/uniconvertor/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://downloads.sk1project.net/uniconvertor/v1.1.5/ \
+		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/uniconvertor/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Set of python libraries for sK1 Project

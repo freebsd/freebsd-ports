@@ -4,8 +4,8 @@
 PORTNAME=	uniconvertor
 PORTVERSION=	1.1.5
 CATEGORIES=	graphics python
-MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/uniconvertor/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://downloads.sk1project.net/uniconvertor/v1.1.5/ \
+		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/uniconvertor/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Universal vector graphics translator
