@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ufdbGuard
-PORTVERSION=	1.32.4
+PORTVERSION=	1.33.1
 CATEGORIES=	www
-MASTER_SITES=	SF/ufdbguard/1.32
+MASTER_SITES=	SF/ufdbguard/1.33
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	URL filter for the Squid web proxy
@@ -64,6 +64,16 @@ UNIXSOCKETS_CONFIGURE_OFF=	--without-unix-sockets
 
 UNIXSOCKETS_DESC=	Unix sockets support
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.if ${SSL_DEFAULT:Mlibressl-devel}		
+BROKEN=		Does not build with libressl-devel
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ufdbguardd \
 		${STAGEDIR}${PREFIX}/bin/ufdbgclient \
@@ -72,4 +82,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/ufdbAnalyse \
 		${STAGEDIR}${PREFIX}/bin/ufdbhttpd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,4 +1,4 @@
---- src/install_etcfiles.sh.in.orig	2016-08-02 02:36:07 UTC
+--- src/install_etcfiles.sh.in.orig	2017-02-27 13:27:26 UTC
 +++ src/install_etcfiles.sh.in
 @@ -25,15 +25,6 @@ then
     DESTDIR=${RPM_BUILD_ROOT:-}
@@ -29,18 +29,20 @@
  esac
  
  
-@@ -395,14 +384,3 @@ fi
+@@ -395,16 +384,3 @@ fi
  # TODO: copy parameters from ufdbUpdate to $SYSCFGFILE ************************************************************ 
  
  fix_piddir_permissions
 -
--SERVICE=`grep -E -e ufdbguardd /etc/services`
--if [ "$SERVICE" = "" ]
--then
--   (
--      echo ""
--      echo "# for URLfilterDB daemon : "
--      echo "ufdbguardd      3977/tcp"
--   ) >> /etc/services
--fi
+-# the addition of the ufdbguardd service to /etc/services is deiabled since
+-# ufdbguardd uses by default a named socket.
+-# SERVICE=`grep -E -e ufdbguardd $DESTDIR/etc/services`
+-# if [ "$SERVICE" = "" ]
+-# then
+-#    (
+-#       echo ""
+-#       echo "# for URLfilterDB daemon : "
+-#       echo "ufdbguardd      3977/tcp"
+-#    ) >> $DESTDIR/etc/services
+-# fi
 -
