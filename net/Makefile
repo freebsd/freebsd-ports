@@ -1076,6 +1076,7 @@
     SUBDIR += qadsl
     SUBDIR += qjsonrpc
     SUBDIR += qoauth
+    SUBDIR += qoauth-qt5
     SUBDIR += qt4-network
     SUBDIR += qt5-network
     SUBDIR += qtweetlib

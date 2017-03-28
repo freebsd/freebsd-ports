@@ -1,0 +1,11 @@
+include/QtOAuth-qt5/QtOAuth/QtOAuth
+include/QtOAuth-qt5/QtOAuth/interface.h
+include/QtOAuth-qt5/QtOAuth/qoauth_global.h
+include/QtOAuth-qt5/QtOAuth/qoauth_namespace.h
+lib/libqoauth-qt5.prl
+lib/libqoauth-qt5.so
+lib/libqoauth-qt5.so.2
+lib/libqoauth-qt5.so.2.0
+lib/libqoauth-qt5.so.2.0.0
+%%QT_MKSPECDIR%%/features/oauth.prf
+libdata/pkgconfig/qoauth-qt5.pc
