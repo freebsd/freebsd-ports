@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot-www
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -11,15 +11,15 @@ COMMENT=	Continuous Integration Framework (WWW)
 
 LICENSE=	GPLv2
 
-MY_DEPENDS=	buildbot>=0.9.4:devel/buildbot \
-		buildbot-pkg>=0.9.4:devel/buildbot-pkg \
+MY_DEPENDS=	buildbot>=${PORTVERSION}:devel/buildbot \
+		buildbot-pkg>=${PORTVERSION}:devel/buildbot-pkg \
 		${PYTHON_PKGNAMEPREFIX}mock>0.8.0:devel/py-mock
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS} \
-		buildbot-console-view>=0.9.4:devel/buildbot-console-view \
-		buildbot-waterfall-view>=0.9.4:devel/buildbot-waterfall-view
+		buildbot-console-view>=${PORTVERSION}:devel/buildbot-console-view \
+		buildbot-waterfall-view>=${PORTVERSION}:devel/buildbot-waterfall-view
 TEST_DEPENDS=	trial:devel/py-twisted \
-		buildbot-worker>=0.9.4:devel/buildbot-worker \
+		buildbot-worker>=${PORTVERSION}:devel/buildbot-worker \
 		${PYTHON_PKGNAMEPREFIX}mock>0.8.0:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3 \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0.0:security/py-service_identity \
