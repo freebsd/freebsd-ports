@@ -5,16 +5,15 @@ PORTNAME=	apachelog
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	www python
-MASTER_SITES=	GOOGLE_CODE \
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/apachelog/ \
 		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python access log parser
 
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
+LICENSE=	ART10 GPLv1+ # same as Perl
+LICENSE_COMB=	dual
 
 USES=		python:2
 USE_PYTHON=	autoplist distutils
