@@ -3,6 +3,7 @@
 
 PORTNAME=	goaccess
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tar.goaccess.io/
 
@@ -30,7 +31,7 @@ OPTIONS_RADIO_TOKYOCABINET=	TOKYOCABINET_BTREE TOKYOCABINET_MHASH
 DEBUG_CONFIGURE_ON=	--enable-debug
 UTF8_CONFIGURE_ON=	--enable-utf8
 
-GEOIP_CONFIGURE_ON=	--enable-geoip
+GEOIP_CONFIGURE_ON=	--enable-geoip=legacy
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 TOKYOCABINET_DESC=	Tokyo Cabinet support
