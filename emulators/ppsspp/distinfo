@@ -7,3 +7,5 @@ SHA256 (hrydgard-ppsspp-lang-cdf4a8d_GH0.tar.gz) = 32ddb92389fef5b9244e70f183d29
 SIZE (hrydgard-ppsspp-lang-cdf4a8d_GH0.tar.gz) = 249259
 SHA256 (Kingcom-armips-1ffab37_GH0.tar.gz) = ebfcc89e2bc983330fa5131ecbd324812f4679c9f04134ffea8f2658780a1c64
 SIZE (Kingcom-armips-1ffab37_GH0.tar.gz) = 146794
+SHA256 (7a7e4ed23f5f.patch) = 62038974cdb06d1f6d4cbae8c9e22bafbf718d7acaff6ebe15b4d9b1f3e1f2e3
+SIZE (7a7e4ed23f5f.patch) = 1241
