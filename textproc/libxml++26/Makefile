@@ -3,16 +3,14 @@
 #   $MCom: ports/textproc/libxml++26/Makefile,v 1.43 2011/04/18 19:58:29 kwm Exp $
 
 PORTNAME=	libxml++
-PORTVERSION=	2.40.1
+PORTVERSION=	2.34.2
 PORTREVISION?=	0
+PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	XML API for C++
-
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES+=		tar:xz
 
