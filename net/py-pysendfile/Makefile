@@ -2,20 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	pysendfile
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	net python devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python interface to sendfile(2)
 
 LICENSE=	MIT
-
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
 
 CONFLICTS_INSTALL=	py*-sendfile-[0-9]*
 

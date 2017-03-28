@@ -1076,6 +1076,7 @@
     SUBDIR += snowlog
     SUBDIR += socket
     SUBDIR += socklog
+    SUBDIR += solaar
     SUBDIR += sortu
     SUBDIR += spindown
     SUBDIR += spinner

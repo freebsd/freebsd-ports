@@ -762,6 +762,7 @@
     SUBDIR += popstar
     SUBDIR += pouetchess
     SUBDIR += powder
+    SUBDIR += powder-toy
     SUBDIR += powermanga
     SUBDIR += powwow
     SUBDIR += ppracer
