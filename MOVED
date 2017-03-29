@@ -9166,3 +9166,4 @@ net-p2p/gnunet||2017-03-27|Has expired: Broken for more than 6 months
 print/abc2mtex||2017-03-27|Has expired: Depends on expiring print/musixtex
 ftp/bareftp||2017-03-27|Has expired: Broken for more than 6 months
 www/rubygem-jquery-rails4|www/rubygem-jquery-rails|2017-03-27|Remove PKGNAMESUFFIX
+devel/libytnef|converters/ytnef|2017-03-29|Merged into converters/ytnef

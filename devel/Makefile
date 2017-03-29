@@ -1496,7 +1496,6 @@
     SUBDIR += libxalloc
     SUBDIR += libxo
     SUBDIR += libxs
-    SUBDIR += libytnef
     SUBDIR += libzookeeper
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
