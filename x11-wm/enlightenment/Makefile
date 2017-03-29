@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.21.6
+PORTVERSION=	0.21.7
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
@@ -14,7 +14,9 @@ COMMENT=	Artistic X window manager
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libefl.so:devel/efl \
-		libxcb-keysyms.so:x11/xcb-util-keysyms
+		libxcb-keysyms.so:x11/xcb-util-keysyms \
+		libpulse-simple.so:audio/pulseaudio \
+		libasound.so:audio/alsa-lib
 
 GNU_CONFIGURE=	yes
 USES=		alias autoreconf desktop-file-utils execinfo gettext-tools \
