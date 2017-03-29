@@ -3,6 +3,7 @@
 
 PORTNAME=	openvsp
 PORTVERSION=	3.10.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 CATEGORIES=	cad
 
@@ -14,8 +15,7 @@ LICENSE_NAME=	NASA Open Source Agreement version 1.3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
-		libdrm.so:graphics/libdrm \
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2 \
@@ -26,7 +26,8 @@ LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/include/eli/code_eli.hpp:graphics/code-eli \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
-		${LOCALBASE}/include/eigen3/Eigen/Array:math/eigen3
+		${LOCALBASE}/include/eigen3/Eigen/Array:math/eigen3 \
+		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 
 USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP

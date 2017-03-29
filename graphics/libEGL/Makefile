@@ -8,8 +8,8 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenEGL library
 
-LIB_DEPENDS+=	libpthread-stubs.so:devel/libpthread-stubs \
-		libexpat.so:textproc/expat2 \
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
+LIB_DEPENDS+=	libexpat.so:textproc/expat2 \
 		libdrm.so:graphics/libdrm
 
 USE_GL=		gbm
