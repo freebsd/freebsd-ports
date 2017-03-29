@@ -15,7 +15,9 @@ include/spdlog/fmt/bundled/format.cc
 include/spdlog/fmt/bundled/format.h
 include/spdlog/fmt/bundled/ostream.cc
 include/spdlog/fmt/bundled/ostream.h
-include/spdlog/fmt/bundled/printf.h
+include/spdlog/fmt/bundled/posix.cc
+include/spdlog/fmt/bundled/posix.h
+include/spdlog/fmt/bundled/time.h
 include/spdlog/fmt/fmt.h
 include/spdlog/fmt/ostr.h
 include/spdlog/formatter.h
