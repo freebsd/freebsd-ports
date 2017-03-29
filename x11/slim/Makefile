@@ -3,7 +3,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.6
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
@@ -13,8 +13,8 @@ COMMENT=	Graphical login manager for X11, derived from Login.app
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
-		libpng.so:graphics/png \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
+LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
@@ -26,8 +26,8 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 
 CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes \
-	-DBUILD_SLIMLOCK=no \
-	-DBUILD_SHARED_LIBS=yes
+		-DBUILD_SLIMLOCK=no \
+		-DBUILD_SHARED_LIBS=yes
 
 OPTIONS_DEFINE=		PAM UTF8 CONSOLEKIT
 OPTIONS_DEFAULT=	PAM CONSOLEKIT
