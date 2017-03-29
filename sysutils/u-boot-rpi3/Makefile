@@ -25,7 +25,6 @@ GH_TAGNAME=	${GIT_TAG}:pscimon
 
 NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}/u-boot-${DISTVERSION}
 USES=		gmake tar:bzip2
 SSP_UNSAFE=	yes # cross-LD does not support -fstack-protector
 
