@@ -5,4 +5,4 @@ minmumal SNMP polling overhead. Cactid is a replacement for the default
 cmd.php poller so you must decide if using Cactid makes sense for your
 installation.
 
-WWW: http://www.cacti.net/cactid_info.php
+WWW: http://www.cacti.net/spine_info.php
