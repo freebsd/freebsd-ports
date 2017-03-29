@@ -542,7 +542,7 @@ _SITES_extract:=	690:post-extract-gh-DEFAULT
 post-extract-gh-DEFAULT:
 	@${RMDIR} ${WRKSRC}/${GH_SUBDIR_DEFAULT} 2>/dev/null || :
 	@${MKDIR} ${WRKSRC}/${GH_SUBDIR_DEFAULT:H} 2>/dev/null || :
-	@${LN} -s ${GH_SUBDIR_DEFAULT:C/[^\/]//g:C/\//..\//g} ${WRKSRC}/${GH_SUBDIR_DEFAULT}
+	@${LN} -s ${GH_SUBDIR_DEFAULT:C/[^\/]//g:C/\//..\//g:S/^$/./} ${WRKSRC}/${GH_SUBDIR_DEFAULT}
 .  endif
 # If there are non default groups
 .  if !empty(_GITHUB_GROUPS:NDEFAULT)
