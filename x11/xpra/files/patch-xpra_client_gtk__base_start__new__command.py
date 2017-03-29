@@ -1,7 +1,7 @@
 # Don't override window background color in order to
 # avoid usability problems with light on dark themes
 #
---- xpra/client/gtk_base/start_new_command.py.orig	2016-12-06 10:56:26 UTC
+--- xpra/client/gtk_base/start_new_command.py.orig	2017-03-17 07:24:27 UTC
 +++ xpra/client/gtk_base/start_new_command.py
 @@ -45,7 +45,6 @@ class StartNewCommand(object):
          self.window.set_default_size(400, 150)
