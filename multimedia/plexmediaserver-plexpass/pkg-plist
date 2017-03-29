@@ -1453,11 +1453,11 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/gracenote.c86b1d7624b5ae14ca7a30d73674a808.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/vendor-logos/songkick.19411461aa7bffd06675aaa8a3d0a056.svg
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.80888ba1388b4faebf96.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest.f1a232a99817373ae4f5.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.26a9965b6415b211b557.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main.8f9078352f04bb9208c5.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest.b7c230aacd7bfd9063a8.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors.53e3a9b7430c9697ae23.js
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.7a165e401fb6bce8c5136f1c54b9806c.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.094e27093dd078ee5aacbe93b6ea9844.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.40196f0af40f1ef54dd2dfb9c9079879.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/mp3/null.2036f08ba858d37814b7f6982d26414a.mp3
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
