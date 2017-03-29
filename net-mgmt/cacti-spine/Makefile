@@ -10,7 +10,8 @@ DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Multithreaded poller for Cacti written in C
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
