@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot-waterfall-view
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -11,11 +11,11 @@ COMMENT=	Continuous Integration Framework (Waterfall View)
 
 LICENSE=	GPLv2
 
-MY_DEPENDS=	buildbot-pkg>=0.9.4:devel/buildbot-pkg
+MY_DEPENDS=	buildbot-pkg>=${PORTVERSION}:devel/buildbot-pkg
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 TEST_DEPENDS=	trial:devel/py-twisted \
-		buildbot-worker>=0.9.4:devel/buildbot-worker \
+		buildbot-worker>=${PORTVERSION}:devel/buildbot-worker \
 		${PYTHON_PKGNAMEPREFIX}mock>0.8.0:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3 \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0.0:security/py-service_identity \

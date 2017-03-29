@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	htmlpurifier
-PORTVERSION=	4.6.0
-PORTREVISION=	1
+PORTVERSION=	4.9.2
+PORTREVISION=	0
 CATEGORIES=	devel pear www
 MASTER_SITES=	http://htmlpurifier.org/get/ \
 		LOCAL
@@ -20,5 +20,7 @@ RUN_DEPENDS=	${PEARDIR}/.channels/htmlpurifier.org.reg:devel/pear-channel-htmlpu
 
 PEAR_CHANNEL=	htmlpurifier.org
 USES=	pear
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
