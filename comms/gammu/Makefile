@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gammu
-PORTVERSION=	1.38.1
+PORTVERSION=	1.38.2
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities
 
 LICENSE=	GPLv2

@@ -3,6 +3,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.d${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -93,6 +94,7 @@ OPENMP_GH_PROJECT=	openmp:openmp
 OPENMP_GH_SUBDIR=	tools/openmp:openmp
 OPENMP_GH_TAGNAME=	${OPENMP_COMMIT}:openmp
 OPENMP_EXTRA_PATCHES= \
+	${PATCHDIR}/openmp-patch-bug32279 \
 	${PATCHDIR}/openmp-patch-tools_openmp_libomptarget_CMakeLists.txt
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
