@@ -8,7 +8,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	qwit-${PORTVERSION}-src
 
-MAINTAINER=	sokolov@TrueBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4-based lightweight Twitter client
 
 BROKEN=		Unfetchable (google code has gone away)
