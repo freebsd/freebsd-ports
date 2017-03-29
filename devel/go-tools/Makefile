@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tools
-PORTVERSION=	20160709
+PORTVERSION=	20170328
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
@@ -11,13 +11,12 @@ COMMENT=	Go Tools
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		does not build (cannot find package "golang.org/x/net/html")
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2017-03-27
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/crypto/bcrypt.a:security/go.crypto \
+		${LOCALBASE}/${GO_LIBDIR}/golang.org/x/net/dict.a:net/go.net
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-GH_TAGNAME=	35c6e68a1a5ffc3e3afef71586710e9b0515582d
+GH_TAGNAME=	d63e2b22b05a9682de336cd4802bba367ed429e7
 USES=		go
 GO_PKGNAME=	golang.org/x/tools
 GO_TARGET=	${GO_PKGNAME}/benchmark/parse \
@@ -39,12 +38,10 @@ GO_TARGET=	${GO_PKGNAME}/benchmark/parse \
 		${GO_PKGNAME}/cmd/guru \
 		${GO_PKGNAME}/cmd/guru/serial \
 		${GO_PKGNAME}/cmd/html2article \
-		${GO_PKGNAME}/cmd/oracle \
 		${GO_PKGNAME}/cmd/present \
 		${GO_PKGNAME}/cmd/ssadump \
 		${GO_PKGNAME}/cmd/stress \
 		${GO_PKGNAME}/cmd/stringer \
-		${GO_PKGNAME}/cmd/tip \
 		${GO_PKGNAME}/container/intsets \
 		${GO_PKGNAME}/cover \
 		${GO_PKGNAME}/go/ast/astutil \
@@ -71,8 +68,6 @@ GO_TARGET=	${GO_PKGNAME}/benchmark/parse \
 		${GO_PKGNAME}/godoc/vfs/mapfs \
 		${GO_PKGNAME}/godoc/vfs/zipfs \
 		${GO_PKGNAME}/imports \
-		${GO_PKGNAME}/oracle \
-		${GO_PKGNAME}/oracle/serial \
 		${GO_PKGNAME}/playground \
 		${GO_PKGNAME}/playground/socket \
 		${GO_PKGNAME}/present \
