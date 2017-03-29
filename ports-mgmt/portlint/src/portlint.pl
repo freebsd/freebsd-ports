@@ -2622,8 +2622,6 @@ DIST_SUBDIR EXTRACT_ONLY
 				$ftphttp = 1;
 			}
 		}
-		&perror("WARN", $file, -1, "no ftp/http mirror in MASTER_SITES ".
-			"for users behind a proxy.") if ($urlseen && ! $ftphttp);
 	} else {
 		&perror("WARN", $file, -1, "no MASTER_SITES found. is it ok?");
 	}
