@@ -46,6 +46,7 @@
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/api/eval.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/api/info.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/api/ping.exs
+%%EMACS_SITE_LISPDIR%%/alchemist-server/lib/api/version.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/helpers/capture_io.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/helpers/complete.exs
 %%EMACS_SITE_LISPDIR%%/alchemist-server/lib/helpers/module_info.exs
