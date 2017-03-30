@@ -6,4 +6,3 @@ impose library requirements:
 Libclc is intended to be used with the Clang compiler's OpenCL frontend
 
 WWW: http://libclc.llvm.org/
-
