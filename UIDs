@@ -113,7 +113,7 @@ _iked:*:163:163::0:0:IKEv2 Daemon:/var/empty:/usr/sbin/nologin
 lightdm:*:164:164::0:0:Light Display Manager:/var/lib/lightdm-data:/usr/sbin/nologin
 uwsgi:*:165:165::0:0:uwsgi Daemon:/nonexistent:/usr/sbin/nologin
 yule:*:166:166::0:0:Samhain Daemon:/nonexistent:/usr/sbin/nologin
-# free: 167
+ceph:*:167:167::0:0:Ceph Daemons:/var/lib/ceph:/usr/sbin/nologin
 # free: 168
 # free: 169
 tile38:*:170:170::0:0:Tile38 User:/var/db/tile38:/usr/sbin/nologin
