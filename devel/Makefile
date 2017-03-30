@@ -3955,6 +3955,7 @@
     SUBDIR += phpbt
     SUBDIR += phpsh
     SUBDIR += phpunit
+    SUBDIR += phpunit6
     SUBDIR += physfs
     SUBDIR += physfs-devel
     SUBDIR += picp
