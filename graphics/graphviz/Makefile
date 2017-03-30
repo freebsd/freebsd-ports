@@ -209,7 +209,7 @@ CONFIGURE_ENV+=		SWIG="/nonexistent"
 
 .if ${PORT_OPTIONS:MPHP}
 SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.php
-PHP_VER=	70
+IGNORE_WITH_PHP=	56 71
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
