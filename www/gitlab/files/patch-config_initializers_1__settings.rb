@@ -1,4 +1,4 @@
---- config/initializers/1_settings.rb.orig	2017-03-19 14:19:38 UTC
+--- config/initializers/1_settings.rb.orig	2017-03-19 20:06:47 UTC
 +++ config/initializers/1_settings.rb
 @@ -190,12 +190,8 @@ Settings.gitlab['email_subject_suffix'] 
  Settings.gitlab['base_url']   ||= Settings.send(:build_base_gitlab_url)

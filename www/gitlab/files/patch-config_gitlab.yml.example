@@ -1,4 +1,4 @@
---- config/gitlab.yml.example.orig	2017-03-19 14:19:38 UTC
+--- config/gitlab.yml.example.orig	2017-03-19 20:06:47 UTC
 +++ config/gitlab.yml.example
 @@ -454,7 +454,7 @@ production: &base
      # gitlab-shell invokes Dir.pwd inside the repository path and that results
