@@ -4394,6 +4394,7 @@
     SUBDIR += py-liblarch
     SUBDIR += py-libpeas
     SUBDIR += py-libplist
+    SUBDIR += py-libtmux
     SUBDIR += py-libusb1
     SUBDIR += py-libusb115
     SUBDIR += py-libvirt
