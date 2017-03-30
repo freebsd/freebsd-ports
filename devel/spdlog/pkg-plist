@@ -36,7 +36,7 @@ include/spdlog/sinks/syslog_sink.h
 include/spdlog/sinks/wincolor_sink.h
 include/spdlog/spdlog.h
 include/spdlog/tweakme.h
+lib/cmake/spdlog/spdlogConfig.cmake
+lib/cmake/spdlog/spdlogConfigVersion.cmake
+lib/cmake/spdlog/spdlogTargets.cmake
 libdata/pkgconfig/spdlog.pc
-share/cmake/Modules/spdlog/spdlogConfig.cmake
-share/cmake/Modules/spdlog/spdlogConfigVersion.cmake
-share/cmake/Modules/spdlog/spdlogTargets.cmake
