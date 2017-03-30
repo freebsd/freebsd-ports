@@ -3955,6 +3955,7 @@
     SUBDIR += phpbt
     SUBDIR += phpsh
     SUBDIR += phpunit
+    SUBDIR += phpunit6
     SUBDIR += physfs
     SUBDIR += physfs-devel
     SUBDIR += picp
@@ -4394,6 +4395,7 @@
     SUBDIR += py-liblarch
     SUBDIR += py-libpeas
     SUBDIR += py-libplist
+    SUBDIR += py-libtmux
     SUBDIR += py-libusb1
     SUBDIR += py-libusb115
     SUBDIR += py-libvirt
@@ -5293,6 +5295,7 @@
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-hashie2
     SUBDIR += rubygem-health_check
+    SUBDIR += rubygem-health_check22
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hike
     SUBDIR += rubygem-hitimes

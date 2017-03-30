@@ -108,7 +108,7 @@ _iked:*:163:
 lightdm:*:164:
 uwsgi:*:165:
 yule:*:166:
-# free: 167
+ceph:*:167:
 # free: 168
 # free: 169
 tile38:*:170:
