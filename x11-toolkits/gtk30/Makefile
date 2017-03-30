@@ -5,7 +5,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	3.18.8
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -73,7 +73,7 @@ CLOUDPRINT_CONFIGURE_ENABLE=	cloudprint
 CLOUDPRINT_LIB_DEPENDS=	librest-0.7.so:devel/librest \
 			libjson-glib-1.0.so:devel/json-glib
 
-DEBUG_CONFIGURE_ENABLE=debug
+DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
