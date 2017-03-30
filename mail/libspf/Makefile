@@ -27,22 +27,33 @@ OPTIONS_DEFINE=	RFC_RECURSION LOGFILE_STATS DEBUG DOCS EXAMPLES
 RFC_RECURSION_DESC=	Change SPF recursion to 20 (as per RFC)
 LOGFILE_STATS_DESC=	Enables logfile stats
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRFC_RECURSION}
-CONFIGURE_ARGS+=	--enable-rfc-recursion
-.endif
-
-.if ${PORT_OPTIONS:MLOGFILE_STATS}
-CONFIGURE_ARGS+=	--enable-logfile-stats
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
+RFC_RECURSION_CONFIGURE_ON=	--enable-rfc-recursion
+LOGFILE_STATS_CONFIGURE_ON=	--enable-logfile-stats
+DEBUG_CONFIGURE_ON=	--enable-debug
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${FIND} ${WRKSRC}/patches -type d -name CVS | ${XARGS} ${RM} -r
+.for i in patches patches/qmail patches/qmail/1.03 patches/qmail/1.05 patches/Postfix \
+	patches/Postfix/2.1.x patches/Sendmail patches/Sendmail/8.12.x patches/Sendmail/8.13.x \
+	patches/Courier-MTA
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${i}
+	@for f in `${FIND} ${WRKSRC}/${i} ! -type d -maxdepth 1`; do \
+		${INSTALL_DATA} $${f} ${STAGEDIR}${DATADIR}/${i}; \
+	done
+.endfor
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${FIND} ${WRKSRC}/examples -type d -name CVS | ${XARGS} ${RM} -r
+.for i in examples/qmail examples/qmail/control examples/Sendmail
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${i}
+	@for f in `${FIND} ${WRKSRC}/${i} ! -type d -maxdepth 1`; do \
+		${INSTALL_DATA} $${f} ${STAGEDIR}${EXAMPLESDIR}/${i}; \
+	done
+.endfor
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${WRKSRC}/docs -type d -name CVS | ${XARGS} ${RM} -r
 .for i in docs docs/API docs/API/doxygen docs/API/doxygen/html docs/RFC docs/qmail \
@@ -52,25 +63,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
 	@for f in `${FIND} ${WRKSRC}/${i} ! -type d -maxdepth 1`; do \
 		${INSTALL_DATA} $${f} ${STAGEDIR}${DOCSDIR}/${i}; \
-	done
-.endfor
-.endif
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${FIND} ${WRKSRC}/examples -type d -name CVS | ${XARGS} ${RM} -r
-.for i in examples/qmail examples/qmail/control examples/Sendmail
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${i}
-	@for f in `${FIND} ${WRKSRC}/${i} ! -type d -maxdepth 1`; do \
-		${INSTALL_DATA} $${f} ${STAGEDIR}${EXAMPLESDIR}/${i}; \
-	done
-.endfor
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${FIND} ${WRKSRC}/patches -type d -name CVS | ${XARGS} ${RM} -r
-.for i in patches patches/qmail patches/qmail/1.03 patches/qmail/1.05 patches/Postfix \
-	patches/Postfix/2.1.x patches/Sendmail patches/Sendmail/8.12.x patches/Sendmail/8.13.x \
-	patches/Courier-MTA
-	@${MKDIR} ${STAGEDIR}${DATADIR}/${i}
-	@for f in `${FIND} ${WRKSRC}/${i} ! -type d -maxdepth 1`; do \
-		${INSTALL_DATA} $${f} ${STAGEDIR}${DATADIR}/${i}; \
 	done
 .endfor
 
