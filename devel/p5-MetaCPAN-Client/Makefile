@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MetaCPAN-Client
-PORTVERSION=	2.009000
+PORTVERSION=	2.009001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MICKEY
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.42:security/p5-IO-Socket-SSL \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
-		p5-Test-Requires>=0:devel/p5-Test-Requires
+		p5-Test-Needs>=0.002005:devel/p5-Test-Needs
 
 NO_ARCH=	yes
 USE_PERL5=	configure
