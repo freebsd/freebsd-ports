@@ -4924,7 +4924,6 @@
     SUBDIR += py3-libzfs
     SUBDIR += py3-lxml
     SUBDIR += py3-mccabe
-    SUBDIR += py3-meson
     SUBDIR += py3-nose
     SUBDIR += py3-ply
     SUBDIR += py3-prompt_toolkit

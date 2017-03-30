@@ -9168,3 +9168,4 @@ ftp/bareftp||2017-03-27|Has expired: Broken for more than 6 months
 www/rubygem-jquery-rails4|www/rubygem-jquery-rails|2017-03-27|Remove PKGNAMESUFFIX
 devel/libytnef|converters/ytnef|2017-03-29|Merged into converters/ytnef
 databases/py-sqlalchemy08|databases/py-sqlalchemy10|2017-03-29|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
+devel/py3-meson||2017-03-30|Removed
