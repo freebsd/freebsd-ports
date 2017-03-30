@@ -16,7 +16,6 @@ USES=	cpe php
 CPE_VENDOR=	phpunit_project
 USE_PHP=	dom json spl pcre phar
 
-PHP_VER=	70
 IGNORE_WITH_PHP=	56
 
 NO_ARCH=	yes
