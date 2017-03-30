@@ -3,7 +3,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.16.10.8128
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -55,12 +55,12 @@ SHEBANG_FILES=	mibs/process.pl \
 	poller-wrapper.py
 
 USE_PHP=	ctype filter gd iconv json mcrypt mysqli openssl posix session snmp tokenizer xml zlib
+IGNORE_WITH_PHP=	71
 
 NO_BUILD=	yes
 
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 		dot:graphics/graphviz \
-		Magick-config:graphics/ImageMagick \
 		mtr:net/mtr-nox11 \
 		${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4 \
 		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6 \
