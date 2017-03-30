@@ -28,7 +28,6 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PROJECTHOST=	ibus
 WRKSRC=			${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>

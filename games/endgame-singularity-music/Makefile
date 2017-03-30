@@ -5,7 +5,6 @@ PORTNAME=	endgame-singularity-music
 PORTVERSION=	007
 PORTREVISION=	1
 CATEGORIES=	games
-PROJECTHOST=	endgame-singularity
 
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
