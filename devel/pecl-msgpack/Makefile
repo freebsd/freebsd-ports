@@ -14,7 +14,6 @@ COMMENT=	Provides API for communicating with MessagePack serialization
 LICENSE=	BSD3CLAUSE
 
 USES=		php:ext tar:tgz
-PHP_VER=	70
 IGNORE_WITH_PHP=	56
 
 .include <bsd.port.mk>
