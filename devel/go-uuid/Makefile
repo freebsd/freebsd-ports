@@ -14,7 +14,6 @@ LICENSE=	MIT
 
 USES=		go
 REVISION=	35bc42037350
-PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}
 WRKSRC=		${WRKDIR}/go-uuid-${REVISION}
 GO_PKGNAME=	code.google.com/p/go-uuid/uuid
 GO_TARGET=	code.google.com/p/go-uuid/uuid/uuid

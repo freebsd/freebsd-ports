@@ -6,7 +6,6 @@ PORTVERSION=	0.0.3
 PORTREVISION=	4
 CATEGORIES=	www python
 MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/universe/p/python-jswebkit/
-PROJECTHOST=	gwrite
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}_${PORTVERSION}.orig
 

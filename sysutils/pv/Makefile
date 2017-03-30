@@ -15,8 +15,6 @@ LICENSE=	ART20
 
 CONFLICTS=	waon-[0-9]*
 
-PROJECTHOST=	pipeviewer
-
 USES=	tar:bzip2 gmake
 GNU_CONFIGURE=	yes
 

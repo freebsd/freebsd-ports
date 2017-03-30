@@ -5,6 +5,6 @@
  
  %.inst: %.mo
 -	$(INSTALL) -D -m 644 $< $(DESTDIR)/$(PREFIX)/share/locale/$*/LC_MESSAGES/radeontop.mo
-+	$(INSTALL) -m 644 $< $(DESTDIR)/$(PREFIX)/share/locale/$*/LC_MESSAGES/radeontop.mo
++	$(INSTALL) -m 644 $< $(DESTDIR)$(PREFIX)/share/locale/$*/LC_MESSAGES/radeontop.mo
  
  install: all $(inst)
