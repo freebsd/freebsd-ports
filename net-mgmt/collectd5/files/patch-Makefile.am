@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2016-09-11 08:10:25 UTC
++++ Makefile.am
+@@ -14,7 +14,6 @@ EXTRA_DIST = contrib version-gen.sh test
+ 
+ install-exec-hook:
+ 	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/lib/$(PACKAGE_NAME)
+ 	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
+ 
+ maintainer-clean-local:
