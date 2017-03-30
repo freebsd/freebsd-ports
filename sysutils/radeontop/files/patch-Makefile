@@ -39,13 +39,13 @@
 -install: all
 -	$(INSTALL) -D -m755 $(bin) $(DESTDIR)/$(PREFIX)/sbin/$(bin)
 +install:
-+	$(INSTALL) -m755 $(bin) $(DESTDIR)/$(PREFIX)/sbin
++	$(INSTALL) -m755 $(bin) $(DESTDIR)$(PREFIX)/sbin
  ifeq ($(xcb), 1)
 -	$(INSTALL) -D -m755 $(xcblib) $(DESTDIR)/$(PREFIX)/$(LIBDIR)/$(xcblib)
-+	$(INSTALL) -m755 $(xcblib) $(DESTDIR)/$(PREFIX)/$(LIBDIR)
++	$(INSTALL) -m755 $(xcblib) $(DESTDIR)$(PREFIX)/$(LIBDIR)
  endif
 -	$(INSTALL) -D -m644 radeontop.1 $(DESTDIR)/$(PREFIX)/share/man/man1/radeontop.1
-+	$(INSTALL) -m644 radeontop.1 $(DESTDIR)/$(MANPREFIX)/man/man1
++	$(INSTALL) -m644 radeontop.1 $(DESTDIR)$(MANPREFIX)/man/man1
  ifeq ($(nls), 1)
  	$(MAKE) -C translations install PREFIX=$(PREFIX)
  endif
