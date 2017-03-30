@@ -1,6 +1,6 @@
---- src/geom_stat.c.orig	2016-05-22 07:58:08 UTC
+--- src/geom_stat.c.orig	2017-03-30 23:55:02 UTC
 +++ src/geom_stat.c
-@@ -0,0 +1,335 @@
+@@ -0,0 +1,339 @@
 +/**
 + * collectd - src/geom.c 
 + * 
@@ -39,7 +39,6 @@
 +#include "collectd.h"
 +#include "common.h"
 +#include "plugin.h"
-+#include "utils_freebsd.h"
 +
 +
 +#include <sys/devicestat.h>
@@ -98,8 +97,8 @@
 +		i = geom_gettree(&gmp);
 +		if (i != 0)
 +			err(1, "geom_gettree = %d", i);
-+		error = Geom_stats_open();
-+		if (error)
++		error = geom_stats_open();
++		if (error && error != EBUSY)
 +			err(1, "geom_stats_open()");
 +		sq = NULL;
 +		sq = geom_stats_snapshot_get();
@@ -324,6 +323,10 @@
 +	return (0);
 +} /* int geom_read */
 +
++static int geom_shutdown(void) {
++  geom_stats_close();
++  return (0);
++} /* int geom_shutdown */
 +
 +void module_register (void)
 +{
@@ -333,6 +336,7 @@
 +
 +	plugin_register_init ("geom_stat", geom_init);
 +	plugin_register_read ("geom_stat", geom_read);
++  	plugin_register_shutdown("geom_stat", geom_shutdown);
 +} /* void module_register */
 +
 +/* vmi: set sw=8 noexpandtab fdm=marker : */
