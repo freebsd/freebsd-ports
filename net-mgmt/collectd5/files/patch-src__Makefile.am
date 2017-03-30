@@ -58,7 +58,20 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  disk_la_LIBADD += -ldevinfo
-@@ -519,7 +538,7 @@ interface_la_CFLAGS += $(BUILD_WITH_LIBS
+@@ -467,6 +486,12 @@ filecount_la_SOURCES = filecount.c
+ filecount_la_LDFLAGS = $(PLUGIN_LDFLAGS)
+ endif
+ 
++if BUILD_PLUGIN_GEOM_STAT
++pkglib_LTLIBRARIES += geom_stat.la
++geom_stat_la_SOURCES = geom_stat.c
++geom_stat_la_LDFLAGS = -module -avoid-version -ldevstat -lkvm -lgeom lbsdxml -lsbuf
++endif
++
+ if BUILD_PLUGIN_GMOND
+ pkglib_LTLIBRARIES += gmond.la
+ gmond_la_SOURCES = gmond.c
+@@ -519,7 +544,7 @@ interface_la_CFLAGS += $(BUILD_WITH_LIBS
  interface_la_LIBADD += $(BUILD_WITH_LIBSTATGRAB_LDFLAGS)
  else
  if BUILD_WITH_LIBKSTAT
@@ -67,7 +80,7 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  interface_la_LIBADD += -ldevinfo
-@@ -708,7 +727,7 @@ memory_la_CFLAGS = $(AM_CFLAGS)
+@@ -708,7 +733,7 @@ memory_la_CFLAGS = $(AM_CFLAGS)
  memory_la_LDFLAGS = $(PLUGIN_LDFLAGS)
  memory_la_LIBADD =
  if BUILD_WITH_LIBKSTAT
@@ -76,7 +89,7 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  memory_la_LIBADD += -ldevinfo
-@@ -799,6 +818,17 @@ nfs_la_SOURCES = nfs.c
+@@ -799,6 +824,17 @@ nfs_la_SOURCES = nfs.c
  nfs_la_LDFLAGS = $(PLUGIN_LDFLAGS)
  endif
  
@@ -94,7 +107,7 @@
  if BUILD_PLUGIN_FSCACHE
  pkglib_LTLIBRARIES += fscache.la
  fscache_la_SOURCES = fscache.c
-@@ -1081,7 +1111,7 @@ swap_la_CFLAGS = $(AM_CFLAGS)
+@@ -1081,7 +1117,7 @@ swap_la_CFLAGS = $(AM_CFLAGS)
  swap_la_LDFLAGS = $(PLUGIN_LDFLAGS)
  swap_la_LIBADD =
  if BUILD_WITH_LIBKSTAT
@@ -103,7 +116,7 @@
  endif
  if BUILD_WITH_LIBDEVINFO
  swap_la_LIBADD += -ldevinfo
-@@ -1132,7 +1162,7 @@ if BUILD_PLUGIN_TAPE
+@@ -1132,7 +1168,7 @@ if BUILD_PLUGIN_TAPE
  pkglib_LTLIBRARIES += tape.la
  tape_la_SOURCES = tape.c
  tape_la_LDFLAGS = $(PLUGIN_LDFLAGS)
@@ -112,7 +125,7 @@
  endif
  
  if BUILD_PLUGIN_TARGET_NOTIFICATION
-@@ -1230,7 +1260,7 @@ uptime_la_CFLAGS = $(AM_CFLAGS)
+@@ -1230,7 +1266,7 @@ uptime_la_CFLAGS = $(AM_CFLAGS)
  uptime_la_LDFLAGS = $(PLUGIN_LDFLAGS)
  uptime_la_LIBADD =
  if BUILD_WITH_LIBKSTAT
@@ -121,7 +134,7 @@
  endif
  if BUILD_WITH_PERFSTAT
  uptime_la_LIBADD += -lperfstat
-@@ -1393,7 +1423,19 @@ if BUILD_FREEBSD
+@@ -1393,7 +1429,19 @@ if BUILD_FREEBSD
  zfs_arc_la_LIBADD = -lm
  endif
  if BUILD_SOLARIS
@@ -142,7 +155,7 @@
  endif
  endif
  
-@@ -1501,6 +1543,7 @@ install-exec-hook:
+@@ -1501,6 +1549,7 @@ install-exec-hook:
  	else \
  		$(INSTALL) -m 0640 collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf; \
  	fi; \

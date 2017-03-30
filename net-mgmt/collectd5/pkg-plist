@@ -34,6 +34,7 @@ lib/collectd/dns.so
 lib/collectd/email.so
 lib/collectd/exec.so
 lib/collectd/filecount.so
+lib/collectd/geom_stat.so
 lib/collectd/interface.so
 %%IPMI%%lib/collectd/ipmi.so
 lib/collectd/load.so

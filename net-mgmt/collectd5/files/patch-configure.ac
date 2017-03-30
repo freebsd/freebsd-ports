@@ -248,7 +248,15 @@
  plugin_df="no"
  plugin_disk="no"
  plugin_drbd="no"
-@@ -5951,6 +6086,7 @@ plugin_log_logstash="no"
+@@ -5938,6 +6073,7 @@ plugin_entropy="no"
+ plugin_ethstat="no"
+ plugin_fhcount="no"
+ plugin_fscache="no"
++plugin_geom_stat="no"
+ plugin_gps="no"
+ plugin_grpc="no"
+ plugin_hugepages="no"
+@@ -5951,6 +6087,7 @@ plugin_log_logstash="no"
  plugin_memory="no"
  plugin_multimeter="no"
  plugin_nfs="no"
@@ -256,7 +264,7 @@
  plugin_numa="no"
  plugin_perl="no"
  plugin_pinba="no"
-@@ -5974,6 +6110,7 @@ plugin_wireless="no"
+@@ -5974,6 +6111,7 @@ plugin_wireless="no"
  plugin_write_prometheus="no"
  plugin_xencpu="no"
  plugin_zfs_arc="no"
@@ -264,19 +272,20 @@
  plugin_zone="no"
  plugin_zookeeper="no"
  
-@@ -6059,8 +6196,11 @@ fi
+@@ -6059,8 +6197,12 @@ fi
  
  if test "x$ac_system" = "xFreeBSD"
  then
 +	plugin_ctl="yes"
  	plugin_disk="yes"
++	plugin_geom_stat="yes"
 +	plugin_nfsstat="yes"
  	plugin_zfs_arc="yes"
 +	plugin_zfs_arc_v2="yes"
  fi
  
  
-@@ -6088,6 +6228,7 @@ then
+@@ -6088,6 +6230,7 @@ then
  	plugin_processes="yes"
  	plugin_uptime="yes"
  	plugin_zfs_arc="yes"
@@ -284,7 +293,7 @@
  	plugin_zone="yes"
  fi
  
-@@ -6387,10 +6528,12 @@ AC_PLUGIN([contextswitch],       [$plugi
+@@ -6387,10 +6530,12 @@ AC_PLUGIN([contextswitch],       [$plugi
  AC_PLUGIN([cpu],                 [$plugin_cpu],             [CPU usage statistics])
  AC_PLUGIN([cpufreq],             [$plugin_cpufreq],         [CPU frequency statistics])
  AC_PLUGIN([cpusleep],            [$plugin_cpusleep],        [CPU sleep statistics])
@@ -297,7 +306,15 @@
  AC_PLUGIN([dbi],                 [$with_libdbi],            [General database statistics])
  AC_PLUGIN([df],                  [$plugin_df],              [Filesystem usage statistics])
  AC_PLUGIN([disk],                [$plugin_disk],            [Disk usage statistics])
-@@ -6443,6 +6586,7 @@ AC_PLUGIN([netapp],              [$with_
+@@ -6404,6 +6549,7 @@ AC_PLUGIN([exec],                [yes], 
+ AC_PLUGIN([fhcount],             [$plugin_fhcount],         [File handles statistics])
+ AC_PLUGIN([filecount],           [yes],                     [Count files in directories])
+ AC_PLUGIN([fscache],             [$plugin_fscache],         [fscache statistics])
++AC_PLUGIN([geom_stat],           [$plugin_geom_stat],       [FreeBSD GEOM statistics])
+ AC_PLUGIN([gmond],               [$with_libganglia],        [Ganglia plugin])
+ AC_PLUGIN([gps],                 [$plugin_gps],             [GPS plugin])
+ AC_PLUGIN([grpc],                [$plugin_grpc],            [gRPC plugin])
+@@ -6443,6 +6589,7 @@ AC_PLUGIN([netapp],              [$with_
  AC_PLUGIN([netlink],             [$with_libmnl],            [Enhanced Linux network statistics])
  AC_PLUGIN([network],             [yes],                     [Network communication plugin])
  AC_PLUGIN([nfs],                 [$plugin_nfs],             [NFS statistics])
@@ -305,7 +322,7 @@
  AC_PLUGIN([nginx],               [$with_libcurl],           [nginx statistics])
  AC_PLUGIN([notify_desktop],      [$with_libnotify],         [Desktop notifications])
  AC_PLUGIN([notify_email],        [$with_libesmtp],          [Email notifier])
-@@ -6515,6 +6659,7 @@ AC_PLUGIN([write_tsdb],          [yes], 
+@@ -6515,6 +6662,7 @@ AC_PLUGIN([write_tsdb],          [yes], 
  AC_PLUGIN([xencpu],              [$plugin_xencpu],          [Xen Host CPU usage])
  AC_PLUGIN([xmms],                [$with_libxmms],           [XMMS statistics])
  AC_PLUGIN([zfs_arc],             [$plugin_zfs_arc],         [ZFS ARC statistics])
@@ -313,7 +330,7 @@
  AC_PLUGIN([zone],                [$plugin_zone],            [Solaris container statistics])
  AC_PLUGIN([zookeeper],           [yes],                     [Zookeeper statistics])
  
-@@ -6683,8 +6828,8 @@ AM_CFLAGS="-Wall"
+@@ -6683,8 +6831,8 @@ AM_CFLAGS="-Wall"
  AM_CXXFLAGS="-Wall"
  if test "x$enable_werror" != "xno"
  then
@@ -324,7 +341,7 @@
  fi
  AC_SUBST([AM_CFLAGS])
  AC_SUBST([AM_CXXFLAGS])
-@@ -6794,6 +6939,7 @@ AC_MSG_RESULT([    libxenctrl  . . . . .
+@@ -6794,6 +6942,7 @@ AC_MSG_RESULT([    libxenctrl  . . . . .
  AC_MSG_RESULT([    libxml2 . . . . . . . $with_libxml2])
  AC_MSG_RESULT([    libxmms . . . . . . . $with_libxmms])
  AC_MSG_RESULT([    libyajl . . . . . . . $with_libyajl])
@@ -332,7 +349,7 @@
  AC_MSG_RESULT([    oracle  . . . . . . . $with_oracle])
  AC_MSG_RESULT([    protobuf-c  . . . . . $have_protoc_c])
  AC_MSG_RESULT([    protoc 3  . . . . . . $have_protoc3])
-@@ -6825,6 +6971,7 @@ AC_MSG_RESULT([    cpu . . . . . . . . .
+@@ -6825,6 +6974,7 @@ AC_MSG_RESULT([    cpu . . . . . . . . .
  AC_MSG_RESULT([    cpufreq . . . . . . . $enable_cpufreq])
  AC_MSG_RESULT([    cpusleep  . . . . . . $enable_cpusleep])
  AC_MSG_RESULT([    csv . . . . . . . . . $enable_csv])
@@ -340,7 +357,15 @@
  AC_MSG_RESULT([    curl  . . . . . . . . $enable_curl])
  AC_MSG_RESULT([    curl_json . . . . . . $enable_curl_json])
  AC_MSG_RESULT([    curl_xml  . . . . . . $enable_curl_xml])
-@@ -6880,6 +7027,7 @@ AC_MSG_RESULT([    netapp  . . . . . . .
+@@ -6841,6 +6991,7 @@ AC_MSG_RESULT([    exec  . . . . . . . .
+ AC_MSG_RESULT([    fhcount . . . . . . . $enable_fhcount])
+ AC_MSG_RESULT([    filecount . . . . . . $enable_filecount])
+ AC_MSG_RESULT([    fscache . . . . . . . $enable_fscache])
++AC_MSG_RESULT([    geom_stat . . . . . . $enable_geom_stat])
+ AC_MSG_RESULT([    gmond . . . . . . . . $enable_gmond])
+ AC_MSG_RESULT([    gps . . . . . . . . . $enable_gps])
+ AC_MSG_RESULT([    grpc  . . . . . . . . $enable_grpc])
+@@ -6880,6 +7031,7 @@ AC_MSG_RESULT([    netapp  . . . . . . .
  AC_MSG_RESULT([    netlink . . . . . . . $enable_netlink])
  AC_MSG_RESULT([    network . . . . . . . $enable_network])
  AC_MSG_RESULT([    nfs . . . . . . . . . $enable_nfs])
@@ -348,7 +373,7 @@
  AC_MSG_RESULT([    nginx . . . . . . . . $enable_nginx])
  AC_MSG_RESULT([    notify_desktop  . . . $enable_notify_desktop])
  AC_MSG_RESULT([    notify_email  . . . . $enable_notify_email])
-@@ -6951,6 +7099,7 @@ AC_MSG_RESULT([    write_tsdb  . . . . .
+@@ -6951,6 +7103,7 @@ AC_MSG_RESULT([    write_tsdb  . . . . .
  AC_MSG_RESULT([    xencpu  . . . . . . . $enable_xencpu])
  AC_MSG_RESULT([    xmms  . . . . . . . . $enable_xmms])
  AC_MSG_RESULT([    zfs_arc . . . . . . . $enable_zfs_arc])
