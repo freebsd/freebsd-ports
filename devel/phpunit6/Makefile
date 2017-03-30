@@ -5,6 +5,7 @@ PORTNAME=	phpunit
 PORTVERSION=	6.0.11
 CATEGORIES=	devel www
 MASTER_SITES=	https://phar.phpunit.de/
+PKGNAMESUFFIX=	6
 EXTRACT_SUFX=	.phar
 
 MAINTAINER=	joneum@bsdproject.de
