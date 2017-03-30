@@ -2,10 +2,7 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-PORTREVISION=	7
-CATEGORIES=	x11 kde
-MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	x11 kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Plasma Desktop
@@ -14,6 +11,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libck-connector.so:sysutils/consolekit \
 		libpci.so:devel/libpci \
 		libhal.so:sysutils/hal \
+		libqjson.so:devel/qjson \
+		libcln.so:math/cln \
 		libqalculate.so:math/libqalculate \
 		libprison.so:graphics/prison \
 		libboost_thread.so:devel/boost-libs \
@@ -42,17 +41,19 @@ RUN_DEPENDS=	${KDE_PREFIX}/env/xdg-env.sh:misc/kde4-xdg-env \
 
 USES=		cmake:outsource compiler:c++11-lib gettext gmake jpeg kde:4 \
 		pkgconfig shebangfix tar:xz
-USE_GL=		glu
-USE_GNOME=	glib20
+USE_GL=		gl glu
+USE_GNOME=	glib20 libxml2
 USE_KDE=	kactivities kdelibs nepomuk-core oxygen-icons4 \
 		pimlibs akonadi automoc4 ontologies qimageblitz soprano strigi
 USE_QT4=	corelib dbus declarative designer_build gui network \
-		opengl phonon qtestlib script sql webkit xml \
+		opengl phonon qtestlib script sql svg webkit xml \
 		moc_build qmake_build rcc_build uic_build
-USE_XORG=	kbproto x11 xau xcomposite xcursor xdamage xdmcp xfixes \
-		xft xi xinerama xkbfile xrandr xrender xres xscrnsaver xtst
+USE_XORG=	ice sm kbproto x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
+		xft xi xinerama xkbfile xpm xrandr xrender xres xscrnsaver xtst xxf86vm
 SHEBANG_FILES=	kwin/clients/oxygen/data/update_oxygen.pl
 USE_LDCONFIG=	yes
+
+KDE_APPLICATIONS_VERSION=	15.08.0
 
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DBUILD_python:BOOL=OFF \

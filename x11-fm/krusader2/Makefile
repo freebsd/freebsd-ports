@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Twin panel file manager for KDE, like midnight or norton commander
 
 LICENSE=	GPLv2+

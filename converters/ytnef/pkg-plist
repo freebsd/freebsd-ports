@@ -1,3 +1,6 @@
+bin/ytnef
+bin/ytnefprint
+bin/ytnefprocess
 include/mapi.h
 include/mapidefs.h
 include/mapitags.h
@@ -8,3 +11,4 @@ lib/libytnef.a
 lib/libytnef.so
 lib/libytnef.so.0
 lib/libytnef.so.0.0.0
+libdata/pkgconfig/libytnef.pc

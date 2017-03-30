@@ -2,10 +2,8 @@
 
 PORTNAME=	plasma-scriptengine-python
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-CATEGORIES=	x11 kde
-MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
+CATEGORIES=	x11 kde kde-applications
 DISTNAME=	kde-workspace-${PORTVERSION}
-DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma scriptengine for Python
@@ -15,6 +13,8 @@ USES=		cmake:outsource kde:4 python:2 tar:xz
 USE_KDE=	kdelibs pykde4 automoc4
 USE_QT4=	qmake_build moc_build uic_build rcc_build
 DISTINFO_FILE=	${.CURDIR:H:H}/x11/kde4-workspace/distinfo
+
+KDE_APPLICATIONS_VERSION=	15.08.0
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/plasma/generic/scriptengines/python
 

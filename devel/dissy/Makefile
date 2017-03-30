@@ -3,25 +3,24 @@
 
 PORTNAME=	dissy
 PORTVERSION=	10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Graphical frontend to the objdump disassembler
 
 LICENSE=	GPLv2
-
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2 \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:www/py-webkitgtk
 LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
 
-USES=		python
+USES=		python:2
 USE_PYTHON=	distutils
+USE_GITHUB=	yes
+GH_ACCOUNT=	SimonKagstrom
+GH_TAGNAME=	2f1005e
 
 PORTDOCS=	COPYING ChangeLog README UPGRADE
 

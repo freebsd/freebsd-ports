@@ -167,6 +167,7 @@ sbin/rpmvercmp
 %%DOCSDIR%%/examples/isvariable.cf
 %%DOCSDIR%%/examples/iteration.cf
 %%DOCSDIR%%/examples/join.cf
+%%DOCSDIR%%/examples/kill_process_running_wrong_user.cf
 %%DOCSDIR%%/examples/knowledge_driver.cf
 %%DOCSDIR%%/examples/knowledge_txt.cf
 %%DOCSDIR%%/examples/lastnode.cf
