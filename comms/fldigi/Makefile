@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	3.23.21
+PORTVERSION=	4.0.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs\
 
 USE_CXXSTD=	gnu++0x
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib execinfo jpeg gmake perl5 pkgconfig shebangfix
+USES=		autoreconf compiler:c++11-lib execinfo jpeg gmake perl5 pkgconfig shebangfix
 USE_XORG=	x11 xft xext xfixes xcursor xinerama
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config" \
 		    EXTRA_LIBS="-lexecinfo"
@@ -57,13 +57,7 @@ NLS_USES=			gettext
 # Always need asciidoc for man pages
 CONFIGURE_ARGS+=--with-asciidoc
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/Makefile.in
-
 post-configure:
-	@${REINPLACE_CMD} -e 's|^CPPFLAGS|#CPPFLAGS|' \
-		${WRKSRC}/src/Makefile
 # force rebuild of man pages
 	${RM} ${WRKSRC}/doc/*.1
 
