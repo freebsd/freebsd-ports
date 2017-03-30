@@ -220,6 +220,7 @@
     SUBDIR += p5-JavaScript-Squish
     SUBDIR += p5-JavaScript-Value-Escape
     SUBDIR += p5-List-MoreUtils
+    SUBDIR += p5-List-MoreUtils-XS
     SUBDIR += p5-Marpa
     SUBDIR += p5-Marpa-PP
     SUBDIR += p5-Marpa-XS
