@@ -1,4 +1,4 @@
---- lib/tasks/gitlab/check.rake.orig	2017-03-19 14:19:38 UTC
+--- lib/tasks/gitlab/check.rake.orig	2017-03-19 20:06:47 UTC
 +++ lib/tasks/gitlab/check.rake
 @@ -621,7 +621,7 @@ namespace :gitlab do
      end
