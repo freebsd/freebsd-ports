@@ -134,6 +134,7 @@
 %%WWWDIR%%/go/base/mail/Message.php
 %%WWWDIR%%/go/base/mail/MimeDecode.php
 %%WWWDIR%%/go/base/mail/SmimeMessage.php
+%%WWWDIR%%/go/base/mail/SwiftAttachableInterface.php
 %%WWWDIR%%/go/base/mail/SystemMessage.php
 %%WWWDIR%%/go/base/mail/Transport.php
 %%WWWDIR%%/go/base/mail/Utils.php
