@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.6.9
+PORTVERSION=	1.6.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -19,6 +19,7 @@ USES=		autoreconf libtool pathfix
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 SUB_FILES=	geoipupdate.sh pkg-message
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
@@ -27,9 +28,8 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	COPYING ChangeLog LICENSE README.md
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/geoipupdate.sh ${STAGEDIR}${PREFIX}/bin
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libGeoIP.so.*
 	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/geoipupdate.sh ${STAGEDIR}${PREFIX}/bin
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
