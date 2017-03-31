@@ -123,7 +123,7 @@
     SUBDIR += jjclient
     SUBDIR += jlj
     SUBDIR += kcharselect
-    SUBDIR += kchmviewer-kde4
+    SUBDIR += kchmviewer
     SUBDIR += kdeconnect
     SUBDIR += kdepim4
     SUBDIR += kdepim4-runtime
