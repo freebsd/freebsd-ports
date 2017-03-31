@@ -163,7 +163,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/models/share-admin-upload-link.js
 %%SEAHUBDIR%%/media/assets/scripts/app/models/starred-file.bd1fd7cfed45.js
 %%SEAHUBDIR%%/media/assets/scripts/app/models/starred-file.js
-%%SEAHUBDIR%%/media/assets/scripts/app/router.c04d90f490b8.js
+%%SEAHUBDIR%%/media/assets/scripts/app/router.af0b1e5fcf5d.js
 %%SEAHUBDIR%%/media/assets/scripts/app/router.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/account.85f0cf2e10b8.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/account.js
@@ -187,9 +187,9 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/device.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/devices.f7a71c76de30.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/devices.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/dirent-mvcp.77762360ffbf.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/dirent-mvcp.b42f9140300d.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/dirent-mvcp.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/dirent-rename.70f40b075170.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/dirent-rename.da015fa0278c.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/dirent-rename.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-change-password.7c8f8db7a529.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-change-password.js
@@ -199,11 +199,11 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-history-settings.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-share-link-admin.8637bf1be968.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dialogs/repo-share-link-admin.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/dir.0138a48429e3.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/dir.cadf7b4458e3.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dir.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/dirent-grid.1a0e612517e8.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/dirent-grid.0ef2c59627a2.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dirent-grid.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/dirent.7724e9f38f4c.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/dirent.a2cbfdb2d136.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/dirent.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/fileupload.4f9ef2481950.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/fileupload.js
@@ -271,7 +271,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-link.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-links.bb406c0f1843.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share-admin-upload-links.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/share.ffd59620d422.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/share.b34bd0c5f0cf.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/share.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/shared-repo.537274428fc9.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/shared-repo.js
@@ -351,7 +351,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/dist/i18n/zh-tw/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.75e6d0132deb.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.0266ea23d08f.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.011a84946971.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/main.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.4845ac08db81.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.js
@@ -371,7 +371,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/es/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fi/djangojs.8d877df126c1.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fi/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.77d8cedd5115.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.e1b2f22392f7.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/fr/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/he/djangojs.f701701595f1.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/he/djangojs.js
@@ -399,7 +399,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sk/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sl/djangojs.b4d2169424f0.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sl/djangojs.js
-%%SEAHUBDIR%%/media/assets/scripts/i18n/sv/djangojs.9d5376e6c43a.js
+%%SEAHUBDIR%%/media/assets/scripts/i18n/sv/djangojs.4bdedeaf3df7.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/sv/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/th/djangojs.f53496bdd5ff.js
 %%SEAHUBDIR%%/media/assets/scripts/i18n/th/djangojs.js
@@ -604,7 +604,7 @@
 %%SEAHUBDIR%%/media/img/download.png
 %%SEAHUBDIR%%/media/img/edit.png
 %%SEAHUBDIR%%/media/img/email_bg.jpg
-%%SEAHUBDIR%%/media/img/favicon.png
+%%SEAHUBDIR%%/media/img/favicon.ico
 %%SEAHUBDIR%%/media/img/file-icon-16.png
 %%SEAHUBDIR%%/media/img/file-locked-32.png
 %%SEAHUBDIR%%/media/img/file/192/excel.png
@@ -1188,6 +1188,12 @@
 %%SEAHUBDIR%%/seahub/templates/wiki/personal_wiki_pages.html
 %%SEAHUBDIR%%/seahub/test_settings.py
 %%SEAHUBDIR%%/seahub/test_utils.py
+%%SEAHUBDIR%%/seahub/api2/endpoints/admin/org_users.py
+%%SEAHUBDIR%%/seahub/templates/snippets/go_back_js.html
+%%SEAHUBDIR%%/tests/api/endpoints/admin/test_libraries.py
+%%SEAHUBDIR%%/tests/api/endpoints/admin/test_org_users.py
+%%SEAHUBDIR%%/tests/seahub/auth/views/__init__.py
+%%SEAHUBDIR%%/tests/seahub/auth/views/test_logout.py
 %%SEAHUBDIR%%/seahub/thumbnail/__init__.py
 %%SEAHUBDIR%%/seahub/thumbnail/management/__init__.py
 %%SEAHUBDIR%%/seahub/thumbnail/management/commands/__init__.py
