@@ -1,5 +1,5 @@
-TIMESTAMP = 1490100541
+TIMESTAMP = 1490785512
 SHA256 (mpc-qt.desktop) = 7694745aac0e52c050a6bc069a0686b025e509136919d985d3c4495eec0f1c9d
 SIZE (mpc-qt.desktop) = 1270
-SHA256 (cmdrkotori-mpc-qt-0.0.0.s20170321-30b2294_GH0.tar.gz) = 25217a02af69b4ca77b6a4273bd8c8091fc9b9701e280e23ac46ce5ae78ca740
-SIZE (cmdrkotori-mpc-qt-0.0.0.s20170321-30b2294_GH0.tar.gz) = 238084
+SHA256 (cmdrkotori-mpc-qt-0.0.0.s20170329-3cd13a9_GH0.tar.gz) = f8f658dfd53c1129a03bab3f8ef53d7ee738c90ee2af1d91ee74335b9c6e33dd
+SIZE (cmdrkotori-mpc-qt-0.0.0.s20170329-3cd13a9_GH0.tar.gz) = 238529
