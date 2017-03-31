@@ -124,11 +124,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${MASTER_SITE_OVERRIDE})
 # EXTRACT_ONLY	- If set, a subset of ${DISTFILES} you want to
 #				  actually extract.
-# ALWAYS_KEEP_DISTFILES
-#				- If set, the package building cluster will save the distfiles
-#				  along with the packages. This may be required to comply with
-#				  some licenses, e.g. GPL in some cases.
-#				  Default: not set.
 #
 # (NOTE: by convention, the MAINTAINER entry (see above) should go here.)
 #
