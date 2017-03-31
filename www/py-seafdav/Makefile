@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafdav
-PORTVERSION=	6.0.8
+PORTVERSION=	${SEAFILE_VER}
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www python
@@ -47,5 +47,7 @@ do-install:
 			-f ${WRKSRC}/wsgidav)
 	(cd ${WRKSRC}/wsgidav && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITEPACKAGEDIR}/wsgidav)
+
+.include "${.CURDIR}/../../net-mgmt/seafile-server/Makefile.include"
 
 .include <bsd.port.mk>
