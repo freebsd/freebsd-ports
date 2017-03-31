@@ -2514,6 +2514,7 @@
     SUBDIR += p5-Getopt-Compact-WithCmd
     SUBDIR += p5-Getopt-Declare
     SUBDIR += p5-Getopt-Euclid
+    SUBDIR += p5-Getopt-EX
     SUBDIR += p5-Getopt-GUI-Long
     SUBDIR += p5-Getopt-Long
     SUBDIR += p5-Getopt-Long-Descriptive

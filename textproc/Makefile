@@ -226,6 +226,7 @@
     SUBDIR += google-translate-cli
     SUBDIR += gpp
     SUBDIR += grap
+    SUBDIR += greple
     SUBDIR += grc-aspell
     SUBDIR += groff
     SUBDIR += groonga
