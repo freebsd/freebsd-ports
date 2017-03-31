@@ -3,7 +3,6 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.d${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -76,7 +75,6 @@ EXTRAS_GH_PROJECT=	clang-tools-extra:extras
 EXTRAS_GH_SUBDIR=	tools/clang/tools/extra:extras
 EXTRAS_GH_TAGNAME=	${EXTRAS_COMMIT}:extras
 LIT_DESC=		Install lit and FileCheck test tools
-LLDB_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
 LLD_GH_PROJECT=		lld:lld
 LLD_GH_SUBDIR=		tools/lld:lld
@@ -91,7 +89,7 @@ LLDB_VARS=		_USES_PYTHON=python
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
-OPENMP_GH_SUBDIR=	tools/openmp:openmp
+OPENMP_GH_SUBDIR=	runtimes/openmp:openmp
 OPENMP_GH_TAGNAME=	${OPENMP_COMMIT}:openmp
 OPENMP_EXTRA_PATCHES= \
 	${PATCHDIR}/openmp-patch-bug32279 \
@@ -186,6 +184,7 @@ COMMANDS+=	c-index-test \
 		clang-format \
 		clang-import-test \
 		clang-offload-bundler \
+		clangd \
 		scan-build \
 		scan-view
 MAN1SRCS+=	clang.1 \
@@ -194,7 +193,7 @@ CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|so
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
-COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|xray_interface.h)
+COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|include.xray)
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -241,6 +240,11 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CMAKE_BUILD_TYPE=	RelWithDebInfo
+STRIP=
+.endif
 
 _CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/freebsd
 .if ${ARCH} == "amd64"
@@ -408,7 +412,7 @@ build-plist:
 	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
-	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
+	    if ($$0 ~ /(lib[ig]*omp|omp.h)/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print} \
 	}' ${PLIST}.tmp >> ${PLIST}
