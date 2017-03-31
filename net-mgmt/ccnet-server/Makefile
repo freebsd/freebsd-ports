@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet-server
-PORTVERSION=	6.0.8
+PORTVERSION=	${SEAFILE_VER}
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima1252@gmail.com
@@ -60,5 +59,7 @@ post-install:
 		${COPYTREE_SHARE} ${PYTHON_VERSION} ${STAGEDIR}${PREFIX}/${SEALIB})
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}
 	${LN} -s '../${SEABIN}/ccnet-server' ${STAGEDIR}/${PREFIX}/bin/ccnet-server
+
+.include "${.CURDIR}/../seafile-server/Makefile.include"
 
 .include <bsd.port.mk>

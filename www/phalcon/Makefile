@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phalcon
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		php:ext
 USE_PHP=	hash:build json:build pdo:build
+IGNORE_WITH_PHP=71
 
 ONLY_FOR_ARCHS=	amd64 armv6 i386
 

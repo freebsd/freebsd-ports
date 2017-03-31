@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://projects.unbit.it/downloads/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}mod_proxy_
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache proxy module to pass requests to uwsgi
 
 USE_APACHE=	22+

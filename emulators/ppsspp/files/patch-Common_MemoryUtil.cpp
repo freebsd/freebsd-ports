@@ -1,25 +1,22 @@
---- Common/MemoryUtil.cpp.orig	2015-02-26 20:05:06 UTC
+--- Common/MemoryUtil.cpp.orig	2015-11-19 15:07:48 UTC
 +++ Common/MemoryUtil.cpp
-@@ -49,6 +49,13 @@ static SYSTEM_INFO sys_info;
- #define round_page(x) ((((uintptr_t)(x)) + PAGE_MASK) & ~(PAGE_MASK))
+@@ -32,6 +32,10 @@
+ #include <mach/vm_param.h>
  #endif
  
-+#if defined(__FreeBSD__)
-+/* setrlimit(2) */
-+#include <sys/types.h>
-+#include <sys/time.h>
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +#include <sys/resource.h>
 +#endif
 +
- #ifdef __SYMBIAN32__
- #include <e32std.h>
- #define CODECHUNK_SIZE 1024*1024*20
-@@ -142,6 +149,21 @@ void* AllocateExecutableMemory(size_t si
+ #ifndef _WIN32
+ #include <unistd.h>
+ #endif
+@@ -149,6 +153,21 @@ void *AllocateExecutableMemory(size_t si
  			map_hint = (char*)round_page(&hint_location) - 0x20000000; // 0.5gb lower than our approximate location
  		else
  			map_hint = (char*)0x20000000; // 0.5GB mark in memory
 +
-+#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +		// XXX Fix maximum data segment size (data + BSS + heap) to 256 MB.
 +		// This allows avoiding calling mmap(2) with MAP_FIXED.
 +		// On FreeBSD, without lowering this limit, calling mmap(2)
@@ -34,5 +31,5 @@
 +		}
 +#endif
  	}
- 	else if (exec && (uintptr_t) map_hint > 0xFFFFFFFFULL)
+ 	else if ((uintptr_t) map_hint > 0xFFFFFFFFULL)
  	{
