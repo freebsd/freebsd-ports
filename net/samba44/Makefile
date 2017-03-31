@@ -13,13 +13,13 @@ COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba42-4.2.* samba43-4.3.*
+CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba4[1-356]-4.* p5-Parse-Pidl-4.*
 
 #EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.4.12
+SAMBA4_VERSION=		4.4.13
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -84,8 +84,9 @@ LIB_DEPENDS+=		libsunacl.so:sysutils/libsunacl
 BUILD_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 # External Samba dependencies
-# IDL compiler
-BUILD_DEPENDS+=		p5-Parse-Pidl44>=4.3.1:devel/p5-Parse-Pidl44
+# Needed for IDL compiler
+BUILD_DEPENDS+=		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
+PLIST_SUB+=		PIDL=""
 # External Python modules
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
@@ -442,13 +443,12 @@ PORTDOCS=		README.FreeBSD
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 post-extract:
-			@${RM} -r ${WRKSRC}/pidl
+			@${RM} -r ${WRKSRC}/pidl/lib/Parse/Yapp
 
 post-patch:
 			@${REINPLACE_CMD} -e 's|$${PKGCONFIGDIR}|${PKGCONFIGDIR}|g' \
 				${PATCH_WRKSRC}/buildtools/wafsamba/pkgconfig.py
 			@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-				${PATCH_WRKSRC}/buildtools/wafsamba/samba_pidl.py \
 				${PATCH_WRKSRC}/buildtools/wafsamba/wafsamba.py
 			@${REINPLACE_CMD} -e 's|%%GDB_CMD%%|${GDB_CMD}|g' \
 				${PATCH_WRKSRC}/buildtools/scripts/abi_gen.sh

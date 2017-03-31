@@ -10,6 +10,7 @@ bin/nmblookup
 bin/ntlm_auth
 bin/oLschema2ldif
 bin/pdbedit
+%%PIDL%%bin/pidl
 bin/profiles
 bin/regdiff
 bin/regpatch
@@ -648,6 +649,39 @@ lib/shared-modules/vfs/zfsacl.so
 @dir %%PYTHON_SITELIBDIR%%/samba/netcmd
 @dir %%PYTHON_SITELIBDIR%%/samba/dcerpc
 @dir %%PYTHON_SITELIBDIR%%/samba
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/CUtil.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Compat.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Dump.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Expr.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/IDL.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/NDR.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/ODL.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba3/ClientNDR.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba3/ServerNDR.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Header.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/COM/Stub.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/Header.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Client.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR/Server.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/Python.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/TDR.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Samba4/Template.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Typelist.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Util.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Wireshark/Conformance.pm
+%%PIDL%%%%DATADIR%%/perl5/Parse/Pidl/Wireshark/NDR.pm
+%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Wireshark
+%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4/NDR
+%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4/COM
+%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Samba4
+%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl/Samba3
+%%PIDL%%@dir %%DATADIR%%/perl5/Parse/Pidl
+%%PIDL%%@dir %%DATADIR%%/perl5/Parse
+%%PIDL%%@dir %%DATADIR%%/perl5
 %%AD_DC%%%%DATADIR%%/setup/DB_CONFIG
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Attributes.txt
 %%AD_DC%%%%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Classes.txt
@@ -751,6 +785,7 @@ man/man1/nmblookup.1.gz
 man/man1/ntlm_auth.1.gz
 man/man1/oLschema2ldif.1.gz
 man/man1/profiles.1.gz
+%%PIDL%%man/man1/pidl.1.gz
 man/man1/regdiff.1.gz
 man/man1/regpatch.1.gz
 man/man1/regshell.1.gz
@@ -769,6 +804,11 @@ man/man1/smbtree.1.gz
 man/man1/testparm.1.gz
 man/man1/vfstest.1.gz
 man/man1/wbinfo.1.gz
+%%PIDL%%man/man3/Parse::Pidl::Dump.3.gz
+%%PIDL%%man/man3/Parse::Pidl::NDR.3.gz
+%%PIDL%%man/man3/Parse::Pidl::Util.3.gz
+%%PIDL%%man/man3/Parse::Pidl::Wireshark::Conformance.3.gz
+%%PIDL%%man/man3/Parse::Pidl::Wireshark::NDR.3.gz
 man/man5/lmhosts.5.gz
 man/man5/pam_winbind.conf.5.gz
 man/man5/smb.conf.5.gz
