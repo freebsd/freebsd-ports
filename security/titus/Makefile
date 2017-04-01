@@ -3,6 +3,7 @@
 
 PORTNAME=	titus
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	feld@FreeBSD.org

@@ -3,6 +3,7 @@
 
 PORTNAME=	tanglet
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tanglet/

@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-secs3d
 PORTVERSION=	0.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

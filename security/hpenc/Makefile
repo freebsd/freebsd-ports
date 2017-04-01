@@ -2,7 +2,7 @@
 
 PORTNAME=	hpenc
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://highsecure.ru/distfiles/
 

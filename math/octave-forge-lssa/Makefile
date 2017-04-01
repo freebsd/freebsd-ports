@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-lssa
 PORTVERSION=	0.1.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

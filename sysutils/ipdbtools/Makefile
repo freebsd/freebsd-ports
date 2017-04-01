@@ -2,7 +2,7 @@
 
 PORTNAME=	ipdbtools
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cyclaero.com/public/ipdbtools/
 

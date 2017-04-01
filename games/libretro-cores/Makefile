@@ -3,6 +3,7 @@
 
 PORTNAME=	libretro-cores
 PORTVERSION=	0.20161109
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yuri@rawbw.com

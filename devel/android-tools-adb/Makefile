@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-adb
 DISTVERSIONPREFIX=	android-
 DISTVERSION?=	7.1.1_r4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel comms
 .ifndef EXTRA_PATCHES
 PATCH_SITES=	https://github.com/android/platform_system_core/commit/

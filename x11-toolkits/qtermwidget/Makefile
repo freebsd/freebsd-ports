@@ -3,6 +3,7 @@
 
 PORTNAME=	qtermwidget
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	bacon4000@gmail.com

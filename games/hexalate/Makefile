@@ -3,6 +3,7 @@
 
 PORTNAME=	hexalate
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/

@@ -2,7 +2,7 @@
 
 PORTNAME=	libcrossguid
 PORTVERSION=	20150803
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	mickael.maillot@gmail.com

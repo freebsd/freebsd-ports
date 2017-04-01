@@ -2,6 +2,7 @@
 
 PORTNAME=	keepassxc
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	melanhit@gmail.com

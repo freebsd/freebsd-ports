@@ -3,6 +3,7 @@
 
 PORTNAME=	caf
 PORTVERSION=	0.15.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vallentin@icir.org
