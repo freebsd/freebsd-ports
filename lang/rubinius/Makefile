@@ -79,10 +79,6 @@ LLVM36_VARS=	LLVM_CONFIG=llvm-config36 \
 		LLVM_PORT=devel/llvm36 \
 		LLVM_CC=clang36 \
 		LLVM_CXX=clang++36
-LLVM37_VARS=	LLVM_CONFIG=llvm-config37 \
-		LLVM_PORT=devel/llvm37 \
-		LLVM_CC=clang37 \
-		LLVM_CXX=clang++37
 LLVM38_VARS=	LLVM_CONFIG=llvm-config38 \
 		LLVM_PORT=devel/llvm38 \
 		LLVM_CC=clang38 \
