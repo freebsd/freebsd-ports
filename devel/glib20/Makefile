@@ -3,6 +3,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.52.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +25,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
-USES+=		gettext gmake gnome iconv:wchar_t libtool localbase perl5 \
+USES+=		gettext gmake gnome iconv:wchar_t libtool localbase pathfix perl5 \
 		pkgconfig python shebangfix
 USE_PYTHON=	py3kplist
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
