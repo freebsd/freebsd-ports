@@ -90,6 +90,7 @@
     SUBDIR += junit
     SUBDIR += jxgrabkey
     SUBDIR += langspec
+    SUBDIR += lightweight-java-profiler
     SUBDIR += linux-oracle-jdk18
     SUBDIR += linux-oracle-jre18
     SUBDIR += mmake

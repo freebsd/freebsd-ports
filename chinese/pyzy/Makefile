@@ -3,7 +3,7 @@
 
 PORTNAME=	pyzy
 PORTVERSION=	0.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese
 
 MAINTAINER=	henry.hu.sh@gmail.com

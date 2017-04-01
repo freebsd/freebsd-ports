@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-symband
 PORTVERSION=	1.0.10
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

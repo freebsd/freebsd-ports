@@ -2,7 +2,7 @@
 
 PORTNAME=	edbrowse
 PORTVERSION=	3.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www editors
 MASTER_SITES=	http://the-brannons.com/edbrowse/ \
 		http://rithmomachia.org/edbrowse/

@@ -6,6 +6,7 @@ PORTNAME=	hhdate
 # last release as a.b.c.NUMCOMMITS (see `git describe --tags ${GH_TAGNAME}`).
 # 35 = commit a little after 2.1.0 to have LICENSE file and fixed unit tests.
 PORTVERSION=	2.1.0.35
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	andreas.sommer87@googlemail.com

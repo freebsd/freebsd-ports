@@ -3,7 +3,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -33,6 +33,9 @@ CONFLICTS_INSTALL=	${PORTNAME}-*
 # [QT5] c++: error: the clang compiler does not support '-march=armv7-a'
 # [SDL] SplineCommon.cpp:639:17: error: use of undeclared identifier 'AllocateAlignedMemory'
 BROKEN_aarch64=		https://github.com/hrydgard/ppsspp/issues/9032
+.if ${MACHINE_ARCH} == aarch64
+TRYBROKEN=	need logs for v1.4
+.endif
 
 USES=		cmake:outsource compiler:c++11-lib localbase:ldflags pkgconfig
 EXCLUDE=	libzip zlib

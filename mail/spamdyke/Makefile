@@ -3,7 +3,7 @@
 
 PORTNAME=	spamdyke
 PORTVERSION=	5.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
 

@@ -4,20 +4,13 @@
     COMMENT = Ports to help disabled users
 
     SUBDIR += accerciser
-    SUBDIR += at-spi
-    SUBDIR += at-spi-reference
     SUBDIR += at-spi2-atk
     SUBDIR += at-spi2-core
     SUBDIR += atk
     SUBDIR += atk-reference
     SUBDIR += atkmm
     SUBDIR += caribou
-    SUBDIR += dasher
     SUBDIR += eflite
-    SUBDIR += gnome-mag
-    SUBDIR += gnome-speech
-    SUBDIR += gok
-    SUBDIR += java-access-bridge
     SUBDIR += jovie
     SUBDIR += kaccessible
     SUBDIR += kdeaccessibility4

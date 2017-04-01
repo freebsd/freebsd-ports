@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk
-PORTVERSION=	2.24.29
-PORTREVISION?=	3
+PORTVERSION=	2.24.31
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	2
@@ -47,7 +46,7 @@ CUPS_CONFIGURE_ON=	--enable-cups=auto
 CUPS_CONFIGURE_OFF=	--disable-cups
 DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
-PLIST_SUB+=	LIBGAILVER=18.0.1 LIBGVER=0.2400.29
+PLIST_SUB+=	LIBGAILVER=18.0.1 LIBGVER=0.2400.31
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \

@@ -494,7 +494,7 @@ gecko-pre-extract:
 	@${ECHO} "   build this port with an user who could access the X server!   "
 	@${ECHO} ""
 	@${ECHO} "During the build a ${MOZILLA} instance will start and run some test."
-	@${ECHO} "      Do not interrupt or close ${MOZILLA} during this tests!       "
+	@${ECHO} "      Do not interrupt or close ${MOZILLA} during these tests!       "
 	@${ECHO} "*****************************************************************"
 	@sleep 10
 .endif

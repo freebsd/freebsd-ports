@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-initial-setup
 PORTVERSION=	3.18.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

@@ -2,6 +2,7 @@
 
 PORTNAME=	qtcurve
 PORTVERSION=	1.8.18
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	jhale@FreeBSD.org

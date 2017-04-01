@@ -1,4 +1,4 @@
---- configure.orig	2017-01-20 12:42:02 UTC
+--- configure.orig	2017-04-01 02:21:18 UTC
 +++ configure
 @@ -6143,7 +6143,7 @@ $as_echo "$FLTK_CONFIG" >&6; }
            FLTK_LIBS=`$FLTK_CONFIG --ldflags --use-images`

@@ -3,6 +3,7 @@
 
 PORTNAME=	fcitx-qt5
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@rawbw.com
