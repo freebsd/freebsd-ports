@@ -196,7 +196,7 @@ lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.so
 lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
 lib/libgoffice-%%SHORT_VER%%.so
 lib/libgoffice-%%SHORT_VER%%.so.10
-lib/libgoffice-%%SHORT_VER%%.so.10.0.28
+lib/libgoffice-%%SHORT_VER%%.so.10.0.34
 libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 share/gir-1.0/GOffice-%%SHORT_VER%%.gir
 %%DATADIR%%/%%VERSION%%/mmlitex/README
@@ -356,7 +356,6 @@ share/gtk-doc/html/goffice-%%SHORT_VER%%/goffice-%%SHORT_VER%%.devhelp2
 share/gtk-doc/html/goffice-%%SHORT_VER%%/gsf-index.html
 share/gtk-doc/html/goffice-%%SHORT_VER%%/home.png
 share/gtk-doc/html/goffice-%%SHORT_VER%%/index.html
-share/gtk-doc/html/goffice-%%SHORT_VER%%/index.sgml
 share/gtk-doc/html/goffice-%%SHORT_VER%%/left-insensitive.png
 share/gtk-doc/html/goffice-%%SHORT_VER%%/left.png
 share/gtk-doc/html/goffice-%%SHORT_VER%%/pt01.html
