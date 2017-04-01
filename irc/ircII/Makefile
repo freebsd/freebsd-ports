@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Small and high extensible IRC client
 
 LICENSE=	BSD3CLAUSE
