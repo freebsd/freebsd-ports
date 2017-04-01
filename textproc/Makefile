@@ -1593,6 +1593,7 @@
     SUBDIR += scss
     SUBDIR += sdcv
     SUBDIR += sdf
+    SUBDIR += sdif
     SUBDIR += sdocbook-xml
     SUBDIR += sdom
     SUBDIR += senna
