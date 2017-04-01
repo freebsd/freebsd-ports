@@ -50,8 +50,11 @@ libexec/antler-keyboard
 libexec/caribou
 share/antler/dark-key-border.svg
 share/antler/style.css
+%%DATADIR%%/layouts/fullscale/de.xml
 %%DATADIR%%/layouts/fullscale/us.xml
 %%DATADIR%%/layouts/scan/us.xml
+%%DATADIR%%/layouts/tablet/de.xml
+%%DATADIR%%/layouts/tablet/us.xml
 %%DATADIR%%/layouts/touch/ara.xml
 %%DATADIR%%/layouts/touch/de.xml
 %%DATADIR%%/layouts/touch/fr.xml
@@ -105,6 +108,7 @@ share/locale/nb/LC_MESSAGES/caribou.mo
 share/locale/ne/LC_MESSAGES/caribou.mo
 share/locale/nl/LC_MESSAGES/caribou.mo
 share/locale/nn/LC_MESSAGES/caribou.mo
+share/locale/oc/LC_MESSAGES/caribou.mo
 share/locale/or/LC_MESSAGES/caribou.mo
 share/locale/pa/LC_MESSAGES/caribou.mo
 share/locale/pl/LC_MESSAGES/caribou.mo
