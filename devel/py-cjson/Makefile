@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cjson
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +15,8 @@ LICENSE=	LGPL20
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cjson.so
 
 .include <bsd.port.mk>
