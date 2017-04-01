@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170401:
+  AFFECTS: net/samba44, net/samba45, net/samba46 and devel/p5-Parse-Pidl*
+  AUTHOR: timur@FreeBSD.org
+
+  It turned out that arbitary versions of p5-Parse-Pidl may lead to the
+  hard to explain crashes of the Samba server and utilities(in particular
+  we suspect it was responsible for the troubles with the DC provisioning).
+
+  So, from now on net/samba* ports use bundled version of Pidl. You need to
+  remove external package from the system:
+
+  pkg delete -f p5-Parse-Pidl p5-Parse-Pidl44
+
 20170331:
   AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
