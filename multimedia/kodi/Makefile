@@ -2,7 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	16.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia java
 
 MAINTAINER=	mickael.maillot@gmail.com

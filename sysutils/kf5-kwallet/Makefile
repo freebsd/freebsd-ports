@@ -3,6 +3,7 @@
 
 PORTNAME=	kwallet
 PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

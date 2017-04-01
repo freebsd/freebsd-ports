@@ -3,7 +3,7 @@
 
 PORTNAME=	pHash
 PORTVERSION=	0.9.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia devel
 MASTER_SITES=	http://phash.org/releases/ \
 		http://www.cyberbotx.com/pHash/

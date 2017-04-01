@@ -2,6 +2,7 @@
 
 PORTNAME=	void-zones-tools
 DISTVERSION=	0.1a
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	vidar@karlsen.tech

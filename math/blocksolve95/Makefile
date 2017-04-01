@@ -3,7 +3,7 @@
 
 PORTNAME=	blocksolve95
 PORTVERSION=	3.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/BlockSolve95/ \
 		http://ftp.mcs.anl.gov/pub/BlockSolve95/

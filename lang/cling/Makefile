@@ -3,7 +3,7 @@
 
 PORTNAME=		cling
 PORTVERSION=		0.4
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		lang devel
 MASTER_SITES=		https://root.cern.ch/download/cling/
 DISTNAME=		${PORTNAME}_2016-12-29_sources

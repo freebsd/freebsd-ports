@@ -3,6 +3,7 @@
 
 PORTNAME=	kirigami
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 MASTER_SITES=	KDE/stable/${PORTNAME}
 # kirigami will likely become a framework. So already put the distfile there.
 DIST_SUBDIR=	KDE/kirigami

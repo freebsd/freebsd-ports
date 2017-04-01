@@ -3,7 +3,7 @@
 
 PORTNAME=	pks
 PORTVERSION=	0.9.6.20040312
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security www
 MASTER_SITES=	http://pks.sourceforge.net/ LOCAL/mandree
 DISTFILES=	pks-current.tgz

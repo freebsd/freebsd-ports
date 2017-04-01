@@ -2,6 +2,7 @@
 
 PORTNAME=	hyperscan
 PORTVERSION=	4.4.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
 MASTER_SITES=	SF/boost/boost/1.61.0:boost
