@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	greple
-PORTVERSION=	7.1.20170330
+PORTVERSION=	7.1.20170401
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -20,7 +20,7 @@ USE_PERL5=	run
 SHEBANG_FILES=	bin/${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	kaz-utashiro
-GH_TAGNAME=	084c10e
+GH_TAGNAME=	5ad6491
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -31,7 +31,6 @@ post-extract:
 do-install:
 	cd ${WRKSRC} && \
 	    ${INSTALL_SCRIPT} bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${RM} -f ${WRKSRC}/lib/App/Greple/*.orig
 	cd ${WRKSRC}/lib && \
 	    ${COPYTREE_SHARE} App ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 

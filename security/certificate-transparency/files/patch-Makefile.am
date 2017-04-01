@@ -9,15 +9,6 @@
  	cpp/monitoring/prometheus/metrics.pb.cc \
  	cpp/monitoring/prometheus/metrics.pb.h \
  	proto/ct.pb.cc \
-@@ -112,7 +110,7 @@ TESTS = \
- 	cpp/util/sync_task_test \
- 	cpp/util/task_test
- 
--if !OPENSSL_IS_BORINGSSL
-+if !OPENSSL_NO_CMS
- TESTS += cpp/log/cms_verifier_test
- endif
- 
 @@ -131,9 +129,6 @@ endif
  cpp/gtest-all.cc: $(GTEST_DIR)/src/gtest-all.cc
  	$(AM_V_at)cp $^ $@
@@ -28,15 +19,6 @@
  test/testdata/urlfetcher_test_certs/localhost-key.pem: test/create_url_fetcher_test_certs.sh
  	$(AM_V_GEN)test/create_url_fetcher_test_certs.sh
  
-@@ -217,7 +212,7 @@ cpp_libcore_a_SOURCES = \
- 	proto/ct.pb.cc \
- 	proto/ct.pb.h
- 
--if !OPENSSL_IS_BORINGSSL
-+if !OPENSSL_NO_CMS
- cpp_libcore_a_SOURCES += cpp/log/cms_verifier.cc
- endif
- 
 @@ -226,8 +221,6 @@ cpp_libtest_a_CPPFLAGS = \
  	-I$(GTEST_DIR) \
  	$(AM_CPPFLAGS)
@@ -46,12 +28,3 @@
  	cpp/util/testing.cc
  
  cpp_server_ct_mirror_LDADD = \
-@@ -907,7 +900,7 @@ cpp_log_cert_test_SOURCES = \
- 	cpp/log/cert_test.cc \
- 	cpp/util/util.cc
- 
--if !OPENSSL_IS_BORINGSSL
-+if !OPENSSL_NO_CMS
- cpp_log_cms_verifier_test_LDADD = \
- 	cpp/libcore.a \
- 	cpp/libtest.a \

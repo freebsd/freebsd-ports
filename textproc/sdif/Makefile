@@ -1,13 +1,12 @@
-# Created by: Yoshiro MIHIRA <sanpei@sanpei.org>
 # $FreeBSD$
 
-PORTNAME=	cdif
-PORTVERSION=	2.14.20170401
+PORTNAME=	sdif
+PORTVERSION=	2.8.20170401
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Word context visualizer of DIFF output
+COMMENT=	Side-by-side diff viewer for ANSI terminal
 
 LICENSE=	GREPLE
 LICENSE_NAME=	GREPLE License
@@ -20,16 +19,20 @@ USES=		perl5 shebangfix
 SHEBANG_FILES=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	kaz-utashiro
-GH_TAGNAME=	2f4de90
+GH_TAGNAME=	356575d
 NO_BUILD=	yes
 NO_ARCH=	yes
-PLIST_FILES=	bin/cdif
+PLIST_FILES=	bin/sdif \
+		%%SITE_PERL%%/App/sdif/colors.pm \
+		%%SITE_PERL%%/App/sdif/osx_autocolor.pm
 
 post-extract:
 	cd ${WRKSRC} && \
-	    ${SED} -n "/^# COPYRIGHT/,//p" README.md > LICENSE
+	    ${SED} -n "/^## Copyright/,/^$$/p" sdif > LICENSE
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/cdif
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/lib && \
+	    ${COPYTREE_SHARE} App ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 
 .include <bsd.port.mk>
