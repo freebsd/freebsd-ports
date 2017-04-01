@@ -24,7 +24,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
-CONFLICTS=	gcc-4.9.*
 CPE_VENDOR=	gnu
 
 # GCC_VERSION and SUFFIX relate to names of executables and directories

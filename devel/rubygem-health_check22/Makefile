@@ -11,6 +11,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple health check of Rails app for uptime monitoring
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
+
+PORTSCOUT=	limit:^2\.2\.
 
 NO_ARCH=	yes
 USE_RUBY=	yes
