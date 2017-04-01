@@ -16,7 +16,7 @@ LICENSE=	BSD2CLAUSE
 
 USES=		libtool ncurses pathfix
 EDITVERSION=	3.1
-EDITDATE=	20150325
+EDITDATE=	20170329
 WRKSRC=		${WRKDIR}/${PORTNAME}-${EDITDATE}-${EDITVERSION}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -25,5 +25,8 @@ CONFIGURE_ARGS=	--enable-widec
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL=	editline-*
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/man/man3/history.3 ${STAGEDIR}${PREFIX}/man/man3/el_history.3
 
 .include <bsd.port.mk>
