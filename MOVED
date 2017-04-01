@@ -9175,3 +9175,4 @@ lang/clang37||2017-04-01|Obsolete and unmaintained upstream
 devel/lldb37||2017-04-01|Obsolete and unmaintained upstream
 audio/gnome-media||2017-04-01|Obsolete and not depend on anymore
 audio/gnome-audio||2017-04-01|Obsolete and not depend on anymore
+accessibility/gnome-mag||2017-04-01|Obsolete and not depend on anymore
