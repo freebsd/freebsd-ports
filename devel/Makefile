@@ -1534,7 +1534,6 @@
     SUBDIR += lion
     SUBDIR += listserialc
     SUBDIR += liteide
-    SUBDIR += lldb37
     SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
