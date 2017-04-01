@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	e2guardian
-PORTVERSION=	3.4.0.3
+PORTVERSION=	3.5.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	marcellocoutinho@gmail.com
