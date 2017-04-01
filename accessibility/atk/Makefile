@@ -11,7 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME accessibility toolkit (ATK)
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21
 
 USES=		tar:xz
 PORTSCOUT=	limitw:1,even
