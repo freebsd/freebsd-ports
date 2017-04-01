@@ -139,14 +139,6 @@
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle
     SUBDIR += libdrizzle-redux
-    SUBDIR += libgda4
-    SUBDIR += libgda4-bdb
-    SUBDIR += libgda4-jdbc
-    SUBDIR += libgda4-ldap
-    SUBDIR += libgda4-mdb
-    SUBDIR += libgda4-mysql
-    SUBDIR += libgda4-postgresql
-    SUBDIR += libgda4-reference
     SUBDIR += libgda5
     SUBDIR += libgda5-bdb
     SUBDIR += libgda5-jdbc
@@ -155,7 +147,6 @@
     SUBDIR += libgda5-mysql
     SUBDIR += libgda5-postgresql
     SUBDIR += libgda5-ui
-    SUBDIR += libgdamm
     SUBDIR += libgdamm5
     SUBDIR += libhsclient
     SUBDIR += libiodbc
