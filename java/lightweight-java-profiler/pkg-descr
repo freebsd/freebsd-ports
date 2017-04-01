@@ -1,0 +1,9 @@
+lightweight-java-profiler
+
+a lightweight Java profiler which can be used for flamegraphs
+
+The lightweight Java profiler acts as an agent library and generates
+execution stacks. These can be fed into flamegraph utils to profile
+Java applications at minimal cost.
+
+WWW: https://github.com/inevity/lightweight-java-profiler
