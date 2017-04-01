@@ -29,29 +29,3 @@
  save_LIBS="$LIBS"
  AS_UNSET([LIBS])
  AC_SEARCH_LIBS([snappy_compress], [snappy],,, [$save_LIBS])
-@@ -146,6 +147,17 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#in
-                   [AC_MSG_RESULT([yes]); openssl_is_boringssl=1],
-                   [AC_MSG_RESULT([no])])
- 
-+AC_MSG_CHECKING([for LibreSSL])
-+AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <openssl/opensslv.h>]],
-+                                   [[
-+                                     #ifndef LIBRESSL_VERSION_NUMBER
-+                                     # error not LibreSSL
-+                                     #endif
-+                                   ]])
-+                  ],
-+                  [AC_MSG_RESULT([yes]); openssl_is_libressl=1],
-+                  [AC_MSG_RESULT([no])])
-+
- save_LIBS="$LIBS"
- AS_UNSET([LIBS])
- AC_SEARCH_LIBS([event_base_dispatch], [event],, [missing_libevent=1],
-@@ -212,6 +224,7 @@ AM_CONDITIONAL([HAVE_ANT], [test -n "$AN
- AM_CONDITIONAL([HAVE_LDNS], [test -z "$missing_ldns"])
- AM_CONDITIONAL([HAVE_OBJECTHASH], [test -z "$missing_objecthash"])
- AM_CONDITIONAL([OPENSSL_IS_BORINGSSL], [test -n "$openssl_is_boringssl"])
-+AM_CONDITIONAL([OPENSSL_NO_CMS], [test -z "$openssl_is_boringssl" -o -z "$openssl_is_boringssl"])
- AC_DEFINE_UNQUOTED([TEST_SRCDIR], ["$srcdir"], [Top of the source directory, for tests.])
- AC_SUBST([INSTALL_DIR])
- AC_CONFIG_FILES([Makefile])
