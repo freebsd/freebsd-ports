@@ -9173,3 +9173,4 @@ emulators/ppsspp-qt4|emulators/ppsspp-qt5|2017-03-31|Qt4 support was removed ups
 devel/llvm37||2017-04-01|Obsolete and unmaintained upstream
 lang/clang37||2017-04-01|Obsolete and unmaintained upstream
 devel/lldb37||2017-04-01|Obsolete and unmaintained upstream
+audio/gnome-media||2017-04-01|Obsolete and not depend on anymore
