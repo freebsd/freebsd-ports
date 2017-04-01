@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glibmm
-PORTVERSION=	2.44.0
+PORTVERSION=	2.50.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -10,6 +10,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for glib2
+
+LICENSE=	LGPL21
 
 USES+=		tar:xz
 PORTSCOUT?=	limitw:1,even
