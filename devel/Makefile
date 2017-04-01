@@ -1441,7 +1441,6 @@
     SUBDIR += libshhopt
     SUBDIR += libsigc++12
     SUBDIR += libsigc++20
-    SUBDIR += libsigcx
     SUBDIR += libsigrok
     SUBDIR += libsigrokdecode
     SUBDIR += libsigscan
