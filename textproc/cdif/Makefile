@@ -1,27 +1,35 @@
 # Created by: Yoshiro MIHIRA <sanpei@sanpei.org>
 # $FreeBSD$
 
-PORTNAME=		cdif
-PORTVERSION=		1.19
-CATEGORIES=		textproc
-MASTER_SITES=		LOCAL/sanpei
-EXTRACT_SUFX=		# empty
+PORTNAME=	cdif
+PORTVERSION=	2.14.20170401
+DISTVERSIONPREFIX=	v
+CATEGORIES=	textproc
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Word context diff
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	Word context visualizer of DIFF output
+
+LICENSE=	GREPLE
+LICENSE_NAME=	GREPLE License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+RUN_DEPENDS=	${SITE_PERL}/Getopt/EX.pm:devel/p5-Getopt-EX
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	${DISTNAME}
-
-NO_WRKSUBDIR=		yes
-NO_BUILD=		yes
-
+SHEBANG_FILES=	${PORTNAME}
+USE_GITHUB=	yes
+GH_ACCOUNT=	kaz-utashiro
+GH_TAGNAME=	2f4de90
+NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_FILES=	bin/cdif
 
-do-extract:
-	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/${DISTNAME}
+post-extract:
+	cd ${WRKSRC} && \
+	    ${SED} -n "/^# COPYRIGHT/,//p" README.md > LICENSE
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/cdif
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/cdif
 
 .include <bsd.port.mk>
