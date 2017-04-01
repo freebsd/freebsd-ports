@@ -9176,3 +9176,10 @@ devel/lldb37||2017-04-01|Obsolete and unmaintained upstream
 audio/gnome-media||2017-04-01|Obsolete and not depend on anymore
 audio/gnome-audio||2017-04-01|Obsolete and not depend on anymore
 accessibility/gnome-mag||2017-04-01|Obsolete and not depend on anymore
+accessibility/gnome-speech||2017-04-01|Obsolete and not depend on anymore
+accessibility/gok||2017-04-01|Obsolete and not depend on anymore
+accessibility/dasher||2017-04-01|Obsolete and not depend on anymore
+accessibility/java-access-bridge||2017-04-01|Obsolete and not depend on anymore
+accessibility/dasher||2017-04-01|Obsolete and not depend on anymore
+accessibility/at-spi||2017-04-01|Obsolete and not depend on anymore
+accessibility/at-spi-reference||2017-04-01|Obsolete and not depend on anymore
