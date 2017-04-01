@@ -3,7 +3,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.52.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -54,8 +54,7 @@ COLLATION_FIX_DESC=	Use ICU for UTF-8 string collation (if libc is broken)
 OPTIONS_EXCLUDE_FreeBSD_11=	COLLATION_FIX
 OPTIONS_EXCLUDE_FreeBSD_12=	COLLATION_FIX
 
-DEBUG_CONFIGURE_ARGS+=	--enable-debug=yes \
-			--disable-silent-rules
+DEBUG_CONFIGURE_ARGS+=	--enable-debug=yes
 
 COLLATION_FIX_LIB_DEPENDS+=	libicui18n.so:devel/icu
 COLLATION_FIX_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
