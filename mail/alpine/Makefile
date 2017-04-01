@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	alpine
-PORTVERSION=	2.20
-PORTREVISION?=	1
+PORTVERSION=	2.21
+PORTREVISION?=	0
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	http://patches.freeiz.com/alpine/release/src/
 DIST_SUBDIR=	alpine-${PORTVERSION}
@@ -29,7 +29,7 @@ CONS25_DESC=	Add a patch to support color for default console
 MAILDIR_DESC=	Add a patch for maildir support
 .endif
 
-USES=		libtool ncurses tar:xz
+USES+=		libtool ncurses tar:xz gettext-runtime
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -129,14 +129,14 @@ post-patch:
 	    -e "s#\$$(pico_SOURCES) \$$(pilot_SOURCES)##" \
 	    ${WRKSRC}/pico/Makefile.in.presed > ${WRKSRC}/pico/Makefile.in
 	@${CP} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.presed
-	@${SED}	-e "s#doc/pico.1 doc/pilot.1 ##" \
+	@${SED}	-e "s#doc/man1/pico.1 doc/man1/pilot.1 ##" \
 	    ${WRKSRC}/Makefile.in.presed > ${WRKSRC}/Makefile.in
 	@${CP} ${WRKSRC}/imap/src/osdep/unix/Makefile \
 	    ${WRKSRC}/imap/src/osdep/unix/Makefile.presed
 	@${SED} -e "s#^LOCKPGM=.*#LOCKPGM= ${PREFIX}/libexec/mlock#" \
 	    ${WRKSRC}/imap/src/osdep/unix/Makefile.presed \
 	    > ${WRKSRC}/imap/src/osdep/unix/Makefile
-	@for i in ${WRKSRC}/README ${WRKSRC}/doc/alpine.1 \
+	@for i in ${WRKSRC}/README ${WRKSRC}/doc/man1/alpine.1 \
 	    ${WRKSRC}/doc/*.txt \
 	    ${WRKSRC}/doc/tech-notes/*.txt \
 	    ${WRKSRC}/doc/tech-notes/*.html \
