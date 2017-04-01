@@ -37,7 +37,6 @@
     SUBDIR += clang33
     SUBDIR += clang34
     SUBDIR += clang35
-    SUBDIR += clang36
     SUBDIR += clang37
     SUBDIR += clang38
     SUBDIR += cling
