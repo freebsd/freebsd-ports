@@ -14,7 +14,6 @@
     SUBDIR += caribou
     SUBDIR += dasher
     SUBDIR += eflite
-    SUBDIR += gnome-mag
     SUBDIR += gnome-speech
     SUBDIR += gok
     SUBDIR += java-access-bridge
