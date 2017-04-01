@@ -1,4 +1,3 @@
-etc/at-spi2/accessibility.conf
 etc/xdg/autostart/at-spi-dbus-bus.desktop
 include/at-spi-2.0/atspi/atspi-accessible.h
 include/at-spi-2.0/atspi/atspi-action.h
@@ -41,6 +40,7 @@ libexec/at-spi-bus-launcher
 libexec/at-spi2-registryd
 share/dbus-1/accessibility-services/org.a11y.atspi.Registry.service
 share/dbus-1/services/org.a11y.Bus.service
+share/defaults/at-spi2/accessibility.conf
 share/gir-1.0/Atspi-2.0.gir
 share/gtk-doc/html/libatspi/AtspiAccessible.html
 share/gtk-doc/html/libatspi/AtspiDeviceListener.html
@@ -107,10 +107,12 @@ share/locale/fi/LC_MESSAGES/at-spi2-core.mo
 share/locale/fr/LC_MESSAGES/at-spi2-core.mo
 share/locale/fur/LC_MESSAGES/at-spi2-core.mo
 share/locale/ga/LC_MESSAGES/at-spi2-core.mo
+share/locale/gd/LC_MESSAGES/at-spi2-core.mo
 share/locale/gl/LC_MESSAGES/at-spi2-core.mo
 share/locale/gu/LC_MESSAGES/at-spi2-core.mo
 share/locale/he/LC_MESSAGES/at-spi2-core.mo
 share/locale/hi/LC_MESSAGES/at-spi2-core.mo
+share/locale/hr/LC_MESSAGES/at-spi2-core.mo
 share/locale/hu/LC_MESSAGES/at-spi2-core.mo
 share/locale/id/LC_MESSAGES/at-spi2-core.mo
 share/locale/it/LC_MESSAGES/at-spi2-core.mo
