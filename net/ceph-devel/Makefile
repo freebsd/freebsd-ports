@@ -19,7 +19,6 @@ BUILD_DEPENDS=	\
 	sphinx-build:textproc/py-sphinx \
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	\
-	libboost_system.so:devel/boost-all \
 	libboost_python.so:devel/boost-python-libs \
 	libboost_thread.so:devel/boost-libs \
 	libleveldb.so:databases/leveldb \
