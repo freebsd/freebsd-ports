@@ -9196,3 +9196,5 @@ databases/libgda4-mysql||2017-04-02|Obsolete and not depend on anymore
 databases/libgda4-mdb||2017-04-02|Obsolete and not depend on anymore
 databases/libgda4-ldap||2017-04-02|Obsolete and not depend on anymore
 devel/libsigcx||2017-04-02|Obsolete and not depend on anymore
+x11-toolkits/gal2||2017-04-02|Obsolete and not depend on anymore
+x11-toolkits/gal2-reference||2017-04-02|Obsolete and not depend on anymore
