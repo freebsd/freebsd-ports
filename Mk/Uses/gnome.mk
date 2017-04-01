@@ -75,7 +75,7 @@ _USE_GNOME_ALL= esound intlhack intltool introspection \
 _USE_GNOME_ALL+= gdkpixbuf glib12 gtk12
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk cairo gal2 \
+_USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
 		gnomedocutils gnomesharp20 \
 		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
@@ -353,10 +353,6 @@ nautilus3_USE_GNOME_IMPL=gnomedesktop3 gvfs libxml2
 
 metacity_LIB_DEPENDS=	libmetacity-private.so:x11-wm/metacity
 metacity_DETECT=	${LOCALBASE}/libdata/pkgconfig/libmetacity-private.pc
-
-gal2_LIB_DEPENDS=	libgal-2.4.so:x11-toolkits/gal2
-gal2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gal-2.4.pc
-gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 
 gnomecontrolcenter3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc
 gnomecontrolcenter3_BUILD_DEPENDS=	${gnomecontrolcenter3_DETECT}:sysutils/gnome-control-center

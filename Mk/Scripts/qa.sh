@@ -379,7 +379,6 @@ proxydeps_suggest_uses() {
 		${pkg} = "graphics/cairomm" -o \
 		${pkg} = "devel/dconf" -o \
 		${pkg} = "audio/esound" -o \
-		${pkg} = "x11-toolkits/gal2" -o \
 		${pkg} = "devel/gconf2" -o \
 		${pkg} = "devel/gconfmm26" -o \
 		${pkg} = "devel/glib12" -o \
