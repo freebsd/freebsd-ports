@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-server
-PORTVERSION=	6.0.8
+PORTVERSION=	${SEAFILE_VER}
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt
@@ -94,6 +94,8 @@ post-patch:
 	${REINPLACE_CMD} 's/<evhtp.h>/<evhtp\/evhtp.h>/' ${WRKSRC}/server/upload-file.c \
 			${WRKSRC}/server/access-file.c ${WRKSRC}/server/http-server.c
 	${REINPLACE_CMD} -E 's/stat.+\$$/stat -f %Su $$/' ${WRKSRC}/scripts/seafile.sh
+	${REINPLACE_CMD} 's/%%SEAFILE_USER%%/${USERS:[1]}/ ; s/%%SEAFILE_GROUP%%/${GROUPS:[1]}/' \
+			${WRKSRC}/scripts/setup-seafile.sh ${WRKSRC}/scripts/setup-seafile-mysql.py
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEABIN} ${STAGEDIR}${PREFIX}/${SEALIB} \
 		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile \
@@ -120,5 +122,12 @@ post-install:
 		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile/
 	(cd ${WRKSRC}/scripts/upgrade && \
 		${COPYTREE_SHARE} sql ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/upgrade)
+
+makesum-all:
+.for PORT in net-mgmt/ccnet-server net-mgmt/seafile-server www/py-seafdav www/py-seafobj www/seahub
+	${MAKE} -C "${PORTSDIR}/${PORT}" makesum
+.endfor
+
+.include "${.CURDIR}/Makefile.include"
 
 .include <bsd.port.mk>

@@ -1,0 +1,67 @@
+diff --git a/build/moz.configure/init.configure b/build/moz.configure/init.configure
+index 855214a..1e91d51 100644
+--- mozilla/build/moz.configure/init.configure
++++ mozilla/build/moz.configure/init.configure
+@@ -165,16 +165,17 @@ option(env='PYTHON', nargs=1, help='Python interpreter')
+ # ==============================================================
+ @depends('PYTHON', check_build_environment, mozconfig, '--help')
+ @imports('os')
+ @imports('sys')
+ @imports('subprocess')
+ @imports(_from='mozbuild.configure.util', _import='LineIO')
+ @imports(_from='mozbuild.virtualenv', _import='VirtualenvManager')
+ @imports(_from='mozbuild.virtualenv', _import='verify_python_version')
++@imports(_from='__builtin__', _import='KeyError')
+ @imports('distutils.sysconfig')
+ def virtualenv_python(env_python, build_env, mozconfig, help):
+     if help:
+         return
+ 
+     python = env_python[0] if env_python else None
+ 
+     # Ideally we'd rely on the mozconfig injection from mozconfig_options,
+@@ -184,16 +185,22 @@ def virtualenv_python(env_python, build_env, mozconfig, help):
+         if 'PYTHON' in mozconfig['env']['added']:
+             python = mozconfig['env']['added']['PYTHON']
+         elif 'PYTHON' in mozconfig['env']['modified']:
+             python = mozconfig['env']['modified']['PYTHON'][1]
+         elif 'PYTHON' in mozconfig['vars']['added']:
+             python = mozconfig['vars']['added']['PYTHON']
+         elif 'PYTHON' in mozconfig['vars']['modified']:
+             python = mozconfig['vars']['modified']['PYTHON'][1]
++        for i in ('env', 'vars'):
++            for j in ('added', 'modified'):
++                try:
++                    del mozconfig[i][j]['PYTHON']
++                except KeyError:
++                    pass
+ 
+     with LineIO(lambda l: log.error(l)) as out:
+         verify_python_version(out)
+     topsrcdir, topobjdir = build_env.topsrcdir, build_env.topobjdir
+     if topobjdir.endswith('/js/src'):
+         topobjdir = topobjdir[:-7]
+ 
+     with LineIO(lambda l: log.info(l)) as out:
+@@ -219,17 +226,20 @@ def virtualenv_python(env_python, build_env, mozconfig, help):
+         log.info('Creating Python environment')
+         manager.build(python)
+ 
+     python = normsep(manager.python_path)
+ 
+     if python != normsep(sys.executable):
+         log.info('Reexecuting in the virtualenv')
+         if env_python:
+-            del os.environ['PYTHON']
++            try:
++                del os.environ['PYTHON']
++            except KeyError:
++                pass
+         # One would prefer to use os.execl, but that's completely borked on
+         # Windows.
+         sys.exit(subprocess.call([python] + sys.argv))
+ 
+     # We are now in the virtualenv
+     if not distutils.sysconfig.get_python_lib():
+         die('Could not determine python site packages directory')
+ 

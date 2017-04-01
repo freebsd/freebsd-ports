@@ -32,6 +32,7 @@ bin/rspamc
 %%ETCDIR%%/modules.d/fuzzy_check.conf
 %%ETCDIR%%/modules.d/greylist.conf
 %%ETCDIR%%/modules.d/hfilter.conf
+%%ETCDIR%%/modules.d/history_redis.conf
 %%ETCDIR%%/modules.d/ip_score.conf
 %%ETCDIR%%/modules.d/maillist.conf
 %%ETCDIR%%/modules.d/metadata_exporter.conf
@@ -118,10 +119,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/rules/mid.lua
 %%DATADIR%%/rules/misc.lua
 %%DATADIR%%/rules/regexp/compromised_hosts.lua
-%%DATADIR%%/rules/regexp/drugs.lua
-%%DATADIR%%/rules/regexp/fraud.lua
 %%DATADIR%%/rules/regexp/headers.lua
-%%DATADIR%%/rules/regexp/lotto.lua
 %%DATADIR%%/rules/regexp/misc.lua
 %%DATADIR%%/rules/regexp/upstream_spam_filters.lua
 %%DATADIR%%/rules/rspamd.classifiers.lua
@@ -130,7 +128,7 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/README.md
 %%DATADIR%%/www/css/bootstrap.min.css
 %%DATADIR%%/www/css/d3evolution.css
-%%DATADIR%%/www/css/datatables.min.css
+%%DATADIR%%/www/css/footable.bootstrap.min.css
 %%DATADIR%%/www/css/rspamd.css
 %%DATADIR%%/www/favicon.ico
 %%DATADIR%%/www/fonts/glyphicons-halflings-regular.ttf
@@ -151,8 +149,8 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/www/js/lib/d3.min.js
 %%DATADIR%%/www/js/lib/d3evolution.min.js
 %%DATADIR%%/www/js/lib/d3pie.min.js
-%%DATADIR%%/www/js/lib/datatables.min.js
 %%DATADIR%%/www/js/lib/domReady.js
+%%DATADIR%%/www/js/lib/footable.min.js
 %%DATADIR%%/www/js/lib/humanize.min.js
 %%DATADIR%%/www/js/lib/jquery-3.1.1.min.js
 %%DATADIR%%/www/js/lib/visibility.min.js

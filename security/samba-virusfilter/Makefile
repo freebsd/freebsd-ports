@@ -9,21 +9,22 @@ MASTER_SITES=	GHC
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	On-access anti-virus filter for Samba
 
-PATCH_DEPENDS=	smbclient:net/${SAMBA_PORT}
-BUILD_DEPENDS=	${NONEXISTENT}:net/${SAMBA_PORT}:configure
+BROKEN=		fails to configure with samba 4
+
+PATCH_DEPENDS=	smbclient:${SAMBAPORT}
+BUILD_DEPENDS=	${NONEXISTENT}:${SAMBAPORT}:configure
 RUN_DEPENDS=	ksh:shells/pdksh
 
 GNU_CONFIGURE=	yes
-USES=		gmake shebangfix tar:bzip2
+USES=		gmake samba:env shebangfix tar:bzip2
 SHEBANG_FILES=	bin/svf-notify.ksh
 USE_GITHUB=	yes
 GH_ACCOUNT=	fumiyas
 
 ALL_TARGET=	# should empty
-CONFIGURE_ARGS=	--with-samba-source=`cd ${PORTSDIR}/net/${SAMBA_PORT}; ${MAKE} -VWRKSRC` \
+CONFIGURE_ARGS=	--with-samba-source=`cd ${PORTSDIR}/${SAMBAPORT}; ${MAKE} -VWRKSRC` \
 		--with-clamd=${PREFIX}/sbin/clamd --with-savdid=${PREFIX}/bin/savdid
-SAMBA_PORT?=	samba36
-USE_AUTOTOOLS=	autoconf autoheader # for net/${SAMBA_PORT} configure
+USE_AUTOTOOLS=	autoconf autoheader # for ${SAMBAPORT} configure
 MAKE_ARGS=	SAMBA_DATADIR=${PREFIX}
 
 .include <bsd.port.mk>

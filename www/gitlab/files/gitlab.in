@@ -67,7 +67,7 @@ test -f /etc/default/gitlab && . /etc/default/gitlab
 
 # Switch to the app_user if it is not he/she who is running the script.
 if [ "$USER" != "$app_user" ]; then
-  eval su - "$app_user" -c $(echo \")$0 "$@"$(echo \"); exit;
+  eval su - "$app_user" -c $(echo \")/usr/local/etc/rc.d/gitlab "$@"$(echo \"); exit;
 fi
 
 # Switch to the gitlab path, exit on failure.
@@ -390,10 +390,10 @@ restart_gitlab(){
 ### Finally the input handling.
 
 case "$1" in
-  start)
+  start|quietstart)
         start_gitlab
         ;;
-  stop)
+  stop|faststop)
         stop_gitlab
         ;;
   restart)
@@ -407,7 +407,7 @@ case "$1" in
         exit $gitlab_status
         ;;
   *)
-        echo "Usage: service gitlab {start|stop|restart|reload|status}"
+        echo "Usage: service gitlab {start|quietstart|faststop|stop|restart|reload|status}"
         exit 1
         ;;
 esac

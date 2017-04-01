@@ -4,7 +4,7 @@
 PORTNAME=	xmlto
 PORTVERSION=	0.0.28
 CATEGORIES=	textproc
-MASTER_SITES=	https://fedorahosted.org/releases/x/m/xmlto/:xmlto \
+MASTER_SITES=	https://releases.pagure.org/xmlto/:xmlto \
 		LOCAL/mandree/:xmlto \
 		http://www.antennahouse.com/XSLsample/sample-xsl-xhtml2fo/:xsl \
 		LOCAL/mandree/:xsl

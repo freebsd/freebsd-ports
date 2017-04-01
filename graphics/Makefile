@@ -78,6 +78,7 @@
     SUBDIR += burplex
     SUBDIR += c-a-i-r
     SUBDIR += cadubi
+    SUBDIR += caffe
     SUBDIR += cairo
     SUBDIR += cairo-reference
     SUBDIR += cairomm
@@ -328,6 +329,7 @@
     SUBDIR += gtk-update-icon-cache
     SUBDIR += gtkam
     SUBDIR += gts
+    SUBDIR += guetzli
     SUBDIR += guilib
     SUBDIR += gwenview-kde4
     SUBDIR += gx
@@ -883,6 +885,7 @@
     SUBDIR += py-qt5-svg
     SUBDIR += py-rabbyt
     SUBDIR += py-sane
+    SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
@@ -950,6 +953,7 @@
     SUBDIR += rubygem-gd2
     SUBDIR += rubygem-gdk_pixbuf2
     SUBDIR += rubygem-gemojione
+    SUBDIR += rubygem-gemojione2
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-gitlab_emoji
     SUBDIR += rubygem-goocanvas
@@ -1031,6 +1035,7 @@
     SUBDIR += tilecache
     SUBDIR += tiled
     SUBDIR += timeless
+    SUBDIR += timg
     SUBDIR += tintfu
     SUBDIR += tinyows
     SUBDIR += tkpng

@@ -1,6 +1,5 @@
 bin/gogoc
-etc/gogoc.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gogoc.conf.sample
+@sample %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gogoc.conf.sample etc/gogoc.conf
 man/man5/gogoc.conf.5.gz
 man/man8/gogoc.8.gz
 template/README

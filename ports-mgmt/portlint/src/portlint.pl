@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.399 2016/12/23 23:18:20 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.401 2017/03/29 15:26:37 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 6;
+my $micro = 7;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1140,6 +1140,19 @@ sub check_depends_syntax {
 				&perror("WARN", $file, -1, "dependency to $1 ".
 					"listed in $j. consider using ".
 					"USES[+]=gmake.");
+			}
+
+			my %udeps = (
+				'bison' => 'bison',
+				'fmake' => 'fmake',
+				'libexecinfo.so' => 'execinfo',
+			);
+			foreach my $udep (keys %udeps) {
+				if ($m{'dep'} =~ /^$udep/) {
+					&perror("WARN", $file, -1, "dependency to $udep ".
+						"listed in $j.  consider using ".
+						"USES[+]=$udeps{$udep}.");
+				}
 			}
 
 			# check USE_QT
@@ -2622,8 +2635,6 @@ DIST_SUBDIR EXTRACT_ONLY
 				$ftphttp = 1;
 			}
 		}
-		&perror("WARN", $file, -1, "no ftp/http mirror in MASTER_SITES ".
-			"for users behind a proxy.") if ($urlseen && ! $ftphttp);
 	} else {
 		&perror("WARN", $file, -1, "no MASTER_SITES found. is it ok?");
 	}

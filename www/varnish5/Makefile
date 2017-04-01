@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	varnish
-PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTVERSION=	5.1.1
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://repo.varnish-cache.org/source/
 PKGNAMESUFFIX=	5
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFLICTS=	varnish-2.* varnish-3.* varnish4-4.*
 
-USES=		autoreconf cpe gmake libedit libtool ncurses pathfix \
+USES=		cpe gmake libedit libtool ncurses pathfix \
 		pkgconfig python:2,build readline shebangfix
 SHEBANG_FILES=	lib/libvcc/vmodtool.py
 CPE_VENDOR=	varnish-cache

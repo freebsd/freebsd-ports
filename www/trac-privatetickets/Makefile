@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	privatetickets
-PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTVERSION=	2.1.0
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	trac-
@@ -11,6 +10,8 @@ DISTNAME=	TracPrivateTickets-${PORTVERSION}
 
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Modified ticket security for Trac
+
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	tracd:www/trac
 

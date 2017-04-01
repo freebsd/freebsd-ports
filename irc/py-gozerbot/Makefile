@@ -9,7 +9,7 @@ MASTER_SITES=	http://gozerbot.org/media/tarball/ \
 		GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sten@blinkenlights.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gozerbot - A modular Python IRC and Jabber bot
 
 BROKEN=		Unfetchable (google code has gone away)

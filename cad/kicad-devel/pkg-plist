@@ -338,12 +338,16 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/library/CMakeLists.txt
 %%DATADIR%%/library/ESD_Protection.dcm
 %%DATADIR%%/library/ESD_Protection.lib
+%%DATADIR%%/library/LEM.dcm
+%%DATADIR%%/library/LEM.lib
 %%DATADIR%%/library/Lattice.dcm
 %%DATADIR%%/library/Lattice.lib
 %%DATADIR%%/library/Oscillators.dcm
 %%DATADIR%%/library/Oscillators.lib
 %%DATADIR%%/library/Power_Management.dcm
 %%DATADIR%%/library/Power_Management.lib
+%%DATADIR%%/library/RFSolutions.dcm
+%%DATADIR%%/library/RFSolutions.lib
 %%DATADIR%%/library/Worldsemi.dcm
 %%DATADIR%%/library/Worldsemi.lib
 %%DATADIR%%/library/Xicor.dcm
@@ -3280,6 +3284,12 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/modules/packages3d/Hall-Effect_Transducers_LEM.3dshapes/HX20_HX25_HallEffectCurrentTransducer.wrl
 %%DATADIR%%/modules/packages3d/Hall-Effect_Transducers_LEM.3dshapes/HX50_HallEffectCurrentTransducer.wings
 %%DATADIR%%/modules/packages3d/Hall-Effect_Transducers_LEM.3dshapes/HX50_HallEffectCurrentTransducer.wrl
+%%DATADIR%%/modules/packages3d/Hall-Effect_Transducers_LEM.3dshapes/LEM_LA25-P.fcstd
+%%DATADIR%%/modules/packages3d/Hall-Effect_Transducers_LEM.3dshapes/LEM_LA25-P.step
+%%DATADIR%%/modules/packages3d/Hall-Effect_Transducers_LEM.3dshapes/LEM_LA25-P.wrl
+%%DATADIR%%/modules/packages3d/Hall-Effect_Transducers_LEM.3dshapes/LEM_LV25-P.fcstd
+%%DATADIR%%/modules/packages3d/Hall-Effect_Transducers_LEM.3dshapes/LEM_LV25-P.step
+%%DATADIR%%/modules/packages3d/Hall-Effect_Transducers_LEM.3dshapes/LEM_LV25-P.wrl
 %%DATADIR%%/modules/packages3d/Housings_BGA.3dshapes/BGA-256_16x16_17.0x17.0mm_Pitch1.0mm.wings
 %%DATADIR%%/modules/packages3d/Housings_BGA.3dshapes/BGA-256_16x16_17.0x17.0mm_Pitch1.0mm.wrl
 %%DATADIR%%/modules/packages3d/Housings_BGA.3dshapes/BGA-352_26x26_35.0x35.0mm_Pitch1.27mm.wings
@@ -6142,6 +6152,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/modules/packages3d/Valves.3dshapes/VALVE-ECC-83-2.wings
 %%DATADIR%%/modules/packages3d/Valves.3dshapes/VALVE-ECC-83-2.wrl
 %%DATADIR%%/modules/packages3d/Valves.3dshapes/VALVE-MINI_PENTODE_LINEAR.FCStd
+%%DATADIR%%/modules/packages3d/Valves.3dshapes/VALVE-MINI_PENTODE_LINEAR.step
 %%DATADIR%%/modules/packages3d/Valves.3dshapes/VALVE-MINI_PENTODE_LINEAR.wrl
 %%DATADIR%%/template/1593K_Enclosure/1593K_Enclosure.kicad_pcb
 %%DATADIR%%/template/1593K_Enclosure/1593K_Enclosure.net

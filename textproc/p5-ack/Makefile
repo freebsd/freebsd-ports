@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ack
-PORTVERSION=	2.16
+PORTVERSION=	2.18
 CATEGORIES=	textproc sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PETDANCE
@@ -13,7 +13,7 @@ COMMENT=	Grep-like text finder for large trees of text
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-File-Next>=0.40:sysutils/p5-File-Next
+BUILD_DEPENDS=	p5-File-Next>=1.16:sysutils/p5-File-Next
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	bash:shells/bash \
 		p5-IO-Tty>=0:devel/p5-IO-Tty

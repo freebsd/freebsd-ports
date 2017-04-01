@@ -88,7 +88,7 @@ TCL_USES=		tcl:85+
 
 .include <bsd.port.pre.mk>
 
-.if defined(PORT_OPTIONS:MPYTHON) && ${PYTHON_MAJOR_VER} >= 3
+.if !empty(PORT_OPTIONS:MPYTHON) && ${PYTHON_MAJOR_VER} >= 3
 WARNING=	"Using Python 3.x is NOT recommended because many \"official\" scripts won\'t work"
 CMAKE_ARGS+=	-DENABLE_PYTHON3:BOOL=true \
 		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/libpython${PYTHON_VER}m.so

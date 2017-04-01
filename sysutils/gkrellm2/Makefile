@@ -2,7 +2,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.10
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume

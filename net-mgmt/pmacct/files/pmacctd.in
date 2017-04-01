@@ -12,7 +12,8 @@
 #
 # pmacctd_enable="YES"
 #
-# You can define flags for pmacctd running. See pmacctd(8) for details.
+# You can define flags for pmacctd running. 
+# See http://wiki.pmacct.net/OfficialConfigKeys for more details.
 #
 # Example:
 # pmacctd_flags="-f %%PREFIX%%/etc/pmacctd.conf -i em0"

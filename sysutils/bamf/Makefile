@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpadlibrarian.net/280921055/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BAMF Application Matching Framework
 
 LICENSE=	LGPL3

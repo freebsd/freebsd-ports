@@ -1,3 +1,0 @@
-bin/smbclient
-man/man1/smbclient.1.gz
-%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%.sample

@@ -6,7 +6,7 @@ PORTVERSION=	2.0.9
 CATEGORIES=	net
 MASTER_SITES=	SF/urlget/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download manager application
 
 LICENSE=	LGPL21

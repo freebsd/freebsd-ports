@@ -1,6 +1,6 @@
---- configure.orig	2016-08-30 10:23:53 UTC
+--- configure.orig	2017-02-12 12:13:29 UTC
 +++ configure
-@@ -11412,74 +11412,7 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
+@@ -11503,74 +11503,7 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
  
      if test $? -eq 0 -a -n "0.9.0"; then
  

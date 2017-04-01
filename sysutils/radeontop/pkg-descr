@@ -1,0 +1,13 @@
+RadeonTop is a small utility which allows one to monitor the utilization of
+AMD Radeon GPUs starting from the r600 series and newer, using undocumented
+performance counters in the hardware.
+
+It displays the utilization of the graphics pipe, event engine, vertex
+cache, vertex group and tesselator, texture addresser and cache, the shader
+units, and more, both with a relative percent value as well as a colorful
+bar diagram (ncurses-based).
+
+Total GPU utilization is also valid for OpenCL loads; other values are only
+useful in GL loads.
+
+WWW: https://github.com/clbr/radeontop

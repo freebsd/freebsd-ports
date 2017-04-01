@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo
-PORTVERSION=	0.15.0
-PORTREVISION=	2
+PORTVERSION=	0.17.0
 CATEGORIES=	devel
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -21,7 +20,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 # Main source archive from GitHub
 #   This is the source of Cargo, taken from GitHub.
 #
-# :bootstrap
+# :cargo_bootstrap
 #   Like Rust, this is a prebuilt "cargo" used to bootstrap it, because
 #   Cargo is a standard Rust package itself.
 #
@@ -34,12 +33,12 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 #   This is a collection of mainly shell scripts which are used to
 #   install Cargo.
 
-MASTER_SITES=	https://static.rust-lang.org/cargo-dist/:bootstrap \
-		LOCAL/dumbbell/rust:registry
+MASTER_SITES=	https://s3.amazonaws.com/rust-lang-ci/cargo-builds/:cargo_bootstrap
 .if !defined(SKIP_CARGO_REGISTRY)
+MASTER_SITES+=	LOCAL/dumbbell/rust:registry
 DISTFILES+=	${CARGO_REGISTRY}:registry
 .endif
-DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
+DIST_SUBDIR?=	rust
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
@@ -55,13 +54,16 @@ RUST_ARCH_x86_64=	x86_64 # dragonfly
 RUST_ARCH_amd64=	x86_64
 RUST_ARCH_i386=		i686
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
-CARGO_BOOT=	2016-11-02/${PORTNAME}-nightly-${RUST_TARGET}${EXTRACT_SUFX}
-CARGO_REGISTRY=	${PORTNAME}-registry-${DISTVERSIONFULL}_${PORTREVISION}.tar.xz
+
+CARGO_BOOTSTRAP_DIR?=		fbeea902d2c9a5be6d99cc35681565d8f7832592
+CARGO_BOOTSTRAP_VERSION?=	nightly
+CARGO_BOOTSTRAP=		${CARGO_BOOTSTRAP_DIR}/cargo-${CARGO_BOOTSTRAP_VERSION}-${RUST_TARGET}${EXTRACT_SUFX}
+CARGO_REGISTRY=			${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
 
 # We don't USES=cmake here, because cmake is not Cargo's build system.
 # It's used by a bundled dependency (libgit2).
 BUILD_DEPENDS=	cmake:devel/cmake \
-		${RUST_PORT:T}>=1.5.0:${RUST_PORT}
+		${RUST_PORT:T}>=1.14.0:${RUST_PORT}
 LIB_DEPENDS=	libssh2.so:security/libssh2 \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	rustc:${RUST_PORT}
@@ -82,12 +84,8 @@ OPTIONS_DEFAULT=BOOTSTRAP
 BOOTSTRAP_DESC=		Bootstrap using pre-built vendor snapshot
 BOOTSTRAP_CONFIGURE_ON=	--cargo="${WRKDIR}/${PORTNAME}-nightly-${RUST_TARGET}/cargo/bin/cargo"
 BOOTSTRAP_CONFIGURE_OFF=--cargo="$$(command -v cargo)" # respect PATH
-BOOTSTRAP_DISTFILES=	${CARGO_BOOT}:bootstrap
+BOOTSTRAP_DISTFILES=	${CARGO_BOOTSTRAP}:cargo_bootstrap
 BOOTSTRAP_MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/target/snapshot/cargo/lib"
-
-post-extract-BOOTSTRAP-on:
-	@${MKDIR} ${WRKSRC}/target/dl
-	${LN} -sf ${DISTDIR}/${CARGO_BOOT} ${WRKSRC}/target/dl/
 
 post-patch:
 # Fix mandir and don't install licenses outside of ${_LICENSE_DIR}

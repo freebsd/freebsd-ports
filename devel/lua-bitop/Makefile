@@ -15,7 +15,8 @@ COMMENT=	Bitwise operations on numbers
 LICENSE=	MIT
 
 CFLAGS+=	-DLUA_NUMBER_LONG_LONG -I${LUA_INCDIR}
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC=${CC} LUA=${LUA_CMD}
+TEST_TARGET=	test
 USES=		gmake lua
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/bit.so

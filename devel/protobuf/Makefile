@@ -24,7 +24,7 @@ TEST_ARGS=	${MAKE_ARGS} ${_MAKE_JOBS}
 TEST_TARGET=	check
 USE_CSTD=	c99	# for audio/clementine-player support
 USE_LDCONFIG=	yes
-USES=		autoreconf gmake libtool localbase pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake libtool localbase pathfix pkgconfig
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes

@@ -4469,7 +4469,6 @@ deskutils/katapult||2013-07-26|Has expired: Depends on Qt 3.x
 deskutils/kbirthday||2013-07-26|Has expired: Depends on Qt 3.x
 deskutils/kblticker||2013-07-26|Has expired: Depends on Qt 3.x
 deskutils/kchm||2013-07-26|Has expired: Depends on Qt 3.x
-deskutils/kchmviewer||2013-07-26|Has expired: Depends on Qt 3.x
 deskutils/kdepim3||2013-07-26|Has expired: Depends on Qt 3.x
 deskutils/kdissert||2013-07-26|Has expired: Depends on Qt 3.x
 deskutils/kickpim||2013-07-26|Has expired: Depends on Qt 3.x
@@ -6661,7 +6660,6 @@ math/jsmath-fonts-sprite||2014-09-01|Not staged
 math/jsmath||2014-09-01|Not staged
 math/kash3||2014-09-01|Not staged
 math/matrix||2014-09-01|Not staged
-math/mprime||2014-09-01|Not staged
 math/petsc||2014-09-01|Not staged
 math/sdpa-gmp||2014-09-01|Not staged
 math/sedumi||2014-09-01|Not staged
@@ -7649,7 +7647,6 @@ devel/erlang-ibrowse|www/erlang-ibrowse|2015-07-05|Move to www where it belongs
 multimedia/ffmpeg23|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead
 multimedia/ffmpeg26|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead
 x11/docker|x11/docker-tray|2015-07-06|Renamed
-sysutils/docker|sysutils/docker-freebsd|2015-07-07|Renamed
 graphics/fli2gif||2015-07-07|Has expired: No public distfiles
 net-im/tkabbur||2015-07-07|Has expired: Upstream development ceased since 2008
 www/mod_wsgi3|www/mod_wsgi4|2015-07-12|Renamed to reflect new version
@@ -9058,6 +9055,7 @@ devel/libdict||2017-02-08|Has expired: Broken for more than 6 months
 math/R-cran-SuppDists||2017-02-08|Has expired: Broken for more than 6 months
 devel/py-re2||2017-02-08|Has expired: Broken for more than 6 months
 net-p2p/digitalcoin||2017-02-08|Has expired: Broken for more than 6 months
+textproc/rubygem-mustache|devel/rubygem-mustache|2017-02-08|Duplicate of devel/rubygem-mustache
 devel/php70-APCu|devel/pecl-APCu|2017-02-12|Use devel/pecl-APCu for PHP 7.0+ users
 chinese/mutt|mail/mutt|2017-02-13|Use mail/mutt, which can handle Chinese locales
 lang/libjit||2017-02-14|Has expired: This version is severely out of date and its use is discouraged; see http://www.gnu.org/software/libjit/
@@ -9142,3 +9140,36 @@ devel/py-setuptools36|devel/py36-setuptools|2017-03-16|Renamed to better match o
 devel/rubygem-devise-rails4|devel/rubygem-devise|2017-03-16|Has expired: Please use devel/rubygem-devise instead
 textproc/rubygem-github-markdown||2017-03-16|Has expired: This gem is not maintained and not supported by upstream
 chinese/irssi|irc/irssi|2017-03-17|Use irc/irssi, which can handle Chinese locales
+archivers/macutils||2017-03-19|Has expired: Not maintained in 16 years, many missing header inclusions
+www/npm012|www/npm|2017-03-20|Has expired: Depends on deprecated www/node012. Please use www/npm instead
+sysutils/ucspi-ssl-tls|sysutils/ucspi-ssl|2017-03-20|Current ucspi-ssl supports TLS
+net/rubygem-signet|security/rubygem-signet|2017-03-20|Duplicate
+www/node012|www/node|2017-03-21|Has expired: Upstream has placed 0.12.x in maintenance mode, see https://github.com/nodejs/LTS
+net/samba-libsmbclient|net/samba43|2017-03-21|Obsolete
+net/samba-nmblookup|net/samba43|2017-03-21|Obsolete
+net/samba-smbclient|net/samba43|2017-03-21|Obsolete
+net/samba36|net/samba43|2017-03-21|Obsolete
+multimedia/mplayer2|multimedia/mpv|2017-03-25|Has expired: Development ceased in favour of mpv, last release from 2013
+devel/buildbot-slave|devel/buildbot-worker|2017-03-27|Renamed to match new upstream package name/terminology
+print/musixtex||2017-03-27|Has expired: Broken for more than 6 months
+www/wml||2017-03-27|Has expired: Broken for more than 6 months
+www/offline-npm||2017-03-27|Has expired: Broken for more than 6 months
+x11-themes/kde-icons-cezanne||2017-03-27|Has expired: Broken for more than 6 months
+x11-themes/kde-icons-sky||2017-03-27|Has expired: Broken for more than 6 months
+deskutils/gnome-shell-extension-backslide||2017-03-27|Has expired: Broken for more than 6 months
+devel/openvex||2017-03-27|Has expired: Broken for more than 6 months
+mail/mixmaster||2017-03-27|Has expired: Broken for more than 6 months
+net-mgmt/nat||2017-03-27|Has expired: Broken for more than 6 months
+net-p2p/gnunet-gtk||2017-03-27|Has expired: Depends on expiring net-p2p/gnunet
+net-p2p/gnunet||2017-03-27|Has expired: Broken for more than 6 months
+print/abc2mtex||2017-03-27|Has expired: Depends on expiring print/musixtex
+ftp/bareftp||2017-03-27|Has expired: Broken for more than 6 months
+www/rubygem-jquery-rails4|www/rubygem-jquery-rails|2017-03-27|Remove PKGNAMESUFFIX
+devel/libytnef|converters/ytnef|2017-03-29|Merged into converters/ytnef
+databases/py-sqlalchemy08|databases/py-sqlalchemy10|2017-03-29|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
+devel/py3-meson||2017-03-30|Removed
+deskutils/kchmviewer-kde4|deskutils/kchmviewer|2017-03-31|Renamed to drop the -kde4 suffix
+emulators/ppsspp-qt4|emulators/ppsspp-qt5|2017-03-31|Qt4 support was removed upstream
+devel/llvm37||2017-04-01|Obsolete and unmaintained upstream
+lang/clang37||2017-04-01|Obsolete and unmaintained upstream
+devel/lldb37||2017-04-01|Obsolete and unmaintained upstream

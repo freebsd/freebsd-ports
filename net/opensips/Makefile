@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		opensips
-PORTVERSION=		2.1.4
-PORTREVISION=	2
+PORTVERSION=		2.2.3
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
@@ -47,7 +46,8 @@ USE_GCC=		yes
 
 NOPRECIOUSMAKEVARS=	yes
 
-OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES GEOIP HTTP LDAP MEMCACHED MYSQL PGSQL RADIUS TESTS TLS UNIXODBC
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES GEOIP HTTP LDAP MEMCACHED MYSQL \
+			PGSQL RADIUS TESTS TLS UNIXODBC SQLITE
 OPTIONS_DEFAULT=	GEOIP HTTP LDAP MEMCACHED PGSQL RADIUS TLS
 OPTIONS_SUB=		yes
 
@@ -66,27 +66,50 @@ HTTP_LIB_DEPENDS+=	libmicrohttpd.so:www/libmicrohttpd
 GEOIP_LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
 MEMCACHED_LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
 UNIXODBC_LIB_DEPENDS+=	libodbc.so:databases/unixODBC
+SQLITE_LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
 
-SHEBANG_FILES=		scripts/osipsconsole \
+SHEBANG_FILES=		ccopts.sh \
+			ccver.sh \
+			examples/ctd.sh \
 			modules/jabber/doc/jabberreg.pl \
+			modules/seas/doc/xml2sgml.sh \
 			modules/sipcapture/examples/partrotate_unixtimestamp.pl \
+			packaging/debian/common/rules \
+			packaging/freebsd/files/pkg-deinstall.in \
+			packaging/freebsd/files/pkg-install.in \
+			packaging/gentoo/opensips.init \
+			packaging/redhat_fedora/opensips.init \
+			packaging/redhat_fedora/opensips.m4cfg \
+			packaging/rpm/opensips.init \
+			packaging/solaris/berkeley-postinstall \
+			packaging/solaris/berkeley-preinstall \
+			packaging/solaris/carrierroute-postinstall \
+			packaging/solaris/carrierroute-preinstall \
+			packaging/solaris/identity-postinstall \
+			packaging/solaris/identity-preinstall \
+			packaging/solaris/ldap-postinstall \
+			packaging/solaris/ldap-preinstall \
+			packaging/solaris/mmgeoip-preinstall \
+			packaging/solaris/mysql-postinstall \
+			packaging/solaris/mysql-preinstall \
+			packaging/solaris/pgsql-postinstall \
+			packaging/solaris/pgsql-preinstall \
+			packaging/solaris/regex-postinstall \
+			packaging/solaris/regex-preinstall \
+			packaging/solaris/snmp-postinstall \
+			packaging/solaris/snmp-preinstall \
+			packaging/solaris/xmlrpc-postinstall \
+			packaging/solaris/xmlrpc-preinstall \
 			scripts/dbtextdb/__init__.py \
 			scripts/dbtextdb/dbtextdb.py \
 			scripts/dbtextdb/dbtextdb_test.py \
-			packaging/fedora/opensips.m4cfg \
-			packaging/fedora/opensips.init \
-			packaging/rpm/opensips.init \
-			modules/seas/doc/xml2sgml.sh \
-			utils/fifo_relay/fifo_server.php \
+			scripts/opensipsctl \
+			scripts/opensipsctl.oracle \
+			scripts/opensipsdbctl \
+			scripts/opensipsdbctl.oracle \
+			scripts/opensipsdbfunc.oracle \
+			scripts/osipsconsole \
 			test/1.sh \
-			test/2.sh \
-			test/3.sh \
-			test/4.sh \
-			test/5.sh \
-			test/6.sh \
-			test/7.sh \
-			test/8.sh \
-			test/9.sh \
 			test/10.sh \
 			test/11.sh \
 			test/12.sh \
@@ -97,7 +120,7 @@ SHEBANG_FILES=		scripts/osipsconsole \
 			test/17.sh \
 			test/18.sh \
 			test/19.sh \
-			test/20.sh \
+			test/2.sh \
 			test/21.sh \
 			test/22.sh \
 			test/23.sh \
@@ -107,12 +130,21 @@ SHEBANG_FILES=		scripts/osipsconsole \
 			test/27.sh \
 			test/28.sh \
 			test/29.sh \
+			test/3.sh \
 			test/30.sh \
 			test/31.sh \
 			test/32.sh \
 			test/33.sh \
 			test/34.sh \
-			test/35.sh
+			test/35.sh \
+			test/4.sh \
+			test/5.sh \
+			test/6.sh \
+			test/7.sh \
+			test/8.sh \
+			test/9.sh \
+			utils/fifo_relay/fifo_server.php \
+			utils/profile/launch.sh
 
 .include <bsd.port.options.mk>
 
@@ -150,6 +182,10 @@ EXTRA_MODULES+=		db_unixodbc
 
 .if ${PORT_OPTIONS:MTLS}
 EXTRA_MODULES+=		proto_tls
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
+EXTRA_MODULES+=		db_sqlite
 .endif
 
 OPENSIPS_MAKE_ENV=	CC="${CC}" CXX="${CXX}" CPP="${CPP}" _GCC_RUNTIME="${_GCC_RUNTIME}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -219,7 +255,7 @@ post-install-RADIUS-on:
 		sms.so speeddial.so sst.so statistics.so stun.so textops.so tlsops.so tm.so uac.so \
 		uac_auth.so uac_redirect.so uac_registrant.so uri.so userblacklist.so usrloc.so \
 		xcap.so xcap_client.so xmpp.so topology_hiding.so fraud_detection.so rtpengine.so \
-		proto_ws.so proto_tls.so cachedb_redis.so
+		proto_ws.so proto_tls.so cachedb_redis.so db_sqlite.so
 		@if [ -e ${STAGEDIR}${PREFIX}/lib/opensips/modules/${i} ]; then \
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opensips/modules/${i}; \
 		fi

@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}42
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -84,7 +84,7 @@ BUILD_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 # External Samba dependencies
 # IDL compiler
-BUILD_DEPENDS+=		p5-Parse-Pidl>=4.0.0:devel/p5-Parse-Pidl
+BUILD_DEPENDS+=		p5-Parse-Pidl44>=4.0.0:devel/p5-Parse-Pidl44
 #
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
@@ -155,7 +155,6 @@ CONFIGURE_ARGS+=	\
 			--with-winbind \
 			--without-gettext \
 			--with-sendfile-support \
-			--builtin-libraries=smbclient \
 			${ICONV_CONFIGURE_BASE}
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)

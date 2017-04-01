@@ -1,4 +1,0 @@
-This is the set of shared libraries from the Samba port. It lets other
-programs to utilize various aspects of the SMB protocol.
-
-WWW: http://www.samba.org/

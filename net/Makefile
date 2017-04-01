@@ -67,6 +67,7 @@
     SUBDIR += c3270
     SUBDIR += cagibi
     SUBDIR += ccxstream
+    SUBDIR += ceph-devel
     SUBDIR += cf
     SUBDIR += chrony
     SUBDIR += citrix_ica
@@ -674,6 +675,7 @@
     SUBDIR += p5-Net-NBsocket
     SUBDIR += p5-Net-NIS
     SUBDIR += p5-Net-NIS-Listgroup
+    SUBDIR += p5-Net-NTP
     SUBDIR += p5-Net-Nessus-XMLRPC
     SUBDIR += p5-Net-Nmsg
     SUBDIR += p5-Net-OAuth
@@ -1076,6 +1078,7 @@
     SUBDIR += qadsl
     SUBDIR += qjsonrpc
     SUBDIR += qoauth
+    SUBDIR += qoauth-qt5
     SUBDIR += qt4-network
     SUBDIR += qt5-network
     SUBDIR += qtweetlib
@@ -1188,6 +1191,7 @@
     SUBDIR += rubygem-octokit
     SUBDIR += rubygem-octopress-deploy
     SUBDIR += rubygem-omniauth-auth0
+    SUBDIR += rubygem-omniauth-authentiq
     SUBDIR += rubygem-omniauth-azure-oauth2
     SUBDIR += rubygem-omniauth-facebook
     SUBDIR += rubygem-omniauth-github
@@ -1226,16 +1230,15 @@
     SUBDIR += rubygem-twitter-stream
     SUBDIR += rubygem-twitter4r
     SUBDIR += rubygem-u2f
+    SUBDIR += rubygem-u2f0
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
     SUBDIR += rude
-    SUBDIR += samba-libsmbclient
-    SUBDIR += samba-nmblookup
-    SUBDIR += samba-smbclient
-    SUBDIR += samba36
     SUBDIR += samba42
     SUBDIR += samba43
     SUBDIR += samba44
+    SUBDIR += samba45
+    SUBDIR += samba46
     SUBDIR += samplicator
     SUBDIR += sbd
     SUBDIR += sbm

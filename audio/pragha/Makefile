@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/pragha-music-player/${PORTNAME}/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight music player
 
 LICENSE=	GPLv3

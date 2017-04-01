@@ -3929,6 +3929,7 @@ go/src/os/path_unix.go
 go/src/os/path_windows.go
 go/src/os/path_windows_test.go
 go/src/os/pipe_bsd.go
+go/src/os/pipe_freebsd.go
 go/src/os/pipe_linux.go
 go/src/os/pipe_test.go
 go/src/os/proc.go
@@ -4859,6 +4860,7 @@ go/src/syscall/env_unix.go
 go/src/syscall/env_windows.go
 go/src/syscall/errors_plan9.go
 go/src/syscall/exec_bsd.go
+go/src/syscall/exec_freebsd.go
 go/src/syscall/exec_linux.go
 go/src/syscall/exec_linux_test.go
 go/src/syscall/exec_plan9.go
@@ -4872,6 +4874,7 @@ go/src/syscall/export_unix_test.go
 go/src/syscall/fd_nacl.go
 go/src/syscall/flock.go
 go/src/syscall/flock_linux_32bit.go
+go/src/syscall/forkpipe_bsd.go
 go/src/syscall/fs_nacl.go
 go/src/syscall/lsf_linux.go
 go/src/syscall/mkall.sh

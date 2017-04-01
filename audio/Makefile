@@ -744,6 +744,7 @@
     SUBDIR += streamtranscoder
     SUBDIR += stymulator
     SUBDIR += suil
+    SUBDIR += supercollider
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += taglib

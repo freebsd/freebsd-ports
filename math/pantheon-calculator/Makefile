@@ -8,7 +8,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/303135059/ \
 	https://launchpad.net/${PORTNAME}/0.4-loki/${PORTVERSION}/+download/
 DIST_SUBDIR=	pantheon
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple calculator written in Vala
 
 LICENSE=	GPLv3

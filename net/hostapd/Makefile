@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hostapd
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/
 

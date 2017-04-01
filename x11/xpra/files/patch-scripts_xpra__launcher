@@ -1,7 +1,7 @@
 # preload the correct libgcc_s.so for libgfortran.so,
 # which is required for numpy
 #
---- scripts/xpra_launcher.orig	2016-12-06 10:56:26 UTC
+--- scripts/xpra_launcher.orig	2017-03-17 07:24:27 UTC
 +++ scripts/xpra_launcher
 @@ -1,5 +1,8 @@
  #!/usr/bin/env python

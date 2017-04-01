@@ -1,0 +1,11 @@
+--- specinfra.gemspec.orig	2017-02-21 09:48:56 UTC
++++ specinfra.gemspec
+@@ -24,8 +24,6 @@ Gem::Specification.new do |s|
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<net-scp>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<net-ssh>.freeze, ["< 5.0", ">= 2.7"])
+-      s.add_runtime_dependency(%q<net-telnet>.freeze, [">= 0"])
+-      s.add_runtime_dependency(%q<sfl>.freeze, [">= 0"])
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.3"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.1.1"])
+       s.add_development_dependency(%q<rspec>.freeze, [">= 0"])

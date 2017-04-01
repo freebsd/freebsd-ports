@@ -1181,8 +1181,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	char buf[256];			/* Must not be larger than remote_version. */
  	char remote_version[256];	/* Must be at least as big as buf. */
  
--	xasprintf(&server_version_string, "SSH-%d.%d-%.100s%s%s%s",
-+	xasprintf(&server_version_string, "SSH-%d.%d-%.100s%s%s%s%s",
+-	xasprintf(&server_version_string, "SSH-%d.%d-%.100s%s%s\r\n",
++	xasprintf(&server_version_string, "SSH-%d.%d-%.100s%s%s%s\r\n",
  	    PROTOCOL_MAJOR_2, PROTOCOL_MINOR_2, SSH_VERSION,
 +#ifdef HPN_ENABLED
 +	    options.hpn_disabled ? "" : SSH_HPN,
@@ -1190,7 +1190,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	    "",
 +#endif
  	    *options.version_addendum == '\0' ? "" : " ",
- 	    options.version_addendum, newline);
+ 	    options.version_addendum);
  
 @@ -1027,6 +1032,10 @@ server_listen(void)
  	int ret, listen_sock, on = 1;
@@ -1203,7 +1203,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  	for (ai = options.listen_addrs; ai; ai = ai->ai_next) {
  		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
-@@ -1067,6 +1076,13 @@ server_listen(void)
+@@ -1072,6 +1081,13 @@ server_listen(void)
  
  		debug("Bind to port %s on %s.", strport, ntop);
  
@@ -1217,7 +1217,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		/* Bind the socket to the desired port. */
  		if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) < 0) {
  			error("Bind to port %s on %s failed: %.200s.",
-@@ -1591,6 +1607,15 @@ main(int ac, char **av)
+@@ -1596,6 +1612,15 @@ main(int ac, char **av)
  	/* Fill in default values for those options not explicitly set. */
  	fill_default_server_options(&options);
  
@@ -1233,7 +1233,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/* challenge-response is implemented via keyboard interactive */
  	if (options.challenge_response_authentication)
  		options.kbd_interactive_authentication = 1;
-@@ -2085,6 +2110,11 @@ main(int ac, char **av)
+@@ -2099,6 +2124,11 @@ main(int ac, char **av)
  	}
  #endif
  
@@ -1245,7 +1245,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/*
  	 * In privilege separation, we fork another child and prepare
  	 * file descriptor passing.
-@@ -2163,6 +2193,11 @@ do_ssh2_kex(void)
+@@ -2177,6 +2207,11 @@ do_ssh2_kex(void)
  	struct kex *kex;
  	int r;
  

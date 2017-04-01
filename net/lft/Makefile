@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lft
-PORTVERSION=	3.77
+PORTVERSION=	3.78
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://pwhois.org/get/

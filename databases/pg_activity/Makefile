@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_activity
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
 

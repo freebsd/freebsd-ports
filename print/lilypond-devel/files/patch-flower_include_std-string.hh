@@ -1,4 +1,4 @@
---- flower/include/std-string.hh.orig	2016-08-30 10:23:53 UTC
+--- flower/include/std-string.hh.orig	2017-02-26 12:08:59 UTC
 +++ flower/include/std-string.hh
 @@ -38,6 +38,7 @@ using namespace std;
  typedef size_t ssize;

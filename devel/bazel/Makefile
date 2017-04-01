@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bazel
-PORTVERSION=		0.4.4
-PORTREVISION=		1
+PORTVERSION=		0.4.5
 CATEGORIES=		devel java
 MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -20,7 +19,7 @@ BUILD_DEPENDS=		bash:shells/bash \
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=		1
+FINALRC=		7
 
 NO_WRKSUBDIR=		YES
 USES=			shebangfix zip
@@ -49,6 +48,7 @@ do-build:
 	${LOCALBASE}/bin/bash ./compile.sh)
 
 do-install:
+	# The bazel binary is also a zip archive (extracted by the elf part), hence cannot be stripped
 	${CP} ${WRKSRC}/output/bazel ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/scripts/packages/debian/bazel.bazelrc ${STAGEDIR}${ETCDIR}/bazel.bazelrc.sample

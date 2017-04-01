@@ -6,7 +6,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXAppearance%20Obconf/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LXAppearance ObConf plugin
 
 LICENSE=	GPLv2

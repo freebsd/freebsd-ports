@@ -1,5 +1,5 @@
---- sample-config/Makefile.in.orig	2015-01-03 14:09:06.000000000 +0100
-+++ sample-config/Makefile.in	2015-04-22 21:47:23.294933000 +0200
+--- sample-config/Makefile.in.orig	2015-01-03 13:09:06 UTC
++++ sample-config/Makefile.in
 @@ -40,35 +40,18 @@ install:
  	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/check_commands
  	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/pages

@@ -3,7 +3,7 @@
 
 PORTNAME=	rsync-bpc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3_0_9_5
+DISTVERSION=	3_0_9_6
 CATEGORIES=	net
 
 MAINTAINER=	moiseev@mezonplus.ru

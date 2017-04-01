@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pynacl
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libsodium.so:security/libsodium
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -27,5 +27,8 @@ CFLAGS+=	-I ${LOCALBASE}/include
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nacl/_sodium.so
+
+do-test:
+	@cd ${WRKSRC} && ${SETENV} PYTHONPATH=../src ${PYTHON_CMD} -m pytest -rs tests
 
 .include <bsd.port.mk>

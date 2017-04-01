@@ -1,10 +1,10 @@
-For an existing config, or creating a new one, fix the UID/GID.
-Do not change %%PREFIX%%/%%SEAFILE_SERVER%% unless your front
-end is using the seafile UID/GID as well.
+To generate a new config,
+cd %%PREFIX%%/%%SEAFILE_SERVER%%
+Then choose sqlite or mysql, mysql needs to be setup with root.
+sqlite: ./setup-seafile.sh
+mysql: ./setup-seafile-mysql.sh
+Further instructions will be provided after the setup script is finished.
 
-chown -R seafile:seafile %%PREFIX%%/%%HAIWENDIR%%/conf \
-	%%PREFIX%%/%%HAIWENDIR%%/ccnet %%PREFIX%%/%%HAIWENDIR%%/seafile-data \
-	%%PREFIX%%/%%HAIWENDIR%%/pids %%PREFIX%%/%%HAIWENDIR%%/logs
 
 Don't forget to run update scripts after every minor and major update located in
 	%%PREFIX%%/%%SEAFILE_SERVER%%/upgrade

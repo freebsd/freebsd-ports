@@ -6,7 +6,7 @@ PORTVERSION=	0.11.8.3.2
 CATEGORIES=	net-im irc
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	j@scre.ws
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 
 LICENSE=	GPLv2

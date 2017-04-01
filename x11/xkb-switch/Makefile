@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xkb-switch
-PORTVERSION=	1.4.0.20170217
+PORTVERSION=	1.5.0
 CATEGORIES=	x11
 
 MAINTAINER=	dg@syrec.org
@@ -12,7 +12,6 @@ LICENSE=	GPLv3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ierton
-GH_TAGNAME=	d623a6d
 
 USES=		cmake
 USE_XORG=	x11 xkbfile

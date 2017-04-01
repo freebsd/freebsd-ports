@@ -3,7 +3,7 @@
 
 PORTNAME=	viking
 PORTVERSION=	1.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -13,14 +13,14 @@ COMMENT=	Program to manage GPS data (tracks, waypoints, etc.)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgexiv2.so:graphics/gexiv2 \
 		libpcre.so:devel/pcre \
-		libpng.so:graphics/png \
-		libpthread-stubs.so:devel/libpthread-stubs
+		libpng.so:graphics/png
 RUN_DEPENDS=	gpsbabel:astro/gpsbabel
 
 USES=		compiler:c++11-lib gmake iconv desktop-file-utils perl5 pkgconfig tar:bzip2

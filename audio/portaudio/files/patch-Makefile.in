@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.4 2013/03/12 00:59:50 brad Exp $
+--- Makefile.in.orig	2016-06-22 08:28:31 UTC
++++ Makefile.in
+@@ -146,6 +146,7 @@ SRC_DIRS = \
+ 	src/hostapi/dsound \
+ 	src/hostapi/jack \
+ 	src/hostapi/oss \
++	src/hostapi/sndio \
+ 	src/hostapi/wasapi \
+ 	src/hostapi/wdmks \
+ 	src/hostapi/wmme \

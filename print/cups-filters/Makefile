@@ -1,20 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.11.4
-PORTREVISION=	1
+PORTVERSION=	1.13.4
+PORTREVISION?=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Additional backends, filters and other software for CUPS
 
+LICENSE=	BSD4CLAUSE GPLv2 GPLv2+ GPLv3 GPLv3+ LGPL20 LGPL21+ MIT
+LICENSE_COMB=	multi
+
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libqpdf.so:print/qpdf \
 		libcupsimage.so:print/cups \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libpoppler.so:graphics/poppler
+		libpoppler.so:graphics/poppler \
+		libmupdf.so:graphics/mupdf
 
 CONFLICTS=	cups-pstoraster-[0-9]* foomatic-filters-[0-9]*
 
@@ -90,12 +94,12 @@ GS_DESC=			Ghostscript gs(1)
 
 HYBRID_BUILD_DEPENDS=		pdftops:graphics/poppler-utils
 HYBRID_RUN_DEPENDS=		pdftops:graphics/poppler-utils
-HYBRID_CONFIGURE_ON=		--with-pdftops=hybrid
+HYBRID_CONFIGURE_ON=		--with-pdftops=hybrid --with-pdftops-path=${LOCALBASE}/bin/pdftops
 HYBRID_DESC=			Ghostscript or Poppler depending on printer
 
 PDFTOPS_BUILD_DEPENDS=		pdftops:graphics/poppler-utils
 PDFTOPS_RUN_DEPENDS=		pdftops:graphics/poppler-utils
-PDFTOPS_CONFIGURE_ON=		--with-pdftops=pdftops
+PDFTOPS_CONFIGURE_ON=		--with-pdftops=pdftops --with-pdftops-path=${LOCALBASE}/bin/pdftops
 PDFTOPS_DESC=			Poppler pdftops(1)
 
 PDFTOPS_RENDERER_DESC=		Default PDF-to-PostScript renderer

@@ -16,6 +16,8 @@
 
 . /etc/rc.subr
 
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
 name=consul_alerts
 rcvar=consul_alerts_enable
 

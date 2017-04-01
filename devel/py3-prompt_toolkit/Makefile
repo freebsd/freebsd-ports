@@ -5,6 +5,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py3-six \
 
 USES=		python:3.3+
 
+PORTSCOUT=	ignore:1
+
 MASTERDIR=	${.CURDIR}/../py-prompt_toolkit
 
 .include "${MASTERDIR}/Makefile"

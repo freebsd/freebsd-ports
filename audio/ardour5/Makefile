@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ardour5
-PORTVERSION=	5.6.0
+PORTVERSION=	5.8.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
 # The original master side points to the latest release only:

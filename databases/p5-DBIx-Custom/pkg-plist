@@ -3,6 +3,7 @@
 %%SITE_PERL%%/DBIx/Custom/Model.pm
 %%SITE_PERL%%/DBIx/Custom/NotExists.pm
 %%SITE_PERL%%/DBIx/Custom/Order.pm
+%%SITE_PERL%%/DBIx/Custom/Query.pm
 %%SITE_PERL%%/DBIx/Custom/Result.pm
 %%SITE_PERL%%/DBIx/Custom/Util.pm
 %%SITE_PERL%%/DBIx/Custom/Where.pm

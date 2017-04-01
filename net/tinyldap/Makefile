@@ -2,7 +2,6 @@
 
 PORTNAME=	tinyldap
 PORTVERSION=	0.0.${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/tinyldap/
 DISTNAME=	${PORTNAME}-${SNAPSHOT}
@@ -10,12 +9,12 @@ DISTNAME=	${PORTNAME}-${SNAPSHOT}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Small LDAP implementation
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libowfat.a:${LIBOWFAT_PORT}
-
 LICENSE=	GPLv2
 
-SNAPSHOT=	20091122
-USES=		tar:bzip2 gmake
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libowfat.a:${LIBOWFAT_PORT}
+
+SNAPSHOT=	20170319
+USES=		tar:bzip2 gmake ssl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	-DATTRIBS=512
 SBINFILES=	acl addindex bindrequest dumpacls dumpidx idx2ldif parse \

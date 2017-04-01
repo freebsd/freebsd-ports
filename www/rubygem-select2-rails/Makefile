@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	select2-rails
-PORTVERSION=	3.5.10
+PORTVERSION=	4.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

@@ -7,7 +7,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	LXQT/lxqt-l10n
 DISTNAME=	lxqt-l10n-${DISTVERSION}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translations of pcmanfm-qt
 
 LICENSE=	LGPL21+

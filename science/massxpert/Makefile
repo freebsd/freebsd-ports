@@ -3,7 +3,7 @@
 
 PORTNAME=	massxpert
 PORTVERSION=	3.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	http://download.tuxfamily.org/massxpert/source/
 
@@ -12,8 +12,8 @@ COMMENT=	massXpert software for (bio)chemists
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
-		libpcre.so:devel/pcre \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2 \

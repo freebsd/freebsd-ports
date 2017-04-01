@@ -3,6 +3,7 @@
 
 PORTNAME=	libxcb
 PORTVERSION=	1.12
+PORTREVISION=	2
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 

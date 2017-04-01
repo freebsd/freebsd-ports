@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	4.6.6
+DISTVERSION=	4.7.0
 CATEGORIES=	databases www
 MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -67,8 +67,9 @@ post-patch:
 	${FIND} . ! -type d ! -name ${CFG_FILE}.sample ! -name '*.bak' | \
 	    ${SORT} | ${SED} -e "s,^\.,%%WWWDIR%%,"   >${PLIST} ; \
 	${CAT} ${PKGDIR}/pkg-plist-chunk	     >>${PLIST} ; \
-	for emptydir in $$( ${FIND} . -type d -empty -print ) ; do \
-	    ${ECHO} "@dir(,,)$${emptydir}"	     >>${PLIST} ; \
+	for emptydir in $$( ${FIND} . -type d -empty -print | \
+		${SED} -e "s,^\.,%%WWWDIR%%," ) ; do \
+	    ${ECHO} "@dir $${emptydir}"		     >>${PLIST} ; \
 	done ; \
 
 do-install:

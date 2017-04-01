@@ -106,6 +106,7 @@
     SUBDIR += arduino-sevseg
     SUBDIR += arduino-tools
     SUBDIR += arduino16
+    SUBDIR += arduinoOTA
     SUBDIR += argdata
     SUBDIR += argouml
     SUBDIR += argp-standalone
@@ -200,7 +201,11 @@
     SUBDIR += bugzilla50
     SUBDIR += build
     SUBDIR += buildbot
-    SUBDIR += buildbot-slave
+    SUBDIR += buildbot-console-view
+    SUBDIR += buildbot-pkg
+    SUBDIR += buildbot-waterfall-view
+    SUBDIR += buildbot-worker
+    SUBDIR += buildbot-www
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += bullet
@@ -847,6 +852,7 @@
     SUBDIR += hgreviewboard
     SUBDIR += hgsvn
     SUBDIR += hgview
+    SUBDIR += hhdate
     SUBDIR += highlighterkit
     SUBDIR += hive
     SUBDIR += horde-content
@@ -1490,7 +1496,6 @@
     SUBDIR += libxalloc
     SUBDIR += libxo
     SUBDIR += libxs
-    SUBDIR += libytnef
     SUBDIR += libzookeeper
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
@@ -1529,7 +1534,6 @@
     SUBDIR += lion
     SUBDIR += listserialc
     SUBDIR += liteide
-    SUBDIR += lldb37
     SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
@@ -1539,7 +1543,6 @@
     SUBDIR += llvm34
     SUBDIR += llvm35
     SUBDIR += llvm36
-    SUBDIR += llvm37
     SUBDIR += llvm38
     SUBDIR += llvm39
     SUBDIR += llvm40
@@ -1672,6 +1675,7 @@
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += ninja-ide
+    SUBDIR += nlohmann-json
     SUBDIR += node-thrift
     SUBDIR += notify-sharp
     SUBDIR += noweb
@@ -1740,7 +1744,6 @@
     SUBDIR += opengrok
     SUBDIR += openmp
     SUBDIR += openocd
-    SUBDIR += openvex
     SUBDIR += openwince-include
     SUBDIR += openzz
     SUBDIR += orc
@@ -2509,6 +2512,7 @@
     SUBDIR += p5-Getopt-Compact-WithCmd
     SUBDIR += p5-Getopt-Declare
     SUBDIR += p5-Getopt-Euclid
+    SUBDIR += p5-Getopt-EX
     SUBDIR += p5-Getopt-GUI-Long
     SUBDIR += p5-Getopt-Long
     SUBDIR += p5-Getopt-Long-Descriptive
@@ -3023,6 +3027,7 @@
     SUBDIR += p5-Parse-PMFile
     SUBDIR += p5-Parse-PerlConfig
     SUBDIR += p5-Parse-Pidl
+    SUBDIR += p5-Parse-Pidl44
     SUBDIR += p5-Parse-PlainConfig
     SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Parse-Win32Registry
@@ -3949,6 +3954,7 @@
     SUBDIR += phpbt
     SUBDIR += phpsh
     SUBDIR += phpunit
+    SUBDIR += phpunit6
     SUBDIR += physfs
     SUBDIR += physfs-devel
     SUBDIR += picp
@@ -4257,6 +4263,7 @@
     SUBDIR += py-fake-factory
     SUBDIR += py-fam
     SUBDIR += py-fasteners
+    SUBDIR += py-fastentrypoints
     SUBDIR += py-fastimport
     SUBDIR += py-filemagic
     SUBDIR += py-fileutils
@@ -4387,6 +4394,7 @@
     SUBDIR += py-liblarch
     SUBDIR += py-libpeas
     SUBDIR += py-libplist
+    SUBDIR += py-libtmux
     SUBDIR += py-libusb1
     SUBDIR += py-libusb115
     SUBDIR += py-libvirt
@@ -4911,8 +4919,10 @@
     SUBDIR += py3-flake8-quotes
     SUBDIR += py3-gobject3
     SUBDIR += py3-hgtools
+    SUBDIR += py3-jedi
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
+    SUBDIR += py3-libzfs
     SUBDIR += py3-lxml
     SUBDIR += py3-mccabe
     SUBDIR += py3-nose
@@ -4932,6 +4942,7 @@
     SUBDIR += py3-setproctitle
     SUBDIR += py3-simplejson
     SUBDIR += py3-six
+    SUBDIR += py3-tabulate
     SUBDIR += py3-threema-msgapi
     SUBDIR += py3-vcversioner
     SUBDIR += py3-wcwidth
@@ -5124,6 +5135,7 @@
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
+    SUBDIR += rubygem-bindex
     SUBDIR += rubygem-binding_of_caller
     SUBDIR += rubygem-bit-struct
     SUBDIR += rubygem-blankslate
@@ -5187,6 +5199,8 @@
     SUBDIR += rubygem-debug_inspector
     SUBDIR += rubygem-debugger-linecache
     SUBDIR += rubygem-debugger-xml
+    SUBDIR += rubygem-declarative
+    SUBDIR += rubygem-declarative-option
     SUBDIR += rubygem-deep_merge
     SUBDIR += rubygem-deep_test
     SUBDIR += rubygem-deface
@@ -5208,6 +5222,7 @@
     SUBDIR += rubygem-enumerize
     SUBDIR += rubygem-equalizer
     SUBDIR += rubygem-errand
+    SUBDIR += rubygem-et-orbi
     SUBDIR += rubygem-event-bus
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-excon
@@ -5265,6 +5280,8 @@
     SUBDIR += rubygem-gitlab_meta
     SUBDIR += rubygem-glib2
     SUBDIR += rubygem-gobject-introspection
+    SUBDIR += rubygem-google-api-client
+    SUBDIR += rubygem-google-protobuf
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
     SUBDIR += rubygem-grape-entity
@@ -5278,6 +5295,7 @@
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-hashie2
     SUBDIR += rubygem-health_check
+    SUBDIR += rubygem-health_check22
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hike
     SUBDIR += rubygem-hitimes
@@ -5380,6 +5398,7 @@
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-orm_adapter
+    SUBDIR += rubygem-os
     SUBDIR += rubygem-p4ruby
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-paperclip
@@ -5428,12 +5447,14 @@
     SUBDIR += rubygem-rdoc
     SUBDIR += rubygem-readwritesettings
     SUBDIR += rubygem-recaptcha
+    SUBDIR += rubygem-recursive-open-struct
     SUBDIR += rubygem-redis-activesupport
     SUBDIR += rubygem-redis-store
     SUBDIR += rubygem-redmine_plugin_support
     SUBDIR += rubygem-ref
     SUBDIR += rubygem-request_store
     SUBDIR += rubygem-require_all
+    SUBDIR += rubygem-retriable
     SUBDIR += rubygem-retryable
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rice
@@ -5551,6 +5572,8 @@
     SUBDIR += rubygem-turn
     SUBDIR += rubygem-typed-array
     SUBDIR += rubygem-tzinfo
+    SUBDIR += rubygem-tzinfo-data
+    SUBDIR += rubygem-uber
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-unicode-display_width
     SUBDIR += rubygem-useragent

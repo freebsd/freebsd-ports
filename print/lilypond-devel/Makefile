@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-PORTVERSION=	2.19.51
-PORTREVISION=	1
+PORTVERSION=	2.19.57
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -54,7 +53,6 @@ USE_GNOME=	pango
 
 MAKEFILE=	GNUmakefile
 GNU_MAKEFILE=	yes
-MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-texgyre-dir=${LOCALBASE}/${TEXMFDISTDIR}/fonts/opentype/public/tex-gyre \
@@ -82,7 +80,6 @@ post-patch-NLS-off:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilypond
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lilypond/${PORTVERSION}/python/midi.so
 	(cd ${STAGEDIR}/${DATADIR} && ${LN} -fs ${PORTVERSION} current)
 
 .include <bsd.port.mk>

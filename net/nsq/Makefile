@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsq
-PORTVERSION=	0.3.8
+PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -20,6 +20,7 @@ USES=	compiler go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nsqio
+GH_TAGNAME=	v1.0.0-compat
 GH_SUBDIR=	src/github.com/nsqio/nsq
 GH_TUPLE=	BurntSushi:toml:v0.2.0:toml/src/github.com/BurntSushi/toml \
 	judwhite:go-svc:v1.0.0:go_svc/src/github.com/judwhite/go-svc \
@@ -31,6 +32,8 @@ GH_TUPLE=	BurntSushi:toml:v0.2.0:toml/src/github.com/BurntSushi/toml \
 	blang:semver:v3.3.0:semver/src/github.com/blang/semver \
 	bmizerany:perks:d9a9656:perks/src/github.com/bmizerany/perks \
 	julienschmidt:httprouter:8a45e95:httprouter/src/github.com/julienschmidt/httprouter \
+	golang:snappy:553a641:snappy/src/github.com/golang/snappy \
+	nsqio:go-diskqueue:d7805f8:go_diskqueue/src/github.com/nsqio/go-diskqueue \
 	nsqio:go-nsq:v1.0.6:go_nsq/src/github.com/nsqio/go-nsq
 
 TARGETS=	nsqd nsqlookupd nsqadmin nsq_pubsub nsq_to_nsq nsq_to_file \

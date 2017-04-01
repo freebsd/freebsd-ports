@@ -1,2 +1,3 @@
-SHA256 (cabal/language-c-0.4.7.tar.gz) = 5f6dc9d86b1f88dec1800e1a4fc43aa52f85fe4bb865ba268aca34b399a512e4
-SIZE (cabal/language-c-0.4.7.tar.gz) = 112569
+TIMESTAMP = 1486993392
+SHA256 (cabal/language-c-0.5.0.tar.gz) = 86d58bc017a7bba157fc4d5d0ab9e3a3d3f3a2f98bfe46b5b0d5d72a0f5d2222
+SIZE (cabal/language-c-0.5.0.tar.gz) = 170403

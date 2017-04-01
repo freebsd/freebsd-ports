@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-DISTVERSION=	3.8.1
-PORTREVISION=	1
+DISTVERSION=	3.9.1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
@@ -16,7 +15,8 @@ BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libbson-1.0.so:devel/libbson
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -76,20 +76,20 @@ SMTP_CONFIGURE_OFF=		--without-libesmtp --disable-smtp
 SMTP_LIB_DEPENDS=		libesmtp.so:mail/libesmtp
 SMTP_PLIST_FILES=		lib/syslog-ng/libafsmtp.so
 
-MSQL_CONFIGURE_ENABLE=		sql
-MSQL_LIB_DEPENDS=		libdbi.so:databases/libdbi
-MSQL_CONFIGURE_ENV=		LIBDBI_LIBS="-ldbi"
-MSQL_LDFLAGS=			-L${LOCALBASE}/lib
-MSQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
+SQL_CONFIGURE_ENABLE=		sql
+SQL_LIB_DEPENDS=		libdbi.so:databases/libdbi
+SQL_CONFIGURE_ENV=		LIBDBI_LIBS="-ldbi"
+SQL_LDFLAGS=			-L${LOCALBASE}/lib
+SQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
 
 MONGO_CONFIGURE_ENABLE=		mongodb
-MONGO_BROKEN=			Does not build
 MONGO_LIB_DEPENDS=		libmongoc-1.0.so:devel/mongo-c-driver
 MONGO_PLIST_FILES=		lib/syslog-ng/libafmongodb.so
 
 JSON_CONFIGURE_ENABLE=		json
 JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
-JSON_PLIST_FILES= 		lib/syslog-ng/libjson-plugin.so
+JSON_PLIST_FILES= 		lib/syslog-ng/libjson-plugin.so \
+				share/syslog-ng/include/scl/cim/template.conf
 
 JAVA_CONFIGURE_ENABLE=		java
 JAVA_USE_JAVA=			yes
@@ -97,7 +97,7 @@ JAVA_PLIST_FILES= 		lib/syslog-ng/libmod-java.so \
 				lib/syslog-ng/java-modules/syslog-ng-core.jar
 
 JAVA_MOD_CONFIGURE_ENABLE=	java-modules
-JAVA_MOD_BROKEN=		Unsupported maven downloads.
+# JAVA_MOD_BROKEN=		Unsupported maven downloads.
 JAVA_MOD_USE_JAVA=		yes
 JAVA_MOD_BUILD_DEPENDS=		gradle:devel/gradle \
 				bash:shells/bash
@@ -130,10 +130,9 @@ PYTHON_CONFIGURE_WITH=		python=2.7
 PYTHON_USES=			python:2.7
 PYTHON_PLIST_FILES= 		lib/syslog-ng/libmod-python.so
 
-CURL_CONFIGURE_ENABLE=		curl
+CURL_CONFIGURE_OFF=		--with-libcurl=off
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
 CURL_PLIST_FILES= 		lib/syslog-ng/libcurl.so
-
 
 .include <bsd.port.pre.mk>
 

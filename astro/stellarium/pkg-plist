@@ -431,10 +431,13 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n3690h.png
 %%DATADIR%%/nebulae/default/n3718oleg.png
 %%DATADIR%%/nebulae/default/n3938-vasey.png
+%%DATADIR%%/nebulae/default/n40.png
 %%DATADIR%%/nebulae/default/n4038-9-dss.png
 %%DATADIR%%/nebulae/default/n4438-mtod.png
 %%DATADIR%%/nebulae/default/n4490oleg.png
 %%DATADIR%%/nebulae/default/n4559-vasey.png
+%%DATADIR%%/nebulae/default/n4631-4627.png
+%%DATADIR%%/nebulae/default/n4656-4657.png
 %%DATADIR%%/nebulae/default/n4945.png
 %%DATADIR%%/nebulae/default/n5128.png
 %%DATADIR%%/nebulae/default/n5139kepler.png
@@ -1305,6 +1308,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/stars/default/stars_hip_cids_0v0_0.cat
 %%DATADIR%%/stars/default/stars_hip_sp_0v0_3.cat
 %%DATADIR%%/stars/default/wds_hip_part.dat
+%%DATADIR%%/textures/TestSquare.png
 %%DATADIR%%/textures/amalthea.png
 %%DATADIR%%/textures/ariel.png
 %%DATADIR%%/textures/bianca.png
@@ -1384,7 +1388,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/textures/vesta.png
 %%DATADIR%%/textures/zenith.png
 %%DATADIR%%/textures/zodiacallight_2004.png
-%%DATADIR%%/textures/zodiacallight_painted.png
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ar.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/be.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/bn.qm
@@ -1404,7 +1407,9 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/is.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/it.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ko.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ku.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/nl.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/pl.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/pt_BR.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/pt.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ru.qm
@@ -1418,7 +1423,9 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/tt.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/uk.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/vi.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/zh_CN.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/zh_HK.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/zh_TW.qm
 %%DATADIR%%/translations/stellarium-skycultures/aa.qm
 %%DATADIR%%/translations/stellarium-skycultures/ab.qm
 %%DATADIR%%/translations/stellarium-skycultures/ae.qm

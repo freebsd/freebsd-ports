@@ -1,4 +1,4 @@
---- stepmake/stepmake/texinfo-vars.make.orig	2016-08-30 10:23:53 UTC
+--- stepmake/stepmake/texinfo-vars.make.orig	2017-02-26 12:08:59 UTC
 +++ stepmake/stepmake/texinfo-vars.make
 @@ -31,7 +31,7 @@ DO_TEXI_DEP = ( echo ./$@: $(call scan-t
  

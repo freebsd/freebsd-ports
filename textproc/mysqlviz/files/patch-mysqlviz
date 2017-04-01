@@ -1,6 +1,6 @@
---- mysqlviz.orig	2010-11-13 08:54:02.000000000 +0900
-+++ mysqlviz	2013-05-06 17:56:14.000000000 +0900
-@@ -184,17 +184,16 @@
+--- mysqlviz.orig	2010-11-12 23:53:55 UTC
++++ mysqlviz
+@@ -184,17 +184,16 @@ exit(0);
  
  # usage information
  function usage() {

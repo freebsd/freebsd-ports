@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perlanet
-PORTVERSION=	0.56
-PORTREVISION=	2
+PORTVERSION=	0.58
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAVECROSS
@@ -26,9 +25,11 @@ BUILD_DEPENDS=	p5-CHI>=0:devel/p5-CHI \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-URI>=0:net/p5-URI \
 		p5-XML-Feed>=0.22:textproc/p5-XML-Feed \
-		p5-YAML>=0:textproc/p5-YAML
+		p5-YAML>=0:textproc/p5-YAML \
+		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 

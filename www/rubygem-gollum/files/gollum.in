@@ -15,6 +15,9 @@
 # gollum_path              Set it to the location where 
 #                                your git repo is located.
 #
+# gollum_user              User to run command as 
+#                                  Default is root
+#
 # gollum_ip                Set the IP address gollum listens on
 #                                  Default is "0.0.0.0"
 #
@@ -35,6 +38,7 @@ load_rc_config $name
 
 : ${gollum_enable:=NO}
 : ${gollum_path:=%%PREFIX%%/www/gollum}
+: ${gollum_user:=root}
 : ${gollum_ip:=0.0.0.0}
 : ${gollum_port:=80}
 
@@ -44,3 +48,4 @@ command_args="-P ${pidfile} -r -f gollum --host ${gollum_ip} --port ${gollum_por
 
 load_rc_config $name
 run_rc_command "$1"
+

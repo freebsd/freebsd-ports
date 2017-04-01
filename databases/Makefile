@@ -541,6 +541,7 @@
     SUBDIR += pear-Structures_DataGrid_DataSource_PDO
     SUBDIR += pear-XML_Query2XML
     SUBDIR += pecl-chdb
+    SUBDIR += pecl-couchbase
     SUBDIR += pecl-dbase
     SUBDIR += pecl-drizzle
     SUBDIR += pecl-leveldb
@@ -797,7 +798,6 @@
     SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy-migrate
-    SUBDIR += py-sqlalchemy08
     SUBDIR += py-sqlalchemy10
     SUBDIR += py-sqlalchemy11
     SUBDIR += py-sqlite3

@@ -1,0 +1,6 @@
+Text::Unaccent::PurePerl is a module for “unaccenting” characters, i.e.,
+removing accents and other diacritic marks from characters. Here, the term
+unaccenting has a rather loose meaning, since this module does a lot more than
+just removing accents.
+
+WWW: https://metacpan.org/release/Text-Unaccent-PurePerl

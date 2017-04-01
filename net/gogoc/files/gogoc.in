@@ -17,6 +17,7 @@
 
 name="gogoc"
 rcvar=gogoc_enable
+sig_stop="HUP"
 
 command=%%LOCALBASE%%/bin/${name}
 

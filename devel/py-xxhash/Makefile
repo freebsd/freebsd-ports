@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xxhash
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>1:devel/py-nose
 
-USES=		python
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 post-install:

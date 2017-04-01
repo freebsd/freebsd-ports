@@ -1,0 +1,10 @@
+--- python/GNUmakefile.orig	2017-02-26 12:08:59 UTC
++++ python/GNUmakefile
+@@ -14,7 +14,6 @@ CONFIG_LDFLAGS=
+ INSTALLATION_OUT_SUFFIXES=1
+ 
+ INSTALLATION_OUT_FILES=$(OUT_SO_MODULES)
+-INSTALLATION_OUT_DIR=$(local_lilypond_libdir)/python
+ 
+ INSTALLATION_OUT_DIR1=$(local_lilypond_datadir)/python
+ INSTALLATION_OUT_FILES1=$(OUT_PY_MODULES) $(OUT_PYC_MODULES)

@@ -4,7 +4,7 @@
 PORTNAME=	ricochet
 PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -32,10 +32,6 @@ PLIST_FILES=	bin/ricochet \
 		share/icons/hicolor/scalable/apps/ricochet.svg
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE= Detected LibreSSL (missing RSA_get0_factors)
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's| -fsanitize=[a-z-]+| |g' \

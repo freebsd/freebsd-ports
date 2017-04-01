@@ -6,7 +6,7 @@ PORTVERSION=	2.6.6
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk flat themes
 
 LICENSE=	GPLv3

@@ -6,7 +6,7 @@ PORTVERSION=	0.11.1
 CATEGORIES=	devel
 MASTER_SITES=	LXQT
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared library for LXQt applications
 
 LICENSE=	LGPL21+

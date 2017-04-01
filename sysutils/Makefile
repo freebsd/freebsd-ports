@@ -9,6 +9,7 @@
     SUBDIR += DTraceToolkit
     SUBDIR += LPRng
     SUBDIR += LPRngTool
+    SUBDIR += UEFITool
     SUBDIR += abck
     SUBDIR += abduco
     SUBDIR += abgx360
@@ -235,7 +236,9 @@
     SUBDIR += djmount
     SUBDIR += dmg2img
     SUBDIR += dmidecode
+    SUBDIR += docker
     SUBDIR += docker-freebsd
+    SUBDIR += docker-machine
     SUBDIR += doinkd
     SUBDIR += dolly
     SUBDIR += downtime
@@ -452,6 +455,7 @@
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
+    SUBDIR += immortal
     SUBDIR += inotify-tools
     SUBDIR += installwatch
     SUBDIR += intel-nvmupdate
@@ -556,6 +560,7 @@
     SUBDIR += lookat
     SUBDIR += lr
     SUBDIR += lsof
+    SUBDIR += lsop
     SUBDIR += ltrace
     SUBDIR += lttng-tools
     SUBDIR += lttng-ust
@@ -909,6 +914,7 @@
     SUBDIR += qzeitgeist
     SUBDIR += racktables
     SUBDIR += radeontool
+    SUBDIR += radeontop
     SUBDIR += radmind
     SUBDIR += rainbarf
     SUBDIR += raincoat
@@ -938,6 +944,7 @@
     SUBDIR += rinse
     SUBDIR += rmonitor
     SUBDIR += roottail
+    SUBDIR += rovclock
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncrypto
@@ -1012,6 +1019,7 @@
     SUBDIR += rubygem-vagrant-vbguest
     SUBDIR += rubygem-vmstat
     SUBDIR += rubygem-winrm
+    SUBDIR += rubygem-winrm-elevated
     SUBDIR += rubygem-winrm-fs
     SUBDIR += rubygem-yell
     SUBDIR += rundeck
@@ -1070,6 +1078,7 @@
     SUBDIR += snowlog
     SUBDIR += socket
     SUBDIR += socklog
+    SUBDIR += solaar
     SUBDIR += sortu
     SUBDIR += spindown
     SUBDIR += spinner
@@ -1172,7 +1181,6 @@
     SUBDIR += ucspi-ipc
     SUBDIR += ucspi-proxy
     SUBDIR += ucspi-ssl
-    SUBDIR += ucspi-ssl-tls
     SUBDIR += ucspi-tcp
     SUBDIR += ucspi-unix
     SUBDIR += udfclient

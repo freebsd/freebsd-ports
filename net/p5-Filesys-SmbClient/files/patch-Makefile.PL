@@ -34,8 +34,8 @@
 -# Trace for debug
 -$ans = prompt("Compile module with trace to STDERR ?", "no");
 -if ($ans =~ /^y(es)?$/i) { $define = "-DVERBOSE"; }
-+my $include = '%%LOCALBASE%%/include/';
-+my $lib = '%%LOCALBASE%%/lib/';
++my $include = '%%SAMBAINCLUDES%%/';
++my $lib = '%%SAMBALIBS%%/';
  
  # Create config.h for alloca via configure
 -my $prefix = $include;

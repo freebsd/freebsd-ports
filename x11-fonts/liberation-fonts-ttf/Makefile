@@ -5,7 +5,7 @@ PORTNAME=	liberation-fonts-ttf
 PORTVERSION=	2.00.1
 PORTEPOCH=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/	\
+MASTER_SITES=	https://releases.pagure.org/liberation-fonts/	\
 		LOCAL/thierry
 
 MAINTAINER=	thierry@FreeBSD.org

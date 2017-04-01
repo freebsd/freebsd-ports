@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	1.0.11
-PORTREVISION=	1
+PORTVERSION=	1.0.12
 CATEGORIES=	security
 MASTER_SITES=	http://download.libsodium.org/libsodium/releases/
 
@@ -12,12 +11,13 @@ COMMENT=	Library to build higher-level cryptographic tools
 LICENSE=	ISCL
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig compiler:c11
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
 CONFIGURE_ARGS+=	--enable-blocking-random
 INSTALL_TARGET?=	install-strip
+TEST_TARGET=		check
 
 OPTIONS_DEFINE=	DOCS
 

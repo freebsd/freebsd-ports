@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	3.3.10
-PORTREVISION=	1
+PORTVERSION=	3.3.11
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@rawbw.com
 COMMENT?=	Bittorrent client using Qt4/5 and libtorrent-rasterbar
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		libboost_system.so:devel/boost-libs
@@ -57,15 +57,6 @@ USE_${OPTION_QT}+=	dbus
 .endif
 
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
-
-post-patch:
-.if ${PORT_OPTIONS:MQT4}
-	${REINPLACE_CMD} 's,^\$$QT_QMAKE,${LOCALBASE}/bin/qmake-qt4,' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-.else
-	${REINPLACE_CMD} 's,^\$$QT_QMAKE,${LOCALBASE}/lib/qt5/bin/qmake,' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 
 post-install:
 .if ${WITH_GUI} == "yes"

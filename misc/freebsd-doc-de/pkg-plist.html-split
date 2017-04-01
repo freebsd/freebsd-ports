@@ -183,8 +183,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/structure.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/stylesheets-css.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/stylesheets.html
-%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/the-website-env.html
-%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/the-website-install.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/the-website-build.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/the-website.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/tools-optional.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/tools.html

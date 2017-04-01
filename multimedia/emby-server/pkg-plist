@@ -13,6 +13,7 @@ lib/emby-server/Emby.Drawing.dll
 lib/emby-server/Emby.Drawing.dll.mdb
 lib/emby-server/Emby.Photos.dll
 lib/emby-server/Emby.Photos.dll.mdb
+lib/emby-server/Emby.Server.CinemaMode.dll
 lib/emby-server/Emby.Server.Connect.dll
 lib/emby-server/Emby.Server.Core.dll
 lib/emby-server/Emby.Server.Implementations.dll
@@ -89,7 +90,6 @@ lib/emby-server/dashboard-ui/bower_components/emby-apiclient/credentials.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/events.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/fileupload.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/localassetmanager.js
-lib/emby-server/dashboard-ui/bower_components/emby-apiclient/nullassetmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/serverdiscovery-chrome.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/serverdiscovery-winjs.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/serverdiscovery.js
@@ -99,11 +99,9 @@ lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/itemrepository
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/localsync.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/mediasync.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/multiserversync.js
-lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/offlineusersync.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/serversync.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/transfermanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/useractionrepository.js
-lib/emby-server/dashboard-ui/bower_components/emby-apiclient/sync/userrepository.js
 lib/emby-server/dashboard-ui/bower_components/emby-apiclient/wakeonlan.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/actionsheet/actionsheet.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/actionsheet/actionsheet.js
@@ -255,9 +253,11 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/notifications/n
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/packagemanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/pagejs/page.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/autoplaydetect.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/brightnessosd.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/iconosd.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/mediasession.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/nowplayinghelper.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playaccessvalidation.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playbackmanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playbackvalidation.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/playback/playerselection.js
@@ -577,6 +577,7 @@ lib/emby-server/dashboard-ui/css/notifications.css
 lib/emby-server/dashboard-ui/css/nowplaying.css
 lib/emby-server/dashboard-ui/css/nowplayingbar.css
 lib/emby-server/dashboard-ui/css/site.css
+lib/emby-server/dashboard-ui/css/videoosd.css
 lib/emby-server/dashboard-ui/dashboard.html
 lib/emby-server/dashboard-ui/dashboard/aboutpage.js
 lib/emby-server/dashboard-ui/dashboard/autoorganizelog.js
@@ -604,7 +605,6 @@ lib/emby-server/dashboard-ui/dlnasettings.html
 lib/emby-server/dashboard-ui/edititemmetadata.html
 lib/emby-server/dashboard-ui/encodingsettings.html
 lib/emby-server/dashboard-ui/favicon.ico
-lib/emby-server/dashboard-ui/favorites.html
 lib/emby-server/dashboard-ui/files/dummy.mp4
 lib/emby-server/dashboard-ui/forgotpassword.html
 lib/emby-server/dashboard-ui/forgotpasswordpin.html
@@ -679,7 +679,6 @@ lib/emby-server/dashboard-ui/scripts/edititemmetadata.js
 lib/emby-server/dashboard-ui/scripts/editorsidebar.js
 lib/emby-server/dashboard-ui/scripts/encodingsettings.js
 lib/emby-server/dashboard-ui/scripts/episodes.js
-lib/emby-server/dashboard-ui/scripts/favorites.js
 lib/emby-server/dashboard-ui/scripts/forgotpassword.js
 lib/emby-server/dashboard-ui/scripts/forgotpasswordpin.js
 lib/emby-server/dashboard-ui/scripts/gamegenrepage.js

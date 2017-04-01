@@ -1,5 +1,5 @@
---- modules/freebsd/vmmemctl/os.c.orig	2013-09-23 08:51:10.000000000 -0700
-+++ modules/freebsd/vmmemctl/os.c	2017-02-20 21:19:02.000000000 -0800
+--- modules/freebsd/vmmemctl/os.c.orig	2016-09-29 06:07:23.000000000 -0400
++++ modules/freebsd/vmmemctl/os.c	2017-02-22 12:15:23.708060000 -0500
 @@ -37,9 +37,11 @@
  #include <sys/param.h>
  #include <sys/systm.h>
@@ -12,7 +12,7 @@
  #include <sys/sysctl.h>
  
  #include <vm/vm.h>
-@@ -223,7 +225,11 @@
+@@ -223,7 +225,11 @@ static __inline__ unsigned long os_ffz(u
  unsigned long
  OS_ReservedPageGetLimit(void)
  {
@@ -24,33 +24,7 @@
  }
  
  
-@@ -295,7 +301,13 @@
- Mapping
- OS_MapPageHandle(PageHandle handle)     // IN
- {
-+
-+#if __FreeBSD_version >= 1000042
-+   vm_offset_t res = kva_alloc(PAGE_SIZE);
-+#else
-    vm_offset_t res = kmem_alloc_nofault(kernel_map, PAGE_SIZE);
-+#endif
-+
-    vm_page_t page = (vm_page_t)handle;
- 
-    if (!res) {
-@@ -352,7 +364,11 @@
- OS_UnmapPage(Mapping mapping)           // IN
- {
-    pmap_qremove((vm_offset_t)mapping, 1);
-+#if __FreeBSD_version >= 1000042
-+   kva_free((vm_offset_t)mapping, PAGE_SIZE);
-+#else
-    kmem_free(kernel_map, (vm_offset_t)mapping, PAGE_SIZE);
-+#endif
- }
- 
- 
-@@ -360,7 +376,11 @@
+@@ -369,7 +375,11 @@ static void
  os_pmap_alloc(os_pmap *p) // IN
  {
     /* number of pages (div. 8) */
@@ -61,32 +35,8 @@
 +#endif
  
     /*
-     * expand to nearest word boundary 
-@@ -369,14 +389,23 @@
-    p->size = (p->size + sizeof(unsigned long) - 1) & 
-                          ~(sizeof(unsigned long) - 1);
- 
-+#if __FreeBSD_version >= 1000042
-+   p->bitmap = (unsigned long *)kmem_malloc(kernel_arena, p->size,
-+                         M_WAITOK | M_ZERO);
-+#else
-    p->bitmap = (unsigned long *)kmem_alloc(kernel_map, p->size);
-+#endif
- }
- 
- 
- static void
- os_pmap_free(os_pmap *p) // IN
- {
-+#if __FreeBSD_version >= 1000042
-+   kva_free((vm_offset_t)p->bitmap, p->size);
-+#else
-    kmem_free(kernel_map, (vm_offset_t)p->bitmap, p->size);
-+#endif
-    p->size = 0;
-    p->bitmap = NULL;
- }
-@@ -449,12 +478,31 @@
+     * expand to nearest word boundary
+@@ -466,12 +476,31 @@ os_kmem_free(vm_page_t page) // IN
     os_state *state = &global_state;
     os_pmap *pmap = &state->pmap;
  
@@ -123,7 +73,7 @@
  }
  
  
-@@ -466,8 +514,19 @@
+@@ -483,8 +512,19 @@ os_kmem_alloc(int alloc_normal_failed) /
     os_state *state = &global_state;
     os_pmap *pmap = &state->pmap;
  
@@ -143,7 +93,7 @@
        return NULL;
     }
  
-@@ -488,6 +547,11 @@
+@@ -505,6 +545,11 @@ os_kmem_alloc(int alloc_normal_failed) /
     if (!page) {
        os_pmap_putindex(pmap, pindex);
     }
@@ -155,7 +105,7 @@
  
     return page;
  }
-@@ -824,7 +888,7 @@
+@@ -847,7 +892,7 @@ vmmemctl_sysctl(SYSCTL_HANDLER_ARGS)
  static void
  vmmemctl_init_sysctl(void)
  {

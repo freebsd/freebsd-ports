@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang-katana
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org

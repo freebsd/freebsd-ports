@@ -5,14 +5,17 @@ PORTNAME=	devstat
 PORTVERSION=	0.3.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Utility to display device statistics
 
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
+LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	trociny
+
+MAKE_ENV+=	NO_OBJ=yes
 
 PLIST_FILES=	bin/devstat \
 		man/man8/devstat.8.gz

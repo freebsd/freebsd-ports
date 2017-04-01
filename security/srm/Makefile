@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/old_releases \
 		SF/${PORTNAME}/old_releases/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mshirk@daemon-security.com
 COMMENT=	Secure rm, a utility which destroys file contents before unlinking
 
 LICENSE=	MIT

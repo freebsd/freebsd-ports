@@ -219,8 +219,8 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/japanese/errmsg.sys
 %%DATADIR%%/korean/errmsg.sys
 %%DATADIR%%/magic
-@comment %%DATADIR%%/maria_add_gis_sp.sql
-@comment %%DATADIR%%/maria_add_gis_sp_bootstrap.sql
+%%DATADIR%%/maria_add_gis_sp.sql
+%%DATADIR%%/maria_add_gis_sp_bootstrap.sql
 %%MROONGA%%%%DATADIR%%/mroonga/install.sql
 %%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
 %%DATADIR%%/my-huge.cnf

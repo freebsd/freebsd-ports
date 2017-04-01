@@ -2,7 +2,7 @@
 
 PORTNAME=	cgit
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
 		https://www.kernel.org/pub/software/scm/git/:git
@@ -15,7 +15,7 @@ COMMENT=	Fast, lightweight web frontend for Git repositories
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GIT_VERSION=	2.11.1
+GIT_VERSION=	2.12.1
 USES=		cpe gmake iconv shebangfix ssl tar:xz
 CPE_VENDOR=	lars_hjemli
 SHEBANG_FILES=	filters/html-converters/rst2html
@@ -36,6 +36,9 @@ post-extract:
 	@${MV} ${WRKDIR}/git-${GIT_VERSION} ${WRKSRC}/git
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/^\(GIT_VER =\).*$$/\1 ${GIT_VERSION}/' \
+		${WRKSRC}/Makefile
+
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' \
 		-e "s|\(ALL_CFLAGS =\)|\1 -I${OPENSSLINC}|g" \
 		-e "s|\(ALL_LDFLAGS =\)|\1 -L${OPENSSLLIB}|g" \

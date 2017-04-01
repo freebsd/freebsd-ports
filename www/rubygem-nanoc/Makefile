@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nanoc
-PORTVERSION=	4.6.0
+PORTVERSION=	4.7.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

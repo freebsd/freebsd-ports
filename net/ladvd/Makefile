@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=v
 PORTREVISION=	2
 CATEGORIES=	net
 
-MAINTAINER=	sten@blinkenlights.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimal LLDP/CDP/EDP/FDP/NDP sender daemon
 
 LICENSE=	MIT

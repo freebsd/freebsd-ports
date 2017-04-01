@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://launchpadlibrarian.net/277504431/ \
 	https://launchpad.net/${PORTNAME}/0.4/loki-beta2/+download/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensions of GTK+3 toolkit
 
 LICENSE=	LGPL3

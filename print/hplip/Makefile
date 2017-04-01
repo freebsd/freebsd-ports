@@ -3,7 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.16.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -39,9 +39,11 @@ CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS FAX SNMP SCAN X11 XSANE
-OPTIONS_DEFAULT=SNMP SCAN X11
-OPTIONS_SUB=	yes # FAX SCAN X11
+OPTIONS_DEFINE=		DOCS FAX SNMP SCAN X11 XSANE
+OPTIONS_DEFAULT=	SNMP SCAN X11 QT5
+OPTIONS_RADIO=		GUI
+OPTIONS_RADIO_GUI=	QT4 QT5
+OPTIONS_SUB=		yes # FAX SNMP SCAN X11 QT4 QT5
 
 FAX_DESC=		PC Send Fax support
 FAX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>=0:print/py-reportlab
@@ -57,10 +59,18 @@ SCAN_LIB_DEPENDS=	libsane.so:graphics/sane-backends
 SCAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 SCAN_CONFIGURE_ENABLE=	scan-build
 
-X11_DESC=		Graphical User Interface (Qt 4)
-X11_USES=		pyqt:4
-X11_USE=		PYQT=dbussupport_run,gui_run
-X11_CONFIGURE_ENABLE=	qt4 gui-build
+X11_DESC=		Graphical User Interface (Qt)
+X11_CONFIGURE_ENABLE=	gui-build
+
+QT4_USES=		pyqt:4
+QT4_USE=		PYQT=core_run,dbussupport_run,gui_run
+QT4_CONFIGURE_ENABLE=	qt4
+QT4_IMPLIES=		X11
+
+QT5_USES=		pyqt:5
+QT5_USE=		PYQT=core_run,dbussupport_run,gui_run,widgets_run
+QT5_CONFIGURE_ENABLE=	qt5
+QT5_IMPLIES=		X11
 
 XSANE_DESC=		Install XSane for scanning (implies SCAN)
 XSANE_IMPLIES=		SCAN

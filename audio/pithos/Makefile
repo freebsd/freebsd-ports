@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 PORTREVISION=	2
 CATEGORIES=	audio
 
-MAINTAINER=	john@pcbsd.org
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	Pandora client for the GNOME desktop
 
 LICENSE=	GPLv3

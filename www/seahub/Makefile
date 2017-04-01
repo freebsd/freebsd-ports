@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seahub
-PORTVERSION=	6.0.8
+PORTVERSION=	${SEAFILE_VER}
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www
@@ -60,7 +60,6 @@ SEAFILE_SERVER=	${HAIWENDIR}/seafile-server
 SEAHUBDIR=	${SEAFILE_SERVER}/seahub
 SEALIB=		${SEAFILE_SERVER}/seafile/lib
 SITEPACKAGEDIR=	${SEAHUBDIR}/thirdpart
-SEAFILE_VER=	`${CAT} ${.CURDIR}/../../net-mgmt/seafile-server/Makefile | ${GREP} -Eom1 '[0-9]+\.[0-9]+\.[0-9]+'`
 SEAHUB_DATA_DIR=	${HAIWENDIR}/seahub-data
 
 USERS=		seafile
@@ -114,5 +113,7 @@ do-install:
 		 ${STAGEDIR}${PREFIX}/${SEAHUB_DATA_DIR})
 	${LN} -fs ../../../seahub-data/avatars \
 		${STAGEDIR}${PREFIX}/${SEAHUBDIR}/media/avatars
+
+.include "${.CURDIR}/../../net-mgmt/seafile-server/Makefile.include"
 
 .include <bsd.port.mk>

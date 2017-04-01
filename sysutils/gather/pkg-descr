@@ -2,4 +2,4 @@ gather utility can be used to store system statistics provided by
 variety of system utils and display it. It is just a wrapper around
 these utilities to make a work with system statistics more convenient.
 
-WWW: http://gatherit.googlecode.com/
+WWW: https://github.com/trociny/gather

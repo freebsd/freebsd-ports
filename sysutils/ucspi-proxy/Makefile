@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	ucspi-proxy
-PORTVERSION=	0.98
-PORTREVISION=	2
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/ucspi-proxy/
 
-MAINTAINER=	dale.woolridge@gmail.com
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Proxy program for UCSPI servers and clients
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libbg.so:devel/bglibs
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		libtool:build libtool:ldflags
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 BGLIBS_INCLUDE=	${LOCALBASE}/include/bglibs
 

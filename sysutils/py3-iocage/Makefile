@@ -5,11 +5,13 @@ PORTVERSION=	0.9.7
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brandon@ixsystems.com
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_PACKAGE=	should be compiled using python ${PYTHON_VER} or greater
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py3-click \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.10.0:misc/py3-tqdm \

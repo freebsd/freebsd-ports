@@ -1,10 +1,9 @@
-Tinyproxy is a light-weight HTTP/HTTPS proxy daemon for POSIX
-operating systems. Designed from the ground up to be fast and yet
-small, it is an ideal solution for use cases such as embedded
-deployments where a full featured HTTP proxy is required, but the
-system resources for a larger proxy are unavailable.
+Tinyproxy is a light-weight HTTP/HTTPS proxy daemon for POSIX operating systems.
+Designed from the ground up to be fast and yet small, it is an ideal solution
+for use cases such as embedded deployments where a full featured HTTP proxy is
+required, but the system resources for a larger proxy are unavailable.
 
-Note that tinyproxy requires configuration to run in anonymizing
-mode. See tinyproxy.conf.sample for detail.
+Note that tinyproxy requires configuration to run in anonymizing mode. See
+tinyproxy.conf.sample for detail.
 
 WWW: https://tinyproxy.github.io/

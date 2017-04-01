@@ -6,7 +6,7 @@ PORTVERSION=	0.9.15
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/gnumdk/${PORTNAME}/releases/download/${PORTVERSION}/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play and organize your music collection
 
 LICENSE=	GPLv3

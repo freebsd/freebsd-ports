@@ -76,15 +76,15 @@ include/tls.h
 lib/libcrypto.a
 lib/libcrypto.so
 lib/libcrypto.so.41
-lib/libcrypto.so.41.0.0
+lib/libcrypto.so.41.0.1
 lib/libssl.a
 lib/libssl.so
 lib/libssl.so.43
-lib/libssl.so.43.0.1
+lib/libssl.so.43.0.2
 lib/libtls.a
 lib/libtls.so
 lib/libtls.so.15
-lib/libtls.so.15.0.3
+lib/libtls.so.15.0.4
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/libtls.pc
@@ -825,6 +825,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/ERR_PACK.3.gz
 %%MAN3%%man/man3/ERR_add_error_data.3.gz
 %%MAN3%%man/man3/ERR_add_error_vdata.3.gz
+%%MAN3%%man/man3/ERR_asprintf_error_data.3.gz
 %%MAN3%%man/man3/ERR_clear_error.3.gz
 %%MAN3%%man/man3/ERR_error_string.3.gz
 %%MAN3%%man/man3/ERR_error_string_n.3.gz
