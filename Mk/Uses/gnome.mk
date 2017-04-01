@@ -80,7 +80,7 @@ _USE_GNOME_ALL+= atk cairo gal2 \
 		gnomedocutils gnomesharp20 \
 		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
-		libbonoboui libgda4 libglade2 libgnome \
+		libbonoboui libglade2 libgnome \
 		libgnomecanvas libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt \
@@ -95,7 +95,7 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm20 gtkmm24 \
-		gtkmm30 gtksourceviewmm3 libgdamm libgdamm5 \
+		gtkmm30 gtksourceviewmm3 libgdamm5 \
 		libgtksourceviewmm libxml++26 libsigc++12 libsigc++20 \
 		pangomm
 
@@ -160,10 +160,6 @@ gtkmm30_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk30
 gtksourceviewmm3_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtksourceviewmm-3.0.pc
 gtksourceviewmm3_LIB_DEPENDS=		libgtksourceviewmm-3.0.so:x11-toolkits/gtksourceviewmm3
 gtksourceviewmm3_USE_GNOME_IMPL=	gtkmm30 gtksourceview3
-
-libgdamm_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgdamm-4.0.pc
-libgdamm_LIB_DEPENDS=	libgdamm-4.0.so:databases/libgdamm
-libgdamm_USE_GNOME_IMPL=libgda4 glibmm
 
 libgdamm5_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgdamm-5.0.pc
 libgdamm5_LIB_DEPENDS=		libgdamm-5.0.so:databases/libgdamm5
@@ -366,10 +362,6 @@ gnomecontrolcenter3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc
 gnomecontrolcenter3_BUILD_DEPENDS=	${gnomecontrolcenter3_DETECT}:sysutils/gnome-control-center
 gnomecontrolcenter3_RUN_DEPENDS=	${gnomecontrolcenter3_DETECT}:sysutils/gnome-control-center
 gnomecontrolcenter3_USE_GNOME_IMPL=	gnomedesktop3
-
-libgda4_LIB_DEPENDS=	libgda-4.0.so:databases/libgda4
-libgda4_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda-4.0.pc
-libgda4_USE_GNOME_IMPL=	glib20 libxslt
 
 libgda5_LIB_DEPENDS=	libgda-5.0.so:databases/libgda5
 libgda5_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda-5.0.pc

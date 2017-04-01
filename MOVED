@@ -9186,3 +9186,12 @@ accessibility/at-spi-reference||2017-04-01|Obsolete and not depend on anymore
 archivers/gnome-autoar||2017-04-01|Obsolete and not depend on anymore
 deskutils/gnome-blog||2017-04-01|Obsolete and not depend on anymore
 deskutils/gnome-epub-thumbnailer||2017-04-01|Obsolete and not depend on anymore
+databases/libgdamm||2017-04-01|Obsolete and not depend on anymore
+databases/libgda4-bdb||2017-04-02|Obsolete and not depend on anymore
+databases/libgda4-reference||2017-04-02|Obsolete and not depend on anymore
+databases/libgda4-postgresql||2017-04-02|Obsolete and not depend on anymore
+databases/libgda4||2017-04-02|Obsolete and not depend on anymore
+databases/libgda4-jdbc||2017-04-02|Obsolete and not depend on anymore
+databases/libgda4-mysql||2017-04-02|Obsolete and not depend on anymore
+databases/libgda4-mdb||2017-04-02|Obsolete and not depend on anymore
+databases/libgda4-ldap||2017-04-02|Obsolete and not depend on anymore
