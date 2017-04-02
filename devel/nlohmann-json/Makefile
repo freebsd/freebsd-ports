@@ -3,6 +3,7 @@
 
 PORTNAME=	nlohmann-json
 PORTVERSION=	v2.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	SlavaMikerov@gmail.com

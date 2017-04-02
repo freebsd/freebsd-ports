@@ -3,7 +3,7 @@
 
 PORTNAME=	sceptre
 PORTVERSION=	2012.061
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad
 MASTER_SITES=	http://alpha.fh-friedberg.de/iem/fileadmin/user_upload/novender/sceptre/
 

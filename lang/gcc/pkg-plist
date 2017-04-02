@@ -16,6 +16,7 @@ bin/gcc-ar%%SUFFIX%%
 bin/gcc-nm%%SUFFIX%%
 bin/gcc-ranlib%%SUFFIX%%
 bin/gcov%%SUFFIX%%
+bin/gcov-tool%%SUFFIX%%
 bin/gfortran
 bin/gfortran%%SUFFIX%%
 @comment info/gcc%%SUFFIX%%/dir
@@ -29,6 +30,7 @@ man/man1/gfortran%%SUFFIX%%.1.gz
 share/gcc-%%GCC_VERSION%%/python/libstdcxx/__init__.py
 share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/__init__.py
 share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/printers.py
+share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/xmethods.py
 %%JAVA%%bin/%%GNU_HOST%%-gcj%%SUFFIX%%
 %%JAVA%%bin/aot-compile%%SUFFIX%%
 %%JAVA%%bin/gappletviewer%%SUFFIX%%
@@ -50,7 +52,7 @@ share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/printers.py
 %%JAVA%%bin/gtnameserv%%SUFFIX%%
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
 %%JAVA%%bin/jv-convert%%SUFFIX%%
-%%JAVA%%libdata/pkgconfig/libgcj-4.9.pc
+%%JAVA%%libdata/pkgconfig/libgcj-5.pc
 %%JAVA%%man/man1/aot-compile%%SUFFIX%%.1.gz
 %%JAVA%%man/man1/gappletviewer%%SUFFIX%%.1.gz
 %%JAVA%%man/man1/gc-analyze%%SUFFIX%%.1.gz

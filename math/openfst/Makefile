@@ -3,6 +3,7 @@
 
 PORTNAME=	openfst
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.openfst.org/twiki/pub/FST/FstDownload/
 

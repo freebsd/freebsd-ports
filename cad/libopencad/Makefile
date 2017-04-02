@@ -3,6 +3,7 @@
 
 PORTNAME=	libopencad
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	cad graphics geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org

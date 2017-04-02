@@ -2,6 +2,7 @@
 
 PORTNAME=	bossa
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bsdports@kyle-evans.net
