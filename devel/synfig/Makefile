@@ -24,7 +24,8 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libavcodec.so:multimedia/ffmpeg \
 		libdv.so:multimedia/libdv
 
-USES=		iconv jpeg libtool pathfix pkgconfig
+USES=		compiler:c++11-lang iconv jpeg libtool pathfix pkgconfig
+USE_CXXSTD=	c++11
 USE_GNOME=	cairo glibmm libxml++26
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
