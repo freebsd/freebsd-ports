@@ -3,6 +3,7 @@
 
 PORTNAME=	flamegraph
 PORTVERSION=	g20170308
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	jmd@FreeBSD.org
