@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/devel/libbonobo/Makefile 18393 2013-04-26 21:23:07Z kwm $
 
 PORTNAME=	libbonobo
-PORTVERSION=	2.32.0
-PORTREVISION?=	3
+PORTVERSION=	2.32.1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

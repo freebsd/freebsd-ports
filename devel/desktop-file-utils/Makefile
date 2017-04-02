@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/devel/desktop-file-utils/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	desktop-file-utils
-PORTVERSION=	0.22
-PORTREVISION=	4
+PORTVERSION=	0.23
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 

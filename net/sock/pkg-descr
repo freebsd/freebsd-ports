@@ -1,17 +1,21 @@
-This is a standalone version of W. Richard Stevens' "sock" program,
-based on the code available for the UNIX Network Programming book.
-
-Adapted and reworked code for W. Richard Stevens' "sock" utility
-by Christian Kreibich.
-
-From the author:  In TCP/IP Illustrated Vol. 1, Richard Stevens used
-a program called "sock" to demonstrate the many properties of TCP/IP.
-Unfortunately, the book only speaks about how to use the program but
-does not point to a site for downloading its sources. While sock is
-contained in the code package accompanying UNIX Network Programming,
-this code is also getting dated.
+In TCP/IP Illustrated Vol. 1, Richard Stevens used a program called
+"sock" to demonstrate the many properties of TCP/IP.  This is a
+standalone version, adapted and reworked by Christian Kreibich.
 
 The program can be used to generate TCP or UDP packets for testing
 various network features.  It runs as either client or server.
 
-WWW: http://www.icir.org/christian/sock.html
+This FreeBSD port is built on top of the original 0.3.2 tarball from
+2010, above, downloaded from the icir.org webpage.
+
+Version 0.4.2 of sock supports IPv6, SCTP and those socket options:
+- IPv6:
+  o hop limit
+  o multicast hop limit
+  o disable/enable header flow label
+  o header traffic class
+  o don't fragment
+- IPv4:
+  o don't fragment
+
+WWW: http://www-cs-students.stanford.edu/~sjac/sock_info.html

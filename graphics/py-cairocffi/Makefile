@@ -3,6 +3,7 @@
 
 PORTNAME=	cairocffi
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +18,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		python:2+
 USE_PYTHON=	autoplist distutils cffi
+USE_GNOME=	cairo
 
 .include <bsd.port.mk>
