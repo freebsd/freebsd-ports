@@ -210,6 +210,7 @@
     SUBDIR += libv4l
     SUBDIR += libva
     SUBDIR += libva-intel-driver
+    SUBDIR += libva-utils
     SUBDIR += libva-vdpau-driver
     SUBDIR += libvdpau
     SUBDIR += libvpx
