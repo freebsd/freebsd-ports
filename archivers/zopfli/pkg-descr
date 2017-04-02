@@ -3,4 +3,4 @@ This compressor takes more time (~100x slower), but compresses
 around 5% better than zlib and better than any other zlib-compatible
 compressor we have found.
 
-WWW: http://code.google.com/p/zopfli/
+WWW: https://github.com/google/zopfli
