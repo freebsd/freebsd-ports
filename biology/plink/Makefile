@@ -3,7 +3,7 @@
 
 PORTNAME=	plink
 PORTVERSION=	1.07
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology science
 MASTER_SITES=	http://pngu.mgh.harvard.edu/~purcell/plink/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

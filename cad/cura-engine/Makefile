@@ -2,6 +2,7 @@
 
 PORTNAME=	CuraEngine
 PORTVERSION=	15.04
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	cederom@tlen.pl

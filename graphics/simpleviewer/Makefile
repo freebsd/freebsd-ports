@@ -3,6 +3,7 @@
 
 PORTNAME=	simpleviewer
 PORTVERSION=	2.88
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/
 DISTNAME=	v${PORTVERSION}

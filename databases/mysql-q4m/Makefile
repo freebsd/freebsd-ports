@@ -3,7 +3,7 @@
 
 PORTNAME=	q4m
 PORTVERSION=	0.9.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://q4m.kazuhooku.com/dist/
 PKGNAMEPREFIX=	${_MYSQL_SERVER:T:C/-server$/-/}

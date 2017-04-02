@@ -2,6 +2,7 @@
 
 PORTNAME=	klayout
 PORTVERSION=	0.24.9
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.klayout.org/downloads/source/
 

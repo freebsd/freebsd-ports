@@ -2,6 +2,7 @@
 
 PORTNAME=	zathura-ps
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-ps/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/

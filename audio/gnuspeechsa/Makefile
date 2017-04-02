@@ -3,6 +3,7 @@
 
 PORTNAME=	gnuspeechsa
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GNU/gnuspeech
 
