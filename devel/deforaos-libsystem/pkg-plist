@@ -26,7 +26,6 @@ libdata/pkgconfig/libSystem.pc
 %%PORTDOCS%%share/gtk-doc/html/libSystem/deprecated-api-index.html
 %%PORTDOCS%%share/gtk-doc/html/libSystem/home.png
 %%PORTDOCS%%share/gtk-doc/html/libSystem/index.html
-%%PORTDOCS%%share/gtk-doc/html/libSystem/index.sgml
 %%PORTDOCS%%share/gtk-doc/html/libSystem/left-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/libSystem/left.png
 %%PORTDOCS%%share/gtk-doc/html/libSystem/libSystem-array.html
