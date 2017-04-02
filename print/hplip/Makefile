@@ -62,21 +62,33 @@ SCAN_CONFIGURE_ENABLE=	scan-build
 X11_DESC=		Graphical User Interface (Qt)
 X11_CONFIGURE_ENABLE=	gui-build
 
-QT4_USES=		pyqt:4
-QT4_USE=		PYQT=core_run,dbussupport_run,gui_run
-QT4_CONFIGURE_ENABLE=	qt4
-QT4_IMPLIES=		X11
-
-QT5_USES=		pyqt:5
-QT5_USE=		PYQT=core_run,dbussupport_run,gui_run,widgets_run
-QT5_CONFIGURE_ENABLE=	qt5
-QT5_IMPLIES=		X11
-
 XSANE_DESC=		Install XSane for scanning (implies SCAN)
 XSANE_IMPLIES=		SCAN
 XSANE_RUN_DEPENDS=	xsane:graphics/xsane
 
 DOCS_CONFIGURE_ENABLE=	doc-build
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4} && ${PORT_OPTIONS:MX11}
+USES+=			pyqt:4
+USE_PYQT=		core_run dbussupport_run gui_run
+CONFIGURE_ARGS+=	--enable-qt4
+.else
+CONFIGURE_ARGS+=	--disable-qt4
+.endif
+
+.if ${PORT_OPTIONS:MQT5} && ${PORT_OPTIONS:MX11}
+USES+=			pyqt:5
+USE_PYQT=		core_run dbussupport_run gui_run widgets_run
+CONFIGURE_ARGS+=	--enable-qt5
+.else
+CONFIGURE_ARGS+=	--disable-qt5
+.endif
+
+.if ${PORT_OPTIONS:MX11} && ! ${PORT_OPTIONS:MQT4} && ! ${PORT_OPTIONS:MQT5}
+BROKEN=			The X11 option requires one of the QT4 or QT5 options
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldld||g;' \
