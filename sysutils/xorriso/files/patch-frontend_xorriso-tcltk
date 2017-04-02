@@ -1,8 +1,0 @@
---- frontend/xorriso-tcltk.orig	2017-04-02 07:56:18 UTC
-+++ frontend/xorriso-tcltk
-@@ -1,4 +1,4 @@
--#!/usr/bin/wish 
-+#!/usr/local/bin/wish 
- #
- # xorriso-tcltk
- # Copyright (C) 2012 - 2016
