@@ -1,6 +1,6 @@
---- R/quoteStockTsData.R.orig	2013-08-13 00:05:58.000000000 +0900
-+++ R/quoteStockTsData.R	2015-01-24 20:34:35.000000000 +0900
-@@ -46,42 +46,33 @@
+--- R/quoteStockTsData.R.orig	2013-08-12 15:05:58 UTC
++++ R/quoteStockTsData.R
+@@ -46,42 +46,34 @@ quoteFXTsData <- function(x, since=NULL,
  #get time series data from Yahoo! Finance.
  quoteTsData <- function(x,function.financialproduct,since,start.num,date.end,time.interval,type="stock"){
    r <- NULL
@@ -27,10 +27,12 @@
 +  while( 1 ){
      start.num <- start.num + 1
      quote.table <- NULL
-     quote.url <- paste('http://info.finance.yahoo.co.jp/history/?code=',x,start,end,'&p=',start.num,'&tm=',substr(time.interval,1,1),sep="")
+-    quote.url <- paste('http://info.finance.yahoo.co.jp/history/?code=',x,start,end,'&p=',start.num,'&tm=',substr(time.interval,1,1),sep="")
++    quote.url <- paste('https://info.finance.yahoo.co.jp/history/?code=',x,start,end,'&p=',start.num,'&tm=',substr(time.interval,1,1),sep="")
++    quote.html <- getURL(quote.url)
    
 -    try( r <- xmlRoot(htmlTreeParse(quote.url,error=xmlErrorCumulator(immediate=F))), TRUE)
-+    try( r <- htmlParse(quote.url) )
++    try( r <- htmlParse(quote.html) )
      if( is.null(r) ) stop(paste("Can not access :", quote.url))
  
 -    #try( quote.table <- r[[2]][[1]][[1]][[16]][[1]][[1]][[1]][[4]][[1]][[1]][[1]], TRUE )
@@ -54,7 +56,7 @@
        }
      }
  
-@@ -90,7 +81,6 @@
+@@ -90,7 +82,6 @@ quoteTsData <- function(x,function.finan
        financial.data <- rbind(financial.data,function.financialproduct(quote.table[[i]]))
      }
      
@@ -62,7 +64,7 @@
      Sys.sleep(1)
    }
    financial.data <- financial.data[order(financial.data$date),]
-@@ -120,5 +110,3 @@
+@@ -120,5 +111,3 @@ endOfMonth <- function(date.obj)
    return(startOfNextMonth-1)
  }
  
