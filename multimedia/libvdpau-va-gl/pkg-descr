@@ -1,0 +1,5 @@
+The package provides a generic VDPAU driver. It uses OpenGL under the
+hood to accelerate drawing, scaling, and (if available) VA-API to
+accelerate video decoding.
+
+WWW: https://github.com/i-rinat/libvdpau-va-gl
