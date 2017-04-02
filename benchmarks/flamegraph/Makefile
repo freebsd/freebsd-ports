@@ -46,7 +46,7 @@ SOURCE_FILES=	aix-perf.pl \
 
 do-install:
 .for FILE in ${SOURCE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}/${PREFIX}/bin/${FILE}
+	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${STAGEDIR}/${PREFIX}/bin/${FILE}
 .endfor
 
 .include <bsd.port.mk>
