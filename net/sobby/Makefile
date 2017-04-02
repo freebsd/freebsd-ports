@@ -17,13 +17,11 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libnet6.so:net/net6 \
 		libxml++-2.6.so:textproc/libxml++26
 
-USES=		pkgconfig
+USES=		localbase pkgconfig compiler:c++11-lang
+USE_CXXSTD=	c++11
 USE_GNOME=	glibmm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-zeroconf
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 

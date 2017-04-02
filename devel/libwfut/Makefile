@@ -16,6 +16,7 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 CONFIGURE_ARGS+=--without-python
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig compiler:c++11-lib
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 post-patch:

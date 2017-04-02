@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	buici-clock
-PORTVERSION=	0.4.9.2
+PORTVERSION=	0.4.9.4
 CATEGORIES=	x11-clocks
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Xlib implementation of an attractive, configurable clock
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/buici
 
 USE_XORG=	x11 xext
-USES=		bison gmake pkgconfig
+USES=		tar:xz bison gmake pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 

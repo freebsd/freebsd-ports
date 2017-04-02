@@ -34,7 +34,6 @@ share/bash-completion/completions/lightdm
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/core.html
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/home.png
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/index.html
-%%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/index.sgml
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/left-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/left.png
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/lightdm-gobject-1-Greeter-Interface.html

@@ -174,7 +174,6 @@ include/glib-2.0/gio/gvolume.h
 include/glib-2.0/gio/gvolumemonitor.h
 include/glib-2.0/gio/gzlibcompressor.h
 include/glib-2.0/gio/gzlibdecompressor.h
-include/glib-2.0/glib/guuid.h
 include/glib-2.0/glib-object.h
 include/glib-2.0/glib-unix.h
 include/glib-2.0/glib.h
@@ -325,8 +324,8 @@ share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
 share/bash-completion/completions/gapplication
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.5200.0-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.5200.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.%%LIBVERSION%%-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.%%LIBVERSION%%-gdb.py
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
 share/glib-2.0/codegen/__init__.py
@@ -357,7 +356,6 @@ share/glib-2.0/gdb/glib_gdb.py
 share/glib-2.0/gdb/gobject_gdb.py
 share/glib-2.0/gettext/po/Makefile.in.in
 share/glib-2.0/schemas/gschema.dtd
-share/glib-2.0/valgrind/glib.supp
 share/locale/af/LC_MESSAGES/glib20.mo
 share/locale/am/LC_MESSAGES/glib20.mo
 share/locale/an/LC_MESSAGES/glib20.mo
@@ -389,7 +387,6 @@ share/locale/eu/LC_MESSAGES/glib20.mo
 share/locale/fa/LC_MESSAGES/glib20.mo
 share/locale/fi/LC_MESSAGES/glib20.mo
 share/locale/fr/LC_MESSAGES/glib20.mo
-share/locale/fur/LC_MESSAGES/glib20.mo
 share/locale/ga/LC_MESSAGES/glib20.mo
 share/locale/gd/LC_MESSAGES/glib20.mo
 share/locale/gl/LC_MESSAGES/glib20.mo

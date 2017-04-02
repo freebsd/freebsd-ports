@@ -77,7 +77,6 @@ share/xml/libfo-0.6.2/xmlroff.xml
 %%PORTDOCS%%%%DOCSDIR%%/generating-source.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/interfaces.html
 %%PORTDOCS%%%%DOCSDIR%%/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/left.png

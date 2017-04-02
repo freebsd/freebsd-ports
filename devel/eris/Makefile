@@ -19,5 +19,6 @@ LIB_DEPENDS=	libAtlas-0.6.so:devel/atlas-devel \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig compiler:c++11-lib
+USE_CXXSTD=	c++11
 
 .include <bsd.port.mk>

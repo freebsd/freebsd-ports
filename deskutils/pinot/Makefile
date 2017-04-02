@@ -11,6 +11,8 @@ COMMENT=	Personal search and metasearch for the Free Desktop
 
 LICENSE=	GPLv2
 
+BROKEN=		depends on C++11 libs while not itself being C++11 compatible
+
 BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils	\
 		update-mime-database:misc/shared-mime-info
 LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
