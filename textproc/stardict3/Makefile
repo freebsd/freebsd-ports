@@ -10,8 +10,6 @@ DIST_SUBDIR=	stardict
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionary lookup program written in Gtk2
 
-BROKEN=		Depends on c++11 libs while not being c++11 compatible
-
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libenchant.so:textproc/enchant
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
