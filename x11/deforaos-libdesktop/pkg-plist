@@ -19,7 +19,6 @@ libdata/pkgconfig/libDesktop.pc
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/deprecated-api-index.html
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/home.png
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/index.html
-%%PORTDOCS%%share/gtk-doc/html/libDesktop/index.sgml
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/left-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/left.png
 %%PORTDOCS%%share/gtk-doc/html/libDesktop/libDesktop-about.html
