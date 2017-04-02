@@ -19,4 +19,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
+CONFIGURE_ARGS=	--disable-tests
+
 .include <bsd.port.mk>
