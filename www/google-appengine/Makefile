@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.9.17
+PORTVERSION=	1.9.51
 PORTREVISION=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
@@ -34,22 +34,16 @@ WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
 LN_OPTS=	-sf
 
 GAEDATADIR=	google lib new_project_template tools
-GAESCRIPTS=	_php_runtime.py _python_runtime.py api_server.py appcfg.py \
+GAESCRIPTS=	_php_runtime.py _python_runtime.py appcfg.py \
 		backends_conversion.py bulkload_client.py bulkloader.py \
 		dev_appserver.py download_appstats.py endpointscfg.py \
-		gen_protorpc.py google_sql.py php_cli.py \
-		remote_api_shell.py run_tests.py wrapper_util.py
+		gen_protorpc.py php_cli.py remote_api_shell.py \
+		run_tests.py wrapper_util.py
 
-.include <bsd.port.options.mk>
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:databases/py-MySQLdb
 
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:databases/py-MySQLdb
-.endif
-.if ${PORT_OPTIONS:MPHP}
-GAEDATADIR+=	php
-USE_MYSQL=	server
-WANT_MYSQL_VER=	55
-.endif
+PHP_USE=	mysql=server
+PHP_VARS=	gaedatadir+=php want_mysql_ver=55
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
