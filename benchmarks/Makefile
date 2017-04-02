@@ -18,6 +18,7 @@
     SUBDIR += fhourstones
     SUBDIR += filebench
     SUBDIR += fio
+    SUBDIR += flamegraph
     SUBDIR += flops
     SUBDIR += flowgrind
     SUBDIR += forkbomb

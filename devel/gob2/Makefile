@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gob2
-PORTVERSION=	2.0.17
-PORTREVISION=	1
+PORTVERSION=	2.0.18
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -11,11 +10,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Preprocessor for making GObjects with inline C
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USES=		pkgconfig gmake
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		localbase pkgconfig gmake
 
 PLIST_FILES=	bin/gob2 share/aclocal/gob2.m4 ${EXAMPLES:S/^/%%EXAMPLESDIR%%\//} \
 		man/man1/gob2.1.gz

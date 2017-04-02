@@ -10,6 +10,9 @@ bin/gtkdoc-rebase
 bin/gtkdoc-scan
 bin/gtkdoc-scangobj
 bin/gtkdocize
+lib/cmake/GtkDoc/GtkDocConfig.cmake
+lib/cmake/GtkDoc/GtkDocConfigVersion.cmake
+lib/cmake/GtkDoc/GtkDocScanGObjWrapper.cmake
 libdata/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
 %%DATADIR%%/data/devhelp2.xsd
