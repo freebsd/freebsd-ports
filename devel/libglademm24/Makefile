@@ -18,7 +18,9 @@ LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 BUILD_DEPENDS=	gm4:devel/m4
 
 USE_XORG=	x11 ice
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gmake libtool:keepla pathfix pkgconfig \
+		tar:bzip2
+USE_CXXSTD=	c++11
 USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
