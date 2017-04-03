@@ -1,0 +1,12 @@
+Do not build tests by default to avoid having to depend on Qt5.
+--- CMakeLists.txt.orig	2017-04-02 18:01:03 UTC
++++ CMakeLists.txt
+@@ -20,8 +20,6 @@ set(REQUIRED_QT_VERSION 5.6.0)
+ 
+ set( oxygen_icon_dirs  8x8 16x16 22x22 32x32 48x48 64x64 128x128 256x256 )
+ 
+-add_subdirectory(autotests)
+-
+ ########### install files ###############
+ 
+ set(OXYGEN_INSTALL_DIR ${KDE_INSTALL_ICONDIR}/oxygen/base)
