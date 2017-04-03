@@ -1,5 +1,5 @@
---- xbmc/main/main.cpp.orig	2016-02-20 15:21:19 UTC
-+++ xbmc/main/main.cpp
+--- xbmc/platform/posix/main.cpp.orig	2016-02-20 15:21:19 UTC
++++ xbmc/platform/posix/main.cpp
 @@ -28,6 +28,7 @@
  #ifdef TARGET_POSIX
  #include <sys/resource.h>

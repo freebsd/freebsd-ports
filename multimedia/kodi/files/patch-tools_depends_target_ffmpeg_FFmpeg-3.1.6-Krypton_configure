@@ -1,5 +1,5 @@
---- tools/depends/target/ffmpeg/FFmpeg-2.8.6-Jarvis-16.0/configure.orig	2016-02-03 20:33:07 UTC
-+++ tools/depends/target/ffmpeg/FFmpeg-2.8.6-Jarvis-16.0/configure
+--- tools/depends/target/ffmpeg/FFmpeg-3.1.6-Krypton/configure.orig	2016-02-03 20:33:07 UTC
++++ tools/depends/target/ffmpeg/FFmpeg-3.1.6-Krypton/configure
 @@ -5683,6 +5683,7 @@ elif enabled llvm_gcc; then
      check_cflags -mllvm -stack-alignment=16
  elif enabled clang; then
