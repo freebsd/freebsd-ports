@@ -1,5 +1,5 @@
---- vm_trace.c.orig	2015-11-08 15:49:09.000000000 +0100
-+++ vm_trace.c	2016-01-10 19:11:46.862754000 +0100
+--- vm_trace.c.orig	2015-11-08 14:49:09 UTC
++++ vm_trace.c
 @@ -390,7 +390,7 @@ rb_suppress_tracing(VALUE (*func)(VALUE)
      volatile int raised;
      volatile int outer_state;

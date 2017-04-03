@@ -1,5 +1,5 @@
---- vm_eval.c.orig	2015-11-29 10:01:12.000000000 +0100
-+++ vm_eval.c	2016-01-10 19:11:40.066355000 +0100
+--- vm_eval.c.orig	2016-03-28 17:04:28 UTC
++++ vm_eval.c
 @@ -1111,7 +1111,7 @@ rb_iterate(VALUE (* it_proc) (VALUE), VA
      int state;
      volatile VALUE retval = Qnil;
