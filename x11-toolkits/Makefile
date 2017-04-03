@@ -105,7 +105,6 @@
     SUBDIR += libgnomeui
     SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm26
-    SUBDIR += libgtksourceviewmm
     SUBDIR += libsexy
     SUBDIR += libsexymm
     SUBDIR += libunique3

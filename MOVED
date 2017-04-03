@@ -9199,3 +9199,5 @@ devel/libsigcx||2017-04-02|Obsolete and not depend on anymore
 x11-toolkits/gal2||2017-04-02|Obsolete and not depend on anymore
 x11-toolkits/gal2-reference||2017-04-02|Obsolete and not depend on anymore
 x11-toolkits/vte290|x11-toolkits/vte3|2017-04-02|Obsolete and not depend on anymore
+x11-toolkits/libgtksourceviewmm||2017-04-03|Obsolete and not depend on anymore
+graphics/goocanvasmm||2017-04-03|Obsolete and not depend on anymore
