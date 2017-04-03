@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: semaphore
+# REQUIRE: mysql
 # KEYWORD: shutdown
 
 . /etc/rc.subr
