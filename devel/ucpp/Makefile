@@ -5,7 +5,6 @@ PORTNAME=	ucpp
 PORTVERSION=	1.3.2
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	GH
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	C preprocessor and lexer

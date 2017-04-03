@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Class::InsideOut.3.gz
-%%PERL5_MAN3%%/Class::InsideOut::Manual::About.3.gz
-%%PERL5_MAN3%%/Class::InsideOut::Manual::Advanced.3.gz
 %%SITE_PERL%%/Class/InsideOut.pm
 %%SITE_PERL%%/Class/InsideOut/Manual/About.pod
 %%SITE_PERL%%/Class/InsideOut/Manual/Advanced.pod
+%%PERL5_MAN3%%/Class::InsideOut.3.gz
+%%PERL5_MAN3%%/Class::InsideOut::Manual::About.3.gz
+%%PERL5_MAN3%%/Class::InsideOut::Manual::Advanced.3.gz

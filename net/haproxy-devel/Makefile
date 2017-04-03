@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-DISTVERSION=	1.7-dev6
+DISTVERSION=	1.8-dev1
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/1.7/src/devel/
+MASTER_SITES=	http://www.haproxy.org/download/1.8/src/devel/
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -15,12 +15,11 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 CONFLICTS_INSTALL=	haproxy-[1234567890]\*
-IGNORE=		no devel version available
 
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy
 
-DEVICEATLAS_VERSION=	2.1
+DEVICEATLAS_VERSION=	2.1.2_1
 DEVICEATLAS_DISTFILE=	deviceatlas-enterprise-c-${DEVICEATLAS_VERSION}
 DEVICEATLAS_REGISTRATION_URL=	https://deviceatlas.com/deviceatlas-haproxy-module
 
@@ -48,12 +47,12 @@ MAKE_ARGS+=	USE_PCRE=1 USE_STATIC_PCRE=1 USE_PCRE_JIT=1
 .endif
 
 .if ${PORT_OPTIONS:MDEVICEATLAS}
-.if !exists(${DISTDIR}/${DEVICEATLAS_DISTFILE}.zip)
+.if !exists(${DISTDIR}/${DEVICEATLAS_DISTFILE}.tgz)
 IGNORE?=	you must manually fetch the DeviceAtlas Device Detection C API from ${DEVICEATLAS_REGISTRATION_URL} and place it in ${DISTDIR} and then run make again
 .else
 RESTRICTED=	The redistribution of the DeviceAtlas Device Detection C API is not permitted
-DISTFILES+=	${DEVICEATLAS_DISTFILE}.zip
-MAKE_ARGS+=	USE_DEVICEATLAS=1 DEVICEATLAS_SRC=${WRKDIR}/deviceatlas-enterprise-c-${DEVICEATLAS_VERSION}
+DISTFILES+=	${DEVICEATLAS_DISTFILE}.tgz
+MAKE_ARGS+=	USE_DEVICEATLAS=1 DEVICEATLAS_SRC=${WRKDIR}/deviceatlas-enterprise-c-${DEVICEATLAS_VERSION}/Src
 .endif
 .if ! ${PORT_OPTIONS:MDPCRE} && ! ${PORT_OPTIONS:MSPCRE}
 IGNORE?=	enable PCRE support to use DeviceAtlas
@@ -63,9 +62,6 @@ IGNORE?=	enable PCRE support to use DeviceAtlas
 .if ${PORT_OPTIONS:MOPENSSL}
 USES+=		ssl
 MAKE_ARGS+=	USE_OPENSSL=1
-.if !empty(SSL_DEFAULT:Mlibressl*)
-BROKEN= does not build with libressl
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
