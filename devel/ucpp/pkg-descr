@@ -6,4 +6,4 @@ ucpp is a C preprocessor and lexer. It has the following goals:
    - Possibility to use the code as a lexer (that outputs tokens
      directly)
 
-WWW: http://code.google.com/p/ucpp/
+WWW: https://code.google.com/archive/p/ucpp/
