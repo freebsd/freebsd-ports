@@ -1,6 +1,6 @@
---- tool/rbinstall.rb.orig	2016-10-17 07:17:07.000000000 +0000
-+++ tool/rbinstall.rb	2016-12-13 14:55:27.945769000 +0000
-@@ -324,6 +324,7 @@
+--- tool/rbinstall.rb.orig	2017-03-12 08:02:52 UTC
++++ tool/rbinstall.rb
+@@ -324,6 +324,7 @@ bindir = CONFIG["bindir", true]
  libdir = CONFIG[CONFIG.fetch("libdirname", "libdir"), true]
  rubyhdrdir = CONFIG["rubyhdrdir", true]
  archhdrdir = CONFIG["rubyarchhdrdir"] || (rubyhdrdir + "/" + CONFIG['arch'])
@@ -8,7 +8,7 @@
  rubylibdir = CONFIG["rubylibdir", true]
  archlibdir = CONFIG["rubyarchdir", true]
  sitelibdir = CONFIG["sitelibdir"]
-@@ -378,7 +379,7 @@
+@@ -378,7 +379,7 @@ end
  install?(:local, :arch, :data) do
    pc = CONFIG["ruby_pc"]
    if pc and File.file?(pc) and File.size?(pc)
@@ -17,7 +17,7 @@
      install pc, pkgconfigdir, :mode => $data_mode
    end
  end
-@@ -694,110 +695,6 @@
+@@ -694,110 +695,6 @@ end
  
  # :startdoc:
  
