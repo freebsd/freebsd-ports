@@ -1,6 +1,6 @@
---- eval.c.orig	2015-11-20 01:17:25.000000000 +0100
-+++ eval.c	2016-01-10 19:24:26.101707000 +0100
-@@ -788,7 +788,7 @@ rb_rescue2(VALUE (* b_proc) (ANYARGS), V
+--- eval.c.orig	2016-11-14 17:36:10 UTC
++++ eval.c
+@@ -804,7 +804,7 @@ rb_rescue2(VALUE (* b_proc) (ANYARGS), V
  {
      int state;
      rb_thread_t *th = GET_THREAD();
@@ -9,7 +9,7 @@
      volatile VALUE result = Qfalse;
      volatile VALUE e_info = th->errinfo;
      va_list args;
-@@ -854,7 +854,7 @@ rb_protect(VALUE (* proc) (VALUE), VALUE
+@@ -870,7 +870,7 @@ rb_protect(VALUE (* proc) (VALUE), VALUE
      volatile VALUE result = Qnil;
      volatile int status;
      rb_thread_t *th = GET_THREAD();
