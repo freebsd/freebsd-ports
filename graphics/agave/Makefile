@@ -15,7 +15,8 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libglademm-2.4.so:devel/libglademm24
 
-USES=		gettext gmake pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gettext gmake pathfix pkgconfig tar:bzip2
+USE_CXXSTD=	c++11
 USE_GNOME=	gconfmm26 gnomedocutils gnomeprefix gtkmm24 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-scrollkeeper \
