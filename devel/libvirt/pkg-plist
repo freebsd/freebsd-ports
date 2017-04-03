@@ -17,6 +17,7 @@ man/man8/virtlogd.8.gz
 @sample %%ETCDIR%%/virtlockd.conf.sample
 @sample %%ETCDIR%%/virtlogd.conf.sample
 %%EXAMPLESDIR%%/networks/default.xml
+%%BHYVE%%@sample %%ETCDIR%%/bhyve.conf.sample
 %%QEMU%%@sample %%ETCDIR%%/qemu.conf.sample
 %%XEN%%@sample %%ETCDIR%%/libxl.conf.sample
 %%QEMU%%%%ETCDIR%%/qemu-lockd.conf
@@ -70,6 +71,7 @@ sbin/virtlockd
 sbin/virtlogd
 share/augeas/lenses/libvirt_lockd.aug
 share/augeas/lenses/libvirtd.aug
+%%BHYVE%%share/augeas/lenses/libvirtd_bhyve.aug
 share/augeas/lenses/virtlockd.aug
 share/augeas/lenses/virtlogd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
@@ -77,6 +79,7 @@ share/augeas/lenses/virtlogd.aug
 share/augeas/lenses/tests/test_libvirtd.aug
 share/augeas/lenses/tests/test_virtlockd.aug
 share/augeas/lenses/tests/test_virtlogd.aug
+%%BHYVE%%share/augeas/lenses/tests/test_libvirtd_bhyve.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirtd_qemu.aug
 %%XEN%%share/augeas/lenses/libvirtd_libxl.aug
 %%XEN%%share/augeas/lenses/tests/test_libvirtd_libxl.aug
