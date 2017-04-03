@@ -11,8 +11,6 @@ COMMENT=	Personal search and metasearch for the Free Desktop
 
 LICENSE=	GPLv2
 
-BROKEN=		depends on C++11 libs while not itself being C++11 compatible
-
 BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils	\
 		update-mime-database:misc/shared-mime-info
 LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
@@ -48,8 +46,9 @@ CONFIGURE_ENV=	MKDIR_P="${MKDIR}" TEXTCAT_LIBS="-lexttextcat-2.0"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
-USES=		autoreconf execinfo gettext libarchive libtool pkgconfig python \
-		shebangfix sqlite:3 ssl
+USES=		compiler:c++11-lang autoreconf execinfo gettext libarchive \
+		libtool pkgconfig python shebangfix sqlite:3 ssl
+USE_CXXSTD=	c++11
 USE_XORG=	pixman
 USE_GNOME=	atkmm cairo cairomm glibmm gtk20 gtkmm24 libsigc++20 libxml2 pangomm
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters

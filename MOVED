@@ -9201,3 +9201,4 @@ x11-toolkits/gal2-reference||2017-04-02|Obsolete and not depend on anymore
 x11-toolkits/vte290|x11-toolkits/vte3|2017-04-02|Obsolete and not depend on anymore
 x11-toolkits/libgtksourceviewmm||2017-04-03|Obsolete and not depend on anymore
 graphics/goocanvasmm||2017-04-03|Obsolete and not depend on anymore
+x11-themes/kde4-icons-oxygen|x11-themes/kf5-icons-oxygen|2017-04-03|Replaced by x11-themes/kf5-icons-oxygen

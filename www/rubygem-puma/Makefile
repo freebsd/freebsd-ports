@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puma
-PORTVERSION=	2.16.0
+PORTVERSION=	3.8.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_RUBY=	yes
-USES=		gem shebangfix
+USES=		gem shebangfix ssl
 
 PLIST_FILES=	bin/puma bin/pumactl
 

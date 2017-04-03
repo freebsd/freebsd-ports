@@ -4908,6 +4908,7 @@
     SUBDIR += py3-Jinja2
     SUBDIR += py3-babel
     SUBDIR += py3-click
+    SUBDIR += py3-colorama
     SUBDIR += py3-dbus
     SUBDIR += py3-docopt
     SUBDIR += py3-flake8
@@ -5383,6 +5384,7 @@
     SUBDIR += rubygem-netaddr
     SUBDIR += rubygem-newrelic-grape
     SUBDIR += rubygem-newrelic_rpm
+    SUBDIR += rubygem-newrelic_rpm3
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-nio4r1

@@ -1645,6 +1645,7 @@
     SUBDIR += py-feedgenerator
     SUBDIR += py-flask
     SUBDIR += py-flask-admin
+    SUBDIR += py-flask-api
     SUBDIR += py-flask-assets
     SUBDIR += py-flask-bootstrap
     SUBDIR += py-flask-cache
@@ -2038,6 +2039,7 @@
     SUBDIR += rubygem-pagerduty
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-puma
+    SUBDIR += rubygem-puma2
     SUBDIR += rubygem-pusher-client
     SUBDIR += rubygem-rabbirack
     SUBDIR += rubygem-rack

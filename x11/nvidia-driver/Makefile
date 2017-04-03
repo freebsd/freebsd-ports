@@ -10,9 +10,9 @@
 # slave ports instead (`x11/nvidia-driver-340' or `x11/nvidia-driver-304').
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	375.26
+DISTVERSION?=	375.39
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}

@@ -2,6 +2,7 @@ bin/converseen
 share/appdata/converseen.appdata.xml
 share/applications/converseen.desktop
 %%DATADIR%%/loc/converseen_cs_CZ.qm
+%%DATADIR%%/loc/converseen_da_DK.qm
 %%DATADIR%%/loc/converseen_de_DE.qm
 %%DATADIR%%/loc/converseen_es_CL.qm
 %%DATADIR%%/loc/converseen_fr_FR.qm

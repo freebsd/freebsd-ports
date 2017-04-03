@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.16.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -151,7 +151,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-base32>=0.3.2:converters/rubygem-base32 \
 	rubygem-sentry-raven>=2.0.0:devel/rubygem-sentry-raven \
 	rubygem-premailer-rails>=1.9.0:mail/rubygem-premailer-rails \
-	rubygem-newrelic_rpm>=3.16:devel/rubygem-newrelic_rpm \
+	rubygem-newrelic_rpm3>=3.16:devel/rubygem-newrelic_rpm3 \
 	rubygem-octokit>=4.6.2:net/rubygem-octokit \
 	rubygem-mail_room>=0.9.0:mail/rubygem-mail_room \
 	rubygem-email_reply_trimmer>=0.1:mail/rubygem-email_reply_trimmer \
