@@ -3,7 +3,6 @@
 
 PORTNAME=	converseen
 PORTVERSION=	0.9.6.2
-PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%20${PORTVERSION:R:R}/
 
