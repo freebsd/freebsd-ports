@@ -1,6 +1,6 @@
---- ext/readline/extconf.rb.orig	2014-05-01 11:59:37.000000000 +0000
-+++ ext/readline/extconf.rb	2015-10-23 04:05:44.000000000 +0000
-@@ -62,7 +63,7 @@ else
+--- ext/readline/extconf.rb.orig	2015-12-01 18:28:54 UTC
++++ ext/readline/extconf.rb
+@@ -63,7 +63,7 @@ else
  end
  
  readline.have_func("rl_getc")

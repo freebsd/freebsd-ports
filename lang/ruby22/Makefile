@@ -11,14 +11,12 @@ DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT?=	Object-oriented interpreted scripting language
+COMMENT=	Object-oriented interpreted scripting language
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
-
-MAKE_JOBS_UNSAFE=	yes
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:devel/libffi
@@ -37,6 +35,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread -L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USES=		autoreconf cpe execinfo tar:xz ssl
 WRKSRC=		${RUBY_WRKSRC}
