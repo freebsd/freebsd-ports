@@ -18,8 +18,5 @@ INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${OPENSSLINC}
 CFLAGS+=	-I${OPENSSLINC} -Wno-error
 LDFLAGS+=	-L${OPENSSLLIB}
-.if !exists(${OPENSSLINC}/openssl/idea.h)
-CFLAGS+=	-DOPENSSL_NO_IDEA
-.endif
 
 .include <bsd.port.post.mk>
