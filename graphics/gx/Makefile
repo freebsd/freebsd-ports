@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnomevfsmm-2.6.so:devel/gnome-vfsmm
 
-USES=		desktop-file-utils gettext pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gettext pkgconfig
+USE_CXXSTD=	c++11
 USE_GNOME=	gconfmm26 gtkmm24
 GNU_CONFIGURE=	yes
 
