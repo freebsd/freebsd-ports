@@ -5383,6 +5383,7 @@
     SUBDIR += rubygem-netaddr
     SUBDIR += rubygem-newrelic-grape
     SUBDIR += rubygem-newrelic_rpm
+    SUBDIR += rubygem-newrelic_rpm3
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-nio4r1
