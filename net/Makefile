@@ -67,6 +67,7 @@
     SUBDIR += c3270
     SUBDIR += cagibi
     SUBDIR += ccxstream
+    SUBDIR += ceph-devel
     SUBDIR += cf
     SUBDIR += chrony
     SUBDIR += citrix_ica
@@ -674,6 +675,7 @@
     SUBDIR += p5-Net-NBsocket
     SUBDIR += p5-Net-NIS
     SUBDIR += p5-Net-NIS-Listgroup
+    SUBDIR += p5-Net-NTP
     SUBDIR += p5-Net-Nessus-XMLRPC
     SUBDIR += p5-Net-Nmsg
     SUBDIR += p5-Net-OAuth
@@ -1076,6 +1078,7 @@
     SUBDIR += qadsl
     SUBDIR += qjsonrpc
     SUBDIR += qoauth
+    SUBDIR += qoauth-qt5
     SUBDIR += qt4-network
     SUBDIR += qt5-network
     SUBDIR += qtweetlib

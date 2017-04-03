@@ -1,7 +1,7 @@
 # Don't override window background colors in order to
 # avoid usability problems with light on dark themes
 #
---- xpra/client/gtk_base/bug_report.py.orig	2016-12-06 10:56:26 UTC
+--- xpra/client/gtk_base/bug_report.py.orig	2017-03-17 07:24:27 UTC
 +++ xpra/client/gtk_base/bug_report.py
 @@ -43,7 +43,6 @@ class BugReport(object):
          self.window.set_default_size(400, 300)

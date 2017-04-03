@@ -4,8 +4,7 @@
 PORTNAME=	docutils
 PORTVERSION=	0.13.1
 CATEGORIES=	textproc python
-MASTER_SITES=	SF \
-		CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -14,21 +13,20 @@ COMMENT=	Python Documentation Utilities
 LICENSE=	BSD2CLAUSE GPLv3+ PD PSFL
 LICENSE_COMB=	multi
 
-USES=	python
-USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
 
 OPTIONS_DEFINE=	PYGMENTS
-PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments
 PYGMENTS_DESC=	Syntax highlighting
+PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments
 
-BIN_SCRIPTS=	rst2html.py rst2s5.py rst2latex.py rst2xetex.py \
-	rst2man.py rst2xml.py rst2pseudoxml.py rstpep2html.py \
-	rst2odt.py rst2odt_prepstyles.py
+SCRIPTS=	rst2html rst2latex rst2man rst2odt rst2odt_prepstyles \
+		rst2pseudoxml rst2s5 rst2xetex rst2xml rstpep2html
 
 post-install:
-.for script in ${BIN_SCRIPTS}
-	@cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf ${script} ${script:C/\.py//}
+.for script in ${SCRIPTS}
+	${LN} -s ${script}.py ${STAGEDIR}${PREFIX}/bin/${script}
 .endfor
 
 .include <bsd.port.mk>

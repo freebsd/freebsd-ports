@@ -3,6 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	4.2.8
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -26,7 +27,7 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:mail/rubygem-actionmailer4 \
 		rubygem-coffee-rails41>=4.1.1:devel/rubygem-coffee-rails41 \
 		rubygem-execjs>=2.2.1:devel/rubygem-execjs \
 		rubygem-jbuilder>=2.1.3:devel/rubygem-jbuilder \
-		rubygem-jquery-rails4>=4.0:www/rubygem-jquery-rails4 \
+		rubygem-jquery-rails>=4.0:www/rubygem-jquery-rails \
 		rubygem-railties4>=${PORTVERSION}:www/rubygem-railties4 \
 		rubygem-rake>=10.3:devel/rubygem-rake \
 		rubygem-rdoc>=4.0.2:devel/rubygem-rdoc \

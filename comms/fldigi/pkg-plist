@@ -10,6 +10,7 @@ share/applications/fldigi.desktop
 %%NLS%%share/locale/it/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/fldigi.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/fldigi.mo
 share/pixmaps/fldigi.xpm
 %%DATADIR%%/NAVTEX_Stations.csv
 %%DATADIR%%/ToR-Stats-SHIP.csv

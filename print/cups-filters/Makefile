@@ -2,6 +2,7 @@
 
 PORTNAME=	cups-filters
 PORTVERSION=	1.13.4
+PORTREVISION?=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -93,12 +94,12 @@ GS_DESC=			Ghostscript gs(1)
 
 HYBRID_BUILD_DEPENDS=		pdftops:graphics/poppler-utils
 HYBRID_RUN_DEPENDS=		pdftops:graphics/poppler-utils
-HYBRID_CONFIGURE_ON=		--with-pdftops=hybrid
+HYBRID_CONFIGURE_ON=		--with-pdftops=hybrid --with-pdftops-path=${LOCALBASE}/bin/pdftops
 HYBRID_DESC=			Ghostscript or Poppler depending on printer
 
 PDFTOPS_BUILD_DEPENDS=		pdftops:graphics/poppler-utils
 PDFTOPS_RUN_DEPENDS=		pdftops:graphics/poppler-utils
-PDFTOPS_CONFIGURE_ON=		--with-pdftops=pdftops
+PDFTOPS_CONFIGURE_ON=		--with-pdftops=pdftops --with-pdftops-path=${LOCALBASE}/bin/pdftops
 PDFTOPS_DESC=			Poppler pdftops(1)
 
 PDFTOPS_RENDERER_DESC=		Default PDF-to-PostScript renderer

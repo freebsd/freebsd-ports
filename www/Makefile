@@ -579,7 +579,6 @@
     SUBDIR += nuvolaplayer-youtube
     SUBDIR += obhttpd
     SUBDIR += ocaml-net
-    SUBDIR += offline-npm
     SUBDIR += opencart
     SUBDIR += openxmldir
     SUBDIR += opera
@@ -1055,6 +1054,7 @@
     SUBDIR += p5-Image-Delivery
     SUBDIR += p5-Interchange6
     SUBDIR += p5-JE
+    SUBDIR += p5-JSON-API
     SUBDIR += p5-Jemplate
     SUBDIR += p5-Jifty
     SUBDIR += p5-Kwiki
@@ -1998,7 +1998,7 @@
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
     SUBDIR += rubygem-jquery-atwho-rails-rails4
-    SUBDIR += rubygem-jquery-rails4
+    SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-jquery-scrollto-rails
     SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails-rails4
@@ -2207,6 +2207,7 @@
     SUBDIR += tomcat6
     SUBDIR += tomcat7
     SUBDIR += tomcat8
+    SUBDIR += tomcat85
     SUBDIR += tomee
     SUBDIR += trac
     SUBDIR += trac-OhlohWidgetsMacro
@@ -2360,7 +2361,6 @@
     SUBDIR += webtrees
     SUBDIR += wgetpaste
     SUBDIR += wikicalc
-    SUBDIR += wml
     SUBDIR += woof
     SUBDIR += wordpress
     SUBDIR += wsdlpull

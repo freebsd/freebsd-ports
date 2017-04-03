@@ -7,8 +7,10 @@ PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Speech recognition system
+
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libsphinxad.so:audio/sphinxbase
 

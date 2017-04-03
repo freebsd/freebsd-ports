@@ -1,4 +1,4 @@
---- Makefile.orig	2017-02-04 00:51:04 UTC
+--- Makefile.orig	2017-03-29 17:32:02 UTC
 +++ Makefile
 @@ -27,14 +27,21 @@ all: mcelog
  
@@ -37,18 +37,18 @@
 @@ -82,7 +89,7 @@ depend: .depend
  
  version.tmp: FORCE
- 	( echo -n "char version[] = \"" ; 	\
+ 	( printf "char version[] = \"" ; 	\
 -	if command -v git >/dev/null; then 	\
 +	if false; then 	\
  	if [ -d .git ] ; then 			\
  		git describe --tags HEAD | tr -d '\n'; 	\
  	else 					\
-@@ -98,8 +105,6 @@ version.c: version.tmp
+@@ -97,8 +104,6 @@ version.c: version.tmp
+ 
  .depend: ${SRC}
  	${CC} -MM -I. ${SRC} > .depend.X && mv .depend.X .depend
- 
--include .depend
 -
+-include .depend
+ 
  Makefile: .depend
  
- .PHONY: iccverify src test

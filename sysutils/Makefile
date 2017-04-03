@@ -944,6 +944,7 @@
     SUBDIR += rinse
     SUBDIR += rmonitor
     SUBDIR += roottail
+    SUBDIR += rovclock
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncrypto
@@ -1018,6 +1019,7 @@
     SUBDIR += rubygem-vagrant-vbguest
     SUBDIR += rubygem-vmstat
     SUBDIR += rubygem-winrm
+    SUBDIR += rubygem-winrm-elevated
     SUBDIR += rubygem-winrm-fs
     SUBDIR += rubygem-yell
     SUBDIR += rundeck
@@ -1076,6 +1078,7 @@
     SUBDIR += snowlog
     SUBDIR += socket
     SUBDIR += socklog
+    SUBDIR += solaar
     SUBDIR += sortu
     SUBDIR += spindown
     SUBDIR += spinner

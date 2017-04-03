@@ -3,7 +3,7 @@
 
 PORTNAME=	libreatlas
 PORTVERSION=	1.0.0a
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
@@ -12,10 +12,10 @@ COMMENT=	Open Source Geography Education application
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libmspack.so:archivers/libmspack \
 		libspatialite.so:databases/spatialite \
 		libsqlite3.so:databases/sqlite3 \
-		libpthread-stubs.so:devel/libpthread-stubs \
 		libpcre.so:devel/pcre \
 		libcairo.so:graphics/cairo \
 		libgeos.so:graphics/geos \

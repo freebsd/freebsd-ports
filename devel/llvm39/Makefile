@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -92,6 +92,7 @@ LLDB_USES=		execinfo
 LLDB_VARS=		_USES_PYTHON=python
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
+OPENMP_EXTRA_PATCHES=	${PATCHDIR}/openmp-patch-bug32279
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
 .for option in CLANG COMPILER_RT EXTRAS LLD LLDB OPENMP

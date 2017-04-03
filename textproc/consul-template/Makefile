@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	consul-template
-PORTVERSION=	0.15.0
+PORTVERSION=	0.18.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -15,24 +15,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
+GH_SUBDIR=	src/github.com/hashicorp/consul-template
 
 PLIST_FILES=	bin/consul-template
 
 USE_RC_SUBR=	consul-template
-
-STRIP=		# stripping can break go binaries
-
-post-extract:
-	@${MV} ${WRKSRC}/vendor ${WRKSRC}/src
-	@${MKDIR} ${WRKSRC}/src/github.com/hashicorp/consul-template
-	@cd ${WRKSRC} ; \
-	${MV} .gitignore .travis.yml CHANGELOG.md LICENSE Makefile README.md \
-	brain.go brain_test.go cli.go cli_test.go config.go config_test.go \
-	dedup.go dedup_test.go dependency flags.go logging main.go \
-	mapstructure.go mapstructure_test.go runner.go runner_test.go scripts \
-	template.go template_functions.go template_functions_test.go \
-	template_test.go test watch \
-	${WRKSRC}/src/github.com/hashicorp/consul-template
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/consul-template ; \

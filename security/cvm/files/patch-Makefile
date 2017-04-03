@@ -1,6 +1,22 @@
---- Makefile.orig	2010-01-21 23:51:26.000000000 +0100
-+++ Makefile	2014-08-21 05:42:52.000000000 +0200
-@@ -155,10 +155,10 @@
+--- Makefile.orig	2015-01-31 14:00:19 UTC
++++ Makefile
+@@ -35,11 +35,12 @@ client_xfer_local.lo client_xfer_local.o
+ client_xfer_udp.lo client_xfer_udp.o: ltcompile client_xfer_udp.c v1client.h facts.h errors.h protocol.h
+ 	./ltcompile client_xfer_udp.c
+ 
+-compile: conf-cc
+-	( echo '#!/bin/sh'; \
++compile: conf-cc conf-bgincs
++	( bgincs=`head -n 1 conf-bgincs`; \
++	  echo '#!/bin/sh'; \
+ 	  echo 'source=$$1; shift'; \
+ 	  echo 'base=`echo "$$source" | sed -e s:\\\\.c$$::`'; \
+-	  echo exec `head -n 1 conf-cc` -I.  '-o $${base}.o -c $$source $${1+"$$@"}'; \
++	  echo exec `head -n 1 conf-cc` -I. "-I'$${bgincs}'" '-o $${base}.o -c $$source $${1+"$$@"}'; \
+ 	) >compile
+ 	chmod 755 compile
+ 
+@@ -154,10 +155,10 @@ cvm-v1testclient.o: compile cvm-v1testcl
  	./compile cvm-v1testclient.c
  
  cvm-vchkpw: cvm-vchkpw.o ltload libcvm-module.la crypt.lib shadow.lib s.lib socket.lib
@@ -12,8 +28,44 @@
 +	./compile cvm-vchkpw.c `cat /usr/local/vpopmail/etc/inc_deps`
  
  cvm-vmailmgr: cvm-vmailmgr.o ltload vmautoconvert.o vmlookup.o getpwnam.o libcvm-module.la libcvm-qmail.la socket.lib crypt.lib
- 	./ltload cvm-vmailmgr vmautoconvert.o vmlookup.o getpwnam.o libcvm-module.la libcvm-qmail.la -lbg `cat socket.lib` `cat crypt.lib`
-@@ -249,12 +249,12 @@
+ 	./ltload cvm-vmailmgr vmautoconvert.o vmlookup.o getpwnam.o libcvm-module.la libcvm-qmail.la -lbg -lvmailmgr `cat socket.lib` `cat crypt.lib`
+@@ -221,36 +222,39 @@ libcvm-v2client.la: makeshlib v2client.l
+ 
+ libraries: libcvm-module.la libcvm-v2client.la libcvm-local.la libcvm-command.la libcvm-v1client.la libcvm-udp.la libcvm-sql.la libcvm-sasl.la libcvm-qmail.la
+ 
+-load: conf-ld
+-	( echo '#!/bin/sh';\
++load: conf-ld conf-bglibs
++	( bglibs=`head -n 1 conf-bglibs`; \
++	  echo '#!/bin/sh';\
+ 	  echo 'main="$$1"; shift';\
+-	  echo exec `head -n 1 conf-ld` -L. '-o "$$main" "$$main.o" $${1+"$$@"}'; \
++	  echo exec `head -n 1 conf-ld` -L. "-L'$${bglibs}'" "-Wl,-R'$${bglibs}'" '-o "$$main" "$$main.o" $${1+"$$@"}'; \
+ 	) >load
+ 	chmod 755 load
+ 
+-ltcompile: conf-cc
+-	( if libtool --tag=CC --help >/dev/null 2>&1; then tag='--tag=CC'; fi; \
++ltcompile: conf-cc conf-bgincs
++	( bgincs=`head -n 1 conf-bgincs`; \
++	  if libtool --tag=CC --help >/dev/null 2>&1; then tag='--tag=CC'; fi; \
+ 	  echo '#!/bin/sh'; \
+ 	  echo 'source=$$1; shift'; \
+ 	  echo 'base=`echo "$$source" | sed -e s:\\\\.c$$::`'; \
+-	  echo exec libtool --mode=compile --silent $$tag `head -n 1 conf-cc` -I.  '-o $${base}.lo -c $$source $${1+"$$@"}'; \
++	  echo exec libtool --mode=compile --silent $$tag `head -n 1 conf-cc` -I. "-I'$${bgincs}'" '-o $${base}.lo -c $$source $${1+"$$@"}'; \
+ 	) >ltcompile
+ 	chmod 755 ltcompile
+ 
+-ltload: conf-ld
+-	( if libtool --tag=CC --help >/dev/null 2>&1; then tag='--tag=CC'; fi; \
++ltload: conf-ld conf-bglibs
++	( bglibs=`head -n 1 conf-bglibs`; \
++	  if libtool --tag=CC --help >/dev/null 2>&1; then tag='--tag=CC'; fi; \
+ 	  echo '#!/bin/sh';\
+ 	  echo 'main="$$1"; shift';\
+-	  echo exec libtool --mode=link --silent $$tag `head -n 1 conf-ld` -L. '-o "$$main" "$$main.o" $${1+"$$@"}' ; \
++	  echo exec libtool --mode=link --silent $$tag `head -n 1 conf-ld` -L. "-L'$${bglibs}'" "-Wl,-R'$${bglibs}'" '-o "$$main" "$$main.o" $${1+"$$@"}' ; \
  	) >ltload
  	chmod 755 ltload
  

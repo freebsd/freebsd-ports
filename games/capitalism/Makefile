@@ -3,7 +3,7 @@
 
 PORTNAME=	capitalism
 PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Capitalism/0.5/
 EXTRACT_SUFX=	.tbz
@@ -14,8 +14,8 @@ COMMENT=	Qt client for the Monopd server
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
-		libpcre.so:devel/pcre \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2 \

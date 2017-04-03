@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mmc-utils
-PORTVERSION=	20160901
-DISTVERSIONSUFFIX=	-2cb6695e
+PORTVERSION=	20170320
+DISTVERSIONSUFFIX=	-37c86e60
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/marius
 
@@ -16,6 +16,8 @@ LICENSE_COMB=	multi
 USES=		gmake tar:bzip2
 
 PLIST_FILES=	man/man1/mmc.1.gz sbin/mmc
+
+MMC_GITURL=	git://git.kernel.org/pub/scm/linux/kernel/git/cjb/mmc-utils.git
 
 .include <bsd.port.pre.mk>
 

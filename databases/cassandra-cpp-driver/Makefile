@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra-cpp-driver
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libuv.so:devel/libuv
 
-USE_GITHUB=	nodefault
+USE_GITHUB=	yes
 GH_ACCOUNT=	datastax
 GH_PROJECT=	cpp-driver
 

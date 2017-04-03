@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualmin
-PORTVERSION=	5.05
+PORTVERSION=	5.07
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/

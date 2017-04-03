@@ -5,7 +5,7 @@ PORTVERSION=	0.9.7
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brandon@ixsystems.com
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3
 
 LICENSE=	BSD2CLAUSE

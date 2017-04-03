@@ -3,6 +3,7 @@
 
 PORTNAME=	wtforms
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:databases/py-sqlalchemy08 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}pep8>0:devel/pep8 \
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil
 

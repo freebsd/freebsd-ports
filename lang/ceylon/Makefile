@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ceylon
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	lang java
 MASTER_SITES=	http://downloads.ceylon-lang.org/cli/
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ceylon is a language for writing large programs in teams
 
 LICENSE=	APACHE20 GPLv2

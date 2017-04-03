@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafobj
-PORTVERSION=	6.0.8
+PORTVERSION=	${SEAFILE_VER}
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www python
@@ -47,5 +47,7 @@ do-install:
 			-f ${WRKSRC}/seafobj)
 	(cd ${WRKSRC}/seafobj && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITEPACKAGEDIR}/seafobj)
+
+.include "${.CURDIR}/../../net-mgmt/seafile-server/Makefile.include"
 
 .include <bsd.port.mk>

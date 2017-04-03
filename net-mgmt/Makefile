@@ -155,7 +155,6 @@
     SUBDIR += nagstamon
     SUBDIR += nagtail
     SUBDIR += nagvis
-    SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += ndoutils
     SUBDIR += ndpmon
@@ -319,6 +318,7 @@
     SUBDIR += seafile-client
     SUBDIR += seafile-gui
     SUBDIR += seafile-server
+    SUBDIR += semaphore
     SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sipcalc

@@ -19,7 +19,6 @@ EXPIRATION_DATE=	2017-04-30
 
 USE_APACHE=	22+
 
-PROJECTHOST=	mod-log-firstbyte
 PKGMESSAGE=	${WRKSRC}/readme.txt
 
 AP_FAST_BUILD=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdata
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	mmokhi@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	firehol
-GH_TAGNAME=	3bd41a0
+GH_TAGNAME=	f5fa346
 
 NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}

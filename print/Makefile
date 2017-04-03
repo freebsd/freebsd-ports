@@ -6,7 +6,6 @@
     SUBDIR += R-cran-knitr
     SUBDIR += a2pdf
     SUBDIR += a2ps
-    SUBDIR += abc2mtex
     SUBDIR += abcm2ps
     SUBDIR += adobe-cmaps
     SUBDIR += afm
@@ -138,7 +137,6 @@
     SUBDIR += mp-a4
     SUBDIR += mp-letter
     SUBDIR += mpage
-    SUBDIR += musixtex
     SUBDIR += muttprint
     SUBDIR += nenscript
     SUBDIR += okc321

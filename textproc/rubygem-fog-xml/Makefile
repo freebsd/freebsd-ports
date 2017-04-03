@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-xml
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

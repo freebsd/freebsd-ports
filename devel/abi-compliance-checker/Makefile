@@ -21,11 +21,10 @@ USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 
 USE_GITHUB=	nodefault
-GH_ACCOUNT=	lvc
-GH_PROJECT=	vtable-dumper:vdumper abi-dumper:adumper \
-		abi-compliance-checker:checker
-GH_TAGNAME=	0e04246:vdumper 46aae79:adumper a6554a1:checker
-
+GH_TUPLE=	lvc:abi-compliance-checker:2.0b1 \
+		lvc:vtable-dumper:0e04246:vdumper/vdumper \
+		lvc:abi-dumper:46aae79:adumper/adumper \
+		lvc:abi-compliance-checker:a6554a1:checker/checker
 PLIST_FILES=	bin/${PORTNAME}.pl bin/abi-dumper.pl bin/vtable-dumper
 SHEBANG_FILES=	checker/*.pl adumper/*.pl
 
@@ -50,12 +49,6 @@ PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic
 .endif
-
-post-extract:
-	@${MKDIR} ${WRKSRC}
-	@${MV} ${WRKSRC_vdumper} ${WRKSRC}/vdumper
-	@${MV} ${WRKSRC_adumper} ${WRKSRC}/adumper
-	@${MV} ${WRKSRC_checker} ${WRKSRC}/checker
 
 do-build:
 	cd ${WRKSRC}/vdumper && \

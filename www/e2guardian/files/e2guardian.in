@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: e2guardian
-# REQUIRE: NETWORKING SERVERS
+# REQUIRE: NETWORKING SERVERS squid clamav_clamd
 # BEFORE: DAEMON
 # KEYWORD: shutdown
 

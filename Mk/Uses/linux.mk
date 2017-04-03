@@ -295,7 +295,6 @@ EXTRACT_ONLY?=		${DISTFILES_${LINUX_ARCH:S/x86_64/amd64/}:C/:[^:]+$//}
 .endif
 .if !empty(SRC_DISTFILES) && (make(makesum) || defined(PACKAGE_BUILDING))
 DISTFILES+=		${SRC_DISTFILES}
-ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
 # This triggers on amd64 with DEFAULT_VERSIONS+=linux=c6 (i386 Linux) and

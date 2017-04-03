@@ -10,7 +10,7 @@ COMMENT=	Common GL api library used by Mesa based ports
 
 LICENSE=	MIT
 
-LIB_DEPENDS+=	libpthread-stubs.so:devel/libpthread-stubs
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 
 USE_XORG=	x11 xau xcb xdmcp xvmc
 

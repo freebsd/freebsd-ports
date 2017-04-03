@@ -1,14 +1,5 @@
 --- configure.ac.orig	2017-01-22 19:49:22 UTC
 +++ configure.ac
-@@ -162,7 +162,7 @@ PKG_CHECK_MODULES(
- 	[UUID],
- 	[uuid],
- )
--test -z "${UUID_LIBS}" && AC_MSG_ERROR([libuuid required but not found. Try installing 'uuid-dev' or 'libuuid-devel'.])
-+test -z "${UUID_LIBS}" && AC_MSG_ERROR([libuuid required but not found. Try installing 'misc/e2fsprogs-libuuid'.])
- AC_DEFINE([NETDATA_WITH_UUID], [1], [uuid settings])
- OPTIONAL_UUID_CLFAGS="${UUID_CFLAGS}"
- OPTIONAL_UUID_LIBS="${UUID_LIBS}"
 @@ -214,14 +214,14 @@ fi
  
  AC_DEFINE_UNQUOTED([NETDATA_USER], ["${with_user}"], [use this user to drop privileged])

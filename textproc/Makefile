@@ -226,6 +226,7 @@
     SUBDIR += google-translate-cli
     SUBDIR += gpp
     SUBDIR += grap
+    SUBDIR += greple
     SUBDIR += grc-aspell
     SUBDIR += groff
     SUBDIR += groonga
@@ -1592,6 +1593,7 @@
     SUBDIR += scss
     SUBDIR += sdcv
     SUBDIR += sdf
+    SUBDIR += sdif
     SUBDIR += sdocbook-xml
     SUBDIR += sdom
     SUBDIR += senna

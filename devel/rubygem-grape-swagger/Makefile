@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grape-swagger
-PORTVERSION=	0.26.1
+PORTVERSION=	0.27.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

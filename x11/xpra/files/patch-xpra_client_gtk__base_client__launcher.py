@@ -1,9 +1,9 @@
 # Don't override window background color in order to
 # avoid usability problems with light on dark themes
 #
---- xpra/client/gtk_base/client_launcher.py.orig	2016-12-06 10:56:26 UTC
+--- xpra/client/gtk_base/client_launcher.py.orig	2017-03-17 07:24:27 UTC
 +++ xpra/client/gtk_base/client_launcher.py
-@@ -146,7 +146,6 @@ class ApplicationWindow:
+@@ -143,7 +143,6 @@ class ApplicationWindow:
          self.window.set_default_size(400, 260)
          self.window.set_border_width(20)
          self.window.set_title("Xpra Launcher")

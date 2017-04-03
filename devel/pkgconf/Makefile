@@ -1,11 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	pkgconf
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.0
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.dereferenced.org/pkgconf/ \
 		http://files.etoilebsd.net/pkgconf/
 
+# NOTE: before committing to this port, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to help to configure compiler and linker flags
 

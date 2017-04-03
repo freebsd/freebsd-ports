@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mosh
-PORTVERSION=	1.2.6
-PORTREVISION=	4
+PORTVERSION=	1.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://mosh.mit.edu/ \
 		http://mirrors.rit.edu/zi/

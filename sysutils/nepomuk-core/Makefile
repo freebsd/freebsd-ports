@@ -3,7 +3,7 @@
 
 PORTNAME=	nepomuk-core
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

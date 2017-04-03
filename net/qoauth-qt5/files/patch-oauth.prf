@@ -1,0 +1,14 @@
+--- oauth.prf.orig	2016-11-28 17:52:39 UTC
++++ oauth.prf
+@@ -31,9 +31,9 @@ mac: {
+ # else, link normally
+ isEmpty(LINKAGE) {
+     exists($$PWD/qoauth.pro): INCLUDEPATH += $$QOAUTH_INCDIR
+-    else: INCLUDEPATH += $$QOAUTH_INCDIR/QtOAuth
++    else: INCLUDEPATH += $$QOAUTH_INCDIR/QtOAuth-qt5
+     LIBS += -L$$QOAUTH_LIBDIR
+-    LINKAGE = -lqoauth
++    LINKAGE = -lqoauth-qt5
+     CONFIG(debug, debug|release) {
+         windows:LINKAGE = -lqoauthd1
+         mac:LINKAGE = -lqoauth_debug

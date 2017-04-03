@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-server
-PORTVERSION=	6.0.8
+PORTVERSION=	${SEAFILE_VER}
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima1252@gmail.com
@@ -123,5 +122,12 @@ post-install:
 		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile/
 	(cd ${WRKSRC}/scripts/upgrade && \
 		${COPYTREE_SHARE} sql ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/upgrade)
+
+makesum-all:
+.for PORT in net-mgmt/ccnet-server net-mgmt/seafile-server www/py-seafdav www/py-seafobj www/seahub
+	${MAKE} -C "${PORTSDIR}/${PORT}" makesum
+.endfor
+
+.include "${.CURDIR}/Makefile.include"
 
 .include <bsd.port.mk>

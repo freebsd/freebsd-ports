@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Getopt/EX.pm
+%%SITE_PERL%%/Getopt/EX/Colormap.pm
+%%SITE_PERL%%/Getopt/EX/Func.pm
+%%SITE_PERL%%/Getopt/EX/LabeledParam.pm
+%%SITE_PERL%%/Getopt/EX/Loader.pm
+%%SITE_PERL%%/Getopt/EX/Long.pm
+%%SITE_PERL%%/Getopt/EX/Module.pm

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	consul
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	0.7.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -23,8 +22,6 @@ USE_RC_SUBR=	consul
 
 USERS=		consul
 GROUPS=		consul
-
-STRIP=		# stripping can break go binaries
 
 post-extract:
 	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src/
