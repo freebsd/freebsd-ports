@@ -4,6 +4,7 @@
 PORTNAME=	lumina
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0-p1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11
 
@@ -13,7 +14,7 @@ COMMENT=	Lumina Desktop Environment
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
-		kde4-icons-oxygen>=0:x11-themes/kde4-icons-oxygen \
+		kf5-oxygen-icons5>=0:x11-themes/kf5-oxygen-icons5 \
 		xscreensaver:x11/xscreensaver \
 		xbrightness:x11/xbrightness \
 		compton:x11-wm/compton \
