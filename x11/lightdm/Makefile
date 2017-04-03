@@ -23,7 +23,9 @@ LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 		libgcrypt.so:security/libgcrypt \
 		libxklavier.so:x11/libxklavier
 
-USES=		localbase gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lang localbase gettext gmake libtool pathfix \
+		pkgconfig tar:xz
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 intlhack
 USE_XORG=	x11 xcb xdmcp
