@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -84,7 +84,6 @@ CONFIGURE_ARGS+=	--without-avahi \
 		--without-xen \
 		--without-login-shell \
 		--without-wireshark-dissector \
-		--without-storage-scsi \
 		--with-ssh2 \
 		--localstatedir=${VARDIR}
 
@@ -116,6 +115,7 @@ PLIST_SUB+=	XEN="@comment "
 .endif
 
 CONF_FILES=	\
+		bhyve.conf \
 		libvirt-admin.conf \
 		libvirt.conf \
 		libvirtd.conf \
