@@ -1,0 +1,4 @@
+Flask API is an implementation of the same web browsable APIs
+that Django REST framework provides.
+
+WWW: http://www.flaskapi.org
