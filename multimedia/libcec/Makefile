@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcec
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	4.0.2
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	multimedia
 
@@ -18,10 +17,14 @@ LIB_DEPENDS=	libp8-platform.so:devel/p8-platform
 USE_GITHUB=	yes
 GH_ACCOUNT=	Pulse-Eight
 
-USES=	alias cmake compiler:c++11-lib pkgconfig
+USES=		alias cmake compiler:c++11-lib pkgconfig shebangfix
+SHEBANG_FILES=	src/pyCecClient/pyCecClient.py
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DCMAKE_REQUIRED_INCLUDES:PATH="${LOCALBASE}/include" \
 		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib"
+
+PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
+		PORTVERSION_MAJOR="${PORTVERSION:C/([0-9]).*/\1/1}"
 
 OPTIONS_DEFINE=	PYTHON X11
 OPTIONS_DEFAULT=	PYTHON X11
@@ -51,7 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|$${GIT_REVISION}|${PORTVERSION}|g' \
 		${WRKSRC}/src/libcec/cmake/SetBuildInfo.cmake
 	@${REINPLACE_CMD} -e '/SOVERSION/ s|\.0||' \
-		-e 's|$${CMAKE_INSTALL_LIBDIR_NOARCH}/pkgconfig|libdata/pkgconfig|' \
+		-e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/src/libcec/CMakeLists.txt
 .if ! ${PORT_OPTIONS:MPYTHON}
 	@${REINPLACE_CMD} '/pyCecClient/d' \
