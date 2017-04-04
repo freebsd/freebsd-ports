@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.2.24
+PORTVERSION=	1.4.3
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -13,8 +13,11 @@ COMMENT=	CGI search application built on Xapian
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libxapian.so:databases/xapian-core
+
+CONFLICTS_INSTALL=	xapian-omega12-
 
 OPTIONS_DEFINE=	DOCS EXAMPLES ICONV
 OPTIONS_DEFAULT=ICONV
@@ -46,9 +49,11 @@ post-patch:
 		-e '/^pkglibbindir = / s| = .*$$| = ${WWWDIR}/cgi-bin|' \
 			${WRKSRC}/Makefile.in
 
-post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+post-install-DOCS-on:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${MORE_PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
