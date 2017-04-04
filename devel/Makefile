@@ -3907,6 +3907,7 @@
     SUBDIR += phabricator
     SUBDIR += php-Psr_Log
     SUBDIR += php-composer
+    SUBDIR += php-geshi
     SUBDIR += php-jq
     SUBDIR += php-libawl
     SUBDIR += php-maxminddb
@@ -3917,7 +3918,6 @@
     SUBDIR += php5-blitz
     SUBDIR += php5-blitz-devel
     SUBDIR += php5-dav
-    SUBDIR += php5-geshi
     SUBDIR += php5-ice
     SUBDIR += php5-pinba
     SUBDIR += php5-thrift

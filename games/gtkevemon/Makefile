@@ -14,7 +14,8 @@ LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30 \
 USE_GITHUB=     yes
 GH_TAGNAME=     ac2ca34
 
-USES=		pkgconfig:both gmake ssl
+USES=		compiler:c++11-lang pkgconfig:both gmake ssl
+USE_CXXSTD=	c++11
 USE_GNOME=	gtk30 libxml2
 
 .include <bsd.port.pre.mk>

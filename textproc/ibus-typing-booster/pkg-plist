@@ -105,6 +105,8 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/__pycache__/itb_emoji.cpython-35.pyc
 %%DATADIR%%/engine/__pycache__/itb_nltk.cpython-35.%%PYTHON_PYOEXTENSION%%
 %%DATADIR%%/engine/__pycache__/itb_nltk.cpython-35.pyc
+%%DATADIR%%/engine/__pycache__/itb_pango.cpython-35.%%PYTHON_PYOEXTENSION%%
+%%DATADIR%%/engine/__pycache__/itb_pango.cpython-35.pyc
 %%DATADIR%%/engine/__pycache__/itb_util.cpython-35.%%PYTHON_PYOEXTENSION%%
 %%DATADIR%%/engine/__pycache__/itb_util.cpython-35.pyc
 %%DATADIR%%/engine/__pycache__/m17n_translit.cpython-35.%%PYTHON_PYOEXTENSION%%
@@ -121,6 +123,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/hunspell_table.py
 %%DATADIR%%/engine/itb_emoji.py
 %%DATADIR%%/engine/itb_nltk.py
+%%DATADIR%%/engine/itb_pango.py
 %%DATADIR%%/engine/itb_util.py
 %%DATADIR%%/engine/m17n_translit.py
 %%DATADIR%%/engine/main.py
