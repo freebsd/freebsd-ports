@@ -8,6 +8,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet \
 		CPAN
 PKGNAMEPREFIX=	p5-
+PKGNAMESUFFIX=	12
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
@@ -15,11 +16,11 @@ COMMENT=	Perl XS frontend to the Xapian C++ search library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libxapian.so:databases/xapian-core
+LIB_DEPENDS=	libxapian.so:databases/xapian-core12
 TEST_DEPENDS=	p5-Test-Pod>=1.14:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limit:^1\.2\.
 
 CC=		${CXX}
 CONFIGURE_ARGS=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config

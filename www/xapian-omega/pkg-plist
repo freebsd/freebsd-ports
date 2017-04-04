@@ -2,8 +2,13 @@ bin/dbi2omega
 bin/htdig2omega
 bin/mbox2omega
 bin/omindex
+bin/omindex-list
 bin/scriptindex
+man/man1/omindex-list.1.gz
 man/man1/omindex.1.gz
 man/man1/scriptindex.1.gz
+%%WWWDIR%%/cgi-bin/mhtml2html
 %%WWWDIR%%/cgi-bin/omega
 %%WWWDIR%%/cgi-bin/outlookmsg2html
+%%WWWDIR%%/cgi-bin/rfc822tohtml
+%%WWWDIR%%/cgi-bin/vcard2text

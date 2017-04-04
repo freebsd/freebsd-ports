@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maxima
-PORTVERSION=	5.38.1
+PORTVERSION=	5.39.0
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -16,7 +16,7 @@ PATCH_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:math/gnuplot
 
-USES=			gmake makeinfo perl5 python:build tk:84+
+USES=			gmake makeinfo perl5 python:build tk:84+ shared-mime-info
 USE_PERL5=		build
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
@@ -91,6 +91,12 @@ BINDIRECTORY=	binary-sbcl
 #LISPBINARY is null so fudge this so deinstall works cleanly
 PLIST_SUB+=	LISPBINARY="@comment "
 MAXIMABINARY=	maxima_core
+.endif
+
+.if ${OSVERSION} < 1100000
+# The older makeinfo from the base fails in 10.3
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:print/texinfo
+CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
 .endif
 
 post-patch:

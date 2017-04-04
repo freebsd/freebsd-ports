@@ -167,6 +167,7 @@
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += liquibase
     SUBDIR += lmdb
+    SUBDIR += lua-xapian
     SUBDIR += luadbi
     SUBDIR += luasql-firebird
     SUBDIR += luasql-mysql
@@ -475,8 +476,8 @@
     SUBDIR += p5-SQLite-Work
     SUBDIR += p5-Search-InvertedIndex
     SUBDIR += p5-Search-Namazu
-    SUBDIR += p5-Search-Xapian
     SUBDIR += p5-Search-Xapian10
+    SUBDIR += p5-Search-Xapian12
     SUBDIR += p5-Store-CouchDB
     SUBDIR += p5-T2
     SUBDIR += p5-Tangram
@@ -494,6 +495,7 @@
     SUBDIR += p5-Tie-LevelDB
     SUBDIR += p5-Time-Piece-MySQL
     SUBDIR += p5-TokyoCabinet
+    SUBDIR += p5-Xapian
     SUBDIR += p5-mysql-genocide
     SUBDIR += p5-tokyotyrant
     SUBDIR += pear-DB
@@ -590,6 +592,7 @@
     SUBDIR += pguri
     SUBDIR += pgworksheet
     SUBDIR += php-mdcached
+    SUBDIR += php-xapian
     SUBDIR += php5-pdo_cassandra
     SUBDIR += php5-tarantool
     SUBDIR += php56-dba
@@ -803,6 +806,7 @@
     SUBDIR += py-umemcache
     SUBDIR += py-unqlite
     SUBDIR += py-whisper
+    SUBDIR += py-xapian
     SUBDIR += py3-bsddb3
     SUBDIR += py3-mysqlclient
     SUBDIR += py3-psycopg2
@@ -857,6 +861,7 @@
     SUBDIR += ruby-odbc
     SUBDIR += ruby-qdbm
     SUBDIR += ruby-tokyocabinet
+    SUBDIR += ruby-xapian
     SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activemodel5
     SUBDIR += rubygem-activerecord-import
@@ -985,8 +990,10 @@
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
     SUBDIR += xapian-bindings
+    SUBDIR += xapian-bindings12
     SUBDIR += xapian-core
     SUBDIR += xapian-core10
+    SUBDIR += xapian-core12
     SUBDIR += xtrabackup
     SUBDIR += zodb3
 
