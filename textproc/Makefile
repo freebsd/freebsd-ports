@@ -1689,6 +1689,7 @@
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt4
     SUBDIR += uml2svg
+    SUBDIR += uncle
     SUBDIR += uncrustify
     SUBDIR += uni2ascii
     SUBDIR += unoconv

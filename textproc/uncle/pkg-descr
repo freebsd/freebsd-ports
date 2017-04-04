@@ -1,0 +1,8 @@
+Uncle is a tool, which can convert UCL config file to the following formats:
+- Human readable config
+- Fine formated JSON
+- Compacted JSON
+- Embedded YAML
+- Msgpack
+
+WWW: https://github.com/MagikBSD/uncle
