@@ -2,8 +2,8 @@
 
 PORTNAME=	geckodriver
 PORTVERSION=	0.15.0
-CATEGORIES=	www
 DISTVERSIONPREFIX=	v
+CATEGORIES=	www
 MASTER_SITES=	http://freebsd-ports.mytaste.org/www/geckodriver/:crates
 DISTFILES=	registry-${PORTVERSION}.tar.gz:crates
 
