@@ -494,6 +494,7 @@
     SUBDIR += p5-Tie-LevelDB
     SUBDIR += p5-Time-Piece-MySQL
     SUBDIR += p5-TokyoCabinet
+    SUBDIR += p5-Xapian
     SUBDIR += p5-mysql-genocide
     SUBDIR += p5-tokyotyrant
     SUBDIR += pear-DB
