@@ -19,7 +19,9 @@ LIB_DEPENDS=	libgnomemm-2.6.so:x11/libgnomemm26 \
 		libgnomevfsmm-2.6.so:devel/gnome-vfsmm
 BUILD_DEPENDS=	gm4:devel/m4
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gmake libtool:keepla pathfix pkgconfig \
+		tar:bzip2
+USE_CXXSTD=	c++11
 USE_XORG=	x11
 USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
