@@ -5,6 +5,32 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170404:
+  AFFECTS: users of Xapian 1.2.x and www/ikiwiki
+  AUTHOR: sunpoet@FreeBSD.org
+
+  Xapian has been update to 1.4.3. The 1.2.x series has been renamed with
+  suffix "12". The Perl binding for Xapian 1.4.x is databases/p5-Xapian.
+  Since www/ikiwiki depends on Search::Xapian, it stays with Xapian 1.2. 
+  If you would like to keep using 1.2, please run the following commands
+  to update pkg database:
+
+  xapian-core:
+    # pkg set -n xapian-core:xapian-core12
+    # pkg set -o databases/xapian-core:databases/xapian-core12
+
+  p5-Search-Xapian:
+    # pkg set -n p5-Search-Xapian:p5-Search-Xapian12
+    # pkg set -o databases/p5-Search-Xapian:databases/p5-Search-Xapian12
+
+  xapian-bindings:
+    # pkg set -n xapian-bindings:xapian-bindings12
+    # pkg set -o databases/xapian-bindings:databases/xapian-bindings12
+
+  xapian-omega:
+    # pkg set -n xapian-omega:xapian-omega12
+    # pkg set -o databases/xapian-omega:databases/xapian-omega12
+
 20170401:
   AFFECTS: net/samba44, net/samba45, net/samba46 and devel/p5-Parse-Pidl*
   AUTHOR: timur@FreeBSD.org
