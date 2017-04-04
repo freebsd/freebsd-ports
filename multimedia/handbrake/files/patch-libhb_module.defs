@@ -1,0 +1,29 @@
+--- libhb/module.defs.orig	2017-02-25 20:56:19 UTC
++++ libhb/module.defs
+@@ -47,7 +47,7 @@ LIBHB.GCC.I += $(LIBHB.build/) $(CONTRIB
+ ifneq (,$(filter $(BUILD.system),darwin cygwin mingw))
+ LIBHB.GCC.I += $(CONTRIB.build/)include/libxml2
+ else
+-LIBHB.GCC.I += /usr/include/libxml2
++LIBHB.GCC.I += /usr/local/include/libxml2
+ endif
+ 
+ ifeq ($(BUILD.system),cygwin)
+@@ -58,6 +58,8 @@ else ifeq ($(BUILD.system),darwin)
+     LIBHB.m += $(wildcard $(LIBHB.src/)platform/macosx/*.m)
+ else ifeq ($(BUILD.system),linux)
+     LIBHB.GCC.D += SYS_LINUX _LARGEFILE_SOURCE _FILE_OFFSET_BITS=64
++else ifeq ($(BUILD.system),freebsd)
++    LIBHB.GCC.D += SYS_FREEBSD _LARGEFILE_SOURCE _FILE_OFFSET_BITS=64
+ else ifeq ($(BUILD.system),mingw)
+     LIBHB.GCC.D += SYS_MINGW
+ ifneq ($(HAS.pthread),1)
+@@ -188,4 +190,8 @@ endif
+ 
+ ###############################################################################
+ 
++ifeq ($(HAS.pthread),1)
++    LIBHB.GCC.l += pthread
++endif
++
+ BUILD.out += $(LIBHB.out)
