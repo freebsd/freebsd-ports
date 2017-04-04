@@ -36,7 +36,7 @@ lib/libsigc-%%API_VERSION%%.so.0
 lib/libsigc-%%API_VERSION%%.so.0.0.0
 lib/sigc++-%%API_VERSION%%/include/sigc++config.h
 libdata/pkgconfig/sigc++-%%API_VERSION%%.pc
-share/devhelp/books/libsigc++-%%API_VERSION%%/libsigc++-%%API_VERSION%%.devhelp2
+%%PORTDOCS%%share/devhelp/books/libsigc++-%%API_VERSION%%/libsigc++-%%API_VERSION%%.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/images/libsigc_logo.gif
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/images/top.gif
 %%PORTDOCS%%%%DOCSDIR%%-%%API_VERSION%%/index.html

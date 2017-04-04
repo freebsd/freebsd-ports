@@ -1,9 +1,10 @@
 # Created by: Melvyn Sopacua <melvyn@magemana.nl>
 # $FreeBSD$
 
-PORTNAME=	php5-snappy
+PORTNAME=	snappy
 PORTVERSION=	0.1.6
 CATEGORIES=	archivers
+PKGNAMEPREFIX=	php-
 
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PHP extension for the snappy compression algorithm
