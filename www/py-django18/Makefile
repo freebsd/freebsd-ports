@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.8.17
+PORTVERSION=	1.8.18
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION:R}/
