@@ -1,0 +1,9 @@
+bin/dbi2omega
+bin/htdig2omega
+bin/mbox2omega
+bin/omindex
+bin/scriptindex
+man/man1/omindex.1.gz
+man/man1/scriptindex.1.gz
+%%WWWDIR%%/cgi-bin/omega
+%%WWWDIR%%/cgi-bin/outlookmsg2html
