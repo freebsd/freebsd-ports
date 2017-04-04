@@ -1,0 +1,56 @@
+Make the dependencies on FFTW3, HDF5 and NETCDF toggelable. 
+
+This is a simlified backport of 
+  https://github.com/KDE/labplot/commit/3a3594f077fcc53d725878d3d2c5ef0b263463e4
+
+--- CMakeLists.txt.orig	2017-04-04 13:07:03 UTC
++++ CMakeLists.txt
+@@ -26,7 +26,13 @@ add_definitions(-fvisibility=default)
+ cmake_policy(SET CMP0002 OLD)
+ #cmake_policy(SET CMP0063 NEW)
+ 
++### Options ######################################
++option(ENABLE_FFTW "Build with FFTW support" "ON")
++option(ENABLE_HDF5 "Build with HDF5 support" "ON")
++option(ENABLE_NETCDF "Build with NetCDF support" "ON")
++
+ ### FFTW ######################################
++IF (ENABLE_FFTW)
+ FIND_LIBRARY(FFTW_LIBRARIES fftw3
+ 	PATHS
+ 	/usr/lib
+@@ -49,6 +55,7 @@ IF (FFTW_FOUND)
+ ELSE (FFTW_FOUND)
+ 	MESSAGE (STATUS "FFTW 3 Library not found.")
+ ENDIF (FFTW_FOUND)
++ENDIF (ENABLE_FFTW)
+ 
+ ### GSL ######################################
+ FIND_LIBRARY(GSL_LIBRARIES gsl
+@@ -112,6 +119,7 @@ ELSE (CANTOR_LIBS_FOUND)
+ ENDIF (CANTOR_LIBS_FOUND)
+ 
+ ### HDF5 #####################################
++IF (ENABLE_HDF5)
+ FIND_LIBRARY(HDF5_LIBRARY hdf5
+ 	PATHS
+ 	/usr/lib
+@@ -136,8 +144,10 @@ IF (HDF5_FOUND)
+ ELSE (HDF5_FOUND)
+ 	MESSAGE (STATUS "Hierarchical Data Format (HDF) 5 Library not found.")
+ ENDIF (HDF5_FOUND)
++ENDIF (ENABLE_HDF5)
+ 
+ ### NETCDF #####################################
++IF (ENABLE_NETCDF)
+ FIND_LIBRARY(NETCDF_LIBRARY netcdf
+ 	PATHS
+ 	/usr/lib
+@@ -159,6 +169,7 @@ IF (NETCDF_FOUND)
+ ELSE (NETCDF_FOUND)
+ 	MESSAGE (STATUS "Network Common Data Format (NetCDF) Library not found.")
+ ENDIF (NETCDF_FOUND)
++ENDIF (ENABLE_NETCDF)
+ 
+ add_subdirectory(icons)
+ add_subdirectory(src)
