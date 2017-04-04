@@ -1,5 +1,5 @@
-TIMESTAMP = 1491220035
+TIMESTAMP = 1491322091
 SHA256 (registry-0.15.0.tar.gz) = 75668ee40db333e48623787a58d23e46558178a8b5854031712cbfe18423778a
 SIZE (registry-0.15.0.tar.gz) = 7653088
-SHA256 (mozilla-geckodriver-0.15.0-v0.15.0_GH0.tar.gz) = 45dc5ad9eee22bb0b37f0b7684ef96b09d14665110b76f2165286fb55741be4f
-SIZE (mozilla-geckodriver-0.15.0-v0.15.0_GH0.tar.gz) = 41932
+SHA256 (mozilla-geckodriver-v0.15.0_GH0.tar.gz) = 45dc5ad9eee22bb0b37f0b7684ef96b09d14665110b76f2165286fb55741be4f
+SIZE (mozilla-geckodriver-v0.15.0_GH0.tar.gz) = 41932
