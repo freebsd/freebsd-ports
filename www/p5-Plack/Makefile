@@ -2,6 +2,7 @@
 
 PORTNAME=	Plack
 PORTVERSION=	1.0039
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -22,7 +23,6 @@ RUN_DEPENDS=	\
 	p5-Filesys-Notify-Simple>0:devel/p5-Filesys-Notify-Simple \
 	p5-HTTP-Body>=1.06:www/p5-HTTP-Body \
 	p5-HTTP-Headers-Fast>=0.18:www/p5-HTTP-Headers-Fast \
-	p5-HTTP-Tiny>=0.034:www/p5-HTTP-Tiny \
 	p5-Hash-MultiValue>=0.05:devel/p5-Hash-MultiValue \
 	p5-Path-Class>0:devel/p5-Path-Class \
 	p5-Stream-Buffered>=0.02:devel/p5-Stream-Buffered \
