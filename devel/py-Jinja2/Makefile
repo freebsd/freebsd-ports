@@ -31,6 +31,9 @@ BABEL_DESC=		Enable Babel extension
 
 BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel
 
+PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
+PY2TO3_ARGS=	--fix=all --no-diffs --nobackups --verbose --write
+
 .include <bsd.port.pre.mk>
 
 .if ${PKGNAMESUFFIX} == "-doc"
@@ -51,6 +54,9 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	*
 post-build:
+.	if ${PYTHON_REL} >= 3000
+	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
+.	endif
 	${PYTHON_CMD} -m compileall ${WRKSRC}/examples ; \
 	${PYTHON_CMD} -O -m compileall ${WRKSRC}/examples
 
