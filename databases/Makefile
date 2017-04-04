@@ -986,6 +986,7 @@
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
     SUBDIR += xapian-bindings
+    SUBDIR += xapian-bindings12
     SUBDIR += xapian-core
     SUBDIR += xapian-core10
     SUBDIR += xapian-core12
