@@ -3,6 +3,7 @@
 
 PORTNAME=	ikiwiki
 PORTVERSION=	3.20170111
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN_POOL \
 		LOCAL/mat/${PORTNAME}
@@ -54,8 +55,8 @@ MULTI_DESC=	Install Text::MultiMarkdown
 PO4A_RUN_DEPENDS=	po4a>=0.39:textproc/po4a
 PO4A_BUILD_DEPENDS=	po4a>=0.39:textproc/po4a
 SEARCH_RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
-		p5-Search-Xapian>=0:databases/p5-Search-Xapian \
-		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:www/xapian-omega
+		p5-Search-Xapian12>=0:databases/p5-Search-Xapian12 \
+		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:www/xapian-omega12
 MULTI_RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:textproc/p5-Text-MultiMarkdown
 
 PORTDOCS=	CHANGELOG NEWS README
