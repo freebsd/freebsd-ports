@@ -987,6 +987,7 @@
     SUBDIR += xapian-bindings
     SUBDIR += xapian-core
     SUBDIR += xapian-core10
+    SUBDIR += xapian-core12
     SUBDIR += xtrabackup
     SUBDIR += zodb3
 
