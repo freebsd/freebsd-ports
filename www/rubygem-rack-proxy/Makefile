@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-proxy
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

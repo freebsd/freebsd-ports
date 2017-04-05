@@ -1,0 +1,66 @@
+#!/bin/sh
+# PROVIDE: gitlab_runner
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable gitlab_runner:
+#
+# gitlab_runner_enable (bool):  Set to "NO" by default.
+#                               Set it to "YES" to enable gitlab-runner
+# gitlab_runner_dir (str):      Set to "/var/tmp/gitlab_runner" by default.
+#                               Set it to directory to run gitlab-runner in
+# gitlab_runner_user (str):     Set to "gitlab-runner" by default.
+#                               Set it to user to run gitlab_runner under
+# gitlab_runner_group (str):    Set to "gitlab-runner" by default.
+#                               Set it to group to run gitlab-runner under
+#
+
+. /etc/rc.subr
+
+name="gitlab_runner"
+rcvar="gitlab_runner_enable"
+
+load_rc_config $name
+
+: ${gitlab_runner_enable:="NO"}
+: ${gitlab_runner_dir:="/var/tmp/gitlab_runner"}
+: ${gitlab_runner_user:="gitlab-runner"}
+: ${gitlab_runner_group:="gitlab-runner"}
+
+export HOME=${gitlab_runner_dir}
+export PATH=${PATH}:%%PREFIX%%/bin
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} %%PREFIX%%/bin/gitlab-runner run"
+gitlab_runner_chdir="${gitlab_runner_dir}"
+
+procname=%%PREFIX%%/bin/gitlab-runner
+
+start_precmd="gitlab_runner_startprecmd"
+list_cmd="listfunc"
+register_cmd="registerfunc"
+
+listfunc()
+{
+        su -m ${gitlab_runner_user} -c "env HOME=${gitlab_runner_dir} %%PREFIX%%/bin/gitlab-runner list"
+}
+
+registerfunc()
+{
+        su -m ${gitlab_runner_user} -c "env HOME=${gitlab_runner_dir} %%PREFIX%%/bin/gitlab-runner register"
+}
+
+gitlab_runner_startprecmd()
+{
+        if [ ! -e "${pidfile}" ]; then
+                install -g ${gitlab_runner_group} -o ${gitlab_runner_user} -- /dev/null "${pidfile}";
+        fi
+        if [ ! -d "${gitlab_runner_dir}" ]; then
+                install -d -o "${gitlab_runner_user}" -g "${gitlab_runner_group}" "${gitlab_runner_dir}"
+        fi
+}
+
+extra_commands="list register"
+run_rc_command $1
