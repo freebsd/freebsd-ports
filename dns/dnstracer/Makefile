@@ -13,8 +13,6 @@ COMMENT=	Trace a chain of DNS servers to the source
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_sparc64=	fails to build
-
 USES=		gmake autoreconf
 GNU_CONFIGURE=	yes
 
