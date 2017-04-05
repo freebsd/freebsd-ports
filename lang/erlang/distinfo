@@ -1,4 +1,4 @@
-TIMESTAMP = 1489653038
+TIMESTAMP = 1491386929
 SHA256 (erlang/otp_src_19.3.tar.gz) = fe4a00651db39b8542b04530a48d24b2f2e7e0b77cbe93d728c9f05325bdfe83
 SIZE (erlang/otp_src_19.3.tar.gz) = 68510871
 SHA256 (erlang/otp_doc_man_19.3.tar.gz) = f8192ffdd7367083c055695eeddf198155da43dcc221aed1d870d1e3871dd95c
@@ -17,3 +17,5 @@ SHA256 (erlang/mnesia_overview.pdf) = f07f9edd4ba865a1c50647dd6fa4a8f49277f8f3be
 SIZE (erlang/mnesia_overview.pdf) = 150266
 SHA256 (erlang/programming_rules.pdf) = b95f8851004832b044e064c12976a422613ece897e98308a27ee8b66738b4502
 SIZE (erlang/programming_rules.pdf) = 77025
+SHA256 (erlang/patch-otp-19.3.1) = 2373f890516b58ae006812ba5f15e4af1f8820be98230011b8cd8b345f51dedd
+SIZE (erlang/patch-otp-19.3.1) = 30225
