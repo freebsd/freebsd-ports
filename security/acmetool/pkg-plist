@@ -1,0 +1,6 @@
+man/man8/acmetool.8.gz
+bin/acmetool
+@dir /var/db/acme
+@dir /var/db/
+@dir libexec/acme
+@dir libexec/acme/hooks
