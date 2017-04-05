@@ -1,6 +1,6 @@
---- gollum-lib.gemspec.orig	2017-01-03 13:59:10.693257000 -0500
-+++ gollum-lib.gemspec	2017-01-03 13:59:26.688694000 -0500
-@@ -25,13 +25,13 @@
+--- gollum-lib.gemspec.orig	2017-04-05 13:01:50 UTC
++++ gollum-lib.gemspec
+@@ -25,13 +25,13 @@ Gem::Specification.new do |s|
      s.specification_version = 2
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -12,7 +12,7 @@
        s.add_runtime_dependency(%q<stringex>.freeze, ["~> 2.6"])
 -      s.add_runtime_dependency(%q<sanitize>.freeze, ["~> 2.1"])
 +      s.add_runtime_dependency(%q<sanitize>.freeze, [">= 2.1"])
-       s.add_runtime_dependency(%q<github-markup>.freeze, ["~> 1.4"])
+       s.add_runtime_dependency(%q<github-markup>.freeze, ["~> 1.6"])
 -      s.add_runtime_dependency(%q<gemojione>.freeze, ["~> 2.2"])
 +      s.add_runtime_dependency(%q<gemojione>.freeze, [">= 2.2"])
        s.add_development_dependency(%q<org-ruby>.freeze, ["~> 0.9.9"])
