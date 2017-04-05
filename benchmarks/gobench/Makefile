@@ -18,6 +18,9 @@ GH_ACCOUNT=	tabrarg
 NO_ARCH=        yes
 NO_BUILD=       yes
 
+DEPRECATED=	Builds each time it runs
+EXPIRATION_DATE=	2017-05-05
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/gobench
 
