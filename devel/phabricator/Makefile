@@ -2,9 +2,9 @@
 
 PORTNAME=	phabricator
 PORTVERSION=	20161003
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-PKGNAMEPREFIX=	php5-
+PKGNAMEPREFIX=	php-
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Open source, software engineering platform
@@ -12,8 +12,8 @@ COMMENT=	Open source, software engineering platform
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	php5-libphutil>0:devel/libphutil \
-		php5-arcanist>0:devel/arcanist \
+RUN_DEPENDS=	php-libphutil>0:devel/libphutil \
+		php-arcanist>0:devel/arcanist \
 		git:devel/git
 
 OPTIONS_DEFINE=	GD OPCACHE
