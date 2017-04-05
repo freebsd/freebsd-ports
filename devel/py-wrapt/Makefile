@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wrapt
-PORTVERSION=	1.10.8
+PORTVERSION=	1.10.10
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decorators, wrappers and monkey patching
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
 USE_PYTHON=	autoplist distutils
+USES=		python
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/wrapt/_wrappers.so
 
 .include <bsd.port.mk>
