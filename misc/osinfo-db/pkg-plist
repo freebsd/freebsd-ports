@@ -118,6 +118,7 @@ share/osinfo/os/fedoraproject.org/fedora-21.xml
 share/osinfo/os/fedoraproject.org/fedora-22.xml
 share/osinfo/os/fedoraproject.org/fedora-23.xml
 share/osinfo/os/fedoraproject.org/fedora-24.xml
+share/osinfo/os/fedoraproject.org/fedora-25.xml
 share/osinfo/os/fedoraproject.org/fedora-3.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
@@ -175,6 +176,7 @@ share/osinfo/os/freebsd.org/freebsd-9.0.xml
 share/osinfo/os/freebsd.org/freebsd-9.1.xml
 share/osinfo/os/freebsd.org/freebsd-9.2.xml
 share/osinfo/os/freebsd.org/freebsd-9.3.xml
+share/osinfo/os/freebsd.org/freebsd-11.0.xml
 share/osinfo/os/gnome.org/gnome-3.6.xml
 share/osinfo/os/gnome.org/gnome-3.8.xml
 share/osinfo/os/gnome.org/gnome-continuous-3.10.xml
@@ -183,6 +185,8 @@ share/osinfo/os/gnome.org/gnome-continuous-3.14.xml
 share/osinfo/os/mageia.org/mageia-1.xml
 share/osinfo/os/mageia.org/mageia-2.xml
 share/osinfo/os/mageia.org/mageia-3.xml
+share/osinfo/os/mageia.org/mageia-4.xml
+share/osinfo/os/mageia.org/mageia-5.xml
 share/osinfo/os/mandriva.com/mandrake-10.0.xml
 share/osinfo/os/mandriva.com/mandrake-10.1.xml
 share/osinfo/os/mandriva.com/mandrake-10.2.xml
@@ -284,6 +288,7 @@ share/osinfo/os/opensuse.org/opensuse-12.3.xml
 share/osinfo/os/opensuse.org/opensuse-13.1.xml
 share/osinfo/os/opensuse.org/opensuse-13.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
+share/osinfo/os/opensuse.org/opensuse-42.2.xml
 share/osinfo/os/opensuse.org/opensuse-factory.xml
 share/osinfo/os/opensuse.org/opensuse-tumbleweed.xml
 share/osinfo/os/opensuse.org/opensuse-unknown.xml
@@ -366,6 +371,10 @@ share/osinfo/os/redhat.com/rhl-9.xml
 share/osinfo/os/sun.com/opensolaris-2009.06.xml
 share/osinfo/os/sun.com/solaris-10.xml
 share/osinfo/os/sun.com/solaris-9.xml
+share/osinfo/os/suse.com/sled-10.1.xml
+share/osinfo/os/suse.com/sled-10.2.xml
+share/osinfo/os/suse.com/sled-10.3.xml
+share/osinfo/os/suse.com/sled-10.4.xml
 share/osinfo/os/suse.com/sled-10.xml
 share/osinfo/os/suse.com/sled-11.1.xml
 share/osinfo/os/suse.com/sled-11.2.xml
@@ -373,8 +382,13 @@ share/osinfo/os/suse.com/sled-11.3.xml
 share/osinfo/os/suse.com/sled-11.4.xml
 share/osinfo/os/suse.com/sled-11.xml
 share/osinfo/os/suse.com/sled-12.1.xml
+share/osinfo/os/suse.com/sled-12.2.xml
 share/osinfo/os/suse.com/sled-12.xml
 share/osinfo/os/suse.com/sled-9.xml
+share/osinfo/os/suse.com/sles-10.1.xml
+share/osinfo/os/suse.com/sles-10.2.xml
+share/osinfo/os/suse.com/sles-10.3.xml
+share/osinfo/os/suse.com/sles-10.4.xml
 share/osinfo/os/suse.com/sles-10.xml
 share/osinfo/os/suse.com/sles-11.1.xml
 share/osinfo/os/suse.com/sles-11.2.xml
@@ -382,6 +396,7 @@ share/osinfo/os/suse.com/sles-11.3.xml
 share/osinfo/os/suse.com/sles-11.4.xml
 share/osinfo/os/suse.com/sles-11.xml
 share/osinfo/os/suse.com/sles-12.1.xml
+share/osinfo/os/suse.com/sles-12.2.xml
 share/osinfo/os/suse.com/sles-12.xml
 share/osinfo/os/suse.com/sles-9.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
@@ -397,6 +412,7 @@ share/osinfo/os/ubuntu.com/ubuntu-14.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-15.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-15.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-16.04.xml
+share/osinfo/os/ubuntu.com/ubuntu-16.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml

@@ -10,10 +10,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Autocompletion tool for Python
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	davidhalter
 
-USES?=		python:2
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+USES?=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+Acmetool is an easy-to-use command line tool for automatically acquiring
+certificates from ACME servers (such as Let's Encrypt).  It is designed
+to flexibly integrate into your webserver setup to enable automatic
+verification, however, unlike the official Let's Encrypt client, it
+doesn't modify your web server configuration.
+
+WWW: https://github.com/hlandau/acme/
