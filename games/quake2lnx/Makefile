@@ -3,7 +3,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/
 DISTNAME=	quake2-r${PORTVERSION}
@@ -181,7 +181,7 @@ MAKE_ARGS+=	HAVE_IPV6=YES
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-MAKE_ARGS+=	OPTIMIZED_CFLAGS="-O3 -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations"
+MAKE_ARGS+=	OPTIMIZED_CFLAGS="-O3 -ffast-math -funroll-loops -fomit-frame-pointer"
 .endif
 
 .if ! ${PORT_OPTIONS:MASM}
@@ -201,6 +201,9 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|/js|/joy|' ${WRKSRC}/src/linux/joystick.c
 	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_&|' \
 		${WRKSRC}/src/ref_candygl/gl_image.c
+	${REINPLACE_CMD} -e '/BUILDSTRING/s|Linux|${OPSYS}|' \
+		-e '/CPUSTRING/s|Unknown|${ARCH}|' \
+		${WRKSRC}/src/qcommon/qcommon.h
 
 do-install:
 .for tgt in ${EXE_TARGETS}
@@ -224,12 +227,17 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/game.so \
 		${STAGEDIR}${LIBDIR}/baseq2
 .endif
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/docs/3.*_Changes.txt \
+		${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/docs/README \
 		${STAGEDIR}${DOCSDIR}/README.320
-	${INSTALL_DATA} ${WRKSRC}/src/docs/joystick.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/docs/quake2.3dfxgl ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/docs/changes.txt \
+		${WRKSRC}/src/docs/joystick.txt \
+		${WRKSRC}/src/docs/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>

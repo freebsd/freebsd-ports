@@ -12,10 +12,17 @@
 %%SOFTSDL%%%%LIBDIR%%/ref_softsdl.so
 %%X11%%%%LIBDIR%%/ref_softx.so
 @comment === DOCS ===
+%%PORTDOCS%%%%DOCSDIR%%/3.15_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.16_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.17_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.19_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.20_Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/3.21_Changes.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.320
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
 %%PORTDOCS%%%%DOCSDIR%%/joystick.txt
-%%PORTDOCS%%%%DOCSDIR%%/quake2.3dfxgl
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
 @comment === DATA ===
 %%QMAX%%%%LIBDIR%%/baseq2/maxpak.pak
 @comment === CLEANUP ===

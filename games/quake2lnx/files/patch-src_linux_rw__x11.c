@@ -1,5 +1,14 @@
 --- src/linux/rw_x11.c.orig	Wed Oct  9 03:54:25 2002
 +++ src/linux/rw_x11.c	Mon Jun 16 23:19:40 2003
+@@ -151,7 +151,7 @@
+ int config_notify_height;
+ 						      
+ typedef unsigned short PIXEL16;
+-typedef unsigned long PIXEL24;
++typedef unsigned int PIXEL24;
+ #ifdef REDBLUE
+ static PIXEL16 st2d_8to16table_s[2][256];
+ static PIXEL24 st2d_8to24table_s[2][256];
 @@ -446,7 +446,7 @@
  qboolean OpenJoystick(cvar_t *joy_dev) {
    int i, err;
