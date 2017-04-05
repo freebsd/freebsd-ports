@@ -16,7 +16,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libhunspell-1.6.so:textproc/hunspell \
 		libxml++-2.6.so:textproc/libxml++26
 
-USES=		desktop-file-utils pkgconfig qmake
+USES=		compiler:c++11-lang desktop-file-utils pkgconfig qmake
+USE_CXXSTD=	c++11
 USE_GL=		gl
 USE_SDL=	mixer
 USE_QT4=	moc_build rcc_build uic_build \
