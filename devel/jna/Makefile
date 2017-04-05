@@ -27,15 +27,12 @@ PORTDOCS=	javadoc platform-${PORTVERSION}-javadoc.jar
 PLIST_FILES=	%%JAVAJARDIR%%/jna-platform.jar \
 		%%JAVAJARDIR%%/jna.jar
 
+ALL_TARGET=	native jar
+TEST_TARGET=	test
+
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "i386"
-ANT_ARCH=	x86
-.elif ${ARCH} == "amd64"
-ANT_ARCH=	x86-64
-.endif
+ANT_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
