@@ -1,0 +1,10 @@
+bin/gio
+%%SITE_PERL%%/Giovanni.pm
+%%SITE_PERL%%/Giovanni/Plugins/Git.pm
+%%SITE_PERL%%/Giovanni/Plugins/Hipchat.pm
+%%SITE_PERL%%/Giovanni/Stages.pm
+%%PERL5_MAN1%%/gio.1.gz
+%%PERL5_MAN3%%/Giovanni.3.gz
+%%PERL5_MAN3%%/Giovanni::Plugins::Git.3.gz
+%%PERL5_MAN3%%/Giovanni::Plugins::Hipchat.3.gz
+%%PERL5_MAN3%%/Giovanni::Stages.3.gz
