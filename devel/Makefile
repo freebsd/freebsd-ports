@@ -3857,6 +3857,7 @@
     SUBDIR += pecl-event
     SUBDIR += pecl-expect
     SUBDIR += pecl-gearman
+    SUBDIR += pecl-grpc
     SUBDIR += pecl-hrtime
     SUBDIR += pecl-htscanner
     SUBDIR += pecl-inotify
