@@ -2,8 +2,9 @@
 
 PORTNAME=	libphutil
 PORTVERSION=	20161003
+PORTREVISION=	1
 CATEGORIES=	devel
-PKGNAMEPREFIX=	php5-
+PKGNAMEPREFIX=	php-
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Collection of PHP utility classes
