@@ -2,6 +2,7 @@
 
 PORTNAME=	oysttyer
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	pi@FreeBSD.org
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	curl:ftp/curl \
-		p5-Term-ReadLine>=1.14:devel/p5-Term-ReadLine \
 		p5-TimeDate>=2.30:devel/p5-TimeDate
 
 USES=		perl5 shebangfix
