@@ -15,7 +15,8 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libgconfmm-2.6.so:devel/gconfmm26
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig tar:bzip2
+USES=		compiler:c++11-lang pkgconfig tar:bzip2
+USE_CXXSTD=	c++11
 
 PLIST_FILES=	bin/gtkmmorse \
 		man/man1/gtkmmorse.1.gz
