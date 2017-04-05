@@ -11,6 +11,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome-based loudspeaker design program
 
+BROKEN=		Does not build with recent sigc++20
+
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
 USES=		autoreconf gmake pkgconfig
