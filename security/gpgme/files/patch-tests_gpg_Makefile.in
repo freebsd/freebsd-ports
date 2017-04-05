@@ -1,0 +1,14 @@
+gpg 2.1.x needs pinentry loopback mode enabled for the passphase callback
+supplied by the tests to work
+
+--- tests/gpg/Makefile.in.orig	2017-04-05 12:22:44 UTC
++++ tests/gpg/Makefile.in
+@@ -1115,6 +1115,8 @@ export GPG_AGENT_INFO :=
+ ./gpg.conf:
+ # This is required for t-sig-notations.
+ 	echo no-force-v3-sigs > ./gpg.conf
++	echo "ignore-invalid-option pinentry-mode" >> ./gpg.conf
++	echo "pinentry-mode loopback" >> ./gpg.conf
+ 
+ ./gpg-agent.conf:
+ # This is required for gpg2, which does not support command fd.
