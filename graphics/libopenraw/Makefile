@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libopenraw
-PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTVERSION=	0.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
@@ -22,11 +21,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include \
 		--disable-silent-rules
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 # Unhide SEEK_SET to fix build with GCC 4.9 (ports/193528).
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 
-OPTIONS_DEFINE=		GNOME
+OPTIONS_DEFINE=		GNOME TEST
 OPTIONS_DEFAULT=	GNOME
 OPTIONS_SUB=		yes
 
@@ -36,6 +36,8 @@ GNOME_USE=		GNOME=glib20,gdkpixbuf2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure
+
+post-patch-TEST-off:
 	@${REINPLACE_CMD} -e 's|testsuite ||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
