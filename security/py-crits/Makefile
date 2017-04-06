@@ -14,6 +14,9 @@ COMMENT=		Collaborative Research Into Threats
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+DEPRECATED=	        Does not build with py-django18 see pr: 216758
+EXPIRATION_DATE=	2017-04-19
+
 USE_GITHUB=		yes
 
 USES=			python
