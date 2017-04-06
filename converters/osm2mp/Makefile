@@ -37,7 +37,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/osm2mp.pl ${STAGEDIR}${PREFIX}/bin/osm2mp
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} '*.cmap *.yml *.txt *.typ polish-mp' ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
