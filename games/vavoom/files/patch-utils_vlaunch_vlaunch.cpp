@@ -1,5 +1,5 @@
 --- utils/vlaunch/vlaunch.cpp.orig	2011-01-01 12:51:56.000000000 +0100
-+++ utils/vlaunch/vlaunch.cpp	2012-12-24 00:17:28.000000000 +0100
++++ utils/vlaunch/vlaunch.cpp	2017-04-06 16:15:41.198381000 +0200
 @@ -145,7 +145,7 @@
  	wxNotebook* nbook = new wxNotebook(panel, -1, wxPoint(0, 105), wxSize(447, 270));
  	mainsizer->Add(nbook);
