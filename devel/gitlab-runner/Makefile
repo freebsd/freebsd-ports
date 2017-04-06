@@ -2,6 +2,7 @@
 
 PORTNAME=	gitlab-runner
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	\
 		https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/repository/archive.tar.bz2?ref=v${PORTVERSION}&dummy=/ \
