@@ -12,16 +12,12 @@ COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
 
-USES=		charsetfix cpe gmake iconv makeinfo perl5 tar:xz
-=======
 TEST_DEPENDS=	p5-HTTP-Daemon>=0:www/p5-HTTP-Daemon \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 USES=		charsetfix cpe iconv makeinfo perl5 tar:xz
->>>>>>> upstream/master
 USE_PERL5=	build
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
