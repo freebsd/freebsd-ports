@@ -52,7 +52,7 @@ REDBLUE_DESC=		Enable 3D glasses rendering
 #                       ###
 
 .if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xxf86dga
+USE_XORG=	x11 xext xxf86dga xxf86vm
 MAKE_ARGS+=	BUILD_X11=YES
 REF_TARGETS+=	softx
 PLIST_SUB+=	X11=""
@@ -62,6 +62,7 @@ PLIST_SUB+=	X11="@comment "
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MEYECANDY}
 USE_GL=		gl
+USE_XORG=	x11 xext xxf86dga xxf86vm
 MAKE_ARGS+=	BUILD_GLX=YES
 REF_TARGETS+=	glx
 PLIST_SUB+=	GLX=""

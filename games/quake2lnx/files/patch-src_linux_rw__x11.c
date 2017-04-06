@@ -1,5 +1,14 @@
 --- src/linux/rw_x11.c.orig	Wed Oct  9 03:54:25 2002
 +++ src/linux/rw_x11.c	Mon Jun 16 23:19:40 2003
+@@ -53,7 +53,7 @@
+ #include <X11/Xatom.h>
+ #include <X11/keysym.h>
+ #include <X11/extensions/XShm.h>
+-#include <X11/extensions/xf86dga.h>
++#include <X11/extensions/Xxf86dga.h>
+ #ifdef OPENGL
+ #include <X11/extensions/xf86vmode.h>
+ #endif
 @@ -151,7 +151,7 @@
  int config_notify_height;
  						      
