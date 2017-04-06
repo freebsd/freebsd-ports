@@ -10,6 +10,7 @@ MAINTAINER=		lifanov@FreeBSD.org
 COMMENT=		Tool to create Docker hosts
 
 LICENSE=		APACHE20
+LICENSE_FILE=		${WRKSRC}/LICENSE
 
 PLIST_FILES=		bin/docker-machine
 
