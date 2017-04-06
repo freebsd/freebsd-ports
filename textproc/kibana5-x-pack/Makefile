@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	x-pack
-PORTVERSION=	5.0.2
+PORTVERSION=	5.3.0
 CATEGORIES=	textproc java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/packs/x-pack/
-PKGNAMEPREFIX=	kibana50-
+PKGNAMEPREFIX=	kibana5-
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Kibana 5.0 X-Pack plugins
 
 
-RUN_DEPENDS:=	kibana50>=5.0.0:textproc/kibana50
+RUN_DEPENDS:=	kibana5>=5.3.0:textproc/kibana5
 
 NO_BUILD=	yes
 
@@ -23,6 +23,6 @@ do-extract:
 	      ${_DISTDIR}${DISTFILES} )
 
 do-install:
-	@cd ${WRKSRC}/kibana && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/kibana50/plugins/x-pack
+	@cd ${WRKSRC}/kibana && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/kibana5/plugins
 
 .include <bsd.port.mk>

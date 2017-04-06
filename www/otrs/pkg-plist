@@ -916,6 +916,7 @@ otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/FQDN.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/FileSystemWritable.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/PackageDeployment.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/PackageList.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/SessionConfigSettings.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/SpoolMails.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/SystemID.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/DefaultType.pm
@@ -930,6 +931,7 @@ otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/LoadedModules.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/MPMModel.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/Performance.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/EnvironmentVariables.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/InternalWebRequest.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Version.pm
 otrs/Kernel/System/SupportDataCollector/PluginAsynchronous.pm
 otrs/Kernel/System/SupportDataCollector/PluginAsynchronous/OTRS/ConcurrentUsers.pm
@@ -950,7 +952,7 @@ otrs/Kernel/System/Ticket/ArticleSearchIndex/StaticDB.pm
 otrs/Kernel/System/Ticket/ArticleStorageDB.pm
 otrs/Kernel/System/Ticket/ArticleStorageFS.pm
 otrs/Kernel/System/Ticket/ColumnFilter.pm
-otrs/Kernel/System/Ticket/Custom.pm.example
+otrs/Kernel/System/Ticket/CustomExample.pm
 otrs/Kernel/System/Ticket/CustomerPermission/CustomerIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/CustomerUserIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/GroupCheck.pm
