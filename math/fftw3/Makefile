@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fftw3
-DISTVERSION=	3.3.6-pl1
-PORTREVISION?=	1
+DISTVERSION=	3.3.6-pl2
+PORTREVISION?=	0
 CATEGORIES=	math
 MASTER_SITES=	http://www.fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/
@@ -13,7 +13,7 @@ DISTNAME=	fftw-${DISTVERSION}
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 #current flavors: default, float, long, and quad
