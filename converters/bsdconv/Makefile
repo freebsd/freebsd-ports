@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdconv
-PORTVERSION=	11.3.1
+PORTVERSION=	11.5
 CATEGORIES=	converters
 
 MAINTAINER=	buganini@gmail.com
@@ -22,6 +22,7 @@ ALL_TARGET=	libbsdconv bsdconv-mktable meta bsdconv-man bsdconv-completion bsdco
 INSTALL_TARGET=	installdir install_main install_filters install_scorers install_basic
 MAKE_ARGS=	PREFIX=${PREFIX} STRIP=${STRIP}
 USE_LDCONFIG=	yes
+USES=		gmake
 
 CHINESE_ALL_TARGET=	codecs_chinese
 CHINESE_INSTALL_TARGET=	install_chinese
