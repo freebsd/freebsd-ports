@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION=	5.0.2
+PORTVERSION=	5.3.0
 DISTVERSIONSUFFIX=	-linux-x86
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
-PKGNAMESUFFIX?=	50
+PKGNAMESUFFIX?=	5
 
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Browser based analytics and search interface to ElasticSearch
