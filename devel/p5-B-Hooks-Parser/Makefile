@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	B-Hooks-Parser
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	p5-B-Hooks-OP-Check>=0:devel/p5-B-Hooks-OP-Check \
 		p5-ExtUtils-Depends>=0.302:devel/p5-ExtUtils-Depends
 RUN_DEPENDS=	p5-B-Hooks-OP-Check>=0:devel/p5-B-Hooks-OP-Check
 TEST_DEPENDS=	p5-B-Hooks-EndOfScope>=0.05:devel/p5-B-Hooks-EndOfScope \
-		p5-Test-Exception>=0:devel/p5-Test-Exception
+		p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
 USE_PERL5=	configure
