@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		siegfried
-PORTVERSION=		1.7.1
+PORTVERSION=		1.7.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=		sysutils
 
@@ -10,6 +10,7 @@ MAINTAINER=		steffen@fritz.wtf
 COMMENT=		File identification tool
 
 LICENSE=		APACHE20
+LICENSE_FILE=		${WRKSRC}/LICENSE.txt
 
 PLIST_FILES=		bin/sf
 
