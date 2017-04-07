@@ -1,6 +1,6 @@
---- Imakefile.orig	Sat Mar 15 05:32:37 2003
-+++ Imakefile	Sat Mar 15 05:33:50 2003
-@@ -12,7 +12,7 @@
+--- Imakefile.orig	2003-02-04 02:43:32 UTC
++++ Imakefile
+@@ -12,7 +12,7 @@ LOCAL_LIBRARIES = XawClientLibs XkbClien
  SYS_LIBRARIES = MathLibrary
  DEFINES = XkbClientDefines 
  
