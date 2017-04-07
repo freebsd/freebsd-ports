@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI
-PORTVERSION=	4.35
+PORTVERSION=	4.36
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +16,10 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-HTML-Parser>=3.69:www/p5-HTML-Parser
 RUN_DEPENDS=	p5-HTML-Parser>=3.69:www/p5-HTML-Parser
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
+		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
 
-CONFLICTS=	p5-CGI.pm-[1-3]*
+CONFLICTS_INSTALL=	p5-CGI.pm-[1-3]*
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
@@ -30,7 +31,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

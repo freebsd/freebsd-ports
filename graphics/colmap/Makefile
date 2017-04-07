@@ -33,7 +33,6 @@ EXCLUDE=	SQLite
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S,^,--exclude src/ext/,}
 CMAKE_ARGS=	-DBOOST_STATIC=off -DCUDA_ENABLED=off
 CFLAGS+=	-DVL_OS_LINUX=1
-CXXFLAGS+=	-fpermissive # libc++ <future> vs. g++49
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 LDFLAGS+=	-Wl,--as-needed # gflags, glu, xi, xmu
