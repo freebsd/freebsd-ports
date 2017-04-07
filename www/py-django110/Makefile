@@ -21,7 +21,7 @@ NO_ARCH=	yes
 USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS_INSTALL=	py??-django-devel-* py??-django1[689]-*
+CONFLICTS_INSTALL=	py??-django-devel-* py??-django1[689]-* py??-django111-*
 CPE_VENDOR=		djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
