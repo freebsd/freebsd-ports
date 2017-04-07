@@ -1,0 +1,8 @@
+Apache Tomcat is a web server written in 100% Pure Java.
+
+This is the version of Tomcat currently under active development.
+Development releases may contain large amounts of untested or missing
+functionality required by the specification and/or significant
+bugs and are not expected to run stably for any length of time.
+
+WWW: http://tomcat.apache.org/
