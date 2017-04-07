@@ -8,7 +8,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Defer inflating of columns until they are used
 
 BUILD_DEPENDS=	p5-Data-Lazy>=0:devel/p5-Data-Lazy \

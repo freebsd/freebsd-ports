@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Serve static files with Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=2.99:www/p5-Catalyst-Runtime \

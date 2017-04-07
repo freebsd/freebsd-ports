@@ -6,7 +6,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a fake ShareDir for your modules for testing
 
 BUILD_DEPENDS=	p5-Class-Tiny>0:devel/p5-Class-Tiny \

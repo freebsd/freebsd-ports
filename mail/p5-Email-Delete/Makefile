@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C|\.([0-9])$|\1|}
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Delete Messages from Folders
 
 RUN_DEPENDS=	p5-Email-Folder>=0.84:mail/p5-Email-Folder \

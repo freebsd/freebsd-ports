@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	FastMmap sessions for Catalyst
 
 BUILD_DEPENDS=	p5-Cache-FastMmap>0:devel/p5-Cache-FastMmap \

@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validate XML and XHTML
 
 RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML \

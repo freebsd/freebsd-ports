@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Email::Folder Access to IMAP Folders
 
 RUN_DEPENDS=	p5-Email-FolderType-Net>=0:mail/p5-Email-FolderType-Net \

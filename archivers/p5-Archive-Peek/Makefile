@@ -8,7 +8,7 @@ CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Peek into archives without extracting them
 
 BUILD_DEPENDS=	p5-Archive-Tar>=0:archivers/p5-Archive-Tar \
