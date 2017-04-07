@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SQL-Statement
-PORTVERSION=	1.410
+PORTVERSION=	1.412
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,11 +12,15 @@ COMMENT=	Perl5 module for SQL parsing and processing
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/ARTISTIC-1.0
+LICENSE_FILE_GPLv1=	${WRKSRC}/GPL-1
 
-RUN_DEPENDS=	p5-Clone>=0.30:devel/p5-Clone \
+BUILD_DEPENDS=	p5-Clone>=0.30:devel/p5-Clone \
+		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Params-Util>=1.00:devel/p5-Params-Util
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
