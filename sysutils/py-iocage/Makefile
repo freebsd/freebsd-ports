@@ -13,6 +13,7 @@ COMMENT=	FreeBSD jail manager written in Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py-pytest-runner
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.10.0:misc/py-tqdm \
 		ca_root_nss>0:security/ca_root_nss \
