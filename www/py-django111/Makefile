@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.8.18
+PORTVERSION=	1.11
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
-		https://www.djangoproject.com/m/releases/${PORTVERSION:R}/
+		https://www.djangoproject.com/m/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	18
+PKGNAMESUFFIX=	111
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	High-level Python Web Framework (1.8.x LTS)
+COMMENT=	High-level Python Web Framework
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -21,7 +21,7 @@ NO_ARCH=	yes
 USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS_INSTALL=	py??-django-devel-* py??-django1[69]-* py??-django11[01]-*
+CONFLICTS_INSTALL=	py??-django-devel-* py??-django1[689]-* py??-django110-*
 CPE_VENDOR=		djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
