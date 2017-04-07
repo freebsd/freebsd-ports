@@ -1,6 +1,6 @@
---- setup.py.orig	2017-03-17 07:24:28 UTC
+--- setup.py.orig	2017-04-02 13:48:04 UTC
 +++ setup.py
-@@ -1801,12 +1801,12 @@ if WIN32:
+@@ -1804,12 +1804,12 @@ if WIN32:
  else:
      #OSX and *nix:
      scripts += ["scripts/xpra", "scripts/xpra_launcher"]
@@ -15,7 +15,7 @@
      add_data_files("share/appdata",       ["xdg/xpra.appdata.xml"])
  
      #here, we override build and install so we can
-@@ -1839,7 +1839,7 @@ else:
+@@ -1842,7 +1842,7 @@ else:
              if printing_ENABLED and os.name=="posix":
                  #install "/usr/lib/cups/backend" with 0700 permissions:
                  xpraforwarder_src = os.path.join("cups", "xpraforwarder")
@@ -24,12 +24,12 @@
                  self.mkpath(cups_backend_dir)
                  xpraforwarder_dst = os.path.join(cups_backend_dir, "xpraforwarder")
                  shutil.copyfile(xpraforwarder_src, xpraforwarder_dst)
-@@ -1891,7 +1891,7 @@ else:
+@@ -1894,7 +1894,7 @@ else:
          add_packages("xpra.platform.xposix")
          remove_packages("xpra.platform.win32", "xpra.platform.darwin")
          #not supported by all distros, but doesn't hurt to install it anyway:
--        add_data_files("lib/tmpfiles.d", ["tmpfiles.d/xpra.conf"])
-+        #add_data_files("lib/tmpfiles.d", ["tmpfiles.d/xpra.conf"])
+-        add_data_files("/usr/lib/tmpfiles.d", ["tmpfiles.d/xpra.conf"])
++        #add_data_files("/usr/lib/tmpfiles.d", ["tmpfiles.d/xpra.conf"])
  
      #gentoo does weird things, calls --no-compile with build *and* install
      #then expects to find the cython modules!? ie:
