@@ -42,7 +42,7 @@ EXCLUDE=	libzip zlib
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 USE_GL=		gl glew glu
 USE_SDL=	sdl2 # joystick
-CMAKE_ARGS=	-DUSE_SYSTEM_FFMPEG=on
+CMAKE_ARGS=	-DUSING_EGL=off -DUSE_SYSTEM_FFMPEG=on
 SUB_FILES=	pkg-message
 PORTDATA=	assets ${PORTNAME}
 
