@@ -47,7 +47,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 # Fix P_KTHREAD r295435
-.if ${OSVERSION} >= 1100097
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100097
 	${REINPLACE_CMD} 's/P_KTHREAD/P_KPROC/' ${WRKSRC}/lib/utils.c
 .endif
 
