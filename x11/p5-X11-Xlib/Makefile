@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	X11-Xlib
-PORTVERSION=	0.03
+PORTVERSION=	0.11
 CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,11 +12,12 @@ COMMENT=	Low-level access to the X11 library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
+BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
+		devel/p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_XORG=	x11 xproto xinerama xtst
+USE_XORG=	x11 xext xproto xinerama xtst
 
 pre-configure:
 	cd ${WRKSRC} && ${PERL} Makefile.PL
