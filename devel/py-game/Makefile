@@ -13,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Module designed to write games in Python
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LGPL
 
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 RUN_DEPENDS=	${PYNUMPY}
@@ -45,11 +46,13 @@ pre-configure:
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py -auto
 
-post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${TAR} -C ${WRKSRC}/examples -cf - . | \
 		${TAR} --unlink -C ${STAGEDIR}${EXAMPLESDIR} -xf -
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${TAR} -C ${WRKSRC}/docs -cf - . | \
 		${TAR} --unlink -C ${STAGEDIR}${DOCSDIR} -xf -
 
