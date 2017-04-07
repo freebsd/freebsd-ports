@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Publish POE event handlers via SOAP over HTTP
 
 BUILD_DEPENDS=	p5-SOAP-Lite>=0.55:net/p5-SOAP-Lite \

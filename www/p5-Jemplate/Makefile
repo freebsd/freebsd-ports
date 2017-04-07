@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:INGY
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Jemplate-0.27
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	JavaScript Templating with Template Toolkit
 
 RUN_DEPENDS=	p5-File-Find-Rule>=0.30:devel/p5-File-Find-Rule \

@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moose role for setting attributes from a simple configfile
 
 RUN_DEPENDS=	p5-Moose>=0.35:devel/p5-Moose \

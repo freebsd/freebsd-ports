@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NEILB/scripts
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Script for uploading distributions to CPAN
 
 RUN_DEPENDS=	p5-AppConfig-Std>=1.05:devel/p5-AppConfig-Std \

@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Template::Plugin::FillInForm - TT plugin for HTML::FillInForm
 
 RUN_DEPENDS=	p5-HTML-FillInForm>=0:www/p5-HTML-FillInForm \

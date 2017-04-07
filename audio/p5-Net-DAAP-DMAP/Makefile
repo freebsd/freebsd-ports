@@ -8,7 +8,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for reading and writing DAAP structures
 
 BUILD_DEPENDS=	p5-Math-BigInt>0:math/p5-Math-BigInt

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BINGOS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find the distributions recently uploaded to CPAN
 
 RUN_DEPENDS=	p5-libwww>=5.835:www/p5-libwww \

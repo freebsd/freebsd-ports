@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use WWW::Mechanize with CGI applications
 
 RUN_DEPENDS=	p5-HTTP-Request-AsCGI>=0.2:www/p5-HTTP-Request-AsCGI \

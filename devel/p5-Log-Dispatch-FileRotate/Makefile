@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log::Dispatch plug-in for files that archive/rotate themselves
 
 BUILD_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
