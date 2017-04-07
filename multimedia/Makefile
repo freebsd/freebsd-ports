@@ -354,6 +354,7 @@
     SUBDIR += qt5-phonon4-designerplugin
     SUBDIR += qt5-phonon4-gstreamer
     SUBDIR += qt5-phonon4-vlc
+    SUBDIR += QtAV
     SUBDIR += quark
     SUBDIR += quodlibet
     SUBDIR += quvi
