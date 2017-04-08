@@ -36,6 +36,15 @@
      grp.add_option( '--flatpak', default=False, action='store_true', help=h )
      cli.add_option_group( grp )
  
+@@ -1517,7 +1520,7 @@ try:
+     class Tools:
+         ar    = ToolProbe( 'AR.exe',    'ar' )
+         cp    = ToolProbe( 'CP.exe',    'cp' )
+-        gcc   = ToolProbe( 'GCC.gcc',   'gcc', IfHost( 'gcc-4', '*-*-cygwin*' ))
++        gcc   = ToolProbe( 'GCC.gcc',   'gcc', IfHost( os.environ['CC'], '*-*-freebsd*' ))
+ 
+         if host.match( '*-*-darwin*' ):
+             gmake = ToolProbe( 'GMAKE.exe', 'make', 'gmake' )
 @@ -1924,10 +1927,15 @@ int main()
          doc.add( 'GCC.sysroot', '' )
          doc.add( 'GCC.minver', '' )
