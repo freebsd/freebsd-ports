@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 USE_GITHUB=	yes
 GH_ACCOUNT=	feeley
 GH_PROJECT=	gambit
-USES=		compiler gmake tar:tgz
+USES=		compiler gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-single-host \
 		--enable-gcc-opts \
