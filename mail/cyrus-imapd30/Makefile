@@ -137,7 +137,7 @@ CYRUS_MAN8=	arbitron backupd chk_cyrus ctl_backups ctl_conversationsdb \
 		cyr_buildinfo cyr_dbtool cyr_deny cyr_df cyr_expire cyr_info \
 		cyr_synclog cyr_virusscan deliver fud idled imapd ipurge lmtpd \
 		master mbexamine mbpath mbtool notifyd pop3d quota reconstruct \
-		restore rmnews smmapd squatter timsieved tls_prune unexpunge
+		restore rmnews smmapd timsieved tls_prune unexpunge
 CYRUS_PERL_MAN1=cyradm
 CYRUS_PERL_MAN3=Cyrus::Annotator::Daemon Cyrus::Annotator::Message \
 		Cyrus::IMAP Cyrus::IMAP::Admin Cyrus::IMAP::IMSP \
@@ -171,6 +171,9 @@ CYRUS_MAN8+=	fetchnews nntpd
 .endif
 .if ${PORT_OPTIONS:MREPLICATION}
 CYRUS_MAN8+=	sync_client sync_reset sync_server
+.endif
+.if ${PORT_OPTIONS:MSQUAT}
+CYRUS_MAN8+=	squatter
 .endif
 
 .if ${PORT_OPTIONS:MDRAC}
