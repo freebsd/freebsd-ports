@@ -121,9 +121,6 @@ post-extract: .SILENT
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSRC}/download
 .endfor
 
-#post-patch:
-#	${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/make/configure.py
-
 post-install-X11-on:
 	${LN} -sf ghb ${STAGEDIR}${PREFIX}/bin/HandBrake
 
