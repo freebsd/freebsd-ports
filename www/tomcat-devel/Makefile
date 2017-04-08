@@ -25,7 +25,7 @@ NO_ARCH=	yes
 
 USE_RC_SUBR=	${PKGBASE}
 
-TOMCAT_SUBDIR?=	${PORTVERSION:C/([0-9])\.([0-9])(.*)/\1.\2/}
+TOMCAT_SUBDIR?=	${DISTNAME:C/([0-9])\.([0-9])(.*)/\1.\2/}
 TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
 TOMCAT_CONF_FILES=	\
 		catalina.policy catalina.properties context.xml logging.properties \
