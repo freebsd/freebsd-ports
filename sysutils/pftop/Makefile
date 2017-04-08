@@ -18,7 +18,7 @@ ALTQ_DESC=	ALTQ support for queue statistics
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1100080
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100080
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bpf_dump.c \
 		${FILESDIR}/extra-patch-sf-gencode.h
 .endif
@@ -33,7 +33,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cache.c \
 		${FILESDIR}/extra-patch-config.h \
 		${FILESDIR}/extra-patch-pftop.c \
 		${FILESDIR}/extra-patch-sf-gencode.c
-.if ${OSVERSION} > 1000017
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000017
 CFLAGS+=	-DHAVE_FINE_GRAINED_LOCKING=1
 .endif
 
@@ -45,7 +45,7 @@ MAKE_ENV+=	__MAKE_CONF=/dev/null
 PLIST_FILES=	sbin/pftop man/man8/pftop.8.gz
 
 post-patch:
-.if ${OSVERSION} >= 1100000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 	@${ECHO_MSG} "===> Applying FairQ/Codel patches to ${PORTNAME}."
 	@${CAT} ${FILESDIR}/extra-patch-fairq_codel.diff | \
 		${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS}

@@ -10,7 +10,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DTOWN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object oriented interface to SNMP
 
 BUILD_DEPENDS=	p5-Crypt-DES>=0:security/p5-Crypt-DES \

@@ -8,7 +8,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Proper and correct (emulated) sequence support for MySQL
 
 BUILD_DEPENDS=	p5-DBD-mysql>0:databases/p5-DBD-mysql \

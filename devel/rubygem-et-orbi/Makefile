@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	et-orbi
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-tzinfo>=0:devel/rubygem-tzinfo
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

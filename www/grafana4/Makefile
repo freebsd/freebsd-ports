@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	4.1.2
+PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES+=	https://grafanarel.s3.amazonaws.com/builds/:public
+MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/:public
 PKGNAMESUFFIX=	${PORTVERSION:C/([0-9]).*/\1/1}
-DISTFILES=	grafana-${PORTVERSION}-${GRAFANA_TIMESTAMP}.linux-x64${EXTRACT_SUFX}:public
+DISTFILES=	grafana-releases/release/grafana-${PORTVERSION}.linux-x64${EXTRACT_SUFX}:public
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
@@ -18,8 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	grafana4
-
-GRAFANA_TIMESTAMP=	1486989747
 
 USES=	compiler
 
@@ -52,20 +50,18 @@ SUB_LIST+=	GRAFANA_USER=${GRAFANA_USER} \
 
 PLIST_SUB+=	GRAFANAHOMEDIR=${GRAFANAHOMEDIR}
 
-STRIP=	# stripping can break go binaries
-
 post-extract:
 	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src/
 	@${MKDIR} ${WRKSRC}/src/github.com/grafana/grafana
 .for src in CHANGELOG.md Gruntfile.js LICENSE.md Makefile NOTICE.md README.md \
 	bower.json build.go circle.yml conf docker docs emails examples \
-	karma.conf.js latest.json package.json packaging pkg public scripts \
-	tasks tests tsconfig.json tslint.json yarn.lock
+	karma.conf.js latest.json package.json packaging pkg scripts tasks \
+	tests tsconfig.json tslint.json yarn.lock
 	@${MV} ${WRKSRC}/${src} \
 		${WRKSRC}/src/github.com/grafana/grafana
 .endfor
 	${RM} -r ${WRKSRC}/src/github.com/grafana/grafana/public
-	${MV} ${WRKDIR}/grafana-${PORTVERSION}-${GRAFANA_TIMESTAMP}/public ${WRKSRC}/src/github.com/grafana/grafana/public
+	${MV} ${WRKDIR}/grafana-${PORTVERSION}/public ${WRKSRC}/src/github.com/grafana/grafana/public
 
 do-build:
 	cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/grafana; \

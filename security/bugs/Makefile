@@ -55,7 +55,7 @@ post-install-DOCS-on:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1100077
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
 # chmod -R bug
 post-extract:
 	${CHMOD} +x ${WRKSRC}/lib/unix ${WRKSRC}/lib/windows

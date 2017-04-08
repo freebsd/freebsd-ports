@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Rudimentary profiling for Template Toolkit
 
 BUILD_DEPENDS=	p5-Template-Toolkit>=0:www/p5-Template-Toolkit

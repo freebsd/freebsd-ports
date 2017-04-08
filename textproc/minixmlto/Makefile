@@ -2,6 +2,7 @@
 
 PORTNAME=	minixmlto
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -16,6 +17,6 @@ RUN_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 USE_GITHUB=	yes
 GH_ACCOUNT=	bapt
 PLIST_FILES=	bin/minixmlto
-MAKE_ARGS=	PREFIX="${PREFIX}"
+MAKE_ARGS=	DOCBOOK_XSL="${LOCALBASE}/share/xsl/docbook" PREFIX="${PREFIX}"
 
 .include <bsd.port.mk>

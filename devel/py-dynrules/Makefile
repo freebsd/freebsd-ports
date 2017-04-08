@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Scripting for adaptive AI systems
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/doc/copying.rst
 
 USES=		python
 USE_PYTHON=	autoplist distutils
