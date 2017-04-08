@@ -12,8 +12,6 @@ COMMENT=	PERL-based software deployment tool inspired by capistrano
 
 LICENSE=        ART10 GPLv1
 LICENSE_COMB=   dual
-LICENSE_FILE_ART10=     ${WRKSRC}/Artistic
-LICENSE_FILE_GPLv1=     ${WRKSRC}/Copying
 
 BUILD_DEPENDS=	\
 		p5-Config-GitLike>=0:devel/p5-Config-GitLike \
