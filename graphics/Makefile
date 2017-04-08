@@ -291,6 +291,7 @@
     SUBDIR += gphoto2
     SUBDIR += gpicview
     SUBDIR += gpsmanshp
+    SUBDIR += gpu-firmware-kmod
     SUBDIR += gracula
     SUBDIR += grads
     SUBDIR += grafx2
