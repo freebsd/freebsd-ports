@@ -12,6 +12,9 @@ COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream support EoL
+EXPIRATION_DATE=	2017-07-08
+
 CONFLICTS=	mediawiki12[378]-[0-9]*
 
 USES=		shebangfix
