@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sa-utils
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	mail
 MASTER_SITES=	# none
 DISTFILES=	# none
