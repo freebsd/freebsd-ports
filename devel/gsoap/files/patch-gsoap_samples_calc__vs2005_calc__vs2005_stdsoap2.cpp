@@ -1,5 +1,5 @@
---- gsoap/stdsoap2.cpp.orig	2017-04-07 18:39:02 UTC
-+++ gsoap/stdsoap2.cpp
+--- gsoap/samples/calc_vs2005/calc_vs2005/stdsoap2.cpp.orig	2017-04-07 18:39:02 UTC
++++ gsoap/samples/calc_vs2005/calc_vs2005/stdsoap2.cpp
 @@ -3735,7 +3735,7 @@ ssl_auth_init(struct soap *soap)
    ERR_clear_error();
    if (!soap->ctx)
@@ -36,17 +36,7 @@
      ERR_clear_error();
  #else
      ERR_remove_state(0);
-@@ -5703,6 +5703,9 @@ soap_bind(struct soap *soap, const char 
-   }
- #endif
- #ifdef TCP_FASTOPEN
-+       #ifndef SOL_TCP
-+       #define SOL_TCP IPPROTO_TCP
-+       #endif
-   if (!(soap->omode & SOAP_IO_UDP) && setsockopt(soap->master, IPPROTO_TCP, TCP_FASTOPEN, (char*)&set, sizeof(int)))
-   { /* silently ignore */
-     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "setsockopt TCP_FASTOPEN failed in soap_bind()\n"));
-@@ -6146,7 +6149,7 @@ soap_done(struct soap *soap)
+@@ -6146,7 +6146,7 @@ soap_done(struct soap *soap)
        soap->ctx = NULL;
      }
    }

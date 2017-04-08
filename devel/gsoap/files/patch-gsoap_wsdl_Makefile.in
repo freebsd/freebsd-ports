@@ -1,4 +1,4 @@
---- gsoap/wsdl/Makefile.in.orig	2017-02-11 10:40:19 UTC
+--- gsoap/wsdl/Makefile.in.orig	2017-04-08 13:59:08 UTC
 +++ gsoap/wsdl/Makefile.in
 @@ -314,7 +314,7 @@ SOAP_FLAGS = -SC -pwsdl -I$(srcdir) -I$(
  BUILT_SOURCES = $(SOAP_CPP_SRC)
