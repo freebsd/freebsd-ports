@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	direnv
-PORTVERSION=	2.8.1
+PORTVERSION=	2.11.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -16,8 +16,6 @@ GH_ACCOUNT=	zimbatm
 USES=		gmake
 
 PLIST_FILES=	bin/direnv man/man1/direnv.1.gz man/man1/direnv-stdlib.1.gz
-
-STRIP=		# stripping can break go binaries
 
 .include <bsd.port.options.mk>
 
