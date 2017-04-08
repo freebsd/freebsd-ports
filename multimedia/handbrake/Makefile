@@ -3,6 +3,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 DIST_SUBDIR=	${PORTNAME}
 
@@ -119,6 +120,9 @@ post-extract: .SILENT
 .for f in ${CONTRIB_FILES}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSRC}/download
 .endfor
+
+#post-patch:
+#	${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/make/configure.py
 
 post-install-X11-on:
 	${LN} -sf ghb ${STAGEDIR}${PREFIX}/bin/HandBrake
