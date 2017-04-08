@@ -1,0 +1,7 @@
+Firmware modules for the linuxkpi-based KMS components.
+
+Amdgpu and i915 firmware files encoded in uu format to generate
+loadable kernel modules. Firmware binaries originate from the
+linux-firmware repository.
+
+WWW: https://github.com/FreeBSDDesktop/kms-firmware
