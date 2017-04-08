@@ -9208,3 +9208,4 @@ archivers/pecl-snappy|archivers/php-snappy|2017-04-04|Update PKGNAMEPREFIX: it b
 textproc/kibana50|textproc/kibana5|2017-04-05|Rename port to match the rest of the 5.X line of the elastic stack
 textproc/kibana50-x-pack|textproc/kibana5-x-pack|2017-04-05|Rename port to match the rest of the 5.X line of the elastic stack
 www/typo3|www/typo3-8|2017-04-08|Rename to coexist with TYPO3 7.x (was typo3-lts) since both versions are LTS now
+www/typo3-lts|www/typo3-7|2017-04-08|Rename to coexist with TYPO3 8.x (was typo3) since both versions are LTS now
