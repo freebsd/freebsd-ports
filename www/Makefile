@@ -2308,7 +2308,7 @@
     SUBDIR += twiki-WysiwygPlugin
     SUBDIR += twill
     SUBDIR += twms
-    SUBDIR += typo3
+    SUBDIR += typo3-8
     SUBDIR += typo3-lts
     SUBDIR += uchiwa
     SUBDIR += udmsearch

@@ -1,10 +1,11 @@
-# Created by: Gerrit Beine <tux@pinguru.net>
+# Created by: Helmut Ritter <freebsd-ports@charlieroot.de>
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	8.6.1
+PORTVERSION=	${PORT_V_MAJOR}.${PORT_V_MINOR}.${PORT_V_PATCH}
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
+PKGNAMESUFFIX=	-${PORT_V_MAJOR}
 
 MAINTAINER=	freebsd-ports@charlieroot.de
 COMMENT=	Typo3 content management system
@@ -14,23 +15,22 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 IGNORE_WITH_PHP=	56
 
-PORTSCOUT=	limit:^8\.6\.
+PORTSCOUT=	limit:^${PORT_V_MAJOR}\.${PORT_V_MINOR}\.
 
 USES=		cpe php:web shebangfix
-SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/cglFixMyCommit.sh \
-		typo3/sysext/core/Build/Scripts/checkFilePermissions.sh \
-		typo3/sysext/core/Build/Scripts/duplicateExceptionCodeCheck.sh \
-		typo3/sysext/core/Build/Scripts/validateRstFiles.sh \
-		typo3/sysext/core/Build/Scripts/xlfcheck.sh \
-		vendor/doctrine/instantiator/.travis.install.sh
+SHEBANG_FILES=	vendor/doctrine/instantiator/.travis.install.sh
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml zip simplexml
 WRKSRC=		${WRKDIR}/${TYPO3SRC}
 
+PORT_V_MAJOR=	8
+PORT_V_MINOR=	7
+PORT_V_PATCH=	0
+
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
-TYPO3DIR=	${PORTNAME}
+TYPO3DIR=	${PORTNAME}-${PORT_V_MAJOR}
 
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
