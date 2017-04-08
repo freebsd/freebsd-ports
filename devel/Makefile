@@ -5817,6 +5817,8 @@
     SUBDIR += xparam
     SUBDIR += xsd
     SUBDIR += xtl
+    SUBDIR += xtoolchain-llvm-devel
+    SUBDIR += xtoolchain-llvm40
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxhash
