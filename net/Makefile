@@ -1217,6 +1217,7 @@
     SUBDIR += rubygem-ruby-growl
     SUBDIR += rubygem-ruby-openid
     SUBDIR += rubygem-ruby-yadis
+    SUBDIR += rubygem-ruby_smb
     SUBDIR += rubygem-rubyntlm
     SUBDIR += rubygem-rubyntlm05
     SUBDIR += rubygem-rubytter
