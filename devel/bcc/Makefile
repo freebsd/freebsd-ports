@@ -11,6 +11,8 @@ MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Bruce's C compiler (with as and ld); can do 16-bit code
 
 BROKEN=		unfetchable (MASTER_SITES not defined)
+DEPRECATED=	Unfetchable for more than three months
+EXPIRATION_DATE=	2017-06-08
 
 USES=		uidfix
 
