@@ -10,5 +10,5 @@ include/samp.h
 lib/liblognorm.a
 lib/liblognorm.so
 lib/liblognorm.so.5
-lib/liblognorm.so.5.0.0
+lib/liblognorm.so.5.1.0
 libdata/pkgconfig/lognorm.pc
