@@ -1,0 +1,3 @@
+A packet parsing and manipulation library for the SMB protocol family.
+
+WWW: https://github.com/rapid7/ruby_smb
