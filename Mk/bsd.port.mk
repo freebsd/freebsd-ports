@@ -1056,6 +1056,9 @@ STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
 MINIMAL_PKG_VERSION=	1.6.0
 
+_PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
+						${STAGEDIR}${PREFIX}
+
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
 
@@ -2502,6 +2505,7 @@ check-categories:
 PKGREPOSITORYSUBDIR?=	All
 PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 .if exists(${PACKAGES})
+_HAVE_PACKAGES=	yes
 PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
 .else
 PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
@@ -2936,9 +2940,6 @@ options-message:
 	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
 .endif
 
-${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR}:
-	@${MKDIR} ${.TARGET}
-
 # Warn user about deprecated packages.  Advisory only.
 
 .if !target(check-deprecated)
@@ -3090,7 +3091,7 @@ clean-wrkdir:
 	@${RM} -r ${WRKDIR}
 
 .if !target(do-extract)
-do-extract:
+do-extract: ${EXTRACT_WRKDIR}
 	@for file in ${EXTRACT_ONLY}; do \
 		if ! (cd ${EXTRACT_WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \
@@ -3333,21 +3334,17 @@ do-test:
 
 # Package
 
+.if defined(_HAVE_PACKAGES)
+_EXTRA_PACKAGE_TARGET_DEP=	${PKGREPOSITORY}
+_PORTS_DIRECTORIES+=	${PKGREPOSITORY}
+.endif
+
 .if !target(do-package)
 PKG_CREATE_ARGS=	-r ${STAGEDIR} -m ${METADIR} -p ${TMPPLIST}
 .if defined(PKG_CREATE_VERBOSE)
 PKG_CREATE_ARGS+=	-v
 .endif
-do-package: create-manifest
-do-package: ${TMPPLIST}
-	@if [ -d ${PACKAGES} ]; then \
-		if [ ! -d ${PKGREPOSITORY} ]; then \
-			if ! ${MKDIR} ${PKGREPOSITORY}; then \
-				${ECHO_MSG} "=> Can't create directory ${PKGREPOSITORY}."; \
-				exit 1; \
-			fi; \
-		fi; \
-	fi
+do-package: create-manifest ${_EXTRA_PACKAGE_TARGET_DEP} ${TMPPLIST}
 	@for cat in ${CATEGORIES}; do \
 		${RM} ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
 	done
@@ -4531,8 +4528,7 @@ compress-man:
 .endif
 
 .if !target(stage-dir)
-stage-dir:
-	@${MKDIR} ${STAGEDIR}${PREFIX}
+stage-dir: ${STAGEDIR}${PREFIX}
 .if !defined(NO_MTREE)
 	@${MTREE_CMD} ${MTREE_ARGS} ${STAGEDIR}${PREFIX} > /dev/null
 .endif
@@ -5185,6 +5181,9 @@ show-dev-errors:
 	@${FALSE}
 .endif
 .endif #DEVELOPER
+
+${_PORTS_DIRECTORIES}:
+	@${MKDIR} ${.TARGET}
 
 # Please note that the order of the following targets is important, and
 # should not be modified.
