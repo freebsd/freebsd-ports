@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.14.2
+PORTVERSION=	4.14.9
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -24,11 +24,11 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.2.18:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.1.7:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=1.2.19:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.1.8:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
-		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
+		rubygem-rubyntlm05>=0:net/rubygem-rubyntlm05 \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
 		rubygem-packetfu>=1.1.13.p:net/rubygem-packetfu \
 		rubygem-pcaprub>=0:net/rubygem-pcaprub \
@@ -43,6 +43,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
+		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
 		rubygem-rex-arch>=0.1.4:security/rubygem-rex-arch \
 		rubygem-rex-bin_tools>=0:security/rubygem-rex-bin_tools \
 		rubygem-rex-core>=0:security/rubygem-rex-core \
@@ -65,6 +66,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip \
 		rubygem-sqlite3>=0:databases/rubygem-sqlite3 \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
+		rubygem-tzinfo-data>=0:devel/rubygem-tzinfo-data \
 		rubygem-filesize>=0:devel/rubygem-filesize \
 		rubygem-openvas-omp>=0:security/rubygem-openvas-omp \
 		rubygem-nessus_rest>=0:security/rubygem-nessus_rest \
@@ -83,13 +85,14 @@ USE_RUBY=	yes
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
-		/rb-readline/d ; /tzinfo-data/d' \
+		/rb-readline/d ; \
+		/metasploit-aggregator/d' \
 		${WRKSRC}/metasploit-framework.gemspec
 
 do-build:
 	${RM} ${WRKSRC}/Gemfile.lock
 	${TOUCH} ${WRKSRC}/Gemfile.lock
-	${REINPLACE_CMD} '/^group :coverage/,/^end/d ; /^group :development/,/^end/d ; /^group :test/,/^end/d' \
+	${REINPLACE_CMD} '/^group :coverage/,/^end/d ; /^group :development/,/^end/d ; /^group :test/,/^end/d ; /git:/d' \
 		${WRKSRC}/Gemfile
 
 do-install:
