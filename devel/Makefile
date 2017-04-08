@@ -53,8 +53,10 @@
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
+    SUBDIR += aarch64-gcc
     SUBDIR += aarch64-none-elf-binutils
     SUBDIR += aarch64-none-elf-gcc
+    SUBDIR += aarch64-xtoolchain-gcc
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
     SUBDIR += ace+tao-doc
