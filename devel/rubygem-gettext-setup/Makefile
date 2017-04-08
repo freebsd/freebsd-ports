@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gettext-setup
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
