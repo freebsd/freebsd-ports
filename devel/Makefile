@@ -1291,6 +1291,7 @@
     SUBDIR += libelf
     SUBDIR += libepoll-shim
     SUBDIR += libepp-nicbr
+    SUBDIR += liberasurecode
     SUBDIR += libesedb
     SUBDIR += libestr
     SUBDIR += libev
