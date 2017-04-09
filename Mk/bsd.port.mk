@@ -3435,11 +3435,6 @@ check-umask:
 	fi
 .endif
 
-.if !target(install-mtree)
-install-mtree:
-		@${DO_NADA}
-.endif
-
 .if !target(install-ldconfig-file)
 install-ldconfig-file:
 .  if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
