@@ -20,7 +20,7 @@ PLIST_FILES=	bin/pv man/man1/pv.1.gz
 
 PORTDOCS=	README INSTALL NEWS PACKAGE TODO VERSION release-checklist
 
-OPTIONS_DEFINE=	NLS LFS
+OPTIONS_DEFINE=	DOCS NLS LFS
 OPTIONS_DEFAULT=	LFS
 NLS_CONFIGURE_ON=	--enable-static-nls
 NLS_CONFIGURE_OFF=	--disable-nls
@@ -31,6 +31,8 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pv
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
