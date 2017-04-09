@@ -2,13 +2,17 @@
 # $FreeBSD$
 
 PORTNAME?=	pypy
-DISTVERSION?=	5.6.0	# Also update bsd.pypy.cffi.mk
+DISTVERSION?=	5.7.1	# Also update bsd.pypy.cffi.mk
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/ http://buildbot.pypy.org/mirror/
 DISTNAME?=	${PORTNAME}2-v${PORTVERSION}-src
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
+
+LICENSE=	MIT PSFL
+LICENSE_COMB=	multi
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi
@@ -37,9 +41,9 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SLAVE=	PYTHON
 .endif
 
-ALL_TARGET=	pypy-c
+ALL_TARGET=	${PORTNAME}-c
 BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-pypy2.7-v${PORTVERSION}-0/testing_1
-MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
+MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE} LDSHARED="${CC} -shared"
 PACKAGE_ARGS?=	--without-gdbm --without-sqlite3 --without-tk
 USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
 USES=		gettext-runtime gmake ssl tar:bzip2
@@ -50,6 +54,7 @@ PYPY_MINMEM_BUILD_DEPENDS=	pypy:lang/pypy
 .endif
 PYPY_VARS=	PYTHON_CMD=${LOCALBASE}/bin/pypy
 PYPY_MINMEM_VARS=	PYTHON_CMD="${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_longevity=300"
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=2.10:devel/py-pycparser
 PYTHON_USES=	python:2,build
 
 DESCR=		${.CURDIR}/pkg-descr
@@ -78,10 +83,10 @@ pre-build:
 	fi
 
 post-build:
-	${CP} ${BUILD_WRKSRC}/pypy-c ${BUILD_WRKSRC}/libpypy-c.so ${WRKSRC}/pypy/goal/
+	${CP} ${BUILD_WRKSRC}/${PORTNAME}-c ${BUILD_WRKSRC}/lib${PORTNAME}-c.so ${WRKSRC}/pypy/goal/
 
 do-install:
-	${SETENV} TMPDIR=${WRKDIR}/build \
+	${SETENV} ${MAKE_ENV} TMPDIR=${WRKDIR}/build \
 		${PYTHON_CMD} ${WRKSRC}/pypy/tool/release/package.py --builddir ${WRKDIR}/build --archive-name ${PYPY_DIR} \
 			${PACKAGE_ARGS}
 	${EXTRACT_CMD} -C ${STAGEDIR}${PREFIX} -xf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2
@@ -106,7 +111,7 @@ do-test:
 		${SETENV} ${MAKE_ENV} TMPDIR=${WRKDIR}/build PYTHONPATH=${WRKSRC} \
 		${WRKSRC}/pypy/goal/pypy-c regrtest.py -vvu all)
 
-pkg-plist: build
+pkg-plist: stage
 	${TAR} -tf ${WRKDIR}/build/${PYPY_DIR}.tar.bz2 > ${WRKDIR}/.plist-files-gen
 	${REINPLACE_CMD} -e 's|^${PYPY_DIR}|%%PYPY_DIR%%|g' \
 		-e 's|_${PYPY_BITS}_|_%%PYPY_BITS%%_|g' \
