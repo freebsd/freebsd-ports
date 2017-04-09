@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rbpdf
-PORTVERSION=	1.19.1
+PORTVERSION=	1.19.2
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 RUN_DEPENDS=	rubygem-htmlentities>=0:textproc/rubygem-htmlentities \
-		rubygem-rbpdf-font>=${PORTVERSION}:print/rubygem-rbpdf-font
+		rubygem-rbpdf-font>=${PORTVERSION:R}:print/rubygem-rbpdf-font
 
 NO_ARCH=	yes
 USE_RUBY=	yes
