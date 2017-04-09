@@ -3,7 +3,7 @@
 
 PORTNAME=	bearssl
 PORTVERSION=	0.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://bearssl.org/
 
@@ -12,12 +12,11 @@ COMMENT=	Implementation of TLS/SSL in C
 
 LICENSE=	MIT
 
-USES=		compiler
 USE_GCC=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/brssl ${STAGEDIR}${LOCALBASE}/bin/
-	${INSTALL_DATA} ${WRKSRC}/build/libbearssl.so ${STAGEDIR}${LOCALBASE}/lib/
+	${INSTALL_LIB} ${WRKSRC}/build/libbearssl.so ${STAGEDIR}${LOCALBASE}/lib/
 	(cd ${WRKSRC}/inc && ${COPYTREE_SHARE} \* ${STAGEDIR}${LOCALBASE}/include)
 
 .include <bsd.port.mk>
