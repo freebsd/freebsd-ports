@@ -77,6 +77,7 @@ SHEBANG_FILES=src/rbdmap src/ceph-post-file.in src/rbd-replay-many
 
 # even though i386 will build, it is not really advised.
 ONLY_FOR_ARCHS=	amd64
+IGNORE_FreeBSD_10=	Doesnt build for FreeBSD 10.x
 
 USE_RC_SUBR=	ceph
 USE_LDCONFIG=	yes
