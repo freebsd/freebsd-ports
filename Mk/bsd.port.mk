@@ -2113,8 +2113,6 @@ PKGMESSAGE?=	${PKGDIR}/pkg-message
 _PKGMESSAGES+=	${PKGMESSAGE}
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
-TMPPLIST_SORT?=	${WRKDIR}/.PLIST.mktmp.sorted
-TMPGUCMD?=	${WRKDIR}/.PLIST.gucmd
 
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
@@ -4411,9 +4409,6 @@ generate-plist: ${WRKDIR}
 
 ${TMPPLIST}:
 	@cd ${.CURDIR} && ${MAKE} generate-plist
-
-${TMPPLIST_SORT}: ${TMPPLIST}
-	@${SORT} -u ${TMPPLIST} >${TMPPLIST_SORT}
 
 .for _type in EXAMPLES DOCS
 .if !target(add-plist-${_type:tl})
