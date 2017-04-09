@@ -87,6 +87,7 @@ lib/groonga/plugins/query_expanders/tsv.so
 %%RUBY%%lib/groonga/scripts/ruby/accessor.rb
 %%RUBY%%lib/groonga/scripts/ruby/backtrace_entry.rb
 %%RUBY%%lib/groonga/scripts/ruby/command.rb
+%%RUBY%%lib/groonga/scripts/ruby/command_input.rb
 %%RUBY%%lib/groonga/scripts/ruby/command_line_parser.rb
 %%RUBY%%lib/groonga/scripts/ruby/command_line/grndb.rb
 %%RUBY%%lib/groonga/scripts/ruby/context.rb
@@ -129,6 +130,7 @@ lib/groonga/plugins/query_expanders/tsv.so
 %%RUBY%%lib/groonga/scripts/ruby/scan_info.rb
 %%RUBY%%lib/groonga/scripts/ruby/scan_info_builder.rb
 %%RUBY%%lib/groonga/scripts/ruby/scan_info_data.rb
+%%RUBY%%lib/groonga/scripts/ruby/scan_info_data_size_estimator.rb
 %%RUBY%%lib/groonga/scripts/ruby/scan_info_search_index.rb
 %%RUBY%%lib/groonga/scripts/ruby/table.rb
 %%RUBY%%lib/groonga/scripts/ruby/table_cursor.rb
