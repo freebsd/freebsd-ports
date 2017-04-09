@@ -75,12 +75,12 @@ _USE_GNOME_ALL= esound intlhack intltool introspection \
 _USE_GNOME_ALL+= gdkpixbuf glib12 gtk12
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk atspi cairo gal2 \
+_USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
 		gnomedocutils gnomesharp20 \
-		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
+		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
-		libbonoboui libgda4 libglade2 libgnome \
+		libbonoboui libglade2 libgnome \
 		libgnomecanvas libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt \
@@ -95,7 +95,7 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm20 gtkmm24 \
-		gtkmm30 gtksourceviewmm3 libgdamm libgdamm5 \
+		gtkmm30 gtksourceviewmm3 libgdamm5 \
 		libgtksourceviewmm libxml++26 libsigc++12 libsigc++20 \
 		pangomm
 
@@ -160,10 +160,6 @@ gtkmm30_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk30
 gtksourceviewmm3_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtksourceviewmm-3.0.pc
 gtksourceviewmm3_LIB_DEPENDS=		libgtksourceviewmm-3.0.so:x11-toolkits/gtksourceviewmm3
 gtksourceviewmm3_USE_GNOME_IMPL=	gtkmm30 gtksourceview3
-
-libgdamm_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgdamm-4.0.pc
-libgdamm_LIB_DEPENDS=	libgdamm-4.0.so:databases/libgdamm
-libgdamm_USE_GNOME_IMPL=libgda4 glibmm
 
 libgdamm5_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgdamm-5.0.pc
 libgdamm5_LIB_DEPENDS=		libgdamm-5.0.so:databases/libgdamm5
@@ -323,10 +319,6 @@ libgnomeui_LIB_DEPENDS=		libgnomeui-2.so:x11-toolkits/libgnomeui
 libgnomeui_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomeui-2.0.pc
 libgnomeui_USE_GNOME_IMPL=	libbonoboui
 
-atspi_LIB_DEPENDS=	libspi.so:accessibility/at-spi
-atspi_DETECT=		${LOCALBASE}/libdata/pkgconfig/cspi-1.0.pc
-atspi_USE_GNOME_IMPL=	gtk20 libbonobo
-
 libgtkhtml_LIB_DEPENDS=	libgtkhtml-2.so:www/libgtkhtml
 libgtkhtml_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-2.0.pc
 libgtkhtml_USE_GNOME_IMPL=libxslt gnomevfs2
@@ -362,18 +354,10 @@ nautilus3_USE_GNOME_IMPL=gnomedesktop3 gvfs libxml2
 metacity_LIB_DEPENDS=	libmetacity-private.so:x11-wm/metacity
 metacity_DETECT=	${LOCALBASE}/libdata/pkgconfig/libmetacity-private.pc
 
-gal2_LIB_DEPENDS=	libgal-2.4.so:x11-toolkits/gal2
-gal2_DETECT=		${LOCALBASE}/libdata/pkgconfig/gal-2.4.pc
-gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
-
 gnomecontrolcenter3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc
 gnomecontrolcenter3_BUILD_DEPENDS=	${gnomecontrolcenter3_DETECT}:sysutils/gnome-control-center
 gnomecontrolcenter3_RUN_DEPENDS=	${gnomecontrolcenter3_DETECT}:sysutils/gnome-control-center
 gnomecontrolcenter3_USE_GNOME_IMPL=	gnomedesktop3
-
-libgda4_LIB_DEPENDS=	libgda-4.0.so:databases/libgda4
-libgda4_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda-4.0.pc
-libgda4_USE_GNOME_IMPL=	glib20 libxslt
 
 libgda5_LIB_DEPENDS=	libgda-5.0.so:databases/libgda5
 libgda5_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgda-5.0.pc
@@ -443,10 +427,6 @@ gtkhtml3_USE_GNOME_IMPL=libglade2
 gtkhtml4_LIB_DEPENDS=	libgtkhtml-4.0.so:www/gtkhtml4
 gtkhtml4_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-4.0.pc
 gtkhtml4_USE_GNOME_IMPL=gtk30 libxml2
-
-gnomespeech_LIB_DEPENDS=libgnomespeech.so:accessibility/gnome-speech
-gnomespeech_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-speech-1.0.pc
-gnomespeech_USE_GNOME_IMPL=libbonobo
 
 evolutiondataserver3_LIB_DEPENDS=	libedataserver-1.2.so:databases/evolution-data-server
 evolutiondataserver3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libedataserverui-3.0.pc

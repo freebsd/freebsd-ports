@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	goobox
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD player and ripper for GNOME Desktop environment
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
@@ -17,14 +19,12 @@ LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 		libbrasero-media3.so:sysutils/brasero \
 		libunique-1.0.so:x11-toolkits/unique
 
-USES=		desktop-file-utils gettext gmake gnome pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake gnome localbase pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30 intlhack
 USE_XORG=	x11
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Goobox.gschema.xml

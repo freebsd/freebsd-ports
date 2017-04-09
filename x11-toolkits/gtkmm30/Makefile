@@ -20,7 +20,8 @@ PORTSCOUT=	limitw:1,even
 
 BUILD_DEPENDS=	gm4:devel/m4
 
-USES+=		gettext gmake libtool pathfix pkgconfig
+USES+=		gettext gmake libtool pathfix pkgconfig compiler:c++11-lang
+USE_CXXSTD=	c++11
 USE_GNOME=	gtk30 glibmm cairomm atkmm pangomm
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

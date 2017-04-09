@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Report
-PORTVERSION=	1.13
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:MARKOV
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Report a problem, pluggable handlers and language support
 
 LICENSE=	ART10 GPLv1

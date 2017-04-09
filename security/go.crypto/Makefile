@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go.crypto
-PORTVERSION=	20160709
+PORTVERSION=	20170330
 CATEGORIES=	security devel
 
 MAINTAINER=	jlaffaye@FreeBSD.org
@@ -12,16 +12,19 @@ LICENSE=	BSD3CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
 GH_PROJECT=	crypto
-GH_TAGNAME=	c2f4947f41766b144bb09066e919466da5eddeae
+GH_TAGNAME=	3cb07270c9455e8ad27956a70891c962d121a228
 USES=		go
 GO_PKGNAME=	golang.org/x/crypto
 GO_TARGET=	${GO_PKGNAME}/bcrypt		\
+		${GO_PKGNAME}/blake2b		\
+		${GO_PKGNAME}/blake2s		\
 		${GO_PKGNAME}/blowfish		\
 		${GO_PKGNAME}/bn256		\
 		${GO_PKGNAME}/cast5		\
+		${GO_PKGNAME}/chacha20poly1305	\
+		${GO_PKGNAME}/cryptobyte	\
 		${GO_PKGNAME}/curve25519	\
 		${GO_PKGNAME}/ed25519		\
-		${GO_PKGNAME}/ed25519/internal/edwards25519\
 		${GO_PKGNAME}/hkdf		\
 		${GO_PKGNAME}/md4		\
 		${GO_PKGNAME}/nacl/box		\
@@ -37,7 +40,6 @@ GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/otr		\
 		${GO_PKGNAME}/pbkdf2		\
 		${GO_PKGNAME}/pkcs12		\
-		${GO_PKGNAME}/pkcs12/internal/rc2\
 		${GO_PKGNAME}/poly1305		\
 		${GO_PKGNAME}/ripemd160		\
 		${GO_PKGNAME}/salsa20		\
@@ -48,7 +50,6 @@ GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/ssh/agent		\
 		${GO_PKGNAME}/ssh/terminal	\
 		${GO_PKGNAME}/ssh/test		\
-		${GO_PKGNAME}/ssh/testdata	\
 		${GO_PKGNAME}/tea		\
 		${GO_PKGNAME}/twofish		\
 		${GO_PKGNAME}/xtea		\

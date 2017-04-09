@@ -87,6 +87,7 @@ share/doc/HTML/en/skrooge/analysis_report_5.png
 share/doc/HTML/en/skrooge/analysis_report_6.png
 share/doc/HTML/en/skrooge/analysis_trackers_view.png
 share/doc/HTML/en/skrooge/apply_process.png
+share/doc/HTML/en/skrooge/apply_template.png
 share/doc/HTML/en/skrooge/back_forward.png
 share/doc/HTML/en/skrooge/balance_evolution.png
 share/doc/HTML/en/skrooge/bank_accounts.png
@@ -128,7 +129,6 @@ share/doc/HTML/en/skrooge/edition_panel_buttons.png
 share/doc/HTML/en/skrooge/export_graph_menu.png
 share/doc/HTML/en/skrooge/export_table_menu.png
 share/doc/HTML/en/skrooge/fast_edition.png
-share/doc/HTML/en/skrooge/frozen.png
 share/doc/HTML/en/skrooge/graph_on_tracker.png
 share/doc/HTML/en/skrooge/histogram.png
 share/doc/HTML/en/skrooge/history_browser.png
@@ -700,6 +700,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/extractors/oscaro.extractor
 %%DATADIR%%/extractors/oxybul.extractor
 %%DATADIR%%/extractors/pixmania.extractor
+%%DATADIR%%/extractors/sarenza.extractor
 %%DATADIR%%/extractors/spartoo.extractor
 %%DATADIR%%/extractors/topachat.extractor
 %%DATADIR%%/html/dark.txt

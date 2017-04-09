@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
@@ -10,7 +10,7 @@ MASTER_SITES=	GNUPG/gpgme
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Library to make access to GnuPG easier
 
-LICENSE?=	LGPL21
+LICENSE?=	LGPL21+
 LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
@@ -21,6 +21,7 @@ USES=		cpe gmake libtool localbase:ldflags tar:bzip2
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 CPE_VENDOR=	gnu
 
@@ -57,6 +58,7 @@ CONFIGURE_ARGS+=	--disable-gpgsm-test
 LIB_DEPENDS+=	libgpgme.so:security/gpgme
 BUILD_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
 INSTALL_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
+NO_TEST=	yes
 
 .  if ${SLAVEPORT} == "cpp"
 CONFIGURE_ARGS+=--enable-languages="cpp"

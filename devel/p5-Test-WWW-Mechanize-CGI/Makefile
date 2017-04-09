@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test CGI applications with Test::WWW::Mechanize
 
 RUN_DEPENDS=	p5-WWW-Mechanize-CGI>=0.2:www/p5-WWW-Mechanize-CGI \

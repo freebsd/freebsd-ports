@@ -1,0 +1,10 @@
+a stack-trace visualizer
+
+Flame Graphs visualize profiled code. Flame graphs can be created in three
+steps: 1) Capture stacks, 2) Fold stacks, 3) flamegraph.pl.
+Capturing stacks can be done with Linux perf_events, FreeBSD pmcstat (hwpmc),
+DTrace, SystemTap, and many other profilers. See stackcollapse-*
+converters. These stackcollapse scripts are used to fold the stacks.
+Flamegraph SVGs are created using the flamegraph.pl script.
+
+WWW: https://github.com/brendangregg/FlameGraph

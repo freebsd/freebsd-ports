@@ -2,15 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	Proc-PID-File
-PORTVERSION=	1.27
-PORTREVISION=	1
+PORTVERSION=	1.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manage process id files
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

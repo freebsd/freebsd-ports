@@ -3,6 +3,7 @@
 
 PORTNAME=	opencoarrays
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	lang parallel
 
 MAINTAINER=	mexas@bris.ac.uk

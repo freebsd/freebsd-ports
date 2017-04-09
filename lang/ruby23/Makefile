@@ -11,7 +11,7 @@ DISTNAME=	${RUBY_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT?=	Object-oriented interpreted scripting language
+COMMENT=	Object-oriented interpreted scripting language
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
@@ -74,7 +74,7 @@ CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == openssl-devel
-BROKEN=		Does not detect and buid the openssl*.rb bits.
+BROKEN=		does not detect and buid the openssl*.rb bits.
 .endif
 
 # PORTREVISION/PORTEPOCH hack

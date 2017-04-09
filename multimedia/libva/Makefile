@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva
-PORTVERSION=	1.7.3
+PORTVERSION=	1.8.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	01org
-GH_TAGNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 LDFLAGS+=	-lpthread
 # prevent types conflict: videodev2.h vs. drm.h
@@ -48,8 +47,6 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|\($$libdir\)/dri|\1/va|' \
 		-e 's|$${libdir}/\(pkgconfig\)|${PREFIX}/libdata/\1|' \
 		${WRKSRC}/configure.ac
-	${REINPLACE_CMD} -e 's/va\(info\)/\1/g' -e 's/info\.c/vainfo\.c/' \
-		${WRKSRC}/test/vainfo/Makefile.am
 	${REINPLACE_CMD} '/^export VA_HEADER_/d' \
 		${WRKSRC}/doc/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am

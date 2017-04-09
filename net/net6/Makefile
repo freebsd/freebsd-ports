@@ -3,7 +3,7 @@
 
 PORTNAME=	net6
 PORTVERSION=	1.3.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net devel
 MASTER_SITES=	http://releases.0x539.de/net6/
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		cpe libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig compiler:c++11-lang
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	armin_burgmeier

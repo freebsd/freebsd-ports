@@ -3,7 +3,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -30,16 +30,12 @@ GH_TUPLE?=	hrydgard:glslang:b16f7e68:glslang/ext/glslang \
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 
-# [QT5] c++: error: the clang compiler does not support '-march=armv7-a'
-# [SDL] SplineCommon.cpp:639:17: error: use of undeclared identifier 'AllocateAlignedMemory'
-BROKEN_aarch64=		https://github.com/hrydgard/ppsspp/issues/9032
-
 USES=		cmake:outsource compiler:c++11-lib localbase:ldflags pkgconfig
 EXCLUDE=	libzip zlib
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 USE_GL=		gl glew glu
 USE_SDL=	sdl2 # joystick
-CMAKE_ARGS=	-DUSE_SYSTEM_FFMPEG=on
+CMAKE_ARGS=	-DUSING_EGL=off -DUSE_SYSTEM_FFMPEG=on
 SUB_FILES=	pkg-message
 PORTDATA=	assets ${PORTNAME}
 

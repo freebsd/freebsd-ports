@@ -49,6 +49,7 @@
     SUBDIR += osmosis
     SUBDIR += p5-Astro
     SUBDIR += p5-Astro-ADS
+    SUBDIR += p5-Astro-App-Satpass2
     SUBDIR += p5-Astro-Catalog
     SUBDIR += p5-Astro-Constants
     SUBDIR += p5-Astro-Coords

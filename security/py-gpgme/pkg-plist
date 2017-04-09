@@ -9,6 +9,9 @@
 %%PYTHON_SITELIBDIR%%/gpg/constants/__init__.py
 %%PYTHON_SITELIBDIR%%/gpg/constants/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gpg/constants/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gpg/constants/create.py
+%%PYTHON_SITELIBDIR%%/gpg/constants/create.pyc
+%%PYTHON_SITELIBDIR%%/gpg/constants/create.pyo
 %%PYTHON_SITELIBDIR%%/gpg/constants/data/__init__.py
 %%PYTHON_SITELIBDIR%%/gpg/constants/data/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gpg/constants/data/__init__.pyo
@@ -27,6 +30,9 @@
 %%PYTHON_SITELIBDIR%%/gpg/constants/keylist/mode.py
 %%PYTHON_SITELIBDIR%%/gpg/constants/keylist/mode.pyc
 %%PYTHON_SITELIBDIR%%/gpg/constants/keylist/mode.pyo
+%%PYTHON_SITELIBDIR%%/gpg/constants/keysign.py
+%%PYTHON_SITELIBDIR%%/gpg/constants/keysign.pyc
+%%PYTHON_SITELIBDIR%%/gpg/constants/keysign.pyo
 %%PYTHON_SITELIBDIR%%/gpg/constants/md.py
 %%PYTHON_SITELIBDIR%%/gpg/constants/md.pyc
 %%PYTHON_SITELIBDIR%%/gpg/constants/md.pyo
@@ -51,6 +57,12 @@
 %%PYTHON_SITELIBDIR%%/gpg/constants/status.py
 %%PYTHON_SITELIBDIR%%/gpg/constants/status.pyc
 %%PYTHON_SITELIBDIR%%/gpg/constants/status.pyo
+%%PYTHON_SITELIBDIR%%/gpg/constants/tofu/__init__.py
+%%PYTHON_SITELIBDIR%%/gpg/constants/tofu/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gpg/constants/tofu/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gpg/constants/tofu/policy.py
+%%PYTHON_SITELIBDIR%%/gpg/constants/tofu/policy.pyc
+%%PYTHON_SITELIBDIR%%/gpg/constants/tofu/policy.pyo
 %%PYTHON_SITELIBDIR%%/gpg/constants/validity.py
 %%PYTHON_SITELIBDIR%%/gpg/constants/validity.pyc
 %%PYTHON_SITELIBDIR%%/gpg/constants/validity.pyo

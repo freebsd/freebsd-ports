@@ -3,7 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 

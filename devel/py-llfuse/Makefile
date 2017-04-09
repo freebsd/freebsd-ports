@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	llfuse
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	niklaas@kulturflatrate.net
+MAINTAINER=	stdin@niklaas.eu
 COMMENT=	Python bindings for low-level FUSE API
 
 LICENSE=	LGPL20+

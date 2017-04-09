@@ -7,12 +7,10 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	citrin+bsd@citrin.ru
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst SOAP Controller
 
 LICENSE=	ARTPERL10
-
-BROKEN=		wrong DEPENDS
 
 BUILD_DEPENDS=	\
 		p5-Catalyst-Runtime>=5.90017:www/p5-Catalyst-Runtime \
@@ -21,6 +19,10 @@ BUILD_DEPENDS=	\
 		p5-XML-Compile-WSDL11>=0:net/p5-XML-Compile-WSDL11 \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+BROKEN=		wrong DEPENDS
+DEPRECATED=	Marked BROKEN for more than 6 months
+EXPIRATION_DATE=	2017-06-08
 
 USES=		perl5
 USE_PERL5=	configure

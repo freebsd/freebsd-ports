@@ -12,6 +12,9 @@ COMMENT=	Collection of useful classes and functions for Django
 
 LICENSE=	MIT
 
+DEPRECATED=	Does not build with py-django18 see pr: 216758
+EXPIRATION_DATE=	2017-04-19
+
 BUILD_DEPENDS=	uglifyjs:www/uglifyjs
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django16>=1.6.11:www/py-django16 \
 		${PYTHON_PKGNAMEPREFIX}django-pipeline13>=1.3.27:www/py-django-pipeline13 \

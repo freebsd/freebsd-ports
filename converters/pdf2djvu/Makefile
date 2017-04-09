@@ -3,7 +3,7 @@
 
 PORTNAME=	pdf2djvu
 PORTVERSION=	0.7.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters
 MASTER_SITES=	https://bitbucket.org/jwilk/pdf2djvu/downloads/
 

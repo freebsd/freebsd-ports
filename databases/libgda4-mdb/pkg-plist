@@ -1,4 +1,0 @@
-lib/libgda-%%VERSION%%/providers/libgda-mdb.a
-lib/libgda-%%VERSION%%/providers/libgda-mdb.so
-libdata/pkgconfig/libgda-mdb-%%VERSION%%.pc
-share/libgda-%%VERSION%%/mdb_specs_dsn.xml

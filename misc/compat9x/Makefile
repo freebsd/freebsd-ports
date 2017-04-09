@@ -20,11 +20,7 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000
-IGNORE=		is for FreeBSD 9.x and newer
-.endif
-
-.if ${OSVERSION} >= 1100000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 RUN_DEPENDS=	compat10x-${ARCH}>=0:misc/compat10x
 .endif
 

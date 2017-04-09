@@ -393,6 +393,13 @@ do-build:
 					@(cd ${BUILD_WRKSRC}; \
 						${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${ALL_TARGET})
 .			endif
+.			if !target(do-test) && defined(TEST_TARGET)
+TEST_DEPENDS+=		${DEPEND_JAVA}
+TEST_DEPENDS+=		${ANT}:devel/apache-ant
+do-test:
+					@(cd ${TEST_WRKSRC}; \
+						${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${TEST_TARGET})
+.			endif
 .		endif
 
 #-----------------------------------------------------------------------------

@@ -1,0 +1,4 @@
+Performance management system which provides deep information about
+Ruby on Rails application performance while running in production.
+
+WWW: https://github.com/newrelic/rpm

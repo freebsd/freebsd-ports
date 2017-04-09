@@ -2,6 +2,7 @@
 
 PORTNAME=	sc-im
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -13,7 +14,7 @@ LICENSE=	BSD4CLAUSE
 LIB_DEPENDS=	libxlsreader.so:math/libxls \
 		libzip.so:archivers/libzip
 
-USES=		gmake localbase
+USES=		gmake localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	andmarti1424
 USE_GNOME=	libxml2

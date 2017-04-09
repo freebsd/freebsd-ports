@@ -3,6 +3,7 @@
 
 PORTNAME=	mysqlwsrep
 PORTVERSION=	5.6.35
+PORTREVISION=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://releases.galeracluster.com/source/
 PKGNAMESUFFIX=	56-server

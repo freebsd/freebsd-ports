@@ -214,8 +214,6 @@
     SUBDIR += gmtp
     SUBDIR += gmusicbrowser
     SUBDIR += gnaural
-    SUBDIR += gnome-audio
-    SUBDIR += gnome-media
     SUBDIR += gnome-music
     SUBDIR += gnomoradio
     SUBDIR += gnormalize

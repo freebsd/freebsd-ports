@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbus
-PORTVERSION=	1.10.14
-PORTREVISION=	2
+PORTVERSION=	1.10.16
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 

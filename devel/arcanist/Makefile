@@ -2,8 +2,9 @@
 
 PORTNAME=	arcanist
 PORTVERSION=	20161003
+PORTREVISION=	1
 CATEGORIES=	devel
-PKGNAMEPREFIX=	php5-
+PKGNAMEPREFIX=	php-
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Command line interface for Phabricator
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 CONFLICTS=	arc-*
 
 PHP_DESTDIR=	lib/php/arcanist
-RUN_DEPENDS=	php5-libphutil>0:devel/libphutil
+RUN_DEPENDS=	php-libphutil>0:devel/libphutil
 USES=		php
 USE_PHP=	curl dom json simplexml
 USE_GITHUB=	yes

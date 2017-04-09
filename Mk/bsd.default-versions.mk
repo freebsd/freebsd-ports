@@ -38,7 +38,7 @@ FIREBIRD_DEFAULT?=	2.5
 # Possible values: 3.0.0
 FPC_DEFAULT?=		3.0.2
 # Possible values: 4.7, 4.8, 4.9, 5, 6
-GCC_DEFAULT?=		4.9
+GCC_DEFAULT?=		5
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
 .if ${ARCH} == amd64
@@ -141,6 +141,6 @@ TCLTK_DEFAULT?=		8.6
 VARNISH_DEFAULT?=	4
 
 # Version of lang/gcc.  Do not override!
-LANG_GCC_IS=		4.9
+LANG_GCC_IS=		5
 
 .endif

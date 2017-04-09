@@ -1,5 +1,5 @@
---- thread.c.orig	2015-02-20 14:53:23.000000000 +0100
-+++ thread.c	2016-01-10 19:11:32.423524000 +0100
+--- thread.c.orig	2016-11-11 22:33:21 UTC
++++ thread.c
 @@ -462,8 +462,8 @@ rb_threadptr_unlock_all_locking_mutexes(
  void
  rb_thread_terminate_all(void)

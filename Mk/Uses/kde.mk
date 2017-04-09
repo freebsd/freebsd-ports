@@ -204,7 +204,7 @@ _USE_KDE4_ALL=		baloo baloo-widgets baseapps kactivities kate kdelibs \
 			kfilemetadata korundum libkcddb libkcompactdisc \
 			libkdcraw libkdeedu libkdegames libkexiv2 libkipi \
 			libkonq libksane marble nepomuk-core nepomuk-widgets \
-			okular oxygen-icons4 perlkde perlqt pimlibs pykde4 \
+			okular oxygen-icons5 perlkde perlqt pimlibs pykde4 \
 			pykdeuic4 qtruby runtime smokegen smokekde smokeqt \
 			workspace
 # These components are not part of the Software Compilation.
@@ -320,10 +320,6 @@ nepomuk-widgets_LIB=	libnepomukwidgets.so
 
 okular_PORT=		graphics/okular
 okular_LIB=		libokularcore.so
-
-oxygen-icons4_PORT=	x11-themes/kde4-icons-oxygen
-oxygen-icons4_PATH=	${KDE_PREFIX}/share/icons/oxygen/index.theme
-oxygen-icons4_TYPE=	run
 
 perlkde_PORT=		devel/p5-perlkde
 perlkde_PATH=		${KDE_PREFIX}/lib/kde4/kperlpluginfactory.so
@@ -538,6 +534,8 @@ notifications_LIB=	libKF5Notifications.so
 notifyconfig_PORT=	devel/kf5-knotifyconfig
 notifyconfig_LIB=	libKF5NotifyConfig.so
 
+# This is a KF5 port used by KDE4 as well, but it's architecture-independent
+# and only contains icons.
 oxygen-icons5_PORT=	x11-themes/kf5-oxygen-icons5
 oxygen-icons5_PATH=	${KDE_PREFIX}/share/icons/oxygen/index.theme
 oxygen-icons5_TYPE=	run

@@ -48,6 +48,7 @@ bin/kvantumpreview
 %%DATADIR%%/KvSimplicityDark/KvSimplicityDark.kvconfig
 %%DATADIR%%/KvSimplicityDark/KvSimplicityDark.svg
 %%DATADIR%%/KvantumAlt/KvantumAlt.kvconfig
+%%DATADIR%%/KvantumAlt/KvantumAlt.svg
 share/applications/kvantummanager.desktop
 share/apps/color-schemes/KvAmbiance.colors
 share/apps/color-schemes/KvAmbience.colors

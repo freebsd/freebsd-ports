@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TT plugin to make URLs clickable in HTML
 
 BUILD_DEPENDS=	p5-URI-Find>=0.13:textproc/p5-URI-Find \

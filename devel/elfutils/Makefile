@@ -29,7 +29,7 @@ NLS_CONFIGURE_ENABLE=	nls
 
 USES=		gmake libtool tar:bzip2
 USE_AUTOTOOLS=	automake:env
-USE_GCC=	4.8+
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

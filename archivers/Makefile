@@ -31,7 +31,6 @@
     SUBDIR += freeze
     SUBDIR += gcab
     SUBDIR += gcpio
-    SUBDIR += gnome-autoar
     SUBDIR += go-compress
     SUBDIR += grzip
     SUBDIR += gtar
@@ -142,8 +141,8 @@
     SUBDIR += pecl-lzf
     SUBDIR += pecl-phk
     SUBDIR += pecl-rar
-    SUBDIR += pecl-snappy
     SUBDIR += php-horde_lz4
+    SUBDIR += php-snappy
     SUBDIR += php56-bz2
     SUBDIR += php56-phar
     SUBDIR += php56-zip

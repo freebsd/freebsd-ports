@@ -3,7 +3,7 @@
 
 PORTNAME=	miracl
 PORTVERSION=	5.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://mirror.shatow.net/freebsd/${PORTNAME}/ \

@@ -3,7 +3,7 @@
 
 PORTNAME=	bearssl
 PORTVERSION=	0.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://bearssl.org/
 

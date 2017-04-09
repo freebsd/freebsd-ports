@@ -1,6 +1,8 @@
 etc/OpenCL/vendors/intel-beignet.icd
 lib/beignet/beignet.bc
 lib/beignet/beignet.pch
+%%OCL20%%lib/beignet/beignet_20.bc
+%%OCL20%%lib/beignet/beignet_20.pch
 lib/beignet/include/ocl.h
 lib/beignet/include/ocl_as.h
 lib/beignet/include/ocl_async.h

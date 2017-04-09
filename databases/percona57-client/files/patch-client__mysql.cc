@@ -1,4 +1,4 @@
---- client/mysql.cc.orig	2016-11-27 19:44:54 UTC
+--- client/mysql.cc.orig	2017-04-01 14:33:18 UTC
 +++ client/mysql.cc
 @@ -1903,11 +1903,11 @@ static void usage(int version)
  #endif
@@ -14,3 +14,26 @@
  	MYSQL_SERVER_VERSION, SYSTEM_TYPE, MACHINE_TYPE);
  #endif
  
+@@ -2865,9 +2865,11 @@ static void initialize_readline (char *name)
+   rl_add_defun("magic-space", (rl_command_func_t *)&fake_magic_space, -1);
+ #elif defined(USE_LIBEDIT_INTERFACE)
+   setlocale(LC_ALL,""); /* so as libedit use isprint */
+-  rl_attempted_completion_function= (CPPFunction*)&new_mysql_completion;
+-  rl_completion_entry_function= &no_completion;
++  rl_attempted_completion_function= (rl_completion_func_t*)&new_mysql_completion;
++  rl_completion_entry_function= (rl_compentry_func_t*)&no_completion;
++  /*
+   rl_add_defun("magic-space", (Function*)&fake_magic_space, -1);
++  */
+ #else
+   rl_attempted_completion_function= (CPPFunction*)&new_mysql_completion;
+   rl_completion_entry_function= &no_completion;
+@@ -2886,7 +2888,7 @@ static char **new_mysql_completion(const char *text,
+                                    int end MY_ATTRIBUTE((unused)))
+ {
+   if (!status.batch && !quick)
+-#if defined(USE_NEW_READLINE_INTERFACE)
++#if defined(USE_NEW_READLINE_INTERFACE) || defined(USE_LIBEDIT_INTERFACE)
+     return rl_completion_matches(text, new_command_generator);
+ #else
+     return completion_matches((char *)text, (CPFunction *)new_command_generator);

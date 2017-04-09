@@ -3,7 +3,7 @@
 
 PORTNAME=	polkit
 PORTVERSION=	0.113
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 

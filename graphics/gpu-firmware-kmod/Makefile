@@ -1,0 +1,21 @@
+# Created by: Johannes Dieterich <jmd@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	gpu-firmware-kmod
+PORTVERSION=	g20170403
+CATEGORIES=	graphics
+
+MAINTAINER=	jmd@FreeBSD.org
+COMMENT=	Firmware modules for the linuxkpi-based KMS components
+
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	FreeBSDDesktop
+GH_PROJECT=	kms-firmware
+GH_TAGNAME=	b4b4257
+
+USES=		kmod
+
+.include <bsd.port.mk>

@@ -9,6 +9,7 @@
     SUBDIR += R-cran-ROAuth
     SUBDIR += R-cran-digest
     SUBDIR += R-cran-openssl
+    SUBDIR += acmetool
     SUBDIR += acme-client
     SUBDIR += aescrypt
     SUBDIR += aespipe

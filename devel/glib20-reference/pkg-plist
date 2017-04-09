@@ -32,7 +32,11 @@ share/doc/gio/GDBusProxy.html
 share/doc/gio/GDBusServer.html
 share/doc/gio/GDataInputStream.html
 share/doc/gio/GDataOutputStream.html
+share/doc/gio/GDatagramBased.html
 share/doc/gio/GDrive.html
+share/doc/gio/GDtlsClientConnection.html
+share/doc/gio/GDtlsConnection.html
+share/doc/gio/GDtlsServerConnection.html
 share/doc/gio/GEmblem.html
 share/doc/gio/GEmblemedIcon.html
 share/doc/gio/GFile.html
@@ -142,6 +146,8 @@ share/doc/gio/api-index-2-40.html
 share/doc/gio/api-index-2-42.html
 share/doc/gio/api-index-2-44.html
 share/doc/gio/api-index-2-46.html
+share/doc/gio/api-index-2-48.html
+share/doc/gio/api-index-2-50.html
 share/doc/gio/api-index-deprecated.html
 share/doc/gio/api-index-full.html
 share/doc/gio/application.html
@@ -204,6 +210,7 @@ share/doc/gio/gio-gpollableutils.html
 share/doc/gio/gio-hierarchy.html
 share/doc/gio/gio-querymodules.html
 share/doc/gio/gio.devhelp2
+share/doc/gio/gio.html
 share/doc/gio/glib-compile-resources.html
 share/doc/gio/glib-compile-schemas.html
 share/doc/gio/gresource-tool.html
@@ -213,7 +220,6 @@ share/doc/gio/highlevel-socket.html
 share/doc/gio/home.png
 share/doc/gio/icons.html
 share/doc/gio/index.html
-share/doc/gio/index.sgml
 share/doc/gio/left-insensitive.png
 share/doc/gio/left.png
 share/doc/gio/menu-example.png
@@ -267,6 +273,8 @@ share/doc/gio/volume_mon.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-2-42.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-2-44.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-2-46.html
+%%PORTDOCS%%%%DOCSDIR%%/api-index-2-48.html
+%%PORTDOCS%%%%DOCSDIR%%/api-index-2-50.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-2-6.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-2-8.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-deprecated.html
@@ -281,6 +289,7 @@ share/doc/gio/volume_mon.html
 %%PORTDOCS%%%%DOCSDIR%%/glib-Base64-Encoding.html
 %%PORTDOCS%%%%DOCSDIR%%/glib-Basic-Types.html
 %%PORTDOCS%%%%DOCSDIR%%/glib-Bookmark-file-parser.html
+%%PORTDOCS%%%%DOCSDIR%%/glib-Bounds-checked-integer-arithmetic.html
 %%PORTDOCS%%%%DOCSDIR%%/glib-Byte-Arrays.html
 %%PORTDOCS%%%%DOCSDIR%%/glib-Byte-Order-Macros.html
 %%PORTDOCS%%%%DOCSDIR%%/glib-Caches.html
@@ -364,7 +373,6 @@ share/doc/gio/volume_mon.html
 %%PORTDOCS%%%%DOCSDIR%%/gvariant-text.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/left.png
 %%PORTDOCS%%%%DOCSDIR%%/mainloop-states.gif
@@ -442,7 +450,6 @@ share/doc/gobject/howto-interface-properties.html
 share/doc/gobject/howto-interface.html
 share/doc/gobject/howto-signals.html
 share/doc/gobject/index.html
-share/doc/gobject/index.sgml
 share/doc/gobject/left-insensitive.png
 share/doc/gobject/left.png
 share/doc/gobject/pr01.html

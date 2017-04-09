@@ -1,9 +1,11 @@
 # Created by: Viacheslav Mikerov <SlavaMikerov@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	nlohmann-json
-PORTVERSION=	v2.1.1
+PORTNAME=	json
+PORTVERSION=	2.1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
+PKGNAMEPREFIX=	nlohmann-
 
 MAINTAINER=	SlavaMikerov@gmail.com
 COMMENT=	JSON library for Modern C++

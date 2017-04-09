@@ -1,8 +1,6 @@
 bin/lowntfs-3g
 bin/ntfs-3g
 bin/ntfs-3g.probe
-bin/ntfs-3g.secaudit
-bin/ntfs-3g.usermap
 bin/ntfscat
 bin/ntfscluster
 bin/ntfscmp
@@ -38,6 +36,7 @@ include/ntfs-3g/mst.h
 include/ntfs-3g/ntfstime.h
 include/ntfs-3g/object_id.h
 include/ntfs-3g/param.h
+include/ntfs-3g/plugin.h
 include/ntfs-3g/realpath.h
 include/ntfs-3g/reparse.h
 include/ntfs-3g/runlist.h
@@ -49,14 +48,14 @@ include/ntfs-3g/volume.h
 include/ntfs-3g/xattrs.h
 lib/libntfs-3g.a
 lib/libntfs-3g.so
-lib/libntfs-3g.so.87
-lib/libntfs-3g.so.87.0.0
+lib/libntfs-3g.so.88
+lib/libntfs-3g.so.88.0.0
 libdata/pkgconfig/libntfs-3g.pc
 man/man8/mkntfs.8.gz
 man/man8/ntfs-3g.8.gz
 man/man8/ntfs-3g.probe.8.gz
-man/man8/ntfs-3g.secaudit.8.gz
-man/man8/ntfs-3g.usermap.8.gz
+man/man8/ntfssecaudit.8.gz
+man/man8/ntfsusermap.8.gz
 man/man8/ntfscat.8.gz
 man/man8/ntfsclone.8.gz
 man/man8/ntfscluster.8.gz
@@ -83,3 +82,4 @@ sbin/ntfsresize
 sbin/ntfsundelete
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+@dir lib/ntfs-3g

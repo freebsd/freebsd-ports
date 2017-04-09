@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	newrelic_rpm
-PORTVERSION=	3.18.1.330
+PORTVERSION=	4.0.0.332
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

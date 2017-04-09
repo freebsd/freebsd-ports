@@ -16,7 +16,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml++-2.6.so:textproc/libxml++26 \
 		libosp.so:textproc/opensp
 
-USES=		gettext-runtime gmake iconv libtool localbase pathfix pkgconfig
+USES=		gettext-runtime gmake iconv libtool localbase pathfix pkgconfig \
+		compiler:c++11-lang
+USE_CXXSTD=	c++11
 USE_GNOME=	glib20 glibmm libsigc++20 libxml2
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP \

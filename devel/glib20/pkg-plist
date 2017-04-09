@@ -1,6 +1,7 @@
 bin/gapplication
 bin/gdbus
 bin/gdbus-codegen
+bin/gio
 bin/gio-querymodules
 bin/glib-compile-resources
 bin/glib-compile-schemas
@@ -44,6 +45,7 @@ include/glib-2.0/gio/gconverter.h
 include/glib-2.0/gio/gconverterinputstream.h
 include/glib-2.0/gio/gconverteroutputstream.h
 include/glib-2.0/gio/gcredentials.h
+include/glib-2.0/gio/gdatagrambased.h
 include/glib-2.0/gio/gdatainputstream.h
 include/glib-2.0/gio/gdataoutputstream.h
 include/glib-2.0/gio/gdbusactiongroup.h
@@ -69,6 +71,9 @@ include/glib-2.0/gio/gdbusproxy.h
 include/glib-2.0/gio/gdbusserver.h
 include/glib-2.0/gio/gdbusutils.h
 include/glib-2.0/gio/gdrive.h
+include/glib-2.0/gio/gdtlsclientconnection.h
+include/glib-2.0/gio/gdtlsconnection.h
+include/glib-2.0/gio/gdtlsserverconnection.h
 include/glib-2.0/gio/gemblem.h
 include/glib-2.0/gio/gemblemedicon.h
 include/glib-2.0/gio/gfile.h
@@ -133,10 +138,10 @@ include/glib-2.0/gio/gsettingsbackend.h
 include/glib-2.0/gio/gsettingsschema.h
 include/glib-2.0/gio/gsimpleaction.h
 include/glib-2.0/gio/gsimpleactiongroup.h
-include/glib-2.0/gio/gsimpleiostream.h
-include/glib-2.0/gio/gsimpleproxyresolver.h
 include/glib-2.0/gio/gsimpleasyncresult.h
+include/glib-2.0/gio/gsimpleiostream.h
 include/glib-2.0/gio/gsimplepermission.h
+include/glib-2.0/gio/gsimpleproxyresolver.h
 include/glib-2.0/gio/gsocket.h
 include/glib-2.0/gio/gsocketaddress.h
 include/glib-2.0/gio/gsocketaddressenumerator.h
@@ -319,8 +324,10 @@ share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
 share/bash-completion/completions/gapplication
-%%GDB%%share/gdb/auto-load/libglib-2.0.so.%%LIBVERSION%%-gdb.py
-%%GDB%%share/gdb/auto-load/libgobject-2.0.so.%%LIBVERSION%%-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.%%LIBVERSION%%-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.%%LIBVERSION%%-gdb.py
+share/gettext/its/gschema.its
+share/gettext/its/gschema.loc
 share/glib-2.0/codegen/__init__.py
 share/glib-2.0/codegen/__init__.pyc
 share/glib-2.0/codegen/__init__.pyo
@@ -345,8 +352,8 @@ share/glib-2.0/codegen/parser.pyo
 share/glib-2.0/codegen/utils.py
 share/glib-2.0/codegen/utils.pyc
 share/glib-2.0/codegen/utils.pyo
-%%GDB%%share/glib-2.0/gdb/glib.py
-%%GDB%%share/glib-2.0/gdb/gobject.py
+share/glib-2.0/gdb/glib_gdb.py
+share/glib-2.0/gdb/gobject_gdb.py
 share/glib-2.0/gettext/po/Makefile.in.in
 share/glib-2.0/schemas/gschema.dtd
 share/locale/af/LC_MESSAGES/glib20.mo
@@ -381,6 +388,7 @@ share/locale/fa/LC_MESSAGES/glib20.mo
 share/locale/fi/LC_MESSAGES/glib20.mo
 share/locale/fr/LC_MESSAGES/glib20.mo
 share/locale/ga/LC_MESSAGES/glib20.mo
+share/locale/gd/LC_MESSAGES/glib20.mo
 share/locale/gl/LC_MESSAGES/glib20.mo
 share/locale/gu/LC_MESSAGES/glib20.mo
 share/locale/he/LC_MESSAGES/glib20.mo

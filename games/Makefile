@@ -13,6 +13,7 @@
     SUBDIR += 4stattack
     SUBDIR += 54321
     SUBDIR += 7kaa
+    SUBDIR += 90secondportraits
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap

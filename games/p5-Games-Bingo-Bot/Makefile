@@ -8,7 +8,7 @@ CATEGORIES=	games perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple class holding IRC related methods for bingo
 
 BUILD_DEPENDS=	p5-Games-Bingo>=0:games/p5-Games-Bingo

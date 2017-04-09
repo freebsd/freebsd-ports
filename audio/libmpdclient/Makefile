@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libmpdclient
-PORTVERSION=	2.10
-PORTREVISION=	1
+PORTVERSION=	2.11
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/libmpdclient/2/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	API library for interfacing MPD
 
 GNU_CONFIGURE=	yes

@@ -12,6 +12,8 @@ COMMENT=	Live audio looping sampler
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not build with newer libsigc++20
+
 BUILD_DEPENDS=	ladspa>0:audio/ladspa
 LIB_DEPENDS=	libjack.so:audio/jack \
 		liblo.so:audio/liblo \

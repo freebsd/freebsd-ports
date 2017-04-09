@@ -13,6 +13,8 @@ COMMENT=	Probabilistic text search database engine
 
 LICENSE=	GPLv2
 
+CONFLICTS_INSTALL=	xapian-core- xapian-core12-
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

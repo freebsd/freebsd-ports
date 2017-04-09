@@ -3,7 +3,7 @@
 
 PORTNAME=	giacxcas
 DISTVERSION=	1.2.2-57
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/
@@ -67,15 +67,9 @@ INFO=		giac_es giac_us
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 #NB: built of giacxcas with USE_GCC and nlt is successfull if the ntl port is also
 #    installed  with USE_GCC
-.if ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=	--disable-ntl
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libntl.a:math/ntl
-.endif
 
 post-extract:
 	@${FIND} ${WRKSRC}/examples/Exemples -name "._*" -delete

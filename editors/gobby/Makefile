@@ -21,7 +21,8 @@ OPTIONS_DEFINE=	GTKSPELL NLS
 GTKSPELL_DESC=	Enable GtkSpell support
 
 USE_GNOME=	gtksourceview2 intltool
-USES=		gmake pkgconfig pathfix
+USES=		compiler:c++11-lang gmake pkgconfig pathfix
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

@@ -1,4 +1,4 @@
-TIMESTAMP = 1488206145
+TIMESTAMP = 1489745171
 SHA256 (eduke32_src_20170225-6079.tar.xz) = 23cecc904df1e1e528c499e775a4dce7417cc70b8d97e7dcef068ff197e6a0a7
 SIZE (eduke32_src_20170225-6079.tar.xz) = 14759072
 SHA256 (duke3d_hrp.zip) = f217df456b4f11055041731033e35e4402fada99253e714e37c4a27e6fdc78a5
@@ -7,3 +7,5 @@ SHA256 (duke3d_xxx.zip) = c31713e6400a175a1bfa3bd369d132f8a8abce8915c113549f9826
 SIZE (duke3d_xxx.zip) = 26586453
 SHA256 (3dduke13.zip) = c67efd179022bc6d9bde54f404c707cbcbdc15423c20be72e277bc2bdddf3d0e
 SIZE (3dduke13.zip) = 5924374
+SHA256 (duke3d_voxels.zip) = b63deb1230554ecfd391699b85ae0be86ccb693657604378f0830ec0acec74e4
+SIZE (duke3d_voxels.zip) = 1743371

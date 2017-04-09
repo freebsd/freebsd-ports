@@ -111,7 +111,6 @@
     SUBDIR += kde-icons-nuvola
     SUBDIR += kde-icons-umicons
     SUBDIR += kde4-base-artwork
-    SUBDIR += kde4-icons-oxygen
     SUBDIR += kde4-style-bespin
     SUBDIR += kde4-style-nitrogen
     SUBDIR += kde4-style-oxygen-transparent

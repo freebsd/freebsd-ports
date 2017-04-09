@@ -2,6 +2,7 @@
 
 PORTNAME=	mariadb
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \

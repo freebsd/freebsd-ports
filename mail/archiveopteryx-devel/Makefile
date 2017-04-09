@@ -21,7 +21,7 @@ GH_ACCOUNT=	aox
 GH_PROJECT=	aox
 GH_TAGNAME=	e10c73a
 
-USES=		perl5 ssl tar:bzip2
+USES=		perl5 ssl
 USE_PERL5=	build
 WITH_PGSQL=	client
 

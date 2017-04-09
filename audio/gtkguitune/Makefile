@@ -16,7 +16,8 @@ LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		pkgconfig
+USES=		compiler:c++11-lang pkgconfig
+USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm24
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

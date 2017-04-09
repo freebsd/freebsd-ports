@@ -1,20 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	packer
-PORTVERSION=	0.12.1
+PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Tool for creating machine images
 
+LICENSE=	MPL
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitchellh
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
-
-STRIP=		# stripping can break go binaries
 
 # Make it so that post-extract runs before the GH_SUBDIR targets.
 TARGET_ORDER_OVERRIDE=	680:post-extract

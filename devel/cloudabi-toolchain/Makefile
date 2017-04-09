@@ -26,7 +26,7 @@ SHELL_TOOLS=	man pkg-config
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1100100
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100100
 # Depend on ELF tools provided by the base system. They work well with
 # CloudABI executables.
 BASE_TOOLS=	addr2line c++filt objcopy readelf strings strip

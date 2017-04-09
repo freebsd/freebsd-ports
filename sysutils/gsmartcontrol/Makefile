@@ -14,7 +14,8 @@ LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 RUN_DEPENDS=	bash:shells/bash \
 		smartctl:sysutils/smartmontools
 
-USES=		pkgconfig tar:bzip2 libtool
+USES=		compiler:c++11-lang pkgconfig tar:bzip2 libtool
+USE_CXXSTD=	c++11
 INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes

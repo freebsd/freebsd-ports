@@ -3,6 +3,7 @@
 
 PORTNAME=	dilay
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@rawbw.com

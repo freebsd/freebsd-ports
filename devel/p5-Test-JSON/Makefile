@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${DISTVERSION:C/0$//}
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test JSON data
 
 RUN_DEPENDS=	p5-Test-Differences>=0.47:devel/p5-Test-Differences \

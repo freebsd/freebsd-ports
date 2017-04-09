@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm \
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 
-USES=		tar:bzip2 gmake pkgconfig
+USES=		compiler:c++11-lang tar:bzip2 gmake pkgconfig
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 USE_GL=		yes
 

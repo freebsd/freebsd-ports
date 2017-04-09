@@ -3,6 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-gtk3
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-r${PORTVERSION:E}${DISTVERSIONSUFFIX}
 CATEGORIES=	graphics
@@ -116,11 +117,6 @@ USES+=		compiler:gcc-c++11-lib
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
-# Workaround: this needs to be late because Mk/Uses/compiler.mk tramples
-# over previously set values with gcc-libc++-configure as of r432539.
-# GCC 4.9 doesn't generate usable code on FreeBSD 11.0.
-USE_GCC=	5+
-
 # work around compiler faults
 .if ${ARCH} == i386
 CFLAGS+=	-mstackrealign

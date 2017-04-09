@@ -7,7 +7,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse XML and specify rules for individual tags
 
 RUN_DEPENDS=	p5-XML-Parser>=2.00:textproc/p5-XML-Parser

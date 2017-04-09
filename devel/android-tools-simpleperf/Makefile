@@ -3,6 +3,7 @@
 PORTNAME=	android-tools-simpleperf
 DISTVERSIONPREFIX=	android-
 DISTVERSION=	7.1.1_r4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +19,7 @@ GH_PROJECT=	platform_bionic:bionic platform_system_core:core \
 		platform_system_extras
 GH_SUBDIR=	bionic:bionic
 
-USES=		compiler:c++11-lib uidfix
+USES=		compiler:c++11-lib ncurses uidfix
 BUILD_WRKSRC=	${WRKSRC}/simpleperf
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 TEST_WRKSRC=	${BUILD_WRKSRC}

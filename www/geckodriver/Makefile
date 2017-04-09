@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	geckodriver
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://freebsd-ports.mytaste.org/www/geckodriver/:crates
 DISTFILES=	registry-${PORTVERSION}.tar.gz:crates
@@ -15,7 +16,6 @@ BUILD_DEPENDS=	cargo:devel/cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
-GH_TAGNAME=	a49be92
 
 MAKE_ENV=	CARGO_HOME=${BUILD_WRKSRC}
 

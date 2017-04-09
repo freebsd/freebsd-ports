@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	consul
-PORTVERSION=	0.7.5
+PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -20,11 +20,18 @@ GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 USE_RC_SUBR=	consul
 
+PLIST_FILES=	bin/consul
+
 USERS=		consul
 GROUPS=		consul
 
 post-extract:
 	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src/
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "s!%%VERSION%%!${PORTVERSION}!g" \
+		${WRKSRC}/version/version.go
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/hashicorp/consul; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build \
