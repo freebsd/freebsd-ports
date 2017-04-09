@@ -17,3 +17,10 @@
 * and "allow-loopback-pinentry" into ~/.gnupg/gpg-agent.conf            *
 *                                                                       *
 *************************************************************************
+*                                                                       *
+* Some fixes related to gnupg handling were made in v0.7.12.            *
+*                                                                       *
+* Please visit the following URL for more information:                  *
+* http://www.nongnu.org/duplicity/CHANGELOG                             *
+*                                                                       *
+*************************************************************************
