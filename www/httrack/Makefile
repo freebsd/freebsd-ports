@@ -2,8 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	httrack
-PORTVERSION=	3.48.24
+PORTVERSION=	3.49.1
 CATEGORIES=	www
+MASTER_SITES=	https://download.httrack.com/ \
+		https://mirror.httrack.com/ \
+		https://mirror.httrack.com/historical/ \
+		http://download.httrack.com/ \
+		http://mirror.httrack.com/ \
+		http://mirror.httrack.com/historical/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
@@ -22,10 +29,6 @@ USES=		alias execinfo gmake iconv libtool localbase shebangfix ssl
 
 PORTDATA=	*
 PORTDOCS=	*
-
-GH_TUPLE=	xroche:${PORTNAME}:a9a7aa6 \
-		xroche:coucal:afd0a56:coucal/src/coucal
-USE_GITHUB=	yes
 
 SHEBANG_FILES=	src/webhttrack
 
