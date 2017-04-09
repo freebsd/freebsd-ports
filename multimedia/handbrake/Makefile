@@ -3,7 +3,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 DIST_SUBDIR=	${PORTNAME}
 
@@ -107,7 +107,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
 LIB_DEPENDS+=	libvpx.so:multimedia/libvpx \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libnotify.so:devel/libnotify
-USES+=		gettext
+USES+=		gettext desktop-file-utils
 USE_GNOME+=	gtk30 intltool cairo gdkpixbuf2
 .else
 CONFIGURE_ARGS+=	--disable-gtk
