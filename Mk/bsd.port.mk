@@ -3435,6 +3435,12 @@ check-umask:
 	fi
 .endif
 
+# Needed for poudriere wait for at least a year before removing
+# XXX 2017-04-09
+.if !target(install-mtree)
+install-mtree:
+.endif
+
 .if !target(install-ldconfig-file)
 install-ldconfig-file:
 .  if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
