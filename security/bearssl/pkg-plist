@@ -10,4 +10,4 @@ include/bearssl_rsa.h
 include/bearssl_prf.h
 include/bearssl_pem.h
 include/bearssl_block.h
-lib/libbearssl.a
+lib/libbearssl.so
