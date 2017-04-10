@@ -7,6 +7,9 @@
 %%DATADIR%%/gray-88.theme
 %%DATADIR%%/green-mono-88.theme
 %%DATADIR%%/green.theme
+%%DATADIR%%/gruvbox-alt.theme
+%%DATADIR%%/gruvbox.theme
+%%DATADIR%%/jellybeans.theme
 %%DATADIR%%/night.theme
 %%DATADIR%%/rc
 %%DATADIR%%/solarized-dark.theme
