@@ -494,8 +494,16 @@ report_all() {
   setup_proxies
   test_connection
   log "INIT" "Connected to ${checkin_server_description}"
-  # sleep random number of seconds by default
-  test X"$1" = X-nodelay || ${SLEEP} $(random)
+  # When non-interactive, sleep to reduce congestion on bsdstats.org
+  if [ "$1" != -nodelay ]; then
+	  # In FreeBSD 12.0 the anticongestion function should be used
+	  # instead of a hard-coded sleep
+	  if [ -n "$anticongestion_sleeptime" ]; then
+		  anticongestion
+	  else
+		  ${SLEEP} $(random)
+	  fi
+  fi
   # prepare
   get_id_token
   # begin
