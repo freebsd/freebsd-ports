@@ -3,10 +3,7 @@
 PORTNAME=	oauth
 PORTVERSION=	2.0.2
 CATEGORIES=	net pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
 PKGNAMESUFFIX=	2
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Php interface to the OAuth Protocol
@@ -22,7 +19,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 IGNORE_WITH_PHP=	56
 CONFLICTS=	pecl-oauth-1*
 

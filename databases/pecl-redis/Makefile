@@ -3,8 +3,6 @@
 PORTNAME=	redis
 PORTVERSION=	3.1.2
 CATEGORIES=	databases
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
 
 MAINTAINER=	daniel@blodan.se
 COMMENT=	Extension to access Redis
@@ -12,7 +10,7 @@ COMMENT=	Extension to access Redis
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 USE_PHP=	session:build
 
 OPTIONS_DEFINE=	IGBINARY

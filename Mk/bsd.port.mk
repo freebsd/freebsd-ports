@@ -5090,10 +5090,11 @@ install-desktop-entries:
 WARNING_WAIT?=	10
 show-warnings:
 	@${ECHO_MSG} "/!\\ WARNING /!\\"
-.for m in ${WARNING}
-	@${ECHO_MSG} "${m}"
-.endfor
 	@${ECHO_MSG}
+.for m in ${WARNING}
+	@${ECHO_MSG} "${m}" | ${FMT} 75 79
+	@${ECHO_MSG}
+.endfor
 	@sleep ${WARNING_WAIT}
 .endif
 
@@ -5104,9 +5105,9 @@ show-dev-warnings:
 	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile warnings, please consider fixing /!\\"
 	@${ECHO_MSG}
 .for m in ${DEV_WARNING}
-	@${ECHO_MSG} ${m}
-.endfor
+	@${ECHO_MSG} ${m} | ${FMT} 75 79
 	@${ECHO_MSG}
+.endfor
 .if defined(DEV_WARNING_FATAL)
 	@${FALSE}
 .else
@@ -5119,9 +5120,9 @@ show-dev-errors:
 	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile errors /!\\"
 	@${ECHO_MSG}
 .for m in ${DEV_ERROR}
-	@${ECHO_MSG} "${m}"
-.endfor
+	@${ECHO_MSG} "${m}" | ${FMT} 75 79
 	@${ECHO_MSG}
+.endfor
 	@${FALSE}
 .endif
 .endif #DEVELOPER

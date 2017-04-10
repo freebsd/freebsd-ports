@@ -2,59 +2,49 @@
 # $FreeBSD$
 
 PORTNAME=	higan
-PORTVERSION=	0.94
-PORTREVISION=	5
+PORTVERSION=	102
 CATEGORIES=	emulators
-MASTER_SITES=	http://byuu.org/files/ \
+MASTER_SITES=	http://download.byuu.org/ \
 		http://www.cyberbotx.com/higan/
-DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}-source
+DISTNAME=	${PORTNAME}_v${PORTVERSION}-source
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Nintendo multi-system emulator
 
-USES=		compiler:c++11-lib gmake pkgconfig tar:xz
+USES=		7z:p7zip compiler:c++14-lang gmake pkgconfig
 USE_LDCONFIG=	yes
+USE_XORG=	x11 xext
+USE_CSTD=	c99
+USE_CXXSTD=	c++14
+USE_GCC=	yes
+MAKEFILE=	GNUmakefile
 
 ONLY_FOR_ARCHS=	i386 amd64
-MAKE_ENV+=	compiler="${CXX}" cflags="-x c -std=c99 ${CFLAGS}" \
-		cppflags="-x c++ -std=c++11 ${CXXFLAGS}"
+MAKE_ENV+=	compiler="${CXX}"
 
 OPTIONS_DEFINE=		DEBUG
-OPTIONS_SINGLE=		PROFILE GUI
-OPTIONS_SINGLE_PROFILE=	ACCURACY BALANCED PERFORMANCE
+OPTIONS_SINGLE=		GUI
 OPTIONS_SINGLE_GUI=	GTK2 QT4
 OPTIONS_MULTI=		VIDEO SOUND INPUT
 OPTIONS_MULTI_VIDEO=	GLX SDL XSHM XV
 OPTIONS_MULTI_SOUND=	AO OPENAL OSS PULSEAUDIO
 OPTIONS_MULTI_INPUT=	INPUT_SDL INPUT_X
-OPTIONS_DEFAULT=	BALANCED GTK2 GLX XSHM XV SDL \
+OPTIONS_DEFAULT=	GTK2 GLX XSHM XV SDL \
 			OSS INPUT_SDL INPUT_X
 
-ACCURACY_DESC=		Use accuracy profile
-BALANCED_DESC=		Use balanced profile
-PERFORMANCE_DESC=	Use performance profile
-GTK2_DESC=		Build with GTK+2 GUI
-QT4_DESC=		Build with QT4 GUI
-GLX_DESC=		Build GLX video driver
-SDL_DESC=		Build SDL video driver
 XSHM_DESC=		Build XShm video driver
 XV_DESC=		Build Xv video driver
-AO_DESC=		Build AO sound driver
-OPENAL_DESC=		Build OpenAL sound driver
-OSS_DESC=		Build OSS sound driver
-PULSEAUDIO_DESC=	Build Pulseaudio sound driver
 INPUT_SDL_DESC=		Build SDL input driver
 INPUT_X_DESC=		Build X input driver
 
-ACCURACY_MAKE_ENV=	profile="accuracy"
-BALANCED_MAKE_ENV=	profile="balanced"
-PERFORMANCE_MAKE_ENV=	profile="performance"
+GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+GTK2_MAKE_ENV=	hiro="gtk"
+GTK2_USE=	GNOME=cairo,gdkpixbuf2,gtk20,gtksourceview2
+GTK2_USES=	gettext
 
-GTK2_USE=	GNOME=gtk20
-GTK2_MAKE_ENV=	phoenix="gtk"
-
-QT4_USE=	QT4=gui,moc_build
-QT4_MAKE_ENV=	phoenix="qt"
+QT4_MAKE_ENV=	hiro="qt"
+QT4_USE=	QT4=corelib,gui,moc_build
 
 GLX_USE=	GL=gl
 GLX_VARS=	VIDEO_DRIVER+=video.glx
@@ -89,33 +79,27 @@ post-patch:
 		-e 's|%%VIDEO%%|${VIDEO_DRIVER}|' \
 		-e 's|%%AUDIO%%|${AUDIO_DRIVER}|' \
 		-e 's|%%INPUT%%|${INPUT_DRIVER}|' \
-		${WRKSRC}/target-ethos/Makefile
+		${WRKSRC}/higan/target-tomoko/GNUmakefile
 	${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|' \
-		${WRKSRC}/nall/string/platform.hpp
+		${WRKSRC}/nall/path.hpp
 
 post-patch-DEBUG-on:
 	${REINPLACE_CMD} -e 's|-O3|-g|g' \
-		${WRKSRC}/ananke/Makefile \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|:= -s|:= #|g' \
-		${WRKSRC}/Makefile
-
-pre-build-QT4-on:
-	(cd ${WRKSRC}/phoenix/qt && ${MOC} -i -o platform.moc platform.moc.hpp)
+		${WRKSRC}/higan/GNUmakefile \
+		${WRKSRC}/icarus/GNUmakefile
 
 do-build:
-.for d in . ananke
-	(cd ${WRKSRC}/${d} && ${MAKE_CMD} ${MAKE_ENV})
+.for d in higan icarus
+	@${DO_MAKE_BUILD} ${ALL_TARGET} -C${WRKSRC}/${d}
 .endfor
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/ananke/libananke.so ${STAGEDIR}${PREFIX}/lib/libananke.so.1
-	${LN} -sf libananke.so.1 ${STAGEDIR}${PREFIX}/lib/libananke.so
-	${INSTALL_PROGRAM} ${WRKSRC}/out/higan ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/data/higan.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/data/higan.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	${MKDIR} ${STAGEDIR}${DATADIR}/shaders
-	(cd ${WRKSRC}/profile && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/)
-	(cd ${WRKSRC}/shaders && ${COPYTREE_SHARE} \*.shader ${STAGEDIR}${DATADIR}/shaders/)
+	${INSTALL_PROGRAM} ${WRKSRC}/higan/out/higan ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/icarus/out/icarus ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/higan/data/higan.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	(cd ${WRKSRC}/higan/systems && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/)
+	${INSTALL_DATA} ${WRKSRC}/higan/data/cheats.bml ${STAGEDIR}${DATADIR}/
+	(cd ${WRKSRC}/icarus/Database && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/icarus/Database/)
 
 .include <bsd.port.mk>

@@ -4,8 +4,6 @@
 PORTNAME=	http
 PORTVERSION=	3.1.0
 CATEGORIES=	www
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
 DISTNAME=	pecl_${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -25,7 +23,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 BROKEN_powerpc64=	Does not build
 
 IGNORE_WITH_PHP=	56
-USES=		php:ext tar:tgz
+USES=		php:pecl
 USE_PHP=	zlib:build
 CONFLICTS=	pecl-http[12]*
 

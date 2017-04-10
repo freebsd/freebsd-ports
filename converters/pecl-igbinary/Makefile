@@ -4,10 +4,6 @@
 PORTNAME=	igbinary
 PORTVERSION=	2.0.1
 CATEGORIES=	converters
-MASTER_SITES=	http://pecl.php.net/get/ \
-		LOCAL/sunpoet
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Replacement for the standard PHP serializer
@@ -15,7 +11,7 @@ COMMENT=	Replacement for the standard PHP serializer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 
 .include <bsd.port.pre.mk>
 

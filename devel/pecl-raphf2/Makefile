@@ -5,8 +5,6 @@ PORTNAME=	raphf
 PORTVERSION=	2.0.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -17,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTSCOUT=	limit:^2.*
 
-USES=		gmake php:ext tar:tgz
+USES=		gmake php:pecl
 IGNORE_WITH_PHP=	56
 CONFLICTS=	pecl-raphf-1*
 

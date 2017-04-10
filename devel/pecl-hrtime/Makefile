@@ -4,15 +4,12 @@
 PORTNAME=	hrtime
 PORTVERSION=	0.6.0
 CATEGORIES=	devel
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	High resolution timing for PHP
 
 LICENSE=	BSD2CLAUSE
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 
 .include <bsd.port.mk>

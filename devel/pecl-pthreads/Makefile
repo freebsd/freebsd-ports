@@ -5,9 +5,6 @@ PORTNAME=	pthreads
 PORTVERSION=	2.0.10
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	Compatible Threading API for PHP5.3+
@@ -16,7 +13,7 @@ LICENSE=	PHP301
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 
 .include <bsd.port.options.mk>
 

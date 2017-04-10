@@ -5,16 +5,13 @@ PORTNAME=	amfext
 PORTVERSION=	0.9.2
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Implements encoding and decoding of AMF and AMF3 messages
 
 LICENSE=	PHP30
 
-USES=		dos2unix libtool php:ext tar:tgz
+USES=		dos2unix libtool php:pecl
 PHP_MODNAME=	amf
 IGNORE_WITH_PHP=	70
 

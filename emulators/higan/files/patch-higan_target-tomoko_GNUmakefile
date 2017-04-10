@@ -1,15 +1,15 @@
---- target-ethos/Makefile.orig	2014-01-13 05:26:29 UTC
-+++ target-ethos/Makefile
+--- higan/target-tomoko/GNUmakefile.orig	2016-01-14 03:20:56 UTC
++++ higan/target-tomoko/GNUmakefile
 @@ -27,9 +27,9 @@ else ifeq ($(platform),linux)
    ruby += audio.alsa audio.openal audio.oss audio.pulseaudio audio.pulseaudiosimple audio.ao
-   ruby += input.udev input.sdl input.x
+   ruby += input.udev input.sdl input.xlib
  else ifeq ($(platform),bsd)
--  ruby := video.glx
+-  ruby += video.glx video.xv video.xshm video.sdl
 -  ruby += audio.openal audio.oss
--  ruby += input.x
-+  ruby := %%VIDEO%%
+-  ruby += input.sdl input.xlib
++  ruby += %%VIDEO%%
 +  ruby += %%AUDIO%%
 +  ruby += %%INPUT%%
  endif
  
- # phoenix
+ # ruby
