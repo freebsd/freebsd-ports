@@ -19,7 +19,6 @@ DEPRECATED=	Deprecated by upstream, use devel/liborcus
 EXPIRATION_DATE=	2017-03-31
 
 BROKEN_sparc64=	cannot link with boost
-BROKEN_powerpc64=	Does not build
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig tar:xz

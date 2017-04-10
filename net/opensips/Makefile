@@ -33,8 +33,6 @@ RUN_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash \
 			${LOCALBASE}/bin/python2:lang/python2 \
 			${LOCALBASE}/bin/grep:textproc/gnugrep
 
-BROKEN_powerpc64=	Does not build
-
 GINSTALL=		ginstall
 
 WRKSRC=			${WRKDIR}/opensips-${PORTVERSION}

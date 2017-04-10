@@ -99,7 +99,7 @@ varnishd_reload()
 	if [ -z "${varnishd_config}" ]; then
 		echo "${name}: nothing to reload, no configuration file defined, builtin VCL used"
 	else
-		_new_config_name="rc.d_reloaded@$(date +%Y%m%d%H%M%S)"
+		_new_config_name="reloaded_$(date +%Y%m%d%H%M%S)"
 		_varnishadm_cmd="%%PREFIX%%/bin/varnishadm ${varnish_cli_flags}"
 		if ! eval ${_varnishadm_cmd} vcl.list > /dev/null; then
 			err 1 "${name}: can't connect to varnishadm"

@@ -1,8 +1,8 @@
 @owner www
 @group www
+%%WWWDIR%%/.gitignore
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/LICENSE
-%%WWWDIR%%/announcements.php
 %%WWWDIR%%/admin/backups/.htaccess
 %%WWWDIR%%/admin/backups/index.html
 %%WWWDIR%%/admin/inc/class_form.php
@@ -155,8 +155,6 @@
 %%WWWDIR%%/admin/styles/default/forum.css
 %%WWWDIR%%/admin/styles/default/home.css
 %%WWWDIR%%/admin/styles/default/images/close.png
-%%WWWDIR%%/admin/styles/default/images/spinner.gif
-%%WWWDIR%%/admin/styles/default/images/spinner_big.gif
 %%WWWDIR%%/admin/styles/default/images/icons/bullet_off.png
 %%WWWDIR%%/admin/styles/default/images/icons/bullet_on.png
 %%WWWDIR%%/admin/styles/default/images/icons/cross.png
@@ -186,6 +184,8 @@
 %%WWWDIR%%/admin/styles/default/images/index.html
 %%WWWDIR%%/admin/styles/default/images/login_logo.png
 %%WWWDIR%%/admin/styles/default/images/logo.png
+%%WWWDIR%%/admin/styles/default/images/spinner.gif
+%%WWWDIR%%/admin/styles/default/images/spinner_big.gif
 %%WWWDIR%%/admin/styles/default/images/submit_bg.png
 %%WWWDIR%%/admin/styles/default/images/tcat.png
 %%WWWDIR%%/admin/styles/default/images/thead.png
@@ -198,6 +198,7 @@
 %%WWWDIR%%/admin/styles/default/style.php
 %%WWWDIR%%/admin/styles/default/user.css
 %%WWWDIR%%/admin/styles/index.html
+%%WWWDIR%%/announcements.php
 %%WWWDIR%%/archive/global.php
 %%WWWDIR%%/archive/index.php
 %%WWWDIR%%/archive/print.css
@@ -644,6 +645,7 @@
 %%WWWDIR%%/install/resources/upgrade36.php
 %%WWWDIR%%/install/resources/upgrade37.php
 %%WWWDIR%%/install/resources/upgrade38.php
+%%WWWDIR%%/install/resources/upgrade39.php
 %%WWWDIR%%/install/resources/upgrade4.php
 %%WWWDIR%%/install/resources/upgrade5.php
 %%WWWDIR%%/install/resources/upgrade6.php

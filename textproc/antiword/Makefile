@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.winfield.demon.nl/linux/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for displaying Microsoft(R) Word documents
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Docs/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:print/gsfonts
@@ -23,18 +23,13 @@ SHEBANG_FILES=	kantiword Unix-only/fontinfo.pl
 MAKE_JOBS_UNSAFE=yes
 INSTALL_TARGET=	global_install
 
-PORTDOCS=	COPYING ChangeLog Emacs Exmh FAQ History Mozilla Mutt Netscape \
+PORTDOCS=	ChangeLog Emacs Exmh FAQ History Mozilla Mutt Netscape \
 		QandA ReadMe antiword.1 antiword.man antiword.php testdoc.doc
 
-OPTIONS_DEFINE=	DEBUG
+OPTIONS_DEFINE=	DOCS DEBUG
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CFLAGS+=	-DDEBUG
-.else
-CFLAGS+=	-DNDEBUG
-.endif
+DEBUG_CFLAGS=		-DDEBUG
+DEBUG_CFLAGS_OFF=	-DNDEBUG
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,/usr/share,${LOCALBASE}/share,g; s,fonts2,fonts,' ${WRKSRC}/Unix-only/fontinfo.pl
@@ -43,6 +38,8 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/Docs/antiword.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/Docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

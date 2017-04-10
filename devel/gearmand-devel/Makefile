@@ -6,6 +6,7 @@ PORTVERSION=	1.1.8
 PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.2/${PORTVERSION}/+download/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Gearman C Server and Library
@@ -17,12 +18,9 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 
 CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.0.*
 
-PKGNAMESUFFIX=	-devel
-
 USERS=		gearmand
 GROUPS=		gearmand
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not build: cannot link with boost
 
 USE_PERL5=	build

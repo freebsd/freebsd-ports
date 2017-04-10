@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-client
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 DISTVERSIONSUFFIX=	-incubating
 CATEGORIES=	www java
 MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
@@ -26,6 +26,7 @@ MVN=		mvn
 MVN_ARGS=	package -Duser.home=${WRKDIR}
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
+NO_ARCH=	yes
 
 OPTIONS_SUB=	yes
 SUB_FILES=	pkg-message
@@ -65,8 +66,8 @@ do-install:
 .if ${PORT_OPTIONS:MMK_LINK}
 		@${MKDIR} ${STAGEDIR}/root
 		@${MKDIR} ${STAGEDIR}${PREFIX}/apache-tomcat-8.0/webapps
-		@${LN} -s ${GUACAMOLE_CONF} ${STAGEDIR}/root/.guacamole
-		@${LN} -s ${GUACAMOLE_DATA}/guacamole.war \
+		@${LN} -s ..${GUACAMOLE_CONF} ${STAGEDIR}/root/.guacamole
+		@${LN} -s ../../share/${PORTNAME}/guacamole.war \
 			${STAGEDIR}${PREFIX}/apache-tomcat-8.0/webapps/
 .endif
 		@${CP} ${FILESDIR}/user-mapping.xml.sample ${STAGEDIR}${GUACAMOLE_CONF}/

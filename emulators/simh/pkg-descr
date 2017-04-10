@@ -14,7 +14,6 @@ SIMH implements simulators for:
  - Scientific Data Systems SDS 940
 
 These simulators are capable of running the Unix V5, V6 and V7 binaries
-licenced for non-commercial use by SCO.  See ${WRKDIR}/simh_doc.txt for
-further details.
+licenced for non-commercial use by SCO.  See documentation for further details.
 
 WWW: http://simh.trailing-edge.com

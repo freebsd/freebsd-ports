@@ -1,5 +1,9 @@
 *********************************************************************
 
-The file needed by the VAX emulator is located in %%DATADIR%%
+The 'eclipse' emulator has been renamed to 'simh-eclipse'.
+
+The file needed by the VAX emulator is located in:
+
+	%%DATADIR%%
 
 *********************************************************************

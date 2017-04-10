@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	proxychains-ng
-PORTVERSION=	4.11
+PORTVERSION=	4.12
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net security
-MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Redirect connection through proxy servers
@@ -15,7 +15,10 @@ LICENSE=	GPLv2
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+GH_ACCOUNT=	rofl0r
 
 CONFLICTS=	proxychains-[0-9]*
 
@@ -25,9 +28,6 @@ OPTIONS_DEFINE=	DOCS
 post-configure:
 	@${ECHO_CMD} "PXCHAINS=proxychains" >> ${WRKSRC}/config.mak
 	@${ECHO_CMD} "LDSO_PATHNAME=libproxychains-4.so" >> ${WRKSRC}/config.mak
-
-do-build:
-	cd ${WRKSRC} ; gmake
 
 post-patch:
 	@${REINPLACE_CMD} \
