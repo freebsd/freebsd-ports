@@ -1,16 +1,19 @@
---- PATCHES Dec 2002 17:44:54 -0000	3.6
-+++ PATCHES Feb 2004 13:19:42 -0000
+--- PATCHES.orig	2017-04-09 21:00:46 UTC
++++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.7.ust.maildir-mtime.2
---- browser.c.orig	Tue Feb  8 10:29:57 2005
-+++ browser.c	Tue Feb  8 10:29:58 2005
-@@ -31,4 +31,5 @@
+--- browser.c.orig	2017-04-09 20:49:44 UTC
++++ browser.c
+@@ -35,6 +35,7 @@
+ #ifdef USE_NNTP
  #include "nntp.h"
  #endif
 +#include "mx.h"
  
  #include <stdlib.h>
-@@ -473,4 +474,19 @@
+ #include <dirent.h>
+@@ -545,6 +546,21 @@ static void init_state (struct browser_s
+     menu->data = state->entry;
  }
  
 +static void check_maildir_times (BUFFY *buf, struct stat *st)
@@ -30,15 +33,20 @@
 +
  /* get list of all files/newsgroups with mask */
  static int examine_directory (MUTTMENU *menu, struct browser_state *state,
-@@ -562,4 +578,5 @@
+ 			      char *d, const char *prefix)
+@@ -634,6 +650,7 @@ static int examine_directory (MUTTMENU *
+     tmp = Incoming;
      while (tmp && mutt_strcmp (buffer, tmp->path))
        tmp = tmp->next;
 +    check_maildir_times (tmp, &s);
-     add_folder (menu, state, de->d_name, &s, NULL, (tmp) ? tmp->new : 0);
-   }
-@@ -637,4 +654,5 @@
-     mutt_pretty_mailbox (buffer);
+     if (tmp && Context &&
+         !mutt_strcmp (tmp->realpath, Context->realpath))
+     {
+@@ -737,6 +754,7 @@ static int examine_mailboxes (MUTTMENU *
+     strfcpy (buffer, NONULL(tmp->path), sizeof (buffer));
+     mutt_pretty_mailbox (buffer, sizeof (buffer));
  
 +    check_maildir_times (tmp, &s);
-     add_folder (menu, state, buffer, &s, NULL, tmp->new);
+     add_folder (menu, state, buffer, &s, tmp, NULL);
    }
+   while ((tmp = tmp->next));
