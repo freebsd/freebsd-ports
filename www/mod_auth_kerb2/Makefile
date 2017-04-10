@@ -34,12 +34,4 @@ GSSAPI_BASE_USES=	gssapi
 GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 GSSAPI_MIT_USES=	gssapi:mit
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGSSAPI_BASE} && ${OSVERSION} < 903504
-post-patch:
-	${REINPLACE_CMD} -e 's|@KRB5_LDFLAGS@|@KRB5_LDFLAGS@ -lgssapi_krb5|' \
-		${WRKSRC}/Makefile.in
-.endif
-
 .include <bsd.port.mk>
