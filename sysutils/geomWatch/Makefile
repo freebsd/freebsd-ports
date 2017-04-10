@@ -25,19 +25,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 MAKE_ARGS=	WITH_ZFS=28
 
-BROKEN_aarch64=		Fails to compile: error: ISA not supported
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == DragonFly
-IGNORE=		requires geom(4) support
-.endif
-
-post-extract:
-# base r279437 renamed libnvpair symbols
-.if ${OSVERSION} > 1100062 && ${OSVERSION} < 1100077
-	${CP} ${_DISTDIR}/${DISTFILES:M*\:nvpair:C/:.*//} \
-		${WRKSRC}/zfs/v28/sys/cddl/compat/opensolaris/sys/nvpair.h
-.endif
+BROKEN_aarch64=		fails to compile: error: ISA not supported
+IGNORE_DragonFly=	requires geom(4) support
 
 .include <bsd.port.mk>
