@@ -39,19 +39,10 @@ DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
 
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
 PLIST_SUB+=	VER=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib|libdata|' \
 		${WRKSRC}/extras/CMakeLists.txt
 
-.if exists(/usr/bin/clang) && ${OSVERSION} > 901502
-CC=		/usr/bin/clang
-CXX=		/usr/bin/clang++
-.else
-USE_GCC=	yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
