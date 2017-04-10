@@ -13,5 +13,5 @@ SHA256 (handbrake/libvpx-1.5.0.tar.bz2) = 306d67908625675f8e188d37a81fbfafdf5068
 SIZE (handbrake/libvpx-1.5.0.tar.bz2) = 1906571
 SHA256 (handbrake/x265_2.1-1.tar.gz) = 88fcb9af4ba52c0757ac9c0d8cd5ec79951a22905ae886897e06954353d6a643
 SIZE (handbrake/x265_2.1-1.tar.gz) = 1036921
-SHA256 (handbrake/handbrake-handbrake-1.0.3_GH0.tar.gz) = 83ae65cb84b0e9356d9fdc6e82cea65c0aef21d33a38f1e77731d66b501e6504
-SIZE (handbrake/handbrake-handbrake-1.0.3_GH0.tar.gz) = 13086610
+SHA256 (handbrake/HandBrake-HandBrake-1.0.3_GH0.tar.gz) = 83ae65cb84b0e9356d9fdc6e82cea65c0aef21d33a38f1e77731d66b501e6504
+SIZE (handbrake/HandBrake-HandBrake-1.0.3_GH0.tar.gz) = 13086610
