@@ -1,5 +1,4 @@
-%%PERL5_MAN3%%/Term::EditLine.3.gz
 %%SITE_ARCH%%/Term/EditLine.pm
-%%SITE_ARCH%%/Term/EditLine.pod
 %%SITE_ARCH%%/auto/Term/EditLine/EditLine.so
 %%SITE_ARCH%%/auto/Term/EditLine/autosplit.ix
+%%PERL5_MAN3%%/Term::EditLine.3.gz
