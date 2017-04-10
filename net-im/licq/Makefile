@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not build: fails to link
 
 USES=		cmake iconv ssl
