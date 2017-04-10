@@ -5,9 +5,6 @@ PORTNAME=	memcache
 PORTVERSION=	3.0.8
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Memcached extension for PHP 5.6
@@ -21,7 +18,7 @@ CONFIGURE_ARGS=	--with-zlib-dir=/usr
 IGNORE_WITH_PHP=70 71
 USE_CSTD=	gnu89
 USE_PHP=	session:build zlib:build
-USES=		dos2unix php:ext tar:tgz
+USES=		dos2unix php:pecl
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/

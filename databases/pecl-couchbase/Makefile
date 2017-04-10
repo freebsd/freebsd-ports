@@ -4,9 +4,6 @@
 PORTNAME=	couchbase
 PORTVERSION=	2.3.0
 CATEGORIES=	databases
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	Couchbase Server PHP extension
@@ -18,6 +15,6 @@ BUILD_DEPENDS=	libcouchbase>=2.7.2:databases/libcouchbase
 LIB_DEPENDS=	libcouchbase.so:databases/libcouchbase
 
 USE_PHP=	json:build
-USES=		php:ext tar:tgz
+USES=		php:pecl
 
 .include <bsd.port.mk>

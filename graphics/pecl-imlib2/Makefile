@@ -5,9 +5,6 @@ PORTNAME=	imlib2
 PORTVERSION=	0.1.00
 PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PECL extension if imlib2
@@ -16,7 +13,7 @@ LICENSE=	PHP202
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 IGNORE_WITH_PHP=	70
 
 # libImlib2 may or may not depend on X, however,
