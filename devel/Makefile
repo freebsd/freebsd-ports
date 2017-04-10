@@ -4157,6 +4157,7 @@
     SUBDIR += py-bluelet
     SUBDIR += py-boto
     SUBDIR += py-botocore
+    SUBDIR += py-cached-property
     SUBDIR += py-cachetools
     SUBDIR += py-calendar
     SUBDIR += py-canonicaljson

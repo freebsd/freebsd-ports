@@ -1,0 +1,5 @@
+A decorator for caching properties in classes.
+
+Makes caching of time or computational expensive properties quick and easy.
+
+WWW: https://github.com/pydanny/cached-property
