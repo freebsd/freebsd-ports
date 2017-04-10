@@ -4240,6 +4240,7 @@
     SUBDIR += py-django-tastypie-mongoengine
     SUBDIR += py-django16-tastypie-mongoengine
     SUBDIR += py-docker-py
+    SUBDIR += py-dockerpty
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
     SUBDIR += py-doit
