@@ -5236,6 +5236,7 @@
     SUBDIR += rubygem-extras
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-faraday_middleware-multi_json
+    SUBDIR += rubygem-fast_blank
     SUBDIR += rubygem-fast-stemmer
     SUBDIR += rubygem-fast_gettext
     SUBDIR += rubygem-fast_stack
