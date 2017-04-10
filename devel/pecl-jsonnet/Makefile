@@ -17,8 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjsonnet.so:devel/jsonnet
 
-BROKEN_powerpc64=	does not build
-
 USES=		php:ext tar:tgz
 USE_PHP=	json:build
 CONFIGURE_ARGS=	--with-jsonnet=${LOCALBASE}

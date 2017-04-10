@@ -20,7 +20,6 @@ OPTIONS_SUB=		yes
 BOOST_DESC=	Build with boost
 PYTHON_DESC=	Build Python bindings
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not build: fails to link
 
 USES=		cmake pkgconfig tar:bzip2

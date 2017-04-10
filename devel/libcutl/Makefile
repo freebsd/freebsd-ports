@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=	Does not build: cannot configure with boost
 
 GNU_CONFIGURE=	yes
