@@ -140,9 +140,11 @@
 %%XPI_XPIDIR%%/locale/id/messages.properties
 %%XPI_XPIDIR%%/locale/it/messages.properties
 %%XPI_XPIDIR%%/locale/ja/messages.properties
+%%XPI_XPIDIR%%/locale/kn/messages.properties
 %%XPI_XPIDIR%%/locale/ko/messages.properties
 %%XPI_XPIDIR%%/locale/lt/messages.properties
 %%XPI_XPIDIR%%/locale/lv/messages.properties
+%%XPI_XPIDIR%%/locale/ml/messages.properties
 %%XPI_XPIDIR%%/locale/mr/messages.properties
 %%XPI_XPIDIR%%/locale/nb/messages.properties
 %%XPI_XPIDIR%%/locale/nl/messages.properties
