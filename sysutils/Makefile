@@ -461,8 +461,6 @@
     SUBDIR += intel-nvmupdate
     SUBDIR += intel-pcm
     SUBDIR += intel-qcu
-    SUBDIR += iocage
-    SUBDIR += iocage-devel
     SUBDIR += iocell
     SUBDIR += iogen
     SUBDIR += iograph
@@ -480,7 +478,6 @@
     SUBDIR += istatserver
     SUBDIR += jadm
     SUBDIR += jail-primer
-    SUBDIR += jail2
     SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jaildaemon
@@ -846,7 +843,6 @@
     SUBDIR += ptools
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
-    SUBDIR += puppet38
     SUBDIR += puppet4
     SUBDIR += puppetserver
     SUBDIR += pv
@@ -864,6 +860,7 @@
     SUBDIR += py-diffoscope
     SUBDIR += py-dirsync
     SUBDIR += py-dlipower
+    SUBDIR += py-docker
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
     SUBDIR += py-ezjailremote

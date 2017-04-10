@@ -1,34 +1,54 @@
---- configure.orig	2017-01-05 15:52:21 UTC
+--- configure.orig	2017-04-01 15:33:50 UTC
 +++ configure
-@@ -21955,7 +21955,7 @@ fi
+@@ -22351,18 +22351,19 @@ llvm_add_target() {
+ # $1 is the llvm-config command with arguments.
+ strip_unwanted_llvm_flags() {
+     # Use \> (marks the end of the word)
+-    echo " `$1`" | sed \
+-        -e 's/\s\+-m\S*//g' \
+-        -e 's/\s\+-DNDEBUG\>//g' \
+-        -e 's/\s\+-D_GNU_SOURCE\>//g' \
+-        -e 's/\s\+-pedantic\>//g' \
+-        -e 's/\s\+-W\S*//g' \
+-        -e 's/\s\+-O\S*//g' \
+-        -e 's/\s\+-g\S*//g' \
++    echo " `$1`" | sed -E \
++        -e 's/[[[:space:]]]+-m[[^[:space:]]]*//g' \
++        -e 's/[[[:space:]]]+-DNDEBUG\>//g' \
++        -e 's/[[[:space:]]]+-D_GNU_SOURCE\>//g' \
++        -e 's/[[[:space:]]]+-pedantic\>//g' \
++        -e 's/[[[:space:]]]+-W[[^[:space:]]]*//g' \
++        -e 's/[[[:space:]]]+-O[[^[:space:]]]*//g' \
++        -e 's/[[[:space:]]]+-g[[^[:space:]]]*//g' \
+         -e 's/-fno-rtti\>/-Fno-rtti/g' \
+-        -e 's/\s\+-f\S*//g' \
++        -e 's/[[[:space:]]]+-f[[^[:space:]]]*//g' \
+         -e 's/-Fno-rtti\>/-fno-rtti/g' \
+-        -e 's/^ //'
++        -e 's/-fno-exceptions\>//g' \
++        -e 's/^[[[:space:]]]//'
+ }
+ 
+ llvm_set_environment_variables() {
+@@ -22560,7 +22561,7 @@ fi
  
  
  case "$host_os" in
 -linux*)
-+linux*|freebsd*)
++linux* | freebsd*)
      dri3_default=yes
      ;;
  *)
-@@ -23968,6 +23968,18 @@ if test "x$enable_dri" = xyes; then
-         ;;
-     *freebsd* | dragonfly* | *netbsd* | openbsd*)
-         DEFINES="$DEFINES -DHAVE_ALIAS"
-+        if test "x$enable_dri3" = xyes; then
-+            DEFINES="$DEFINES -DHAVE_DRI3"
-+        fi
-+
-+        case "$host_cpu" in
-+        powerpc* | sparc*)
-+            # Build only the drivers for cards that exist on PowerPC/sparc
-+            if test "x$with_dri_drivers" = "xyes"; then
-+                with_dri_drivers="r200 radeon swrast"
-+            fi
-+            ;;
-+        esac
-         ;;
-     gnu*)
-         DEFINES="$DEFINES -DHAVE_ALIAS"
-@@ -25849,9 +25861,19 @@ if test "x$enable_opencl" = xyes; then
+@@ -24099,7 +24100,7 @@ fi
+ if test "x$enable_dri" = xyes; then
+     # Platform specific settings and drivers to build
+     case "$host_os" in
+-    linux*)
++    linux* | freebsd*)
+         if test "x$enable_dri3" = xyes; then
+             DEFINES="$DEFINES -DHAVE_DRI3"
+         fi
+@@ -25851,9 +25852,19 @@ if test "x$enable_opencl" = xyes; then
          as_fn_error $? "cannot enable OpenCL without Gallium" "$LINENO" 5
      fi
  
@@ -48,13 +68,13 @@
  
      if test "x$have_libclc" = xno; then
          as_fn_error $? "pkg-config cannot find libclc.pc which is required to build clover.
-@@ -26670,9 +26692,6 @@ fi
-                 CLANG_LIBDIR=${LLVM_LIBDIR}
-             fi
-             CLANG_RESOURCE_DIR=$CLANG_LIBDIR/clang/${LLVM_VERSION}
--            if test ! -f "$CLANG_RESOURCE_DIR/include/stddef.h"; then :
+@@ -25916,9 +25927,6 @@ rm -f core conftest.err conftest.$ac_obj
+         CLANG_LIBDIR=${LLVM_LIBDIR}
+     fi
+     CLANG_RESOURCE_DIR=$CLANG_LIBDIR/clang/${LLVM_VERSION}
+-    if test ! -f "$CLANG_RESOURCE_DIR/include/stddef.h"; then :
 -  as_fn_error $? "Could not find clang internal header stddef.h in $CLANG_RESOURCE_DIR Use --with-clang-libdir to specify the correct path to the clang libraries." "$LINENO" 5
 -fi
-         fi
-     else
-         MESA_LLVM=0
+ fi
+  if test "x$enable_opencl" = xyes; then
+   HAVE_CLOVER_TRUE=

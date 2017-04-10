@@ -436,8 +436,6 @@
     SUBDIR += openvpn-auth-radius
     SUBDIR += openvpn-devel
     SUBDIR += openvpn-mbedtls
-    SUBDIR += openvpn23
-    SUBDIR += openvpn23-polarssl
     SUBDIR += ophcrack
     SUBDIR += orthrus
     SUBDIR += osiris
@@ -844,6 +842,7 @@
     SUBDIR += py-acme
     SUBDIR += py-acme-tiny
     SUBDIR += py-artifacts
+    SUBDIR += py-backports.ssl_match_hostname
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
     SUBDIR += py-cerealizer
@@ -858,6 +857,7 @@
     SUBDIR += py-dfdatetime
     SUBDIR += py-dfvfs
     SUBDIR += py-dfwinreg
+    SUBDIR += py-docker-pycreds
     SUBDIR += py-ecdsa
     SUBDIR += py-ed25519ll
     SUBDIR += py-fail2ban

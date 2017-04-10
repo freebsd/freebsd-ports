@@ -29,7 +29,7 @@ list_stagedir_elfs() {
 }
 
 shebangonefile() {
-	local f interp rc
+	local f interp interparg badinterp rc
 
 	f="$@"
 	rc=0
@@ -42,8 +42,12 @@ shebangonefile() {
 	esac
 
 	interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' "${f}")
+	badinterp=""
 	case "${interp}" in
 	"") ;;
+	${LOCALBASE}/bin/python|${PREFIX}/bin/python)
+		badinterp="${interp}"
+		;;
 	${LINUXBASE}/*) ;;
 	${LOCALBASE}/bin/perl5.* | ${PREFIX}/bin/perl5.*)
 		# lang/perl5* are allowed to have these shebangs.
@@ -59,15 +63,26 @@ shebangonefile() {
 	/bin/sh) ;;
 	/bin/tcsh) ;;
 	/usr/bin/awk) ;;
-	/usr/bin/env) ;;
+	/usr/bin/env)
+		interparg=$(sed -n -e '1s/^#![[:space:]]*[^[:space:]]*[[:space:]]*\([^[:space:]]*\).*/\1/p;2q' "${f}")
+		case "${interparg}" in
+		python)
+			badinterp="${interp} ${interparg}"
+			;;
+		esac
+		;;
 	/usr/bin/nawk) ;;
 	/usr/bin/sed) ;;
 	/usr/sbin/dtrace) ;;
 	*)
-		err "'${interp}' is an invalid shebang you need USES=shebangfix for '${f#${STAGEDIR}${PREFIX}/}'"
-		rc=1
+		badinterp="${interp}"
 		;;
 	esac
+
+	if [ -n "${badinterp}" ]; then
+		err "'${badinterp}' is an invalid shebang you need USES=shebangfix for '${f#${STAGEDIR}${PREFIX}/}'"
+		rc=1
+	fi
 
 	return ${rc}
 }

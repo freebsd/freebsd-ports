@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	0.14.19
+PORTVERSION=	0.14.26
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -19,8 +19,6 @@ PORTDOCS=	*
 
 USERS=		syncthing
 GROUPS=		syncthing
-
-STRIP=		# stripping can break go binaries
 
 do-build:
 	# timestamp here refers to source, not build time

@@ -784,7 +784,6 @@
     SUBDIR += go-metrics
     SUBDIR += go-nuid
     SUBDIR += go-pflag
-    SUBDIR += go-pretty
     SUBDIR += go-protobuf
     SUBDIR += go-raw
     SUBDIR += go-runewidth
@@ -1395,7 +1394,6 @@
     SUBDIR += libopensync
     SUBDIR += libopkele
     SUBDIR += liborcus
-    SUBDIR += liborcus07
     SUBDIR += libosinfo
     SUBDIR += libosmo-abis
     SUBDIR += libosmo-netif
@@ -1610,7 +1608,6 @@
     SUBDIR += maven33
     SUBDIR += mcpp
     SUBDIR += mdds
-    SUBDIR += mdds0
     SUBDIR += memleax
     SUBDIR += menhir
     SUBDIR += mercator
@@ -5239,6 +5236,7 @@
     SUBDIR += rubygem-extras
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-faraday_middleware-multi_json
+    SUBDIR += rubygem-fast_blank
     SUBDIR += rubygem-fast-stemmer
     SUBDIR += rubygem-fast_gettext
     SUBDIR += rubygem-fast_stack
@@ -5309,6 +5307,7 @@
     SUBDIR += rubygem-hitimes
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-holidays
+    SUBDIR += rubygem-http_accept_language
     SUBDIR += rubygem-i18n
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-ice_cube
@@ -5395,7 +5394,6 @@
     SUBDIR += rubygem-newrelic_rpm3
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
-    SUBDIR += rubygem-nio4r1
     SUBDIR += rubygem-nori
     SUBDIR += rubygem-notiffany
     SUBDIR += rubygem-notify
@@ -5454,6 +5452,7 @@
     SUBDIR += rubygem-rb-kqueue
     SUBDIR += rubygem-rbtrace
     SUBDIR += rubygem-rdoc
+    SUBDIR += rubygem-react-rails
     SUBDIR += rubygem-readwritesettings
     SUBDIR += rubygem-recaptcha
     SUBDIR += rubygem-recursive-open-struct

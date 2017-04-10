@@ -1,6 +1,6 @@
---- src/util/ralloc.c.orig	2016-11-28 15:34:30 UTC
+--- src/util/ralloc.c.orig	2017-04-01 15:33:37 UTC
 +++ src/util/ralloc.c
-@@ -315,6 +315,7 @@ ralloc_parent(const void *ptr)
+@@ -338,6 +338,7 @@ ralloc_parent(const void *ptr)
  
  static void *autofree_context = NULL;
  
@@ -8,7 +8,7 @@
  static void
  autofree(void)
  {
-@@ -326,7 +327,6 @@ ralloc_autofree_context(void)
+@@ -349,7 +350,6 @@ ralloc_autofree_context(void)
  {
     if (unlikely(autofree_context == NULL)) {
        autofree_context = ralloc_context(NULL);

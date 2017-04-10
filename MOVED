@@ -9209,3 +9209,25 @@ textproc/kibana50|textproc/kibana5|2017-04-05|Rename port to match the rest of t
 textproc/kibana50-x-pack|textproc/kibana5-x-pack|2017-04-05|Rename port to match the rest of the 5.X line of the elastic stack
 www/typo3|www/typo3-8|2017-04-08|Rename to coexist with TYPO3 7.x (was typo3-lts) since both versions are LTS now
 www/typo3-lts|www/typo3-7|2017-04-08|Rename to coexist with TYPO3 8.x (was typo3) since both versions are LTS now
+sysutils/puppet38|sysutils/puppet4|2017-04-10|Has expired: Upstream support ended, see http://tinyurl.com/puppet3eol
+editors/libreoffice4|editors/libreoffice|2017-04-10|Has expired: Deprecated by upstream
+databases/rubygem-redis-actionpack4|databases/rubygem-redis-actionpack|2017-04-10|Has expired: Use databases/rubygem-redis-actionpack instead
+devel/rubygem-nio4r1|devel/rubygem-nio4r|2017-04-10|Has expired: Use devel/rubygem-nio4r instead
+devel/liborcus07|devel/liborcus|2017-04-10|Has expired: Deprecated by upstream, use devel/liborcus
+devel/mdds0|devel/mdds|2017-04-10|Has expired: Deprecated by upstream, use devel/mdds
+security/openvpn23-polarssl||2017-04-10|Has expired: Replaced by new upstream relesae 2.4.x
+security/openvpn23|security/openvpn|2017-04-10|Has expired: Replaced by new upstream relesae 2.4.x
+textproc/p5-XML-XSH||2017-04-10|Has expired: Deprecated by upstream
+www/rubygem-jquery-atwho-rails-rails4|www/rubygem-jquery-atwho-rails|2017-04-10|Has expired: Use www/rubygem-jquery-atwho-rails instead
+www/p5-Catalyst-Plugin-Singleton||2017-04-10|Has expired: Deprecated by upstream
+x11/lumina-i18n||2017-04-10|Has expired: Obsolete, i18n files included in x11/lumina
+sysutils/jail2||2017-04-10|Has expired: Starting with 10.0 functionality has been merged into base.
+sysutils/iocage-devel||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
+sysutils/iocage||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
+databases/puppetdb||2017-04-10|Has expired: Depends on expired sysutils/puppet38, use puppetdb[34] instead
+databases/puppetdb-terminus||2017-04-10|Has expired: Depends on expired sysutils/puppet38, use puppetdb-terminus[34]
+databases/pglesslog||2017-04-10|Has expired: Does not build with recent PostgreSQL versions
+textproc/go-text||2017-04-10|Has expired: Go libraries should not be packaged
+devel/go-pretty||2017-04-10|Has expired: Go libraries should not be packaged
+databases/godis||2017-04-10|Has expired: Go libraries should not be packaged
+www/moodle29|www/moodle32|2017-04-10|Has expired: Upstream support EoL, please migrate to moodle32
