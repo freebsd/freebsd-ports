@@ -4,9 +4,6 @@
 PORTNAME=	yaf
 PORTVERSION=	3.0.4
 CATEGORIES=	www
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	MVC framework written as a C PHP extension
@@ -18,7 +15,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-php-config=${PREFIX}/bin/php-config
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 IGNORE_WITH_PHP=56
 
 .include <bsd.port.mk>

@@ -5,8 +5,6 @@ PORTNAME=	http
 PORTVERSION=	1.7.6
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
 PKGNAMESUFFIX=	1
 DISTNAME=	pecl_http-${PORTVERSION}
 
@@ -18,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 IGNORE_WITH_PHP=	70
 CONFLICTS=	pecl-http-*
 

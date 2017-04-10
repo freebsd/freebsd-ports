@@ -4,8 +4,6 @@
 PORTNAME=	http
 PORTVERSION=	2.6.0
 CATEGORIES=	www
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
 PKGNAMESUFFIX=	2
 DISTNAME=	pecl_${PORTNAME}-${PORTVERSION}
 
@@ -24,7 +22,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent
 
 IGNORE_WITH_PHP=70
-USES=		php:ext tar:tgz
+USES=		php:pecl
 CONFLICTS=	pecl-http1* pecl-http-*
 
 .include <bsd.port.mk>

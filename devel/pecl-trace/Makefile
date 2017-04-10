@@ -4,9 +4,6 @@
 PORTNAME=	trace
 PORTVERSION=	1.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Low-overhead tracing tool for PHP
@@ -15,7 +12,7 @@ LICENSE=	APACHE20
 
 WRKSRC_SUBDIR=	extension
 
-USES=		gmake php:ext tar:tgz
+USES=		gmake php:pecl
 PLIST_FILES=	bin/phptrace
 
 pre-install:

@@ -5,9 +5,6 @@ PORTNAME=	stem
 PORTVERSION=	1.5.1
 PORTREVISION=	1
 CATEGORIES=	textproc pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PECL extension which provides word stemming
@@ -15,7 +12,7 @@ COMMENT=	PECL extension which provides word stemming
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 IGNORE_WITH_PHP=	70 71
 
 post-configure:
