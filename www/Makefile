@@ -522,7 +522,6 @@
     SUBDIR += monast
     SUBDIR += mongoose
     SUBDIR += mongrel2
-    SUBDIR += moodle29
     SUBDIR += moodle30
     SUBDIR += moodle31
     SUBDIR += moodle32
@@ -798,7 +797,6 @@
     SUBDIR += p5-Catalyst-Plugin-Session-Store-Memcached
     SUBDIR += p5-Catalyst-Plugin-Session-Store-Memcached-Fast
     SUBDIR += p5-Catalyst-Plugin-Setenv
-    SUBDIR += p5-Catalyst-Plugin-Singleton
     SUBDIR += p5-Catalyst-Plugin-SmartURI
     SUBDIR += p5-Catalyst-Plugin-StackTrace
     SUBDIR += p5-Catalyst-Plugin-Static
@@ -1999,7 +1997,6 @@
     SUBDIR += rubygem-jekyll-watch
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
-    SUBDIR += rubygem-jquery-atwho-rails-rails4
     SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-jquery-scrollto-rails
     SUBDIR += rubygem-jquery-turbolinks

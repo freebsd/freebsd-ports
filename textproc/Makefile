@@ -219,7 +219,6 @@
     SUBDIR += gnome-doc-utils
     SUBDIR += gnome-spell
     SUBDIR += gnugrep
-    SUBDIR += go-text
     SUBDIR += go.text
     SUBDIR += goldendict
     SUBDIR += google-ctemplate
@@ -1123,7 +1122,6 @@
     SUBDIR += p5-XML-XPath
     SUBDIR += p5-XML-XPathEngine
     SUBDIR += p5-XML-XQL
-    SUBDIR += p5-XML-XSH
     SUBDIR += p5-XML-XSLT
     SUBDIR += p5-XML-XUpdate-LibXML
     SUBDIR += p5-YAML

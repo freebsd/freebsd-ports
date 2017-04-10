@@ -196,7 +196,6 @@
     SUBDIR += libreoffice-vec
     SUBDIR += libreoffice-xh
     SUBDIR += libreoffice-zu
-    SUBDIR += libreoffice4
     SUBDIR += linux-sublime
     SUBDIR += linux-sublime3
     SUBDIR += madedit

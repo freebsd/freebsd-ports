@@ -784,7 +784,6 @@
     SUBDIR += go-metrics
     SUBDIR += go-nuid
     SUBDIR += go-pflag
-    SUBDIR += go-pretty
     SUBDIR += go-protobuf
     SUBDIR += go-raw
     SUBDIR += go-runewidth
@@ -1395,7 +1394,6 @@
     SUBDIR += libopensync
     SUBDIR += libopkele
     SUBDIR += liborcus
-    SUBDIR += liborcus07
     SUBDIR += libosinfo
     SUBDIR += libosmo-abis
     SUBDIR += libosmo-netif
@@ -1610,7 +1608,6 @@
     SUBDIR += maven33
     SUBDIR += mcpp
     SUBDIR += mdds
-    SUBDIR += mdds0
     SUBDIR += memleax
     SUBDIR += menhir
     SUBDIR += mercator
@@ -5395,7 +5392,6 @@
     SUBDIR += rubygem-newrelic_rpm3
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
-    SUBDIR += rubygem-nio4r1
     SUBDIR += rubygem-nori
     SUBDIR += rubygem-notiffany
     SUBDIR += rubygem-notify

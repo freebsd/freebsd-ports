@@ -95,7 +95,6 @@
     SUBDIR += glom
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
-    SUBDIR += godis
     SUBDIR += gomdb
     SUBDIR += gosqlite3
     SUBDIR += gqlplus
@@ -572,7 +571,6 @@
     SUBDIR += pgdbf
     SUBDIR += pgespresso
     SUBDIR += pgfouine
-    SUBDIR += pglesslog
     SUBDIR += pgloader
     SUBDIR += pglogical
     SUBDIR += pgmodeler
@@ -708,8 +706,6 @@
     SUBDIR += proftpd-mod_sql_postgres
     SUBDIR += proftpd-mod_sql_sqlite
     SUBDIR += proftpd-mod_sql_tds
-    SUBDIR += puppetdb
-    SUBDIR += puppetdb-terminus
     SUBDIR += puppetdb-terminus3
     SUBDIR += puppetdb-terminus4
     SUBDIR += puppetdb3
@@ -925,7 +921,6 @@
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis
     SUBDIR += rubygem-redis-actionpack
-    SUBDIR += rubygem-redis-actionpack4
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-sqlite3
