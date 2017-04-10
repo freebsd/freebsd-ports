@@ -5,16 +5,13 @@ PORTNAME=	runkit
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	devel pear
-MASTER_SITES=	http://pecl.php.net/get/
-PKGNAMEPREFIX=	pecl-
-DIST_SUBDIR=	PECL
 
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PECL extension to modify constants, user-defined functions, and classes
 
 LICENSE=	PHP30
 
-USES=		php:ext tar:tgz
+USES=		php:pecl
 IGNORE_WITH_PHP=	70
 
 CONFIGURE_ARGS=	--enable-runkit=classkit

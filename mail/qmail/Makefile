@@ -381,8 +381,6 @@ TLS_USES=		ssl
 .endif
 
 # Port will control all PREFIX handling.
-install-mtree:
-	@${DO_NADA}
 NO_MTREE=	yes
 NO_PREFIX_RMDIR=yes
 

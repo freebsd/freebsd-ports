@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-perlbrew
-PORTVERSION=	0.75
+PORTVERSION=	0.78
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GUGOD
@@ -14,10 +14,9 @@ COMMENT=	Perl Environment manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-CPAN-Perl-Releases>=1.94:devel/p5-CPAN-Perl-Releases \
-		p5-Capture-Tiny>=0.25:devel/p5-Capture-Tiny \
-		p5-Devel-PatchPerl>=1.28:devel/p5-Devel-PatchPerl \
-		p5-Pod-Usage>=1.64:devel/p5-Pod-Usage \
+BUILD_DEPENDS=	p5-CPAN-Perl-Releases>=2.60:devel/p5-CPAN-Perl-Releases \
+		p5-Capture-Tiny>=0.36:devel/p5-Capture-Tiny \
+		p5-Devel-PatchPerl>=1.40:devel/p5-Devel-PatchPerl \
 		p5-local-lib>=2.000014:devel/p5-local-lib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-All>=0.51:devel/p5-IO-All \
@@ -31,4 +30,16 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+BUILD_DEPENDS+=	p5-Pod-Parser>=1.63:textproc/p5-Pod-Parser
+RUN_DEPENDS+=	p5-Pod-Parser>=1.63:textproc/p5-Pod-Parser
+.endif
+
+.if ${PERL_LEVEL} < 502400
+BUILD_DEPENDS+=	p5-Pod-Usage>=1.68:devel/p5-Pod-Usage
+RUN_DEPENDS+=	p5-Pod-Usage>=1.68:devel/p5-Pod-Usage
+.endif
+
+.include <bsd.port.post.mk>

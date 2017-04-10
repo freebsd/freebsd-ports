@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bearssl
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.4
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	https://bearssl.org/
 
@@ -12,14 +12,11 @@ COMMENT=	Implementation of TLS/SSL in C
 
 LICENSE=	MIT
 
-USES=		compiler:c11
-
-post-patch:
-	${REINPLACE_CMD} 's|CC = gcc|CC ?= gcc|' ${WRKSRC}/Makefile
+MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS} -fPIC" LDDLL="${CC}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/brssl ${STAGEDIR}${LOCALBASE}/bin/
-	(cd ${WRKSRC}/inc && ${COPYTREE_SHARE} . ${STAGEDIR}${LOCALBASE}/include/)
-	${INSTALL_DATA} ${WRKSRC}/libbearssl.a ${STAGEDIR}${LOCALBASE}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/build/brssl ${STAGEDIR}${LOCALBASE}/bin/
+	${INSTALL_LIB} ${WRKSRC}/build/libbearssl.so ${STAGEDIR}${LOCALBASE}/lib/
+	(cd ${WRKSRC}/inc && ${COPYTREE_SHARE} \* ${STAGEDIR}${LOCALBASE}/include)
 
 .include <bsd.port.mk>

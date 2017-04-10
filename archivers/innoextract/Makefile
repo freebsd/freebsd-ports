@@ -23,7 +23,6 @@ USES=		cmake iconv
 PLIST_FILES=	bin/innoextract \
 		man/man1/innoextract.1.gz
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not build: undefined reference to std::ctype<char>::_M_widen_init()
 
 .include <bsd.port.mk>

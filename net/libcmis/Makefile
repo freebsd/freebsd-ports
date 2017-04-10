@@ -12,8 +12,6 @@ COMMENT=	Client library for the CMIS interface
 LICENSE=	LGPL20 MPL GPLv2
 LICENSE_COMB=	dual
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libcurl.so:ftp/curl
 BUILD_DEPENDS=	cppunit-config:devel/cppunit \
 		${LOCALBASE}/lib/libboost_regex.a:devel/boost-libs

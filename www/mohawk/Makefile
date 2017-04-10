@@ -32,7 +32,6 @@ OPTIONS_DEFINE=	EXAMPLES
 USES=	uidfix
 
 BROKEN_aarch64=		Fails to compile: error: comparison of constant -1 with expression of type char is always true
-BROKEN_powerpc64=	Does not build
 
 .include <bsd.port.options.mk>
 

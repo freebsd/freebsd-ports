@@ -15,6 +15,7 @@
 #	- mod      : Want the Apache Module for PHP.
 #	- web      : Want the Apache Module or the CGI version of PHP.
 #	- embed    : Want the embedded library version of PHP.
+#	- pecl     : Fetches from PECL.
 #
 # If the port requires a predefined set of PHP extensions, they can be
 # listed in this way:
@@ -88,6 +89,17 @@ DEV_WARNING+=	"USES=php:phpize is included in USES=php:ext and USES=php:zend, so
 .  endif
 .  if ${php_ARGS:Mext} && ${php_ARGS:Mzend}
 DEV_WARNING+=	"USES=php:ext is included in USES=php:zend, so it is not needed"
+.  endif
+.  if ${php_ARGS:Mext} && ${php_ARGS:Mpecl}
+DEV_WARNING+=	"USES=php:ext is included in USES=php:pecl, so it is not needed"
+.  endif
+
+.  if ${php_ARGS:Mpecl}
+php_ARGS+=	ext
+EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://pecl.php.net/get/
+PKGNAMEPREFIX=	pecl-
+DIST_SUBDIR=	PECL
 .  endif
 
 PHPBASE?=	${LOCALBASE}

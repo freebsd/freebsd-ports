@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gollum-lib
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Simple, Git-powered wiki with a sweet API and local frontend
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-gemojione>=2.2:graphics/rubygem-gemojione \
+RUN_DEPENDS=	rubygem-gemojione>=3.2:graphics/rubygem-gemojione \
 		rubygem-gollum-grit_adapter>=1.0:www/rubygem-gollum-grit_adapter \
 		rubygem-nokogiri>=1.6.4:textproc/rubygem-nokogiri \
 		rubygem-rouge>=2.0:textproc/rubygem-rouge \

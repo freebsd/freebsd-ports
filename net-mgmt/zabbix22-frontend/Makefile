@@ -14,7 +14,7 @@ PLIST=		${PKGDIR}/pkg-plist.frontend
 
 USE_PHP=	bcmath ctype gd pcre snmp sockets mbstring session dom xml \
 		xmlreader xmlwriter simplexml gettext ldap
-WANT_PHP_WEB=	yes
+USES+=		php:web
 
 OPTIONS_DEFINE=	MYSQL MYSQLI PGSQL SQLITE ORACLE
 OPTIONS_DEFAULT=	MYSQL MYSQLI

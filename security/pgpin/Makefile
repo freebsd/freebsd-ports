@@ -16,7 +16,6 @@ LICENSE=	MIT
 PORTSCOUT=	ignore:1
 
 BROKEN_mips64=		Does not build
-BROKEN_powerpc64=	Does not build
 
 USES=		tar:tgz
 WRKSRC=		${WRKDIR}/pgp263in/src

@@ -2,17 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	pypy3
-PORTREVISION=	1
-DISTVERSION=	5.5.0-alpha
-DISTNAME=	${PORTNAME}.3-v${DISTVERSION}-src
+DISTVERSION=	5.7.1
+DISTNAME=	${PORTNAME}-v${DISTVERSION}-src
 
 MASTERDIR=	${.CURDIR}/../pypy
 
+ONLY_FOR_ARCHS=	amd64
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${DISTVERSION:C/-.*//}-src
-BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-${PORTNAME}.3-${DISTVERSION:C/-.*//}-0/testing_1
+BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-${PORTNAME}.5-v${DISTVERSION:C/-.*//}-0/testing_1
 
 PACKAGE_ARGS=	--without-_gdbm --without-sqlite3 --without-tk
 
-PYPY_CFFI_VER=	pypy3-55
+PYPY_CFFI_VER=	${PORTNAME}-${DISTVERSION:C/.[^.]+$//:S/.//}-${ARCH}-${OPSYS:tl}${OSREL:C/\..*//}
+
+pre-install:
+	${FIND} ${WRKSRC} -name '*.pyc' -delete
+	#${CHMOD} -R a-w ${WRKSRC}
+	#${CHMOD} -R u+w ${WRKSRC}/lib_pypy
 
 .include "${MASTERDIR}/Makefile"

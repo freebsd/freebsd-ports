@@ -25,6 +25,7 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	EXAMPLES MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=	yes
 
 .include <bsd.port.pre.mk>
 

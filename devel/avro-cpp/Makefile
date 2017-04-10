@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Data serialization system for C++
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 USES=		cmake python:build

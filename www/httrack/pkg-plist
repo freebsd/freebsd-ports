@@ -59,11 +59,11 @@ lib/httrack/libsimple.so.1.0.0
 lib/libhtsjava.a
 lib/libhtsjava.so
 lib/libhtsjava.so.2
-lib/libhtsjava.so.2.0.48
+lib/libhtsjava.so.2.0.49
 lib/libhttrack.a
 lib/libhttrack.so
 lib/libhttrack.so.2
-lib/libhttrack.so.2.0.48
+lib/libhttrack.so.2.0.49
 man/man1/htsserver.1.gz
 man/man1/httrack.1.gz
 man/man1/proxytrack.1.gz
