@@ -1978,6 +1978,7 @@
     SUBDIR += rubygem-haml-contrib
     SUBDIR += rubygem-haml-rails-rails4
     SUBDIR += rubygem-hamlit
+    SUBDIR += rubygem-hamlit-rails
     SUBDIR += rubygem-hashicorp-checkpoint
     SUBDIR += rubygem-heroku
     SUBDIR += rubygem-heroku-api
