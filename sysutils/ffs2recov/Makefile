@@ -3,11 +3,14 @@
 
 PORTNAME=	ffs2recov
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.exit.com/Archives/FreeBSD/
+MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/ffs2recov/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Utility to recover UFS2 filesystems
+
+LICENSE=	BSD2CLAUSE
 
 USES=		tar:bzip2 uidfix
 WRKSRC=		${WRKDIR}/${PORTNAME}
