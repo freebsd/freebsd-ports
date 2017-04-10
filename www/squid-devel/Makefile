@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.0.18
-PORTREVISION=	3
+PORTVERSION=	4.0.19
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -29,11 +28,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	squid*-3.*
 
-USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
+USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz bdb
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	squid
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
+LDFLAGS+=	-L${BDB_LIB_DIR}
 
 USERS=		squid
 GROUPS=		squid
@@ -303,10 +304,6 @@ post-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 #CXXFLAGS+=	-Wno-unused-private-field
