@@ -3,7 +3,7 @@
 
 PORTNAME=	socat
 PORTVERSION=	1.7.3.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt
@@ -25,7 +25,11 @@ PORTSCOUT=	skipv:2.0.0-b2
 PLIST_FILES=	bin/filan bin/procan bin/socat man/man1/socat.1.gz
 PORTDOCS=	EXAMPLES README SECURITY FAQ
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS READLINE
+
+READLINE_CONFIGURE_ENABLE=	readline
+READLINE_CONFIGURE_OFF=		--disable-readline
+READLINE_USES=			readline
 
 .include <bsd.port.pre.mk>
 
