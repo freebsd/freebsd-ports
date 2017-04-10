@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	i2pd
-PORTVERSION=	2.12.0
-PORTREVISION=	1
+PORTVERSION=	2.13.0
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -52,6 +51,5 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/configuration.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
