@@ -26,4 +26,5 @@ bin/swtp6800mp-a
 bin/swtp6800mp-a2
 bin/vax
 bin/vax780
+man/man1/simh.1.gz
 %%DATADIR%%/ka655x.bin
