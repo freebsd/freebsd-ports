@@ -2,15 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	cmus
-PORTVERSION=	2.7.1
+DISTVERSION=	2.8.0-rc0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	audio
+DIST_SUBDIR=	cmus
+
+# Fixes for playback of 24-bit files with the sndio/OSS output plugins
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	6a85680.patch:-p1 0fb39d8.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Console-based music player with really cool features
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
@@ -31,15 +35,15 @@ MAKE_ARGS=	V=2
 # follow shell value semantics i.e. later assignments overwrite
 # previous assignments.  The options here appear in the same order as
 # ${WRKSRC}/configure --help.  Please keep it that way.
-_CMUS_CONFIGURE_OPTS=	CDDB CDIO DISCID FLAC MAD MODPLUG MIKMOD MPC	\
-			VORBIS TREMOR OPUS WAV WAVPACK MP4 AAC FFMPEG	\
-			VTX CUE ROAR PULSE ALSA JACK SAMPLERATE AO	\
-			ARTS OSS SNDIO SUN WAVEOUT
+_CMUS_CONFIGURE_OPTS=	AAC ALSA AO ARTS CDDB CDIO COREAUDIO CUE DISCID	\
+	FFMPEG FLAC JACK MAD MIKMOD MODPLUG MP4 MPC MPRIS OPUS OSS	\
+	PULSE ROAR SAMPLERATE SNDIO SUN TREMOR VORBIS VTX WAVEOUT	\
+	WAVPACK WAV
 .for opt in ${_CMUS_CONFIGURE_OPTS}
 CONFIGURE_ARGS+=	CONFIG_${opt}=n
 .endfor
 
-OPTIONS_DEFAULT=	AAC FFMPEG FLAC MAD MP4 OSS SNDIO VORBIS WAV
+OPTIONS_DEFAULT=	AAC FFMPEG FLAC MAD MP4 OPUS OSS SNDIO VORBIS WAV
 OPTIONS_SUB=	yes
 
 OPTIONS_GROUP=	OUT IN
@@ -131,9 +135,12 @@ WAV_CONFIGURE_ON=	CONFIG_WAV=y
 WAVPACK_CONFIGURE_ON=	CONFIG_WAVPACK=y
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 
+post-patch:
+# From DPorts: prevent passing -D_POSIX_C_SOURCE=200112L -D_XOPEN_SOURCE=600
+	@${REINPLACE_CMD} -e 's@\(NCURSES_CFLAGS=\).*@\1""@g' \
+		${WRKSRC}/configure
 # Doc/cmus.txt is used to generate the man pages.  Fix paths to point
 # to the correct directories.
-post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,/usr/share/doc/cmus/examples,${EXAMPLESDIR},g' \
 		-e 's,/usr/share/cmus,${DATADIR},g' \
