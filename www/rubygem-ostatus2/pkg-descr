@@ -1,0 +1,8 @@
+OStatus2 is a toolset for interacting with the OStatus2 suite of protocols.
+
+It supports:
+
+- subscribing to and publishing feeds via PubSubHubbub
+- interacting with feeds via Salmon.
+
+WWW: https://github.com/Gargron/ostatus2/
