@@ -10,6 +10,8 @@ MASTER_SITES=	http://apollo.backplane.com/FreeSrc/ \
 MAINTAINER=	gmarco@gufi.org
 COMMENT=	Comprehensive filesystem mirroring and backup program
 
+LICENSE=	BSD2CLAUSE # clarified by Matthew Dillon himself
+
 USES=		tar:tgz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
