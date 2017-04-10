@@ -1,13 +1,15 @@
-The GALLIUM option enables gallium (llvm) backed drivers such as for example
-the r600 and radeonsi driver.
+VAAPI and VDPAU options enable building Gallium based VA-API and VDPAU
+drivers to decode video on the GPU via libva and libvdpau, respectively.
+Gallium based VAAPI and VDPAU drivers are only available for Radeon GPUs.
 
-The VDPAU option enables VDPAU drivers to decode video on the GPU via the
-VDPAU library.
+Both GPU decode options require newer drm drivers than are currently present
+in a released FreeBSD kernel. These are options for DRM-next and DragonFly.
 
-The TEXTURE option enables texture-float support. However Silicon Graphics
-owns the US Patent #6,650,327 [1]. Use at your own risk!
+The TEXTURE option enables texture-float support, which SGI claims requires
+US Patent #6,650,327 [1], filed Jun 16, 1998 thus expiring on Jun 16, 2018.
+Use may require a license depending on jurisdiction, consult a lawyer.
 
-See docs/patents.txt in the Mesa tarball or the follewing urls:
+See docs/patents.txt in the Mesa tarball or the following URLs:
 
-[1] http://www.google.com/patents/about?id=mIIOAAAAEBAJ&dq=6650327
+[1] https://www.google.com/patents/US6650327
 [2] http://www.opengl.org/registry/specs/ARB/texture_float.txt

@@ -18,7 +18,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	13.0.6
+MESABASEVERSION=	17.0.3
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -53,23 +53,19 @@ SHEBANG_FILES=	src/gallium/*/*/*.py src/gallium/tools/trace/*.py \
 		src/mapi/glapi/gen/*.py
 SHEBANG_FILES+=	src/mapi/mapi_abi.py
 
-MASTERDIR=		${.CURDIR}/../../graphics/libGL
-PATCHDIR=		${MASTERDIR}/files
-WRKSRC=			${WRKDIR}/mesa-${MESADISTVERSION}
-DESCR=			${.CURDIR}/pkg-descr
-PLIST=			${.CURDIR}/pkg-plist
-INSTALL_TARGET=		install-strip
+MASTERDIR=	${.CURDIR}/../../graphics/libGL
+PATCHDIR=	${MASTERDIR}/files
+WRKSRC=		${WRKDIR}/mesa-${MESADISTVERSION}
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
+INSTALL_TARGET=	install-strip
 
-COMPONENT=		${PORTNAME:tl:C/^lib//:C/mesa-//}
+COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
 .if (${ARCH} != sparc64 && ${ARCH} != ia64)	# no working LLVM
-MESA_LLVM_VER?=	39
+MESA_LLVM_VER?=	40
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${MESA_LLVM_VER}/lib
 .endif
-
-CONFIGURE_ARGS+=	--with-sha1=libcrypto
-
-CONFIGURE_ARGS+=	--enable-gbm
 
 # There are issues that need to be fixed to use TLS model "initial-exec"
 # So stick with "global-dynamic"'s model for now. kan@ is working on a
@@ -131,23 +127,6 @@ CONFIGURE_ARGS+=	--enable-gallium-llvm --enable-llvm-shared-libs
 .else
 CONFIGURE_ARGS+=	--disable-gallium-llvm
 .endif
-
-.if ${PORT_OPTIONS:MTEXTURE}
-CONFIGURE_ARGS+=--enable-texture-float
-.endif
-
-# only support on DragonFly. FreeBSD's drm doesn't support it.
-.if ${OPSYS} == DragonFly && ${COMPONENT:Mdri} != ""
-CONFIGURE_ARGS+=--enable-vdpau
-LIB_DEPENDS+=   libvdpau.so:multimedia/libvdpau
-PLIST_SUB+=     VDPAU=""
-.else
-CONFIGURE_ARGS+=--disable-vdpau
-PLIST_SUB+=     VDPAU="@comment "
-.endif
-
-# VAAPI support?
-CONFIGURE_ARGS+=--disable-va
 
 ALL_DRI_DRIVERS=	I915 I965 RADEON R200 SWRAST
 ALL_GALLIUM_DRIVERS=	R300 R600 RADEONSI SVGA SWRAST
