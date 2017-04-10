@@ -5307,6 +5307,7 @@
     SUBDIR += rubygem-hitimes
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-holidays
+    SUBDIR += rubygem-http_accept_language
     SUBDIR += rubygem-i18n
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-ice_cube
