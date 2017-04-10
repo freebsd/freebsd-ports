@@ -1,8 +1,7 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Config-Perl-V
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
