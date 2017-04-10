@@ -37,9 +37,9 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 BROKEN_aarch64=	Fails to build: invokes x86 asm
 BROKEN_armv6=	Fails to build: invokes x86 asm
 
-USE_GITHUB=     yes
-XGH_ACCOUNT=    HandBrake
-XGH_PROJECT=    HandBrake
+USE_GITHUB=	yes
+GH_ACCOUNT=	HandBrake
+GH_PROJECT=	HandBrake
 
 CONTRIB_FILES=	fdk-aac-0.1.4.tar.gz \
 		libav-12.tar.gz \
@@ -61,8 +61,6 @@ USE_GCC=	yes
 USES=		autoreconf:build compiler:features gmake iconv \
 		libtool:build localbase:ldflags pkgconfig python:build
 MAKE_ENV=	V=1 ACLOCAL=${LOCALBASE}/bin/aclocal
-
-WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 
 CONFIGURE_ARGS=	--force --enable-x265
 CONFIGURE_TARGET=	build

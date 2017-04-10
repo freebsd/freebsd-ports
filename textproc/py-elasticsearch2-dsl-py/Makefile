@@ -5,8 +5,6 @@ PORTNAME=	py-elasticsearch2-dsl-py
 PORTVERSION=	2.1.0
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	elasticsearch-dsl-py-${PORTVERSION}
-# fetch https://codeload.github.com/elastic/elasticsearch-dsl-py/tar.gz/2.1.0?dummy=/elasticsearch-dsl-py-2.1.0_GH0.tar.gz
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	High level Python client for Elasticsearch

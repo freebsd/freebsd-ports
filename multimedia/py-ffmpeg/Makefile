@@ -7,8 +7,6 @@ PORTREVISION=	5
 CATEGORIES=	multimedia python
 MASTER_SITES=	GH LOCAL/dbn/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-# Should not be setting DISTNAME, USE_GITHUB already sets a very nice and unique distname.
-DISTNAME=	${PORTNAME}-android-${PORTVERSION}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Python bindings for FFmpeg
