@@ -83,8 +83,7 @@ shebang() {
 		shebangonefile "${f}" || rc=1
 	# Use heredoc to avoid losing rc from find|while subshell
 	done <<-EOF
-	$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
-	    ${STAGEDIR}${PREFIX}/libexec ${STAGEDIR}${PREFIX}/www \
+	$(find ${STAGEDIR}${PREFIX} \
 	    -type f -perm +111 2>/dev/null)
 	EOF
 
@@ -104,8 +103,7 @@ shebang() {
 		fi
 	# Use heredoc to avoid losing rc from find|while subshell
 	done <<-EOF
-	$(find ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin \
-	    ${STAGEDIR}${PREFIX}/libexec ${STAGEDIR}${PREFIX}/www \
+	$(find ${STAGEDIR}${PREFIX} \
 	    -type l -exec stat -f "%N${LF}%Y" {} + 2>/dev/null)
 	EOF
 
