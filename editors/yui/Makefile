@@ -10,11 +10,14 @@ MASTER_SITES=	http://www.sheltonsoft.ru/fileZ/software/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rich-featured multi-windows console text editor
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 USES=		tar:bzip2
 USE_AUTOTOOLS=	autoconf aclocal
 
-ACLOCAL_ARGS+=	-I m4
-MAKE_ENV+=	LIBPATH=${PREFIX}/lib
+ACLOCAL_ARGS=	-I m4
+MAKE_ENV=	LIBPATH=${PREFIX}/lib
 
 BROKEN_aarch64=		Does not compile: error: cast from pointer to smaller type loses information
 BROKEN_mips64=		Does not compile: error: cast from unsigned char* to unsigned int loses precision
@@ -25,8 +28,10 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${LN} -sf help_eng.html ${STAGEDIR}${PREFIX}/lib/yui/yhelp.html
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in BUGS CHANGES COPYRIGHT TODO COPYRIGHT.ITK THANKS
+.for file in BUGS CHANGES TODO THANKS
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 

@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	citrin+bsd@citrin.ru
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst SOAP Controller
 
 LICENSE=	ARTPERL10
