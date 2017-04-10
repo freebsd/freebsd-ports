@@ -13,7 +13,6 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2
 RUN_DEPENDS=	opencl>=0:devel/opencl
 
-USES=		ssl
 USE_XORG=	dri2proto dri3proto glproto presentproto x11 xdamage xext \
 		xfixes xshmfence xvmc xxf86vm
 

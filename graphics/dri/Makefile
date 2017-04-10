@@ -11,15 +11,22 @@ COMMENT=	OpenGL hardware acceleration drivers for the DRI
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2
 
-USES=		ssl
-USE_XORG=	dri2proto dri3proto glproto presentproto x11 xext xdamage \
+USE_XORG=	dri2proto dri3proto glproto presentproto x11 xdamage xext \
 		xfixes xshmfence xv xvmc xxf86vm 
 
-OPTIONS_DEFINE=	TEXTURE
+OPTIONS_DEFINE=	TEXTURE VAAPI VDPAU
 OPTIONS_DEFAULT=TEXTURE
+OPTIONS_SUB=	yes
 
 TEXTURE_DESC=	Enable texture-float support (patent encumbered)
-VDPAU_DESC=	VDPAU (GPU video acceleration) support (needs Gallium)
+TEXTURE_CONFIGURE_ENABLE=	texture-float
+
+VAAPI_CONFIGURE_ENABLE=	va
+VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
+VAAPI_USE=		XORG=xcb
+
+VDPAU_CONFIGURE_ENABLE=	vdpau
+VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 
 PKGHELP=	${.CURDIR}/pkg-help
 
