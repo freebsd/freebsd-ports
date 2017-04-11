@@ -1,0 +1,16 @@
+--- etc/common.php.in.orig	2003-09-26 15:52:29 UTC
++++ etc/common.php.in
+@@ -6,10 +6,13 @@
+  $pass="rtgdefault";
+  $db="rtg";
+  $refresh=300;
++
++ date_default_timezone_set ( 'UTC' );
+  
+  /* Default locations to find RTG configuration file */
+  $configs[] = 'rtg.conf';
+  $configs[] = '@RTG_HOME@/etc/rtg.conf';
++ $configs[] = '%%PREFIX%%/etc/rtg/rtg.conf';
+  $configs[] = '/usr/local/rtg/etc/rtg.conf';
+  $configs[] = '/etc/rtg.conf';
+ 
