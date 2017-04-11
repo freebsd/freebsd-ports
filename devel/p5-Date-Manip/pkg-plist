@@ -63,6 +63,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/Delta.pm
 %%SITE_PERL%%/Date/Manip/Delta.pod
 %%SITE_PERL%%/Date/Manip/Examples.pod
+%%SITE_PERL%%/Date/Manip/History.pod
 %%SITE_PERL%%/Date/Manip/Holidays.pod
 %%SITE_PERL%%/Date/Manip/Lang.pod
 %%SITE_PERL%%/Date/Manip/Lang/catalan.pm
@@ -531,6 +532,15 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/Offset/off425.pm
 %%SITE_PERL%%/Date/Manip/Offset/off426.pm
 %%SITE_PERL%%/Date/Manip/Offset/off427.pm
+%%SITE_PERL%%/Date/Manip/Offset/off428.pm
+%%SITE_PERL%%/Date/Manip/Offset/off429.pm
+%%SITE_PERL%%/Date/Manip/Offset/off430.pm
+%%SITE_PERL%%/Date/Manip/Offset/off431.pm
+%%SITE_PERL%%/Date/Manip/Offset/off432.pm
+%%SITE_PERL%%/Date/Manip/Offset/off433.pm
+%%SITE_PERL%%/Date/Manip/Offset/off434.pm
+%%SITE_PERL%%/Date/Manip/Offset/off435.pm
+%%SITE_PERL%%/Date/Manip/Offset/off436.pm
 %%SITE_PERL%%/Date/Manip/Problems.pod
 %%SITE_PERL%%/Date/Manip/Recur.pm
 %%SITE_PERL%%/Date/Manip/Recur.pod
@@ -650,6 +660,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/amport01.pm
 %%SITE_PERL%%/Date/Manip/TZ/amport02.pm
 %%SITE_PERL%%/Date/Manip/TZ/ampuer00.pm
+%%SITE_PERL%%/Date/Manip/TZ/ampunt00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amrain00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amrank00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amreci00.pm
@@ -700,9 +711,11 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/asaqta00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asaqto00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asashg00.pm
+%%SITE_PERL%%/Date/Manip/TZ/asatyr00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asbagh00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asbaku00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asbang00.pm
+%%SITE_PERL%%/Date/Manip/TZ/asbarn00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asbeir00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asbish00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asbrun00.pm
@@ -714,6 +727,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/asdili00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asduba00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asdush00.pm
+%%SITE_PERL%%/Date/Manip/TZ/asfama00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asgaza00.pm
 %%SITE_PERL%%/Date/Manip/TZ/ashebr00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asho_c00.pm
@@ -745,7 +759,6 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/aspyon00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asqata00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asqyzy00.pm
-%%SITE_PERL%%/Date/Manip/TZ/asrang00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asriya00.pm
 %%SITE_PERL%%/Date/Manip/TZ/assakh00.pm
 %%SITE_PERL%%/Date/Manip/TZ/assama00.pm
@@ -759,11 +772,13 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/astehr00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asthim00.pm
 %%SITE_PERL%%/Date/Manip/TZ/astoky00.pm
+%%SITE_PERL%%/Date/Manip/TZ/astoms00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asulaa00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asurum00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asustm00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asvlad00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asyaku00.pm
+%%SITE_PERL%%/Date/Manip/TZ/asyang00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asyeka00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asyere00.pm
 %%SITE_PERL%%/Date/Manip/TZ/atazor00.pm
@@ -822,6 +837,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/etgmtp11.pm
 %%SITE_PERL%%/Date/Manip/TZ/euamst00.pm
 %%SITE_PERL%%/Date/Manip/TZ/euando00.pm
+%%SITE_PERL%%/Date/Manip/TZ/euastr00.pm
 %%SITE_PERL%%/Date/Manip/TZ/euathe00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eubelg00.pm
 %%SITE_PERL%%/Date/Manip/TZ/euberl00.pm
@@ -836,6 +852,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/euista00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eukali00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eukiev00.pm
+%%SITE_PERL%%/Date/Manip/TZ/eukiro00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eulisb00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eulond00.pm
 %%SITE_PERL%%/Date/Manip/TZ/euluxe00.pm
@@ -850,11 +867,13 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/euriga00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eurome00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eusama00.pm
+%%SITE_PERL%%/Date/Manip/TZ/eusara00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eusimf00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eusofi00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eustoc00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eutall00.pm
 %%SITE_PERL%%/Date/Manip/TZ/eutira00.pm
+%%SITE_PERL%%/Date/Manip/TZ/euulya00.pm
 %%SITE_PERL%%/Date/Manip/TZ/euuzhg00.pm
 %%SITE_PERL%%/Date/Manip/TZ/euvien00.pm
 %%SITE_PERL%%/Date/Manip/TZ/euviln00.pm
@@ -936,7 +955,6 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZdata.pod
 %%SITE_PERL%%/Date/Manip/Zones.pm
 %%SITE_PERL%%/Date/Manip/Zones.pod
-%%SITE_PERL%%/Date/Manip/History.pod
 %%PERL5_MAN3%%/Date::Manip::History.3.gz
 %%PERL5_MAN1%%/dm_date.1.gz
 %%PERL5_MAN1%%/dm_zdump.1.gz
