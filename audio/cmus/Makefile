@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cmus
-DISTVERSION=	2.8.0-rc0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.8.0-rc0
+PORTREVISION=	1
 CATEGORIES=	audio
 DIST_SUBDIR=	cmus
 
@@ -136,15 +137,17 @@ WAVPACK_CONFIGURE_ON=	CONFIG_WAVPACK=y
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 
 post-patch:
-# From DPorts: prevent passing -D_POSIX_C_SOURCE=200112L -D_XOPEN_SOURCE=600
-	@${REINPLACE_CMD} -e 's@\(NCURSES_CFLAGS=\).*@\1""@g' \
-		${WRKSRC}/configure
 # Doc/cmus.txt is used to generate the man pages.  Fix paths to point
 # to the correct directories.
 	@${REINPLACE_CMD} \
 		-e 's,/usr/share/doc/cmus/examples,${EXAMPLESDIR},g' \
 		-e 's,/usr/share/cmus,${DATADIR},g' \
 		${WRKSRC}/Doc/cmus.txt
+
+post-configure:
+# Prevent passing wrong flags from devel/ncurses' pkg-config file to the build
+	@${REINPLACE_CMD} -e 's|-D_POSIX_C_SOURCE=200112L||g; s|-D_XOPEN_SOURCE=600||g' \
+		${WRKSRC}/config.mk
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cmus*
