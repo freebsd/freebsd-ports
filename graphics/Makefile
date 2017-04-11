@@ -641,6 +641,7 @@
     SUBDIR += osgearth
     SUBDIR += oyranos
     SUBDIR += p5-Acme-Steganography-Image-Png
+    SUBDIR += p5-Alien-Gimp
     SUBDIR += p5-Barcode-ZBar
     SUBDIR += p5-CAD-Drawing
     SUBDIR += p5-CAD-Drawing-Template
