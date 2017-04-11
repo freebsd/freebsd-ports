@@ -2,10 +2,10 @@
 
 PORTNAME=	cvsync
 PORTVERSION=	0.25.0
-DISTVERSION=	0.24.19
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.cvsync.org/pub/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
+DISTNAME=	${PORTNAME}-0.24.19
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable CVS repository synchronization utility
