@@ -590,7 +590,7 @@ do-configure: gecko-do-configure
 gecko-do-configure:
 		@(if ! ${CONFIGURE_ENV} ${DO_MAKE_BUILD} configure; then \
 			 ${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
-			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT_80} ; \
 			 ${FALSE}; \
 		fi)
 
