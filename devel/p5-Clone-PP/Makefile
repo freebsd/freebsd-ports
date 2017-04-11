@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Clone-PP
-PORTVERSION=	1.06
-PORTREVISION=	1
+PORTVERSION=	1.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +13,7 @@ COMMENT=	Recursively copy Perl datatypes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
