@@ -10,10 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Encapsulate install info for GIMP
 
-BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.402:devel/p5-ExtUtils-Depends \
+BUILD_DEPENDS=	gimp-app>=0:graphics/gimp-app \
+		p5-ExtUtils-Depends>=0.402:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig \
 		p5-IO-All>=0:devel/p5-IO-All
-LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
+RUN_DEPENDS=	gimp-app>=0:graphics/gimp-app
 TEST_DEPENDS=	p5-Inline-C>=0.67:devel/p5-Inline-C \
 		p5-Inline>=0.78:devel/p5-Inline
 
