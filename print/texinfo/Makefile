@@ -3,6 +3,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	6.1.20160425
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/ \
@@ -16,31 +17,34 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typeset documentation system with multiple format output
 
-BUILD_DEPENDS+=	help2man:misc/help2man
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	help2man:misc/help2man
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install-tex
+MAKE_ARGS=	PERL=${PERL} TEXMF=${LOCALBASE}/${TEXMFDIR}
 PKGDEINSTALL=	${PKGINSTALL}
-USES+=		charsetfix cpe gmake ncurses perl5 tar:xz
+USE_TEX=	yes
+USES=		charsetfix cpe gmake iconv ncurses perl5 tar:xz
 
-MAKE_ARGS=	TEXMF=${LOCALBASE}/${TEXMF} PERL=${LOCALBASE}/bin/perl
 INFO=		texinfo info-stnd
+PORTDATA=	*
+
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
 
-TEXMF=		share/texmf
-PLIST_SUB=	TEXMF=${TEXMF}
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 post-patch:
-	${CHMOD} 755 ${WRKSRC}/build-aux/install-sh
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/texinfo.tex ${WRKSRC}/doc/
-	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi ${WRKSRC}/util/
-	${REINPLACE_CMD} '/rm -f ..DESTDIR/s:$$: $$(DESTDIR)$$(xsdir)/XSParagraph.*:' \
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/texinfo.tex ${WRKSRC}/doc/
+	@${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi ${WRKSRC}/util/
+	@${REINPLACE_CMD} '/rm -f ..DESTDIR/s:$$: $$(DESTDIR)$$(xsdir)/XSParagraph.*:' \
 		${WRKSRC}/tp/Texinfo/Convert/XSParagraph/Makefile.in
 
 post-install:
