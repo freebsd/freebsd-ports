@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170410:
+  AFFECTS: users of x11-wm/awesome
+  AUTHOR: garga@FreeBSD.org
+
+  Awesome Window Manager (x11-wm/awesome) was upgraded to 4.1 and its config
+  is not backward compatible with 3.5.  A new port was created to keep 3.5
+  version available at x11-wm/awesome3 and it will be available for 6 months
+  until users have time to upgrade configuration.
+
+  There are references about what has changed in 4.0 at:
+
+  https://awesomewm.org/apidoc/documentation/89-NEWS.md.html#v4
+
+  And configuration porting tips at:
+
+  https://awesomewm.org/apidoc/documentation/17-porting-tips.md.html#v4
+
+  If you would like to keep using 3.x, please run the collowing command to
+  update pkg database:
+
+  # pkg set -n awesome:awesome3
+  # pkg set -o x11-wm/awesome:x11-wm/awesome3
+
 20170404:
   AFFECTS: users of Xapian 1.2.x and www/ikiwiki
   AUTHOR: sunpoet@FreeBSD.org
