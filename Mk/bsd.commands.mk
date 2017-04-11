@@ -42,6 +42,7 @@ FILE?=			/usr/bin/file
 FIND?=			/usr/bin/find
 FLEX?=			/usr/bin/flex
 FMT?=			/usr/bin/fmt
+FMT_80?=		${FMT} 75 79
 GMAKE?=			gmake
 GREP?=			/usr/bin/grep
 GUNZIP_CMD?=		/usr/bin/gunzip -f

@@ -3944,6 +3944,7 @@
 %%WWWDIR%%/lib/banzai/reference_parser/snippet_parser.rb
 %%WWWDIR%%/lib/banzai/reference_parser/user_parser.rb
 %%WWWDIR%%/lib/banzai/renderer.rb
+%%WWWDIR%%/lib/banzai/renderer/html.rb
 %%WWWDIR%%/lib/bitbucket/client.rb
 %%WWWDIR%%/lib/bitbucket/collection.rb
 %%WWWDIR%%/lib/bitbucket/connection.rb
@@ -5089,6 +5090,7 @@
 %%WWWDIR%%/spec/lib/banzai/filter/inline_diff_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/issue_reference_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/label_reference_filter_spec.rb
+%%WWWDIR%%/spec/lib/banzai/filter/markdown_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/math_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/merge_request_reference_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/milestone_reference_filter_spec.rb

@@ -1,4 +1,4 @@
---- Gemfile.orig	2017-03-19 20:06:47 UTC
+--- Gemfile.orig	2017-04-06 01:02:26 UTC
 +++ Gemfile
 @@ -1,20 +1,16 @@
  source 'https://rubygems.org'
@@ -118,7 +118,7 @@
    gem 'unicorn-worker-killer', '~> 0.4.4'
  end
  
-@@ -141,7 +136,7 @@ gem 'redis-namespace', '~> 1.5.2'
+@@ -141,10 +136,10 @@ gem 'redis-namespace', '~> 1.5.2'
  gem 'sidekiq-limit_fetch', '~> 3.4'
  
  # HTTP requests
@@ -126,7 +126,11 @@
 +gem 'httparty', '>= 0.13.3'
  
  # Colored output to console
- gem 'rainbow', '~> 2.1.0'
+-gem 'rainbow', '~> 2.1.0'
++gem 'rainbow', '>= 2.1.0'
+ 
+ # GitLab settings
+ gem 'settingslogic', '~> 2.0.9'
 @@ -164,7 +159,7 @@ gem 'connection_pool', '~> 2.0'
  gem 'hipchat', '~> 1.5.0'
  

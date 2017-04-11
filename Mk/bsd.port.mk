@@ -1161,9 +1161,9 @@ WARNING+=			"${_UNSUPPORTED_SYSTEM_MESSAGE}"
 show-unsupported-system-error:
 	@${ECHO_MSG} "/!\\ ERROR: /!\\"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "${_UNSUPPORTED_SYSTEM_MESSAGE}" | ${FMT} 75 79
+	@${ECHO_MSG} "${_UNSUPPORTED_SYSTEM_MESSAGE}" | ${FMT_80}
 	@${ECHO_MSG}
-	@${ECHO_MSG} "No support will be provided if you silence this message by defining ALLOW_UNSUPPORTED_SYSTEM." | ${FMT} 75 79
+	@${ECHO_MSG} "No support will be provided if you silence this message by defining ALLOW_UNSUPPORTED_SYSTEM." | ${FMT_80}
 	@${ECHO_MSG}
 	@${FALSE}
 . endif
@@ -2756,7 +2756,7 @@ clean:
 .if defined(IGNORE_SILENT)
 IGNORECMD=	${DO_NADA}
 .else
-IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}. | ${FMT} 75 79 ; exit 1
+IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}. | ${FMT_80} ; exit 1
 .endif
 
 _TARGETS=	check-sanity fetch checksum extract patch configure all build \
@@ -3144,7 +3144,7 @@ do-configure:
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	    ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}; then \
 			 ${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
-			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT_80} ; \
 			 ${FALSE}; \
 		fi)
 .endif
@@ -3158,7 +3158,7 @@ do-build:
 	@(cd ${BUILD_WRKSRC}; if ! ${DO_MAKE_BUILD} ${ALL_TARGET}; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
 			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
-			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT} 75 79 ; \
+			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT_80} ; \
 			fi; \
 		${FALSE}; \
 		fi)
@@ -3277,7 +3277,7 @@ do-test:
 	@(cd ${TEST_WRKSRC}; if ! ${DO_MAKE_TEST} ${TEST_TARGET}; then \
 		if [ -n "${TEST_FAIL_MESSAGE}" ] ; then \
 			${ECHO_MSG} "===> Tests failed unexpectedly."; \
-			(${ECHO_CMD} "${TEST_FAIL_MESSAGE}") | ${FMT} 75 79 ; \
+			(${ECHO_CMD} "${TEST_FAIL_MESSAGE}") | ${FMT_80} ; \
 			fi; \
 		${FALSE}; \
 		fi)
@@ -5092,7 +5092,7 @@ show-warnings:
 	@${ECHO_MSG} "/!\\ WARNING /!\\"
 	@${ECHO_MSG}
 .for m in ${WARNING}
-	@${ECHO_MSG} "${m}" | ${FMT} 75 79
+	@${ECHO_MSG} "${m}" | ${FMT_80}
 	@${ECHO_MSG}
 .endfor
 	@sleep ${WARNING_WAIT}
@@ -5105,7 +5105,7 @@ show-dev-warnings:
 	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile warnings, please consider fixing /!\\"
 	@${ECHO_MSG}
 .for m in ${DEV_WARNING}
-	@${ECHO_MSG} ${m} | ${FMT} 75 79
+	@${ECHO_MSG} ${m} | ${FMT_80}
 	@${ECHO_MSG}
 .endfor
 .if defined(DEV_WARNING_FATAL)
@@ -5120,7 +5120,7 @@ show-dev-errors:
 	@${ECHO_MSG} "/!\\ ${PKGNAME}: Makefile errors /!\\"
 	@${ECHO_MSG}
 .for m in ${DEV_ERROR}
-	@${ECHO_MSG} "${m}" | ${FMT} 75 79
+	@${ECHO_MSG} "${m}" | ${FMT_80}
 	@${ECHO_MSG}
 .endfor
 	@${FALSE}
