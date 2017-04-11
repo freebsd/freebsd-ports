@@ -1,8 +1,7 @@
-# Created by: Steve Wills <steve@mouf.net>
 # $FreeBSD$
 
 PORTNAME=	Math-SigFigs
-PORTVERSION=	1.10
+PORTVERSION=	1.20
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
