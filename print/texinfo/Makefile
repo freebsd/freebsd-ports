@@ -33,7 +33,6 @@ USE_TEX=	yes
 USES=		charsetfix cpe gmake iconv ncurses perl5 tar:xz
 
 INFO=		texinfo info-stnd
-PORTDATA=	*
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
