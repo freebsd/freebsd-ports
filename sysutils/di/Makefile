@@ -10,6 +10,9 @@ MASTER_SITES=	https://gentoo.com/di/ \
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Disk Information Utility
 
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 MAKE_ENV=	prefix="${PREFIX}"
 MAKE_ARGS=	-e
 
