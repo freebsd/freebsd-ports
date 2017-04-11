@@ -5,7 +5,6 @@ PORTNAME=	libqrencode
 PORTVERSION=	3.9.0
 PORTREVISION=	1
 CATEGORIES=	graphics
-DISTNAME=	qrencode-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	C library for encoding data in a QR Code symbol

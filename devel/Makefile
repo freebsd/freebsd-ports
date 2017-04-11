@@ -4157,6 +4157,7 @@
     SUBDIR += py-bluelet
     SUBDIR += py-boto
     SUBDIR += py-botocore
+    SUBDIR += py-cached-property
     SUBDIR += py-cachetools
     SUBDIR += py-calendar
     SUBDIR += py-canonicaljson
@@ -4240,6 +4241,7 @@
     SUBDIR += py-django-tastypie-mongoengine
     SUBDIR += py-django16-tastypie-mongoengine
     SUBDIR += py-docker-py
+    SUBDIR += py-dockerpty
     SUBDIR += py-docopt
     SUBDIR += py-dogpile.cache
     SUBDIR += py-doit
