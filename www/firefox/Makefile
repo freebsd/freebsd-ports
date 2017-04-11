@@ -45,13 +45,10 @@ MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
 OPTIONS_DEFINE=		RUST
-OPTIONS_DEFAULT=	BUNDLED_CAIRO GTK3
+OPTIONS_DEFAULT=	BUNDLED_CAIRO
 # XXX lang/rust and devel/cargo currently build only on these platforms
 OPTIONS_DEFAULT_amd64=	RUST
 OPTIONS_DEFAULT_i386=	RUST
-
-OPTIONS_SINGLE+=	TOOLKIT
-OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
