@@ -85,7 +85,7 @@ do-extract:
 	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} spec --ruby ${DISTDIR}/${DIST_SUBDIR}/${GEMFILES} > ${GEMSPEC} ; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
 			${ECHO_MSG} "===> Extraction failed unexpectedly."; \
-			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT} 75 79 ; \
+			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT_80} ; \
 			fi; \
 		${FALSE}; \
 		fi)
@@ -96,7 +96,7 @@ do-build:
 	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} build --force ${GEMSPEC} ; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
 			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
-			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT} 75 79 ; \
+			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT_80} ; \
 			fi; \
 		${FALSE}; \
 		fi)
