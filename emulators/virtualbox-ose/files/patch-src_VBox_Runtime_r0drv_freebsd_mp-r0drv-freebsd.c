@@ -5,7 +5,7 @@
  #include "r0drv/mp-r0drv.h"
  
 +#if __FreeBSD_version < 1200028
-+#define smp_no_rendezvous_barrier   smp_no_redevous_barrier
++#define smp_no_rendezvous_barrier   smp_no_rendevous_barrier
 +#endif
  
  RTDECL(RTCPUID) RTMpCpuId(void)
