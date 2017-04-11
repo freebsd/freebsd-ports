@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bindata
-PORTVERSION=	2.3.5
+PORTVERSION=	2.4.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
