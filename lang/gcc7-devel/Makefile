@@ -4,7 +4,8 @@
 PORTNAME=	gcc
 PORTVERSION=	7.0.1.s20170409
 CATEGORIES=	lang
-MASTER_SITES=	GCC/snapshots/${DISTVERSION}
+MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
+DISTNAME=	gcc-${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -26,11 +27,11 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
 
-# DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
+# DIST_VERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of
 # Y.2.1.s20140817 results in values of Y-20140817, Y.2.1, and Y
 # for these three.
-DISTVERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
+DIST_VERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
 PORTREVISION=	1
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
