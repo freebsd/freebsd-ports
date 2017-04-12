@@ -1686,6 +1686,7 @@
     SUBDIR += py-httpie
     SUBDIR += py-httplib2
     SUBDIR += py-hyper
+    SUBDIR += py-hyperframe
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy
     SUBDIR += py-jswebkit
