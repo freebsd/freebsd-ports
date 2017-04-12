@@ -687,7 +687,7 @@
     SUBDIR += s3mod
     SUBDIR += sayonara
     SUBDIR += sbagen
-    SUBDIR += schism
+    SUBDIR += schismtracker
     SUBDIR += scrobbler
     SUBDIR += sdl2_mixer
     SUBDIR += sdl_mixer

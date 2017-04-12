@@ -9231,3 +9231,4 @@ textproc/go-text||2017-04-10|Has expired: Go libraries should not be packaged
 devel/go-pretty||2017-04-10|Has expired: Go libraries should not be packaged
 databases/godis||2017-04-10|Has expired: Go libraries should not be packaged
 www/moodle29|www/moodle32|2017-04-10|Has expired: Upstream support EoL, please migrate to moodle32
+audio/schism|audio/schismtracker|2017-04-12|Renamed for better naming

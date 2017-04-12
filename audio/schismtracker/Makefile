@@ -1,9 +1,9 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
 # $FreeBSD$
 
-PORTNAME=	schism
+PORTNAME=	schismtracker
 PORTVERSION=	20160913
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,16 +13,12 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		autoreconf python compiler:c++11-lib
+USES=		autoreconf python compiler:c++11-lib desktop-file-utils
 USE_SDL=	sdl
 USE_XORG=	x11 xext xv
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	schismtracker
-GH_PROJECT=	schismtracker
-
-PLIST_FILES=	bin/${PORTNAME}
 
 # if you touch these make sure configure finds X11/XKBlib.h presence
 LDFLAGS+=	`sdl-config --libs`
@@ -36,7 +32,10 @@ post-patch:
 			${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/^schismtracker_LDADD/d' ${WRKSRC}/Makefile.am
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/sys/fd.org/*.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/icons/schism-icon-128.png \
+		${WRKSRC}/icons/schism-itf-icon-128.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

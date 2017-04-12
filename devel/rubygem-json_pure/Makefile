@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	json_pure
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,7 @@ COMMENT=	Parse JSON texts and generate them from ruby data structures in Ruby
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

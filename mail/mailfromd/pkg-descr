@@ -4,9 +4,12 @@ criteria of arbitrary complexity, supplied by the administrator in the form
 of a script file.  The daemon interacts with the MTA via Milter or PMilter
 protocols.  Some of its features:
 
-  - Flexible programming language for writing MTA extensions
+  - Feature-rich, detailed, configurable absolute control over each
+    stage of SMTP session
+  - Advanced sieve support (flexible programming language for writing
+    MTA extensions)
   - Sender address verification (call-out)
-  - Greylisting and whitelisting
+  - Black/greylisting and whitelisting
   - Mail sending rate control
   - Local account verification
   - Native language support

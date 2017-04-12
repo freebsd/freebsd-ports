@@ -403,6 +403,7 @@
     SUBDIR += dconf
     SUBDIR += dconf-editor
     SUBDIR += ddd
+    SUBDIR += debugedit
     SUBDIR += dee
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
@@ -4536,6 +4537,7 @@
     SUBDIR += py-protocols
     SUBDIR += py-protocols-devel
     SUBDIR += py-ptrace
+    SUBDIR += py-ptvsd
     SUBDIR += py-pudb
     SUBDIR += py-px
     SUBDIR += py-py

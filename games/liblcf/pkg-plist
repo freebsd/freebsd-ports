@@ -2,6 +2,7 @@ include/liblcf/command_codes.h
 include/liblcf/data.h
 include/liblcf/ini.h
 include/liblcf/inireader.h
+include/liblcf/lcf_options.h
 include/liblcf/ldb_chunks.h
 include/liblcf/ldb_reader.h
 include/liblcf/lmt_chunks.h
@@ -11,7 +12,6 @@ include/liblcf/lmu_reader.h
 include/liblcf/lsd_chunks.h
 include/liblcf/lsd_reader.h
 include/liblcf/reader_lcf.h
-include/liblcf/reader_options.h
 include/liblcf/reader_struct.h
 include/liblcf/reader_types.h
 include/liblcf/reader_util.h

@@ -18,18 +18,16 @@ share/pixmaps/wargus.png
 %%DATADIR%%/campaigns/human-exp/levelx10h_c.sms
 %%DATADIR%%/campaigns/human-exp/levelx11h_c.sms
 %%DATADIR%%/campaigns/human-exp/levelx12h_c.sms
-%%DATADIR%%/campaigns/human-ftm/human-ftm.lua
-%%DATADIR%%/campaigns/human-ftm/level01h.smp
-%%DATADIR%%/campaigns/human-ftm/level01h.sms
-%%DATADIR%%/campaigns/human-ftm/level01h.txt
-%%DATADIR%%/campaigns/human-ftm/level01h_c.sms
-%%DATADIR%%/campaigns/human-ftm/level01h_c2.sms
-%%DATADIR%%/campaigns/human-ftm/level02h.smp
-%%DATADIR%%/campaigns/human-ftm/level02h.sms
-%%DATADIR%%/campaigns/human-ftm/level02h.txt
-%%DATADIR%%/campaigns/human-ftm/level02h_c.sms
-%%DATADIR%%/campaigns/human-ftm/level02h_c2.sms
-%%DATADIR%%/campaigns/human-ftm/tutorial.txt
+%%DATADIR%%/campaigns/human-ftm/1. Tutorial.png
+%%DATADIR%%/campaigns/human-ftm/1. Tutorial.smp
+%%DATADIR%%/campaigns/human-ftm/1. Tutorial.sms
+%%DATADIR%%/campaigns/human-ftm/1. Tutorial.txt
+%%DATADIR%%/campaigns/human-ftm/2. Witch Hunt.smp
+%%DATADIR%%/campaigns/human-ftm/2. Witch Hunt.sms
+%%DATADIR%%/campaigns/human-ftm/2. Witch Hunt.txt
+%%DATADIR%%/campaigns/human-ftm/3. Desert Survival.smp
+%%DATADIR%%/campaigns/human-ftm/3. Desert Survival.sms
+%%DATADIR%%/campaigns/human-ftm/3. Desert Survival.txt
 %%DATADIR%%/campaigns/human-tales/human-tales.lua
 %%DATADIR%%/campaigns/human-tales/interface/Act I - Coast of Blardneg.png.txt
 %%DATADIR%%/campaigns/human-tales/interface/Act_I_-_Coast_of_Blardneg.png
@@ -63,14 +61,26 @@ share/pixmaps/wargus.png
 %%DATADIR%%/campaigns/human-tales/level04h_c2.sms
 %%DATADIR%%/campaigns/human-tales/level05h.smp
 %%DATADIR%%/campaigns/human-tales/level05h.sms
+%%DATADIR%%/campaigns/human-tales/level05h.txt
 %%DATADIR%%/campaigns/human-tales/level05h_ai.lua
 %%DATADIR%%/campaigns/human-tales/level05h_c.sms
 %%DATADIR%%/campaigns/human-tales/level05h_c2.sms
+%%DATADIR%%/campaigns/human-tales/level06h.smp
+%%DATADIR%%/campaigns/human-tales/level06h.sms
+%%DATADIR%%/campaigns/human-tales/level06h.txt
+%%DATADIR%%/campaigns/human-tales/level06h_ai.lua
+%%DATADIR%%/campaigns/human-tales/level06h_c.sms
+%%DATADIR%%/campaigns/human-tales/level06h_c2.sms
+%%DATADIR%%/campaigns/human-tales/level07h.png
 %%DATADIR%%/campaigns/human-tales/level07h.smp
 %%DATADIR%%/campaigns/human-tales/level07h.sms
-%%DATADIR%%/campaigns/human-tales/level07h_ai.lua
-%%DATADIR%%/campaigns/human-tales/level07h_c.sms
-%%DATADIR%%/campaigns/human-tales/level07h_c2.sms
+%%DATADIR%%/campaigns/human-tales/level08h.smp
+%%DATADIR%%/campaigns/human-tales/level08h.sms
+%%DATADIR%%/campaigns/human-tales/level10h.png
+%%DATADIR%%/campaigns/human-tales/level10h.smp
+%%DATADIR%%/campaigns/human-tales/level10h.sms
+%%DATADIR%%/campaigns/human-tales/level11h.smp
+%%DATADIR%%/campaigns/human-tales/level11h.sms
 %%DATADIR%%/campaigns/human/level01h_c.sms
 %%DATADIR%%/campaigns/human/level02h_c.sms
 %%DATADIR%%/campaigns/human/level03h_c.sms
@@ -85,13 +95,6 @@ share/pixmaps/wargus.png
 %%DATADIR%%/campaigns/human/level12h_c.sms
 %%DATADIR%%/campaigns/human/level13h_c.sms
 %%DATADIR%%/campaigns/human/level14h_c.sms
-%%DATADIR%%/campaigns/list/Beyond the Dark Portal (Alliance)
-%%DATADIR%%/campaigns/list/Beyond the Dark Portal (Horde)
-%%DATADIR%%/campaigns/list/For the Motherland (Alliance)
-%%DATADIR%%/campaigns/list/For the Motherland (Horde)
-%%DATADIR%%/campaigns/list/Frontier Force (Alliance)
-%%DATADIR%%/campaigns/list/Tides of Darkness (Alliance)
-%%DATADIR%%/campaigns/list/Tides of Darkness (Horde)
 %%DATADIR%%/campaigns/orc-exp/levelx01o_c.sms
 %%DATADIR%%/campaigns/orc-exp/levelx02o_c.sms
 %%DATADIR%%/campaigns/orc-exp/levelx03o_c.sms
@@ -174,7 +177,6 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/missiles/arrow.png.txt
 %%DATADIR%%/graphics/missiles/axe.png
 %%DATADIR%%/graphics/missiles/axe.png.txt
-%%DATADIR%%/graphics/missiles/ballista bolt.png
 %%DATADIR%%/graphics/missiles/ballista bolt.png.txt
 %%DATADIR%%/graphics/missiles/ballista-catapult impact.png.txt
 %%DATADIR%%/graphics/missiles/ballista-catapult_impact.png
@@ -280,7 +282,6 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/pandora/units/chesspieces.txt
 %%DATADIR%%/graphics/pandora/units/chesspieces2.png
 %%DATADIR%%/graphics/pandora/units/footman.png
-%%DATADIR%%/graphics/pandora/units/gnomish_submarine.png
 %%DATADIR%%/graphics/pandora/units/mage.png
 %%DATADIR%%/graphics/temp_test/deleteme.txt
 %%DATADIR%%/graphics/temp_test/unit_ocer-soldier-masked.png
@@ -345,6 +346,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/tilesets/summer/neutral/units/critter.png
 %%DATADIR%%/graphics/tilesets/summer/neutral/units/critter.png.txt
 %%DATADIR%%/graphics/tilesets/summer/orc/buildings/altar_of_storms.png
+%%DATADIR%%/graphics/tilesets/summer/orc/buildings/altar_of_storms.png.txt
 %%DATADIR%%/graphics/tilesets/summer/orc/buildings/barracks.png
 %%DATADIR%%/graphics/tilesets/summer/orc/buildings/barracks.png.txt
 %%DATADIR%%/graphics/tilesets/summer/orc/buildings/blacksmith.png
@@ -377,6 +379,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/tilesets/summer/summer.gimp
 %%DATADIR%%/graphics/tilesets/summer/summer.rgb
 %%DATADIR%%/graphics/tilesets/summer/terrain/summer.png
+%%DATADIR%%/graphics/tilesets/summer/terrain/summer.txt
 %%DATADIR%%/graphics/tilesets/swamp/human/buildings/alliance lumber mill.png.txt
 %%DATADIR%%/graphics/tilesets/swamp/human/buildings/barracks.png
 %%DATADIR%%/graphics/tilesets/swamp/human/buildings/barracks.png.txt
@@ -385,6 +388,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/tilesets/swamp/human/buildings/cannon tower.png.txt
 %%DATADIR%%/graphics/tilesets/swamp/human/buildings/cannon_tower.png
 %%DATADIR%%/graphics/tilesets/swamp/human/buildings/castle.png
+%%DATADIR%%/graphics/tilesets/swamp/human/buildings/castle.png.txt
 %%DATADIR%%/graphics/tilesets/swamp/human/buildings/church.png
 %%DATADIR%%/graphics/tilesets/swamp/human/buildings/church.png.txt
 %%DATADIR%%/graphics/tilesets/swamp/human/buildings/elven_lumber_mill.png
@@ -422,6 +426,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/tilesets/swamp/human/units/submarine.png.txt
 %%DATADIR%%/graphics/tilesets/swamp/icons.png
 %%DATADIR%%/graphics/tilesets/swamp/neutral/buildings/circle_of_power.png
+%%DATADIR%%/graphics/tilesets/swamp/neutral/buildings/dark portal.png.txt
 %%DATADIR%%/graphics/tilesets/swamp/neutral/buildings/dark_portal.png
 %%DATADIR%%/graphics/tilesets/swamp/neutral/buildings/destroyed_site.png
 %%DATADIR%%/graphics/tilesets/swamp/neutral/buildings/gold_mine.png
@@ -431,6 +436,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/tilesets/swamp/neutral/units/critter.png
 %%DATADIR%%/graphics/tilesets/swamp/neutral/units/critter.png.txt
 %%DATADIR%%/graphics/tilesets/swamp/orc/buildings/altar_of_storms.png
+%%DATADIR%%/graphics/tilesets/swamp/orc/buildings/altar_of_storms.png.txt
 %%DATADIR%%/graphics/tilesets/swamp/orc/buildings/barracks.png
 %%DATADIR%%/graphics/tilesets/swamp/orc/buildings/barracks.png.txt
 %%DATADIR%%/graphics/tilesets/swamp/orc/buildings/blacksmith.png
@@ -574,6 +580,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/tilesets/winter/neutral/units/critter.png
 %%DATADIR%%/graphics/tilesets/winter/neutral/units/critter.png.txt
 %%DATADIR%%/graphics/tilesets/winter/orc/buildings/altar_of_storms.png
+%%DATADIR%%/graphics/tilesets/winter/orc/buildings/altar_of_storms.png.txt
 %%DATADIR%%/graphics/tilesets/winter/orc/buildings/barracks.png
 %%DATADIR%%/graphics/tilesets/winter/orc/buildings/barracks.png.txt
 %%DATADIR%%/graphics/tilesets/winter/orc/buildings/blacksmith.png
@@ -778,6 +785,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/ui/human/widgets/up-arrow-pressed.png
 %%DATADIR%%/graphics/ui/human/widgets/vslider-bar-grayed.png
 %%DATADIR%%/graphics/ui/human/widgets/vslider-bar-normal.png
+%%DATADIR%%/graphics/ui/kindland.png
 %%DATADIR%%/graphics/ui/mana.png
 %%DATADIR%%/graphics/ui/mana2.png
 %%DATADIR%%/graphics/ui/orc/640x480/buttonpanel.png
@@ -884,6 +892,11 @@ share/pixmaps/wargus.png
 %%DATADIR%%/graphics/ui/ore,stone,coal.png
 %%DATADIR%%/graphics/ui/score.png
 %%DATADIR%%/graphics/ui/title.png
+%%DATADIR%%/maps/fl/(6)canyon-way.smp
+%%DATADIR%%/maps/fl/(6)canyon-way.sms
+%%DATADIR%%/maps/fl/(8)rockfort-arena.png
+%%DATADIR%%/maps/fl/(8)rockfort-arena.smp
+%%DATADIR%%/maps/fl/(8)rockfort-arena.sms
 %%DATADIR%%/maps/ftm/(2)forgotten-forest.png
 %%DATADIR%%/maps/ftm/(2)forgotten-forest.smp
 %%DATADIR%%/maps/ftm/(2)forgotten-forest.sms
@@ -892,6 +905,12 @@ share/pixmaps/wargus.png
 %%DATADIR%%/maps/ftm/(2)mushroom-panic.png
 %%DATADIR%%/maps/ftm/(2)mushroom-panic.smp
 %%DATADIR%%/maps/ftm/(2)mushroom-panic.sms
+%%DATADIR%%/maps/ftm/(2)nicks-duel.png
+%%DATADIR%%/maps/ftm/(2)nicks-duel.smp
+%%DATADIR%%/maps/ftm/(2)nicks-duel.sms
+%%DATADIR%%/maps/ftm/(2)one-way-through.png
+%%DATADIR%%/maps/ftm/(2)one-way-through.smp
+%%DATADIR%%/maps/ftm/(2)one-way-through.sms
 %%DATADIR%%/maps/ftm/(4)beethoven-day.png
 %%DATADIR%%/maps/ftm/(4)beethoven-day.smp
 %%DATADIR%%/maps/ftm/(4)beethoven-day.sms
@@ -900,205 +919,216 @@ share/pixmaps/wargus.png
 %%DATADIR%%/maps/ftm/(4)river-crossing.png
 %%DATADIR%%/maps/ftm/(4)river-crossing.smp
 %%DATADIR%%/maps/ftm/(4)river-crossing.sms
+%%DATADIR%%/maps/ftm/(4)rockfort-arena.png
+%%DATADIR%%/maps/ftm/(4)rockfort-arena.smp
+%%DATADIR%%/maps/ftm/(4)rockfort-arena.sms
 %%DATADIR%%/maps/ftm/(4)winter-bloodbath.png
 %%DATADIR%%/maps/ftm/(4)winter-bloodbath.smp
 %%DATADIR%%/maps/ftm/(4)winter-bloodbath.sms
 %%DATADIR%%/maps/ftm/(5)black-flood.png
 %%DATADIR%%/maps/ftm/(5)black-flood.smp
 %%DATADIR%%/maps/ftm/(5)black-flood.sms
-%%DATADIR%%/maps/list/For the Motherland
-%%DATADIR%%/maps/list/Skirmish Classic
-%%DATADIR%%/maps/list/Skirmish Modern
-%%DATADIR%%/maps/skirmish/(2)blick-nach-oben.smp.gz
-%%DATADIR%%/maps/skirmish/(2)blick-nach-oben.sms.gz
-%%DATADIR%%/maps/skirmish/(2)blick-nach-oben.txt
-%%DATADIR%%/maps/skirmish/(2)east-west-conflict.bmp
-%%DATADIR%%/maps/skirmish/(2)east-west-conflict.smp.gz
-%%DATADIR%%/maps/skirmish/(2)east-west-conflict.sms.gz
-%%DATADIR%%/maps/skirmish/(2)east-west-conflict.txt
-%%DATADIR%%/maps/skirmish/(2)king-in-stone.bmp
-%%DATADIR%%/maps/skirmish/(2)king-in-stone.smp.gz
-%%DATADIR%%/maps/skirmish/(2)king-in-stone.sms.gz
-%%DATADIR%%/maps/skirmish/(2)no-mans-land.bmp
-%%DATADIR%%/maps/skirmish/(2)no-mans-land.smp.gz
-%%DATADIR%%/maps/skirmish/(2)no-mans-land.sms.gz
-%%DATADIR%%/maps/skirmish/(2)nord-sued-konflikt.smp.gz
-%%DATADIR%%/maps/skirmish/(2)nord-sued-konflikt.sms.gz
-%%DATADIR%%/maps/skirmish/(2)nord-sued-konflikt.txt
-%%DATADIR%%/maps/skirmish/(2)nordische-seenplatte.smp.gz
-%%DATADIR%%/maps/skirmish/(2)nordische-seenplatte.sms.gz
-%%DATADIR%%/maps/skirmish/(2)nordische-seenplatte.txt
-%%DATADIR%%/maps/skirmish/(2)oily-wars.smp.gz
-%%DATADIR%%/maps/skirmish/(2)oily-wars.sms.gz
-%%DATADIR%%/maps/skirmish/(2)the-right-strategy.bmp
-%%DATADIR%%/maps/skirmish/(2)the-right-strategy.smp.gz
-%%DATADIR%%/maps/skirmish/(2)the-right-strategy.sms.gz
-%%DATADIR%%/maps/skirmish/(2)timeless-isle.smp.gz
-%%DATADIR%%/maps/skirmish/(2)timeless-isle.sms.gz
-%%DATADIR%%/maps/skirmish/(2)zeit-fuer-entscheidungen.smp.gz
-%%DATADIR%%/maps/skirmish/(2)zeit-fuer-entscheidungen.sms.gz
-%%DATADIR%%/maps/skirmish/(2)zeit-fuer-entscheidungen.txt
-%%DATADIR%%/maps/skirmish/(3)around-the-sea.bmp
-%%DATADIR%%/maps/skirmish/(3)calculate.bmp
-%%DATADIR%%/maps/skirmish/(3)calculate.smp.gz
-%%DATADIR%%/maps/skirmish/(3)calculate.sms.gz
-%%DATADIR%%/maps/skirmish/(3)calculate.txt
-%%DATADIR%%/maps/skirmish/(3)frosty-rescue.smp.gz
-%%DATADIR%%/maps/skirmish/(3)frosty-rescue.sms.gz
-%%DATADIR%%/maps/skirmish/(3)frosty-rescue.txt
-%%DATADIR%%/maps/skirmish/(3)little-ambush.pud.gz
-%%DATADIR%%/maps/skirmish/(3)little-ambush.txt
-%%DATADIR%%/maps/skirmish/(3)man-on-the-moon.bmp
-%%DATADIR%%/maps/skirmish/(3)man-on-the-moon.smp.gz
-%%DATADIR%%/maps/skirmish/(3)man-on-the-moon.sms.gz
-%%DATADIR%%/maps/skirmish/(3)no-mans-land.smp.gz
-%%DATADIR%%/maps/skirmish/(3)no-mans-land.sms.gz
-%%DATADIR%%/maps/skirmish/(3)no-mans-land.txt
-%%DATADIR%%/maps/skirmish/(3)one-two-three.smp.gz
-%%DATADIR%%/maps/skirmish/(3)one-two-three.sms.gz
-%%DATADIR%%/maps/skirmish/(3)one-two-three.txt
-%%DATADIR%%/maps/skirmish/(3)sea-wars.smp.gz
-%%DATADIR%%/maps/skirmish/(3)sea-wars.sms.gz
-%%DATADIR%%/maps/skirmish/(3)three-frontiers.smp.gz
-%%DATADIR%%/maps/skirmish/(3)three-frontiers.sms.gz
-%%DATADIR%%/maps/skirmish/(4)4-corners.pud.gz
-%%DATADIR%%/maps/skirmish/(4)4-corners.txt
-%%DATADIR%%/maps/skirmish/(4)4-isl.pud.gz
-%%DATADIR%%/maps/skirmish/(4)4-isl.txt
-%%DATADIR%%/maps/skirmish/(4)arctic-goldrush.bmp
-%%DATADIR%%/maps/skirmish/(4)arctic-goldrush.smp.gz
-%%DATADIR%%/maps/skirmish/(4)arctic-goldrush.sms.gz
-%%DATADIR%%/maps/skirmish/(4)central-park.smp.gz
-%%DATADIR%%/maps/skirmish/(4)central-park.sms.gz
-%%DATADIR%%/maps/skirmish/(4)central-park.txt
-%%DATADIR%%/maps/skirmish/(4)chop-the-trees.pud.gz
-%%DATADIR%%/maps/skirmish/(4)chop-the-trees.txt
-%%DATADIR%%/maps/skirmish/(4)circle-hill.bmp
-%%DATADIR%%/maps/skirmish/(4)circle-hill.smp.gz
-%%DATADIR%%/maps/skirmish/(4)circle-hill.sms.gz
-%%DATADIR%%/maps/skirmish/(4)criss_cross.pud.gz
-%%DATADIR%%/maps/skirmish/(4)criss_cross2.pud.gz
-%%DATADIR%%/maps/skirmish/(4)criss_cross2.txt
-%%DATADIR%%/maps/skirmish/(4)east-lakes.bmp
-%%DATADIR%%/maps/skirmish/(4)east-lakes.txt
-%%DATADIR%%/maps/skirmish/(4)green-hell.smp.gz
-%%DATADIR%%/maps/skirmish/(4)green-hell.sms.gz
-%%DATADIR%%/maps/skirmish/(4)green-hell.txt
-%%DATADIR%%/maps/skirmish/(4)holy-forest.bmp
-%%DATADIR%%/maps/skirmish/(4)holy-forest.smp.gz
-%%DATADIR%%/maps/skirmish/(4)holy-forest.sms.gz
-%%DATADIR%%/maps/skirmish/(4)lake-in-the-middle.smp.gz
-%%DATADIR%%/maps/skirmish/(4)lake-in-the-middle.sms.gz
-%%DATADIR%%/maps/skirmish/(4)lake-in-the-middle.txt
-%%DATADIR%%/maps/skirmish/(4)little-island.smp.gz
-%%DATADIR%%/maps/skirmish/(4)little-island.sms.gz
-%%DATADIR%%/maps/skirmish/(4)little-island.txt
-%%DATADIR%%/maps/skirmish/(4)look-around.smp.gz
-%%DATADIR%%/maps/skirmish/(4)look-around.sms.gz
-%%DATADIR%%/maps/skirmish/(4)pathfinders.bmp
-%%DATADIR%%/maps/skirmish/(4)pathfinders.smp.gz
-%%DATADIR%%/maps/skirmish/(4)pathfinders.sms.gz
-%%DATADIR%%/maps/skirmish/(4)scandinavia.pud.gz
-%%DATADIR%%/maps/skirmish/(4)scandinavia.txt
-%%DATADIR%%/maps/skirmish/(4)smile.bmp
-%%DATADIR%%/maps/skirmish/(4)smile.smp.gz
-%%DATADIR%%/maps/skirmish/(4)smile.sms.gz
-%%DATADIR%%/maps/skirmish/(4)smile.txt
-%%DATADIR%%/maps/skirmish/(4)think-like-your-enemy.bmp
-%%DATADIR%%/maps/skirmish/(4)think-like-your-enemy.txt
-%%DATADIR%%/maps/skirmish/(4)tournament-continent.bmp
-%%DATADIR%%/maps/skirmish/(4)tournament-continent.smp.gz
-%%DATADIR%%/maps/skirmish/(4)tournament-continent.sms.gz
-%%DATADIR%%/maps/skirmish/(4)tournament-forest.bmp
-%%DATADIR%%/maps/skirmish/(4)tournament-forest.smp.gz
-%%DATADIR%%/maps/skirmish/(4)tournament-forest.sms.gz
-%%DATADIR%%/maps/skirmish/(4)tournament-islands.bmp
-%%DATADIR%%/maps/skirmish/(4)tournament-islands.smp.gz
-%%DATADIR%%/maps/skirmish/(4)tournament-islands.sms.gz
-%%DATADIR%%/maps/skirmish/(4)what-can-you-do.bmp
-%%DATADIR%%/maps/skirmish/(4)what-can-you-do.smp.gz
-%%DATADIR%%/maps/skirmish/(4)what-can-you-do.sms.gz
-%%DATADIR%%/maps/skirmish/(4)what-can-you-do.txt
-%%DATADIR%%/maps/skirmish/(4)woody-islands.bmp
-%%DATADIR%%/maps/skirmish/(4)woody-islands.smp.gz
-%%DATADIR%%/maps/skirmish/(4)woody-islands.sms.gz
-%%DATADIR%%/maps/skirmish/(4)you-have-to-look-around.bmp
-%%DATADIR%%/maps/skirmish/(4)you-have-to-look-around.smp.gz
-%%DATADIR%%/maps/skirmish/(4)you-have-to-look-around.sms.gz
-%%DATADIR%%/maps/skirmish/(4)you-have-to-look-around.txt
-%%DATADIR%%/maps/skirmish/(5)diablospiral.pud.gz
-%%DATADIR%%/maps/skirmish/(5)diablospiral.txt
-%%DATADIR%%/maps/skirmish/(5)many-ways-to-beat.bmp
-%%DATADIR%%/maps/skirmish/(5)many-ways-to-beat.smp.gz
-%%DATADIR%%/maps/skirmish/(5)many-ways-to-beat.sms.gz
-%%DATADIR%%/maps/skirmish/(5)many-ways-to-beat.txt
-%%DATADIR%%/maps/skirmish/(5)speed-is-the-key.bmp
-%%DATADIR%%/maps/skirmish/(5)speed-is-the-key.smp.gz
-%%DATADIR%%/maps/skirmish/(5)speed-is-the-key.sms.gz
-%%DATADIR%%/maps/skirmish/(5)the-pentagon.bmp
-%%DATADIR%%/maps/skirmish/(5)the-pentagon.smp.gz
-%%DATADIR%%/maps/skirmish/(5)the-pentagon.sms.gz
-%%DATADIR%%/maps/skirmish/(5)the-pentagon.txt
-%%DATADIR%%/maps/skirmish/(5)venedig.bmp
-%%DATADIR%%/maps/skirmish/(5)venedig.smp.gz
-%%DATADIR%%/maps/skirmish/(5)venedig.sms.gz
-%%DATADIR%%/maps/skirmish/(5)venedig.txt
-%%DATADIR%%/maps/skirmish/(6)all-against-the-floods.bmp
-%%DATADIR%%/maps/skirmish/(6)all-against-the-floods.smp.gz
-%%DATADIR%%/maps/skirmish/(6)all-against-the-floods.sms.gz
-%%DATADIR%%/maps/skirmish/(6)all-against-the-floods.txt
-%%DATADIR%%/maps/skirmish/(6)can-you-swim.bmp
-%%DATADIR%%/maps/skirmish/(6)can-you-swim.smp.gz
-%%DATADIR%%/maps/skirmish/(6)can-you-swim.sms.gz
-%%DATADIR%%/maps/skirmish/(6)different-ways.bmp
-%%DATADIR%%/maps/skirmish/(6)different-ways.smp.gz
-%%DATADIR%%/maps/skirmish/(6)different-ways.sms.gz
-%%DATADIR%%/maps/skirmish/(6)many-ways-to-rome.bmp
-%%DATADIR%%/maps/skirmish/(6)many-ways-to-rome.smp.gz
-%%DATADIR%%/maps/skirmish/(6)many-ways-to-rome.sms.gz
-%%DATADIR%%/maps/skirmish/(7)many-frontiers.bmp
-%%DATADIR%%/maps/skirmish/(7)many-frontiers.smp.gz
-%%DATADIR%%/maps/skirmish/(7)many-frontiers.sms.gz
-%%DATADIR%%/maps/skirmish/(8)altar-in-the-middle.pud.gz
-%%DATADIR%%/maps/skirmish/(8)altar-in-the-middle.txt
-%%DATADIR%%/maps/skirmish/(8)are-you-lucky.bmp
-%%DATADIR%%/maps/skirmish/(8)are-you-lucky.smp.gz
-%%DATADIR%%/maps/skirmish/(8)are-you-lucky.sms.gz
-%%DATADIR%%/maps/skirmish/(8)are-you-lucky.txt
-%%DATADIR%%/maps/skirmish/(8)death-in-the-rocks.bmp
-%%DATADIR%%/maps/skirmish/(8)death-in-the-rocks.smp.gz
-%%DATADIR%%/maps/skirmish/(8)death-in-the-rocks.sms.gz
-%%DATADIR%%/maps/skirmish/(8)diabloarena.pud.gz
-%%DATADIR%%/maps/skirmish/(8)diabloarena.txt
-%%DATADIR%%/maps/skirmish/(8)diablodarkwood.pud.gz
-%%DATADIR%%/maps/skirmish/(8)diablodarkwood.txt
-%%DATADIR%%/maps/skirmish/(8)diablomaze.pud.gz
-%%DATADIR%%/maps/skirmish/(8)diablomaze.txt
-%%DATADIR%%/maps/skirmish/(8)everywhere.bmp
-%%DATADIR%%/maps/skirmish/(8)everywhere.txt
-%%DATADIR%%/maps/skirmish/(8)farscape2006.png
-%%DATADIR%%/maps/skirmish/(8)farscape2006.pud
-%%DATADIR%%/maps/skirmish/(8)farscape2006.smp.gz
-%%DATADIR%%/maps/skirmish/(8)farscape2006.sms.gz
-%%DATADIR%%/maps/skirmish/(8)farscape2008.smp.gz
-%%DATADIR%%/maps/skirmish/(8)farscape2008.sms.gz
-%%DATADIR%%/maps/skirmish/(8)farscape2008.txt
-%%DATADIR%%/maps/skirmish/(8)fc-deathmatch-plain.pud.gz
-%%DATADIR%%/maps/skirmish/(8)fc-deathmatch-x.pud.gz
-%%DATADIR%%/maps/skirmish/(8)oil-is-the-key.bmp
-%%DATADIR%%/maps/skirmish/(8)oil-is-the-key.smp.gz
-%%DATADIR%%/maps/skirmish/(8)oil-is-the-key.sms.gz
-%%DATADIR%%/maps/skirmish/(8)roads-to-the-coasts.bmp
-%%DATADIR%%/maps/skirmish/(8)roads-to-the-coasts.smp.gz
-%%DATADIR%%/maps/skirmish/(8)roads-to-the-coasts.sms.gz
-%%DATADIR%%/maps/skirmish/(8)roads-to-the-coasts.txt
-%%DATADIR%%/maps/skirmish/(8)tournament-continent.bmp
-%%DATADIR%%/maps/skirmish/(8)tournament-continent.smp.gz
-%%DATADIR%%/maps/skirmish/(8)tournament-continent.sms.gz
-%%DATADIR%%/maps/skirmish/(8)tournament-islands.bmp
-%%DATADIR%%/maps/skirmish/(8)tournament-islands.smp.gz
-%%DATADIR%%/maps/skirmish/(8)tournament-islands.sms.gz
-%%DATADIR%%/mods/list/Wargus
+%%DATADIR%%/maps/ftm/(8)darius.png
+%%DATADIR%%/maps/ftm/(8)darius.smp
+%%DATADIR%%/maps/ftm/(8)darius.sms
+%%DATADIR%%/maps/king/(4)reticle.png
+%%DATADIR%%/maps/king/(4)reticle.smp
+%%DATADIR%%/maps/king/(4)reticle.sms
+%%DATADIR%%/maps/king/(4)tournament-forest.png
+%%DATADIR%%/maps/king/(4)tournament-forest.smp
+%%DATADIR%%/maps/king/(4)tournament-forest.sms
+%%DATADIR%%/maps/skirmish/multiplayer/(2)timeless-isle.smp.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(2)timeless-isle.sms.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(4)central-park.smp.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(4)central-park.sms.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(4)central-park.txt
+%%DATADIR%%/maps/skirmish/multiplayer/(4)lake-in-the-middle.smp.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(4)lake-in-the-middle.sms.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(4)lake-in-the-middle.txt
+%%DATADIR%%/maps/skirmish/multiplayer/(6)many-ways-to-rome.bmp
+%%DATADIR%%/maps/skirmish/multiplayer/(6)many-ways-to-rome.smp.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(6)many-ways-to-rome.sms.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(7)socotra.png
+%%DATADIR%%/maps/skirmish/multiplayer/(7)socotra.smp
+%%DATADIR%%/maps/skirmish/multiplayer/(7)socotra.sms
+%%DATADIR%%/maps/skirmish/multiplayer/(8)farscape2006.png
+%%DATADIR%%/maps/skirmish/multiplayer/(8)farscape2006.pud
+%%DATADIR%%/maps/skirmish/multiplayer/(8)farscape2006.smp.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(8)farscape2006.sms.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(8)farscape2008.smp.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(8)farscape2008.sms.gz
+%%DATADIR%%/maps/skirmish/multiplayer/(8)farscape2008.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(2)blick-nach-oben.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)blick-nach-oben.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)blick-nach-oben.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(2)east-west-conflict.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(2)east-west-conflict.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)east-west-conflict.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)east-west-conflict.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(2)king-in-stone.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(2)king-in-stone.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)king-in-stone.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)no-mans-land.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(2)no-mans-land.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)no-mans-land.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)nord-sued-konflikt.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)nord-sued-konflikt.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)nord-sued-konflikt.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(2)nordische-seenplatte.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)nordische-seenplatte.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)nordische-seenplatte.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(2)oily-wars.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)oily-wars.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)the-right-strategy.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(2)the-right-strategy.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)the-right-strategy.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)zeit-fuer-entscheidungen.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)zeit-fuer-entscheidungen.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(2)zeit-fuer-entscheidungen.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(3)around-the-sea.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(3)calculate.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(3)calculate.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)calculate.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)calculate.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(3)frosty-rescue.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)frosty-rescue.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)frosty-rescue.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(3)little-ambush.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)little-ambush.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(3)man-on-the-moon.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(3)man-on-the-moon.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)man-on-the-moon.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)no-mans-land.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)no-mans-land.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)no-mans-land.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(3)one-two-three.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)one-two-three.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)one-two-three.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(3)sea-wars.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)sea-wars.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)three-frontiers.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(3)three-frontiers.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)4-corners.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)4-corners.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)4-isl.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)4-isl.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)arctic-goldrush.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)arctic-goldrush.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)arctic-goldrush.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)chop-the-trees.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)chop-the-trees.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)circle-hill.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)circle-hill.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)circle-hill.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)criss_cross.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)criss_cross2.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)criss_cross2.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)east-lakes.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)east-lakes.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)green-hell.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)green-hell.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)green-hell.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)holy-forest.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)holy-forest.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)holy-forest.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)little-island.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)little-island.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)little-island.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)look-around.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)look-around.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)pathfinders.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)pathfinders.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)pathfinders.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)scandinavia.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)scandinavia.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)smile.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)smile.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)smile.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)smile.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)think-like-your-enemy.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)think-like-your-enemy.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)tournament-continent.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)tournament-continent.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)tournament-continent.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)tournament-forest.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)tournament-forest.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)tournament-forest.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)tournament-islands.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)tournament-islands.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)tournament-islands.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)what-can-you-do.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)what-can-you-do.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)what-can-you-do.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)what-can-you-do.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(4)woody-islands.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)woody-islands.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)woody-islands.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)you-have-to-look-around.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(4)you-have-to-look-around.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)you-have-to-look-around.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(4)you-have-to-look-around.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(5)diablospiral.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(5)diablospiral.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(5)many-ways-to-beat.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(5)many-ways-to-beat.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(5)many-ways-to-beat.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(5)many-ways-to-beat.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(5)speed-is-the-key.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(5)speed-is-the-key.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(5)speed-is-the-key.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(5)the-pentagon.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(5)the-pentagon.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(5)the-pentagon.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(5)the-pentagon.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(5)venedig.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(5)venedig.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(5)venedig.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(5)venedig.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(6)all-against-the-floods.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(6)all-against-the-floods.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(6)all-against-the-floods.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(6)all-against-the-floods.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(6)can-you-swim.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(6)can-you-swim.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(6)can-you-swim.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(6)different-ways.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(6)different-ways.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(6)different-ways.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(7)many-frontiers.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(7)many-frontiers.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(7)many-frontiers.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)altar-in-the-middle.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)altar-in-the-middle.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(8)are-you-lucky.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(8)are-you-lucky.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)are-you-lucky.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)are-you-lucky.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(8)death-in-the-rocks.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(8)death-in-the-rocks.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)death-in-the-rocks.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)diabloarena.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)diabloarena.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(8)diablodarkwood.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)diablodarkwood.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(8)diablomaze.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)diablomaze.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(8)everywhere.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(8)everywhere.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(8)fc-deathmatch-plain.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)fc-deathmatch-x.pud.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)oil-is-the-key.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(8)oil-is-the-key.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)oil-is-the-key.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)roads-to-the-coasts.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(8)roads-to-the-coasts.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)roads-to-the-coasts.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)roads-to-the-coasts.txt
+%%DATADIR%%/maps/skirmish/singleplayer/(8)tournament-continent.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(8)tournament-continent.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)tournament-continent.sms.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)tournament-islands.bmp
+%%DATADIR%%/maps/skirmish/singleplayer/(8)tournament-islands.smp.gz
+%%DATADIR%%/maps/skirmish/singleplayer/(8)tournament-islands.sms.gz
 %%DATADIR%%/music/Human Battle 1.mod
 %%DATADIR%%/music/Human Battle 1.mod.txt
 %%DATADIR%%/music/Human Battle 1.ogg
@@ -1127,6 +1157,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/scripts/ai/ai_nephrite_2013.lua
 %%DATADIR%%/scripts/ai/ai_redribbon_2012.lua
 %%DATADIR%%/scripts/ai/ai_redribbon_2014.lua
+%%DATADIR%%/scripts/ai/ai_redribbon_2015.lua
 %%DATADIR%%/scripts/ai/ai_zoisite_2013.lua
 %%DATADIR%%/scripts/ai/air_attack.lua
 %%DATADIR%%/scripts/ai/land_attack.lua
@@ -1143,6 +1174,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/scripts/cheats.lua
 %%DATADIR%%/scripts/commands.lua
 %%DATADIR%%/scripts/constructions.lua
+%%DATADIR%%/scripts/database.lua
 %%DATADIR%%/scripts/directcontrol.lua
 %%DATADIR%%/scripts/editor.lua
 %%DATADIR%%/scripts/fonts.lua
@@ -1158,6 +1190,20 @@ share/pixmaps/wargus.png
 %%DATADIR%%/scripts/human/units.lua
 %%DATADIR%%/scripts/human/upgrade.lua
 %%DATADIR%%/scripts/icons.lua
+%%DATADIR%%/scripts/lists/campaigns/Beyond the Dark Portal (Alliance)
+%%DATADIR%%/scripts/lists/campaigns/Beyond the Dark Portal (Horde)
+%%DATADIR%%/scripts/lists/campaigns/For the Motherland (Alliance)/1. Beachhead
+%%DATADIR%%/scripts/lists/campaigns/For the Motherland (Alliance)/2. Witch Hunt
+%%DATADIR%%/scripts/lists/campaigns/For the Motherland (Alliance)/3. Desert Survival
+%%DATADIR%%/scripts/lists/campaigns/For the Motherland (Horde)
+%%DATADIR%%/scripts/lists/campaigns/Frontier Force (Alliance)
+%%DATADIR%%/scripts/lists/campaigns/Tides of Darkness (Alliance)
+%%DATADIR%%/scripts/lists/campaigns/Tides of Darkness (Horde)
+%%DATADIR%%/scripts/lists/maps/For the Motherland
+%%DATADIR%%/scripts/lists/maps/Front Lines
+%%DATADIR%%/scripts/lists/maps/Skirmish Classic
+%%DATADIR%%/scripts/lists/maps/Skirmish Modern
+%%DATADIR%%/scripts/lists/mods/Wargus
 %%DATADIR%%/scripts/menus/campaign.lua
 %%DATADIR%%/scripts/menus/compactmode.lua
 %%DATADIR%%/scripts/menus/credits.lua
@@ -1175,6 +1221,7 @@ share/pixmaps/wargus.png
 %%DATADIR%%/scripts/menus/results.lua
 %%DATADIR%%/scripts/menus/save.lua
 %%DATADIR%%/scripts/missiles.lua
+%%DATADIR%%/scripts/multiplayer.lua
 %%DATADIR%%/scripts/orc/anim.lua
 %%DATADIR%%/scripts/orc/buttons.lua
 %%DATADIR%%/scripts/orc/campaign1.lua
@@ -1630,20 +1677,3 @@ share/pixmaps/wargus.png
 %%DATADIR%%/sounds/ui/placement_success.wav.gz
 %%DATADIR%%/sounds/units/catapult-ballista/acknowledgement/1.wav.gz
 %%DATADIR%%/sounds/units/catapult-ballista/acknowledgement/acknowledgement 1.txt
-@dir %%DATADIR%%/sounds/orc/units/teron_gorefiend/selected
-@dir %%DATADIR%%/sounds/orc/units/teron_gorefiend/annoyed
-@dir %%DATADIR%%/sounds/orc/units/teron_gorefiend/acknowledgement
-@dir %%DATADIR%%/sounds/orc/units/korgath_bladefist/selected
-@dir %%DATADIR%%/sounds/orc/units/korgath_bladefist/annoyed
-@dir %%DATADIR%%/sounds/orc/units/korgath_bladefist/acknowledgement
-@dir %%DATADIR%%/sounds/orc/units/grom_hellscream/selected
-@dir %%DATADIR%%/sounds/orc/units/grom_hellscream/annoyed
-@dir %%DATADIR%%/sounds/orc/units/grom_hellscream/acknowledgement
-@dir %%DATADIR%%/sounds/orc/units/dentarg/selected
-@dir %%DATADIR%%/sounds/orc/units/dentarg/annoyed
-@dir %%DATADIR%%/sounds/orc/units/dentarg/acknowledgement
-@dir %%DATADIR%%/sounds/orc/units/deathwing/selected
-@dir %%DATADIR%%/sounds/orc/units/deathwing/annoyed
-@dir %%DATADIR%%/sounds/orc/units/deathwing/acknowledgement
-@dir %%DATADIR%%/maps/classic
-@dir %%DATADIR%%/graphics/pandora/buildings
