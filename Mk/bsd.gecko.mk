@@ -375,8 +375,13 @@ LIB_DEPENDS+=	libsndio.so:audio/sndio
 post-patch-SNDIO-on:
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
 		${MOZSRC}/media/libcubeb/src/moz.build \
-		${MOZSRC}/media/libcubeb/tests/moz.build \
 		${MOZSRC}/toolkit/library/moz.build
+. for tests in tests gtest
+	@if [ -f "${MOZSRC}/media/libcubeb/${tests}/moz.build" ]; then \
+		${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
+			 ${MOZSRC}/media/libcubeb/${tests}/moz.build \
+	; fi
+. endfor
 	@${REINPLACE_CMD} -e 's|OS==\"openbsd\"|OS==\"${OPSYS:tl}\"|g' \
 		${MOZSRC}/media/webrtc/trunk/webrtc/build/common.gypi
 	@${ECHO} "OS_LIBS += ['sndio']" >> \
