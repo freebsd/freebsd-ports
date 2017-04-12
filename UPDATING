@@ -29,6 +29,33 @@ you update your ports collection, before attempting any port upgrades.
   Portupgrade users:
       portupgrade -fr security/libressl
 
+20170411:
+  AFFECTS: www/firefox
+  AUTHOR: gecko@FreeBSD.org
+
+  Firefox 53 or later may fail to build if sem(4) is present (see below)
+  because sysconf(3) still consults the old limits. If you don't plan to
+  run FreeBSD 8.x or older binaries make sure sem(4) isn't loaded during
+  boot or built statically into the kernel.
+
+    Creating config.status
+    Traceback (most recent call last):
+      File "configure.py", line 124, in <module>
+	sys.exit(main(sys.argv))
+      File "configure.py", line 34, in main
+	return config_status(config)
+      File "configure.py", line 119, in config_status
+	return config_status(args=[], **encode(sanitized_config, encoding))
+      File "python/mozbuild/mozbuild/config_status.py", line 136, in config_status
+	reader = BuildReader(env)
+      File "python/mozbuild/mozbuild/frontend/reader.py", line 886, in __init__
+	self._gyp_worker_pool = ProcessPoolExecutor(max_workers=max_workers)
+      File "python/futures/concurrent/futures/process.py", line 274, in __init__
+	_check_system_limits()
+      File "python/futures/concurrent/futures/process.py", line 263, in _check_system_limits
+	raise NotImplementedError(_system_limited)
+    NotImplementedError: system provides too few semaphores (30 available, 256 necessary)
+
 20170410:
   AFFECTS: users of x11-wm/awesome
   AUTHOR: garga@FreeBSD.org
