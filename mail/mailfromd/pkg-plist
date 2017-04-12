@@ -1,8 +1,9 @@
 bin/mfdbtool
 bin/mtasim
-etc/mailfromd.mf
+@sample etc/mailfromd.mf.sample
 sbin/calloutd
 sbin/mailfromd
+%%NLS%%share/locale/da/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/id/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/mailfromd.mo
@@ -37,5 +38,5 @@ sbin/mailfromd
 %%DATADIR%%/%%VERSION%%/include/valid_domain.mf
 %%DATADIR%%/%%VERSION%%/include/verp.mf
 %%DATADIR%%/postfix-macros.sed
-@dir(mailnull,mail,775) %%DATABASEDIR%%
-@dir(mailnull,mail,775) %%MFD_RUN_DIR%%
+@dir(mailnull,mail,700) %%DATABASEDIR%%
+@dir(mailnull,mail,700) %%MFD_RUN_DIR%%
