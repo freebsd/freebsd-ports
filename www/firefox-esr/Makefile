@@ -45,15 +45,10 @@ USES=		tar:xz
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
-<<<<<<< HEAD
-MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
-		--enable-application=browser \
-		--enable-official-branding \
-		--enable-pie
-=======
 MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
->>>>>>> upstream/master
+
+MOZ_OPTIONS+=	--enable-pie
 
 OPTIONS_DEFINE=		RUST
 OPTIONS_DEFAULT=	BUNDLED_CAIRO GTK2

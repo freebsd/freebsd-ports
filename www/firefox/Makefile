@@ -51,17 +51,11 @@ OPTIONS_DEFAULT=	BUNDLED_CAIRO
 OPTIONS_DEFAULT_amd64=	RUST
 OPTIONS_DEFAULT_i386=	RUST
 
-<<<<<<< HEAD
-OPTIONS_SINGLE+=	TOOLKIT
-OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
-
 # HardenedBSD note:
 # Firefox picks up PIE from the --enable-pie configure option.
 # As such, disable setting custom CFLAGS for PIE.
 NOPIE_PORTS=	yes
 
-=======
->>>>>>> upstream/master
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
 WRKSRC:=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
