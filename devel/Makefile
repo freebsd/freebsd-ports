@@ -403,6 +403,7 @@
     SUBDIR += dconf
     SUBDIR += dconf-editor
     SUBDIR += ddd
+    SUBDIR += debugedit
     SUBDIR += dee
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
