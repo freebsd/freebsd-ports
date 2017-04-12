@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION?=	2.2.2.0
+PORTVERSION?=	2.3.0.0
 PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
@@ -16,21 +16,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr
 
 NO_ARCH=	yes
-USES?=		cpe python shebangfix
+USES?=		cpe python
 USE_PYTHON=	autoplist distutils
-python_CMD=	${LOCALBASE}/bin/python
-SHEBANG_FILES+=	lib/ansible/modules/core/*/*.py \
-		lib/ansible/modules/core/*/*/*.py \
-		lib/ansible/modules/extras/*/*.py \
-		lib/ansible/modules/extras/*/*/*.py
 CPE_VENDOR=	ansibleworks
 
 SUB_FILES=	pkg-message
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-PLIST_FILES+=	man/man1/ansible-doc.1.gz \
+PLIST_FILES+=	man/man1/ansible-console.1.gz \
+		man/man1/ansible-doc.1.gz \
 		man/man1/ansible-galaxy.1.gz \
 		man/man1/ansible-playbook.1.gz \
 		man/man1/ansible-pull.1.gz \
@@ -39,11 +37,7 @@ PLIST_FILES+=	man/man1/ansible-doc.1.gz \
 
 PORTEXAMPLES=	ansible.cfg hosts
 
-OPTIONS_DEFINE=	DOCS EXAMPLES NETADDR
-OPTIONS_DEFAULT=NETADDR
-
-NETADDR_DESC=	Dependency on py-netaddr for ipaddr() filter
-NETADDR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 .for f in bin/ansible docs/man/man1/* examples/* lib/ansible/*.py \
