@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mailutils
-PORTVERSION=	3.2
+PORTVERSION=	3.2.91
 CATEGORIES=	mail
-MASTER_SITES=	GNU
+MASTER_SITES=	GNU GNU_ALPHA
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Utilities, daemons, and filters for processing e-mail
