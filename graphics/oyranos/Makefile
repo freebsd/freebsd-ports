@@ -41,6 +41,10 @@ PORTDOCS=	*
 
 PLIST_SUB+=	VER=${PORTVERSION}
 
+.if !exists(/usr/bin/clang)
+USE_GCC=   yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib|libdata|' \
 		${WRKSRC}/extras/CMakeLists.txt
