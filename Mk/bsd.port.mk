@@ -1296,7 +1296,7 @@ _PREMKINCLUDED=	yes
 IGNORE=			PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','
 .endif
 .if defined(DISTVERSION)
-DEV_WARNING+=	"Defining both PORTVERSION and DISTVERSION is wrong, only set one and let the framework create the other one"
+DEV_ERROR+=	"Defining both PORTVERSION and DISTVERSION is wrong, only set one, if necessary, set DISTNAME"
 .endif
 DISTVERSION?=	${PORTVERSION:S/:/::/g}
 .elif defined(DISTVERSION)

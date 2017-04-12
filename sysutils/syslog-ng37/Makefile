@@ -8,10 +8,8 @@ PORTREVISION=	7
 PKGNAMESUFFIX=	37
 .endif
 CATEGORIES=	sysutils
-DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
-#DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 #MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
-DISTFILES=      syslog-ng-${DISTVERSION}_with_man.tar.gz
+DISTNAME=      syslog-ng-${DISTVERSION}_with_man
 MASTER_SITES=   http://peter.czanik.hu/freebsd/
 
 MAINTAINER=	cy@FreeBSD.org

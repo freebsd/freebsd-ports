@@ -3,7 +3,6 @@
 
 PORTNAME=	nvidia-texture-tools
 PORTVERSION=	2.0.8.1 # needed to not bump PORTEPOCH; remove on next update
-DISTVERSION=	2.0.8
 PORTREVISION=	7
 CATEGORIES=	graphics
 
@@ -23,6 +22,7 @@ BROKEN_sparc64=	does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	castano
+GH_TAGNAME=	${PORTVERSION:R}
 
 USES=		alias cmake jpeg
 CMAKE_ARGS=	-DNVTT_SHARED=TRUE

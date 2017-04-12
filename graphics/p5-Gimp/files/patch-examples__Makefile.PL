@@ -1,6 +1,6 @@
---- examples/Makefile.PL.orig	2014-06-19 14:53:12 UTC
+--- examples/Makefile.PL.orig	2016-05-01 01:47:52 UTC
 +++ examples/Makefile.PL
-@@ -48,7 +48,8 @@
+@@ -47,7 +47,8 @@ sub install_plugin_target {
    my $dest = '$(GIMP_PLUGINS)/'.basename($plugin);
    <<EOF;
  $dest : $src
@@ -10,12 +10,12 @@
  
  EOF
  }
-@@ -73,7 +74,7 @@
+@@ -73,7 +74,7 @@ undef &MY::postamble; # suppress warning
     <<EOF;
  
  INST_PLUGINS = ../blib/plugins
--GIMP_PLUGINS = $cfg{gimpplugindir}
-+GIMP_PLUGINS = \$(DESTDIR)$cfg{gimpplugindir}
+-GIMP_PLUGINS = $plugindir
++GIMP_PLUGINS = \$(DESTDIR)$plugindir
  
  \$(INST_PLUGINS)\$(DFSEP).exists :: Makefile.PL
  	\$(NOECHO) \$(MKPATH) \$(INST_PLUGINS)

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 
@@ -15,16 +15,33 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
 
 USES=		php:cli python shebangfix
-SHEBANG_FILES=	mibs/process.pl scripts/deploy-docs.sh scripts/ifAlias \
+SHEBANG_FILES=	mibs/process.pl scripts/deploy-docs.sh \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
 		scripts/Migration/XML_Conversion/convert.sh \
 		scripts/Migration/XML_Conversion/destwork.sh \
-		scripts/Migration/XML_Conversion/mkdir.sh validate.php \
+		scripts/Migration/XML_Conversion/mkdir.sh \
 		scripts/removespikes.php scripts/agent-local/nfs-stats.sh \
-		scripts/removespikes.pl scripts/watchmaillog/watchmaillog.pl
-USE_PHP=	ctype filter gd json mcrypt mysqli session snmp tokenizer xml
+		scripts/removespikes.pl scripts/watchmaillog/watchmaillog.pl \
+		vendor/ezyang/htmlpurifier/maintenance/add-vimline.php \
+		vendor/ezyang/htmlpurifier/maintenance/config-scanner.php \
+		vendor/ezyang/htmlpurifier/maintenance/flush-definition-cache.php \
+		vendor/ezyang/htmlpurifier/maintenance/flush.php \
+		vendor/ezyang/htmlpurifier/maintenance/generate-entity-file.php \
+		vendor/ezyang/htmlpurifier/maintenance/generate-includes.php \
+		vendor/ezyang/htmlpurifier/maintenance/generate-schema-cache.php \
+		vendor/ezyang/htmlpurifier/maintenance/generate-standalone.php \
+		vendor/ezyang/htmlpurifier/maintenance/merge-library.php \
+		vendor/ezyang/htmlpurifier/maintenance/old-extract-schema.php \
+		vendor/ezyang/htmlpurifier/maintenance/old-remove-require-once.php \
+		vendor/ezyang/htmlpurifier/maintenance/old-remove-schema-def.php \
+		vendor/ezyang/htmlpurifier/maintenance/rename-config.php \
+		vendor/ezyang/htmlpurifier/maintenance/remove-trailing-whitespace.php \
+		vendor/ezyang/htmlpurifier/maintenance/update-config.php \
+		vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
+
+USE_PHP=	ctype curl filter gd hash json mcrypt mysqli openssl session simplexml snmp tokenizer xml
 
 NO_BUILD=	yes
 
@@ -33,7 +50,8 @@ RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 		${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4 \
 		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6 \
 		snmpget:net-mgmt/net-snmp \
-		bash:shells/bash
+		bash:shells/bash \
+		sudo:security/sudo
 
 OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES X11
 OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC
@@ -64,12 +82,13 @@ SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 
 ROOT_FILES=	addhost.php adduser.php	alerts.php build-base.php build.sql \
 		billing-calculate.php \
-		check-services.php config_to_json.php daily.php daily.sh \
-		delhost.php discovery.php dist-pollers.php irc.php \
-		poll-billing.php poller.php poller-service.py poller-wrapper.py renamehost.php \
+		check-services.php composer.json config_to_json.php cronic daily.php daily.sh \
+		delhost.php discovery-wrapper.py discovery.php dist-pollers.php irc.php \
+		mkdocs.yml pbin.sh phpunit.xml poll-billing.php poller.php poller-service.py \
+		poller-wrapper.py readmegen.yml renamehost.php services-wrapper.py \
 		snmp-scan.php snmptrap.php syslog.php validate.php
 
-ROOT_DIRS=	LibreNMS contrib html includes lib mibs scripts sql-schema
+ROOT_DIRS=	LibreNMS contrib doc html includes lib mibs misc scripts sql-schema tests vendor
 
 DOCS=		AUTHORS.md CHANGELOG CONTRIBUTING.md LICENSE.txt README.md
 PORTDOCS=	*
@@ -102,6 +121,10 @@ do-install:
 # Create empty rrd dir writable by www
 	@${MKDIR} ${STAGEDIR}/${WWWDIR}/rrd
 	@${CHMOD} 0775 ${STAGEDIR}/${WWWDIR}/rrd
+# Create empty logs dir
+	@${MKDIR} ${STAGEDIR}/${WWWDIR}/logs
+# Make daily.sh executable
+	@${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/daily.sh
 # Files in scripts dir should be executable
 	@${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
 # Ensure PHP and Python scripts are executable
@@ -130,6 +153,7 @@ post-install:
 	       ${STAGEDIR}/${WWWDIR}/config.php.sample
 	@${ECHO} @sample ${WWWDIR}/config.php.sample >> ${TMPPLIST}
 	@${ECHO} @dir ${WWWDIR}/rrd >> ${TMPPLIST}
+	@${ECHO} @dir ${WWWDIR}/logs >> ${TMPPLIST}
 	@${ECHO} @dir ${WWWDIR}/lib/influxdb-php/vendor/guzzlehttp/guzzle/build >> ${TMPPLIST}
 	@${ECHO} @dir ${WWWDIR}/lib/influxdb-php/vendor/guzzlehttp/guzzle/docs >> ${TMPPLIST}
 	@${ECHO} @dir ${WWWDIR}/lib/influxdb-php/vendor/guzzlehttp/guzzle/tests >> ${TMPPLIST}

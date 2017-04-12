@@ -3,7 +3,6 @@
 
 PORTNAME=	polyglot
 DISTVERSION=	1.4.70b
-#PORTVERSION=
 #PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	http://hardy.uhasselt.be/Toga/polyglot-release/ \
