@@ -1679,6 +1679,7 @@
     SUBDIR += py-gunicorn
     SUBDIR += py-h2
     SUBDIR += py-horizon
+    SUBDIR += py-hpack
     SUBDIR += py-html
     SUBDIR += py-html5lib
     SUBDIR += py-http-parser
