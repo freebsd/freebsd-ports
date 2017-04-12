@@ -1677,13 +1677,16 @@
     SUBDIR += py-graphite-web
     SUBDIR += py-grequests
     SUBDIR += py-gunicorn
+    SUBDIR += py-h2
     SUBDIR += py-horizon
+    SUBDIR += py-hpack
     SUBDIR += py-html
     SUBDIR += py-html5lib
     SUBDIR += py-http-parser
     SUBDIR += py-httpie
     SUBDIR += py-httplib2
     SUBDIR += py-hyper
+    SUBDIR += py-hyperframe
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy
     SUBDIR += py-jswebkit

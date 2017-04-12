@@ -4369,6 +4369,7 @@
     SUBDIR += py-jira
     SUBDIR += py-jmespath
     SUBDIR += py-joblib
+    SUBDIR += py-jsbeautifier
     SUBDIR += py-jsmin
     SUBDIR += py-json-py
     SUBDIR += py-json-sempai
@@ -4382,6 +4383,7 @@
     SUBDIR += py-jupyter_client
     SUBDIR += py-jupyter_console
     SUBDIR += py-jupyter_core
+    SUBDIR += py-kaitaistruct
     SUBDIR += py-kaptan
     SUBDIR += py-kayako
     SUBDIR += py-kazoo
@@ -4574,6 +4576,7 @@
     SUBDIR += py-pymtbl
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
+    SUBDIR += py-pyperclip
     SUBDIR += py-pypugjs
     SUBDIR += py-pyqi
     SUBDIR += py-pyrfc3339
