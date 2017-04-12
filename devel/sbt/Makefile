@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sbt
-PORTVERSION=	0.13.13
+PORTVERSION=	0.13.15
 CATEGORIES=	devel java
 MASTER_SITES=	http://dl.bintray.com/sbt/native-packages/sbt/${PORTVERSION}/
 
@@ -19,7 +19,7 @@ USES=		tar:tgz
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_JAVA=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-launcher-packaging-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/sbt \
 		%%DATADIR%%/sbt-launch.jar
@@ -41,7 +41,7 @@ do-install:
 .if ${PORT_OPTIONS:MADVANCED}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sbt ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sbt-launch-lib.bash ${STAGEDIR}${DATADIR}
-	${LN} -s ${DATADIR}/sbt ${STAGEDIR}${PREFIX}/bin/
+	${LN} -s ../${DATADIR_REL}/sbt ${STAGEDIR}${PREFIX}/bin/
 .else
 	${INSTALL_SCRIPT} ${WRKDIR}/sbt.sh ${STAGEDIR}${PREFIX}/bin/sbt
 .endif
