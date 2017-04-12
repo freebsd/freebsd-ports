@@ -227,6 +227,7 @@
     SUBDIR += poedit
     SUBDIR += psgml
     SUBDIR += puff
+    SUBDIR += py-editorconfig
     SUBDIR += py-room
     SUBDIR += rox-edit
     SUBDIR += scite
