@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170412:
+  AFFECTS: users of sysutils/ansible
+  AUTHOR: lifanov@FreeBSD.org
+
+  The default value for ansible_python_interpreter has been changed
+  to match the upstream /usr/bin/python. If managing FreeBSD systems,
+  adjust the hosts database to explicitly set a valid python interpreter:
+
+  [freebsd]
+  host1
+
+  [freebsd_vars]
+  ansible_python_interpreter=/usr/local/bin/python2.7
+
 20170411:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
