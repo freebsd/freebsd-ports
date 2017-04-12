@@ -4536,6 +4536,7 @@
     SUBDIR += py-protocols
     SUBDIR += py-protocols-devel
     SUBDIR += py-ptrace
+    SUBDIR += py-ptvsd
     SUBDIR += py-pudb
     SUBDIR += py-px
     SUBDIR += py-py
