@@ -1054,6 +1054,7 @@
     SUBDIR += py-socketio-client
     SUBDIR += py-speedtest-cli
     SUBDIR += py-sshuttle
+    SUBDIR += py-stomp.py
     SUBDIR += py-suds
     SUBDIR += py-suds-jurko
     SUBDIR += py-terminado

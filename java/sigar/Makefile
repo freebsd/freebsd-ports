@@ -33,13 +33,9 @@ ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} >= 1000000
 PLATFORM_VER=	1
-.  else
-PLATFORM_VER=	9
-.  endif
 .else
-BROKEN=		${OPSYS} platform is not supported
+IGNORE=		${OPSYS} platform is not supported
 .endif
 
 LIBNAME=	libsigar-${ARCH:S,i386,x86,}-${OPSYS:tl}-${PLATFORM_VER}.so
