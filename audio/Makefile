@@ -617,6 +617,7 @@
     SUBDIR += portaudio
     SUBDIR += praat
     SUBDIR += pragha
+    SUBDIR += protracker
     SUBDIR += puddletag
     SUBDIR += pulseaudio
     SUBDIR += pulseaudio-module-sndio
