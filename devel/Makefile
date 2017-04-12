@@ -4369,6 +4369,7 @@
     SUBDIR += py-jira
     SUBDIR += py-jmespath
     SUBDIR += py-joblib
+    SUBDIR += py-jsbeautifier
     SUBDIR += py-jsmin
     SUBDIR += py-json-py
     SUBDIR += py-json-sempai
