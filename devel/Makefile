@@ -4576,6 +4576,7 @@
     SUBDIR += py-pymtbl
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
+    SUBDIR += py-pyperclip
     SUBDIR += py-pypugjs
     SUBDIR += py-pyqi
     SUBDIR += py-pyrfc3339
