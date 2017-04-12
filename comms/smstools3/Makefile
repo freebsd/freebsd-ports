@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smstools
-PORTVERSION=	3.1.19
+PORTVERSION=	3.1.20
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -23,7 +23,7 @@ STATS_DESC=	Build status and statistics support
 
 WRKSRC=		${WRKDIR}/smstools3
 
-USES=		gmake shebangfix
+USES=		gmake localbase:ldflags shebangfix
 SHEBANG_FILES=	scripts/hex2dec scripts/hex2bin
 SHEBANG_LANG=	awk
 awk_OLD_CMD=	/bin/gawk
@@ -46,7 +46,6 @@ PORTDOCS=	*
 PORTEXAMPLES=	.procmailrc .qmailrc *
 
 STATS_LIB_DEPENDS=	libmm.so:devel/mm
-STATS_CFLAGS=	-I${LOCALBASE}/include
 STATS_CFLAGS_OFF=	-DNOSTATS
 
 UTF8_USES=		iconv
