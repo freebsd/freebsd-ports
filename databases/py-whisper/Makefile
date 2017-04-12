@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	whisper
-PORTVERSION=	0.9.15
+PORTVERSION=	1.0.0
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,6 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	graphite-project
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
