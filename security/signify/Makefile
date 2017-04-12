@@ -3,6 +3,7 @@
 PORTNAME=	signify
 PORTVERSION=	0.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -16,8 +17,6 @@ LICENSE=	ISCL BSD4CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# gmake is required on FreeBSD 9.3, on FreeBSD >= 10 we get away with
-# regular make with tiny changes in the Makefile.
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	chneukirchen

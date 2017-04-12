@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aspell
-DISTVERSION=	6-vi-0.01.1-1
+SPELLVERSION=	6-vi-0.01.1-1
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	vietnamese textproc
