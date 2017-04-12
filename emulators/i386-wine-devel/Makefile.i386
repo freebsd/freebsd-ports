@@ -37,7 +37,7 @@ post-install-script:
 	${REINPLACE_CMD} -e 's!lib/!lib32/!g' ${TMPPLIST}
 	# Install bounce script to access the 32-bit executables
 	${INSTALL_SCRIPT} ${SLAVEDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
-	for i in `grep ^bin ${TMPPLIST} | xargs -n1 basename` ; do \
+	for i in `grep ^bin ${TMPPLIST} | ${XARGS} -n1 basename` ; do \
 		[ "$${i}" = "wine" ] || ${LN} -f ${STAGEDIR}${PREFIX}/bin/wine ${STAGEDIR}${PREFIX}/bin/$${i} ; \
 		echo bin32/$${i} >> ${TMPPLIST} ; \
 	done
@@ -52,7 +52,7 @@ post-install-script:
 	done
 	# Find all soft dependencies (via strings(1))
 	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
-	xargs -n1 file -F' ' | grep ELF | cut -f1 -d' ' | xargs strings | \
+	${XARGS} -n1 file -F' ' | grep ELF | cut -f1 -d' ' | ${XARGS} strings | \
 	grep '^lib.*\.so' | sort -u > ${WRKDIR}/winesoftlibs
 	for i in `cat ${WRKDIR}/winesoftlibs` ; do \
 		if [ -e ${LOCALBASE}/lib/$${i} ] && [ -z "`grep $${i} ${TMPPLIST}`" ]; then \
@@ -62,8 +62,8 @@ post-install-script:
 	done
 	# Find all libraries that are linked too (via ldd(1))
 	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
-	xargs -n1 file -F' ' | grep ELF | cut -f1 -d' ' | \
-	env LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib32:${LD_LIBRARY_PATH} xargs ldd -f '%p\n' \
+	${XARGS} -n1 file -F' ' | grep ELF | cut -f1 -d' ' | \
+	env LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib32:${LD_LIBRARY_PATH} ${XARGS} ldd -f '%p\n' \
 	| sort -u | grep -v '^\(/usr\)\?/lib' | grep -v "^${STAGEDIR}${PREFIX}/lib32/libwine.so" \
 	| grep -v "^${STAGEDIR}${PREFIX}/lib32/wine" > ${WRKDIR}/winelibs
 	for i in `cat ${WRKDIR}/winelibs` ; do \
