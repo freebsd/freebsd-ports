@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Bloboats
+GenericName=Boat racing game in the spirit of Elasto Mania or X-Moto
+Comment=Boat racing game in the spirit of Elasto Mania or X-Moto
+Icon=bloboats
+Exec=bloboats
+Categories=Game;
+StartupNotify=false
