@@ -11,7 +11,7 @@ PORTREVISION=	0
 PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/private/311787a0a69345a1/ ISC/bind9/${ISCVERSION}
+MASTER_SITES=	ISC/bind9/${ISCVERSION}
 .if defined(BIND_TOOLS_SLAVE)
 PKGNAMESUFFIX=	-tools
 .else
