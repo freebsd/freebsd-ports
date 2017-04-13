@@ -1,0 +1,6 @@
+Yarn is a new node package manager that replaces the existing workflow for the
+npm client or other package managers while remaining compatible with the npm
+registry. It has the same feature set as existing workflows while operating
+faster, more securely, and more reliably.
+
+WWW: https://yarnpkg.com/blog/

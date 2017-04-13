@@ -2478,6 +2478,7 @@
     SUBDIR += xsp
     SUBDIR += yabb
     SUBDIR += yanopaste
+    SUBDIR += yarn
     SUBDIR += yaws
     SUBDIR += yii
     SUBDIR += yourls
