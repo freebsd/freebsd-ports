@@ -6,8 +6,7 @@ PORTVERSION=	4.6.4
 PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	lang java
-MASTER_SITES=	GCC/releases/gcc-${DIST_VERSION}
-DISTNAME=	gcc-${DIST_VERSION}
+MASTER_SITES=	GCC/releases/gcc-${PORTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -28,10 +27,9 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 
 CPE_VENDOR=	gnu
 
-# DIST_VERSION relates to downloads, GCC_VERSION and SUFFIX to names
-# of executables and directories once installed.
-DIST_VERSION=	${PORTVERSION}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
+# GCC_VERSION and SUFFIX relate to names of executables and directories
+# once installed.
+GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
 USES=		cpe gmake iconv libtool makeinfo perl5 tar:bzip2
