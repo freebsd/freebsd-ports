@@ -4,10 +4,11 @@
 PORTNAME=	firefox
 DISTVERSION=	52.1.0
 DISTVERSIONSUFFIX=esr.source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build2/source
 PKGNAMESUFFIX=	-esr
 
 MAINTAINER=	gecko@FreeBSD.org
