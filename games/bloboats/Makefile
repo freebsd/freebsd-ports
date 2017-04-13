@@ -4,7 +4,7 @@
 PORTNAME=	bloboats
 PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://bloboats.dy.fi/mirror/ \
 		LOCAL/ehaupt
@@ -24,5 +24,10 @@ MAKE_ENV+=	DATADIR="${DATADIR}" STAGEDIR=${STAGEDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 DOS2UNIX_FILES=	src/*.cpp
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/images/icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>
