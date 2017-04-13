@@ -17,8 +17,7 @@ GH_ACCOUNT=	9fans
 GH_TAGNAME=	9f34853
 USE_GITHUB=	yes
 
-BROKEN_ia64=	does not install: cleanname not found
-BROKEN_sparc64=	does not install: cleanname not found
+BROKEN=		does not install: cleanname not found
 
 RUN_DEPENDS=	rc:shells/rc
 
