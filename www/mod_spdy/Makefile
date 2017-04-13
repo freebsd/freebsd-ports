@@ -82,11 +82,10 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
-.include <bsd.port.pre.mk>
+BROKEN_OPENSSL=		libressl libressl-devel
+BROKEN_OPENSSL_REASON=	incompatible with LibreSSL, please use www/apache24 with mod_http2
 
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=		${PORTNAME} is incompatible with LibreSSL, please use www/apache24 with mod_http2
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
 CXXFLAGS+=	-Wno-unused-local-typedef
