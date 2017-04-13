@@ -192,7 +192,7 @@ named_reload()
 {
 	# This is a one line function, but ${named_program} is not defined early
 	# enough to be there when the reload_cmd variable is defined up there.
-	${_named_program_root}/sbin/rndc ${rndc_flags} reload
+	rndc reload
 }
 
 find_pidfile()
@@ -218,7 +218,7 @@ named_stop()
 		return 1
 	fi
 	echo 'Stopping named.'
-	if ${_named_program_root}/sbin/rndc ${rndc_flags} stop 2>/dev/null; then
+	if rndc stop; then
 		wait_for_pids ${rc_pid}
 	else
 		echo -n 'rndc failed, trying kill: '
@@ -253,6 +253,21 @@ create_file()
 	install -o root -g wheel -m 0644 /dev/null $1
 }
 
+rndc()
+{
+	if [ -z "${rndc_flags}" ]; then
+		if [ -s "${rndc_conf}" ] ; then
+			rndc_flags="-c ${rndc_conf}"
+		elif [ -s "${rndc_key}" ] ; then
+			rndc_flags="-k ${rndc_key}"
+		else
+			rndc_flags=""
+		fi
+	fi
+
+	${_named_program_root}/sbin/rndc ${rndc_flags} "$@"
+}
+
 named_prestart()
 {
 	find_pidfile
@@ -267,16 +282,6 @@ named_prestart()
 	fi
 
 	command_args="-u ${named_uid:=root} -c ${named_conf} ${command_args}"
-
-	if [ -z "${rndc_flags}" ]; then
-		if [ -s ${rndc_conf} ] ; then
-			rndc_flags="-c ${rndc_conf}"
-		elif [ -s ${rndc_key} ] ; then
-			rndc_flags="-k ${rndc_key}"
-		else
-			rndc_flags=""
-		fi
-	fi
 
 	local line nsip firstns
 
