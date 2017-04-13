@@ -17,11 +17,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 
 USES=	cpe python:2 shebangfix
 
+PLIST_FILES=	man/man1/ansible-doc.1.gz \
+		man/man1/ansible-galaxy.1.gz \
+		man/man1/ansible-playbook.1.gz \
+		man/man1/ansible-pull.1.gz \
+		man/man1/ansible-vault.1.gz \
+		man/man1/ansible.1.gz
+
 SHEBANG_FILES=	lib/ansible/runner/action_plugins/synchronize.py
 
 EXTRA_PATCHES=
 
 DEPRECATED=		please upgrade to sysutils/ansible
-EXPIRATION_DATE=	2016-10-01
+EXPIRATION_DATE=	2017-10-01
 
 .include "${MASTERDIR}/Makefile"
