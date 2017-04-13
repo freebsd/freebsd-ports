@@ -5383,6 +5383,7 @@
     SUBDIR += rubygem-moneta06
     SUBDIR += rubygem-mongo
     SUBDIR += rubygem-msgpack
+    SUBDIR += rubygem-msgpack1
     SUBDIR += rubygem-mspec
     SUBDIR += rubygem-multi_json
     SUBDIR += rubygem-multi_test
