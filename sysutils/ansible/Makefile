@@ -27,7 +27,7 @@ CPE_VENDOR=	ansibleworks
 SUB_FILES=	pkg-message
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-PLIST_FILES+=	man/man1/ansible-console.1.gz \
+PLIST_FILES?=	man/man1/ansible-console.1.gz \
 		man/man1/ansible-doc.1.gz \
 		man/man1/ansible-galaxy.1.gz \
 		man/man1/ansible-playbook.1.gz \
