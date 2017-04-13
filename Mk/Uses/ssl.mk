@@ -77,6 +77,26 @@ OPENSSL_PORT=		security/${SSL_DEFAULT}
 .error You are using an unsupported SSL provider ${SSL_DEFAULT}
 .  endif
 
+.  if defined(BROKEN_OPENSSL) && ${BROKEN_OPENSSL:M${SSL_DEFAULT}}
+.    if defined(BROKEN_OPENSSL_REASON_${SSL_DEFAULT})
+BROKEN=	${BROKEN_OPENSSL_REASON_${SSL_DEFAULT}}
+.    elif defined(BROKEN_OPENSSL_REASON)
+BROKEN=	${BROKEN_OPENSSL_REASON}
+.    else
+BROKEN=	does not build with DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}
+.    endif
+.  endif
+
+.  if defined(IGNORE_OPENSSL) && ${IGNORE_OPENSSL:M${SSL_DEFAULT}}
+.    if defined(IGNORE_OPENSSL_REASON_${SSL_DEFAULT})
+IGNORE=	${IGNORE_OPENSSL_REASON_${SSL_DEFAULT}}
+.    elif defined(IGNORE_OPENSSL_REASON)
+IGNORE=	${IGNORE_OPENSSL_REASON}
+.    else
+IGNORE=	not compatible DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}
+.    endif
+.  endif
+
 OPENSSLDIR?=		${OPENSSLBASE}/openssl
 .if defined(_SSL_BUILD_DEP)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${OPENSSL_PORT}
