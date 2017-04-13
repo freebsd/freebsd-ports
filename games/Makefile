@@ -78,6 +78,7 @@
     SUBDIR += battalion
     SUBDIR += battletanks
     SUBDIR += belooted
+    SUBDIR += billardgl
     SUBDIR += biloba
     SUBDIR += biniax2
     SUBDIR += biorythm
