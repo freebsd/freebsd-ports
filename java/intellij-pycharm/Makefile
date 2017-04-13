@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycharm
-PORTVERSION=	2017.1
+PORTVERSION=	2017.1.1
 CATEGORIES=	java devel python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -19,6 +19,8 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
+USES=		python:run shebangfix
+SHEBANG_FILES=	bin/printenv.py bin/restart.py
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -34,14 +36,12 @@ do-install:
 # Linux/Windows/OS X only so remove them
 	@${RM} ${STAGEDIR}${DATADIR}/bin/fsnotifier \
 		${STAGEDIR}${DATADIR}/bin/fsnotifier-arm \
-		${STAGEDIR}${DATADIR}/bin/fsnotifier64 \
-		${STAGEDIR}${DATADIR}/bin/libbreakgen.so \
-		${STAGEDIR}${DATADIR}/bin/libbreakgen64.so \
+		${STAGEDIR}${DATADIR}/bin/fsnotifier64
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
 	@${RM} -r ${STAGEDIR}${DATADIR}/lib/libpty
 # Remove bundled linux-only JRE
-	@${RM} -r ${STAGEDIR}${DATADIR}/jre
+	@${RM} -r ${STAGEDIR}${DATADIR}/jre64
 	@${RM} -r ${STAGEDIR}${DATADIR}/helpers/pydev/pydevd_attach_to_process
 	@${RM} ${STAGEDIR}${DATADIR}/lib/pty4j-0.5.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/pycharm ${STAGEDIR}${PREFIX}/bin/
@@ -51,6 +51,6 @@ do-install:
 # Disable filewatcher warning message on IDEA startup
 	${ECHO} "idea.filewatcher.disabled=true" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
-#	${ECHO} "idea.filewatcher.executable.path=${IDEA_HOME}/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+	${ECHO} "idea.filewatcher.executable.path=${IDEA_HOME}/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 
 .include <bsd.port.mk>
