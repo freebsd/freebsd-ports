@@ -15,11 +15,10 @@ LIB_DEPENDS=	libpopt.so:devel/popt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CoryXie
+GH_PROJECT=	DebugEdit
 GH_TAGNAME=	b1e81ec
 
 USES=		gmake
-
-WRKSRC=		${WRKDIR}/DebugEdit-${GH_TAGNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/debugedit ${STAGEDIR}${PREFIX}/bin
