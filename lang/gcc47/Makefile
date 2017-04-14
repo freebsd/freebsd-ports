@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.7.4
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/releases/gcc-${PORTVERSION}
@@ -44,6 +44,9 @@ OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
 OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
+
+JAVA_USES=	python:build shebangfix
+SHEBANG_FILES=	libjava/contrib/aot-compile.in
 
 .include <bsd.port.pre.mk>
 
