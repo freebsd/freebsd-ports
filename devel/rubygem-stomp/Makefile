@@ -2,6 +2,7 @@
 
 PORTNAME=	stomp
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	examples/*.sh test/*.sh
 
 PLIST_FILES=	bin/catstomp bin/stompcat
 
