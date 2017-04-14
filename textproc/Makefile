@@ -1244,6 +1244,7 @@
     SUBDIR += py-agate-excel
     SUBDIR += py-alabaster
     SUBDIR += py-asv
+    SUBDIR += py-autopep8
     SUBDIR += py-awesome-slugify
     SUBDIR += py-bugzillatools
     SUBDIR += py-chardet
