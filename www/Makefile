@@ -2065,6 +2065,7 @@
     SUBDIR += rubygem-rack16
     SUBDIR += rubygem-rails4
     SUBDIR += rubygem-rails_autolink
+    SUBDIR += rubygem-rails-settings-cached
     SUBDIR += rubygem-railties4
     SUBDIR += rubygem-railties5
     SUBDIR += rubygem-raindrops
