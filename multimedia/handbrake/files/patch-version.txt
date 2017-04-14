@@ -1,12 +1,12 @@
---- version.txt.orig	2017-03-29 00:53:31 UTC
+--- version.txt.orig	2017-04-11 00:36:21 UTC
 +++ version.txt
 @@ -0,0 +1,9 @@
 +URL=https://github.com/HandBrake/HandBrake.git
-+HASH=5ecc600a805c6dc2632f4ca6d3beb4fbb8cbefd0
-+SHORTHASH=5ecc600
-+TAG=1.0.3
-+TAG_HASH=5ecc600a805c6dc2632f4ca6d3beb4fbb8cbefd0
++HASH=91ed34ff38d46f389e841c46fe27b7cbfed8467c
++SHORTHASH=91ed34f
++TAG=1.0.7
++TAG_HASH=91ed34ff38d46f389e841c46fe27b7cbfed8467c
 +REV=0
 +BRANCH=
 +REMOTE=https://github.com/HandBrake/HandBrake.git
-+DATE=2017-02-25 15:56:19 -0500
++DATE=2017-04-09 23:31:00 +0300
