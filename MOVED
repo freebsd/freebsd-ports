@@ -9232,3 +9232,5 @@ graphics/opencv2|graphics/opencv|2017-04-14|Revert previous rename
 graphics/opencv2-core|graphics/opencv-core|2017-04-14|Revert previous rename
 graphics/opencv2-java|graphics/opencv-java|2017-04-14|Revert previous rename
 graphics/py-opencv2|graphics/py-opencv|2017-04-14|Revert previous rename
+databases/pgpool-II-22|databases/pgpool|2017-04-14|Has expired: Deprecated by upstream; use database/pgpool instead
+databases/pgpool-II-23|databases/pgpool|2017-04-14|Has expired: Deprecated by upstream; use database/pgpool instead
