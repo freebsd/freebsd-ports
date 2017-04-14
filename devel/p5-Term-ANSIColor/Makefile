@@ -3,6 +3,7 @@
 
 PORTNAME=	Term-ANSIColor
 PORTVERSION=	4.05
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,8 +13,9 @@ COMMENT=	Color screen output using ANSI escape sequences
 
 OPTIONS_DEFINE= EXAMPLES
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+SHEBANG_FILES=	examples/generate-colors
 
 PORTEXAMPLES=	generate-colors
 
