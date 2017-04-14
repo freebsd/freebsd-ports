@@ -1,0 +1,8 @@
+This gem forces Rails to serve static assets.
+
+By default Rails4 will return a 404 if an asset is not handled via an external
+proxy such as Nginx.  While this default behavior may help you debug your Nginx
+configuration, it makes a default Rails application with assets unusable on a
+12factor platform.  This gem fixes that.
+
+WWW: https://github.com/heroku/rails_serve_static_assets/
