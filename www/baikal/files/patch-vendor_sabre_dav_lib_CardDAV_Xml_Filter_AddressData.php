@@ -1,6 +1,6 @@
 --- vendor/sabre/dav/lib/CardDAV/Xml/Filter/AddressData.php.orig	2017-04-13 09:07:03 UTC
 +++ vendor/sabre/dav/lib/CardDAV/Xml/Filter/AddressData.php
-@@ -51,6 +51,11 @@ class AddressData implements XmlDeserial
+@@ -51,6 +51,10 @@ class AddressData implements XmlDeserial
              'version'     => $reader->getAttribute('version') ?: '3.0',
          ];
  
@@ -9,6 +9,6 @@
 +            return $element['attributes']['name'];
 +        }, $elems);
 +
-         $reader->next();
+-        $reader->next();
          return $result;
  

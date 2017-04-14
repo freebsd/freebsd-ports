@@ -3,8 +3,8 @@
 
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.3
-PORTREVISION=	1
+DISTVERSION=	0.20.0
+PORTREVISION=	0
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,9 @@ COMMENT=	Matrix protocol reference homeserver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frozendict>=0.5:devel/py-frozendict \
+# Keep the RUN_DEPENDS layout similar to the master/synapse/python_dependencies.py file
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema \
+		${PYTHON_PKGNAMEPREFIX}frozendict>=0.5:devel/py-frozendict \
 		${PYTHON_PKGNAMEPREFIX}unpaddedbase64>=1.1.0:devel/py-unpaddedbase64 \
 		${PYTHON_PKGNAMEPREFIX}canonicaljson>=1.0.0:devel/py-canonicaljson \
 		${PYTHON_PKGNAMEPREFIX}signedjson>=1.0.0:security/py-signedjson \
@@ -32,12 +34,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frozendict>=0.5:devel/py-frozendict \
 		${PYTHON_PKGNAMEPREFIX}blist>=1.3.6:devel/py-blist \
 		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.0.2:security/py-pysaml2 \
 		${PYTHON_PKGNAMEPREFIX}pymacaroons-pynacl>=0.9.3:security/py-pymacaroons-pynacl \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=3.10.0:devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>=0.6.6:devel/py-matrix-angular-sdk \
 		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3.0:devel/py-msgpack-python \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}phonenumbers>=8.2.0:devel/py-phonenumbers
+
+# Conditional requirements that aren't so conditional
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>=0.6.6:devel/py-matrix-angular-sdk \
 		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml
+
+# Dependencies that aren't declared in python_dependencies.py which I have discovered
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.10.0:devel/py-simplejson \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv \
 		${PYTHON_PKGNAMEPREFIX}tox>=2.3.1:devel/py-tox
 
@@ -64,8 +72,12 @@ PLIST_FILES+=	"@sample %%ETCDIR%%/log.config.sample"
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	PGSQL SQLITE
-OPTIONS_DEFAULT= SQLITE
+OPTIONS_DEFINE=	EMAIL LDAP PGSQL SQLITE
+OPTIONS_DEFAULT=	SQLITE
+EMAIL_DESC=	Email notifications for missed messages
+EMAIL_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.8:devel/py-Jinja2 \
+			${PYTHON_PKGNAMEPREFIX}bleach>=1.4.2:www/py-bleach
+LDAP_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-synapse-ldap3>=0.1:net/py-matrix-synapse-ldap3
 PGSQL_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2
 SQLITE_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 

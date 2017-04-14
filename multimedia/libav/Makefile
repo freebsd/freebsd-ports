@@ -2,6 +2,7 @@
 
 PORTNAME=	libav
 PORTVERSION=	11.8
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
@@ -11,7 +12,7 @@ COMMENT=	Realtime audio/video conversion library
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	yasm:devel/yasm
-LIB_DEPENDS=	libopencv_core.so:graphics/opencv2-core \
+LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
 		libgmp.so:math/gmp \
 		libvdpau.so:multimedia/libvdpau \
 		libhogweed.so:security/nettle
@@ -101,7 +102,7 @@ JACK_CONFIGURE_OFF=		--disable-indev=jack
 LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=		libmp3lame
 
-OPENCV_LIB_DEPENDS=		libopencv_gpu.so:graphics/opencv2
+OPENCV_LIB_DEPENDS=		libopencv_gpu.so:graphics/opencv
 OPENCV_CONFIGURE_ENABLE=	libopencv
 
 OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15

@@ -149,7 +149,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/miglayout-swing-5.0.jar
 %%IDEA_HOME%%/lib/nanoxml-2.2.3.jar
 %%IDEA_HOME%%/lib/nekohtml-1.9.14.jar
-%%IDEA_HOME%%/lib/netty-all-4.1.6.Final.Patched.jar
+%%IDEA_HOME%%/lib/netty-all-4.1.9.Final.jar
 %%IDEA_HOME%%/lib/openapi.jar
 %%IDEA_HOME%%/lib/optimizedFileManager.jar
 %%IDEA_HOME%%/lib/oromatcher.jar
@@ -212,6 +212,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/license/sqljet-license.txt
 %%IDEA_HOME%%/license/svnkit-license.txt
 %%IDEA_HOME%%/license/swingx_license.txt
+%%IDEA_HOME%%/license/trove4j_license.txt
 %%IDEA_HOME%%/license/winp_license.txt
 %%IDEA_HOME%%/license/xerces_license.txt
 %%IDEA_HOME%%/license/xmlrpc_license.txt

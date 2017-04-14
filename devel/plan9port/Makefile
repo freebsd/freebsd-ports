@@ -17,7 +17,11 @@ GH_ACCOUNT=	9fans
 GH_TAGNAME=	9f34853
 USE_GITHUB=	yes
 
-BROKEN=		does not install: cleanname not found
+BROKEN_ia64=	does not install: cleanname not found
+BROKEN_sparc64=	does not install: cleanname not found
+
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 RUN_DEPENDS=	rc:shells/rc
 

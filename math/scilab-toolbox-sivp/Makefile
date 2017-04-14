@@ -2,7 +2,7 @@
 
 PORTNAME=	sivp
 DISTVERSION=	1.0.0.r286
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math graphics multimedia
 MASTER_SITES=	LOCAL/makc
 PKGNAMEPREFIX=	scilab-toolbox-
@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scilab Image and Video Processing Toolbox
 
 BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab
-LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv2
+LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
 RUN_DEPENDS=	${SCILAB_CMD}:math/scilab
 
 USES=		dos2unix pkgconfig tar:xz

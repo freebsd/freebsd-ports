@@ -29,11 +29,8 @@ SUB_FILES=	${APMOD_FILE}
 APMOD_FILE=	240_${PORTNAME}.conf.sample
 PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=		mod_auth_gssapi currently only supports OpenSSL
-.endif
+IGNORE_SSL=	libressl libressl-devel
+IGNORE_SSL_REASON=	mod_auth_gssapi currently only supports OpenSSL
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
@@ -43,4 +40,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	freeswitch
 PORTVERSION=	1.6.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/ \
 		http://files.freeswitch.org/releases/sounds/:sounds
@@ -80,8 +80,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		${LOCALBASE}/bin/aclocal:devel/automake
 RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
-		libopencv_gpu.so:graphics/opencv2 \
-		libopencv_core.so:graphics/opencv2-core \
+		libopencv_gpu.so:graphics/opencv \
+		libopencv_core.so:graphics/opencv-core \
 		libhiredis.so:databases/hiredis \
 		libmemcached.so:databases/libmemcached \
 		libSoundTouch.so:audio/soundtouch \
