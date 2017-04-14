@@ -801,6 +801,7 @@
     SUBDIR += py-unqlite
     SUBDIR += py-whisper
     SUBDIR += py-xapian
+    SUBDIR += py3-apsw
     SUBDIR += py3-bsddb3
     SUBDIR += py3-mysqlclient
     SUBDIR += py3-psycopg2

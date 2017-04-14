@@ -4921,6 +4921,7 @@
     SUBDIR += py3-click
     SUBDIR += py3-colorama
     SUBDIR += py3-dbus
+    SUBDIR += py3-defusedxml
     SUBDIR += py3-docopt
     SUBDIR += py3-flake8
     SUBDIR += py3-flake8-builtins
@@ -4934,6 +4935,7 @@
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
     SUBDIR += py3-libzfs
+    SUBDIR += py3-llfuse
     SUBDIR += py3-lxml
     SUBDIR += py3-mccabe
     SUBDIR += py3-nose
@@ -5532,6 +5534,7 @@
     SUBDIR += rubygem-sidetiq
     SUBDIR += rubygem-sigdump
     SUBDIR += rubygem-simple_form
+    SUBDIR += rubygem-simple-navigation
     SUBDIR += rubygem-simplecov
     SUBDIR += rubygem-slack-notifier
     SUBDIR += rubygem-slack-notifier1
