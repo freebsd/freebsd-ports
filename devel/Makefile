@@ -5528,6 +5528,7 @@
     SUBDIR += rubygem-sidekiq
     SUBDIR += rubygem-sidekiq-cron
     SUBDIR += rubygem-sidekiq-limit_fetch
+    SUBDIR += rubygem-sidekiq-unique-jobs
     SUBDIR += rubygem-sidetiq
     SUBDIR += rubygem-sigdump
     SUBDIR += rubygem-simple_form
