@@ -1238,6 +1238,7 @@
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
     SUBDIR += rude
+    SUBDIR += s3ql
     SUBDIR += samba42
     SUBDIR += samba43
     SUBDIR += samba44
