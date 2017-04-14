@@ -22,9 +22,9 @@ MAKE_ENV=	KIVY_NO_CONFIG=yes KIVY_NO_FILELOG=yes USE_OPENGL_ES2=1 \
 		PYTHONPATH=${WRKSRC}
 
 USE_GITHUB=	yes
-USES=		display:test python:2.7+,concurrent uniquefiles:dirs
+USES=		display:test python uniquefiles:dirs
 USE_GL=		egl gl glesv2
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS=		--inplace
