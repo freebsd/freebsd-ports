@@ -13,7 +13,7 @@ LICENSE=	LGPL20+
 
 BROKEN_powerpc64=	Does not build
 
-USES=		compiler:c++11-lang fuse pkgconfig python tar:bz2
+USES?=		compiler:c++11-lang fuse pkgconfig python tar:bz2
 USE_PYTHON=	autoplist distutils
 
 post-install:
