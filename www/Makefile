@@ -2041,6 +2041,7 @@
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-ntlm-http
     SUBDIR += rubygem-octopress
+    SUBDIR += rubygem-oembed
     SUBDIR += rubygem-ostatus2
     SUBDIR += rubygem-pagerduty
     SUBDIR += rubygem-passenger
