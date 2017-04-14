@@ -9,7 +9,7 @@ COMMENT=	OpenCV Python library
 
 OCV_SLAVE=	python
 OCV_PYTHON=	yes
-MASTERDIR=	${.CURDIR:H}/opencv2
+MASTERDIR=	${.CURDIR:H}/opencv
 PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"

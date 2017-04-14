@@ -5,7 +5,6 @@ PORTNAME?=	opencv
 PORTVERSION=	2.4.13.1
 PORTREVISION?=	6
 CATEGORIES=	graphics
-PKGNAMESUFFIX?=	2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Computer Vision library
@@ -14,9 +13,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-PORTSCOUT=	limit:^2\.
-
-CONFLICTS_INSTALL=	${PKGBASE:S/${PORTNAME}2/${PORTNAME}/}
 
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
@@ -141,7 +137,7 @@ TBB_DESC=		TBB support
 CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
 . endfor
 .elif defined(OCV_PYTHON)
-LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv2
+LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv
 BUILD_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYNUMPY}
 USES+=		python:2.7
@@ -152,7 +148,7 @@ CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
 INSTALL_WRKSRC=	${WRKSRC}/modules/python
 .elif defined(OCV_JAVA)
 BUILD_DEPENDS+=	ant:devel/apache-ant
-LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv2
+LIB_DEPENDS+=	libopencv_legacy.so:graphics/opencv
 USES+=		python:build
 USE_JAVA=	yes
 CMAKE_ARGS+=	-DBUILD_opencv_java:BOOL=On
@@ -162,7 +158,7 @@ CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
 CONFIGURE_ENV+=	JAVA_HOME="${JAVA_HOME}"
 INSTALL_WRKSRC=	${WRKSRC}/modules/java
 .else
-LIB_DEPENDS+=	libopencv_core.so:graphics/opencv2-core
+LIB_DEPENDS+=	libopencv_core.so:graphics/opencv-core
 . for module in ${OCV_JAVA_MODS} ${OCV_PYTHON_MODS}
 CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=Off
 . endfor

@@ -620,9 +620,9 @@
     SUBDIR += opencolorio
     SUBDIR += opencolorio-tools
     SUBDIR += opencsg
-    SUBDIR += opencv2
-    SUBDIR += opencv2-core
-    SUBDIR += opencv2-java
+    SUBDIR += opencv
+    SUBDIR += opencv-core
+    SUBDIR += opencv-java
     SUBDIR += opendx
     SUBDIR += opengl-man
     SUBDIR += opengtl
@@ -862,7 +862,7 @@
     SUBDIR += py-ming
     SUBDIR += py-nwdiag
     SUBDIR += py-opencolorio
-    SUBDIR += py-opencv2
+    SUBDIR += py-opencv
     SUBDIR += py-openexr
     SUBDIR += py-openimageio
     SUBDIR += py-paint

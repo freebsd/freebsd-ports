@@ -2,7 +2,7 @@
 
 PORTNAME=	caffe
 PORTVERSION=	1.0.0.r5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	eric@camachat.org
@@ -23,8 +23,8 @@ LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libprotobuf.so:devel/protobuf \
-		libopencv_highgui.so:graphics/opencv2 \
-		libopencv_core.so:graphics/opencv2-core \
+		libopencv_highgui.so:graphics/opencv \
+		libopencv_core.so:graphics/opencv-core \
 		libopenblas.so:math/openblas \
 		libhdf5.so:science/hdf5
 RUN_DEPENDS=	${PYNUMPY} \
