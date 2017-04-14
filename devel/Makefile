@@ -4921,6 +4921,7 @@
     SUBDIR += py3-click
     SUBDIR += py3-colorama
     SUBDIR += py3-dbus
+    SUBDIR += py3-defusedxml
     SUBDIR += py3-docopt
     SUBDIR += py3-flake8
     SUBDIR += py3-flake8-builtins
