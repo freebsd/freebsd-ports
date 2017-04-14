@@ -5444,6 +5444,7 @@
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-pygments.rb
     SUBDIR += rubygem-r18n-core
+    SUBDIR += rubygem-rabl
     SUBDIR += rubygem-racc
     SUBDIR += rubygem-rack-mini-profiler
     SUBDIR += rubygem-rack-raw-upload
