@@ -3,6 +3,7 @@
 
 PORTNAME=	health_check
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	22
@@ -17,6 +18,7 @@ PORTSCOUT=	limit:^2\.2\.
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	test/setup_railsapp test/test_with_railsapp
 
 .include <bsd.port.mk>
