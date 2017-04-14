@@ -82,8 +82,8 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
-BROKEN_OPENSSL=		libressl libressl-devel
-BROKEN_OPENSSL_REASON=	incompatible with LibreSSL, please use www/apache24 with mod_http2
+BROKEN_SSL=		libressl libressl-devel
+BROKEN_SSL_REASON=	incompatible with LibreSSL, please use www/apache24 with mod_http2
 
 .include <bsd.port.pre.mk>
 
