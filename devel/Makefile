@@ -5550,6 +5550,7 @@
     SUBDIR += rubygem-state_machine
     SUBDIR += rubygem-state_machines
     SUBDIR += rubygem-statsd
+    SUBDIR += rubygem-statsd-instrument
     SUBDIR += rubygem-stella
     SUBDIR += rubygem-stemmer
     SUBDIR += rubygem-stomp
