@@ -32,7 +32,7 @@ CPE_VERSION=	${GCC_VERSION}
 # Y.2.1.s20140817 results in values of Y-20140817, Y.2.1, and Y
 # for these three.
 DIST_VERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
-PORTREVISION=	1
+PORTREVISION=	2
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 sparc64 arm armv6
@@ -52,6 +52,9 @@ OPTIONS_DEFAULT_powerpc64=	JAVA
 OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
 GRAPHITE_DESC=		Support for Graphite loop optimizations
+
+JAVA_USES=		python shebangfix
+SHEBANG_FILES=	libjava/contrib/aot-compile.in
 
 .if exists(/usr/lib32/libc.so)
 OPTIONS_DEFINE_powerpc64+=	MULTILIB
