@@ -29,8 +29,8 @@ SUB_FILES=	${APMOD_FILE}
 APMOD_FILE=	240_${PORTNAME}.conf.sample
 PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
 
-IGNORE_OPENSSL=	libressl libressl-devel
-IGNORE_OPENSSL_REASON=	mod_auth_gssapi currently only supports OpenSSL
+IGNORE_SSL=	libressl libressl-devel
+IGNORE_SSL_REASON=	mod_auth_gssapi currently only supports OpenSSL
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}

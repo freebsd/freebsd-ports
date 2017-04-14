@@ -22,7 +22,7 @@ USES=		gmake libtool perl5 ssl tar:tgz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
-BROKEN_OPENSSL=		openssl-devel
+BROKEN_SSL=		openssl-devel
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/modules/expat/xmlparse/xmlparse.h \
