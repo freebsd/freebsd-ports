@@ -2068,6 +2068,7 @@
     SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-rails_serve_static_assets
     SUBDIR += rubygem-rails-settings-cached
+    SUBDIR += rubygem-rails_stdout_logging
     SUBDIR += rubygem-railties4
     SUBDIR += rubygem-railties5
     SUBDIR += rubygem-raindrops
