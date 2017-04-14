@@ -1,0 +1,9 @@
+Rack::Timeout is middleware, which aborts requests that have been running for
+longer than a specified timeout.
+
+Rack::Timeout is not a solution to the problem of long-running requests, it is a
+debug and remediation tool.  Developers should track rack-timeout's data and
+address recurring instances of particular timeouts, for example, by refactoring
+code so it runs faster or offsetting lengthy work to happen asynchronously.
+
+WWW: http://github.com/heroku/rack-timeout/
