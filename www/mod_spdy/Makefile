@@ -85,13 +85,7 @@ MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 BROKEN_SSL=		libressl libressl-devel
 BROKEN_SSL_REASON=	incompatible with LibreSSL, please use www/apache24 with mod_http2
 
-<<<<<<< HEAD
-.if ${SSL_DEFAULT:Mlibressl*} || defined(LIBRESSL_IS_OPENSSL)
-IGNORE=		${PORTNAME} is incompatible with LibreSSL, please use www/apache24 with mod_http2
-.endif
-=======
 .include <bsd.port.pre.mk>
->>>>>>> upstream/master
 
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
 CXXFLAGS+=	-Wno-unused-local-typedef
