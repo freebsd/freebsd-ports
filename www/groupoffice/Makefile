@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	groupoffice
-PORTVERSION=	6.2.32
+PORTVERSION=	6.2.34
 DISTVERSIONPREFIX=	com-
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
@@ -18,7 +18,7 @@ RESTRICTED=	Free for personal use only
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	mysqli session mbstring pcre xml
-USES=		mysql shebangfix php:web
+USES=		mysql shebangfix php:web python
 SHEBANG_FILES=	go/vendor/tcpdf/tools/tcpdf_addfont.php \
 		groupoffice \
 		groupofficecli.php \
@@ -27,6 +27,9 @@ SHEBANG_FILES=	go/vendor/tcpdf/tools/tcpdf_addfont.php \
 		modules/sync/z-push/install.sh \
 		modules/sync/z-push/z-push-admin.php \
 		vendor/fkooman/php-oauth-client/bin/php-oauth-client-create-tables \
+		vendor/sabre/dav/bin/naturalselection \
+		vendor/sabre/dav/bin/googlecode_upload.py \
+		vendor/bin/../sabre/dav/bin/naturalselection \
 		vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php
 
 WWWDIR?=	${PREFIX}/www/${PORTNAME}${DISTVERSION:R:R}
