@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	6.3.1.s20170406
+PORTVERSION=	6.3.1.s20170413
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
-DISTNAME=	gcc-${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
+DISTNAME=	gcc-${DIST_VERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 6
@@ -32,7 +32,6 @@ CPE_VERSION=	${GCC_VERSION}
 # Y.2.1.s20140817 results in values of Y-20140817, Y.2.1, and Y
 # for these three.
 DIST_VERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
-PORTREVISION=	2
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 sparc64 arm armv6
