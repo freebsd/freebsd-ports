@@ -3,7 +3,7 @@
 
 PORTNAME=	dnsdist
 DISTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/ \
 		LOCAL/cpm
@@ -24,8 +24,8 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libsodium.so:security/libsodium
 
 GNU_CONFIGURE=	yes
-USES=		bison compiler:c++14-lang cpe gmake libedit libtool localbase \
-		lua:52 pkgconfig tar:bz2
+USES=		bison compiler cpe gmake libedit libtool localbase lua:52 \
+		pkgconfig tar:bz2
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--enable-dnscrypt \
 		--enable-libsodium \
@@ -38,8 +38,17 @@ GROUPS=		_dnsdist
 
 USE_RC_SUBR=	dnsdist
 
+.include <bsd.port.pre.mk>
+
+# Fix dnsdist binaries when building on FreeBSD 10.3
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+BUILD_DEPENDS+=	clang39:devel/llvm39
+CC=		clang39
+CXX=		clang++39
+.endif
+
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/dnsdist.conf.sample \
 		${STAGEDIR}${PREFIX}/etc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
