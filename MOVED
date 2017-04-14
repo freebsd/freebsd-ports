@@ -8634,10 +8634,6 @@ databases/postgresql91-plperl||2016-10-01|Has expired: End-of-life is near
 databases/postgresql91-pltcl||2016-10-02|Has expired: End-of-life is near
 databases/postgresql91-docs||2016-10-02|Has expired: End-of-life is near
 www/mediawiki125||2016-10-02|Has expired: EOL upstream
-graphics/opencv|graphics/opencv2|2016-10-03|Renamed
-graphics/opencv-core|graphics/opencv2-core|2016-10-03|Renamed
-graphics/opencv-java|graphics/opencv2-java|2016-10-03|Renamed
-graphics/py-opencv|graphics/py-opencv2|2016-10-03|Renamed
 databases/postgresql91-client||2016-10-03|Has expired: End-of-life is near
 databases/postgresql91-pgtcl||2016-10-03|Has expired: Depends on expired PostgreSQL 9.1
 databases/postgresql91-server||2016-10-03|Has expired: End-of-life is near
@@ -9232,3 +9228,7 @@ devel/go-pretty||2017-04-10|Has expired: Go libraries should not be packaged
 databases/godis||2017-04-10|Has expired: Go libraries should not be packaged
 www/moodle29|www/moodle32|2017-04-10|Has expired: Upstream support EoL, please migrate to moodle32
 audio/schism|audio/schismtracker|2017-04-12|Renamed for better naming
+graphics/opencv2|graphics/opencv|2017-04-14|Revert previous rename
+graphics/opencv2-core|graphics/opencv-core|2017-04-14|Revert previous rename
+graphics/opencv2-java|graphics/opencv-java|2017-04-14|Revert previous rename
+graphics/py-opencv2|graphics/py-opencv|2017-04-14|Revert previous rename

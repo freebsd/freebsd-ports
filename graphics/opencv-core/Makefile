@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTREVISION=	1
-PKGNAMESUFFIX=	2-${OCV_SLAVE}
+PKGNAMESUFFIX=	-${OCV_SLAVE}
 
 COMMENT=	OpenCV core libraries
 
 OCV_SLAVE=	core
 OCV_CORE=	yes
-MASTERDIR=	${.CURDIR:H}/opencv2
+MASTERDIR=	${.CURDIR:H}/opencv
 PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"

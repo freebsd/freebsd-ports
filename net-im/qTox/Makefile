@@ -3,7 +3,7 @@
 
 PORTNAME=	qTox
 PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im net-p2p
 
@@ -14,8 +14,8 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libtoxcore.so:net-im/tox \
-		libopencv_highgui.so:graphics/opencv2 \
-		libopencv_core.so:graphics/opencv2-core \
+		libopencv_highgui.so:graphics/opencv \
+		libopencv_core.so:graphics/opencv-core \
 		libavcodec.so:multimedia/ffmpeg \
 		libvpx.so:multimedia/libvpx \
 		libfilteraudio.so:audio/libfilteraudio \
