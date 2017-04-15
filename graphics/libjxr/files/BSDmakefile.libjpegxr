@@ -1,0 +1,21 @@
+LIB=		jpegxr
+SHLIB_MAJOR=	1
+NO_PROFILE=	nope
+LIBDIR=		${PREFIX}/lib
+INCLUDEDIR=	${PREFIX}/include/jxrlib
+INCS= 		guiddef.h windowsmediaphoto.h wmsal.h wmspecstring.h	\
+		wmspecstrings_adt.h wmspecstrings_strict.h wmspecstrings_undef.h
+
+SRCS=		encode.c segenc.c strenc.c strFwdTransform.c strPredQuantEnc.c	\
+		decode.c postprocess.c segdec.c strdec.c strInvTransform.c	\
+		strPredQuantDec.c JXRTranscode.c adapthuff.c image.c	\
+		strcodec.c strPredQuant.c strTransform.c perfTimerANSI.c
+
+.PATH:	${.CURDIR:H}/image/sys ${.CURDIR:H}/image/encode
+.PATH:	${.CURDIR:H}/image/decode ${.CURDIR:H}/common/include
+
+CFLAGS+=	-I. -I${.CURDIR:H}/common/include -I${.CURDIR:H}/image/sys
+CFLAGS+=	-D__ANSI__ -DDISABLE_PERF_MEASUREMENT
+CFLAGS+=	-Wno-extra-tokens
+
+.include <bsd.lib.mk>
