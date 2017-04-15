@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backupchecker
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	sysutils archivers
 
 MAINTAINER=	martymac@FreeBSD.org

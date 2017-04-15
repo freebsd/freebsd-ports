@@ -12,7 +12,11 @@ DISTNAME=	unrarsrc-5.4.5
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
 
+<<<<<<< HEAD
 EXPLICIT_SAFESTACK=		yes
+=======
+BROKEN_SSL=	openssl-devel
+>>>>>>> upstream/master
 
 OPTIONS_DEFINE=	DOCS OPENSSL_AES
 OPTIONS_DEFAULT=OPENSSL_AES
@@ -41,10 +45,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

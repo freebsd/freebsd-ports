@@ -1,0 +1,27 @@
+Description: Fix typos and remove some warnings
+Author: Mathieu Malaterre <malat@debian.org>
+
+Cleaned up for FreeBSD by mi
+
+--- jxrencoderdecoder/JxrEncApp.c
++++ jxrencoderdecoder/JxrEncApp.c
+@@ -578,7 +578,7 @@ main(int argc, char* argv[])
+ 
+     //================================
+     Call(PKCreateCodecFactory(&pCodecFactory, WMP_SDK_VERSION));
+-    Call(pCodecFactory->CreateCodec(&IID_PKImageWmpEncode, &pEncoder));
++    Call(pCodecFactory->CreateCodec(&IID_PKImageWmpEncode, (void**)&pEncoder));
+ 
+     //----------------------------------------------------------------
+     Call(PKCreateTestFactory(&pTestFactory, WMP_SDK_VERSION));
+--- jxrgluelib/JXRMeta.h
++++ jxrgluelib/JXRMeta.h
+@@ -34,7 +34,7 @@
+ 
+ #ifndef UNREFERENCED_PARAMETER
+ #define UNREFERENCED_PARAMETER(P) { (P) = (P); }
+-#endif UNREFERENCED_PARAMETER
++#endif /*UNREFERENCED_PARAMETER*/
+ 
+ //================================================================
+ // Container
