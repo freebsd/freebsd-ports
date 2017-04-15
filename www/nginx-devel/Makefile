@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.11.10
+PORTVERSION=	1.12.0
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -122,8 +122,6 @@ OPTIONS_DEFINE=	\
 	SLOWFS_CACHE \
 	SMALL_LIGHT \
 	SRCACHE \
-	STATSD \
-	UDPLOG \
 	X11 \
 	XRID_HEADER \
 	XSS
@@ -234,8 +232,6 @@ SHIBBOLETH_DESC=		3rd party shibboleth module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
-STATSD_DESC=			3rd party statsd module
-UDPLOG_DESC=			3rd party udplog (syslog) module
 X11_DESC=			graphics/ImageMagick[-nox11] dependency
 XRID_HEADER_DESC=		3rd party x-rid header module
 XSS_DESC=			3rd party xss module
@@ -465,6 +461,7 @@ CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_echo}
 .else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_echo}
 .endif
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_echo_request_info.c
 .endif
 
 .if ${PORT_OPTIONS:MFASTDFS}
@@ -744,14 +741,14 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_hash_
 .endif
 
 .if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_FAIR)
-NGINX_UPSTREAM_FAIR_VERSION=	20090923
-MASTER_SITES+=	LOCAL/osa:upstreamfair
-DISTFILES+=	nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}.tar.gz:upstreamfair
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION}
-.if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_CHECK)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream_fair_module.c
-IGNORE=	HTTP_UPSTREAM_FAIR: a patch requires
-.endif
+NGINX_UPSTREAM_FAIR_VERSION=	b5be36f
+GH_ACCOUNT+=	cryptofuture:upstreamfair
+GH_PROJECT+=	nginx-upstream-fair:upstreamfair
+GH_TAGNAME+=	${NGINX_UPSTREAM_FAIR_VERSION}:upstreamfair
+CONFIGURE_ARGS+=--add-module=${WRKSRC_upstreamfair}
+#.if !empty(PORT_OPTIONS:MHTTP_UPSTREAM_CHECK)
+#EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream_fair_module.c
+#.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY}
@@ -826,6 +823,10 @@ GH_ACCOUNT+=	simpl:devel_kit
 GH_PROJECT+=	ngx_devel_kit:devel_kit
 GH_TAGNAME+=	v${NGINX_DEVEL_KIT_VERSION}:devel_kit
 CONFIGURE_ARGS+=--add-module=${WRKSRC_devel_kit}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_lua_common.h  \
+		${PATCHDIR}/extra-patch-ngx_http_lua_headers.c \
+		${PATCHDIR}/extra-patch-ngx_http_lua_headers.h \
+		${PATCHDIR}/extra-patch-ngx_http_lua_module.c
 .endif
 
 .if ${PORT_OPTIONS:MENCRYPTSESSION}
@@ -857,7 +858,7 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_let}
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
-NGINX_LUA_VERSION=	0.10.7
+NGINX_LUA_VERSION=	0.10.8
 GH_ACCOUNT+=	openresty:lua
 GH_PROJECT+=	lua-nginx-module:lua
 GH_TAGNAME+=	v${NGINX_LUA_VERSION}:lua
@@ -890,7 +891,8 @@ USES+=		pkgconfig shebangfix
 MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION:S/RC/rc/}/:modsecurity
 DISTFILES+=	modsecurity-${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure \
+		${PATCHDIR}/extra-patch-ngx_http_modsecurity.c
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
@@ -1027,22 +1029,6 @@ GH_ACCOUNT+=	openresty:srcache
 GH_PROJECT+=	srcache-nginx-module:srcache
 GH_TAGNAME+=	v${NGINX_SRCACHE_VERSION}:srcache
 CONFIGURE_ARGS+=--add-module=${WRKSRC_srcache}
-.endif
-
-.if ${PORT_OPTIONS:MSTATSD}
-NGINX_STATSD_VERSION=	b756a12
-GH_ACCOUNT+=	zebrafishlabs:statsd
-GH_PROJECT+=	nginx-statsd:statsd
-GH_TAGNAME+=	${NGINX_STATSD_VERSION}:statsd
-CONFIGURE_ARGS+=--add-module=${WRKSRC_statsd}
-.endif
-
-.if ${PORT_OPTIONS:MUDPLOG}
-NGINX_UDPLOG_VERSION=	1.0.0
-MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:udplog
-DISTFILES+=	nginx_udplog_module-${NGINX_UDPLOG_VERSION}.tar.gz:udplog
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
 .endif
 
 .if ${PORT_OPTIONS:MXRID_HEADER}
@@ -1265,20 +1251,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}/ngx_http_sflow_config.h
-.endif
-.if ${PORT_OPTIONS:MSTATSD}
-	@${REINPLACE_CMD} \
-		's!ngx_udp_connection_t!ngx_resolver_connection_t!g; \
-		s!uc->connection!uc->udp!g; \
-		s!e->udp_connection->connection!e->udp_connection->udp!g' \
-		${WRKSRC_statsd}/ngx_http_statsd.c
-.endif
-.if ${PORT_OPTIONS:MUDPLOG}
-	@${REINPLACE_CMD} \
-		's!ngx_udp_connection_t!ngx_resolver_connection_t!g; \
-		s!uc->connection!uc->udp!g; \
-		s!e->udp_connection->connection!e->udp_connection->udp!g' \
-		${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_VERSION}/ngx_http_udplog_module.c
 .endif
 .if ${PORT_OPTIONS:MICONV}
 	@${REINPLACE_CMD} \
