@@ -783,12 +783,11 @@ CONFIGURE_ARGS+=--with-http_xslt_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_ZIP}
-NGINX_ZIP_VERSION=	ca0b345
-GH_ACCOUNT+=	evanmiller:mod_zip
+NGINX_ZIP_VERSION=	74ef235
+GH_ACCOUNT+=	anthonyryan1:mod_zip
 GH_PROJECT+=	mod_zip:mod_zip
 GH_TAGNAME+=	${NGINX_ZIP_VERSION}:mod_zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
-IGNORE=	HTTP_ZIP: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MDRIZZLE}
