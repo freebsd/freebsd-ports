@@ -12,11 +12,8 @@ DISTNAME=	unrarsrc-5.4.5
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
 
-<<<<<<< HEAD
 EXPLICIT_SAFESTACK=		yes
-=======
 BROKEN_SSL=	openssl-devel
->>>>>>> upstream/master
 
 OPTIONS_DEFINE=	DOCS OPENSSL_AES
 OPTIONS_DEFAULT=OPENSSL_AES
