@@ -1,115 +1,20 @@
---- configure.orig	2017-03-11 22:56:45 UTC
+--- configure.orig	2017-04-03 12:17:53 UTC
 +++ configure
-@@ -567,7 +567,7 @@ echo "	\${MKDIR} static"
- echo "	\${MKDIR} shared"
- echo
- echo "\${solib}:	build ${files2}"
--echo "	\${CXX} \${CXXFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}.${version} -o \${solib} ${files2}"
-+echo "	\${CXX} \${CXXFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib} -o \${solib} ${files2}"
- echo
- echo "\${alib}:	build ${files}"
- echo "	\${AR} rcs static/\${alib} ${files}"
-@@ -589,7 +589,6 @@ echo "	\${INSTALL} nnumb.h \${INSTDIRI}/
- echo "	\${INSTALL} ntext.h \${INSTDIRI}/ntext.h"
- echo "	\${INSTALL} numb.h \${INSTDIRI}/numb.h"
- echo "	\${INSTALL} real.h \${INSTDIRI}/real.h"
--echo "	\${LDCONFIG} \${INSTDIR}"
- echo
- echo ".PHONY:	uninstall"
- echo "uninstall:"
-@@ -626,7 +625,7 @@ echo "PREFIX    = ${prefix}"
- echo "INSTDIR   = \${DESTDIR}\${PREFIX}/lib/amath"
- echo "INSTDIRI  = \${DESTDIR}\${PREFIX}/include/amath"
- echo "INSTDIRPC = \${DESTDIR}\${PREFIX}/${pkgconfigdir}"
--echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/share/man/man3"
-+echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/man/man3"
- echo "alib      = lib${amathc}.a"
- echo "solib     = lib${amathc}.so"
- echo "pkgconfig = amathc.pc"
-@@ -660,7 +659,7 @@ echo "	\${MKDIR} static"
- echo "	\${MKDIR} shared"
- echo
- echo "\${solib}:	build ${libcs}"
--echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}.${version} -o \${solib} ${libcs} -lc"
-+echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib} -o \${solib} ${libcs} -lc"
- echo
- echo "\${alib}:	build ${libc}"
- echo "	\${AR} rcs static/\${alib} ${libc}"
-@@ -677,7 +676,6 @@ echo "	\${INSTALL} \${pkgconfig} \${INST
- echo "	\${INSTALL} \${manpage} \${INSTDIRM}/\${manpage}"
- echo "	\${INSTALL} ../amath.h \${INSTDIRI}"
- echo "	\${INSTALL} ../amathc.h \${INSTDIRI}"
--echo "	\${LDCONFIG} \${INSTDIR}"
- echo
- echo ".PHONY:	uninstall"
- echo "uninstall:"
-@@ -710,7 +708,7 @@ echo "PREFIX    = ${prefix}"
- echo "INSTDIR   = \${DESTDIR}\${PREFIX}/lib/amath"
- echo "INSTDIRI  = \${DESTDIR}\${PREFIX}/include/amath"
- echo "INSTDIRPC = \${DESTDIR}\${PREFIX}/${pkgconfigdir}"
--echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/share/man/man3"
-+echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/man/man3"
- echo "alib      = lib${amath}.a"
- echo "solib     = lib${amath}.so"
- echo "pkgconfig = amathr.pc"
-@@ -744,7 +742,7 @@ echo "	\${MKDIR} static"
- echo "	\${MKDIR} shared"
- echo
- echo "\${solib}:	build ${libamaths}"
--echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}.${version} -o \${solib} ${libamaths}"
-+echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib} -o \${solib} ${libamaths}"
- echo
- echo "\${alib}:	build ${libamath}"
- echo "	\${AR} rcs static/\${alib} ${libamath}"
-@@ -760,7 +758,6 @@ echo "	\${INSTALL} \${solib} \${INSTDIR}
- echo "	\${INSTALL} \${pkgconfig} \${INSTDIRPC}/\${pkgconfig}"
- echo "	\${INSTALL} \${manpage} \${INSTDIRM}/\${manpage}"
- echo "	\${INSTALL} ../math.h \${INSTDIRI}/amathr.h"
--echo "	\${LDCONFIG} \${INSTDIR}"
- echo
- echo ".PHONY:	uninstall"
- echo "uninstall:"
-@@ -791,7 +788,7 @@ echo "PREFIX    = ${prefix}"
- echo "INSTDIR   = \${DESTDIR}\${PREFIX}/lib/amath"
- echo "INSTDIRI  = \${DESTDIR}\${PREFIX}/include/amath"
- echo "INSTDIRPC = \${DESTDIR}\${PREFIX}/${pkgconfigdir}"
--echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/share/man/man3"
-+echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/man/man3"
- echo "alib      = lib${amathcplex}.a"
- echo "solib     = lib${amathcplex}.so"
- echo "pkgconfig = amathi.pc"
-@@ -825,7 +822,7 @@ echo "	\${MKDIR} static"
- echo "	\${MKDIR} shared"
- echo
- echo "\${solib}:	build ${libcomplexs}"
--echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib}.${version} -o \${solib} ${libcomplexs}"
-+echo "	\${CC} \${CFLAGS} -shared ${exestrip} -fPIC -Wl,-soname,\${solib} -o \${solib} ${libcomplexs}"
- echo
- echo "\${alib}:	build ${libcomplex}"
- echo "	\${AR} rcs static/\${alib} ${libcomplex}"
-@@ -841,7 +838,6 @@ echo "	\${INSTALL} \${solib} \${INSTDIR}
- echo "	\${INSTALL} \${pkgconfig} \${INSTDIRPC}/\${pkgconfig}"
- echo "	\${INSTALL} \${manpage} \${INSTDIRM}/\${manpage}"
- echo "	\${INSTALL} ../complex.h \${INSTDIRI}/amathi.h"
--echo "	\${LDCONFIG} \${INSTDIR}"
- echo
- echo ".PHONY: uninstall"
- echo "uninstall:"
-@@ -878,7 +874,7 @@ echo "INSTALLP = install -m 0755"
- echo "INSTALLM = install -m 0644"
- echo "PREFIX   = ${prefix}"
- echo "INSTDIRP  = \${DESTDIR}\${PREFIX}/bin"
--echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/share/man/man1"
-+echo "INSTDIRM  = \${DESTDIR}\${PREFIX}/man/man1"
- echo
- echo "all:	shared-app"
- echo "app:	${appmain} ${appfunction} ${appstatement} ${appsystem}"
-@@ -953,7 +949,7 @@ echo "	LD_LIBRARY_PATH=src/clib/:src/lib
- echo "	./amath test"
- echo
- echo ".PHONY: install"
--echo "install: shared-app"
-+echo "install:"
- echo "	cd src/lib && \${MAKE} install"
- echo "	cd src/clib && \${MAKE} install"
- echo "	cd src/real && \${MAKE} install"
+@@ -465,8 +465,6 @@ catanh.c
+ ccos.c
+ ccosh.c
+ cexp.c
+-clog.c
+-cpow.c
+ csin.c
+ csinh.c
+ csqrt.c
+@@ -485,6 +483,8 @@ ccot.c
+ ccoth.c
+ ccsc.c
+ ccsch.c
++clog.c
++cpow.c
+ clogb.c
+ clog10.c
+ csec.c
