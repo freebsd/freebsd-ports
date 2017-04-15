@@ -17,8 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	libevent>=2.0.8:devel/libevent
 LIB_DEPENDS=	libevent_openssl.so:devel/libevent
 
+BROKEN_SSL=	openssl-devel
 BROKEN_powerpc64=	does not build
-BROKEN_sparc64=		does not build: fails to link
+BROKEN_sparc64=	does not build: fails to link
 
 CONFIGURE_ARGS=	--enable-examples \
 		--enable-src
@@ -36,11 +37,5 @@ PORTDOCS=	*
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/spdycli ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/shrpx.conf.sample ${STAGEDIR}${PREFIX}/etc/
-
-.include <bsd.port.options.mk>
-
-.if ${SSL_DEFAULT} == openssl-devel
-BROKEN=		Does not build.
-.endif
 
 .include <bsd.port.mk>
