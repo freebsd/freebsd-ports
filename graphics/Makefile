@@ -146,6 +146,7 @@
     SUBDIR += dmtx-utils
     SUBDIR += dri
     SUBDIR += driconf
+    SUBDIR += dspdfviewer
     SUBDIR += duhdraw
     SUBDIR += dynamechs
     SUBDIR += easypaint
