@@ -1,4 +1,4 @@
-TIMESTAMP = 1492269919
+TIMESTAMP = 1492272157
 SHA256 (nginx-1.12.0.tar.gz) = b4222e26fdb620a8d3c3a3a8b955e08b713672e1bc5198d1e4f462308a795b30
 SIZE (nginx-1.12.0.tar.gz) = 980831
 SHA256 (ngx_http_auth_pam_module-1.2.tar.gz) = 5a85970ba61a99f55a26d2536a11d512b39bbd622f5737d25a9a8c10db81efa9
@@ -75,8 +75,8 @@ SHA256 (cryptofuture-nginx-upstream-fair-b5be36f_GH0.tar.gz) = e765afcaab6cd1601
 SIZE (cryptofuture-nginx-upstream-fair-b5be36f_GH0.tar.gz) = 10174
 SHA256 (wandenberg-nginx-video-thumbextractor-module-0.7.0_GH0.tar.gz) = 382bb41fa739f471fdab9fbabc5384d8ec7f25b5bb0c45c153f5cc01d428abe2
 SIZE (wandenberg-nginx-video-thumbextractor-module-0.7.0_GH0.tar.gz) = 2709351
-SHA256 (evanmiller-mod_zip-ca0b345_GH0.tar.gz) = babab586ebde83d3cf128eabdc3a66f922db740a43c943ffd9cd8b055acf3a5b
-SIZE (evanmiller-mod_zip-ca0b345_GH0.tar.gz) = 26035
+SHA256 (anthonyryan1-mod_zip-74ef235_GH0.tar.gz) = 0d780e6fef91814fbaa577c9f7cfb7b78f6898e50c34d63f3c5d101eb45afd44
+SIZE (anthonyryan1-mod_zip-74ef235_GH0.tar.gz) = 26125
 SHA256 (openresty-drizzle-nginx-module-v0.1.9_GH0.tar.gz) = aafb79d87273eec023025333c34d6d0108026a1ce2e09b20a53e8e2d9bf65080
 SIZE (openresty-drizzle-nginx-module-v0.1.9_GH0.tar.gz) = 59024
 SHA256 (cubicdaiya-ngx_dynamic_upstream-v0.1.3_GH0.tar.gz) = bf60cf196c86193376d11f8c7a3826994b24a48bb36943bab8a25af6e776af3b
