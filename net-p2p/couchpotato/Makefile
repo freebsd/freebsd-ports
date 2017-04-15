@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	couchpotato
-PORTVERSION=	0.0.20161225
-PORTREVISION=	2
+PORTVERSION=	0.0.20170327
+PORTREVISION=	0
 CATEGORIES=	net-p2p python
 
 MAINTAINER=	feld@FreeBSD.org
@@ -29,7 +29,7 @@ USERS=		couchpotato
 USE_GITHUB=	yes
 GH_ACCOUNT=	CouchPotato
 GH_PROJECT=	CouchPotatoServer
-GH_TAGNAME=	b538f9a
+GH_TAGNAME=	711310d
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${DATADIR}
