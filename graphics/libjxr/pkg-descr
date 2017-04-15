@@ -1,0 +1,18 @@
+JPEG XR is an approved ISO/IEC International standard (its official
+designation is ISO/IEC 29199-2).
+
+JPEG XR started its life in Microsoft Research. It publicly first appeared
+as the HD Photo format in Windows Vista.
+
+For web developers, JPEG XR has a large number of interesting features, see
+the table below. Some of these are big advantages over other image formats
+like JPEG, PNG, OpenEXR, and TIFF.
+	- Better Compression (40% smaller than JPEG)
+	- Lossless Mode (better compression than PNG)
+	- Alpha Channel (compress color lossy and alpha losslessly)
+	- Extended Bitdepth (supports 8-, 16-, and 32-bit/channel)
+	- Progressive Decode
+	- Advanced Decoding Features (tile-based layout, for efficient
+	  region-of-interest access.)
+
+WWW: https://jxrlib.codeplex.com/
