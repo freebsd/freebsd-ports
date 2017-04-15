@@ -891,6 +891,7 @@ go/pkg/bootstrap/src/bootstrap/cmd/compile/internal/ssa/lca.go
 go/pkg/bootstrap/src/bootstrap/cmd/compile/internal/ssa/lca_test.go
 go/pkg/bootstrap/src/bootstrap/cmd/compile/internal/ssa/likelyadjust.go
 go/pkg/bootstrap/src/bootstrap/cmd/compile/internal/ssa/location.go
+go/pkg/bootstrap/src/bootstrap/cmd/compile/internal/ssa/loop_test.go
 go/pkg/bootstrap/src/bootstrap/cmd/compile/internal/ssa/loopbce.go
 go/pkg/bootstrap/src/bootstrap/cmd/compile/internal/ssa/loopreschedchecks.go
 go/pkg/bootstrap/src/bootstrap/cmd/compile/internal/ssa/lower.go
@@ -1028,6 +1029,7 @@ go/pkg/bootstrap/src/bootstrap/cmd/internal/obj/x86/obj6_test.go
 go/pkg/bootstrap/src/bootstrap/cmd/internal/obj/zbootstrap.go
 go/pkg/bootstrap/src/bootstrap/cmd/internal/sys/arch.go
 go/pkg/bootstrap/src/bootstrap/cmd/link/doc.go
+go/pkg/bootstrap/src/bootstrap/cmd/link/dwarf_test.go
 go/pkg/bootstrap/src/bootstrap/cmd/link/internal/amd64/asm.go
 go/pkg/bootstrap/src/bootstrap/cmd/link/internal/amd64/l.go
 go/pkg/bootstrap/src/bootstrap/cmd/link/internal/amd64/obj.go
@@ -1488,6 +1490,7 @@ go/src/cmd/compile/internal/ssa/lca.go
 go/src/cmd/compile/internal/ssa/lca_test.go
 go/src/cmd/compile/internal/ssa/likelyadjust.go
 go/src/cmd/compile/internal/ssa/location.go
+go/src/cmd/compile/internal/ssa/loop_test.go
 go/src/cmd/compile/internal/ssa/loopbce.go
 go/src/cmd/compile/internal/ssa/loopreschedchecks.go
 go/src/cmd/compile/internal/ssa/lower.go
@@ -1931,6 +1934,7 @@ go/src/cmd/internal/objfile/pe.go
 go/src/cmd/internal/objfile/plan9obj.go
 go/src/cmd/internal/sys/arch.go
 go/src/cmd/link/doc.go
+go/src/cmd/link/dwarf_test.go
 go/src/cmd/link/internal/amd64/asm.go
 go/src/cmd/link/internal/amd64/l.go
 go/src/cmd/link/internal/amd64/obj.go
@@ -3257,6 +3261,7 @@ go/src/internal/syscall/windows/syscall_windows.go
 go/src/internal/syscall/windows/sysdll/sysdll.go
 go/src/internal/syscall/windows/zsyscall_windows.go
 go/src/internal/testenv/testenv.go
+go/src/internal/testenv/testenv_cgo.go
 go/src/internal/testenv/testenv_notwin.go
 go/src/internal/testenv/testenv_windows.go
 go/src/internal/trace/goroutines.go
@@ -5626,6 +5631,7 @@ go/test/fixedbugs/bug191.go
 go/test/fixedbugs/bug192.go
 go/test/fixedbugs/bug193.go
 go/test/fixedbugs/bug194.go
+go/test/fixedbugs/bug19403.go
 go/test/fixedbugs/bug195.go
 go/test/fixedbugs/bug196.go
 go/test/fixedbugs/bug197.go
@@ -6255,6 +6261,13 @@ go/test/fixedbugs/issue18725.go
 go/test/fixedbugs/issue18808.go
 go/test/fixedbugs/issue18906.go
 go/test/fixedbugs/issue18915.go
+go/test/fixedbugs/issue19137.go
+go/test/fixedbugs/issue19168.go
+go/test/fixedbugs/issue19182.go
+go/test/fixedbugs/issue19201.go
+go/test/fixedbugs/issue19217.go
+go/test/fixedbugs/issue19323.go
+go/test/fixedbugs/issue19743.go
 go/test/fixedbugs/issue2615.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
