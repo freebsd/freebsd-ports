@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	\
 	DEBUG \
 	DEBUGLOG \
 	FILE_AIO \
-	IPV6 \
 	GOOGLE_PERFTOOLS \
 	HTTP \
 	HTTP_ADDITION \
@@ -308,11 +307,6 @@ CONFIGURE_ARGS+=--with-debug
 CONFIGURE_ARGS+=--with-file-aio
 .endif
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--with-ipv6
-CATEGORIES+=	ipv6
-.endif
-
 .if ${PORT_OPTIONS:MGOOGLE_PERFTOOLS}
 LIB_DEPENDS+=	libprofiler.so:devel/google-perftools
 CONFIGURE_ARGS+=--with-google_perftools_module
@@ -355,14 +349,16 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
-GIT_HTTP_AUTH_KRB5_VERSION=	c85a38c
+GIT_HTTP_AUTH_KRB5_VERSION=	0c6ff3f
 GH_ACCOUNT+=	stnoonan:auth_krb5
 GH_PROJECT+=	spnego-http-auth-nginx-module:auth_krb5
 GH_TAGNAME+=	${GIT_HTTP_AUTH_KRB5_VERSION}:auth_krb5
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_krb5}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config
-# TODO: Provide optional dependence on Kerberos implementations from ports
-USES+=	gssapi:base,flags
+#EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config
+#OPTIONS_RADIO+=		GSSAPI
+#OPTIONS_RADIO_GSSAPI+=	GSSAPI_HEIMDAL GSSAPI_MIT
+#GSSAPI_HEIMDAL_USES=	gssapi:heimdal,flags
+#GSSAPI_MIT_USES=	gssapi:mit
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_LDAP}
@@ -710,12 +706,11 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD}
-GIT_UPLOAD_VERSION=	aba1e3f34c
-GH_ACCOUNT+=	vkholodkov:upload
+GIT_UPLOAD_VERSION=	72ec037
+GH_ACCOUNT+=	Austinb:upload
 GH_PROJECT+=	nginx-upload-module:upload
 GH_TAGNAME+=	${GIT_UPLOAD_VERSION}:upload
 CONFIGURE_ARGS+=--add-module=${WRKSRC_upload}
-IGNORE=	HTTP_UPLOAD: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
@@ -1055,7 +1050,7 @@ CONFIGURE_ARGS+=--with-http_v2_module
 .if ${PORT_OPTIONS:MNJS}
 GH_ACCOUNT+=	nginx:njs
 GH_PROJECT+=	njs:njs
-GH_TAGNAME+=	f106743:njs
+GH_TAGNAME+=	753ebe6:njs
 .if !empty(PORT_OPTIONS:MDSO)
 CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_njs}/nginx
 .else
