@@ -2,6 +2,7 @@
 
 PORTNAME=	dspdfviewer
 PORTVERSION=	1.15.1
+DISTVERSIONPREFIX=v
 CATEGORIES=	graphics
 
 MAINTAINER=	santhosh.raju@gmail.com
@@ -22,12 +23,8 @@ USE_QT5=	buildtools_build core gui qmake_build linguisttools widgets xml
 CMAKE_ARGS=	-DPOPPLER_LIBRARIES=${LOCALBASE}/lib/libpoppler-qt5.so -DBuildTests=OFF
 USE_LDCONFIG=	yes
 
-CMAKE_VERBOSE=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	dannyedel
-GH_PROJECT=	dspdfviewer
-GH_TAGNAME=	v1.15.1
 
 PLIST_FILES=	bin/dspdfviewer \
 		share/applications/dspdfviewer.desktop \
