@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtv
-PORTVERSION=	1.15.0
+PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -15,8 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}kitchen>=1.2.4:devel/py-kitchen \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.5.1:www/py-beautifulsoup \
-		${PYTHON_PKGNAMEPREFIX}decorator>=4.0.10:devel/py-decorator \
-		${PYTHON_PKGNAMEPREFIX}mailcap_fix>=0.1.3:devel/py-mailcap-fix
+		${PYTHON_PKGNAMEPREFIX}decorator>=4.0.10:devel/py-decorator
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	michael-lazar
@@ -25,4 +24,10 @@ NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3600
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mailcap_fix>=0.1.3:devel/py-mailcap-fix
+.endif
+
+.include <bsd.port.post.mk>
