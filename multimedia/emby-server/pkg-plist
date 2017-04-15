@@ -200,6 +200,7 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/guide/guide.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/guide/guide.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/guide/programs.css
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/guide/tvguide.template.html
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/homesections.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlaudioplayer/blank.mp3
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlaudioplayer/plugin.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/htmlvideoplayer/plugin.js
