@@ -37,44 +37,44 @@ post-install-script:
 	${REINPLACE_CMD} -e 's!lib/!lib32/!g' ${TMPPLIST}
 	# Install bounce script to access the 32-bit executables
 	${INSTALL_SCRIPT} ${SLAVEDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
-	for i in `grep ^bin ${TMPPLIST} | ${XARGS} -n1 basename` ; do \
+	for i in `${GREP} ^bin ${TMPPLIST} | ${XARGS} -n1 basename` ; do \
 		[ "$${i}" = "wine" ] || ${LN} -f ${STAGEDIR}${PREFIX}/bin/wine ${STAGEDIR}${PREFIX}/bin/$${i} ; \
-		echo bin32/$${i} >> ${TMPPLIST} ; \
+		${ECHO_CMD} bin32/$${i} >> ${TMPPLIST} ; \
 	done
 	# Install libGL
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib32/.libGL/dri
 	${INSTALL_DATA} ${LOCALBASE}/lib/libGL.so.1 ${STAGEDIR}${PREFIX}/lib32/.libGL/	
-	echo lib32/.libGL/libGL.so.1 >> ${TMPPLIST}
+	${ECHO_CMD} lib32/.libGL/libGL.so.1 >> ${TMPPLIST}
 	# Install dri libraries (internal libGL requirements)
 	for i in ${LOCALBASE}/lib/dri/*.so; do \
 		${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib32/.libGL/dri/ ; \
-		echo lib32/.libGL/dri/$${i##*/} >> ${TMPPLIST} ; \
+		${ECHO_CMD} lib32/.libGL/dri/$${i##*/} >> ${TMPPLIST} ; \
 	done
 	# Find all soft dependencies (via strings(1))
-	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
-	${XARGS} -n1 file -F' ' | grep ELF | cut -f1 -d' ' | ${XARGS} strings | \
-	grep '^lib.*\.so' | sort -u > ${WRKDIR}/winesoftlibs
-	for i in `cat ${WRKDIR}/winesoftlibs` ; do \
-		if [ -e ${LOCALBASE}/lib/$${i} ] && [ -z "`grep $${i} ${TMPPLIST}`" ]; then \
+	${GREP} -v '[@%]' ${TMPPLIST} | ${SED} "s!^!${STAGEDIR}${PREFIX}/!g" | \
+	${XARGS} -n1 file -F' ' | ${GREP} ELF | ${CUT} -f1 -d' ' | ${XARGS} strings | \
+	${GREP} '^lib.*\.so' | ${SORT} -u > ${WRKDIR}/winesoftlibs
+	for i in `${CAT} ${WRKDIR}/winesoftlibs` ; do \
+		if [ -e ${LOCALBASE}/lib/$${i} ] && [ -z "`${GREP} $${i} ${TMPPLIST}`" ]; then \
 			${INSTALL_DATA} ${LOCALBASE}/lib/$${i} ${STAGEDIR}${PREFIX}/lib32/ ; \
-			echo lib32/$${i} >> ${TMPPLIST} ; \
+			${ECHO_CMD} lib32/$${i} >> ${TMPPLIST} ; \
 		fi ; \
 	done
 	# Find all libraries that are linked too (via ldd(1))
-	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
-	${XARGS} -n1 file -F' ' | grep ELF | cut -f1 -d' ' | \
+	${GREP} -v '[@%]' ${TMPPLIST} | ${SED} "s!^!${STAGEDIR}${PREFIX}/!g" | \
+	${XARGS} -n1 file -F' ' | ${GREP} ELF | ${CUT} -f1 -d' ' | \
 	env LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib32:${LD_LIBRARY_PATH} ${XARGS} ldd -f '%p\n' \
-	| sort -u | grep -v '^\(/usr\)\?/lib' | grep -v "^${STAGEDIR}${PREFIX}/lib32/libwine.so" \
-	| grep -v "^${STAGEDIR}${PREFIX}/lib32/wine" > ${WRKDIR}/winelibs
-	for i in `cat ${WRKDIR}/winelibs` ; do \
-		if [ -z "`grep $${i##*/} ${TMPPLIST}`" ]; then \
+	| ${SORT} -u | ${GREP} -v '^\(/usr\)\?/lib' | ${GREP} -v "^${STAGEDIR}${PREFIX}/lib32/libwine.so" \
+	| ${GREP} -v "^${STAGEDIR}${PREFIX}/lib32/wine" > ${WRKDIR}/winelibs
+	for i in `${CAT} ${WRKDIR}/winelibs` ; do \
+		if [ -z "`${GREP} $${i##*/} ${TMPPLIST}`" ]; then \
 			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib32/ ; \
-			echo lib32/$${i##*/} >> ${TMPPLIST} ; \
+			${ECHO_CMD} lib32/$${i##*/} >> ${TMPPLIST} ; \
 		fi ; \
 	done
 	# Install nvidia patching script
 	${INSTALL_SCRIPT} ${SLAVEDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
-	echo ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}
+	${ECHO_CMD} ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
 .include "${MASTERDIR}/Makefile"
