@@ -3,18 +3,22 @@
 
 PORTNAME=	logilab-common
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common low-level libraries shared among logilab projects
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz
+
 NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
 
 .include <bsd.port.mk>
