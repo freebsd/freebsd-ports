@@ -17,7 +17,8 @@ COMMENT=	Fast big data processing engine
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33 \
-		${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java
+		${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java \
+		bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash \
 		yarn:devel/hadoop2
 
