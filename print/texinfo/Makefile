@@ -32,7 +32,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 USE_TEX=	yes
 USES=		charsetfix cpe gmake iconv ncurses perl5 tar:xz
 
-INFO=		texinfo info-stnd
+INFO=		info-stnd texinfo
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
