@@ -817,10 +817,6 @@ GH_ACCOUNT+=	simpl:devel_kit
 GH_PROJECT+=	ngx_devel_kit:devel_kit
 GH_TAGNAME+=	v${NGINX_DEVEL_KIT_VERSION}:devel_kit
 CONFIGURE_ARGS+=--add-module=${WRKSRC_devel_kit}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_lua_common.h  \
-		${PATCHDIR}/extra-patch-ngx_http_lua_headers.c \
-		${PATCHDIR}/extra-patch-ngx_http_lua_headers.h \
-		${PATCHDIR}/extra-patch-ngx_http_lua_module.c
 .endif
 
 .if ${PORT_OPTIONS:MENCRYPTSESSION}
@@ -861,6 +857,10 @@ CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_lua}
 .else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
 .endif
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_lua_common.h  \
+		${PATCHDIR}/extra-patch-ngx_http_lua_headers.c \
+		${PATCHDIR}/extra-patch-ngx_http_lua_headers.h \
+		${PATCHDIR}/extra-patch-ngx_http_lua_module.c
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
