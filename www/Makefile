@@ -2487,6 +2487,7 @@
     SUBDIR += yarn
     SUBDIR += yaws
     SUBDIR += yii
+    SUBDIR += you-get
     SUBDIR += yourls
     SUBDIR += youtube_dl
     SUBDIR += yuicompressor
