@@ -4248,6 +4248,7 @@
     SUBDIR += py-doit
     SUBDIR += py-durus
     SUBDIR += py-dynrules
+    SUBDIR += py-editdistance
     SUBDIR += py-efilter
     SUBDIR += py-efl
     SUBDIR += py-eggtestinfo
