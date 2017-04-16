@@ -5,7 +5,6 @@ PORTNAME=	POE-Filter-SSL
 PORTVERSION=	0.30
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:PRIVI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -19,6 +18,8 @@ BUILD_DEPENDS=	p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
 		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN_SSL=	openssl-devel
+
 PORTSCOUT=	skipv:0.291
 
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
@@ -28,10 +29,4 @@ USE_PERL5=	configure
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/POE/Filter/SSL/SSL.so
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
