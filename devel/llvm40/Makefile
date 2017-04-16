@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	4.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -464,6 +464,17 @@ check-commands:
 	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
 .endfor
 
+.if make(svn-patch-llvm)
+.if !defined(PATCH_REV)
+.error svn-patch-llvm requires that PATCH_REV be set
+.endif
+_PATCH_FILE=${FILESDIR}/patch-svn-${PATCH_REV}
+_LLVM_BASE=http://llvm.org/svn/llvm-project/llvm/trunk
+svn-patch-llvm:
+	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+	svn diff -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
+.endif
+
 .if make(svn-patch-clang)
 .if !defined(PATCH_REV)
 .error svn-patch-clang requires that PATCH_REV be set
@@ -475,6 +486,7 @@ svn-patch-clang:
 	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
 	    ${SED} -E -e 's;^(---|\+\+\+) ;\1 tools/clang/;' >> ${_PATCH_FILE}
 .endif
+
 .if make(svn-patch-compiler-rt)
 .if !defined(PATCH_REV)
 .error svn-patch-compiler-rt requires that PATCH_REV be set
@@ -486,6 +498,7 @@ svn-patch-compiler-rt:
 	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
 	    ${SED} -E -e 's;^(---|\+\+\+) ;\1 tools/compiler-rt/;' >> ${_PATCH_FILE}
 .endif
+
 .if make(svn-patch-lldb)
 .if !defined(PATCH_REV)
 .error svn-patch-lldb requires that PATCH_REV be set
