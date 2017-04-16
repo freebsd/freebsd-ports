@@ -23,6 +23,9 @@ BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 RUN_DEPENDS=	libffi>=0:devel/libffi
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=does not detect and buid the openssl*.rb bits	
+
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
 		--enable-pthread \
@@ -72,10 +75,6 @@ CPE_VERSION=	${RUBY_RELVERSION}
 CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == openssl-devel
-BROKEN=		does not detect and buid the openssl*.rb bits.
-.endif
 
 # PORTREVISION/PORTEPOCH hack
 
