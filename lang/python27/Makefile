@@ -13,6 +13,8 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
+BROKEN_SSL=	openssl-devel
+
 USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
@@ -135,10 +137,4 @@ post-install:
 	for i in ${STAGEDIR}${PREFIX}/lib/python2.7/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done						# Strip shared extensions
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
