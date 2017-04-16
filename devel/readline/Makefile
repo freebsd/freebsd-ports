@@ -16,7 +16,7 @@ COMMENT=	Library for editing command lines as they are typed
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	TERMCAP
+OPTIONS_DEFINE=	TERMCAP DOCS
 OPTIONS_DEFAULT=TERMCAP
 TERMCAP_DESC=	Link against libtermcap
 
@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 USES=		cpe
 
 INFO=		history readline rluserman
+PORTDOCS=	CHANGES INSTALL README
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
