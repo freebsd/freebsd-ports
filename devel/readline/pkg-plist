@@ -28,6 +28,3 @@ man/man3/history.3.gz
 %%DATADIR%%/rlptytest.c
 %%DATADIR%%/rltest.c
 %%DATADIR%%/rlversion.c
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
