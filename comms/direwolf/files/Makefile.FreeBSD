@@ -11,7 +11,6 @@ all :  $(APPS) direwolf.desktop direwolf.conf
 	@echo "        sudo make install"
 	@echo " "
 
-LOCALBASE=	%%LOCALBASE%%
 CFLAGS += -I${LOCALBASE}/include
 CFLAGS += -pthread -Igeotranz
 
@@ -192,7 +191,7 @@ direwolf.conf : generic.conf
 # This is a step in the right direction but not sufficient to use /usr instead.
 # Eventually I'd like to have targets here to build the .DEB and .RPM packages.
 
-INSTALLDIR := %%STAGEDIR%%/%%PREFIX%%/
+INSTALLDIR := ${STAGEDIR}/${PREFIX}/
 SHAREDIR   := ${INSTALLDIR}/share
 
 # Command to "install" to system directories.  Use "ginstall" for Mac.
@@ -219,7 +218,7 @@ else
 endif
 	@echo 'Name=Dire Wolf' >> $@
 	@echo 'Comment=APRS Soundcard TNC' >> $@
-	@echo 'Icon=%%PREFIX%%/share/direwolf/dw-icon.png' >> $@
+	@echo 'Icon=${PREFIX}/share/direwolf/dw-icon.png' >> $@
 	@echo "Path=$(HOME)" >> $@
 	@echo '#Terminal=true' >> $@
 	@echo 'Categories=HamRadio' >> $@
@@ -236,61 +235,61 @@ install : $(APPS) direwolf.conf tocalls.txt symbols-new.txt symbolsX.txt dw-icon
 # Applications, not installed with package manager, normally go in /usr/local/bin.
 # /usr/bin is used instead when installing from .DEB or .RPM package.
 #
-	$(INSTALL) direwolf $(INSTALLDIR)/bin
-	$(INSTALL) decode_aprs $(INSTALLDIR)/bin
-	$(INSTALL) text2tt $(INSTALLDIR)/bin
-	$(INSTALL) tt2text $(INSTALLDIR)/bin
-	$(INSTALL) ll2utm $(INSTALLDIR)/bin
-	$(INSTALL) utm2ll $(INSTALLDIR)/bin
-	$(INSTALL) aclients $(INSTALLDIR)/bin
-	$(INSTALL) log2gpx $(INSTALLDIR)/bin
-	$(INSTALL) gen_packets $(INSTALLDIR)/bin
-	$(INSTALL) atest $(INSTALLDIR)/bin
-	$(INSTALL) ttcalc $(INSTALLDIR)/bin
-	$(INSTALL) dwespeak.sh $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) direwolf $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) decode_aprs $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) text2tt $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) tt2text $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) ll2utm $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) utm2ll $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) aclients $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) log2gpx $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) gen_packets $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) atest $(INSTALLDIR)/bin
+	$(BSD_INSTALL_PROGRAM) ttcalc $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) dwespeak.sh $(INSTALLDIR)/bin
 #
 # Telemetry Toolkit executables.   Other .conf and .txt files will go into doc directory.
 #
-	$(INSTALL) telemetry-toolkit/telem-balloon.pl $(INSTALLDIR)/bin
-	$(INSTALL) telemetry-toolkit/telem-bits.pl $(INSTALLDIR)/bin
-	$(INSTALL) telemetry-toolkit/telem-data.pl $(INSTALLDIR)/bin
-	$(INSTALL) telemetry-toolkit/telem-data91.pl $(INSTALLDIR)/bin
-	$(INSTALL) telemetry-toolkit/telem-eqns.pl $(INSTALLDIR)/bin
-	$(INSTALL) telemetry-toolkit/telem-parm.pl $(INSTALLDIR)/bin
-	$(INSTALL) telemetry-toolkit/telem-seq.sh $(INSTALLDIR)/bin
-	$(INSTALL) telemetry-toolkit/telem-unit.pl $(INSTALLDIR)/bin
-	$(INSTALL) telemetry-toolkit/telem-volts.py $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) telemetry-toolkit/telem-balloon.pl $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) telemetry-toolkit/telem-bits.pl $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) telemetry-toolkit/telem-data.pl $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) telemetry-toolkit/telem-data91.pl $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) telemetry-toolkit/telem-eqns.pl $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) telemetry-toolkit/telem-parm.pl $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) telemetry-toolkit/telem-seq.sh $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) telemetry-toolkit/telem-unit.pl $(INSTALLDIR)/bin
+	$(BSD_INSTALL_SCRIPT) telemetry-toolkit/telem-volts.py $(INSTALLDIR)/bin
 #
 # Misc. data such as "tocall" to system mapping.
 #
 	mkdir -p ${SHAREDIR}/direwolf
-	$(INSTALL) -D --mode=644 tocalls.txt ${SHAREDIR}/direwolf/tocalls.txt
-	$(INSTALL) -D --mode=644 symbols-new.txt ${SHAREDIR}/direwolf/symbols-new.txt
-	$(INSTALL) -D --mode=644 symbolsX.txt ${SHAREDIR}/direwolf/symbolsX.txt
-	$(INSTALL) -D --mode=644 dw-icon.png ${SHAREDIR}/direwolf/dw-icon.png
+	$(BSD_INSTALL_DATA) tocalls.txt ${SHAREDIR}/direwolf/tocalls.txt
+	$(BSD_INSTALL_DATA) symbols-new.txt ${SHAREDIR}/direwolf/symbols-new.txt
+	$(BSD_INSTALL_DATA) symbolsX.txt ${SHAREDIR}/direwolf/symbolsX.txt
+	$(BSD_INSTALL_DATA) dw-icon.png ${SHAREDIR}/direwolf/dw-icon.png
 	mkdir -p ${SHAREDIR}/applications
-	$(INSTALL) -D --mode=644 direwolf.desktop ${SHAREDIR}/applications/direwolf.desktop
+	$(BSD_INSTALL_DATA) direwolf.desktop ${SHAREDIR}/applications/direwolf.desktop
 #
 # Documentation.  Various plain text files and PDF.
-# $(INSTALL) -D --mode=644 CHANGES.md $(INSTALLDIR)/share/doc/direwolf/CHANGES.md
+# $(INSTALL) CHANGES.md $(INSTALLDIR)/share/doc/direwolf/CHANGES.md
 	mkdir -p ${INSTALLDIR}/share/doc/direwolf
 	mkdir -p ${INSTALLDIR}/share/direwolf
-	$(INSTALL) -D --mode=644 LICENSE-dire-wolf.txt $(INSTALLDIR)/share/doc/direwolf/LICENSE-dire-wolf.txt
-	$(INSTALL) -D --mode=644 LICENSE-other.txt $(INSTALLDIR)/share/doc/direwolf/LICENSE-other.txt
+	$(BSD_INSTALL_DATA) LICENSE-dire-wolf.txt $(INSTALLDIR)/share/doc/direwolf/LICENSE-dire-wolf.txt
+	$(BSD_INSTALL_DATA) LICENSE-other.txt $(INSTALLDIR)/share/doc/direwolf/LICENSE-other.txt
 #
 # ./README.md is an overview for the project main page.
 # doc/README.md contains an overview of the PDF file contents and is more useful here.
 #
-	$(INSTALL) -D --mode=644 doc/README.md $(INSTALLDIR)/share/doc/direwolf/README.md
-	$(INSTALL) -D --mode=644 doc/User-Guide.pdf $(INSTALLDIR)/share/doc/direwolf/User-Guide.pdf
-	$(INSTALL) -D --mode=644 doc/Raspberry-Pi-APRS.pdf $(INSTALLDIR)/share/doc/direwolf/Raspberry-Pi-APRS.pdf
-	$(INSTALL) -D --mode=644 doc/Raspberry-Pi-APRS-Tracker.pdf $(INSTALLDIR)/share/doc/direwolf/Raspberry-Pi-APRS-Tracker.pdf
-	$(INSTALL) -D --mode=644 doc/Raspberry-Pi-SDR-IGate.pdf $(INSTALLDIR)/share/doc/direwolf/Raspberry-Pi-SDR-IGate.pdf
-	$(INSTALL) -D --mode=644 doc/APRStt-Implementation-Notes.pdf $(INSTALLDIR)/share/doc/direwolf/APRStt-Implementation-Notes.pdf
-	$(INSTALL) -D --mode=644 doc/APRStt-interface-for-SARTrack.pdf $(INSTALLDIR)/share/doc/direwolf/APRStt-interface-for-SARTrack.pdf
-	$(INSTALL) -D --mode=644 doc/APRS-Telemetry-Toolkit.pdf $(INSTALLDIR)/share/doc/direwolf/APRS-Telemetry-Toolkit.pdf
-	$(INSTALL) -D --mode=644 doc/A-Better-APRS-Packet-Demodulator-Part-1-1200-baud.pdf $(INSTALLDIR)/share/doc/direwolf/A-Better-APRS-Packet-Demodulator-Part-1-1200-baud.pdf
-	$(INSTALL) -D --mode=644 doc/A-Better-APRS-Packet-Demodulator-Part-2-9600-baud.pdf $(INSTALLDIR)/share/doc/direwolf/A-Better-APRS-Packet-Demodulator-Part-2-9600-baud.pdf
+	$(BSD_INSTALL_DATA) doc/README.md $(INSTALLDIR)/share/doc/direwolf/README.md
+	$(BSD_INSTALL_DATA) doc/User-Guide.pdf $(INSTALLDIR)/share/doc/direwolf/User-Guide.pdf
+	$(BSD_INSTALL_DATA) doc/Raspberry-Pi-APRS.pdf $(INSTALLDIR)/share/doc/direwolf/Raspberry-Pi-APRS.pdf
+	$(BSD_INSTALL_DATA) doc/Raspberry-Pi-APRS-Tracker.pdf $(INSTALLDIR)/share/doc/direwolf/Raspberry-Pi-APRS-Tracker.pdf
+	$(BSD_INSTALL_DATA) doc/Raspberry-Pi-SDR-IGate.pdf $(INSTALLDIR)/share/doc/direwolf/Raspberry-Pi-SDR-IGate.pdf
+	$(BSD_INSTALL_DATA) doc/APRStt-Implementation-Notes.pdf $(INSTALLDIR)/share/doc/direwolf/APRStt-Implementation-Notes.pdf
+	$(BSD_INSTALL_DATA) doc/APRStt-interface-for-SARTrack.pdf $(INSTALLDIR)/share/doc/direwolf/APRStt-interface-for-SARTrack.pdf
+	$(BSD_INSTALL_DATA) doc/APRS-Telemetry-Toolkit.pdf $(INSTALLDIR)/share/doc/direwolf/APRS-Telemetry-Toolkit.pdf
+	$(BSD_INSTALL_DATA) doc/A-Better-APRS-Packet-Demodulator-Part-1-1200-baud.pdf $(INSTALLDIR)/share/doc/direwolf/A-Better-APRS-Packet-Demodulator-Part-1-1200-baud.pdf
+	$(BSD_INSTALL_DATA) doc/A-Better-APRS-Packet-Demodulator-Part-2-9600-baud.pdf $(INSTALLDIR)/share/doc/direwolf/A-Better-APRS-Packet-Demodulator-Part-2-9600-baud.pdf
 #
 # Various sample config and other files go into examples under the doc directory.
 # When building from source, these can be put in home directory with "make install-conf".
@@ -298,25 +297,25 @@ install : $(APPS) direwolf.conf tocalls.txt symbols-new.txt symbolsX.txt dw-icon
 # the home directory or other desired location.
 #
 	mkdir -p ${INSTALLDIR}/share/doc/direwolf/examples
-	$(INSTALL) -D --mode=644 direwolf.conf $(INSTALLDIR)/share/doc/direwolf/examples/direwolf.conf
-	$(INSTALL) -D --mode=644 dw-start.sh $(INSTALLDIR)/share/doc/direwolf/examples/dw-start.sh
-	$(INSTALL) -D --mode=644 sdr.conf $(INSTALLDIR)/share/doc/direwolf/examples/sdr.conf
-	$(INSTALL) -D --mode=644 telemetry-toolkit/telem-m0xer-3.txt $(INSTALLDIR)/share/doc/direwolf/examples/telem-m0xer-3.txt
-	$(INSTALL) -D --mode=644 telemetry-toolkit/telem-balloon.conf $(INSTALLDIR)/share/doc/direwolf/examples/telem-balloon.conf
-	$(INSTALL) -D --mode=644 telemetry-toolkit/telem-volts.conf $(INSTALLDIR)/share/doc/direwolf/examples/telem-volts.conf
+	$(BSD_INSTALL_DATA) direwolf.conf $(INSTALLDIR)/share/doc/direwolf/examples/direwolf.conf
+	$(BSD_INSTALL_DATA) dw-start.sh $(INSTALLDIR)/share/doc/direwolf/examples/dw-start.sh
+	$(BSD_INSTALL_DATA) sdr.conf $(INSTALLDIR)/share/doc/direwolf/examples/sdr.conf
+	$(BSD_INSTALL_DATA) telemetry-toolkit/telem-m0xer-3.txt $(INSTALLDIR)/share/doc/direwolf/examples/telem-m0xer-3.txt
+	$(BSD_INSTALL_DATA) telemetry-toolkit/telem-balloon.conf $(INSTALLDIR)/share/doc/direwolf/examples/telem-balloon.conf
+	$(BSD_INSTALL_DATA) telemetry-toolkit/telem-volts.conf $(INSTALLDIR)/share/doc/direwolf/examples/telem-volts.conf
 #
 # "man" pages
 #
-	$(INSTALL) -D --mode=644 man1/aclients.1 $(INSTALLDIR)/man/man1/aclients.1
-	$(INSTALL) -D --mode=644 man1/atest.1 $(INSTALLDIR)/man/man1/atest.1
-	$(INSTALL) -D --mode=644 man1/decode_aprs.1 $(INSTALLDIR)/man/man1/decode_aprs.1
-	$(INSTALL) -D --mode=644 man1/direwolf.1 $(INSTALLDIR)/man/man1/direwolf.1
-	$(INSTALL) -D --mode=644 man1/gen_packets.1 $(INSTALLDIR)/man/man1/gen_packets.1
-	$(INSTALL) -D --mode=644 man1/ll2utm.1 $(INSTALLDIR)/man/man1/ll2utm.1
-	$(INSTALL) -D --mode=644 man1/log2gpx.1 $(INSTALLDIR)/man/man1/log2gpx.1
-	$(INSTALL) -D --mode=644 man1/text2tt.1 $(INSTALLDIR)/man/man1/text2tt.1
-	$(INSTALL) -D --mode=644 man1/tt2text.1 $(INSTALLDIR)/man/man1/tt2text.1
-	$(INSTALL) -D --mode=644 man1/utm2ll.1 $(INSTALLDIR)/man/man1/utm2ll.1
+	$(BSD_INSTALL_MAN) man1/aclients.1 $(INSTALLDIR)/man/man1/aclients.1
+	$(BSD_INSTALL_MAN) man1/atest.1 $(INSTALLDIR)/man/man1/atest.1
+	$(BSD_INSTALL_MAN) man1/decode_aprs.1 $(INSTALLDIR)/man/man1/decode_aprs.1
+	$(BSD_INSTALL_MAN) man1/direwolf.1 $(INSTALLDIR)/man/man1/direwolf.1
+	$(BSD_INSTALL_MAN) man1/gen_packets.1 $(INSTALLDIR)/man/man1/gen_packets.1
+	$(BSD_INSTALL_MAN) man1/ll2utm.1 $(INSTALLDIR)/man/man1/ll2utm.1
+	$(BSD_INSTALL_MAN) man1/log2gpx.1 $(INSTALLDIR)/man/man1/log2gpx.1
+	$(BSD_INSTALL_MAN) man1/text2tt.1 $(INSTALLDIR)/man/man1/text2tt.1
+	$(BSD_INSTALL_MAN) man1/tt2text.1 $(INSTALLDIR)/man/man1/tt2text.1
+	$(BSD_INSTALL_MAN) man1/utm2ll.1 $(INSTALLDIR)/man/man1/utm2ll.1
 #
 	@echo " "
 	@echo "If this is your first install, not an upgrade, type this to put a copy"
