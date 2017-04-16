@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	airbrussh
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-sshkit>=1.7.1:security/rubygem-sshkit
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+
+SHEBANG_FILES=	bin/setup
 
 .include <bsd.port.mk>
