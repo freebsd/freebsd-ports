@@ -1,13 +1,13 @@
---- setup.py.orig	2015-09-22 03:02:05 UTC
+--- setup.py.orig	2017-04-12 12:02:34 UTC
 +++ setup.py
-@@ -127,8 +127,8 @@ VERSION = open('VERSION').read().strip()
+@@ -115,8 +115,8 @@ with open('VERSION') as fd:
  debug = '--debug' in sys.argv
  
  # Global variables
 -lib_dirs = []
--inc_dirs = ['c-blosc/hdf5']
-+lib_dirs = ['/usr/local/lib']
-+inc_dirs = ['c-blosc/hdf5','/usr/local/include']
+-inc_dirs = [os.path.join('hdf5-blosc', 'src')]
++lib_dirs = ['%%LOCALBASE%%/lib']
++inc_dirs = [os.path.join('hdf5-blosc', 'src'),'%%LOCALBASE%%/include']
  optional_libs = []
  data_files = []    # list of data files to add to packages (mainly for DLL's)
  
