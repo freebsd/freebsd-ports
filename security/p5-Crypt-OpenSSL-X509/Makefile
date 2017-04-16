@@ -13,6 +13,8 @@ COMMENT=	Perl extension for OpenSSL X509 API
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BROKEN_SSL=	openssl-devel
+
 USES=		perl5 ssl
 USE_PERL5=	configure
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
@@ -23,10 +25,4 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Crypt/OpenSSL/X509/X509.so
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

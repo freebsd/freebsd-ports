@@ -2,17 +2,21 @@
 
 PORTNAME=	lazy-object-proxy
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and thorough lazy object proxy
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
-USE_PYTHON=	autoplist distutils
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/lazy_object_proxy/cext.so
 
 .include <bsd.port.mk>

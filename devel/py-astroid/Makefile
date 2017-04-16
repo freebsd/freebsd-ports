@@ -2,21 +2,34 @@
 
 PORTNAME=	astroid
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extension for Python compiler.ast module
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	abstract syntax tree for Python with inference support
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wrapt>0:devel/py-wrapt \
-		${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>0:devel/py-lazy-object-proxy \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=0:devel/py-lazy-object-proxy \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}wrapt>=0:devel/py-wrapt
 
-USES=		python
-USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent distutils
+USES=		python
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>=0:devel/py-backports.functools_lru_cache
+.endif
+
+.if ${PYTHON_REL} < 3400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}enum34>=0:devel/py-enum34 \
+		${PYTHON_PKGNAMEPREFIX}singledispatch>=0:devel/py-singledispatch
+.endif
+
+.include <bsd.port.post.mk>

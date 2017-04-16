@@ -47,12 +47,14 @@ TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
 		subedit.pl subsearch.sh vobshift.py \
 		w32codec_dl.pl wma2ogg.pl
 
-USES+=		alias iconv pkgconfig shebangfix
+USES+=		alias iconv pkgconfig python shebangfix
 SHEBANG_FILES=	TOOLS/calcbpp.pl TOOLS/checktree.sh TOOLS/countquant.pl	\
 		TOOLS/divx2svcd.sh TOOLS/dvd2divxscript.pl TOOLS/mencvcd.sh \
 		TOOLS/mphelp_check.py TOOLS/plotpsnr.pl TOOLS/psnr-video.sh \
-		TOOLS/qepdvcd.sh TOOLS/subedit.pl TOOLS/w32codec_dl.pl \
-		TOOLS/wma2ogg.pl
+		TOOLS/qepdvcd.sh TOOLS/subedit.pl TOOLS/vobshift.py \
+		TOOLS/w32codec_dl.pl TOOLS/wma2ogg.pl
+
+PYTHON_NO_DEPENDS=	yes
 
 .include "${.CURDIR}/../mplayer/Makefile.optvars"
 .include <bsd.port.pre.mk>
