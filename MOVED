@@ -9234,3 +9234,6 @@ graphics/py-opencv2|graphics/py-opencv|2017-04-14|Revert previous rename
 databases/pgpool-II-22|databases/pgpool|2017-04-14|Has expired: Deprecated by upstream; use database/pgpool instead
 databases/pgpool-II-23|databases/pgpool|2017-04-14|Has expired: Deprecated by upstream; use database/pgpool instead
 net/py-matrix-synapse|net-im/py-matrix-synapse|2017-04-17|Move to net-im which is a more appropriate category
+graphics/shiva-collections||2017-04-17|Has expired: Project is dead and has no end user
+graphics/opengtl||2017-04-17|Has expired: Project is dead, has no end user, and relies on EOLed LLVM
+graphics/qtgtl||2017-04-17|Has expired: Project is dead and has had no consumer for over a year
