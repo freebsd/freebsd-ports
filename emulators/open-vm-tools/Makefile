@@ -3,7 +3,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		2
 MASTER_SITES=		https://github.com/vmware/open-vm-tools/files/590760/
 DISTNAME=		open-vm-tools-${RELEASE_VER}-${BUILD_VER}
