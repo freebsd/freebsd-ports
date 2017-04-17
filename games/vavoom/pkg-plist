@@ -2,7 +2,7 @@ bin/vavoom
 bin/vavoom.bin
 bin/vavoom-dedicated
 bin/vavoom-dedicated.bin
-@comment %%LAUNCHER%%bin/vlaunch
+%%LAUNCHER%%bin/vlaunch
 %%PORTDOCS%%%%DOCSDIR%%/vavoom.txt
 %%DATADIR%%/basev/common/basepak.pk3
 %%DATADIR%%/basev/doom/basepak.pk3
