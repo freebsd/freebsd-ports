@@ -1,0 +1,10 @@
+Aravis require broadcast to find devices.
+
+Dont forget run:
+# route add 255.255.255.255 -iface lan0
+
+or add in rc.conf
+static_routes="bcast:lan0"
+route_bcast="255.255.255.255 -iface lan0"
+
+where lan0 - network interface name.

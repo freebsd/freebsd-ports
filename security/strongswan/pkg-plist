@@ -2,6 +2,11 @@ lib/ipsec/libcharon.a
 lib/ipsec/libcharon.la
 lib/ipsec/libcharon.so
 lib/ipsec/libcharon.so.0
+lib/ipsec/libtpmtss.a
+lib/ipsec/libtpmtss.la
+lib/ipsec/libtpmtss.so
+lib/ipsec/libtpmtss.so.0
+lib/ipsec/libtpmtss.so.0.0.0
 lib/ipsec/libstrongswan.a
 lib/ipsec/libstrongswan.la
 lib/ipsec/libstrongswan.so
@@ -28,6 +33,9 @@ lib/ipsec/plugins/libstrongswan-cmac.so
 lib/ipsec/plugins/libstrongswan-constraints.a
 lib/ipsec/plugins/libstrongswan-constraints.la
 lib/ipsec/plugins/libstrongswan-constraints.so
+lib/ipsec/plugins/libstrongswan-curve25519.a
+lib/ipsec/plugins/libstrongswan-curve25519.la
+lib/ipsec/plugins/libstrongswan-curve25519.so
 lib/ipsec/plugins/libstrongswan-des.a
 lib/ipsec/plugins/libstrongswan-des.la
 lib/ipsec/plugins/libstrongswan-des.so
@@ -150,6 +158,7 @@ sbin/charon-cmd
 %%DATADIR%%/templates/config/plugins/blowfish.conf
 %%DATADIR%%/templates/config/plugins/cmac.conf
 %%DATADIR%%/templates/config/plugins/constraints.conf
+%%DATADIR%%/templates/config/plugins/curve25519.conf
 %%DATADIR%%/templates/config/plugins/des.conf
 %%DATADIR%%/templates/config/plugins/dnskey.conf
 %%DATADIR%%/templates/config/plugins/eap-identity.conf
@@ -340,6 +349,11 @@ man/man8/charon-cmd.8.gz
 %%SWANCTL%%man/man8/swanctl.8.gz
 %%SWANCTL%%@sample %%ETCDIR%%.d/swanctl.conf.sample
 %%SWANCTL%%@sample etc/swanctl/swanctl.conf.sample
+%%TPM%%@sample %%ETCDIR%%.d/charon/tpm.conf.sample
+%%TPM%%lib/ipsec/plugins/libstrongswan-tpm.a
+%%TPM%%lib/ipsec/plugins/libstrongswan-tpm.la
+%%TPM%%lib/ipsec/plugins/libstrongswan-tpm.so
+%%TPM%%%%DATADIR%%/templates/config/plugins/tpm.conf
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.a
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.la
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.so
@@ -379,6 +393,7 @@ man/man8/charon-cmd.8.gz
 @sample %%ETCDIR%%.d/charon/blowfish.conf.sample
 @sample %%ETCDIR%%.d/charon/cmac.conf.sample
 @sample %%ETCDIR%%.d/charon/constraints.conf.sample
+@sample %%ETCDIR%%.d/charon/curve25519.conf.sample
 @sample %%ETCDIR%%.d/charon/des.conf.sample
 @sample %%ETCDIR%%.d/charon/dnskey.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-identity.conf.sample

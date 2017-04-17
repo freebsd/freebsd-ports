@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.4.5
+PORTVERSION=	2.5.3
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -24,27 +24,21 @@ CONFLICTS_INSTALL=	libressl-devel-[0-9]* \
 			openssl-devel-[0-9]*
 
 MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-MAN3
+NC_CONFIGURE_ENABLE=	nc
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 OPTIONS_SUB=	yes
-CFLAGS+=	-fpic -DPIC
+CFLAGS+=	-fpic -DPIC -Wl,-rpath,${PREFIX}/lib -Wl,--as-needed
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-
-.include <bsd.port.pre.mk>
-
-#.if ${OSVERSION} > 1100037
-#CONFIGURE_ENV=	HAVE_EXPLICIT_BZERO=yes
-#.endif
 
 post-install:
 	${RM} -r ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
 
 post-install-NC-on:
-	${INSTALL_PROGRAM} ${WRKSRC}/apps/nc/.libs/nc ${STAGEDIR}/${PREFIX}/bin/nc
 	${INSTALL_MAN} ${WRKSRC}/apps/nc/nc.1 ${STAGEDIR}/${PREFIX}/man/man1/nc.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

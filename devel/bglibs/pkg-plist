@@ -68,7 +68,9 @@ lib/bglibs/libbg.so.2.0.0
 lib/bglibs/libpwcmp-module.a
 lib/bglibs/libpwcmp.a
 lib/bglibs/libvmailmgr.a
-libdata/ldconfig/bglibs
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/adt_2ghash_test_8c-example.html
 %%PORTDOCS%%%%DOCSDIR%%/adt_2gqueue_test_8c-example.html
 %%PORTDOCS%%%%DOCSDIR%%/adt_2gstack_test_8c-example.html

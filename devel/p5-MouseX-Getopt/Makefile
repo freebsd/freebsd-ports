@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	MouseX-Getopt
-PORTVERSION=	${DISTVERSION}00
-DISTVERSION=	0.36
+PORTVERSION=	0.3600
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for a Mouse role to process command line options

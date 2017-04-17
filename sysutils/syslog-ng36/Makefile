@@ -2,14 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.6.4
+DISTVERSION=	3.6.4
 PORTREVISION=	1
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	36
 .endif
 CATEGORIES=	sysutils
-DISTVERSION=	${PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/}
-DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/ \
 

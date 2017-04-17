@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	easyrpg-player
-PORTVERSION=	0.5.0
-PORTREVISION=	3
+PORTVERSION=	0.5.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq-cron
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-redis-namespace>=1.5.2:databases/rubygem-redis-namespace \
-		rubygem-rufus-scheduler>=2.0.24:devel/rubygem-rufus-scheduler \
+		rubygem-rufus-scheduler>=3.3.0:devel/rubygem-rufus-scheduler \
 		rubygem-sidekiq>=4.2.1:devel/rubygem-sidekiq
 
 NO_ARCH=	yes

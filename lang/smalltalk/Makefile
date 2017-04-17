@@ -66,7 +66,7 @@ post-install:
 	@${LN} -sf gst-load.1 ${STAGEDIR}${MANPREFIX}/man/man1/gst-reload.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}/gtk
 	${INSTALL_DATA} ${WRKSRC}/*.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-	@${LS} -1 ${STAGEDIR}${PREFIX}/bin/gst* |grep -v config|xargs ${STRIP_CMD}
+	@${LS} -1 ${STAGEDIR}${PREFIX}/bin/gst* |grep -v config|${XARGS} ${STRIP_CMD}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/smalltalk/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst.so
 

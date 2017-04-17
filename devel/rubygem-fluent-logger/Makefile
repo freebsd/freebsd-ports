@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fluent-logger
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Structured event logger for Ruby
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-msgpack>=0.5.6:devel/rubygem-msgpack
+RUN_DEPENDS=	rubygem-msgpack1>=1.0.0:devel/rubygem-msgpack1
 
 NO_ARCH=	yes
 USE_RUBY=	yes

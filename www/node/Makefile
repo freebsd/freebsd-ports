@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	7.8.0
-PORTREVISION=	1
+PORTVERSION=	7.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -26,7 +25,7 @@ OPTIONS_EXCLUDE+=	DTRACE
 
 OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
 
-BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation #'
+BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
 BUNDLED_SSL_USES_OFF=		ssl
 BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl --openssl-use-def-ca-store
 BUNDLED_SSL_RUN_DEPENDS_OFF=	ca_root_nss>=0:security/ca_root_nss

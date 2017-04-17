@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	peazip
-PORTVERSION=	6.3.1
-PORTREVISION=	1
+PORTVERSION=	6.4.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src

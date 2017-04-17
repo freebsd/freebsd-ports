@@ -19,5 +19,9 @@ with the following notes:
 33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all >> /dev/null 2>&1
 */5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h new >> /dev/null 2>&1
 */5	*	*	*	*	www	cd %%WWWDIR%% && %%PYTHON%% poller-wrapper.py 16 >> /dev/null 2>&1
-15	0	*	*	*	www	sh %%WWWDIR%%/daily.sh >> /dev/null 2>&1
+15	0	*	*	*	www	%%LOCALBASE%%/bin/bash %%WWWDIR%%/daily.sh >> /dev/null 2>&1
 *	*	*	*	*	www	%%PHP%% %%WWWDIR%%/alerts.php >> /dev/null 2>&1
+*/5 	*	*	*	*	www	%%PHP%% %%WWWDIR%%/poll-billing.php >> /dev/null 2>&1
+01	*	*	*	*	www	%%PHP%% %%WWWDIR%%/billing-calculate.php >> /dev/null 2>&1
+*/5	*	*	*	*	www	%%PHP%% %%WWWDIR%%/check-services.php >> /dev/null 2>&1
+

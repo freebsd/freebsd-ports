@@ -35,7 +35,7 @@ post-patch:
 		's|#!/bin/bash|#!/bin/sh|g'
 	@${GREP} -lR "ginstall-info" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|ginstall-info|install-info|g'
-	@${GREP} -lR "%%[[:alpha:]]\+%%" ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
+	@${EGREP} -lR "%%[[:alpha:]]+%%" ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		 -e "s|%%PREFIX%%|${PREFIX}|g" \
 		 -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		 -e "s|%%EXAMPLESDIR%%|\$${PREFIX}/${EXAMPLESDIR_REL}|g" \

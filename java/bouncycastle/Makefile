@@ -8,7 +8,7 @@ CATEGORIES=	java security
 MASTER_SITES=	http://downloads.bouncycastle.org/java/ \
 		http://polydistortion.net/bc/download/ \
 		http://bouncycastle.gva.es/download/
-DISTNAME=	crypto-${DISTVERSION}
+DISTNAME=	crypto-${JARVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
@@ -32,7 +32,7 @@ USE_ANT=	yes
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 MAKE_ARGS=	-f jdk${JDKNVERSION}.xml
 ALL_TARGET=	build-provider build zip-src
-DISTVERSION=	${PORTVERSION:S/.//}
+JARVERSION=	${PORTVERSION:S/.//}
 
 JARS=		bcprov bcmail bctsp bcpg
 
@@ -49,18 +49,18 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for jar in ${JARS}
-	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/jars/${jar}-jdk${JDKNVERSION}-${DISTVERSION}.jar \
+	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/jars/${jar}-jdk${JDKNVERSION}-${JARVERSION}.jar \
 	      ${STAGEDIR}${JAVAJARDIR}/${jar}.jar
-	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}-${DISTVERSION}/src.zip \
+	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}-${JARVERSION}/src.zip \
 	      ${STAGEDIR}${DATADIR}/${jar}-src.zip
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/jars/bcprov-jdk${JDKNVERSION}-${DISTVERSION}.jar \
+	${INSTALL_DATA} ${WRKSRC}/jars/bcprov-jdk${JDKNVERSION}-${JARVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/bcprov.jar
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
 .for jar in ${JARS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${jar}
-	@cd ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}-${DISTVERSION}/docs/ && \
+	@cd ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}-${JARVERSION}/docs/ && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${jar}
 .endfor
 

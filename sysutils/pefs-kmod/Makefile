@@ -17,7 +17,9 @@ MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 		NO_MANCOMPRESS=
 
 ONLY_FOR_ARCHS=	i386 amd64 armv6
-ONLY_FOR_ARCHS_REASON= Untested on any other arch.
+ONLY_FOR_ARCHS_REASON= untested on any other arch
+
+BROKEN_DragonFly=	does not build: don't know how to make vnode_if.h
 
 USES=		kmod uidfix
 
@@ -37,10 +39,12 @@ PLIST_FILES=	sbin/pefs \
 MAKE_ENV+=	PEFS_AESNI=yes
 .endif
 
-.if ${OSVERSION} >= 1100117
+.if ${OPSYS} == FreeBSD
+. if ${OSVERSION} >= 1100117
 PLIST_FILES+=	lib/pam_pefs.so.6
-.else
+. else
 PLIST_FILES+=	lib/pam_pefs.so.5
+. endif
 .endif
 
 .include <bsd.port.mk>

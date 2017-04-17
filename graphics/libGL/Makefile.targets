@@ -4,7 +4,7 @@
 
 post-patch:
 .if ${OPSYS} == FreeBSD
-	@${REINPLACE_CMD} -e 's|x86_64|amd64|' -e 's|\\S\*//|[:space:]* //|' \
+	@${REINPLACE_CMD} -e 's|x86_64|amd64|' \
 		${WRKSRC}/configure
 # Clang 3.4 in 10.x on i386 fails with the following error when using "GCC atomics"
 #
@@ -17,7 +17,7 @@ post-patch:
 .endif
 .else # ${OPSYS} == DragonFly
 #	Sed on dragonfly doesn't support \< or \>
-	@${REINPLACE_CMD} -e 's|\\>//|[[:>:]]//|' -e 's|\\S\*//|[:space:]* //|' \
+	@${REINPLACE_CMD} -e 's|\\>//|[[:>:]]//|' \
 		${WRKSRC}/configure
 .endif # ${OPSYS}
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \

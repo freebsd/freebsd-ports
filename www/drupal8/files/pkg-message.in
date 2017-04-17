@@ -39,4 +39,7 @@ configuration:
 
 For important information about upgrading from previous versions of Drupal, please
 please see: %%DOCSDIR%%/UPDATE.txt
+
+You can install www/drush if you have problems with Drupal update. Drush is a 
+command line tool for Drupal
 ################################################################################

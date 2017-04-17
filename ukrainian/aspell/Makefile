@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aspell
-DISTVERSION=	6-uk-1.4.0-0
+SPELLVERSION=	6-uk-1.4.0-0
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	ukrainian textproc

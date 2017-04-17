@@ -3,8 +3,6 @@
 PORTNAME=	openbor
 PORTVERSION=	3.0.r4432
 CATEGORIES=	games
-MASTER_SITES=	LOCAL/jbeich \
-		https://svn.code.sf.net/p/${PORTNAME}/engine/engine/:svn
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Moddable fighting game engine (aka Beats of Rage)
@@ -18,9 +16,14 @@ LICENSE_FILE_ISCL=	${WRKSRC}/source/webmlib/nestegg/LICENSE
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvpx.so:multimedia/libvpx
 
-USES=		gmake pkgconfig tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	DCurrent
+GH_TAGNAME=	ba1eb4f # git v4432 is actually svn r4437
+
+USES=		gmake pkgconfig
 USE_CSTD=	gnu89
 USE_SDL=	gfx2
+WRKSRC_SUBDIR=	engine
 MAKE_ENV=	BUILD_LINUX=1 SDKPATH="${LOCALBASE}" \
 		GCC_TARGET="${CONFIGURE_TARGET:S/amd64/x86_64/}"
 MAKE_ARGS=	CC="${CC}" LIBRARIES="${LOCALBASE}/lib" \
@@ -50,41 +53,6 @@ TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 TREMOR_MAKE_ARGS=	BUILD_TREMOR=1 BUILD_VORBIS=""
 TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:audio/libvorbis
 
-.include <bsd.port.options.mk>
-
-#
-# To update snapshot: make makesum BOOTSTRAP=
-# Specific snapshot:  make makesum SVN_FETCH= PORTVERSION=1.0.r1234
-#
-.if defined(BOOTSTRAP)
-SVN_REV!=	svn info ${MASTER_SITES:M*\:svn:S/:svn//} | \
-		${SED} -n 's/^Last Changed Rev: //p'
-PORTVERSION:=	${PORTVERSION:R}.r${SVN_REV}
-.else
-SVN_REV?=	${PORTVERSION:E:S/r//}
-.endif
-
-.if defined(BOOTSTRAP) || defined(SVN_FETCH)
-FETCH_DEPENDS+=	svn:devel/subversion
-
-NO_CHECKSUM=	yes
-
-do-fetch:
-	${MKDIR} ${WRKDIR}
-	svn export -r${SVN_REV} ${_MASTER_SITES_svn} ${WRKSRC}
-	(cd ${WRKDIR} && ${TAR} cJvf \
-		${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		--uid 0 --gid 0 ${DISTNAME})
-. ifmake makesum
-	${REINPLACE_CMD} -i '' '/^PORTVERSION=/s/r.*/r${SVN_REV}/' \
-		${MASTERDIR}/Makefile
-. endif
-. if ${USER} == ${MAINTAINER:C/@.*//}
-	-scp ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		freefall.freebsd.org:public_distfiles/
-. endif
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/ -O[0-9]//; s/ -g//; s/ -Werror//' \
 		-e 's/ -fomit-frame-pointer//' \
@@ -97,7 +65,7 @@ post-patch:
 	@${GREP} -Flr 'malloc.h' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		's,malloc\.h,stdlib.h,'
 	@${REINPLACE_CMD} -e 's/^function \(.*\) {/\1() {/' \
-		-e 's/^get_revnum$$/VERSION_BUILD=${SVN_REV}/' \
+		-e 's/^get_revnum$$/VERSION_BUILD=${PORTVERSION:E:S/^r//}/' \
 		${WRKSRC}/version.sh
 
 do-configure:

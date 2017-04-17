@@ -6,7 +6,7 @@ one key of the numpad.  With those keys, windows can be moved directly to
 the desired gravity -- the same can be done with tagging rules in the
 config.
 
-Another unique concept is the strict tagging: Unlike other tiling window
+Another unique concept is the strict tagging: unlike other tiling window
 managers, subtle does not allow weak tagging and always maps windows to
 virtual desktops (called views) with matching tags, regardless of the
 current active view.

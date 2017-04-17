@@ -3,9 +3,9 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang java
-MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
+MASTER_SITES=	GCC/releases/gcc-${PORTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -44,6 +44,9 @@ OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
 OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
+
+JAVA_USES=	python:build shebangfix
+SHEBANG_FILES=	libjava/contrib/aot-compile.in
 
 .if exists(/usr/lib32/libc.so)
 OPTIONS_DEFINE_powerpc64+=	MULTILIB

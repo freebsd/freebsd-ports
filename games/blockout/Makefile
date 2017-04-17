@@ -3,7 +3,7 @@
 
 PORTNAME=	blockout
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BlockOut%20${PORTVERSION}/ \
 		http://www.stasyan.com/devel/distfiles/
@@ -29,6 +29,13 @@ BUILD_WRKSRC=	${WRKSRC}/BlockOut
 
 OPTIONS_DEFINE=	DOCS
 
+DESKTOP_ENTRIES="BlockOut" \
+		"" \
+		"${PREFIX}/share/pixmaps/block_icon.ico" \
+		"${PORTNAME}" \
+		"" \
+		""
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/BlockOut/Utils.cpp
 
@@ -38,6 +45,7 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/BlockOut/blockout ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKDIR}/blockout && ${COPYTREE_SHARE} "images sounds" ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/BlockOut/block_icon.ico ${STAGEDIR}${PREFIX}/share/pixmaps
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

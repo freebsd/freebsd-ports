@@ -1,0 +1,6 @@
+BestInPlace is a jQuery script and a Rails helper that provides the method
+best_in_place to display any object field easily editable for the user by just
+clicking on it. It supports input data, text data, boolean data and custom
+dropdown data. It works with RESTful controllers.
+
+WWW: http://github.com/bernat/best_in_place

@@ -2,6 +2,7 @@
 
 PORTNAME=	Dist-Zilla
 PORTVERSION=	6.009
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-App-Cmd>=0.330:devel/p5-App-Cmd \
-		p5-CPAN-Meta-Requirements>=2.121:devel/p5-CPAN-Meta-Requirements \
 		p5-CPAN-Uploader>=0.103004:devel/p5-CPAN-Uploader \
 		p5-Class-Load>=0.17:devel/p5-Class-Load \
 		p5-Config-MVP>=2.200010:devel/p5-Config-MVP \

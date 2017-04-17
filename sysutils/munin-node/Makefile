@@ -35,12 +35,13 @@ ALL_TARGET=	build-node build-plugins build/node/_bin/munin-async build/node/_bin
 INSTALL_TARGET=	install-node-prime install-async-prime install-plugins-prime
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	SNMP PERL JAVA
-OPTIONS_DEFAULT=	SNMP PERL
+OPTIONS_DEFINE=	SNMP PERL PYTHON JAVA
+OPTIONS_DEFAULT=	SNMP PERL PYTHON
 OPTIONS_SUB=	yes
 SNMP_DESC=	Include SNMP plugins
 PERL_DESC=	Include all Perl modules (adds dependencies)
 JAVA_DESC=	Include JAVA plugins
+PYTHON_DESC=	Include Python plugins
 
 SNMP_BUILD_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
@@ -48,6 +49,7 @@ PERL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
+PYTHON_USES=	python
 JAVA_USE=	java=yes
 JAVA_INSTALL_TARGET=	install-plugins-java
 JAVA_BUILD=	yes

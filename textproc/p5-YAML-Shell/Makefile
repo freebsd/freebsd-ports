@@ -1,11 +1,9 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	YAML-Shell
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:INGY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
