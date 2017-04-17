@@ -132,6 +132,7 @@
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
     SUBDIR += py-libturpial
+    SUBDIR += py-matrix-synapse
     SUBDIR += py-nbxmpp
     SUBDIR += py-punjab
     SUBDIR += py-python-telegram-bot
