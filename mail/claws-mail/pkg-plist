@@ -176,7 +176,6 @@ include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-utils.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-x11-listener.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/gtkhotkey.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/tomboykeybinder.h
-include/claws-mail/plugins/claws-mail/ical.h
 include/claws-mail/plugins/pgpcore/autocompletion.h
 include/claws-mail/plugins/pgpcore/passphrase.h
 include/claws-mail/plugins/pgpcore/pgp_utils.h
