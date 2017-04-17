@@ -137,6 +137,8 @@ LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USES=		ssl
+OPENSSL_VARS=		BROKEN_SSL="libressl libressl-devel" \
+			BROKEN_SSL_REASON="PSK is not provided by LibreSSL"
 
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
@@ -145,10 +147,6 @@ POLARSSL_CONFIGURE_WITH=mbedtls
 POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	requires PSK which is unsupported by the selected LibreSSL
-.endif
 
 post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \
