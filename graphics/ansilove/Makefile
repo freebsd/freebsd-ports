@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansilove
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -34,5 +34,11 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
+
+do-test:
+	@cd ${WRKSRC}/examples/ && for f in *; do \
+		${WRKSRC}/${PORTNAME} -o ${WRKSRC}/out $$f; \
+		${FILE} ${WRKSRC}/out.png | ${GREP} -q 'PNG'; \
+	done
 
 .include <bsd.port.mk>
