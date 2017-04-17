@@ -2228,6 +2228,9 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-name.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-numeric.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-old-name.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-special-lowercase.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-special-titlecase.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-special-uppercase.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-titlecase.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/uni-uppercase.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/international/utf-7.el.gz
@@ -3554,6 +3557,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/ispell.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/makeinfo.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/makeinfo.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/mhtml-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/mhtml-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/nroff-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/nroff-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/page-ext.el.gz

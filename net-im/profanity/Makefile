@@ -31,4 +31,10 @@ OPTIONS_DEFINE=	NOTIFY
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=notifications
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} "s,python-config,${PYTHON_VERSION}-config,g" \
+		${WRKSRC}/configure.ac
+
+.include <bsd.port.post.mk>

@@ -10,7 +10,7 @@ COMMENT=	Irssi plugin for connecting to ICB network
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/irssi/src/common.h:irc/irssi:irc/irssi
+BUILD_DEPENDS=	${LOCALBASE}/include/irssi/src/common.h:irc/irssi
 RUN_DEPENDS=	irssi:irc/irssi
 
 USES=		autoreconf libtool pkgconfig

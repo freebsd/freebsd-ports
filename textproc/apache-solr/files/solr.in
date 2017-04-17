@@ -54,8 +54,8 @@ solr_status ()
 	su -m solr -c "${command} status"
 }
 
-# add %%PREFIX%%/bin to path
-export PATH=$PATH:%%PREFIX%%/bin
+# add %%LOCALBASE%%/[bin|sbin] to path
+export PATH=$PATH:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
 # let the start script read some custom settings
 export SOLR_INCLUDE=/usr/local/etc/solr.in.sh
 

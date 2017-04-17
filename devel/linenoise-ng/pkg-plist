@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 include/linenoise.h
 lib/liblinenoise.a

@@ -7604,7 +7604,6 @@ multimedia/avidemux26-qt4|multimedia/avidemux-qt4|2015-06-13|Renamed
 editors/zim|deskutils/zim|2015-06-18|Move to more appropriate category
 net/py-ldap2|net/py-ldap|2015-06-18|Rename to better match upstream name
 devel/erlang-mustache|devel/erlang-bbmustache|2015-06-21|Renamed upstream
-security/py-backports.ssl_match_hostname||2015-06-23|This functionality was backported to python 2.7.9
 dns/maradns1|dns/maradns|2015-06-23|Has expired: MaraDNS 1 end-of-life: June 21, 2015, use dns/maradns
 net/py-soappy-devel||2015-06-25|Please use net/py-soappy instead. It's fresher than -devel
 devel/armv6-freebsd10.0-xdev||2015-06-27|Not usable for the purpose it has been intended for
@@ -9235,3 +9234,6 @@ graphics/py-opencv2|graphics/py-opencv|2017-04-14|Revert previous rename
 databases/pgpool-II-22|databases/pgpool|2017-04-14|Has expired: Deprecated by upstream; use database/pgpool instead
 databases/pgpool-II-23|databases/pgpool|2017-04-14|Has expired: Deprecated by upstream; use database/pgpool instead
 net/py-matrix-synapse|net-im/py-matrix-synapse|2017-04-17|Move to net-im which is a more appropriate category
+graphics/shiva-collections||2017-04-17|Has expired: Project is dead and has no end user
+graphics/opengtl||2017-04-17|Has expired: Project is dead, has no end user, and relies on EOLed LLVM
+graphics/qtgtl||2017-04-17|Has expired: Project is dead and has had no consumer for over a year
