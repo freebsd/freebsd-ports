@@ -136,7 +136,6 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/japanese/errmsg.sys
 %%DATADIR%%/korean/errmsg.sys
 %%DATADIR%%/magic
-%%DATADIR%%/my-default.cnf
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/mysql_security_commands.sql
