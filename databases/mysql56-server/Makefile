@@ -2,8 +2,7 @@
 # $FreeBSD: head/databases/mysql56-server/Makefile 431975 2017-01-20 18:21:49Z feld $
 
 PORTNAME?=	mysql
-PORTVERSION=	5.6.35
-PORTREVISION?=	7
+PORTVERSION=	5.6.36
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.6
 PKGNAMESUFFIX?=	56-server
