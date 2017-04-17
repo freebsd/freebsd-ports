@@ -10,6 +10,11 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20170417:
+AUTHOR:	kwm@FreeBSD.org
+
+  New USES: meson, to handle properly the meson building system.
+  
 20170313:
 AUTHOR: tijl@FreeBSD.org
 
