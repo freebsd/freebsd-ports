@@ -1229,6 +1229,7 @@
     SUBDIR += libafterbase
     SUBDIR += liballium
     SUBDIR += libantlr3c
+    SUBDIR += libaravis
     SUBDIR += libarea
     SUBDIR += libarena
     SUBDIR += libassa
