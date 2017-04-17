@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 
+DEPRECATED=	Use graphics/rubygem-gemojione instead
+EXPIRATION_DATE=2017-04-30
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
