@@ -3,6 +3,7 @@
 
 PORTNAME=	sass
 PORTVERSION=	3.4.23
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
@@ -14,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	extra/sass-spec-ref.sh
 
 PLIST_FILES=	bin/sass bin/sass-convert bin/scss
 
