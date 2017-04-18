@@ -32,6 +32,7 @@ include/aubio/pitch/pitchschmitt.h
 include/aubio/pitch/pitchspecacf.h
 include/aubio/pitch/pitchyin.h
 include/aubio/pitch/pitchyinfft.h
+include/aubio/spectral/awhitening.h
 include/aubio/spectral/fft.h
 include/aubio/spectral/filterbank.h
 include/aubio/spectral/filterbank_mel.h
@@ -57,8 +58,9 @@ include/aubio/vecutils.h
 lib/libaubio.a
 lib/libaubio.so
 lib/libaubio.so.5
-lib/libaubio.so.5.1.5
+lib/libaubio.so.5.2.6
 libdata/pkgconfig/aubio.pc
+man/man1/aubio.1.gz
 man/man1/aubiocut.1.gz
 man/man1/aubiomfcc.1.gz
 man/man1/aubionotes.1.gz
