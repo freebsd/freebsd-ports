@@ -3,7 +3,7 @@
 
 PORTNAME=	tmda
 PORTVERSION=	1.1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail python
 MASTER_SITES=	ftp://tmda.net/pub/tmda/releases/ \
 		LOCAL/sergei
@@ -15,7 +15,10 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python shebangfix tar:tgz
-SHEBANG_FILES=	contrib/tofmipd.init
+SHEBANG_FILES=	bin/tmda-* contrib/collectaddys contrib/def2html \
+		contrib/printcdb contrib/printdbm contrib/smtp-check-sender \
+		contrib/tofmipd.init
+
 SUB_FILES=	pkg-message
 NO_ARCH=	yes
 
@@ -27,7 +30,8 @@ SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
 		vpopmail-vdir.sh wrapfd3.sh
 
 OPTIONS_DEFINE=	CDB DOCS EXAMPLES
-CDB_RUN_DEPENDS=${PYTHON_SITELIBDIR}/cdbmodule.so:databases/py-cdb
+
+CDB_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:databases/py-cdb
 
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} ./compileall
