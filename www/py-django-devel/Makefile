@@ -2,6 +2,7 @@
 
 PORTNAME=	django
 PORTVERSION=	${SNAPSHOTDATE}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +16,11 @@ LICENSE=	BSD3CLAUSE
 
 SNAPSHOTDATE=	20150709
 
-USES=		cpe gettext python
+USES=		cpe gettext python shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	django/conf/project_template/manage.py \
+		django/bin/django-admin.py
 
 GH_TAGNAME=	c954931
 

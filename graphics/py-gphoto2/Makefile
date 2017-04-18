@@ -2,6 +2,7 @@
 
 PORTNAME=	gphoto2
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
-USES=		pkgconfig python
+USES=		pkgconfig python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
+SHEBANG_FILES=	examples/*.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
