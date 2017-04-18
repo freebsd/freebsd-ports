@@ -423,6 +423,7 @@ REDIS_DESC?=		Redis key-value store database support
 REGEX_DESC?=		Regular expression support
 RESIN3_DESC?=		Resin 3.x support
 RTMP_DESC?=		RTMP protocol support via librtmp
+RTMPDUMP_DESC?=		RTMP protocol support via rtmpdump
 RUBY_DESC?=		Ruby bindings or support
 SAMPLERATE_DESC?=	Sample rate conversion support
 SANE_DESC?=		SANE API scanner support
