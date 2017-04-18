@@ -9,5 +9,9 @@ case $2 in
 POST-INSTALL)
 	/bin/ln -f ${PREFIX}/lib/xorg/modules/extensions/.nvidia/libglx.so.1 \
 		${PREFIX}/lib/xorg/modules/extensions/libglx.so
+	# Enable loading the nvidia binary driver
+	sysrc -f /etc/rc.conf kldload_nvidia="nvidia-modeset nvidia"
 	;;
 esac
+
+
