@@ -3,28 +3,25 @@
 
 PORTNAME=	libbinio
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Binary I/O stream class library
 
 LICENSE=	LGPL21
 
-USES=		pathfix libtool
+USES=		autoreconf libtool pathfix
 GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-CFLAGS+=	${CPPFLAGS}
-CXXFLAGS+=	${CPPFLAGS}
+GH_ACCOUNT=	adplug
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src|' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
