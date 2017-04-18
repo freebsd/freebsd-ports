@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+case $2 in
+	POST-INSTALL) # Enable loading the VirtualBox Driver
+		sysrc -f /etc/rc.conf kldload_vbox="vboxdrv"
+		sysrc -f /etc/rc.conf vboxnet_enable="YES"
+		;;
+esac
