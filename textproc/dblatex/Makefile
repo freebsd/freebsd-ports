@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook to LaTeX/ConTeXt Publishing
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty:print/texlive-texmf
 RUN_DEPENDS=	xsltproc:textproc/libxslt \
@@ -33,7 +34,7 @@ post-patch-DOCS-off:
 
 post-install:
 	# shebangfix can't be used because dblatex is built from scratch
-	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PREFIX}/bin/python2|' \
+	@${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PREFIX}/bin/python2|' \
 		${STAGEDIR}${PREFIX}/bin/dblatex
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -42,7 +42,7 @@ OPTIONS_DEFAULT=	DEBUG DPD NATT FRAG HYBRID
 ADMINPORT_DESC=	Enable Admin port
 STATS_DESC=	Statistics logging function
 DPD_DESC=	Dead Peer Detection
-NATT_DESC=	NAT-Traversal (kernel-patch required)
+NATT_DESC=	NAT-Traversal (kernel-patch required before 11.0-STABLE)
 NATTF_DESC=	require NAT-Traversal (fail without kernel-patch)
 FRAG_DESC=	IKE fragmentation payload support
 HYBRID_DESC=	Hybrid, Xauth and Mode-cfg support
@@ -64,7 +64,7 @@ STATS_CONFIGURE_ENABLE=	stats
 DPD_CONFIGURE_ENABLE=	dpd
 NATTF_VARS=		NATT=yes
 NATTF_VARS_OFF=		NATT=kernel
-NATT_CONFIGURE_ON=	--enable-natt=${NATT}
+NATT_CONFIGURE_ON=	--enable-natt=${NATT} --enable-natt-versions=rfc
 NATT_CONFIGURE_OFF=	--disable-natt
 FRAG_CONFIGURE_ENABLE=	frag
 HYBRID_CONFIGURE_ENABLE=hybrid
@@ -81,6 +81,7 @@ SAUNSPEC_CONFIGURE_ENABLE=	samode-unspec
 RC5_CONFIGURE_ENABLE=		rc5
 IDEA_CONFIGURE_ENABLE=		idea
 WCPSKEY_EXTRA_PATCHES=		${FILESDIR}/wildcard-psk.diff
+NATT_EXTRA_PATCHES=		${FILESDIR}/natt.diff
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/-Werror//g ; s/-R$$libdir/-Wl,-rpath=$$libdir/g" ${WRKSRC}/configure

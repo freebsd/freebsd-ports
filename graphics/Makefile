@@ -296,6 +296,7 @@
     SUBDIR += gracula
     SUBDIR += grads
     SUBDIR += grafx2
+    SUBDIR += graphene
     SUBDIR += graphite2
     SUBDIR += graphopt
     SUBDIR += graphos
