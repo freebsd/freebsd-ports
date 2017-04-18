@@ -69,11 +69,11 @@ post-patch:
 	@${RM} ${WRKSRC}/docs/imaprc.txt.bak
 
 pre-build:
-	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
+	@${SH} ${FILESDIR}/pkg-req.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
 .if ${PORT_OPTIONS:MSSL}
-	@${SH} ${PKGREQ}.ssl ${LOCALBASE}/include/c-client/portrevision.h yes
+	@${SH} ${FILESDIR}/pkg-req.ssl ${LOCALBASE}/include/c-client/portrevision.h yes
 .else
-	@${SH} ${PKGREQ}.ssl ${LOCALBASE}/include/c-client/portrevision.h no
+	@${SH} ${FILESDIR}/pkg-req.ssl ${LOCALBASE}/include/c-client/portrevision.h no
 .endif
 
 do-install:
