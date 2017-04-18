@@ -3,7 +3,7 @@
 
 PORTNAME=	nucleo
 PORTVERSION=	0.7.6
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/nucleo/
 
@@ -11,21 +11,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit to explore video and human-computer interaction
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libpng.so:graphics/png \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libexpat.so:textproc/expat2
 
-USES=		gmake jpeg libtool pathfix pkgconfig shebangfix tar:bzip2
-USE_GL=		glu
+USES=		gmake jpeg libtool localbase:ldflags pathfix pkgconfig python:run shebangfix tar:bzip2
+USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-opencv
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	docs/MacOSX/nBundle.in
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	FFMPEG GD GNUTLS QT4
 OPTIONS_RADIO=	DNSSD
