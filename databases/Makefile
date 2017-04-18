@@ -846,6 +846,7 @@
     SUBDIR += riak
     SUBDIR += riak2
     SUBDIR += rocksdb
+    SUBDIR += rocksdb-lite
     SUBDIR += rrdman
     SUBDIR += rrdmerge
     SUBDIR += rrdtool
