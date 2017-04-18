@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	PyWavelets
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pywt
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Discrete Wavelet Transforms in Python
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow
 
 USE_GITHUB=	yes
-GH_PROJECT=	${DISTNAME}
+GH_PROJECT=	pywt
 
 USES=		cpe python
 USE_PYTHON=	autoplist distutils

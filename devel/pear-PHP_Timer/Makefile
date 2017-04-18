@@ -2,18 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_Timer
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.9
 CATEGORIES=	devel pear
-MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Utility class for timing
 
-BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
-RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	pear
-PEAR_CHANNEL=	phpunit
+USE_GITHUB=	yes
+GH_ACCOUNT= sebastianbergmann
+GH_PROJECT=	php-timer
+
+NO_BUILD=	yes
+
+PHP_DIR=	share/PHP
+
+PLIST_FILES=	${PHP_DIR}/${PORTNAME}/Timer.php
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/src/Timer.php \
+		${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
 
 .include <bsd.port.mk>

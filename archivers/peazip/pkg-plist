@@ -61,6 +61,7 @@ share/pixmaps/peazip.png
 %%DATADIR%%/res/themes/seven.theme.7z
 %%DATADIR%%/res/themes/ten-embedded/fm-theme.bmp
 %%DATADIR%%/res/themes/ten-embedded/note.readme
+%%DATADIR%%/res/themes/ten-legacy.theme.7z
 %%DATADIR%%/res/themes/ten.theme.7z
 %%7Z%%%%DATADIR%%/res/7z/7z
 %%ARC%%%%DATADIR%%/res/arc/arc

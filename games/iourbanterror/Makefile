@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	iourbanterror
-PORTVERSION=	${GAMEVERSION}.${DISTVERSION}
+PORTVERSION=	${GAMEVERSION}.${IOQUAKE3VER}
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games
-DISTNAME=	ioquake3-${DISTVERSION}
+DISTNAME=	ioquake3-${IOQUAKE3VER}
 
 MAINTAINER=	kami@FreeBSD.org
 COMMENT=	Quake 3 engine modified for Urban Terror (based on ioquake3)

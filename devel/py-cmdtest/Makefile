@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmdtest
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	devel
 MASTER_SITES=	http://git.liw.fi/cgi-bin/cgit/cgit.cgi/cmdtest/snapshot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

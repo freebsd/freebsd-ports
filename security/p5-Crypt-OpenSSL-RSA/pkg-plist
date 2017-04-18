@@ -1,4 +1,3 @@
-%%PERL5_MAN3%%/Crypt::OpenSSL::RSA.3.gz
 %%SITE_ARCH%%/Crypt/OpenSSL/RSA.pm
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.so
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/RSA/autosplit.ix
@@ -6,3 +5,4 @@
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/RSA/import_random_seed.al
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/RSA/new_key_from_parameters.al
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/RSA/new_public_key.al
+%%PERL5_MAN3%%/Crypt::OpenSSL::RSA.3.gz

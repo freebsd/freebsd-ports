@@ -1,6 +1,6 @@
---- psutil/arch/bsd/freebsd_socks.c.orig	2017-03-21 00:28:50.234080000 -0700
-+++ psutil/arch/bsd/freebsd_socks.c	2017-03-21 00:35:53.545508000 -0700
-@@ -112,10 +112,17 @@
+--- psutil/arch/bsd/freebsd_socks.c.orig	2017-03-26 08:09:27 UTC
++++ psutil/arch/bsd/freebsd_socks.c
+@@ -112,10 +112,17 @@ psutil_sockaddr_matches(int family, int 
  }
  
  
@@ -18,7 +18,7 @@
      struct xinpgen *xig, *oxig;
      struct xsocket *so;
  
-@@ -123,9 +130,15 @@
+@@ -123,9 +130,15 @@ psutil_search_tcplist(char *buf, struct 
      for (xig = (struct xinpgen *)((char *)xig + xig->xig_len);
              xig->xig_len > sizeof(struct xinpgen);
              xig = (struct xinpgen *)((char *)xig + xig->xig_len)) {
@@ -34,7 +34,7 @@
  
          if (so->so_type != kif->kf_sock_type ||
                  so->xso_family != kif->kf_sock_domain ||
-@@ -208,7 +221,11 @@
+@@ -208,7 +221,11 @@ int psutil_gather_inet(int proto, PyObje
      struct xinpgen *xig, *exig;
      struct xinpcb *xip;
      struct xtcpcb *xtp;
@@ -46,7 +46,7 @@
      struct xsocket *so;
      const char *varname = NULL;
      size_t len, bufsize;
-@@ -273,8 +290,13 @@
+@@ -273,8 +290,13 @@ int psutil_gather_inet(int proto, PyObje
                      goto error;
                  }
                  inp = &xtp->xt_inp;
@@ -60,7 +60,7 @@
                  break;
              case IPPROTO_UDP:
                  xip = (struct xinpcb *)xig;
-@@ -283,7 +305,11 @@
+@@ -283,7 +305,11 @@ int psutil_gather_inet(int proto, PyObje
                                   "struct xinpcb size mismatch");
                      goto error;
                  }
@@ -72,7 +72,7 @@
                  so = &xip->xi_socket;
                  status = PSUTIL_CONN_NONE;
                  break;
-@@ -477,7 +503,11 @@
+@@ -477,7 +503,11 @@ psutil_proc_connections(PyObject *self, 
      struct kinfo_file *freep = NULL;
      struct kinfo_file *kif;
      char *tcplist = NULL;

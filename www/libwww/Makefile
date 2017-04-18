@@ -22,15 +22,11 @@ USES=		gmake libtool perl5 ssl tar:tgz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
+BROKEN_SSL=		openssl-devel
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/modules/expat/xmlparse/xmlparse.h \
 		${STAGEDIR}${PREFIX}/include/w3c-libwww/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

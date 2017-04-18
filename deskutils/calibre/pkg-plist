@@ -543,7 +543,6 @@ lib/calibre/calibre/ebooks/pdf/render/links.py
 lib/calibre/calibre/ebooks/pdf/render/serialize.py
 lib/calibre/calibre/ebooks/pdf/render/test.py
 lib/calibre/calibre/ebooks/pdf/render/toc.py
-lib/calibre/calibre/ebooks/pdf/writer.py
 lib/calibre/calibre/ebooks/pml/__init__.py
 lib/calibre/calibre/ebooks/pml/pmlconverter.py
 lib/calibre/calibre/ebooks/pml/pmlml.py
@@ -1595,7 +1594,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/catalog/template.xhtml
 %%DATADIR%%/coffee-script.js
 %%DATADIR%%/compiled_coffeescript.zip
-%%DATADIR%%/content-server/autoreload.js
+%%DATADIR%%/content-server/calibre.appcache
 %%DATADIR%%/content-server/calibre.png
 %%DATADIR%%/content-server/empty.html
 %%DATADIR%%/content-server/index-generated.html

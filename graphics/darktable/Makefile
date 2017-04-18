@@ -96,8 +96,8 @@ WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 && ${CHOSEN_COMPILER_TYPE} == clang
-# Enable OpenMP support with Clang 3.9.
-LLVM_VER=	39
+# Enable OpenMP support with Clang 4.0.
+LLVM_VER=	40
 BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 
 CPP=		clang-cpp${LLVM_VER}

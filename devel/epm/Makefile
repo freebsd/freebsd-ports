@@ -10,15 +10,16 @@ EXTRACT_SUFX=	-source.tar.bz2
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Free UNIX software/file packaging program
 
-LICENSE=	GPLv2
-
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mkepmlist
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mkepmlist
 
 .include <bsd.port.mk>

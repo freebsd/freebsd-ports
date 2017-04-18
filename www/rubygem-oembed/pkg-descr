@@ -1,0 +1,8 @@
+oEmbed is a format for allowing an embedded representation of a URL on third
+party sites. The simple API allows a website to display embedded content (such
+as photos or videos) when a user posts a link to that resource, without having
+to parse the resource directly.  This gem is a simple-to-use and slim library to
+work with oEmbed format. It has no external dependencies at runtime.  All you
+need to have is Ruby itself.
+
+WWW: http://soulim.github.com/oembed/

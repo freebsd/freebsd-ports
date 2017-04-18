@@ -13,14 +13,16 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage
+TEST_DEPENDS=	${LOCALBASE}/lib/libcmocka.so:sysutils/cmocka
 
-USES=		desktop-file-utils gmake
+USES=		desktop-file-utils localbase gmake
 USE_SDL=	sdl2 ttf2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eXeC64
 
 ALL_TARGET=	imv
+TEST_TARGET=	check
 
 MAKE_ARGS=	V=1
 

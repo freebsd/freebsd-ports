@@ -3,7 +3,7 @@
 
 PORTNAME=	Net
 PORTVERSION=	3.10
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
@@ -15,9 +15,8 @@ COMMENT=	Perl5 modules to access and use network protocols
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-
-BUILD_DEPENDS=	p5-Socket>=2.016:net/p5-Socket
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE_FILE_ART10=	${WRKSRC}/Artistic
+LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
 OPTIONS_DEFINE=	SASL SSL
 OPTIONS_DEFAULT=SASL SSL
@@ -33,4 +32,11 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502200
+BUILD_DEPENDS+=	p5-Socket>=2.016:net/p5-Socket
+RUN_DEPENDS+=	p5-Socket>=2.016:net/p5-Socket
+.endif
+
+.include <bsd.port.post.mk>

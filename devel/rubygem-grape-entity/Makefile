@@ -19,6 +19,4 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
-PORTSCOUT=	ignore
-
 .include <bsd.port.mk>

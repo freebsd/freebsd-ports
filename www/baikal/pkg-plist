@@ -376,6 +376,7 @@
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Auth/Backend/BackendInterface.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Auth/Backend/BasicCallBack.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Auth/Backend/File.php
+%%WWWDIR%%/vendor/sabre/dav/lib/DAV/Auth/Backend/IMAP.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Auth/Backend/PDO.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Auth/Plugin.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Browser/GuessContentType.php

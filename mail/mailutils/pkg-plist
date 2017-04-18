@@ -40,7 +40,6 @@ bin/movemail
 bin/popauth
 bin/readmsg
 bin/sieve
-%%GUILE%%bin/sieve2scm
 include/mailutils/acl.h
 include/mailutils/address.h
 include/mailutils/alloc.h
@@ -64,6 +63,7 @@ include/mailutils/errno.h
 include/mailutils/error.h
 include/mailutils/filter.h
 include/mailutils/folder.h
+include/mailutils/gitinfo.h
 include/mailutils/glob.h
 include/mailutils/gsasl.h
 include/mailutils/guile.h
@@ -165,7 +165,7 @@ include/mailutils/url.h
 include/mailutils/util.h
 include/mailutils/version.h
 include/mailutils/wordsplit.h
-%%GUILE%%lib/libguile-mailutils-v-3.2.so
+%%GUILE%%lib/libguile-mailutils-v-3.2.91.so
 lib/libmailutils.a
 lib/libmailutils.so
 lib/libmailutils.so.5
@@ -315,12 +315,6 @@ share/aclocal/mailutils.m4
 %%MH%%%%EMACS%%share/emacs/site-lisp/mailutils-mh.elc
 %%GUILE%%share/guile/site/mailutils/guile-procedures.txt
 %%GUILE%%share/guile/site/mailutils/mailutils.scm
-%%GUILE%%share/guile/site/mailutils/sieve-core.scm
-%%GUILE%%share/guile/site/mailutils/sieve-modules/mimeheader.scm
-%%GUILE%%share/guile/site/mailutils/sieve-modules/numaddr.scm
-%%GUILE%%share/guile/site/mailutils/sieve-modules/redirect.scm
-%%GUILE%%share/guile/site/mailutils/sieve-modules/reject.scm
-%%GUILE%%share/guile/site/mailutils/sieve-modules/vacation.scm
 %%NLS%%share/locale/ca/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/da/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/de/LC_MESSAGES/mailutils.mo

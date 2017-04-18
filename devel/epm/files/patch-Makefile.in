@@ -1,6 +1,15 @@
---- ./Makefile.in.orig	2010-12-29 18:32:40.000000000 +0100
-+++ ./Makefile.in	2013-10-04 12:12:25.004564898 +0200
-@@ -169,48 +169,48 @@
+--- Makefile.in.orig	2014-02-03 02:39:49 UTC
++++ Makefile.in
+@@ -72,8 +72,6 @@ VPATH		=	$(srcdir)
+ # Rules...
+ #
+ 
+-.SILENT:
+-
+ .SUFFIXES:	.c .cxx .h .o
+ .c.o:
+ 	echo Compiling $<...
+@@ -171,48 +169,48 @@ clang-changes:
  
  install: all @INSTALL_GUIS@ @INSTALL_OSX@
  	echo Installing EPM programs in $(bindir)

@@ -2,7 +2,7 @@
 
 PORTNAME=	qmake
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -13,7 +13,10 @@ USE_QT5=	# empty
 USES=		compiler:c++11-lib pkgconfig shebangfix
 SHEBANG_FILES=	util/harfbuzz/update-harfbuzz \
 		util/unicode/x11/makeencodings \
-		src/3rdparty/freetype/src/tools/afblue.pl
+		src/3rdparty/freetype/src/tools/afblue.pl \
+		mkspecs/features/data/mac/objc_namespace.sh \
+		mkspecs/macx-ios-clang/ios_destinations.sh \
+		mkspecs/macx-ios-clang/ios_devices.pl
 QT_DIST=	base
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes

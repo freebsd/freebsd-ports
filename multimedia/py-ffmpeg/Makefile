@@ -7,8 +7,6 @@ PORTREVISION=	5
 CATEGORIES=	multimedia python
 MASTER_SITES=	GH LOCAL/dbn/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-# Should not be setting DISTNAME, USE_GITHUB already sets a very nice and unique distname.
-DISTNAME=	${PORTNAME}-android-${PORTVERSION}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Python bindings for FFmpeg
@@ -19,14 +17,17 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	cython:lang/cython
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
+DEPRECATED=	Depreciated upstream in favour of ffpyplayer
+EXPIRATION_DATE=2017-06-31
+
 MAKE_ENV=	FFMPEG_LIBRARIES="SDL SDL_mixer" FFMPEG_LIBRARY_DIRS=${LOCALBASE}/lib \
 		FFMPEG_INCLUDES=${LOCALBASE}/include/SDL FFMPEG_ROOT=${LOCALBASE}
 GH_ACCOUNT=	tito
 GH_PROJECT=	${PORTNAME}-android
 GH_TAGNAME=	6636c3a
 USE_GITHUB=	yes
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 USE_SDL=	mixer
 WRKSRC_SUBDIR=	python
 

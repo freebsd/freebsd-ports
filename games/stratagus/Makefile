@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	stratagus
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
-MASTER_SITES=	http://launchpadlibrarian.net/200661330/
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
@@ -15,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtolua++-${LUA_VER}.so:lang/tolua++
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Wargus
 
 USE_GL=		gl glu
 USE_SDL=	sdl
@@ -31,34 +33,31 @@ OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS X11 FLUIDSYNTH DOCS
 OPTIONS_DEFAULT=MIKMOD MNG THEORA VORBIS X11 FLUIDSYNTH
 
 MIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
-MIKMOD_CMAKE_ON=	-DWITH_MIKMOD:BOOL=ON
-MIKMOD_CMAKE_OFF=	-DWITH_MIKMOD:BOOL=OFF
+MIKMOD_CMAKE_BOOL=	WITH_MIKMOD
 
 MNG_DESC=		MNG image library support
 MNG_LIB_DEPENDS=	libmng.so:graphics/libmng
-MNG_CMAKE_ON=		-DWITH_MNG:BOOL=ON
-MNG_CMAKE_OFF=		-DWITH_MNG:BOOL=OFF
+MNG_CMAKE_BOOL=		WITH_MNG
 
 THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
-THEORA_CMAKE_ON=	-DWITH_THEORA:BOOL=ON
-THEORA_CMAKE_OFF=	-DWITH_THEORA:BOOL=OFF
+THEORA_CMAKE_BOOL=	WITH_THEORA
 
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
-VORBIS_CMAKE_ON=	-DWITH_OGGVORBIS:BOOL=ON
-VORBIS_CMAKE_OFF=	-DWITH_OGGVORBIS:BOOL=OFF
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+			libogg.so:audio/libogg
+VORBIS_CMAKE_BOOL=	WITH_OGGVORBIS
 
 X11_DESC=		X11 clipboard pasting support
 X11_USE=		XORG=x11
-X11_CMAKE_ON=		-DWITH_X11:BOOL=ON
-X11_CMAKE_OFF=		-DWITH_X11:BOOL=OFF
+X11_CMAKE_BOOL=		WITH_X11
 
 FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
-FLUIDSYNTH_CMAKE_ON=	-DWITH_FLUIDSYNTH:BOOL=ON
-FLUIDSYNTH_CMAKE_OFF=	-DWITH_FLUIDSYNTH:BOOL=OFF
+FLUIDSYNTH_CMAKE_BOOL=	WITH_FLUIDSYNTH
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/stratagus.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "[a-z]*.html *.txt graphics scripts" \
+
+post-install-DOCS-on:
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "[a-z]*.html *.txt graphics scripts" \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

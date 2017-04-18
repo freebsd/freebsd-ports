@@ -364,7 +364,6 @@ sbin/safe_asterisk
 %%DATADIR%%/scripts/ast_coredumper
 %%DATADIR%%/scripts/ast_logescalator
 %%DATADIR%%/scripts/ast_loggrabber
-%%DATADIR%%/scripts/refcounter.py
 %%DATADIR%%/static-http/appdocsxml.xslt
 %%DATADIR%%/static-http/ajamdemo.html
 %%DATADIR%%/static-http/astman.css

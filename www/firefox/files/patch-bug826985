@@ -149,7 +149,7 @@ index d46b5aa..e452223 100644
    'targets': [
      {
        'target_name': 'video_capture_module',
-@@ -75,6 +78,19 @@
+@@ -76,6 +76,19 @@
                  'linux/video_capture_linux.cc',
                  'linux/video_capture_linux.h',
                ],
@@ -166,7 +166,7 @@ index d46b5aa..e452223 100644
 +                  ],
 +                }],
 +              ],
-             }],  # linux
+             }],
              ['OS=="mac"', {
                'sources': [
 diff --git toolkit/library/moz.build toolkit/library/moz.build

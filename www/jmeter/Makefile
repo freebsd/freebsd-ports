@@ -38,7 +38,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf	\
 		${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j	\
 		${JAVALIBDIR}/xmlgraphics-commons.jar:graphics/xmlgraphics-commons	\
 		${JAVALIBDIR}/xstream.jar:textproc/xstream	\
-		${JAVALIBDIR}/../rhino/rhino.jar:lang/rhino
+		${LOCALBASE}/share/java/rhino/rhino.jar:lang/rhino
 
 USES=		tar:tgz
 USE_JAVA=	yes

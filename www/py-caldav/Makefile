@@ -2,6 +2,7 @@
 
 PORTNAME=	caldav
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,5 +15,10 @@ LICENSE_COMB=	dual
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}lxml>=3.6.0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}vobject>=0.8.1:deskutils/py-vobject
 
 .include <bsd.port.mk>

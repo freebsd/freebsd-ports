@@ -3,12 +3,9 @@
 
 PORTNAME=	kermit
 PORTVERSION=	9.0.304
-DISTVERSIONPREFIX=	cku
-DISTVERSION=	304
-DISTVERSIONSUFFIX=	dev20
 CATEGORIES=	comms ftp net
 MASTER_SITES=	ftp://ftp.kermitproject.org/kermit/test/tar/
-DISTNAME=	${DISTVERSIONPREFIX}${DISTVERSION}-${DISTVERSIONSUFFIX}
+DISTNAME=	cku${PORTVERSION:E}-dev20
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Portable scriptable network and serial communication program

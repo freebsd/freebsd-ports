@@ -1,0 +1,12 @@
+HttpAcceptLanguage is a gem, which helps you detect the users preferred
+language, as sent by the "Accept-Language" HTTP header.
+
+The algorithm is based on RFC 2616, with one exception: when a user requests
+"en-US" and "en" is an available language, "en" is deemed compatible with
+"en-US". The RFC specifies that the requested language must either exactly match
+the available language or must exactly match a prefix of the available
+language. This means that when the user requests "en" and "en-US" is available,
+"en-US" would be compatible, but not the other way around. This is usually not
+what you're looking for.
+
+WWW: https://github.com/iain/http_accept_language/

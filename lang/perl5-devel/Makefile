@@ -5,12 +5,13 @@ PORTNAME=	perl
 PORTREVISION=	0
 # XXX Remove second line, uncomment first
 #DISTVERSION=	${PERL_VERSION}
+DISTVERSIONPREFIX=	v
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
+DISTVERSIONSUFFIX=	${GH_TAGNAME:C/.*-g/-g/}
 CATEGORIES=	lang devel perl5
 # XXX Leave only CPAN.
-MASTER_SITES=	LOCAL/mat/perl GH CPAN/../../src/5.0
-# XXX Remove DISTNAME
-DISTNAME=	${PORTNAME}-${DISTVERSION}
+MASTER_SITES=	LOCAL/mat/perl GH
+#MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
 
 # XXX -> perl@

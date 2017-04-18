@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	align
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.5
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/ \
+MASTER_SITES=	https://kinzler.com/me/align/ \
 		http://bitrote.org/distfiles/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Text column alignment filter
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
 

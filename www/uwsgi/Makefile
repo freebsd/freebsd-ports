@@ -13,39 +13,9 @@ COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python ssl
+USES=		pkgconfig python ssl
 USE_PYTHON=	distutils
 USE_RC_SUBR=	uwsgi
-
-USERS=	uwsgi
-GROUPS=	uwsgi
-
-OPTIONS_DEFINE=	DEBUG JSON PCRE XML
-
-DEBUG_VARS=	PYDISTUTILS_BUILDARGS+=--debug
-JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJSON}
-O_JSON=		jansson
-.else
-O_JSON=		false
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-O_PCRE=		true
-.else
-O_PCRE=		false
-.endif
-
-.if ${PORT_OPTIONS:MXML}
-O_XML=		libxml2
-.else
-O_XML=		false
-.endif
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	${OPENSSL_LDFLAGS}
@@ -55,18 +25,40 @@ PYSETUP=			uwsgiconfig.py
 PYDISTUTILS_BUILD_TARGET=	--build
 PYDISTUTILS_BUILDARGS=		--verbose
 
+USERS=		uwsgi
+GROUPS=		uwsgi
+
 PLIST_FILES=	bin/uwsgi \
 		%%PYTHON_SITELIBDIR%%/uwsgidecorators.py
 
+OPTIONS_DEFINE=	DEBUG JSON PCRE XML
+
+DEBUG_VARS=		PYDISTUTILS_BUILDARGS+=--debug
+
+JSON_VARS=		BUILDCONF_JSON=jansson
+JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
+
+PCRE_VARS=		BUILDCONF_PCRE=true
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+
+XML_VARS=		BUILDCONF_XML=libxml2
+XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
+
+LIB_DEPENDS+=	libjansson.so:devel/jansson libpcre.so:devel/pcre libxml2.so:textproc/libxml2
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	${REINPLACE_CMD} -e s#@JSON@#${O_JSON}# -e s#@XML@#${O_XML}# -e s#@PCRE@#${O_PCRE}# ${WRKSRC}/buildconf/base.ini
+.for var in JSON PCRE XML
+	@${REINPLACE_CMD} -e '/^${var:tl} =/ s|= .*|= ${BUILDCONF_${var}:Ufalse}|' ${WRKSRC}/buildconf/base.ini
+.endfor
 
 do-configure:
 	@${DO_NADA}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/uwsgidecorators.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>

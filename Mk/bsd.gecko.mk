@@ -249,7 +249,7 @@ BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
 
 # Standard options
 MOZ_CHROME?=	omni
-MOZ_TOOLKIT?=	cairo-gtk2
+MOZ_TOOLKIT?=	cairo-gtk3
 MOZ_CHANNEL?=	${PKGNAMESUFFIX:Urelease:S/^-//}
 MOZ_OPTIONS+=	\
 		--enable-chrome-format=${MOZ_CHROME} \
@@ -278,8 +278,8 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 # please get your own set of keys.
 MOZ_EXPORT+=	MOZ_GOOGLE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
 
-.if ${PORT_OPTIONS:MGTK3}
-MOZ_TOOLKIT=	cairo-gtk3
+.if ${PORT_OPTIONS:MGTK2}
+MOZ_TOOLKIT=	cairo-gtk2
 .endif
 
 .if ${MOZ_TOOLKIT:Mcairo-gtk3}
@@ -375,8 +375,13 @@ LIB_DEPENDS+=	libsndio.so:audio/sndio
 post-patch-SNDIO-on:
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
 		${MOZSRC}/media/libcubeb/src/moz.build \
-		${MOZSRC}/media/libcubeb/tests/moz.build \
 		${MOZSRC}/toolkit/library/moz.build
+. for tests in tests gtest
+	@if [ -f "${MOZSRC}/media/libcubeb/${tests}/moz.build" ]; then \
+		${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
+			 ${MOZSRC}/media/libcubeb/${tests}/moz.build \
+	; fi
+. endfor
 	@${REINPLACE_CMD} -e 's|OS==\"openbsd\"|OS==\"${OPSYS:tl}\"|g' \
 		${MOZSRC}/media/webrtc/trunk/webrtc/build/common.gypi
 	@${ECHO} "OS_LIBS += ['sndio']" >> \
@@ -590,7 +595,7 @@ do-configure: gecko-do-configure
 gecko-do-configure:
 		@(if ! ${CONFIGURE_ENV} ${DO_MAKE_BUILD} configure; then \
 			 ${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
-			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT_80} ; \
 			 ${FALSE}; \
 		fi)
 

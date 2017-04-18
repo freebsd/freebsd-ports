@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- Makefile.orig	2017-04-11 06:09:46 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ CC?=gcc
+-CFLAGS+=-lelf -lpopt -Wall
++CFLAGS+=-lelf -lpopt -Wall -I${LOCALBASE}/include -L${LOCALBASE}/lib
+ SOURCES=debugedit.c hashtab.c
+ OBJECTS=$(SOURCES:.c=.o)
+ EXECUTABLE=debugedit

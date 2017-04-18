@@ -572,6 +572,7 @@
     SUBDIR += p5-MaxMind-DB-Writer
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AMQP
+    SUBDIR += p5-Net-AMQP-RabbitMQ
     SUBDIR += p5-Net-APNS
     SUBDIR += p5-Net-APNs-Extended
     SUBDIR += p5-Net-ARP
@@ -992,6 +993,7 @@
     SUBDIR += py-libnet
     SUBDIR += py-magic-wormhole
     SUBDIR += py-matrix-synapse
+    SUBDIR += py-matrix-synapse-ldap3
     SUBDIR += py-maxminddb
     SUBDIR += py-miniupnpc
     SUBDIR += py-msrplib
@@ -1053,6 +1055,7 @@
     SUBDIR += py-socketio-client
     SUBDIR += py-speedtest-cli
     SUBDIR += py-sshuttle
+    SUBDIR += py-stomp.py
     SUBDIR += py-suds
     SUBDIR += py-suds-jurko
     SUBDIR += py-terminado
@@ -1235,6 +1238,7 @@
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
     SUBDIR += rude
+    SUBDIR += s3ql
     SUBDIR += samba42
     SUBDIR += samba43
     SUBDIR += samba44

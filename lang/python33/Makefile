@@ -2,7 +2,7 @@
 
 PORTNAME=	python33
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -16,10 +16,12 @@ LICENSE=	PSFL
 DEPRECATED=	No longer receives bug fixes, only security updates. Please update to Python 3.5
 EXPIRATION_DATE=	2017-09-01
 
-USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz
+USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
+SHEBANG_FILES=	Lib/lib2to3/tests/data/*.py Lib/encodings/*.py
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
@@ -106,6 +108,8 @@ PLIST_SUB+=	NO_NIS=""
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
+	${WRKSRC}/Lib/cgi.py
 .if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
 	@${REINPLACE_CMD} -e 's/disabled_module_list =[^]]*/&, "nis"/' \
 		${WRKSRC}/setup.py

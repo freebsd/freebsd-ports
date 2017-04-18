@@ -25,6 +25,7 @@ vmware_mod_load()
 			echo "done."
 		else
 			echo "failed."
+			return 1
 		fi
 	fi
 }
@@ -36,6 +37,7 @@ vmware_mod_status()
 		echo "loaded."
 	else
 		echo "not loaded"
+		return 1
 	fi
 }
 

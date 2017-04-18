@@ -56,7 +56,7 @@ bin/ttree
 %%SITE_ARCH%%/Template/Stash/Context.pm
 %%SITE_ARCH%%/Template/Stash/XS.pm
 %%SITE_ARCH%%/Template/Test.pm
-%%SITE_ARCH%%/Template/Toolkit.pod
+%%SITE_ARCH%%/Template/Toolkit.pm
 %%SITE_ARCH%%/Template/Tools.pod
 %%SITE_ARCH%%/Template/Tools/tpage.pod
 %%SITE_ARCH%%/Template/Tools/ttree.pod

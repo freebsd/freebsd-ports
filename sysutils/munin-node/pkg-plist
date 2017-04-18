@@ -115,7 +115,7 @@ sbin/munin-sched
 %%DATADIR%%/plugins/iostat
 %%DATADIR%%/plugins/ipac-ng
 %%DATADIR%%/plugins/ipmi_
-%%DATADIR%%/plugins/ipmi_sensor_
+%%PYTHON%%%%DATADIR%%/plugins/ipmi_sensor_
 %%DATADIR%%/plugins/ircu
 %%JAVA%%%%DATADIR%%/plugins/jmx_
 %%JAVA%%%%DATADIR%%/plugins/jmx_tomcat_dbpools
@@ -200,7 +200,7 @@ sbin/munin-sched
 %%DATADIR%%/plugins/slapd_
 %%DATADIR%%/plugins/slapd_bdb_cache_
 %%PERL%%%%DATADIR%%/plugins/slony_lag_
-%%DATADIR%%/plugins/smart_
+%%PYTHON%%%%DATADIR%%/plugins/smart_
 %%SNMP%%%%DATADIR%%/plugins/snmp__cpuload
 %%SNMP%%%%DATADIR%%/plugins/snmp__df
 %%SNMP%%%%DATADIR%%/plugins/snmp__df_ram

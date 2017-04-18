@@ -65,18 +65,17 @@ post-patch:
 	${REINPLACE_CMD} -e 's|THESE_ARE_THE_DEVEL_SOURCES;|GNUmakefile;|; \
 		/install -d $$(BUILDROOT)$$(DOCSUBDIR)/,+18 d' \
 			${WRKSRC}/GNUmakefile.template
-.elif ${OSVERSION} > 1000000 && ${ARCH} == i386
+.elif ${ARCH} == i386
 	${REINPLACE_CMD} -e 's|THESE_ARE_THE_DEVEL_SOURCES;|GNUmakefile;|; \
 		/install -m 644 README.MODIFYING/{N;p;s/.*/	install -m 644 TODO $$(BUILDROOT)$$(DOCSUBDIR)/;}; \
 		/install -m 644 TODO $$(BUILDROOT)$$(DOCSUBDIR)/,+13 d' \
 			${WRKSRC}/GNUmakefile.template
 .endif
 
-.if ! ${PORT_OPTIONS:MNLS}
+post-patch-NLS-off:
 	${REINPLACE_CMD} -e 's|DOC_LOCALES = cs de en ru|DOC_LOCALES = en|; \
 		s|install -m 644 CREDITS\*|install -m 644 CREDITS\.en|' \
 			${WRKSRC}/GNUmakefile.template
-.endif
 
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC} && \

@@ -5,22 +5,21 @@ PORTNAME=	delaboratory
 PORTVERSION=	0.8
 PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://BSDforge.com/projects/source/graphics/delaboratory/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforfe.com
 COMMENT=	Unique image postprocessing application
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
+LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 USES=		compiler:c++11-lib gmake
 MAKE_ARGS=	CXX="${CXX}" WXCONFIG="${WX_CONFIG}"
 USE_WX=		3.0
 USE_CXXSTD=	c++11
+USE_GNOME=	libxml2
 
 PLIST_FILES=	bin/${PORTNAME}
 

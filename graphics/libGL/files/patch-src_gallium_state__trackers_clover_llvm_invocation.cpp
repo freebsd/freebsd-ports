@@ -6,7 +6,7 @@
 ic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5c_strEv' can not be used when making a shared object; recompile with -fPIC
 # /usr/bin/ld: final link failed: Bad value
 #
---- src/gallium/state_trackers/clover/llvm/invocation.cpp.orig	2016-11-28 15:34:30 UTC
+--- src/gallium/state_trackers/clover/llvm/invocation.cpp.orig	2017-04-01 15:33:37 UTC
 +++ src/gallium/state_trackers/clover/llvm/invocation.cpp
 @@ -93,6 +93,8 @@ namespace {
        return ctx;
@@ -17,7 +17,7 @@ ic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5c_strEv' can not be used when 
     std::unique_ptr<clang::CompilerInstance>
     create_compiler_instance(const target &target,
                              const std::vector<std::string> &opts,
-@@ -104,8 +106,8 @@ namespace {
+@@ -105,8 +107,8 @@ namespace {
        // Parse the compiler options.  A file name should be present at the end
        // and must have the .cl extension in order for the CompilerInvocation
        // class to recognize it as an OpenCL source file.

@@ -11,21 +11,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to RSA encode and decode strings using OpenSSL
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
 		p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+BROKEN_SSL=	openssl-devel
 
 USES=		perl5 ssl
 USE_PERL5=	configure
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 
-regression-test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
-
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -208,7 +208,6 @@
     SUBDIR += lsw
     SUBDIR += luit
     SUBDIR += lumina
-    SUBDIR += lumina-i18n
     SUBDIR += lupe
     SUBDIR += lxde-meta
     SUBDIR += lxhotkey
