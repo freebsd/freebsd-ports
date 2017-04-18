@@ -3,7 +3,7 @@
 
 PORTNAME=	ansible
 PORTVERSION?=	2.3.0.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
@@ -18,6 +18,8 @@ RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr
+
+EXTRA_PATCHES?=	${FILESDIR}/extra-patch-f82d95a
 
 NO_ARCH=	yes
 USES?=		cpe python

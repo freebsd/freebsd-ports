@@ -2,7 +2,7 @@
 
 PORTNAME=	pysolfc
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/PySolFC-${PORTVERSION} \
 		SF/${PORTNAME}/PySolFC-Cardsets/PySolFC-Cardsets-${PORTVERSION}:cardsets
@@ -17,9 +17,10 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 
-USES=		python tar:bzip2
+USES=		python shebangfix tar:bzip2
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+SHEBANG_FILES=	data/themes/clearlooks/create_imgs.py
 
 PLIST_FILES=	share/pixmaps/pysolfc.png
 DATADIR=	${PREFIX}/share/PySolFC
