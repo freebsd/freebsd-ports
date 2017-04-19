@@ -1,6 +1,6 @@
---- hardware/arduino/sam/platform.txt.orig	2016-09-21 10:09:37 UTC
+--- hardware/arduino/sam/platform.txt.orig	2017-03-31 15:39:17 UTC
 +++ hardware/arduino/sam/platform.txt
-@@ -96,7 +96,7 @@ recipe.size.regex=\.text\s+([0-9]+).*
+@@ -96,13 +96,13 @@ recipe.size.regex=\.text\s+([0-9]+).*
  # -------------------
  
  # BOSSA
@@ -9,3 +9,11 @@
  tools.bossac.cmd=bossac
  tools.bossac.cmd.windows=bossac.exe
  
+ tools.bossac.upload.params.verbose=-i -d
+ tools.bossac.upload.params.quiet=
+ tools.bossac.upload.params.verify=-v
+-tools.bossac.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -U {upload.native_usb} -e -w {upload.verify} -b "{build.path}/{build.project_name}.bin" -R
++tools.bossac.upload.pattern="{path}/{cmd}" {upload.verbose} -a --port={serial.port.file} -U {upload.native_usb} -e -w {upload.verify} -b "{build.path}/{build.project_name}.bin" -R
+ 
+-tools.bossac_remote.upload.pattern=/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v -b /tmp/sketch.bin -R
++tools.bossac_remote.upload.pattern=/usr/bin/run-bossac {upload.verbose} -a --port=ttyATH0 -U {upload.native_usb} -e -w -v -b /tmp/sketch.bin -R
