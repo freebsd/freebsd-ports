@@ -870,11 +870,13 @@ share/kservices5/useragentstrings/chrome22oncurrent.desktop
 share/kservices5/useragentstrings/chrome23oncurrent.desktop
 share/kservices5/useragentstrings/chrome24oncurrent.desktop
 share/kservices5/useragentstrings/chrome50oncurrent.desktop
+share/kservices5/useragentstrings/chrome570oncurrent.desktop
 share/kservices5/useragentstrings/firefox15oncurrent.desktop
 share/kservices5/useragentstrings/firefox16oncurrent.desktop
 share/kservices5/useragentstrings/firefox20oncurrent.desktop
 share/kservices5/useragentstrings/firefox30oncurrent.desktop
 share/kservices5/useragentstrings/firefox36oncurrent.desktop
+share/kservices5/useragentstrings/firefox520oncurrent.desktop
 share/kservices5/useragentstrings/googlebot.desktop
 share/kservices5/useragentstrings/ie401onwinnt4.desktop
 share/kservices5/useragentstrings/ie50onppc.desktop
