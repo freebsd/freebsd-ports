@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osquery
-PORTVERSION=	1.4.7
-PORTREVISION=	7
+PORTVERSION=	2.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -12,26 +11,22 @@ COMMENT=	SQL powered OS instrumentation, monitoring, and analytics
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	snappy>0:archivers/snappy \
-		rocksdb>0:databases/rocksdb \
-		thrift>0:devel/thrift \
-		thrift-cpp>0:devel/thrift-cpp \
+BUILD_DEPENDS=	thrift>0:devel/thrift \
 		bash>0:shells/bash \
-		yara>0:security/yara \
-		doxygen:devel/doxygen \
-		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe \
-		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil \
-		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2  \
-		${PYTHON_PKGNAMEPREFIX}thrift>0:devel/py-thrift \
-		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip
-LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		linenoise-ng>0:devel/linenoise-ng \
+		asio>0:net/asio \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
+LIB_DEPENDS=	libaugeas.so:textproc/augeas \
+		libboost_regex.so:devel/boost-libs \
 		libgflags.so:devel/gflags \
-		libicuuc.so:devel/icu
-
-BROKEN=		does not build (error: no matching constructor for initialization of 'gflags::FlagRegisterer')
-DEPRECATED=	repeated build and dependency issues, upstream unable to assist
-EXPIRATION_DATE=2017-04-28
+		libglog.so:devel/glog \
+		libicuuc.so:devel/icu \
+		libthrift.so:devel/thrift-cpp \
+		libtsk.so:sysutils/sleuthkit \
+		libcppnetlib-uri.so:devel/cpp-netlib \
+		librocksdb-lite.so:databases/rocksdb-lite \
+		libyara.so:security/yara \
+		liblldpctl.so:net-mgmt/lldpd
 
 USES=		cmake:outsource gmake libtool python:build compiler:c++11-lib
 CONFIGURE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \
@@ -46,19 +41,11 @@ GH_SUBDIR=	third-party:tp
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/var/osquery|/var/db/osquery|g' \
-		${WRKSRC}/osquery/core/init.cpp
-	${REINPLACE_CMD} -e 's|/var/osquery/osquery.em|/var/run/osquery.em|g' \
-		-e 's|/etc/osquery/extensions.load|${PREFIX}/etc/osquery.extensions|g' \
-		-e 's|/etc/osquery/modules.load|${PREFIX}/etc/osquery.modules|g' \
-		${WRKSRC}/osquery/extensions/extensions.cpp
-	${REINPLACE_CMD} -e 's|/var/osquery/osquery.conf|${PREFIX}/etc/osquery.conf|g' \
-		${WRKSRC}/osquery/config/plugins/filesystem.cpp
 	${REINPLACE_CMD} -e 's|/var/osquery/|/var/db/osquery/|g' \
 		${WRKSRC}/tools/deployment/osquery.example.conf
-	${REINPLACE_CMD} -e 's|python |${PYTHON_CMD} |g' \
-		${WRKSRC}/CMake/CMakeLibs.cmake \
-		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' \
+		${WRKSRC}/CMakeLists.txt \
+		${WRKSRC}/tools/get_platform.py
 
 do-install:
 	${INSTALL_PROGRAM} ${BLDDIR}/osqueryi ${STAGEDIR}${PREFIX}/bin
@@ -69,5 +56,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/osquery.conf.sample
 
 	${MKDIR} ${STAGEDIR}/var/db/osquery
+	${MKDIR} ${STAGEDIR}/var/log/osquery
 
 .include <bsd.port.mk>
