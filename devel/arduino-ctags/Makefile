@@ -2,7 +2,8 @@
 
 PORTNAME=	arduino-ctags
 PORTVERSION=	5.8
-DISTVERSIONSUFFIX=	-arduino10
+DISTVERSIONSUFFIX=	-arduino11
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bsdports@kyle-evans.net
@@ -20,9 +21,8 @@ GH_PROJECT=	ctags
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-macro-patterns --bindir="${STAGEDIR}${PREFIX}/${BINDIR}"
-USES=		desthack
 
-ALl_TARGET=	ctags
+ALL_TARGET=	ctags
 INSTALL_TARGET=	install-cbin
 
 post-install:
