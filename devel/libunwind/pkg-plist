@@ -2,7 +2,7 @@ include/libunwind-common.h
 include/libunwind-coredump.h
 include/libunwind-dynamic.h
 include/libunwind-ptrace.h
-include/libunwind-x86_64.h
+include/libunwind-%%ARCH%%.h
 include/libunwind.h
 include/unwind.h
 lib/libunwind-coredump.a
@@ -19,10 +19,10 @@ lib/libunwind-setjmp.a
 lib/libunwind-setjmp.so
 lib/libunwind-setjmp.so.0
 lib/libunwind-setjmp.so.0.0.0
-lib/libunwind-x86_64.a
-lib/libunwind-x86_64.so
-lib/libunwind-x86_64.so.8
-lib/libunwind-x86_64.so.8.0.1
+lib/libunwind-%%ARCH%%.a
+lib/libunwind-%%ARCH%%.so
+lib/libunwind-%%ARCH%%.so.8
+lib/libunwind-%%ARCH%%.so.8.0.1
 lib/libunwind.a
 lib/libunwind.so
 lib/libunwind.so.8
