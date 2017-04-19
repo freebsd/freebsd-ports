@@ -16,9 +16,7 @@
 # consul_group (group):      Set group to run consul.
 #                               Default is "consul".
 # consul_dir (dir):          Set dir to run consul in.
-#                               Default is "/var/tmp/consul".
-# consul_env (dir):          Set environment variables used with consul
-#                               Default is "".
+#                               Default is "/var/db/consul".
 
 . /etc/rc.subr
 
@@ -31,8 +29,7 @@ load_rc_config $name
 : ${consul_enable:="NO"}
 : ${consul_user:="consul"}
 : ${consul_group:="consul"}
-: ${consul_dir:="/var/tmp/consul"}
-: ${consul_env:=""}
+: ${consul_dir:="/var/db/consul"}
 
 pidfile=/var/run/consul.pid
 procname="%%PREFIX%%/bin/consul"
