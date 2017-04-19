@@ -14,8 +14,6 @@ COMMENT=	Cartographic Projections library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
-
 DATUM_GRID_FILES=	proj-datumgrid-1.6.zip
 
 GNU_CONFIGURE=	yes
@@ -28,7 +26,7 @@ FMAN3=	geodesic.3 pj_init.3
 INSTALL_TARGET=	install-strip
 
 post-extract:
-	@${UNZIP_CMD} -q ${DISTDIR}/${DATUM_GRID_FILES} -d ${WRKSRC}/nad
+	@${TAR} -xf ${DISTDIR}/${DATUM_GRID_FILES} -C ${WRKSRC}/nad
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|gcc|${COMPILER_TYPE}|' \
