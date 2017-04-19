@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	adplug
 GH_PROJECT=	${PORTNAME}-unix
-GH_TUPLE=	adplug:database:7ac0819:database/database-${DBVERSION}
+GH_TUPLE=	adplug:database:${DBVERSION}:database/database-${DBVERSION}
 
 DBFILE=		adplug.db
 DBVERSION=	v1.0

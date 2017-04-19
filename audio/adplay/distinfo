@@ -1,5 +1,5 @@
-TIMESTAMP = 1492585695
+TIMESTAMP = 1492591735
 SHA256 (adplug-adplay-unix-v1.7_GH0.tar.gz) = 2c3dd462f3c33f3b03a3cfd06b0efd3c90e0ec60bd03f28e7b9b05dde0b76956
 SIZE (adplug-adplay-unix-v1.7_GH0.tar.gz) = 43387
-SHA256 (adplug-database-7ac0819_GH0.tar.gz) = 35e1a166edd841deb5cfd5661af84c520fb8ebf8972158de17bec05ea2676848
-SIZE (adplug-database-7ac0819_GH0.tar.gz) = 4467
+SHA256 (adplug-database-v1.0_GH0.tar.gz) = 1c2cfd08bbaba19209893d5a6ef18287251aa34c82c2704570255e19a2535a99
+SIZE (adplug-database-v1.0_GH0.tar.gz) = 4462
