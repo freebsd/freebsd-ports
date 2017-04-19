@@ -237,6 +237,7 @@
     SUBDIR += dmg2img
     SUBDIR += dmidecode
     SUBDIR += docker
+    SUBDIR += docker-compose
     SUBDIR += docker-freebsd
     SUBDIR += docker-machine
     SUBDIR += doinkd

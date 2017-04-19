@@ -3,6 +3,7 @@
 
 PORTNAME=	oxidized
 PORTVERSION=	0.19.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -22,7 +23,9 @@ NO_ARCH=	yes
 USE_RC_SUBR=	oxidized
 
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	extra/oxidized.runit \
+		extra/auto-reload-config.runit
 
 USERS=		oxidized
 GROUPS=		oxidized

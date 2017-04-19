@@ -1,0 +1,7 @@
+bin/projectlibre
+%%DATADIR%%/lib/openproj-contrib.jar
+%%DATADIR%%/lib/openproj-reports.jar
+%%DATADIR%%/lib/openproj-script.jar
+%%DATADIR%%/projectlibre.jar
+%%DATADIR%%/readme.html
+share/pixmaps/projectlibre.png

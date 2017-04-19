@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mock
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,15 +11,16 @@ MAINTAINER=	jessekempf@gmail.com
 COMMENT=	Mock unit tests for Python
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.3:devel/py-pbr \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.3:devel/py-pbr \
-		${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six
+		${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TESTS_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox
 
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>
 

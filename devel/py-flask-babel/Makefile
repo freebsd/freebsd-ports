@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Flask-Babel
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,12 +11,13 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Adds i18n/l10n support to Flask applications
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:www/py-flask \
 		${PYTHON_PKGNAMEPREFIX}Babel>=2.3:devel/py-babel
 
-USES=		python
-USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python
 
 .include <bsd.port.mk>
