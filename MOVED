@@ -9237,3 +9237,10 @@ net/py-matrix-synapse|net-im/py-matrix-synapse|2017-04-17|Move to net-im which i
 graphics/shiva-collections||2017-04-17|Has expired: Project is dead and has no end user
 graphics/opengtl||2017-04-17|Has expired: Project is dead, has no end user, and relies on EOLed LLVM
 graphics/qtgtl||2017-04-17|Has expired: Project is dead and has had no consumer for over a year
+www/py-django16|www/py-django18|2017-04-19|Has expired: End of extended support: April 1, 2015
+www/py-django16-tastypie|www/py-django-tastypie|2017-04-19|Removed, uses expired Django version
+www/py-django-pipeline13|www/py-django-pipeline|2017-04-19|Has expired: Depends on expired www/py-django16, and expired upstream
+www/py-djblets||2017-04-19|Has expired: Does not build with py-django18 see pr: 216758
+security/py-crits||2017-04-19|Has expired: Does not build with py-django18 see pr: 216758
+www/py-cactus||2017-04-19|Removed, depends on expired Django version
+devel/py-django16-tastypie-mongoengine|devel/py-django-tastypie-mongoengine|2017-04-19|Removed, uses expired Django version
