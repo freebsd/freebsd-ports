@@ -188,7 +188,6 @@
     SUBDIR += plasma-applet-yawp
     SUBDIR += plopfolio
     SUBDIR += preferences
-    SUBDIR += projectlibre
     SUBDIR += puush
     SUBDIR += py-bugwarrior
     SUBDIR += py-khal
