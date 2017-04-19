@@ -1,8 +1,7 @@
 # Created by: Kyle Martin <mkm@ieee.org>
 # $FreeBSD$
-
 PORTNAME=	cmake
-PORTVERSION=	3.7.2
+DISTVERSION=	3.8.0
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
@@ -13,7 +12,6 @@ COMMENT?=	Cross-platform Makefile generator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-USES=		kde:4 # Just pull in env for KDE_PREFIX
 CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
@@ -32,7 +30,8 @@ HAS_CONFIGURE=	yes
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libjsoncpp.so:devel/jsoncpp \
-		libuv.so:devel/libuv
+		libuv.so:devel/libuv \
+		librhash.so:security/rhash
 RUN_DEPENDS=	${LOCALBASE}/share/cmake/Modules/CMake.cmake:devel/cmake-modules
 
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
@@ -54,7 +53,7 @@ post-patch:
 		${WRKSRC}/Source/cmLocalGenerator.cxx \
 		${WRKSRC}/Source/CPack/cmCPackGenerator.cxx \
 		${WRKSRC}/bootstrap
-	@${REINPLACE_CMD} -e 's,/opt/kde4,${KDE_PREFIX},g' \
+	@${REINPLACE_CMD} -e 's,/opt/kde4,${PREFIX},g' \
 		${WRKSRC}/Modules/FindKDE4.cmake
 	@${REINPLACE_CMD} -e 's,/usr/include,${LOCALBASE}/include,' \
 		${WRKSRC}/Modules/FindDCMTK.cmake
