@@ -3,6 +3,7 @@
 
 PORTNAME=	python-openstackclient
 PORTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,8 +27,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel \
 		${PYTHON_PKGNAMEPREFIX}python-cinderclient>=0:net/py-python-cinderclient \
 		${PYTHON_PKGNAMEPREFIX}python-neutronclient>=0:net/py-python-neutronclient
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	distutils autoplist noegginfo
 NO_ARCH=	yes
+SHEBANG_FILES=	openstackclient/tests/functional/post_test_hook.sh \
+		openstackclient/tests/functional/post_test_hook_tips.sh
 
 .include <bsd.port.mk>
