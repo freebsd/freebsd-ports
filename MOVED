@@ -9165,6 +9165,7 @@ databases/py-sqlalchemy08|databases/py-sqlalchemy10|2017-03-29|Has expired: Upst
 devel/py3-meson||2017-03-30|Removed
 deskutils/kchmviewer-kde4|deskutils/kchmviewer|2017-03-31|Renamed to drop the -kde4 suffix
 emulators/ppsspp-qt4|emulators/ppsspp-qt5|2017-03-31|Qt4 support was removed upstream
+devel/arduino16|devel/arduino18|2017-03-31|Renamed to match major version following upgrade
 devel/llvm37||2017-04-01|Obsolete and unmaintained upstream
 lang/clang37||2017-04-01|Obsolete and unmaintained upstream
 devel/lldb37||2017-04-01|Obsolete and unmaintained upstream

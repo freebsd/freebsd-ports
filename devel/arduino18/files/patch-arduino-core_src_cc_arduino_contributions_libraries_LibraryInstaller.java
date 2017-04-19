@@ -1,4 +1,4 @@
---- arduino-core/src/cc/arduino/contributions/libraries/LibraryInstaller.java.orig	2016-09-21 10:09:37 UTC
+--- arduino-core/src/cc/arduino/contributions/libraries/LibraryInstaller.java.orig	2017-03-16 17:38:01 UTC
 +++ arduino-core/src/cc/arduino/contributions/libraries/LibraryInstaller.java
 @@ -55,31 +55,7 @@ public class LibraryInstaller {
    }
