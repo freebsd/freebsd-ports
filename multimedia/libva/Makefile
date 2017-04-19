@@ -2,6 +2,7 @@
 
 PORTNAME=	libva
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -11,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+RUN_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
 USES=		autoreconf gmake libtool localbase pkgconfig tar:bzip2
