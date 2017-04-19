@@ -1,4 +1,4 @@
---- arduino-core/src/cc/arduino/contributions/packages/ContributionInstaller.java.orig	2016-09-21 10:09:37 UTC
+--- arduino-core/src/cc/arduino/contributions/packages/ContributionInstaller.java.orig	2017-03-16 17:38:01 UTC
 +++ arduino-core/src/cc/arduino/contributions/packages/ContributionInstaller.java
 @@ -281,47 +281,11 @@ public class ContributionInstaller {
    }

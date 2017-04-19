@@ -1,8 +1,8 @@
---- arduino-core/src/cc/arduino/contributions/packages/ContributionsIndexer.java.orig	2016-09-21 10:09:37 UTC
+--- arduino-core/src/cc/arduino/contributions/packages/ContributionsIndexer.java.orig	2017-03-16 17:38:01 UTC
 +++ arduino-core/src/cc/arduino/contributions/packages/ContributionsIndexer.java
-@@ -85,17 +85,6 @@ public class ContributionsIndexer {
+@@ -86,17 +86,6 @@ public class ContributionsIndexer {
      File bundledIndexFile = new File(builtInHardwareFolder, Constants.BUNDLED_INDEX_FILE_NAME);
-     index = parseIndex(bundledIndexFile);
+     mergeContributions(bundledIndexFile);
  
 -    // ...and overlay the default index if present
 -    File defaultIndexFile = getIndexFile(Constants.DEFAULT_INDEX_FILE_NAME);
@@ -12,7 +12,7 @@
 -        throw new SignatureVerificationFailedException(Constants.DEFAULT_INDEX_FILE_NAME);
 -      }
 -
--      mergeContributions(parseIndex(defaultIndexFile), defaultIndexFile);
+-      mergeContributions(defaultIndexFile);
 -    }
 -
      // Set main and bundled indexes as trusted
