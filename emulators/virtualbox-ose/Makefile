@@ -175,10 +175,13 @@ VBOX_WITH_QT=	1
 .if ${PORT_OPTIONS:MQT4}
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderAdditions.cpp \
 		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderExtensionPack.cpp \
-		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_settings_global_UIGlobalSettingsNetworkDetailsHost.cpp
+		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_settings_global_UIGlobalSettingsNetworkDetailsHost.cpp \
+		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_widgets_UIMiniToolBar.cpp
 CONFIGURE_ARGS+=	--enable-qt4
 USE_QT4=	corelib gui linguist_build moc_build network opengl
 USE_QT4+=	rcc_build uic_build
+WARNING=	"Qt4 support has been deprecated by the upstream.\
+		This option may be removed in the future without notice."
 .else
 CONFIGURE_ARGS+=	--enable-qt5
 USE_QT5=	buildtools_build core dbus gui linguist_build opengl
