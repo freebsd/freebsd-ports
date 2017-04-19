@@ -4242,7 +4242,6 @@
     SUBDIR += py-django-rq
     SUBDIR += py-django-rq-dashboard
     SUBDIR += py-django-tastypie-mongoengine
-    SUBDIR += py-django16-tastypie-mongoengine
     SUBDIR += py-docker-py
     SUBDIR += py-dockerpty
     SUBDIR += py-docopt

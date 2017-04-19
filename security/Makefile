@@ -850,7 +850,6 @@
     SUBDIR += py-certifi
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
-    SUBDIR += py-crits
     SUBDIR += py-cryptkit
     SUBDIR += py-cryptography
     SUBDIR += py-cybox

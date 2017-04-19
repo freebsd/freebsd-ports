@@ -1528,7 +1528,6 @@
     SUBDIR += py-bottle
     SUBDIR += py-bottle-cork
     SUBDIR += py-cachecontrol
-    SUBDIR += py-cactus
     SUBDIR += py-caldav
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
@@ -1592,7 +1591,6 @@
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
-    SUBDIR += py-django-pipeline13
     SUBDIR += py-django-post_office
     SUBDIR += py-django-profiles
     SUBDIR += py-django-pyscss
@@ -1622,8 +1620,6 @@
     SUBDIR += py-django-voting
     SUBDIR += py-django110
     SUBDIR += py-django111
-    SUBDIR += py-django16
-    SUBDIR += py-django16-tastypie
     SUBDIR += py-django18
     SUBDIR += py-django19
     SUBDIR += py-django_compressor
@@ -1634,7 +1630,6 @@
     SUBDIR += py-djangorestframework-filters
     SUBDIR += py-djangorestframework-xml
     SUBDIR += py-djangotoolbox
-    SUBDIR += py-djblets
     SUBDIR += py-dojango
     SUBDIR += py-dotcloud.cli
     SUBDIR += py-dtflickr
