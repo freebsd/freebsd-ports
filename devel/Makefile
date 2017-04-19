@@ -99,6 +99,7 @@
     SUBDIR += apr2
     SUBDIR += arcanist
     SUBDIR += arduino
+    SUBDIR += arduino-avrdude
     SUBDIR += arduino-builder
     SUBDIR += arduino-core
     SUBDIR += arduino-ctags

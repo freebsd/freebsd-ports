@@ -1,0 +1,68 @@
+--- avrdude.conf.in.orig	2017-03-30 13:30:41 UTC
++++ avrdude.conf.in
+@@ -874,6 +874,24 @@ programmer
+   usbpid     = 0x0c9f;
+ ;
+ 
++ programmer
++  id    = "arduinoisp";
++  desc  = "Arduino ISP Programmer";
++  type  = "usbtiny";
++  connection_type = usb;
++  usbvid     = 0x2341;
++  usbpid     = 0x0049;
++;
++
++ programmer
++  id    = "arduinoisporg";
++  desc  = "Arduino ISP Programmer";
++  type  = "usbtiny";
++  connection_type = usb;
++  usbvid     = 0x2A03;
++  usbpid     = 0x0049;
++;
++
+ programmer
+   id    = "butterfly";
+   desc  = "Atmel Butterfly Development Board";
+@@ -6530,6 +6548,11 @@ part
+                           "x x x x  x x x x   i i i i  i i i i";
+       ;
+ 
++    memory "efuse"
++        size            = 0;
++      ;
++
++
+     memory "lock"
+         size            = 1;
+         min_write_delay = 2000;
+@@ -9747,7 +9770,7 @@ part
+      avr910_devcode   = 0x20;
+      signature        = 0x1e 0x93 0x0b;
+      reset            = io;
+-     chip_erase_delay = 4500;
++     chip_erase_delay = 400000;
+ 
+      pgm_enable       = "1 0 1 0  1 1 0 0    0 1 0 1  0 0 1 1",
+                         "x x x x  x x x x    x x x x  x x x x";
+@@ -9792,8 +9815,8 @@ part
+          size            = 512;
+         paged           = no;
+         page_size       = 4;
+-         min_write_delay = 4000;
+-         max_write_delay = 4500;
++         min_write_delay = 30000;
++         max_write_delay = 30000;
+          readback_p1     = 0xff;
+          readback_p2     = 0xff;
+          read            = "1  0  1  0   0  0  0  0    0 0 0 x  x x x a8",
+@@ -9813,7 +9836,7 @@ part
+ 			  "  x   x   x   x      x   x   x   x";
+ 
+ 	mode		= 0x41;
+-	delay		= 6;
++	delay		= 12;
+ 	blocksize	= 4;
+ 	readsize	= 256;
+        ;
