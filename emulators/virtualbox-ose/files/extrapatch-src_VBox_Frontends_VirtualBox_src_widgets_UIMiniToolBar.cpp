@@ -1,5 +1,5 @@
---- src/VBox/Frontends/VirtualBox/src/widgets/UIMiniToolBar.cpp.orig	2017-04-18 09:53:23.000000000 +0000
-+++ src/VBox/Frontends/VirtualBox/src/widgets/UIMiniToolBar.cpp	2017-04-19 17:26:36.194563000 +0000
+--- src/VBox/Frontends/VirtualBox/src/widgets/UIMiniToolBar.cpp.orig	2017-04-18 09:53:23 UTC
++++ src/VBox/Frontends/VirtualBox/src/widgets/UIMiniToolBar.cpp
 @@ -29,7 +29,9 @@
  # include <QToolButton>
  # include <QStateMachine>
