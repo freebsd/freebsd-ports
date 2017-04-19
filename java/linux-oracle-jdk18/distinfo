@@ -1,5 +1,5 @@
-TIMESTAMP = 1485633590
-SHA256 (jdk-8u121-linux-i586.tar.gz) = f7d6cf1468c5e71ff097bec0189caccdd8e709a2a88a2c9849ad6200c0f33d4c
-SIZE (jdk-8u121-linux-i586.tar.gz) = 185735871
-SHA256 (jdk-8u121-linux-i586-demos.tar.gz) = 42c7c34a3e1db77d49e01c19bfa530924fb70e565add63391fa5bae1ba6ebd60
-SIZE (jdk-8u121-linux-i586-demos.tar.gz) = 55065250
+TIMESTAMP = 1492576712
+SHA256 (jdk-8u131-linux-i586.tar.gz) = 0069a2b1b1cddbefa45f1ff12933fca3b114b6544d536ec0e2d4861a830d7154
+SIZE (jdk-8u131-linux-i586.tar.gz) = 188105480
+SHA256 (jdk-8u131-linux-i586-demos.tar.gz) = e75eff66cc8f0fbec43bc18c3392eac39b8f7fc3db19367fa214091f61c00ad2
+SIZE (jdk-8u131-linux-i586-demos.tar.gz) = 55065450

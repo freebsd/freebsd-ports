@@ -3,6 +3,7 @@
 
 PORTNAME=	python-ceilometerclient
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +27,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}stevedore>=1.10.0:devel/py-stevedore \
 
 NO_ARCH=	yes
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	ceilometerclient/tests/functional/hooks/post_test_hook.sh
 
 .include <bsd.port.mk>
