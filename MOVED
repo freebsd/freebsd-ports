@@ -9244,3 +9244,4 @@ www/py-djblets||2017-04-19|Has expired: Does not build with py-django18 see pr: 
 security/py-crits||2017-04-19|Has expired: Does not build with py-django18 see pr: 216758
 www/py-cactus||2017-04-19|Removed, depends on expired Django version
 devel/py-django16-tastypie-mongoengine|devel/py-django-tastypie-mongoengine|2017-04-19|Removed, uses expired Django version
+devel/freeocl|lang/pocl|2017-04-19|Has expired: Unfetchable for more than six months (google code has gone away); use lang/pocl instead
