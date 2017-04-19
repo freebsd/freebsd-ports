@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	arduino-builder
-PORTVERSION=	1.3.21
-PORTREVISION=	3
+PORTVERSION=	1.3.25
 CATEGORIES=	devel
 
 MAINTAINER=	bsdports@kyle-evans.net
@@ -16,9 +15,9 @@ BUILD_DEPENDS=	go:lang/go
 USE_GITHUB=	yes
 GH_ACCOUNT=	arduino
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
-GH_TUPLE=	go-errors:errors:a418503:goerrors/src/github.com/go-errors/errors \
-		stretchr:testify:v1.1.3:stretchr/src/github.com/stretchr/testify \
-		jstemmer:go-junit-report:833f8ea:jstemmer/src/github.com/jstemmer/go-junit-report
+GH_TUPLE=	go-errors:errors:8fa88b0:goerrors/src/github.com/go-errors/errors \
+		stretchr:testify:v1.1.4:stretchr/src/github.com/stretchr/testify \
+		jstemmer:go-junit-report:6aeed67:jstemmer/src/github.com/jstemmer/go-junit-report
 
 OPTIONS_DEFINE=	TOOLS
 OPTIONS_DEFAULT=TOOLS
