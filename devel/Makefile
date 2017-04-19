@@ -99,6 +99,7 @@
     SUBDIR += apr2
     SUBDIR += arcanist
     SUBDIR += arduino
+    SUBDIR += arduino-avrdude
     SUBDIR += arduino-builder
     SUBDIR += arduino-core
     SUBDIR += arduino-ctags
@@ -624,7 +625,6 @@
     SUBDIR += fpc-zlib
     SUBDIR += fpp
     SUBDIR += frama-c
-    SUBDIR += freeocl
     SUBDIR += frink
     SUBDIR += fstrm
     SUBDIR += ftjam
@@ -4241,7 +4241,6 @@
     SUBDIR += py-django-rq
     SUBDIR += py-django-rq-dashboard
     SUBDIR += py-django-tastypie-mongoengine
-    SUBDIR += py-django16-tastypie-mongoengine
     SUBDIR += py-docker-py
     SUBDIR += py-dockerpty
     SUBDIR += py-docopt
