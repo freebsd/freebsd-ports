@@ -3,6 +3,7 @@
 
 PORTNAME=	pybench
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks python
 MASTER_SITES=	http://downloads.egenix.com/python/
 
@@ -11,9 +12,15 @@ COMMENT=	Extensible benchmark suite for Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python zip
+USES=		python shebangfix zip
+SHEBANG_FILES=	platform.py
 
 PORTDOCS=	README
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/local/bin/python -O|${python_CMD}|' \
+	${WRKSRC}/pybench.py
+	@${FIND} ${WRKSRC} -name \*.bak -delete
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
