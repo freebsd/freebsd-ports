@@ -90,6 +90,7 @@
 %%WWWDIR%%/go/base/exception/MissingParameter.php
 %%WWWDIR%%/go/base/exception/NoCron.php
 %%WWWDIR%%/go/base/exception/NotFound.php
+%%WWWDIR%%/go/base/exception/OtherLoginLocation.php
 %%WWWDIR%%/go/base/exception/PasswordNeedsChange.php
 %%WWWDIR%%/go/base/exception/RelationDeleteRestrict.php
 %%WWWDIR%%/go/base/exception/Save.php
@@ -146,6 +147,7 @@
 %%WWWDIR%%/go/base/model/Acl.php
 %%WWWDIR%%/go/base/model/AclUsersGroups.php
 %%WWWDIR%%/go/base/model/AdvancedSearch.php
+%%WWWDIR%%/go/base/model/Client.php
 %%WWWDIR%%/go/base/model/Group.php
 %%WWWDIR%%/go/base/model/Grouped.php
 %%WWWDIR%%/go/base/model/Holiday.php
@@ -8040,6 +8042,7 @@
 %%WWWDIR%%/views/Extjs3/javascript/windows/ExportGridDialog.js
 %%WWWDIR%%/views/Extjs3/javascript/windows/LoginDialog.js
 %%WWWDIR%%/views/Extjs3/javascript/windows/MergeDialog.js
+%%WWWDIR%%/views/Extjs3/javascript/windows/OtherLoginLocationDetectedDialog.js
 %%WWWDIR%%/views/Extjs3/javascript/windows/PasswordDialog.js
 %%WWWDIR%%/views/Extjs3/javascript/windows/PersonalSettingsDialog.js
 %%WWWDIR%%/views/Extjs3/javascript/windows/RequirePasswordResetDialog.js
