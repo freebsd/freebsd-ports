@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.24.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -46,8 +46,8 @@ CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--disable-wayland \
 		--enable-libmpv-shared
 
-OPTIONS_DEFINE=		ASS DOCS LCMS2 LUAJIT MANPAGES UCHARDET ZSH
-OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV MANPAGES OPENGL UCHARDET \
+OPTIONS_DEFINE=		ASS DOCS LCMS2 LIBARCHIVE LUAJIT MANPAGES UCHARDET ZSH
+OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV LIBARCHIVE MANPAGES OPENGL UCHARDET \
 			V4L VAAPI VDPAU X11 XINERAMA YTDL ZSH
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
@@ -55,15 +55,16 @@ OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU X11 XINERAMA
 OPTIONS_GROUP_AO=	ALSA JACK PULSEAUDIO SDL SNDIO
 OPTIONS_SUB=		yes
 
-ASS_DESC=	ASS/SSA subtitle and OSD rendering
-DVDREAD_DESC=	DVD Playback support
-DVDNAV_DESC=	DVD menu navigation
-LUAJIT_DESC=	Use LuaJIT instead of Lua scripting language support
-YTDL_DESC=	Install youtube-dl
-UCHARDET_DESC=	Guess subtitle encoding via uchardet
-IN_DESC=	Input
-VO_DESC=	Video Output
-AO_DESC=	Audio Output
+ASS_DESC=		ASS/SSA subtitle and OSD rendering
+DVDREAD_DESC=		DVD Playback support
+DVDNAV_DESC=		DVD menu navigation
+LIBARCHIVE_DESC=	Enable libarchive support
+LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
+YTDL_DESC=		Install youtube-dl
+UCHARDET_DESC=		Guess subtitle encoding via uchardet
+IN_DESC=		Input
+VO_DESC=		Video Output
+AO_DESC=		Audio Output
 
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=		--disable-alsa
@@ -91,6 +92,9 @@ JACK_CONFIGURE_OFF=		--disable-jack
 
 LCMS2_LIB_DEPENDS=		liblcms2.so:graphics/lcms2
 LCMS2_CONFIGURE_OFF=		--disable-lcms2
+
+LIBARCHIVE_USES=		libarchive
+LIBARCHIVE_CONFIGURE_ON=	--enable-libarchive
 
 LIBBLURAY_LIB_DEPENDS=		libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_OFF=	--disable-libbluray
