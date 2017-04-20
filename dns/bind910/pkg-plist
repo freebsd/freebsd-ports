@@ -1,8 +1,10 @@
+bin/arpaname
 bin/bind9-config
 bin/delv
 bin/dig
 bin/host
 bin/isc-config.sh
+bin/named-rrchecker
 bin/nslookup
 bin/nsupdate
 etc/mtree/BIND.chroot.dist
@@ -135,6 +137,7 @@ include/isc/counter.h
 include/isc/crc64.h
 include/isc/dir.h
 include/isc/entropy.h
+include/isc/errno.h
 include/isc/error.h
 include/isc/event.h
 include/isc/eventclass.h
@@ -254,6 +257,7 @@ include/pk11/constants.h
 include/pk11/internal.h
 include/pk11/pk11.h
 include/pk11/result.h
+include/pk11/site.h
 include/pkcs11/cryptoki.h
 include/pkcs11/pkcs11.h
 include/pkcs11/pkcs11f.h
@@ -388,7 +392,6 @@ man/man8/nsec3hash.8.gz
 man/man8/rndc-confgen.8.gz
 man/man8/rndc.8.gz
 man/man8/tsig-keygen.8.gz
-sbin/arpaname
 sbin/ddns-confgen
 %%PYTHON%%sbin/dnssec-checkds
 %%PYTHON%%sbin/dnssec-coverage
@@ -408,7 +411,6 @@ sbin/named-checkconf
 sbin/named-checkzone
 sbin/named-compilezone
 sbin/named-journalprint
-sbin/named-rrchecker
 sbin/nsec3hash
 %%NATIVE_PKCS11%%sbin/pkcs11-destroy
 %%NATIVE_PKCS11%%sbin/pkcs11-keygen

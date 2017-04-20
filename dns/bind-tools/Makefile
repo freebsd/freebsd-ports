@@ -5,7 +5,6 @@ MASTERDIR=	${.CURDIR}/../../dns/bind911
 
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-PKGINSTALL=	/nonexistent
 
 BIND_TOOLS_SLAVE=	YES
 
