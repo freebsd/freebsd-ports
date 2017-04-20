@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
