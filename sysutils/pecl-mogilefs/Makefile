@@ -9,7 +9,7 @@ CATEGORIES=	sysutils pear
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP client library to communicate with the MogileFS storage
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libneon.so:www/neon
 
