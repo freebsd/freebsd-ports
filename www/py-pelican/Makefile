@@ -3,7 +3,7 @@
 
 PORTNAME=	pelican
 PORTVERSION=	3.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,9 +23,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
-USES=		python
+NO_ARCH=	yes
+USES=		python shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
+SHEBANG_FILES=	pelican/tools/templates/publishconf.py.in \
+		pelican/tools/*.py
 
 GH_ACCOUNT=	getpelican
 
