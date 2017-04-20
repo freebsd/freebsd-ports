@@ -93,7 +93,7 @@ _UNIQUEPKGLIST=		${WRKDIR}/.PLIST.uniquefiles
 _DO_CONDITIONAL_SYMLINK=	\
 	if [ ! -e ${STAGEDIR}${PREFIX}/$${fname} -a ! -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
 		${ECHO_MSG} "Link: @$${fname} --> $${newf}"; \
-		${LN} -s ${PREFIX}/$${newf} ${STAGEDIR}${PREFIX}/$${fname}; \
+		${RLN} ${STAGEDIR}${PREFIX}/$${newf} ${STAGEDIR}${PREFIX}/$${fname}; \
 		${ECHO_CMD} LINKED:$${newf}:$${fname} >> ${_UNIQUEPKGLIST}; \
 	fi
 .else

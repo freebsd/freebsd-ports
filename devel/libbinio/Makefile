@@ -21,6 +21,8 @@ GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 
+PORTSCOUT=	skipv:start
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS\ =\).*|\1 src|' ${WRKSRC}/Makefile.am
 

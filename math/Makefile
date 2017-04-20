@@ -260,6 +260,7 @@
     SUBDIR += libtommath
     SUBDIR += libtsnnls
     SUBDIR += libxls
+    SUBDIR += libxlsxwriter
     SUBDIR += linpack
     SUBDIR += lll_spect
     SUBDIR += lp_solve

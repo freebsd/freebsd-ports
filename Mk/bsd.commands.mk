@@ -75,6 +75,7 @@ PS_CMD?=		/bin/ps
 PW?=			/usr/sbin/pw
 READELF?=		/usr/bin/readelf
 REALPATH?=		/bin/realpath
+RLN?=			${INSTALL} -l rs
 RM?=			/bin/rm -f
 RMDIR?=			/bin/rmdir
 SED?=			/usr/bin/sed

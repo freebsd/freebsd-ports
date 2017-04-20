@@ -11,6 +11,8 @@ COMMENT=	Bible interface utilizing the sword framework
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_12= does not build on 12.X
+
 RUN_DEPENDS=	yelp:x11/yelp
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		docbook2html:textproc/docbook-utils \
