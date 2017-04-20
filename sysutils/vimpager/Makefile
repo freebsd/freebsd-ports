@@ -5,7 +5,7 @@ PORTNAME=	vimpager
 DISTVERSION=	2.06
 CATEGORIES=	sysutils
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use ViM as a pager
 
 LICENSE=	BSD2CLAUSE
