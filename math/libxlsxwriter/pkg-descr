@@ -1,0 +1,19 @@
+libxlsxwriter is a C library that can be used to write text, numbers, formulas
+and hyperlinks to multiple worksheets in an Excel 2007+ XLSX file. It supports
+features such as:
+
+* 100% compatible Excel XLSX files.
+* Full Excel formatting.
+* Merged cells.
+* Defined names.
+* Autofilters.
+* Charts.
+* Worksheet PNG/JPEG images.
+* Memory optimization mode for writing large files.
+* Source code available on GitHub.
+* FreeBSD License.
+* ANSI C.
+* Compiles for 32 and 64 bit.
+* The only dependency is on zlib.
+
+WWW: http://libxlsxwriter.github.io/
