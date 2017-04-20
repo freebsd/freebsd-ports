@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -38,11 +37,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>=0.7.0_1:archivers/py-lz4 \
 		${PYTHON_PKGNAMEPREFIX}gtkglext>1:x11-toolkits/py-gtkglext \
 		${PYNUMPY}
 
-USES=		desktop-file-utils fortran gettext-runtime pkgconfig python:2 shared-mime-info tar:xz
+USES=		desktop-file-utils fortran gettext-runtime pkgconfig python:2 shared-mime-info shebangfix tar:xz
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_PYTHON=	distutils
 USE_XORG=	x11 xcomposite xdamage xext xfixes xkbfile xrandr xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHON_VER=${PYTHON_VER}
+SHEBANG_FILES=	cups/xpraforwarder
 
 OPTIONS_DEFINE=		AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX WEBCAM X264 X265
 OPTIONS_DEFAULT=	AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX X264
