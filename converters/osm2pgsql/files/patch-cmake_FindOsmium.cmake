@@ -1,4 +1,4 @@
---- cmake/FindOsmium.cmake.orig	2016-07-17 02:30:16 UTC
+--- cmake/FindOsmium.cmake.orig	2017-04-13 20:58:25 UTC
 +++ cmake/FindOsmium.cmake
 @@ -151,8 +151,8 @@ list(APPEND OSMIUM_LIBRARIES
  #----------------------------------------------------------------------
