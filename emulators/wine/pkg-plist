@@ -257,6 +257,7 @@ include/wine/windows/devicetopology.h
 include/wine/windows/devicetopology.idl
 include/wine/windows/devpkey.h
 include/wine/windows/devpropdef.h
+include/wine/windows/dhcpcsdk.h
 include/wine/windows/difxapi.h
 include/wine/windows/digitalv.h
 include/wine/windows/dimm.h
