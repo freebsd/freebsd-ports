@@ -16,12 +16,23 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	go14>=1.4:lang/go14
 
 USES=		shebangfix
-SHEBANG_LANG=	sh
+SHEBANG_LANG=	sh perl rc
 SHEBANG_FILES=	${WRKSRC}/src/*.bash \
-		${WRKSRC}/doc/articles/wiki/*.bash
+		${WRKSRC}/doc/articles/wiki/*.bash \
+		${WRKSRC}/lib/time/*.bash \
+		${WRKSRC}/misc/benchcmp \
+		${WRKSRC}/misc/nacl/go_nacl_*_exec \
+		${WRKSRC}/src/*.rc \
+		${WRKSRC}/src/cmd/dist/*.bash \
+		${WRKSRC}/src/cmd/go/*.sh \
+		${WRKSRC}/src/net/http/cgi/testdata/*.cgi \
+		${WRKSRC}/src/regexp/syntax/*.pl
 
 sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}
+
+rc_OLD_CMD=	/bin/rc
+rc_CMD=		${LOCALBASE}/bin/rc
 
 WRKSRC=		${WRKDIR}/go
 ONLY_FOR_ARCHS=	i386 amd64 armv6

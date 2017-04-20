@@ -2,6 +2,7 @@
 
 PORTNAME=	arduino-core
 PORTVERSION=	1.6.18
+PORTREVISION=	1
 CATEGORIES=	devel
 DIST_SUBDIR=	arduino
 
@@ -33,7 +34,7 @@ SAMD_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-hardware_arduino_samd_platform.txt
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%ARCH%%|${ARDUINO_ARCH}|g' -e 's|%%OSREL%%|${OSREL:R}|g' ${WRKSRC}/hardware/package_index_bundled.json
+	@${REINPLACE_CMD} -e 's|%%ARCH%%|${ARCH}|g' -e 's|%%OSREL%%|${OSREL:R}|g' ${WRKSRC}/hardware/package_index_bundled.json
 
 do-install:
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "hardware" ${STAGEDIR}${PREFIX}/arduino ${FIND_EXPR})
