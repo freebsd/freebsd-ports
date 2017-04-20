@@ -38,13 +38,13 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin
 tvheadend_prestart()
 {
 	if [ ! -f "${pidfile}" ]; then
-		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_user} -m 644 /dev/null ${pidfile}
+		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_group} -m 644 /dev/null ${pidfile}
 	fi
 	if [ ! -d "${confdir}" ]; then
-		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_user} -m 755 -d ${confdir}
+		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_group} -m 755 -d ${confdir}
 	fi
 	if [ ! -d "${logdir}" ]; then
-		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_user} -m 755 -d ${logdir}
+		/usr/bin/install -o ${tvheadend_user} -g ${tvheadend_group} -m 755 -d ${logdir}
 	fi
 }
 

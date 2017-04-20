@@ -108,7 +108,7 @@
     SUBDIR += arduino-mk
     SUBDIR += arduino-sevseg
     SUBDIR += arduino-tools
-    SUBDIR += arduino16
+    SUBDIR += arduino18
     SUBDIR += arduinoOTA
     SUBDIR += argdata
     SUBDIR += argouml
