@@ -36,12 +36,12 @@ RUN_DEPENDS+=	libxul>=45:www/libxul
 
 .elif ${gecko_ARGS:Mfirefox}
 
-_GECKO_DEFAULT_VERSION=	45
-_GECKO_VERSIONS=		45 53
+_GECKO_DEFAULT_VERSION=	52
+_GECKO_VERSIONS=		52 53
 _GECKO_TYPE=	firefox
 
 # Dependence lines for different Firefox versions
-45_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:www/firefox-esr
+52_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:www/firefox-esr
 53_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:www/firefox
 
 .if exists(${LOCALBASE}/bin/firefox)
