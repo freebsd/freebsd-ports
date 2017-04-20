@@ -3,7 +3,7 @@
 
 PORTNAME=	farblazer
 PORTVERSION=	0.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://www.pygame.org/gamelets/games/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -19,7 +19,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	farblazer.py
 NO_ARCH=	yes
 
 PORTDOCS=	README.txt THANKS.txt
