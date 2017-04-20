@@ -12,7 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire game, written in Python and the successor of PySol
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
@@ -67,7 +68,7 @@ post-install-CARDSETS-on:
 		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST}
 
 post-install-DOCS-on:
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
