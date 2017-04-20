@@ -22,6 +22,7 @@ bin/snmpset
 bin/snmpstatus
 bin/snmptable
 bin/snmptest
+%%TLS%%bin/snmptls
 bin/snmptranslate
 bin/snmptrap
 bin/snmpusm
@@ -117,8 +118,11 @@ include/net-snmp/library/snmp-tc.h
 include/net-snmp/library/snmp.h
 include/net-snmp/library/snmpAliasDomain.h
 include/net-snmp/library/snmpCallbackDomain.h
+%%TLS%%include/net-snmp/library/snmpDTLSUDPDomain.h
 include/net-snmp/library/snmpTCPDomain.h
 %%WITH_IPV6%%include/net-snmp/library/snmpTCPIPv6Domain.h
+%%TLS%%include/net-snmp/library/snmpTLSBaseDomain.h
+%%TLS%%include/net-snmp/library/snmpTLSTCPDomain.h
 include/net-snmp/library/snmpUDPDomain.h
 %%WITH_IPV6%%include/net-snmp/library/snmpUDPIPv6Domain.h
 include/net-snmp/library/snmpUnixDomain.h
@@ -134,6 +138,7 @@ include/net-snmp/library/snmp_parse_args.h
 include/net-snmp/library/snmp_secmod.h
 include/net-snmp/library/snmp_service.h
 include/net-snmp/library/snmp_transport.h
+%%TLS%%include/net-snmp/library/snmptsm.h
 include/net-snmp/library/snmpusm.h
 include/net-snmp/library/snmpv3-security-includes.h
 include/net-snmp/library/snmpv3.h
