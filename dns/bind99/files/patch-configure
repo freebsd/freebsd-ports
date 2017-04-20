@@ -1,6 +1,6 @@
---- configure.orig	2016-04-20 20:11:30 UTC
+--- configure.orig	2017-04-14 03:50:56 UTC
 +++ configure
-@@ -14329,27 +14329,9 @@ done
+@@ -14508,27 +14508,9 @@ done
  		# problems start to show up.
  		saved_libs="$LIBS"
  		for TRY_LIBS in \
@@ -20,7 +20,7 @@
 -		    # -L/usr/local/lib to LIBS, which can make the
 -		    # -lgssapi_krb5 test succeed with shared libraries even
 -		    # when you are trying to build with KTH in /usr/lib.
--		    if test "$use_gssapi" = "/usr"
+-		    if test "/usr" = "$use_gssapi"
 -		    then
 -			    LIBS="$TRY_LIBS"
 -		    else
@@ -30,7 +30,7 @@
  		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking linking as $TRY_LIBS" >&5
  $as_echo_n "checking linking as $TRY_LIBS... " >&6; }
  		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-@@ -14392,47 +14374,7 @@ $as_echo "no" >&6; } ;;
+@@ -14571,47 +14553,7 @@ $as_echo "no" >&6; } ;;
  		no) as_fn_error $? "could not determine proper GSSAPI linkage" "$LINENO" 5 ;;
  		esac
  
@@ -43,7 +43,7 @@
 -		# many times as it is the right thing.  Something better
 -		# needs to be done.
 -		#
--		if test "$use_gssapi" = "/usr" -a \
+-		if test "/usr" = "$use_gssapi" -a \
 -			-f /usr/local/lib/libkrb5.a; then
 -		    FIX_KTH_VS_MIT=yes
 -		fi
@@ -79,7 +79,7 @@
  		DNS_GSSAPI_LIBS="$LIBS"
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
-@@ -20477,7 +20419,7 @@ $as_echo "" >&6; }
+@@ -20735,7 +20677,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  
