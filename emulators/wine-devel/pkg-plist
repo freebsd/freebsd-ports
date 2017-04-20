@@ -531,6 +531,7 @@ include/wine/windows/msxml6.h
 include/wine/windows/msxml6.idl
 include/wine/windows/msxml6did.h
 include/wine/windows/msxmldid.h
+include/wine/windows/mtxdm.h
 include/wine/windows/nb30.h
 include/wine/windows/ncrypt.h
 include/wine/windows/ndrtypes.h
@@ -839,6 +840,15 @@ include/wine/windows/ws2def.h
 include/wine/windows/ws2ipdef.h
 include/wine/windows/ws2spi.h
 include/wine/windows/ws2tcpip.h
+include/wine/windows/wsdapi.h
+include/wine/windows/wsdbase.h
+include/wine/windows/wsdbase.idl
+include/wine/windows/wsddisco.h
+include/wine/windows/wsddisco.idl
+include/wine/windows/wsdtypes.h
+include/wine/windows/wsdxml.h
+include/wine/windows/wsdxml.idl
+include/wine/windows/wsdxmldom.h
 include/wine/windows/wshisotp.h
 include/wine/windows/wsipx.h
 include/wine/windows/wsnwlink.h
@@ -1789,6 +1799,7 @@ lib/wine/fakedlls/msxml2.dll
 lib/wine/fakedlls/msxml3.dll
 lib/wine/fakedlls/msxml4.dll
 lib/wine/fakedlls/msxml6.dll
+lib/wine/fakedlls/mtxdm.dll
 lib/wine/fakedlls/ncrypt.dll
 lib/wine/fakedlls/nddeapi.dll
 lib/wine/fakedlls/ndis.sys
@@ -2052,6 +2063,7 @@ lib/wine/fakedlls/wpcap.dll
 lib/wine/fakedlls/write.exe
 lib/wine/fakedlls/ws2_32.dll
 lib/wine/fakedlls/wscript.exe
+lib/wine/fakedlls/wsdapi.dll
 lib/wine/fakedlls/wshom.ocx
 lib/wine/fakedlls/wsnmp32.dll
 lib/wine/fakedlls/wsock32.dll
@@ -2324,9 +2336,11 @@ lib/wine/libwintab32.def
 lib/wine/libwintrust.def
 lib/wine/libwlanapi.def
 lib/wine/libwldap32.def
+lib/wine/libwmvcore.def
 lib/wine/libwnaspi32.def
 %%WINE32%%lib/wine/libwow32.def
 lib/wine/libws2_32.def
+lib/wine/libwsdapi.def
 lib/wine/libwsnmp32.def
 lib/wine/libwsock32.def
 lib/wine/libwtsapi32.def
@@ -2435,6 +2449,7 @@ lib/wine/msxml2.dll.so
 lib/wine/msxml3.dll.so
 lib/wine/msxml4.dll.so
 lib/wine/msxml6.dll.so
+lib/wine/mtxdm.dll.so
 lib/wine/ncrypt.dll.so
 lib/wine/nddeapi.dll.so
 lib/wine/ndis.sys.so
@@ -2698,6 +2713,7 @@ lib/wine/wpcap.dll.so
 lib/wine/write.exe.so
 lib/wine/ws2_32.dll.so
 lib/wine/wscript.exe.so
+lib/wine/wsdapi.dll.so
 lib/wine/wshom.ocx.so
 lib/wine/wsnmp32.dll.so
 lib/wine/wsock32.dll.so
