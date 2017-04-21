@@ -3,7 +3,7 @@
 
 PORTNAME=	iceicepenguin
 PORTVERSION=	1.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/Default/Ice%20Ice%20Penguin/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -21,7 +21,8 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/"ice ice penguin"
 
-USES=		python:run zip
+USES=		python:run shebangfix zip
+SHEBANG_FILES=	iceicepengui.py
 NO_BUILD=	yes
 NO_ARCH=	yes
 
