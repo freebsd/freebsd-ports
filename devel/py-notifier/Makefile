@@ -3,6 +3,7 @@
 
 PORTNAME=	notifier
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.bitkipper.net/bytes/pynotifier/source/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,8 @@ COMMENT=	Generic notifier/event scheduler abstraction
 
 LICENSE=	LGPL20
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	examples/*.py
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	pynotifier
 
