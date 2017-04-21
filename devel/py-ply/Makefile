@@ -13,7 +13,8 @@ COMMENT=	Python Lex-Yacc
 
 LICENSE=	BSD3CLAUSE
 
-USES?=		python shebangfix
+USES?=		python
+USES+=		shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 SHEBANG_FILES=	example/newclasscalc/calc.py \
