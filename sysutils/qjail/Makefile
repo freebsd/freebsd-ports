@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjail
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -27,9 +27,8 @@ NO_ARCH=	yes
 IGNORE_FreeBSD_10=	This version only for FreeBSD 11+
 
 do-install:
-.for i in qjail
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/qjail                      \
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/qjail.bootime              \
 		${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_DATA}   ${WRKSRC}/qjail.portsnap.conf        \
