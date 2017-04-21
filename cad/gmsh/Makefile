@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.16.0
-PORTREVISION=	1
+PORTVERSION=	3.0.1
+PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -14,7 +14,7 @@ COMMENT?=	Automatic 3D finite element mesh generator
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2+ = ${WRKSRC}/doc/LICENSE.txt
+LICENSE_FILE_GPLv2+ = ${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -62,8 +62,8 @@ MED_LIB_DEPENDS=	libmed.so:french/med
 OCC_CFLAGS=		-DHAVE_CONFIG_H -DHAVE_WOK_CONFIG_H -DFREEBSD
 OCC_CMAKE_BOOL=		ENABLE_OCC
 OCC_CMAKE_ON=		-DOCC_INC=${LOCALBASE}/include/OpenCASCADE
-OCC_CONFLICTS=		gmsh-2.*
-OCC_CONFLICTS_OFF=	gmsh-occ-2.*
+OCC_CONFLICTS=		gmsh-[23].*
+OCC_CONFLICTS_OFF=	gmsh-occ-[23].*
 OCC_LIB_DEPENDS=	libopenblas.so:math/openblas libTKernel.so:cad/opencascade
 OCC_USE=		gnome=cairo
 SHARED_ALL_TARGET=	shared
