@@ -13,6 +13,8 @@ COMMENT=	Framework for manipulating Bible texts
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_12= does not build on 12.X
+
 BUILD_DEPENDS=	cppunit-config:devel/cppunit
 
 GNU_CONFIGURE=	yes

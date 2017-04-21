@@ -10,6 +10,8 @@ COMMENT=	Open source Bible study tool
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_12= does not build on 12.X
+
 LIB_DEPENDS=	libclucene-core.so:textproc/clucene \
 		libsword.so:misc/sword
 
