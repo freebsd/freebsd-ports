@@ -40,7 +40,7 @@ SHEBANG_FILES=	test/wsdl2py/*.py test/*.py \
 		doc/examples/client/send_request/simple/ServiceProxy/*.py \
 		doc/examples/server/receive_request/complex/manual/*.py \
 		doc/examples/server/receive_request/complex/client/*.py \
-		test/wsdl2py/servers/*.py 
+		test/wsdl2py/servers/*.py
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
