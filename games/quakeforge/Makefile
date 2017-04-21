@@ -3,7 +3,7 @@
 
 PORTNAME=	quakeforge
 PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/quake/quake/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -18,7 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USE_CSTD=	gnu89
+USES=		bison compiler:c11 gmake libtool localbase python:run shebangfix tar:bzip2
+SHEBANG_FILES=	tools/qfcc/source/qfpreqcc
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	Z_CFLAGS=" " Z_LIBS="-lz"
 CONFIGURE_ARGS=	--disable-alsa \
@@ -30,8 +31,8 @@ CONFIGURE_ARGS=	--disable-alsa \
 		--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
 		--with-ipv6 \
 		--with-sharepath=${Q1DIR}
+USE_CSTD=	gnu89
 INSTALL_TARGET=	install-strip
-USES=		bison compiler:c11 gmake libtool localbase tar:bzip2
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
