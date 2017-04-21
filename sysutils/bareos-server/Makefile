@@ -17,7 +17,7 @@ LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
 
-USES+=		libtool:keepla pkgconfig
+USES+=		libtool:keepla pkgconfig shebangfix
 
 CONFLICTS?=	bacula*-server-*
 
@@ -31,6 +31,8 @@ PLIST_SUB+=	LIB_VERSION=${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+SHEBANG_LANG=	perl
+SHEBANG_FILES=	${WRKSRC}/src/cats/make_catalog_backup.pl.in
 
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
