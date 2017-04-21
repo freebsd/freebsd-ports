@@ -9,6 +9,7 @@ include/log4cpp/BufferingAppender.hh
 include/log4cpp/Category.hh
 include/log4cpp/CategoryStream.hh
 include/log4cpp/Configurator.hh
+include/log4cpp/DailyRollingFileAppender.hh
 include/log4cpp/Export.hh
 include/log4cpp/FactoryParams.hh
 include/log4cpp/FileAppender.hh
