@@ -15,6 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter
 USES=		python shebangfix
 USE_PYTHON=	distutils noegginfo
 SHEBANG_FILES=	tests/interop/*.py tests/datatransfer/*.py
+NO_ARCH=	yes
 
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_SETUP=	${PYSETUP}

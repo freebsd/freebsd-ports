@@ -4,13 +4,14 @@
 PORTNAME=	gnofract4d
 DISTVERSIONPREFIX=	V_
 DISTVERSION=	3_14_1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl
 LIB_DEPENDS=	libpng.so:graphics/png
@@ -19,16 +20,16 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	edyoung
 
-USES=		desktop-file-utils display:build jpeg pathfix pkgconfig \
-		python shared-mime-info
+USES=		desktop-file-utils display:build jpeg localbase pathfix \
+		pkgconfig python shared-mime-info shebangfix
+SHEBANG_FILES=	fractutils/get.py
 USE_GNOME=	intlhack libxslt:build pygtk2
 USE_PYTHON=	distutils autoplist
-
-CFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	man/man1/gnofract4d.1.gz
 
 PORTDOCS=	README
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -48,9 +49,8 @@ post-build:
 
 post-install:
 .for l in fract4d_stdlib fract4dc
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/fract4d/${l}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/fract4d/${l}.so
 .endfor
-
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 

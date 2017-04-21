@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		python:2 shebangfix
 USE_GNOME=	pygtk2 libgnomeui
 SHEBANG_FILES=	*.py
+NO_ARCH=	yes
 
 PORTDOCS=	CHANGELOG README gravity.txt
 OPTIONS_DEFINE=	DOCS
@@ -58,6 +59,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/pysteroids.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	diamond
-PORTVERSION=	0.8.37
-PORTREVISION=	0
+PORTVERSION=	0.8.38
 DISTVERSIONPREFIX=v
 CATEGORIES=	biology
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/src/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		cmake:outsource compiler:c++11-lang
+USES=		cmake:outsource
 
 CFLAGS+=	-DNDEBUG
 

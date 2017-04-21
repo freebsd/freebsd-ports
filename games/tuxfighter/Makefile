@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxfighter
 PORTVERSION=	54
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	SF/pygamebook/TuxFighter/TuxFighter${PORTVERSION}_source/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -21,10 +21,10 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}
 
-USES=		python:2
+USES=		python:2 shebangfix
+SHEBANG_FILES=	TuxFighter54.py
 
 PORTDOCS=	readme_TuxFighter54.txt
-OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	48x48 64x64 72x72 96x96
@@ -33,6 +33,8 @@ SUB_FILES=	${PORTNAME} pkg-message
 
 DESKTOP_ENTRIES="TuxFighter" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -56,6 +58,7 @@ do-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

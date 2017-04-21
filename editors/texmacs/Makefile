@@ -3,7 +3,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.99.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/tmftp/source/
 DISTNAME=	TeXmacs-${PORTVERSION}-src
@@ -33,7 +33,9 @@ NORELRO_PORTS=	yes
 SHEBANG_FILES=	plugins/asymptote/bin/* plugins/dratex/bin/* \
 		plugins/eukleides/bin/* plugins/feynmf/bin/* \
 		plugins/mupad/bin/* plugins/texgraph/bin/* \
-		plugins/xypic/bin/*
+		plugins/xypic/bin/* \
+		plugins/python/bin/tm_python plugins/sage/bin/tm_sage \
+		plugins/mathematica/bin/realpath.py
 
 DATADIR=	${PREFIX}/share/TeXmacs
 

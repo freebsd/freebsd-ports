@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fping
-PORTVERSION=	3.15
+PORTVERSION=	3.16
 CATEGORIES=	net ipv6
 
 MAINTAINER=	jharris@widomaker.com

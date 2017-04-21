@@ -3,6 +3,7 @@
 
 PORTNAME=	netaddr
 PORTVERSION=	0.7.18
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +16,16 @@ EXPLICIT_SAFESTACK=		yes
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
+SHEBANG_FILES=	netaddr/tools/netaddr
+NO_ARCH=	yes
 
-NO_ARCH=        yes
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	AUTHORS CHANGELOG README.md
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

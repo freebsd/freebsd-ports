@@ -3,17 +3,22 @@
 
 PORTNAME=	everygui
 PORTVERSION=	0.99.b
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic GUI for an OS command
 
-USES=		dos2unix python
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		dos2unix python shebangfix
+SHEBANG_FILES=	src/*.py
 DOS2UNIX_GLOB=	*.py
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	libglade2 pygnome2
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

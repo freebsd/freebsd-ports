@@ -3,7 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.4.6
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
@@ -43,7 +43,8 @@ SHEBANG_FILES=	scripts/i.spectral/i.spectral \
 		visualization/nviz/scripts/script_file_tools \
 		visualization/nviz/scripts/script_get_line \
 		visualization/nviz/scripts/script_play \
-		visualization/nviz/scripts/script_tools
+		visualization/nviz/scripts/script_tools \
+		gui/scripts/*.py
 SHEBANG_LANG=	nviz
 nviz_OLD_CMD=	nviz
 nviz_CMD=	${PREFIX}/${GRASS_INST_DIR}/bin/nviz

@@ -3,7 +3,7 @@
 
 PORTNAME=	pyjama
 PORTVERSION=	0.3.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://launchpadlibrarian.net/26637583/
 DISTNAME=	pyjama-0.3.0.1_all
@@ -11,15 +11,20 @@ DISTNAME=	pyjama-0.3.0.1_all
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to the Jamendo music network
 
+LICENSE=	GPLv2 CC-BY-NC-SA-3.0 PD
+LICENSE_COMB=	multi
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson	\
 		${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:multimedia/py-gstreamer
 
-NO_BUILD=	yes
+USES=		gettext python shebangfix
+SHEBANG_FILES=	src/pyjama.py
 USE_GSTREAMER=	core good bad gnomevfs
 USE_GNOME=	pygtk2
-USES=		gettext python
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 LOCALES=	bg ca da de en_GB es fr it pl
 INSTDIR=	${PYTHON_SITELIBDIR}/${PORTNAME}
@@ -35,7 +40,7 @@ post-patch:
 	${FIND} ${WRKSRC} -name "*~" -delete
 
 do-install:
-	${MKDIR} ${STAGEDIR}${INSTDIR}
+	@${MKDIR} ${STAGEDIR}${INSTDIR}
 
 .for f in ${INSTFILES}
 	${INSTALL_DATA} ${WRKSRC}/src/${f} ${STAGEDIR}${INSTDIR}

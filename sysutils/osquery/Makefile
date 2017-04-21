@@ -42,6 +42,14 @@ MAKE_JOBS_UNSAFE=	yes
 
 NOPIE_PORTS=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1100000
+BUILD_DEPENDS+=	clang38:devel/llvm38
+CC=	clang38
+CXX=	clang++38
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/osquery/|/var/db/osquery/|g' \
 		${WRKSRC}/tools/deployment/osquery.example.conf
@@ -61,4 +69,4 @@ post-stage:
 	${MKDIR} ${STAGEDIR}/var/db/osquery
 	${MKDIR} ${STAGEDIR}/var/log/osquery
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
