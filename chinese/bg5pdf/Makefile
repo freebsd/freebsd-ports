@@ -3,7 +3,7 @@
 
 PORTNAME=	bg5pdf
 PORTVERSION=	1.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/bg5pdf/ \
 		LOCAL/chinsan
@@ -15,26 +15,30 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpdf.so:print/pdflib
 
-USES=		python:2
+USES=		python:2 shebangfix
+SHEBANG_FILES=	bg5pdf gbpdf
+python_OLD_CMD=	"/usr/bin/env /usr/bin/python"
 
 CFLAGS+=	-fPIC
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-patch:
-	${REINPLACE_CMD} -e 's,/usr/bin/python,python,g'  ${WRKSRC}/bg5pdf
+post-extract:
+	@${CP} ${FILESDIR}/gbpdf ${WRKSRC}
 
 do-build:
 	${CC} ${CFLAGS} -shared ${WRKSRC}/bg5pdflib.c -I${PREFIX}/include \
 		-I${PYTHON_INCLUDEDIR} -L${PREFIX}/lib -lpdf -o ${WRKSRC}/bg5pdflib.so
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_LIB} ${WRKSRC}/bg5pdflib.so ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bg5pdf ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/gbpdf ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/bg5pdflib.so ${STAGEDIR}${PYTHON_SITELIBDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.big5 ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.big5.pdf ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/genTest.py ${STAGEDIR}${EXAMPLESDIR}
