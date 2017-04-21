@@ -7,7 +7,7 @@ PORTREVISION=	${DRV_ODBC_PR}
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/marino
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APQ Ada95 ODBC database driver
 
 LICENSE=	GPLv2 GMGPL

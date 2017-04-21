@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	ini-files-${PORTVERSION}
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ini configuration file reader and manipulator package for Ada
 
 LICENSE=	MIT

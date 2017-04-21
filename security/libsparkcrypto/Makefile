@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://senier.net/libsparkcrypto/
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cryptographic library implemented in SPARK
 
 LICENSE=	BSD3CLAUSE
