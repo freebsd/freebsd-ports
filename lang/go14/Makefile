@@ -2,7 +2,7 @@
 
 PORTNAME=	go14
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
 DISTNAME=	go${PORTVERSION}.src
@@ -13,11 +13,16 @@ COMMENT=	Go programming language
 LICENSE=	BSD3CLAUSE
 
 USES=		compiler shebangfix
-SHEBANG_LANG=	sh
-SHEBANG_FILES=	${WRKSRC}/src/*.bash \
-		${WRKSRC}/doc/progs/run \
-		${WRKSRC}/doc/articles/wiki/*.bash \
-		${WRKSRC}/test/bench/shootout/timing.sh
+SHEBANG_LANG=	sh perl
+SHEBANG_FILES=	src/*.bash \
+		src/cmd/go/*.bash \
+		doc/progs/run \
+		doc/articles/wiki/*.bash \
+		test/bench/shootout/timing.sh \
+		misc/nacl/*_exec misc/benchcmp \
+		src/net/http/cgi/testdata/*.cgi \
+		src/regexp/syntax/*.pl \
+		lib/codereview/*.sh
 
 sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}
