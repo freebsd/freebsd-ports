@@ -2,7 +2,7 @@
 
 PORTNAME=	cluster-glue
 PORTVERSION=	1.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hg.linux-ha.org/glue/archive/
 DISTNAME=	0a7add1d9996
@@ -29,7 +29,9 @@ USES=		autoreconf gettext gmake libtool localbase perl5 pkgconfig python shebang
 SHEBANG_FILES=	lib/plugins/stonith/external/ibmrsa-telnet \
 		lib/plugins/stonith/external/vmware \
 		lib/plugins/stonith/external/xen0-ha.in \
-		lib/plugins/stonith/external/xen0-ha-dom0-stonith-helper
+		lib/plugins/stonith/external/xen0-ha-dom0-stonith-helper \
+		lib/plugins/stonith/external/riloe \
+		lib/plugins/stonith/external/dracmc-telnet
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	ha_logd
