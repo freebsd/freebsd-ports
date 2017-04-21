@@ -176,7 +176,8 @@ VBOX_WITH_QT=	1
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderAdditions.cpp \
 		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderExtensionPack.cpp \
 		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_settings_global_UIGlobalSettingsNetworkDetailsHost.cpp \
-		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_widgets_UIMiniToolBar.cpp
+		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_widgets_UIMiniToolBar.cpp \
+		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_widgets_UIMiniToolBar.h
 CONFIGURE_ARGS+=	--enable-qt4
 USE_QT4=	corelib gui linguist_build moc_build network opengl
 USE_QT4+=	rcc_build uic_build
