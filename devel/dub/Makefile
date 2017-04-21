@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dub
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/dlang/dub/archive/
 DISTFILES=	v${PORTVERSION}.tar.gz
