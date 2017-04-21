@@ -19,7 +19,7 @@ OPTIONS_EXCLUDE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 MASTERDIR=	${.CURDIR}/../qemu
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
-EXTRA_PATCHES=	${.CURDIR}/files/patch-configure
+EXTRA_PATCHES=	${.CURDIR}/files/patch-Makefile ${.CURDIR}/files/patch-configure
 PKGMESSAGE=
 
 PORTDOCS=	qemu-doc.html qmp-commands.txt

@@ -1,0 +1,14 @@
+--- Makefile.orig	2017-03-31 14:07:03 UTC
++++ Makefile
+@@ -484,11 +490,6 @@ endif
+ ifeq ($(CONFIG_GTK),y)
+ 	$(MAKE) -C po $@
+ endif
+-	$(INSTALL_DIR) "$(DESTDIR)$(qemu_datadir)/keymaps"
+-	set -e; for x in $(KEYMAPS); do \
+-		$(INSTALL_DATA) $(SRC_PATH)/pc-bios/keymaps/$$x "$(DESTDIR)$(qemu_datadir)/keymaps"; \
+-	done
+-	$(INSTALL_DATA) $(BUILD_DIR)/trace-events-all "$(DESTDIR)$(qemu_datadir)/trace-events-all"
+ 	for d in $(TARGET_DIRS); do \
+ 	$(MAKE) $(SUBDIR_MAKEFLAGS) TARGET_DIR=$$d/ -C $$d $@ || exit 1 ; \
+         done
