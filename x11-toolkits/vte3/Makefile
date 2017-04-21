@@ -25,7 +25,7 @@ USES=		bison compiler:c++0x gettext gmake gnome libtool localbase \
 		pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool referencehack 
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool referencehack \
 		introspection:build
 CONFIGURE_ARGS=	--enable-introspection \
 		--disable-static \
