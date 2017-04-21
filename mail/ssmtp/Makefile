@@ -11,6 +11,9 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 GNU_CONFIGURE=	yes
 USES=		gmake tar:bzip2 ssl
 GROUPS=		ssmtp
