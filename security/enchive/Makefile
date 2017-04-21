@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	enchive
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/skeeto/enchive/archive/
 DISTFILES=	${PORTVERSION}.tar.gz

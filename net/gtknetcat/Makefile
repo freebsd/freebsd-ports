@@ -3,7 +3,7 @@
 
 PORTNAME=	gtknetcat
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/lxde/GtkNetCat%20%28GUI%20for%20netcat%29/GtkNetCat%20${PORTVERSION}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -19,9 +19,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
-USES=		gmake localbase python
+USES=		gmake localbase python shebangfix
+SHEBANG_FILES=	src/gtknetcat.in src/gtknetcat.py
 USE_GNOME=	intlhack pygtk2
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	AUTHORS README
 

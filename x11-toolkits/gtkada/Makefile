@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gtkada-rm-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada graphical toolkit based on Gtk2+
 
 LICENSE=	GPLv2

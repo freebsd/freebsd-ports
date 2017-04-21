@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://home.datacomm.ch/t_wolf/tw/ada95/adabrowse/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML generator for Ada 95 library unit specifications
 
 LICENSE=	GPLv2

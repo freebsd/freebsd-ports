@@ -5,7 +5,7 @@ PORTNAME=	aws
 PORTVERSION=	17.1
 CATEGORIES=	www
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adacore Ada Web Server and framework
 
 LICENSE=	GPLv3 GPLv3RLE

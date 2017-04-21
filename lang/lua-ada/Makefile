@@ -6,7 +6,7 @@ PORTVERSION=	1.0			# made-up; no version info on GH
 PORTREVISION=	1
 CATEGORIES=	lang
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada binding for Lua
 
 LICENSE=	GPLv3 GPLv3RLE
