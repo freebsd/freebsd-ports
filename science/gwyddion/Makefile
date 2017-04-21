@@ -3,6 +3,7 @@
 
 PORTNAME=	gwyddion
 PORTVERSION=	2.45
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -18,8 +19,9 @@ LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libfftw3.so:math/fftw3 \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
-		shared-mime-info tar:xz
+USES=		desktop-file-utils gettext gmake libtool localbase:ldflags \
+		pathfix pkgconfig shared-mime-info shebangfix tar:xz
+SHEBANG_FILES=	plugins/process/invert_python.py
 USE_GNOME=	gconf2 gtk20 libxml2
 USE_GL=		glu
 USE_XORG=	xmu
@@ -29,9 +31,6 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gwyddion-thumbnailer.schemas
 
