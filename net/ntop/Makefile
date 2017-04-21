@@ -3,7 +3,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	5.0.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
 
@@ -23,7 +23,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 DBDIR?=		/var/db
 
-USES=		autoreconf:build cpe gmake libtool python ssl
+USES=		autoreconf:build cpe gmake libtool python shebangfix ssl
+SHEBANG_FILES=	python/sankey.py
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -71,6 +72,7 @@ pre-install:
 	@cd ${WRKSRC} && ${MAKE_CMD} dnetter
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so ${STAGEDIR}${PREFIX}/lib/ntop/plugins/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so \
+		${STAGEDIR}${PREFIX}/lib/ntop/plugins/*.so
 
 .include <bsd.port.mk>
