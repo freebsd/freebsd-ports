@@ -2,6 +2,7 @@
 
 PORTNAME=	sd-agent
 DISTVERSION=	1.13.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tim@wallago.co.uk
@@ -18,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	serverdensity
 
 USES=		python shebangfix
-SHEBANG_FILES=	agent.py
+SHEBANG_FILES=	agent.py plugins.py
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST+=	RCNAME=${PORTNAME:S/-/_/g}
