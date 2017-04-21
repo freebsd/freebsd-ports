@@ -8,6 +8,7 @@ include/curl/easy.h
 include/curl/mprintf.h
 include/curl/multi.h
 include/curl/stdcheaders.h
+include/curl/system.h
 include/curl/typecheck-gcc.h
 lib/libcurl.a
 lib/libcurl.so
@@ -293,6 +294,7 @@ man/man3/CURLOPT_STDERR.3.gz
 man/man3/CURLOPT_STREAM_DEPENDS.3.gz
 man/man3/CURLOPT_STREAM_DEPENDS_E.3.gz
 man/man3/CURLOPT_STREAM_WEIGHT.3.gz
+man/man3/CURLOPT_SUPPRESS_CONNECT_HEADERS.3.gz
 man/man3/CURLOPT_TCP_FASTOPEN.3.gz
 man/man3/CURLOPT_TCP_KEEPALIVE.3.gz
 man/man3/CURLOPT_TCP_KEEPIDLE.3.gz
