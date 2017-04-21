@@ -6,7 +6,7 @@ PORTVERSION=	3.14.2
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada graphical toolkit based on Gtk3 components
 
 LICENSE=	GPLv3

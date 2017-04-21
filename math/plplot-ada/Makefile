@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 PKGNAMESUFFIX=	-ada
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada bindings for PLplot
 
 LICENSE=	LGPL3

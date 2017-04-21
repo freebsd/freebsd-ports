@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	excel_writer_${PORTVERSION}
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada package for easily creating Excel files with basic formats
 
 LICENSE=	MIT

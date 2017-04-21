@@ -4,7 +4,7 @@
 PORTREVISION=	0
 PKGNAMESUFFIX=	-x86
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infrastructure for C/Ada Android cross-compiler (x86)
 
 BRANCH2=	x86_32

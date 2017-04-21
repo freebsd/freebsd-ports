@@ -5,7 +5,7 @@ PORTNAME=	templates_parser
 PORTVERSION=	17.0.0
 CATEGORIES=	textproc
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web page template engine module for the Ada Web Server
 
 LICENSE=	GPLv3+

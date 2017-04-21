@@ -8,7 +8,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://ironsides.martincarlisle.com/
 DISTNAME=	ironsides_authoritative-${SNAPSHOT}
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Authoritative DNS server formally verified by SPARK/Ada
 
 LICENSE=	Ironsides
