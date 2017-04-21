@@ -2,7 +2,7 @@
 
 PORTNAME=	Products.PlacelessTranslationService
 PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-gettext>0:textproc/py-python-gettext 
 		${PYTHON_PKGNAMEPREFIX}ExtensionClass>=0:devel/py-ExtensionClass \
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:databases/zodb3
 
-USES=		python zip
+USES=		python shebangfix zip
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	Products/PlacelessTranslationService/bin/convertToLocales.py
 
 .include <bsd.port.mk>
