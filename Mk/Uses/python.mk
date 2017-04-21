@@ -472,10 +472,10 @@ UNIQUE_SUFFIX=		-${PYTHON_VER}
 .if defined(_PYTHON_FEATURE_AUTOPLIST)
 UNIQUE_FIND_SUFFIX_FILES=	\
 	${SED} -e 's|^${PREFIX}/||' ${_PYTHONPKGLIST} ${TMPPLIST} | \
-	${GREP} -e '^bin/.*$$\|^sbin/.*$$\|^libexec/.*$$'
+	${EGREP} -e '^bin/.*$$|^sbin/.*$$|^libexec/.*$$'
 .else
 UNIQUE_FIND_SUFFIX_FILES=	\
-	${GREP} -he '^bin/.*$$\|^sbin/.*$$\|^libexec/.*$$' ${TMPPLIST} 2>/dev/null
+	${EGREP} -he '^bin/.*$$|^sbin/.*$$|^libexec/.*$$' ${TMPPLIST} 2>/dev/null
 .endif
 .endif # defined(_PYTHON_FEATURE_CONCURRENT)
 
