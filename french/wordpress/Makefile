@@ -5,7 +5,7 @@ PORTNAME=	wordpress
 PORTVERSION=	4.7.3
 PORTEPOCH=	1
 DISTVERSIONSUFFIX=	-fr_FR
-CATEGORIES=	www
+CATEGORIES=	french www
 MASTER_SITES=	http://fr.wordpress.org/
 
 MAINTAINER=	joneum@bsdproject.de
