@@ -3,7 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	2.8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://lives-video.com/releases/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -52,6 +52,8 @@ USES=		compiler:c++11-lib gettext-runtime ghostscript:run libtool \
 		localbase pathfix perl5 pkgconfig python shebangfix tar:bzip2
 SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
 		smogrify tools/autolives.pl lives-plugins/plugins/encoders/*_encoder \
+		lives-plugins/marcos-encoders/*encoder* \
+		lives-plugins/plugins/encoders/multi_encoder3 \
 		lives-plugins/plugins/playback/audiostream/audiostreamer.pl
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
