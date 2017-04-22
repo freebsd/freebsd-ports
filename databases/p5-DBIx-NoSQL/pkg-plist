@@ -1,5 +1,4 @@
 %%SITE_PERL%%/DBIx/NoSQL.pm
-%%SITE_PERL%%/DBIx/NoSQL/Class.pm
 %%SITE_PERL%%/DBIx/NoSQL/ClassScaffold.pm
 %%SITE_PERL%%/DBIx/NoSQL/Entity.pm
 %%SITE_PERL%%/DBIx/NoSQL/Model.pm
