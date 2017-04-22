@@ -21,6 +21,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} VER="${VER}"
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# none
+TEST_TARGET=	check
 
 CONFIGURE_ARGS+=--program-suffix=${VER}
 
@@ -31,8 +32,6 @@ CONFIGURE_ARGS+=--with-lua=${LUA_BINDIR}/lua \
 OCTAVE_VER_CMD=	${LOCALBASE}/bin/octave-config -v 2>/dev/null || ${TRUE}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	${SETENV} OCTAVE_VER=$$(${OCTAVE_VER_CMD}) \
@@ -48,23 +47,18 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
 
-post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
-	cd ${WRKSRC}/Examples && ${FIND} . -type d \
-		-exec ${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
-	cd ${WRKSRC}/Examples && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Doc && ${FIND} . -type d \
 		-exec ${INSTALL} -d ${STAGEDIR}${DOCSDIR}/${PORTVERSION}/{} \;
 	cd ${WRKSRC}/Doc && ${FIND} . -type f \
 		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/${PORTVERSION}/{} \;
-.endif
 
-regression-test: build
-	cd ${WRKSRC} && ${MAKE_CMD} check
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
+	cd ${WRKSRC}/Examples && ${FIND} . -type d \
+		-exec ${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
+	cd ${WRKSRC}/Examples && ${FIND} . -type f \
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
 
 .include <bsd.port.mk>
