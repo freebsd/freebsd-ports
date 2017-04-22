@@ -1,4 +1,4 @@
---- src/BFont.cpp.orig	2017-04-22 08:18:12 UTC
+--- src/BFont.cpp.orig	2005-02-27 14:29:13 UTC
 +++ src/BFont.cpp
 @@ -314,7 +314,7 @@ int BFont_TextWidthFont(BFont_Info *Font
  /* counts the spaces of the strings */
