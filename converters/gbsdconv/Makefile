@@ -3,6 +3,7 @@
 
 PORTNAME=	gbsdconv
 PORTVERSION=	11.3
+PORTREVISION=	1
 CATEGORIES=	converters python
 
 MAINTAINER=	buganini@gmail.com
@@ -16,8 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsdconv>=8.0:converters/py-bsdconv
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
 
-USES=		python
+USES=		python shebangfix
 USE_GNOME=	gtk30 introspection:run
+SHEBANG_FILES=	gbsdconv
 
 USE_LDCONFIG=	yes
 

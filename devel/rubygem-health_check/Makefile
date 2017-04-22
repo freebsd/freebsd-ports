@@ -3,6 +3,7 @@
 
 PORTNAME=	health_check
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	test/*railsapp
 
 .include <bsd.port.mk>

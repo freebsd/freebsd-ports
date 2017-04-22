@@ -2,6 +2,7 @@
 
 PORTNAME=	origami
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +17,7 @@ RUN_DEPENDS=	rubygem-colorize>=0.7:devel/rubygem-colorize
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	examples/*/*.rb
 
 .include <bsd.port.mk>
