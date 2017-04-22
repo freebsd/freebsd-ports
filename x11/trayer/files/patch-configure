@@ -1,0 +1,15 @@
+--- configure.orig	2017-04-10 09:22:14 UTC
++++ configure
+@@ -1,9 +1,10 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ PREFIX=/usr
+ 
+ if [ ! -z "$1" ]; then
+-  if [[ "$1" =~ ^--prefix= ]]; then
++  ARGNAME=$(echo $1 | cut -d= -f1)
++  if [ "x${ARGNAME}" = "x--prefix" ]; then
+     PREFIX=$(echo $1 | cut -d= -f2)
+   else
+     echo "Usage: $0 [--prefix=<path>]"
