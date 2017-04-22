@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	brotli
-PORTVERSION=	0.5.2
-PORTREVISION=	4
+PORTVERSION=	0.6.0
 CATEGORIES=	archivers
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +23,6 @@ SHEBANG_FILES=	python/bro.py
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/python/bro.py ${STAGEDIR}${PREFIX}/bin/brotli
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/brotli.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_brotli.so
 
 .include <bsd.port.mk>

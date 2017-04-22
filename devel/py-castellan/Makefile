@@ -3,6 +3,7 @@
 
 PORTNAME=	castellan
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel \
 
 NO_ARCH=	yes
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	castellan/tests/contrib/*.sh
 
 .include <bsd.port.mk>

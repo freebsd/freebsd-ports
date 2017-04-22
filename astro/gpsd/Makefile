@@ -3,7 +3,7 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	3.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -16,9 +16,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		xsltproc:textproc/libxslt
 
-USES=		cpe pathfix pkgconfig python scons
+USES=		cpe pathfix pkgconfig python scons shebangfix
 CPE_VENDOR=	gpsd_project
 USE_RC_SUBR=	gpsd
+SHEBANG_FILES=	*.py gps/*.py gegps xgps gpscat xgpsspeed gpsprof \
+		gpsfake
 
 MAKE_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig"
 MAKE_ENV=	DESTDIR="${STAGEDIR}"

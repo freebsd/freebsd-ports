@@ -1,5 +1,4 @@
 %%SITE_PERL%%/DBIx/NoSQL.pm
-%%SITE_PERL%%/DBIx/NoSQL/Class.pm
 %%SITE_PERL%%/DBIx/NoSQL/ClassScaffold.pm
 %%SITE_PERL%%/DBIx/NoSQL/Entity.pm
 %%SITE_PERL%%/DBIx/NoSQL/Model.pm
@@ -12,4 +11,14 @@
 %%SITE_PERL%%/DBIx/NoSQL/TypeMap.pm
 %%SITE_PERL%%/DBIx/NoSQLite.pm
 %%PERL5_MAN3%%/DBIx::NoSQL.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::ClassScaffold.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::Entity.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::Model.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::Model::Field.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::Model::Index.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::Search.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::Stash.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::Storage.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::Store.3.gz
+%%PERL5_MAN3%%/DBIx::NoSQL::TypeMap.3.gz
 %%PERL5_MAN3%%/DBIx::NoSQLite.3.gz
