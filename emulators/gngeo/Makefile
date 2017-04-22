@@ -68,8 +68,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-frerun-loop-opt||; \
 		s|-falign-jumps=2||; s|-falign-loops=2||; \
 		s|-fschedule-insns2||; s|-malign-double||; \
-		s|-frerun-loop-opt||; s|-malign-double||; \
-		s|-O3||' ${WRKSRC}/configure
+		s|-frerun-loop-opt||; s|-O3||' \
+		${WRKSRC}/configure
 .endif
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
