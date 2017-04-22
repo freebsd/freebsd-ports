@@ -4,7 +4,7 @@
 
 PORTNAME=	gconf2
 PORTVERSION=	3.2.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	GConf-${PORTVERSION}
@@ -23,7 +23,7 @@ USES=		tar:xz
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-gobject-1.so:sysutils/polkit
 
-USES+=		gettext gmake libtool pathfix pkgconfig
+USES+=		gettext gmake libtool pathfix pkgconfig python:run shebangfix
 USE_GNOME=	orbit2 gtk20 libxml2 \
 		referencehack intlhack dconf introspection:build
 USE_LDCONFIG=	yes
@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	gsettings/gsettings-schema-convert
 
 DOCSDIR=	${PREFIX}/share/doc/gconf
 
