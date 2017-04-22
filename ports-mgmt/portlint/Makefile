@@ -39,6 +39,8 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/bin/portlint
 	${INSTALL_MAN} ${WRKSRC}/portlint.1 \
 	    ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/portlintgrep.pl \
 	    ${STAGEDIR}${EXAMPLESDIR}/portlintgrep
