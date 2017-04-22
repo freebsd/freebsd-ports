@@ -2,7 +2,7 @@ Quagga is a routing software suite, providing implementations of
 OSPFv2, OSPFv3, RIP v1 and v2, RIPv3, BGPv4 and experemental ISIS
 for Unix platforms, particularly FreeBSD and Linux and also NetBSD,
 to mention a few. Quagga is a fork of GNU Zebra which was developed
-by KunihiroIshiguro. The Quagga tree aims to build a more involved
+by Kunihiro Ishiguro. The Quagga tree aims to build a more involved
 community around Quagga than the current centralised model of GNU Zebra.
 
 WWW: http://www.quagga.net/
