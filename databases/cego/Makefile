@@ -2,6 +2,7 @@
 
 PORTNAME=	cego
 PORTVERSION=	2.33.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -22,7 +23,8 @@ TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 USES=		libtool localbase ncurses readline shebangfix
-SHEBANG_FILES=	tools/cgbackup tools/cgrecover tools/cgsimload
+SHEBANG_FILES=	tools/cgbackup tools/cgrecover tools/cgsimload \
+		tools/logManager tools/backupManager
 
 USERS=		cego
 GROUPS=		cego
