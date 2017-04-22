@@ -1,4 +1,4 @@
---- commands.c.orig	2016-10-08 19:30:21 UTC
+--- commands.c.orig	2017-04-12 23:01:17 UTC
 +++ commands.c
 @@ -185,7 +185,7 @@ int mutt_display_message (HEADER *cur)
      {
@@ -9,7 +9,7 @@
  	  mutt_message ( _("S/MIME signature successfully verified."));
  	else
  	  mutt_error ( _("S/MIME certificate owner does not match sender."));
---- contrib/smime.rc.orig	2016-10-08 19:30:21 UTC
+--- contrib/smime.rc.orig	2017-04-12 23:01:05 UTC
 +++ contrib/smime.rc
 @@ -8,7 +8,10 @@ set smime_is_default
  
@@ -23,10 +23,10 @@
  # Passphrase expiration
  set smime_timeout=300
  
---- init.h.orig	2016-10-08 19:35:50 UTC
+--- init.h.orig	2017-04-12 23:01:17 UTC
 +++ init.h
-@@ -2946,6 +2946,15 @@ struct option_t MuttVars[] = {
-   ** alongside the documentation.
+@@ -2980,6 +2980,15 @@ struct option_t MuttVars[] = {
+   ** to determine the key to use. It will ask you to supply a key, if it can't find one.
    ** (S/MIME only)
    */
 +  { "smime_dont_check_sender",	DT_BOOL, R_NONE, OPTSMIMENOSENDER, 0 },
@@ -38,12 +38,12 @@
 +  ** longer needs email-addresses as part of the certificates.
 +  ** It is not set by default.
 +  */
-   { "smime_decrypt_use_default_key",	DT_BOOL, R_NONE, OPTSDEFAULTDECRYPTKEY, 1 },
+   { "smime_sign_as",			DT_SYN,  R_NONE, UL "smime_default_key", 0 },
+   { "smime_default_key",		DT_STR,	 R_NONE, UL &SmimeDefaultKey, 0 },
    /*
-   ** .pp
---- mutt.h.orig	2016-10-08 19:30:21 UTC
+--- mutt.h.orig	2017-04-12 23:01:17 UTC
 +++ mutt.h
-@@ -486,6 +486,7 @@ enum
+@@ -499,6 +499,7 @@ enum
    OPTCRYPTTIMESTAMP,
    OPTSMIMEISDEFAULT,
    OPTASKCERTLABEL,

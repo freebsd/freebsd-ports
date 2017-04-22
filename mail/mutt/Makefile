@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-PORTVERSION=	1.8.0
-PORTREVISION?=	2
+PORTVERSION=	1.8.2
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -17,6 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+		https://web-beta.archive.org/web/20161116074212/http://home.uchicago.edu/~dgc/sw/mutt/:dgc \
 		http://home.uchicago.edu/~dgc/sw/mutt/:dgc \
 		https://www.schrab.com/aaron/mutt/:ats \
 		http://vc.org.ua/mutt/:vc
@@ -216,7 +217,7 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
 # un/comment as each VERSION is created for PORTVERSION
 VVV_PATCH_VERSION=	1.8.0
-GREETING_PATCH_VERSION=	1.8.0
+#GREETING_PATCH_VERSION=	1.8.1
 
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
@@ -277,7 +278,14 @@ post-patch:
 		${WRKSRC}/contrib/gpg.rc
 	@${REINPLACE_CMD} -e 's,pgp6,pgp,g' \
 		${WRKSRC}/contrib/pgp6.rc
-	@${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
+	@${REINPLACE_CMD} -E -e 's#(/samples|samples/)#share/examples/mutt#g' \
+		${WRKSRC}/doc/reference.html \
+		${WRKSRC}/doc/manual.html \
+		${WRKSRC}/doc/manual.txt \
+		${WRKSRC}/doc/Muttrc \
+		${WRKSRC}/INSTALL \
+		${WRKSRC}/init.h
+	@${REINPLACE_CMD} -e 's#$$(docdir)/samples#${EXAMPLESDIR}#g' \
 		${WRKSRC}/contrib/Makefile.am
 
 pre-configure::
