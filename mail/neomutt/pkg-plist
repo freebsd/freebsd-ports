@@ -133,9 +133,7 @@ man/man5/muttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/samples/pgp6.rc
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.mailcap
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.muttrc
-%%PORTDOCS%%%%DOCSDIR%%/samples/sample.muttrc-sidebar
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.muttrc-tlr
-%%PORTDOCS%%%%DOCSDIR%%/samples/sample.vimrc-sidebar
 %%PORTDOCS%%%%DOCSDIR%%/samples/smime.rc
 %%PORTDOCS%%%%DOCSDIR%%/samples/smime_keys_test.pl
 %%PORTDOCS%%%%DOCSDIR%%/security.html

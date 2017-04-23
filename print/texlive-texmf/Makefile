@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150523
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2015/:texmf \
 		LOCAL/hrs:latex
@@ -18,7 +18,7 @@ COMMENT=	TeX Live Typesetting System, texmf Tree
 CONFLICTS_INSTALL=	texlive-base-201[234]* \
 			texlive-texmf-201[234]*
 
-USES=		shebangfix tar:xz
+USES=		python:run shebangfix tar:xz
 USE_TEX=	basic:extract base tlmgr:run texhash
 TEXHASHDIRS=	${TEXMFDIR} ${TEXMFDISTDIR}
 NO_BUILD=	yes
@@ -280,5 +280,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/shipunov/biokey2html.sh
 	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/mycv/mycv_split_contents.pl
+	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/env python|${python_CMD}|' \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/asymptote/GUI/*.py \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/*/*.py
 
 .include <bsd.port.mk>

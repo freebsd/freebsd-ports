@@ -3,7 +3,7 @@
 
 PORTNAME=	crmsh
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	dpejesh@yahoo.com
@@ -24,7 +24,10 @@ CONFIGURE_ARGS=	--with-ocf-root=${PREFIX}/etc/ocf
 NO_ARCH=	yes
 
 SHEBANG_FILES=	crm \
+		scripts/*/*.py \
 		test/cib-tests.sh \
+		test/list-undocumented-commands.py \
+		utils/crm_clean.py \
 		utils/crm_pkg.py \
 		utils/crm_rpmcheck.py
 
