@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Flask
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=0.11:www/py-werkzeug \
 		${PYTHON_PKGNAMEPREFIX}itsdangerous>=0.24:security/py-itsdangerous \
 		${PYTHON_PKGNAMEPREFIX}click>=6.6:devel/py-click
 
-USES=	python
+USES=		python
 USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
