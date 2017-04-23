@@ -3,7 +3,7 @@
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.8.20
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/39/
@@ -16,10 +16,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
+USES=		libtool pathfix perl5 pkgconfig python:build \
+		shebangfix tar:bzip2
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
-SHEBANG_FILES=	${WRKSRC}/src/spy/pcsc-spy
+SHEBANG_FILES=	src/spy/pcsc-spy
 
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
