@@ -25,7 +25,7 @@ GH_PROJECT=	Devede
 
 USES=		iconv python:run shebangfix
 USE_GNOME=	pygtk2:run
-SHEBANG_FILES=	devede.py
+SHEBANG_FILES=	devede
 NO_ARCH=	yes
 NO_BUILD=	yes
 

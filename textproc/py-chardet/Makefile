@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	chardet
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Universal encoding detector for Python 2 and 3
@@ -13,15 +13,15 @@ COMMENT=	Universal encoding detector for Python 2 and 3
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose
-
-USES=		python
-USE_GITHUB=	yes
-USE_PYTHON=	autoplist concurrent distutils
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis
 
 NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ptr
 
 .include <bsd.port.mk>
