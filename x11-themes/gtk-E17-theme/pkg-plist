@@ -116,6 +116,8 @@ share/themes/E17gtk/gtk-3.0/assets/checkbox-menuitem-checked.svg
 share/themes/E17gtk/gtk-3.0/assets/checkbox-menuitem-mixed-insensitive.svg
 share/themes/E17gtk/gtk-3.0/assets/checkbox-menuitem-mixed-prelight.svg
 share/themes/E17gtk/gtk-3.0/assets/checkbox-menuitem-mixed.svg
+share/themes/E17gtk/gtk-3.0/assets/checkbox-menuitem-unchecked-prelight.svg
+share/themes/E17gtk/gtk-3.0/assets/checkbox-menuitem-unchecked.svg
 share/themes/E17gtk/gtk-3.0/assets/checkbox-mixed-dark.svg
 share/themes/E17gtk/gtk-3.0/assets/checkbox-mixed-insensitive-dark.svg
 share/themes/E17gtk/gtk-3.0/assets/checkbox-unchecked-dark.svg
@@ -147,6 +149,8 @@ share/themes/E17gtk/gtk-3.0/assets/radio-menuitem-checked.svg
 share/themes/E17gtk/gtk-3.0/assets/radio-menuitem-mixed-insensitive.svg
 share/themes/E17gtk/gtk-3.0/assets/radio-menuitem-mixed-prelight.svg
 share/themes/E17gtk/gtk-3.0/assets/radio-menuitem-mixed.svg
+share/themes/E17gtk/gtk-3.0/assets/radio-menuitem-unchecked-prelight.svg
+share/themes/E17gtk/gtk-3.0/assets/radio-menuitem-unchecked.svg
 share/themes/E17gtk/gtk-3.0/assets/radio-mixed-dark.svg
 share/themes/E17gtk/gtk-3.0/assets/radio-mixed-insensitive-dark.svg
 share/themes/E17gtk/gtk-3.0/assets/radio-selected-dark.svg
@@ -191,5 +195,4 @@ share/themes/E17gtk/gtk-3.0/gtk-widgets-assets-dark.css
 share/themes/E17gtk/gtk-3.0/gtk-widgets.css
 share/themes/E17gtk/gtk-3.0/gtk.css
 share/themes/E17gtk/gtk-3.0/settings.ini
-share/themes/E17gtk/gtk-3.0/unity.css
 share/themes/E17gtk/index.theme

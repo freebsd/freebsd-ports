@@ -24,6 +24,8 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		libgda5-mysql>=0:databases/libgda5-mysql \
 		libgda5-postgresql>=0:databases/libgda5-postgresql
 
+BROKEN=		Does current not build
+
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake libarchive libtool pathfix \
 		pgsql pkgconfig python shared-mime-info tar:xz
