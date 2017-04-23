@@ -3,7 +3,7 @@
 
 PORTNAME=	libgda
 PORTVERSION?=	5.2.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	5
@@ -12,8 +12,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Provides uniform access to different kinds of data sources
 
-USES=		tar:xz
+USES=		python readline shebangfix tar:xz
 LIBGDA5_SLAVE?=	no
+SHEBANG_FILES=	libgda-report/RML/*/*.py
 
 .if !defined(REFERENCE_PORT)
 
