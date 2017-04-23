@@ -4195,6 +4195,7 @@
 %%WWWDIR%%/modules/sync/z-push/config.php
 %%WWWDIR%%/modules/sync/z-push/install.sh
 %%WWWDIR%%/modules/sync/z-push/z-push-admin.php
+%%WWWDIR%%/modules/sync/z-push/z-push-top.php
 %%WWWDIR%%/modules/syncml/Response.php
 %%WWWDIR%%/modules/syncml/Server.php
 %%WWWDIR%%/modules/syncml/SyncmlModule.php
