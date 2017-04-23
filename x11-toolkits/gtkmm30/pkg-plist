@@ -7,8 +7,11 @@ include/gdkmm-%%API_VERSION%%/gdkmm/devicemanager.h
 include/gdkmm-%%API_VERSION%%/gdkmm/display.h
 include/gdkmm-%%API_VERSION%%/gdkmm/displaymanager.h
 include/gdkmm-%%API_VERSION%%/gdkmm/dragcontext.h
+include/gdkmm-%%API_VERSION%%/gdkmm/drawingcontext.h
 include/gdkmm-%%API_VERSION%%/gdkmm/event.h
 include/gdkmm-%%API_VERSION%%/gdkmm/general.h
+include/gdkmm-%%API_VERSION%%/gdkmm/glcontext.h
+include/gdkmm-%%API_VERSION%%/gdkmm/monitor.h
 include/gdkmm-%%API_VERSION%%/gdkmm/pixbuf.h
 include/gdkmm-%%API_VERSION%%/gdkmm/pixbufanimation.h
 include/gdkmm-%%API_VERSION%%/gdkmm/pixbufanimationiter.h
@@ -22,7 +25,10 @@ include/gdkmm-%%API_VERSION%%/gdkmm/private/devicemanager_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/display_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/displaymanager_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/dragcontext_p.h
+include/gdkmm-%%API_VERSION%%/gdkmm/private/drawingcontext_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/event_p.h
+include/gdkmm-%%API_VERSION%%/gdkmm/private/glcontext_p.h
+include/gdkmm-%%API_VERSION%%/gdkmm/private/monitor_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/pixbuf_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/pixbufanimation_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/pixbufanimationiter_p.h
@@ -31,6 +37,8 @@ include/gdkmm-%%API_VERSION%%/gdkmm/private/pixbufloader_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/rectangle_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/rgba_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/screen_p.h
+include/gdkmm-%%API_VERSION%%/gdkmm/private/seat_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/shortcutlabel_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/timecoord_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/types_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/private/visual_p.h
@@ -38,6 +46,8 @@ include/gdkmm-%%API_VERSION%%/gdkmm/private/window_p.h
 include/gdkmm-%%API_VERSION%%/gdkmm/rectangle.h
 include/gdkmm-%%API_VERSION%%/gdkmm/rgba.h
 include/gdkmm-%%API_VERSION%%/gdkmm/screen.h
+include/gdkmm-%%API_VERSION%%/gdkmm/seat.h
+include/gtkmm-%%API_VERSION%%/gtkmm/shortcutlabel.h
 include/gdkmm-%%API_VERSION%%/gdkmm/timecoord.h
 include/gdkmm-%%API_VERSION%%/gdkmm/types.h
 include/gdkmm-%%API_VERSION%%/gdkmm/visual.h
@@ -137,6 +147,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/gesturerotate.h
 include/gtkmm-%%API_VERSION%%/gtkmm/gesturesingle.h
 include/gtkmm-%%API_VERSION%%/gtkmm/gestureswipe.h
 include/gtkmm-%%API_VERSION%%/gtkmm/gesturezoom.h
+include/gtkmm-%%API_VERSION%%/gtkmm/glarea.h
 include/gtkmm-%%API_VERSION%%/gtkmm/grid.h
 include/gtkmm-%%API_VERSION%%/gtkmm/handlebox.h
 include/gtkmm-%%API_VERSION%%/gtkmm/headerbar.h
@@ -174,6 +185,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/menushell.h
 include/gtkmm-%%API_VERSION%%/gtkmm/menutoolbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/messagedialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/misc.h
+include/gtkmm-%%API_VERSION%%/gtkmm/modelbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/notebook.h
 include/gtkmm-%%API_VERSION%%/gtkmm/numerableicon.h
 include/gtkmm-%%API_VERSION%%/gtkmm/object.h
@@ -186,6 +198,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/paned.h
 include/gtkmm-%%API_VERSION%%/gtkmm/papersize.h
 include/gtkmm-%%API_VERSION%%/gtkmm/placessidebar.h
 include/gtkmm-%%API_VERSION%%/gtkmm/plug.h
+include/gtkmm-%%API_VERSION%%/gtkmm/popovermenu.h
 include/gtkmm-%%API_VERSION%%/gtkmm/popover.h
 include/gtkmm-%%API_VERSION%%/gtkmm/printcontext.h
 include/gtkmm-%%API_VERSION%%/gtkmm/printer.h
@@ -281,6 +294,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturerotate_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturesingle_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/gestureswipe_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/gesturezoom_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/glarea_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/grid_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/handlebox_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/headerbar_p.h
@@ -317,6 +331,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/menushell_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/menutoolbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/messagedialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/misc_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/modelbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/notebook_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/numerableicon_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/object_p.h
@@ -330,6 +345,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/papersize_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/placessidebar_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/plug_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/popover_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/popovermenu_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/printcontext_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/printer_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/printjob_p.h
@@ -365,6 +381,10 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/separator_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/separatormenuitem_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/separatortoolitem_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/settings_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/shortcutsgroup_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/shortcutssection_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/shortcutsshortcut_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/shortcutswindow_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/sizegroup_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/socket_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/spinbutton_p.h
@@ -449,6 +469,10 @@ include/gtkmm-%%API_VERSION%%/gtkmm/separator.h
 include/gtkmm-%%API_VERSION%%/gtkmm/separatormenuitem.h
 include/gtkmm-%%API_VERSION%%/gtkmm/separatortoolitem.h
 include/gtkmm-%%API_VERSION%%/gtkmm/settings.h
+include/gtkmm-%%API_VERSION%%/gtkmm/shortcutsgroup.h
+include/gtkmm-%%API_VERSION%%/gtkmm/shortcutssection.h
+include/gtkmm-%%API_VERSION%%/gtkmm/shortcutsshortcut.h
+include/gtkmm-%%API_VERSION%%/gtkmm/shortcutswindow.h
 include/gtkmm-%%API_VERSION%%/gtkmm/sizegroup.h
 include/gtkmm-%%API_VERSION%%/gtkmm/socket.h
 include/gtkmm-%%API_VERSION%%/gtkmm/spinbutton.h

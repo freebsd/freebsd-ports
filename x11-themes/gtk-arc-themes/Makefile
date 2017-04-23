@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-arc-themes
-PORTVERSION=	20160605
+PORTVERSION=	20170302
 CATEGORIES=	x11-themes
 
 MAINTAINER=	mail_me@riseup.net
@@ -25,5 +25,6 @@ USES=		autoreconf pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gtk30
 NO_ARCH=	yes
+CONFIGURE_ARGS=	--with-gnome=3.18
 
 .include <bsd.port.mk>
