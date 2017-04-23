@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlmap
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 
@@ -10,11 +10,12 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Automatic SQL injection tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/sqlmap/doc/COPYING
 
 NO_ARCH=	yes
 USES=		python:-2.7 shebangfix
 USE_PYTHON=	autoplist distutils
-SHEBANG_FILES=	*.py
+SHEBANG_FILES=	*.py sqlmap/extra/shutils/*.sh
 
 OPTIONS_DEFINE=	MSF
 MSF_DESC=	Enable Metasploit Framework integration
