@@ -75,6 +75,5 @@ post-install-script:
 	# Install nvidia patching script
 	${INSTALL_SCRIPT} ${SLAVEDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
 	${ECHO_CMD} ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}
-	@${CAT} ${PKGMESSAGE}
 
 .include "${MASTERDIR}/Makefile"
