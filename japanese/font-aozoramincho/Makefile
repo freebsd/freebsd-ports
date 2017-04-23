@@ -2,7 +2,7 @@
 
 PORTNAME=	aozoramincho
 PORTVERSION=	0.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://blueskis.wktk.so/AozoraMincho/archive/v${PORTVERSION}/
 PKGNAMEPREFIX=	ja-font-
