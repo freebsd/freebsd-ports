@@ -13,8 +13,9 @@ COMMENT?=	Record CD-R[W]s in disk-at-once mode
 
 LICENSE=	GPLv2
 
-USES=		alias gmake tar:bzip2
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++11
+USES=		alias gmake tar:bzip2
 
 MP3OGG_LIB_DEPENDS=	libao.so:audio/libao \
 			libmad.so:audio/libmad \
@@ -67,20 +68,15 @@ CONFIGURE_ARGS+=	--with-mp3-support=no --with-ogg-support=no
 CONFIGURE_ARGS+=	--without-pcctsbin --without-pcctsinc \
 			--with-posix-threads=no --with-scglib
 MAKE_ENV=		CCOM=cc
-SCSILIBTARGET=		${ARCH:S/powerpc64/powerpc/}-freebsd-cc
-
-BROKEN_aarch64=		Fails to install: gmake: p: Command not found
-BROKEN_armv6=		Fails to install: gmake: p: Command not found
-BROKEN_mips=		Fails to install: gmake: p: Command not found
-BROKEN_mips64=		Fails to install: gmake: p: Command not found
+SCSILIBXARCH!=		${UNAME} -m
 
 .include <bsd.port.pre.mk>
 
 post-extract:
 	@(cd ${WRKSRC}/scsilib/RULES && ${CP} os-freebsd.id os-dragonfly.id)
-.if ${SCSILIBTARGET} != "i386-freebsd-cc"
+.if ${SCSILIBXARCH} != "i386"
 	@${LN} -sf ${WRKSRC}/scsilib/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/scsilib/RULES/${SCSILIBTARGET}.rul
+		${WRKSRC}/scsilib/RULES/${SCSILIBXARCH}-${OPSYS:tl}-cc.rul
 .endif
 
 post-patch:
@@ -89,12 +85,12 @@ post-patch:
 	55readcd 55scgcheck 55scgskeleton 55rscsi 85man
 	@${RM} ${WRKSRC}/scsilib/TARGETS/${i}
 .endfor
-.for i in include/schily.h libschily/fexec.c
-	@${REINPLACE_CMD} -e 's|fexecve|js_fexecve|g' ${WRKSRC}/scsilib/${i}
+.for i in include/schily.h libscg/scsitransp.c libschily/fexec.c \
+	libschily/stdio/fgetline.c
+	@${REINPLACE_CMD} -E -e 's|fexecve|js_fexecve|g; \
+		s|^getline|js_getline|g;s|([^f_])getline|\1js_getline|g' \
+		${WRKSRC}/scsilib/${i}
 .endfor
-	@${REINPLACE_CMD} -e 's|int	getline|int	get_line|g' ${WRKSRC}/scsilib/include/schily.h
-	@${REINPLACE_CMD} -e 's|(getline|(get_line|g' ${WRKSRC}/scsilib/libscg/scsitransp.c
-	@${REINPLACE_CMD} -e 's|^getline|get_line|g' ${WRKSRC}/scsilib/libschily/stdio/fgetline.c
 .if ${PORTNAME} == "gcdmaster"
 	@${REINPLACE_CMD} -E -e 's|(^SUBDIRS.+) utils|\1|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(^gladedir.+=).+|\1 ${DATADIR}|' \
