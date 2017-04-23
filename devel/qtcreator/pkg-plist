@@ -764,16 +764,14 @@ share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/adressbook.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/androidapp.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/buildrun.png
-%%DATADIR%%/welcomescreen/widgets/images/icons/components.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/ddays13.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/ddays14.png
-%%DATADIR%%/welcomescreen/widgets/images/icons/developing_with_qt_creator.png
-%%DATADIR%%/welcomescreen/widgets/images/icons/qt_sdk.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/qtquick.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/qwidget.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/tutorialicon.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/videoIcon.png
 %%DATADIR%%/welcomescreen/widgets/images/icons/worldsummit15.png
+%%DATADIR%%/welcomescreen/widgets/images/icons/worldsummit16.png
 %%DATADIR%%/welcomescreen/widgets/images/mockup/designer-examples.png
 %%DATADIR%%/welcomescreen/widgets/images/mockup/desktop-examples.png
 %%DATADIR%%/welcomescreen/widgets/images/mockup/draganddrop-examples.png
