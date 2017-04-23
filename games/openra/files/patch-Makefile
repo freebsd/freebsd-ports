@@ -1,8 +1,8 @@
 # Without zenity(1) fallback to either WinForms or no crash dialog
 
---- Makefile.orig	2015-08-28 13:11:47 UTC
+--- Makefile.orig	2017-03-04 17:51:43 UTC
 +++ Makefile
-@@ -400,12 +400,34 @@ install-man-page: man-page
+@@ -426,15 +426,37 @@ install-man-page: man-page
  install-linux-scripts:
  	@echo "#!/bin/sh" > openra
  	@echo 'cd "$(gameinstalldir)"' >> openra
@@ -19,10 +19,11 @@
 +	@echo '  mono --debug OpenRA.exe "$$@"' >> openra
 +endif
 +	@echo 'else' >> openra
+ # Note: this relies on the non-standard -f flag implemented by gnu readlink
  ifeq ($(DEBUG), $(filter $(DEBUG),false no n off 0))
- 	@echo 'mono OpenRA.Game.exe "$$@"' >> openra
+ 	@echo 'mono OpenRA.Game.exe Engine.LaunchPath="$$(readlink -f $$0)" "$$@"' >> openra
  else
- 	@echo 'mono --debug OpenRA.Game.exe "$$@"' >> openra
+ 	@echo 'mono --debug OpenRA.Game.exe Engine.LaunchPath="$$(readlink -f $$0)" "$$@"' >> openra
  endif
 +	@echo 'fi' >> openra
  	@echo 'if [ $$? != 0 -a $$? != 1 ]' >> openra
@@ -38,3 +39,5 @@
 +	@echo '    exit 1' >> openra
 +	@echo '  fi' >> openra
  	@echo '$$ZENITY --question --title "OpenRA" --text "OpenRA has encountered a fatal error.\nLog Files are available in ~/.openra." --ok-label "Quit" --cancel-label "View FAQ" || xdg-open https://github.com/OpenRA/OpenRA/wiki/FAQ' >> openra
+ 	@echo 'exit 1' >> openra
+ 	@echo 'fi' >> openra
