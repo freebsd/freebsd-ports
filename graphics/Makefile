@@ -217,6 +217,7 @@
     SUBDIR += gbm
     SUBDIR += gcolor
     SUBDIR += gcolor2
+    SUBDIR += gcolor3
     SUBDIR += gd
     SUBDIR += gdal
     SUBDIR += gdchart
