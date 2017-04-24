@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	srv2pf
-PORTVERSION=	20170412
+PORTVERSION=	20170424
 CATEGORIES=	net
 MASTER_SITES=	GH
 PKGNAMEPREFIX=  p5-
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
-		p5-perl-ldap>=0:net/p5-perl-ldap
+                p5-Try-Tiny>=0:lang/p5-Try-Tiny
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GITHUB=	yes
