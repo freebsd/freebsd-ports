@@ -3,6 +3,7 @@
 
 PORTNAME=	ceph
 DISTVERSION=	wip.v2017-2-14
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
 
@@ -72,8 +73,11 @@ CMAKE_ARGS=	\
 	-D WITH_CEPHFS:BOOL=OFF \
 	-D WITH_EMBEDDED:BOOL=OFF
 
-USES=	gmake cmake:outsource python:2.7 gettext-runtime shebangfix
-SHEBANG_FILES=src/rbdmap src/ceph-post-file.in src/rbd-replay-many
+USES=	gmake gettext-runtime cmake:outsource python:2.7 shebangfix
+SHEBANG_FILES=	src/rbdmap src/ceph-post-file.in src/rbd-replay-many \
+		src/ceph-rest-api src/ceph-create-keys \
+		src/brag/client/ceph-brag \
+		src/tools/ceph-monstore-update-crush.sh
 
 # even though i386 will build, it is not really advised.
 ONLY_FOR_ARCHS=	amd64

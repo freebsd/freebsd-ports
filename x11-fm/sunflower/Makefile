@@ -2,6 +2,7 @@
 
 PORTNAME=       sunflower
 DISTVERSION=	0.3-61
+PORTREVISION=	1
 CATEGORIES=     x11-fm python
 MASTER_SITES=	http://sunflower-fm.org/pub/
 
@@ -18,10 +19,11 @@ RUN_DEPENDS=    ${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet \
 
 WRKSRC=         ${WRKDIR}/Sunflower
 
-USES=           desktop-file-utils gettext python:2.7 tar:tgz
+USES=           desktop-file-utils gettext python:2.7 shebangfix tar:tgz
 USE_GNOME=	gtk20 pygtk2 pygobject
 NO_ARCH=        yes
 INSTALLS_ICONS=	yes
+SHEBANG_FILES=	Sunflower.py
 
 OPTIONS_DEFINE=	VTE
 OPTIONS_DEFAULT=	VTE
