@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 PORTREVISION=	0
 .else
 # dns/bind9xx here
-PORTREVISION=	2
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	LOCAL/mat/bind
@@ -31,8 +31,8 @@ LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.12.0a.2017.04.20
-HASH=		706c6ac5
+ISCVERSION=	9.12.0a.2017.04.24
+HASH=		8296b23
 
 USES=	cpe libedit
 
@@ -278,8 +278,8 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/FAQ \
-		${WRKSRC}/HISTORY ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES* ${WRKSRC}/HISTORY.md \
+		${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 .endif	# BIND_TOOLS_SLAVE
 
 # Can't use USE_PYTHON=autoplist
