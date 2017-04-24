@@ -65,12 +65,12 @@ CONFIGURE_ARGS+=	--with-mp3-support=no --with-ogg-support=no
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
 CONFIGURE_ARGS+=	--without-pcctsbin --without-pcctsinc \
 			--with-posix-threads=no --with-scglib
 MAKE_ENV=		CCOM=cc
 SCSILIBXARCH!=		${UNAME} -m
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	@(cd ${WRKSRC}/scsilib/RULES && ${CP} os-freebsd.id os-dragonfly.id)
