@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	backuppc
-PORTVERSION=	4.1.2.20170424
+PORTVERSION=	4.1.1
 CATEGORIES=	sysutils
-PKGNAMESUFFIX=	-devel
+MASTER_SITES=	SF
+PKGNAMESUFFIX=	4
+DISTNAME=	BackupPC-${DISTVERSION}
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Multi-platform backup to disk-based storage
@@ -12,21 +14,14 @@ COMMENT=	Multi-platform backup to disk-based storage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-EXTRACT_DEPENDS=	p5-BackupPC-XS>=0.53:sysutils/p5-BackupPC-XS
 RUN_DEPENDS=	p5-File-Listing>=0:sysutils/p5-File-Listing \
-		p5-BackupPC-XS>=0.53:sysutils/p5-BackupPC-XS
+		p5-BackupPC-XS>=0.50:sysutils/p5-BackupPC-XS
 
-CONFLICTS=	backuppc-[0-9]* backuppc4-[0-9]*
+CONFLICTS=	backuppc-[0-9]* backuppc-devel-[0-9]*
 
 USE_RC_SUBR=	backuppc
 
-USE_GITHUB=	yes
-GH_TAGNAME=	92469a6
-
-WRKSRC_SUBDIR=	dist/BackupPC-${PORTVERSION}
-
 USES=		perl5
-USE_PERL5=	extract
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -56,15 +51,10 @@ SMB_DESC=		Install Samba (for "smb" transfer and NetBIOS lookup)
 XML_RSS_DESC=		Install Perl extension to manage RSS files
 
 ARCHIVE_ZIP_RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip
-RSYNC_BPC_RUN_DEPENDS=		rsync-bpc>=3.0.9.6:net/rsync-bpc
+RSYNC_BPC_RUN_DEPENDS=		rsync-bpc>=3.0.9.5:net/rsync-bpc
 RRDTOOL_RUN_DEPENDS=		rrdtool:databases/rrdtool
 SMB_USES=			samba:run # nmblookup, smbclient
 XML_RSS_RUN_DEPENDS=		p5-XML-RSS>=0:textproc/p5-XML-RSS
-
-post-extract:
-	cd ${WRKDIR}/${PORTNAME}-${GH_TAGNAME} && ${PERL} makeDist \
-		--nosyntaxCheck \
-		--version ${PORTVERSION}
 
 do-install:
 	cd ${WRKSRC} && ${PERL} configure.pl	\

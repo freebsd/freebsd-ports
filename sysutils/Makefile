@@ -64,6 +64,7 @@
     SUBDIR += b43-fwcutter
     SUBDIR += backupchecker
     SUBDIR += backuppc
+    SUBDIR += backuppc4
     SUBDIR += backuppc-devel
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
