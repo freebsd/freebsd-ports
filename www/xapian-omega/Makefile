@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
