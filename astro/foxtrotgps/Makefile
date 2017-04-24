@@ -3,7 +3,7 @@
 
 PORTNAME=	foxtrotgps
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 
@@ -14,17 +14,21 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexif.so:graphics/libexif \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libsoup-2.4.so:devel/libsoup \
 		libgps.so:astro/gpsd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
 CONFIGURE_ARGS=	--disable-schemas-install
-USES=		gettext gmake pkgconfig shebangfix sqlite:3
+USES=		gettext gmake pkgconfig python shebangfix sqlite:3
 SHEBANG_FILES=	contrib/convert2gpx \
 		contrib/convert2osm \
 		contrib/georss2foxtrotgps-poi\
-		contrib/gpx2osm
+		contrib/gpx2osm \
+		contrib/poi2osm \
+		contrib/osb2foxtrot \
 
 USE_GNOME=	gtk20 gconf2 libxml2 intltool libglade2
 INSTALLS_ICONS=	yes
