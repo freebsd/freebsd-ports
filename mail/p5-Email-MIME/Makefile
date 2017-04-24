@@ -13,10 +13,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Email-Simple>=2.206:mail/p5-Email-Simple \
+BUILD_DEPENDS=	p5-Email-MIME-Encodings>=1.313:mail/p5-Email-MIME-Encodings \
+		p5-Email-MIME-ContentType>=1.016:mail/p5-Email-MIME-ContentType \
 		p5-Email-MessageID>=0:mail/p5-Email-MessageID \
-		p5-Email-MIME-Encodings>=1.313:mail/p5-Email-MIME-Encodings \
-		p5-Email-MIME-ContentType>=1.01.6:mail/p5-Email-MIME-ContentType \
+		p5-Email-Simple>=2.206:mail/p5-Email-Simple \
 		p5-MIME-Types>=1.13:mail/p5-MIME-Types
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
