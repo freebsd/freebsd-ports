@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.6.2
+PORTVERSION=	2.7.1
 CATEGORIES=	databases python
-MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-${PORTVERSION:R:S|.|-|}/ \
-		CHEESESHOP
+MASTER_SITES=	CHEESESHOP \
+		http://initd.org/psycopg/tarballs/PSYCOPG-${PORTVERSION:R:S|.|-|}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	High performance Python adapter for PostgreSQL
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/doc/COPYING.LESSER
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
