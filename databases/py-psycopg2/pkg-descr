@@ -12,3 +12,4 @@ makes psycopg very fast in typical client-server applications that create a
 servicing thread every time a client request arrives.
 
 WWW: http://initd.org/psycopg/
+WWW: https://github.com/psycopg/psycopg2
