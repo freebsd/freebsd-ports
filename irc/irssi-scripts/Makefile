@@ -22,7 +22,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/irssi/scripts
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/irssi/scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.pl ${STAGEDIR}${PREFIX}/share/irssi/scripts
 
 .include <bsd.port.mk>
