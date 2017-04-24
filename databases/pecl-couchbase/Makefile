@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	couchbase
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	databases
 
 MAINTAINER=	johnpupu@gmail.com
@@ -11,7 +11,7 @@ COMMENT=	Couchbase Server PHP extension
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libcouchbase>=2.7.2:databases/libcouchbase
+BUILD_DEPENDS=	libcouchbase>=2.7.3:databases/libcouchbase
 LIB_DEPENDS=	libcouchbase.so:databases/libcouchbase
 
 USE_PHP=	json:build
