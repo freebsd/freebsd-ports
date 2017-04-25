@@ -5,7 +5,7 @@
  	#                                     vlan.dat
  	#                                            vlan.dat
 -	if (/(dhcp_[^. ]*\.txt|vlan\.dat|sflog|syslog)\s*$/) {
-+	if (/(dhcp_[^. ]*\.txt|vlan\.dat|sflog|snooping|syslog|vtp_debug)\s*$/) {
++	if (/(dhcp_[^. ]*\.txt|vlan\.dat|sflog|snooping|syslog|vtp_debug.*log)\s*$/) {
  	    if (/(\s*\d+)(\s+[-rwx]+\s+)(\d+)(\s+)(\w+ \d+\s+\d+ \d+:\d+:\d+ .\d+:\d+)/) {
  		my($fn, $a, $sz, $c, $dt, $rem) = ($1, $2, $3, $4, $5, $');
  		my($fnl, $szl, $dtl) = (length($fn), length($sz), length($dt));
