@@ -1,0 +1,12 @@
+--- lib/nxos.pm.in.orig	2017-04-25 20:52:25 UTC
++++ lib/nxos.pm.in
+@@ -490,6 +490,9 @@ sub DirSlotN {
+ 	# Drop accounting.log
+ 	/\s+accounting\.log$/ && next;
+ 
++	# Drop vtp_debug.log and vtp_debug_old.log CDETS bug CSCuy87611
++	/\s+vtp_debug(_old|)\.log$/ && next;
++
+ 	next if (/BufferMonitor-1HourData/);
+ 	if (/ log\/$/) {
+ 	    # change
