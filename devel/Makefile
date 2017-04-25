@@ -4196,6 +4196,7 @@
     SUBDIR += py-collective.monkeypatcher
     SUBDIR += py-collective.z3cform.datetimewidget
     SUBDIR += py-colorama
+    SUBDIR += py-coloredlogs
     SUBDIR += py-colorlog
     SUBDIR += py-columnize
     SUBDIR += py-conditional
