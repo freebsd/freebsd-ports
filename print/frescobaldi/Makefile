@@ -4,6 +4,7 @@
 PORTNAME=	frescobaldi
 PORTVERSION=	2.20.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	print kde
 
 MAINTAINER=	martin.dieringer@gmx.de

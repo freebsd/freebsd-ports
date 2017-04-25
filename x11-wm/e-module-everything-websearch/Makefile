@@ -3,7 +3,7 @@
 
 PORTNAME=	e-module-everything-websearch
 PORTVERSION=	20140818
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/enlightenment/
 

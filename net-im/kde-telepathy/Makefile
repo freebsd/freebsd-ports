@@ -2,6 +2,7 @@
 
 PORTNAME=	kde-telepathy
 PORTVERSION=	${KTP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org

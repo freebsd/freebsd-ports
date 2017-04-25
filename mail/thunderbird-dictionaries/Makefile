@@ -3,7 +3,7 @@
 
 PORTNAME=	thunderbird-dictionaries
 PORTVERSION=	20060220
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	mail
 MASTER_SITES=	MOZDEV/dictionaries
 DISTFILES=	# filled in later after options

@@ -14,6 +14,7 @@
     SUBDIR += R-cran-MCMCpack
     SUBDIR += R-cran-MSwM
     SUBDIR += R-cran-MatchIt
+    SUBDIR += R-cran-Matching
     SUBDIR += R-cran-MatrixModels
     SUBDIR += R-cran-NMF
     SUBDIR += R-cran-RHmm
@@ -61,6 +62,7 @@
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-quantreg
+    SUBDIR += R-cran-rgenoud
     SUBDIR += R-cran-sandwich
     SUBDIR += R-cran-sm
     SUBDIR += R-cran-sp

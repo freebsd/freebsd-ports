@@ -2,6 +2,7 @@
 
 PORTNAME=	kdesdk-thumbnailers
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

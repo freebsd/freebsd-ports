@@ -3,7 +3,7 @@
 PORTNAME=	katawa-shoujo
 PORTVERSION=	1.3.1
 DISTVERSIONSUFFIX=-[linux-x86][18161880]
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://dl.katawa-shoujo.com/gold_${PORTVERSION}/:game \
 		http://dl.katawa-shoujo.com/patches/:patch \

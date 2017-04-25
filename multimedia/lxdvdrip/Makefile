@@ -3,7 +3,7 @@
 
 PORTNAME=	lxdvdrip
 PORTVERSION=	1.62
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/
 EXTRACT_SUFX=	.tgz

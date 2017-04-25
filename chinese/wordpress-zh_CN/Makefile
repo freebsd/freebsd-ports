@@ -20,7 +20,6 @@ USES=		php:web
 USE_PHP=	curl gd mysqli pcre tokenizer xml zip
 NO_ARCH=	yes
 NO_BUILD=	yes
-IGNORE_WITH_PHP=	56
 
 PLIST=		${WRKDIR}/pkg-plist
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
