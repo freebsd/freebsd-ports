@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.7.3
+PORTVERSION=	4.7.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/
@@ -19,6 +19,7 @@ NO_BUILD=	yes
 USES=		php:web cpe
 USE_PHP=	curl gd hash mysqli pcre tokenizer xml zip zlib ftp
 WRKSRC=		${WRKDIR}/${PORTNAME}
+IGNORE_WITH_PHP=	56
 
 .if ${PORTVERSION:N*.*.*}
 CPE_VERSION=	${PORTVERSION}.0

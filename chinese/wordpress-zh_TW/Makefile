@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.7.3
+PORTVERSION=	4.7.4
 DISTVERSIONSUFFIX=	-zh_TW
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/
@@ -20,6 +20,7 @@ USES=		php:web
 USE_PHP=	curl gd mysqli pcre tokenizer xml zip ftp
 NO_ARCH=	yes
 NO_BUILD=	yes
+IGNORE_WITH_PHP=	56
 
 PLIST=		${WRKDIR}/pkg-plist
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
