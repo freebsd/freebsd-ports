@@ -21,7 +21,6 @@ NO_BUILD=	yes
 USES=		cpe php:web
 USE_PHP=	curl gd mysqli pcre tokenizer xml zip zlib ftp
 WRKSRC=		${WRKDIR}/${PORTNAME}
-IGNORE_WITH_PHP=	56
 
 CPE_LANG=	ja
 .if ${PORTVERSION:N*.*.*}
