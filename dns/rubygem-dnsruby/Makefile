@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsruby
-PORTVERSION=	1.60.0
+PORTVERSION=	1.60.1
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 

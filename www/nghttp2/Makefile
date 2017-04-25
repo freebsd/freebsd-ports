@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.21.1
+PORTVERSION=	1.22.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
 
@@ -22,7 +22,7 @@ APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
 SPDY_DESC=	Enable SPDY in h2load and nghttpx
 SPDY_IMPLIES=	APP
 
-CONFIGURE_ARGS=	--disable-python-bindings
+CONFIGURE_ARGS=	--disable-python-bindings --with-jemalloc
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 GNU_CONFIGURE=	yes
@@ -60,15 +60,12 @@ SPDY_BUILD_DEPENDS=	spdylay>=1.3.2:www/spdylay
 SPDY_CONFIGURE_WITH=	spdylay
 SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD
-CONFIGURE_ARGS+=--with-jemalloc
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| lib||' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|$$[({]top_builddir[})]/lib/libnghttp2.la|-lnghttp2|' ${WRKSRC}/*/Makefile.am
+	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/script/fetch-ocsp-response
 
 # lib/libnghttp2.* are not available until configure phase
 post-configure:
@@ -90,4 +87,4 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.c* ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/examples/ && ${INSTALL_PROGRAM} client deflate libevent-client libevent-server ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

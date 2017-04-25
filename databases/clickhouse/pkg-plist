@@ -3,6 +3,8 @@ bin/clickhouse-benchmark
 bin/clickhouse-client
 bin/clickhouse-local
 bin/clickhouse-server
+@dir(clickhouse,,) etc/clickhouse-server
+@dir(clickhouse,,) etc/clickhouse-client
 @sample etc/clickhouse-client/config.xml.sample
 @sample etc/clickhouse-server/config.xml.sample
 @sample etc/clickhouse-server/users.xml.sample
