@@ -1,6 +1,6 @@
---- Makefile.orig	2016-02-05 21:22:15 UTC
+--- Makefile.orig	2016-12-28 18:36:01 UTC
 +++ Makefile
-@@ -23,7 +23,7 @@ AR	= ar
+@@ -23,17 +23,17 @@ AR	= ar
  W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast -Wuninitialized
  THREADS = -pthread
  OPT = -O2 -g
@@ -8,8 +8,12 @@
 +CFLAGS	+= $(THREADS) $(W)
  LDLIBS	=
  SOLIBS	=
- prefix	= /usr/local
-@@ -32,26 +32,26 @@ bindir = $(exec_prefix)/bin
+-SOEXT	= .so
+-prefix	= /usr/local
++SOEXT	= .so.0
++prefix	?= /usr/local
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
  libdir = $(exec_prefix)/lib
  includedir = $(prefix)/include
  datarootdir = $(prefix)/share
@@ -18,17 +22,7 @@
  
  ########################################################################
  
- IHDRS	= lmdb.h
--ILIBS	= liblmdb.a liblmdb.so
-+ILIBS	= liblmdb.a liblmdb.so.0
- IPROGS	= mdb_stat mdb_copy mdb_dump mdb_load
- IDOCS	= mdb_stat.1 mdb_copy.1 mdb_dump.1 mdb_load.1
- PROGS	= $(IPROGS) mtest mtest2 mtest3 mtest4 mtest5
--all:	$(ILIBS) $(PROGS)
-+all:	$(ILIBS) $(IPROGS)
- 
- install: $(ILIBS) $(IPROGS) $(IHDRS)
- 	mkdir -p $(DESTDIR)$(bindir)
+@@ -49,10 +49,10 @@ install: $(ILIBS) $(IPROGS) $(IHDRS)
  	mkdir -p $(DESTDIR)$(libdir)
  	mkdir -p $(DESTDIR)$(includedir)
  	mkdir -p $(DESTDIR)$(mandir)/man1
@@ -43,14 +37,15 @@
  
  clean:
  	rm -rf $(PROGS) *.[ao] *.[ls]o *~ testdb
-@@ -63,14 +63,18 @@ test:	all
+@@ -64,20 +64,30 @@ test:	all
  liblmdb.a:	mdb.o midl.o
  	$(AR) rs $@ mdb.o midl.o
  
--liblmdb.so:	mdb.lo midl.lo
-+liblmdb.so.0:	mdb.lo midl.lo
- #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
+-liblmdb$(SOEXT):	mdb.lo midl.lo
+-#	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
 -	$(CC) $(LDFLAGS) -pthread -shared -o $@ mdb.lo midl.lo $(SOLIBS)
++    liblmdb$(SOEXT):	mdb.lo midl.lo
++    #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
 +	$(CC) $(LDFLAGS) -pthread -shared -Wl,-soname,$@ -o $@ mdb.lo midl.lo $(SOLIBS)
  
  mdb_stat: mdb_stat.o liblmdb.a
@@ -62,5 +57,17 @@
  mdb_load: mdb_load.o liblmdb.a
 +	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
  mtest:    mtest.o    liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
  mtest2:	mtest2.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
  mtest3:	mtest3.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mtest4:	mtest4.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mtest5:	mtest5.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mtest6:	mtest6.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ 
+ mdb.o: mdb.c lmdb.h midl.h
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -c mdb.c
