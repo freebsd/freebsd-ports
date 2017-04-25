@@ -2,6 +2,7 @@
 
 PORTNAME=	gitlab_omniauth-ldap
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
