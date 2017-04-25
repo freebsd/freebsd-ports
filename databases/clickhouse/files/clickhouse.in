@@ -39,15 +39,14 @@ load_rc_config ${name}
 : ${clickhouse_rundir="/var/run/clickhouse"}
 : ${clickhouse_user="clickhouse"}
 : ${clickhouse_group="clickhouse"}
-: ${clickhouse_logdir="/var/log/clickhouse"}
 : ${clickhouse_dbdir="/var/db/clickhouse"}
 : ${clickhouse_flags=""}
-: ${clickhouse_args="--server --config-file ${clickhouse_config} ${clickhouse_flags}"}
+: ${clickhouse_pidfile="${clickhouse_rundir}/clickhouse.pid"}
+: ${clickhouse_args="--server --daemon --pid-file ${clickhouse_pidfile} --config-file ${clickhouse_config} ${clickhouse_flags}"}
 
-command=/usr/sbin/daemon
-procname=/usr/local/bin/clickhouse
-pidfile=${clickhouse_rundir}/clickhouse.pid
-command_args="-c -f -p ${pidfile} ${procname} ${clickhouse_args}"
+command=%%PREFIX%%/bin/clickhouse
+pidfile=${clickhouse_pidfile}
+command_args=${clickhouse_args}
 required_files=${clickhouse_config}
 start_precmd=clickhouse_prestart
 

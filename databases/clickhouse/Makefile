@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	clickhouse
-PORTVERSION=	1.1.54165
-PORTREVISION=	1
+PORTVERSION=	1.1.54214
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-stable
+#DISTVERSIONSUFFIX=	-stable
+DISTVERSIONSUFFIX=	-testing
 CATEGORIES=	databases
 
 MAINTAINER=	proler@gmail.com
@@ -13,13 +13,19 @@ COMMENT=	ClickHouse is an column-oriented database management system
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
-		libtcmalloc.so:devel/google-perftools \
+BUILD_DEPENDS=	bash:shells/bash \
+				sparsehash>=0:devel/sparsehash
+LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools \
 		libodbc.so:databases/unixODBC \
 		libltdl.so:devel/libltdl \
 		libicudata.so:devel/icu \
-		libboost_program_options.so:devel/boost-libs
+		libboost_program_options.so:devel/boost-libs \
+		libzookeeper_mt.so:devel/libzookeeper \
+		libre2.so:devel/re2 \
+		libdouble-conversion.so:devel/libdouble-conversion \
+		libzstd.so:archivers/zstd \
+		liblz4.so:archivers/liblz4 \
+		libPocoNet.so:devel/poco
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yandex
@@ -28,40 +34,40 @@ GH_PROJECT=	ClickHouse
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64"
 
+BROKEN_FreeBSD_10=	Builds but does not work
+
 USES=		compiler:c++14-lang cmake iconv mysql ssl readline
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DUSE_INTERNAL_GPERFTOOLS_LIBRARY=0 \
-		-DUSE_INTERNAL_BOOST_LIBRARY=0 \
-		-DUSE_INTERNAL_ZLIB_LIBRARY=0 \
+CMAKE_ARGS=	-DUNBUNDLED=1 \
 		-DUSE_STATIC_LIBRARIES=0 \
-		-DNO_WERROR=1
+		-DNO_WERROR=1 \
+		-DENABLE_TESTS=0 \
+		-DCXX11_ABI=
 
 USE_RC_SUBR=	${PORTNAME}
 USERS=		clickhouse
 GROUPS=		clickhouse
 
-#temporary! use PORTVERSION after version match
-SOVERSION=	1.1.54164
+SOVERSION=	${PORTVERSION}
 PLIST_SUB=	SOVERSION=${SOVERSION}
 
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-BUILD_DEPENDS+= clang38:devel/llvm38
+BUILD_DEPENDS+=	clang38:devel/llvm38
 CC=		clang38
 CXX=		clang++38
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|' ${WRKSRC}/dbms/src/Server/config.xml
+	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|' ${WRKSRC}/dbms/src/Server/config.xml
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/clickhouse-compressor
 	@${RM} ${STAGEDIR}${PREFIX}/bin/config-processor
 	@${RM} ${STAGEDIR}${PREFIX}/bin/corrector_utf8
-	@${RM} ${STAGEDIR}${PREFIX}/lib/cmake/Poco/PocoConfig.cmake
-	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/cmake/Poco
-	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/cmake
+	@${RM} -r ${STAGEDIR}${PREFIX}/include/gtest
+	@${RM} ${STAGEDIR}${PREFIX}/lib/libgtest*
 
 	${INSTALL_DATA} ${WRKSRC}/dbms/src/Client/config.xml \
 		${STAGEDIR}${PREFIX}/etc/clickhouse-client/config.xml.sample
