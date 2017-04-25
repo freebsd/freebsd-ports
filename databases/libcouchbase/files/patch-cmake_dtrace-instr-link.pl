@@ -16,7 +16,7 @@
 +# Copy .o files to a temporary location before DTrace messes with them
 +chomp(my $tmpdir = `mktemp -d -t $$`);
 +if (system("tar cf - @O_FILES | tar xf - -C $tmpdir") != 0) {
-+    system("rm -rf $tmpdir");
++    system("rm -r $tmpdir");
 +    exit(1);
 +}
 +
@@ -38,7 +38,7 @@
  
  print "$HDR: Creating instrumented DTrace object: @args";
  if (system(@args) != 0) {
-+    system("rm -rf $tmpdir");
++    system("rm -r $tmpdir");
      exit(1);
  }
  
@@ -47,5 +47,5 @@
  print "$HDR: Linking with instrumented DTrace object: @ARGV";
 -exit(system(@ARGV));
 +my $rc = system(@ARGV);
-+system("rm -rf $tmpdir");
++system("rm -r $tmpdir");
 +exit($rc);
