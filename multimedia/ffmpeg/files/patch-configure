@@ -1,6 +1,6 @@
---- configure.orig	2016-10-27 16:17:39 UTC
+--- configure.orig	2017-04-13 01:55:54 UTC
 +++ configure
-@@ -3189,12 +3189,7 @@ target_os_default=$(tolower $(uname -s))
+@@ -3262,12 +3262,7 @@ target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
  # machine
@@ -14,7 +14,7 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -6213,6 +6208,9 @@ elif enabled llvm_gcc; then
+@@ -6295,6 +6290,9 @@ elif enabled llvm_gcc; then
  elif enabled clang; then
      check_cflags -mllvm -stack-alignment=16
      check_cflags -mstack-alignment=16
@@ -24,7 +24,7 @@
      check_cflags -Qunused-arguments
      check_cflags -Werror=implicit-function-declaration
      check_cflags -Werror=missing-prototypes
-@@ -6799,7 +6797,7 @@ exec_prefix=\${prefix}
+@@ -6900,7 +6898,7 @@ exec_prefix=\${prefix}
  libdir=$libdir
  includedir=$incdir
  
@@ -33,16 +33,16 @@
  Description: $comment
  Version: $version
  Requires: $(enabled shared || echo $requires)
-@@ -6813,10 +6811,10 @@ EOF
+@@ -6914,10 +6912,10 @@ EOF
  mkdir -p doc/examples/pc-uninstalled
  includedir=${source_path}
  [ "$includedir" = . ] && includedir="\${pcfiledir}/../../.."
--    cat <<EOF > doc/examples/pc-uninstalled/$name.pc
-+    cat <<EOF > doc/examples/pc-uninstalled/${name}${build_suffix}.pc
+-    cat <<EOF > doc/examples/pc-uninstalled/${name}-uninstalled.pc
++    cat <<EOF > doc/examples/pc-uninstalled/${name}${build_suffix}-uninstalled.pc
  prefix=
  exec_prefix=
 -libdir=\${pcfiledir}/../../../$name
-+libdir=\${pcfiledir}/../../../${name}${build_suffix}
++libdir=\${pcfiledir}/../../../${name}${build_suffix}.pc
  includedir=${includedir}
  
  Name: $name
