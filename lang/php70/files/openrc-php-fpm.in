@@ -1,0 +1,43 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2015 The OpenRC Authors.
+# See the Authors file at the top-level directory of this distribution and
+# https://github.com/OpenRC/openrc/blob/master/AUTHORS
+#
+# This file is part of OpenRC. It is subject to the license terms in
+# the LICENSE file found in the top-level directory of this
+# distribution and at https://github.com/OpenRC/openrc/blob/master/LICENSE
+# This file may not be copied, modified, propagated, or distributed
+# except according to the terms contained in the LICENSE file.
+
+name="php_fpm"
+command="%%PREFIX%%/sbin/php-fpm"
+pidfile="/var/run/php-fpm.pid"
+stopsig="QUIT"
+extra_commands="configtest logrotate"
+required_files="%%PREFIX%%/etc/php-fpm.conf"
+
+depend()
+{
+	need localmount
+}
+
+logrotate() {
+	service_started "$name"
+        if [ $? -ne 0 ]; then
+                return 1
+        fi
+        einfo "Rotating logs $name."
+        kill -USR1 $pidfile
+}
+
+configtest()
+{
+        einfo "Performing sanity check on php-fpm configuration:"
+        eval ${command} -t
+}
+
+start_pre()
+{
+	configtest
+	return $?
+}
