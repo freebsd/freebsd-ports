@@ -11,12 +11,13 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python binding for the LZ4 compression library
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
 USE_PYTHON=	distutils
-USES=		localbase python pkgconfig
+USES=		localbase pkgconfig python
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/_version.so \
