@@ -3,6 +3,7 @@
 
 PORTNAME=	e-module-mem
 PORTVERSION=	20140705
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/enlightenment/

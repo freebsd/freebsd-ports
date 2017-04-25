@@ -3,7 +3,7 @@
 
 PORTNAME=	vitunes
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://vitunes.org/files/ \
 		http://mirror.4bit.ws/ \

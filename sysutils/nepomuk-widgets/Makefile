@@ -2,7 +2,7 @@
 
 PORTNAME=	nepomuk-widgets
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

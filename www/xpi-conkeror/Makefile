@@ -3,6 +3,7 @@
 
 PORTNAME=	conkeror
 PORTVERSION=	20150730
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://distfiles.pirateparty.in/ashish/ \
 		LOCAL/ashish
