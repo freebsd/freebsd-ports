@@ -3,6 +3,7 @@
 
 PORTNAME=	thunderbird-i18n
 PORTVERSION=	52.0.1
+PORTREVISION=	1
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}/linux-i686/xpi \
 		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build4/linux-i686/xpi

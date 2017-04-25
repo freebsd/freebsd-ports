@@ -2,6 +2,7 @@
 
 PORTNAME=	kate-plugin-pate
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	editors kde kde-kde4
 DISTNAME=	kate-${PORTVERSION}
 

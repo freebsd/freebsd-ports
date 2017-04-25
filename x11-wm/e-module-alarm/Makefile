@@ -3,6 +3,7 @@
 
 PORTNAME=	e-module-alarm
 PORTVERSION=	20140911
+PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/enlightenment/
 

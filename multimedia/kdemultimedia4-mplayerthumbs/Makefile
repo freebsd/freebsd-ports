@@ -3,6 +3,7 @@
 
 PORTNAME=	mplayerthumbs
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-kde4
 PKGNAMEPREFIX=	kdemultimedia-
 

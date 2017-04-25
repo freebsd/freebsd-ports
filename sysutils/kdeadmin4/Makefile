@@ -2,6 +2,7 @@
 
 PORTNAME=	kdeadmin
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 
 MAINTAINER=	kde@FreeBSD.org

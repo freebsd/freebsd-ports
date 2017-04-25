@@ -3,7 +3,7 @@
 
 PORTNAME=	forked-daapd
 PORTVERSION=	24.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	takumiiinn@gmail.com
