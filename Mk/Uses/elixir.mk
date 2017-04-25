@@ -72,12 +72,12 @@ RUN_DEPENDS+=	${depend:T}>=0:${depend}
 .if !target(do-build)
 do-build:
 .if ${MIX_REWRITE} != ""
-	@${REINPLACE_CMD} -i '' -E -e "s@{.*(only|optional): .*},?@@" ${WRKSRC}/mix.exs
+	@${REINPLACE_CMD} -i '' -E -e "s@\{.*(only|optional): .*},?@@" ${WRKSRC}/mix.exs
 .for depend in ${MIX_BUILD_DEPS}
 	@if [ $$(echo ${depend:T} | sed -e "s/erlang-//") != ${depend:T} ]; then \
-		${REINPLACE_CMD} -i '' -E -e "s@{ *:(${depend:T:S/erlang-//}), *(github:|\").*} *,?@@" ${WRKSRC}/mix.exs; \
+		${REINPLACE_CMD} -i '' -E -e "s@\{ *:(${depend:T:S/erlang-//}), *(github:|\").*} *,?@@" ${WRKSRC}/mix.exs; \
 	else \
-		${REINPLACE_CMD} -i '' -E -e "s@{ *:(${depend:T:S/elixir-//}), *(github:|\").*}@{ :\1, path: \"${ELIXIR_LIB_ROOT}/\\1\", compile: false }@" ${WRKSRC}/mix.exs; \
+		${REINPLACE_CMD} -i '' -E -e "s@\{ *:(${depend:T:S/elixir-//}), *(github:|\").*}@{ :\1, path: \"${ELIXIR_LIB_ROOT}/\\1\", compile: false }@" ${WRKSRC}/mix.exs; \
 	fi
 .endfor
 .endif
