@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lmdb
-PORTVERSION=	0.9.18
-PORTEPOCH=	1
+PORTVERSION=	0.9.19
 DISTVERSIONPREFIX=	${PORTNAME:tu}_
+PORTEPOCH=	1
 CATEGORIES=	databases
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -27,7 +27,13 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 
+TEST_TARGET=	do-test
+
 post-install:
 	${LN} -sf liblmdb.so.0 ${STAGEDIR}${PREFIX}/lib/liblmdb.so
+
+do-test:
+	${MKDIR} ${WRKSRC}/testdb
+	cd ${WRKSRC} && ./mtest*
 
 .include <bsd.port.mk>
