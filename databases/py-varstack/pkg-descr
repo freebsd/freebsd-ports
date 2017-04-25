@@ -1,0 +1,5 @@
+Varstack is a system that allows you to stack of layer a set of configuration
+variables and let definitions in the higher more specific levels of the stack
+override/extend the broader one in the lower levels.
+
+WWW: https://github.com/conversis/varstack
