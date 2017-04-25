@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.7.3
+PORTVERSION=	4.7.4
 DISTVERSIONSUFFIX=	-ja
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
@@ -21,6 +21,7 @@ NO_BUILD=	yes
 USES=		cpe php:web
 USE_PHP=	curl gd mysqli pcre tokenizer xml zip zlib ftp
 WRKSRC=		${WRKDIR}/${PORTNAME}
+IGNORE_WITH_PHP=	56
 
 CPE_LANG=	ja
 .if ${PORTVERSION:N*.*.*}
