@@ -799,6 +799,7 @@
     SUBDIR += py-tarantool
     SUBDIR += py-umemcache
     SUBDIR += py-unqlite
+    SUBDIR += py-varstack
     SUBDIR += py-whisper
     SUBDIR += py-xapian
     SUBDIR += py3-apsw
