@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	3.2.4
-PORTREVISION=	8
+PORTVERSION=	3.3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 
 HAS_CONFIGURE=	yes
 USES=		compiler:c11 cpe gmake localbase:ldflags perl5 \
-		pkgconfig shebangfix tar:bzip2
+		pkgconfig shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 SHEBANG_FILES=	doc/texi2pod.pl
@@ -28,13 +27,13 @@ NOPRECIOUSMAKEVARS=	yes # ARCH
 PORTSCOUT=	limit:^3\.
 
 OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB ASS BS2B CACA CDIO CELT CHROMAPRINT DC1394 \
-		DEBUG DOCS EBUR128 FDK_AAC FFSERVER FLITE FONTCONFIG \
+		DEBUG DOCS FDK_AAC FFSERVER FLITE FONTCONFIG \
 		FREETYPE FREI0R FRIBIDI GME GSM ICONV ILBC JACK KVAZAAR LADSPA \
 		LAME LIBBLURAY MODPLUG NETCDF OPENAL OPENCL OPENCV OPENGL \
 		OPENH264 OPENJPEG OPTIMIZED_CFLAGS OPUS PULSEAUDIO \
 		RUBBERBAND RTCPU SCHROEDINGER SDL SMB SNAPPY SNDIO SOXR SPEEX SSH \
 		TESSERACT THEORA TWOLAME V4L VAAPI VDPAU VIDSTAB VORBIS \
-		VO_AMRWBENC VPX WAVPACK WEBP X11GRAB X264 X265 XCB XVID \
+		VO_AMRWBENC VPX WAVPACK WEBP X264 X265 XCB XVID \
 		XVIDEO ZIMG ZMQ ZVBI
 
 OPTIONS_DEFAULT=	FFSERVER FONTCONFIG FREETYPE FREI0R GMP GNUTLS ICONV \
@@ -59,7 +58,6 @@ BS2B_DESC=	Bauer Stereophonic-to-Binaural filter
 CDIO_DESC=	Audio CD grabbing with libcdio
 CHROMAPRINT_DESC=	Audio fingerprinting with chromaprint
 DC1394_DESC=	IIDC-1394 grabbing using libdc1394
-EBUR128_DESC=	EBU R128 measurement for loudnorm filter
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 FFSERVER_DESC=	Build and install ffserver
 FLITE_DESC=	Voice synthesis support via libflite
@@ -79,7 +77,6 @@ LIBRTMP_DESC=	${RTMP_DESC} via librtmp
 TESSERACT_DESC=	Optical Character Recognition via Tesseract
 VFP_DESC=	Enable Vector Floating Point instructions
 VIDSTAB_DESC=	Video stabilization filter
-X11GRAB_DESC=	X11 grabbing (legacy)
 XCB_DESC=	X11 grabbing using XCB
 ZIMG_DESC=	"z" library video scaling filter
 ZMQ_DESC=	Message passing via libzmq${ZMQ_VERSION}
@@ -138,10 +135,6 @@ DEBUG_CONFIGURE_OFF=	--disable-debug
 # docs
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_CONFIGURE_ENABLE=	htmlpages
-
-# ebur128
-EBUR128_LIB_DEPENDS=	libebur128.so:audio/libebur128
-EBUR128_CONFIGURE_ENABLE=	libebur128
 
 # fdk_aac
 FDK_AAC_LIB_DEPENDS=	libfdk-aac.so:audio/fdk-aac
@@ -385,10 +378,6 @@ WAVPACK_CONFIGURE_ENABLE=	libwavpack
 # webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CONFIGURE_ENABLE=	libwebp
-
-# x11grab
-X11GRAB_USE=		XORG=x11,xext,xfixes
-X11GRAB_CONFIGURE_ENABLE=	x11grab
 
 # x264
 X264_LIB_DEPENDS=	libx264.so:multimedia/libx264
