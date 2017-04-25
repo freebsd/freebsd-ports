@@ -2,7 +2,7 @@
 
 PORTNAME=	python27
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -13,10 +13,17 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz
+USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
+SHEBANG_FILES=	Lib/lib2to3/pgen2/*.py Lib/lib2to3/tests/*.py Lib/lib2to3/tests/data/*.py \
+		Lib/idlelib/*.py Lib/encodings/*.py Lib/test/*.py Lib/UserString.py \
+		Lib/base64.py Lib/cProfile.py Lib/keyword.py Lib/mimify.py Lib/pdb.py \
+		Lib/platform.py Lib/profile.py Lib/pydoc.py Lib/quopri.py Lib/smtpd.py \
+		Lib/smtplib.py Lib/symbol.py Lib/tabnanny.py Lib/timeit.py Lib/trace.py \
+		Lib/uu.py Lib/webbrowser.py
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
@@ -36,8 +43,8 @@ PLIST_SUB=		ABI=${ABIFLAGS} \
 			PORTVERSION=${PORTVERSION} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. http://bugs.python.org/issue19554
 
-OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC SEM THREADS
-OPTIONS_DEFAULT=	LIBFFI PYMALLOC SEM THREADS UCS4
+OPTIONS_DEFINE=		DEBUG IPV6 LIBFFI NLS PYMALLOC THREADS
+OPTIONS_DEFAULT=	LIBFFI PYMALLOC THREADS UCS4
 OPTIONS_SINGLE=		UNICODE
 OPTIONS_SINGLE_UNICODE=	UCS2 UCS4
 OPTIONS_SUB=		yes
@@ -62,9 +69,6 @@ NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 NLS_CONFIGURE_ENV_OFF=	ac_cv_lib_intl_textdomain=no ac_cv_header_libintl_h=no
 
 PYMALLOC_CONFIGURE_WITH=	pymalloc
-
-SEM_CONFIGURE_ENV=	ac_cv_posix_semaphores_enabled=yes
-SEM_CONFIGURE_ENV_OFF=	ac_cv_posix_semaphores_enabled=no
 
 THREADS_CONFIGURE_WITH=	threads
 THREADS_LDFLAGS=	-lpthread
@@ -109,13 +113,11 @@ PLIST_SUB+=	NO_NIS=""
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
+		${WRKSRC}/Lib/cgi.py
 	@${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${PATCH_WRKSRC}/Lib/pydoc.py
-.if ${PORT_OPTIONS:MSEM}
-	@# do not use SEM_EXTRA_PATCHES here, since patch-setup.py overlaps with this one
-	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-setup.py
-.endif
 
 .if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
 	@${REINPLACE_CMD} -e 's/disabled_module_list =[^]]*/&, "nis"/' \
