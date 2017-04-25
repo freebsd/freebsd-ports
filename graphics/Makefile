@@ -763,6 +763,7 @@
     SUBDIR += pecomato
     SUBDIR += pencil
     SUBDIR += peps
+    SUBDIR += perceptualdiff
     SUBDIR += pfscalibration
     SUBDIR += pfstmo
     SUBDIR += pfstools
