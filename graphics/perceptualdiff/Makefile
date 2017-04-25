@@ -3,6 +3,7 @@
 
 PORTNAME=	perceptualdiff
 PORTVERSION=	2.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -16,7 +17,6 @@ PLIST_FILES=	bin/perceptualdiff
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	myint
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		cmake
 
