@@ -1245,6 +1245,7 @@
     SUBDIR += py-guess-language
     SUBDIR += py-hexdump
     SUBDIR += py-html2text
+    SUBDIR += py-humanfriendly
     SUBDIR += py-hyperestraier-python
     SUBDIR += py-hypua2jamo
     SUBDIR += py-jaxml
