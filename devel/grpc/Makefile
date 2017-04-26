@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	Super fast C++ logging library
+COMMENT=	HTTP/2-based RPC framework
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
