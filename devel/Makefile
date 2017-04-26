@@ -4328,6 +4328,7 @@
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
+    SUBDIR += py-grpcio
     SUBDIR += py-gyp
     SUBDIR += py-hash_ring
     SUBDIR += py-hghooks
