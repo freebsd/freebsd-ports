@@ -16,11 +16,7 @@ BUILD_DEPENDS=	p5-DBI>=1.631:databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=1.631:databases/p5-DBI
 LIB_DEPENDS=	libcego.so:databases/cego
 
-.if defined(.PARSEDIR)
-USES=		gmake
-.endif
-
-USES+=		perl5
+USES=		gmake perl5
 USE_PERL5=	configure
 CC:=		${CXX}
 
