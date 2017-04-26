@@ -3,7 +3,7 @@
 
 PORTNAME=	iocage
 PORTVERSION=	0.9.8b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py-pytest-runner
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.10.0:misc/py-tqdm \
-		${PYTHON_PKGNAMEPREFIX}py-coloredlogs>0:devel/py-coloredlogs \
 		ca_root_nss>0:security/ca_root_nss \
 		git-lite>0:devel/git-lite \
 		${PYTHON_PKGNAMEPREFIX}texttable>=0.8.7:textproc/py-texttable \
@@ -24,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests
 
 USE_GITHUB=	yes
-GH_TAGNAME=	cff89b355335d796573f451f6c5b278d1a06542e
+GH_TAGNAME=	469cbd2a9ed21a4a883df6fd8e0d86887c286f8c
 
 NO_ARCH=	yes
 USES=		python:3.6
