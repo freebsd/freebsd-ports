@@ -31,7 +31,7 @@ MAKE_ARGS+=		CC="${CC}" CFLAGS="${CFLAGS} -g" # Apparently, it doesn't work on t
 # Disable installation of .info files and fix includedir reference.
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(install.*:.*)install-info(.*)/\1\2/' ${WRKSRC}/etc/Makefile.in
-	@${REINPLACE_CMD} -E 's#(-I\$${prefix}/)psp(/sdk/include)#-I${LOCALBASE}/${PSP_SDK_STAGE_PREFIX:S,/,\\/,}\2#' ${WRKSRC}/newlib/configure.host
+	@${REINPLACE_CMD} -E 's#(-I\$$\{prefix}/)psp(/sdk/include)#-I${LOCALBASE}/${PSP_SDK_STAGE_PREFIX:S,/,\\/,}\2#' ${WRKSRC}/newlib/configure.host
 
 # Rename installed crt0.o as real crt0.o used by PSP code comes with psptoolchain-pspsdk-stage2
 # and would overwrite the one from this port.
