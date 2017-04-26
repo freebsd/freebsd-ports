@@ -1,0 +1,10 @@
+WhatLanguage, written in pure-Ruby, detects the human language of supplied text.
+It uses Bloom filters, so it is fast and memory efficient.  It works well on
+text of over 10 words in length (e.g. blog posts or comments) and very poorly on
+short or Twitter-esque text.
+
+It works with Arabic, Dutch, English, Farsi, Finnish, French, German, Greek,
+Hebrew, Hungarian, Italian, Korean, Norwegian, Pinyin, Polish, Portuguese,
+Russian, Spanish, and Swedish out of the box.
+
+WWW: https://github.com/peterc/whatlanguage
