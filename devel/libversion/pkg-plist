@@ -1,0 +1,4 @@
+bin/version_compare
+include/libversion/compare.h
+lib/libversion.a
+libdata/pkgconfig/libversion.pc
