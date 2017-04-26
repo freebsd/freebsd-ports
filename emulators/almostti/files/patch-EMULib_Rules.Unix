@@ -1,0 +1,12 @@
+--- EMULib/Rules.Unix.orig	2009-12-17 07:37:54 UTC
++++ EMULib/Rules.Unix
+@@ -6,7 +6,7 @@
+ 
+ include ../../EMULib/Rules.gcc
+ 
+-CFLAGS += -I$(EMULIB)/Unix -I/usr/X11R6/include
++CFLAGS += -I$(EMULIB)/Unix -I$(LOCALBASE)/include
+ DEFINES+= -DUNIX -DMITSHM -DBPS16
+-LIBS   += -lX11 -lXext
++LIBS   += -L$(LOCALBASE)/lib -lX11 -lXext
+ OBJECTS+= $(EMUUNIX)
