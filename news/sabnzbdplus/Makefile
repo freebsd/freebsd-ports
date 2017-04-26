@@ -39,7 +39,6 @@ GROUPS=		_sabnzbd
 OPTIONS_DEFINE=	PAR2CMDLINE UNRAR 7ZIP FEEDPARSER YENC SSL DOCS
 OPTIONS_DEFAULT=	PAR2CMDLINE UNRAR 7ZIP FEEDPARSER YENC SSL
 PAR2CMDLINE_DESC=	Required for postprocessing of par files
-UNRAR_DESC=	Often required for unpacking many downloads
 7ZIP_DESC=	Needed for unpacking 7-Zip posts
 FEEDPARSER_DESC=	rss-feed support
 YENC_DESC=	yenc support
