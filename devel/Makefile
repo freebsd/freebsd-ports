@@ -5457,6 +5457,7 @@
     SUBDIR += rubygem-rack-mini-profiler
     SUBDIR += rubygem-rack-raw-upload
     SUBDIR += rubygem-rails-deprecated_sanitizer
+    SUBDIR += rubygem-rails-i18n
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake
