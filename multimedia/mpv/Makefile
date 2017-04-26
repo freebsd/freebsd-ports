@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.24.0
+PORTVERSION=	0.25.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -32,7 +31,6 @@ CONFIGURE_ENV=	BIN_PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--htmldir=${DOCSDIR}/html \
 		--mandir=${MANPREFIX}/man \
-		--prefix=${PREFIX} \
 		--disable-debug-build \
 		--disable-d3d-hwaccel \
 		--disable-optimize \
@@ -156,6 +154,7 @@ ZSH_CONFIGURE_ENABLE=		zsh-comp
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
 		${WRKSRC}/wscript_build.py
+
 post-patch-MANPAGES-on:
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
