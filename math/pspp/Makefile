@@ -10,6 +10,7 @@ MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	texinfo>0:print/texinfo
 LIB_DEPENDS=	libgslcblas.so:math/gsl

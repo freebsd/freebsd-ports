@@ -35,6 +35,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<sys/vfs.h>|<sys/mount.h>|' \
 		${WRKDIR}/zen/file_access.cpp
 	@${REINPLACE_CMD} -e 's|WEXITSTATUS||' ${WRKDIR}/zen/shell_execute.h
+	@${REINPLACE_CMD} -e 's| noexcept;|;|' ${WRKDIR}/zen/scope_guard.h
 	@${REINPLACE_CMD} -e 's|CLOCK_MONOTONIC_RAW|CLOCK_MONOTONIC|' \
 		${WRKDIR}/zen/tick_count.h
 

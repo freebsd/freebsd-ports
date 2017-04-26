@@ -3,6 +3,7 @@
 
 PORTNAME=	realsync
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.it-sys.org/distfiles/
 
@@ -14,8 +15,9 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	rsync:net/rsync \
 		sudo:security/sudo
 
-USES=		python
+USES=		python shebangfix
 NO_BUILD=	yes
+SHEBANG_FILES=	realsync
 
 SUB_FILES=	pkg-message
 

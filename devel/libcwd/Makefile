@@ -2,20 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	libcwd
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	C++ Debugging Support Library
 
+LICENSE=	QPL10
+LICENSE_NAME=	Q Public License, Version 1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE.QPL
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		gmake pathfix pkgconfig libtool
-# Fails to build with GCC 4.9, cf. PR 196852
-USE_GCC=	4.8
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alloc --disable-location --disable-threading \
-		--disable-pch
+CONFIGURE_ARGS=	--disable-alloc --disable-location --disable-threading
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
