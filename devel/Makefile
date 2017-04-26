@@ -1486,6 +1486,7 @@
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
+    SUBDIR += libversion
     SUBDIR += libvhdi
     SUBDIR += libvirt
     SUBDIR += libvirt-glib
@@ -1495,7 +1496,6 @@
     SUBDIR += libvshadow
     SUBDIR += libvslvm
     SUBDIR += libvterm
-    SUBDIR += libversion
     SUBDIR += libwfut
     SUBDIR += libx86
     SUBDIR += libxalloc
