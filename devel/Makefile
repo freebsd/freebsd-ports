@@ -1495,7 +1495,7 @@
     SUBDIR += libvshadow
     SUBDIR += libvslvm
     SUBDIR += libvterm
-    SUBDIR += libvversion
+    SUBDIR += libversion
     SUBDIR += libwfut
     SUBDIR += libx86
     SUBDIR += libxalloc
