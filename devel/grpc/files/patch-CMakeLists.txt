@@ -1,0 +1,129 @@
+--- CMakeLists.txt.orig	2017-03-20 21:16:13 UTC
++++ CMakeLists.txt
+@@ -145,24 +145,14 @@ if("${gRPC_PROTOBUF_PROVIDER}" STREQUAL 
+     if(TARGET libprotoc)
+       set(_gRPC_PROTOBUF_PROTOC_LIBRARIES libprotoc)
+     endif()
+-    if(TARGET protoc)
+-      set(_gRPC_PROTOBUF_PROTOC protoc)
+-    endif()
+   else()
+       message(WARNING "gRPC_PROTOBUF_PROVIDER is \"module\" but PROTOBUF_ROOT_DIR is wrong")
+   endif()
+ elseif("${gRPC_PROTOBUF_PROVIDER}" STREQUAL "package")
+-  find_package(protobuf CONFIG)
+-  if(protobuf_FOUND)
+-    if(TARGET protobuf::${_gRPC_PROTOBUF_LIBRARY_NAME})
+-      set(_gRPC_PROTOBUF_LIBRARIES protobuf::${_gRPC_PROTOBUF_LIBRARY_NAME})
+-    endif()
+-    if(TARGET protobuf::libprotoc)
+-      set(_gRPC_PROTOBUF_PROTOC_LIBRARIES protobuf::libprotoc)
+-    endif()
+-    if(TARGET protobuf::protoc)
+-      set(_gRPC_PROTOBUF_PROTOC protobuf::protoc)
+-    endif()
++  find_library(LIBPROTOBUF protobuf)
++  if(LIBPROTOBUF)
++    set(_gRPC_PROTOBUF_LIBRARIES protobuf)
++    set(_gRPC_PROTOBUF_PROTOC_LIBRARIES protoc)
+     set(_gRPC_FIND_PROTOBUF "if(NOT protobuf_FOUND)\n  find_package(protobuf CONFIG)\nendif()")
+   else()
+     find_package(Protobuf MODULE)
+@@ -237,7 +227,7 @@ if(NOT MSVC)
+ endif()
+ 
+ if(UNIX)
+-  set(_gRPC_ALLTARGETS_LIBRARIES dl rt m pthread)
++  set(_gRPC_ALLTARGETS_LIBRARIES rt m pthread)
+ endif()
+ 
+ if(WIN32 AND MSVC)
+@@ -283,7 +273,7 @@ function(protobuf_generate_grpc_cpp)
+              "${_gRPC_PROTO_GENS_DIR}/${RELFIL_WE}.grpc.pb.h"
+              "${_gRPC_PROTO_GENS_DIR}/${RELFIL_WE}.pb.cc"
+              "${_gRPC_PROTO_GENS_DIR}/${RELFIL_WE}.pb.h"
+-      COMMAND ${_gRPC_PROTOBUF_PROTOC}
++      COMMAND "protoc"
+       ARGS --grpc_out=${_gRPC_PROTO_GENS_DIR}
+            --cpp_out=${_gRPC_PROTO_GENS_DIR}
+            --plugin=protoc-gen-grpc=$<TARGET_FILE:grpc_cpp_plugin>
+@@ -730,6 +720,7 @@ add_library(gpr
+   src/core/lib/support/tmpfile_windows.c
+   src/core/lib/support/wrap_memcpy.c
+ )
++set_target_properties(gpr PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(gpr PROPERTIES COMPILE_PDB_NAME "gpr"
+@@ -1078,6 +1069,7 @@ add_library(grpc
+   src/core/ext/census/tracing.c
+   src/core/plugin_registry/grpc_plugin_registry.c
+ )
++set_target_properties(grpc PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpc PROPERTIES COMPILE_PDB_NAME "grpc"
+@@ -1359,6 +1351,7 @@ add_library(grpc_cronet
+   src/core/ext/load_reporting/load_reporting_filter.c
+   src/core/plugin_registry/grpc_cronet_plugin_registry.c
+ )
++set_target_properties(grpc_cronet PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpc_cronet PROPERTIES COMPILE_PDB_NAME "grpc_cronet"
+@@ -1903,6 +1896,7 @@ add_library(grpc_unsecure
+   src/core/ext/census/tracing.c
+   src/core/plugin_registry/grpc_unsecure_plugin_registry.c
+ )
++set_target_properties(grpc_unsecure PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpc_unsecure PROPERTIES COMPILE_PDB_NAME "grpc_unsecure"
+@@ -2104,6 +2098,7 @@ add_library(grpc++
+   src/cpp/util/time_cc.cc
+   src/cpp/codegen/codegen_init.cc
+ )
++set_target_properties(grpc++ PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpc++ PROPERTIES COMPILE_PDB_NAME "grpc++"
+@@ -2473,6 +2468,7 @@ add_library(grpc++_cronet
+   third_party/nanopb/pb_decode.c
+   third_party/nanopb/pb_encode.c
+ )
++set_target_properties(grpc++_cronet PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpc++_cronet PROPERTIES COMPILE_PDB_NAME "grpc++_cronet"
+@@ -2694,6 +2690,7 @@ add_library(grpc++_reflection
+   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/reflection/v1alpha/reflection.pb.h
+   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/reflection/v1alpha/reflection.grpc.pb.h
+ )
++set_target_properties(grpc++_reflection PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpc++_reflection PROPERTIES COMPILE_PDB_NAME "grpc++_reflection"
+@@ -2961,6 +2958,7 @@ add_library(grpc++_unsecure
+   src/cpp/util/time_cc.cc
+   src/cpp/codegen/codegen_init.cc
+ )
++set_target_properties(grpc++_unsecure PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpc++_unsecure PROPERTIES COMPILE_PDB_NAME "grpc++_unsecure"
+@@ -3220,6 +3218,7 @@ add_library(grpc_plugin_support
+   src/compiler/python_generator.cc
+   src/compiler/ruby_generator.cc
+ )
++set_target_properties(grpc_plugin_support PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpc_plugin_support PROPERTIES COMPILE_PDB_NAME "grpc_plugin_support"
+@@ -3697,6 +3696,7 @@ endif (gRPC_BUILD_TESTS)
+ add_library(grpc_csharp_ext SHARED
+   src/csharp/ext/grpc_csharp_ext.c
+ )
++set_target_properties(grpc_csharp_ext PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpc_csharp_ext PROPERTIES COMPILE_PDB_NAME "grpc_csharp_ext"

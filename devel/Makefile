@@ -817,6 +817,7 @@
     SUBDIR += gradle
     SUBDIR += grantlee
     SUBDIR += grantlee5
+    SUBDIR += grpc
     SUBDIR += grumpy
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
