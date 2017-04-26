@@ -59,7 +59,6 @@ P0F_DESC=		Passive operating system fingerprinting
 ALTERMIME_DESC=		Use AlterMime for defanging/disclaimers
 FILE_DESC=		Use newer file(1) utility from ports
 RAR_DESC=		RAR support with archivers/rar
-UNRAR_DESC=		RAR support with archivers/unrar
 ARJ_DESC=		ARJ support with archivers/arj
 UNARJ_DESC=		ARJ support with archivers/unarj
 LHA_DESC=		LHA support with archivers/lha

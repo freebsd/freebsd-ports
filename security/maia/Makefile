@@ -69,7 +69,6 @@ SPF_DESC=		SpamAssassin SPF plugin
 DKIM_DESC=		SpamAssassin DKIM plugin
 FILE_DESC=		Use newer file(1) utility from ports
 RAR_DESC=		RAR support with archivers/rar
-UNRAR_DESC=		RAR support with archivers/unrar
 ARJ_DESC=		ARJ support with archivers/arj
 UNARJ_DESC=		ARJ support with archivers/unarj
 LHA_DESC=		LHA support with archivers/lha

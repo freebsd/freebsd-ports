@@ -1486,6 +1486,7 @@
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
+    SUBDIR += libversion
     SUBDIR += libvhdi
     SUBDIR += libvirt
     SUBDIR += libvirt-glib
@@ -1495,7 +1496,6 @@
     SUBDIR += libvshadow
     SUBDIR += libvslvm
     SUBDIR += libvterm
-    SUBDIR += libvversion
     SUBDIR += libwfut
     SUBDIR += libx86
     SUBDIR += libxalloc
@@ -4169,6 +4169,7 @@
     SUBDIR += py-castellan
     SUBDIR += py-cclib
     SUBDIR += py-celery
+    SUBDIR += py-certsrv
     SUBDIR += py-cffi
     SUBDIR += py-cfgparse
     SUBDIR += py-chainmap
@@ -5192,6 +5193,7 @@
     SUBDIR += rubygem-cloudfiles
     SUBDIR += rubygem-cocaine
     SUBDIR += rubygem-coercible
+    SUBDIR += rubygem-coffee-rails-rails5
     SUBDIR += rubygem-coffee-rails4
     SUBDIR += rubygem-coffee-rails41
     SUBDIR += rubygem-coffee-script
@@ -5456,6 +5458,7 @@
     SUBDIR += rubygem-rack-mini-profiler
     SUBDIR += rubygem-rack-raw-upload
     SUBDIR += rubygem-rails-deprecated_sanitizer
+    SUBDIR += rubygem-rails-i18n
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake

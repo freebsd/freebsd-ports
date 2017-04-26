@@ -40,13 +40,8 @@ KBUILD_BINS=	kDepIDB kDepPre kObjCache kmk kmk_append kmk_ash kmk_cat \
 PORTDOCS=	QuickReference-kmk.html \
 		QuickReference-kmk.txt
 
-# bmake doesn't know about unsetenv=true
-.if defined(.PARSEDIR)
 ENV=
 .export ENV
-.else
-.SHELL:		path="/bin/sh" unsetenv=true
-.endif
 
 OPTIONS_DEFINE=	DOCS
 

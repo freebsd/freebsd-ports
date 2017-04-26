@@ -1543,6 +1543,7 @@
     SUBDIR += rubygem-rugments
     SUBDIR += rubygem-sanitize
     SUBDIR += rubygem-sass
+    SUBDIR += rubygem-sass-rails-rails5
     SUBDIR += rubygem-sass-rails5
     SUBDIR += rubygem-sass32
     SUBDIR += rubygem-sax-machine
@@ -1562,6 +1563,7 @@
     SUBDIR += rubygem-unf
     SUBDIR += rubygem-unf_ext
     SUBDIR += rubygem-version_sorter
+    SUBDIR += rubygem-whatlanguage
     SUBDIR += rubygem-wikicloth
     SUBDIR += rubygem-xml-simple
     SUBDIR += rubygem-ya2yaml

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTVERSION=	1.1.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		https://mirrors.rit.edu/zi/ \
@@ -26,34 +25,26 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libidn=${LOCALBASE} --docdir=${DOCSDIR} \
 		--with-trust-anchor=${LOCALBASE}/etc/unbound/root.key
-SOVERSION=	1.4.1
+SOVERSION=	6.0.0
 SOMAJVER=	${SOVERSION:C/([0-9]).*/\1/1}
+MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB+=	SOVERSION="${SOVERSION}" SOMAJVER="${SOMAJVER}"
 SUB_FILES+=	pkg-message
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	DOCS DIAGS EXAMPLES LIBEV LIBUV LIBEVENT
+OPTIONS_DEFINE=	DOCS EXAMPLES LIBEV LIBEVENT LIBUV
 
-DIAGS_DESC=	Build diagnostic tools
 LIBEV_DESC=	Build with libev extension
-LIBUV_DESC=	Build with libuv extension
 LIBEVENT_DESC=	Build with libevent extension
+LIBUV_DESC=	Build with libuv extension
 
 LIBEV_LIB_DEPENDS=	libev.so:devel/libev
 LIBEV_CONFIGURE_WITH=	libev
+LIBEVENT_LIB_DEPENDS=	libevent_core.so:devel/libevent2
+LIBEVENT_CONFIGURE_WITH=libevent
 LIBUV_LIB_DEPENDS=	libuv.so:devel/libuv
 LIBUV_CONFIGURE_WITH=	libuv
-LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent
-LIBEVENT_CONFIGURE_WITH=libevent
-DIAGS_VARS=		PLIST_FILES+=bin/${PORTNAME}_query
-DIAGS_LIB_DEPENDS=	libcheck.so:devel/check
-
-do-build-DIAGS-on:
-	(cd ${WRKSRC}/src/test && ${MAKE})
-
-do-install-DIAGS-on:
-	(cd ${WRKSRC}/src/test && ${MAKE} DESTDIR=${STAGEDIR} install)
 
 post-patch:
 	${REINPLACE_CMD} -Ee 's,^(sharedoc = ).*,\1${WRKDIR}/doc,' \
@@ -61,9 +52,8 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns*.so.*
-
-post-install-DIAGS-on:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/getdns_query
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/getdns_query \
+		${STAGEDIR}${PREFIX}/bin/stubby
 
 post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/spec/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)

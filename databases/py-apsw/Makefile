@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-r1
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Another Python SQLite Wrapper
 
 LICENSE=	ZLIB

@@ -22,7 +22,6 @@ ARC_DESC=		Enable arch archives support
 ARJ_DESC=		Enable arj archives support
 LHA_DESC=		Enable lha archives support
 UNZOO_DESC=		Enable zoo archives support
-UNRAR_DESC=		Enable rar archives support
 LLVM_DESC=		Enable JIT Bytecode compiler (req. LLVM)
 TESTS_DESC=		Run compile-time tests (req. python)
 MILTER_DESC=		Compile the milter interface

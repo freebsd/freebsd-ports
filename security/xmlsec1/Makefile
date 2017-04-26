@@ -54,10 +54,6 @@ NSS_LIB_DEPENDS=	libnss3.so:security/nss \
 			libplds4.so:devel/nspr \
 			libplc4.so:devel/nspr
 
-.if !defined(.PARSEDIR)
-MAKE_ARGS+=	-EABS_BUILDDIR
-.endif
-
 post-patch-GNUTLS-on:
 # Don't rely on broken autodetection
 	@${REINPLACE_CMD} -e '/^GNUTLS_FOUND/s/no/yes/' \
