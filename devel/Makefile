@@ -4169,6 +4169,7 @@
     SUBDIR += py-castellan
     SUBDIR += py-cclib
     SUBDIR += py-celery
+    SUBDIR += py-certsrv
     SUBDIR += py-cffi
     SUBDIR += py-cfgparse
     SUBDIR += py-chainmap
