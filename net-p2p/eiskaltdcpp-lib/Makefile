@@ -11,7 +11,8 @@ PKGNAMESUFFIX?=	-lib
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Direct Connect client shared library
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 
