@@ -53,9 +53,7 @@ CARGO_BOOTSTRAP_VERSION?=	nightly
 CARGO_BOOTSTRAP=		${CARGO_BOOTSTRAP_DIR}/cargo-${CARGO_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
 CARGO_REGISTRY=			${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
 
-.if defined(.PARSEDIR) # fixes |make describe| on 9.x (which is BROKEN)
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
-.endif
 
 # Rust's target arch string is different from *BSD arch strings
 RUST_ARCH_x86_64=	x86_64 # dragonfly
