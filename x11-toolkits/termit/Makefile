@@ -2,21 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	termit
-PORTVERSION=	2.10.1
+PORTVERSION=	3.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	x11-toolkits gnome
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small terminal emulator with Lua scripting
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
+		libgnutls.so:security/gnutls
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nonstop
 
 USES=		cmake lua pkgconfig
-USE_GNOME=	gdkpixbuf2 vte
+USE_XORG=	x11
+USE_GNOME=	cairo gdkpixbuf2 gtk30 vte3
 
 CPPFLAGS+=	-I${LOCALBASE}/include/vte-0.0
 
