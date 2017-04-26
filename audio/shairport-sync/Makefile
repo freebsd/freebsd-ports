@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shairport-sync
-PORTVERSION=	3.0.2
+DISTVERSION=	3.1.d6
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,8 +14,7 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libconfig.so:devel/libconfig \
 		libdaemon.so:devel/libdaemon \
 		libpopt.so:devel/popt \
-		libsoxr.so:audio/libsoxr \
-		libasound.so:audio/alsa-lib
+		libsoxr.so:audio/libsoxr
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pkgconfig ssl
@@ -25,12 +24,13 @@ GH_ACCOUNT=	mikebrady
 
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=	ALAC
+OPTIONS_DEFINE=	ALAC ALSA SNDIO
+OPTIONS_DEFAULT=SNDIO
 ALAC_DESC=	Build with libalac support (experimental)
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 		--with-piddir=/var/run/shairport-sync --with-avahi \
-		--with-ssl=openssl --with-metadata --with-soxr --with-alsa \
+		--with-ssl=openssl --with-metadata --with-soxr \
 		--with-stdout --with-pipe
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -40,5 +40,11 @@ CONFIGURE_ENV+=	SSL_CFLAGS=-I${OPENSSLINC} SSL_LIBS=-L${OPENSSLLIB}
 
 ALAC_LIB_DEPENDS=	libalac.so:audio/alac
 ALAC_CONFIGURE_ON=	--with-apple-alac
+
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_CONFIGURE_ON=	--with-alsa
+
+SNDIO_CONFIGURE_ON=	--with-sndio
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 
 .include <bsd.port.mk>
