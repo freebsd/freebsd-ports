@@ -243,9 +243,9 @@
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += ccache
-    SUBDIR += ccache-static
     SUBDIR += ccache-memcached
     SUBDIR += ccache-memcached-static
+    SUBDIR += ccache-static
     SUBDIR += cccc
     SUBDIR += ccdoc
     SUBDIR += ccons
@@ -2515,8 +2515,8 @@
     SUBDIR += p5-Getopt-Compact
     SUBDIR += p5-Getopt-Compact-WithCmd
     SUBDIR += p5-Getopt-Declare
-    SUBDIR += p5-Getopt-Euclid
     SUBDIR += p5-Getopt-EX
+    SUBDIR += p5-Getopt-Euclid
     SUBDIR += p5-Getopt-GUI-Long
     SUBDIR += p5-Getopt-Long
     SUBDIR += p5-Getopt-Long-Descriptive
@@ -5250,8 +5250,8 @@
     SUBDIR += rubygem-extras
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-faraday_middleware-multi_json
-    SUBDIR += rubygem-fast_blank
     SUBDIR += rubygem-fast-stemmer
+    SUBDIR += rubygem-fast_blank
     SUBDIR += rubygem-fast_gettext
     SUBDIR += rubygem-fast_stack
     SUBDIR += rubygem-fast_xor
@@ -5539,8 +5539,8 @@
     SUBDIR += rubygem-sidekiq-unique-jobs
     SUBDIR += rubygem-sidetiq
     SUBDIR += rubygem-sigdump
-    SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-simple-navigation
+    SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-simplecov
     SUBDIR += rubygem-slack-notifier
     SUBDIR += rubygem-slack-notifier1
