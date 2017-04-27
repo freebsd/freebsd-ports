@@ -17,6 +17,8 @@ RUN_DEPENDS=	usbhid-dump:sysutils/usbhid-dump \
 
 OPTIONS_DEFINE=	DOCS
 
+PORTSCOUT=	ignore:1
+
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share/usbids --enable-zlib
 CONFIGURE_ENV=	LIBUSB_CFLAGS="-I/usr/include" LIBUSB_LIBS="-L/usr/lib -lusb"
 GNU_CONFIGURE=	yes
