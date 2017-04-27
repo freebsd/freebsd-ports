@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	behdad
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

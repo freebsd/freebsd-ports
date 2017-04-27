@@ -24,6 +24,9 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
 			--without-zlib-version-check --with-ssl-engine
 ETCOLD=			${PREFIX}/etc
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type struct rsa_st
+
 OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
 			OVERWRITE_BASE SCTP LDNS NONECIPHER
