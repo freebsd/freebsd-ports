@@ -25,6 +25,9 @@ LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit \
 		libgd.so:graphics/gd \
 		libGeoIP.so:net/GeoIP
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type struct evp_pkey_st
+
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=	\
 	DEBUG \
