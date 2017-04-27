@@ -3,7 +3,7 @@
 
 PORTNAME=	docdiff
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,9 +15,9 @@ LICENSE=	BSD3CLAUSE
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	test/*.rb devutil/*.rb \
-		docdiffwebui.cgi
 
 PLIST_FILES=	bin/docdiff
+
+SHEBANG_FILES=	docdiffwebui.cgi langfilter.rb */*.rb lib/docdiff/*.rb
 
 .include <bsd.port.mk>
