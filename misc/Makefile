@@ -414,6 +414,7 @@
     SUBDIR += rpl
     SUBDIR += rtfm
     SUBDIR += rubygem-dotenv
+    SUBDIR += rubygem-dotenv-rails
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-mime-types-data
