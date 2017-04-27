@@ -3,7 +3,7 @@
 
 PORTNAME=	phoronix-test-suite
 PORTVERSION=	6.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
@@ -19,17 +19,11 @@ USE_PHP=	ctype curl dom filter gd hash json openssl pcntl posix \
 		session simplexml sockets sqlite3 zip zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phoronix-test-suite
-SHEBANG_FILES=	deploy/juju/trusty/pts/hooks/start \
-		deploy/juju/trusty/pts/hooks/upgrade-charm \
-		deploy/juju/trusty/pts/hooks/stop \
-		deploy/juju/trusty/pts/hooks/phoronix-common \
-		deploy/juju/trusty/pts/hooks/install \
-		deploy/juju/trusty/pts/hooks/config-changed \
+SHEBANG_FILES=	deploy/juju/trusty/pts/hooks/phoronix-common \
 		deploy/juju/trusty/pts/actions/memory \
 		deploy/juju/trusty/pts/actions/benchmark \
 		deploy/juju/trusty/pts/actions/custom \
-		deploy/juju/trusty/pts/actions/smoke \
-		deploy/juju/trusty/pts/scripts/parse		
+		deploy/juju/trusty/pts/scripts/parse
 
 RUN_DEPENDS+=	fpdf>0:print/fpdf
 RUN_DEPENDS+=	cmake:devel/cmake
