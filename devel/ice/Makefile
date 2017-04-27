@@ -14,6 +14,8 @@ LICENSE=		GPLv2
 
 SLAVE_PORT?=		no
 
+MAKE_JOBS_UNSAFE=	yes
+
 .if ${SLAVE_PORT} == "no"
 LIB_DEPENDS=		libexpat.so:textproc/expat2 \
 			libmcpp.so:devel/mcpp
