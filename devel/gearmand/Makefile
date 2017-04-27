@@ -20,7 +20,6 @@ CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.1.*
 USERS=		gearmand
 GROUPS=		gearmand
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not build: cannot link with boost
 
 USE_PERL5=	build
