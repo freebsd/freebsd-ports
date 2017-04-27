@@ -2091,6 +2091,7 @@
     SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-rqrcode-rails3
     SUBDIR += rubygem-rtlit
+    SUBDIR += rubygem-ruby-oembed
     SUBDIR += rubygem-ruby-readability
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-sawyer
