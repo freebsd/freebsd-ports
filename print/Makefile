@@ -88,6 +88,7 @@
     SUBDIR += gutenprint-ijs
     SUBDIR += gv
     SUBDIR += harfbuzz
+    SUBDIR += harfbuzz-icu
     SUBDIR += hp2xx
     SUBDIR += hpijs
     SUBDIR += hplip
