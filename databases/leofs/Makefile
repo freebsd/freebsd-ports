@@ -19,8 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
 
 BROKEN_aarch64=		Does not compile: fatal error: lzo/lzo1x.h file not found
-BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=		Does not build: error Please implement AtomicPointer for this platform
+NOT_FOR_ARCHS=		powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	does not build: error Please implement AtomicPointer for this platform
 
 LEOFS_USER=	leofs
 LEOFS_GROUP=	leofs
