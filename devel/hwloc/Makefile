@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hwloc
-PORTVERSION=	1.11.1
+PORTVERSION=	1.11.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v${PORTVERSION:R}/downloads/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION:R}/downloads/
@@ -38,8 +38,8 @@ CAIRO_CONFIGURE_ON=	--enable-cairo --with-x
 CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_USE=		XORG=x11
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${STAGEDIR}${DOCSDIR}/html/.
+	${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${STAGEDIR}${DOCSDIR}/html/
 
 .include <bsd.port.mk>
