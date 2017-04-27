@@ -3,7 +3,7 @@
 
 PORTNAME?=	${SAMBA4_BASENAME}46
 PORTVERSION?=	${SAMBA4_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net
 EXTRACT_ONLY=
 
@@ -87,6 +87,8 @@ LIB_DEPENDS+=		libsunacl.so:sysutils/libsunacl
 # Libarchive
 BUILD_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
+
+BUILD_DEPENDS+=		git>0:devel/git
 
 # snapper needs dbus
 LIB_DEPENDS+=		libdbus-1.so:devel/dbus
