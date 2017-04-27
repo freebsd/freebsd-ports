@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-Shell
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CORION
@@ -15,26 +15,26 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-HTML-Display>=0:www/p5-HTML-Display \
-		p5-HTML-TokeParser-Simple>=2:www/p5-HTML-TokeParser-Simple \
-		p5-Hook-LexWrap>=0.2:devel/p5-Hook-LexWrap \
+		p5-HTML-TokeParser-Simple>=2.0:www/p5-HTML-TokeParser-Simple \
+		p5-Hook-LexWrap>=0.20:devel/p5-Hook-LexWrap \
 		p5-Term-Shell>=0.02:devel/p5-Term-Shell \
 		p5-URI>=0:net/p5-URI \
-		p5-WWW-Mechanize>=1.2:www/p5-WWW-Mechanize \
+		p5-WWW-Mechanize>=1.20:www/p5-WWW-Mechanize \
 		p5-WWW-Mechanize-FormFiller>=0.05:www/p5-WWW-Mechanize-FormFiller \
 		p5-libwww>=5.69:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp
+TEST_DEPENDS=	p5-CGI>=0:www/p5-CGI
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 PORTEXAMPLES=	banking.postbank.de.mech hotmail.signup.mech wwwshell.pl
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/bin && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR})
-	@${ECHO_MSG} "===> Documentation installed in ${EXAMPLESDIR}."
 
 .include <bsd.port.mk>

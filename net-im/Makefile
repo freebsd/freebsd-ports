@@ -124,6 +124,7 @@
     SUBDIR += pork
     SUBDIR += profanity
     SUBDIR += prosody
+    SUBDIR += prosody-modules
     SUBDIR += proxy65
     SUBDIR += psi
     SUBDIR += psimedia
