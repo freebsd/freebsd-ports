@@ -202,6 +202,7 @@
     SUBDIR += py-reportlab1
     SUBDIR += py-rtf
     SUBDIR += py-trml2pdf
+    SUBDIR += py3-fonttools
     SUBDIR += qpdf
     SUBDIR += qpdfview
     SUBDIR += qt5-printsupport
