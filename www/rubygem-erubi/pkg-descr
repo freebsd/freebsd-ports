@@ -1,0 +1,19 @@
+Erubi is a ERB template engine for Ruby. It is a simplified fork of Erubis,
+using the same basic algorithm, with the following differences:
+- Handles postfix conditionals when using escaping (e.g. <%= foo if bar %>)
+- Supports frozen_string_literal: true in templates via :freeze option
+- Works with Ruby's -enable-frozen-string-literal option
+- Automatically freezes strings for template text when Ruby optimizes it (on
+  Ruby 2.1+)
+- Escapes ' (apostrophe) when escaping for better XSS protection
+- Has 6x faster escaping on Ruby 2.3+ by using cgi/escape
+- Has 86% smaller memory footprint
+- Does no monkey patching (Erubis adds a method to Kernel)
+- Uses an immutable design (all options passed to the constructor, which returns
+  a frozen object)
+- Has simpler internals (1 file, <150 lines of code)
+- Has an open development model (Erubis doesn't have a public source control
+  repository or bug tracker)
+- Is not dead (Erubis hasn't been updated since 2011)
+
+WWW: https://github.com/jeremyevans/erubi
