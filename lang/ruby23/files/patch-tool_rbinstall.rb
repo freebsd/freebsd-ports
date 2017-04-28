@@ -1,4 +1,4 @@
---- tool/rbinstall.rb.orig	2015-11-16 06:33:17 UTC
+--- tool/rbinstall.rb.orig	2017-03-27 15:18:38 UTC
 +++ tool/rbinstall.rb
 @@ -322,6 +322,7 @@ bindir = CONFIG["bindir", true]
  libdir = CONFIG[CONFIG.fetch("libdirname", "libdir"), true]
@@ -17,7 +17,7 @@
      install pc, pkgconfigdir, :mode => $data_mode
    end
  end
-@@ -695,88 +696,6 @@ end
+@@ -695,93 +696,6 @@ end
  
  # :startdoc:
  
@@ -89,7 +89,12 @@
 -  if defined?(Zlib)
 -    Gem.instance_variable_set(:@ruby, with_destdir(File.join(bindir, ruby_install_name)))
 -    gems.each do |gem|
--      Gem.install(gem, Gem::Requirement.default, options)
+-      begin
+-        File.umask(022)
+-        Gem.install(gem, Gem::Requirement.default, options)
+-      ensure
+-        File.umask(0222)
+-      end
 -      gemname = File.basename(gem)
 -      puts "#{" "*30}#{gemname}"
 -    end
