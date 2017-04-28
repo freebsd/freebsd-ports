@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	labplot
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 DISTVERSIONSUFFIX=-kf5
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
@@ -15,8 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgsl.so:math/gsl
 
-OPTIONS_DEFINE=		FFTW3 HDF5 NETCDF
+OPTIONS_DEFINE=		FITS FFTW3 HDF5 NETCDF
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+FITS_DESC=		Flexible Image Transport System Data Format (FITS) Library
+FITS_CMAKE_BOOL=	ENABLE_FITS
+FITS_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 FFTW3_DESC=		Build with FFTW support
 FFTW3_CMAKE_BOOL=	ENABLE_FFTW
 FFTW3_LIB_DEPENDS=	libfftw3.so:math/fftw3
@@ -30,8 +33,8 @@ NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 USES=		cmake:outsource desktop-file-utils kde:5 shared-mime-info tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm guiaddons i18n iconthemes itemviews \
-		jobwidgets kdelibs4support kio notifications parts service \
-		solid sonnet textwidgets unitconversion widgetsaddons \
+		jobwidgets kdelibs4support kio newstuff notifications parts \
+		service solid sonnet textwidgets unitconversion widgetsaddons \
 		windowsystem xmlgui
 USE_QT5=	core dbus gui network printsupport svg widgets xml \
 		buildtools_build qmake_build
