@@ -1926,6 +1926,7 @@
     SUBDIR += rubygem-asana
     SUBDIR += rubygem-async_sinatra
     SUBDIR += rubygem-best_in_place
+    SUBDIR += rubygem-best_in_place-rails5
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-bootstrap-sass
     SUBDIR += rubygem-browser
@@ -2022,6 +2023,7 @@
     SUBDIR += rubygem-lighthouse-api
     SUBDIR += rubygem-link_header
     SUBDIR += rubygem-lograge
+    SUBDIR += rubygem-lograge-rails5
     SUBDIR += rubygem-maruku
     SUBDIR += rubygem-mechanize
     SUBDIR += rubygem-merb-assets
@@ -2069,6 +2071,7 @@
     SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-rails_serve_static_assets
     SUBDIR += rubygem-rails-settings-cached
+    SUBDIR += rubygem-rails-settings-cached-rails5
     SUBDIR += rubygem-rails_stdout_logging
     SUBDIR += rubygem-railties4
     SUBDIR += rubygem-railties5
@@ -2082,6 +2085,7 @@
     SUBDIR += rubygem-redis-rails
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-responders
+    SUBDIR += rubygem-responders-rails5
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
