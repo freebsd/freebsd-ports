@@ -3,24 +3,20 @@
 
 PORTNAME=	urt
 PORTVERSION=	3.1b1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.iastate.edu/pub/utah-raster/
-DISTNAME=	urt
-DISTFILES=	urt-3.1b.tar.Z urt-doc.tar.Z urt-img.tar.Z
+MASTER_SITES=	http://BSDforge.com/projects/source/graphics/utah-raster/
 
-PATCH_SITES=	http://www.funet.fi/pub/graphics/packages/urt/rel2/
-PATCHFILES=	urt-3.1b-3.1b1.patch
-PATCH_DIST_STRIP=-p1
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Toolkit and library for raster image processing
 
-LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/copyright
 
-BROKEN=		unfetchable
-DEPRECATED=	mastersite disappeared, last release 1996
-EXPIRATION_DATE=	2016-12-31
+LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
+		libtiff.so:graphics/tiff
+
+USES=		gmake tar:xz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -30,7 +26,6 @@ USE_XORG=	x11 xext
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	config/urt
-USES=		gmake
 MAKEFILE=	makefile
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 ALL_TARGET=	# none
