@@ -86,4 +86,8 @@ post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/info/*
 	@${RM} ${STAGEDIR}${PREFIX}/man/man7/*
 
+# This port and all its slave ports fail on aarch64 -- but not all
+# the same way.  Provide this definition for the master.
+BROKEN_aarch64?=	fails to package
+
 .include <bsd.port.post.mk>
