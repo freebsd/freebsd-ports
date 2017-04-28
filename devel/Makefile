@@ -4208,6 +4208,7 @@
     SUBDIR += py-configparser
     SUBDIR += py-constantly
     SUBDIR += py-construct
+    SUBDIR += py-construct28
     SUBDIR += py-contextlib2
     SUBDIR += py-country
     SUBDIR += py-cov-core
