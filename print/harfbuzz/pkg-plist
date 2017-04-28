@@ -13,7 +13,6 @@ include/harfbuzz/hb-gobject-enums.h
 include/harfbuzz/hb-gobject-structs.h
 include/harfbuzz/hb-gobject.h
 include/harfbuzz/hb-graphite2.h
-include/harfbuzz/hb-icu.h
 include/harfbuzz/hb-ot-font.h
 include/harfbuzz/hb-ot-layout.h
 include/harfbuzz/hb-ot-math.h
@@ -31,14 +30,10 @@ lib/girepository-1.0/HarfBuzz-0.0.typelib
 lib/libharfbuzz-gobject.so
 lib/libharfbuzz-gobject.so.0
 lib/libharfbuzz-gobject.so.%%LIBVER%%
-lib/libharfbuzz-icu.so
-lib/libharfbuzz-icu.so.0
-lib/libharfbuzz-icu.so.%%LIBVER%%
 lib/libharfbuzz.so
 lib/libharfbuzz.so.0
 lib/libharfbuzz.so.%%LIBVER%%
 libdata/pkgconfig/harfbuzz-gobject.pc
-libdata/pkgconfig/harfbuzz-icu.pc
 libdata/pkgconfig/harfbuzz.pc
 share/gir-1.0/HarfBuzz-0.0.gir
 share/gtk-doc/html/harfbuzz/HarfBuzz.png

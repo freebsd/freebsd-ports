@@ -2,7 +2,7 @@
 
 PORTNAME=	xetex
 PORTVERSION=	0.99992
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgraphite2.so:graphics/graphite2 \
 		libicuio.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz \
+		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libTECkit.so:textproc/teckit

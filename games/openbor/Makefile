@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openbor
+# Hint: svn revision is git rev-list --count ${GH_TAGNAME}
 PORTVERSION=	3.0.r4432
 CATEGORIES=	games
 
