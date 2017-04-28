@@ -1912,6 +1912,7 @@
     SUBDIR += ruby-aws
     SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actioncable5
+    SUBDIR += rubygem-actioncable50
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-actionpack5
     SUBDIR += rubygem-actionpack50
