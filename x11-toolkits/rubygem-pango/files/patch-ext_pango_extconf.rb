@@ -1,11 +1,11 @@
---- ext/pango/extconf.rb.orig	2016-01-19 22:13:22 UTC
+--- ext/pango/extconf.rb.orig	2017-04-27 18:04:28 UTC
 +++ ext/pango/extconf.rb
-@@ -33,7 +33,7 @@ end
- ruby_header = "ruby.h"
- have_func("rb_errinfo", ruby_header)
+@@ -39,7 +39,7 @@ package_id = "pango"
+ require "mkmf-gnome2"
  
--["glib2"].each do |package|
-+["cairo", "pango", "glib2"].each do |package|
+ depended_packages = [
+-  "glib2",
++  "cairo", "glib2", "pango"
+ ]
+ depended_packages.each do |package|
    directory = "#{package}#{version_suffix}"
-   build_dir = "#{directory}/tmp/#{RUBY_PLATFORM}/#{package}/#{RUBY_VERSION}"
-   add_depend_package(package, "#{directory}/ext/#{package}",
