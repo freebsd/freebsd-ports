@@ -63,4 +63,6 @@ post-install:
 	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH} ] ; then ${RM} -r ${STAGEDIR}${PREFIX}/${INFO_PATH}; fi
 	@${RM} ${STAGEDIR}${PREFIX}/man/man7/*
 
+BROKEN_aarch64=		fails to package
+
 .include <bsd.port.mk>

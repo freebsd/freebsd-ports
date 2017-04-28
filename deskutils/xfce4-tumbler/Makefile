@@ -12,8 +12,9 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Thumbnail service for Xfce desktop
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2+ LGPL20+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libdbus-glib-1.so:devel/dbus-glib
