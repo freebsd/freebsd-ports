@@ -3,6 +3,7 @@
 
 PORTNAME=	bmake
 PORTVERSION=	20170326
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/
 DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-20170301.tar.gz
@@ -14,7 +15,10 @@ LICENSE=	BSD3CLAUSE
 
 PORTSCOUT=	skipv:200910007
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}
+
+USES=		python:build shebangfix
+SHEBANG_FILES=	${WRKDIR}/mk/meta2deps.py
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's/^\.Nx/NetBSD/' ${WRKDIR}/bmake/bmake.1

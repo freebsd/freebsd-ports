@@ -22,9 +22,6 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/librle.a:graphics/urt
 
-DEPRECATED=	Depends on expiring graphics/urt
-EXPIRATION_DATE=2017-04-01
-
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:R}
 
 HAS_CONFIGURE=	yes

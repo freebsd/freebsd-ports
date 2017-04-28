@@ -67,6 +67,8 @@ include/aws/apigateway/model/CreateDomainNameRequest.h
 include/aws/apigateway/model/CreateDomainNameResult.h
 include/aws/apigateway/model/CreateModelRequest.h
 include/aws/apigateway/model/CreateModelResult.h
+include/aws/apigateway/model/CreateRequestValidatorRequest.h
+include/aws/apigateway/model/CreateRequestValidatorResult.h
 include/aws/apigateway/model/CreateResourceRequest.h
 include/aws/apigateway/model/CreateResourceResult.h
 include/aws/apigateway/model/CreateRestApiRequest.h
@@ -90,6 +92,7 @@ include/aws/apigateway/model/DeleteIntegrationResponseRequest.h
 include/aws/apigateway/model/DeleteMethodRequest.h
 include/aws/apigateway/model/DeleteMethodResponseRequest.h
 include/aws/apigateway/model/DeleteModelRequest.h
+include/aws/apigateway/model/DeleteRequestValidatorRequest.h
 include/aws/apigateway/model/DeleteResourceRequest.h
 include/aws/apigateway/model/DeleteRestApiRequest.h
 include/aws/apigateway/model/DeleteStageRequest.h
@@ -155,6 +158,10 @@ include/aws/apigateway/model/GetModelTemplateRequest.h
 include/aws/apigateway/model/GetModelTemplateResult.h
 include/aws/apigateway/model/GetModelsRequest.h
 include/aws/apigateway/model/GetModelsResult.h
+include/aws/apigateway/model/GetRequestValidatorRequest.h
+include/aws/apigateway/model/GetRequestValidatorResult.h
+include/aws/apigateway/model/GetRequestValidatorsRequest.h
+include/aws/apigateway/model/GetRequestValidatorsResult.h
 include/aws/apigateway/model/GetResourceRequest.h
 include/aws/apigateway/model/GetResourceResult.h
 include/aws/apigateway/model/GetResourcesRequest.h
@@ -212,6 +219,7 @@ include/aws/apigateway/model/PutRestApiRequest.h
 include/aws/apigateway/model/PutRestApiResult.h
 include/aws/apigateway/model/QuotaPeriodType.h
 include/aws/apigateway/model/QuotaSettings.h
+include/aws/apigateway/model/RequestValidator.h
 include/aws/apigateway/model/Resource.h
 include/aws/apigateway/model/RestApi.h
 include/aws/apigateway/model/SdkConfigurationProperty.h
@@ -252,6 +260,8 @@ include/aws/apigateway/model/UpdateMethodResponseResult.h
 include/aws/apigateway/model/UpdateMethodResult.h
 include/aws/apigateway/model/UpdateModelRequest.h
 include/aws/apigateway/model/UpdateModelResult.h
+include/aws/apigateway/model/UpdateRequestValidatorRequest.h
+include/aws/apigateway/model/UpdateRequestValidatorResult.h
 include/aws/apigateway/model/UpdateResourceRequest.h
 include/aws/apigateway/model/UpdateResourceResult.h
 include/aws/apigateway/model/UpdateRestApiRequest.h
@@ -305,6 +315,7 @@ include/aws/appstream/AppStream_EXPORTS.h
 include/aws/appstream/model/Application.h
 include/aws/appstream/model/AssociateFleetRequest.h
 include/aws/appstream/model/AssociateFleetResult.h
+include/aws/appstream/model/AuthenticationType.h
 include/aws/appstream/model/ComputeCapacity.h
 include/aws/appstream/model/ComputeCapacityStatus.h
 include/aws/appstream/model/CreateFleetRequest.h
@@ -479,6 +490,8 @@ include/aws/batch/BatchErrorMarshaller.h
 include/aws/batch/BatchErrors.h
 include/aws/batch/BatchRequest.h
 include/aws/batch/Batch_EXPORTS.h
+include/aws/batch/model/AttemptContainerDetail.h
+include/aws/batch/model/AttemptDetail.h
 include/aws/batch/model/CEState.h
 include/aws/batch/model/CEStatus.h
 include/aws/batch/model/CEType.h
@@ -526,6 +539,7 @@ include/aws/batch/model/ListJobsResult.h
 include/aws/batch/model/MountPoint.h
 include/aws/batch/model/RegisterJobDefinitionRequest.h
 include/aws/batch/model/RegisterJobDefinitionResult.h
+include/aws/batch/model/RetryStrategy.h
 include/aws/batch/model/SubmitJobRequest.h
 include/aws/batch/model/SubmitJobResult.h
 include/aws/batch/model/TerminateJobRequest.h
@@ -1868,7 +1882,7 @@ include/aws/core/http/curl/CurlHandleContainer.h
 include/aws/core/http/curl/CurlHttpClient.h
 include/aws/core/http/standard/StandardHttpRequest.h
 include/aws/core/http/standard/StandardHttpResponse.h
-include/aws/core/internal/EC2MetadataClient.h
+include/aws/core/internal/AWSHttpResourceClient.h
 include/aws/core/platform/Android.h
 include/aws/core/platform/Environment.h
 include/aws/core/platform/FileSystem.h
@@ -2030,6 +2044,8 @@ include/aws/devicefarm/model/CPU.h
 include/aws/devicefarm/model/Counters.h
 include/aws/devicefarm/model/CreateDevicePoolRequest.h
 include/aws/devicefarm/model/CreateDevicePoolResult.h
+include/aws/devicefarm/model/CreateNetworkProfileRequest.h
+include/aws/devicefarm/model/CreateNetworkProfileResult.h
 include/aws/devicefarm/model/CreateProjectRequest.h
 include/aws/devicefarm/model/CreateProjectResult.h
 include/aws/devicefarm/model/CreateRemoteAccessSessionConfiguration.h
@@ -2040,6 +2056,8 @@ include/aws/devicefarm/model/CreateUploadResult.h
 include/aws/devicefarm/model/CurrencyCode.h
 include/aws/devicefarm/model/DeleteDevicePoolRequest.h
 include/aws/devicefarm/model/DeleteDevicePoolResult.h
+include/aws/devicefarm/model/DeleteNetworkProfileRequest.h
+include/aws/devicefarm/model/DeleteNetworkProfileResult.h
 include/aws/devicefarm/model/DeleteProjectRequest.h
 include/aws/devicefarm/model/DeleteProjectResult.h
 include/aws/devicefarm/model/DeleteRemoteAccessSessionRequest.h
@@ -2056,6 +2074,7 @@ include/aws/devicefarm/model/DevicePlatform.h
 include/aws/devicefarm/model/DevicePool.h
 include/aws/devicefarm/model/DevicePoolCompatibilityResult.h
 include/aws/devicefarm/model/DevicePoolType.h
+include/aws/devicefarm/model/ExecutionConfiguration.h
 include/aws/devicefarm/model/ExecutionResult.h
 include/aws/devicefarm/model/ExecutionStatus.h
 include/aws/devicefarm/model/GetAccountSettingsRequest.h
@@ -2068,6 +2087,8 @@ include/aws/devicefarm/model/GetDeviceRequest.h
 include/aws/devicefarm/model/GetDeviceResult.h
 include/aws/devicefarm/model/GetJobRequest.h
 include/aws/devicefarm/model/GetJobResult.h
+include/aws/devicefarm/model/GetNetworkProfileRequest.h
+include/aws/devicefarm/model/GetNetworkProfileResult.h
 include/aws/devicefarm/model/GetOfferingStatusRequest.h
 include/aws/devicefarm/model/GetOfferingStatusResult.h
 include/aws/devicefarm/model/GetProjectRequest.h
@@ -2094,6 +2115,10 @@ include/aws/devicefarm/model/ListDevicesRequest.h
 include/aws/devicefarm/model/ListDevicesResult.h
 include/aws/devicefarm/model/ListJobsRequest.h
 include/aws/devicefarm/model/ListJobsResult.h
+include/aws/devicefarm/model/ListNetworkProfilesRequest.h
+include/aws/devicefarm/model/ListNetworkProfilesResult.h
+include/aws/devicefarm/model/ListOfferingPromotionsRequest.h
+include/aws/devicefarm/model/ListOfferingPromotionsResult.h
 include/aws/devicefarm/model/ListOfferingTransactionsRequest.h
 include/aws/devicefarm/model/ListOfferingTransactionsResult.h
 include/aws/devicefarm/model/ListOfferingsRequest.h
@@ -2116,7 +2141,10 @@ include/aws/devicefarm/model/ListUploadsRequest.h
 include/aws/devicefarm/model/ListUploadsResult.h
 include/aws/devicefarm/model/Location.h
 include/aws/devicefarm/model/MonetaryAmount.h
+include/aws/devicefarm/model/NetworkProfile.h
+include/aws/devicefarm/model/NetworkProfileType.h
 include/aws/devicefarm/model/Offering.h
+include/aws/devicefarm/model/OfferingPromotion.h
 include/aws/devicefarm/model/OfferingStatus.h
 include/aws/devicefarm/model/OfferingTransaction.h
 include/aws/devicefarm/model/OfferingTransactionType.h
@@ -2149,9 +2177,12 @@ include/aws/devicefarm/model/StopRunResult.h
 include/aws/devicefarm/model/Suite.h
 include/aws/devicefarm/model/Test.h
 include/aws/devicefarm/model/TestType.h
+include/aws/devicefarm/model/TrialMinutes.h
 include/aws/devicefarm/model/UniqueProblem.h
 include/aws/devicefarm/model/UpdateDevicePoolRequest.h
 include/aws/devicefarm/model/UpdateDevicePoolResult.h
+include/aws/devicefarm/model/UpdateNetworkProfileRequest.h
+include/aws/devicefarm/model/UpdateNetworkProfileResult.h
 include/aws/devicefarm/model/UpdateProjectRequest.h
 include/aws/devicefarm/model/UpdateProjectResult.h
 include/aws/devicefarm/model/Upload.h
@@ -2164,8 +2195,6 @@ include/aws/directconnect/DirectConnectErrors.h
 include/aws/directconnect/DirectConnectRequest.h
 include/aws/directconnect/DirectConnect_EXPORTS.h
 include/aws/directconnect/model/AddressFamily.h
-include/aws/directconnect/model/AllocateConnectionOnInterconnectRequest.h
-include/aws/directconnect/model/AllocateConnectionOnInterconnectResult.h
 include/aws/directconnect/model/AllocateHostedConnectionRequest.h
 include/aws/directconnect/model/AllocateHostedConnectionResult.h
 include/aws/directconnect/model/AllocatePrivateVirtualInterfaceRequest.h
@@ -2211,16 +2240,10 @@ include/aws/directconnect/model/DeleteLagRequest.h
 include/aws/directconnect/model/DeleteLagResult.h
 include/aws/directconnect/model/DeleteVirtualInterfaceRequest.h
 include/aws/directconnect/model/DeleteVirtualInterfaceResult.h
-include/aws/directconnect/model/DescribeConnectionLoaRequest.h
-include/aws/directconnect/model/DescribeConnectionLoaResult.h
-include/aws/directconnect/model/DescribeConnectionsOnInterconnectRequest.h
-include/aws/directconnect/model/DescribeConnectionsOnInterconnectResult.h
 include/aws/directconnect/model/DescribeConnectionsRequest.h
 include/aws/directconnect/model/DescribeConnectionsResult.h
 include/aws/directconnect/model/DescribeHostedConnectionsRequest.h
 include/aws/directconnect/model/DescribeHostedConnectionsResult.h
-include/aws/directconnect/model/DescribeInterconnectLoaRequest.h
-include/aws/directconnect/model/DescribeInterconnectLoaResult.h
 include/aws/directconnect/model/DescribeInterconnectsRequest.h
 include/aws/directconnect/model/DescribeInterconnectsResult.h
 include/aws/directconnect/model/DescribeLagsRequest.h
@@ -2657,6 +2680,8 @@ include/aws/ec2/model/CreateEgressOnlyInternetGatewayRequest.h
 include/aws/ec2/model/CreateEgressOnlyInternetGatewayResponse.h
 include/aws/ec2/model/CreateFlowLogsRequest.h
 include/aws/ec2/model/CreateFlowLogsResponse.h
+include/aws/ec2/model/CreateFpgaImageRequest.h
+include/aws/ec2/model/CreateFpgaImageResponse.h
 include/aws/ec2/model/CreateImageRequest.h
 include/aws/ec2/model/CreateImageResponse.h
 include/aws/ec2/model/CreateInstanceExportTaskRequest.h
@@ -3197,6 +3222,7 @@ include/aws/ec2/model/StatusType.h
 include/aws/ec2/model/StopInstancesRequest.h
 include/aws/ec2/model/StopInstancesResponse.h
 include/aws/ec2/model/Storage.h
+include/aws/ec2/model/StorageLocation.h
 include/aws/ec2/model/Subnet.h
 include/aws/ec2/model/SubnetCidrBlockState.h
 include/aws/ec2/model/SubnetCidrBlockStateCode.h
@@ -3205,6 +3231,7 @@ include/aws/ec2/model/SubnetState.h
 include/aws/ec2/model/SummaryStatus.h
 include/aws/ec2/model/Tag.h
 include/aws/ec2/model/TagDescription.h
+include/aws/ec2/model/TagSpecification.h
 include/aws/ec2/model/TargetConfiguration.h
 include/aws/ec2/model/TargetConfigurationRequest.h
 include/aws/ec2/model/TargetReservationValue.h
@@ -3546,6 +3573,8 @@ include/aws/elasticache/model/Snapshot.h
 include/aws/elasticache/model/SourceType.h
 include/aws/elasticache/model/Subnet.h
 include/aws/elasticache/model/Tag.h
+include/aws/elasticache/model/TestFailoverRequest.h
+include/aws/elasticache/model/TestFailoverResult.h
 include/aws/elasticbeanstalk/ElasticBeanstalkClient.h
 include/aws/elasticbeanstalk/ElasticBeanstalkEndpoint.h
 include/aws/elasticbeanstalk/ElasticBeanstalkErrorMarshaller.h
@@ -4340,7 +4369,10 @@ include/aws/events/model/DeleteRuleRequest.h
 include/aws/events/model/DescribeRuleRequest.h
 include/aws/events/model/DescribeRuleResult.h
 include/aws/events/model/DisableRuleRequest.h
+include/aws/events/model/EcsParameters.h
 include/aws/events/model/EnableRuleRequest.h
+include/aws/events/model/InputTransformer.h
+include/aws/events/model/KinesisParameters.h
 include/aws/events/model/ListRuleNamesByTargetRequest.h
 include/aws/events/model/ListRuleNamesByTargetResult.h
 include/aws/events/model/ListRulesRequest.h
@@ -4361,6 +4393,8 @@ include/aws/events/model/RemoveTargetsResult.h
 include/aws/events/model/RemoveTargetsResultEntry.h
 include/aws/events/model/Rule.h
 include/aws/events/model/RuleState.h
+include/aws/events/model/RunCommandParameters.h
+include/aws/events/model/RunCommandTarget.h
 include/aws/events/model/Target.h
 include/aws/events/model/TestEventPatternRequest.h
 include/aws/events/model/TestEventPatternResult.h
@@ -4519,7 +4553,9 @@ include/aws/gamelift/model/ListFleetsRequest.h
 include/aws/gamelift/model/ListFleetsResult.h
 include/aws/gamelift/model/MetricName.h
 include/aws/gamelift/model/OperatingSystem.h
+include/aws/gamelift/model/PlacedPlayerSession.h
 include/aws/gamelift/model/PlayerLatency.h
+include/aws/gamelift/model/PlayerLatencyPolicy.h
 include/aws/gamelift/model/PlayerSession.h
 include/aws/gamelift/model/PlayerSessionCreationPolicy.h
 include/aws/gamelift/model/PlayerSessionStatus.h
@@ -4707,6 +4743,8 @@ include/aws/iam/model/CreateRoleRequest.h
 include/aws/iam/model/CreateRoleResult.h
 include/aws/iam/model/CreateSAMLProviderRequest.h
 include/aws/iam/model/CreateSAMLProviderResult.h
+include/aws/iam/model/CreateServiceLinkedRoleRequest.h
+include/aws/iam/model/CreateServiceLinkedRoleResult.h
 include/aws/iam/model/CreateServiceSpecificCredentialRequest.h
 include/aws/iam/model/CreateServiceSpecificCredentialResult.h
 include/aws/iam/model/CreateUserRequest.h
@@ -4891,6 +4929,8 @@ include/aws/iam/model/UpdateAssumeRolePolicyRequest.h
 include/aws/iam/model/UpdateGroupRequest.h
 include/aws/iam/model/UpdateLoginProfileRequest.h
 include/aws/iam/model/UpdateOpenIDConnectProviderThumbprintRequest.h
+include/aws/iam/model/UpdateRoleDescriptionRequest.h
+include/aws/iam/model/UpdateRoleDescriptionResult.h
 include/aws/iam/model/UpdateSAMLProviderRequest.h
 include/aws/iam/model/UpdateSAMLProviderResult.h
 include/aws/iam/model/UpdateSSHPublicKeyRequest.h
@@ -5424,6 +5464,8 @@ include/aws/lambda/model/ListEventSourceMappingsRequest.h
 include/aws/lambda/model/ListEventSourceMappingsResult.h
 include/aws/lambda/model/ListFunctionsRequest.h
 include/aws/lambda/model/ListFunctionsResult.h
+include/aws/lambda/model/ListTagsRequest.h
+include/aws/lambda/model/ListTagsResult.h
 include/aws/lambda/model/ListVersionsByFunctionRequest.h
 include/aws/lambda/model/ListVersionsByFunctionResult.h
 include/aws/lambda/model/LogType.h
@@ -5431,7 +5473,12 @@ include/aws/lambda/model/PublishVersionRequest.h
 include/aws/lambda/model/PublishVersionResult.h
 include/aws/lambda/model/RemovePermissionRequest.h
 include/aws/lambda/model/Runtime.h
+include/aws/lambda/model/TagResourceRequest.h
 include/aws/lambda/model/ThrottleReason.h
+include/aws/lambda/model/TracingConfig.h
+include/aws/lambda/model/TracingConfigResponse.h
+include/aws/lambda/model/TracingMode.h
+include/aws/lambda/model/UntagResourceRequest.h
 include/aws/lambda/model/UpdateAliasRequest.h
 include/aws/lambda/model/UpdateAliasResult.h
 include/aws/lambda/model/UpdateEventSourceMappingRequest.h
@@ -5452,6 +5499,8 @@ include/aws/lex/model/Button.h
 include/aws/lex/model/ContentType.h
 include/aws/lex/model/DialogState.h
 include/aws/lex/model/GenericAttachment.h
+include/aws/lex/model/PostContentRequest.h
+include/aws/lex/model/PostContentResult.h
 include/aws/lex/model/PostTextRequest.h
 include/aws/lex/model/PostTextResult.h
 include/aws/lex/model/ResponseCard.h
@@ -5952,6 +6001,11 @@ include/aws/opsworks/model/BlockDeviceMapping.h
 include/aws/opsworks/model/ChefConfiguration.h
 include/aws/opsworks/model/CloneStackRequest.h
 include/aws/opsworks/model/CloneStackResult.h
+include/aws/opsworks/model/CloudWatchLogsConfiguration.h
+include/aws/opsworks/model/CloudWatchLogsEncoding.h
+include/aws/opsworks/model/CloudWatchLogsInitialPosition.h
+include/aws/opsworks/model/CloudWatchLogsLogStream.h
+include/aws/opsworks/model/CloudWatchLogsTimeZone.h
 include/aws/opsworks/model/Command.h
 include/aws/opsworks/model/CreateAppRequest.h
 include/aws/opsworks/model/CreateAppResult.h
@@ -6265,6 +6319,7 @@ include/aws/polly/model/ListLexiconsResult.h
 include/aws/polly/model/OutputFormat.h
 include/aws/polly/model/PutLexiconRequest.h
 include/aws/polly/model/PutLexiconResult.h
+include/aws/polly/model/SpeechMarkType.h
 include/aws/polly/model/SynthesizeSpeechRequest.h
 include/aws/polly/model/SynthesizeSpeechResult.h
 include/aws/polly/model/TextType.h
@@ -6616,6 +6671,8 @@ include/aws/redshift/model/Event.h
 include/aws/redshift/model/EventCategoriesMap.h
 include/aws/redshift/model/EventInfoMap.h
 include/aws/redshift/model/EventSubscription.h
+include/aws/redshift/model/GetClusterCredentialsRequest.h
+include/aws/redshift/model/GetClusterCredentialsResult.h
 include/aws/redshift/model/HsmClientCertificate.h
 include/aws/redshift/model/HsmConfiguration.h
 include/aws/redshift/model/HsmStatus.h
@@ -6691,6 +6748,8 @@ include/aws/rekognition/model/DetectFacesRequest.h
 include/aws/rekognition/model/DetectFacesResult.h
 include/aws/rekognition/model/DetectLabelsRequest.h
 include/aws/rekognition/model/DetectLabelsResult.h
+include/aws/rekognition/model/DetectModerationLabelsRequest.h
+include/aws/rekognition/model/DetectModerationLabelsResult.h
 include/aws/rekognition/model/Emotion.h
 include/aws/rekognition/model/EmotionName.h
 include/aws/rekognition/model/EyeOpen.h
@@ -6712,6 +6771,7 @@ include/aws/rekognition/model/ListCollectionsRequest.h
 include/aws/rekognition/model/ListCollectionsResult.h
 include/aws/rekognition/model/ListFacesRequest.h
 include/aws/rekognition/model/ListFacesResult.h
+include/aws/rekognition/model/ModerationLabel.h
 include/aws/rekognition/model/MouthOpen.h
 include/aws/rekognition/model/Mustache.h
 include/aws/rekognition/model/OrientationCorrection.h
@@ -7972,6 +8032,8 @@ include/aws/storagegateway/model/ListVolumesResult.h
 include/aws/storagegateway/model/NFSFileShareDefaults.h
 include/aws/storagegateway/model/NFSFileShareInfo.h
 include/aws/storagegateway/model/NetworkInterface.h
+include/aws/storagegateway/model/RefreshCacheRequest.h
+include/aws/storagegateway/model/RefreshCacheResult.h
 include/aws/storagegateway/model/RemoveTagsFromResourceRequest.h
 include/aws/storagegateway/model/RemoveTagsFromResourceResult.h
 include/aws/storagegateway/model/ResetCacheRequest.h
@@ -8482,6 +8544,28 @@ include/aws/xray/model/TraceSummary.h
 include/aws/xray/model/TraceUser.h
 include/aws/xray/model/UnprocessedTraceSegment.h
 include/aws/xray/model/ValueWithServiceIds.h
+lib/cmake/AWSSDK/AWSSDKConfig.cmake
+lib/cmake/AWSSDK/AWSSDKConfigVersion.cmake
+lib/cmake/AWSSDK/build_external.cmake
+lib/cmake/AWSSDK/compiler_settings.cmake
+lib/cmake/AWSSDK/dependencies.cmake
+lib/cmake/AWSSDK/external_dependencies.cmake
+lib/cmake/AWSSDK/initialize_project_version.cmake
+lib/cmake/AWSSDK/make_uninstall.cmake
+lib/cmake/AWSSDK/platform/android.cmake
+lib/cmake/AWSSDK/platform/android.toolchain.cmake
+lib/cmake/AWSSDK/platform/apple.cmake
+lib/cmake/AWSSDK/platform/custom.cmake
+lib/cmake/AWSSDK/platform/linux.cmake
+lib/cmake/AWSSDK/platform/unix.cmake
+lib/cmake/AWSSDK/platform/windows.cmake
+lib/cmake/AWSSDK/platformDeps.cmake
+lib/cmake/AWSSDK/resolve_platform.cmake
+lib/cmake/AWSSDK/sdks.cmake
+lib/cmake/AWSSDK/sdksCommon.cmake
+lib/cmake/AWSSDK/setup_cmake_find_module.cmake
+lib/cmake/AWSSDK/utilities.cmake
+lib/cmake/AWSSDK/utilities.cmake.bak
 lib/cmake/aws-cpp-sdk-access-management/aws-cpp-sdk-access-management-config-version.cmake
 lib/cmake/aws-cpp-sdk-access-management/aws-cpp-sdk-access-management-config.cmake
 lib/cmake/aws-cpp-sdk-access-management/aws-cpp-sdk-access-management-targets-%%CMAKE_BUILD_TYPE%%.cmake

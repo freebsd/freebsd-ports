@@ -11,7 +11,7 @@ COMMENT=	Setuptools plugin to manage your versions by scm tags
 
 LICENSE=	MIT
 
-USES=		python
+USES?=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

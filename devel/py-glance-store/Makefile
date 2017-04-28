@@ -3,6 +3,7 @@
 
 PORTNAME=	glance-store
 PORTVERSION=	0.20.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +29,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enum34>=0:devel/py-enum34 \
 
 NO_ARCH=	yes
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	glance_store/tests/functional/hooks/post_test_hook.sh \
+		glance_store/tests/functional/hooks/gate_hook.sh
 
 .include <bsd.port.mk>
