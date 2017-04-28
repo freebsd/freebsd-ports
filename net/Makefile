@@ -363,7 +363,6 @@
     SUBDIR += libproxy-webkit
     SUBDIR += librdkafka
     SUBDIR += librouteros
-    SUBDIR += librsync
     SUBDIR += librsync2
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
