@@ -1,6 +1,6 @@
---- configure.in.orig	2015-12-23 05:29:36 UTC
+--- configure.in.orig	2017-03-27 17:59:49 UTC
 +++ configure.in
-@@ -620,7 +620,7 @@ AC_DEFUN([RUBY_DTRACE_AVAILABLE],
+@@ -621,7 +621,7 @@ AC_DEFUN([RUBY_DTRACE_AVAILABLE],
  [AC_CACHE_CHECK(whether dtrace USDT is available, rb_cv_dtrace_available,
  [
      echo "provider conftest{ probe fire(); };" > conftest_provider.d
@@ -9,7 +9,7 @@
        AC_TRY_COMPILE([@%:@include "conftest_provider.h"], [CONFTEST_FIRE();], [
  	# DTrace is available on the system
  	rb_cv_dtrace_available=yes
-@@ -644,13 +644,13 @@ AC_DEFUN([RUBY_DTRACE_POSTPROCESS],
+@@ -645,13 +645,13 @@ AC_DEFUN([RUBY_DTRACE_POSTPROCESS],
        probe fire();
      };
  _PROBES
@@ -25,7 +25,7 @@
  	    :
  	}; then
  	    if cmp -s conftest.o conftest.${ac_objext}.save; then
-@@ -1222,10 +1222,10 @@ main()
+@@ -1260,10 +1260,10 @@ main()
    ],
  [	LIBS="-lm $LIBS"])
  
@@ -40,7 +40,7 @@
  
  dnl Checks for header files.
  AC_HEADER_DIRENT
-@@ -2440,7 +2440,7 @@ AS_IF([test "x$rb_cv_atan2_inf_c99" = xy
+@@ -2513,7 +2513,7 @@ main(int argc, char **argv)
  if test x"$ac_cv_func_clock_gettime" != xyes; then
      # glibc 2.17 moves clock_* functions from librt to the main C library.
      # http://sourceware.org/ml/libc-announce/2012/msg00001.html
@@ -49,7 +49,7 @@
      if test x"$ac_cv_lib_rt_clock_gettime" = xyes; then
  	AC_DEFINE(HAVE_CLOCK_GETTIME, 1)
      fi
-@@ -2847,7 +2847,7 @@ else
+@@ -2920,7 +2920,7 @@ else
  fi
  
  if test x"$enable_pthread" = xyes; then
@@ -58,7 +58,7 @@
  	AC_CHECK_LIB($pthread_lib, pthread_kill,
  		     rb_with_pthread=yes, rb_with_pthread=no)
  	if test "$rb_with_pthread" = "yes"; then break; fi
-@@ -2861,6 +2861,7 @@ if test x"$enable_pthread" = xyes; then
+@@ -2934,6 +2934,7 @@ if test x"$enable_pthread" = xyes; then
  	[c],    [],
  	[root], [],
  	[c_r],  [MAINLIBS="-pthread $MAINLIBS"],
@@ -66,7 +66,7 @@
  	        [AS_CASE(["$target_os"],
  		    [openbsd*|mirbsd*], [LIBS="-pthread $LIBS"],
  		    [LIBS="-l$pthread_lib $LIBS"])])
-@@ -3173,7 +3174,6 @@ if test "$with_dln_a_out" != yes; then
+@@ -3246,7 +3247,6 @@ if test "$with_dln_a_out" != yes; then
  			: ${LDSHARED='$(CC) -shared'}
  			if test "$rb_cv_binary_elf" = yes; then
  			    LDFLAGS="$LDFLAGS -rdynamic"
@@ -74,7 +74,7 @@
  			else
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
  			fi
-@@ -3657,6 +3657,7 @@ AS_CASE("$enable_shared", [yes], [
+@@ -3730,6 +3730,7 @@ AS_CASE("$enable_shared", [yes], [
      [freebsd*|dragonfly*], [
  	SOLIBS='$(LIBS)'
  	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR)$(MINOR)'
