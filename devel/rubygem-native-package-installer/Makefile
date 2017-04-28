@@ -2,14 +2,17 @@
 
 PORTNAME=	native-package-installer
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helper to install native packages on "gem install"
 
-LICENSE=	LGPL21+
+LICENSE=	LGPL3+
+LICENSE_FILE_LGPL3=	${WRKSRC}/doc/text/lgpl-3.txt
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

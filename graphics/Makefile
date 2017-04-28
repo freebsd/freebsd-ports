@@ -947,6 +947,7 @@
     SUBDIR += rubygem-captcha
     SUBDIR += rubygem-chunky_png
     SUBDIR += rubygem-clutter
+    SUBDIR += rubygem-clutter-gdk
     SUBDIR += rubygem-clutter-gtk
     SUBDIR += rubygem-dragonfly
     SUBDIR += rubygem-emoji

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	haml-rails
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails4
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack4>=4.0.1:www/rubygem-actionpack4 \
 		rubygem-activesupport4>=4.0.1:devel/rubygem-activesupport4 \
-		rubygem-haml4>=4.0.6:www/rubygem-haml4 \
+		rubygem-haml>=4.0.6:www/rubygem-haml \
 		rubygem-html2haml>=1.0.1:www/rubygem-html2haml \
 		rubygem-railties4>=4.0.1:www/rubygem-railties4
 

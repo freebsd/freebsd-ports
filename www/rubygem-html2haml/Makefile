@@ -3,7 +3,7 @@
 
 PORTNAME=	html2haml
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-erubis>=2.7.0:www/rubygem-erubis \
-		rubygem-haml4>=4.0:www/rubygem-haml4 \
+		rubygem-haml>=4.0:www/rubygem-haml \
 		rubygem-nokogiri>=1.6.0:textproc/rubygem-nokogiri \
 		rubygem-ruby_parser>=3.5:devel/rubygem-ruby_parser
 

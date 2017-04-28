@@ -18,7 +18,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-6.8.so
+lib/libracket3m-6.9.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -1062,6 +1062,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/compiled/logger_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/map_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/map_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/math-predicates_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/math-predicates_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/member_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/member_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/misc_rkt.dep
@@ -1206,6 +1208,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/local.rkt
 %%DATADIR%%/collects/racket/private/logger.rkt
 %%DATADIR%%/collects/racket/private/map.rkt
+%%DATADIR%%/collects/racket/private/math-predicates.rkt
 %%DATADIR%%/collects/racket/private/member.rkt
 %%DATADIR%%/collects/racket/private/misc.rkt
 %%DATADIR%%/collects/racket/private/modbeg.rkt
@@ -1441,6 +1444,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/setup/private/compiled/dylib_rkt.zo
 %%DATADIR%%/collects/setup/private/compiled/elf_rkt.dep
 %%DATADIR%%/collects/setup/private/compiled/elf_rkt.zo
+%%DATADIR%%/collects/setup/private/compiled/encode-relative_rkt.dep
+%%DATADIR%%/collects/setup/private/compiled/encode-relative_rkt.zo
 %%DATADIR%%/collects/setup/private/compiled/format-error_rkt.dep
 %%DATADIR%%/collects/setup/private/compiled/format-error_rkt.zo
 %%DATADIR%%/collects/setup/private/compiled/lib-roots_rkt.dep
@@ -1452,6 +1457,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/setup/private/dirs.rkt
 %%DATADIR%%/collects/setup/private/dylib.rkt
 %%DATADIR%%/collects/setup/private/elf.rkt
+%%DATADIR%%/collects/setup/private/encode-relative.rkt
 %%DATADIR%%/collects/setup/private/format-error.rkt
 %%DATADIR%%/collects/setup/private/lib-roots.rkt
 %%DATADIR%%/collects/setup/private/omitted-paths.rkt

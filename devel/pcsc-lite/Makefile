@@ -16,8 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix perl5 pkgconfig python:build \
-		shebangfix tar:bzip2
+USES=		libtool pathfix perl5 pkgconfig python:2.7,build shebangfix tar:bzip2
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
 SHEBANG_FILES=	src/spy/pcsc-spy

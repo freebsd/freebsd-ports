@@ -4,7 +4,7 @@
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<faraday>.freeze, ["< 0.10", ">= 0.8"])
+-      s.add_runtime_dependency(%q<faraday>.freeze, ["< 0.12", ">= 0.8"])
 +      s.add_runtime_dependency(%q<faraday>.freeze, [">= 0.8"])
        s.add_runtime_dependency(%q<jwt>.freeze, ["~> 1.0"])
        s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.3"])

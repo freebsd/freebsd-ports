@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdk3
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.3
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ COMMENT=	Ruby/GDK3 is a Ruby binding of GDK-3.x
 
 LICENSE=	LGPL21+
 
+BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2 \
 		rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
@@ -18,6 +19,6 @@ RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 NO_ARCH=	yes
 USE_GNOME=	gtk30
 USE_RUBY=	yes
-USES=		gem
+USES=		gem gnome
 
 .include <bsd.port.mk>

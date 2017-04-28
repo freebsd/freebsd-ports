@@ -1,0 +1,15 @@
+--- source/darkplaces/makefile.orig	2017-04-05 10:52:46 UTC
++++ source/darkplaces/makefile
+@@ -234,9 +234,9 @@ endif
+ 
+ 	DP_LINK_ZLIB?=shared
+ 	DP_LINK_JPEG?=shared
+-	DP_LINK_ODE?=dlopen
+-	DP_LINK_CRYPTO?=dlopen
+-	DP_LINK_CRYPTO_RIJNDAEL?=dlopen
++	DP_LINK_ODE?=shared
++	DP_LINK_CRYPTO?=shared
++	DP_LINK_CRYPTO_RIJNDAEL?=shared
+ endif
+ 
+ # Win32 configuration

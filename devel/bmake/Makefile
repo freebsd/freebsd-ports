@@ -15,9 +15,9 @@ LICENSE=	BSD3CLAUSE
 
 PORTSCOUT=	skipv:200910007
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python:build shebangfix
+USES=		python:2.7,build shebangfix
 SHEBANG_FILES=	${WRKDIR}/mk/meta2deps.py
 
 post-patch:	.SILENT
