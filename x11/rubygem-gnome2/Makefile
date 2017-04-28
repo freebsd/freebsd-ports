@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome2
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.3
 CATEGORIES=	x11 gnome rubygems
 PKGNAMEPREFIX=	rubygem-
 
@@ -14,6 +14,7 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 		rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 		rubygem-clutter>=${PORTVERSION}:graphics/rubygem-clutter \
 		rubygem-clutter-gstreamer>=${PORTVERSION}:multimedia/rubygem-clutter-gstreamer \
+		rubygem-clutter-gdk>=${PORTVERSION}:graphics/rubygem-clutter-gdk \
 		rubygem-clutter-gtk>=${PORTVERSION}:graphics/rubygem-clutter-gtk \
 		rubygem-gdk3>=${PORTVERSION}:x11-toolkits/rubygem-gdk3 \
 		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2 \
@@ -32,7 +33,7 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 		rubygem-vte>=${PORTVERSION}:x11-toolkits/rubygem-vte \
 		rubygem-vte3>=${PORTVERSION}:x11-toolkits/rubygem-vte3 \
 		rubygem-webkit-gtk>=${PORTVERSION}:www/rubygem-webkit-gtk \
-		rubygem-webkit-gtk2>=${PORTVERSION}:www/rubygem-webkit-gtk2 \
+		rubygem-webkit-gtk2>=${PORTVERSION}:www/rubygem-webkit-gtk2
 
 USES=		metaport
 USE_RUBY=	yes
