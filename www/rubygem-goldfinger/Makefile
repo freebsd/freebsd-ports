@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	goldfinger
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
