@@ -35,7 +35,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.2:devel/py3-click \
 		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.5.22:devel/py-pyperclip \
 		${PYTHON_PKGNAMEPREFIX}hyperframe>=5.0.0:www/py-hyperframe \
 		${PYTHON_PKGNAMEPREFIX}kaitaistruct>=0.6:devel/py-kaitaistruct \
-		${PYTHON_PKGNAMEPREFIX}jsbeautifier>=1.6.3:textproc/py-jsbeautifier \
+		${PYTHON_PKGNAMEPREFIX}jsbeautifier>=1.6.3:devel/py-jsbeautifier \
 		${PYTHON_PKGNAMEPREFIX}h2>=3.0.0:www/py-h2
 
 USES=		python:3.5+
