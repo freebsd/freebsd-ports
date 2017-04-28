@@ -12,7 +12,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Crypt::PGPSimple provides a simple object-oriented interface to PGP
 
 DEPRECATED=	Depends on expired security/pgp
-EXPIRATION_DATE=20170601
+EXPIRATION_DATE=2017-06-01
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
