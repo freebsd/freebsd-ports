@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PGP sign/encrypt/decrypt messages automatically
 
 DEPRECATED=	Depends on expired security/pgp
-EXPIRATION_DATE=20170601
+EXPIRATION_DATE=2017-06-01
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
