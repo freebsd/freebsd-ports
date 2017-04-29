@@ -1,4 +1,4 @@
---- gpu/config/gpu_control_list.cc.orig	2017-01-26 00:49:14 UTC
+--- gpu/config/gpu_control_list.cc.orig	2017-04-19 19:06:34 UTC
 +++ gpu/config/gpu_control_list.cc
 @@ -19,7 +19,11 @@
  #include "base/sys_info.h"
@@ -12,7 +12,7 @@
  
  namespace gpu {
  namespace {
-@@ -1154,7 +1158,7 @@ GpuControlList::GpuControlListEntry::GLT
+@@ -1183,7 +1187,7 @@ GpuControlList::GpuControlListEntry::GLT
  GpuControlList::GpuControlListEntry::GetDefaultGLType() {
  #if defined(OS_CHROMEOS)
    return kGLTypeGL;
@@ -21,7 +21,7 @@
    return kGLTypeGL;
  #elif defined(OS_MACOSX)
    return kGLTypeGL;
-@@ -1606,7 +1610,7 @@ GpuControlList::OsType GpuControlList::G
+@@ -1642,7 +1646,7 @@ GpuControlList::OsType GpuControlList::G
    return kOsWin;
  #elif defined(OS_ANDROID)
    return kOsAndroid;

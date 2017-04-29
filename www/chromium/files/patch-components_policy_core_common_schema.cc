@@ -1,4 +1,4 @@
---- components/policy/core/common/schema.cc.orig	2017-01-26 00:49:12 UTC
+--- components/policy/core/common/schema.cc.orig	2017-04-19 19:06:33 UTC
 +++ components/policy/core/common/schema.cc
 @@ -21,7 +21,11 @@
  #include "components/json_schema/json_schema_constants.h"

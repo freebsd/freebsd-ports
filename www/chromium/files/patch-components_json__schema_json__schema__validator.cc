@@ -1,6 +1,6 @@
---- components/json_schema/json_schema_validator.cc.orig	2017-01-26 00:49:11 UTC
+--- components/json_schema/json_schema_validator.cc.orig	2017-04-19 19:06:32 UTC
 +++ components/json_schema/json_schema_validator.cc
-@@ -21,7 +21,11 @@
+@@ -20,7 +20,11 @@
  #include "base/strings/stringprintf.h"
  #include "base/values.h"
  #include "components/json_schema/json_schema_constants.h"

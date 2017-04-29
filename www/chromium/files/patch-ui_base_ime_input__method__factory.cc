@@ -1,4 +1,4 @@
---- ui/base/ime/input_method_factory.cc.orig	2017-03-09 20:04:49 UTC
+--- ui/base/ime/input_method_factory.cc.orig	2017-04-19 19:06:54 UTC
 +++ ui/base/ime/input_method_factory.cc
 @@ -16,7 +16,8 @@
  #include "ui/base/ime/input_method_win.h"

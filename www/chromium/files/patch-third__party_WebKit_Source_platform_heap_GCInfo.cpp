@@ -1,4 +1,4 @@
---- third_party/WebKit/Source/platform/heap/GCInfo.cpp.orig	2017-01-26 00:49:28 UTC
+--- third_party/WebKit/Source/platform/heap/GCInfo.cpp.orig	2017-04-19 19:06:50 UTC
 +++ third_party/WebKit/Source/platform/heap/GCInfo.cpp
 @@ -7,6 +7,8 @@
  #include "platform/heap/Handle.h"

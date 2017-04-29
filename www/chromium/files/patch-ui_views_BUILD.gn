@@ -1,6 +1,6 @@
---- ui/views/BUILD.gn.orig	2017-03-09 20:04:49 UTC
+--- ui/views/BUILD.gn.orig	2017-04-19 19:06:54 UTC
 +++ ui/views/BUILD.gn
-@@ -430,7 +430,7 @@ component("views") {
+@@ -457,7 +457,7 @@ component("views") {
    if (use_x11 && !is_chromeos) {
      deps += [ "//ui/display/util" ]
    }
@@ -9,7 +9,7 @@
      sources -= [ "window/window_button_order_provider.cc" ]
      deps += [ "//ui/shell_dialogs" ]
    } else {
-@@ -618,7 +618,7 @@ component("views") {
+@@ -645,7 +645,7 @@ component("views") {
            "widget/desktop_aura/desktop_window_tree_host_ozone.cc",
          ]
        }

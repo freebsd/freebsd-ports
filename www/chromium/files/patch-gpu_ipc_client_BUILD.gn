@@ -1,4 +1,4 @@
---- gpu/ipc/client/BUILD.gn.orig	2017-03-09 20:04:33 UTC
+--- gpu/ipc/client/BUILD.gn.orig	2017-04-19 19:06:34 UTC
 +++ gpu/ipc/client/BUILD.gn
 @@ -44,6 +44,7 @@ source_set("ipc_client_sources") {
    configs += [

@@ -1,4 +1,4 @@
---- chrome/browser/download/download_shelf_context_menu.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/download/download_shelf_context_menu.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/download/download_shelf_context_menu.cc
 @@ -127,7 +127,7 @@ base::string16 DownloadShelfContextMenu:
                     : IDS_DOWNLOAD_MENU_PLATFORM_OPEN_ALWAYS;

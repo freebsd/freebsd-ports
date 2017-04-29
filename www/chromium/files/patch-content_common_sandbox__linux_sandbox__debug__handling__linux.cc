@@ -1,4 +1,4 @@
---- content/common/sandbox_linux/sandbox_debug_handling_linux.cc.orig	2017-01-26 00:49:13 UTC
+--- content/common/sandbox_linux/sandbox_debug_handling_linux.cc.orig	2017-04-19 19:06:34 UTC
 +++ content/common/sandbox_linux/sandbox_debug_handling_linux.cc
 @@ -7,7 +7,9 @@
  #include <errno.h>

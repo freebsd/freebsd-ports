@@ -1,4 +1,4 @@
---- device/gamepad/gamepad_provider.cc.orig	2017-03-09 20:04:33 UTC
+--- device/gamepad/gamepad_provider.cc.orig	2017-04-19 19:06:34 UTC
 +++ device/gamepad/gamepad_provider.cc
 @@ -153,7 +153,7 @@ void GamepadProvider::Initialize(std::un
      monitor->AddDevicesChangedObserver(this);

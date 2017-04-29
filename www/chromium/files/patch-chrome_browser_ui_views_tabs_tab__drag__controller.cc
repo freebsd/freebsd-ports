@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
 @@ -251,7 +251,7 @@ void TabDragController::Init(
    //     synchronous on desktop Linux, so use that.

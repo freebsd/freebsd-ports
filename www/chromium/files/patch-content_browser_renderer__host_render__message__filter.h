@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_message_filter.h.orig	2017-03-09 20:04:32 UTC
+--- content/browser/renderer_host/render_message_filter.h.orig	2017-04-19 19:06:33 UTC
 +++ content/browser/renderer_host/render_message_filter.h
 @@ -132,7 +132,7 @@ class CONTENT_EXPORT RenderMessageFilter
        const std::list<base::ProcessHandle>& handles);

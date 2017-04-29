@@ -1,4 +1,4 @@
---- content/renderer/media/webrtc/processed_local_audio_source.cc.orig	2017-01-26 00:49:13 UTC
+--- content/renderer/media/webrtc/processed_local_audio_source.cc.orig	2017-04-19 19:06:34 UTC
 +++ content/renderer/media/webrtc/processed_local_audio_source.cc
 @@ -269,8 +269,8 @@ void ProcessedLocalAudioSource::Capture(
                                          bool key_pressed) {

@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/options/browser_options_handler.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/browser/ui/webui/options/browser_options_handler.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/webui/options/browser_options_handler.cc
-@@ -565,13 +565,13 @@ void BrowserOptionsHandler::GetLocalized
+@@ -608,13 +608,13 @@ void BrowserOptionsHandler::GetLocalized
      { "syncButtonTextStart", IDS_SYNC_SETUP_BUTTON_LABEL },
  #endif  // defined(OS_CHROMEOS)
  
@@ -16,7 +16,7 @@
  
  #if defined(OS_CHROMEOS) && defined(USE_ASH)
      { "setWallpaper", IDS_SET_WALLPAPER_BUTTON },
-@@ -814,7 +814,7 @@ void BrowserOptionsHandler::RegisterMess
+@@ -859,7 +859,7 @@ void BrowserOptionsHandler::RegisterMess
        "requestProfilesInfo",
        base::Bind(&BrowserOptionsHandler::HandleRequestProfilesInfo,
                   base::Unretained(this)));
@@ -25,7 +25,7 @@
    web_ui()->RegisterMessageCallback(
        "themesSetNative",
        base::Bind(&BrowserOptionsHandler::ThemesSetNative,
-@@ -1476,7 +1476,7 @@ void BrowserOptionsHandler::ObserveTheme
+@@ -1519,7 +1519,7 @@ void BrowserOptionsHandler::ObserveTheme
    ThemeService* theme_service = ThemeServiceFactory::GetForProfile(profile);
    bool is_system_theme = false;
  
@@ -33,8 +33,8 @@
 +#if defined(OS_POSIX) && !defined(OS_CHROMEOS)
    bool profile_is_supervised = profile->IsSupervised();
    is_system_theme = theme_service->UsingSystemTheme();
-   base::FundamentalValue native_theme_enabled(!is_system_theme &&
-@@ -1498,7 +1498,7 @@ void BrowserOptionsHandler::ThemesReset(
+   base::Value native_theme_enabled(!is_system_theme && !profile_is_supervised);
+@@ -1540,7 +1540,7 @@ void BrowserOptionsHandler::ThemesReset(
    ThemeServiceFactory::GetForProfile(profile)->UseDefaultTheme();
  }
  

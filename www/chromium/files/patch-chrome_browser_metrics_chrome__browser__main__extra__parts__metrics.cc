@@ -1,4 +1,4 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 @@ -42,12 +42,14 @@
  

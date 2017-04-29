@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2017-01-26 00:49:07 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2017-04-19 19:06:28 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -13,6 +13,9 @@
  #include "base/memory/ptr_util.h"

@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2017-03-09 20:04:27 UTC
+--- build/config/compiler/BUILD.gn.orig	2017-04-19 19:06:28 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -155,7 +155,7 @@ config("compiler") {
+@@ -158,7 +158,7 @@ config("compiler") {
      configs += [ "//build/config/win:compiler" ]
    } else if (is_android) {
      configs += [ "//build/config/android:compiler" ]
@@ -9,7 +9,7 @@
      configs += [ "//build/config/linux:compiler" ]
    } else if (is_nacl) {
      configs += [ "//build/config/nacl:compiler" ]
-@@ -282,7 +282,7 @@ config("compiler") {
+@@ -301,7 +301,7 @@ config("compiler") {
  
    # Linux/Android common flags setup.
    # ---------------------------------
@@ -18,12 +18,12 @@
      cflags += [
        "-fPIC",
        "-pipe",  # Use pipes for communicating between sub-processes. Faster.
-@@ -409,14 +409,14 @@ config("compiler") {
+@@ -428,14 +428,14 @@ config("compiler") {
    # clang-cl (used if is_win) doesn't expose this flag.
    # Currently disabled for nacl since its toolchain lacks this flag (too old).
    # TODO(zforman): Once nacl's toolchain is updated, remove check.
--  if (is_clang && is_linux) {
-+  if (is_clang && (is_linux || is_bsd)) {
+-  if (is_clang && is_linux && strip_absolute_paths_from_debug_symbols) {
++  if (is_clang && (is_linux || is_bsd) && strip_absolute_paths_from_debug_symbols) {
      absolute_path = rebase_path("//.")
      cflags += [ "-fdebug-prefix-map=$absolute_path=." ]
    }
@@ -35,7 +35,7 @@
      # gnu++11 instead of c++11 is needed because some code uses typeof() (a
      # GNU extension).
      # TODO(thakis): Eventually switch this to c++11 instead,
-@@ -469,7 +469,7 @@ config("compiler") {
+@@ -488,7 +488,7 @@ config("compiler") {
        ]
  
        # Apply a lower LTO optimization level as the default is too slow.
@@ -44,7 +44,7 @@
          if (use_lld) {
            ldflags += [ "-Wl,--lto-O1" ]
          } else {
-@@ -489,7 +489,7 @@ config("compiler") {
+@@ -508,7 +508,7 @@ config("compiler") {
      # targeting ARM, without this flag, LTO produces a .text section that is
      # larger than the maximum call displacement, preventing the linker from
      # relocating calls (http://llvm.org/PR22999).
@@ -53,7 +53,7 @@
        ldflags += [ "-Wl,-plugin-opt,-function-sections" ]
      }
    }
-@@ -757,7 +757,7 @@ config("compiler_codegen") {
+@@ -776,7 +776,7 @@ config("compiler_codegen") {
  #   configs -= [ "//build/config/compiler:clang_stackrealign" ]
  # See https://crbug.com/556393 for details of where it must be avoided.
  config("clang_stackrealign") {
@@ -62,7 +62,7 @@
      cflags = [
        # Align the stack on 16-byte boundaries, http://crbug.com/418554.
        "-mstack-alignment=16",
-@@ -811,7 +811,7 @@ config("runtime_library") {
+@@ -830,7 +830,7 @@ config("runtime_library") {
    # smaller.
    if (is_win) {
      configs += [ "//build/config/win:runtime_library" ]
@@ -71,16 +71,16 @@
      configs += [ "//build/config/linux:runtime_library" ]
    } else if (is_ios) {
      configs += [ "//build/config/ios:runtime_library" ]
-@@ -1076,7 +1076,7 @@ config("default_warnings") {
-         "-Wno-nonportable-include-path",
+@@ -1087,7 +1087,7 @@ config("default_warnings") {
  
-         # TODO(hans): https://crbug.com/637306
--        "-Wno-address-of-packed-member",
-+        # "-Wno-address-of-packed-member",
-       ]
-       if (llvm_force_head_revision) {
-         cflags += [
-@@ -1119,7 +1119,7 @@ config("chromium_code") {
+     # use_xcode_clang only refers to the iOS toolchain, host binaries use
+     # chromium's clang always.
+-    if (!is_nacl && (!use_xcode_clang || current_toolchain == host_toolchain)) {
++    if (!is_nacl && !is_bsd && (!use_xcode_clang || current_toolchain == host_toolchain)) {
+       # Flags NaCl (Clang 3.7) and Xcode 7.3 (Clang clang-703.0.31) do not
+       # recognize.
+       cflags += [
+@@ -1144,7 +1144,7 @@ config("chromium_code") {
      ]
  
      if (!is_debug && !using_sanitizer &&
@@ -89,7 +89,7 @@
        # _FORTIFY_SOURCE isn't really supported by Clang now, see
        # http://llvm.org/bugs/show_bug.cgi?id=16821.
        # It seems to work fine with Ubuntu 12 headers though, so use it in
-@@ -1178,7 +1178,7 @@ config("no_chromium_code") {
+@@ -1203,7 +1203,7 @@ config("no_chromium_code") {
      ]
    }
  

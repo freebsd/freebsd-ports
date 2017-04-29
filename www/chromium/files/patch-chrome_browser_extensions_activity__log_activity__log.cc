@@ -1,4 +1,4 @@
---- chrome/browser/extensions/activity_log/activity_log.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/extensions/activity_log/activity_log.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/extensions/activity_log/activity_log.cc
 @@ -48,7 +48,11 @@
  #include "extensions/common/extension.h"

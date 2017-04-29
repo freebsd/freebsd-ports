@@ -1,6 +1,6 @@
---- device/BUILD.gn.orig	2017-03-09 20:04:33 UTC
+--- device/BUILD.gn.orig	2017-04-19 19:06:34 UTC
 +++ device/BUILD.gn
-@@ -197,7 +197,7 @@ test("device_unittests") {
+@@ -200,7 +200,7 @@ test("device_unittests") {
      ]
    }
  

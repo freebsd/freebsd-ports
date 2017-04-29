@@ -1,6 +1,6 @@
---- media/base/BUILD.gn.orig	2017-03-09 20:04:34 UTC
+--- media/base/BUILD.gn.orig	2017-04-19 19:06:35 UTC
 +++ media/base/BUILD.gn
-@@ -311,7 +311,7 @@ target(link_target_type, "base") {
+@@ -305,7 +305,7 @@ target(link_target_type, "base") {
      allow_circular_includes_from += [ "//media/base/android" ]
    }
  
@@ -9,8 +9,8 @@
      configs += [
        "//build/config/linux:x11",
        "//build/config/linux:xext",
-@@ -347,7 +347,7 @@ target(link_target_type, "base") {
-     deps += [ ":media_yasm" ]
+@@ -331,7 +331,7 @@ target(link_target_type, "base") {
+     defines += [ "DISABLE_USER_INPUT_MONITOR" ]
    }
  
 -  if (is_linux || is_win) {

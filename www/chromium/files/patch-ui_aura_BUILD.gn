@@ -1,6 +1,6 @@
---- ui/aura/BUILD.gn.orig	2017-03-09 20:04:49 UTC
+--- ui/aura/BUILD.gn.orig	2017-04-19 19:06:54 UTC
 +++ ui/aura/BUILD.gn
-@@ -362,7 +362,7 @@ test("aura_unittests") {
+@@ -369,7 +369,7 @@ test("aura_unittests") {
      "//ui/gl:test_support",
    ]
  

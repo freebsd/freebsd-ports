@@ -1,6 +1,6 @@
---- chrome/browser/sync/chrome_sync_client.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/browser/sync/chrome_sync_client.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -592,7 +592,7 @@ void ChromeSyncClient::RegisterDesktopDa
+@@ -639,7 +639,7 @@ void ChromeSyncClient::RegisterDesktopDa
    }
  #endif
  

@@ -1,4 +1,4 @@
---- base/process/process_posix.cc.orig	2017-01-26 00:49:07 UTC
+--- base/process/process_posix.cc.orig	2017-04-19 19:06:28 UTC
 +++ base/process/process_posix.cc
 @@ -21,8 +21,18 @@
  #include <sys/event.h>
@@ -53,9 +53,9 @@
 +}
 +#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_FREEBSD)
  
- bool Process::IsValid() const {
-   return process_ != kNullProcessHandle;
-@@ -365,15 +379,32 @@ bool Process::WaitForExitWithTimeout(Tim
+ // static
+ void Process::TerminateCurrentProcessImmediately(int exit_code) {
+@@ -370,15 +384,32 @@ bool Process::WaitForExitWithTimeout(Tim
  bool Process::IsProcessBackgrounded() const {
    // See SetProcessBackgrounded().
    DCHECK(IsValid());

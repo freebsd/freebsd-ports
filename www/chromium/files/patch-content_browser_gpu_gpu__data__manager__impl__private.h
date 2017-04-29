@@ -1,6 +1,6 @@
---- content/browser/gpu/gpu_data_manager_impl_private.h.orig	2017-01-26 00:49:13 UTC
+--- content/browser/gpu/gpu_data_manager_impl_private.h.orig	2017-04-19 19:06:33 UTC
 +++ content/browser/gpu/gpu_data_manager_impl_private.h
-@@ -154,7 +154,7 @@ class CONTENT_EXPORT GpuDataManagerImplP
+@@ -156,7 +156,7 @@ class CONTENT_EXPORT GpuDataManagerImplP
                             UnblockOtherDomainFrom3DAPIs);
    FRIEND_TEST_ALL_PREFIXES(GpuDataManagerImplPrivateTest,
                             UnblockThisDomainFrom3DAPIs);

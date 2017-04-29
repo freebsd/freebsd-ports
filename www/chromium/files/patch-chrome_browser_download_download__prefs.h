@@ -1,4 +1,4 @@
---- chrome/browser/download/download_prefs.h.orig	2017-03-09 20:04:28 UTC
+--- chrome/browser/download/download_prefs.h.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/download/download_prefs.h
 @@ -78,7 +78,7 @@ class DownloadPrefs {
    // Disables auto-open based on file extension.

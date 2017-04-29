@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_init.cc.orig	2017-03-09 20:04:33 UTC
+--- gpu/ipc/service/gpu_init.cc.orig	2017-04-19 19:06:34 UTC
 +++ gpu/ipc/service/gpu_init.cc
 @@ -76,7 +76,7 @@ void GetGpuInfoFromCommandLine(gpu::GPUI
    }
@@ -34,5 +34,5 @@
 -#endif  // !defined(OS_MACOSX)
 +#endif  // !defined(OS_MACOSX) && !defined(OS_BSD)
  
-   base::TimeDelta collect_context_time =
-       base::TimeTicks::Now() - before_collect_context_graphics_info;
+   gpu_feature_info_ = gpu::GetGpuFeatureInfo(gpu_info_, command_line);
+ 

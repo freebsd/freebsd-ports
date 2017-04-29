@@ -1,4 +1,4 @@
---- chrome/browser/gpu/gl_string_manager.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/gpu/gl_string_manager.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/gpu/gl_string_manager.cc
 @@ -33,7 +33,7 @@ GLStringManager::~GLStringManager() {
  

@@ -1,4 +1,4 @@
---- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2017-01-26 00:49:07 UTC
+--- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2017-04-19 19:06:28 UTC
 +++ base/allocator/allocator_shim_default_dispatch_to_glibc.cc
 @@ -3,19 +3,28 @@
  // found in the LICENSE file.
@@ -37,32 +37,41 @@
  }  // extern "C"
  
  namespace {
-@@ -23,23 +32,23 @@ namespace {
+@@ -23,32 +32,32 @@ namespace {
  using base::allocator::AllocatorDispatch;
  
- void* GlibcMalloc(const AllocatorDispatch*, size_t size) {
+ void* GlibcMalloc(const AllocatorDispatch*, size_t size, void* context) {
 -  return __libc_malloc(size);
 +  return __malloc(size);
  }
  
- void* GlibcCalloc(const AllocatorDispatch*, size_t n, size_t size) {
+ void* GlibcCalloc(const AllocatorDispatch*,
+                   size_t n,
+                   size_t size,
+                   void* context) {
 -  return __libc_calloc(n, size);
 +  return __calloc(n, size);
  }
  
- void* GlibcRealloc(const AllocatorDispatch*, void* address, size_t size) {
+ void* GlibcRealloc(const AllocatorDispatch*,
+                    void* address,
+                    size_t size,
+                    void* context) {
 -  return __libc_realloc(address, size);
 +  return __realloc(address, size);
  }
  
- void* GlibcMemalign(const AllocatorDispatch*, size_t alignment, size_t size) {
+ void* GlibcMemalign(const AllocatorDispatch*,
+                     size_t alignment,
+                     size_t size,
+                     void* context) {
 -  return __libc_memalign(alignment, size);
 +  return __memalign(alignment, size);
  }
  
- void GlibcFree(const AllocatorDispatch*, void* address) {
+ void GlibcFree(const AllocatorDispatch*, void* address, void* context) {
 -  __libc_free(address);
 +  __free(address);
  }
  
- size_t GlibcGetSizeEstimate(const AllocatorDispatch*, void* address) {
+ size_t GlibcGetSizeEstimate(const AllocatorDispatch*,

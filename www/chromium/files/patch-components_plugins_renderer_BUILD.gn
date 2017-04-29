@@ -1,4 +1,4 @@
---- components/plugins/renderer/BUILD.gn.orig	2017-03-09 20:04:31 UTC
+--- components/plugins/renderer/BUILD.gn.orig	2017-04-19 19:06:33 UTC
 +++ components/plugins/renderer/BUILD.gn
 @@ -20,6 +20,7 @@ static_library("renderer") {
    }

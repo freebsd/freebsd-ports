@@ -1,4 +1,4 @@
---- third_party/angle/gni/angle.gni.orig	2017-01-26 00:50:09 UTC
+--- third_party/angle/gni/angle.gni.orig	2017-04-19 19:07:43 UTC
 +++ third_party/angle/gni/angle.gni
 @@ -20,6 +20,8 @@ if (is_win) {
    import("//build/config/win/visual_studio_version.gni")

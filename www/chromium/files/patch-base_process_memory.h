@@ -1,4 +1,4 @@
---- base/process/memory.h.orig	2017-01-26 00:49:07 UTC
+--- base/process/memory.h.orig	2017-04-19 19:06:28 UTC
 +++ base/process/memory.h
 @@ -32,7 +32,7 @@ BASE_EXPORT void EnableTerminationOnOutO
  // Crash reporting classifies such crashes as OOM.

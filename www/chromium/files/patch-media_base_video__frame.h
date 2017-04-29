@@ -1,4 +1,4 @@
---- media/base/video_frame.h.orig	2017-02-02 02:02:55 UTC
+--- media/base/video_frame.h.orig	2017-04-19 19:06:35 UTC
 +++ media/base/video_frame.h
 @@ -62,7 +62,7 @@ class MEDIA_EXPORT VideoFrame : public b
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
@@ -27,7 +27,7 @@
    // Returns backing DmaBuf file descriptor for given |plane|, if present, or
    // -1 if not.
    // TODO(mcasas): Rename to DmabufFd() to comply with Style Guide.
-@@ -519,7 +519,7 @@ class MEDIA_EXPORT VideoFrame : public b
+@@ -528,7 +528,7 @@ class MEDIA_EXPORT VideoFrame : public b
    base::SharedMemoryHandle shared_memory_handle_;
    size_t shared_memory_offset_;
  

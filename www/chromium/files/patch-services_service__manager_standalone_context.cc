@@ -1,6 +1,6 @@
---- services/service_manager/standalone/context.cc.orig	2017-03-09 20:04:36 UTC
+--- services/service_manager/standalone/context.cc.orig	2017-04-19 19:06:37 UTC
 +++ services/service_manager/standalone/context.cc
-@@ -218,7 +218,7 @@ void Context::Init(std::unique_ptr<InitP
+@@ -133,7 +133,7 @@ Context::Context(
        tracing::mojom::StartupPerformanceDataCollectorPtr collector;
        BindInterface(service_manager(), source_identity, tracing_identity,
                      &collector);
