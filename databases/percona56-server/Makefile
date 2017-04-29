@@ -12,7 +12,7 @@ DISTNAME=	percona-server-${DISTVERSION}
 MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: #error Unsupported platform
 
 SLAVEDIRS=	databases/percona56-client \
 		databases/percona-pam-for-mysql
