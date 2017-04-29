@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 GH_ACCOUNT=	kfl
 USE_GITHUB=	yes
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not configure: this architecture seems to be neither big endian nor little endian
 
 RESTRICTED=	Restrictions on for-profit distribution
 

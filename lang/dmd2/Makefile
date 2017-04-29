@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}
 
 BROKEN_aarch64=		Does not configure: no cpu specified, assuming X86
 BROKEN_mips64=		Does not compile: cc1: error: unrecognized command line option -m32
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: can't mangle function with unknown linkage (void*())
 BROKEN_sparc64=		Does not install: divide-by-zero error
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
