@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yubico-piv-tool
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 #PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/yubico-piv-tool/Releases/
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
-USES=		libtool pathfix pkgconfig ssl
+USES=		gmake libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
@@ -22,17 +22,16 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
 OPENSSL_CFLAGS=	-I${OPENSSLINC}
 
 PLIST_FILES=	bin/yubico-piv-tool \
-		include/ykcs11/ykcs11-version.h \
 		include/ykpiv/ykpiv-version.h \
 		include/ykpiv/ykpiv.h \
 		lib/libykcs11.a \
 		lib/libykcs11.so \
 		lib/libykcs11.so.1 \
-		lib/libykcs11.so.1.3.3 \
+		lib/libykcs11.so.1.3.5 \
 		lib/libykpiv.a \
 		lib/libykpiv.so \
 		lib/libykpiv.so.1 \
-		lib/libykpiv.so.1.3.3 \
+		lib/libykpiv.so.1.3.5 \
 		libdata/pkgconfig/ykcs11.pc \
 		libdata/pkgconfig/ykpiv.pc \
 		man/man1/yubico-piv-tool.1.gz
