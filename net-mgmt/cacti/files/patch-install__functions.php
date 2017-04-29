@@ -1,6 +1,6 @@
---- install/functions.php.orig	2017-02-04 14:21:02.093580000 +0000
-+++ install/functions.php	2017-02-04 14:21:31.615575000 +0000
-@@ -365,7 +365,7 @@
+--- install/functions.php.orig	2017-04-26 00:30:09 UTC
++++ install/functions.php
+@@ -421,7 +421,7 @@ function install_file_paths () {
  	if (config_value_exists('path_cactilog')) {
  		$input['path_cactilog']['default'] = read_config_option('path_cactilog');
  	} else {

@@ -1047,6 +1047,7 @@
 %%CACTIDIR%%/install/1_1_1_to_1_1_2.php
 %%CACTIDIR%%/install/1_1_2_to_1_1_3.php
 %%CACTIDIR%%/install/1_1_3_to_1_1_4.php
+%%CACTIDIR%%/install/1_1_4_to_1_1_5.php
 %%CACTIDIR%%/install/colors.csv
 %%CACTIDIR%%/install/functions.php
 %%CACTIDIR%%/install/import_colors.php

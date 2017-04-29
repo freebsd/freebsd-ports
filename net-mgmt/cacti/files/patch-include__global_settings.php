@@ -1,6 +1,6 @@
---- include/global_settings.php.orig	2017-02-04 14:13:42.140386000 +0000
-+++ include/global_settings.php	2017-02-04 14:20:35.592474000 +0000
-@@ -135,9 +135,9 @@
+--- include/global_settings.php.orig	2017-04-26 00:30:09 UTC
++++ include/global_settings.php
+@@ -135,9 +135,9 @@ $settings = array(
  			),
  		'path_cactilog' => array(
  			'friendly_name' => __('Cacti Log Path'),
