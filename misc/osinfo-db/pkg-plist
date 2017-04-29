@@ -86,6 +86,8 @@ share/osinfo/os/centos.org/centos-6.4.xml
 share/osinfo/os/centos.org/centos-6.5.xml
 share/osinfo/os/centos.org/centos-6.6.xml
 share/osinfo/os/centos.org/centos-6.7.xml
+share/osinfo/os/centos.org/centos-6.8.xml
+share/osinfo/os/centos.org/centos-6.9.xml
 share/osinfo/os/centos.org/centos-7.0.xml
 share/osinfo/os/debian.org/debian-1.1.xml
 share/osinfo/os/debian.org/debian-1.2.xml
@@ -342,9 +344,11 @@ share/osinfo/os/redhat.com/rhel-6.5.xml
 share/osinfo/os/redhat.com/rhel-6.6.xml
 share/osinfo/os/redhat.com/rhel-6.7.xml
 share/osinfo/os/redhat.com/rhel-6.8.xml
+share/osinfo/os/redhat.com/rhel-6.9.xml
 share/osinfo/os/redhat.com/rhel-7.0.xml
 share/osinfo/os/redhat.com/rhel-7.1.xml
 share/osinfo/os/redhat.com/rhel-7.2.xml
+share/osinfo/os/redhat.com/rhel-7.3.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
