@@ -1,0 +1,16 @@
+bin/fsearch
+share/applications/fsearch.desktop
+share/locale/de/LC_MESSAGES/fsearch.mo
+share/locale/el/LC_MESSAGES/fsearch.mo
+share/locale/es/LC_MESSAGES/fsearch.mo
+share/locale/fr/LC_MESSAGES/fsearch.mo
+share/locale/hu/LC_MESSAGES/fsearch.mo
+share/locale/ja/LC_MESSAGES/fsearch.mo
+share/locale/lt/LC_MESSAGES/fsearch.mo
+share/locale/nl/LC_MESSAGES/fsearch.mo
+share/locale/pt/LC_MESSAGES/fsearch.mo
+share/locale/pt-br/LC_MESSAGES/fsearch.mo
+share/locale/ru/LC_MESSAGES/fsearch.mo
+share/locale/sk/LC_MESSAGES/fsearch.mo
+share/locale/zh_CN/LC_MESSAGES/fsearch.mo
+share/locale/zh_Hans/LC_MESSAGES/fsearch.mo
