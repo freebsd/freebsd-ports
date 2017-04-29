@@ -323,6 +323,7 @@
     SUBDIR += imgsizer
     SUBDIR += impresscms
     SUBDIR += interchange
+    SUBDIR += iridium
     SUBDIR += itop
     SUBDIR += iwebcal
     SUBDIR += jdresolve
