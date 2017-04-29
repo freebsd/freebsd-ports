@@ -27,18 +27,9 @@ PLIST_FILES+=	${KMODDIR}/${PORTNAME}.ko
 
 CFLAGS+=	${DEBUG_FLAGS}
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on powerpc or sparc64
-.endif
-
-=======
->>>>>>> upstream/master
 do-install:
 	${INSTALL} ${WRKSRC}/${PORTNAME}.ko ${STAGEDIR}${KMODDIR}
 
