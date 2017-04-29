@@ -221,6 +221,7 @@
     SUBDIR += gnupod
     SUBDIR += gnuspeechsa
     SUBDIR += gnustep-cdplayer
+    SUBDIR += goattracker
     SUBDIR += gogglesmm
     SUBDIR += goobox
     SUBDIR += gqmpeg
