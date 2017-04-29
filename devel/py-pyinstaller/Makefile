@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 BROKEN_aarch64=		Does not compile: error: stb__testsize2_uinta declared as an array with a negative size
 BROKEN_mips64=		Does not compile: cc1: error: unrecognized command line option "-m64
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not compile: error: size of array stb__testsize2_uinta is negative
 BROKEN_sparc64=		Does not compile: error: size of array stb__testsize2_uinta is negative
 
 OPTIONS_DEFINE=	DOCS

@@ -13,7 +13,7 @@ COMMENT=	Workalike for the source code control system SCCS
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not build: undefined reference to fmax
 
 GNU_CONFIGURE=	yes
 INFO=		cssc

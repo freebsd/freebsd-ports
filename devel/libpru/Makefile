@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 IGNORE_DragonFly=	only supported on FreeBSD
 BROKEN_mips=	Does not build: unrecognized command line option -Weverything
 BROKEN_mips64=	Does not build: unrecognized command line option -Weverything
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: unrecognized command line option -Weverything
 BROKEN_sparc64=	Does not build: unrecognized command line option -Weverything
 
 USES=		cmake
