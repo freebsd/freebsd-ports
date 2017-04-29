@@ -191,7 +191,7 @@ direwolf.conf : generic.conf
 # This is a step in the right direction but not sufficient to use /usr instead.
 # Eventually I'd like to have targets here to build the .DEB and .RPM packages.
 
-INSTALLDIR := ${DESTDIR}/${PREFIX}
+INSTALLDIR := ${DESTDIR}${PREFIX}
 SHAREDIR   := ${INSTALLDIR}/share
 
 # Command to "install" to system directories.  Use "ginstall" for Mac.
