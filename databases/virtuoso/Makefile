@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gawk:lang/gawk\
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 BROKEN_aarch64=		Fails to link: missing sbrk
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not compile: error: DV_INT_TAG_WORD undeclared
 BROKEN_sparc64=		Does not compile: error: DV_INT_TAG_WORD undeclared
 
 NOT_FOR_ARCHS=	arm armv6 i386 mips powerpc

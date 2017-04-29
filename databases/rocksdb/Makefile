@@ -22,7 +22,7 @@ NOPIE_PORTS=	yes
 BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
 BROKEN_aarch64=	does not build: the clang compiler does not support -march=native
 BROKEN_armv6=	does not build: the clang compiler does not support -march=native
-BROKEN_powerpc64=	does not build
+BROKEN_powerpc64=	does not build: the clang compiler does not support -march=native
 BROKEN_sparc64=	cannot build: uses unknown compiler flags
 
 OPTIONS_DEFINE=	DEBUG LZ4 ZSTD

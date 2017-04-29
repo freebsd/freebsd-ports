@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BROKEN_aarch64=		Does not build: No rule to make target avcall-aarch64.lo
 BROKEN_armv6=		Does not build: error: invalid instruction
 BROKEN_mips64==		Does not build: error: duplicate member anum
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: No rule to make target avcall-powerpc64.lo
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
