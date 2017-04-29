@@ -1,0 +1,55 @@
+From e305fe971e4647d971428a772b7290b9c308a96f Mon Sep 17 00:00:00 2001
+From: Steven McDonald <steven@steven-mcdonald.id.au>
+Date: Sun, 12 Feb 2017 11:02:55 +1100
+Subject: gio: Always purge kqueue subs from missing list
+
+Previously, _kh_cancel_sub assumed that it only needed to call
+_km_remove if sub did not exist in subs_hash_table. This is erroneous
+because the complementary operation, _km_add_missing, can be called
+from process_kqueue_notifications, in which context sub can *only* have
+come from subs_hash_table.
+
+Since _km_remove is implemented using g_slist_remove, which is
+documented to be a noop if the list does not contain the element to be
+removed, it is safe to call _km_remove unconditionally here.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=778515
+---
+ gio/kqueue/kqueue-helper.c | 15 +++++----------
+ 1 file changed, 5 insertions(+), 10 deletions(-)
+
+diff --git a/gio/kqueue/kqueue-helper.c b/gio/kqueue/kqueue-helper.c
+index 4671396..d4e66cd 100644
+--- gio/kqueue/kqueue-helper.c
++++ gio/kqueue/kqueue-helper.c
+@@ -498,22 +498,17 @@ _kh_add_sub (kqueue_sub *sub)
+ gboolean
+ _kh_cancel_sub (kqueue_sub *sub)
+ {
+-  gboolean missing = FALSE;
++  gboolean removed = FALSE;
+   g_assert (kqueue_socket_pair[0] != -1);
+   g_assert (sub != NULL);
+ 
++  _km_remove (sub);
++
+   G_LOCK (hash_lock);
+-  missing = !g_hash_table_remove (subs_hash_table, GINT_TO_POINTER (sub->fd));
++  removed = g_hash_table_remove (subs_hash_table, GINT_TO_POINTER (sub->fd));
+   G_UNLOCK (hash_lock);
+ 
+-  if (missing)
+-    {
+-      /* If there were no fd for this subscription, file is still
+-       * missing. */
+-      KH_W ("Removing subscription from missing");
+-      _km_remove (sub);
+-    }
+-  else
++  if (removed)
+     {
+       /* fd will be closed in the kqueue thread */
+       _kqueue_thread_remove_fd (sub->fd);
+-- 
+cgit v0.12
+
