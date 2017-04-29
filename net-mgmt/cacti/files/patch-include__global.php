@@ -1,6 +1,6 @@
---- include/global.php.orig	2017-02-04 14:12:12.747287000 +0000
-+++ include/global.php	2017-02-04 14:12:32.931726000 +0000
-@@ -126,7 +126,7 @@
+--- include/global.php.orig	2017-04-26 00:30:09 UTC
++++ include/global.php
+@@ -131,7 +131,7 @@ if ($config['cacti_server_os'] == 'win32
  	$config['library_path'] = preg_replace("/(.*[\/])include/", "\\1lib", dirname(__FILE__));
  }
  $config['include_path'] = dirname(__FILE__);

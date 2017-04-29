@@ -1,0 +1,15 @@
+--- src/bme/makefile.orig	2017-04-29 15:05:37 UTC
++++ src/bme/makefile
+@@ -1,10 +1,10 @@
+ all: dat2inc datafile
+ 
+ datafile: datafile.c bme_end.c
+-	gcc -o datafile datafile.c bme_end.c
++	$(CC) $(CFLAGS) -o datafile datafile.c bme_end.c
+ 	strip datafile
+ 
+ dat2inc: dat2inc.c
+-	gcc -o dat2inc dat2inc.c
++	$(CC) $(CFLAGS) -o dat2inc dat2inc.c
+ 	strip dat2inc
+ 

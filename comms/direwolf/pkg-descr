@@ -1,6 +1,6 @@
-Dire Wolf is a software "soundcard" modem/TNC and APRS encoder/decoder. 
+Dire Wolf is a software "soundcard" modem/TNC and APRS encoder/decoder.
 It can be used stand-alone to observe APRS traffic, as a digipeater,
-APRStt gateway, or Internet Gateway (IGate). It can also be used as a 
+APRStt gateway, or Internet Gateway (IGate).  It can also be used as a
 virtual TNC for other applications such as APRSIS32, UI-View32, Xastir,
-APRS-TW, YAAC, UISS, Linux AX25, SARTrack, RMS Express, BPQ32, 
-Outpost PM and many others.
+APRS-TW, YAAC, UISS, Linux AX25, SARTrack, RMS Express, BPQ32, Outpost
+PM, and many others.

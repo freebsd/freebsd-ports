@@ -9,6 +9,7 @@
 %%APP_HOME%%/bin/installService.sh
 %%APP_HOME%%/bin/uninstallService.sh
 @mode
+%%APP_HOME%%/access
 %%APP_HOME%%/backup
 %%APP_HOME%%/data
 %%APP_HOME%%/etc
@@ -89,6 +90,7 @@
 @dir %%VARDIR%%/tomcat/logs/catalina
 @dir %%VARDIR%%/tomcat/logs
 @dir %%VARDIR%%/tomcat
+@dir %%VARDIR%%/access
 @dir %%VARDIR%%/backup
 @dir %%VARDIR%%/data
 @dir %%VARDIR%%/etc

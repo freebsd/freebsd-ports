@@ -1,6 +1,6 @@
---- utilities.php.orig	2017-02-04 14:25:11.346062000 +0000
-+++ utilities.php	2017-02-04 14:25:39.435371000 +0000
-@@ -869,7 +869,7 @@
+--- utilities.php.orig	2017-04-26 00:30:09 UTC
++++ utilities.php
+@@ -872,7 +872,7 @@ function utilities_view_logfile() {
  	$logfile = read_config_option('path_cactilog');
  
  	if ($logfile == '') {
@@ -9,7 +9,7 @@
  	}
  
  	/* helps determine output color */
-@@ -1149,7 +1149,7 @@
+@@ -1155,7 +1155,7 @@ function utilities_clear_logfile() {
  	$logfile = read_config_option('path_cactilog');
  
  	if ($logfile == '') {
