@@ -13,9 +13,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}r2695-src
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	Makefile framework
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+
+BROKEN_powerpc64=	does not build: fatal error: xmmintrin.h: No such file or directory
 
 USE_GCC=	any
 USES=		autoreconf:build gmake makeinfo
