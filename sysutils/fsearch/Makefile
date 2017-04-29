@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fsearch
-DISTVERSION=	0.1beta1
+DISTVERSION=	0.1beta2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -20,13 +20,5 @@ GH_ACCOUNT=	cboxdoerfer
 USES=		autoreconf gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
-
-PLIST_FILES=	bin/fsearch \
-		share/applications/fsearch.desktop \
-		share/locale/de/LC_MESSAGES/fsearch.mo
-
-post-patch:
-	@${GREP} -Rl linux/limits\\.h ${WRKSRC}/src | ${XARGS} \
-		${REINPLACE_CMD} -e '/linux\/limits\.h/d'
 
 .include <bsd.port.mk>
