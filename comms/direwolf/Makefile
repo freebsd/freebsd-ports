@@ -24,8 +24,6 @@ SHEBANG_FILES=	telemetry-toolkit/telem-bits.pl telemetry-toolkit/telem-parm.pl\
 		telemetry-toolkit/telem-data91.pl \
 		telemetry-toolkit/telem-unit.pl	telemetry-toolkit/telem-balloon.pl
 
-MAKE_ENV+=	STAGEDIR=${STAGEDIR}
-
 post-patch:
 	${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/dw-start.sh
