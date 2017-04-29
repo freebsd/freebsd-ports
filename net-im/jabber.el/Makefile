@@ -3,7 +3,7 @@
 
 PORTNAME=	jabber.el
 PORTVERSION=	0.8.92
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im elisp
 MASTER_SITES=	SF/emacs-jabber/emacs-jabber%20beta%20versions/${PORTVERSION}
 DISTNAME=		emacs-jabber-${PORTVERSION}
