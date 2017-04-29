@@ -22,8 +22,6 @@ MAKEFILE=	makefile
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-MAKE_JOBS_UNSAFE=yes
-
 CFLAGS+=	`sdl-config --cflags`
 LIBS+=		`sdl-config --libs`
 
