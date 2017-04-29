@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -32,7 +32,8 @@ PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		ietf67-design-02.pdf requirements.txt
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN_PLUGIN DOCS LIBEVENT FILTER_AAAA DNSTAP
+OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN_PLUGIN DOCS LIBEVENT \
+		FILTER_AAAA DNSTAP DNSCRYPT SUBNET EVAPI TFOCL TFOSE
 OPTIONS_DEFAULT=THREADS ECDSA
 
 LIBEVENT_DESC=	Build against libevent
@@ -41,6 +42,11 @@ ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
 MUNIN_PLUGIN_DESC=	Install Munin plugin
 FILTER_AAAA_DESC=	Build with AAAA filter functionality (contrib)
 DNSTAP_DESC=	Enable dnstap logging support
+DNSCRYPT_DESC=	Enable dnscryot support
+SUBNET_DESC=	Enable client subnet support
+EVAPI_DESC=	(Experimental) pluggable event based libunbound API support
+TFOCL_DESC=	Enable TCP Fast Open for client mode
+TFOSE_DESC=	Enable TCP Fast Open for server mode
 
 STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 		unbound-control .libs/unbound-host .libs/unbound-anchor
@@ -48,6 +54,12 @@ STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 DNSTAP_CONFIGURE_ENABLE=dnstap
 DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
 			libprotobuf-c.so:devel/protobuf-c
+DNSCRYPT_CONFIGURE_ENABLE=	dnscrypt
+DNSCRYPT_LIB_DEPENDS=	libsodium.so:security/libsodium
+SUBNET_CONFIGURE_ENABLE=	subnet
+EVAPI_CONFIGURE_ENABLE=	event-api
+TFOCL_CONFIGURE_ENABLE=	tfo-client
+TFOSE_CONFIGURE_ENABLE=	tfo-server
 ECDSA_CONFIGURE_ENABLE=	ecdsa
 ECDSA_VARS=		DEPENDS_ARGS+=WITH_ECDSA=yes
 GOST_CONFIGURE_ENABLE=	gost
@@ -58,8 +70,10 @@ LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent
 LIBEVENT_LDFLAGS+=	$$(pkg-config libevent --libs-only-L)
 LIBEVENT_USES=		pkgconfig
 MUNIN_PLUGIN_SUB_FILES=	pkg-message
-PYTHON_BUILD_DEPENDS=	swig:devel/swig30
-PYTHON_CONFIGURE_ON=	--with-pyunbound=yes --with-pythonmodule=yes LDFLAGS="-L${LOCALBASE}/lib"
+PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
+PYTHON_CONFIGURE_ON=	--with-pyunbound=yes --with-pythonmodule=yes \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_path_SWIG=${LOCALBASE}/bin/swig3.0
 PYTHON_USES=		python:2
 PYTHON_VARS=		STRIP_FILES+=.libs/_unbound.so
 THREADS_CONFIGURE_WITH=	pthreads
