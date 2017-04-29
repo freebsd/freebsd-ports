@@ -3,7 +3,7 @@
 
 PORTNAME=	dictionary
 PORTVERSION=	1.8.7
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	textproc net elisp
 MASTER_SITES=	http://me.in-berlin.de/~myrkr/dictionary/ \
 		http://bsdchat.com/dist/dryice/
