@@ -1237,6 +1237,7 @@
     SUBDIR += rubygem-u2f0
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
+    SUBDIR += rubygem-xmlrpc
     SUBDIR += rude
     SUBDIR += s3ql
     SUBDIR += samba42
