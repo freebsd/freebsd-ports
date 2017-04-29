@@ -92,6 +92,8 @@ post-patch:
 		${WRKSRC}/scsilib/${i}
 .endfor
 .if ${PORTNAME} == "gcdmaster"
+	@${REINPLACE_CMD} -E -e 's|(sigc\+\+/)object.h|\1trackable.h|g' \
+		${WRKSRC}/xdao/CdDevice.h
 	@${REINPLACE_CMD} -E -e 's|(^SUBDIRS.+) utils|\1|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(^gladedir.+=).+|\1 ${DATADIR}|' \
 		${WRKSRC}/xdao/Makefile.in
