@@ -12,7 +12,7 @@ COMMENT=	NoSQL database running in a Lua application server
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: Unsupported architecture -- powerpc64
 
 MAKE_JOBS_UNSAFE=yes
 USES=		cmake compiler:c++11-lang gettext gmake perl5 readline
