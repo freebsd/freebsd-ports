@@ -1,6 +1,6 @@
---- content/browser/device_sensors/data_fetcher_shared_memory.h.orig	2017-01-26 00:49:13 UTC
-+++ content/browser/device_sensors/data_fetcher_shared_memory.h
-@@ -45,7 +45,7 @@ class CONTENT_EXPORT DataFetcherSharedMe
+--- device/sensors/data_fetcher_shared_memory.h.orig	2017-04-19 19:06:34 UTC
++++ device/sensors/data_fetcher_shared_memory.h
+@@ -44,7 +44,7 @@ class DEVICE_SENSOR_EXPORT DataFetcherSh
    bool Start(ConsumerType consumer_type, void* buffer) override;
    bool Stop(ConsumerType consumer_type) override;
  

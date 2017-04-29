@@ -1,4 +1,4 @@
---- third_party/webrtc/base/ifaddrs_converter.h.orig	2017-01-26 00:50:17 UTC
+--- third_party/webrtc/base/ifaddrs_converter.h.orig	2017-04-19 19:07:52 UTC
 +++ third_party/webrtc/base/ifaddrs_converter.h
 @@ -14,6 +14,8 @@
  #if defined(WEBRTC_ANDROID)

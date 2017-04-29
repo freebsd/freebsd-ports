@@ -1,4 +1,4 @@
---- ui/views/controls/textfield/textfield.cc.orig	2017-03-09 20:04:49 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2017-04-19 19:06:54 UTC
 +++ ui/views/controls/textfield/textfield.cc
 @@ -54,7 +54,7 @@
  #include "ui/base/win/osk_display_manager.h"
@@ -26,16 +26,16 @@
        // Only erase by line break on Linux and ChromeOS.
        if (shift && control)
          return ui::TextEditCommand::DELETE_TO_END_OF_LINE;
-@@ -582,7 +582,7 @@ bool Textfield::OnMousePressed(const ui:
+@@ -606,7 +606,7 @@ bool Textfield::OnMousePressed(const ui:
      ShowImeIfNeeded();
    }
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
-   if (!handled && !HasFocus() && event.IsOnlyMiddleMouseButton())
+   if (!handled && !had_focus && event.IsOnlyMiddleMouseButton())
      RequestFocus();
  #endif
-@@ -619,7 +619,7 @@ bool Textfield::OnKeyPressed(const ui::K
+@@ -645,7 +645,7 @@ bool Textfield::OnKeyPressed(const ui::K
    if (!textfield)
      return handled;
  
@@ -44,7 +44,7 @@
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -759,7 +759,7 @@ void Textfield::AboutToRequestFocusFromT
+@@ -785,7 +785,7 @@ void Textfield::AboutToRequestFocusFromT
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -53,16 +53,16 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -1041,7 +1041,7 @@ void Textfield::WriteDragDataForView(Vie
-   std::unique_ptr<gfx::Canvas> canvas(
-       GetCanvasForDragImage(GetWidget(), label.size()));
-   label.SetEnabledColor(GetTextColor());
+@@ -1076,7 +1076,7 @@ void Textfield::WriteDragDataForView(Vie
+ 
+   SkBitmap bitmap;
+   float raster_scale = ScaleFactorForDragFromWidget(GetWidget());
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
    // Desktop Linux Aura does not yet support transparency in drag images.
-   canvas->DrawColor(GetBackgroundColor());
- #endif
-@@ -1833,7 +1833,7 @@ bool Textfield::PasteSelectionClipboard(
+   SkColor color = GetBackgroundColor();
+ #else
+@@ -1873,7 +1873,7 @@ bool Textfield::PasteSelectionClipboard(
  }
  
  void Textfield::UpdateSelectionClipboard() {

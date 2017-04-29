@@ -1,4 +1,4 @@
---- build/toolchain/get_concurrent_links.py.orig	2017-01-26 00:49:07 UTC
+--- build/toolchain/get_concurrent_links.py.orig	2017-04-19 19:06:28 UTC
 +++ build/toolchain/get_concurrent_links.py
 @@ -45,6 +45,14 @@ def _GetTotalMemoryInBytes():
        return int(subprocess.check_output(['sysctl', '-n', 'hw.memsize']))

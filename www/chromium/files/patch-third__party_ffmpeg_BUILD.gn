@@ -1,4 +1,4 @@
---- third_party/ffmpeg/BUILD.gn.orig	2017-01-26 00:50:10 UTC
+--- third_party/ffmpeg/BUILD.gn.orig	2017-04-19 19:07:44 UTC
 +++ third_party/ffmpeg/BUILD.gn
 @@ -6,8 +6,13 @@ import("ffmpeg_options.gni")
  import("ffmpeg_generated.gni")

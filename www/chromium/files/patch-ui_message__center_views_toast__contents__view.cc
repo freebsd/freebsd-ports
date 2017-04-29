@@ -1,6 +1,6 @@
---- ui/message_center/views/toast_contents_view.cc.orig	2017-02-02 02:03:13 UTC
+--- ui/message_center/views/toast_contents_view.cc.orig	2017-04-19 19:06:54 UTC
 +++ ui/message_center/views/toast_contents_view.cc
-@@ -361,7 +361,7 @@ void ToastContentsView::CreateWidget(
+@@ -388,7 +388,7 @@ void ToastContentsView::CreateWidget(
      PopupAlignmentDelegate* alignment_delegate) {
    views::Widget::InitParams params(views::Widget::InitParams::TYPE_POPUP);
    params.keep_on_top = true;

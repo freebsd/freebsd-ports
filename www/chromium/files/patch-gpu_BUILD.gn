@@ -1,6 +1,6 @@
---- gpu/BUILD.gn.orig	2017-01-26 00:49:14 UTC
+--- gpu/BUILD.gn.orig	2017-04-19 19:06:34 UTC
 +++ gpu/BUILD.gn
-@@ -93,7 +93,7 @@ test("command_buffer_gles2_tests") {
+@@ -96,7 +96,7 @@ test("command_buffer_gles2_tests") {
      libs += [ "android" ]
      deps += [ "//ui/android:ui_java" ]
    }

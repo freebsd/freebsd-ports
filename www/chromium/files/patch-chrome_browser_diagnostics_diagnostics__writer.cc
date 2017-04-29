@@ -1,4 +1,4 @@
---- chrome/browser/diagnostics/diagnostics_writer.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/diagnostics/diagnostics_writer.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/diagnostics/diagnostics_writer.cc
 @@ -263,7 +263,7 @@ bool DiagnosticsWriter::WriteResult(bool
        console_->SetColor(color);

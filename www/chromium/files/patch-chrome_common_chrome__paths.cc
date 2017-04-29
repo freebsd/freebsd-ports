@@ -1,6 +1,6 @@
---- chrome/common/chrome_paths.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/common/chrome_paths.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/common/chrome_paths.cc
-@@ -197,7 +197,7 @@ bool PathProvider(int key, base::FilePat
+@@ -190,7 +190,7 @@ bool PathProvider(int key, base::FilePat
          return false;
        break;
      case chrome::DIR_DEFAULT_DOWNLOADS_SAFE:

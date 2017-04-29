@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
-@@ -75,12 +75,14 @@ void ChromeBrowserMainPartsLinux::PrePro
+@@ -77,12 +77,14 @@ void ChromeBrowserMainPartsLinux::PrePro
  void ChromeBrowserMainPartsLinux::PostProfileInit() {
    ChromeBrowserMainPartsPosix::PostProfileInit();
  
@@ -16,7 +16,7 @@
    bluez::DBusThreadManagerLinux::Initialize();
    bluez::BluezDBusManager::Initialize(
        bluez::DBusThreadManagerLinux::Get()->GetSystemBus(), false);
-@@ -90,7 +92,7 @@ void ChromeBrowserMainPartsLinux::PostMa
+@@ -92,7 +94,7 @@ void ChromeBrowserMainPartsLinux::PostMa
  }
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {

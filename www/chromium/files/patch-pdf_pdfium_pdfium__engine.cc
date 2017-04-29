@@ -1,4 +1,4 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2017-03-09 20:04:35 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2017-04-19 19:06:36 UTC
 +++ pdf/pdfium/pdfium_engine.cc
 @@ -129,7 +129,7 @@ std::vector<uint32_t> GetPageNumbersFrom
    return page_numbers;
@@ -45,7 +45,7 @@
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -2936,7 +2936,7 @@ bool PDFiumEngine::ContinuePaint(int pro
+@@ -2950,7 +2950,7 @@ bool PDFiumEngine::ContinuePaint(int pro
    DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
    DCHECK(image_data);
  
@@ -54,7 +54,7 @@
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3394,7 +3394,7 @@ void PDFiumEngine::SetCurrentPage(int in
+@@ -3408,7 +3408,7 @@ void PDFiumEngine::SetCurrentPage(int in
      FORM_DoPageAAction(old_page, form_, FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

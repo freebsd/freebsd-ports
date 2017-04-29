@@ -1,6 +1,6 @@
---- components/gcm_driver/gcm_client.h.orig	2017-03-09 20:04:31 UTC
+--- components/gcm_driver/gcm_client.h.orig	2017-04-19 19:06:32 UTC
 +++ components/gcm_driver/gcm_client.h
-@@ -78,6 +78,7 @@ class GCMClient {
+@@ -82,6 +82,7 @@ class GCMClient {
      PLATFORM_CROS,
      PLATFORM_IOS,
      PLATFORM_ANDROID,

@@ -1,6 +1,6 @@
---- content/public/common/renderer_preferences.h.orig	2017-01-26 00:49:13 UTC
+--- content/public/common/renderer_preferences.h.orig	2017-04-19 19:06:34 UTC
 +++ content/public/common/renderer_preferences.h
-@@ -139,7 +139,7 @@ struct CONTENT_EXPORT RendererPreference
+@@ -131,7 +131,7 @@ struct CONTENT_EXPORT RendererPreference
    // Country iso of the mobile network for content detection purpose.
    std::string network_contry_iso;
  

@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2017-03-09 20:04:34 UTC
+--- media/base/video_frame.cc.orig	2017-04-19 19:06:35 UTC
 +++ media/base/video_frame.cc
 @@ -53,7 +53,7 @@ static std::string StorageTypeToString(
        return "OWNED_MEMORY";

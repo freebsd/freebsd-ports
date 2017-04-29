@@ -1,4 +1,4 @@
---- crypto/nss_util.cc.orig	2017-01-26 00:49:14 UTC
+--- crypto/nss_util.cc.orig	2017-04-19 19:06:34 UTC
 +++ crypto/nss_util.cc
 @@ -20,7 +20,7 @@
  #include "base/threading/thread_task_runner_handle.h"

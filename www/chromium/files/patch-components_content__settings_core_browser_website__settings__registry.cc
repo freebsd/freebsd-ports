@@ -1,4 +1,4 @@
---- components/content_settings/core/browser/website_settings_registry.cc.orig	2017-01-26 00:49:11 UTC
+--- components/content_settings/core/browser/website_settings_registry.cc.orig	2017-04-19 19:06:32 UTC
 +++ components/content_settings/core/browser/website_settings_registry.cc
 @@ -88,6 +88,9 @@ const WebsiteSettingsInfo* WebsiteSettin
    // doesn't allow the settings to be managed in the same way. See

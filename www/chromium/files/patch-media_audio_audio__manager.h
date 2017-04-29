@@ -1,8 +1,8 @@
---- media/audio/audio_manager.h.orig	2017-01-26 00:49:15 UTC
+--- media/audio/audio_manager.h.orig	2017-04-19 19:06:35 UTC
 +++ media/audio/audio_manager.h
-@@ -84,7 +84,7 @@ class MEDIA_EXPORT AudioManager {
-   // See http://crbug.com/422522
-   static void EnableCrashKeyLoggingForAudioThreadHangs();
+@@ -81,7 +81,7 @@ class MEDIA_EXPORT AudioManager {
+   static void StartHangMonitorIfNeeded(
+       scoped_refptr<base::SingleThreadTaskRunner> task_runner);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)

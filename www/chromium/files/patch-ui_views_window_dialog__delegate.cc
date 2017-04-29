@@ -1,4 +1,4 @@
---- ui/views/window/dialog_delegate.cc.orig	2017-03-09 20:04:49 UTC
+--- ui/views/window/dialog_delegate.cc.orig	2017-04-19 19:06:55 UTC
 +++ ui/views/window/dialog_delegate.cc
 @@ -57,7 +57,7 @@ Widget::InitParams DialogDelegate::GetDi
    params.bounds = bounds;

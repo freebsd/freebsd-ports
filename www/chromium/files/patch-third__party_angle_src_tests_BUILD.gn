@@ -1,4 +1,4 @@
---- third_party/angle/src/tests/BUILD.gn.orig	2017-03-09 20:05:21 UTC
+--- third_party/angle/src/tests/BUILD.gn.orig	2017-04-19 19:07:43 UTC
 +++ third_party/angle/src/tests/BUILD.gn
 @@ -41,7 +41,7 @@ test("angle_unittests") {
    ]
@@ -54,7 +54,7 @@
        libs = [ "pci" ]
      }
    }
-@@ -393,7 +393,7 @@ if (build_angle_deqp_tests) {
+@@ -396,7 +396,7 @@ if (build_angle_deqp_tests) {
          "../../../deqp/src/data/",
        ]
  

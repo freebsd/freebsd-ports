@@ -1,4 +1,4 @@
---- components/metrics/system_memory_stats_recorder_linux.cc.orig	2017-01-26 00:49:12 UTC
+--- components/metrics/system_memory_stats_recorder_linux.cc.orig	2017-04-19 19:06:32 UTC
 +++ components/metrics/system_memory_stats_recorder_linux.cc
 @@ -30,6 +30,7 @@ namespace metrics {
    UMA_HISTOGRAM_LINEAR(name, sample, 2500, 50)

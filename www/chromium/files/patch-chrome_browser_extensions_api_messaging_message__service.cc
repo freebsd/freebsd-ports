@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/messaging/message_service.cc.orig	2017-03-09 20:04:28 UTC
+--- chrome/browser/extensions/api/messaging/message_service.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/extensions/api/messaging/message_service.cc
 @@ -106,7 +106,7 @@ MessageService::PolicyPermission Message
  
@@ -18,7 +18,7 @@
    content::WebContents* web_contents =
        content::WebContents::FromRenderFrameHost(source);
    ExtensionWebContentsObserver* extension_web_contents_observer =
-@@ -447,12 +447,12 @@ void MessageService::OpenChannelToNative
+@@ -446,12 +446,12 @@ void MessageService::OpenChannelToNative
    channel->opener->IncrementLazyKeepaliveCount();
  
    AddChannel(std::move(channel), receiver_port_id);

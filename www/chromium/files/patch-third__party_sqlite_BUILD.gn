@@ -1,4 +1,4 @@
---- third_party/sqlite/BUILD.gn.orig	2017-03-09 20:04:47 UTC
+--- third_party/sqlite/BUILD.gn.orig	2017-04-19 19:06:52 UTC
 +++ third_party/sqlite/BUILD.gn
 @@ -22,7 +22,7 @@ if (!use_system_sqlite) {
        # sqlite3Fts3InitTok).

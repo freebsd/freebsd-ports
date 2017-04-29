@@ -1,4 +1,4 @@
---- ui/views/mus/aura_init.h.orig	2017-03-09 20:04:49 UTC
+--- ui/views/mus/aura_init.h.orig	2017-04-19 19:06:55 UTC
 +++ ui/views/mus/aura_init.h
 @@ -68,7 +68,7 @@ class VIEWS_MUS_EXPORT AuraInit {
   private:

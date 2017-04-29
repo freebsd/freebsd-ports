@@ -1,4 +1,4 @@
---- chrome/browser/interstitials/chrome_controller_client.cc.orig	2017-03-09 20:04:28 UTC
+--- chrome/browser/interstitials/chrome_controller_client.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/interstitials/chrome_controller_client.cc
 @@ -46,7 +46,7 @@ void LaunchDateAndTimeSettingsOnFileThre
  #if defined(OS_ANDROID)

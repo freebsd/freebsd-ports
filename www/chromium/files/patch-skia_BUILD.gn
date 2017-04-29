@@ -1,6 +1,6 @@
---- skia/BUILD.gn.orig	2017-03-09 20:04:36 UTC
+--- skia/BUILD.gn.orig	2017-04-19 19:06:37 UTC
 +++ skia/BUILD.gn
-@@ -124,7 +124,7 @@ config("skia_library_config") {
+@@ -127,7 +127,7 @@ config("skia_library_config") {
    }
  
    # Settings for text blitting, chosen to approximate the system browser.
@@ -9,25 +9,25 @@
      defines += [
        "SK_GAMMA_EXPONENT=1.2",
        "SK_GAMMA_CONTRAST=0.2",
-@@ -340,7 +340,7 @@ component("skia") {
-     sources -= [ "//third_party/skia/src/ports/SkFontHost_mac.cpp" ]
+@@ -326,7 +326,7 @@ component("skia") {
+     set_sources_assignment_filter(sources_assignment_filter)
    }
  
--  if (!is_linux) {
-+  if (!is_linux && !is_bsd) {
-     sources -= [
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     sources += [
        "//third_party/skia/src/ports/SkFontConfigInterface.cpp",
        "//third_party/skia/src/ports/SkFontConfigInterface_direct.cpp",
-@@ -349,7 +349,7 @@ component("skia") {
+@@ -335,7 +335,7 @@ component("skia") {
      ]
    }
  
--  if (!is_linux && !is_android) {
-+  if (!is_linux && !is_bsd && !is_android) {
-     sources -= [
+-  if (is_linux || is_android) {
++  if (is_linux || is_bsd || is_android) {
+     sources += [
        "//third_party/skia/src/ports/SkFontHost_FreeType.cpp",
        "//third_party/skia/src/ports/SkFontHost_FreeType_common.cpp",
-@@ -387,7 +387,7 @@ component("skia") {
+@@ -374,7 +374,7 @@ component("skia") {
      "//base/third_party/dynamic_annotations",
    ]
  

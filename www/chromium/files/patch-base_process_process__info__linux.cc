@@ -1,4 +1,4 @@
---- base/process/process_info_linux.cc.orig	2017-01-26 00:49:07 UTC
+--- base/process/process_info_linux.cc.orig	2017-04-19 19:06:28 UTC
 +++ base/process/process_info_linux.cc
 @@ -11,10 +11,28 @@
  #include "base/process/process_handle.h"
@@ -26,10 +26,10 @@
 +  return Time::FromTimeVal(proc.ki_start);
 +#endif
 +#else
-   ProcessHandle pid = GetCurrentProcessHandle();
    int64_t start_ticks =
-       internal::ReadProcStatsAndGetFieldAsInt64(pid, internal::VM_STARTTIME);
-@@ -23,6 +41,7 @@ const Time CurrentProcessInfo::CreationT
+       internal::ReadProcSelfStatsAndGetFieldAsInt64(internal::VM_STARTTIME);
+   DCHECK(start_ticks);
+@@ -22,6 +40,7 @@ const Time CurrentProcessInfo::CreationT
    Time boot_time = internal::GetBootTime();
    DCHECK(!boot_time.is_null());
    return Time(boot_time + start_offset);

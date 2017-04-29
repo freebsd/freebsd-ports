@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
 @@ -19,7 +19,7 @@
  #include "ui/gfx/image/image_skia.h"

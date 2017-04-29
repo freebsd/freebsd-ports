@@ -1,4 +1,4 @@
---- device/serial/BUILD.gn.orig	2017-01-26 00:49:14 UTC
+--- device/serial/BUILD.gn.orig	2017-04-19 19:06:34 UTC
 +++ device/serial/BUILD.gn
 @@ -6,7 +6,7 @@ import("//build/config/features.gni")
  import("//mojo/public/tools/bindings/mojom.gni")

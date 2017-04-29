@@ -1,4 +1,4 @@
---- v8/src/globals.h.orig	2017-03-09 20:05:30 UTC
+--- v8/src/globals.h.orig	2017-04-19 19:07:57 UTC
 +++ v8/src/globals.h
 @@ -183,7 +183,11 @@ const size_t kCodeRangeAreaAlignment = 2
  const size_t kMaximalCodeRangeSize = 512 * MB;

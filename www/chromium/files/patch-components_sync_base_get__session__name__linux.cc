@@ -1,4 +1,4 @@
---- components/sync/base/get_session_name_linux.cc.orig	2017-02-02 02:02:53 UTC
+--- components/sync/base/get_session_name_linux.cc.orig	2017-04-19 19:06:33 UTC
 +++ components/sync/base/get_session_name_linux.cc
 @@ -13,8 +13,9 @@ namespace syncer {
  namespace internal {

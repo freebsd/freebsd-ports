@@ -1,4 +1,4 @@
---- chrome/app/chrome_main_delegate.cc.orig	2017-03-09 20:04:27 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2017-04-19 19:06:28 UTC
 +++ chrome/app/chrome_main_delegate.cc
 @@ -89,7 +89,7 @@
  #include "chrome/app/chrome_crash_reporter_client.h"
@@ -95,7 +95,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -898,7 +898,7 @@ void ChromeMainDelegate::PreSandboxStart
+@@ -899,7 +899,7 @@ void ChromeMainDelegate::PreSandboxStart
      breakpad::InitCrashReporter(process_type);
  #endif  // defined(OS_ANDROID)
    }
@@ -104,12 +104,12 @@
  
    // After all the platform Breakpads have been initialized, store the command
    // line for crash reporting.
-@@ -1008,7 +1008,7 @@ bool ChromeMainDelegate::DelaySandboxIni
+@@ -1005,7 +1005,7 @@ bool ChromeMainDelegate::DelaySandboxIni
  #endif
    return process_type == switches::kRelauncherProcess;
  }
 -#elif defined(OS_POSIX) && !defined(OS_ANDROID)
 +#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  void ChromeMainDelegate::ZygoteStarting(
-     ScopedVector<content::ZygoteForkDelegate>* delegates) {
+     std::vector<std::unique_ptr<content::ZygoteForkDelegate>>* delegates) {
  #if defined(OS_CHROMEOS)

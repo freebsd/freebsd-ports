@@ -1,4 +1,4 @@
---- components/policy/BUILD.gn.orig	2017-03-09 20:04:31 UTC
+--- components/policy/BUILD.gn.orig	2017-04-19 19:06:33 UTC
 +++ components/policy/BUILD.gn
 @@ -16,6 +16,7 @@ assert(!is_ios, "Policy should not be re
  gen_policy_templates_common = true
@@ -8,7 +8,7 @@
  gen_policy_templates_android = is_android
  gen_policy_templates_mac = is_mac
  
-@@ -128,7 +129,7 @@ grit("grit_policy_templates") {
+@@ -159,7 +160,7 @@ grit("grit_policy_templates") {
      outputs += policy_templates_android_outputs
      defines += [ "gen_policy_templates_android" ]
    }

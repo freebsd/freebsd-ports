@@ -1,17 +1,18 @@
---- content/browser/browser_main_loop.cc.orig	2017-03-09 20:04:32 UTC
+--- content/browser/browser_main_loop.cc.orig	2017-04-19 19:06:33 UTC
 +++ content/browser/browser_main_loop.cc
-@@ -210,6 +210,10 @@
+@@ -210,6 +210,11 @@
  #include "gpu/vulkan/vulkan_implementation.h"
  #endif
  
 +#if defined(OS_BSD)
-+#include "content/common/child_process_sandbox_support_impl_linux.h"
++#include "content/common/sandbox_linux/sandbox_linux.h"
++#include "content/child/child_process_sandbox_support_impl_linux.h"
 +#endif
 +
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -218,7 +222,7 @@
+@@ -218,7 +223,7 @@
  namespace content {
  namespace {
  
@@ -20,7 +21,7 @@
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    if (parsed_command_line.HasSwitch(switches::kNoZygote)) {
-@@ -582,10 +586,15 @@ void BrowserMainLoop::Init() {
+@@ -584,10 +589,15 @@ void BrowserMainLoop::Init() {
  void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  

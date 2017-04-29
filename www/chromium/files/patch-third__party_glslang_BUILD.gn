@@ -1,4 +1,4 @@
---- third_party/glslang/BUILD.gn.orig	2017-01-26 00:49:29 UTC
+--- third_party/glslang/BUILD.gn.orig	2017-04-19 19:06:51 UTC
 +++ third_party/glslang/BUILD.gn
 @@ -8,7 +8,7 @@ config("glslang_config") {
    include_dirs = [ "src" ]

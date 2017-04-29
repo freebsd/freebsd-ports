@@ -1,6 +1,6 @@
---- ui/gfx/BUILD.gn.orig	2017-03-09 20:04:49 UTC
+--- ui/gfx/BUILD.gn.orig	2017-04-19 19:06:54 UTC
 +++ ui/gfx/BUILD.gn
-@@ -375,7 +375,7 @@ component("gfx") {
+@@ -383,7 +383,7 @@ component("gfx") {
    }
  
    # Linux.
@@ -9,7 +9,7 @@
      deps += [ "//build/linux:fontconfig" ]
    }
  
-@@ -570,7 +570,7 @@ static_library("test_support") {
+@@ -592,7 +592,7 @@ static_library("test_support") {
        "test/ui_cocoa_test_helper.mm",
      ]
    }
