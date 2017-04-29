@@ -5116,13 +5116,16 @@
     SUBDIR += rubygem-actionpack-action_caching
     SUBDIR += rubygem-actionview4
     SUBDIR += rubygem-actionview5
+    SUBDIR += rubygem-actionview50
     SUBDIR += rubygem-active_scaffold
     SUBDIR += rubygem-activejob4
     SUBDIR += rubygem-activejob5
+    SUBDIR += rubygem-activejob50
     SUBDIR += rubygem-activemessaging
     SUBDIR += rubygem-activerecord-deprecated_finders
     SUBDIR += rubygem-activesupport4
     SUBDIR += rubygem-activesupport5
+    SUBDIR += rubygem-activesupport50
     SUBDIR += rubygem-akismet
     SUBDIR += rubygem-algebrick
     SUBDIR += rubygem-algorithms

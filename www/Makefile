@@ -1912,8 +1912,10 @@
     SUBDIR += ruby-aws
     SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actioncable5
+    SUBDIR += rubygem-actioncable50
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-actionpack5
+    SUBDIR += rubygem-actionpack50
     SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-acts-as-taggable-on3
@@ -1950,6 +1952,7 @@
     SUBDIR += rubygem-em-twitter
     SUBDIR += rubygem-em-websocket
     SUBDIR += rubygem-emk-sinatra-url-for
+    SUBDIR += rubygem-erubi
     SUBDIR += rubygem-erubis
     SUBDIR += rubygem-ethon
     SUBDIR += rubygem-eventmachine_httpserver
@@ -2075,6 +2078,7 @@
     SUBDIR += rubygem-rails_stdout_logging
     SUBDIR += rubygem-railties4
     SUBDIR += rubygem-railties5
+    SUBDIR += rubygem-railties50
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
