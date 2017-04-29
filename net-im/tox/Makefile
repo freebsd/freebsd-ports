@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore
-PORTVERSION=	0.1.5
-PORTREVISION=	2
+PORTVERSION=	0.1.8
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
@@ -18,7 +17,8 @@ LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
 		libsndfile.so:audio/libsndfile		\
 		libsodium.so:security/libsodium		\
 		libopencv_core.so:graphics/opencv-core	\
-		libopus.so:audio/opus
+		libopus.so:audio/opus			\
+		libconfig.so:devel/libconfig
 TEST_DEPENDS=	${LOCALBASE}/lib/libmsgpackc.so:devel/msgpack	\
 		${LOCALBASE}/lib/libportaudio.so:audio/portaudio
 
