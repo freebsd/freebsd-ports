@@ -6,13 +6,14 @@ PORTVERSION=	4.2.1
 PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
+
 PATCHFILES=	mpntrbits.patch
 PATCH_SITES=	http://sourceforge.net/p/beecrypt/patches/_discuss/thread/bff89ba1/5387/attachment/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	BeeCrypt is an open source cryptography library
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: Error: unsupported relocation against r3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-java --without-python

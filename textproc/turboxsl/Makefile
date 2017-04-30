@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libmemcached.so:databases/libmemcached
 
-BROKEN_powerpc64=	Does not build
-ONLY_FOR_ARCHS=	amd64 ia64 powerpc64 sparc64
+BROKEN_powerpc64=	Does not build: ld: skipping incompatible /usr/local/lib/libck.so when searching for -lck
+ONLY_FOR_ARCHS=	amd64 powerpc64 sparc64
+
 USES=		autoreconf libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
