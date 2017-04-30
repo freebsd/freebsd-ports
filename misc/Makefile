@@ -453,7 +453,6 @@
     SUBDIR += tellico-kde4
     SUBDIR += tempcontrol
     SUBDIR += termatrix
-    SUBDIR += terraform
     SUBDIR += teseq
     SUBDIR += timediff
     SUBDIR += tkcron
