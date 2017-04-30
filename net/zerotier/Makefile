@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zerotier
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	net
 
 MAINTAINER=	dch@skunkwerks.at
