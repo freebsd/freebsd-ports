@@ -489,6 +489,7 @@
     SUBDIR += jailutils
     SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
+    SUBDIR += jdupes
     SUBDIR += jkill
     SUBDIR += jobd
     SUBDIR += jps
