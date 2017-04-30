@@ -492,6 +492,7 @@
     SUBDIR += onenetd
     SUBDIR += onioncat
     SUBDIR += opal
+    SUBDIR += open-isns
     SUBDIR += openafs
     SUBDIR += openbgpd
     SUBDIR += openbsc
