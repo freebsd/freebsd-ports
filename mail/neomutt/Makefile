@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
 
 USE_GITHUB=	yes
 
-USES=		autoreconf gettext iconv:translit localbase shebangfix ssl
+USES=		autoreconf iconv:translit localbase shebangfix ssl
 GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
@@ -69,6 +69,8 @@ TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet
 TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
+NLS_USES_OFF=		gettext-runtime:build gettext-tools:build
 
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_WITH=	idn
