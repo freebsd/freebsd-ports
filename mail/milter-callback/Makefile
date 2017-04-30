@@ -12,9 +12,9 @@ COMMENT=	Milter to perform a envelope-from sender verification on target MX
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libspf2.so:mail/libspf2
+
+BROKEN_powerpc64=	Does not build: error: nested functions are disabled, use -fnested-functions to re-enable
 
 USES=		tar:xz
 USE_RC_SUBR=	milter-callback
