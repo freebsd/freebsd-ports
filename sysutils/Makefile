@@ -256,6 +256,7 @@
     SUBDIR += du2ps
     SUBDIR += duff
     SUBDIR += dunst
+    SUBDIR += dupd
     SUBDIR += duplicity
     SUBDIR += duply
     SUBDIR += dupmerge
