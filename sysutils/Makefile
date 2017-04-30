@@ -256,6 +256,7 @@
     SUBDIR += du2ps
     SUBDIR += duff
     SUBDIR += dunst
+    SUBDIR += dupd
     SUBDIR += duplicity
     SUBDIR += duply
     SUBDIR += dupmerge
@@ -488,6 +489,7 @@
     SUBDIR += jailutils
     SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
+    SUBDIR += jdupes
     SUBDIR += jkill
     SUBDIR += jobd
     SUBDIR += jps

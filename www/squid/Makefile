@@ -28,7 +28,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	squid*-4.*
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: unrecognizable insn
 
 USES=		compiler cpe perl5 shebangfix tar:xz
 CPE_VENDOR=	squid-cache

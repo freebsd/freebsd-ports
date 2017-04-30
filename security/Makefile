@@ -1122,6 +1122,7 @@
     SUBDIR += snortsam
     SUBDIR += snortsnarf
     SUBDIR += softether
+    SUBDIR += softether-devel
     SUBDIR += softhsm
     SUBDIR += softhsm2
     SUBDIR += spass

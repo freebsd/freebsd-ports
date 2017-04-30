@@ -12,11 +12,11 @@ COMMENT=	System for detecting network intruders in real-time
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/bison:devel/bison \
 		${LOCALBASE}/bin/swig:devel/swig13
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+
+BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
 
 USES=		cmake:outsource compiler:c++11-lang perl5 python ssl
 

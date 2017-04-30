@@ -492,6 +492,7 @@
     SUBDIR += onenetd
     SUBDIR += onioncat
     SUBDIR += opal
+    SUBDIR += open-isns
     SUBDIR += openafs
     SUBDIR += openbgpd
     SUBDIR += openbsc
@@ -1290,7 +1291,6 @@
     SUBDIR += socketpipe
     SUBDIR += socketw
     SUBDIR += sofia-sip
-    SUBDIR += softethervpn
     SUBDIR += spideroak
     SUBDIR += splatd
     SUBDIR += spoofer

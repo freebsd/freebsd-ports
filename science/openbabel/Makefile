@@ -10,9 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chemistry file translation program
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
+
+BROKEN_powerpc64=	Does not build: relocation truncated to fit: R_PPC64_TOC16_DS
 
 CONFLICTS_INSTALL=	babel-*
 

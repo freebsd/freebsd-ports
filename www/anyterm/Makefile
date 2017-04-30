@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: ld: cannot find -lboost_system
 
 USE_RC_SUBR=	anytermd
 USES=		gmake iconv localbase tar:tbz2
