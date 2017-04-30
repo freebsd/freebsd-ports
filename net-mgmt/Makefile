@@ -66,7 +66,6 @@
     SUBDIR += fetchconfig
     SUBDIR += flow-extract
     SUBDIR += flow-tools
-    SUBDIR += flow-tools-ng
     SUBDIR += flowd
     SUBDIR += flowviewer
     SUBDIR += fprobe
