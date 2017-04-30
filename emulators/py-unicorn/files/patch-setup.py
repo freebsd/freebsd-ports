@@ -1,6 +1,6 @@
 # Do not bundle libunicorn.so
 
---- setup.py.orig	2017-02-23 12:57:14 UTC
+--- setup.py.orig	2017-04-20 06:14:24 UTC
 +++ setup.py
 @@ -260,11 +260,4 @@ setup(
          'Programming Language :: Python :: 3',
