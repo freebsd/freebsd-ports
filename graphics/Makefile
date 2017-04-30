@@ -616,7 +616,6 @@
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad
     SUBDIR += ocre
-    SUBDIR += ocropus
     SUBDIR += ogre3d
     SUBDIR += okular
     SUBDIR += opencollada
