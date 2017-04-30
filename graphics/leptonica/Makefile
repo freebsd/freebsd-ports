@@ -3,6 +3,7 @@
 
 PORTNAME=	leptonica
 PORTVERSION=	1.74.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.leptonica.com/source/
 
