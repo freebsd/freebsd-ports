@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	sks
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	security
 MASTER_SITES=	http://bitbucket.org/skskeyserver/sks-keyserver/downloads/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
+
+LICENSE=	GPLv2+
 
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
