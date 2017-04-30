@@ -153,10 +153,10 @@ CC=	clang
 CXX=	clang++
 CHOSEN_COMPILER_TYPE=	clang
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang36:lang/clang36
-CPP=	${LOCALBASE}/bin/clang-cpp36
-CC=	${LOCALBASE}/bin/clang36
-CXX=	${LOCALBASE}/bin/clang++36
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang40:devel/llvm40
+CPP=	${LOCALBASE}/bin/clang-cpp40
+CC=	${LOCALBASE}/bin/clang40
+CXX=	${LOCALBASE}/bin/clang++40
 CHOSEN_COMPILER_TYPE=	clang
 .endif
 .endif
