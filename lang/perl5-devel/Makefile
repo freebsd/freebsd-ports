@@ -25,7 +25,7 @@ LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
 # Uncomment when the default Perl is switched to 5.2(X+2)
 #DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
-#EXPIRATION_DATE=<Release date of .0 + 3 years>
+# Expiration date is <Release date of .0 + 3 years>
 
 TEST_TARGET=	test_harness
 TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \

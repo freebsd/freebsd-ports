@@ -1,2 +1,3 @@
-SHA256 (PyQt-x11-gpl-4.11.4.tar.gz) = fc1fe77495432ba3b0d74ff5cb164d375a97f5dddb728256330f615a7cdcf407
-SIZE (PyQt-x11-gpl-4.11.4.tar.gz) = 11317088
+TIMESTAMP = 1487867323
+SHA256 (PyQt4_gpl_x11-4.12.tar.gz) = 3c1d4b55314adb3e1132de8fc2a92eed216d37e58aceed41294dbca210ca88db
+SIZE (PyQt4_gpl_x11-4.12.tar.gz) = 11325395

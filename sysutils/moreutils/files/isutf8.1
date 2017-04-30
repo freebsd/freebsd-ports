@@ -1,13 +1,13 @@
 '\" t
 .\"     Title: isutf8
-.\"    Author: Lars Wirzenius
+.\"    Author: Lars Wirzenius <liw@iki.fi>
 .\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
-.\"      Date: 2006-02-19
+.\"      Date: 04/30/2017
 .\"    Manual: moreutils
 .\"    Source: moreutils
 .\"  Language: English
 .\"
-.TH "ISUTF8" "1" "2006\-02\-19" "moreutils" "moreutils"
+.TH "ISUTF8" "1" "04/30/2017" "moreutils" "moreutils"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -31,7 +31,7 @@
 isutf8 \- check whether files are valid UTF\-8
 .SH "SYNOPSIS"
 .HP \w'\fBisutf8\fR\ 'u
-\fBisutf8\fR [\fB\-hq\fR] [\fB\-\-help\fR] [\fB\-\-quiet\fR] [[\fIfile\fR...]]
+\fBisutf8\fR [\fB\-hqliv\fR] [\fB\-\-help\fR] [\fB\-\-quiet\fR] [\fB\-\-list\fR] [\fB\-\-invert\fR] [\fB\-\-verbose\fR] [[\fIfile\fR...]]
 .SH "DESCRIPTION"
 .PP
 \fBisutf8\fR
@@ -47,12 +47,27 @@ Print out a help summary\&.
 .RS 4
 Don\*(Aqt print messages telling which files are invalid UTF\-8, merely indicate it with the exit status\&.
 .RE
+.PP
+\fB\-l\fR, \fB\-\-list\fR
+.RS 4
+Print only the names of files containing invalid UTF\-8\&.
+.RE
+.PP
+\fB\-i\fR, \fB\-\-invert\fR
+.RS 4
+Invert the selection: list UTF\-8 compatible files\&.
+.RE
+.PP
+\fB\-v\fR, \fB\-\-verbose\fR
+.RS 4
+Also print an hexdump\-like view of the error and some context\&.
+.RE
 .SH "EXIT STATUS"
 .PP
 If the file is valid UTF\-8, the exit status is zero\&. If the file is not valid UTF\-8, or there is some error, the exit status is non\-zero\&.
 .SH "AUTHOR"
 .PP
-Lars Wirzenius
+Lars Wirzenius, Julien Palard
 .SH "SEE ALSO"
 .PP
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus
 PORTVERSION=	1.5.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/:DEFAULT \
 		https://raw.githubusercontent.com/Ranks/emojione/${EMOJIONE_TAG}/:emojione
@@ -109,9 +109,6 @@ PLIST_SUB+=	COMPDIR="@comment "
 
 post-extract-EMOJI-on:
 	${CP} ${DISTDIR}/emoji.json ${WRKSRC}/
-
-post-patch:
-	${REINPLACE_CMD} -e 's|/var/lib/dbus|/var/db/dbus|g' ${WRKSRC}/src/ibusshare.c
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
