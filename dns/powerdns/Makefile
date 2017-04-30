@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: undefined reference to std::__throw_out_of_range_fmt
 BROKEN_sparc64=		Does not compile: error: to_string is not a member of std
 
 USES=		compiler:c++11-lib cpe gmake libtool localbase:ldflags pathfix pkgconfig ssl \

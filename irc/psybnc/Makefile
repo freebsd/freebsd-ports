@@ -13,7 +13,7 @@ COMMENT=	Powerful IRC bouncer
 
 LICENSE=	GPLv1+ # though COPYING is GPLv2
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: exec(clang) failed (No such file or directory)
 
 USES=		dos2unix ssl
 DOS2UNIX_GLOB=	*.c *.h

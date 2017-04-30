@@ -9,6 +9,6 @@ OPTIONS_EXCLUDE=	X11 QRCODES
 SLAVE_PORT=	yes
 
 BROKEN_armv6=	AtomicPointer not implemented
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not configure: error: No working boost sleep implementation found
 
 .include "${MASTERDIR}/Makefile"

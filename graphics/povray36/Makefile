@@ -14,10 +14,10 @@ DIST_SUBDIR=	povray36
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Persistence of Vision Ray Tracer
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
+
+BROKEN_powerpc64=	Does not build: error: 64 bit CPU required
 
 USE_XORG=	x11
 USES=		gmake jpeg tar:bzip2
