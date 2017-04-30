@@ -1,7 +1,7 @@
---- third_party/pdfium/BUILD.gn.orig	2017-03-09 20:05:26 UTC
+--- third_party/pdfium/BUILD.gn.orig	2017-04-19 19:07:49 UTC
 +++ third_party/pdfium/BUILD.gn
-@@ -45,7 +45,7 @@ config("pdfium_core_config") {
-   ldflags = []
+@@ -65,7 +65,7 @@ config("pdfium_core_config") {
+   cflags = []
    configs = [ ":pdfium_common_config" ]
    defines = [ "V8_DEPRECATION_WARNINGS" ]
 -  if (is_linux) {

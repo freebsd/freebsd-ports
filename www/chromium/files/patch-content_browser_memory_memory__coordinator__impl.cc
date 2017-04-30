@@ -1,6 +1,6 @@
---- content/browser/memory/memory_coordinator_impl.cc.orig	2017-03-09 20:04:32 UTC
+--- content/browser/memory/memory_coordinator_impl.cc.orig	2017-04-19 19:06:33 UTC
 +++ content/browser/memory/memory_coordinator_impl.cc
-@@ -148,8 +148,12 @@ void MemoryCoordinatorHandleImpl::AddChi
+@@ -90,8 +90,12 @@ void MemoryCoordinatorHandleImpl::AddChi
  struct MemoryCoordinatorImplSingletonTraits
      : public base::LeakySingletonTraits<MemoryCoordinatorImpl> {
    static MemoryCoordinatorImpl* New() {

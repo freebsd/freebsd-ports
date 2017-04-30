@@ -1,6 +1,6 @@
---- chrome/browser/about_flags.cc.orig	2017-03-09 20:04:27 UTC
+--- chrome/browser/about_flags.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/about_flags.cc
-@@ -820,7 +820,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -856,7 +856,7 @@ const FeatureEntry kFeatureEntries[] = {
       kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
                                 switches::kDisableSmoothScrolling)},
@@ -9,7 +9,7 @@
      {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
       IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
       // Uses the system preference on Mac (a different implementation).
-@@ -1345,11 +1345,11 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1374,11 +1374,11 @@ const FeatureEntry kFeatureEntries[] = {
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableTranslateNewUX,
                                 switches::kDisableTranslateNewUX)},
  #endif  // OS_MACOSX
@@ -23,7 +23,7 @@
      {"translate-lang-by-ulp", IDS_FLAGS_TRANSLATE_LANGUAGE_BY_ULP_NAME,
       IDS_FLAGS_TRANSLATE_LANGUAGE_BY_ULP_DESCRIPTION, kOsAll,
       FEATURE_VALUE_TYPE(translate::kTranslateLanguageByULP)},
-@@ -1778,7 +1778,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1802,7 +1802,7 @@ const FeatureEntry kFeatureEntries[] = {
       IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
  #endif  // ENABLE_EXTENSIONS

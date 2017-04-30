@@ -1,7 +1,7 @@
---- third_party/webrtc/base/platform_thread.cc.orig	2017-01-26 00:50:17 UTC
+--- third_party/webrtc/base/platform_thread.cc.orig	2017-04-19 19:07:52 UTC
 +++ third_party/webrtc/base/platform_thread.cc
-@@ -12,11 +12,18 @@
- 
+@@ -13,11 +13,18 @@
+ #include "webrtc/base/atomicops.h"
  #include "webrtc/base/checks.h"
  
 -#if defined(WEBRTC_LINUX)
@@ -20,7 +20,7 @@
  namespace rtc {
  
  PlatformThreadId CurrentThreadId() {
-@@ -26,6 +33,8 @@ PlatformThreadId CurrentThreadId() {
+@@ -27,6 +34,8 @@ PlatformThreadId CurrentThreadId() {
  #elif defined(WEBRTC_POSIX)
  #if defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
    ret = pthread_mach_thread_np(pthread_self());
@@ -29,7 +29,7 @@
  #elif defined(WEBRTC_LINUX)
    ret =  syscall(__NR_gettid);
  #elif defined(WEBRTC_ANDROID)
-@@ -69,7 +78,9 @@ void SetCurrentThreadName(const char* na
+@@ -70,7 +79,9 @@ void SetCurrentThreadName(const char* na
                       reinterpret_cast<ULONG_PTR*>(&threadname_info));
    } __except (EXCEPTION_EXECUTE_HANDLER) {
    }

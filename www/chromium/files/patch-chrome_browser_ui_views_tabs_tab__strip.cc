@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/tab_strip.cc.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/views/tabs/tab_strip.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/views/tabs/tab_strip.cc
 @@ -323,7 +323,7 @@ NewTabButton::NewTabButton(TabStrip* tab
        tab_strip_(tab_strip),

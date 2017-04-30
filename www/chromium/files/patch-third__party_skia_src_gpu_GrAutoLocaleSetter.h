@@ -1,4 +1,4 @@
---- third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig	2017-03-09 20:05:27 UTC
+--- third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig	2017-04-19 19:07:51 UTC
 +++ third_party/skia/src/gpu/GrAutoLocaleSetter.h
 @@ -25,7 +25,7 @@
  #define HAVE_XLOCALE 0

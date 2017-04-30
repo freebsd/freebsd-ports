@@ -1,4 +1,4 @@
---- base/third_party/libevent/BUILD.gn.orig	2017-03-09 20:04:26 UTC
+--- base/third_party/libevent/BUILD.gn.orig	2017-04-19 19:06:28 UTC
 +++ base/third_party/libevent/BUILD.gn
 @@ -50,6 +50,9 @@ static_library("libevent") {
        "linux/event-config.h",

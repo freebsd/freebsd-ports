@@ -1,6 +1,6 @@
---- content/gpu/BUILD.gn.orig	2017-03-09 20:04:32 UTC
+--- content/gpu/BUILD.gn.orig	2017-04-19 19:06:34 UTC
 +++ content/gpu/BUILD.gn
-@@ -97,6 +97,7 @@ target(link_target_type, "gpu_sources") 
+@@ -98,6 +98,7 @@ target(link_target_type, "gpu_sources") 
  
    if (use_x11) {
      deps += [ "//ui/events/platform/x11" ]

@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
 @@ -26,14 +26,14 @@
  #include "ui/wm/core/wm_state.h"

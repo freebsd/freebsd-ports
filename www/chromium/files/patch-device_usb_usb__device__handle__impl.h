@@ -1,4 +1,4 @@
---- device/usb/usb_device_handle_impl.h.orig	2017-01-26 00:49:14 UTC
+--- device/usb/usb_device_handle_impl.h.orig	2017-04-19 19:06:34 UTC
 +++ device/usb/usb_device_handle_impl.h
 @@ -18,7 +18,12 @@
  #include "base/memory/ref_counted.h"

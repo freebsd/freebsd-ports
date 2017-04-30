@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 @@ -38,7 +38,7 @@
  #include "ui/views/window/frame_background.h"

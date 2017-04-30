@@ -1,4 +1,4 @@
---- base/process/process_metrics.h.orig	2017-03-09 20:04:26 UTC
+--- base/process/process_metrics.h.orig	2017-04-19 19:06:28 UTC
 +++ base/process/process_metrics.h
 @@ -22,6 +22,12 @@
  #include "base/values.h"

@@ -1,7 +1,7 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -37,11 +37,11 @@
- #include "ash/common/wm_shell.h"  // nogncheck
+@@ -36,11 +36,11 @@
+ #include "components/user_manager/user_manager.h"
  #endif
  
 -#if defined(OS_LINUX)
@@ -14,7 +14,7 @@
  #include "ui/views/widget/desktop_aura/x11_desktop_handler.h"
  #endif
  
-@@ -98,7 +98,7 @@ void BrowserFrame::InitBrowserFrame() {
+@@ -97,7 +97,7 @@ void BrowserFrame::InitBrowserFrame() {
      non_client_view()->set_context_menu_controller(this);
    }
  

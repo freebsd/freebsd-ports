@@ -1,4 +1,4 @@
---- third_party/pdfium/third_party/base/logging.h.orig	2017-01-26 00:50:15 UTC
+--- third_party/pdfium/third_party/base/logging.h.orig	2017-04-19 19:07:50 UTC
 +++ third_party/pdfium/third_party/base/logging.h
 @@ -10,7 +10,7 @@
  

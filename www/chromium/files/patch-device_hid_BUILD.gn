@@ -1,4 +1,4 @@
---- device/hid/BUILD.gn.orig	2017-01-26 00:49:14 UTC
+--- device/hid/BUILD.gn.orig	2017-04-19 19:06:34 UTC
 +++ device/hid/BUILD.gn
 @@ -56,6 +56,13 @@ source_set("hid") {
      deps += [ "//device/udev_linux" ]

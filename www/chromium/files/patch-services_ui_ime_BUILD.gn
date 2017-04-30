@@ -1,7 +1,7 @@
---- services/ui/ime/BUILD.gn.orig	2017-01-26 00:49:17 UTC
+--- services/ui/ime/BUILD.gn.orig	2017-04-19 19:06:37 UTC
 +++ services/ui/ime/BUILD.gn
-@@ -50,7 +50,6 @@ test("mus_ime_unittests") {
-     ":test_manifest",
+@@ -51,7 +51,6 @@ service_test("mus_ime_unittests") {
+   data_deps = [
      ":lib",
      "//services/ui",
 -    "//services/ui/ime/test_ime_driver",

@@ -1,4 +1,4 @@
---- ui/base/ime/input_method_initializer.cc.orig	2017-01-26 00:49:31 UTC
+--- ui/base/ime/input_method_initializer.cc.orig	2017-04-19 19:06:54 UTC
 +++ ui/base/ime/input_method_initializer.cc
 @@ -8,14 +8,14 @@
  

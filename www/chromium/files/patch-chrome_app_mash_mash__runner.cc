@@ -1,6 +1,6 @@
---- chrome/app/mash/mash_runner.cc.orig	2017-03-09 20:04:27 UTC
+--- chrome/app/mash/mash_runner.cc.orig	2017-04-19 19:06:28 UTC
 +++ chrome/app/mash/mash_runner.cc
-@@ -249,7 +249,7 @@ int MashMain() {
+@@ -263,7 +263,7 @@ int MashMain() {
    // TODO(sky): wire this up correctly.
    service_manager::InitializeLogging();
  

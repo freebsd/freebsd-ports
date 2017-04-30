@@ -1,6 +1,6 @@
---- tools/gn/args.cc.orig	2017-03-09 20:04:48 UTC
+--- tools/gn/args.cc.orig	2017-04-19 19:06:54 UTC
 +++ tools/gn/args.cc
-@@ -270,6 +270,8 @@ void Args::SetSystemVarsLocked(Scope* de
+@@ -298,6 +298,8 @@ void Args::SetSystemVarsLocked(Scope* de
    os = "mac";
  #elif defined(OS_LINUX)
    os = "linux";

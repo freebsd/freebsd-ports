@@ -1,4 +1,4 @@
---- chrome/browser/ui/libgtkui/print_dialog_gtk.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/browser/ui/libgtkui/print_dialog_gtk.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/libgtkui/print_dialog_gtk.cc
 @@ -347,6 +347,7 @@ void PrintDialogGtk2::ShowDialog(
    // Since we only generate PDF, only show printers that support PDF.

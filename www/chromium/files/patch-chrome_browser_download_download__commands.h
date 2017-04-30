@@ -1,4 +1,4 @@
---- chrome/browser/download/download_commands.h.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/download/download_commands.h.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/download/download_commands.h
 @@ -43,7 +43,8 @@ class DownloadCommands {
    void ExecuteCommand(Command command);

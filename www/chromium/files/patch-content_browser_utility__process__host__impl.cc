@@ -1,4 +1,4 @@
---- content/browser/utility_process_host_impl.cc.orig	2017-03-09 20:04:32 UTC
+--- content/browser/utility_process_host_impl.cc.orig	2017-04-19 19:06:33 UTC
 +++ content/browser/utility_process_host_impl.cc
 @@ -44,9 +44,9 @@
  #include "services/service_manager/public/cpp/interface_provider.h"

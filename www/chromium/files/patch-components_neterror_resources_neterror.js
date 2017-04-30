@@ -1,4 +1,4 @@
---- components/neterror/resources/neterror.js.orig	2017-03-09 20:04:31 UTC
+--- components/neterror/resources/neterror.js.orig	2017-04-19 19:06:32 UTC
 +++ components/neterror/resources/neterror.js
 @@ -150,7 +150,7 @@ function setUpCachedButton(buttonStrings
  }

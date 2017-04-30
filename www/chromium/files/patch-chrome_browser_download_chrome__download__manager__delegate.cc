@@ -1,4 +1,4 @@
---- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2017-03-09 20:04:28 UTC
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/download/chrome_download_manager_delegate.cc
 @@ -777,7 +777,7 @@ void ChromeDownloadManagerDelegate::OnDo
          target_info->is_filetype_handled_safely)

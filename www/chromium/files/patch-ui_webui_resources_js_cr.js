@@ -1,4 +1,4 @@
---- ui/webui/resources/js/cr.js.orig	2017-01-26 00:49:32 UTC
+--- ui/webui/resources/js/cr.js.orig	2017-04-19 19:06:55 UTC
 +++ ui/webui/resources/js/cr.js
 @@ -451,6 +451,11 @@ var cr = cr || function() {
      get doc() {
