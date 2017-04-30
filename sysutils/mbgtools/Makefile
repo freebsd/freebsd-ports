@@ -17,7 +17,7 @@ USES=		kmod uidfix
 
 BROKEN_aarch64=		cannot compile: unused variables
 BROKEN_mips64=		cannot compile: unused variables
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	cannot compile: warning: mbg_dbg_data defined but not used
 BROKEN_sparc64=		cannot compile: error in structure definitions
 
 .include <bsd.port.mk>

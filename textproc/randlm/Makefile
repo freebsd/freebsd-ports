@@ -24,9 +24,9 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-BROKEN_aarch64=		Fails to compile: invalid output constraint =a in asm
-BROKEN_armv6=		Fails to compile: invalid output constraint =a in asm
-BROKEN_powerpc64=	Does not build
+BROKEN_aarch64=		fails to compile: invalid output constraint =a in asm
+BROKEN_armv6=		fails to compile: invalid output constraint =a in asm
+BROKEN_powerpc64=	fails to compile: error: 'itr' does not name a type
 
 post-patch:
 	cd ${WRKSRC}/hadoop && ${MV} strings.cpp strings.cc && ${MV} strings.h s.h

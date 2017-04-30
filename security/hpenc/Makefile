@@ -11,7 +11,7 @@ COMMENT=	Fast authenticated encryption CLI tool
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: fatal error: cpuid_flags.inc: No such file or directory
 
 NOT_FOR_ARCHS=		aarch64 sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this architecture

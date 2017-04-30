@@ -18,7 +18,7 @@ BUILD_DEPENDS=	libevent>=2.0.8:devel/libevent
 LIB_DEPENDS=	libevent_openssl.so:devel/libevent
 
 BROKEN_SSL=	openssl-devel
-BROKEN_powerpc64=	does not build
+BROKEN_powerpc64=	does not link: undefined reference to `std::ctype<char>::_M_widen_init()
 BROKEN_sparc64=	does not build: fails to link
 
 CONFIGURE_ARGS=	--enable-examples \
