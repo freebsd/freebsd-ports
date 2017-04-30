@@ -30,7 +30,6 @@
     SUBDIR += apercu
     SUBDIR += aria2
     SUBDIR += aria2fe
-    SUBDIR += arora
     SUBDIR += asql
     SUBDIR += asterisk-stat
     SUBDIR += atutor
@@ -87,10 +86,8 @@
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
     SUBDIR += closure-compiler
-    SUBDIR += closure-linter
     SUBDIR += cmsmadesimple
     SUBDIR += cntlm
-    SUBDIR += cocoon
     SUBDIR += codeigniter
     SUBDIR += coppermine
     SUBDIR += cplanet
@@ -162,7 +159,6 @@
     SUBDIR += fcgi
     SUBDIR += fcgiwrap
     SUBDIR += feedjack
-    SUBDIR += feedonfeeds
     SUBDIR += ffproxy
     SUBDIR += fira-webfont
     SUBDIR += firefox
@@ -188,7 +184,6 @@
     SUBDIR += ftasv
     SUBDIR += g-cows
     SUBDIR += g-gcl
-    SUBDIR += gaeo
     SUBDIR += gaeutilities
     SUBDIR += gallery2
     SUBDIR += gallery3
@@ -313,7 +308,6 @@
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
-    SUBDIR += httpsqs
     SUBDIR += httptunnel
     SUBDIR += httrack
     SUBDIR += hypermail
@@ -334,7 +328,6 @@
     SUBDIR += jinzora
     SUBDIR += jmeter
     SUBDIR += joomla3
-    SUBDIR += jspacker
     SUBDIR += jspwiki
     SUBDIR += jtoolkit
     SUBDIR += junkbuster
@@ -437,13 +430,9 @@
     SUBDIR += mod_auth_pubtkt
     SUBDIR += mod_auth_tkt
     SUBDIR += mod_auth_xradius
-    SUBDIR += mod_authn_otp
     SUBDIR += mod_authn_sasl
     SUBDIR += mod_authnz_crowd
-    SUBDIR += mod_authnz_external22
     SUBDIR += mod_authnz_external24
-    SUBDIR += mod_authz_unixgroup22
-    SUBDIR += mod_authz_unixgroup24
     SUBDIR += mod_backtrace
     SUBDIR += mod_bw
     SUBDIR += mod_cband
@@ -467,13 +456,11 @@
     SUBDIR += mod_h264_streaming
     SUBDIR += mod_hosts_access
     SUBDIR += mod_http2-devel
-    SUBDIR += mod_jail
     SUBDIR += mod_jk
     SUBDIR += mod_layout22
     SUBDIR += mod_limitipconn2
     SUBDIR += mod_line_edit
     SUBDIR += mod_log_config-st
-    SUBDIR += mod_log_firstbyte
     SUBDIR += mod_log_mysql
     SUBDIR += mod_log_sql2
     SUBDIR += mod_log_sql2-dtc
@@ -483,7 +470,6 @@
     SUBDIR += mod_mono
     SUBDIR += mod_mpm_itk
     SUBDIR += mod_musicindex
-    SUBDIR += mod_myvhost
     SUBDIR += mod_ntlm2
     SUBDIR += mod_perl2
     SUBDIR += mod_php56
@@ -1463,7 +1449,6 @@
     SUBDIR += pglogd
     SUBDIR += phalcon
     SUBDIR += photo_gallery
-    SUBDIR += php-plurk-api
     SUBDIR += php-screw
     SUBDIR += php-templates
     SUBDIR += php56-opcache
@@ -1543,7 +1528,6 @@
     SUBDIR += py-django-allauth
     SUBDIR += py-django-annotations
     SUBDIR += py-django-annoying
-    SUBDIR += py-django-app-plugins
     SUBDIR += py-django-appconf
     SUBDIR += py-django-appmedia
     SUBDIR += py-django-assets
@@ -1632,7 +1616,6 @@
     SUBDIR += py-djangorestframework-xml
     SUBDIR += py-djangotoolbox
     SUBDIR += py-dojango
-    SUBDIR += py-dotcloud.cli
     SUBDIR += py-dtflickr
     SUBDIR += py-evernote
     SUBDIR += py-falcon
@@ -1778,7 +1761,6 @@
     SUBDIR += py-plonetheme.classic
     SUBDIR += py-plonetheme.sunburst
     SUBDIR += py-poster
-    SUBDIR += py-postmarkup
     SUBDIR += py-praw
     SUBDIR += py-prewikka
     SUBDIR += py-puppetboard
@@ -1864,7 +1846,6 @@
     SUBDIR += pycarddav
     SUBDIR += pydio
     SUBDIR += pyjamas
-    SUBDIR += pylot
     SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
@@ -2186,7 +2167,6 @@
     SUBDIR += squidclamav
     SUBDIR += squidguard
     SUBDIR += squidpurge
-    SUBDIR += squidstats
     SUBDIR += squidview
     SUBDIR += srg
     SUBDIR += stagit
@@ -2195,7 +2175,6 @@
     SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += surfraw
-    SUBDIR += sventon
     SUBDIR += swfdec-plugin
     SUBDIR += swiggle
     SUBDIR += swish++
@@ -2209,7 +2188,6 @@
     SUBDIR += tdom
     SUBDIR += template_
     SUBDIR += templatelite
-    SUBDIR += tengine
     SUBDIR += testlink
     SUBDIR += textpattern
     SUBDIR += thttpd
@@ -2249,7 +2227,6 @@
     SUBDIR += trac-datefield
     SUBDIR += trac-defaultcc
     SUBDIR += trac-discussion
-    SUBDIR += trac-down
     SUBDIR += trac-downloads
     SUBDIR += trac-email2trac
     SUBDIR += trac-email2trac-postfix
@@ -2456,8 +2433,6 @@
     SUBDIR += xpi-noscript
     SUBDIR += xpi-passwordmaker
     SUBDIR += xpi-pdf_download
-    SUBDIR += xpi-pencil
-    SUBDIR += xpi-pentadactyl
     SUBDIR += xpi-permatabs
     SUBDIR += xpi-quick-locale-switcher
     SUBDIR += xpi-quickproxy

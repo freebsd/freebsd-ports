@@ -503,7 +503,6 @@
     SUBDIR += xless
     SUBDIR += xosd
     SUBDIR += xpns
-    SUBDIR += xsw
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += xtypo

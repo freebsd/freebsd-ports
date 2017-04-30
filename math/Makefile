@@ -108,7 +108,6 @@
     SUBDIR += calcoo
     SUBDIR += calctool
     SUBDIR += cantor
-    SUBDIR += carve
     SUBDIR += cblas
     SUBDIR += ccmath
     SUBDIR += ceres-solver
@@ -159,7 +158,6 @@
     SUBDIR += fftw3-long
     SUBDIR += fftw3-quad
     SUBDIR += fityk
-    SUBDIR += foma
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib
@@ -251,7 +249,6 @@
     SUBDIR += levmar
     SUBDIR += libRmath
     SUBDIR += libflame
-    SUBDIR += libjbigi
     SUBDIR += liblbfgs
     SUBDIR += libmissing
     SUBDIR += libocas

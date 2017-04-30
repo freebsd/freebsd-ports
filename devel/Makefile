@@ -182,7 +182,6 @@
     SUBDIR += blame
     SUBDIR += bmake
     SUBDIR += bmkdep
-    SUBDIR += bncsutil-ghost++
     SUBDIR += bnf
     SUBDIR += boaconstructor
     SUBDIR += boehm-gc
@@ -231,7 +230,6 @@
     SUBDIR += bzr-svn
     SUBDIR += bzr-upload
     SUBDIR += bzrtools
-    SUBDIR += c-unit
     SUBDIR += c2mdoc
     SUBDIR += caf
     SUBDIR += calibrator
@@ -834,7 +832,6 @@
     SUBDIR += guikachu
     SUBDIR += guile-lib
     SUBDIR += guiloader
-    SUBDIR += guiloader-c++
     SUBDIR += gumbo
     SUBDIR += gvfs
     SUBDIR += gvp
@@ -1364,7 +1361,6 @@
     SUBDIR += liblogging
     SUBDIR += liblognorm
     SUBDIR += liblouis
-    SUBDIR += liblouisxml
     SUBDIR += libltdl
     SUBDIR += liblxqt
     SUBDIR += liblxqt-l10n
@@ -1674,7 +1670,6 @@
     SUBDIR += newt
     SUBDIR += newtonsoft-json
     SUBDIR += nexus2-oss
-    SUBDIR += nglogc
     SUBDIR += nimble
     SUBDIR += nini
     SUBDIR += ninja
@@ -1687,7 +1682,6 @@
     SUBDIR += nsgenbind
     SUBDIR += nspr
     SUBDIR += nuitka
-    SUBDIR += nxt-python
     SUBDIR += obby
     SUBDIR += objecthash
     SUBDIR += ocaml-annexlib
@@ -3989,7 +3983,6 @@
     SUBDIR += pragmarcs
     SUBDIR += premake
     SUBDIR += premake4
-    SUBDIR += privman
     SUBDIR += projectcenter
     SUBDIR += protobuf
     SUBDIR += protobuf-c
@@ -4190,12 +4183,10 @@
     SUBDIR += py-cloudpickle
     SUBDIR += py-cluster
     SUBDIR += py-cmd2
-    SUBDIR += py-cmdln
     SUBDIR += py-cmdtest
     SUBDIR += py-codecov
     SUBDIR += py-codegen
     SUBDIR += py-cog
-    SUBDIR += py-coil
     SUBDIR += py-collective.monkeypatcher
     SUBDIR += py-collective.z3cform.datetimewidget
     SUBDIR += py-colorama
@@ -4546,7 +4537,6 @@
     SUBDIR += py-ptrace
     SUBDIR += py-ptvsd
     SUBDIR += py-pudb
-    SUBDIR += py-px
     SUBDIR += py-py
     SUBDIR += py-pyasn1
     SUBDIR += py-pyasn1-modules
@@ -5703,7 +5693,6 @@
     SUBDIR += spark
     SUBDIR += sparsehash
     SUBDIR += spatialindex
-    SUBDIR += spdict
     SUBDIR += spdlog
     SUBDIR += spice-protocol
     SUBDIR += spin
@@ -5719,10 +5708,8 @@
     SUBDIR += stlfilt
     SUBDIR += stlink
     SUBDIR += storm
-    SUBDIR += stormlib-ghost++
     SUBDIR += str
     SUBDIR += strace
-    SUBDIR += streamhtmlparser
     SUBDIR += stringencoders
     SUBDIR += stxxl
     SUBDIR += styx
@@ -5838,7 +5825,6 @@
     SUBDIR += websocketpp
     SUBDIR += websvn
     SUBDIR += wininfo
-    SUBDIR += winpdb
     SUBDIR += wizardkit
     SUBDIR += wxGlade
     SUBDIR += wxformbuilder

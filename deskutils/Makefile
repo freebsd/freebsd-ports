@@ -130,7 +130,6 @@
     SUBDIR += kruler
     SUBDIR += ksshaskpass
     SUBDIR += launchy
-    SUBDIR += libgcal
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += libstreamanalyzer
     SUBDIR += libstreams
@@ -149,7 +148,6 @@
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
     SUBDIR += myitcrm
-    SUBDIR += nagaina
     SUBDIR += nautilus-actions
     SUBDIR += nautilus-sendto
     SUBDIR += nemo-extensions
@@ -180,7 +178,6 @@
     SUBDIR += plasma-applet-daisy
     SUBDIR += plasma-applet-fancytasks
     SUBDIR += plasma-applet-panelspacer
-    SUBDIR += plasma-applet-playwolf
     SUBDIR += plasma-applet-qstardict
     SUBDIR += plasma-applet-serverstatuswidget
     SUBDIR += plasma-applet-simpleweatherforecast
@@ -225,7 +222,6 @@
     SUBDIR += strigiutils
     SUBDIR += sugarcrm
     SUBDIR += superkaramba
-    SUBDIR += superswitcher
     SUBDIR += surrealtodo
     SUBDIR += syncthing-gtk
     SUBDIR += systempreferences
@@ -248,7 +244,6 @@
     SUBDIR += treeline
     SUBDIR += treesheets
     SUBDIR += tuxcards
-    SUBDIR += vboxgtk
     SUBDIR += virt-manager
     SUBDIR += vit
     SUBDIR += vnc2flv

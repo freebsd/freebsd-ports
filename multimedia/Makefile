@@ -23,7 +23,6 @@
     SUBDIR += avidemux-qt4
     SUBDIR += avinfo
     SUBDIR += baka-mplayer
-    SUBDIR += bangarang
     SUBDIR += banshee
     SUBDIR += bino
     SUBDIR += bitstream
@@ -68,12 +67,10 @@
     SUBDIR += flvtool++
     SUBDIR += fpc-dts
     SUBDIR += fpc-libvlc
-    SUBDIR += freetuxtv
     SUBDIR += freevo
     SUBDIR += fxtv
     SUBDIR += gaupol
     SUBDIR += gavl
-    SUBDIR += gcap
     SUBDIR += gcfilms
     SUBDIR += gdialog
     SUBDIR += gdvrecv
@@ -280,7 +277,6 @@
     SUBDIR += ogmrip
     SUBDIR += ogmtools
     SUBDIR += omxplayer
-    SUBDIR += opencinematools
     SUBDIR += openh264
     SUBDIR += openquicktime
     SUBDIR += openshot
@@ -440,7 +436,6 @@
     SUBDIR += vid.stab
     SUBDIR += vlc
     SUBDIR += vlc-qt4
-    SUBDIR += vstream-client
     SUBDIR += vtkmpeg2encode
     SUBDIR += w_scan
     SUBDIR += webcamd

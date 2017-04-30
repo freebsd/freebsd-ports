@@ -1,8 +1,0 @@
-Python ICQ-Transport for Jabber.
-
-The purpose of this transport is to provide a way for users to be logged into
-ICQ via their Jabber account. It is implemented in Python, using the Twisted
-framework. This project is just getting off the ground, and so it does not have
-quite the functionality of other transports yet. That will come in time.
-
-WWW: http://code.google.com/p/pyicqt/

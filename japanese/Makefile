@@ -192,7 +192,6 @@
     SUBDIR += ng-canna
     SUBDIR += ng-devel
     SUBDIR += ngraph-fonts
-    SUBDIR += nhocr
     SUBDIR += nkf
     SUBDIR += onew
     SUBDIR += p5-2chproxy

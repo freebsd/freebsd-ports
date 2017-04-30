@@ -1,5 +1,0 @@
-DTDinst is a program for converting XML DTDs into XML instance
-format. The XML instance can be in either a format specific to DTDinst
-or RELAX NG format.
-
-WWW: http://www.thaiopensource.com/relaxng/dtdinst/
