@@ -41,7 +41,6 @@
     SUBDIR += drivel
     SUBDIR += easystroke
     SUBDIR += egroupware
-    SUBDIR += epoch
     SUBDIR += etask
     SUBDIR += everygui
     SUBDIR += fbreader
