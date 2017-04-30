@@ -55,8 +55,6 @@ CUNEIFORM_RUN_DEPENDS=	cuneiform:graphics/cuneiform
 GOCR_DESC=		OCR program developed under GPL
 GOCR_RUN_DEPENDS=	gocr:graphics/gocr
 OCR_DESC=		Optical Character Recognition
-OCROPUS_DESC=		Document analysis and OCR system
-OCROPUS_RUN_DEPENDS=	ocropus:graphics/ocropus
 TESSERACT_DESC=		OCR engine developed at Google
 TESSERACT_RUN_DEPENDS=	tesseract:graphics/tesseract
 
