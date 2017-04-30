@@ -1,4 +1,0 @@
-%%APACHEMODDIR%%/%%AP_MODULE%%
-@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
-@unexec echo "Don't forget to remove all mod_myvhost-related directives in your httpd.conf"
-@unexec /usr/bin/sed -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf

@@ -152,7 +152,6 @@
     SUBDIR += gmime26
     SUBDIR += gmime26-sharp
     SUBDIR += gnarwl
-    SUBDIR += gnome-gmail-notifier
     SUBDIR += gnubiff
     SUBDIR += gnumail
     SUBDIR += gotmail

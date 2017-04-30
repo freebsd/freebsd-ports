@@ -35,7 +35,6 @@
     SUBDIR += icqlib
     SUBDIR += imspector
     SUBDIR += jabber
-    SUBDIR += jabber-pyicq
     SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jarl
@@ -73,14 +72,12 @@
     SUBDIR += licq-msn
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
-    SUBDIR += linux-instantbird
     SUBDIR += loudmouth
     SUBDIR += mbpurple
     SUBDIR += mcabber
     SUBDIR += meanwhile
     SUBDIR += mikutter
     SUBDIR += mu-conference
-    SUBDIR += naim
     SUBDIR += openfire
     SUBDIR += oysttyer
     SUBDIR += p5-AnyEvent-XMPP
@@ -128,7 +125,6 @@
     SUBDIR += proxy65
     SUBDIR += psi
     SUBDIR += psimedia
-    SUBDIR += pwytter
     SUBDIR += py-fbmq
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
@@ -149,8 +145,6 @@
     SUBDIR += py-xmpppy-yahoo
     SUBDIR += qTox
     SUBDIR += qq
-    SUBDIR += qwit
-    SUBDIR += qwit-devel
     SUBDIR += qxmpp
     SUBDIR += qxmpp-qt5
     SUBDIR += ramblercontacts
