@@ -1,14 +1,16 @@
 # $FreeBSD$
 
-PORTNAME=	softethervpn
+PORTNAME=	softether-devel
 PORTVERSION=	4.21.9613
-CATEGORIES=	net
+CATEGORIES=	security
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Cross-platform Multi-protocol VPN Software
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+CONFLICTS_INSTALL=	softether
 
 USES=		dos2unix gmake iconv localbase readline ssl
 DOS2UNIX_FILES=	src/Mayaqua/Network.c
