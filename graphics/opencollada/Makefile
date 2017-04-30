@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: c++: Internal error: Killed (program cc1plus)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
