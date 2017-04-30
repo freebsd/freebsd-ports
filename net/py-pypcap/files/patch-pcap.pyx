@@ -1,15 +1,6 @@
---- ./pcap.pyx.orig	2011-10-01 22:35:33.141146678 -0400
-+++ ./pcap.pyx	2011-10-01 22:35:39.416147272 -0400
-@@ -1,7 +1,7 @@
- #
- # pcap.pyx
- #
--# $Id: pcap.pyx,v 1.20 2005/10/16 23:00:11 dugsong Exp $
-+# $Id: pcap.pyx 101 2010-07-16 08:20:16Z kosma@kosma.pl $
- 
- """packet capture library
- 
-@@ -17,9 +17,11 @@
+--- pcap.pyx.orig	2005-10-17 00:08:17 UTC
++++ pcap.pyx
+@@ -17,9 +17,11 @@ __url__ = 'http://monkey.org/~dugsong/py
  __version__ = '1.1'
  
  import sys
@@ -21,7 +12,7 @@
      int    PyGILState_Ensure()
      void   PyGILState_Release(int gil)
      void   Py_BEGIN_ALLOW_THREADS()
-@@ -42,6 +44,10 @@
+@@ -42,6 +44,10 @@ cdef extern from "pcap.h":
          unsigned int caplen
      ctypedef struct pcap_t:
          int __xxx
@@ -32,7 +23,7 @@
  
  ctypedef void (*pcap_handler)(void *arg, pcap_pkthdr *hdr, char *pkt)
  
-@@ -62,6 +68,13 @@
+@@ -62,6 +68,13 @@ cdef extern from "pcap.h":
      char   *pcap_geterr(pcap_t *p)
      void    pcap_close(pcap_t *p)
      int     bpf_filter(bpf_insn *insns, char *buf, int len, int caplen)
@@ -46,7 +37,7 @@
  
  cdef extern from "pcap_ex.h":
      # XXX - hrr, sync with libdnet and libevent
-@@ -134,16 +147,18 @@
+@@ -134,16 +147,18 @@ cdef class bpf:
              raise IOError, 'bad filter'
      def filter(self, buf):
          """Return boolean match for buf against our filter."""
@@ -68,7 +59,7 @@
      
      Open a handle to a packet capture descriptor.
      
-@@ -152,6 +167,9 @@
+@@ -152,6 +167,9 @@ cdef class pcap:
                   or None to open the first available up interface
      snaplen   -- maximum number of bytes to capture for each packet
      promisc   -- boolean to specify promiscuous mode sniffing
@@ -78,7 +69,7 @@
      immediate -- disable buffering, if possible
      """
      cdef pcap_t *__pcap
-@@ -161,7 +179,7 @@
+@@ -161,7 +179,7 @@ cdef class pcap:
      cdef int __dloff
      
      def __init__(self, name=None, snaplen=65535, promisc=True,
@@ -87,16 +78,16 @@
          global dltoff
          cdef char *p
          
-@@ -171,7 +189,7 @@
+@@ -171,7 +189,7 @@ cdef class pcap:
                  raise OSError, self.__ebuf
          else:
              p = name
 -        
-+            
++
          self.__pcap = pcap_open_offline(p, self.__ebuf)
          if not self.__pcap:
              self.__pcap = pcap_open_live(pcap_ex_name(p), snaplen, promisc,
-@@ -184,7 +202,7 @@
+@@ -184,7 +202,7 @@ cdef class pcap:
          try: self.__dloff = dltoff[pcap_datalink(self.__pcap)]
          except KeyError: pass
          if immediate and pcap_ex_immediate(self.__pcap) < 0:
@@ -105,7 +96,7 @@
      
      property name:
          """Network interface or dumpfile name."""
-@@ -243,16 +261,6 @@
+@@ -243,16 +261,6 @@ cdef class pcap:
          """Return datalink type (DLT_* values)."""
          return pcap_datalink(self.__pcap)
      
@@ -122,7 +113,7 @@
      def __add_pkts(self, ts, pkt, pkts):
          pkts.append((ts, pkt))
      
-@@ -288,18 +296,24 @@
+@@ -288,18 +296,24 @@ cdef class pcap:
              raise exc[0], exc[1], exc[2]
          return n
  
@@ -150,7 +141,7 @@
          pcap_ex_setup(self.__pcap)
          while 1:
              Py_BEGIN_ALLOW_THREADS
-@@ -308,10 +322,22 @@
+@@ -308,10 +322,22 @@ cdef class pcap:
              if n == 1:
                  callback(hdr.ts.tv_sec + (hdr.ts.tv_usec / 1000000.0),
                           PyBuffer_FromMemory(pkt, hdr.caplen), *args)
@@ -173,7 +164,7 @@
      
      def geterr(self):
          """Return the last error message associated with this handle."""
-@@ -340,6 +366,8 @@
+@@ -340,6 +366,8 @@ cdef class pcap:
              if n == 1:
                  return (hdr.ts.tv_sec + (hdr.ts.tv_usec / 1000000.0),
                          PyBuffer_FromMemory(pkt, hdr.caplen))
@@ -182,7 +173,7 @@
              elif n == -1:
                  raise KeyboardInterrupt
              elif n == -2:
-@@ -364,3 +392,36 @@
+@@ -364,3 +392,36 @@ def lookupdev():
          raise OSError, ebuf
      return p
  
