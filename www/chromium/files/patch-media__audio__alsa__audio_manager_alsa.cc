@@ -1,4 +1,4 @@
---- media/audio/alsa/audio_manager_alsa.cc.orig	2017-03-09 20:04:34 UTC
+--- media/audio/alsa/audio_manager_alsa.cc.orig	2017-04-19 19:06:35 UTC
 +++ media/audio/alsa/audio_manager_alsa.cc
 @@ -138,7 +138,9 @@ void AudioManagerAlsa::GetAlsaAudioDevic
    int card = -1;

@@ -1,4 +1,4 @@
---- third_party/ffmpeg/ffmpeg_generated.gni.orig	2017-03-09 20:05:22 UTC
+--- third_party/ffmpeg/ffmpeg_generated.gni.orig	2017-04-19 19:07:44 UTC
 +++ third_party/ffmpeg/ffmpeg_generated.gni
 @@ -12,7 +12,7 @@ ffmpeg_c_sources = []
  ffmpeg_gas_sources = []
@@ -203,9 +203,9 @@
 -if ((is_android && current_cpu == "arm64" && ffmpeg_branding == "Chrome") || (is_linux && current_cpu == "arm64" && ffmpeg_branding == "Chrome") || (is_linux && current_cpu == "arm64" && ffmpeg_branding == "ChromeOS")) {
 +if ((is_android && current_cpu == "arm64" && ffmpeg_branding == "Chrome") || ((is_linux || is_bsd) && current_cpu == "arm64" && ffmpeg_branding == "Chrome") || ((is_linux || is_bsd) && current_cpu == "arm64" && ffmpeg_branding == "ChromeOS")) {
    ffmpeg_c_sources += [
-     "libavcodec/aarch64/imdct15_init.c",
      "libavcodec/aarch64/mpegaudiodsp_init.c",
-@@ -530,7 +530,7 @@ if ((is_android && current_cpu == "arm64
+   ]
+@@ -528,7 +528,7 @@ if ((is_android && current_cpu == "arm64
    ]
  }
  
@@ -214,7 +214,7 @@
    ffmpeg_c_sources += [
      "libavcodec/aarch64/h264chroma_init_aarch64.c",
      "libavcodec/aarch64/h264dsp_init_aarch64.c",
-@@ -544,7 +544,7 @@ if ((is_linux && current_cpu == "arm64" 
+@@ -542,7 +542,7 @@ if ((is_linux && current_cpu == "arm64" 
    ]
  }
  
@@ -223,7 +223,7 @@
    ffmpeg_c_sources += [
      "libavcodec/arm/hpeldsp_init_neon.c",
      "libavcodec/arm/vp8dsp_init_neon.c",
-@@ -557,14 +557,14 @@ if (is_linux && current_cpu == "arm" && 
+@@ -555,14 +555,14 @@ if (is_linux && current_cpu == "arm" && 
    ]
  }
  
@@ -240,7 +240,7 @@
    ffmpeg_c_sources += [
      "libavcodec/arm/blockdsp_init_arm.c",
      "libavcodec/arm/idctdsp_init_arm.c",
-@@ -588,13 +588,13 @@ if ((is_linux && current_cpu == "arm" &&
+@@ -586,13 +586,13 @@ if ((is_linux && current_cpu == "arm" &&
    ]
  }
  
@@ -256,7 +256,7 @@
    ffmpeg_gas_sources += [
      "libavcodec/arm/h264cmc_neon.S",
      "libavcodec/arm/h264dsp_neon.S",
-@@ -609,7 +609,7 @@ if (is_win && current_cpu == "x64") {
+@@ -607,7 +607,7 @@ if (is_win && current_cpu == "x64") {
    ]
  }
  
@@ -265,7 +265,7 @@
    ffmpeg_c_sources += [
      "libavcodec/x86/blockdsp_init.c",
      "libavcodec/x86/fdct.c",
-@@ -636,7 +636,7 @@ if ((is_linux && current_cpu == "x64" &&
+@@ -634,7 +634,7 @@ if ((is_linux && current_cpu == "x64" &&
    ]
  }
  
@@ -274,7 +274,7 @@
    ffmpeg_c_sources += [
      "libavcodec/mips/blockdsp_init_mips.c",
      "libavcodec/mips/h263dsp_init_mips.c",
-@@ -649,7 +649,7 @@ if (is_linux && current_cpu == "mipsel" 
+@@ -647,7 +647,7 @@ if (is_linux && current_cpu == "mipsel" 
    ]
  }
  

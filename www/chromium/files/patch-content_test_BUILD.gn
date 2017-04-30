@@ -1,6 +1,6 @@
---- content/test/BUILD.gn.orig	2017-03-09 20:04:32 UTC
+--- content/test/BUILD.gn.orig	2017-04-19 19:06:34 UTC
 +++ content/test/BUILD.gn
-@@ -771,7 +771,7 @@ test("content_browsertests") {
+@@ -785,7 +785,7 @@ test("content_browsertests") {
      }
    }
  
@@ -9,7 +9,7 @@
      data += [
        "$root_out_dir/content_shell.pak",
        "data/",
-@@ -1392,7 +1392,7 @@ test("content_unittests") {
+@@ -1425,7 +1425,7 @@ test("content_unittests") {
      sources += [ "../browser/memory/memory_monitor_linux_unittest.cc" ]
    }
  
@@ -18,7 +18,7 @@
      data = [
        "$root_out_dir/content_shell.pak",
        "data/",
-@@ -1597,7 +1597,7 @@ test("content_unittests") {
+@@ -1632,7 +1632,7 @@ test("content_unittests") {
        "//ui/shell_dialogs:shell_dialogs",
      ]
  
@@ -27,7 +27,7 @@
        sources +=
            [ "../browser/media/capture/desktop_capture_device_unittest.cc" ]
        deps += [ "//third_party/webrtc/modules/desktop_capture" ]
-@@ -1631,7 +1631,7 @@ test("content_unittests") {
+@@ -1670,7 +1670,7 @@ test("content_unittests") {
      }
    }
  

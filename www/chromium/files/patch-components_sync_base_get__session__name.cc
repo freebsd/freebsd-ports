@@ -1,4 +1,4 @@
---- components/sync/base/get_session_name.cc.orig	2017-02-02 02:02:53 UTC
+--- components/sync/base/get_session_name.cc.orig	2017-04-19 19:06:33 UTC
 +++ components/sync/base/get_session_name.cc
 @@ -15,7 +15,7 @@
  

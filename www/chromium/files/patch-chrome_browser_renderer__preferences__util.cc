@@ -1,4 +1,4 @@
---- chrome/browser/renderer_preferences_util.cc.orig	2017-03-09 20:04:28 UTC
+--- chrome/browser/renderer_preferences_util.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/renderer_preferences_util.cc
 @@ -20,7 +20,7 @@
  #include "third_party/WebKit/public/public_features.h"

@@ -1,6 +1,6 @@
---- media/audio/audio_manager.cc.orig	2017-03-09 20:04:34 UTC
+--- media/audio/audio_manager.cc.orig	2017-04-19 19:06:35 UTC
 +++ media/audio/audio_manager.cc
-@@ -95,7 +95,7 @@ class AudioManagerHelper : public base::
+@@ -93,7 +93,7 @@ class AudioManagerHelper : public base::
    }
  #endif
  
@@ -9,7 +9,7 @@
    void set_app_name(const std::string& app_name) { app_name_ = app_name; }
    const std::string& app_name() const { return app_name_; }
  #endif
-@@ -253,7 +253,7 @@ class AudioManagerHelper : public base::
+@@ -227,7 +227,7 @@ class AudioManagerHelper : public base::
    std::unique_ptr<base::win::ScopedCOMInitializer> com_initializer_for_testing_;
  #endif
  
@@ -18,12 +18,12 @@
    std::string app_name_;
  #endif
  
-@@ -369,7 +369,7 @@ void AudioManager::EnableCrashKeyLogging
-   g_helper.Pointer()->enable_crash_key_logging();
+@@ -342,7 +342,7 @@ void AudioManager::StartHangMonitorIfNee
+   GetHelper()->StartHangTimer(std::move(task_runner));
  }
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
  // static
  void AudioManager::SetGlobalAppName(const std::string& app_name) {
-   g_helper.Pointer()->set_app_name(app_name);
+   GetHelper()->set_app_name(app_name);

@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_view_prefs.cc.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/browser_view_prefs.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/browser_view_prefs.cc
 @@ -10,7 +10,7 @@
  #include "components/prefs/pref_registry_simple.h"

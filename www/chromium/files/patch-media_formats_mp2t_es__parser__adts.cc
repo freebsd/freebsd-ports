@@ -1,4 +1,4 @@
---- media/formats/mp2t/es_parser_adts.cc.orig	2017-03-09 20:04:34 UTC
+--- media/formats/mp2t/es_parser_adts.cc.orig	2017-04-19 19:06:35 UTC
 +++ media/formats/mp2t/es_parser_adts.cc
 @@ -60,11 +60,11 @@ bool EsParserAdts::LookForAdtsFrame(Adts
    const uint8_t* es;

@@ -1,6 +1,6 @@
---- chrome/browser/browser_resources.grd.orig	2017-03-09 20:04:27 UTC
+--- chrome/browser/browser_resources.grd.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/browser_resources.grd
-@@ -384,7 +384,7 @@
+@@ -383,7 +383,7 @@
          <include name="IDR_ABOUT_VOICESEARCH_JS" file="resources\about_voicesearch.js" type="BINDATA" />
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
        </if>

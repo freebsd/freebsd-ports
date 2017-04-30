@@ -1,4 +1,4 @@
---- base/native_library_posix.cc.orig	2017-01-26 00:49:07 UTC
+--- base/native_library_posix.cc.orig	2017-04-19 19:06:28 UTC
 +++ base/native_library_posix.cc
 @@ -35,7 +35,7 @@ NativeLibrary LoadNativeLibraryWithOptio
    // further investigation, as it might vary across versions. Crash here to

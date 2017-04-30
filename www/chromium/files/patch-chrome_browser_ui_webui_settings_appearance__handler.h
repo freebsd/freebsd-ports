@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/settings/appearance_handler.h.orig	2017-02-02 02:02:50 UTC
+--- chrome/browser/ui/webui/settings/appearance_handler.h.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/webui/settings/appearance_handler.h
 @@ -35,7 +35,7 @@ class AppearanceHandler : public Setting
    // Changes the UI theme of the browser to the default theme.

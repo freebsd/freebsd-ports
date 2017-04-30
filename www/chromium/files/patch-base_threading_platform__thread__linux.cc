@@ -1,4 +1,4 @@
---- base/threading/platform_thread_linux.cc.orig	2017-01-26 00:49:07 UTC
+--- base/threading/platform_thread_linux.cc.orig	2017-04-19 19:06:28 UTC
 +++ base/threading/platform_thread_linux.cc
 @@ -19,7 +19,9 @@
  

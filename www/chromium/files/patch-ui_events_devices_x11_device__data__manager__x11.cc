@@ -1,4 +1,4 @@
---- ui/events/devices/x11/device_data_manager_x11.cc.orig	2017-02-02 02:03:13 UTC
+--- ui/events/devices/x11/device_data_manager_x11.cc.orig	2017-04-19 19:06:54 UTC
 +++ ui/events/devices/x11/device_data_manager_x11.cc
 @@ -834,6 +834,8 @@ void DeviceDataManagerX11::SetDisabledKe
  }

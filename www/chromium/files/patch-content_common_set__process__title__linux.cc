@@ -1,4 +1,4 @@
---- content/common/set_process_title_linux.cc.orig	2017-01-26 00:49:13 UTC
+--- content/common/set_process_title_linux.cc.orig	2017-04-19 19:06:34 UTC
 +++ content/common/set_process_title_linux.cc
 @@ -49,6 +49,8 @@
  extern char** environ;

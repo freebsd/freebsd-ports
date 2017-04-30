@@ -1,13 +1,13 @@
---- chrome/common/BUILD.gn.orig	2017-03-09 20:04:29 UTC
+--- chrome/common/BUILD.gn.orig	2017-04-19 19:06:30 UTC
 +++ chrome/common/BUILD.gn
-@@ -244,6 +244,13 @@ static_library("common") {
+@@ -240,6 +240,13 @@ static_library("common") {
      public_deps += [ "//ppapi/shared_impl" ]
    }
  
 +  if (is_bsd) {
 +    sources -= [
 +      "component_flash_hint_file_linux.cc",
-+      "component_flash_hint_file_linux.h",
++      "component_flash_hint_file_linux.h"
 +    ]
 +  }
 +

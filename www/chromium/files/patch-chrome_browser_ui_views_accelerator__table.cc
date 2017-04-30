@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/accelerator_table.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/browser/ui/views/accelerator_table.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/views/accelerator_table.cc
 @@ -54,7 +54,7 @@ const AcceleratorMapping kAcceleratorMap
    { ui::VKEY_S, kPlatformModifier, IDC_SAVE_PAGE },

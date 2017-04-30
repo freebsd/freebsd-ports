@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/music_manager_private/device_id_linux.cc.orig	2017-01-26 00:49:08 UTC
+--- chrome/browser/extensions/api/music_manager_private/device_id_linux.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/extensions/api/music_manager_private/device_id_linux.cc
 @@ -4,6 +4,10 @@
  

@@ -1,4 +1,4 @@
---- base/sys_info_freebsd.cc.orig	2017-01-26 00:49:07 UTC
+--- base/sys_info_freebsd.cc.orig	2017-04-19 19:06:28 UTC
 +++ base/sys_info_freebsd.cc
 @@ -12,12 +12,34 @@
  

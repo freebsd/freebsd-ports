@@ -1,4 +1,4 @@
---- third_party/opus/BUILD.gn.orig	2017-01-26 00:49:30 UTC
+--- third_party/opus/BUILD.gn.orig	2017-04-19 19:06:52 UTC
 +++ third_party/opus/BUILD.gn
 @@ -14,7 +14,7 @@ use_opus_arm_optimization = current_cpu 
  # If OPUS Run Time CPU Detections (RTCD) shall be used.

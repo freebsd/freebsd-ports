@@ -1,6 +1,6 @@
---- chrome/BUILD.gn.orig	2017-03-09 20:04:27 UTC
+--- chrome/BUILD.gn.orig	2017-04-19 19:06:28 UTC
 +++ chrome/BUILD.gn
-@@ -143,7 +143,7 @@ if (!is_android && !is_mac) {
+@@ -142,7 +142,7 @@ if (!is_android && !is_mac) {
      data = [
        "$root_out_dir/resources.pak",
      ]
@@ -9,7 +9,7 @@
        data += [
          "$root_out_dir/chrome_100_percent.pak",
          "$root_out_dir/locales/en-US.pak",
-@@ -222,7 +222,7 @@ if (!is_android && !is_mac) {
+@@ -223,7 +223,7 @@ if (!is_android && !is_mac) {
        sources += [ "app/chrome_exe_main_aura.cc" ]
      }
  
@@ -18,7 +18,7 @@
        sources += [
          "app/chrome_dll_resource.h",
          "app/chrome_main.cc",
-@@ -1521,7 +1521,7 @@ if (enable_resource_whitelist_generation
+@@ -1647,7 +1647,7 @@ if (enable_resource_whitelist_generation
    }
  }
  

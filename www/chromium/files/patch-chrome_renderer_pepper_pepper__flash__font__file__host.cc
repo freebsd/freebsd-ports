@@ -1,4 +1,4 @@
---- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig	2017-01-26 00:49:10 UTC
+--- chrome/renderer/pepper/pepper_flash_font_file_host.cc.orig	2017-04-19 19:06:31 UTC
 +++ chrome/renderer/pepper/pepper_flash_font_file_host.cc
 @@ -14,7 +14,7 @@
  #include "ppapi/proxy/ppapi_messages.h"
@@ -6,10 +6,10 @@
  
 -#if defined(OS_LINUX) || defined(OS_OPENBSD)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- #include "content/public/common/child_process_sandbox_support_linux.h"
+ #include "content/public/child/child_process_sandbox_support_linux.h"
+ #include "content/public/common/common_sandbox_support_linux.h"
  #elif defined(OS_WIN)
- #include "third_party/skia/include/ports/SkFontMgr.h"
-@@ -27,7 +27,7 @@ PepperFlashFontFileHost::PepperFlashFont
+@@ -28,7 +28,7 @@ PepperFlashFontFileHost::PepperFlashFont
      const ppapi::proxy::SerializedFontDescription& description,
      PP_PrivateFontCharset charset)
      : ResourceHost(host->GetPpapiHost(), instance, resource) {
@@ -18,7 +18,7 @@
    fd_.reset(content::MatchFontWithFallback(
        description.face,
        description.weight >= PP_BROWSERFONT_TRUSTED_WEIGHT_BOLD,
-@@ -44,7 +44,7 @@ PepperFlashFontFileHost::PepperFlashFont
+@@ -45,7 +45,7 @@ PepperFlashFontFileHost::PepperFlashFont
    sk_sp<SkFontMgr> font_mgr(SkFontMgr::RefDefault());
    typeface_ = sk_sp<SkTypeface>(
        font_mgr->matchFamilyStyle(description.face.c_str(), style));
@@ -27,7 +27,7 @@
  }
  
  PepperFlashFontFileHost::~PepperFlashFontFileHost() {}
-@@ -63,7 +63,7 @@ bool PepperFlashFontFileHost::GetFontDat
+@@ -64,7 +64,7 @@ bool PepperFlashFontFileHost::GetFontDat
                                            void* buffer,
                                            size_t* length) {
    bool result = false;

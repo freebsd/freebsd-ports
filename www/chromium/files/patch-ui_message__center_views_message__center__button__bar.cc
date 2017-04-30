@@ -1,4 +1,4 @@
---- ui/message_center/views/message_center_button_bar.cc.orig	2017-01-26 00:49:32 UTC
+--- ui/message_center/views/message_center_button_bar.cc.orig	2017-04-19 19:06:54 UTC
 +++ ui/message_center/views/message_center_button_bar.cc
 @@ -95,7 +95,7 @@ MessageCenterButtonBar::MessageCenterBut
      const base::string16& title)
@@ -36,7 +36,7 @@
    layout->AddView(close_bubble_button_);
  #endif
  }
-@@ -297,7 +297,7 @@ void MessageCenterButtonBar::ButtonPress
+@@ -316,7 +316,7 @@ void MessageCenterButtonBar::ButtonPress
      else
        message_center()->EnterQuietModeWithExpire(base::TimeDelta::FromDays(1));
      quiet_mode_button_->SetToggled(message_center()->IsQuietMode());

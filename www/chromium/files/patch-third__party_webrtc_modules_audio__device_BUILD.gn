@@ -1,4 +1,4 @@
---- third_party/webrtc/modules/audio_device/BUILD.gn.orig	2017-03-09 20:05:29 UTC
+--- third_party/webrtc/modules/audio_device/BUILD.gn.orig	2017-04-19 19:07:52 UTC
 +++ third_party/webrtc/modules/audio_device/BUILD.gn
 @@ -82,7 +82,7 @@ rtc_static_library("audio_device") {
    ]

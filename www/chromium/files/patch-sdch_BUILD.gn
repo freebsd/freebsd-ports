@@ -1,4 +1,4 @@
---- sdch/BUILD.gn.orig	2017-01-26 00:49:17 UTC
+--- sdch/BUILD.gn.orig	2017-04-19 19:06:37 UTC
 +++ sdch/BUILD.gn
 @@ -11,7 +11,7 @@ config("sdch_config") {
  # from a config and can't be on the target directly.

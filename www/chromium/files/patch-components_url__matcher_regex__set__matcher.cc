@@ -1,4 +1,4 @@
---- components/url_matcher/regex_set_matcher.cc.orig	2017-01-26 00:49:13 UTC
+--- components/url_matcher/regex_set_matcher.cc.orig	2017-04-19 19:06:33 UTC
 +++ components/url_matcher/regex_set_matcher.cc
 @@ -10,8 +10,13 @@
  #include "base/memory/ptr_util.h"

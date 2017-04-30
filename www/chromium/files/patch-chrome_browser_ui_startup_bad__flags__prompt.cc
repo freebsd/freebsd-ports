@@ -1,4 +1,4 @@
---- chrome/browser/ui/startup/bad_flags_prompt.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/browser/ui/startup/bad_flags_prompt.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/startup/bad_flags_prompt.cc
 @@ -72,7 +72,7 @@ void ShowBadFlagsPrompt(Browser* browser
      // This flag gives extensions more powers.

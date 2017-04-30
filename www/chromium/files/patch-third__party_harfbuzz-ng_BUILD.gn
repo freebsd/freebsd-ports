@@ -1,4 +1,4 @@
---- third_party/harfbuzz-ng/BUILD.gn.orig	2017-03-09 20:04:47 UTC
+--- third_party/harfbuzz-ng/BUILD.gn.orig	2017-04-19 19:06:52 UTC
 +++ third_party/harfbuzz-ng/BUILD.gn
 @@ -50,7 +50,7 @@ if (use_system_harfbuzz) {
  
@@ -9,7 +9,7 @@
          current_cpu != "arm" && current_cpu != "mipsel" && !is_component_build) {
        # These symbols are referenced from libpangoft2, which will be
        # dynamically linked later.
-@@ -194,7 +194,7 @@ if (use_system_harfbuzz) {
+@@ -200,7 +200,7 @@ if (use_system_harfbuzz) {
      # in the tree, all symbols pango needs must be included, or
      # pango uses mixed versions of harfbuzz and leads to crash.
      # See crbug.com/462689.

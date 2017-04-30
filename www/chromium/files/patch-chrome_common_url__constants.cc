@@ -1,4 +1,4 @@
---- chrome/common/url_constants.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/common/url_constants.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/common/url_constants.cc
 @@ -143,7 +143,7 @@ const char kChromeUIMdCupsSettingsURL[] 
  const char kChromeUIMetroFlowURL[] = "chrome://make-metro/";
@@ -9,7 +9,7 @@
  const char kChromeUITabModalConfirmDialogURL[] =
      "chrome://tab-modal-confirm-dialog/";
  #endif
-@@ -336,7 +336,7 @@ const char kChromeOSAssetPath[] = "/usr/
+@@ -337,7 +337,7 @@ const char kChromeOSAssetPath[] = "/usr/
  const char kChromeUIMetroFlowHost[] = "make-metro";
  #endif
  

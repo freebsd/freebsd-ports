@@ -1,20 +1,11 @@
---- chrome/browser/ui/views/chrome_views_delegate.h.orig	2017-01-26 00:49:09 UTC
+--- chrome/browser/ui/views/chrome_views_delegate.h.orig	2017-04-19 19:06:30 UTC
 +++ chrome/browser/ui/views/chrome_views_delegate.h
-@@ -37,7 +37,7 @@ class ChromeViewsDelegate : public views
- #if defined(OS_WIN)
-   HICON GetDefaultWindowIcon() const override;
+@@ -43,7 +43,7 @@ class ChromeViewsDelegate : public views
    HICON GetSmallWindowIcon() const override;
+   int GetAppbarAutohideEdges(HMONITOR monitor,
+                              const base::Closure& callback) override;
 -#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#elif (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
++#elif (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    gfx::ImageSkia* GetDefaultWindowIcon() const override;
- #endif
- 
-@@ -50,7 +50,7 @@ class ChromeViewsDelegate : public views
-   void OnBeforeWidgetInit(
-       views::Widget::InitParams* params,
-       views::internal::NativeWidgetDelegate* delegate) override;
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    bool WindowManagerProvidesTitleBar(bool maximized) override;
  #endif
-   ui::ContextFactory* GetContextFactory() override;

@@ -1,6 +1,6 @@
---- chrome/common/pref_names.cc.orig	2017-03-09 20:04:29 UTC
+--- chrome/common/pref_names.cc.orig	2017-04-19 19:06:30 UTC
 +++ chrome/common/pref_names.cc
-@@ -983,7 +983,7 @@ const char kForceSessionSync[] = "settin
+@@ -1013,7 +1013,7 @@ const char kForceSessionSync[] = "settin
  // only using an account that belongs to one of the domains from this pref.
  const char kAllowedDomainsForApps[] = "settings.allowed_domains_for_apps";
  
@@ -9,7 +9,7 @@
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemTheme[] = "extensions.theme.use_system";
  #endif
-@@ -1070,7 +1070,7 @@ const char kShowUpdatePromotionInfoBar[]
+@@ -1100,7 +1100,7 @@ const char kShowUpdatePromotionInfoBar[]
      "browser.show_update_promotion_info_bar";
  #endif
  
@@ -18,7 +18,7 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1454,7 +1454,7 @@ const char kDownloadDefaultDirectory[] =
+@@ -1476,7 +1476,7 @@ const char kDownloadDefaultDirectory[] =
  // upgrade a unsafe location to a safe location.
  const char kDownloadDirUpgraded[] = "download.directory_upgrade";
  

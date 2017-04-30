@@ -1,4 +1,4 @@
---- media/base/audio_latency.cc.orig	2017-02-02 02:02:55 UTC
+--- media/base/audio_latency.cc.orig	2017-04-19 19:06:35 UTC
 +++ media/base/audio_latency.cc
 @@ -83,7 +83,7 @@ int AudioLatency::GetRtcBufferSize(int s
      return frames_per_buffer;

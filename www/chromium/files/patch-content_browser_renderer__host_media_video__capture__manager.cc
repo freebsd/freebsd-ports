@@ -1,6 +1,6 @@
---- content/browser/renderer_host/media/video_capture_manager.cc.orig	2017-03-09 20:04:32 UTC
+--- content/browser/renderer_host/media/video_capture_manager.cc.orig	2017-04-19 19:06:33 UTC
 +++ content/browser/renderer_host/media/video_capture_manager.cc
-@@ -662,7 +662,7 @@ VideoCaptureManager::DoStartTabCaptureOn
+@@ -645,7 +645,7 @@ VideoCaptureManager::DoStartTabCaptureOn
    DCHECK(IsOnDeviceThread());
  
    std::unique_ptr<VideoCaptureDevice> video_capture_device;
@@ -9,7 +9,7 @@
    video_capture_device = WebContentsVideoCaptureDevice::Create(id);
  #endif
  
-@@ -692,7 +692,7 @@ VideoCaptureManager::DoStartDesktopCaptu
+@@ -675,7 +675,7 @@ VideoCaptureManager::DoStartDesktopCaptu
    }
  
    if (desktop_id.type == DesktopMediaID::TYPE_WEB_CONTENTS) {

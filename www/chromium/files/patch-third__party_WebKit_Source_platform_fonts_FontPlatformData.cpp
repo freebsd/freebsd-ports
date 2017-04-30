@@ -1,4 +1,4 @@
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2017-03-09 20:04:45 UTC
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2017-04-19 19:06:50 UTC
 +++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp
 @@ -99,7 +99,7 @@ FontPlatformData::FontPlatformData(const
        m_syntheticBold(source.m_syntheticBold),

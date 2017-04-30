@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.cc.orig	2017-03-09 20:04:27 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -170,7 +170,7 @@
+@@ -171,7 +171,7 @@
  #include "chrome/browser/media/webrtc/webrtc_log_uploader.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/memory/tab_manager.h"
  #endif
  
-@@ -783,7 +783,7 @@ gcm::GCMDriver* BrowserProcessImpl::gcm_
+@@ -789,7 +789,7 @@ gcm::GCMDriver* BrowserProcessImpl::gcm_
  
  memory::TabManager* BrowserProcessImpl::GetTabManager() {
    DCHECK(CalledOnValidThread());
