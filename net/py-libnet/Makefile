@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	EXAMPLES
 OSVER=		uname -r
 
 BROKEN_aarch64=		Fails to install: lib.freebsd-11.0-RELEASE-p1-aarch64-2.7/libnet.so: No such file or directory
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Fails to install: lib.freebsd-11.0-RELEASE-p1-powerpc64-2.7/libnet.so: No such file or directory
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.py

@@ -7,8 +7,8 @@ COMMENT=	Virtual Peer-to-Peer Currency (Daemon)
 
 SLAVE_PORT=	yes
 
-BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=		Does not build
+NOT_FOR_ARCHS=		powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	configure: error: Big Endian not supported
 
 USES+=		cpe
 CPE_VENDOR=	bitcoin
