@@ -179,6 +179,7 @@ include/dovecot/hex-dec.h
 include/dovecot/hmac-cram-md5.h
 include/dovecot/hmac.h
 include/dovecot/home-expand.h
+include/dovecot/hook-build.h
 include/dovecot/hostpid.h
 include/dovecot/http-auth.h
 include/dovecot/http-client-private.h
@@ -567,9 +568,12 @@ include/dovecot/userdb-vpopmail.h
 include/dovecot/userdb.h
 include/dovecot/utc-mktime.h
 include/dovecot/utc-offset.h
+include/dovecot/var-expand-private.h
 include/dovecot/var-expand.h
 include/dovecot/wildcard-match.h
 include/dovecot/write-full.h
+lib/dovecot/auth/lib20_auth_var_expand_crypt.a
+lib/dovecot/auth/lib20_auth_var_expand_crypt.so
 lib/dovecot/auth/libauthdb_imap.a
 lib/dovecot/auth/libauthdb_imap.so
 lib/dovecot/doveadm/lib10_doveadm_acl_plugin.a
@@ -627,6 +631,8 @@ lib/dovecot/lib20_quota_clone_plugin.a
 lib/dovecot/lib20_quota_clone_plugin.so
 lib/dovecot/lib20_replication_plugin.a
 lib/dovecot/lib20_replication_plugin.so
+lib/dovecot/lib20_var_expand_crypt.a
+lib/dovecot/lib20_var_expand_crypt.so
 lib/dovecot/lib20_virtual_plugin.a
 lib/dovecot/lib20_virtual_plugin.so
 lib/dovecot/lib20_zlib_plugin.a

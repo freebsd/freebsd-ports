@@ -15,6 +15,14 @@
  	dovecot_enable="YES"
 
 
+---------------------------------------------------------------------
+
+To avoid a risk of mailbox corruption, do not enable the
+security.bsd.see_other_uids or .see_other_guids sysctls if Dovecot
+is storing mail for multiple concurrent users (PR 218392).
+
+---------------------------------------------------------------------
+
  If you want to be able to search within attachments using the
  decode2text plugin, you'll need to install textproc/catdoc, and
  one of graphics/xpdf or graphics/poppler-utils.
