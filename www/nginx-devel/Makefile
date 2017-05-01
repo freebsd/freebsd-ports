@@ -857,7 +857,8 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_lua_common.h  \
 		${PATCHDIR}/extra-patch-ngx_http_lua_headers.c \
 		${PATCHDIR}/extra-patch-ngx_http_lua_headers.h \
-		${PATCHDIR}/extra-patch-ngx_http_lua_module.c
+		${PATCHDIR}/extra-patch-ngx_http_lua_module.c \
+		${PATCHDIR}/extra-patch-ngx_http_lua_ssl_ocsp.c
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
