@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake gnome libtool pathfix pkgconfig tar:xz
 
 PYTHON_CONFIGURE_ENABLE=python
 PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject>=2.12.0:devel/py-gobject
