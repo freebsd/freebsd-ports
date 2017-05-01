@@ -1,6 +1,12 @@
 #!/bin/sh
 #
 # mfh - Merge from head to a given branch
+#
+# Usage: mfh [<branch>] <revnumber> [<revnumber>]
+#   <branch> is optional and defaults to latest branch
+#   If supplying multiple revnumbers, put them in chronological order
+#     (111111 111112 111113)
+#
 # Copyright 2013 Baptiste Daroussin
 # All rights reserved.
 #

@@ -14,7 +14,6 @@
     SUBDIR += adodb
     SUBDIR += adodb5
     SUBDIR += akonadi
-    SUBDIR += akonadi-googledata
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
     SUBDIR += apq
@@ -121,7 +120,6 @@
     SUBDIR += jasperreports
     SUBDIR += jdb
     SUBDIR += jdbc-oracle11g
-    SUBDIR += jdbm2
     SUBDIR += jlog
     SUBDIR += jrobin
     SUBDIR += jrrd

@@ -72,7 +72,6 @@
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += cjdns
-    SUBDIR += clamz
     SUBDIR += cloud-init
     SUBDIR += clusterit
     SUBDIR += cnd
@@ -496,7 +495,6 @@
     SUBDIR += openafs
     SUBDIR += openbgpd
     SUBDIR += openbsc
-    SUBDIR += opendpi
     SUBDIR += openggsn
     SUBDIR += openh323
     SUBDIR += openldap24-client
@@ -1012,7 +1010,6 @@
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
     SUBDIR += py-port-for
-    SUBDIR += py-pybeanstalk
     SUBDIR += py-pygeoip
     SUBDIR += py-pyldap
     SUBDIR += py-pynmsg

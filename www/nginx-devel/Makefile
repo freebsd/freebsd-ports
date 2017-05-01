@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -26,6 +27,7 @@ OPTIONS_DEFINE=	\
 	DEBUG \
 	DEBUGLOG \
 	FILE_AIO \
+	IPV6 \
 	GOOGLE_PERFTOOLS \
 	HTTP \
 	HTTP_ADDITION \
@@ -69,7 +71,6 @@ OPTIONS_DEFINE=	\
 	FASTDFS \
 	HEADERS_MORE \
 	HTTP_ACCEPT_LANGUAGE \
-	HTTP_ACCESSKEY \
 	HTTP_AUTH_DIGEST \
 	HTTP_AUTH_KRB5 \
 	HTTP_AUTH_LDAP \
@@ -122,7 +123,6 @@ OPTIONS_DEFINE=	\
 	SMALL_LIGHT \
 	SRCACHE \
 	X11 \
-	XRID_HEADER \
 	XSS
 
 OPTIONS_DEFAULT?=DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
@@ -136,6 +136,7 @@ DSO_DESC=			Enable dynamic modules support
 DEBUG_DESC=			Build with debugging support
 DEBUGLOG_DESC=			Enable debug log (--with-debug)
 FILE_AIO_DESC=			Enable file aio
+IPV6_DESC=			Enable IPv6 support
 GOOGLE_PERFTOOLS_DESC=		Enable google perftools module
 HTTP_DESC=			Enable HTTP module
 HTTP_ADDITION_DESC=		Enable http_addition module
@@ -179,7 +180,6 @@ ECHO_DESC=			3rd party echo module
 FASTDFS_DESC=			3rd party fastdfs module
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
-HTTP_ACCESSKEY_DESC=		3rd party http_accesskey module
 HTTP_AUTH_DIGEST_DESC=		3rd party http_authdigest module
 HTTP_AUTH_KRB5_DESC=		3rd party http_auth_gss module
 HTTP_AUTH_LDAP_DESC=		3rd party http_auth_ldap module
@@ -232,7 +232,6 @@ SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
 X11_DESC=			graphics/ImageMagick[-nox11] dependency
-XRID_HEADER_DESC=		3rd party x-rid header module
 XSS_DESC=			3rd party xss module
 VIDEO_DESC=			Video module support
 
@@ -307,6 +306,12 @@ CONFIGURE_ARGS+=--with-debug
 CONFIGURE_ARGS+=--with-file-aio
 .endif
 
+.if empty(PORT_OPTIONS:MIPV6)
+CONFIGURE_ARGS+=--with-cc-opt="-DNGX_HAVE_INET6=0"
+.else
+CATEGORIES+=	ipv6
+.endif
+
 .if ${PORT_OPTIONS:MGOOGLE_PERFTOOLS}
 LIB_DEPENDS+=	libprofiler.so:devel/google-perftools
 CONFIGURE_ARGS+=--with-google_perftools_module
@@ -326,14 +331,6 @@ GH_ACCOUNT+=	giom:accept_language
 GH_PROJECT+=	nginx_accept_language_module:accept_language
 GH_TAGNAME+=	${GIT_ACCEPT_LANGUAGE_VERSION}:accept_language
 CONFIGURE_ARGS+=--add-module=${WRKSRC_accept_language}
-.endif
-
-.if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
-NGINX_ACCESSKEY_VERSION=	2.0.3
-MASTER_SITES+=	LOCAL/osa:accesskey
-DISTFILES+=	nginx-accesskey-${NGINX_ACCESSKEY_VERSION}.tar.gz:accesskey
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_VERSION}
-IGNORE=	ACCESSKEY: a patch requires
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_ADDITION}
@@ -1023,14 +1020,6 @@ GH_ACCOUNT+=	openresty:srcache
 GH_PROJECT+=	srcache-nginx-module:srcache
 GH_TAGNAME+=	v${NGINX_SRCACHE_VERSION}:srcache
 CONFIGURE_ARGS+=--add-module=${WRKSRC_srcache}
-.endif
-
-.if ${PORT_OPTIONS:MXRID_HEADER}
-GIT_XRID_VERSION=	0daa3cc
-GH_ACCOUNT+=	gabor:xrid
-GH_PROJECT+=	nginx-x-rid-header:xrid
-GH_TAGNAME+=	${GIT_XRID_VERSION}:xrid
-CONFIGURE_ARGS+=--add-module=${WRKSRC_xrid}
 .endif
 
 .if ${PORT_OPTIONS:MXSS}

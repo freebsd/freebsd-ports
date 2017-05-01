@@ -72,7 +72,6 @@
     SUBDIR += cdif
     SUBDIR += cdiff
     SUBDIR += cgrep
-    SUBDIR += chm2pdf
     SUBDIR += chpp
     SUBDIR += cl-meta
     SUBDIR += cl-meta-sbcl
@@ -139,7 +138,6 @@
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
     SUBDIR += dtd2relax
-    SUBDIR += dtdinst
     SUBDIR += dtdparse
     SUBDIR += duncan
     SUBDIR += dwdiff
@@ -322,9 +320,7 @@
     SUBDIR += ibus
     SUBDIR += ibus-el
     SUBDIR += ibus-kmfl
-    SUBDIR += ibus-m17n
     SUBDIR += ibus-qt
-    SUBDIR += ibus-table
     SUBDIR += ibus-typing-booster
     SUBDIR += icdiff
     SUBDIR += id-aspell
@@ -420,7 +416,6 @@
     SUBDIR += libodfgen01
     SUBDIR += libparsifal
     SUBDIR += librevenge
-    SUBDIR += libroxml
     SUBDIR += libsass
     SUBDIR += libsoldout
     SUBDIR += libsphinxclient
@@ -1363,7 +1358,6 @@
     SUBDIR += py-xlutils
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
-    SUBDIR += py-xmltv
     SUBDIR += py-zope.app.i18n
     SUBDIR += py-zope.app.locales
     SUBDIR += py-zope.i18nmessageid

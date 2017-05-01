@@ -85,7 +85,6 @@
     SUBDIR += clamsmtp
     SUBDIR += clamtk
     SUBDIR += clusterssh
-    SUBDIR += cmd5checkpw
     SUBDIR += cops
     SUBDIR += courier-authlib
     SUBDIR += courier-authlib-base
@@ -158,7 +157,6 @@
     SUBDIR += fswatch
     SUBDIR += ftimes
     SUBDIR += fuzz
-    SUBDIR += fuzzdb
     SUBDIR += fwanalog
     SUBDIR += fwbuilder
     SUBDIR += fwipe
@@ -398,7 +396,6 @@
     SUBDIR += nikto
     SUBDIR += nist-kat
     SUBDIR += nmap
-    SUBDIR += nmapsi4
     SUBDIR += nss
     SUBDIR += nss_compat_ossl
     SUBDIR += oath-toolkit
@@ -944,7 +941,6 @@
     SUBDIR += py-vulndb
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
-    SUBDIR += py-yara-editor
     SUBDIR += py-yubioath-desktop
     SUBDIR += py-zope.app.authentication
     SUBDIR += py-zope.app.localpermission
@@ -1106,7 +1102,6 @@
     SUBDIR += signing-party
     SUBDIR += silktools
     SUBDIR += sinfp
-    SUBDIR += skipfish
     SUBDIR += sks
     SUBDIR += slurpie
     SUBDIR += slush
@@ -1185,7 +1180,6 @@
     SUBDIR += tripwire-131
     SUBDIR += tripwire12
     SUBDIR += trousers
-    SUBDIR += truecrack
     SUBDIR += truecrypt
     SUBDIR += tsshbatch
     SUBDIR += tthsum

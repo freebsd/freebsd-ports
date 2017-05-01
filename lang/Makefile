@@ -203,7 +203,6 @@
     SUBDIR += ocaml
     SUBDIR += ocaml-autoconf
     SUBDIR += ocaml-nox11
-    SUBDIR += ofc
     SUBDIR += ohugs
     SUBDIR += onyx
     SUBDIR += oo2c

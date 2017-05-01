@@ -374,7 +374,6 @@
     SUBDIR += intergif
     SUBDIR += inventor
     SUBDIR += ipe
-    SUBDIR += iulib
     SUBDIR += jalbum
     SUBDIR += jasper
     SUBDIR += jave6
@@ -617,7 +616,6 @@
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad
     SUBDIR += ocre
-    SUBDIR += ocropus
     SUBDIR += ogre3d
     SUBDIR += okular
     SUBDIR += opencollada
@@ -845,7 +843,6 @@
     SUBDIR += py-exifread
     SUBDIR += py-exiv2
     SUBDIR += py-freeimagepy
-    SUBDIR += py-gchartwrapper
     SUBDIR += py-gd
     SUBDIR += py-gdal
     SUBDIR += py-gimp
@@ -881,7 +878,6 @@
     SUBDIR += py-pydot
     SUBDIR += py-pygal
     SUBDIR += py-pyganim
-    SUBDIR += py-pyggel
     SUBDIR += py-pyglet
     SUBDIR += py-pygooglechart
     SUBDIR += py-pygraphviz
@@ -909,7 +905,6 @@
     SUBDIR += qcomicbook
     SUBDIR += qgis
     SUBDIR += qiv
-    SUBDIR += qiviewer
     SUBDIR += qslim
     SUBDIR += qt4-iconengines
     SUBDIR += qt4-imageformats
@@ -958,7 +953,6 @@
     SUBDIR += rubygem-gd2
     SUBDIR += rubygem-gdk_pixbuf2
     SUBDIR += rubygem-gemojione
-    SUBDIR += rubygem-gemojione2
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-gitlab_emoji
     SUBDIR += rubygem-goocanvas
@@ -995,7 +989,6 @@
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
     SUBDIR += sdump
-    SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += seexpr
     SUBDIR += sekrit-twc-zimg
@@ -1021,7 +1014,6 @@
     SUBDIR += svg2pdf
     SUBDIR += svg2png
     SUBDIR += svgalib
-    SUBDIR += svgfig
     SUBDIR += swfdec
     SUBDIR += swfmill
     SUBDIR += swftools

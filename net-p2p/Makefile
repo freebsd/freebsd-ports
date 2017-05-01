@@ -76,7 +76,6 @@
     SUBDIR += qbittorrent-nox11
     SUBDIR += radarr
     SUBDIR += retroshare
-    SUBDIR += rtgui
     SUBDIR += rtorrent
     SUBDIR += shx
     SUBDIR += sonarr
@@ -92,7 +91,6 @@
     SUBDIR += tribler
     SUBDIR += twister
     SUBDIR += uhub
-    SUBDIR += unworkable
     SUBDIR += valknut
     SUBDIR += verlihub
     SUBDIR += verlihub-plugins
