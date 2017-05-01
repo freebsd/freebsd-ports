@@ -109,6 +109,9 @@ PYPY_BITS=	64
 .endif
 PLIST_SUB+=	PYPY_BITS="${PYPY_BITS}"
 
+post-extract:
+	${FIND} ${WRKSRC} -name '*.swn' -delete
+
 pre-build:
 	if [ ! -f ${BUILD_WRKSRC}/Makefile ]; then \
 		${RM} -r ${WRKDIR}/build; \
@@ -156,7 +159,7 @@ pkg-plist: stage
 		-e '/\/$$/d' \
 			${WRKDIR}/.plist-files-gen
 	${ECHO} bin/${PORTNAME} > ${WRKDIR}/pkg-plist
-	${SORT} ${WRKDIR}/.plist-files-gen | ${GREP} -v '\.swn$$\|\.orig' >> ${WRKDIR}/pkg-plist
+	${SORT} ${WRKDIR}/.plist-files-gen | ${GREP} -v '\.orig' >> ${WRKDIR}/pkg-plist
 	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
 
 .include <bsd.port.post.mk>
