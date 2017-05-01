@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-av>=0.9.0:multimedia/rubygem-av \
-		rubygem-paperclip>=2.5.2:devel/rubygem-paperclip
+		rubygem-paperclip-rails5>=2.5.2:devel/rubygem-paperclip-rails5
 
 NO_ARCH=	yes
 
