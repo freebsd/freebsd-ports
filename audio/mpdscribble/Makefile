@@ -22,7 +22,7 @@ USE_RC_SUBR=	mpdscribble
 OPTIONS_DEFINE=	SOUP DOCS
 SOUP_DESC=	Use libsoup instead of libcurl
 
-SOUP_LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
+SOUP_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 SOUP_CONFIGURE_ON=	--with-http-client=soup
 SOUP_LIB_DEPENDS_OFF=	libcurl.so:ftp/curl
 SOUP_CONFIGURE_OFF=	--with-http-client=curl
