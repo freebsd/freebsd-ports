@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/../doc/GPL
 
 LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 
+BROKEN_aarch64=		fails to compile: error: expected ';' at end of declaration list
+
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 
 USES=		gmake pkgconfig zip:infozip
