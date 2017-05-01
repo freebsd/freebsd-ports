@@ -2033,7 +2033,6 @@ bin/pypy3
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/.gitignore
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/LICENSE
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/README.md
-%%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/.build_openssl.py.swn
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/__init__.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/build_commoncrypto.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/build_constant_time.py
@@ -2098,7 +2097,6 @@ bin/pypy3
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/openssl/x509name.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/openssl/x509v3.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_cffi_src/utils.py
-%%PYPY_DIR%%/lib_pypy/_cffi_ssl/_stdssl/.__init__.py.swn
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_stdssl/__init__.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_stdssl/certificate.py
 %%PYPY_DIR%%/lib_pypy/_cffi_ssl/_stdssl/error.py
