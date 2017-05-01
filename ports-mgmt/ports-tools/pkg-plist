@@ -1,0 +1,16 @@
+bin/mkpatch
+bin/pcheck
+bin/pclean
+bin/pcommit
+bin/pfind
+bin/plist-sort
+bin/plist-update
+bin/plog
+bin/reinplace-check
+sbin/pinstall
+sbin/pkg-deleaf
+sbin/preinstall
+sbin/tbuilder
+sbin/upgrade-base
+sbin/upgrade-ports
+%%DOCSDIR%%/README.md
