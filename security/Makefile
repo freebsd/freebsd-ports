@@ -97,6 +97,7 @@
     SUBDIR += create-cert
     SUBDIR += cryptlib
     SUBDIR += cryptopp
+    SUBDIR += ct-submit
     SUBDIR += cvm
     SUBDIR += cyberchef
     SUBDIR += cyrus-sasl2
