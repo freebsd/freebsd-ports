@@ -1998,9 +1998,12 @@
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-actionview
+    SUBDIR += rubygem-kaminari-actionview-rails5
     SUBDIR += rubygem-kaminari-activerecord
+    SUBDIR += rubygem-kaminari-activerecord-rails5
     SUBDIR += rubygem-kaminari-core
     SUBDIR += rubygem-kaminari-rails4
+    SUBDIR += rubygem-kaminari-rails5
     SUBDIR += rubygem-kensa
     SUBDIR += rubygem-kubeclient
     SUBDIR += rubygem-layout_yullio_generator
@@ -2069,6 +2072,7 @@
     SUBDIR += rubygem-redis-rack
     SUBDIR += rubygem-redis-rack1
     SUBDIR += rubygem-redis-rails
+    SUBDIR += rubygem-redis-rails-rails5
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-responders
     SUBDIR += rubygem-responders-rails5
