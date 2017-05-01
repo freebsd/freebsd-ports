@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	TEST
 
 USE_GNOME=	introspection
 USE_PERL5=	configure
-USES=		perl5
+USES=		gnome perl5
 
 # Glib::Object::Introspection requires cairo and glib20 to build
 # test libraries during build phase, therefore we add them to BUILD_DEPENDS.
