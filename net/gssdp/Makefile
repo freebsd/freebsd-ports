@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake gnome libtool pathfix pkgconfig tar:xz
 
 GTK3_CONFIGURE_WITH=	gtk
 GTK3_USE=		GNOME=gtk30
