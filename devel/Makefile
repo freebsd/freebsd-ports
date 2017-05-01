@@ -5361,6 +5361,7 @@
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-local_time
+    SUBDIR += rubygem-local_time-rails5
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logging
