@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cdecl
-PORTVERSION=	3.1
+PORTVERSION=	3.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	ler@FreeBSD.org
@@ -22,7 +22,6 @@ GH_ACCOUNT=	paul-j-lucas
 GH_PROJECT=	cdecl
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
-MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/cdecl bin/c++decl man/man1/cdecl.1.gz man/man1/c++decl.1.gz
 
