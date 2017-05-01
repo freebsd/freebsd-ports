@@ -38,7 +38,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USES=		gmake iconv:wchar_t libtool perl5 pgsql pkgconfig shebangfix
+USES=		gmake gnome iconv:wchar_t libtool perl5 pgsql pkgconfig shebangfix
 WANT_PGSQL=	lib server
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
