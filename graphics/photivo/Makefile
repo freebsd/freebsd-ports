@@ -15,6 +15,8 @@ COMMENT=	Free and open source photo processor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to compile: error: constant expression evaluates to -2 which cannot be narrowed to type char
+
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libexiv2.so:graphics/exiv2 \
 		liblqr-1.so:graphics/liblqr-1 \

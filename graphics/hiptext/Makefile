@@ -18,6 +18,9 @@ LIB_DEPENDS=	libgflags.so:devel/gflags \
 TEST_DEPENDS=	googletest>=1.7.0:devel/googletest
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
+BROKEN_aarch64=		fails to compile: error: the clang compiler does not support -march=native
+BROKEN_armv6=		fails to compile: error: the clang compiler does not support -march=native
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jart
 GH_TAGNAME=	f89b44f
