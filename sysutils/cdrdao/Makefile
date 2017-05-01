@@ -97,6 +97,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|(^SUBDIRS.+) utils|\1|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(^gladedir.+=).+|\1 ${DATADIR}|' \
 		${WRKSRC}/xdao/Makefile.in
+	@${REINPLACE_CMD} -E -e 's|[&]?(pixmap_ == )0|\1nullptr|g' \
+		${WRKSRC}/xdao/SampleDisplay.cc
 	@${REINPLACE_CMD} -E -e \
 		's|(SET_CDRDAO_PATH.+path=)(cdrdao)|\1${LOCALBASE}\/bin\/\2|g' \
 		${WRKSRC}/xdao/Settings.cc
