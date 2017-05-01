@@ -1,6 +1,6 @@
---- cmddata.cpp.orig	2014-06-11 01:14:06.000000000 +0800
-+++ cmddata.cpp	2014-07-31 22:54:35.727051754 +0800
-@@ -173,6 +173,34 @@
+--- cmddata.cpp.orig	2017-04-28 17:28:45 UTC
++++ cmddata.cpp
+@@ -172,6 +172,34 @@ void CommandData::ParseDone()
    // Suppress the copyright message and final end of line for 'lb' and 'vb'.
    if ((CmdChar=='L' || CmdChar=='V') && Command[1]=='B')
      BareOutput=true;
@@ -35,7 +35,7 @@
  }
  
  
-@@ -881,6 +909,22 @@
+@@ -895,6 +923,22 @@ void CommandData::ProcessSwitch(const wc
        else
          wcsncpyz(CommentFile,Switch+1,ASIZE(CommentFile));
        break;
@@ -55,10 +55,10 @@
 +      }
 +      break;
 +#endif
- #ifndef GUI
      case '?' :
        OutHelp(RARX_SUCCESS);
-@@ -959,7 +1003,11 @@
+       break;
+@@ -980,7 +1024,11 @@ void CommandData::OutHelp(RAR_EXIT ExitC
      MCHelpSwAT,MCHelpSwAC,MCHelpSwAD,MCHelpSwAG,MCHelpSwAI,MCHelpSwAP,
      MCHelpSwCm,MCHelpSwCFGm,MCHelpSwCL,MCHelpSwCU,
      MCHelpSwDH,MCHelpSwEP,MCHelpSwEP3,MCHelpSwF,MCHelpSwIDP,MCHelpSwIERR,
@@ -71,18 +71,18 @@
      MCHelpSwO,MCHelpSwOC,MCHelpSwOL,MCHelpSwOR,MCHelpSwOW,MCHelpSwP,
      MCHelpSwPm,MCHelpSwR,MCHelpSwRI,MCHelpSwSC,MCHelpSwSL,MCHelpSwSM,
      MCHelpSwTA,MCHelpSwTB,MCHelpSwTN,MCHelpSwTO,MCHelpSwTS,MCHelpSwU,
---- global.hpp.orig	2014-06-11 01:14:06.000000000 +0800
-+++ global.hpp	2014-07-31 22:56:02.117045684 +0800
+--- global.hpp.orig	2017-04-28 17:28:46 UTC
++++ global.hpp
 @@ -9,6 +9,17 @@
  
  EXTVAR ErrorHandler ErrHandler;
  
 +#ifdef WITH_ICONV
 +#define OPT_DEFAULT "IGNORE"	/* ignore unrepresentable chars */
- 
++
 +#define ENC_MAXLEN 32		/* encoding name maximum length */
 +#define OPT_MAXLEN 9		/* strlen("TRANSLIT") */
-+
+ 
 +EXTVAR iconv_t h_E2I;			/* ExtToInt handler */
 +EXTVAR iconv_t h_I2E;			/* IntToExt handler */
 +EXTVAR char encInt[ENC_MAXLEN];	/* internal (archive) encoding */
@@ -91,19 +91,19 @@
 +#endif
  
  #endif
---- loclang.hpp.orig	2014-06-11 01:14:06.000000000 +0800
-+++ loclang.hpp	2014-07-31 22:57:33.346038437 +0800
-@@ -7,7 +7,7 @@
- #define   MCopyright         L"\nRAR %s   Copyright (c) 1993-%d Alexander Roshal   %d %s %d"
+--- loclang.hpp.orig	2017-04-28 17:28:46 UTC
++++ loclang.hpp
+@@ -8,7 +8,7 @@
  #define   MRegTo             L"\nRegistered to %s\n"
- #define   MShare             L"\nTrial version             Type RAR -? for help\n"
+ #define   MShare             L"\nTrial version             Type 'rar -?' for help\n"
+ #define   MRegKeyWarning     L"\nAvailable license key is valid only for %s\n"
 -#define   MUCopyright        L"\nUNRAR %s freeware      Copyright (c) 1993-%d Alexander Roshal\n"
 +#define   MUCopyright        L"\nUNRAR %s (iconv) freeware      Copyright (c) 1993-%d Alexander Roshal\n"
  #define   MBeta              L"beta"
- #define   MMonthJan          L"Jan"
- #define   MMonthFeb          L"Feb"
-@@ -328,7 +328,7 @@
- #define   MSyncScanError     L"\nFile search errors, cannot synchronize archive"
+ #define   Mx86               L"x86"
+ #define   Mx64               L"x64"
+@@ -324,7 +324,7 @@
+ #define   MProcessArc        L"\n\nProcessing archive %s"
  #define   MCorrectingName    L"\nWARNING: Attempting to correct the invalid file name"
  #define   MUnpCannotMerge    L"\nWARNING: You need to start extraction from a previous volume to unpack %s"
 -#define   MUnknownOption     L"\nERROR: Unknown option: %s"
@@ -111,7 +111,7 @@
  #define   MSubHeadCorrupt    L"\nERROR: Corrupt data header found, ignored"
  #define   MSubHeadUnknown    L"\nWARNING: Unknown data header format, ignored"
  #define   MSubHeadDataCRC    L"\nERROR: Corrupt %s data block"
-@@ -355,6 +355,12 @@
+@@ -352,6 +352,12 @@
  #define   MSHelpCmdV         L"\n  -v      Verbosely list contents of archive" 
  #define   MRecVolLimit       L"\nTotal number of usual and recovery volumes must not exceed %d"
  #define   MVolumeNumber      L"volume %d"
@@ -124,11 +124,11 @@
  #define   MCannotDelete      L"\nCannot delete %s"
  #define   MCalcCRC           L"\nCalculating the checksum"
  #define   MTooLargeSFXArc    L"\nWARNING: Too large SFX archive. Windows cannot run the executable file exceeding 4 GB."
---- os.hpp.orig	2014-06-11 01:14:06.000000000 +0800
-+++ os.hpp	2014-07-31 22:58:30.619035684 +0800
-@@ -154,6 +154,10 @@
- #include <utime.h>
+--- os.hpp.orig	2017-04-28 17:28:46 UTC
++++ os.hpp
+@@ -150,6 +150,10 @@
  #include <locale.h>
+ 
  
 +#ifdef WITH_ICONV
 +#include <iconv.h>
@@ -137,9 +137,9 @@
  #ifdef  S_IFLNK
  #define SAVE_LINKS
  #endif
---- strfn.cpp.orig	2014-06-11 01:14:06.000000000 +0800
-+++ strfn.cpp	2014-07-31 22:59:29.039036713 +0800
-@@ -14,6 +14,19 @@
+--- strfn.cpp.orig	2017-04-28 17:28:47 UTC
++++ strfn.cpp
+@@ -14,6 +14,19 @@ const wchar *NullToEmpty(const wchar *St
  
  void IntToExt(const char *Src,char *Dest,size_t DestSize)
  {
@@ -157,9 +157,9 @@
 +    strncpyz(Dest,Src,DestSize);
 +#else  /* !WITH_ICONV */
  #ifdef _WIN_ALL
-   OemToCharBuffA(Src,Dest,(DWORD)DestSize);
-   Dest[DestSize-1]=0;
-@@ -25,6 +38,7 @@
+   // OemToCharBuff does not stop at 0, so let's check source length.
+   size_t SrcLength=strlen(Src)+1;
+@@ -25,6 +38,7 @@ void IntToExt(const char *Src,char *Dest
    if (Dest!=Src)
      strncpyz(Dest,Src,DestSize);
  #endif

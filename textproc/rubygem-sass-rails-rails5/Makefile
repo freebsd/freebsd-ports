@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-railties5>=5.0.0:www/rubygem-railties5 \
 		rubygem-sass>=3.1:textproc/rubygem-sass \
 		rubygem-sprockets3>=3.0.3:devel/rubygem-sprockets3 \
-		rubygem-sprockets-rails>=2.0:devel/rubygem-sprockets-rails \
+		rubygem-sprockets-rails-rails5>=2.0:devel/rubygem-sprockets-rails-rails5 \
 		rubygem-tilt>=1.1:devel/rubygem-tilt
 
 NO_ARCH=	yes

@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	unrar
-PORTVERSION=	5.40
+PORTVERSION=	5.50b1
 PORTEPOCH=	5
 CATEGORIES+=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/ \
 		LOCAL/sunpoet
-DISTNAME=	unrarsrc-5.4.5
+DISTNAME=	unrarsrc-5.5.3
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
@@ -39,6 +39,8 @@ NOPIE_PORTS=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${STAGEDIR}${PREFIX}/bin/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 

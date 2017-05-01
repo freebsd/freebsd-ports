@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CMAKE_ARGS=	-DBUILD_DOCS=OFF -DWITH_BINLOG=OFF
 USE_GNOME=	glib20
-USES=		cmake mysql pkgconfig
+USES=		cmake gnome mysql pkgconfig
 
 PLIST_FILES=	sbin/mydumper sbin/myloader
 

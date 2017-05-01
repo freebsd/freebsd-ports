@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gems
-PORTVERSION=	2.6.11
+PORTVERSION=	2.6.12
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://production.cf.rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -5183,6 +5183,7 @@
     SUBDIR += rubygem-classifier
     SUBDIR += rubygem-classifier-reborn
     SUBDIR += rubygem-climate_control
+    SUBDIR += rubygem-climate_control-rails5
     SUBDIR += rubygem-clio
     SUBDIR += rubygem-cliprompt
     SUBDIR += rubygem-cloudfiles
@@ -5335,6 +5336,7 @@
     SUBDIR += rubygem-jammit
     SUBDIR += rubygem-jasmine-core
     SUBDIR += rubygem-jbuilder
+    SUBDIR += rubygem-jbuilder-rails5
     SUBDIR += rubygem-jekyll-coffeescript
     SUBDIR += rubygem-jeweler
     SUBDIR += rubygem-jira-ruby
@@ -5426,6 +5428,7 @@
     SUBDIR += rubygem-p4ruby
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-paperclip
+    SUBDIR += rubygem-paperclip-rails5
     SUBDIR += rubygem-parser
     SUBDIR += rubygem-patch_finder
     SUBDIR += rubygem-pathutil
@@ -5457,6 +5460,7 @@
     SUBDIR += rubygem-rack-mini-profiler
     SUBDIR += rubygem-rack-raw-upload
     SUBDIR += rubygem-rails-deprecated_sanitizer
+    SUBDIR += rubygem-rails-deprecated_sanitizer-rails5
     SUBDIR += rubygem-rails-i18n
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
@@ -5477,6 +5481,7 @@
     SUBDIR += rubygem-recaptcha
     SUBDIR += rubygem-recursive-open-struct
     SUBDIR += rubygem-redis-activesupport
+    SUBDIR += rubygem-redis-activesupport-rails5
     SUBDIR += rubygem-redis-store
     SUBDIR += rubygem-redmine_plugin_support
     SUBDIR += rubygem-ref
@@ -5544,6 +5549,7 @@
     SUBDIR += rubygem-sigdump
     SUBDIR += rubygem-simple-navigation
     SUBDIR += rubygem-simple_form
+    SUBDIR += rubygem-simple_form-rails5
     SUBDIR += rubygem-simplecov
     SUBDIR += rubygem-slack-notifier
     SUBDIR += rubygem-slack-notifier1
@@ -5552,10 +5558,12 @@
     SUBDIR += rubygem-slop3
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spring
+    SUBDIR += rubygem-spring-rails5
     SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-sprockets-es6
     SUBDIR += rubygem-sprockets-helpers
     SUBDIR += rubygem-sprockets-rails
+    SUBDIR += rubygem-sprockets-rails-rails5
     SUBDIR += rubygem-sprockets-sass
     SUBDIR += rubygem-sprockets3
     SUBDIR += rubygem-spruz

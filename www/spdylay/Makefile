@@ -18,7 +18,7 @@ BUILD_DEPENDS=	libevent>=2.0.8:devel/libevent
 LIB_DEPENDS=	libevent_openssl.so:devel/libevent
 
 BROKEN_SSL=	openssl-devel
-BROKEN_powerpc64=	does not link: undefined reference to `std::ctype<char>::_M_widen_init()
+BROKEN_powerpc64=	does not link: undefined reference to 'std::ctype<char>::_M_widen_init()'
 BROKEN_sparc64=	does not build: fails to link
 
 CONFIGURE_ARGS=	--enable-examples \
@@ -30,7 +30,7 @@ INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lang libtool pathfix pkgconfig ssl tar:xz
+USES=		compiler:c++11-lang gnome libtool pathfix pkgconfig ssl tar:xz
 
 PORTDOCS=	*
 
