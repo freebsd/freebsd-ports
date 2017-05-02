@@ -12,9 +12,13 @@ _INCLUDE_USES_SAFESTACK_MK=    yes
 .if ${OSVERSION} >= 1100508
 .if ${ARCH} == "amd64"
 
+.if ${SAFESTACK_ARGS:Mconfigure}
+CONFIGURE_ARGS+=	--enable-safestack
+.else
 CFLAGS+=	-fsanitize=safe-stack
 CXXFLAGS+=	-fsanitize=safe-stack
 LDFLAGS+=	-fsanitize=safe-stack
+.endif
 
 .endif
 .endif
