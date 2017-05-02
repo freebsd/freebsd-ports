@@ -92,6 +92,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-CGI-PSGI>=0.12:www/p5-CGI-PSGI						\
 		p5-CSS-Squish>=0.06:textproc/p5-CSS-Squish				\
 		p5-CSS-Minifier-XS>=0:textproc/p5-CSS-Minifier-XS			\
+		p5-Class-Accessor>=0:devel/p5-Class-Accessor				\
 		p5-Convert-Color>0:graphics/p5-Convert-Color				\
 		p5-Crypt-Eksblowfish>0:security/p5-Crypt-Eksblowfish			\
 		p5-DBI>=1.37:databases/p5-DBI						\
@@ -117,6 +118,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-HTML-Mason>=1.43:www/p5-HTML-Mason					\
 		p5-HTML-Parser>0:www/p5-HTML-Parser						\
 		p5-HTML-Quoted>0:textproc/p5-HTML-Quoted					\
+		p5-HTML-RewriteAttributes>=0.05:textproc/p5-HTML-RewriteAttributes	\
 		p5-HTML-Scrubber>=0.08:www/p5-HTML-Scrubber					\
 		p5-HTTP-Message>=6.0:www/p5-HTTP-Message					\
 		p5-IPC-Run3>0:devel/p5-IPC-Run3						\
@@ -128,12 +130,14 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Locale-Maketext-Lexicon>=0.32:devel/p5-Locale-Maketext-Lexicon		\
 		p5-Log-Dispatch>=2.30:devel/p5-Log-Dispatch					\
 		p5-MIME-Tools>=5.504,2:mail/p5-MIME-Tools					\
+		p5-MIME-Types>=0:mail/p5-MIME-Types					\
 		p5-Mail-Tools>=2.12:mail/p5-Mail-Tools					\
 		p5-Module-Refresh>=0.03:devel/p5-Module-Refresh				\
 		p5-Module-Versions-Report>=1.05:devel/p5-Module-Versions-Report		\
 		p5-Net-CIDR>0:net-mgmt/p5-Net-CIDR						\
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP						\
 		p5-Plack>=1.0002:www/p5-Plack						\
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser					\
 		p5-Starlet>0:www/p5-Starlet							\
 		p5-Regexp-Common-net-CIDR>0:textproc/p5-Regexp-Common-net-CIDR		\
 		p5-Regexp-Common>0:textproc/p5-Regexp-Common				\
