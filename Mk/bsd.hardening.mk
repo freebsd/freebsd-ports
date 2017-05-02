@@ -12,6 +12,7 @@ __BSD_PORT_HARDENING_MK=1
 OPTIONS_DEFINE+=	PIE
 PIE_DESC=		Build as PIE
 PIE_USES=		pie
+PIE_ARGS?=
 
 # Do not enable PIE for libraries or kernel module ports. However,
 # provide a way for still enabling PIE if desired by the port's
