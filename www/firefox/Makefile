@@ -43,8 +43,7 @@ USES=		tar:xz
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--enable-application=browser \
-		--enable-official-branding \
-		--enable-pie
+		--enable-official-branding
 
 OPTIONS_DEFINE=		RUST
 OPTIONS_DEFAULT=	BUNDLED_CAIRO
@@ -52,10 +51,7 @@ OPTIONS_DEFAULT=	BUNDLED_CAIRO
 OPTIONS_DEFAULT_amd64=	RUST
 OPTIONS_DEFAULT_i386=	RUST
 
-# HardenedBSD note:
-# Firefox picks up PIE from the --enable-pie configure option.
-# As such, disable setting custom CFLAGS for PIE.
-NOPIE_PORTS=	yes
+PIE_ARGS=		configure
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
