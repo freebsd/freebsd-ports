@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	speedtables
-PORTVERSION=	1.12.0
+PORTVERSION=	1.12.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtclx8.4.so:lang/tclX \
 		libboost_graph.so:devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/ncgi/ncgi.tcl:devel/tcllib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
