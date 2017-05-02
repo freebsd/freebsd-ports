@@ -3,7 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.99.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
@@ -15,14 +15,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libcurl.so:ftp/curl
 
-OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR \
+OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR TESTS MILTER LDAP ICONV STDERR \
 		EXPERIMENTAL DOCS IPV6 DMG_XAR JSON PCRE
 
 ARC_DESC=		Enable arch archives support
 ARJ_DESC=		Enable arj archives support
 LHA_DESC=		Enable lha archives support
 UNZOO_DESC=		Enable zoo archives support
-LLVM_DESC=		Enable JIT Bytecode compiler (req. LLVM)
 TESTS_DESC=		Run compile-time tests (req. python)
 MILTER_DESC=		Compile the milter interface
 STDERR_DESC=		Print logs to stderr instead of stdout
@@ -47,7 +46,6 @@ TESTS_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:devel/check
 ICONV_CONFIGURE_ON=	--with-iconv
 ICONV_CONFIGURE_OFF=	--without-iconv
 ICONV_USES=		iconv
-LLVM_USES=		compiler:c++11-lib
 EXPERIMENTAL_CONFIGURE_ENABLE=	experimental
 IPV6_CONFIGURE_ENABLE=	ipv6
 DMG_XAR_CONFIGURE_ENABLE=	xml
@@ -82,7 +80,8 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--enable-gethostbyname_r \
 		--disable-dependency-tracking \
 		--disable-zlib-vcheck \
-		--enable-clamdtop
+		--enable-clamdtop \
+		--disable-llvm
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 # This port has a problem with -pthread,
@@ -135,17 +134,9 @@ USERS=	clamav
 GROUPS=	clamav mail
 .endif
 
-.if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
-CONFIGURE_ARGS+=--enable-llvm --with-system-llvm=${LOCALBASE}/llvm${LLVMVER}
-BUILD_DEPENDS+=	llvm${LLVMVER}>=0:devel/llvm${LLVMVER}
-# Beware: ClamAV doesn't support LLVM 3.7 or higher yet
-LLVMVER=	36
 . if ${PORT_OPTIONS:MTESTS}
 USES+=		python:build
 . endif
-.else
-CONFIGURE_ARGS+=--disable-llvm
-.endif
 
 .if ${PORT_OPTIONS:MMILTER}
 USE_RC_SUBR+=	clamav-milter
