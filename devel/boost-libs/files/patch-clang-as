@@ -1,0 +1,33 @@
+https://svn.boost.org/trac/boost/ticket/12551
+https://github.com/boostorg/context/commit/26b61a67cf1d
+
+--- libs/context/src/asm/jump_arm64_aapcs_elf_gas.S.orig	2016-09-21 14:33:22 UTC
++++ libs/context/src/asm/jump_arm64_aapcs_elf_gas.S
+@@ -37,7 +37,6 @@
+  *                                                     *
+  *******************************************************/
+ 
+-.cpu    generic+fp+simd
+ .text
+ .align  2
+ .global jump_fcontext
+--- libs/context/src/asm/make_arm64_aapcs_elf_gas.S.orig	2016-09-21 14:33:22 UTC
++++ libs/context/src/asm/make_arm64_aapcs_elf_gas.S
+@@ -37,7 +37,6 @@
+  *                                                     *
+  *******************************************************/
+ 
+-.cpu    generic+fp+simd
+ .text
+ .align  2
+ .global make_fcontext
+--- libs/context/src/asm/ontop_arm64_aapcs_elf_gas.S.orig	2016-09-21 14:33:22 UTC
++++ libs/context/src/asm/ontop_arm64_aapcs_elf_gas.S
+@@ -37,7 +37,6 @@
+  *                                                     *
+  *******************************************************/
+ 
+-.cpu    generic+fp+simd
+ .text
+ .align  2
+ .global ontop_fcontext
