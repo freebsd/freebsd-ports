@@ -4,8 +4,7 @@ PORTNAME=	pkg
 DISTVERSION=	1.10.1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	\
-		http://distsets.hardenedbsd.org/
+MASTER_SITES=	http://distsets.hardenedbsd.org/
 
 MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
@@ -21,19 +20,18 @@ PORTDOCS=	NEWS
 PORTSCOUT=	ignore:1
 
 CONFIGURE_ARGS+= \
-	--enable-pie \
 	--disable-silent-rules
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
+PIE_ARGS=	configure
 
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
 
-NOPIE_PORTS=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1100508 && ${ARCH} == "amd64"
