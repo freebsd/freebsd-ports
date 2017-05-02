@@ -1,0 +1,7 @@
+Program for analyzing molecular electronic structure
+
+Iboview can visualize electronic structure from first-principles DFT,
+in terms of intuitive concepts (partial charges, bond orders,
+bond orbitals), even in systems with complex or unusual bonding.
+
+WWW: http://www.iboview.org/
