@@ -26,17 +26,16 @@ CONFIGURE_ARGS+= \
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
-PIE_ARGS=	configure
+
+EXPLICIT_SAFESTACK=	yes
+SAFESTACK_ARGS=		configure
+PIE_ARGS=		configure
 
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1100508 && ${ARCH} == "amd64"
-CONFIGURE_ARGS+=	--enable-safestack
-.endif
 
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
 MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
