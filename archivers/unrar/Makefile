@@ -13,15 +13,13 @@ DISTNAME=	unrarsrc-5.5.3
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
 
-<<<<<<< HEAD
-EXPLICIT_SAFESTACK=		yes
-=======
 LICENSE=	UNRAR
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_NAME=	UnRAR license
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
->>>>>>> upstream/master
+EXPLICIT_SAFESTACK=		yes
+
 BROKEN_SSL=	openssl-devel
 
 OPTIONS_DEFINE=	OPENSSL_AES

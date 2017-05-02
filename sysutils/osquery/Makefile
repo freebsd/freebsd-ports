@@ -39,9 +39,8 @@ GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
 MAKE_JOBS_UNSAFE=	yes
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
-=======
+
 # Some options for things that bring in many dependencies
 OPTIONS_DEFINE=	TSK AWS YARA LLDPD
 
@@ -60,7 +59,6 @@ YARA_CONFIGURE_ENV_OFF=	SKIP_YARA=1
 LLDPD_DESC=	Support Link Layer Discovery Protocol
 LLDPD_LIB_DEPENDS=	liblldpctl.so:net-mgmt/lldpd
 LLDPD_CONFIGURE_ENV_OFF=	SKIP_LLDPD=1
->>>>>>> upstream/master
 
 .include <bsd.port.pre.mk>
 
@@ -89,11 +87,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/deployment/osquery.example.conf \
 		${STAGEDIR}${PREFIX}/etc/osquery.conf.sample
 
-<<<<<<< HEAD
-post-stage:
-=======
 	${TOUCH} ${STAGEDIR}${PREFIX}/etc/osquery.flags
->>>>>>> upstream/master
 	${MKDIR} ${STAGEDIR}/var/db/osquery
 	${MKDIR} ${STAGEDIR}/var/log/osquery
 
