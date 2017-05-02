@@ -140,7 +140,4 @@ TCLTK_DEFAULT?=		8.6
 # Possible values: 4, 5
 VARNISH_DEFAULT?=	4
 
-# Version of lang/gcc.  Do not override!
-LANG_GCC_IS=		5
-
 .endif
