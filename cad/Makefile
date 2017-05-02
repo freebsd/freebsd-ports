@@ -92,5 +92,6 @@
     SUBDIR += verilog-mode.el
     SUBDIR += xcircuit
     SUBDIR += z88
+    SUBDIR += zcad
 
 .include <bsd.port.subdir.mk>

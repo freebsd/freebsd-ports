@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppetdb
-PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTVERSION=	4.4.0
 CATEGORIES=	databases java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 PKGNAMESUFFIX=	4
@@ -25,7 +24,11 @@ SHEBANG_FILES=	ext/bin/puppetdb \
 		ext/cli/export \
 		ext/cli/foreground \
 		ext/cli/import \
-		ext/cli/ssl-setup
+		ext/cli/ssl-setup \
+		ext/cli/start \
+		ext/cli/stop \
+		ext/cli/reload \
+		ext/ezbake-functions.sh
 USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes

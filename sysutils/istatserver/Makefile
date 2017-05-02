@@ -15,8 +15,6 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libsqlite3.so:databases/sqlite3
 
-BROKEN=		does not build (attempt to chown from do-install)
-
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 
