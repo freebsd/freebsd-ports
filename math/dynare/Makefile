@@ -3,7 +3,7 @@
 
 PORTNAME=	dynare
 PORTVERSION=	4.4.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 
