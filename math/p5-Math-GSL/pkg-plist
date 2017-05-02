@@ -79,6 +79,8 @@
 %%SITE_ARCH%%/auto/Math/GSL/MatrixComplex/MatrixComplex.so
 %%SITE_ARCH%%/auto/Math/GSL/Min/Min.so
 %%SITE_ARCH%%/auto/Math/GSL/Monte/Monte.so
+%%SITE_ARCH%%/auto/Math/GSL/Multifit/Multifit.so
+%%SITE_ARCH%%/auto/Math/GSL/Multilarge/Multilarge.so
 %%SITE_ARCH%%/auto/Math/GSL/Multimin/Multimin.so
 %%SITE_ARCH%%/auto/Math/GSL/Multiroots/Multiroots.so
 %%SITE_ARCH%%/auto/Math/GSL/NTuple/NTuple.so
