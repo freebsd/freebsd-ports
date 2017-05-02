@@ -3,7 +3,7 @@
 
 PORTNAME=	widelands
 DISTVERSION=	build18
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	https://launchpadlibrarian.net/167260749/ \
 		http://mirror.amdmi3.ru/distfiles/

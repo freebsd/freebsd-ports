@@ -2,7 +2,7 @@
 
 PORTNAME=	libvisio
 PORTVERSION=	0.1.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/${PORTNAME}/
 PKGNAMESUFFIX=	01

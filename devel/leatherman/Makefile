@@ -2,6 +2,7 @@
 
 PORTNAME=	leatherman
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jslagle@gmail.com
