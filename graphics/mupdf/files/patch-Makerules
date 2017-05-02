@@ -1,0 +1,35 @@
+--- Makerules.orig	2017-04-05 11:02:21 UTC
++++ Makerules
+@@ -110,27 +110,21 @@ LD := xcrun ld
+ RANLIB_CMD := xcrun ranlib $@
+ 
+ # Linux uses pkg-config for system libraries.
+-else ifeq "$(OS)" "Linux"
++else ifeq "$(OS)" "FreeBSD"
+ 
+ HAVE_PTHREAD := yes
+ SYS_PTHREAD_CFLAGS :=
+ SYS_PTHREAD_LIBS := -lpthread
+ 
+-ifeq "$(shell pkg-config --exists 'libcrypto <= 1.0.1t' && echo yes)" "yes"
+-HAVE_LIBCRYPTO := yes
+-SYS_LIBCRYPTO_CFLAGS := -DHAVE_LIBCRYPTO $(shell pkg-config --cflags libcrypto)
+-SYS_LIBCRYPTO_LIBS := $(shell pkg-config --libs libcrypto)
+-endif
++HAVE_LIBCRYPTO := no
++SYS_LIBCRYPTO_CFLAGS :=
++SYS_LIBCRYPTO_LIBS :=
+ 
+ ifeq "$(shell pkg-config --exists libcurl && echo yes)" "yes"
+ HAVE_CURL := yes
+ SYS_CURL_CFLAGS := $(shell pkg-config --cflags libcurl)
+ SYS_CURL_LIBS := $(shell pkg-config --libs libcurl)
+-ifeq "$(shell pkg-config --exists openssl && echo yes)" "yes"
+-HAVE_OPENSSL_SSL := yes
+-SYS_CURL_CFLAGS += $(shell pkg-config --cflags openssl)
+-SYS_CURL_DEPS += $(shell pkg-config --libs openssl)
+-endif
++HAVE_OPENSSL_SSL := no
+ endif
+ SYS_CURL_DEPS += -lpthread -lrt
+ 
