@@ -16,11 +16,14 @@ USES=		tar:bzip2
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
+<<<<<<< HEAD
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
 
 BROKEN_ia64=	internal compiler error on ia64
 
+=======
+>>>>>>> upstream/master
 PORTEXAMPLES=	ppccfg.example
 PLIST_FILES=	bin/ppc man/man1/ppc.1.gz %%DATADIR%%/video.x
 

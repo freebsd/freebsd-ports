@@ -3,6 +3,7 @@
 
 PORTNAME=	unrar
 PORTVERSION=	5.50b1
+PORTREVISION=	1
 PORTEPOCH=	5
 CATEGORIES+=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/ \
@@ -12,22 +13,29 @@ DISTNAME=	unrarsrc-5.5.3
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
 
+<<<<<<< HEAD
 EXPLICIT_SAFESTACK=		yes
+=======
+LICENSE=	UNRAR
+LICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE_NAME=	UnRAR license
+LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
+
+>>>>>>> upstream/master
 BROKEN_SSL=	openssl-devel
 
-OPTIONS_DEFINE=	DOCS OPENSSL_AES
+OPTIONS_DEFINE=	OPENSSL_AES
 OPTIONS_DEFAULT=OPENSSL_AES
 OPENSSL_AES_DESC=	Use OpenSSL implementation of AES
 
 CONFLICTS_INSTALL?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 
 LDFLAGS+=	-lpthread
-MAKE_ARGS=	CXX=${CXX} LDFLAGS="${LDFLAGS}" STRIP=${STRIP_CMD}
+MAKE_ARGS=	CXX=${CXX} CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" STRIP=${STRIP_CMD}
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/unrar
-PORTDOCS=	license.txt readme.txt
 
 SLAVEDIRS=	archivers/unrar-iconv chinese/unrar
 
@@ -39,9 +47,5 @@ NOPIE_PORTS=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${STAGEDIR}${PREFIX}/bin/
-
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

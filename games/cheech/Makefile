@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 
+BROKEN_aarch64=		fails to compile: error: expected ';' at end of declaration list
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		gmake pkgconfig tar:tgz

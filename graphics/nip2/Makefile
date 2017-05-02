@@ -3,6 +3,7 @@
 
 PORTNAME=	nip2
 PORTVERSION=	8.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 

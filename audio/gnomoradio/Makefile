@@ -13,6 +13,8 @@ COMMENT=	Program for finding and playing free music from the Internet
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libao.so:audio/libao
 
+BROKEN_aarch64=		fails to compile: error: expected ';' at end of declaration list
+
 USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gconfmm26 gnomeprefix gtkmm24

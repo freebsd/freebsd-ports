@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gsl
-PORTVERSION=	1.16
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	The GNU Scientific Library - mathematical libs
 
 LICENSE=	GPLv3

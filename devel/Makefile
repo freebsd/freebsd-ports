@@ -1543,7 +1543,6 @@
     SUBDIR += llvm33
     SUBDIR += llvm34
     SUBDIR += llvm35
-    SUBDIR += llvm36
     SUBDIR += llvm38
     SUBDIR += llvm39
     SUBDIR += llvm40
@@ -5361,6 +5360,7 @@
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-local_time
+    SUBDIR += rubygem-local_time-rails5
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logging

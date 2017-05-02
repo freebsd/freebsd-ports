@@ -3,7 +3,7 @@
 
 PORTNAME?=	pypy
 DISTVERSION?=	5.7.1	# Also update bsd.pypy.cffi.mk
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/ http://buildbot.pypy.org/mirror/
 DISTNAME?=	${PORTNAME}2-v${PORTVERSION}-src
@@ -109,6 +109,9 @@ PYPY_BITS=	64
 .endif
 PLIST_SUB+=	PYPY_BITS="${PYPY_BITS}"
 
+post-extract:
+	${FIND} ${WRKSRC} -name '*.swn' -delete
+
 pre-build:
 	if [ ! -f ${BUILD_WRKSRC}/Makefile ]; then \
 		${RM} -r ${WRKDIR}/build; \
@@ -156,7 +159,7 @@ pkg-plist: stage
 		-e '/\/$$/d' \
 			${WRKDIR}/.plist-files-gen
 	${ECHO} bin/${PORTNAME} > ${WRKDIR}/pkg-plist
-	${SORT} ${WRKDIR}/.plist-files-gen | ${GREP} -v '\.swn$$\|\.orig' >> ${WRKDIR}/pkg-plist
+	${SORT} ${WRKDIR}/.plist-files-gen | ${GREP} -v '\.orig' >> ${WRKDIR}/pkg-plist
 	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
 
 .include <bsd.port.post.mk>

@@ -144,11 +144,7 @@ _USE_GCC:=	${GCC_DEFAULT}
 .  if ${OSVERSION} > ${_GCCVERSION_${v}_R} || !exists(/usr/bin/gcc)
 V:=			${_GCCVERSION_${v}_V:S/.//}
 _GCC_PORT_DEPENDS:=	gcc${V}
-.   if ${_USE_GCC} == ${LANG_GCC_IS}
-_GCC_PORT:=		gcc
-.   else
 _GCC_PORT:=		gcc${V}
-.   endif
 CC:=			gcc${V}
 CXX:=			g++${V}
 CPP:=			cpp${V}
