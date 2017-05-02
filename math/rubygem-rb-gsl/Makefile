@@ -1,10 +1,11 @@
 # Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
 # $FreeBSD$
 
-PORTNAME=	rb-gsl
-PORTVERSION=	1.16.0.4
+PORTNAME=	gsl
+PORTVERSION=	2.1.0.2
 CATEGORIES=	math rubygems
 MASTER_SITES=	RG
+PKGNAMEPREFIX=	rubygem-rb-
 
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Ruby extension library for GSL (GNU Scientific Library)
