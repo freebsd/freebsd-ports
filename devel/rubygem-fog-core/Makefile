@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-core
-PORTVERSION=	1.44.0
+PORTVERSION=	1.44.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-excon>=0.49:devel/rubygem-excon \
-		rubygem-formatador>=0.2:devel/rubygem-formatador \
-		rubygem-xmlrpc>=0:net/rubygem-xmlrpc
+		rubygem-formatador>=0.2:devel/rubygem-formatador
 
 NO_ARCH=	yes
 USE_RUBY=	yes
