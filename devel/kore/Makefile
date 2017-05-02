@@ -4,7 +4,7 @@
 PORTNAME=	kore
 PORTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-release
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel www
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -20,11 +20,10 @@ GH_ACCOUNT=	jorisvink
 
 CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_clang=	-Wno-error=c11-extensions # 12.0 + -pedantic
-MAKE_ARGS=	INSTALL_DIR="${STAGEDIR}${PREFIX}/bin" \
-		INCLUDE_DIR="${STAGEDIR}${PREFIX}/include/kore"
 
-OPTIONS_DEFINE=	DEBUG HTTP JSONRPC PGSQL TASKS TLS
+OPTIONS_DEFINE=	DEBUG EXAMPLES HTTP JSONRPC PGSQL TASKS TLS
 OPTIONS_DEFAULT=	HTTP JSONRPC PGSQL TASKS TLS
+OPTIONS_SUB=	yes
 
 HTTP_DESC=	Build with HTTP support
 JSONRPC_DESC=	Build with JSON-RPC support
@@ -50,19 +49,26 @@ JSONRPC_LIB_DEPENDS=	libyajl.so:devel/yajl
 
 DEBUG_VARS=	MAKE_ARGS+=DEBUG=1
 
+KORE_BIN=	kore${PKGNAMESUFFIX}
+PLIST_SUB=	KORE_BIN="${KORE_BIN}"
+
 post-patch:
-# Disable kore's own optimizations flags, make sure the correct flags
-# are set when LOCALBASE is not /usr/local, and allow __generic on
-# FreeBSD 12.0-CURRENT after r308264
+# Disable kore's own optimizations flags, make sure the correct paths
+# are set when LOCALBASE is not /usr/local
 	@${REINPLACE_CMD} -e 's|CFLAGS+=-O|#|g' \
 		-e 's|/usr/local/|${LOCALBASE}/|g' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|"kore"|"${PREFIX}/bin/${KORE_BIN}"|g' \
+		-e 's|%%KORE_BIN%%|${KORE_BIN}|g' \
+		${WRKSRC}/src/cli.c ${WRKSRC}/src/utils.c
 
-pre-install:
-	${STRIP_CMD} ${WRKSRC}/kore
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/kore ${STAGEDIR}${PREFIX}/bin/${KORE_BIN}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${KORE_BIN}/kore
+	@cd ${WRKSRC}/includes && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/${KORE_BIN}/kore
 
-post-install:
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/conf && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+do-install-EXAMPLES-on:
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/conf && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
