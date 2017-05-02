@@ -9371,3 +9371,5 @@ graphics/ocropus||2017-04-30|Has expired: Unfetchable for more than six months (
 net/clamz||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 misc/terraform||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 net-mgmt/flow-tools-ng||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
+devel/llvm36||2017-05-02|Obsolete and unmaintained upstream
+lang/clang36||2017-05-02|Obsolete and unmaintained upstream

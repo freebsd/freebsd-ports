@@ -11,6 +11,9 @@ NO_BUILD=	yes
 
 .include "${.CURDIR}/..//boost-all/common.mk"
 
+post-patch:
+	@${RM} ${WRKSRC}/libs/python/example/tutorial/hello.py
+
 do-install:
 # Documentation & examples
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
