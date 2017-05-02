@@ -969,6 +969,7 @@
     SUBDIR += py-cjdns
     SUBDIR += py-cloudfiles
     SUBDIR += py-coherence
+    SUBDIR += py-cymruwhois
     SUBDIR += py-dpkt
     SUBDIR += py-dugong
     SUBDIR += py-ec2-cli-tools
