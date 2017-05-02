@@ -1543,7 +1543,6 @@
     SUBDIR += llvm33
     SUBDIR += llvm34
     SUBDIR += llvm35
-    SUBDIR += llvm36
     SUBDIR += llvm38
     SUBDIR += llvm39
     SUBDIR += llvm40
