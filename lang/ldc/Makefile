@@ -16,6 +16,9 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	clang39:devel/llvm39
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
+BROKEN_aarch64=		fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
+BROKEN_armv6=		fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
+
 USES=		cmake
 CMAKE_ARGS+=	-DD_COMPILER:STRING="${WRKDIR}/${PORTNAME}-${BOOTVER:S/$/-src/}/bin/ldmd2"
 CC=		clang39

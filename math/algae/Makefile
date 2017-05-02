@@ -13,11 +13,9 @@ COMMENT=	Programming language for numerical analysis
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	Does not build
-
-BROKEN_ia64=	does not compile
-BROKEN_powerpc=	does not compile
-BROKEN_sparc64=	does not compile
+BROKEN_aarch64=		does not build: checking for proper floating point exception handling... no
+BROKEN_armv6=		does not build: checking for proper floating point exception handling... no
+BROKEN_powerpc64=	does not build: configure: error: Cannot handle floating point exceptions
 
 GNU_CONFIGURE=	yes
 USES=		fortran
