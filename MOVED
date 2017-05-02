@@ -9373,3 +9373,4 @@ misc/terraform||2017-04-30|Has expired: Unfetchable for more than six months (go
 net-mgmt/flow-tools-ng||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 devel/llvm36||2017-05-02|Obsolete and unmaintained upstream
 lang/clang36||2017-05-02|Obsolete and unmaintained upstream
+lang/ruby21||2017-05-02|Has expired: Upstream support ended
