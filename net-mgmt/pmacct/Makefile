@@ -12,6 +12,9 @@ COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		fails to build: undefined reference to sbrk
+BROKEN_powerp64=	fails to build: cc: Internal error: Segmentation fault (program ld)
+
 USE_RC_SUBR=	pmacctd nfacctd sfacctd
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes

@@ -2,8 +2,8 @@ Define EPC_sig and RFP_sig for JS_CODEGEN_(ARM64|MIPS) on BSDs
 
 diff --git js/src/wasm/WasmSignalHandlers.cpp js/src/wasm/WasmSignalHandlers.cpp
 index 1ab76eeb4bd9..bcdff0487837 100644
---- js/src/wasm/WasmSignalHandlers.cpp
-+++ js/src/wasm/WasmSignalHandlers.cpp
+--- mozilla/js/src/asmjs/WasmSignalHandlers.cpp
++++ mozilla/js/src/asmjs/WasmSignalHandlers.cpp
 @@ -108,7 +108,19 @@ class AutoSetHandlingSegFault
  # define R12_sig(p) ((p)->sc_r12)
  # define R13_sig(p) ((p)->sc_r13)

@@ -2,11 +2,15 @@
 
 PORTNAME=	noto
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://noto-website-2.storage.googleapis.com/pkgs/
+MASTER_SITES=	https://noto-website.storage.googleapis.com/pkgs/
 DISTNAME=	${PORTNAME:S|n|N|}-hinted
-DISTFILES=	${DISTNAME}.zip
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}.zip \
+		${PORTNAME:S|n|N|}SerifCJKjp-hinted.zip \
+		${PORTNAME:S|n|N|}SerifCJKkr-hinted.zip \
+		${PORTNAME:S|n|N|}SerifCJKsc-hinted.zip \
+		${PORTNAME:S|n|N|}SerifCJKtc-hinted.zip
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Google font family
