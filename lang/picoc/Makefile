@@ -17,8 +17,6 @@ USES=		gmake readline
 
 PLIST_FILES=	bin/picoc
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/picoc ${STAGEDIR}${PREFIX}/bin/picoc
 

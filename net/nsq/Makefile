@@ -3,6 +3,7 @@
 PORTNAME=	nsq
 PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-compat
 CATEGORIES=	net
 
 MAINTAINER=	jhixson@gmail.com
@@ -20,7 +21,6 @@ USES=	compiler go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nsqio
-GH_TAGNAME=	v1.0.0-compat
 GH_SUBDIR=	src/github.com/nsqio/nsq
 GH_TUPLE=	BurntSushi:toml:v0.2.0:toml/src/github.com/BurntSushi/toml \
 	judwhite:go-svc:v1.0.0:go_svc/src/github.com/judwhite/go-svc \
