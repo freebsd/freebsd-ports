@@ -12,6 +12,8 @@ COMMENT=	Introspection bindings for libical
 
 LIB_DEPENDS=	libical.so:devel/libical
 
+BROKEN=		Does not build with libical >= 2.0
+
 USES=		compiler:c11 gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
 GNU_CONFIGURE=	yes
