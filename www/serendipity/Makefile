@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serendipity
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.1
 CATEGORIES=	www
 MASTER_SITES=	SF/php-blog/${PORTNAME}/${PORTVERSION}
 
@@ -11,8 +11,6 @@ COMMENT=	PHP based weblog software
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE
-
-RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:archivers/pear-File_Archive
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
