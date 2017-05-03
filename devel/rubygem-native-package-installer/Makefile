@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	native-package-installer
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
