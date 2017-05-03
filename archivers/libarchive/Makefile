@@ -2,6 +2,7 @@
 
 PORTNAME=	libarchive
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
@@ -13,11 +14,10 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-OPTIONS_DEFINE=	LZ4 LZO NETTLE
-OPTIONS_DEFAULT=LZ4 LZO
+OPTIONS_DEFINE=	LZ4 NETTLE
+OPTIONS_DEFAULT=LZ4
 
 LZ4_DESC=	Support lz4 compression via liblz4
-LZO_DESC=	Support lzo compression via liblzo2
 NETTLE_DESC=	Use Nettle instead of OpenSSL
 
 USES=		cpe iconv libtool pathfix
@@ -85,8 +85,6 @@ CFLAGS+=	"-I${LOCALBASE}/include"
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
-LZO_CONFIGURE_WITH=	lzo2
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 LZ4_CONFIGURE_WITH=	lz4
 
