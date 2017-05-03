@@ -223,6 +223,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/unit_test_runner.js
 %%DATADIR%%/resources/inspector/utility_shared_worker.js
 %%DATADIR%%/snapshot_blob.bin
+%%DATADIR%%/test_ime_driver.service
 %%DATADIR%%/ui.service
 %%DATADIR%%/views_mus_resources.pak
 %%DRIVER%%bin/chromedriver
