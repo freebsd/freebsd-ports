@@ -11,6 +11,11 @@ COMMENT=	Overclocking utility for ATI Radeon video cards
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		fails to install: undefined reference to outl
+BROKEN_armv6=		fails to install: undefined reference to outl
+BROKEN_mips=		fails to install: undefined reference to outl
+BROKEN_mips64=		fails to install: undefined reference to outl
+
 USES=		tar:bzip2
 
 PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/${PORTNAME}
