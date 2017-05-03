@@ -3,7 +3,7 @@
 
 PORTNAME=	libmapi
 PORTVERSION=	2.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/openchange/openchange/archive/
 DISTNAME=	openchange-${PORTVERSION}-${CODENAME}
