@@ -338,11 +338,15 @@ CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_DIGEST}
-GIT_AUTH_DIGEST_VERSION=	cc61b4a
+GIT_AUTH_DIGEST_VERSION=	519dc2a
 GH_ACCOUNT+=	atomx:auth_digest
 GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_auth_digest}
+.else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
