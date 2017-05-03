@@ -3,6 +3,7 @@
 
 PORTNAME=	libfreefare
 PORTVERSION=	0.4.0
+DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -15,7 +16,6 @@ LIB_DEPENDS=	libnfc.so:devel/libnfc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nfc-tools
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		autoreconf gmake libtool pathfix pkgconfig ssl

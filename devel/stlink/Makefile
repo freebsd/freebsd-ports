@@ -17,7 +17,6 @@ GTK3_USE=		GNOME=gtk30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	texane
-GH_TAGNAME=	1.3.1
 
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes

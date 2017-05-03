@@ -1,6 +1,6 @@
-TIMESTAMP = 1490280997
-SHA256 (nsqio-nsq-v1.0.0-v1.0.0-compat_GH0.tar.gz) = c279d339eceb84cad09e2c2bc21e069e37988d0f6b7343d77238374081c9fd29
-SIZE (nsqio-nsq-v1.0.0-v1.0.0-compat_GH0.tar.gz) = 765228
+TIMESTAMP = 1493813223
+SHA256 (nsqio-nsq-v1.0.0-compat_GH0.tar.gz) = c279d339eceb84cad09e2c2bc21e069e37988d0f6b7343d77238374081c9fd29
+SIZE (nsqio-nsq-v1.0.0-compat_GH0.tar.gz) = 765228
 SHA256 (BurntSushi-toml-v0.2.0_GH0.tar.gz) = 4d496e400019fd050ff569952befb464f03ed586cb475640bdc206fe5c2b75cc
 SIZE (BurntSushi-toml-v0.2.0_GH0.tar.gz) = 38304
 SHA256 (judwhite-go-svc-v1.0.0_GH0.tar.gz) = f37c4557ed506d47e3532eb8dec1b4e7834c600127f246fd1c153353ffa44ce9
