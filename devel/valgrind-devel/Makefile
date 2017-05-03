@@ -4,7 +4,7 @@
 PORTNAME=	valgrind
 PORTVERSION=	3.10.1.20160113
 DISTVERSIONPREFIX=	freebsd-
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/ \
@@ -60,8 +60,6 @@ PORTDOCS=	html
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
-
-USE_GCC=	yes
 
 .include <bsd.port.options.mk>
 
