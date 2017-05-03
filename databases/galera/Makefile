@@ -18,6 +18,9 @@ BUILD_DEPENDS=	checkmk:devel/check \
 		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>=0:textproc/py-cloud_sptheme
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	error Please add support for your architecture in build/build_config.h
+
 USES=		execinfo python:build scons shebangfix ssl
 
 USE_CXXSTD=	c++11

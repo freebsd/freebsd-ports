@@ -15,6 +15,8 @@ COMMENT=	Source code analysis tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to build: undefined reference to fpsetround
+
 USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/snavigator/demo/c++/contrib/perl/sample_client
 USE_GCC=	yes

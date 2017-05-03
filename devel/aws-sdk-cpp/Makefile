@@ -12,6 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
+BROKEN_aarch64=		fails to build: runaway process
+BROKEN_armv6=		fails to build: runaway process
+BROKEN_powerpc64=	fails to build: runaway process
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws
 USES=		cmake pkgconfig compiler:c++11-lib ssl
