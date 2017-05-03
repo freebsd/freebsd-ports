@@ -249,7 +249,6 @@ lib/qbs/plugins/libqbs_qt_scanner.so
 %%DATADIR%%/modules/bundle/MacOSX-Package-Types.xcspec
 %%DATADIR%%/modules/bundle/MacOSX-Product-Types.xcspec
 %%DATADIR%%/modules/bundle/bundle.js
-%%DATADIR%%/modules/bundle/update-specs.sh
 %%DATADIR%%/modules/cli/CLIModule.qbs
 %%DATADIR%%/modules/cli/cli.js
 %%DATADIR%%/modules/cli/mono.qbs

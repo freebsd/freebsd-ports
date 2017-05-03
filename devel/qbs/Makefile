@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbs
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.7.2
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/${PORTNAME}/${PORTVERSION}
@@ -45,5 +44,9 @@ pre-configure:
 # See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
 	${MKDIR} ${CONFIGURE_WRKSRC}
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${CONFIGURE_WRKSRC}/lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
+
+# The file in question is not used on FreeBSD. To silence stage-qa, remove it from stage-dir. 
+post-install:
+	${RM} ${STAGEDIR}${DATADIR}/modules/bundle/update-specs.sh
 
 .include <bsd.port.mk>
