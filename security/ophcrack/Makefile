@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ophcrack
-PORTVERSION=	3.6.1
+PORTVERSION=	3.7.0
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ USES=		gmake localbase ssl tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ophcrack
-PORTDOCS=	AUTHORS ChangeLog README
+PORTDOCS=	AUTHORS ChangeLog README.md
 
 OPTIONS_DEFINE=	X11 GRAPH DOCS
 OPTIONS_DEFAULT=	X11 GRAPH
@@ -47,7 +47,7 @@ post-patch:
 			${WRKSRC}/src/samdump2/bkhive.c \
 			${WRKSRC}/src/samdump2/hive.c \
 			${WRKSRC}/src/samdump2/samdump2.c \
-			${WRKSRC}/src/misc.h
+			${WRKSRC}/src/core/misc.h
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
