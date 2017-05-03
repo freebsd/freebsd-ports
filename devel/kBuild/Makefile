@@ -16,6 +16,8 @@ COMMENT=	Makefile framework
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 BROKEN_powerpc64=	does not build: fatal error: xmmintrin.h: No such file or directory
+NOT_FOR_ARCHS=		aarch64 armv6 mips mips64
+NOT_FOR_ARCHS_REASON=	./kBuild/env.sh: unknown cpu/arch
 
 USE_GCC=	any
 USES=		autoreconf:build gmake makeinfo
