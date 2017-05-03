@@ -377,10 +377,15 @@ USE_OPENLDAP=	yes
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_PAM}
-NGINX_AUTH_PAM_VERSION=	1.2
-MASTER_SITES+=	http://web.iti.upv.es/~sto/nginx/:auth_pam
-DISTFILES+=	ngx_http_auth_pam_module-${NGINX_AUTH_PAM_VERSION}.tar.gz:auth_pam
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM_VERSION}
+GIT_HTTP_AUTH_PAM_VERSION=	1.5.1
+GH_ACCOUNT+=	sto:auth_pam
+GH_PROJECT+=	ngx_http_auth_pam_module:auth_pam
+GH_TAGNAME+=	v${GIT_HTTP_AUTH_PAM_VERSION}:auth_pam
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_auth_pam}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_pam}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_REQ}
