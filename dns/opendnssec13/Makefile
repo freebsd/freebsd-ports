@@ -41,8 +41,10 @@ OPTIONS_DEFAULT=	AUDITOR
 OPTIONS_SUB=		yes
 
 AUDITOR_BUILD_DEPENDS=	rubygem-soap4r>=0:devel/rubygem-soap4r \
-			rubygem-dnsruby>=1.53:dns/rubygem-dnsruby
+			rubygem-dnsruby>=1.53:dns/rubygem-dnsruby \
+			${LOCALBASE}/bin/grep:textproc/gnugrep
 AUDITOR_CONFIGURE_ENABLE=	auditor
+AUDITOR_CONFIGURE_ENV=	ac_cv_path_GREP=${LOCALBASE}/bin/grep
 AUDITOR_USE=		RUBY=yes
 MYSQL_BUILD_DEPENDS_OFF=sqlite3>=3.3.9:databases/sqlite3
 MYSQL_CONFIGURE_OFF=	--with-sqlite3=${LOCALBASE} --with-database-backend=sqlite3

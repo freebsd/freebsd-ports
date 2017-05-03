@@ -3,6 +3,7 @@
 
 PORTNAME=	firefox-i18n
 PORTVERSION=	53.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}/linux-i686/xpi \
 		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build6/linux-i686/xpi

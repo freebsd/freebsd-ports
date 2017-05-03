@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-CheckLib
-PORTVERSION=	1.07
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,7 @@ COMMENT=	Check that a library is available
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-CaptureOutput>=1.08:devel/p5-IO-CaptureOutput
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-IO-CaptureOutput>=1.08:devel/p5-IO-CaptureOutput
 
 NO_ARCH=	yes
 USES=		perl5

@@ -6,7 +6,7 @@ PORTVERSION=	3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thick database bindings for Ada
 
 LICENSE=	ISCL

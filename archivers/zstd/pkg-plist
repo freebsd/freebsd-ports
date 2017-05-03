@@ -1,3 +1,4 @@
+bin/pzstd
 bin/unzstd
 bin/zstd
 bin/zstdcat

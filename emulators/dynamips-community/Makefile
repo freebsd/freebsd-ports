@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dynamips
-PORTVERSION=	0.2.15
+PORTVERSION=	0.2.16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-community
@@ -12,8 +12,7 @@ COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libelf.so:devel/libelf \
-		libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libelf.so:devel/libelf
 
 CFLAGS+=	-I${PREFIX}/include/libelf
 
@@ -55,7 +54,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/hypervisor_mode.7 ${STAGEDIR}${MANPREFIX}/man/man7
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in README README.hypervisor RELEASE-NOTES ChangeLog MAINTAINERS
+.for file in README.md README.hypervisor RELEASE-NOTES ChangeLog MAINTAINERS
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 

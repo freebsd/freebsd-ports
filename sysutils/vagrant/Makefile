@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
@@ -36,7 +36,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mitchellh
 
 USES=		shebangfix
-SHEBANG_FILES=	scripts/website_push_docs.sh \
+SHEBANG_FILES=	plugins/hosts/darwin/scripts/install_virtualbox.sh \
+		scripts/sign.sh \
+		scripts/website_push_docs.sh \
 		scripts/website_push_www.sh
 USE_RUBY=	yes
 GEMFILES=	vagrant-${PORTVERSION}.gem

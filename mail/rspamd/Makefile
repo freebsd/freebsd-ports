@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.7
 CATEGORIES=	mail
-MASTER_SITES=	http://rspamd.com/downloads/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
@@ -43,12 +42,15 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DNO_SHARED=ON \
 		-DENABLE_FANN=ON
 
-USES=		cmake:outsource gettext tar:xz pkgconfig perl5 \
+USES=		cmake:outsource pkgconfig perl5 \
 		compiler:c11 sqlite ssl
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 USE_GNOME=	glib20
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	vstakhov
 
 .include <bsd.port.options.mk>
 

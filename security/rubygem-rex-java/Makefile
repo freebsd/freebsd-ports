@@ -1,12 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	rex-java
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Ruby Exploitation(Rex) library for parsing Java serialized streams
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netif
-PORTVERSION=	1.0.20161013
+PORTVERSION=	1.0.20170424
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	cython>0:lang/cython
 USE_GITHUB=     yes
 GH_ACCOUNT=	freenas
 GH_PROJECT=	py-netif
-GH_TAGNAME=	d663844
+GH_TAGNAME=	a102b4f
 
 USES=		python
 USE_PYTHON=	autoplist distutils

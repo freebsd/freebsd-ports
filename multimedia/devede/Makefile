@@ -4,7 +4,7 @@
 PORTNAME=	devede
 PORTVERSION=	3.23.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,12 +19,22 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		vcdimager:multimedia/vcdimager \
 		cdrecord:sysutils/cdrtools
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	rastersoft
+GH_PROJECT=	Devede
+
+USES=		iconv python:run shebangfix
+USE_GNOME=	pygtk2:run
+SHEBANG_FILES=	devede
 NO_ARCH=	yes
-USES=		iconv python
 NO_BUILD=	yes
+
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	IBUS NLS
 OPTIONS_DEFAULT=	IBUS
+OPTIONS_SUB=	yes
+
 IBUS_DESC=	iBus support
 
 DEJAVU_FONTSDIR=	${LOCALBASE}/share/fonts/dejavu
@@ -32,16 +42,6 @@ DEJAVU_FONTFILE=	${DEJAVU_FONTSDIR}/DejaVuSans.ttf
 
 IBUS_RUN_DEPENDS=	ibus-daemon:textproc/ibus
 NLS_USES=	gettext-runtime:run
-OPTIONS_SUB=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	rastersoft
-GH_PROJECT=	Devede
-
-USE_GNOME=	pygtk2:run
-USE_PYTHON=	run
-
-PORTDOCS=	*
 
 post-patch:
 # Fix general locations

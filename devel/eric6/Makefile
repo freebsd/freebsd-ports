@@ -1,6 +1,7 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	1
 CATEGORIES=	devel python
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -49,7 +50,7 @@ do-configure:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/eric6.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	${LN} -sf ${DATADIR:C|${PREFIX}(/share(/pixmaps)?)?||:C|/[^/]+|../|g}icons/default/eric.png \
+	${LN} -sf ${DATADIR:C|${PREFIX}(/share(/pixmaps)?)?||:C|/[^/]+|../|g}eric6/icons/default/eric.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/eric6.png
 	@${MKDIR} ${STAGEDIR}${DATADIR}/i18n
 

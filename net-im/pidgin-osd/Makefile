@@ -3,7 +3,7 @@
 
 PORTNAME=	pidgin-osd
 PORTVERSION=	0.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im
 MASTER_SITES=	https://babelize.org/download/pidgin-osd/
 

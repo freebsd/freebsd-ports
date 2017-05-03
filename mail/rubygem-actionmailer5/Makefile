@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionmailer
-PORTVERSION=	5.0.2
+PORTVERSION=	5.1.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-actionpack5>=${PORTVERSION}:www/rubygem-actionpack5 \
 		rubygem-actionview5>=${PORTVERSION}:devel/rubygem-actionview5 \
 		rubygem-activejob5>=${PORTVERSION}:devel/rubygem-activejob5 \
 		rubygem-mail>=2.5.4:mail/rubygem-mail \
-		rubygem-rails-dom-testing>=2.0:textproc/rubygem-rails-dom-testing
+		rubygem-rails-dom-testing-rails5>=2.0:textproc/rubygem-rails-dom-testing-rails5
 
 NO_ARCH=	yes
 USE_RUBY=	yes

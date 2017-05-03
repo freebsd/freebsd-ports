@@ -112,6 +112,18 @@
 # ${opt}_QMAKE_OFF		When option is disabled, it will add its content to
 #				the QMAKE_ARGS.
 #
+# ${opt}_MESON_ON		When option is enabled, it will add its
+#				content to MESON_ARGS.
+# ${opt}_MESON_OFF		When option is disabled, it will add its
+#				content to MESON_ARGS.
+#
+# ${opt}_MESON_TRUE		Will add to MESON_ARGS:
+#				Option enabled	-D${content}=true
+#				Option disabled	-D${content}=false
+# ${opt}_MESON_FALSE		Will add to MESON_ARGS:
+#				Option enabled	-D${content}=false
+#				Option disabled	-D${content}=true
+#
 # ${opt}_IMPLIES		When opt is enabled, options named in IMPLIES will
 #				get enabled too.
 # ${opt}_PREVENTS		When opt is enabled, if any options in PREVENTS are
@@ -521,7 +533,13 @@ CMAKE_ARGS+=		${${opt}_CMAKE_BOOL:C/.*/-D&:BOOL=true/}
 .    if defined(${opt}_CMAKE_BOOL_OFF)
 CMAKE_ARGS+=		${${opt}_CMAKE_BOOL_OFF:C/.*/-D&:BOOL=false/}
 .    endif
-.    for configure in CONFIGURE CMAKE QMAKE
+.    if defined(${opt}_MESON_TRUE)
+MESON_ARGS+=		${${opt}_MESON_TRUE:C/.*/-D&=true/}
+.    endif
+.    if defined(${opt}_MESON_FALSE)
+MESON_ARGS+=		${${opt}_MESON_FALSE:C/.*/-D&=false/}
+.    endif
+.    for configure in CONFIGURE CMAKE MESON QMAKE
 .      if defined(${opt}_${configure}_ON)
 ${configure}_ARGS+=	${${opt}_${configure}_ON}
 .      endif
@@ -571,7 +589,13 @@ CMAKE_ARGS+=		${${opt}_CMAKE_BOOL:C/.*/-D&:BOOL=false/}
 .    if defined(${opt}_CMAKE_BOOL_OFF)
 CMAKE_ARGS+=		${${opt}_CMAKE_BOOL_OFF:C/.*/-D&:BOOL=true/}
 .    endif
-.    for configure in CONFIGURE CMAKE QMAKE
+.    if defined(${opt}_MESON_TRUE)
+MESON_ARGS+=		${${opt}_MESON_TRUE:C/.*/-D&=false/}
+.    endif
+.    if defined(${opt}_MESON_FALSE)
+MESON_ARGS+=            ${${opt}_MESON_FALSE:C/.*/-D&=true/}
+.    endif
+.    for configure in CONFIGURE CMAKE MESON QMAKE
 .      if defined(${opt}_${configure}_OFF)
 ${configure}_ARGS+=	${${opt}_${configure}_OFF}
 .      endif

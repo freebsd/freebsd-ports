@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
-USES=		libtool pathfix pkgconfig python
+USES=		gnome libtool pathfix pkgconfig python
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|tests||' ${WRKSRC}/Makefile.in

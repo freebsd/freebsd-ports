@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	froxlor
-PORTVERSION=	0.9.33.2
+PORTVERSION=	0.9.38.7
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -17,15 +17,12 @@ SUB_FILES+=	pkg-message pkg-deinstall
 SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PLIST_SUB+=	${SUB_LIST}
 
-USE_PHP=	bcmath curl filter ftp json mysql mysqli pdo_mysql posix session xml
+USE_PHP=	bcmath curl filter ftp json pdo_mysql posix session xml zip
 
 WANT_PHP_CLI=	yes
 
-USES=		shebangfix
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-SHEBANG_FILES=	froxlor/install/tsmarty2c.php
 
 OPTIONS_DEFINE=	LIBNSS LOGROTATE MYSQLS DKIM PCNTL NLS
 
@@ -85,7 +82,7 @@ PROFTPD_RUN_DEPENDS=	${LOCALBASE}/libexec/proftpd/mod_sql_mysql.so:databases/pro
 
 PUREFTPD_RUN_DEPENDS=	pure-ftpd:ftp/pure-ftpd
 
-POWERDNS_RUN_DEPENDS=	powerdns:dns/powerdns
+POWERDNS_RUN_DEPENDS=	pdns_control:dns/powerdns
 
 ISCDNS_RUN_DEPENDS=	bind>=9.9.0.0:dns/bind99
 

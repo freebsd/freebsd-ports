@@ -3,7 +3,7 @@
 
 PORTNAME=	quilt
 PORTVERSION=	0.65
-PORTSREVISION=	1
+PORTSREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 
@@ -18,7 +18,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gpatch:devel/patch \
 		gdiff:textproc/diffutils \
 		diffstat:textproc/diffstat \
-		gawk:lang/gawk
+		gawk:lang/gawk \
+		${LOCALBASE}/bin/grep:textproc/gnugrep
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		formail:mail/procmail
 
@@ -33,7 +34,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
 		--without-getopt \
 		--with-patch=${LOCALBASE}/bin/gpatch \
-		--with-diff=${LOCALBASE}/bin/gdiff
+		--with-diff=${LOCALBASE}/bin/gdiff \
+		--with-grep=${LOCALBASE}/bin/grep
 
 PORTDOCS=	README README.MAIL quilt.pdf
 

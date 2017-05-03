@@ -6,6 +6,7 @@
 %%WWWDIR%%/actions/admin/settings/100.panel.php
 %%WWWDIR%%/actions/admin/settings/110.accounts.php
 %%WWWDIR%%/actions/admin/settings/120.system.php
+%%WWWDIR%%/actions/admin/settings/122.%%AP_NAME%%vhost.php
 %%WWWDIR%%/actions/admin/settings/125.cronjob.php
 %%WWWDIR%%/actions/admin/settings/130.webserver.php
 %%WWWDIR%%/actions/admin/settings/131.ssl.php
@@ -23,6 +24,8 @@
 %%WWWDIR%%/actions/admin/settings/210.security.php
 %%WWWDIR%%/actions/admin/settings/220.quota.php
 %%WWWDIR%%/admin_admins.php
+%%WWWDIR%%/admin_apcuinfo.php
+%%WWWDIR%%/admin_autoupdate.php
 %%WWWDIR%%/admin_configfiles.php
 %%WWWDIR%%/admin_cronjobs.php
 %%WWWDIR%%/admin_customers.php
@@ -31,13 +34,13 @@
 %%WWWDIR%%/admin_ipsandports.php
 %%WWWDIR%%/admin_logger.php
 %%WWWDIR%%/admin_message.php
+%%WWWDIR%%/admin_opcacheinfo.php
 %%WWWDIR%%/admin_phpsettings.php
 %%WWWDIR%%/admin_settings.php
 %%WWWDIR%%/admin_templates.php
 %%WWWDIR%%/admin_tickets.php
 %%WWWDIR%%/admin_traffic.php
 %%WWWDIR%%/admin_updates.php
-%%WWWDIR%%/cache/.keep
 %%WWWDIR%%/css/images/animated-overlay.gif
 %%WWWDIR%%/css/images/ui-bg_diagonals-thick_18_b81900_40x40.png
 %%WWWDIR%%/css/images/ui-bg_diagonals-thick_20_666666_40x40.png
@@ -48,20 +51,22 @@
 %%WWWDIR%%/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png
 %%WWWDIR%%/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
 %%WWWDIR%%/css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
-%%WWWDIR%%/css/images/ui-icons_222222_256x%%APACHE_VERSION%%0.png
-%%WWWDIR%%/css/images/ui-icons_228ef1_256x%%APACHE_VERSION%%0.png
-%%WWWDIR%%/css/images/ui-icons_ef8c08_256x%%APACHE_VERSION%%0.png
-%%WWWDIR%%/css/images/ui-icons_ffd27a_256x%%APACHE_VERSION%%0.png
-%%WWWDIR%%/css/images/ui-icons_ffffff_256x%%APACHE_VERSION%%0.png
+%%WWWDIR%%/css/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/css/images/ui-icons_228ef1_256x240.png
+%%WWWDIR%%/css/images/ui-icons_ef8c08_256x240.png
+%%WWWDIR%%/css/images/ui-icons_ffd27a_256x240.png
+%%WWWDIR%%/css/images/ui-icons_ffffff_256x240.png
 %%WWWDIR%%/css/jquery-ui.min.css
 %%WWWDIR%%/customer_domains.php
 %%WWWDIR%%/customer_email.php
 %%WWWDIR%%/customer_extras.php
 %%WWWDIR%%/customer_ftp.php
 %%WWWDIR%%/customer_index.php
+%%WWWDIR%%/customer_logger.php
 %%WWWDIR%%/customer_mysql.php
 %%WWWDIR%%/customer_tickets.php
 %%WWWDIR%%/customer_traffic.php
+%%WWWDIR%%/dns_editor.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/%%AP_NAME%%.sql
 %%WWWDIR%%/install/install.php
@@ -70,6 +75,7 @@
 %%WWWDIR%%/install/lng/french.lng.php
 %%WWWDIR%%/install/lng/german.lng.php
 %%WWWDIR%%/install/scripts/language-check.php
+%%WWWDIR%%/install/scripts/switch-server-ip.php
 %%WWWDIR%%/install/templates/assets/css/install.css
 %%WWWDIR%%/install/templates/assets/img/favicon.ico
 %%WWWDIR%%/install/templates/assets/img/logo.png
@@ -79,6 +85,7 @@
 %%WWWDIR%%/install/templates/dataform2.tpl
 %%WWWDIR%%/install/templates/dataitem.tpl
 %%WWWDIR%%/install/templates/dataitemchk.tpl
+%%WWWDIR%%/install/templates/dataitemyesno.tpl
 %%WWWDIR%%/install/templates/datasection.tpl
 %%WWWDIR%%/install/templates/footer.tpl
 %%WWWDIR%%/install/templates/header.tpl
@@ -86,7 +93,6 @@
 %%WWWDIR%%/install/templates/page.tpl
 %%WWWDIR%%/install/templates/pagebottom.tpl
 %%WWWDIR%%/install/templates/textarea.tpl
-%%WWWDIR%%/install/tsmarty2c.php
 %%WWWDIR%%/install/updates/%%AP_NAME%%/0.9/update_0.9.inc.php
 %%WWWDIR%%/install/updates/%%AP_NAME%%/upgrade_syscp.inc.php
 %%WWWDIR%%/install/updates/preconfig.php
@@ -101,150 +107,26 @@
 %%WWWDIR%%/js/plugins/jquery.flot.resize.min.js
 %%WWWDIR%%/js/plugins/jquery.tablesorter.sizeparser.min.js
 %%WWWDIR%%/lib/ajax.php
-%%WWWDIR%%/lib/classes/Smarty
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/COPYING.lib
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/README
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/SMARTY_2_BC_NOTES.txt
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/SMARTY_3.0_BC_NOTES.txt
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/SMARTY_3.1_NOTES.txt
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/change_log.txt
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/configs/test.conf
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/index.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/cacheresource.apc.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/cacheresource.memcache.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/cacheresource.mysql.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/resource.extendsall.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/resource.mysql.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/plugins/resource.mysqls.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/templates/footer.tpl
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/templates/header.tpl
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/demo/templates/index.tpl
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/Smarty.class.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/SmartyBC.class.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/debug.tpl
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/block.textformat.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.counter.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.cycle.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.fetch.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_checkboxes.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_image.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_options.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_radios.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_select_date.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_select_time.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.html_table.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.mailto.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/function.math.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.capitalize.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.date_format.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.debug_print_var.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.escape.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.regex_replace.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.replace.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.spacify.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifier.truncate.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.cat.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.count_characters.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.count_paragraphs.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.count_sentences.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.count_words.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.default.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.escape.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.from_charset.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.indent.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.lower.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.noprint.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.string_format.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.strip.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.strip_tags.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.to_charset.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.unescape.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.upper.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/modifiercompiler.wordwrap.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/outputfilter.trimwhitespace.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.escape_special_chars.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.literal_compiler_param.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.make_timestamp.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.mb_str_replace.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.mb_unicode.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/shared.mb_wordwrap.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/plugins/variablefilter.htmlspecialchars.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_cacheresource.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_cacheresource_custom.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_cacheresource_keyvaluestore.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_config_source.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_cacheresource_file.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_append.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_assign.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_block.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_break.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_call.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_capture.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_config_load.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_continue.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_debug.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_eval.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_extends.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_for.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_foreach.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_function.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_if.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_include.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_include_php.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_insert.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_ldelim.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_nocache.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_block_plugin.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_function_plugin.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_modifier.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_object_block_function.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_object_function.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_print_expression.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_registered_block.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_registered_function.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_private_special_variable.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_rdelim.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_section.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_setfilter.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compile_while.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_compilebase.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_config.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_config_file_compiler.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_configfilelexer.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_configfileparser.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_data.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_debug.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_filter_handler.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_function_call_handler.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_get_include_path.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_nocache_insert.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_parsetree.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_eval.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_extends.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_file.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_php.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_registered.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_stream.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_resource_string.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_smartytemplatecompiler.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_template.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_templatebase.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_templatecompilerbase.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_templatelexer.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_templateparser.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_utility.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_internal_write_file.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_resource.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_resource_custom.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_resource_recompiled.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_resource_uncompiled.php
-%%WWWDIR%%/lib/classes/Smarty-3.1.21/libs/sysplugins/smarty_security.php
 %%WWWDIR%%/lib/classes/bulk/class.DomainBulkAction.php
+%%WWWDIR%%/lib/classes/config/class.ConfigDaemon.php
+%%WWWDIR%%/lib/classes/config/class.ConfigParser.php
+%%WWWDIR%%/lib/classes/config/class.ConfigService.php
 %%WWWDIR%%/lib/classes/database/class.Database.php
 %%WWWDIR%%/lib/classes/database/class.DbManager.php
 %%WWWDIR%%/lib/classes/database/manager/class.DbManagerMySQL.php
+%%WWWDIR%%/lib/classes/dns/class.DnsEntry.php
+%%WWWDIR%%/lib/classes/dns/class.DnsZone.php
 %%WWWDIR%%/lib/classes/idna/class.idna_convert.php
 %%WWWDIR%%/lib/classes/idna/class.idna_convert_wrapper.php
+%%WWWDIR%%/lib/classes/idna/ext/EncodingHelper.php
+%%WWWDIR%%/lib/classes/idna/ext/IdnaConvert.php
+%%WWWDIR%%/lib/classes/idna/ext/NamePrepData.php
+%%WWWDIR%%/lib/classes/idna/ext/NamePrepData2003.php
+%%WWWDIR%%/lib/classes/idna/ext/NamePrepDataInterface.php
+%%WWWDIR%%/lib/classes/idna/ext/Punycode.php
+%%WWWDIR%%/lib/classes/idna/ext/PunycodeInterface.php
+%%WWWDIR%%/lib/classes/idna/ext/UnicodeTranscoder.php
+%%WWWDIR%%/lib/classes/idna/ext/UnicodeTranscoderInterface.php
 %%WWWDIR%%/lib/classes/idna/npdata.ser
 %%WWWDIR%%/lib/classes/integrity/class.IntegrityCheck.php
 %%WWWDIR%%/lib/classes/io/class.frxDirectory.php
@@ -255,7 +137,6 @@
 %%WWWDIR%%/lib/classes/logger/class.SysLogger.php
 %%WWWDIR%%/lib/classes/mail/class.mailLogParser.php
 %%WWWDIR%%/lib/classes/output/class.htmlform.php
-%%WWWDIR%%/lib/classes/output/class.languageSelect.php
 %%WWWDIR%%/lib/classes/output/class.linker.php
 %%WWWDIR%%/lib/classes/output/class.paging.php
 %%WWWDIR%%/lib/classes/phpinterface/class.phpinterface.php
@@ -266,21 +147,17 @@
 %%WWWDIR%%/lib/classes/phpmailer/class.PHPMailerAutoload.php
 %%WWWDIR%%/lib/classes/phpmailer/class.SMTP.php
 %%WWWDIR%%/lib/classes/settings/class.Settings.php
+%%WWWDIR%%/lib/classes/ssl/class.lescript.php
 %%WWWDIR%%/lib/classes/ticket/class.ticket.php
 %%WWWDIR%%/lib/classes/webserver/class.ConfigIO.php
 %%WWWDIR%%/lib/classes/webserver/class.DomainSSL.php
 %%WWWDIR%%/lib/classes/webserver/class.WebserverBase.php
-%%WWWDIR%%/lib/configfiles/freebsd.inc.php
-%%WWWDIR%%/lib/configfiles/gentoo.inc.php
-%%WWWDIR%%/lib/configfiles/lucid.inc.php
-%%WWWDIR%%/lib/configfiles/precise.inc.php
-%%WWWDIR%%/lib/configfiles/rhel7.inc.php
-%%WWWDIR%%/lib/configfiles/sle10.inc.php
-%%WWWDIR%%/lib/configfiles/sle11.inc.php
-%%WWWDIR%%/lib/configfiles/squeeze.inc.php
-%%WWWDIR%%/lib/configfiles/trusty.inc.php
-%%WWWDIR%%/lib/configfiles/wheezy.inc.php
-%%WWWDIR%%/lib/configfiles_index.inc.php
+%%WWWDIR%%/lib/configfiles/gentoo.xml
+%%WWWDIR%%/lib/configfiles/jessie.xml
+%%WWWDIR%%/lib/configfiles/precise.xml
+%%WWWDIR%%/lib/configfiles/rhel_centos.xml
+%%WWWDIR%%/lib/configfiles/trusty.xml
+%%WWWDIR%%/lib/configfiles/wheezy.xml
 %%WWWDIR%%/lib/cron_init.php
 %%WWWDIR%%/lib/cron_shutdown.php
 %%WWWDIR%%/lib/formfields/admin/admin/formfield.admin_add.php
@@ -312,6 +189,7 @@
 %%WWWDIR%%/lib/formfields/customer/email/formfield.emails_addaccount.php
 %%WWWDIR%%/lib/formfields/customer/email/formfield.emails_addforwarder.php
 %%WWWDIR%%/lib/formfields/customer/email/formfield.emails_edit.php
+%%WWWDIR%%/lib/formfields/customer/extras/formfield.backup.php
 %%WWWDIR%%/lib/formfields/customer/extras/formfield.htaccess_add.php
 %%WWWDIR%%/lib/formfields/customer/extras/formfield.htaccess_edit.php
 %%WWWDIR%%/lib/formfields/customer/extras/formfield.htpasswd_add.php
@@ -324,6 +202,10 @@
 %%WWWDIR%%/lib/formfields/customer/tickets/formfield.ticket_reply.php
 %%WWWDIR%%/lib/functions.php
 %%WWWDIR%%/lib/functions/database/function.correctMysqlUsers.php
+%%WWWDIR%%/lib/functions/dns/function.createDomainZone.php
+%%WWWDIR%%/lib/functions/dns/function.generateDkimEntries.php
+%%WWWDIR%%/lib/functions/dns/function.getAllowedDomainEntry.php
+%%WWWDIR%%/lib/functions/filedir/function.createCustomerBackup.php
 %%WWWDIR%%/lib/functions/filedir/function.fileImmutable.php
 %%WWWDIR%%/lib/functions/filedir/function.findDirs.php
 %%WWWDIR%%/lib/functions/filedir/function.makeChownWithNewStats.php
@@ -373,11 +255,13 @@
 %%WWWDIR%%/lib/functions/formfields/option/function.validateFormFieldOption.php
 %%WWWDIR%%/lib/functions/formfields/string/function.getFormFieldOutputString.php
 %%WWWDIR%%/lib/functions/formfields/string/function.validateFormFieldString.php
+%%WWWDIR%%/lib/functions/formfields/text/function.getFormFieldDataText.php
 %%WWWDIR%%/lib/functions/formfields/text/function.getFormFieldOutputText.php
 %%WWWDIR%%/lib/functions/formfields/text/function.validateFormFieldText.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.CorrectErrorDocument.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.CronjobFunctions.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.checkCrondConfigurationFile.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.checkMailAccDeletionState.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.createAWStatsConf.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.customerHasPerlEnabled.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.domainHasMainSubDomains.php
@@ -396,10 +280,12 @@
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.loadConfigArrayDir.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.moveCustomerToAdmin.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.phpErrHandler.php
+%%WWWDIR%%/lib/functions/%%AP_NAME%%/function.triggerLetsEncryptCSRForAliasDestinationDomain.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.updateCounters.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.updateFunctions.php
 %%WWWDIR%%/lib/functions/%%AP_NAME%%/function.version_compare2.php
 %%WWWDIR%%/lib/functions/logger/constant.logger.php
+%%WWWDIR%%/lib/functions/logger/function.getLogLevelDesc.php
 %%WWWDIR%%/lib/functions/output/function.RedirectCode.php
 %%WWWDIR%%/lib/functions/output/function.ask_yesno.php
 %%WWWDIR%%/lib/functions/output/function.buildNavigation.php
@@ -426,6 +312,7 @@
 %%WWWDIR%%/lib/functions/phphelpers/function.stripslashes_array.php
 %%WWWDIR%%/lib/functions/phphelpers/function.stripslashes_complete.php
 %%WWWDIR%%/lib/functions/settings/function.loadSettings.php
+%%WWWDIR%%/lib/functions/settings/function.storeSettingClearCertificates.php
 %%WWWDIR%%/lib/functions/settings/function.storeSettingDefaultIp.php
 %%WWWDIR%%/lib/functions/settings/function.storeSettingDefaultTheme.php
 %%WWWDIR%%/lib/functions/settings/function.storeSettingField.php
@@ -433,11 +320,12 @@
 %%WWWDIR%%/lib/functions/settings/function.storeSettingIpAddress.php
 %%WWWDIR%%/lib/functions/settings/function.storeSettingMysqlAccessHost.php
 %%WWWDIR%%/lib/functions/settings/function.storeSettingResetCatchall.php
-%%WWWDIR%%/lib/functions/smarty_plugins/gettext-prefilter.php
+%%WWWDIR%%/lib/functions/settings/function.storeSettingWebserverFcgidFpmUser.php
 %%WWWDIR%%/lib/functions/system/function.checklastguid.php
 %%WWWDIR%%/lib/functions/system/function.getAvailablePasswordHashes.php
 %%WWWDIR%%/lib/functions/system/function.isFreeBSD.php
 %%WWWDIR%%/lib/functions/system/function.makeCryptPassword.php
+%%WWWDIR%%/lib/functions/system/function.randomStr.php
 %%WWWDIR%%/lib/functions/validate/function.appendOpenbasedirPath.php
 %%WWWDIR%%/lib/functions/validate/function.buildValidMailFrom.php
 %%WWWDIR%%/lib/functions/validate/function.checkDisallowedPaths.php
@@ -463,6 +351,7 @@
 %%WWWDIR%%/lib/navigation/00.%%AP_NAME%%.main.php
 %%WWWDIR%%/lib/navigation/10.tickets.php
 %%WWWDIR%%/lib/tables.inc.php
+%%WWWDIR%%/lib/version.inc.php
 %%WWWDIR%%/lng/dutch.lng.php
 %%WWWDIR%%/lng/english.lng.php
 %%WWWDIR%%/lng/french.lng.php
@@ -471,14 +360,16 @@
 %%WWWDIR%%/lng/lng_references.php
 %%WWWDIR%%/lng/portugues.lng.php
 %%WWWDIR%%/lng/swedish.lng.php
-%%WWWDIR%%/locales/de/LC_MESSAGES/default.mo
-%%WWWDIR%%/locales/de/LC_MESSAGES/default.po
-%%WWWDIR%%/locales/en/LC_MESSAGES/default.po
 %%WWWDIR%%/logs/.keep
 %%WWWDIR%%/logs/index.html
+%%WWWDIR%%/scripts/classes/class.DnsBase.php
+%%WWWDIR%%/scripts/classes/class.HttpConfigBase.php
 %%WWWDIR%%/scripts/%%AP_NAME%%_master_cronjob.php
+%%WWWDIR%%/scripts/jobs/cron_backup.php
+%%WWWDIR%%/scripts/jobs/cron_letsencrypt.php
 %%WWWDIR%%/scripts/jobs/cron_mailboxsize.php
 %%WWWDIR%%/scripts/jobs/cron_tasks.inc.dns.10.bind.php
+%%WWWDIR%%/scripts/jobs/cron_tasks.inc.dns.20.pdns.php
 %%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.10.apache.php
 %%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.15.apache_fcgid.php
 %%WWWDIR%%/scripts/jobs/cron_tasks.inc.http.20.lighttpd.php
@@ -492,7 +383,7 @@
 %%WWWDIR%%/scripts/jobs/cron_usage.inc.diskspace.php
 %%WWWDIR%%/scripts/jobs/cron_usage_report.php
 %%WWWDIR%%/scripts/jobs/cron_used_tickets_reset.php
-%%WWWDIR%%/smarty.c
+%%WWWDIR%%/ssl_certificates.php
 %%WWWDIR%%/templates/Sparkle/AUTHORS
 %%WWWDIR%%/templates/Sparkle/admin/admins/admins.tpl
 %%WWWDIR%%/templates/Sparkle/admin/admins/admins_add.tpl
@@ -505,7 +396,7 @@
 %%WWWDIR%%/templates/Sparkle/admin/configfiles/configfiles.tpl
 %%WWWDIR%%/templates/Sparkle/admin/configfiles/configfiles_commands.tpl
 %%WWWDIR%%/templates/Sparkle/admin/configfiles/configfiles_file.tpl
-%%WWWDIR%%/templates/Sparkle/admin/configfiles/configfiles_files.tpl
+%%WWWDIR%%/templates/Sparkle/admin/configfiles/configfiles_subfileblock.tpl
 %%WWWDIR%%/templates/Sparkle/admin/configfiles/wizard.tpl
 %%WWWDIR%%/templates/Sparkle/admin/cronjobs/cronjob_edit.tpl
 %%WWWDIR%%/templates/Sparkle/admin/cronjobs/cronjobs.tpl
@@ -538,8 +429,14 @@
 %%WWWDIR%%/templates/Sparkle/admin/phpconfig/overview_add.tpl
 %%WWWDIR%%/templates/Sparkle/admin/phpconfig/overview_edit.tpl
 %%WWWDIR%%/templates/Sparkle/admin/phpconfig/overview_overview.tpl
+%%WWWDIR%%/templates/Sparkle/admin/settings/apcuinfo/img_line.tpl
+%%WWWDIR%%/templates/Sparkle/admin/settings/apcuinfo/runtime_line.tpl
+%%WWWDIR%%/templates/Sparkle/admin/settings/apcuinfo/showinfo.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/integritycheck.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/integritycheck_row.tpl
+%%WWWDIR%%/templates/Sparkle/admin/settings/opcacheinfo/blacklist_line.tpl
+%%WWWDIR%%/templates/Sparkle/admin/settings/opcacheinfo/runtime_line.tpl
+%%WWWDIR%%/templates/Sparkle/admin/settings/opcacheinfo/showinfo.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/phpinfo.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/phpinfo/phpinfo_1.tpl
 %%WWWDIR%%/templates/Sparkle/admin/settings/phpinfo/phpinfo_2.tpl
@@ -609,6 +506,7 @@
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/delete.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/delete_20.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/display_big.png
+%%WWWDIR%%/templates/Sparkle/assets/img/icons/dns_edit.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/domain_add_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/domain_edit_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/domains_big.png
@@ -654,6 +552,7 @@
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/settings_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_customer.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_global.png
+%%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_letsencrypt.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/ssl_shared.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/syslog_big.png
 %%WWWDIR%%/templates/Sparkle/assets/img/icons/tag_blue.png
@@ -680,6 +579,7 @@
 %%WWWDIR%%/templates/Sparkle/assets/img/tipper.png
 %%WWWDIR%%/templates/Sparkle/assets/img/top.png
 %%WWWDIR%%/templates/Sparkle/assets/img/touchicon.png
+%%WWWDIR%%/templates/Sparkle/assets/js/autosize.min.js
 %%WWWDIR%%/templates/Sparkle/assets/js/circular.js
 %%WWWDIR%%/templates/Sparkle/assets/js/jcanvas.min.js
 %%WWWDIR%%/templates/Sparkle/assets/js/main.js
@@ -704,6 +604,8 @@
 %%WWWDIR%%/templates/Sparkle/customer/email/emails_edit_forwarder.tpl
 %%WWWDIR%%/templates/Sparkle/customer/email/emails_email.tpl
 %%WWWDIR%%/templates/Sparkle/customer/email/forwarder_add.tpl
+%%WWWDIR%%/templates/Sparkle/customer/extras/backup.tpl
+%%WWWDIR%%/templates/Sparkle/customer/extras/backup_listexisting.tpl
 %%WWWDIR%%/templates/Sparkle/customer/extras/extras.tpl
 %%WWWDIR%%/templates/Sparkle/customer/extras/htaccess.tpl
 %%WWWDIR%%/templates/Sparkle/customer/extras/htaccess_add.tpl
@@ -723,6 +625,9 @@
 %%WWWDIR%%/templates/Sparkle/customer/index/change_theme.tpl
 %%WWWDIR%%/templates/Sparkle/customer/index/index.tpl
 %%WWWDIR%%/templates/Sparkle/customer/index/send_error_report.tpl
+%%WWWDIR%%/templates/Sparkle/customer/logger/logger.tpl
+%%WWWDIR%%/templates/Sparkle/customer/logger/logger_action.tpl
+%%WWWDIR%%/templates/Sparkle/customer/logger/logger_log.tpl
 %%WWWDIR%%/templates/Sparkle/customer/mysql/mysql.tpl
 %%WWWDIR%%/templates/Sparkle/customer/mysql/mysqls.tpl
 %%WWWDIR%%/templates/Sparkle/customer/mysql/mysqls_add.tpl
@@ -739,6 +644,9 @@
 %%WWWDIR%%/templates/Sparkle/customer/traffic/traffic_details.tpl
 %%WWWDIR%%/templates/Sparkle/customer/traffic/traffic_month.tpl
 %%WWWDIR%%/templates/Sparkle/customer/traffic/traffic_traffic.tpl
+%%WWWDIR%%/templates/Sparkle/dns_editor/entry_bit.tpl
+%%WWWDIR%%/templates/Sparkle/dns_editor/index.tpl
+%%WWWDIR%%/templates/Sparkle/dns_editor/list.tpl
 %%WWWDIR%%/templates/Sparkle/footer.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/bool.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/file.tpl
@@ -749,7 +657,6 @@
 %%WWWDIR%%/templates/Sparkle/formfields/string.tpl
 %%WWWDIR%%/templates/Sparkle/formfields/text.tpl
 %%WWWDIR%%/templates/Sparkle/header.tpl
-%%WWWDIR%%/templates/Sparkle/index.tpl
 %%WWWDIR%%/templates/Sparkle/login/fpwd.tpl
 %%WWWDIR%%/templates/Sparkle/login/login.tpl
 %%WWWDIR%%/templates/Sparkle/login/login_ftp.tpl
@@ -774,399 +681,144 @@
 %%WWWDIR%%/templates/Sparkle/misc/success.tpl
 %%WWWDIR%%/templates/Sparkle/navigation_element.tpl
 %%WWWDIR%%/templates/Sparkle/navigation_link.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_edit.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_edit_new.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_main.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_main_additional.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_main_dir_row.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_main_file_row.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_main_header.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_main_link_row.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_main_multiple.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_main_prompt.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_main_rename.tpl
-%%WWWDIR%%/templates/Sparkle/webftp/webftp_navigation_element.tpl
-%%WWWDIR%%/templates/misc/awstatsmodel/awstats.%%AP_NAME%%.model.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/apache2/etc_apache2_mods-enabled_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/courier/etc_courier_authdaemonrc
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/courier/etc_courier_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/cron/etc_cron.d_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/dkim/dkim-filter.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/dovecot/etc_dovecot_dovecot-sql.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/dovecot/etc_dovecot_dovecot.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_auth_30_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_main_10_%%AP_NAME%%-config_options
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_router_180_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_transport_30_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/libnss/etc_nss-mysql-root.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/libnss/etc_nss-mysql.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/libnss/etc_nsswitch.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/logrotate/etc_logrotated_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/nginx/etc_init.d_php-fcgi
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/nginx/etc_nginx_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/nginx/etc_nginx_nginx.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_sasl_smtpd.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_master.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_mxaccess/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/powerdns/etc_powerdns_pdns-%%AP_NAME%%.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/powerdns/etc_powerdns_pdns.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/proftpd/etc_proftpd_modules.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/proftpd/etc_proftpd_sql.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_default_pure-ftpd-common
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_Bind
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_MinUID
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
-%%WWWDIR%%/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_db_mysql.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/apache2/etc_apache2_mods-enabled_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/courier/etc_courier_authdaemonrc
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/courier/etc_courier_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/cron/etc_cron.d_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dkim/opendkim.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_10-auth.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_10-mail.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_10-master.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_15-lda.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_20-imap.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_20-managesieve.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_20-pop3.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_90-sieve.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_conf.d_auth-sql.conf.ext
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_dovecot-sql.conf.ext
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/dovecot/etc_dovecot_dovecot.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_auth_30_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_main_10_%%AP_NAME%%-config_options
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_router_180_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/exim4/etc_exim4_conf.d_transport_30_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/libnss/etc_libnss-mysql-root.cfg
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/libnss/etc_libnss-mysql.cfg
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/libnss/etc_nsswitch.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/logrotate/etc_logrotated_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/nginx/etc_init.d_php-fcgi
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/nginx/etc_nginx_nginx.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_courier/etc_aliases
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_courier/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_courier/etc_postfix_sasl_smtpd.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_dovecot/etc_aliases
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_dovecot/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_dovecot/etc_postfix_master.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_mxaccess/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/powerdns/etc_powerdns_bindbackend.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/powerdns/etc_powerdns_pdns.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/proftpd/etc_proftpd_modules.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/proftpd/etc_proftpd_sql.conf
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_default_pure-ftpd-common
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_pure-ftpd_conf_Bind
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_pure-ftpd_conf_MinUID
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
-%%WWWDIR%%/templates/misc/configfiles/debian_wheezy/pure-ftpd/etc_pure-ftpd_db_mysql.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/bind9/etc_namedb_default-zone
-%%WWWDIR%%/templates/misc/configfiles/freebsd/bind9/etc_namedb_master_default.zone
-%%WWWDIR%%/templates/misc/configfiles/freebsd/bind9/etc_namedb_named.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/dkim/dkim-filter.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/dkim/postfix_dkim_addition.cf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/dovecot/usr_local_etc_dovecot-sql.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/dovecot/usr_local_etc_dovecot.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/dovecot2/usr_local_etc_dovecot_dovecot-sql.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/dovecot2/usr_local_etc_dovecot_dovecot.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/libnss/etc_nsswitch.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/libnss/usr_local_etc_libnss-mysql-root.cfg
-%%WWWDIR%%/templates/misc/configfiles/freebsd/libnss/usr_local_etc_libnss-mysql.cfg
-%%WWWDIR%%/templates/misc/configfiles/freebsd/logrotate/etc_logrotated_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/freebsd/nginx/usr_local_etc_nginx_nginx.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/postfix/etc_periodic.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/postfix_mxaccess/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/freebsd/powerdns/usr_local_etc_pdns_pdns.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/pure-ftpd/usr_local_etc_pure-ftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/freebsd/pure-ftpd/usr_local_etc_pureftpd-mysql.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/apache2/etc_apache2_modules.d_70_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/bind/etc_bind_default.zone
-%%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier-imap_imapd
-%%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier-imap_imapd-ssl
-%%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier-imap_pop3d
-%%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier-imap_pop3d-ssl
-%%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier_authlib_authdaemonrc
-%%WWWDIR%%/templates/misc/configfiles/gentoo/courier/etc_courier_authlib_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/gentoo/cron/etc_cron.d_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/gentoo/dkim/dkim-filter.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/dovecot/etc_dovecot_dovecot-sql.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/dovecot/etc_dovecot_dovecot.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/libnss/etc_libnss-mysql-root.cfg
-%%WWWDIR%%/templates/misc/configfiles/gentoo/libnss/etc_libnss-mysql.cfg
-%%WWWDIR%%/templates/misc/configfiles/gentoo/libnss/etc_nsswitch.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/logrotate/etc_logrotated_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/gentoo/nginx/etc_init.d_php-fcgi
-%%WWWDIR%%/templates/misc/configfiles/gentoo/nginx/etc_nginx_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/nginx/etc_nginx_nginx.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_gid_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_mailbox_limit_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_uid_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_courier/etc_sasl2_smtpd.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_master.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_gid_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_limit_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_uid_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_mxaccess/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/gentoo/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/gentoo/pureftpd/etc_conf.d_pure-ftpd
-%%WWWDIR%%/templates/misc/configfiles/gentoo/pureftpd/etc_pureftpd-mysql.conf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/courier/etc_authlib_authdaemonrc
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/courier/etc_authlib_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/cron/etc_cron.d_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/dkim/dkim-filter.conf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/dovecot/etc_dovecot_dovecot-sql.conf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/dovecot/etc_dovecot_dovecot.conf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_auth_30_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_main_10_%%AP_NAME%%-config_options
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_router_180_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_transport_30_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix/etc_sasl2_smtpd.conf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_master.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_mxaccess/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/proftpd/etc_proftpd_modules.conf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/pure-ftpd/etc_pure-ftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/opensuse_11_x/pure-ftpd/etc_pure-ftpd_mysql.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/cron/etc_cron.d_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-auth.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-logging.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-mail.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-master.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_10-ssl.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_15-lda.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_15-mailboxes.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_20-imap.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_20-lmtp.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_20-managesieve.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_20-pop3.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_conf.d_90-sieve.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_dovecot-sql.conf.ext
-%%WWWDIR%%/templates/misc/configfiles/rhel7/dovecot/etc_dovecot_dovecot.conf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_master.cf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/postfix/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/rhel7/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/courier/etc_authlib_authdaemonrc
-%%WWWDIR%%/templates/misc/configfiles/sle_10/courier/etc_authlib_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/sle_10/cron/etc_cron.d_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/sle_10/dkim/dkim-filter.conf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/postfix/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/postfix/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/postfix/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/postfix/usr_lib_sasl2_smtpd.conf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/postfix_mxaccess/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/sle_10/proftpd/etc_proftpd_modules.conf
-%%WWWDIR%%/templates/misc/configfiles/sle_10/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/apache2/etc_apache2_mods-enabled_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/courier/etc_courier_authdaemonrc
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/courier/etc_courier_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/cron/etc_cron.d_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dkim/dkim-filter.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dovecot/etc_dovecot_auth.d_01-dovecot-postfix.auth
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dovecot/etc_dovecot_conf.d_01-dovecot-postfix.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/dovecot/etc_dovecot_dovecot-sql.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_auth_30_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_main_10_%%AP_NAME%%-config_options
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_router_180_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_transport_30_%%AP_NAME%%-config
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nss-mysql-root.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nss-mysql.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nsswitch.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/logrotate/etc_logrotated_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/nginx/etc_init.d_php-fcgi
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/nginx/etc_nginx_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/nginx/etc_nginx_nginx.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_sasl_smtpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_master.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_mxaccess/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/powerdns/etc_powerdns_pdns-%%AP_NAME%%.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/powerdns/etc_powerdns_pdns.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/proftpd/etc_proftpd_modules.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/proftpd/etc_proftpd_sql.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_default_pure-ftpd-common
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_Bind
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_MinUID
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_db_mysql.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/apache2/etc_apache2_mods-enabled_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/courier/etc_courier_authdaemonrc
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/courier/etc_courier_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/cron/etc_cron.d_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/dovecot/etc_dovecot_conf.d_01_mail_stack_delivery.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/dovecot/etc_dovecot_conf.d_10_auth.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/dovecot/etc_dovecot_conf.d_auth-sql.conf.ext
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/dovecot/etc_dovecot_dovecot-sql.conf.ext
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/libnss/etc_libnss-mysql-root.cfg
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/libnss/etc_libnss-mysql.cfg
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/libnss/etc_nsswitch.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/logrotate/etc_logrotated_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/nginx/etc_init.d_php-fcgi
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/nginx/etc_nginx_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/nginx/etc_nginx_nginx.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_courier/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_courier/etc_postfix_sasl_smtpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_dovecot/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_dovecot/etc_postfix_master.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_mxaccess/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/powerdns/etc_powerdns_pdns-%%AP_NAME%%.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/powerdns/etc_powerdns_pdns.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/proftpd/etc_proftpd_modules.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/proftpd/etc_proftpd_sql.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_default_pure-ftpd-common
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_Bind
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_MinUID
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_precise/pure-ftpd/etc_pure-ftpd_db_mysql.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/apache2/etc_apache2_mods-enabled_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/courier/etc_courier_authdaemonrc
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/courier/etc_courier_authmysqlrc
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/cron/etc_cron.d_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/dovecot/etc_dovecot_conf.d_01_mail_stack_delivery.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/dovecot/etc_dovecot_conf.d_10_auth.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/dovecot/etc_dovecot_dovecot-sql.conf.ext
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/libnss/etc_libnss-mysql-root.cfg
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/libnss/etc_libnss-mysql.cfg
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/libnss/etc_nsswitch.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/lighttpd/etc_lighttpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/logrotate/etc_logrotated_%%AP_NAME%%
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/nginx/etc_init.d_php-fcgi
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/nginx/etc_nginx_fastcgi.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/nginx/etc_nginx_nginx.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_courier/etc_postfix_sasl_smtpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_master.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_mxaccess/etc_postfix_main.cf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/postfix_mxaccess/etc_postfix_mx_access
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/powerdns/etc_powerdns_pdns-%%AP_NAME%%.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/powerdns/etc_powerdns_pdns.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/proftpd/etc_proftpd_modules.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/proftpd/etc_proftpd_proftpd.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/proftpd/etc_proftpd_sql.conf
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_default_pure-ftpd-common
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_Bind
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_MinUID
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
-%%WWWDIR%%/templates/misc/configfiles/ubuntu_trusty/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+%%WWWDIR%%/templates/Sparkle/ssl_certificates/certs_cert.tpl
+%%WWWDIR%%/templates/Sparkle/ssl_certificates/certs_error.tpl
+%%WWWDIR%%/templates/Sparkle/ssl_certificates/certs_list.tpl
+%%WWWDIR%%/templates/misc/awstats/awstats.%%AP_NAME%%.model.conf
+%%WWWDIR%%/templates/misc/awstats/index.html
+%%WWWDIR%%/templates/misc/awstats/nav.html
 %%WWWDIR%%/templates/misc/standardcustomer/index.html
-%%WWWDIR%%/templates_c/.keep
-%%WWWDIR%%/webftp.php
+@dir %%WWWDIR%%/templates/misc/standardcustomer
+@dir %%WWWDIR%%/templates/misc/awstats
+@dir %%WWWDIR%%/templates/misc
+@dir %%WWWDIR%%/templates/Sparkle/ssl_certificates
+@dir %%WWWDIR%%/templates/Sparkle/misc/form
+@dir %%WWWDIR%%/templates/Sparkle/misc
+@dir %%WWWDIR%%/templates/Sparkle/login
+@dir %%WWWDIR%%/templates/Sparkle/formfields
+@dir %%WWWDIR%%/templates/Sparkle/dns_editor
+@dir %%WWWDIR%%/templates/Sparkle/customer/traffic
+@dir %%WWWDIR%%/templates/Sparkle/customer/tickets
+@dir %%WWWDIR%%/templates/Sparkle/customer/mysql
+@dir %%WWWDIR%%/templates/Sparkle/customer/logger
+@dir %%WWWDIR%%/templates/Sparkle/customer/index
+@dir %%WWWDIR%%/templates/Sparkle/customer/ftp
+@dir %%WWWDIR%%/templates/Sparkle/customer/extras
+@dir %%WWWDIR%%/templates/Sparkle/customer/email
+@dir %%WWWDIR%%/templates/Sparkle/customer/domains
+@dir %%WWWDIR%%/templates/Sparkle/customer
+@dir %%WWWDIR%%/templates/Sparkle/assets/js
+@dir %%WWWDIR%%/templates/Sparkle/assets/img/icons
+@dir %%WWWDIR%%/templates/Sparkle/assets/img
+@dir %%WWWDIR%%/templates/Sparkle/assets/css
+@dir %%WWWDIR%%/templates/Sparkle/assets
+@dir %%WWWDIR%%/templates/Sparkle/admin/update
+@dir %%WWWDIR%%/templates/Sparkle/admin/traffic
+@dir %%WWWDIR%%/templates/Sparkle/admin/tickets
+@dir %%WWWDIR%%/templates/Sparkle/admin/templates
+@dir %%WWWDIR%%/templates/Sparkle/admin/settings/phpinfo
+@dir %%WWWDIR%%/templates/Sparkle/admin/settings/opcacheinfo
+@dir %%WWWDIR%%/templates/Sparkle/admin/settings/apcuinfo
+@dir %%WWWDIR%%/templates/Sparkle/admin/settings
+@dir %%WWWDIR%%/templates/Sparkle/admin/phpconfig
+@dir %%WWWDIR%%/templates/Sparkle/admin/message
+@dir %%WWWDIR%%/templates/Sparkle/admin/logger
+@dir %%WWWDIR%%/templates/Sparkle/admin/ipsandports
+@dir %%WWWDIR%%/templates/Sparkle/admin/index
+@dir %%WWWDIR%%/templates/Sparkle/admin/domains
+@dir %%WWWDIR%%/templates/Sparkle/admin/customers
+@dir %%WWWDIR%%/templates/Sparkle/admin/cronjobs
+@dir %%WWWDIR%%/templates/Sparkle/admin/configfiles
+@dir %%WWWDIR%%/templates/Sparkle/admin/admins
+@dir %%WWWDIR%%/templates/Sparkle/admin
+@dir %%WWWDIR%%/templates/Sparkle
+@dir %%WWWDIR%%/templates
+@dir %%WWWDIR%%/scripts/jobs
+@dir %%WWWDIR%%/scripts/classes
+@dir %%WWWDIR%%/scripts
+@dir %%WWWDIR%%/logs
+@dir %%WWWDIR%%/lng
+@dir %%WWWDIR%%/lib/navigation
+@dir %%WWWDIR%%/lib/functions/validate
+@dir %%WWWDIR%%/lib/functions/system
+@dir %%WWWDIR%%/lib/functions/settings
+@dir %%WWWDIR%%/lib/functions/phphelpers
+@dir %%WWWDIR%%/lib/functions/output
+@dir %%WWWDIR%%/lib/functions/logger
+@dir %%WWWDIR%%/lib/functions/froxlor
+@dir %%WWWDIR%%/lib/functions/formfields/text
+@dir %%WWWDIR%%/lib/functions/formfields/string
+@dir %%WWWDIR%%/lib/functions/formfields/option
+@dir %%WWWDIR%%/lib/functions/formfields/label
+@dir %%WWWDIR%%/lib/functions/formfields/int
+@dir %%WWWDIR%%/lib/functions/formfields/hiddenstring
+@dir %%WWWDIR%%/lib/functions/formfields/hidden
+@dir %%WWWDIR%%/lib/functions/formfields/file
+@dir %%WWWDIR%%/lib/functions/formfields/date
+@dir %%WWWDIR%%/lib/functions/formfields/bool
+@dir %%WWWDIR%%/lib/functions/formfields
+@dir %%WWWDIR%%/lib/functions/filedir
+@dir %%WWWDIR%%/lib/functions/dns
+@dir %%WWWDIR%%/lib/functions/database
+@dir %%WWWDIR%%/lib/functions
+@dir %%WWWDIR%%/lib/formfields/customer/tickets
+@dir %%WWWDIR%%/lib/formfields/customer/mysql
+@dir %%WWWDIR%%/lib/formfields/customer/ftp
+@dir %%WWWDIR%%/lib/formfields/customer/extras
+@dir %%WWWDIR%%/lib/formfields/customer/email
+@dir %%WWWDIR%%/lib/formfields/customer/domains
+@dir %%WWWDIR%%/lib/formfields/customer
+@dir %%WWWDIR%%/lib/formfields/admin/tickets
+@dir %%WWWDIR%%/lib/formfields/admin/templates
+@dir %%WWWDIR%%/lib/formfields/admin/phpconfig
+@dir %%WWWDIR%%/lib/formfields/admin/ipsandports
+@dir %%WWWDIR%%/lib/formfields/admin/domains
+@dir %%WWWDIR%%/lib/formfields/admin/customer
+@dir %%WWWDIR%%/lib/formfields/admin/cronjobs
+@dir %%WWWDIR%%/lib/formfields/admin/admin
+@dir %%WWWDIR%%/lib/formfields/admin
+@dir %%WWWDIR%%/lib/formfields
+@dir %%WWWDIR%%/lib/configfiles
+@dir %%WWWDIR%%/lib/classes/webserver
+@dir %%WWWDIR%%/lib/classes/ticket
+@dir %%WWWDIR%%/lib/classes/ssl
+@dir %%WWWDIR%%/lib/classes/settings
+@dir %%WWWDIR%%/lib/classes/phpmailer
+@dir %%WWWDIR%%/lib/classes/phpinterface
+@dir %%WWWDIR%%/lib/classes/output
+@dir %%WWWDIR%%/lib/classes/mail
+@dir %%WWWDIR%%/lib/classes/logger
+@dir %%WWWDIR%%/lib/classes/io
+@dir %%WWWDIR%%/lib/classes/integrity
+@dir %%WWWDIR%%/lib/classes/idna/ext
+@dir %%WWWDIR%%/lib/classes/idna
+@dir %%WWWDIR%%/lib/classes/dns
+@dir %%WWWDIR%%/lib/classes/database/manager
+@dir %%WWWDIR%%/lib/classes/database
+@dir %%WWWDIR%%/lib/classes/config
+@dir %%WWWDIR%%/lib/classes/bulk
+@dir %%WWWDIR%%/lib/classes
+@dir %%WWWDIR%%/lib
+@dir %%WWWDIR%%/js/plugins
+@dir %%WWWDIR%%/js
+@dir %%WWWDIR%%/install/updates/preconfig/0.9
+@dir %%WWWDIR%%/install/updates/preconfig
+@dir %%WWWDIR%%/install/updates/froxlor/0.9
+@dir %%WWWDIR%%/install/updates/froxlor
+@dir %%WWWDIR%%/install/updates
+@dir %%WWWDIR%%/install/templates/assets/img
+@dir %%WWWDIR%%/install/templates/assets/css
+@dir %%WWWDIR%%/install/templates/assets
+@dir %%WWWDIR%%/install/templates
+@dir %%WWWDIR%%/install/scripts
+@dir %%WWWDIR%%/install/lng
+@dir %%WWWDIR%%/install/lib
+@dir %%WWWDIR%%/install
+@dir %%WWWDIR%%/css/images
+@dir %%WWWDIR%%/css
+@dir %%WWWDIR%%/actions/admin/settings
+@dir %%WWWDIR%%/actions/admin
+@dir %%WWWDIR%%/actions
+@dir %%WWWDIR%%
+@group
+@owner

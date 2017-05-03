@@ -17,3 +17,5 @@ sbin/nntpd
 %%PORTDOCS%%%%DOCSDIR%%/xfer-README
 %%PORTDOCS%%%%DOCSDIR%%/xmit-README
 %%VARBASE%%/%%NEWSCTL%%/overview.fmt
+@dir %%VARBASE%%/%%NEWSCTL%%
+@dir %%VARBASE%%/lib

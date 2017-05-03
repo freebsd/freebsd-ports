@@ -13,5 +13,8 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 USES=		tar:bzip2
 
+DEPRECATED=	Use the native thunderbird mail/thunderbird instead
+EXPIRATION_DATE=	2017-05-31
+
 .include "${.CURDIR}/../../www/linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>

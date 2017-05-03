@@ -3,7 +3,7 @@
 
 PORTNAME=	quark
 PORTVERSION=	3.24
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://hsgg.github.com/quark/
 

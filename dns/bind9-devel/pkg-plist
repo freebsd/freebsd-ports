@@ -12,7 +12,6 @@ bin/nsupdate
 include/bind9/check.h
 include/bind9/getaddresses.h
 include/bind9/version.h
-include/dns/acache.h
 include/dns/acl.h
 include/dns/adb.h
 include/dns/badcache.h

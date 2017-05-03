@@ -5300,6 +5300,7 @@ share/icons/breeze-dark/mimetypes/16/text-csharp.svg
 share/icons/breeze-dark/mimetypes/16/text-css.svg
 share/icons/breeze-dark/mimetypes/16/text-csv.svg
 share/icons/breeze-dark/mimetypes/16/text-directory.svg
+share/icons/breeze-dark/mimetypes/16/text-dockerfile.svg
 share/icons/breeze-dark/mimetypes/16/text-enriched.svg
 share/icons/breeze-dark/mimetypes/16/text-html.svg
 share/icons/breeze-dark/mimetypes/16/text-markdown.svg
@@ -5744,6 +5745,7 @@ share/icons/breeze-dark/mimetypes/22/text-csharp.svg
 share/icons/breeze-dark/mimetypes/22/text-css.svg
 share/icons/breeze-dark/mimetypes/22/text-csv.svg
 share/icons/breeze-dark/mimetypes/22/text-directory.svg
+share/icons/breeze-dark/mimetypes/22/text-dockerfile.svg
 share/icons/breeze-dark/mimetypes/22/text-enriched.svg
 share/icons/breeze-dark/mimetypes/22/text-html.svg
 share/icons/breeze-dark/mimetypes/22/text-markdown.svg
@@ -6188,6 +6190,7 @@ share/icons/breeze-dark/mimetypes/32/text-csharp.svg
 share/icons/breeze-dark/mimetypes/32/text-css.svg
 share/icons/breeze-dark/mimetypes/32/text-csv.svg
 share/icons/breeze-dark/mimetypes/32/text-directory.svg
+share/icons/breeze-dark/mimetypes/32/text-dockerfile.svg
 share/icons/breeze-dark/mimetypes/32/text-enriched.svg
 share/icons/breeze-dark/mimetypes/32/text-html.svg
 share/icons/breeze-dark/mimetypes/32/text-markdown.svg
@@ -6632,6 +6635,7 @@ share/icons/breeze-dark/mimetypes/64/text-csharp.svg
 share/icons/breeze-dark/mimetypes/64/text-css.svg
 share/icons/breeze-dark/mimetypes/64/text-csv.svg
 share/icons/breeze-dark/mimetypes/64/text-directory.svg
+share/icons/breeze-dark/mimetypes/64/text-dockerfile.svg
 share/icons/breeze-dark/mimetypes/64/text-enriched.svg
 share/icons/breeze-dark/mimetypes/64/text-html.svg
 share/icons/breeze-dark/mimetypes/64/text-markdown.svg
@@ -12856,6 +12860,7 @@ share/icons/breeze/mimetypes/16/text-csharp.svg
 share/icons/breeze/mimetypes/16/text-css.svg
 share/icons/breeze/mimetypes/16/text-csv.svg
 share/icons/breeze/mimetypes/16/text-directory.svg
+share/icons/breeze/mimetypes/16/text-dockerfile.svg
 share/icons/breeze/mimetypes/16/text-enriched.svg
 share/icons/breeze/mimetypes/16/text-html.svg
 share/icons/breeze/mimetypes/16/text-markdown.svg
@@ -13305,6 +13310,7 @@ share/icons/breeze/mimetypes/22/text-csharp.svg
 share/icons/breeze/mimetypes/22/text-css.svg
 share/icons/breeze/mimetypes/22/text-csv.svg
 share/icons/breeze/mimetypes/22/text-directory.svg
+share/icons/breeze/mimetypes/22/text-dockerfile.svg
 share/icons/breeze/mimetypes/22/text-enriched.svg
 share/icons/breeze/mimetypes/22/text-html.svg
 share/icons/breeze/mimetypes/22/text-markdown.svg
@@ -13754,6 +13760,7 @@ share/icons/breeze/mimetypes/32/text-csharp.svg
 share/icons/breeze/mimetypes/32/text-css.svg
 share/icons/breeze/mimetypes/32/text-csv.svg
 share/icons/breeze/mimetypes/32/text-directory.svg
+share/icons/breeze/mimetypes/32/text-dockerfile.svg
 share/icons/breeze/mimetypes/32/text-enriched.svg
 share/icons/breeze/mimetypes/32/text-html.svg
 share/icons/breeze/mimetypes/32/text-markdown.svg
@@ -14203,6 +14210,7 @@ share/icons/breeze/mimetypes/64/text-csharp.svg
 share/icons/breeze/mimetypes/64/text-css.svg
 share/icons/breeze/mimetypes/64/text-csv.svg
 share/icons/breeze/mimetypes/64/text-directory.svg
+share/icons/breeze/mimetypes/64/text-dockerfile.svg
 share/icons/breeze/mimetypes/64/text-enriched.svg
 share/icons/breeze/mimetypes/64/text-html.svg
 share/icons/breeze/mimetypes/64/text-markdown.svg

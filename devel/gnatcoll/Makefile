@@ -5,7 +5,7 @@ PORTNAME=	gnatcoll
 PORTVERSION=	2016	# branch: gpl-for-gps-2016
 CATEGORIES=	devel
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNAT Component Collection from Adacore
 
 LICENSE=	GPLv3

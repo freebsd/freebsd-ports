@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yarn
-PORTVERSION=	0.21.3
+PORTVERSION=	0.23.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
@@ -12,7 +12,7 @@ COMMENT=	Package manager for node, alternative to npm
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WRKSRC=	${WRKDIR}/dist
+WRKSRC=		${WRKDIR}/dist
 
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=	NODE4 NODE6 NODE
@@ -29,9 +29,9 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 post-patch:
-	${RM} ${WRKSRC}/node_modules/cli-width/coverage/lcov.info
-	${RM} ${WRKSRC}/node_modules/mute-stream/coverage/lcov.info
-	${RM} -r ${WRKSRC}/node_modules/sshpk/man
+	@${RM} ${WRKSRC}/node_modules/cli-width/coverage/lcov.info
+	@${RM} ${WRKSRC}/node_modules/mute-stream/coverage/lcov.info
+	@${RM} -r ${WRKSRC}/node_modules/sshpk/man
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/yarn

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.53.1
-PORTREVISION=	1
+PORTVERSION=	7.54.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -86,7 +85,7 @@ GSSAPI_MIT_LDFLAGS=	${GSSAPILDFLAGS}
 GSSAPI_MIT_LIBS=	${GSSAPILIBS}
 GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
-HTTP2_CONFIGURE_WITH=	libnghttp2
+HTTP2_CONFIGURE_WITH=	nghttp2
 HTTP2_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 HTTP2_USES=		pkgconfig
 IDN_CONFIGURE_WITH=	libidn2

@@ -3,6 +3,7 @@
 
 PORTNAME=	net-ldap
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/License.rdoc
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	script/generate-fixture-ca \
+		script/changelog
 
 .include <bsd.port.mk>

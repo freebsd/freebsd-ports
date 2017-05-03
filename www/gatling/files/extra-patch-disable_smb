@@ -1,9 +1,9 @@
---- gatling_features.h.orig	2009-04-13 16:18:09.000000000 +0200
-+++ gatling_features.h	2009-04-13 16:19:18.000000000 +0200
-@@ -6,7 +6,7 @@
- // #define SUPPORT_BITTORRENT
+--- gatling_features.h.orig	2017-04-03 15:04:00.307629000 +0200
++++ gatling_features.h	2017-04-03 15:04:33.084535000 +0200
+@@ -7,7 +7,7 @@
  
  #define SUPPORT_SERVERSTATUS
+ // #define SUPPORT_DAV
 -#define SUPPORT_SMB
 +#undef SUPPORT_SMB
  #define SUPPORT_FTP

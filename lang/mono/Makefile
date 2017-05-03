@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	4.6.2.7
-PORTREVISION=	1
+PORTVERSION=	4.8.1.0
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
@@ -17,12 +16,14 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USES=		bison compiler:c11 cpe gettext gmake iconv libtool pathfix perl5 tar:bzip2
+USES=		bison compiler:c11 cpe gettext gmake iconv libtool pathfix \
+		perl5 python:run shebangfix tar:bzip2
 USE_GNOME=	glib20
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/mono-${PORTVERSION:R}
+SHEBANG_FILES=	scripts/mono-heapviz
 
 CONFIGURE_ARGS=	--disable-dtrace
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no

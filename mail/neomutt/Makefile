@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	neomutt
-PORTVERSION=	20170306
+PORTVERSION=	20170428
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	mail
 
@@ -16,13 +17,13 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
 
 USE_GITHUB=	yes
 
-USES=		autoreconf localbase shebangfix ssl
+USES=		autoreconf iconv:translit localbase shebangfix ssl
 GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
 SHEBANG_FILES=	smime_keys.pl
 
-OPTIONS_DEFINE=	NLS DOCS SASL ICONV IDN FLOCK GPGME NOTMUCH
+OPTIONS_DEFINE=	NLS DOCS SASL IDN FLOCK GPGME NOTMUCH
 OPTIONS_DEFAULT=SASL TOKYOCABINET NOTMUCH GPGME LMDB NCURSES
 OPTIONS_MULTI=	HCACHE
 OPTIONS_MULTI_HCACHE=	BDB GDBM KYOTOCABINET LMDB QDBM TOKYOCABINET
@@ -50,7 +51,8 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-sidebar \
 		--disable-fcntl \
 		--enable-locales-fix \
-		--enable-external-dotlock
+		--enable-external-dotlock \
+		${ICONV_CONFIGURE_ARGS}
 
 # Header cache
 BDB_CONFIGURE_WITH=		bdb
@@ -67,16 +69,11 @@ TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet
 TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext
-NLS_IMPLIES=	ICONV
+NLS_USES=		gettext
+NLS_USES_OFF=		gettext-runtime:build gettext-tools:build
 
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
-IDN_IMPLIES=	ICONV
 IDN_CONFIGURE_WITH=	idn
-
-ICONV_USES=	iconv:translit
-ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARGS}
-ICONV_CONFIGURE_OFF=	--disable-iconv
 
 FLOCK_CONFIGURE_ENABLE=	flock
 

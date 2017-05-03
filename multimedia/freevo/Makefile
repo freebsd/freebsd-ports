@@ -3,7 +3,7 @@
 
 PORTNAME=	freevo
 PORTVERSION=	1.9.0
-PORTREVISION=	13
+PORTREVISION=	15
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/Freevo%20releases/${PORTVERSION}
 
@@ -38,10 +38,11 @@ SUB_LIST+=	PYTHON_VERSION=${PYTHON_DEFAULT_VERSION} \
 SUB_FILES=	pkg-message pkg-deinstall
 
 NO_ARCH=	yes
-USES=		python:2 twisted:web
+USES=		python:2 shebangfix twisted:web
 USE_PYTHON=	distutils noegginfo
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_SETUP=	${PYSETUP}
+SHEBANG_FILES=	src/www/htdocs/downloadurl
 
 PLIST_SUB=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 

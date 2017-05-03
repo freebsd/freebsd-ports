@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	openra
-PORTVERSION=	20161019
+PORTVERSION=	20170421
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20151227/:SDL2_CS \
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20161223/:SDL2_CS \
 		https://github.com/${GH_ACCOUNT}/OpenAL-CS/releases/download/20151227/:OpenAL_CS \
 		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20160124/:Eluant \
 		https://geolite.maxmind.com/download/geoip/database/:GeoLite2
@@ -26,12 +25,10 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgdiplus.so:x11-toolkits/libgdiplus
 NUGET_DEPENDS=	FuzzyLogicLibrary=1.2.0 \
 		MaxMind.Db=2.0.0 \
-		MaxMind.GeoIP2=2.6.0 \
 		NUnit=3.0.1 \
 		NUnit.Console=3.0.1 \
-		Newtonsoft.Json=8.0.3 \
-		Open.NAT=2.1.0 \
-		SharpFont=3.1.0 \
+		Open.Nat=2.1.0 \
+		SharpFont=4.0.1 \
 		SharpZipLib=0.86.0 \
 		SmartIrc4net=0.4.5.1 \
 		StyleCop.MSBuild=4.7.49.0 \

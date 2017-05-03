@@ -24,6 +24,13 @@
 %%DATADIR%%/Modules/CMakeCCompilerABI.c
 %%DATADIR%%/Modules/CMakeCCompilerId.c.in
 %%DATADIR%%/Modules/CMakeCInformation.cmake
+%%DATADIR%%/Modules/CMakeCSharpCompiler.cmake.in
+%%DATADIR%%/Modules/CMakeCSharpCompilerId.cs.in
+%%DATADIR%%/Modules/CMakeCSharpInformation.cmake
+%%DATADIR%%/Modules/CMakeCUDACompiler.cmake.in
+%%DATADIR%%/Modules/CMakeCUDACompilerABI.cu
+%%DATADIR%%/Modules/CMakeCUDACompilerId.cu.in
+%%DATADIR%%/Modules/CMakeCUDAInformation.cmake
 %%DATADIR%%/Modules/CMakeCXXCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeCXXCompilerABI.cpp
 %%DATADIR%%/Modules/CMakeCXXCompilerId.cpp.in
@@ -39,6 +46,8 @@
 %%DATADIR%%/Modules/CMakeDetermineASM_MASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineASM_NASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCCompiler.cmake
+%%DATADIR%%/Modules/CMakeDetermineCSharpCompiler.cmake
+%%DATADIR%%/Modules/CMakeDetermineCUDACompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCXXCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompileFeatures.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompiler.cmake
@@ -100,6 +109,8 @@
 %%DATADIR%%/Modules/CMakeTestASM_MASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestASM_NASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestCCompiler.cmake
+%%DATADIR%%/Modules/CMakeTestCSharpCompiler.cmake
+%%DATADIR%%/Modules/CMakeTestCUDACompiler.cmake
 %%DATADIR%%/Modules/CMakeTestCXXCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestCompilerCommon.cmake
 %%DATADIR%%/Modules/CMakeTestFortranCompiler.cmake
@@ -129,6 +140,7 @@
 %%DATADIR%%/Modules/CPackDMG.cmake
 %%DATADIR%%/Modules/CPackDeb.cmake
 %%DATADIR%%/Modules/CPackIFW.cmake
+%%DATADIR%%/Modules/CPackIFWConfigureFile.cmake
 %%DATADIR%%/Modules/CPackNSIS.cmake
 %%DATADIR%%/Modules/CPackPackageMaker.cmake
 %%DATADIR%%/Modules/CPackProductBuild.cmake
@@ -228,11 +240,12 @@
 %%DATADIR%%/Modules/Compiler/GHS-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/GHS.cmake
 %%DATADIR%%/Modules/Compiler/GNU-ASM.cmake
+%%DATADIR%%/Modules/Compiler/GNU-C-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C.cmake
+%%DATADIR%%/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/GNU-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/GNU-CXX.cmake
-%%DATADIR%%/Modules/Compiler/GNU-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/GNU-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/GNU.cmake
 %%DATADIR%%/Modules/Compiler/HP-ASM.cmake
@@ -264,6 +277,8 @@
 %%DATADIR%%/Modules/Compiler/MSVC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/NAG-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/NVIDIA-CUDA.cmake
+%%DATADIR%%/Modules/Compiler/NVIDIA-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/PGI-C.cmake
 %%DATADIR%%/Modules/Compiler/PGI-CXX.cmake
@@ -311,6 +326,7 @@
 %%DATADIR%%/Modules/Compiler/XL.cmake
 %%DATADIR%%/Modules/Compiler/zOS-C-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake
+%%DATADIR%%/Modules/CompilerId/VS-10.csproj.in
 %%DATADIR%%/Modules/CompilerId/VS-10.vcxproj.in
 %%DATADIR%%/Modules/CompilerId/VS-7.vcproj.in
 %%DATADIR%%/Modules/CompilerId/VS-Intel.vfproj.in
@@ -319,6 +335,7 @@
 %%DATADIR%%/Modules/CompilerId/Xcode-2.pbxproj.in
 %%DATADIR%%/Modules/CompilerId/Xcode-3.pbxproj.in
 %%DATADIR%%/Modules/CompilerId/main.swift.in
+%%DATADIR%%/Modules/CSharpUtilities.cmake
 %%DATADIR%%/Modules/Dart.cmake
 %%DATADIR%%/Modules/DartConfiguration.tcl.in
 %%DATADIR%%/Modules/DeployQt4.cmake
@@ -537,6 +554,7 @@
 %%DATADIR%%/Modules/Platform/AIX.cmake
 %%DATADIR%%/Modules/Platform/ARTOS-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/ARTOS.cmake
+%%DATADIR%%/Modules/Platform/Android-Clang-ASM.cmake
 %%DATADIR%%/Modules/Platform/Android-Clang-C.cmake
 %%DATADIR%%/Modules/Platform/Android-Clang-CXX.cmake
 %%DATADIR%%/Modules/Platform/Android-Clang.cmake
@@ -646,6 +664,10 @@
 %%DATADIR%%/Modules/Platform/Darwin-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Darwin-Intel.cmake
 %%DATADIR%%/Modules/Platform/Darwin-NAG-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Darwin-PGI-C.cmake
+%%DATADIR%%/Modules/Platform/Darwin-PGI-CXX.cmake
+%%DATADIR%%/Modules/Platform/Darwin-PGI-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Darwin-PGI.cmake
 %%DATADIR%%/Modules/Platform/Darwin-VisualAge-C.cmake
 %%DATADIR%%/Modules/Platform/Darwin-VisualAge-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-XL-C.cmake
@@ -654,6 +676,7 @@
 %%DATADIR%%/Modules/Platform/DragonFly.cmake
 %%DATADIR%%/Modules/Platform/Euros.cmake
 %%DATADIR%%/Modules/Platform/FreeBSD.cmake
+%%DATADIR%%/Modules/Platform/Fuchsia.cmake
 %%DATADIR%%/Modules/Platform/GHS-MULTI-Initialize.cmake
 %%DATADIR%%/Modules/Platform/GHS-MULTI.cmake
 %%DATADIR%%/Modules/Platform/GNU.cmake
@@ -761,6 +784,7 @@
 %%DATADIR%%/Modules/Platform/Windows-MSVC-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-MSVC.cmake
 %%DATADIR%%/Modules/Platform/Windows-NMcl.cmake
+%%DATADIR%%/Modules/Platform/Windows-NVIDIA-CUDA.cmake
 %%DATADIR%%/Modules/Platform/Windows-OpenWatcom-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-OpenWatcom-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-OpenWatcom.cmake

@@ -3,6 +3,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.23
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -20,8 +21,11 @@ LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
 
 CONFLICTS=	ja-mailman-2.1.*
 
-USES=		autoreconf cpe fakeroot python:2 tar:tgz
+USES=		autoreconf cpe fakeroot python:2 shebangfix tar:tgz
 USE_RC_SUBR=	mailman
+SHEBANG_FILES=	bin/msgfmt.py \
+		tests/fblast.py \
+		tests/onebounce.py
 
 CPE_VENDOR=	gnu
 

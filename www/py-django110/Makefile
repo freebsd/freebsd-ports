@@ -3,6 +3,7 @@
 
 PORTNAME=	django
 PORTVERSION=	1.10.7
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/
@@ -18,8 +19,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-USES=		cpe python
+USES=		cpe python shebangfix
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	django/bin/django-admin.py \
+		django/conf/project_template/manage.py-tpl
 
 CONFLICTS_INSTALL=	py??-django-devel-* py??-django1[689]-* py??-django111-*
 CPE_VENDOR=		djangoproject

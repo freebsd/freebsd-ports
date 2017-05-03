@@ -1,3 +1,4 @@
+%%SITE_PERL%%/MooseX/Role/Parameterised.pm
 %%SITE_PERL%%/MooseX/Role/Parameterized.pm
 %%SITE_PERL%%/MooseX/Role/Parameterized/Extending.pod
 %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Role/Parameterized.pm
@@ -5,6 +6,7 @@
 %%SITE_PERL%%/MooseX/Role/Parameterized/Meta/Trait/Parameterized.pm
 %%SITE_PERL%%/MooseX/Role/Parameterized/Parameters.pm
 %%SITE_PERL%%/MooseX/Role/Parameterized/Tutorial.pod
+%%PERL5_MAN3%%/MooseX::Role::Parameterised.3.gz
 %%PERL5_MAN3%%/MooseX::Role::Parameterized.3.gz
 %%PERL5_MAN3%%/MooseX::Role::Parameterized::Extending.3.gz
 %%PERL5_MAN3%%/MooseX::Role::Parameterized::Meta::Role::Parameterized.3.gz

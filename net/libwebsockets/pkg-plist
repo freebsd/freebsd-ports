@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%WEBSERVER%%bin/lwsws
 %%WEBSERVER%%include/lejp.h
 include/libwebsockets.h

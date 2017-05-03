@@ -103,7 +103,6 @@
     SUBDIR += t_coffee
     SUBDIR += tinker
     SUBDIR += treepuzzle
-    SUBDIR += treeviewx
     SUBDIR += trimmomatic
     SUBDIR += ugene
     SUBDIR += vcftools

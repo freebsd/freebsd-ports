@@ -15,7 +15,8 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 CONFLICTS=	criticalmass-*
 
-BROKEN_sparc64=	does not compile
+BROKEN_aarch64=		fails to compile: error: conflicting declaration typedef int GLintptrARB
+BROKEN_sparc64=		does not compile
 
 USES=		tar:bzip2
 USE_SDL=	mixer image sdl

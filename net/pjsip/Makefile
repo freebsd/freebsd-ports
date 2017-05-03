@@ -97,7 +97,7 @@ post-patch:
 	@${ECHO} "#include <sys/select.h>" > ${WRKSRC}/pjlib/include/pj/config_site.h
 	@${ECHO} "#define PJ_IOQUEUE_MAX_HANDLES (FD_SETSIZE)" >> ${WRKSRC}/pjlib/include/pj/config_site.h
 
-post-install:
+post-install-SHARED-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 post-install-PJSUA-on:

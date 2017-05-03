@@ -1,8 +1,9 @@
---- ../spnego-http-auth-nginx-module-c85a38c/config.orig	2015-06-13 20:49:15.590751000 +0300
-+++ ../spnego-http-auth-nginx-module-c85a38c/config	2015-06-13 20:49:31.024936000 +0300
-@@ -1,4 +1,4 @@
+--- ../spnego-http-auth-nginx-module-0c6ff3f/config.orig	2017-04-15 13:07:01.159506000 -0400
++++ ../spnego-http-auth-nginx-module-0c6ff3f/config	2017-04-15 13:07:36.283398000 -0400
+@@ -1,5 +1,5 @@
  ngx_addon_name=ngx_http_auth_spnego_module
- HTTP_MODULES="$HTTP_MODULES ngx_http_auth_spnego_module"
- NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_http_auth_spnego_module.c"
--CORE_LIBS="$CORE_LIBS -lgssapi_krb5 -lkrb5 -lcom_err"
-+CORE_LIBS="$CORE_LIBS %%GSSAPILIBS%% -lcom_err"
+-ngx_feature_libs="-lgssapi_krb5 -lkrb5 -lcom_err"
++ngx_feature_libs="%%GSSAPILIBS%% -lcom_err"
+ 
+ if uname -o | grep -q FreeBSD; then
+     ngx_feature_libs="$ngx_feature_libs -lgssapi"

@@ -6,7 +6,7 @@ PORTVERSION=	0.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Ada library for generating UUIDs
 
 LICENSE=	BSD2CLAUSE

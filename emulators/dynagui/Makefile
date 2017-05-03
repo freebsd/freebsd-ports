@@ -3,7 +3,7 @@
 
 PORTNAME=	dynagui
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	dynagui
@@ -11,11 +11,16 @@ DIST_SUBDIR=	dynagui
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend to the dynamips router simulator
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	dynagen:emulators/dynagen
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	dynagui.py
 USE_PYTHON=	distutils
 IMGDIR=		${STAGEDIR}${PREFIX}/share/${PORTNAME}/img
+NO_ARCH=	yes
 
 post-install:
 	@${MKDIR} ${IMGDIR}

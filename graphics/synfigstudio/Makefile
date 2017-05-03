@@ -3,6 +3,7 @@
 
 PORTNAME=	synfigstudio
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/synfig/releases/${PORTVERSION}/source
 

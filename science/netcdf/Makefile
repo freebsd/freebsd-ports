@@ -11,6 +11,11 @@ MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library for machine-independent, array-oriented data access
 
+LICENSE=	UCAR_UNIDATA
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_NAME=	University Corporation for Atmospheric Research/Unidata
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 CONFLICTS_INSTALL=	hdf-4.[0-9]* netcdf-3.[0-9]* netcdf3-3.[0-9]*

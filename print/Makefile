@@ -88,6 +88,7 @@
     SUBDIR += gutenprint-ijs
     SUBDIR += gv
     SUBDIR += harfbuzz
+    SUBDIR += harfbuzz-icu
     SUBDIR += hp2xx
     SUBDIR += hpijs
     SUBDIR += hplip
@@ -202,6 +203,8 @@
     SUBDIR += py-reportlab1
     SUBDIR += py-rtf
     SUBDIR += py-trml2pdf
+    SUBDIR += py3-fonttools
+    SUBDIR += py3-pycups
     SUBDIR += qpdf
     SUBDIR += qpdfview
     SUBDIR += qt5-printsupport

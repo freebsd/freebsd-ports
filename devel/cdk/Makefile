@@ -13,7 +13,7 @@ COMMENT=	Curses Development Kit for speedy development of full screen programs
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ncurses gmake tar:tgz
+USES=		gmake ncurses tar:tgz
 GNU_CONFIGURE=	yes
 PORTDOCS=	EXPANDING INSTALL NOTES README TODO
 MAKE_JOBS_UNSAFE=	yes

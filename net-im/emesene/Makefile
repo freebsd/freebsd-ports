@@ -3,6 +3,7 @@
 
 PORTNAME=	emesene
 PORTVERSION=	2.12.9
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im python
 
@@ -25,10 +26,11 @@ NO_BUILD=	yes
 
 USE_GITHUB=	yes
 
-USES=		desktop-file-utils gettext-runtime python
+USES=		desktop-file-utils gettext-runtime python shebangfix
 USE_GNOME=	pygtk2:run
 USE_GSTREAMER=	python
 INSTALLS_ICONS=	yes
+SHEBANG_FILES=	emesene/emesene
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/emesene

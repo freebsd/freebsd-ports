@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.mckae.com/xml_ezout/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for emitting XML from Ada programs
 
 LICENSE=	GPLv2 GMGPL

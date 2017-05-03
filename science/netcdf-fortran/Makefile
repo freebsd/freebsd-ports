@@ -10,6 +10,11 @@ CATEGORIES=	science
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fortran library for machine-independent, array-oriented data access
 
+LICENSE=	UCAR_UNIDATA
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_NAME=	University Corporation for Atmospheric Research/Unidata
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
 CONFLICTS=	netcdf-ftn-[0-9]* netcdf3-ftn-[0-9]*

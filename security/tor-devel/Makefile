@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_mips64=	Does not build: error: Need a uint128_t implementation!
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: Need a uint128_t implementation!
 BROKEN_sparc64=	Does not build: error: Need a uint128_t implementation!
 
 USES=		cpe gmake

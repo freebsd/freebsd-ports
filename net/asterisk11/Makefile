@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	11.25.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -30,7 +31,8 @@ USE_RC_SUBR=	asterisk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-ilbc=internal \
 			--with-crypto=${OPENSSLBASE} \
-			--with-ssl=${OPENSSLBASE}
+			--with-ssl=${OPENSSLBASE} \
+			--with-libedit=internal
 
 CPE_VENDOR=	digium
 
@@ -48,7 +50,7 @@ MAKE_ARGS+=	NOISY_BUILD=yes \
 		ASTDATADIR=${DATADIR}
 
 CONFLICTS_BUILD=	linuxthreads-* pjsip-*
-CONFLICTS_INSTALL=	asterisk*-1.8* asterisk*-13*
+CONFLICTS_INSTALL=	asterisk*-13*
 
 OPTIONS_DEFINE=			BACKTRACE CURL EXCHANGE FREETDS LDAP LUA \
 				MP3PLAYER OOH323 RADIUS SNMP SPANDSP SRTP \

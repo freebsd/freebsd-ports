@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imageworsener
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/imageworsener/ \
@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_USES=		jpeg

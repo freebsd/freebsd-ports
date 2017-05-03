@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	gnatdroid-
 DISTNAME=	android-${API}-arm
 DIST_SUBDIR=	gnatdroid-ndk11
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Android sysroots for C/Ada Android cross-compiler
 
 ONLY_FOR_ARCHS=	i386 amd64

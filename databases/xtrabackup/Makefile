@@ -13,8 +13,6 @@ COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 # quilt is required by build.sh
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake \
@@ -25,6 +23,8 @@ LIB_DEPENDS=	libev.so:devel/libev \
 		libgpg-error.so:security/libgpg-error
 RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql \
 		qpress:archivers/qpress
+
+BROKEN_powerpc64=	Does not build: ld: final link failed: Bad value
 
 # autotool is in use for 5.1 builds
 USES=		alias autoreconf:build cpe gettext cmake libtool perl5 shebangfix

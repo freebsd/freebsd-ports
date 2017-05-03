@@ -4,6 +4,7 @@
 PORTNAME=	guacamole-client
 PORTVERSION=	0.9.12
 DISTVERSIONSUFFIX=	-incubating
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
 		http://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo

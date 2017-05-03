@@ -3,6 +3,7 @@
 
 PORTNAME=	fontforge
 PORTVERSION=	20161005
+PORTREVISION=	1
 CATEGORIES=	print
 DISTFILES=	# Empty but needed because of the freetype distfile
 
@@ -80,14 +81,4 @@ pre-configure:
 		${LOCALBASE}/bin/gnulib-tool --aux-dir=config --m4-base=m4 --libtool --symlink --import $${gnulib_modules}' ; \
 		export LIBTOOLIZE=true ; ${AUTORECONF} -f -i)
 
-.include <bsd.port.pre.mk>
-
-# waiting for the llvm bug to fix. http://llvm.org/bugs/show_bug.cgi?id=21903
-.if ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} > 36
-BUILD_DEPENDS+=	clang36:lang/clang36
-CPP=		clang-cpp36
-CC=		clang36
-CXX=		clang++36
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

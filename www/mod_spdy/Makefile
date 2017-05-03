@@ -83,7 +83,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
 BROKEN_SSL=		libressl libressl-devel
-BROKEN_SSL_REASON=	incompatible with LibreSSL, please use www/apache24 with mod_http2
+BROKEN_SSL_REASON=	please use www/apache24 with mod_http2
 
 .include <bsd.port.pre.mk>
 

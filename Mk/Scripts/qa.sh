@@ -45,6 +45,9 @@ shebangonefile() {
 	badinterp=""
 	case "${interp}" in
 	"") ;;
+	/bin/rc)
+		# whitelist some interpreters
+		;;
 	${LOCALBASE}/bin/python|${PREFIX}/bin/python)
 		badinterp="${interp}"
 		;;

@@ -15,6 +15,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Core War optimizer written in Perl
 
+LICENSE=	NONE PD GPLv2+ # only single 3d party file has license defined
+LICENSE_COMB=	multi
+
 RUN_DEPENDS=	p5-Tk>=0:x11-toolkits/p5-Tk
 
 USES=		perl5 zip
@@ -44,6 +47,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${CP} -r *.red fsh* templates phase3.lst tables \
 		${STAGEDIR}${DATADIR})
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.unix ${STAGEDIR}${DOCSDIR}
 

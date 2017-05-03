@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	aunit-gpl-${PORTVERSION}-src
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada unit testing framework
 
 LICENSE=	GPLv3

@@ -4,7 +4,7 @@
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME/sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,12 +22,13 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo
 
 PORTSCOUT=	ignore:1
 
-USES=		gmake libtool pathfix pkgconfig python:2 tar:xz
+USES=		gmake libtool pathfix pkgconfig python:2 tar:xz shebangfix
 USE_GNOME=	glib20 introspection:build,run
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-docs --disable-introspection --with-ffi
 INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	codegen/*.py
 
 CONFLICTS=	py*-gtk-0*
 PLIST_SUB=	PYTHON_VER="${PYTHON_VER}"

@@ -3,7 +3,7 @@
 PORTNAME=	lucene++
 PORTVERSION=	3.0.7
 DISTVERSIONPREFIX=	rel_
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	arved@FreeBSD.org
@@ -12,9 +12,9 @@ COMMENT=	C++ port of the Lucene library
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LGPL.license
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+
+BROKEN_powerpc64=	Does not build: Warning: end of file not at end of a line; newline inserted
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	luceneplusplus

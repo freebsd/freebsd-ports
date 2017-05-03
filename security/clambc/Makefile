@@ -12,6 +12,9 @@ COMMENT=	Bytecode signature compiler for ClamAV
 
 LICENSE=	GPLv2
 
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	fails to configure: error: Can not set target to build
+
 USES=		gmake libtool perl5
 ALL_TARGET=	clambc-only
 GNU_CONFIGURE=	yes

@@ -794,6 +794,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/synced_folders/smb/scripts/ps_version.ps1
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/synced_folders/smb/scripts/set_share.ps1
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/synced_folders/smb/synced_folder.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/synced_folders/unix_mount_helpers.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/scripts/sign.sh
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/scripts/website_push_docs.sh
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/scripts/website_push_www.sh
@@ -1065,12 +1066,14 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/env_set_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/graceful_halt_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/handle_box_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/handle_forwarded_port_collisions_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/is_env_set_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/is_state_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/lock_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/message_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/mixin_synced_folders_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/provisioner_cleanup_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/provision_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/ssh_exec_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/synced_folder_cleanup_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/action/builtin/synced_folders_test.rb
@@ -1142,6 +1145,13 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/util/which_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant/vagrantfile_test.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/unit/vagrant_test.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/vagrant-spec/Vagrantfile.spec
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/vagrant-spec/boxes/.keep
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/vagrant-spec/configs/vagrant-spec.config.virtualbox.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/vagrant-spec/scripts/centos-run.virtualbox.sh
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/vagrant-spec/scripts/centos-setup.virtualbox.sh
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/vagrant-spec/scripts/ubuntu-run.virtualbox.sh
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/test/vagrant-spec/scripts/ubuntu-setup.virtualbox.sh
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/vagrant-spec.config.example.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/vagrant.gemspec
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/version.txt

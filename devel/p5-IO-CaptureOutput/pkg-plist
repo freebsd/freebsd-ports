@@ -1,3 +1,2 @@
 %%SITE_PERL%%/IO/CaptureOutput.pm
-%%SITE_PERL%%/IO/CaptureOutput.pod
 %%PERL5_MAN3%%/IO::CaptureOutput.3.gz

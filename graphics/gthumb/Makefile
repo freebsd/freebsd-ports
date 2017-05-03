@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	gthumb
-PORTVERSION=	3.4.4.1
+PORTVERSION=	3.4.5
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
@@ -16,11 +16,21 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		itstool:textproc/itstool
+LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
+		libcogl.so:graphics/cogl \
+		libgstreamer-1.0.so:multimedia/gstreamer1 \
+		liblcms2.so:graphics/lcms2 \
+		liboauth.so:net/liboauth \
+		libpng16.so:graphics/png \
+		libsoup-2.4.so:devel/libsoup \
+		libtiff.so:graphics/tiff
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		bison compiler:c++11-lib desktop-file-utils gettext gmake \
-		libtool localbase pathfix pkgconfig tar:xz
-USE_GNOME=	gtk30 intltool librsvg2
+		jpeg libtool localbase pathfix pkgconfig tar:xz
+USE_GL=		egl
+USE_GNOME=	cairo gtk30 intltool librsvg2
+USE_XORG=	x11 xcomposite xdamage xext xfixes xrandr xi
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_jpeg_jpeg_destroy_decompress=yes \
 		ac_cv_lib_tiff_TIFFWriteScanline=yes

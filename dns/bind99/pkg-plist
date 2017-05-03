@@ -1,3 +1,4 @@
+bin/arpaname
 bin/bind9-config
 bin/dig
 bin/host
@@ -124,6 +125,7 @@ include/isc/condition.h
 include/isc/counter.h
 include/isc/dir.h
 include/isc/entropy.h
+include/isc/errno.h
 include/isc/error.h
 include/isc/event.h
 include/isc/eventclass.h
@@ -361,7 +363,6 @@ man/man8/named.8.gz
 man/man8/nsec3hash.8.gz
 man/man8/rndc-confgen.8.gz
 man/man8/rndc.8.gz
-sbin/arpaname
 sbin/ddns-confgen
 %%PYTHON%%sbin/dnssec-checkds
 %%PYTHON%%sbin/dnssec-coverage

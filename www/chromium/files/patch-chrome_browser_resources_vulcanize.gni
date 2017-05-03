@@ -1,0 +1,11 @@
+--- chrome/browser/resources/vulcanize.gni.orig	2017-04-19 19:06:30 UTC
++++ chrome/browser/resources/vulcanize.gni
+@@ -13,7 +13,7 @@ template("node") {
+       "//third_party/node/node_modules.tar.gz.sha1",
+     ]
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       inputs += [ "//third_party/node/linux/node-linux-x64.tar.gz.sha1" ]
+     }
+     if (is_win) {

@@ -2,6 +2,7 @@
 
 PORTNAME=	net-telnet
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +15,7 @@ LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	bin/setup
 
 .include <bsd.port.mk>

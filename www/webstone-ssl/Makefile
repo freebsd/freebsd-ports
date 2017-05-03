@@ -3,7 +3,7 @@
 
 PORTNAME=	webstone
 PORTVERSION=	2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www benchmarks
 MASTER_SITES=	http://crypto.stanford.edu/~nagendra/projects/WebStone/download/
 PKGNAMESUFFIX=	-ssl
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		perl5 shebangfix tar:tgz ssl
 USE_PERL5=	run
 SHEBANG_FILES=	bin/*.wpl bin/*.pl
-perl_OLD_CMD=	/bin/perl5
+perl_OLD_CMD=	/bin/perl5 /usr/local/bin/perl5.001
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/src
@@ -41,16 +41,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lgm/* ${STAGEDIR}${PREFIX}/webstone-ssl/lgm
 	${INSTALL_DATA} ${WRKSRC}/conf/* ${STAGEDIR}${PREFIX}/webstone-ssl/conf
 	${INSTALL_SCRIPT} ${WRKSRC}/webstone  ${STAGEDIR}${PREFIX}/webstone-ssl
-	@${MKDIR} ${WRKSRC}/bin/runs
 .for i in webclient webmaster genrand
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/webstone-ssl/bin/${i}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/webstone-ssl/bin/${i}
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/webstone-ssl/bin/${i}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/webstone-ssl/bin/${i}
 .endfor
 .for i in ws20_cgi ws25_cgi
-	${CHMOD} u+w ${STAGEDIR}${PREFIX}/webstone-ssl/lgm/${i}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/webstone-ssl/lgm/${i}
-	${CHMOD} u-w ${STAGEDIR}${PREFIX}/webstone-ssl/lgm/${i}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/webstone-ssl/lgm/${i}
 .endfor
 
 .include <bsd.port.mk>

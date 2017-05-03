@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pynacl
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,13 +17,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	libsodium.so:security/libsodium
+BUNDLED_NACL_LIB_DEPENDS_OFF=	libsodium.so:security/libsodium
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
-USES=		python
+USES=		python localbase
 USE_PYTHON=	autoplist distutils
-MAKE_ENV+=	SODIUM_INSTALL=system
-CFLAGS+=	-I ${LOCALBASE}/include
+BUNDLED_NACL_MAKE_ENV_OFF+=	SODIUM_INSTALL=system
+
+OPTIONS_DEFINE=	BUNDLED_NACL
+BUNDLED_NACL_DESC=	Use bundled NaCl version
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nacl/_sodium.so

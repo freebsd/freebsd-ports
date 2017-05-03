@@ -29,9 +29,9 @@ DOXYGEN_BUILD_DEPENDS=	doxygen>=1.8:devel/doxygen \
 DOXYGEN_CMAKE_BOOL=	ENABLE_DOC
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|\$${CMAKE_INSTALL_LIBDIR}(/pkgconfig)|$${CMAKE_INSTALL_PREFIX}/libdata\1|' \
+	@${REINPLACE_CMD} -E -e 's|\$$\{CMAKE_INSTALL_LIBDIR}(/pkgconfig)|$${CMAKE_INSTALL_PREFIX}/libdata\1|' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -E -e 's|libcmime-\$${CMIME_MAJOR_VERSION}.\$${CMIME_MINOR_VERSION}.\$${CMIME_MICRO_VERSION}|libcmime|' \
+	@${REINPLACE_CMD}  -e 's|libcmime-\$${CMIME_MAJOR_VERSION}.\$${CMIME_MINOR_VERSION}.\$${CMIME_MICRO_VERSION}|libcmime|' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -E -e 's|STRIP_FROM_PATH        = ../src|STRIP_FROM_PATH        = ../|' \
 		${WRKSRC}/Doxyfile.cmake

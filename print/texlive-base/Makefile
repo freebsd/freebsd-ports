@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	15
+PORTREVISION=	17
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libicuio.so:devel/icu \
 		libgraphite2.so:graphics/graphite2 \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
+		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libpng.so:graphics/png \
 		libzzip.so:devel/zziplib \
 		libpoppler.so:graphics/poppler \
@@ -28,7 +29,7 @@ LIB_DEPENDS=	libicuio.so:devel/icu \
 CONFLICTS_INSTALL=	texlive-texmf-201[234]*
 
 USE_TEX=	web2c kpathsea ptexenc tlmgr texhash-bootstrap
-USES=		ghostscript pkgconfig perl5 shebangfix tar:xz
+USES=		ghostscript pkgconfig perl5 python:run shebangfix tar:xz
 USE_PERL5=	run
 # during build phase gnu configure is run a lot
 MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}
@@ -86,26 +87,31 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/bibexport/bibexport.sh \
 	texk/texlive/linked_scripts/convbkmk/convbkmk.rb \
 	texk/texlive/linked_scripts/ctanupload/ctanupload.pl \
-	texk/texlive/linked_scripts/de-macro/de-macro \
+	texk/texlive/linked_scripts/ebong/*.py \
 	texk/texlive/linked_scripts/dtxgen/dtxgen \
+	texk/texlive/linked_scripts/dviasm/*.py \
 	texk/texlive/linked_scripts/exceltex/exceltex \
 	texk/texlive/linked_scripts/findhyph/findhyph \
 	texk/texlive/linked_scripts/fragmaster/fragmaster.pl \
 	texk/texlive/linked_scripts/installfont/installfont-tl \
 	texk/texlive/linked_scripts/kotex-utils/jamo-normalize.pl \
 	texk/texlive/linked_scripts/latexpand/latexpand \
+	texk/texlive/linked_scripts/lilyglyphs/*.py \
 	texk/texlive/linked_scripts/ltxfileinfo/ltxfileinfo \
 	texk/texlive/linked_scripts/lua2dox/lua2dox_filter \
 	texk/texlive/linked_scripts/mathspic/mathspic.pl \
 	texk/texlive/linked_scripts/mf2pt1/mf2pt1.pl \
 	texk/texlive/linked_scripts/multibibliography/multibibliography.pl \
+	texk/texlive/linked_scripts/pythontex/*.py \
 	texk/texlive/linked_scripts/rubik/rubikrotation.pl \
 	texk/texlive/linked_scripts/splitindex/splitindex.pl \
 	texk/texlive/linked_scripts/svn-multi/svn-multi.pl \
 	texk/texlive/linked_scripts/texdirflatten/texdirflatten \
+	texk/texlive/linked_scripts/texliveonfly/texliveonfly.py \
 	texk/texlive/linked_scripts/ulqda/ulqda.pl \
 	texk/texlive/linked_scripts/urlbst/urlbst \
 	texk/texlive/linked_scripts/yplan/yplan
+
 
 INFO=	dvipng tlbuild
 
@@ -120,6 +126,8 @@ post-patch:
 	    linked_scripts/texlive/fmtutil-sys.sh \
 	    tl_scripts/texconfig-sys.sh \
 	    linked_scripts/texlive/updmap-sys.sh
+	${REINPLACE_CMD} -e 's|/usr/bin/python -O|${python_CMD}|' \
+		${WRKSRC}/texk/texlive/linked_scripts/de-macro/de-macro \
 
 post-install-fmtutil:
 	for D in ${TEXHASHDIRS}; do \

@@ -3,7 +3,7 @@
 
 PORTNAME=	ncc
 PORTVERSION=	2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://students.ceid.upatras.gr/~sxanth/ncc/
 
@@ -14,16 +14,12 @@ LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 ALL_TARGET=	# empty
-MAKE_ARGS+=	CC="${CXX}" LCFLAGS="${CFLAGS}"
-USES=		ncurses python:run
+MAKE_ARGS=	CC="${CXX}" LCFLAGS="${CFLAGS}"
+USES=		ncurses python:run shebangfix
+SHEBANG_FILES=	scripts/*.py
 CFLAGS+=	-DNOGNU='\"${PREFIX}/include/ncc/nognu\"' -fpermissive
 
-PLIST_FILES=	bin/ncc bin/nccnav bin/nccnavi bin/ncc-gengraph.py \
-		${LINKS:S+^+bin/+} include/ncc/nognu bin/nccstrip2.py \
-		man/man1/ncc.1.gz
 PORTDOCS=	*
-
-LINKS=		nccar nccld nccc++ nccg++
 
 OPTIONS_DEFINE=	DOCS
 
@@ -40,10 +36,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/nccstrip2.py \
 		${STAGEDIR}${PREFIX}/bin/nccstrip2.py
 	${INSTALL_PROGRAM} ${WRKSRC}/nccnav/nccnav ${STAGEDIR}${PREFIX}/bin
-.for i in ${LINKS}
-	${LN} -sf ${PREFIX}/bin/ncc ${STAGEDIR}${PREFIX}/bin/$i
+.for i in nccar nccld nccc++ nccg++
+	${LN} -sf ncc ${STAGEDIR}${PREFIX}/bin/$i
 .endfor
-	${LN} -sf ${PREFIX}/bin/nccnav ${STAGEDIR}${PREFIX}/bin/nccnavi
+	${LN} -sf nccnav ${STAGEDIR}${PREFIX}/bin/nccnavi
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ncc
 	${INSTALL_DATA}	${WRKSRC}/doc/nognu ${STAGEDIR}${PREFIX}/include/ncc
 	${INSTALL_MAN} ${WRKSRC}/ncc.1 ${STAGEDIR}${MANPREFIX}/man/man1

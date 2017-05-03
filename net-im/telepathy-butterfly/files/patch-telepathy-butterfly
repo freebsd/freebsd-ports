@@ -1,9 +1,0 @@
---- telepathy-butterfly.orig	2008-03-30 10:35:08.000000000 -0400
-+++ telepathy-butterfly	2008-03-30 10:35:17.000000000 -0400
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!/usr/bin/env python
- #
- # telepathy-butterfly - an MSN connection manager for Telepathy
-
-

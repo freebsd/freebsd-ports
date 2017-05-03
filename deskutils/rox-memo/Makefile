@@ -2,7 +2,7 @@
 
 PORTNAME=	rox-memo
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/rox/Memo/${PORTVERSION}
 DISTNAME=	memo-${PORTVERSION}
@@ -13,7 +13,8 @@ COMMENT=	Appointment/TODO management for the ROX desktop
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
 		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:devel/py-roxlib
 
-USES=		python tar:bzip2
+USES=		python shebangfix tar:bzip2
+SHEBANG_FILES=	Memo/AppRun Memo/AppletRun
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librdkafka
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -32,7 +32,8 @@ USE_LDCONFIG=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e \
-	's|_ALIGN(|_RE_ALIGN(|g' ${WRKSRC}/src/rdkafka_buf.h
+	's|_ALIGN(|_RE_ALIGN(|g' ${WRKSRC}/src/rdkafka_buf.h \
+		${WRKSRC}/src/rdkafka_metadata_cache.c
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*

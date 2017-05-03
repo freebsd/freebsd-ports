@@ -3,6 +3,7 @@
 
 PORTNAME=	cherrypy
 PORTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +22,9 @@ OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	*
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	distutils autoplist
+SHEBANG_FILES=	cherrypy/cherryd
 
 .include <bsd.port.options.mk>
 

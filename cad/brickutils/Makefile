@@ -3,7 +3,7 @@
 
 PORTNAME=	brickutils
 PORTVERSION=	0.1.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/ \
 		SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-obsolete/:docs \
@@ -25,8 +25,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:cad/ldraw \
 WRKSRC=		${WRKDIR}/BrickUtils-${PORTVERSION}
 
 NO_ARCH=	yes
-USES=		python:2
+USES=		python:2 shebangfix
 USE_GNOME=	pygtk2
+SHEBANG_FILES=	pyBrickUtils.py \
+		BrickUtils/*.py
 
 PORTDOCS=	*
 

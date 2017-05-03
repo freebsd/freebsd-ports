@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	osquery
-PORTVERSION=	1.4.7
-PORTREVISION=	7
+PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -12,26 +12,20 @@ COMMENT=	SQL powered OS instrumentation, monitoring, and analytics
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	snappy>0:archivers/snappy \
-		rocksdb>0:databases/rocksdb \
-		thrift>0:devel/thrift \
-		thrift-cpp>0:devel/thrift-cpp \
+BUILD_DEPENDS=	thrift>0:devel/thrift \
 		bash>0:shells/bash \
-		yara>0:security/yara \
-		doxygen:devel/doxygen \
-		${PYTHON_PKGNAMEPREFIX}MarkupSafe>0:textproc/py-MarkupSafe \
-		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil \
-		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2  \
-		${PYTHON_PKGNAMEPREFIX}thrift>0:devel/py-thrift \
-		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip
-LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		linenoise-ng>0:devel/linenoise-ng \
+		asio>0:net/asio \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
+LIB_DEPENDS=	libaugeas.so:textproc/augeas \
+		libboost_regex.so:devel/boost-libs \
 		libgflags.so:devel/gflags \
-		libicuuc.so:devel/icu
-
-BROKEN=		does not build (error: no matching constructor for initialization of 'gflags::FlagRegisterer')
-DEPRECATED=	repeated build and dependency issues, upstream unable to assist
-EXPIRATION_DATE=2017-04-28
+		libglog.so:devel/glog \
+		libicuuc.so:devel/icu \
+		librocksdb-lite.so:databases/rocksdb-lite \
+		libthrift.so:devel/thrift-cpp \
+		libcppnetlib-uri.so:devel/cpp-netlib
+RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 USES=		cmake:outsource gmake libtool python:build compiler:c++11-lib
 CONFIGURE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \
@@ -45,20 +39,43 @@ GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
 MAKE_JOBS_UNSAFE=	yes
 
+# Some options for things that bring in many dependencies
+OPTIONS_DEFINE=	TSK AWS YARA LLDPD
+
+TSK_DESC=	Build with sleuthkit support
+TSK_LIB_DEPENDS=	libtsk.so:sysutils/sleuthkit
+TSK_CONFIGURE_ENV_OFF=		SKIP_TSK=1
+
+AWS_DESC=	Support logging to AWS Kinesis
+AWS_LIB_DEPENDS=	libaws-cpp-sdk-core.so:devel/aws-sdk-cpp
+AWS_CONFIGURE_ENV_OFF=		SKIP_AWS=1
+
+YARA_DESC=	Build with YARA malware identification support
+YARA_LIB_DEPENDS=	libyara.so:security/yara
+YARA_CONFIGURE_ENV_OFF=	SKIP_YARA=1
+
+LLDPD_DESC=	Support Link Layer Discovery Protocol
+LLDPD_LIB_DEPENDS=	liblldpctl.so:net-mgmt/lldpd
+LLDPD_CONFIGURE_ENV_OFF=	SKIP_LLDPD=1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1100000
+BUILD_DEPENDS+=	clang38:devel/llvm38
+CC=	clang38
+CXX=	clang++38
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -e 's|/var/osquery|/var/db/osquery|g' \
-		${WRKSRC}/osquery/core/init.cpp
-	${REINPLACE_CMD} -e 's|/var/osquery/osquery.em|/var/run/osquery.em|g' \
-		-e 's|/etc/osquery/extensions.load|${PREFIX}/etc/osquery.extensions|g' \
-		-e 's|/etc/osquery/modules.load|${PREFIX}/etc/osquery.modules|g' \
-		${WRKSRC}/osquery/extensions/extensions.cpp
-	${REINPLACE_CMD} -e 's|/var/osquery/osquery.conf|${PREFIX}/etc/osquery.conf|g' \
-		${WRKSRC}/osquery/config/plugins/filesystem.cpp
 	${REINPLACE_CMD} -e 's|/var/osquery/|/var/db/osquery/|g' \
 		${WRKSRC}/tools/deployment/osquery.example.conf
-	${REINPLACE_CMD} -e 's|python |${PYTHON_CMD} |g' \
-		${WRKSRC}/CMake/CMakeLibs.cmake \
-		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|/etc/osquery/yara/|/var/db/osquery/yara/|g' \
+		${WRKSRC}/osquery/tables/yara/yara.cpp \
+		${WRKSRC}/osquery/tables/yara/yara_utils.cpp \
+		${WRKSRC}/specs/yara/yara.table
+	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' \
+		${WRKSRC}/CMakeLists.txt \
+		${WRKSRC}/tools/get_platform.py
 
 do-install:
 	${INSTALL_PROGRAM} ${BLDDIR}/osqueryi ${STAGEDIR}${PREFIX}/bin
@@ -68,6 +85,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/deployment/osquery.example.conf \
 		${STAGEDIR}${PREFIX}/etc/osquery.conf.sample
 
+	${TOUCH} ${STAGEDIR}${PREFIX}/etc/osquery.flags
 	${MKDIR} ${STAGEDIR}/var/db/osquery
+	${MKDIR} ${STAGEDIR}/var/log/osquery
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

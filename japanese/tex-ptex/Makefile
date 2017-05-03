@@ -73,7 +73,8 @@ CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-eptex \
 		--enable-uptex \
 		--enable-euptex \
-		--with-system-zlib
+		--with-system-zlib \
+		--without-x
 .for L in kpathsea ptexenc
 CONFIGURE_ARGS+=--with-system-$L \
 		--with-$L-include=${LOCALBASE}/include \

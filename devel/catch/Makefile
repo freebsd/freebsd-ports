@@ -3,14 +3,14 @@
 
 PORTNAME=	catch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.2
+DISTVERSION=	1.9.3
 CATEGORIES=	devel
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Header-only test framework for C++
 
 LICENSE=	BSL
-LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 TEST_DEPENDS=	cmake:devel/cmake
 TEST_TARGET=	do-test

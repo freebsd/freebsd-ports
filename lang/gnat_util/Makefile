@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	GCC/${MS_SUBDIR}
 DISTNAME=	${IDENTIFICATION}
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library used to build GNAT tools such as ASIS
 
 LICENSE=	GPLv3 GPLv3RLE

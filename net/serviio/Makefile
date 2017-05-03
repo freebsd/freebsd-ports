@@ -3,7 +3,7 @@
 
 PORTNAME=	serviio
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 #PORTREVISION=	0
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	http://download.serviio.org/releases/

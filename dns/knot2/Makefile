@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-PORTVERSION=	2.3.3
+PORTVERSION=	2.4.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfstrm.so:devel/fstrm \
 
 CONFLICTS=	knot-1.* knot1-[0-6].*
 
-USES=		alias libedit libtool pkgconfig tar:xz
+USES=		alias compiler:c11 libedit libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

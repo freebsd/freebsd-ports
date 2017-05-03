@@ -1,19 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	lograge
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Tame Rails' multi-line logging into a single line per request
+COMMENT=	Tame Rails' multi-line logging into a single line per request #'
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport4>0:devel/rubygem-activesupport4 \
-		rubygem-actionpack4>0:www/rubygem-actionpack4 \
-		rubygem-railties4>0:www/rubygem-railties4
+RUN_DEPENDS=	rubygem-actionpack4>=4:www/rubygem-actionpack4 \
+		rubygem-activesupport4>=4:devel/rubygem-activesupport4 \
+		rubygem-railties4>=4:www/rubygem-railties4
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

@@ -414,6 +414,8 @@
     SUBDIR += rpl
     SUBDIR += rtfm
     SUBDIR += rubygem-dotenv
+    SUBDIR += rubygem-dotenv-rails
+    SUBDIR += rubygem-dotenv-rails-rails5
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-mime-types-data
@@ -452,7 +454,6 @@
     SUBDIR += tellico-kde4
     SUBDIR += tempcontrol
     SUBDIR += termatrix
-    SUBDIR += terraform
     SUBDIR += teseq
     SUBDIR += timediff
     SUBDIR += tkcron
@@ -504,7 +505,6 @@
     SUBDIR += xless
     SUBDIR += xosd
     SUBDIR += xpns
-    SUBDIR += xsw
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += xtypo

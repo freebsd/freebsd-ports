@@ -3,6 +3,7 @@
 
 PORTNAME=	omniORB
 DISTVERSION=	4.2.1-2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${DISTVERSION:S/-2//}
 
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 CONFLICTS=	omniORB41-4.1.*
 PLIST_SUB+=	SONUM=1
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig python tar:bzip2 ssl
+USES=		gmake pkgconfig python tar:bzip2 shebangfix ssl
 USE_LDCONFIG=	yes
 MAKEFILE=	GNUmakefile
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
@@ -26,6 +27,7 @@ OPTIONS_DEFAULT=	STATIC
 OPTIONS_SUB=	yes
 STATIC_CONFIGURE_OFF=	--disable-static
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-2//}
+SHEBANG_FILES=	src/tool/omniidl/python/scripts/omniidlrun.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in

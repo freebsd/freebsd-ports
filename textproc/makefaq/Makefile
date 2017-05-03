@@ -3,6 +3,7 @@
 
 PORTNAME=	makefaq
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	SF
 
@@ -11,9 +12,10 @@ COMMENT=	Makefaq is a Python program that creates a (FAQ)
 
 LICENSE=	GPLv2+
 
-USES=		python tar:tgz
+USES=		python shebangfix tar:tgz
 NO_BUILD=	yes
 NO_ARCH=	yes
+SHEBANG_FILES=	makefaq.py
 
 PLIST_FILES=	bin/makefaq.py man/man1/makefaq.1.gz
 PORTDOCS=	BUGS CREDITS ChangeLog README TODO UPGRADING faq.html

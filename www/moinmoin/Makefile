@@ -2,21 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.9
 CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
 
-MAINTAINER=	linimon@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python clone of WikiWiki
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/licenses/COPYING
 
-USES=		cpe python
+USES=		cpe python shebangfix
 CPE_VENDOR=	moinmo
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	moin
+SHEBANG_FILES=	wiki/server/moin*
 
 PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||} \
 		DATADIR=share/moin

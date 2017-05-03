@@ -6,7 +6,7 @@ PORTVERSION=	1.8.0
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility library for Ada 2005 applications
 
 LICENSE=	APACHE20

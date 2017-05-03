@@ -2,6 +2,7 @@
 
 PORTNAME=	semantik
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://ftp.waf.io/pub/release/ \
 		http://www.freehackers.org/~tnagy/release/

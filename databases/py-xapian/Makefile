@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -36,12 +36,6 @@ PORTDOCS=	*
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4.8:textproc/py-sphinx
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
-
-post-patch-DOCS-off:
-	@${REINPLACE_CMD} -e 's| all-local||; s| install-data-local install-dist_exampledataDATA||' ${WRKSRC}/python/Makefile.in ${WRKSRC}/python3/Makefile.in
-
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} > 3000
@@ -51,5 +45,11 @@ CONFIGURE_ENV+=	PYTHON3=${PYTHON_CMD}
 CONFIGURE_ARGS+=--with-python --without-python3
 CONFIGURE_ENV+=	PYTHON2=${PYTHON_CMD}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e 's| all-local||; s| install-data-local install-dist_exampledataDATA||' ${WRKSRC}/python/Makefile.in ${WRKSRC}/python3/Makefile.in
 
 .include <bsd.port.post.mk>

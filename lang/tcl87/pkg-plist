@@ -718,7 +718,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_OpenFileChannel.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_OpenTcpClient.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_OpenTcpServer.tcl%%PKGNAMESUFFIX%%.3.gz
-%%TCLMAN%%man/man3/Tcl_OpenTcpServerEx.tcl%%PKGNAMESUFFIX%%.3.gz 
+%%TCLMAN%%man/man3/Tcl_OpenTcpServerEx.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_OutputBuffered.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_Panic.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%man/man3/Tcl_PanicVA.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -1263,6 +1263,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Porto_Acre
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Porto_Velho
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Puerto_Rico
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Punta_Arenas
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Rainy_River
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Rankin_Inlet
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Recife
@@ -1318,7 +1319,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Aqtobe
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ashgabat
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Ashkhabad
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Atyrau                                                                                                           
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Atyrau
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Baghdad
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Bahrain
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Baku
@@ -1339,7 +1340,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Dili
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Dubai
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Dushanbe
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Famagusta                                                                                                        
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Famagusta
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Gaza
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Harbin
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Hebron
@@ -1545,7 +1546,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Samara
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/San_Marino
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Sarajevo
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Saratov                                                                                                        
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Saratov
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Simferopol
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Skopje
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Sofia

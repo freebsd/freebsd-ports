@@ -1,6 +1,6 @@
---- components/policy/resources/policy_templates.json.orig	2017-03-09 20:04:31 UTC
+--- components/policy/resources/policy_templates.json.orig	2017-04-19 19:06:33 UTC
 +++ components/policy/resources/policy_templates.json
-@@ -927,7 +927,7 @@
+@@ -964,7 +964,7 @@
            'name': 'RemoteAccessHostMatchUsername',
            'type': 'main',
            'schema': { 'type': 'boolean' },
@@ -9,7 +9,7 @@
            'features': {
              'dynamic_refresh': True,
              'per_profile': False,
-@@ -2106,7 +2106,7 @@
+@@ -2139,7 +2139,7 @@
            'name': 'GSSAPILibraryName',
            'type': 'string',
            'schema': { 'type': 'string' },
@@ -18,7 +18,7 @@
            'features': {
              'dynamic_refresh': False,
              'per_profile': False,
-@@ -4782,7 +4782,7 @@
+@@ -4815,7 +4815,7 @@
        'name': 'RequireOnlineRevocationChecksForLocalAnchors',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -27,7 +27,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -5671,7 +5671,7 @@
+@@ -5723,7 +5723,7 @@
        'name': 'BackgroundModeEnabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -36,7 +36,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -6198,7 +6198,7 @@
+@@ -6250,7 +6250,7 @@
        'name': 'FullscreenAllowed',
        'type': 'main',
        'schema': { 'type': 'boolean' },

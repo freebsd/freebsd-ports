@@ -32,6 +32,7 @@ share/icons/hicolor/32x32/apps/gitg.png
 share/icons/hicolor/48x48/apps/gitg.png
 share/icons/hicolor/scalable/apps/gitg-symbolic.svg
 %%NLS%%share/locale/as/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/gitg.mo

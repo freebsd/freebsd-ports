@@ -33,7 +33,7 @@ include/hwloc/rename.h
 lib/libhwloc.a
 lib/libhwloc.so
 lib/libhwloc.so.5
-lib/libhwloc.so.5.6.7
+lib/libhwloc.so.5.7.4
 libdata/pkgconfig/hwloc.pc
 man/man1/hwloc-annotate.1.gz
 man/man1/hwloc-assembler-remote.1.gz
@@ -48,16 +48,17 @@ man/man1/hwloc-info.1.gz
 man/man1/hwloc-ls.1.gz
 man/man1/hwloc-patch.1.gz
 man/man1/hwloc-ps.1.gz
-man/man1/lstopo.1.gz
 man/man1/lstopo-no-graphics.1.gz
+man/man1/lstopo.1.gz
 man/man3/HWLOC_API_VERSION.3.gz
 man/man3/HWLOC_CPUBIND_NOMEMBIND.3.gz
 man/man3/HWLOC_CPUBIND_PROCESS.3.gz
 man/man3/HWLOC_CPUBIND_STRICT.3.gz
 man/man3/HWLOC_CPUBIND_THREAD.3.gz
-man/man3/HWLOC_MEMBIND_BIND.3.gz
-man/man3/HWLOC_MEMBIND_DEFAULT.3.gz
 man/man3/HWLOC_DISTRIB_FLAG_REVERSE.3.gz
+man/man3/HWLOC_MEMBIND_BIND.3.gz
+man/man3/HWLOC_MEMBIND_BYNODESET.3.gz
+man/man3/HWLOC_MEMBIND_DEFAULT.3.gz
 man/man3/HWLOC_MEMBIND_FIRSTTOUCH.3.gz
 man/man3/HWLOC_MEMBIND_INTERLEAVE.3.gz
 man/man3/HWLOC_MEMBIND_MIGRATE.3.gz
@@ -91,7 +92,6 @@ man/man3/HWLOC_OBJ_PACKAGE.3.gz
 man/man3/HWLOC_OBJ_PCI_DEVICE.3.gz
 man/man3/HWLOC_OBJ_PU.3.gz
 man/man3/HWLOC_OBJ_SYSTEM.3.gz
-man/man3/HWLOC_OBJ_TYPE_MAX.3.gz
 man/man3/HWLOC_RESTRICT_FLAG_ADAPT_DISTANCES.3.gz
 man/man3/HWLOC_RESTRICT_FLAG_ADAPT_IO.3.gz
 man/man3/HWLOC_RESTRICT_FLAG_ADAPT_MISC.3.gz
@@ -207,6 +207,7 @@ man/man3/hwloc_get_ancestor_obj_by_type.3.gz
 man/man3/hwloc_get_api_version.3.gz
 man/man3/hwloc_get_area_membind.3.gz
 man/man3/hwloc_get_area_membind_nodeset.3.gz
+man/man3/hwloc_get_area_memlocation.3.gz
 man/man3/hwloc_get_cache_covering_cpuset.3.gz
 man/man3/hwloc_get_cache_type_depth.3.gz
 man/man3/hwloc_get_child_covering_cpuset.3.gz

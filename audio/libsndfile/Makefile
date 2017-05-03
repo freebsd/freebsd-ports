@@ -11,7 +11,8 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool localbase pkgconfig
+USES=		cpe gmake libtool localbase pkgconfig
+CPE_VENDOR=	${CPE_PRODUCT}_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gcc-pipe \
 		--disable-sqlite \

@@ -9,9 +9,12 @@
 %%PERL5_MAN3%%/X11::Xlib::Window.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XEvent.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XID.3.gz
+%%PERL5_MAN3%%/X11::Xlib::XRectangle.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XSetWindowAttributes.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XSizeHints.3.gz
 %%PERL5_MAN3%%/X11::Xlib::XVisualInfo.3.gz
+%%PERL5_MAN3%%/X11::Xlib::XWindowAttributes.3.gz
+%%PERL5_MAN3%%/X11::Xlib::XWindowChanges.3.gz
 %%SITE_ARCH%%/X11/Xlib.pm
 %%SITE_ARCH%%/X11/Xlib/Colormap.pm
 %%SITE_ARCH%%/X11/Xlib/Display.pm
@@ -26,7 +29,10 @@
 %%SITE_ARCH%%/X11/Xlib/Window.pm
 %%SITE_ARCH%%/X11/Xlib/XEvent.pm
 %%SITE_ARCH%%/X11/Xlib/XID.pm
+%%SITE_ARCH%%/X11/Xlib/XRectangle.pm
 %%SITE_ARCH%%/X11/Xlib/XSetWindowAttributes.pm
 %%SITE_ARCH%%/X11/Xlib/XSizeHints.pm
 %%SITE_ARCH%%/X11/Xlib/XVisualInfo.pm
+%%SITE_ARCH%%/X11/Xlib/XWindowAttributes.pm
+%%SITE_ARCH%%/X11/Xlib/XWindowChanges.pm
 %%SITE_ARCH%%/auto/X11/Xlib/Xlib.so

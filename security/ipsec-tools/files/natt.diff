@@ -1,0 +1,153 @@
+--- src/libipsec/libpfkey.h
++++ src/libipsec/libpfkey.h
+@@ -85,7 +85,7 @@ struct pfkey_send_sa_args {
+ 	u_int32_t	seq;
+ 	u_int8_t	l_natt_type;
+ 	u_int16_t	l_natt_sport, l_natt_dport;
+-	struct sockaddr *l_natt_oa;
++	struct sockaddr *l_natt_oai, *l_natt_oar;
+ 	u_int16_t	l_natt_frag;
+ 	u_int8_t ctxdoi, ctxalg;	/* Security context DOI and algorithm */
+ 	caddr_t ctxstr;			/* Security context string */
+--- src/libipsec/pfkey.c
++++ src/libipsec/pfkey.c
+@@ -1335,9 +1335,12 @@ pfkey_send_x1(struct pfkey_send_sa_args 
+ 		len += sizeof(struct sadb_x_nat_t_type);
+ 		len += sizeof(struct sadb_x_nat_t_port);
+ 		len += sizeof(struct sadb_x_nat_t_port);
+-		if (sa_parms->l_natt_oa)
++		if (sa_parms->l_natt_oai)
+ 			len += sizeof(struct sadb_address) +
+-			  PFKEY_ALIGN8(sysdep_sa_len(sa_parms->l_natt_oa));
++			  PFKEY_ALIGN8(sysdep_sa_len(sa_parms->l_natt_oai));
++		if (sa_parms->l_natt_oar)
++			len += sizeof(struct sadb_address) +
++			  PFKEY_ALIGN8(sysdep_sa_len(sa_parms->l_natt_oar));
+ #ifdef SADB_X_EXT_NAT_T_FRAG
+ 		if (sa_parms->l_natt_frag)
+ 			len += sizeof(struct sadb_x_nat_t_frag);
+@@ -1452,10 +1455,21 @@ pfkey_send_x1(struct pfkey_send_sa_args 
+ 			return -1;
+ 		}
+ 
+-		if (sa_parms->l_natt_oa) {
+-			p = pfkey_setsadbaddr(p, ep, SADB_X_EXT_NAT_T_OA,
+-					      sa_parms->l_natt_oa,
+-					      (u_int)PFKEY_ALIGN8(sysdep_sa_len(sa_parms->l_natt_oa)),
++		if (sa_parms->l_natt_oai) {
++			p = pfkey_setsadbaddr(p, ep, SADB_X_EXT_NAT_T_OAI,
++					      sa_parms->l_natt_oai,
++					      (u_int)PFKEY_ALIGN8(sysdep_sa_len(sa_parms->l_natt_oai)),
++					      IPSEC_ULPROTO_ANY);
++			if (!p) {
++				free(newmsg);
++				return -1;
++			}
++		}
++
++		if (sa_parms->l_natt_oar) {
++			p = pfkey_setsadbaddr(p, ep, SADB_X_EXT_NAT_T_OAR,
++					      sa_parms->l_natt_oar,
++					      (u_int)PFKEY_ALIGN8(sysdep_sa_len(sa_parms->l_natt_oar)),
+ 					      IPSEC_ULPROTO_ANY);
+ 			if (!p) {
+ 				free(newmsg);
+@@ -2034,7 +2048,8 @@ pfkey_align(struct sadb_msg *msg, caddr_
+ 		case SADB_X_EXT_NAT_T_TYPE:
+ 		case SADB_X_EXT_NAT_T_SPORT:
+ 		case SADB_X_EXT_NAT_T_DPORT:
+-		case SADB_X_EXT_NAT_T_OA:
++		case SADB_X_EXT_NAT_T_OAI:
++		case SADB_X_EXT_NAT_T_OAR:
+ #endif
+ #ifdef SADB_X_EXT_TAG
+ 		case SADB_X_EXT_TAG:
+@@ -2592,7 +2607,7 @@ pfkey_send_update_nat(int so, u_int saty
+ 	psaa.l_natt_type = l_natt_type;
+ 	psaa.l_natt_sport = l_natt_sport;
+ 	psaa.l_natt_dport = l_natt_dport;
+-	psaa.l_natt_oa = l_natt_oa;
++	psaa.l_natt_oar = l_natt_oa;
+ 	psaa.l_natt_frag = l_natt_frag;
+ 
+ 	return pfkey_send_update2(&psaa);
+@@ -2667,7 +2682,7 @@ pfkey_send_add_nat(int so, u_int satype,
+ 	psaa.l_natt_type = l_natt_type;
+ 	psaa.l_natt_sport = l_natt_sport;
+ 	psaa.l_natt_dport = l_natt_dport;
+-	psaa.l_natt_oa = l_natt_oa;
++	psaa.l_natt_oai = l_natt_oa;
+ 	psaa.l_natt_frag = l_natt_frag;
+ 
+ 	return pfkey_send_add2(&psaa);
+--- src/racoon/isakmp_quick.c
++++ src/racoon/isakmp_quick.c
+@@ -2390,6 +2390,32 @@ get_proposal_r(iph2)
+ 			     spidx.src.ss_family, spidx.dst.ss_family,
+ 			     _XIDT(iph2->id_p),idi2type);
+ 		}
++#ifdef ENABLE_NATT
++		if (iph2->ph1->natt_flags & NAT_DETECTED_PEER) {
++			u_int16_t port;
++
++			port = extract_port(&spidx.src);
++			memcpy(&spidx.src, iph2->ph1->remote,
++			    sysdep_sa_len(iph2->ph1->remote));
++			set_port(&spidx.src, port);
++			switch (spidx.src.ss_family) {
++			case AF_INET:
++				spidx.prefs = sizeof(struct in_addr) << 3;
++				break;
++#ifdef INET6
++			case AF_INET6:
++				spidx.prefs = sizeof(struct in6_addr) << 3;
++				break;
++#endif
++			default:
++				spidx.prefs = 0;
++				break;
++			}
++			plog(LLV_DEBUG, LOCATION,
++				NULL, "use NAT address %s as src\n",
++				saddr2str((struct sockaddr *)&spidx.src));
++		}
++#endif
+ 	} else {
+ 		plog(LLV_DEBUG, LOCATION, NULL,
+ 		     "get a source address of SP index from Phase 1"
+--- src/racoon/nattraversal.c
++++ src/racoon/nattraversal.c
+@@ -436,10 +436,7 @@ natt_keepalive_add_ph1 (struct ph1handle
+ {
+   int ret = 0;
+   
+-  /* Should only the NATed host send keepalives?
+-     If yes, add '(iph1->natt_flags & NAT_DETECTED_ME)'
+-     to the following condition. */
+-  if (iph1->natt_flags & NAT_DETECTED &&
++  if (iph1->natt_flags & NAT_DETECTED_ME &&
+       ! (iph1->natt_flags & NAT_KA_QUEUED)) {
+     ret = natt_keepalive_add (iph1->local, iph1->remote);
+     if (ret == 0)
+--- src/racoon/pfkey.c
++++ src/racoon/pfkey.c
+@@ -1190,7 +1190,10 @@ pk_sendupdate(iph2)
+ 			sa_args.l_natt_type = iph2->ph1->natt_options->encaps_type;
+ 			sa_args.l_natt_sport = extract_port(iph2->ph1->remote);
+ 			sa_args.l_natt_dport = extract_port(iph2->ph1->local);
+-			sa_args.l_natt_oa = iph2->natoa_src;
++			/* if (iph2->ph1->natt_flags & NAT_DETECTED_PEER) */
++				sa_args.l_natt_oai = iph2->natoa_dst;
++			/* if (iph2->ph1->natt_flags & NAT_DETECTED_ME) */
++				sa_args.l_natt_oar = iph2->natoa_src;
+ #ifdef SADB_X_EXT_NAT_T_FRAG
+ 			sa_args.l_natt_frag = iph2->ph1->rmconf->esp_frag;
+ #endif
+@@ -1477,7 +1480,6 @@ pk_sendadd(iph2)
+ 			sa_args.l_natt_type = UDP_ENCAP_ESPINUDP;
+ 			sa_args.l_natt_sport = extract_port(iph2->ph1->local);
+ 			sa_args.l_natt_dport = extract_port(iph2->ph1->remote);
+-			sa_args.l_natt_oa = iph2->natoa_dst;
+ #ifdef SADB_X_EXT_NAT_T_FRAG
+ 			sa_args.l_natt_frag = iph2->ph1->rmconf->esp_frag;
+ #endif

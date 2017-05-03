@@ -11,7 +11,8 @@ COMMENT=	KF5 porting aid from KDELibs4
 
 BUILD_DEPENDS=	p5-URI>=0:net/p5-URI
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 tar:xz
+USES=		cmake:outsource compiler:c++11-lib gettext kde:5 shebangfix \
+		tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools globalaccel guiaddons \
 		i18n iconthemes itemviews jobwidgets kded kio notifications \
@@ -23,5 +24,7 @@ USE_QT5=	buildtools_build core dbus designer gui network \
 		printsupport qmake_build svg testlib widgets \
 		x11extras xml
 USE_XORG=	ice sm x11 xext
+
+SHEBANG_FILES=	src/kio/fileshareset
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ PORTVERSION=	20120406
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/screenie
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and lightweight screen(1) wrapper
 
 LICENSE=	GPLv2

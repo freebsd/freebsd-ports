@@ -2,7 +2,7 @@
 
 PORTNAME=	rox-mime-editor
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/rox/MIME-Editor/${PORTVERSION}
 DISTNAME=	mime-editor-${PORTVERSION}
@@ -13,7 +13,8 @@ COMMENT=	MIME type editor for the ROX desktop
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
 		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:devel/py-roxlib
 
-USES=		python tar:bzip2
+USES=		python shebangfix tar:bzip2 
+SHEBANG_FILES=	MIME-Editor/AppRun
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

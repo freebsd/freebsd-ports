@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	html2haml
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gollum
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,25 +12,23 @@ COMMENT=	Gollum is a simple wiki system built on top of Git
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-gollum-lib>=4.0.1:www/rubygem-gollum-lib \
+RUN_DEPENDS=	git:devel/git \
+		rubygem-gemojione>=3.2:graphics/rubygem-gemojione \
+		rubygem-gollum-lib>=4.0.1:www/rubygem-gollum-lib \
 		rubygem-kramdown>=1.9:textproc/rubygem-kramdown \
-		rubygem-sinatra>=1.4.4:www/rubygem-sinatra \
 		rubygem-mustache0>=0.99.5:devel/rubygem-mustache0 \
-		rubygem-gemojione2>=2.0:graphics/rubygem-gemojione2 \
-		rubygem-useragent>=0.16.2:devel/rubygem-useragent \
-		git>=0:devel/git
-
-USE_RC_SUBR=	${PORTNAME}
-
-post-stage:
-		${MKDIR} ${STAGEDIR}${PREFIX}/www/gollum
+		rubygem-sinatra>=1.4.4:www/rubygem-sinatra \
+		rubygem-useragent>=0.16.2:devel/rubygem-useragent
 
 NO_ARCH=	yes
+USE_RC_SUBR=	${PORTNAME}
 USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/gollum
-
 PLIST_DIRS=     %%WWWDIR%%
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/gollum
 
 .include <bsd.port.mk>

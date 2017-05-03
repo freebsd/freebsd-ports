@@ -1,2 +1,3 @@
-SHA256 (Test-CheckManifest-1.29.tar.gz) = ad6dc46ca10190e46d89d664c57d25c70c40b3f72969e3de6745781b45ad448b
-SIZE (Test-CheckManifest-1.29.tar.gz) = 9832
+TIMESTAMP = 1492941630
+SHA256 (Test-CheckManifest-1.31.tar.gz) = 6671ce3f2920e908f912f72d10e36385083a9ed1ee5a9a230122168ef63f32d3
+SIZE (Test-CheckManifest-1.31.tar.gz) = 10257

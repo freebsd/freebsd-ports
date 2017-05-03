@@ -20,7 +20,6 @@ include/bakery-%%API_VERSION%%/bakery/bakery.h
 include/bakery-%%API_VERSION%%/bakery/init.h
 include/bakery-%%API_VERSION%%/bakeryconfig.h
 lib/libbakery-%%VERSION%%.a
-lib/libbakery-%%VERSION%%.la
 lib/libbakery-%%VERSION%%.so
 lib/libbakery-%%VERSION%%.so.1
 lib/libbakery-%%VERSION%%.so.1.0.0

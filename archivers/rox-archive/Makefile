@@ -2,6 +2,7 @@
 
 PORTNAME=	rox-archive
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SF/rox/Archive/${PORTVERSION}
 DISTNAME=	archive-${PORTVERSION}
@@ -12,8 +13,9 @@ COMMENT=	Archive management tool for the ROX desktop
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
 		${LOCALBASE}/lib/ROX-Lib2/python/rox/__init__.py:devel/py-roxlib
 
-USES=		python tar:bzip2
+USES=		python shebangfix tar:bzip2
 NO_ARCH=	yes
+SHEBANG_FILES=	Archive/AppRun
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}

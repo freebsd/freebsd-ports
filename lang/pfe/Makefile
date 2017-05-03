@@ -13,7 +13,7 @@ COMMENT=	Implementation of ANSI Forth
 BROKEN_aarch64=		does not compile: error: implicit declaration of function 'PFE_SBR_COMPILE_EXIT' is invalid in C99
 BROKEN_i386=		does not link
 BROKEN_powerpc=		does not compile
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not build: error: lvalue required as increment operand
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5 libtool tar:bzip2

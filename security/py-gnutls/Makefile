@@ -3,6 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +16,11 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	python_gnutls
+NO_ARCH=	yes
+SHEBANG_FILES=	examples/*.py
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
@@ -28,7 +31,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s|library_dirs=.*|library_dirs=\['${LOCALBASE}/lib'\],|" ${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e "s|\.26||g" ${WRKSRC}/gnutls/library/functions.py
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}/${EXAMPLESDIR}
 

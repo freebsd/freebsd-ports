@@ -49,7 +49,7 @@ SUB_FILES=	repaircluster
 
 RUN_DEPENDS+=	${JAVALIBDIR}/snappy-java.jar:archivers/snappy-java
 
-MX4J_RUN_DEPENDS=	${JAVAJARDIR}/mx4j-tools.jar:java/mx4j
+MX4J_RUN_DEPENDS=	${JAVALIBDIR}/mx4j-tools.jar:java/mx4j
 CQL_USES=	python:2
 
 PORTDOCS=	javadoc *.txt

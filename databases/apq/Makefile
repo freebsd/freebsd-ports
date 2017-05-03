@@ -7,7 +7,7 @@ PORTREVISION=	${BASE_PORTREV}
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/marino
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APQ Ada95 database base library
 
 LICENSE=	GPLv2 GMGPL

@@ -3,7 +3,7 @@
 
 PORTNAME=	ssmtp
 PORTVERSION=	2.64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	DEBIAN_POOL
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
@@ -11,8 +11,11 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 GNU_CONFIGURE=	yes
-USES=		gmake tar:bzip2 ssl
+USES=		gmake tar:bzip2
 GROUPS=		ssmtp
 
 SUB_FILES+=	pkg-message
@@ -34,6 +37,7 @@ XORIGIP_EXTRA_PATCHES=	${FILESDIR}/remote-addr.patch
 IPV6_CONFIGURE_ON=	--enable-inet6
 CRAMMD5_CONFIGURE_ON=	--enable-md5auth
 OPENSSL_CONFIGURE_ON=	--enable-ssl
+OPENSSL_USES=		ssl
 
 .include <bsd.port.options.mk>
 

@@ -3,7 +3,6 @@
 
 PORTNAME=	extra-cmake-modules
 PORTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

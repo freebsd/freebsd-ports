@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.44
+PORTVERSION=	2.45
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	dot:graphics/graphviz \
 		p5-Date-Simple>=3.03:devel/p5-Date-Simple \
 		p5-File-HomeDir>=0.99:devel/p5-File-HomeDir \
 		p5-File-Slurp>=9999.19:devel/p5-File-Slurp \
-		p5-File-Which>=1.09:sysutils/p5-File-Which \
+		p5-File-Which>=1.21:sysutils/p5-File-Which \
 		p5-HTML-Entities-Interpolate>=1.04:textproc/p5-HTML-Entities-Interpolate \
 		p5-HTML-Tree>=4.2:www/p5-HTML-Tree \
 		p5-IPC-Run3>=0.048:devel/p5-IPC-Run3 \
@@ -58,10 +58,4 @@ post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001014:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

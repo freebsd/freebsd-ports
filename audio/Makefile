@@ -221,6 +221,7 @@
     SUBDIR += gnupod
     SUBDIR += gnuspeechsa
     SUBDIR += gnustep-cdplayer
+    SUBDIR += goattracker
     SUBDIR += gogglesmm
     SUBDIR += goobox
     SUBDIR += gqmpeg
@@ -349,7 +350,6 @@
     SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += lash
-    SUBDIR += last-cmus
     SUBDIR += last.fm
     SUBDIR += lastfm-desktop
     SUBDIR += liba52
@@ -458,7 +458,6 @@
     SUBDIR += logitechmediaserver-dynamicplaylist
     SUBDIR += logitechmediaserver-lazysearch
     SUBDIR += logitechmediaserver-sqlplaylist
-    SUBDIR += logitechmediaserver-superdatetime
     SUBDIR += logitechmediaserver-trackstat
     SUBDIR += lollypop
     SUBDIR += lpac
@@ -476,7 +475,6 @@
     SUBDIR += mcplay
     SUBDIR += mctoolame-decoder
     SUBDIR += mctoolame-encoder
-    SUBDIR += mehdiaplayer
     SUBDIR += mhwaveedit
     SUBDIR += midipp
     SUBDIR += mikmod
@@ -606,7 +604,6 @@
     SUBDIR += penguinsap
     SUBDIR += pianobar
     SUBDIR += picard
-    SUBDIR += pidgin-musictracker
     SUBDIR += pithos
     SUBDIR += play
     SUBDIR += playgsf
@@ -850,7 +847,6 @@
     SUBDIR += xmp
     SUBDIR += xmradio
     SUBDIR += xoscope
-    SUBDIR += xpi-musicpm
     SUBDIR += xsynth-dssi
     SUBDIR += xvmixer
     SUBDIR += xwave

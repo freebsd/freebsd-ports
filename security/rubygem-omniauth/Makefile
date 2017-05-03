@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth
-PORTVERSION=	1.3.2
+PORTVERSION=	1.6.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ COMMENT=	Generalized Rack framework for multiple-provider authentication
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-hashie>=1.2:devel/rubygem-hashie \
-		rubygem-rack>=1.0:www/rubygem-rack
+RUN_DEPENDS=	rubygem-hashie>=3.4.6:devel/rubygem-hashie \
+		rubygem-rack>=1.6.2:www/rubygem-rack
 
 NO_ARCH=	yes
 USE_RUBY=	yes

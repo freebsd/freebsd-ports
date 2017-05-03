@@ -3,6 +3,7 @@
 
 PORTNAME=	flawfinder
 PORTVERSION=	1.31
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.dwheeler.com/flawfinder/ \
 		PACKETSTORM/UNIX/security
@@ -13,8 +14,9 @@ COMMENT=	Examines source code looking for security weaknesses
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
+USES=		python shebangfix
 NO_BUILD=	yes
+SHEBANG_FILES=	flawfinder
 
 PLIST_FILES=	bin/flawfinder man/man1/flawfinder.1.gz
 PORTDOCS=	ChangeLog README flawfinder.pdf flawfinder.ps

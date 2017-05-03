@@ -1,0 +1,11 @@
+--- lib/ios.pm.in.orig	2017-01-10 20:59:52 UTC
++++ lib/ios.pm.in
+@@ -942,7 +942,7 @@ sub ShowFlash {
+ 	# to:
+ 	#                                     vlan.dat
+ 	#                                            vlan.dat
+-	if (/(dhcp_[^. ]*\.txt|vlan\.dat|sflog|syslog)\s*$/) {
++	if (/(dhcp_[^. ]*\.txt|vlan\.dat|sflog|snooping|syslog)\s*$/) {
+ 	    if (/(\s*\d+)(\s+[-rwx]+\s+)(\d+)(\s+)(\w+ \d+\s+\d+ \d+:\d+:\d+ .\d+:\d+)/) {
+ 		my($fn, $a, $sz, $c, $dt, $rem) = ($1, $2, $3, $4, $5, $');
+ 		my($fnl, $szl, $dtl) = (length($fn), length($sz), length($dt));

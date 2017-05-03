@@ -19,12 +19,10 @@ COMMENT=	The Public Domain Korn Shell
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	Does not build
-BROKEN_powerpc64=	Fails to compile siglist.in
+BROKEN_powerpc64=	fails to compile siglist.in
+BROKEN_sparc64=		fails to compile ./siglist.in
 
 OPTIONS_DEFINE=	STATIC
-
-BROKEN_sparc64=	fails to compile ./siglist.in
 
 GNU_CONFIGURE=	yes
 CPP+=		-P

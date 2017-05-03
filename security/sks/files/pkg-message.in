@@ -3,6 +3,15 @@
 => database files are not compatible. You should run db_recover-5.
 => See %%DOCSDIR%%/UPGRADING for details.
 
+If you are upgrading to version 1.1.6, and your sksconf file does NOT
+already contain 'pagesize' and 'ptree_pagesize' variables, then you may need
+to add the following two lines to your sksconf file before starting sks:
+
+pagesize:       4
+ptree_pagesize: 1
+
+This is due to the default values for these variables changing in v1.1.6
+
 When installing for the first time, you will need to obtain a PGP
 key database dump from somewhere and build database files from this.
 See %%DOCSDIR%%/README.md for details.

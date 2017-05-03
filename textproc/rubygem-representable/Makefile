@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	representable
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

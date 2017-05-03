@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpsd
-PORTVERSION=	3.14
-PORTREVISION=	3
+PORTVERSION=	3.16
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -16,12 +15,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		xsltproc:textproc/libxslt
 
-USES=		cpe pathfix pkgconfig python scons
+USES=		cpe pathfix pkgconfig python:2 scons shebangfix
 CPE_VENDOR=	gpsd_project
 USE_RC_SUBR=	gpsd
+SHEBANG_FILES=	*.py gps/*.py gegps xgps gpscat xgpsspeed gpsprof \
+		gpsfake
 
 MAKE_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig"
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
+PLIST_SUB=	PYTHON_EGGINFO=gps-${PORTVERSION}.egg-info
 
 OPTIONS_DEFINE=	AIVDM ASHTECH CPPBIND DBUS EARTHMATE EVERMORE FURY FV18 GARMIN \
 		GARMINTXT GEOSTAR GPSCLOCK IPV6 ITRAX MTK NAVCOM NCURSES \
@@ -34,6 +36,7 @@ OPTIONS_DEFAULT= AIVDM ASHTECH CPPBIND EARTHMATE EVERMORE FURY FV18 GARMIN \
 		NMEA0183 NTP NTPSHM NTRIP OCEANSERVER ONCORE PASSTHROUGH \
 		RECONFIGURE RTCM104V2 RTCM104V3 SHMEXPORT SIRF SOCKEXPORT \
 		SUPERSTARII TIMING TNT TRIPMATE TSIP UBLOX USB
+OPTIONS_SUB=	yes
 
 AIVDM_DESC=		Aivdm support
 ASHTECH_DESC=		Ashtech support
@@ -108,12 +111,13 @@ RTCM104V3_MAKE_ARGS_OFF=	rtcm104v3=no
 NTP_MAKE_ARGS_OFF=	ntp=no
 NTPSHM_MAKE_ARGS_OFF=	ntpshm=no
 PPS_MAKE_ARGS_OFF=	pps=no
-PPS_IMPLIES=	NTPSHM
+PPS_IMPLIES=		NTPSHM
 
 # Export methods
 SOCKEXPORT_MAKE_ARGS_OFF=	socket_export=no
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-DBUS_MAKE_ARGS=	dbus_export=yes
+DBUS_MAKE_ARGS=		dbus_export=yes
+DBUS_MAKE_ARGS_OFF=	dbus_export=no
 SHMEXPORT_MAKE_ARGS_OFF=	shm_export=no
 
 # Communication
@@ -128,7 +132,7 @@ TIMING_MAKE_ARGS_OFF=	timing=no
 # Client-side options
 NCURSES_MAKE_ARGS_OFF=	ncurses=no
 NCURSES_USES=		ncurses
-QTBIND_USE=	QT4=network
+QTBIND_USE=		QT4=network,corelib
 QTBIND_MAKE_ARGS=	qt=yes
 QTBIND_MAKE_ARGS_OFF=	qt=no
 QTBIND_PLIST_SUB=	QTBIND=""

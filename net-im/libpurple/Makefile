@@ -3,7 +3,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.12.0
-PORTREVISION?=	0
+PORTREVISION=	2
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -26,9 +26,11 @@ INSTALL_TARGET=	install-strip
 .if !defined(PIDGIN_SLAVE)
 # Pidgin slave ports that require the following functionality, must explicitly
 # set these macros themselves.
-USES+=		iconv python
+USES+=		iconv python shebangfix
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
+SHEBANG_FILES=	libpurple/purple-remote \
+		libpurple/purple-url-handler
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME

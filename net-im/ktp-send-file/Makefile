@@ -2,6 +2,7 @@
 
 PORTNAME=	ktp-send-file
 PORTVERSION=	${KTP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
 

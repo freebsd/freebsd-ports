@@ -62,6 +62,7 @@ ${lang}_CMD?= ${LOCALBASE}/bin/${lang}
 ${lang}_OLD_CMD+= "/usr/bin/env ${lang}"
 ${lang}_OLD_CMD+= /bin/${lang}
 ${lang}_OLD_CMD+= /usr/bin/${lang}
+${lang}_OLD_CMD+= /usr/local/bin/${lang}
 .endfor
 
 .for lang in ${SHEBANG_LANG}

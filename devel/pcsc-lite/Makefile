@@ -3,7 +3,7 @@
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.8.20
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/39/
@@ -16,10 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
+USES=		libtool pathfix perl5 pkgconfig python:2.7,build shebangfix tar:bzip2
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
-SHEBANG_FILES=	${WRKSRC}/src/spy/pcsc-spy
+SHEBANG_FILES=	src/spy/pcsc-spy
 
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
@@ -33,8 +33,6 @@ FEATURES_DESC=		Default features knobs
 FILTER_DESC=		Control (Ignore or Extend) reader names reported by PCSC
 FILTER_CONFIGURE_ENABLE=	filter
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e "s,^datadir,#datadir,; s,^data_DATA,#data_DATA," \
 		${WRKSRC}/doc/Makefile.in
@@ -47,13 +45,15 @@ post-patch-DOCS-off:
 	${REINPLACE_CMD} -e '/^install-data-am: / s|install-docDATA||' ${WRKSRC}/doc/Makefile.in
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.in ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example/pcsc_demo.c ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/services
 	@${SED} 's,%%PREFIX%%,${PREFIX},g' < ${FILESDIR}/pkg-message.in > \
 		${WRKDIR}/pkg-message
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.in ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example/pcsc_demo.c ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

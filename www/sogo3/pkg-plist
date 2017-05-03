@@ -1438,6 +1438,8 @@ GNUstep/Local/Library/SOGo/Templates/UIxTopnavToolbar.wox
 GNUstep/Local/Library/SOGo/Templates/UIxUserRightsEditor.wox
 GNUstep/Local/Library/SOGo/Templates/UIxWinClose.wox
 GNUstep/Local/Library/SOGo/WebServerResources/css/icons.css
+GNUstep/Local/Library/SOGo/WebServerResources/css/no-animation.css
+GNUstep/Local/Library/SOGo/WebServerResources/css/no-animation.css.map
 GNUstep/Local/Library/SOGo/WebServerResources/css/styles.css
 GNUstep/Local/Library/SOGo/WebServerResources/css/styles.css.map
 GNUstep/Local/Library/SOGo/WebServerResources/css/theme-default.css
@@ -1607,7 +1609,6 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgSelectOnly.directive.j
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgSubscribe.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgTimepicker.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgToggleGrid.directive.js
-GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgTransformOnBlur.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/utils.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Contacts.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Contacts.js.map

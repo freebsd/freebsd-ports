@@ -3,6 +3,7 @@
 
 PORTNAME=	mypy
 PORTVERSION=	0.501
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +18,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typed-ast>=1.0.0:devel/py-typed-ast
 
 NO_ARCH=	yes
-USES=		python:3.3+
+USES=		python:3.3+ shebangfix
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	typeshed/tests/pytype_test.py		
 
 .include <bsd.port.pre.mk>
 

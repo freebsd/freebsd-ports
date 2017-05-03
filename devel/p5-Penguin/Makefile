@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for passing digitally signed perl5 code between machines
 
+DEPRECATED=	Depends on expired security/pgp
+EXPIRATION_DATE=2017-06-01
+
 RUN_DEPENDS=	pgp:security/pgp
 
 USES=		perl5

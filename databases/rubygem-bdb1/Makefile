@@ -2,6 +2,7 @@
 
 PORTNAME=	bdb1
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,8 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 USE_RUBY=	yes
-USES=		execinfo gem
+USES=		execinfo gem shebangfix
+SHEBANG_FILES=	examples/*.rb
 
 .include <bsd.port.pre.mk>
 

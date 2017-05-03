@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lzip
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
+INSTALL_TARGET=	install-strip
 INFO=		lzip
 
 .include <bsd.port.mk>

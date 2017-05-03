@@ -3,7 +3,6 @@ bin/rpws
 %%GDM_SUPPORT%%etc/dm/Sessions/ratpoison.desktop
 man/man1/ratpoison.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/allwindows.sh

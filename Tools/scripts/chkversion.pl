@@ -1,4 +1,4 @@
-#!/usr/bin/env perl -w
+#!/usr/bin/env perl
 #
 # Copyright (c) 2004 Oliver Eikemeier. All rights reserved.
 #
@@ -66,6 +66,7 @@
 
 require 5.005;
 use strict;
+use warnings;
 use POSIX;
 use File::Find;
 use Cwd 'abs_path';

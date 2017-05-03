@@ -1,6 +1,6 @@
---- lib/clog_webapi.php.orig	2017-02-04 14:22:42.713430000 +0000
-+++ lib/clog_webapi.php	2017-02-04 14:23:10.949163000 +0000
-@@ -40,7 +40,7 @@
+--- lib/clog_webapi.php.orig	2017-04-26 00:30:09 UTC
++++ lib/clog_webapi.php
+@@ -40,7 +40,7 @@ function clog_purge_logfile() {
  	$logfile = read_config_option('path_cactilog');
  
  	if ($logfile == '') {
@@ -9,7 +9,7 @@
  	}
  
  	if (file_exists($logfile)) {
-@@ -64,7 +64,7 @@
+@@ -64,7 +64,7 @@ function clog_view_logfile() {
  	$logfile = read_config_option('path_cactilog');
  
  	if ($logfile == '') {

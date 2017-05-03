@@ -12,10 +12,14 @@
 #
 # carbon_enable (bool):	Set to NO by default.
 #			Set it to YES to enable it.
+# carbon_as_relay (bool): Set to NO by default (start cache).
+#			Set it to YES to run as RELAY.
 # carbon_instances:	Empty by default (start single instance).
 #			Space-separated list of instances to start.
 # carbon_conf:		File where carbon configuration resides
 #			Default: %%PREFIX%%/etc/carbon/carbon.conf
+# carbon_relay_rules:	File where carbon relay rules resides
+#			Default: %%PREFIX%%/etc/carbon/relay-rules.conf
 # carbon_user:		The user account carbon daemon runs as what
 #			you want it to be. It uses 'root' user by
 #			default.
@@ -37,10 +41,12 @@ rcvar=carbon_enable
 load_rc_config ${name}
 
 : ${carbon_enable:=NO}
+: ${carbon_as_relay:=NO}
 : ${carbon_instances:=""}
 : ${carbon_user:=root}
 : ${carbon_group:=wheel}
 : ${carbon_conf:=%%PREFIX%%/etc/carbon/carbon.conf}
+: ${carbon_relay_rules:=%%PREFIX%%/etc/carbon/relay-rules.conf}
 : ${carbon_debug:=NO}
 : ${carbon_logdir:=/var/db/carbon/log/}
 : ${carbon_pidfile:=/var/run/carbon.pid}
@@ -66,6 +72,7 @@ if [ -n "${carbon_instances}" ]; then
         eval carbon_user=\${carbon_${instance}_user:-"${carbon_user}"}
         eval carbon_group=\${carbon_${instance}_group:-"${carbon_group}"}
         eval carbon_conf=\${carbon_${instance}_conf:-"${carbon_conf}"}
+        eval carbon_relay_rules=\${carbon_${instance}_relay_rules:-"${carbon_relay_rules}"}
         eval carbon_debug=\${carbon_${instance}_debug:-"${carbon_debug}"}
         eval carbon_logdir=\${carbon_${instance}_logdir:-"${carbon_logdir}"}
         eval carbon_pidfile=\${carbon_${instance}_pidfile:-"/var/run/carbon-${instance}.pid"}
@@ -78,20 +85,34 @@ if [ -n "${carbon_instances}" ]; then
     fi
 fi
 
+is_carbon_relay() {
+    if [ "${carbon_as_relay}" = "YES" ]; then
+        return 0
+    fi
+    return 1
+}
+
 stop_cmd="${name}_stop"
 required_files="${carbon_conf} %%PREFIX%%/etc/carbon/storage-schemas.conf"
 
 pidfile=${carbon_pidfile}
 command_interpreter="%%PREFIX%%/bin/python2.7"
-command="%%PREFIX%%/bin/carbon-cache.py"
-command_args="--config=${carbon_conf} ${instance_arg} --logdir ${carbon_logdir} --pidfile ${pidfile} start"
+
+if is_carbon_relay; then
+    command="%%PREFIX%%/bin/carbon-relay.py"
+    rules_arg="--rules ${carbon_relay_rules}"
+else
+    command="%%PREFIX%%/bin/carbon-cache.py"
+    rules_arg=""
+fi
+command_args="--config=${carbon_conf} ${instance_arg} --logdir ${carbon_logdir} --pidfile ${pidfile} ${rules_arg} start"
 
 carbon_stop()
 {
     echo "Stopping $name"
     pids=`check_pidfile ${pidfile} ${command} ${command_interpreter}`
 
-    %%PREFIX%%/bin/carbon-cache.py --config=${carbon_conf} ${instance_arg} --pidfile ${pidfile} stop
+    ${command} --config=${carbon_conf} ${instance_arg} --pidfile ${pidfile} stop
     wait_for_pids ${pids}
 }
 

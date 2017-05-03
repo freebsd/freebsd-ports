@@ -1,4 +1,4 @@
---- qemu/configure.orig	2017-02-23 12:57:14 UTC
+--- qemu/configure.orig	2017-04-20 06:14:24 UTC
 +++ qemu/configure
 @@ -229,11 +229,11 @@ QEMU_CFLAGS="-Wstrict-prototypes -Wredun
  QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"

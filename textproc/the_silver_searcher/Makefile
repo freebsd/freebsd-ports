@@ -21,6 +21,7 @@ AUTOMAKE_ARGS+=	--add-missing
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LZMA_LIBS=-llzma
 CONFIGURE_ARGS+=LZMA_CFLAGS=-I/usr/include
+LDFLAGS+=	-L/usr/lib -llzma
 USES=		autoreconf pkgconfig
 TEST_TARGET=	test
 

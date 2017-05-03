@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagios
-PORTVERSION=	4.2.4
+PORTVERSION=	4.3.1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://assets.nagios.com/downloads/nagioscore/releases/ \
@@ -74,15 +74,17 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 USERS=		${NAGIOSUSER}
 GROUPS=		${NAGIOSGROUP}
 
-OPTIONS_DEFINE=	NANOSLEEP UNHANDLED_HACK
+OPTIONS_DEFINE=	NANOSLEEP UNHANDLED_HACK COREWINDOW
 OPTIONS_RADIO=		PLUGINS
 OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
 OPTIONS_DEFAULT=	NAGPLUGINS
 NANOSLEEP_DESC=		Use nanosleep in event timing
 UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
+COREWINDOW_DESC=	Enable the corewindow parameter
 
 MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/monitoring-plugins
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
+COREWINDOW_CONFIGURE_ENABLE=	corewindow
 
 OPTIONS_SUB=
 

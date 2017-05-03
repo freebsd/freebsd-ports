@@ -3,7 +3,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		http://nosignal.fi/download/ \
@@ -17,11 +17,8 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
-OPTIONS_DEFINE=	ALSA AUDIOFILE JACK LIBLO LIBOIL PYTHON SAMPLERATE SNDFILE
-OPTIONS_DEFAULT=PYTHON
-OPTIONS_SUB=	yes
-
-USES=		gmake libtool pkgconfig readline:port
+USES=		gmake libtool localbase:ldflags pkgconfig readline:port shebangfix
+SHEBANG_FILES=	ecatools/ecamonitor
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-liblilv \
 		--disable-rubyecasound \
@@ -29,8 +26,11 @@ CONFIGURE_ARGS=	--disable-liblilv \
 		--disable-arts
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-pthread
+
+OPTIONS_DEFINE=	ALSA AUDIOFILE JACK LIBLO LIBOIL PYTHON SAMPLERATE SNDFILE
+OPTIONS_DEFAULT=PYTHON
+OPTIONS_SUB=	yes
 
 ALSA_CONFIGURE_ENABLE=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib

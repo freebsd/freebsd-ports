@@ -2,6 +2,7 @@
 
 PORTNAME=	kturtle
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

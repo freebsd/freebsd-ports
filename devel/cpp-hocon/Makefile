@@ -2,6 +2,7 @@
 
 PORTNAME=	cpp-hocon
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jslagle@gmail.com

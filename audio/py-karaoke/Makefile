@@ -3,7 +3,7 @@
 
 PORTNAME=	karaoke
 PORTVERSION=	0.7.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,9 @@ RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu \
 		${PYGAME} \
 		${PYNUMPY}
 
-USES=		compiler:c++11-lib desktop-file-utils iconv python:2 zip
+USES=		compiler:c++11-lib desktop-file-utils iconv python:2 shebangfix zip
+SHEBANG_FILES=	install/pykaraoke_mini install/pykar install/pykaraoke \
+		install/pycdg install/pympg
 USE_SDL=	sdl
 USE_XORG=	x11 xau xcb xdmcp
 USE_WX=		3.0+

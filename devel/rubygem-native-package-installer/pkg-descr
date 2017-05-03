@@ -1,0 +1,7 @@
+Users need to install native packages to install an extension library that
+depends on native packages. It bores users because users need to install native
+packages and an extension library separately. native-package-installer helps to
+install native packages on "gem install". Users can install both native packages
+and an extension library by one action, "gem install".
+
+WWW: https://github.com/ruby-gnome2/native-package-installer

@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	5.5.54
-PORTREVISION?=	3
+PORTVERSION=	5.5.55
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
@@ -25,7 +25,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb55-client
 USES=		cmake execinfo shebangfix ssl
-SHEBANG_FILES=	scripts/*.sh
+SHEBANG_FILES=	scripts/*.sh sql-bench/[a-km-z]*
 
 CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
@@ -43,7 +43,6 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SQLBENCHDIR="share/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
 		-DWITH_UNIT_TESTS=0 \
-		-DWITH_LIBEDIT=0 \
 		-DWITH_LIBWRAP=1 \
 		-DWITH_SSL=yes \
 		-DEXECINFO_ROOT=${LOCALBASE} \

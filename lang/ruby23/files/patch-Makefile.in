@@ -1,4 +1,4 @@
---- Makefile.in.orig	2015-12-20 01:15:12 UTC
+--- Makefile.in.orig	2016-01-21 07:41:11 UTC
 +++ Makefile.in
 @@ -388,7 +388,7 @@ enc/jis/props.h: enc/jis/props.kwd
  

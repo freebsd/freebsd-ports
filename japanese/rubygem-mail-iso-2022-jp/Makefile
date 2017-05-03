@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mail-iso-2022-jp
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	japanese mail rubygems
 MASTER_SITES=	RG
 

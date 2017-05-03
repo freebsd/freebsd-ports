@@ -2,7 +2,7 @@
 
 PORTNAME=	codec2
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio hamradio
 MASTER_SITES=	http://files.freedv.org/codec2/ \
 		LOCAL/db
@@ -15,8 +15,9 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libspeex.so:audio/speex
 
 CONFLICTS=	libcodec2-*
-USES=		cmake:outsource compiler:c11 tar:xz
+USES=		cmake:outsource compiler:c11 shebangfix tar:xz
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	script/menu.sh
 
 OPTIONS_DEFINE=	EXAMPLES TEST
 OPTIONS_SUB=	yes

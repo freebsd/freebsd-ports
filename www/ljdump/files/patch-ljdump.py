@@ -1,11 +1,5 @@
 --- ljdump.py.orig
 +++ ljdump.py
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!%%LOCALBASE%%/bin/python
- #
- # ljdump.py - livejournal archiver
- # Greg Hewgill <greg@hewgill.com> http://hewgill.com
 @@ -24,7 +24,7 @@
  #
  # Copyright (c) 2005-2009 Greg Hewgill

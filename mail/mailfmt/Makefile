@@ -3,14 +3,15 @@
 
 PORTNAME=	mailfmt
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tundraware.com/Software/mailfmt/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remove leading quotations from mail/news and wrap lines to fixed width
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	mailfmt
 NO_ARCH=	yes
 NO_BUILD=	yes
 

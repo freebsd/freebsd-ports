@@ -156,6 +156,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/generator/Ninja.rst
 %%DATADIR%%/Help/generator/Sublime Text 2.rst
 %%DATADIR%%/Help/generator/Unix Makefiles.rst
+%%DATADIR%%/Help/generator/VS_TOOLSET_HOST_ARCH.txt
 %%DATADIR%%/Help/generator/Visual Studio 10 2010.rst
 %%DATADIR%%/Help/generator/Visual Studio 11 2012.rst
 %%DATADIR%%/Help/generator/Visual Studio 12 2013.rst
@@ -220,6 +221,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/CPackDMG.rst
 %%DATADIR%%/Help/module/CPackDeb.rst
 %%DATADIR%%/Help/module/CPackIFW.rst
+%%DATADIR%%/Help/module/CPackIFWConfigureFile.rst
 %%DATADIR%%/Help/module/CPackNSIS.rst
 %%DATADIR%%/Help/module/CPackPackageMaker.rst
 %%DATADIR%%/Help/module/CPackProductBuild.rst
@@ -250,6 +252,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/CheckSymbolExists.rst
 %%DATADIR%%/Help/module/CheckTypeSize.rst
 %%DATADIR%%/Help/module/CheckVariableExists.rst
+%%DATADIR%%/Help/module/CSharpUtilities.rst
 %%DATADIR%%/Help/module/Dart.rst
 %%DATADIR%%/Help/module/DeployQt4.rst
 %%DATADIR%%/Help/module/Documentation.rst
@@ -496,6 +499,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/policy/CMP0064.rst
 %%DATADIR%%/Help/policy/CMP0065.rst
 %%DATADIR%%/Help/policy/CMP0066.rst
+%%DATADIR%%/Help/policy/CMP0067.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -563,6 +567,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_gbl/TARGET_MESSAGES.rst
 %%DATADIR%%/Help/prop_gbl/TARGET_SUPPORTS_SHARED_LIBS.rst
 %%DATADIR%%/Help/prop_gbl/USE_FOLDERS.rst
+%%DATADIR%%/Help/prop_gbl/XCODE_EMIT_EFFECTIVE_PLATFORM_NAME.rst
 %%DATADIR%%/Help/prop_inst/CPACK_DESKTOP_SHORTCUTS.rst
 %%DATADIR%%/Help/prop_inst/CPACK_NEVER_OVERWRITE.rst
 %%DATADIR%%/Help/prop_inst/CPACK_PERMANENT.rst
@@ -586,9 +591,17 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_sf/MACOSX_PACKAGE_LOCATION.rst
 %%DATADIR%%/Help/prop_sf/OBJECT_DEPENDS.rst
 %%DATADIR%%/Help/prop_sf/OBJECT_OUTPUTS.rst
+%%DATADIR%%/Help/prop_sf/SKIP_AUTOGEN.rst
+%%DATADIR%%/Help/prop_sf/SKIP_AUTOMOC.rst
+%%DATADIR%%/Help/prop_sf/SKIP_AUTORCC.rst
+%%DATADIR%%/Help/prop_sf/SKIP_AUTOUIC.rst
 %%DATADIR%%/Help/prop_sf/SYMBOLIC.rst
+%%DATADIR%%/Help/prop_sf/VS_COPY_TO_OUT_DIR.rst
+%%DATADIR%%/Help/prop_sf/VS_CSHARP_tagname.rst
 %%DATADIR%%/Help/prop_sf/VS_DEPLOYMENT_CONTENT.rst
 %%DATADIR%%/Help/prop_sf/VS_DEPLOYMENT_LOCATION.rst
+%%DATADIR%%/Help/prop_sf/VS_INCLUDE_IN_VSIX.rst
+%%DATADIR%%/Help/prop_sf/VS_RESOURCE_GENERATOR.rst
 %%DATADIR%%/Help/prop_sf/VS_SHADER_ENTRYPOINT.rst
 %%DATADIR%%/Help/prop_sf/VS_SHADER_FLAGS.rst
 %%DATADIR%%/Help/prop_sf/VS_SHADER_MODEL.rst
@@ -650,6 +663,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/AUTOUIC.rst
 %%DATADIR%%/Help/prop_tgt/AUTOUIC_OPTIONS.rst
 %%DATADIR%%/Help/prop_tgt/BINARY_DIR.rst
+%%DATADIR%%/Help/prop_tgt/BUILD_RPATH.rst
 %%DATADIR%%/Help/prop_tgt/BUILD_WITH_INSTALL_RPATH.rst
 %%DATADIR%%/Help/prop_tgt/BUNDLE.rst
 %%DATADIR%%/Help/prop_tgt/BUNDLE_EXTENSION.rst
@@ -670,6 +684,10 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/CONFIG_OUTPUT_NAME.rst
 %%DATADIR%%/Help/prop_tgt/CONFIG_POSTFIX.rst
 %%DATADIR%%/Help/prop_tgt/CROSSCOMPILING_EMULATOR.rst
+%%DATADIR%%/Help/prop_tgt/CUDA_EXTENSIONS.rst
+%%DATADIR%%/Help/prop_tgt/CUDA_SEPARABLE_COMPILATION.rst
+%%DATADIR%%/Help/prop_tgt/CUDA_STANDARD.rst
+%%DATADIR%%/Help/prop_tgt/CUDA_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/prop_tgt/CXX_EXTENSIONS.rst
 %%DATADIR%%/Help/prop_tgt/CXX_STANDARD.rst
 %%DATADIR%%/Help/prop_tgt/CXX_STANDARD_REQUIRED.rst
@@ -698,6 +716,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/IMPORTED_CONFIGURATIONS.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_IMPLIB.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_IMPLIB_CONFIG.rst
+%%DATADIR%%/Help/prop_tgt/IMPORTED_LIBNAME.rst
+%%DATADIR%%/Help/prop_tgt/IMPORTED_LIBNAME_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_LINK_DEPENDENT_LIBRARIES.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_LINK_DEPENDENT_LIBRARIES_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_LINK_INTERFACE_LANGUAGES.rst
@@ -736,6 +756,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/LABELS.rst
 %%DATADIR%%/Help/prop_tgt/LANG_CLANG_TIDY.rst
 %%DATADIR%%/Help/prop_tgt/LANG_COMPILER_LAUNCHER.rst
+%%DATADIR%%/Help/prop_tgt/LANG_CPPLINT.rst
 %%DATADIR%%/Help/prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.rst
 %%DATADIR%%/Help/prop_tgt/LANG_VISIBILITY_PRESET.rst
 %%DATADIR%%/Help/prop_tgt/LIBRARY_OUTPUT_DIRECTORY.rst
@@ -761,6 +782,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/MACOSX_BUNDLE_INFO_PLIST.rst
 %%DATADIR%%/Help/prop_tgt/MACOSX_FRAMEWORK_INFO_PLIST.rst
 %%DATADIR%%/Help/prop_tgt/MACOSX_RPATH.rst
+%%DATADIR%%/Help/prop_tgt/MANUALLY_ADDED_DEPENDENCIES.rst
 %%DATADIR%%/Help/prop_tgt/MAP_IMPORTED_CONFIG_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/NAME.rst
 %%DATADIR%%/Help/prop_tgt/NO_SONAME.rst
@@ -800,8 +822,11 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VISIBILITY_INLINES_HIDDEN.rst
 %%DATADIR%%/Help/prop_tgt/VS_CONFIGURATION_TYPE.rst
+%%DATADIR%%/Help/prop_tgt/VS_DEBUGGER_WORKING_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/VS_DESKTOP_EXTENSIONS_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_REFERENCES.rst
+%%DATADIR%%/Help/prop_tgt/VS_DOTNET_REFERENCES_COPY_LOCAL.rst
+%%DATADIR%%/Help/prop_tgt/VS_DOTNET_REFERENCE_refname.rst
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_TARGET_FRAMEWORK_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VS_GLOBAL_KEYWORD.rst
 %%DATADIR%%/Help/prop_tgt/VS_GLOBAL_PROJECT_TYPES.rst
@@ -816,6 +841,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/VS_SCC_PROJECTNAME.rst
 %%DATADIR%%/Help/prop_tgt/VS_SCC_PROVIDER.rst
 %%DATADIR%%/Help/prop_tgt/VS_SDK_REFERENCES.rst
+%%DATADIR%%/Help/prop_tgt/VS_USER_PROPS.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINDOWS_TARGET_PLATFORM_MIN_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINRT_COMPONENT.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINRT_EXTENSIONS.rst
@@ -823,6 +849,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/WIN32_EXECUTABLE.rst
 %%DATADIR%%/Help/prop_tgt/WINDOWS_EXPORT_ALL_SYMBOLS.rst
 %%DATADIR%%/Help/prop_tgt/XCODE_ATTRIBUTE_an-attribute.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_EXPLICIT_FILE_TYPE.rst
+%%DATADIR%%/Help/prop_tgt/XCODE_PRODUCT_TYPE.rst
 %%DATADIR%%/Help/prop_tgt/XCTEST.rst
 %%DATADIR%%/Help/prop_tgt/XXX_OUTPUT_DIRECTORY.txt
 %%DATADIR%%/Help/prop_tgt/XXX_OUTPUT_NAME.txt
@@ -834,6 +862,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/release/3.5.rst
 %%DATADIR%%/Help/release/3.6.rst
 %%DATADIR%%/Help/release/3.7.rst
+%%DATADIR%%/Help/release/3.8.rst
 %%DATADIR%%/Help/release/dev.txt
 %%DATADIR%%/Help/release/index.rst
 %%DATADIR%%/Help/variable/ANDROID.rst
@@ -880,6 +909,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_AUTOUIC_OPTIONS.rst
 %%DATADIR%%/Help/variable/CMAKE_BACKWARDS_COMPATIBILITY.rst
 %%DATADIR%%/Help/variable/CMAKE_BINARY_DIR.rst
+%%DATADIR%%/Help/variable/CMAKE_BUILD_RPATH.rst
 %%DATADIR%%/Help/variable/CMAKE_BUILD_TOOL.rst
 %%DATADIR%%/Help/variable/CMAKE_BUILD_TYPE.rst
 %%DATADIR%%/Help/variable/CMAKE_BUILD_WITH_INSTALL_RPATH.rst
@@ -903,6 +933,10 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_CROSSCOMPILING.rst
 %%DATADIR%%/Help/variable/CMAKE_CROSSCOMPILING_EMULATOR.rst
 %%DATADIR%%/Help/variable/CMAKE_CTEST_COMMAND.rst
+%%DATADIR%%/Help/variable/CMAKE_CUDA_EXTENSIONS.rst
+%%DATADIR%%/Help/variable/CMAKE_CUDA_STANDARD.rst
+%%DATADIR%%/Help/variable/CMAKE_CUDA_STANDARD_REQUIRED.rst
+%%DATADIR%%/Help/variable/CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES.rst
 %%DATADIR%%/Help/variable/CMAKE_CURRENT_BINARY_DIR.rst
 %%DATADIR%%/Help/variable/CMAKE_CURRENT_LIST_DIR.rst
 %%DATADIR%%/Help/variable/CMAKE_CURRENT_LIST_FILE.rst
@@ -1009,6 +1043,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_TARGET.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILE_OBJECT.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_CPPLINT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_CREATE_SHARED_LIBRARY.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_CREATE_SHARED_MODULE.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_CREATE_STATIC_LIBRARY.rst
@@ -1121,6 +1156,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_STATIC_LINKER_FLAGS_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_STATIC_LINKER_FLAGS_CONFIG_INIT.rst
 %%DATADIR%%/Help/variable/CMAKE_STATIC_LINKER_FLAGS_INIT.rst
+%%DATADIR%%/Help/variable/CMAKE_SUBLIME_TEXT_2_ENV_SETTINGS.rst
+%%DATADIR%%/Help/variable/CMAKE_SUBLIME_TEXT_2_EXCLUDE_BUILD_TREE.rst
 %%DATADIR%%/Help/variable/CMAKE_SYSROOT.rst
 %%DATADIR%%/Help/variable/CMAKE_SYSTEM.rst
 %%DATADIR%%/Help/variable/CMAKE_SYSTEM_APPBUNDLE_PATH.rst
@@ -1147,11 +1184,13 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_VISIBILITY_INLINES_HIDDEN.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_DEVENV_COMMAND.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_INCLUDE_PACKAGE_TO_DEFAULT_BUILD.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_INTEL_Fortran_PROJECT_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_MSBUILD_COMMAND.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_NsightTegra_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_NAME.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_TOOLSET.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_TOOLSET_HOST_ARCHITECTURE.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_WARN_DEPRECATED.rst
 %%DATADIR%%/Help/variable/CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION.rst

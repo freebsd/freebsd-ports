@@ -3,6 +3,7 @@
 
 PORTNAME=	python-heatclient
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +31,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six \
 
 NO_ARCH=	yes
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	heatclient/tests/functional/hooks/post_test_hook.sh
 
 .include <bsd.port.mk>

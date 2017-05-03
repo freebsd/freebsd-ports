@@ -1,0 +1,11 @@
+react-rails makes it easy to use React and JSX in your Ruby on Rails
+application.  It can
+
+- provide various react builds to your asset bundle
+- transform .jsx in the asset pipeline
+- render components into views and mount them via view helper and react_ujs
+- render components server-side with prerender: true
+- generate components with a Rails generator
+- be extended with custom renderers, transformers and view helpers
+
+WWW: https://github.com/reactjs/react-rails

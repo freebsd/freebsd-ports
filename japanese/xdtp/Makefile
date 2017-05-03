@@ -63,7 +63,7 @@ post-patch:
 		 s|\([[:blank:]]\)\($${XDTPSHARE}\)|\1$${DESTDIR}\2|' \
 		${WRKSRC}/xsl/Makefile
 # Unbreak parallel builds (-jX) by calling make(1) correctly
-	@${REINPLACE_CMD} -E 's/cd(.+)(;| &&) (\$${MAKE})/\3 -C\1/' \
+	@${REINPLACE_CMD} -E 's/cd(.+)(;| &&) (\$$\{MAKE})/\3 -C\1/' \
 		${WRKSRC}/Makefile ${WRKSRC}/bin/Makefile \
 		${WRKSRC}/java/Makefile ${WRKSRC}/misc/Makefile
 

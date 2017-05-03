@@ -1345,6 +1345,7 @@ share/icons/Adwaita/256x256/status/user-idle.png
 share/icons/Adwaita/256x256/status/user-invisible.png
 share/icons/Adwaita/256x256/status/user-offline.png
 share/icons/Adwaita/256x256/status/user-trash-full.png
+share/icons/Adwaita/512x512/apps/accessories-calculator.png
 share/icons/Adwaita/32x32/actions/address-book-new.png
 share/icons/Adwaita/32x32/actions/application-exit.png
 share/icons/Adwaita/32x32/actions/appointment-new.png
@@ -2131,6 +2132,7 @@ share/icons/Adwaita/cursors/cross
 share/icons/Adwaita/cursors/cross_reverse
 share/icons/Adwaita/cursors/crossed_circle
 share/icons/Adwaita/cursors/crosshair
+share/icons/Adwaita/cursors/context-menu
 share/icons/Adwaita/cursors/d9ce0ab605698f320427677b458ad60b
 share/icons/Adwaita/cursors/default
 share/icons/Adwaita/cursors/diamond_cross
@@ -2138,6 +2140,7 @@ share/icons/Adwaita/cursors/dnd-ask
 share/icons/Adwaita/cursors/dnd-copy
 share/icons/Adwaita/cursors/dnd-link
 share/icons/Adwaita/cursors/dnd-move
+share/icons/Adwaita/cursors/dnd-no-drop
 share/icons/Adwaita/cursors/dnd-none
 share/icons/Adwaita/cursors/dot_box_mask
 share/icons/Adwaita/cursors/dotbox
@@ -2230,6 +2233,7 @@ share/icons/Adwaita/scalable/actions/call-start-symbolic.svg
 share/icons/Adwaita/scalable/actions/call-stop-symbolic.svg
 share/icons/Adwaita/scalable/actions/color-select-symbolic.svg
 share/icons/Adwaita/scalable/actions/contact-new-symbolic.svg
+share/icons/Adwaita/scalable/actions/document-edit-symbolic.svg
 share/icons/Adwaita/scalable/actions/document-new-symbolic.svg
 share/icons/Adwaita/scalable/actions/document-open-recent-symbolic.svg
 share/icons/Adwaita/scalable/actions/document-open-symbolic.svg
@@ -2342,6 +2346,7 @@ share/icons/Adwaita/scalable/actions/system-search-symbolic.svg
 share/icons/Adwaita/scalable/actions/system-shutdown-symbolic.svg
 share/icons/Adwaita/scalable/actions/tab-new-symbolic.svg
 share/icons/Adwaita/scalable/actions/tools-check-spelling-symbolic.svg
+share/icons/Adwaita/scalable/actions/view-app-grid-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-continuous-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-dual-symbolic.svg
 share/icons/Adwaita/scalable/actions/view-fullscreen-symbolic.svg
@@ -2498,6 +2503,7 @@ share/icons/Adwaita/scalable/emotes/face-worried-symbolic.svg
 share/icons/Adwaita/scalable/emotes/face-yawn-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-certificate-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-rss+xml-symbolic.svg
+share/icons/Adwaita/scalable/mimetypes/application-x-addon-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-appliance-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-executable-symbolic.svg
 share/icons/Adwaita/scalable/mimetypes/audio-x-generic-symbolic.svg
@@ -2671,34 +2677,3 @@ share/icons/Adwaita/scalable/status/weather-showers-scattered-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-showers-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-snow-symbolic.svg
 share/icons/Adwaita/scalable/status/weather-storm-symbolic.svg
-@dir share/locale/an/LC_MESSAGES
-@dir share/locale/as/LC_MESSAGES
-@dir share/locale/ast/LC_MESSAGES
-@dir share/locale/be@latin/LC_MESSAGES
-@dir share/locale/bn_IN/LC_MESSAGES
-@dir share/locale/ca@valencia/LC_MESSAGES
-@dir share/locale/crh/LC_MESSAGES
-@dir share/locale/csb/LC_MESSAGES
-@dir share/locale/dz/LC_MESSAGES
-@dir share/locale/en@shaw/LC_MESSAGES
-@dir share/locale/fur/LC_MESSAGES
-@dir share/locale/fy/LC_MESSAGES
-@dir share/locale/gd/LC_MESSAGES
-@dir share/locale/kk/LC_MESSAGES
-@dir share/locale/km/LC_MESSAGES
-@dir share/locale/ku/LC_MESSAGES
-@dir share/locale/mai/LC_MESSAGES
-@dir share/locale/mg/LC_MESSAGES
-@dir share/locale/mr/LC_MESSAGES
-@dir share/locale/nds/LC_MESSAGES
-@dir share/locale/nhn/LC_MESSAGES
-@dir share/locale/oc/LC_MESSAGES
-@dir share/locale/ps/LC_MESSAGES
-@dir share/locale/rw/LC_MESSAGES
-@dir share/locale/si/LC_MESSAGES
-@dir share/locale/sr@latin/LC_MESSAGES
-@dir share/locale/te/LC_MESSAGES
-@dir share/locale/ug/LC_MESSAGES
-@dir share/locale/uz@cyrillic/LC_MESSAGES
-@dir share/locale/xh/LC_MESSAGES
-@dir share/locale/zh_HK/LC_MESSAGES

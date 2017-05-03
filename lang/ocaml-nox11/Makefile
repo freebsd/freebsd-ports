@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MAINTAINER=	michael.grunewald@laposte.net
 COMMENT=	Objective Caml compiler and programming environment (no X11)
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: too few arguments to function gethostbyname_r
 
 MASTERDIR=	${.CURDIR}/../ocaml
 

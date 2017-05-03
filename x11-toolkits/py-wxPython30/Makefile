@@ -2,7 +2,7 @@
 
 PORTNAME=	wxPython
 PORTVERSION=	3.0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	SF/wxpython/wxPython/${PORTVERSION}
@@ -16,7 +16,8 @@ DIST_SUBDIR=	python
 
 WRKSRC_SUBDIR=	wxPython
 
-USES=		compiler:c++11-lib python tar:bzip2
+USES=		compiler:c++11-lib python shebangfix tar:bzip2
+SHEBANG_FILES=	wx/tools/Editra/Editra.pyw
 
 .if defined(WITH_WXVERSION_ONLY)
 

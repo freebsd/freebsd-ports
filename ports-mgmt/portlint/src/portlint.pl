@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.401 2017/03/29 15:26:37 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.405 2017/04/21 19:47:51 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 7;
+my $micro = 8;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1405,16 +1405,6 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: use of :LU variable expansion modifiers
-	#
-	print "OK: checking for use of :LU variable expansion modifiers.\n" if ($verbose);
-	if ($whole =~ /\$\{[^}]+:[LU]/m) {
-		my $lineno = &linenumber($`);
-		&perror("FATAL", $file, $lineno, ":U and :L syntax is not supported ".
-			"anymore.  Please use :tu and :tl instead.");
-	}
-
-	#
 	# whole file: use of IGNOREFILES
 	#
 	print "OK: checking for use of IGNOREFILES.\n" if ($verbose);
@@ -1635,7 +1625,7 @@ sub checkmakefile {
 		# skip global options
 		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11' or $i eq 'DEBUG');
 		if (!grep(/^$i$/, (@mopt, @popt))) {
-			if ($whole !~ /\n${i}_($m)(.)?=[^\n]+/) {
+			if ($whole !~ /\n${i}_($m)(_\w+)?(.)?=[^\n]+/) {
 				if (!$slaveport) {
 					&perror("WARN", $file, -1, "$i is listed in ".
 						"OPTIONS_DEFINE, but no PORT_OPTIONS:M$i appears.");
@@ -1979,7 +1969,7 @@ xargs xmkmf
 				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
 				&& $curline !~ /^MAINTAINER(.)?=[^\n]+$i/m
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
-				&& $curline !~ /^USES(.)?=[^\n]+$i/m
+				&& $curline !~ /^(\w+)?USES(.)?=[^\n]+$i/m
 				&& $curline !~ /^WX_COMPS(.)?=[^\n]+$i/m
 				&& $curline !~ /^ONLY_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
 				&& $curline !~ /^NOT_FOR_ARCHS_REASON(.)?=[^\n]+$i/m

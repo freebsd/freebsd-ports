@@ -14,6 +14,7 @@
     SUBDIR += R-cran-MCMCpack
     SUBDIR += R-cran-MSwM
     SUBDIR += R-cran-MatchIt
+    SUBDIR += R-cran-Matching
     SUBDIR += R-cran-MatrixModels
     SUBDIR += R-cran-NMF
     SUBDIR += R-cran-RHmm
@@ -61,6 +62,7 @@
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-quantreg
+    SUBDIR += R-cran-rgenoud
     SUBDIR += R-cran-sandwich
     SUBDIR += R-cran-sm
     SUBDIR += R-cran-sp
@@ -106,7 +108,6 @@
     SUBDIR += calcoo
     SUBDIR += calctool
     SUBDIR += cantor
-    SUBDIR += carve
     SUBDIR += cblas
     SUBDIR += ccmath
     SUBDIR += ceres-solver
@@ -157,7 +158,6 @@
     SUBDIR += fftw3-long
     SUBDIR += fftw3-quad
     SUBDIR += fityk
-    SUBDIR += foma
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib
@@ -249,7 +249,6 @@
     SUBDIR += levmar
     SUBDIR += libRmath
     SUBDIR += libflame
-    SUBDIR += libjbigi
     SUBDIR += liblbfgs
     SUBDIR += libmissing
     SUBDIR += libocas
@@ -260,6 +259,7 @@
     SUBDIR += libtommath
     SUBDIR += libtsnnls
     SUBDIR += libxls
+    SUBDIR += libxlsxwriter
     SUBDIR += linpack
     SUBDIR += lll_spect
     SUBDIR += lp_solve

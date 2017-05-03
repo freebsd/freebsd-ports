@@ -1,4 +1,4 @@
---- contrib/Makefile.am.orig	2016-10-08 19:30:21 UTC
+--- contrib/Makefile.am.orig	2017-04-12 23:01:05 UTC
 +++ contrib/Makefile.am
 @@ -2,7 +2,7 @@
  
@@ -7,5 +7,5 @@
 -SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp5.rc pgp6.rc Tin.rc \
 +SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp6.rc Tin.rc \
  	sample.mailcap sample.muttrc sample.muttrc-sidebar sample.muttrc-tlr \
- 	sample.vimrc-sidebar colors.default colors.linux smime.rc \
+ 	sample.muttrc-compress sample.vimrc-sidebar colors.default colors.linux smime.rc \
  	ca-bundle.crt smime_keys_test.pl mutt_xtitle

@@ -1,0 +1,8 @@
+librespot is an open source client library for Spotify.
+It enables applications to use Spotify's service,
+without using the official but closed-source libspotify.
+
+Additionally, it will provide extra features which are not
+available in the official library.
+
+WWW: https://github.com/plietar/librespot

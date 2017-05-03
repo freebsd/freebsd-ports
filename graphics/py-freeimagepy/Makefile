@@ -3,6 +3,7 @@
 
 PORTNAME=	freeimagepy
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/${PORTNAME}/FreeImagePy/V${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,9 @@ COMMENT=	FreeImage library python wrapper
 LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 
 WRKSRC=		${WRKDIR}/FreeImagePy-${PORTVERSION}
-USES=		python tar:bzip2
+USES=		python shebangfix tar:bzip2
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
+SHEBANG_FILES=	FreeImagePy/*.py
 
 .include <bsd.port.mk>

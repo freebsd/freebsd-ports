@@ -3,7 +3,7 @@
 
 PORTNAME=	gretools
 PORTVERSION=	1.2.4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games gnome
 MASTER_SITES=	http://randomwalker.info/gretools/${PORTVERSION:R}/
 
@@ -14,14 +14,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pathfix pkgconfig python shebangfix
-SHEBANG_FILES=	${WRKSRC}/gretools.py
+SHEBANG_FILES=	gretools.in gretools.py
 USE_GNOME=	gnomeprefix pygnome2
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/python -t|/usr/bin/env python|g ; \
-		 s|@prefix@|${LOCALBASE}|g ; s|@share@|share|g' \
+	@${REINPLACE_CMD} 's|@prefix@|${LOCALBASE}|g ; s|@share@|share|g' \
 		 ${WRKSRC}/gretools.in
 	@${REINPLACE_CMD} -e 's|gtk\.TRUE|True|g ; \
 		 s|gtk\.FALSE|False|g ; \

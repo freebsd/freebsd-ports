@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sabredav
-PORTVERSION=	2.0.3
+PORTVERSION=	3.2.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fruux/sabre-dav/releases/download/${PORTVERSION}/
 
@@ -10,19 +10,13 @@ COMMENT=	WebDav, CalDav and Carddav Server/Framework written in PHP
 
 LICENSE=	BSD3CLAUSE
 
-OPTIONS_DEFINE=		MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	MYSQL
-
-MYSQL_DESC=		Install mysql support
-PGSQL_DESC=		Install postgresql support
-SQLITE_DESC=		Install sqlite support
-
 OPTIONS_MULTI=		DATABASE
 OPTIONS_MULTI_DATABASE=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	MYSQL
 
-USES=			cpe zip
+USES=			cpe php zip
 CPE_VENDOR=		fruux
-USE_PHP=		dom simplexml mbstring ctype iconv
+USE_PHP=		dom simplexml mbstring pcre spl ctype iconv xmlwriter
 
 .include <bsd.port.options.mk>
 

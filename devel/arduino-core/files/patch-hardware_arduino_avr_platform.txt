@@ -1,13 +1,31 @@
---- hardware/arduino/avr/platform.txt.orig	2016-10-13 04:27:28 UTC
+--- hardware/arduino/avr/platform.txt.orig	2017-03-30 23:17:49 UTC
 +++ hardware/arduino/avr/platform.txt
 @@ -20,8 +20,8 @@ compiler.warning_flags.all=-Wall -Wextra
  # Default "compiler.path" is correct, change only if you want to override the initial value
  compiler.path={runtime.tools.avr-gcc.path}/bin/
  compiler.c.cmd=avr-gcc
 -compiler.c.flags=-c -g -Os {compiler.warning_flags} -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects
--compiler.c.elf.flags={compiler.warning_flags} -Os -flto -fuse-linker-plugin -Wl,--gc-sections
+-compiler.c.elf.flags={compiler.warning_flags} -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections
 +compiler.c.flags=-c -g -Os {compiler.warning_flags} -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto
-+compiler.c.elf.flags={compiler.warning_flags} -Os -flto -Wl,--gc-sections
++compiler.c.elf.flags={compiler.warning_flags} -Os -g -flto -Wl,--gc-sections
  compiler.c.elf.cmd=avr-gcc
- compiler.S.flags=-c -g -x assembler-with-cpp -flto
+ compiler.S.flags=-c -g -x assembler-with-cpp -flto -MMD
  compiler.cpp.cmd=avr-g++
+@@ -92,8 +92,8 @@ recipe.preproc.macros="{compiler.path}{compiler.cpp.cm
+ # ------------------------------
+ 
+ tools.avrdude.path={runtime.tools.avrdude.path}
+-tools.avrdude.cmd.path={path}/bin/avrdude
+-tools.avrdude.config.path={path}/etc/avrdude.conf
++tools.avrdude.cmd.path={path}/bin/arduino-avrdude
++tools.avrdude.config.path={path}/etc/arduino-avrdude.conf
+ 
+ tools.avrdude.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
+ 
+@@ -127,4 +127,4 @@ tools.avrdude.upload.network_pattern="{network_cmd}" -
+ # Default blank usb manufacturer will be filled in at compile time
+ # - from numeric vendor ID, set to Unknown otherwise
+ build.usb_manufacturer="Unknown"
+-build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
+\ No newline at end of file
++build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'

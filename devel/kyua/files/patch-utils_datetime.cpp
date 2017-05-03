@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- utils/datetime.cpp.orig
 +++ utils/datetime.cpp
 @@ -590,11 +590,12 @@

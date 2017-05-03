@@ -3,6 +3,7 @@
 
 PORTNAME=	tsung
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks sysutils
 MASTER_SITES=	http://tsung.erlang-projects.org/dist/
 
@@ -18,7 +19,8 @@ USE_PERL5=	run
 
 GNU_CONFIGURE=	yes
 USES=		gmake perl5 python:run shebangfix
-SHEBANG_FILES=	src/*.pl.in src/tsung-plotter/tsung/tsung.py
+SHEBANG_FILES=	src/*.pl.in src/tsung-plotter/tsung/tsung.py \
+		src/tsung-plotter/tsplot.py.in
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-x86
 DISTNAME=	android-${API}-x86
 DIST_SUBDIR=	gnatdroid-ndk11
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Android sysroots for C/Ada Android cross-compiler (x86)
 
 ONLY_FOR_ARCHS=	i386 amd64

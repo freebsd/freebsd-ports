@@ -1,0 +1,21 @@
+#! /bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+echo
+echo "======================================================================="
+echo " If you are permanently removing BackupPC, you should manually delete:"
+echo "  - the backuppc user/group:	pw userdel backuppc"
+if [ -d %%ETCDIR%% ]; then
+    echo "  - BackupPC configuration:	rm -r %%ETCDIR%%"
+fi
+if [ -d /var/db/BackupPC ]; then
+    echo "  - BackupPC data directory:	rm -r /var/db/BackupPC"
+fi
+if [ -d /var/log/BackupPC ]; then
+    echo "  - BackupPC logs directory:	rm -r /var/log/BackupPC"
+fi
+echo "======================================================================="
+echo

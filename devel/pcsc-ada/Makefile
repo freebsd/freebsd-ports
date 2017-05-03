@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libpcscada-${PORTVERSION}
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada binding to PC/SC middleware (Smart card interface)
 
 LICENSE=	LGPL21

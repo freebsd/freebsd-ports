@@ -3,6 +3,7 @@ bin/gtk-builder-tool
 bin/gtk-encode-symbolic-svg
 bin/gtk-launch
 bin/gtk-query-immodules-3.0
+bin/gtk-query-settings
 @comment bin/gtk-update-icon-cache
 bin/gtk3-demo
 bin/gtk3-demo-application
@@ -14,8 +15,10 @@ include/gail-3.0/libgail-util/gailmisc.h
 include/gail-3.0/libgail-util/gailtextutil.h
 %%BROADWAY%%include/gtk-3.0/gdk/broadway/gdkbroadwaycursor.h
 %%BROADWAY%%include/gtk-3.0/gdk/broadway/gdkbroadwaydisplay.h
+%%BROADWAY%%include/gtk-3.0/gdk/broadway/gdkbroadwaymonitor.h
 %%BROADWAY%%include/gtk-3.0/gdk/broadway/gdkbroadwayvisual.h
 %%BROADWAY%%include/gtk-3.0/gdk/broadway/gdkbroadwaywindow.h
+include/gtk-3.0/gdk/deprecated/gdkcolor.h
 include/gtk-3.0/gdk/gdk-autocleanup.h
 include/gtk-3.0/gdk/gdk.h
 include/gtk-3.0/gdk/gdkapplaunchcontext.h
@@ -25,9 +28,12 @@ include/gtk-3.0/gdk/gdkconfig.h
 include/gtk-3.0/gdk/gdkcursor.h
 include/gtk-3.0/gdk/gdkdevice.h
 include/gtk-3.0/gdk/gdkdevicemanager.h
+include/gtk-3.0/gdk/gdkdevicepad.h
+include/gtk-3.0/gdk/gdkdevicetool.h
 include/gtk-3.0/gdk/gdkdisplay.h
 include/gtk-3.0/gdk/gdkdisplaymanager.h
 include/gtk-3.0/gdk/gdkdnd.h
+include/gtk-3.0/gdk/gdkdrawingcontext.h
 include/gtk-3.0/gdk/gdkenumtypes.h
 include/gtk-3.0/gdk/gdkevents.h
 include/gtk-3.0/gdk/gdkframeclock.h
@@ -37,6 +43,7 @@ include/gtk-3.0/gdk/gdkkeys.h
 include/gtk-3.0/gdk/gdkkeysyms-compat.h
 include/gtk-3.0/gdk/gdkkeysyms.h
 include/gtk-3.0/gdk/gdkmain.h
+include/gtk-3.0/gdk/gdkmonitor.h
 include/gtk-3.0/gdk/gdkpango.h
 include/gtk-3.0/gdk/gdkpixbuf.h
 include/gtk-3.0/gdk/gdkprivate.h
@@ -44,6 +51,7 @@ include/gtk-3.0/gdk/gdkproperty.h
 include/gtk-3.0/gdk/gdkrectangle.h
 include/gtk-3.0/gdk/gdkrgba.h
 include/gtk-3.0/gdk/gdkscreen.h
+include/gtk-3.0/gdk/gdkseat.h
 include/gtk-3.0/gdk/gdkselection.h
 include/gtk-3.0/gdk/gdktestutils.h
 include/gtk-3.0/gdk/gdkthreads.h
@@ -66,6 +74,7 @@ include/gtk-3.0/gdk/x11/gdkx11displaymanager.h
 include/gtk-3.0/gdk/x11/gdkx11dnd.h
 include/gtk-3.0/gdk/x11/gdkx11glcontext.h
 include/gtk-3.0/gdk/x11/gdkx11keys.h
+include/gtk-3.0/gdk/x11/gdkx11monitor.h
 include/gtk-3.0/gdk/x11/gdkx11property.h
 include/gtk-3.0/gdk/x11/gdkx11screen.h
 include/gtk-3.0/gdk/x11/gdkx11selection.h
@@ -114,6 +123,7 @@ include/gtk-3.0/gtk/a11y/gtkscalebuttonaccessible.h
 include/gtk-3.0/gtk/a11y/gtkscrolledwindowaccessible.h
 include/gtk-3.0/gtk/a11y/gtkspinbuttonaccessible.h
 include/gtk-3.0/gtk/a11y/gtkspinneraccessible.h
+include/gtk-3.0/gtk/a11y/gtkstackaccessible.h
 include/gtk-3.0/gtk/a11y/gtkstatusbaraccessible.h
 include/gtk-3.0/gtk/a11y/gtkswitchaccessible.h
 include/gtk-3.0/gtk/a11y/gtktextcellaccessible.h
@@ -123,7 +133,6 @@ include/gtk-3.0/gtk/a11y/gtktoplevelaccessible.h
 include/gtk-3.0/gtk/a11y/gtktreeviewaccessible.h
 include/gtk-3.0/gtk/a11y/gtkwidgetaccessible.h
 include/gtk-3.0/gtk/a11y/gtkwindowaccessible.h
-include/gtk-3.0/gdk/deprecated/gdkcolor.h
 include/gtk-3.0/gtk/deprecated/gtkaction.h
 include/gtk-3.0/gtk/deprecated/gtkactiongroup.h
 include/gtk-3.0/gtk/deprecated/gtkactivatable.h
@@ -148,10 +157,10 @@ include/gtk-3.0/gtk/deprecated/gtknumerableicon.h
 include/gtk-3.0/gtk/deprecated/gtkradioaction.h
 include/gtk-3.0/gtk/deprecated/gtkrc.h
 include/gtk-3.0/gtk/deprecated/gtkrecentaction.h
+include/gtk-3.0/gtk/deprecated/gtkstatusicon.h
 include/gtk-3.0/gtk/deprecated/gtkstock.h
 include/gtk-3.0/gtk/deprecated/gtkstyle.h
 include/gtk-3.0/gtk/deprecated/gtkstyleproperties.h
-include/gtk-3.0/gtk/deprecated/gtkstatusicon.h
 include/gtk-3.0/gtk/deprecated/gtksymboliccolor.h
 include/gtk-3.0/gtk/deprecated/gtktable.h
 include/gtk-3.0/gtk/deprecated/gtktearoffmenuitem.h
@@ -223,6 +232,8 @@ include/gtk-3.0/gtk/gtkcsssection.h
 include/gtk-3.0/gtk/gtkdebug.h
 include/gtk-3.0/gtk/gtkdialog.h
 include/gtk-3.0/gtk/gtkdnd.h
+include/gtk-3.0/gtk/gtkdragdest.h
+include/gtk-3.0/gtk/gtkdragsource.h
 include/gtk-3.0/gtk/gtkdrawingarea.h
 include/gtk-3.0/gtk/gtkeditable.h
 include/gtk-3.0/gtk/gtkentry.h
@@ -235,6 +246,7 @@ include/gtk-3.0/gtk/gtkexpander.h
 include/gtk-3.0/gtk/gtkfilechooser.h
 include/gtk-3.0/gtk/gtkfilechooserbutton.h
 include/gtk-3.0/gtk/gtkfilechooserdialog.h
+include/gtk-3.0/gtk/gtkfilechoosernative.h
 include/gtk-3.0/gtk/gtkfilechooserwidget.h
 include/gtk-3.0/gtk/gtkfilefilter.h
 include/gtk-3.0/gtk/gtkfixed.h
@@ -284,10 +296,12 @@ include/gtk-3.0/gtk/gtkmessagedialog.h
 include/gtk-3.0/gtk/gtkmodelbutton.h
 include/gtk-3.0/gtk/gtkmodules.h
 include/gtk-3.0/gtk/gtkmountoperation.h
+include/gtk-3.0/gtk/gtknativedialog.h
 include/gtk-3.0/gtk/gtknotebook.h
 include/gtk-3.0/gtk/gtkoffscreenwindow.h
 include/gtk-3.0/gtk/gtkorientable.h
 include/gtk-3.0/gtk/gtkoverlay.h
+include/gtk-3.0/gtk/gtkpadcontroller.h
 include/gtk-3.0/gtk/gtkpagesetup.h
 include/gtk-3.0/gtk/gtkpaned.h
 include/gtk-3.0/gtk/gtkpapersize.h
@@ -324,16 +338,21 @@ include/gtk-3.0/gtk/gtkseparator.h
 include/gtk-3.0/gtk/gtkseparatormenuitem.h
 include/gtk-3.0/gtk/gtkseparatortoolitem.h
 include/gtk-3.0/gtk/gtksettings.h
+include/gtk-3.0/gtk/gtkshortcutlabel.h
+include/gtk-3.0/gtk/gtkshortcutsgroup.h
+include/gtk-3.0/gtk/gtkshortcutssection.h
+include/gtk-3.0/gtk/gtkshortcutsshortcut.h
+include/gtk-3.0/gtk/gtkshortcutswindow.h
 include/gtk-3.0/gtk/gtkshow.h
 include/gtk-3.0/gtk/gtksizegroup.h
 include/gtk-3.0/gtk/gtksizerequest.h
 include/gtk-3.0/gtk/gtksocket.h
 include/gtk-3.0/gtk/gtkspinbutton.h
 include/gtk-3.0/gtk/gtkspinner.h
-include/gtk-3.0/gtk/gtkstatusbar.h
 include/gtk-3.0/gtk/gtkstack.h
 include/gtk-3.0/gtk/gtkstacksidebar.h
 include/gtk-3.0/gtk/gtkstackswitcher.h
+include/gtk-3.0/gtk/gtkstatusbar.h
 include/gtk-3.0/gtk/gtkstylecontext.h
 include/gtk-3.0/gtk/gtkstyleprovider.h
 include/gtk-3.0/gtk/gtkswitch.h
@@ -425,6 +444,8 @@ share/aclocal/gtk-3.0.m4
 share/applications/gtk3-demo.desktop
 share/applications/gtk3-icon-browser.desktop
 share/applications/gtk3-widget-factory.desktop
+share/gettext/its/gtkbuilder.its
+share/gettext/its/gtkbuilder.loc
 share/gir-1.0/Gdk-3.0.gir
 share/gir-1.0/GdkX11-3.0.gir
 share/gir-1.0/Gtk-3.0.gir

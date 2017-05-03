@@ -3,6 +3,7 @@
 
 PORTNAME=	event-bus
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	script/bootstrap \
+		script/setup
 
 .include <bsd.port.mk>

@@ -12,12 +12,12 @@
 #
 #miredo_server_enable="YES"
 #
-miredo_server_enable="${miredo-server_enable-NO}"
+miredo_server_enable="${miredo_server_enable:-NO}"
 
 . /etc/rc.subr
 
 name=miredo-server
-rcvar=miredo-server_enable
+rcvar=miredo_server_enable
 
 command=%%PREFIX%%/sbin/${name}
 required_files=%%PREFIX%%/etc/miredo/miredo-server.conf

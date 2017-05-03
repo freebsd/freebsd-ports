@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkpod
 PORTVERSION=	1.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
 		libgpod.so:audio/libgpod
 
-USES=		gettext gmake pkgconfig shebangfix
+USES=		gettext gmake pkgconfig python:run shebangfix
 SHEBANG_FILES=	scripts/mab2vcard scripts/sync-evolution.sh \
 		scripts/sync-knotes.sh scripts/sync-ldif.sh \
 		scripts/sync-palm-jppy.py

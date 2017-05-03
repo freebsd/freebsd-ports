@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
 
+BROKEN_aarch64=		fails to build: undefined reference to sbrk
+
 USES=		fortran gmake
 
 OPTIONS_DEFINE=	DOCS

@@ -26,12 +26,12 @@ OPTIONS_DEFINE=	ALSA
 CONFIGURE_ARGS=	--disable-roaraudio --disable-sun-audio
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
-USES=		gmake iconv pkgconfig tar:bzip2
+USES=		gmake gnome iconv pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/ices
 PORTDATA=	*
 
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 .include <bsd.port.mk>

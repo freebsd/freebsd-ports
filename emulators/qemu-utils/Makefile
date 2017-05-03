@@ -22,10 +22,11 @@ DESCR=		${.CURDIR}/pkg-descr
 EXTRA_PATCHES=	${.CURDIR}/files/patch-Makefile ${.CURDIR}/files/patch-configure
 PKGMESSAGE=
 
-PORTDOCS=	qemu-doc.html qemu-tech.html qmp-commands.txt
+PORTDOCS=	qemu-doc.html qmp-commands.txt
 
-CONFIGURE_ARGS=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
+CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
 		--disable-libssh2 \
+		--mandir=${MANPREFIX}/man \
 		--prefix=${PREFIX} --cc=${CC} --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--python=${PYTHON_CMD} \

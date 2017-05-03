@@ -4,6 +4,7 @@
 PORTNAME=	guacamole-server
 PORTVERSION=	0.9.12
 DISTVERSIONSUFFIX=	-incubating
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	ultima1252@gmail.com

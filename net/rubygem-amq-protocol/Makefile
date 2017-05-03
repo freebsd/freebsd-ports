@@ -3,7 +3,7 @@
 
 PORTNAME=	amq-protocol
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,11 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
+REINPLACE_ARGS=	-i ''
 USE_RUBY=	yes
-USES=		gem python:build shebangfix
-SHEBANG_FILES=	codegen/codegen.py
+USES=		gem
+
+post-patch:
+	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/codegen/codegen.py
 
 .include <bsd.port.mk>

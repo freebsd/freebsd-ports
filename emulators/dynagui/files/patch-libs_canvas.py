@@ -1,6 +1,6 @@
---- libs/canvas.py.orig	2007-09-24 17:33:03.000000000 -0400
-+++ libs/canvas.py	2009-02-05 18:43:07.000000000 -0500
-@@ -25,19 +25,19 @@
+--- libs/canvas.py.orig	2007-09-24 21:33:03 UTC
++++ libs/canvas.py
+@@ -25,19 +25,19 @@ import gtk
  import time
  from gtk import gdk
  import dynamips_lib

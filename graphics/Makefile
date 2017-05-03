@@ -217,6 +217,7 @@
     SUBDIR += gbm
     SUBDIR += gcolor
     SUBDIR += gcolor2
+    SUBDIR += gcolor3
     SUBDIR += gd
     SUBDIR += gdal
     SUBDIR += gdchart
@@ -296,6 +297,7 @@
     SUBDIR += gracula
     SUBDIR += grads
     SUBDIR += grafx2
+    SUBDIR += graphene
     SUBDIR += graphite2
     SUBDIR += graphopt
     SUBDIR += graphos
@@ -372,7 +374,6 @@
     SUBDIR += intergif
     SUBDIR += inventor
     SUBDIR += ipe
-    SUBDIR += iulib
     SUBDIR += jalbum
     SUBDIR += jasper
     SUBDIR += jave6
@@ -615,7 +616,6 @@
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad
     SUBDIR += ocre
-    SUBDIR += ocropus
     SUBDIR += ogre3d
     SUBDIR += okular
     SUBDIR += opencollada
@@ -627,7 +627,6 @@
     SUBDIR += opencv-java
     SUBDIR += opendx
     SUBDIR += opengl-man
-    SUBDIR += opengtl
     SUBDIR += openimageio
     SUBDIR += openjpeg
     SUBDIR += openjpeg15
@@ -762,6 +761,7 @@
     SUBDIR += pecomato
     SUBDIR += pencil
     SUBDIR += peps
+    SUBDIR += perceptualdiff
     SUBDIR += pfscalibration
     SUBDIR += pfstmo
     SUBDIR += pfstools
@@ -843,7 +843,6 @@
     SUBDIR += py-exifread
     SUBDIR += py-exiv2
     SUBDIR += py-freeimagepy
-    SUBDIR += py-gchartwrapper
     SUBDIR += py-gd
     SUBDIR += py-gdal
     SUBDIR += py-gimp
@@ -879,7 +878,6 @@
     SUBDIR += py-pydot
     SUBDIR += py-pygal
     SUBDIR += py-pyganim
-    SUBDIR += py-pyggel
     SUBDIR += py-pyglet
     SUBDIR += py-pygooglechart
     SUBDIR += py-pygraphviz
@@ -907,7 +905,6 @@
     SUBDIR += qcomicbook
     SUBDIR += qgis
     SUBDIR += qiv
-    SUBDIR += qiviewer
     SUBDIR += qslim
     SUBDIR += qt4-iconengines
     SUBDIR += qt4-imageformats
@@ -921,7 +918,6 @@
     SUBDIR += qt5-pixeltool
     SUBDIR += qt5-svg
     SUBDIR += qtawesome
-    SUBDIR += qtgtl
     SUBDIR += quat
     SUBDIR += quat-gui
     SUBDIR += quesa
@@ -946,6 +942,7 @@
     SUBDIR += rubygem-captcha
     SUBDIR += rubygem-chunky_png
     SUBDIR += rubygem-clutter
+    SUBDIR += rubygem-clutter-gdk
     SUBDIR += rubygem-clutter-gtk
     SUBDIR += rubygem-dragonfly
     SUBDIR += rubygem-emoji
@@ -956,7 +953,6 @@
     SUBDIR += rubygem-gd2
     SUBDIR += rubygem-gdk_pixbuf2
     SUBDIR += rubygem-gemojione
-    SUBDIR += rubygem-gemojione2
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-gitlab_emoji
     SUBDIR += rubygem-goocanvas
@@ -993,7 +989,6 @@
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
     SUBDIR += sdump
-    SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += seexpr
     SUBDIR += sekrit-twc-zimg
@@ -1002,7 +997,6 @@
     SUBDIR += seq2gif
     SUBDIR += shared-color-profiles
     SUBDIR += sharpconstruct
-    SUBDIR += shiva-collections
     SUBDIR += shotwell
     SUBDIR += showimage
     SUBDIR += silgraphite
@@ -1020,7 +1014,6 @@
     SUBDIR += svg2pdf
     SUBDIR += svg2png
     SUBDIR += svgalib
-    SUBDIR += svgfig
     SUBDIR += swfdec
     SUBDIR += swfmill
     SUBDIR += swftools

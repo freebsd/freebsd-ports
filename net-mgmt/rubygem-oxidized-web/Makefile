@@ -3,7 +3,7 @@
 
 PORTNAME=	oxidized-web
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ COMMENT=	Web user interface and RESTful API for rubygems-oxidized
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-emk-sinatra-url-for>=0.2:www/rubygem-emk-sinatra-url-for \
-		rubygem-haml>=4.0:www/rubygem-haml \
+		rubygem-haml4>=4.0:www/rubygem-haml4 \
 		rubygem-oxidized>=0.13:net-mgmt/rubygem-oxidized \
 		rubygem-puma2>=2.8:www/rubygem-puma2 \
 		rubygem-sass>=3.3:textproc/rubygem-sass \

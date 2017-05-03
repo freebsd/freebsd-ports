@@ -1,2 +1,3 @@
-SHA256 (libunwind-1.1.tar.gz) = 9dfe0fcae2a866de9d3942c66995e4b460230446887dbdab302d41a8aee8d09a
-SIZE (libunwind-1.1.tar.gz) = 1098603
+TIMESTAMP = 1490643402
+SHA256 (libunwind-1.2.tar.gz) = 1de38ffbdc88bd694d10081865871cd2bfbb02ad8ef9e1606aee18d65532b992
+SIZE (libunwind-1.2.tar.gz) = 747369

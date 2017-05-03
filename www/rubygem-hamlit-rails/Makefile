@@ -2,6 +2,7 @@
 
 PORTNAME=	hamlit-rails
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +18,9 @@ RUN_DEPENDS=	rubygem-activesupport4>=4.0.1:devel/rubygem-activesupport4 \
 		rubygem-railties4>=4.0.1:www/rubygem-railties4
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+bash_CMD=	${SH}
+SHEBANG_FILES=	bin/setup
 
 .include <bsd.port.mk>

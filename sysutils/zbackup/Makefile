@@ -2,7 +2,7 @@
 
 PORTNAME=	zbackup
 PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/zbackup/zbackup/archive/
 DISTNAME=	${PORTVERSION}

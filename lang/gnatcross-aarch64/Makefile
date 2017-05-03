@@ -5,7 +5,7 @@ PORTNAME=	aarch64
 PORTREVISION=	${ARM64_PR}
 PKGNAMEPREFIX=	gnatcross-
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/Ada cross-compiler, target: ${LABEL_TARGET}
 
 LABEL_TARGET=	FreeBSD/ARM64

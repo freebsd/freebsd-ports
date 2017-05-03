@@ -1996,6 +1996,11 @@ share/icons/oxygen/base/16x16/emblems/emblem-remove.png
 share/icons/oxygen/base/16x16/emblems/emblem-symbolic-link.png
 share/icons/oxygen/base/16x16/emblems/emblem-unlocked.png
 share/icons/oxygen/base/16x16/emblems/emblem-unmounted.png
+share/icons/oxygen/base/16x16/emblems/gpg-key-trust-level-0.png
+share/icons/oxygen/base/16x16/emblems/gpg-key-trust-level-1.png
+share/icons/oxygen/base/16x16/emblems/gpg-key-trust-level-2.png
+share/icons/oxygen/base/16x16/emblems/gpg-key-trust-level-3.png
+share/icons/oxygen/base/16x16/emblems/gpg-key-trust-level-4.png
 share/icons/oxygen/base/16x16/emblems/image-has-versions-open.png
 share/icons/oxygen/base/16x16/emblems/image-has-versions.png
 share/icons/oxygen/base/16x16/emblems/image-stack-open.png

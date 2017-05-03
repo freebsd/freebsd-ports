@@ -19,10 +19,10 @@ BROKEN_aarch64=		Fails to link: missing sbrk
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	211d41a
+GH_TAGNAME=	28718c4
 
 EMACS_VER=	26.0.50
-EMACS_REV=	20170324
+EMACS_REV=	20170415
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
@@ -41,6 +41,8 @@ INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
 	mairix-el message mh-e newsticker nxml-mode octave-mode org pcl-cvs pgg	\
 	rcirc reftex remember sasl sc semantic ses sieve smtpmail speedbar	\
 	srecode todo-mode tramp url vhdl-mode vip viper widget wisent woman
+
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	ACL DBUS GNUTLS LLDB MODULES SOURCES THREADS X11 XML
 

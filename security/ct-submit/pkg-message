@@ -1,0 +1,11 @@
+/**************************************************************************/
+/*                                                                        */
+/* To submit to a transparency log use the following command:             */
+/*                                                                        */
+/* ct-submit some.cert-transparency.log < /path/to/ssl-cert.pem > foo.sct */
+/*                                                                        */
+/* For a list of known logs, see:                                         */
+/*                                                                        */
+/* https://www.certificate-transparency.org/known-logs                    */
+/*                                                                        */
+/**************************************************************************/

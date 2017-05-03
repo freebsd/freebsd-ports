@@ -1,0 +1,34 @@
+--- src/Makefile.orig	2017-01-30 00:30:31 UTC
++++ src/Makefile
+@@ -39,7 +39,7 @@ endif
+ 
+ # Library names.
+ LIBXLSXWRITER_A  = libxlsxwriter.a
+-LIBXLSXWRITER_SO = libxlsxwriter.so
++LIBXLSXWRITER_SO = libxlsxwriter.so.0
+ 
+ # Library with additional non-static functions for testing.
+ LIBXLSXWRITER_TO = libxlsxwriter_test.a
+@@ -49,7 +49,7 @@ ARFLAGS = rc
+ 
+ # Flags passed to dynamic linker.
+ FPIC = -fPIC
+-SOFLAGS = -shared $(FPIC)
++SOFLAGS = -shared $(FPIC) -Wl,-soname=${LIBXLSXWRITER_SO}
+ 
+ # Get Env/OS name.
+ UNAME := $(shell uname)
+@@ -101,11 +101,11 @@ $(LIBXLSXWRITER_A) : $(OBJS)
+ 
+ # The dynamic library.
+ ifeq ($(findstring m32,$(CFLAGS)),m32)
+-ARCH = -m32
++XSLX_ARCH = -m32
+ endif
+ 
+ $(LIBXLSXWRITER_SO) : $(SOBJS)
+-	$(Q)$(CC) $(SOFLAGS) $(ARCH) -o $@ $(MINIZIP_DIR)/ioapi.so $(MINIZIP_DIR)/zip.so $(TMPFILEPLUS_SO) $^ -lz
++	$(Q)$(CC) $(SOFLAGS) $(XLSX_ARCH) -o $@ $(MINIZIP_DIR)/ioapi.so $(MINIZIP_DIR)/zip.so $(TMPFILEPLUS_SO) $^ -lz
+ 
+ # The test library.
+ $(LIBXLSXWRITER_TO) : $(TOBJS)

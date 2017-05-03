@@ -67,7 +67,7 @@ include/libcwd/sys.h
 include/libcwd/type_info.h
 lib/libcwd.so
 lib/libcwd.so.1
-lib/libcwd.so.1.1.1
+lib/libcwd.so.1.3.0
 libdata/pkgconfig/libcwd.pc
 libdata/pkgconfig/libcwd_r.pc
 %%DATADIR%%/libcwdrc

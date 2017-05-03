@@ -3,7 +3,7 @@
 
 PORTNAME=	pidgin-guifications
 PORTVERSION=	2.16
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im
 MASTER_SITES=	https://www.mimar.rs/distfiles/
 

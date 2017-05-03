@@ -3,6 +3,7 @@
 
 PORTNAME=	pbr
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip
 
 NO_ARCH=	yes
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
+SHEBANG_FILES=	pbr/tests/testpackage/setup.py
 
 .include <bsd.port.mk>

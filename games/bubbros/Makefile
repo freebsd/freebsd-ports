@@ -3,7 +3,7 @@
 
 PORTNAME=	bubbros
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/bub-n-bros/bub-n-bros/${PORTVERSION}
 DIST_SUBDIR=	python
@@ -17,7 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYGAME}
 BUILD_DEPENDS=	${PYGAME}
 
-USES=		python
+USES=		python shebangfix
+SHEBANG_FILES=	BubBob.py
+USE_XORG=	x11 xext
 
 PORTDOCS=	*.html
 
@@ -45,8 +47,6 @@ do-build:
 .endfor
 
 do-install:
-	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
-		${WRKDIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 .for d in bubbob common display http2 java metaserver
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})

@@ -1,0 +1,11 @@
+--- gollum.gemspec.orig	2017-04-17 16:38:20 UTC
++++ gollum.gemspec
+@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<gollum-lib>.freeze, [">= 4.0.1", "~> 4.0"])
+-      s.add_runtime_dependency(%q<kramdown>.freeze, ["~> 1.9.0"])
++      s.add_runtime_dependency(%q<kramdown>.freeze, [">= 1.9.0"])
+       s.add_runtime_dependency(%q<sinatra>.freeze, [">= 1.4.4", "~> 1.4"])
+       s.add_runtime_dependency(%q<mustache>.freeze, ["< 1.0.0", ">= 0.99.5"])
+       s.add_runtime_dependency(%q<useragent>.freeze, ["~> 0.16.2"])

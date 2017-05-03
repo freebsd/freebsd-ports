@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--program-suffix=${PKGNAMESUFFIX}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	glib20
-USES=		iconv libtool lua pathfix pkgconfig tar:xz
+USES=		gnome iconv libtool lua pathfix pkgconfig tar:xz
 
 PLIST_SUB=	PKGNAMESUFFIX=${PKGNAMESUFFIX} PORTVERSION=${PORTVERSION} QUVIVERSION=${PORTVERSION:R}
 

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	gnatcross-
 PKGNAMESUFFIX=	-aarch64
 DIST_SUBDIR=	gnatcross/arm64-aarch64/${RELEASE}
 
-MAINTAINER=	freebsd.contact@marino.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD sysroots for C/Ada cross-compiler (${ARCH})
 
 NO_BUILD=	yes

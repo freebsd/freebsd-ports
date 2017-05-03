@@ -3,16 +3,21 @@
 
 PORTNAME=	ljdump
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://hewgill.com/ljdump/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to download LiveJournal entries and comments
 
+LICENSE=	ZLIB
+
 PORTSCOUT=	skipv:1.5.1	# 1.5.1 is identical to 1.5 + our patches
 
+USES=		python:run shebangfix
+SHEBANG_FILES=	ljdump.py
 NO_BUILD=	yes
-USES=		python:run
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/ljdump etc/ljdump.config.sample
 

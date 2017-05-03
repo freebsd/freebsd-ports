@@ -1,4 +1,4 @@
-#!/usr/bin/env perl -w
+#!/usr/bin/env perl
 
 # $FreeBSD$
 
@@ -8,6 +8,7 @@
 
 use Getopt::Std;
 use strict;
+use warnings;
 use Cwd;
 use Data::Dumper;
 use File::Basename;

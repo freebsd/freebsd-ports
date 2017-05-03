@@ -13,6 +13,9 @@ COMMENT=	Library for JPEG XR, a.k.a. Windows MediaTM Photo
 
 LICENSE=	BSD
 
+BROKEN_aarch64=		fails to link: cc: error: linker command failed with exit code 1 (use -v to see invocation)
+BROKEN_mips64=		fails to build
+
 USES=		dos2unix uidfix
 USE_LDCONFIG=	yes
 MAKEFILE=	BSDmakefile	# created by do-configure
