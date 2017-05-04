@@ -85,6 +85,8 @@ post-patch:
 	55readcd 55scgcheck 55scgskeleton 55rscsi 85man
 	@${RM} ${WRKSRC}/scsilib/TARGETS/${i}
 .endfor
+	@${REINPLACE_CMD} -e 's|"$$ac_declaration"|"$$ac_declarationXXX"|g' \
+		${WRKSRC}/configure
 .for i in include/schily.h libscg/scsitransp.c libschily/fexec.c \
 	libschily/stdio/fgetline.c
 	@${REINPLACE_CMD} -E -e 's|fexecve|js_fexecve|g; \
