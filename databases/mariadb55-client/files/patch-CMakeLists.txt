@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2017-04-11 22:03:13.000000000 +0200
-+++ CMakeLists.txt	2017-04-18 10:11:38.582817000 +0200
+--- CMakeLists.txt.orig	2017-04-30 11:09:29 UTC
++++ CMakeLists.txt
 @@ -393,28 +393,8 @@ ADD_SUBDIRECTORY(client)
  ADD_SUBDIRECTORY(extra)
  ADD_SUBDIRECTORY(libservices)

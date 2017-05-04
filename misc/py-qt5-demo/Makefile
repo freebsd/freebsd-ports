@@ -13,6 +13,8 @@ COMMENT=	Python bindings for the Qt5 toolkit, Qt demo and examples
 DISTINFO_FILE=	${PYQT_DISTINFO_FILE}
 NO_BUILD=	yes
 
+PORTSCOUT=	limit:^${PYQT5_VERSION}
+
 USES=		python pyqt:5
 USE_PYQT=	core_run dbus_run designer_run \
 		designerplugin_run doc_run gui_run multimedia_run \
