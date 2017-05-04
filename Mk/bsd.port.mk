@@ -1272,6 +1272,7 @@ WITH_DEBUG=	yes
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+.include "${PORTSDIR}/Mk/bsd.hardening.mk"
 .include "${PORTSDIR}/Mk/bsd.options.mk"
 
 .endif

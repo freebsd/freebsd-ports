@@ -11,9 +11,13 @@
 .if !defined(_INCLUDE_USES_PIE_MK)
 _INCLUDE_USES_PIE_MK=    yes
 
+.if ${PIE_ARGS:Mconfigure}
+CONFIGURE_ARGS+=	--enable-pie
+.else
 CFLAGS+=	-fPIE -fPIC
 CXXFLAGS+=	-fPIE -fPIC
 LDFLAGS+=	-pie
+.endif
 
 .endif
 .endif
