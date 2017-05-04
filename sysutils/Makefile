@@ -1208,6 +1208,7 @@
     SUBDIR += utcount
     SUBDIR += vagrant
     SUBDIR += vbetool
+    SUBDIR += vchanger
     SUBDIR += vcp
     SUBDIR += videogen
     SUBDIR += vii
