@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	50
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rendering framework putting the V in MVC (part of Rails)
 
 LICENSE=	MIT

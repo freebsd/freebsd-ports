@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Performance management system for Rails applications
 
 LICENSE=	MIT NEWRELIC RUBY

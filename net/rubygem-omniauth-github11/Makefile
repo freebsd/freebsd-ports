@@ -6,7 +6,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	11
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official OmniAuth strategy for GitHub
 
 LICENSE=	MIT

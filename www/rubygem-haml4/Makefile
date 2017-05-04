@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Markup language to describe HTML
 
 LICENSE=	MIT
