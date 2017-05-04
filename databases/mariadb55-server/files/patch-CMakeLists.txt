@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-04-11 20:03:13 UTC
+--- CMakeLists.txt.orig	2017-04-30 11:09:29 UTC
 +++ CMakeLists.txt
 @@ -397,22 +397,22 @@ ADD_SUBDIRECTORY(sql/share)
  ADD_SUBDIRECTORY(support-files)

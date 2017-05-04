@@ -1,6 +1,6 @@
---- cmake/jemalloc.cmake.orig	2014-10-08 15:19:51.000000000 +0200
-+++ cmake/jemalloc.cmake	2014-11-16 20:27:50.032638191 +0100
-@@ -22,11 +22,11 @@
+--- cmake/jemalloc.cmake.orig	2017-04-30 11:09:29 UTC
++++ cmake/jemalloc.cmake
+@@ -22,11 +22,11 @@ MACRO (CHECK_JEMALLOC)
        SET(libname jemalloc)
      ENDIF()
  

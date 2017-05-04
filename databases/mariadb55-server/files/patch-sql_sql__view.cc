@@ -1,6 +1,6 @@
---- sql/sql_view.cc.orig	2013-05-21 22:09:51.000000000 +0000
-+++ sql/sql_view.cc	2013-09-26 13:16:16.065195172 +0000
-@@ -742,46 +742,46 @@
+--- sql/sql_view.cc.orig	2017-04-30 11:09:31 UTC
++++ sql/sql_view.cc
+@@ -760,46 +760,46 @@ static const int required_view_parameter
  */
  static File_option view_parameters[]=
  {{{ C_STRING_WITH_LEN("query")},
@@ -59,5 +59,5 @@
 -  my_offsetof(TABLE_LIST, view_body_utf8),
 +  static_cast<int>(my_offsetof(TABLE_LIST, view_body_utf8)),
    FILE_OPTIONS_ESTRING},
-  {{NullS, 0},			0,
-   FILE_OPTIONS_STRING}
+  {{ C_STRING_WITH_LEN("mariadb-version")},
+   my_offsetof(TABLE_LIST, mariadb_version),

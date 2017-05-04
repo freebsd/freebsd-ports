@@ -1,6 +1,6 @@
---- scripts/CMakeLists.txt.orig	2014-04-15 14:02:28.000000000 +0300
-+++ scripts/CMakeLists.txt	2014-05-16 19:02:48.000000000 +0300
-@@ -72,6 +72,7 @@
+--- scripts/CMakeLists.txt.orig	2017-04-30 11:09:31 UTC
++++ scripts/CMakeLists.txt
+@@ -72,6 +72,7 @@ IF(UNIX)
  )
  ENDIF()
  
@@ -8,7 +8,7 @@
  INSTALL(FILES 
    ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables.sql 
    ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables_data.sql
-@@ -81,6 +82,7 @@
+@@ -81,6 +82,7 @@ INSTALL(FILES 
    ${FIX_PRIVILEGES_SQL}
    DESTINATION ${INSTALL_MYSQLSHAREDIR} COMPONENT Server
  )
@@ -16,7 +16,7 @@
  
  # TCMalloc hacks
  IF(MALLOC_LIB)
-@@ -140,6 +142,7 @@
+@@ -133,6 +135,7 @@ ENDIF()
  SET(HOSTNAME "hostname")
  SET(MYSQLD_USER "mysql")
  
@@ -24,7 +24,7 @@
  # Required for mysqlbug until autotools are deprecated, once done remove these
  # and expand default cmake variables
  SET(CC ${CMAKE_C_COMPILER})
-@@ -180,6 +183,7 @@
+@@ -173,6 +176,7 @@ INSTALL_SCRIPT(${CMAKE_CURRENT_BINARY_DI
    DESTINATION ${INSTALL_BINDIR}
    COMPONENT Server
    )
@@ -32,7 +32,7 @@
  
  ENDIF(UNIX)
  
-@@ -204,6 +208,7 @@
+@@ -197,6 +201,7 @@ ELSE()
    SET(localstatedir ${MYSQL_DATADIR})
  ENDIF()
  
@@ -40,7 +40,7 @@
  IF(UNIX)
  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql_install_db.sh
    ${CMAKE_CURRENT_BINARY_DIR}/mysql_install_db ESCAPE_QUOTES @ONLY)
-@@ -219,6 +224,7 @@
+@@ -212,6 +217,7 @@ INSTALL_SCRIPT(
    COMPONENT Server
    )
  ENDIF()
@@ -48,7 +48,7 @@
  
  SET(prefix "${CMAKE_INSTALL_PREFIX}")
  SET(sysconfdir ${prefix})
-@@ -276,6 +282,8 @@
+@@ -270,6 +276,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
              STRING(REGEX REPLACE "^lib" "" lib "${lib}")
              SET(${var} "${${var}}-l${lib} " ) 
            ENDIF()
@@ -57,7 +57,7 @@
          ELSE()
            SET(${var} "${${var}}-l${lib} " ) 
          ENDIF()
-@@ -334,18 +342,8 @@
+@@ -328,18 +336,8 @@ ELSE()
    SET(BIN_SCRIPTS
      msql2mysql
      mysql_config
