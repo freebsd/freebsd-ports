@@ -16,7 +16,10 @@ lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.Table.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Block.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.CLI.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Context.beam
+lib/elixir/lib/earmark/ebin/Elixir.Earmark.Error.beam
+lib/elixir/lib/earmark/ebin/Elixir.Earmark.Global.Messages.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.AttrParser.beam
+lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.HtmlHelpers.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.LeexHelpers.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.LineHelpers.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.LinkParser.beam
@@ -25,7 +28,6 @@ lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.ReparseHelpers.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.StringHelpers.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.YeccHelpers.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Helpers.beam
-lib/elixir/lib/earmark/ebin/Elixir.Earmark.HtmlRenderer.EarmarkError.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.HtmlRenderer.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Inline.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Line.Blank.beam
@@ -50,7 +52,6 @@ lib/elixir/lib/earmark/ebin/Elixir.Earmark.Line.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Message.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Options.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Parser.beam
-lib/elixir/lib/earmark/ebin/Elixir.Earmark.Plugin.Error.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Plugin.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Scanner.Backtix.beam
 lib/elixir/lib/earmark/ebin/Elixir.Earmark.Scanner.Blockquote.beam
@@ -76,8 +77,11 @@ lib/elixir/lib/earmark/lib/earmark.ex
 lib/elixir/lib/earmark/lib/earmark/block.ex
 lib/elixir/lib/earmark/lib/earmark/cli.ex
 lib/elixir/lib/earmark/lib/earmark/context.ex
+lib/elixir/lib/earmark/lib/earmark/error.ex
+lib/elixir/lib/earmark/lib/earmark/global/messages.ex
 lib/elixir/lib/earmark/lib/earmark/helpers.ex
 lib/elixir/lib/earmark/lib/earmark/helpers/attr_parser.ex
+lib/elixir/lib/earmark/lib/earmark/helpers/html_helpers.ex
 lib/elixir/lib/earmark/lib/earmark/helpers/leex_helpers.ex
 lib/elixir/lib/earmark/lib/earmark/helpers/line_helpers.ex
 lib/elixir/lib/earmark/lib/earmark/helpers/link_parser.ex
