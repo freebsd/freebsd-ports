@@ -4,7 +4,7 @@
 PORTNAME=	qtel
 PORTREVISION=	1
 
-MAINTAINER=	hamradio@freebsd.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Qtel Echolink client
 
 LICENSE=	GPLv2
