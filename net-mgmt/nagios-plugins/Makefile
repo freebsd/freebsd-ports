@@ -3,6 +3,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/ \
