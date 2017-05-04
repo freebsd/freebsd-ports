@@ -10,9 +10,10 @@ PLIST_FILES=	%%PYPY_DIR%%/lib_pypy/${CFFI_MODULE}_cffi.%%PYPY_CFFI_VER%%.so
 
 CFFI_MODULE?=	_${PORTNAME}
 
+PYTHON_IMPL=	pypy
 PYTHON_PORTVERSION?=	5.7.1
 PYTHON_PKGNAMEPREFIX=	pypy-
-PYTHON_CMD=	${LOCALBASE}/bin/pypy
+PYTHON_CMD=	${LOCALBASE}/bin/${PYTHON_IMPL}
 
 .include "${.CURDIR}/../../lang/pypy/bsd.pypy.mk"
 
