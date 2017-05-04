@@ -1,6 +1,6 @@
---- Makefile.gtk.orig	2017-03-16 02:47:16.000000000 +0000
-+++ Makefile.gtk	2017-03-16 02:47:16.000000000 +0000
-@@ -111,7 +111,7 @@
+--- Makefile.gtk.orig	2017-04-24 13:52:46 UTC
++++ Makefile.gtk
+@@ -111,7 +111,7 @@ GTK_CONFIG = sh -c 'pkg-config gtk+-3.0 
  
  unexport CFLAGS # work around a weird issue with krb5-config
  
@@ -9,7 +9,7 @@
  		$(shell $(GTK_CONFIG) --cflags) -D _FILE_OFFSET_BITS=64
  XLDFLAGS = $(LDFLAGS) $(shell $(GTK_CONFIG) --libs)
  ULDFLAGS = $(LDFLAGS)
-@@ -138,8 +138,12 @@
+@@ -138,8 +138,12 @@ man1dir=$(mandir)/man1
  .SUFFIXES:
  
  
@@ -22,21 +22,27 @@
  
  cgtest: cgtest.o conf.o import.o misc.o notiming.o sshaes.o sshbcrypt.o \
  		sshblowf.o sshbn.o sshdes.o sshdss.o sshdssg.o sshecc.o \
-@@ -1050,6 +1054,8 @@
+@@ -1047,10 +1051,12 @@ xpmputty.o: ../unix/xpmputty.c
+ 
+ install:
+ 	mkdir -p $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir)
+-	$(INSTALL_PROGRAM) -m 755 pageant $(DESTDIR)$(bindir)/pageant
  	$(INSTALL_PROGRAM) -m 755 plink $(DESTDIR)$(bindir)/plink
  	$(INSTALL_PROGRAM) -m 755 pscp $(DESTDIR)$(bindir)/pscp
  	$(INSTALL_PROGRAM) -m 755 psftp $(DESTDIR)$(bindir)/psftp
 +	$(INSTALL_PROGRAM) -m 755 puttygen $(DESTDIR)$(bindir)/puttygen
 +ifdef PUTTY_WITH_GTK
++	$(INSTALL_PROGRAM) -m 755 pageant $(DESTDIR)$(bindir)/pageant
  	$(INSTALL_PROGRAM) -m 755 pterm $(DESTDIR)$(bindir)/pterm
  	if test -n "$(UTMP_GROUP)"; then \
  	  chgrp $(UTMP_GROUP) $(DESTDIR)$(bindir)/pterm && \
-@@ -1059,15 +1065,17 @@
+@@ -1060,16 +1066,18 @@ install:
  	    chmod 4755 $(DESTDIR)$(bindir)/pterm; \
  	fi
  	$(INSTALL_PROGRAM) -m 755 putty $(DESTDIR)$(bindir)/putty
 -	$(INSTALL_PROGRAM) -m 755 puttygen $(DESTDIR)$(bindir)/puttygen
  	$(INSTALL_PROGRAM) -m 755 puttytel $(DESTDIR)$(bindir)/puttytel
+ 	$(INSTALL_DATA) -m 644 ../doc/pageant.1 $(DESTDIR)$(man1dir)/pageant.1
 +endif
  	$(INSTALL_DATA) -m 644 ../doc/plink.1 $(DESTDIR)$(man1dir)/plink.1
  	$(INSTALL_DATA) -m 644 ../doc/pscp.1 $(DESTDIR)$(man1dir)/pscp.1
