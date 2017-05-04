@@ -6,7 +6,7 @@ PORTVERSION=	1.4.40
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network backup and restore program
 
 LICENSE=	AGPLv3

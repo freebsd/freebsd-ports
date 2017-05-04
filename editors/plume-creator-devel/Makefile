@@ -5,7 +5,7 @@ PORTVERSION=	${DATE}
 CATEGORIES=	editors
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/plume-creator/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source tool for novelists
 
 LICENSE=	GPLv3+
