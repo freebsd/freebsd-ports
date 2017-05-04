@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	font-awesome-rails
-PORTVERSION=	4.7.0.1
+PORTVERSION=	4.7.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
