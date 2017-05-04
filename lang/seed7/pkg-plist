@@ -121,6 +121,7 @@ lib/seed7/lib/hmac.s7i
 lib/seed7/lib/html.s7i
 lib/seed7/lib/html_ent.s7i
 lib/seed7/lib/httpserv.s7i
+lib/seed7/lib/http_response.s7i
 lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
 lib/seed7/lib/inflate.s7i
@@ -200,6 +201,7 @@ lib/seed7/lib/vecfont10.s7i
 lib/seed7/lib/vecfont18.s7i
 lib/seed7/lib/vector3d.s7i
 lib/seed7/lib/vectorfont.s7i
+lib/seed7/lib/wildcard.s7i
 lib/seed7/lib/window.s7i
 lib/seed7/lib/wrinum.s7i
 lib/seed7/lib/x509cert.s7i
