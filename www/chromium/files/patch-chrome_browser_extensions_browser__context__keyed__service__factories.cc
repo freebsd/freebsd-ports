@@ -1,4 +1,4 @@
---- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/extensions/browser_context_keyed_service_factories.cc.orig	2017-05-02 19:02:47 UTC
 +++ chrome/browser/extensions/browser_context_keyed_service_factories.cc
 @@ -63,7 +63,7 @@
  #include "chrome/browser/chromeos/extensions/media_player_api.h"
@@ -14,7 +14,7 @@
    extensions::InputImeAPI::GetFactoryInstance();
    extensions::InputMethodAPI::GetFactoryInstance();
 -#elif defined(OS_LINUX) || defined(OS_WIN)
-+#elif defined(OS_LINUX) || defined(OS_WIN) && !defined(OS_BSD)
++#elif defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
    extensions::InputImeAPI::GetFactoryInstance();
  #endif
    extensions::LanguageSettingsPrivateDelegateFactory::GetInstance();
