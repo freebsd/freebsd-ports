@@ -1,6 +1,6 @@
---- scripts/CMakeLists.txt.orig	2014-04-15 14:02:28.000000000 +0300
-+++ scripts/CMakeLists.txt	2014-05-16 19:36:34.000000000 +0300
-@@ -276,6 +276,8 @@
+--- scripts/CMakeLists.txt.orig	2017-04-30 11:09:31 UTC
++++ scripts/CMakeLists.txt
+@@ -270,6 +270,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
              STRING(REGEX REPLACE "^lib" "" lib "${lib}")
              SET(${var} "${${var}}-l${lib} " ) 
            ENDIF()
@@ -9,7 +9,7 @@
          ELSE()
            SET(${var} "${${var}}-l${lib} " ) 
          ENDIF()
-@@ -332,16 +334,11 @@
+@@ -326,16 +328,11 @@ ELSE()
      ${CMAKE_CURRENT_BINARY_DIR}/mysql_config.pl ESCAPE_QUOTES @ONLY)
    # On Unix, most of the files end up in the bin directory
    SET(BIN_SCRIPTS

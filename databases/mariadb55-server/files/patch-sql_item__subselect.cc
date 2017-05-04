@@ -1,6 +1,6 @@
---- sql/item_subselect.cc.orig	2013-05-21 22:09:51.000000000 +0000
-+++ sql/item_subselect.cc	2013-09-26 13:13:01.105197491 +0000
-@@ -1317,7 +1317,7 @@
+--- sql/item_subselect.cc.orig	2017-04-30 11:09:31 UTC
++++ sql/item_subselect.cc
+@@ -1329,7 +1329,7 @@ Item_exists_subselect::Item_exists_subse
    Item_subselect()
  {
    DBUG_ENTER("Item_exists_subselect::Item_exists_subselect");

@@ -1,6 +1,6 @@
---- scripts/mysql_config.sh.orig	2014-10-17 21:44:16.000000000 +0200
-+++ scripts/mysql_config.sh	2014-10-17 21:54:16.000000000 +0200
-@@ -109,8 +109,11 @@
+--- scripts/mysql_config.sh.orig	2017-04-30 11:09:31 UTC
++++ scripts/mysql_config.sh
+@@ -109,8 +109,11 @@ fi
  # We intentionally add a space to the beginning and end of lib strings, simplifies replace later
  libs=" $ldflags -L$pkglibdir @RPATH_OPTION@ -lmysqlclient @ZLIB_DEPS@ @NON_THREADED_LIBS@"
  libs="$libs @openssl_libs@ @STATIC_NSS_FLAGS@ "
