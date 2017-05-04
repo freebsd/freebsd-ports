@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.1.20
+PORTVERSION=	5.1.22
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -93,13 +93,8 @@ VPX_CONFIGURE_OFF=	--disable-libvpx
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 X11_CONFIGURE_OFF=	--build-headless
 
-# bmake doesn't know about unsetenv=true
-.if defined(.PARSEDIR)
 ENV=
 .export ENV
-.else
-.SHELL:		path="/bin/sh" unsetenv=true
-.endif
 
 PLIST_SUB=	GUEST_VER=${PORTVERSION} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \

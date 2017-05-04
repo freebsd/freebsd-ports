@@ -3,7 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	2_18_4
+DISTVERSION=	2_18_7
 PORTREVISION=	1
 CATEGORIES=	graphics geography
 
@@ -28,8 +28,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
 
-USES=		bison cmake cpe desktop-file-utils execinfo fortran \
-		gmake pyqt:4 python:2.7 sqlite
+USES=		bison cmake compiler:features cpe desktop-file-utils \
+		execinfo fortran gmake pyqt:4 python:2.7 sqlite
 USE_PYQT=	core gui network qscintilla2 sip sql svg xml webkit_run
 
 USE_QT4=	corelib designer doc gui linguist_build moc_build \
@@ -60,13 +60,8 @@ CMAKE_ARGS+=	-Wno-dev
 CMAKE_ARGS+=	-DSUPPRESS_SIP_WARNINGS=OFF -DSUPPRESS_QT_WARNINGS=OFF
 CMAKE_ARGS+=	-DWITH_INTERNAL_DATEUTIL=FALSE
 CMAKE_ARGS+=	-DWITH_INTERNAL_FUTURE=FALSE
-CMAKE_ARGS+=	-DWITH_INTERNAL_HTTPLIB2=FALSE
-CMAKE_ARGS+=	-DWITH_INTERNAL_JINJA2=FALSE
-CMAKE_ARGS+=	-DWITH_INTERNAL_MARKUPSAFE=FALSE
 CMAKE_ARGS+=	-DWITH_INTERNAL_NOSE2=FALSE
-CMAKE_ARGS+=	-DWITH_INTERNAL_PYGMENTS=FALSE
 CMAKE_ARGS+=	-DWITH_INTERNAL_PYTZ=FALSE
-CMAKE_ARGS+=	-DWITH_INTERNAL_REQUESTS=FALSE
 CMAKE_ARGS+=	-DWITH_INTERNAL_SIX=FALSE
 CMAKE_ARGS+=	-DWITH_INTERNAL_YAML=FALSE
 .endif
@@ -92,7 +87,10 @@ POSTGIS_LIB_DEPENDS=	liblwgeom.so:databases/postgis22
 POSTGIS_CMAKE_ON=	-DWITH_POSTGRESQL:BOOL=TRUE
 POSTGIS_CMAKE_OFF=	-DWITH_POSTGRESQL:BOOL=FALSE
 
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future \
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler \
+			${PYTHON_PKGNAMEPREFIX}dateutil>=2.6.0:devel/py-dateutil \
+			${PYTHON_PKGNAMEPREFIX}functools32>=3.2.3:devel/py-functools32 \
+			${PYTHON_PKGNAMEPREFIX}future>=0.16.0:devel/py-future \
 			${PYTHON_PKGNAMEPREFIX}httplib2>=2-0.9.2:www/py-httplib2 \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=2.8:devel/py-Jinja2 \
 			${PYTHON_PKGNAMEPREFIX}MarkupSafe>=1.0:textproc/py-MarkupSafe \
@@ -108,7 +106,10 @@ PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future \
 			${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.13:databases/py-sqlite3 \
 			${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future \
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler \
+			${PYTHON_PKGNAMEPREFIX}dateutil>=2.6.0:devel/py-dateutil \
+			${PYTHON_PKGNAMEPREFIX}functools32>=3.2.3:devel/py-functools32 \
+			${PYTHON_PKGNAMEPREFIX}future>=0.16.0:devel/py-future \
 			${PYTHON_PKGNAMEPREFIX}gdal>=2.0.1:graphics/py-gdal \
 			${PYTHON_PKGNAMEPREFIX}httplib2>=2-0.9.2:www/py-httplib2 \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=2.8:devel/py-Jinja2 \
@@ -140,27 +141,14 @@ TESTS_CMAKE_OFF=	-DENABLE_TESTS=FALSE
 
 INSTALLS_ICONS=		yes
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000033
-USES+=		compiler:features
-.else
-USES+=		compiler:gcc-c++11-lib
-BUILD_DEPENDS+=	flex>=2.6.1:textproc/flex
-CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING=${LOCALBASE}/bin/flex
-CXXFLAGS+=	-I${LOCALBASE}/include/flex
-.endif
-
 pre-patch:
 	@${REINPLACE_CMD} -e 's|tr( "QGIS code revision" ) + QString( "</td><td><a href=\\"https://github.com/qgis/QGIS/commit/%1\\">%1</a></td>" ).arg( QGis::QGIS_DEV_VERSION )|tr( "QGIS code revision" ) + "</td><td>" + tr( "${GH_TAGNAME}" ) + "</td>"|g' \
 		${WRKSRC}/src/app/qgisapp.cpp
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000033
 # [Ugly workaround!] Because of GitHub #76aa035 from 2015-05-23
 # 'Hide shared library symbols by default on GCC and Clang',
 # some layer properties are not visible on FreeBSD > 9.x
 	@${REINPLACE_CMD} -e 's|SET(CMAKE_CXX_VISIBILITY_PRESET hidden)|#SET(CMAKE_CXX_VISIBILITY_PRESET hidden)|' \
 		${WRKSRC}/CMakeLists.txt
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/qgis|${LOCALBASE}/bin/qgis|g' \
@@ -168,7 +156,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|Icon=qgis|Icon=qgis-icon|' \
 		${WRKSRC}/debian/${PORTNAME}.desktop
 	@${REINPLACE_CMD} -e 's|env python|env ${PYTHON_VERSION}|g' \
-		${WRKSRC}/python/ext-libs/pygments/util.py \
 		${WRKSRC}/python/ext-libs/pytz/tzfile.py \
 		${WRKSRC}/scripts/generate_test_mask_image.py \
 		${WRKSRC}/scripts/random_vector.py \
@@ -183,7 +170,6 @@ post-patch:
 		${WRKSRC}/python/ext-libs/CMakeLists.txt
 
 post-install:
-	${RM} ${STAGEDIR}${DATADIR}/python/pygments/util.py.bak
 	${RM} ${STAGEDIR}${DATADIR}/python/pytz/tzfile.py.bak
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/debian/${PORTNAME}.desktop \

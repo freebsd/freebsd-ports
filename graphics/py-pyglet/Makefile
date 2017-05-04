@@ -2,40 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	pyglet
-PORTVERSION=	1.1.4
-PORTREVISION=	5
+PORTVERSION=	1.2.4
 CATEGORIES=	graphics multimedia x11-toolkits python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Cross-platform windowing and multimedia library for Python
+COMMENT=	Cross-platform windowing and multimedia library
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
-
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libfontconfig.so:x11-fonts/fontconfig
-RUN_DEPENDS=	${LOCALBASE}/lib/libavbin.so:multimedia/avbin
-
-ONLY_FOR_ARCHS=	i386
-
-USES=		openal:al python
-USE_PYTHON=	distutils
-USE_GL=		gl glu
-
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG NOTICE README ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
+USES=		python
+USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

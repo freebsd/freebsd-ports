@@ -13,7 +13,8 @@ EXTRACT_SUFX=	.shar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for "homebrew" serial LIRC receivers
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: uart.h: No such file or directory
+BROKEN_sparc64=		Does not build
 
 USES=		kmod
 
@@ -28,12 +29,6 @@ CFLAGS+=	${DEBUG_FLAGS}
 
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on powerpc or sparc64
-.endif
 
 do-install:
 	${INSTALL} ${WRKSRC}/${PORTNAME}.ko ${STAGEDIR}${KMODDIR}

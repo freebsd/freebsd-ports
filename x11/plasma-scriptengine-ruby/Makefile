@@ -2,6 +2,7 @@
 
 PORTNAME=	plasma-scriptengine-ruby
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-applications
 DISTNAME=	kde-workspace-${PORTVERSION}
 

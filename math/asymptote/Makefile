@@ -3,6 +3,7 @@
 
 PORTNAME=	asymptote
 PORTVERSION=	2.37
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -34,10 +35,13 @@ MAKE_JOBS_UNSAFE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gettext-runtime ghostscript gmake ncurses perl5 python tar:tgz
+USES=		gettext-runtime ghostscript gmake ncurses perl5 python \
+		shebangfix tar:tgz
 USE_GL=	glut
 USE_PERL5=	build
 USE_TEX=	dvipsk formats
+
+SHEBANG_FILES=	GUI/*.py
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -83,6 +87,8 @@ post-patch:
 	@${REINPLACE_CMD} 's/-lgc/-lgc-threaded/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} 's,/usr/lib/libgs.so,${LOCALBASE}/lib/libgs.so,' \
 		${WRKSRC}/settings.cc
+# Fix the python interpreter in the generated file share/asymptote/GUI/xasyVersion.py:
+	@${REINPLACE_CMD} 's,/usr/bin/env python,${PYTHON_CMD},' ${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/asy

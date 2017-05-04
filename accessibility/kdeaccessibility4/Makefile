@@ -3,6 +3,7 @@
 
 PORTNAME=	kdeaccessibility
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	accessibility kde
 
 MAINTAINER=	kde@FreeBSD.org

@@ -1,2 +1,3 @@
-SHA256 (puppetdb-4.0.0.tar.gz) = e28d898e1912a43cb3f2555c5bacf4cb03d819579ad5c018b70b5f73af52fc33
-SIZE (puppetdb-4.0.0.tar.gz) = 22121324
+TIMESTAMP = 1493775596
+SHA256 (puppetdb-4.4.0.tar.gz) = b9e656846981397a3eed64dff44a7171e6a01b7e8c76c877bd93267d96f50414
+SIZE (puppetdb-4.4.0.tar.gz) = 23629723

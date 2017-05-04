@@ -3,6 +3,7 @@
 
 PORTNAME=	mDNSResponder
 PORTVERSION=	765.50.9
+PORTREVISION=	2
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/${PORTNAME}/
 
@@ -35,6 +36,7 @@ EXTRA_MAN8=	dnsextd.8 mDNSResponderPosix.8
 EXTRA_SBIN=	dnsextd
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^CFLAGS_DEBUG/ s|-Os|${CFLAGS}|' ${WRKSRC}/mDNSPosix/Makefile
 	@${REINPLACE_CMD} -e 's|\(#define IPV6_2292_PKTINFO \).*|\1IPV6_PKTINFO|; s|\(#define IPV6_2292_HOPLIMIT \).*|\1IPV6_HOPLIMIT|' ${WRKSRC}/mDNSPosix/mDNSUNP.h
 	@${MV} ${WRKSRC}/mDNSShared/mDNSResponder.8 ${WRKSRC}/mDNSShared/mDNSResponderPosix.8
 

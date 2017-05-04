@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	selenium
-PORTVERSION=	3.3.3
+PORTVERSION=	3.4.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Python bindings for Selenium
 LICENSE=	APACHE20
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	FIREFOX
 FIREFOX_DESC=	Install Firefox

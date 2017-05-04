@@ -1,0 +1,7 @@
+To be able to use prosody-modules add this line to your
+%%PREFIX%%/etc/prosody/prosody.cfg.lua configuration:
+
+plugin_paths = { "%%INSTALLPATH%%" }
+
+and add the modules you want to load in the section
+"modules_enabled".

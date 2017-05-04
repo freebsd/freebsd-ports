@@ -35,7 +35,7 @@ CONFLICTS=	ace+tao-5*
 
 BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_powerpc=		Does not compile on ${ARCH}
-BROKEN_powerpc64=	Does not build on ${ARCH}
+BROKEN_powerpc64=	Does not build on ${ARCH}: undefined reference to fmodl
 BROKEN_sparc64=		Does not compile on ${ARCH}
 
 OPTIONS_DEFINE=		FLTK QT4 SSL TK TRIO X11

@@ -1,3 +1,3 @@
-TIMESTAMP = 1485330628
-SHA256 (racket/6.8/racket-6.8-src-builtpkgs.tgz) = 76b19b0b76c953ebd3314092b107b4b15d1fe8052c6d1f8e5098c163acbde3e6
-SIZE (racket/6.8/racket-6.8-src-builtpkgs.tgz) = 117314628
+TIMESTAMP = 1493380431
+SHA256 (racket/6.9/racket-6.9-src-builtpkgs.tgz) = 2b87f1abbeb3bf9fa981fcfb9d7b53886d8bb3591a35b7f730cbd429fe238c60
+SIZE (racket/6.9/racket-6.9-src-builtpkgs.tgz) = 118620147

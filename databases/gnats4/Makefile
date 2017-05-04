@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	4
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	GNATS, the GNU Problem Report Management System
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: conflicting types for yy_scan_string
 
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo

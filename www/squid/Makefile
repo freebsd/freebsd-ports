@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.5.24
-PORTREVISION=	2
+PORTVERSION=	3.5.25
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -28,7 +27,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	squid*-4.*
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: unrecognizable insn
 
 USES=		compiler cpe perl5 shebangfix tar:xz
 CPE_VENDOR=	squid-cache

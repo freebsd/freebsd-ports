@@ -2,6 +2,7 @@
 
 PORTNAME=	kbruch
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

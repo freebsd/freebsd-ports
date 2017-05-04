@@ -3,7 +3,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	3.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/

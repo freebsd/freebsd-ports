@@ -2,6 +2,7 @@
 
 PORTNAME=	ktux
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-clocks kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

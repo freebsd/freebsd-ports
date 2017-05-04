@@ -3,7 +3,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	2.8.5
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -22,6 +22,7 @@ LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libsecret-1.so:security/libsecret \
 		libicutu.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz \
+		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	geoclue>=0:net/geoclue
 

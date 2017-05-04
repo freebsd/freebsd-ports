@@ -33,10 +33,10 @@ CONFLICTS_INSTALL=	xrdp-devel-[0-9]* x11rdp-devel-[0-9]*
 
 PLIST_FILES=	bin/X11rdp
 
-BROKEN_aarch64=		Fails to compile: error: GLYPHPADBYTES must be 4
-BROKEN_armv6=		Fails to compile: error: GLYPHPADBYTES must be 4
-BROKEN_mips64=		Fails to compile: No PCI support available for this architecture/OS combination
-BROKEN_powerpc64=	Does not build
+BROKEN_aarch64=		fails to compile: error: GLYPHPADBYTES must be 4
+BROKEN_armv6=		fails to compile: error: GLYPHPADBYTES must be 4
+BROKEN_mips64=		fails to compile: No PCI support available for this architecture/OS combination
+BROKEN_powerpc64=	fails to compile: error: xf86.h: No such file or directory
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/build_dir

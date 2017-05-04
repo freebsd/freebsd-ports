@@ -3,7 +3,7 @@
 
 PORTNAME=	miredo
 PORTVERSION=	1.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/miredo/archive/
 

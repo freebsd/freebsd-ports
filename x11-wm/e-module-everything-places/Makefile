@@ -3,6 +3,7 @@
 
 PORTNAME=	e-module-everything-places
 PORTVERSION=	20140606
+PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/enlightenment/
 

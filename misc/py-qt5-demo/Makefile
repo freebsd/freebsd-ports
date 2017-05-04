@@ -11,19 +11,17 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, Qt demo and examples
 
 DISTINFO_FILE=	${PYQT_DISTINFO_FILE}
-
 NO_BUILD=	yes
+
 USES=		python pyqt:5
-USE_PYQT=	#
-
-EXAMPLESDIR=	${PREFIX}/share/examples/py-qt5
-
 USE_PYQT=	core_run dbus_run designer_run \
 		designerplugin_run doc_run gui_run multimedia_run \
 		multimediawidgets_run network_run opengl_run qscintilla2_run \
 		sql_run svg_run test_run webkit_run xml_run \
 		xmlpatterns_run sip_run qscintilla2_run \
 		printsupport_run serialport_run webkitwidgets_run widgets_run
+
+EXAMPLESDIR=	${PREFIX}/share/examples/py-qt5
 
 do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

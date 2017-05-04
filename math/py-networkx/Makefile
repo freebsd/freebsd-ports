@@ -3,7 +3,7 @@
 
 PORTNAME=	networkx
 PORTVERSION=	1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math python
 MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 		CHEESESHOP
@@ -22,6 +22,9 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=3.4.0:devel/py-decorator
 NO_ARCH=	yes
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
+SHEBANG_FILES=	examples/graph/atlas.py \
+		examples/multigraph/chess_masters.py \
+		networkx/generators/tests/test_random_graphs.py
 
 PLIST_SUB+=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER}
 

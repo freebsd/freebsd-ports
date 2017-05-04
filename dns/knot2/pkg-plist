@@ -14,8 +14,10 @@ include/dnssec/event.h
 include/dnssec/kasp.h
 include/dnssec/key.h
 include/dnssec/keyid.h
+include/dnssec/keystate.h
 include/dnssec/keystore.h
 include/dnssec/keytag.h
+include/dnssec/keyusage.h
 include/dnssec/list.h
 include/dnssec/nsec.h
 include/dnssec/random.h
@@ -71,11 +73,11 @@ include/zscanner/version.h
 lib/libdnssec.a
 lib/libdnssec.so
 lib/libdnssec.so.2
-lib/libdnssec.so.2.0.0
+lib/libdnssec.so.2.1.0
 lib/libknot.a
 lib/libknot.so
-lib/libknot.so.4
-lib/libknot.so.4.0.0
+lib/libknot.so.5
+lib/libknot.so.5.0.0
 lib/libzscanner.a
 lib/libzscanner.so
 lib/libzscanner.so.1

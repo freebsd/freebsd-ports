@@ -17,6 +17,8 @@ LICENSE_NAME=	Alliance VLSI Cad System License
 LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_aarch64=		fails to link: collect2: error: ld returned 1 exit status
+
 WRKSRC=		${WRKDIR}/alliance-5.0
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

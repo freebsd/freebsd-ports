@@ -11,9 +11,9 @@ COMMENT=	C++ web development framework
 
 LICENSE=	LGPL3
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libpcre.so:devel/pcre
+
+BROKEN_powerpc64=	Does not build: error: 'localeconv_l' was not declared in this scope
 
 USES=		cmake python:2 shebangfix tar:bzip2 ssl
 USE_LDCONFIG=	yes

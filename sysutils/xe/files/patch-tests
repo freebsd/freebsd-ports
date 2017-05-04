@@ -1,0 +1,49 @@
+Fix tests
+
+- -A% with no arguments fails now with the additional checks in 0.7.0
+- Trying to exec /dev/null/calc.exe on FreeBSD will fail with ENOENT
+  (xe exit 127) but on Linux fails with ENODIR (xe exit 126)
+- The argscap check returns 8186 + 8186 + 1339 = 17711 on FreeBSD,
+  which should be fine.
+
+--- tests.orig	2017-04-13 15:28:38 UTC
++++ tests
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+-printf '1..42\n'
++printf '1..41\n'
+ 
+ set -e
+ 
+@@ -127,9 +127,6 @@ check_output 'using -A%' '$XE -A% echo -
+ -- 3
+ EOF
+ 
+-check_output 'using -A% with no arguments' '$XE -A% echo' <<EOF
+-EOF
+-
+ check_output 'using -A% with no command' '$XE -N2 -A% % 1 2 3' <<EOF
+ 1
+ 2
+@@ -196,7 +193,7 @@ check_output 'exit code when process was
+ 125
+ EOF
+ 
+-check_output 'exit code when command cannot be run' 'necho a | $XE /dev/null/calc.exe 2>/dev/null || echo $?' <<EOF
++check_output 'exit code when command cannot be run' 'necho a | $XE /dev/null 2>/dev/null || echo $?' <<EOF
+ 126
+ EOF
+ 
+@@ -236,10 +233,8 @@ EOF
+ 
+ printf '# limit checks, expecting maximal POSIX limits available\n'
+ 
+-check_output 'argscap check' 'head -c 17711 /dev/zero | tr "\0" "\012" | $XE -N0 -s "echo \$#"' <<EOF
+-8187
+-8187
+-1337
++check_output 'argscap check' 'head -c 17711 /dev/zero | tr "\0" "\012" | $XE -N0 -s "echo \$#" | awk "{sum+=\$0}END{print sum}"' <<EOF
++17711
+ EOF
+ 
+ bloat() { perl -e 'print "x"x8000, "\n" for 1..42'; }

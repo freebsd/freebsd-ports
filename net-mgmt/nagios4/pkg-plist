@@ -376,6 +376,7 @@
 %%WWWDIR%%/js/map-directive.js
 %%WWWDIR%%/js/map-form.js
 %%WWWDIR%%/js/map.js
+%%WWWDIR%%/js/nag_funcs.js
 %%WWWDIR%%/js/nagios-decorations.js
 %%WWWDIR%%/js/nagios-time.js
 %%WWWDIR%%/js/trends-form.js
@@ -404,6 +405,7 @@
 %%WWWDIR%%/stylesheets/map-directive.css
 %%WWWDIR%%/stylesheets/map.css
 %%WWWDIR%%/stylesheets/ministatus.css
+%%WWWDIR%%/stylesheets/nag_funcs.css
 %%WWWDIR%%/stylesheets/notifications.css
 %%WWWDIR%%/stylesheets/outages.css
 %%WWWDIR%%/stylesheets/showlog.css

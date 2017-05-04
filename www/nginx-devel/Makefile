@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -26,6 +27,7 @@ OPTIONS_DEFINE=	\
 	DEBUG \
 	DEBUGLOG \
 	FILE_AIO \
+	IPV6 \
 	GOOGLE_PERFTOOLS \
 	HTTP \
 	HTTP_ADDITION \
@@ -69,7 +71,6 @@ OPTIONS_DEFINE=	\
 	FASTDFS \
 	HEADERS_MORE \
 	HTTP_ACCEPT_LANGUAGE \
-	HTTP_ACCESSKEY \
 	HTTP_AUTH_DIGEST \
 	HTTP_AUTH_KRB5 \
 	HTTP_AUTH_LDAP \
@@ -122,7 +123,6 @@ OPTIONS_DEFINE=	\
 	SMALL_LIGHT \
 	SRCACHE \
 	X11 \
-	XRID_HEADER \
 	XSS
 
 OPTIONS_DEFAULT?=DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
@@ -136,6 +136,7 @@ DSO_DESC=			Enable dynamic modules support
 DEBUG_DESC=			Build with debugging support
 DEBUGLOG_DESC=			Enable debug log (--with-debug)
 FILE_AIO_DESC=			Enable file aio
+IPV6_DESC=			Enable IPv6 support
 GOOGLE_PERFTOOLS_DESC=		Enable google perftools module
 HTTP_DESC=			Enable HTTP module
 HTTP_ADDITION_DESC=		Enable http_addition module
@@ -179,7 +180,6 @@ ECHO_DESC=			3rd party echo module
 FASTDFS_DESC=			3rd party fastdfs module
 HEADERS_MORE_DESC=		3rd party headers_more module
 HTTP_ACCEPT_LANGUAGE_DESC=	3rd party accept_language module
-HTTP_ACCESSKEY_DESC=		3rd party http_accesskey module
 HTTP_AUTH_DIGEST_DESC=		3rd party http_authdigest module
 HTTP_AUTH_KRB5_DESC=		3rd party http_auth_gss module
 HTTP_AUTH_LDAP_DESC=		3rd party http_auth_ldap module
@@ -232,7 +232,6 @@ SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
 X11_DESC=			graphics/ImageMagick[-nox11] dependency
-XRID_HEADER_DESC=		3rd party x-rid header module
 XSS_DESC=			3rd party xss module
 VIDEO_DESC=			Video module support
 
@@ -307,6 +306,12 @@ CONFIGURE_ARGS+=--with-debug
 CONFIGURE_ARGS+=--with-file-aio
 .endif
 
+.if empty(PORT_OPTIONS:MIPV6)
+CONFIGURE_ARGS+=--with-cc-opt="-DNGX_HAVE_INET6=0"
+.else
+CATEGORIES+=	ipv6
+.endif
+
 .if ${PORT_OPTIONS:MGOOGLE_PERFTOOLS}
 LIB_DEPENDS+=	libprofiler.so:devel/google-perftools
 CONFIGURE_ARGS+=--with-google_perftools_module
@@ -328,24 +333,20 @@ GH_TAGNAME+=	${GIT_ACCEPT_LANGUAGE_VERSION}:accept_language
 CONFIGURE_ARGS+=--add-module=${WRKSRC_accept_language}
 .endif
 
-.if ${PORT_OPTIONS:MHTTP_ACCESSKEY}
-NGINX_ACCESSKEY_VERSION=	2.0.3
-MASTER_SITES+=	LOCAL/osa:accesskey
-DISTFILES+=	nginx-accesskey-${NGINX_ACCESSKEY_VERSION}.tar.gz:accesskey
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_VERSION}
-IGNORE=	ACCESSKEY: a patch requires
-.endif
-
 .if ${PORT_OPTIONS:MHTTP_ADDITION}
 CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_DIGEST}
-GIT_AUTH_DIGEST_VERSION=	cc61b4a
+GIT_AUTH_DIGEST_VERSION=	519dc2a
 GH_ACCOUNT+=	atomx:auth_digest
 GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_auth_digest}
+.else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
@@ -376,10 +377,15 @@ USE_OPENLDAP=	yes
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_PAM}
-NGINX_AUTH_PAM_VERSION=	1.2
-MASTER_SITES+=	http://web.iti.upv.es/~sto/nginx/:auth_pam
-DISTFILES+=	ngx_http_auth_pam_module-${NGINX_AUTH_PAM_VERSION}.tar.gz:auth_pam
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM_VERSION}
+GIT_HTTP_AUTH_PAM_VERSION=	1.5.1
+GH_ACCOUNT+=	sto:auth_pam
+GH_PROJECT+=	ngx_http_auth_pam_module:auth_pam
+GH_TAGNAME+=	v${GIT_HTTP_AUTH_PAM_VERSION}:auth_pam
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_auth_pam}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_pam}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_REQ}
@@ -860,16 +866,20 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_lua}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_lua_common.h  \
 		${PATCHDIR}/extra-patch-ngx_http_lua_headers.c \
 		${PATCHDIR}/extra-patch-ngx_http_lua_headers.h \
-		${PATCHDIR}/extra-patch-ngx_http_lua_module.c
+		${PATCHDIR}/extra-patch-ngx_http_lua_module.c \
+		${PATCHDIR}/extra-patch-ngx_http_lua_ssl_ocsp.c
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
-NGINX_MEMC_VERSION=	0.17
+NGINX_MEMC_VERSION=	0.18
 GH_ACCOUNT+=	openresty:memc
 GH_PROJECT+=	memc-nginx-module:memc
 GH_TAGNAME+=	v${NGINX_MEMC_VERSION}:memc
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_memc}
+.else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_memc_util.c
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
@@ -907,7 +917,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.1.2
+PASSENGER_VERSION=	5.1.3
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 .if !empty(PORT_OPTIONS:MDSO)
@@ -1023,14 +1033,6 @@ GH_ACCOUNT+=	openresty:srcache
 GH_PROJECT+=	srcache-nginx-module:srcache
 GH_TAGNAME+=	v${NGINX_SRCACHE_VERSION}:srcache
 CONFIGURE_ARGS+=--add-module=${WRKSRC_srcache}
-.endif
-
-.if ${PORT_OPTIONS:MXRID_HEADER}
-GIT_XRID_VERSION=	0daa3cc
-GH_ACCOUNT+=	gabor:xrid
-GH_PROJECT+=	nginx-x-rid-header:xrid
-GH_TAGNAME+=	${GIT_XRID_VERSION}:xrid
-CONFIGURE_ARGS+=--add-module=${WRKSRC_xrid}
 .endif
 
 .if ${PORT_OPTIONS:MXSS}

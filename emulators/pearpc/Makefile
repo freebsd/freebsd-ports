@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
 
-BROKEN_ia64=	internal compiler error on ia64
-
 PORTEXAMPLES=	ppccfg.example
 PLIST_FILES=	bin/ppc man/man1/ppc.1.gz %%DATADIR%%/video.x
 

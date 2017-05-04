@@ -3,7 +3,7 @@
 
 PORTNAME=	percona-monitoring-plugins
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.percona.com/downloads/percona-monitoring-plugins/${PORTVERSION}/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
@@ -20,7 +20,8 @@ RUN_DEPENDS=	cacti>=0:net-mgmt/cacti \
 		p5-Digest-MD5>=0:security/p5-Digest-MD5 \
 		p5-Getopt-Long>=0:devel/p5-Getopt-Long \
 		p5-Time-HiRes>=0:devel/p5-Time-HiRes \
-		bash:shells/bash
+		bash:shells/bash \
+		wget:ftp/wget
 
 USES=		shebangfix perl5 php:cli
 USE_PERL5=	run
@@ -35,6 +36,12 @@ PORTDOCS=	Changelog
 CACTIDIR?=	share/cacti
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} 's|/etc/cacti/|${LOCALBASE}/etc/cacti/|g' ${WRKSRC}/cacti/scripts/ss_get_mysql_stats.php ${WRKSRC}/cacti/scripts/ss_get_by_ssh.php
+	@${REINPLACE_CMD} 's|/etc/nagios/mysql.cnf|${LOCALBASE}/etc/nagios/mysql.cnf|g' ${WRKSRC}/nagios/bin/pmp-check-mysql-*
+	@${REINPLACE_CMD} 's|/etc/cacti/|${LOCALBASE}/etc/cacti/|g' ${WRKSRC}/zabbix/scripts/ss_get_mysql_stats.php
+	@${REINPLACE_CMD} 's|wget|${LOCALBASE}/bin/wget|g' ${WRKSRC}/cacti/scripts/ss_get_by_ssh.php
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/cacti/scripts

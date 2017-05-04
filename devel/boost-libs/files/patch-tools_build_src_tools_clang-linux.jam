@@ -1,6 +1,6 @@
---- tools/build/src/tools/clang-linux.jam.orig	2016-09-21 14:33:28 UTC
+--- tools/build/src/tools/clang-linux.jam.orig	2017-04-17 02:22:26 UTC
 +++ tools/build/src/tools/clang-linux.jam
-@@ -31,7 +31,7 @@ generators.override clang-linux.compile.
+@@ -31,7 +31,7 @@ generators.override clang-linux.compile.c.pch   : pch.
  generators.override clang-linux.compile.c++.pch : pch.default-cpp-pch-generator ;
   
  type.set-generated-target-suffix PCH
@@ -9,7 +9,7 @@
  
  toolset.inherit-rules clang-linux : gcc ;
  toolset.inherit-flags clang-linux : gcc 
-@@ -96,24 +96,24 @@ rule compile.c++ ( targets * : sources *
+@@ -96,24 +96,24 @@ rule compile.c++ ( targets * : sources * : properties 
    gcc.setup-fpic $(targets) : $(sources) : $(properties) ;
    gcc.setup-address-model $(targets) : $(sources) : $(properties) ;
  
@@ -40,7 +40,7 @@
  }
  
  rule compile.c ( targets * : sources * : properties * )
-@@ -122,25 +122,25 @@ rule compile.c ( targets * : sources * :
+@@ -122,25 +122,25 @@ rule compile.c ( targets * : sources * : properties * 
    gcc.setup-fpic $(targets) : $(sources) : $(properties) ;
    gcc.setup-address-model $(targets) : $(sources) : $(properties) ;    
  
@@ -72,21 +72,21 @@
  }
  
  ###############################################################################
-@@ -153,7 +153,7 @@ rule compile.c++.pch ( targets * : sourc
+@@ -153,7 +153,7 @@ rule compile.c++.pch ( targets * : sources * : propert
  }
  
  actions compile.c++.pch {
--  rm -f "$(<)" && "$(CONFIG_COMMAND)" -x c++-header $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -Xclang -emit-pth -o "$(<)" "$(>)"
-+  rm -f "$(<)" && "$(CONFIG_COMMAND)" -x c++-header $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -Xclang -emit-pch -o "$(<)" "$(>)"
+-  rm -f "$(<)" && "$(CONFIG_COMMAND)" -c -x c++-header $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -Xclang -emit-pth -o "$(<)" "$(>)"
++  rm -f "$(<)" && "$(CONFIG_COMMAND)" -c -x c++-header $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -Xclang -emit-pch -o "$(<)" "$(>)"
  }
  
  rule compile.c.pch ( targets * : sources * : properties * ) {
-@@ -164,7 +164,7 @@ rule compile.c.pch ( targets * : sources
+@@ -164,7 +164,7 @@ rule compile.c.pch ( targets * : sources * : propertie
  
  actions compile.c.pch
  {
--  rm -f "$(<)" && "$(CONFIG_COMMAND)" -x c-header $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -Xclang -emit-pth -o "$(<)" "$(>)"
-+  rm -f "$(<)" && "$(CONFIG_COMMAND)" -x c-header $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -Xclang -emit-pch -o "$(<)" "$(>)"
+-  rm -f "$(<)" && "$(CONFIG_COMMAND)" -c -x c-header $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -Xclang -emit-pth -o "$(<)" "$(>)"
++  rm -f "$(<)" && "$(CONFIG_COMMAND)" -c -x c-header $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -Xclang -emit-pch -o "$(<)" "$(>)"
  }
  
  ###############################################################################

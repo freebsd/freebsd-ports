@@ -3,7 +3,7 @@
 
 PORTNAME=	spoofer
 PORTVERSION=	1.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.caida.org/projects/spoofer/downloads/
 

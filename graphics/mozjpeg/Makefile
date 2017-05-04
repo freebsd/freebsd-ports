@@ -44,7 +44,7 @@ TURBOJPEG_CONFIGURE_WITH=	turbojpeg
 
 BROKEN_aarch64=		Does not configure: error: SIMD support cannot be enabled
 BROKEN_mips64=		Does not configure: error: SIMD support cannot be enabled
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: undefined reference to htole32
 BROKEN_sparc64=		Does not configure: error: SIMD support cannot be enabled
 
 post-patch:

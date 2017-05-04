@@ -3,7 +3,7 @@
 
 PORTNAME=	kenlm
 PORTVERSION=	20140830
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://kheafield.com/code/
 DISTNAME=	${PORTNAME}
@@ -20,8 +20,8 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	BOOST_BUILD_PATH=${WRKSRC}/jam-files/boost-build
 
-BROKEN_aarch64=		Fails to compile: target architecture was not detected as supported by Double-Conversion
-BROKEN_powerpc64=	Does not build
+BROKEN_aarch64=		fails to compile: target architecture was not detected as supported by Double-Conversion
+BROKEN_powerpc64=	fails to compile: error: in QuantTrieAll: difference{inf} between static_cast<double> and static_cast<double> exceeds 0.001%
 
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/bjam --toolset=${CHOSEN_COMPILER_TYPE} --with-boost=${LOCALBASE} ${_MAKE_JOBS})

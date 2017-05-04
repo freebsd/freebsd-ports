@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.516
+PORTVERSION=	2.517
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector \
+		p5-CGI>=0:www/p5-CGI \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-HTML-Parser>=2.23:www/p5-HTML-Parser \

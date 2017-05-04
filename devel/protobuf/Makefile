@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,12 +17,11 @@ TEST_DEPENDS=	googlemock>=0:devel/googlemock \
 
 BROKEN_sparc64=	fails to compile: no atomic ops available
 
-CFLAGS+=	-DGOOGLE_PROTOBUF_NO_RTTI
+CFLAGS+=	-DGOOGLE_PROTOBUF_NO_RTTI -I${WRKSRC}/src
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_ARGS=	${MAKE_ARGS} ${_MAKE_JOBS}
 TEST_TARGET=	check
-USE_CSTD=	c99	# for audio/clementine-player support
 USE_LDCONFIG=	yes
 USES=		autoreconf compiler:c++11-lang gmake libtool localbase pathfix pkgconfig
 

@@ -1,6 +1,5 @@
 bin/pod2projdocs
 %%SITE_PERL%%/Pod/ProjectDocs.pm
-%%SITE_PERL%%/Pod/ProjectDocs/ArrowImage.pm
 %%SITE_PERL%%/Pod/ProjectDocs/CSS.pm
 %%SITE_PERL%%/Pod/ProjectDocs/Config.pm
 %%SITE_PERL%%/Pod/ProjectDocs/Doc.pm
@@ -8,6 +7,7 @@ bin/pod2projdocs
 %%SITE_PERL%%/Pod/ProjectDocs/File.pm
 %%SITE_PERL%%/Pod/ProjectDocs/IndexPage.pm
 %%SITE_PERL%%/Pod/ProjectDocs/Parser.pm
+%%SITE_PERL%%/Pod/ProjectDocs/Parser/XHTML.pm
 %%SITE_PERL%%/Pod/ProjectDocs/Template.pm
 %%PERL5_MAN1%%/pod2projdocs.1.gz
 %%PERL5_MAN3%%/Pod::ProjectDocs.3.gz

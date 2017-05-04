@@ -21,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CONFIGURE_ARGS=	--program-suffix=${PKGNAMESUFFIX}
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USES=		gettext-runtime pkgconfig tar:xz
+USES=		gettext-runtime gnome pkgconfig tar:xz
 
 PLIST_SUB=	PKGNAMESUFFIX=${PKGNAMESUFFIX}
 

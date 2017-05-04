@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cairo-gobject
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,8 @@ LICENSE=	LGPL21+
 RUN_DEPENDS=	rubygem-cairo>=0:graphics/rubygem-cairo \
 		rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
 
+USE_GNOME=	cairo glib20
 USE_RUBY=	yes
-USES=		gem
+USES=		gem gnome
 
 .include <bsd.port.mk>

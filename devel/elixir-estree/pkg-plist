@@ -80,6 +80,7 @@ lib/elixir/lib/estree/ebin/Elixir.ESTree.TemplateLiteral.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.ThisExpression.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.ThrowStatement.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.Tools.Builder.beam
+lib/elixir/lib/estree/ebin/Elixir.ESTree.Tools.ESTreeJSONTransformer.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.Tools.Generator.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.TryStatement.beam
 lib/elixir/lib/estree/ebin/Elixir.ESTree.UnaryExpression.beam
@@ -174,6 +175,7 @@ lib/elixir/lib/estree/lib/es_tree/template_literal.ex
 lib/elixir/lib/estree/lib/es_tree/this_expression.ex
 lib/elixir/lib/estree/lib/es_tree/throw_statement.ex
 lib/elixir/lib/estree/lib/es_tree/tools/builder.ex
+lib/elixir/lib/estree/lib/es_tree/tools/estree_json_transformer.ex
 lib/elixir/lib/estree/lib/es_tree/tools/generator.ex
 lib/elixir/lib/estree/lib/es_tree/try_statement.ex
 lib/elixir/lib/estree/lib/es_tree/unary_expression.ex

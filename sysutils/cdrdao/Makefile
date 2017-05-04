@@ -65,12 +65,12 @@ CONFIGURE_ARGS+=	--with-mp3-support=no --with-ogg-support=no
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
 CONFIGURE_ARGS+=	--without-pcctsbin --without-pcctsinc \
 			--with-posix-threads=no --with-scglib
 MAKE_ENV=		CCOM=cc
 SCSILIBXARCH!=		${UNAME} -m
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	@(cd ${WRKSRC}/scsilib/RULES && ${CP} os-freebsd.id os-dragonfly.id)
@@ -92,9 +92,13 @@ post-patch:
 		${WRKSRC}/scsilib/${i}
 .endfor
 .if ${PORTNAME} == "gcdmaster"
+	@${REINPLACE_CMD} -E -e 's|(sigc\+\+/)object.h|\1trackable.h|g' \
+		${WRKSRC}/xdao/CdDevice.h
 	@${REINPLACE_CMD} -E -e 's|(^SUBDIRS.+) utils|\1|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(^gladedir.+=).+|\1 ${DATADIR}|' \
 		${WRKSRC}/xdao/Makefile.in
+	@${REINPLACE_CMD} -E -e 's|[&]?(pixmap_) == 0|!\1|g' \
+		${WRKSRC}/xdao/SampleDisplay.cc
 	@${REINPLACE_CMD} -E -e \
 		's|(SET_CDRDAO_PATH.+path=)(cdrdao)|\1${LOCALBASE}\/bin\/\2|g' \
 		${WRKSRC}/xdao/Settings.cc

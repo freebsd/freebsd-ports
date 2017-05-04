@@ -2,20 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	Email-Folder
-PORTVERSION=	0.85.5
-PORTREVISION=	1
+PORTVERSION=	0.860
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read all the messages from a folder as Email::Simple objects
 
-RUN_DEPENDS=	p5-Email-Simple>0:mail/p5-Email-Simple \
-		p5-Email-FolderType>=0.6:mail/p5-Email-FolderType
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	p5-Email-FolderType>=0.6:mail/p5-Email-FolderType \
+		p5-Email-Simple>=0:mail/p5-Email-Simple
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

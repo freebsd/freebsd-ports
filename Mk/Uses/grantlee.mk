@@ -19,6 +19,10 @@
 # Subs:
 #		GRANTLEE_VERSION_FULL	- full version of the chosen grantlee
 #		GRANTLEE_VERSION_SHORT	- short version of the chosen grantlee
+#		GRANTLEE_DEBUG_SUFFIX   - a suffix to the library name depending
+#					  the buildtype (WITH_DEBUG) that gets
+#					  appended to library names of plugins
+#					  for grantlee5.
 #
 # Further it will also append the proper LIB_DEPENDS line.
 #
@@ -62,5 +66,14 @@ LIB_DEPENDS+=	${GRANTLEE${_grantlee_version}_LIB_DEPEND}
 # Export the plist substitutions
 PLIST_SUB+=	GRANTLEE_VERSION_FULL=${GRANTLEE_VERSION} \
 		GRANTLEE_VERSION_SHORT=${GRANTLEE_VERSION:R}
+
+# GrantleeMacros.cmake provides grantlee_adjust_plugin_name() which appends a
+# letter 'd' to the library name in Debug mode. Provide a PLIST_SUB which can be
+# appended in the plist.
+.  if defined(WITH_DEBUG)
+PLIST_SUB+=	GRANTLEE_DEBUG_SUFFIX=d
+.  else
+PLIST_SUB+=	GRANTLEE_DEBUG_SUFFIX=""
+.  endif
 
 .endif

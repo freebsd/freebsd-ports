@@ -6816,6 +6816,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Float/zero%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/FloatDomainError/cdesc-FloatDomainError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Forwardable/cdesc-Forwardable.ri
+%%RDOC%%%%RUBY_RIDIR%%/Forwardable/_delegator_method-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Forwardable/debug-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Forwardable/def_delegator-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Forwardable/def_delegators-i.ri
@@ -16359,13 +16360,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/SimpleDelegator/__getobj__-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SimpleDelegator/__setobj__-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SimpleDelegator/cdesc-SimpleDelegator.ri
-%%RDOC%%%%RUBY_RIDIR%%/SingleForwardable/cdesc-SingleForwardable.ri
-%%RDOC%%%%RUBY_RIDIR%%/SingleForwardable/def_delegator-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SingleForwardable/def_delegators-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SingleForwardable/def_single_delegator-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SingleForwardable/def_single_delegators-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SingleForwardable/delegate-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SingleForwardable/single_delegate-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Singleton/_dump-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Singleton/_load-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Singleton/append_features-c.ri

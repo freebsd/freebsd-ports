@@ -3,6 +3,7 @@
 
 PORTNAME=	kwalletmanager
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	security kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org

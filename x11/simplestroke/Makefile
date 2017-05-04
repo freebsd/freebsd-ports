@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplestroke
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -19,6 +19,8 @@ USES=		pkgconfig
 USE_XORG=	x11 xtst
 
 PLIST_FILES=	bin/simplestroke \
-		man/man1/simplestroke.1.gz
+		bin/simplestroke-daemon \
+		man/man1/simplestroke.1.gz \
+		man/man1/simplestroke-daemon.1.gz
 
 .include <bsd.port.mk>

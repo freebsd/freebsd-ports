@@ -3,7 +3,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	2.8.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -35,12 +35,9 @@ CMAKE_ARGS=	-DWITH_FFmpeg:BOOL=off
 
 BROKEN_sparc64=	does not build (GCC-related error)
 
-OPTIONS_DEFINE=	AMAZON IPOD MP3TUNES MTP NLS
+OPTIONS_DEFINE=	IPOD MP3TUNES MTP NLS
 OPTIONS_DEFAULT=IPOD MP3TUNES MTP
 OPTIONS_SUB=	yes
-
-AMAZON_DESC=		Amazon MP3 store support via clamz
-AMAZON_RUN_DEPENDS=	clamz:net/clamz
 
 IPOD_DESC=		Apple iPod support
 IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \

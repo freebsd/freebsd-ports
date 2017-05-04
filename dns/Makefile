@@ -58,6 +58,7 @@
     SUBDIR += dnswall
     SUBDIR += doc
     SUBDIR += dq
+    SUBDIR += drool
     SUBDIR += dualserver
     SUBDIR += erlang-idna
     SUBDIR += ez-ipupdate
@@ -166,8 +167,6 @@
     SUBDIR += powerdns
     SUBDIR += powerdns-recursor
     SUBDIR += public_suffix_list
-    SUBDIR += py-adns
-    SUBDIR += py-bonjour
     SUBDIR += py-dns
     SUBDIR += py-dnschain
     SUBDIR += py-dnspython

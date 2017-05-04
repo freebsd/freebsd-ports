@@ -51,6 +51,7 @@ share/emacs/site-lisp/quilt.el
 %%DATADIR%%/compat/date
 %%DATADIR%%/compat/diff
 %%DATADIR%%/compat/getopt
+%%DATADIR%%/compat/grep
 %%DATADIR%%/compat/md5sum
 %%DATADIR%%/compat/patch
 %%DATADIR%%/compat/sed

@@ -1,8 +1,7 @@
-Now you need to examine %%PAM_DIR%%/%%PAM_TARGET%%
-and add the relevant PAM configuration lines to your
-/etc/pam.conf file.
+Now you need to examine %%EXAMPLESDIR%%%%PAM_DIR%%/%%PAM_TARGET%%
+and add the relevant PAM configuration lines to your /etc/pam.conf file.
 
-If you defined call upload script in pure-ftpd config
-define corresponding vars in rc.conf
-Without it pure-ftpd will not listen tcp socket - see
-FAQ: http://pureftpd.org/FAQ
+If you defined call upload script in pure-ftpd config define corresponding
+vars in rc.conf. pure-ftpd will not listen TCP socket without it.
+
+See FAQ: http://pureftpd.org/FAQ

@@ -14,7 +14,6 @@
     SUBDIR += adodb
     SUBDIR += adodb5
     SUBDIR += akonadi
-    SUBDIR += akonadi-googledata
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
     SUBDIR += apq
@@ -121,7 +120,6 @@
     SUBDIR += jasperreports
     SUBDIR += jdb
     SUBDIR += jdbc-oracle11g
-    SUBDIR += jdbm2
     SUBDIR += jlog
     SUBDIR += jrobin
     SUBDIR += jrrd
@@ -190,6 +188,8 @@
     SUBDIR += mongodb
     SUBDIR += mongodb32
     SUBDIR += mongodb32-tools
+    SUBDIR += mongodb34
+    SUBDIR += mongodb34-tools
     SUBDIR += mrtg-mysql-load
     SUBDIR += mtools-mongodb
     SUBDIR += mtop
@@ -799,6 +799,7 @@
     SUBDIR += py-tarantool
     SUBDIR += py-umemcache
     SUBDIR += py-unqlite
+    SUBDIR += py-varstack
     SUBDIR += py-whisper
     SUBDIR += py-xapian
     SUBDIR += py3-apsw
@@ -861,12 +862,14 @@
     SUBDIR += rubygem-active_record_query_trace
     SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activemodel5
+    SUBDIR += rubygem-activemodel50
     SUBDIR += rubygem-activerecord-import
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-activerecord-session_store
     SUBDIR += rubygem-activerecord4
     SUBDIR += rubygem-activerecord5
+    SUBDIR += rubygem-activerecord50
     SUBDIR += rubygem-after_commit_queue
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
@@ -906,6 +909,7 @@
     SUBDIR += rubygem-em-redis-unified
     SUBDIR += rubygem-familia
     SUBDIR += rubygem-globalid
+    SUBDIR += rubygem-globalid-rails5
     SUBDIR += rubygem-her
     SUBDIR += rubygem-hiredis
     SUBDIR += rubygem-jdbc-mysql
@@ -919,10 +923,12 @@
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-pg_array_parser
     SUBDIR += rubygem-pghero
+    SUBDIR += rubygem-pghero-rails5
     SUBDIR += rubygem-postgres_ext
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis
     SUBDIR += rubygem-redis-actionpack
+    SUBDIR += rubygem-redis-actionpack-rails5
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-sqlite3

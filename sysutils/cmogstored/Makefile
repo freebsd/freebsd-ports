@@ -15,7 +15,7 @@ NORELRO_PORTS=	yes
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: internal compiler error: Segmentation fault
 
 PLIST_FILES=	sbin/cmogstored \
 		man/man1/cmogstored.1.gz

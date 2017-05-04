@@ -3,7 +3,7 @@
 
 PORTNAME=	expedite
 PORTVERSION=	1.7.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/
 

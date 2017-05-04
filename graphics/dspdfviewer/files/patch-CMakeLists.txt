@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-04-20 08:58:09 UTC
++++ CMakeLists.txt
+@@ -95,7 +95,7 @@ install(TARGETS	dspdfviewer
+ 	RUNTIME DESTINATION bin)
+ 
+ install(FILES docs/dspdfviewer.1
+-	DESTINATION share/man/man1)
++	DESTINATION man/man1)
+ 
+ install(FILES dspdfviewer.desktop
+ 	DESTINATION share/applications)

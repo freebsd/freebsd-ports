@@ -3,7 +3,7 @@
 
 PORTNAME=	anki
 PORTVERSION=	2.0.36
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 DIST_SUBDIR=	python

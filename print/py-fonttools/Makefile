@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fonttools
-PORTVERSION=	3.10.0
+PORTVERSION=	3.11.0
 CATEGORIES=	print python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	behdad
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

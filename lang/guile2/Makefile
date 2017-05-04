@@ -19,8 +19,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 CONFLICTS_INSTALL=	guile-[0-9]*
 
-BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=	fails to compile: errors in complex.h
+BROKEN_powerpc64=	does not build: error: expected declaration specifiers or ... before __builtin_choose_expr
+BROKEN_sparc64=		fails to compile: errors in complex.h
 
 USES=		charsetfix gmake libtool makeinfo ncurses pathfix pkgconfig \
 		readline

@@ -29,8 +29,7 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ENV=	PERL=${PERL}
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxslt
-USES=		gmake iconv perl5
-WANT_GNOME=	yes
+USES=		gmake gnome iconv perl5
 
 INFO=		docbook2X docbook2man-xslt docbook2texi-xslt
 

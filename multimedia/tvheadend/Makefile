@@ -12,14 +12,13 @@ COMMENT=	TV streaming server supporting DVB, IPTV and V4L
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liburiparser.so:net/uriparser
 RUN_DEPENDS=	dtv-scan-tables>=0:multimedia/dtv-scan-tables
+
+BROKEN_powerpc64=	Does not build
 
 USE_GITHUB=	yes
 

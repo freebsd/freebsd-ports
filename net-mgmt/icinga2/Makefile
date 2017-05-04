@@ -3,6 +3,7 @@
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	lme@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libyajl.so:devel/yajl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-BROKEN_powerpc64=	does not build
+BROKEN_powerpc64=	does not build: Your version of GCC (4.2.1) is too old for building Icinga 2 (GCC >= 4.6.0)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga

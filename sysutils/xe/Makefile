@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xe
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -14,8 +14,12 @@ LICENSE=	CC0-1.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	chneukirchen
 
+USES=		perl5
+USE_PERL5=	test
+
 MAKE_ARGS=	CFLAGS="${CFLAGS}" \
 		MANDIR="${PREFIX}/man"
+TEST_TARGET=	check
 
 PLIST_FILES=	bin/xe \
 		man/man1/xe.1.gz

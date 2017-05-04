@@ -67,11 +67,7 @@ _COMPILER_ARGS+=	features
 .endif
 
 _CCVERSION!=	${CC} --version
-.if defined(.PARSEDIR)
 COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:tW:C/([0-9]).([0-9]).*/\1\2/g}
-.else
-COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g:u}
-.endif
 .if ${_CCVERSION:Mclang}
 COMPILER_TYPE=	clang
 .else
@@ -89,11 +85,7 @@ _ALTCCVERSION!=	/usr/bin/clang --version
 _ALTCCVERSION!=	/usr/bin/gcc --version
 .endif
 
-.if defined(.PARSEDIR)
 ALT_COMPILER_VERSION=	${_ALTCCVERSION:M[0-9].[0-9]*:tW:C/([0-9]).([0-9]).*/\1\2/g}
-.else
-ALT_COMPILER_VERSION=	${_ALTCCVERSION:M[0-9].[0-9]*:C/([0-9]).([0-9]).*/\1\2/g:u}
-.endif
 .if ${_ALTCCVERSION:Mclang}
 ALT_COMPILER_TYPE=	clang
 .elif !empty(_ALTCCVERSION)
@@ -161,10 +153,10 @@ CC=	clang
 CXX=	clang++
 CHOSEN_COMPILER_TYPE=	clang
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang36:lang/clang36
-CPP=	${LOCALBASE}/bin/clang-cpp36
-CC=	${LOCALBASE}/bin/clang36
-CXX=	${LOCALBASE}/bin/clang++36
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang40:devel/llvm40
+CPP=	${LOCALBASE}/bin/clang-cpp40
+CC=	${LOCALBASE}/bin/clang40
+CXX=	${LOCALBASE}/bin/clang++40
 CHOSEN_COMPILER_TYPE=	clang
 .endif
 .endif

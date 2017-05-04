@@ -2,6 +2,4 @@ Froxlor is an ISP Server Management Panel written in PHP, allowing customers
 to manage their own domains, DNS entries, email addresses, ftp accounts and
 more.
 
-Froxlor is a fork of SysCP.  Froxlor saw its first release on February 15 2010.
-
 WWW: http://www.froxlor.org/

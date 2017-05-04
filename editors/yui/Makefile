@@ -22,7 +22,7 @@ MAKE_ENV=	LIBPATH=${PREFIX}/lib
 BROKEN_aarch64=		Does not compile: error: cast from pointer to smaller type loses information
 BROKEN_mips64=		Does not compile: error: cast from unsigned char* to unsigned int loses precision
 BROKEN_sparc64=		Does not compile on sparc64
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: strip: open tyui/y failed: No such file or directory
 
 OPTIONS_DEFINE=	DOCS
 

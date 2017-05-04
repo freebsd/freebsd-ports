@@ -11,6 +11,7 @@
 PORTNAME=	stack
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	GH \
 		https://github.com/applicative-tech/stack-dependencies/releases/download/v${PORTVERSION}/:deps
@@ -26,7 +27,6 @@ BUILD_DEPENDS=	ghc>0:lang/ghc \
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libffi.so:devel/libffi
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
-		${LOCALBASE}/bin/gcc:lang/gcc \
 		gmake:devel/gmake
 
 USES=		gmake iconv perl5

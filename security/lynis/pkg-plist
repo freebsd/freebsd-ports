@@ -74,7 +74,6 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_scheduling
 %%DATADIR%%/include/tests_shells
 %%DATADIR%%/include/tests_snmp
-%%DATADIR%%/include/tests_solaris
 %%DATADIR%%/include/tests_squid
 %%DATADIR%%/include/tests_ssh
 %%DATADIR%%/include/tests_storage

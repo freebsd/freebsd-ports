@@ -72,7 +72,6 @@
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += cjdns
-    SUBDIR += clamz
     SUBDIR += cloud-init
     SUBDIR += clusterit
     SUBDIR += cnd
@@ -363,7 +362,6 @@
     SUBDIR += libproxy-webkit
     SUBDIR += librdkafka
     SUBDIR += librouteros
-    SUBDIR += librsync
     SUBDIR += librsync2
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
@@ -493,10 +491,10 @@
     SUBDIR += onenetd
     SUBDIR += onioncat
     SUBDIR += opal
+    SUBDIR += open-isns
     SUBDIR += openafs
     SUBDIR += openbgpd
     SUBDIR += openbsc
-    SUBDIR += opendpi
     SUBDIR += openggsn
     SUBDIR += openh323
     SUBDIR += openldap24-client
@@ -971,6 +969,7 @@
     SUBDIR += py-cjdns
     SUBDIR += py-cloudfiles
     SUBDIR += py-coherence
+    SUBDIR += py-cymruwhois
     SUBDIR += py-dpkt
     SUBDIR += py-dugong
     SUBDIR += py-ec2-cli-tools
@@ -1012,7 +1011,6 @@
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
     SUBDIR += py-port-for
-    SUBDIR += py-pybeanstalk
     SUBDIR += py-pygeoip
     SUBDIR += py-pyldap
     SUBDIR += py-pynmsg
@@ -1190,6 +1188,7 @@
     SUBDIR += rubygem-network_interface
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
+    SUBDIR += rubygem-oauth212
     SUBDIR += rubygem-octokit
     SUBDIR += rubygem-octopress-deploy
     SUBDIR += rubygem-omniauth-auth0
@@ -1237,6 +1236,7 @@
     SUBDIR += rubygem-u2f0
     SUBDIR += rubygem-uri-redis
     SUBDIR += rubygem-whois
+    SUBDIR += rubygem-xmlrpc
     SUBDIR += rude
     SUBDIR += s3ql
     SUBDIR += samba42
@@ -1289,7 +1289,6 @@
     SUBDIR += socketpipe
     SUBDIR += socketw
     SUBDIR += sofia-sip
-    SUBDIR += softethervpn
     SUBDIR += spideroak
     SUBDIR += splatd
     SUBDIR += spoofer

@@ -1,6 +1,7 @@
 bin/osqueryi
 @dir /var/db/osquery
 @dir /var/log/osquery
+etc/osquery.flags
 include/osquery/config.h
 include/osquery/core.h
 include/osquery/database.h

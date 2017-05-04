@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.24.0
+PORTVERSION=	0.25.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -32,7 +31,6 @@ CONFIGURE_ENV=	BIN_PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--htmldir=${DOCSDIR}/html \
 		--mandir=${MANPREFIX}/man \
-		--prefix=${PREFIX} \
 		--disable-debug-build \
 		--disable-d3d-hwaccel \
 		--disable-optimize \
@@ -51,10 +49,10 @@ EXPLICIT_SAFESTACK=	yes
 
 OPTIONS_DEFINE=		ASS DOCS LCMS2 LIBARCHIVE LUAJIT MANPAGES UCHARDET ZSH
 OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV LIBARCHIVE MANPAGES OPENGL UCHARDET \
-			V4L VAAPI VDPAU X11 XINERAMA YTDL ZSH
+			V4L VAAPI VDPAU X11 YTDL ZSH
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
-OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU X11 XINERAMA
+OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU X11
 OPTIONS_GROUP_AO=	ALSA JACK PULSEAUDIO SDL SNDIO
 OPTIONS_SUB=		yes
 
@@ -141,13 +139,9 @@ VAAPI_CONFIGURE_OFF=		--disable-vaapi
 VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=		--disable-vdpau
 
-X11_USE=			XORG=x11,xext,xrandr,xscrnsaver,xv,xxf86vm
+X11_USE=			XORG=x11,xext,xinerama,xineramaproto,xrandr,xscrnsaver,xv,xxf86vm
 X11_VARS=			INSTALLS_ICONS=yes
 X11_CONFIGURE_OFF=		--disable-x11
-
-XINERAMA_USE=			XORG=xinerama,xineramaproto
-XINERAMA_CONFIGURE_OFF=		--disable-xinerama
-XINERAMA_IMPLIES=		X11
 
 YTDL_RUN_DEPENDS=		youtube-dl:www/youtube_dl
 
@@ -159,6 +153,7 @@ ZSH_CONFIGURE_ENABLE=		zsh-comp
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
 		${WRKSRC}/wscript_build.py
+
 post-patch-MANPAGES-on:
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'

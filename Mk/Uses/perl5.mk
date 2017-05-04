@@ -26,7 +26,7 @@
 # SITE_ARCH	- Directory name where arch site specific perl packages go.
 #		  This value is added to PLIST_SUB.
 # USE_PERL5	- If set, this port uses perl5 in one or more of the extract,
-#		  patch, build, install or run phases.
+#		  patch, build, run or test phases.
 #		  It can also have configure, modbuild and modbuildtiny when
 #		  the port needs to run Makefile.PL, Build.PL and a
 #		  Module::Build::Tiny flavor of Build.PL.
@@ -244,6 +244,10 @@ BUILD_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}
 RUN_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}
 .  endif
 
+.  if ${_USE_PERL5:Mtest}
+TEST_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}
+.  endif
+
 .  if ${_USE_PERL5:Mconfigure}
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
@@ -321,9 +325,9 @@ TEST_TARGET?=	test
 TEST_WRKSRC?=	${BUILD_WRKSRC}
 do-test:
 .    if ${USE_PERL5:Mmodbuild*}
-	cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${PERL5} ${PL_BUILD} ${TEST_TARGET} ${TEST_ARGS}
+	@cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${PERL5} ${PL_BUILD} ${TEST_TARGET} ${TEST_ARGS}
 .    elif ${USE_PERL5:Mconfigure}
-	cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${MAKE_CMD} ${TEST_ARGS} ${TEST_TARGET}
+	@cd ${TEST_WRKSRC}/ && ${SETENV} ${TEST_ENV} ${MAKE_CMD} ${TEST_ARGS} ${TEST_TARGET}
 .    endif # USE_PERL5:Mmodbuild*
 .  endif # do-test
 .endif # defined(_POSTMKINCLUDED)

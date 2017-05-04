@@ -2,29 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	injeqt
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Dependency injection framework for Qt
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vogel
 
-USES=		cmake compiler:c++11-lib
-USE_QT5=	buildtools_build core qmake_build
+USES=		cmake compiler:c++11-lib pathfix
+USE_QT5=	core buildtools_build qmake_build testlib_build
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DDISABLE_EXAMPLES:BOOL=ON \
-		-DDISABLE_TESTS:BOOL=ON
+		-DDISABLE_COVERAGE:BOOL=ON
 
-PLIST_SUB=	VERSION=${PORTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} '/pkgconfig/ s|LIBDIR}|PREFIX}/libdata|; s|-Werror||' \
-		${WRKSRC}/CMakeLists.txt
+PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 .include <bsd.port.mk>

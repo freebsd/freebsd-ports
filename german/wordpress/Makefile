@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.7.3
+PORTVERSION=	4.7.4
 DISTVERSIONSUFFIX=	-de_DE
 CATEGORIES=	german www
 MASTER_SITES=	http://de.wordpress.org/

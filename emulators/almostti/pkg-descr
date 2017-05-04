@@ -1,0 +1,9 @@
+AlmostTI is a program that emulates Z80-based graphing calculators made by
+Texas Instruments.  Currently, it supports TI-82, TI-83, TI-83+, TI-83+SE,
+TI-84+, TI-84+SE, TI-85, and TI-86.
+
+It requires ROM image to operate, which must be obtained separately.  RAM
+state is preserved across different runs, making complex usage scenarios
+possible.
+
+WWW: http://fms.komkon.org/ATI85/

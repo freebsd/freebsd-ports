@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: /bin/sh: clang: not found
 
 USES=		gmake ncurses readline shebangfix
 USE_LDCONFIG=	yes

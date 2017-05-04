@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmodplug
-PORTVERSION=	0.8.8.5
-PORTREVISION=	2
+PORTVERSION=	0.8.9.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/modplug-xmms/${PORTNAME}/${PORTVERSION} LOCAL/ehaupt
 
@@ -13,7 +12,7 @@ COMMENT=	ModPlug mod-like music shared libraries
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe gmake pathfix pkgconfig libtool
+USES=		cpe pathfix pkgconfig libtool
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

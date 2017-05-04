@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	57.0.2987.133
+PORTVERSION=	58.0.3029.96
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	gperf:devel/gperf \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
 		bash:shells/bash \
 		flock:sysutils/flock \
+		node:www/node \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
@@ -46,6 +47,7 @@ LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 		libcups.so:print/cups \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
+		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libgcrypt.so:security/libgcrypt \
 		libgnome-keyring.so:security/libgnome-keyring \
 		libnss3.so:security/nss \
@@ -88,7 +90,8 @@ GN_ARGS+=	is_clang=true \
 		toolkit_views=true \
 		use_allocator="none" \
 		use_aura=true \
-		use_experimental_allocator_shim=true \
+		use_cups=true \
+		use_experimental_allocator_shim=false \
 		treat_warnings_as_errors=false \
 		use_sysroot=false \
 		use_system_libjpeg=true \
@@ -197,15 +200,9 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 # TODO: move this big extra to small ones
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} < 1100000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-10
-.endif
-
 # Work around base r261801
-.if ${OSVERSION} < 1100508
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100508
 GN_ARGS+=	extra_cxxflags="-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1"
-.endif
 .endif
 
 pre-everything::
@@ -217,9 +214,6 @@ pre-everything::
 .else
 	@${ECHO_MSG} "and a fair amount of free diskspace (~ 3.7GB)."
 .endif
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Make sure you have Python build with the SEM option ON"
-	@${ECHO_MSG} "(default in python27-2.7.8 since r361735)"
 	@${ECHO_MSG}
 
 pre-configure:
@@ -239,6 +233,10 @@ do-configure:
 	cd ${WRKSRC} && ${SETENV} ./out/${BUILDTYPE}/gn \
 		gen --args='${GN_ARGS}' out/${BUILDTYPE}
 
+	# Setup nodejs dependency
+	@${MKDIR} ${WRKSRC}/third_party/node/linux/node-linux-x64/bin
+	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/linux/node-linux-x64/bin/node
+
 test regression-test: build
 .for t in ${TEST_TARGETS}
 	cd ${WRKSRC}/out/${BUILDTYPE} && ${SETENV} LC_ALL=en_US.UTF-8 \
@@ -248,7 +246,7 @@ test regression-test: build
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.for t in font_service ui
+.for t in font_service test_ime_driver ui
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${t}.service \
 		${STAGEDIR}${DATADIR}
 .endfor

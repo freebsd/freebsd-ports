@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: nested functions are disabled, use -fnested-functions to re-enable
 
 USES=		cpe qmail tar:tgz
 WRKSRC=		${WRKDIR}/${DISTNAME}/spamdyke

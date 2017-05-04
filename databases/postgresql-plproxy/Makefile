@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	plproxy
-PORTVERSION=	2.7
+DISTVERSIONPREFIX=	${PORTNAME}_
+DISTVERSION=	2_7
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql-
 
@@ -15,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USES=		bison gmake pgsql
 
 USE_GITHUB=	yes
-GH_TAGNAME=	plproxy_2_7
 
 .include <bsd.port.pre.mk>
 

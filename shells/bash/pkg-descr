@@ -4,4 +4,4 @@ with interactive command line editing, job control on architectures
 that support it, csh-like features such as history substitution and
 brace expansion, and a slew of other features.
 
-WWW: http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
+WWW: https://www.gnu.org/software/bash/

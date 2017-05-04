@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsvg2
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.3
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,6 @@ RUN_DEPENDS=	rubygem-cairo>=1.12.8:graphics/rubygem-cairo \
 
 USE_GNOME=	librsvg2
 USE_RUBY=	yes
-USES=		gem
+USES=		gem gnome
 
 .include <bsd.port.mk>

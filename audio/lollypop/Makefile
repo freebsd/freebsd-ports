@@ -3,6 +3,7 @@
 
 PORTNAME=	lollypop
 PORTVERSION=	0.9.15
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/gnumdk/${PORTNAME}/releases/download/${PORTVERSION}/
 

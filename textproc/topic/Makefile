@@ -11,7 +11,7 @@ COMMENT=	Topic markup parser
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: warning: comparison is always false due to limited range of data type
 
 PLIST_FILES=	bin/topic \
 		man/man1/topic.1.gz

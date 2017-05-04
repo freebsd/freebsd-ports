@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansilove
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -37,7 +37,7 @@ post-install-EXAMPLES-on:
 
 do-test:
 	@cd ${WRKSRC}/examples/ && for f in *; do \
-		${WRKSRC}/${PORTNAME} -o ${WRKSRC}/out $$f; \
+		${WRKSRC}/${PORTNAME} -o ${WRKSRC}/out.png $$f; \
 		${FILE} ${WRKSRC}/out.png | ${GREP} -q 'PNG'; \
 	done
 

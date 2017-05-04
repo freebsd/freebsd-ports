@@ -1,6 +1,6 @@
---- xe.c.orig	2016-05-20 18:14:18 UTC
+--- xe.c.orig	2017-04-13 15:28:38 UTC
 +++ xe.c
-@@ -13,6 +13,7 @@
+@@ -12,6 +12,7 @@
  
  #include <limits.h>
  #include <errno.h>
@@ -8,7 +8,7 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -100,7 +101,7 @@ mywait()
+@@ -99,7 +100,7 @@ mywait()
  		} else if (WEXITSTATUS(status) > 125) {
  			exit(WEXITSTATUS(status));
  		}
@@ -17,7 +17,7 @@
  		fprintf(stderr, "xe: pid %d terminated by signal %d\n",
  		    pid, WTERMSIG(status));
  		exit(125);
-@@ -353,6 +354,7 @@ main(int argc, char *argv[], char *envp[
+@@ -358,6 +359,7 @@ main(int argc, char *argv[], char *envp[
  			pusharg("/bin/sh");
  			pusharg("-c");
  			pusharg(sflag);

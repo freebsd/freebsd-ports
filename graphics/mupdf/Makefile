@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.10a
+PORTVERSION=	1.11
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mupdf.com/downloads/ \
@@ -47,14 +46,13 @@ PLIST_SUB=	SOVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-pipe -O2 //' \
-		-e 's|/usr/local|${LOCALBASE}|' \
-		-e 's/Linux/FreeBSD/' \
 		${WRKSRC}/Makerules
+	@${REINPLACE_CMD} -e 's/-ldl //' ${WRKSRC}/Makerules ${WRKSRC}/Makethird
 	@${RM} -r ${WRKSRC}/thirdparty/curl \
 		${WRKSRC}/thirdparty/freetype \
 		${WRKSRC}/thirdparty/harfbuzz \
 	 	${WRKSRC}/thirdparty/jbig2dec \
-	 	${WRKSRC}/thirdparty/jpeg \
+	 	${WRKSRC}/thirdparty/libjpeg \
 	 	${WRKSRC}/thirdparty/openjpeg \
 	 	${WRKSRC}/thirdparty/zlib
 

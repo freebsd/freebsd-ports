@@ -66,7 +66,6 @@
     SUBDIR += fetchconfig
     SUBDIR += flow-extract
     SUBDIR += flow-tools
-    SUBDIR += flow-tools-ng
     SUBDIR += flowd
     SUBDIR += flowviewer
     SUBDIR += fprobe
@@ -281,7 +280,6 @@
     SUBDIR += pnp-icinga2
     SUBDIR += portmon
     SUBDIR += prometheus
-    SUBDIR += py-flowtools
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
     SUBDIR += py-pyang
@@ -292,6 +290,7 @@
     SUBDIR += py-snmp4-mibs
     SUBDIR += py-snmp_passpersist
     SUBDIR += py-yapsnmp
+    SUBDIR += py3-dnsdiag
     SUBDIR += qkismet
     SUBDIR += rackmonkey
     SUBDIR += rancid3

@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	2
+PORTREVISION=	4
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -50,6 +50,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		liblpsolve55.so:math/lp_solve \
 		libcmis-0.5.so:net/libcmis \
 		libharfbuzz.so:print/harfbuzz \
+		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libmspub-0.1.so:print/libmspub01 \
 		libpagemaker-0.0.so:print/libpagemaker \
 		libnss3.so:security/nss \

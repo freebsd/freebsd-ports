@@ -3,7 +3,7 @@
 
 PORTNAME=	gearmand
 PORTVERSION=	1.0.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 
@@ -20,7 +20,6 @@ CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.1.*
 USERS=		gearmand
 GROUPS=		gearmand
 
-BROKEN_powerpc64=	Does not build
 BROKEN_sparc64=		Does not build: cannot link with boost
 
 USE_PERL5=	build

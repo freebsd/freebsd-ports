@@ -3,25 +3,25 @@
 
 PORTNAME=	couchpotato
 PORTVERSION=	0.0.20170327
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	joshruehlig@gmail.com
 COMMENT=	Automatic NZB and torrent downloader
 
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		fpc-libcurl>0:ftp/fpc-libcurl \
-		docbook-xml>0:textproc/docbook-xml
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl
 
 USE_RC_SUBR=	couchpotato
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} USERS=${USERS}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-USES=		python shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	CouchPotato.py
 
 USERS=		couchpotato
@@ -30,6 +30,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	CouchPotato
 GH_PROJECT=	CouchPotatoServer
 GH_TAGNAME=	711310d
+
+OPTIONS_DEFINE=	UNRAR
+UNRAR_RUN_DEPENDS=	unrar:archivers/unrar
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${DATADIR}

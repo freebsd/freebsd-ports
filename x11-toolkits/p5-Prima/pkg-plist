@@ -24,6 +24,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/CORE/generic/Object.h
 %%SITE_ARCH%%/Prima/CORE/generic/Popup.h
 %%SITE_ARCH%%/Prima/CORE/generic/Printer.h
+%%SITE_ARCH%%/Prima/CORE/generic/Region.h
 %%SITE_ARCH%%/Prima/CORE/generic/Timer.h
 %%SITE_ARCH%%/Prima/CORE/generic/Types.h
 %%SITE_ARCH%%/Prima/CORE/generic/Utils.h
@@ -50,6 +51,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Drawable/Basic.pm
 %%SITE_ARCH%%/Prima/Drawable/CurvedText.pm
 %%SITE_ARCH%%/Prima/Drawable/Markup.pm
+%%SITE_ARCH%%/Prima/Drawable/Path.pm
 %%SITE_ARCH%%/Prima/Drawable/Subcanvas.pm
 %%SITE_ARCH%%/Prima/Drawable/TextBlock.pm
 %%SITE_ARCH%%/Prima/Edit.pm
@@ -151,6 +153,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/ScrollBar.pm
 %%SITE_ARCH%%/Prima/ScrollWidget.pm
 %%SITE_ARCH%%/Prima/Sliders.pm
+%%SITE_ARCH%%/Prima/Spinner.pm
 %%SITE_ARCH%%/Prima/StartupWindow.pm
 %%SITE_ARCH%%/Prima/StdBitmap.pm
 %%SITE_ARCH%%/Prima/StdDlg.pm
@@ -240,6 +243,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/sheet.pl
 %%SITE_ARCH%%/Prima/examples/socket.pl
 %%SITE_ARCH%%/Prima/examples/socket_anyevent.pl
+%%SITE_ARCH%%/Prima/examples/spinner.pl
 %%SITE_ARCH%%/Prima/examples/spline.pl
 %%SITE_ARCH%%/Prima/examples/theme.pl
 %%SITE_ARCH%%/Prima/examples/transparent.pl
@@ -257,6 +261,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/linepats.gif
 %%SITE_ARCH%%/Prima/noARGV.pm
 %%SITE_ARCH%%/Prima/noX11.pm
+%%SITE_ARCH%%/Prima/path.gif
 %%SITE_ARCH%%/Prima/rop1.gif
 %%SITE_ARCH%%/Prima/rop2.gif
 %%SITE_ARCH%%/Prima/scalings.gif
@@ -305,6 +310,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Drawable::Basic.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::CurvedText.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Markup.3.gz
+%%PERL5_MAN3%%/Prima::Drawable::Path.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Subcanvas.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::TextBlock.3.gz
 %%PERL5_MAN3%%/Prima::Edit.3.gz
@@ -346,6 +352,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::ScrollBar.3.gz
 %%PERL5_MAN3%%/Prima::ScrollWidget.3.gz
 %%PERL5_MAN3%%/Prima::Sliders.3.gz
+%%PERL5_MAN3%%/Prima::Spinner.3.gz
 %%PERL5_MAN3%%/Prima::StartupWindow.3.gz
 %%PERL5_MAN3%%/Prima::StdBitmap.3.gz
 %%PERL5_MAN3%%/Prima::StdDlg.3.gz

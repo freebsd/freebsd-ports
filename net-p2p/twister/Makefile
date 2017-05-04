@@ -4,7 +4,7 @@
 PORTNAME=	twister-core
 PORTVERSION=	0.9.34
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 
@@ -15,10 +15,10 @@ LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs	\
 		libleveldb.so:databases/leveldb
+
+BROKEN_powerpc64=	Does not build: /usr/bin/ld: final link failed: Bad value
 
 OPTIONS_DEFINE=	DOCS
 

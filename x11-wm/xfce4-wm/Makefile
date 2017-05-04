@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.12.3
+PORTVERSION=	4.12.4
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE/src/xfce/xfwm4/${PORTVERSION:R}
 DISTNAME=	xfwm4-${PORTVERSION}
@@ -13,7 +13,10 @@ COMMENT=	Xfce's window manager
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 CONFIGURE_ARGS=	--enable-xsync \
 		--enable-render \
@@ -22,11 +25,11 @@ CONFIGURE_ARGS=	--enable-xsync \
 		--disable-kde-systray
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		pkgconfig gmake gettext-tools xfce tar:bzip2
-USE_GNOME=	gtk20 intltool intlhack libwnck
+USES=		gettext-tools gmake pkgconfig tar:bzip2 xfce
+USE_GNOME=	gtk20 intltool libwnck cairo
 USE_LDCONFIG=	yes
 USE_XFCE=	libmenu
-USE_XORG=	x11 sm xcomposite xdamage xext xfixes xrandr xrender
+USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xrandr xrender
 DATADIR=	${PREFIX}/share/xfwm4
 
 OPTIONS_DEFINE=		DRM NLS STARTUP

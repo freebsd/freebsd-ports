@@ -1,0 +1,12 @@
+--- src/makefile.orig	2017-04-29 15:05:37 UTC
++++ src/makefile
+@@ -2,9 +2,7 @@
+ # Linux makefile
+ #
+ 
+-CFLAGS=`sdl-config --cflags`
+ PREFIX=../linux/
+ SUFFIX=
+-LIBS=`sdl-config --libs`
+ 
+ include makefile.common

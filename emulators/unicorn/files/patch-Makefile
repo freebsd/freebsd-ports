@@ -1,6 +1,6 @@
---- Makefile.orig	2017-02-23 12:57:14 UTC
+--- Makefile.orig	2017-04-20 06:14:24 UTC
 +++ Makefile
-@@ -62,9 +62,9 @@ V ?= 0
+@@ -72,9 +72,9 @@ V ?= 0
  MACOS_UNIVERSAL ?= yes
  
  ifeq ($(UNICORN_DEBUG),yes)
@@ -12,7 +12,7 @@
  UNICORN_QEMU_FLAGS += --disable-debug-info
  endif
  
-@@ -171,7 +171,7 @@ LIBDIRARCH ?= lib
+@@ -181,7 +181,7 @@ LIBDIRARCH ?= lib
  # Or better, pass 'LIBDIRARCH=lib64' to 'make install/uninstall' via 'make.sh'.
  #LIBDIRARCH ?= lib64
  
@@ -21,12 +21,3 @@
  INCDIR ?= $(PREFIX)/include
  BINDIR ?= $(PREFIX)/bin
  
-@@ -204,7 +204,7 @@ qemu/config-host.h-timestamp:
- 	cd qemu && \
- 	./configure --cc="${CC}" --extra-cflags="$(UNICORN_CFLAGS)" --target-list="$(UNICORN_TARGETS)" ${UNICORN_QEMU_FLAGS}
- 	printf "$(UNICORN_ARCHS)" > config.log
--	$(MAKE) -C qemu -j 4
-+	$(MAKE) -C qemu -j $(MAKE_JOBS_NUMBER)
- 	$(eval UC_TARGET_OBJ += $$(wildcard qemu/util/*.o) $$(wildcard qemu/*.o) $$(wildcard qemu/qom/*.o) $$(wildcard qemu/hw/core/*.o) $$(wildcard qemu/qapi/*.o) $$(wildcard qemu/qobject/*.o))
- 
- unicorn: $(LIBRARY) $(ARCHIVE)

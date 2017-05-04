@@ -11,7 +11,7 @@ COMMENT=	Python bindings for low-level FUSE API
 
 LICENSE=	LGPL20+
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: error: conversion to mode_t from int may alter its value
 
 USES?=		compiler:c++11-lang fuse pkgconfig python tar:bz2
 USE_PYTHON=	autoplist distutils

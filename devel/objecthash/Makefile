@@ -11,10 +11,10 @@ COMMENT=	Cross-language way to cryptographically hash JSON objects
 
 LICENSE=	APACHE20
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libjson-c.so:devel/json-c
+
+BROKEN_powerpc64=	Does not build: error: variably modified hash at file scope
 
 USES=		pkgconfig ssl
 USE_GITHUB=	yes

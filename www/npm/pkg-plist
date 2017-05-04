@@ -789,7 +789,6 @@ lib/node_modules/npm/node_modules/has-unicode/LICENSE
 lib/node_modules/npm/node_modules/has-unicode/README.md
 lib/node_modules/npm/node_modules/has-unicode/index.js
 lib/node_modules/npm/node_modules/has-unicode/package.json
-lib/node_modules/npm/node_modules/hosted-git-info/.npmignore
 lib/node_modules/npm/node_modules/hosted-git-info/LICENSE
 lib/node_modules/npm/node_modules/hosted-git-info/README.md
 lib/node_modules/npm/node_modules/hosted-git-info/git-host-info.js
@@ -1190,10 +1189,12 @@ lib/node_modules/npm/node_modules/node-gyp/gyp/tools/graphviz.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/pretty_gyp.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/pretty_sln.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/tools/pretty_vcproj.py
+lib/node_modules/npm/node_modules/node-gyp/lib/Find-VS2017.cs
 lib/node_modules/npm/node_modules/node-gyp/lib/build.js
 lib/node_modules/npm/node_modules/node-gyp/lib/clean.js
 lib/node_modules/npm/node_modules/node-gyp/lib/configure.js
 lib/node_modules/npm/node_modules/node-gyp/lib/find-node-directory.js
+lib/node_modules/npm/node_modules/node-gyp/lib/find-vs2017.js
 lib/node_modules/npm/node_modules/node-gyp/lib/install.js
 lib/node_modules/npm/node_modules/node-gyp/lib/list.js
 lib/node_modules/npm/node_modules/node-gyp/lib/node-gyp.js
@@ -2870,7 +2871,6 @@ lib/node_modules/npm/node_modules/which/bin/which
 lib/node_modules/npm/node_modules/which/node_modules/isexe/.npmignore
 lib/node_modules/npm/node_modules/which/node_modules/isexe/LICENSE
 lib/node_modules/npm/node_modules/which/node_modules/isexe/README.md
-lib/node_modules/npm/node_modules/which/node_modules/isexe/access.js
 lib/node_modules/npm/node_modules/which/node_modules/isexe/index.js
 lib/node_modules/npm/node_modules/which/node_modules/isexe/mode.js
 lib/node_modules/npm/node_modules/which/node_modules/isexe/package.json

@@ -3,7 +3,7 @@
 
 PORTNAME=	anyremote
 PORTVERSION=	6.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
@@ -13,12 +13,14 @@ COMMENT=	Remote control service over Bluetooth, infrared, or TCP/IP networking
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias iconv pkgconfig shebangfix
-SHEBANG_FILES=	cfg-data/Utils/imdb-mf.sh
+USES=		alias iconv pkgconfig python shebangfix
+SHEBANG_FILES=	cfg-data/Utils/imdb-mf.sh \
+		cfg-data/Utils/all-in-1.py
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+LIB_DEPENDS+=	libdbus-1.so:devel/dbus
 
 OPTIONS_DEFINE=	DOCS DBUS X11
 OPTIONS_DEFAULT=	DBUS X11

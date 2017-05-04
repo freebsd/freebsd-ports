@@ -590,6 +590,7 @@ lib/libhashcat.so
 %%DATADIR%%/OpenCL/m15000_a0.cl
 %%DATADIR%%/OpenCL/m15000_a1.cl
 %%DATADIR%%/OpenCL/m15000_a3.cl
+%%DATADIR%%/OpenCL/m15100.cl
 %%DATADIR%%/OpenCL/markov_be.cl
 %%DATADIR%%/OpenCL/markov_le.cl
 %%DATADIR%%/hashcat.hcstat

@@ -27,7 +27,7 @@ MAKE_ARGS=	HOST=_FreeBSD NOOPT=TRUE PROGS="${ACPICA_TOOLS}"
 MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
 
 BROKEN_aarch64=		Fails to compile: error: comparison of constant -1 with expression of type char is always true
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Fails to compile: warning: comparison is always true due to limited range of data type
 
 do-install:
 	${INSTALL_PROGRAM} ${ACPICA_TOOLS:S,^,${BUILD_WRKSRC}/bin/,} \

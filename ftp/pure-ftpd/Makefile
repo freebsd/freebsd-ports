@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.45
+PORTVERSION=	1.0.46
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	https://github.com/jedisct1/${PORTNAME}/releases/download/${PORTVERSION}/ \
 		https://download.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -43,24 +43,20 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 GNU_CONFIGURE=	yes
 USE_PERL5=	run
 USE_RC_SUBR=	pure-ftpd
-USES=		cpe perl5 shebangfix tar:bzip2
+USES=		cpe perl5 tar:bzip2
 
 CPE_VENDOR=	pureftpd
 
 PORTDOCS=	AUTHORS CONTACT COPYING HISTORY NEWS README \
 		README.Authentication-Modules README.Configuration-File \
-		README.Contrib README.LDAP README.MySQL README.PGSQL \
-		README.TLS README.Virtual-Users THANKS pure-ftpd.png \
-		pureftpd.schema
+		README.LDAP README.MySQL README.PGSQL README.TLS \
+		README.Virtual-Users THANKS pure-ftpd.png pureftpd.schema
 PORTEXAMPLES=	*
 SUB_FILES=	pkg-message
 SUB_LIST=	PAM_DIR=${PAM_DIR} PAM_TARGET=${PAM_TARGET}
 
-SHEBANG_FILES=	contrib/pure-stat.pl contrib/pure-vpopauth.pl
-
-CONTRIB=	pure-stat.pl pure-vpopauth.pl xml_python_processors.txt
 LANGUAGE?=	english
-PAM_DIR?=	${EXAMPLESDIR}/pam
+PAM_DIR?=	pam
 PAM_TARGET?=	pure-ftpd
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
 
@@ -119,9 +115,7 @@ post-install-DOCS-on:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/contrib/ && ${INSTALL_SCRIPT} ${CONTRIB} ${STAGEDIR}${EXAMPLESDIR}/
-	${MKDIR} ${STAGEDIR}${PAM_DIR}/
-	${INSTALL_DATA} ${PAM_TEMPL} ${STAGEDIR}${PAM_DIR}/${PAM_TARGET}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${PAM_DIR}/
+	${INSTALL_DATA} ${PAM_TEMPL} ${STAGEDIR}${EXAMPLESDIR}/${PAM_DIR}/${PAM_TARGET}
 
 .include <bsd.port.post.mk>

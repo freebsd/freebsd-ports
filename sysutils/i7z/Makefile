@@ -1,23 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	i7z
-PORTVERSION=	0.27.2
-PORTREVISION=	4
+PORTVERSION=	0.27.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	zont@FreeBSD.org
-COMMENT=	Thermal and C-state reporting utility for Intel-Core-i CPUs
+MAINTAINER=	dim@FreeBSD.org
+COMMENT=	Thermal and C-state reporting utility for Intel Core CPUs
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
+USE_GITHUB=	yes
+GH_ACCOUNT=	DimitryAndric
 
 USES=		gmake
-USE_GCC=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

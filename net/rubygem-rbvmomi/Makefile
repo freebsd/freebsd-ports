@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rbvmomi
-PORTVERSION=	1.11.0
+PORTVERSION=	1.11.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

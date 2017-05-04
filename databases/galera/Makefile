@@ -4,7 +4,7 @@
 PORTNAME=	galera
 PORTVERSION=	25.3.5
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases
 MASTER_SITES=	https://launchpadlibrarian.net/170877450/
 
@@ -17,6 +17,9 @@ BUILD_DEPENDS=	checkmk:devel/check \
 		doxygen:devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>=0:textproc/py-cloud_sptheme
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
+
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	error Please add support for your architecture in build/build_config.h
 
 USES=		execinfo python:build scons shebangfix ssl
 

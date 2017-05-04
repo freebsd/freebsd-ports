@@ -11,7 +11,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2015.11.13
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
 
@@ -41,9 +41,10 @@ CONFLICTS=	im-[0-9]* \
 USES=		gettext gmake iconv jpeg:run motif perl5 python shebangfix tar:xz
 SHEBANG_FILES=	suma_change_spec \
 		3dPAR2AFNI.pl \
-		python_scripts/afni_restproc.py \
-		python_scripts/lib_fat_Rfactor.py \
-		pkundu/meica.libs/siemens_me2nii.py
+		python_scripts/*.py \
+		pkundu/meica.py \
+		pkundu/meica.libs/*.py \
+		pkundu/meica.libs/mdp/test/run_tests.py
 USE_GNOME=	glib20
 
 .include <bsd.port.options.mk>

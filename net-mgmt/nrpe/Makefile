@@ -10,6 +10,8 @@ MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT?=	Nagios Remote Plugin Executor
 
+LICENSE=	GPLv2
+
 CONFLICTS=	nrpe-ssl-2.*
 
 USES=		perl5
