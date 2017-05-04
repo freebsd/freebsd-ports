@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.7.10.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		LOCAL/db
@@ -42,7 +42,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # volk/lib/volk_cpu.c:62: error: can't find a register in class 'BREG' while reloading 'asm'
 # volk/lib/volk_cpu.c:62: error: 'asm' operand has impossible constraints
 USES=		cmake:outsource compiler:c11 iconv perl5 pkgconfig pyqt:4 python:2.7 shebangfix
-SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in
+SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
+		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
+		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
 CMAKE_ARGS+=	-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig2.0"\
 		-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \
