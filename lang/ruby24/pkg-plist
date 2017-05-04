@@ -912,7 +912,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%DOCS%%%%RUBY_DOCDIR%%/README.ja.md
 %%DOCS%%%%RUBY_DOCDIR%%/README.md
 %%CAPIDOCS%%%%DOCS%%%%RUBY_DOCDIR%%/capi/.timestamp
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/.timestamp
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/annotated.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/bc_s.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/bdwn.png
@@ -938,6 +937,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0c/strerror_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0c/strerror_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0c/strerror_8c__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0d/readline_2conftest_8c.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0d/readline_2conftest_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0e/parser_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0e/parser_8h__dep__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0e/parser_8h__dep__incl.png
@@ -1863,8 +1864,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d48/nkf_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d48/nkf_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d48/nkf_8h__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d49/etc_2constdefs_8h.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d49/etc_2constdefs_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d49/return__sc_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d49/return__sc_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d4f/structtest__structure__4.html
@@ -2194,8 +2193,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dca/strscan_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dca/strscan_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dca/strscan_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd1/socket_2constdefs_8h.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd1/socket_2constdefs_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd7/ossl__config_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd7/ossl__config_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd9/reader_8c.html
@@ -2337,9 +2334,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d60/nkf_2nkf-utf8_2config_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d61/float3_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d61/float3_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d64/etc_2constdefs_8h__dep__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d64/etc_2constdefs_8h__dep__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d64/etc_2constdefs_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d69/structstruct__108byte.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d6a/proc_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d6a/proc_8c__incl.md5
@@ -3016,9 +3010,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d32/tcpserver_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/resolv_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/resolv_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/socket_2constdefs_8h__dep__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/socket_2constdefs_8h__dep__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/socket_2constdefs_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3a/cls__12byte_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3a/cls__12byte_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3a/cls__12byte_8c__incl.png
@@ -3734,8 +3725,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d9c/openssl__missing_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d9c/openssl__missing_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d9c/openssl__missing_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d9d/socket_2conftest_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d9d/socket_2conftest_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d9f/mips_2ffi_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d9f/mips_2ffi_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/da4/regenc_8h__incl.map
