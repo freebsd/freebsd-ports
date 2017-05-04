@@ -3,7 +3,7 @@
 
 PORTNAME=	mate-applets
 PORTVERSION=	1.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -23,7 +23,8 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig python tar:xz
+USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig \
+		python shebangfix tar:xz
 USE_MATE=	desktop icontheme libmateweather panel polkit settingsdaemon
 USE_XORG=	x11
 USE_GNOME=	gdkpixbuf2 gtksourceview2 introspection:build \
@@ -43,6 +44,9 @@ GLIB_SCHEMAS=	org.mate.panel.applet.charpick.gschema.xml \
 		org.mate.panel.applet.multiload.gschema.xml \
 		org.mate.panel.applet.timer.gschema.xml \
 		org.mate.stickynotes.gschema.xml
+
+SHEBANG_FILES=	invest-applet/invest/*.py \
+		invest-applet/invest/mate-invest-chart
 
 FIX_APPLETS=	accessx-status battstat \
 		invest-applet/data stickynotes trashapplet
