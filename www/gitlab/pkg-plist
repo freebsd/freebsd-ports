@@ -6138,7 +6138,7 @@
 @group wheel
 @dir /home
 @dir(git,git,) /home/git
-@dir(,git,2770) /home/git/repositories
+@dir(git,git,2770) /home/git/repositories
 @sample %%WWWDIR%%/config/gitlab.yml.sample
 @sample %%WWWDIR%%/config/unicorn.rb.sample
 @sample %%WWWDIR%%/config/resque.yml.sample
