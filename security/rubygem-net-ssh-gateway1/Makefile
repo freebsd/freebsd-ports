@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	net-ssh-gateway
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
