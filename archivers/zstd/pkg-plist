@@ -1,9 +1,9 @@
-bin/pzstd
 bin/unzstd
 bin/zstd
 bin/zstdcat
 bin/zstdgrep
 bin/zstdless
+bin/zstdmt
 include/zbuff.h
 include/zdict.h
 include/zstd.h
