@@ -9374,3 +9374,4 @@ net-mgmt/flow-tools-ng||2017-04-30|Has expired: Unfetchable for more than six mo
 devel/llvm36||2017-05-02|Obsolete and unmaintained upstream
 lang/clang36||2017-05-02|Obsolete and unmaintained upstream
 lang/ruby21||2017-05-02|Has expired: Upstream support ended
+devel/guiloader||2017-05-05|Unfetchable for more than six months (google code has gone away)
