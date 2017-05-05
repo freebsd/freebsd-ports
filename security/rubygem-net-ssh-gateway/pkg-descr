@@ -7,4 +7,4 @@ restricted access.
 * Easily manage forwarded ports
 * Establish Net::SSH connections through firewalls
 
-WWW: https://github.com/net-ssh/net-scp
+WWW: https://github.com/net-ssh/net-ssh-gateway
