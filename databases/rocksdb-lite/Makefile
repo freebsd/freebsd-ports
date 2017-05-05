@@ -1,7 +1,7 @@
 # Created by: David Thiel <lx@FreeBSD.org>
 # $FreeBSD$
 
-MAINTAINER=	lx@freebsd.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Persistent key-value store for fast storage environments (lite version)
 
 LITE=		yes

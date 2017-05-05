@@ -2,6 +2,7 @@
 
 PORTNAME=	owncloud
 PORTVERSION=	10.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -19,8 +20,6 @@ WANT_PHP_WEB=	yes
 
 OWNCLOUD_USERNAME?=	${WWWOWN}
 OWNCLOUD_GROUPNAME?=	${WWWGRP}
-
-IGNORE_FILES=	! -name *\.orig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
@@ -45,14 +44,10 @@ SQLITE_USE=	PHP=pdo_sqlite,sqlite3
 SMB_RUN_DEPENDS=	pecl-smbclient>=0.8.0:net/pecl-smbclient
 SSL_USE=	PHP=openssl
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
-		${WRKSRC}/apps/user_external/lib/smb.php
-
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} '${IGNORE_FILES}'
+		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
 
 .include <bsd.port.mk>

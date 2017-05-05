@@ -338,11 +338,15 @@ CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_DIGEST}
-GIT_AUTH_DIGEST_VERSION=	cc61b4a
+GIT_AUTH_DIGEST_VERSION=	519dc2a
 GH_ACCOUNT+=	atomx:auth_digest
 GH_PROJECT+=	nginx-http-auth-digest:auth_digest
 GH_TAGNAME+=	${GIT_AUTH_DIGEST_VERSION}:auth_digest
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_auth_digest}
+.else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_digest}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_KRB5}
@@ -373,10 +377,15 @@ USE_OPENLDAP=	yes
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_PAM}
-NGINX_AUTH_PAM_VERSION=	1.2
-MASTER_SITES+=	http://web.iti.upv.es/~sto/nginx/:auth_pam
-DISTFILES+=	ngx_http_auth_pam_module-${NGINX_AUTH_PAM_VERSION}.tar.gz:auth_pam
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM_VERSION}
+GIT_HTTP_AUTH_PAM_VERSION=	1.5.1
+GH_ACCOUNT+=	sto:auth_pam
+GH_PROJECT+=	ngx_http_auth_pam_module:auth_pam
+GH_TAGNAME+=	v${GIT_HTTP_AUTH_PAM_VERSION}:auth_pam
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_auth_pam}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_auth_pam}
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MHTTP_AUTH_REQ}
@@ -862,12 +871,15 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_lua_common.h  \
 .endif
 
 .if ${PORT_OPTIONS:MMEMC}
-NGINX_MEMC_VERSION=	0.17
+NGINX_MEMC_VERSION=	0.18
 GH_ACCOUNT+=	openresty:memc
 GH_PROJECT+=	memc-nginx-module:memc
 GH_TAGNAME+=	v${NGINX_MEMC_VERSION}:memc
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_memc}
+.else
 CONFIGURE_ARGS+=--add-module=${WRKSRC_memc}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_memc_util.c
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
@@ -905,7 +917,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.1.2
+PASSENGER_VERSION=	5.1.3
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 .if !empty(PORT_OPTIONS:MDSO)

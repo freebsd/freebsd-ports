@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libical
-PORTVERSION=	1.0.1
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -11,6 +11,8 @@ COMMENT=	Implementation of the IETF Calendaring and Scheduling protocols
 
 LICENSE_COMB=	dual
 LICENSE=	MPL LGPL21
+
+LIB_DEPENDS=	libicuuc.so:devel/icu
 
 USE_GITHUB=	yes
 

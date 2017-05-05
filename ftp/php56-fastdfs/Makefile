@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	php56-fastdfs
-PORTVERSION=	5.0.8
-PORTREVISION=	1
+PORTVERSION=	5.0.10
 CATEGORIES=	ftp
 
 MAINTAINER=	daniel@blodan.se
@@ -16,10 +15,10 @@ LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon \
 USE_GITHUB=	yes
 GH_ACCOUNT=	happyfish100
 GH_PROJECT=	fastdfs
-GH_TAGNAME=	87659981148a362812912b6d4752d281ac05f0b6
+GH_TAGNAME=	bcb7c56
 
 USES=			php:ext
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 PHP_VER=		56
 
 WRKSRC_SUBDIR=	php_client

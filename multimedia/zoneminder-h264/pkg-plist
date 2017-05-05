@@ -2984,6 +2984,7 @@ bin/zmx10.pl
 %%SITE_PERL%%/ZoneMinder/Control/FI8918W.pm
 %%SITE_PERL%%/ZoneMinder/Control/FI9821W_Y2k.pm
 %%SITE_PERL%%/ZoneMinder/Control/FI9831W.pm
+%%SITE_PERL%%/ZoneMinder/Control/HikVision.pm
 %%SITE_PERL%%/ZoneMinder/Control/IPCC7210W.pm
 %%SITE_PERL%%/ZoneMinder/Control/Keekoon.pm
 %%SITE_PERL%%/ZoneMinder/Control/LoftekSentinel.pm
@@ -6094,6 +6095,8 @@ share/zoneminder/db/zm_update-1.29.0.sql
 share/zoneminder/db/zm_update-1.29.1.sql
 share/zoneminder/db/zm_update-1.29.2.sql
 share/zoneminder/db/zm_update-1.30.0.sql
+share/zoneminder/db/zm_update-1.30.1.sql
+share/zoneminder/db/zm_update-1.30.2.sql
 %%WWWDIR%%/ajax/alarm.php
 %%WWWDIR%%/ajax/control.php
 %%WWWDIR%%/ajax/event.php
@@ -6124,8 +6127,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/app/Config/email.php.default
 %%WWWDIR%%/api/app/Config/routes.php
 %%WWWDIR%%/api/app/Console/Command/AppShell.php
-%%WWWDIR%%/api/app/Console/Command/Task/empty
-%%WWWDIR%%/api/app/Console/Templates/empty
 %%WWWDIR%%/api/app/Console/cake
 %%WWWDIR%%/api/app/Console/cake.bat
 %%WWWDIR%%/api/app/Console/cake.php
@@ -6134,7 +6135,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/app/Controller/Component/FilterComponent.php
 %%WWWDIR%%/api/app/Controller/Component/ImageComponent.php
 %%WWWDIR%%/api/app/Controller/Component/ScalerComponent.php
-%%WWWDIR%%/api/app/Controller/Component/empty
 %%WWWDIR%%/api/app/Controller/ConfigsController.php
 %%WWWDIR%%/api/app/Controller/ControlsController.php
 %%WWWDIR%%/api/app/Controller/EventsController.php
@@ -6147,13 +6147,9 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/app/Controller/StatesController.php
 %%WWWDIR%%/api/app/Controller/ZonePresetsController.php
 %%WWWDIR%%/api/app/Controller/ZonesController.php
-%%WWWDIR%%/api/app/Lib/empty
-%%WWWDIR%%/api/app/Locale/eng/LC_MESSAGES/empty
 %%WWWDIR%%/api/app/Model/AppModel.php
-%%WWWDIR%%/api/app/Model/Behavior/empty
 %%WWWDIR%%/api/app/Model/Config.php
 %%WWWDIR%%/api/app/Model/Control.php
-%%WWWDIR%%/api/app/Model/Datasource/empty
 %%WWWDIR%%/api/app/Model/Event.php
 %%WWWDIR%%/api/app/Model/Frame.php
 %%WWWDIR%%/api/app/Model/Host.php
@@ -6226,18 +6222,11 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/app/Plugin/Crud/View/CrudXmlView.php
 %%WWWDIR%%/api/app/Plugin/Crud/View/Elements/crud_panel.ctp
 %%WWWDIR%%/api/app/Plugin/Crud/composer.json
-%%WWWDIR%%/api/app/Plugin/empty
-%%WWWDIR%%/api/app/Test/Case/Controller/Component/empty
-%%WWWDIR%%/api/app/Test/Case/Model/Behavior/empty
-%%WWWDIR%%/api/app/Test/Case/View/Helper/empty
-%%WWWDIR%%/api/app/Test/Fixture/empty
-%%WWWDIR%%/api/app/Vendor/empty
 %%WWWDIR%%/api/app/View/Configs/json/edit.ctp
 %%WWWDIR%%/api/app/View/Configs/json/index.ctp
 %%WWWDIR%%/api/app/View/Configs/json/view.ctp
 %%WWWDIR%%/api/app/View/Configs/xml/index.ctp
 %%WWWDIR%%/api/app/View/Configs/xml/view.ctp
-%%WWWDIR%%/api/app/View/Elements/empty
 %%WWWDIR%%/api/app/View/Emails/html/default.ctp
 %%WWWDIR%%/api/app/View/Emails/text/default.ctp
 %%WWWDIR%%/api/app/View/Errors/error400.ctp
@@ -6268,7 +6257,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/app/View/Monitors/xml/index.ctp
 %%WWWDIR%%/api/app/View/Monitors/xml/view.ctp
 %%WWWDIR%%/api/app/View/Pages/home.ctp
-%%WWWDIR%%/api/app/View/Scaffolds/empty
 %%WWWDIR%%/api/app/View/Servers/json/edit.ctp
 %%WWWDIR%%/api/app/View/Servers/json/index.ctp
 %%WWWDIR%%/api/app/View/Servers/json/view.ctp
@@ -6280,7 +6268,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/app/View/View/Configs/json/view.ctp
 %%WWWDIR%%/api/app/View/View/Configs/xml/index.ctp
 %%WWWDIR%%/api/app/View/View/Configs/xml/view.ctp
-%%WWWDIR%%/api/app/View/View/Elements/empty
 %%WWWDIR%%/api/app/View/View/Emails/html/default.ctp
 %%WWWDIR%%/api/app/View/View/Emails/text/default.ctp
 %%WWWDIR%%/api/app/View/View/Errors/error400.ctp
@@ -6307,7 +6294,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/app/View/View/Monitors/xml/index.ctp
 %%WWWDIR%%/api/app/View/View/Monitors/xml/view.ctp
 %%WWWDIR%%/api/app/View/View/Pages/home.ctp
-%%WWWDIR%%/api/app/View/View/Scaffolds/empty
 %%WWWDIR%%/api/app/View/Zones/json/index.ctp
 %%WWWDIR%%/api/app/View/Zones/json/view.ctp
 %%WWWDIR%%/api/app/View/Zones/xml/index.ctp
@@ -6399,7 +6385,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/app/webroot/.htaccess
 %%WWWDIR%%/api/app/webroot/css/cake.generic.css
 %%WWWDIR%%/api/app/webroot/favicon.ico
-%%WWWDIR%%/api/app/webroot/files/empty
 %%WWWDIR%%/api/app/webroot/img/cake.icon.png
 %%WWWDIR%%/api/app/webroot/img/cake.power.gif
 %%WWWDIR%%/api/app/webroot/img/test-error-icon.png
@@ -6407,7 +6392,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/app/webroot/img/test-pass-icon.png
 %%WWWDIR%%/api/app/webroot/img/test-skip-icon.png
 %%WWWDIR%%/api/app/webroot/index.php
-%%WWWDIR%%/api/app/webroot/js/empty
 %%WWWDIR%%/api/app/webroot/test.php
 %%WWWDIR%%/api/build.properties
 %%WWWDIR%%/api/build.xml
@@ -6507,28 +6491,14 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Config/email.php.default
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Config/routes.php
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Console/Command/AppShell.php
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Console/Command/Task/empty
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Console/Templates/empty
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Console/cake
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Console/cake.bat
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Console/cake.php
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Controller/AppController.php
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Controller/Component/empty
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Controller/PagesController.php
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Lib/empty
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Locale/eng/LC_MESSAGES/empty
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Model/AppModel.php
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Model/Behavior/empty
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Model/Datasource/empty
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Plugin/empty
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Test/Case/AllTestsTest.php
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Test/Case/Controller/Component/empty
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Test/Case/Model/Behavior/empty
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Test/Case/View/Helper/empty
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Test/Fixture/empty
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/Vendor/empty
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/View/Elements/Flash/default.ctp
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/View/Elements/empty
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/View/Emails/html/default.ctp
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/View/Emails/text/default.ctp
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/View/Errors/error400.ctp
@@ -6544,12 +6514,10 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/View/Layouts/rss/default.ctp
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/View/Layouts/xml/default.ctp
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/View/Pages/home.ctp
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/View/Scaffolds/empty
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/index.php
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/.htaccess
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/css/cake.generic.css
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/favicon.ico
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/files/empty
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/img/cake.icon.png
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/img/cake.power.gif
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/img/test-error-icon.png
@@ -6557,7 +6525,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/img/test-pass-icon.png
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/img/test-skip-icon.png
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/index.php
-%%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/js/empty
 %%WWWDIR%%/api/lib/Cake/Console/Templates/skel/webroot/test.php
 %%WWWDIR%%/api/lib/Cake/Console/cake
 %%WWWDIR%%/api/lib/Cake/Console/cake.bat
@@ -7016,11 +6983,9 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Config/var_test.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Config/var_test2.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Console/Command/SampleShell.php
-%%WWWDIR%%/api/lib/Cake/Test/test_app/Console/Command/Task/empty
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Console/Templates/test/classes/test_object.ctp
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Console/Templates/test/views/admin_edit.ctp
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Controller/AppController.php
-%%WWWDIR%%/api/lib/Cake/Test/test_app/Controller/Component/empty
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Controller/PagesController.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Controller/TestAppsErrorController.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Controller/TestConfigsController.php
@@ -7134,7 +7099,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Command/ExampleShell.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Command/Task/OtherTaskTask.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Command/TestPluginShell.php
-%%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Templates/empty
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/Component/OtherComponent.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/Component/PluginsComponent.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/Component/TestPluginComponent.php
@@ -7192,9 +7156,7 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/root.js
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Config/bootstrap.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Command/ExampleShell.php
-%%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Command/Task/empty
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Command/WelcomeShell.php
-%%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Templates/empty
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Plugin/TestPluginTwo/View/Layouts/Emails/text/default.ctp
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Utility/TestAppEngine.php
 %%WWWDIR%%/api/lib/Cake/Test/test_app/Vendor/Test/MyTest.php
@@ -7278,7 +7240,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/lib/Cake/Test/test_app/View/Posts/sequencial_nocache.ctp
 %%WWWDIR%%/api/lib/Cake/Test/test_app/View/Posts/test_nocache_tags.ctp
 %%WWWDIR%%/api/lib/Cake/Test/test_app/View/Posts/xml/index.ctp
-%%WWWDIR%%/api/lib/Cake/Test/test_app/View/Scaffolds/empty
 %%WWWDIR%%/api/lib/Cake/Test/test_app/View/TestsApps/index.ctp
 %%WWWDIR%%/api/lib/Cake/Test/test_app/View/TestsApps/json/index.ctp
 %%WWWDIR%%/api/lib/Cake/Test/test_app/View/Themed/TestTheme/Elements/test_element.ctp
@@ -7299,7 +7260,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/js/theme.js
 %%WWWDIR%%/api/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/pdfs/theme_test.pdf
 %%WWWDIR%%/api/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/space image.text
-%%WWWDIR%%/api/lib/Cake/Test/test_app/tmp/empty
 %%WWWDIR%%/api/lib/Cake/Test/test_app/webroot/img/cake.power.gif
 %%WWWDIR%%/api/lib/Cake/Test/test_app/webroot/theme/test_theme/css/theme_webroot.css
 %%WWWDIR%%/api/lib/Cake/Test/test_app/webroot/theme/test_theme/css/webroot_test.css
@@ -7398,9 +7358,15 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/api/lib/Cake/bootstrap.php
 %%WWWDIR%%/cgi-bin/nph-zms
 %%WWWDIR%%/cgi-bin/zms
+%%WWWDIR%%/css/bootstrap.min.css
 %%WWWDIR%%/css/overlay.css
 %%WWWDIR%%/css/reset.css
 %%WWWDIR%%/css/spinner.css
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.eot
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.svg
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.ttf
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff
+%%WWWDIR%%/fonts/glyphicons-halflings-regular.woff2
 %%WWWDIR%%/graphics/favicon.ico
 %%WWWDIR%%/graphics/spinner.gif
 %%WWWDIR%%/graphics/transparent.gif
@@ -7458,6 +7424,7 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/skins/classic/css/classic/views/frames.css
 %%WWWDIR%%/skins/classic/css/classic/views/groups.css
 %%WWWDIR%%/skins/classic/css/classic/views/log.css
+%%WWWDIR%%/skins/classic/css/classic/views/login.css
 %%WWWDIR%%/skins/classic/css/classic/views/monitor.css
 %%WWWDIR%%/skins/classic/css/classic/views/montage.css
 %%WWWDIR%%/skins/classic/css/classic/views/montage_2wide.css
@@ -7558,7 +7525,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/skins/classic/includes/control_functions.php
 %%WWWDIR%%/skins/classic/includes/export_functions.php
 %%WWWDIR%%/skins/classic/includes/functions.php
-%%WWWDIR%%/skins/classic/includes/init.php
 %%WWWDIR%%/skins/classic/includes/timeline_functions.php
 %%WWWDIR%%/skins/classic/js/classic.js
 %%WWWDIR%%/skins/classic/js/dark.js
@@ -7596,6 +7562,7 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/skins/classic/views/js/console.js
 %%WWWDIR%%/skins/classic/views/js/console.js.php
 %%WWWDIR%%/skins/classic/views/js/control.js
+%%WWWDIR%%/skins/classic/views/js/controlcap.js
 %%WWWDIR%%/skins/classic/views/js/controlpreset.js
 %%WWWDIR%%/skins/classic/views/js/controlpreset.js.php
 %%WWWDIR%%/skins/classic/views/js/cycle.js
@@ -7615,6 +7582,7 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/skins/classic/views/js/groups.js
 %%WWWDIR%%/skins/classic/views/js/log.js
 %%WWWDIR%%/skins/classic/views/js/login.js
+%%WWWDIR%%/skins/classic/views/js/login.js.php
 %%WWWDIR%%/skins/classic/views/js/monitor.js
 %%WWWDIR%%/skins/classic/views/js/monitor.js.php
 %%WWWDIR%%/skins/classic/views/js/monitorpreset.js
@@ -7624,7 +7592,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/skins/classic/views/js/onvifprobe.js
 %%WWWDIR%%/skins/classic/views/js/options.js.php
 %%WWWDIR%%/skins/classic/views/js/plugin.js
-%%WWWDIR%%/skins/classic/views/js/plugin.js.php
 %%WWWDIR%%/skins/classic/views/js/postlogin.js.php
 %%WWWDIR%%/skins/classic/views/js/server.js
 %%WWWDIR%%/skins/classic/views/js/state.js
@@ -7651,7 +7618,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/skins/classic/views/montage.php
 %%WWWDIR%%/skins/classic/views/montagereview.php
 %%WWWDIR%%/skins/classic/views/none.php
-%%WWWDIR%%/skins/classic/views/nph-zms
 %%WWWDIR%%/skins/classic/views/onvifprobe.php
 %%WWWDIR%%/skins/classic/views/optionhelp.php
 %%WWWDIR%%/skins/classic/views/options.php
@@ -7673,7 +7639,6 @@ share/zoneminder/db/zm_update-1.30.0.sql
 %%WWWDIR%%/tools/mootools/mootools-core.js
 %%WWWDIR%%/tools/mootools/mootools-more-1.5.1.js
 %%WWWDIR%%/tools/mootools/mootools-more.js
-%%WWWDIR%%/views/file.php
 %%WWWDIR%%/views/image.php
 %%WWWDIR%%/views/view_video.php
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/api/app/tmp

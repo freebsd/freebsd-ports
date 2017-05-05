@@ -85,6 +85,8 @@ post-patch:
 	55readcd 55scgcheck 55scgskeleton 55rscsi 85man
 	@${RM} ${WRKSRC}/scsilib/TARGETS/${i}
 .endfor
+	@${REINPLACE_CMD} -e 's|"$$ac_declaration"|"$$ac_declarationXXX"|g' \
+		${WRKSRC}/configure
 .for i in include/schily.h libscg/scsitransp.c libschily/fexec.c \
 	libschily/stdio/fgetline.c
 	@${REINPLACE_CMD} -E -e 's|fexecve|js_fexecve|g; \
@@ -97,7 +99,7 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|(^SUBDIRS.+) utils|\1|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(^gladedir.+=).+|\1 ${DATADIR}|' \
 		${WRKSRC}/xdao/Makefile.in
-	@${REINPLACE_CMD} -E -e 's|[&]?(pixmap_ == )0|\1nullptr|g' \
+	@${REINPLACE_CMD} -E -e 's|[&]?(pixmap_) == 0|!\1|g' \
 		${WRKSRC}/xdao/SampleDisplay.cc
 	@${REINPLACE_CMD} -E -e \
 		's|(SET_CDRDAO_PATH.+path=)(cdrdao)|\1${LOCALBASE}\/bin\/\2|g' \

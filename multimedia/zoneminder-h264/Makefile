@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneminder-h264
-PORTVERSION=	1.30.20161104
-PORTREVISION=	3
+PORTVERSION=	1.30.20170222
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -38,7 +37,7 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 		zip:archivers/zip
 
 USE_GITHUB=	yes
-GH_TUPLE=	zoneminder:ZoneMinder:a2f782d \
+GH_TUPLE=	zoneminder:ZoneMinder:e723b6d \
 		FriendsOfCake:crud:c3976f1:crud
 
 USES=		cmake jpeg mysql perl5 php shebangfix ssl

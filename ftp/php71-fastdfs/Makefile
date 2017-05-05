@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fastdfs
-PORTVERSION=	5.0.9
+PORTVERSION=	5.0.10
 CATEGORIES=	ftp
 PKGNAMEPREFIX=	php71-
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon \
 USE_GITHUB=	yes
 GH_ACCOUNT=	happyfish100
 GH_PROJECT=	fastdfs
-GH_TAGNAME=	5d0d1ef
+GH_TAGNAME=	bcb7c56
 
 USES=			php:ext
 IGNORE_WITH_PHP=	56 70

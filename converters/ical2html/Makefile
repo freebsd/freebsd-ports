@@ -3,7 +3,7 @@
 
 PORTNAME=	ical2html
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters
 MASTER_SITES=	http://www.w3.org/Tools/Ical2html/
 
@@ -16,5 +16,11 @@ GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/libical -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} '/icalerror_errors_are_fatal/d' \
+		${WRKSRC}/ical2html.c \
+		${WRKSRC}/icalfilter.c \
+		${WRKSRC}/icalmerge.c
 
 .include <bsd.port.mk>

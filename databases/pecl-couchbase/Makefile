@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	couchbase
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	databases
 
 MAINTAINER=	johnpupu@gmail.com

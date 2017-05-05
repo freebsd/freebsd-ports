@@ -1,6 +1,6 @@
---- sql/CMakeLists.txt.orig	2013-05-22 01:09:51.000000000 +0300
-+++ sql/CMakeLists.txt	2013-06-08 14:13:06.000000000 +0300
-@@ -268,6 +268,7 @@
+--- sql/CMakeLists.txt.orig	2017-04-30 11:09:31 UTC
++++ sql/CMakeLists.txt
+@@ -276,6 +276,7 @@ ADD_CUSTOM_TARGET(distclean
    VERBATIM
    )
  
@@ -8,7 +8,7 @@
  IF(INSTALL_LAYOUT STREQUAL "STANDALONE")
  
  # Copy db.opt into data/test/
-@@ -311,6 +312,7 @@
+@@ -319,6 +320,7 @@ ELSE()
    INSTALL(FILES ${DUMMY_FILE} DESTINATION data/mysql COMPONENT DataFiles)
  ENDIF(WIN32 AND MYSQLD_EXECUTABLE)
  ENDIF(INSTALL_LAYOUT STREQUAL "STANDALONE")
@@ -16,7 +16,7 @@
  
  IF(WIN32)
    SET(my_bootstrap_sql ${CMAKE_CURRENT_BINARY_DIR}/my_bootstrap.sql)
-@@ -353,8 +355,10 @@
+@@ -361,8 +363,10 @@ IF(WIN32)
    TARGET_LINK_LIBRARIES(mysql_upgrade_service mysys winservice)
  ENDIF(WIN32)
  

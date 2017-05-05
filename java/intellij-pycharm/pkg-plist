@@ -2088,3 +2088,5 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/terminal/jediterm-bash.in
 %%DATADIR%%/plugins/terminal/lib/resources_en.jar
 %%DATADIR%%/plugins/terminal/lib/terminal.jar
+%%DATADIR%%/plugins/yaml/lib/resources_en.jar
+%%DATADIR%%/plugins/yaml/lib/yaml.jar

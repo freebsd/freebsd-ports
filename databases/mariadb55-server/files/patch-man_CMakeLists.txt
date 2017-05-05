@@ -1,6 +1,6 @@
---- man/CMakeLists.txt.orig	2014-06-13 13:58:21.397251542 +0300
-+++ man/CMakeLists.txt	2014-06-13 14:00:24.132245109 +0300
-@@ -33,7 +33,8 @@
+--- man/CMakeLists.txt.orig	2017-04-30 11:09:29 UTC
++++ man/CMakeLists.txt
+@@ -34,7 +34,8 @@ SET(MAN1_TEST mysql-stress-test.pl.1 mys
  
  INSTALL(FILES ${MAN1_SERVER} DESTINATION ${INSTALL_MANDIR}/man1 COMPONENT ManPagesServer)
  INSTALL(FILES ${MAN8_SERVER} DESTINATION ${INSTALL_MANDIR}/man8 COMPONENT ManPagesServer)

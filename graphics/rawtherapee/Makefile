@@ -76,6 +76,8 @@ OPTIMIZED_CFLAGS_CFLAGS=	-O3 -funroll-loops -msse2
 # -------------------------------------------------------------------
 #
 
+BROKEN_aarch64=		fails to build: gcc5: error: unrecognized command line option -msse2
+
 .if ${OPSYS} == FreeBSD
 .if ${OSVERSION} >= 1200000
 # don't waste everybody's time with Tier-2 and moving targets.

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	turbolinks-source
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

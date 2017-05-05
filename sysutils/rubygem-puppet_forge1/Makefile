@@ -6,7 +6,7 @@ CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby client for the Puppet Forge API
 
 LICENSE=	APACHE20

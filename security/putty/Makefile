@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	putty
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -23,8 +23,8 @@ CPE_VENDOR=	simon_tatham
 PLIST_FILES=	bin/plink bin/pscp bin/psftp bin/puttygen
 PLIST_FILES+=	man/man1/plink.1.gz man/man1/pscp.1.gz man/man1/psftp.1.gz man/man1/puttygen.1.gz
 
-OPTIONS_DEFINE=	GSSAPI GTK2
-OPTIONS_DEFAULT=GSSAPI GTK2
+OPTIONS_DEFINE=	GSSAPI GTK3
+OPTIONS_DEFAULT=GSSAPI GTK3
 
 CONFLICTS_INSTALL?=	pssh-[0-9]* putty-nogtk-[0-9]*
 
@@ -33,13 +33,13 @@ CONFLICTS_INSTALL?=	pssh-[0-9]* putty-nogtk-[0-9]*
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP -DIPV6
 LDFLAGS+=	-Wl,--as-needed
 
-.if ${PORT_OPTIONS:MGTK2} && !defined(WITHOUT_X11)
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+.if ${PORT_OPTIONS:MGTK3} && !defined(WITHOUT_X11)
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11
 
-PLIST_FILES+=	bin/pterm bin/putty bin/puttytel
-PLIST_FILES+=	man/man1/pterm.1.gz man/man1/putty.1.gz man/man1/puttytel.1.gz
-MAKE_ARGS+=	PUTTY_WITH_GTK=yes GTK_CONFIG="pkg-config gtk+-2.0 x11 --cflags"
+PLIST_FILES+=	bin/pageant bin/pterm bin/putty bin/puttytel
+PLIST_FILES+=	man/man1/pageant.1.gz man/man1/pterm.1.gz man/man1/putty.1.gz man/man1/puttytel.1.gz
+MAKE_ARGS+=	PUTTY_WITH_GTK=yes GTK_CONFIG="pkg-config gtk+-3.0 x11 --cflags"
 .else
 MAKE_ARGS+=	GTK_CONFIG=:
 .endif

@@ -3901,6 +3901,7 @@
     SUBDIR += pecl-weakref
     SUBDIR += pecl-xhprof
     SUBDIR += pecl-yac
+    SUBDIR += pecl-yaconf
     SUBDIR += pecl-zookeeper
     SUBDIR += pep8
     SUBDIR += performance

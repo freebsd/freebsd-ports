@@ -3,6 +3,7 @@
 
 PORTNAME=	libdbusmenu
 PORTVERSION=	16.04.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/243440794/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
@@ -21,12 +22,14 @@ BUILD_DEPENDS=	vapigen:lang/vala \
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig python:run shebangfix
 USE_GNOME=	gnomedocutils:build glib20 intltool intlhack libxslt \
 		introspection:build gtk30
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+SHEBANG_FILES=	tools/dbusmenu-bench
 
 PLIST_SUB=	VERSION="0.4"
 

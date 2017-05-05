@@ -1,0 +1,7 @@
+DNSDiag provides a handful of tools to measure and diagnose your DNS 
+performance and integrity. Using dnsping, dnstraceroute and dnseval 
+tools you can measure your DNS response quality from delay and loss 
+perspective as well as tracing the path your DNS query takes to get 
+to DNS server.
+
+WWW: https://github.com/farrokhi/dnsdiag

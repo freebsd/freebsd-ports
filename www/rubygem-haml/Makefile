@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	haml
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,6 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
-PLIST_FILES=	bin/haml \
-		${GEM_LIB_DIR}/test/templates/standard_ugly.haml
+PLIST_FILES=	bin/haml
 
 .include <bsd.port.mk>
