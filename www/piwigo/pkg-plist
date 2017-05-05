@@ -1070,8 +1070,10 @@
 %%WWWDIR%%/language/et_EE/install.lang.php
 %%WWWDIR%%/language/et_EE/iso.txt
 %%WWWDIR%%/language/et_EE/upgrade.lang.php
+%%WWWDIR%%/language/eu_ES/admin.lang.php
 %%WWWDIR%%/language/eu_ES/common.lang.php
 %%WWWDIR%%/language/eu_ES/eu_ES.jpg
+%%WWWDIR%%/language/eu_ES/install.lang.php
 %%WWWDIR%%/language/eu_ES/iso.txt
 %%WWWDIR%%/language/fa_IR/about.html
 %%WWWDIR%%/language/fa_IR/admin.lang.php
@@ -2123,6 +2125,8 @@
 %%WWWDIR%%/plugins/LocalFilesEditor/language/et_EE/description.txt
 %%WWWDIR%%/plugins/LocalFilesEditor/language/et_EE/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/et_EE/plugin.lang.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/eu_ES/description.txt
+%%WWWDIR%%/plugins/LocalFilesEditor/language/eu_ES/plugin.lang.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/fa_IR/description.txt
 %%WWWDIR%%/plugins/LocalFilesEditor/language/fa_IR/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/fa_IR/plugin.lang.php
@@ -2397,6 +2401,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/sr_RS/index.php
 %%WWWDIR%%/plugins/TakeATour/language/sr_RS/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/sr_RS/tour_2_7_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/sr_RS/tour_2_8_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/sv_SE/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/sv_SE/index.php
 %%WWWDIR%%/plugins/TakeATour/language/sv_SE/plugin.lang.php
@@ -2409,6 +2414,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/tr_TR/index.php
 %%WWWDIR%%/plugins/TakeATour/language/tr_TR/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/tr_TR/tour_2_7_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/tr_TR/tour_2_8_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/tr_TR/tour_first_contact.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/tr_TR/tour_privacy.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/uk_UA/description.txt
@@ -2473,6 +2479,7 @@
 %%WWWDIR%%/plugins/language_switch/language/es_ES/index.php
 %%WWWDIR%%/plugins/language_switch/language/et_EE/description.txt
 %%WWWDIR%%/plugins/language_switch/language/et_EE/index.php
+%%WWWDIR%%/plugins/language_switch/language/eu_ES/description.txt
 %%WWWDIR%%/plugins/language_switch/language/fa_IR/description.txt
 %%WWWDIR%%/plugins/language_switch/language/fa_IR/index.php
 %%WWWDIR%%/plugins/language_switch/language/fi_FI/description.txt
@@ -3146,6 +3153,7 @@
 %%WWWDIR%%/themes/elegant/language/eo_EO/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/es_ES/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/et_EE/theme.lang.php
+%%WWWDIR%%/themes/elegant/language/eu_ES/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/fa_IR/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/fi_FI/theme.lang.php
 %%WWWDIR%%/themes/elegant/language/fr_CA/index.php
@@ -3246,6 +3254,7 @@
 %%WWWDIR%%/themes/smartpocket/language/es_MX/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/et_EE/index.php
 %%WWWDIR%%/themes/smartpocket/language/et_EE/theme.lang.php
+%%WWWDIR%%/themes/smartpocket/language/eu_ES/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/fa_IR/index.php
 %%WWWDIR%%/themes/smartpocket/language/fa_IR/theme.lang.php
 %%WWWDIR%%/themes/smartpocket/language/fi_FI/index.php
