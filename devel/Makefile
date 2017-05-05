@@ -831,7 +831,6 @@
     SUBDIR += guichan
     SUBDIR += guikachu
     SUBDIR += guile-lib
-    SUBDIR += guiloader
     SUBDIR += gumbo
     SUBDIR += gvfs
     SUBDIR += gvp
