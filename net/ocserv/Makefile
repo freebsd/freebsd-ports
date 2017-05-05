@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.11.7
+PORTVERSION=	0.11.8
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
+MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/ \
+		LOCAL/cpm
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Server implementing the AnyConnect SSL VPN protocol
@@ -41,6 +42,8 @@ GROUPS=		_ocserv
 
 USE_RC_SUBR=	ocserv
 
+PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
+
 OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
@@ -54,8 +57,8 @@ post-patch:
 	@${RM} ${WRKSRC}/doc/*.8
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ocserv/
-	@${MKDIR} ${STAGEDIR}/var/run/ocserv/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ocserv
+	@${MKDIR} ${STAGEDIR}/var/run/ocserv
 	${INSTALL_DATA} ${FILESDIR}/ocserv.conf ${STAGEDIR}${PREFIX}/etc/ocserv/conf.sample
 
 post-install-DOCS-on:

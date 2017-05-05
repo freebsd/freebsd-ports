@@ -6,4 +6,4 @@ man/man8/ocpasswd.8.gz
 man/man8/ocserv.8.gz
 @sample etc/ocserv/conf.sample
 sbin/ocserv
-@dir /var/run/ocserv
+@dir(%%USERS%%,%%GROUPS%%,750) /var/run/ocserv
