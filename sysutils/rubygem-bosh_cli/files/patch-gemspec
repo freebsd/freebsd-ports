@@ -1,4 +1,4 @@
---- bosh_cli.gemspec.orig	2017-02-17 12:08:55 UTC
+--- bosh_cli.gemspec.orig	2017-05-05 12:58:11 UTC
 +++ bosh_cli.gemspec
 @@ -25,19 +25,19 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -17,9 +17,10 @@
 +      s.add_runtime_dependency(%q<terminal-table>.freeze, [">= 1.4.3"])
        s.add_runtime_dependency(%q<blobstore_client>.freeze, ["~> 1.3262.24.0"])
 -      s.add_runtime_dependency(%q<net-ssh>.freeze, ["= 2.9.2"])
-+      s.add_runtime_dependency(%q<net-ssh>.freeze, [">= 2.9.2"])
-       s.add_runtime_dependency(%q<net-ssh-gateway>.freeze, ["~> 1.2.0"])
+-      s.add_runtime_dependency(%q<net-ssh-gateway>.freeze, ["~> 1.2.0"])
 -      s.add_runtime_dependency(%q<net-scp>.freeze, ["~> 1.1.0"])
++      s.add_runtime_dependency(%q<net-ssh>.freeze, [">= 2.9.2"])
++      s.add_runtime_dependency(%q<net-ssh-gateway>.freeze, ["~> 1.2"])
 +      s.add_runtime_dependency(%q<net-scp>.freeze, [">= 1.1.0"])
        s.add_runtime_dependency(%q<netaddr>.freeze, ["~> 1.5.0"])
        s.add_runtime_dependency(%q<minitar>.freeze, ["~> 0.5.4"])
