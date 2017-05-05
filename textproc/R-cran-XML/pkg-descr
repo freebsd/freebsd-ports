@@ -2,4 +2,4 @@ This package provides many approaches for both reading and creating XML
 (and HTML) documents (including DTDs), both local and accessible via HTTP or
 FTP. It also offers access to an XPath "interpreter".
 
-WWW: http://cran.r-project.org/web/packages/XML/
+WWW: https://cran.r-project.org/web/packages/XML/

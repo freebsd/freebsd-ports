@@ -6,7 +6,7 @@ PORTVERSION=	3.1.3
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding for VTE
 
 LICENSE=	LGPL21+
