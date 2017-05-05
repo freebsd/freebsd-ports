@@ -18,6 +18,8 @@
 #                               Set it to user to run minio under
 # minio_group (str):            Set to "minio" by default.
 #                               Set it to group to run minio under
+# minio_logfile (str):          Set to "/var/log/minio.log" by default.
+#                               Set it to file where stdout/stderr are logged.
 #
 
 . /etc/rc.subr
@@ -33,11 +35,12 @@ load_rc_config ${name}
 : ${minio_address=":9000"}
 : ${minio_user:="%%USER%%"}
 : ${minio_group:="%%GROUP%%"}
+: ${minio_logfile:="/var/log/minio.log"}
 
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/bin/minio"
 command="/usr/sbin/daemon"
-command_args="-f -c -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" server --address=\"${minio_address}\" --quiet ${minio_disks}"
+command_args="-c -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" server --address=\"${minio_address}\" --quiet ${minio_disks} < /dev/null > ${minio_logfile} 2>&1"
 
 start_precmd="minio_startprecmd"
 
@@ -50,6 +53,10 @@ minio_startprecmd()
 	if [ ! -d "${minio_config}" ]; then
 		install -d -o "${minio_user}" -g "${minio_group}" "${minio_config}"
 	fi
+
+        if [ ! -e "${minio_logfile}" ]; then
+                install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${minio_logfile}"
+        fi
 
 	for disk in "${minio_disks}"; do
 		if [ ! -d "${disk}" ]; then
