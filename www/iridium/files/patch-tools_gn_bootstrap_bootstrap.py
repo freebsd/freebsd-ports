@@ -1,4 +1,4 @@
---- tools/gn/bootstrap/bootstrap.py.orig	2017-04-19 19:06:54 UTC
+--- tools/gn/bootstrap/bootstrap.py.orig	2017-04-24 14:40:24 UTC
 +++ tools/gn/bootstrap/bootstrap.py
 @@ -23,6 +23,7 @@ import os
  import shutil
@@ -19,7 +19,7 @@
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -624,6 +626,41 @@ def write_gn_ninja(path, root_gen_dir, o
+@@ -625,6 +627,40 @@ def write_gn_ninja(path, root_gen_dir, o
          'base/third_party/libevent/epoll.c',
      ])
  
@@ -36,7 +36,6 @@
 +    static_libraries['base']['sources'].extend([
 +        'base/allocator/allocator_shim.cc',
 +        'base/allocator/allocator_shim_default_dispatch_to_glibc.cc',
-+        'base/callback_helpers.cc',
 +        'base/memory/shared_memory_posix.cc',
 +        'base/nix/xdg_util.cc',
 +        'base/process/memory_stubs.cc',
