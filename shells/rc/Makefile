@@ -17,7 +17,7 @@ CONFIGURE_ARGS=	--with-history
 OPTIONS_DEFINE=	READLINE
 
 READLINE_USES=		readline
-READLINE_CONFIGURE_WITH=--with-readline
+READLINE_CONFIGURE_WITH=readline
 READLINE_MAKE_ARGS_OFF=	CFLAGS="${CFLAGS} -static"
 
 .include <bsd.port.mk>
