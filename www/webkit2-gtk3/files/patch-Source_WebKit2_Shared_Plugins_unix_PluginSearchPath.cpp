@@ -1,6 +1,6 @@
---- Source/WebKit2/UIProcess/Plugins/unix/PluginInfoStoreUnix.cpp.orig	2015-01-15 18:15:59.000000000 +0100
-+++ Source/WebKit2/UIProcess/Plugins/unix/PluginInfoStoreUnix.cpp	2015-01-22 15:16:17.352196197 +0100
-@@ -48,6 +48,7 @@
+--- Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp.orig	2016-01-28 08:55:09 UTC
++++ Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp
+@@ -50,6 +50,7 @@ Vector<String> pluginsDirectories()
  
      result.append(homeDirectoryPath() + "/.mozilla/plugins");
      result.append(homeDirectoryPath() + "/.netscape/plugins");
