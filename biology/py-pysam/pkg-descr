@@ -1,0 +1,10 @@
+pysam is a lightweight wrapper of the htslib C-API and provides facilities to
+read and write SAM/BAM/VCF/BCF/BED/GFF/GTF/FASTA/FASTQ files as well as access
+to the command line functionality of the samtools and bcftools packages. The
+module supports compression and random access through indexing.
+
+This module provides a low-level wrapper around the htslib C-API as using
+cython and a high-level API for convenient access to the data within standard
+genomic file formats.
+
+WWW: https://pypi.python.org/pypi/pysam
