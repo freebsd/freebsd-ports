@@ -22,6 +22,7 @@
     SUBDIR += R-cran-RcppArmadillo
     SUBDIR += R-cran-RcppEigen
     SUBDIR += R-cran-Rmpfr
+    SUBDIR += R-cran-Rsolnp
     SUBDIR += R-cran-SparseM
     SUBDIR += R-cran-VGAM
     SUBDIR += R-cran-Zelig
@@ -61,6 +62,7 @@
     SUBDIR += R-cran-pbkrtest
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-quadprog
+    SUBDIR += R-cran-qualityTools
     SUBDIR += R-cran-quantreg
     SUBDIR += R-cran-rgenoud
     SUBDIR += R-cran-sandwich
