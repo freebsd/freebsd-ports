@@ -61,6 +61,7 @@
     SUBDIR += R-cran-pbkrtest
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-quadprog
+    SUBDIR += R-cran-qualityTools
     SUBDIR += R-cran-quantreg
     SUBDIR += R-cran-rgenoud
     SUBDIR += R-cran-sandwich
