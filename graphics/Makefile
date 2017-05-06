@@ -838,6 +838,7 @@
     SUBDIR += py-cairocffi
     SUBDIR += py-chart
     SUBDIR += py-django-easy-thumbnails
+    SUBDIR += py-djvulibre
     SUBDIR += py-editobj
     SUBDIR += py-exif
     SUBDIR += py-exifread
