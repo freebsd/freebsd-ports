@@ -22,7 +22,8 @@ PLIST_SUB=	VERSION="2.4"
 
 BUILD_DEPENDS=	gm4:devel/m4
 
-USES+=		gettext gmake libtool pathfix perl5 pkgconfig
+USES+=		compiler:c++11-lang gettext gmake libtool pathfix \
+		perl5 pkgconfig
 USE_GNOME=	glib20 libsigc++20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
