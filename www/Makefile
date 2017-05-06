@@ -1591,6 +1591,7 @@
     SUBDIR += py-django-simple-history
     SUBDIR += py-django-social-auth
     SUBDIR += py-django-sortedm2m
+    SUBDIR += py-django-star-ratings
     SUBDIR += py-django-statici18n
     SUBDIR += py-django-storages
     SUBDIR += py-django-subdomains
