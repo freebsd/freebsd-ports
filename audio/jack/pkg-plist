@@ -53,6 +53,7 @@ lib/jack/intime.so
 lib/jack/jack_dummy.so
 lib/jack/jack_net.so
 lib/jack/jack_oss.so
+%%SNDIO%%lib/jack/jack_sndio.so
 lib/libjack.so
 lib/libjack.so.0
 lib/libjack.so.0.0.28

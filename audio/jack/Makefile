@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jackit
-PORTVERSION=	0.124.1
-PORTREVISION=	6
+PORTVERSION=	0.125.0
 CATEGORIES=	audio
 MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
@@ -21,18 +20,18 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig libtool bdb
+USES=		gmake pathfix pkgconfig libtool localbase bdb
 USE_RC_SUBR=	jackd
 
 CONFIGURE_ARGS=	--disable-portaudio \
+		--enable-force-install \
 		--with-default-tmpdir=/tmp
 
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
+LIBS+=	-L${BDB_LIB_DIR}
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	ALSA DOXYGEN READLINE
+OPTIONS_DEFINE=	ALSA DOXYGEN READLINE SNDIO
 OPTIONS_DEFAULT=READLINE
 OPTIONS_SUB=	yes
 
@@ -46,6 +45,9 @@ DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN="false"
 
 READLINE_CONFIGURE_ENV_OFF=	ac_cv_lib_readline_readline=no \
 		ac_cv_header_readline_chardefs_h=no
+
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CONFIGURE_ENABLE=	sndio
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|define USE_MLOCK|undef USE_MLOCK|' \
