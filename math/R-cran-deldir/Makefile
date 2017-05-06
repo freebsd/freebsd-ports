@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	deldir
-DISTVERSION=	0.1-12
+DISTVERSION=	0.1-14
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,6 +11,6 @@ COMMENT=	Delaunay Triangulation and Dirichlet (Voronoi) Tessellation
 
 LICENSE=	GPLv2+
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>
