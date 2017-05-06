@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	caffe
-PORTVERSION=	1.0.0.r5
-PORTREVISION=	3
+PORTVERSION=	1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	eric@camachat.org
@@ -10,6 +9,8 @@ COMMENT=	Fast open framework for deep learning
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+CONFLICTS_INSTALL=	caffe2-*
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/bin/cython:lang/cython \
@@ -49,7 +50,6 @@ PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} DATADIR=${DATADIR}
 
 GH_ACCOUNT=	BVLC
 USE_GITHUB=	yes
-GH_TAGNAME=	rc5
 
 post-extract:
 	@${CP} -v ${.CURDIR}/files/Makefile.config ${WRKSRC}/
