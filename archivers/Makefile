@@ -173,6 +173,7 @@
     SUBDIR += py-lzma
     SUBDIR += py-pyliblzma
     SUBDIR += py-python-lhafile
+    SUBDIR += py-python-lzo
     SUBDIR += py-python-snappy
     SUBDIR += py-rarfile
     SUBDIR += py-rcssmin

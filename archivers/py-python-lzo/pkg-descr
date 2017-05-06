@@ -1,0 +1,10 @@
+This module provides Python bindings for the LZO data compression library.
+
+LZO is a portable lossless data compression library written in ANSI C.
+It offers pretty fast compression and very fast decompression. Decompression
+requires no memory.
+
+In addition there are slower compression levels achieving a quite competitive
+compression ratio while still decompressing at this very high speed.
+
+WWW: https://pypi.python.org/pypi/python-lzo
