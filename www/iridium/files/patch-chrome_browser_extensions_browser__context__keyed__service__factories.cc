@@ -14,7 +14,7 @@
    extensions::InputImeAPI::GetFactoryInstance();
    extensions::InputMethodAPI::GetFactoryInstance();
 -#elif defined(OS_LINUX) || defined(OS_WIN)
-+#elif defined(OS_LINUX) || defined(OS_WIN) && !defined(OS_BSD)
++#elif defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
    extensions::InputImeAPI::GetFactoryInstance();
  #endif
    extensions::LanguageSettingsPrivateDelegateFactory::GetInstance();
