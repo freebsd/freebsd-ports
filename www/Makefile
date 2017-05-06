@@ -1503,6 +1503,7 @@
     SUBDIR += py-amf
     SUBDIR += py-apachelog
     SUBDIR += py-autobahn
+    SUBDIR += py-aws-requests-auth
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
     SUBDIR += py-beautifulsoup32
