@@ -39,6 +39,7 @@
     SUBDIR += R-cran-microbenchmark
     SUBDIR += R-cran-pkgmaker
     SUBDIR += R-cran-plyr
+    SUBDIR += R-cran-praise
     SUBDIR += R-cran-proto
     SUBDIR += R-cran-randomForest
     SUBDIR += R-cran-registry
