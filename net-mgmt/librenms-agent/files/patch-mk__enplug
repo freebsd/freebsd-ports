@@ -1,0 +1,13 @@
+--- mk_enplug.orig	2016-08-01 16:26:27 UTC
++++ mk_enplug
+@@ -14,8 +14,8 @@
+ #
+ # See http://www.gnu.org/licenses/gpl.txt for the full license
+ 
+-plugdir=/usr/lib/check_mk_agent/plugins
+-repodir=/usr/lib/check_mk_agent/repo
++plugdir=%%PREFIX%%/lib/check_mk_agent/plugins
++repodir=%%PREFIX%%/lib/check_mk_agent/repo
+ 
+ findscripts() {
+     find ${repodir} -type f | sed -e "s#$repodir/##g"
