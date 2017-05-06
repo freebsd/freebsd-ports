@@ -377,6 +377,7 @@
     SUBDIR += gnushogi
     SUBDIR += gnustep-ladder
     SUBDIR += gnustep-sudoku
+    SUBDIR += gogrepo
     SUBDIR += golddig
     SUBDIR += goldencheetah
     SUBDIR += golly
