@@ -83,6 +83,7 @@
     SUBDIR += psi88
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
+    SUBDIR += py-bx-python
     SUBDIR += py-pysam
     SUBDIR += pycogent
     SUBDIR += pyfasta
