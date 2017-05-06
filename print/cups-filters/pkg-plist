@@ -111,7 +111,7 @@ share/cups/ppdc/escp.h
 %%BRAILLE%%share/cups/ppdc/imagemagick.defs
 %%BRAILLE%%share/cups/ppdc/index.defs
 %%BRAILLE%%share/cups/ppdc/liblouis.defs
-%%BRAILLE%%share/cups/ppdc/liblouis1.defs
+%%BRAILLE%%share/cups/ppdc/liblouis1.defs.gen.in
 %%BRAILLE%%share/cups/ppdc/liblouis2.defs
 %%BRAILLE%%share/cups/ppdc/liblouis3.defs
 %%BRAILLE%%share/cups/ppdc/liblouis4.defs
