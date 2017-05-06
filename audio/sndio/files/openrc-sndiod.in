@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+name=sndiod
+rcvar=sndiod_enable
+command="/usr/local/bin/sndiod"
+
