@@ -109,6 +109,7 @@
     SUBDIR += lanmap
     SUBDIR += lg
     SUBDIR += librenms
+    SUBDIR += librenms-agent
     SUBDIR += libsmi
     SUBDIR += lldpd
     SUBDIR += mbrowse
