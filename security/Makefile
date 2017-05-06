@@ -849,6 +849,7 @@
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
     SUBDIR += py-cryptkit
+    SUBDIR += py-cryptlib_py
     SUBDIR += py-cryptography
     SUBDIR += py-cybox
     SUBDIR += py-dfdatetime
