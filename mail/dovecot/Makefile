@@ -14,6 +14,9 @@ COMMENT=	Secure and compact IMAP and POP3 servers
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual
 
+DEPRECATED=	Deprecated by upstream years ago. Use mail/dovecot2 instead
+EXPIRATION_DATE=2017-07-31
+
 CONFLICTS=	dovecot2-2.[0-9].*
 
 ######################################################################
