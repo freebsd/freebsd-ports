@@ -4553,6 +4553,7 @@
     SUBDIR += py-pydenticon
     SUBDIR += py-pydocstyle
     SUBDIR += py-pydoop
+    SUBDIR += py-pydrive
     SUBDIR += py-pyechonest
     SUBDIR += py-pyee
     SUBDIR += py-pyelftools
