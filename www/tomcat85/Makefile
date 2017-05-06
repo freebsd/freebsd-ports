@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat
-PORTVERSION=	8.5.13
+PORTVERSION=	8.5.14
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/tomcat/tomcat-8/v${PORTVERSION}/bin
 PKGNAMESUFFIX=	85
@@ -31,6 +31,16 @@ TOMCAT_CONF_FILES=	\
 		catalina.policy catalina.properties context.xml logging.properties \
 		server.xml tomcat-users.xml tomcat-users.xsd web.xml \
 		jaspic-providers.xml jaspic-providers.xsd
+
+OPTIONS_DEFINE= HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
+HOST_MANAGER_DESC= Install Host Manager application
+MANAGER_DESC= Install Manager web application
+DOCS_DESC= Install Documentation web application
+EXAMPLES_DESC= Install Examples web application
+ROOT_DESC= Install default ROOT web application
+OPTIONS_DEFAULT= HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
+OPTIONS_SUB= yes
+
 PLIST_SUB=	T=${TOMCAT_SUBDIR} \
 		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
@@ -60,6 +70,21 @@ do-install:
 
 	@${ECHO_MSG} -n ">> Copying files to destination directory..."
 	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${TOMCAT_HOME}
+.if !${PORT_OPTIONS:MHOST_MANAGER}
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/host-manager
+.endif
+.if !${PORT_OPTIONS:MMANAGER}
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/manager
+.endif
+.if !${PORT_OPTIONS:MDOCS}
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/docs
+.endif
+.if !${PORT_OPTIONS:MEXAMPLES}
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/examples
+.endif
+.if !${PORT_OPTIONS:MROOT}
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/ROOT
+.endif
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Fixing permissions..."
