@@ -501,6 +501,7 @@
     SUBDIR += elixir-quantum
     SUBDIR += elixir-red_black_tree
     SUBDIR += elixir-simple_bayes
+    SUBDIR += elixir-smppex
     SUBDIR += elixir-sorted_set
     SUBDIR += elixir-stemmer
     SUBDIR += elixir-swarm
