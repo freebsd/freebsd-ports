@@ -838,6 +838,7 @@
     SUBDIR += py-cairocffi
     SUBDIR += py-chart
     SUBDIR += py-django-easy-thumbnails
+    SUBDIR += py-djvulibre
     SUBDIR += py-editobj
     SUBDIR += py-exif
     SUBDIR += py-exifread
@@ -876,6 +877,7 @@
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
+    SUBDIR += py-pyembree
     SUBDIR += py-pygal
     SUBDIR += py-pyganim
     SUBDIR += py-pyglet

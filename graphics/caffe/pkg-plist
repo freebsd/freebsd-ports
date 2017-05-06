@@ -15,7 +15,7 @@ bin/convert_mnist_data
 bin/upgrade_net_proto_binary
 bin/extract_features
 lib/libcaffe.a
-lib/libcaffe.so.1.0.0-rc5
+lib/libcaffe.so.1.0.0
 lib/libcaffe.so
 include/caffe/blob.hpp
 include/caffe/layer.hpp
@@ -136,9 +136,11 @@ include/caffe/test/test_caffe_main.hpp
 %%PYTHON_SITELIBDIR%%/caffe/test/test_net.py
 %%PYTHON_SITELIBDIR%%/caffe/test/test_python_layer_with_param_str.py
 %%PYTHON_SITELIBDIR%%/caffe/test/test_net_spec.py
+%%PYTHON_SITELIBDIR%%/caffe/test/test_nccl.py
 %%PYTHON_SITELIBDIR%%/caffe/test/test_io.py
 %%PYTHON_SITELIBDIR%%/caffe/test/test_python_layer.py
 %%PYTHON_SITELIBDIR%%/caffe/test/test_layer_type_list.py
+%%PYTHON_SITELIBDIR%%/caffe/test/test_draw.py
 %%PYTHON_SITELIBDIR%%/caffe/test/test_coord_map.py
 %%PYTHON_SITELIBDIR%%/caffe/net_spec.py
 %%PYTHON_SITELIBDIR%%/caffe/classifier.py
