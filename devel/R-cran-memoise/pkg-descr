@@ -1,4 +1,4 @@
 Cache the results of a function so that when you call it again with
 the same arguments it returns the pre-computed value.
 
-WWW: http://cran.r-project.org/web/packages/memoise/
+WWW: https://cran.r-project.org/web/packages/memoise/
