@@ -382,6 +382,7 @@
     SUBDIR += py-progressbar231
     SUBDIR += py-pyfiglet
     SUBDIR += py-pyprind
+    SUBDIR += py-python-geohash
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-qt5-demo
