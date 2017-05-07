@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake pathfix pkgconfig libtool bdb
 USE_RC_SUBR=	jackd
-USE_OPENRC_SUBR=	jackd
 
 CONFIGURE_ARGS=	--disable-portaudio \
 		--with-default-tmpdir=/tmp
