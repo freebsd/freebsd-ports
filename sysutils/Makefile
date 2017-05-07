@@ -410,7 +410,6 @@
     SUBDIR += graid5
     SUBDIR += graveman
     SUBDIR += graylog
-    SUBDIR += grok
     SUBDIR += grub2
     SUBDIR += grub2-bhyve
     SUBDIR += grub2-efi

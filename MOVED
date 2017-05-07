@@ -9376,3 +9376,7 @@ lang/clang36||2017-05-02|Obsolete and unmaintained upstream
 lang/ruby21||2017-05-02|Has expired: Upstream support ended
 devel/guiloader||2017-05-05|Unfetchable for more than six months (google code has gone away)
 audio/ufmcontrol-i18n||2017-05-07|Unfetchable for more than six months (google code has gone away)
+devel/ccons||2017-05-07|Has expired: Unfetchable for more than six months (google code has gone away)
+chinese/fortune||2017-05-07|Has expired: Unfetchable for more than six months (google code has gone away)
+benchmarks/gobench||2017-05-07|Has expired: Builds each time it runs
+sysutils/grok||2017-05-07|Has expired: Unfetchable for more than six months (google code has gone away)
