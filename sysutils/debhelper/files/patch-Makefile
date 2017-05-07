@@ -1,13 +1,15 @@
---- Makefile.orig	2016-10-01 08:13:53 UTC
+--- Makefile.orig	2017-05-05 19:50:42 UTC
 +++ Makefile
-@@ -1,5 +1,5 @@
+@@ -3,7 +3,7 @@ PO4A ?= po4a
+ POD2MAN ?= pod2man
+ 
  # List of files of dh_* commands. Sorted for debhelper man page.
--COMMANDS=$(shell find . -maxdepth 1 -type f -perm /100 -name "dh_*" -printf "%f\n" | LC_ALL=C sort)
-+COMMANDS=$(shell find . -maxdepth 1 -type f -perm +a+x -name "dh_*" -print | cut -c3- | LC_ALL=C sort)
+-COMMANDS=$(shell find . -maxdepth 1 -type f -perm /100 -name "dh_*" -printf "%f\n" | grep -v '~$$' | LC_ALL=C sort)
++COMMANDS=$(shell find . -maxdepth 1 -type f -perm +a+x -name "dh_*" -print | grep -v '~$$' | cut -c3- | LC_ALL=C sort)
  
  # Find deprecated commands by looking at their synopsis.
  DEPRECATED=$(shell egrep -l '^dh_.* - .*deprecated' $(COMMANDS))
-@@ -94,17 +94,16 @@ endif
+@@ -98,17 +98,16 @@ endif
  	done;
  
  install:

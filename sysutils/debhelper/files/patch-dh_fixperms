@@ -1,14 +1,11 @@
---- dh_fixperms.orig	2015-09-19 09:06:22 UTC
+--- dh_fixperms.orig	2017-05-05 19:50:42 UTC
 +++ dh_fixperms
-@@ -57,8 +57,10 @@ foreach my $package (@{$dh{DOPACKAGES}})
- 	}
+@@ -96,7 +96,7 @@ foreach my $package (@{$dh{DOPACKAGES}})
  
  	# General permissions fixing.
-+	#complex_doit("find $tmp $find_options -print0",
-+	#	"2>/dev/null | xargs -0r chown --no-dereference 0:0");
- 	complex_doit("find $tmp $find_options -print0",
+ 	complex_doit("find $tmp ${find_exclude_options} -print0",
 -		"2>/dev/null | xargs -0r chown --no-dereference 0:0");
 +		"2>/dev/null | xargs -0r chown 0:0");
- 	complex_doit("find $tmp ! -type l $find_options -print0",
- 		"2>/dev/null | xargs -0r chmod go=rX,u+rw,a-s");
+ 	find_and_reset_perm($tmp, 'go=rX,u+rw,a-s', '! -type l');
  	
+ 	# Fix up permissions in usr/share/doc, setting everything to not
