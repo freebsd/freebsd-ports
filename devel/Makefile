@@ -1298,7 +1298,6 @@
     SUBDIR += libevdev
     SUBDIR += libevent
     SUBDIR += libevent-hiphop
-    SUBDIR += libevent2
     SUBDIR += libevt
     SUBDIR += libevtx
     SUBDIR += libewf
