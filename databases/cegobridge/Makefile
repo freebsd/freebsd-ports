@@ -2,6 +2,7 @@
 
 PORTNAME=	cegobridge
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
