@@ -1,0 +1,11 @@
+wayland-protocols contains Wayland protocols that adds functionality not
+available in the Wayland core protocol. Such protocols either adds
+completely new functionality, or extends the functionality of some other
+protocol either in Wayland core, or some other protocol in
+wayland-protocols.
+
+A protocol in wayland-protocols consists of a directory containing a set
+of XML files containing the protocol specification, and a README file
+containing detailed state and a list of maintainers.
+
+WWW: http://wayland.freedesktop.org/

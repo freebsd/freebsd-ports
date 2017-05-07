@@ -1,0 +1,10 @@
+--- src/Makefile.am.orig	2016-08-18 17:22:40 UTC
++++ src/Makefile.am
+@@ -38,6 +38,7 @@ libinput_la_LIBADD = $(MTDEV_LIBS) \
+ 		     $(LIBUDEV_LIBS) \
+ 		     $(LIBEVDEV_LIBS) \
+ 		     $(LIBWACOM_LIBS) \
++		     -lepoll-shim \
+ 		     libinput-util.la
+ 
+ libinput_la_CFLAGS = -I$(top_srcdir)/include \

@@ -44,9 +44,9 @@ LIB_DEPENDS= \
 		libcolord.so:${PORTSDIR}/graphics/colord			\
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig	\
 		libfreetype.so:${PORTSDIR}/print/freetype2			\
-		libwayland-server.so:${PORTSDIR}/graphics/wayland	\
-		libwayland-client.so:${PORTSDIR}/graphics/wayland	\
-		libwayland-cursor.so:${PORTSDIR}/graphics/wayland	\
+		libwayland-server.so:${PORTSDIR}/wayland/wayland	\
+		libwayland-client.so:${PORTSDIR}/wayland/wayland	\
+		libwayland-cursor.so:${PORTSDIR}/wayland/wayland	\
 		libwayland-egl.so:${PORTSDIR}/graphics/libEGL		\
 		libEGL.so:${PORTSDIR}/graphics/libEGL				\
 		libGLESv2.so:${PORTSDIR}/graphics/libGL				\
@@ -55,16 +55,16 @@ LIB_DEPENDS= \
 		libpng.so:${PORTSDIR}/graphics/png					\
 		libwebp.so:${PORTSDIR}/graphics/webp				\
 		libffi.so:${PORTSDIR}/devel/libffi					\
-		libepoll-shim.so:${PORTSDIR}/devel/libepoll-shim	\
-		libudev.so:${PORTSDIR}/devel/libudev-devd			\
+		libepoll-shim.so:${PORTSDIR}/wayland/libepoll-shim	\
+		libudev.so:${PORTSDIR}/wayland/libudev-devd			\
 		libunwind.so:${PORTSDIR}/devel/libunwind			\
 		libevdev.so:${PORTSDIR}/devel/libevdev				\
-		libkbdev.so:${PORTSDIR}/devel/libkbdev			\
-		libinput.so:${PORTSDIR}/x11/libinput			\
+		libkbdev.so:${PORTSDIR}/wayland/libkbdev			\
+		libinput.so:${PORTSDIR}/wayland/libinput			\
 		libmtdev.so:${PORTSDIR}/devel/libmtdev
 
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/graphics/wayland-protocols
-BUILD_DEPENDS+=	wayland-scanner:${PORTSDIR}/graphics/wayland
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/wayland/wayland-protocols
+BUILD_DEPENDS+=	wayland-scanner:${PORTSDIR}/wayland/wayland
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libglapi.so.0:${PORTSDIR}/graphics/libglapi
 
