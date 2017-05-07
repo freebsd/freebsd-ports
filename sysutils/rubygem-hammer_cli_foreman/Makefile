@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli_foreman
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-apipie-bindings>=0.2.0:devel/rubygem-apipie-bindings \
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
+
+PLIST_FILES=	"@sample etc/hammer/cli.modules.d/foreman.yml.sample"
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hammer/cli.modules.d
