@@ -11,4 +11,12 @@ exploits sequential IP IDs by setting:
 sysctl net.inet.ip.random_id=1
 
 (see sysctl.conf(5)).
+
+In order to run additional, independent instances of tor on the same machine
+set tor_instances="inst1 inst2 ..." in your /etc/rc.conf, and create the
+corresponding additional configuration files %%PREFIX%%/etc/tor/torrc@inst1, ...
+
+Alternatively, you can use the extended instance definition to specify all
+instance parameteres explicitly:
+inst_name{:inst_conf:inst_user:inst_group:inst_pidfile:inst_data_dir}
 ================================================================================
