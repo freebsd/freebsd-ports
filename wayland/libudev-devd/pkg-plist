@@ -1,5 +1,0 @@
-include/libudev.h
-lib/libudev.so
-lib/libudev.so.0
-lib/libudev.so.0.0.0
-libdata/pkgconfig/libudev.pc
