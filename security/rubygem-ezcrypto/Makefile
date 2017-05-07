@@ -9,6 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Wrapper for the poorly documented OpenSSL ruby library
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
+
 NO_ARCH=	yes
 
 USE_RUBY=	yes
