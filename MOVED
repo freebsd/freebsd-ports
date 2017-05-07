@@ -9375,3 +9375,4 @@ devel/llvm36||2017-05-02|Obsolete and unmaintained upstream
 lang/clang36||2017-05-02|Obsolete and unmaintained upstream
 lang/ruby21||2017-05-02|Has expired: Upstream support ended
 devel/guiloader||2017-05-05|Unfetchable for more than six months (google code has gone away)
+audio/ufmcontrol-i18n||2017-05-07|Unfetchable for more than six months (google code has gone away)
