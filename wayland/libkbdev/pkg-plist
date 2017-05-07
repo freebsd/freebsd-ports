@@ -1,0 +1,6 @@
+include/kbdev.h
+lib/libkbdev.a
+lib/libkbdev.so
+lib/libkbdev.so.0
+lib/libkbdev_p.a
+

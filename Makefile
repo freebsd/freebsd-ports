@@ -53,6 +53,7 @@ SUBDIR += sysutils
 SUBDIR += textproc
 SUBDIR += ukrainian
 SUBDIR += vietnamese
+SUBDIR += wayland
 SUBDIR += www
 SUBDIR += x11
 SUBDIR += x11-clocks

@@ -1,0 +1,25 @@
+%%SUID%%@(,,4755) bin/sway
+%%NO_SUID%%bin/sway
+bin/swaybar
+bin/swaybg
+bin/swaygrab
+bin/swaylock
+bin/swaymsg
+etc/pam.d/swaylock
+%%ETCDIR%%/config
+share/man/man1/sway.1
+share/man/man1/swaygrab.1
+share/man/man1/swaylock.1
+share/man/man1/swaymsg.1
+share/man/man5/sway-bar.5
+share/man/man5/sway-input.5
+share/man/man5/sway.5
+%%DATADIR%%/Sway_Wallpaper_Blue_1136x640.png
+%%DATADIR%%/Sway_Wallpaper_Blue_1136x640_Portrait.png
+%%DATADIR%%/Sway_Wallpaper_Blue_1366x768.png
+%%DATADIR%%/Sway_Wallpaper_Blue_1920x1080.png
+%%DATADIR%%/Sway_Wallpaper_Blue_2048x1536.png
+%%DATADIR%%/Sway_Wallpaper_Blue_2048x1536_Portrait.png
+%%DATADIR%%/Sway_Wallpaper_Blue_768x1024.png
+%%DATADIR%%/Sway_Wallpaper_Blue_768x1024_Portrait.png
+share/wayland-sessions/sway.desktop

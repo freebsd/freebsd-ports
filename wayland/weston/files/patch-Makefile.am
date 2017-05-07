@@ -1,0 +1,313 @@
+--- Makefile.am.orig	2016-08-23 21:55:40 UTC
++++ Makefile.am
+@@ -65,7 +65,7 @@ weston_LDFLAGS = -export-dynamic
+ weston_CPPFLAGS = $(AM_CPPFLAGS) -DIN_WESTON
+ weston_CFLAGS = $(AM_CFLAGS) $(COMPOSITOR_CFLAGS) $(LIBUNWIND_CFLAGS)
+ weston_LDADD = $(COMPOSITOR_LIBS) $(LIBUNWIND_LIBS) \
+-	$(DLOPEN_LIBS) -lm $(CLOCK_GETTIME_LIBS) libshared.la
++	$(DLOPEN_LIBS) -lm -levent -ludev -lepoll-shim -lrt $(CLOCK_GETTIME_LIBS) libshared.la
+ 
+ weston_SOURCES =					\
+ 	src/git-version.h				\
+@@ -187,7 +187,7 @@ weston_launch_CFLAGS=				\
+ 	$(PAM_CFLAGS)				\
+ 	$(SYSTEMD_LOGIN_CFLAGS)			\
+ 	$(LIBDRM_CFLAGS)
+-weston_launch_LDADD = $(PAM_LIBS) $(SYSTEMD_LOGIN_LIBS) $(LIBDRM_LIBS)
++weston_launch_LDADD = $(PAM_LIBS) $(SYSTEMD_LOGIN_LIBS) $(LIBDRM_LIBS) -ludev -levent -lepoll-shim -lrt
+ 
+ if ENABLE_SETUID_INSTALL
+ install-exec-hook:
+@@ -498,7 +498,7 @@ nodist_weston_simple_shm_SOURCES =		\
+ 	protocol/ivi-application-protocol.c		\
+ 	protocol/ivi-application-client-protocol.h
+ weston_simple_shm_CFLAGS = $(AM_CFLAGS) $(SIMPLE_CLIENT_CFLAGS)
+-weston_simple_shm_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la
++weston_simple_shm_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la -lepoll-shim -lrt
+ 
+ weston_simple_damage_SOURCES = clients/simple-damage.c
+ nodist_weston_simple_damage_SOURCES =		\
+@@ -509,13 +509,13 @@ nodist_weston_simple_damage_SOURCES =		\
+ 	protocol/fullscreen-shell-unstable-v1-protocol.c	\
+ 	protocol/fullscreen-shell-unstable-v1-client-protocol.h
+ weston_simple_damage_CFLAGS = $(AM_CFLAGS) $(SIMPLE_CLIENT_CFLAGS)
+-weston_simple_damage_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la
++weston_simple_damage_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la -lepoll-shim -lrt
+ 
+ weston_simple_touch_SOURCES = 			\
+ 	clients/simple-touch.c			\
+ 	shared/helpers.h
+ weston_simple_touch_CFLAGS = $(AM_CFLAGS) $(SIMPLE_CLIENT_CFLAGS)
+-weston_simple_touch_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la
++weston_simple_touch_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la -lepoll-shim -lrt
+ 
+ weston_presentation_shm_SOURCES = 			\
+ 	clients/presentation-shm.c			\
+@@ -524,11 +524,11 @@ nodist_weston_presentation_shm_SOURCES =
+ 	protocol/presentation-time-protocol.c		\
+ 	protocol/presentation-time-client-protocol.h
+ weston_presentation_shm_CFLAGS = $(AM_CFLAGS) $(SIMPLE_CLIENT_CFLAGS)
+-weston_presentation_shm_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la -lm $(CLOCK_GETTIME_LIBS)
++weston_presentation_shm_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la -lepoll-shim -lrt -lm $(CLOCK_GETTIME_LIBS)
+ 
+ weston_multi_resource_SOURCES = clients/multi-resource.c
+ weston_multi_resource_CFLAGS = $(AM_CFLAGS) $(SIMPLE_CLIENT_CFLAGS)
+-weston_multi_resource_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la $(CLOCK_GETTIME_LIBS) -lm
++weston_multi_resource_LDADD = $(SIMPLE_CLIENT_LIBS) libshared.la -lepoll-shim -lrt $(CLOCK_GETTIME_LIBS) -lm
+ endif
+ 
+ if BUILD_SIMPLE_EGL_CLIENTS
+@@ -540,7 +540,7 @@ nodist_weston_simple_egl_SOURCES =		\
+ 	protocol/ivi-application-protocol.c		\
+ 	protocol/ivi-application-client-protocol.h
+ weston_simple_egl_CFLAGS = $(AM_CFLAGS) $(SIMPLE_EGL_CLIENT_CFLAGS)
+-weston_simple_egl_LDADD = $(SIMPLE_EGL_CLIENT_LIBS) -lm
++weston_simple_egl_LDADD = $(SIMPLE_EGL_CLIENT_LIBS) -lm -lepoll-shim -lrt
+ endif
+ 
+ if BUILD_SIMPLE_DMABUF_INTEL_CLIENT
+@@ -554,7 +554,7 @@ nodist_weston_simple_dmabuf_intel_SOURCE
+ 	protocol/linux-dmabuf-unstable-v1-protocol.c \
+ 	protocol/linux-dmabuf-unstable-v1-client-protocol.h
+ weston_simple_dmabuf_intel_CFLAGS = $(AM_CFLAGS) $(SIMPLE_DMABUF_INTEL_CLIENT_CFLAGS)
+-weston_simple_dmabuf_intel_LDADD = $(SIMPLE_DMABUF_INTEL_CLIENT_LIBS) libshared.la
++weston_simple_dmabuf_intel_LDADD = $(SIMPLE_DMABUF_INTEL_CLIENT_LIBS) libshared.la -lepoll-shim -lrt
+ BUILT_SOURCES += protocol/linux-dmabuf-unstable-v1-client-protocol.h
+ endif
+ 
+@@ -596,11 +596,11 @@ BUILT_SOURCES += $(nodist_libtoytoolkit_
+ libtoytoolkit_la_LIBADD =			\
+ 	$(CLIENT_LIBS)				\
+ 	$(CAIRO_EGL_LIBS)			\
+-	libshared-cairo.la $(CLOCK_GETTIME_LIBS) -lm
++	libshared-cairo.la $(CLOCK_GETTIME_LIBS) -lm -lepoll-shim -lrt -levent -lkbdev
+ libtoytoolkit_la_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS) $(CAIRO_EGL_CFLAGS)
+ 
+ weston_flower_SOURCES = clients/flower.c
+-weston_flower_LDADD = libtoytoolkit.la
++weston_flower_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_flower_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_screenshooter_SOURCES =				\
+@@ -608,17 +608,17 @@ weston_screenshooter_SOURCES =				\
+ nodist_weston_screenshooter_SOURCES =			\
+ 	protocol/weston-screenshooter-protocol.c	\
+ 	protocol/weston-screenshooter-client-protocol.h
+-weston_screenshooter_LDADD = $(CLIENT_LIBS) libshared.la
++weston_screenshooter_LDADD = $(CLIENT_LIBS) libshared.la -lepoll-shim -lrt
+ weston_screenshooter_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_terminal_SOURCES = 				\
+ 	clients/terminal.c				\
+ 	shared/helpers.h
+-weston_terminal_LDADD = libtoytoolkit.la -lutil
++weston_terminal_LDADD = libtoytoolkit.la -lutil -lepoll-shim -lrt
+ weston_terminal_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_image_SOURCES = clients/image.c
+-weston_image_LDADD = libtoytoolkit.la
++weston_image_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_image_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_cliptest_SOURCES =				\
+@@ -631,19 +631,19 @@ weston_cliptest_LDADD = libtoytoolkit.la
+ weston_dnd_SOURCES = 					\
+ 	clients/dnd.c					\
+ 	shared/helpers.h
+-weston_dnd_LDADD = libtoytoolkit.la
++weston_dnd_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_dnd_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_smoke_SOURCES = clients/smoke.c
+-weston_smoke_LDADD = libtoytoolkit.la
++weston_smoke_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_smoke_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_resizor_SOURCES = clients/resizor.c
+-weston_resizor_LDADD = libtoytoolkit.la
++weston_resizor_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_resizor_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_scaler_SOURCES = clients/scaler.c
+-weston_scaler_LDADD = libtoytoolkit.la
++weston_scaler_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_scaler_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ if HAVE_CAIRO_GLESV2
+@@ -663,30 +663,30 @@ endif
+ weston_eventdemo_SOURCES = 				\
+ 	clients/eventdemo.c				\
+ 	shared/helpers.h
+-weston_eventdemo_LDADD = libtoytoolkit.la
++weston_eventdemo_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_eventdemo_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_clickdot_SOURCES = 				\
+ 	clients/clickdot.c				\
+ 	shared/helpers.h
+-weston_clickdot_LDADD = libtoytoolkit.la
++weston_clickdot_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_clickdot_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_transformed_SOURCES = clients/transformed.c
+-weston_transformed_LDADD = libtoytoolkit.la
++weston_transformed_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_transformed_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_fullscreen_SOURCES = clients/fullscreen.c
+ nodist_weston_fullscreen_SOURCES =			\
+ 	protocol/fullscreen-shell-unstable-v1-protocol.c		\
+ 	protocol/fullscreen-shell-unstable-v1-client-protocol.h
+-weston_fullscreen_LDADD = libtoytoolkit.la
++weston_fullscreen_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_fullscreen_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_stacking_SOURCES = 				\
+ 	clients/stacking.c				\
+ 	shared/helpers.h
+-weston_stacking_LDADD = libtoytoolkit.la
++weston_stacking_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_stacking_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_calibrator_SOURCES = 				\
+@@ -694,7 +694,7 @@ weston_calibrator_SOURCES = 				\
+ 	shared/helpers.h				\
+ 	shared/matrix.c					\
+ 	shared/matrix.h
+-weston_calibrator_LDADD = libtoytoolkit.la
++weston_calibrator_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_calibrator_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ if BUILD_SUBSURFACES_CLIENT
+@@ -717,7 +717,7 @@ weston_editor_SOURCES = 			\
+ nodist_weston_editor_SOURCES =			\
+ 	protocol/text-input-unstable-v1-protocol.c		\
+ 	protocol/text-input-unstable-v1-client-protocol.h
+-weston_editor_LDADD = libtoytoolkit.la $(PANGO_LIBS)
++weston_editor_LDADD = libtoytoolkit.la $(PANGO_LIBS) -lepoll-shim -lrt
+ weston_editor_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS) $(PANGO_CFLAGS)
+ endif
+ 
+@@ -727,14 +727,14 @@ nodist_weston_keyboard_SOURCES =				\
+ 	protocol/weston-desktop-shell-protocol.c		\
+ 	protocol/input-method-unstable-v1-protocol.c		\
+ 	protocol/input-method-unstable-v1-client-protocol.h
+-weston_keyboard_LDADD = libtoytoolkit.la
++weston_keyboard_LDADD = libtoytoolkit.la -lepoll-shim -lrt -levent
+ weston_keyboard_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_simple_im_SOURCES = clients/weston-simple-im.c
+ nodist_weston_simple_im_SOURCES =		\
+ 	protocol/input-method-unstable-v1-protocol.c		\
+ 	protocol/input-method-unstable-v1-client-protocol.h
+-weston_simple_im_LDADD = $(CLIENT_LIBS)
++weston_simple_im_LDADD = $(CLIENT_LIBS) -lepoll-shim -lrt
+ weston_simple_im_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_info_SOURCES = 					\
+@@ -743,7 +743,7 @@ weston_info_SOURCES = 					\
+ nodist_weston_info_SOURCES =				\
+ 	protocol/presentation-time-protocol.c		\
+ 	protocol/presentation-time-client-protocol.h
+-weston_info_LDADD = $(WESTON_INFO_LIBS) libshared.la
++weston_info_LDADD = $(WESTON_INFO_LIBS) libshared.la -lepoll-shim -lrt
+ weston_info_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ weston_desktop_shell_SOURCES = 				\
+@@ -752,7 +752,7 @@ weston_desktop_shell_SOURCES = 				\
+ nodist_weston_desktop_shell_SOURCES =			\
+ 	protocol/weston-desktop-shell-client-protocol.h	\
+ 	protocol/weston-desktop-shell-protocol.c
+-weston_desktop_shell_LDADD = libtoytoolkit.la
++weston_desktop_shell_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_desktop_shell_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ 
+ if ENABLE_IVI_SHELL
+@@ -764,14 +764,14 @@ nodist_weston_ivi_shell_user_interface_S
+ 	protocol/ivi-hmi-controller-protocol.c				\
+ 	protocol/ivi-application-client-protocol.h			\
+         protocol/ivi-application-protocol.c
+-weston_ivi_shell_user_interface_LDADD = libtoytoolkit.la
++weston_ivi_shell_user_interface_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_ivi_shell_user_interface_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ endif
+ 
+ if BUILD_FULL_GL_CLIENTS
+ demo_clients += weston-gears
+ weston_gears_SOURCES = clients/gears.c
+-weston_gears_LDADD = libtoytoolkit.la
++weston_gears_LDADD = libtoytoolkit.la -lepoll-shim -lrt
+ weston_gears_CFLAGS = $(AM_CFLAGS) $(CLIENT_CFLAGS)
+ endif
+ 
+@@ -1228,34 +1228,34 @@ internal_screenshot_weston_LDADD = libte
+ 
+ bad_buffer_weston_SOURCES = tests/bad-buffer-test.c
+ bad_buffer_weston_CFLAGS = $(AM_CFLAGS) $(TEST_CLIENT_CFLAGS)
+-bad_buffer_weston_LDADD = libtest-client.la
++bad_buffer_weston_LDADD = libtest-client.la -lepoll-shim -lrt
+ 
+ keyboard_weston_SOURCES = tests/keyboard-test.c
+ keyboard_weston_CFLAGS = $(AM_CFLAGS) $(TEST_CLIENT_CFLAGS)
+-keyboard_weston_LDADD = libtest-client.la
++keyboard_weston_LDADD = libtest-client.la -lepoll-shim -lrt
+ 
+ event_weston_SOURCES = tests/event-test.c
+ event_weston_CFLAGS = $(AM_CFLAGS) $(TEST_CLIENT_CFLAGS)
+-event_weston_LDADD = libtest-client.la
++event_weston_LDADD = libtest-client.la -lepoll-shim -lrt
+ 
+ button_weston_SOURCES = tests/button-test.c
+ button_weston_CFLAGS = $(AM_CFLAGS) $(TEST_CLIENT_CFLAGS)
+-button_weston_LDADD = libtest-client.la
++button_weston_LDADD = libtest-client.la -lepoll-shim -lrt
+ 
+ devices_weston_SOURCES = tests/devices-test.c
+ devices_weston_CFLAGS = $(AM_CFLAGS) $(TEST_CLIENT_CFLAGS)
+-devices_weston_LDADD = libtest-client.la
++devices_weston_LDADD = libtest-client.la -lepoll-shim -lrt
+ 
+ text_weston_SOURCES = tests/text-test.c
+ nodist_text_weston_SOURCES =			\
+ 	protocol/text-input-unstable-v1-protocol.c		\
+ 	protocol/text-input-unstable-v1-client-protocol.h
+ text_weston_CFLAGS = $(AM_CFLAGS) $(TEST_CLIENT_CFLAGS)
+-text_weston_LDADD = libtest-client.la
++text_weston_LDADD = libtest-client.la -lepoll-shim -lrt
+ 
+ subsurface_weston_SOURCES = tests/subsurface-test.c
+ subsurface_weston_CFLAGS = $(AM_CFLAGS) $(TEST_CLIENT_CFLAGS)
+-subsurface_weston_LDADD = libtest-client.la
++subsurface_weston_LDADD = libtest-client.la -lepoll-shim -lrt
+ 
+ presentation_weston_SOURCES = 			\
+ 	tests/presentation-test.c		\
+@@ -1264,24 +1264,24 @@ nodist_presentation_weston_SOURCES =		\
+ 	protocol/presentation-time-protocol.c	\
+ 	protocol/presentation-time-client-protocol.h
+ presentation_weston_CFLAGS = $(AM_CFLAGS) $(TEST_CLIENT_CFLAGS)
+-presentation_weston_LDADD = libtest-client.la
++presentation_weston_LDADD = libtest-client.la -lepoll-shim -lrt
+ 
+ roles_weston_SOURCES = tests/roles-test.c
+ roles_weston_CFLAGS = $(AM_CFLAGS) $(TEST_CLIENT_CFLAGS)
+-roles_weston_LDADD = libtest-client.la
++roles_weston_LDADD = libtest-client.la -lepoll-shim -lrt
+ 
+ if ENABLE_EGL
+ weston_tests += buffer-count.weston
+ buffer_count_weston_SOURCES = tests/buffer-count-test.c
+ buffer_count_weston_CFLAGS = $(AM_CFLAGS) $(EGL_TESTS_CFLAGS)
+-buffer_count_weston_LDADD = libtest-client.la $(EGL_TESTS_LIBS)
++buffer_count_weston_LDADD = libtest-client.la -lepoll-shim -lrt $(EGL_TESTS_LIBS)
+ endif
+ 
+ if ENABLE_XWAYLAND_TEST
+ weston_tests +=	xwayland-test.weston
+ xwayland_test_weston_SOURCES = tests/xwayland-test.c
+ xwayland_test_weston_CFLAGS = $(AM_CFLAGS) $(XWAYLAND_TEST_CFLAGS)
+-xwayland_test_weston_LDADD = libtest-client.la $(XWAYLAND_TEST_LIBS)
++xwayland_test_weston_LDADD = libtest-client.la -lepoll-shim -lrt $(XWAYLAND_TEST_LIBS)
+ endif
+ 
+ matrix_test_SOURCES =				\

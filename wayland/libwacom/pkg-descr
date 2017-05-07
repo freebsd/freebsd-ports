@@ -1,0 +1,5 @@
+Libwacom is a new library to help implement Wacom tablet settings.
+It is intended to be used by client-programs that need model
+identification. It is already being used by the gnome-settings-daemon
+and the GNOME 3.4 Control Center Wacom tablet applet. In the future,
+the xf86-input-wacom driver may use it as well.
