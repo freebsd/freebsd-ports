@@ -247,7 +247,6 @@
     SUBDIR += ccache-static
     SUBDIR += cccc
     SUBDIR += ccdoc
-    SUBDIR += ccons
     SUBDIR += ccrtp
     SUBDIR += cctz
     SUBDIR += cdash
