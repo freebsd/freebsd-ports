@@ -6,8 +6,6 @@ bin/qmc2-sdlmame
 %%PORTDOCS%%%%DOCSDIR%%/html/de/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/images/ballou.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/doc-bg.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/gradient1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/gradient2.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qmc2_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/rene.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/robert.png
@@ -40,6 +38,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/arcademode.png
 %%DATADIR%%/img/archive.png
 %%DATADIR%%/img/back.png
+%%DATADIR%%/img/book.png
 %%DATADIR%%/img/broom.png
 %%DATADIR%%/img/browser.png
 %%DATADIR%%/img/brush.png
@@ -63,6 +62,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/arcademode.png
 %%DATADIR%%/img/circles/archive.png
 %%DATADIR%%/img/circles/back.png
+%%DATADIR%%/img/circles/book.png
 %%DATADIR%%/img/circles/broom.png
 %%DATADIR%%/img/circles/browser.png
 %%DATADIR%%/img/circles/brush.png
@@ -76,6 +76,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/clock.png
 %%DATADIR%%/img/circles/clone.png
 %%DATADIR%%/img/circles/colors.png
+%%DATADIR%%/img/circles/columns.png
 %%DATADIR%%/img/circles/component_arrangement_00.png
 %%DATADIR%%/img/circles/component_arrangement_01.png
 %%DATADIR%%/img/circles/component_arrangement_02.png
@@ -225,6 +226,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/next-sail.png
 %%DATADIR%%/img/circles/next.png
 %%DATADIR%%/img/circles/no.png
+%%DATADIR%%/img/circles/no_book.png
 %%DATADIR%%/img/circles/no_checkpoint.png
 %%DATADIR%%/img/circles/no_sound.png
 %%DATADIR%%/img/circles/north.png
@@ -276,8 +278,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/romalyzer_flipped.png
 %%DATADIR%%/img/circles/romalyzer_multiple.png
 %%DATADIR%%/img/circles/romalyzer_sw.png
+%%DATADIR%%/img/circles/scan_manuals.png
 %%DATADIR%%/img/circles/search.png
 %%DATADIR%%/img/circles/search_multiple.png
+%%DATADIR%%/img/circles/setup_database.png
 %%DATADIR%%/img/circles/sleep.png
 %%DATADIR%%/img/circles/slot.png
 %%DATADIR%%/img/circles/software_correct.png
@@ -307,6 +311,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/stop.png
 %%DATADIR%%/img/circles/stop_browser.png
 %%DATADIR%%/img/circles/swap.png
+%%DATADIR%%/img/circles/tabwidget.png
 %%DATADIR%%/img/circles/tag.png
 %%DATADIR%%/img/circles/tagged.png
 %%DATADIR%%/img/circles/tagged_all.png
@@ -367,6 +372,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/arcademode.png
 %%DATADIR%%/img/classic/archive.png
 %%DATADIR%%/img/classic/back.png
+%%DATADIR%%/img/classic/book.png
 %%DATADIR%%/img/classic/broom.png
 %%DATADIR%%/img/classic/browser.png
 %%DATADIR%%/img/classic/brush.png
@@ -380,6 +386,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/clock.png
 %%DATADIR%%/img/classic/clone.png
 %%DATADIR%%/img/classic/colors.png
+%%DATADIR%%/img/classic/columns.png
 %%DATADIR%%/img/classic/component_arrangement_00.png
 %%DATADIR%%/img/classic/component_arrangement_01.png
 %%DATADIR%%/img/classic/component_arrangement_02.png
@@ -529,6 +536,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/next-sail.png
 %%DATADIR%%/img/classic/next.png
 %%DATADIR%%/img/classic/no.png
+%%DATADIR%%/img/classic/no_book.png
 %%DATADIR%%/img/classic/no_checkpoint.png
 %%DATADIR%%/img/classic/no_sound.png
 %%DATADIR%%/img/classic/north.png
@@ -580,8 +588,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/romalyzer_flipped.png
 %%DATADIR%%/img/classic/romalyzer_multiple.png
 %%DATADIR%%/img/classic/romalyzer_sw.png
+%%DATADIR%%/img/classic/scan_manuals.png
 %%DATADIR%%/img/classic/search.png
 %%DATADIR%%/img/classic/search_multiple.png
+%%DATADIR%%/img/classic/setup_database.png
 %%DATADIR%%/img/classic/sleep.png
 %%DATADIR%%/img/classic/slot.png
 %%DATADIR%%/img/classic/software_correct.png
@@ -611,6 +621,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/stop.png
 %%DATADIR%%/img/classic/stop_browser.png
 %%DATADIR%%/img/classic/swap.png
+%%DATADIR%%/img/classic/tabwidget.png
 %%DATADIR%%/img/classic/tag.png
 %%DATADIR%%/img/classic/tagged.png
 %%DATADIR%%/img/classic/tagged_all.png
@@ -659,6 +670,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/clock.png
 %%DATADIR%%/img/clone.png
 %%DATADIR%%/img/colors.png
+%%DATADIR%%/img/columns.png
 %%DATADIR%%/img/component_arrangement_00.png
 %%DATADIR%%/img/component_arrangement_01.png
 %%DATADIR%%/img/component_arrangement_02.png
@@ -690,6 +702,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/arcademode.png
 %%DATADIR%%/img/crazy-black/archive.png
 %%DATADIR%%/img/crazy-black/back.png
+%%DATADIR%%/img/crazy-black/book.png
 %%DATADIR%%/img/crazy-black/broom.png
 %%DATADIR%%/img/crazy-black/browser.png
 %%DATADIR%%/img/crazy-black/brush.png
@@ -703,6 +716,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/clock.png
 %%DATADIR%%/img/crazy-black/clone.png
 %%DATADIR%%/img/crazy-black/colors.png
+%%DATADIR%%/img/crazy-black/columns.png
 %%DATADIR%%/img/crazy-black/component_arrangement_00.png
 %%DATADIR%%/img/crazy-black/component_arrangement_01.png
 %%DATADIR%%/img/crazy-black/component_arrangement_02.png
@@ -852,6 +866,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/next-sail.png
 %%DATADIR%%/img/crazy-black/next.png
 %%DATADIR%%/img/crazy-black/no.png
+%%DATADIR%%/img/crazy-black/no_book.png
 %%DATADIR%%/img/crazy-black/no_checkpoint.png
 %%DATADIR%%/img/crazy-black/no_sound.png
 %%DATADIR%%/img/crazy-black/north.png
@@ -903,8 +918,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/romalyzer_flipped.png
 %%DATADIR%%/img/crazy-black/romalyzer_multiple.png
 %%DATADIR%%/img/crazy-black/romalyzer_sw.png
+%%DATADIR%%/img/crazy-black/scan_manuals.png
 %%DATADIR%%/img/crazy-black/search.png
 %%DATADIR%%/img/crazy-black/search_multiple.png
+%%DATADIR%%/img/crazy-black/setup_database.png
 %%DATADIR%%/img/crazy-black/sleep.png
 %%DATADIR%%/img/crazy-black/slot.png
 %%DATADIR%%/img/crazy-black/software_correct.png
@@ -934,6 +951,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/stop.png
 %%DATADIR%%/img/crazy-black/stop_browser.png
 %%DATADIR%%/img/crazy-black/swap.png
+%%DATADIR%%/img/crazy-black/tabwidget.png
 %%DATADIR%%/img/crazy-black/tag.png
 %%DATADIR%%/img/crazy-black/tagged.png
 %%DATADIR%%/img/crazy-black/tagged_all.png
@@ -993,6 +1011,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/arcademode.png
 %%DATADIR%%/img/crazy/archive.png
 %%DATADIR%%/img/crazy/back.png
+%%DATADIR%%/img/crazy/book.png
 %%DATADIR%%/img/crazy/broom.png
 %%DATADIR%%/img/crazy/browser.png
 %%DATADIR%%/img/crazy/brush.png
@@ -1006,6 +1025,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/clock.png
 %%DATADIR%%/img/crazy/clone.png
 %%DATADIR%%/img/crazy/colors.png
+%%DATADIR%%/img/crazy/columns.png
 %%DATADIR%%/img/crazy/component_arrangement_00.png
 %%DATADIR%%/img/crazy/component_arrangement_01.png
 %%DATADIR%%/img/crazy/component_arrangement_02.png
@@ -1155,6 +1175,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/next-sail.png
 %%DATADIR%%/img/crazy/next.png
 %%DATADIR%%/img/crazy/no.png
+%%DATADIR%%/img/crazy/no_book.png
 %%DATADIR%%/img/crazy/no_checkpoint.png
 %%DATADIR%%/img/crazy/no_sound.png
 %%DATADIR%%/img/crazy/north.png
@@ -1206,8 +1227,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/romalyzer_flipped.png
 %%DATADIR%%/img/crazy/romalyzer_multiple.png
 %%DATADIR%%/img/crazy/romalyzer_sw.png
+%%DATADIR%%/img/crazy/scan_manuals.png
 %%DATADIR%%/img/crazy/search.png
 %%DATADIR%%/img/crazy/search_multiple.png
+%%DATADIR%%/img/crazy/setup_database.png
 %%DATADIR%%/img/crazy/sleep.png
 %%DATADIR%%/img/crazy/slot.png
 %%DATADIR%%/img/crazy/software_correct.png
@@ -1237,6 +1260,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/stop.png
 %%DATADIR%%/img/crazy/stop_browser.png
 %%DATADIR%%/img/crazy/swap.png
+%%DATADIR%%/img/crazy/tabwidget.png
 %%DATADIR%%/img/crazy/tag.png
 %%DATADIR%%/img/crazy/tagged.png
 %%DATADIR%%/img/crazy/tagged_all.png
@@ -1296,6 +1320,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/arcademode.png
 %%DATADIR%%/img/cubes/archive.png
 %%DATADIR%%/img/cubes/back.png
+%%DATADIR%%/img/cubes/book.png
 %%DATADIR%%/img/cubes/broom.png
 %%DATADIR%%/img/cubes/browser.png
 %%DATADIR%%/img/cubes/brush.png
@@ -1309,6 +1334,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/clock.png
 %%DATADIR%%/img/cubes/clone.png
 %%DATADIR%%/img/cubes/colors.png
+%%DATADIR%%/img/cubes/columns.png
 %%DATADIR%%/img/cubes/component_arrangement_00.png
 %%DATADIR%%/img/cubes/component_arrangement_01.png
 %%DATADIR%%/img/cubes/component_arrangement_02.png
@@ -1458,6 +1484,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/next-sail.png
 %%DATADIR%%/img/cubes/next.png
 %%DATADIR%%/img/cubes/no.png
+%%DATADIR%%/img/cubes/no_book.png
 %%DATADIR%%/img/cubes/no_checkpoint.png
 %%DATADIR%%/img/cubes/no_sound.png
 %%DATADIR%%/img/cubes/north.png
@@ -1509,8 +1536,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/romalyzer_flipped.png
 %%DATADIR%%/img/cubes/romalyzer_multiple.png
 %%DATADIR%%/img/cubes/romalyzer_sw.png
+%%DATADIR%%/img/cubes/scan_manuals.png
 %%DATADIR%%/img/cubes/search.png
 %%DATADIR%%/img/cubes/search_multiple.png
+%%DATADIR%%/img/cubes/setup_database.png
 %%DATADIR%%/img/cubes/sleep.png
 %%DATADIR%%/img/cubes/slot.png
 %%DATADIR%%/img/cubes/software_correct.png
@@ -1540,6 +1569,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/stop.png
 %%DATADIR%%/img/cubes/stop_browser.png
 %%DATADIR%%/img/cubes/swap.png
+%%DATADIR%%/img/cubes/tabwidget.png
 %%DATADIR%%/img/cubes/tag.png
 %%DATADIR%%/img/cubes/tagged.png
 %%DATADIR%%/img/cubes/tagged_all.png
@@ -1717,6 +1747,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/next-sail.png
 %%DATADIR%%/img/next.png
 %%DATADIR%%/img/no.png
+%%DATADIR%%/img/no_book.png
 %%DATADIR%%/img/no_checkpoint.png
 %%DATADIR%%/img/no_sound.png
 %%DATADIR%%/img/north.png
@@ -1768,8 +1799,10 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/romalyzer_flipped.png
 %%DATADIR%%/img/romalyzer_multiple.png
 %%DATADIR%%/img/romalyzer_sw.png
+%%DATADIR%%/img/scan_manuals.png
 %%DATADIR%%/img/search.png
 %%DATADIR%%/img/search_multiple.png
+%%DATADIR%%/img/setup_database.png
 %%DATADIR%%/img/sleep.png
 %%DATADIR%%/img/slot.png
 %%DATADIR%%/img/software_correct.png
@@ -1799,6 +1832,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/stop.png
 %%DATADIR%%/img/stop_browser.png
 %%DATADIR%%/img/swap.png
+%%DATADIR%%/img/tabwidget.png
 %%DATADIR%%/img/tag.png
 %%DATADIR%%/img/tagged.png
 %%DATADIR%%/img/tagged_all.png
