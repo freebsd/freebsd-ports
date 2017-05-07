@@ -43,6 +43,7 @@ bin/dh_lintian
 bin/dh_listpackages
 bin/dh_makeshlibs
 bin/dh_md5sums
+bin/dh_missing
 bin/dh_movefiles
 bin/dh_perl
 bin/dh_prep
@@ -99,6 +100,8 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/autoconf.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/cmake.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/makefile.pm
+%%SITE_PERL%%/Debian/Debhelper/Buildsystem/meson.pm
+%%SITE_PERL%%/Debian/Debhelper/Buildsystem/ninja.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/perl_build.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/perl_makemaker.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/python_distutils.pm
