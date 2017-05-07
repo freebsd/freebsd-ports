@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	usb_modeswitch
-PORTVERSION=	2.3.0
+PORTVERSION=	2.5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.draisberghof.de/usb_modeswitch/
 DISTNAME=	${PORTNAME:S|_|-|}-${PORTVERSION}
+DISTFILES=	${DISTNAME}.tar.bz2 \
+		${DATANAME}.tar.bz2
 
 MAINTAINER=	melifaro@ipfw.ru
 COMMENT=	Handling Mode-Switching USB Devices
@@ -13,15 +15,21 @@ COMMENT=	Handling Mode-Switching USB Devices
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DATAVERSION=	20170205
+DATANAME=	${PORTNAME:S|_|-|}-data-${DATAVERSION}
+
 USES=		gmake tar:bzip2
 
 pre-patch:
-		${REINPLACE_CMD} 's|gcc|${CC}|' ${WRKSRC}/Makefile
-		${REINPLACE_CMD} 's|`pkg-config --libs --cflags libusb-1.0`|-lusb|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's|gcc|${CC}|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's|`pkg-config --libs --cflags libusb-1.0`|-lusb|' ${WRKSRC}/Makefile
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/usb_modeswitch ${STAGEDIR}${PREFIX}/sbin
-		${INSTALL_DATA} ${WRKSRC}/usb_modeswitch.conf ${STAGEDIR}${PREFIX}/etc/usb_modeswitch.conf.sample
-		${INSTALL_MAN} ${WRKSRC}/usb_modeswitch.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/usb_modeswitch ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/usb_modeswitch.conf ${STAGEDIR}${PREFIX}/etc/usb_modeswitch.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/usb_modeswitch.1 ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/usb_modeswitch
+	cd ${WRKSRC}/../${DATANAME}/usb_modeswitch.d && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/usb_modeswitch
 
 .include <bsd.port.mk>
