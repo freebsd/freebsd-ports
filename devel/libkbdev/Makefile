@@ -2,7 +2,7 @@
 
 PORTNAME=	libkbdev
 PORTVERSION=	0.1
-CATEGORIES=	wayland
+CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Keyboard event library
