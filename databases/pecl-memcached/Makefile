@@ -3,6 +3,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 OPTIONS_DEFINE=	IGBINARY SASL
+OPTIONS_DEFAULT=SASL
 IGBINARY_DESC=	Binary serializer support
 
 CONFIGURE_ARGS=	--with-libmemcached-dir=${LOCALBASE}
