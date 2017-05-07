@@ -1350,6 +1350,7 @@
     SUBDIR += libisofs
     SUBDIR += libixp
     SUBDIR += libjson++
+    SUBDIR += libkbdev
     SUBDIR += libk8055
     SUBDIR += libkgapi
     SUBDIR += libklel

@@ -9,13 +9,13 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc
-LIB_DEPENDS=	libwlc.so:wayland/wlc \
-		libwayland-server.so:wayland/wayland \
-		libepoll-shim.so:wayland/libepoll-shim \
+LIB_DEPENDS=	libwlc.so:x11-toolkits/wlc \
+		libwayland-server.so:graphics/wayland \
+		libepoll-shim.so:devel/libepoll-shim \
 		libpcre.so:devel/pcre \
 		libjson-c.so:devel/json-c \
 		libxkbcommon.so:x11/libxkbcommon \
-		libinput.so:wayland/libinput
+		libinput.so:x11/libinput
 
 # For image capture
 #		libMagickCore-6.so:graphics/ImageMagick

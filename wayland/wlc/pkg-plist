@@ -1,9 +1,0 @@
-include/wlc/defines.h
-include/wlc/geometry.h
-include/wlc/wlc-render.h
-include/wlc/wlc-wayland.h
-include/wlc/wlc.h
-lib/libwlc.so
-lib/libwlc.so.0
-lib/libwlc.so.0.0.5
-libdata/pkgconfig/wlc.pc
