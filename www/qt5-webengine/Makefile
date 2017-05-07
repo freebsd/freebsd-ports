@@ -22,11 +22,12 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 library to render web content
 
-BUILD_DEPENDS=	bison:devel/bison \
-		ninja:devel/ninja \
+LICENSE=        GPLv3
+
+BUILD_DEPENDS=	ninja:devel/ninja \
 		python:lang/python \
 		yasm:devel/yasm \
-		/usr/local/include/linux/videodev2.h:multimedia/v4l_compat
+		${PREFIX}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libevent.so:devel/libevent \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -56,7 +57,7 @@ PULSEAUDIO_QMAKE_ON=	QT_CONFIG+=pulseaudio
 # We pass `norecursive' to USES=qmake because src/plugins/plugins.pro checks
 # whether webenginewidgets is available, which fails when qmake processes all
 # .pro files at once.
-USES=		gperf jpeg python:2,build pkgconfig \
+USES=		bison gperf jpeg python:2,build pkgconfig \
 		qmake:norecursive,outsource shebangfix
 USE_GNOME=	glib20 libxml2 libxslt
 USE_QT5=	core designer gui location network qml quick webchannel \
