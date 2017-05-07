@@ -17,7 +17,6 @@ USES=		cpe tar:xz
 CPE_VENDOR=	dhcpcd_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/examples
-USE_OPENRC_SUBR=dhcpcd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos

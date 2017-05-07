@@ -78,7 +78,6 @@ CONFIGURE_ARGS+=--disable-cgi
 .if ${PORT_OPTIONS:MFPM}
 PHP_SAPI+=	fpm
 USE_RC_SUBR+=	php-fpm
-USE_OPENRC_SUBR+=	php-fpm
 CONFIGURE_ARGS+=--enable-fpm \
 		--with-fpm-user=${WWWOWN} \
 		--with-fpm-group=${WWWGRP}
