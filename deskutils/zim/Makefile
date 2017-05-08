@@ -18,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 NO_ARCH=	yes
-USES=		desktop-file-utils gettext python:-2.7 shared-mime-info
+USES=		desktop-file-utils dos2unix gettext python:-2.7 shared-mime-info
+DOS2UNIX_FILES=	zim/newfs/__init__.py
 USE_GNOME=	pygtk2
 USE_PYTHON=	autoplist distutils
 INSTALLS_ICONS=	yes
