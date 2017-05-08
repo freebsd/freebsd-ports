@@ -97,6 +97,7 @@
     SUBDIR += ipcad
     SUBDIR += ipcalc
     SUBDIR += ipplan
+    SUBDIR += iprange
     SUBDIR += ipv6calc
     SUBDIR += ipv6gen
     SUBDIR += ipv6mon

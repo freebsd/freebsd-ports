@@ -47,6 +47,7 @@
     SUBDIR += autocd
     SUBDIR += autotalent
     SUBDIR += autozen
+    SUBDIR += aylet
     SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += bcg729

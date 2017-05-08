@@ -95,8 +95,8 @@
  48.204319,	16.982337,	"danger"			# Bratislava, Slovakia
  48.253,	16.435,		"gerald"			# Vienna, Austria
  48.170744,	16.361604,	"arved"				# Vienna, Austria
- 48.178311,	16.326855,	"krion"				# Vienna, Austria
  48.2168,	16.3339,	"le"				# Vienna, Austria
+ 48.178311,	16.326855,	"krion"				# Vienna, Austria
  48.2114,	16.3105,	"stefanf"			# Vienna, Austria
  46.9703,	15.6947,	"decke"				# Oberdorf am Hochegg, Austria
  47.04410,	15.47220,	"jkois"				# Graz, Austria
@@ -200,11 +200,11 @@
  51.29870,	1.07005,	"tdb"				# Canterbury, United Kingdom
  52.20360,	0.14134,	"rsm"				# Cambridge, UK
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
- 50.819610,	-0.136490,	"sevan"				# Brighton, East Sussex, UK
  52.2035,	0.1200,		"fanf"				# Cambridge, UK
  52.21065,	0.09235,	"rwatson"			# (CORE) Cambridge, UK
  52.116761,	0.056618,	"dmlb"				# Cambridge, UK
  51.5,		0.0,		" dfr"				# London, UK
+ 50.819610,	-0.136490,	"sevan"				# Brighton, East Sussex, UK
  51.53,		-0.18,		"n_hibma"	align=above	# London, UK
  51.50,		-0.48,		"nik"		align=left	# West Drayton, Middx., UK
  51.67,		-0.61,		"markm"		align=left	# Amersham, Bucks, UK
@@ -223,7 +223,6 @@
  53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
  53.286499,	-6.196429,	"flz"				# Stillorgan, Co. Dublin, Ireland
  53.65,		-6.67,		"peadar"	align=above	# Navan, Co. Meath, Ireland
- 37.533333,	-122.033333,	"rpaulo"			# Newark, CA, USA.
 -9.603815,	-35.724911,	"lippe"				# Maceio, AL, Brazil
 -19.917,	-43.933,	"jmelo"				# Belo Horizonte, MG, Brazil
 -15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
@@ -232,6 +231,7 @@
 -27.583,	-48.765,	"araujo"			# Florianopolis, SC, Brazil
 -25.477905,	-49.212143,	"wg"				# Curitiba, PR, Brazil
 -30.043826,	-51.13801,	"mnag"				# Porto Alegre, RS, Brazil
+-23.4210,	-51.9331,	"dbaio"				# Maringa, PR, Brazil
 -34.600,	-58.450,	"alepulver"			# Buenos Aires, Argentina
  44.63,		-63.58,		"jrm"				# Halifax, Nova Scotia, Canada
  42.1411,	-70.8453,	"jeh"		align=below	# Hanover, MA, USA
@@ -287,11 +287,11 @@
  44.89,		-93.35,		"bdrewery"			# Minneapolis, MN, USA
  42.02,		-93.67,		"ghelmer"			# Ames, IA, USA
  29.834,	-95.00,		"     ,chris"			# Houston, TX, USA
- 30.47702408	-97.64801025	"ler"				# Pflugerville, TX, USA
  30.715833	-95.5525,	"ade"				# Huntsville, TX, USA
  37.0625,	-95.677068,	"kmacy"				# Palo Alto, CA, USA
  29.7925,	-95.8225,	"dwcjr"				# Katy, TX, USA
  28.898118,	-97.037111,	"xride"				# Victoria, TX, USA
+ 30.47702408	-97.64801025	"ler"				# Pflugerville, TX, USA
  30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
  37.972,	-100.872,	"mezz"				# Garden City, KS, USA
  39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
@@ -320,6 +320,7 @@
  37.359394,	-121.992,	"cjc"				# Santa Clara, CA, USA
  37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
  37.3583,	-122.0154,	"stas"				# Sunnyvale, CA, USA
+ 37.533333,	-122.033333,	"rpaulo"			# Newark, CA, USA.
  37.38,		-122.05,	"obrien"			# Sunnyvale, CA, USA
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
  37.40,         -122.07,        "murray"			# Mountain View, CA, USA
@@ -339,9 +340,9 @@
  37.90641,	-122.30927,	"gshapiro"			# Richmond, CA, USA
  47.672538,	-122.383830,	"zml"				# Seattle, WA, USA
  45.31,		-122.39,	"alexbl"			# Portland, OR, USA
- 37.7749,	-122.4194,	"eadler"			# San Francisco, CA, USA
  37.781,	-122.398,	"billf"				# SOMA, San Francisco, CA, USA
  37.8067,	-122.4113,	"jmallett"			# North Beach, San Francisco, CA, USA
+ 37.7749,	-122.4194,	"eadler"			# San Francisco, CA, USA
  37.76,		-122.42,	"lx"				# San Francisco, CA, USA
  37.80,		-122.43,	"njl"				# Downtown San Francisco, CA, USA
  37.77,		-122.44,	"archie"			# Haight, San Francisco, CA, USA

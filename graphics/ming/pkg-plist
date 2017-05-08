@@ -102,5 +102,5 @@ include/ming/util/vasprintf.h
 lib/libming.a
 lib/libming.so
 lib/libming.so.1
-lib/libming.so.1.4.6
+lib/libming.so.1.4.7
 libdata/pkgconfig/libming.pc
