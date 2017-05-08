@@ -5,7 +5,7 @@ PORTNAME=	Mail_mimeDecode
 PORTVERSION=	1.5.6
 CATEGORIES=	mail www pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Provides a class to decode mime messages
 
 LICENSE=	BSD3CLAUSE

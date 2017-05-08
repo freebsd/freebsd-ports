@@ -5,7 +5,7 @@ PORTVERSION=	2.0.0
 CATEGORIES=	net-im pear
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension of stomp client
 
 LICENSE=	PHP301

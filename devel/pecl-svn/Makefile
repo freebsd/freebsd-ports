@@ -6,7 +6,7 @@ PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	devel pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to the libsvn library
 
 LICENSE=	PHP301

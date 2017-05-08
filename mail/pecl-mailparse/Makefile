@@ -5,7 +5,7 @@ PORTNAME=	mailparse
 PORTVERSION=	3.0.2
 CATEGORIES=	mail www
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to create and decode MIME messages
 
 LICENSE=	PHP301

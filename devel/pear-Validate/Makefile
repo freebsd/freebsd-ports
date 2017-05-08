@@ -6,7 +6,7 @@ PORTVERSION=	0.8.5
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PEAR Validation class
 
 LICENSE=	BSD3CLAUSE
