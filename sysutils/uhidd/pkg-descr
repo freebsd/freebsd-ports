@@ -3,4 +3,4 @@ keyboard) using libusb20. The driver aims to support USB HID devices
 with multiple Top-Level application collections in one interface, i.e,
 HID devices with multiple logical device sharing one endpoint.
 
-WWW: http://wiki.FreeBSD.org/uhidd
+WWW: https://wiki.FreeBSD.org/uhidd
