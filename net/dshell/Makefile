@@ -3,6 +3,7 @@
 
 PORTNAME=	dshell
 PORTVERSION=	3.0.20150220
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -20,8 +21,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes
-USES=		python
+USES=		python:-2.7 shebangfix
 NO_ARCH=	yes
+SHEBANG_FILES=	bin/*.py
 
 GH_ACCOUNT=	USArmyResearchLab
 GH_PROJECT=	Dshell
