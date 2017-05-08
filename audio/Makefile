@@ -778,7 +778,6 @@
     SUBDIR += tuxguitar
     SUBDIR += twolame
     SUBDIR += uade
-    SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += umodplayer
     SUBDIR += umurmur

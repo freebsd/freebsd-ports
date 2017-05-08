@@ -24,6 +24,7 @@
     SUBDIR += R-cran-dygraphs
     SUBDIR += R-cran-ggplot2
     SUBDIR += R-cran-gridBase
+    SUBDIR += R-cran-gridExtra
     SUBDIR += R-cran-munsell
     SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-png
@@ -32,6 +33,8 @@
     SUBDIR += R-cran-rtiff
     SUBDIR += R-cran-scales
     SUBDIR += R-cran-shape
+    SUBDIR += R-cran-viridis
+    SUBDIR += R-cran-viridisLite
     SUBDIR += R-cran-visNetwork
     SUBDIR += SciPlot
     SUBDIR += a2png

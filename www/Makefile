@@ -1341,6 +1341,7 @@
     SUBDIR += p5-Web-Query
     SUBDIR += p5-Web-Scraper
     SUBDIR += p5-Web-Scraper-Config
+    SUBDIR += p5-Web-Simple
     SUBDIR += p5-Web-oEmbed
     SUBDIR += p5-WebDAO
     SUBDIR += p5-WebDriver-Tiny

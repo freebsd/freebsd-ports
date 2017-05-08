@@ -247,7 +247,6 @@
     SUBDIR += ccache-static
     SUBDIR += cccc
     SUBDIR += ccdoc
-    SUBDIR += ccons
     SUBDIR += ccrtp
     SUBDIR += cctz
     SUBDIR += cdash
@@ -3254,6 +3253,7 @@
     SUBDIR += p5-Sub-WrapPackages
     SUBDIR += p5-Symbol-Global-Name
     SUBDIR += p5-Symbol-Util
+    SUBDIR += p5-Syntax-Keyword-Gather
     SUBDIR += p5-Syntax-Keyword-Junction
     SUBDIR += p5-Sys-Cpu
     SUBDIR += p5-Sys-Info

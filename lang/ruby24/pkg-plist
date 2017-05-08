@@ -937,8 +937,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0c/strerror_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0c/strerror_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0c/strerror_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0d/readline_2conftest_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0d/readline_2conftest_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0e/parser_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0e/parser_8h__dep__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d0e/parser_8h__dep__incl.png
@@ -2879,8 +2877,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/dab/cls__18byte_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/dab/cls__19byte_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/dab/cls__19byte_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/dac/openssl_2conftest_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/dac/openssl_2conftest_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/db0/defines_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/db0/defines_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/db2/ossl__rand_8h__dep__incl.map
@@ -3443,6 +3439,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d31/structfpreg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3a/tgamma_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3a/tgamma_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/conftest_8c.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/conftest_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/ossl__pkey_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/ossl__pkey_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3f/cls__pointer_8c.html
