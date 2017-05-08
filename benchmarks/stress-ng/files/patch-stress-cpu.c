@@ -1,6 +1,6 @@
---- stress-cpu.c.orig	2016-10-17 09:59:22 UTC
+--- stress-cpu.c.orig	2017-05-06 12:36:12 UTC
 +++ stress-cpu.c
-@@ -57,7 +57,6 @@
+@@ -50,7 +50,6 @@
  #define	ccosl	ccos
  #define	csinl	csin
  #define cpow	pow
