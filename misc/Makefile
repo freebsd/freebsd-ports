@@ -176,6 +176,7 @@
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
     SUBDIR += imerge
+    SUBDIR += img2xterm
     SUBDIR += ini_file_manager
     SUBDIR += inplace
     SUBDIR += ipa_conv
