@@ -23,7 +23,7 @@ RESTRICTED=	patent issues
 # of the more recent ones are multi-channel related, which is not implemented in LAME.
 # There was no investigation (in the LAME project) about which patent exists, which
 # one is implemented in LAME, and which one is not (yet) expired. As such it is not
-# known if LAME could now be distributed as a binaty package or not.
+# known if LAME could now be distributed as a binary package or not.
 # Linux distributions seem to go the "let's see if get sued" way, FreeBSD doesn't
 # follow this.
 
