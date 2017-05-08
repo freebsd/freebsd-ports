@@ -3,7 +3,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	1.6.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	xdg-desktop-icon:devel/xdg-utils \
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake gnome libarchive libtool \
-		pathfix pkgconfig sqlite tar:xz
+		pathfix pkgconfig python:run shebangfix sqlite tar:xz
 USE_GNOME=	gtk30 intltool introspection:build libxslt:build
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
@@ -57,6 +57,7 @@ GLIB_SCHEMAS=	org.freedesktop.Tracker.DB.gschema.xml \
 		org.freedesktop.Tracker.Writeback.gschema.xml \
 		org.freedesktop.Tracker.enums.xml \
 		org.freedesktop.Tracker.gschema.xml
+SHEBANG_FILES=	tests/tracker-writeback/01-writeback.py
 
 PLIST_SUB=	TRACKER_VER="1.0" LIBVER=601
 
