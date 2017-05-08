@@ -6,7 +6,7 @@ PORTVERSION=	0.99.2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Convert, change, and calculate with IPv6 addresses
 
 LICENSE=	GPLv2

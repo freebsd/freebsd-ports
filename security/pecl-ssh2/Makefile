@@ -5,7 +5,7 @@ PORTNAME=	ssh2
 PORTVERSION=	0.13
 CATEGORIES=	security pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to the libssh2 library
 
 LICENSE=	PHP301

@@ -6,7 +6,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://ethanschoonover.com/solarized/files/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Precision colors schemes for machines and people
 
 LICENSE=	MIT

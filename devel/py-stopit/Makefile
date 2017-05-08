@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Timeout control decorator and context managers in Python
 
 LICENSE=	GPLv3

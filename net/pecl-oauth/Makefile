@@ -6,7 +6,7 @@ PORTVERSION=	1.2.3
 PORTREVISION=	2
 CATEGORIES=	net pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Php Interface to the OAuth Protocol
 
 LICENSE=	BSD3CLAUSE

@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://dist.epipe.com/${PORTNAME}/ \
 		http://launchpadlibrarian.net/145993356/
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	System downtime monitoring and reporting tool
 
 LICENSE=	BSD2CLAUSE

@@ -6,7 +6,7 @@ PORTVERSION=	1.0.9
 PORTREVISION=	1
 CATEGORIES=	net-im pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension of stomp client
 
 LICENSE=	PHP301

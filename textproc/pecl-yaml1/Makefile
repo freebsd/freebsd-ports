@@ -6,7 +6,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	textproc pear
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	YAML-1.1 parser and emitter
 
 LICENSE=	MIT

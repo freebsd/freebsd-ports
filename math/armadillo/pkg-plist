@@ -32,6 +32,7 @@ include/armadillo_bits/SizeMat_bones.hpp
 include/armadillo_bits/SizeMat_meat.hpp
 include/armadillo_bits/SpBase_bones.hpp
 include/armadillo_bits/SpBase_meat.hpp
+include/armadillo_bits/compiler_extra.hpp
 include/armadillo_bits/SpCol_bones.hpp
 include/armadillo_bits/SpCol_meat.hpp
 include/armadillo_bits/SpGlue_bones.hpp
@@ -500,7 +501,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.7
-lib/libarmadillo.so.7.800.2
+lib/libarmadillo.so.7.900.0
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
