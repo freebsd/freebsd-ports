@@ -5,7 +5,7 @@ PORTNAME=	yaml
 PORTVERSION=	2.0.0
 CATEGORIES=	textproc pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	YAML-1.1 parser and emitter
 
 LICENSE=	MIT

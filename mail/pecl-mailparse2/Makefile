@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail www
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to create and decode MIME messages
 
 LICENSE=	PHP202

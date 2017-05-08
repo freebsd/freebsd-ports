@@ -9,7 +9,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.org/download/${PORTVERSION}/
 DISTNAME=	gateway-${PORTVERSION}
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	WAP/SMS gateway
 
 LICENSE=	The_Kannel_Software_License

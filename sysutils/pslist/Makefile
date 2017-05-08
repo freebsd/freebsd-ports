@@ -6,7 +6,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/files/sys/pslist/
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Utility to view or send signals to processes with all their children
 
 LICENSE=	BSD2CLAUSE

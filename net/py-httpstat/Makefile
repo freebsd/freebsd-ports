@@ -1,4 +1,4 @@
-# Created by: Danilo G. Baio <dbaio@bsd.com.br>
+# Created by: Danilo G. Baio <dbaio@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	httpstat
@@ -6,7 +6,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Curl statistics made simple
 
 LICENSE=	MIT

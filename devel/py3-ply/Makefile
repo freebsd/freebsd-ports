@@ -1,4 +1,4 @@
-# Created by: Danilo G. Baio <dbaio@bsd.com.br>
+# Created by: Danilo G. Baio <dbaio@FreeBSD.org>
 # $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../py-ply

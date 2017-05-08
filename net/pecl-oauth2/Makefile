@@ -5,7 +5,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	net pear
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Php interface to the OAuth Protocol
 
 LICENSE=	BSD3CLAUSE

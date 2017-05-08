@@ -6,7 +6,7 @@ PORTVERSION=	2.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.foofus.net/~jmk/tools/
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Speedy, massively parallel, modular, login brute-forcer
 
 LICENSE=	GPLv2+

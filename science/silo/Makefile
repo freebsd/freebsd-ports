@@ -8,7 +8,7 @@ DISTVERSIONSUFFIX=	-bsd
 CATEGORIES=	science
 MASTER_SITES=	http://wci.llnl.gov/content/assets/docs/simulation/computer-codes/${PORTNAME}/silo-${PORTVERSION}/
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Mesh and field I/O library and scientific database
 
 LICENSE=	BSD3CLAUSE
