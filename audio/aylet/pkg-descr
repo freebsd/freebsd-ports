@@ -1,0 +1,6 @@
+aylet plays music files in the `.ay' format. These files are essentially
+wrappers around bits of Z80 code which play music on the Sinclair ZX Spectrum
+128's sound hardware - either the beeper, or (eponymously) the AY-3-8912 sound
+chip. Files using the Amstrad CPC ports are also supported.
+
+WWW: http://www.worldofspectrum.org/
