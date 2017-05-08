@@ -3,6 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.12.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -98,6 +99,8 @@ do-install:
 do-install-KGDB-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/kgdb \
 		${STAGEDIR}${PREFIX}/bin/kgdb${VER}
+	${INSTALL_MAN} ${FILESDIR}/kgdb/kgdb.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/kgdb${VER}.1
 
 do-install-TUI-on:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdbtui${VER}
