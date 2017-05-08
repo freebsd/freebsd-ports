@@ -1,8 +1,9 @@
-SHA256 (texinfo/6.1.20160425/texinfo-6.1.tar.xz) = ac68394ce21b2420ba7ed7cec65d84aacf308cc88e9bf4716fcfff88286883d2
-SIZE (texinfo/6.1.20160425/texinfo-6.1.tar.xz) = 4520376
-SHA256 (texinfo/6.1.20160425/htmlxref.cnf) = b94aace151102c0e5cc49be570b79b513fcfbb54aaff55bd640c6d00fa56968c
-SIZE (texinfo/6.1.20160425/htmlxref.cnf) = 20137
-SHA256 (texinfo/6.1.20160425/texinfo.tex) = e829e69d206bfccd1842940e7d3482750b4be975218b2989d15fa355ab544cec
-SIZE (texinfo/6.1.20160425/texinfo.tex) = 379272
-SHA256 (texinfo/6.1.20160425/texi2dvi) = 08dee9983848f02fa259413225abce63ec5d70efc8813daeeb15d14287598269
-SIZE (texinfo/6.1.20160425/texi2dvi) = 61068
+TIMESTAMP = 1491403469
+SHA256 (texinfo/6.3/texinfo-6.3.tar.xz) = 246cf3ffa54985118ec2eea2b8d0c71b92114efe6282c2ae90d65029db4cf93a
+SIZE (texinfo/6.3/texinfo-6.3.tar.xz) = 4468048
+SHA256 (texinfo/6.3/htmlxref.cnf) = d77343dfec47d38a3f029bd42df6ca08e2701f8925be9dffdb07c53a9a0b292d
+SIZE (texinfo/6.3/htmlxref.cnf) = 20137
+SHA256 (texinfo/6.3/texinfo.tex) = 244875530e3c8c1c70d71d69c867b3a23e57813511e576e85e600284c505f973
+SIZE (texinfo/6.3/texinfo.tex) = 380351
+SHA256 (texinfo/6.3/texi2dvi) = ee5da7408c4f0d52b710639f4188ed99ff2f0e0716dde452eab771ba5ec4103b
+SIZE (texinfo/6.3/texi2dvi) = 61181
