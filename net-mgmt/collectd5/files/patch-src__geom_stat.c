@@ -307,11 +307,11 @@
 +			(double)ld[9] * 1024 * 1024 );
 +
 +
-+		// ms/r			
-+		// bio-deletes 		
++		// ms/read
++		// ms/write
 +		// ms/delete
-+		// Units - read and stores as milliseconds
-+		geom_submit_trip ( "geom_latency", geom_name , (double)ld[1], (double)ld[4], (double)ld[8] );
++		// Read, write and delete time in milliseconds
++		geom_submit_trip ( "geom_latency", geom_name , (double)ld[3], (double)ld[6], (double)ld[10] );
 +
 +		// Busy Percent 
 +		geom_submit_gauge( "geom_busy_percent", geom_name, ld[7]);
