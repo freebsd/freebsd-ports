@@ -2,14 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	texinfo
-PORTVERSION=	6.1.20160425
-PORTREVISION=	1
+PORTVERSION=	6.3
 PORTEPOCH=	1
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/ \
-		http://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/ \
-		GNU
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+MASTER_SITES=	GNU \
+		LOCAL/sunpoet/${DIST_SUBDIR}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} htmlxref.cnf texinfo.tex texi2dvi
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
