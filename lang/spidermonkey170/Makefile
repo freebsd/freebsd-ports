@@ -3,7 +3,7 @@
 
 PORTNAME=		spidermonkey170
 PORTVERSION=		17.0.0
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		lang
 MASTER_SITES=		MOZILLA/js
 DISTNAME=		mozjs${PORTVERSION}
@@ -60,11 +60,6 @@ CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 
 .if ${PORT_OPTIONS:MDTRACE}
 STRIP_CMD=	${TRUE}
-.endif
-
-# ARM needs GCC until https://llvm.org/bugs/show_bug.cgi?id=23244 is fixed
-.if ${ARCH} == "armv6"
-USE_GCC=	yes
 .endif
 
 regression-test: build

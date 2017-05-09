@@ -3,7 +3,7 @@
 
 PORTNAME=	aylet
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.worldofspectrum.org/pub/sinclair/music/players-unix/ \
 		LOCAL/ehaupt
@@ -14,13 +14,16 @@ COMMENT=	Aylet plays music files in the .ay format
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
 USES=		gettext-runtime pkgconfig
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=GUI
 OPTIONS_SUB=	yes
 
-GUI_USE=	XORG=x11,xext,xi GNOME=gtk12
+GUI_USE=	XORG=x11,xext,xi GNOME=cairo,gdkpixbuf2,gtk20
 
 ALL_TARGET=	aylet
 GUI_ALL_TARGET=	xaylet

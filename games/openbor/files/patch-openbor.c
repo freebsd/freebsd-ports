@@ -2,7 +2,7 @@ Fix potential crashes found by ASan/Clang/GCC
 Fix an infinite loop in lcmScriptDeleteMain()
 Avoid accidental rounding from abs()
 
---- openbor.c.orig	2016-12-22 13:02:02 UTC
+--- openbor.c.orig	2017-04-22 14:20:08 UTC
 +++ openbor.c
 @@ -5810,7 +5810,7 @@ s_collision_attack **collision_alloc_att
      size_t             alloc_size;
@@ -53,15 +53,6 @@ Avoid accidental rounding from abs()
      if (value > maxvalue)
      {
          value = maxvalue;
-@@ -20471,7 +20476,7 @@ void common_dot()
-     entity     *eOpp;       //Owner of dot effect.
-     s_collision_attack    attack;     //Attack struct.
- 
--    for(iIndex = 0; iIndex <= MAX_DOTS; iIndex++)                                               //Loop through all DOT indexes.
-+    for(iIndex = 0; iIndex < MAX_DOTS; iIndex++)                                                //Loop through all DOT indexes.
-     {
-         iDot_time   =   self->dot_time[iIndex];                                                 //Get expire time.
-         iDot_cnt    =   self->dot_cnt[iIndex];                                                  //Get next tick time.
 @@ -21710,8 +21716,8 @@ int reset_backpain(entity *ent)
          if (ent->normaldamageflipdir == DIRECTION_RIGHT) ent->direction = DIRECTION_RIGHT;
          else ent->direction = DIRECTION_LEFT;

@@ -1,6 +1,6 @@
 Implement Linux-like memory stats for BSDs
 
---- source/ramlib/ram.c.orig	2017-04-22 14:20:08 UTC
+--- source/ramlib/ram.c.orig	2015-04-18 21:21:56 UTC
 +++ source/ramlib/ram.c
 @@ -25,6 +25,21 @@
  #include <mach/task.h>
@@ -133,12 +133,12 @@ Implement Linux-like memory stats for BSDs
  #elif LINUX
      struct sysinfo info;
      sysinfo(&info);
-@@ -183,7 +265,10 @@ void setSystemRam()
+@@ -180,7 +262,10 @@ void setSystemRam()
      stackSize = 0x00000000;
      systemRam = getFreeRam(BYTES);
  #endif
--#if !(defined(WIN) || defined(LINUX) || defined(DARWIN) || defined(SYMBIAN) || defined(VITA))
-+#if !(defined(WIN) || defined(LINUX) || defined(DARWIN) || defined(SYMBIAN) || defined(VITA) || \
+-#if !(defined(WIN) || defined(LINUX) || defined(DARWIN) || defined(SYMBIAN))
++#if !(defined(WIN) || defined(LINUX) || defined(DARWIN) || defined(SYMBIAN) || \
 +      defined(__DragonFly__) || defined(__FreeBSD__) || \
 +      defined(__FreeBSD_kernel__) || defined(__NetBSD__) || \
 +      defined(__OpenBSD__))

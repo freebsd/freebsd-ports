@@ -1,6 +1,6 @@
 --- Makefile.orig	2005-12-18 03:05:08 UTC
 +++ Makefile
-@@ -2,7 +2,7 @@
+@@ -2,12 +2,12 @@
  
  # You need an ANSI C compiler. gcc is probably best.
  #
@@ -9,6 +9,12 @@
  
  # Compiler options (and sound driver) to use. This one is for Linux,
  # and other OSS-using systems.
+ #
+-CFLAGS=-O -Wall -DDRIVER_OSS
++CFLAGS+=-Wall -DDRIVER_OSS
+ 
+ # for OpenBSD, uncomment this:
+ #CFLAGS=-O -Wall -DDRIVER_OPENBSD
 @@ -19,10 +19,10 @@ CURSES_LIB=-lncurses
  
  # dest for make install
@@ -23,7 +29,28 @@
  
  # if you want the X version to be installed in the usual X executables
  # directory, uncomment this (altering if necessary):
-@@ -52,10 +52,9 @@ installdirs:
+@@ -37,25 +37,27 @@ MANDIR=$(PREFIX)/man/man1
+ OBJS=main.o sound.o ui.o z80.o drv-oss.o drv-obsd.o
+ XOBJS=main.o sound.o uigtk.o z80.o drv-oss.o drv-obsd.o
+ 
++GTK_CFLAGS+=        `pkg-config --cflags gtk+-2.0` -DGTK2
++GTK_LDFLAGS+=       `pkg-config --libs gtk+-2.0` -DGTK2
++
+ all: aylet xaylet
+ 
+ aylet: $(OBJS)
+-	$(CC) -o aylet $(OBJS) $(CURSES_LIB)
++	$(CC) $(LDFLAGS) $(CFLAGS) -o aylet $(OBJS) $(CURSES_LIB)
+ 
+ xaylet: $(XOBJS)
+-	$(CC) -o xaylet $(XOBJS) `gtk-config --libs`
++	$(CC) $(GTK_CFLAGS) $(GTK_LDFLAGS) $(LDFLAGS) $(CFLAGS) -o xaylet $(XOBJS)
+ 
+ uigtk.o: uigtk.c
+-	$(CC) $(CFLAGS) `gtk-config --cflags` -c uigtk.c -o uigtk.o
++	$(CC) $(GTK_CFLAGS) $(CFLAGS) $(LDFLAGS) -c uigtk.c -o uigtk.o
+ 
+ installdirs:
  	/bin/sh ./mkinstalldirs $(BINDIR) $(XBINDIR) $(MANDIR)
  
  install: installdirs
