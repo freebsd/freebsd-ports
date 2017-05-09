@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.27
+PORTVERSION=	1.0.28
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/files/
 
