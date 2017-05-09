@@ -1,8 +1,8 @@
 Implement Linux-like memory stats for BSDs
 
---- source/ramlib/ram.c.orig	2017-04-22 14:20:08 UTC
+--- source/ramlib/ram.c.orig	2013-12-29 14:05:10 UTC
 +++ source/ramlib/ram.c
-@@ -25,6 +25,21 @@
+@@ -27,6 +27,21 @@
  #include <mach/task.h>
  #include <mach/mach.h>
  #include <mach/mach_init.h>
@@ -24,31 +24,54 @@ Implement Linux-like memory stats for BSDs
  #elif LINUX
  #include <sys/sysinfo.h>
  #include <unistd.h>
-@@ -48,7 +63,10 @@
- 
- static u64 systemRam = 0x00000000;
- 
--#if !(defined(WIN) || defined(LINUX) || defined(DARWIN))
-+#if !(defined(WIN) || defined(LINUX) || defined(DARWIN) || \
-+      defined(__DragonFly__) || defined(__FreeBSD__) || \
-+      defined(__FreeBSD_kernel__) || defined(__NetBSD__) || \
-+      defined(__OpenBSD__))
+@@ -54,12 +69,22 @@ static u64 systemRam = 0x00000000;
+ #ifndef WIN
+ #ifndef XBOX
+ #ifndef LINUX
++#ifndef __DragonFly__
++#ifndef __FreeBSD__
++#ifndef __FreeBSD_kernel__
++#ifndef __NetBSD__
++#ifndef __OpenBSD__
  static unsigned long elfOffset = 0x00000000;
  static unsigned long stackSize = 0x00000000;
  #endif
-@@ -56,7 +74,10 @@ static unsigned long stackSize = 0x00000
+ #endif
+ #endif
+ #endif
++#endif
++#endif
++#endif
++#endif
++#endif
+ 
  /////////////////////////////////////////////////////////////////////////////
  // Symbols
- 
--#if !(defined(WIN) || defined(LINUX) || defined(DARWIN))
-+#if !(defined(WIN) || defined(LINUX) || defined(DARWIN) || \
-+      defined(__DragonFly__) || defined(__FreeBSD__) || \
-+      defined(__FreeBSD_kernel__) || defined(__NetBSD__) || \
-+      defined(__OpenBSD__))
+@@ -68,6 +93,11 @@ static unsigned long stackSize = 0x00000
+ #ifndef WIN
+ #ifndef XBOX
+ #ifndef LINUX
++#ifndef __DragonFly__
++#ifndef __FreeBSD__
++#ifndef __FreeBSD_kernel__
++#ifndef __NetBSD__
++#ifndef __OpenBSD__
  #if (__GNUC__ > 3)
  extern unsigned long _end;
  extern unsigned long _start;
-@@ -93,6 +114,49 @@ u64 getFreeRam(int byte_size)
+@@ -81,6 +111,11 @@ extern unsigned long start;
+ #endif
+ #endif
+ #endif
++#endif
++#endif
++#endif
++#endif
++#endif
+ 
+ /////////////////////////////////////////////////////////////////////////////
+ //  Functions
+@@ -107,6 +142,49 @@ u64 getFreeRam(int byte_size)
          return 0;
      }
      return (u64)(((vms.inactive_count + vms.free_count) * size) / byte_size);
@@ -98,7 +121,7 @@ Implement Linux-like memory stats for BSDs
  #elif LINUX
      struct sysinfo info;
      sysinfo(&info);
-@@ -133,11 +197,29 @@ void setSystemRam()
+@@ -147,11 +225,29 @@ void setSystemRam()
      stat.dwLength = sizeof(MEMORYSTATUS);
      GlobalMemoryStatus(&stat);
      systemRam = stat.dwTotalPhys;
@@ -133,19 +156,30 @@ Implement Linux-like memory stats for BSDs
  #elif LINUX
      struct sysinfo info;
      sysinfo(&info);
-@@ -183,7 +265,10 @@ void setSystemRam()
-     stackSize = 0x00000000;
-     systemRam = getFreeRam(BYTES);
- #endif
--#if !(defined(WIN) || defined(LINUX) || defined(DARWIN) || defined(SYMBIAN) || defined(VITA))
-+#if !(defined(WIN) || defined(LINUX) || defined(DARWIN) || defined(SYMBIAN) || defined(VITA) || \
-+      defined(__DragonFly__) || defined(__FreeBSD__) || \
-+      defined(__FreeBSD_kernel__) || defined(__NetBSD__) || \
-+      defined(__OpenBSD__))
+@@ -199,12 +295,22 @@ void setSystemRam()
+ #ifndef XBOX
+ #ifndef LINUX
+ #ifndef SYMBIAN
++#ifndef __DragonFly__
++#ifndef __FreeBSD__
++#ifndef __FreeBSD_kernel__
++#ifndef __NetBSD__
++#ifndef __OpenBSD__
      stackSize = (int)&_end - (int)&_start + ((int)&_start - elfOffset);
  #endif
+ #endif
+ #endif
+ #endif
+ #endif
++#endif
++#endif
++#endif
++#endif
++#endif
      getRamStatus(BYTES);
-@@ -212,6 +297,42 @@ u64 getUsedRam(int byte_size)
+ }
+ 
+@@ -234,6 +340,42 @@ u64 getUsedRam(int byte_size)
          return 0;
      }
      return info.resident_size / byte_size;

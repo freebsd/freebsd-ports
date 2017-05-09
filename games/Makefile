@@ -684,6 +684,10 @@
     SUBDIR += openarena-server
     SUBDIR += openastromenace
     SUBDIR += openbor
+    SUBDIR += openbor3482
+    SUBDIR += openbor3711
+    SUBDIR += openbor3979
+    SUBDIR += openbor4432
     SUBDIR += openbubbles
     SUBDIR += opencity
     SUBDIR += openclonk
