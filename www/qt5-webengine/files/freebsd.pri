@@ -13,4 +13,5 @@ GYP_CONFIG +=   disable_nacl=1          \
 # For now, only add very few system libraries.
 GYP_CONFIG += use_system_yasm=1 \
               use_system_libusb=1 \
-              use_system_libcxx=1
+              use_system_libcxx=1 \
+              use_system_ffmpeg=1
