@@ -1,9 +1,9 @@
 bin/wikidoc
-%%PERL5_MAN1%%/wikidoc.1.gz
-%%PERL5_MAN3%%/Pod::WikiDoc.3.gz
-%%PERL5_MAN3%%/Pod::WikiDoc::Cookbook.3.gz
-%%PERL5_MAN3%%/Pod::WikiDoc::Parser.3.gz
 %%SITE_PERL%%/Pod/WikiDoc.pm
 %%SITE_PERL%%/Pod/WikiDoc/Cookbook.pod
 %%SITE_PERL%%/Pod/WikiDoc/Parser.pm
 %%SITE_PERL%%/Pod/WikiDoc/Parser.pod
+%%PERL5_MAN1%%/wikidoc.1.gz
+%%PERL5_MAN3%%/Pod::WikiDoc.3.gz
+%%PERL5_MAN3%%/Pod::WikiDoc::Cookbook.3.gz
+%%PERL5_MAN3%%/Pod::WikiDoc::Parser.3.gz
