@@ -6,6 +6,7 @@ bin/web-service-request
 %%SITE_PERL%%/GeoIP2/Error/IPAddressNotFound.pm
 %%SITE_PERL%%/GeoIP2/Error/Type.pm
 %%SITE_PERL%%/GeoIP2/Error/WebService.pm
+%%SITE_PERL%%/GeoIP2/Model/ASN.pm
 %%SITE_PERL%%/GeoIP2/Model/AnonymousIP.pm
 %%SITE_PERL%%/GeoIP2/Model/City.pm
 %%SITE_PERL%%/GeoIP2/Model/ConnectionType.pm
@@ -41,6 +42,7 @@ bin/web-service-request
 %%PERL5_MAN3%%/GeoIP2::Error::IPAddressNotFound.3.gz
 %%PERL5_MAN3%%/GeoIP2::Error::Type.3.gz
 %%PERL5_MAN3%%/GeoIP2::Error::WebService.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::ASN.3.gz
 %%PERL5_MAN3%%/GeoIP2::Model::AnonymousIP.3.gz
 %%PERL5_MAN3%%/GeoIP2::Model::City.3.gz
 %%PERL5_MAN3%%/GeoIP2::Model::ConnectionType.3.gz
