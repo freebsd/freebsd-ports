@@ -73,12 +73,3 @@ Avoid accidental rounding from abs()
      {
          mod = 3 - mod;
      }
-@@ -34607,7 +34612,7 @@ void keyboard_setup(int player)
-     strncpy(buttonnames[SDID_SPECIAL], "Special", 16);
-     strncpy(buttonnames[SDID_START], "Start", 16);
-     strncpy(buttonnames[SDID_SCREENSHOT], "Screenshot", 16);
--    strncpy(buttonnames[SDID_ESC], "Exit", 16);
-+    //strncpy(buttonnames[SDID_ESC], "Exit", 16);
- 
-     savesettings();
-     bothnewkeys = 0;
