@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-extras
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	igor.ostapenko@gmail.com
