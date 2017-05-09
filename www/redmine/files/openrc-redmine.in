@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf[.local] to configure redmine
+#
+# redmine_flags (str):          Custom additional arguments to be passed
+#                               to redmine.
+# redmine_user (str):		User account to run thin with. (default: %%WWWOWN%%)
+# redmine_group (str):		Group to run thin with. (default: %%WWWGRP%%)
+
+name="redmine"
+description="RedMine web-based bug tracker"
+pidfile="%%WWWDIR%%/tmp/pids/thin.pid"
+
+depend{
+	need localmount net
+	use dns
+	keyword -shutdown
+}
+# add /usr/local/bin to path
+export PATH=$PATH:%%PREFIX%%/bin
+
+# set defaults
+: ${redmine_enable="NO"}
+: ${redmine_flags="-a 0.0.0.0 -p 3000 -e production"}
+: ${redmine_user="%%WWWOWN%%"}
+: ${redmine_group="%%WWWGRP%%"}
+
+command_args="-d -D -c %%WWWDIR%% -u ${redmine_user} -g ${redmine_group}"
+command="%%PREFIX%%/bin/thin ${command_args} ${redmine_flags} start"
+
