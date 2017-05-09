@@ -12,7 +12,8 @@ command_background="true"
 pidfile="/var/run/slim.pid"
 
 depend(){
-	keyword -login
+	provide xlogin
+	keyword -login -shutdown
 	need localmount dbus hald
 }
 
