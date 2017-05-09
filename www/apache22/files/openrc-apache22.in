@@ -1,0 +1,198 @@
+#!/sbin/openrc-run
+# OpenRC script for the apache web server
+
+name="apache22"
+description="The Apache web server (version 2.2)"
+command="%%PREFIX%%/sbin/httpd"
+_pidprefix="/var/run/httpd"
+pidfile="${_pidprefix}.pid"
+required_files=%%PREFIX%%/etc/apache22/httpd.conf
+envvars="%%PREFIX%%/sbin/envvars"
+
+depend(){
+	provide apache
+	keyword -shutdown
+	need localmount sshd
+}
+
+#
+# Add the following lines to /etc/rc.conf to customize apache24:
+# apache24_profiles (str):     Set to "" by default.
+#                              Define your profiles here.
+# apache24limits_enable (bool):Set to "NO" by default.
+#                             Set it to yes to run `limits $limits_args`
+#                             just before apache starts.
+# apache24_flags (str):        Set to "" by default.
+#                             Extra flags passed to start command.
+# apache24limits_args (str):   Default to "-e -C daemon"
+#                             Arguments of pre-start limits run.
+# apache24_http_accept_enable (bool): Set to "NO" by default.
+#                             Set to yes to check for accf_http kernel
+#                             module on start up and load if not loaded.
+# apache24_fib (str):	      Set an altered default network view for apache
+# apache24_configcheck_disable (bool): Set to "YES" to disable sanity check on startup
+
+extra_commands="configtest"
+extra_started_commands="gracefulstop"
+
+#Set the default values for variables as needed
+[ -z "$apache22_enable" ]       && apache22_enable="NO"
+[ -z "$apache22limits_enable" ] && apache22limits_enable="NO"
+[ -z "$apache22limits_args" ]   && apache22limits_args="-e -C daemon"
+[ -z "$apache22_http_accept_enable" ] && apache22_http_accept_enable="NO"
+[ -z "$apache22_configcheck_disable" ] && apache22_configcheck_disable="NO"
+
+# === Define the internal functions/simplifications ===
+apache22_accf()
+{
+  if yesno ${apache22_http_accept_enable} ; then
+    /sbin/kldstat -qm accf_http || /sbin/kldload accf_http || return ${?}
+    /sbin/kldstat -qm accf_data || /sbin/kldload accf_data || return ${?}
+  else
+    apache22_flags="${apache22_flags} -DNOHTTPACCEPT"
+  fi
+}
+
+apache22_graceful() {
+	if ! yesno ${apache22_configcheck_disable}
+	then
+		configtest
+	fi
+
+	einfo "Performing a graceful restart"
+	${command} ${apache22_flags} -k graceful
+}
+
+apache22_precmd() {
+	if ! yesno ${apache22_configcheck_disable}
+	then
+		configtest
+	fi
+
+	if yesno ${apache22limits_enable}
+	then
+		eval `/usr/bin/limits ${apache22limits_args}` 2>/dev/null
+	else
+		return 0
+        fi
+
+}
+
+apache22_checkfib() {
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
+
+	$SYSCTL net.fibs >/dev/null 2>&1 || return 0
+
+	apache22_fib=${apache22_fib:-"NONE"}
+	if [ "x$apache22_fib" != "xNONE" ]
+	then
+		command="/usr/sbin/setfib -F ${apache22_fib} ${command}"
+	else
+		return 0
+	fi
+}
+
+# === Define the external/OpenRC functions
+configtest() {
+	if test -f ${apache22_envvars}
+	then
+		. ${apache22_envvars}
+	fi
+
+	einfo "Performing sanity check on apache22 configuration:"
+	${command} ${apache22_flags} -t
+}
+
+gracefulstop() {
+
+	if ! yesno ${apache22_configcheck_disable}
+	then
+		configtest
+	fi
+
+	einfo "Performing a graceful stop"
+	${command} ${apache22_flags} -k graceful-stop
+         #Now run the stop function for OpenRC to clean anything else up
+        service apache22 stop
+}
+
+start_pre() {
+	apache22_checkfib
+	apache22_precmd
+}
+
+# === Define the script-startup routine ===
+
+#Detect/modify the internal variables for individual profiles
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${apache22_profiles}" != "x" ]; then
+		pidfile="${_pidprefix}.${profile}.pid"
+		apache22_configfile="\${apache22_${profile}_configfile:-}"
+		if [ "x${apache22_configfile}" = "x" ]; then
+			eerror "You must define a configuration file (apache22_${profile}_configfile)"
+			exit 1
+		fi
+		required_files="${apache22_configfile}"
+		apache22_enable="\${apache22_${profile}_enable:-${apache22_enable}}"
+		apache22_flags="\${apache22_${profile}_flags:-${apache22_flags}}"
+		apache22_http_accept_enable="\${apache22_${profile}_http_accept_enable:-${apache22_http_accept_enable}}"
+		apache22limits_enable="\${apache22limits_${profile}_enable:-${apache22limits_enable}}"
+		apache22limits_args="\${apache22limits_${profile}_args:-${apache22limits_args}}"
+		apache22_fib="\${apache22_${profile}_fib:-${apache22_fib}}"
+		apache22_configcheck_disable="\${apache22_${profile}_configcheck_disable:-${apache22_configcheck_disable}}"
+		command="\${apache22_${profile}_command:-${command}}"
+		pidfile="\${apache22_${profile}_pidfile:-${pidfile}}"
+		apache22_envvars="\${apache22_${profile}_envvars:-${envvars}}"
+		apache22_flags="-f ${apache22_configfile} -c \"PidFile ${pidfile}\" ${apache22_flags}"
+	else
+		ewarn "$0: extra argument ignored"
+	fi
+else
+	apache22_envvars=${envvars}
+	if [ "x${apache22_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${apache22_profiles}; do
+			_enable="\${apache22_${profile}_enable}"
+			case "x${_enable:-${apache22_enable}}" in
+			x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+				continue
+				;;
+			x[Yy][Ee][Ss])
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=apache22_enable
+				else
+					_var=apache22_"${profile}"_enable
+				fi
+				ewarn "Bad value" \
+				    "'${_enable:-${apache22_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			einfo "===> apache22 profile: ${profile}"
+			service apache22 $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+if [ "${RC_CMD}" != "stop" ] ; then
+	apache22_accf
+fi
+
+if [ "${RC_CMD}" = "restart" ] ; then
+	#replace the restart routine with a graceful restart instead
+	apache22_graceful
+	return $?
+fi
