@@ -4922,6 +4922,7 @@
     SUBDIR += py3-Jinja2
     SUBDIR += py3-babel
     SUBDIR += py3-click
+    SUBDIR += py3-click-log
     SUBDIR += py3-colorama
     SUBDIR += py3-dbus
     SUBDIR += py3-defusedxml
