@@ -19,6 +19,7 @@ TEST_DEPENDS=	googlemock>=0:devel/googlemock \
 BROKEN_sparc64=	fails to compile: no atomic ops available
 
 CFLAGS+=	-DGOOGLE_PROTOBUF_NO_RTTI
+CONFIGURE_ENV=	CXX_FOR_BUILD=c++
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_ARGS=	${MAKE_ARGS} ${_MAKE_JOBS}
