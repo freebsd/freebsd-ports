@@ -1,0 +1,7 @@
+An icon-theme maintained with Xfce in mind, but it supports other desktops
+like Gnome3 as well. It's a fork of the upstream elementary-project, which
+took place because the team decided to drop a lot of desktop-specific
+symlinks. This icon-theme is supposed to keep everything working, but still
+pull new icons from upstream and integrate them occasionally.
+
+WWW: https://github.com/shimmerproject/elementary-xfce 
