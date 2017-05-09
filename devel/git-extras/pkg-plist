@@ -3,6 +3,7 @@ bin/git-archive-file
 bin/git-authors
 bin/git-back
 bin/git-bug
+bin/git-bulk
 bin/git-changelog
 bin/git-chore
 bin/git-clear
@@ -19,6 +20,7 @@ bin/git-delta
 bin/git-effort
 bin/git-extras
 bin/git-feature
+bin/git-force-clone
 bin/git-fork
 bin/git-fresh-branch
 bin/git-gh-pages
@@ -55,6 +57,7 @@ bin/git-show-merged-branches
 bin/git-show-tree
 bin/git-show-unmerged-branches
 bin/git-squash
+bin/git-stamp
 bin/git-standup
 bin/git-summary
 bin/git-sync
@@ -67,6 +70,7 @@ man/man1/git-archive-file.1.gz
 man/man1/git-authors.1.gz
 man/man1/git-back.1.gz
 man/man1/git-bug.1.gz
+man/man1/git-bulk.1.gz
 man/man1/git-changelog.1.gz
 man/man1/git-chore.1.gz
 man/man1/git-clear-soft.1.gz
@@ -83,6 +87,7 @@ man/man1/git-delta.1.gz
 man/man1/git-effort.1.gz
 man/man1/git-extras.1.gz
 man/man1/git-feature.1.gz
+man/man1/git-force-clone.1.gz
 man/man1/git-fork.1.gz
 man/man1/git-fresh-branch.1.gz
 man/man1/git-gh-pages.1.gz
@@ -118,6 +123,7 @@ man/man1/git-show-merged-branches.1.gz
 man/man1/git-show-tree.1.gz
 man/man1/git-show-unmerged-branches.1.gz
 man/man1/git-squash.1.gz
+man/man1/git-stamp.1.gz
 man/man1/git-standup.1.gz
 man/man1/git-summary.1.gz
 man/man1/git-sync.1.gz

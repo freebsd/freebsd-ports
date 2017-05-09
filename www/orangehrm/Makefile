@@ -3,6 +3,7 @@
 
 PORTNAME=	orangehrm
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	www misc
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.TXT
 
 USES=		cpe zip
-USE_PHP=	mysql
+USE_PHP=	pdo_mysql ctype xml simplexml
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
