@@ -2,7 +2,7 @@
 
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
-PORTVERSION?=	4504
+PORTVERSION?=	4505
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,7 +24,7 @@ LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DCurrent
-GH_TAGNAME?=	4dfdb66
+GH_TAGNAME?=	c0037ec
 
 USES+=		gmake pkgconfig
 .if ${PORTVERSION} < 4433
