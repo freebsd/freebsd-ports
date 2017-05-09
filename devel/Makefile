@@ -4922,6 +4922,7 @@
     SUBDIR += py3-Jinja2
     SUBDIR += py3-babel
     SUBDIR += py3-click
+    SUBDIR += py3-click-log
     SUBDIR += py3-colorama
     SUBDIR += py3-dbus
     SUBDIR += py3-defusedxml
@@ -5551,6 +5552,7 @@
     SUBDIR += rubygem-sidekiq-cron
     SUBDIR += rubygem-sidekiq-cron04
     SUBDIR += rubygem-sidekiq-limit_fetch
+    SUBDIR += rubygem-sidekiq-scheduler
     SUBDIR += rubygem-sidekiq-unique-jobs
     SUBDIR += rubygem-sidetiq
     SUBDIR += rubygem-sigdump

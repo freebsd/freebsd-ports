@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd %%PREFIX%%/libexec
+exec %%PREFIX%%/libexec/pass "$@"

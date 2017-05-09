@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-AttributeShortcuts
-PORTVERSION=	0.028
+PORTVERSION=	0.029
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,15 +12,13 @@ COMMENT=	Shorthand for common attribute options
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-List-AllUtils>=0:devel/p5-List-AllUtils \
-		p5-Moose>=0:devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-Meta-TypeConstraint-Mooish>=0:devel/p5-MooseX-Meta-TypeConstraint-Mooish \
 		p5-MooseX-Role-Parameterized>=0:devel/p5-MooseX-Role-Parameterized \
 		p5-MooseX-Types-Common>=0:devel/p5-MooseX-Types-Common \
 		p5-MooseX-Types>=0:devel/p5-MooseX-Types \
-		p5-Package-DeprecationManager>=0:devel/p5-Package-DeprecationManager \
 		p5-aliased>=0:devel/p5-aliased \
-		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
+		p5-namespace-autoclean>=0.24:devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-Types-Path-Class>=0:devel/p5-MooseX-Types-Path-Class \
 		p5-Path-Class>=0:devel/p5-Path-Class \

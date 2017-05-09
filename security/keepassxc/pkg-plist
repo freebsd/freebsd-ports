@@ -1,5 +1,5 @@
 bin/keepassxc
-lib/keepassxc/libkeepassx-autotype-xcb.so
+%%AUTOTYPE%%lib/keepassxc/libkeepassx-autotype-xcb.so
 share/applications/keepassxc.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
 share/icons/hicolor/128x128/apps/keepassxc-locked.png
