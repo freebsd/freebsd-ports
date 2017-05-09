@@ -189,6 +189,7 @@
     SUBDIR += mongodb32
     SUBDIR += mongodb32-tools
     SUBDIR += mongodb34
+    SUBDIR += mongodb34-rocks
     SUBDIR += mongodb34-tools
     SUBDIR += mrtg-mysql-load
     SUBDIR += mtools-mongodb
