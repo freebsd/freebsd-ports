@@ -43,17 +43,6 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libsrtp.so:net/libsrtp \
 		libwebp.so:graphics/webp
 
-OPTIONS_SINGLE=		AUDIO
-OPTIONS_SINGLE_AUDIO=	ALSA PULSEAUDIO
-OPTIONS_DEFAULT=	ALSA
-
-AUDIO_DESC=		Audio backend
-
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_QMAKE_ON=		QT_CONFIG+=alsa
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_QMAKE_ON=	QT_CONFIG+=pulseaudio
-
 # We pass `norecursive' to USES=qmake because src/plugins/plugins.pro checks
 # whether webenginewidgets is available, which fails when qmake processes all
 # .pro files at once.
