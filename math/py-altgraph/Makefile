@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	altgraph
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,7 @@ COMMENT=	Python graph (network) package
 
 LICENSE=	MIT
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 
