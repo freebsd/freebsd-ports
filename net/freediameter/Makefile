@@ -10,6 +10,8 @@ COMMENT=	Open source Diameter protocol implementation
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to configure
+
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls
 
