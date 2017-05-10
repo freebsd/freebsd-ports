@@ -845,6 +845,7 @@
     SUBDIR += redigo
     SUBDIR += redis
     SUBDIR += redis-devel
+    SUBDIR += retcl
     SUBDIR += riak
     SUBDIR += riak2
     SUBDIR += rocksdb
