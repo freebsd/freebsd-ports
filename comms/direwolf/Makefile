@@ -10,6 +10,8 @@ COMMENT=	Software "soundcard" modem/TNC and APRS encoder/decoder
 
 LICENSE=	GPLv2
 
+BROKEN=		wrong LIB_DEPENDS
+
 LIB_DEPENDS=	libhamlib.so:comms/hamlib \
 		libgps.so:astro/gpsd
 
