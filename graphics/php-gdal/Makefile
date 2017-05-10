@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -33,8 +33,8 @@ post-patch:
 
 # GDALmake.opt and cpl_config.h are not available until configure phase
 post-configure:
-	${SED} -e '/^GDAL_ROOT/d' ${DATADIR}/GDALmake.opt > ${WRKSRC}/../../GDALmake.opt
-	${CP} ${LOCALBASE}/include/cpl_config.h ${WRKSRC}/../../port/
+	@${SED} -e '/^GDAL_ROOT/d' ${DATADIR}/GDALmake.opt > ${WRKSRC}/../../GDALmake.opt
+	@${CP} ${LOCALBASE}/include/cpl_config.h ${WRKSRC}/../../port/
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/ ${STAGEDIR}${PREFIX}/include/php/ext/${PORTNAME}/

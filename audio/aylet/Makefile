@@ -3,7 +3,7 @@
 
 PORTNAME=	aylet
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.worldofspectrum.org/pub/sinclair/music/players-unix/ \
 		LOCAL/ehaupt
@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=GUI
 OPTIONS_SUB=	yes
 
-GUI_USE=	XORG=x11,xext,xi GNOME=cairo,gdkpixbuf2,gtk20
+GUI_USE=	GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
 
 ALL_TARGET=	aylet
 GUI_ALL_TARGET=	xaylet

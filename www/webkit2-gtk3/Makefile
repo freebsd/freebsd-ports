@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.14.6
+PORTVERSION=	2.14.7
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -37,7 +37,7 @@ USES=		bison cmake compiler:c++14-lang gettext gmake gnome gperf \
 		jpeg perl5 pkgconfig python:2.7,build sqlite tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
-USE_GNOME=	cairo gdkpixbuf2 gtk20 gtk30 introspection:build libxml2 libxslt
+USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2 libxslt
 USE_GL=		gl egl
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -57,8 +57,11 @@ CONFIGURE_ENV+=	XDG_CACHE_HOME=${WRKDIR}
 BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk3
 #_BROWSER_PLUGINS_DIR=	${BROWSER_PLUGINS_DIR:S|^/|"|:S|/|", "|g}",
 
-OPTIONS_DEFINE=	DEBUG GEOIP
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	DEBUG GEOIP NPAPI
 OPTIONS_DEFAULT=GEOIP
+OPTIONS_DEFAULT_i386=	NPAPI
+OPTIONS_DEFAULT_amd64=	NPAPI
 
 DEBUG_BUILD_DEPENDS=	binutils>=0:devel/binutils
 DEBUG_CMAKE_ON=		-DCMAKE_BUILD_TYPE:STRING=Debug \
@@ -72,6 +75,10 @@ DEBUG_CFLAGS_OFF=	-DNDEBUG
 GEOIP_CMAKE_BOOL=	ENABLE_GEOLOCATION
 GEOIP_BUILD_DEPENDS+=	geoclue>=0:net/geoclue
 GEOIP_RUN_DEPENDS+=	geoclue>=0:net/geoclue
+
+NPAPI_DESC=	Support gtk2 (NPAPI) based plugins (like flash)
+NPAPI_CMAKE_BOOL=	ENABLE_PLUGIN_PROCESS_GTK2
+NPAPI_USE=	GNOME=gtk20
 
 .include <bsd.port.options.mk>
 
