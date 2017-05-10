@@ -13,6 +13,8 @@ COMMENT=	Easystroke is a gesture-recognition application for X11
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${LOCALBASE}/include/xorg/xserver-properties.h:x11-servers/xorg-server
 LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30 \
