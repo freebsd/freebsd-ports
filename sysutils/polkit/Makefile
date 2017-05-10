@@ -3,7 +3,7 @@
 
 PORTNAME=	polkit
 PORTVERSION=	0.113
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
@@ -51,10 +51,6 @@ MANPAGES_CONFIGURE_ENABLE=	man-pages
 OPTIONS_SUB=	yes
 
 .include <bsd.port.pre.mk>
-
-.if (${ARCH} == "armv6" || ${ARCH} == "armv6hf")
-USE_GCC=       yes
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/|${PREFIX}/bin/|g' \
