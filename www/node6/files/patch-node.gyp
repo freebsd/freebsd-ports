@@ -1,6 +1,6 @@
---- node.gyp.orig	2017-05-10 12:22:23 UTC
+--- node.gyp.orig	2017-05-10 12:20:05 UTC
 +++ node.gyp
-@@ -513,6 +513,12 @@
+@@ -818,6 +818,12 @@
                  '<(OBJ_DIR)/node/src/node_dtrace_ustack.o'
                ],
                'conditions': [
