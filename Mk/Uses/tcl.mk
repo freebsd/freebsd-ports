@@ -40,11 +40,11 @@
 #   			  is installed, bring in the default version. See
 #   			  ${_TCLTK_DEFAULT_VERSION} below.
 #
-# - 84, 85, 86, 87	- Depend on a specific version series of PORT. Multiple
+# - 84, 85, 86		- Depend on a specific version series of PORT. Multiple
 #   			  values are OK. The highest version available is
 #   			  picked.
 #
-# - 84+, 85+, 86+, 87+	- Depend on any installed version greater or equal to
+# - 84+, 85+, 86+	- Depend on any installed version greater or equal to
 #   			  the specified version.
 #
 # If wrapper is specified, an additional dependency on tcl-wrapper or
@@ -72,7 +72,7 @@ _INCLUDE_USES_TCL_MK=	yes
 #
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_TCLTK_VALID_VERSIONS=	84 85 86 87
+_TCLTK_VALID_VERSIONS=	84 85 86
 
 #
 # Bring in the default and check that the specified version is in the list of
