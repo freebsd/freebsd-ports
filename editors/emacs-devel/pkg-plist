@@ -917,6 +917,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/arc-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/array.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/array.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/auth-source-pass.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/auth-source-pass.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/auth-source.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/auth-source.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/autoarg.el.gz
@@ -2574,12 +2576,16 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-buffers.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-comp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-comp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-compat.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-e.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-e.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-folder.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-folder.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-funcs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-funcs.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-gnus.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-gnus.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-identity.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-identity.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-inc.el.gz
