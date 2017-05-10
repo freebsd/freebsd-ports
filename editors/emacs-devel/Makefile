@@ -19,10 +19,10 @@ BROKEN_aarch64=		Fails to link: missing sbrk
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	28718c4
+GH_TAGNAME=	5e2cf8c
 
 EMACS_VER=	26.0.50
-EMACS_REV=	20170415
+EMACS_REV=	20170509
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
@@ -177,9 +177,7 @@ XPM_CONFIGURE_WITH=	xpm
 XPM_IMPLIES=		X11
 XWIDGETS_USE=		XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=xwidgets
-XWIDGETS_IGNORE=	Cannot build with XWIDGETS, because the version of \
-WebKit GTK3 in the ports tree is too old
-XWIDGETS_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
+XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 XWIDGETS_IMPLIES=	GTK3
 
 pre-configure:

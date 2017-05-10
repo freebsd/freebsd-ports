@@ -2574,14 +2574,12 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-buffers.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-comp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-comp.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-compat.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-e.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-e.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-folder.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-folder.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-funcs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-funcs.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-gnus.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-identity.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-identity.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-inc.el.gz
