@@ -3,6 +3,7 @@
 
 PORTNAME=	yt
 PORTVERSION=	3.3.5
+PORTREVISION=	1
 CATEGORIES=	math astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ RUN_DEPENDS=	isympy:math/py-sympy \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython
 LIB_DEPENDS=	libembree.so:graphics/embree \
-		libomp.so:devel/openmp
+		libomp.so.0:devel/openmp
 
 USES=		dos2unix localbase python
 USE_PYTHON=	autoplist distutils
