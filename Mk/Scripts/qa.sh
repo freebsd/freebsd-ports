@@ -596,7 +596,7 @@ proxydeps_suggest_uses() {
 		warn "you need USES+=gnustep and USE_GNUSTEP+=gui"
 	# iconv
 	elif [ ${pkg} = "converters/libiconv" ]; then
-		warn "you need USES+=iconv"
+		warn "you need USES+=iconv, USES+=iconv:wchar_t, or USES+=iconv:translit depending on needs"
 	# jpeg
 	elif [ ${pkg} = "graphics/jpeg" -o ${pkg} = "graphics/jpeg-turbo" ]; then
 		warn "you need USES+=jpeg"
