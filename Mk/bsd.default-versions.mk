@@ -134,7 +134,7 @@ check-makevars::
 # Make sure we have a default in the end
 SSL_DEFAULT?=	base
 .endif
-# Possible values: 8.4, 8.5, 8.6, 8.7
+# Possible values: 8.4, 8.5, 8.6
 TCLTK_DEFAULT?=		8.6
 
 # Possible values: 4, 5
