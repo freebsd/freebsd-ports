@@ -15,6 +15,8 @@ COMMENT=	Ember is a WorldForge 3D client using the OGRE 3D library
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:graphics/ogre3d
 RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:graphics/ogre3d
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
