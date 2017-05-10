@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -42,7 +42,10 @@ EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patc
 		${FILESDIR}/kconf_arch.patch:-p1 \
 		${FILESDIR}/0001-x86-drop-unneeded-__packed-attributes.patch:-p1 \
 		${FILESDIR}/0002-build-clang-fix-XSM-dummy-policy-when-using-clang-4..patch:-p1 \
-		${FILESDIR}/xsa212.patch:-p1
+		${FILESDIR}/xsa212.patch:-p1 \
+		${FILESDIR}/xsa213-4.7.patch:-p1 \
+		${FILESDIR}/xsa214.patch:-p1 \
+		${FILESDIR}/xsa215.patch:-p1
 
 .include <bsd.port.options.mk>
 
