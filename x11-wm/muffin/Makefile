@@ -9,6 +9,8 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Compositing window manager forked from Mutter for use with Cinnamon
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	zenity>=3.0.0:x11/zenity \
 		gnome-autogen.sh:devel/gnome-common \
 		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas
