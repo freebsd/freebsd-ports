@@ -3,6 +3,9 @@
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
 PORTVERSION?=	4505
+.ifndef PKGNAMESUFFIX
+PORTREVISION=	1
+.endif
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
