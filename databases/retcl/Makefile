@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	retcl
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org
