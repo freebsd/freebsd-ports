@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME interface to xcompmgr
 
+BROKEN=		fails to build
+
 RUN_DEPENDS=	xcompmgr:x11-wm/xcompmgr
 
 GNU_CONFIGURE=	yes

@@ -14,7 +14,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.2.29.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://www.dovecot.org/releases/${PORTVERSION:R:R}/
 PKGNAMESUFFIX=	2
@@ -78,6 +78,7 @@ KQUEUE_CONFIGURE_ON=	--with-ioloop=kqueue --with-notify=kqueue
 
 LIBWRAP_CONFIGURE_WITH=	libwrap
 
+LZ4_CONFIGURE_WITH=	lz4
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
 VPOPMAIL_BUILD_DEPENDS=	vpopmail>=0:mail/vpopmail
