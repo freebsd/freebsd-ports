@@ -145,3 +145,4 @@ bin/txt2gcal
 %%NLS%%share/locale/rw/LC_MESSAGES/gcal.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gcal.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gcal.mo

@@ -1,4 +1,4 @@
---- src/nomos/agent/Makefile.sa.orig	2016-05-05 13:46:14 UTC
+--- src/nomos/agent/Makefile.sa.orig	2017-04-21 13:29:41 UTC
 +++ src/nomos/agent/Makefile.sa
 @@ -2,10 +2,6 @@
  # This is to make a version of nomos that does not require any of the fossology build dependencies.
@@ -19,14 +19,13 @@
 +CFLAGS_LOCAL = -DSTANDALONE -Wall -D_FILE_OFFSET_BITS=64 `pkg-config glib-2.0 --cflags`
 +LDFLAGS_LOCAL = `pkg-config glib-2.0 --libs`
  
--all: encode nomos
+-all: encode $(EXE)
 +all: $(EXE)
  
  debug: nomos-gl
  
--nomos: nomos.o $(OBJS) $(GENOBJS)
+ $(EXE): nomos.o $(OBJS) $(GENOBJS)
 -	$(CC) nomos.o $(OBJS) $(GENOBJS) $(CFLAGS_LOCAL) -o $(EXE)
-+$(EXE): nomos.o $(OBJS) $(GENOBJS)
 +	$(CC) nomos.o $(OBJS) $(GENOBJS) $(LDFLAGS) $(LDFLAGS_LOCAL) -o $(EXE)
  
 -nomos.o: nomos.c $(HDRS) $(DB) $(REPO) $(AGENTLIB) $(VARS)
