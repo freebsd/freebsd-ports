@@ -70,6 +70,8 @@ post-patch:
 	@${MV} ${WRKSRC}/files/usr/${d} ${WRKSRC}/files${PREFIX}
 .endfor
 
+	@${REINPLACE_CMD} -e 's|--warn-error||g' ${WRKSRC}/src/Makefile.in
+
 	@${REINPLACE_CMD} -e 's|/usr/share/cinnamon|${STAGEDIR}${PREFIX}/share/|g ;\
 		s|/usr/lib|${STAGEDIR}${PREFIX}/share/|g' \
 			${WRKSRC}/files/generate_desktop_files
