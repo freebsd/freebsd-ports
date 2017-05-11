@@ -3,7 +3,7 @@
 
 PORTNAME=	haproxy
 DISTVERSION=	1.8-dev1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/1.8/src/devel/
 PKGNAMESUFFIX=	-devel
@@ -25,7 +25,7 @@ DEVICEATLAS_DISTFILE=	deviceatlas-enterprise-c-${DEVICEATLAS_VERSION}
 DEVICEATLAS_REGISTRATION_URL=	https://deviceatlas.com/deviceatlas-haproxy-module
 
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
-		USE_ZLIB=1 USE_CPU_AFFINITY=1 CC="${CC}" CFLAGS="${CFLAGS} -fno-strict-aliasing -fwrapv"
+		USE_ZLIB=1 USE_CPU_AFFINITY=1 USE_REGPARM=1 USE_ACCEPT4=1 CC="${CC}" CFLAGS="${CFLAGS} -fno-strict-aliasing -fwrapv"
 
 OPTIONS_DEFINE=		DOCS EXAMPLES LUA OPENSSL DEVICEATLAS
 OPTIONS_RADIO=		PCRE
