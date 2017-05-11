@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	el
-PORTVERSION=	193
-PORTREVISION=	6
+PORTVERSION=	1.9.4.3
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	LOCAL/rene
+MASTER_SITES=	https://github.com/raduprv/Eternal-Lands/archive/
+DISTFILES=	${PORTVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
@@ -17,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:games/el-data
 
 BROKEN_sparc64=	Does not build on sparc64
 
-USES=		compiler:c++11-lang gmake iconv openal:al,alut tar:xz
+USES=		compiler:c++11-lang gmake iconv openal:al,alut
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		yes
@@ -26,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} -lX11
 
 ALL_TARGET=	el.bin
 MAKEFILE=	Makefile.bsd
+WRKSRC=		${WRKDIR}/Eternal-Lands-${PORTVERSION}
 PLIST_FILES=	bin/el \
 		%%DATADIR%%/el.bin
 
