@@ -1,0 +1,5 @@
+Database Library utilities for use with Robot Framework. This can allow you to
+query your database after an action has been made to verify the results. This
+is compatible* with any Database API Specification 2.0 module.
+
+WWW: http://franz-see.github.io/Robotframework-Database-Library/
