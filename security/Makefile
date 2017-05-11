@@ -861,6 +861,7 @@
     SUBDIR += py-fail2ban
     SUBDIR += py-fchksum
     SUBDIR += py-flask-httpauth
+    SUBDIR += py-gixy
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
     SUBDIR += py-gpgme
