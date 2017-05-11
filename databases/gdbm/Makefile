@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	gdbm
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU database manager
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool:keepla
+USES=		libtool:keepla readline
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -29,8 +29,9 @@ NLS_USES=	gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|LIBS = @LIBS@ -lc|LIBS = @LIBS@|" \
-		-e "s|BINOWN = bin|BINOWN = root|" -e "s|BINGRP = bin|BINGRP = wheel|" \
-		-e "s|libgdbm.la libgdbm_compat.la|libgdbm.la libgdbm_compat.la gdbm.info|" \
+		-e "s|BINOWN = bin|BINOWN = root|" \
+		-e "s|BINGRP = bin|BINGRP = wheel|" \
+		-e "s|libgdbm.la libgdbm_compat.la|& gdbm.info|" \
 			${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
