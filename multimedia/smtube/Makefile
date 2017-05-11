@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	17.1.0
-PORTREVISION=	2
+PORTVERSION=	17.5.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
@@ -38,7 +37,7 @@ QT4_USE=	qt4=qmake_build,moc_build,rcc_build,uic_build
 QT4_USE+=	qt4=corelib,network,script,gui,webkit,linguisttools_build
 
 QT5_USE=	qt5=qmake_build,buildtools_build,linguisttools_build
-QT5_USE+=	qt5=core,network,script,gui,webkit,widgets
+QT5_USE+=	qt5=core,network,script,gui,webkit,widgets gl=gl
 
 MPLAYER_RUN_DEPENDS=		mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS=		mpv:multimedia/mpv
