@@ -1,0 +1,173 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: multicall: deal with early exit conditions
+
+In particular changes to guest privilege level require the multicall
+sequence to be aborted, as hypercalls are permitted from kernel mode
+only. While likely not very useful in a multicall, also properly handle
+the return value in the HYPERVISOR_iret case (which should be the guest
+specified value).
+
+This is XSA-213.
+
+Reported-by: Jann Horn <jannh@google.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Acked-by: Julien Grall <julien.grall@arm.com>
+
+--- a/xen/arch/arm/traps.c
++++ b/xen/arch/arm/traps.c
+@@ -1529,30 +1529,33 @@ static bool_t check_multicall_32bit_clea
+     return true;
+ }
+ 
+-void do_multicall_call(struct multicall_entry *multi)
++enum mc_disposition do_multicall_call(struct multicall_entry *multi)
+ {
+     arm_hypercall_fn_t call = NULL;
+ 
+     if ( multi->op >= ARRAY_SIZE(arm_hypercall_table) )
+     {
+         multi->result = -ENOSYS;
+-        return;
++        return mc_continue;
+     }
+ 
+     call = arm_hypercall_table[multi->op].fn;
+     if ( call == NULL )
+     {
+         multi->result = -ENOSYS;
+-        return;
++        return mc_continue;
+     }
+ 
+     if ( is_32bit_domain(current->domain) &&
+          !check_multicall_32bit_clean(multi) )
+-        return;
++        return mc_continue;
+ 
+     multi->result = call(multi->args[0], multi->args[1],
+                          multi->args[2], multi->args[3],
+                          multi->args[4]);
++
++    return likely(!psr_mode_is_user(guest_cpu_user_regs()))
++           ? mc_continue : mc_preempt;
+ }
+ 
+ /*
+--- a/xen/common/multicall.c
++++ b/xen/common/multicall.c
+@@ -40,6 +40,7 @@ do_multicall(
+     struct mc_state *mcs = &current->mc_state;
+     uint32_t         i;
+     int              rc = 0;
++    enum mc_disposition disp = mc_continue;
+ 
+     if ( unlikely(__test_and_set_bit(_MCSF_in_multicall, &mcs->flags)) )
+     {
+@@ -50,7 +51,7 @@ do_multicall(
+     if ( unlikely(!guest_handle_okay(call_list, nr_calls)) )
+         rc = -EFAULT;
+ 
+-    for ( i = 0; !rc && i < nr_calls; i++ )
++    for ( i = 0; !rc && disp == mc_continue && i < nr_calls; i++ )
+     {
+         if ( i && hypercall_preempt_check() )
+             goto preempted;
+@@ -63,7 +64,7 @@ do_multicall(
+ 
+         trace_multicall_call(&mcs->call);
+ 
+-        do_multicall_call(&mcs->call);
++        disp = do_multicall_call(&mcs->call);
+ 
+ #ifndef NDEBUG
+         {
+@@ -77,7 +78,14 @@ do_multicall(
+         }
+ #endif
+ 
+-        if ( unlikely(__copy_field_to_guest(call_list, &mcs->call, result)) )
++        if ( unlikely(disp == mc_exit) )
++        {
++            if ( __copy_field_to_guest(call_list, &mcs->call, result) )
++                /* nothing, best effort only */;
++            rc = mcs->call.result;
++        }
++        else if ( unlikely(__copy_field_to_guest(call_list, &mcs->call,
++                                                 result)) )
+             rc = -EFAULT;
+         else if ( mcs->flags & MCSF_call_preempted )
+         {
+@@ -93,6 +101,9 @@ do_multicall(
+             guest_handle_add_offset(call_list, 1);
+     }
+ 
++    if ( unlikely(disp == mc_preempt) && i < nr_calls )
++        goto preempted;
++
+     perfc_incr(calls_to_multicall);
+     perfc_add(calls_from_multicall, i);
+     mcs->flags = 0;
+--- a/xen/include/asm-arm/multicall.h
++++ b/xen/include/asm-arm/multicall.h
+@@ -1,7 +1,11 @@
+ #ifndef __ASM_ARM_MULTICALL_H__
+ #define __ASM_ARM_MULTICALL_H__
+ 
+-extern void do_multicall_call(struct multicall_entry *call);
++extern enum mc_disposition {
++    mc_continue,
++    mc_exit,
++    mc_preempt,
++} do_multicall_call(struct multicall_entry *call);
+ 
+ #endif /* __ASM_ARM_MULTICALL_H__ */
+ /*
+--- a/xen/include/asm-x86/multicall.h
++++ b/xen/include/asm-x86/multicall.h
+@@ -7,8 +7,21 @@
+ 
+ #include <xen/errno.h>
+ 
++enum mc_disposition {
++    mc_continue,
++    mc_exit,
++    mc_preempt,
++};
++
++#define multicall_ret(call)                                  \
++    (unlikely((call)->op == __HYPERVISOR_iret)               \
++     ? mc_exit                                               \
++       : likely(guest_kernel_mode(current,                   \
++                                  guest_cpu_user_regs()))    \
++         ? mc_continue : mc_preempt)
++
+ #define do_multicall_call(_call)                             \
+-    do {                                                     \
++    ({                                                       \
+         __asm__ __volatile__ (                               \
+             "    movq  %c1(%0),%%rax; "                      \
+             "    leaq  hypercall_table(%%rip),%%rdi; "       \
+@@ -37,9 +50,11 @@
+               /* all the caller-saves registers */           \
+             : "rax", "rcx", "rdx", "rsi", "rdi",             \
+               "r8",  "r9",  "r10", "r11" );                  \
+-    } while ( 0 )
++        multicall_ret(_call);                                \
++    })
+ 
+ #define compat_multicall_call(_call)                         \
++    ({                                                       \
+         __asm__ __volatile__ (                               \
+             "    movl  %c1(%0),%%eax; "                      \
+             "    leaq  compat_hypercall_table(%%rip),%%rdi; "\
+@@ -67,6 +82,8 @@
+               "i" (-ENOSYS)                                  \
+               /* all the caller-saves registers */           \
+             : "rax", "rcx", "rdx", "rsi", "rdi",             \
+-              "r8",  "r9",  "r10", "r11" )                   \
++              "r8",  "r9",  "r10", "r11" );                  \
++        multicall_ret(_call);                                \
++    })
+ 
+ #endif /* __ASM_X86_MULTICALL_H__ */
