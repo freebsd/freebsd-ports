@@ -9207,8 +9207,8 @@ databases/rubygem-redis-actionpack4|databases/rubygem-redis-actionpack|2017-04-1
 devel/rubygem-nio4r1|devel/rubygem-nio4r|2017-04-10|Has expired: Use devel/rubygem-nio4r instead
 devel/liborcus07|devel/liborcus|2017-04-10|Has expired: Deprecated by upstream, use devel/liborcus
 devel/mdds0|devel/mdds|2017-04-10|Has expired: Deprecated by upstream, use devel/mdds
-security/openvpn23-polarssl||2017-04-10|Has expired: Replaced by new upstream relesae 2.4.x
-security/openvpn23|security/openvpn|2017-04-10|Has expired: Replaced by new upstream relesae 2.4.x
+security/openvpn23-polarssl||2017-04-10|Has expired: Replaced by new upstream release 2.4.x
+security/openvpn23|security/openvpn|2017-04-10|Has expired: Replaced by new upstream release 2.4.x
 textproc/p5-XML-XSH||2017-04-10|Has expired: Deprecated by upstream
 www/rubygem-jquery-atwho-rails-rails4|www/rubygem-jquery-atwho-rails|2017-04-10|Has expired: Use www/rubygem-jquery-atwho-rails instead
 www/p5-Catalyst-Plugin-Singleton||2017-04-10|Has expired: Deprecated by upstream
