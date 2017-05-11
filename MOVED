@@ -8791,7 +8791,6 @@ editors/focuswriter-qt4|editors/focuswriter|2016-12-03|Qt4 support was dropped, 
 graphics/gtkdps||2016-12-04|Has expired: No more upstream. Not used in the ports tree
 security/gsfv||2016-12-04|Has expired: No more upstream
 misc/grun||2016-12-04|Has expired: No more upstream
-devel/py-argparse||2016-12-04|Has expired: Part of Python standard library for Python >= 2.7 and >= 3.2
 www/node7|www/node|2016-12-07|www/node is now www/node7
 databases/py-sqlalchemy06|databases/py-sqlalchemy10|2016-12-08|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
 print/py-reportlab2|print/py-reportlab|2016-12-08|Has expired: no longer supported - use reportlab 3.x (py-reportlab) instead
@@ -9208,8 +9207,8 @@ databases/rubygem-redis-actionpack4|databases/rubygem-redis-actionpack|2017-04-1
 devel/rubygem-nio4r1|devel/rubygem-nio4r|2017-04-10|Has expired: Use devel/rubygem-nio4r instead
 devel/liborcus07|devel/liborcus|2017-04-10|Has expired: Deprecated by upstream, use devel/liborcus
 devel/mdds0|devel/mdds|2017-04-10|Has expired: Deprecated by upstream, use devel/mdds
-security/openvpn23-polarssl||2017-04-10|Has expired: Replaced by new upstream relesae 2.4.x
-security/openvpn23|security/openvpn|2017-04-10|Has expired: Replaced by new upstream relesae 2.4.x
+security/openvpn23-polarssl||2017-04-10|Has expired: Replaced by new upstream release 2.4.x
+security/openvpn23|security/openvpn|2017-04-10|Has expired: Replaced by new upstream release 2.4.x
 textproc/p5-XML-XSH||2017-04-10|Has expired: Deprecated by upstream
 www/rubygem-jquery-atwho-rails-rails4|www/rubygem-jquery-atwho-rails|2017-04-10|Has expired: Use www/rubygem-jquery-atwho-rails instead
 www/p5-Catalyst-Plugin-Singleton||2017-04-10|Has expired: Deprecated by upstream

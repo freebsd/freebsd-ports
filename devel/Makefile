@@ -4121,6 +4121,7 @@
     SUBDIR += py-appdirs
     SUBDIR += py-application
     SUBDIR += py-apptools
+    SUBDIR += py-argparse
     SUBDIR += py-apscheduler
     SUBDIR += py-archetypes.querywidget
     SUBDIR += py-archetypes.referencebrowserwidget
@@ -4673,6 +4674,7 @@
     SUBDIR += py-riak_pb
     SUBDIR += py-rlcompleter2
     SUBDIR += py-robotframework
+    SUBDIR += py-robotframework-databaselibrary
     SUBDIR += py-robotframework-pabot
     SUBDIR += py-robotframework-ride
     SUBDIR += py-robotframework-selenium2library

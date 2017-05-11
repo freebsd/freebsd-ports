@@ -10,6 +10,8 @@ COMMENT=        Automated HTTP (microservices) supervisor
 LICENSE=        BSD3CLAUSE
 LICENSE_FILE=   ${WRKSRC}/LICENSE
 
+BROKEN=		checksum and size mismatch
+
 BUILD_DEPENDS=  go>=1.7:lang/go
 
 USES=           compiler
