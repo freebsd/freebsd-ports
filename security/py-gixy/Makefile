@@ -3,6 +3,7 @@
 
 PORTNAME=	gixy
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	security www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +18,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cached-property>=1.2.0:devel/py-cached-prop
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.8:devel/py-Jinja2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}configargparse>=0.11.0:devel/py-configargparse
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}argparse>=1.4.0:devel/py-argparse
 
 NO_ARCH=	yes
 USES=		python
