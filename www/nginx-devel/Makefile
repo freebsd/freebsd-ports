@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -307,7 +307,7 @@ CONFIGURE_ARGS+=--with-file-aio
 .endif
 
 .if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=--with-cc-opt="-DNGX_HAVE_INET6=0"
+CONFIGURE_ARGS+=--with-cc-opt="-DNGX_HAVE_INET6=0 -I ${LOCALBASE}/include"
 .else
 CATEGORIES+=	ipv6
 .endif
