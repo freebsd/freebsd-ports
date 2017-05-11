@@ -8791,7 +8791,6 @@ editors/focuswriter-qt4|editors/focuswriter|2016-12-03|Qt4 support was dropped, 
 graphics/gtkdps||2016-12-04|Has expired: No more upstream. Not used in the ports tree
 security/gsfv||2016-12-04|Has expired: No more upstream
 misc/grun||2016-12-04|Has expired: No more upstream
-devel/py-argparse||2016-12-04|Has expired: Part of Python standard library for Python >= 2.7 and >= 3.2
 www/node7|www/node|2016-12-07|www/node is now www/node7
 databases/py-sqlalchemy06|databases/py-sqlalchemy10|2016-12-08|Has expired: Upstream has declared this version EoL: please migrate to databases/py-sqlalchemy10
 print/py-reportlab2|print/py-reportlab|2016-12-08|Has expired: no longer supported - use reportlab 3.x (py-reportlab) instead
