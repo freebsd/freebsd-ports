@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swi-pl
-PORTVERSION=	7.2.3
-PORTREVISION=	1
+PORTVERSION=	7.4.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${PORTVERSION}
@@ -11,14 +10,20 @@ DISTNAME=	swipl-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
 
+LICENSE=	BSD2CLAUSE
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libodbc.so:databases/unixODBC
+		libodbc.so:databases/unixODBC \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 
 NOPRECIOUSMAKEVARS=	yes
-USE_XORG=	xft xpm xt
-USES=		gmake jpeg libarchive pathfix pkgconfig shebangfix ssl
+USE_XORG=	ice sm x11 xext xft xinerama xpm xt 
+
+USES=		libedit gmake jpeg libarchive pathfix pkgconfig \
+		readline shebangfix ssl
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ARCH=${ARCH}-${OPSYS:tl}
