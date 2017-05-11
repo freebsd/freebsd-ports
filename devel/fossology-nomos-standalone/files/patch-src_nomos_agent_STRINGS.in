@@ -1,0 +1,11 @@
+--- src/nomos/agent/STRINGS.in.orig	2017-04-21 13:29:41 UTC
++++ src/nomos/agent/STRINGS.in
+@@ -3606,7 +3606,7 @@ e /* (INFILE(j)) */
+ #
+ %ENTRY%	_LT_MSCORPref1
+ %KEY%	"distribut"
+-%STR%	"program is linked with (|and uses) microsoft distributable code"
++%STR%	"program is linked with( | and uses )microsoft distributable code"
+ #
+ %ENTRY%	_LT_MSCORP_PLref1
+ %KEY%	"licen[cs]"
