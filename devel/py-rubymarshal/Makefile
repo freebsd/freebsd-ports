@@ -12,9 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Read and write Ruby-marshalled data
 
 LICENSE=	WTFPL
-LICENSE_NAME=	WTFPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES?=		python
 USE_PYTHON=	autoplist distutils
