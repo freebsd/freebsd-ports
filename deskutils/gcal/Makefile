@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gcal
-PORTVERSION=	4
+PORTVERSION=	4.1
 CATEGORIES=	deskutils
 MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	The GNU Gregorian calendar program
+COMMENT=	GNU Gregorian calendar program
+
+LICENSE=	GPLv3+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
@@ -37,7 +39,7 @@ post-install:
 		${TAR} -xpf - -C ${STAGEDIR}${DATADIR}
 .for p in ${GCAL_SCRIPTS}
 	@${CHMOD} +x ${STAGEDIR}${DATADIR}/misc/${p}
-	@${LN} -s ${DATADIR}/misc/${p} ${STAGEDIR}${PREFIX}/bin/gcal-${p:T}
+	@${LN} -s ../${DATADIR_REL}/misc/${p} ${STAGEDIR}${PREFIX}/bin/gcal-${p:T}
 .endfor
 
 .include <bsd.port.mk>
