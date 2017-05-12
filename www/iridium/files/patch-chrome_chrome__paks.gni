@@ -1,0 +1,11 @@
+--- chrome/chrome_paks.gni.orig	2017-05-09 19:02:43 UTC
++++ chrome/chrome_paks.gni
+@@ -157,7 +157,7 @@ template("chrome_extra_paks") {
+         "//ui/file_manager:resources",
+       ]
+     }
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       sources += [ "$root_gen_dir/headless/headless_lib_resources.pak" ]
+       deps += [ "//headless:resources" ]
+     }
