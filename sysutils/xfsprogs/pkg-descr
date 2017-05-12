@@ -1,3 +1,9 @@
-Set of utilities and library to manipulate an XFS filesystem.
+A set of commands to work with XFS filesystems, including mkfs.xfs(8).
+
+XFS is a high performance journaling filesystem which originated on the
+SGI IRIX platform.  It is completely multi-threaded, can support large
+files and large filesystems, extended attributes, variable block sizes,
+is extent based, and makes extensive use of B-trees (for directories,
+extents, free space) to aid both performance and scalability.
 
 WWW: http://oss.sgi.com/projects/xfs/

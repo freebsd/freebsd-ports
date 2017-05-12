@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	-1.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Set of utilities and library to manipulate an XFS filesystem
+COMMENT=	Utilities for managing XFS filesystems
 
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi
