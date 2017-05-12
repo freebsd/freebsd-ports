@@ -29,13 +29,9 @@ COMMENT=	Wayland composite "server"
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
 
-LIB_DEPENDS= libexpat.so:textproc/expat2 \
-=======
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
->>>>>>> upstream/master
 		libffi.so:devel/libffi \
 		libepoll-shim.so:devel/libepoll-shim
 
