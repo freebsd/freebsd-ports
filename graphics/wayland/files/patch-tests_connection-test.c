@@ -1,6 +1,6 @@
---- tests/connection-test.c.orig	2016-02-17 01:13:16 UTC
+--- tests/connection-test.c.orig	2017-02-07 22:59:06 UTC
 +++ tests/connection-test.c
-@@ -36,6 +36,7 @@
+@@ -37,6 +37,7 @@
  #include <sys/stat.h>
  #include <poll.h>
  
@@ -8,7 +8,7 @@
  #include "wayland-private.h"
  #include "test-runner.h"
  #include "test-compositor.h"
-@@ -47,7 +48,7 @@ setup(int *s)
+@@ -48,7 +49,7 @@ setup(int *s)
  {
  	struct wl_connection *connection;
  
@@ -17,7 +17,7 @@
  
  	connection = wl_connection_create(s[0]);
  	assert(connection);
-@@ -145,8 +146,7 @@ struct marshal_data {
+@@ -181,8 +182,7 @@ struct marshal_data {
  static void
  setup_marshal_data(struct marshal_data *data)
  {

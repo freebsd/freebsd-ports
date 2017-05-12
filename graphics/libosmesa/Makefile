@@ -3,27 +3,32 @@
 
 PORTNAME=	libosmesa
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libglapi.so:graphics/libglapi
+		libglapi.so:graphics/mesa-libs
 
-USE_XORG=	dri2proto dri3proto glproto presentproto x11 xau xcb xdmcp xvmc
-# libosmesa doesn't link agains libGL but osmesa.h needs GL/gl.h
-# and both headers are intalled by libGL ....
-USE_GL=		gl
+USE_XORG=	glproto
 
 .include <bsd.port.options.mk>
+.include "${.CURDIR}/../../graphics/mesa-dri/Makefile.common"
 
-.include "${.CURDIR}/../../graphics/libGL/Makefile.common"
+CONFIGURE_ARGS+=	--disable-dri --disable-egl --disable-gbm \
+			--with-gallium-drivers=swrast
+MESA_BUILD_WRKSRC=	src/util src/compiler src/mapi src/mesa
 
-#MESA_BUILD_WRKSRC=	src/util src/glsl src/mesa #/drivers/osmesa
+.if "${MESA_LLVM_VER}" != ""
+CONFGIURE_ARGS+=	--enable-osmesa-gallium
+MESA_BUILD_WRKSRC+=	src/gallium
+MESA_INSTALL_WRKSRC=	src/gallium/state_trackers/osmesa src/gallium/targets/osmesa
+.else
+CONFIGURE_ARGS+=	--enable-osmesa
 MESA_INSTALL_WRKSRC=	src/mesa/drivers/osmesa
+.endif
 
-.include "${.CURDIR}/../../graphics/libGL/Makefile.targets"
+.include "${.CURDIR}/../../graphics/mesa-dri/Makefile.targets"
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/GL

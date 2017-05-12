@@ -23,7 +23,7 @@ ic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5c_strEv' can not be used when 
        // class to recognize it as an OpenCL source file.
 -      const std::vector<const char *> copts =
 -         map(std::mem_fn(&std::string::c_str), opts);
-+      std::vector<const char *> copts;
++      std::vector<const char *> copts(opts.size());
 +      std::transform(opts.begin(), opts.end(), copts.begin(), cstr);
  
        if (!clang::CompilerInvocation::CreateFromArgs(

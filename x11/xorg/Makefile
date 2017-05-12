@@ -3,7 +3,7 @@
 
 PORTNAME=	xorg
 PORTVERSION=	7.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	X.Org complete distribution metaport
 
 USES=		metaport
 
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/dri
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 
 # data
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xbitmaps.pc:x11/xbitmaps \
