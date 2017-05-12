@@ -1,4 +1,4 @@
---- Makefile.am.orig	2016-02-29 23:30:58 UTC
+--- Makefile.am.orig	2017-05-05 11:54:01 UTC
 +++ Makefile.am
 @@ -73,7 +73,7 @@ nodist_include_HEADERS =			\
  	protocol/wayland-client-protocol.h
@@ -18,7 +18,7 @@
  libwayland_client_la_LDFLAGS = -version-info 3:0:3
  libwayland_client_la_SOURCES =			\
  	src/wayland-client.c
-@@ -186,7 +186,7 @@ libtest_runner_la_LIBADD =			\
+@@ -198,7 +198,7 @@ libtest_runner_la_LIBADD =			\
  	libwayland-util.la			\
  	libwayland-client.la			\
  	libwayland-server.la			\

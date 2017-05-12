@@ -1,0 +1,90 @@
+# Makefile.common - shared code between MesaLib ports.
+#
+# !!! Here be dragons !!! (they seem to be everywhere these days)
+#
+# Remember to upgrade the following ports everytime you bump MESAVERSION:
+#
+#    - graphics/libosmesa
+#    - graphics/mesa-dri
+#    - graphics/mesa-libs
+#    - lang/clover
+#
+# $FreeBSD$
+
+MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
+MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
+
+MESABASEVERSION=	17.0.4
+# if there is a subversion, don't include the '-' between 7.11-rc2.
+MESASUBVERSION=
+
+MASTER_SITES=	https://mesa.freedesktop.org/archive/ \
+		https://mesa.freedesktop.org/archive/${MESABASEVERSION}/ \
+		ftp://ftp.freedesktop.org/pub/mesa/ \
+		ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION}/
+
+DISTFILES=	mesa-${MESADISTVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	x11@FreeBSD.org
+
+USES+=		compiler:c++11-lib bison gettext-tools gmake libtool \
+		localbase pathfix pkgconfig python:2,build shebangfix tar:xz
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+
+PKGINSTALL=	${.CURDIR}/pkg-install
+PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
+
+# only have one port to check with portscout.
+.if ${PORTNAME} != mesa-dri
+PORTSCOUT=	ignore:1
+.endif
+
+python_OLD_CMD=	/usr/bin/env[[:space:]]python2 /usr/bin/python2 /bin/env[[:space:]]python
+SHEBANG_FILES=	src/gallium/*/*/*.py src/gallium/tools/trace/*.py \
+		src/gallium/drivers/svga/svgadump/svga_dump.py \
+		src/gallium/drivers/freedreno/ir3/ir3_nir_trig.py \
+		src/mapi/glapi/gen/*.py src/mapi/mapi_abi.py \
+		src/mesa/drivers/dri/common/xmlpool/gen_xmlpool.py \
+		src/mesa/main/get_*.py src/util/format_srgb.py \
+		src/amd/*/*.py src/intel/genxml/gen_pack_header.py
+
+MASTERDIR=	${.CURDIR}/../../graphics/mesa-dri
+PATCHDIR=	${MASTERDIR}/files
+WRKSRC=		${WRKDIR}/mesa-${MESADISTVERSION}
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
+INSTALL_TARGET=	install-strip
+
+COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
+
+.if (${ARCH} != sparc64 && ${ARCH} != ia64)	# no working LLVM
+MESA_LLVM_VER?=	40
+.endif
+
+.if "${MESA_LLVM_VER}" != ""
+BUILD_DEPENDS+=	llvm${MESA_LLVM_VER}>=3.9.0_4:devel/llvm${MESA_LLVM_VER}
+RUN_DEPENDS+=	llvm${MESA_LLVM_VER}>=3.9.0_4:devel/llvm${MESA_LLVM_VER}
+CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${MESA_LLVM_VER}
+LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${MESA_LLVM_VER}/lib
+# The gallium-llvm switch is the global llvm switch for historical reasons
+CONFIGURE_ARGS+=	--enable-gallium-llvm
+.else
+CONFIGURE_ARGS+=	--disable-gallium-llvm
+.endif
+
+# There are issues that need to be fixed to use TLS model "initial-exec"
+# So stick with "global-dynamic"'s model for now. kan@ is working on a
+# patch for rtld. We might want to backport global-dynamic or
+# pthread_setspecific which it uses now by default. But since this
+# configure switch is going away ...
+# https://lists.freebsd.org/pipermail/freebsd-arch/2016-February/017699.html
+CONFIGURE_ARGS+=	--disable-glx-tls
+
+# we don't care about GLes v1
+CONFIGURE_ARGS+=	--disable-gles1
+
+.if ${OPSYS} == DragonFly
+LIB_DEPENDS+=	libelf.so:devel/libelf
+.endif
+

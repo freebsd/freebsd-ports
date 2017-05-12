@@ -64,11 +64,11 @@
 %%JAVASHAREDIR%%/unifi/lib/spring-expression-3.2.8.RELEASE.jar
 %%JAVASHAREDIR%%/unifi/lib/spring-test-3.2.8.RELEASE.jar
 %%JAVASHAREDIR%%/unifi/lib/sshj-0.9.0.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-core-7.0.73.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-el-7.0.73.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-jasper-7.0.73.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-juli-7.0.73.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-log4j-7.0.73.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-core-7.0.75.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-el-7.0.75.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-jasper-7.0.75.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-juli-7.0.75.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-log4j-7.0.75.jar
 %%JAVASHAREDIR%%/unifi/lib/urlrewritefilter-4.0.4.jar
 %%JAVASHAREDIR%%/unifi/readme.txt
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/WEB-INF/resourcerewrite.xml

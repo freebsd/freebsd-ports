@@ -1,4 +1,4 @@
---- src/wayland-shm.c.orig	2016-03-09 00:55:02 UTC
+--- src/wayland-shm.c.orig	2016-11-18 00:32:40 UTC
 +++ src/wayland-shm.c
 @@ -30,6 +30,8 @@
  
@@ -9,7 +9,7 @@
  #include <stdbool.h>
  #include <stdio.h>
  #include <stdlib.h>
-@@ -57,6 +59,9 @@ struct wl_shm_pool {
+@@ -59,6 +61,9 @@ struct wl_shm_pool {
  	char *data;
  	int32_t size;
  	int32_t new_size;
@@ -19,7 +19,7 @@
  };
  
  struct wl_shm_buffer {
-@@ -74,15 +79,24 @@ struct wl_shm_sigbus_data {
+@@ -76,15 +81,24 @@ struct wl_shm_sigbus_data {
  	int fallback_mapping_used;
  };
  
@@ -45,7 +45,7 @@
  	if (data == MAP_FAILED) {
  		wl_resource_post_error(pool->resource,
  				       WL_SHM_ERROR_INVALID_FD,
-@@ -108,6 +122,10 @@ shm_pool_unref(struct wl_shm_pool *pool,
+@@ -110,6 +124,10 @@ shm_pool_unref(struct wl_shm_pool *pool,
  	if (pool->internal_refcount + pool->external_refcount)
  		return;
  
@@ -56,7 +56,7 @@
  	munmap(pool->data, pool->size);
  	free(pool);
  }
-@@ -221,6 +239,73 @@ shm_pool_destroy(struct wl_client *clien
+@@ -223,6 +241,73 @@ shm_pool_destroy(struct wl_client *clien
  	wl_resource_destroy(resource);
  }
  
@@ -130,7 +130,7 @@
  static void
  shm_pool_resize(struct wl_client *client, struct wl_resource *resource,
  		int32_t size)
-@@ -282,7 +367,14 @@ shm_create_pool(struct wl_client *client
+@@ -284,7 +369,14 @@ shm_create_pool(struct wl_client *client
  				       "failed mmap fd %d", fd);
  		goto err_free;
  	}

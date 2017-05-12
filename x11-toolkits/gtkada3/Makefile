@@ -3,6 +3,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	3.14.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	3
 
@@ -16,7 +17,6 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libdrm.so:graphics/libdrm \
-		libglapi.so:graphics/libglapi \
 		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libepoxy.so:graphics/libepoxy \
 		libpng16.so:graphics/png \

@@ -19,7 +19,7 @@
 # and keep diff with upstream minimal.
 
 PORTNAME=	wayland
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	graphics wayland
 MASTER_SITES=	http://wayland.freedesktop.org/releases/
 
@@ -29,9 +29,13 @@ COMMENT=	Wayland composite "server"
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
 
 LIB_DEPENDS= libexpat.so:textproc/expat2 \
+=======
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+>>>>>>> upstream/master
 		libffi.so:devel/libffi \
 		libepoll-shim.so:devel/libepoll-shim
 

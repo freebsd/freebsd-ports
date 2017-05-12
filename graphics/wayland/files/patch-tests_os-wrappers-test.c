@@ -1,4 +1,4 @@
---- tests/os-wrappers-test.c.orig	2015-07-06 19:38:51 UTC
+--- tests/os-wrappers-test.c.orig	2016-10-22 16:23:10 UTC
 +++ tests/os-wrappers-test.c
 @@ -26,6 +26,8 @@
  
@@ -7,9 +7,9 @@
 +#include "../config.h"
 +
  #include <stdlib.h>
+ #include <stdint.h>
  #include <assert.h>
- #include <sys/types.h>
-@@ -37,7 +39,13 @@
+@@ -38,7 +40,13 @@
  #include <stdarg.h>
  #include <fcntl.h>
  #include <stdio.h>
@@ -23,7 +23,7 @@
  
  #include "wayland-private.h"
  #include "test-runner.h"
-@@ -54,8 +62,13 @@ static int wrapped_calls_fcntl;
+@@ -55,8 +63,13 @@ static int wrapped_calls_fcntl;
  static ssize_t (*real_recvmsg)(int, struct msghdr *, int);
  static int wrapped_calls_recvmsg;
  
@@ -37,7 +37,7 @@
  
  static void
  init_fallbacks(int do_fallbacks)
-@@ -64,7 +77,11 @@ init_fallbacks(int do_fallbacks)
+@@ -65,7 +78,11 @@ init_fallbacks(int do_fallbacks)
  	real_socket = dlsym(RTLD_NEXT, "socket");
  	real_fcntl = dlsym(RTLD_NEXT, "fcntl");
  	real_recvmsg = dlsym(RTLD_NEXT, "recvmsg");
@@ -49,7 +49,7 @@
  }
  
  __attribute__ ((visibility("default"))) int
-@@ -72,10 +89,12 @@ socket(int domain, int type, int protoco
+@@ -73,10 +90,12 @@ socket(int domain, int type, int protoco
  {
  	wrapped_calls_socket++;
  
@@ -62,7 +62,7 @@
  
  	return real_socket(domain, type, protocol);
  }
-@@ -88,10 +107,12 @@ fcntl(int fd, int cmd, ...)
+@@ -89,10 +108,12 @@ fcntl(int fd, int cmd, ...)
  
  	wrapped_calls_fcntl++;
  
@@ -75,7 +75,7 @@
  
  	va_start(ap, cmd);
  	arg = va_arg(ap, void*);
-@@ -105,14 +126,17 @@ recvmsg(int sockfd, struct msghdr *msg, 
+@@ -106,14 +127,17 @@ recvmsg(int sockfd, struct msghdr *msg, 
  {
  	wrapped_calls_recvmsg++;
  
@@ -93,7 +93,7 @@
  __attribute__ ((visibility("default"))) int
  epoll_create1(int flags)
  {
-@@ -126,6 +150,15 @@ epoll_create1(int flags)
+@@ -127,6 +151,15 @@ epoll_create1(int flags)
  
  	return real_epoll_create1(flags);
  }
@@ -109,7 +109,7 @@
  
  static void
  do_os_wrappers_socket_cloexec(int n)
-@@ -155,12 +188,14 @@ TEST(os_wrappers_socket_cloexec)
+@@ -156,12 +189,14 @@ TEST(os_wrappers_socket_cloexec)
  	do_os_wrappers_socket_cloexec(0);
  }
  
@@ -124,7 +124,7 @@
  
  static void
  do_os_wrappers_dupfd_cloexec(int n)
-@@ -194,11 +229,13 @@ TEST(os_wrappers_dupfd_cloexec)
+@@ -195,11 +230,13 @@ TEST(os_wrappers_dupfd_cloexec)
  	do_os_wrappers_dupfd_cloexec(0);
  }
  
@@ -138,7 +138,7 @@
  
  struct marshal_data {
  	struct wl_connection *read_connection;
-@@ -217,8 +254,7 @@ struct marshal_data {
+@@ -218,8 +255,7 @@ struct marshal_data {
  static void
  setup_marshal_data(struct marshal_data *data)
  {
@@ -148,7 +148,7 @@
  
  	data->read_connection = wl_connection_create(data->s[0]);
  	assert(data->read_connection);
-@@ -327,11 +363,13 @@ TEST(os_wrappers_recvmsg_cloexec)
+@@ -328,11 +364,13 @@ TEST(os_wrappers_recvmsg_cloexec)
  	do_os_wrappers_recvmsg_cloexec(0);
  }
  
@@ -162,7 +162,7 @@
  
  static void
  do_os_wrappers_epoll_create_cloexec(int n)
-@@ -341,12 +379,20 @@ do_os_wrappers_epoll_create_cloexec(int 
+@@ -342,12 +380,20 @@ do_os_wrappers_epoll_create_cloexec(int 
  
  	nr_fds = count_open_fds();
  

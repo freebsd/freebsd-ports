@@ -148,7 +148,6 @@
     SUBDIR += djview4-qt4
     SUBDIR += djvulibre
     SUBDIR += dmtx-utils
-    SUBDIR += dri
     SUBDIR += driconf
     SUBDIR += dspdfviewer
     SUBDIR += duhdraw
@@ -218,7 +217,6 @@
     SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += gauche-gl
-    SUBDIR += gbm
     SUBDIR += gcolor
     SUBDIR += gcolor2
     SUBDIR += gcolor3
@@ -473,8 +471,6 @@
     SUBDIR += leptonica
     SUBDIR += lfview
     SUBDIR += lib3ds
-    SUBDIR += libEGL
-    SUBDIR += libGL
     SUBDIR += libGLU
     SUBDIR += libGLw
     SUBDIR += libafterimage
@@ -497,8 +493,6 @@
     SUBDIR += libgaiagraphics
     SUBDIR += libgeotiff
     SUBDIR += libgfx
-    SUBDIR += libglapi
-    SUBDIR += libglesv2
     SUBDIR += libgltext
     SUBDIR += libgltf
     SUBDIR += libgnomecanvas
@@ -592,6 +586,8 @@
     SUBDIR += mapyrus
     SUBDIR += megapov
     SUBDIR += mesa-demos
+    SUBDIR += mesa-dri
+    SUBDIR += mesa-libs
     SUBDIR += meshviewer
     SUBDIR += metacam
     SUBDIR += metapixel
