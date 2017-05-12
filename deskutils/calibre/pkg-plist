@@ -362,6 +362,7 @@ lib/calibre/calibre/ebooks/metadata/pml.py
 lib/calibre/calibre/ebooks/metadata/rar.py
 lib/calibre/calibre/ebooks/metadata/rb.py
 lib/calibre/calibre/ebooks/metadata/rtf.py
+lib/calibre/calibre/ebooks/metadata/search_internet.py
 lib/calibre/calibre/ebooks/metadata/snb.py
 lib/calibre/calibre/ebooks/metadata/sources/__init__.py
 lib/calibre/calibre/ebooks/metadata/sources/amazon.py
