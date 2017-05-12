@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pocl
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	lang
 MASTER_SITES=	SF/pocl \
 		http://portablecl.org/downloads/
@@ -10,7 +9,7 @@ MASTER_SITES=	SF/pocl \
 MAINTAINER=	ohartman@zedat.fu-berlin.de
 COMMENT=	POrtable Computing Language (POCL)
 
-LICENSE=	GPLv3
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION} \
@@ -20,46 +19,28 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libltdl.so:devel/libltdl
 RUN_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION}
 
-CONFLICTS=		freeocl[0-9]*
-
 BROKEN_FreeBSD_10=	pocl is not supported on 10.x
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON_amd64=	only tested on amd64
+ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS_REASON=	only tested on x86
 
-LLVM_VERSION=	38
+LLVM_VERSION=	${MESA_LLVM_VER:U40}
 
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GL=		yes
-USES=		gmake localbase ncurses pathfix pkgconfig libtool:keepla
+USE_CXXSTD=	gnu++11
+USES=		cmake localbase:ldflags ncurses pkgconfig
 
-INSTALL_TARGET= install-strip
+CMAKE_ARGS=	-DWITH_LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config" \
+		-DPOCL_INSTALL_PKGCONFIG_DIR="${PREFIX}/libdata/pkgconfig" \
+		-DKERNELLIB_HOST_CPU_VARIANTS="distro"
+PLIST_SUB=	OPSYS=${OPSYS:tl} ARCH=${ARCH:S/amd64/x86_64/}
 
-MAKE_ARGS+=	PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig
+OPTIONS_DEFINE=	TEST
 
-CONFIGURE_ENV=	LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config" \
-		CLANGXX_FLAGS=-std=gnu++11
-# needed for the libltdl configure check
-LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB=	OPSYS=${OPSYS:tl} ARCH=${ARCH}
+TEST_DESC=	Tests from the OpenCL book
+TEST_CMAKE_OFF=	-DENABLE_TESTSUITES=""
+TEST_CMAKE_ON=	-DENABLE_TESTSUITES="all"
+TEST_TARGET=	test
 
-ALL_TARGET=	all
-
-OCL_ICD_VENDORS?=	${PREFIX}/etc/OpenCL/vendors
-
-OPTIONS_DEFINE=		DEBUG
-
-OPTIONS_GROUP=		TEST
-OPTIONS_GROUP_TEST=	OCLBOOK
-
-OCLBOOK_DESC=	Tests from the OpenCL book
-DEBUG_DESC=	Debug build of pocl 
-
-OCLBOOK_CONFIGURE_ENABLE= enable_testsuites="opencl-book-samples,cloverleaf,opencl_book_samples,halide,vexcl"
-OCLBOOK_ALL_TARGET=	check
-
-DEBUG_CONFIGURE_ENABLE=	debug
-
-TEST_TARGET=	check
+pre-install-TEST-on: do-test
 
 .include <bsd.port.mk>
