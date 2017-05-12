@@ -1,11 +1,11 @@
---- Makefile.in.orig	2015-08-31 13:55:15.919297000 +0200
-+++ Makefile.in	2015-08-31 13:55:35.773605000 +0200
-@@ -429,7 +429,7 @@
- top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
+--- Makefile.in.orig	2017-04-26 15:05:37.460799000 +0200
++++ Makefile.in	2017-04-26 15:06:26.605269000 +0200
+@@ -451,7 +451,7 @@
  top_srcdir = @top_srcdir@
--SUBDIRS = gtksourceview po data docs tests
-+SUBDIRS = gtksourceview po data docs
- pkgconfig_DATA = gtksourceview-3.0.pc
- EXTRA_DIST = \
- 	intltool-extract.in \
+ valgrind_enabled_tools = @valgrind_enabled_tools@
+ valgrind_tools = @valgrind_tools@
+-SUBDIRS = gtksourceview po data docs tests testsuite build
++SUBDIRS = gtksourceview po data docs build
+ AM_DISTCHECK_CONFIGURE_FLAGS = \
+ 	--enable-gtk-doc		\
+ 	--enable-introspection		\
