@@ -1,18 +1,19 @@
---- Makefile.old	Mon Aug 26 10:37:17 2002
-+++ Makefile	Mon Aug 26 10:39:35 2002
-@@ -13,9 +13,8 @@
+--- Makefile.orig	2017-04-29 20:57:57 UTC
++++ Makefile
+@@ -13,10 +13,8 @@ COMPILED_BY	= `whoami`
  # Where are shhmsg, shhopt, xalloc, shhcards, Xpm and X11?
  
  # GNU/Linux at home
 -INCDIR		= -I/usr/local/include -I/usr/X11R6/include \
--		  -I/usr/local/include/X11
--LIBDIR		= -L/usr/local/lib -L/usr/X11R6/lib -L/usr/local/lib/X11
-+INCDIR		=  -I${LOCALBASE}/include
-+LIBDIR		=  -L${LOCALBASE}/lib
+-		  -I/usr/local/include/X11 -I/opt/X11/include
+-LIBDIR		= -L/usr/local/lib -L/usr/X11R6/lib -L/usr/local/lib/X11 \
+-		  -L/opt/X11/lib
++INCDIR		= -I${LOCALBASE}/include
++LIBDIR		= -L${LOCALBASE}/lib
  EXTRA_LIBS	= -lSM -lICE
  
  # Irix at Ifi
-@@ -54,18 +53,18 @@
+@@ -55,18 +53,18 @@ EXTRA_LIBS	= -liberty
  endif
  
  # DEC Alpha at USIT
@@ -39,7 +40,7 @@
  #INSTLIBDIR	= /hom/sverrehu/lib
  #INSTBINDIR	= /hom/sverrehu/bin/$$HOSTTYPE
  #INSTMANDIR	= /hom/sverrehu/man/man6
-@@ -85,11 +84,11 @@
+@@ -86,11 +84,11 @@ DEFINES		= -DVERSION=\"$(VERSION)\" \
  
  ###########################################################################
  
