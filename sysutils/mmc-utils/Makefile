@@ -22,7 +22,9 @@ MMC_GITURL=	git://git.kernel.org/pub/scm/linux/kernel/git/cjb/mmc-utils.git
 .include <bsd.port.pre.mk>
 
 .if (${OPSYS} == FreeBSD && \
-	${OSVERSION} < 1200025) || \
+	(${OSVERSION} < 1003514 || \
+	(${OSVERSION} > 1100000 && ${OSVERSION} < 1100513) || \
+	(${OSVERSION} > 1200000 && ${OSVERSION} < 1200025))) || \
 	${OPSYS} == DragonFly
 IGNORE=		only supported on recent OS versions
 .endif
