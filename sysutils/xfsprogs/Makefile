@@ -2,13 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	xfsprogs
-PORTVERSION=	2.9.8
-PORTREVISION=	3
+PORTVERSION=	3.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/ \
 		ftp://oss.sgi.com/projects/xfs/previous/cmd_tars/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	-1.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for managing XFS filesystems
@@ -25,8 +22,6 @@ CONFIGURE_ENV=	OPTIMIZER=" "
 CONFIGURE_ARGS=	--disable-shared --enable-readline
 ALL_TARGET=	# empty
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
@@ -36,23 +31,12 @@ post-patch:
 		-e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's/lio_listio/timer_create/' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|$$(PKG_DOC_DIR)|$$(DESTDIR)&|g' ${WRKSRC}/Makefile
-.for dir in db doc fsck growfs io logprint mdrestore mkfs quota repair rtcp
-	@${REINPLACE_CMD} -E 's,PKG_(BIN|DOC|INC|SBIN)_DIR,DESTDIR)$$(&,g' \
-		${WRKSRC}/${dir}/Makefile
-.endfor
-.for i in 3 5 8
-	@${REINPLACE_CMD} 's|$$(PKG_MAN_DIR)|$$(DESTDIR)&|g' \
-		${WRKSRC}/man/man${i}/Makefile
-.endfor
-	@${REINPLACE_CMD} 's|$$(PKG_LOCALE_DIR)|$$(DESTDIR)&|' \
-		${WRKSRC}/include/buildmacros
+	@${REINPLACE_CMD} -e '/#!/s|bash|sh|' \
+		${WRKSRC}/include/install-sh ${WRKSRC}/install-sh
 
 post-install:
-.for f in xfs_db xfs_growfs xfs_io xfs_logprint xfs_mdrestore xfs_quota xfs_rtcp
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
-.endfor
-.for f in xfs_repair mkfs.xfs
+.for f in mkfs.xfs xfs_copy xfs_db xfs_estimate xfs_fsr xfs_growfs xfs_io \
+     xfs_logprint xfs_mdrestore xfs_quota xfs_repair xfs_rtcp
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${f}
 .endfor
 
