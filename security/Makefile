@@ -864,6 +864,7 @@
     SUBDIR += py-gixy
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
+    SUBDIR += py-google-auth
     SUBDIR += py-gpgme
     SUBDIR += py-gpsoauth
     SUBDIR += py-halberd
