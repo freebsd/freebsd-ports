@@ -3,6 +3,7 @@
 
 PORTNAME=	aisleriot
 PORTVERSION=	3.22.2
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,10 +15,11 @@ BUILD_DEPENDS=	itstool:textproc/itstool \
 		appstream-builder:devel/appstream-glib \
 		bash:shells/bash
 LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+		libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libgc-threaded.so:devel/boehm-gc-threaded
 
-CONFLICTS=	sol-[0-9]*
+CONFLICTS_INSTALL=	sol-[0-9]*
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig tar:xz
