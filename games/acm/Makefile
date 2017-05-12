@@ -23,8 +23,6 @@ CONFIGURE_ENV=	ac_cv_lib_Xm_XmCreateBulletinBoard=no \
 		ac_cv_lib_gdbm_dbm_fetch=no
 MAKE_ARGS=	prefix=${STAGEDIR}${PREFIX}/ OBVDIR=${STAGEDIR}${DATADIR}/
 
-BROKEN_aarch64=	Fails to compile: machine/limits.h not found
-
 OPTIONS_DEFINE=	SOUND
 
 SOUND_LIB_DEPENDS=	libaudio.so:audio/nas
