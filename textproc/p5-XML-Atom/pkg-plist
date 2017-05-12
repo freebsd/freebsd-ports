@@ -1,10 +1,3 @@
-%%PERL5_MAN3%%/XML::Atom.3.gz
-%%PERL5_MAN3%%/XML::Atom::Client.3.gz
-%%PERL5_MAN3%%/XML::Atom::Entry.3.gz
-%%PERL5_MAN3%%/XML::Atom::Feed.3.gz
-%%PERL5_MAN3%%/XML::Atom::Person.3.gz
-%%PERL5_MAN3%%/XML::Atom::Server.3.gz
-%%PERL5_MAN3%%/XML::Atom::Util.3.gz
 %%SITE_PERL%%/XML/Atom.pm
 %%SITE_PERL%%/XML/Atom/Base.pm
 %%SITE_PERL%%/XML/Atom/Category.pm
@@ -18,3 +11,16 @@
 %%SITE_PERL%%/XML/Atom/Server.pm
 %%SITE_PERL%%/XML/Atom/Thing.pm
 %%SITE_PERL%%/XML/Atom/Util.pm
+%%PERL5_MAN3%%/XML::Atom.3.gz
+%%PERL5_MAN3%%/XML::Atom::Base.3.gz
+%%PERL5_MAN3%%/XML::Atom::Category.3.gz
+%%PERL5_MAN3%%/XML::Atom::Client.3.gz
+%%PERL5_MAN3%%/XML::Atom::Content.3.gz
+%%PERL5_MAN3%%/XML::Atom::Entry.3.gz
+%%PERL5_MAN3%%/XML::Atom::ErrorHandler.3.gz
+%%PERL5_MAN3%%/XML::Atom::Feed.3.gz
+%%PERL5_MAN3%%/XML::Atom::Link.3.gz
+%%PERL5_MAN3%%/XML::Atom::Person.3.gz
+%%PERL5_MAN3%%/XML::Atom::Server.3.gz
+%%PERL5_MAN3%%/XML::Atom::Thing.3.gz
+%%PERL5_MAN3%%/XML::Atom::Util.3.gz
