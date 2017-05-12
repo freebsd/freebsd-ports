@@ -1763,20 +1763,19 @@ IGNORE=			has USE_LDCONFIG32 set to yes, which is not correct
 
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
-_GL_gbm_LIB_DEPENDS=		libgbm.so:graphics/gbm
-_GL_glesv2_BUILD_DEPENDS=		libglesv2>0:graphics/libglesv2
-_GL_glesv2_RUN_DEPENDS=		libglesv2>0:graphics/libglesv2
-_GL_egl_BUILD_DEPENDS=		libEGL>0:graphics/libEGL
-_GL_egl_RUN_DEPENDS=		libEGL>0:graphics/libEGL
-_GL_gl_BUILD_DEPENDS=		libGL>0:graphics/libGL
-_GL_gl_RUN_DEPENDS=		libGL>0:graphics/libGL
-_GL_gl_USE_XORG=		glproto dri2proto
+_GL_gbm_LIB_DEPENDS=		libgbm.so:graphics/mesa-libs
+_GL_glesv2_BUILD_DEPENDS=	${LOCALBASE}/lib/libGLESv2.so:graphics/mesa-libs
+_GL_glesv2_RUN_DEPENDS=		${LOCALBASE}/lib/libGLESv2.so:graphics/mesa-libs
+_GL_egl_BUILD_DEPENDS=		${LOCALBASE}/lib/libEGL.so:graphics/mesa-libs
+_GL_egl_RUN_DEPENDS=		${LOCALBASE}/lib/libEGL.so:graphics/mesa-libs
+_GL_gl_BUILD_DEPENDS=		${LOCALBASE}/lib/libGL.so:graphics/mesa-libs
+_GL_gl_RUN_DEPENDS=			${LOCALBASE}/lib/libGL.so:graphics/mesa-libs
+_GL_gl_USE_XORG=			glproto dri2proto dri3proto
 _GL_glew_LIB_DEPENDS=		libGLEW.so:graphics/glew
 _GL_glu_LIB_DEPENDS=		libGLU.so:graphics/libGLU
-_GL_glu_USE_XORG=		glproto dri2proto
+_GL_glu_USE_XORG=			glproto dri2proto dri3proto
 _GL_glw_LIB_DEPENDS=		libGLw.so:graphics/libGLw
 _GL_glut_LIB_DEPENDS=		libglut.so:graphics/freeglut
-
 .if defined(USE_GL)
 . if ${USE_GL:tl} == "yes"
 USE_GL=		glu

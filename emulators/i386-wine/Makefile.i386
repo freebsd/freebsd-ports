@@ -12,7 +12,7 @@ MASTERDIR=	${SLAVEDIR}/../wine
 PKGINSTALL=	${SLAVEDIR}/files/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 
-RUN_DEPENDS=	dri>0:graphics/dri
+RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 
 CONFLICTS_INSTALL?=	wine-[0-9]* wine-staging-[0-9]* wine-devel-[0-9]* \
 			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*

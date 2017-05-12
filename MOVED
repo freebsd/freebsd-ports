@@ -9378,3 +9378,9 @@ chinese/fortune||2017-05-07|Has expired: Unfetchable for more than six months (g
 benchmarks/gobench||2017-05-07|Has expired: Builds each time it runs
 sysutils/grok||2017-05-07|Has expired: Unfetchable for more than six months (google code has gone away)
 audio/xaylet|audio/aylet|2017-05-07|Moved to a single port with GUI option
+graphics/dri|graphics/mesa-dri|2017-05-12|Renamed for clarity and consistency with graphics/mesa-libs
+graphics/gbm|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into one port
+graphics/libglapi|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into one port
+graphics/libglesv2|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into one port
+graphics/libEGL|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into one port
+graphics/libGL|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into one port

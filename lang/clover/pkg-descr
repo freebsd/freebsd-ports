@@ -1,5 +1,4 @@
-This package contains the Mesa "Clover" libOpenCL implementation. This
-implementation is build onto GALLIUM and as such can only be used on Radeon
-cards.
+This package contains Mesa's libOpenCL implementation "Clover".
+It is built upon GALLIUM and currently only supports Radeon GPUs.
 
 WWW: http://dri.freedesktop.org/wiki/GalliumCompute/

@@ -4,8 +4,7 @@
 
 post-patch:
 .if ${OPSYS} == FreeBSD
-	@${REINPLACE_CMD} -e 's|x86_64|amd64|' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|x86_64|amd64|' ${WRKSRC}/configure
 # Clang 3.4 in 10.x on i386 fails with the following error when using "GCC atomics"
 #
 # glsl/cache.c:613:4: error: cannot compile this atomic library call yet
@@ -15,25 +14,16 @@ post-patch:
 .if ${OSVERSION} < 1100000 && ${ARCH} == "i386"
 	@${REINPLACE_CMD} -e 's|-DUSE_GCC_ATOMIC_BUILTINS||' ${WRKSRC}/configure
 .endif
-.else # ${OPSYS} == DragonFly
-#	Sed on dragonfly doesn't support \< or \>
-	@${REINPLACE_CMD} -e 's|\\>//|[[:>:]]//|' \
-		${WRKSRC}/configure
 .endif # ${OPSYS}
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/src/mesa/drivers/dri/common/xmlconfig.c
-	@${REINPLACE_CMD} -e 's|#!/use/bin/python|#!${PYTHON_CMD}|g' \
-		${WRKSRC}/src/mesa/drivers/dri/common/xmlpool/gen_xmlpool.py
-	@${REINPLACE_CMD} -e 's|!/use/bin/python2|!${PYTHON_CMD}|g' \
-		${WRKSRC}/src/mesa/main/get_hash_generator.py \
-		${WRKSRC}/src/mapi/glapi/gen/gl_enums.py \
-		${WRKSRC}/src/mapi/glapi/gen/gl_table.py
 
 pre-build: mesa-pre-build
 
 #custom targets so we can build parts of Mesa
 mesa-pre-build:
 # do propper gmake target.
+	@cd ${WRKSRC}/src && ${MAKE_CMD} git_sha1.h libglsl_util.la
 	@cd ${WRKSRC}/src/mesa/drivers/dri/common/ && ${MAKE_CMD}
 	@cd ${WRKSRC}/src/loader && ${MAKE_CMD}
 # libloader.la
