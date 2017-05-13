@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grpc
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -25,6 +25,7 @@ GH_TUPLE=	grpc:grpc:v${PORTVERSION} \
 USES=		cmake perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
+PLIST_SUB+=	SOVERSION=${PORTVERSION}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lpthread -lcares -lm
 CMAKE_ARGS=	-DgRPC_ZLIB_PROVIDER:STRING="package" \
