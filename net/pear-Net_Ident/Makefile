@@ -8,7 +8,7 @@ CATEGORIES=	net www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR identification protocol implementation
 
-USES=	pear
-BROKEN=	checksum mismatch
+NO_ARCH=	yes
+USES=		pear
 
 .include <bsd.port.mk>
