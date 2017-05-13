@@ -22,6 +22,7 @@ LDFLAGS+=	-lexecinfo
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 USES=		execinfo libtool localbase pathfix
+BROKEN= checksum mismatch
 
 PORTDOCS=	*
 
