@@ -11,7 +11,7 @@ COMMENT=	PEAR Wddx pretty serializer and deserializer
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
 RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
 
-USES=	pear
-BROKEN=	checksum mismatch
+NO_ARCH=	yes
+USES=		pear
 
 .include <bsd.port.mk>
