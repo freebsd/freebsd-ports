@@ -849,6 +849,7 @@
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen
     SUBDIR += pwsafe
+    SUBDIR += pxattr
     SUBDIR += py-XenAPI
     SUBDIR += py-analyzemft
     SUBDIR += py-bcfg2
