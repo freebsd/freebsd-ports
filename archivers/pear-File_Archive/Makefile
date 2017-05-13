@@ -13,6 +13,7 @@ RUN_DEPENDS=	${PEARDIR}/MIME/Type.php:mail/pear-MIME_Type
 
 USES=		pear
 NO_ARCH=	yes
+BROKEN=	checksum mismatch
 
 USE_PHP=	bz2 pcre zlib
 
