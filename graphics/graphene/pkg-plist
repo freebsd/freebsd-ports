@@ -28,8 +28,8 @@ lib/graphene-1.0/include/graphene-config.h
 lib/libgraphene-1.0.so
 lib/libgraphene-1.0.so.0
 lib/libgraphene-1.0.so.0.600.0
-lib/pkgconfig/graphene-1.0.pc
-lib/pkgconfig/graphene-gobject-1.0.pc
+libdata/pkgconfig/graphene-1.0.pc
+libdata/pkgconfig/graphene-gobject-1.0.pc
 share/gir-1.0/Graphene-1.0.gir
 %%GTKDOC%%share/gtk-doc/html/graphene/annotation-glossary.html
 %%GTKDOC%%share/gtk-doc/html/graphene/api-index.html
