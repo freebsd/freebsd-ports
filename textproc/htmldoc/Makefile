@@ -20,6 +20,7 @@ OPTIONS_DEFINE=	HTMLDOCGUI
 HTMLDOCGUI_DESC=	Build GUI front-end
 
 USES=		jpeg tar:bzip2 ssl
+BROKEN=     checksum mismatch
 
 GNU_CONFIGURE=	yes
 # Configure seems broken and ignores these ATM:
