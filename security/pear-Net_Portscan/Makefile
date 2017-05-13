@@ -10,4 +10,6 @@ COMMENT=	Provides an API for scanning ports
 
 USES=	pear
 
+BROKEN=	checksum mismatch
+
 .include <bsd.port.mk>
