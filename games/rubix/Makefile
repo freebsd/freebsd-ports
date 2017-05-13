@@ -11,8 +11,6 @@ MASTER_SITES=	http://sed.free.fr/rubix/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Rubik's cube game with a rather interesting interface
 
-BROKEN_powerpc64=	Does not build
-
 USES=		compiler:nestedfct gmake tar:bzip2
 USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DENGLISH" \
@@ -26,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == mips || ${ARCH} == mips64) && ${COMPILER_TYPE} == gcc
+.if (${ARCH} == mips || ${ARCH} == mips64 || ${ARCH} == powerpc || ${ARCH} == powerpc64) && ${COMPILER_TYPE} == gcc
 CFLAGS+=	-fnested-functions
 .endif
 

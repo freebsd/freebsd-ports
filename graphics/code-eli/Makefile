@@ -33,7 +33,8 @@ DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	doc
 DOXYGEN_PORTDOCS=	html latex
 
-BROKEN_armv6=		Fails to compile: undefined reference to cbrtl
+BROKEN_armv6=		fails to compile: undefined reference to cbrtl
+BROKEN_powerpc64=	fails to compile: there are no arguments to 'printf' that depend on a template parameter
 
 post-patch-EXAMPLES-off:
 	${REINPLACE_CMD} \

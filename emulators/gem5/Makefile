@@ -14,7 +14,7 @@ BUILD_DEPENDS=	swig2.0:devel/swig20 \
 BROKEN_armv6=		fails to link: undefined reference to HDLcd::BUS_OPTIONS_RESETV
 BROKEN_i386=		does not build
 BROKEN_mips64=		fails to build: claims that gcc version 4.6 or newer required
-BROKEN_powerpc64=	does not build
+BROKEN_powerpc64=	fails to build: claims that gcc version 4.6 or newer required
 
 DATE=		20140422
 USE_GITHUB=	yes
