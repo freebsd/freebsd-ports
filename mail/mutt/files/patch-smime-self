@@ -16,7 +16,7 @@
  # unset smime_decrypt_use_default_key
 --- crypt.c.orig	2016-10-08 19:35:50 UTC
 +++ crypt.c
-@@ -231,8 +231,18 @@ int mutt_protect (HEADER *msg, char *key
+@@ -229,8 +229,18 @@ int mutt_protect (HEADER *msg, char *key
      if ((WithCrypto & APPLICATION_SMIME)
          && (msg->security & APPLICATION_SMIME))
      {
@@ -39,7 +39,7 @@
  	return (-1);
 --- init.h.orig	2016-10-08 19:35:50 UTC
 +++ init.h
-@@ -2971,6 +2971,11 @@ struct option_t MuttVars[] = {
+@@ -2997,6 +2997,11 @@ struct option_t MuttVars[] = {
    ** possible \fCprintf(3)\fP-like sequences.
    ** (S/MIME only)
    */
@@ -53,7 +53,7 @@
    ** .pp
 --- mutt.h.orig	2016-10-08 19:30:21 UTC
 +++ mutt.h
-@@ -263,6 +263,7 @@ enum
+@@ -274,6 +274,7 @@ enum
    OPT_FORWEDIT,
    OPT_FCCATTACH,
    OPT_INCLUDE,

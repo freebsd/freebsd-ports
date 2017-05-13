@@ -9,6 +9,7 @@ CATEGORIES=	devel pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR simple HTML form package
 
-USES=	pear
+NO_ARCH=	yes
+USES=		pear
 
 .include <bsd.port.mk>

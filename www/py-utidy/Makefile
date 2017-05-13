@@ -18,6 +18,8 @@ LIB_DEPENDS=	libtidy.so:www/tidy-lib
 USES=		python:2 zip
 USE_PYTHON=	distutils autoplist
 
+BROKEN=		checksum mismatch
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \

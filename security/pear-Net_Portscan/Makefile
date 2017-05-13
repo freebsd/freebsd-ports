@@ -8,8 +8,7 @@ CATEGORIES=	security pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Provides an API for scanning ports
 
-USES=	pear
-
-BROKEN=	checksum mismatch
+NO_ARCH=	yes
+USES=		pear
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomboy
-PORTVERSION=	1.15.4
+PORTVERSION=	1.15.7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,9 +14,9 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:devel/dbus-sharp-glib \
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-2.0.pc:devel/dbus-sharp-glib \
 		mautil:devel/mono-addins
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:devel/dbus-sharp-glib \
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-2.0.pc:devel/dbus-sharp-glib \
 		mautil:devel/mono-addins
 
 USES=		cpe gettext gmake libtool mono pathfix pkgconfig tar:xz
@@ -27,6 +27,7 @@ INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	tomboy.schemas
 CPE_VENDOR=	gnome
+#CONFIGURE_ARGS+=--with-help-dir=${PREFIX}/gnome/help
 
 MAKE_JOBS_UNSAFE=yes
 

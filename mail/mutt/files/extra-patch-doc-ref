@@ -1,6 +1,6 @@
 --- doc/mutt.man.orig	2009-02-06 13:52:38.000000000 +0100
 +++ doc/mutt.man	2009-02-06 13:55:05.000000000 +0100
-@@ -69,7 +69,8 @@
+@@ -67,7 +67,8 @@
  .PP
  Mutt is a small but very powerful text based program for reading and sending electronic
  mail under unix operating systems, including support for color terminals, MIME,

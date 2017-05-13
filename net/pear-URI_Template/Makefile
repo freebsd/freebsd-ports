@@ -8,6 +8,7 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Parser for URI Templates
 
-USES=	pear
+NO_ARCH=	yes
+USES=		pear
 
 .include <bsd.port.mk>
