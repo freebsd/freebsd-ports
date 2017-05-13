@@ -10,5 +10,6 @@ MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR simple HTML form package
 
 USES=	pear
+BROKEN=	checksum mismatch
 
 .include <bsd.port.mk>
