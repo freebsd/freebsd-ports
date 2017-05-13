@@ -9,5 +9,6 @@ MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PHP Interface to TwitPic's API
 
 USES=	pear
+BROKEN=	checksum mismatch
 
 .include <bsd.port.mk>
