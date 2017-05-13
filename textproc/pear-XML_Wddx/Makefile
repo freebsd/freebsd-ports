@@ -12,5 +12,6 @@ BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
 RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
 
 USES=	pear
+BROKEN=	checksum mismatch
 
 .include <bsd.port.mk>
