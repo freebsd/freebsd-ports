@@ -108,6 +108,8 @@ USE_LDCONFIG=	yes
 USE_GL=		gl
 DOS2UNIX_FILES=	hatari/Makefile.libretro 81-libretro/81/sp0256.c libretro-uae/Makefile
 
+BROKEN=	checksum mismatch
+
 .include <bsd.port.pre.mk>
 
 # Avoid a lot of patching for 9.
