@@ -10,6 +10,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Music management and playback for gnome
 
+BROKEN=		Project is not being actively maintained upstream anymore
+EXPIRATION_DATE=2017-07-13
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -25,7 +28,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	bash:shells/bash
 
-LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-1.0.pc:devel/dbus-sharp-glib \
+LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-2.0.pc:devel/dbus-sharp-glib \
 		${LOCALBASE}/libdata/pkgconfig/taglib-sharp.pc:audio/taglib-sharp \
 		${LOCALBASE}/libdata/pkgconfig/mono-zeroconf.pc:net/mono-zeroconf \
 		${LOCALBASE}/libdata/pkgconfig/mono-addins.pc:devel/mono-addins \
