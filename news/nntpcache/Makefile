@@ -16,7 +16,8 @@ SPOOLDIR?=	/var/spool
 
 NO_CDROM=	Free for individuals and non-military, non-profit organisations only
 
-BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_powerpc64=	fails to install: ./mmap_tests: Quit (core dumped)
 
 USES=		gmake autoreconf shebangfix
 GNU_CONFIGURE=	yes
