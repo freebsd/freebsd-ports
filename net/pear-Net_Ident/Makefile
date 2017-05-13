@@ -9,5 +9,6 @@ MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR identification protocol implementation
 
 USES=	pear
+BROKEN=	checksum mismatch
 
 .include <bsd.port.mk>
