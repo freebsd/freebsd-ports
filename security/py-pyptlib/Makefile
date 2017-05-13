@@ -14,5 +14,6 @@ LICENSE=	BSD3CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+BROKEN=		checksum mismatch
 
 .include <bsd.port.mk>
