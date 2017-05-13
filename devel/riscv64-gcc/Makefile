@@ -24,6 +24,9 @@ GH_TAGNAME=	095b1d6
 
 USES=	iconv gmake libtool makeinfo
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 GCC_TARGET=	${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}
 
 GNU_CONFIGURE=	yes
