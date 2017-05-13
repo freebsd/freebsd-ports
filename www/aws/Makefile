@@ -42,6 +42,9 @@ NO_OPTIONS_SORT=	yes
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 OPTIONS_SINGLE_Secure-Socket-Layer= SSL GNUTLS
 
+NOPIE_PORTS=	yes
+NORELRO_PORTS=	yes
+
 SHARED_DESC=		Build shared libraries in addition to static ones
 IP6_DESC=		Support IPv6 instead of IPv4
 
