@@ -24,6 +24,8 @@ DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt \
 		Readme_IPAfont${PORTVERSION}.txt
 
+BROKEN=	 No address record
+
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
