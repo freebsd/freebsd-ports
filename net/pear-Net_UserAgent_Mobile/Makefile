@@ -12,4 +12,6 @@ COMMENT=	PEAR class that parses HTTP mobile user agent string
 USE_PHP=	pcre
 USES=	pear
 
+BROKEN=	checksum mismatch
+
 .include <bsd.port.mk>
