@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include/tabe \
 		--with-db-bin=${LOCALBASE}/bin
 WRKSRC=		${WRKDIR}/${DISTNAME:S|_|-|}
 MAKE_JOBS_UNSAFE=	yes
+BROKEN=	File unavailable
 
 OPTIONS_DEFINE=		DOCS X11
 OPTIONS_SUB=		X11
