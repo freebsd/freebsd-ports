@@ -1,6 +1,6 @@
---- external/fsharpbinding/.paket/paket.targets.orig	2016-09-22 11:49:00 UTC
+--- external/fsharpbinding/.paket/paket.targets.orig	2017-03-23 16:19:23 UTC
 +++ external/fsharpbinding/.paket/paket.targets
-@@ -34,7 +34,5 @@
+@@ -35,7 +35,5 @@
    <Target Name="DownloadPaket">
      <Exec Command="$(DownloadPaketCommand)" IgnoreStandardErrorWarningFormat="true" Condition=" '$(DownloadPaket)' == 'true' AND !Exists('$(PaketExePath)')" />
    </Target>
