@@ -8,8 +8,8 @@ CATEGORIES=	sysutils devel pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class to read and write fstab files
 
-USES=	pear
-BROKEN=	checksum mismatch
+NO_ARCH=	yes
+USES=		pear
 
 post-extract:
 .for file in ${FILES}
