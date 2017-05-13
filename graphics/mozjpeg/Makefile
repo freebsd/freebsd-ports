@@ -4,6 +4,7 @@
 PORTNAME=	mozjpeg
 PORTVERSION=	3.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -27,6 +28,7 @@ TURBOJPEG_DESC=	Include the TurboJPEG wrapper library and associated tests
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME} \
+		--program-prefix=${PORTNAME}- \
 		--with-jpeg8
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
