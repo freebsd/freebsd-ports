@@ -9,6 +9,7 @@ MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class to read and write fstab files
 
 USES=	pear
+BROKEN=	checksum mismatch
 
 post-extract:
 .for file in ${FILES}
