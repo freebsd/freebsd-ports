@@ -14,6 +14,8 @@ LICENSE=		LGPL3
 
 CONFLICTS=		samba33-3.*
 
+BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option "-Wno-format-length"
+
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
 WAF_CMD=		buildtools/bin/waf

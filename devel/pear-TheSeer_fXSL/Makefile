@@ -16,6 +16,8 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PEARDIR}/.channels/pear.netpirates.net.reg:devel/pear-channel-theseer
 RUN_DEPENDS=	${PEARDIR}/.channels/pear.netpirates.net.reg:devel/pear-channel-theseer
 
+BROKEN_powerpc64=	fails to package: Signal 11
+
 USE_PHP=	dom xml xsl
 PEAR_CHANNEL=	theseer
 USES=	pear

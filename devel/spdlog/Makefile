@@ -13,6 +13,8 @@ COMMENT=	Super fast C++ logging library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to compile: includes.h: error: chrono: No such file or directory
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gabime
 
