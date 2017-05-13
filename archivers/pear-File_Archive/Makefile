@@ -11,9 +11,8 @@ COMMENT=	PEAR class to manipulate tar, gz, tgz, bz2, tbz, zip, ar (deb) files
 BUILD_DEPENDS=	${PEARDIR}/MIME/Type.php:mail/pear-MIME_Type
 RUN_DEPENDS=	${PEARDIR}/MIME/Type.php:mail/pear-MIME_Type
 
-USES=		pear
+USES=		pear php
 NO_ARCH=	yes
-BROKEN=	checksum mismatch
 
 USE_PHP=	bz2 pcre zlib
 
