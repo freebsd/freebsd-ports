@@ -12,6 +12,8 @@ COMMENT=	Convert, change, and calculate with IPv6 addresses
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to build: libipv6addr.c: addr_test_method may be used uninitialized in this function
+
 USES=		gmake perl5 ssl
 GNU_CONFIGURE=	yes
 

@@ -16,6 +16,8 @@ LIB_DEPENDS+=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
+BROKEN_powerpc64=	fails to build: client_test.cpp: undefined reference to std::__cxx11::basic_string
+
 USES+=		compiler:c++11-lib iconv:wchar_t libtool pathfix pkgconfig ssl
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
