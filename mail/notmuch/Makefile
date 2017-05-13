@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.24
-PORTREVISION=	1
+PORTVERSION=	0.24.1
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -39,7 +38,7 @@ USE_LDCONFIG=	yes
 MAKE_ENV+=	PYTHONCMD=${PYTHON_CMD}
 
 TEST_ENV+=	NOTMUCH_SKIP_TESTS="basic count insert smime atomicity \
-		message-property" \
+		message-property new" \
 		V=1 \
 		TEST_CFLAGS="-g -O0 -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		BSD_GDB=${LOCALBASE}/bin/gdb
