@@ -9,9 +9,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}RC1
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	PEAR class that parses HTTP mobile user agent string
 
+NO_ARCH=	yes
 USE_PHP=	pcre
-USES=	pear
-
-BROKEN=	checksum mismatch
+USES=		pear php
 
 .include <bsd.port.mk>
