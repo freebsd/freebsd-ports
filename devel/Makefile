@@ -3116,6 +3116,7 @@
     SUBDIR += p5-Readonly-XS
     SUBDIR += p5-ReadonlyX
     SUBDIR += p5-Ref-Util
+    SUBDIR += p5-Ref-Util-XS
     SUBDIR += p5-Reflex
     SUBDIR += p5-Regexp-Assemble
     SUBDIR += p5-Regexp-Assemble-Compressed
@@ -5640,6 +5641,7 @@
     SUBDIR += rubygem-web-console
     SUBDIR += rubygem-web-console2
     SUBDIR += rubygem-webby
+    SUBDIR += rubygem-webpacker-rails5
     SUBDIR += rubygem-will_paginate
     SUBDIR += rubygem-windows_error
     SUBDIR += rubygem-wmi-lite
