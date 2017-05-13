@@ -14,6 +14,8 @@ COMMENT=	Several forward error correction (FEC) decoders
 
 LICENSE=	LGPL21
 
+BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option -faltivec
+
 MAKEFILE=	makefile
 
 GNU_CONFIGURE=	yes

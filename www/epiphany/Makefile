@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epiphany
-PORTVERSION=	3.22.7
+PORTVERSION=	3.24.2
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,6 +22,8 @@ LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libgcr-3.so:security/gcr \
 		libstartup-notification-1.so:x11/startup-notification \
 		libnss3.so:security/nss \
+		libjson-glib-1.0.so:devel/json-glib \
+		libicuuc.so:devel/icu \
 		libavahi-gobject.so:net/avahi-app \
 		libnotify.so:devel/libnotify \
 		libsecret-1.so:security/libsecret \
@@ -33,8 +35,8 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe desktop-file-utils gettext gmake libtool localbase pathfix \
-		pkgconfig python:3.3+ sqlite tar:xz
+USES=		compiler:c++11-lib cpe desktop-file-utils gettext gmake gnome \
+		libtool localbase pathfix pkgconfig python:3.3+ sqlite tar:xz
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gnomedesktop3 intlhack libwnck3 libxml2 libxslt
 USE_XORG=	x11
@@ -47,14 +49,9 @@ CONFIGURE_ARGS+=\
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Epiphany.enums.xml \
-		org.gnome.epiphany.host.gschema.xml \
 		org.gnome.epiphany.gschema.xml
 
 PLIST_SUB+=	EPHY_VERSION=${PORTVERSION:R}
-
-CONFIGURE_ARGS+=	--enable-compile-warnings=no
-# for webkit2-gtk3
-USES+=		compiler:c++11-lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; s|-ldl"$$|"|g' \

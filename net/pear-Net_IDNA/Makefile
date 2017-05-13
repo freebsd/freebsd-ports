@@ -10,4 +10,6 @@ COMMENT=	Pear Punycode encoding and decoding package
 
 USES=	pear
 
+BROKEN=	checksum mismatch
+
 .include <bsd.port.mk>

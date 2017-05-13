@@ -67,6 +67,7 @@ lib/monodevelop/AddIns/AspNet/Templates/WebForms/WebService-Empty.xft.xml
 lib/monodevelop/AddIns/BackendBindings/ExtCore.dll
 lib/monodevelop/AddIns/BackendBindings/FSharp.Compiler.CodeDom.dll
 lib/monodevelop/AddIns/BackendBindings/FSharp.Compiler.Interactive.Settings.dll
+lib/monodevelop/AddIns/BackendBindings/FSharp.Compiler.Service.MSBuild.v12.dll
 lib/monodevelop/AddIns/BackendBindings/FSharp.Compiler.Service.dll
 lib/monodevelop/AddIns/BackendBindings/FSharp.Core.dll
 lib/monodevelop/AddIns/BackendBindings/FSharpBinding.Gui.dll
@@ -100,6 +101,9 @@ lib/monodevelop/AddIns/BackendBindings/MonoDevelop.VBNetBinding.dll
 lib/monodevelop/AddIns/BackendBindings/MonoDevelop.VBNetBinding.dll.mdb
 lib/monodevelop/AddIns/BackendBindings/MonoDevelop.VBNetBinding.xml
 lib/monodevelop/AddIns/BackendBindings/Newtonsoft.Json.dll
+lib/monodevelop/AddIns/BackendBindings/Packages/FSharp.Core.4.0.0.1.nupkg
+lib/monodevelop/AddIns/BackendBindings/System.Collections.Immutable.dll
+lib/monodevelop/AddIns/BackendBindings/System.Reflection.Metadata.dll
 lib/monodevelop/AddIns/BackendBindings/Templates/AssemblyInfo.xft.xml
 lib/monodevelop/AddIns/BackendBindings/Templates/EmptyFSharpScript.xft.xml
 lib/monodevelop/AddIns/BackendBindings/Templates/EmptyFSharpSignature.xft.xml
@@ -145,6 +149,8 @@ lib/monodevelop/AddIns/MonoDevelop.Autotools/templates/expansions.m4
 lib/monodevelop/AddIns/MonoDevelop.Autotools/templates/make-dist.targets
 lib/monodevelop/AddIns/MonoDevelop.Autotools/templates/package.pc.template
 lib/monodevelop/AddIns/MonoDevelop.Autotools/templates/rules.make
+lib/monodevelop/AddIns/MonoDevelop.ConnectedServices/MonoDevelop.ConnectedServices.dll
+lib/monodevelop/AddIns/MonoDevelop.ConnectedServices/MonoDevelop.ConnectedServices.xml
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Gdb/Mono.Debugging.dll
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Gdb/Mono.Debugging.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Gdb/Mono.Debugging.xml
@@ -201,7 +207,6 @@ lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.DependencyResolver.dl
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Frameworks.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Indexing.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.LibraryModel.dll
-lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Logging.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.PackageManagement.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Packaging.Core.Types.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Packaging.Core.dll
@@ -209,13 +214,18 @@ lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Packaging.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.ProjectManagement.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.ProjectModel.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Protocol.Core.Types.dll
-lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Protocol.Core.v2.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Protocol.Core.v3.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Protocol.VisualStudio.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Repositories.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Resolver.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.RuntimeModel.dll
 lib/monodevelop/AddIns/MonoDevelop.PackageManagement/NuGet.Versioning.dll
+lib/monodevelop/AddIns/MonoDevelop.Packaging/MonoDevelop.Packaging.dll
+lib/monodevelop/AddIns/MonoDevelop.Packaging/Targets/NuGet.Packaging.Authoring.props
+lib/monodevelop/AddIns/MonoDevelop.Packaging/Targets/NuGet.Packaging.Authoring.targets
+lib/monodevelop/AddIns/MonoDevelop.Packaging/Templates/CrossPlatformLibrary.xpt.xml
+lib/monodevelop/AddIns/MonoDevelop.Packaging/Templates/PackagingProject.xpt.xml
+lib/monodevelop/AddIns/MonoDevelop.Packaging/packages/NuGet.Build.Packaging.0.1.248.nupkg
 lib/monodevelop/AddIns/MonoDevelop.Refactoring/MonoDevelop.Refactoring.dll
 lib/monodevelop/AddIns/MonoDevelop.Refactoring/MonoDevelop.Refactoring.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Refactoring/MonoDevelop.Refactoring.xml
@@ -313,6 +323,7 @@ lib/monodevelop/bin/ICSharpCode.NRefactory.IKVM.dll
 lib/monodevelop/bin/ICSharpCode.NRefactory.IKVM.dll.mdb
 lib/monodevelop/bin/ICSharpCode.NRefactory.dll
 lib/monodevelop/bin/ICSharpCode.NRefactory.dll.mdb
+lib/monodevelop/bin/ICSharpCode.SharpZipLib.dll
 lib/monodevelop/bin/IKVM.Reflection.dll
 lib/monodevelop/bin/IKVM.Reflection.dll.mdb
 lib/monodevelop/bin/MSBuild/12.0/MonoDevelop.Projects.Formats.MSBuild.exe
@@ -327,10 +338,9 @@ lib/monodevelop/bin/MSBuild/4.0/MonoDevelop.Projects.Formats.MSBuild.exe.mdb
 lib/monodevelop/bin/MSBuild/CodeSharing.CSharp.targets
 lib/monodevelop/bin/MSBuild/CodeSharing.Common.Default.props
 lib/monodevelop/bin/MSBuild/CodeSharing.Common.props
-lib/monodevelop/bin/Microsoft.CodeAnalysis.CSharp.Features.dll
 lib/monodevelop/bin/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 lib/monodevelop/bin/Microsoft.CodeAnalysis.CSharp.dll
-lib/monodevelop/bin/Microsoft.CodeAnalysis.Features.dll
+lib/monodevelop/bin/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll
 lib/monodevelop/bin/Microsoft.CodeAnalysis.VisualBasic.dll
 lib/monodevelop/bin/Microsoft.CodeAnalysis.Workspaces.Desktop.dll
 lib/monodevelop/bin/Microsoft.CodeAnalysis.Workspaces.dll
@@ -378,11 +388,10 @@ lib/monodevelop/bin/RefactoringEssentials.dll.mdb
 lib/monodevelop/bin/RefactoringEssentials.nuspec
 lib/monodevelop/bin/System.Collections.Immutable.dll
 lib/monodevelop/bin/System.Composition.AttributedModel.dll
+lib/monodevelop/bin/System.Composition.Convention.dll
 lib/monodevelop/bin/System.Composition.Hosting.dll
-lib/monodevelop/bin/System.Composition.Hosting.xml
 lib/monodevelop/bin/System.Composition.Runtime.dll
 lib/monodevelop/bin/System.Composition.TypedParts.dll
-lib/monodevelop/bin/System.Composition.TypedParts.xml
 lib/monodevelop/bin/System.Reflection.Metadata.dll
 lib/monodevelop/bin/Xwt.Gtk.dll
 lib/monodevelop/bin/Xwt.Gtk.dll.config
@@ -443,6 +452,7 @@ libdata/pkgconfig/monodevelop-core-addins.pc
 libdata/pkgconfig/monodevelop.pc
 man/man1/mdtool.1.gz
 man/man1/monodevelop.1.gz
+share/appdata/monodevelop.appdata.xml
 share/applications/monodevelop.desktop
 share/locale/ca/LC_MESSAGES/monodevelop.mo
 share/locale/cs/LC_MESSAGES/monodevelop.mo

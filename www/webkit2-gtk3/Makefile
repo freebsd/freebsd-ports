@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.14.7
+PORTVERSION=	2.16.2
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -33,8 +33,8 @@ PORTSCOUT=	limitw:1,even
 
 USE_GSTREAMER1=	bad gl
 USE_XORG=	x11 xcomposite xdamage xext xrender xt ice
-USES=		bison cmake compiler:c++14-lang gettext gmake gnome gperf \
-		jpeg perl5 pkgconfig python:2.7,build sqlite tar:xz
+USES=		bison cmake compiler:c++14-lang gettext gnome gperf \
+		jpeg ninja perl5 pkgconfig python:2.7,build sqlite tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2 libxslt
@@ -73,8 +73,8 @@ DEBUG_CMAKE_OFF=	-DCMAKE_BUILD_TYPE:STRING=Release
 DEBUG_CFLAGS_OFF=	-DNDEBUG
 
 GEOIP_CMAKE_BOOL=	ENABLE_GEOLOCATION
-GEOIP_BUILD_DEPENDS+=	geoclue>=0:net/geoclue
-GEOIP_RUN_DEPENDS+=	geoclue>=0:net/geoclue
+GEOIP_BUILD_DEPENDS+=	geoclue>=2.4.3:net/geoclue
+GEOIP_RUN_DEPENDS+=	geoclue>=2.4.3:net/geoclue
 
 NPAPI_DESC=	Support gtk2 (NPAPI) based plugins (like flash)
 NPAPI_CMAKE_BOOL=	ENABLE_PLUGIN_PROCESS_GTK2

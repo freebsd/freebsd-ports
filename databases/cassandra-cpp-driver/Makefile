@@ -12,6 +12,8 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libuv.so:devel/libuv
 
+BROKEN_powerpc64=	fails to compile: reader.h: warning: comparison is always true due to limited range of data type
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	datastax
 GH_PROJECT=	cpp-driver

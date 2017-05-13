@@ -10,6 +10,8 @@ COMMENT=	epoll shim implemented using kevent
 
 LICENSE=	MIT
 
+BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option -Wno-missing-variable-declarations
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	epoll-shim

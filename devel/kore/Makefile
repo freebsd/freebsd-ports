@@ -13,6 +13,8 @@ COMMENT=	Web application framework for writing web APIs in C
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to compile: cc1: error: -Werror=c11-extensions: No option -Wc11-extensions
+
 USES=		compiler gmake
 
 USE_GITHUB=	yes

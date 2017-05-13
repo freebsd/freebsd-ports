@@ -56,7 +56,7 @@ CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-har
 CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-PORTSCOUT=	skipv=2.9.1
+PORTSCOUT=	ignore:1
 
 # Need absolute path for build/icon-install-theme.
 INSTALL=	/usr/bin/install

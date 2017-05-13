@@ -11,6 +11,8 @@ COMMENT=	Open On-Chip Debugger
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
+BROKEN_powerpc64=	fails to configure: error: C compiler cannot create executables
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-werror
 CONFIGURE_ENV=	MAKEINFO=${LOCALBASE}/bin/makeinfo

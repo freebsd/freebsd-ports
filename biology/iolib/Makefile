@@ -13,6 +13,8 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
+BROKEN_powerpc64=	fails to compile: bgzip.c: error: invalid operands to binary &
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jkbonfield
 

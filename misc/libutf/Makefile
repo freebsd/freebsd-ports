@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	ETCDIR="${DATADIR}"
 ALL_TARGET=	tst
 
+BROKEN=	checksum mismatch
+
 PLIST_FILES=	include/ure.h include/utf.h lib/libutf.a \
 		man/man3/ure.3.gz man/man3/utf.3.gz %%DATADIR%%/langcoll.utf
 
