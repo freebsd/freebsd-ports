@@ -20,6 +20,8 @@ COMMENT=	Chess program for playing and analyzing games
 
 USES=		gmake zip
 
+BROKEN=		file not found
+
 BOOKS=		books.bin
 DISTFILES+=	${BOOKS:S/$/:books/}
 
