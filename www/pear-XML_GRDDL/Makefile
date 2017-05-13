@@ -17,6 +17,8 @@ RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request \
 		${PEARDIR}/Log.php:sysutils/pear-Log \
 		${PEARDIR}/Validate.php:devel/pear-Validate
 
+BROKEN_powerpc64=	fails to package: Generating packing list with pear: Signal 11
+
 USES=	pear
 USE_PHP+=	xsl tidy
 

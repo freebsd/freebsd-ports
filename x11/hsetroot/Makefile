@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
+BROKEN_powerpc64=	fails to compile: hsetroot.c: error: 'for' loop initial declaration used outside C99 mode
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	himdel
 GH_TAGNAME=	47d887b

@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	tmux:sysutils/tmux
 
+BROKEN_powerpc64=	fails to compile: Compiler GNU 4.2.1 has no C++11 support
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	thewtex
 

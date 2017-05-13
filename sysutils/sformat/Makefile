@@ -14,9 +14,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Allows formatting/partitioning/analysis/repairing of SCSI disks
 
-BROKEN_aarch64=		Does not build: No rule to make target RULES/arm64-freebsd-cc.rul
-BROKEN_mips64=		Does not build: No rule to make target RULES/mips-freebsd-cc.rul
-BROKEN_powerpc64=	Does not build
+BROKEN_aarch64=		does not build: No rule to make target RULES/arm64-freebsd-cc.rul
+BROKEN_armv6=		does not build: No rule to make target RULES/arm64-freebsd-cc.rul
+BROKEN_mips64=		does not build: No rule to make target RULES/mips-freebsd-cc.rul
+BROKEN_powerpc64=	does not install: powerpc-freebsd-cc/sformat: No such file or directory
 
 LIBSCHILY=	libschily-2.01.01a07.tar.gz
 USES=		gmake
