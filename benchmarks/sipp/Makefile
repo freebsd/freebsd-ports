@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
+BROKEN_powerpc64=	fails to compile: stat.hpp:307: error: ISO C++ does not support long long
+
 PLIST_FILES=	bin/sipp man/man1/sipp.1.gz
 
 USES=		autoreconf gmake ncurses

@@ -20,7 +20,7 @@ GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot
 
 BROKEN_aarch64=		Fails to compile: error: sys/auxv.h file not found
 BROKEN_armv6=		Fails to compile: error: use of undeclared identifier nop
-BROKEN_powerpc64=	Does not build on powerpc64
+BROKEN_powerpc64=	Fails to compile: verify.c:1574: undefined reference to bswap64
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fio ${STAGEDIR}${PREFIX}/bin

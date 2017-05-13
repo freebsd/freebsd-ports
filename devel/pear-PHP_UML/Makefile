@@ -14,6 +14,8 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear \
 		${PEARDIR}/Console/CommandLine.php:devel/pear-Console_CommandLine
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
 
+BROKEN_powerpc64=	fails to package: Signal 11
+
 USES=		pear
 USE_PHP=	spl xsl
 

@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
+BROKEN_powerpc64=	fails to compile: fpst.c: error: redefinition of typedef 'FPST'
+
 USERS=		_dnscrypt-proxy
 
 GNU_CONFIGURE=	yes

@@ -11,18 +11,20 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Ettus Research UHD driver framework
 
-USE_GITHUB=     yes
-GH_ACCOUNT=     EttusResearch
-GH_TAGNAME=     32951af2f3e7b1ddb56486c9f15b2e1033605bd6
-
-CONFLICTS=	usrp-[0-9]*
-
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
 		cheetah-analyze:devel/py-cheetah \
 		rst2html:textproc/py-docutils \
 		orcc:devel/orc \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako
+
+USE_GITHUB=     yes
+GH_ACCOUNT=     EttusResearch
+GH_TAGNAME=     32951af2f3e7b1ddb56486c9f15b2e1033605bd6
+
+CONFLICTS=	usrp-[0-9]*
+
+BROKEN_powerpc64=	fails to link: undefined reference to boost function
 
 USES=		compiler:c++0x cmake:outsource gmake ncurses pkgconfig \
 		dos2unix python:2.7
