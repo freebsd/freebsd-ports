@@ -1,2 +1,3 @@
-SHA256 (dbus-sharp-0.7.0.tar.gz) = 92529aef9063f477d1975947c6388c63d03234018f45d007c07716dd3e21dd41
-SIZE (dbus-sharp-0.7.0.tar.gz) = 127651
+TIMESTAMP = 1494680419
+SHA256 (mono-dbus-sharp-v0.8.1_GH0.tar.gz) = 531011702c544fd8861751668b95ade8cf1aa2254838c934a02c3b4367b92b63
+SIZE (mono-dbus-sharp-v0.8.1_GH0.tar.gz) = 83110
