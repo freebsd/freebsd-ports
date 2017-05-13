@@ -18,6 +18,7 @@ RUN_DEPENDS=	opencl>=0:devel/opencl
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64
 ONLY_FOR_ARCHS_REASON=	this code has only been tested on x86 and powerpc platforms
+BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option -std=c11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clMathLibraries

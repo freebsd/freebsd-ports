@@ -21,10 +21,11 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-BROKEN_armv6=	does not build: error: GNU lightning does not support the current target
-BROKEN_aarch64=	does not build: error: Unported platform
-BROKEN_sparc64=	does not build
-BROKEN_i386=	does not build on i386 (Seg fault (internal error) at 0x606060a)
+BROKEN_armv6=		does not build: error: GNU lightning does not support the current target
+BROKEN_aarch64=		does not build: error: Unported platform
+BROKEN_powerpc64=	does not build: jit.c: error: JIT_LOCAL4 undeclared 
+BROKEN_sparc64=		does not build
+BROKEN_i386=		does not build on i386 (Seg fault (internal error) at 0x606060a)
 
 MAKE_JOBS_UNSAFE=yes
 

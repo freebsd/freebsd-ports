@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
+BROKEN_powerpc64=	fails to configure: error: A compiler with support for C++11 language features is required
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_LDCONFIG=	yes
