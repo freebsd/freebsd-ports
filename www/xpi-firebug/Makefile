@@ -12,6 +12,8 @@ COMMENT=	Lets you edit, debug, and monitor CSS, HTML, and JS
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=	checksum mismatch
+
 XPI_NUM=	1843
 XPI_ID=		firebug@software.joehewitt.com
 
