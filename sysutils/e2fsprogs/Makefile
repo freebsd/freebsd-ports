@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
-BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_powerpc64=	fails self-tests: Running e2fsprogs test suite...Signal (11) SIGSEGV
 
 USES=		cpe gmake pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
