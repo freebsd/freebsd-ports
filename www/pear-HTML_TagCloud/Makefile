@@ -10,4 +10,6 @@ COMMENT=	Generate TagCloud in HTML And Visualize Tags
 
 USES=	pear
 
+BROKEN=	checksum mismatch
+
 .include <bsd.port.mk>
