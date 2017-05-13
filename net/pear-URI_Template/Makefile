@@ -9,5 +9,6 @@ MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Parser for URI Templates
 
 USES=	pear
+BROKEN=	checksum mismatch
 
 .include <bsd.port.mk>
