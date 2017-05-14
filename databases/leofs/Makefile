@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.3.2.1
+PORTVERSION=	1.3.4
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -56,7 +56,7 @@ SUB_LIST+=	LEOFS_USER=${LEOFS_USER} \
 
 SUB_FILES+=	${LEOFS_SBIN_FILES:S/^/sbin-/}
 
-USES=		dos2unix gmake pkgconfig ssl
+USES=		dos2unix pkgconfig ssl
 USE_RC_SUBR=	${PORTNAME}
 
 DOS2UNIX_FILES=	apps/leo_*/snmp/snmpa_*/leo_*_snmp.config
@@ -77,34 +77,36 @@ LEOFS_DEPS=	\
 	davisp/jiffy=0.14.8:jiffy \
 	eproxus/meck=0.8.4:meck \
 	extend/ranch=1.0.0:ranch \
+	ferd/erlpass=1.0.3:erlpass \
 	ferd/recon=2.3.1:recon \
 	leo-project/bear=0.8.2-for-leofs:bear \
 	leo-project/cowboy=for-leofs-1.4:cowboy \
 	leo-project/elarm=d9e8a6f:elarm \
 	leo-project/erpcgen=0.2.5:erpcgen \
 	leo-project/folsom=0.8.2-p1:folsom \
-	leo-project/leo_backend_db=1.2.9:leo_backend_db \
+	leo-project/leo_backend_db=1.2.12:leo_backend_db \
 	leo-project/leo_cache=0.8.3:leo_cache \
 	leo-project/leo_commons=1.1.9:leo_commons \
 	leo-project/leo_dcerl=0.4.6:leo_dcerl \
 	leo-project/leo_logger=1.2.5:leo_logger \
 	leo-project/leo_mcerl=0.6.4:leo_mcerl \
-	leo-project/leo_mq=1.4.12:leo_mq \
-	leo-project/leo_object_storage=1.2.32:leo_object_storage \
+	leo-project/leo_mq=1.4.17:leo_mq \
+	leo-project/leo_object_storage=1.3.6:leo_object_storage \
 	leo-project/leo_ordning_reda=1.2.4:leo_ordning_reda \
 	leo-project/leo_pod=0.6.8:leo_pod \
-	leo-project/leo_redundant_manager=1.9.32:leo_redundant_manager \
+	leo-project/leo_redundant_manager=1.9.39:leo_redundant_manager \
 	leo-project/leo_rpc=0.10.12:leo_rpc \
-	leo-project/leo_s3_libs=1.2.9:leo_s3_libs \
+	leo-project/leo_s3_libs=1.2.12:leo_s3_libs \
 	leo-project/leo_statistics=1.1.17:leo_statistics \
 	leo-project/leo_tran=0.2.8:leo_tran \
-	leo-project/leo_watchdog=0.12.6:leo_watchdog \
+	leo-project/leo_watchdog=0.12.7:leo_watchdog \
 	leo-project/libcutil=0.4.4:libcutil \
 	leo-project/nfs_rpc_server=0.2.5:nfs_rpc_server \
 	leo-project/savanna_agent=0.4.20:savanna_agent \
 	leo-project/savanna_commons=0.10.6:savanna_commons \
 	manopapad/proper=f558989:proper \
 	ninenines/cowlib=1.0.0:cowlib \
+	smarkets/erlang-bcrypt=a63df34:bcrypt \
 
 GH_TUPLE=	${LEOFS_DEPS:C,(.*)/(.*)=(.*):(.*),\1:\2:\3:\4/deps/\4,}
 
