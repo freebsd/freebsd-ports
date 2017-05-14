@@ -1,5 +1,5 @@
---- modules/mod_tls.c.orig	2017-01-16 01:13:01 UTC
-+++ modules/mod_tls.c
+--- contrib/mod_tls.c.orig	2017-01-16 01:13:01 UTC
++++ contrib/mod_tls.c
 @@ -96,7 +96,7 @@ static DH *get_dh(BIGNUM *p, BIGNUM *g) 
      return NULL;
    }
