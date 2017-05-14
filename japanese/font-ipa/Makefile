@@ -4,7 +4,7 @@ PORTNAME=	ipa
 PORTVERSION=	00303
 PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/
+MASTER_SITES=	http://dl.ipafont.ipa.go.jp/IPAfont/
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	IPAfont${PORTVERSION}
 
@@ -23,8 +23,6 @@ SUB_FILES=	pkg-install
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt \
 		Readme_IPAfont${PORTVERSION}.txt
-
-BROKEN=	 No address record
 
 OPTIONS_DEFINE=	DOCS
 
