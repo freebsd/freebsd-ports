@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USES=		autoreconf dos2unix gmake libtool
 DOS2UNIX_FILES=	Makefile.in configure.in *.cpp *.h
 USE_GCC=	any
+USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 
 post-build:
