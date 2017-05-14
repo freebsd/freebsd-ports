@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# PROVIDE: mongos
+# REQUIRE: NETWORK ldconfig
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mongos_enable (bool):  Set to "NO" by default.
+#                        Set it to "YES" to enable mongos.
+# mongos_limits (bool):  Set to "NO" by default.
+#                        Set it to yes to run `limits -e -U mongodb`
+#                        just before mongos starts.
+# mongos_flags (str):    Custom additional arguments to be passed to mongos.
+#                        Default to "--logpath /var/log/mongodb/mongos.log --logappend".
+# mongos_config (str):	 Default to "%%PREFIX%%/etc/mongos.conf"
+#                        Path to config file
+#
+
+. /etc/rc.subr
+
+name="mongos"
+rcvar=mongos_enable
+
+load_rc_config $name
+
+: ${mongos_enable="NO"}
+: ${mongos_limits="NO"}
+: ${mongos_logpath="/var/log/mongodb"}
+: ${mongos_flags="--logpath ${mongos_logpath}/mongos.log --logappend"}
+: ${mongos_user="mongodb"}
+: ${mongos_group="mongodb"}
+: ${mongos_config="%%PREFIX%%/etc/mongos.conf"}
+
+pidfile="/var/run/mongodb/mongos.pid"
+command=%%PREFIX%%/bin/${name}
+command_args="--config $mongos_config --fork >/dev/null 2>/dev/null"
+start_precmd="${name}_prestart"
+
+mongos_create_dbpath()
+{
+        mkdir ${mongos_logpath} >/dev/null 2>/dev/null
+        [ $? -eq 0 ] && chown -R ${mongos_user}:${mongos_group} ${mongos_logpath}
+}
+
+mongos_prestart()
+{
+        if [ ! -d ${mongos_logpath} ]; then
+                mongos_create_dbpath || return 1
+        fi
+        if checkyesno mongos_limits; then
+                eval `/usr/bin/limits -e -U ${mongos_user}` 2>/dev/null
+        else
+                return 0
+        fi
+}
+
+run_rc_command "$1"
