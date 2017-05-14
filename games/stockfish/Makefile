@@ -18,6 +18,7 @@ LICENSE=	GPLv3
 
 NOT_FOR_ARCHS=	sparc64
 BROKEN_aarch64=	Fails to build: cannot detect architecture
+BROKEN_armv6=	Fails to configure: config-sanity: Error 1
 BROKEN_mips64=	Fails to build: cannot detect architecture
 
 USES=		compiler gmake zip
