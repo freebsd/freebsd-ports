@@ -13,6 +13,8 @@ COMMENT=	Simple image viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		desktop-file-utils gettext pkgconfig
