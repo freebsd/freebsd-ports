@@ -17,10 +17,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	evaleev
 
 # USE_GCC=yes is required because libint is used with mpqc which is built
-# by gfortran48 (from `lang/gcc') and these two libraries each try to pull
-# in a different version of libgcc_s.so which fails.  Forcing this port to
-# build with `lang/gcc' as well resolves the conflict that manifests in
-# `science/libghemical' port.
+# by gfortran (via USES=fortran) and these two libraries each try to pull
+# in libgcc_s.so which fails if it's different versions.  Forcing this port
+# to build with the default version of GCC as well resolves the conflict
+# that manifests in the science/libghemical port.
 USES=		autoreconf gmake libtool perl5
 USE_GCC=	yes
 USE_LDCONFIG=	yes
