@@ -12,8 +12,6 @@ COMMENT=	Modify your ENV
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activesupport4>=3.0:devel/rubygem-activesupport4
-
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
