@@ -17,6 +17,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libicui18n.so:devel/icu \
 		libpng.so:graphics/png
 
+BROKEN_powerpc64=	fails to build: g++48: not found
 BROKEN_sparc64=		does not link on sparc64
 
 USES=		bison:build compiler:c++11-lang gmake gperf jpeg perl5 pkgconfig python:build ssl sqlite

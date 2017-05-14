@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
+BROKEN_powerpc64=	fails to compile: sysctl.h: expected declaration specifiers or ... before u_int
+
 USES=		pathfix tar:xz
 GNU_CONFIGURE=	yes
 

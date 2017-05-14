@@ -13,6 +13,8 @@ COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN_powerpc64=	fails to compile: c++11 extension is not available for /usr/bin/c++
+
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:tu}
 
 USES=		cmake:outsource compiler:openmp perl5 tar:tgz

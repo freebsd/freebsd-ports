@@ -13,6 +13,8 @@ COMMENT=	Implementation of the PGM reliable multicast protocol
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to compile: socket.c: internal compiler error: in extract_insn, at recog.c
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	steve-o
 

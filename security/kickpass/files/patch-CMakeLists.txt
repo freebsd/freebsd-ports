@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2017-03-25 11:34:22 UTC
+--- CMakeLists.txt.orig	2017-05-10 08:40:22 UTC
 +++ CMakeLists.txt
-@@ -121,7 +121,7 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall 
+@@ -151,7 +151,7 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall 
+ # Configure install
  
  install(TARGETS kickpass libkickpass RUNTIME DESTINATION bin LIBRARY DESTINATION lib)
- install(FILES manual/kickpass.1 DESTINATION share/man/man1/)
--install(FILES extra/completion/zsh/_kickpass DESTINATION share/zsh/functions/Completion/Unix/)
-+install(FILES extra/completion/zsh/_kickpass DESTINATION share/zsh/site-functions/)
+-install(FILES manual/kickpass.1 DESTINATION share/man/man1/)
++install(FILES manual/kickpass.1 DESTINATION man/man1/)
+ install(FILES extra/completion/zsh/_kickpass DESTINATION share/zsh/site-functions/)
  
  # Tests
- enable_testing()
