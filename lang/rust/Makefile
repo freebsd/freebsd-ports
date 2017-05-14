@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.16.0
+PORTVERSION?=	1.17.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		https://static.rust-lang.org/dist/:rust_bootstrap \
@@ -43,12 +43,12 @@ CONFLICTS_BUILD?=	rust-nightly
 CONFLICTS_BUILD+=	${PKGBASE}
 CONFLICTS_INSTALL?=	rust-nightly
 
-RUST_BOOTSTRAP_DIR?=		2017-02-09
-RUST_BOOTSTRAP_VERSION?=	1.15.1
+RUST_BOOTSTRAP_DIR?=		2017-03-11
+RUST_BOOTSTRAP_VERSION?=	1.16.0
 RUSTC_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR}/rustc-${RUST_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
 RUST_STD_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR}/rust-std-${RUST_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
 
-CARGO_BOOTSTRAP_DIR?=		6e0c18cccc8b0c06fba8a8d76486f81a792fb420
+CARGO_BOOTSTRAP_DIR?=		6b05583d71f982bcad049b9fa094c637c062e751
 CARGO_BOOTSTRAP_VERSION?=	nightly
 CARGO_BOOTSTRAP=		${CARGO_BOOTSTRAP_DIR}/cargo-${CARGO_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
 CARGO_REGISTRY=			${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
@@ -86,7 +86,7 @@ LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:devel/llnextgen
 PORT_LLVM_DESC=	Build against devel/llvm${LLVM_VER} instead of bundled version
 PORT_LLVM_BUILD_DEPENDS=	${LLVM_PREFIX}/bin/FileCheck:devel/llvm${LLVM_VER}
 PORT_LLVM_CONFIGURE_ON=		--llvm-root=${LLVM_PREFIX}
-LLVM_VER?=			39
+LLVM_VER?=			40
 LLVM_PREFIX=			${LOCALBASE}/llvm${LLVM_VER}
 
 # Note that make test does not work when rust is already installed
@@ -216,7 +216,7 @@ post-install:
 gen-registry:
 	${MAKE} -C${.CURDIR} -DSKIP_CARGO_REGISTRY makesum
 	${MAKE} -C${.CURDIR} -DSKIP_CARGO_REGISTRY
-	${TAR} cJvf ${_DISTDIR}/${DIST_SUBDIR}/${CARGO_REGISTRY} -C${WRKDIR} \
+	${TAR} cJvf ${DISTDIR}/${DIST_SUBDIR}/${CARGO_REGISTRY} -C${WRKDIR} \
 		--uid 0 --gid 0 \
 		--exclude 'src/*/benches/' \
 		--exclude 'src/*/ci/' \
