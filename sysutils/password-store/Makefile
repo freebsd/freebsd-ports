@@ -2,6 +2,7 @@
 
 PORTNAME=	password-store
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://git.zx2c4.com/password-store/snapshot/
 
@@ -14,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	bash:shells/bash \
 		getopt>=0:misc/getopt \
 		gnupg>=2:security/gnupg \
-		pwgen>=0:sysutils/pwgen \
 		tree>=1.7:sysutils/tree
 
 NO_ARCH=	yes
@@ -32,6 +32,7 @@ QRENCODE_DESC=		Enable QR code support
 GIT_RUN_DEPENDS=	git>=0:devel/git
 XCLIP_RUN_DEPENDS=	base64>=0:converters/base64 \
 			xclip>=0:x11/xclip
+CONTRIB_RUN_DEPENDS=	pwgen>=0:sysutils/pwgen
 QRENCODE_RUN_DEPENDS=	qrencode>=0:graphics/libqrencode
 
 SUB_FILES=		pass
