@@ -2,6 +2,6 @@ Mongo (from "humongous") is a high-performance, open source,
 schema-free, document-oriented database. A common name in the
 "NOSQL" community.
 
-This port uses a RocksDB Storage Engine as a MongoDB backend.
+This port can optionally use a RocksDB Storage Engine as a MongoDB backend.
 
 WWW: http://www.mongodb.org/
