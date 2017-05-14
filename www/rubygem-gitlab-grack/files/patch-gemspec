@@ -8,14 +8,5 @@
 -  s.files = [".gitignore".freeze, ".gitmodules".freeze, ".travis.yml".freeze, "CHANGELOG".freeze, "Gemfile".freeze, "Gemfile.lock".freeze, "README.md".freeze, "Rakefile".freeze, "bin/console".freeze, "bin/testserver".freeze, "examples/dispatch.fcgi".freeze, "grack.gemspec".freeze, "install.txt".freeze, "lib/grack.rb".freeze, "lib/grack/auth.rb".freeze, "lib/grack/bundle.rb".freeze, "lib/grack/git.rb".freeze, "lib/grack/server.rb".freeze, "lib/grack/version.rb".freeze, "tests/main_test.rb".freeze]
 +  s.files = [".gitignore".freeze, ".gitmodules".freeze, ".travis.yml".freeze, "CHANGELOG".freeze, "Gemfile".freeze, "Gemfile.lock".freeze, "README.md".freeze, "Rakefile".freeze, "examples/dispatch.fcgi".freeze, "grack.gemspec".freeze, "install.txt".freeze, "lib/grack.rb".freeze, "lib/grack/auth.rb".freeze, "lib/grack/bundle.rb".freeze, "lib/grack/git.rb".freeze, "lib/grack/server.rb".freeze, "lib/grack/version.rb".freeze, "tests/main_test.rb".freeze]
    s.homepage = "https://github.com/gitlabhq/grack".freeze
-   s.rubygems_version = "2.6.10".freeze
+   s.rubygems_version = "2.6.12".freeze
    s.summary = "Ruby/Rack Git Smart-HTTP Server Handler".freeze
-@@ -22,7 +21,7 @@ Gem::Specification.new do |s|
-     s.specification_version = 4
- 
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<rack>.freeze, ["~> 1.5.1"])
-+      s.add_runtime_dependency(%q<rack>.freeze, ["~> 1.5"])
-       s.add_development_dependency(%q<mocha>.freeze, ["~> 0.11"])
-     else
-       s.add_dependency(%q<rack>.freeze, ["~> 1.5.1"])
