@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
@@ -26,14 +25,15 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libFLAC.so:audio/flac \
 		libpci.so:devel/libpci \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libpcre2-8.so:devel/pcre2 \
+		libgnutls.so:security/gnutls
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
-USES=		dos2unix pkgconfig makeinfo gmake iconv jpeg
+USES=		pkgconfig makeinfo gmake iconv jpeg
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
-DOS2UNIX_FILES=	doc/vice.texi src/arch/unix/io-access.c
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 CFLAGS+=	-I${LOCALBASE}/include
@@ -41,7 +41,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 \
 			--enable-external-ffmpeg \
-			--with-uithreads \
 			--disable-dependency-tracking
 
 LMLINKS=	vice.1 x64.1 \
