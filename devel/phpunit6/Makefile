@@ -13,6 +13,8 @@ COMMENT=	Testing framework for unit tests
 
 LICENSE=	BSD3CLAUSE
 
+CONFLICTS_INSTALL=	phpunit
+
 USES=		cpe php
 CPE_VENDOR=	phpunit_project
 USE_PHP=	dom json spl pcre phar
