@@ -88,9 +88,7 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/help.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.zh_CN.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.zh_TW.txt
-%%DATADIR%%/dirmngr-conf.skel
 %%DATADIR%%/distsigkey.gpg
-%%DATADIR%%/gpg-conf.skel
 %%DATADIR%%/sks-keyservers.netCA.pem
 %%NLS%%share/locale/ca/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnupg2.mo
