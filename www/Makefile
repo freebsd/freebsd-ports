@@ -547,6 +547,7 @@
     SUBDIR += npm
     SUBDIR += npm2
     SUBDIR += npm3
+    SUBDIR += npm-less-plugin-clean-css
     SUBDIR += nspluginwrapper
     SUBDIR += nuvolaplayer-8tracks
     SUBDIR += nuvolaplayer-all-services
