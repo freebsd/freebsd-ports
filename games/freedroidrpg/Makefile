@@ -6,7 +6,7 @@ PORTVERSION=	0.16.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/freedroid/freedroidRPG-${PORTVERSION:R}/ \
 		http://mirror.amdmi3.ru/distfiles/
-DISTNAME=	${SF_NAME}-${PORTVERSION}
+DISTNAME=	freedroidRPG-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
@@ -14,14 +14,16 @@ COMMENT=	Modification of the classical Freedroid engine into an RPG
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libpng.so:graphics/png
+
 BROKEN_sparc64=	does not configure
 
 GNU_CONFIGURE=	yes
 USES=		jpeg gmake localbase lua:52+ python
+USE_XORG=	x11
 USE_SDL=	sdl image gfx
 CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 
-SF_NAME=	freedroidRPG
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDATA=	*
@@ -43,6 +45,7 @@ SOUND_LIB_DEPENDS=		libvorbis.so:audio/libvorbis \
 				libogg.so:audio/libogg
 SOUND_CONFIGURE_ENABLE=		sound
 SOUND_USE=			SDL=mixer
+
 NLS_USES=			gettext
 NLS_CONFIGURE_ENABLE=		nls
 
