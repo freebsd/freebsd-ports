@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/llvm-shlib/CMakeLists.txt.orig
 +++ tools/llvm-shlib/CMakeLists.txt
 @@ -37,7 +37,7 @@
