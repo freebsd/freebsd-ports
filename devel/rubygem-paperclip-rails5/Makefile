@@ -17,7 +17,7 @@ RUN_DEPENDS=	ImageMagick7-nox11>0:graphics/ImageMagick7-nox11
 
 RUN_DEPENDS+=	rubygem-activemodel5>0:databases/rubygem-activemodel5 \
 		rubygem-activesupport5>=0:devel/rubygem-activesupport5 \
-		rubygem-cocaine-rails5>=0.5.5:devel/rubygem-cocaine-rails5 \
+		rubygem-cocaine>=0.5.5:devel/rubygem-cocaine \
 		rubygem-mimemagic>=0.3.0:misc/rubygem-mimemagic \
 		rubygem-mime-types>=0:misc/rubygem-mime-types
 
