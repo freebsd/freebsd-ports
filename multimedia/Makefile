@@ -364,7 +364,6 @@
     SUBDIR += rox-videothumbnail
     SUBDIR += rtmpdump
     SUBDIR += rubygem-av
-    SUBDIR += rubygem-av-rails5
     SUBDIR += rubygem-clutter-gstreamer
     SUBDIR += rubygem-flvtool2
     SUBDIR += rubygem-gstreamer
