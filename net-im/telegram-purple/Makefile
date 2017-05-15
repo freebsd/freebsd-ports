@@ -4,7 +4,7 @@
 PORTNAME=	telegram-purple
 PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 
 MAINTAINER=	kevlo@FreeBSD.org
@@ -25,6 +25,7 @@ USES=		execinfo gettext gmake pkgconfig
 USE_GNOME=	glib20 libxml2
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	majn:DEFAULT,tgl vysheng:tlparser
