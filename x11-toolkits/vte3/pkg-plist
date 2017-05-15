@@ -13,7 +13,7 @@ include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.4800.2
+lib/libvte-%%VERSION%%.so.0.4800.3
 libdata/pkgconfig/vte-%%VERSION%%.pc
 share/gir-1.0/Vte-%%VERSION%%.gir
 share/gtk-doc/html/vte-%%VERSION%%/VteRegex.html
