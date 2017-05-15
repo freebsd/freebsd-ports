@@ -17,6 +17,8 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libbabl-0.1.so:x11/babl
 
+BROKEN_aarch64=		fails to build: gmake index.html: Segmentation fault in docs/gallery/
+
 # ignore new versions until we can replace this version with gegl 3.x
 PORTSCOUT=	ignore:1
 
