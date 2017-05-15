@@ -3,7 +3,7 @@
 
 PORTNAME=	kadu
 PORTVERSION=	4.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -40,7 +40,7 @@ USES=		cmake compiler:c++11-lib execinfo gettext-runtime \
 		libarchive pkgconfig readline tar:bzip2
 USE_XORG=	x11 xext xfixes xscrnsaver
 USE_GNOME=	glib20
-USE_QT5=	concurrent core dbus declarative gui multimedia network \
+USE_QT5=	concurrent core dbus gui multimedia network \
 		qml quick script scripttools sql webkit widgets x11extras \
 		xml xmlpatterns buildtools_build linguisttools_build \
 		qmake_build imageformats_run sql-sqlite3_run
