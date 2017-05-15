@@ -9384,3 +9384,4 @@ graphics/libglapi|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into 
 graphics/libglesv2|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into one port
 graphics/libEGL|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into one port
 graphics/libGL|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into one port
+multimedia/rubygem-av-rails5|2017-05-15|Has expired: Use multimedia/rubygem-av instead
