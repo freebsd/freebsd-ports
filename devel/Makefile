@@ -5193,7 +5193,6 @@
     SUBDIR += rubygem-classifier
     SUBDIR += rubygem-classifier-reborn
     SUBDIR += rubygem-climate_control
-    SUBDIR += rubygem-climate_control-rails5
     SUBDIR += rubygem-clio
     SUBDIR += rubygem-cliprompt
     SUBDIR += rubygem-cloudfiles

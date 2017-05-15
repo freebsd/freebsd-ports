@@ -9386,3 +9386,4 @@ graphics/libEGL|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into on
 graphics/libGL|graphics/mesa-libs|2017-05-12|Mesa libraries were merged into one port
 multimedia/rubygem-av-rails5|2017-05-15|Has expired: Use multimedia/rubygem-av instead
 devel/rubygem-cocaine-rails5|2017-05-15|Has expired: Use devel/rubygem-cocaine instead
+devel/rubygem-climate_control-rails5|2017-05-15|Has expired: Use devel/rubygem-climate_control instead
