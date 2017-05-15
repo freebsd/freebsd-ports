@@ -60,9 +60,7 @@ CC+=		${DEBUG_FLAGS}
 # this is a local target to build a tarball from SVN
 # and another target to upload it
 # Note that googlecode.com is gone. Apparently someone exported the code
-# to Github, but aside from a README that got converted to Markdown
-# syntax, there hadn't been changes as of 2016-12-07.
-# https://github.com/threerings/openvpn-auth-ldap/
+# to Github:  https://github.com/threerings/openvpn-auth-ldap/
 build-tarball: ${DISTFILES}
 ${DISTFILES}:
 	${RM} -r ${WRKSRC}
