@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitube
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6
 CATEGORIES=	multimedia www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +15,7 @@ GH_ACCOUNT=	flaviotordini
 
 USES=		qmake
 USE_GL=		gl
-USE_QT5=	core dbus gui network phonon4 script sql widgets \
+USE_QT5=	core dbus gui network phonon4 qml script sql widgets \
 		buildtools_build imageformats_run sql-sqlite3_run
 QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE} \
 		DEFINES+=APP_GOOGLE_API_KEY="${MINITUBE_GOOGLE_API_KEY}"
