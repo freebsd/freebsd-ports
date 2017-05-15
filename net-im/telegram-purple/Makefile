@@ -23,7 +23,6 @@ OPTIONS_SUB=	yes
 
 USES=		execinfo gettext gmake pkgconfig
 USE_GNOME=	glib20 libxml2
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
