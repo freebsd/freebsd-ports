@@ -3,6 +3,7 @@
 
 PORTNAME=	qtcreator
 DISTVERSION=	4.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libqbscore.so:devel/qbs
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USES=		qmake compiler:c++11-lib tar:xz
 USE_GL=		gl
-USE_QT5=	buildtools concurrent core declarative designer gui help \
+USE_QT5=	buildtools concurrent core designer gui help \
 		linguist network printsupport qdoc qml quick quickcontrols \
 		script script sql svg webkit widgets xml xmlpatterns
 

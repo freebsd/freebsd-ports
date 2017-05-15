@@ -3,7 +3,7 @@
 
 PORTNAME=	musescore
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${PORTVERSION}/
 DISTNAME=	MuseScore-${PORTVERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
 		pkgconfig shared-mime-info zip
-USE_QT5=	concurrent declarative designer help network scripttools svg \
+USE_QT5=	concurrent designer help network scripttools svg \
 		webkit xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build uitools_build
 ALL_TARGET=	lrelease manpages all
