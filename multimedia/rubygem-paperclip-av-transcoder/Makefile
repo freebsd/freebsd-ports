@@ -11,7 +11,7 @@ COMMENT=	Audio/Video transcoder for Paperclip using FFMPEG/Avconv
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-av-rails5>=0.9.0:multimedia/rubygem-av-rails5 \
+RUN_DEPENDS=	rubygem-av>=0.9.0:multimedia/rubygem-av \
 		rubygem-paperclip-rails5>=2.5.2:devel/rubygem-paperclip-rails5
 
 NO_ARCH=	yes
