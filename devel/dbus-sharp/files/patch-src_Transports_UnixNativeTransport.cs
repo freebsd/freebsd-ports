@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/Transports/UnixNativeTransport.cs.orig	2014-06-24 17:10:54 UTC
 +++ src/Transports/UnixNativeTransport.cs
 @@ -94,10 +94,8 @@ namespace DBus.Transports

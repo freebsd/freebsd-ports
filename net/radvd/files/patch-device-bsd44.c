@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- device-bsd44.c.orig	2015-11-19 13:58:52 UTC
 +++ device-bsd44.c
 @@ -116,6 +116,24 @@ int update_device_info(int sock, struct 
