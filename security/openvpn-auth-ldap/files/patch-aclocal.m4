@@ -4,7 +4,7 @@
  	AC_CACHE_VAL(od_cv_openvpn, [
  		AC_LINK_IFELSE([
  				AC_LANG_PROGRAM([
-+						#include <sys/types.h>
++						#include <stddef.h>
  						#include <openvpn-plugin.h>
  					], [
  						int flag = OPENVPN_PLUGIN_UP;
