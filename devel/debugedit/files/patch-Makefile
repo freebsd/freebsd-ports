@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Makefile.orig	2017-04-11 06:09:46 UTC
 +++ Makefile
 @@ -1,5 +1,5 @@

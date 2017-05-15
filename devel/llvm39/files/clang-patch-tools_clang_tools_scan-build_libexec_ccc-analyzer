@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/tools/scan-build/libexec/ccc-analyzer.orig
 +++ tools/clang/tools/scan-build/libexec/ccc-analyzer
 @@ -81,6 +81,9 @@

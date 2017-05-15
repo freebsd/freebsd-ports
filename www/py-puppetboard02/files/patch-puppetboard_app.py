@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- puppetboard/app.py.orig
 +++ puppetboard/app.py
 @@ -114,7 +114,7 @@

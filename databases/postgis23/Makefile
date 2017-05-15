@@ -3,6 +3,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	23
@@ -56,6 +57,7 @@ SFCGAL_IMPLIES=		RASTER
 ADDRSTD_CONFIGURE_WITH=	address-standardizer
 ADDRSTD_IMPLIES=	RASTER
 ADDRSTD_LIB_DEPENDS=	libpcre.so:devel/pcre
+ADDRSTD_VARS=		WANT_PGSQL+=contrib
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

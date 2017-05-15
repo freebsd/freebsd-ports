@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Mono.Addins.GuiGtk3/Mono.Addins.GuiGtk3.csproj.orig
 +++ Mono.Addins.GuiGtk3/Mono.Addins.GuiGtk3.csproj
 @@ -141,25 +141,25 @@
