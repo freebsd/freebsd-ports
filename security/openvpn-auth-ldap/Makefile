@@ -15,16 +15,15 @@ COMMENT=	LDAP authentication plugin for OpenVPN
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	re2c:devel/re2c \
-		${NONEXISTENT}:security/openvpn:extract \
-		check>=0:devel/check
+		check>=0:devel/check \
+		${LOCALBASE}/include/openvpn-plugin.h:security/openvpn
 
 USES=		autoreconf objc tar:xz
 
 GNU_CONFIGURE=	yes
 USE_OPENLDAP=	yes
-OPENVPN_WRKSRC=	`cd ${PORTSDIR}/security/openvpn; make -V WRKSRC`
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
-			--with-openvpn=${OPENVPN_WRKSRC}/include \
+			--with-openvpn=${LOCALBASE}/include \
 			--with-objc-runtime=GNU
 
 PORTDOCS=	README
