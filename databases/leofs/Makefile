@@ -56,7 +56,7 @@ SUB_LIST+=	LEOFS_USER=${LEOFS_USER} \
 
 SUB_FILES+=	${LEOFS_SBIN_FILES:S/^/sbin-/}
 
-USES=		dos2unix pkgconfig ssl
+USES=		dos2unix gmake pkgconfig ssl
 USE_RC_SUBR=	${PORTNAME}
 
 DOS2UNIX_FILES=	apps/leo_*/snmp/snmpa_*/leo_*_snmp.config
