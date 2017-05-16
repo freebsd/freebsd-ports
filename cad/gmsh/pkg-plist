@@ -2,6 +2,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/demos/boolean/baffles.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/boolean.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/component8.step
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/compsolid.geo
