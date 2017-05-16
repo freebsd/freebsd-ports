@@ -1,8 +1,9 @@
-SHA256 (simutrans-src-120-1-3.zip) = 2d29b849fc39d25a0580091e1377270bddb2cae36c0fc32bd7c2d0f1d7ccfb84
-SIZE (simutrans-src-120-1-3.zip) = 3447115
-SHA256 (simulinux-i86-120-1-3.zip) = 11662cd95b2cae3abe04c400a31955bfbe266f9f52676cd6261c72d38c0386cd
-SIZE (simulinux-i86-120-1-3.zip) = 3333029
-SHA256 (simupak64-120-1-2.zip) = 125fa5c13a51bb0630ca651fddb8af06a823e8c4d4638bfa1bb2d89e92cc1d54
-SIZE (simupak64-120-1-2.zip) = 4308534
+TIMESTAMP = 1494943579
+SHA256 (simutrans-src-120-2-2.zip) = 7f22c144377abf1a0ee49432f3f6f5eb9a620567960df31d2ea6399b17cf26fa
+SIZE (simutrans-src-120-2-2.zip) = 3900947
+SHA256 (simulinux-120-2-2.zip) = 029891edb59036183a6e2757a6a01eb7eddec263043650aabaf49e948497328a
+SIZE (simulinux-120-2-2.zip) = 3437339
+SHA256 (simupak64-120-2.zip) = b3ce4fc99468e6a2601a606251f156e554d2d78f2cc5679c0d9a64a5f50561e8
+SIZE (simupak64-120-2.zip) = 4453079
 SHA256 (pak128-2.6--ST120.zip) = ac0835ff667f80a2990ae226e8a58a9c44bbd1c2bf4a9f0f3cd87614ef9da94f
 SIZE (pak128-2.6--ST120.zip) = 95151992
