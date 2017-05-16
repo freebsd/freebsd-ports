@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION}RC1
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Element for PEAR::HTML_QuickForm that defines dynamic filters
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm

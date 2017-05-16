@@ -5,7 +5,7 @@ PORTNAME=	Auth_PrefManager
 PORTVERSION=	1.2.2
 CATEGORIES=	security www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR preferences management class
 
 USES=	pear

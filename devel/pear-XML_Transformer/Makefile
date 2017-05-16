@@ -5,7 +5,7 @@ PORTNAME=	XML_Transformer
 PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR XML Transformations in PHP
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Util.php:devel/pear-XML_Util

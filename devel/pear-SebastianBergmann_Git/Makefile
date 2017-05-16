@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Simple wrapper for Git
 
 LICENSE=	BSD3CLAUSE

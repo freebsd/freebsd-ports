@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Library that provides PHP code coverage information
 
 LICENSE=	BSD3CLAUSE

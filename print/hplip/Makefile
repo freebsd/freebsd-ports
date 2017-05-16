@@ -3,7 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.16.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -72,7 +72,7 @@ XSANE_RUN_DEPENDS=	xsane:graphics/xsane
 
 .if ${PORT_OPTIONS:MQT4} && ${PORT_OPTIONS:MX11}
 USES+=			pyqt:4
-USE_PYQT=		core_run dbussupport_run gui_run
+USE_PYQT=		core_run dbussupport_run gui_run sip
 CONFIGURE_ARGS+=	--enable-qt4
 .else
 CONFIGURE_ARGS+=	--disable-qt4
@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=	--disable-qt4
 
 .if ${PORT_OPTIONS:MQT5} && ${PORT_OPTIONS:MX11}
 USES+=			pyqt:5
-USE_PYQT=		core_run dbussupport_run gui_run widgets_run
+USE_PYQT=		core_run dbussupport_run gui_run sip widgets_run
 CONFIGURE_ARGS+=	--enable-qt5
 .else
 CONFIGURE_ARGS+=	--disable-qt5

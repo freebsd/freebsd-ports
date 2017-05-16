@@ -7,7 +7,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security www
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension to cracklib
 
 LICENSE=	PHP30

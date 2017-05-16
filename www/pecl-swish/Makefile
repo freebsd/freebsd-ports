@@ -6,7 +6,7 @@ PORTVERSION=	0.5.0
 PORTREVISION=	1
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Swish-e bindings for PHP
 
 LICENSE=	PHP301

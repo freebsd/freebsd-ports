@@ -6,7 +6,7 @@ DISTVERSION=	7.x-2.3
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 
 LICENSE=	GPLv2

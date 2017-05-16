@@ -6,7 +6,7 @@ PORTVERSION=	1.3.0
 PORTREVSION=	1
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR simple HTML form package
 
 NO_ARCH=	yes

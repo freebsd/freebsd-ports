@@ -5,7 +5,7 @@ PORTNAME=	Net_Geo
 PORTVERSION=	1.0.5
 CATEGORIES=	net pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Geographical locations based on Internet address
 
 BUILD_DEPENDS=	${PEARDIR}/Cache.php:sysutils/pear-Cache \

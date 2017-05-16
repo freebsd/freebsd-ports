@@ -6,7 +6,7 @@ PORTVERSION=	1.9.2
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Database Abstraction Layer
 
 USES=		pear

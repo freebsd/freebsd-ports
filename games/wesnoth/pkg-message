@@ -1,0 +1,5 @@
+Wesnoth assumes an UTF-8 charset by default. Using another charset
+will result in a crash. To avoid this situation set the charset
+before starting wesnoth:
+
+env LANG=en_US.UTF-8 wesnoth

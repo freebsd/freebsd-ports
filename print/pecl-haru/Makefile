@@ -6,7 +6,7 @@ PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	print pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension to Haru PDF functions
 
 LICENSE=	PHP301

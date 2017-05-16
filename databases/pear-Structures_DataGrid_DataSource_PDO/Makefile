@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_DataSource_PDO
 PORTVERSION=	0.2.0
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	DataSource driver using PHP Data Objects (PDO) and an SQL query
 
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array

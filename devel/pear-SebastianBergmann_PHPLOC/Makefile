@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 DISTNAME=	phploc-${PORTVERSION}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Tool for quickly measuring the size of a PHP project
 
 LICENSE=	BSD3CLAUSE

@@ -5,7 +5,7 @@ PORTNAME=	Text_Wiki
 PORTVERSION=	1.2.1
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Abstracts parsing and rendering rules for Wiki markup
 
 USES=	pear

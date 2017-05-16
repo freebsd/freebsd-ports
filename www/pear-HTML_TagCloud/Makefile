@@ -5,7 +5,7 @@ PORTNAME=	HTML_TagCloud
 PORTVERSION=	1.0.0
 CATEGORIES=	www devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Generate TagCloud in HTML And Visualize Tags
 
 NO_ARCH=	yes
