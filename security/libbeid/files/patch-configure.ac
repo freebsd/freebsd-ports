@@ -1,27 +1,28 @@
---- configure.ac.orig	2016-10-14 12:10:30 UTC
+--- configure.ac.orig	2017-05-10 13:28:54 UTC
 +++ configure.ac
 @@ -1,6 +1,6 @@
  AC_PREREQ([2.61])
  AC_INIT([eid-mw],
--  m4_esyscmd_s(echo "4.1.18-"$(git describe --dirty|sed -e 's/-/./g')),
-+  [4.1.19-release],
+-  m4_esyscmd_s(scripts/build-aux/genver.sh),
++  [4.2.8-release],
    [servicedesk@fedict.be],,
    [http://eid.belgium.be])
  
-@@ -26,7 +26,6 @@ AS_VAR_IF([GXX],[yes],[],AC_MSG_ERROR([G
- # Checks for header files.
- AC_CHECK_HEADERS([fcntl.h float.h limits.h netinet/in.h stdlib.h string.h sys/file.h sys/ioctl.h sys/time.h unistd.h malloc.h memory.h sys/timeb.h termios.h])
- 
--AM_GNU_GETTEXT([external])
- 
- ###### pcsc-lite ##########
- PKG_CHECK_MODULES([PCSC],[libpcsclite >= 1.4.4],
-@@ -104,7 +103,6 @@ MAINVERSION=$(echo $PACKAGE_VERSION|sed 
- AC_DEFINE_UNQUOTED([MAINVERSION], $MAINVERSION, [do not change this])
- AC_SUBST(MAINVERSION)
- 
--AC_CONFIG_FILES([Makefile cardcomm/pkcs11/src/Makefile tests/unit/Makefile plugins_tools/aboutmw/gtk/Makefile plugins_tools/aboutmw/gtk/about-eid-mw.desktop.sh plugins_tools/aboutmw/gtk/po/Makefile.in rpm/eid-mw.spec])
+@@ -159,16 +159,6 @@ AC_CONFIG_FILES([Makefile
+ 		 cardcomm/pkcs11/src/Makefile
+ 		 cardcomm/pkcs11/src/libbeidpkcs11.pc
+ 		 cardcomm/pkcs11/src/dialogs/dialogsgtk/po/Makefile.in
+-		 doc/sdk/include/rsaref220/Makefile
+-		 tests/unit/Makefile
+-		 plugins_tools/util/Makefile
+-		 plugins_tools/aboutmw/gtk/Makefile
+-		 plugins_tools/aboutmw/gtk/po/Makefile.in
+-		 plugins_tools/eid-viewer/Makefile
+-		 plugins_tools/eid-viewer/test/Makefile
+-		 plugins_tools/eid-viewer/gtk/po/Makefile.in
+-		 plugins_tools/eid-viewer/gtk/eid-viewer.desktop.sh
+-		 rpm/eid-mw.spec])
 -AC_CONFIG_SUBDIRS([plugins_tools/xpi])
-+AC_CONFIG_FILES([Makefile cardcomm/pkcs11/src/Makefile])
++		])
  
  AC_OUTPUT

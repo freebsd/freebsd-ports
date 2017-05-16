@@ -3,7 +3,7 @@
 
 PORTNAME=	foreman-proxy
 PORTVERSION=	1.12.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.theforeman.org/foreman-proxy/
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		rubygem-json>=1.8.1:devel/rubygem-json \
 		rubygem-rack16>=1.4:www/rubygem-rack16 \
-		rubygem-sinatra>=1.4.3:www/rubygem-sinatra \
+		rubygem-sinatra1>=1.4.3:www/rubygem-sinatra1 \
 		wget:ftp/wget
 
 OPTIONS_DEFINE=	BMC PUPPET4

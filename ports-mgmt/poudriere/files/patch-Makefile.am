@@ -1,0 +1,37 @@
+commit 7772e88ac1976ed60f4c233136c9246e3a99016e
+Author: Bryan Drewery <bryan@shatow.net>
+Date:   Fri May 12 09:26:06 2017 -0700
+
+    Use C99 to build sh as head does.
+    
+    This fixes the build for Sparc64 with GCC 4.2.1.
+    
+    Reported by:    linimon, jhibbits
+    Fixes #468
+
+diff --git Makefile.am Makefile.am
+index 2e7f8960..7bab2d8d 100644
+--- Makefile.am
++++ Makefile.am
+@@ -146,7 +146,7 @@ rm_SOURCES=		src/libexec/poudriere/rm/rm.c
+ timeout_SOURCES=	src/libexec/poudriere/timeout/timeout.c
+ timestamp_SOURCES=	src/libexec/poudriere/timestamp/timestamp.c
+ tsort_SOURCES=		src/libexec/poudriere/tsort/tsort.c
+-sh_CFLAGS=		-DSHELL -DNO_HISTORY \
++sh_CFLAGS=		-DSHELL -DNO_HISTORY -std=gnu99 \
+ 			-include $(top_srcdir)/external/sh_compat/compat.h \
+ 			-I$(top_srcdir)/src \
+ 			-I$(top_srcdir)/external/sh
+diff --git Makefile.in Makefile.in
+index 1987d11d..d32d502b 100644
+--- Makefile.in
++++ Makefile.in
+@@ -600,7 +600,7 @@ rm_SOURCES = src/libexec/poudriere/rm/rm.c
+ timeout_SOURCES = src/libexec/poudriere/timeout/timeout.c
+ timestamp_SOURCES = src/libexec/poudriere/timestamp/timestamp.c
+ tsort_SOURCES = src/libexec/poudriere/tsort/tsort.c
+-sh_CFLAGS = -DSHELL -DNO_HISTORY -include \
++sh_CFLAGS = -DSHELL -DNO_HISTORY -std=gnu99 -include \
+ 	$(top_srcdir)/external/sh_compat/compat.h -I$(top_srcdir)/src \
+ 	-I$(top_srcdir)/external/sh -I$(top_srcdir)/src/poudriere-sh \
+ 	-I$(top_builddir)/src/poudriere-sh

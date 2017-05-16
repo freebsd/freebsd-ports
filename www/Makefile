@@ -2055,6 +2055,7 @@
     SUBDIR += rubygem-rack-mount
     SUBDIR += rubygem-rack-openid
     SUBDIR += rubygem-rack-protection
+    SUBDIR += rubygem-rack-protection1
     SUBDIR += rubygem-rack-proxy
     SUBDIR += rubygem-rack-ssl
     SUBDIR += rubygem-rack-test
@@ -2108,6 +2109,7 @@
     SUBDIR += rubygem-sinatra-contrib
     SUBDIR += rubygem-sinatra-r18n
     SUBDIR += rubygem-sinatra-respond_to
+    SUBDIR += rubygem-sinatra1
     SUBDIR += rubygem-socksify
     SUBDIR += rubygem-task_list
     SUBDIR += rubygem-thin

@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.16.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -100,7 +100,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-state_machines-activerecord>=0.4.0:databases/rubygem-state_machines-activerecord \
 	rubygem-after_commit_queue>=1.3.0:databases/rubygem-after_commit_queue \
 	rubygem-acts-as-taggable-on>=4.0.0:www/rubygem-acts-as-taggable-on \
-	rubygem-sidekiq>=4.2.7:devel/rubygem-sidekiq \
+	rubygem-sidekiq4>=4.2.7:devel/rubygem-sidekiq4 \
 	rubygem-sidekiq-cron04>=0.4.4:devel/rubygem-sidekiq-cron04 \
 	rubygem-redis-namespace>=1.5.2:databases/rubygem-redis-namespace \
 	rubygem-sidekiq-limit_fetch>=3.4:devel/rubygem-sidekiq-limit_fetch \
