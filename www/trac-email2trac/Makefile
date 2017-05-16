@@ -7,7 +7,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	ftp://ftp.sara.nl/pub/outgoing/
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Convert email to trac tickets
 
 LICENSE=	APACHE20

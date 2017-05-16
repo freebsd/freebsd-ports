@@ -5,7 +5,7 @@ PORTNAME=	Net_URL
 PORTVERSION=	1.0.15
 CATEGORIES=	net www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Easy parsing of URLs
 
 USES=	pear

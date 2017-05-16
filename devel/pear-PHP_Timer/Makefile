@@ -6,7 +6,7 @@ PORTVERSION=	1.0.9
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Utility class for timing
 
 LICENSE=	BSD3CLAUSE

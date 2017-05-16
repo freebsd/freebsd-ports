@@ -6,7 +6,7 @@ PORTVERSION=	1.3.0
 PORTEPOCH=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Integrated template API
 
 USES=	pear

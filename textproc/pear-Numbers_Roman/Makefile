@@ -5,7 +5,7 @@ PORTNAME=	Numbers_Roman
 PORTVERSION=	1.0.2
 CATEGORIES=	textproc devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR methods for converting to and from Roman Numerals
 
 USES=	pear

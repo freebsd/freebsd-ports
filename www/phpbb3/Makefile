@@ -8,7 +8,7 @@ MASTER_SITES=	https://www.phpbb.com/files/release/
 PKGNAMESUFFIX=	3
 DISTNAME=	phpBB-${PORTVERSION}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP-based bulletin board / discussion forum system
 
 LICENSE=	GPLv2

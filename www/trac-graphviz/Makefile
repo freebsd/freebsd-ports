@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Graphviz plugin for Trac's wiki
 
 LICENSE=	BSD3CLAUSE

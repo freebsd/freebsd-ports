@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.netpirates.net/get/
 PKGNAMEPREFIX=	pear-TheSeer_
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Extension to PHP's standard DOM
 
 LICENSE=	BSD3CLAUSE

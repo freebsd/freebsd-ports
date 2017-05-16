@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_DataSource_RSS
 PORTVERSION=	0.1.1
 CATEGORIES=	textproc databases www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	DataSource driver using RSS files
 
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array

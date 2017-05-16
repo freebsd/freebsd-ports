@@ -6,7 +6,7 @@ PORTVERSION=	1.0.7
 PORTREVISION=	1
 CATEGORIES=	dns net pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Resolver library used to communicate with a DNS server
 
 DEPRECATED=	This Port use PHP4.2 - This PHP-Version is not longer supporded

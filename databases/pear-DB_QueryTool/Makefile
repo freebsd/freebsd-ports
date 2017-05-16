@@ -5,7 +5,7 @@ PORTNAME=	DB_QueryTool
 PORTVERSION=	1.1.2
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR OO-interface for easily retrieving and modifying data in a DB
 
 BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB \

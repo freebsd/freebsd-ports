@@ -6,7 +6,7 @@ PORTVERSION=	4.0.1
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Mock Object library for PHPUnit
 
 LICENSE=	BSD3CLAUSE

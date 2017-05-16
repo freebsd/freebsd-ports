@@ -6,7 +6,7 @@ PORTVERSION=	1.5.1
 PORTREVISION=	1
 CATEGORIES=	textproc pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension which provides word stemming
 
 LICENSE=	BSD3CLAUSE

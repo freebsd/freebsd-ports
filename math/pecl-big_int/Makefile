@@ -6,7 +6,7 @@ PORTVERSION=	1.0.7
 PORTREVISION=	1
 CATEGORIES=	math devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Functions for calculations with arbitrary length integers and bitsets
 
 LICENSE=	BIG_INT
