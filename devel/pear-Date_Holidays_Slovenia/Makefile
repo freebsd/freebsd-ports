@@ -4,7 +4,7 @@ PORTNAME=	Date_Holidays_Slovenia
 PORTVERSION=	0.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Slovenia
 
 BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays

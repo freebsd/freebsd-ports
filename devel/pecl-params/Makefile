@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension for a userspace equivalent of zend_parse_parameters()
 
 USES=		php:pecl

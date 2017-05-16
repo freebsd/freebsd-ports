@@ -6,7 +6,7 @@ PORTVERSION=	0.1.15
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR beautifier for PHP
 
 BUILD_DEPENDS=	${PEARDIR}/Log.php:sysutils/pear-Log

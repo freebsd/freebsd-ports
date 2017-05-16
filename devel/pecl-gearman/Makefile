@@ -6,7 +6,7 @@ PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Gearman API
 
 LICENSE=	PHP301

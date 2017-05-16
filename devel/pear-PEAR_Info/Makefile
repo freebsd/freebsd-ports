@@ -6,7 +6,7 @@ PORTVERSION=	1.9.2
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Show Information about your PEAR install and its packages
 
 BUILD_DEPENDS=	${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs

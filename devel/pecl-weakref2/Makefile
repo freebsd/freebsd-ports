@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 PKGNAMESUFFIX=	2
 DISTNAME=	Weakref-${PORTVERSION}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL Weakref extension
 
 LICENSE=	PHP301

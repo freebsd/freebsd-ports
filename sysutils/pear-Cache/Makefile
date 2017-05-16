@@ -6,7 +6,7 @@ PORTVERSION=	1.5.6
 PORTREVISION=	1
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR framework for caching of arbitrary data
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request

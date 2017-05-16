@@ -5,7 +5,7 @@ PORTNAME=	Benchmark
 PORTVERSION=	1.2.9
 CATEGORIES=	benchmarks devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR framework to benchmark PHP scripts or function calls
 
 USES=	pear

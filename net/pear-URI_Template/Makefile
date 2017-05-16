@@ -5,7 +5,7 @@ PORTNAME=	URI_Template
 PORTVERSION=	0.3.3
 CATEGORIES=	net pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Parser for URI Templates
 
 NO_ARCH=	yes

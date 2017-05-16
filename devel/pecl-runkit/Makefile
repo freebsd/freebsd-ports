@@ -6,7 +6,7 @@ PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension to modify constants, user-defined functions, and classes
 
 LICENSE=	PHP30

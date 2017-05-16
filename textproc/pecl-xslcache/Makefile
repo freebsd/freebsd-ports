@@ -6,7 +6,7 @@ PORTVERSION=	0.7.2
 PORTREVISION=	1
 CATEGORIES=	textproc pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Caches the parsed XSL stylesheet between sessions
 
 LICENSE=	PHP301

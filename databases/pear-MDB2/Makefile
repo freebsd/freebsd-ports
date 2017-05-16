@@ -5,7 +5,7 @@ PORTNAME=	MDB2
 DISTVERSION=	2.5.0b5
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR database abstraction layer
 
 LICENSE=	BSD3CLAUSE

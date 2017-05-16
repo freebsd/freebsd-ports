@@ -5,7 +5,7 @@ PORTNAME=	Services_TwitPic
 PORTVERSION=	0.1.0
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP Interface to TwitPic's API
 
 NO_ARCH=	yes

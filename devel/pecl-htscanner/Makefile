@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Support htaccess for PHP
 
 LICENSE=	PHP30

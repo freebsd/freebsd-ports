@@ -5,7 +5,7 @@ PORTNAME=	XML_RSS
 PORTVERSION=	1.1.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR RSS parser
 
 LICENSE=	PHP301

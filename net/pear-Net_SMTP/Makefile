@@ -5,7 +5,7 @@ PORTNAME=	Net_SMTP
 PORTVERSION=	1.8.0
 CATEGORIES=	net mail www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the SMTP protocol
 
 LICENSE=	BSD2CLAUSE

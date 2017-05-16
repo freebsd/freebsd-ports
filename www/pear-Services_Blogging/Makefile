@@ -5,7 +5,7 @@ PORTNAME=	Services_Blogging
 PORTVERSION=	0.2.4
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP interface to Blog
 
 BUILD_DEPENDS=	${PEARDIR}/XML/RPC.php:net/pear-XML_RPC
