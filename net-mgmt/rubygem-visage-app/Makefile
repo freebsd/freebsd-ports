@@ -3,7 +3,7 @@
 
 PORTNAME=	visage-app
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	rubygem-errand>=0.7.3:devel/rubygem-errand \
 		rubygem-haml>=3.1.4:www/rubygem-haml \
-		rubygem-sinatra>=1.3.2:www/rubygem-sinatra \
+		rubygem-sinatra1>=1.3.2:www/rubygem-sinatra1 \
 		rubygem-tilt>=1.3.3:devel/rubygem-tilt \
 		rubygem-yajl-ruby>=1.1.0:devel/rubygem-yajl-ruby
 
