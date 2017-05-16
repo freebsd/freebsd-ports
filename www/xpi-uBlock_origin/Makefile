@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ublock_origin
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.4
 DISTVERSIONSUFFIX=	-an+fx+sm+tb
 CATEGORIES=	www
 
