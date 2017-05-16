@@ -3,6 +3,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
@@ -50,27 +51,25 @@ LMLINKS=	vice.1 x64.1 \
 		vice.1 xplus4.1 \
 		vice.1 xcbm2.1
 
-OPTIONS_DEFINE=	SDL ASOUND PULSE DOCS
+OPTIONS_DEFINE=	SDL ALSA PULSEAUDIO DOCS
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	GNOMEUI3 GNOMEUI2 XAW
-OPTIONS_DEFAULT?=	GNOMEUI3 SDL ASOUND
+OPTIONS_DEFAULT?=	GNOMEUI3 SDL ALSA
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 GNOMEUI3_DESC=	use gnome3 user interface
 GNOMEUI2_DESC=	use gnome2 user interface
 XAW_DESC=	use plain Xaw library
 SDL_DESC=	build with SDL2 sound system support
-ASOUND_DESC=	build with asound support
-PULSE_DESC=	build with pulseaudio support
 
 GNOMEUI2_CONFIGURE_ENABLE=	gnomeui
 GNOMEUI3_CONFIGURE_ENABLE=	gnomeui3
 SDL_USE=		SDL=sdl2
 SDL_CONFIGURE_ON=	--with-sdlsound
-ASOUND_CONFIGURE_OFF=	--without-alsa
-ASOUND_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-PULSE_CONFIGURE_OFF=	--without-pulse
-PULSE_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+ALSA_CONFIGURE_OFF=	--without-alsa
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+PULSEAUDIO_CONFIGURE_OFF=	--without-pulse
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 .include <bsd.port.options.mk>
 
