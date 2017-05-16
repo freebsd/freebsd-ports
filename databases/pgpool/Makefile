@@ -13,6 +13,8 @@ COMMENT=	Connection pool server for PostgreSQL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+PORTSCOUT=	limit:^3.4.[0-9]*
+
 USES=		gmake libtool pgsql:9.3+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
