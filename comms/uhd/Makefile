@@ -2,7 +2,7 @@
 
 PORTNAME=	uhd
 PORTVERSION=	3.9.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://files.ettus.com/binaries/images/
 DISTFILES=	${IMAGE_FILE}
@@ -27,12 +27,14 @@ CONFLICTS=	usrp-[0-9]*
 BROKEN_powerpc64=	fails to link: undefined reference to boost function
 
 USES=		compiler:c++0x cmake:outsource gmake ncurses pkgconfig \
-		dos2unix python:2.7
+		dos2unix python:2.7 shebangfix
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 #MAKE_JOBS_UNSAFE=	yes
 CXXFLAGS_amd64=	-msse2
 CXXFLAGS_i386=	-msse2
+
+SHEBANG_GLOB=	*.py *.py.in
 
 CMAKE_ARGS+=	-DPKG_LIB_DIR:STRING="share/uhd" -DUHD_TXRX_DEBUG_PRINTS="yes"
 # for excruciating debug use this -db
