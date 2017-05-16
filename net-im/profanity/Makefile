@@ -31,6 +31,8 @@ OPTIONS_DEFINE=	NOTIFY
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=notifications
 
+EXPLICIT_SAFESTACK=	yes
+
 .include <bsd.port.pre.mk>
 
 post-patch:
