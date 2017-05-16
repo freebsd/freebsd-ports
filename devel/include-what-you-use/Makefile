@@ -3,6 +3,7 @@
 
 PORTNAME=	include-what-you-use
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -14,8 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 BUILD_DEPENDS=	clang39:devel/llvm39
 RUN_DEPENDS=	clang39:devel/llvm39
 
-USES=		cmake:outsource ncurses python:run
+USES=		cmake:outsource ncurses python:run shebangfix
 USE_GITHUB=	yes
+
+SHEBANG_FILES=	fix_includes.py \
+		iwyu_tool.py
 
 GH_TAGNAME=	clang_3.9
 
