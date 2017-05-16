@@ -1033,6 +1033,7 @@
     SUBDIR += py-python-novaclient
     SUBDIR += py-python-ntlm
     SUBDIR += py-python-openstackclient
+    SUBDIR += py-python-twitter
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
@@ -1059,7 +1060,6 @@
     SUBDIR += py-tofu
     SUBDIR += py-tweepy
     SUBDIR += py-twistedPair
-    SUBDIR += py-twitter
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-txrestapi

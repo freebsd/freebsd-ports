@@ -1679,6 +1679,11 @@
     SUBDIR += node-thrift
     SUBDIR += notify-sharp
     SUBDIR += noweb
+    SUBDIR += npm-amdefine
+    SUBDIR += npm-clean-css
+    SUBDIR += npm-commander
+    SUBDIR += npm-graceful-readlink
+    SUBDIR += npm-source-map
     SUBDIR += npth
     SUBDIR += nsgenbind
     SUBDIR += nspr
