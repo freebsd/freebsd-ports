@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	groupoffice
-PORTVERSION=	6.2.37
+PORTVERSION=	6.2.38
 DISTVERSIONPREFIX=	com-
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Modular web application framework for office
 
 LICENSE=	AGPLv3
