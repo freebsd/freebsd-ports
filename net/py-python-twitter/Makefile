@@ -1,12 +1,11 @@
 # Created by: ijliao
 # $FreeBSD$
 
-PORTNAME=	twitter
+PORTNAME=	python-twitter
 PORTVERSION=	3.2.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python wrapper around the Twitter API
