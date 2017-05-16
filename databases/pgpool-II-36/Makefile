@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	pgpool
+PORTNAME=	pgpool-II
 PORTVERSION=	3.6.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
-DISTNAME=	${PORTNAME}-II-${PORTVERSION}
+PKGNAMESUFFIX=	36
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Connection pool server for PostgreSQL
@@ -17,8 +17,6 @@ PORTSCOUT=	limit:^3.6.[0-9]*
 USES=		gmake libtool pgsql:9.3+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-DATADIR=	${PREFIX}/share/${PORTNAME}-II
 
 USE_RC_SUBR=	pgpool
 CONFLICTS=	pgpool-II-[0-9]*
