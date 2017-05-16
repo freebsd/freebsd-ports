@@ -26,8 +26,7 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${STAGEDIR}${PREFIX}/sbin
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/arirang
-	${CHMOD} 755 ${STAGEDIR}${PREFIX}/share/arirang
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/arirang
 	${INSTALL_DATA} ${WRKSRC}/scanrule/*.uxe ${STAGEDIR}${PREFIX}/share/arirang
 	${INSTALL_DATA} ${WRKSRC}/script/*.rb ${STAGEDIR}${PREFIX}/share/arirang
 
