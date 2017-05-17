@@ -21,7 +21,8 @@
 -gem 'pg', '~> 0.18.2', group: :postgres
 +gem 'default_value_for', '>= 3.0.0'
  
- gem 'rugged', '~> 0.24.0'
+-gem 'rugged', '~> 0.24.0'
++gem 'rugged', '~> 0.24'
  
  # Authentication libraries
  gem 'devise',                 '~> 4.2'
