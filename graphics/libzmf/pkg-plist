@@ -1,0 +1,8 @@
+bin/zmf2raw
+bin/zmf2svg
+include/libzmf-0.0/libzmf/ZMFDocument.h
+include/libzmf-0.0/libzmf/libzmf.h
+lib/libzmf-0.0.so
+lib/libzmf-0.0.so.0
+lib/libzmf-0.0.so.0.0.1
+libdata/pkgconfig/libzmf-0.0.pc
