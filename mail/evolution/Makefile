@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evolution
-PORTVERSION=	3.18.5.1
-PORTREVISION=	2
+PORTVERSION=	3.22.6
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,27 +22,33 @@ LIB_DEPENDS=	libnss3.so:security/nss \
 		libgcr-3.so:security/gcr \
 		libgtkspell3-3.so:textproc/gtkspell3 \
 		libgeocode-glib.so:net/geocode-glib \
-		libwebkitgtk-3.0.so:www/webkit-gtk3 \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libnspr4.so:devel/nspr \
+		libical.so:devel/libical \
+		libsecret-1.so:security/libsecret \
+		libenchant.so:textproc/enchant \
+		libp11-kit.so:security/p11-kit \
+		libsoup-2.4.so:devel/libsoup \
 		libcryptui.so:security/libcryptui \
-		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
 		libnotify.so:devel/libnotify
 RUN_DEPENDS=	highlight:textproc/highlight \
 		gnome-keyring>=3.0.0:security/gnome-keyring
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils bison gettext gmake gnome libtool \
-		pathfix perl5 pkgconfig tar:xz
-USE_GNOME=	evolutiondataserver3 gnomedesktop3 intltool
+USES=		desktop-file-utils bison gettext gmake gnome iconv:wchar_t \
+		libtool localbase pathfix perl5 pkgconfig sqlite tar:xz
+USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 intltool
 GNU_CONFIGURE=	yes
 USE_GSTREAMER1=	yes
+USE_XORG=	x11
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--disable-autoar \
 		--with-sub-version=" FreeBSD GNOME Team Port"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.evolution.gschema.xml \
@@ -65,7 +70,7 @@ GLIB_SCHEMAS=	org.gnome.evolution.gschema.xml \
 		org.gnome.evolution.plugin.publish-calendar.gschema.xml \
 		org.gnome.evolution.plugin.templates.gschema.xml
 
-EVO_VERSION=	3.18
+EVO_VERSION=	3.22
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
@@ -99,7 +104,8 @@ BOGOFILTER_CONFIGURE_WITH=	bogofilter=${LOCALBASE}/bin/bogofilter
 BOGOFILTER_BUILD_DEPENDS=	bogofilter:mail/bogofilter
 BOGOFILTER_RUN_DEPENDS=	bogofilter:mail/bogofilter
 
-CANBERRA_LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3
+CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
+			libcanberra-gtk3.so:audio/libcanberra-gtk3
 CANBERRA_CONFIGURE_ENABLE=	canberra
 
 PST_CONFIGURE_ENABLE=	pst-import
