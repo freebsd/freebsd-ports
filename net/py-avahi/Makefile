@@ -25,7 +25,7 @@ PLIST=		${.CURDIR}/pkg-plist
 AVAHI_SLAVE=	python
 
 USE_GNOME=	pygtk2
-USES=		python
+USES=		python:2
 MANPAGES=	avahi-bookmarks.1 avahi-discover.1
 
 post-patch:
