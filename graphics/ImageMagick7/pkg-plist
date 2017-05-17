@@ -299,6 +299,8 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/pdf.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/pes.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/pes.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/pgx.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/pgx.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/pict.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/pict.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/pix.la
@@ -412,13 +414,13 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 lib/libMagick++-7.a
 lib/libMagick++-7.la
 lib/libMagick++-7.so
-lib/libMagick++-7.so.0
-lib/libMagick++-7.so.0.0.0
+lib/libMagick++-7.so.2
+lib/libMagick++-7.so.2.0.0
 lib/libMagickCore-7.a
 lib/libMagickCore-7.la
 lib/libMagickCore-7.so
-lib/libMagickCore-7.so.0
-lib/libMagickCore-7.so.0.0.0
+lib/libMagickCore-7.so.2
+lib/libMagickCore-7.so.2.0.0
 lib/libMagickWand-7.a
 lib/libMagickWand-7.la
 lib/libMagickWand-7.so
@@ -426,10 +428,8 @@ lib/libMagickWand-7.so.0
 lib/libMagickWand-7.so.0.0.0
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick.pm
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick/%%QBIT%%%%HDRI%%.pm
-%%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/%%QBIT%%%%HDRI%%.so
 %%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/autosplit.ix
-%%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/autosplit.ix
 %%WITH_PERL%%%%PERL5_MAN3%%/Image::Magick.3.gz
 %%WITH_PERL%%%%PERL5_MAN3%%/Image::Magick::%%QBIT%%%%HDRI%%.3.gz
 libdata/pkgconfig/ImageMagick-7.pc
@@ -1467,6 +1467,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/convert.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/css/README.txt
 %%PORTDOCS%%%%DOCSDIR%%-7/www/css/magick.css
+%%PORTDOCS%%%%DOCSDIR%%-7/www/develop.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/display.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/distribute-pixel-cache.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/download.html
@@ -1495,6 +1496,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/magick-vector-graphics.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/magick-wand.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/magick.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/mirror.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/miff.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/mogrify.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/montage.html
@@ -1532,7 +1534,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/source/type-windows.xml
 %%PORTDOCS%%%%DOCSDIR%%-7/www/source/type.xml
 %%PORTDOCS%%%%DOCSDIR%%-7/www/source/wand.c
-%%PORTDOCS%%%%DOCSDIR%%-7/www/sponsors.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/stream.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/support.html
