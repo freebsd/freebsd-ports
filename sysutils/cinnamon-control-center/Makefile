@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/9363a4a1e121344ae98f22b55fb28623cf0f6038/panels/datetime/data/:tzpng
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
