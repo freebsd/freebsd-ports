@@ -8,7 +8,35 @@
    [servicedesk@fedict.be],,
    [http://eid.belgium.be])
  
-@@ -159,16 +159,6 @@ AC_CONFIG_FILES([Makefile
+@@ -64,8 +64,6 @@ then
+ 	AC_MSG_ERROR([At least one version of GTK is required.])
+ fi
+ 
+-PKG_CHECK_MODULES([XML2], [libxml-2.0])
+-PKG_CHECK_MODULES([libproxy], [libproxy-1.0])
+ 
+ ###########################################################################
+ ####### read user-specific requests from --enable directives         ######
+@@ -105,18 +103,6 @@ AC_FUNC_MALLOC
+ AC_FUNC_REALLOC
+ AC_CHECK_FUNCS([gethostbyname socket strerror ftime memchr memset mkdir select strchr strdup strerror strncasecmp strrchr strstr strtol strtoul vasprintf])
+ 
+-# we only need libjpeg for the test suite, so don't worry if it's not available...
+-AC_CHECK_LIB(jpeg, jpeg_mem_src, [HAVE_JPEGLIB=1; JPEG_LIBS='-ljpeg'], [HAVE_JPEGLIB=0])
+-AM_CONDITIONAL([JPEG], [test x$HAVE_JPEGLIB = x1])
+-AC_SUBST([JPEG_LIBS])
+-AC_DEFINE_UNQUOTED([HAVE_JPEGLIB], $HAVE_JPEGLIB, [Define to 1 if you have libjpeg installed])
+-
+-PKG_CHECK_MODULES(SSL, "openssl", [HAVE_OPENSSL=1])
+-PKG_CHECK_VAR(SSL_PREFIX, "openssl", "exec_prefix",, AC_MSG_ERROR([Could not find exec_prefix for openssl]))
+-AC_DEFINE_UNQUOTED([HAVE_OPENSSL], $HAVE_OPENSSL, [Define to 1 if you have OpenSSL installed])
+-AC_SUBST(SSL_PREFIX)
+-
+-PKG_CHECK_MODULES(CURL, "libcurl", [HAVE_CURL=1])
+ MAINVERSION=$(echo $PACKAGE_VERSION|sed -e 's/-.*$//')
+ AC_DEFINE_UNQUOTED([MAINVERSION], $MAINVERSION, [do not change this])
+ AC_SUBST(MAINVERSION)
+@@ -159,16 +145,6 @@ AC_CONFIG_FILES([Makefile
  		 cardcomm/pkcs11/src/Makefile
  		 cardcomm/pkcs11/src/libbeidpkcs11.pc
  		 cardcomm/pkcs11/src/dialogs/dialogsgtk/po/Makefile.in

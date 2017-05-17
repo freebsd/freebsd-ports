@@ -73,6 +73,7 @@
     SUBDIR += citrix_ica
     SUBDIR += cjdns
     SUBDIR += cloud-init
+    SUBDIR += cloud-init-azure
     SUBDIR += clusterit
     SUBDIR += cnd
     SUBDIR += coda6_client
