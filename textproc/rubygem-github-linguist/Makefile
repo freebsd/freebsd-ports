@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	github-linguist
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.10
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.3:textproc/rubygem-charlock_holmes \
 		rubygem-escape_utils>=1.1.0:textproc/rubygem-escape_utils \
 		rubygem-mime-types>=1.19:misc/rubygem-mime-types \
-		rubygem-rugged>=0.23.0b:devel/rubygem-rugged
+		rubygem-rugged>=0.25.1:devel/rubygem-rugged
 
 NO_ARCH=	yes
 USE_RUBY=	yes
