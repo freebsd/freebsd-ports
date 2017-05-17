@@ -9388,3 +9388,4 @@ multimedia/rubygem-av-rails5||2017-05-15|Has expired: Use multimedia/rubygem-av 
 devel/rubygem-cocaine-rails5||2017-05-15|Has expired: Use devel/rubygem-cocaine instead
 devel/rubygem-climate_control-rails5||2017-05-15|Has expired: Use devel/rubygem-climate_control instead
 net/py-twitter|net/py-python-twitter|2017-05-15|Renamed to reflect official name at PyPI/Github
+sysutils/bsdadminscripts|ports-mgmt/bsdadminscripts|2017-05-17|Move into more appropiate category
