@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	atomix
-PORTVERSION=	3.18.0
+PORTVERSION=	3.22.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,12 +13,12 @@ COMMENT=	Yet another little mind game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib
+
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome pathfix pkgconfig tar:xz
-USE_GNOME=	gtk30 intlhack libxml2
+USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

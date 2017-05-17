@@ -38,7 +38,7 @@ USE_LDCONFIG=	yes
 MAKE_ENV+=	PYTHONCMD=${PYTHON_CMD}
 
 TEST_ENV+=	NOTMUCH_SKIP_TESTS="basic count insert smime atomicity \
-		message-property new" \
+		message-property new regexp-query tagging" \
 		V=1 \
 		TEST_CFLAGS="-g -O0 -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		BSD_GDB=${LOCALBASE}/bin/gdb

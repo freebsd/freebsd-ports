@@ -1,3 +1,5 @@
-Gnome chess game with optional 3D graphics.
+The objective of Four-in-a-row is to build a line of four of your marbles
+while trying to stop your opponent (human or computer) building a line of
+his or her own. A line can be horizontal, vertical or diagonal.
 
-WWW: https://wiki.gnome.org/Four-in-a-row
+WWW: https://wiki.gnome.org/Apps/Four-in-a-row
