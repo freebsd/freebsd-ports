@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab
-PORTVERSION=	8.16.9
+PORTVERSION=	8.17.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -29,11 +28,11 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	gitlab-shell>=4.1.1:devel/gitlab-shell\
 	gitlab-workhorse>=1.2.1:www/gitlab-workhorse \
 	redis>=2.8.23:databases/redis \
+	npm>=0:www/npm \
 	rubygem-rails4>=4.2.7.1:www/rubygem-rails4 \
 	rubygem-rails-deprecated_sanitizer>=1.0.3:devel/rubygem-rails-deprecated_sanitizer \
 	rubygem-responders>=2.0:www/rubygem-responders \
 	rubygem-sprockets3>=3.7:devel/rubygem-sprockets3 \
-	rubygem-sprockets-es6>=0.9.2:devel/rubygem-sprockets-es6 \
 	rubygem-default_value_for>=3.0.1:devel/rubygem-default_value_for \
 	rubygem-rugged>=0.24:devel/rubygem-rugged \
 	rubygem-devise>=4.2:devel/rubygem-devise \
@@ -52,13 +51,14 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-omniauth_crowd>=2.2.0:devel/rubygem-omniauth_crowd \
 	rubygem-omniauth-authentiq>=0.2.0:net/rubygem-omniauth-authentiq \
 	rubygem-rack-oauth2>=1.2.1:security/rubygem-rack-oauth2 \
-	rubygem-jwt>=1.0:www/rubygem-jwt \
+	rubygem-jwt>=1.5.6:www/rubygem-jwt \
 	rubygem-recaptcha>=3.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=2.0:devel/rubygem-akismet \
 	rubygem-devise-two-factor>=3.0.0:security/rubygem-devise-two-factor \
 	rubygem-rqrcode-rails3>=0.1.7:www/rubygem-rqrcode-rails3 \
 	rubygem-attr_encrypted>=3.0.0:security/rubygem-attr_encrypted \
 	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
+	rubygem-validates_hostname>=1.0.6:dns/rubygem-validates_hostname \
 	rubygem-browser>=2.2:www/rubygem-browser \
 	rubygem-gitlab_omniauth-ldap>=1.2.1:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-gollum-lib-gitlab>=4.2.0:www/rubygem-gollum-lib-gitlab \
@@ -90,7 +90,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-creole>=0.5.0:textproc/rubygem-creole \
 	rubygem-wikicloth>=0.8.1:textproc/rubygem-wikicloth \
 	rubygem-asciidoctor>=1.5.2:textproc/rubygem-asciidoctor \
-	rubygem-asciidoctor-plantuml>=0.0.6:textproc/rubygem-asciidoctor-plantuml \
+	rubygem-asciidoctor-plantuml>=0.0.7:textproc/rubygem-asciidoctor-plantuml \
 	rubygem-rouge>=2.0:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.8:textproc/rubygem-truncato \
 	rubygem-nokogiri>=1.6.7.2:textproc/rubygem-nokogiri  \
@@ -132,10 +132,11 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-oj>=2.17.4:devel/rubygem-oj \
 	rubygem-chronic>=0.10.2:devel/rubygem-chronic \
 	rubygem-chronic_duration>=0.10.6:devel/rubygem-chronic_duration \
+	rubygem-webpack-rails>=0.9.9:www/rubygem-webpack-rails \
+	rubygem-rack-proxy>=0.6.0:www/rubygem-rack-proxy \
 	rubygem-sass-rails5>=5.0.6:textproc/rubygem-sass-rails5 \
 	rubygem-coffee-rails4>=4.1.0:devel/rubygem-coffee-rails4 \
 	rubygem-uglifier>=2.7.2:www/rubygem-uglifier \
-	rubygem-gitlab-turbolinks-classic>=2.5.6:www/rubygem-gitlab-turbolinks-classic \
 	rubygem-addressable>=2.3.8:www/rubygem-addressable \
 	rubygem-bootstrap-sass>=3.3.0:www/rubygem-bootstrap-sass \
 	rubygem-font-awesome-rails-rails4>=4.6.1:devel/rubygem-font-awesome-rails-rails4 \
