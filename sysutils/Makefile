@@ -104,7 +104,6 @@
     SUBDIR += boxbackup-devel
     SUBDIR += brasero
     SUBDIR += bsd-splash-changer
-    SUBDIR += bsdadminscripts
     SUBDIR += bsdconfig
     SUBDIR += bsdcrashtar
     SUBDIR += bsdhwmon

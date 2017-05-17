@@ -1,10 +1,9 @@
-# Created by: Dominic Fandrey <lon_kamikaze@gmx.de>
 # $FreeBSD$
 
 PORTNAME=	bsdadminscripts
 PORTVERSION=	6.1.1
 PORTREVISION=	8
-CATEGORIES=	sysutils ports-mgmt
+CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
