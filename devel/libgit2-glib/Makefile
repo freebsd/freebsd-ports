@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
-USES=		comipler:c11 gmake libtool localbase \
+USES=		compiler:c11 gmake libtool localbase \
 		pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix introspection
 USE_LDCONFIG=	yes
