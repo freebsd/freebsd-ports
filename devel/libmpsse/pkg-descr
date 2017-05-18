@@ -3,4 +3,4 @@ Open source library for SPI/I2C control via FTDI chips
 Libmpsse is a library for interfacing with SPI/I2C devices via FTDI's
 FT-2232 family of USB chips. Based around the libftdi library.
 
-WWW: http://github.com/devttys0/libmpsse
+WWW: https://github.com/devttys0/libmpsse
