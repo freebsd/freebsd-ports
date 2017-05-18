@@ -6366,7 +6366,7 @@ devel/kyua-atf-compat|devel/kyua|2014-08-14|Upstream merged all components into 
 devel/kyua-cli|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
 devel/kyua-testers|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
 devel/glib-java||2014-08-14|Has expired: Unmaintained, outdated not depend on
-www/phpgedview|www/webtrees|2014-08-15|Has expired: Superceded by www/webtrees
+www/phpgedview|www/webtrees|2014-08-15|Has expired: superseded by www/webtrees
 graphics/luxrays||2014-08-15|Has expired: No longer needed as luxrender bundles its own verion now
 net-mgmt/cflowd||2014-08-15|Has expired: Unmaintained 10 years, requires dozens of patches, unverifiable
 archivers/unzip-iconv|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option
@@ -7544,8 +7544,8 @@ www/rubygem-taggable|www/rubygem-acts_as_taggable|2015-05-23|Rename to match our
 security/rubygem-meterpreter_bins|security/rubygem-metasploit-payloads|2015-05-23|Renamed upstream
 textproc/rubygem-augeas|textproc/rubygem-ruby-augeas|2015-05-23|Rename to match our rubygems naming
 textproc/rubygem-xslt|textproc/rubygem-ruby-xslt|2015-05-24|Rename to match our rubygems naming
-net-mgmt/glpi-plugins-tracker-agent|net-mgmt/glpi-plugins-fusioninventory-server|2015-05-24|Has expired: superceded by net-mgmt/glpi-plugins-fusioninventory-server
-net-mgmt/glpi-plugins-tracker-server|net-mgmt/glpi-plugins-fusioninventory-server|2015-05-24|Has expired: superceded by net-mgmt/glpi-plugins-fusioninventory-server
+net-mgmt/glpi-plugins-tracker-agent|net-mgmt/glpi-plugins-fusioninventory-server|2015-05-24|Has expired: superseded by net-mgmt/glpi-plugins-fusioninventory-server
+net-mgmt/glpi-plugins-tracker-server|net-mgmt/glpi-plugins-fusioninventory-server|2015-05-24|Has expired: superseded by net-mgmt/glpi-plugins-fusioninventory-server
 science/rubygem-netcdf|science/rubygem-ruby-netcdf|2015-05-24|Rename to match our rubygems naming
 security/rubygem-rc4|security/rubygem-ruby-rc4|2015-05-24|Rename to match our rubygems naming
 print/rubygem-colortools|print/rubygem-color-tools|2015-05-24|Rename to match our rubygems naming
@@ -8333,7 +8333,7 @@ www/drupal6-nice_menus||2016-06-18|Has expired: www/drupal6 upstream is EOL and 
 www/drupal6-page_title||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
 www/drupal6-cck||2016-06-18|Has expired: www/drupal6 upstream is EOL and port expired 2016-04-24
 www/drupal6||2016-06-18|Has expired: EOL upstream as of 2016-02-24
-x11-toolkits/gtk-sharp10||2016-06-20|Not depend on anymore superceeded by gtk-sharp20 and gtk-sharp30
+x11-toolkits/gtk-sharp10||2016-06-20|Nothing depends on it; superseded by gtk-sharp20 and gtk-sharp30
 devel/p5-ReadLine-Perl|devel/p5-Term-ReadLine-Perl|2016-06-21|Duplicates
 devel/p5-ReadLine-Gnu|devel/p5-Term-ReadLine-Gnu|2016-06-21|Rename to match upstream
 devel/p5-ReadLine-TTYtter|devel/p5-Term-ReadLine-TTYtter|2016-06-21|Rename to match upstream
@@ -8574,7 +8574,7 @@ devel/capstone|devel/capstone3|2016-07-10|Moved to a numbered port name to make 
 net-mgmt/unifi3|net-mgmt/unifi4|2016-07-10|Has expired: Unifi 3.x is EoL. Please upgrade to net-mgmt/unifi4
 net/lam||2016-07-12|Has expired: Broken for more than 6 months
 java/wildfly82||2016-07-17|Has expired: Fully EOL when version 10.0 was released
-print/tex|print/texlive-base|2016-07-30|Superceeded by texlive
+print/tex|print/texlive-base|2016-07-30|Superseded by texlive
 net/tridiavnc|net/tigervnc|2016-08-01|No upstream 2005
 lang/pypy3-devel|lang/pypy3|2016-08-04|Renamed to lang/pypy3
 net/qt5-enginio||2016-08-06|Has expired: Deprecated by upstream from Qt 5.6 on, do not use for development
@@ -8914,7 +8914,7 @@ www/rubygem-jekyll2|www/rubygem-jekyll|2016-12-31|Has expired: Use www/rubygem-j
 databases/rubygem-dm-devise||2016-12-31|Has expired: Not compatible with devel/rubygem-devise > 3
 devel/rubygem-sprockets211||2016-12-31|Has expired: Use devel/rubygem-sprockets or devel/rubygem-sprockets3 instead
 devel/p5-Parse-CPAN-Meta||2016-12-31|Has expired: Merged into devel/p5-CPAN-Meta 2.150008
-devel/jtag|devel/urjtag|2016-12-31|Has expired: development ceased 2003, superceded by devel/urjtag
+devel/jtag|devel/urjtag|2016-12-31|Has expired: development ceased in 2003, superseded by devel/urjtag
 x11-toolkits/linux-f10-tk85||2016-12-31|Removed
 x11-toolkits/linux-f10-blt||2016-12-31|Removed
 net-mgmt/unifi4|net-mgmt/unifi5|2017-01-01|Has expired: EoL as of 2017-01-01
