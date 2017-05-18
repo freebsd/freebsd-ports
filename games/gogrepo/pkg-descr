@@ -9,4 +9,4 @@ is run in. You can also specify another directory. Run gogrepo.py -h to
 see help or read more below. Each game has its own directories with all
 game/bonus files saved within.
 
-WWW: http://github.com/eddie3/gogrepo
+WWW: https://github.com/eddie3/gogrepo

@@ -1,0 +1,38 @@
+--- src/FreeBSD/Makefile.orig	2017-03-13 18:07:09 UTC
++++ src/FreeBSD/Makefile
+@@ -1,22 +1,22 @@
+ # This software is distributed under the following license:
+ # http://host-sflow.sourceforge.net/license.html
+ 
+-.if empty $(BINDIR)
++.if empty(BINDIR)
+    BINDIR=/usr/sbin
+ .endif
+ 
+-.if empty $(INITDIR)
++.if empty(INITDIR)
+    INITDIR=/etc/rc.d
+ .endif
+ 
+-.if empty $(CONFDIR)
++.if empty(CONFDIR)
+    CONFDIR=/etc
+ .endif
+ 
+ INSTALL=install
+ 
+ # INSTROOT may be passed in, e.g. RPM_BUILD_ROOT
+-.if empty $(INSTROOT)
++.if empty(INSTROOT)
+   BIN_D=$(BINDIR)
+   INIT_D=$(INITDIR)
+   CONF_D=$(CONFDIR)
+@@ -36,7 +36,7 @@ CC= gcc -std=gnu99
+ OPT_FULL = -O3 -DNDEBUG
+ OPT_DEBUG = -g -ggdb
+ 
+-.if empty $(OPT)
++.if empty(OPT)
+   OPT=$(OPT_FULL)
+ .endif
+ 

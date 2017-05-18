@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	empy
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.alcyone.com/software/empy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

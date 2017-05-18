@@ -502,6 +502,7 @@
 %%WWWDIR%%/administrator/components/com_content/models/feature.php
 %%WWWDIR%%/administrator/components/com_content/models/featured.php
 %%WWWDIR%%/administrator/components/com_content/models/fields/modal/article.php
+%%WWWDIR%%/administrator/components/com_content/models/fields/votelist.php
 %%WWWDIR%%/administrator/components/com_content/models/forms/article.xml
 %%WWWDIR%%/administrator/components/com_content/models/forms/filter_articles.xml
 %%WWWDIR%%/administrator/components/com_content/models/forms/filter_featured.xml
@@ -1150,6 +1151,7 @@
 %%WWWDIR%%/administrator/components/com_users/models/debuguser.php
 %%WWWDIR%%/administrator/components/com_users/models/fields/groupparent.php
 %%WWWDIR%%/administrator/components/com_users/models/fields/levels.php
+%%WWWDIR%%/administrator/components/com_users/models/forms/fields/user.xml
 %%WWWDIR%%/administrator/components/com_users/models/forms/filter_debuggroup.xml
 %%WWWDIR%%/administrator/components/com_users/models/forms/filter_debuguser.xml
 %%WWWDIR%%/administrator/components/com_users/models/forms/filter_groups.xml
@@ -4707,7 +4709,6 @@
 %%WWWDIR%%/media/editors/tinymce/langs/th.js
 %%WWWDIR%%/media/editors/tinymce/langs/tr.js
 %%WWWDIR%%/media/editors/tinymce/langs/ug.js
-%%WWWDIR%%/media/editors/tinymce/langs/uk-UA.js
 %%WWWDIR%%/media/editors/tinymce/langs/uk.js
 %%WWWDIR%%/media/editors/tinymce/langs/vi.js
 %%WWWDIR%%/media/editors/tinymce/langs/zh-CN.js
@@ -5277,6 +5278,7 @@
 %%WWWDIR%%/media/system/js/fields/calendar-locales/es.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/eu.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/fa-ir.js
+%%WWWDIR%%/media/system/js/fields/calendar-locales/fi.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/fr.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/ga.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/hr.js
@@ -5299,7 +5301,9 @@
 %%WWWDIR%%/media/system/js/fields/calendar-locales/sw.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/ta.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/th.js
-%%WWWDIR%%/media/system/js/fields/calendar-locales/zh.js
+%%WWWDIR%%/media/system/js/fields/calendar-locales/uk.js
+%%WWWDIR%%/media/system/js/fields/calendar-locales/zh-CN.js
+%%WWWDIR%%/media/system/js/fields/calendar-locales/zh-TW.js
 %%WWWDIR%%/media/system/js/fields/calendar.js
 %%WWWDIR%%/media/system/js/fields/calendar.min.js
 %%WWWDIR%%/media/system/js/frontediting-uncompressed.js
@@ -6659,5 +6663,5 @@
 %%WWWDIR%%/tmp/index.html
 %%WWWDIR%%/web.config.txt
 @dir %%WWWDIR%%/tests/unit/tmp
-@owner 
-@group 
+@group
+@owner

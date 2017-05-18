@@ -4322,6 +4322,7 @@
     SUBDIR += py-gevent
     SUBDIR += py-git-up
     SUBDIR += py-gitdb
+    SUBDIR += py-gitdb2
     SUBDIR += py-gitless
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
@@ -4696,6 +4697,7 @@
     SUBDIR += py-ruamel.yaml
     SUBDIR += py-rubymarshal
     SUBDIR += py-ruledispatch
+    SUBDIR += py-rwt
     SUBDIR += py-sanetime
     SUBDIR += py-sarge
     SUBDIR += py-scripttest
@@ -4722,6 +4724,7 @@
     SUBDIR += py-sip
     SUBDIR += py-six
     SUBDIR += py-smmap
+    SUBDIR += py-smmap2
     SUBDIR += py-sortedcontainers
     SUBDIR += py-sourcemap
     SUBDIR += py-spark

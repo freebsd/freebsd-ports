@@ -437,8 +437,6 @@
     SUBDIR += instead
     SUBDIR += interlogic
     SUBDIR += ioquake3
-    SUBDIR += ioquake3-devel
-    SUBDIR += ioquake3-devel-server
     SUBDIR += ioquake3-server
     SUBDIR += iortcw
     SUBDIR += iourbanterror
