@@ -74,6 +74,7 @@ PRINTF?=		/usr/bin/printf
 PS_CMD?=		/bin/ps
 PW?=			/usr/sbin/pw
 READELF?=		/usr/bin/readelf
+READLINK?=		/usr/bin/readlink
 REALPATH?=		/bin/realpath
 RLN?=			${INSTALL} -l rs
 RM?=			/bin/rm -f

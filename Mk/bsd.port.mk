@@ -1179,6 +1179,16 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
+.if !defined(LLD_IS_LD)
+LINKER!=	${READLINK} /usr/bin/ld
+.if !empty(LINKER) && ${LINKER:M*ld.lld}
+LLD_IS_LD=	yes
+.else
+LLD_IS_LD=	no
+.endif
+.endif
+_EXPORTED_VARS+=	LLD_IS_LD
+
 .if !defined(_PKG_CHECKED) && !defined(PACKAGE_BUILDING) && exists(${PKG_BIN})
 .if !defined(_PKG_VERSION)
 _PKG_VERSION!=	${PKG_BIN} -v
