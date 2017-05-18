@@ -1,25 +1,10 @@
 FreeType is a freely available software library to render fonts.
 
-It is written in C, designed to be small, efficient, highly customizable, and portable while capable of producing high-quality output (glyph images) of most vector and bitmap font formats.
+It is written in C, designed to be small, efficient, highly customizable,
+and portable while capable of producing high-quality output (glyph images)
+of most vector and bitmap font formats.
 
-Some products that use FreeType for rendering fonts on screen or on paper, either exclusively or partially:
-
----
-The FreeType engine is a free and portable font rendering
-engine, developed to provide advanced font support for a variety of
-platforms and environments. FreeType is a library which can open and
-manages font files as well as efficiently load, hint and render
-individual glyphs. FreeType is not a font server or a complete
-text-rendering library.
-
-----
-This includes some tools that are in FreeType 1's contrib directory.
-
-ttf2pfb: Converting TrueType fonts to the Postscript Type 1 format.
-ttf2pk:  A simple conversion tool to bring TrueType quality to the
-         TeX world.
-ttf2bdf: Produce bitmapped fonts from TrueType files for your X11
-         applications.
-ttfbanner: make posters using a TrueType font
+Some products that use FreeType for rendering fonts on screen or on paper,
+either exclusively or partially:
 
 WWW: http://www.freetype.org/
