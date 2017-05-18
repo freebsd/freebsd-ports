@@ -5436,6 +5436,7 @@
     SUBDIR += rubygem-numerizer
     SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
+    SUBDIR += rubygem-oj2
     SUBDIR += rubygem-omniauth_crowd
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
