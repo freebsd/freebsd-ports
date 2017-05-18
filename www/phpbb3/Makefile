@@ -3,6 +3,7 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.phpbb.com/files/release/
 PKGNAMESUFFIX=	3
@@ -13,11 +14,10 @@ COMMENT=	PHP-based bulletin board / discussion forum system
 
 LICENSE=	GPLv2
 
-CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]* \
-		phpbb-[0-2]*
+CONFLICTS=	phpbb-[0-2]*
 
 USES=		php tar:bzip2
-USE_PHP=	ctype hash json
+USE_PHP=	ctype hash json tokenizer
 
 OPTIONS_DEFINE=	DOCS
 
