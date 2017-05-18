@@ -1,3 +1,5 @@
+@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<
+@comment Alter build-plist target and regenerate as required
 bin/bugpoint-devel
 bin/llc-devel
 bin/lli-devel
@@ -7,6 +9,7 @@ bin/llvm-bcanalyzer-devel
 bin/llvm-cat-devel
 bin/llvm-config-devel
 bin/llvm-cov-devel
+bin/llvm-cvtres-devel
 bin/llvm-diff-devel
 bin/llvm-dis-devel
 bin/llvm-dwarfdump-devel
@@ -66,6 +69,23 @@ bin/sancov-devel
 %%LIT%%llvm-devel/bin/llvm-lit
 %%LIT%%bin/FileCheck-devel
 %%LIT%%llvm-devel/bin/FileCheck
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/__init__.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/_lldb.so
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/embedded_interpreter.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/Logger.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/__init__.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/attrib_fromdict.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/cache.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/cpp/__init__.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/cpp/gnu_libstdcpp.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/cpp/libcxx.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/metrics.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/formatters/synth.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/lldb-argdumper
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/runtime/__init__.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/utils/__init__.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/lldb/utils/symbolication.py
+%%LLDB%%llvm-devel/%%PYTHON_SITELIBDIR%%/six.py
 %%COMPILER_RT%%llvm-devel/asan_blacklist.txt
 llvm-devel/bin/bugpoint
 %%CLANG%%llvm-devel/bin/c-index-test
@@ -104,6 +124,7 @@ llvm-devel/bin/llvm-c-test
 llvm-devel/bin/llvm-cat
 llvm-devel/bin/llvm-config
 llvm-devel/bin/llvm-cov
+llvm-devel/bin/llvm-cvtres
 llvm-devel/bin/llvm-cxxdump
 llvm-devel/bin/llvm-cxxfilt
 llvm-devel/bin/llvm-diff
@@ -162,6 +183,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/AST/ASTImporter.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTLambda.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTMutationListener.h
+%%CLANG%%llvm-devel/include/clang/AST/ASTStructuralEquivalence.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTTypeTraits.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTUnresolvedSet.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTVector.h
@@ -211,6 +233,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/AST/ExprCXX.h
 %%CLANG%%llvm-devel/include/clang/AST/ExprObjC.h
 %%CLANG%%llvm-devel/include/clang/AST/ExprOpenMP.h
+%%CLANG%%llvm-devel/include/clang/AST/ExternalASTMerger.h
 %%CLANG%%llvm-devel/include/clang/AST/ExternalASTSource.h
 %%CLANG%%llvm-devel/include/clang/AST/GlobalDecl.h
 %%CLANG%%llvm-devel/include/clang/AST/LambdaCapture.h
@@ -293,6 +316,8 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/AttrHasAttributeImpl.inc
 %%CLANG%%llvm-devel/include/clang/Basic/AttrKinds.h
 %%CLANG%%llvm-devel/include/clang/Basic/AttrList.inc
+%%CLANG%%llvm-devel/include/clang/Basic/AttrSubMatchRulesList.inc
+%%CLANG%%llvm-devel/include/clang/Basic/AttrSubjectMatchRules.h
 %%CLANG%%llvm-devel/include/clang/Basic/Attributes.h
 %%CLANG%%llvm-devel/include/clang/Basic/Builtins.def
 %%CLANG%%llvm-devel/include/clang/Basic/Builtins.h
@@ -379,6 +404,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/VersionTuple.h
 %%CLANG%%llvm-devel/include/clang/Basic/VirtualFileSystem.h
 %%CLANG%%llvm-devel/include/clang/Basic/Visibility.h
+%%CLANG%%llvm-devel/include/clang/Basic/XRayLists.h
 %%CLANG%%llvm-devel/include/clang/Basic/arm_neon.inc
 %%CLANG%%llvm-devel/include/clang/CodeGen/BackendUtil.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/CGFunctionInfo.h
@@ -406,6 +432,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Driver/Types.def
 %%CLANG%%llvm-devel/include/clang/Driver/Types.h
 %%CLANG%%llvm-devel/include/clang/Driver/Util.h
+%%CLANG%%llvm-devel/include/clang/Driver/XRayArgs.h
 %%CLANG%%llvm-devel/include/clang/Edit/Commit.h
 %%CLANG%%llvm-devel/include/clang/Edit/EditedSource.h
 %%CLANG%%llvm-devel/include/clang/Edit/EditsReceiver.h
@@ -479,6 +506,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Lex/TokenConcatenation.h
 %%CLANG%%llvm-devel/include/clang/Lex/TokenLexer.h
 %%CLANG%%llvm-devel/include/clang/Parse/AttrParserStringSwitches.inc
+%%CLANG%%llvm-devel/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.inc
 %%CLANG%%llvm-devel/include/clang/Parse/ParseAST.h
 %%CLANG%%llvm-devel/include/clang/Parse/ParseDiagnostic.h
 %%CLANG%%llvm-devel/include/clang/Parse/Parser.h
@@ -629,7 +657,6 @@ llvm-devel/bin/yaml2obj
 %%LLD%%llvm-devel/include/lld/Core/LLVM.h
 %%LLD%%llvm-devel/include/lld/Core/LinkingContext.h
 %%LLD%%llvm-devel/include/lld/Core/Node.h
-%%LLD%%llvm-devel/include/lld/Core/Parallel.h
 %%LLD%%llvm-devel/include/lld/Core/Pass.h
 %%LLD%%llvm-devel/include/lld/Core/PassManager.h
 %%LLD%%llvm-devel/include/lld/Core/Reader.h
@@ -646,7 +673,6 @@ llvm-devel/bin/yaml2obj
 %%LLD%%llvm-devel/include/lld/Driver/Driver.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/MachOLinkingContext.h
 %%LLD%%llvm-devel/include/lld/ReaderWriter/YamlContext.h
-%%LLD%%llvm-devel/include/lld/Support/Memory.h
 %%LLDB%%llvm-devel/include/lldb/API/LLDB.h
 %%LLDB%%llvm-devel/include/lldb/API/SBAddress.h
 %%LLDB%%llvm-devel/include/lldb/API/SBAttachInfo.h
@@ -697,6 +723,8 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/API/SBThread.h
 %%LLDB%%llvm-devel/include/lldb/API/SBThreadCollection.h
 %%LLDB%%llvm-devel/include/lldb/API/SBThreadPlan.h
+%%LLDB%%llvm-devel/include/lldb/API/SBTrace.h
+%%LLDB%%llvm-devel/include/lldb/API/SBTraceOptions.h
 %%LLDB%%llvm-devel/include/lldb/API/SBType.h
 %%LLDB%%llvm-devel/include/lldb/API/SBTypeCategory.h
 %%LLDB%%llvm-devel/include/lldb/API/SBTypeEnumMember.h
@@ -775,12 +803,14 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Core/StreamBuffer.h
 %%LLDB%%llvm-devel/include/lldb/Core/StreamFile.h
 %%LLDB%%llvm-devel/include/lldb/Core/StructuredData.h
+%%LLDB%%llvm-devel/include/lldb/Core/StructuredDataImpl.h
 %%LLDB%%llvm-devel/include/lldb/Core/ThreadSafeDenseMap.h
 %%LLDB%%llvm-devel/include/lldb/Core/ThreadSafeDenseSet.h
 %%LLDB%%llvm-devel/include/lldb/Core/ThreadSafeSTLMap.h
 %%LLDB%%llvm-devel/include/lldb/Core/ThreadSafeSTLVector.h
 %%LLDB%%llvm-devel/include/lldb/Core/ThreadSafeValue.h
 %%LLDB%%llvm-devel/include/lldb/Core/Timer.h
+%%LLDB%%llvm-devel/include/lldb/Core/TraceOptions.h
 %%LLDB%%llvm-devel/include/lldb/Core/UniqueCStringMap.h
 %%LLDB%%llvm-devel/include/lldb/Core/UserSettingsController.h
 %%LLDB%%llvm-devel/include/lldb/Core/Value.h
@@ -874,7 +904,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Host/ThreadLauncher.h
 %%LLDB%%llvm-devel/include/lldb/Host/Time.h
 %%LLDB%%llvm-devel/include/lldb/Host/XML.h
-%%LLDB%%llvm-devel/include/lldb/Host/android/Config.h
 %%LLDB%%llvm-devel/include/lldb/Host/android/HostInfoAndroid.h
 %%LLDB%%llvm-devel/include/lldb/Host/common/GetOptInc.h
 %%LLDB%%llvm-devel/include/lldb/Host/common/NativeBreakpoint.h
@@ -886,22 +915,15 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Host/common/SoftwareBreakpoint.h
 %%LLDB%%llvm-devel/include/lldb/Host/common/TCPSocket.h
 %%LLDB%%llvm-devel/include/lldb/Host/common/UDPSocket.h
-%%LLDB%%llvm-devel/include/lldb/Host/freebsd/Config.h
 %%LLDB%%llvm-devel/include/lldb/Host/freebsd/HostInfoFreeBSD.h
 %%LLDB%%llvm-devel/include/lldb/Host/linux/AbstractSocket.h
-%%LLDB%%llvm-devel/include/lldb/Host/linux/Config.h
 %%LLDB%%llvm-devel/include/lldb/Host/linux/HostInfoLinux.h
 %%LLDB%%llvm-devel/include/lldb/Host/linux/Ptrace.h
 %%LLDB%%llvm-devel/include/lldb/Host/linux/Support.h
 %%LLDB%%llvm-devel/include/lldb/Host/linux/Uio.h
-%%LLDB%%llvm-devel/include/lldb/Host/macosx/Config.h
 %%LLDB%%llvm-devel/include/lldb/Host/macosx/HostInfoMacOSX.h
 %%LLDB%%llvm-devel/include/lldb/Host/macosx/HostThreadMacOSX.h
-%%LLDB%%llvm-devel/include/lldb/Host/mingw/Config.h
-%%LLDB%%llvm-devel/include/lldb/Host/msvc/Config.h
-%%LLDB%%llvm-devel/include/lldb/Host/netbsd/Config.h
 %%LLDB%%llvm-devel/include/lldb/Host/netbsd/HostInfoNetBSD.h
-%%LLDB%%llvm-devel/include/lldb/Host/openbsd/Config.h
 %%LLDB%%llvm-devel/include/lldb/Host/openbsd/HostInfoOpenBSD.h
 %%LLDB%%llvm-devel/include/lldb/Host/posix/ConnectionFileDescriptorPosix.h
 %%LLDB%%llvm-devel/include/lldb/Host/posix/DomainSocket.h
@@ -910,7 +932,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Host/posix/HostProcessPosix.h
 %%LLDB%%llvm-devel/include/lldb/Host/posix/HostThreadPosix.h
 %%LLDB%%llvm-devel/include/lldb/Host/posix/LockFilePosix.h
-%%LLDB%%llvm-devel/include/lldb/Host/posix/MainLoopPosix.h
 %%LLDB%%llvm-devel/include/lldb/Host/posix/PipePosix.h
 %%LLDB%%llvm-devel/include/lldb/Host/posix/ProcessLauncherPosix.h
 %%LLDB%%llvm-devel/include/lldb/Host/posix/ProcessLauncherPosixFork.h
@@ -1091,7 +1112,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Utility/DataExtractor.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Either.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Endian.h
-%%LLDB%%llvm-devel/include/lldb/Utility/Error.h
 %%LLDB%%llvm-devel/include/lldb/Utility/FastDemangle.h
 %%LLDB%%llvm-devel/include/lldb/Utility/FileSpec.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Flags.h
@@ -1108,6 +1128,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Utility/SelectHelper.h
 %%LLDB%%llvm-devel/include/lldb/Utility/SharedCluster.h
 %%LLDB%%llvm-devel/include/lldb/Utility/SharingPtr.h
+%%LLDB%%llvm-devel/include/lldb/Utility/Status.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Stream.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StreamCallback.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StreamGDBRemote.h
@@ -1165,6 +1186,7 @@ llvm-devel/include/llvm/ADT/AllocatorList.h
 llvm-devel/include/llvm/ADT/ArrayRef.h
 llvm-devel/include/llvm/ADT/BitVector.h
 llvm-devel/include/llvm/ADT/BitmaskEnum.h
+llvm-devel/include/llvm/ADT/BreadthFirstIterator.h
 llvm-devel/include/llvm/ADT/CachedHashString.h
 llvm-devel/include/llvm/ADT/DAGDeltaAlgorithm.h
 llvm-devel/include/llvm/ADT/DeltaAlgorithm.h
@@ -1284,10 +1306,13 @@ llvm-devel/include/llvm/Analysis/LoopUnrollAnalyzer.h
 llvm-devel/include/llvm/Analysis/MemoryBuiltins.h
 llvm-devel/include/llvm/Analysis/MemoryDependenceAnalysis.h
 llvm-devel/include/llvm/Analysis/MemoryLocation.h
+llvm-devel/include/llvm/Analysis/MemorySSA.h
+llvm-devel/include/llvm/Analysis/MemorySSAUpdater.h
 llvm-devel/include/llvm/Analysis/ModuleSummaryAnalysis.h
 llvm-devel/include/llvm/Analysis/ObjCARCAliasAnalysis.h
 llvm-devel/include/llvm/Analysis/ObjCARCAnalysisUtils.h
 llvm-devel/include/llvm/Analysis/ObjCARCInstKind.h
+llvm-devel/include/llvm/Analysis/ObjectUtils.h
 llvm-devel/include/llvm/Analysis/OptimizationDiagnosticInfo.h
 llvm-devel/include/llvm/Analysis/OrderedBasicBlock.h
 llvm-devel/include/llvm/Analysis/PHITransAddr.h
@@ -1340,6 +1365,7 @@ llvm-devel/include/llvm/CodeGen/DIEValue.def
 llvm-devel/include/llvm/CodeGen/DwarfStringPoolEntry.h
 llvm-devel/include/llvm/CodeGen/EdgeBundles.h
 llvm-devel/include/llvm/CodeGen/ExecutionDepsFix.h
+llvm-devel/include/llvm/CodeGen/ExpandReductions.h
 llvm-devel/include/llvm/CodeGen/FastISel.h
 llvm-devel/include/llvm/CodeGen/FaultMaps.h
 llvm-devel/include/llvm/CodeGen/FunctionLoweringInfo.h
@@ -1379,6 +1405,7 @@ llvm-devel/include/llvm/CodeGen/LiveStackAnalysis.h
 llvm-devel/include/llvm/CodeGen/LiveVariables.h
 llvm-devel/include/llvm/CodeGen/LowLevelType.h
 llvm-devel/include/llvm/CodeGen/MIRParser/MIRParser.h
+llvm-devel/include/llvm/CodeGen/MIRPrinter.h
 llvm-devel/include/llvm/CodeGen/MIRYamlMapping.h
 llvm-devel/include/llvm/CodeGen/MachORelocation.h
 llvm-devel/include/llvm/CodeGen/MachineBasicBlock.h
@@ -1471,9 +1498,16 @@ llvm-devel/include/llvm/DebugInfo/CodeView/EnumTables.h
 llvm-devel/include/llvm/DebugInfo/CodeView/Formatters.h
 llvm-devel/include/llvm/DebugInfo/CodeView/FunctionId.h
 llvm-devel/include/llvm/DebugInfo/CodeView/Line.h
-llvm-devel/include/llvm/DebugInfo/CodeView/ModuleSubstream.h
-llvm-devel/include/llvm/DebugInfo/CodeView/ModuleSubstreamVisitor.h
+llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugFileChecksumFragment.h
+llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugFragment.h
+llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugFragmentRecord.h
+llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugFragmentVisitor.h
+llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugInlineeLinesFragment.h
+llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugLineFragment.h
+llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugUnknownFragment.h
+llvm-devel/include/llvm/DebugInfo/CodeView/RandomAccessTypeVisitor.h
 llvm-devel/include/llvm/DebugInfo/CodeView/RecordSerialization.h
+llvm-devel/include/llvm/DebugInfo/CodeView/StringTable.h
 llvm-devel/include/llvm/DebugInfo/CodeView/SymbolDeserializer.h
 llvm-devel/include/llvm/DebugInfo/CodeView/SymbolDumpDelegate.h
 llvm-devel/include/llvm/DebugInfo/CodeView/SymbolDumper.h
@@ -1487,7 +1521,6 @@ llvm-devel/include/llvm/DebugInfo/CodeView/TypeDatabase.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeDatabaseVisitor.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeDeserializer.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeDumpVisitor.h
-llvm-devel/include/llvm/DebugInfo/CodeView/TypeDumperBase.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeIndex.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeRecordBuilder.h
@@ -1524,6 +1557,7 @@ llvm-devel/include/llvm/DebugInfo/DWARF/DWARFSection.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFTypeUnit.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFUnit.h
 llvm-devel/include/llvm/DebugInfo/DWARF/DWARFUnitIndex.h
+llvm-devel/include/llvm/DebugInfo/DWARF/DWARFVerifier.h
 llvm-devel/include/llvm/DebugInfo/MSF/IMSFFile.h
 llvm-devel/include/llvm/DebugInfo/MSF/MSFBuilder.h
 llvm-devel/include/llvm/DebugInfo/MSF/MSFCommon.h
@@ -1549,6 +1583,9 @@ llvm-devel/include/llvm/DebugInfo/PDB/IPDBLineNumber.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBRawSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBSession.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBSourceFile.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/DbiModuleDescriptor.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/DbiModuleDescriptorBuilder.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/DbiModuleList.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/DbiStream.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/DbiStreamBuilder.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/EnumTables.h
@@ -1559,9 +1596,8 @@ llvm-devel/include/llvm/DebugInfo/PDB/Native/HashTable.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/ISectionContribVisitor.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/InfoStream.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/InfoStreamBuilder.h
-llvm-devel/include/llvm/DebugInfo/PDB/Native/ModInfo.h
-llvm-devel/include/llvm/DebugInfo/PDB/Native/ModInfoBuilder.h
-llvm-devel/include/llvm/DebugInfo/PDB/Native/ModStream.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/ModuleDebugStream.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/ModuleDebugStreamBuilder.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NamedStreamMap.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeCompilandSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeEnumModules.h
@@ -1570,13 +1606,13 @@ llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeRawSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeSession.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/PDBFile.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/PDBFileBuilder.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/PDBStringTable.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/PDBStringTableBuilder.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/PDBTypeServerHandler.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/PublicsStream.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/RawConstants.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/RawError.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/RawTypes.h
-llvm-devel/include/llvm/DebugInfo/PDB/Native/StringTable.h
-llvm-devel/include/llvm/DebugInfo/PDB/Native/StringTableBuilder.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/SymbolStream.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/TpiHashing.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/TpiStream.h
@@ -1618,6 +1654,7 @@ llvm-devel/include/llvm/DebugInfo/PDB/PDBSymbolTypeVTableShape.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDBSymbolUnknown.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDBSymbolUsingNamespace.h
 llvm-devel/include/llvm/DebugInfo/PDB/PDBTypes.h
+llvm-devel/include/llvm/DebugInfo/PDB/UDTLayout.h
 llvm-devel/include/llvm/DebugInfo/Symbolize/DIPrinter.h
 llvm-devel/include/llvm/DebugInfo/Symbolize/SymbolizableModule.h
 llvm-devel/include/llvm/DebugInfo/Symbolize/Symbolize.h
@@ -1761,7 +1798,6 @@ llvm-devel/include/llvm/LTO/legacy/LTOCodeGenerator.h
 llvm-devel/include/llvm/LTO/legacy/LTOModule.h
 llvm-devel/include/llvm/LTO/legacy/ThinLTOCodeGenerator.h
 llvm-devel/include/llvm/LTO/legacy/UpdateCompilerUsed.h
-llvm-devel/include/llvm/LibDriver/LibDriver.h
 llvm-devel/include/llvm/LineEditor/LineEditor.h
 llvm-devel/include/llvm/LinkAllIR.h
 llvm-devel/include/llvm/LinkAllPasses.h
@@ -1852,9 +1888,9 @@ llvm-devel/include/llvm/Object/ELFObjectFile.h
 llvm-devel/include/llvm/Object/ELFTypes.h
 llvm-devel/include/llvm/Object/Error.h
 llvm-devel/include/llvm/Object/IRObjectFile.h
+llvm-devel/include/llvm/Object/IRSymtab.h
 llvm-devel/include/llvm/Object/MachO.h
 llvm-devel/include/llvm/Object/MachOUniversal.h
-llvm-devel/include/llvm/Object/ModuleSummaryIndexObjectFile.h
 llvm-devel/include/llvm/Object/ModuleSymbolTable.h
 llvm-devel/include/llvm/Object/ObjectFile.h
 llvm-devel/include/llvm/Object/RelocVisitor.h
@@ -1868,6 +1904,7 @@ llvm-devel/include/llvm/ObjectYAML/DWARFYAML.h
 llvm-devel/include/llvm/ObjectYAML/ELFYAML.h
 llvm-devel/include/llvm/ObjectYAML/MachOYAML.h
 llvm-devel/include/llvm/ObjectYAML/ObjectYAML.h
+llvm-devel/include/llvm/ObjectYAML/WasmYAML.h
 llvm-devel/include/llvm/ObjectYAML/YAML.h
 llvm-devel/include/llvm/Option/Arg.h
 llvm-devel/include/llvm/Option/ArgList.h
@@ -1976,6 +2013,7 @@ llvm-devel/include/llvm/Support/GlobPattern.h
 llvm-devel/include/llvm/Support/GraphWriter.h
 llvm-devel/include/llvm/Support/Host.h
 llvm-devel/include/llvm/Support/JamCRC.h
+llvm-devel/include/llvm/Support/KnownBits.h
 llvm-devel/include/llvm/Support/LEB128.h
 llvm-devel/include/llvm/Support/LICENSE.TXT
 llvm-devel/include/llvm/Support/LineIterator.h
@@ -1995,6 +2033,7 @@ llvm-devel/include/llvm/Support/MutexGuard.h
 llvm-devel/include/llvm/Support/NativeFormatting.h
 llvm-devel/include/llvm/Support/OnDiskHashTable.h
 llvm-devel/include/llvm/Support/Options.h
+llvm-devel/include/llvm/Support/Parallel.h
 llvm-devel/include/llvm/Support/Path.h
 llvm-devel/include/llvm/Support/PluginLoader.h
 llvm-devel/include/llvm/Support/PointerLikeTypeTraits.h
@@ -2036,6 +2075,7 @@ llvm-devel/include/llvm/Support/TypeName.h
 llvm-devel/include/llvm/Support/Unicode.h
 llvm-devel/include/llvm/Support/UnicodeCharRanges.h
 llvm-devel/include/llvm/Support/UniqueLock.h
+llvm-devel/include/llvm/Support/VCSRevision.h
 llvm-devel/include/llvm/Support/Valgrind.h
 llvm-devel/include/llvm/Support/Wasm.h
 llvm-devel/include/llvm/Support/WasmRelocs/WebAssembly.def
@@ -2081,6 +2121,7 @@ llvm-devel/include/llvm/Target/TargetRegisterInfo.h
 llvm-devel/include/llvm/Target/TargetSchedule.td
 llvm-devel/include/llvm/Target/TargetSelectionDAG.td
 llvm-devel/include/llvm/Target/TargetSubtargetInfo.h
+llvm-devel/include/llvm/ToolDrivers/llvm-lib/LibDriver.h
 llvm-devel/include/llvm/Transforms/Coroutines.h
 llvm-devel/include/llvm/Transforms/GCOVProfiler.h
 llvm-devel/include/llvm/Transforms/IPO.h
@@ -2154,6 +2195,7 @@ llvm-devel/include/llvm/Transforms/Scalar/PartiallyInlineLibCalls.h
 llvm-devel/include/llvm/Transforms/Scalar/Reassociate.h
 llvm-devel/include/llvm/Transforms/Scalar/SCCP.h
 llvm-devel/include/llvm/Transforms/Scalar/SROA.h
+llvm-devel/include/llvm/Transforms/Scalar/SimpleLoopUnswitch.h
 llvm-devel/include/llvm/Transforms/Scalar/SimplifyCFG.h
 llvm-devel/include/llvm/Transforms/Scalar/Sink.h
 llvm-devel/include/llvm/Transforms/Scalar/SpeculativeExecution.h
@@ -2184,8 +2226,6 @@ llvm-devel/include/llvm/Transforms/Utils/LoopVersioning.h
 llvm-devel/include/llvm/Transforms/Utils/LowerInvoke.h
 llvm-devel/include/llvm/Transforms/Utils/LowerMemIntrinsics.h
 llvm-devel/include/llvm/Transforms/Utils/Mem2Reg.h
-llvm-devel/include/llvm/Transforms/Utils/MemorySSA.h
-llvm-devel/include/llvm/Transforms/Utils/MemorySSAUpdater.h
 llvm-devel/include/llvm/Transforms/Utils/ModuleUtils.h
 llvm-devel/include/llvm/Transforms/Utils/NameAnonGlobals.h
 llvm-devel/include/llvm/Transforms/Utils/PredicateInfo.h
@@ -2279,6 +2319,7 @@ llvm-devel/lib/LLVMHello.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/inttypes.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/iso646.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/lwpintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/lzcntintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/mm3dnow.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/mm_malloc.h
@@ -2630,23 +2671,6 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%LLDB%%llvm-devel/lib/liblldbUtilityMocks.a
 %%OPENMP%%llvm-devel/lib/libomp.so
 %%OPENMP%%llvm-devel/lib/libomptarget.so
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/__init__.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/_lldb.so
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/embedded_interpreter.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/formatters/Logger.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/formatters/__init__.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/formatters/attrib_fromdict.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/formatters/cache.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/formatters/cpp/__init__.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/formatters/cpp/gnu_libstdcpp.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/formatters/cpp/libcxx.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/formatters/metrics.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/formatters/synth.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/lldb-argdumper
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/runtime/__init__.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/utils/__init__.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/lldb/utils/symbolication.py
-%%LLDB%%llvm-devel/lib/python2.7/site-packages/six.py
 %%CLANG%%llvm-devel/libexec/c++-analyzer
 %%CLANG%%llvm-devel/libexec/ccc-analyzer
 %%CLANG%%llvm-devel/share/clang/clang-format-bbedit.applescript
