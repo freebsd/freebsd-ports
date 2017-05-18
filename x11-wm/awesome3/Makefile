@@ -34,7 +34,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libImlib2.so:graphics/imlib2
 
-CONFLICTS_INSTALL=	x11-wm/awesome
+CONFLICTS_INSTALL=	awesome-[0-9]*
 
 DEPRECATED=	Awesome WM 3.x is deprecated use 4.x instead
 EXPIRATION_DATE=2017-10-10
