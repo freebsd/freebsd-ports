@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cld3
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,6 @@ RUN_DEPENDS=	devel/protobuf>0:devel/protobuf \
 		rubygem-ffi>0:devel/rubygem-ffi
 
 USE_RUBY=	yes
-USES=		gem
+USES=		gem pkgconfig
 
 .include <bsd.port.mk>
