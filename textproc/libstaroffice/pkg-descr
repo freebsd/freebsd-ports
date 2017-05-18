@@ -1,0 +1,4 @@
+The purpose of libstaroffice is to build a filter for old StarOffice's
+documents (.sdc, .sdw, ...) based on librevenge.
+
+WWW: https://github.com/fosnola/libstaroffice

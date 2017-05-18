@@ -1,14 +1,17 @@
---- tools/clang/lib/Headers/CMakeLists.txt.orig	2015-08-06 22:36:24 UTC
+
+$FreeBSD$
+
+--- tools/clang/lib/Headers/CMakeLists.txt.orig
 +++ tools/clang/lib/Headers/CMakeLists.txt
-@@ -30,7 +30,6 @@ set(files
-   Intrin.h
+@@ -44,7 +44,6 @@
+   intrin.h
    inttypes.h
    iso646.h
 -  limits.h
+   lwpintrin.h
    lzcntintrin.h
    mm3dnow.h
-   mmintrin.h
-@@ -45,20 +44,12 @@ set(files
+@@ -64,20 +63,12 @@
    s390intrin.h
    shaintrin.h
    smmintrin.h
@@ -27,5 +30,5 @@
    vadefs.h
 -  varargs.h
    vecintrin.h
-   __wmmintrin_aes.h
    wmmintrin.h
+   __wmmintrin_aes.h
