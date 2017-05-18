@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170518:
+  AFFECTS: users of www/yarn
+  AUTHOR: adamw@FreeBSD.org
+
+  The default node backend for yarn has switched to www/node. Binary
+  package users should expect the node backend to be switched during
+  the upgrade. To keep the node6 (LTS) backend, rebuild www/yarn with
+  the NODE6 backend option enabled.
+
 20170517:
   AFFECTS: users of security/pecl-ssh2
   AUTHOR: dbaio@FreeBSD.org
