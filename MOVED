@@ -9107,7 +9107,6 @@ devel/py-tgMochiKit||2017-03-03|Has expired: Development of this branch ceased
 www/py-Lightbox||2017-03-03|Has expired: Development of this branch ceased
 devel/py-ll-core||2017-03-04|Has expired: Long unmaintained, abandoned upstream
 net/tcpdump398|net/tcpdump|2017-03-05|Has expired: multiple security vulnerabilities; not updated since 2009
-databases/oracle8-client||2017-03-07|Has expired: Oracle 8 EOL by 10 years
 databases/oracle7-client||2017-03-07|Has expired: Oracle 7 EOL by 13 years
 databases/yasql||2017-03-07|Has expired: Dependent on deprecated oracle7-client
 databases/jdbc-oracle10g||2017-03-07|Has expired: Oracle 10g EOL almost 4 years
