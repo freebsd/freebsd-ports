@@ -5,6 +5,7 @@ PORTNAME=	oj
 PORTVERSION=	2.17.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast JSON parser and serializer
