@@ -3,6 +3,7 @@
 PORTNAME=	openra
 PORTVERSION=	20170421
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20161223/:SDL2_CS \
 		https://github.com/${GH_ACCOUNT}/OpenAL-CS/releases/download/20151227/:OpenAL_CS \
