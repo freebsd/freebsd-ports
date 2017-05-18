@@ -19,6 +19,7 @@ USE_GITHUB=	nodefault
 GH_TUPLE=	imomaliev:tmux-bash-completion:ef56d3e:bash
 
 EXPLICIT_SAFESTACK=	yes
+EXPLICIT_CFI=		yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
