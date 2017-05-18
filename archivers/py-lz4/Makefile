@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils py3kplist
 USES=		localbase pkgconfig python
 
 post-install:
