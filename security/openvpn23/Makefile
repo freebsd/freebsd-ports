@@ -4,8 +4,7 @@
 PORTNAME=		openvpn
 DISTVERSION=		2.3.15
 CATEGORIES=		security net
-MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
-			http://build.openvpn.net/downloads/releases/
+MASTER_SITES=		http://swupdate.openvpn.net/community/releases/
 PKGNAMESUFFIX?=		23
 
 MAINTAINER=		mandree@FreeBSD.org
