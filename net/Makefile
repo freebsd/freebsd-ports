@@ -1090,6 +1090,7 @@
     SUBDIR += rabbitmq
     SUBDIR += rabbitmq-c
     SUBDIR += rabbitmq-c-devel
+    SUBDIR += radcli
     SUBDIR += raddump
     SUBDIR += radiator
     SUBDIR += radiusclient
