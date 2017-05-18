@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	simpleviewer
-PORTVERSION=	2.88
-PORTREVISION=	1
+PORTVERSION=	2.92
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/
-DISTNAME=	v${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
+DISTNAME=	v${PORTVERSION}	# version tag, thus no embedded ${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}	# and hence the need for ${DIST_SUBDIR}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and simple OpenGL image viewer with transparency support
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
+LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+		libImlib2.so:graphics/imlib2 \
 		libexif.so:graphics/libexif \
 		libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
@@ -26,9 +26,9 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 
 USES=		cmake compiler:c++11-lang jpeg pkgconfig tar:bzip2
 USE_GL=		glu
-USE_XORG=	ice sm x11 xcursor xext xrandr xxf86vm
+USE_XORG=	ice sm x11 xcursor xext xinerama xrandr xxf86vm
 
-WRKSRC=		${WRKDIR}/andreyu-simple-viewer-gl-b9266979237d
+WRKSRC=		${WRKDIR}/andreyu-simple-viewer-gl-b3bd8710e176
 
 PLIST_FILES=	bin/sviewgl
 

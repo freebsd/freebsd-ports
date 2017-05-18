@@ -3,7 +3,7 @@ Simple Viewer is small and simple OpenGL based image viewer.  Its features:
   - Lightweight and fast: utilizes hardware-accelerated video card
   - GIF animation, embedded ICC profiles, and Exif tags support
   - Very simple interface, minimum dependencies
-  - Suitable for default image viewer of desktop
+  - Suitable as default (general-purpose) desktop image viewer
   - Desktop independent: does not require any specific desktop environment
   - Open source, licensed under GNU GPLv2
 
