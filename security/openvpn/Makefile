@@ -14,6 +14,7 @@ COMMENT?=		Secure IP/Ethernet tunnel daemon
 LICENSE=		GPLv2
 
 EXPLICIT_SAFESTACK=	yes
+EXPLICIT_CFIHARDEN=	yes
 
 CONFLICTS_INSTALL=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-devel-[0-9]*
 
