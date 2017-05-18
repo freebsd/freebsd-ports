@@ -4696,6 +4696,7 @@
     SUBDIR += py-ruamel.yaml
     SUBDIR += py-rubymarshal
     SUBDIR += py-ruledispatch
+    SUBDIR += py-rwt
     SUBDIR += py-sanetime
     SUBDIR += py-sarge
     SUBDIR += py-scripttest
