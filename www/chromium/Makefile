@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	58.0.3029.110
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
@@ -14,7 +15,7 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gperf:devel/gperf \
-		clang39:devel/llvm39 \
+		clang40:devel/llvm40 \
 		yasm:devel/yasm \
 		python:lang/python \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
@@ -188,8 +189,8 @@ ALL_TARGET+=	${TEST_TARGETS}
 
 .include <bsd.port.pre.mk>
 
-CC=		clang39
-CXX=		clang++39
+CC=		clang40
+CXX=		clang++40
 #optionally set AR, LD, NM, READELF ?
 
 # TODO: -isystem, would be just as ugly as this approach, but more reliably
