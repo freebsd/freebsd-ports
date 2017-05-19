@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Expect
-PORTVERSION=	1.33
+PORTVERSION=	1.35
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-IO-Tty>=1.11:devel/p5-IO-Tty
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-WRKSRC=		${WRKDIR}/expect.pm-Expect-${PORTVERSION}
 
 .include <bsd.port.mk>
