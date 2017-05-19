@@ -969,6 +969,7 @@
     SUBDIR += py-beanstalkc
     SUBDIR += py-cjdns
     SUBDIR += py-cloudfiles
+    SUBDIR += py-cloudflare-scrape
     SUBDIR += py-coherence
     SUBDIR += py-cymruwhois
     SUBDIR += py-dpkt
