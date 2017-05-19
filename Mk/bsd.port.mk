@@ -1179,6 +1179,10 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
+.if ${OSVERSION} < 1200020
+LLD_IS_LD=	no
+.endif
+
 .if !defined(LLD_IS_LD)
 LINKER!=	${READLINK} /usr/bin/ld
 .if !empty(LINKER) && ${LINKER:M*ld.lld}
