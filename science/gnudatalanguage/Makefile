@@ -3,7 +3,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${PORTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -22,7 +22,7 @@ LIB_DEPENDS+=	libplplot.so:math/plplot	\
 		libps.so:print/pslib		\
 		libgsl.so:math/gsl
 
-USE_WX=		2.8
+USE_WX=		3.0+
 USE_XORG=	x11 sm ice xext
 USES=		cmake:outsource compiler:gcc-c++11-lib dos2unix ncurses pkgconfig readline tar:tgz
 
