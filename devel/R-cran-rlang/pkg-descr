@@ -1,0 +1,4 @@
+A toolbox for working with base types, core R features like the
+condition system, and core 'Tidyverse' features like tidy evaluation.
+
+WWW: https://cran.r-project.org/web/packages/rlang/
