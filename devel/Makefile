@@ -5303,8 +5303,8 @@
     SUBDIR += rubygem-gemnasium-gitlab-service
     SUBDIR += rubygem-gemnasium-parser
     SUBDIR += rubygem-gems
-    SUBDIR += rubygem-generator_spec
     SUBDIR += rubygem-generator_spec-rails4
+    SUBDIR += rubygem-generator_spec-rails5
     SUBDIR += rubygem-georuby
     SUBDIR += rubygem-get_process_mem
     SUBDIR += rubygem-getopt

@@ -9389,3 +9389,4 @@ net/py-twitter|net/py-python-twitter|2017-05-15|Renamed to reflect official name
 sysutils/bsdadminscripts|ports-mgmt/bsdadminscripts|2017-05-17|Move into more appropiate category
 games/ioquake3-devel|games/ioquake3|2017-05-18|GitHub master is the new release model
 games/ioquake3-devel-server|games/ioquake3-server|2017-05-18|GitHub master is the new release model
+devel/rubygem-generator_spec|devel/rubygem-generator_spec-rails5|2017-05-19|Use devel/rubygem-generator_spec-rails4 or devel/rubygem-generator_spec-rails5
