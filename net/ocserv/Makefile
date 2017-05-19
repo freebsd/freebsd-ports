@@ -3,7 +3,7 @@
 
 PORTNAME=	ocserv
 PORTVERSION=	0.11.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/ \
 		LOCAL/cpm
@@ -22,7 +22,6 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libev.so:devel/libev \
 		libtalloc.so:devel/talloc \
 		libprotobuf-c.so:devel/protobuf-c \
-		libradcli.so:net/radcli \
 		libgnutls.so:security/gnutls \
 		libtasn1.so:security/libtasn1 \
 		libnettle.so:security/nettle \
@@ -46,7 +45,7 @@ USE_RC_SUBR=	ocserv
 
 PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 
-OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI
+OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI RADIUS
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PORTEXAMPLES=	profile.xml sample.config sample.passwd
@@ -54,6 +53,9 @@ PORTEXAMPLES=	profile.xml sample.config sample.passwd
 GSSAPI_USES=		gssapi:mit
 GSSAPI_LIB_DEPENDS=	libkrb5support.so:security/krb5
 GSSAPI_CONFIGURE_OFF=	--without-gssapi
+
+RADIUS_LIB_DEPENDS=	libradcli.so:net/radcli
+RADIUS_CONFIGURE_OFF=	--without-radius
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/*.8
