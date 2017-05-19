@@ -1,14 +1,8 @@
 --- sw/Module_sw.mk.orig	2017-05-03 16:46:29 UTC
 +++ sw/Module_sw.mk
-@@ -52,26 +52,33 @@ $(eval $(call gb_Module_add_slowcheck_targets,sw,\
-     CppunitTest_sw_htmlexport \
-     CppunitTest_sw_htmlimport \
-     CppunitTest_sw_macros_test \
--    CppunitTest_sw_ooxmlexport \
--    CppunitTest_sw_ooxmlexport2 \
-+    $(if $(filter FREEBSD,$(OS)),, \
-+        CppunitTest_sw_ooxmlexport \
-+        CppunitTest_sw_ooxmlexport2) \
+@@ -55,23 +55,28 @@ $(eval $(call gb_Module_add_slowcheck_targets,sw,\
+     CppunitTest_sw_ooxmlexport \
+     CppunitTest_sw_ooxmlexport2 \
      CppunitTest_sw_ooxmlexport3 \
 -    CppunitTest_sw_ooxmlexport4 \
 +    $(if $(filter FREEBSD,$(OS)),, \
@@ -32,9 +26,7 @@
 +        CppunitTest_sw_ww8import) \
      CppunitTest_sw_rtfexport \
      CppunitTest_sw_rtfimport \
--    CppunitTest_sw_odfexport \
-+    $(if $(filter FREEBSD,$(OS)),, \
-+        CppunitTest_sw_odfexport) \
+     CppunitTest_sw_odfexport \
      CppunitTest_sw_odfimport \
 -    CppunitTest_sw_uiwriter \
 +    $(if $(filter FREEBSD,$(OS)),, \
