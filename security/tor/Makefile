@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-PORTVERSION=	0.3.0.6
+PORTVERSION=	0.3.0.7
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -12,9 +12,9 @@ COMMENT=	Anonymizing overlay network for TCP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_mips64=	Does not build: error: Need a uint128_t implementation!
-BROKEN_powerpc64=	Does not build: error: Need a uint128_t implementation!
-BROKEN_sparc64=	Does not build: error: Need a uint128_t implementation!
+BROKEN_mips64=	does not build: error: Need a uint128_t implementation!
+BROKEN_powerpc64=	does not build: error: Need a uint128_t implementation!
+BROKEN_sparc64=	does not build: error: Need a uint128_t implementation!
 
 USES=		cpe gmake
 CPE_VENDOR=	torproject
@@ -25,13 +25,12 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
 OPTIONS_DEFINE=	MANPAGES DOCS STATIC_TOR TCMALLOC TOR2WEB
+OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 TOR2WEB_DESC=		(EXPERT OPTION) Faster but non-anonymous hidden services
-
-OPTIONS_DEFAULT=	MANPAGES
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
@@ -46,10 +45,13 @@ CONFLICTS=	tor-devel-[0-9]*
 STATIC_TOR_USES=	ssl:build
 STATIC_TOR_USES_OFF=	ssl
 
-DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
-DOCS_CONFIGURE_OFF=	--disable-asciidoc
-
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
+BUILD_DEPENDS+=	asciidoc:textproc/asciidoc
+.else
+CONFIGURE_ARGS+=	--disable-asciidoc
+.endif
 
 .if !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
 empty(PORT_OPTIONS:MSTATIC_TOR) && empty(ARCH:Mia64)
