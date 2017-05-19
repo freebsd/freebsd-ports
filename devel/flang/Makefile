@@ -3,6 +3,7 @@
 
 PORTNAME=	flang
 DISTVERSION=	3.9-20170518
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -24,7 +25,7 @@ ONLY_FOR_ARCHS_REASON_amd64=	for now only builds and is supported on amd64
 USE_LDCONFIG=	${PREFIX}/flang/lib
 USES=		cmake:outsource compiler:c++11-lib libedit perl5 tar:xz \
 		shebangfix
-USES_PYTHON?=	python:build
+_USES_PYTHON?=	python:build
 USES+=		${_USES_PYTHON}
 
 USE_GITHUB=	yes

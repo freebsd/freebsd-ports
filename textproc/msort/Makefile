@@ -13,6 +13,8 @@ COMMENT=	Sorting files in sophisticated ways
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libtre.so:textproc/libtre \
 		libuninum.so:devel/libuninum \
 		libutf8proc.so:textproc/utf8proc

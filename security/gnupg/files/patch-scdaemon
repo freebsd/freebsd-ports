@@ -1,0 +1,84 @@
+From a8dd96826f8484c0ae93c954035b95c2a75c80f2 Mon Sep 17 00:00:00 2001
+From: NIIBE Yutaka <gniibe@fsij.org>
+Date: Wed, 17 May 2017 09:46:06 +0900
+Subject: [PATCH] g10: Suppress error for card availability check.
+
+* g10/call-agent.c (start_agent): Add semantics for card; Suppress
+error for card check.
+(warn_version_mismatch): Ignore an error for scdaemon.
+(agent_scd_serialno): Call start_agent with
+FLAG_FOR_CARD_SUPPRESS_ERRORS.
+
+--
+
+GnuPG-bug-id: 3165
+Fixes-commit: 97a2394ecafaa6f58e4a1f70ecfd04408dc15606
+Signed-off-by: NIIBE Yutaka <gniibe@fsij.org>
+---
+ g10/call-agent.c | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+diff --git a/g10/call-agent.c b/g10/call-agent.c
+index be8c33d74..4698a25a7 100644
+--- g10/call-agent.c
++++ g10/call-agent.c
+@@ -184,7 +184,8 @@ default_inq_cb (void *opaque, const char *line)
+ 
+ 
+ /* Print a warning if the server's version number is less than our
+-   version number.  Returns an error code on a connection problem.  */
++   version number.  Returns an error code on a connection problem.
++   Ignore an error for scdaemon (MODE==2).  */
+ static gpg_error_t
+ warn_version_mismatch (assuan_context_t ctx, const char *servername, int mode)
+ {
+@@ -193,7 +194,7 @@ warn_version_mismatch (assuan_context_t ctx, const char *servername, int mode)
+   const char *myversion = strusage (13);
+ 
+   err = get_assuan_server_version (ctx, mode, &serverversion);
+-  if (err)
++  if (err && mode != 2)
+     log_error (_("error getting version from '%s': %s\n"),
+                servername, gpg_strerror (err));
+   else if (compare_version_strings (serverversion, myversion) < 0)
+@@ -217,10 +218,12 @@ warn_version_mismatch (assuan_context_t ctx, const char *servername, int mode)
+ }
+ 
+ 
++#define FLAG_FOR_CARD_SUPPRESS_ERRORS 2
++
+ /* Try to connect to the agent via socket or fork it off and work by
+    pipes.  Handle the server's initial greeting */
+ static int
+-start_agent (ctrl_t ctrl, int for_card)
++start_agent (ctrl_t ctrl, int flag_for_card)
+ {
+   int rc;
+ 
+@@ -280,7 +283,7 @@ start_agent (ctrl_t ctrl, int for_card)
+         }
+     }
+ 
+-  if (!rc && for_card && !did_early_card_test)
++  if (!rc && flag_for_card && !did_early_card_test)
+     {
+       /* Request the serial number of the card for an early test.  */
+       struct agent_card_info_s info;
+@@ -292,7 +295,7 @@ start_agent (ctrl_t ctrl, int for_card)
+         rc = assuan_transact (agent_ctx, "SCD SERIALNO openpgp",
+                               NULL, NULL, NULL, NULL,
+                               learn_status_cb, &info);
+-      if (rc)
++      if (rc && !(flag_for_card & FLAG_FOR_CARD_SUPPRESS_ERRORS))
+         {
+           switch (gpg_err_code (rc))
+             {
+@@ -1023,7 +1026,7 @@ agent_scd_serialno (char **r_serialno, const char *demand)
+   char *serialno = NULL;
+   char line[ASSUAN_LINELENGTH];
+ 
+-  err = start_agent (NULL, 1);
++  err = start_agent (NULL, 1 | FLAG_FOR_CARD_SUPPRESS_ERRORS);
+   if (err)
+     return err;
+ 

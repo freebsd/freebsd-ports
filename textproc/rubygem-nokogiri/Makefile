@@ -17,7 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CONFIGURE_ARGS=	--use-system-libraries
 USE_GNOME=	libxml2 libxslt
 USE_RUBY=	yes
-USES=		gem pkgconfig
+USES=		gem gnome pkgconfig
 
 PLIST_FILES=	bin/nokogiri
 
