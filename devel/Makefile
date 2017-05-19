@@ -579,6 +579,8 @@
     SUBDIR += fifechan
     SUBDIR += firmware-utils
     SUBDIR += fistgen
+    SUBDIR += flang
+    SUBDIR += flang-clang
     SUBDIR += flatbuffers
     SUBDIR += flatzebra
     SUBDIR += flex-sdk
