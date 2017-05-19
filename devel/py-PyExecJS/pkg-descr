@@ -1,0 +1,14 @@
+PyExecJS is a porting of ExecJS from Ruby. PyExecJS automatically picks the
+best runtime available to evaluate your JavaScript program.
+
+Supported runtimes
+* PyV8 - A python wrapper for Google V8 engine,
+* Node.js
+* Apple JavaScriptCore - Included with Mac OS X
+* Mozilla SpiderMonkey
+* Microsoft Windows Script Host (JScript)
+* SlimerJS
+* PhantomJS
+* Nashorn - Included with Oracle Java 8
+
+WWW: https://pypi.python.org/pypi/PyExecJS
