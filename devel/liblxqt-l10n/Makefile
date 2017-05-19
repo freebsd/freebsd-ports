@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	LXQT/lxqt-l10n
 DISTNAME=	lxqt-l10n-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jesper@schmitz.computer
 COMMENT=	Translations of liblxqt
 
 LICENSE=	LGPL21+
