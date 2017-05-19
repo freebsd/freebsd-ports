@@ -1,0 +1,52 @@
+# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	flang
+DISTVERSION=	3.9-20170518
+CATEGORIES=	devel
+
+MAINTAINER=	jmd@FreeBSD.org
+COMMENT=	Fortran compiler targeting LLVM
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BUILD_DEPENDS=	llvm39>=0:devel/llvm39 \
+		openmp>=0:devel/openmp \
+		flang-clang>=0:devel/flang-clang
+RUN_DEPENDS=	llvm39>=0:devel/llvm39 \
+		openmp>=0:devel/openmp \
+		flang-clang>=0:devel/flang-clang
+
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON_amd64=	for now only builds and is supported on amd64
+
+USE_LDCONFIG=	${PREFIX}/flang/lib
+USES=		cmake:outsource compiler:c++11-lib libedit perl5 tar:xz \
+		shebangfix
+USES_PYTHON?=	python:build
+USES+=		${_USES_PYTHON}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	flang-compiler
+GH_TAGNAME=	a9ccdd7
+
+CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config39 \
+		-DCMAKE_CXX_COMPILER=${LOCALBASE}flang/bin/clang++ \
+		-DCMAKE_C_COMPILER=${LOCALBASE}/flang/bin/clang \
+		-DCMAKE_Fortran_COMPILER=${LOCALBASE}/flang/bin/flang
+
+CMAKE_INSTALL_PREFIX=	${PREFIX}/flang
+
+MAKE_JOBS_UNSAFE=	yes
+
+post-patch:
+	@${CP} -r  ${WRKSRC}/tools/flang2/flang2exe/x86_64-Linux ${WRKSRC}/tools/flang2/flang2exe/x86_64-FreeBSD
+
+post-install:
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		< ${FILESDIR}/flang.in > \
+		${WRKDIR}/flang
+	${INSTALL_SCRIPT} ${WRKDIR}/flang ${STAGEDIR}/${PREFIX}/bin/flang
+
+.include <bsd.port.mk>
