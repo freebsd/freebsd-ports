@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
-CONFLICTS=	brlcad-[0-9]*
+CONFLICTS_INSTALL=	brlcad-[0-9]*	# bin/benchmark
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
