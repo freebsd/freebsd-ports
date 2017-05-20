@@ -1,0 +1,32 @@
+Add toggeles for the FreeBSD ports options.
+
+--- CMakeLists.txt.orig	2017-05-10 18:52:52 UTC
++++ CMakeLists.txt
+@@ -58,12 +58,27 @@ ENDIF ()
+ #
+ ##################################################
+
++# FreeBSD ports: add toggles for options
++option( WITH_PNG "Enable PNG support" ON )
++option( WITH_JPEG "Enable JPEG support" ON )
++option( WITH_TIFF "Enable TIFF support" ON )
++option( WITH_FFTW "Enable FFTW support" ON )
++
++
+ INCLUDE(VigraFindPackage)
++if (WITH_TIFF)
+ VIGRA_FIND_PACKAGE(TIFF NAMES libtiff)
++endif ()
++if (WITH_JPEG)
+ VIGRA_FIND_PACKAGE(JPEG NAMES libjpeg)
++endif ()
++if (WITH_PNG)
+ VIGRA_FIND_PACKAGE(PNG)
++endif ()
++if (WITH_FFTW)
+ VIGRA_FIND_PACKAGE(FFTW3 NAMES libfftw3-3 libfftw-3.3)
+ VIGRA_FIND_PACKAGE(FFTW3F NAMES libfftw3f-3 libfftwf-3.3)
++endif ()
+
+ IF(WITH_OPENEXR)
+     VIGRA_FIND_PACKAGE(OpenEXR)
