@@ -12,7 +12,7 @@ COMMENT=	LISP like scripting language
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	does not build: error: redefinition of typedef 'CPPFunction
+BROKEN_powerpc64=	does not build: error: redefinition of typedef CPPFunction
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
