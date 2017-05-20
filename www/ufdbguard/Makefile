@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ufdbGuard
-PORTVERSION=	1.33.1
+PORTVERSION=	1.33.2
 CATEGORIES=	www
 MASTER_SITES=	SF/ufdbguard/1.33
 
@@ -70,7 +70,7 @@ UNIXSOCKETS_DESC=	Unix sockets support
 BROKEN=		Does not build with openssl-devel
 .endif
 
-.if ${SSL_DEFAULT:Mlibressl-devel}		
+.if ${SSL_DEFAULT:Mlibressl-devel}
 BROKEN=		Does not build with libressl-devel
 .endif
 
