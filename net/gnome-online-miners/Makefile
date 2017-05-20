@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-online-miners
 PORTVERSION=	3.14.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libgdata.so:devel/libgdata \
 		libtracker-control-1.0.so:sysutils/tracker \
 		libgfbgraph-0.2.so:net/gfbgraph \
 		libzapojit-0.0.so:net/libzapojit \
-		libgrilo-0.2.so:net/grilo
+		libgrilo-0.2.so:net/grilo2
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack introspection:build

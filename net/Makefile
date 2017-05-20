@@ -194,6 +194,8 @@
     SUBDIR += grdesktop
     SUBDIR += grilo
     SUBDIR += grilo-plugins
+    SUBDIR += grilo-plugins2
+    SUBDIR += grilo2
     SUBDIR += grive
     SUBDIR += grive2
     SUBDIR += grsync

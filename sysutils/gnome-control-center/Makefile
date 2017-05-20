@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	3.18.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libpwquality.so:security/libpwquality \
 		libgtop-2.0.so:devel/libgtop \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libgrilo-0.2.so:net/grilo \
+		libgrilo-0.2.so:net/grilo2 \
 		libpolkit-gobject-1.so:sysutils/polkit
 RUN_DEPENDS=	gnome-eject:sysutils/gnome-mount \
 		gnome-settings-daemon>=3.4.0:sysutils/gnome-settings-daemon \
