@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	siren
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kariliq.nl/${PORTNAME}/dist/
 
@@ -18,17 +17,23 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libvorbis.so:audio/libvorbis \
 		libwavpack.so:audio/wavpack \
 		libopusfile.so:audio/opusfile
-
 USES=		ncurses pkgconfig
 HAS_CONFIGURE=	yes
 USE_CSTD=	c99
 
-OPTIONS_MULTI=	SOUND
-OPTIONS_MULTI_SOUND=	OSS PULSEAUDIO
+OPTIONS_DEFINE=		FFMPEG MPG123
+OPTIONS_SINGLE=		SOUND
+OPTIONS_SINGLE_SOUND=	OSS PULSEAUDIO
 OPTIONS_DEFAULT=	OSS
 OSS_CONFIGURE_ON=	oss=yes pulse=no
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ON=	oss=no pulse=yes
+FFMPEG_CONFIGURE_ON=	ffmpeg=yes
+FFMPEG_CONFIGURE_OFF=	ffmpeg=no
+FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
+MPG123_CONFIGURE_ON=	mpg123=yes
+MPG123_CONFIGURE_OFF=	mpg123=no
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	sndfile=no \
