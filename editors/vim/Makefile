@@ -14,6 +14,8 @@ LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_powerpc64=	fails to compile: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
+
 OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS NLS XTERM_SAVE
 OPTIONS_SINGLE=		UI
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 GTK3 MOTIF X11
