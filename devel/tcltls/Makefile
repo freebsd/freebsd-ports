@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tcltls
-PORTVERSION=	1.6.7
-PORTREVISION=	1
-CATEGORIES=	devel tcl
-MASTER_SITES=	SF/tls/tls/${PORTVERSION}
-DISTNAME=	tls${PORTVERSION}-src
+PORTVERSION=	1.7.12
+CATEGORIES=	devel security tcl
+MASTER_SITES=	http://core.tcl.tk/tcltls/uv/ \
+		http://tcltls.rkeene.org/uv/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	SSL extensions for TCL; dynamicly loadable
@@ -19,29 +18,22 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 OPTIONS_DEFINE=	DOCS
 
 USES+=		tcl:tea ssl
-CONFIGURE_ARGS+=--with-ssl-dir=${OPENSSLBASE}
+CONFIGURE_ARGS+=--with-ssl-dir=${OPENSSLBASE}	\
+		--disable-rpath
 
-WRKSRC=		${WRKDIR}/${TCL_PKG}
-PLIST_FILES=	lib/${TCL_PKG}/libtls.so.1 \
-		lib/${TCL_PKG}/pkgIndex.tcl \
-		lib/${TCL_PKG}/tls.tcl
+PLIST_FILES=	lib/${TCL_PKG}/tcltls.so \
+		lib/${TCL_PKG}/pkgIndex.tcl
 PORTDOCS=	*
-INSTALL_TARGET=	install-binaries install-doc
+MAKE_ARGS+=	"PACKAGE_INSTALL_DIR=${PREFIX}/lib/${TCL_PKG}"
+TEST_TARGET=	test
+MAKE_ENV+=	PATH=${OPENSSLBASE}/bin:${PATH}
+CONFIGURE_ENV+=	PATH=${OPENSSLBASE}/bin:${PATH}
 
 post-patch:
-	${REINPLACE_CMD} -e \
-		's,package require tls.*,load ${WRKSRC}/libtls.so.1;\
-			source ${WRKSRC}/tls.tcl,' \
-		${WRKSRC}/tests/*.test
-	# The tests in ciphers.test are meaningless so far:
 	${MV} ${WRKSRC}/tests/ciphers.test ${WRKSRC}/tests/ciphers.test.broken
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tls.htm ${STAGEDIR}${DOCSDIR}
-
-xregression-test test check: build
-	cd ${WRKSRC}/tests && ${SETENV} TCL_LIBRARY="${WRKSRC}" \
-		tclsh${TCL_VER} all.tcl
 
 .include <bsd.port.mk>
