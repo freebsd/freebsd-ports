@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTVERSION=	09.06.0200
+PORTVERSION=	09.06.0310
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/odbc/versions/src
 PKGNAMESUFFIX=	-odbc
@@ -28,7 +28,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/postgresql/odbc
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	lib/psqlodbcw.so
+PLIST_FILES=	lib/psqlodbcw.so lib/psqlodbca.so
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
