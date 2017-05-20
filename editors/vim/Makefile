@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.0.0596
+PORTVERSION=	8.0.0600
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -14,14 +14,15 @@ LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_powerpc64=	fails to compile: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
-
 OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS NLS XTERM_SAVE
 OPTIONS_SINGLE=		UI
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 GTK3 MOTIF X11
 OPTIONS_GROUP=		LANGBIND
 OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON RUBY TCL
 OPTIONS_SUB=		yes
+
+# BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
+OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 DEFAULT_VIMRC_DESC=	Install bundled vimrc as default setting
 EXUBERANT_CTAGS_DESC=	Use exctags instead of ctags
