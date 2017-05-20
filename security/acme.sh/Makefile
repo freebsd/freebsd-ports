@@ -2,6 +2,7 @@
 
 PORTNAME=	acme.sh
 PORTVERSION=	2.6.9
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -10,18 +11,18 @@ COMMENT=	ACME protocol client written in shell
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	curl:ftp/curl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	Neilpang
 
-USERS=  acme
-GROUPS= acme
+USERS=	acme
+GROUPS=	acme
 
-OPTIONS_DEFINE=	CURL DOCS WGET
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SINGLE=	HTTP
+OPTIONS_SINGLE_HTTP=	CURL WGET
 OPTIONS_DEFAULT=	CURL
-CURL_DESC=	Add ftp/curl as a run-time dependency
-WGET_DESC=	Add ftp/wget as a run-time dependency
+CURL_DESC=	Depend on cURL for HTTP(S) queries
+WGET_DESC=	Depend on Wget for HTTP(S) queries
 
 NO_ARCH=	yes
 NO_BUILD=	yes

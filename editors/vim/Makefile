@@ -16,6 +16,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 EXPLICIT_SAFESTACK=	yes
 
+BROKEN_powerpc64=	fails to compile: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
+
 OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS NLS XTERM_SAVE
 OPTIONS_SINGLE=		UI
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 GTK3 MOTIF X11

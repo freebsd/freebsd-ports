@@ -2,25 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	grilo
-PORTVERSION=	0.2.15
+PORTVERSION=	0.3.3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Grilo is a framework focused on making media discovery and browsing
+COMMENT=	Framework focused on making media discovery and browsing
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		liboauth.so:net/liboauth \
 		libtotem-plparser.so:multimedia/totem-pl-parser
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 intlhack introspection:build libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-vala -disable-debug
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 #  --enable-debug include debug symbols

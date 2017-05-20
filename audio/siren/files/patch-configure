@@ -1,0 +1,14 @@
+Make ffmpeg toggleable.
+
+--- configure.orig	2017-05-20 16:53:55 UTC
++++ configure
+@@ -314,6 +314,9 @@ for arg; do
+ 	sun=*)
+ 		get_option_value enable_sun "$arg"
+ 		;;
++	ffmpeg=*)
++		get_option_value enable_ffmpeg "$arg"
++		;;
+ 	help|-h|--help)
+ 		error "see the INSTALL file for more information"
+ 		;;

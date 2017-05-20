@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libswscale.so:multimedia/ffmpeg
 
+BROKEN_powerpc64=	fails to compile: moviedecoder.cpp: error: 'to_string' is not a member of 'std'
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dirkvdb
 

@@ -302,6 +302,8 @@ include/wine/windows/dplay8.h
 include/wine/windows/dplobby.h
 include/wine/windows/dplobby8.h
 include/wine/windows/dpnathlp.h
+include/wine/windows/drmexternals.h
+include/wine/windows/drmexternals.idl
 include/wine/windows/dsconf.h
 include/wine/windows/dsgetdc.h
 include/wine/windows/dshow.h
@@ -822,6 +824,8 @@ include/wine/windows/winuser.h
 include/wine/windows/winuser.rh
 include/wine/windows/winver.h
 include/wine/windows/wlanapi.h
+include/wine/windows/wmdrmsdk.h
+include/wine/windows/wmdrmsdk.idl
 include/wine/windows/wmistr.h
 include/wine/windows/wmium.h
 include/wine/windows/wmiutils.h
@@ -846,6 +850,7 @@ include/wine/windows/wsdbase.idl
 include/wine/windows/wsddisco.h
 include/wine/windows/wsddisco.idl
 include/wine/windows/wsdtypes.h
+include/wine/windows/wsdutil.h
 include/wine/windows/wsdxml.h
 include/wine/windows/wsdxml.idl
 include/wine/windows/wsdxmldom.h
@@ -1247,6 +1252,7 @@ lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
 lib/wine/explorerframe.dll.so
 %%STAGING%%lib/wine/ext-ms-win-appmodel-usercontext-l1-1-0.dll.so
+lib/wine/ext-ms-win-authz-context-l1-1-0.dll.so
 lib/wine/ext-ms-win-domainjoin-netjoin-l1-1-0.dll.so
 lib/wine/ext-ms-win-gdi-dc-create-l1-1-1.dll.so
 lib/wine/ext-ms-win-gdi-dc-l1-2-0.dll.so
@@ -1614,6 +1620,7 @@ lib/wine/fakedlls/expand.exe
 lib/wine/fakedlls/explorer.exe
 lib/wine/fakedlls/explorerframe.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-appmodel-usercontext-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-authz-context-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-domainjoin-netjoin-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-gdi-dc-create-l1-1-1.dll
 lib/wine/fakedlls/ext-ms-win-gdi-dc-l1-2-0.dll
@@ -2239,6 +2246,7 @@ lib/wine/libkernel32.def
 lib/wine/libloadperf.def
 lib/wine/liblz32.def
 lib/wine/libmapi32.def
+lib/wine/libmfplat.def
 lib/wine/libmlang.def
 lib/wine/libmpr.def
 lib/wine/libmprapi.def

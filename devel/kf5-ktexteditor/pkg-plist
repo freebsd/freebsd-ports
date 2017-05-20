@@ -1,3 +1,4 @@
+etc/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
 include/KF5/KTextEditor/KTextEditor/AnnotationInterface
 include/KF5/KTextEditor/KTextEditor/Application
 include/KF5/KTextEditor/KTextEditor/Attribute
@@ -59,8 +60,10 @@ lib/cmake/KF5TextEditor/KF5TextEditorTargets.cmake
 lib/libKF5TextEditor.so
 lib/libKF5TextEditor.so.5
 lib/libKF5TextEditor.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libexec/kauth/kauth_ktexteditor_helper
 %%QT_PLUGINDIR%%/kf5/parts/katepart.so
 %%QT_MKSPECDIR%%/modules/qt_KTextEditor.pri
+share/dbus-1/system-services/org.kde.ktexteditor.katetextbuffer.service
 share/katepart5/script/README.md
 share/kservices5/katepart.desktop
 share/kservicetypes5/ktexteditor.desktop
@@ -149,3 +152,4 @@ share/locale/wa/LC_MESSAGES/ktexteditor5.mo
 share/locale/xh/LC_MESSAGES/ktexteditor5.mo
 share/locale/zh_CN/LC_MESSAGES/ktexteditor5.mo
 share/locale/zh_TW/LC_MESSAGES/ktexteditor5.mo
+share/polkit-1/actions/org.kde.ktexteditor.katetextbuffer.policy

@@ -150,6 +150,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/calendar/MonthMenu.qml
 %%QT_QMLDIR%%/org/kde/plasma/calendar/MonthView.qml
 %%QT_QMLDIR%%/org/kde/plasma/calendar/libcalendarplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/calendar/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/calendar/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/components.3/BusyIndicator.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/Button.qml
@@ -178,6 +179,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components.3/TextField.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/ToolBar.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/ToolButton.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/components/BusyIndicator.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/Button.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/ButtonColumn.qml
@@ -212,6 +214,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components/ToolBarLayout.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/ToolButton.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/libplasmacomponentsplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/components/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/components/private/AppManager.js
 %%QT_QMLDIR%%/org/kde/plasma/components/private/Config.js
 %%QT_QMLDIR%%/org/kde/plasma/components/private/DualStateButton.qml
@@ -224,6 +227,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components/private/TabGroup.js
 %%QT_QMLDIR%%/org/kde/plasma/components/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/core/libcorebindingsplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/core/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/core/private/DefaultToolTip.qml
 %%QT_QMLDIR%%/org/kde/plasma/core/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/extras/App.qml
@@ -239,8 +243,10 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/extras/animations/PressedAnimation.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/animations/ReleasedAnimation.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/libplasmaextracomponentsplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/extras/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/extras/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/platformcomponents/libplatformcomponentsplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/platformcomponents/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/platformcomponents/qmldir
 man/ca/man1/plasmapkg2.1.gz
 man/de/man1/plasmapkg2.1.gz
@@ -248,6 +254,7 @@ man/es/man1/plasmapkg2.1.gz
 man/it/man1/plasmapkg2.1.gz
 man/man1/plasmapkg2.1.gz
 man/nl/man1/plasmapkg2.1.gz
+man/pt/man1/plasmapkg2.1.gz
 man/pt_BR/man1/plasmapkg2.1.gz
 man/sv/man1/plasmapkg2.1.gz
 man/uk/man1/plasmapkg2.1.gz

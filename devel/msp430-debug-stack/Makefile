@@ -21,6 +21,8 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libhidapi.so:comms/hidapi
 
+BROKEN_powerpc64=	fails to compile: adapt_enum.h: 'to_string' is not a member of 'std'
+
 USES=		compiler:c++11-lib dos2unix gmake zip:infozip
 USE_LDCONFIG=	yes
 

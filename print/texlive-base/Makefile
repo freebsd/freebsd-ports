@@ -26,6 +26,8 @@ LIB_DEPENDS=	libicuio.so:devel/icu \
 		libpoppler.so:graphics/poppler \
 		libpotrace.so:graphics/libpotrace
 
+BROKEN_powerpc64=	fails to configure: checking requested system `icu' library... failed
+
 CONFLICTS_INSTALL=	texlive-texmf-201[234]*
 
 USE_TEX=	web2c kpathsea ptexenc tlmgr texhash-bootstrap
@@ -111,7 +113,6 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/ulqda/ulqda.pl \
 	texk/texlive/linked_scripts/urlbst/urlbst \
 	texk/texlive/linked_scripts/yplan/yplan
-
 
 INFO=	dvipng tlbuild
 

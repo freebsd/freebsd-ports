@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-photos
 PORTVERSION=	3.18.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	geoclue>=0:net/geoclue \
 LIB_DEPENDS=	libexempi.so:textproc/exempi \
 		libgfbgraph-0.2.so:net/gfbgraph \
 		libgegl-0.3.so:graphics/gegl3 \
-		libgrilo-0.2.so:net/grilo \
+		libgrilo-0.2.so:net/grilo2 \
 		libexif.so:graphics/libexif \
 		libtracker-control-1.0.so:sysutils/tracker \
 		libgjs.so:lang/gjs \

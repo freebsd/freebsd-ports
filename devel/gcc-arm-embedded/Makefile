@@ -13,7 +13,7 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN_powerpc64=	does not build
+BROKEN_powerpc64=	does not build: __adjust.c: internal compiler error: Segmentation fault
 
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes

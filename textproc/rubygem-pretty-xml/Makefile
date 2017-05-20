@@ -2,6 +2,7 @@
 
 PORTNAME=	pretty-xml
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
