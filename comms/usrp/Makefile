@@ -2,7 +2,7 @@
 
 PORTNAME=	usrp
 PORTVERSION=	3.4.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	comms hamradio
 MASTER_SITES=	LOCAL/adrian
 DISTNAME=	Ettus-USRP-3.4.3
@@ -17,11 +17,14 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
 		orcc:devel/orc \
 		sdcc:lang/sdcc
 
-USES=			compiler:c++0x cmake:outsource gmake pkgconfig dos2unix
+USES=			compiler:c++0x cmake:outsource gmake pkgconfig python:run \
+			dos2unix shebangfix
 COMPILER_FEATURES=	libc++
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 MAKE_JOBS_UNSAFE=	yes
+
+SHEBANG_GLOB=	*.py
 
 # for excruciating debug use this -db
 #CMAKE_ARGS+=	--debug-output --trace
