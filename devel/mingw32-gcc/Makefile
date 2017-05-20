@@ -22,6 +22,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
 
+BROKEN_powerpc64=	fails to configure: error: cannot compute suffix of object files: cannot compile
+
 GCCVERSION=	4.8.1
 
 SSP_UNSAFE=	yes

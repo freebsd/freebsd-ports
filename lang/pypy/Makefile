@@ -24,6 +24,9 @@ TEST_DEPENDS=	${LOCALBASE}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.${PYPY_CFFI_VER}.so:d
 ONLY_FOR_ARCHS?=i386 amd64 armv6 powerpc64
 ONLY_FOR_ARCHS_REASON?=	PyPy JIT only supported on these architectures
 
+BROKEN_armv6=		fails to package: pypy_objspace_std.c: Crash in JIT!
+BROKEN_powerpc64=	fails to compile: platcheck_109.c: fatal error: linux/auxvec.h: No such file or directory
+
 OPTIONS_SINGLE=	TRANS
 OPTIONS_SINGLE_TRANS=	PYTHON
 PYTHON_DESC=	Use Python-2.7 to translate (slowest)
