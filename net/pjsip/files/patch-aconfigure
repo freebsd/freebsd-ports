@@ -1,6 +1,6 @@
 --- aconfigure.orig	2017-01-25 11:23:08 UTC
 +++ aconfigure
-@@ -6310,14 +6310,7 @@ $as_echo "Checking sound device backend.
+@@ -6310,14 +6310,7 @@ $as_echo "Checking sound device backend... null sound"
  	;;
    *)
  		ac_pjmedia_snd=alsa
@@ -24,7 +24,7 @@
  		fi
  
  		for ac_prog in pkg-config "python pkgconfig.py"
-@@ -8493,7 +8486,7 @@ $as_echo "Checking if libwebrtc is disab
+@@ -8493,7 +8486,7 @@ $as_echo "Checking if libwebrtc is disabled...no" >&6;
  			ac_webrtc_instset=sse2
  			ac_webrtc_cflags="-msse2"
  			;;

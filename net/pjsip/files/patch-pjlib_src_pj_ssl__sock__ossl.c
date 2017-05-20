@@ -9,7 +9,7 @@
  
  #   include <openssl/obj_mac.h>
  
-@@ -112,7 +112,7 @@ static unsigned get_nid_from_cid(unsigne
+@@ -112,7 +112,7 @@ static unsigned get_nid_from_cid(unsigned cid)
  #endif
  
  
@@ -27,7 +27,7 @@
  	openssl_curves_num = SSL_get_shared_curve(ssl,-1);
  	if (openssl_curves_num > PJ_ARRAY_SIZE(openssl_curves))
  	    openssl_curves_num = PJ_ARRAY_SIZE(openssl_curves);
-@@ -1069,7 +1069,7 @@ static pj_status_t set_cipher_list(pj_ss
+@@ -1069,7 +1069,7 @@ static pj_status_t set_cipher_list(pj_ssl_sock_t *ssoc
  
  static pj_status_t set_curves_list(pj_ssl_sock_t *ssock)
  {
@@ -36,7 +36,7 @@
      int ret;
      int curves[PJ_SSL_SOCK_MAX_CURVES];
      unsigned cnt;
-@@ -1100,7 +1100,7 @@ static pj_status_t set_curves_list(pj_ss
+@@ -1100,7 +1100,7 @@ static pj_status_t set_curves_list(pj_ssl_sock_t *ssoc
  
  static pj_status_t set_sigalgs(pj_ssl_sock_t *ssock)
  {
