@@ -3,7 +3,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	3.18.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		pylint${PYTHON_PKGNAMESUFFIX}>=0:devel/pylint \
 		appstream-glib>=0:devel/appstream-glib \
 		itstool:textproc/itstool \
-		grilo-plugins>=0:net/grilo-plugins
+		grilo-plugins2>=0:net/grilo-plugins2
 LIB_DEPENDS=	libgdata.so:devel/libgdata \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libclutter-gst-3.0.so:multimedia/clutter-gst3 \
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas \
 		gnome-settings-daemon>=2.91.0:sysutils/gnome-settings-daemon \
 		gnome-icon-theme-symbolic>=2.91.0:x11-themes/gnome-icon-theme-symbolic \
-		grilo-plugins>=0:net/grilo-plugins
+		grilo-plugins2>=0:net/grilo-plugins2
 
 PORTSCOUT=	limitw:1,even
 
