@@ -2,6 +2,7 @@
 bin/cadabra-server
 bin/cadabra2
 bin/cadabra2html
+bin/cadabra2python
 lib/libcadabra_client.so
 lib/libcadabra_server.so
 %%GUI%%lib/libtexengine.so
@@ -46,11 +47,13 @@ lib/libcadabra_server.so
 %%GUI%%%%DATADIR%%/manual/algorithms/integrate_by_parts.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/join_gamma.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/keep_weight.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/lr_tensor.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/product_rule.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/reduce_delta.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/rename_dummies.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/rewrite_indices.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/sort_product.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/sort_spinors.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/sort_sum.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/split_gamma.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/split_index.cnb
@@ -94,5 +97,9 @@ lib/libcadabra_server.so
 %%GUI%%%%DATADIR%%/manual/properties/SortOrder.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Spinor.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Symmetric.cnb
+%%GUI%%%%DATADIR%%/manual/properties/Tableau.cnb
 %%GUI%%%%DATADIR%%/manual/properties/TableauSymmetry.cnb
+%%GUI%%%%DATADIR%%/manual/properties/WeightInherit.cnb
+%%GUI%%%%DATADIR%%/notebook.html
+%%GUI%%%%DATADIR%%/notebook.tex
 %%GUI%%%%DATADIR%%/texengine/preamble.tex

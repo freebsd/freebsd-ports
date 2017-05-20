@@ -1,11 +1,11 @@
---- client_server/CMakeLists.txt.orig	2017-01-04 17:38:25 UTC
+--- client_server/CMakeLists.txt.orig	2017-04-14 09:26:53 UTC
 +++ client_server/CMakeLists.txt
-@@ -86,21 +86,21 @@ add_definitions("-D_WEBSOCKETPP_CPP11_ST
+@@ -90,21 +90,21 @@ add_definitions("-D_WEBSOCKETPP_CPP11_ST
  
  # Create the server library
  #link_directories(${UUID_LIBRARY_DIRS})
--add_library(cadabra_server SHARED Server.cc Snoop.cc jsoncpp/jsoncpp.cpp)
-+add_library(cadabra_server SHARED Server.cc Snoop.cc)
+-add_library(cadabra_server SHARED Server.cc Snoop.cc jsoncpp/jsoncpp.cpp ../core/CdbPython.cc ../core/Stopwatch.cc ../core/ProgressMonitor.cc)
++add_library(cadabra_server SHARED Server.cc Snoop.cc ../core/CdbPython.cc ../core/Stopwatch.cc ../core/ProgressMonitor.cc)
  target_link_libraries(cadabra_server ${Boost_LIBRARIES} ${SNOOP_LIBRARIES} sqlite3 ${PYTHON_LIBRARIES} ${GLIBMM3_LIBRARIES})
  if (WIN32)
     target_link_libraries(cadabra_server ws2_32 mswsock)
