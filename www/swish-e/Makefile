@@ -16,7 +16,7 @@ USES=		gmake libtool perl5 shebangfix
 SHEBANG_FILES=	src/swishspider
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
-                pkgdatadir="${DATADIR}"
+		pkgdatadir="${DATADIR}"
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS

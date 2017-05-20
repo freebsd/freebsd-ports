@@ -3,7 +3,7 @@
 
 PORTNAME=		fife
 PORTVERSION=		0.4.1
-PORTREVISION=	1
+PORTREVISION=		1
 CATEGORIES=		games
 MASTER_SITES=		https://github.com/fifengine/fifengine/archive/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,8 @@ LIB_DEPENDS=		libvorbisfile.so:audio/libvorbis \
 			libtinyxml.so:textproc/tinyxml \
 			libboost_filesystem.so:devel/boost-libs \
 			libpng.so:graphics/png
+
+BROKEN_powerpc64=	fails to compile: fifePYTHON_wrap.cxx: relocation truncated to fit
 
 USES=			openal:al pkgconfig cmake:outsource
 USE_GL=			gl
@@ -43,7 +45,7 @@ LOGGING_DESC=		Logging
 OPTIONS_MULTI_COMP=	PYTHON LIBRARY
 COMP_DESC=		Building components
 PYTHON_DESC=		Build python extension module (need for unknown-horizons)
-LIBRARY_DESC=		Build and install files for directly develop with C++ 
+LIBRARY_DESC=		Build and install files for directly develop with C++
 
 OPTIONS_DEFAULT=	FIFECHAN ZIP LOGGING PYTHON
 

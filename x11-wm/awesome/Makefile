@@ -30,6 +30,8 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libxcb-xrm.so:x11/xcb-util-xrm \
 		libxkbcommon.so:x11/libxkbcommon
 
+BROKEN_powerpc64=	fails to compile: stack.h: redefinition of typedef 'client_t'
+
 CONFLICTS_INSTALL=	awesome3-[0-9]*
 
 USE_GITHUB=	yes
