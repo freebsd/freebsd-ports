@@ -23,6 +23,8 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libgsl.so:math/gsl
 RUN_DEPENDS=	OpenEXR>=1.0:graphics/OpenEXR
 
+BROKEN_powerpc64=	fails to configure: libvigraimpex is required to compile Enblend
+
 USE_AUTOTOOLS=	automake:env autoconf:env
 USES=		compiler:features gmake jpeg localbase makeinfo
 # We need a newer version of makeinfo for this.
