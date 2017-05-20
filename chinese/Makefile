@@ -43,7 +43,6 @@
     SUBDIR += fcitx-ui-light
     SUBDIR += fireflyttf
     SUBDIR += font-std
-    SUBDIR += fortune
     SUBDIR += fortunetw
     SUBDIR += gb2jis
     SUBDIR += gb2ps

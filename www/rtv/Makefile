@@ -5,7 +5,7 @@ PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Commandline client for reddit
 
 LICENSE=	MIT

@@ -2,6 +2,7 @@
 
 PORTNAME=	sonic-visualiser
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/1675/
 
@@ -27,7 +28,7 @@ USE_QT5=	buildtools_build core gui network qmake_build testlib widgets xml
 USE_XORG=	x11
 USE_GL=		gl
 
-OPTIONS_DEFINE=	DEBUG FISHSOUND ID3TAG JACK LRDF MAD OGGZ OSC PORTAUDIO PULSE
+OPTIONS_DEFINE=	DEBUG FISHSOUND ID3TAG JACK LRDF MAD OGGZ OSC PORTAUDIO PULSEAUDIO
 OPTIONS_DEFAULT=	FISHSOUND ID3TAG MAD OGGZ PORTAUDIO
 OPTIONS_SUB=	yes
 
@@ -66,9 +67,8 @@ OSC_LIB_DEPENDS=	liblo.so:audio/liblo
 PORTAUDIO_CONFIGURE_WITH=	portaudio
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-PULSE_CONFIGURE_WITH=	pulse
-PULSE_DESC=	PulseAudio server support
-PULSE_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_WITH=	pulse
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sonic-visualiser ${STAGEDIR}${PREFIX}/bin

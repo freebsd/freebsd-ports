@@ -1,56 +1,15 @@
---- configure.orig	2017-01-12 01:09:22 UTC
+--- configure.orig	2017-05-03 16:54:21 UTC
 +++ configure
-@@ -29353,12 +29353,12 @@ if test -n "$ORCUS_CFLAGS"; then
-     pkg_cv_ORCUS_CFLAGS="$ORCUS_CFLAGS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"liborcus-0.11 >= 0.11.2\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "liborcus-0.11 >= 0.11.2") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"liborcus-0.12 >= 0.12.0\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "liborcus-0.12 >= 0.12.0") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_ORCUS_CFLAGS=`$PKG_CONFIG --cflags "liborcus-0.11 >= 0.11.2" 2>/dev/null`
-+  pkg_cv_ORCUS_CFLAGS=`$PKG_CONFIG --cflags "liborcus-0.12 >= 0.12.0" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -29370,12 +29370,12 @@ if test -n "$ORCUS_LIBS"; then
-     pkg_cv_ORCUS_LIBS="$ORCUS_LIBS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"liborcus-0.11 >= 0.11.2\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "liborcus-0.11 >= 0.11.2") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"liborcus-0.12 >= 0.12.0\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "liborcus-0.12 >= 0.12.0") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_ORCUS_LIBS=`$PKG_CONFIG --libs "liborcus-0.11 >= 0.11.2" 2>/dev/null`
-+  pkg_cv_ORCUS_LIBS=`$PKG_CONFIG --libs "liborcus-0.12 >= 0.12.0" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -29396,14 +29396,14 @@ else
-         _pkg_short_errors_supported=no
- fi
-         if test $_pkg_short_errors_supported = yes; then
--	        ORCUS_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "liborcus-0.11 >= 0.11.2" 2>&1`
-+	        ORCUS_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "liborcus-0.12 >= 0.12.0" 2>&1`
-         else
--	        ORCUS_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "liborcus-0.11 >= 0.11.2" 2>&1`
-+	        ORCUS_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "liborcus-0.12 >= 0.12.0" 2>&1`
-         fi
- 	# Put the nasty error message in config.log where it belongs
- 	echo "$ORCUS_PKG_ERRORS" >&5
+@@ -5039,7 +5039,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PRODUCTNAME" >&5
+ $as_echo "$PRODUCTNAME" >&6; }
  
--	as_fn_error $? "Package requirements (liborcus-0.11 >= 0.11.2) were not met:
-+	as_fn_error $? "Package requirements (liborcus-0.12 >= 0.12.0) were not met:
+-PRODUCTNAME_WITHOUT_SPACES=${PRODUCTNAME// /}
++PRODUCTNAME_WITHOUT_SPACES=$(echo "$PRODUCTNAME" | tr -d ' ')
  
- $ORCUS_PKG_ERRORS
  
-@@ -31927,7 +31927,7 @@ fi
+ 
+@@ -32392,7 +32392,7 @@ fi
  
  
  

@@ -18,6 +18,7 @@ man/man1/gdbm_dump.1.gz
 man/man1/gdbm_load.1.gz
 man/man1/gdbmtool.1.gz
 man/man3/gdbm.3.gz
+%%NLS%%share/locale/da/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gdbm.mo

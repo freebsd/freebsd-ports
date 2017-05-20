@@ -2,7 +2,7 @@
 
 PORTNAME=	wsjtx
 PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libhamlib.so:comms/hamlib \
 		libxslt.so:textproc/libxslt \
-		libomp.so:devel/openmp
+		libomp.so.0:devel/openmp
 
 MAKE_JOBS_UNSAFE=	yes
 USE_GL=		yes

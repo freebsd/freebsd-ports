@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beats
-PORTVERSION=	5.3.1
+PORTVERSION=	5.4.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -49,9 +49,6 @@ post-stage:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} \
-		${GO_WRKSRC}/libbeat/scripts/migrate_beat_config_1_x_to_5_0.py \
-		${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} \
 		${GO_WRKSRC}/libbeat/dashboards/import_dashboards \
 		${STAGEDIR}${DATADIR}

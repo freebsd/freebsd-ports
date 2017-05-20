@@ -43,6 +43,8 @@ MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 MEMCACHED_LDFLAGS=		-L${LOCALBASE}/lib
 MEMCACHED_CFLAGS=		-I${LOCALBASE}/include
 
+STATIC_CONFIGURE_ENABLE=	static
+
 .if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED) && \
     !defined(NO_CCACHE_DEPEND)
 # Don't allow autoreconf. We want no dependencies on this to keep
@@ -58,8 +60,6 @@ MEMCACHED_IGNORE=		MEMCACHED cannot be combined with WITH_CCACHE_BUILD.  Use dev
 NO_CCACHE_DEPEND=	yes
 
 OPTIONS_SUB=	yes
-
-STATIC_LDFLAGS=	-static
 
 .include <bsd.port.pre.mk>
 

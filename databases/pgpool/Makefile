@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgpool
-PORTVERSION=	3.4.9
-PORTREVISION=	1
+PORTVERSION=	3.4.11
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 DISTNAME=	${PORTNAME}-II-${PORTVERSION}
@@ -13,6 +12,8 @@ COMMENT=	Connection pool server for PostgreSQL
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+PORTSCOUT=	limit:^3.4.[0-9]*
 
 USES=		gmake libtool pgsql:9.3+
 GNU_CONFIGURE=	yes
@@ -26,9 +27,9 @@ CONFLICTS=	pgpool-II-*
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS SSL
-OPTIONS_DEFAULT= SSL
+OPTIONS_DEFAULT=	SSL
 
-SSL_CONFIGURE_WITH=     openssl
+SSL_CONFIGURE_WITH=	openssl
 SSL_USES=		ssl
 
 post-install:

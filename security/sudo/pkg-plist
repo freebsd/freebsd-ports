@@ -1,6 +1,7 @@
 bin/sudo
 bin/sudoedit
 bin/sudoreplay
+etc/sudoers.dist
 @sample etc/sudoers.sample
 @sample etc/pam.d/sudo.default etc/pam.d/sudo
 include/sudo_plugin.h

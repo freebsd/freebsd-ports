@@ -1,4 +1,4 @@
---- heroku.gemspec.orig	2016-12-31 23:04:38 UTC
+--- heroku.gemspec.orig	2017-05-05 13:02:56 UTC
 +++ heroku.gemspec
 @@ -26,12 +26,12 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -8,12 +8,13 @@
 -      s.add_runtime_dependency(%q<rest-client>.freeze, ["= 1.6.8"])
 -      s.add_runtime_dependency(%q<rubyzip>.freeze, ["= 1.1.7"])
 -      s.add_runtime_dependency(%q<multi_json>.freeze, ["= 1.11.2"])
+-      s.add_runtime_dependency(%q<net-ssh-gateway>.freeze, ["= 1.2.0"])
+-      s.add_runtime_dependency(%q<net-ssh>.freeze, ["= 2.9.2"])
 +      s.add_runtime_dependency(%q<netrc>.freeze, [">= 0.10.3"])
 +      s.add_runtime_dependency(%q<rest-client>.freeze, [">= 1.6.8"])
 +      s.add_runtime_dependency(%q<rubyzip>.freeze, [">= 1.1.7"])
 +      s.add_runtime_dependency(%q<multi_json>.freeze, [">= 1.11.2"])
-       s.add_runtime_dependency(%q<net-ssh-gateway>.freeze, ["= 1.2.0"])
--      s.add_runtime_dependency(%q<net-ssh>.freeze, ["= 2.9.2"])
++      s.add_runtime_dependency(%q<net-ssh-gateway>.freeze, [">= 1.2.0"])
 +      s.add_runtime_dependency(%q<net-ssh>.freeze, [">= 2.9.2"])
      else
        s.add_dependency(%q<heroku-api>.freeze, ["= 0.4.2"])

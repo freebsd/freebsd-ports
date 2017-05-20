@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smstools
-PORTVERSION=	3.1.20
+PORTVERSION=	3.1.21
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}

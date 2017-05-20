@@ -4,7 +4,7 @@ Pydio has been installed in %%WWWDIR%%.
 
 You need to configure your webserver to publish that directory.
 
-Please also read http://ajaxplorer.info/documentation/administration/
+Please also read https://pydio.com/en/docs/v8/installation-guide/
 for further details on how to secure and configure your installation.
 
 ************************************************************************
@@ -55,3 +55,40 @@ Choosing the file matching your backend, then parsing it. Once this process
 is completed, Pydio may be updated using the web interface.
 
 ************************************************************************
+
+************************************************************************
+
+If you are upgrading from Pydio 7 to Pydio 8, please read follow the
+following quickstart guide for FreeBSD users.
+If the installer / upgrader fails upon trying to access it and there is
+an error message in your PHP log about "open_basedir" restriction from
+
+%%WWWDIR%%/pydio/plugins/gui.ajax/RichClient.php
+
+editing the file and changing line 512 from:
+
+if(file_exists(AJXP_INSTALL_PATH . "." . $imagesFolder)){
+
+to
+
+if(file_exists(AJXP_INSTALL_PATH . "/" . $imagesFolder)){
+
+should help with this issue.
+
+When using MySQL as database backend and the user you use for accessing
+the database might temporary need all privileges (GRANT ALL PRIVILEGES)
+on the Pydio database during the upgrade process.
+The privileges may be set back afterwards.
+
+If you use a cache driver (Doctrine), the upgrade process may fail. To
+disable the cache driver temporarily, edit:
+
+%%WWWDIR%%/pydio/plugins/boot.conf/bootstrap.json
+
+and remove the "core.cache" part. It can be added once the upgrade
+finished or re-configured in the admin panel.
+
+Additionally cleaning the following temporary directory might be
+helpful:
+
+%%WWWDIR%%/pydio/cache

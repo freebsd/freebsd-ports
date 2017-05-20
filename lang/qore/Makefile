@@ -15,7 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		${LOCALBASE}/bin/bison:devel/bison \
 		${LOCALBASE}/bin/bash:shells/bash
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc=		fails to build
+BROKEN_powerpc64=	fails to build: Error: unsupported relocation against r1
 
 USES=	gmake iconv libtool:build pathfix autoreconf ssl
 USE_LDCONFIG=	yes
@@ -30,16 +31,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=	Does not compile on powerpc
-.endif
-
 pre-configure:
 	cd ${WRKSRC}; ./reconf.sh
 
 post-configure:
 	${REINPLACE_CMD} -e 's|; make|; $${MAKE}|g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

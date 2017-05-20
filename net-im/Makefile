@@ -109,6 +109,7 @@
     SUBDIR += pidgin-hotkeys
     SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
+    SUBDIR += pidgin-manualsize
     SUBDIR += pidgin-osd
     SUBDIR += pidgin-pidgimpd
     SUBDIR += pidgin-privacy-please

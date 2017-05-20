@@ -176,6 +176,7 @@
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
     SUBDIR += imerge
+    SUBDIR += img2xterm
     SUBDIR += ini_file_manager
     SUBDIR += inplace
     SUBDIR += ipa_conv
@@ -382,6 +383,7 @@
     SUBDIR += py-progressbar231
     SUBDIR += py-pyfiglet
     SUBDIR += py-pyprind
+    SUBDIR += py-python-geohash
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-qt5-demo

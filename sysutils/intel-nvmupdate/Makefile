@@ -3,6 +3,7 @@
 
 PORTNAME=	nvmupdate
 DISTVERSION=	5_05
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -36,10 +37,6 @@ SUB_LIST=	NVMUPDATE_DIR=${NVMUPDATE_DIR}
 NVMUPDATE_DIR=	intel-nvmupdate
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1100000
-BROKEN=		core dump on application startup
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${NVMUPDATE_DIR}

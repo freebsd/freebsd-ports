@@ -5,7 +5,7 @@ PORTNAME=	mybb
 PORTVERSION=	1.8.11
 CATEGORIES=	www
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP-based bulletin board / discussion forum system
 
 LICENSE=	GPLv3

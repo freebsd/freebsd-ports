@@ -42,6 +42,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libfreehand-0.1.so:graphics/libfreehand \
 		libgltf-0.0.so:graphics/libgltf \
 		libwpg-0.3.so:graphics/libwpg03 \
+		libzmf-0.0.so:graphics/libzmf \
 		libGeneratedSaxParser.so:graphics/opencollada \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
@@ -63,6 +64,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libmwaw-0.3.so:textproc/libmwaw03 \
 		libodfgen-0.1.so:textproc/libodfgen01 \
 		librevenge-0.0.so:textproc/librevenge \
+		libstaroffice-0.0.so:textproc/libstaroffice \
 		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwps-0.4.so:textproc/libwps \
@@ -75,12 +77,13 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
+		${LOCALBASE}/share/fonts/emojione-color-font-ttf/EmojiOneColor-SVGinOT.ttf:x11-fonts/emojione-color-font-ttf \
 		${LOCALBASE}/share/fonts/GentiumBasic/GenBasI.ttf:x11-fonts/gentium-basic \
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
-DISTFILES+=	ce12af00283eb90d9281956524250d6e-xmlsec1-1.2.20.tar.gz:src \
-		4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src
+DISTFILES+=	4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
+		86b1daaa438f5a7bea9a52d7b9799ac0-xmlsec1-1.2.23.tar.gz:src
 
 .if defined(PRERELEASE)
 MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
@@ -88,7 +91,7 @@ MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
 
 CONFLICTS_INSTALL=	libreoffice4-4.*
 
-INSTALL_TARGET=	distro-pack-install
+INSTALL_TARGET=	install-strip distro-pack-install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
 GNU_CONFIGURE=	yes
@@ -97,8 +100,8 @@ USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
-USES=		autoreconf:build bison compiler:c++11-lib cpe firebird gmake jpeg perl5 pkgconfig \
-		python shared-mime-info tar:xz
+USES=		autoreconf:build bison compiler:c++11-lib cpe gmake jpeg \
+		perl5 pkgconfig python shared-mime-info tar:xz
 WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	CUPS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
@@ -164,8 +167,10 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:src \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
 		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:src \
+		8249374c274932a21846fa7629c2aa9b-officeotron-0.7.4-master.jar:ext \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:src \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:src \
+		a084cd548b586552cb7d3ee51f1af969-odfvalidator-1.1.8-incubating-SNAPSHOT-jar-with-dependencies.jar:ext \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:src \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:src \
 		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:src \
@@ -218,12 +223,9 @@ COLLADA_LIBS=	-L${LOCALBASE}/lib/opencollada \
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-epm \
 		--disable-fetch-external \
-		--disable-gnome-vfs \
-		--disable-kde \
-		--disable-kdeab \
+		--disable-firebird-sdbc \
 		--disable-mergelibs \
 		--disable-online-update \
-		--disable-packagekit \
 		--enable-cairo-canvas \
 		--enable-graphite \
 		--enable-python=system \
@@ -248,14 +250,13 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-zlib \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
-		--without-myspell-dicts \
-		--without-system-npapi-headers
+		--without-myspell-dicts
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
-		FIREBIRD_CFLAGS="-isystem ${LOCALBASE}/include" \
-		FIREBIRD_LIBS="-L${LOCALBASE}/lib -lfbembed" \
 		GNUTAR="${TAR}" \
 		GPERF=${LOCALBASE}/bin/gperf \
+		ICU_CFLAGS="`icu-config --cflags`" \
+		ICU_LIBS="`icu-config --ldflags`" \
 		OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
 		OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
@@ -284,7 +285,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extrapatch-vcl_inc_unx_gtk_gtkinst.hxx \
 
 .if ${COMPILER_TYPE} == "clang"
 CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unused-parameter
-.if${COMPILER_VERSION} >= 36
+.if ${COMPILER_VERSION} >= 36
 CXXFLAGS_WARN+=	-Wno-unused-local-typedefs
 .endif
 .else
@@ -307,7 +308,7 @@ post-install:
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
-.for subdir in application-registry applications icons mime mime-info mimelnk bash-completion
+.for subdir in application-registry applications bash-completion icons mime mime-info mimelnk
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor

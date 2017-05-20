@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	trac-
 DISTNAME=	TracThemeEngine-${PORTVERSION}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Plugin to simplify distributing and deploying themes and styles
 
 LICENSE=	BSD3CLAUSE

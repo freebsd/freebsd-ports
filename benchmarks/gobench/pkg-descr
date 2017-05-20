@@ -1,6 +1,0 @@
-goBench is a HTTP(S) benchmarking tool designed for high throughput
-to replace existing benchmarking/load tools which have concurrency
-issues. We are working so hard to optimize our servers - why shouldn't
-we do also it for our clients testers?!
-
-WWW: https://github.com/tabrarg/gobench

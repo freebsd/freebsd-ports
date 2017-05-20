@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	usermin
-PORTVERSION=	1.701
+PORTVERSION=	1.710
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -43,7 +43,7 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|=/etc/webmin|=${PREFIX}/etc/webmin|' ${WRKSRC}/${file}
 .endfor
 
-	@${FIND} ${WRKSRC} \( -name config-freebsd\* -or -name config \)  \
+	@${FIND} ${WRKSRC} \( -type f -and \( -name config-freebsd\* -or -name config \) \) \
 		-exec ${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" {} \; \
 		-exec ${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" {} \;
 

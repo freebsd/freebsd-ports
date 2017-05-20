@@ -28,6 +28,8 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 INSTALL_TARGET=	install-strip
 
+BROKEN_armv6=		fails to detect working compiler: undefined reference to _Unwind_GetIP@GCC_3.0
+
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
 OPTIONS_DEFINE=	SMPD X11 DOCS

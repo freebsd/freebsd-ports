@@ -154,7 +154,6 @@
     SUBDIR += notecase
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
-    SUBDIR += openproj
     SUBDIR += orage
     SUBDIR += osmo
     SUBDIR += osynctool

@@ -11,7 +11,7 @@ COMMENT=	Command line tool to verify Matroska and WebM files
 LICENSE=	BSD3CLAUSE BSD4CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not compile: mkvtree.c: error: dereferencing pointer to incomplete type
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 

@@ -9,7 +9,6 @@ lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.BitString.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.Date.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.DateTime.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.Float.beam
-lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.HashDict.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.HashSet.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.Integer.beam
 lib/elixir/lib/poison/ebin/Elixir.Poison.Encoder.List.beam

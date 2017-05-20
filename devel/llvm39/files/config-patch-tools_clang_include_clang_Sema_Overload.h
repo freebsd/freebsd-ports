@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/include/clang/Sema/Overload.h.orig
 +++ tools/clang/include/clang/Sema/Overload.h
 @@ -586,7 +586,11 @@

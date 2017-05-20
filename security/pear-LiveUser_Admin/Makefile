@@ -6,7 +6,7 @@ PORTVERSION=	0.4.0
 PORTREVISION=	1
 CATEGORIES=	security www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR user authentication and permission management framework
 
 BUILD_DEPENDS=	${PEARDIR}/LiveUser.php:security/pear-LiveUser

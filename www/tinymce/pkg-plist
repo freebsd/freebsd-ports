@@ -35,11 +35,10 @@
 %%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-wink.gif
 %%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-yell.gif
 %%WWWDIR%%/js/tinymce/plugins/emoticons/plugin.min.js
-%%WWWDIR%%/js/tinymce/plugins/example/dialog.html
-%%WWWDIR%%/js/tinymce/plugins/example/plugin.min.js
-%%WWWDIR%%/js/tinymce/plugins/example_dependency/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/fullpage/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/fullscreen/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/help/img/logo.png
+%%WWWDIR%%/js/tinymce/plugins/help/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/hr/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/image/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/imagetools/plugin.min.js
@@ -82,7 +81,6 @@
 %%WWWDIR%%/js/tinymce/skins/lightgray/img/loader.gif
 %%WWWDIR%%/js/tinymce/skins/lightgray/img/object.gif
 %%WWWDIR%%/js/tinymce/skins/lightgray/img/trans.gif
-%%WWWDIR%%/js/tinymce/skins/lightgray/skin.ie7.min.css
 %%WWWDIR%%/js/tinymce/skins/lightgray/skin.min.css
 %%WWWDIR%%/js/tinymce/themes/inlite/theme.min.js
 %%WWWDIR%%/js/tinymce/themes/modern/theme.min.js

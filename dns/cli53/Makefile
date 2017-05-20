@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cli53
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	dns
 
 MAINTAINER=	meta+ports@vmeta.jp
@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=  go>=1.5:lang/go
 
-USES=	go
+USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	barnybug
 

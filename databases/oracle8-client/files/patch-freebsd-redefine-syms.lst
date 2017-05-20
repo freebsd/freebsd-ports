@@ -1,0 +1,7 @@
+--- freebsd/redefine-syms.lst.orig	2005-06-20 23:23:35.000000000 +0700
++++ freebsd/redefine-syms.lst	2007-11-28 04:48:03.000000000 +0600
+@@ -1,2 +1,4 @@
++connect __l_connect
+ lseek	__l_lseek
+ sigprocmask __l_sigprocmask
++sigaction __l_sigaction

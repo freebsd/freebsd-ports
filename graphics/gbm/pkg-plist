@@ -1,5 +1,0 @@
-include/gbm.h
-lib/libgbm.so
-lib/libgbm.so.1
-lib/libgbm.so.1.0.0
-libdata/pkgconfig/gbm.pc

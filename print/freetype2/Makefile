@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetype2
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8
 CATEGORIES=	print
 MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		SF/freetype/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/ \
@@ -36,7 +36,8 @@ PORTDOCS=	reference CHANGES formats.txt LICENSE.TXT raster.txt
 CPE_PRODUCT=	freetype
 CPE_VENDOR=	freetype
 
-OPTIONS_DEFINE=		DEBUG DOCS LCD_FILTERING PNG TABLE_VALIDATION
+OPTIONS_DEFINE=		DEBUG DOCS LCD_FILTERING PNG TABLE_VALIDATION \
+			TT_SIZE_METRICS
 OPTIONS_GROUP=		SUBPIXEL_HINTING
 OPTIONS_GROUP_SUBPIXEL_HINTING=	V38 V40
 OPTIONS_DEFAULT=	LCD_FILTERING V40
@@ -47,10 +48,12 @@ PNG_CONFIGURE_WITH=	png
 
 TABLE_VALIDATION_DESC=	TrueType GX/AAT and OpenType table validation
 
+TT_SIZE_METRICS_DESC=	TrueType-like size metrics for 'light' (V40) auto-hinting
+
 LCD_FILTERING_DESC?=	Sub-pixel rendering (patented)
 LCD_FILTERING_CFLAGS=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
 
-SUBPIXEL_HINTING_DESC=	Sub-pixel hinting support 
+SUBPIXEL_HINTING_DESC=	Sub-pixel hinting support
 V38_DESC=	v38 mode (Infinality code)
 V38_VARS=	SUBPIXEL_HINTING_MODE+=1
 V40_DESC=	v40 mode (minimal code, a.k.a. ClearType hinting, faster)
@@ -70,9 +73,6 @@ pre-patch:
 		${WRKSRC}/builds/unix/install.mk
 
 post-patch:
-# Check defined TT_CONFIG_OPTION_SUBPIXEL_HINTING
-	@${REINPLACE_CMD} -e 's|^#if \(TT_CONFIG_OPTION_SUBPIXEL_HINTING\)\(.*\)|#if defined(\1) \&\& (\1\2)|' \
-		${WRKSRC}/include/freetype/config/ftoption.h
 .if defined(SUBPIXEL_HINTING_MODE)
 	@${REINPLACE_CMD} -i '.hinting.bak' \
 		-e 's|^\(#define TT_CONFIG_OPTION_SUBPIXEL_HINTING\).*|\1 \
@@ -93,6 +93,11 @@ post-patch-DEBUG-on:
 post-patch-TABLE_VALIDATION-on:
 	@${REINPLACE_CMD} -e '/valid$$/s|#.*\(AUX_MODULES\)|\1|' \
 		${WRKSRC}/modules.cfg
+
+post-patch-TT_SIZE_METRICS-on:
+	@${REINPLACE_CMD} -i '.metrics.bak' \
+		-e 's|.*\(#define AF_CONFIG_OPTION_TT_SIZE_METRICS\).*|\1|' \
+		${WRKSRC}/include/freetype/config/ftoption.h
 
 post-configure:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \

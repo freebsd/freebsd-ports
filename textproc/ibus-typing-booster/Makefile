@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/Menu.py:devel/py3-xdg		\
 		${PYTHON_SITELIBDIR}/gi/_gi.so:devel/py3-gobject3	\
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py35-sqlite3
+		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus	\
 		libm17n.so:devel/m17n-lib
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/Menu.py:devel/py3-xdg		\
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/Menu.py:devel/py3-xdg		\
 		${PYTHON_SITELIBDIR}/gi/_gi.so:devel/py3-gobject3	\
 		${LOCALBASE}/share/unicode/ucd/Index.txt:textproc/UCD	\
 		${LOCALBASE}/share/unicode/cldr/readme.html:textproc/CLDR\
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py35-sqlite3
+		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
 TEST_DEPENDS=	${LOCALBASE}/share/hunspell/de_DE.dic:german/hunspell	\
 		${LOCALBASE}/share/hunspell/ko_KR.aff:korean/hunspell	\
 		${LOCALBASE}/share/hunspell/en_US.aff:textproc/en-hunspell

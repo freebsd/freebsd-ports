@@ -6,7 +6,7 @@ PORTVERSION=	1.21
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	C library for the scrypt key derivation function
 
 LICENSE=	BSD2CLAUSE

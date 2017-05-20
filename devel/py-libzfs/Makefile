@@ -11,6 +11,8 @@ COMMENT=	Python libzfs bindings
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_powerpc64=	fails to build: libzfs.c: error: convert_for_assignment: incompatible type for argument 3 of zfs_path_to_zhandle
+
 USE_GITHUB=     yes
 GH_ACCOUNT=	freenas
 GH_PROJECT=	py-libzfs

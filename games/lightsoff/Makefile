@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lightsoff
-PORTVERSION=	3.18.0
+PORTVERSION=	3.24.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -10,20 +10,25 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome ligthsoff
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	vala:lang/vala \
 		itstool:textproc/itstool
-LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3
+LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
+		libclutter-1.0.so:graphics/clutter \
+		libcogl.so:graphics/cogl \
+		libjson-glib-1.0.so:devel/json-glib
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome pathfix pkgconfig sqlite tar:xz
-USE_GNOME=	gtk30 intlhack librsvg2 libxml2:build
+USES=		gettext gmake gnome localbase pathfix pkgconfig \
+		sqlite tar:xz
+USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 INSTALLS_ICONS=	yes
-USE_XORG=	x11
-USE_GL=		gl
+USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
+USE_GL=		egl gl
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.lightsoff.gschema.xml
 

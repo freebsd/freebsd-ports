@@ -6,7 +6,7 @@ PORTVERSION=	0.1.6
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	php-
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP extension for the snappy compression algorithm
 
 LICENSE=	BSD3CLAUSE PHP301

@@ -10,6 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Shared code between gnome games
 
+DEPRECATED=	Superseded by libgnome-games-support, no longer used by anything
+EXPIRATION_DATE=	2017-06-18
+
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 

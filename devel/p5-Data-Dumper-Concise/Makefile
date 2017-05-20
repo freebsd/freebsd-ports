@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Dumper-Concise
-PORTVERSION=	2.022
-PORTREVISION=	1
+PORTVERSION=	2.023
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FREW
@@ -22,6 +21,7 @@ ARGNAMES_DESC=	Enable DwarnN subroutine
 ARGNAMES_BUILD_DEPENDS=	p5-Devel-ArgNames>=0.03:devel/p5-Devel-ArgNames
 ARGNAMES_RUN_DEPENDS=	p5-Devel-ArgNames>=0.03:devel/p5-Devel-ArgNames
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

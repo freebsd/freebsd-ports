@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dbus-sharp
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.8.1
+DISTVERSIONPREFIX=v
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
-MASTER_SITES=	GHC
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono interface to the D-BUS messaging system
@@ -15,7 +14,7 @@ LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_GMCS=${LOCALBASE}/bin/mcs
-USES=		gmake mono pathfix pkgconfig
+USES=		autoreconf gmake mono pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	mono
 

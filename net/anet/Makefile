@@ -35,12 +35,12 @@ post-patch:
 		${WRKSRC}/doc/Makefile
 
 do-build:
-	${MKDIR} ${WRKSRC}/doc/html
+	@${MKDIR} ${WRKSRC}/doc/html
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat \
 		${STAGEDIR}${PREFIX}/lib/anet \
 		${STAGEDIR}${PREFIX}/include/anet
 	${INSTALL_DATA} ${WRKSRC}/src/*.ad[bs] ${WRKSRC}/src/bsd/*.ad[bs] \
@@ -51,7 +51,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gnat/anet.gpr ${STAGEDIR}${PREFIX}/lib/gnat
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

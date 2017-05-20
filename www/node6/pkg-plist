@@ -112,4 +112,6 @@ include/node/v8config.h
 %%DTRACE%%lib/dtrace/node.d
 @(,,444) man/man1/node.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/gdbinit
+%%PORTDOCS%%%%DOCSDIR%%/lldb_commands.py
+%%PORTDOCS%%%%DOCSDIR%%/lldbinit
 share/systemtap/tapset/node.stp

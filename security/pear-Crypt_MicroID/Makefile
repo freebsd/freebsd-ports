@@ -5,7 +5,7 @@ PORTNAME=	Crypt_MicroID
 PORTVERSION=	0.1.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP MicroID library
 
 USES=	pear

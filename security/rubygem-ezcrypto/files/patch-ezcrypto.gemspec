@@ -9,7 +9,7 @@
    s.homepage = "http://ezcrypto.rubyforge.org".freeze
    s.requirements = ["none".freeze]
    s.rubyforge_project = "ezcrypto".freeze
-   s.rubygems_version = "2.6.11".freeze
+   s.rubygems_version = "2.6.12".freeze
    s.summary = "Simplified encryption library.".freeze
 -  s.test_files = ["test/active_crypto_test.rb".freeze, "test/agree2.com.cert".freeze, "test/association_key_holder_test.rb".freeze, "test/database.yml".freeze, "test/debug.log".freeze, "test/digest_test.rb".freeze, "test/dsakey.pem".freeze, "test/dsapubkey.pem".freeze, "test/dsig_test.rb".freeze, "test/encrypt_test.rb".freeze, "test/ezcrypto_test.rb".freeze, "test/key_holder_test.rb".freeze, "test/protectedsigner.pem".freeze, "test/sf-class2-root.crt".freeze, "test/sf_intermediate.crt".freeze, "test/store".freeze, "test/test_helper.rb".freeze, "test/testchild.pem".freeze, "test/testchild.req".freeze, "test/testpub.pem".freeze, "test/testsigner.cert".freeze, "test/testsigner.pem".freeze, "test/valicert_class2_root.crt".freeze]
 +  s.test_files = ["test/active_crypto_test.rb".freeze, "test/agree2.com.cert".freeze, "test/association_key_holder_test.rb".freeze, "test/database.yml".freeze, "test/debug.log".freeze, "test/digest_test.rb".freeze, "test/dsakey.pem".freeze, "test/dsapubkey.pem".freeze, "test/dsig_test.rb".freeze, "test/encrypt_test.rb".freeze, "test/ezcrypto_test.rb".freeze, "test/key_holder_test.rb".freeze, "test/protectedsigner.pem".freeze, "test/sf-class2-root.crt".freeze, "test/sf_intermediate.crt".freeze, "test/test_helper.rb".freeze, "test/testchild.pem".freeze, "test/testchild.req".freeze, "test/testpub.pem".freeze, "test/testsigner.cert".freeze, "test/testsigner.pem".freeze, "test/valicert_class2_root.crt".freeze]

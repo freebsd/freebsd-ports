@@ -10,6 +10,8 @@ DISTNAME=	151210-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE thumbnail generator for ePub files
 
+PORTSCOUT=	limit:^1\.0
+
 USES=		cmake:outsource kde:4
 USE_KDE=	kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build

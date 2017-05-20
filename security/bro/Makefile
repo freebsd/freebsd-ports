@@ -3,7 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 
@@ -18,10 +18,12 @@ LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
 
-USES=		cmake:outsource compiler:c++11-lang perl5 python ssl
+USES=		cmake:outsource compiler:c++11-lang perl5 python shebangfix ssl
 
 CMAKE_ARGS+=	-D PYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 CXXFLAGS+=	-std=c++11 -Wextra -Wall -pedantic
+
+SHEBANG_FILES=	aux/broctl/aux/trace-summary/trace-summary
 
 SUB_FILES=	pkg-message
 NO_MTREE=	yes

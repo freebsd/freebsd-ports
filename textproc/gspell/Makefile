@@ -2,32 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	gspell
-PORTVERSION=	0.1.2
+PORTVERSION=	1.4.1
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Spell checking for GTK+
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	valac:lang/vala \
-	iso-codes>=3.57:misc/iso-codes
+		iso-codes>=3.57:misc/iso-codes
 LIB_DEPENDS=	libenchant.so:textproc/enchant
 
-PORTSCOUT=	limit:^0\.1\.
-
-USES=	gmake iconv libtool pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gtksourceview3 introspection:build libxml2
+USES=		gmake iconv libtool pathfix pkgconfig tar:xz
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 introspection:build \
+		libxml2 pango
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS=--enable-introspection=yes \
-	--enable-compile-warnings=no \
-	--without-html-dir \
-	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 OPTIONS_DEFINE=	NLS
 NLS_USES=	gettext-tools

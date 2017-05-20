@@ -5,7 +5,7 @@ PORTNAME=	PHP_Shell
 PORTVERSION=	0.3.2
 CATEGORIES=	shells www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Interactive PHP Shell
 
 USE_PHP=	pcre tokenizer readline

@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	freedv
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://files.freedv.org/freedv/ \
-		LOCAL/shurd
+		LOCAL/db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Narrow band digital voice
+
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	libcodec2.so:audio/codec2 \
 		libportaudio.so:audio/portaudio \
@@ -16,6 +17,7 @@ LIB_DEPENDS=	libcodec2.so:audio/codec2 \
 		libsamplerate.so:audio/libsamplerate \
 		libsox.so:audio/sox \
 		libsndfile.so:audio/libsndfile \
+		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp
 
 USE_WX=		3.0+

@@ -377,6 +377,7 @@
     SUBDIR += gnushogi
     SUBDIR += gnustep-ladder
     SUBDIR += gnustep-sudoku
+    SUBDIR += gogrepo
     SUBDIR += golddig
     SUBDIR += goldencheetah
     SUBDIR += golly
@@ -436,8 +437,6 @@
     SUBDIR += instead
     SUBDIR += interlogic
     SUBDIR += ioquake3
-    SUBDIR += ioquake3-devel
-    SUBDIR += ioquake3-devel-server
     SUBDIR += ioquake3-server
     SUBDIR += iortcw
     SUBDIR += iourbanterror
@@ -683,6 +682,10 @@
     SUBDIR += openarena-server
     SUBDIR += openastromenace
     SUBDIR += openbor
+    SUBDIR += openbor3482
+    SUBDIR += openbor3711
+    SUBDIR += openbor3979
+    SUBDIR += openbor4432
     SUBDIR += openbubbles
     SUBDIR += opencity
     SUBDIR += openclonk

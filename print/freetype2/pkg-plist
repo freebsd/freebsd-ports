@@ -33,6 +33,7 @@ include/freetype2/freetype/ftmodapi.h
 include/freetype2/freetype/ftmoderr.h
 include/freetype2/freetype/ftotval.h
 include/freetype2/freetype/ftoutln.h
+include/freetype2/freetype/ftpcfdrv.h
 include/freetype2/freetype/ftpfr.h
 include/freetype2/freetype/ftrender.h
 include/freetype2/freetype/ftsizes.h
@@ -53,7 +54,7 @@ include/freetype2/ft2build.h
 lib/libfreetype.a
 lib/libfreetype.so
 lib/libfreetype.so.6
-lib/libfreetype.so.6.13.0
+lib/libfreetype.so.6.14.0
 libdata/pkgconfig/freetype2.pc
 man/man1/freetype-config.1.gz
 share/aclocal/freetype2.m4

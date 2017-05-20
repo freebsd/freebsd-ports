@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -307,7 +307,7 @@ CONFIGURE_ARGS+=--with-file-aio
 .endif
 
 .if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=--with-cc-opt="-DNGX_HAVE_INET6=0"
+CONFIGURE_ARGS+=--with-cc-opt="-DNGX_HAVE_INET6=0 -I ${LOCALBASE}/include"
 .else
 CATEGORIES+=	ipv6
 .endif
@@ -917,7 +917,7 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER}
-PASSENGER_VERSION=	5.1.3
+PASSENGER_VERSION=	5.1.4
 MASTER_SITES+=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 .if !empty(PORT_OPTIONS:MDSO)

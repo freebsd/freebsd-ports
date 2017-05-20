@@ -3,22 +3,23 @@
 
 PORTNAME=	obkey
 PORTVERSION=	1.0
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-wm python
-MASTER_SITES=	GOOGLE_CODE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	nsf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Openbox hotkey editor, written in Python and PyGTK
 
 LICENSE=	MIT
 
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
-
 RUN_DEPENDS=	py27-gtk2>=2.14:x11-toolkits/py-gtk2
 
-USES=		gettext python
+USES=		desktop-file-utils gettext python
 USE_PYTHON=	distutils
+NO_ARCH=	yes
 
 PORTDOCS=	NEWS
 

@@ -12,6 +12,8 @@ COMMENT=	High level imperative/OO programming language
 
 CONFLICTS=	squsq-[0-9]*
 
+BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option -std=c++0x
+
 USES=		cmake dos2unix
 CMAKE_ARGS=	-DINSTALL_INC_DIR:STRING=include
 USE_LDCONFIG=	yes

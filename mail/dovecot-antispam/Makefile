@@ -17,6 +17,9 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${NONEXISTENT}:mail/dovecot:configure
 RUN_DEPENDS=	dovecot>=1.1.2:mail/dovecot
 
+DEPRECATED=	Dovecot-1.x is deprecated. Use dovecot2 and dovecot2-antispam-plugin instead
+EXPIRATION_DATE=2017-07-31
+
 USES=		gmake tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/dovecot/imap
 

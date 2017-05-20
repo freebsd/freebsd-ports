@@ -15,7 +15,8 @@ COMMENT=	Python binding for Xapian
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4.8:textproc/py-sphinx \
+		xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 BROKEN_aarch64=		fails to build: Fatal Python error: swig_pythreadstate set in XapianSWIG_Python_Thread_Allow ctor
@@ -35,8 +36,6 @@ INSTALL_TARGET=	install-strip
 USES=		libtool python tar:xz
 
 PORTDOCS=	*
-
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4.8:textproc/py-sphinx
 
 .include <bsd.port.pre.mk>
 

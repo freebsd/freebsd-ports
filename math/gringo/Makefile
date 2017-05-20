@@ -15,6 +15,8 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	re2c:devel/re2c
 
+BROKEN_powerpc64=	fails to compile: term.cc: error: pow is not a member of std
+
 USES=		bison compiler:c++11-lib scons
 
 MAKE_ARGS+=	${MAKE_ENV}

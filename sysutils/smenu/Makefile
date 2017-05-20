@@ -5,7 +5,7 @@ PORTVERSION=	0.9.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Terminal utility to interactively filter text
 
 LICENSE=	GPLv2

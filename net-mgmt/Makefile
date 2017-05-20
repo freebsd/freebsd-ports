@@ -97,6 +97,7 @@
     SUBDIR += ipcad
     SUBDIR += ipcalc
     SUBDIR += ipplan
+    SUBDIR += iprange
     SUBDIR += ipv6calc
     SUBDIR += ipv6gen
     SUBDIR += ipv6mon
@@ -109,6 +110,7 @@
     SUBDIR += lanmap
     SUBDIR += lg
     SUBDIR += librenms
+    SUBDIR += librenms-agent
     SUBDIR += libsmi
     SUBDIR += lldpd
     SUBDIR += mbrowse

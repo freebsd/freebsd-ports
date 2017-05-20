@@ -81,7 +81,7 @@ PYTHON_DEFAULT?=	2.7
 PYTHON2_DEFAULT?=	2.7
 # Possible values: 3.3, 3.4, 3.5, 3.6
 PYTHON3_DEFAULT?=	3.6
-# Possible values: 2.1, 2.2, 2.3, 2.4
+# Possible values: 2.2, 2.3, 2.4
 RUBY_DEFAULT?=		2.3
 # Possible values: 4.2, 4.3, 4.4, 4.5, 4.6
 SAMBA_DEFAULT?=		4.4
@@ -134,7 +134,7 @@ check-makevars::
 # Make sure we have a default in the end
 SSL_DEFAULT?=	base
 .endif
-# Possible values: 8.4, 8.5, 8.6, 8.7
+# Possible values: 8.4, 8.5, 8.6
 TCLTK_DEFAULT?=		8.6
 
 # Possible values: 4, 5

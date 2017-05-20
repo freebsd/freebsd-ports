@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/

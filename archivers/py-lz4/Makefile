@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lz4
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils py3kplist
 USES=		localbase pkgconfig python
 
 post-install:

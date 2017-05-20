@@ -6,7 +6,7 @@ PORTVERSION=	0.3.3
 PORTREVISION=	2
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP extension for expect library
 
 LICENSE=	PHP301

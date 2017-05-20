@@ -5,7 +5,7 @@ PORTNAME=	radius
 DISTVERSION=	1.4.0b1
 CATEGORIES=	net security pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Radius client library for PHP
 
 LICENSE=	BSD3CLAUSE

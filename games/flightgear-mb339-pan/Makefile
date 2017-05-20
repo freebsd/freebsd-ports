@@ -15,6 +15,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 RESTRICTED=	Redistribution prohibited
 
+BROKEN_powerpc64=	fails to build: runaway process
+
 NO_BUILD=	yes
 USES=		zip
 WRKSRC=	${WRKDIR}/${PORTNAME}

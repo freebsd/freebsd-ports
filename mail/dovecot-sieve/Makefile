@@ -16,6 +16,9 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${NONEXISTENT}:mail/dovecot:build
 RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}.*:mail/dovecot
 
+DEPRECATED=	Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
+EXPIRATION_DATE=2017-07-31
+
 DOVECOTVERSION=	1.2
 SIEVEVERSION=	0.1.19
 

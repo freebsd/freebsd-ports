@@ -17,6 +17,8 @@ USES=	tar:bzip2
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+BROKEN=	checksum mismatch
+
 INSTALL_TARGET=	site-install
 
 DOCS=		COPYING Changes README THANKS TODO

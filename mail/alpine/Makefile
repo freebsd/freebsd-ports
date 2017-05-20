@@ -4,7 +4,7 @@ PORTNAME?=	alpine
 PORTVERSION=	2.21
 PORTREVISION?=	0
 CATEGORIES?=	mail news ipv6
-MASTER_SITES=	http://patches.freeiz.com/alpine/release/src/
+MASTER_SITES=	http://alpine.freeiz.com/alpine/release/src/
 DIST_SUBDIR=	alpine-${PORTVERSION}
 
 MAINTAINER=	mbeis@xs4all.nl
@@ -112,7 +112,7 @@ CONFIGURE_ARGS+=	--with-passfile=.alpine.pwd
 .endif
 
 .if ${PORT_OPTIONS:MMAILDIR}
-PATCH_SITES=		http://patches.freeiz.com/alpine/patches/alpine-${PORTVERSION}/
+PATCH_SITES=		http://alpine.freeiz.com/alpine/patches/alpine-${PORTVERSION}/
 PATCHFILES+=		maildir.patch.gz:-p1
 .endif
 

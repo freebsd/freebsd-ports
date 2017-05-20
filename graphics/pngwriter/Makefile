@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	pngwriter
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.0
 CATEGORIES=	graphics devel
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	C++ library for creating PNG images
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \

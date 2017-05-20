@@ -5,10 +5,11 @@ PORTNAME=	File_Fstab
 PORTVERSION=	2.0.3
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to read and write fstab files
 
-USES=	pear
+NO_ARCH=	yes
+USES=		pear
 
 post-extract:
 .for file in ${FILES}

@@ -1,0 +1,11 @@
+--- codec2.pc.in.orig	2016-04-13 23:50:56 UTC
++++ codec2.pc.in
+@@ -1,6 +1,6 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+-libdir=@CMAKE_INSTALL_LIBDIR@
+-includedir=/usr/include/codec2
++libdir=${prefix}/lib
++includedir=${prefix}/include/codec2
+ 
+ Name: codec2
+ Description: A speech codec for 2400 bit/s and below

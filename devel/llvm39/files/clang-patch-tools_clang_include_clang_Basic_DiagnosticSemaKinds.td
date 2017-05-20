@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/include/clang/Basic/DiagnosticSemaKinds.td.orig
 +++ tools/clang/include/clang/Basic/DiagnosticSemaKinds.td
 @@ -3180,6 +3180,9 @@

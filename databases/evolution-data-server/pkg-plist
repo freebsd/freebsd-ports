@@ -213,6 +213,7 @@ include/evolution-data-server/libedataserver/e-gdbus-templates.h
 include/evolution-data-server/libedataserver/e-iterator.h
 include/evolution-data-server/libedataserver/e-list-iterator.h
 include/evolution-data-server/libedataserver/e-list.h
+include/evolution-data-server/libedataserver/e-network-monitor.h
 include/evolution-data-server/libedataserver/e-memory.h
 include/evolution-data-server/libedataserver/e-module.h
 include/evolution-data-server/libedataserver/e-operation-pool.h
@@ -230,6 +231,7 @@ include/evolution-data-server/libedataserver/e-source-calendar.h
 include/evolution-data-server/libedataserver/e-source-camel.h
 include/evolution-data-server/libedataserver/e-source-collection.h
 include/evolution-data-server/libedataserver/e-source-contacts.h
+include/evolution-data-server/libedataserver/e-source-credentials-provider-impl-google.h
 include/evolution-data-server/libedataserver/e-source-credentials-provider-impl-password.h
 include/evolution-data-server/libedataserver/e-source-credentials-provider-impl.h
 include/evolution-data-server/libedataserver/e-source-credentials-provider.h
@@ -270,6 +272,7 @@ include/evolution-data-server/libedataserver/eds-version.h
 include/evolution-data-server/libedataserver/libedataserver.h
 include/evolution-data-server/libedataserverui/e-cell-renderer-color.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-password.h
+include/evolution-data-server/libedataserverui/e-credentials-prompter-impl-google.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter-impl.h
 include/evolution-data-server/libedataserverui/e-credentials-prompter.h
 include/evolution-data-server/libedataserverui/e-trust-prompt.h
@@ -335,8 +338,8 @@ lib/evolution-data-server/registry-modules/module-yahoo-backend.a
 lib/evolution-data-server/registry-modules/module-yahoo-backend.so
 lib/libcamel-%%EVO_VERSION%%.a
 lib/libcamel-%%EVO_VERSION%%.so
-lib/libcamel-%%EVO_VERSION%%.so.54
-lib/libcamel-%%EVO_VERSION%%.so.54.0.0
+lib/libcamel-%%EVO_VERSION%%.so.59
+lib/libcamel-%%EVO_VERSION%%.so.59.0.0
 lib/libebackend-%%EVO_VERSION%%.a
 lib/libebackend-%%EVO_VERSION%%.so
 lib/libebackend-%%EVO_VERSION%%.so.10
@@ -363,8 +366,8 @@ lib/libedata-cal-%%EVO_VERSION%%.so.28
 lib/libedata-cal-%%EVO_VERSION%%.so.28.0.0
 lib/libedataserver-%%EVO_VERSION%%.a
 lib/libedataserver-%%EVO_VERSION%%.so
-lib/libedataserver-%%EVO_VERSION%%.so.21
-lib/libedataserver-%%EVO_VERSION%%.so.21.0.0
+lib/libedataserver-%%EVO_VERSION%%.so.22
+lib/libedataserver-%%EVO_VERSION%%.so.22.0.0
 lib/libedataserverui-%%EVO_VERSION%%.a
 lib/libedataserverui-%%EVO_VERSION%%.so
 lib/libedataserverui-%%EVO_VERSION%%.so.1
@@ -372,6 +375,10 @@ lib/libedataserverui-%%EVO_VERSION%%.so.1.0.0
 lib/girepository-1.0/EBook-%%EVO_VERSION%%.typelib
 lib/girepository-1.0/EBookContacts-%%EVO_VERSION%%.typelib
 lib/girepository-1.0/EDataServer-%%EVO_VERSION%%.typelib
+lib/systemd/user/evolution-addressbook-factory.service
+lib/systemd/user/evolution-calendar-factory.service
+lib/systemd/user/evolution-source-registry.service
+lib/systemd/user/evolution-user-prompter.service
 libdata/pkgconfig/camel-%%EVO_VERSION%%.pc
 libdata/pkgconfig/evolution-data-server-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libebackend-%%EVO_VERSION%%.pc
@@ -383,6 +390,9 @@ libdata/pkgconfig/libedata-cal-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libedataserver-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libedataserverui-%%EVO_VERSION%%.pc
 libexec/camel-index-control-%%EVO_VERSION%%
+libexec/camel-gpg-photo-saver
+libexec/evolution-data-server/addressbook-export
+libexec/evolution-data-server/csv2vcard
 @(,mail,2755) libexec/camel-lock-helper-%%EVO_VERSION%%
 libexec/evolution-addressbook-factory
 libexec/evolution-addressbook-factory-subprocess
@@ -397,6 +407,7 @@ share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Calendar.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Sources.service
 share/dbus-1/services/org.gnome.evolution.dataserver.UserPrompter.service
+share/gir-1.0/Camel-%%EVO_VERSION%%.gir
 share/gir-1.0/EBook-%%EVO_VERSION%%.gir
 share/gir-1.0/EBookContacts-%%EVO_VERSION%%.gir
 share/gir-1.0/EDataServer-%%EVO_VERSION%%.gir
@@ -505,6 +516,8 @@ share/pixmaps/evolution-data-server/category_status_16.png
 share/pixmaps/evolution-data-server/category_strategies_16.png
 share/pixmaps/evolution-data-server/category_suppliers_16.png
 share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
+share/vala/vapi/camel-%%EVO_VERSION%%.deps
+share/vala/vapi/camel-%%EVO_VERSION%%.vapi
 share/vala/vapi/libebook-%%EVO_VERSION%%.deps
 share/vala/vapi/libebook-%%EVO_VERSION%%.vapi
 share/vala/vapi/libebook-contacts-%%EVO_VERSION%%.deps

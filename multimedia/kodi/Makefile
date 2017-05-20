@@ -2,6 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	17.1
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -56,8 +57,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libvorbis.so:audio/libvorbis \
 		libxslt.so:textproc/libxslt \
 		libyajl.so:devel/yajl
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
-		python:lang/python
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 CONFLICTS_BUILD=compat9x
 
@@ -69,7 +69,7 @@ GH_TUPLE=	xbmc:xbmc:fc1619b \
 		xbmc:libdvdread:17d99db:libdvdread/tools/depends/target/libdvdread/native
 
 USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
-		libtool pkgconfig python:2 ssl
+		libtool pkgconfig python:-2.7 ssl
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 USE_GNOME=	libxml2

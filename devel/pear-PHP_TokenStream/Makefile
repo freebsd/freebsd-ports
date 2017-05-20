@@ -6,7 +6,7 @@ PORTVERSION=	1.4.11
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Wrapper around PHP tokenizer extension
 
 LICENSE=	BSD3CLAUSE

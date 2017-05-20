@@ -19,6 +19,8 @@ BUILD_DEPENDS=	gengetopt:devel/gengetopt \
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libpng.so:graphics/png
 
+BROKEN_powerpc64=	fails to build: grd5read.c: \#pragma GCC diagnostic not allowed inside functions
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jjgreen
 

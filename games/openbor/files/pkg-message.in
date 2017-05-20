@@ -1,0 +1,10 @@
+To play a game copy its .pak file under ~/.%%PKGBASE%%/Paks/ directory.
+If only one file is there OpenBOR would run the game on startup,
+otherwise game launcher would appear.
+
+In case a game has data/ directory unpacked you may need to run it
+as follows:
+
+  $ cd /path/to/game
+  $ cp -R ~/.%%PKGBASE%%/Saves .
+  $ OPENBOR_USE_CURDIR=1 %%PKGBASE%%

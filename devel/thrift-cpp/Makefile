@@ -6,17 +6,19 @@ PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
 PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	devel
+MASTER_SITES=	APACHE/thrift/${PORTVERSION}
 PKGNAMESUFFIX=	-cpp
-MASTER_SITES=		APACHE/thrift/${PORTVERSION}
-DISTNAME=		thrift-${PORTVERSION}
+DISTNAME=	thrift-${PORTVERSION}
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	C++ interface to Thrift
 
-DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
-
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libevent.so:devel/libevent
+
+DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
+
+BROKEN_powerpc64=	fails to compile: undefined reference to std::__throw_out_of_range_fmt
 
 USES=			autoreconf pkgconfig gmake compiler:c++11-lang \
 			libtool pathfix ssl
@@ -55,7 +57,7 @@ USE_CXXSTD=	c++11
 .endif
 
 .if ${SSL_DEFAULT} == openssl-devel
-BROKEN=		Cannot find libcrypto.
+BROKEN=		cannot find libcrypto
 .endif
 
 post-install:

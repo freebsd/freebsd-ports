@@ -47,6 +47,7 @@
     SUBDIR += autocd
     SUBDIR += autotalent
     SUBDIR += autozen
+    SUBDIR += aylet
     SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += bcg729
@@ -514,6 +515,7 @@
     SUBDIR += mpdas
     SUBDIR += mpdbrowser
     SUBDIR += mpdcon
+    SUBDIR += mpdscribble
     SUBDIR += mpg123
     SUBDIR += mpg123.el
     SUBDIR += mpg321
@@ -627,6 +629,7 @@
     SUBDIR += py-eyed3
     SUBDIR += py-fmoo-audiotools
     SUBDIR += py-gmusicapi
+    SUBDIR += py-hsaudiotag
     SUBDIR += py-id3
     SUBDIR += py-karaoke
     SUBDIR += py-mad
@@ -777,7 +780,6 @@
     SUBDIR += tuxguitar
     SUBDIR += twolame
     SUBDIR += uade
-    SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += umodplayer
     SUBDIR += umurmur

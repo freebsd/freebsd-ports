@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.4.18
-PORTREVISION=	4
+PORTVERSION=	2.4.19
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -103,6 +103,7 @@ GSSAPI_MIT_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
 AUTOCREATE_VERSION=	0.10-0
 AUTOCREATE_PATCH_SITES=	LOCAL/mm:autocreate
 AUTOCREATE_PATCHFILES=	${PORTNAME}-2.4.4-autocreate-${AUTOCREATE_VERSION}.patch:-p1:autocreate
+AUTOCREATE_BROKEN=	Patch is not applicable
 
 AUTOSIEVE_VERSION=	0.6.0
 AUTOSIEVE_PATCH_SITES=	LOCAL/mm:autosieve

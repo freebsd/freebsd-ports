@@ -21,8 +21,8 @@ GH_PROJECT=	openlibm
 USES=	gmake
 USE_LDCONFIG=	yes
 
-BROKEN_aarch64=		Does not compile: the clang compiler does not support -march=aarch64
-BROKEN_powerpc64=	Does not build
+BROKEN_aarch64=		does not compile: the clang compiler does not support -march=aarch64
+BROKEN_powerpc64=	does not build: gmake: clang: Command not found
 
 .include <bsd.port.pre.mk>
 

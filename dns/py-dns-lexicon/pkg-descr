@@ -1,0 +1,6 @@
+Lexicon provides a way to manipulate DNS records on multiple DNS providers in a
+standardized way. Lexicon has a CLI but it can also be used as a python library.
+
+Lexicon was designed to be used in automation, specifically letsencrypt.
+
+WWW: https://github.com/AnalogJ/lexicon

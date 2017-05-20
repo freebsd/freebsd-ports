@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.13.4
-PORTREVISION?=	3
+PORTVERSION=	1.13.5
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -29,6 +28,7 @@ SHEBANG_FILES=	filter/braille/drivers/generic/brftoembosser.in \
 		filter/braille/drivers/index/imageubrltoindexv4.in \
 		filter/braille/drivers/index/textbrftoindexv3.in \
 		filter/braille/filters/imagetobrf.in \
+		filter/braille/filters/liblouis1.defs.gen.in \
 		filter/braille/filters/texttobrf.in
 USE_GNOME=	glib20
 USE_RC_SUBR=	cups_browsed
@@ -50,6 +50,7 @@ OPTIONS_SUB=			yes
 
 BRAILLE_CONFIGURE_ENABLE=	braille
 BRAILLE_DESC=			Braille embosser support
+BRAILLE_BUILD_DEPENDS=		bash:shells/bash
 BRAILLE_LIB_DEPENDS=		liblouis.so:devel/liblouis \
 #				liblouisutdml.so:devel/liblouisutdml
 BRAILLE_RUN_DEPENDS=		convert:graphics/ImageMagick \

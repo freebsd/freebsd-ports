@@ -6,6 +6,7 @@
 %%SITE_PERL%%/MetaCPAN/Client/File.pm
 %%SITE_PERL%%/MetaCPAN/Client/Mirror.pm
 %%SITE_PERL%%/MetaCPAN/Client/Module.pm
+%%SITE_PERL%%/MetaCPAN/Client/Package.pm
 %%SITE_PERL%%/MetaCPAN/Client/Permission.pm
 %%SITE_PERL%%/MetaCPAN/Client/Pod.pm
 %%SITE_PERL%%/MetaCPAN/Client/Rating.pm
@@ -24,6 +25,7 @@
 %%PERL5_MAN3%%/MetaCPAN::Client::File.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Mirror.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Module.3.gz
+%%PERL5_MAN3%%/MetaCPAN::Client::Package.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Permission.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Pod.3.gz
 %%PERL5_MAN3%%/MetaCPAN::Client::Rating.3.gz

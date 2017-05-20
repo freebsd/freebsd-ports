@@ -6,7 +6,7 @@ PORTVERSION=	3.0.2
 PORTREVISION=	1
 CATEGORIES=	archivers pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension to create and read RAR files
 
 LICENSE=	PHP301

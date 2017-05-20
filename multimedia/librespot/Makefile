@@ -10,6 +10,8 @@ COMMENT=	Open Source Spotify client library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		tries to clone git repository during build phase
+
 BUILD_DEPENDS=	cargo>0:devel/cargo \
 		portaudio>0:audio/portaudio
 

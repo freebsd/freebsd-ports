@@ -5,7 +5,7 @@ PORTNAME=	w3af
 PORTVERSION=	1.6.49
 CATEGORIES=	security python www
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Web Application Attack and Audit Framework
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTVERSION=	0.7.0
 PORTREVISION=	1
 CATEGORIES=	databases pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Wrapper to the Tokyo Tyrant client library
 
 LICENSE=	PHP301

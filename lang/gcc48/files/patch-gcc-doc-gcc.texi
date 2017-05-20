@@ -1,0 +1,20 @@
+--- gcc/doc/gcc.texi.orig	2015-06-23 07:35:08 UTC
++++ gcc/doc/gcc.texi
+@@ -85,9 +85,15 @@ Published by:
+ @item GNU Press
+ @tab Website: www.gnupress.org
+ @item a division of the
+-@tab General: @tex press@@gnu.org @end tex
++@tab General:
++@tex
++press@@gnu.org
++@end tex
+ @item Free Software Foundation
+-@tab Orders:  @tex sales@@gnu.org @end tex
++@tab Orders:
++@tex
++sales@@gnu.org
++@end tex
+ @item 51 Franklin Street, Fifth Floor
+ @tab Tel 617-542-5942
+ @item Boston, MA 02110-1301 USA

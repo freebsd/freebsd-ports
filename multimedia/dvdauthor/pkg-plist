@@ -10,6 +10,7 @@ man/man1/dvdunauthor.1.gz
 man/man1/mpeg2desc.1.gz
 man/man1/spumux.1.gz
 man/man1/spuunmux.1.gz
+man/man7/video_format.7.gz
 %%DATADIR%%/common.xsd
 %%DATADIR%%/dvdauthor.xsd
 %%DATADIR%%/spumux.xsd

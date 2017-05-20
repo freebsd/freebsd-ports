@@ -24,13 +24,17 @@
     SUBDIR += R-cran-dygraphs
     SUBDIR += R-cran-ggplot2
     SUBDIR += R-cran-gridBase
+    SUBDIR += R-cran-gridExtra
     SUBDIR += R-cran-munsell
     SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-png
+    SUBDIR += R-cran-qcc
     SUBDIR += R-cran-rgdal
     SUBDIR += R-cran-rtiff
     SUBDIR += R-cran-scales
     SUBDIR += R-cran-shape
+    SUBDIR += R-cran-viridis
+    SUBDIR += R-cran-viridisLite
     SUBDIR += R-cran-visNetwork
     SUBDIR += SciPlot
     SUBDIR += a2png
@@ -144,7 +148,6 @@
     SUBDIR += djview4-qt4
     SUBDIR += djvulibre
     SUBDIR += dmtx-utils
-    SUBDIR += dri
     SUBDIR += driconf
     SUBDIR += dspdfviewer
     SUBDIR += duhdraw
@@ -214,7 +217,6 @@
     SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += gauche-gl
-    SUBDIR += gbm
     SUBDIR += gcolor
     SUBDIR += gcolor2
     SUBDIR += gcolor3
@@ -469,8 +471,6 @@
     SUBDIR += leptonica
     SUBDIR += lfview
     SUBDIR += lib3ds
-    SUBDIR += libEGL
-    SUBDIR += libGL
     SUBDIR += libGLU
     SUBDIR += libGLw
     SUBDIR += libafterimage
@@ -493,8 +493,6 @@
     SUBDIR += libgaiagraphics
     SUBDIR += libgeotiff
     SUBDIR += libgfx
-    SUBDIR += libglapi
-    SUBDIR += libglesv2
     SUBDIR += libgltext
     SUBDIR += libgltf
     SUBDIR += libgnomecanvas
@@ -544,6 +542,7 @@
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg03
     SUBDIR += libyuv
+    SUBDIR += libzmf
     SUBDIR += lightzone
     SUBDIR += linplasma
     SUBDIR += linux-adobesvg
@@ -588,6 +587,8 @@
     SUBDIR += mapyrus
     SUBDIR += megapov
     SUBDIR += mesa-demos
+    SUBDIR += mesa-dri
+    SUBDIR += mesa-libs
     SUBDIR += meshviewer
     SUBDIR += metacam
     SUBDIR += metapixel
@@ -838,6 +839,7 @@
     SUBDIR += py-cairocffi
     SUBDIR += py-chart
     SUBDIR += py-django-easy-thumbnails
+    SUBDIR += py-djvulibre
     SUBDIR += py-editobj
     SUBDIR += py-exif
     SUBDIR += py-exifread
@@ -876,6 +878,7 @@
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
+    SUBDIR += py-pyembree
     SUBDIR += py-pygal
     SUBDIR += py-pyganim
     SUBDIR += py-pyglet

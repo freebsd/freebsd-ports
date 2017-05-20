@@ -1,3 +1,3 @@
-TIMESTAMP = 1478939784
-SHA256 (backports.functools_lru_cache-1.3.tar.gz) = 444a21bcec4ae177da554321f81a78dc879eaa8f6ea9920cb904830585d31e95
-SIZE (backports.functools_lru_cache-1.3.tar.gz) = 6685
+TIMESTAMP = 1494677825
+SHA256 (backports.functools_lru_cache-1.4.tar.gz) = 31f235852f88edc1558d428d890663c49eb4514ffec9f3650e7f3c9e4a12e36f
+SIZE (backports.functools_lru_cache-1.4.tar.gz) = 6927

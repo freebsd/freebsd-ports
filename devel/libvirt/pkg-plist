@@ -8,6 +8,19 @@ man/man1/virt-admin.1.gz
 man/man1/virt-host-validate.1.gz
 man/man1/virt-pki-validate.1.gz
 man/man1/virt-xml-validate.1.gz
+man/man7/virkeycode-atset1.7.gz
+man/man7/virkeycode-atset2.7.gz
+man/man7/virkeycode-atset3.7.gz
+man/man7/virkeycode-linux.7.gz
+man/man7/virkeycode-osx.7.gz
+man/man7/virkeycode-rfb.7.gz
+man/man7/virkeycode-usb.7.gz
+man/man7/virkeycode-win32.7.gz
+man/man7/virkeycode-xt.7.gz
+man/man7/virkeycode-xtkbd.7.gz
+man/man7/virkeyname-linux.7.gz
+man/man7/virkeyname-osx.7.gz
+man/man7/virkeyname-win32.7.gz
 man/man8/libvirtd.8.gz
 man/man8/virtlockd.8.gz
 man/man8/virtlogd.8.gz
@@ -109,6 +122,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/drvesx.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvhyperv.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvlxc.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvnodedev.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvopenvz.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvphyp.html
 %%DOCSDIR%%%%PORTVERSION%%/html/drvqemu.html

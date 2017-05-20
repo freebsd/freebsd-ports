@@ -104,7 +104,6 @@
     SUBDIR += boxbackup-devel
     SUBDIR += brasero
     SUBDIR += bsd-splash-changer
-    SUBDIR += bsdadminscripts
     SUBDIR += bsdconfig
     SUBDIR += bsdcrashtar
     SUBDIR += bsdhwmon
@@ -410,7 +409,6 @@
     SUBDIR += graid5
     SUBDIR += graveman
     SUBDIR += graylog
-    SUBDIR += grok
     SUBDIR += grub2
     SUBDIR += grub2-bhyve
     SUBDIR += grub2-efi
@@ -850,6 +848,7 @@
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen
     SUBDIR += pwsafe
+    SUBDIR += pxattr
     SUBDIR += py-XenAPI
     SUBDIR += py-analyzemft
     SUBDIR += py-bcfg2
@@ -890,6 +889,7 @@
     SUBDIR += py-ranger
     SUBDIR += py-salt
     SUBDIR += py-scandir
+    SUBDIR += py-scriptine
     SUBDIR += py-shutilwhich
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor

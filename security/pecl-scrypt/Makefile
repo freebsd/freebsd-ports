@@ -5,7 +5,7 @@ PORTNAME=	scrypt
 PORTVERSION=	1.4.2
 CATEGORIES=	security pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PHP wrapper to Colin Percival's scrypt implementation
 
 LICENSE=	BSD2CLAUSE

@@ -76,6 +76,7 @@
 %%SITE_PERL%%/Net/DNS/Resolver/android.pm
 %%SITE_PERL%%/Net/DNS/Resolver/cygwin.pm
 %%SITE_PERL%%/Net/DNS/Resolver/os2.pm
+%%SITE_PERL%%/Net/DNS/Resolver/os390.pm
 %%SITE_PERL%%/Net/DNS/Text.pm
 %%SITE_PERL%%/Net/DNS/Update.pm
 %%SITE_PERL%%/Net/DNS/ZoneFile.pm
@@ -157,6 +158,7 @@
 %%PERL5_MAN3%%/Net::DNS::Resolver::android.3.gz
 %%PERL5_MAN3%%/Net::DNS::Resolver::cygwin.3.gz
 %%PERL5_MAN3%%/Net::DNS::Resolver::os2.3.gz
+%%PERL5_MAN3%%/Net::DNS::Resolver::os390.3.gz
 %%PERL5_MAN3%%/Net::DNS::Text.3.gz
 %%PERL5_MAN3%%/Net::DNS::Update.3.gz
 %%PERL5_MAN3%%/Net::DNS::ZoneFile.3.gz

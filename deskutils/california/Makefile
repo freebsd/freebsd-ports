@@ -10,20 +10,21 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Calendar client for GNOME 3
 
-IGNORE=		Not compatible with evolution-data-server 3.16.0
-
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		xdg-open:devel/xdg-utils
 LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3 \
 		libsoup-2.4.so:devel/libsoup \
 		libgee-0.8.so:devel/libgee \
 		libgdata.so:devel/libgdata \
+		libical.so:devel/libical \
+		libsecret-1.so:security/libsecret \
+		libjson-glib-1.0.so:devel/json-glib \
 		libgoa-1.0.so:net/gnome-online-accounts
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
-USE_GNOME=	evolutiondataserver3 glib20 gnomedocutils gnomeprefix \
+USE_GNOME=	cairo evolutiondataserver3 glib20 gnomedocutils gnomeprefix \
 		gtk30 intlhack introspection
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

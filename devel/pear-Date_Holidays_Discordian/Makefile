@@ -4,7 +4,7 @@ PORTNAME=	Date_Holidays_Discordian
 PORTVERSION=	0.1.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Driver based class to calculate Discordian holidays
 
 BUILD_DEPENDS=  ${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays
