@@ -8,5 +8,5 @@ include/libfastjson/json_util.h
 lib/libfastjson.a
 lib/libfastjson.so
 lib/libfastjson.so.4
-lib/libfastjson.so.4.0.0
+lib/libfastjson.so.4.1.0
 libdata/pkgconfig/libfastjson.pc
