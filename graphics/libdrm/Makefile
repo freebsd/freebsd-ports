@@ -3,6 +3,7 @@
 
 PORTNAME=	libdrm
 PORTVERSION=	2.4.80
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
@@ -20,33 +21,25 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFINE=	MANPAGES TESTS
+OPTIONS_SUB=	yes
+
+TESTS_DESC=	Install test programs (which are always built)
 
 .if defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	MANPAGES
 .endif
 
+MANPAGES_CONFIGURE_ENABLE=	manpages
+MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+MANPAGES_USE=		GNOME=libxslt:build
+
+TESTS_CONFIGURE_ENABLE=	install-test-programs
+
+# avoid circular dependency in case cairo supports OpenGL (cairo->mesa-libs->libdrm->cairo)
+CONFIGURE_ARGS+=	--disable-cairo-tests
+
 .include <bsd.port.options.mk>
-
-# KMS support in the kernel is only build on these archs, disable others
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-CONFIGURE_ARGS+=--enable-libkms
-PLIST_SUB+=	KMS=""
-.else
-CONFIGURE_ARGS+=--disable-libkms
-PLIST_SUB+=	KMS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
-USE_GNOME+=	libxslt:build
-PLIST_SUB+=	MAN=""
-.else
-CONFIGURE_ARGS+=--disable-manpages
-PLIST_SUB+=	MAN="@comment "
-.endif
-
-CONFIGURE_ARGS+=--disable-vmwgfx
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 PLIST_SUB+=	ARM_DRIVERS="@comment "
