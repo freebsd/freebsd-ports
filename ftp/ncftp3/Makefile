@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncftp
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.6
 PORTREVISION?=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/ \
@@ -15,7 +15,7 @@ COMMENT=	FTP client with advanced user interface
 LICENSE=	ARTPERL10
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
-USES=		ncurses tar:bzip2
+USES=		ncurses tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 USE_LDCONFIG=	yes
