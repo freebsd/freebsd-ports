@@ -12,7 +12,7 @@ COMMENT=	Hash Algorithm Benchmarking
 
 LICENSE=	MIT
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	fails to compile: City.cpp: byteswap.h: No such file or directory
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gvnn3

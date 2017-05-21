@@ -29,9 +29,8 @@ USE_RC_SUBR=	riak
 USE_GCC=	yes
 
 BROKEN_i386=		does not build
-BROKEN_powerpc64=	does not build
 BROKEN_sparc64=		does not build: Please implement AtomicPointer for this platform
-NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS=		aarch64 powerpc64
 NOT_FOR_ARCHS_REASON=	does not build: error: Unknown CPU architecture
 
 USERS=		riak

@@ -13,9 +13,9 @@ COMMENT=	Simple image viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
-
 LIB_DEPENDS=	libcurl.so:ftp/curl
+
+BROKEN=		fails to compile: ustring.h: expected ';' at end of declaration list
 
 USES=		desktop-file-utils gettext pkgconfig
 USE_GNOME=	gtkmm24
