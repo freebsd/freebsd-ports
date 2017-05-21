@@ -19,7 +19,7 @@ USES=		cmake tar:bzip2
 CONFLICTS=	tarantool-c
 
 BROKEN_aarch64=		Does not build: clang does not support -march=native
-BROKEN_powerpc64=	Does not build on powerpc64
+BROKEN_powerpc64=	Does not build: clang does not support -march=native
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sources/nosqlbench.conf \

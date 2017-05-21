@@ -18,9 +18,11 @@ LICENSE_NAME=	Risa/Asir Limited Use License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		does not build
-
 LIB_DEPENDS=	libpari.so:math/pari
+
+BROKEN=		does not compile: paridecl.h: conflicting types for 'mulreal'
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	fails to compile: the collector has not been ported to this machine/OS combination
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		autoreconf readline tar:bz2
@@ -34,8 +36,6 @@ ASIR_SRC=	asir-${ASIR_SRC_VERSION}${EXTRACT_SUFX}
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}${EXTRACT_SUFX}
 GC_SRC=		gc-${GC_VERSION}.tar.gz
 WRKSRC=		${WRKDIR}/asir2000
-
-BROKEN_aarch64=		Fails to compile: the collector has not been ported to this machine/OS combination
 
 LIB_DATA= alpi bfct bgk const cyclic defs.h dfff dmul dmul102 fctrdata \
 	fctrtest fff glib gr ifplot katsura launch mat nf num primdec \
