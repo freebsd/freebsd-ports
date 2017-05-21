@@ -11,7 +11,7 @@ COMMENT=	Core library for Konqueror
 
 LIB_DEPENDS=	libphonon.so:multimedia/phonon
 
-USES=		cmake kde:4 tar:xz
+USES=		cmake:outsource kde:4 tar:xz
 USE_KDE=	kdelibs automoc4 soprano
 USE_QT4=	corelib dbus gui network svg xml \
 		moc_build qmake_build rcc_build uic_build
