@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		libaravis
-PORTVERSION=		0.5.8
+PORTVERSION=		0.5.9
 CATEGORIES=		devel
 
 MAINTAINER=		rozhuk.im@gmail.com
@@ -13,7 +13,7 @@ LICENSE=		LGPL21+
 USE_GITHUB=		yes
 GH_ACCOUNT=		AravisProject
 GH_PROJECT=		aravis
-GH_TAGNAME=		1b67490cf9c18d3ff3aa023054d79302726e5a66
+GH_TAGNAME=		c681c522adb0e3a673bb62d26467af2b7090693a
 
 CONFLICTS_INSTALL=	${PORTNAME}*
 DOCSDIR=		${PREFIX}/share/doc/aravis/aravis-0.6
