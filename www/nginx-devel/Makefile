@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.13.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -1345,11 +1345,6 @@ post-install:
 .if !empty(PORT_OPTIONS:MDSO)
 	(cd ${STAGEDIR}${PREFIX} && ${FIND} ${MODULESDIR:S|${PREFIX}/||} \
 		! -type d >>${TMPPLIST})
-# Update nginx.conf-dist with a list of staged dynamic modules
-	(cd ${STAGEDIR} && \
-		${FIND} ${MODULESDIR:S|^/||} -type f -name '*.so' \
-			-exec ${ECHO_CMD} "load_module /{};" \; \
-			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist)
 .endif
 	${CAT} ${WRKSRC}/conf/nginx.conf \
 		>>${STAGEDIR}${ETCDIR}/nginx.conf-dist
