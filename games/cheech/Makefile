@@ -13,9 +13,9 @@ COMMENT=	Multiplayer Chinese Checkers game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
-
 LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
+
+BROKEN=		fails to compile: ustring.h: expected ';' at end of declaration list
 
 OPTIONS_DEFINE=	DOCS
 

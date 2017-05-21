@@ -18,7 +18,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liburiparser.so:net/uriparser
 RUN_DEPENDS=	dtv-scan-tables>=0:multimedia/dtv-scan-tables
 
-BROKEN_powerpc64=	Does not build
+BROKEN_mips=		fails to configure: No C compiler found
+BROKEN_mips64=		fails to configure: No C compiler found
+BROKEN_powerpc64=	fails to configure: No C compiler found
 
 USE_GITHUB=	yes
 

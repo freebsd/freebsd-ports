@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME interface to xcompmgr
 
-BROKEN=		fails to build
-
 RUN_DEPENDS=	xcompmgr:x11-wm/xcompmgr
+
+BROKEN=		fails to compile: ustring.h: expected ';' at end of declaration list
 
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lX11

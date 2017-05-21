@@ -51,7 +51,7 @@ SSE_VARS=	SSE_FLAGS="-mmmx -msse"
 
 .include <bsd.port.pre.mk>
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	fails to package: bseblockutils.SSE.so: No such file or directory
 
 MAKE_JOBS_UNSAFE=	yes
 

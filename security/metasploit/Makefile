@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.14.16
+PORTVERSION=	4.14.21
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -15,6 +15,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-activerecord4>=4.2.6:databases/rubygem-activerecord4 \
 		rubygem-activesupport4>=4.2.6:devel/rubygem-activesupport4 \
 		rubygem-actionpack4>=4.2.6:www/rubygem-actionpack4 \
+		rubygem-backports>=0:devel/rubygem-backports \
 		rubygem-bcrypt>=0:security/rubygem-bcrypt \
 		rubygem-bundler>=0:sysutils/rubygem-bundler \
 		rubygem-jsobfu>=0:www/rubygem-jsobfu \
@@ -24,13 +25,13 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.2.24:security/rubygem-metasploit-payloads \
+		rubygem-metasploit-payloads>=1.2.29:security/rubygem-metasploit-payloads \
 		rubygem-metasploit_payloads-mettle>=0.1.9:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
-		rubygem-packetfu>=1.1.13.p:net/rubygem-packetfu \
+		rubygem-packetfu>=0:net/rubygem-packetfu \
 		rubygem-pcaprub>=0:net/rubygem-pcaprub \
 		rubygem-pg>=0:databases/rubygem-pg \
 		rubygem-railties4>=4.2.6:www/rubygem-railties4 \

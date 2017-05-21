@@ -4,12 +4,10 @@ include/goa-1.0/goa/goaclient.h
 include/goa-1.0/goa/goaenums.h
 include/goa-1.0/goa/goaenumtypes.h
 include/goa-1.0/goa/goaerror.h
-include/goa-1.0/goa/goatypes.h
 include/goa-1.0/goa/goaversion.h
 include/goa-1.0/goabackend/goabackend.h
 include/goa-1.0/goabackend/goabackendenums.h
 include/goa-1.0/goabackend/goabackendenumtypes.h
-include/goa-1.0/goabackend/goabackendtypes.h
 include/goa-1.0/goabackend/goaprovider.h
 lib/girepository-1.0/Goa-1.0.typelib
 lib/goa-1.0/include/goaconfig.h
@@ -256,6 +254,7 @@ share/locale/fi/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/fi/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/fr/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/fr/LC_MESSAGES/gnome-online-accounts.mo
+share/locale/fur/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/fur/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ga/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ga/LC_MESSAGES/gnome-online-accounts.mo
@@ -269,10 +268,12 @@ share/locale/he/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/hi/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/hi/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/hr/LC_MESSAGES/gnome-online-accounts-tpaw.mo
+share/locale/hr/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/hu/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/hu/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/id/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/id/LC_MESSAGES/gnome-online-accounts.mo
+share/locale/is/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/is/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/it/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/it/LC_MESSAGES/gnome-online-accounts.mo
@@ -361,3 +362,5 @@ share/locale/zh_HK/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/zu/LC_MESSAGES/gnome-online-accounts-tpaw.mo
+share/vala/vapi/goa-1.0.deps
+share/vala/vapi/goa-1.0.vapi

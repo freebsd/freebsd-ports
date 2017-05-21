@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmad.so:audio/libmad
 
+PORTSCOUT=	ignore:1
+
 USE_PYTHON=	autoplist distutils
 USES=		python
 
