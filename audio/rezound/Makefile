@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 
+BROKEN_powerpc64=	fails to compile: CAtomicCounter.h: boost/detail/atomic_count.hpp: No such file or directory
+
 USES=		bison pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa

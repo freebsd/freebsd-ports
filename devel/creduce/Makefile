@@ -19,6 +19,8 @@ RUN_DEPENDS=	llvm-config39:devel/llvm39 \
 		devel/p5-Sys-Cpu>=0:devel/p5-Sys-Cpu \
 		p5-Getopt-Tabular>=0:devel/p5-Getopt-Tabular
 
+BROKEN_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM
+
 GNU_CONFIGURE=	yes
 CONFIGURE_FLAGS=	--with-llvm=${LOCALBASE}
 CONFIGURE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config39 \

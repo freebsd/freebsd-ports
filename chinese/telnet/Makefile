@@ -25,7 +25,7 @@ IGNORE=		need to build this port with the source code of telnet
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
-BROKEN=		does not build
+BROKEN=		does not build: libtelnet/Makefile: Could not find src.opts.mk
 .endif
 
 BROKEN_DragonFly=	does not build

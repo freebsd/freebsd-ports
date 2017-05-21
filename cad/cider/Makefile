@@ -11,7 +11,8 @@ DISTNAME=	cider1b1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixed-level circuit and device simulator (includes SPICE3)
 
-BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_powerpc64=	fails to compile: ccache: cc: FreeBSD: No such file or directory
 
 CONFLICTS=	spice-[0-9]*
 WRKSRC=		${WRKDIR}/sim

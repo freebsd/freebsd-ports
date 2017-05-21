@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 
+BROKEN_powerpc64=	fails to compile: analyzerinfo.cpp: 'to_string' is not a member of 'std'
+
 USES=		compiler:c++11-lib execinfo gmake python shebangfix tar:bzip2
 SHEBANG_FILES=	htmlreport/cppcheck-htmlreport
 USE_CXXSTD=	c++11
