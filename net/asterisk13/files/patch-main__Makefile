@@ -1,6 +1,6 @@
---- main/Makefile.orig	2016-07-21 14:54:02 UTC
+--- main/Makefile.orig	2017-03-24 08:40:58 UTC
 +++ main/Makefile
-@@ -79,9 +79,12 @@ endif
+@@ -81,9 +81,12 @@ endif
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
@@ -14,13 +14,3 @@
  endif
  
  ifneq ($(findstring $(OSARCH), mingw32 cygwin ),)
-@@ -351,9 +354,6 @@ else # Darwin
- 	$(INSTALL) -m 755 $(ASTPJ_LIB) "$(DESTDIR)$(ASTLIBDIR)/"
- endif
- endif
--ifneq ($(LDCONFIG),)
--	$(LDCONFIG) $(LDCONFIG_FLAGS) "$(DESTDIR)$(ASTLIBDIR)/"
--endif
- 	$(LN) -sf asterisk "$(DESTDIR)$(ASTSBINDIR)/rasterisk"
- 
- binuninstall:
