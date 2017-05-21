@@ -180,7 +180,6 @@
     SUBDIR += go-geoip
     SUBDIR += go-httppath
     SUBDIR += go-httptreemux
-    SUBDIR += go-mastodon
     SUBDIR += go-nats
     SUBDIR += go.net
     SUBDIR += gofish
@@ -400,6 +399,7 @@
     SUBDIR += mDNSResponder
     SUBDIR += macchanger
     SUBDIR += mad_fcl
+    SUBDIR += madonctl
     SUBDIR += malo-firmware-kmod
     SUBDIR += mdns-repeater
     SUBDIR += mediastreamer
