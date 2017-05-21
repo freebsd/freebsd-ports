@@ -180,6 +180,7 @@
     SUBDIR += go-geoip
     SUBDIR += go-httppath
     SUBDIR += go-httptreemux
+    SUBDIR += go-mastodon
     SUBDIR += go-nats
     SUBDIR += go.net
     SUBDIR += gofish
