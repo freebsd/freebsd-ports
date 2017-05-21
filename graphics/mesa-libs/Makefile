@@ -7,10 +7,6 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
 
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
-LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
-		libexpat.so:textproc/expat2
-
 USE_XORG=	dri2proto dri3proto glproto presentproto x11 xcb xdamage xext \
 		xfixes xshmfence xxf86vm
 
@@ -22,25 +18,25 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libwayland-server.so:graphics/wayland
 
 .include <bsd.port.options.mk>
-.include "${.CURDIR}/../../graphics/mesa-dri/Makefile.common"
+.include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-CONFIGURE_ARGS+=	--with-dri-drivers=swrast --with-gallium-drivers=swrast
+CONFIGURE_ARGS+=	--with-dri-drivers="" --with-gallium-drivers=""
 
 # libEGL needs gallium enabled which depends on llvm
 .if "${MESA_LLVM_VER}" != ""
 .if ${PORT_OPTIONS:MWAYLAND}
-CONFIGURE_ARGS+=	--with-egl-platforms=x11,drm,wayland
+CONFIGURE_ARGS+=	--with-platforms=x11,drm,wayland
 .else
-CONFIGURE_ARGS+=        --with-egl-platforms=x11,drm
+CONFIGURE_ARGS+=	--with-platforms=x11,drm
 .endif
-PLIST_SUB+=		EGL=""	
+PLIST_SUB+=		EGL=""
 .else
-CONFIGURE_ARGS+=        --disable-egl
+CONFIGURE_ARGS+=	--disable-egl
 PLIST_SUB+=		EGL="@comment "
 .if ${PORT_OPTIONS:MWAYLAND}
-IGNORE= WAYLAND is an option for EGL and thus only valid on platforms with LLVM
+IGNORE=	option WAYLAND is only valid on platforms with LLVM
 .endif
-.endif 
+.endif
 
 MESA_BUILD_WRKSRC=	src/mapi
 MESA_INSTALL_WRKSRC=	src/mapi
@@ -58,10 +54,10 @@ MESA_BUILD_WRKSRC+=	src/egl
 MESA_INSTALL_WRKSRC+=	src/egl
 .endif
 
-.include "${.CURDIR}/../../graphics/mesa-dri/Makefile.targets"
+.include "${MASTERDIR}/Makefile.targets"
 
 post-install:
 	@cd ${WRKSRC}/src && ${SETENV} DESTDIR=${STAGEDIR} \
 		${MAKE_CMD} install-pkgconfigDATA install-glHEADERS install-glxHEADERS
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

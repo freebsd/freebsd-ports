@@ -5,7 +5,7 @@ PORTNAME=	madonctl
 PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
-PKGNAMEPREFIX=	go-
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI client for the Mastodon social network API
