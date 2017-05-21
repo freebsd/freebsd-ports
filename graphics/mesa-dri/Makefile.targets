@@ -5,13 +5,10 @@
 post-patch:
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|x86_64|amd64|' ${WRKSRC}/configure
-# Clang 3.4 in 10.x on i386 fails with the following error when using "GCC atomics"
-#
-# glsl/cache.c:613:4: error: cannot compile this atomic library call yet
-#   p_atomic_add(cache->size, size); note: expanded from macro 'p_atomic_add'
-# define p_atomic_add(v, i) (void) __atomic_add_fetch((v), (i), __ATOMIC_ACQ_REL)
-#
-.if ${OSVERSION} < 1100000 && ${ARCH} == "i386"
+# Disable use of GCC_ATOMICs on i386 to avoid build failures
+# Clang in 10.3 fails with cannot compile this atomic library call yet 'p_atomic_add'
+# Clang in 11.0 fails with undefined reference to `__atomic_fetch_add_8`
+.if ${ARCH} == "i386"
 	@${REINPLACE_CMD} -e 's|-DUSE_GCC_ATOMIC_BUILTINS||' ${WRKSRC}/configure
 .endif
 .endif # ${OPSYS}

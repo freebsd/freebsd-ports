@@ -7,8 +7,6 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 
-LIB_DEPENDS=	libdrm.so:graphics/libdrm \
-		libexpat.so:textproc/expat2
 RUN_DEPENDS=	${LOCALBASE}/lib/libtxc_dxtn.so:graphics/s2tc
 
 USE_XORG=	dri2proto dri3proto glproto presentproto x11 xdamage xext \
@@ -17,7 +15,6 @@ USE_XORG=	dri2proto dri3proto glproto presentproto x11 xdamage xext \
 OPTIONS_DEFINE=	TEXTURE VAAPI VDPAU
 OPTIONS_DEFAULT=TEXTURE
 OPTIONS_SUB=	yes
-PKGHELP=	${.CURDIR}/pkg-help
 
 TEXTURE_DESC=	Enable texture-float support (patent encumbered)
 TEXTURE_CONFIGURE_ENABLE=	texture-float
@@ -30,23 +27,30 @@ VDPAU_CONFIGURE_ENABLE=	vdpau
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 
 .include <bsd.port.options.mk>
-.include "${.CURDIR}/../../graphics/mesa-dri/Makefile.common"
+.include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
 ALL_DRI_DRIVERS=	I915 I965 RADEON R200 SWRAST
 ALL_GALLIUM_DRIVERS=	FREEDRENO R300 R600 RADEONSI SVGA SWRAST VC4
 
-DRI_DRIVERS=		SWRAST
-GALLIUM_DRIVERS=	SWRAST
+DRI_DRIVERS=		SWRAST	# classic swrast
+.if "${MESA_LLVM_VER}" != ""
+GALLIUM_DRIVERS=	SWRAST	# llvmpipe
+.else
+GALLIUM_DRIVERS=	""
+.endif
 .if ${ARCH} == amd64 || ${ARCH} == i386 \
  || ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS+=		RADEON R200
-GALLIUM_DRIVERS+=	R300 R600 RADEONSI
-.elif ${ARCH} == armv6 || ${ARCH} == aarch64
-GALLIUM_DRIVERS+=	FREEDRENO VC4
+GALLIUM_DRIVERS+=	R300 R600
+.if "${MESA_LLVM_VER}" != ""	# until PPC gets LLVM in base
+GALLIUM_DRIVERS+=	RADEONSI
+.endif
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
 DRI_DRIVERS+=		I915 I965
 GALLIUM_DRIVERS+=	SVGA
+.elif ${ARCH} == armv6 || ${ARCH} == aarch64
+GALLIUM_DRIVERS+=	FREEDRENO VC4
 .endif
 
 CONFIGURE_ARGS+=	--with-dri-drivers="${DRI_DRIVERS:tl}" \
@@ -68,9 +72,9 @@ PLIST_SUB+=	${_gd}_GDRIVER="@comment "
 . endif
 .endfor
 
-.include "${.CURDIR}/../../graphics/mesa-dri/Makefile.targets"
+.include "${MASTERDIR}/Makefile.targets"
 
 post-install:
 	@${RM} -r ${STAGEDIR}/etc/OpenCL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
