@@ -48,8 +48,9 @@ INSTALL_TARGET=	install-strip
 PLIST_SUB+=	VER=${PORTVERSION:R} \
 		SHORT_VER=${PORTVERSION:R:R}${PORTVERSION:R:E}
 
-BROKEN_aarch64=		Fails to configure: error:  Requires SSE2 Support
-BROKEN_sparc64=		Fails to configure: error:  Requires SSE2 Support
+BROKEN_aarch64=		fails to configure: error:  Requires SSE2 Support
+BROKEN_powerpc64=	fails to configure: error:  Requires SSE2 Support
+BROKEN_sparc64=		fails to configure: error:  Requires SSE2 Support
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^extra_LIBS_clanSqlite/s|-ldl||g' \

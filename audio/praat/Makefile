@@ -12,6 +12,8 @@ COMMENT=	Phonetics by Computer
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=gnu++11"
+
 USE_GITHUB=	yes
 DOS2UNIX_REGEX=	.*Makefile
 USES=		dos2unix iconv pkgconfig

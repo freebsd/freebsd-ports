@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/../license.txt
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Microsoft
 

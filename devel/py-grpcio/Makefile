@@ -16,6 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}enum34>1:devel/py-enum34
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
+BROKEN_powerpc64=	fails to compile: cpu-ppc64le.c: 'AT_HWCAP2' undeclared
+
 USES=		python
 USE_PYTHON=	distutils
 CFLAGS+=	-Ithird_party/boringssl/include \

@@ -14,6 +14,8 @@ COMMENT=	Complete rewrite of dia2code in C++
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to compile: GenerateCodePhp.cpp: 'stoi' is not a member of 'std'
+
 USES=		autoreconf:build compiler:gcc-c++11-lib iconv
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
