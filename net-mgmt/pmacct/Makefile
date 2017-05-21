@@ -65,7 +65,7 @@ PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-USES+=		sqlite
+USES+=		pkgconfig sqlite
 CONFIGURE_ARGS+=--enable-sqlite3 \
 		--with-sqlite3-includes=${LOCALBASE}/include
 PLIST_SUB+=	WITH_SQLITE3=""
