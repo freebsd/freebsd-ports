@@ -48,6 +48,7 @@ bin/emptyepsilon
 %%DATADIR%%/resources/billboardShader.frag
 %%DATADIR%%/resources/billboardShader.vert
 %%DATADIR%%/resources/blackHole.png
+%%DATADIR%%/resources/blackHole3d.png
 %%DATADIR%%/resources/button.wav
 %%DATADIR%%/resources/dial_background.png
 %%DATADIR%%/resources/dial_button.png
