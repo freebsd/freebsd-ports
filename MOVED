@@ -9110,7 +9110,6 @@ net/tcpdump398|net/tcpdump|2017-03-05|Has expired: multiple security vulnerabili
 databases/oracle7-client||2017-03-07|Has expired: Oracle 7 EOL by 13 years
 databases/yasql||2017-03-07|Has expired: Dependent on deprecated oracle7-client
 databases/jdbc-oracle10g||2017-03-07|Has expired: Oracle 10g EOL almost 4 years
-databases/p5-DBD-Oracle||2017-03-07|Has expired: Depends on deprecated Oracle 7 (or 8) client
 databases/jdbc-oracle8i||2017-03-07|Has expired: Oracle8i unsupported and unavailable; fetch site redirects
 databases/jdbc-oracle9i||2017-03-07|Has expired: Oracle 9i is no more supported
 x11/rsibreak-kde4|x11/rsibreak|2017-03-11|Renamed to drop the -kde4 suffix
