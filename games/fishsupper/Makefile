@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:devel/boost-libs
 
+BROKEN_powerpc64=	fails to compile: Log.h: expected initializer before '<' token
+
 GNU_CONFIGURE=	yes
 USES=		gmake localbase:ldflags
 USE_SDL=	sdl image mixer

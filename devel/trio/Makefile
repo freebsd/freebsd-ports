@@ -11,6 +11,10 @@ COMMENT=	Fully matured and stable set of printf and string functions
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_mips=		fails to link: /usr/bin/ld: No such file: No such file or directory
+BROKEN_mips64=		fails to link: /usr/bin/ld: No such file: No such file or directory
+BROKEN_powerpc64=	fails to link: /usr/bin/ld: No such file: No such file or directory
+
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS

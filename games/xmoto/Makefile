@@ -20,6 +20,8 @@ LIB_DEPENDS=	libode.so:devel/ode \
 		libcurl.so:ftp/curl \
 		libxdg-basedir.so:x11/libxdg-basedir
 
+BROKEN_powerpc64=	fails to compile: hashtable.h: no match for call to __gnu_cxx::hash
+
 GNU_CONFIGURE=	yes
 USES=		compiler:features dos2unix gmake jpeg localbase lua:51 sqlite
 USE_GNOME=	libxml2

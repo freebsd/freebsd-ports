@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsfml-system.so:devel/sfml
 
+BROKEN_powerpc64=	fails to compile: scienceDatabase.cpp: call of overloaded 'abs(float)' is ambiguous
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	daid
 GH_PROJECT=	EmptyEpsilon SeriousProton:sproton

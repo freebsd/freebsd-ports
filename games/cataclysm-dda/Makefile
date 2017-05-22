@@ -60,7 +60,9 @@ SOUND_IMPLIES=		SDL
 
 SOUND_FILES=	cataclysmthemeREV6.ogg Dark_Days_Ahead_demo_2.ogg
 
-BROKEN_aarch64=		Fails to compile: error: comparison of integers of different signs: wchar_t and const int
+BROKEN_aarch64=		fails to compile: comparison of integers of different signs: wchar_t and const int
+BROKEN_armv6=		fails to compile: comparison of integers of different signs: wchar_t and const int
+BROKEN_powerpc64=	fails to compile: overmap.cpp: 'pow' is not a member of 'std'
 
 .include <bsd.port.pre.mk>
 

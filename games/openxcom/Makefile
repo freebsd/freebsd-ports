@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libyaml-cpp.so:devel/yaml-cpp
 
+BROKEN_powerpc64=	fails to compile: XcomResourcePack.cpp: undefined reference to YAML::LoadFile
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	SupSuper
 GH_PROJECT=	OpenXcom

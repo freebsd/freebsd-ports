@@ -16,6 +16,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libosg.so:graphics/osg
 
+BROKEN_powerpc64=	fails to compile: Package.cxx: 'to_string' is not a member of 'std
+
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu glut
 USES=		alias cmake compiler cpe jpeg openal:al,alut tar:bzip2

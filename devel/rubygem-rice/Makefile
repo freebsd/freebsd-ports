@@ -11,6 +11,8 @@ COMMENT=	C++ interface to Rubys C API
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to configure: could not find ruby.h
+
 USE_RUBY=	yes
 USES=		gem
 USE_AUTOTOOLS=	aclocal autoconf

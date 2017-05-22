@@ -29,8 +29,9 @@ CMAKE_ARGS=	-DETCDIR:PATH="${PREFIX}/etc" \
 		-DREADLINE_FOUND:BOOL=ON
 INSTALLS_ICONS=	yes
 
-BROKEN_aarch64=		Fails to configure: error: unrecognized CPU type
-BROKEN_armv6=		Fails to configure: CMake Error: Generator: execution of make failed
+BROKEN_aarch64=		fails to configure: error: unrecognized CPU type
+BROKEN_armv6=		fails to configure: CMake Error: Generator: execution of make failed
+BROKEN_powerpc64=	fails to compile: sysdeps.h: redefinition of typedef 'uae_u8'
 
 OPTIONS_DEFINE=		DEBUG DOCS SDL2 WINUAE
 
