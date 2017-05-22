@@ -24,19 +24,17 @@ include/tiffvers.h
 lib/libtiff.a
 lib/libtiff.so
 lib/libtiff.so.5
-lib/libtiff.so.5.2.5
+lib/libtiff.so.5.2.6
 lib/libtiffxx.a
 lib/libtiffxx.so
 lib/libtiffxx.so.5
-lib/libtiffxx.so.5.2.5
+lib/libtiffxx.so.5.2.6
 libdata/pkgconfig/libtiff-4.pc
 man/man1/fax2ps.1.gz
 man/man1/fax2tiff.1.gz
 man/man1/pal2rgb.1.gz
 man/man1/ppm2tiff.1.gz
 man/man1/raw2tiff.1.gz
-man/man1/rgb2ycbcr.1.gz
-man/man1/thumbnail.1.gz
 man/man1/tiff2bw.1.gz
 man/man1/tiff2pdf.1.gz
 man/man1/tiff2ps.1.gz
@@ -228,8 +226,6 @@ man/man3/libtiff.3tiff.gz
 %%PORTDOCS%%%%DOCSDIR%%/man/pal2rgb.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/ppm2tiff.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/raw2tiff.1.html
-%%PORTDOCS%%%%DOCSDIR%%/man/rgb2ycbcr.1.html
-%%PORTDOCS%%%%DOCSDIR%%/man/thumbnail.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/tiff2bw.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/tiff2pdf.1.html
 %%PORTDOCS%%%%DOCSDIR%%/man/tiff2ps.1.html
@@ -291,3 +287,4 @@ man/man3/libtiff.3tiff.gz
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.5.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.6.html
 %%PORTDOCS%%%%DOCSDIR%%/v4.0.7.html
+%%PORTDOCS%%%%DOCSDIR%%/v4.0.8.html
