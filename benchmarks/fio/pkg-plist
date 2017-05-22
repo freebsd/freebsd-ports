@@ -16,8 +16,11 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fixed-rate-submission.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fsx.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftruncate.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fusion-aw-sync.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gfapi.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gpudirect-rdmaio-client.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gpudirect-rdmaio-server.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iometer-file-access-server.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jesd219.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latency-profile.fio
