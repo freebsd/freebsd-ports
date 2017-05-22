@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpoppler.so:graphics/poppler
 
+BROKEN_powerpc64=	fails to link: pdfgrep.cc: undefined reference to poppler::set_debug_error_function
+
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lib gmake pkgconfig
 CONFIGURE_ARGS=	poppler_CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/poppler"

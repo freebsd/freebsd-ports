@@ -19,6 +19,8 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libftgl.so:graphics/ftgl
 
+BROKEN_powerpc64=	fails to compile: custom.cpp: 'sscanf' was not declared in this scope
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	acaudwell
 GH_PROJECT=	Logstalgia:DEFAULT Core:core

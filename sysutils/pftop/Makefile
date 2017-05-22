@@ -12,6 +12,8 @@ COMMENT=	Utility for real-time display of statistics for pf
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_FreeBSD_12=	fails to compile: sf-gencode.h: pcap-int.h: No such file or directory
+
 OPTIONS_DEFINE=	ALTQ
 
 ALTQ_DESC=	ALTQ support for queue statistics

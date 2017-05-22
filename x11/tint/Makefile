@@ -15,6 +15,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libImlib2.so:graphics/imlib2 \
 		libstartup-notification-1.so:x11/startup-notification
 
+BROKEN_powerpc64=	fails to build: area.h: redefinition of typedef 'Area'
+
 USES=		alias cmake:outsource pkgconfig
 USE_GNOME=	cairo glib20 gtk20 librsvg2 pango
 USE_XORG=	x11 xcomposite xdamage xfixes xinerama xrandr xrender

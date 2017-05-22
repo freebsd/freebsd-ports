@@ -11,12 +11,13 @@ MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-$
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
-
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libbson-1.0.so:devel/libbson
+
+BROKEN_powerpc64=	fails to link: Internal error: Segmentation fault (program ld)
+BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -123,7 +124,6 @@ JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-1.2.16.jar \
 				lib/syslog-ng/java-modules/dummy.jar \
 				lib/syslog-ng/java-modules/http.jar \
 				lib/syslog-ng/java-modules/syslog-ng-common.jar
-
 
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_CONFIGURE_WITH=		python=2.7

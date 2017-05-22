@@ -10,6 +10,8 @@ MASTER_SITES=	http://ftp.ntua.gr/pub/net/mud/lpmud/clients/pmf/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Padrone's Mud Frontend
 
+BROKEN_powerpc64=	fails to link: ld: cannot find -lreadline
+
 WRKSRC=		${WRKDIR}/pmfdir
 BUILD_WRKSRC=	${WRKDIR}/pmfdir/src
 PATCH_WRKSRC=	${WRKDIR}/pmfdir/src

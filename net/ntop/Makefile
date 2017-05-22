@@ -21,6 +21,8 @@ BUILD_DEPENDS=	rrdtool12>=1.2:databases/rrdtool12 \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		urwfonts>0:x11-fonts/urwfonts
 
+BROKEN_powerpc64=	fails to link: libntop.so: undefined reference to 'bswap_32'
+
 DBDIR?=		/var/db
 
 USES=		autoreconf:build cpe gmake libtool python shebangfix ssl

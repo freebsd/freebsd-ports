@@ -16,6 +16,8 @@ PATCH_DIST_STRIP=	-p0
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	RFC1413 identification server
 
+BROKEN_FreeBSD_12=	fails to compile: k_freebsd2.c: storage size of 'pcbp' isn't known
+
 CONFLICTS_INSTALL=	fakeident-[0-9]*
 
 GNU_CONFIGURE=	yes
