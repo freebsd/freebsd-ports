@@ -158,6 +158,8 @@ post-patch:
 	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
+	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
+	    ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
