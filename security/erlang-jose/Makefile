@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jose
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	security
 PKGNAMEPREFIX=	erlang-
 
