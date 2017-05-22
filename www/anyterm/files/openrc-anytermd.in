@@ -19,6 +19,6 @@ description=""
 : ${anytermd_flags:="-c /usr/bin/login -u nobody --local-only"}
 : ${anytermd_name:="anyterm"}
 
-pidfile=/var/run/$anytermd_name.pid
+pidfile=/var/run/${anytermd_name}.pid
 command=%%PREFIX%%/sbin/anytermd
-command_args="$anytermd_flags --name $anytermd_name"
+command_args="${anytermd_flags} --name ${anytermd_name}"
