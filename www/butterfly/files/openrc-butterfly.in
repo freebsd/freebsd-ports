@@ -3,7 +3,8 @@
 : ${butterfly_user="root"}
 : ${butterfly_args="--unsecure"}
 
-name=butterfly
+name="butterfly"
+descrption=""
 pidfile=/var/run/${name}.pid
 
 command="%%PYTHON_CMD%%"
