@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 PKGNAMEPREFIX=	trac-
 DIST_SUBDIR=	trac
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	WYSIWYG editor for Trac wiki
 
 RUN_DEPENDS=	tracd:www/trac

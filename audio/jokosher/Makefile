@@ -2,7 +2,7 @@
 
 PORTNAME=	jokosher
 PORTVERSION=	0.11.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpadlibrarian.net/43860543/
 
@@ -19,12 +19,12 @@ WANT_GNOME=	yes
 USE_GSTREAMER=	gnonlin good python
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	DBUS FLAC GCONF JACK LADSPA LAME MP3 PIDGIN PROFILES PULSE VORBIS
+OPTIONS_DEFINE=	DBUS FLAC GCONF JACK LADSPA LAME MP3 PIDGIN PROFILES PULSEAUDIO VORBIS
 OPTIONS_DEFAULT=	DBUS FLAC GCONF LADSPA VORBIS
 MP3_DESC=	MP3 import
 PIDGIN_DESC=	Pidgin status extension
-PROFILES_DESC=	Gnome Audio Profiels extension
-PULSE_DESC=	${PULSEAUDIO_DESC}
+PROFILES_DESC=	Gnome Audio Profiles extension
+PULSEAUDIO_USE=	GSTREAMER=pulse
 
 .include <bsd.port.options.mk>
 
@@ -52,7 +52,7 @@ PLIST_SUB+=	OMF=""
 PLIST_SUB+=	OMF="@comment "
 .endif
 
-.for plugin in flac gconf jack ladspa lame mp3 pulse vorbis
+.for plugin in flac gconf jack ladspa lame mp3 vorbis
 . if ${PORT_OPTIONS:M${plugin:tu}}
 USE_GSTREAMER+=${plugin}
 . endif

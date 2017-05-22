@@ -3,7 +3,7 @@
 PORTNAME=	kyua
 PORTVERSION=	0.13
 PORTEPOCH=	3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
 		LOCAL/jmmv
@@ -15,7 +15,6 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	liblutok.so:devel/lutok
 LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	kyua-atf-compat-[0-9]* kyua-cli-[0-9]* kyua-testers-[0-9]*
 

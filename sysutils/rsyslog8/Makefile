@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	8.26.0
+PORTVERSION=	8.27.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 

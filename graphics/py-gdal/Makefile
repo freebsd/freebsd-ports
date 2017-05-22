@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \

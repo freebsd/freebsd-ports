@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 DISTNAME=	ppw-${DISTVERSION}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP Project Wizard
 
 LICENSE=	BSD3CLAUSE

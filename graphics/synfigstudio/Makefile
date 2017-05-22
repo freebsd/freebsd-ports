@@ -12,6 +12,8 @@ COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv2+
 
+BROKEN=		missing header
+
 BUILD_DEPENDS=	etl>=0.04.19_1:devel/etl
 LIB_DEPENDS=	libsynfig.so:devel/synfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils

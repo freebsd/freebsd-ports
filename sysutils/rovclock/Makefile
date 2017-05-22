@@ -15,6 +15,7 @@ BROKEN_aarch64=		fails to install: undefined reference to outl
 BROKEN_armv6=		fails to install: undefined reference to outl
 BROKEN_mips=		fails to install: undefined reference to outl
 BROKEN_mips64=		fails to install: undefined reference to outl
+BROKEN_powerpc64=	fails to install: undefined reference to outl
 
 USES=		tar:bzip2
 

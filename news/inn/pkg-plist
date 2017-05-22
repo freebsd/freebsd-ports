@@ -133,6 +133,7 @@ doc/hook-python
 doc/sample-control
 http/innreport.css
 include/inn/buffer.h
+include/inn/concat.h
 include/inn/confparse.h
 include/inn/dbz.h
 include/inn/defines.h
@@ -181,8 +182,8 @@ lib/innshellvars.pl
 lib/innshellvars.tcl
 lib/libinn.a
 lib/libinn.so
-lib/libinn.so.%%LIBVER%%
-lib/libinn.so.%%LIBVER_LONG%%
+lib/libinn.so.%%INNLIB%%
+lib/libinn.so.%%INNLIB_LONG%%
 lib/libinnhist.a
 lib/libinnhist.so
 lib/libinnhist.so.%%LIBVER%%

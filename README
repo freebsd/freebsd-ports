@@ -65,8 +65,7 @@ A number of [Sphinx](http://www.sphinx-doc.org/en/stable/) generated reStructure
 
 ### TrueOS Handbook <a name="trueosdoc"></a>
 
-TrueOS documentation is hosted on the [TrueOS website](https://www.trueos.org).
-The [TrueOS User Guide](https://www.trueos.org/handbook/trueos.html) is a comprehensive guide to install TrueOS, along with post-installation configuration help, recommendations for useful utilities and applications, and a help and support section containing solutions for common issues and links to community and development chat channels for uncommon issues. There is also a chapter describing the experimental TrueOS Pico project and links to the Lumina and SysAdm documentation.
+The [TrueOS User Guide](https://www.trueos.org/handbook/trueos.html) is a comprehensive guide to install TrueOS, along with post-installation configuration help, recommendations for useful utilities and applications, and a help and support section containing solutions for common issues and links to community and development chat channels for uncommon issues. There is also a chapter describing the experimental TrueOS Pico project and links to the Lumina and SysAdm documentation. All TrueOS documentation is hosted on the [TrueOS website](https://www.trueos.org).
 
 ### Lumina Handbook <a name="luminadoc"></a>
 

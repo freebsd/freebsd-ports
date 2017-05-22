@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.27.5.20150616
-PORTREVISION=	1
+PORTVERSION=	0.28.7
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libfreetype.so:print/freetype2 \
 		libtag.so:audio/taglib \
-		libxml2.so:textproc/libxml2
+		libxml2.so:textproc/libxml2 \
+		libudf.so:sysutils/libcdio \
+		libva.so:multimedia/libva \
+		libass.so:multimedia/libass \
+		libfftw3f.so:math/fftw3-float \
+		libfftw3_threads.so:math/fftw3 \
+		libjack.so:audio/jack
 BUILD_DEPENDS=	v4l_compat>=1.0.20100321:multimedia/v4l_compat \
 		yasm:devel/yasm
 RUN_DEPENDS=	tv_check:textproc/p5-xmltv \
@@ -32,11 +37,13 @@ WRKSRC_SUBDIR=	${PORTNAME}
 ONLY_FOR_ARCHS=	i386 amd64
 USE_PERL5=	run build
 NOPRECIOUSMAKEVARS=	# don't override $(ARCH) in ffmpeg makefiles
-USES=		gmake libtool perl5 pkgconfig pathfix shebangfix
+USES=		gmake iconv libtool perl5 pkgconfig pathfix shebangfix ssl
 SHEBANG_FILES=	programs/scripts/database/mythconverg_backup.pl \
 		programs/scripts/database/mythconverg_restore.pl
-USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
-		moc_build qmake_build rcc_build uic_build imageformats
+USE_QT4=	corelib dbus gui sql network script linguist_build l10n sql-mysql_run \
+		moc_build qmake_build rcc_build uic_build imageformats webkit xml
+USE_GL=		gl
+USE_XORG=	x11 xv xrandr xxf86vm xinerama xext
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/mythtv/filters
@@ -56,7 +63,7 @@ CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/libdata/pkgconfig"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" --dvb-path="${LOCALBASE}/include" \
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" --dvb-path="${LOCALBASE}/include/libdvbv5" \
 		--libxml2-path="${LOCALBASE}/include/libxml2" --enable-v4l2 --enable-ivtv --enable-xv \
 		--disable-audio-alsa --disable-indev=alsa --disable-outdev=alsa --disable-mythlogserver
 

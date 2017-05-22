@@ -1,0 +1,36 @@
+--- CMakeLists.txt.orig	2017-02-15 02:10:02 UTC
++++ CMakeLists.txt
+@@ -14,6 +14,7 @@ mark_as_advanced(CLEAR
+     CMAKE_INSTALL_BINDIR
+     CMAKE_INSTALL_INCLUDEDIR
+     CMAKE_INSTALL_LIBDIR
++    CMAKE_INSTALL_LIBEXECDIR
+ )
+ 
+ #
+@@ -166,13 +167,24 @@ if(UNITTEST)
+     # Find speex library
+     #
+     message(STATUS "Looking for Speex DSP library.")
+-    find_path(SPEEXDSP_INCLUDE_DIR speex/speex.h)
++    find_path(SPEEXDSP_INCLUDE_DIR speex/speex_preprocess.h)
+     find_library(SPEEXDSP_LIBRARY speexdsp)
+     message(STATUS "  Speex DSP headers: ${SPEEXDSP_INCLUDE_DIR}")
+     message(STATUS "  Speex DSP library: ${SPEEXDSP_LIBRARY}")
+     if(NOT SPEEXDSP_INCLUDE_DIR AND NOT SPEEXDSP_LIBRARY)
+         message(FATAL_ERROR "Speex DSP library not found!")
+     endif()
++    #
++    # Find samplerate library
++    #
++    message(STATUS "Looking for samplerate library.")
++    find_path(SAMPLERATE_INCLUDE_DIR samplerate.h)
++    find_library(SAMPLERATE_LIBRARY samplerate)
++    message(STATUS "  samplerate headers: ${SAMPLERATE_INCLUDE_DIR}")
++    message(STATUS "  samplerate library: ${SAMPLERATE_LIBRARY}")
++    if(NOT SAMPLERATE_INCLUDE_DIR AND NOT SAMPLERATE_LIBRARY)
++        message(FATAL_ERROR "samplerate library not found!")
++    endif()
+ 
+     add_subdirectory(unittest)
+ endif(UNITTEST)

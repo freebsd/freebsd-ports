@@ -7,7 +7,7 @@ CATEGORIES=	databases
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	CHDB extension
 
 LICENSE=	BSD3CLAUSE

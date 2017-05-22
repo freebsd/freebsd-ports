@@ -1,0 +1,30 @@
+--- muttlib.c.orig	2017-04-19 01:05:29 UTC
++++ muttlib.c
+@@ -1369,6 +1369,12 @@
+ 	count = 0;
+         while (count < sizeof (ifstring) && *src && *src != '?' && *src != '&')
+ 	{
++	  if (*src == '\\')
++	  {
++	    src++;
++	    if (!*src)
++	      break;
++	  }
+           *cp++ = *src++;
+ 	  count++;
+ 	}
+@@ -1381,7 +1387,13 @@
+ 	count = 0;
+ 	while (count < sizeof (elsestring) && *src && *src != '?')
+ 	{
+-	  *cp++ = *src++;
++	  if (*src == '\\')
++	  {
++	    src++;
++	    if (!*src)
++	      break;
++	  }
++          *cp++ = *src++;
+ 	  count++;
+ 	}
+ 	*cp = 0;

@@ -25,6 +25,9 @@ PLIST_FILES=	bin/${PORTNAME}
 # Make sure building succeeds on HEAD
 MAKE_ARGS+=	-m ${SRC_BASE}/share/mk
 
+BROKEN_armv6=		fails to link: testmain uses VFP register arguments, dict.o does not
+BROKEN_mips64=		fails to link: relocation truncated to fit: R_MIPS_26 against `__assert@@FBSD_1.0'
+
 WRKSRC_SUBDIR=	ficl
 
 pre-patch:

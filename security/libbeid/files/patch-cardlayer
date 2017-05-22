@@ -1,65 +1,6 @@
---- cardcomm/pkcs11/src/cardlayer/card.cpp.orig	2015-10-09 08:01:44 UTC
-+++ cardcomm/pkcs11/src/cardlayer/card.cpp
-@@ -160,7 +160,7 @@ tCacheInfo CCard::GetCacheInfo(const std
- {
- 	// By default no caching, card must implement this method
- 	// to allow certain files to be cached (in a certain way).
--	tCacheInfo dontCache = {DONT_CACHE};
-+	tCacheInfo dontCache = {DONT_CACHE,0};
- 
- 	return dontCache;
- }
---- cardcomm/pkcs11/src/cardlayer/pkcs15.cpp.orig	2015-02-19 13:59:02 UTC
-+++ cardcomm/pkcs11/src/cardlayer/pkcs15.cpp
-@@ -27,7 +27,7 @@ namespace eIDMW
- {
- 
-   const static tPin PinInvalid = {false, "",0,0,0,0,0,0, 0, 0, 0, 0, 0,PIN_ENC_BCD,"",""};
--  const static tCert CertInvalid = {false, "", 0, 0,0,0};
-+  const static tCert CertInvalid = {false, "", 0, 0,0,0,false,false,""};
-   const static tPrivKey PrivKeyInvalid = {false, "", 0,0,0,0,0,0,0,"", 0,false};
- 
-   // Hardcoded Beid V1 PINs, keys, certs -- to be removed
-@@ -59,13 +59,12 @@ namespace eIDMW
-   const std::string defaultEFODF       = "3F00DF005031";
- 
- 
--  CPKCS15::CPKCS15(void) : m_poContext(NULL), m_poParser(NULL)
-+  CPKCS15::CPKCS15(void) : m_poParser(NULL)
-   {
-     Clear();
-   }
- 
-   CPKCS15::CPKCS15(CContext *poContext) :
--    m_poContext(poContext),
-     m_poParser(NULL)
-   {
-     Clear();
---- cardcomm/pkcs11/src/cardlayer/pkcs15.h.orig	2015-02-19 13:59:02 UTC
-+++ cardcomm/pkcs11/src/cardlayer/pkcs15.h
-@@ -90,7 +90,6 @@ namespace eIDMW
- 
-   private:
-     CCard *m_poCard;
--    CContext *m_poContext;
-     PKCS15Parser *m_poParser;
- 
- #ifdef WIN32
---- cardcomm/pkcs11/src/cardlayer/reader.cpp.orig	2015-02-19 13:59:02 UTC
-+++ cardcomm/pkcs11/src/cardlayer/reader.cpp
-@@ -284,8 +284,7 @@ std::string CReader::GetSerialNr()
-     }
-     catch(CMWException &e)
-     {
--	unsigned long err = e.GetError();
--	err = err;
-+	(void)e.GetError();
-         return m_oPKCS15.GetSerialNr();
-     }
- }
---- cardcomm/pkcs11/src/cardlayer/threadpool.cpp.orig	2015-02-19 13:59:02 UTC
+--- cardcomm/pkcs11/src/cardlayer/threadpool.cpp.orig	2017-05-10 13:28:54 UTC
 +++ cardcomm/pkcs11/src/cardlayer/threadpool.cpp
-@@ -81,7 +81,7 @@ void CEventCallbackThread::Run()
+@@ -90,7 +90,7 @@ void CEventCallbackThread::Run()
  	m_bRunning = false;
  }
  
@@ -68,14 +9,14 @@
  {
  	m_bStop = true;
  }
---- cardcomm/pkcs11/src/cardlayer/threadpool.h.orig	2015-02-19 13:59:02 UTC
+--- cardcomm/pkcs11/src/cardlayer/threadpool.h.orig	2017-05-10 13:28:54 UTC
 +++ cardcomm/pkcs11/src/cardlayer/threadpool.h
-@@ -42,7 +42,7 @@ public:
+@@ -47,7 +47,7 @@ public:
  
- 	void Run();
+ 		void Run();
  
--	void Stop();
-+	void Stop(unsigned long ulSleepFrequency=100);
+-		void Stop();
++		void Stop(unsigned long ulSleepFrequency=100);
  
- 	bool HasStopped();
+ 		bool HasStopped();
  

@@ -5,7 +5,7 @@ PORTNAME=	I18N
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR internationalization package
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear

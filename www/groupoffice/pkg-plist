@@ -1064,6 +1064,7 @@
 %%WWWDIR%%/install/updatescripts/16_update_db_collation_utf8_general_ci_to_utf8mb4_unicode_ci.php
 %%WWWDIR%%/install/upgrade.php
 %%WWWDIR%%/language/addressformats.php
+%%WWWDIR%%/language/common/ar.php
 %%WWWDIR%%/language/common/bg.php
 %%WWWDIR%%/language/common/bn_BD.php
 %%WWWDIR%%/language/common/ca.php
@@ -1094,6 +1095,7 @@
 %%WWWDIR%%/language/common/th.php
 %%WWWDIR%%/language/common/tr.php
 %%WWWDIR%%/language/common/zh-tw.php
+%%WWWDIR%%/language/countries/ae.php
 %%WWWDIR%%/language/countries/bg.php
 %%WWWDIR%%/language/countries/bn_BD.php
 %%WWWDIR%%/language/countries/ca.php
@@ -1157,6 +1159,7 @@
 %%WWWDIR%%/language/filetypes/tr.php
 %%WWWDIR%%/language/filetypes/zh-tw.php
 %%WWWDIR%%/language/filetypes/zh_TW_big5.php
+%%WWWDIR%%/language/holidays/ar.php
 %%WWWDIR%%/language/holidays/bn_BD.php
 %%WWWDIR%%/language/holidays/cs.php
 %%WWWDIR%%/language/holidays/de-at.php
@@ -1178,6 +1181,7 @@
 %%WWWDIR%%/language/holidays/sv.php
 %%WWWDIR%%/language/holidays/th.php
 %%WWWDIR%%/language/languages.php
+%%WWWDIR%%/language/lostpassword/ar.php
 %%WWWDIR%%/language/lostpassword/bg.php
 %%WWWDIR%%/language/lostpassword/bn_BD.php
 %%WWWDIR%%/language/lostpassword/ca.php
@@ -2256,6 +2260,7 @@
 %%WWWDIR%%/modules/dropbox/install/install.sql
 %%WWWDIR%%/modules/dropbox/install/uninstall.sql
 %%WWWDIR%%/modules/dropbox/install/updates.php
+%%WWWDIR%%/modules/dropbox/language/cs.php
 %%WWWDIR%%/modules/dropbox/language/de.php
 %%WWWDIR%%/modules/dropbox/language/en.php
 %%WWWDIR%%/modules/dropbox/language/fr.php
@@ -4565,6 +4570,7 @@
 %%WWWDIR%%/modules/webodf/WebodfModule.php
 %%WWWDIR%%/modules/webodf/controller/FileController.php
 %%WWWDIR%%/modules/webodf/filehandler/Webodf.php
+%%WWWDIR%%/modules/webodf/language/cs.php
 %%WWWDIR%%/modules/webodf/language/de.php
 %%WWWDIR%%/modules/webodf/language/en.php
 %%WWWDIR%%/modules/webodf/language/fr.php

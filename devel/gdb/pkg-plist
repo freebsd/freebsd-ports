@@ -4,6 +4,7 @@ bin/gdb%%VER%%
 %%TUI%%bin/gdbtui%%VER%%
 %%KGDB%%bin/kgdb%%VER%%
 man/man1/gdb%%VER%%.1.gz
+%%KGDB%%man/man1/kgdb%%VER%%.1.gz
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/__init__.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/FrameDecorator.py
 %%PYTHON%%%%DATADIR%%%%VER%%/python/gdb/FrameIterator.py

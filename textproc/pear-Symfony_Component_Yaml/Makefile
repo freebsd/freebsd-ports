@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.symfony.com/get/
 PKGNAMEPREFIX=	pear-Symfony_Component_
 DIST_SUBDIR=	Symfony2
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Symfony2 Yaml Component
 
 LICENSE=	MIT

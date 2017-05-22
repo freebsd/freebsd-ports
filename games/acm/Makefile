@@ -3,7 +3,7 @@
 
 PORTNAME=	acm
 PORTVERSION=	5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
@@ -22,8 +22,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --x-includes=${LOCALBASE}/include \
 CONFIGURE_ENV=	ac_cv_lib_Xm_XmCreateBulletinBoard=no \
 		ac_cv_lib_gdbm_dbm_fetch=no
 MAKE_ARGS=	prefix=${STAGEDIR}${PREFIX}/ OBVDIR=${STAGEDIR}${DATADIR}/
-
-BROKEN_aarch64=	Fails to compile: machine/limits.h not found
 
 OPTIONS_DEFINE=	SOUND
 

@@ -1,4 +1,4 @@
---- install-sh.orig	2015-07-15 18:38:05 UTC
+--- install-sh.orig	2017-01-14 04:30:15 UTC
 +++ install-sh
 @@ -171,12 +171,6 @@ if ${DIRMODE} ; then
  	if [ ! -d "${DEST}" ] ; then
@@ -13,16 +13,16 @@
  	if ${CHMODIT} ; then
  	    ${CHMOD} "${MODE}"  "${DEST}" || exit 1
  	fi
-@@ -227,12 +221,6 @@ fi
+@@ -226,12 +220,6 @@ fi
+ ##  Strip and set the owner/mode.
  if ${STRIPIT} ; then
      ${STRIP} "${DEST}" || exit 1
- fi
+-fi
 -if ${CHOWNIT} ; then
 -    ${CHOWN} "${OWNER}" "${DEST}" || exit 1
 -fi
 -if ${CHGROUPIT} ; then
 -    ${CHGRP} "${GROUP}" "${DEST}" || exit 1
--fi
+ fi
  if ${CHMODIT} ; then
      ${CHMOD} "${MODE}" "${DEST}" || exit 1
- fi

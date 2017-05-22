@@ -150,12 +150,16 @@ find_kld_path (char *filename, char *path, size_t path_size)
 
 	info = get_kld_info();
 	if (exec_bfd) {
-		kernel_dir = dirname(bfd_get_filename(exec_bfd));
+		kernel_dir = ldirname(bfd_get_filename(exec_bfd));
 		if (kernel_dir != NULL) {
+			cleanup = make_cleanup(xfree, kernel_dir);
 			snprintf(path, path_size, "%s/%s", kernel_dir,
 			    filename);
-			if (check_kld_path(path, path_size))
+			if (check_kld_path(path, path_size)) {
+				do_cleanups(cleanup);
 				return (1);
+			}
+			do_cleanups(cleanup);
 		}
 	}
 	if (info->module_path_addr != 0) {
@@ -206,7 +210,7 @@ find_kld_address (char *arg, CORE_ADDR *address)
 	struct kld_info *info;
 	CORE_ADDR kld;
 	char *kld_filename;
-	char *filename;
+	const char *filename;
 	int error;
 
 	info = get_kld_info();
@@ -214,7 +218,7 @@ find_kld_address (char *arg, CORE_ADDR *address)
 	    info->off_filename == 0 || info->off_next == 0)
 		return (0);
 
-	filename = basename(arg);
+	filename = lbasename(arg);
 	for (kld = read_pointer(info->linker_files_addr); kld != 0;
 	     kld = read_pointer(kld + info->off_next)) {
 		/* Try to read this linker file's filename. */

@@ -1,0 +1,12 @@
+qualityTools: Statistical Methods for Quality Science
+
+Contains methods associated with the Define, Measure, Analyze, Improve and
+Control (i.e. DMAIC) cycle of the Six Sigma Quality Management
+methodology.It covers distribution fitting, normal and non-normal process
+capability indices, techniques for Measurement Systems Analysis especially
+gage capability indices and Gage Repeatability (i.e Gage RR) and
+Reproducibility studies, factorial and fractional factorial designs as
+well as response surface methods including the use of desirability
+functions.
+
+WWW: http://www.r-qualitytools.org/

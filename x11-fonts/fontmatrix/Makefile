@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	fontmatrix
-DISTVERSION=	0.4.2
-DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.fontmatrix.net/archives/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical font manager
@@ -17,9 +15,14 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		cmake
-USE_QT4=	corelib xml gui svg network moc_build uic_build rcc_build qmake_build linguisttools_build
+USE_GITHUB=	yes
+GH_ACCOUNT=	fontmatrix
+
+USES=		cmake execinfo
+USE_QT4=	corelib xml gui svg network moc_build uic_build rcc_build qmake_build \
+		linguisttools_build opengl sql webkit
 INSTALLS_ICONS=	yes
+MANDIRS=	${PREFIX}/share/man/man1
 
 OPTIONS_DEFINE=	FONTFORGE
 FONTFORGE_DESC=	Install FontForge editor

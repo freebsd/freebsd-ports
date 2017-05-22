@@ -1,0 +1,11 @@
+--- chrome/common/extensions/api/BUILD.gn.orig	2017-05-02 19:02:48 UTC
++++ chrome/common/extensions/api/BUILD.gn
+@@ -116,7 +116,7 @@ if (is_chromeos) {
+     "wallpaper.json",
+     "wallpaper_private.json",
+   ]
+-} else if (is_linux || is_win) {
++} else if (is_linux || is_bsd || is_win) {
+   schema_sources += [ "input_ime.json" ]
+ }
+ if (enable_service_discovery) {

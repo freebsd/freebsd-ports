@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	stomp
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	net-im pear
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension of stomp client
 
 LICENSE=	PHP301

@@ -29,8 +29,10 @@ include/cpl_aws.h
 include/cpl_config.h
 include/cpl_config_extras.h
 include/cpl_conv.h
+include/cpl_cpu_features.h
 include/cpl_csv.h
 include/cpl_error.h
+include/cpl_google_cloud.h
 include/cpl_hash_set.h
 include/cpl_http.h
 include/cpl_list.h
@@ -43,6 +45,7 @@ include/cpl_odbc.h
 include/cpl_port.h
 include/cpl_progress.h
 include/cpl_quad_tree.h
+include/cpl_sha1.h
 include/cpl_sha256.h
 include/cpl_spawn.h
 include/cpl_string.h

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.1rc1
 PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
@@ -90,6 +90,7 @@ LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
 LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
+LLDB_EXTRA_PATCHES=	${PATCHDIR}/lldb-patch-tools_lldb_source_Host_common_FileSpec.cpp
 LLDB_IMPLIES=		CLANG
 LLDB_USES=		execinfo
 LLDB_VARS=		_USES_PYTHON=python

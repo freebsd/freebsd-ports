@@ -3,6 +3,7 @@
 
 PORTNAME=	ocserv
 PORTVERSION=	0.11.8
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/ \
 		LOCAL/cpm
@@ -14,16 +15,17 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	autogen:devel/autogen \
-		gsed:textproc/gsed \
-		bash:shells/bash
+		bash:shells/bash \
+		gsed:textproc/gsed
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libiconv.so:converters/libiconv \
+		libev.so:devel/libev \
 		libtalloc.so:devel/talloc \
 		libprotobuf-c.so:devel/protobuf-c \
 		libgnutls.so:security/gnutls \
 		libtasn1.so:security/libtasn1 \
-		libev.so:devel/libev \
-		libnettle.so:security/nettle
+		libnettle.so:security/nettle \
+		liboath.so:security/oath-toolkit
 
 USES=		autoreconf cpe gmake gperf libtool localbase ncurses \
 		pathfix pkgconfig readline tar:xz
@@ -34,8 +36,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-nls \
 		--enable-local-libopts \
 		--without-http-parser \
-		--without-pcl-lib \
-		--without-radius
+		--without-pcl-lib
 
 USERS=		_ocserv
 GROUPS=		_ocserv
@@ -44,7 +45,7 @@ USE_RC_SUBR=	ocserv
 
 PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 
-OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI
+OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI RADIUS
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PORTEXAMPLES=	profile.xml sample.config sample.passwd
@@ -52,6 +53,9 @@ PORTEXAMPLES=	profile.xml sample.config sample.passwd
 GSSAPI_USES=		gssapi:mit
 GSSAPI_LIB_DEPENDS=	libkrb5support.so:security/krb5
 GSSAPI_CONFIGURE_OFF=	--without-gssapi
+
+RADIUS_LIB_DEPENDS=	libradcli.so:net/radcli
+RADIUS_CONFIGURE_OFF=	--without-radius
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/*.8

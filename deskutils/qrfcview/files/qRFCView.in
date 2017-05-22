@@ -1,0 +1,12 @@
+#!/bin/sh
+
+QRFCVIEW_DIR=$HOME/.local/share/qrfcview
+
+if [ -n "$XDG_DATA_HOME" ]; then
+	QRFCVIEW_DIR="$XDG_DATA_HOME/qrfcview"
+fi
+
+mkdir -p $QRFCVIEW_DIR
+cd $QRFCVIEW_DIR
+
+exec %%PREFIX%%/libexec/qRFCView "$@"

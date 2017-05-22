@@ -6,7 +6,7 @@ PORTVERSION=	3.0.1
 PORTREVISION=	1
 CATEGORIES=	archivers pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHK is a PHP-oriented package/archive system
 
 LICENSE=	PHP301

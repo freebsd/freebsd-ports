@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbeid
-PORTVERSION=	4.1.19
+PORTVERSION=	4.2.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -17,21 +17,26 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Fedict
 GH_PROJECT=	eid-mw
 
-USES=		autoreconf dos2unix libtool pkgconfig
+USES=		autoreconf gettext-tools libtool pkgconfig
 USE_GNOME=	gtk30
 
-DOS2UNIX_FILES=	cardcomm/pkcs11/src/common/datafile.cpp \
-		cardcomm/pkcs11/src/common/logbase.cpp \
-		cardcomm/pkcs11/src/common/util.cpp \
-		cardcomm/pkcs11/src/dialogs/dialogs.h \
-		cardcomm/pkcs11/src/log.h
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static --with-gtkvers=3
+CONFIGURE_ARGS=	--disable-p11kit --disable-static --with-gtkvers=3
 INSTALL_TARGET=	install-strip
 
-post-patch:
-	@${REINPLACE_CMD} '/^libbeidpkcs11_la_LIBADD =/s/-ldl//' \
-		${WRKSRC}/cardcomm/pkcs11/src/Makefile.am
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext-runtime
+
+post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/pkgconfig
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/pkcs11
+	${LN} -s ../libbeidpkcs11.so.0 \
+		${STAGEDIR}${PREFIX}/lib/pkcs11/beidpkcs11.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/p11-kit/modules
+	${INSTALL_DATA} ${WRKSRC}/cardcomm/pkcs11/src/beid.module \
+		${STAGEDIR}${PREFIX}/share/p11-kit/modules
 
 .include <bsd.port.mk>

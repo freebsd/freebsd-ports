@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.3.3
+PORTVERSION=	19.3.4
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -16,7 +16,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3
+PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3 \
+		patch-otp-19.3.4
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -221,7 +222,7 @@ post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/crypto-3.7.3
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.6/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.8
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.9
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.6
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.4.1/* \
@@ -229,7 +230,7 @@ post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.4.1
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.1.1/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.1.2
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.1.3
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.1.1
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-3.1/* \

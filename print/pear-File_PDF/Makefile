@@ -5,7 +5,7 @@ PORTNAME=	File_PDF
 PORTVERSION=	0.3.3
 CATEGORIES=	print pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to generate PDFs
 
 USES=	pear

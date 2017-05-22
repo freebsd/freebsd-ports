@@ -6,7 +6,7 @@ PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	security pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL classes for PAM integration
 
 LICENSE= 	PHP202

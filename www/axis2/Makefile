@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	axis2
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/axis/${PORTNAME}/java/core/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 
 LICENSE=	APACHE20

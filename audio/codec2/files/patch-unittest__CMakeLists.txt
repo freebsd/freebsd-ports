@@ -1,0 +1,14 @@
+--- unittest/CMakeLists.txt.orig	2017-01-30 20:52:36 UTC
++++ unittest/CMakeLists.txt
+@@ -118,7 +118,10 @@ add_executable(tnewamp1 tnewamp1.c ../sr
+ target_link_libraries(tnewamp1 codec2)
+ 
+ add_executable(tsrc tsrc.c)
+-target_link_libraries(tsrc samplerate)
++target_link_libraries(tsrc ${SAMPLERATE_LIBRARY})
++set_target_properties(tsrc
++    PROPERTIES INCLUDE_DIRECTORIES ${SAMPLERATE_INCLUDE_DIR}
++)
+ 
+ add_executable(tlininterp tlininterp.c)
+ add_executable(tdec tdec.c)

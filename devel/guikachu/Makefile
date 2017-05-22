@@ -11,6 +11,8 @@ MASTER_SITES=	http://cactus.rulez.org/projects/guikachu/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resource editor for PalmOS(tm) systems
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libgnomeuimm-2.6.so:x11-toolkits/libgnomeuimm26 \
 		libgnomevfsmm-2.6.so:devel/gnome-vfsmm
 

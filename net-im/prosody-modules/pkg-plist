@@ -1,4 +1,3 @@
-%%DOCSDIR%%/README
 %%INSTALLPATH%%/actions.lib.lua
 %%INSTALLPATH%%/conditions.lib.lua
 %%INSTALLPATH%%/datamanager_append_raw.lib.lua
@@ -118,6 +117,7 @@
 %%INSTALLPATH%%/mod_listusers.lua
 %%INSTALLPATH%%/mod_log_auth.lua
 %%INSTALLPATH%%/mod_log_events.lua
+%%INSTALLPATH%%/mod_log_http.lua
 %%INSTALLPATH%%/mod_log_mark.lua
 %%INSTALLPATH%%/mod_log_messages_sql.lua
 %%INSTALLPATH%%/mod_log_rate.lua
@@ -130,6 +130,7 @@
 %%INSTALLPATH%%/mod_mamsub.lua
 %%INSTALLPATH%%/mod_manifesto.lua
 %%INSTALLPATH%%/mod_measure_cpu.lua
+%%INSTALLPATH%%/mod_measure_malloc.lua
 %%INSTALLPATH%%/mod_measure_memory.lua
 %%INSTALLPATH%%/mod_measure_message_length.lua
 %%INSTALLPATH%%/mod_measure_storage.lua
@@ -259,3 +260,4 @@
 %%INSTALLPATH%%/test.lib.lua
 %%INSTALLPATH%%/top.lua
 %%INSTALLPATH%%/vcard.lib.lua
+%%PORTDOCS%%%%DOCSDIR%%/README

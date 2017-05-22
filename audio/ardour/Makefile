@@ -13,6 +13,8 @@ COMMENT=	Multichannel digital audio workstation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	liblo.so:audio/liblo \
 		liblrdf.so:textproc/liblrdf \
 		libjack.so:audio/jack \

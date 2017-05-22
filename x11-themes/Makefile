@@ -166,5 +166,6 @@
     SUBDIR += thewidgetfactory
     SUBDIR += ubuntulooks
     SUBDIR += xcursor-themes
+    SUBDIR += xfce-icons-elementary
 
 .include <bsd.port.subdir.mk>

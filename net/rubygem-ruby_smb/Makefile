@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby_smb
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.12
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-bindata>=0:devel/rubygem-bindata \
-		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
-		rubygem-rubyntlm05>=0:net/rubygem-rubyntlm05 \
+		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-windows_error>=0:devel/rubygem-windows_error
 
 NO_ARCH=	yes

@@ -11,6 +11,8 @@ COMMENT=	General-purpose fuzzer with simple, command-line interface
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option -Wframe-larger-than=131072
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	google

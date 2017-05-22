@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	inn
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	news ipv6
 MASTER_SITES=	ISC/${PORTNAME}
 
@@ -23,8 +23,10 @@ CPE_VENDOR=	isc
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 
 OPTIONS_DEFINE=		BERKELEYDB GNUPG KERBEROS SASL KEYWORDS \
-			LARGE_FILES OPENSSL TAGGED_HASH
-OPTIONS_DEFAULT=	BERKELEYDB GNUPG KEYWORDS OPENSSL LARGE_FILES
+			LARGE_FILES OPENSSL SETGID_INEWS TAGGED_HASH \
+			UUCP_RNEWS
+OPTIONS_DEFAULT=	BERKELEYDB GNUPG KEYWORDS OPENSSL LARGE_FILES \
+			SETGID_INEW UUCP_RNEWS
 OPTIONS_SUB=		yes
 
 KERBEROS_DESC=		Enable Kerberos v5 (for auth_krb5)
@@ -35,6 +37,8 @@ KEYWORDS_DESC=		Automatic keyword generation support
 BERKELEYDB_DESC=	Enable BerkeleyDB (for ovdb overview method)
 OPENSSL_DESC=		Enable OpenSSL (for NNTP over TLS/SSL support)
 GNUPG_DESC=		GnuPG support (for pgpverify control message)
+UUCP_RNEWS_DESC=	Install rnews suitable for use with net/freebsd-uucp
+SETGID_INEWS_DESC=	Enable posting articles locally for all users
 
 VARBASE?=	/var
 
@@ -54,8 +58,14 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 			--datarootdir=${INN_SHAREDIR}		\
 			--with-perl
 
-LIBVER_LONG=		3.0.0
-PLIST_SUB+=		LIBVER=${LIBVER_LONG:R:R} LIBVER_LONG=${LIBVER_LONG}
+UUCP_RNEWS_CONFIGURE_ON=--enable-uucp-rnews
+UUCP_RNEWS_RUN_DEPENDS=	uucp:net/freebsd-uucp
+SETGID_INEWS_CONFIGURE_ON=	--enable-setgid-inews
+
+INNLIB_LONG=		4.0.0
+LIBVER_LONG=		3.0.1
+PLIST_SUB+=		LIBVER=${LIBVER_LONG:R:R} LIBVER_LONG=${LIBVER_LONG} \
+			INNLIB=${INNLIB_LONG:R:R} INNLIB_LONG=${INNLIB_LONG}
 
 .include <bsd.port.options.mk>
 
@@ -132,7 +142,7 @@ TO_BE_STRIPPED=	bin/actsync bin/archive bin/auth/passwd/auth_krb5 \
 	bin/ovdb_stat bin/overchan bin/prunehistory bin/rnews \
 	bin/rnews.libexec/decode bin/rnews.libexec/encode bin/shlock \
 	bin/shrinkfile bin/sm bin/tdx-util bin/tinyleaf \
-	lib/libinn.so.${LIBVER_LONG} lib/libinnhist.so.${LIBVER_LONG} \
+	lib/libinn.so.${INNLIB_LONG} lib/libinnhist.so.${LIBVER_LONG} \
 	lib/libstorage.so.${LIBVER_LONG}
 
 CONFIG_FILES=	actsync.cfg actsync.ign buffindexed.conf control.ctl \

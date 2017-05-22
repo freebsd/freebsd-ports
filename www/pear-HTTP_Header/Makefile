@@ -5,7 +5,7 @@ PORTNAME=	HTTP_Header
 PORTVERSION=	1.2.1
 CATEGORIES=	www devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR OO interface to modify and handle HTTP headers and status codes
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP

@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	textproc pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension which implements the Double Metaphone algorithm
 
 LICENSE=	PHP301

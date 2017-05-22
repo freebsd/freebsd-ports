@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		2.4.1
+DISTVERSION=		2.4.2
 PORTREVISION?=		0
 CATEGORIES=		security net
-MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
-			http://build.openvpn.net/downloads/releases/
+MASTER_SITES=		https://swupdate.openvpn.net/community/releases/ \
+			https://build.openvpn.net/downloads/releases/
 
 MAINTAINER=		mandree@FreeBSD.org
 COMMENT?=		Secure IP/Ethernet tunnel daemon

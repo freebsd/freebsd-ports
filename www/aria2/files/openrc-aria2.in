@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2015 The OpenRC Authors.
+# See the Authors file at the top-level directory of this distribution and
+# https://github.com/OpenRC/openrc/blob/master/AUTHORS
+#
+# This file is part of OpenRC. It is subject to the license terms in
+# the LICENSE file found in the top-level directory of this
+# distribution and at https://github.com/OpenRC/openrc/blob/master/LICENSE
+# This file may not be copied, modified, propagated, or distributed
+# except according to the terms contained in the LICENSE file.
+
+name=aria2
+command=%%PREFIX%%/bin/aria2c
+aria2_config=${aria2_config:-"%%PREFIX%%/etc/aria2.conf"}
+aria2_flags=${aria2_flags:-""}
+aria2_user=${aria2_user:-"nobody"}
+aria2_group=${aria2_group:-"nobody"}
+required_files=${aria2_config}
+command_args="-D --conf-path=${aria2_config} ${aria2_flags}"
+
+depend()
+{
+	need localmount
+	use net dns
+}

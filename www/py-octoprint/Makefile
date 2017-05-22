@@ -43,6 +43,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.11.1:www/py-flask \
 USES=		python
 
 USE_PYTHON=	autoplist distutils
+BROKEN=		checksum mismatch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kevans91

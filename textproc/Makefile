@@ -8,6 +8,7 @@
     SUBDIR += R-cran-DT
     SUBDIR += R-cran-R2HTML
     SUBDIR += R-cran-XML
+    SUBDIR += R-cran-brew
     SUBDIR += R-cran-formatR
     SUBDIR += R-cran-highr
     SUBDIR += R-cran-htmltools
@@ -419,6 +420,7 @@
     SUBDIR += libsass
     SUBDIR += libsoldout
     SUBDIR += libsphinxclient
+    SUBDIR += libstaroffice
     SUBDIR += libstree
     SUBDIR += libtextcat
     SUBDIR += libtranslate
@@ -1441,6 +1443,7 @@
     SUBDIR += rubygem-babel-transpiler
     SUBDIR += rubygem-babosa
     SUBDIR += rubygem-charlock_holmes
+    SUBDIR += rubygem-cld3
     SUBDIR += rubygem-coderay
     SUBDIR += rubygem-colorator
     SUBDIR += rubygem-colored

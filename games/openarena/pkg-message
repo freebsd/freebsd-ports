@@ -1,2 +1,0 @@
-Should the game have trouble meeting com_maxfps, which would result in less
-effective strafe jumping, set com_busywait 1 to restore the old behaviour.

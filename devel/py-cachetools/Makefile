@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Extensible memoizing collections and decorators
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 NO_ARCH=	yes
 
 USES=		python

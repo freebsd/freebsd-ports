@@ -1,5 +1,5 @@
---- src/wayland-server.c.orig	2016-09-20 17:33:11.000000000 +0000
-+++ src/wayland-server.c	2016-12-13 20:07:06.878000000 +0000
+--- src/wayland-server.c.orig	2017-02-07 22:59:06 UTC
++++ src/wayland-server.c
 @@ -25,6 +25,8 @@
  
  #define _GNU_SOURCE
@@ -21,10 +21,10 @@
  #include "wayland-util.h"
  #include "wayland-private.h"
  #include "wayland-server.h"
-@@ -79,7 +86,13 @@
+@@ -79,7 +86,13 @@ struct wl_client {
  	struct wl_list link;
  	struct wl_map objects;
- 	struct wl_signal destroy_signal;
+ 	struct wl_priv_signal destroy_signal;
 +#ifdef HAVE_SYS_UCRED_H
 +	/* FreeBSD */
 +	struct xucred xucred;
@@ -33,9 +33,9 @@
  	struct ucred ucred;
 +#endif
  	int error;
- 	struct wl_signal resource_created_signal;
+ 	struct wl_priv_signal resource_created_signal;
  };
-@@ -466,10 +479,20 @@
+@@ -503,10 +516,20 @@ wl_client_create(struct wl_display *disp
  	if (!client->source)
  		goto err_client;
  
@@ -56,7 +56,7 @@
  
  	client->connection = wl_connection_create(fd);
  	if (client->connection == NULL)
-@@ -523,12 +546,23 @@
+@@ -560,12 +583,23 @@ WL_EXPORT void
  wl_client_get_credentials(struct wl_client *client,
  			  pid_t *pid, uid_t *uid, gid_t *gid)
  {

@@ -3,7 +3,7 @@
 
 PORTNAME=	scipy
 PORTVERSION=	0.19.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		CHEESESHOP:source \
@@ -35,6 +35,8 @@ PORTDOCS=	scipy-ref-${PORTVERSION}.pdf
 
 post-extract:
 	@${CP} ${DISTDIR}/scipy-ref-${PORTVERSION}.pdf ${WRKDIR}
+	# Syntax error with GCC5.
+	${REINPLACE_CMD} -e "s|) IF(| .AND. |" ${WRKSRC}/scipy/odr/odrpack/d_lpkbls.f
 
 # This line help fix the plist error because autoplist list it as a file but it is a directory
 	@cd ${WRKSRC}/scipy/stats/tests/data && ${TOUCH} tmp

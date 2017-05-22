@@ -13,8 +13,6 @@ COMMENT=	ICC compatible color management system
 
 LICENSE=	AGPLv3
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	jam:devel/jam
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng16.so:graphics/png

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stress-ng
-PORTVERSION=	0.07.29
+PORTVERSION=	0.08.00
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
-USES=		gmake
+USES=		gmake compiler:c11
 ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz

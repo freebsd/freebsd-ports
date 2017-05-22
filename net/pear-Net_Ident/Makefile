@@ -5,9 +5,10 @@ PORTNAME=	Net_Ident
 PORTVERSION=	1.1.0
 CATEGORIES=	net www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR identification protocol implementation
 
-USES=	pear
+NO_ARCH=	yes
+USES=		pear
 
 .include <bsd.port.mk>

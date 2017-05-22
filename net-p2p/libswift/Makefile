@@ -7,11 +7,13 @@ PORTREVISION=	2
 CATEGORIES=		net-p2p
 
 MAINTAINER=		dch@skunkwerks.at
-COMMENT=	 IETF Peer-to-Peer Streaming Peer Protocol implementation
+COMMENT=	IETF Peer-to-Peer Streaming Peer Protocol implementation
 
 LICENSE=	LGPL21
 
 LIB_DEPENDS=		libevent.so:devel/libevent
+
+BROKEN_powerpc64=	fails to build: gmake: clang++: Command not found
 
 USE_GITHUB=		yes
 GH_TAGNAME=		dda307f

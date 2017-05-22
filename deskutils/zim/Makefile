@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zim
-PORTVERSION=	0.65
+PORTVERSION=	0.66
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
@@ -12,13 +12,14 @@ COMMENT=	Desktop wiki editor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg \
 		xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 NO_ARCH=	yes
-
-USES=		desktop-file-utils gettext python:2 shared-mime-info
+USES=		desktop-file-utils dos2unix gettext python:-2.7 shared-mime-info
+DOS2UNIX_FILES=	zim/newfs/__init__.py
 USE_GNOME=	pygtk2
 USE_PYTHON=	autoplist distutils
 INSTALLS_ICONS=	yes
@@ -48,8 +49,5 @@ post-patch:
 		 s|share/man|man| ; \
 		 /.skip_xdg_cmd = /s|0|1|' \
 		${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e \
-		's|decode('utf-8')|decode('utf-8','replace')|g' \
-		${WRKSRC}/zim/utils.py
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@ PORTNAME=	Services_TinyURL
 PORTVERSION=	0.1.2
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP interface to TinyURL's API
 
 USES=	pear

@@ -5,5 +5,5 @@
  Description: the Jack Audio Connection Kit: a low-latency synchronous callback-based media server
  Version: @JACK_VERSION@
 -Libs: -L${libdir} -ljack -lpthread @OS_LDFLAGS@
-+Libs: -L${libdir} -ljack -lpthread
++Libs: -L${libdir} -ljack -pthread
  Cflags: -I${includedir}

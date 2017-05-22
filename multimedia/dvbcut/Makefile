@@ -3,7 +3,7 @@
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	se@FreeBSD.org
@@ -52,9 +52,9 @@ do-install:
 		${INSTALL_MAN} ${WRKSRC}/dvbcut.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 		${INSTALL_DATA} ${WRKSRC}/dvbcut.desktop ${STAGEDIR}${PREFIX}/share/applications/
-		${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/dvbcut
-		${INSTALL_DATA} ${WRKSRC}/dvbcut.svg ${STAGEDIR}${PREFIX}/share/icons/dvbcut/
-		${INSTALL_DATA} ${WRKSRC}/icons/* ${STAGEDIR}${PREFIX}/share/icons/dvbcut/
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/dvbcut/icons/
+		${INSTALL_DATA} ${WRKSRC}/dvbcut.svg ${STAGEDIR}${PREFIX}/share/dvbcut/icons/
+		${INSTALL_DATA} ${WRKSRC}/icons/* ${STAGEDIR}${PREFIX}/share/dvbcut/icons/
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 		${INSTALL_DATA} ${WRKSRC}/dvbcut.xml ${STAGEDIR}${PREFIX}/share/mime/packages/
 

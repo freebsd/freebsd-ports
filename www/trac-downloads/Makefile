@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Trac plugin providing a downloads section
 
 RUN_DEPENDS=	tracd:www/trac

@@ -1,7 +1,6 @@
 bin/gnome-help
 bin/yelp
 include/libyelp/yelp-bookmarks.h
-include/libyelp/yelp-common-types.h
 include/libyelp/yelp-docbook-document.h
 include/libyelp/yelp-document.h
 include/libyelp/yelp-help-list.h
@@ -22,8 +21,6 @@ lib/libyelp.a
 lib/libyelp.so
 lib/libyelp.so.0
 lib/libyelp.so.0.0.0
-lib/yelp/libyelpcommon.a
-lib/yelp/libyelpcommon.so
 lib/yelp/web-extensions/libyelpwebextension.a
 lib/yelp/web-extensions/libyelpwebextension.so
 libexec/yelp-groff
@@ -38,7 +35,6 @@ share/gtk-doc/html/libyelp/ch01.html
 share/gtk-doc/html/libyelp/ch01s02.html
 share/gtk-doc/html/libyelp/home.png
 share/gtk-doc/html/libyelp/index.html
-share/gtk-doc/html/libyelp/index.sgml
 share/gtk-doc/html/libyelp/left-insensitive.png
 share/gtk-doc/html/libyelp/left.png
 share/gtk-doc/html/libyelp/libyelp-yelp-error.html
@@ -51,6 +47,7 @@ share/gtk-doc/html/libyelp/up-insensitive.png
 share/gtk-doc/html/libyelp/up.png
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
+share/locale/an/LC_MESSAGES/yelp.mo
 share/locale/ar/LC_MESSAGES/yelp.mo
 share/locale/as/LC_MESSAGES/yelp.mo
 share/locale/ast/LC_MESSAGES/yelp.mo
@@ -224,7 +221,6 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 %%DATADIR%%/mathjax/jax/element/mml/optable/GreekAndCoptic.js
 %%DATADIR%%/mathjax/jax/element/mml/optable/Latin1Supplement.js
 %%DATADIR%%/mathjax/jax/element/mml/optable/LetterlikeSymbols.js
-%%DATADIR%%/mathjax/jax/element/mml/optable/Makefile.am
 %%DATADIR%%/mathjax/jax/element/mml/optable/MathOperators.js
 %%DATADIR%%/mathjax/jax/element/mml/optable/MiscMathSymbolsA.js
 %%DATADIR%%/mathjax/jax/element/mml/optable/MiscMathSymbolsB.js
@@ -265,7 +261,6 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 %%DATADIR%%/mathjax/jax/input/MathML/entities/y.js
 %%DATADIR%%/mathjax/jax/input/MathML/entities/z.js
 %%DATADIR%%/mathjax/jax/input/MathML/jax.js
-%%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/Makefile.am
 %%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/annotation-xml.js
 %%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/maction.js
 %%DATADIR%%/mathjax/jax/output/HTML-CSS/autoload/menclose.js

@@ -1,0 +1,4 @@
+A weak reference provides a gateway to an object without preventing
+that object from being collected by the garbage collector (GC).
+
+WWW: https://pecl.php.net/package/Weakref

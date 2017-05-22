@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awesome_nested_set
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

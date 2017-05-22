@@ -11,6 +11,8 @@ COMMENT=	PHP Accelerator designed mainly for graphic work
 
 LICENSE=	PHP301
 
+BROKEN_powerpc64=	fails to build: Killing runaway build after 7200 seconds with no output
+
 USES=		php:pecl
 IGNORE_WITH_PHP=	70
 

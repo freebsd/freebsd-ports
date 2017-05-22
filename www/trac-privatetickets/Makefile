@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	trac-
 DISTNAME=	TracPrivateTickets-${PORTVERSION}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Modified ticket security for Trac
 
 LICENSE=	BSD2CLAUSE

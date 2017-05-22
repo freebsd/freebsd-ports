@@ -1,20 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	npth
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel
-MASTER_SITES=	GNUPG/${PORTNAME}
+MASTER_SITES=	GNUPG
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	New GNU Portable Threads
 
-LICENSE=	LGPL3 GPLv2
-LICENSE_COMB=	dual
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		tar:bzip2 libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-LIBS=		-lpthread
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

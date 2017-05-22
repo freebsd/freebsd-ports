@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	deluge
-PORTVERSION=	1.3.14
+PORTVERSION=	1.3.15
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 

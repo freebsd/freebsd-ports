@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION:S/p/rc/}
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Templates for the Trac wiki
 
 LICENSE=	BSD3CLAUSE

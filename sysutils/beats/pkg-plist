@@ -1,5 +1,4 @@
 %%DATADIR%%/import_dashboards
-%%DATADIR%%/migrate_beat_config_1_x_to_5_0.py
 %%FILEBEAT%%sbin/filebeat
 %%HEARTBEAT%%sbin/heartbeat
 %%METRICBEAT%%sbin/metricbeat

@@ -7,7 +7,7 @@ PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 LICENSE=	GPLv3

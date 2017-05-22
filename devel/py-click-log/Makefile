@@ -12,11 +12,11 @@ COMMENT=	Logging integration for Click
 
 LICENSE=	MIT
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click
+TEST_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click \
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

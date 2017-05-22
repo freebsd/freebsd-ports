@@ -6,7 +6,7 @@ PORTVERSION=	1.6.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Perl script that extracts URLs from email in MIME or plain text format
 
 LICENSE=	BSD2CLAUSE

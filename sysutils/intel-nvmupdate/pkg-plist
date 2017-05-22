@@ -4,6 +4,7 @@ intel-nvmupdate/AXX1P40FRTIOM_gpio.txt
 intel-nvmupdate/AXX2P40FRTIOM_4p42_CFGID4p5_80001935.bin
 intel-nvmupdate/AXX2P40FRTIOM_5p05_CFGID4p5.bin
 intel-nvmupdate/AXX2P40FRTIOM_gpio.txt
+intel-nvmupdate/BootIMG.FLB
 intel-nvmupdate/Intel_Proprietary_License.pdf
 intel-nvmupdate/Intel_firmware_license.txt
 intel-nvmupdate/PF_Alloc.txt
@@ -65,6 +66,6 @@ intel-nvmupdate/license.txt
 intel-nvmupdate/nvmupdate.cfg
 intel-nvmupdate/nvmupdate64e
 intel-nvmupdate/readme.txt
-intel-nvmupdate/v2.B.3.A_001_XFI_SGMII_3_Speed_no_Swap_Startup_LineOff_SerDesOff_X557_AT4_B1_080316.bin
+intel-nvmupdate/v2.B.9.A_VER380_021_FVL_XFI_SGMII_3_Speed_No_Swap_Startup_LineOff_SerDesOff_X557_AT4_B1_070916.bin
 intel-nvmupdate/version.txt
 sbin/nvmupdate

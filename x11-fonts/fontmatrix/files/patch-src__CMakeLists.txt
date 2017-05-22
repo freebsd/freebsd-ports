@@ -1,0 +1,10 @@
+--- src/CMakeLists.txt.orig	2009-07-03 15:17:39 UTC
++++ src/CMakeLists.txt
+@@ -265,6 +265,7 @@ IF(UNIX AND NOT APPLE)
+ 	)
+ 
+ 	target_link_libraries(fontmatrix harfbuzz hyphenate 
++	execinfo
+ 	${PYTHONQT_LIB}
+ 	${QT_LIBRARIES}
+ 	${FREETYPE_LIBRARIES}

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	geckodriver
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://freebsd-ports.mytaste.org/www/geckodriver/:crates

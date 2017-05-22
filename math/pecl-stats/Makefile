@@ -5,7 +5,7 @@ PORTNAME=	stats
 PORTVERSION=	1.0.5
 CATEGORIES=	math textproc pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension with routines for statistical computation
 
 LICENSE=	PHP301

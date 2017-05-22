@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_Renderer_XLS
 PORTVERSION=	0.1.3
 CATEGORIES=	textproc databases www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Renderer driver that generates a XLS string
 
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array \

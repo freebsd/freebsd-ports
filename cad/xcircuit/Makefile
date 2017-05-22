@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.8.83
+PORTVERSION=	3.10.1
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
@@ -13,11 +13,15 @@ COMMENT=	X11 circuit schematics drawing program
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
 OPTIONS_DEFINE=	EXAMPLES
 
 USE_XORG=	ice sm x11 xpm xscrnsaver xt
-USES=		tk:tea ghostscript:x11,run gmake tar:tgz
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
+USE_GNOME=	cairo
+USES=		ghostscript:x11,run gmake pkgconfig tar:tgz tk:tea
+MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
 DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/${PORTNAME}.gif" \

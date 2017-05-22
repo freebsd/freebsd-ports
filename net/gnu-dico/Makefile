@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dico
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	net textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu-
@@ -57,7 +57,6 @@ post-patch:
 		-e 's/mu_check_lib_save_LIBS/LIBS/' \
 		-e 's/python-config/$${PYTHON_CONFIG}/' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's/conf.5in dico/conf.5 dico/' ${WRKSRC}/doc/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/dicod.conf ${STAGEDIR}${PREFIX}/etc/dicod.conf.sample

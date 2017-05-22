@@ -13,7 +13,9 @@ COMMENT=	Easy upload management for ActiveRecord
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel5>0:databases/rubygem-activemodel5 \
+RUN_DEPENDS=	ImageMagick7-nox11>0:graphics/ImageMagick7-nox11
+
+RUN_DEPENDS+=	rubygem-activemodel5>0:databases/rubygem-activemodel5 \
 		rubygem-activesupport5>=0:devel/rubygem-activesupport5 \
 		rubygem-cocaine>=0.5.5:devel/rubygem-cocaine \
 		rubygem-mimemagic>=0.3.0:misc/rubygem-mimemagic \

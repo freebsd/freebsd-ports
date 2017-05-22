@@ -1,65 +1,21 @@
---- cardcomm/pkcs11/src/common/datafile.cpp.orig	2015-06-02 08:02:25 UTC
-+++ cardcomm/pkcs11/src/common/datafile.cpp
-@@ -249,8 +249,7 @@ bool CDataFile::Load(bool bLock)
-   while ( !bDone )
-     {
-       memset(buffer, 0, MAX_BUFFER_LEN);
--      wchar_t* tmp = fgetws( buffer, MAX_BUFFER_LEN, m_stream);
--      tmp=tmp;		// avoid warning
-+      (void)fgetws( buffer, MAX_BUFFER_LEN, m_stream);
- 
-       szLine = buffer;
-       Trim(szLine);
-@@ -1011,8 +1010,7 @@ int WriteLn(FILE * stream, wchar_t* fmt,
- 	if ( buf[nLength] != '\n' && buf[nLength] != '\r' )
- 		buf[nLength++] = '\n';
- 
--    size_t tmp = fwrite(buf, sizeof( wchar_t ), nLength, stream);
--    tmp = tmp;	// avoid warning
-+    (void)fwrite(buf, sizeof( wchar_t ), nLength, stream);
- 
- 	return nLength;
- }
---- cardcomm/pkcs11/src/common/logbase.cpp.orig	2015-06-02 08:02:25 UTC
+--- cardcomm/pkcs11/src/common/logbase.cpp.orig	2017-05-16 16:28:03 UTC
 +++ cardcomm/pkcs11/src/common/logbase.cpp
-@@ -30,11 +30,7 @@
- 
- #ifndef WIN32
- #include <stdlib.h>
--#ifdef LINUX
- #include "wintypes.h"
--#else
--#include "PCSC/wintypes.h"
--#endif
- #include "sys/stat.h"
- #include "util.h"
- 
-@@ -575,6 +571,7 @@ bool CLog::open(bool bWchar)
- 		else
- 			err  = fopen_s(&m_f,utilStringNarrow(filename).c_str(),"a");
+@@ -639,6 +639,7 @@ namespace eIDMW
+ 					      utilStringNarrow(filename).
+ 					      c_str(), "a");
  #else
-+		(void)bWchar;
- 		m_f = fopen(utilStringNarrow(filename).c_str(),"a, ccs=UTF-8");
- 		if (m_f == NULL) err=errno;	
- #endif
---- cardcomm/pkcs11/src/common/mw_util.h.orig	2015-02-19 13:59:02 UTC
-+++ cardcomm/pkcs11/src/common/mw_util.h
-@@ -38,7 +38,6 @@
- #endif
- 
- #if !defined __APPLE__ && !defined USE_WINERROR
--#include "error.h"
- #endif
- 
- #ifndef HAVE_ERRNO_T
---- cardcomm/pkcs11/src/common/util.cpp.orig	2015-06-02 08:02:25 UTC
++			(void)bWchar;
+ 			m_f = fopen(utilStringNarrow(filename).c_str(),
+ 				    "a, ccs=UTF-8");
+ 			if (m_f == NULL)
+--- cardcomm/pkcs11/src/common/util.cpp.orig	2017-05-16 16:28:03 UTC
 +++ cardcomm/pkcs11/src/common/util.cpp
-@@ -376,7 +376,7 @@ void GetProcessName(wchar_t *wBuffer,uns
- 	/* Get our PID and build the name of the link in /proc */
- 	pid = getpid();
- 	
--	if (snprintf(linkname, sizeof(linkname), "/proc/%i/exe", pid) < 0)
-+	if (snprintf(linkname, sizeof(linkname), "/proc/%i/file", pid) < 0)
- 	{
- 		/* This should only happen on large word systems. I'm not sure
- 		   what the proper response is here.
+@@ -221,7 +221,7 @@ namespace eIDMW
+ 			pid = getpid();
+ 
+ 			if (snprintf
+-			    (linkname, sizeof(linkname), "/proc/%i/exe",
++			    (linkname, sizeof(linkname), "/proc/%i/file",
+ 			     pid) < 0)
+ 			{
+ 				/* This should only happen on large word systems. I'm not sure

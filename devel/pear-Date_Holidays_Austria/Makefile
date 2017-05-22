@@ -4,7 +4,7 @@ PORTNAME=	Date_Holidays_Austria
 PORTVERSION=	0.1.6
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Austria
 
 LICENSE=	PHP301

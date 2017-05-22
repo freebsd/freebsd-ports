@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keepassxc
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	security
 
 MAINTAINER=	melanhit@gmail.com
@@ -22,17 +21,30 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 
 CONFLICTS_INSTALL=	keepassx-0.* keepassx2-* keepassx-*
 
-USES=		cmake compiler:c++11-lib desktop-file-utils shared-mime-info
+USES=		cmake:outsource compiler:c++11-lib desktop-file-utils shared-mime-info
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT5=	buildtools_build concurrent core dbus gui linguisttools network \
-		qmake_build testlib widgets x11extras
-USE_XORG=	ice inputproto sm x11 xcursor xext xfixes xi xrandr xrender \
-		xt xtst
+		qmake_build testlib widgets
+USE_XORG=	ice inputproto sm x11 xcursor xext xfixes xrandr xrender xt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keepassxreboot
 
-CMAKE_ARGS+=	-DZLIB_SUPPORTS_GZIP:BOOL=ON -DWITH_XC_AUTOTYPE=ON -DWITH_XC_HTTP=ON
+CMAKE_ARGS+=	-DZLIB_SUPPORTS_GZIP:BOOL=ON
+
+OPTIONS_DEFINE=		AUTOTYPE HTTP TEST
+OPTIONS_DEFAULT=	AUTOTYPE HTTP
+OPTIONS_SUB=		yes
+
+AUTOTYPE_CMAKE_BOOL=	WITH_XC_AUTOTYPE
+AUTOTYPE_DESC=		Auto-type passwords in input fields
+AUTOTYPE_USE=		QT5=x11extras XORG=xi,xtst
+
+HTTP_CMAKE_BOOL=	WITH_XC_HTTP
+HTTP_DESC=		KeePassHTTP support for ChromeIPass and PassIFox
+
+TEST_CMAKE_BOOL=	WITH_TESTS WITH_GUI_TESTS
+TEST_TEST_TARGET=	test
 
 .include <bsd.port.mk>

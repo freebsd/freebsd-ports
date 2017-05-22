@@ -5,7 +5,7 @@ PORTNAME=	HTML_QuickForm
 PORTVERSION=	3.2.14
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provide methods for creating, validating, and processing HTML forms
 
 LICENSE=	PHP301

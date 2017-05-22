@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -45,7 +45,7 @@ QEMU_CONFIGURE_WITH=	qemu yajl
 QEMU_CFLAGS=	-I${LOCALBASE}/include
 QEMU_LIB_DEPENDS=	libyajl.so:devel/yajl
 QEMU_RUN_DEPENDS=	dmidecode:sysutils/dmidecode \
-			qemu-io:emulators/qemu-devel
+			qemu-io:emulators/qemu
 
 GNUTLS_CONFIGURE_ON=	--with-gnutls=${LOCALBASE}
 GNUTLS_CONFIGURE_OFF=	--without-gnutls
@@ -95,7 +95,8 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix cpe gmake libtool pathfix perl5 pkgconfig tar:xz
+USES=		charsetfix cpe gmake libtool pathfix \
+		perl5 python:build pkgconfig shebangfix tar:xz
 CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -104,6 +105,7 @@ SHLIB_VER=	${PORTVERSION:C/(^[0-9])\./0.\100/}
 PLIST_SUB+=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
+SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTVERSION="-${PORTVERSION}"

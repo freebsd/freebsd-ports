@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
@@ -12,19 +12,19 @@ COMMENT=	Full-stack web application framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-actioncable5>=5.1.0:www/rubygem-actioncable5 \
-		rubygem-actionmailer5>=5.1.0:mail/rubygem-actionmailer5 \
-		rubygem-actionpack5>=5.1.0:www/rubygem-actionpack5 \
-		rubygem-actionview5>=5.1.0:devel/rubygem-actionview5 \
-		rubygem-activejob5>=5.1.0:devel/rubygem-activejob5 \
-		rubygem-activemodel5>=5.1.0:databases/rubygem-activemodel5 \
-		rubygem-activerecord5>=5.1.0:databases/rubygem-activerecord5 \
-		rubygem-activesupport5>=5.1.0:devel/rubygem-activesupport5 \
+RUN_DEPENDS=	rubygem-actioncable5=${PORTVERSION}:www/rubygem-actioncable5 \
+		rubygem-actionmailer5=${PORTVERSION}:mail/rubygem-actionmailer5 \
+		rubygem-actionpack5=${PORTVERSION}:www/rubygem-actionpack5 \
+		rubygem-actionview5=${PORTVERSION}:devel/rubygem-actionview5 \
+		rubygem-activejob5=${PORTVERSION}:devel/rubygem-activejob5 \
+		rubygem-activemodel5=${PORTVERSION}:databases/rubygem-activemodel5 \
+		rubygem-activerecord5=${PORTVERSION}:databases/rubygem-activerecord5 \
+		rubygem-activesupport5=${PORTVERSION}:devel/rubygem-activesupport5 \
 		rubygem-bundler<2.0:sysutils/rubygem-bundler \
-		rubygem-railties5>=5.1.0:www/rubygem-railties5
+		rubygem-railties5=${PORTVERSION}:www/rubygem-railties5 \
+		rubygem-sprockets-rails-rails5>=2.0.0:devel/rubygem-sprockets-rails-rails5
 
-RUN_DEPENDS+=	rubygem-sprockets-rails-rails5>=2.0.0:devel/rubygem-sprockets-rails-rails5 \
-		rubygem-byebug>=9.0.6:devel/rubygem-byebug \
+RUN_DEPENDS+=	rubygem-byebug>=9.0.6:devel/rubygem-byebug \
 		rubygem-coffee-rails-rails5>=4.2.1:devel/rubygem-coffee-rails-rails5 \
 		rubygem-coffee-script-source>=1.12.2:devel/rubygem-coffee-script-source \
 		rubygem-coffee-script>=2.4.1:devel/rubygem-coffee-script \

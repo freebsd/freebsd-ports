@@ -5,7 +5,7 @@ PORTNAME=	File_Gettext
 PORTVERSION=	0.4.2
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR GNU Gettext file parser
 
 USES=	pear

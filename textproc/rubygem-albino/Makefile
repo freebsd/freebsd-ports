@@ -3,6 +3,7 @@
 
 PORTNAME=	albino
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -18,5 +19,9 @@ NO_ARCH=	yes
 
 USE_RUBY=	yes
 USES=		gem python
+REINPLACE_ARGS=	-i ''
+
+post-patch:
+	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/vendor/multipygmentize
 
 .include <bsd.port.mk>

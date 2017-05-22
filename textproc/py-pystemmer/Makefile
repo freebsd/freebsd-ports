@@ -10,7 +10,7 @@ MASTER_SITES=	CHEESESHOP \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyStemmer-${PORTVERSION}
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Snowball Stemming Algorithms for Information Retrieval
 
 LICENSE=	MIT BSD3CLAUSE
