@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
+NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	fails to configure: "Big Endian not supported"
+
 USES+=		autoreconf gmake libtool pkgconfig shebangfix ssl
 SHEBANG_FILES=	src/test/*.py
 USE_GITHUB=	yes
@@ -96,7 +99,7 @@ PLIST_FILES?=	bin/litecoin-qt share/applications/litecoin-qt.desktop \
 
 .if ${SSL_DEFAULT:Mlibressl*}
 # The configure script will output this message, so save the user the trouble
-IGNORE=	Detected LibreSSL: This is NOT supported, and may break consensus compatibility!
+IGNORE=	detected LibreSSL: This is NOT supported, and may break consensus compatibility!
 .endif
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"

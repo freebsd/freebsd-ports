@@ -17,6 +17,9 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
+BROKEN_aarch64=		fails to link: undefined reference to SyAllocBags
+BROKEN_powerpc64=	fails to package: 2_manifolds_54.scb: No such file or directory
+
 USES=		gmake shebangfix tar:bzip2
 SHEBANG_FILES=	configure \
 		pkg/GAPDoc-*/*/clean \
@@ -41,8 +44,6 @@ GAP_DISTDATE=	${GAP_DISTTIME:C/-.*//:S/_//g}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
 WRKSRC=		${WRKDIR}/${GAP_VERSION}
 PLIST_FILES=	bin/gap
-
-BROKEN_aarch64=		Fails to link: undefined reference to SyAllocBags
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/sh|/bin/sh|' \

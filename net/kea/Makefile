@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 		libboost_system.so:devel/boost-libs
 
+BROKEN_powerpc64=	fails to configure: checking for log4cplus library... no
+
 USES=		autoreconf compiler:c++11-lang libtool pathfix python:3.3+ ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}

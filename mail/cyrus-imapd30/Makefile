@@ -19,6 +19,8 @@ LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libjansson.so:devel/jansson \
 		libpcre.so:devel/pcre
 
+BROKEN_powerpc64=	fails to compile: mailbox.h: redefinition of typedef 'message_t'
+
 CONFLICTS_INSTALL=	cyrus-imapd-2.* cyrus-imapd2*
 
 USE_RC_SUBR=	imapd

@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libva-x11.so:multimedia/libva
 
+BROKEN_armv6=		fails to configure: CMake Error: Check for working CXX compiler: /nxb-bin/usr/bin/c++ -- broken
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	i-rinat
 
