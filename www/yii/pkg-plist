@@ -1294,6 +1294,7 @@ bin/yiic
 %%DATADIR%%/framework/messages/fr/zii.php
 %%DATADIR%%/framework/messages/he/yii.php
 %%DATADIR%%/framework/messages/he/zii.php
+%%DATADIR%%/framework/messages/hr/yii.php
 %%DATADIR%%/framework/messages/hu/yii.php
 %%DATADIR%%/framework/messages/hu/zii.php
 %%DATADIR%%/framework/messages/id/yii.php
@@ -1388,6 +1389,7 @@ bin/yiic
 %%DATADIR%%/framework/vendors/README.html
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/ABAP.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/AVRC.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/CPP.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/CSS.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/DIFF.php
@@ -1416,6 +1418,7 @@ bin/yiic
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/README
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/TODO
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/abap.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/avrc.xml
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/cpp.xml
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/css.xml
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/diff.xml
@@ -1467,6 +1470,7 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.ID.HTML5.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
@@ -1477,10 +1481,12 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.Predicate.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowDuplicates.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt
@@ -1494,6 +1500,7 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyRemoveScript.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.AllowHostnameUnderscore.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
@@ -1507,6 +1514,7 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Language.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.LegacyEntityDecoder.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt
@@ -1545,6 +1553,8 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeScripting.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetNoopener.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetNoreferrer.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
@@ -1599,6 +1609,8 @@ bin/yiic
 %%DATADIR%%/framework/vendors/markdown/markdown.php
 %%DATADIR%%/framework/vendors/punycode/LICENSE-GPL.txt
 %%DATADIR%%/framework/vendors/punycode/LICENSE-MIT.txt
+%%DATADIR%%/framework/vendors/zend-escaper/Escaper.php
+%%DATADIR%%/framework/vendors/zend-escaper/LICENSE.md
 %%DATADIR%%/framework/views/ar/error.php
 %%DATADIR%%/framework/views/ar/error400.php
 %%DATADIR%%/framework/views/ar/error403.php
