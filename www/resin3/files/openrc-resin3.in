@@ -6,7 +6,6 @@ ${name}_user="${${name}_user:-"www"}"
 ${name}_group="${${name}_group:-"www"}"
 
 command="%%PREFIX%%/sbin/${name}ctl"
-command_args="start"
 pidfile="%%PID_FILE%%"
 
 depend(){
@@ -15,12 +14,11 @@ depend(){
 
 start_pre(){
 	export JAVA_HOME
+	command=${command} start
 }
 
 if test -n "${${name}_java_version}" ; then
     JAVA_HOME=$(JAVA_VERSION="${${name}_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
-    procname=$(JAVA_VERSION="${${name}_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
 else
     JAVA_HOME=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
-    procname=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
 fi
