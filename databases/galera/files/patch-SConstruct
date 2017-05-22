@@ -1,21 +1,68 @@
---- ./SConstruct.orig	2014-08-01 16:33:09.000000000 -0400
-+++ ./SConstruct	2014-08-01 16:34:45.000000000 -0400
-@@ -153,7 +153,7 @@
+--- SConstruct.orig	2017-01-25 07:55:06 UTC
++++ SConstruct
+@@ -28,6 +28,7 @@
+ import os
+ import platform
+ import string
++import subprocess
  
- # Initialize CPPFLAGS and LIBPATH from environment to get user preferences
- env.Replace(CPPFLAGS = os.getenv('CPPFLAGS', ''))
--env.Replace(LIBPATH = [os.getenv('LIBPATH', '')])
-+env.Replace(RPATH = [os.getenv('RPATH', '')])
- 
- # Set -pthread flag explicitly to make sure that pthreads are
+ sysname = os.uname()[0].lower()
+ machine = platform.machine()
+@@ -182,10 +183,10 @@ env.Replace(RPATH     = [os.getenv('RPAT
  # enabled on all platforms.
-@@ -165,6 +165,9 @@
-     env.Append(CPPFLAGS = ' -I/usr/local/include ')
+ env.Append(CCFLAGS = ' -pthread')
+ 
+-# Freebsd ports are installed under /usr/local
++# FreeBSD ports are usually installed under /usr/local
+ if sysname == 'freebsd' or sysname == 'sunos':
+-    env.Append(LIBPATH  = ['/usr/local/lib'])
+-    env.Append(CPPFLAGS = ' -I/usr/local/include ')
++    env.Append(LIBPATH = ['/usr/local/lib'])
++    env.Append(CPPPATH = ['/usr/local/include'])
  if sysname == 'sunos':
     env.Replace(SHLINKFLAGS = '-shared ')
-+   env.Replace(AR = 'ar')
-+   env.Replace(ARFLAGS= 'r')
-+   env.Replace(ARCOM = '$AR $ARFLAGS $TARGET $SOURCES')
  
- # Add paths is extra_sysroot argument was specified
- extra_sysroot = ARGUMENTS.get('extra_sysroot', '')
+@@ -418,8 +419,10 @@ else:
+     print "Falling back to bundled asio"
+ 
+ if not system_asio:
+-    # Fall back to embedded asio
+-    conf.env.Append(CPPPATH = [ '#/asio' ])
++    # Make sure that -Iasio goes before other paths (e.g. -I/usr/local/include)
++    # that may contain a system wide installed asio. We should use the bundled
++    # asio if "scons system_asio=0" is specified. Thus use Prepend().
++    conf.env.Prepend(CPPPATH = [ '#/asio' ])
+     if conf.CheckCXXHeader('asio.hpp'):
+         conf.env.Append(CPPFLAGS = ' -DHAVE_ASIO_HPP')
+     else:
+@@ -442,17 +445,26 @@ if ssl == 1:
+         Exit(1)
+ 
+ 
+-# these will be used only with our softaware
++# get compiler name/version, CXX may be set to "c++" which may be clang or gcc
++try:
++    compiler_version = subprocess.check_output([conf.env['CXX'], '--version'],
++                                               stderr=subprocess.STDOUT)
++except:
++    # in case "$CXX --version" returns an error, e.g. "unknown option"
++    compiler_version = 'unknown'
++
++# these will be used only with our software
+ if strict_build_flags == 1:
+     conf.env.Append(CCFLAGS = ' -Werror -pedantic')
+-    if 'clang' not in conf.env['CXX']:
+-        conf.env.Prepend(CXXFLAGS = '-Weffc++ -Wold-style-cast ')
+-    else:
++    if 'clang' in compiler_version:
+         conf.env.Append(CCFLAGS  = ' -Wno-self-assign')
+         conf.env.Append(CCFLAGS  = ' -Wno-gnu-zero-variadic-macro-arguments')
+         conf.env.Append(CXXFLAGS = ' -Wno-variadic-macros')
++        # CXX may be something like "ccache clang++"
+         if 'ccache' in conf.env['CXX']:
+             conf.env.Append(CCFLAGS = ' -Qunused-arguments')
++    else:
++        conf.env.Prepend(CXXFLAGS = '-Weffc++ -Wold-style-cast ')
+ 
+ env = conf.Finish()
+ 
