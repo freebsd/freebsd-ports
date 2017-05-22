@@ -696,6 +696,16 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/tutorials/gpl-2.svg
 %%DATADIR%%/tutorials/making_markers.svg
 %%DATADIR%%/tutorials/oldguitar.jpg
+%%DATADIR%%/tutorials/pixelart-dialog.de.png
+%%DATADIR%%/tutorials/pixelart-dialog.el.png
+%%DATADIR%%/tutorials/pixelart-dialog.en.png
+%%DATADIR%%/tutorials/pixelart-dialog.fr.png
+%%DATADIR%%/tutorials/pixelart-dialog.nl.png
+%%DATADIR%%/tutorials/pixelart-dialog.png
+%%DATADIR%%/tutorials/pixelart-dialog.pt.png
+%%DATADIR%%/tutorials/pixelart-dialog.ru.png
+%%DATADIR%%/tutorials/pixelart-dialog.sk.png
+%%DATADIR%%/tutorials/pixelart-dialog.zh_TW.png
 %%DATADIR%%/tutorials/potrace.be.png
 %%DATADIR%%/tutorials/potrace.ca.png
 %%DATADIR%%/tutorials/potrace.de.png
@@ -884,6 +894,8 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.fr.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.nl.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.pt.svg
+%%DATADIR%%/tutorials/tutorial-tracing-pixelart.ru.svg
+%%DATADIR%%/tutorials/tutorial-tracing-pixelart.sk.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.zh_TW.svg
 %%DATADIR%%/tutorials/tutorial-tracing.be.svg
