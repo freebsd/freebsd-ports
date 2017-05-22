@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	geshi
-DISTVERSION=	1_0_8_12
-DISTVERSIONPREFIX=	RELEASE_
+DISTVERSION=	1.0.9.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php-
 
@@ -27,7 +27,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/geshi/
 	${INSTALL_DATA} ${WRKSRC}/src/geshi.php ${STAGEDIR}${PREFIX}/lib/php/geshi/
 	cd ${WRKSRC}/src/ && ${COPYTREE_SHARE} geshi ${STAGEDIR}${PREFIX}/lib/php/geshi/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/src/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
