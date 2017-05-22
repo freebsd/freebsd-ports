@@ -17,6 +17,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
+
 USE_GITHUB=	yes
 GH_PROJECT=	libdxfrw:libdxfrw
 GH_TAGNAME=	8f95895:libdxfrw

@@ -13,6 +13,8 @@ COMMENT=	Pure interface to C++ STL map/unordered_map
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++0x"
+
 USES=		pkgconfig pure
 
 CXXFLAGS+=	-std=c++0x -DHAVE_STD_IS_PERMUTATION

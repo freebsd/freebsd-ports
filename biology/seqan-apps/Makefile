@@ -27,7 +27,6 @@ CMAKE_ARGS=	-DSEQAN_BUILD_SYSTEM="SEQAN_RELEASE_APPS"
 USE_GCC=	yes
 
 BROKEN_aarch64=		fails to compile: Error: unknown mnemonic rep -- rep
-BROKEN_armv6=		fails to link: undefined reference to _Unwind_GetIP@GCC_3.0
 BROKEN_powerpc64=	fails to compile: Error: unrecognized opcode: rep
 
 .include <bsd.port.pre.mk>

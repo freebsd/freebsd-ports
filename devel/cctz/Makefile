@@ -12,6 +12,8 @@ COMMENT=	C++ library for handling dates, times, and time zones
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	fails to compile: time_tool.cc: 'stoll' is not a member of 'std'
+
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
 USES=		compiler:c++11-lib gmake

@@ -22,6 +22,9 @@ OPTIONS_DEFINE=	DOCS LUA PHP PYTHON RUBY
 OPTIONS_DEFAULT=PHP PYTHON RUBY
 OPTIONS_SUB=	yes
 
+# BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
+OPTIONS_EXCLUDE_powerpc64=	RUBY
+
 PORTSCOUT=	limitw:1,even
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \

@@ -18,6 +18,8 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libicuuc.so:devel/icu \
 		libboost_filesystem.so:devel/boost-libs
 
+BROKEN_powerpc64=	fails to compile: tags.cpp: undefined reference to TagLib::String::to8Bit
+
 USES=		compiler:c++11-lib iconv libtool localbase ncurses pkgconfig readline tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
