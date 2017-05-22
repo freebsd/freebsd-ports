@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		liblzo2.so:archivers/lzo2
 
+BROKEN_powerpc64=	fails to compile: metadata_lite.h: class 'google::protobuf::internal::InternalMetadataWithArenaLite' does not have any field named 'InternalMetadataWithArenaBase'
+
 USES=		alias cmake ssl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
