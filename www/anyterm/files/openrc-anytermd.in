@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Add the following lines to /etc/rc.conf to enable anytermd:
+#
+# anytermd_flags (str):     Set to "-c /usr/bin/login -u nobody --local-only"
+#                           by default. See anytermd(1) for flags.
+#
+# anytermd_name (str):      Set to "anyterm" by default.
+#
+
+depend(){
+	keyword -shutdown
+}
+
+name="anytermd"
+description=""
+
+# Set defaults
+: ${anytermd_flags:="-c /usr/bin/login -u nobody --local-only"}
+: ${anytermd_name:="anyterm"}
+
+pidfile=/var/run/${anytermd_name}.pid
+command=%%PREFIX%%/sbin/anytermd
+command_args="${anytermd_flags} --name ${anytermd_name}"
