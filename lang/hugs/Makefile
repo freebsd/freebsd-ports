@@ -13,6 +13,9 @@ COMMENT=	Interpreter for the functional programming language Haskell 98
 
 BUILD_DEPENDS=	bash:shells/bash
 
+BROKEN_armv6=		fails to compile: cppinput.c: invalid preprocessing directive \#!
+BROKEN_powerpc64=	fails to compile: cppinput.c: detected recursion whilst expanding macro "vector"
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 HUGS_DATE=	Sep2006
@@ -25,8 +28,6 @@ CONFIGURE_ARGS+=	--with-pthreads
 
 USE_GL=		glut
 USE_XORG=	sm ice xmu xi x11
-
-BROKEN_ia64=	dumps core during build
 
 post-patch:
 	@${REINPLACE_CMD} 's/LIBS/LIBRARIES/' ${WRKSRC}/libraries/Makefile.in

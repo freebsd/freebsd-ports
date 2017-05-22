@@ -12,4 +12,7 @@ MASTERDIR=	${.CURDIR}/../intel-ixl-kmod
 PKGDIR=		${.CURDIR}
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
+BROKEN_powerpc64=	fails to compile: pcpu.h: size of array '__assert_0' is negative
+
 .include "${MASTERDIR}/Makefile"

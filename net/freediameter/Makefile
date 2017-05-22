@@ -16,6 +16,8 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
 		libidn.so:dns/libidn
 
+BROKEN_powerpc64=	fails to build: CMake Error at CMakeLists.txt: Unable to find idna.h header or idna_to_ascii_8z function
+
 USES=		cmake bison
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DSCTP_USE_MAPPED_ADDRESSES:BOOL=ON

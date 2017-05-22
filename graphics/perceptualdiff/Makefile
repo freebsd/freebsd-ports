@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++0x"
+
 PLIST_FILES=	bin/perceptualdiff
 
 USE_GITHUB=	yes
