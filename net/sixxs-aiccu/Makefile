@@ -12,6 +12,9 @@ DISTNAME=	aiccu_20070115
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
+DEPRECATED=	SixXS shutdown on 2017-06-06, https://www.sixxs.net/sunset/
+EXPIRATION_DATE=2017-06-22
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
