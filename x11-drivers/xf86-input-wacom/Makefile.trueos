@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	openrc-wacom.in
+USE_OPENRC_SUBR=	openrc-wacom
