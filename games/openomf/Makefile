@@ -20,6 +20,8 @@ LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
 		libenet.so:net/enet
 EXTRACT_DEPENDS=	unrar:archivers/unrar
 
+BROKEN_powerpc64=	fails to compile: gcc5: error: unrecognized command line option '-msse'
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	omf2097
 GH_TAGNAME=	c36c421

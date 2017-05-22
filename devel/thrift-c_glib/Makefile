@@ -14,6 +14,8 @@ COMMENT=	C glib interface to Thrift
 
 PKGNAMESUFFIX=	-c_glib
 
+BROKEN_powerpc64=	fails to link: Internal error: Segmentation fault (program ld)
+
 BUILDIR=	${WRKDIR}/${DISTNAME}/lib/c_glib
 
 DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo

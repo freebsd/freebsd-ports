@@ -17,6 +17,8 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+BROKEN_powerpc64=	fails to configure: C compiler cannot create executables
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	snes9xgit
 

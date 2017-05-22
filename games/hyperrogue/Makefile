@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+BROKEN_powerpc64=	fails to link: langen-langen.o: relocation truncated to fit: R_PPC64_TOC16_DS
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	zenorogue
 
