@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	cdpr
-PORTVERSION=	2.2.1
+PORTVERSION=	2.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Cisco Discovery Protocol Reporter
 
-USES=	dos2unix
+LICENSE=	GPLv2
+
+USES=		dos2unix
+USES=		tar:tgz
 DOS2UNIX_GLOB=	*.c *.h
 LDFLAGS+=	-L${LOCALBASE}/lib -lpcap
 
