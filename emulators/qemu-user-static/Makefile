@@ -14,13 +14,11 @@ OPTIONS_EXCLUDE=SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 MASTERDIR=	${.CURDIR}/../qemu-sbruno
 CONFIGURE_ARGS+=	--extra-cflags=-D_IFI_OQDROPS
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
-=======
+
 NOT_FOR_ARCHS=		powerpc64
 NOT_FOR_ARCHS_REASON=	error: Unhandled abi
->>>>>>> upstream/master
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/bin/qemu-ga
