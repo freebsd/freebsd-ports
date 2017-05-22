@@ -8,7 +8,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bonkor@gmail.com
+MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	DBI driver for Oracle RDBMS server
 
 BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
