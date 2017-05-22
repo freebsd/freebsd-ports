@@ -19,7 +19,9 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs
 BUILD_DEPENDS=	zip:archivers/zip \
 		${LOCALBASE}/include/boost/crc.hpp:devel/boost-libs
 
-BROKEN_aarch64=	fails to compile: I can't tell what endian-ness to use for your architecture
+BROKEN_powerpc64=	fails to build: cc1plus: unrecognized command line option "-std=c++11"
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	fails to compile: I can't tell what endian-ness to use for your architecture
 
 USES=		cmake dos2unix localbase:ldflags pkgconfig
 DOS2UNIX_REGEX=	.*\.(c|h|cpp)

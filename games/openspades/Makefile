@@ -18,6 +18,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	convert:graphics/ImageMagick # for building icons
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
+NOT_FOR_ARCHS=		aarch64 powerpc64
+NOT_FOR_ARCHS_REASON=	fails to compile: uses x86 assembly
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	yvt
 
@@ -34,8 +37,6 @@ PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
-
-BROKEN_aarch64=		Fails to compile: unknown register name %xmm0 in asm
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/Resources/DevPak

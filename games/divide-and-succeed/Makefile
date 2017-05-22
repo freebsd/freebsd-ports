@@ -12,6 +12,8 @@ COMMENT=	Divide polygons into the rigth number of equal parts
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to compile: Polygone.h: 'vector' was not declared in this scope
+
 USES=		cmake
 USE_SDL=	sdl ttf
 DATADIR=	${PREFIX}/share/divideandsucceed

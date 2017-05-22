@@ -21,6 +21,8 @@ LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
 
+BROKEN_powerpc64=	fails to link: schema_validator.cpp: undefined reference to boost::match_results
+
 LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
 PORTSCOUT=	limitw:1,even

@@ -17,6 +17,8 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libdrm.so:graphics/libdrm \
 		libass.so:multimedia/libass
 
+BROKEN_powerpc64=	fails to compile: features_cpu.c: undefined reference to __mftb
+
 OPTIONS_DEFINE=	FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO
 OPTIONS_DEFAULT=FFMPEG OSS PULSEAUDIO SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO
 FFMPEG_DESC=	On-the-fly recording of gameplay with libavcodec

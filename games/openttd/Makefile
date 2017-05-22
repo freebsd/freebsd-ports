@@ -21,6 +21,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png \
 		liblzo2.so:archivers/lzo2
 
+BROKEN_powerpc64=	fails to compile: libicuuc.so: undefined reference to __cxa_throw_bad_array_new_length
+
 USES=		cpe gmake pkgconfig tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	STRIP="${STRIP_CMD} ${STRIP}"

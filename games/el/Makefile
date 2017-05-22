@@ -17,7 +17,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcal3d.so:graphics/cal3d
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:games/el-data
 
-BROKEN_sparc64=	Does not build on sparc64
+BROKEN_powerpc64=	fails to compile: cal3d_io_wrapper.cpp: undefined reference to CalCoreAnimation::setFilename
+BROKEN_sparc64=		fails to build on sparc64
 
 USES=		compiler:c++11-lang gmake iconv openal:al,alut
 USE_GNOME=	libxml2
