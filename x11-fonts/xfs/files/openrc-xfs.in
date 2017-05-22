@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# The following variables are provided to control startup of X font server in
+# rc configuration file (eg /etc/rc.conf, or /usr/local/etc/conf.d/xfs):
+# xfs_config (str):	Set to "%%PREFIX%%/etc/X11/fs/config" by default.
+#			Configuration file for X font server.
+#
+# Please see xfs(1) for more information
+
+name="xfs"
+description=""
+
+# Set up defaults
+[ -z "$xfs_config" ] && xfs_config="%%PREFIX%%/etc/X11/fs/config"
+
+command="%%PREFIX%%/bin/xfs"
+command_args="-config ${xfs_config} ${xfs_user:+-user ${xfs_user}}"
+required_files="$xfs_config"
