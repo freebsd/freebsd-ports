@@ -4,7 +4,7 @@
 PORTNAME=	fastnetmon
 PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt security
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -15,10 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		liblog4cpp.so:devel/log4cpp \
-		libndpi.so:net/ndpi \
 		libluajit-5.1.so:lang/luajit \
 		libmongoc-1.0.so:devel/mongo-c-driver \
-		libjson-c.so:devel/json-c
+		libjson-c.so:devel/json-c \
+		libbson-1.0.so:devel/libbson
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavel-odintsov
