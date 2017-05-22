@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIWrapper
-PORTVERSION=	0.28
+PORTVERSION=	0.30
 CATEGORIES=	databases perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -14,18 +14,20 @@ COMMENT=	Perl extension for generic DBI database access
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
-		p5-XML-SAX>=0:textproc/p5-XML-SAX \
-		p5-DBI>=0:databases/p5-DBI \
-		p5-Spreadsheet-WriteExcel>=0:textproc/p5-Spreadsheet-WriteExcel \
-		p5-IO-stringy>=0:devel/p5-IO-stringy
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
-		p5-DBD-Pg>=0:databases/p5-DBD-Pg
+		p5-IO-stringy>=0:devel/p5-IO-stringy \
+		p5-Spreadsheet-WriteExcel>=0:textproc/p5-Spreadsheet-WriteExcel \
+		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
+		p5-DateTime>=0:devel/p5-DateTime
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 NO_ARCH=	yes
+
+SHEBANG_FILES=	parse_test.pl
 
 .include <bsd.port.mk>
