@@ -25,7 +25,6 @@ GH_TAGNAME=	release_${DISTVERSION}
 
 LDFLAGS+=	-lboost_program_options -lboost_system
 MAKE_ARGS+=	--config=force \
-		-j ${MAKE_JOBS_NUMBER} \
 		deterministic_tests=1 \
 		revno=${GH_TAGNAME} \
 		system_asio=0
