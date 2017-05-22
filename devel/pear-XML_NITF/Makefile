@@ -5,12 +5,13 @@ PORTNAME=	XML_NITF
 PORTVERSION=	1.1.1
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR NITF XML parser
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
 RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser
 
-USES=	pear
+NO_ARCH=	yes
+USES=		pear
 
 .include <bsd.port.mk>

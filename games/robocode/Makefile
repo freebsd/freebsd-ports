@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-setup.jar
 EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	java
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Game for learning Java[tm] programming language
 
 LICENSE=	EPL

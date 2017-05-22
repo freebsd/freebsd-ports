@@ -2,6 +2,7 @@
 
 PORTNAME=	putty
 PORTVERSION=	0.69
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -39,7 +40,14 @@ USE_XORG=	x11
 
 PLIST_FILES+=	bin/pageant bin/pterm bin/putty bin/puttytel
 PLIST_FILES+=	man/man1/pageant.1.gz man/man1/pterm.1.gz man/man1/putty.1.gz man/man1/puttytel.1.gz
+PLIST_FILES+=	share/pixmaps/putty.ico
 MAKE_ARGS+=	PUTTY_WITH_GTK=yes GTK_CONFIG="pkg-config gtk+-3.0 x11 --cflags"
+DESKTOP_ENTRIES="PuTTY" \
+		"${COMMENT}" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
+		"${PORTNAME}" \
+		"" \
+		false
 .else
 MAKE_ARGS+=	GTK_CONFIG=:
 .endif
@@ -72,5 +80,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,prefix=/usr/local,prefix=${PREFIX},;\
 			      s,make,${MAKE_CMD},'\
 		${WRKSRC}/${MAKEFILE}
+
+post-install-GTK3-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/../windows/putty.ico \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>

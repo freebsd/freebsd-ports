@@ -1,0 +1,13 @@
+Active Resource
+
+Active Resource attempts to provide a coherent wrapper object-relational
+mapping for REST web services. It follows the same philosophy as
+Active Record, in that one of its prime aims is to reduce the amount of
+code needed to map to these resources.  This is made possible by relying
+on a number of code- and protocol-based conventions that make it easy for
+Active Resource to infer complex relations and structures.
+
+These conventions are outlined in detail in the documentation
+for ActiveResource::Base.
+
+WWW: http://rubyonrails.org/

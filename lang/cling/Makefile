@@ -3,7 +3,7 @@
 
 PORTNAME=		cling
 PORTVERSION=		0.4
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		lang devel
 MASTER_SITES=		https://root.cern.ch/download/cling/
 DISTNAME=		${PORTNAME}_2016-12-29_sources
@@ -25,8 +25,12 @@ LLVM_SUFFIX=	39_cern-root
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 
 USES=		cmake:outsource compiler:c11 compiler:c++11-lib cpe \
-	    python:build tar:bzip2
+		python:build shebangfix tar:bzip2
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
+
+SHEBANG_FILES=	tools/clang/tools/clang-format/clang-format-diff.py \
+		tools/clang/tools/clang-format/git-clang-format \
+		tools/clang/tools/scan-view/bin/scan-view
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST+=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"

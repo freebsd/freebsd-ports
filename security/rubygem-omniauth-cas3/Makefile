@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth-cas3
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.4
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
-		rubygem-nokogiri>=1.6.6:textproc/rubygem-nokogiri \
+		rubygem-nokogiri>=1.7.1:textproc/rubygem-nokogiri \
 		rubygem-omniauth>=1.2:security/rubygem-omniauth
 
 NO_ARCH=	yes

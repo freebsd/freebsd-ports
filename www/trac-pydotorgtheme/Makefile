@@ -7,7 +7,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Theme that emulates the look of python.org
 
 RUN_DEPENDS=	tracd:www/trac \

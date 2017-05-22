@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	deluge
-PORTVERSION=	1.3.14
+PORTVERSION=	1.3.15
 PKGNAMESUFFIX=	-cli
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/

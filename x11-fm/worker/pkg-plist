@@ -102,3 +102,5 @@ share/applications/worker.desktop
 %%DATADIR%%/config-updates/update-3.7.0.conf
 %%DATADIR%%/config-updates/update-3.8.4-utf8.conf
 %%DATADIR%%/config-updates/update-3.8.4.conf
+%%DATADIR%%/config-updates/update-3.9.0-utf8.conf
+%%DATADIR%%/config-updates/update-3.9.0.conf

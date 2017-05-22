@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osquery
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -22,12 +21,16 @@ LIB_DEPENDS=	libaugeas.so:textproc/augeas \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libicuuc.so:devel/icu \
+		liblz4.so:archivers/liblz4 \
+		libsnappy.so:archivers/snappy \
 		librocksdb-lite.so:databases/rocksdb-lite \
 		libthrift.so:devel/thrift-cpp \
 		libcppnetlib-uri.so:devel/cpp-netlib
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
-USES=		cmake:outsource gmake libtool python:build compiler:c++11-lib
+USES=		cmake:outsource gmake libtool python:build compiler:c++11-lib \
+	libarchive ssl
+USE_GNOME=	libxml2
 CONFIGURE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \
 		SKIP_TESTS="yes" CC="${CC}" CXX="${CXX}"
 CMAKE_ARGS+=	-DFREEBSD=awesome -DCMAKE_SYSTEM_NAME="FreeBSD"

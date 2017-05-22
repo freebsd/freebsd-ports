@@ -1,3 +1,4 @@
+%%APPHOME%%/webapps/axis2/WEB-INF/classes/META-INF/DEPENDENCIES
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/META-INF/LICENSE
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/META-INF/NOTICE
 %%APPHOME%%/webapps/axis2/WEB-INF/classes/commons-logging.properties
@@ -116,7 +117,7 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxen-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxws-tools-2.2.6.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jaxws-tools-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/jettison-1.3.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/jettison-1.3.8.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jettison-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jibx-bind-1.2.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jibx-bind-LICENSE.txt

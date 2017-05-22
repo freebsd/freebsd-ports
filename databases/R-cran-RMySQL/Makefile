@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RMySQL
-DISTVERSION=	0.10.9
+DISTVERSION=	0.10.11
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,9 +11,11 @@ COMMENT=	R interface to the MySQL database
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-DBI>=0.4:databases/R-cran-DBI
+CRAN_DEPENDS=	R-cran-DBI>=0.4:databases/R-cran-DBI
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist mysql
+USES=	cran:auto-plist,compiles mysql
 
 post-patch:
 	@${REINPLACE_CMD} -e '/bin\//s|bash|sh|' ${WRKSRC}/configure

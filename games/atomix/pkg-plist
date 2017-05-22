@@ -68,6 +68,14 @@ share/atomix/themes/default/wall-vertical-rightx.png
 share/atomix/themes/default/wall-vertical-top-end.png
 share/atomix/themes/default/wall-vertical.png
 share/atomix/ui/interface.ui
+share/icons/hicolor/16x16/apps/atomix.png
+share/icons/hicolor/22x22/apps/atomix.png
+share/icons/hicolor/24x24/apps/atomix.png
+share/icons/hicolor/256x256/apps/atomix.png
+share/icons/hicolor/32x32/apps/atomix.png
+share/icons/hicolor/48x48/apps/atomix.png
+share/icons/hicolor/512x512/apps/atomix.png
+share/icons/hicolor/symbolic/apps/atomix-symbolic.svg
 share/locale/af/LC_MESSAGES/atomix.mo
 share/locale/am/LC_MESSAGES/atomix.mo
 share/locale/ar/LC_MESSAGES/atomix.mo
@@ -133,4 +141,3 @@ share/locale/wa/LC_MESSAGES/atomix.mo
 share/locale/zh_CN/LC_MESSAGES/atomix.mo
 share/locale/zh_HK/LC_MESSAGES/atomix.mo
 share/locale/zh_TW/LC_MESSAGES/atomix.mo
-share/pixmaps/atomix-icon.png

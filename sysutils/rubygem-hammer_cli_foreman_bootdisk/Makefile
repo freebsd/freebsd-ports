@@ -17,6 +17,8 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
+PLIST_FILES=	"@sample etc/hammer/cli.modules.d/foreman_bootdisk.yml.sample"
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hammer/cli.modules.d
 	${INSTALL_DATA} ${WRKSRC}/config/foreman_bootdisk.yml \

@@ -9,3 +9,12 @@
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost ||
            url.host_piece() == chrome::kChromeUISandboxHost
  #endif
+@@ -567,7 +567,7 @@ WebUIFactoryFunction GetWebUIFactoryFunc
+   if (url.host_piece() == chrome::kChromeUINaClHost)
+     return &NewWebUI<NaClUI>;
+ #endif
+-#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
++#if ((defined(OS_LINUX) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
+   if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost) {
+     return &NewWebUI<ConstrainedWebDialogUI>;
+   }

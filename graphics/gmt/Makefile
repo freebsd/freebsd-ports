@@ -25,6 +25,8 @@ LICENSE_COMB=	multi
 LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_DISTFILES_LGPL3=	${GSHHG_DISTNAME}${EXTRACT_SUFX}
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 RUN_DEPENDS=	bash:shells/bash
 

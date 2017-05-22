@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	LXQT
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jesper@schmitz.computer
 COMMENT=	Shared library for LXQt applications
 
 LICENSE=	LGPL21+

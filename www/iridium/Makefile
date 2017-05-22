@@ -3,9 +3,9 @@
 
 PORTNAME=	iridium
 PORTVERSION=	58.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.iridiumbrowser.de/source/
+MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gperf:devel/gperf \
-		clang39:devel/llvm39 \
+		clang40:devel/llvm40 \
 		yasm:devel/yasm \
 		python:lang/python \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
@@ -64,8 +64,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 USES=		compiler bison cpe desktop-file-utils execinfo jpeg \
 		ninja perl5 pkgconfig python:2,build shebangfix tar:xz
 
-CPE_VENDOR=	google
-CPE_PRODUCT=	chrome
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xdamage xfixes xi \
 		xproto xrandr xrender xscrnsaver xtst
@@ -98,14 +96,6 @@ GN_ARGS+=	is_clang=true \
 # TODO: investigate building with these options:
 # use_system_icu use_system_harfbuzz use_system_minigbm
 GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild
-
-# FreeBSD Chromium Api Key
-# Set up Google API keys, see http://www.chromium.org/developers/how-tos/api-keys .
-# Note: these are for FreeBSD use ONLY. For your own distribution,
-# please get your own set of keys.
-GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
-		google_default_client_id="996322985003.apps.googleusercontent.com" \
-		google_default_client_secret="IR1za9-1VK0zZ0f_O8MVFicn"
 
 SUB_FILES=	iridium-browser.desktop iridium
 SUB_LIST+=	COMMENT="${COMMENT}"
@@ -178,8 +168,8 @@ GN_ARGS+=	use_pulseaudio=false
 
 .include <bsd.port.pre.mk>
 
-CC=		clang39
-CXX=		clang++39
+CC=		clang40
+CXX=		clang++40
 #optionally set AR, LD, NM, READELF ?
 
 # TODO: -isystem, would be just as ugly as this approach, but more reliably
@@ -228,7 +218,7 @@ do-configure:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for t in font_service ui
+.for t in font_service test_ime_driver ui
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${t}.service \
 		${STAGEDIR}${DATADIR}
 .endfor

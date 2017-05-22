@@ -30,7 +30,7 @@ GH_ACCOUNT=	rime
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-BROKEN_powerpc64=	Does not build on powerpc64
+BROKEN_powerpc64=	Does not link: undefined reference to YAML::detail::node_data::empty_scalar[abi:cxx11]
 
 .include <bsd.port.options.mk>
 

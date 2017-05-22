@@ -1,0 +1,7 @@
+==========================================================
+To enable cloud-init, add the following line to rc.conf:
+
+cloudinit_enable="YES"
+
+This will make sure cloud-init is started at boot.
+==========================================================

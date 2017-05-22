@@ -1,0 +1,19 @@
+--- Makefile.orig	2017-05-09 15:04:09 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ EPREFIX        = $(PREFIX)
+ 
+ LIBINSTALLDIR  = $(EPREFIX)/lib
+ DATADIR        = $(PREFIX)/share
+-MANPREFIX      = $(PREFIX)/share
++MANPREFIX     ?= $(PREFIX)/share
+ # /etc if PREFIX is /usr, $PREFIX/etc otherwise.
+ ETCDIR        := $(shell [ "$(PREFIX)" = "/usr" ] && echo /etc || echo "$(PREFIX)/etc")
+ XDGCONFDIR     = $(ETCDIR)/xdg
+@@ -23,6 +23,7 @@ EXAILELIBDIR   = $(DESTDIR)$(LIBINSTALLDIR)/exaile
+ EXAILESHAREDIR = $(DESTDIR)$(DATADIR)/exaile
+ EXAILECONFDIR  = $(DESTDIR)$(XDGCONFDIR)/exaile
+ EXAILEMANDIR   = $(DESTDIR)$(MANPREFIX)/man
++BASHCOMPDIR    = $(ETCDIR)/bash_completion.d
+ 
+ .PHONY: dist test completion coverage clean sanitycheck
+ 

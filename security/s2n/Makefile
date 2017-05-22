@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s2n
-PORTVERSION=	20170410
+PORTVERSION=	20170425
 CATEGORIES=	security
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	amd64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
-GH_TAGNAME=	30b4b69
+GH_TAGNAME=	02ade5e
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -29,6 +29,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|CRYPTO_LDFLAGS |&+|' \
 		${WRKSRC}/tests/testlib/Makefile \
 		${WRKSRC}/tests/unit/Makefile
+	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/tests/LD_PRELOAD/Makefile \
+		${WRKSRC}/tests/fuzz/LD_PRELOAD/Makefile
 
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/lib/libs2n.so* ${STAGEDIR}${LOCALBASE}/lib

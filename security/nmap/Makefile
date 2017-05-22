@@ -3,6 +3,7 @@
 
 PORTNAME=	nmap
 DISTVERSION=	7.40
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -24,7 +25,6 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 USES=		tar:bzip2 gmake cpe
 GNU_CONFIGURE=	yes
 
-# Note: nmap does no longer build agains custom kernel without IPv6!
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DOCS SSL
 OPTIONS_DEFAULT=SSL

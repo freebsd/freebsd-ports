@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/isoqlog/
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Qmail, postfix, sendmail, exim MTA log analysis program
 
 LICENSE=	BSD3CLAUSE

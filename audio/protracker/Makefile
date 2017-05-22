@@ -12,9 +12,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Amiga ProTracker clone
 
 LICENSE=	WTFPL
-LICENSE_NAME=	Do What The Fuck You Want To Public License, Version 2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		localbase:ldflags
 USE_SDL=	sdl2

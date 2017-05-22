@@ -1,5 +1,5 @@
-lib/mono/dbus-sharp-1.0/dbus-sharp.dll
-lib/mono/gac/dbus-sharp/1.0.0.0__5675b0c3093115b5/dbus-sharp.dll
-lib/mono/gac/dbus-sharp/1.0.0.0__5675b0c3093115b5/dbus-sharp.dll.config
-lib/mono/gac/dbus-sharp/1.0.0.0__5675b0c3093115b5/dbus-sharp.dll.mdb
-libdata/pkgconfig/dbus-sharp-1.0.pc
+lib/mono/dbus-sharp-2.0/dbus-sharp.dll
+lib/mono/gac/dbus-sharp/2.0.0.0__5675b0c3093115b5/dbus-sharp.dll
+lib/mono/gac/dbus-sharp/2.0.0.0__5675b0c3093115b5/dbus-sharp.dll.config
+lib/mono/gac/dbus-sharp/2.0.0.0__5675b0c3093115b5/dbus-sharp.dll.mdb
+libdata/pkgconfig/dbus-sharp-2.0.pc

@@ -1,0 +1,10 @@
+This is a collection of scripts around the use of ports and packages.
+
+It allows you to: 
+- check library dependencies without producing false positives (pkg_libchk)
+- lets you manage the autoremove flag for leaf packages (pkg_trim)
+- remove obsolete or damaged distfiles (distviper)
+- manage build flags (buildflags.conf)
+- auto-create pkg-plist files taking port options into account (makeplist)
+
+WWW: https://github.com/lonkamikaze/bsda2

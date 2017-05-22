@@ -3,7 +3,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.8.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -17,13 +17,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		https://web-beta.archive.org/web/20161116074212/http://home.uchicago.edu/~dgc/sw/mutt/:dgc \
-		http://home.uchicago.edu/~dgc/sw/mutt/:dgc \
 		https://www.schrab.com/aaron/mutt/:ats \
 		http://vc.org.ua/mutt/:vc
 PATCH_DIST_STRIP=	-p1
-PATCHFILES=	patch-1.5.1.dgc.deepif.1:dgc \
-			patch-1.7.0.ats.date_conditional.1:ats
+PATCHFILES=	patch-1.7.0.ats.date_conditional.1:ats
 
 MAINTAINER?=	dereks@lifeofadishwasher.com
 COMMENT?=	Small but powerful text based program for read/writing e-mail
@@ -78,7 +75,7 @@ FORCEBASE64_DESC=	Option to force base64 encoding for compose
 GPGME_DESC=	Gpgme interface
 GREETING_PATCH_DESC=	Greeting support
 HTML_DESC=	HTML documentation
-IDN_DESC+=	International Domain Names (implies ICONV)
+IDN_DESC=	International Domain Names (implies ICONV)
 IFDEF_PATCH_DESC=	ifdef feature
 LOCALES_FIX_DESC=	Locales fix
 MAILBOX_MANPAGES_DESC=	Install mbox.5/mmdf.5 manpages
@@ -145,7 +142,6 @@ NCURSES_USES=	ncurses
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-#NLS_CONFIGURE_OFF=	--disable-nls
 NLS_IMPLIES=	ICONV
 
 # Handle GSSAPI from various places
@@ -216,7 +212,7 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
-VVV_PATCH_VERSION=	1.8.0
+#VVV_PATCH_VERSION=	1.8.0
 #GREETING_PATCH_VERSION=	1.8.1
 
 .if !defined(VVV_PATCH_VERSION)
@@ -296,11 +292,9 @@ pre-configure::
 		${WRKSRC}/imap/auth_gss.c
 .endif
 
-.if ${PORT_OPTIONS:MHCACHE_BDB}
-CONFIGURE_SED=	-e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /'
-pre-configure::
-	@${REINPLACE_CMD} -E ${CONFIGURE_SED} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.ac
-.endif
+pre-configure-HCACHE_BDB-on:
+	@${REINPLACE_CMD} -E -e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.ac
 
 .if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
 BUILD_DEPENDS+=	xsltproc:textproc/libxslt \

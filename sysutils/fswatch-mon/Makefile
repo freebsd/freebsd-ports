@@ -11,6 +11,8 @@ COMMENT=	Cross-platform file change monitor
 
 LICENSE=	GPLv3
 
+BROKEN_powerpc64=	fails to configure: A compiler with support for C++11 language features is required
+
 USES=		autoreconf gettext libtool makeinfo
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

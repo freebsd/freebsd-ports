@@ -20,6 +20,7 @@ GH_TAGNAME=	v3.1-latest
 
 USES=		autoreconf gettext libtool pathfix pkgconfig python:2
 USE_LDCONFIG=	yes
+BROKEN=		checksum mismatch
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -6,7 +6,7 @@ PORTVERSION=	1.5.2
 PORTREVISION=	1
 CATEGORIES=	textproc pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to create/apply binary and text patches
 
 LICENSE=	PHP301

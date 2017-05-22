@@ -8,6 +8,9 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4-compatible declarative UI framework
 
+DEPRECATED=		Has not been released since Qt 5.5 -- installation can lead to runtime conflicts with qt5-quick
+EXPIRATION_DATE=	2017-06-30
+
 DISTINFO_FILE=	${MASTERDIR}/distinfo
 QT5_VERSION=	${DISTVERSION}
 

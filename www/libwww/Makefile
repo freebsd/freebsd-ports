@@ -8,7 +8,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	http://www.w3.org/Library/Distribution/old/
 DISTNAME=	w3c-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	W3C Reference Library
 
 LICENSE=	W3C

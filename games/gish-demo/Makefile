@@ -11,6 +11,8 @@ DISTNAME=	gishdemo
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform game with a gelatinous 12-pound ball of tar (Demo version)
 
+BROKEN=		unfetchable
+
 RESTRICTED=	(c) Copyright 2004 Chronic Logic All rights reserved
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	is an i386 Linux binary

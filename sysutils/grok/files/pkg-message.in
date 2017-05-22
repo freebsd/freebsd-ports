@@ -1,8 +1,0 @@
-============================================================
-Examples and documentation are available at:
-
-http://code.google.com/p/semicomplete/wiki/Grok
-
-Also, modifications to syslog.conf may be necessary.
-Usually "user.info /var/log/messages" is enough.
-============================================================

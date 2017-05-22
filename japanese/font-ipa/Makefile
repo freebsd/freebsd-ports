@@ -4,7 +4,7 @@ PORTNAME=	ipa
 PORTVERSION=	00303
 PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/
+MASTER_SITES=	http://dl.ipafont.ipa.go.jp/IPAfont/
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	IPAfont${PORTVERSION}
 

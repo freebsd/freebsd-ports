@@ -1,0 +1,12 @@
+--- package.json.orig	2017-05-14 10:21:07 UTC
++++ package.json
+@@ -30,9 +30,6 @@
+     "prepublish": "npm run check",
+     "test": "vows"
+   },
+-  "dependencies": {
+-    "source-map": "0.5.x"
+-  },
+   "devDependencies": {
+     "browserify": "^14.0.0",
+     "http-proxy": "1.x",

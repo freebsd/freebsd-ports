@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	libowfat>=0.31:devel/libowfat
 
+BROKEN_powerpc64=	fails to compile: dirfd.c: error: expected ';', ',' or ')' before 'key'
+
 USES=		gmake ssl tar:xz
 USE_RC_SUBR=	gatling
 

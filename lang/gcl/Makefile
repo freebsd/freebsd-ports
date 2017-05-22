@@ -13,6 +13,8 @@ COMMENT=	GNU Common Lisp
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN=		missing header
+
 BUILD_DEPENDS=	gawk:lang/gawk
 LIB_DEPENDS=	libgmp.so:math/gmp
 

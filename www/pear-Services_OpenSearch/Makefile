@@ -5,7 +5,7 @@ PORTNAME=	Services_OpenSearch
 PORTVERSION=	0.2.0
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Search A9 OpenSearch compatible engines
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer \

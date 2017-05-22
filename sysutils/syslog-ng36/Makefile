@@ -14,10 +14,11 @@ MASTER_SITES=	https://github.com/balabit/${PORTNAME}/releases/download/${PORTNAM
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
-
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre
+
+BROKEN_powerpc64=	fails to link: cc: Internal error: Segmentation fault (program ld)
+BROKEN_sparc64=		fails to compile: gcc core dump
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \

@@ -13,6 +13,9 @@ COMMENT=	Connection pool server for PostgreSQL
 
 LICENSE=	MIT
 
+DEPRECATED=	Deprecated by upstream; use database/pgpool instead
+EXPIRATION_DATE=	2017-06-15
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake pgsql:9.2 libtool

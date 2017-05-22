@@ -1,5 +1,3 @@
-$FreeBSD$
-
 Should the user neglect to add the symlink, rather than stick them in a
 reboot loop give a warning.
 

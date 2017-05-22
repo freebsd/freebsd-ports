@@ -65,4 +65,18 @@ MESON_BUILD_DIR?=	_build
 # Add meson build dir at the end.
 CONFIGURE_ARGS+=	${MESON_BUILD_DIR}
 
+# Add this workaround copied from https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=218067
+# to make sure meson installs the pkg-config in the current correct place
+.if !target(fixup-lib-pkgconfig)
+_USES_install+= 601:fixup-lib-pkgconfig
+fixup-lib-pkgconfig:
+	@if [ -d ${STAGEDIR}${PREFIX}/lib/pkgconfig ]; then \
+		if [ -z "$$(${FIND} ${STAGEDIR}${PREFIX}/lib/pkgconfig -maxdepth 0 -empty)" ]; then \
+			${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig; \
+			${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* ${STAGEDIR}${PREFIX}/libdata/pkgconfig; \
+		fi; \
+		${RMDIR} ${STAGEDIR}${PREFIX}/lib/pkgconfig; \
+	fi
+.endif
+
 .endif #!defined(_INCLUDE_USES_MESON_MK)

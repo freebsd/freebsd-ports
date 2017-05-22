@@ -3,7 +3,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.gnu.org/gnu/screen/ \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -42,6 +42,9 @@ CPE_VENDOR=	gnu
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${NCURSESINC}
+LDFLAGS+=	-L${NCURSESLIB}
+
 .if ${PORT_OPTIONS:MMAN}
 MAKE_ARGS+=	WITH_MAN=1
 PLIST_SUB+=	MAN=""

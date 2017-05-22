@@ -1,2 +1,3 @@
-SHA256 (jack-audio-connection-kit-0.124.1.tar.gz) = eb42df6065576f08feeeb60cb9355dce4eb53874534ad71534d7aa31bae561d6
-SIZE (jack-audio-connection-kit-0.124.1.tar.gz) = 1113456
+TIMESTAMP = 1491234945
+SHA256 (jack-audio-connection-kit-0.125.0.tar.gz) = 3517b5bff82139a76b2b66fe2fd9a3b34b6e594c184f95a988524c575b11d444
+SIZE (jack-audio-connection-kit-0.125.0.tar.gz) = 1217977

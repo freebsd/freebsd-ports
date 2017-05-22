@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwigo
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.6
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
@@ -19,8 +19,7 @@ USE_PHP=	calendar ctype dom exif filter gd gettext hash iconv json \
 		mbstring mcrypt mysqli openssl pcre pdf pdo posix \
 		session simplexml sockets spl tokenizer xml xmlreader \
 		xmlwriter zlib
-USES=		cpe zip
-WANT_PHP_WEB=	yes
+USES=		cpe php:web zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	pkg-deinstall pkg-message

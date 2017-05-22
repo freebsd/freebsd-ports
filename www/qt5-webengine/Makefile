@@ -27,6 +27,7 @@ LICENSE=        GPLv3
 BUILD_DEPENDS=	ninja:devel/ninja \
 		python:lang/python \
 		yasm:devel/yasm \
+		git:devel/git \
 		${PREFIX}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libevent.so:devel/libevent \

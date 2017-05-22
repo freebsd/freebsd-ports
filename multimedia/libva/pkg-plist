@@ -1,5 +1,6 @@
 include/va/va.h
 include/va/va_backend.h
+include/va/va_backend_egl.h
 include/va/va_backend_glx.h
 include/va/va_backend_tpi.h
 include/va/va_backend_vpp.h
@@ -12,6 +13,7 @@ include/va/va_dri2.h
 include/va/va_dricommon.h
 include/va/va_drm.h
 include/va/va_drmcommon.h
+include/va/va_egl.h
 include/va/va_enc_h264.h
 include/va/va_enc_hevc.h
 include/va/va_enc_jpeg.h
@@ -26,6 +28,9 @@ include/va/va_x11.h
 lib/libva-drm.so
 lib/libva-drm.so.1
 lib/libva-drm.so.1.4000.0
+lib/libva-egl.so
+lib/libva-egl.so.1
+lib/libva-egl.so.1.4000.0
 lib/libva-glx.so
 lib/libva-glx.so.1
 lib/libva-glx.so.1.4000.0
@@ -40,6 +45,7 @@ lib/libva.so.1
 lib/libva.so.1.4000.0
 lib/va/dummy_drv_video.so
 libdata/pkgconfig/libva-drm.pc
+libdata/pkgconfig/libva-egl.pc
 libdata/pkgconfig/libva-glx.pc
 libdata/pkgconfig/libva-tpi.pc
 libdata/pkgconfig/libva-x11.pc

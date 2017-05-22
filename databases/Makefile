@@ -189,6 +189,7 @@
     SUBDIR += mongodb32
     SUBDIR += mongodb32-tools
     SUBDIR += mongodb34
+    SUBDIR += mongodb34-rocks
     SUBDIR += mongodb34-tools
     SUBDIR += mrtg-mysql-load
     SUBDIR += mtools-mongodb
@@ -239,6 +240,7 @@
     SUBDIR += openark-kit
     SUBDIR += opendbx
     SUBDIR += opentsdb
+    SUBDIR += oracle8-client
     SUBDIR += p5-Amazon-SimpleDB
     SUBDIR += p5-Amon2-DBI
     SUBDIR += p5-AnyEvent-BDB
@@ -578,6 +580,8 @@
     SUBDIR += pgpool-II
     SUBDIR += pgpool-II-30
     SUBDIR += pgpool-II-33
+    SUBDIR += pgpool-II-35
+    SUBDIR += pgpool-II-36
     SUBDIR += pgpoolAdmin
     SUBDIR += pgreplay
     SUBDIR += pgrouting
@@ -844,6 +848,7 @@
     SUBDIR += redigo
     SUBDIR += redis
     SUBDIR += redis-devel
+    SUBDIR += retcl
     SUBDIR += riak
     SUBDIR += riak2
     SUBDIR += rocksdb
@@ -860,6 +865,7 @@
     SUBDIR += ruby-tokyocabinet
     SUBDIR += ruby-xapian
     SUBDIR += rubygem-active_record_query_trace
+    SUBDIR += rubygem-activemodel-serializers-xml
     SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activemodel5
     SUBDIR += rubygem-activemodel50

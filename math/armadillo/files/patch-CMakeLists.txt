@@ -1,21 +1,8 @@
---- CMakeLists.txt.orig	2016-06-16 16:16:01 UTC
+--- CMakeLists.txt.orig	2017-05-08 13:46:28 UTC
 +++ CMakeLists.txt
-@@ -368,12 +368,12 @@ if(NOT INSTALL_LIB_DIR)
-       message(STATUS "*** Detected 64 bit system")
-       # use "lib64" only on systems that have it (eg. Fedora, Red Hat).
-       # if installing in /usr/local/, the use of lib64 might be unreliable on systems which have /usr/local/lib64 but don't use it
--      if(IS_DIRECTORY "${CMAKE_INSTALL_PREFIX}/lib64")
--        unset(INSTALL_LIB_DIR)
--        set(INSTALL_LIB_DIR "lib64")
--        message(STATUS "*** ${CMAKE_INSTALL_PREFIX}/lib64/ exists, so destination directory for the run-time library changed to ${CMAKE_INSTALL_PREFIX}/lib64/")
--        message(STATUS "*** Your system and/or compiler must search ${CMAKE_INSTALL_PREFIX}/lib64/ during linking")
--      endif()
-+#      if(IS_DIRECTORY "${CMAKE_INSTALL_PREFIX}/lib64")
-+#        unset(INSTALL_LIB_DIR)
-+#        set(INSTALL_LIB_DIR "lib64")
-+#        message(STATUS "*** ${CMAKE_INSTALL_PREFIX}/lib64/ exists, so destination directory for the run-time library changed to ${CMAKE_INSTALL_PREFIX}/lib64/")
-+#        message(STATUS "*** Your system and/or compiler must search ${CMAKE_INSTALL_PREFIX}/lib64/ during linking")
-+#      endif()
-     endif()
-   endif()
- endif()
+@@ -484,4 +484,4 @@ file(COPY ${PROJECT_SOURCE_DIR}/misc/ DE
+ message(STATUS "Generating '${PROJECT_BINARY_DIR}/tmp/misc/armadillo.pc'")
+ configure_file(${PROJECT_BINARY_DIR}/tmp/misc/armadillo.pc.in "${PROJECT_BINARY_DIR}/tmp/misc/armadillo.pc" @ONLY)
+ 
+-install(FILES "${PROJECT_BINARY_DIR}/tmp/misc/armadillo.pc" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++install(FILES "${PROJECT_BINARY_DIR}/tmp/misc/armadillo.pc" DESTINATION ${PKG_CONFIG_DIR})

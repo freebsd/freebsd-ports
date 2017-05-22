@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
 PATCH_DEPENDS=	${NONEXISTENT}:x11-servers/xorg-server:patch
-BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/dri \
+BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
 		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:x11-fonts/font-util \
 		bash:shells/bash
 # almost equivalent to x11-servers/xorg-server's

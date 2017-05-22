@@ -18,6 +18,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtidy.so:www/tidy-lib \
 		libxslt.so:textproc/libxslt
 
+BROKEN_powerpc64=	fails to compile: iterator.h: error: invalid abstract return type
+
 USE_LDCONFIG=	yes
 USES=		libtool gmake pathfix pkgconfig compiler:c++11-lang ssl
 GNU_CONFIGURE=	yes

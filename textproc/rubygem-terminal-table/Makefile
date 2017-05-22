@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terminal-table
-PORTVERSION=	1.7.3
-PORTREVISION=	2
+PORTVERSION=	1.8.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

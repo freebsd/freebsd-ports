@@ -9,6 +9,8 @@ MASTER_SITES=	SF/pamsshagentauth/${PORTNAME}/v${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PAM module which permits authentication via ssh-agent
 
+BROKEN_powerpc64=	fails to build: ed25519-donna-portable.h: warning: ALIGN redefined
+
 USES=		perl5 ssl tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_strnvis=no

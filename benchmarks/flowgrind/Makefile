@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	benchmarks
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Measure throughput and other metrics for TCP
 
 LICENSE=	GPLv3+

@@ -5,7 +5,7 @@ PORTNAME=	Log
 PORTVERSION=	1.13.1
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR logging utilities
 
 LICENSE=	MIT

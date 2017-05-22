@@ -963,7 +963,7 @@ lib32/libglapi.so.0
 lib32/libgmp.so.10
 lib32/libgnutls.so.30
 lib32/libhogweed.so.4
-lib32/libidn.so.11
+lib32/libidn2.so.0
 lib32/libintl.so.8
 lib32/libjpeg.so.8
 lib32/liblcms2.so.2

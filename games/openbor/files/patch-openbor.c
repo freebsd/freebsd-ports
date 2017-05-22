@@ -2,9 +2,14 @@ Fix potential crashes found by ASan/Clang/GCC
 Fix an infinite loop in lcmScriptDeleteMain()
 Avoid accidental rounding from abs()
 
---- openbor.c.orig	2016-12-22 13:02:02 UTC
+--- openbor.c.orig	2017-04-22 14:20:08 UTC
 +++ openbor.c
-@@ -5810,7 +5810,7 @@ s_collision_attack **collision_alloc_att
+@@ -5747,17 +5747,17 @@ s_collision_attack *collision_alloc_attack_instance(s_
+ //
+ // Allocate an empty collision attack list.
+ s_collision_attack **collision_alloc_attack_list()
+ {
+     s_collision_attack **result;
      size_t             alloc_size;
  
      // Get amount of memory we'll need.
@@ -13,7 +18,17 @@ Avoid accidental rounding from abs()
  
      // Allocate memory and get pointer.
      result = malloc(alloc_size);
-@@ -5859,7 +5859,7 @@ s_collision_body **collision_alloc_body_
+ 
+     // Make sure the list is blank.
+     memset(result, 0, alloc_size);
+ 
+     // return result.
+@@ -5796,17 +5796,17 @@ s_collision_body *collision_alloc_body_instance(s_coll
+ //
+ // Allocate an empty collision attack list.
+ s_collision_body **collision_alloc_body_list()
+ {
+     s_collision_body **result;
      size_t             alloc_size;
  
      // Get amount of memory we'll need.
@@ -22,6 +37,11 @@ Avoid accidental rounding from abs()
  
      // Allocate memory and get pointer.
      result = malloc(alloc_size);
+ 
+     // Make sure the list is blank.
+     memset(result, 0, alloc_size);
+ 
+     // return result.
 @@ -8204,7 +8204,8 @@ size_t lcmScriptCopyBuffer(ArgList *argl
  
  size_t lcmScriptDeleteMain(char **buf)
@@ -53,15 +73,6 @@ Avoid accidental rounding from abs()
      if (value > maxvalue)
      {
          value = maxvalue;
-@@ -20471,7 +20476,7 @@ void common_dot()
-     entity     *eOpp;       //Owner of dot effect.
-     s_collision_attack    attack;     //Attack struct.
- 
--    for(iIndex = 0; iIndex <= MAX_DOTS; iIndex++)                                               //Loop through all DOT indexes.
-+    for(iIndex = 0; iIndex < MAX_DOTS; iIndex++)                                                //Loop through all DOT indexes.
-     {
-         iDot_time   =   self->dot_time[iIndex];                                                 //Get expire time.
-         iDot_cnt    =   self->dot_cnt[iIndex];                                                  //Get next tick time.
 @@ -21710,8 +21716,8 @@ int reset_backpain(entity *ent)
          if (ent->normaldamageflipdir == DIRECTION_RIGHT) ent->direction = DIRECTION_RIGHT;
          else ent->direction = DIRECTION_LEFT;
@@ -82,12 +93,3 @@ Avoid accidental rounding from abs()
      {
          mod = 3 - mod;
      }
-@@ -34607,7 +34612,7 @@ void keyboard_setup(int player)
-     strncpy(buttonnames[SDID_SPECIAL], "Special", 16);
-     strncpy(buttonnames[SDID_START], "Start", 16);
-     strncpy(buttonnames[SDID_SCREENSHOT], "Screenshot", 16);
--    strncpy(buttonnames[SDID_ESC], "Exit", 16);
-+    //strncpy(buttonnames[SDID_ESC], "Exit", 16);
- 
-     savesettings();
-     bothnewkeys = 0;

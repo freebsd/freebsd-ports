@@ -166,4 +166,4 @@ include/libetpan/xlist.h
 lib/libetpan.a
 lib/libetpan.so
 lib/libetpan.so.20
-lib/libetpan.so.20.0.0
+lib/libetpan.so.20.1.0

@@ -6,7 +6,7 @@ PORTVERSION=	0.4.2
 PORTREVISION=	1
 CATEGORIES=	databases
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP wrapper for the libdrizzle library
 
 LICENSE=	PHP301

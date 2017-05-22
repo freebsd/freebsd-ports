@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simple_form
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	LXQT/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jesper@schmitz.computer
 COMMENT=	Qt implementation of freedesktop.org xdg specs
 
 LICENSE=	LGPL21+

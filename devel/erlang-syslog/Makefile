@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 

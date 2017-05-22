@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170518:
+  AFFECTS: users of www/yarn
+  AUTHOR: adamw@FreeBSD.org
+
+  The default node backend for yarn has switched to www/node. Binary
+  package users should expect the node backend to be switched during
+  the upgrade. To keep the node6 (LTS) backend, rebuild www/yarn with
+  the NODE6 backend option enabled.
+
+20170517:
+  AFFECTS: users of security/pecl-ssh2
+  AUTHOR: dbaio@FreeBSD.org
+
+  The security/pecl-ssh2 has been upgraded to version 1.0, and the new
+  version is not compatible with PHP5. If you need PHP5 support, you can
+  find version 0.13 in security/pecl-ssh2-0.
+
 20170412:
   AFFECTS: users of sysutils/ansible
   AUTHOR: lifanov@FreeBSD.org

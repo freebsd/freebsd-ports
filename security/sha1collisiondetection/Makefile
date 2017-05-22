@@ -11,6 +11,8 @@ COMMENT=	Library and command line tool to detect SHA-1 collisions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option -std=c90
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	cr-marcstevens
 

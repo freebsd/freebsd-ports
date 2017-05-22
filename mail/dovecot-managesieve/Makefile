@@ -16,6 +16,9 @@ BUILD_DEPENDS=	${NONEXISTENT}:mail/dovecot:build \
 RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}.*:mail/dovecot \
 		dovecot-sieve>=${DOVECOTVERSION}:mail/dovecot-sieve
 
+DEPRECATED=	Dovecot-1.x is deprecated. Use dovecot2 and dovecot-pigeonhole instead
+EXPIRATION_DATE=2017-07-31
+
 DOVECOTVERSION=	1.2
 
 GNU_CONFIGURE=	yes

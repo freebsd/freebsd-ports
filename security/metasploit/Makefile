@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.14.9
+PORTVERSION=	4.14.16
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -24,11 +24,11 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.2.19:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.1.8:security/rubygem-metasploit_payloads-mettle \
-		rubygem-msgpack>=0:devel/rubygem-msgpack \
+		rubygem-metasploit-payloads>=1.2.24:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.1.9:security/rubygem-metasploit_payloads-mettle \
+		rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
-		rubygem-rubyntlm05>=0:net/rubygem-rubyntlm05 \
+		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
 		rubygem-packetfu>=1.1.13.p:net/rubygem-packetfu \
 		rubygem-pcaprub>=0:net/rubygem-pcaprub \
@@ -82,12 +82,34 @@ NO_ARCH=	yes
 STRIP=
 
 USE_RUBY=	yes
+USES=		python shebangfix
+PYTHON_NO_DEPENDS=	yes
+SHEBANG_FILES=	external/source/shellcode/windows/build.sh \
+		external/source/msfJavaToolkit/compile.sh \
+		external/source/msfJavaToolkit/testKeytool.rb \
+		external/source/msfJavaToolkit/testCompilation.rb \
+		external/source/metsvc/test.rb \
+		docker/bin/msfvenom \
+		docker/bin/msfconsole \
+		docker/bin/msfconsole-dev \
+		tools/hardware/killerbee_msfrelay \
+		tools/dev/import-dev-keys.sh \
+		tools/dev/sign-dev-keys.sh
+
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 2.4
+RUN_DEPENDS+=	rubygem-xmlrpc>=0:net/rubygem-xmlrpc
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
 		/rb-readline/d ; \
 		/metasploit-aggregator/d' \
 		${WRKSRC}/metasploit-framework.gemspec
+.if ${RUBY_VER} < 2.4
+	${REINPLACE_CMD} '/xmlrpc/d' ${WRKSRC}/metasploit-framework.gemspec
+.endif
 
 do-build:
 	${RM} ${WRKSRC}/Gemfile.lock
@@ -108,4 +130,4 @@ post-install:
 	@${FIND} -ds ${STAGEDIR}${DATADIR} -type d -empty | \
 		${SED} 's,${STAGEDIR}${PREFIX}/,, ; s,^,@dir ,' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -849,6 +849,7 @@
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
     SUBDIR += py-cryptkit
+    SUBDIR += py-cryptlib_py
     SUBDIR += py-cryptography
     SUBDIR += py-cybox
     SUBDIR += py-dfdatetime
@@ -860,8 +861,10 @@
     SUBDIR += py-fail2ban
     SUBDIR += py-fchksum
     SUBDIR += py-flask-httpauth
+    SUBDIR += py-gixy
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
+    SUBDIR += py-google-auth
     SUBDIR += py-gpgme
     SUBDIR += py-gpsoauth
     SUBDIR += py-halberd

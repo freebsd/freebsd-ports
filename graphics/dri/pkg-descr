@@ -1,5 +1,0 @@
-This package contains the current stable release of the client drivers for the
-DRI.  With an X Server configured for the DRI they allow direct rendering of
-hardware-accelerated OpenGL.
-
-WWW: http://dri.sourceforge.net/

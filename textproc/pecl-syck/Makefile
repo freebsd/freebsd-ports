@@ -6,7 +6,7 @@ PORTVERSION=	0.9.3
 PORTREVISION=	2
 CATEGORIES=	textproc pear
 
-MAINTAINER=	joneum@bsdproject.de
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension which facilitates YAML parsing
 
 LICENSE=	PHP301

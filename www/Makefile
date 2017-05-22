@@ -4,6 +4,7 @@
     COMMENT = Ports related to the World Wide Web
 
     SUBDIR += R-cran-RgoogleMaps
+    SUBDIR += R-cran-Rook
     SUBDIR += R-cran-htmlwidgets
     SUBDIR += R-cran-httpuv
     SUBDIR += R-cran-httr
@@ -512,6 +513,7 @@
     SUBDIR += moodle30
     SUBDIR += moodle31
     SUBDIR += moodle32
+    SUBDIR += moodle33
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch
@@ -546,6 +548,7 @@
     SUBDIR += npm
     SUBDIR += npm2
     SUBDIR += npm3
+    SUBDIR += npm-less-plugin-clean-css
     SUBDIR += nspluginwrapper
     SUBDIR += nuvolaplayer-8tracks
     SUBDIR += nuvolaplayer-all-services
@@ -1341,6 +1344,7 @@
     SUBDIR += p5-Web-Query
     SUBDIR += p5-Web-Scraper
     SUBDIR += p5-Web-Scraper-Config
+    SUBDIR += p5-Web-Simple
     SUBDIR += p5-Web-oEmbed
     SUBDIR += p5-WebDAO
     SUBDIR += p5-WebDriver-Tiny
@@ -1503,6 +1507,7 @@
     SUBDIR += py-amf
     SUBDIR += py-apachelog
     SUBDIR += py-autobahn
+    SUBDIR += py-aws-requests-auth
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
     SUBDIR += py-beautifulsoup32
@@ -1556,6 +1561,7 @@
     SUBDIR += py-django-guardian
     SUBDIR += py-django-happenings
     SUBDIR += py-django-haystack
+    SUBDIR += py-django-hijack
     SUBDIR += py-django-htmlmin
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-jsonfield
@@ -1591,6 +1597,7 @@
     SUBDIR += py-django-simple-history
     SUBDIR += py-django-social-auth
     SUBDIR += py-django-sortedm2m
+    SUBDIR += py-django-star-ratings
     SUBDIR += py-django-statici18n
     SUBDIR += py-django-storages
     SUBDIR += py-django-subdomains
@@ -1900,6 +1907,7 @@
     SUBDIR += rubygem-actionpack5
     SUBDIR += rubygem-actionpack50
     SUBDIR += rubygem-activeresource4
+    SUBDIR += rubygem-activeresource5
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-acts-as-taggable-on3
     SUBDIR += rubygem-acts_as_taggable
@@ -2048,6 +2056,7 @@
     SUBDIR += rubygem-rack-mount
     SUBDIR += rubygem-rack-openid
     SUBDIR += rubygem-rack-protection
+    SUBDIR += rubygem-rack-protection1
     SUBDIR += rubygem-rack-proxy
     SUBDIR += rubygem-rack-ssl
     SUBDIR += rubygem-rack-test
@@ -2101,6 +2110,7 @@
     SUBDIR += rubygem-sinatra-contrib
     SUBDIR += rubygem-sinatra-r18n
     SUBDIR += rubygem-sinatra-respond_to
+    SUBDIR += rubygem-sinatra1
     SUBDIR += rubygem-socksify
     SUBDIR += rubygem-task_list
     SUBDIR += rubygem-thin

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	193
+PORTVERSION=	1.9.4
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	http://el.beplacid.net/downloads/:data \
-		http://www.eternal-lands.com/:data \
-		http://el.rauchs-home.de/client/:data \
+MASTER_SITES=	http://www.eternal-lands.com/:data \
 		http://www.gm.fh-koeln.de/~linke/EL-Downloads/:sound \
 		http://www.gm.fh-koeln.de/~linke/EL-Downloads/:music
 PKGNAMEPREFIX=	el-
@@ -23,7 +22,7 @@ DOS2UNIX_GLOB=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}linux
-EL_DATA=	${PKGNAMEPREFIX:S/-/_/}linux_${PORTVERSION}.zip
+EL_DATA=	${PKGNAMEPREFIX:S/-/_/}linux_installer_${PORTVERSION:S/.//g}.sh
 
 PORTDATA=	*
 
@@ -43,8 +42,11 @@ DISTFILES+=	EL_music_full${EXTRACT_SUFX}:music
 .endif
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${UNZIP_CMD} -q ${_DISTDIR}/${EL_DATA} -d ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@cd ${WRKDIR} && ${TAIL} +440 ${_DISTDIR}/${EL_DATA} | \
+		${TAR} zxf - subarch
+	@cd ${WRKDIR} && ${TAR} -zxf subarch  - instarchive_all
+	@cd ${WRKDIR} && ${TAR} -zxf ${WRKDIR}/instarchive_all -C ${WRKSRC}
 .if ${PORT_OPTIONS:MELSOUND}
 	@${UNZIP_CMD} -q ${_DISTDIR}/EL_sound_191${EXTRACT_SUFX} -d ${WRKSRC}
 .endif

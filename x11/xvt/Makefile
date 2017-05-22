@@ -3,6 +3,7 @@
 
 PORTNAME=	xvt
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES+=	x11
 MASTER_SITES=	http://BSDforge.com/projects/source/x11/xvt/
 
@@ -17,7 +18,7 @@ PORTDOCS=	xvt.1.html xvtRef.html xvtRef.txt
 USES=		libtool perl5 tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build patch
-USE_XORG=	xpm
+USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
 
 DESKTOP_ENTRIES=	"xvt" "xvt terminal emulator" \
@@ -26,7 +27,7 @@ DESKTOP_ENTRIES=	"xvt" "xvt terminal emulator" \
 			false
 
 OPTIONS_DEFINE=	256_COLOR BIG5 EUCJ GB GREEK KR LINESPACE MENUBAR NEXT XVT \
-		SJIS SMART TRANSPARENCY XIM XTERM DOCS
+		SJIS SMART TRANSPARENCY XIM XTERM DOCS XGETDEFAULT
 
 256_COLOR_DESC=		Build with 256-color support
 BIG5_DESC=		Build with BIG5 support
@@ -43,6 +44,7 @@ SMART_DESC=		Build with smart resize support
 TRANSPARENCY_DESC=	Build with transparency support
 XIM_DESC=		Build with XIM support
 XTERM_DESC=		Build with Xterm scrollbar
+XGETDEFAULT_DESC=	Build with resources checking via XGetDefault
 
 OPTIONS_DEFAULT=256_COLOR GB LINESPACE MENUBAR NEXT XVT SMART TRANSPARENCY \
 		XIM XTERM DOCS
@@ -83,6 +85,8 @@ TRANSPARENCY_CONFIGURE_ON=	--enable-transparency
 XIM_CONFIGURE_ON=	--enable-xim
 # enable Xterm style scrollbar
 XTERM_CONFIGURE_ON=	--enable-xterm-scroll
+# make resources checking via XGetDefault
+XGETDEFAULT_CONFIGURE_ON=	--enable-xgetdefault
 
 post-patch:
 	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \

@@ -20,6 +20,7 @@
 %%WWWDIR%%/.scss-lint.yml
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/CONTRIBUTING.md
+%%WWWDIR%%/GITLAB_PAGES_VERSION
 %%WWWDIR%%/GITLAB_SHELL_VERSION
 %%WWWDIR%%/GITLAB_WORKHORSE_VERSION
 %%WWWDIR%%/Gemfile
@@ -103,8 +104,24 @@
 %%WWWDIR%%/app/assets/javascripts/boards/components/board_list.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/components/board_new_issue.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/components/board_sidebar.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/boards_backlog_help.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/issue_card_inner.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/empty_state.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/filters.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/filters/label.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/filters/milestone.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/filters/user.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/footer.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/header.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/index.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/list.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/lists_dropdown.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/modal/tabs.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/components/new_list_dropdown.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/components/sidebar/remove_issue.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/filters/due_date_filters.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/icons/checkmark.js
+%%WWWDIR%%/app/assets/javascripts/boards/mixins/modal_mixins.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/mixins/sortable_default_options.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/models/issue.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/models/label.js.es6
@@ -113,8 +130,8 @@
 %%WWWDIR%%/app/assets/javascripts/boards/models/user.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/services/board_service.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/stores/boards_store.js.es6
+%%WWWDIR%%/app/assets/javascripts/boards/stores/modal_store.js.es6
 %%WWWDIR%%/app/assets/javascripts/boards/test_utils/simulate_drag.js
-%%WWWDIR%%/app/assets/javascripts/boards/vue_resource_interceptor.js.es6
 %%WWWDIR%%/app/assets/javascripts/breakpoints.js
 %%WWWDIR%%/app/assets/javascripts/broadcast_message.js
 %%WWWDIR%%/app/assets/javascripts/build.js
@@ -124,10 +141,15 @@
 %%WWWDIR%%/app/assets/javascripts/commit.js
 %%WWWDIR%%/app/assets/javascripts/commit/file.js
 %%WWWDIR%%/app/assets/javascripts/commit/image_file.js
+%%WWWDIR%%/app/assets/javascripts/commit/pipelines/pipelines_bundle.js.es6
+%%WWWDIR%%/app/assets/javascripts/commit/pipelines/pipelines_service.js.es6
+%%WWWDIR%%/app/assets/javascripts/commit/pipelines/pipelines_store.js.es6
+%%WWWDIR%%/app/assets/javascripts/commit/pipelines/pipelines_table.js.es6
 %%WWWDIR%%/app/assets/javascripts/commits.js
 %%WWWDIR%%/app/assets/javascripts/compare.js
 %%WWWDIR%%/app/assets/javascripts/compare_autocomplete.js.es6
 %%WWWDIR%%/app/assets/javascripts/confirm_danger_modal.js
+%%WWWDIR%%/app/assets/javascripts/copy_as_gfm.js.es6
 %%WWWDIR%%/app/assets/javascripts/copy_to_clipboard.js
 %%WWWDIR%%/app/assets/javascripts/create_label.js.es6
 %%WWWDIR%%/app/assets/javascripts/cycle_analytics/components/stage_code_component.js.es6
@@ -141,6 +163,7 @@
 %%WWWDIR%%/app/assets/javascripts/cycle_analytics/cycle_analytics_bundle.js.es6
 %%WWWDIR%%/app/assets/javascripts/cycle_analytics/cycle_analytics_service.js.es6
 %%WWWDIR%%/app/assets/javascripts/cycle_analytics/cycle_analytics_store.js.es6
+%%WWWDIR%%/app/assets/javascripts/cycle_analytics/default_event_objects.js.es6
 %%WWWDIR%%/app/assets/javascripts/cycle_analytics/svg/icon_branch.js.es6
 %%WWWDIR%%/app/assets/javascripts/cycle_analytics/svg/icon_build_status.js.es6
 %%WWWDIR%%/app/assets/javascripts/cycle_analytics/svg/icon_commit.js.es6
@@ -173,7 +196,6 @@
 %%WWWDIR%%/app/assets/javascripts/environments/environments_bundle.js.es6
 %%WWWDIR%%/app/assets/javascripts/environments/services/environments_service.js.es6
 %%WWWDIR%%/app/assets/javascripts/environments/stores/environments_store.js.es6
-%%WWWDIR%%/app/assets/javascripts/environments/vue_resource_interceptor.js.es6
 %%WWWDIR%%/app/assets/javascripts/extensions/array.js.es6
 %%WWWDIR%%/app/assets/javascripts/extensions/custom_event.js.es6
 %%WWWDIR%%/app/assets/javascripts/extensions/element.js.es6
@@ -195,7 +217,7 @@
 %%WWWDIR%%/app/assets/javascripts/gl_dropdown.js
 %%WWWDIR%%/app/assets/javascripts/gl_field_error.js.es6
 %%WWWDIR%%/app/assets/javascripts/gl_field_errors.js.es6
-%%WWWDIR%%/app/assets/javascripts/gl_form.js
+%%WWWDIR%%/app/assets/javascripts/gl_form.js.es6
 %%WWWDIR%%/app/assets/javascripts/graphs/graphs_bundle.js
 %%WWWDIR%%/app/assets/javascripts/graphs/stat_graph.js
 %%WWWDIR%%/app/assets/javascripts/graphs/stat_graph_contributors.js
@@ -226,6 +248,7 @@
 %%WWWDIR%%/app/assets/javascripts/labels_select.js
 %%WWWDIR%%/app/assets/javascripts/layout_nav.js
 %%WWWDIR%%/app/assets/javascripts/lib/ace.js
+%%WWWDIR%%/app/assets/javascripts/lib/ace/ace_config_paths.js.erb
 %%WWWDIR%%/app/assets/javascripts/lib/chart.js
 %%WWWDIR%%/app/assets/javascripts/lib/cropper.js
 %%WWWDIR%%/app/assets/javascripts/lib/d3.js
@@ -233,13 +256,12 @@
 %%WWWDIR%%/app/assets/javascripts/lib/utils/animate.js
 %%WWWDIR%%/app/assets/javascripts/lib/utils/bootstrap_linked_tabs.js.es6
 %%WWWDIR%%/app/assets/javascripts/lib/utils/common_utils.js.es6
-%%WWWDIR%%/app/assets/javascripts/lib/utils/datetime_utility.js
-%%WWWDIR%%/app/assets/javascripts/lib/utils/emoji_aliases.js.erb
+%%WWWDIR%%/app/assets/javascripts/lib/utils/datetime_utility.js.es6
 %%WWWDIR%%/app/assets/javascripts/lib/utils/notify.js
 %%WWWDIR%%/app/assets/javascripts/lib/utils/pretty_time.js.es6
 %%WWWDIR%%/app/assets/javascripts/lib/utils/text_utility.js
 %%WWWDIR%%/app/assets/javascripts/lib/utils/type_utility.js
-%%WWWDIR%%/app/assets/javascripts/lib/utils/url_utility.js
+%%WWWDIR%%/app/assets/javascripts/lib/utils/url_utility.js.es6
 %%WWWDIR%%/app/assets/javascripts/lib/vue_resource.js.es6
 %%WWWDIR%%/app/assets/javascripts/line_highlighter.js
 %%WWWDIR%%/app/assets/javascripts/logo.js
@@ -299,7 +321,7 @@
 %%WWWDIR%%/app/assets/javascripts/search.js
 %%WWWDIR%%/app/assets/javascripts/search_autocomplete.js.es6
 %%WWWDIR%%/app/assets/javascripts/shortcuts.js
-%%WWWDIR%%/app/assets/javascripts/shortcuts_blob.js
+%%WWWDIR%%/app/assets/javascripts/shortcuts_blob.js.es6
 %%WWWDIR%%/app/assets/javascripts/shortcuts_dashboard_navigation.js
 %%WWWDIR%%/app/assets/javascripts/shortcuts_find_file.js
 %%WWWDIR%%/app/assets/javascripts/shortcuts_issuable.js
@@ -332,19 +354,22 @@
 %%WWWDIR%%/app/assets/javascripts/users/calendar.js
 %%WWWDIR%%/app/assets/javascripts/users/users_bundle.js
 %%WWWDIR%%/app/assets/javascripts/users_select.js
+%%WWWDIR%%/app/assets/javascripts/version_check_image.js.es6
 %%WWWDIR%%/app/assets/javascripts/visibility_select.js.es6
-%%WWWDIR%%/app/assets/javascripts/vue_common_component/commit.js.es6
-%%WWWDIR%%/app/assets/javascripts/vue_pagination/index.js.es6
 %%WWWDIR%%/app/assets/javascripts/vue_pipelines_index/index.js.es6
 %%WWWDIR%%/app/assets/javascripts/vue_pipelines_index/pipeline_actions.js.es6
 %%WWWDIR%%/app/assets/javascripts/vue_pipelines_index/pipeline_url.js.es6
 %%WWWDIR%%/app/assets/javascripts/vue_pipelines_index/pipelines.js.es6
 %%WWWDIR%%/app/assets/javascripts/vue_pipelines_index/stage.js.es6
-%%WWWDIR%%/app/assets/javascripts/vue_pipelines_index/stages.js.es6
 %%WWWDIR%%/app/assets/javascripts/vue_pipelines_index/status.js.es6
 %%WWWDIR%%/app/assets/javascripts/vue_pipelines_index/store.js.es6
 %%WWWDIR%%/app/assets/javascripts/vue_pipelines_index/time_ago.js.es6
 %%WWWDIR%%/app/assets/javascripts/vue_realtime_listener/index.js.es6
+%%WWWDIR%%/app/assets/javascripts/vue_shared/components/commit.js.es6
+%%WWWDIR%%/app/assets/javascripts/vue_shared/components/pipelines_table.js.es6
+%%WWWDIR%%/app/assets/javascripts/vue_shared/components/pipelines_table_row.js.es6
+%%WWWDIR%%/app/assets/javascripts/vue_shared/components/table_pagination.js.es6
+%%WWWDIR%%/app/assets/javascripts/vue_shared/vue_resource_interceptor.js.es6
 %%WWWDIR%%/app/assets/javascripts/wikis.js.es6
 %%WWWDIR%%/app/assets/javascripts/zen_mode.js
 %%WWWDIR%%/app/assets/stylesheets/application.scss
@@ -387,7 +412,6 @@
 %%WWWDIR%%/app/assets/stylesheets/framework/page-header.scss
 %%WWWDIR%%/app/assets/stylesheets/framework/pagination.scss
 %%WWWDIR%%/app/assets/stylesheets/framework/panels.scss
-%%WWWDIR%%/app/assets/stylesheets/framework/progress.scss
 %%WWWDIR%%/app/assets/stylesheets/framework/selects.scss
 %%WWWDIR%%/app/assets/stylesheets/framework/sidebar.scss
 %%WWWDIR%%/app/assets/stylesheets/framework/snippets.scss
@@ -591,6 +615,8 @@
 %%WWWDIR%%/app/controllers/projects/milestones_controller.rb
 %%WWWDIR%%/app/controllers/projects/network_controller.rb
 %%WWWDIR%%/app/controllers/projects/notes_controller.rb
+%%WWWDIR%%/app/controllers/projects/pages_controller.rb
+%%WWWDIR%%/app/controllers/projects/pages_domains_controller.rb
 %%WWWDIR%%/app/controllers/projects/pipelines_controller.rb
 %%WWWDIR%%/app/controllers/projects/pipelines_settings_controller.rb
 %%WWWDIR%%/app/controllers/projects/project_members_controller.rb
@@ -602,6 +628,7 @@
 %%WWWDIR%%/app/controllers/projects/runner_projects_controller.rb
 %%WWWDIR%%/app/controllers/projects/runners_controller.rb
 %%WWWDIR%%/app/controllers/projects/services_controller.rb
+%%WWWDIR%%/app/controllers/projects/settings/ci_cd_controller.rb
 %%WWWDIR%%/app/controllers/projects/settings/integrations_controller.rb
 %%WWWDIR%%/app/controllers/projects/settings/members_controller.rb
 %%WWWDIR%%/app/controllers/projects/snippets_controller.rb
@@ -630,6 +657,7 @@
 %%WWWDIR%%/app/finders/access_requests_finder.rb
 %%WWWDIR%%/app/finders/branches_finder.rb
 %%WWWDIR%%/app/finders/contributed_projects_finder.rb
+%%WWWDIR%%/app/finders/environments_finder.rb
 %%WWWDIR%%/app/finders/group_projects_finder.rb
 %%WWWDIR%%/app/finders/groups_finder.rb
 %%WWWDIR%%/app/finders/issuable_finder.rb
@@ -768,6 +796,7 @@
 %%WWWDIR%%/app/models/concerns/milestoneish.rb
 %%WWWDIR%%/app/models/concerns/note_on_diff.rb
 %%WWWDIR%%/app/models/concerns/participable.rb
+%%WWWDIR%%/app/models/concerns/presentable.rb
 %%WWWDIR%%/app/models/concerns/project_features_compatibility.rb
 %%WWWDIR%%/app/models/concerns/protected_branch_access.rb
 %%WWWDIR%%/app/models/concerns/reactive_caching.rb
@@ -833,6 +862,7 @@
 %%WWWDIR%%/app/models/note.rb
 %%WWWDIR%%/app/models/notification_setting.rb
 %%WWWDIR%%/app/models/oauth_access_token.rb
+%%WWWDIR%%/app/models/pages_domain.rb
 %%WWWDIR%%/app/models/personal_access_token.rb
 %%WWWDIR%%/app/models/personal_snippet.rb
 %%WWWDIR%%/app/models/project.rb
@@ -866,7 +896,6 @@
 %%WWWDIR%%/app/models/project_services/external_wiki_service.rb
 %%WWWDIR%%/app/models/project_services/flowdock_service.rb
 %%WWWDIR%%/app/models/project_services/gemnasium_service.rb
-%%WWWDIR%%/app/models/project_services/gitlab_ci_service.rb
 %%WWWDIR%%/app/models/project_services/gitlab_issue_tracker_service.rb
 %%WWWDIR%%/app/models/project_services/hipchat_service.rb
 %%WWWDIR%%/app/models/project_services/irker_service.rb
@@ -930,6 +959,8 @@
 %%WWWDIR%%/app/policies/project_policy.rb
 %%WWWDIR%%/app/policies/project_snippet_policy.rb
 %%WWWDIR%%/app/policies/user_policy.rb
+%%WWWDIR%%/app/presenters/README.md
+%%WWWDIR%%/app/presenters/ci/build_presenter.rb
 %%WWWDIR%%/app/serializers/analytics_build_entity.rb
 %%WWWDIR%%/app/serializers/analytics_build_serializer.rb
 %%WWWDIR%%/app/serializers/analytics_commit_entity.rb
@@ -968,6 +999,8 @@
 %%WWWDIR%%/app/services/access_token_validation_service.rb
 %%WWWDIR%%/app/services/after_branch_delete_service.rb
 %%WWWDIR%%/app/services/akismet_service.rb
+%%WWWDIR%%/app/services/application_settings/base_service.rb
+%%WWWDIR%%/app/services/application_settings/update_service.rb
 %%WWWDIR%%/app/services/audit_event_service.rb
 %%WWWDIR%%/app/services/auth/container_registry_authentication_service.rb
 %%WWWDIR%%/app/services/base_service.rb
@@ -1015,6 +1048,7 @@
 %%WWWDIR%%/app/services/files/multi_service.rb
 %%WWWDIR%%/app/services/files/update_service.rb
 %%WWWDIR%%/app/services/git_hooks_service.rb
+%%WWWDIR%%/app/services/git_operation_service.rb
 %%WWWDIR%%/app/services/git_push_service.rb
 %%WWWDIR%%/app/services/git_tag_push_service.rb
 %%WWWDIR%%/app/services/gravatar_service.rb
@@ -1033,6 +1067,7 @@
 %%WWWDIR%%/app/services/issues/reopen_service.rb
 %%WWWDIR%%/app/services/issues/update_service.rb
 %%WWWDIR%%/app/services/labels/find_or_create_service.rb
+%%WWWDIR%%/app/services/labels/promote_service.rb
 %%WWWDIR%%/app/services/labels/transfer_service.rb
 %%WWWDIR%%/app/services/members/approve_access_request_service.rb
 %%WWWDIR%%/app/services/members/authorized_destroy_service.rb
@@ -1068,6 +1103,7 @@
 %%WWWDIR%%/app/services/notes/slash_commands_service.rb
 %%WWWDIR%%/app/services/notes/update_service.rb
 %%WWWDIR%%/app/services/notification_service.rb
+%%WWWDIR%%/app/services/pages_service.rb
 %%WWWDIR%%/app/services/projects/autocomplete_service.rb
 %%WWWDIR%%/app/services/projects/create_service.rb
 %%WWWDIR%%/app/services/projects/destroy_service.rb
@@ -1080,6 +1116,8 @@
 %%WWWDIR%%/app/services/projects/participants_service.rb
 %%WWWDIR%%/app/services/projects/transfer_service.rb
 %%WWWDIR%%/app/services/projects/unlink_fork_service.rb
+%%WWWDIR%%/app/services/projects/update_pages_configuration_service.rb
+%%WWWDIR%%/app/services/projects/update_pages_service.rb
 %%WWWDIR%%/app/services/projects/update_service.rb
 %%WWWDIR%%/app/services/projects/upload_service.rb
 %%WWWDIR%%/app/services/protected_branches/api_create_service.rb
@@ -1092,6 +1130,7 @@
 %%WWWDIR%%/app/services/search/project_service.rb
 %%WWWDIR%%/app/services/search/snippet_service.rb
 %%WWWDIR%%/app/services/slash_commands/interpret_service.rb
+%%WWWDIR%%/app/services/spam_check_service.rb
 %%WWWDIR%%/app/services/spam_service.rb
 %%WWWDIR%%/app/services/system_hooks_service.rb
 %%WWWDIR%%/app/services/system_note_service.rb
@@ -1102,6 +1141,7 @@
 %%WWWDIR%%/app/services/user_agent_detail_service.rb
 %%WWWDIR%%/app/services/user_project_access_changed_service.rb
 %%WWWDIR%%/app/services/users/refresh_authorized_projects_service.rb
+%%WWWDIR%%/app/services/validate_new_branch_service.rb
 %%WWWDIR%%/app/services/wiki_pages/base_service.rb
 %%WWWDIR%%/app/services/wiki_pages/create_service.rb
 %%WWWDIR%%/app/services/wiki_pages/update_service.rb
@@ -1113,6 +1153,8 @@
 %%WWWDIR%%/app/uploaders/lfs_object_uploader.rb
 %%WWWDIR%%/app/uploaders/uploader_helper.rb
 %%WWWDIR%%/app/validators/addressable_url_validator.rb
+%%WWWDIR%%/app/validators/certificate_key_validator.rb
+%%WWWDIR%%/app/validators/certificate_validator.rb
 %%WWWDIR%%/app/validators/color_validator.rb
 %%WWWDIR%%/app/validators/email_validator.rb
 %%WWWDIR%%/app/validators/importable_url_validator.rb
@@ -1182,6 +1224,7 @@
 %%WWWDIR%%/app/views/admin/spam_logs/_spam_log.html.haml
 %%WWWDIR%%/app/views/admin/spam_logs/index.html.haml
 %%WWWDIR%%/app/views/admin/system_info/show.html.haml
+%%WWWDIR%%/app/views/admin/users/_access_levels.html.haml
 %%WWWDIR%%/app/views/admin/users/_form.html.haml
 %%WWWDIR%%/app/views/admin/users/_head.html.haml
 %%WWWDIR%%/app/views/admin/users/_profile.html.haml
@@ -1366,6 +1409,7 @@
 %%WWWDIR%%/app/views/layouts/_page.html.haml
 %%WWWDIR%%/app/views/layouts/_page_title.html.haml
 %%WWWDIR%%/app/views/layouts/_piwik.html.haml
+%%WWWDIR%%/app/views/layouts/_recaptcha_verification.html.haml
 %%WWWDIR%%/app/views/layouts/_search.html.haml
 %%WWWDIR%%/app/views/layouts/admin.html.haml
 %%WWWDIR%%/app/views/layouts/application.html.haml
@@ -1457,6 +1501,8 @@
 %%WWWDIR%%/app/views/notify/note_issue_email.text.erb
 %%WWWDIR%%/app/views/notify/note_merge_request_email.html.haml
 %%WWWDIR%%/app/views/notify/note_merge_request_email.text.erb
+%%WWWDIR%%/app/views/notify/note_personal_snippet_email.html.haml
+%%WWWDIR%%/app/views/notify/note_personal_snippet_email.text.erb
 %%WWWDIR%%/app/views/notify/note_snippet_email.html.haml
 %%WWWDIR%%/app/views/notify/note_snippet_email.text.erb
 %%WWWDIR%%/app/views/notify/pipeline_failed_email.html.haml
@@ -1578,14 +1624,12 @@
 %%WWWDIR%%/app/views/projects/buttons/_star.html.haml
 %%WWWDIR%%/app/views/projects/ci/builds/_build.html.haml
 %%WWWDIR%%/app/views/projects/ci/pipelines/_pipeline.html.haml
-%%WWWDIR%%/app/views/projects/commit/_builds.html.haml
 %%WWWDIR%%/app/views/projects/commit/_change.html.haml
 %%WWWDIR%%/app/views/projects/commit/_ci_menu.html.haml
 %%WWWDIR%%/app/views/projects/commit/_commit_box.html.haml
 %%WWWDIR%%/app/views/projects/commit/_pipeline.html.haml
 %%WWWDIR%%/app/views/projects/commit/_pipelines_list.haml
 %%WWWDIR%%/app/views/projects/commit/branches.html.haml
-%%WWWDIR%%/app/views/projects/commit/builds.html.haml
 %%WWWDIR%%/app/views/projects/commit/pipelines.html.haml
 %%WWWDIR%%/app/views/projects/commit/show.html.haml
 %%WWWDIR%%/app/views/projects/commits/_commit.atom.builder
@@ -1669,7 +1713,7 @@
 %%WWWDIR%%/app/views/projects/issues/index.html.haml
 %%WWWDIR%%/app/views/projects/issues/new.html.haml
 %%WWWDIR%%/app/views/projects/issues/show.html.haml
-%%WWWDIR%%/app/views/projects/labels/destroy.js.haml
+%%WWWDIR%%/app/views/projects/issues/verify.html.haml
 %%WWWDIR%%/app/views/projects/labels/edit.html.haml
 %%WWWDIR%%/app/views/projects/labels/index.html.haml
 %%WWWDIR%%/app/views/projects/labels/new.html.haml
@@ -1702,7 +1746,6 @@
 %%WWWDIR%%/app/views/projects/merge_requests/merge.js.haml
 %%WWWDIR%%/app/views/projects/merge_requests/new.html.haml
 %%WWWDIR%%/app/views/projects/merge_requests/show.html.haml
-%%WWWDIR%%/app/views/projects/merge_requests/show/_builds.html.haml
 %%WWWDIR%%/app/views/projects/merge_requests/show/_commits.html.haml
 %%WWWDIR%%/app/views/projects/merge_requests/show/_diffs.html.haml
 %%WWWDIR%%/app/views/projects/merge_requests/show/_how_to_merge.html.haml
@@ -1750,6 +1793,16 @@
 %%WWWDIR%%/app/views/projects/notes/_note.html.haml
 %%WWWDIR%%/app/views/projects/notes/_notes.html.haml
 %%WWWDIR%%/app/views/projects/notes/_notes_with_form.html.haml
+%%WWWDIR%%/app/views/projects/pages/_access.html.haml
+%%WWWDIR%%/app/views/projects/pages/_destroy.haml
+%%WWWDIR%%/app/views/projects/pages/_disabled.html.haml
+%%WWWDIR%%/app/views/projects/pages/_list.html.haml
+%%WWWDIR%%/app/views/projects/pages/_no_domains.html.haml
+%%WWWDIR%%/app/views/projects/pages/_use.html.haml
+%%WWWDIR%%/app/views/projects/pages/show.html.haml
+%%WWWDIR%%/app/views/projects/pages_domains/_form.html.haml
+%%WWWDIR%%/app/views/projects/pages_domains/new.html.haml
+%%WWWDIR%%/app/views/projects/pages_domains/show.html.haml
 %%WWWDIR%%/app/views/projects/pipelines/_graph.html.haml
 %%WWWDIR%%/app/views/projects/pipelines/_head.html.haml
 %%WWWDIR%%/app/views/projects/pipelines/_info.html.haml
@@ -1759,7 +1812,7 @@
 %%WWWDIR%%/app/views/projects/pipelines/new.html.haml
 %%WWWDIR%%/app/views/projects/pipelines/show.html.haml
 %%WWWDIR%%/app/views/projects/pipelines_settings/_badge.html.haml
-%%WWWDIR%%/app/views/projects/pipelines_settings/show.html.haml
+%%WWWDIR%%/app/views/projects/pipelines_settings/_show.html.haml
 %%WWWDIR%%/app/views/projects/project_members/_group_members.html.haml
 %%WWWDIR%%/app/views/projects/project_members/_groups.html.haml
 %%WWWDIR%%/app/views/projects/project_members/_index.html.haml
@@ -1781,11 +1834,11 @@
 %%WWWDIR%%/app/views/projects/remove_fork.js.haml
 %%WWWDIR%%/app/views/projects/repositories/_feed.html.haml
 %%WWWDIR%%/app/views/projects/runners/_form.html.haml
+%%WWWDIR%%/app/views/projects/runners/_index.html.haml
 %%WWWDIR%%/app/views/projects/runners/_runner.html.haml
 %%WWWDIR%%/app/views/projects/runners/_shared_runners.html.haml
 %%WWWDIR%%/app/views/projects/runners/_specific_runners.html.haml
 %%WWWDIR%%/app/views/projects/runners/edit.html.haml
-%%WWWDIR%%/app/views/projects/runners/index.html.haml
 %%WWWDIR%%/app/views/projects/runners/show.html.haml
 %%WWWDIR%%/app/views/projects/services/_form.html.haml
 %%WWWDIR%%/app/views/projects/services/_index.html.haml
@@ -1794,6 +1847,7 @@
 %%WWWDIR%%/app/views/projects/services/mattermost_slash_commands/_help.html.haml
 %%WWWDIR%%/app/views/projects/services/mattermost_slash_commands/_installation_info.html.haml
 %%WWWDIR%%/app/views/projects/services/slack_slash_commands/_help.html.haml
+%%WWWDIR%%/app/views/projects/settings/ci_cd/show.html.haml
 %%WWWDIR%%/app/views/projects/settings/integrations/_project_hook.html.haml
 %%WWWDIR%%/app/views/projects/settings/integrations/show.html.haml
 %%WWWDIR%%/app/views/projects/settings/members/show.html.haml
@@ -1804,6 +1858,7 @@
 %%WWWDIR%%/app/views/projects/snippets/index.html.haml
 %%WWWDIR%%/app/views/projects/snippets/new.html.haml
 %%WWWDIR%%/app/views/projects/snippets/show.html.haml
+%%WWWDIR%%/app/views/projects/snippets/verify.html.haml
 %%WWWDIR%%/app/views/projects/stage/_graph.html.haml
 %%WWWDIR%%/app/views/projects/stage/_in_stage_group.html.haml
 %%WWWDIR%%/app/views/projects/stage/_stage.html.haml
@@ -1823,13 +1878,13 @@
 %%WWWDIR%%/app/views/projects/tree/_tree_item.html.haml
 %%WWWDIR%%/app/views/projects/tree/_tree_row.html.haml
 %%WWWDIR%%/app/views/projects/tree/show.html.haml
+%%WWWDIR%%/app/views/projects/triggers/_index.html.haml
 %%WWWDIR%%/app/views/projects/triggers/_trigger.html.haml
-%%WWWDIR%%/app/views/projects/triggers/index.html.haml
 %%WWWDIR%%/app/views/projects/update.js.haml
 %%WWWDIR%%/app/views/projects/variables/_content.html.haml
 %%WWWDIR%%/app/views/projects/variables/_form.html.haml
+%%WWWDIR%%/app/views/projects/variables/_index.html.haml
 %%WWWDIR%%/app/views/projects/variables/_table.html.haml
-%%WWWDIR%%/app/views/projects/variables/index.html.haml
 %%WWWDIR%%/app/views/projects/variables/show.html.haml
 %%WWWDIR%%/app/views/projects/wikis/_form.html.haml
 %%WWWDIR%%/app/views/projects/wikis/_main_links.html.haml
@@ -1878,6 +1933,7 @@
 %%WWWDIR%%/app/views/shared/_merge_requests.html.haml
 %%WWWDIR%%/app/views/shared/_milestone_expired.html.haml
 %%WWWDIR%%/app/views/shared/_milestones_filter.html.haml
+%%WWWDIR%%/app/views/shared/_mini_pipeline_graph.html.haml
 %%WWWDIR%%/app/views/shared/_nav_scroll.html.haml
 %%WWWDIR%%/app/views/shared/_new_commit_form.html.haml
 %%WWWDIR%%/app/views/shared/_new_project_item_select.html.haml
@@ -1894,9 +1950,13 @@
 %%WWWDIR%%/app/views/shared/_visibility_radios.html.haml
 %%WWWDIR%%/app/views/shared/builds/_tabs.html.haml
 %%WWWDIR%%/app/views/shared/empty_states/_issues.html.haml
-%%WWWDIR%%/app/views/shared/empty_states/_todos_all_done.svg
-%%WWWDIR%%/app/views/shared/empty_states/_todos_empty.svg
+%%WWWDIR%%/app/views/shared/empty_states/_labels.html.haml
+%%WWWDIR%%/app/views/shared/empty_states/_priority_labels.html.haml
 %%WWWDIR%%/app/views/shared/empty_states/icons/_issues.svg
+%%WWWDIR%%/app/views/shared/empty_states/icons/_labels.svg
+%%WWWDIR%%/app/views/shared/empty_states/icons/_priority_labels.svg
+%%WWWDIR%%/app/views/shared/empty_states/icons/_todos_all_done.svg
+%%WWWDIR%%/app/views/shared/empty_states/icons/_todos_empty.svg
 %%WWWDIR%%/app/views/shared/groups/_group.html.haml
 %%WWWDIR%%/app/views/shared/groups/_list.html.haml
 %%WWWDIR%%/app/views/shared/icons/_activity.svg
@@ -1906,6 +1966,10 @@
 %%WWWDIR%%/app/views/shared/icons/_files.svg
 %%WWWDIR%%/app/views/shared/icons/_go_logo.svg.erb
 %%WWWDIR%%/app/views/shared/icons/_group.svg.erb
+%%WWWDIR%%/app/views/shared/icons/_icon_action_cancel.svg
+%%WWWDIR%%/app/views/shared/icons/_icon_action_play.svg
+%%WWWDIR%%/app/views/shared/icons/_icon_action_retry.svg
+%%WWWDIR%%/app/views/shared/icons/_icon_action_stop.svg
 %%WWWDIR%%/app/views/shared/icons/_icon_close.svg
 %%WWWDIR%%/app/views/shared/icons/_icon_commit.svg
 %%WWWDIR%%/app/views/shared/icons/_icon_cycle_analytics_overview.svg
@@ -1965,6 +2029,7 @@
 %%WWWDIR%%/app/views/shared/issuable/_sidebar.html.haml
 %%WWWDIR%%/app/views/shared/issuable/form/_branch_chooser.html.haml
 %%WWWDIR%%/app/views/shared/issuable/form/_description.html.haml
+%%WWWDIR%%/app/views/shared/issuable/form/_merge_params.html.haml
 %%WWWDIR%%/app/views/shared/issuable/form/_metadata.html.haml
 %%WWWDIR%%/app/views/shared/issuable/form/_template_selector.html.haml
 %%WWWDIR%%/app/views/shared/issuable/form/_title.html.haml
@@ -2014,6 +2079,7 @@
 %%WWWDIR%%/app/views/snippets/index.html.haml
 %%WWWDIR%%/app/views/snippets/new.html.haml
 %%WWWDIR%%/app/views/snippets/show.html.haml
+%%WWWDIR%%/app/views/snippets/verify.html.haml
 %%WWWDIR%%/app/views/u2f/_authenticate.html.haml
 %%WWWDIR%%/app/views/u2f/_register.html.haml
 %%WWWDIR%%/app/views/users/_groups.html.haml
@@ -2048,6 +2114,7 @@
 %%WWWDIR%%/app/workers/irker_worker.rb
 %%WWWDIR%%/app/workers/merge_worker.rb
 %%WWWDIR%%/app/workers/new_note_worker.rb
+%%WWWDIR%%/app/workers/pages_worker.rb
 %%WWWDIR%%/app/workers/pipeline_hooks_worker.rb
 %%WWWDIR%%/app/workers/pipeline_metrics_worker.rb
 %%WWWDIR%%/app/workers/pipeline_notification_worker.rb
@@ -2094,10 +2161,11 @@
 @(git,,544) %%WWWDIR%%/bin/setup
 @(git,,544) %%WWWDIR%%/bin/spinach
 @(git,,544) %%WWWDIR%%/bin/spring
-@(git,,544) %%WWWDIR%%/bin/teaspoon
 @(git,,544) %%WWWDIR%%/bin/upgrade.rb
 @(git,,544) %%WWWDIR%%/bin/web
 %%WWWDIR%%/changelogs/archive.md
+%%WWWDIR%%/changelogs/unreleased/22619-add-an-email-address-to-unsubscribe-list-header-in-email
+%%WWWDIR%%/changelogs/unreleased/26908-make-timelogs-use-foreign-keys
 %%WWWDIR%%/changelogs/unreleased/repository-name-emojis
 %%WWWDIR%%/config.ru
 %%WWWDIR%%/config/README.md
@@ -2120,6 +2188,7 @@
 %%WWWDIR%%/config/initializers/6_validations.rb
 %%WWWDIR%%/config/initializers/7_redis.rb
 %%WWWDIR%%/config/initializers/active_record_query_trace.rb
+%%WWWDIR%%/config/initializers/acts_as_taggable.rb
 %%WWWDIR%%/config/initializers/ar5_batching.rb
 %%WWWDIR%%/config/initializers/ar_monkey_patch.rb
 %%WWWDIR%%/config/initializers/ar_speed_up_migration_checking.rb
@@ -2150,6 +2219,7 @@
 %%WWWDIR%%/config/initializers/mime_types.rb
 %%WWWDIR%%/config/initializers/mysql_ignore_postgresql_options.rb
 %%WWWDIR%%/config/initializers/omniauth.rb
+%%WWWDIR%%/config/initializers/plantuml_lexer.rb
 %%WWWDIR%%/config/initializers/postgresql_limit_fix.rb
 %%WWWDIR%%/config/initializers/postgresql_opclasses_support.rb
 %%WWWDIR%%/config/initializers/premailer.rb
@@ -2160,6 +2230,7 @@
 %%WWWDIR%%/config/initializers/relative_url.rb.sample
 %%WWWDIR%%/config/initializers/request_profiler.rb
 %%WWWDIR%%/config/initializers/routing_draw.rb
+%%WWWDIR%%/config/initializers/rspec_profiling.rb
 %%WWWDIR%%/config/initializers/secret_token.rb
 %%WWWDIR%%/config/initializers/sentry.rb
 %%WWWDIR%%/config/initializers/session_store.rb
@@ -2171,6 +2242,7 @@
 %%WWWDIR%%/config/initializers/trusted_proxies.rb
 %%WWWDIR%%/config/initializers/workhorse_multipart.rb
 %%WWWDIR%%/config/initializers/wrap_parameters.rb
+%%WWWDIR%%/config/karma.config.js
 %%WWWDIR%%/config/license_finder.yml
 %%WWWDIR%%/config/locales/devise.en.yml
 %%WWWDIR%%/config/locales/doorkeeper.en.yml
@@ -2202,6 +2274,7 @@
 %%WWWDIR%%/config/sidekiq.yml.example
 %%WWWDIR%%/config/sidekiq_queues.yml
 %%WWWDIR%%/config/unicorn.rb.example.development
+%%WWWDIR%%/config/webpack.config.js
 %%WWWDIR%%/db/fixtures/development/01_admin.rb
 %%WWWDIR%%/db/fixtures/development/04_project.rb
 %%WWWDIR%%/db/fixtures/development/05_users.rb
@@ -2465,6 +2538,7 @@
 %%WWWDIR%%/db/migrate/20151210125930_migrate_ci_to_project.rb
 %%WWWDIR%%/db/migrate/20151210125931_add_index_to_ci_tables.rb
 %%WWWDIR%%/db/migrate/20151210125932_drop_null_for_ci_tables.rb
+%%WWWDIR%%/db/migrate/20151215132013_add_pages_size_to_application_settings.rb
 %%WWWDIR%%/db/migrate/20151218154042_add_tfa_to_application_settings.rb
 %%WWWDIR%%/db/migrate/20151221234414_add_tfa_additional_fields.rb
 %%WWWDIR%%/db/migrate/20151224123230_rename_emojis.rb
@@ -2496,6 +2570,7 @@
 %%WWWDIR%%/db/migrate/20160202164642_add_allow_guest_to_access_builds_project.rb
 %%WWWDIR%%/db/migrate/20160204144558_add_real_size_to_merge_request_diffs.rb
 %%WWWDIR%%/db/migrate/20160209130428_add_index_to_snippet.rb
+%%WWWDIR%%/db/migrate/20160210105555_create_pages_domain.rb
 %%WWWDIR%%/db/migrate/20160212123307_create_tasks.rb
 %%WWWDIR%%/db/migrate/20160217100506_add_description_to_label.rb
 %%WWWDIR%%/db/migrate/20160217174422_add_note_to_tasks.rb
@@ -2692,6 +2767,7 @@
 %%WWWDIR%%/db/migrate/20161103191444_add_sidekiq_throttling_to_application_settings.rb
 %%WWWDIR%%/db/migrate/20161106185620_add_project_import_data_project_index.rb
 %%WWWDIR%%/db/migrate/20161113184239_create_user_chat_names_table.rb
+%%WWWDIR%%/db/migrate/20161114024742_add_coverage_regex_to_builds.rb
 %%WWWDIR%%/db/migrate/20161115173905_add_start_date_to_milestones.rb
 %%WWWDIR%%/db/migrate/20161117114805_remove_undeleted_groups.rb
 %%WWWDIR%%/db/migrate/20161118183841_add_commit_events_to_services.rb
@@ -2727,16 +2803,28 @@
 %%WWWDIR%%/db/migrate/20161227192806_rename_slack_and_mattermost_notification_services.rb
 %%WWWDIR%%/db/migrate/20170121123724_add_index_to_ci_builds_for_status_runner_id_and_type.rb
 %%WWWDIR%%/db/migrate/20170121130655_add_index_to_ci_runners_for_is_shared.rb
+%%WWWDIR%%/db/migrate/20170124174637_add_foreign_keys_to_timelogs.rb
+%%WWWDIR%%/db/migrate/20170126174819_add_terminal_max_session_time_to_application_settings.rb
+%%WWWDIR%%/db/migrate/20170127032550_remove_backlog_lists_from_boards.rb
 %%WWWDIR%%/db/migrate/20170130204620_add_index_to_project_authorizations.rb
 %%WWWDIR%%/db/migrate/20170204181513_add_index_to_labels_for_type_and_project.rb
+%%WWWDIR%%/db/migrate/20170206071414_add_recaptcha_verified_to_spam_logs.rb
+%%WWWDIR%%/db/migrate/20170210062829_add_index_to_labels_for_title_and_project.rb
+%%WWWDIR%%/db/migrate/20170210075922_add_index_to_ci_trigger_requests_for_commit_id.rb
+%%WWWDIR%%/db/migrate/20170210103609_add_index_to_user_agent_detail.rb
 %%WWWDIR%%/db/migrate/limits_to_mysql.rb
 %%WWWDIR%%/db/post_migrate/20160824121037_change_personal_access_tokens_default_back_to_empty_array.rb
 %%WWWDIR%%/db/post_migrate/20161011222551_remove_inactive_jira_service_properties.rb
 %%WWWDIR%%/db/post_migrate/20161109150329_fix_project_records_with_invalid_visibility.rb
 %%WWWDIR%%/db/post_migrate/20161221140236_remove_unneeded_services.rb
 %%WWWDIR%%/db/post_migrate/20161221153951_rename_reserved_project_names.rb
+%%WWWDIR%%/db/post_migrate/20170104150317_requeue_pending_delete_projects.rb
 %%WWWDIR%%/db/post_migrate/20170106142508_fill_authorized_projects.rb
 %%WWWDIR%%/db/post_migrate/20170106172224_remove_project_authorizations_id_column.rb
+%%WWWDIR%%/db/post_migrate/20170206101007_remove_trackable_columns_from_timelogs.rb
+%%WWWDIR%%/db/post_migrate/20170206101030_validate_foreign_keys_on_timelogs.rb
+%%WWWDIR%%/db/post_migrate/20170211073944_disable_invalid_service_templates.rb
+%%WWWDIR%%/db/post_migrate/20170214111112_delete_deprecated_gitlab_ci_service.rb
 %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
@@ -2769,6 +2857,7 @@
 %%WWWDIR%%/doc/administration/integration/plantuml.md
 %%WWWDIR%%/doc/administration/integration/terminal.md
 %%WWWDIR%%/doc/administration/issue_closing_pattern.md
+%%WWWDIR%%/doc/administration/job_artifacts.md
 %%WWWDIR%%/doc/administration/logs.md
 %%WWWDIR%%/doc/administration/monitoring/performance/gitlab_configuration.md
 %%WWWDIR%%/doc/administration/monitoring/performance/grafana_configuration.md
@@ -2792,6 +2881,8 @@
 %%WWWDIR%%/doc/administration/operations/sidekiq_job_throttling.md
 %%WWWDIR%%/doc/administration/operations/sidekiq_memory_killer.md
 %%WWWDIR%%/doc/administration/operations/unicorn.md
+%%WWWDIR%%/doc/administration/pages/index.md
+%%WWWDIR%%/doc/administration/pages/source.md
 %%WWWDIR%%/doc/administration/raketasks/check.md
 %%WWWDIR%%/doc/administration/raketasks/ldap.md
 %%WWWDIR%%/doc/administration/raketasks/maintenance.md
@@ -2799,6 +2890,7 @@
 %%WWWDIR%%/doc/administration/reply_by_email.md
 %%WWWDIR%%/doc/administration/reply_by_email_postfix_setup.md
 %%WWWDIR%%/doc/administration/repository_checks.md
+%%WWWDIR%%/doc/administration/repository_storage_paths.md
 %%WWWDIR%%/doc/administration/repository_storages.md
 %%WWWDIR%%/doc/administration/restart_gitlab.md
 %%WWWDIR%%/doc/administration/troubleshooting/debug.md
@@ -2851,6 +2943,7 @@
 %%WWWDIR%%/doc/api/templates/licenses.md
 %%WWWDIR%%/doc/api/todos.md
 %%WWWDIR%%/doc/api/users.md
+%%WWWDIR%%/doc/api/v3_to_v4.md
 %%WWWDIR%%/doc/api/version.md
 %%WWWDIR%%/doc/ci/README.md
 %%WWWDIR%%/doc/ci/api/README.md
@@ -2867,6 +2960,7 @@
 %%WWWDIR%%/doc/ci/environments.md
 %%WWWDIR%%/doc/ci/examples/README.md
 %%WWWDIR%%/doc/ci/examples/deployment/README.md
+%%WWWDIR%%/doc/ci/examples/deployment/composer-npm-deploy.md
 %%WWWDIR%%/doc/ci/examples/php.md
 %%WWWDIR%%/doc/ci/examples/test-and-deploy-python-application-to-heroku.md
 %%WWWDIR%%/doc/ci/examples/test-and-deploy-ruby-application-to-heroku.md
@@ -2891,8 +2985,12 @@
 %%WWWDIR%%/doc/ci/img/environments_terminal_button_on_show.png
 %%WWWDIR%%/doc/ci/img/environments_terminal_page.png
 %%WWWDIR%%/doc/ci/img/environments_view.png
-%%WWWDIR%%/doc/ci/img/features_settings.png
+%%WWWDIR%%/doc/ci/img/permissions_settings.png
+%%WWWDIR%%/doc/ci/img/pipelines-goal.svg
 %%WWWDIR%%/doc/ci/img/pipelines.png
+%%WWWDIR%%/doc/ci/img/types-of-pipelines.svg
+%%WWWDIR%%/doc/ci/img/view_on_env_blob.png
+%%WWWDIR%%/doc/ci/img/view_on_env_mr.png
 %%WWWDIR%%/doc/ci/permissions/README.md
 %%WWWDIR%%/doc/ci/pipelines.md
 %%WWWDIR%%/doc/ci/quick_start/README.md
@@ -2902,7 +3000,6 @@
 %%WWWDIR%%/doc/ci/quick_start/img/pipelines_status.png
 %%WWWDIR%%/doc/ci/quick_start/img/runners_activated.png
 %%WWWDIR%%/doc/ci/quick_start/img/single_commit_status_pending.png
-%%WWWDIR%%/doc/ci/quick_start/img/status_pending.png
 %%WWWDIR%%/doc/ci/review_apps/img/review_apps_preview_in_mr.png
 %%WWWDIR%%/doc/ci/review_apps/index.md
 %%WWWDIR%%/doc/ci/runners/README.md
@@ -2941,6 +3038,7 @@
 %%WWWDIR%%/doc/development/db_dump.md
 %%WWWDIR%%/doc/development/doc_styleguide.md
 %%WWWDIR%%/doc/development/frontend.md
+%%WWWDIR%%/doc/development/gemfile.md
 %%WWWDIR%%/doc/development/gitlab_architecture_diagram.png
 %%WWWDIR%%/doc/development/gitlab_diagram_overview.odg
 %%WWWDIR%%/doc/development/gotchas.md
@@ -3109,6 +3207,7 @@
 %%WWWDIR%%/doc/incoming_email/postfix.md
 %%WWWDIR%%/doc/install/README.md
 %%WWWDIR%%/doc/install/database_mysql.md
+%%WWWDIR%%/doc/install/digitaloceandocker.md
 %%WWWDIR%%/doc/install/installation.md
 %%WWWDIR%%/doc/install/redis.md
 %%WWWDIR%%/doc/install/relative_url.md
@@ -3181,11 +3280,12 @@
 %%WWWDIR%%/doc/operations/moving_repositories.md
 %%WWWDIR%%/doc/operations/sidekiq_memory_killer.md
 %%WWWDIR%%/doc/operations/unicorn.md
+%%WWWDIR%%/doc/pages/README.md
+%%WWWDIR%%/doc/pages/administration.md
+%%WWWDIR%%/doc/pages/getting_started_part_one.md
+%%WWWDIR%%/doc/pages/getting_started_part_three.md
+%%WWWDIR%%/doc/pages/getting_started_part_two.md
 %%WWWDIR%%/doc/permissions/permissions.md
-%%WWWDIR%%/doc/profile/2fa.png
-%%WWWDIR%%/doc/profile/2fa_auth.png
-%%WWWDIR%%/doc/profile/2fa_u2f_authenticate.png
-%%WWWDIR%%/doc/profile/2fa_u2f_register.png
 %%WWWDIR%%/doc/profile/README.md
 %%WWWDIR%%/doc/profile/preferences.md
 %%WWWDIR%%/doc/profile/two_factor_authentication.md
@@ -3194,38 +3294,6 @@
 %%WWWDIR%%/doc/project_services/builds_emails.md
 %%WWWDIR%%/doc/project_services/emails_on_push.md
 %%WWWDIR%%/doc/project_services/hipchat.md
-%%WWWDIR%%/doc/project_services/img/builds_emails_service.png
-%%WWWDIR%%/doc/project_services/img/emails_on_push_service.png
-%%WWWDIR%%/doc/project_services/img/jira_add_user_to_group.png
-%%WWWDIR%%/doc/project_services/img/jira_create_new_group.png
-%%WWWDIR%%/doc/project_services/img/jira_create_new_group_name.png
-%%WWWDIR%%/doc/project_services/img/jira_create_new_user.png
-%%WWWDIR%%/doc/project_services/img/jira_group_access.png
-%%WWWDIR%%/doc/project_services/img/jira_issue_reference.png
-%%WWWDIR%%/doc/project_services/img/jira_merge_request_close.png
-%%WWWDIR%%/doc/project_services/img/jira_project_name.png
-%%WWWDIR%%/doc/project_services/img/jira_service.png
-%%WWWDIR%%/doc/project_services/img/jira_service_close_comment.png
-%%WWWDIR%%/doc/project_services/img/jira_service_close_issue.png
-%%WWWDIR%%/doc/project_services/img/jira_service_page.png
-%%WWWDIR%%/doc/project_services/img/jira_user_management_link.png
-%%WWWDIR%%/doc/project_services/img/jira_workflow_screenshot.png
-%%WWWDIR%%/doc/project_services/img/kubernetes_configuration.png
-%%WWWDIR%%/doc/project_services/img/mattermost_add_slash_command.png
-%%WWWDIR%%/doc/project_services/img/mattermost_bot_auth.png
-%%WWWDIR%%/doc/project_services/img/mattermost_bot_available_commands.png
-%%WWWDIR%%/doc/project_services/img/mattermost_config_help.png
-%%WWWDIR%%/doc/project_services/img/mattermost_configuration.png
-%%WWWDIR%%/doc/project_services/img/mattermost_console_integrations.png
-%%WWWDIR%%/doc/project_services/img/mattermost_gitlab_token.png
-%%WWWDIR%%/doc/project_services/img/mattermost_goto_console.png
-%%WWWDIR%%/doc/project_services/img/mattermost_slash_command_configuration.png
-%%WWWDIR%%/doc/project_services/img/mattermost_slash_command_token.png
-%%WWWDIR%%/doc/project_services/img/mattermost_team_integrations.png
-%%WWWDIR%%/doc/project_services/img/redmine_configuration.png
-%%WWWDIR%%/doc/project_services/img/services_templates_redmine_example.png
-%%WWWDIR%%/doc/project_services/img/slack_configuration.png
-%%WWWDIR%%/doc/project_services/img/slack_setup.png
 %%WWWDIR%%/doc/project_services/irker.md
 %%WWWDIR%%/doc/project_services/jira.md
 %%WWWDIR%%/doc/project_services/kubernetes.md
@@ -3359,6 +3427,7 @@
 %%WWWDIR%%/doc/update/8.13-to-8.14.md
 %%WWWDIR%%/doc/update/8.14-to-8.15.md
 %%WWWDIR%%/doc/update/8.15-to-8.16.md
+%%WWWDIR%%/doc/update/8.16-to-8.17.md
 %%WWWDIR%%/doc/update/8.2-to-8.3.md
 %%WWWDIR%%/doc/update/8.3-to-8.4.md
 %%WWWDIR%%/doc/update/8.4-to-8.5.md
@@ -3391,12 +3460,13 @@
 %%WWWDIR%%/doc/user/img/markdown_video.mp4
 %%WWWDIR%%/doc/user/markdown.md
 %%WWWDIR%%/doc/user/permissions.md
+%%WWWDIR%%/doc/user/profile/account/img/2fa.png
+%%WWWDIR%%/doc/user/profile/account/img/2fa_auth.png
+%%WWWDIR%%/doc/user/profile/account/img/2fa_u2f_authenticate.png
+%%WWWDIR%%/doc/user/profile/account/img/2fa_u2f_register.png
+%%WWWDIR%%/doc/user/profile/account/index.md
+%%WWWDIR%%/doc/user/profile/account/two_factor_authentication.md
 %%WWWDIR%%/doc/user/project/builds/artifacts.md
-%%WWWDIR%%/doc/user/project/builds/img/build_artifacts_browser.png
-%%WWWDIR%%/doc/user/project/builds/img/build_artifacts_browser_button.png
-%%WWWDIR%%/doc/user/project/builds/img/build_artifacts_builds_page.png
-%%WWWDIR%%/doc/user/project/builds/img/build_artifacts_pipelines_page.png
-%%WWWDIR%%/doc/user/project/builds/img/build_latest_artifacts_browser.png
 %%WWWDIR%%/doc/user/project/container_registry.md
 %%WWWDIR%%/doc/user/project/cycle_analytics.md
 %%WWWDIR%%/doc/user/project/description_templates.md
@@ -3409,9 +3479,10 @@
 %%WWWDIR%%/doc/user/project/img/description_templates.png
 %%WWWDIR%%/doc/user/project/img/issue_board.png
 %%WWWDIR%%/doc/user/project/img/issue_board_add_list.png
-%%WWWDIR%%/doc/user/project/img/issue_board_search_backlog.png
 %%WWWDIR%%/doc/user/project/img/issue_board_system_notes.png
 %%WWWDIR%%/doc/user/project/img/issue_board_welcome_message.png
+%%WWWDIR%%/doc/user/project/img/issue_boards_add_issues_modal.png
+%%WWWDIR%%/doc/user/project/img/issue_boards_remove_issue.png
 %%WWWDIR%%/doc/user/project/img/koding_build-in-progress.png
 %%WWWDIR%%/doc/user/project/img/koding_build-logs.png
 %%WWWDIR%%/doc/user/project/img/koding_build-success.png
@@ -3447,8 +3518,71 @@
 %%WWWDIR%%/doc/user/project/img/protected_branches_list.png
 %%WWWDIR%%/doc/user/project/img/protected_branches_matches.png
 %%WWWDIR%%/doc/user/project/img/protected_branches_page.png
+%%WWWDIR%%/doc/user/project/integrations/bamboo.md
+%%WWWDIR%%/doc/user/project/integrations/bugzilla.md
+%%WWWDIR%%/doc/user/project/integrations/builds_emails.md
+%%WWWDIR%%/doc/user/project/integrations/emails_on_push.md
+%%WWWDIR%%/doc/user/project/integrations/hipchat.md
+%%WWWDIR%%/doc/user/project/integrations/img/accessing_integrations.png
+%%WWWDIR%%/doc/user/project/integrations/img/emails_on_push_service.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_add_user_to_group.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_create_new_group.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_create_new_group_name.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_create_new_user.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_group_access.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_issue_reference.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_merge_request_close.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_project_name.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_service.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_service_close_comment.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_service_close_issue.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_service_page.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_user_management_link.png
+%%WWWDIR%%/doc/user/project/integrations/img/jira_workflow_screenshot.png
+%%WWWDIR%%/doc/user/project/integrations/img/kubernetes_configuration.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_add_slash_command.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_bot_auth.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_bot_available_commands.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_config_help.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_configuration.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_console_integrations.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_gitlab_token.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_goto_console.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_slash_command_configuration.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_slash_command_token.png
+%%WWWDIR%%/doc/user/project/integrations/img/mattermost_team_integrations.png
+%%WWWDIR%%/doc/user/project/integrations/img/project_services.png
+%%WWWDIR%%/doc/user/project/integrations/img/redmine_configuration.png
+%%WWWDIR%%/doc/user/project/integrations/img/services_templates_redmine_example.png
+%%WWWDIR%%/doc/user/project/integrations/img/slack_configuration.png
+%%WWWDIR%%/doc/user/project/integrations/img/slack_setup.png
+%%WWWDIR%%/doc/user/project/integrations/img/webhooks_ssl.png
+%%WWWDIR%%/doc/user/project/integrations/index.md
+%%WWWDIR%%/doc/user/project/integrations/irker.md
+%%WWWDIR%%/doc/user/project/integrations/jira.md
+%%WWWDIR%%/doc/user/project/integrations/kubernetes.md
+%%WWWDIR%%/doc/user/project/integrations/mattermost.md
+%%WWWDIR%%/doc/user/project/integrations/mattermost_slash_commands.md
+%%WWWDIR%%/doc/user/project/integrations/project_services.md
+%%WWWDIR%%/doc/user/project/integrations/redmine.md
+%%WWWDIR%%/doc/user/project/integrations/services_templates.md
+%%WWWDIR%%/doc/user/project/integrations/slack.md
+%%WWWDIR%%/doc/user/project/integrations/slack_slash_commands.md
+%%WWWDIR%%/doc/user/project/integrations/webhooks.md
 %%WWWDIR%%/doc/user/project/issue_board.md
 %%WWWDIR%%/doc/user/project/issues/automatic_issue_closing.md
+%%WWWDIR%%/doc/user/project/issues/confidential_issues.md
+%%WWWDIR%%/doc/user/project/issues/due_dates.md
+%%WWWDIR%%/doc/user/project/issues/img/confidential_issues_create.png
+%%WWWDIR%%/doc/user/project/issues/img/confidential_issues_index_page.png
+%%WWWDIR%%/doc/user/project/issues/img/confidential_issues_issue_page.png
+%%WWWDIR%%/doc/user/project/issues/img/confidential_issues_search_guest.png
+%%WWWDIR%%/doc/user/project/issues/img/confidential_issues_search_master.png
+%%WWWDIR%%/doc/user/project/issues/img/confidential_issues_system_notes.png
+%%WWWDIR%%/doc/user/project/issues/img/due_dates_create.png
+%%WWWDIR%%/doc/user/project/issues/img/due_dates_edit_sidebar.png
+%%WWWDIR%%/doc/user/project/issues/img/due_dates_issues_index_page.png
+%%WWWDIR%%/doc/user/project/issues/img/due_dates_todos.png
 %%WWWDIR%%/doc/user/project/koding.md
 %%WWWDIR%%/doc/user/project/labels.md
 %%WWWDIR%%/doc/user/project/merge_requests.md
@@ -3462,6 +3596,7 @@
 %%WWWDIR%%/doc/user/project/merge_requests/img/conflict_section.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/discussion_view.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/discussions_resolved.png
+%%WWWDIR%%/doc/user/project/merge_requests/img/merge_conflict_editor.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/merge_request_diff.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/merge_request_widget.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/merge_when_build_succeeds_enable.png
@@ -3486,6 +3621,7 @@
 %%WWWDIR%%/doc/user/project/merge_requests/img/wip_blocked_accept_button.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/wip_mark_as_wip.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/wip_unmark_as_wip.png
+%%WWWDIR%%/doc/user/project/merge_requests/index.md
 %%WWWDIR%%/doc/user/project/merge_requests/merge_request_discussion_resolution.md
 %%WWWDIR%%/doc/user/project/merge_requests/merge_when_build_succeeds.md
 %%WWWDIR%%/doc/user/project/merge_requests/merge_when_pipeline_succeeds.md
@@ -3494,10 +3630,35 @@
 %%WWWDIR%%/doc/user/project/merge_requests/versions.md
 %%WWWDIR%%/doc/user/project/merge_requests/work_in_progress_merge_requests.md
 %%WWWDIR%%/doc/user/project/new_ci_build_permissions_model.md
+%%WWWDIR%%/doc/user/project/pages/getting_started_part_four.md
+%%WWWDIR%%/doc/user/project/pages/getting_started_part_one.md
+%%WWWDIR%%/doc/user/project/pages/getting_started_part_three.md
+%%WWWDIR%%/doc/user/project/pages/getting_started_part_two.md
+%%WWWDIR%%/doc/user/project/pages/img/add_certificate_to_pages.png
+%%WWWDIR%%/doc/user/project/pages/img/choose_ci_template.png
+%%WWWDIR%%/doc/user/project/pages/img/dns_add_new_a_record_example_updated.png
+%%WWWDIR%%/doc/user/project/pages/img/dns_cname_record_example.png
+%%WWWDIR%%/doc/user/project/pages/img/pages_create_project.png
+%%WWWDIR%%/doc/user/project/pages/img/pages_create_user_page.png
+%%WWWDIR%%/doc/user/project/pages/img/pages_dns_details.png
+%%WWWDIR%%/doc/user/project/pages/img/pages_multiple_domains.png
+%%WWWDIR%%/doc/user/project/pages/img/pages_new_domain_button.png
+%%WWWDIR%%/doc/user/project/pages/img/pages_remove.png
+%%WWWDIR%%/doc/user/project/pages/img/pages_upload_cert.png
+%%WWWDIR%%/doc/user/project/pages/img/remove_fork_relashionship.png
+%%WWWDIR%%/doc/user/project/pages/img/setup_ci.png
+%%WWWDIR%%/doc/user/project/pages/index.md
+%%WWWDIR%%/doc/user/project/pages/introduction.md
+%%WWWDIR%%/doc/user/project/pipelines/img/job_artifacts_browser.png
+%%WWWDIR%%/doc/user/project/pipelines/img/job_artifacts_browser_button.png
+%%WWWDIR%%/doc/user/project/pipelines/img/job_artifacts_builds_page.png
+%%WWWDIR%%/doc/user/project/pipelines/img/job_artifacts_pipelines_page.png
+%%WWWDIR%%/doc/user/project/pipelines/img/job_latest_artifacts_browser.png
 %%WWWDIR%%/doc/user/project/pipelines/img/pipelines_settings_badges.png
 %%WWWDIR%%/doc/user/project/pipelines/img/pipelines_settings_test_coverage.png
 %%WWWDIR%%/doc/user/project/pipelines/img/pipelines_test_coverage_build.png
 %%WWWDIR%%/doc/user/project/pipelines/img/pipelines_test_coverage_mr_widget.png
+%%WWWDIR%%/doc/user/project/pipelines/job_artifacts.md
 %%WWWDIR%%/doc/user/project/pipelines/settings.md
 %%WWWDIR%%/doc/user/project/protected_branches.md
 %%WWWDIR%%/doc/user/project/repository/img/web_editor_new_branch_dropdown.png
@@ -3525,7 +3686,6 @@
 %%WWWDIR%%/doc/user/project/settings/img/settings_edit_button.png
 %%WWWDIR%%/doc/user/project/settings/import_export.md
 %%WWWDIR%%/doc/user/project/slash_commands.md
-%%WWWDIR%%/doc/web_hooks/ssl.png
 %%WWWDIR%%/doc/web_hooks/web_hooks.md
 %%WWWDIR%%/doc/workflow/README.md
 %%WWWDIR%%/doc/workflow/add-user/add-user.md
@@ -3657,7 +3817,6 @@
 %%WWWDIR%%/features/dashboard/issues.feature
 %%WWWDIR%%/features/dashboard/merge_requests.feature
 %%WWWDIR%%/features/dashboard/new_project.feature
-%%WWWDIR%%/features/dashboard/shortcuts.feature
 %%WWWDIR%%/features/dashboard/starred_projects.feature
 %%WWWDIR%%/features/dashboard/todos.feature
 %%WWWDIR%%/features/explore/groups.feature
@@ -3702,6 +3861,7 @@
 %%WWWDIR%%/features/project/merge_requests/revert.feature
 %%WWWDIR%%/features/project/milestone.feature
 %%WWWDIR%%/features/project/network_graph.feature
+%%WWWDIR%%/features/project/pages.feature
 %%WWWDIR%%/features/project/project.feature
 %%WWWDIR%%/features/project/redirects.feature
 %%WWWDIR%%/features/project/service.feature
@@ -3721,7 +3881,6 @@
 %%WWWDIR%%/features/steps/dashboard/issues.rb
 %%WWWDIR%%/features/steps/dashboard/merge_requests.rb
 %%WWWDIR%%/features/steps/dashboard/new_project.rb
-%%WWWDIR%%/features/steps/dashboard/shortcuts.rb
 %%WWWDIR%%/features/steps/dashboard/starred_projects.rb
 %%WWWDIR%%/features/steps/dashboard/todos.rb
 %%WWWDIR%%/features/steps/explore/groups.rb
@@ -3764,6 +3923,7 @@
 %%WWWDIR%%/features/steps/project/merge_requests/references.rb
 %%WWWDIR%%/features/steps/project/merge_requests/revert.rb
 %%WWWDIR%%/features/steps/project/network_graph.rb
+%%WWWDIR%%/features/steps/project/pages.rb
 %%WWWDIR%%/features/steps/project/project.rb
 %%WWWDIR%%/features/steps/project/project_find_file.rb
 %%WWWDIR%%/features/steps/project/project_group_links.rb
@@ -3863,6 +4023,13 @@
 %%WWWDIR%%/lib/api/todos.rb
 %%WWWDIR%%/lib/api/triggers.rb
 %%WWWDIR%%/lib/api/users.rb
+%%WWWDIR%%/lib/api/v3/commits.rb
+%%WWWDIR%%/lib/api/v3/deploy_keys.rb
+%%WWWDIR%%/lib/api/v3/entities.rb
+%%WWWDIR%%/lib/api/v3/issues.rb
+%%WWWDIR%%/lib/api/v3/merge_requests.rb
+%%WWWDIR%%/lib/api/v3/project_snippets.rb
+%%WWWDIR%%/lib/api/v3/projects.rb
 %%WWWDIR%%/lib/api/variables.rb
 %%WWWDIR%%/lib/api/version.rb
 %%WWWDIR%%/lib/backup/artifacts.rb
@@ -3871,6 +4038,7 @@
 %%WWWDIR%%/lib/backup/files.rb
 %%WWWDIR%%/lib/backup/lfs.rb
 %%WWWDIR%%/lib/backup/manager.rb
+%%WWWDIR%%/lib/backup/pages.rb
 %%WWWDIR%%/lib/backup/registry.rb
 %%WWWDIR%%/lib/backup/repository.rb
 %%WWWDIR%%/lib/backup/uploads.rb
@@ -3895,6 +4063,7 @@
 %%WWWDIR%%/lib/banzai/filter/math_filter.rb
 %%WWWDIR%%/lib/banzai/filter/merge_request_reference_filter.rb
 %%WWWDIR%%/lib/banzai/filter/milestone_reference_filter.rb
+%%WWWDIR%%/lib/banzai/filter/plantuml_filter.rb
 %%WWWDIR%%/lib/banzai/filter/redactor_filter.rb
 %%WWWDIR%%/lib/banzai/filter/reference_filter.rb
 %%WWWDIR%%/lib/banzai/filter/relative_link_filter.rb
@@ -3922,6 +4091,7 @@
 %%WWWDIR%%/lib/banzai/pipeline/email_pipeline.rb
 %%WWWDIR%%/lib/banzai/pipeline/full_pipeline.rb
 %%WWWDIR%%/lib/banzai/pipeline/gfm_pipeline.rb
+%%WWWDIR%%/lib/banzai/pipeline/markup_pipeline.rb
 %%WWWDIR%%/lib/banzai/pipeline/note_pipeline.rb
 %%WWWDIR%%/lib/banzai/pipeline/plain_markdown_pipeline.rb
 %%WWWDIR%%/lib/banzai/pipeline/post_process_pipeline.rb
@@ -3995,8 +4165,6 @@
 %%WWWDIR%%/lib/gitlab/auth/ip_rate_limiter.rb
 %%WWWDIR%%/lib/gitlab/auth/result.rb
 %%WWWDIR%%/lib/gitlab/award_emoji.rb
-%%WWWDIR%%/lib/gitlab/backend/shell.rb
-%%WWWDIR%%/lib/gitlab/backend/shell_adapter.rb
 %%WWWDIR%%/lib/gitlab/badge/base.rb
 %%WWWDIR%%/lib/gitlab/badge/build/metadata.rb
 %%WWWDIR%%/lib/gitlab/badge/build/status.rb
@@ -4013,11 +4181,19 @@
 %%WWWDIR%%/lib/gitlab/chat_commands/base_command.rb
 %%WWWDIR%%/lib/gitlab/chat_commands/command.rb
 %%WWWDIR%%/lib/gitlab/chat_commands/deploy.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/help.rb
 %%WWWDIR%%/lib/gitlab/chat_commands/issue_command.rb
-%%WWWDIR%%/lib/gitlab/chat_commands/issue_create.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/issue_new.rb
 %%WWWDIR%%/lib/gitlab/chat_commands/issue_search.rb
 %%WWWDIR%%/lib/gitlab/chat_commands/issue_show.rb
-%%WWWDIR%%/lib/gitlab/chat_commands/presenter.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/presenters/access.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/presenters/base.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/presenters/deploy.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/presenters/help.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/presenters/issuable.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/presenters/issue_new.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/presenters/issue_search.rb
+%%WWWDIR%%/lib/gitlab/chat_commands/presenters/issue_show.rb
 %%WWWDIR%%/lib/gitlab/chat_commands/result.rb
 %%WWWDIR%%/lib/gitlab/chat_name_token.rb
 %%WWWDIR%%/lib/gitlab/checks/change_access.rb
@@ -4035,6 +4211,7 @@
 %%WWWDIR%%/lib/gitlab/ci/config/entry/cache.rb
 %%WWWDIR%%/lib/gitlab/ci/config/entry/commands.rb
 %%WWWDIR%%/lib/gitlab/ci/config/entry/configurable.rb
+%%WWWDIR%%/lib/gitlab/ci/config/entry/coverage.rb
 %%WWWDIR%%/lib/gitlab/ci/config/entry/environment.rb
 %%WWWDIR%%/lib/gitlab/ci/config/entry/factory.rb
 %%WWWDIR%%/lib/gitlab/ci/config/entry/global.rb
@@ -4062,6 +4239,7 @@
 %%WWWDIR%%/lib/gitlab/ci/status/build/cancelable.rb
 %%WWWDIR%%/lib/gitlab/ci/status/build/common.rb
 %%WWWDIR%%/lib/gitlab/ci/status/build/factory.rb
+%%WWWDIR%%/lib/gitlab/ci/status/build/failed_allowed.rb
 %%WWWDIR%%/lib/gitlab/ci/status/build/play.rb
 %%WWWDIR%%/lib/gitlab/ci/status/build/retryable.rb
 %%WWWDIR%%/lib/gitlab/ci/status/build/stop.rb
@@ -4076,12 +4254,12 @@
 %%WWWDIR%%/lib/gitlab/ci/status/pending.rb
 %%WWWDIR%%/lib/gitlab/ci/status/pipeline/common.rb
 %%WWWDIR%%/lib/gitlab/ci/status/pipeline/factory.rb
-%%WWWDIR%%/lib/gitlab/ci/status/pipeline/success_with_warnings.rb
 %%WWWDIR%%/lib/gitlab/ci/status/running.rb
 %%WWWDIR%%/lib/gitlab/ci/status/skipped.rb
 %%WWWDIR%%/lib/gitlab/ci/status/stage/common.rb
 %%WWWDIR%%/lib/gitlab/ci/status/stage/factory.rb
 %%WWWDIR%%/lib/gitlab/ci/status/success.rb
+%%WWWDIR%%/lib/gitlab/ci/status/success_warning.rb
 %%WWWDIR%%/lib/gitlab/ci/trace_reader.rb
 %%WWWDIR%%/lib/gitlab/closing_issue_extractor.rb
 %%WWWDIR%%/lib/gitlab/color_schemes.rb
@@ -4156,6 +4334,8 @@
 %%WWWDIR%%/lib/gitlab/email/handler/base_handler.rb
 %%WWWDIR%%/lib/gitlab/email/handler/create_issue_handler.rb
 %%WWWDIR%%/lib/gitlab/email/handler/create_note_handler.rb
+%%WWWDIR%%/lib/gitlab/email/handler/reply_processing.rb
+%%WWWDIR%%/lib/gitlab/email/handler/unsubscribe_handler.rb
 %%WWWDIR%%/lib/gitlab/email/html_parser.rb
 %%WWWDIR%%/lib/gitlab/email/message/repository_push.rb
 %%WWWDIR%%/lib/gitlab/email/receiver.rb
@@ -4285,14 +4465,17 @@
 %%WWWDIR%%/lib/gitlab/middleware/multipart.rb
 %%WWWDIR%%/lib/gitlab/middleware/rails_queue_duration.rb
 %%WWWDIR%%/lib/gitlab/middleware/static.rb
+%%WWWDIR%%/lib/gitlab/middleware/webpack_proxy.rb
 %%WWWDIR%%/lib/gitlab/o_auth/auth_hash.rb
 %%WWWDIR%%/lib/gitlab/o_auth/provider.rb
 %%WWWDIR%%/lib/gitlab/o_auth/session.rb
 %%WWWDIR%%/lib/gitlab/o_auth/user.rb
 %%WWWDIR%%/lib/gitlab/optimistic_locking.rb
 %%WWWDIR%%/lib/gitlab/other_markup.rb
+%%WWWDIR%%/lib/gitlab/pages_transfer.rb
 %%WWWDIR%%/lib/gitlab/popen.rb
 %%WWWDIR%%/lib/gitlab/project_search_results.rb
+%%WWWDIR%%/lib/gitlab/project_transfer.rb
 %%WWWDIR%%/lib/gitlab/protocol_access.rb
 %%WWWDIR%%/lib/gitlab/recaptcha.rb
 %%WWWDIR%%/lib/gitlab/redis.rb
@@ -4302,6 +4485,7 @@
 %%WWWDIR%%/lib/gitlab/request_profiler.rb
 %%WWWDIR%%/lib/gitlab/request_profiler/middleware.rb
 %%WWWDIR%%/lib/gitlab/request_profiler/profile.rb
+%%WWWDIR%%/lib/gitlab/route_map.rb
 %%WWWDIR%%/lib/gitlab/routing.rb
 %%WWWDIR%%/lib/gitlab/saml/auth_hash.rb
 %%WWWDIR%%/lib/gitlab/saml/config.rb
@@ -4312,6 +4496,8 @@
 %%WWWDIR%%/lib/gitlab/seeder.rb
 %%WWWDIR%%/lib/gitlab/sentry.rb
 %%WWWDIR%%/lib/gitlab/serialize/ci/variables.rb
+%%WWWDIR%%/lib/gitlab/shell.rb
+%%WWWDIR%%/lib/gitlab/shell_adapter.rb
 %%WWWDIR%%/lib/gitlab/sherlock.rb
 %%WWWDIR%%/lib/gitlab/sherlock/collection.rb
 %%WWWDIR%%/lib/gitlab/sherlock/file_sample.rb
@@ -4355,6 +4541,10 @@
 %%WWWDIR%%/lib/gitlab/user_access.rb
 %%WWWDIR%%/lib/gitlab/utils.rb
 %%WWWDIR%%/lib/gitlab/version_info.rb
+%%WWWDIR%%/lib/gitlab/view/presenter/base.rb
+%%WWWDIR%%/lib/gitlab/view/presenter/delegated.rb
+%%WWWDIR%%/lib/gitlab/view/presenter/factory.rb
+%%WWWDIR%%/lib/gitlab/view/presenter/simple.rb
 %%WWWDIR%%/lib/gitlab/visibility_level.rb
 %%WWWDIR%%/lib/gitlab/workhorse.rb
 %%WWWDIR%%/lib/gt_one_coercion.rb
@@ -4370,11 +4560,14 @@
 %%WWWDIR%%/lib/repository_cache.rb
 %%WWWDIR%%/lib/rouge/formatters/html_gitlab.rb
 %%WWWDIR%%/lib/rouge/lexers/math.rb
+%%WWWDIR%%/lib/rouge/lexers/plantuml.rb
 %%WWWDIR%%/lib/static_model.rb
 %%WWWDIR%%/lib/support/deploy/deploy.sh
 %%WWWDIR%%/lib/support/init.d/gitlab
 %%WWWDIR%%/lib/support/init.d/gitlab.default.example
 %%WWWDIR%%/lib/support/logrotate/gitlab
+%%WWWDIR%%/lib/support/nginx/gitlab-pages
+%%WWWDIR%%/lib/support/nginx/gitlab-pages-ssl
 %%WWWDIR%%/lib/support/nginx/registry-ssl
 %%WWWDIR%%/lib/tasks/brakeman.rake
 %%WWWDIR%%/lib/tasks/cache.rake
@@ -4385,6 +4578,7 @@
 %%WWWDIR%%/lib/tasks/eslint.rake
 %%WWWDIR%%/lib/tasks/flay.rake
 %%WWWDIR%%/lib/tasks/gemojione.rake
+%%WWWDIR%%/lib/tasks/gitlab/assets.rake
 %%WWWDIR%%/lib/tasks/gitlab/backup.rake
 %%WWWDIR%%/lib/tasks/gitlab/bulk_add_permission.rake
 %%WWWDIR%%/lib/tasks/gitlab/check.rake
@@ -4411,6 +4605,7 @@
 %%WWWDIR%%/lib/tasks/gitlab/workhorse.rake
 %%WWWDIR%%/lib/tasks/grape.rake
 %%WWWDIR%%/lib/tasks/haml-lint.rake
+%%WWWDIR%%/lib/tasks/karma.rake
 %%WWWDIR%%/lib/tasks/lint.rake
 %%WWWDIR%%/lib/tasks/migrate/add_limits_mysql.rake
 %%WWWDIR%%/lib/tasks/migrate/migrate_iids.rake
@@ -4422,7 +4617,6 @@
 %%WWWDIR%%/lib/tasks/sidekiq.rake
 %%WWWDIR%%/lib/tasks/spec.rake
 %%WWWDIR%%/lib/tasks/spinach.rake
-%%WWWDIR%%/lib/tasks/teaspoon.rake
 %%WWWDIR%%/lib/tasks/test.rake
 %%WWWDIR%%/lib/unfold_form.rb
 %%WWWDIR%%/lib/uploaded_file.rb
@@ -4447,6 +4641,7 @@
 %%WWWDIR%%/public/favicon.ico
 %%WWWDIR%%/public/robots.txt
 %%WWWDIR%%/public/slash-command-logo.png
+%%WWWDIR%%/rubocop/cop/gem_fetcher.rb
 %%WWWDIR%%/rubocop/cop/migration/add_index.rb
 %%WWWDIR%%/rubocop/cop/migration/column_with_default.rb
 %%WWWDIR%%/rubocop/migration_helpers.rb
@@ -4518,6 +4713,7 @@
 %%WWWDIR%%/spec/controllers/projects/merge_requests_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/milestones_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/notes_controller_spec.rb
+%%WWWDIR%%/spec/controllers/projects/pages_domains_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/pipelines_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/project_members_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/protected_branches_controller_spec.rb
@@ -4526,6 +4722,7 @@
 %%WWWDIR%%/spec/controllers/projects/releases_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/repositories_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/services_controller_spec.rb
+%%WWWDIR%%/spec/controllers/projects/settings/ci_cd_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/settings/integrations_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/settings/members_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/snippets_controller_spec.rb
@@ -4534,6 +4731,7 @@
 %%WWWDIR%%/spec/controllers/projects/todo_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/tree_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/uploads_controller_spec.rb
+%%WWWDIR%%/spec/controllers/projects/variables_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects_controller_spec.rb
 %%WWWDIR%%/spec/controllers/registrations_controller_spec.rb
 %%WWWDIR%%/spec/controllers/root_controller_spec.rb
@@ -4585,6 +4783,7 @@
 %%WWWDIR%%/spec/factories/notification_settings.rb
 %%WWWDIR%%/spec/factories/oauth_access_tokens.rb
 %%WWWDIR%%/spec/factories/oauth_applications.rb
+%%WWWDIR%%/spec/factories/pages_domains.rb
 %%WWWDIR%%/spec/factories/personal_access_tokens.rb
 %%WWWDIR%%/spec/factories/personal_snippets.rb
 %%WWWDIR%%/spec/factories/project_group_links.rb
@@ -4638,15 +4837,18 @@
 %%WWWDIR%%/spec/features/atom/issues_spec.rb
 %%WWWDIR%%/spec/features/atom/users_spec.rb
 %%WWWDIR%%/spec/features/auto_deploy_spec.rb
+%%WWWDIR%%/spec/features/boards/add_issues_modal_spec.rb
+%%WWWDIR%%/spec/features/boards/backlog_help_spec.rb
 %%WWWDIR%%/spec/features/boards/boards_spec.rb
 %%WWWDIR%%/spec/features/boards/keyboard_shortcut_spec.rb
+%%WWWDIR%%/spec/features/boards/modal_filter_spec.rb
 %%WWWDIR%%/spec/features/boards/new_issue_spec.rb
 %%WWWDIR%%/spec/features/boards/sidebar_spec.rb
 %%WWWDIR%%/spec/features/calendar_spec.rb
 %%WWWDIR%%/spec/features/ci_lint_spec.rb
 %%WWWDIR%%/spec/features/commits_spec.rb
-%%WWWDIR%%/spec/features/compare_spec.rb
 %%WWWDIR%%/spec/features/container_registry_spec.rb
+%%WWWDIR%%/spec/features/copy_as_gfm_spec.rb
 %%WWWDIR%%/spec/features/cycle_analytics_spec.rb
 %%WWWDIR%%/spec/features/dashboard/active_tab_spec.rb
 %%WWWDIR%%/spec/features/dashboard/archived_projects_spec.rb
@@ -4656,6 +4858,7 @@
 %%WWWDIR%%/spec/features/dashboard/issuables_counter_spec.rb
 %%WWWDIR%%/spec/features/dashboard/label_filter_spec.rb
 %%WWWDIR%%/spec/features/dashboard/project_member_activity_index_spec.rb
+%%WWWDIR%%/spec/features/dashboard/shortcuts_spec.rb
 %%WWWDIR%%/spec/features/dashboard/snippets_spec.rb
 %%WWWDIR%%/spec/features/dashboard/user_filters_projects_spec.rb
 %%WWWDIR%%/spec/features/dashboard_issues_spec.rb
@@ -4690,11 +4893,13 @@
 %%WWWDIR%%/spec/features/issues/filtered_search/search_bar_spec.rb
 %%WWWDIR%%/spec/features/issues/form_spec.rb
 %%WWWDIR%%/spec/features/issues/gfm_autocomplete_spec.rb
+%%WWWDIR%%/spec/features/issues/group_label_sidebar_spec.rb
 %%WWWDIR%%/spec/features/issues/issue_sidebar_spec.rb
 %%WWWDIR%%/spec/features/issues/markdown_toolbar_spec.rb
 %%WWWDIR%%/spec/features/issues/move_spec.rb
 %%WWWDIR%%/spec/features/issues/new_branch_button_spec.rb
 %%WWWDIR%%/spec/features/issues/note_polling_spec.rb
+%%WWWDIR%%/spec/features/issues/spam_issues_spec.rb
 %%WWWDIR%%/spec/features/issues/todo_spec.rb
 %%WWWDIR%%/spec/features/issues/update_issues_spec.rb
 %%WWWDIR%%/spec/features/issues/user_uses_slash_commands_spec.rb
@@ -4722,6 +4927,7 @@
 %%WWWDIR%%/spec/features/merge_requests/merge_immediately_with_pipeline_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/merge_request_versions_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/merge_when_pipeline_succeeds_spec.rb
+%%WWWDIR%%/spec/features/merge_requests/mini_pipeline_graph_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/only_allow_merge_if_build_succeeds_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/pipelines_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/reset_filters_spec.rb
@@ -4733,6 +4939,7 @@
 %%WWWDIR%%/spec/features/merge_requests/user_uses_slash_commands_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/widget_deployments_spec.rb
 %%WWWDIR%%/spec/features/merge_requests/widget_spec.rb
+%%WWWDIR%%/spec/features/merge_requests/wip_message_spec.rb
 %%WWWDIR%%/spec/features/milestone_spec.rb
 %%WWWDIR%%/spec/features/milestones/milestones_spec.rb
 %%WWWDIR%%/spec/features/milestones/show_spec.rb
@@ -4749,11 +4956,13 @@
 %%WWWDIR%%/spec/features/projects/badges/coverage_spec.rb
 %%WWWDIR%%/spec/features/projects/badges/list_spec.rb
 %%WWWDIR%%/spec/features/projects/blobs/edit_spec.rb
+%%WWWDIR%%/spec/features/projects/blobs/shortcuts_blob_spec.rb
 %%WWWDIR%%/spec/features/projects/branches/download_buttons_spec.rb
 %%WWWDIR%%/spec/features/projects/branches_spec.rb
 %%WWWDIR%%/spec/features/projects/builds_spec.rb
 %%WWWDIR%%/spec/features/projects/commit/builds_spec.rb
-%%WWWDIR%%/spec/features/projects/commits/cherry_pick_spec.rb
+%%WWWDIR%%/spec/features/projects/commit/cherry_pick_spec.rb
+%%WWWDIR%%/spec/features/projects/compare_spec.rb
 %%WWWDIR%%/spec/features/projects/developer_views_empty_project_instructions_spec.rb
 %%WWWDIR%%/spec/features/projects/edit_spec.rb
 %%WWWDIR%%/spec/features/projects/features_visibility_spec.rb
@@ -4796,8 +5005,10 @@
 %%WWWDIR%%/spec/features/projects/members/owner_cannot_request_access_to_his_project_spec.rb
 %%WWWDIR%%/spec/features/projects/members/sorting_spec.rb
 %%WWWDIR%%/spec/features/projects/members/user_requests_access_spec.rb
+%%WWWDIR%%/spec/features/projects/merge_request_button_spec.rb
 %%WWWDIR%%/spec/features/projects/merge_requests/list_spec.rb
 %%WWWDIR%%/spec/features/projects/new_project_spec.rb
+%%WWWDIR%%/spec/features/projects/pages_spec.rb
 %%WWWDIR%%/spec/features/projects/pipelines/pipeline_spec.rb
 %%WWWDIR%%/spec/features/projects/pipelines/pipelines_spec.rb
 %%WWWDIR%%/spec/features/projects/project_settings_spec.rb
@@ -4811,6 +5022,7 @@
 %%WWWDIR%%/spec/features/projects/shortcuts_spec.rb
 %%WWWDIR%%/spec/features/projects/snippets_spec.rb
 %%WWWDIR%%/spec/features/projects/tags/download_buttons_spec.rb
+%%WWWDIR%%/spec/features/projects/view_on_env_spec.rb
 %%WWWDIR%%/spec/features/projects/wiki/markdown_preview_spec.rb
 %%WWWDIR%%/spec/features/projects/wiki/user_creates_wiki_page_spec.rb
 %%WWWDIR%%/spec/features/projects/wiki/user_updates_wiki_page_spec.rb
@@ -4835,6 +5047,7 @@
 %%WWWDIR%%/spec/features/signup_spec.rb
 %%WWWDIR%%/spec/features/snippets/create_snippet_spec.rb
 %%WWWDIR%%/spec/features/snippets/explore_spec.rb
+%%WWWDIR%%/spec/features/snippets/internal_snippet_spec.rb
 %%WWWDIR%%/spec/features/snippets/public_snippets_spec.rb
 %%WWWDIR%%/spec/features/snippets/search_snippets_spec.rb
 %%WWWDIR%%/spec/features/snippets_spec.rb
@@ -4856,6 +5069,7 @@
 %%WWWDIR%%/spec/finders/access_requests_finder_spec.rb
 %%WWWDIR%%/spec/finders/branches_finder_spec.rb
 %%WWWDIR%%/spec/finders/contributed_projects_finder_spec.rb
+%%WWWDIR%%/spec/finders/environments_finder_spec.rb
 %%WWWDIR%%/spec/finders/group_projects_finder_spec.rb
 %%WWWDIR%%/spec/finders/groups_finder_spec.rb
 %%WWWDIR%%/spec/finders/issues_finder_spec.rb
@@ -4914,6 +5128,7 @@
 %%WWWDIR%%/spec/fixtures/emails/paragraphs.eml
 %%WWWDIR%%/spec/fixtures/emails/plaintext_only.eml
 %%WWWDIR%%/spec/fixtures/emails/reply_without_subaddressing_and_key_inside_references.eml
+%%WWWDIR%%/spec/fixtures/emails/reply_without_subaddressing_and_key_inside_references_with_a_comma.eml
 %%WWWDIR%%/spec/fixtures/emails/valid_new_issue.eml
 %%WWWDIR%%/spec/fixtures/emails/valid_new_issue_empty.eml
 %%WWWDIR%%/spec/fixtures/emails/valid_reply.eml
@@ -4924,6 +5139,12 @@
 %%WWWDIR%%/spec/fixtures/mail_room_disabled.yml
 %%WWWDIR%%/spec/fixtures/mail_room_enabled.yml
 %%WWWDIR%%/spec/fixtures/markdown.md.erb
+%%WWWDIR%%/spec/fixtures/pages.tar.gz
+%%WWWDIR%%/spec/fixtures/pages.zip
+%%WWWDIR%%/spec/fixtures/pages.zip.meta
+%%WWWDIR%%/spec/fixtures/pages_empty.tar.gz
+%%WWWDIR%%/spec/fixtures/pages_empty.zip
+%%WWWDIR%%/spec/fixtures/pages_empty.zip.meta
 %%WWWDIR%%/spec/fixtures/project_services/campfire/rooms.json
 %%WWWDIR%%/spec/fixtures/project_services/campfire/rooms2.json
 %%WWWDIR%%/spec/fixtures/rails_sample.jpg
@@ -4969,6 +5190,7 @@
 %%WWWDIR%%/spec/helpers/tree_helper_spec.rb
 %%WWWDIR%%/spec/helpers/visibility_level_helper_spec.rb
 %%WWWDIR%%/spec/initializers/6_validations_spec.rb
+%%WWWDIR%%/spec/initializers/metrics_spec.rb
 %%WWWDIR%%/spec/initializers/secret_token_spec.rb
 %%WWWDIR%%/spec/initializers/settings_spec.rb
 %%WWWDIR%%/spec/initializers/trusted_proxies_spec.rb
@@ -4980,11 +5202,17 @@
 %%WWWDIR%%/spec/javascripts/behaviors/quick_submit_spec.js
 %%WWWDIR%%/spec/javascripts/behaviors/requires_input_spec.js
 %%WWWDIR%%/spec/javascripts/boards/boards_store_spec.js.es6
+%%WWWDIR%%/spec/javascripts/boards/issue_card_spec.js.es6
 %%WWWDIR%%/spec/javascripts/boards/issue_spec.js.es6
 %%WWWDIR%%/spec/javascripts/boards/list_spec.js.es6
 %%WWWDIR%%/spec/javascripts/boards/mock_data.js.es6
+%%WWWDIR%%/spec/javascripts/boards/modal_store_spec.js.es6
 %%WWWDIR%%/spec/javascripts/bootstrap_linked_tabs_spec.js.es6
 %%WWWDIR%%/spec/javascripts/build_spec.js.es6
+%%WWWDIR%%/spec/javascripts/commit/pipelines/mock_data.js.es6
+%%WWWDIR%%/spec/javascripts/commit/pipelines/pipelines_spec.js.es6
+%%WWWDIR%%/spec/javascripts/commit/pipelines/pipelines_store_spec.js.es6
+%%WWWDIR%%/spec/javascripts/commits_spec.js.es6
 %%WWWDIR%%/spec/javascripts/dashboard_spec.js.es6
 %%WWWDIR%%/spec/javascripts/datetime_utility_spec.js.es6
 %%WWWDIR%%/spec/javascripts/diff_comments_store_spec.js.es6
@@ -5024,25 +5252,30 @@
 %%WWWDIR%%/spec/javascripts/fixtures/issues.rb
 %%WWWDIR%%/spec/javascripts/fixtures/line_highlighter.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/linked_tabs.html.haml
-%%WWWDIR%%/spec/javascripts/fixtures/merge_request_tabs.html.haml
+%%WWWDIR%%/spec/javascripts/fixtures/merge_requests.rb
 %%WWWDIR%%/spec/javascripts/fixtures/merge_requests_show.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/mini_dropdown_graph.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/new_branch.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/pipeline_graph.html.haml
+%%WWWDIR%%/spec/javascripts/fixtures/pipelines_table.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/project_title.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/projects.json
+%%WWWDIR%%/spec/javascripts/fixtures/projects.rb
 %%WWWDIR%%/spec/javascripts/fixtures/search_autocomplete.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/signin_tabs.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/static_fixtures.rb
-%%WWWDIR%%/spec/javascripts/fixtures/todos.json
+%%WWWDIR%%/spec/javascripts/fixtures/todos.rb
 %%WWWDIR%%/spec/javascripts/fixtures/u2f.rb
 %%WWWDIR%%/spec/javascripts/gfm_auto_complete_spec.js.es6
 %%WWWDIR%%/spec/javascripts/gl_dropdown_spec.js.es6
 %%WWWDIR%%/spec/javascripts/gl_field_errors_spec.js.es6
+%%WWWDIR%%/spec/javascripts/gl_form_spec.js.es6
 %%WWWDIR%%/spec/javascripts/graphs/stat_graph_contributors_graph_spec.js
 %%WWWDIR%%/spec/javascripts/graphs/stat_graph_contributors_util_spec.js
 %%WWWDIR%%/spec/javascripts/graphs/stat_graph_spec.js
 %%WWWDIR%%/spec/javascripts/header_spec.js
+%%WWWDIR%%/spec/javascripts/helpers/class_spec_helper.js.es6
+%%WWWDIR%%/spec/javascripts/helpers/class_spec_helper_spec.js.es6
 %%WWWDIR%%/spec/javascripts/issuable_spec.js.es6
 %%WWWDIR%%/spec/javascripts/issuable_time_tracker_spec.js.es6
 %%WWWDIR%%/spec/javascripts/issue_spec.js
@@ -5058,21 +5291,25 @@
 %%WWWDIR%%/spec/javascripts/notes_spec.js
 %%WWWDIR%%/spec/javascripts/pipelines_spec.js.es6
 %%WWWDIR%%/spec/javascripts/pretty_time_spec.js.es6
+%%WWWDIR%%/spec/javascripts/project_dashboard_spec.js.es6
 %%WWWDIR%%/spec/javascripts/project_title_spec.js
 %%WWWDIR%%/spec/javascripts/right_sidebar_spec.js
 %%WWWDIR%%/spec/javascripts/search_autocomplete_spec.js
 %%WWWDIR%%/spec/javascripts/shortcuts_issuable_spec.js
 %%WWWDIR%%/spec/javascripts/signin_tabs_memoizer_spec.js.es6
 %%WWWDIR%%/spec/javascripts/smart_interval_spec.js.es6
-%%WWWDIR%%/spec/javascripts/spec_helper.js
 %%WWWDIR%%/spec/javascripts/subbable_resource_spec.js.es6
 %%WWWDIR%%/spec/javascripts/syntax_highlight_spec.js
+%%WWWDIR%%/spec/javascripts/test_bundle.js
+%%WWWDIR%%/spec/javascripts/todos_spec.js
 %%WWWDIR%%/spec/javascripts/u2f/authenticate_spec.js
 %%WWWDIR%%/spec/javascripts/u2f/mock_u2f_device.js
 %%WWWDIR%%/spec/javascripts/u2f/register_spec.js
 %%WWWDIR%%/spec/javascripts/visibility_select_spec.js.es6
-%%WWWDIR%%/spec/javascripts/vue_common_components/commit_spec.js.es6
-%%WWWDIR%%/spec/javascripts/vue_pagination/pagination_spec.js.es6
+%%WWWDIR%%/spec/javascripts/vue_shared/components/commit_spec.js.es6
+%%WWWDIR%%/spec/javascripts/vue_shared/components/pipelines_table_row_spec.js.es6
+%%WWWDIR%%/spec/javascripts/vue_shared/components/pipelines_table_spec.js.es6
+%%WWWDIR%%/spec/javascripts/vue_shared/components/table_pagination_spec.js.es6
 %%WWWDIR%%/spec/javascripts/zen_mode_spec.js
 %%WWWDIR%%/spec/lib/api/helpers/pagination_spec.rb
 %%WWWDIR%%/spec/lib/banzai/cross_project_reference_spec.rb
@@ -5094,6 +5331,7 @@
 %%WWWDIR%%/spec/lib/banzai/filter/math_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/merge_request_reference_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/milestone_reference_filter_spec.rb
+%%WWWDIR%%/spec/lib/banzai/filter/plantuml_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/redactor_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/reference_filter_spec.rb
 %%WWWDIR%%/spec/lib/banzai/filter/relative_link_filter_spec.rb
@@ -5171,9 +5409,14 @@
 %%WWWDIR%%/spec/lib/gitlab/changes_list_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/chat_commands/command_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/chat_commands/deploy_spec.rb
-%%WWWDIR%%/spec/lib/gitlab/chat_commands/issue_create_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/chat_commands/issue_new_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/chat_commands/issue_search_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/chat_commands/issue_show_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/chat_commands/presenters/access_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/chat_commands/presenters/deploy_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/chat_commands/presenters/issue_new_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/chat_commands/presenters/issue_search_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/chat_commands/presenters/issue_show_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/chat_name_token_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/checks/change_access_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/checks/force_push_spec.rb
@@ -5187,6 +5430,7 @@
 %%WWWDIR%%/spec/lib/gitlab/ci/config/entry/cache_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/config/entry/commands_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/config/entry/configurable_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/ci/config/entry/coverage_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/config/entry/environment_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/config/entry/factory_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/config/entry/global_spec.rb
@@ -5212,6 +5456,7 @@
 %%WWWDIR%%/spec/lib/gitlab/ci/status/build/cancelable_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/build/common_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/build/factory_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/ci/status/build/failed_allowed_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/build/play_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/build/retryable_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/build/stop_spec.rb
@@ -5225,12 +5470,12 @@
 %%WWWDIR%%/spec/lib/gitlab/ci/status/pending_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/pipeline/common_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/pipeline/factory_spec.rb
-%%WWWDIR%%/spec/lib/gitlab/ci/status/pipeline/success_with_warnings_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/running_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/skipped_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/stage/common_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/stage/factory_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/status/success_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/ci/status/success_warning_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/ci/trace_reader_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/closing_issue_extractor_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/color_schemes_spec.rb
@@ -5281,6 +5526,7 @@
 %%WWWDIR%%/spec/lib/gitlab/email/email_shared_blocks.rb
 %%WWWDIR%%/spec/lib/gitlab/email/handler/create_issue_handler_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/email/handler/create_note_handler_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/email/handler/unsubscribe_handler_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/email/message/repository_push_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/email/receiver_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/email/reply_parser_spec.rb
@@ -5344,6 +5590,7 @@
 %%WWWDIR%%/spec/lib/gitlab/import_export/reader_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/relation_factory_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/repo_bundler_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/import_export/repo_restorer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/safe_model_attributes.yml
 %%WWWDIR%%/spec/lib/gitlab/import_export/version_checker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/wiki_repo_bundler_spec.rb
@@ -5381,12 +5628,14 @@
 %%WWWDIR%%/spec/lib/gitlab/o_auth/auth_hash_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/o_auth/user_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/optimistic_locking_spec.rb
-%%WWWDIR%%/spec/lib/gitlab/other_markup.rb
+%%WWWDIR%%/spec/lib/gitlab/other_markup_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/popen_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/project_search_results_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/project_transfer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/redis_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/reference_extractor_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/regex_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/route_map_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/routing_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/saml/user_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/sanitizers/svg_spec.rb
@@ -5415,13 +5664,16 @@
 %%WWWDIR%%/spec/lib/gitlab/template/merge_request_template_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/themes_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/upgrader_spec.rb
-%%WWWDIR%%/spec/lib/gitlab/uploads_transfer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/url_blocker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/url_builder_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/url_sanitizer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/user_access_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/version_info_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/view/presenter/base_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/view/presenter/delegated_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/view/presenter/factory_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/view/presenter/simple_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/workhorse_spec.rb
 %%WWWDIR%%/spec/lib/gitlab_spec.rb
 %%WWWDIR%%/spec/lib/json_web_token/rsa_token_spec.rb
@@ -5473,6 +5725,7 @@
 %%WWWDIR%%/spec/models/concerns/mentionable_spec.rb
 %%WWWDIR%%/spec/models/concerns/milestoneish_spec.rb
 %%WWWDIR%%/spec/models/concerns/participable_spec.rb
+%%WWWDIR%%/spec/models/concerns/presentable_spec.rb
 %%WWWDIR%%/spec/models/concerns/project_features_compatibility_spec.rb
 %%WWWDIR%%/spec/models/concerns/reactive_caching_spec.rb
 %%WWWDIR%%/spec/models/concerns/routable_spec.rb
@@ -5529,6 +5782,7 @@
 %%WWWDIR%%/spec/models/network/graph_spec.rb
 %%WWWDIR%%/spec/models/note_spec.rb
 %%WWWDIR%%/spec/models/notification_setting_spec.rb
+%%WWWDIR%%/spec/models/pages_domain_spec.rb
 %%WWWDIR%%/spec/models/personal_access_token_spec.rb
 %%WWWDIR%%/spec/models/project_authorization_spec.rb
 %%WWWDIR%%/spec/models/project_feature_spec.rb
@@ -5589,10 +5843,14 @@
 %%WWWDIR%%/spec/models/user_agent_detail_spec.rb
 %%WWWDIR%%/spec/models/user_spec.rb
 %%WWWDIR%%/spec/models/wiki_page_spec.rb
+%%WWWDIR%%/spec/policies/base_policy_spec.rb
+%%WWWDIR%%/spec/policies/ci/build_policy_spec.rb
 %%WWWDIR%%/spec/policies/group_policy_spec.rb
 %%WWWDIR%%/spec/policies/issue_policy_spec.rb
 %%WWWDIR%%/spec/policies/issues_policy_spec.rb
 %%WWWDIR%%/spec/policies/project_policy_spec.rb
+%%WWWDIR%%/spec/policies/project_snippet_policy_spec.rb
+%%WWWDIR%%/spec/presenters/ci/build_presenter_spec.rb
 %%WWWDIR%%/spec/rails_helper.rb
 %%WWWDIR%%/spec/rake_helper.rb
 %%WWWDIR%%/spec/requests/api/access_requests_spec.rb
@@ -5642,6 +5900,11 @@
 %%WWWDIR%%/spec/requests/api/todos_spec.rb
 %%WWWDIR%%/spec/requests/api/triggers_spec.rb
 %%WWWDIR%%/spec/requests/api/users_spec.rb
+%%WWWDIR%%/spec/requests/api/v3/deploy_keys_spec.rb
+%%WWWDIR%%/spec/requests/api/v3/issues_spec.rb
+%%WWWDIR%%/spec/requests/api/v3/merge_requests_spec.rb
+%%WWWDIR%%/spec/requests/api/v3/project_snippets_spec.rb
+%%WWWDIR%%/spec/requests/api/v3/projects_spec.rb
 %%WWWDIR%%/spec/requests/api/variables_spec.rb
 %%WWWDIR%%/spec/requests/api/version_spec.rb
 %%WWWDIR%%/spec/requests/ci/api/builds_spec.rb
@@ -5728,6 +5991,7 @@
 %%WWWDIR%%/spec/services/issues/reopen_service_spec.rb
 %%WWWDIR%%/spec/services/issues/update_service_spec.rb
 %%WWWDIR%%/spec/services/labels/find_or_create_service_spec.rb
+%%WWWDIR%%/spec/services/labels/promote_service_spec.rb
 %%WWWDIR%%/spec/services/labels/transfer_service_spec.rb
 %%WWWDIR%%/spec/services/members/approve_access_request_service_spec.rb
 %%WWWDIR%%/spec/services/members/create_service_spec.rb
@@ -5756,6 +6020,7 @@
 %%WWWDIR%%/spec/services/notes/slash_commands_service_spec.rb
 %%WWWDIR%%/spec/services/notes/update_service_spec.rb
 %%WWWDIR%%/spec/services/notification_service_spec.rb
+%%WWWDIR%%/spec/services/pages_service_spec.rb
 %%WWWDIR%%/spec/services/projects/autocomplete_service_spec.rb
 %%WWWDIR%%/spec/services/projects/create_service_spec.rb
 %%WWWDIR%%/spec/services/projects/destroy_service_spec.rb
@@ -5767,6 +6032,8 @@
 %%WWWDIR%%/spec/services/projects/participants_service_spec.rb
 %%WWWDIR%%/spec/services/projects/transfer_service_spec.rb
 %%WWWDIR%%/spec/services/projects/unlink_fork_service_spec.rb
+%%WWWDIR%%/spec/services/projects/update_pages_configuration_service_spec.rb
+%%WWWDIR%%/spec/services/projects/update_pages_service_spec.rb
 %%WWWDIR%%/spec/services/projects/update_service_spec.rb
 %%WWWDIR%%/spec/services/projects/upload_service_spec.rb
 %%WWWDIR%%/spec/services/protected_branches/create_service_spec.rb
@@ -5775,6 +6042,7 @@
 %%WWWDIR%%/spec/services/search/snippet_service_spec.rb
 %%WWWDIR%%/spec/services/search_service_spec.rb
 %%WWWDIR%%/spec/services/slash_commands/interpret_service_spec.rb
+%%WWWDIR%%/spec/services/spam_service_spec.rb
 %%WWWDIR%%/spec/services/system_hooks_service_spec.rb
 %%WWWDIR%%/spec/services/system_note_service_spec.rb
 %%WWWDIR%%/spec/services/test_hook_service_spec.rb
@@ -5841,6 +6109,7 @@
 %%WWWDIR%%/spec/support/matchers/match_file.rb
 %%WWWDIR%%/spec/support/mentionable_shared_examples.rb
 %%WWWDIR%%/spec/support/merge_request_helpers.rb
+%%WWWDIR%%/spec/support/mobile_helpers.rb
 %%WWWDIR%%/spec/support/notify_shared_examples.rb
 %%WWWDIR%%/spec/support/omni_auth.rb
 %%WWWDIR%%/spec/support/project_features_apply_to_issuables_shared_examples.rb
@@ -5886,7 +6155,6 @@
 %%WWWDIR%%/spec/tasks/gitlab/task_helpers_spec.rb
 %%WWWDIR%%/spec/tasks/gitlab/users_rake_spec.rb
 %%WWWDIR%%/spec/tasks/gitlab/workhorse_rake_spec.rb
-%%WWWDIR%%/spec/teaspoon_env.rb
 %%WWWDIR%%/spec/uploaders/attachment_uploader_spec.rb
 %%WWWDIR%%/spec/uploaders/avatar_uploader_spec.rb
 %%WWWDIR%%/spec/uploaders/file_uploader_spec.rb
@@ -5900,6 +6168,7 @@
 %%WWWDIR%%/spec/views/projects/builds/show.html.haml_spec.rb
 %%WWWDIR%%/spec/views/projects/commit/_commit_box.html.haml_spec.rb
 %%WWWDIR%%/spec/views/projects/edit.html.haml_spec.rb
+%%WWWDIR%%/spec/views/projects/imports/new.html.haml_spec.rb
 %%WWWDIR%%/spec/views/projects/issues/_related_branches.html.haml_spec.rb
 %%WWWDIR%%/spec/views/projects/merge_requests/_commits.html.haml_spec.rb
 %%WWWDIR%%/spec/views/projects/merge_requests/_new_submit.html.haml_spec.rb
@@ -6046,12 +6315,12 @@
 %%WWWDIR%%/vendor/assets/javascripts/fuzzaldrin-plus.js
 %%WWWDIR%%/vendor/assets/javascripts/g.bar.js
 %%WWWDIR%%/vendor/assets/javascripts/g.raphael.js
-%%WWWDIR%%/vendor/assets/javascripts/jquery.ba-resize.js
+%%WWWDIR%%/vendor/assets/javascripts/jquery.atwho.js
+%%WWWDIR%%/vendor/assets/javascripts/jquery.caret.js
 %%WWWDIR%%/vendor/assets/javascripts/jquery.endless-scroll.js
 %%WWWDIR%%/vendor/assets/javascripts/jquery.highlight.js
 %%WWWDIR%%/vendor/assets/javascripts/jquery.nicescroll.js
 %%WWWDIR%%/vendor/assets/javascripts/jquery.scrollTo.js
-%%WWWDIR%%/vendor/assets/javascripts/jquery.turbolinks.js
 %%WWWDIR%%/vendor/assets/javascripts/jquery.waitforimages.js
 %%WWWDIR%%/vendor/assets/javascripts/js.cookie.js
 %%WWWDIR%%/vendor/assets/javascripts/katex.js
@@ -6112,33 +6381,30 @@
 %%WWWDIR%%/vendor/gitlab-ci-yml/Swift.gitlab-ci.yml
 %%WWWDIR%%/vendor/gitlab-ci-yml/autodeploy/Kubernetes.gitlab-ci.yml
 %%WWWDIR%%/vendor/gitlab-ci-yml/autodeploy/OpenShift.gitlab-ci.yml
+%%WWWDIR%%/yarn.lock
 @owner git
 @group www
 @dir(git,git) %%WWWDIR%%/
 @dir %%WWWDIR%%/app/assets/images/auth_buttons/
 @dir(git,git,554) %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
-@dir %%WWWDIR%%/builds
+@dir(,,700) %%WWWDIR%%/builds
 @dir %%WWWDIR%%/lib/assets
 @dir %%WWWDIR%%/lib/ci/assets
-@dir %%WWWDIR%%/log
+@dir(,,744) %%WWWDIR%%/log
 @dir %%WWWDIR%%/public
 @dir %%WWWDIR%%/public/assets
 @dir(,,700) %%WWWDIR%%/public/uploads
-@dir %%WWWDIR%%/shared/artifacts/tmp/cache
-@dir %%WWWDIR%%/shared/artifacts/tmp/uploads
+@dir(,,700) %%WWWDIR%%/shared/artifacts/tmp/cache
+@dir(,,700) %%WWWDIR%%/shared/artifacts/tmp/uploads
+@dir(,,700) %%WWWDIR%%/shared/pages
 @dir %%WWWDIR%%/shared/lfs-objects
 @dir %%WWWDIR%%/shared/registry
-@dir %%WWWDIR%%/tmp
-@dir %%WWWDIR%%/tmp/cache
-@dir %%WWWDIR%%/tmp/pids
-@dir %%WWWDIR%%/tmp/sessions
-@dir %%WWWDIR%%/tmp/sockets
-@owner root
-@group wheel
-@dir /home
-@dir(git,git,) /home/git
-@dir(git,git,2770) /home/git/repositories
+@dir(,,770) %%WWWDIR%%/tmp
+@dir(,,770) %%WWWDIR%%/tmp/cache
+@dir(,,770) %%WWWDIR%%/tmp/pids
+@dir(,,770) %%WWWDIR%%/tmp/sessions
+@dir(,,770) %%WWWDIR%%/tmp/sockets
 @sample %%WWWDIR%%/config/gitlab.yml.sample
 @sample %%WWWDIR%%/config/unicorn.rb.sample
 @sample %%WWWDIR%%/config/resque.yml.sample
@@ -6147,3 +6413,8 @@
 @sample %%WWWDIR%%/config/database.yml.sample
 @sample %%WWWDIR%%/lib/support/nginx/gitlab.sample
 @sample %%WWWDIR%%/lib/support/nginx/gitlab-ssl.sample
+@owner root
+@group wheel
+@dir /home
+@dir(git,git,) /home/git
+@dir(git,git,2770) /home/git/repositories

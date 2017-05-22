@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails-dom-testing
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5

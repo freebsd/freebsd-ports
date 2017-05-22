@@ -1,6 +1,6 @@
---- tools/clang/lib/Driver/ToolChains/CommonArgs.cpp.orig	2016-11-15 23:32:35.007899310 +0000
-+++ tools/clang/lib/Driver/ToolChains/CommonArgs.cpp	2016-11-15 23:41:11.888863662 +0000
-@@ -3151,13 +3151,22 @@
+--- tools/clang/lib/Driver/ToolChains/CommonArgs.cpp.orig	2017-05-10 17:18:56.000000000 +0000
++++ tools/clang/lib/Driver/ToolChains/CommonArgs.cpp	2017-05-10 23:01:17.087686000 +0000
+@@ -441,7 +441,10 @@
  
    switch (TC.getDriver().getOpenMPRuntime(Args)) {
    case Driver::OMPRT_OMP:
@@ -11,18 +11,4 @@
 +      CmdArgs.push_back("%%LLVM_PREFIX%%/lib/libomp.so");
      break;
    case Driver::OMPRT_GOMP:
--    CmdArgs.push_back("-lgomp");
-+    if (TC.getTriple().getOS() != llvm::Triple::FreeBSD || TC.isCrossCompiling() || !llvm::sys::fs::exists("%%LLVM_PREFIX%%/lib/libomp.so"))
-+      CmdArgs.push_back("-lgomp");
-+    else
-+      CmdArgs.push_back("%%LLVM_PREFIX%%/lib/libgomp.so");
-     break;
-   case Driver::OMPRT_IOMP5:
--    CmdArgs.push_back("-liomp5");
-+    if (TC.getTriple().getOS() != llvm::Triple::FreeBSD || TC.isCrossCompiling() || !llvm::sys::fs::exists("%%LLVM_PREFIX%%/lib/libomp.so"))
-+      CmdArgs.push_back("-liomp5");
-+    else
-+      CmdArgs.push_back("%%LLVM_PREFIX%%/lib/libiomp5.so");
-     break;
-   case Driver::OMPRT_Unknown:
-     // Already diagnosed.
+     CmdArgs.push_back("-lgomp");

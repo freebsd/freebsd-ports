@@ -11,6 +11,7 @@ bin/podofoincrementalupdates
 bin/podofomerge
 bin/podofopages
 bin/podofopdfinfo
+bin/podofosign
 bin/podofotxt2pdf
 bin/podofotxtextract
 bin/podofouncompress
@@ -53,7 +54,6 @@ include/podofo/base/PdfRect.h
 include/podofo/base/PdfRefCountedBuffer.h
 include/podofo/base/PdfRefCountedInputDevice.h
 include/podofo/base/PdfReference.h
-include/podofo/base/PdfSigIncWriter.h
 include/podofo/base/PdfStream.h
 include/podofo/base/PdfString.h
 include/podofo/base/PdfTokenizer.h
@@ -114,9 +114,6 @@ include/podofo/doc/PdfPagesTreeCache.h
 include/podofo/doc/PdfPainter.h
 include/podofo/doc/PdfPainterMM.h
 include/podofo/doc/PdfShadingPattern.h
-include/podofo/doc/PdfSigIncMemDocument.h
-include/podofo/doc/PdfSigIncPainter.h
-include/podofo/doc/PdfSigIncSignatureField.h
 include/podofo/doc/PdfSignOutputDevice.h
 include/podofo/doc/PdfSignatureField.h
 include/podofo/doc/PdfStreamedDocument.h
@@ -125,6 +122,7 @@ include/podofo/doc/PdfTilingPattern.h
 include/podofo/doc/PdfXObject.h
 include/podofo/podofo-base.h
 include/podofo/podofo.h
+lib/libpodofo.a
 lib/libpodofo.so
 lib/libpodofo.so.0
 man/man1/podofobox.1.gz

@@ -3,7 +3,7 @@
 
 PORTNAME=	copperspice
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.copperspice.com/copperspice/source/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libaudio.so:audio/nas \
 		libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi \
 		libfreetype.so:print/freetype2 \
-		libglapi.so:graphics/libglapi \
 		libgstbase-0.10.so:multimedia/gstreamer \
 		libgstreamer-0.10.so:multimedia/gstreamer \
 		libpcre.so:devel/pcre \

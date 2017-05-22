@@ -5,7 +5,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	textproc pear
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to create/apply binary and text patches
 
 LICENSE=	PHP301

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nim
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	lang
 MASTER_SITES=	http://nim-lang.org/download/
 
@@ -16,12 +16,17 @@ BROKEN_mips64=		Does not build: build.sh: clang: not found
 BROKEN_powerpc64=	Does not build: build.sh: clang: not found
 BROKEN_sparc64=		Does not build: build.sh: clang: not found
 
-OPTIONS_DEFINE=	DOCS
+TOOLS_DESC=	Build and install nimgrep and nimsuggest
+
+OPTIONS_DEFINE=	DOCS TOOLS
+OPTIONS_SUB=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		compiler tar:xz
 
 .include <bsd.port.pre.mk>
+
+TLIST=	nimgrep nimsuggest
 
 post-patch:
 .if ${COMPILER_TYPE} == clang
@@ -36,8 +41,17 @@ do-build:
 	cd ${WRKSRC} && ./koch boot --parallelBuild=${MAKE_JOBS_NUMBER} \
 		-d:release
 
+do-build-TOOLS-on:
+	cd ${WRKSRC} && ./koch tools --parallelBuild=${MAKE_JOBS_NUMBER} \
+		-d:release
+
 do-install:
 	cd ${WRKSRC} && ${SH} install.sh ${STAGEDIR}${PREFIX}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nim
+
+do-install-TOOLS-on:
+.for t in ${TLIST}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${t} ${STAGEDIR}${PREFIX}/bin
+.endfor
 
 .include <bsd.port.post.mk>

@@ -67,6 +67,7 @@ include/sbml/compress/OutputCompressor.h
 include/sbml/compress/bzfstream.h
 include/sbml/compress/crypt.h
 include/sbml/compress/ioapi.h
+include/sbml/compress/ioapi_mem.h
 include/sbml/compress/iowin32.h
 include/sbml/compress/unzip.h
 include/sbml/compress/zfstream.h
@@ -84,6 +85,7 @@ include/sbml/conversion/SBMLInitialAssignmentConverter.h
 include/sbml/conversion/SBMLLevel1Version1Converter.h
 include/sbml/conversion/SBMLLevelVersionConverter.h
 include/sbml/conversion/SBMLLocalParameterConverter.h
+include/sbml/conversion/SBMLRateOfConverter.h
 include/sbml/conversion/SBMLReactionConverter.h
 include/sbml/conversion/SBMLRuleConverter.h
 include/sbml/conversion/SBMLStripPackageConverter.h
@@ -107,6 +109,7 @@ include/sbml/math/ASTBinaryFunctionNode.h
 include/sbml/math/ASTCSymbol.h
 include/sbml/math/ASTCSymbolAvogadroNode.h
 include/sbml/math/ASTCSymbolDelayNode.h
+include/sbml/math/ASTCSymbolRateOfNode.h
 include/sbml/math/ASTCSymbolTimeNode.h
 include/sbml/math/ASTCiFunctionNode.h
 include/sbml/math/ASTCiNumberNode.h
@@ -158,6 +161,7 @@ include/sbml/validator/L2v2CompatibilityValidator.h
 include/sbml/validator/L2v3CompatibilityValidator.h
 include/sbml/validator/L2v4CompatibilityValidator.h
 include/sbml/validator/L3v1CompatibilityValidator.h
+include/sbml/validator/L3v2CompatibilityValidator.h
 include/sbml/validator/MathMLConsistencyValidator.h
 include/sbml/validator/ModelingPracticeValidator.h
 include/sbml/validator/OverdeterminedValidator.h
@@ -205,6 +209,12 @@ lib/libsbml.so
 lib/libsbml.so.5
 lib/libsbml.so.%%PORTVERSION%%
 libdata/pkgconfig/libsbml.pc
+lib/cmake/sbml-config-release.cmake
+lib/cmake/sbml-config-version.cmake
+lib/cmake/sbml-config.cmake
+lib/cmake/sbml-static-config-release.cmake
+lib/cmake/sbml-static-config-version.cmake
+lib/cmake/sbml-static-config.cmake
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/_libsbml.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/libsbml.py

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- runtimes/openmp/libomptarget/CMakeLists.txt.orig
 +++ runtimes/openmp/libomptarget/CMakeLists.txt
 @@ -94,7 +94,6 @@

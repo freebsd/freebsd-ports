@@ -1,6 +1,6 @@
---- tests/event-loop-test.c.orig	2015-07-06 19:38:51 UTC
+--- tests/event-loop-test.c.orig	2016-10-22 16:23:10 UTC
 +++ tests/event-loop-test.c
-@@ -166,10 +166,10 @@ TEST(event_loop_signal)
+@@ -167,10 +167,10 @@ TEST(event_loop_signal)
  					  signal_callback, &got_it);
  	assert(source);
  
@@ -14,7 +14,7 @@
  	assert(got_it == 1);
  
  	wl_event_source_remove(source);
-@@ -233,12 +233,20 @@ TEST(event_loop_timer)
+@@ -234,12 +234,20 @@ TEST(event_loop_timer)
  
  	source = wl_event_loop_add_timer(loop, timer_callback, &got_it);
  	assert(source);

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ssh2
-PORTVERSION=	0.13
+PORTVERSION=	1.0
 CATEGORIES=	security pear
 
-MAINTAINER=	dbaio@bsd.com.br
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to the libssh2 library
 
 LICENSE=	PHP301
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libssh2.so:security/libssh2
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71
+IGNORE_WITH_PHP=	56
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}

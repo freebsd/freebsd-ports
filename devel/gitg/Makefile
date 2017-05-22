@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitg
-PORTVERSION=	3.22.0
+PORTVERSION=	3.24.0
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -12,6 +12,8 @@ COMMENT=	GTK-based git repository viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+		valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libenchant.so:textproc/enchant \
 		libgee-0.8.so:devel/libgee \
@@ -20,8 +22,6 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libpeas-1.0.so:devel/libpeas \
 		libgtkspell3-3.so:textproc/gtkspell3 \
 		libsecret-1.so:security/libsecret
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
-		valac:lang/vala
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 CONFLICTS=	gitg0-[0-9]*
@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-maintainer-mode \
 		--enable-compile-warnings=no
-USE_GNOME=	cairo glib20 gtk30 gtksourceview3 intlhack introspection
+USE_GNOME=	cairo gtk30 gtksourceview3 intltool introspection
 INSTALL_TARGET=	install-strip
 
 INSTALLS_ICONS=	yes

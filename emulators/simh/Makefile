@@ -17,6 +17,8 @@ COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option "-Wno-logical-op-parentheses"
+
 NO_WRKSUBDIR=	yes
 
 USES=		gmake dos2unix zip

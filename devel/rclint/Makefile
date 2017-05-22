@@ -2,6 +2,7 @@
 
 PORTNAME=	rclint
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel textproc python
 MASTER_SITES=	http://www.bayofrum.net/dist/rclint/	\
 		LOCAL/crees/
@@ -13,9 +14,10 @@ LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 
-USES=		python:run
+USES=		python:run shebangfix
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+SHEBANG_FILES=	*.py
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	${PORTNAME}.py errors.en

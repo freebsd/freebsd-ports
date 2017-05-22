@@ -1869,6 +1869,7 @@ include/aws/core/client/ClientConfiguration.h
 include/aws/core/client/CoreErrors.h
 include/aws/core/client/DefaultRetryStrategy.h
 include/aws/core/client/RetryStrategy.h
+include/aws/core/config/AWSProfileConfigLoader.h
 include/aws/core/external/json-cpp/json.h
 include/aws/core/external/tinyxml2/tinyxml2.h
 include/aws/core/http/HttpClient.h
@@ -1891,6 +1892,7 @@ include/aws/core/platform/Platform.h
 include/aws/core/platform/Security.h
 include/aws/core/platform/Time.h
 include/aws/core/utils/Array.h
+include/aws/core/utils/DNS.h
 include/aws/core/utils/DateTime.h
 include/aws/core/utils/EnumParseOverflowContainer.h
 include/aws/core/utils/FileSystemUtils.h
@@ -3792,6 +3794,8 @@ include/aws/elasticloadbalancing/model/DeleteLoadBalancerRequest.h
 include/aws/elasticloadbalancing/model/DeleteLoadBalancerResult.h
 include/aws/elasticloadbalancing/model/DeregisterInstancesFromLoadBalancerRequest.h
 include/aws/elasticloadbalancing/model/DeregisterInstancesFromLoadBalancerResult.h
+include/aws/elasticloadbalancing/model/DescribeAccountLimitsRequest.h
+include/aws/elasticloadbalancing/model/DescribeAccountLimitsResult.h
 include/aws/elasticloadbalancing/model/DescribeInstanceHealthRequest.h
 include/aws/elasticloadbalancing/model/DescribeInstanceHealthResult.h
 include/aws/elasticloadbalancing/model/DescribeLoadBalancerAttributesRequest.h
@@ -3814,6 +3818,7 @@ include/aws/elasticloadbalancing/model/HealthCheck.h
 include/aws/elasticloadbalancing/model/Instance.h
 include/aws/elasticloadbalancing/model/InstanceState.h
 include/aws/elasticloadbalancing/model/LBCookieStickinessPolicy.h
+include/aws/elasticloadbalancing/model/Limit.h
 include/aws/elasticloadbalancing/model/Listener.h
 include/aws/elasticloadbalancing/model/ListenerDescription.h
 include/aws/elasticloadbalancing/model/LoadBalancerAttributes.h
@@ -3872,6 +3877,8 @@ include/aws/elasticloadbalancingv2/model/DeleteTargetGroupRequest.h
 include/aws/elasticloadbalancingv2/model/DeleteTargetGroupResult.h
 include/aws/elasticloadbalancingv2/model/DeregisterTargetsRequest.h
 include/aws/elasticloadbalancingv2/model/DeregisterTargetsResult.h
+include/aws/elasticloadbalancingv2/model/DescribeAccountLimitsRequest.h
+include/aws/elasticloadbalancingv2/model/DescribeAccountLimitsResult.h
 include/aws/elasticloadbalancingv2/model/DescribeListenersRequest.h
 include/aws/elasticloadbalancingv2/model/DescribeListenersResult.h
 include/aws/elasticloadbalancingv2/model/DescribeLoadBalancerAttributesRequest.h
@@ -3891,6 +3898,7 @@ include/aws/elasticloadbalancingv2/model/DescribeTargetGroupsResult.h
 include/aws/elasticloadbalancingv2/model/DescribeTargetHealthRequest.h
 include/aws/elasticloadbalancingv2/model/DescribeTargetHealthResult.h
 include/aws/elasticloadbalancingv2/model/IpAddressType.h
+include/aws/elasticloadbalancingv2/model/Limit.h
 include/aws/elasticloadbalancingv2/model/Listener.h
 include/aws/elasticloadbalancingv2/model/LoadBalancer.h
 include/aws/elasticloadbalancingv2/model/LoadBalancerAttribute.h

@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="xfstt"
+description=""
+command=%%PREFIX%%/bin/xfstt
+command_args="--user nobody --notcp"
+
+depend(){
+	keyword -shutdown
+}
+
+start_pre(){
+  ${command} --sync > /dev/null
+}

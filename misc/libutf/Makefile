@@ -5,8 +5,8 @@ PORTNAME=	libutf
 PORTVERSION=	2.10
 PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/misc/ \
-		http://www.westley.demon.co.uk/src/
+MASTER_SITES=	http://www.cse.yorku.ca/ftp/pub/wily/misc/ \
+		http://ftp.osuosl.org/pub/nslu2/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-8 character set support library, including regular expressions
