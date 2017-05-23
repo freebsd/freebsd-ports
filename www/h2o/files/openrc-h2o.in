@@ -10,10 +10,10 @@ name="h2o"
 description=""
 
 # defaults
-: ${h2o_config:="%%PREFIX%%/etc/${name}/${name}.conf"}
+: ${h2o_config:="%%PREFIX%%/etc/h2o/h2o.conf"}
 : ${h2o_perl:="%%LOCALBASE%%/bin/perl"}
 
-command="%%PREFIX%%/bin/${name}"
+command="%%PREFIX%%/bin/h2o"
 command_args="-m daemon -c ${h2o_config}"
 pidfile=`grep pid-file ${h2o_config} | cut -d' ' -f2`
 procname="%%LOCALBASE%%/bin/perl"
