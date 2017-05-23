@@ -1,0 +1,25 @@
+#!/sbin/openrc
+# Created by: Mark Felder <feld@FreeBSD.org>
+
+name="radicale"
+description=""
+
+: ${radicale_config=%%PREFIX%%/etc/radicale/config}
+: ${radicale_user=%%USERS%%}
+: ${radicale_group=%%GROUPS%%}
+
+pidfile=/var/run/radicale/radicale.pid
+command=%%PREFIX%%/bin/radicale
+command_args="-d -p ${pidfile} -C ${radicale_config}"
+command_interpreter=%%PYTHON_CMD%%
+required_files=${radicale_config}
+
+start_pre(){
+	if [ ! -d ${pidfile%/*} ]; then
+		install -d -o ${radicale_user} ${pidfile%/*}
+	fi
+}
+
+depend(){
+	keyword -shutdown
+}
