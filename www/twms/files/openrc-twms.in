@@ -1,0 +1,24 @@
+#!/sbin/openrc
+
+name="twms"
+description=""
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/twms"
+
+start(){
+	su -m %%USER%% -c "nohup $command >/dev/null 2>&1 & echo \$! " | tail -1 > ${pidfile}
+}
+
+stop(){
+	if [ -f ${pidfile} ]; then
+		rc_pid=`cat ${pidfile}`
+		kill -TERM $rc_pid
+		wait_for_pids $rc_pid
+		rm ${pidfile}
+	fi
+}
+
+depend(){
+	keyword -shutdown
+}
