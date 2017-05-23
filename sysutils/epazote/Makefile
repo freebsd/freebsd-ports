@@ -1,27 +1,25 @@
 # $FreeBSD$
 
-PORTNAME=       epazote
-PORTVERSION=    2.1.1
-CATEGORIES=     sysutils
+PORTNAME=	epazote
+PORTVERSION=	2.1.2
+CATEGORIES=	sysutils
 
-MAINTAINER=     nbari@tequila.io
-COMMENT=        Automated HTTP (microservices) supervisor
+MAINTAINER=	nbari@tequila.io
+COMMENT=	Automated HTTP (microservices) supervisor
 
-LICENSE=        BSD3CLAUSE
-LICENSE_FILE=   ${WRKSRC}/LICENSE
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		checksum and size mismatch
+BUILD_DEPENDS=	go>=1.7:lang/go
 
-BUILD_DEPENDS=  go>=1.7:lang/go
+USES=	compiler
 
-USES=           compiler
-
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_TUPLE=	epazote:scheduler:0.1.0:scheduler/src/github.com/epazote/scheduler \
-		go-yaml:yaml:v2:yaml/src/gopkg.in/yaml.v2
+		go-yaml:yaml:cd8b52f:yaml/src/github.com/go-yaml/yaml
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 
-STRIP=          # stripping can break go binaries
+STRIP=		# stripping can break go binaries
 
 PLIST_FILES=	bin/epazote
 
