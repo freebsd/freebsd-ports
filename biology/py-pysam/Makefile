@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysam
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2.1
 CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	cython:lang/cython
 RUN_DEPENDS=	cython:lang/cython
 
-USES=		gmake python:2
+USES=		gmake python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
