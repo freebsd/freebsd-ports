@@ -13,8 +13,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libhamlib.so:comms/hamlib \
 		libgps.so:astro/gpsd
 
-BROKEN_powerpc64=	fails to link: direwolf-1.4_1 depends on shared library: libgpsd.so - not found
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	wb2osz
 GH_TAGNAME=	6207e2e
