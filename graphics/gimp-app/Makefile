@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gimp-app
-PORTVERSION=	2.8.18
-PORTREVISION=	2
+PORTVERSION=	2.8.22
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
@@ -23,18 +22,21 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libbabl-0.1.so:x11/babl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdbus-1.so:devel/dbus \
-		libsoup-2.4.so:devel/libsoup \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 
 GNU_CONFIGURE=	yes
-USES+=		cpe desktop-file-utils execinfo gettext gmake jpeg libtool \
-		localbase pathfix pkgconfig tar:bzip2
+USES+=		cpe execinfo gettext gmake jpeg libtool \
+		localbase pathfix pkgconfig shebangfix tar:bzip2
 USE_XORG=	ice sm xcursor xext xfixes xmu xpm xt x11
 USE_GNOME+=	cairo gtk20 intlhack
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+.if !defined(XAUTHORITY)
+TEST_ENV=	XAUTHORITY=${HOME}/.Xauthority
+.endif
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--disable-gtk-doc \
 		--without-linux-input \
@@ -51,9 +53,13 @@ LIBS+=		-lexecinfo
 CPE_PRODUCT=	gimp
 CPE_VENDOR=	gnu
 
-PLIST_SUB+=	LIBVER=0.800.18
+SHEBANG_FILES=	plug-ins/pygimp/plug-ins/*.py
+
+PLIST_SUB+=	LIBVER=0.800.${PORTVERSION:E}
 
 .if !defined(GIMP_SLAVE)
+
+USES+=		desktop-file-utils
 
 OPTIONS_DEFINE?=	AA DBUS LIBEXIF GHOSTSCRIPT GVFS HELPBROWSER JASPER \
 			LIBMNG LIBRSVG2 POPPLER SIMD WMF
@@ -90,7 +96,8 @@ GVFS_USE=		GNOME=gvfs
 GVFS_LIB_DEPENDS_OFF=	libcurl.so:ftp/curl
 GVFS_CONFIGURE_OFF=	--without-gvfs
 
-HELPBROWSER_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
+HELPBROWSER_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2 \
+				libsoup-2.4.so:devel/libsoup
 HELPBROWSER_CONFIGURE_WITH=	webkit
 
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
