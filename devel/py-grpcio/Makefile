@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grpcio
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,5 +23,8 @@ USE_PYTHON=	distutils
 CFLAGS+=	-Ithird_party/boringssl/include \
 		-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lcares
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/grpc/_cython/cygrpc.so
 
 .include <bsd.port.mk>
