@@ -18,4 +18,4 @@ Primarily written for MySQL server benchmarking, SysBench will be
 further extended to support multiple database backends, distributed
 benchmarks and third-party plug-in modules.
 
-WWW: http://sysbench.sourceforge.net/
+WWW: https://github.com/akopytov/sysbench
