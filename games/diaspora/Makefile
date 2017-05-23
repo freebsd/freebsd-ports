@@ -3,6 +3,7 @@
 
 PORTNAME=	diaspora
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://diaspora.fs2downloads.com/ \
 		http://www.freespacemods.net/e107_files/downloads/:freespacemods \

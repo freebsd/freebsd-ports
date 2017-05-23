@@ -3,7 +3,7 @@
 
 PORTNAME=	xorgramana
 PORTVERSION=	0.0.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://www.jwm-art.net/XorGramana/ \
 		http://mirror.amdmi3.ru/distfiles/

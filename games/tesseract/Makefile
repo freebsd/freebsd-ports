@@ -2,6 +2,7 @@
 
 PORTNAME=	tesseract
 DISTVERSION=	2014_05_12
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/${PORTNAME}/
 PKGNAMESUFFIX=	-game

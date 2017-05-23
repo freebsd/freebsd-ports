@@ -3,7 +3,7 @@
 
 PORTNAME=		fife
 PORTVERSION=		0.4.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		games
 MASTER_SITES=		https://github.com/fifengine/fifengine/archive/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}

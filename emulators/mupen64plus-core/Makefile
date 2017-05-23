@@ -3,7 +3,7 @@
 
 PORTNAME=	mupen64plus
 PORTVERSION?=	2.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/releases/download/${PORTVERSION}/ \
 		LOCAL/acm/${PORTNAME} \

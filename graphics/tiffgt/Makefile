@@ -2,6 +2,7 @@
 
 PORTNAME=	tiffgt
 DISTVERSION=	4.0.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://download.osgeo.org/libtiff/

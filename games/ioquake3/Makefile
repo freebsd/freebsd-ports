@@ -3,7 +3,7 @@
 
 PORTNAME?=	ioquake3
 PORTVERSION?=	${IOQUAKE3VER}
-PORTREVISION?=	15
+PORTREVISION?=	16
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 # Using zip this way enables slaves to override it.

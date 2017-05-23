@@ -3,7 +3,7 @@
 
 PORTNAME=	guichan
 PORTVERSION=	0.8.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel games
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/guichan/guichan-0.8.2.tar.gz/af535d7f387e774e3197cef8023ea105/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	el
 PORTVERSION=	1.9.4.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/raduprv/Eternal-Lands/archive/
