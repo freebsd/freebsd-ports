@@ -1,0 +1,14 @@
+#!/sbin/openrc
+#
+# Add the following lines to /etc/rc.conf to enable bozohttpd:
+#                               
+# bozohttpd_flags (str):        Options to pass to bozohttpd.
+#                               Default is "-b -t /var/empty -U nobody /".
+#                               The last argument, slashdir, is required.
+
+name="bozohttpd"
+description=""
+
+: ${bozohttpd_flags="-b -t /var/empty -U nobody /"}
+
+command=%%PREFIX%%/libexec/bozohttpd
