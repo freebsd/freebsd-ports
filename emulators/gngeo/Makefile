@@ -3,7 +3,7 @@
 
 PORTNAME=	gngeo
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/pepone42/gngeo/archive/ \
 		LOCAL/acm/${PORTNAME}

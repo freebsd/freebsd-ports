@@ -3,7 +3,7 @@
 
 PORTNAME=	tea
 PORTVERSION=	43.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 

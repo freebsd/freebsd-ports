@@ -3,6 +3,7 @@
 
 PORTNAME=	fifechan
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	devel games
 
 MAINTAINER=	fiziologus@gmail.com

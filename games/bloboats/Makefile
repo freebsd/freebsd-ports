@@ -4,7 +4,7 @@
 PORTNAME=	bloboats
 PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://bloboats.dy.fi/mirror/ \
 		LOCAL/ehaupt

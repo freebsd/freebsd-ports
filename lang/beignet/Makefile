@@ -3,6 +3,7 @@
 
 PORTNAME=	beignet
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/

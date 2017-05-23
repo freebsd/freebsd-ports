@@ -3,6 +3,7 @@
 
 PORTNAME=	uhexen2
 PORTVERSION=	1.5.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}/Source \
 		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.29a:data \

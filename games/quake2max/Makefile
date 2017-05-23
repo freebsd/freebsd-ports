@@ -3,7 +3,7 @@
 
 PORTNAME=	quake2max
 PORTVERSION=	0.45
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.bfeared.com/library/quake/archive/quakedev/qudos/quake2/engines/Quake2MaX/:src \
 		LOCAL/alepulver/:data

@@ -3,7 +3,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.14.8
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/

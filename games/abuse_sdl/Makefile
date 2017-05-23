@@ -3,7 +3,7 @@
 
 PORTNAME=	abuse_sdl
 PORTVERSION=	0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	GENTOO \
 		http://abuse.zoy.org/raw-attachment/wiki/download/
