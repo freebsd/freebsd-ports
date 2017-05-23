@@ -9,12 +9,10 @@
 
 name="zerowait"
 description=""
-command="%%PREFIX%%/sbin/0W-httpd"
-args="-c %%PREFIX%%/etc/0W-httpd/httpd.conf"
+command="/usr/bin/limits -U www %%PREFIX%%/sbin/0W-httpd"
+command_args="-c %%PREFIX%%/etc/0W-httpd/httpd.conf"
 required_files="%%PREFIX%%/etc/0W-httpd/httpd.conf"
 pidfile="%%PREFIX%%/0W-httpd/pids/httpd"
-
-start_cmd="echo \"Starting ${name}.\"; /usr/bin/limits -U www ${command}"
 
 depend(){
 	keyword -shutdown

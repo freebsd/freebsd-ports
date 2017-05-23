@@ -50,7 +50,7 @@ procname="%%JAVA%%"
 : ${madsonic_init_memory:="192"}
 : ${madsonic_max_memory:="384"}
 
-if checkyesno madsonic_ssl; then
+if yesno ${madsonic_ssl}; then
 	MADSONIC_SSL_FLAGS="-Dmadsonic.httpsPort=${madsonic_port}" && madsonic_port="0"
 	if [ ! -z ${madsonic_ssl_keystore} ]; then
 		MADSONIC_SSL_FLAGS=${MADSONIC_SSL_FLAGS}" -Dmadsonic.ssl.keystore=${madsonic_ssl_keystore} -Dmadsonic.ssl.password=${madsonic_ssl_password}"

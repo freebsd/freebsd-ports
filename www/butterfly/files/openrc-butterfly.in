@@ -7,13 +7,14 @@ name="butterfly"
 descrption=""
 pidfile=/var/run/${name}.pid
 
-command="%%PYTHON_CMD%%"
+command="%%PREFIX%%/bin/butterfly.server.py"
+command_args="${butterfly_args}"
+supervisor=supervise-daemon
+command_user="${butterfly_user}"
 
-start() {
-  echo "Starting ${name}."
+start_pre() {
   if ! [ -r %%ETCDIR%%/ssl/butterfly_localhost.crt -a %%ETCDIR%%/ssl/butterfly_localhost.key -a %%ETCDIR%%/ssl/butterfly_ca.crt ]; then
     %%PREFIX%%/bin/butterfly.server.py --generate-certs --host=localhost &&
-    echo "${name}: generated the ssl certificate in %%ETCDIR%%/ssl"
+    einfo "${name}: generated the ssl certificate in %%ETCDIR%%/ssl"
   fi
-  daemon -p $pidfile -u ${butterfly_user} %%PREFIX%%/bin/butterfly.server.py ${butterfly_args} >/var/log/${name}.log 2>&1
 }

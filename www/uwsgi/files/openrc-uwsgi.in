@@ -85,29 +85,9 @@ fi
 command=%%PREFIX%%/bin/uwsgi
 command_args="--pidfile ${uwsgi_pidfile} -s ${uwsgi_socket} --chmod-socket=${uwsgi_socket_mode} --chown-socket=${uwsgi_socket_owner} -d ${uwsgi_logfile} --uid ${uwsgi_uid} --gid ${uwsgi_gid}"
 pidfile=${uwsgi_pidfile}
-reload_precmd=reload_precmd
-brutalreload_cmd=brutalreload_cmd
-sig_stop="INT"
-extra_commands="reload brutalreload"
-procname=${uwsgi_procname}
 
-post_stop()
-{
+stop_post() {
 	rm -f ${uwsgi_pidfile} ${uwsgi_socket}
-}
-
-reload_precmd()
-{
-	echo "Gracefully reloading ${name} without closing the main sockets."
-}
-
-brutalreload_cmd()
-{
-	echo "Reloading ${name} without closing the main sockets."
-
-	reload_precmd=""
-	sig_reload="TERM"
-	run_rc_command ${rc_prefix}reload $rc_extra_args || return 1
 }
 
 depend(){

@@ -81,19 +81,12 @@ java_command="%%LOCALBASE%%/bin/java \
 
 required_files="${tomcat%%TOMCAT_VERSION%%_catalina_home}/conf/server.xml"
 
-command="/usr/sbin/daemon"
-flags="-p ${pidfile} ${java_command} start ${tomcat%%TOMCAT_VERSION%%_flags} ${tomcat%%TOMCAT_VERSION%%_catalina_log}"
+command="${java_command} start"
+command_args="${tomcat%%TOMCAT_VERSION%%_flags} ${tomcat%%TOMCAT_VERSION%%_catalina_log}"
+pidfile=${pidfile}
+superviser=supervise_dameon
 
-start_precmd="pid_touch"
-status_cmd="tomcat_status"
-poll_cmd="tomcat_poll"
-
-pid_touch() {
-	touch $pidfile
-	chown $tomcat%%TOMCAT_VERSION%%_user $pidfile
-}
-
-stop() {
+stop_pre() {
 	rc_pid=$(tomcat_check_pidfile $pidfile)
 
 	if [ -z "$rc_pid" ]; then
@@ -102,37 +95,9 @@ stop() {
 		return 1
 	fi
 	
-	echo "Stopping ${name}."
 	${java_command} stop
 	tomcat_wait_max_for_pid ${tomcat%%TOMCAT_VERSION%%_stop_timeout} ${rc_pid}
-	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
-	rm -f ${pidfile}
-}
-
-tomcat_status() {
-	rc_pid=$(tomcat_check_pidfile $pidfile)
-
-	if [ -n "$rc_pid" ]; then
-		echo "${name} is running as pid $rc_pid."
-	else
-		echo "${name} is not running."
-		return 1
-	fi
-}
-
-tomcat_poll() {
-	rc_pid=$(tomcat_check_pidfile $pidfile)
-
-	_prefix=
-	while (true) ; do
-		[ -z "$rc_pid" ] && break
-		echo -n ${_prefix:-"Waiting for PIDS: "}$rc_pid
-		_prefix=", "
-		sleep 2
-	done
-	if [ -n "$_prefix" ]; then
-	echo "."
-	fi
+	kill -KILL ${rc_pid} 2> /dev/null
 }
 
 tomcat_check_pidfile() {

@@ -1,0 +1,51 @@
+ Dungeon Crawl version 4.0.0 beta 26 character file.
+
+Coupon the Ruinous (Human)
+(Level 1 Wizard)
+
+Play time: 00:01:02       Number of turns: 156
+
+Experience : 1/6
+Strength 7     Dexterity 11     Intelligence 18
+Hit Points : -3/8 (dead)          Magic Points : 3/5
+AC : 1          Evasion : 10          Shield : 0
+GP : 29
+
+You are on level 1.
+You are not hungry.
+
+  Inventory:
+Hand weapons
+ a - a +0 dagger
+ g - a +2,+0 whip (weapon)
+Armour
+ b - a +0 robe (worn)
+ e - a +0 leather armour
+Comestibles
+ d - a bread ration
+Scrolls
+ f - a scroll of teleportation
+Potions
+ h - a potion of healing
+Books
+ c - a book of Minor Magic
+
+
+ You have 2 experience left.
+
+   Skills:
+ + Level 1 Short Blades
+ + Level 1 Staves
+ + Level 1 Dodging
+ - Level 2 Stealth
+ + Level 2 Spellcasting
+ + Level 2 Conjurations
+ + Level 1 Enchantments
+ + Level 1 Transmigration
+
+
+You have 3 spell levels left.
+You know the following spells:
+
+  Your Spells                       Type                  Success   Level
+ a - Magic Dart                   Conjuration             Very Good   1

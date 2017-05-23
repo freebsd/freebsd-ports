@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	openrc-nghttpdx
+USE_OPENRC_SUBR=	openrc-nghttpx

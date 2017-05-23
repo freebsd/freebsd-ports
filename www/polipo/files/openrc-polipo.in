@@ -5,30 +5,20 @@
 
 name="polipo"
 config_file=%%PCONFIGDIR%%config
-required_files=$config_file
+required_files=${config_file}
 
 command="%%PREFIX%%/bin/polipo"
-config_args="-c ${config_file}"
-command_args="$config_args daemonise=true pidFile=%%PIDFILE%%"
-
-extra_commands=expire
+command_args="-c ${config_file}"
+pidfile=%%PIDFILE%%
 
 depend(){
 	keyword -shutdown
 }
 
-start_pre(){
-	rm -f %%PIDFILE%%
-}
-
-expire_cmd () {
-	if [ $rc_pid ]; then
-        	kill -USR1 $rc_pid
+stop_pre() {
+	if [ ${pidfile}]; then
+        	kill -USR1 ${pidfile}
 		# allow polipo to write out all files
 		sleep 5
-	fi
-        su -m %%USER%% -c "${command} ${config_args} -x"
-	if [ $rc_pid ]; then
-        	kill -USR2 $rc_pid
 	fi
 }
