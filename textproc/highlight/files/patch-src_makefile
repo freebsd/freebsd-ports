@@ -1,15 +1,15 @@
---- src/makefile.orig	2015-07-02 16:51:26.582456000 +0200
-+++ src/makefile	2015-07-02 16:51:53.706070000 +0200
-@@ -12,7 +12,7 @@
- 
+--- src/makefile.orig	2017-03-30 18:12:23 UTC
++++ src/makefile
+@@ -13,7 +13,7 @@
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
--CXX=c++
+ #CXX=clang++
+-CXX=g++
 +CXX?=c++
  
- # Added -qt4 because of Arch Linux Qt5 migration
- QMAKE=qmake-qt4
-@@ -37,10 +37,10 @@
+ # was: qmake-qt5
+ QMAKE=qmake
+@@ -39,10 +39,10 @@ INCLUDE_DIR=./include/
  # If Lua 5.2 is not default on your system yet you have to
  # use lua5.1 in the pkg-config calls
  
@@ -22,7 +22,7 @@
  
  # luajit lib
  # LUA_LIBS=$(shell pkg-config --libs luajit)
-@@ -67,7 +67,7 @@
+@@ -73,7 +73,7 @@ LDFLAGS = -ldl
  #LDFLAGS = ${LDFLAGS} -s
  #LDFLAGS= -Wl,--as-needed
  
