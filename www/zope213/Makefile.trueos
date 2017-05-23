@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR+= zope213
+USE_OPENRC_SUBR= open-zope213
