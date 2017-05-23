@@ -18,18 +18,13 @@ KMODDIR=	${PREFIX}/lib/aoe
 
 USE_RC_SUBR=	aoe
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
 
-BROKEN_aarch64=		Fails to compile: error: redefinition of frame
-BROKEN_sparc64=		Fails to compile: error: redefinition of frame
-=======
 BROKEN_aarch64=		fails to compile: error: redefinition of frame
 BROKEN_armv6=		fails to compile: error: redefinition of frame
 BROKEN_powerpc64=	fails to compile: pcpu.h: size of array '__assert_0' is negative
 BROKEN_sparc64=		fails to compile: error: redefinition of frame
->>>>>>> upstream/master
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/aoe.ko ${STAGEDIR}${PREFIX}/lib/aoe

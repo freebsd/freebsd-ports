@@ -77,12 +77,8 @@ APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LOCALBASE}/include/luajit-2.0" \
 USE_RC_SUBR=	snort
 SUB_FILES=	pkg-message
 
-<<<<<<< HEAD
-USES+=		cpe libtool pathfix
-=======
 USES=		cpe libtool pathfix shebangfix ssl
 SHEBANG_FILES=	tools/appid_detector_builder.sh
->>>>>>> upstream/master
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
