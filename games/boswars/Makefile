@@ -3,7 +3,7 @@
 
 PORTNAME=	boswars
 PORTVERSION=	2.6.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

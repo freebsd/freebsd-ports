@@ -3,7 +3,7 @@
 
 PORTNAME=	nehquake
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/alepulver
 DISTNAME=	NehQuake-bjp-bin-src.linux

@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer-plugins-gl
 PORTVERSION=	0.10.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-gl/
 DISTNAME=	${PORTNAME:S/gstreamer/gst/}-${PORTVERSION}

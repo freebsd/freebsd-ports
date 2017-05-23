@@ -2,7 +2,7 @@
 
 PORTNAME=		voxelands
 PORTVERSION=		1604.00
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		games
 MASTER_SITES=		http://voxelands.com/downloads/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src

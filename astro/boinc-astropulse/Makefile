@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/rene
 DISTNAME=	astropulse-svn-1702 # modified archive, see leftout in top directory

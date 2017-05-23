@@ -3,6 +3,7 @@
 
 PORTNAME=	hyperrogue
 PORTVERSION=	8.3j
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

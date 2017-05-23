@@ -3,6 +3,7 @@
 
 PORTNAME=	qt5-style-plugins
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	QT/community_releases/additional_qt_src_pkgs/
 DISTNAME=	qtstyleplugins-src-${PORTVERSION}

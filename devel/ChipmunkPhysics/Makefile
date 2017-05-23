@@ -3,6 +3,7 @@
 
 PORTNAME=	ChipmunkPhysics
 PORTVERSION=	7.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://chipmunk-physics.net/release/Chipmunk-7.x/ \
 		http://files.slembcke.net/chipmunk/release/Chipmunk-7.x/ \
