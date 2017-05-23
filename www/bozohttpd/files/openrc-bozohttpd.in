@@ -11,4 +11,4 @@ description=""
 
 : ${bozohttpd_flags="-b -t /var/empty -U nobody /"}
 
-command=%%PREFIX%%/libexec/bozohttpd
+command="%%PREFIX%%/libexec/bozohttpd"

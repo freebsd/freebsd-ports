@@ -6,8 +6,8 @@
 name="spreadlogd"
 
 command="%%PREFIX%%/sbin/spreadlogd"
-pidfile=/var/run/${name}.pid
-required_files=%%PREFIX%%/etc/${name}.conf
+pidfile="/var/run/${name}.pid"
+required_files="%%PREFIX%%/etc/${name}.conf"
 
 depend(){
 	keyword -shutdown

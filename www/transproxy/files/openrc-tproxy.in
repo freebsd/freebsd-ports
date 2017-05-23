@@ -44,7 +44,6 @@
 name="tproxy"
 description="rcNG start script for transproxy"
 command="%%PREFIX%%/sbin/tproxy"
-procname="%%PREFIX%%/sbin/tproxy"
 
 : ${tproxy_user="nobody"}
 : ${tproxy_flags="-s $tproxy_port -b $tproxy_if -r $tproxy_user \

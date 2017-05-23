@@ -87,53 +87,7 @@ pidfile=${pidfile}
 superviser=supervise_dameon
 
 stop_pre() {
-	rc_pid=$(tomcat_check_pidfile $pidfile)
-
-	if [ -z "$rc_pid" ]; then
-		[ -n "$rc_fast" ] && return 0
-		echo "${name} not running? (check $pidfile)."
-		return 1
-	fi
-	
 	${java_command} stop
-	tomcat_wait_max_for_pid ${tomcat%%TOMCAT_VERSION%%_stop_timeout} ${rc_pid}
-	kill -KILL ${rc_pid} 2> /dev/null
-}
-
-tomcat_check_pidfile() {
-	_pidfile=$1
-	if [ -z "$_pidfile" ]; then
-		err 3 'USAGE: tomcat_check_pidfile pidfile'
-	fi
-	if [ ! -f $_pidfile ]; then
-		debug "pid file ($_pidfile): not readable."
-		return
-	fi
-	read _pid _junk < $_pidfile
-	if [ -z "$_pid" ]; then
-		debug "pid file ($_pidfile): no pid in file."
-		return
-	fi
-	if [ -n "`/usr/bin/procstat -c $_pid | grep -e "^ *$_pid.*$java_class"`" ]; then
-		echo -n $_pid
-	fi
-}
-
-tomcat_wait_max_for_pid() {
-	_timeout=$1
-	shift
-	_pid=$1
-	_prefix=
-	while [ $_timeout -gt 0 ] ; do
-		echo -n ${_prefix:-"Waiting (max $_timeout secs) for PIDS: "}$_pid
-		_prefix=", "
-		sleep 2
-		kill -0 $_pid 2> /dev/null || break
-		_timeout=$(($_timeout-2))
-	done
-	if [ -n "$_prefix" ]; then
-		echo "."
-	fi
 }
 
 depend(){

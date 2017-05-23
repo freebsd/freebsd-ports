@@ -1,7 +1,5 @@
 #!/sbin/openrc
 
-# REQUIRE: %%REQUIRE%%
-#
 # Optional settings:
 #
 # spawn_fcgi_app_args
@@ -48,7 +46,6 @@ fi
 command="/usr/local/bin/spawn-fcgi"
 command_args="-u ${spawn_fcgi_username} -g ${spawn_fcgi_groupname} ${_spawn_fcgi_bind} ${_spawn_fcgi_chroot} -P ${spawn_fcgi_pidfile} -- ${spawn_fcgi_app} ${spawn_fcgi_app_args}"
 pidfile=${spawn_fcgi_pidfile}
-procname=${spawn_fcgi_app}
 
 _allowed_env="PATH USER PHP_FCGI_CHILDREN PHP_FCGI_MAX_REQUESTS FCGI_WEB_SERVER_ADDRS"
 _allowed_env="${_allowed_env} ${spawn_fcgi_allowed_env}"
@@ -71,8 +68,6 @@ start_pre(){
 }
 
 stop_post(){
-    rm -f ${pidfile}
-
     if [ -n "${spawn_fcgi_bindsocket}" -a -S "${spawn_fcgi_chroot_dir}${spawn_fcgi_bindsocket}" ]; then
         rm -f ${spawn_fcgi_chroot_dir}${spawn_fcgi_bindsocket}
     fi

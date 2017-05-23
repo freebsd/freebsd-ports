@@ -1,8 +1,6 @@
 #!/sbin/openrc-run
 
 # Add the following lines to /etc/rc.conf to enable grafana
-# grafana4_enable (bool): 	Set to YES to enable grafana
-#				Default: NO
 # grafana4_conf (str):		grafana configration file
 #				Default: %%PREFIX%%/etc/grafana.cfg
 # grafana4_user (str):		grafana daemon user
@@ -19,9 +17,9 @@ name="grafana4"
 : ${grafana4_options:="-config=${grafana4_conf} -homepath=%%GRAFANAHOMEDIR%%"}
 
 pidfile="%%GRAFANAPIDDIR%%${name}.pid"
-procname="%%PREFIX%%/bin/grafana-server"
-command=/usr/sbin/daemon
-command_args="-f -c -p ${pidfile} ${procname} ${grafana4_options}"
+command="%%PREFIX%%/bin/grafana-server"
+command_args="-f -c ${grafana4_options}"
+supervisor=supervise_daemon
 
 depend(){
 	keyword -shutdown

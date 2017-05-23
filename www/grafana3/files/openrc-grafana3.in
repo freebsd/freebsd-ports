@@ -18,12 +18,11 @@ description=""
 : ${grafana3_options:="-config=${grafana3_conf} -homepath=%%GRAFANAHOMEDIR%%"}
 
 pidfile="%%GRAFANAPIDDIR%%${name}.pid"
-procname="%%PREFIX%%/bin/grafana-server"
-command=/usr/sbin/daemon
-command_args="-f -c -p ${pidfile} ${procname} ${grafana3_options}"
+command="%%PREFIX%%/bin/grafana-server"
+command_args="-f -c ${grafana3_options}"
+supervisor=supervise_daemon
 
-start_pre()
-{
+start_pre() {
     chown ${grafana3_user}:${grafana3_group} %%GRAFANADATADIR%%
     chown ${grafana3_user}:${grafana3_group} %%GRAFANALOGDIR%%
     chown ${grafana3_user}:${grafana3_group} %%GRAFANAHOMEDIR%%data/log/
