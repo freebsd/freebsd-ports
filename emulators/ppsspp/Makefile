@@ -2,8 +2,8 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.4
-PORTREVISION?=	2
+DISTVERSION?=	1.4.1
+PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -23,7 +23,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:b16f7e68:glslang/ext/glslang \
-		hrydgard:${PORTNAME}-lang:ed0bbfb:lang/assets/lang \
+		hrydgard:${PORTNAME}-lang:f32328a:lang/assets/lang \
 		KhronosGroup:SPIRV-Cross:6381b2f:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.9-26-g770365d:armips/ext/armips \
 		Kingcom:tinyformat:Release-2.0.1-7-gb7f5a22:tinyformat/ext/armips/ext/tinyformat
