@@ -1909,6 +1909,7 @@
     SUBDIR += rubygem-activeresource5
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-acts-as-taggable-on3
+    SUBDIR += rubygem-acts-as-taggable-on5
     SUBDIR += rubygem-acts_as_taggable
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-adsf

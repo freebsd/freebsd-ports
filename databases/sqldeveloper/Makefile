@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	4.1.1.19.59
+PORTVERSION=	4.2.0.17.089.1709
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
