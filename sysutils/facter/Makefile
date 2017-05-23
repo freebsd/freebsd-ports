@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libyaml-cpp.so:devel/yaml-cpp
 
+BROKEN_powerpc64=	fails to compile: collection.cc: 'stoi' was not declared in this scope
+
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 USE_LDCONFIG=	yes

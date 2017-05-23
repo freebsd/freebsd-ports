@@ -22,6 +22,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgphoto2.so:graphics/libgphoto2
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 
+BROKEN_powerpc64=	fails to link: libicuuc.so. undefined reference to __cxa_throw_bad_array_new_length
+
 USES=		desktop-file-utils gettext gmake jpeg libtool pathfix pkgconfig \
 		sqlite
 GNU_CONFIGURE=	yes

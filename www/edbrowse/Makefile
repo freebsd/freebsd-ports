@@ -17,6 +17,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libmozjs-24.so:lang/spidermonkey24 \
 		libcurl.so:ftp/curl
 
+BROKEN_powerpc64=	fails to link: html.o: undefined reference to std::__cxx11::basic_string
+
 USES=		compiler:c11 readline zip ssl
 
 OPTIONS_DEFINE=	DOCS

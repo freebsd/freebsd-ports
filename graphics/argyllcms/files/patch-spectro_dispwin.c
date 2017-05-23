@@ -4,10 +4,9 @@ Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=700253
 Forwarded: http://www.freelists.org/post/argyllcms/dispwin-bad-command-line-option-makes-dispwin-segfault
 Reviewed-by: 
 Last-Update: 2014-09-14
----
---- spectro/dispwin.c.orig	2015-05-01 10:15:55.000000000 +0200
-+++ spectro/dispwin.c	2015-08-09 14:48:49.778919000 +0200
-@@ -5547,6 +5547,7 @@
+--- spectro/dispwin.c.orig	2016-09-28 02:59:10 UTC
++++ spectro/dispwin.c
+@@ -6055,6 +6055,7 @@ main(int argc, char *argv[]) {
  
  			/* Display number */
  			else if (argv[fa][1] == 'd') {

@@ -21,6 +21,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libminizip.so:archivers/minizip \
 		liburiparser.so:net/uriparser
 
+BROKEN_powerpc64=	fails to compile: iomem_simple.h: redefinition of typedef 'open_file_func'
+
 OPTIONS_DEFINE=	EXAMPLES
 
 CMAKE_ARGS=	-DWITH_JAVA=OFF -DWITH_PYTHON=OFF -DWITH_SWIG=OFF

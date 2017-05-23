@@ -17,6 +17,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${CROSS_GCC}:devel/arm-none-eabi-gcc492
 
+BROKEN_powerpc64=	fails to compile: cmd_mem.c: internal compiler error: Segmentation fault
+
 CROSS_GCC=	arm-none-eabi-gcc-4.9.2
 
 EXTRA_PATCHES=	${WRKDIR}/cm-fx6-u-boot/u-boot/u-boot-2015.07-cm-fx6-3.patch:-p1

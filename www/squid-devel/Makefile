@@ -26,6 +26,8 @@ COMMENT=	HTTP Caching Proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to link: ext_time_quota_acl.cc: undefined reference to std::ctype
+
 CONFLICTS=	squid*-3.*
 
 USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz bdb

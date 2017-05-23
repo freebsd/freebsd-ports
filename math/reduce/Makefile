@@ -14,6 +14,8 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
+BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
+
 USES=		autoreconf:build gmake libtool ncurses
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--build=${TARGET_SDIR}
