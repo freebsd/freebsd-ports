@@ -1,4 +1,4 @@
 Log outgoing HTTP requests made from your application.  This gem is helpful for
 tracking API calls of third party gems that do not provide their own log output.
 
-WWW: http://github.com/trusche/httplog/
+WWW: https://github.com/trusche/httplog
