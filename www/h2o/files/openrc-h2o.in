@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# h2o_config    (string): Optional full path for h2o config file
+# h2o_perl      (string): Optional full path to perl executable
+
+name="h2o"
+description=""
+
+# defaults
+: ${h2o_config:="%%PREFIX%%/etc/h2o/h2o.conf"}
+: ${h2o_perl:="%%LOCALBASE%%/bin/perl"}
+
+command="%%PREFIX%%/bin/h2o"
+command_args="-m daemon -c ${h2o_config}"
+pidfile=`grep pid-file ${h2o_config} | cut -d' ' -f2`
+procname="%%LOCALBASE%%/bin/perl"
+
+depend(){
+	keyword -shutdown
+}

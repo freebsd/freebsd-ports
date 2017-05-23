@@ -1,0 +1,19 @@
+#!/sbin/openrc
+#
+# Add the following lines to /etc/rc.conf to enable mohawk:
+#                               Default is "NO".
+# mohawk_conf (path):           Set full path to config file.
+#                               Default is "%%PREFIX%%/etc/mohawk.conf".
+
+name="mohawk"
+description=""
+
+: ${mohawk_conf="%%PREFIX%%/etc/mohawk.conf"}
+
+command=%%PREFIX%%/sbin/mohawk
+command_args="-c ${mohawk_conf}"
+required_files=${mohawk_conf}
+
+depend(){
+	keyword -shutdown
+}

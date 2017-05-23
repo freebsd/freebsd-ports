@@ -1,0 +1,10 @@
+#!/sbin/openrc
+
+name="dhttpd"
+description=""
+
+command=%%PREFIX%%/sbin/dhttpd
+
+depend(){
+	keyword -shutdown
+}

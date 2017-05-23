@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+: ${butterfly_user="root"}
+: ${butterfly_args="--unsecure"}
+
+name="butterfly"
+descrption=""
+pidfile=/var/run/${name}.pid
+
+command="%%PREFIX%%/bin/butterfly.server.py"
+command_args="${butterfly_args}"
+supervisor=supervise-daemon
+command_user="${butterfly_user}"
+
+start_pre() {
+  if ! [ -r %%ETCDIR%%/ssl/butterfly_localhost.crt -a %%ETCDIR%%/ssl/butterfly_localhost.key -a %%ETCDIR%%/ssl/butterfly_ca.crt ]; then
+    %%PREFIX%%/bin/butterfly.server.py --generate-certs --host=localhost &&
+    einfo "${name}: generated the ssl certificate in %%ETCDIR%%/ssl"
+  fi
+}
