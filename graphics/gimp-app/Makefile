@@ -53,15 +53,11 @@ LIBS+=		-lexecinfo
 CPE_PRODUCT=	gimp
 CPE_VENDOR=	gnu
 
-<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
 
-PLIST_SUB+=	LIBVER=0.800.18
-=======
 SHEBANG_FILES=	plug-ins/pygimp/plug-ins/*.py
 
 PLIST_SUB+=	LIBVER=0.800.${PORTVERSION:E}
->>>>>>> upstream/master
 
 .if !defined(GIMP_SLAVE)
 
