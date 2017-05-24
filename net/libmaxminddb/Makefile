@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmaxminddb
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/maxmind/libmaxminddb/releases/download/${PORTVERSION}/
 
@@ -15,6 +15,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool
+USES=		gmake libtool
 
 .include <bsd.port.mk>
