@@ -1,3 +1,4 @@
+/you/have/to/check/what/makeplist/gives/you
 bin/cifsdd
 bin/ctdb
 bin/ctdb_diagnostics
@@ -77,6 +78,7 @@ etc/ctdb/nfs-linux-kernel-callout
 etc/ctdb/notify.d/README
 etc/ctdb/notify.sh
 etc/ctdb/statd-callout
+etc/rc.d/samba_server
 etc/sudoers.d/ctdb
 include/samba4/charset.h
 include/samba4/core/doserr.h
@@ -210,6 +212,7 @@ lib/pam_winbind.so
 %%PYTHON_SITELIBDIR%%/samba/com.so
 %%PYTHON_SITELIBDIR%%/samba/common.py
 %%PYTHON_SITELIBDIR%%/samba/credentials.so
+%%PYTHON_SITELIBDIR%%/samba/crypto.so
 %%PYTHON_SITELIBDIR%%/samba/dbchecker.py
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/atsvc.so
@@ -699,6 +702,7 @@ libexec/ctdb/tests/run_proc_test
 libexec/ctdb/tests/sock_daemon_test
 libexec/ctdb/tests/sock_io_test
 libexec/ctdb/tests/srvid_test
+libexec/ctdb/tests/test_mutex_raw
 libexec/ctdb/tests/transaction_loop
 libexec/ctdb/tests/update_record
 libexec/ctdb/tests/update_record_persistent
@@ -1403,6 +1407,7 @@ share/ctdb/tests/tool/ctdb.unban.002.sh
 share/ctdb/tests/tool/ctdb.unban.003.sh
 share/ctdb/tests/tool/ctdb.uptime.001.sh
 share/ctdb/tests/tool/scripts/local.sh
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%DATADIR%%/setup/DB_CONFIG
 %%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Attributes.txt
 %%DATADIR%%/setup/ad-schema/MS-AD_Schema_2K8_Classes.txt
