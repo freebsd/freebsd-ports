@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcl
-DISTVERSION=	8.7.a0.20170426
+DISTVERSION=	8.7.a0.20170524
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://core.tcl.tk/tcl/tarball/
@@ -32,13 +32,13 @@ OPTIONS_EXCLUDE+=	DTRACE
 
 OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
 
-FOSSIL_CHECKIN=	f590914719
+FOSSIL_CHECKIN=	f1c99ff14c
 
 PATCH_WRKSRC=	${WRKDIR}/Tcl_Source_Code
 WRKSRC=		${PATCH_WRKSRC}/unix
 
 ALL_TARGET=	all
-INSTALL_TARGET=	install-strip install-libraries
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	test-tcl
 
 USE_LDCONFIG=	yes
@@ -89,5 +89,9 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
+post-install:
+	# Make sure users of USES=tcl:87 are able to look up the library
+	${LN} -s libtcl${TCL_VER}.so ${STAGEDIR}${PREFIX}/lib/libtcl${PKGNAMESUFFIX}.so
+	${LN} -s libtcl${PKGNAMESUFFIX}.so ${STAGEDIR}${PREFIX}/lib/libtcl${PKGNAMESUFFIX}.so.1
 
 .include <bsd.port.mk>

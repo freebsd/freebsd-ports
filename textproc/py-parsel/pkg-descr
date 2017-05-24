@@ -1,0 +1,8 @@
+Parsel is a library to extract data from HTML and XML using XPath and CSS
+selectors.
+
+Features
+  - Extract text using CSS or XPath selectors
+  - Regular expression helper methods
+
+WWW: https://github.com/scrapy/parsel
