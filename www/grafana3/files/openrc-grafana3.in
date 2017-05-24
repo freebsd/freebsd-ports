@@ -1,4 +1,4 @@
-#!/sbin/openrc
+#!/sbin/openrc-run
 
 # Add the following lines to /etc/rc.conf to enable grafana
 # grafana3_conf (str):		grafana configration file

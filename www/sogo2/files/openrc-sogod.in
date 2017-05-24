@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name=sogod
+
+command=%%GNUSTEP_LOCAL_TOOLS%%/Admin/sogod
+pidfile=/var/run/sogo/sogo.pid
+
+start_pre(){
+	cd /; . %%GNUSTEP_MAKEFILES%%/GNUstep.sh; install -d -m 775 -g sogod /var/log/sogo /var/run/sogo"
+}
+
+stop_pre(){
+	cd /; . %%GNUSTEP_MAKEFILES%%/GNUstep.sh
+}
+
+restart_pre(){
+	cd /; . %%GNUSTEP_MAKEFILES%%/GNUstep.sh
+}
+
+depend(){
+	keyword -shutdown
+}

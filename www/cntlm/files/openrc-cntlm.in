@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable cntlm
+#
+# cntlm_config (path):   Config file. Defaults to /usr/local/etc/cntlm.conf.
+# cntlm_user (str):      User to run cntlm as
+# cntlm_flags (str):     Additional flags to pass to cntlm
+#
+
+name="cntlm"
+
+: ${cntlm_config="%%PREFIX%%/etc/cntlm.conf"}
+: ${cntlm_user="nobody"}
+
+pidfile=/var/run/${name}.pid
+command=%%PREFIX%%/bin/cntlm
+command_args="-c $cntlm_config"

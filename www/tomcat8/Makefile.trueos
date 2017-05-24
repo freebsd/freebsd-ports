@@ -1,1 +1,1 @@
-#USE_OPENRC_SUBR=	openrc-tomcat8
+USE_OPENRC_SUBR=	openrc-tomcat8

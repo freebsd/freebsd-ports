@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+name=%%APP_NAME%%
+
+command="%%PREFIX%%/sbin/%%APP_NAME%%.sh"
+command_args="start"
+
+# set defaults
+
+%%APP_NAME%%_user=${%%APP_NAME%%_user:-"www"}
+%%APP_NAME%%_group=${%%APP_NAME%%_group:-"www"}
+
+start_pre(){
+	if test -n "${%%APP_NAME%%_java_version}" ; then
+	    JAVA_HOME=$(JAVA_VERSION="${%%APP_NAME%%_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+	else
+	    JAVA_HOME=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+	fi
+
+	export JAVA_HOME
+}
+
+depend(){
+	keyword -shutdown
+}

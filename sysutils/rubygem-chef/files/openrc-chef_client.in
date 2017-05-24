@@ -1,0 +1,43 @@
+#!/sbin/openrc-run
+
+name="chef_client"
+description=""
+
+# Read configuration and set defaults
+: ${chef_client_configfile="%%PREFIX%%/etc/chef/client.rb"}
+: ${chef_client_interval="600"}
+: ${chef_client_splay="0"}
+: ${chef_client_logfile="/var/log/chef-client.log"}
+: ${chef_client_loglevel="info"}
+
+start_pre(){
+	if [ -f "$chef_client_configfile" ]
+		then
+			pidfile=`awk '/^[ \t]*pid_file[ \t]+/ { print $2 }' ${chef_client_configfile}`
+			: ${chef_client_pidfile=$pidfile}
+		else
+			: ${chef_client_pidfile="/var/run/chef-client.pid"}
+	fi
+
+	if [ -n "$chef_client_nodename" ]
+		then
+			nodename="-N ${chef_client_nodename}"
+		else
+			nodename=""
+	fi
+
+	if [ -n "$chef_client_server" ]
+		then
+			server="-N ${chef_client_server}"
+		else
+			server=""
+	fi
+}
+
+command="%%PREFIX%%/bin/chef-client"
+pidfile=${chef_client_pidfile}
+command_args="-c ${chef_client_configfile} ${nodename}${server}-d -i ${chef_client_interval} -s ${chef_client_splay} -L ${chef_client_logfile} -l ${chef_client_loglevel} -P ${chef_client_pidfile}"
+
+depend(){
+	keyword -shutdown
+}

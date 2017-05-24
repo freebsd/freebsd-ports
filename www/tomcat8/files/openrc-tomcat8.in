@@ -1,4 +1,4 @@
-#!/sbin/openrc
+#!/sbin/openrc-run
 
 # Configuration settings for tomcat8 in /etc/rc.conf:
 #
@@ -50,18 +50,7 @@
 # instances of tomcat8 with different configurations.
 #
 
-case $0 in
-/etc/rc*)
-	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
-	# so get the name of the script from $_file
-	name=$_file
-	;;
-*)
-	name=$0
-	;;
-esac
-
-name=${name##*/}
+name=tomcat8
 
 eval "_tomcat_java_home=\${${name}_java_home:-'%%JAVA_HOME%%'}"
 eval "_tomcat_catalina_user=\${${name}_catalina_user:-'%%TOMCAT_USER%%'}"

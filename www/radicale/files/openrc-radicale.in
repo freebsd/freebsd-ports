@@ -1,4 +1,4 @@
-#!/sbin/openrc
+#!/sbin/openrc-run
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 name="radicale"

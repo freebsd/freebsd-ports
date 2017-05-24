@@ -1,0 +1,77 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable lighttpd:
+#
+# lighttpd_conf (path):		Set full path to configuration file.
+#				Default is "%%PREFIX%%/etc/lighttpd/lighttpd.conf".
+# lighttpd_pidfile (path):	Set full path to pid file.
+#				Default is "/var/run/lighttpd.pid".
+#
+# Add the following lines to /etc/rc.conf for multiple instances:
+# (overrides lighttpd_conf and lighttpd_pidfile from above)
+#
+# lighttpd_instances (string):	Instances of lighttpd
+#				Default is "" (no instances).
+# lighttpd_${i}_conf (path):	Set full path to instance configuration file.
+#				Default is "%%PREFIX%%/etc/lighttpd/${i}.conf".
+# lighttpd_${i}_pidfile (path):	Set full path to instance pid file
+#				Default is "/var/run/lighttpd_${i}.pid".
+
+name="lighttpd"
+description=""
+
+: ${lighttpd_pidfile="/var/run/${name}.pid"}
+
+command=%%PREFIX%%/sbin/lighttpd
+extra_commands="configtest"
+command_args="-f ${lighttpd_conf}"
+pidfile=${lighttpd_pidfile}
+required_files=${lighttpd_conf}
+
+configtest() {
+	einfo "Performing sanity check on ${name} configuration:"
+	eval "${command} ${command_args} -t"
+}
+
+restart_pre(){
+	configtest
+}
+
+lighttpd_run_instance() {
+	_i="$1"
+	_rcmd="$2"
+	name=${_orig_name}_${_i}
+	eval lighttpd_conf=\"\${lighttpd_${_i}_conf:-"%%PREFIX%%/etc/lighttpd/${_i}.conf"}\"
+	eval lighttpd_pidfile=\"\${lighttpd_${_i}_pidfile:-"/var/run/lighttpd_${_i}.pid"}\"
+}
+
+start_pre(){
+	if [ -n "${lighttpd_instances}" ]; then
+		_orig_name="${name}"
+		_run_cmd="$1"
+		if [ $# -gt 0 ]; then
+			shift
+		fi
+		if [ -n "$*" ]; then
+			_run_instances="$*"
+		fi
+		if [ -n "${_run_instances}" ]; then
+			for _a in $_run_instances; do
+				for _in in ${lighttpd_instances}; do
+					if [ "$_a" = "$_in" ]; then
+						_runlist="${_runlist} ${_a}"
+					fi
+				done
+			done
+		else
+			_runlist="${lighttpd_instances}"
+		fi
+		for _in in ${_runlist}; do
+			lighttpd_run_instance $_in $_run_cmd
+		done
+	fi
+}
+
+depend(){
+	keyword -shutdown
+}
