@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="trafficserver"
+pidfile="/var/run/trafficserver/traffic_cop.lock"
+command=/%%PREFIX%%/bin/traffic_cop
+supervisor=supervise-daemon
+
+depend(){
+	keyword -shutdown
+}

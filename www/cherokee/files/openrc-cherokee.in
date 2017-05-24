@@ -14,4 +14,4 @@ command=%%PREFIX%%/sbin/cherokee
 command_args="-C ${cherokee_conf}"
 pidfile=/var/run/cherokee.pid
 required_files=${cherokee_conf}
-supervisor=supervise_daemon
+supervisor=supervise-daemon

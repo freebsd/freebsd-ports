@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# fabio_user (user):        Set user to run fabio.
+#                               Default is "nobody".
+
+name=fabio
+
+: ${fabio_user:="nobody"}
+
+pidfile=/var/run/fabio.pid
+command="%%PREFIX%%/sbin/fabio"
+command_args="-cfg %%PREFIX%%/etc/fabio.properties"
+command_user=${fabio_user}
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

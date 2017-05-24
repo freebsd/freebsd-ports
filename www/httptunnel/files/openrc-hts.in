@@ -1,0 +1,26 @@
+#!/sbin/openrc-run 
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# hts_port (string): [host:]port to listen for htc connection.
+#                    Set to 8888 by default.
+# hts_forward (string): Talk to this socket.
+# hts_device (string): *or* talk to this device.
+# hts_flags (string): Additional flags for hts.
+
+name="hts"
+command=%%PREFIX%%/bin/hts
+
+start_pre() {
+	if [ -z "$hts_device" -a -z "$hts_forward" ]; then
+		eerror 1 "Specify either hts_device or hts_forward"
+	fi
+}
+
+: ${hts_user="httptunnel"}
+: ${hts_port="8888"}
+
+[ -n "$hts_device" ] && command_args="-d $hts_device"
+[ -n "$hts_forward" ] && command_args="-F $hts_forward"
+command_args="$command_args $hts_port"

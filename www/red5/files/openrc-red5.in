@@ -1,0 +1,89 @@
+#!/sbin/openrc-run
+
+# Configuration settings for red5 in /etc/rc.conf:
+#
+# red5_home (str)
+#   Set to "%%RED5_HOME%%" by default.
+#   Set the directory red5 will be executed
+#
+# red5_stdout_log (str)
+#   Set to %%RED5_HOME%%/log/red5.log" by default.
+#   Set the location for the Tomcat process log (standard output)
+#
+# red5_stderr_log (str)
+#   Set to "%%RED5_HOME%%/log/red5.err" by default.
+#   Set the location for the Tomcat process log (error output)
+#
+# red5_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#   Eg: red5_java_opts="-Xmx768m -Xms256 -Xmn512m -Xss256k -XX:+AggressiveOpts \
+#	-XX:+DisableExpl    icitGC -XX:ParallelGCThreads=4 -XX:+UseConcMarkSweepGC \
+#	-XX:+UseParNewGC -XX:SurvivorRa    tio=16 -XX:TargetSurvivorRatio=90 \
+#	-XX:MaxTenuringThreshold=31 -Djava.net.preferIPv4Sta    ck=true
+#
+#
+# red5_user (str)
+#   Set to %%RED5_USER%% by default.
+#   Set the user that will execute the server.
+#  
+# red5_connection_token (str)
+#   Set to "" by default.
+#   Set the "port username pass" which will be used to shutdown the server
+#   Eg: "9999 red5user s3cr3t"
+#
+
+name="red5"
+pidfile="/var/run/red5.pid"
+java_command="%%LOCALBASE%%/bin/java"
+
+#constant options
+red5_logging_opts="-Dlogback.ContextSelector=org.red5.logging.LoggingContextSelector \
+			-Dcatalina.useNaming=true"
+red5_security_opts="-Djava.security.debug=failure"
+red5_mainclass="org.red5.server.Bootstrap"
+red5_stop_mainclass="org.red5.server.Shutdown"
+red5_jython_opt="-Dpython.home=lib"
+red5_debug_opts="-Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
+
+#configurable options
+red5_home="${red5_home:-"%%RED5_HOME%%"}"
+red5_stdout_log="${red5_stdout_log:-"%%RED5_HOME%%/log/red5.log"}"
+red5_stderr_log="${red5_stderr_log:-"%%RED5_HOME%%/log/red5.err"}"
+red5_stop_timeout="${red5_stop_timeout:-"10"}"
+
+red5_opts="${red5_logging_opts} ${red5_security_opts} ${red5_java_opts}"
+red5_stop_opts="-Djavax.net.ssl.keyStore=${red5_home}/conf/keystore.jmx \
+		-Djavax.net.ssl.keyStorePassword=password"
+red5_classpath="${red5_home}/red5-server-1.0-bootstrap.jar:${red5_home}/conf:${CLASSPATH}"
+
+red5_stop_cmd="${java_command} ${red5_jython_opt} -Dred5.root=${red5_home} \
+		${red5_logging_opts} ${red5_security_opts} ${red5_stop_opts} \
+		-cp ${red5_classpath} ${red5_stop_mainclass}"
+red5_user="${red5_user:-"%%RED5_USER%%"}"
+
+
+command="${java_command} ${red5_jython_opt} -Dred5.root=${red5_home} \
+		${red5_opts} -cp ${red5_classpath} ${red5_mainclass}"
+command_user=${red5_user}
+extra_commands="debug"
+supervisor=supervise-daemon
+
+start_pre() {
+	export RED5_HOME=${red5_home}
+}
+
+debug() {
+	${java_command} ${red5_jython_opt} -Dred5.root=${red5_home} \
+		${red5_opts} ${red5_debug_opts} -cp ${red5_classpath} ${red5_mainclass}"
+}
+
+stop_pre() {
+	if [ ${red5_connection_token} ]; then
+		${red5_stop_cmd}
+	fi
+}
+
+depend(){
+	keyword -start
+}
