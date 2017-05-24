@@ -4,7 +4,7 @@
    };
  #elif SANITIZER_FREEBSD
    struct __sanitizer_dirent {
-+#if __FreeBSD_version < 1200030
++#if __FreeBSD_version < 1200031
      unsigned int d_fileno;
 +#else
 +    unsigned long long d_fileno;
