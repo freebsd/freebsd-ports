@@ -49,6 +49,7 @@ PLIST_SUB+=	VER=${PORTVERSION:R} \
 		SHORT_VER=${PORTVERSION:R:R}${PORTVERSION:R:E}
 
 BROKEN_aarch64=		fails to configure: error:  Requires SSE2 Support
+BROKEN_armv6=		fails to configure: error:  Requires SSE2 Support
 BROKEN_powerpc64=	fails to configure: error:  Requires SSE2 Support
 BROKEN_sparc64=		fails to configure: error:  Requires SSE2 Support
 
