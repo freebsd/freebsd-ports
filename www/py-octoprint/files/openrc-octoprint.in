@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+name=octoprint
+description="OctoPrint 3D printer control daemon"
+
+: ${octoprint_host=0.0.0.0}
+: ${octoprint_port=5000}
+: ${octoprint_flags="--basedir %%HOME%% --host $octoprint_host --port $octoprint_port"}
+: ${octoprint_user=octoprint}
+: ${octoprint_group=octoprint}
+
+octoprint_env=PYTHON_EGG_CACHE=%%HOME%%
+
+command=%%PREFIX%%/bin/octoprint
+pidfile=/var/run/octoprint/octoprint.pid
+command_args=${octoprint_flags}
+command_user=${octoprint_user}
+supervisor=supervise-daemon
+
+start_pre() {
+        # octoprint_flags gets appended when we don't want it to.
+	if [ ! -d /var/run/$name ]; then
+		install -d -o ${octoprint_user} -g ${octoprint_group} -m 755 /var/run/$name
+	fi
+}
+
+depend(){
+	keyword -shutdown
+}

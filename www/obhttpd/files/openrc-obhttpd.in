@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable obhttpd:
+# obhttpd_flags="<set as needed>"
+
+name=obhttpd
+
+command="%%PREFIX%%/sbin/obhttpd"
+
+obhttpd_flags=${obhttpd_flags:-"-f %%PREFIX%%/etc/obhttpd.conf"}
+
+depend(){
+	keyword -shutdown
+}

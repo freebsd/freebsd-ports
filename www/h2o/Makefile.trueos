@@ -1,1 +1,1 @@
-USR_OPENRC_SUBR=	openrc-h2o
+USE_OPENRC_SUBR=	openrc-h2o

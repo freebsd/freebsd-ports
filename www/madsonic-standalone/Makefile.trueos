@@ -1,1 +1,1 @@
-USR_OPENRC_SUBR=	openrc-madsonic
+USE_OPENRC_SUBR=	openrc-madsonic

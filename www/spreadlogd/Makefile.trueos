@@ -1,1 +1,1 @@
-USR_OPENRC_SUBR=	openrc-spreadlogd
+USE_OPENRC_SUBR=	openrc-spreadlogd
