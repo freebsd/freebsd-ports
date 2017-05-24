@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flang
-DISTVERSION=	3.9-20170518
+DISTVERSION=	3.9-20170522
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -22,6 +22,9 @@ RUN_DEPENDS=	llvm39>=0:devel/llvm39 \
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON_amd64=	for now only builds and is supported on amd64
 
+OPTIONS_DEFINE=	TESTS
+TESTS_DESC=	build unit tests for flang
+
 USE_LDCONFIG=	${PREFIX}/flang/lib
 USES=		cmake:outsource compiler:c++11-lib libedit perl5 tar:xz \
 		shebangfix
@@ -30,7 +33,7 @@ USES+=		${_USES_PYTHON}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
-GH_TAGNAME=	a9ccdd7
+GH_TAGNAME=	5af07d4
 
 CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config39 \
 		-DCMAKE_CXX_COMPILER=${LOCALBASE}flang/bin/clang++ \
@@ -38,6 +41,11 @@ CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config39 \
 		-DCMAKE_Fortran_COMPILER=${LOCALBASE}/flang/bin/flang
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/flang
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MTESTS}
+CMAKE_ARGS+=	-DFLANG_INCLUDE_TESTS=ON
+.endif
 
 MAKE_JOBS_UNSAFE=	yes
 
