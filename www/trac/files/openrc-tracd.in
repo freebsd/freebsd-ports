@@ -26,7 +26,7 @@ tracd_env=${tracd_env:-""}
 tracd_args=${tracd_args:-""}
 
 command_args="--hostname=${tracd_listen} --port=${tracd_port} ${tracd_args}"
-supervisor=supervise_daemon
+supervisor=supervise-daemon
 
 required_dirs=${tracd_envdir}
 pidfile=${tracd_pidfile}

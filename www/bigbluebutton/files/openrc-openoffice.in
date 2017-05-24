@@ -1,0 +1,38 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# openoffice_user (username): Set to www by default.
+#               Set it to required username.
+# openoffice_group (group):   Set to www by default.
+#               Set it to required group.
+# openoffice_home (string):   Set to /var/spool/%%PORTNAME%% by default.
+#               Set it to required dir.
+# openoffice_bin (string):    Set by default - see below.
+#               Set it to soffice.bin path.
+# openoffice_args (string):  Set by default - see below.
+#               Set it to required command line args.
+#
+
+name="openoffice"
+
+: ${openoffice_user:="www"}
+: ${openoffice_group:="www"}
+: ${openoffice_home:="/var/spool/%%PORTNAME%%"}
+: ${openoffice_bin:="%%SOFFICEBIN%%"}
+: ${openoffice_args:="-accept=socket,host=localhost,port=8100;urp -headless -nofirststartwizard"}
+
+pidfile=/var/run/${name}.pid
+command="${openoffice_bin}"
+command_args="${openoffice_args}"
+supervisor=supervise-daemon
+command_user="${openoffice_user}"
+
+start_pre() {
+        export HOME=${openoffice_home} 
+}
+
+depend(){
+	keyword -shutdown
+}

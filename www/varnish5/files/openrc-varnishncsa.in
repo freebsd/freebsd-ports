@@ -33,7 +33,7 @@ name=varnishncsa
 command="%%PREFIX%%/bin/varnishncsa"
 command_args="-f -u varnishlog ${varnishncsa_flags}"
 pidfile=${varnishncsa_pidfile}
-supervisor=supervise_daemon
+supervisor=supervise-daemon
 
 start_pre() {
         # $varnishncsa_flags gets applied too early if we don't do this.

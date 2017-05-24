@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# graphiteapi_user      (string): optional username to run daemon under
+# graphiteapi_group     (string): optional groupname to run daemon under
+# graphiteapi_address   (string): optional IP:PORT tuple to bind to
+# graphiteapi_config    (string): optional full path for yaml config file
+# graphiteapi_flags     (string): optional flags to pass through to gunicorn
+
+name="%%GRAPHITEAPI_APP%%"
+
+# defaults
+: ${graphiteapi_user="%%GRAPHITEAPI_USER%%"}
+: ${graphiteapi_group="%%GRAPHITEAPI_GROUP%%"}
+: ${graphiteapi_address="127.0.0.1:5600"}
+: ${graphiteapi_config="%%ETCDIR%%/%%GRAPHITEAPI_APP%%.yaml"}
+: ${graphiteapi_flags="--workers 4"}
+
+# daemon
+command="%%PREFIX%%/bin/gunicorn"
+command_user=${graphiteapi_user}
+required_files="${graphiteapi_config}"
+command_args="graphite_api.app:app"
+command_args="${command_args} --group ${graphiteapi_group} --bind ${graphiteapi_address}"
+command_args="${command_args} --env TZ=UTC --env GRAPHITE_API_CONFIG=${graphiteapi_config}"
+command_args="${command_args} --worker-tmp-dir %%GRAPHITEAPI_TMPDIR%%"
+command_args="${command_args} --error-logfile %%GRAPHITEAPI_LOGDIR%%/error.log"
+command_args="${command_args} --access-logfile %%GRAPHITEAPI_LOGDIR%%/access.log"
+
+depend(){
+	keyword -shutdown
+}

@@ -19,7 +19,7 @@ name="grafana4"
 pidfile="%%GRAFANAPIDDIR%%${name}.pid"
 command="%%PREFIX%%/bin/grafana-server"
 command_args="-f -c ${grafana4_options}"
-supervisor=supervise_daemon
+supervisor=supervise-daemon
 
 depend(){
 	keyword -shutdown
