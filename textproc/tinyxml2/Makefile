@@ -6,7 +6,7 @@ PORTVERSION=	2.2.0
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small C++ XML Parser
 
 LICENSE=	ZLIB
