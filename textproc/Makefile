@@ -1290,6 +1290,7 @@
     SUBDIR += py-openpyxl
     SUBDIR += py-pandocfilters
     SUBDIR += py-paragrep
+    SUBDIR += py-parsel
     SUBDIR += py-parsimonious
     SUBDIR += py-pdfminer
     SUBDIR += py-pss
