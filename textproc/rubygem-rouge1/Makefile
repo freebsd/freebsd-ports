@@ -13,13 +13,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
+
 PLIST_FILES=	bin/rougify${PKGNAMESUFFIX}
 
 post-install:
-	@${MV} ${STAGEDIR}/${PREFIX}/bin/rougify \
-	       ${STAGEDIR}/${PREFIX}/bin/rougify${PKGNAMESUFFIX}
+	@${MV} ${STAGEDIR}${PREFIX}/bin/rougify ${STAGEDIR}${PREFIX}/bin/rougify${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>
