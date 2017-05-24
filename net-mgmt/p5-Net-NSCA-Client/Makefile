@@ -2,7 +2,7 @@
 
 PORTNAME=	Net-NSCA-Client
 PORTVERSION=	0.009002
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-Const-Fast>=0.013:devel/p5-Const-Fast \
 		p5-MooseX-StrictConstructor>=0.08:devel/p5-MooseX-StrictConstructor \
 		p5-MooseX-Types>=0.35:devel/p5-MooseX-Types \
 		p5-MooseX-Types-PortNumber>=0.02:devel/p5-MooseX-Types-PortNumber \
-		p5-namespace-clean>=0.04:devel/p5-namespace-clean
+		p5-namespace-clean>=0.04:devel/p5-namespace-clean \
+		p5-List-MoreUtils>0:lang/p5-List-MoreUtils
 BUILD_DEPENDS=	p5-Const-Fast>=0.013:devel/p5-Const-Fast \
 		p5-Convert-Binary-C>=0.76:converters/p5-Convert-Binary-C \
 		p5-Data-Rand>=0.0.4:devel/p5-Data-Rand \
