@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable gpxloggerd:
+#
+# gpxloggerd_host (str):	Set to "" by default, which is equal
+#				to "localhost:2947".
+#				Set to host:port if gpsd is not local.
+#
+# gpxloggerd_flags (str):	Set to "-d" by default.
+#
+# gpxloggerd_template (str):	Set to "/var/log/%d %B %Y - %H:%M.gpx"
+#				by default.
+#				
+#				See gpxloggerd(8) for more info.
+
+name=gpxloggerd
+
+# Set defaults
+template="${gpxloggerd_template:-/var/log/%d %B %Y - %H:%M.gpx}"
+pidfile=/var/run/$name.pid
+
+command=%%PREFIX%%/sbin/gpxloggerd
+command_args="-f \"${template}\" $gpxloggerd_host"
+command_user="${gpxloggerd_user:-nobody}"
+supervisor=supervise-daemon
+
+depend(){
+	keyword -shutdown
+}
