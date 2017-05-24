@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	10.0.0
-PORTREVISION=	1
+PORTVERSION=	10.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -13,7 +12,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe tar:bzip2 ssl
-USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \
+USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv intl json \
 		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
 		xsl wddx zip zlib
 WANT_PHP_WEB=	yes
