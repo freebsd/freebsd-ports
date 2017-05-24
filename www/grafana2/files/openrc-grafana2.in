@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable grafana
+# grafana2_conf (str):		grafana configration file
+#				Default: ${PREFIX}/etc/grafana.cfg
+# grafana2_user (str):		grafana daemon user
+#				Default: %%GRAFANA_USER%%
+# grafana2_group (str):		grafana daemon group
+#				Default: %%GRAFANA_GROUP%%
+
+name="grafana2"
+
+: ${grafana2_user:="%%GRAFANA_USER%%"}
+: ${grafana2_group:="%%GRAFANA_GROUP%%"}
+: ${grafana2_flags:=""}
+: ${grafana2_conf:="%%PREFIX%%/etc/${name}.conf"}
+: ${grafana2_options:="-config=${grafana2_conf} -homepath=%%GRAFANAHOMEDIR%%"}
+
+pidfile="%%GRAFANAPIDDIR%%${name}.pid"
+command="%%PREFIX%%/bin/grafana-server"
+command_user=${grafana2_user}
+command_args="-f -c ${grafana2_options}"
+supervisor=supervise-daemon
+
+start_pre() {
+    chown ${grafana2_user}:${grafana2_group} %%GRAFANADATADIR%%
+    chown ${grafana2_user}:${grafana2_group} %%GRAFANALOGDIR%%
+    chown ${grafana2_user}:${grafana2_group} %%GRAFANAHOMEDIR%%data/log/
+    install -d -o ${grafana2_user} %%GRAFANAPIDDIR%%
+}
+
+depend(){
+	keyword -shutdown
+}
