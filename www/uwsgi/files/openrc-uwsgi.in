@@ -1,4 +1,4 @@
-#!/sbin/openrc
+#!/sbin/openrc-run
 #
 # Add the following lines to /etc/rc.conf to enable uwsgi:
 #				
@@ -61,7 +61,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 	if [ -n "$2" ]; then
 		profile="$2"
 		if ! is_uwsgi_profile $profile; then
-			echo "$0: no such profile defined in uwsgi_profiles."
+			einfo "$0: no such profile defined in uwsgi_profiles."
 		        exit 1
 		fi
 		eval uwsgi_socket=\${uwsgi_${profile}_socket:-"/tmp/${name}-${profile}.sock"}
@@ -75,7 +75,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 		eval uwsgi_procname=\${uwsgi_${profile}_procname:-"${uwsgi_procname}"}
 	elif [ -n "$1" ]; then
 		for profile in ${uwsgi_profiles}; do
-	            echo "Processing ${name} profile: ${profile}"
+	            einfo "Processing ${name} profile: ${profile}"
 	            %%PREFIX%%/etc/rc.d/uwsgi $1 ${profile}
 	        done
 	        exit 0

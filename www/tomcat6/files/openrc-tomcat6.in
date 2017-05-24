@@ -1,4 +1,4 @@
-#!/sbin/openrc
+#!/sbin/openrc-run
 
 # Configuration settings for tomcat%%TOMCAT_VERSION%% in /etc/rc.conf:
 #

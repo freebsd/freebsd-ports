@@ -1,4 +1,4 @@
-#!/sbin/openrc
+#!/sbin/openrc-run
 
 name="webfsd"
 
