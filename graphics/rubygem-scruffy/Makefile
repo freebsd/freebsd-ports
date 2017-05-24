@@ -11,9 +11,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Beautiful Graphs for Ruby
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 
