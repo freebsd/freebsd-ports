@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang-certifi
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org

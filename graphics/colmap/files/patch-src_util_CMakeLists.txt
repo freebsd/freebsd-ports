@@ -1,3 +1,5 @@
+build: prevent Clang < 4.0 crashing on i386
+
 --- src/util/CMakeLists.txt.orig	2016-08-09 10:34:35 UTC
 +++ src/util/CMakeLists.txt
 @@ -23,3 +23,10 @@ COLMAP_ADD_TEST(random_test random_test.

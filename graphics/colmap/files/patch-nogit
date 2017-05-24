@@ -1,0 +1,28 @@
+build: make git dependency optional
+
+--- CMakeLists.txt.orig	2017-05-22 13:02:37 UTC
++++ CMakeLists.txt
+@@ -72,7 +72,7 @@ find_package(Ceres REQUIRED)
+ find_package(OpenGL REQUIRED)
+ find_package(GLUT REQUIRED)
+ find_package(Glew REQUIRED)
+-find_package(Git REQUIRED)
++find_package(Git)
+ 
+ if(CUDA_ENABLED)
+     find_package(CUDA QUIET)
+--- cmake/GenerateVersionDefinitions.cmake.orig	2017-05-22 13:02:37 UTC
++++ cmake/GenerateVersionDefinitions.cmake
+@@ -1,3 +1,4 @@
++if(Git_FOUND AND EXISTS "${CMAKE_SOURCE_DIR}/.git")
+ execute_process(COMMAND
+     "${GIT_EXECUTABLE}" rev-parse --short HEAD
+     WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+@@ -9,6 +10,7 @@ execute_process(COMMAND
+     WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+     OUTPUT_VARIABLE GIT_COMMIT_DATE
+     ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE)
++endif()
+ 
+ configure_file("${CMAKE_SOURCE_DIR}/src/util/version.h.in"
+                "${CMAKE_SOURCE_DIR}/src/util/version.h")
