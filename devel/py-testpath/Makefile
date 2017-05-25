@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	testpath
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jupyter
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
