@@ -3,6 +3,7 @@
 
 PORTNAME=	actionmailer
 PORTVERSION=	5.0.3
+PORTREVISION=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	50
@@ -17,7 +18,7 @@ RUN_DEPENDS=	rubygem-actionpack50>=${PORTVERSION}:www/rubygem-actionpack50 \
 		rubygem-actionview50>=${PORTVERSION}:devel/rubygem-actionview50 \
 		rubygem-activejob50>=${PORTVERSION}:devel/rubygem-activejob50 \
 		rubygem-mail>=2.5.4:mail/rubygem-mail \
-		rubygem-rails-dom-testing>=2.0:textproc/rubygem-rails-dom-testing
+		rubygem-rails-dom-testing-rails50>=2.0:textproc/rubygem-rails-dom-testing-rails50
 
 PORTSCOUT=	limit:^5\.0\.
 
