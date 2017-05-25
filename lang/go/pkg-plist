@@ -1386,6 +1386,7 @@ go/src/cmd/compile/internal/gc/testdata/break.go
 go/src/cmd/compile/internal/gc/testdata/chan.go
 go/src/cmd/compile/internal/gc/testdata/closure.go
 go/src/cmd/compile/internal/gc/testdata/cmp.go
+go/src/cmd/compile/internal/gc/testdata/cmpConst.go
 go/src/cmd/compile/internal/gc/testdata/compound.go
 go/src/cmd/compile/internal/gc/testdata/copy.go
 go/src/cmd/compile/internal/gc/testdata/ctl.go
@@ -1395,6 +1396,7 @@ go/src/cmd/compile/internal/gc/testdata/dupLoad.go
 go/src/cmd/compile/internal/gc/testdata/fp.go
 go/src/cmd/compile/internal/gc/testdata/gen/arithBoundaryGen.go
 go/src/cmd/compile/internal/gc/testdata/gen/arithConstGen.go
+go/src/cmd/compile/internal/gc/testdata/gen/cmpConstGen.go
 go/src/cmd/compile/internal/gc/testdata/gen/constFoldGen.go
 go/src/cmd/compile/internal/gc/testdata/gen/copyGen.go
 go/src/cmd/compile/internal/gc/testdata/gen/zeroGen.go
@@ -6268,6 +6270,9 @@ go/test/fixedbugs/issue19201.go
 go/test/fixedbugs/issue19217.go
 go/test/fixedbugs/issue19323.go
 go/test/fixedbugs/issue19743.go
+go/test/fixedbugs/issue20029.go
+go/test/fixedbugs/issue20097.go
+go/test/fixedbugs/issue20335.go
 go/test/fixedbugs/issue2615.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
