@@ -2,6 +2,7 @@
 
 PORTNAME=	aws-sdk-php
 PORTVERSION=	3.28.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	garga@FreeBSD.org
@@ -17,7 +18,7 @@ USE_PHP=	curl
 NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/${PORTNAME}
-	cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
