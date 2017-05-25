@@ -438,3 +438,4 @@ include/blis/f77_asum_sub.h
 include/blis/f77_dot_sub.h
 include/blis/f77_nrm2_sub.h
 lib/libblis.a
+lib/libblis.so

@@ -3,6 +3,7 @@
 
 PORTNAME=	blis
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -39,9 +40,11 @@ HAS_CONFIGURE=	yes
 
 .include <bsd.port.options.mk>
 
-# enable BLAS by default
+# enable BLAS and static/shared libs by default
 CONFIGURE_ARGS+=	--enable-blas \
-			--prefix=${LOCALBASE}
+			--prefix=${PREFIX} \
+			--enable-shared \
+			--enable-static
 #--prefix=PREFIX
 
 .if ${PORT_OPTIONS:MPARA}
@@ -71,6 +74,8 @@ ARCH=	haswell
 CONFIGURE_ARGS+=	${ARCH}
 
 post-install:
-	${MV}	${STAGEDIR}/${LOCALBASE}/lib/libblis-${PORTVERSION}-${ARCH}.a ${STAGEDIR}/${LOCALBASE}/lib/libblis.a
+	${MV} ${STAGEDIR}/${PREFIX}/lib/libblis-${PORTVERSION}-${ARCH}.a ${STAGEDIR}/${PREFIX}/lib/libblis.a
+	${MV} ${STAGEDIR}/${PREFIX}/lib/libblis-${PORTVERSION}-${ARCH}.so ${STAGEDIR}/${PREFIX}/lib/libblis.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libblis.so
 
 .include <bsd.port.mk>
