@@ -248,6 +248,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-ant.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-build-common-test.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-compiler.jar
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-compiler-client-embeddable.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-daemon-client.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-jslib-sources.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-jslib.jar
@@ -258,6 +259,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-runtime.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-script-runtime-sources.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-script-runtime.jar
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/source-sections-compiler-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-js-sources.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-js.jar
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-sources.jar
@@ -279,6 +281,8 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/third_party/prototype_license.txt
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/third_party/rhino_LICENSE.txt
 %%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/third_party/scala_license.txt
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/third_party/trove_license.txt
+%%IDEA_HOME%%/plugins/Kotlin/kotlinc/license/third_party/trove_readme_license.txt
 %%IDEA_HOME%%/plugins/Kotlin/lib/allopen-compiler-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/allopen-ide-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/android-lint.jar
@@ -298,6 +302,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/Kotlin/lib/sam-with-receiver-compiler-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/sam-with-receiver-ide-plugin.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/uast-common.jar
+%%IDEA_HOME%%/plugins/Kotlin/lib/uast-tests.jar
 %%IDEA_HOME%%/plugins/Kotlin/lib/uast-java.jar
 %%IDEA_HOME%%/plugins/android/lib/GoogleFeedback.jar
 %%IDEA_HOME%%/plugins/android/lib/adt-ui.jar
