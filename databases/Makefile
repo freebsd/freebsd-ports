@@ -916,6 +916,7 @@
     SUBDIR += rubygem-em-redis-unified
     SUBDIR += rubygem-familia
     SUBDIR += rubygem-globalid
+    SUBDIR += rubygem-globalid-rails50
     SUBDIR += rubygem-globalid-rails5
     SUBDIR += rubygem-her
     SUBDIR += rubygem-hiredis
