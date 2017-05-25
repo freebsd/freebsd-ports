@@ -2078,6 +2078,7 @@
     SUBDIR += rubygem-rails_serve_static_assets
     SUBDIR += rubygem-rails-settings-cached
     SUBDIR += rubygem-rails-settings-cached-rails5
+    SUBDIR += rubygem-rails-settings-cached-rails50
     SUBDIR += rubygem-rails_stdout_logging
     SUBDIR += rubygem-railties4
     SUBDIR += rubygem-railties5
