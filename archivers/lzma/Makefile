@@ -42,6 +42,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/DOC/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
