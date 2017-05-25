@@ -5493,6 +5493,7 @@
     SUBDIR += rubygem-rails-deprecated_sanitizer-rails5
     SUBDIR += rubygem-rails-deprecated_sanitizer-rails50
     SUBDIR += rubygem-rails-i18n
+    SUBDIR += rubygem-rails-i18n-rails50
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake
