@@ -13,7 +13,10 @@ COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba42-4.2.* samba44-4.4.*
+CONFLICTS?=		samba4[24-9]-4.*
+
+DEPRECATED=		not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
+EXPIRATION_DATE=	2017-03-07
 
 #EXTRA_PATCHES=		${PATCHDIR}/extra-patch-progress:-p1
 
