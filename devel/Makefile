@@ -5485,6 +5485,7 @@
     SUBDIR += rubygem-pygments.rb
     SUBDIR += rubygem-r18n-core
     SUBDIR += rubygem-rabl
+    SUBDIR += rubygem-rabl-rails50
     SUBDIR += rubygem-racc
     SUBDIR += rubygem-rack-mini-profiler
     SUBDIR += rubygem-rack-raw-upload
