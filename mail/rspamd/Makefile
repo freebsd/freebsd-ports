@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -18,10 +18,9 @@ BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd-devel
 
-OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN GD CGP
+OPTIONS_DEFINE=	GPERF HYPERSCAN GD CGP
 OPTIONS_DEFAULT=	GD
 GPERF_DESC=		Google perf-tools profiling
-REDIRECTOR_DESC=	Install HTTP redirector
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
 GD_DESC=		Enable libgd support for images fuzzy hashes
 CGP_DESC=		Install Communigate Pro(tm) helper
@@ -70,26 +69,6 @@ GH_ACCOUNT=	vstakhov
  CMAKE_ARGS+=		-DENABLE_HYPERSCAN=ON
  LIB_DEPENDS+=		libhs.so:devel/hyperscan
  ONLY_FOR_ARCHS=	amd64
-.endif
-
-.if ${PORT_OPTIONS:MREDIRECTOR}
- USE_PERL5+=	run
- CMAKE_ARGS+=	-DENABLE_REDIRECTOR=ON
- PLIST_SUB+=	REDIRECTOR=""
- USE_RC_SUBR+=	rspamd_redirector
- RUN_DEPENDS+=	\
-	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
-	p5-IO-String>=0:devel/p5-IO-String \
-	p5-XML-Parser>=0:textproc/p5-XML-Parser \
-	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
-	p5-POE-Component-Client-DNS>=0:dns/p5-POE-Component-Client-DNS \
-	p5-POE-Component-Client-HTTP>=0:www/p5-POE-Component-Client-HTTP \
-	p5-POE-Component-Server-HTTP>=0:www/p5-POE-Component-Server-HTTP \
-	p5-Cache-Memcached-Fast>=0:databases/p5-Cache-Memcached-Fast \
-	p5-Proc-PidUtil>=0:sysutils/p5-Proc-PidUtil \
-	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon
-.else
- PLIST_SUB+=	REDIRECTOR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCGP}
