@@ -1,0 +1,5 @@
+hamlit-reails provides hamlit generators for Rails 4.  It also enables hamlit as
+the templating engine and "hamlit:html2haml" rake task that converts erb files
+to haml.
+
+WWW: https://github.com/mfung/hamlit-rails
