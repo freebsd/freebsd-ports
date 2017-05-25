@@ -5670,6 +5670,7 @@
     SUBDIR += rubygem-web-console2
     SUBDIR += rubygem-webby
     SUBDIR += rubygem-webpacker-rails5
+    SUBDIR += rubygem-webpacker-rails50
     SUBDIR += rubygem-will_paginate
     SUBDIR += rubygem-windows_error
     SUBDIR += rubygem-wmi-lite
