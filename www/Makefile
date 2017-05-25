@@ -2092,6 +2092,7 @@
     SUBDIR += rubygem-redis-rack1
     SUBDIR += rubygem-redis-rails
     SUBDIR += rubygem-redis-rails-rails5
+    SUBDIR += rubygem-redis-rails-rails50
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-responders
     SUBDIR += rubygem-responders-rails5
