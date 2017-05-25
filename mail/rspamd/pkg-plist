@@ -5,7 +5,6 @@ bin/rspamadm-%%RSPAMDVERSION%%
 bin/rspamadm
 bin/rspamc-%%RSPAMDVERSION%%
 bin/rspamc
-%%REDIRECTOR%%bin/rspamd-redirector
 %%CGP%%bin/rspamd-cgp-helper
 @sample %%ETCDIR%%/2tld.inc.sample
 @sample %%ETCDIR%%/mime_types.inc.sample

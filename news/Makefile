@@ -23,6 +23,7 @@
     SUBDIR += husky-htick
     SUBDIR += husky-huskylib
     SUBDIR += husky-smapi
+    SUBDIR += husky-sqpack
     SUBDIR += ifmail
     SUBDIR += inn
     SUBDIR += knews

@@ -17,7 +17,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		gettext perl5
+USES=		gettext groff perl5
 DESTDIRNAME=	RPM_BUILD_ROOT
 
 # Make sure that the whole directory tree exists.
