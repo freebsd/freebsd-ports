@@ -1,0 +1,21 @@
+--- Makefile.in.orig	2017-05-25 17:18:25 UTC
++++ Makefile.in
+@@ -23,6 +23,7 @@ CFLAGS=		@CFLAGS@
+ LDFLAGS=	@LDFLAGS@
+ 
+ INSTALL=	@INSTALL@
++INSTALL_PROGRAM=	@INSTALL_PROGRAM@
+ 
+ # NetBSD
+ #CFLAGS+= -Wall \
+@@ -58,8 +59,8 @@ all: @BUILD_APPS@
+ install: @BUILD_APPS@
+ 	$(INSTALL) -d $(DESTDIR)/$(bindir)
+ 	for app in @BUILD_APPS@; do \
+-		echo "$(INSTALL) $$app $(DESTDIR)/$(bindir)/$$app"; \
+-		$(INSTALL) $$app $(DESTDIR)/$(bindir)/$$app; \
++		echo "$(INSTALL_PROGRAM) $$app $(DESTDIR)/$(bindir)/$$app"; \
++		$(INSTALL_PROGRAM) $$app $(DESTDIR)/$(bindir)/$$app; \
+ 	done
+ 
+ depend:

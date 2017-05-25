@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	udfclient
-PORTVERSION=	0.7.5
-PORTREVISION=	2
+PORTVERSION=	0.8.8
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/ \
-		NETBSD \
+MASTER_SITES=	OPENBSD/distfiles \
 		LOCAL/miwi
 DISTFILES=	UDFclient.${PORTVERSION}.tgz
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Tools for UDF filesystem
 
+LICENSE=	ClArtistic
+
 WRKSRC=		${WRKDIR}/UDFclient.${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 
 OPTIONS_DEFINE=	FUSE DEBUG
 FUSE_DESC=	udfclientfs via FUSE
@@ -39,6 +38,7 @@ MASTER_SITES+=	http://www.icyb.net.ua/~avg/distfiles/:fuse \
 		LOCAL/avg:fuse
 DISTFILES+=	${UDFCLIENTFS_NAME}-${UDFCLIENTFS_VERSION}.tgz:fuse
 EXTRA_PATCHES+=	${UDFCLIENTFS_DIR}/${UDFCLIENTFS_NAME}.patch
+PATCH_ARGS+=	--ignore-whitespace
 
 USES+=		fuse
 
@@ -53,7 +53,5 @@ post-patch:
 .if ${PORT_OPTIONS:MFUSE}
 	${CP} ${UDFCLIENTFS_DIR}/${UDFCLIENTFS_NAME}.c ${WRKSRC}
 .endif
-	@${REINPLACE_CMD} -e 's,$$(bindir),$$(DESTDIR)$$(bindir),g' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
