@@ -5491,6 +5491,7 @@
     SUBDIR += rubygem-rack-raw-upload
     SUBDIR += rubygem-rails-deprecated_sanitizer
     SUBDIR += rubygem-rails-deprecated_sanitizer-rails5
+    SUBDIR += rubygem-rails-deprecated_sanitizer-rails50
     SUBDIR += rubygem-rails-i18n
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
