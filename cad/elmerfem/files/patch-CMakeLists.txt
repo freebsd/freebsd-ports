@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-10-26 13:01:22 UTC
+--- CMakeLists.txt.orig	2017-05-19 12:19:26 UTC
 +++ CMakeLists.txt
-@@ -265,7 +265,7 @@ ADD_SUBDIRECTORY(umfpack)
+@@ -264,7 +264,7 @@ ADD_SUBDIRECTORY(umfpack)
  ADD_SUBDIRECTORY(fhutiter)
  ADD_SUBDIRECTORY(meshgen2d)
  ADD_SUBDIRECTORY(fem)
