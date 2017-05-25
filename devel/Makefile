@@ -5362,6 +5362,7 @@
     SUBDIR += rubygem-jasmine-core
     SUBDIR += rubygem-jbuilder
     SUBDIR += rubygem-jbuilder-rails5
+    SUBDIR += rubygem-jbuilder-rails50
     SUBDIR += rubygem-jekyll-coffeescript
     SUBDIR += rubygem-jeweler
     SUBDIR += rubygem-jira-ruby
