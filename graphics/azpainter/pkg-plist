@@ -158,6 +158,7 @@ bin/azpainter
 %%NLS%%%%DATADIR%%/tr/pt_BR.mtr
 %%NLS%%%%DATADIR%%/tr/ru.mtr
 %%NLS%%%%DATADIR%%/tr/uk.mtr
+%%NLS%%%%DATADIR%%/tr/zh_CN.mtr
 share/applications/azpainter.desktop
 share/icons/hicolor/48x48/apps/application-x-azpainter-apd.png
 share/icons/hicolor/48x48/apps/azpainter.png

@@ -1,261 +1,130 @@
---- translation/en.orig	2017-03-11 02:09:28 UTC
+--- translation/en.orig	2017-05-20 02:07:36 UTC
 +++ translation/en
-@@ -4,7 +4,7 @@
- 3=Yes
- 4=No
- 5=Save
--6=NoSave
-+6=Do Not Save
- 7=Abort
- 8=Don't show this message
- 9=Open
-@@ -71,10 +71,10 @@
- # status bar - help
+@@ -24,7 +24,7 @@
+ 1002=Select Directory
+ 1003=Select Color
+ 1004=Select Font
+-2000=File already exists.\nDo you want to save overwrite it?
++2000=File already exists.\nDo you want to overwrite it?
+ 2001=Filename is not correct.
  
- [8]
--0=[Shift: change brush size] [Ctrl: ruler settings] [Alt: select color with spuit]
-+0=[Shift: change brush size] [Ctrl: ruler settings] [Alt: select color with color picker]
- +=[Shift: ignore source layer of the fill tool] [Ctrl: determine by "transparent"]
- +=[click to input text] [click when inputting to change position]
--+=[Shift:  horizontally] [Ctrl: vertically]
-++=[Shift: horizontally] [Ctrl: vertically]
- +=[+Ctrl when pressed: delete selection]
- +=[+Shift when pressed: overwrite] [Ctrl: hide selection frame while dragging]
- +=[click to paste if there is an image] [Ctrl: clear the image and reselect]
-@@ -205,7 +205,7 @@
+ #-----------------
+@@ -122,7 +122,7 @@
+ +=Circle
+ +=Broken line
+ +=Central point
+-+=Bezier curve
+++=Bézier curve
+ +=Spline curve
+ 100=Rectangle
+ +=Ellipse
+@@ -188,7 +188,7 @@
+ +=multiplication
+ +=addition
+ +=subtraction
+-+=screen(color filter)
+++=screen (color filter)
+ +=overlay
+ +=hard light
+ +=soft light
+@@ -279,7 +279,7 @@
+ +=HLS
+ +=demitint
+ 100=segment setting
+-+=segment (3〜64、0 for biggest)
+++=segment (3~64, 0 for biggest)
+ 1000=set color here(&S) [Shift+left click]
+ +=procure this color(&P) [left click]
+ 1100=Edit(&E)...
+@@ -291,7 +291,7 @@
+ +=Display width setting(&O)...
+ 1200=Change counts
+ +=counts
+-+=Current palette will be turned all white,OK?
+++=Current palette will be turned all white, OK?
+ +=display setting
+ +=set width and height\n(text except of number is treated as a separate mark)\nexample: 12,16
  
- [107]
- 0=Nearest neighbor
--+=mitchell
-++=Mitchell
- +=Lagrange
- +=Lanczos2
- +=Lanczos3
-@@ -343,7 +343,7 @@
- 0=Add(&A)
- +=Delete(&D) [Shift+left click]
- 100=Add
--+=Please enter brush size.\nMultiple additions by '/'. (exsample: 1.0/2.4/100)
-++=Please enter brush size.\nMultiple additions by '/'. (example: 1.0/2.4/100)
+@@ -442,7 +442,7 @@
+ # gradation
  
- #----------------------
- # brush - brush list
-@@ -385,10 +385,10 @@
- +=density
- +=painting
- +=correction
--+=mininum size (%)
--+=mininum density (%)
-++=minimum size (%)
-++=minimum density (%)
- +=point interval (1.0 = radius)
--+=mininum size (%)
-++=minimum size (%)
- +=position maximum distance
- +=preset
- +=color replenishment
-@@ -419,7 +419,7 @@
- +=linear one point
- +=linear two points
+ [1101]
+-0=painting col -> background col
++0=painting color -> background color
+ +=Custom
+ +=Reverse
+ +=Repeat
+@@ -491,7 +491,7 @@
  
--240=regist to %c
-+240=register to %c
- +=reset
+ [1105]
+ 0=Line
+-+=Bezier curve
+++=Bézier curve
+ +=fade in
+ +=fade out
+ +=take out
+@@ -533,8 +533,8 @@
+ 0=grid setting
+ +=Grid
+ +=Dividing line
+-+=horz
+-+=vert
+++=horizontal
+++=vertical
  
- 
-@@ -521,8 +521,8 @@
- +=up-down drag to change zoom rate
- 200=Scroll
- +=up-down drag to change zoom rate
--+=spuit (painting color)
--+=spuit (background color)
-++=color picker (painting color)
-++=color picker (background color)
- 
- #---------------------
- # grid setting
-@@ -556,7 +556,7 @@
- +=delete selected one
- +=insert selection space
- +=delete selection space
--+=generate gradation in  selection space
-++=generate gradation in selection space
- +=RGB value (example: 255,0,128)\npress Enter to set to selected one
- +=left click: select 1\nright click/Ctrl+left: select 2
- 
-@@ -581,7 +581,7 @@
- +=If blend mode is other than "normal", it can not be merged correctly.\nHowever, except when the lower layer is completely opaque.
- +=Edit registration list(&E)
- +=Edit layer name registration list
--+=Please specify multiple list of layer names, separated by ";".\n[exsample] layer1;layer2;layer3
-++=Please specify multiple list of layer names, separated by ";".\n[example] layer1;layer2;layer3
- 
- 200=all visible layers
- +=all visible layers in folder
-@@ -601,7 +601,7 @@
+ #--------------------
+ # new image
+@@ -603,7 +603,7 @@
  +=value
  +=repeat (always)
  +=monochrome
--+=+Ctrl : Seperate points from current to pressed position uniformly-spaced\n+Shift : set current color to pressed position\n+Alt : delete point
-++=+Ctrl : Separate points from current to pressed position uniformly-spaced\n+Shift : set current color to pressed position\n+Alt : delete point
+-+=+Ctrl : Separate points from current to pressed position uniformly-spaced\n+Shift : set current color to pressed position\n+Alt : delete point
+++=+Ctrl: Separate points from current to pressed position uniformly-spaced\n+Shift: set current color to pressed position\n+Alt: delete point
  
  100=delete current point(&D)
  +=divide space between the right one(&V)
-@@ -715,7 +715,7 @@
- [2015]
- 0=Text drawing
- +=Preview
--+=- Left click inside canvas to change the drawing position.\n- In text input box,use [Ctrl+up/down/left/right] to move the drawing position 1 px.
-++=- Left click inside canvas to change the drawing position.\n- In text input box, use [Ctrl+up/down/left/right] to move the drawing position 1 px.
- +=Style
- +=Bold
- +=Italic
-@@ -736,10 +736,10 @@
- +=Oblique
+@@ -693,7 +693,7 @@
+ # selection expand/shrink
  
- #-----------------------
--# Shrotcut key setting
-+# Shortcut key setting
+ [2013]
+-0=selection expand&shrink
++0=selection expand and shrink
+ +=Number of pixels (shrink with negative values)
  
- [2016]
--0=Shrotcut key setting
-+0=Shortcut key setting
- +=Command
- +=Key
- +=Set
-@@ -781,13 +781,13 @@
- +=change brush size (left-right drag)
- +=change registered brush size (left-right drag)
- +=middle color generate (click 2 points)
--+=color change (color selected with spuit-->painting color)
--+=color change (color selected with spuit-->transparent)
-++=color change (color selected with color picker -> painting color)
-++=color change (color selected with color picker -> transparent)
- +=select grabbed layer
- 
--1200=select:rectangle
--+=select:polygon
--+=select:freehand
-+1200=select: rectangle
-++=select: polygon
-++=select: freehand
- +=move image
- +=copy image
- +=move selection position
-@@ -826,7 +826,7 @@
- +=double-click the item in the filter list to execute it
- 
- 300=one level of zoom rate (~100%)
--+=one level of zoom rate  (100%~)
-++=one level of zoom rate (100%~)
- +=one level of canvas rotation
- +=every pixel when changing brush size using left-right drag
- 
-@@ -840,7 +840,7 @@
- +=wheel down
- +=wheel left
- +=wheel right
--+=<default>
-++=(default)
- +=tool action
- +=other action
+ #---------------------------------
+@@ -848,7 +848,7 @@
  +=command
-@@ -857,10 +857,10 @@
- 600=hotspot position
- +=load image
- +=Default
--+=width,height is of 1~32px.\nblack and white color of the image will remain black and white.\nOther colors will be transfromed to transparent.
-++=width, height is of 1~32px.\nblack and white color of the image will remain black and white.\nOther colors will be transformed to transparent.
+ 450=Confirm button number (Please push button on this)
  
- 1000=a non-existing directory is set as working directory.
--+=Units can be used for K,M,G. Byte without unit.\nMaximum 1 GB.\n0 to output to all files.
-++=Units can be used for K, M, G. Byte without unit.\nMaximum 1 GB.\n0 to output to all files.
- 
- #----------------------
- # filter
-@@ -890,7 +890,7 @@
- +=angle R
- +=angle G
- +=angle B
--+=set angle of G,B to the same as R
-++=set angle of G, B to the same as R
- +=grayscale
- +=thickness
- +=thickness min
-@@ -905,8 +905,8 @@
+-500=[*] applied when next time starting up
++500=[*] applied upon program restart
+ +=working directory
+ +=GUI font
+ +=panel font
+@@ -907,8 +907,8 @@
  +=strength
  +=amount
  +=density
--+=random:radius min(%)
--+=random:density min(%)
-++=random: radius min(%)
-++=random: density min(%)
+-+=random: radius min(%)
+-+=random: density min(%)
+++=random: radius min (%)
+++=random: density min (%)
  +=type of point
  +=distance
  +=reverse
-@@ -924,9 +924,9 @@
- +=emphasis
- +=number of colors
- +=aspect ratio
--+=space:random
--+=thickness:random
--+=length:random
-++=space: random
-++=thickness: random
-++=length: random
- +=wave length
- +=thickness fade out
- +=simple preview
-@@ -956,14 +956,14 @@
- +=random (color phase)
- +=random (RGB)
+@@ -1167,12 +1167,12 @@
+ +=Lens blur...
  
--1050=outter side of opacity area
-+1050=outer side of opacity area
- +=inner side of opacity area
+ +=Clouds...
+-+=Dot pattern(1)...
+-+=Dot pattern(2)...
+++=Dot pattern (1)...
+++=Dot pattern (2)...
+ +=Random point draw...
+ +=Draw points along the rim...
+ +=Border...
+-+=Horizontal&&vertical lines...
+++=Horizontal and vertical lines...
+ +=Plaid...
  
- 1060=slant
- +=horizontal
- +=vertical
- 
--1070=mininum value
-+1070=minimum value
- +=middle value
- +=max value
- 
-@@ -979,7 +979,7 @@
- +=others
- 
- 1110=brush (anti-aliasing)
--+=brush (no anto-aliasing)
-++=brush (no anti-aliasing)
- +=1px dot pen
- 
- 
-@@ -1119,7 +1119,7 @@
- +=Blur
- +=Paint
- +=Paint (comic)
--+=Pixelate
-++=Pixelization
- +=Outline
- +=Effect
- +=Transformation
-@@ -1194,7 +1194,7 @@
- +=Oil painting...
- +=Emboss...
- +=Noise...
--+=Iffusion...
-++=Effusion...
- +=Scratch...
- +=Median...
- +=Blur...
-@@ -1207,7 +1207,7 @@
- 
- +=Extraction of line drawing
- +=1px dot line correction
--+=Antialiasing...
-++=Anti-aliasing...
- +=Edging...
- +=Three-dimensional frame...
- +=Shift...
+ +=Concentration line...
