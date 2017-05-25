@@ -5597,11 +5597,13 @@
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-spring-rails5
+    SUBDIR += rubygem-spring-rails50
     SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-sprockets-es6
     SUBDIR += rubygem-sprockets-helpers
     SUBDIR += rubygem-sprockets-rails
     SUBDIR += rubygem-sprockets-rails-rails5
+    SUBDIR += rubygem-sprockets-rails-rails50
     SUBDIR += rubygem-sprockets-sass
     SUBDIR += rubygem-sprockets3
     SUBDIR += rubygem-spruz
