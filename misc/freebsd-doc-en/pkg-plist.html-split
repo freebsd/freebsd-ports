@@ -100,6 +100,15 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s08.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/trademarks.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-building.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-head.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-mirrors.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-prep.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-stable.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-terms.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-wrapup.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/Configuration.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/build.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/index.html
@@ -741,7 +750,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-ftp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-rsync.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors.html
@@ -815,12 +823,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/swap-encrypting.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/synching.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tcpwrappers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-src.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
@@ -911,6 +919,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/keeping-up.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/legalnotice.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/licenses.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-categories.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-comment.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/makefile-depend.html
@@ -1007,6 +1016,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gnome.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-go.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gperf.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-grantlee.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gssapi.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-horde.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-iconv.html
@@ -1017,11 +1027,14 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-libarchive.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-libedit.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-libtool.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-localbase.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-lua.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-lxqt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-makeinfo.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-makeself.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-mate.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-meson.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-metaport.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-mono.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-motif.html
@@ -1042,6 +1055,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qmail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qmake.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-readline.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-samba.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-scons.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-shared-mime-info.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-shebangfix.html
@@ -1054,6 +1068,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-twisted.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-uidfix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-uniquefiles.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-varnish.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-webplugin.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-zip.html
