@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinyxml2
-PORTVERSION=	2.2.0
+PORTVERSION=	4.0.1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
@@ -11,6 +11,7 @@ COMMENT=	Small C++ XML Parser
 
 LICENSE=	ZLIB
 
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=ON
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USES=		cmake dos2unix
@@ -20,8 +21,8 @@ GH_ACCOUNT=	leethomason
 PLIST_FILES=	include/tinyxml2.h \
 		lib/libtinyxml2.a \
 		lib/libtinyxml2.so \
-		lib/libtinyxml2.so.2 \
-		lib/libtinyxml2.so.2.2.0 \
+		lib/libtinyxml2.so.4 \
+		lib/libtinyxml2.so.4.0.1 \
 		libdata/pkgconfig/tinyxml2.pc
 PORTEXAMPLES=	xmltest.cpp resources
 

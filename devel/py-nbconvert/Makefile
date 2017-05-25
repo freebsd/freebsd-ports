@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nbconvert
-PORTVERSION=	5.1.1
+PORTVERSION=	5.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}bleach>=0:www/py-bleach \
 		${PYTHON_PKGNAMEPREFIX}entrypoints>=0.2.2:devel/py-entrypoints \
-		${PYTHON_PKGNAMEPREFIX}jupyter_client>=0:devel/py-jupyter_client \
+		${PYTHON_PKGNAMEPREFIX}jupyter_client>=4.2:devel/py-jupyter_client \
 		${PYTHON_PKGNAMEPREFIX}jupyter_core>=0:devel/py-jupyter_core \
 		${PYTHON_PKGNAMEPREFIX}mistune>=0:textproc/py-mistune \
 		${PYTHON_PKGNAMEPREFIX}nbformat>=0:devel/py-nbformat \

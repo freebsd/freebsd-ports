@@ -19,7 +19,6 @@ LIB_DEPENDS=	libtre.so:textproc/libtre \
 RUN_DEPENDS=	iwidgets>=0:x11-toolkits/iwidgets
 
 BROKEN_aarch64=		fails to link: missing sbrk
-BROKEN_powerpc64=	fails to compile: gmp.h: 'UINT_MAX' undeclared
 
 USES=		gettext localbase tk:wrapper,run
 CONFIGURE_ENV=	ac_cv_lib_tre_regwcomp=yes
