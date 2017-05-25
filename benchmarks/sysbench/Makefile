@@ -2,41 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	sysbench
-PORTVERSION=	0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	benchmarks databases
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Modular, cross-platform, and multi-threaded benchmark tool
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Scriptable database and system performance benchmark
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	akopytov
-GH_TAGNAME=	a099b20
+BUILD_DEPENDS=	xxd:editors/vim
+LIB_DEPENDS=	libck.so:devel/concurrencykit \
+		libluajit-5.1.so:lang/luajit
 
-USES=		autoreconf libtool lua
+OPTIONS_DEFINE=	LFS MYSQL PGSQL
+OPTIONS_DEFAULT=LFS MYSQL
+
+CONFIGURE_ARGS=	--with-system-ck --with-system-luajit
 GNU_CONFIGURE=	yes
+USES=		autoreconf gmake libtool pkgconfig
 
-OPTIONS_DEFINE=	LARGEFILE MYSQL PGSQL DOCS
-OPTIONS_DEFAULT=	LARGEFILE MYSQL
+GH_ACCOUNT=	akopytov
+USE_GITHUB=	yes
 
-LARGEFILE_DESC=			Largefile support
-LARGEFILE_CONFIGURE_ENABLE=	largefile
+LFS_CONFIGURE_ENABLE=	largefile
+MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_USES=		mysql
+PGSQL_CONFIGURE_WITH=	pgsql
+PGSQL_USES=		pgsql
 
-MYSQL_CONFIGURE_ON=	--with-mysql
-MYSQL_CONFIGURE_OFF=	--without-mysql
-MYSQL_USES=	mysql
-
-PGSQL_CONFIGURE_ON=	--with-pgsql
-PGSQL_USES=	pgsql
-
-post-configure:
-	@${REINPLACE_CMD} -e 's/^program_transform_name/#/' \
-	${WRKSRC}/Makefile ${WRKSRC}/sysbench/Makefile
-
-post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/tests
-	(cd ${WRKSRC}/sysbench/tests && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/tests)
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|__linux__|__FreeBSD__|' ${WRKSRC}/src/sb_util.h
 
 .include <bsd.port.mk>
