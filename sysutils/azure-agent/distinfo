@@ -1,2 +1,3 @@
-SHA256 (Azure-WALinuxAgent-2.0.16-2.0_GH0.tar.gz) = abb51b068a1c38dd50323722e05bd1066dc179be07e9e8dd1a3d0c92c46724ea
-SIZE (Azure-WALinuxAgent-2.0.16-2.0_GH0.tar.gz) = 100991
+TIMESTAMP = 1495743874
+SHA256 (Azure-WALinuxAgent-v2.2.8_GH0.tar.gz) = 8d8863199ac7d6eca8cbaaa9f843ab3da853060bb2588141e85a6134d2e07b5f
+SIZE (Azure-WALinuxAgent-v2.2.8_GH0.tar.gz) = 638305
