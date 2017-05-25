@@ -5587,6 +5587,7 @@
     SUBDIR += rubygem-simple-navigation-rails50
     SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-simple_form-rails5
+    SUBDIR += rubygem-simple_form-rails50
     SUBDIR += rubygem-simplecov
     SUBDIR += rubygem-slack-notifier
     SUBDIR += rubygem-slack-notifier1
