@@ -5254,6 +5254,7 @@
     SUBDIR += rubygem-descendants_tracker
     SUBDIR += rubygem-devise
     SUBDIR += rubygem-devise-rails5
+    SUBDIR += rubygem-devise-rails50
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-docile
