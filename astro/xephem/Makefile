@@ -4,14 +4,14 @@
 PORTNAME=	xephem
 PORTVERSION=	3.7.7
 CATEGORIES=	astro
-MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
+MASTER_SITES=	http://www.clearskyinstitute.com/xephem/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Interactive astronomical ephemeris program
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake jpeg motif
+USES=		gmake jpeg motif tar:tgz
 LDFLAGS+=	-lfontconfig
 USE_XORG=	xp xt xext xmu x11 xft
 MAKE_JOBS_UNSAFE=	yes
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 RESTRICTED=	Personal use only
 
 # XXX needs to be the same as DISTFILES
-XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tar.gz
+XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tgz
 
 .include <bsd.port.pre.mk>
 

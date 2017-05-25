@@ -1,3 +1,5 @@
+@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<
+@comment Alter build-plist target and regenerate as required
 bin/bugpoint%%LLVM_SUFFIX%%
 bin/llc%%LLVM_SUFFIX%%
 bin/lli%%LLVM_SUFFIX%%
@@ -64,6 +66,23 @@ bin/sancov%%LLVM_SUFFIX%%
 %%LIT%%llvm%%LLVM_SUFFIX%%/bin/llvm-lit
 %%LIT%%bin/FileCheck%%LLVM_SUFFIX%%
 %%LIT%%llvm%%LLVM_SUFFIX%%/bin/FileCheck
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/__init__.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/_lldb.so
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/embedded_interpreter.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/Logger.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/__init__.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/attrib_fromdict.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/cache.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/cpp/__init__.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/cpp/gnu_libstdcpp.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/cpp/libcxx.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/metrics.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/synth.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/lldb-argdumper
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/runtime/__init__.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/utils/__init__.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/lldb/utils/symbolication.py
+%%LLDB%%llvm%%LLVM_LIB_VER%%/%%PYTHON_SITELIBDIR%%/six.py
 %%COMPILER_RT%%llvm%%LLVM_LIB_VER%%/asan_blacklist.txt
 llvm%%LLVM_LIB_VER%%/bin/bugpoint
 %%CLANG%%llvm%%LLVM_LIB_VER%%/bin/c-index-test
@@ -2578,23 +2597,6 @@ llvm%%LLVM_LIB_VER%%/lib/libLTO.so.4
 %%LLDB%%llvm%%LLVM_LIB_VER%%/lib/liblldbTarget.a
 %%LLDB%%llvm%%LLVM_LIB_VER%%/lib/liblldbUtility.a
 %%OPENMP%%llvm%%LLVM_LIB_VER%%/lib/libomp.so
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/__init__.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/_lldb.so
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/embedded_interpreter.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/formatters/Logger.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/formatters/__init__.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/formatters/attrib_fromdict.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/formatters/cache.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/formatters/cpp/__init__.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/formatters/cpp/gnu_libstdcpp.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/formatters/cpp/libcxx.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/formatters/metrics.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/formatters/synth.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/lldb-argdumper
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/runtime/__init__.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/utils/__init__.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/lldb/utils/symbolication.py
-%%LLDB%%llvm%%LLVM_LIB_VER%%/lib/python2.7/site-packages/six.py
 %%CLANG%%llvm%%LLVM_LIB_VER%%/libexec/c++-analyzer
 %%CLANG%%llvm%%LLVM_LIB_VER%%/libexec/ccc-analyzer
 %%CLANG%%llvm%%LLVM_LIB_VER%%/share/clang/clang-format-bbedit.applescript

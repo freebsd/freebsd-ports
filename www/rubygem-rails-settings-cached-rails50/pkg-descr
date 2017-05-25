@@ -1,0 +1,9 @@
+Rails-settings-cached is a settings plugin that makes managing a table of global
+key-value pairs easy. Think of it like a global hash stored in your database
+that uses simple ActiveRecord-like methods for manipulation.
+
+You can keep track of any global setting that you do not want to hard code into
+your rails application.  You can store any kind of object including strings,
+numbers, and arrays.
+  
+WWW: https://github.com/huacnlee/rails-settings-cached/

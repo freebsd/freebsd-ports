@@ -1,3 +1,5 @@
+@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<
+@comment Alter build-plist target and regenerate as required
 bin/bugpoint39
 bin/llc39
 bin/lli39
@@ -54,6 +56,22 @@ bin/opt39
 %%LIT%%llvm39/bin/llvm-lit
 %%LIT%%bin/FileCheck39
 %%LIT%%llvm39/bin/FileCheck
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/__init__.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/_lldb.so
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/embedded_interpreter.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/formatters/Logger.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/formatters/__init__.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/formatters/attrib_fromdict.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/formatters/cache.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/formatters/cpp/__init__.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/formatters/cpp/gnu_libstdcpp.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/formatters/cpp/libcxx.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/formatters/metrics.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/lldb-argdumper
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/runtime/__init__.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/utils/__init__.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/lldb/utils/symbolication.py
+%%LLDB%%llvm39/%%PYTHON_SITELIBDIR%%/six.py
 %%COMPILER_RT%%llvm39/asan_blacklist.txt
 llvm39/bin/bugpoint
 %%CLANG%%llvm39/bin/c-index-test
@@ -2440,22 +2458,6 @@ llvm39/lib/libLTO.so
 %%LLDB%%llvm39/lib/liblldbTarget.a
 %%LLDB%%llvm39/lib/liblldbUtility.a
 %%OPENMP%%llvm39/lib/libomp.so
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/__init__.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/_lldb.so
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/embedded_interpreter.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/formatters/Logger.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/formatters/__init__.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/formatters/attrib_fromdict.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/formatters/cache.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/formatters/cpp/__init__.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/formatters/cpp/gnu_libstdcpp.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/formatters/cpp/libcxx.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/formatters/metrics.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/lldb-argdumper
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/runtime/__init__.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/utils/__init__.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/lldb/utils/symbolication.py
-%%LLDB%%llvm39/lib/python2.7/site-packages/six.py
 %%CLANG%%llvm39/libexec/c++-analyzer
 %%CLANG%%llvm39/libexec/ccc-analyzer
 %%CLANG%%llvm39/share/clang/clang-format-bbedit.applescript
