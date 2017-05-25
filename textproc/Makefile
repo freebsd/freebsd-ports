@@ -1519,6 +1519,7 @@
     SUBDIR += rubygem-pretty-xml
     SUBDIR += rubygem-rails-dom-testing
     SUBDIR += rubygem-rails-dom-testing-rails5
+    SUBDIR += rubygem-rails-dom-testing-rails50
     SUBDIR += rubygem-rails-dom-testing1
     SUBDIR += rubygem-rails-html-sanitizer
     SUBDIR += rubygem-rak
