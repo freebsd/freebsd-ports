@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	1.0.2k
-PORTREVISION=	1
+PORTVERSION=	1.0.2l
 PORTEPOCH=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
-DIST_SUBDIR=	${DISTNAME}
+DIST_SUBDIR=	${DISTNAME:C/[a-z]$//}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	SSL and crypto library
@@ -74,6 +73,8 @@ EC_CONFIGURE_OFF=	no-ec_nistp_64_gcc_128
 I386_CONFIGURE_ON=	386
 MD2_CONFIGURE_ON=	enable-md2
 MD2_CONFIGURE_OFF=	no-md2
+PADLOCK_CFLAGS=		-Wno-unused-function
+PADLOCK_CONFIGURE_OFF=	no-padlock
 PADLOCK_PATCH_SITES=	http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
 PADLOCK_PATCHFILES=	1001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
 			1002-backport-changes-from-upstream-padlock-module.patch:padlock \
@@ -95,10 +96,13 @@ SSL2_CONFIGURE_ON=	enable-ssl2
 SSL2_CONFIGURE_OFF=	no-ssl2
 SSL3_CONFIGURE_ON=	enable-ssl3
 SSL3_CONFIGURE_OFF=	no-ssl3 no-ssl3-method
+SSL3_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-test_testssl
 THREADS_CONFIGURE_ON=	threads
 THREADS_CONFIGURE_OFF=	no-threads
 ZLIB_CONFIGURE_ON=	zlib zlib-dynamic
 ZLIB_CONFIGURE_OFF=	no-zlib no-zlib-dynamic
+
+CFLAGS+= -Werror -Qunused-arguments
 
 .include <bsd.port.pre.mk>
 
@@ -153,7 +157,12 @@ post-configure:
 post-install-SHARED-on:
 .for i in libcrypto libssl
 	${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/$i.so.${OPENSSL_SHLIBVER}
 	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${STAGEDIR}${PREFIX}/lib/$i.so
+.endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/openssl
+.for i in 4758cca aep atalla capi chil cswift gmp gost nuron padlock sureware ubsec
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/engines/lib${i}.so
 .endfor
 
 post-install-DOCS-on:
