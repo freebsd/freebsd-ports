@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libnss3.so:security/nss \
 		libqb.so:devel/libqb
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake groff libtool pathfix pkgconfig
 USE_GCC=	yes	# segfaults when built with Clang
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME} ${PORTNAME}-notifyd
