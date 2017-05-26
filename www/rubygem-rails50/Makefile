@@ -12,16 +12,16 @@ COMMENT=	Full-stack web application framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-actioncable50=${PORTVERSION}:www/rubygem-actioncable50 \
-		rubygem-actionmailer50=${PORTVERSION}:mail/rubygem-actionmailer50 \
-		rubygem-actionpack50=${PORTVERSION}:www/rubygem-actionpack50 \
-		rubygem-actionview50=${PORTVERSION}:devel/rubygem-actionview50 \
-		rubygem-activejob50=${PORTVERSION}:devel/rubygem-activejob50 \
-		rubygem-activemodel50=${PORTVERSION}:databases/rubygem-activemodel50 \
-		rubygem-activerecord50=${PORTVERSION}:databases/rubygem-activerecord50 \
-		rubygem-activesupport50=${PORTVERSION}:devel/rubygem-activesupport50 \
+RUN_DEPENDS=	rubygem-actioncable50>=${PORTVERSION}:www/rubygem-actioncable50 \
+		rubygem-actionmailer50>=${PORTVERSION}:mail/rubygem-actionmailer50 \
+		rubygem-actionpack50>=${PORTVERSION}:www/rubygem-actionpack50 \
+		rubygem-actionview50>=${PORTVERSION}:devel/rubygem-actionview50 \
+		rubygem-activejob50>=${PORTVERSION}:devel/rubygem-activejob50 \
+		rubygem-activemodel50>=${PORTVERSION}:databases/rubygem-activemodel50 \
+		rubygem-activerecord50>=${PORTVERSION}:databases/rubygem-activerecord50 \
+		rubygem-activesupport50>=${PORTVERSION}:devel/rubygem-activesupport50 \
 		rubygem-bundler<2.0:sysutils/rubygem-bundler \
-		rubygem-railties50=${PORTVERSION}:www/rubygem-railties50 \
+		rubygem-railties50>=${PORTVERSION}:www/rubygem-railties50 \
 		rubygem-sprockets-rails-rails50>=2.0.0:devel/rubygem-sprockets-rails-rails50
 
  RUN_DEPENDS+=	rubygem-bindex>=0.5.0:devel/rubygem-bindex \
