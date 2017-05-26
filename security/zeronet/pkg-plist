@@ -54,6 +54,8 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/Mute/languages/pt-br.json
 %%DATADIR%%/plugins/Mute/languages/zh-tw.json
 %%DATADIR%%/plugins/Mute/languages/zh.json
+%%DATADIR%%/plugins/Mute/media/blacklisted.html
+%%DATADIR%%/plugins/Mute/media/js/ZeroFrame.js
 %%DATADIR%%/plugins/Newsfeed/NewsfeedPlugin.py
 %%DATADIR%%/plugins/Newsfeed/NewsfeedPlugin.pyc
 %%DATADIR%%/plugins/Newsfeed/NewsfeedPlugin.pyo

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zeronet
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security net-p2p
 
@@ -54,7 +54,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${DATADIR}/
 	@${RM} `${FIND} ${STAGEDIR}${DATADIR} -name "*.orig"`
 	@${RM} `${FIND} ${STAGEDIR}${DATADIR} -name LICENSE`
-	@${RM} ${STAGEDIR}${DATADIR}/README*.md ${STAGEDIR}${DATADIR}/CHANGELOG.md ${STAGEDIR}${DATADIR}/requirements.txt
+	@${RM} ${STAGEDIR}${DATADIR}/README*.md ${STAGEDIR}${DATADIR}/CHANGELOG*.md ${STAGEDIR}${DATADIR}/requirements.txt
 	@${RM} ${STAGEDIR}${DATADIR}/Vagrantfile ${STAGEDIR}${DATADIR}/Dockerfile
 	@${RM} -r `${FIND} ${STAGEDIR}${DATADIR} -name test`
 	@${MKDIR} ${STAGEDIR}/var/db/zeronet
