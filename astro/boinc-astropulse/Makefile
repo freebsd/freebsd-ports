@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3 \
 RUN_DEPENDS=	boinc_client:net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
+BROKEN_armv6=		fails to compile: call to abs is ambiguous
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool pkgconfig tar:xz
 WRKSRC_SUBDIR=		client

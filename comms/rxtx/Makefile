@@ -16,6 +16,8 @@ COMMENT=	Native interface to serial ports in Java
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		fails to link: librxtxParallel.so: No such file or directory
+
 USES=		gmake libtool zip
 
 USE_JAVA=	yes
