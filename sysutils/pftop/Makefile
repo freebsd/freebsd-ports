@@ -12,8 +12,6 @@ COMMENT=	Utility for real-time display of statistics for pf
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_12=	fails to compile: sf-gencode.h: pcap-int.h: No such file or directory
-
 OPTIONS_DEFINE=	ALTQ
 
 ALTQ_DESC=	ALTQ support for queue statistics
@@ -61,6 +59,14 @@ post-patch:
 .if ${OPSYS} == DragonFly || ${OSVERSION} >= 1100070
 	@${REINPLACE_CMD} -e 's|altq/|net/&|' ${WRKSRC}/pftop.c
 .endif
+	@${REINPLACE_CMD} -e 's|#include .pcap-int.h.|#include <pcap/pcap.h>|g' \
+		${WRKSRC}/bpf_image.c \
+		${WRKSRC}/bpf_optimize.c \
+		${WRKSRC}/pcap-nametoaddr.c \
+		${WRKSRC}/sf-gencode.c \
+		${WRKSRC}/sf-gencode.h \
+		${WRKSRC}/sf-grammer.y \
+		${WRKSRC}/sf-scanner.l
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pftop ${STAGEDIR}${PREFIX}/sbin
