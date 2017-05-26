@@ -1,4 +1,4 @@
-TIMESTAMP = 1492280593
+TIMESTAMP = 1495828096
 SHA256 (centos/libICE-1.0.6-1.el6.i686.rpm) = b0b4e98058cfa3d75429b5bb1f209b475c8bcecf14f8ce8382f8ec5e24ac4c32
 SIZE (centos/libICE-1.0.6-1.el6.i686.rpm) = 53292
 SHA256 (centos/libICE-1.0.6-1.el6.x86_64.rpm) = c04a69d96c850fa6e179a09cc1738bd8837fb79870f78d1039f5080b4e765598
@@ -183,8 +183,8 @@ SHA256 (centos/libXtst-1.2.3-1.el6.src.rpm) = 4b2a925c3bd4b8bae6344e670796f8f5cc
 SIZE (centos/libXtst-1.2.3-1.el6.src.rpm) = 333621
 SHA256 (centos/libXv-1.0.11-1.el6.src.rpm) = 7235f17d3b958cdc0ef381a21ad89dd689f064d17a455fd11bcecb5549f38543
 SIZE (centos/libXv-1.0.11-1.el6.src.rpm) = 329825
-SHA256 (centos/libXvMC-1.0.10-1.el6.src.rpm) = 2d9d3282431819677ece156f6b39204c52ed03af063dd27040786075f0c940b0
-SIZE (centos/libXvMC-1.0.10-1.el6.src.rpm) = 29719
+SHA256 (centos/libXvMC-1.0.10-1.el6.src.rpm) = 6bcf5a48129277235f9085b94d28b4e6dc17d77d6018f8d0ebe33f2ce3d4cd64
+SIZE (centos/libXvMC-1.0.10-1.el6.src.rpm) = 325412
 SHA256 (centos/libXxf86dga-1.1.4-2.1.el6.src.rpm) = 2dfbf2e4f2d9b4b9f8c643e01f747d6414242991cf3f3bb61d794d90f26d5361
 SIZE (centos/libXxf86dga-1.1.4-2.1.el6.src.rpm) = 290830
 SHA256 (centos/libXxf86misc-1.0.3-4.el6.src.rpm) = a7d60854dd5ae2ea846afc16b98d57a7c55683f0d9c1f1f7f3bd66f199d3e477
