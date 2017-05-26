@@ -3,14 +3,14 @@
 
 PORTNAME=	openldap
 PORTVERSION=	2.4.40
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Lightweight Directory Access Protocol libraries (Linux CentOS ${LINUX_DIST_VER})
 
 DESCR=		${.CURDIR}/../${PORTNAME}24-server/pkg-descr
-RPMVERSION=	12.el6
+RPMVERSION=	16.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	cyrus-sasl2 nss nspr

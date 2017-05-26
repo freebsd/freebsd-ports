@@ -589,7 +589,6 @@ usr/lib/i686/nosegneg/librt-2.12.so
 usr/lib/i686/nosegneg/librt.so.1
 usr/lib/i686/nosegneg/libthread_db-1.0.so
 usr/lib/i686/nosegneg/libthread_db.so.1
-usr/lib/krb5/plugins/kdb/db2.so
 usr/lib/ld-2.12.so
 usr/lib/ld-linux.so.2
 usr/lib/ld-lsb.so.3
@@ -663,10 +662,6 @@ usr/lib/libidn.so.11
 usr/lib/libidn.so.11.6.1
 usr/lib/libk5crypto.so.3
 usr/lib/libk5crypto.so.3.1
-usr/lib/libkadm5clnt_mit.so.8
-usr/lib/libkadm5clnt_mit.so.8.0
-usr/lib/libkadm5srv_mit.so.8
-usr/lib/libkadm5srv_mit.so.8.0
 usr/lib/libkdb5.so.6
 usr/lib/libkdb5.so.6.0
 usr/lib/libkeyutils.so.1
@@ -1019,7 +1014,6 @@ usr/lib64/gconv/libJISX0213.so
 usr/lib64/gconv/libKSC.so
 @rmtry usr/lib64/gio/modules/giomodule.cache
 usr/lib64/gio/modules/libgiofam.so
-usr/lib64/krb5/plugins/kdb/db2.so
 usr/lib64/ld-2.12.so
 usr/lib64/ld-linux-x86-64.so.2
 usr/lib64/ld-lsb-x86-64.so.3
@@ -1093,10 +1087,6 @@ usr/lib64/libidn.so.11
 usr/lib64/libidn.so.11.6.1
 usr/lib64/libk5crypto.so.3
 usr/lib64/libk5crypto.so.3.1
-usr/lib64/libkadm5clnt_mit.so.8
-usr/lib64/libkadm5clnt_mit.so.8.0
-usr/lib64/libkadm5srv_mit.so.8
-usr/lib64/libkadm5srv_mit.so.8.0
 usr/lib64/libkdb5.so.6
 usr/lib64/libkdb5.so.6.0
 usr/lib64/libkeyutils.so.1
