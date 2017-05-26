@@ -14,6 +14,8 @@ COMMENT=	Java Windowing Toolkit for Text Terminals
 BUILD_DEPENDS=	gmake:devel/gmake
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
 
+BROKEN_armv6=		fails to compile: build.xml: compilation failed
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		dos2unix zip

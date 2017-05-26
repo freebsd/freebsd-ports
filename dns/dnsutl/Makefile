@@ -12,6 +12,8 @@ COMMENT=	Programs to make using DNS easier
 
 LIB_DEPENDS=	libexplain.so:devel/libexplain
 
+BROKEN_armv6=		fails to package: FAILED test of common/srrf.c file
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all sure
 CPPFLAGS+=	-I${LOCALBASE}/include

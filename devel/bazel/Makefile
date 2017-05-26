@@ -16,6 +16,8 @@ LICENSE_FILE=		${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=		bash:shells/bash \
 			zip:archivers/zip
 
+BROKEN_armv6=		fails to package: cp: bazel: No such file or directory
+
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.

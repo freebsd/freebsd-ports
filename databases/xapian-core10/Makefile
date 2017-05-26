@@ -13,6 +13,10 @@ COMMENT=	Probabilistic text search database engine
 
 LICENSE=	GPLv2
 
+BROKEN_armv6=		fails to install: quartz_log.cc:: error: call to 'om_tostring' is ambiguous
+BROKEN_mips=		fails to install: quartz_log.cc:: error: call to 'om_tostring' is ambiguous
+BROKEN_mips64=		fails to install: quartz_log.cc:: error: call to 'om_tostring' is ambiguous
+
 CONFLICTS_INSTALL=	xapian-core- xapian-core12-
 
 USES=		libtool
