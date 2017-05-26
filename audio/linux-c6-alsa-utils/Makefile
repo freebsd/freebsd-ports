@@ -3,7 +3,7 @@
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	Advanced Linux Sound Architecture utilities (Linux CentOS ${LINUX_DIST_
 LICENSE=	GPLv3
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	8.el6
+RPMVERSION=	10.el6
 USES=		linux:c6
 USE_LINUX=	alsalib alsa-plugins-oss
 USE_LINUX_RPM=	nolib
