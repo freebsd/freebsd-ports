@@ -18,14 +18,16 @@ BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dr
 		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:x11-fonts/font-util \
 		${LOCALBASE}/include/FL/Fl.H:x11-toolkits/fltk \
 		bash:shells/bash
+LIB_DEPENDS=	libunwind.so:devel/libunwind \
+		libxshmfence.so:x11/libxshmfence \
+		libfontconfig.so:x11-fonts/fontconfig
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
 
 CONFLICTS=	tigervnc-[0-9]* \
 		tightvnc-[0-9]* \
-		tridiavnc-[0-9]* \
-		vnc-[0-9]*
+		tridiavnc-[0-9]*
 
 USES=		autoreconf:build cmake cpe iconv jpeg libtool pkgconfig \
 		python ssl
@@ -40,11 +42,9 @@ USE_XORG+=	bigreqsproto compositeproto damageproto fixesproto fontsproto glproto
 		xdmcp xext xextproto xfont xkbfile xorg-macros xproto xrandr xrender \
 		xtrans xtst
 
-LIB_DEPENDS=	libunwind.so:devel/libunwind \
-		libxshmfence.so:x11/libxshmfence \
-		libfontconfig.so:x11-fonts/fontconfig
-
 CFLAGS+=	-fPIC
+
+IGNORE=		no development version available right now. Please use net/tigervnc instead
 
 OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER DOCS
 OPTIONS_DEFAULT=	GNUTLS PAM VIEWER
