@@ -11,34 +11,28 @@ COMMENT=	Small C++ XML Parser
 
 LICENSE=	ZLIB
 
-CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=ON
-USE_GITHUB=	yes
-USE_LDCONFIG=	yes
-USES=		cmake dos2unix
+OPTIONS_DEFINE=	EXAMPLES
 
-GH_ACCOUNT=	leethomason
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON
+USE_LDCONFIG=	yes
+USES=		cmake dos2unix pathfix
 
 PLIST_FILES=	include/tinyxml2.h \
 		lib/libtinyxml2.a \
 		lib/libtinyxml2.so \
-		lib/libtinyxml2.so.4 \
-		lib/libtinyxml2.so.4.0.1 \
+		lib/libtinyxml2.so.${PORTVERSION:R:R} \
+		lib/libtinyxml2.so.${PORTVERSION} \
 		libdata/pkgconfig/tinyxml2.pc
-PORTEXAMPLES=	xmltest.cpp resources
+PORTEXAMPLES=	resources xmltest.cpp
 
-OPTIONS_DEFINE=	EXAMPLES
+GH_ACCOUNT=	leethomason
+USE_GITHUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e 's@(DESTINATION )(.*)(/pkgconfig)@\1${PREFIX}/libdata\3@' \
-		${WRKSRC}/CMakeLists.txt
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR}/
 
-check regression-test test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test ; \
-	./test
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC}; ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR}
+do-test:
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} xmltest && ./xmltest
 
 .include <bsd.port.mk>
