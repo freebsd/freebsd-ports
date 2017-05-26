@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable e2guardian:
+# e2guardian_flags (text):	Set e2guardian extra flags
+
+name=e2guardian
+description="e2guardian startup script"
+
+: ${e2guardian_config="%%PREFIX%%/etc/${name}/${name}.conf"}
+
+command=%%PREFIX%%/sbin/e2guardian
+pidfile=/var/run/e2guardian.pid
+
+command_args="-f $e2guardian_config $e2guardian_flags"
+
+depend() {
+	keyword -shutdown
+}
