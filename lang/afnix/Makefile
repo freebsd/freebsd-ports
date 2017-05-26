@@ -12,9 +12,10 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Multi-threaded functional programming language
 
-BROKEN_powerpc=		does not configure
-BROKEN_powerpc64=	does not build: afnix-setup: cannot determine linking type
-BROKEN_i386=		does not build
+BROKEN_armv6=		fails to compile: operator new takes type size_t as first parameterk/er
+BROKEN_i386=		fails to build
+BROKEN_powerpc=		fails to configure
+BROKEN_powerpc64=	fails to build: afnix-setup: cannot determine linking type
 
 USES=		compiler:c++11-lang gmake tar:tgz
 USE_LDCONFIG=	yes

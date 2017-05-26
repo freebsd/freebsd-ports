@@ -15,6 +15,10 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	cook:devel/cook
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
+BROKEN_armv6=		fails to compile: building for onyx-5.1.2_6: error code 1
+BROKEN_mips=		fails to compile: building for onyx-5.1.2_6: error code 1
+BROKEN_mips64=		fails to compile: building for onyx-5.1.2_6: error code 1
+
 USES=		libedit shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE} \
@@ -24,8 +28,6 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 PLIST_SUB=	ONYX_VERSION=${PORTVERSION}
-
-BROKEN_ia64=	Coredump during build on ia64
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook)

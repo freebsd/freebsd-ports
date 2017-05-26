@@ -9,6 +9,8 @@ MASTER_SITES=	http://forge.scilab.org/index.php/p/${PORTNAME}/downloads/get/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Swing windowing and docking framework
 
+BROKEN_armv6=		fails to package: flexdock/api: No such file or directory
+
 USE_ANT=	yes
 USE_JAVA=	yes
 
