@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	uwsgi
-PORTVERSION=	2.0.13
-PORTREVISION=	1
+PORTVERSION=	2.0.15
 CATEGORIES=	www
 MASTER_SITES=	http://projects.unbit.it/downloads/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}mod_proxy_
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	schmidt@ze.tum.de
 COMMENT=	Apache proxy module to pass requests to uwsgi
 
 USE_APACHE=	22+

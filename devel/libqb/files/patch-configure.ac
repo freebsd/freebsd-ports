@@ -1,0 +1,15 @@
+Disable check for pthread_spin_lock() since it doesn't support
+PTHREAD_PROCESS_SHARED.  This causes libqb to fallback gracefully
+to using pthread mutexes without having to patch anything.
+
+--- configure.ac.orig	2017-05-19 12:54:05 UTC
++++ configure.ac
+@@ -212,7 +212,7 @@ AC_CHECK_FUNCS([alarm clock_gettime ftru
+ AX_SAVE_FLAGS
+ CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+ LIBS="$LIBS $PTHREAD_LIBS"
+-AC_CHECK_FUNCS([pthread_spin_lock pthread_setschedparam \
++AC_CHECK_FUNCS([pthread_setschedparam \
+ 		pthread_mutexattr_setpshared \
+ 		pthread_condattr_setpshared \
+ 		sem_timedwait semtimedop])
