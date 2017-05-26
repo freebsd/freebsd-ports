@@ -3,7 +3,7 @@ usr/lib/libgnutls-extra.so.26.22.6
 usr/lib/libgnutls.so.26
 usr/lib/libgnutls.so.26.22.6
 usr/lib/libgnutlsxx.so.26
-usr/lib/libgnutlsxx.so.26.22.6
+usr/lib/libgnutlsxx.so.26.14.12
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
