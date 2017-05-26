@@ -1,3 +1,4 @@
+etc/pki/nss-legacy/nss-rhel6.config
 etc/pki/nssdb/cert8.db
 etc/pki/nssdb/key3.db
 etc/pki/nssdb/secmod.db

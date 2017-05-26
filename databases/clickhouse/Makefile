@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	clickhouse
-PORTVERSION=	1.1.54214
+PORTVERSION=	1.1.54236
 DISTVERSIONPREFIX=	v
-#DISTVERSIONSUFFIX=	-stable
-DISTVERSIONSUFFIX=	-testing
-PORTREVISION=	1
+DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	databases
 
 MAINTAINER=	proler@gmail.com
@@ -62,7 +60,8 @@ CXX=		clang++38
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|' ${WRKSRC}/dbms/src/Server/config.xml
+	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/dbms/src/Server/config.xml
+	@${REINPLACE_CMD} -e 's|<listen_host>::1</listen_host>|<\!-- <listen_host>::1</listen_host> -->|;s|<listen_host>127.0.0.1</listen_host>|<\!-- <listen_host>127.0.0.1</listen_host> -->|' ${WRKSRC}/dbms/src/Server/config.xml
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/clickhouse-compressor
