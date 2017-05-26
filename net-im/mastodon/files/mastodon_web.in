@@ -1,0 +1,40 @@
+#! /bin/sh
+
+# PROVIDE: mastodon_web
+# REQUIRE: LOGIN postgresql nginx redis
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable the Mastodon web server.
+#
+#  mastodon_web_enable="YES"
+
+. /etc/rc.subr
+
+name=mastodon_web
+rcvar="${name}_enable"
+
+load_rc_config "$name"
+
+: ${mastodon_web_enable:="NO"}
+
+: ${mastodon_web_concurrency:="2"}
+: ${mastodon_web_loglevel:="error"}
+: ${mastodon_web_port:="3000"}
+: ${mastodon_web_threads:="5"}
+
+mastodon_web_chdir="%%WWWDIR%%"
+mastodon_web_env="MAX_THREADS=\"${mastodon_web_threads}\" \
+PORT=\"${mastodon_web_port}\" \
+RAILS_ENV=production \
+RAILS_LOG_LEVEL=\"${mastodon_web_loglevel}\" \
+WEB_CONCURRENCY=\"${mastodon_web_concurrency}\""
+mastodon_web_user="mastodon"
+pidfile="%%WWWDIR%%/tmp/${name}.pid"
+procname="%%RUBY%%:"
+
+command="%%PREFIX%%/bin/puma"
+command_flags="-C config/puma.rb"
+command_args=">> /var/log/mastodon/${name}.log 2>&1 &"
+
+run_rc_command "$1"
