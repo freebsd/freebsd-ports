@@ -33,7 +33,7 @@ SHEBANG_FILES=	filter/braille/drivers/generic/brftoembosser.in \
 USE_GNOME=	glib20
 USE_RC_SUBR=	cups_browsed
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-shell=/bin/sh
+CONFIGURE_ARGS=	--with-shell=/bin/sh --with-pdftops-path=${LOCALBASE}/bin/pdftops
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -94,12 +94,12 @@ GS_DESC=			Ghostscript gs(1)
 
 HYBRID_BUILD_DEPENDS=		pdftops:graphics/poppler-utils
 HYBRID_RUN_DEPENDS=		pdftops:graphics/poppler-utils
-HYBRID_CONFIGURE_ON=		--with-pdftops=hybrid --with-pdftops-path=${LOCALBASE}/bin/pdftops
+HYBRID_CONFIGURE_ON=		--with-pdftops=hybrid
 HYBRID_DESC=			Ghostscript or Poppler depending on printer
 
 PDFTOPS_BUILD_DEPENDS=		pdftops:graphics/poppler-utils
 PDFTOPS_RUN_DEPENDS=		pdftops:graphics/poppler-utils
-PDFTOPS_CONFIGURE_ON=		--with-pdftops=pdftops --with-pdftops-path=${LOCALBASE}/bin/pdftops
+PDFTOPS_CONFIGURE_ON=		--with-pdftops=pdftops
 PDFTOPS_DESC=			Poppler pdftops(1)
 
 MUPDF_BUILD_DEPENDS=		mutool:graphics/mupdf
