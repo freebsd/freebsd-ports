@@ -87,7 +87,18 @@ fcgiwrap_postcmd() {
 	fi
 }
 
-fcgiwrap_cleansocket() {
+fcgiwrap_stop() {
+	fcgiwrap_pgrp=$(/bin/ps -o ppid= $(cat ${pidfile}))
+	if [ -z "$fcgiwrap_pgrp" ] || ! kill -0 $fcgiwrap_pgrp; then
+		[ -n "$rc_fast" ] && return 0
+		_run_rc_notrunning
+		return 1
+	fi
+	fcgiwrap_pgrp_pids=$(/bin/pgrep -d ' ' -g ${fcgiwrap_pgrp})
+	echo "Stopping ${name}."
+	kill -TERM -- -${fcgiwrap_pgrp}
+	wait_for_pids ${fcgiwrap_pgrp_pids}
+
 	# Workaround the fact that fcgiwrap doesn't cleanup his socket at stopping
 	case ${fcgiwrap_socket} in 
 		unix*)
@@ -104,7 +115,7 @@ procname="%%PREFIX%%/sbin/${name}"
 command="/usr/sbin/daemon"
 start_precmd="fcgiwrap_precmd"
 start_postcmd="fcgiwrap_postcmd"
-stop_postcmd="fcgiwrap_cleansocket"
+stop_cmd="fcgiwrap_stop"
 
 load_rc_config $name
 
