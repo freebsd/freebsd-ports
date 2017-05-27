@@ -44,6 +44,8 @@ RUN_DEPENDS=	rubygem-actioncable50>=${PORTVERSION}:www/rubygem-actioncable50 \
 		rubygem-uglifier>=3.2.0:www/rubygem-uglifier \
 		rubygem-web-console-rails50>=3.5.0:devel/rubygem-web-console-rails50
 
+PORTSCOUT=	limit:^5\.0\.
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
