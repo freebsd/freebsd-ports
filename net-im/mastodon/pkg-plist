@@ -4,13 +4,12 @@ etc/periodic/daily/900.mastodon
 @dir /var/log/mastodon
 @dir %%WWWDIR%%
 @dir %%WWWDIR%%/app
-@dir %%WWWDIR%%/app/assets
-@dir %%WWWDIR%%/app/assets/stylesheets
 @dir %%WWWDIR%%/app/controllers
 @dir %%WWWDIR%%/app/controllers/admin
 @dir %%WWWDIR%%/app/controllers/api
 @dir %%WWWDIR%%/app/controllers/api/activitypub
 @dir %%WWWDIR%%/app/controllers/api/v1
+@dir %%WWWDIR%%/app/controllers/api/v1/timelines
 @dir %%WWWDIR%%/app/controllers/api/web
 @dir %%WWWDIR%%/app/controllers/auth
 @dir %%WWWDIR%%/app/controllers/concerns
@@ -126,6 +125,7 @@ etc/periodic/daily/900.mastodon
 @dir %%WWWDIR%%/app/views/api/v1/search
 @dir %%WWWDIR%%/app/views/api/v1/statuses
 @dir %%WWWDIR%%/app/views/api/v1/timelines
+@dir %%WWWDIR%%/app/views/api/v1/timelines/base
 @dir %%WWWDIR%%/app/views/application
 @dir %%WWWDIR%%/app/views/auth
 @dir %%WWWDIR%%/app/views/auth/confirmations
@@ -204,6 +204,8 @@ etc/periodic/daily/900.mastodon
 @dir %%WWWDIR%%/spec/controllers/api
 @dir %%WWWDIR%%/spec/controllers/api/activitypub
 @dir %%WWWDIR%%/spec/controllers/api/v1
+@dir %%WWWDIR%%/spec/controllers/api/v1/timelines
+@dir %%WWWDIR%%/spec/controllers/api/web
 @dir %%WWWDIR%%/spec/controllers/auth
 @dir %%WWWDIR%%/spec/controllers/concerns
 @dir %%WWWDIR%%/spec/controllers/oauth
@@ -290,7 +292,6 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/Rakefile
 %%WWWDIR%%/Vagrantfile
 %%WWWDIR%%/app.json
-%%WWWDIR%%/app/assets/stylesheets/.gitkeep
 %%WWWDIR%%/app/controllers/about_controller.rb
 %%WWWDIR%%/app/controllers/account_follow_controller.rb
 %%WWWDIR%%/app/controllers/account_unfollow_controller.rb
@@ -379,6 +380,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/helpers/routing_helper.rb
 %%WWWDIR%%/app/helpers/settings_helper.rb
 %%WWWDIR%%/app/helpers/stream_entries_helper.rb
+%%WWWDIR%%/app/helpers/style_helper.rb
 %%WWWDIR%%/app/javascript/fonts/montserrat/Montserrat-Regular.ttf
 %%WWWDIR%%/app/javascript/fonts/montserrat/Montserrat-Regular.woff
 %%WWWDIR%%/app/javascript/fonts/montserrat/Montserrat-Regular.woff2
@@ -404,6 +406,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/javascript/fonts/roboto/roboto-regular-webfont.woff2
 %%WWWDIR%%/app/javascript/images/background-photo.jpg
 %%WWWDIR%%/app/javascript/images/boost_sprite.png
+%%WWWDIR%%/app/javascript/images/elephant-friend-1.png
 %%WWWDIR%%/app/javascript/images/elephant-friend.png
 %%WWWDIR%%/app/javascript/images/fluffy-elephant-friend.png
 %%WWWDIR%%/app/javascript/images/logo.png
