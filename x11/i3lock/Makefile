@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	i3lock
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/${PORTNAME}/
 
@@ -24,7 +24,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 		X11INC="${LOCALBASE}/include" CC="${CC}" \
 		MANDIR="${MANPREFIX}/man"
 
-PLIST_FILES=	"@mode 4755" bin/i3lock @mode \
+PLIST_FILES=	"@(,,4755) bin/i3lock" \
 		man/man1/i3lock.1.gz
 
 LDFLAGS+=	${ICONV_LIB}
