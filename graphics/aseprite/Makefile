@@ -3,8 +3,8 @@
 
 PORTNAME=		aseprite
 PORTVERSION=		1.1.13
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=		2
 CATEGORIES=		graphics
 
 MAINTAINER=		yuri@rawbw.com
@@ -22,6 +22,11 @@ LIB_DEPENDS=		libfreetype.so:print/freetype2 \
 			libgif.so:graphics/giflib \
 			libcurl.so:ftp/curl \
 			libtinyxml.so:textproc/tinyxml
+
+BROKEN_aarch64=		fails to compile: undefined reference to __va_copy
+BROKEN_armv6=		fails to compile: undefined reference to __va_copy
+BROKEN_powerpc64=	fails to compile: arena.h: Failed assertion: "arena_mapbits_allocated_get(chunk, pageind) != 0"
+BROKEN_sparc64=		fails to compile: vsnprintf is not a member of std
 
 OPTIONS_DEFINE=		WEBP
 OPTIONS_DEFAULT=	WEBP
@@ -60,11 +65,6 @@ CXXFLAGS+=		-I${LOCALBASE}/include
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2/freetype
 CXXFLAGS+=		-D_GLIBCXX_USE_C99 # XXX ports/193528
-
-BROKEN_aarch64=		fails to compile: undefined reference to __va_copy
-BROKEN_armv6=		fails to compile: undefined reference to __va_copy
-BROKEN_powerpc64=	fails to compile: arena.h: Failed assertion: "arena_mapbits_allocated_get(chunk, pageind) != 0"
-BROKEN_sparc64=		fails to compile: vsnprintf is not a member of std
 
 post-extract:
 	@${RM} -r ${WRKSRC}/src/allegro

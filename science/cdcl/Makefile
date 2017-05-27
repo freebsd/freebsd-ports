@@ -13,6 +13,8 @@ DISTNAME=	dcl-${PORTVERSION}-C
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
+BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on output
+
 OPTIONS_DEFINE=	DOCS
 USES=		desthack pkgconfig
 USE_XORG=	x11 xext

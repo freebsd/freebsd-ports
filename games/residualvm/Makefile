@@ -9,6 +9,8 @@ CATEGORIES=	games
 MAINTAINER=	yerenkow@gmail.com
 COMMENT=	ResidualVM allows you to indulge with classic games like Grim Fandango
 
+BROKEN_armv6=		fails to link: ld: libgrim.a has EABI version 0, but target residualvm has EABI version 5
+
 USE_GITHUB=	yes
 
 USE_SDL=	sdl

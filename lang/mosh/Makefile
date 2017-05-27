@@ -16,6 +16,9 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libonig.so:devel/oniguruma5
 
+BROKEN_armv6=		fails to link: os_dep.c: undefined reference to '__stack_base__'
+BROKEN_mips64=		fails to compile: os_dep.c: redefinition of 'GC_register_dynamic_libraries'
+
 CONFLICTS_INSTALL=	mosh-1.[0-9].*
 
 USES=		gmake ssl
