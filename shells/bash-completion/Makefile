@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:shells/bash
 
+BROKEN_armv6=		fails to build: gmake: install-recursive: Error 1
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	scop
 

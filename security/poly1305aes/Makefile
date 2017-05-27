@@ -15,7 +15,8 @@ ALL_TARGET=	default
 
 CC+=		${CPPFLAGS} ${CFLAGS} ${LDFLAGS}
 
-BROKEN_aarch64=		Fails to build: poly1305aes.impl.do: fatal: all tests failed
+BROKEN_armv6=		fails to build: poly1305aes.impl.do: fatal: all tests failed
+BROKEN_aarch64=		fails to build: poly1305aes.impl.do: fatal: all tests failed
 NOT_FOR_ARCHS=	amd64
 
 .include <bsd.port.pre.mk>

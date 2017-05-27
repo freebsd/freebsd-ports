@@ -15,6 +15,9 @@ LICENSE=	GPLv2
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
 BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_armv6=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
+BROKEN_mips=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
+BROKEN_mips64=		fails self-tests: Running e2fsprogs test suite...failed: f_pre_1970_date_encoding
 BROKEN_powerpc64=	fails self-tests: Running e2fsprogs test suite...Signal (11) SIGSEGV
 
 USES=		cpe gmake pkgconfig tar:xz
