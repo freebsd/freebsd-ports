@@ -12,7 +12,8 @@ depend()
 start()
 {
   ebegin "Starting $name"
-  start-stop-daemon -b -m -p /var/run/bsdstats.pid --start %%PREFIX%%/etc/periodic/monthly/300.statistics -- -shortdelay
+  (%%PREFIX%%/etc/periodic/monthly/300.statistics -- -shortdelay >/dev/null 2>/dev/null) &
+  mark_service_started
   eend $?
 }
 
