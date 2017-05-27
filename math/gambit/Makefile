@@ -13,6 +13,8 @@ COMMENT=	Library of tools for doing computation in game theory
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		fails to compile: 'm_number' is a private member of 'Gambit::GamePlayerRep'
+
 USES=		compiler:c++11-lib
 USE_GNOME=	gtk20
 USE_WX=		3.0
