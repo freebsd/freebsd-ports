@@ -239,6 +239,9 @@ post-extract:
 	@${REINPLACE_CMD} -e 's|@SettingsCCompilerFlags@|& -Qunused-arguments|' ${BOOT_DIR}/settings.in
 .endif
 .endif
+.if empty(PORT_OPTIONS:MBOOT) && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
+	@${REINPLACE_CMD} -e 's|@SettingsCCompilerLinkFlags@|& -Wl,--wrap=readdir_r,--wrap=stat,--wrap=lstat,--wrap=fstat,--wrap=mknod|' ${BOOT_DIR}/settings.in
+.endif
 
 post-install-script:
 	@${FIND} -ds ${GHC_LIBDIR} -type f -print | ${SED} -E -e \
@@ -269,6 +272,14 @@ post-patch:
 
 pre-configure:
 	@${MKDIR} ${TMPDIR}
+.if empty(PORT_OPTIONS:MBOOTH) && ${OPSYS} == FreeBSD && \
+    ${OSVERSION} >= 1200031
+	${CC} ${CFLAGS} -c -o ${BOOT_DIR}/wrap.o ${PATCHDIR}/wrap.c
+	for x in ${BOOT_DIR}/rts/dist/build/libCffi*.a; do \
+	    ${AR} q $$x ${BOOT_DIR}/wrap.o; ${RANLIB} $$x; \
+	done
+	rm ${BOOT_DIR}/wrap.o
+.endif # Do not merge, prev condition need to grow OSVER check.
 .if empty(PORT_OPTIONS:MBOOT)
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS_BOOT})
 	@(cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install)
