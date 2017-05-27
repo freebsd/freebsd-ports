@@ -13,6 +13,8 @@ COMMENT=	IC/MEMS layout editor
 
 LIB_DEPENDS=	libttf.so:print/freetype
 
+BROKEN_armv6=		fails to compile: no matching member function for call to 'map'
+
 USES=		qmake zip
 USE_QT4=	corelib gui network moc_build sql uic_build \
 		rcc_build qt3support xml

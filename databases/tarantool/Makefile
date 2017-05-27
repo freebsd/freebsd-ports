@@ -11,7 +11,8 @@ COMMENT=	NoSQL database running in a Lua application server
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64=	Does not build: Unsupported architecture -- powerpc64
+NOT_FOR_ARCHS=		armv6 powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
 MAKE_JOBS_UNSAFE=yes
 USES=		cmake compiler:c++11-lang gettext gmake perl5 readline
@@ -44,9 +45,6 @@ PLIST_SUB+=	TT_USER=${USERS} \
 	TT_RUNDIR=${TT_RUNDIR}
 
 OPTIONS_DEFINE=	DEBUG
-
-NOT_FOR_ARCHS=	sparc64
-NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 .include <bsd.port.options.mk>
 
