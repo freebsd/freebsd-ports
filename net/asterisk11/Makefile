@@ -19,7 +19,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 armv6
+BROKEN_armv6=		fails to configure: the SPANDSP installation appears to be missing or broken
+ONLY_FOR_ARCHS=		armv6 amd64 i386 powerpc sparc64
 
 USES=		bison cpe gmake iconv localbase ncurses shebangfix \
 		sqlite ssl
