@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.0.0600
+PORTVERSION=	8.0.0604
+### REMOVE GH_TAGNAME (53) ON NEXT UPDATE
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -49,6 +50,7 @@ VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 SLAVEDIRS=	editors/vim-lite
 
 USE_GITHUB=	yes
+GH_TAGNAME=	b4d6c3e
 SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
 CPE_VERSION=	${PORTVERSION:R}
 PORTSCOUT=	site:https://github.com/vim/vim/releases
