@@ -21,7 +21,7 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 BROKEN_aarch64=		fails to build: Fatal Python error: swig_pythreadstate set in XapianSWIG_Python_Thread_Allow ctor
 
-CONFLICTS_INSTALL=	xapian-bindings12-
+CONFLICTS_INSTALL=	xapian-bindings12
 
 OPTIONS_DEFINE=	DOCS
 
