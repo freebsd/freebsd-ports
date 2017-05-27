@@ -105,6 +105,11 @@ DOCS_VARS=		rust_manifests+=${RUST_DOCS_MANIFESTS}
 PLIST_FILES=		lib/rustlib/components \
 			lib/rustlib/rust-installer-version
 
+.include <bsd.port.pre.mk>
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
+EXTRA_PATCHES+=        ${PATCHDIR}/extra-patch-ino64
+.endif
+
 pre-fetch:
 	# FIXME: This is the same check for CONFLICTS as the standard
 	# one, except port origins are not compared. This allows
@@ -129,16 +134,27 @@ pre-fetch:
 		exit 1;\
 	fi
 
+LIBSTD=	rust-std-1.16.0-x86_64-unknown-freebsd/rust-std-x86_64-unknown-freebsd/lib/rustlib/x86_64-unknown-freebsd/lib/libstd-aef6cb139bd07bdc.rlib
+STDF=	std-aef6cb139bd07bdc.0.o
+
 post-extract:
 	@${MKDIR} \
 		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR} \
 		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR}
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUSTC_BOOTSTRAP} \
 		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR}
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP} \
-		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR}
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${CARGO_BOOTSTRAP} \
 		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR}
+	${TAR} -x -C ${WRKSRC} -f ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP}
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
+	${CC} ${CFLAGS} -fPIC -c -o ${WRKSRC}/old_fstat.o ${FILESDIR}/old_fstat.c
+	(cd ${WRKSRC} && ${AR} x ${WRKSRC}/${LIBSTD} ${STDF})
+	${LD} -r -o ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF} ${WRKSRC}/old_fstat.o
+	${MV} ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF}
+	(cd ${WRKSRC} && ${AR} r ${WRKSRC}/${LIBSTD} ${STDF})
+	${TAR} -cy -C ${WRKSRC} -f ${WRKSRC}/rustc.tbz rust-std-1.16.0-x86_64-unknown-freebsd
+	${MV} ${WRKSRC}/rustc.tbz ${WRKSRC}/build/cache/${RUST_STD_BOOTSTRAP}
+.endif
 
 post-patch:
 	@test ! -f ${WRKSRC}/mk/main.mk || \
@@ -204,7 +220,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/*.so \
 		${STAGEDIR}${PREFIX}/lib/rustlib/*/lib/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
 
 # "make gen-registry" is a special target to ease this port update.
 #
