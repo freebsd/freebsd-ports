@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osquery
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -40,7 +40,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	facebook ${PORTNAME}:tp
 GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
-MAKE_JOBS_UNSAFE=	yes
 
 # Some options for things that bring in many dependencies
 OPTIONS_DEFINE=	TSK AWS YARA LLDPD
@@ -72,10 +71,6 @@ CXX=	clang++38
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/osquery/|/var/db/osquery/|g' \
 		${WRKSRC}/tools/deployment/osquery.example.conf
-	${REINPLACE_CMD} -e 's|/etc/osquery/yara/|/var/db/osquery/yara/|g' \
-		${WRKSRC}/osquery/tables/yara/yara.cpp \
-		${WRKSRC}/osquery/tables/yara/yara_utils.cpp \
-		${WRKSRC}/specs/yara/yara.table
 	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' \
 		${WRKSRC}/CMakeLists.txt \
 		${WRKSRC}/tools/get_platform.py
