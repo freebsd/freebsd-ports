@@ -73,6 +73,7 @@
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
     SUBDIR += loudmouth
+    SUBDIR += mastodon
     SUBDIR += mbpurple
     SUBDIR += mcabber
     SUBDIR += meanwhile
