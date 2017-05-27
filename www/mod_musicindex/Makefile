@@ -12,11 +12,12 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that allows downloading and streaming of audio
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libarchive
+USES=		libarchive localbase:ldflags
 USE_APACHE=	22
 
-OPTIONS_DEFINE=	NLS FLAC MP3 MP4 VORBIS LIBARCHIVE FILECACHE MYSQLCACHE
+OPTIONS_DEFINE=	NLS FLAC MP3 MP4 VORBIS LIBARCHIVE FILECACHE MYSQLCACHE DOCS
 OPTIONS_DEFAULT=MP3 LIBARCHIVE FILECACHE
 
 LIBARCHIVE_DESC=	Archive downloading support
@@ -41,32 +42,26 @@ NLS_USES=			gettext
 VORBIS_CONFIGURE_ENABLE=	vorbis
 VORBIS_LIB_DEPENDS=		libvorbis.so:audio/libvorbis
 
-.include <bsd.port.options.mk>
-
-GNU_CONFIGURE=		yes
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-apxs=${APXS} \
-			--disable-libFLACtest --disable-vorbistest
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-apxs=${APXS} \
+		--disable-libFLACtest --disable-vorbistest
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 
 PORTDOCS=	README
 
-post-patch:
-.if ${PORT_OPTIONS:MNLS}
-	${RM} ${WRKSRC}/po/*.gmo
-.endif
+post-patch-NLS-on:
+	@${RM} ${WRKSRC}/po/*.gmo
 
-post-build:
-.if ${PORT_OPTIONS:MNLS}
+post-build-NLS-on:
 	@(${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC}/po update-gmo)
-.endif
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
