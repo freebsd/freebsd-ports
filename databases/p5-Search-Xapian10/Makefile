@@ -18,7 +18,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	xapian-core10>=1.0.22:databases/xapian-core10
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS_INSTALL=	p5-Search-Xapian12-
+CONFLICTS_INSTALL=	p5-Search-Xapian12
 
 USES=		perl5
 USE_PERL5=	configure

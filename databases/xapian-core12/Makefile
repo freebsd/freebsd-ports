@@ -15,7 +15,7 @@ COMMENT=	Probabilistic text search database engine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	xapian-core- xapian-core10-
+CONFLICTS_INSTALL=	xapian-core xapian-core10
 
 OPTIONS_DEFINE=	DOCS SSE2
 SSE2_DESC=	Use SSE2 for floating point
