@@ -1,6 +1,6 @@
 bin/webtidy
-%%PERL5_MAN3%%/HTML::Tidy.3.gz
-%%PERL5_MAN3%%/HTML::Tidy::Message.3.gz
 %%SITE_ARCH%%/HTML/Tidy.pm
 %%SITE_ARCH%%/HTML/Tidy/Message.pm
 %%SITE_ARCH%%/auto/HTML/Tidy/Tidy.so
+%%PERL5_MAN3%%/HTML::Tidy.3.gz
+%%PERL5_MAN3%%/HTML::Tidy::Message.3.gz
