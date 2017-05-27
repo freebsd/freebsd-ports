@@ -13,6 +13,8 @@ COMMENT=	Graphical roguelike game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		fails to compile: use of overloaded operator '<<' is ambiguous
+
 USE_SDL=	sdl
 USES=		gmake
 GNU_CONFIGURE=	yes
