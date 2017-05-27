@@ -3,16 +3,14 @@
 
 PORTNAME=	pacemaker
 PORTVERSION=	1.1.14
-PORTREVISION=	2
 DISTVERSIONPREFIX=	Pacemaker-
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	dpejesh@yahoo.com
 COMMENT=	Scalable High-Availability cluster resource manager
 
 LICENSE=	GPLv2
-
-BROKEN_powerpc64=	Does not build
 
 BUILD_DEPENDS=	bash:shells/bash \
 		corosync:net/corosync
@@ -24,6 +22,9 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libxslt.so:textproc/libxslt
 RUN_DEPENDS=	bash:shells/bash \
 		corosync:net/corosync
+
+BROKEN_armv6=		fails to install: help2man: can't get '--help' info from pacemakerd
+BROKEN_powerpc64=	fails to build
 
 CONFLICTS=	heartbeat-[0-9]*
 

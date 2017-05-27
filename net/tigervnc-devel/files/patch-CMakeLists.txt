@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2013-07-21 16:21:37.028241067 +0000
-+++ CMakeLists.txt	2013-07-21 16:21:59.310260222 +0000
-@@ -26,7 +26,7 @@
+--- CMakeLists.txt.orig	2017-04-19 13:27:31 UTC
++++ CMakeLists.txt
+@@ -29,7 +29,7 @@ set(RCVERSION 1,7,90,0)
  # Installation paths
  set(BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin")
  set(DATA_DIR "${CMAKE_INSTALL_PREFIX}/share")

@@ -1,6 +1,4 @@
-diff --git unix/vncserver unix/vncserver
-index 2ef436a7..dac27520 100755
---- unix/vncserver
+--- unix/vncserver.orig	2017-04-19 13:27:31 UTC
 +++ unix/vncserver
 @@ -532,7 +532,7 @@ sub CheckDisplayNumber
  
