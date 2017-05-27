@@ -10,6 +10,8 @@ MASTER_SITES=	http://swish-e.org/distribution/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple web indexing for humans - enhanced
 
+BROKEN_FREEBSD_12=	fails to compile: zlib.h: conflicting types for 'uncompress2'
+
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 USES=		gmake libtool perl5 shebangfix
