@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcheck.so:devel/check
 
+BROKEN_armv6=		fails to compile: Can't define TIME_MAX
+
 CMAKE_ARGS=	-DBUILD_DOCS=OFF \
 		-DBUILD_TESTS=OFF \
 		-DENABLE_GCOV=OFF \

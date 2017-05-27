@@ -18,6 +18,9 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libevent.so:devel/libevent \
 		libmunge.so:security/munge
 
+BROKEN_armv6=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
+BROKEN_sparc64=		fails to compile on sparc64
+
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
@@ -80,8 +83,6 @@ SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_ras_slurm.so \
 			${MPIDIR}/share/openmpi/help-plm-slurm.txt \
 			${MPIDIR}/share/openmpi/help-ras-slurm.txt
-
-BROKEN_sparc64=		Does not compile on sparc64
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/${MPIDIR}/libdata/pkgconfig|g' \

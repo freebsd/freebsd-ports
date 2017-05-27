@@ -17,6 +17,10 @@ COMMENT=	Watches for and e-mails admins about GEOM/ZFS state changes
 
 LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 
+BROKEN_aarch64=		fails to compile: ISA not supported
+BROKEN_armv6=		fails to compile: call to 'atomic_add_64' is ambiguous
+IGNORE_DragonFly=	requires geom(4) support
+
 USES=		tar:tbz
 
 SUB_FILES=	pkg-message
@@ -24,8 +28,5 @@ SUB_FILES=	pkg-message
 USE_RC_SUBR=	${PORTNAME}
 
 MAKE_ARGS=	WITH_ZFS=28
-
-BROKEN_aarch64=		fails to compile: error: ISA not supported
-IGNORE_DragonFly=	requires geom(4) support
 
 .include <bsd.port.mk>
