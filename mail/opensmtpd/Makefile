@@ -27,7 +27,7 @@ MAILERCONF_DESC=	Activate OpenSMTPD in mailer.conf(5)
 SSL_PORT_DESC=		SSL/TLS support via OpenSSL/LibreSSL from port
 TABLE_DB_DESC=		Build table-db plugin (aliases)
 
-USES=		cpe libtool ssl
+USES=		cpe groff libtool ssl
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	openbsd

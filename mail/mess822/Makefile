@@ -13,7 +13,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 822 mail message parsing library and rewriting utilities
 
-USES=		qmail:vars
+USES=		groff qmail:vars
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
