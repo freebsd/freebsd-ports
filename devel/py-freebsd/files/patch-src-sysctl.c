@@ -1,5 +1,5 @@
---- src/sysctl.c.orig	2011-04-12 12:30:50.000000000 +0400
-+++ src/sysctl.c	2011-04-12 12:37:45.000000000 +0400
+--- src/sysctl.c.orig	2005-05-08 06:55:00 UTC
++++ src/sysctl.c
 @@ -121,7 +121,7 @@ const size_t sysctl_type_sizes[CTLTYPE] 
  	0,			/* CTLTYPE_NODE */
  	sizeof(int),		/* CTLTYPE_INT */

@@ -1,6 +1,6 @@
---- src/process.c.orig	Sun May  8 08:55:00 2005
-+++ src/process.c	Sat Nov 25 18:12:52 2006
-@@ -51,10 +51,19 @@
+--- src/process.c.orig	2005-05-08 06:55:00 UTC
++++ src/process.c
+@@ -51,10 +51,19 @@ static char PyFB_setprogname__doc__[] =
  static PyObject *
  PyFB_setprogname(PyObject *self, PyObject *args)
  {
@@ -21,7 +21,7 @@
  
  	setprogname(progname);
  	Py_RETURN_NONE;
-@@ -64,16 +73,24 @@
+@@ -64,16 +73,24 @@ PyFB_setprogname(PyObject *self, PyObjec
  static char PyFB_setproctitle__doc__[] =
  "setproctitle(title):\n"
  "The setproctitle() library routine sets the process title that\n"
