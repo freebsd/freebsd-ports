@@ -46,14 +46,8 @@ PLIST_SUB+=	TT_USER=${USERS} \
 
 OPTIONS_DEFINE=	DEBUG
 
-<<<<<<< HEAD
-NOT_FOR_ARCHS=	sparc64
-NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
-
 NOPIE_PORTS=	yes
 
-=======
->>>>>>> upstream/master
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}

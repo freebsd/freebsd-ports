@@ -106,15 +106,11 @@ DOCS_VARS=		rust_manifests+=${RUST_DOCS_MANIFESTS}
 
 PLIST_FILES=		lib/rustlib/components \
 			lib/rustlib/rust-installer-version
-<<<<<<< HEAD
-=======
-
 .include <bsd.port.pre.mk>
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
 EXTRA_PATCHES+=        ${PATCHDIR}/extra-patch-ino64
 .endif
 
->>>>>>> upstream/master
 pre-fetch:
 	# FIXME: This is the same check for CONFLICTS as the standard
 	# one, except port origins are not compared. This allows
