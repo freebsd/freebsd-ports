@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--disable-documentation
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig
