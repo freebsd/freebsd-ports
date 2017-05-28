@@ -1,13 +1,13 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	Search-Xapian10
+PORTNAME=	Search-Xapian
 PORTVERSION=	1.0.23.0
 PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
+PKGNAMESUFFIX=	10
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
