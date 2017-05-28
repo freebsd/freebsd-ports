@@ -1,7 +1,7 @@
-TIMESTAMP = 1482094365
-SHA256 (centos/motif-2.3.4-8.el7.i686.rpm) = 5d10b29d94de2583bcebe197cc298d90b8bdf153f19945b313782f8b6f4b5572
-SIZE (centos/motif-2.3.4-8.el7.i686.rpm) = 1462440
-SHA256 (centos/motif-2.3.4-8.el7.x86_64.rpm) = 6b737b383df6af745fcb5971cf25fe97113f68ec93d645ce9e0af6a0306a60f6
-SIZE (centos/motif-2.3.4-8.el7.x86_64.rpm) = 1479328
-SHA256 (centos/motif-2.3.4-8.el7.src.rpm) = b84503cb6fcfaf71f7e87b194b9deee167b20ee250c52c3b1815fca64dfa600a
-SIZE (centos/motif-2.3.4-8.el7.src.rpm) = 9450441
+TIMESTAMP = 1495990126
+SHA256 (centos/motif-2.3.4-8.1.el7_3.i686.rpm) = c821673f87aa39b1965f65915db40230c4226966925e4f62b813b6205db48478
+SIZE (centos/motif-2.3.4-8.1.el7_3.i686.rpm) = 1463612
+SHA256 (centos/motif-2.3.4-8.1.el7_3.x86_64.rpm) = 2136a17043f3bcd2905d859187b9719c9e22fe485d685d961c80f52c23e8be0e
+SIZE (centos/motif-2.3.4-8.1.el7_3.x86_64.rpm) = 1480344
+SHA256 (centos/motif-2.3.4-8.1.el7_3.src.rpm) = af35ae46b87811a353cc7ab450d14c2a54d3ca2ec0fbf57fabacd29a324bd152
+SIZE (centos/motif-2.3.4-8.1.el7_3.src.rpm) = 9455659
