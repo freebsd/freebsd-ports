@@ -19,6 +19,7 @@ ALL_TARGET=	all sure
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
+USES=		groff
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man1/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
