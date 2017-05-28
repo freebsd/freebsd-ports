@@ -3,7 +3,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 PKGNAMESUFFIX=	-libs
 LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL} \
@@ -17,7 +17,7 @@ CONFLICTS=	linux-c6-${LINUXNAME}-[0-9]*
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
 LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
-RPMVERSION=	8.el7
+RPMVERSION=	9.el7_3
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	dbuslibs libasyncns libsndfile tcp_wrappers-libs xorglibs
