@@ -20,15 +20,14 @@ MAKE_ARGS=	MANDIR=${MAN1PREFIX}/man/man
 PLIST_FILES=	bin/spegla man/man1/spegla.1.gz
 PORTEXAMPLES=	freebsd.org spegla.conf spegla.sh
 
-OPTIONS_DEFINE=	IPV6
-OPTIONS_DEFAULT=IPV6
+OPTIONS_DEFINE=	EXAMPLES IPV6
 IPV6_MAKE_ARGS=	-DINET6
 
 post-extract:
 	cd ${WRKSRC} && ${SED} -e ${LICENSE_BSD2CLAUSE_REGEX} \
 	    ${WRKSRC}/spegla.c > ${LICENSE_FILE}
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/freebsd.org ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/spegla.conf ${STAGEDIR}${EXAMPLESDIR}
