@@ -3,11 +3,11 @@
 
 PORTNAME=	LaTeX-Table
 PORTVERSION=	1.0.6
+DISTVERSIONPREFIX=	v
 PORTREVISION=	5
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the automatic generation of LaTeX tables
@@ -26,6 +26,7 @@ BUILD_DEPENDS=	p5-Moose>=0.76:devel/p5-Moose \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>=0.084:devel/p5-Test-NoWarnings
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 
