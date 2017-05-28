@@ -1,0 +1,149 @@
+diff -ruN openwebmail/openwebmail-read.pl openwebmail-2.53_2/cgi-bin/openwebmail/openwebmail-read.pl
+--- openwebmail/openwebmail-read.pl	2017-04-24 19:43:15.081986000 +0200
++++ openwebmail/openwebmail-read.pl	2017-04-24 19:36:30.000000000 +0200
+@@ -861,7 +861,7 @@
+    my $has_nontext_att=0;
+ 
+    foreach my $attnumber (0 .. $#{$message{attachment}}) {
+-      next unless (defined %{$message{attachment}[$attnumber]});
++	next unless (%{$message{attachment}[$attnumber]});
+       $has_nontext_att++ if (defined ${$message{attachment}[$attnumber]}{'content-type'} &&
+                              ${$message{attachment}[$attnumber]}{'content-type'}!~/^text/i);
+       my $attcharset=$convfrom;
+@@ -886,7 +886,7 @@
+ 
+       } else {	# attmode==simple
+          # handle case to skip to next text/html attachment
+-         if ( defined %{$message{attachment}[$attnumber+1]} &&
++	if ( ref($message{attachment}[$attnumber+1]) eq "HASH" &&
+               (${$message{attachment}[$attnumber+1]}{boundary} eq
+ 		  ${$message{attachment}[$attnumber]}{boundary}) ) {
+ 
+@@ -1508,7 +1508,7 @@
+    return ($msgsize, $errmsg) if ($msgsize<=0);
+    ($message{header}, $message{body}, $message{attachment})
+ 		=ow::mailparse::parse_rfc822block(\$block, "0", "all");
+-   return 0 if (!defined @{$message{attachment}});
++   return 0 if (!defined {$message{attachment}});
+ 
+    my @datas;
+    my $boundary = "----=OPENWEBMAIL_ATT_" . rand();
+diff -ruN openwebmail/openwebmail-send.pl openwebmail-2.53_2/cgi-bin/openwebmail/openwebmail-send.pl
+--- openwebmail/openwebmail-send.pl	2017-04-24 19:43:15.085116000 +0200
++++ openwebmail/openwebmail-send.pl	2017-04-24 19:28:00.000000000 +0200
+@@ -510,7 +510,7 @@
+       } elsif ($message{'content-type'} =~ /^multipart/i) {
+          # If the first attachment is text,
+          # assume it's the body of a message in multi-part format
+-         if ( defined %{$message{attachment}[0]} &&
++         if ( %{$message{attachment}[0]} &&
+               ${$message{attachment}[0]}{'content-type'} =~ /^text/i ) {
+             if (${$message{attachment}[0]}{'content-transfer-encoding'} =~ /^quoted-printable/i) {
+                $body = decode_qp(${${$message{attachment}[0]}{r_content}});
+@@ -531,7 +531,7 @@
+             # handle mail with both text and html version
+             # rename html to other name so if user in text compose mode,
+             # the modified/forwarded text won't be overridden by html again
+-            if ( defined %{$message{attachment}[1]} &&
++            if ( %{$message{attachment}[1]} &&
+                  ${$message{attachment}[1]}{boundary} eq ${$message{attachment}[0]}{boundary} ) {
+                # rename html attachment in the same alternative group
+                if ( (${$message{attachment}[0]}{subtype}=~/alternative/i &&
+diff -ruN openwebmail/shares/getmessage.pl openwebmail-2.53_2/cgi-bin/openwebmail/shares/getmessage.pl
+--- openwebmail/shares/getmessage.pl	2017-04-24 19:43:15.037505000 +0200
++++ openwebmail/shares/getmessage.pl	2017-04-24 19:02:24.000000000 +0200
+@@ -89,7 +89,7 @@
+    $message{status} =~ s/\s//g;
+    if ($message{'content-type'}=~/charset="?([^\s"';]*)"?\s?/i) {
+       $message{charset}=$1;
+-   } elsif (defined @{$message{attachment}}) {
++   } elsif (@{$message{attachment}}) {
+       my @att=@{$message{attachment}};
+       foreach my $i (0 .. $#att) {
+          if (defined ${$att[$i]}{charset} && ${$att[$i]}{charset} ne '') {
+diff -ruN openwebmail/shares/mailfilter.pl openwebmail-2.53_2/cgi-bin/openwebmail/shares/mailfilter.pl
+--- openwebmail/shares/mailfilter.pl	2017-04-24 19:43:15.040213000 +0200
++++ openwebmail/shares/mailfilter.pl	2017-04-24 19:02:37.000000000 +0200
+@@ -366,7 +366,7 @@
+                         $io_errcount++; $i--; next;
+                      }
+                   }
+-                  if (!defined @{$r_attachments}) {
++                  if (!@{$r_attachments}) {
+                      ($header, $body, $r_attachments)=ow::mailparse::parse_rfc822block(\$currmessage);
+                   }
+ 
+@@ -430,7 +430,7 @@
+                         $io_errcount++; $i--; next;
+                      }
+                   }
+-                  if (!defined @{$r_attachments}) {
++                  if (!@{$r_attachments}) {
+                      ($header, $body, $r_attachments)=ow::mailparse::parse_rfc822block(\$currmessage);
+                   }
+                   # check attachments
+@@ -638,7 +638,7 @@
+                      $io_errcount++; $i--; next;
+                   }
+                }
+-               if (!defined @{$r_attachments}) {
++               if (!@{$r_attachments}) {
+                   ($header, $body, $r_attachments)=ow::mailparse::parse_rfc822block(\$currmessage);
+                }
+ 
+diff -ruN openwebmail/shares/ow-shared.pl openwebmail-2.53_2/cgi-bin/openwebmail/shares/ow-shared.pl
+--- openwebmail/shares/ow-shared.pl	2017-04-24 19:43:15.041206000 +0200
++++ openwebmail/shares/ow-shared.pl	2017-04-24 19:21:59.000000000 +0200
+@@ -184,17 +184,18 @@
+ use vars qw($_vars_used);
+ sub openwebmail_clearall {
+    # clear opentable in filelock.pl
+-   ow::filelock::closeall() if (defined %ow::filelock::opentable);
++   ow::filelock::closeall() if (%ow::filelock::opentable);
+ 
+    # chdir back to openwebmail cgidir
+    chdir($config{'ow_cgidir'}) if ($config{'ow_cgidir'});
+ 
+    # clear gobal variable for persistent perl
+-   undef(%SIG)		if (defined %SIG);
+-   undef(%config)	if (defined %config);
+-   undef(%config_raw)	if (defined %config_raw);
++   undef(%SIG)         if (%SIG);
++   undef(%config)      if (%config);
++   undef(%config_raw)  if (%config_raw);
++  
+    undef($thissession)	if (defined $thissession);
+-   undef(%icontext)	if (defined %icontext);
++     undef(%icontext)    if (%icontext);
+ 
+    undef($default_logindomain) if (defined $default_logindomain);
+    undef($loginname)	if (defined $loginname);
+@@ -207,7 +208,7 @@
+    undef($uuid)		if (defined $uuid);
+    undef($ugid)		if (defined $ugid);
+    undef($homedir)	if (defined $homedir);
+-   undef(%prefs)	if (defined %prefs);
++undef(%prefs)       if (%prefs);
+ 
+    undef($quotausage)	if (defined $quotausage);
+    undef($quotalimit)	if (defined $quotalimit);
+@@ -1068,8 +1069,8 @@
+    $user=get_user_by_virtualuser($loginuser);
+    if ($user eq "") {
+       my @domainlist=($logindomain);
+-      if (defined @{$config{'domain_equiv'}{'list'}{$logindomain}}) {
+-         push(@domainlist, @{$config{'domain_equiv'}{'list'}{$logindomain}});
++      if (defined{$config{'domain_equiv'}{'list'}{$logindomain}}) {
++         push(@domainlist, defined{$config{'domain_equiv'}{'list'}{$logindomain}});
+       }
+       foreach (@domainlist) {
+          $user=get_user_by_virtualuser("$loginuser\@$_");
+@@ -1698,7 +1699,7 @@
+ 
+ ########## IS_ADM ################################################
+ sub is_vdomain_adm {
+-   if (defined @{$config{'vdomain_admlist'}}) {
++   if (@{$config{'vdomain_admlist'}}) {
+       foreach my $adm (@{$config{'vdomain_admlist'}}) {
+          return 1 if ($_[0] eq $adm);		# $_[0] is the user
+       }

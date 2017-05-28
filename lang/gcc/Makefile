@@ -11,7 +11,7 @@ DISTFILES=	# not applicable
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Meta-port for the default version of the GNU Compiler Collection
 
-RUN_DEPENDS=	gcc${DEFAULT}:lang/gcc${GCC_DEFAULT}
+RUN_DEPENDS=	gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
 NO_ARCH=	yes
 NO_BUILD=	yes

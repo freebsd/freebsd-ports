@@ -13,6 +13,7 @@ COMMENT=	djb-style file wiping utility
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
+USES=		groff
 
 PLIST_FILES=	bin/fwipe bin/fwipe0 bin/echo0 man/man1/fwipe.1.gz \
 		man/man1/fwipe0.1.gz man/man1/echo0.1.gz

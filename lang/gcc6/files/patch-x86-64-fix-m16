@@ -1,0 +1,25 @@
+At the moment the -m16 option only passes the "--32" parameter to the
+assembler on glibc OSes, while on other OSes the assembler is called
+without any specific flag. This is wrong and causes the assembler to
+fail. Fix it by adding support for the -m16 option to x86-64.h.
+
+2016-07-06  Roger Pau Monné  <roger.pau@citrix.com>
+
+	* x86-64.h: append --32 to the assembler options when -m16 is used
+	even on non-glibc OSes.
+
+This should be backported to all stable branches up to 4.9 (when -m16 was
+introduced).
+
+--- UTC
+--- gcc/config/i386/x86-64.h
++++ gcc/config/i386/x86-64.h
+@@ -49,7 +49,7 @@ see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+ #define WCHAR_TYPE_SIZE 32
+ 
+ #undef ASM_SPEC
+-#define ASM_SPEC "%{m32:--32} %{m64:--64} %{mx32:--x32}"
++#define ASM_SPEC "%{m16|m32:--32} %{m64:--64} %{mx32:--x32}"
+ 
+ #undef ASM_OUTPUT_ALIGNED_BSS
+ #define ASM_OUTPUT_ALIGNED_BSS(FILE, DECL, NAME, SIZE, ALIGN) \
