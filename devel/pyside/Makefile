@@ -3,11 +3,11 @@
 
 PORTNAME=	pyside
 PORTVERSION=	1.2.2
+DISTVERSIONPREFIX=	qt4.8+
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.qt-project.org/official_releases/pyside/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
-DISTNAME=	pyside-qt4.8+${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings for the Qt applications and UI framework
