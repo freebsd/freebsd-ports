@@ -17,6 +17,9 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	lha:archivers/lha
 
+BROKEN_aarch64=		fails to compile: passing char * to parameter of incompatible type __builtin_va_list
+BROKEN_armv6=		fails to compile: passing char * to parameter of incompatible type __builtin_va_list
+
 EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}-${PORTVERSION}.diff
 
 USES=		gmake
@@ -38,8 +41,6 @@ ESOUND_CPPFLAGS=	`pkgconf --cflags-only-I esound`
 ESOUND_LDFLAGS=		`pkgconf --libs-only-L esound `
 ESOUND_CONFIGURE_ENV_OFF=	ac_cv_lib_esd_esd_open_sound=no \
 				ac_cv_header_esd_h=no
-
-BROKEN_aarch64=		Fails to compile: error: passing char * to parameter of incompatible type __builtin_va_list
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|= @X_LIBS@|= @LDFLAGS@ @X_LIBS@|g' \

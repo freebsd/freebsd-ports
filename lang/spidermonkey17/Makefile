@@ -20,7 +20,9 @@ MAKE_ARGS+=	JS_THREADSAFE=YES \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 
-BROKEN_sparc64=		Does not build on sparc64: fails to link
+BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on output
+BROKEN_mips64=		fails to link: final link failed: Nonrepresentable section on output
+BROKEN_sparc64=		fails to link
 
 USES=		gmake ncurses readline
 MAKEFILE=	Makefile.ref

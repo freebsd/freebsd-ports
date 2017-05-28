@@ -13,8 +13,9 @@ EXTRACT_SUFX=	.shar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for "homebrew" serial LIRC receivers
 
-BROKEN_powerpc64=	Does not build: error: uart.h: No such file or directory
-BROKEN_sparc64=		Does not build
+BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
+BROKEN_powerpc64=	fails to compile: uart.h: No such file or directory
+BROKEN_sparc64=		fails to build
 
 USES=		kmod
 

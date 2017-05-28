@@ -15,6 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnet.so:net/libnet
 
+BROKEN_armv6=		fails to package: lib.freebsd-11.0-RELEASE-p1-armv6-2.7/libnet.so: No such file or directory
+BROKEN_aarch64=		fails to package: lib.freebsd-11.0-RELEASE-p1-aarch64-2.7/libnet.so: No such file or directory
+BROKEN_mips64=		fails to package: lib.freebsd-11.0-RELEASE-p1-mips64-2.7/libnet.so: No such file or directory
+BROKEN_powerpc64=	fails to package: lib.freebsd-11.0-RELEASE-p1-powerpc64-2.7/libnet.so: No such file or directory
+
 USES=		python
 USE_PYTHON=	distutils pythonprefix
 
@@ -27,9 +32,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
 OSVER=		uname -r
-
-BROKEN_aarch64=		Fails to install: lib.freebsd-11.0-RELEASE-p1-aarch64-2.7/libnet.so: No such file or directory
-BROKEN_powerpc64=	Fails to install: lib.freebsd-11.0-RELEASE-p1-powerpc64-2.7/libnet.so: No such file or directory
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.py

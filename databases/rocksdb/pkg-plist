@@ -15,6 +15,7 @@ bin/write_stress
 include/rocksdb/advanced_options.h
 include/rocksdb/c.h
 include/rocksdb/cache.h
+include/rocksdb/cleanable.h
 include/rocksdb/compaction_filter.h
 include/rocksdb/compaction_job_stats.h
 include/rocksdb/comparator.h

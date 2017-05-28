@@ -27,7 +27,7 @@ NORELRO_PORTS=	yes
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
-CONFLICTS=	gcc-5.*
+CONFLICTS=	gcc5-devel-5.*
 CPE_VENDOR=	gnu
 
 GCC_VERSION=	${PORTVERSION}

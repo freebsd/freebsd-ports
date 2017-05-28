@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}
@@ -20,10 +20,13 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 
+<<<<<<< HEAD
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
 
 BROKEN_powerpc64=	fails to build: close.c: implicit declaration of function 'strdup'
+=======
+>>>>>>> upstream/master
 BROKEN_sparc64=		fails to configure: cannot compute suffix of object files: cannot compile
 
 .if defined(MAINTAINER_MODE)

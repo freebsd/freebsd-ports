@@ -16,6 +16,13 @@ LICENSE_NAME_DMD=	Digital Mars license
 LICENSE_FILE_DMD=	${WRKSRC}/dmd/src/backendlicense.txt
 LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
+BROKEN_armv6=		dumps core: Assertion failed: (!signbit(Port::ldbl_nan)), function PortInitializer, file port.c
+BROKEN_mips64=		fails to compile: cc1: unrecognized command line option -m32
+BROKEN_powerpc64=	fails to build: can't mangle function with unknown linkage (void*())
+BROKEN_sparc64=		fails to install: divide-by-zero error
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	no cpu specified, assuming X86
+
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	dlang
 GH_PROJECT=	dmd:dmd druntime:druntime phobos:phobos dlang.org:dlang_org
@@ -25,11 +32,6 @@ MAKE_ARGS=	HOST_DMD=${WRKDIR}/.host_dmd-2.067.1/stage/usr/local/bin/dmd
 EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
 DOCSDIR=	${PREFIX}/share/doc/dmd2
 WRKSRC=		${WRKDIR}
-
-BROKEN_aarch64=		Does not configure: no cpu specified, assuming X86
-BROKEN_mips64=		Does not compile: cc1: error: unrecognized command line option -m32
-BROKEN_powerpc64=	Does not build: can't mangle function with unknown linkage (void*())
-BROKEN_sparc64=		Does not install: divide-by-zero error
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -76,7 +78,6 @@ post-patch:
 make-phobos:
 	cd ${WRKSRC}/phobos && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -f ${MAKEFILE} ${BUILD}
 
-
 make-druntime:
 	cd ${WRKSRC}/druntime && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -f ${MAKEFILE} ${BUILD}
 
@@ -96,7 +97,7 @@ do-install:
 	cd ${WRKDIR}/druntime/import && ${COPYTREE_SHARE} . ${STAGEDIR}${MODULEDIR}
 	cd ${WRKSRC}/phobos && ${COPYTREE_SHARE} std ${STAGEDIR}${MODULEDIR}
 	cd ${WRKSRC}/phobos && ${COPYTREE_SHARE} etc ${STAGEDIR}${MODULEDIR}
-	
+
 post-install-DOCS-on:
 	cd ${WRKSRC}/dlang.org && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -f ${MAKEFILE} html ${BUILD} LATEST=${PORTVERSION}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

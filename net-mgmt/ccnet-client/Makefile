@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccnet-client
-PORTVERSION=	6.0.4
+PORTVERSION=	${SEAFILE_CLIENT_VER}
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt devel
 
@@ -35,5 +35,7 @@ CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcryp
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ldap
 INSTALL_TARGET=	install-strip
+
+.include "${.CURDIR}/../seafile-client/Makefile.include"
 
 .include <bsd.port.mk>

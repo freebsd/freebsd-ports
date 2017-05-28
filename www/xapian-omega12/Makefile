@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libxapian.so:databases/xapian-core12
 
-CONFLICTS_INSTALL=	xapian-omega-
+CONFLICTS_INSTALL=	xapian-omega
 
 OPTIONS_DEFINE=	DOCS EXAMPLES ICONV
 OPTIONS_DEFAULT=ICONV

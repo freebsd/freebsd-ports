@@ -17,7 +17,7 @@ BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libxapian.so:databases/xapian-core
 
-CONFLICTS_INSTALL=	xapian-omega12-
+CONFLICTS_INSTALL=	xapian-omega12
 
 OPTIONS_DEFINE=	DOCS EXAMPLES ICONV
 OPTIONS_DEFAULT=ICONV

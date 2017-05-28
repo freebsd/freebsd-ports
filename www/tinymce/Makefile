@@ -14,8 +14,6 @@ COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-CONFLICTS_INSTALL=	tinymce-[0-35-9]* tinymce3-[0-9]*
-
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

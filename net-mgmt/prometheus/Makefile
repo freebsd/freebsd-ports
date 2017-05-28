@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prometheus
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -21,10 +21,10 @@ USE_RC_SUBR=	prometheus
 USERS=		prometheus
 GROUPS=		prometheus
 
-LD_FLAG_STRING= ${GO_PKGNAME}/vendor/github.com/prometheus/common/version.
+LD_FLAG_STRING=	${GO_PKGNAME}/vendor/github.com/prometheus/common/version.
 do-build:
 	(cd ${GO_WRKSRC}/cmd/prometheus ; ${SETENV} ${GO_ENV} go install -ldflags \
-	    "-s -X ${LD_FLAG_STRING}.Version=${PORTVERSION}") 
+	    "-s -X ${LD_FLAG_STRING}.Version=${PORTVERSION}")
 
 	(cd ${GO_WRKSRC}/cmd/promtool ; ${SETENV} ${GO_ENV} go install -ldflags \
 	    "-s -X ${LD_FLAG_STRING}.Version=${PORTVERSION}")
