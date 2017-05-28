@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --program-transform-name= \
 PORTDATA=	*
 
 OPTIONS_DEFINE?=	NLS X11 SDL MYSQL IPV6 DOCS
-OPTIONS_DEFAULT?=	NLS X11 IPV6
+OPTIONS_DEFAULT?=	X11
 OPTIONS_SUB=		yes
 SDL_CONFIGURE_ON=	--enable-client=gtk,sdl
 SDL_USE=		SDL=sdl,image,ttf,gfx
@@ -72,11 +72,11 @@ post-patch:
 		${WRKSRC}/client/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MX11}
-	${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${STAGEDIR}${DATADIR}/
-	cd ${STAGEDIR}/${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
-.endif
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreeciv*.so
 	${RM} ${STAGEDIR}${PREFIX}/etc/ggz.modules
+
+post-install-X11-on:
+	${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${STAGEDIR}${DATADIR}/
+	cd ${STAGEDIR}/${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
 
 .include <bsd.port.mk>
