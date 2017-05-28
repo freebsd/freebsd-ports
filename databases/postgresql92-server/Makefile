@@ -110,7 +110,7 @@ OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
 OPTIONS_DEFINE+=	SSL
 SSL_DESC=	Build with OpenSSL support
 
-OPTIONS_DEFAULT+=	NLS SSL
+OPTIONS_DEFAULT+=	SSL
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)
