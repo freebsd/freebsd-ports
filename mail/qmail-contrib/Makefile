@@ -15,7 +15,7 @@ COMMENT=	Contributed programs for qmail
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		qmail:run
+USES=		groff qmail:run
 
 ALL_TARGET=	prog
 INSTALL_TARGET=	setup
