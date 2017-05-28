@@ -1,6 +1,6 @@
---- src/.const.def.orig	2005-12-09 06:40:56.000000000 +0300
-+++ src/.const.def	2014-10-18 00:25:38.000000000 +0400
-@@ -69,7 +69,6 @@
+--- src/.const.def.orig	2005-12-09 03:40:56 UTC
++++ src/.const.def
+@@ -69,7 +69,6 @@ SETDICT_INT(d, "IFF_BROADCAST", IFF_BROA
  SETDICT_INT(d, "IFF_DEBUG", IFF_DEBUG);
  SETDICT_INT(d, "IFF_LOOPBACK", IFF_LOOPBACK);
  SETDICT_INT(d, "IFF_POINTOPOINT", IFF_POINTOPOINT);
