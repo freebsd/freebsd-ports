@@ -177,6 +177,8 @@
     SUBDIR += mariadb100-server
     SUBDIR += mariadb101-client
     SUBDIR += mariadb101-server
+    SUBDIR += mariadb102-client
+    SUBDIR += mariadb102-server
     SUBDIR += mariadb55-client
     SUBDIR += mariadb55-server
     SUBDIR += mdbtools
