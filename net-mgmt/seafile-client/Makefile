@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-client
-PORTVERSION=	6.0.4
+PORTVERSION=	${SEAFILE_CLIENT_VER}
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -34,7 +34,7 @@ GH_PROJECT=	seafile
 USES=		autoreconf gettext iconv libarchive libtool mysql pathfix \
 		pkgconfig python:-2.7 shebangfix sqlite ssl
 USE_GNOME=	glib20
-SHEBANG_FILES=	*.sh scripts/*.sh integration-tests/*.sh
+SHEBANG_FILES=	*.sh scripts/*.sh app/seaf-cli integration-tests/*.sh
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
@@ -50,5 +50,12 @@ post-patch:
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100097
 	${REINPLACE_CMD} 's/P_KTHREAD/P_KPROC/' ${WRKSRC}/lib/utils.c
 .endif
+
+makesum-all:
+.for PORT in net-mgmt/ccnet-client net-mgmt/seafile-client net-mgmt/seafile-gui
+	${MAKE} -C "${PORTSDIR}/${PORT}" makesum
+.endfor
+
+.include "${.CURDIR}/Makefile.include"
 
 .include <bsd.port.mk>

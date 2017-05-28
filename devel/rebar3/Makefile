@@ -2,14 +2,15 @@
 
 PORTNAME=	rebar3
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://s3.amazonaws.com/s3.hex.pm/tarballs/:hex
-DISTFILES=	rebar3-cache-10${EXTRACT_SUFX}:deps
+DISTFILES=	rebar3-cache-11${EXTRACT_SUFX}:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		rebar3-cache-10${EXTRACT_SUFX}
+		rebar3-cache-11${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Build tool for Erlang

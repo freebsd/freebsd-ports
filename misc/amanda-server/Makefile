@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amanda
-PORTVERSION=	3.3.6
-PORTREVISION=	5
+PORTVERSION=	3.3.9
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -32,7 +31,7 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-user=${USERS} --with-group=${AMANDA_GROUP} \
 		--with-bsdtcp-security --with-bsdudp-security \
 		--with-ssh-security \
-		--disable-installperms
+		--disable-installperms --with-security-file=${ETCDIR}/security.conf
 CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl-amanda
 PKG_MESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

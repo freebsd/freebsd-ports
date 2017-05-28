@@ -1,15 +1,15 @@
---- CMakeLists.txt.orig	2016-04-29 04:32:14 UTC
+--- CMakeLists.txt.orig	2017-05-09 08:39:31 UTC
 +++ CMakeLists.txt
-@@ -81,7 +81,7 @@ IF (WIN32)
+@@ -107,7 +107,7 @@ IF (WIN32)
+       SET(SPARKLE_LIBS ${CMAKE_SOURCE_DIR}/WinSparkle.lib)
      ENDIF()
-     SET(platform_specific_moc_headers src/ext-handler.h)
-     SET(platform_specific_sources src/ext-handler.cpp)
--ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD")
-+ELSEIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
+ 
+-ELSEIF (LINUX)
++ELSEIF (LINUX OR ${CMAKE_SYSTEM_NAME} MATCHES "BSD|DragonFly")
      INCLUDE_DIRECTORIES(${QT_QTDBUS_INCLUDE_DIR})
      LINK_DIRECTORIES(${QT_QTDBUS_LIBRARIES})
      SET(EXTRA_LIBS ${EXTRA_LIBS} ${QT_QTDBUS_LIBRARIES})
-@@ -318,7 +318,7 @@ PKG_CHECK_MODULES(LIBCCNET REQUIRED libc
+@@ -360,7 +360,7 @@ PKG_CHECK_MODULES(LIBCCNET REQUIRED libccnet>=1.3)
  
  PKG_CHECK_MODULES(LIBSEARPC REQUIRED libsearpc>=1.0)
  
@@ -18,7 +18,7 @@
  
  PKG_CHECK_MODULES(LIBSEAFILE REQUIRED libseafile>=1.7)
  
-@@ -515,7 +515,7 @@ IF (WIN32)
+@@ -561,7 +561,7 @@ IF (WIN32)
          src/utils/registry.cpp
          src/utils/utils-win.cpp
          )
@@ -27,7 +27,7 @@
      LIST(APPEND utils_sources
          src/utils/process-linux.cpp
          )
-@@ -714,7 +714,7 @@ QT5_USE_MODULES(seafile-applet ${WEBKIT_
+@@ -761,7 +761,7 @@ QT5_USE_MODULES(seafile-applet ${WEBKIT_NAME} ${WEBKIT
  ENDIF()
  
  ## QtBus

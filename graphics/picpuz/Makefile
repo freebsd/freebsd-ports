@@ -11,6 +11,8 @@ MASTER_SITES=	http://kornelix.squarespace.com/storage/downloads/ \
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Jigsaw puzzle program
 
+BROKEN_armv6=		fails to compile: use of undeclared identifier __NR_SYSCALL_BASE
+
 USES=		dos2unix execinfo gmake pkgconfig
 DOS2UNIX_GLOB=	*.h
 USE_GNOME=	gtk20

@@ -19,9 +19,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 
-EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
+BROKEN_armv6=		fails to configure: the SPANDSP installation appears to be missing or broken
+ONLY_FOR_ARCHS=		armv6 amd64 i386 powerpc sparc64
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 armv6
+EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 USES=		bison cpe gmake iconv libedit localbase \
 		shebangfix sqlite ssl ncurses

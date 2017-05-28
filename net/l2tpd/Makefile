@@ -10,7 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/L2TPd/${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Implementation of the layer two tunneling protocol
 
-USES=	compiler:nestedfct
+BROKEN_armv6=	fails to link: undefined reference to check_control
+
+USES=		compiler:nestedfct
 
 PORTDOCS=	README
 ETCDIR=		${PREFIX}/etc/l2tp

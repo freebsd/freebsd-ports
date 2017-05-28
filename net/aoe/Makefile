@@ -11,6 +11,11 @@ DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FreeBSD driver for ATA over Ethernet (AoE)
 
+BROKEN_aarch64=		fails to compile: redefinition of frame
+BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
+BROKEN_powerpc64=	fails to compile: pcpu.h: size of array '__assert_0' is negative
+BROKEN_sparc64=		fails to compile: redefinition of frame
+
 USES=	kmod
 
 WRKSRC=		${WRKDIR}/dev/aoe
@@ -20,11 +25,6 @@ USE_RC_SUBR=	aoe
 
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
-
-BROKEN_aarch64=		fails to compile: error: redefinition of frame
-BROKEN_armv6=		fails to compile: error: redefinition of frame
-BROKEN_powerpc64=	fails to compile: pcpu.h: size of array '__assert_0' is negative
-BROKEN_sparc64=		fails to compile: error: redefinition of frame
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/aoe.ko ${STAGEDIR}${PREFIX}/lib/aoe

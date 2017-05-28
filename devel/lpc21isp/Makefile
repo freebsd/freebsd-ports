@@ -12,6 +12,8 @@ COMMENT=	ISP programmer tool for flashing NXP & Analog Devices ARM7 CPUs
 
 LICENSE=	LGPL3+
 
+BROKEN_armv6=		fails to compile: no member named 'nQuestionMarks' in 'ISP_ENVIRONMENT'
+
 USES=		gmake
 
 PLIST_FILES=	bin/lpc21isp

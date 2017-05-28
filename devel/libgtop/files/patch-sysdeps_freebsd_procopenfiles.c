@@ -5,7 +5,7 @@
  
  				entry.type = GLIBTOP_FILE_TYPE_LOCALSOCKET;
 +/* 64bit inodes */
-+#if __FreeBSD_version > 1200031
++#if __FreeBSD_version >= 1200031
 +				sun = (struct sockaddr_un *)&kif->kf_un.kf_sock.kf_sa_local;
 +#else
  				sun = (struct sockaddr_un *)&kif->kf_sa_local;
@@ -14,7 +14,7 @@
  				if (sun->sun_path[0]) {
  					char *addrstr;
  
-+#if __FreeBSD_version > 1200031
++#if __FreeBSD_version >= 1200031
 +					addrstr = addr_to_string(&kif->kf_un.kf_sock.kf_sa_local);
 +#else
  					addrstr = addr_to_string(&kif->kf_sa_local);
@@ -26,7 +26,7 @@
  				} else {
  					char *addrstr;
  
-+#if __FreeBSD_version > 1200031
++#if __FreeBSD_version >= 1200031
 +					addrstr = addr_to_string(&kif->kf_un.kf_sock.kf_sa_peer);
 +#else
  					addrstr = addr_to_string(&kif->kf_sa_peer);
@@ -38,7 +38,7 @@
  					entry.type = GLIBTOP_FILE_TYPE_INETSOCKET;
  				else
  					entry.type = GLIBTOP_FILE_TYPE_INET6SOCKET;
-+#if __FreeBSD_version > 1200031
++#if __FreeBSD_version >= 1200031
 +				addrstr = addr_to_string(&kif->kf_un.kf_sock.kf_sa_peer);
 +#else
  				addrstr = addr_to_string(&kif->kf_sa_peer);
@@ -47,7 +47,7 @@
  					  addrstr,
  					  sizeof(entry.info.sock.dest_host));
  				g_free(addrstr);
-+#if __FreeBSD_version > 1200031
++#if __FreeBSD_version >= 1200031
 +				entry.info.sock.dest_port = addr_to_port(&kif->kf_un.kf_sock.kf_sa_peer);
 +#else
  				entry.info.sock.dest_port = addr_to_port(&kif->kf_sa_peer);
