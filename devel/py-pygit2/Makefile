@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 MAKE_ENV=	LIBGIT2=${LOCALBASE}
 PYDISTUTILS_TEST_TARGET?=	test
