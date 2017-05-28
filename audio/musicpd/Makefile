@@ -28,7 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/sidplay/builders
 #Workaround (transient?) link error with libwrap
 CONFIGURE_ARGS+=--disable-libwrap
 
-BROKEN_aarch64=		Does not build: fatal error: 'endian.h' file not found
 BROKEN_powerpc64=	Does not build on powerpc64
 
 PORTDOCS=	AUTHORS README.md COPYING NEWS
