@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-CONFLICTS_INSTALL=	devtodo-[0-9]*
+# bin/todo
+CONFLICTS_INSTALL=	devtodo
 
 NO_ARCH=	yes
 NO_BUILD=	yes
