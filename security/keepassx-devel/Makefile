@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keepassx
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	security
 PKGNAMESUFFIX=	-devel
 
@@ -32,7 +31,7 @@ USE_XORG=	ice inputproto sm x11 xcursor xext xfixes xi xrandr xrender \
 		xt xtst
 
 USE_GITHUB=	yes
-GH_TAGNAME=	b654fde
+GH_TAGNAME=	55869e8
 
 CMAKE_ARGS+=	-DZLIB_SUPPORTS_GZIP:BOOL=ON
 
