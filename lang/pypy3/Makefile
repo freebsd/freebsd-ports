@@ -11,6 +11,7 @@ MASTERDIR=	${.CURDIR}/../pypy
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	pypy3 is in beta development and upstream only supported amd64 for now
 
+BROKEN=		YES
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${DISTVERSION:C/-.*//}-src
 BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-${PORTNAME}.5-v${DISTVERSION:C/-.*//}-0/testing_1
 
