@@ -13,7 +13,7 @@ COMMENT=	Traceroute and ping in a single network diagnostic tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL?=	mtr-nox11-[0-9]*
+CONFLICTS_INSTALL?=	mtr-nox11
 
 OPTIONS_DEFINE=	IPV6 X11
 OPTIONS_DEFAULT=X11
