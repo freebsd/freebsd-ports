@@ -1,5 +1,5 @@
---- Gemfile.orig	2017-05-12 20:05:42.073527000 +0200
-+++ Gemfile	2017-05-12 20:05:51.491283000 +0200
+--- Gemfile.orig	2017-05-05 12:53:55 UTC
++++ Gemfile
 @@ -1,26 +1,22 @@
  source 'https://rubygems.org'
  
@@ -32,7 +32,7 @@
  gem 'omniauth-auth0',         '~> 1.4.1'
  gem 'omniauth-azure-oauth2',  '~> 0.0.6'
  gem 'omniauth-cas3',          '~> 1.1.2'
-@@ -28,17 +24,16 @@
+@@ -28,17 +24,16 @@ gem 'omniauth-facebook',      '~> 4.0.0'
  gem 'omniauth-github',        '~> 1.1.1'
  gem 'omniauth-gitlab',        '~> 1.0.2'
  gem 'omniauth-google-oauth2', '~> 0.4.1'
@@ -54,7 +54,7 @@
  gem 'akismet', '~> 2.0'
  
  # Two-factor authentication
-@@ -64,10 +59,10 @@
+@@ -64,10 +59,10 @@ gem 'gollum-lib', '~> 4.2', require: fal
  gem 'gollum-rugged_adapter', '~> 0.4.2', require: false
  
  # Language detection
@@ -67,7 +67,7 @@
  gem 'grape-entity', '~> 0.6.0'
  gem 'rack-cors',    '~> 0.4.0', require: 'rack/cors'
  
-@@ -75,10 +70,10 @@
+@@ -75,10 +70,10 @@ gem 'rack-cors',    '~> 0.4.0', require:
  gem 'kaminari', '~> 0.17.0'
  
  # HAML
@@ -80,7 +80,7 @@
  
  # Drag and Drop UI
  gem 'dropzonejs-rails', '~> 0.7.1'
-@@ -92,7 +87,7 @@
+@@ -92,7 +87,7 @@ gem 'fog-openstack', '~> 0.1'
  gem 'fog-rackspace', '~> 0.1.1'
  
  # for Google storage
@@ -89,7 +89,7 @@
  
  # for aws storage
  gem 'unf', '~> 0.1.4'
-@@ -102,29 +97,29 @@
+@@ -102,29 +97,29 @@ gem 'seed-fu', '~> 2.3.5'
  
  # Markdown and HTML processing
  gem 'html-pipeline',        '~> 1.11.0'
@@ -127,7 +127,7 @@
    gem 'unicorn-worker-killer', '~> 0.4.4'
  end
  
-@@ -143,10 +138,10 @@
+@@ -143,10 +138,10 @@ gem 'redis-namespace', '~> 1.5.2'
  gem 'sidekiq-limit_fetch', '~> 3.4'
  
  # HTTP requests
@@ -140,7 +140,7 @@
  
  # GitLab settings
  gem 'settingslogic', '~> 2.0.9'
-@@ -166,7 +161,7 @@
+@@ -166,7 +161,7 @@ gem 'connection_pool', '~> 2.0'
  gem 'hipchat', '~> 1.5.0'
  
  # JIRA integration
@@ -149,7 +149,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -178,13 +173,13 @@
+@@ -178,13 +173,13 @@ gem 'gemnasium-gitlab-service', '~> 0.2'
  gem 'slack-notifier', '~> 1.5.1'
  
  # Asana integration
@@ -165,7 +165,7 @@
  
  # d3
  gem 'd3_rails', '~> 3.5.0'
-@@ -193,17 +188,17 @@
+@@ -193,17 +188,17 @@ gem 'd3_rails', '~> 3.5.0'
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -186,7 +186,7 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -222,132 +217,54 @@
+@@ -222,132 +217,53 @@ gem 'chronic', '~> 0.10.2'
  gem 'chronic_duration', '~> 0.10.6'
  
  gem 'webpack-rails', '~> 0.9.9'
@@ -333,4 +333,3 @@
  gem 'sys-filesystem', '~> 1.1.6'
 +
 +gem 'rinku'
-+gem 'pg', '>= 0.18.2', group: :postgres

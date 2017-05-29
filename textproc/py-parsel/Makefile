@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	parsel
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	eric@camachat.org
-COMMENT=	Parsel is a library to extract data from HTML and XML using XPath and CSS selectors
+COMMENT=	Library to extract data from HTML and XML using XPath and CSS selectors
 
 LICENSE=	BSD3CLAUSE
 
