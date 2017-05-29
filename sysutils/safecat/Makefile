@@ -14,6 +14,7 @@ COMMENT=	Safely write data to maildir directory
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		groff
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 MAKE_JOBS_UNSAFE=yes

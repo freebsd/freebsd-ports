@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bash:shells/bash
 
 BROKEN_powerpc64=	Does not build: error: nested functions are disabled, use -fnested-functions to re-enable
 
-USES=		compiler:nestedfct gmake ncurses
+USES=		compiler:nestedfct gmake groff ncurses
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I. -Wall -Wstrict-prototypes -Wextra -Wno-unused-parameter"
 

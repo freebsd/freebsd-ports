@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \
 LIB_DEPENDS=	libexplain.so:devel/libexplain
 
 GNU_CONFIGURE=	yes
+USES=		groff
 
 MAKE_JOBS_UNSAFE=	yes
 
