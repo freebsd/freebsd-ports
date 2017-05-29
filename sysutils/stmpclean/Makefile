@@ -9,6 +9,7 @@ MASTER_SITES=	http://shlang.com/stmpclean/
 MAINTAINER=	shalunov@shlang.com
 COMMENT=	Remove old files from temporary directories
 
+USES=		groff
 PLIST_FILES=	sbin/stmpclean man/man8/stmpclean.8.gz
 
 post-patch:

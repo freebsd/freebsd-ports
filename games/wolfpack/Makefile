@@ -12,7 +12,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Long term multiplayer strategy game
 
 MAKEFILE=	GNUmakefile
-USES=		gmake perl5
+USES=		gmake groff perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 BINDIR=		${PREFIX}/lib/${PORTNAME}
