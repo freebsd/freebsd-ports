@@ -13,7 +13,7 @@ COMMENT?=	Mail and news client descended from Pine
 LICENSE=	APACHE20
 
 OPTIONS_DEFINE=		DOCS SSL THREADS MOUSE NLS ISPELL NOSPELL
-OPTIONS_DEFAULT+=	DOCS SSL THREADS MOUSE
+OPTIONS_DEFAULT+=	SSL THREADS MOUSE
 SSL_DESC=	Build with SSL (installs: security/openssl if pre 10.x)
 MOUSE_DESC=	Enable mouse support for xterm
 ISPELL_DESC=	Use ispell instead of aspell as default speller

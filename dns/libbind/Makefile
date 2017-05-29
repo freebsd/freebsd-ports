@@ -18,6 +18,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --with-randomdev=/dev/random
+USES=		groff
 
 OPTIONS_DEFINE=	IPV6 THREADS
 OPTIONS_DEFAULT=	THREADS

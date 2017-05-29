@@ -1,5 +1,5 @@
---- src/jail.c.orig	2005-05-08 06:55:00.000000000 +0000
-+++ src/jail.c	2008-12-23 13:54:31.000000000 +0000
+--- src/jail.c.orig	2005-05-08 06:55:00 UTC
++++ src/jail.c
 @@ -40,21 +40,37 @@ static PyObject *
  PyFB_jail(PyObject *self, PyObject *args)
  {

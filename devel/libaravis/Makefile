@@ -29,7 +29,7 @@ AUTOMAKE_ARGS=		--add-missing --copy
 MAKE_ARGS=		pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
 OPTIONS_DEFINE=		DOCS NLS FAST_HEARTBEAT USB
-OPTIONS_DEFAULT=	NLS USB
+OPTIONS_DEFAULT=	USB
 OPTIONS_SUB=		yes
 
 CONFIGURE_ARGS=		--enable-packet-socket=no --enable-viewer=no	\
@@ -43,8 +43,6 @@ FAST_HEARTBEAT_CONFIGURE_ENABLE=	fast-heartbeat
 
 USB_DESC=		build with USB support
 USB_CONFIGURE_ENABLE=	usb
-
-.include <bsd.port.options.mk>
 
 pre-configure:
 	${ECHO_CMD} "EXTRA_DIST =" >> ${WRKSRC}/gtk-doc.make
