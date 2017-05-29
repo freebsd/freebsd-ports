@@ -559,6 +559,7 @@
     SUBDIR += erlang-sbroker
     SUBDIR += erlang-ssl_verify_fun
     SUBDIR += erlang-syslog
+    SUBDIR += erlang-unicode_util_compat
     SUBDIR += es-eric6
     SUBDIR += etcd
     SUBDIR += etcd3
