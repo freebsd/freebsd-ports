@@ -666,6 +666,8 @@
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/cs/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/cs/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/ca/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/ca/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/de/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/de/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/el/LC_MESSAGES/frontend.mo
