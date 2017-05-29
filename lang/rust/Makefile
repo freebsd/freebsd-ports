@@ -134,7 +134,7 @@ pre-fetch:
 		exit 1;\
 	fi
 
-LIBSTD=	rust-std-1.16.0-x86_64-unknown-freebsd/rust-std-x86_64-unknown-freebsd/lib/rustlib/x86_64-unknown-freebsd/lib/libstd-aef6cb139bd07bdc.rlib
+LIBSTD=	rust-std-1.16.0-${RUST_ARCH_${ARCH}}-unknown-freebsd/rust-std-${RUST_ARCH_${ARCH}}-unknown-freebsd/lib/rustlib/${RUST_ARCH_${ARCH}}-unknown-freebsd/lib/libstd-aef6cb139bd07bdc.rlib
 STDF=	std-aef6cb139bd07bdc.0.o
 
 post-extract:
@@ -143,6 +143,10 @@ post-extract:
 		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR}
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUSTC_BOOTSTRAP} \
 		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR}
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1200031
+	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP} \
+		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR}
+.endif
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${CARGO_BOOTSTRAP} \
 		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR}
 	${TAR} -x -C ${WRKSRC} -f ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP}
@@ -152,7 +156,7 @@ post-extract:
 	${LD} -r -o ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF} ${WRKSRC}/old_fstat.o
 	${MV} ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF}
 	(cd ${WRKSRC} && ${AR} r ${WRKSRC}/${LIBSTD} ${STDF})
-	${TAR} -cy -C ${WRKSRC} -f ${WRKSRC}/rustc.tbz rust-std-1.16.0-x86_64-unknown-freebsd
+	${TAR} -cy -C ${WRKSRC} -f ${WRKSRC}/rustc.tbz rust-std-1.16.0-${RUST_ARCH_${ARCH}}-unknown-freebsd
 	${MV} ${WRKSRC}/rustc.tbz ${WRKSRC}/build/cache/${RUST_STD_BOOTSTRAP}
 .endif
 
