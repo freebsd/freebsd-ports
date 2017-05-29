@@ -28,7 +28,7 @@ TEST_DEPENDS=	p5-IO-All>=0:devel/p5-IO-All \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
 		p5-Test-Requires>=0.06:devel/p5-Test-Requires
 
-CONFLICTS_INSTALL=	p5-IO-Detect-[0-9]*
+CONFLICTS_INSTALL=	p5-IO-Detect
 
 NO_ARCH=	yes
 USE_PERL5=	configure
