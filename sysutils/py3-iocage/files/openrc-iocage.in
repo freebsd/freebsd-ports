@@ -21,6 +21,8 @@ depend()
 
 start()
 {
+	LC_ALL="UTF-8"
+	export LC_ALL
 	ebegin "Starting $name"
 	%%PREFIX%%/bin/iocage start --rc
 	mark_service_started
@@ -29,6 +31,8 @@ start()
 
 stop()
 {
+	LC_ALL="UTF-8"
+	export LC_ALL
 	ebegin "Stopping $name"
 	%%PREFIX%%/bin/iocage stop --rc
 	mark_service_stopped
