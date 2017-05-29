@@ -11,7 +11,7 @@ COMMENT=	Java-based Scheme implementation
 
 LICENSE=	MIT
 
-USES=		gmake readline
+USES=		gmake groff readline
 USE_JAVA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
