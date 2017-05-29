@@ -161,7 +161,7 @@ index 0000000..aefc606
 +CF_ADDTO(proto, firewall_proto '}')
 +
 +firewall_proto_start: proto_start FIREWALL {
-+     this_proto = proto_config_new(&proto_firewall, sizeof(struct firewall_config), $1);
++     this_proto = proto_config_new(&proto_firewall, $1);
 +     this_proto->preference = 0;
 +     FIREWALL_CFG->flush_start = 1;
 +     FIREWALL_CFG->flush_shutdown = 1;
@@ -217,7 +217,7 @@ new file mode 100644
 index 0000000..e447470
 --- /dev/null
 +++ proto/firewall/firewall.c
-@@ -0,0 +1,198 @@
+@@ -0,0 +1,199 @@
 +/*
 + *	BIRD -- Firewall Protocol Configuration
 + *
@@ -247,7 +247,7 @@ index 0000000..e447470
 +#include "firewall.h"
 +
 +static int init_done = 0;
-+struct rate_limit rl_fw_err;
++struct tbf rl_fw_err;
 +
 +static void
 +firewall_collect(void)
@@ -408,6 +408,7 @@ index 0000000..e447470
 +  name:		"Firewall",
 +  template:	"fw%d",
 +  attr_class:	EAP_FIREWALL,
++  config_size:	sizeof(struct firewall_config),
 +  init:		firewall_init,
 +  start:	firewall_start,
 +  shutdown:	firewall_shutdown,
@@ -472,7 +473,7 @@ index 0000000..c97ed38
 +extern struct protocol proto_firewall;
 +
 +extern struct firewall_control fw_ipfw, fw_pf, fw_ipset;
-+extern struct rate_limit rl_fw_err;
++extern struct tbf rl_fw_err;
 +#define FW_ERR(x, y...)	log_rl(&rl_fw_err, L_ERR x, ##y)
 +
 +#endif

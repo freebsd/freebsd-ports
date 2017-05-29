@@ -16,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis
 
-CONFLICTS=	libshout2-[0-9]*
-
 OPTIONS_DEFINE=	DOCS SPEEX THEORA
 OPTIONS_DEFAULT=SPEEX THEORA
 
