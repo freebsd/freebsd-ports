@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandas
-PORTVERSION=	0.19.2
+PORTVERSION=	0.20.1
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}tables>=3.0.0:devel/py-tables \
 		${PYTHON_PKGNAMEPREFIX}bottleneck>0:math/py-bottleneck \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib \
-		${PYTHON_PKGNAMEPREFIX}numexpr>=2.1.0:math/py-numexpr \
+		${PYTHON_PKGNAMEPREFIX}numexpr>=2.4.6:math/py-numexpr \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=2.2.0:textproc/py-openpyxl \
 		${PYTHON_PKGNAMEPREFIX}xlrd>0:textproc/py-xlrd \
@@ -71,7 +71,7 @@ EXCEL_DESC=	MS Excel I/O Add-ons
 MPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib
 SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy
 BTLNCK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottleneck>0:math/py-bottleneck
-NUMEXPR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numexpr>=2.1.0:math/py-numexpr
+NUMEXPR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numexpr>=2.4.6:math/py-numexpr
 BOTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto
 TABLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tables>=3.0.0:devel/py-tables
 
