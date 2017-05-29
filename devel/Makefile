@@ -4966,6 +4966,7 @@
     SUBDIR += py3-pycodestyle
     SUBDIR += py3-pydocstyle
     SUBDIR += py3-pyflakes
+    SUBDIR += py3-pygit2
     SUBDIR += py3-pyicu
     SUBDIR += py3-pylru-cache
     SUBDIR += py3-pytest
