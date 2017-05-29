@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
-PORTVERSION=	2.2.17
+PORTVERSION=	2.2.18
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
 DISTNAME=	zabbix-${PORTVERSION}
 
 MAINTAINER=	pg@pakhom.spb.ru
-COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//})
+COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
 
 LICENSE=	GPLv2
 
-CONFLICTS=	zabbix2${PKGNAMESUFFIX}-[0-9]* zabbix24${PKGNAMESUFFIX}[0-9]* zabbix3${PKGNAMESUFFIX}-[0-9]*
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+
+CONFLICTS=	zabbix2${PKGNAMESUFFIX}-[0-9]* zabbix24${PKGNAMESUFFIX}[0-9]* zabbix3${PKGNAMESUFFIX}-[0-9]*
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
