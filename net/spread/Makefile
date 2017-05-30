@@ -32,8 +32,8 @@ PKGMESSAGE=	${WRKSRC}/license.txt
 PORTDOCS=	Readme.txt LICENSE
 HEADERFILES=	sp_func.h sp_func.h sp_events.h
 
-# The groff port does not install a "nroff binary" force configure to use
-# 'groff' directly
+# The configure script fails to find nroff in LOCALBASE, but works fine if
+# 'groff' is used directly
 
 CONFIGURE_ENV+=	ac_cv_path_NROFF=groff
 # bsd.port.mk doesn't allow us to use GNU_CONFIGURE and PERL_CONFIGURE together.
