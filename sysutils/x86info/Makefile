@@ -17,7 +17,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kernelslacker
-GH_PROJECT=	x86info
 GH_TAGNAME=	636fbaa
 
 USES=		gmake pkgconfig python:build
