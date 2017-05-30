@@ -4936,6 +4936,7 @@
     SUBDIR += py27-setuptools
     SUBDIR += py3-Jinja2
     SUBDIR += py3-babel
+    SUBDIR += py3-cffi
     SUBDIR += py3-click
     SUBDIR += py3-click-log
     SUBDIR += py3-click-threading
