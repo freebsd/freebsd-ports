@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.19.5
-PORTREVISION=	2
+PORTVERSION=	0.20.0
 CATEGORIES=	games
-MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
-MASTER_SITES=	http://crawl.develz.org/release/
-DISTNAME=	stone_soup-${PORTVERSION}-nodeps
+MASTER_SITES=	https://crawl.develz.org/release/%SUBDIR%/ \
+		http://crawl.develz.org/release/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION:C/.[0-9]+$//}
+DISTNAME=	stone_soup-${DISTVERSION}
 
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
@@ -54,9 +54,9 @@ NOWIZARD_DESC=	Disable Wizard mode
 LUA_DESC=	Bindings for LUA user scripts
 
 SDL_CONFLICTS=	${PORTNAME}-[0-9]*
-SDL_USE=	sdl=sdl2,image2 gl=gl,glu
+SDL_USE=	sdl=sdl2,image2,mixer2 gl=gl,glu
 SDL_USES_OFF=	ncurses
-SDL_MAKE_ARGS=	TILES=y
+SDL_MAKE_ARGS=	TILES=y SOUND=y
 SDL_BUILD_DEPENDS=	\
 		fc-list:x11-fonts/fontconfig \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
@@ -67,6 +67,7 @@ SDL_LIB_DEPENDS=libpng.so:graphics/png \
 SDL_CONFLICTS_OFF=	${PORTNAME}-sdl-[0-9]*
 
 NOWIZARD_MAKE_ARGS=	NOWIZARD=y
+SOUND_MAKE_ARGS=	SOUND=y
 SOUND_RUN_DEPENDS=	sox:audio/sox
 LUA_MAKE_ARGS_OFF=	NO_LUA_BINDINGS=yes
 
@@ -77,11 +78,11 @@ CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 post-patch-SOUND-on:
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/AppHdr.h
-	@${REINPLACE_CMD} -e "s,%%SOUND%%,," ${WRKSRC}/AppHdr.h
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/sound.h
+	@${REINPLACE_CMD} -e "s,%%SOUND%%,," ${WRKSRC}/sound.h
 
 post-patch-SOUND-off:
-	@${REINPLACE_CMD} -e "s,%%SOUND%%,// ," ${WRKSRC}/AppHdr.h
+	@${REINPLACE_CMD} -e "s,%%SOUND%%,// ," ${WRKSRC}/sound.h
 
 pre-install:
 	@${FIND} ${WRKSRC}/dat -type f -name '*.orig' -delete
@@ -93,5 +94,8 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${STAGEDIR}${DATADIR}/settings/init.txt ${STAGEDIR}${EXAMPLESDIR}/sample.crawlrc
+
+post-install:
+	@${RM} -r ${STAGEDIR}${DATADIR}/settings/mac
 
 .include <bsd.port.post.mk>

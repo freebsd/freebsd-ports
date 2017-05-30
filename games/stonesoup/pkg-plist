@@ -168,6 +168,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/variable/mini_features.des
 %%DATADIR%%/dat/des/variable/mini_monsters.des
 %%DATADIR%%/dat/des/variable/polyominoes.des
+%%DATADIR%%/dat/des/variable/the_bubble.des
 %%DATADIR%%/dat/des/variable/the_grid.des
 %%DATADIR%%/dat/descript/ability.txt
 %%DATADIR%%/dat/descript/backgrounds.txt
@@ -437,6 +438,8 @@ bin/stonesoup
 %%DATADIR%%/dat/dlua/fnwrap.lua
 %%DATADIR%%/dat/dlua/init.lua
 %%DATADIR%%/dat/dlua/iter.lua
+%%DATADIR%%/dat/dlua/lm_named_hatch.lua
+%%DATADIR%%/dat/dlua/lm_trans.lua
 %%DATADIR%%/dat/dlua/layout/geoelf.lua
 %%DATADIR%%/dat/dlua/layout/geoelf_corridors.lua
 %%DATADIR%%/dat/dlua/layout/geoelf_directions.lua
@@ -539,9 +542,12 @@ bin/stonesoup
 %%DATADIR%%/docs/crawl_manual.txt
 %%DATADIR%%/docs/develop/IRC.txt
 %%DATADIR%%/docs/develop/android.txt
+%%DATADIR%%/docs/develop/background_creation.txt
 %%DATADIR%%/docs/develop/coding_conventions.txt
+%%DATADIR%%/docs/develop/contribution-process.txt
 %%DATADIR%%/docs/develop/ctags.txt
 %%DATADIR%%/docs/develop/editor_tips.txt
+%%DATADIR%%/docs/develop/god_creation.txt
 %%DATADIR%%/docs/develop/gdb_tips.txt
 %%DATADIR%%/docs/develop/keys.txt
 %%DATADIR%%/docs/develop/levels/advanced.txt
@@ -550,10 +556,10 @@ bin/stonesoup
 %%DATADIR%%/docs/develop/levels/triggerables.txt
 %%DATADIR%%/docs/develop/monster_creation.txt
 %%DATADIR%%/docs/develop/monster_speech.txt
-%%DATADIR%%/docs/develop/new_dev_checklist.txt
+%%DATADIR%%/docs/develop/mutation_creation.txt
 %%DATADIR%%/docs/develop/patch_guide.txt
-%%DATADIR%%/docs/develop/process.txt
 %%DATADIR%%/docs/develop/save_compatibility.txt
+%%DATADIR%%/docs/develop/species_creation.txt
 %%DATADIR%%/docs/develop/spells.txt
 %%DATADIR%%/docs/develop/testing.txt
 %%DATADIR%%/docs/develop/tiles_creation.txt
