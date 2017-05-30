@@ -2,11 +2,9 @@
 
 PORTNAME=	gitolite
 PORTVERSION=	2.3.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	GH \
-		LOCAL/milki \
-		LOCAL/tdb
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +17,6 @@ RUN_DEPENDS=	git>=0:devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc
-GH_TAGNAME=	912a8bd
 
 CONFLICTS=	gitolite-[^2]*
 
