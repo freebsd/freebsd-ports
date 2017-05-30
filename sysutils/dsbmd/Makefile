@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmd
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -10,15 +10,23 @@ MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Media mounting daemon
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:tgz
 
 USE_RC_SUBR=	dsbmd
 
-OPTIONS_DEFINE=	DOCS
-
+PORTDOCS=	README
 PLIST_FILES=	libexec/dsbmd "@sample etc/dsbmd.conf.sample"
 
-PORTDOCS=	README
+OPTIONS_DEFINE=		DOCS PTP MTP NTFS EXFAT
+OPTIONS_DEFAULT=	PTP MTP NTFS
+PTP_DESC=		Picture Transfer Protocol support
+NTFS_DESC=		Mount NTFS filesystems with read and write support
+EXFAT_DESC=		exFAT filesystem support
+PTP_RUN_DEPENDS=	gphotofs:graphics/fusefs-gphotofs
+MTP_RUN_DEPENDS=	simple-mtpfs:sysutils/fusefs-simple-mtpfs
+NTFS_RUN_DEPENDS=	ntfs-3g:sysutils/fusefs-ntfs
+EXFAT_RUN_DEPENDS=	mount.exfat:sysutils/fusefs-exfat
 
 .include <bsd.port.mk>
