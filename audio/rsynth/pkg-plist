@@ -1,4 +1,4 @@
-bin/dlookup
-bin/mkdictdb
+%%DB%%bin/dlookup
+%%DB%%bin/mkdictdb
 bin/say
-bin/nasay
+%%NAS%%bin/nasay
