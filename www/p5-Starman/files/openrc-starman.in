@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# starman_flags (str):  Optional flags to starman
+#   Default is ""
+#   example: starman_flags="--workers 5 --port 3000"
+#
+# starman_config (str): ".psgi" script to run
+#   Default is "%%PREFIX%%/etc/starman.psgi"
+#
+# starman_user (str):   Setuid to group
+#   Default is "www"
+#
+# starman_group (str):  Setgid to group
+#   Default is "www"
+#
+# starman_pidfile (str):    PID file
+#   Default is "/var/run/starman/starman.pid""
+
+name=starman
+command="%%PREFIX%%/bin/starman"
+
+starman_config=${starman_config-"%%PREFIX%%/etc/starman.psgi"}
+starman_user=${starman_user-"www"}
+starman_group=${starman_group-"www"}
+
+pidfile=${starman_pidfile:-/var/run/starman/starman.pid}
+command_args="--group ${starman_group} --app ${starman_config}"
+command_user=${starman_user}
+required_files="${starman_config}"
+supervisor=supervise-daemon
+
+depend(){
+	keyword -shutdown
+}

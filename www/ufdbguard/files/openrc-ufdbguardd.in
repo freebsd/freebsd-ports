@@ -1,0 +1,65 @@
+#!/sbin/openrc-run
+
+# You can activate this daemon and set its options in any of the following files:
+# /etc/rc.conf
+# /etc/rc.conf.local
+# /etc/rc.conf.d/ufdbguardd
+# /etc/rc.conf.d/ufdbguardd/${anyfile}
+# ${local_startup}/rc.conf.d/ufdbguardd
+# ${local_startup}/rc.conf.d/ufdbguardd/${anyfile}
+#
+# Note: ${local_startup} is usually /usr/local/etc
+#
+# Variables you can define in one of these files:
+# ufdbguardd_flags (str):	Additional flags passed to the daemon as cmd args.
+#				Default: none
+# ufdbguardd_conf (str):	The configuration file that ufdbguardd should use.
+#				Default: %%ETCDIR%%/ufdbGuard.conf
+# ufdbguardd_user (str):	The user that should be used to run the ufdbguardd.
+#				Default: %%USERS%%
+# ufdbguardd_dbdir (str):	The dir where ufdbguardd gets URL filter databases.
+#				Default: %%DBDIR%%
+
+name=ufdbguardd
+
+command="%%PREFIX%%/bin/ufdbguardd"
+
+extra_commands="configtest"
+: ${ufdbguardd_dbdir:=%%DBDIR%%}
+: ${ufdbguardd_conf:=%%ETCDIR%%/ufdbGuard.conf}
+: ${ufdbguardd_user:=%%USERS%%}
+
+ufdbguardd_unixsocket="/tmp/ufdbguardd-[0-9]*"
+
+required_dirs="$ufdbguardd_dbdir %%RUNDIR%%"
+required_files="$ufdbguardd_conf"
+pidfile="%%RUNDIR%%/${name}.pid"
+command_args="-c $ufdbguardd_conf"
+command_user=${ufdbguardd_user}
+
+ufdbguardd_configtest() {
+	einfo "Performing sanity check on $name configuration."
+	if $command $command_args -C verify; then
+	einfo "Configuration for $name passes."
+		return 0
+	else
+		return $?
+	fi
+}
+
+ufdbguardd_checksocket() {
+	einfo "Checking if $name unix socket exists."
+	if test -e $ufdbguardd_unixsocket; then
+		einfo "Unix socket $ufdbguardd_unixsocket exists. Probably stale file after abnormal shutdown. Removing it."
+		rm -f $ufdbguardd_unixsocket
+	fi
+}
+
+start_pre() {
+	ufdbguardd_configtest && \
+	ufdbguardd_checksocket
+}
+
+depend(){
+	keyword -shutdown
+}

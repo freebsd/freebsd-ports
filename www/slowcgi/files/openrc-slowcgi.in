@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable slowcgi:
+# slowcgi_flags="<set as needed>"
+
+name=slowcgi
+
+command="%%PREFIX%%/sbin/slowcgi"
+
+slowcgi_flags=${slowcgi_flags:-""}
+
+depend(){
+	keyword -shutdown
+}

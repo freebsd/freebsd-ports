@@ -1,1 +1,1 @@
-USR_OPENRC_SUBR=	openrc-kannel_sqlbox
+USE_OPENRC_SUBR=	openrc-kannel_sqlbox
