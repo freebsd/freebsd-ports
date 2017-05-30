@@ -3,7 +3,7 @@
 
 PORTNAME=	slurm
 PORTVERSION=	16.05.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
