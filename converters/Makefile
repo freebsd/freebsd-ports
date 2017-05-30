@@ -159,6 +159,7 @@
     SUBDIR += recode
     SUBDIR += rubygem-base32
     SUBDIR += rubygem-bsdconv
+    SUBDIR += rubygem-po_to_json
     SUBDIR += shftool
     SUBDIR += showkey
     SUBDIR += ta2as

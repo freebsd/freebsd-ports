@@ -363,10 +363,6 @@
     SUBDIR += zabbix22-frontend
     SUBDIR += zabbix22-proxy
     SUBDIR += zabbix22-server
-    SUBDIR += zabbix24-agent
-    SUBDIR += zabbix24-frontend
-    SUBDIR += zabbix24-proxy
-    SUBDIR += zabbix24-server
     SUBDIR += zabbix3-agent
     SUBDIR += zabbix3-frontend
     SUBDIR += zabbix3-proxy

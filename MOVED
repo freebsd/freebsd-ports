@@ -9391,3 +9391,7 @@ games/ioquake3-devel-server|games/ioquake3-server|2017-05-18|GitHub master is th
 devel/rubygem-generator_spec|devel/rubygem-generator_spec-rails5|2017-05-19|Use devel/rubygem-generator_spec-rails4 or devel/rubygem-generator_spec-rails5
 deskutils/openproj|deskutils/projectlibre|2017-05-19|Has expired: Development ceased, superseded by deskutils/projectlibre
 net/go-madonctl|net/madonctl|2017-05-21|Remove go- prefix
+net-mgmt/zabbix24-agent||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
+net-mgmt/zabbix24-frontend||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
+net-mgmt/zabbix24-proxy||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
+net-mgmt/zabbix24-server||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
