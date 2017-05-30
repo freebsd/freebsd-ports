@@ -1,0 +1,47 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# glassfish_java_home (string):
+#   Used to set JAVA_HOME (optional).
+#
+# glassfish_java_opts (string):
+#   Used to set JAVA_OPTS (optional).
+#
+# glassfish_domain_name (string):
+#   Set the name of the Glassfish domain to start (default: domain1).
+
+name=glassfish
+
+: ${glassfish_java_home=""}
+: ${glassfish_java_opts=""}
+: ${glassfish_domain_name="domain1"}
+: ${glassfish_home="%%DATADIR%%/glassfish"}
+
+procname="${glassfish_java_home}/bin/java"
+command="${glassfish_home}/bin/asadmin start-domain ${glassfish_domain_name}"
+
+start_pre() {
+  if [ ! -z ${glassfish_java_home} ] ; then
+    export JAVA_HOME=${glassfish_java_home}
+  else
+    export JAVA_HOME=%%JAVA_HOME%%
+  fi
+  
+  export PATH=${JAVA_HOME}/bin:${PATH}
+  export JAVA_OPTS=${glassfish_java_opts}
+
+  if [ -z ${glassfish_domain_name} ] ; then
+    ewarn "Glassfish domain name cannot be empty, Glassfish will NOT start."
+    return 1
+  fi
+}
+
+stop() {
+	${glassfish_home}/bin/asadmin stop-domain ${glassfish_domain_name}
+}
+
+depend() {
+	keyword -shutdown
+}

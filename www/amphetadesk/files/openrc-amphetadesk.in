@@ -1,0 +1,49 @@
+#!/sbin/openrc-run
+# Under a BSDL license. Copyright 2005. Mario S F Ferreira <lioux@FreeBSD.org>
+
+# Add the following lines to /etc/rc.conf to enable amphetadesk:
+#
+#amphetadesk_user=
+#amphetadesk_pidfile=
+
+name="amphetadesk"
+
+if [ -n "${amphetadesk_user}" ]; then
+  eval realpath ~${amphetadesk_user} >/dev/null 2>&1 &&
+    amphetadesk_homedir="$(eval realpath ~${amphetadesk_user})"
+fi
+
+if [ -n "${amphetadesk_user}" -a -z "${amphetadesk_pidfile}" -a -n "${amphetadesk_homedir}" ]; then
+  amphetadesk_pidfile="${amphetadesk_homedir}/.${name}/AmphetaDesk.pid"
+fi
+
+pidfile="${amphetadesk_pidfile:-${HOME}/.${name}/AmphetaDesk.pid}"
+
+command="%%PREFIX%%/bin/AmphetaDesk"
+command_user=${amphetadesk_user}
+supervisor=supervise-daemon
+
+start_pre(){
+	if ! [ -d "${HOME}/.${name}" ]; then 
+		install -d -o $kannel_bearerbox_user -g $kannel_bearerbox_group $kannel_piddir
+	fi
+	amphetadesk_check_vars
+}
+
+stop_pre(){
+	amphetadesk_check_vars
+}
+
+amphetadesk_check_vars() {
+  if [ -z "${amphetadesk_user}" ]; then
+    amphetadesk_user=$(whoami)
+  fi
+
+  if [ "x${amphetadesk_user}" = "xroot" ]; then
+    eerror 1 "You have to set amphetadesk_user to a non-root user for security reasons"
+  fi
+}
+
+depend() {
+	keyword -shutdown
+}

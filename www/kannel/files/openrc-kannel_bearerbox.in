@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# kannel_bearerbox_config (path):	Set to %%PREFIX%%/etc/kannel.conf
+#				by default.
+
+name=kannel_bearerbox
+kannel_piddir="/var/run/kannel"
+
+: ${kannel_bearerbox_config="%%PREFIX%%/etc/kannel.conf"}
+: ${kannel_bearerbox_user:="kannel"}
+: ${kannel_bearerbox_group:="kannel"}
+
+command="%%PREFIX%%/sbin/run_kannel_box"
+
+pidfile="${kannel_piddir}/${name}.pid"
+command_user=${kannel_bearerbox_user}
+command_args="%%PREFIX%%/sbin/bearerbox ${kannel_bearerbox_flags} ${kannel_bearerbox_config}"
+
+start_pre() {
+	if [ ! -d "${kannel_piddir}" ]; then
+		install -d -o $kannel_bearerbox_user -g $kannel_bearerbox_group $kannel_piddir
+	fi
+	# Config file is required
+	if [ ! -r ${kannel_bearerbox_config} ]; then
+		ewarn "${kannel_bearerbox_config} is not readable."
+		exit 1
+	fi
+}
+
+depend() {
+	provide k_bearerbox
+	keyword -shutdown
+}

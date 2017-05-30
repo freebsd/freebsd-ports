@@ -1,0 +1,49 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# payara_java_home (string):
+#   Used to set JAVA_HOME (optional).
+#
+# payara_java_opts (string):
+#   Used to set JAVA_OPTS (optional).
+#
+# payara_domain_name (string):
+#   Set the name of the Payara domain to start (default: domain1).
+
+name=payara
+
+: ${payara_java_home=""}
+: ${payara_java_opts=""}
+: ${payara_domain_name="domain1"}
+: ${payara_home="%%DATADIR%%/glassfish"}
+
+# Since we receive the JAVA_HOME variable by default from the Java package
+# we depend on, we override JAVA_HOME only if the user overrid it.
+if [ ! -z ${payara_java_home} ] ; then
+  export JAVA_HOME=${payara_java_home}
+else
+  export JAVA_HOME=%%JAVA_HOME%%
+fi
+
+export PATH=${JAVA_HOME}/bin:${PATH}
+export JAVA_OPTS=${payara_java_opts}
+
+command="${payara_home}/bin/asadmin"
+command_args="start-domain ${payara_domain_name}"
+
+start_pre() {
+  if [ -z ${payara_domain_name} ] ; then
+    warn "Payara domain name cannot be empty, Payara will NOT start."
+    return 1
+  fi
+}
+
+stop_pre(){
+	${payara_home}/bin/asadmin stop-domain ${payara_domain_name}
+}
+
+depend(){
+	keyword -shutdown
+}

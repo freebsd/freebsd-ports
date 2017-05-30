@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable searx:
+# searx_conf (str):		searx configuration file
+#				Default: ${PREFIX}/etc/searx.conf
+# searx_user (str):		searx daemon user
+#				Default: searx
+# searx_group (str):		searx daemon group
+#				Default: searx
+# searx_flags (str):		Extra flags passed to searx
+
+name="searx"
+
+: ${searx_user:="www"}
+: ${searx_group:="www"}
+: ${searx_flags:=""}
+
+# daemon
+pidfile="/var/run/${name}.pid"
+python="%%PREFIX%%/bin/python2.7"
+command="%%PREFIX%%/lib/python2.7/site-packages/${name}/webapp.py"
+command_user=${searx_user}
+command_args="-c -f ${python}"
+supervisor=supervise-daemon
+
+depend(){
+	keyword -shutdown
+}

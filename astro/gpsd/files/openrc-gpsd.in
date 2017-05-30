@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable gpsd:
+#
+# gpsd_flags (str):     Set to "" by default.
+#                       See gpsd(8) for flags.
+#
+# gpsd_devices (str):   Set to "" by default.
+#                       Example: "/dev/cuaU0" for a USB serial GPS.
+
+name=gpsd
+
+# Set defaults
+: ${gpxlogger_flags:="-i 600"}
+: ${gpxlogger_logdir:="/var/log"}
+: ${gpxlogger_format:="%d %B %Y - %H:%M.gpx"}
+
+pidfile=/var/run/$name.pid
+command=%%PREFIX%%/sbin/gpsd
+command_args="$gpsd_devices"
+
+depend(){
+	keyword -shutdown
+}
