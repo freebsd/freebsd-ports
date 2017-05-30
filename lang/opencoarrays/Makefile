@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencoarrays
-PORTVERSION=	1.8.12
+PORTVERSION=	1.9.0
 CATEGORIES=	lang parallel
 
 MAINTAINER=	mexas@bris.ac.uk
