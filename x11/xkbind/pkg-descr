@@ -1,0 +1,8 @@
+XkbInd program (X Keyboard Extension Indicator) is a minimal indicator of
+keyboard layout (XKB group) for the X Window System; it outputs information
+about current keyboard layout attached to each top-level window through
+their captions via prefixes to original title strings.  It also allows to
+simulate an independent keyboard layout for each handled window and works
+with most of the window managers.
+
+WWW: http://xkbind.sourceforge.net/
