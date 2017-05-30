@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="webfsd"
+
+command=%%PREFIX%%/sbin/webfsd
+
+depend(){
+	keyword -shutdown
+}

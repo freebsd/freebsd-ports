@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable spread:
+# spreadlogd_flags="<set as needed>"
+
+name="spreadlogd"
+
+command="%%PREFIX%%/sbin/spreadlogd"
+pidfile="/var/run/${name}.pid"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+depend(){
+	keyword -shutdown
+}

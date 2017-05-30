@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable polipo:
+# polipo_flags="<set as needed>"
+
+name="polipo"
+config_file=%%PCONFIGDIR%%config
+required_files=${config_file}
+
+command="%%PREFIX%%/bin/polipo"
+command_args="-c ${config_file}"
+pidfile=%%PIDFILE%%
+
+depend(){
+	keyword -shutdown
+}
+
+stop_pre() {
+	if [ ${pidfile}]; then
+        	kill -USR1 ${pidfile}
+		# allow polipo to write out all files
+		sleep 5
+	fi
+}

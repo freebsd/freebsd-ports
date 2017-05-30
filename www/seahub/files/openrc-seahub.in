@@ -1,0 +1,103 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable seahub:
+#
+# seafile_user (str): 		User to run seafile as
+#				Default to "%%USERS%%" created by the port
+# seafile_group (str):		Group to run seafile as
+#				Default to "%%GROUPS%%" created by the port
+# seafile_path (str):		Set to "" by default will use the path
+#				%%PREFIX%%/%%SEAFILE_SERVER%%.
+#				Set it to a different path.
+# seafile_ccnet (str):		Set to "" by default will use the path
+#				%%PREFIX%%/%%HAIWENDIR%%/ccnet.
+#				Set it to a different path.
+# seafile_conf (str):		Set to "" by default will use the path
+#				%%PREFIX%%/%%HAIWENDIR%%/conf.
+#				Set it to a different path.
+# seafile_datadir (str):	Set to "" by default will use the path
+#				in file %%PREFIX%%/%%HAIWENDIR%%/ccnet/seafile.ini.
+#				Set it to a different path.
+# seafile_logdir (str):		Set to "" by default will use the path
+#				%%PREFIX%%/%%HAIWENDIR%%/logs.
+#				Set it to a different path.
+# seahub_fastcgi (bool):	Set to "NO" by default.
+#				Set to "YES" to start the fastcgi mode.
+# seahub_host (int):		Default is 127.0.0.1.
+# seahub_port (int):		Default is 8000.
+
+name="seahub"
+
+extra_commands="clearsessions"
+
+: ${seafile_user:="%%USERS%%"}
+: ${seafile_group:="%%GROUPS%%"}
+: ${seafile_path:="%%PREFIX%%/%%SEAFILE_SERVER%%"}
+: ${seafile_ccnet:="%%PREFIX%%/%%HAIWENDIR%%/ccnet"}
+: ${seafile_conf:="%%PREFIX%%/%%HAIWENDIR%%/conf"}
+: ${seafile_datadir:="`cat ${seafile_ccnet}/seafile.ini 2>/dev/null`"}
+: ${seafile_logdir:="%%PREFIX%%/%%HAIWENDIR%%/logs"}
+: ${seahub_fastcgi="NO"}
+: ${seahub_host:="127.0.0.1"}
+: ${seahub_port:="8000"}
+
+manage_py=${seafile_path}/seahub/manage.py
+gunicorn_conf=${seafile_path}/runtime/seahub.conf
+pidfile=${seafile_path}/runtime/seahub.pid
+errorlog=${seafile_path}/runtime/error.log
+accesslog=${seafile_path}/runtime/access.log
+
+command="%%PREFIX%%/bin/%%PYTHON%%"
+command_user=$${seafile_user}
+required_dirs="${seafile_ccnet} ${seafile_conf} ${seafile_datadir} ${seafile_logdir}"
+required_files="${seafile_ccnet}/seafile.ini"
+
+prepare_env() {
+	if [ -z "$LANG" ]; then
+		einfo "LANG is not set in ENV, set to en_US.UTF-8"
+		export LANG='en_US.UTF-8'
+	fi
+	if [ -z "$LC_ALL" ]; then
+		einfo "LC_ALL is not set in ENV, set to en_US.UTF-8"
+		export LC_ALL='en_US.UTF-8'
+	fi
+
+	export CCNET_CONF_DIR=${seafile_ccnet}
+	export SEAFILE_CONF_DIR=${seafile_datadir}
+	export SEAFILE_CENTRAL_CONF_DIR=${seafile_conf}
+	export PYTHONPATH=${seafile_path}/seafile/lib/python2.6/site-packages:${seafile_path}/seafile/lib64/python2.6/site-packages:${seafile_path}/seahub/thirdpart:$PYTHONPATH
+	export PYTHONPATH=${seafile_path}/seafile/lib/python2.7/site-packages:${seafile_path}/seafile/lib64/python2.7/site-packages:$PYTHONPATH
+	export SEAHUB_LOG_DIR=${seafile_logdir}
+
+}
+
+clearsessions() {
+	prepare_env;
+
+	einfo "Start clear expired session records ..."
+	su -m "${seafile_user}" -c "$command \"${manage_py}\" clearsessions"
+
+	einfo "Done"
+}
+
+start_pre() {
+	prepare_env
+	if yesno ${seahub_fastcgi}; then
+		einfo "Starting seahub service fastcgi mode"
+
+# Returns 127.0.0.1 if SEAFILE_FASTCGI_HOST is unset or hasn't got any value,
+# otherwise returns value of SEAFILE_FASTCGI_HOST environment variable
+
+		einfo "Starting seahub (fastcgi) at ${seahub_host}:${seahub_port} ..."
+		command="$command \"${manage_py}\" runfcgi host=\"${seahub_host}\" port=\"${seahub_port}\" \
+		outlog=${accesslog} errlog=${errorlog}"
+	else
+		einfo "Starting seahub at port ${seahub_port} ..."
+		command="$command \"${manage_py}\" run_gunicorn -c \"${gunicorn_conf}\" -b \"0.0.0.0:${seahub_port}\" --preload"
+
+	fi
+}
+
+depend(){
+	keyword -shutdown
+}

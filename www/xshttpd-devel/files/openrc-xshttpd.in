@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="xshttpd"
+description=""
+
+pidfile="/var/run/xshttpd.pid"
+command="%%PREFIX%%/bin/httpd"
+
+depend(){
+	keyword -shutdown
+}

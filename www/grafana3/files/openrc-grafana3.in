@@ -1,0 +1,35 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable grafana
+# grafana3_conf (str):		grafana configration file
+#				Default: %%PREFIX%%/etc/grafana.cfg
+# grafana3_user (str):		grafana daemon user
+#				Default: %%GRAFANA_USER%%
+# grafana3_group (str):		grafana daemon group
+#				Default: %%GRAFANA_GROUP%%
+
+name="grafana3"
+description=""
+
+: ${grafana3_user:="%%GRAFANA_USER%%"}
+: ${grafana3_group:="%%GRAFANA_GROUP%%"}
+: ${grafana3_flags:=""}
+: ${grafana3_conf:="%%PREFIX%%/etc/${name}.conf"}
+: ${grafana3_options:="-config=${grafana3_conf} -homepath=%%GRAFANAHOMEDIR%%"}
+
+pidfile="%%GRAFANAPIDDIR%%${name}.pid"
+command="%%PREFIX%%/bin/grafana-server"
+command_args="-f -c ${grafana3_options}"
+supervisor=supervise-daemon
+
+start_pre() {
+    chown ${grafana3_user}:${grafana3_group} %%GRAFANADATADIR%%
+    chown ${grafana3_user}:${grafana3_group} %%GRAFANALOGDIR%%
+    chown ${grafana3_user}:${grafana3_group} %%GRAFANAHOMEDIR%%data/log/
+    install -d -o ${grafana3_user} %%GRAFANAPIDDIR%%
+    install -o ${grafana3_user} /dev/null ${pidfile}
+}
+
+depend(){
+	keyword -shutdown
+}

@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+# Define these zerowait_enable variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+
+name="zerowait"
+description=""
+command="/usr/bin/limits -U www %%PREFIX%%/sbin/0W-httpd"
+command_args="-c %%PREFIX%%/etc/0W-httpd/httpd.conf"
+required_files="%%PREFIX%%/etc/0W-httpd/httpd.conf"
+pidfile="%%PREFIX%%/0W-httpd/pids/httpd"
+
+depend(){
+	keyword -shutdown
+}

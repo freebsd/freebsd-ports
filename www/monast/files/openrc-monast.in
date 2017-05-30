@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=monast
+
+command="%%PREFIX%%/monast/monast.py"
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+
+depend(){
+	keyword -shutdown
+}

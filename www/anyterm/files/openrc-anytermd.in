@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/sbin/openrc-run
 
 # Add the following lines to /etc/rc.conf to enable anytermd:
 #

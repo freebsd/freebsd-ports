@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf[.local] to enable helma
+#                               Set it to "YES" to enable helma.
+# helma_config (str):           Custom config file for helma.
+#                               (default %%PREFIX%%/etc/helma/helma.conf)
+
+name="helma"
+command="$JAVA_BIN"
+command="%%PREFIX%%/bin/helma"
+command_args="${helma_config}"
+pidfile="/var/run/${name}.pid"
+required_files="${helma_config}"
+
+# set default
+: ${helma_config="%%PREFIX%%/etc/${name}/${name}.conf"}

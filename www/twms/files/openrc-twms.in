@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="twms"
+description=""
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/twms"
+
+depend(){
+	keyword -shutdown
+}

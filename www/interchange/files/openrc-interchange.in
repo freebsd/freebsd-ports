@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable Interchange:
+# interchange_config (str):       Default config file: 
+#                                 /usr/local/interchange/interchange.cfg
+# interchange_args (str):         Custom additional arguments to be passed
+#                                 to interchange (default empty).
+
+name="interchange"
+
+interchange_config=${interchange_config:-"%%PREFIX%%/interchange/interchange.cfg"}
+interchange_args=${interchange_args:-""}
+
+interchange_user="interch"
+rundir="/var/run/interchange"
+pidfile="${rundir}/${name}.pid"
+command="%%PREFIX%%/bin/interchange"
+command_args="--config=${interchange_config} ${interchange_args}"
+
+start_pre() {
+    su -l ${interchange_user} -c "exec env PERL_SIGNALS=unsafe \
+        ${command} -pidfile ${pidfile} PIDfile=${pidfile} \
+        -rundir ${rundir} SocketFile=${rundir}/socket \
+        IPCsocket=${rundir}/socket.ipc ${command_args} $1"
+}
+
+depend(){
+	keyword -shutdown
+}

@@ -10,31 +10,14 @@
 # This file may not be copied, modified, propagated, or distributed
 # except according to the terms contained in the LICENSE file.
 
-BINARY=%%PREFIX%%/sbin/cupsd
-PID=/var/run/cupsd.pid
-name="CUPS Printing Daemon"
+command=%%PREFIX%%/sbin/cupsd
+command_args="-f"
+name="cupsd"
+supervisor=supervise-daemon
+pidfile="/var/run/cupsd.pid"
 
 depend()
 {
 	need localmount
 	after dbus avahi-daemon
-}
-
-start() {
-	ebegin "Starting ${SVCNAME}"
-	start-stop-daemon --start --pidfile "${PID}" \
-		--exec "${BINARY}" -b -m -- -f
-	eend $?
-}
-
-stop() {
-	ebegin "Stopping ${SVCNAME}"
-	start-stop-daemon --stop --pidfile "${PID}"
-	eend $?
-}
-
-reload() {
-	ebegin "Reloading ${SVCNAME}"
-	start-stop-daemon --signal HUP --pidfile "${PID}"
-	eend $?
 }

@@ -1,0 +1,46 @@
+#! /sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable `ttrssd':
+#
+# ttrssd_local_db (bool):   Set to "YES" by default.
+#                           Set it to "NO" if the database is on another
+#                           server.
+
+name="ttrssd"
+description="Tiny Tiny RSS updating feeds daemon."
+
+# read settings, set default values
+: ${ttrssd_local_db:="YES"}
+
+required_files="%%WWWDIR%%/config.php"
+pidfile="/var/run/${name}.pid"
+command="%%WWWDIR%%/update_daemon2.php"
+command_user="%%WWWOWN%%"
+ttrssd_log="/var/log/${name}.log"
+
+%%MYSQL%%CHECK_CMD="%%LOCALBASE%%/bin/mysqladmin -u mysqld ping"
+%%MYSQL%%CHECK_MSG="${name}: mysqladmin command failed; mysql not ready?"
+# Waiting for pg_isready when 9.3 is the default
+%%PGSQL%%CHECK_CMD="%%LOCALBASE%%/etc/rc.d/postgresql status"
+%%PGSQL%%CHECK_MSG="${name}: postgresql status failed; postgresql not ready?"
+
+start_pre() {
+  if yesno ${ttrssd_local_db}; then
+	# Wait for the local database to be started
+	local _count=0
+
+	while : ; do
+		$CHECK_CMD > /dev/null 2>&1 && return
+		_count=$(( $_count + 1 ))
+		if [ $_count -gt 10 ]; then
+			eerror 1 $CHECK_MSG
+		fi
+
+		sleep 1
+	done
+  fi
+}
+
+depend(){
+	keyword -shutdown
+}

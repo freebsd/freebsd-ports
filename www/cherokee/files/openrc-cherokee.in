@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable cherokee:
+#
+# cherokee_conf (path):		Set full path to config file.
+#				Default is "%%PREFIX%%/etc/cherokee/cherokee.conf".
+
+name="cherokee"
+description=""
+
+: ${cherokee_conf="%%PREFIX%%/etc/cherokee/cherokee.conf"}
+
+command=%%PREFIX%%/sbin/cherokee
+command_args="-C ${cherokee_conf}"
+pidfile=/var/run/cherokee.pid
+required_files=${cherokee_conf}
+supervisor=supervise-daemon

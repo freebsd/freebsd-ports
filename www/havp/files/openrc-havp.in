@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+#
+# Add the following lines to /etc/rc.conf to enable c-icap:
+#
+# havp_flags="<set as needed>"
+#
+# See '%%PREFIX%%/sbin/havp --help' for flags
+
+name="havp"
+decription=""
+
+command="%%PREFIX%%/sbin/havp"
+pidfile="%%RUN_DIR%%/havp.pid"
+required_dirs="%%TMP_DIR%%"
+required_files="%%PREFIX%%/etc/havp/blacklist %%PREFIX%%/etc/havp/havp.config %%PREFIX%%/etc/havp/whitelist"

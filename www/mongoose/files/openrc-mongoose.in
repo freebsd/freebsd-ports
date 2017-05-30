@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# Define these mongoose_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/mongoose
+#
+# mongoose_flags		Flags passed to mongoose, see mongoose --help
+
+name="mongoose"
+description=""
+command="%%PREFIX%%/bin/mongoose"
+command_args=${mongoose_flags}
+supervisor=supervise-daemon
+pidfile=${mongoose_pidfile}
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+mongoose_flags=${mongoose_flags-"/var/empty"}
+mongoose_pidfile=${mongoose_pidfile-"/var/run/mongoose"}

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=nostromo
+
+command=%%PREFIX%%/sbin/nhttpd
+
+nostromo_flags=${nostromo_flags:-"-c %%PREFIX%%/nostromo/conf/nhttpd.conf"}
+
+depend(){
+	keyword -shutdown
+}

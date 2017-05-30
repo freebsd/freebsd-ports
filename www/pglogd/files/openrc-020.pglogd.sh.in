@@ -1,0 +1,7 @@
+#!/sbin/openrc-run
+
+command=%%PREFIX%%/bin/pglogd
+pidfile=/var/run/pglogd.pid
+config=%%PREFIX%%/etc/pglogd.conf
+required_files=${config}
+command_args="-s -c $[config}"

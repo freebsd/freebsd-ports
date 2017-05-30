@@ -1,0 +1,95 @@
+#!/sbin/openrc-run
+
+# Configuration settings for tomcat%%TOMCAT_VERSION%% in /etc/rc.conf:
+#
+# tomcat%%TOMCAT_VERSION%%_flags (str):
+#   Set to "" by default.
+#   Extra flags passed to start command
+#
+# tomcat%%TOMCAT_VERSION%%_catalina_home (str)
+#   Set to "%%TOMCAT_HOME%%" by default.
+#   Set the CATALINA_HOME variable for the Tomcat process
+#
+# tomcat%%TOMCAT_VERSION%%_catalina_base (str)
+#   Set to "%%TOMCAT_HOME%%" by default.
+#   Set the CATALINA_BASE variable for the Tomcat process
+#
+# tomcat%%TOMCAT_VERSION%%_catalina_tmpdir (str)
+#   Set to "%%TOMCAT_HOME%%/temp" by default.
+#   Set the CATALINA_TMPDIR variable for the Tomcat process
+#
+# tomcat%%TOMCAT_VERSION%%_catalina_log (str)
+#   Set to ">> %%STDOUT_LOG%% 2>> %%STDERR_LOG%%" by default.
+#   Set the Tomcat Console logger
+#
+# tomcat%%TOMCAT_VERSION%%_stop_timeout (num)
+#   Set to "10" by default.
+#   Sets the timeout in seconds to allow tomcat to shutdown.
+#   After the timeout has elapsed, tomcat will be killed.
+#
+# tomcat%%TOMCAT_VERSION%%_java_home (str):
+# tomcat%%TOMCAT_VERSION%%_java_vendor (str):
+# tomcat%%TOMCAT_VERSION%%_java_version (str):
+# tomcat%%TOMCAT_VERSION%%_java_os (str):
+#   Specify the requirements of the Java VM to use. See javavm(1).
+#
+# tomcat%%TOMCAT_VERSION%%_classpath (str):
+#   Set to "" by default.
+#   Addtional classes to add to the CLASSPATH
+#
+# tomcat%%TOMCAT_VERSION%%_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#
+
+tomcat%%TOMCAT_VERSION%%_java_version="${tomcat%%TOMCAT_VERSION%%_java_version:-"%%JAVA_VERSION%%"}"
+tomcat%%TOMCAT_VERSION%%_user="${tomcat%%TOMCAT_VERSION%%_user:-"%%USER%%"}"
+tomcat%%TOMCAT_VERSION%%_catalina_home="${tomcat%%TOMCAT_VERSION%%_catalina_home:-"%%TOMCAT_HOME%%"}"
+tomcat%%TOMCAT_VERSION%%_catalina_base="${tomcat%%TOMCAT_VERSION%%_catalina_base:-"%%TOMCAT_HOME%%"}"
+tomcat%%TOMCAT_VERSION%%_catalina_tmpdir="${tomcat%%TOMCAT_VERSION%%_catalina_tmpdir:-"%%TOMCAT_HOME%%/temp"}"
+tomcat%%TOMCAT_VERSION%%_catalina_log="${tomcat%%TOMCAT_VERSION%%_catalina_log:-">> %%STDOUT_LOG%% 2>> %%STDERR_LOG%%"}"
+tomcat%%TOMCAT_VERSION%%_stop_timeout="${tomcat%%TOMCAT_VERSION%%_stop_timeout:-"10"}"
+
+name="tomcat%%TOMCAT_VERSION%%"
+pidfile="/var/run/%%APP_SHORTNAME%%.pid"
+
+if [ -n "${tomcat%%TOMCAT_VERSION%%_java_home}" ] ; then
+	export JAVA_HOME="${tomcat%%TOMCAT_VERSION%%_java_home}"
+fi
+
+if [ -n "${tomcat%%TOMCAT_VERSION%%_java_version}" ] ; then
+	export JAVA_VERSION="${tomcat%%TOMCAT_VERSION%%_java_version}"
+fi
+
+if [ -n "${tomcat%%TOMCAT_VERSION%%_java_vendor}" ] ; then
+	export JAVA_VENDOR="${tomcat%%TOMCAT_VERSION%%_java_vendor}"
+fi
+
+if [ -n "${tomcat%%TOMCAT_VERSION%%_java_os}" ] ; then
+	export JAVA_OS="${tomcat%%TOMCAT_VERSION%%_java_os}"
+fi
+
+java_class="org.apache.catalina.startup.Bootstrap"
+java_command="%%LOCALBASE%%/bin/java \
+	${tomcat%%TOMCAT_VERSION%%_java_opts} \
+	-Djava.endorsed.dirs=%%TOMCAT_HOME%%/endorsed \
+	-classpath %%TOMCAT_HOME%%/%%JAR_FILE%%:${tomcat%%TOMCAT_VERSION%%_classpath} \
+	-Dcatalina.base=${tomcat%%TOMCAT_VERSION%%_catalina_base} \
+	-Dcatalina.home=${tomcat%%TOMCAT_VERSION%%_catalina_home} \
+	-Djava.io.tmpdir=${tomcat%%TOMCAT_VERSION%%_catalina_tmpdir} \
+	${java_class}"
+
+required_files="${tomcat%%TOMCAT_VERSION%%_catalina_home}/conf/server.xml"
+
+command="${java_command} start"
+command_args="${tomcat%%TOMCAT_VERSION%%_flags} ${tomcat%%TOMCAT_VERSION%%_catalina_log}"
+pidfile=${pidfile}
+superviser=supervise_dameon
+
+stop_pre() {
+	${java_command} stop
+}
+
+depend(){
+	keyword -shutdown
+}
