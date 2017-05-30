@@ -1,0 +1,16 @@
+juCI++, is a platform independent and lightweight C++ IDE designed towards
+libclang with speed, stability, and ease of use in mind.
+
+It supports syntax highlighting for more than 100 different file types.
+Furthermore, it supports CMake and Meson as build systems. juCI++ implements
+Git support through libgit2. It provides debug integration, both local and
+remote through lldb.
+
+Other supported featured are: fast C++ autocompletion, tooltips showing type
+information and doxygen documentation, rename refactoring across files,
+automated documentation search, find symbol through Ctags, spell checking
+depending on file context, runnig shell commands within JuCi++, regex search
+and replace, smart paste, keys and indentation, source minimap, split view,
+full UTF-8 support; just to name a few.
+
+WWW: https://github.com/cppit/jucipp
