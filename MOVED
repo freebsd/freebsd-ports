@@ -4568,7 +4568,6 @@ hebrew/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 hungarian/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 irc/eggcreator||2013-07-26|Has expired: Depends on Qt 3.x
 irc/kmyirc||2013-07-26|Has expired: Depends on Qt 3.x
-irc/konversation||2013-07-26|Has expired: Depends on Qt 3.x
 irc/kwirc||2013-07-26|Has expired: Depends on Qt 3.x
 japanese/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 korean/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
@@ -9396,3 +9395,4 @@ net-mgmt/zabbix24-frontend||2017-05-29|Has expired: Upstream has declared this v
 net-mgmt/zabbix24-proxy||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
 net-mgmt/zabbix24-server||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
 net/py-cloudfiles|net/py-python-cloudfiles|2017-05-30|Rename to match PyPI naming
+irc/konversation-kde4|irc/konversation|2017-05-30|Renamed to irc/konversation
