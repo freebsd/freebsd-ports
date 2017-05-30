@@ -6,4 +6,4 @@ debug and remediation tool.  Developers should track rack-timeout's data and
 address recurring instances of particular timeouts, for example, by refactoring
 code so it runs faster or offsetting lengthy work to happen asynchronously.
 
-WWW: http://github.com/heroku/rack-timeout/
+WWW: https://github.com/heroku/rack-timeout
