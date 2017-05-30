@@ -1,0 +1,8 @@
+gettext_i18n_rails is simple FastGettext Rails integration. Translate via
+FastGettext, use any other I18n backend as extension/fallback.
+
+Rails does: I18n.t('syntax.with.lots.of.dots') with nested yml files. We do:
+_('Just translate my damn text!') with simple, flat mo/po/yml files or directly
+from db. To use I18n, calls add a syntax.with.lots.of.dots translation.
+
+WWW: https://github.com/grosser/gettext_i18n_rails
