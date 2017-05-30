@@ -17,6 +17,10 @@ start_pre() {
 name=gatling
 
 gatling_root=${gatling_root:-%%PREFIX%%/www/data}
+if [ ! -d ${gatling_root} ]; then
+	install -d ${gatling_root}
+fi
+
 # needed to bind privileged ports at startup:
 gatling_effective_user=${gatling_effective_user:-www}
 gatling_flags="-u ${gatling_effective_user} -c ${gatling_root} ${gatling_flags}"
@@ -37,9 +41,9 @@ case "${gatling_ssl_enable}" in
 	which_gatling="%%PREFIX%%/sbin/gatling"
 	;;
 esac
-
+#sh -T ?
 gatling_flags="${which_gatling} ${gatling_flags} &"
-command="/bin/sh -T %%PREFIX%%/sbin/gatling_wrapper"
+command="%%PREFIX%%/sbin/gatling_wrapper"
 command_user=root
 command_args=${gatling_flags}
 pidfile=/var/run/gatling_wrapper.pid

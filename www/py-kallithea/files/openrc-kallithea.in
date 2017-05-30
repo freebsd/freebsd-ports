@@ -26,18 +26,17 @@ pidfile="${kallithea_pidfile}"
 required_files="${kallithea_config}"
 command_user=${kallithea_user}
 command_args="--log-file=${kallithea_logfile} ${kallithea_config}"
-supervisor = supervise-daemon
+supervisor=supervise-daemon
 
 start_pre() {
-	for _file in "${kallithea_logfile}" "${pidfile}"; do
-		_dir="${_file%/*}"
-		if [ ! -e "$_dir" ]; then
-			install -d -o ${kallithea_user} "${_dir}"
-		elif [ -f "$_dir" ]; then
-			echo "Not a directory: $_dir"
-			return 20
-		fi
-	done
+	_dir="${_file%/*}"
+	if [ ! -e "$_dir" ]; then
+		install -d -o ${kallithea_user} "${_dir}"
+	elif [ -f "$_dir" ]; then
+		einfo "Not a directory: $_dir"
+		return 20
+	fi
+	touch ${kallithea_config}
 }
 
 depend() {

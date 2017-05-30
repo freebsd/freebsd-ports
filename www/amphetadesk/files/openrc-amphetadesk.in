@@ -7,9 +7,6 @@
 #amphetadesk_pidfile=
 
 name="amphetadesk"
-command="%%PREFIX%%/bin/AmphetaDesk"
-command_user=${amphetadesk_user}
-supervisor=supervise-daemon
 
 if [ -n "${amphetadesk_user}" ]; then
   eval realpath ~${amphetadesk_user} >/dev/null 2>&1 &&
@@ -22,7 +19,14 @@ fi
 
 pidfile="${amphetadesk_pidfile:-${HOME}/.${name}/AmphetaDesk.pid}"
 
+command="%%PREFIX%%/bin/AmphetaDesk"
+command_user=${amphetadesk_user}
+supervisor=supervise-daemon
+
 start_pre(){
+	if ! [ -d "${HOME}/.${name}" ]; then 
+		install -d -o $kannel_bearerbox_user -g $kannel_bearerbox_group $kannel_piddir
+	fi
 	amphetadesk_check_vars
 }
 
@@ -30,8 +34,7 @@ stop_pre(){
 	amphetadesk_check_vars
 }
 
-amphetadesk_check_vars()
-{
+amphetadesk_check_vars() {
   if [ -z "${amphetadesk_user}" ]; then
     amphetadesk_user=$(whoami)
   fi
