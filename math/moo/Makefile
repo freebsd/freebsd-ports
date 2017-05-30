@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	moo
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 CATEGORIES=	math
-MASTER_SITES=	http://www.cyth.net/moo/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Calculator that accepts C-like syntax as input
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	raylai
+GH_TAGNAME=	${PORTVERSION}
 
 PLIST_FILES=	bin/moo man/man1/moo.1.gz
 
