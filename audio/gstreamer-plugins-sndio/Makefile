@@ -1,0 +1,26 @@
+# $FreeBSD$
+
+PORTNAME=	gstreamer-plugins-sndio
+PORTVERSION=	0.10.31
+DISTVERSIONPREFIX=	v
+CATEGORIES=	audio
+
+MAINTAINER=	tobik@FreeBSD.org
+COMMENT=	Sndio audio sink and source for GStreamer 0.10
+
+LICENSE=	ISCL
+
+LIB_DEPENDS=	libgstaudio-0.10.so:multimedia/gstreamer-plugins \
+		libgstbase-0.10.so:multimedia/gstreamer \
+		libsndio.so:audio/sndio
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	t6
+
+USES=		pkgconfig
+USE_GNOME=	glib20 libxml2
+USE_LDCONFIG=	yes
+
+PLIST_FILES=	lib/gstreamer-0.10/libgstsndio.so
+
+.include <bsd.port.mk>
