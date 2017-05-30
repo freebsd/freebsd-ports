@@ -26,4 +26,6 @@ supervisor=supervise-daemon
 
 depend(){
 	keyword -shutdown
+	use gps
+	need gps
 }

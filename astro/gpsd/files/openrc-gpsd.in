@@ -15,10 +15,17 @@ name=gpsd
 : ${gpxlogger_logdir:="/var/log"}
 : ${gpxlogger_format:="%d %B %Y - %H:%M.gpx"}
 
-pidfile=/var/run/$name.pid
+pidfile=/var/run/gpsd.pid
 command=%%PREFIX%%/sbin/gpsd
-command_args="$gpsd_devices"
+command_args="-P $pidfile $gpsd_devices"
+
+start_post() {
+	cd ${gpxlogger_logdir}
+	gpx=$(date +"${gpxlogger_format}")
+	touch "${gpx}"
+}
 
 depend(){
 	keyword -shutdown
+	provide gps
 }
