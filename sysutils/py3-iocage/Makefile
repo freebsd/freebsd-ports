@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py3-click \
 		${PYTHON_PKGNAMEPREFIX}texttable>=0.8.7:textproc/py3-texttable \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py3-pytest-runner \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py3-requests \
-		${PYTHON_PKGNAMEPREFIX}libzfs>=2.11.1:devel/py3-libzfs \
+		${PYTHON_PKGNAMEPREFIX}libzfs>=1.0.2:devel/py3-libzfs \
 		${PYTHON_PKGNAMEPREFIX}pygit2>=0.24.1:devel/py3-pygit2
 
 USE_GITHUB=	yes
