@@ -229,6 +229,7 @@ include/dovecot/imap-seqset.h
 include/dovecot/imap-settings.h
 include/dovecot/imap-state.h
 include/dovecot/imap-status.h
+include/dovecot/imap-sync-private.h
 include/dovecot/imap-sync.h
 include/dovecot/imap-url.h
 include/dovecot/imap-urlauth-backend.h

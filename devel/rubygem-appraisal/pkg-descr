@@ -3,4 +3,4 @@ different versions of dependencies in repeatable scenarios called "appraisals."
 Appraisal is designed to make it easy to check for regressions in your library
 without interfering with day-to-day development using Bundler.
 
-WWW: http://github.com/thoughtbot/appraisal/
+WWW: https://github.com/thoughtbot/appraisal

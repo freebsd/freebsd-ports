@@ -14,7 +14,7 @@ COMMENT=	The Spread Group Communication System, a network toolkit
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
-USES=		perl5 tar:xz
+USES=		groff perl5 tar:xz
 USE_PERL5=	build run
 USE_RC_SUBR=	spread
 USE_LDCONFIG=	yes
@@ -32,6 +32,10 @@ PKGMESSAGE=	${WRKSRC}/license.txt
 PORTDOCS=	Readme.txt LICENSE
 HEADERFILES=	sp_func.h sp_func.h sp_events.h
 
+# The configure script fails to find nroff in LOCALBASE, but works fine if
+# 'groff' is used directly
+
+CONFIGURE_ENV+=	ac_cv_path_NROFF=groff
 # bsd.port.mk doesn't allow us to use GNU_CONFIGURE and PERL_CONFIGURE together.
 PERL_CONFIGURE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
