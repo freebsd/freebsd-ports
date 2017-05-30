@@ -1,6 +1,6 @@
---- BlockOut/Makefile.orig	2014-05-06 13:47:56.000000000 +0400
-+++ BlockOut/Makefile	2016-05-23 20:37:54.725070000 +0300
-@@ -47,27 +47,27 @@
+--- BlockOut/Makefile.orig	2014-05-06 09:47:56 UTC
++++ BlockOut/Makefile
+@@ -47,27 +47,27 @@ else
  SDL_LIBS = /usr/lib/i386-linux-gnu
  endif
  
@@ -16,8 +16,9 @@
  
  LFLAGS   =      -Wl,--strip-all \
  		$(ADD_LIBS) \
- 		-lSDL_mixer -lSDL -lasound \
+-		-lSDL_mixer -lSDL -lasound \
 -		-lGL -lGLU -lpthread -lm -ldl
++		-lSDL_mixer -lSDL \
 +		-lGL -lGLU -lpthread -lm
  
  else
@@ -30,8 +31,9 @@
 -LFLAGS   =      -L $(SDL_LIBS) \
 +LFLAGS   =      -L $(LOCALBASE)/lib \
  		$(ADD_LIBS) \
- 		-lSDL_mixer -lSDL -lasound \
+-		-lSDL_mixer -lSDL -lasound \
 -		-lGL -lGLU -lpthread -lm -ldl
++		-lSDL_mixer -lSDL \
 +		-lGL -lGLU -lpthread -lm
  
  endif
