@@ -1,0 +1,6 @@
+PoToJson converts gettext PO files to JSON to use in your javascript app, based
+on po2json.pl by DuckDuckGo, Inc.. Ideally you'll use this on a Rake task that
+creates JSON versions of your PO files, which can later be used from javascript
+with Jed.
+
+WWW: https://github.com/webhippie/po_to_json
