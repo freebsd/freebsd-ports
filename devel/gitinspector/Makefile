@@ -3,19 +3,22 @@
 PORTNAME=	gitinspector
 PORTVERSION=	0.4.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Statistical analysis tool for git repositories
 
-LICENSE=	GPLv3+
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	ejwa
+RUN_DEPENDS=	git:devel/git
 
-USES=		python
-USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python
+
+GH_ACCOUNT=	ejwa
+USE_GITHUB=	yes
 
 .include <bsd.port.mk>
