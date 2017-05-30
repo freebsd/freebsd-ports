@@ -46,11 +46,11 @@ lib/girepository-1.0/GtkChamplain-%%VERSION%%.typelib
 lib/libchamplain-%%VERSION%%.a
 lib/libchamplain-%%VERSION%%.so
 lib/libchamplain-%%VERSION%%.so.0
-lib/libchamplain-%%VERSION%%.so.0.8.0
+lib/libchamplain-%%VERSION%%.so.0.9.1
 lib/libchamplain-gtk-%%VERSION%%.a
 lib/libchamplain-gtk-%%VERSION%%.so
 lib/libchamplain-gtk-%%VERSION%%.so.0
-lib/libchamplain-gtk-%%VERSION%%.so.0.8.0
+lib/libchamplain-gtk-%%VERSION%%.so.0.9.1
 libdata/pkgconfig/champlain-%%VERSION%%.pc
 libdata/pkgconfig/champlain-gtk-%%VERSION%%.pc
 share/gir-1.0/Champlain-%%VERSION%%.gir
