@@ -9395,3 +9395,4 @@ net-mgmt/zabbix24-agent||2017-05-29|Has expired: Upstream has declared this vers
 net-mgmt/zabbix24-frontend||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
 net-mgmt/zabbix24-proxy||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
 net-mgmt/zabbix24-server||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
+net/py-cloudfiles|net/py-python-cloudfiles|2017-05-30|Rename to match PyPI naming
