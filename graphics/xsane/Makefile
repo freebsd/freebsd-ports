@@ -3,14 +3,15 @@
 
 PORTNAME=	xsane
 PORTVERSION=	0.999
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/
 
 MAINTAINER=	koalative@gmail.com
 COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/xsane.COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
@@ -19,12 +20,9 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 BUILD_DEPENDS=	scanimage:graphics/sane-backends
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake jpeg pkgconfig
+USES=		gmake jpeg localbase:ldflags pkgconfig
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*.html *.jpg
 
@@ -36,19 +34,16 @@ OPTIONS_SUB=	yes
 
 GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp2 gimp
+GIMP_SUB_FILES=		pkg-message
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGIMP}
-SUB_FILES+=	pkg-message
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| $$(DESTDIR)$$(sbindir)||' \
-		-e 's|$$(DESTDIR)$$(xsanedocdir)||' ${WRKSRC}/src/Makefile.in
+		-e 's|$${datadir}/sane/xsane/doc|${DOCSDIR}|g' \
+		-e 's|$$(DESTDIR)$$(xsanedocdir)||' \
+		${WRKSRC}/src/Makefile.in ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|@POSUB@ doc|@POSUB@|' ${WRKSRC}/Makefile.in
 
 post-install:
