@@ -117,6 +117,7 @@ include/asterisk/adsi.h
 include/asterisk/ael_structs.h
 include/asterisk/agi.h
 include/asterisk/alaw.h
+include/asterisk/alertpipe.h
 include/asterisk/aoc.h
 include/asterisk/app.h
 include/asterisk/ari.h
