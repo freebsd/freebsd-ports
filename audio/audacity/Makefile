@@ -59,8 +59,7 @@ TWOLAME_DESC=	Use libtwolame for MP2 export support
 VAMP_DESC=	Vamp plug-in support
 VST_DESC=	VST plug-in support
 
-CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}" \
-		ax_cv_gcc_4_9_0=yes
+CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
 CONFIGURE_ARGS+=	--enable-unicode \
 			${ICONV_CONFIGURE_ARG} \
