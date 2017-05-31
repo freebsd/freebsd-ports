@@ -543,6 +543,7 @@
     SUBDIR += py-milter
     SUBDIR += py-notmuch
     SUBDIR += py-ppolicy
+    SUBDIR += py-pymailq
     SUBDIR += py-pyspf
     SUBDIR += py-spambayes
     SUBDIR += py-twistedMail

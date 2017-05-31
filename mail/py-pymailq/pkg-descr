@@ -1,0 +1,6 @@
+The pymailq module makes it easy to view and control Postfix mails
+queue. It provide several classes to store, view and interact with
+mail queue using Postfix command line tools. This module is provided
+for automation and monitoring developments.
+
+WWW: https://github.com/outini/pymailq
