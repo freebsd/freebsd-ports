@@ -42,8 +42,8 @@
 #   Default value: /var/graylog
 #   Path to the graylog run folder.
 #
-# graylog_log_file (string):
-#   Default value: /var/log/graylog-server.log
+# graylog_log_config (string):
+#   Default value: %%ETCDIR%%/server/log4j2.xml
 #   Path to the Graylog Server logfile
 
 . /etc/rc.subr
@@ -60,45 +60,58 @@ load_rc_config $name
 : ${graylog_max_mem:="1g"}
 : ${graylog_dir:="%%DATADIR%%"}
 : ${graylog_data_dir:="%%GRAYLOG_DATA_DIR%%"}
+: ${graylog_logs_dir:="%%GRAYLOG_LOGS_DIR%%"}
 : ${graylog_run_dir:="/var/run/graylog"}
-: ${graylog_log_file:="/var/log/graylog-server.log"}
+: ${graylog_log_config:="%%ETCDIR%%/server/log4j2.xml"}
 
+java_options=" \
+    -Djava.awt.headless=true \
+    -Djava.net.preferIPv4Stack=true \
+    -Dapp=${name} \
+    -Dlog4j.configurationFile=${graylog_log_config} \
+    -Xms${graylog_min_mem} \
+    -Xmx${graylog_max_mem} \
+    -XX:-OmitStackTraceInFastThrow \
+    -XX:+AggressiveOpts \
+    -XX:+CMSClassUnloadingEnabled \
+    -XX:+CMSConcurrentMTEnabled \
+    -XX:+CMSParallelRemarkEnabled \
+    -XX:+DisableExplicitGC \
+    -XX:+HeapDumpOnOutOfMemoryError \
+    -XX:+ResizeTLAB \
+    -XX:+UseCMSInitiatingOccupancyOnly \
+    -XX:+UseCompressedOops \
+    -XX:+UseConcMarkSweepGC \
+    -XX:+UseFastAccessorMethods \
+    -XX:+UseParNewGC \
+    -XX:CMSInitiatingOccupancyFraction=75 \
+    -XX:NewRatio=1 \
+    "
 
-java_options=" -Xms${graylog_min_mem} \
-               -Xmx${graylog_max_mem} \
-               -XX:NewRatio=1 \
-               -XX:+ResizeTLAB \
-               -XX:+UseConcMarkSweepGC \
-               -XX:+CMSConcurrentMTEnabled \
-               -XX:+CMSClassUnloadingEnabled \
-               -XX:+UseParNewGC \
-               -XX:-OmitStackTraceInFastThrow"
+app_pidfile="${graylog_run_dir}/${name}.pid"
+pidfile="${graylog_run_dir}/daemon.pid"
+command="/usr/sbin/daemon"
 
-start_precmd="graylog_precmd"
+command_args=" \
+    -c \
+    -t ${name} \
+    -r \
+    -p ${app_pidfile} \
+    -P ${pidfile} \
+    %%LOCALBASE%%/bin/java \
+    ${java_options} \
+    -jar ${graylog_dir}/graylog.jar server \
+    --no-pid-file \
+    --configfile ${graylog_config}"
 
-pidfile="${graylog_run_dir}/${name}.pid"
-command=/usr/bin/nohup
-
-command_args="%%LOCALBASE%%/bin/java -jar ${graylog_dir}/graylog.jar server \
-              --configfile \"${graylog_config}\" \
-              --pidfile \"${pidfile}\" \
-              >> \"${graylog_log_file}\" \
-              2>> \"${graylog_log_file}\" &"
+required_files="%%LOCALBASE%%/bin/java ${graylog_config}"
 
 graylog_precmd() {
-    if [ ! -f "${graylog_config}" ]; then
-        echo "Configuration file ${graylog_config} not found"
-        exit 1
-    fi
-
-    if [ ! -f "${graylog_log_file}" ]; then
-        touch "${graylog_log_file}"
-        chown "${graylog_user}:${graylog_group}" "${graylog_log_file}"
-        chmod 640 "${graylog_log_file}"
-    fi
-
     install -d -o ${graylog_user} -g ${graylog_group} -m 750 "${graylog_data_dir}"
+    install -d -o ${graylog_user} -g ${graylog_group} -m 750 "${graylog_logs_dir}"
     install -d -o ${graylog_user} -g ${graylog_group} -m 750 "${graylog_run_dir}"
 }
+
+start_precmd="graylog_precmd"
 
 run_rc_command "$1"

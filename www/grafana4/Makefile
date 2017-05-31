@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/:public
+MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/grafana-releases/release/:public
 PKGNAMESUFFIX=	${PORTVERSION:C/([0-9]).*/\1/1}
-DISTFILES=	grafana-releases/release/grafana-${PORTVERSION}.linux-x64${EXTRACT_SUFX}:public
+DISTFILES=	grafana-${PORTVERSION}.linux-x64${EXTRACT_SUFX}:public
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
@@ -17,13 +18,13 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_RC_SUBR=	grafana4
+USE_RC_SUBR=	grafana
 
 USES=	compiler
 
-PLIST_SUB=	PORTVERSION_MAJOR="${PORTVERSION:C/([0-9]).*/\1/1}"
-
 USE_GITHUB=	yes
+GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
+TAG=		349f3eb
 
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana
@@ -32,13 +33,13 @@ USERS=		${GRAFANA_USER}
 GROUPS=		${GRAFANA_GROUP}
 
 GRAFANAHOMEDIR=		${PREFIX}/share/grafana/
-GRAFANADATADIR=		/var/db/${PKGBASE}/
-GRAFANALOGDIR=		/var/log/${PKGBASE}/
-GRAFANAPIDDIR=		/var/run/${PKGBASE}/
-GRAFANAPLUGINDIR=	/var/db/${PKGBASE}/plugins
-GRAFANADASHBOARDDIR=	/var/db/${PKGBASE}/dashboards
+GRAFANADATADIR=		/var/db/${PORTNAME}/
+GRAFANALOGDIR=		/var/log/${PORTNAME}/
+GRAFANAPIDDIR=		/var/run/${PORTNAME}/
+GRAFANAPLUGINDIR=	/var/db/${PORTNAME}/plugins
+GRAFANADASHBOARDDIR=	/var/db/${PORTNAME}/dashboards
 
-SUB_FILES=	grafana4 grafana4.conf
+SUB_FILES=	grafana grafana.conf
 SUB_LIST+=	GRAFANA_USER=${GRAFANA_USER} \
 		GRAFANA_GROUP=${GRAFANA_GROUP} \
 		GRAFANADATADIR=${GRAFANADATADIR} \
@@ -51,21 +52,12 @@ SUB_LIST+=	GRAFANA_USER=${GRAFANA_USER} \
 PLIST_SUB+=	GRAFANAHOMEDIR=${GRAFANAHOMEDIR}
 
 post-extract:
-	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src/
-	@${MKDIR} ${WRKSRC}/src/github.com/grafana/grafana
-.for src in CHANGELOG.md Gruntfile.js LICENSE.md Makefile NOTICE.md README.md \
-	bower.json build.go circle.yml conf docker docs emails examples \
-	karma.conf.js latest.json package.json packaging pkg scripts tasks \
-	tests tsconfig.json tslint.json yarn.lock
-	@${MV} ${WRKSRC}/${src} \
-		${WRKSRC}/src/github.com/grafana/grafana
-.endfor
-	${RM} -r ${WRKSRC}/src/github.com/grafana/grafana/public
-	${MV} ${WRKDIR}/grafana-${PORTVERSION}/public ${WRKSRC}/src/github.com/grafana/grafana/public
+	@${RM} -r ${WRKSRC}/src/github.com/grafana/grafana/public
+	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/grafana-${PORTVERSION}.linux-x64${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS} grafana-${PORTVERSION}/public)
 
 do-build:
-	cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/grafana; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go run build.go build
+	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags "-w -X main.version=${PORTVERSION} -X main.commit=${TAG}" -o ./bin/grafana-server ./pkg/cmd/grafana-server
+	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags "-w -X main.version=${PORTVERSION} -X main.commit=${TAG}" -o ./bin/grafana-cli ./pkg/cmd/grafana-cli
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/grafana/grafana/bin/grafana-server \
@@ -85,7 +77,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${GRAFANAHOMEDIR}/data/log
 	${INSTALL_DATA} ${WRKSRC}/src/github.com/grafana/grafana/conf/defaults.ini \
 		${STAGEDIR}${GRAFANAHOMEDIR}/conf/defaults.ini
-	${INSTALL_DATA} ${WRKDIR}/grafana4.conf ${STAGEDIR}${PREFIX}/etc/grafana4.conf.sample
+	${INSTALL_DATA} ${WRKDIR}/grafana.conf ${STAGEDIR}${PREFIX}/etc/grafana.conf.sample
 
 .include <bsd.port.pre.mk>
 

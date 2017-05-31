@@ -37,7 +37,10 @@ share/thumbnailers/tiled.thumbnailer
 %%DATADIR%%/translations/tiled_de.qm
 %%DATADIR%%/translations/tiled_en.qm
 %%DATADIR%%/translations/tiled_es.qm
+%%DATADIR%%/translations/tiled_fi.qm
 %%DATADIR%%/translations/tiled_fr.qm
+%%DATADIR%%/translations/tiled_he.qm
+%%DATADIR%%/translations/tiled_hu.qm
 %%DATADIR%%/translations/tiled_it.qm
 %%DATADIR%%/translations/tiled_ja.qm
 %%DATADIR%%/translations/tiled_nb.qm
@@ -47,6 +50,6 @@ share/thumbnailers/tiled.thumbnailer
 %%DATADIR%%/translations/tiled_pt_PT.qm
 %%DATADIR%%/translations/tiled_ru.qm
 %%DATADIR%%/translations/tiled_tr.qm
+%%DATADIR%%/translations/tiled_uk.qm
 %%DATADIR%%/translations/tiled_zh.qm
 %%DATADIR%%/translations/tiled_zh_TW.qm
-%%DATADIR%%/translations/tiled_he.qm

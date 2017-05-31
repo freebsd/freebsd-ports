@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	2.1.2
-PORTREVISION=	5
+PORTVERSION=	2.1.3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/audacity/audacity/archive/
 DISTNAME=	Audacity-${PORTVERSION}
@@ -25,11 +24,12 @@ BROKEN_powerpc64=	Does not build
 WRKSRC=		${WRKDIR}/${PORTNAME}-Audacity-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix
+USES=		autoreconf compiler:gcc-c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_WITH=	libintl-prefix="${LOCALBASE}"
 OPTIONS_SUB=	yes
+USE_GCC=	4.9+
 USE_WX=		3.0+
 WX_COMPS=	wx
 INSTALLS_ICONS=	yes
@@ -136,10 +136,6 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VST_CONFIGURE_ENABLE=	vst
 
 .include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-std=c++11
-.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

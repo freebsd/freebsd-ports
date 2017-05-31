@@ -4,7 +4,7 @@
 PORTNAME=	xapian
 PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=	bindings-
-CATEGORIES=	databases
+CATEGORIES=	databases python
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

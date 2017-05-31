@@ -3,7 +3,7 @@
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/ggadu/gg2/${PORTVERSION}
 DISTNAME=	gg2-${PORTVERSION}
@@ -11,16 +11,20 @@ DISTNAME=	gg2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gadu-Gadu IM network client
 
-LIB_DEPENDS=	libgadu.so:polish/libgadu \
-		libaudiofile.so:audio/libaudiofile
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
+		libgadu.so:polish/libgadu \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pathfix perl5 pkgconfig tar:bzip2 libtool
-USE_GNOME=	gtk20
+USES=		gettext gmake libtool localbase pathfix perl5 pkgconfig tar:bzip2
+USE_GNOME=	cairo gtk20
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xaw ice xscrnsaver
-WANT_GNOME=	yes
 INSTALL_TARGET=	install-strip
 # there is a header conflict here, that breaks build
 CONFLICTS=	qhacc-[0-9]*
@@ -40,9 +44,6 @@ CONFIGURE_ARGS=	--disable-esdtest \
 		--without-gnutls \
 		--without-perl \
 		--without-remote
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DBUS DOCKAPP DOCKLET ESOUND \
 		GTKSPELL JABBER TLEN XOSD
@@ -65,10 +66,13 @@ DOCKLET_CONFIGURE_WITH=	docklet-system-tray
 
 DOCKAPP_CONFIGURE_WITH=	docklet_dockapp
 
+GTKSPELL_BUILD_DEPENDS=	pl-aspell>0:polish/aspell
 GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
+GTKSPELL_RUN_DEPENDS=	pl-aspell>0:polish/aspell
 GTKSPELL_CONFIGURE_WITH=	gtkspell
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+			libdbus-glib-1.so:devel/dbus-glib
 DBUS_CONFIGURE_WITH=	dbus
 DBUS_CONFIGURE_ON=	--with-dbus-dir=${PREFIX}/share/dbus-1/services
 
@@ -76,6 +80,7 @@ ESOUND_USE=	GNOME=esound
 ESOUND_CONFIGURE_WITH=	esd
 
 XOSD_LIB_DEPENDS=	libxosd.so:misc/xosd
+XOSD_USE=		XORG=xext,xinerama
 XOSD_CONFIGURE_WITH=	xosd
 
 post-patch:

@@ -93,7 +93,6 @@ SUB_FILES=	900.mastodon nginx.conf nginx-include.conf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-		${WRKSRC}/bin/yarn \
 		${WRKSRC}/config/environments/production.rb
 
 do-install:
