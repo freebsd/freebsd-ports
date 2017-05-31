@@ -81,7 +81,9 @@ PLIST_FILES=		bin/ldbedit \
 CFLAGS+=		-fno-color-diagnostics
 .endif
 CONFIGURE_ENV+=		NOCOLOR=yes
+CONFIGURE_ENV+=         PYTHONDONTWRITEBYTECODE=1
 MAKE_ENV+=		NOCOLOR=yes
+MAKE_ENV+=              PYTHONDONTWRITEBYTECODE=1
 
 PLIST_FILES+=		include/pyldb.h \
 			lib/libpyldb-util.so \
