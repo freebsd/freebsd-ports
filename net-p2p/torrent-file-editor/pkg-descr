@@ -1,0 +1,10 @@
+This is a Qt-based GUI tool designed to create and edit .torrent files.
+Some of its features:
+
+  - Create .torrent file from scratch
+  - Edit .torrent file in user-friendly way
+  - Edit .torrent file in JSON format
+  - Add, remove, and interchange files in .torrent file
+  - Support for different encodings
+
+WWW: https://sourceforge.net/projects/torrent-file-editor/
