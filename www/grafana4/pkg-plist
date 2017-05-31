@@ -1,13 +1,13 @@
 bin/grafana-cli
 bin/grafana-server
-@sample etc/grafana%%PORTVERSION_MAJOR%%.conf.sample
+@sample etc/grafana.conf.sample
 %%DATADIR%%/conf/defaults.ini
 %%DATADIR%%/public/app/app.d.ts
 %%DATADIR%%/public/app/app.js
 %%DATADIR%%/public/app/app.js.map
 %%DATADIR%%/public/app/app.ts
 %%DATADIR%%/public/app/app_bundle.js
-%%DATADIR%%/public/app/boot.5ee7468a.js
+%%DATADIR%%/public/app/boot.d709d8d5.js
 %%DATADIR%%/public/app/boot.js
 %%DATADIR%%/public/app/core/app_events.d.ts
 %%DATADIR%%/public/app/core/app_events.js
@@ -98,7 +98,6 @@ bin/grafana-server
 %%DATADIR%%/public/app/core/core_module.js
 %%DATADIR%%/public/app/core/core_module.js.map
 %%DATADIR%%/public/app/core/core_module.ts
-%%DATADIR%%/public/app/core/directives/annotation_tooltip.js
 %%DATADIR%%/public/app/core/directives/array_join.d.ts
 %%DATADIR%%/public/app/core/directives/array_join.js
 %%DATADIR%%/public/app/core/directives/array_join.js.map
@@ -233,6 +232,10 @@ bin/grafana-server
 %%DATADIR%%/public/app/core/utils/sort_by_keys.js
 %%DATADIR%%/public/app/core/utils/sort_by_keys.js.map
 %%DATADIR%%/public/app/core/utils/sort_by_keys.ts
+%%DATADIR%%/public/app/core/utils/ticks.d.ts
+%%DATADIR%%/public/app/core/utils/ticks.js
+%%DATADIR%%/public/app/core/utils/ticks.js.map
+%%DATADIR%%/public/app/core/utils/ticks.ts
 %%DATADIR%%/public/app/features/admin/admin.d.ts
 %%DATADIR%%/public/app/features/admin/admin.js
 %%DATADIR%%/public/app/features/admin/admin.js.map
@@ -298,6 +301,14 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/threshold_mapper.js.map
 %%DATADIR%%/public/app/features/alerting/threshold_mapper.ts
 %%DATADIR%%/public/app/features/all.js
+%%DATADIR%%/public/app/features/annotations/all.d.ts
+%%DATADIR%%/public/app/features/annotations/all.js
+%%DATADIR%%/public/app/features/annotations/all.js.map
+%%DATADIR%%/public/app/features/annotations/all.ts
+%%DATADIR%%/public/app/features/annotations/annotation_tooltip.d.ts
+%%DATADIR%%/public/app/features/annotations/annotation_tooltip.js
+%%DATADIR%%/public/app/features/annotations/annotation_tooltip.js.map
+%%DATADIR%%/public/app/features/annotations/annotation_tooltip.ts
 %%DATADIR%%/public/app/features/annotations/annotations_srv.d.ts
 %%DATADIR%%/public/app/features/annotations/annotations_srv.js
 %%DATADIR%%/public/app/features/annotations/annotations_srv.js.map
@@ -306,7 +317,20 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/annotations/editor_ctrl.js
 %%DATADIR%%/public/app/features/annotations/editor_ctrl.js.map
 %%DATADIR%%/public/app/features/annotations/editor_ctrl.ts
+%%DATADIR%%/public/app/features/annotations/event.d.ts
+%%DATADIR%%/public/app/features/annotations/event.js
+%%DATADIR%%/public/app/features/annotations/event.js.map
+%%DATADIR%%/public/app/features/annotations/event.ts
+%%DATADIR%%/public/app/features/annotations/event_editor.d.ts
+%%DATADIR%%/public/app/features/annotations/event_editor.js
+%%DATADIR%%/public/app/features/annotations/event_editor.js.map
+%%DATADIR%%/public/app/features/annotations/event_editor.ts
+%%DATADIR%%/public/app/features/annotations/event_manager.d.ts
+%%DATADIR%%/public/app/features/annotations/event_manager.js
+%%DATADIR%%/public/app/features/annotations/event_manager.js.map
+%%DATADIR%%/public/app/features/annotations/event_manager.ts
 %%DATADIR%%/public/app/features/annotations/partials/editor.html
+%%DATADIR%%/public/app/features/annotations/partials/event_editor.html
 %%DATADIR%%/public/app/features/dashboard/ad_hoc_filters.d.ts
 %%DATADIR%%/public/app/features/dashboard/ad_hoc_filters.js
 %%DATADIR%%/public/app/features/dashboard/ad_hoc_filters.js.map
@@ -361,6 +385,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/dashboard/model.js
 %%DATADIR%%/public/app/features/dashboard/model.js.map
 %%DATADIR%%/public/app/features/dashboard/model.ts
+%%DATADIR%%/public/app/features/dashboard/partials/addAnnotationModal.html
 %%DATADIR%%/public/app/features/dashboard/partials/dash_list.html
 %%DATADIR%%/public/app/features/dashboard/partials/graphiteImport.html
 %%DATADIR%%/public/app/features/dashboard/partials/inspector.html
@@ -923,6 +948,28 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/mixed/module.js.map
 %%DATADIR%%/public/app/plugins/datasource/mixed/module.ts
 %%DATADIR%%/public/app/plugins/datasource/mixed/plugin.json
+%%DATADIR%%/public/app/plugins/datasource/mysql/README.md
+%%DATADIR%%/public/app/plugins/datasource/mysql/datasource.d.ts
+%%DATADIR%%/public/app/plugins/datasource/mysql/datasource.js
+%%DATADIR%%/public/app/plugins/datasource/mysql/datasource.js.map
+%%DATADIR%%/public/app/plugins/datasource/mysql/datasource.ts
+%%DATADIR%%/public/app/plugins/datasource/mysql/img/mysql_logo.svg
+%%DATADIR%%/public/app/plugins/datasource/mysql/module.d.ts
+%%DATADIR%%/public/app/plugins/datasource/mysql/module.js
+%%DATADIR%%/public/app/plugins/datasource/mysql/module.js.map
+%%DATADIR%%/public/app/plugins/datasource/mysql/module.ts
+%%DATADIR%%/public/app/plugins/datasource/mysql/partials/annotations.editor.html
+%%DATADIR%%/public/app/plugins/datasource/mysql/partials/config.html
+%%DATADIR%%/public/app/plugins/datasource/mysql/partials/query.editor.html
+%%DATADIR%%/public/app/plugins/datasource/mysql/plugin.json
+%%DATADIR%%/public/app/plugins/datasource/mysql/query_ctrl.d.ts
+%%DATADIR%%/public/app/plugins/datasource/mysql/query_ctrl.js
+%%DATADIR%%/public/app/plugins/datasource/mysql/query_ctrl.js.map
+%%DATADIR%%/public/app/plugins/datasource/mysql/query_ctrl.ts
+%%DATADIR%%/public/app/plugins/datasource/mysql/specs/datasource_specs.d.ts
+%%DATADIR%%/public/app/plugins/datasource/mysql/specs/datasource_specs.js
+%%DATADIR%%/public/app/plugins/datasource/mysql/specs/datasource_specs.js.map
+%%DATADIR%%/public/app/plugins/datasource/mysql/specs/datasource_specs.ts
 %%DATADIR%%/public/app/plugins/datasource/opentsdb/README.md
 %%DATADIR%%/public/app/plugins/datasource/opentsdb/config_ctrl.d.ts
 %%DATADIR%%/public/app/plugins/datasource/opentsdb/config_ctrl.js
@@ -1023,6 +1070,10 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/panel/graph/graph.ts
 %%DATADIR%%/public/app/plugins/panel/graph/graph_tooltip.d.ts
 %%DATADIR%%/public/app/plugins/panel/graph/graph_tooltip.js
+%%DATADIR%%/public/app/plugins/panel/graph/histogram.d.ts
+%%DATADIR%%/public/app/plugins/panel/graph/histogram.js
+%%DATADIR%%/public/app/plugins/panel/graph/histogram.js.map
+%%DATADIR%%/public/app/plugins/panel/graph/histogram.ts
 %%DATADIR%%/public/app/plugins/panel/graph/img/icn-graph-panel.svg
 %%DATADIR%%/public/app/plugins/panel/graph/jquery.flot.events.js
 %%DATADIR%%/public/app/plugins/panel/graph/legend.js
@@ -1044,6 +1095,10 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/panel/graph/specs/graph_specs.js
 %%DATADIR%%/public/app/plugins/panel/graph/specs/graph_specs.js.map
 %%DATADIR%%/public/app/plugins/panel/graph/specs/graph_specs.ts
+%%DATADIR%%/public/app/plugins/panel/graph/specs/histogram_specs.d.ts
+%%DATADIR%%/public/app/plugins/panel/graph/specs/histogram_specs.js
+%%DATADIR%%/public/app/plugins/panel/graph/specs/histogram_specs.js.map
+%%DATADIR%%/public/app/plugins/panel/graph/specs/histogram_specs.ts
 %%DATADIR%%/public/app/plugins/panel/graph/specs/threshold_manager_specs.d.ts
 %%DATADIR%%/public/app/plugins/panel/graph/specs/threshold_manager_specs.js
 %%DATADIR%%/public/app/plugins/panel/graph/specs/threshold_manager_specs.js.map
@@ -1066,6 +1121,52 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/panel/graph/thresholds_form.js
 %%DATADIR%%/public/app/plugins/panel/graph/thresholds_form.js.map
 %%DATADIR%%/public/app/plugins/panel/graph/thresholds_form.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/README.md
+%%DATADIR%%/public/app/plugins/panel/heatmap/axes_editor.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/axes_editor.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/axes_editor.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/axes_editor.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/display_editor.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/display_editor.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/display_editor.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/display_editor.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_ctrl.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_ctrl.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_ctrl.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_ctrl.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_data_converter.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_data_converter.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_data_converter.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_data_converter.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_tooltip.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_tooltip.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_tooltip.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/heatmap_tooltip.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/img/icn-heatmap-panel.svg
+%%DATADIR%%/public/app/plugins/panel/heatmap/module.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/module.html
+%%DATADIR%%/public/app/plugins/panel/heatmap/module.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/module.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/module.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/partials/axes_editor.html
+%%DATADIR%%/public/app/plugins/panel/heatmap/partials/display_editor.html
+%%DATADIR%%/public/app/plugins/panel/heatmap/plugin.json
+%%DATADIR%%/public/app/plugins/panel/heatmap/rendering.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/rendering.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/rendering.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/rendering.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/heatmap_ctrl_specs.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/heatmap_ctrl_specs.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/heatmap_ctrl_specs.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/heatmap_ctrl_specs.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/heatmap_data_converter_specs.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/heatmap_data_converter_specs.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/heatmap_data_converter_specs.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/heatmap_data_converter_specs.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/renderer_specs.d.ts
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/renderer_specs.js
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/renderer_specs.js.map
+%%DATADIR%%/public/app/plugins/panel/heatmap/specs/renderer_specs.ts
 %%DATADIR%%/public/app/plugins/panel/pluginlist/README.md
 %%DATADIR%%/public/app/plugins/panel/pluginlist/editor.html
 %%DATADIR%%/public/app/plugins/panel/pluginlist/img/icn-dashlist-panel.svg
@@ -1085,15 +1186,20 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/panel/singlestat/module.js.map
 %%DATADIR%%/public/app/plugins/panel/singlestat/module.ts
 %%DATADIR%%/public/app/plugins/panel/singlestat/plugin.json
-%%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat-specs.d.ts
-%%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat-specs.js
-%%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat-specs.js.map
-%%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat-specs.ts
 %%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat_panel_spec.d.ts
 %%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat_panel_spec.js
 %%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat_panel_spec.js.map
 %%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat_panel_spec.ts
+%%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat_specs.d.ts
+%%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat_specs.js
+%%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat_specs.js.map
+%%DATADIR%%/public/app/plugins/panel/singlestat/specs/singlestat_specs.ts
 %%DATADIR%%/public/app/plugins/panel/table/README.md
+%%DATADIR%%/public/app/plugins/panel/table/column_options.d.ts
+%%DATADIR%%/public/app/plugins/panel/table/column_options.html
+%%DATADIR%%/public/app/plugins/panel/table/column_options.js
+%%DATADIR%%/public/app/plugins/panel/table/column_options.js.map
+%%DATADIR%%/public/app/plugins/panel/table/column_options.ts
 %%DATADIR%%/public/app/plugins/panel/table/editor.d.ts
 %%DATADIR%%/public/app/plugins/panel/table/editor.html
 %%DATADIR%%/public/app/plugins/panel/table/editor.js
@@ -1150,12 +1256,12 @@ bin/grafana-server
 %%DATADIR%%/public/css/grafana.dark.css.map
 %%DATADIR%%/public/css/grafana.dark.min.css
 %%DATADIR%%/public/css/grafana.dark.min.css.map
-%%DATADIR%%/public/css/grafana.dark.min.fc104690.css
-%%DATADIR%%/public/css/grafana.dark.min.fc104690.css.map
+%%DATADIR%%/public/css/grafana.dark.min.d72a4c96.css
+%%DATADIR%%/public/css/grafana.dark.min.d72a4c96.css.map
 %%DATADIR%%/public/css/grafana.light.css
 %%DATADIR%%/public/css/grafana.light.css.map
-%%DATADIR%%/public/css/grafana.light.min.2def29fc.css
-%%DATADIR%%/public/css/grafana.light.min.2def29fc.css.map
+%%DATADIR%%/public/css/grafana.light.min.5fc70102.css
+%%DATADIR%%/public/css/grafana.light.min.5fc70102.css.map
 %%DATADIR%%/public/css/grafana.light.min.css
 %%DATADIR%%/public/css/grafana.light.min.css.map
 %%DATADIR%%/public/dashboards/default.json
@@ -1177,6 +1283,7 @@ bin/grafana-server
 %%DATADIR%%/public/fonts/fontawesome-webfont.svg
 %%DATADIR%%/public/fonts/fontawesome-webfont.ttf
 %%DATADIR%%/public/fonts/fontawesome-webfont.woff
+%%DATADIR%%/public/fonts/fontawesome-webfont.woff2
 %%DATADIR%%/public/fonts/grafana-icons.eot
 %%DATADIR%%/public/fonts/grafana-icons.svg
 %%DATADIR%%/public/fonts/grafana-icons.ttf
@@ -1261,7 +1368,6 @@ bin/grafana-server
 %%DATADIR%%/public/img/warn-tiny.svg
 %%DATADIR%%/public/img/warn.svg
 %%DATADIR%%/public/robots.txt
-%%DATADIR%%/public/sass/.sass-lint.yml
 %%DATADIR%%/public/sass/_grafana.scss
 %%DATADIR%%/public/sass/_old_responsive.scss
 %%DATADIR%%/public/sass/_variables.dark.scss
@@ -1276,6 +1382,19 @@ bin/grafana-server
 %%DATADIR%%/public/sass/base/_normalize.scss
 %%DATADIR%%/public/sass/base/_reboot.scss
 %%DATADIR%%/public/sass/base/_type.scss
+%%DATADIR%%/public/sass/base/font-awesome/_animated.scss
+%%DATADIR%%/public/sass/base/font-awesome/_bordered-pulled.scss
+%%DATADIR%%/public/sass/base/font-awesome/_core.scss
+%%DATADIR%%/public/sass/base/font-awesome/_fixed-width.scss
+%%DATADIR%%/public/sass/base/font-awesome/_icons.scss
+%%DATADIR%%/public/sass/base/font-awesome/_larger.scss
+%%DATADIR%%/public/sass/base/font-awesome/_list.scss
+%%DATADIR%%/public/sass/base/font-awesome/_mixins.scss
+%%DATADIR%%/public/sass/base/font-awesome/_path.scss
+%%DATADIR%%/public/sass/base/font-awesome/_rotated-flipped.scss
+%%DATADIR%%/public/sass/base/font-awesome/_screen-reader.scss
+%%DATADIR%%/public/sass/base/font-awesome/_stacked.scss
+%%DATADIR%%/public/sass/base/font-awesome/_variables.scss
 %%DATADIR%%/public/sass/components/_alerts.scss
 %%DATADIR%%/public/sass/components/_buttons.scss
 %%DATADIR%%/public/sass/components/_cards.scss
@@ -1297,6 +1416,7 @@ bin/grafana-server
 %%DATADIR%%/public/sass/components/_panel_dashlist.scss
 %%DATADIR%%/public/sass/components/_panel_gettingstarted.scss
 %%DATADIR%%/public/sass/components/_panel_graph.scss
+%%DATADIR%%/public/sass/components/_panel_heatmap.scss
 %%DATADIR%%/public/sass/components/_panel_pluginlist.scss
 %%DATADIR%%/public/sass/components/_panel_singlestat.scss
 %%DATADIR%%/public/sass/components/_panel_table.scss
@@ -1323,6 +1443,7 @@ bin/grafana-server
 %%DATADIR%%/public/sass/fonts.scss
 %%DATADIR%%/public/sass/grafana.dark.scss
 %%DATADIR%%/public/sass/grafana.light.scss
+%%DATADIR%%/public/sass/icons.json
 %%DATADIR%%/public/sass/layout/_lists.scss
 %%DATADIR%%/public/sass/layout/_page.scss
 %%DATADIR%%/public/sass/mixins/_animations.scss
@@ -1349,19 +1470,36 @@ bin/grafana-server
 %%DATADIR%%/public/sass/utils/_utils.scss
 %%DATADIR%%/public/sass/utils/_validation.scss
 %%DATADIR%%/public/sass/utils/_widths.scss
-%%DATADIR%%/public/test/.jshintrc
+%%DATADIR%%/public/test/core/table_model_specs.d.ts
+%%DATADIR%%/public/test/core/table_model_specs.js
+%%DATADIR%%/public/test/core/table_model_specs.js.map
 %%DATADIR%%/public/test/core/table_model_specs.ts
 %%DATADIR%%/public/test/core/time_series_specs.js
+%%DATADIR%%/public/test/core/utils/datemath_specs.d.ts
+%%DATADIR%%/public/test/core/utils/datemath_specs.js
+%%DATADIR%%/public/test/core/utils/datemath_specs.js.map
 %%DATADIR%%/public/test/core/utils/datemath_specs.ts
+%%DATADIR%%/public/test/core/utils/emitter_specs.d.ts
+%%DATADIR%%/public/test/core/utils/emitter_specs.js
+%%DATADIR%%/public/test/core/utils/emitter_specs.js.map
 %%DATADIR%%/public/test/core/utils/emitter_specs.ts
+%%DATADIR%%/public/test/core/utils/flatten_specs.d.ts
+%%DATADIR%%/public/test/core/utils/flatten_specs.js
+%%DATADIR%%/public/test/core/utils/flatten_specs.js.map
 %%DATADIR%%/public/test/core/utils/flatten_specs.ts
 %%DATADIR%%/public/test/core/utils/kbn_specs.js
+%%DATADIR%%/public/test/core/utils/rangeutil_specs.d.ts
+%%DATADIR%%/public/test/core/utils/rangeutil_specs.js
+%%DATADIR%%/public/test/core/utils/rangeutil_specs.js.map
 %%DATADIR%%/public/test/core/utils/rangeutil_specs.ts
 %%DATADIR%%/public/test/lib/common.d.ts
 %%DATADIR%%/public/test/lib/common.js
 %%DATADIR%%/public/test/lib/common.js.map
 %%DATADIR%%/public/test/lib/common.ts
 %%DATADIR%%/public/test/mocks/dashboard-mock.js
+%%DATADIR%%/public/test/specs/app_specs.d.ts
+%%DATADIR%%/public/test/specs/app_specs.js
+%%DATADIR%%/public/test/specs/app_specs.js.map
 %%DATADIR%%/public/test/specs/app_specs.ts
 %%DATADIR%%/public/test/specs/dashboardViewStateSrv-specs.js
 %%DATADIR%%/public/test/specs/datasource_srv_specs.js
@@ -1373,14 +1511,12 @@ bin/grafana-server
 %%DATADIR%%/public/test/specs/unsavedChangesSrv-specs.js
 %%DATADIR%%/public/test/specs/value_select_dropdown_specs.js
 %%DATADIR%%/public/test/test-main.js
-%%DATADIR%%/public/vendor/angular-bindonce/.bower.json
 %%DATADIR%%/public/vendor/angular-bindonce/CHANGELOG.md
 %%DATADIR%%/public/vendor/angular-bindonce/README.md
 %%DATADIR%%/public/vendor/angular-bindonce/bindonce.js
 %%DATADIR%%/public/vendor/angular-bindonce/bindonce.min.js
 %%DATADIR%%/public/vendor/angular-bindonce/bower.json
 %%DATADIR%%/public/vendor/angular-bindonce/package.json
-%%DATADIR%%/public/vendor/angular-mocks/.bower.json
 %%DATADIR%%/public/vendor/angular-mocks/LICENSE.md
 %%DATADIR%%/public/vendor/angular-mocks/README.md
 %%DATADIR%%/public/vendor/angular-mocks/angular-mocks.js
@@ -1389,7 +1525,6 @@ bin/grafana-server
 %%DATADIR%%/public/vendor/angular-mocks/ngMock.js
 %%DATADIR%%/public/vendor/angular-mocks/ngMockE2E.js
 %%DATADIR%%/public/vendor/angular-mocks/package.json
-%%DATADIR%%/public/vendor/angular-native-dragdrop/.bower.json
 %%DATADIR%%/public/vendor/angular-native-dragdrop/Gulpfile.js
 %%DATADIR%%/public/vendor/angular-native-dragdrop/LICENSE
 %%DATADIR%%/public/vendor/angular-native-dragdrop/README.md
@@ -1408,7 +1543,6 @@ bin/grafana-server
 %%DATADIR%%/public/vendor/angular-other/angular-strap.js
 %%DATADIR%%/public/vendor/angular-other/datepicker.js
 %%DATADIR%%/public/vendor/angular-other/timepicker.js
-%%DATADIR%%/public/vendor/angular-route/.bower.json
 %%DATADIR%%/public/vendor/angular-route/LICENSE.md
 %%DATADIR%%/public/vendor/angular-route/README.md
 %%DATADIR%%/public/vendor/angular-route/angular-route.js
@@ -1417,7 +1551,6 @@ bin/grafana-server
 %%DATADIR%%/public/vendor/angular-route/bower.json
 %%DATADIR%%/public/vendor/angular-route/index.js
 %%DATADIR%%/public/vendor/angular-route/package.json
-%%DATADIR%%/public/vendor/angular-sanitize/.bower.json
 %%DATADIR%%/public/vendor/angular-sanitize/LICENSE.md
 %%DATADIR%%/public/vendor/angular-sanitize/README.md
 %%DATADIR%%/public/vendor/angular-sanitize/angular-sanitize.js
@@ -1427,7 +1560,6 @@ bin/grafana-server
 %%DATADIR%%/public/vendor/angular-sanitize/index.js
 %%DATADIR%%/public/vendor/angular-sanitize/package.json
 %%DATADIR%%/public/vendor/angular-ui/ui-bootstrap-tpls.js
-%%DATADIR%%/public/vendor/angular/.bower.json
 %%DATADIR%%/public/vendor/angular/LICENSE.md
 %%DATADIR%%/public/vendor/angular/README.md
 %%DATADIR%%/public/vendor/angular/angular-csp.css
@@ -1439,7 +1571,6 @@ bin/grafana-server
 %%DATADIR%%/public/vendor/angular/index.js
 %%DATADIR%%/public/vendor/angular/package.json
 %%DATADIR%%/public/vendor/bootstrap/bootstrap.js
-%%DATADIR%%/public/vendor/clipboard/.bower.json
 %%DATADIR%%/public/vendor/clipboard/bower.json
 %%DATADIR%%/public/vendor/clipboard/contributing.md
 %%DATADIR%%/public/vendor/clipboard/dist/clipboard.js
@@ -1450,8 +1581,14 @@ bin/grafana-server
 %%DATADIR%%/public/vendor/crypto.min.js
 %%DATADIR%%/public/vendor/css/spectrum.css
 %%DATADIR%%/public/vendor/css/timepicker.css
+%%DATADIR%%/public/vendor/d3/LICENSE
+%%DATADIR%%/public/vendor/d3/README.md
+%%DATADIR%%/public/vendor/d3/d3-scale-chromatic.min.js
+%%DATADIR%%/public/vendor/d3/d3.js
+%%DATADIR%%/public/vendor/d3/d3.v4.min.js
 %%DATADIR%%/public/vendor/filesaver.js
 %%DATADIR%%/public/vendor/flot/jquery.flot.crosshair.js
+%%DATADIR%%/public/vendor/flot/jquery.flot.dashes.js
 %%DATADIR%%/public/vendor/flot/jquery.flot.fillbelow.js
 %%DATADIR%%/public/vendor/flot/jquery.flot.fillbetween.js
 %%DATADIR%%/public/vendor/flot/jquery.flot.gauge.js
@@ -1461,7 +1598,6 @@ bin/grafana-server
 %%DATADIR%%/public/vendor/flot/jquery.flot.stack.js
 %%DATADIR%%/public/vendor/flot/jquery.flot.stackpercent.js
 %%DATADIR%%/public/vendor/flot/jquery.flot.time.js
-%%DATADIR%%/public/vendor/jquery/.bower.json
 %%DATADIR%%/public/vendor/jquery/AUTHORS.txt
 %%DATADIR%%/public/vendor/jquery/LICENSE.txt
 %%DATADIR%%/public/vendor/jquery/README.md
@@ -1477,7 +1613,6 @@ bin/grafana-server
 %%DATADIR%%/public/vendor/jquery/external/sizzle/dist/sizzle.js
 %%DATADIR%%/public/vendor/jquery/external/sizzle/dist/sizzle.min.js
 %%DATADIR%%/public/vendor/jquery/external/sizzle/dist/sizzle.min.map
-%%DATADIR%%/public/vendor/jquery/src/.eslintrc
 %%DATADIR%%/public/vendor/jquery/src/ajax.js
 %%DATADIR%%/public/vendor/jquery/src/ajax/jsonp.js
 %%DATADIR%%/public/vendor/jquery/src/ajax/load.js
@@ -1579,12 +1714,6 @@ bin/grafana-server
 %%DATADIR%%/public/vendor/jquery/src/var/toString.js
 %%DATADIR%%/public/vendor/jquery/src/wrap.js
 %%DATADIR%%/public/vendor/license.json
-%%DATADIR%%/public/vendor/lodash/.bower.json
-%%DATADIR%%/public/vendor/lodash/.editorconfig
-%%DATADIR%%/public/vendor/lodash/.github/CONTRIBUTING.md
-%%DATADIR%%/public/vendor/lodash/.jscsrc
-%%DATADIR%%/public/vendor/lodash/.markdown-doctest-setup.js
-%%DATADIR%%/public/vendor/lodash/.travis.yml
 %%DATADIR%%/public/vendor/lodash/LICENSE
 %%DATADIR%%/public/vendor/lodash/README.md
 %%DATADIR%%/public/vendor/lodash/dist/lodash.core.js
@@ -3328,8 +3457,8 @@ bin/grafana-server
 %%DATADIR%%/public/views/500.html
 %%DATADIR%%/public/views/index.html
 @dir share/grafana/data/log
-@dir /var/db/grafana%%PORTVERSION_MAJOR%%/dashboards
-@dir /var/db/grafana%%PORTVERSION_MAJOR%%/plugins
-@dir /var/db/grafana%%PORTVERSION_MAJOR%%
-@dir /var/log/grafana%%PORTVERSION_MAJOR%%
-@dir /var/run/grafana%%PORTVERSION_MAJOR%%
+@dir /var/db/grafana/dashboards
+@dir /var/db/grafana/plugins
+@dir /var/db/grafana
+@dir /var/log/grafana
+@dir /var/run/grafana
