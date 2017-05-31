@@ -62,7 +62,6 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/StudioFadeOut.ny
 %%DATADIR%%/plug-ins/adjustable-fade.ny
 %%DATADIR%%/plug-ins/beat.ny
-%%DATADIR%%/plug-ins/clicktrack.ny
 %%DATADIR%%/plug-ins/clipfix.ny
 %%DATADIR%%/plug-ins/crossfadeclips.ny
 %%DATADIR%%/plug-ins/crossfadetracks.ny
@@ -73,8 +72,10 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/lowpass.ny
 %%DATADIR%%/plug-ins/notch.ny
 %%DATADIR%%/plug-ins/pluck.ny
+%%DATADIR%%/plug-ins/rhythmtrack.ny
 %%DATADIR%%/plug-ins/rissetdrum.ny
 %%DATADIR%%/plug-ins/sample-data-export.ny
+%%DATADIR%%/plug-ins/sample-data-import.ny
 %%DATADIR%%/plug-ins/tremolo.ny
 %%DATADIR%%/plug-ins/vocalrediso.ny
 %%DATADIR%%/plug-ins/vocalremover.ny
