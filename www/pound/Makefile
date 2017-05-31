@@ -18,9 +18,7 @@ LICENSE_FILE=	${WRKSRC}/GPL.txt
 USES=		tar:tgz ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
-USE_RC_SUBR=	${PORTNAME}
-
-SUB_LIST=	NAME=${PORTNAME}
+USE_RC_SUBR=	pound
 
 PLIST_FILES=	sbin/pound \
 		sbin/poundctl \

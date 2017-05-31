@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=pound
+
+command="%%PREFIX%%/sbin/pound"
+pidfile="/var/run/pound.pid"
+pound_config="%%PREFIX%%/etc/pound.cfg"
+required_files=${pound_config}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# rhodecode_config (string):
+#               rhodecode config file for paster
+# rhodecode_user (string):
+#               User to run rhodecode
+# rhodecode_group (string):
+#               Group to run rhodecode
+
+name="rhodecode"
+
+: ${rhodecode_config="%%PREFIX%%/etc/rhodecode/production.ini"}
+: ${rhodecode_user="www"}
+: ${rhodecode_group="www"}
+
+pidfile="/var/run/${name}/${name}.pid"
+logfile="/var/run/${name}.log"
+command=%%PREFIX%%/bin/paster
+command_user=${rhodecode_user}
+command_args=${rhodecode_config}
+supervisor=supervise-daemon
+required_files="${rhodecode_config}"
+
+start_pre() {
+	install -d -o ${rhodecode_user} ${pidfile%/*}	
+}

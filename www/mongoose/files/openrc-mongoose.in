@@ -9,13 +9,14 @@
 
 name="mongoose"
 description=""
-command="%%PREFIX%%/bin/mongoose"
-command_args=${mongoose_flags}
-supervisor=supervise-daemon
-pidfile=${mongoose_pidfile}
 
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 mongoose_flags=${mongoose_flags-"/var/empty"}
-mongoose_pidfile=${mongoose_pidfile-"/var/run/mongoose"}
+mongoose_pidfile=${mongoose_pidfile-"/var/run/mongoose.pid"}
+
+command="%%PREFIX%%/bin/mongoose"
+command_args=${mongoose_flags}
+supervisor=supervise-daemon
+pidfile=${mongoose_pidfile}

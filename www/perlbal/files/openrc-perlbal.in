@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="perlbal"
+command="%%PREFIX%%/bin/perlbal"
+
+: ${perlbal_configuration="%%PREFIX%%/etc/perlbal/perlbal.conf"}
+
+required_files="$perlbal_configuration"
+command_args="--config $required_filesn"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

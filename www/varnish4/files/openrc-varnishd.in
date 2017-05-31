@@ -1,0 +1,80 @@
+#!/sbin/openrc-run
+
+# Configuration variables and their default values:
+#
+# varnishd_pidfile - full path to the PID file.
+#	default: "/var/run/varnishd.pid"
+#
+# varnishd_listen - address and port at which varnishd will listen for
+#	client requests.
+#	default: ":80"
+#
+# varnishd_admin - address and port at which varnishd will listen for
+#	administrative commands.
+#	default: "localhost:81"
+#
+# varnishd_backend - address of the backend server.
+#	default: "localhost:8080"
+#
+# varnishd_config - name of the varnishd config file.
+#	default: unset.
+#
+# varnishd_hash - hash algorithm
+#       default: "critbit"
+#
+# varnishd_storage - storage method and parameters.
+#	default: "file,/tmp,100M"
+#
+# varnishd_jailuser - unprivileged user for the child process.
+#	default: "varnish"
+#
+# varnishd_flags - complete command line arguments.
+#	default if varnishd_config is unset: "-j unix,user=${varnishd_jailuser} -P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -h ${varnishd_hash} ${varnishd_extra_flags}"
+#	default if varnishd_config is set: "-j unix,user=${varnishd_jailuser} -P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -h ${varnishd_hash} ${varnishd_extra_flags}"
+#
+# See varnishd(1) for a detailed overview of command-line options.
+
+name=varnishd
+
+: ${varnishd_pidfile=/var/run/${name}.pid}
+: ${varnishd_listen=:80}
+: ${varnishd_admin=localhost:81}
+: ${varnishd_backend=localhost:8080}
+: ${varnishd_storage=file,/tmp,100M}
+: ${varnishd_hash=critbit}
+: ${varnishd_jailuser=varnish}
+
+command="%%PREFIX%%/sbin/varnishd"
+extra_commands="configtest"
+
+if [ -n "${varnishd_config}" ] ; then
+	: ${varnishd_flags:="-j unix,user=${varnishd_jailuser} -P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -h ${varnishd_hash} ${varnishd_extra_flags}"}
+else
+	: ${varnishd_flags:="-j unix,user=${varnishd_jailuser} -P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -h ${varnishd_hash} ${varnishd_extra_flags}"}
+fi
+
+configtest() {
+	if [ -z "${varnishd_config}" ]; then
+		einfo "${name}: nothing to check, no configuration file defined, builtin VCL used"
+	else
+		einfo "Performing sanity check on ${name} configuration:"
+		if eval ${command} -C -f "${varnishd_config}" 2> /dev/null ; then
+			einfo "${name}: the configuration file ${varnishd_config} syntax is ok"
+		else
+			eerror 1 "${name}: the configuration file ${varnishd_config} syntax is NOT ok"
+		fi
+	fi
+}
+
+restart_pre() {
+	configtest
+}
+
+start_pre() {
+	# Check config before starting
+	configtest
+}
+
+depend() {
+	keyword -shutdown
+}

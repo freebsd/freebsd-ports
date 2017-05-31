@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+# FreeBSD Brasil LTDA <consultoria@freebsdbrasil.com.br>
+
+name="thundercache"
+
+command="%%PREFIX%%/thunder/sbin/thunder"
+required_files="%%PREFIX%%/thunder/etc/thunder.conf"
+command_args="-c $required_files"
+pidfile="/var/run/thunder/thunder.pid"
+
+depend() {
+	keyword -shutdown
+}

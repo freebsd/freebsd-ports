@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+name="fcgi_spawn"
+
+fcgi_spawn_config_path=${fcgi_spawn_config_path:-"/usr/local/etc/${name}"}
+fcgi_spawn_log=${fcgi_spawn_log:-"/var/log/${name}.log"}
+fcgi_spawn_socket_path=${fcgi_spawn_socket_path:-"/tmp/spawner.sock"}
+fcgi_spawn_redefine_exit=${fcgi_spawn_redefine_exit:-"0"}
+fcgi_spawn_username=${fcgi_spawn_username:-"fcgi"}
+fcgi_spawn_groupname=${fcgi_spawn_groupname:-"fcgi"}
+fcgi_spawn_flags=${fcgi_spawn_flags:-""}
+command="%%PREFIX%%/bin/${name}"
+command_user=${fcgi_spawn_username}
+command_args="-l ${fcgi_spawn_log} -p ${pidfile} -c ${fcgi_spawn_config_path} -u ${fcgi_spawn_username} -g ${fcgi_spawn_groupname}  -s ${fcgi_spawn_socket_path}"
+required_dirs=${fcgi_spawn_config_path}
+
+start_pre() {
+	 install -o ${fcgi_spawn_usernmae} -g {fcgi_spawn_groupname} /dev/null ${fcgi_spawn_log}
+}
+
+depend() {
+	need %%MYSQL%%
+	need %%PGSQL%%
+	keyword -shutdown
+}

@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to run caldavd:
+#                                Default is "NO".
+# caldavd_conf (file):             Local config file.
+#                                Default is "/usr/local/etc/caldavd.conf".
+# caldavd_flags (string):          Flags to pass to caldavd.
+#                                Default is empty.
+# caldavd_pidfile (string):        Set path to the pid file.
+#                                Default is /var/run/caldavd/caldavd.pid
+
+name="caldavd"
+
+: ${caldavd_conf="%%PREFIX%%/etc/caldavd/caldavd.plist"}
+: ${caldavd_pidfile="/var/run/caldavd/${name}.pid"}
+
+required_files="${caldavd_conf}"
+
+procname="%%PYTHON_CMD%%"
+PATH=${PATH}:%%PREFIX%%/bin
+
+command="%%PREFIX%%/bin/caldavd"
+command_args=" -f ${caldavd_conf} -R kqueue"

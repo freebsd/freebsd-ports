@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+# Created by: l33tname <sirl33tname@gmail.com>
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gollum_path              Set it to the location where 
+#                                your git repo is located.
+#
+# gollum_user              User to run command as 
+#                                  Default is root
+#
+# gollum_ip                Set the IP address gollum listens on
+#                                  Default is "0.0.0.0"
+#
+# gollum_port              Set the IP address gollum listens on
+#                                  Default is "80"
+
+# setup enviroment
+export PATH=$PATH:%%PREFIX%%/bin
+
+name="gollum"
+
+: ${gollum_path:=%%PREFIX%%/www/gollum}
+: ${gollum_user:=root}
+: ${gollum_ip:=0.0.0.0}
+: ${gollum_port:=80}
+
+pidfile=/var/run/${name}.pid
+command="%%PREFIX%%/bin/gollum"
+command_user=${gollum_user}
+command_args="-r gollum --host ${gollum_ip} --port ${gollum_port} --live-preview ${gollum_path}"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

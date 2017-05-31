@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+name="uchiwa"
+
+: ${uchiwa_user="uchiwa"}
+: ${uchiwa_group="uchiwa"}
+: ${uchiwa_config="/usr/local/etc/uchiwa/config.json"}
+: ${uchiwa_publicdir="/usr/local/share/uchiwa/public/"}
+: ${uchiwa_rundir="/var/run/uchiwa"}
+: ${uchiwa_logfile="/var/log/uchiwa/uchiwa.log"}
+
+pidfile="${uchiwa_rundir}/${name}.pid"
+command="/usr/local/bin/uchiwa"
+command_user=${uchiwa_user}
+command_args="-c ${uchiwa_config} -p ${uchiwa_publicdir} >> ${uchiwa_logfile}"
+unset uchiwa_flags
+
+start_pre() {
+	install -d -o ${uchiwa_user} -g ${uchiwa_group} ${pidfile%/*}
+}
+
+depend() {
+	keyword -shutdown
+}

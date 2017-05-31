@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+
+gwd_flags=${gwd_flags-"-hd /home/geneweb/gw"}
+gwd_pidfile=${gwd_pidfile-"/home/geneweb/gwd.pid"}
+gwd_chdir=${gwd_chdir-"/home/geneweb/bases"}
+gwd_command=${gwd_command-"/usr/local/bin/gwd"}
+gwd_user=${gwd_user-"geneweb"}
+
+name="gwd"
+command="${gwd_command}"
+command_user=${gwd_user}
+command_args="${gwd_flags}"
+pidfile=/var/run/gwd.pid
+supervisor=supervise-daemon
+
+depend() {
+	need localmount
+	after bootmisc
+}

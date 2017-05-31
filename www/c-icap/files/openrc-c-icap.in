@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable c-icap:
+#
+# c_icap_flags="<set as needed>"
+#
+# See '%%PREFIX%%/bin/c-icap --help' for flags
+
+name=c_icap
+
+command="%%PREFIX%%/bin/c-icap"
+
+# read settings, set default values
+: ${c_icap_conf="%%PREFIX%%/etc/c-icap/c-icap.conf"}
+: ${c_icap_pidfile="%%RUN_DIR%%/c-icap.pid"}
+: ${c_icap_user="%%CICAP_USER%%"}
+
+pidfile="${c_icap_pidfile}"
+required_files="${c_icap_conf}"
+command_args="-f ${c_icap_conf}"
+
+stop_post() {
+	rm -f %%RUN_DIR%%/c-icap.ctl
+}
