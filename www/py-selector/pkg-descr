@@ -10,4 +10,4 @@ mini-language. There is a simple "mapping file" format that can be
 used. There are no architecture specific features (to MVC or
 whatever). Neither are there any framework specific features.
 
-WWW: https://github.com/lukearno/selector/
+WWW: https://github.com/lukearno/selector
