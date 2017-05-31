@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_PACKAGE=	should be compiled using python ${PYTHON_VER} or greater
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py3-pytest-runner
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py3-click \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.10.0:misc/py3-tqdm \
 		${PYTHON_PKGNAMEPREFIX}coloredlogs>0:devel/py3-coloredlogs \
