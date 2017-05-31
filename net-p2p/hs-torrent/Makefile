@@ -5,7 +5,7 @@ PORTVERSION=	10000.0.0
 CATEGORIES=	net-p2p haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	BitTorrent file parser and generater
+COMMENT=	BitTorrent file parser and generator
 
 LICENSE=	BSD3CLAUSE
 
