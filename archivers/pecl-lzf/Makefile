@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lzf
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES=	archivers pear
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
@@ -10,6 +10,7 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Handles LZF de/compression
 
 LICENSE=	PHP301
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:pecl
 
