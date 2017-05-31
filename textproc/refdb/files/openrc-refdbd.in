@@ -1,0 +1,61 @@
+#!/sbin/openrc-run
+
+# O. Hartmann, Berlin, 2014
+#
+# and optionally set the the following variables upon your environment:
+#
+# Choose another PIDFILE as the configured and/or default one:
+# refdbd_pidfile="/var/run/refdbd.pid"
+#
+# To make the refdbd daemon accessible local only (127.0.0.1):
+# refdbd_local="YES"
+
+name="refdbd"
+
+command="%%PREFIX%%/bin/${name}"
+globalconfig="%%PREFIX%%/etc/refdb/refdbdrc"
+pidfile="/var/run/${name}.pid"
+
+: ${refdbd_local:="NO"}
+
+if yesno refdbd_local; then
+  refdbd_local_flags="-I"
+else
+  refdbd_local_flags=""
+fi
+
+start_pre()
+{
+	local	refdbvar refdbval
+
+	# Check whether we have configured a PID file
+	if [ "x${refdbd_pidfile}" != "x" ]; then
+		pidfile="${refdbd_pidfile}"
+
+	# ... if not configured via rc.conf[.local],
+	# read the settings in the configure file. We're only interested in
+	# nonstandard PID file settings
+	else
+		for config in ${globalconfig}; do
+			while read refdbvar refdbval; do
+				if [ -n "${refdbvar}" ]; then
+					if [ ${refdbvar}="pidfile" ]; then
+						pidfile=${refdbval}
+					fi
+				fi
+			done < $config
+		done
+	fi
+
+	piddir=`dirname ${pidfile}`
+	mkdir -p ${piddir}
+
+	refdbd_pid_flags="-P ${pidfile}"
+}
+
+# Set command arguments upon configuration
+command_args="${refdbd_local_flags} ${refdbd_pid_flags}"
+
+depend() {
+	keyword -shutdown
+}
