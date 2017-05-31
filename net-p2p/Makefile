@@ -80,6 +80,7 @@
     SUBDIR += shx
     SUBDIR += sonarr
     SUBDIR += squall
+    SUBDIR += torrent-file-editor
     SUBDIR += torrentcheck
     SUBDIR += torrentsniff
     SUBDIR += transmission
