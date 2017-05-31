@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2pp
-PORTVERSION=	0.13.0
-PORTREVISION=	1
+PORTVERSION=	0.14.0
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -35,8 +34,8 @@ DOXYGEN_IMPLIES=	DOCS
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
 .endif
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
 post-install-DOXYGEN-on:
