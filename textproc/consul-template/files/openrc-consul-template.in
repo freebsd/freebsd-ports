@@ -1,0 +1,38 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# consul_template_user (user):          Set user to run consul-template.
+#                                          Default is "root".
+# consul_template_group (group):        Set group to run consul-template.
+#                                          Default is "wheel".
+# consul_template_env (string):         Set environment variables used with consul-template.
+#                                          Default is "".
+# consul_template_args (string):        Set flags used with consul-template.
+#                                          Default is "".
+
+name=consul_template
+
+: ${consul_template_user:="root"}
+: ${consul_template_group:="wheel"}
+: ${consul_template_env:=""}
+: ${consul_template_args:=""}
+: ${consul_template_config:="%%PREFIX%%/etc/consul-template.d"}
+
+pidfile=/var/run/consul-template.pid
+command="%%PREFIX%%/bin/consul-template"
+command_args="-config=${consul_template_config} ${consul_template_args}"
+required_files=${consul_template_config}
+supervisor=supervise-daemon
+
+start_pre() {
+    if [ ! -e ${pidfile} ]; then
+        install -o ${consul_template_user} -g ${consul_template_group} /dev/null ${pidfile}
+    fi
+    #/usr/bin/env ${consul_template_env} 
+}
+
+depend() {
+	keyword -shutdown
+}
