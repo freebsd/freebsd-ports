@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl5 module for parsing HTML documents
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-HTML-Tagset>=3:www/p5-HTML-Tagset
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
