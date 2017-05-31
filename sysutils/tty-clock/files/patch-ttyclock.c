@@ -1,6 +1,6 @@
---- ttyclock.c.orig	2009-06-17 19:07:38.000000000 +0100
-+++ ttyclock.c	2012-09-16 18:16:24.000000000 +0100
-@@ -174,19 +174,19 @@
+--- ttyclock.c.orig	2009-06-17 18:07:38 UTC
++++ ttyclock.c
+@@ -174,19 +174,19 @@ update_hour(void)
  }
  
  void
@@ -27,7 +27,7 @@
       }
       wrefresh(ttyclock->framewin);
  
-@@ -209,11 +209,6 @@
+@@ -209,11 +209,6 @@ draw_clock(void)
       draw_number(ttyclock->date.minute[0], 1, 20);
       draw_number(ttyclock->date.minute[1], 1, 27);
  
@@ -39,7 +39,7 @@
       /* Draw second if the option is enable */
       if(ttyclock->option.second)
       {
-@@ -227,6 +222,11 @@
+@@ -227,6 +222,11 @@ draw_clock(void)
            draw_number(ttyclock->date.second[1], 1, 46);
       }
  
@@ -50,3 +50,4 @@
 +
       return;
  }
+ 

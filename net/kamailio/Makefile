@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kamailio
-PORTVERSION=	4.4.3
+PORTVERSION=	5.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 BROKEN_powerpc64=	Does not build: /bin/sh: clang: not found
 
-USES=		gmake ncurses readline shebangfix
+USES=		gmake ncurses python readline shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	utils/kamctl/dbtextdb/dbtextdb.py \
 		utils/kamctl/kamctl utils/kamctl/kamdbctl
@@ -33,9 +33,9 @@ USE_RC_SUBR=	kamailio
 USERS=		kamailio
 GROUPS=		kamailio
 
-OPTIONS_DEFINE=	DOCS MYSQL PGSQL PERL RADIUS JITSI JABBER SCTP TLS \
+OPTIONS_DEFINE=	DOCS MYSQL PGSQL PERL RADIUS JITSI SCTP TLS \
 		UNIXODBC PRESENCE WEBSOCKET DIALPLAN
-OPTIONS_DEFAULT=MYSQL RADIUS JABBER TLS PRESENCE
+OPTIONS_DEFAULT=MYSQL RADIUS TLS PRESENCE
 OPTIONS_SUB=	YES
 
 DIALPLAN_DESC=	Dialplan support
@@ -91,10 +91,6 @@ EXTRA_MODULES+=	dialplan
 
 .if ${PORT_OPTIONS:MRADIUS}
 EXTRA_GROUPS+=	radius
-.endif
-
-.if ${PORT_OPTIONS:MJABBER}
-EXTRA_MODULES+=	jabber
 .endif
 
 .if ${PORT_OPTIONS:MSCTP}
@@ -173,7 +169,8 @@ do-install:
 	pua_dialoginfo pua_mi pua_reginfo pua_usrloc rls \
 	acc_radius misc_radius peering pua pua_xmpp xcap_client xcap_server \
 	tcpops auth_xkeys statsd dmq_usrloc rtjson websocket sctp \
-	app_perl cfgt smsops log_custom topos statsc dialplan
+	app_perl cfgt smsops log_custom topos statsc dialplan \
+	ss7ops app_jsdt jsonrpcs pua_rpc
 	@if [ -e ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so ]; then \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/${i}.so; \
 	fi
