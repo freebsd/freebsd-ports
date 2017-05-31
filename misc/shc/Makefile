@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shc
-PORTVERSION=	3.9.4
+PORTVERSION=	3.9.5
 CATEGORIES=	misc
 
 MAINTAINER=	ehaupt@FreeBSD.org
