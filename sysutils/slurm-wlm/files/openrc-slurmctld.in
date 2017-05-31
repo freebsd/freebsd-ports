@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+# require munge?
+
+name="slurmctld"
+command=%%PREFIX%%/sbin/slurmctld
+command_args=$slurmctld_flags
+
+pidfile=/var/run/$name.pid
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+# $FreeBSD$
+#
+# Add the following line to /etc/rc.conf[.local] to enable cf-execd(8)
+#                               Set it to "YES" to enable cf-execd.
+# cf_execd_flags (str):          Custom additional arguments to be passed
+#                               to cf-execd (default empty).
+
+name="cf_execd"
+command="%%PREFIX%%/sbin/cf-execd"
+
+depend() {
+	keyword -shutdown
+}

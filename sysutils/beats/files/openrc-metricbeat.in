@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+# metricbeat_flags (str):	Extra flags passed to metricbeat
+# metricbeat_conf (str):	metricbeat configuration metric
+#				Default: ${PREFIX}/etc/metricbeat.yml
+
+name="metricbeat"
+
+: ${metricbeat_config:="-path.home /var/db/beats/${name} -path.config %%PREFIX%%/etc"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}"
+command_args="${metricbeat_config}"
+
+stop_pre() {
+	if [ -f /compat/linux/proc/cpuinfo ]; then
+		pkill -9 -F ${pidfile} > /dev/null 2>&1
+		pkill -9 -F ${pidfile}.child > /dev/null 2>&1
+	fi
+}
+
+depend() {
+	keyword -shutdown
+}

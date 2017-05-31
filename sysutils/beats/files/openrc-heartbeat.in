@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# heartbeat_flags (str):		Extra flags passed to heartbeat
+# heartbeat_conf (str):		heartbeat configuration file
+#				Default: ${PREFIX}/etc/heartbeat.yml
+
+name="heartbeat"
+
+: ${heartbeat_config:="-path.home /var/db/beats/${name} -path.config %%PREFIX%%/etc"}
+
+command=%%PREFIX%%/sbin/${name} 
+pidfile="/var/run/${name}"
+command_args="${heartbeat_config}"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+name=%%RCNAME%%
+pidfile="/var/run/sd-agent/sd-agent.pid"
+logfile="/var/log/sd-agent/sd-agent.log"
+command_user=sd-agent
+%%RCNAME%%_group=sd-agent
+command='%%PREFIX%%/libexec/sd-agent/agent.py'
+
+start_pre() {
+	install -d -o ${command_user} -g ${%%RCNAME%%_group} \
+	    $(dirname $pidfile)
+	install -d -o ${command_user} -g ${%%RCNAME%%_group} \
+	    $(dirname $logfile)
+}
+
+start() {
+	su -m ${command_user} -c "$command start init"
+}
+
+stop() {
+	$command stop init
+}
+
+depend() {
+	keyword -shutdown
+}

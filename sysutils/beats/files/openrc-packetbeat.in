@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# packetbeat_flags (str):	Extra flags passed to packetbeat
+# packetbeat_conf (str):	packetbeat configuration file
+#				Default: ${PREFIX}/etc/packetbeat.yml
+
+name="packetbeat"
+
+: ${packetbeat_config:="-path.home /var/db/beats/${name} -path.config %%PREFIX%%/etc"}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile="/var/run/${name}"
+command_args="${packetbeat_config}"
+
+depend() {
+	keyword -shutdown
+}

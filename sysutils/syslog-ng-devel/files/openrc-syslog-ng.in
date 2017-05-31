@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+#syslog_ng_config="-u daemon"
+#syslog_ng_pid="/var/run/syslog-ng.pid"
+
+syslog_ng_purgeklog=${syslog_ng_purgeklog-"NO"}
+
+name=syslog_ng
+
+command=%%PREFIX%%/sbin/syslog-ng
+required_files=%%PREFIX%%/etc/syslog-ng.conf
+
+start_pre() {
+	if yesno syslog_ng_purgeklog; then
+		"einfo \"Purging klog(9)\" && sysctl -w kern.msgbuf_clear=1"
+	fi
+}
+
+pidfile=${syslog_ng_pid:-"/var/run/syslog.pid"}
+command_args="${syslog_ng_config}"
+
+depend() {
+	need localmount
+}

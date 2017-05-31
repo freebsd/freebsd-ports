@@ -26,6 +26,12 @@ start_post() {
 	touch "${gpx}"
 }
 
+start_post() {
+	cd ${gpxlogger_logdir}
+	gpx=$(date +"${gpxlogger_format}")
+	touch "${gpx}"
+}
+
 depend(){
 	use localmount
 	keyword -shutdown

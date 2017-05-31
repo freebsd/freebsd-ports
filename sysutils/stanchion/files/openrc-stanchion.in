@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="stanchion"
+
+pidfile=/var/run/stanchion/stanchion.pid
+command="%%PREFIX%%/sbin/stanchion"
+command_args="start"
+
+depend() {
+	keyword -shutdown
+}

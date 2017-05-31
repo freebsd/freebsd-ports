@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf[.local] to enable cf-execd(8)
+#
+# cf_execd_flags (str):          Custom additional arguments to be passed
+#                               to cf-execd (default empty).
+
+name="cf_execd"
+command="%%PREFIX%%/sbin/cf-execd"
+
+depend() {
+	keyword -shutdown
+}

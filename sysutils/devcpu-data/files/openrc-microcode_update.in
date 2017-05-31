@@ -1,0 +1,45 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable flow-capture:
+#					Default is "%%DATADIR%%"
+# microcode_update_cpus (str):		A list of cpus to update on startup, or "ALL" for all.
+#					Example: microcode_update_cpus_cpus="0 CPU0"
+#					Set to "ALL" by default. 
+
+name="microcode_update"
+requires_modules="cpuctl"
+
+# Set default values
+: ${microcode_update_datadir="%%DATADIR%%"}
+: ${microcode_cpus="ALL"}
+
+command="/usr/sbin/cpucontrol"
+command_args="-u -d ${microcode_update_datadir}" 
+
+start_pre() {
+	if ! kldstat -q -m cpuctl; then
+		if ! kldload cpuctl > /dev/null 2>&1; then
+			ewarn "Can't load cpuctl module."
+			return 1
+		fi
+	fi
+}
+
+start() {
+	einfo "Updating cpucodes..."
+	if [ "${microcode_cpus}" = "ALL" ]; then
+		ncpu=`/sbin/sysctl -n hw.ncpu`
+		cpus=`jot ${ncpu} 0`;
+	else
+		cpus=${microcode_cpus}
+	fi
+	for i in ${cpus}; do
+		 $command $command_args /dev/cpuctl${i} || (eerror "Failed." && exit 1)
+	done
+	einfo "Done."
+}
+
+depend() {
+	need localmount
+	keyword -jail
+}

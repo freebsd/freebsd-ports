@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+name=kibana
+
+: ${kibana_config:="%%PREFIX%%/etc/kibana.yml"}
+: ${kibana_user:="www"}
+: ${kibana_group:="www"}
+: ${kibana_log:="/var/log/kibana.log"}
+
+required_files="${kibana_config}"
+pidfile="/var/run/${name}/${name}.pid"
+command="%%LOCALBASE%%/bin/node"
+command_user=${kibana_user}
+command_args="%%WWWDIR%%/src/cli serve --config ${kibana_config} --log-file ${kibana_log}"
+supervisor=supervise-daemon
+
+start_pre() {
+	env BABEL_DISABLE_CACHE=1 > /dev/null 
+	if [ ! -d $(dirname ${pidfile}) ]; then
+		mkdir $(dirname ${pidfile})
+		chown ${kibana_user}:${kibana_group} $(dirname ${pidfile})
+	fi
+
+	if [ ! -f ${kibana_log} ]; then
+		install -o ${kibana_user} -g ${kibana_group} -m 640 /dev/null ${kibana_log}
+	fi
+}
+
+depend() {
+	keyword -shutdown
+}

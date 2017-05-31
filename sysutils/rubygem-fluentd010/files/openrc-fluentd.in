@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# fluentd_config (path):	Set to %%PREFIX%%/etc/fluentd/fluent.conf
+# 		  		by default.
+# fluentd_flags (str):          Set to "" by default.
+
+name=fluentd
+
+: ${fluentd_config="%%PREFIX%%/etc/fluentd/fluent.conf"}
+: ${fluentd_dir="%%PREFIX%%/etc/fluentd"}
+: ${fluentd_user="%%USER%%"}
+: ${fluentd_group="%%GROUP%%"}
+: ${fluentd_flags:=""}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}/${name}.pid
+
+command_args="-d $pidfile -c $fluentd_config"
+
+start_pre() {
+    install -d -o ${fluentd_user} -g ${fluentd_group} -m 775 ${fluentd_dir}
+    install -d -o ${fluentd_user} -g ${fluentd_group} -m 775 /var/run/fluentd
+}
+
+depend() {
+	keyword -shutdown
+}

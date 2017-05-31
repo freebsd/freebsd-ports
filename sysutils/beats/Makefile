@@ -61,6 +61,10 @@ do-install:
 			${STAGEDIR}${PREFIX}/etc/$${GO_TARGET}.template.json.sample ;\
 		${INSTALL_DATA} ${WRKSRC}/$${GO_TARGET}/$${GO_TARGET}.template-es2x.json \
 			${STAGEDIR}${PREFIX}/etc/$${GO_TARGET}.template-es2x.json.sample ;\
+	#	${INSTALL_DATA} ${WRKSRC}/$${GO_TARGET}/$${GO_TARGET}.template-es6x.json \
+	#		${STAGEDIR}${PREFIX}/etc/$${GO_TARGET}.template-es6x.json.sample ;\
+	# template-ex6x.json not found, services freakout
+	
 	done
 
 .include <bsd.port.mk>

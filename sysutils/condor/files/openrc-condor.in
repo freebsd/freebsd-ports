@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name="condor"
+
+pidfile=/var/run/${name}.pid
+command="%%PREFIX%%/sbin/condor_master"
+command_args=${condor_flags}
+
+stop_pre() {
+	/usr/local/sbin/condor_off -daemon master
+}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,33 @@
+#!/sbin/openrc-run
+
+# Usage:
+#	uhidd start ugenX.Y	# start uhidd on device 'ugenX.Y'
+#	uhidd stop ugenX.Y	# stop uhidd on device 'ugenX.Y'
+#	uhidd start		# start uhidd on all ugen device.
+#	uhidd stop		# stop all uhidd instances.
+
+name=uhidd
+
+command=%%PREFIX%%/sbin/uhidd
+required_modules=vkbd
+pidprefix=/var/run/uhidd
+pidfile=${2+$pidprefix.`basename $2`.pid}
+
+start() {
+	local dev pf
+
+	if [ -n "$1" ]; then
+		${command} ${uhidd_flags} $1
+	else
+		for dev in /dev/ugen*; do
+			pf="${pidprefix}.`basename ${dev}`.pid"
+			if [ ! -f ${pf} ]; then
+				${command} ${uhidd_flags} ${dev}
+			fi
+		done
+	fi
+}
+
+depend() {
+	keyword -shutdown -jail
+}

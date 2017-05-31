@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=dsbmd
+
+command=%%PREFIX%%/libexec/${name}
+pidfile=/var/run/${name}.pid
+
+depend() {
+	use localmount
+	keyword -shutdown
+}

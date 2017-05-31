@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf[.local] to enable cf-serverd(8)
+#                               Set it to "YES" to enable cf-serverd.
+# cf_serverd_flags (str):          Custom additional arguments to be passed
+#                               to cf-serverd (default empty).
+
+name="cf_serverd"
+
+command="%%PREFIX%%/sbin/cf-serverd"
+
+depend() {
+	keyword -shutdown
+}

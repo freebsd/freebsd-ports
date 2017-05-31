@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# consul_alerts_env (string):   Set environment variables used with consul-alerts
+#                               Default is "".
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+name=consul_alerts
+
+: ${consul_alerts_env:=""}
+
+pidfile=/var/run/consul-alerts.pid
+command="%%PREFIX%%/bin/consul-alerts"
+command_args="start"
+supervisor=supervise-daemon
+
+start_pre() {
+	/usr/bin/env ${consul_alerts_env} > /dev/null
+}
+
+depend() {
+	keyword -shutdown
+}

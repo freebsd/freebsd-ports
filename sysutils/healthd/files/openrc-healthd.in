@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+# $Id: healthd.sh,v 1.1.2.7 2004/06/23 14:11:57 housley Exp $
+
+# For IPv4 only operation add the following line to /etc/rc.conf:
+#
+#healthd_flags="-6"
+#
+# Other options are listed in healthd(8)
+#
+
+name=healthd
+
+command=%%PREFIX%%/sbin/healthd
+required_files=%%PREFIX%%/etc/${name}.conf
+
+depend() {
+	keyword -shutdown
+}

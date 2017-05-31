@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# filebeat_flags (str):		Extra flags passed to filebeat
+# filebeat_conf (str):		filebeat configuration file
+#				Default: ${PREFIX}/etc/filebeat.yml
+
+name="filebeat"
+
+: ${filebeat_config:="-path.home /var/db/beats/${name} -path.config %%PREFIX%%/etc"}
+
+pidfile="/var/run/${name}"
+command=%%PREFIX%%/sbin/${name} 
+command_args="${filebeat_config}"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

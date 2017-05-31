@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf[.local] to enable ipad_charge:
+#
+# ipad_charge_action="ON" (default)
+# ipad_charge_action="OFF"
+
+ipad_charge_action=${ipad_charge_action-"ON"}
+
+name="ipad_charge"
+command="/usr/sbin/usbconfig"
+command_args_on="-d $2 do_request 0x40 0x40 0x6400 0x6400 0"
+command_args_off="-d $2 do_request 0x40 0x40 0x6400 0x0000 0"
+pidfile=""
+
+start_pre() {
+	case ${ipad_charge_action} in
+	[Oo][Nn])
+		command_args="${command_args_on}"
+		;;
+	*)
+		command_args="${command_args_off}"
+		;;
+	esac
+}

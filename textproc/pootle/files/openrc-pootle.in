@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to run pootle:
+#				Default is "NO".
+# pootle_flags (flags):		Set extra flags here. More options in pootle(1)
+#				Default is empty "".
+# pootle_logdir (path):		Path to pootle log directory.
+#				Default is /var/log/pootle
+#				Empty is log to /dev/null.
+# pootle_user (user):		Set user to run pootle.
+#				Default is "%%POOTLEUSER%%".
+
+name=pootle
+
+: ${pootle_user="%%POOTLEUSER%%"}
+: ${pootle_group="%%POOTLEGROUP%%"}
+: ${pootle_logdir=/var/log/pootle}
+
+pidfile="%%POOTLERUNDIR%%/pootle.pid"
+required_files="%%PREFIX%%/etc/pootle/localsettings.py"
+command="%%PREFIX%%/bin/PootleServer"
+command_user=${pootle_user}
+command_args=${pootle_flags}
+supervisor=supervise-daemon
+
+start_pre() {
+	for i in db log run ; do
+		install -d -o ${pootle_user} -g ${pootle_group} -m 770 /var/${i}/pootle
+	done
+}
+
+depend() {
+	keyword -shutdown
+}
