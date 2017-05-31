@@ -129,6 +129,7 @@ libexec/git-core/git-quiltimport
 libexec/git-core/git-read-tree
 libexec/git-core/git-rebase
 libexec/git-core/git-rebase--am
+libexec/git-core/git-rebase--helper
 libexec/git-core/git-rebase--interactive
 libexec/git-core/git-rebase--merge
 libexec/git-core/git-receive-pack
@@ -627,8 +628,12 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.10.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.11.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.11.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.11.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.12.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.12.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.12.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.12.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.13.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -648,6 +653,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.4.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.4.10.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.4.11.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.4.12.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.4.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.4.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.4.4.txt
@@ -662,6 +668,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.5.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.5.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.5.5.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.5.6.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.2.txt
@@ -669,16 +676,19 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.6.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.6.7.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.7.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.7.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.7.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.7.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.7.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.7.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.8.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.8.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.8.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.8.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.8.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.8.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.9.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.9.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.9.2.txt
@@ -1130,6 +1140,8 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-merge.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-object-access.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-object-access.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-oid-array.html
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-oid-array.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-parse-options.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-parse-options.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-quote.html
@@ -1144,8 +1156,6 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-run-command.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-setup.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-setup.txt
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-sha1-array.html
-%%HTMLDOCS%%%%DOCSDIR%%/technical/api-sha1-array.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-sigchain.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-sigchain.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-string-list.html
