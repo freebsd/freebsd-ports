@@ -1038,6 +1038,7 @@
     SUBDIR += py-python-novaclient
     SUBDIR += py-python-ntlm
     SUBDIR += py-python-openstackclient
+    SUBDIR += py-python-swiftclient
     SUBDIR += py-python-twitter
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
