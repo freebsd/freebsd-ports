@@ -4965,6 +4965,7 @@
     SUBDIR += py3-prompt_toolkit
     SUBDIR += py3-py
     SUBDIR += py3-pycodestyle
+    SUBDIR += py3-pycparser
     SUBDIR += py3-pydocstyle
     SUBDIR += py3-pyflakes
     SUBDIR += py3-pygit2

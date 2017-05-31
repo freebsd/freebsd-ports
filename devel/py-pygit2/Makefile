@@ -13,7 +13,7 @@ COMMENT=	Python bindings for libgit2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi
+BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
