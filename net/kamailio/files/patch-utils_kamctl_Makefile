@@ -1,6 +1,6 @@
---- utils/kamctl/Makefile.orig	2015-07-20 13:16:26 UTC
+--- utils/kamctl/Makefile.orig	2017-04-21 12:46:06 UTC
 +++ utils/kamctl/Makefile
-@@ -9,6 +9,8 @@ else
+@@ -8,6 +8,8 @@ else
  kamctltmpdir = $(basedir)
  endif
  
@@ -9,7 +9,7 @@
  all:
  		@echo "No compilation needed for kamctl"
  
-@@ -21,7 +23,8 @@ install-cfg: $(cfg_prefix)/$(cfg_dir)
+@@ -20,7 +22,8 @@ install-cfg: $(cfg_prefix)/$(cfg_dir)
  		$(INSTALL_TOUCH)   $(cfg_prefix)/$(cfg_dir)/kamctlrc.sample
  		$(INSTALL_CFG) kamctlrc \
  			$(cfg_prefix)/$(cfg_dir)/kamctlrc.sample

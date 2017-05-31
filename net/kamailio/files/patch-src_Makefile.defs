@@ -1,6 +1,6 @@
---- Makefile.defs.orig	2015-07-20 13:16:26 UTC
-+++ Makefile.defs
-@@ -197,7 +197,7 @@ YACC := $(shell echo "$${YACC}")
+--- src/Makefile.defs.orig	2017-04-21 13:52:06 UTC
++++ src/Makefile.defs
+@@ -208,7 +208,7 @@ YACC := $(shell echo "$${YACC}")
  
  # find compiler name & version
  ifeq ($(CC),)
@@ -9,7 +9,7 @@
  endif
  LD= $(CC)
  CC_LONGVER:=$(shell if  $(CC) -v 2>/dev/null; then \
-@@ -211,7 +211,7 @@ MKTAGS=ctags
+@@ -222,7 +222,7 @@ MKTAGS=ctags
  #find-out the compiler's name
  
  ifneq (,$(findstring gcc, $(CC_LONGVER)))
@@ -18,7 +18,7 @@
  	RPAREN=)
  	CC_VER:=$(word 1,$(CC)) $(shell $(CC) - --version|head -n 1|\
  				sed  -e 's/([^$(RPAREN)]*)//g' \
-@@ -366,7 +366,7 @@ LIBDIR ?=
+@@ -386,7 +386,7 @@ LIBDIR ?=
  ifeq ($(LIBDIR),)
  ARCHBSZ= $(shell echo $(ARCH) | sed -e 's/.*64.*/64b/')
  ifeq ($(ARCHBSZ),64b)
@@ -27,9 +27,18 @@
  else
  	LIBDIR = lib
  endif
-@@ -1693,7 +1693,7 @@ ifeq ($(YACC),)
+@@ -460,7 +460,7 @@ doxygen_dir=doc/doxygen
+ 
+ BASEDIR ?= $(DESTDIR)
+ basedir = $(BASEDIR)
+-RUNBASEDIR ?= $(DESTDIR)
++RUNBASEDIR ?= /
+ runbasedir = $(RUNBASEDIR)
+ 
+ # install location
+@@ -1722,7 +1722,7 @@ ifeq ($(YACC),)
  endif
- YACC_FLAGS=-d -b cfg
+ YACC_FLAGS=-d -b core/cfg
  # on solaris add -lxnet (e.g. LIBS= -lxnet)
 -LIBS= -ldl -lresolv
 +LIBS=
