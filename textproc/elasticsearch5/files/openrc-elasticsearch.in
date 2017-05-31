@@ -1,0 +1,84 @@
+#!/sbin/openrc-run
+
+# elasticsearch_user (username): Set to elasticsearch by default.
+#               Set it to required username.
+# elasticsearch_group (group):   Set to elasticsearch by default.
+#               Set it to required group.
+# elasticsearch_config (path):   Set to /usr/local/etc/elasticsearch/elasticsearch.yml by default.
+#               Set it to the config file location.
+# elasticsearch_tmp (path):  Set to /var/tmp/elasticsearch by default.
+#		Set it to the path to be used for temp files.
+#
+
+name=elasticsearch
+
+: ${elasticsearch_user:=%%SEARCHUSER%%}
+: ${elasticsearch_group:=%%SEARCHGROUP%%}
+: ${elasticsearch_config:="%%PREFIX%%/etc/elasticsearch"}
+: ${elasticsearch_tmp:="/var/tmp/elasticsearch"}
+
+required_files="${elasticsearch_config}/elasticsearch.yml"
+_pidprefix="/var/run/elasticsearch"
+pidfile="${_pidprefix}.pid"
+
+command="%%PREFIX%%/lib/elasticsearch/bin/elasticsearch"
+command_args="--pidfile=${pidfile}"
+supervisor=supervise-daemon
+
+start_pre() {
+    touch ${pidfile}
+    chown ${elasticsearch_user}:${elasticsearch_group} ${pidfile}
+    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 ${elasticsearch_tmp}
+    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 /var/db/elasticsearch
+    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 /var/log/elasticsearch
+}
+
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${elasticsearch_profiles}" != "x" ]; then
+        pidfile="${_pidprefix}.${profile}.pid"
+	command_args="--pidfile=${pidfile}"
+        eval elasticsearch_config="\${elasticsearch_${profile}_config:-}"
+        if [ "x${elasticsearch_config}" = "x" ]; then
+            einfo "You must define a configuration  (elasticsearch_${profile}_config)"
+            exit 1
+        fi
+        required_files="${elasticsearch_config}/elasticsearch.yml"
+        required_files="${elasticsearch_config}/jvm.options"
+        eval elasticsearch_enable="\${elasticsearch_${profile}_enable:-${elasticsearch_enable}}"
+        eval elasticsearch_tmp="\${elasticsearch_${profile}_args:-${elasticsearch_tmp}}"
+    else
+        einfo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${elasticsearch_profiles}" != "x" -a "x$1" != "x" ]; then
+        for profile in ${elasticsearch_profiles}; do
+            einfo "===> elasticsearch profile: ${profile}"
+            /usr/local/etc/init.d/elasticsearch $1 ${profile}
+            retcode="$?"
+            if [ "0${retcode}" -ne 0 ]; then
+                failed="${profile} (${retcode}) ${failed:-}"
+            else
+                success="${profile} ${success:-}"
+            fi
+        done
+        exit 0
+    fi
+fi
+
+if [ "x${elasticsearch_mem_min}" != "x" ]; then
+    einfo "The elasticsearch_mem_min variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    exit 1;
+fi
+if [ "x${elasticsearch_mem_max}" != "x" ]; then
+    einfo "The elasticsearch_mem_max variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    exit 1;
+fi
+if [ "x${elasticsearch_props}" != "x" ]; then
+    einfo "The elasticsearch_props variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    exit 1;
+fi
+
+depend() {
+	keyword -shutdown
+}
