@@ -24,7 +24,7 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${PREFIX}/share/${PORTNAME}/
 # we unpack Unihan.zip but gucharmap wants the Unihan.zip to be present
-	${INSTALL_DATA} ${DISTDIR}${DIST_SUBDIR}/Unihan.zip \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Unihan.zip \
 		${STAGEDIR}${PREFIX}/share/${PORTNAME}/
 
 .include <bsd.port.mk>
