@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -32,7 +33,15 @@ MAKE_ENV+=	V=1
 USE_RC_SUBR=	git_daemon
 SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
+		git-p4.py \
+		contrib/hg-to-git/hg-to-git.py \
 		contrib/hooks/update-paranoid \
+		contrib/hooks/multimail/post-receive.example \
+		contrib/hooks/multimail/git_multimail.py \
+		contrib/hooks/multimail/migrate-mailhook-config \
+		contrib/fast-import/import-zips.py \
+		contrib/remote-helpers/git-remote-bzr \
+		contrib/remote-helpers/git-remote-hg \
 		contrib/credential/netrc/git-credential-netrc \
 		contrib/diff-highlight/diff-highlight \
 		contrib/buildsystems/generate contrib/contacts/git-contacts \
