@@ -1,0 +1,5 @@
+bashdb is a Bash debugger similar to gdb.
+
+If you have pygments installed it can colorize source code listing.
+
+WWW:	http://bashdb.sourceforge.net
