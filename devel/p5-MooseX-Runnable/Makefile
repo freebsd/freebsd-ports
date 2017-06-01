@@ -12,6 +12,7 @@ COMMENT=	Tag a class as a runnable application
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-List-SomeUtils>=0:devel/p5-List-SomeUtils \
@@ -30,10 +31,4 @@ NO_ARCH=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001014:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
