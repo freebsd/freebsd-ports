@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR+=	zerotier
+USE_OPENRC_SUBR+=	openrc-zerotier
