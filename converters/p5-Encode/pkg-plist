@@ -1,4 +1,3 @@
-%%OLD_PERL%%bin/encguess
 %%SITE_ARCH%%/Encode.pm
 %%SITE_ARCH%%/Encode/Alias.pm
 %%SITE_ARCH%%/Encode/Byte.pm
@@ -42,7 +41,6 @@
 %%SITE_ARCH%%/auto/Encode/TW/TW.so
 %%SITE_ARCH%%/auto/Encode/Unicode/Unicode.so
 %%SITE_ARCH%%/encoding.pm
-%%OLD_PERL%%%%PERL5_MAN1%%/encguess.1.gz
 %%PERL5_MAN3%%/Encode.3.gz
 %%PERL5_MAN3%%/Encode::Alias.3.gz
 %%PERL5_MAN3%%/Encode::CJKConstants.3.gz
