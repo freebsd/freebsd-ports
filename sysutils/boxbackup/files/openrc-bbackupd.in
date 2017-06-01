@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name="bbackupd"
+
+: ${bbackupd_flags:="%%PREFIX%%/etc/boxbackup/bbackupd.conf"}
+
+pidfile=${bbackupd_pidfile:-"/var/run/bbackupd.pid"}
+
+command="%%PREFIX%%/sbin/bbackupd"
+
+depend() {
+	keyword -shutdown
+}

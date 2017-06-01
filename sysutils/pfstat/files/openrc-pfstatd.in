@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name="pfstatd"
+command="%%PREFIX%%/bin/${name}"
+
+depend() {
+	keyword -shutdown
+}

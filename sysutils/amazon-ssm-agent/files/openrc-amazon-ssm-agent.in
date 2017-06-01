@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="amazon_ssm_agent"
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/amazon-ssm-agent"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

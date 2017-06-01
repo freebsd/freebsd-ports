@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable bcfg2-server:
+# bcfg2_flags (str):    Flags passed to bcfg2 on startup.
+#                       Default is "".
+
+name="bcfg2"
+
+: ${bcfg2_pidfile="/var/run/$name.pid"}
+: ${bcfg2_flags="-D ${bcfg2_pidfile}"}
+
+pidfile=${bcfg2_pidfile}
+command=%%PREFIX%%/bin/${name}-server
+
+depend() {
+	keyword -shutdown
+}
