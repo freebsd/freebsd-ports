@@ -11,19 +11,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl pragma to declare lexical compile-time constants
 
-BUILD_DEPENDS=	p5-Sub-Delete>=0:devel/p5-Sub-Delete \
-		p5-Lexical-Var>=0:devel/p5-Lexical-Var
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Lexical-Var>=0:devel/p5-Lexical-Var \
+		p5-Sub-Delete>=0:devel/p5-Sub-Delete
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-PLIST_SUB+= USEXS= NOXS="@comment "
-.else
-PLIST_SUB+= USEXS="@comment " NOXS=
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
