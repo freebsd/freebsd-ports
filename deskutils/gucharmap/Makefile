@@ -18,8 +18,9 @@ BUILD_DEPENDS=	itstool:textproc/itstool \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gmake gnome libtool localbase pathfix pkgconfig tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
+USES=		desktop-file-utils gmake gnome libtool localbase \
+		pathfix pkgconfig tar:xz
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-unicode-data=${LOCALBASE}/share/unicode-ucd/
 USE_LDCONFIG=	yes
