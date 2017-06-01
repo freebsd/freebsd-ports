@@ -32,11 +32,6 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 502200
-BUILD_DEPENDS+=	p5-Pod-Parser>=1.63:textproc/p5-Pod-Parser
-RUN_DEPENDS+=	p5-Pod-Parser>=1.63:textproc/p5-Pod-Parser
-.endif
-
 .if ${PERL_LEVEL} < 502400
 BUILD_DEPENDS+=	p5-Pod-Usage>=1.68:devel/p5-Pod-Usage
 RUN_DEPENDS+=	p5-Pod-Usage>=1.68:devel/p5-Pod-Usage
