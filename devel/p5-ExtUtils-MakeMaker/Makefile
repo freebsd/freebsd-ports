@@ -18,17 +18,9 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.70:devel/p5-ExtUtils-Manifest
-RUN_DEPENDS+=	p5-ExtUtils-Manifest>=1.70:devel/p5-ExtUtils-Manifest
-TEST_DEPENDS+=	p5-CPAN-Meta>=2.143240:devel/p5-CPAN-Meta
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d; /my::bundles/d' ${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e '/^bundled\//d' ${WRKSRC}/MANIFEST
 	@${RM} -r ${WRKSRC}/bundled/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
