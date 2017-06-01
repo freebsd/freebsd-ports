@@ -10,13 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Declarative object constructor
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502106
-TEST_DEPENDS+=	p5-Test-Simple>=0:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
