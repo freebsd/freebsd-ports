@@ -3,6 +3,7 @@
 
 PORTNAME=	grilo
 PORTVERSION=	0.2.15
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -19,7 +20,7 @@ USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 intlhack introspection:build libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-vala -disable-debug
+CONFIGURE_ARGS+=--enable-vala -disable-debug --disable-nls
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
