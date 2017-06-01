@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	3.2.16.0
-PORTREVISION=	1
+PORTVERSION=	3.2.19.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -38,11 +37,11 @@ X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:graphics/ImageMagick-nox11
 do-build:
 	(cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/xbuild /t:build /p:Configuration="Release Mono" \
-			/p:Platform="Any CPU" MediaBrowser.Mono.sln)
+			/p:Platform="Any CPU" MediaBrowser.sln)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server
-	(cd ${WRKSRC}/MediaBrowser.Server.Mono/bin/Release\ Mono && \
+	(cd ${WRKSRC}/MediaBrowser.Server.Mono/bin/Release && \
 		${ECHO_MSG} "Deleting the following non-FreeBSD library files:" && \
 		${FIND} -E . -iregex '(.*\.dylib)' -print -delete && \
 		${FIND} . -type d -empty -print -delete && \
