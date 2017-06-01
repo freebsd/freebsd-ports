@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-AttributeShortcuts
-PORTVERSION=	0.029
+PORTVERSION=	0.031
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ COMMENT=	Shorthand for common attribute options
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=1.14:devel/p5-Moose \
 		p5-MooseX-Meta-TypeConstraint-Mooish>=0:devel/p5-MooseX-Meta-TypeConstraint-Mooish \
 		p5-MooseX-Role-Parameterized>=0:devel/p5-MooseX-Role-Parameterized \
 		p5-MooseX-Types-Common>=0:devel/p5-MooseX-Types-Common \
