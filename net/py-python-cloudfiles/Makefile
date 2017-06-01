@@ -13,7 +13,7 @@ COMMENT=	Python language bindings for Cloud Files API
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Deprecated by usptream since August 1, 2013. Use net/py-python-swiftclient instead
+DEPRECATED=	Deprecated by usptream since August 1, 2013. Use databases/py-python-swiftclient instead
 EXPIRATION_DATE=2017-08-31
 
 USES=		python
