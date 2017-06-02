@@ -32,27 +32,24 @@ DUMB_DESC=		Install dfrotz (dumb frotz)
 OSS_MAKE_ENV=		SOUND_DEFS='-DOSS_SOUND -DSOUND_DEV=\"/dev/dsp\"'
 DUMB_PLIST_FILES=	bin/dfrotz \
 			man/man6/dfrotz.6.gz
+DUMB_PORTDOCS=	DUMB
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDUMB}
-PORTDOCS+=	DUMB
-.endif
-
-.if ${PORT_OPTIONS:MOSS}
-pre-build:
+pre-build-OSS-on:
 	cd ${WRKSRC} && ${DO_MAKE_BUILD} soundcard.h
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
-.if ${PORT_OPTIONS:MDUMB}
-	${INSTALL_PROGRAM} ${WRKSRC}/d${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/d${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
-.endif
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+do-install-DUMB-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/d${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/d${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${EXAMPLESDIR}
 
