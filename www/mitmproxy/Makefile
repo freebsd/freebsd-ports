@@ -5,14 +5,13 @@ PORTNAME=	mitmproxy
 PORTVERSION=	2.0.1
 CATEGORIES=	www python
 MASTER_SITES=	http://github.com/mitmproxy/mitmproxy/archive/
+DISTFILES=	v${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	SSL-capable man-in-the-middle proxy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DISTFILES=	v${PORTVERSION}${EXTRACT_SUFX}
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.2:devel/py3-click \
 		${PYTHON_PKGNAMEPREFIX}blinker>=1.4:devel/py-blinker \
@@ -37,6 +36,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.2:devel/py3-click \
 		${PYTHON_PKGNAMEPREFIX}kaitaistruct>=0.6:devel/py-kaitaistruct \
 		${PYTHON_PKGNAMEPREFIX}jsbeautifier>=1.6.3:devel/py-jsbeautifier \
 		${PYTHON_PKGNAMEPREFIX}h2>=3.0.0:www/py-h2
+
+BROKEN=		fails in dependency check: mitmproxy-2.0.1 depends on package: py36-blinker>=1.4 - not found
 
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
