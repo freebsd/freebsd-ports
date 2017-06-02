@@ -24,16 +24,11 @@ BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-autodie>=0:devel/p5-autodie
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
+  		p5-Module-Build>=0:devel/p5-Module-Build \
 		p5-Module-Build-Tiny>=0:devel/p5-Module-Build-Tiny
 
 NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-TEST_DEPENDS+=	p5-Module-Build>=0:devel/p5-Module-Build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
