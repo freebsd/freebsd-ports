@@ -14,7 +14,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
-		unicode-ucd>=0:misc/unicode-ucd
+		UCD>=0:textproc/UCD
 
 PORTSCOUT=	limitw:1,even
 
@@ -22,7 +22,7 @@ USES=		desktop-file-utils gmake gnome libtool localbase \
 		pathfix pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-unicode-data=${LOCALBASE}/share/unicode-ucd/
+CONFIGURE_ARGS=	--with-unicode-data=${LOCALBASE}/share/unicode/ucd/
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
