@@ -1,4 +1,4 @@
 arpscan is a very simple scanner which sends out arp requests for
 the given IP addresses and displays a list of the found hosts.
 
-WWW: https://github.com/jasonish/arpscan/
+WWW: https://github.com/jasonish/arpscan
