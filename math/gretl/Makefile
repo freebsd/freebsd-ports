@@ -3,7 +3,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.9.13
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -11,96 +11,63 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics, and Time-series Library
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libfftw3.so:math/fftw3
+		libfftw3.so:math/fftw3 \
+		libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		fortran gmake libtool pathfix pkgconfig tar:bzip2
-WANT_GNOME=	yes
+USES=		fortran gmake localbase libtool ncurses pathfix pkgconfig \
+		readline tar:bzip2
 
 ALL_TARGET=		# empty
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake \
 			--disable-xdg-utils
-CONFIGURE_ENV=		ac_cv_lib_dl_dlopen=""
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV=		LAPACK_LIBS="${LAPACK} ${BLAS}"
+CONFIGURE_ENV=	ac_cv_lib_dl_dlopen="" \
+		LAPACK_LIBS="${LAPACK} ${BLAS}"
 
-OPTIONS_DEFINE=	ATLAS GUI ODBC OPENMP R UNZIP
+OPTIONS_DEFINE=	ATLAS GUI NLS ODBC OPENMP R UNZIP
+OPTIONS_DEFAULT=	GUI OPENMP UNZIP
+OPTIONS_SUB=	yes
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
+ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas
+ATLAS_LIB_DEPENDS_OFF=	libblas.so:math/blas \
+			liblapack.so:math/lapack
+ATLAS_VARS=		BLAS=-lf77blas LAPACK="-lalapack -lcblas"
+ATLAS_VARS_OFF=		BLAS=-lblas LAPACK=-llapack
+
 GUI_DESC=		Graphical user interface and plugins
+GUI_CONFIGURE_ON=	--enable-gtk2=yes --enable-gui=yes
+GUI_CONFIGURE_OFF=	--enable-gui=no --enable-xdg=no
+GUI_VARS=		INSTALLS_ICONS=yes
+GUI_USE=		GNOME=cairo,gtksourceview2
+GUI_USE_OFF=		GNOME=glib20,libxml2
+GUI_USES=		desktop-file-utils shared-mime-info
+GUI_BUILD_DEPENDS=	gnuplot:math/gnuplot
+GUI_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+			libfontconfig.so:x11-fonts/fontconfig
+GUI_RUN_DEPENDS=	gnuplot:math/gnuplot
+
+NLS_CONFIGURE_ON=	--enable-nls=yes
+NLS_CONFIGURE_OFF=	--enable-nls=no
+NLS_USES=		gettext
+
+ODBC_CONFIGURE_WITH=	odbc
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+
+OPENMP_CONFIGURE_ON=	--enable-openmp
+
 R_DESC=			libR support
+R_CONFIGURE_WITH=	libR
+R_LIB_DEPENDS=		libR.so:math/R
+
 UNZIP_DESC=		UnZip compression support via libgsf
-
-OPTIONS_DEFAULT=	GUI OPENMP UNZIP
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	libatlas.so:math/atlas
-BLAS=		-lf77blas
-LAPACK=		-lalapack -lcblas
-.else
-LIB_DEPENDS+=	libblas.so:math/blas \
-		liblapack.so:math/lapack
-BLAS=		-lblas
-LAPACK=		-llapack
-.endif
-
-.if ${PORT_OPTIONS:MGUI}
-CONFIGURE_ARGS+=	--enable-gtk2=yes --enable-gui=yes
-INSTALLS_ICONS=		yes
-USE_GNOME=		gtksourceview2
-USES+=			desktop-file-utils shared-mime-info
-BUILD_DEPENDS+=		gnuplot:math/gnuplot
-RUN_DEPENDS+=		gnuplot:math/gnuplot
-PLIST_SUB+=		GUI=""
-.else
-USE_GNOME=		glib20 libxml2
-CONFIGURE_ARGS+=	--enable-gui=no --enable-xdg=no
-PLIST_SUB+=		GUI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	--enable-nls=yes
-USES+=			gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--enable-nls=no
-PLIST_SUB+=		NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MODBC}
-CONFIGURE_ARGS+=	--with-odbc
-LIB_DEPENDS+=		libodbc.so:databases/unixODBC
-PLIST_SUB+=		ODBC=""
-.else
-CONFIGURE_ARGS+=	--without-odbc
-PLIST_SUB+=		ODBC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOPENMP}
-CONFIGURE_ARGS+=	--enable-openmp
-.endif
-
-.if ${PORT_OPTIONS:MR}
-CONFIGURE_ARGS+=	--with-libR
-LIB_DEPENDS+=		libR.so:math/R
-.else
-CONFIGURE_ARGS+=	--without-libR
-.endif
-
-.if ${PORT_OPTIONS:MUNZIP}
-CONFIGURE_ARGS+=	--with-gsf
-USE_GNOME+=		libgsf
-PLIST_SUB+=		NO_UNZIP="@comment "
-.else
-CONFIGURE_ARGS+=	--without-gsf
-PLIST_SUB+=		NO_UNZIP=""
-.endif
+UNZIP_CONFIGURE_WITH=	gsf
+UNZIP_USE=		GNOME=libgsf
 
 .if !empty(MACHINE_CPU:Msse2)
 CONFIGURE_ARGS+=	--enable-sse2=yes
@@ -119,5 +86,8 @@ post-patch:
 regression-test test check: build
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_ARGS} check
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gretl-gtk2/*.so
 
 .include <bsd.port.mk>
