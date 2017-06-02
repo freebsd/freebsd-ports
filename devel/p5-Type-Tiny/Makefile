@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny
-PORTVERSION=	1.000006
+PORTVERSION=	1.002000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -45,7 +45,7 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-XS_BUILD_DEPENDS=	p5-Type-Tiny-XS>=0.010:devel/p5-Type-Tiny-XS
-XS_RUN_DEPENDS=		p5-Type-Tiny-XS>=0.010:devel/p5-Type-Tiny-XS
+XS_BUILD_DEPENDS=	p5-Type-Tiny-XS>=0.011:devel/p5-Type-Tiny-XS
+XS_RUN_DEPENDS=		p5-Type-Tiny-XS>=0.011:devel/p5-Type-Tiny-XS
 
 .include <bsd.port.mk>
