@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 
-MAINTAINER=	bradleythughes@fastmail.fm
+MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	V8 JavaScript for client and server (7.x)
 
 LICENSE=	MIT

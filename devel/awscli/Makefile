@@ -6,7 +6,7 @@ PORTVERSION=	1.11.91
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	bradleythughes@fastmail.fm
+MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	Universal Command Line Interface for Amazon Web Services
 
 LICENSE=	APACHE20

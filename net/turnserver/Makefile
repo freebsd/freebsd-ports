@@ -11,7 +11,7 @@ PKGNAMEPREFIX=
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:prog \
 		turn.extra.docs-2.0.0.1.tar.gz:xdocs
 
-MAINTAINER=	bradleythughes@fastmail.fm
+MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
 
 LICENSE=	BSD3CLAUSE
