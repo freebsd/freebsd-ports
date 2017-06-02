@@ -11,9 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance, flexible monitoring system
 
 RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
-		p5-libwww>=0:www/p5-libwww \
+		p5-CGI>0:www/p5-CGI \
 		p5-SNMP_Session>=0:net-mgmt/p5-SNMP_Session \
-		p5-TimeDate>=0:devel/p5-TimeDate
+		p5-TimeDate>=0:devel/p5-TimeDate \
+		p5-libwww>=0:www/p5-libwww
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	util/metaQuery.pl
@@ -48,10 +49,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cricket-conf.pl.sample \
 		${STAGEDIR}${PREFIX}/etc/cricket-conf.pl.dist
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=  p5-CGI>0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
