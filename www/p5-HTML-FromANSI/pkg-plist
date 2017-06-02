@@ -1,4 +1,4 @@
 bin/ansi2html
-%%PERL5_MAN3%%/HTML::FromANSI.3.gz
 %%SITE_PERL%%/HTML/FromANSI.pm
 %%PERL5_MAN1%%/ansi2html.1.gz
+%%PERL5_MAN3%%/HTML::FromANSI.3.gz
