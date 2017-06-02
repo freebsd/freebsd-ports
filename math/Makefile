@@ -121,6 +121,7 @@
     SUBDIR += clarence
     SUBDIR += clasp
     SUBDIR += clblas
+    SUBDIR += clblast
     SUBDIR += clfft
     SUBDIR += clipper
     SUBDIR += cln
