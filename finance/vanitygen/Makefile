@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone vanity address generator for bitcoin
 
 LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
