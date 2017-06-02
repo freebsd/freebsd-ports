@@ -12,6 +12,7 @@ COMMENT=	Small, simple, correct HTTP/1.1 client
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	COOKIE HTTPS IO_SOCKET_IP
 OPTIONS_DEFAULT=COOKIE HTTPS IO_SOCKET_IP
@@ -32,11 +33,4 @@ HTTPS_RUN_DEPENDS=	p5-IO-Socket-SSL>=1.42:security/p5-IO-Socket-SSL \
 			p5-Mozilla-CA>=20160104:www/p5-Mozilla-CA \
 			p5-Net-SSLeay>=1.49:security/p5-Net-SSLeay
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200 && ${PORT_OPTIONS:MIO_SOCKET_IP}
-BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.32:net/p5-IO-Socket-IP
-RUN_DEPENDS+=	p5-IO-Socket-IP>=0.32:net/p5-IO-Socket-IP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
