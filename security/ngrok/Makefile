@@ -12,8 +12,7 @@ MAINTAINER=	jhixson@gmail.com
 COMMENT=	Secure tunnels to localhost
 
 # run 'ngrok credits' for details
-LICENSE=	NONE APACHE20 BSD3CLAUSE CC0-1.0 LGPL3+ MIT
-LICENSE_COMB=	multi
+LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	i386 amd64
 
