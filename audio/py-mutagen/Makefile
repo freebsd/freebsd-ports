@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutagen
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_ARCH=	yes
-USES?=		python:2.7+ shebangfix
+USES?=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	tools/mid3cp tools/mid3iconv tools/mid3v2 \
 		tools/moggsplit tools/mutagen-inspect tools/mutagen-pony
