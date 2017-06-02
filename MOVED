@@ -6397,7 +6397,6 @@ news/husky-hptsqfix||2014-08-19|Obsolete due to husky-*-devel => husky-* migrati
 news/husky-hpucode||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-msged||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-nltools||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
-news/husky-sqpack||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 net/rsmb|net/mosquitto|2014-08-19|Superseded by net/mosquitto
 deskutils/horde3-hermes||2014-08-20|Has expired: EOL in April 2012
 deskutils/horde3-klutz||2014-08-20|Has expired: EOL in April 2012
