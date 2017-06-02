@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,15 +13,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
+OPTIONS_DEFINE=	DOCS
+
 USES=		python shebangfix
 USE_GITHUB=	yes
-GH_TAGNAME=	3605155
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	fail2ban
 
 NO_ARCH=	yes
 
 SHEBANG_FILES=	config/filter.d/ignorecommands/apache-fakegooglebot
+SHEBANG_LANG=	fail2ban-python
 
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
@@ -34,6 +36,13 @@ FILES=		${WRKSRC}/bin/fail2ban-client \
 		${WRKSRC}/man/fail2ban-client.1 \
 		${WRKSRC}/man/fail2ban-client.h2m \
 		${WRKSRC}/setup.py
+
+MAN_FILES= 	${WRKSRC}/man/fail2ban-client.1 \
+		${WRKSRC}/man/fail2ban-client.h2m \
+		${WRKSRC}/man/fail2ban-regex.1 \
+		${WRKSRC}/man/fail2ban-server.1 \
+		${WRKSRC}/man/fail2ban.1
+
 FAIL2BAN_DBDIR=	/var/db/${PORTNAME}
 
 post-patch:
@@ -42,15 +51,19 @@ post-patch:
 		${WRKSRC}/config/jail.conf
 	@${REINPLACE_CMD} -e 's,/var/lib/fail2ban/,${FAIL2BAN_DBDIR}/,g' \
 		${WRKSRC}/config/fail2ban.conf
+	@${REINPLACE_CMD} -e 's,jail.conf(5),fail2ban-jail.conf(5),g' \
+		${MAN_FILES}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${FAIL2BAN_DBDIR} ${STAGEDIR}/var/run/fail2ban
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .for file in fail2ban-client fail2ban-regex fail2ban-server fail2ban
 	${INSTALL_MAN} ${WRKSRC}/man/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/man/jail.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/fail2ban-jail.conf.5
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
