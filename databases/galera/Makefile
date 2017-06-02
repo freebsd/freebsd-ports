@@ -15,7 +15,8 @@ BUILD_DEPENDS=	checkmk:devel/check \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
-NOT_FOR_ARCHS=	i386
+BROKEN_powerpc64=	fails to compile: gu_atomic.h: This GCC version does not support 8-byte atomics on this platform. Use GCC >= 4.7.x
+NOT_FOR_ARCHS=		i386
 # On i386 older versions of clang produce:
 #   cannot compile this atomic library call yet ... __atomic_add_fetch
 # whereas newer ones generate a call to __atomic_add_fetch which ends up with

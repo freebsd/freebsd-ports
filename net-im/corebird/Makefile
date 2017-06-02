@@ -19,6 +19,8 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		librest-0.7.so:devel/librest \
 		libgspell-1.so:textproc/gspell
 
+BROKEN_powerpc64=	fails to compile: CbMedia.h:61: redefinition of typedef 'CbMedia'
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	baedert
 

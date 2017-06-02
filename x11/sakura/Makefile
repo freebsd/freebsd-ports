@@ -9,9 +9,11 @@ MASTER_SITES=	http://launchpadlibrarian.net/301803318/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Terminal emulator based on GTK and VTE
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
-LICENSE=	GPLv2
+BROKEN_powerpc64=	fails to build: sakura.c:1348: 'for' loop initial declaration used outside C99 mode
 
 OPTIONS_DEFINE=	DOCS
 
