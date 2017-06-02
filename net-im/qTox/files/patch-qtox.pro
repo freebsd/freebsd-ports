@@ -22,7 +22,7 @@
 +unix {
 +    target.path  = $$PREFIX/bin
 +
-+    desktop.files = qTox.desktop
++    desktop.files = qtox.desktop
 +    desktop.path = $$PREFIX/share/applications
 +
 +    icon.files = img/qtox.png
