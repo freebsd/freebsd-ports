@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mtr
-PORTVERSION=	0.87
+PORTVERSION=	0.88
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		LOCAL/sunpoet
@@ -23,9 +23,6 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-lncurses
 USES=		autoreconf ncurses pkgconfig
 
-PLIST_FILES=	man/man8/mtr.8.gz \
-		sbin/mtr
-
 IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_ENABLE=	ipv6
 X11_CONFIGURE_WITH=	gtk
@@ -33,7 +30,7 @@ X11_USE=		GNOME=gtk20
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|getopt.*$$(OBJEXT)||g; s|getopt.*[ch]||g; /getopt.*Po/d' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/mtr.c
+	@${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/ui/mtr.c
 
 post-install:
 	@${ECHO_MSG} ""
