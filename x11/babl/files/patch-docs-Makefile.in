@@ -1,6 +1,6 @@
---- docs/Makefile.in.orig	2010-02-23 09:03:35.000000000 +0100
-+++ docs/Makefile.in	2010-02-23 09:04:01.000000000 +0100
-@@ -637,7 +637,7 @@
+--- docs/Makefile.in.orig	2017-06-02 08:50:55 UTC
++++ docs/Makefile.in
+@@ -689,7 +689,7 @@ index.html: index-static.html                    \
  	    Makefile.am
  	echo -n "HTML: $@"
  	cp $< $@ 
