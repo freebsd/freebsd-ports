@@ -2,7 +2,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.12.6
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
@@ -30,11 +30,25 @@ PORTSCOUT=	limitw:1,even
 USE_SDL=	image mixer net ttf
 USE_LDCONFIG=	yes
 USE_GNOME=	pango
-USES=		cmake cpe pkgconfig shebangfix tar:bzip2
-SHEBANG_FILES=	data/tools/campaign2wiki.py \
+USES=		cmake cpe pkgconfig python:run shebangfix tar:bzip2
+SHEBANG_FILES=	data/tools/about_cfg_to_wiki \
+		data/tools/campaign2wiki.py \
 		data/tools/castle-cutter/mk-castle.sh \
-		data/tools/terrain2wiki.py \
-		data/tools/unit_tree/update-wmlunits
+		data/tools/expand-terrain-macros.py \
+		data/tools/extractbindings data/tools/imgcheck \
+		data/tools/journeylifter data/tools/rmtrans/rmtrans.py \
+		data/tools/scoutDefault.py data/tools/terrain2wiki.py \
+		data/tools/trackplacer data/tools/unit_tree/TeamColorizer \
+		data/tools/unit_tree/overview.py \
+		data/tools/unit_tree/update-wmlunits \
+		data/tools/wesnoth/wescamp.py data/tools/wesnoth/wmldata.py \
+		data/tools/wesnoth/wmlparser.py \
+		data/tools/wesnoth/wmlparser2.py \
+		data/tools/wesnoth_addon_manager data/tools/wmlflip \
+		data/tools/wmlindent data/tools/wmllint \
+		data/tools/wmllint-1.4 data/tools/wmllint_gui \
+		data/tools/wmlmove data/tools/wmlscope data/tools/wmlunits \
+		data/tools/wmlvalidator
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	battle_for_wesnoth
 CMAKE_ARGS=	-DMANDIR="man" -DENABLE_STRICT_COMPILATION=off
