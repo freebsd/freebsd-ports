@@ -12,6 +12,8 @@ COMMENT=	Parse and Decode METAR, TAF, SYNOP, BUOY and AMDAR and Write as XML
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+RUN_DEPENDS=	p5-CGI>0:www/p5-CGI
+
 OPTIONS_DEFINE=	APACHE DOCS
 OPTIONS_SUB=	yes
 APACHE_DESC=	Install Apache config file for metaf2xml (depends on Apache)
@@ -34,17 +36,7 @@ SHEBANG_FILES=	metaf.pl metaf2xml.pl metafsrc2raw.pl
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
+APACHE_MAKE_ARGS=	CONF_DIR=${PREFIX}/${APACHEETCDIR}/Includes
+APACHE_USE=		APACHE_RUN=22+
 
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
-.endif
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
-MAKE_ARGS+=	CONF_DIR=${PREFIX}/${APACHEETCDIR}/Includes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
