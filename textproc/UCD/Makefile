@@ -3,7 +3,7 @@
 
 PORTNAME=	UCD
 PORTVERSION=	9.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.unicode.org/Public/zipped/${PORTVERSION}/:src\
 		ftp://www.unicode.org/Public/zipped/${PORTVERSION}/:src	\
@@ -44,6 +44,8 @@ do-install:
 .if ${PORT_OPTIONS:MHAN}
 	(cd ${STAGEDIR}${DATADIR} &&	\
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/Unihan.zip ${EXTRACT_AFTER_ARGS})
+	# Gucharmap also needs this zipfile
+	${INSTALL_DATA} ${_DISTDIR}/Unihan.zip ${STAGEDIR}${DATADIR}
 .endif
 
 .include <bsd.port.mk>
