@@ -14,4 +14,4 @@ If your project requires that you create a new XML document format, the included
 rules, it also contains advice on designing your own versus adapting an existing
 format, on XML instance document formatting, and on elements versus attributes.
 
-WWW: https://github.com/google/styleguide/
+WWW: https://github.com/google/styleguide
