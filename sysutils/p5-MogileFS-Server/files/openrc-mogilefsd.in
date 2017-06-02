@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=mogilefsd
+
+required_files=%%PREFIX%%/etc/mogtracker.conf
+
+command="%%PREFIX%%/bin/${name}"
+command_user=nobody
+command_args="--config=%%PREFIX%%/etc/mogtracker.conf"
+
+depend() {
+	keyword -shutdown
+}

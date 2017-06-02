@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+name=monitorix
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-c %%PREFIX%%/etc/${name}.conf"
+
+start_pre() {
+	baselib=`grep ^base_lib %%PREFIX%%/etc/monitorix.conf`
+	baselib=${baselib##*= }
+	if [ "$baselib" = "%%DATADIR%%/" ]; then
+		eerror "Please update your monitorix.conf, replacing the base_lib value with %%DBDIR%%/ (note trailing slash)."
+	fi
+	/usr/bin/env PATH="$PATH:%%PREFIX%%/sbin:%%PREFIX%%/bin" > /dev/null 
+}
+
+depend() {
+	keyword -shutdown
+}

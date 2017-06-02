@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+# Other rc.conf variables:
+#
+# %%PORTNAME%%_flags    Set to "-v" for verbose mode.
+
+name="%%PORTNAME%%"
+
+command="%%PREFIX%%/sbin/%%PORTNAME%%"
+command_args="-e"
+
+# %%PORTNAME%% is a command to be run during startup and shutdown, not a
+# long running daemon process.  There's no pidfile to check, and it's
+# hard to tell if %%PORTNAME%% is enabled or not -- just run '%%PORTNAME%% -e' to
+# force enable it, '%%PORTNAME%% -d' to disable.
+
+stop()
+{
+    $command -d
+}
+
+depend() {
+	keyword -shutdown
+}

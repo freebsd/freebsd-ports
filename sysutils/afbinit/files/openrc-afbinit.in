@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="afbinit"
+command=%%PREFIX%%/sbin/afbinit
+
+start() {
+	if [ ! -r %%DATADIR%%/afb.ucode ]; then
+		eerror "%%DATADIR%%/afb.ucode is not readable."
+	fi
+
+	for fb in /dev/fb[0-7]; do
+		$command ${fb} %%DATADIR%%/afb.ucode
+	done
+}

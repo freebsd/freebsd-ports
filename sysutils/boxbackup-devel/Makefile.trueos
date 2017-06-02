@@ -1,0 +1,3 @@
+USE_OPENRC_SUBR=	openrc-bbackupd
+.if ${PORT_OPTIONS:MSERVER}
+USE_OPENRC_SUBR+=	openrc-bbstored

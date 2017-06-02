@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=mogstored
+required_files=%%PREFIX%%/etc/mogstored.conf
+
+command="%%PREFIX%%/bin/${name}"
+command_args="--config=%%PREFIX%%/etc/mogstored.conf -d"
+
+depend() {
+	keyword -shutdown
+}

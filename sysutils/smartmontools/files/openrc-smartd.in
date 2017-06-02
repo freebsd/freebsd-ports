@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+
+# Define these smartd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/smartd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+
+name=smartd
+
+required_files=${smartd_config:="%%PREFIX%%/etc/smartd.conf"}
+pidfile=${smartd_pidfile:="/var/run/smartd.pid"}
+
+command="%%PREFIX%%/sbin/smartd"
+command_args="-c ${required_files} -p ${pidfile}"
+
+start_pre() {
+	case "${smartd_flags}" in
+	-p*|*-p*)
+	eerror 'smartd_flags includes the -p option, use smartd_pidfile instead'
+		;;
+	esac
+}
+
+depend() {
+	keyword -shutdown -jail
+}

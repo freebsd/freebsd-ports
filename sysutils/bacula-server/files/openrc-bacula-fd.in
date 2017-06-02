@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bacula_fd_flags (params):  Set params used to start bacula_fd.
+
+name="bacula_fd"
+command=%%PREFIX%%/sbin/bacula-fd
+command_args=${bacula_fd_flags}
+
+: ${bacula_fd_flags=" -u root -g wheel -v -c %%PREFIX%%/etc/bacula/bacula-fd.conf"}
+: ${bacula_fd_pidfile="/var/run/bacula-fd.9102.pid"}
+
+pidfile="${bacula_fd_pidfile}"
+
+depend() {
+	keyword -shutdown
+}
