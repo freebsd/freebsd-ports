@@ -303,6 +303,7 @@
     SUBDIR += cloudabi-binutils-aarch64
     SUBDIR += cloudabi-binutils-x86_64
     SUBDIR += cloudabi-toolchain
+    SUBDIR += cltune
     SUBDIR += cmake
     SUBDIR += cmake-doc
     SUBDIR += cmake-fedora
