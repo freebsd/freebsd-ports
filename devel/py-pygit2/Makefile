@@ -1,5 +1,5 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/devel/py-pygit2/Makefile 442373 2017-06-02 11:03:31Z araujo $
 
 PORTNAME=	pygit2
 PORTVERSION=	0.25.1
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi
 LIB_DEPENDS=	libgit2.so:devel/libgit2
-RUN_DEPENDS:=	${BUILD_DEPENDS} \
+RUN_DEPENDS?=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 
 USES?=		python
