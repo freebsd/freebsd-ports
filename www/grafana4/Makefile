@@ -2,6 +2,7 @@
 
 PORTNAME=	grafana
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/grafana-releases/release/:public
