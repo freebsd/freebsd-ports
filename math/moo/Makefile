@@ -8,6 +8,8 @@ CATEGORIES=	math
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Calculator that accepts C-like syntax as input
 
+LICENSE=	PD
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	raylai
 GH_TAGNAME=	${PORTVERSION}

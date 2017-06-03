@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170602:
+  AFFECTS: users of Qt 5 in presence of binutils
+  AUTHOR: amdmi3@FreeBSD.org
+
+  gold linker from binutils 2.28 may produce duplicate library
+  symbols, which makes shared libraries created with it not usable
+  with conventional ld linker.
+
+  This affects Qt, as qt5-qmake will detect gold and use it to build
+  Qt libraries. Broken libQt5Core will be produced and ports which
+  depend on it will then fail to link with the following errors:
+
+    ...lib/libQt5Core.so:(.dynamic+0x27ac8): multiple definition of `__bss_start at Qt_5'
+    ...lib/libQt5Core.so:(.dynamic+0x27ac8): first defined here
+    ...lib/libQt5Core.so:(.dynamic+0x27ac8): multiple definition of `_edata at Qt_5'
+    ...lib/libQt5Core.so:(.dynamic+0x27ac8): first defined here
+    ...lib/libQt5Core.so:(.dynamic+0x2b2d0): multiple definition of `_end at Qt_5'
+
+  Qt5 was fixed to ignore gold. If you see these errors, you
+  need to rebuild qt5-qmake, then all qt5-* ports.
+
 20170529:
   AFFECTS: users of sysutils/dsbmd
   AUTHOR: mk@freeshell.de

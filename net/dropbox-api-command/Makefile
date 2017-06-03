@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dropbox-api-command
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 PORTEPOCH=	1
 CATEGORIES=	net perl5
 

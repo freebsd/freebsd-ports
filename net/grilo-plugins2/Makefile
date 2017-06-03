@@ -3,6 +3,7 @@
 
 PORTNAME=	grilo-plugins
 PORTVERSION=	0.2.17
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
@@ -20,6 +21,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	glib20 intlhack libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-youtube \
+		--disable-nls \
 		--enable-vimeo \
 		--enable-freebox \
 		--enable-tmdb
@@ -43,5 +45,8 @@ DLEYNA_LIB_DEPENDS=		libsoup-2.4.so:devel/libsoup
 METADATA_DESC=			Enable Local-metadata plugin
 METADATA_CONFIGURE_ENABLE=	localmetadata
 METADATA_LIB_DEPENDS=		libmediaart-2.0.so:multimedia/libmediaart
+
+post-install:
+	@${RM} -rf ${STAGEDIR}${PREFIX}/share/help
 
 .include <bsd.port.mk>

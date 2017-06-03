@@ -147,7 +147,9 @@ CONFIGURE_ARGS+=-nomake examples -nomake tests \
 .  if ${ARCH} == i386 && empty(MACHINE_CPU:Msse2)
 CONFIGURE_ARGS+=-no-sse2
 .  endif
-
+# Work around a bug in current binutils, where the gold linker creates
+# duplicate symbols. See pr 218187. Disable the gold-linker for Qt5 ports.
+CONFIGURE_ARGS+=	-no-use-gold-linker
 . endif
 
 . if defined(WANT_QT_DEBUG) || defined(WITH_DEBUG)

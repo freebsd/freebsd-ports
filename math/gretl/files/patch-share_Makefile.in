@@ -1,6 +1,6 @@
---- share/Makefile.in.orig	2011-02-10 16:40:30.000000000 -0500
-+++ share/Makefile.in	2011-03-02 07:43:03.000000000 -0500
-@@ -13,7 +13,7 @@
+--- share/Makefile.in.orig	2017-06-01 20:13:36 UTC
++++ share/Makefile.in
+@@ -12,7 +12,7 @@ tooldir = $(topsrc)/tools
  sharesrc = $(topsrc)/share
  pdfdir = ../doc/tex
  
@@ -9,8 +9,8 @@
  
  AUTO_HELPFILES = \
  	gretlgui.hlp \
-@@ -80,22 +80,22 @@
- 	$(INSTALL_DATA) $(sharesrc)/functions/criteria.gfn $(DESTDIR)$(gretldir)/functions 
+@@ -86,22 +86,22 @@ install_functions:
+ 	$(INSTALL_DATA) $(sharesrc)/functions/packages.xml $(DESTDIR)$(gretldir)/functions 
  
  install_man: gretl.1
 -	$(tooldir)/mkinstalldirs $(DESTDIR)$(prefix)/share/man/man1

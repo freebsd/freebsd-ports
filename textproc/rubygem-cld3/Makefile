@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	devel/protobuf>0:devel/protobuf \
 		rubygem-ffi>0:devel/rubygem-ffi
 
+BROKEN_powerpc64=	fails to install: Error installing cld3-3.1.2.gem: Failed to build gem native extension
+
 USE_RUBY=	yes
 USES=		gem pkgconfig
 

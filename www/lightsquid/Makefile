@@ -13,6 +13,8 @@ COMMENT=	Light and fast web based squid proxy traffic analyser
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/gnugpl.txt
 
+RUN_DEPENDS=	p5-CGI>0:www/p5-CGI
+
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	*.cgi *.pl tools/SiteAggregator/*.pl lang/*.pl tools/*.pl \
 		lightsquid.cfg
@@ -80,10 +82,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}/${DOCSDIR}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

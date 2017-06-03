@@ -6397,7 +6397,6 @@ news/husky-hptsqfix||2014-08-19|Obsolete due to husky-*-devel => husky-* migrati
 news/husky-hpucode||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-msged||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-nltools||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
-news/husky-sqpack||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 net/rsmb|net/mosquitto|2014-08-19|Superseded by net/mosquitto
 deskutils/horde3-hermes||2014-08-20|Has expired: EOL in April 2012
 deskutils/horde3-klutz||2014-08-20|Has expired: EOL in April 2012
@@ -9397,3 +9396,4 @@ net-mgmt/zabbix24-server||2017-05-29|Has expired: Upstream has declared this ver
 net/py-cloudfiles|net/py-python-cloudfiles|2017-05-30|Rename to match PyPI naming
 irc/konversation-kde4|irc/konversation|2017-05-30|Renamed to irc/konversation
 lang/perl5.20|lang/perl5.24|2017-06-01|Support ends three years after .0 release, please upgrade to a more recent version of Perl
+misc/unicode-ucd|textproc/UCD|2017-06-02|unicode-ucd was a duplicate of textproc/UCD, remove the younger port

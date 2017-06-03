@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qTox
-PORTVERSION=	1.9.0
-PORTREVISION=	4
+PORTVERSION=	1.10.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im net-p2p
 
@@ -41,7 +40,7 @@ ICON_SIZES=	14x14 16x16 22x22 24x24 32x32 36x36 48x48 64x64 72x72 96x96 128x128 
 QMAKE_ARGS=	FREEBSD_PKGVERSION=${FULLVERSION}
 
 PLIST_FILES=	bin/qtox \
-		share/applications/qTox.desktop \
+		share/applications/qtox.desktop \
 		share/icons/hicolor/scalable/apps/qtox.svgz
 .for SZ in ${ICON_SIZES}
 PLIST_FILES+=	share/icons/hicolor/${SZ}/apps/qtox.png
@@ -74,7 +73,7 @@ post-patch:
 
 pre-configure:
 	@${REINPLACE_CMD} '/Comment/s,=.*,=${COMMENT},' \
-		${WRKSRC}/qTox.desktop
+		${WRKSRC}/qtox.desktop
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
