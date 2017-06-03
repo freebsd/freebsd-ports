@@ -772,6 +772,7 @@
     SUBDIR += pecl-pam
     SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
+    SUBDIR += pecl-ssh2-0
     SUBDIR += pev
     SUBDIR += pft
     SUBDIR += pgp
