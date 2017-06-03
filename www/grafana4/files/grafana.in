@@ -12,7 +12,7 @@
 # grafana_enable (bool): 	Set to YES to enable grafana
 #				Default: NO
 # grafana_conf (str):		grafana configration file
-#				Default: %%PREFIX%%/etc/grafana.cfg
+#				Default: %%PREFIX%%/etc/grafana.conf
 # grafana_user (str):		grafana daemon user
 #				Default: %%GRAFANA_USER%%
 # grafana_group (str):		grafana daemon group
