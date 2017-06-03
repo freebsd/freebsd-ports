@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby_smb
-PORTVERSION=	0.0.14
+PORTVERSION=	0.0.18
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
