@@ -3,8 +3,8 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.25.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -81,9 +81,11 @@ DOCS_BUILD_DEPENDS=		rst2html:textproc/py-docutils
 DOCS_CONFIGURE_ON=		--enable-html
 
 DVDNAV_LIB_DEPENDS=		libdvdnav.so:multimedia/libdvdnav
+DVDNAV_CONFIGURE_ON=		--enable-dvdnav
 DVDNAV_CONFIGURE_OFF=		--disable-dvdnav
 
 DVDREAD_LIB_DEPENDS=		libdvdread.so:multimedia/libdvdread
+DVDREAD_CONFIGURE_ON=		--enable-dvdread
 DVDREAD_CONFIGURE_OFF=		--disable-dvdread
 
 JACK_LIB_DEPENDS=		libjack.so:audio/jack
