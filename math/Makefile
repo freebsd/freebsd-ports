@@ -713,6 +713,7 @@
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += unuran
+    SUBDIR += viennacl
     SUBDIR += vowpal_wabbit
     SUBDIR += vtk5
     SUBDIR += vtk5-data
