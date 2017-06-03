@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mtr
-PORTVERSION=	0.88
+PORTVERSION=	0.92
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		LOCAL/sunpoet
