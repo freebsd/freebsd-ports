@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf[.local] to enable cfservd(8)
+#
+# cfservd_flags (str):          Custom additional arguments to be passed
+#                               to cfservd (default empty).
+
+name="cfservd"
+
+command="%%PREFIX%%/sbin/cfservd"
+
+depend() {
+	keyword -shutdown
+}

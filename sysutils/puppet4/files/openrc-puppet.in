@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+name="puppet"
+
+: ${puppet_rundir="/var/run/puppet"}
+
+command="%%PREFIX%%/bin/puppet"
+command_args="agent ${puppet_flags} --rundir=${puppet_rundir}"
+unset puppet_flags
+pidfile="${puppet_rundir}/agent.pid"
+
+start_pre() {
+	install -d -o puppet -g puppet ${pidfile%/*}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+}
