@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170603:
+  AFFECTS: users of www/kanboard
+  AUTHOR: joneum@FreeBSD.org
+
+  After update to 1.0.44, there are following breaking changes:
+  * Move calendar to external plugin: https://github.com/kanboard/plugin-calendar
+  * Move Gantt charts to external plugin: https://github.com/kanboard/plugin-gantt
+  * Move Gravatar to external plugin: https://github.com/kanboard/plugin-gravatar
+
 20170602:
   AFFECTS: users of Qt 5 in presence of binutils
   AUTHOR: amdmi3@FreeBSD.org

@@ -3,15 +3,20 @@
 
 PORTNAME=	softflowd
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	http://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/softflowd/
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Flow-based network traffic analyzer and exporter
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	irino
+GH_PROJECT=	softflowd
+GH_TAGNAME=	3aa2af5
+
+USES=		gmake autoreconf
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 

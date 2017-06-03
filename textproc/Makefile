@@ -1361,6 +1361,7 @@
     SUBDIR += py-xlutils
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
+    SUBDIR += py-yapf
     SUBDIR += py-zope.app.i18n
     SUBDIR += py-zope.app.locales
     SUBDIR += py-zope.i18nmessageid
