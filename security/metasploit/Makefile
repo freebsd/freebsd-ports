@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.14.22
+PORTVERSION=	4.14.24
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -45,7 +45,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
-		rubygem-rex-arch>=0.1.4:security/rubygem-rex-arch \
+		rubygem-rex-arch>=0:security/rubygem-rex-arch \
 		rubygem-rex-bin_tools>=0:security/rubygem-rex-bin_tools \
 		rubygem-rex-core>=0:security/rubygem-rex-core \
 		rubygem-rex-encoder>=0:security/rubygem-rex-encoder \
@@ -85,7 +85,9 @@ STRIP=
 USE_RUBY=	yes
 USES=		python shebangfix
 PYTHON_NO_DEPENDS=	yes
-SHEBANG_FILES=	external/source/shellcode/windows/build.sh \
+SHEBANG_FILES=	data/exploits/CVE-2017-7494/build.sh \
+		data/exploits/CVE-2017-7494/install-deps.sh \
+		external/source/shellcode/windows/build.sh \
 		external/source/msfJavaToolkit/compile.sh \
 		external/source/msfJavaToolkit/testKeytool.rb \
 		external/source/msfJavaToolkit/testCompilation.rb \
