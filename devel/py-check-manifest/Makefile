@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	check-manifest
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ MAINTAINER=	johannes@perceivon.net
 COMMENT=	Check MANIFEST.in in a Python source package for completeness
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENCE.rst
+LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
