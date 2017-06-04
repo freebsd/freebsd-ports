@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.405 2017/04/21 19:47:51 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.409 2017/06/04 22:22:22 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 17;
-my $micro = 8;
+my $micro = 9;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1096,6 +1096,14 @@ sub check_depends_syntax {
 				}
 			}
 
+			# check JAVALIBDIR
+			if ($m{'dep'} =~ m|share/java/classes|) {
+				&perror("FATAL", $file, -1, "you should use \${JAVALIBDIR} ".
+					"in BUILD_DEPENDS/RUN_DEPENDS to define ".
+					"dependencies on JAR files installed in ".
+					"\${JAVAJARDIR}");
+			}
+
 			foreach my $dv ($m{'dep'}, $m{'dir'}, $m{'tgt'}) {
 				foreach my $dmv (keys %depmvars) {
 					$dv =~ s/\$\{$dmv\}/$depmvars{$dmv}/g;
@@ -1176,13 +1184,6 @@ sub check_depends_syntax {
 					"USE_GHOSTSCRIPT(_BUILD|_RUN).");
 			}
 
-			# check JAVALIBDIR
-			if ($m{'dep'} =~ m|share/java/classes|) {
-				&perror("FATAL", $file, -1, "you should use \${JAVALIBDIR} ".
-					"in BUILD_DEPENDS/RUN_DEPENDS to define ".
-					"dependencies on JAR files installed in ".
-					"\${JAVAJARDIR}");
-			}
 
 			# check for PREFIX
 			if ($m{'dep'} =~ /\$\{PREFIX}/) {
@@ -1765,25 +1766,24 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: Check if USES stuff is sorted
+	# whole file: Check if some macros are sorted
 	#
-	my @uses_to_sort = qw(
-		USES
-		USE_PYTHON
-		USE_XORG
+	my @macros_to_sort = qw(
+	    ONLY_FOR_ARCHS
+		NOT_FOR_ARCHS
 	);
-#	print "OK: checking to see if USES_* stuff is sorted.\n" if ($verbose);
-#	foreach my $sorted_use (@uses_to_sort) {
-#		while ($whole =~ /\n$sorted_use.?=\s*(.+)\n/g) {
-#			my $lineno = &linenumber($`);
-#			my $srex = $1;
-#			my @suses = sort(split / /, $srex);
-#			if (join(" ", @suses) ne $srex) {
-#				&perror("WARN", $file, $lineno, "the options to $sorted_use ".
-#					"are not sorted.  Please consider sorting them.");
-#			}
-#		}
-#	}
+	print "OK: checking to see if certain macros are sorted.\n" if ($verbose);
+	foreach my $sorted_macro (@macros_to_sort) {
+		while ($whole =~ /\n$sorted_macro.?=\s*(.+)\n/g) {
+			my $lineno = &linenumber($`);
+			my $srex = $1;
+			my @smacros = sort(split / /, $srex);
+			if (join(" ", @smacros) ne $srex) {
+				&perror("WARN", $file, $lineno, "the arguments to $sorted_macro ".
+					"are not sorted.  Please consider sorting them.");
+			}
+		}
+	}
 
 	#
 	# whole file: USE_GNOME=pkgconfig
@@ -2734,10 +2734,7 @@ DIST_SUBDIR EXTRACT_ONLY
 		foreach my $conflict (split ' ', $makevar{CONFLICTS}) {
 			`$pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
 			my $selfconflict = !$?;
-			if ($conflict !~ /(?:[<>=]|[]?*]$)/) {
-				&perror("WARN", "", -1, "Conflict \"$conflict\" specified too narrow. ".
-					"You should end it with a wildcard (-[0-9]*).");
-			} elsif ($conflict !~ /[<>=-][^-]*[0-9][^-]*$/) {
+			if ($conflict !~ /[<>=-][^-]*[0-9][^-]*$/) {
 				&perror("WARN", "", -1, "Conflict \"$conflict\" specified too broad. ".
 					"You should end it with a version number fragment (-[0-9]*).");
 			}
