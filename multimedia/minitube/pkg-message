@@ -5,11 +5,11 @@ To obtain a key:
 
 1. Create a new project at https://console.developers.google.com/
 
-2. Select newly created project, go to APIs & auth / APIs, select
-   the Youtube Data API and enable api.
+2. Select newly created project and go to Enable API,
+   go to APIs & auth / APIs, select the Youtube Data API
+   and click Enable.
 
-3. Go to APIs & auth / Credentials and create a new Public API
-   access key ("Browser key").
+3. Go to Credentials, click Create Credentials and choose API key.
 
 4. If you are going to build minitube from ports, set
    MINITUBE_GOOGLE_API_KEY=your_key in make.conf. If you use package
