@@ -88,8 +88,10 @@ fcgiwrap_postcmd() {
 }
 
 fcgiwrap_stop() {
-	fcgiwrap_pgrp=$(/bin/ps -o ppid= $(cat ${pidfile}))
-	if [ -z "$fcgiwrap_pgrp" ] || ! kill -0 $fcgiwrap_pgrp; then
+	if [ -s ${pidfile} ]; then
+		fcgiwrap_pgrp=$(/bin/ps -o ppid= $(cat ${pidfile}))
+	fi
+	if [ -z "$fcgiwrap_pgrp" -o "${fcgiwrap_pgrp:-0}" -le 1 ] || ! kill -0 $fcgiwrap_pgrp; then
 		[ -n "$rc_fast" ] && return 0
 		_run_rc_notrunning
 		return 1
