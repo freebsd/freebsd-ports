@@ -72,7 +72,7 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
 .if ${ARCH} == powerpc64
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
-USE_GCC=	yes
+USE_GCC=	5	# Cannot require ourselves, needs to be at least 4.9.
 .endif
 
 .if ${ARCH} == "armv6" || ${ARCH} == "aarch64"
