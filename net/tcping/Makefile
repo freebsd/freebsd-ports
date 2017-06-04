@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.linuxco.de/tcping/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 
-MAINTAINER=	dryice@freebsd.org
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Do a TCP connect to the given IP/port combination
 
 LICENSE=        LGPL3
