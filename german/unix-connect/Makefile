@@ -17,7 +17,7 @@ LICENSE=	GPLv2 BSD3CLAUSE
 
 MANUAL_PACKAGE_BUILD=	needs hostname
 
-USES=		fakeroot
+USES=		fakeroot gperf
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
