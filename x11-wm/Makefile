@@ -9,9 +9,9 @@
     SUBDIR += amiwm
     SUBDIR += antiwm
     SUBDIR += awesome
-    SUBDIR += awesome3
     SUBDIR += awesome-vicious
     SUBDIR += awesome2
+    SUBDIR += awesome3
     SUBDIR += bbkeys
     SUBDIR += bbpager
     SUBDIR += blackbox
