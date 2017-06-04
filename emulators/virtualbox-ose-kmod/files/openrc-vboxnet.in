@@ -1,0 +1,55 @@
+#!/sbin/openrc-run
+
+name="VirtualBox Networking"
+vboxnet_modules="vboxdrv vboxnetflt:ng_vboxnetflt vboxnetadp"
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+	local _k _m
+
+	for _m in ${vboxnet_modules}; do
+		_k=${_m%:*}
+		_m=${_m#*:}
+		if ! kldstat -q -m ${_m}; then
+			if ! kldload ${_k} > /dev/null 2>&1; then
+				warn "Can't load ${_k} module."
+				return 1
+			fi
+		fi
+	done
+
+	# initialize configured host-only interfaces
+	LD_LIBRARY_PATH=%%PREFIX%%/lib %%PREFIX%%/bin/VBoxManage list hostonlyifs >/dev/null
+
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	local _k _m _r
+
+	_r=
+	for _m in ${vboxnet_modules}; do
+		_r="${_m} ${_r}"
+	done
+	for _m in ${_r}; do
+		_k=${_m%:*}
+		_m=${_m#*:}
+		if kldstat -q -m ${_m}; then
+			if ! kldunload ${_k} > /dev/null 2>&1; then
+				warn "Can't unload ${_k} module."
+				return 1
+			fi
+		fi
+	done
+	eend 0
+}
+
+reload() {
+	ebegin "Reloading ${SVCNAME}"
+	eend 0
+}

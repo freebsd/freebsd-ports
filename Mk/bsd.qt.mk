@@ -319,7 +319,7 @@ _USE_QT5_ONLY=	3d buildtools canvas3d charts concurrent connectivity \
 				qdbus qdoc qdoc-data qev qml quick quickcontrols \
 				quickcontrols2 scxml sensors serialbus serialport \
 				sql-tds uiplugin uitools virtualkeyboard webchannel \
-				websockets widgets x11extras
+				webengine websockets widgets x11extras
 
 3d_PORT=		graphics/${_QT_RELNAME}-3d
 3d_LIB=		libQt${_QT_LIBVER}3DCore.so
@@ -586,6 +586,9 @@ webchannel_LIB=	libQt${_QT_LIBVER}WebChannel.so
 
 websockets_PORT=	www/${_QT_RELNAME}-websockets
 websockets_LIB=	libQt${_QT_LIBVER}WebSockets.so
+
+webengine_PORT=		www/${_QT_RELNAME}-webengine
+webengine_LIB=		libQt${_QT_LIBVER}WebEngine.so
 
 webkit_PORT=		www/${_QT_RELNAME}-webkit
 webkit_LIB=	libQt${_QT_LIBVER}WebKit.so

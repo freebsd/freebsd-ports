@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+
+depend()
+{
+	need localmount
+	use net
+	keyword -shutdown -stop
+}
+
+minio_config="${minio_config-%%PREFIX%%/etc/minio}"
+minio_env=${minio_env:=""}
+minio_disks="${minio_disks}"
+minio_address="${minio_address-:9000}"
+
+name=minio
+
+pidfile="/var/run/${name}.pid"
+
+# Parse environment variables
+for e in $minio_env
+do
+  env_args="$env_args -e $e"
+done
+
+start_stop_daemon_args="${env_args} -1 /var/log/minio.log -2 /var/log/minio.log -b -m"
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-C \"${minio_config}\" server --address=\"${minio_address}\" ${minio_disks}"

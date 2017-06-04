@@ -11,7 +11,7 @@ COMMENT=	Python library to pretty-print tabular data
 
 LICENSE=	GPLv3
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

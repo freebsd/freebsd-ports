@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable tinyproxy:
+# tinyproxy_config (path): Set to "%%PREFIX%%/etc/tinyproxy.conf" by default.
+
+name="tinyproxy"
+description="Sets up a proxy server"
+
+# Make sure the pidfile matches what's in the config file.
+: ${tinyproxy_pidfile="/var/run/tinyproxy.pid"}
+: ${tinyproxy_config="%%PREFIX%%/etc/tinyproxy.conf"}
+
+pidfile=${tinyproxy_pidfile}
+command=%%PREFIX%%/sbin/tinyproxy
+command_flags="-c $tinyproxy_config 2> /dev/null"
+
+depend() {
+  after syscons
+}

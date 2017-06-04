@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2015 The OpenRC Authors.
+# See the Authors file at the top-level directory of this distribution and
+# https://github.com/OpenRC/openrc/blob/master/AUTHORS
+#
+# This file is part of OpenRC. It is subject to the license terms in
+# the LICENSE file found in the top-level directory of this
+# distribution and at https://github.com/OpenRC/openrc/blob/master/LICENSE
+# This file may not be copied, modified, propagated, or distributed
+# except according to the terms contained in the LICENSE file.
+
+name="crashplan"
+crashplan_bin="%%PREFIX%%/share/crashplan/bin"
+command="${crashplan_bin}/CrashPlanEngine"
+pidfile="/var/run/CrashPlanEngine.pid"
+
+depend()
+{
+	need localmount
+	use net
+}
+
+start() {
+    local crashplan_poll_selector
+    crashplan_poll_selector="-Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollSelectorProvider"
+
+    /usr/bin/install -d /var/log/crashplan || exit 1
+
+    sed -E -e "s/-Djava.nio.channels.spi.SelectorProvider=[^[:blank:]]+//"      \
+           -e "s/SRV_JAVA_OPTS=\"/SRV_JAVA_OPTS=\"${crashplan_poll_selector} /" \
+           -e "s/GUI_JAVA_OPTS=\"/GUI_JAVA_OPTS=\"${crashplan_poll_selector} /" \
+        -i bak "${crashplan_bin}/run.conf" || exit 1
+
+    /usr/bin/cpuset -l 0 ${command} start
+    mark_service_started
+}

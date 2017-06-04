@@ -1,0 +1,91 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2015 The OpenRC Authors.
+# See the Authors file at the top-level directory of this distribution and
+# https://github.com/OpenRC/openrc/blob/master/AUTHORS
+#
+# This file is part of OpenRC. It is subject to the license terms in
+# the LICENSE file found in the top-level directory of this
+# distribution and at https://github.com/OpenRC/openrc/blob/master/LICENSE
+# This file may not be copied, modified, propagated, or distributed
+# except according to the terms contained in the LICENSE file.
+
+name="tor"
+
+: ${tor_enable="NO"}
+: ${tor_instances=""}
+: ${tor_conf="/usr/local/etc/tor/torrc"}
+: ${tor_user="_tor"}
+: ${tor_group="_tor"}
+: ${tor_pidfile="/var/run/tor/tor.pid"}
+: ${tor_datadir="/var/db/tor"}
+: ${tor_disable_default_instance="NO"}
+
+instance=${slave_instance}
+if [ -n "${instance}" ]; then
+  inst_def=${instance}
+  inst_name=${inst_def%%:*}
+  [ "${inst_name}" != "main" ] || err 1 "${name} instance can't be named 'main'"
+  inst_def=${inst_def#$inst_name}
+  if [ -n "$inst_def" ]; then
+    # extended instance: parameters are set explicitly
+    inst_def=${inst_def#:}
+    tor_conf=${inst_def%%:*}
+    inst_def=${inst_def#$tor_conf:}
+    tor_user=${inst_def%%:*}
+    inst_def=${inst_def#$tor_user:}
+    tor_group=${inst_def%%:*}
+    inst_def=${inst_def#$tor_group:}
+    tor_pidfile=${inst_def%%:*}
+    tor_datadir=${inst_def#$tor_pidfile:}
+    if [ -z "${tor_conf}" -o -z "${tor_user}" -o -z "${tor_group}" -o -z "${tor_pidfile}" -o -z "${tor_datadir}" ]; then
+      warn "invalid tor instance ${inst_name} settings: ${instance}"
+      exit 1
+    fi
+  else
+    # regular instance: default parameters are used
+    tor_conf=${tor_conf}@${inst_name}
+    tor_pidfile=${tor_pidfile}@${inst_name}
+    tor_datadir=${tor_datadir}/instance@${inst_name}
+  fi
+  if ! [ -r ${tor_conf} ]; then
+    warn "tor instance ${inst_name} config file ${tor_conf} doesn't exist or isn't readable"
+    warn "you can copy the sample config /usr/local/etc/tor/torrc.sample and modify it"
+    exit 1
+  fi
+  if ! [ -d ${tor_datadir} ]; then
+    mkdir -p ${tor_datadir} &&
+    chown ${tor_user}:${tor_group} ${tor_datadir} &&
+    chmod 0700 ${tor_datadir} &&
+    echo "${name}: created the instance data directory ${tor_datadir}"
+  fi
+fi
+
+if [ -z "${instance}" -a -n "${tor_instances}" ]; then
+  inst_only="$2"
+  inst_done=0
+  for i in ${tor_instances}; do
+    inst_name=${i%%:*}
+    if [ -z "${inst_only}" -o "${inst_name}" = "${inst_only}" ]; then
+      echo -n "${name} instance ${inst_name}: "
+      if ! slave_instance=${i} /usr/local/etc/rc.d/tor "$1"; then
+        exit_code=1
+      fi
+      inst_done=$((inst_done+1))
+    fi
+  done
+  if [ -z "${inst_only}" -o "${inst_only}" = "main" ]; then
+    checkyesno tor_disable_default_instance && return $exit_code
+    echo -n "${name} main instance: "
+  elif [ -n "${inst_only}" ]; then
+    [ $inst_done -gt 0 ] || err 1 "${name} instance '$inst_only' isn't defined"
+    return  $exit_code
+  fi
+fi
+
+required_files=${tor_conf}
+required_dirs=${tor_datadir}
+pidfile=${tor_pidfile}
+command="/usr/local/bin/${name}"
+command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir}"
+command_user="_tor"
+extra_commands="reload"

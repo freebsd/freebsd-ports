@@ -1,0 +1,53 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2015 The OpenRC Authors.
+# See the Authors file at the top-level directory of this distribution and
+# https://github.com/OpenRC/openrc/blob/master/AUTHORS
+#
+# This file is part of OpenRC. It is subject to the license terms in
+# the LICENSE file found in the top-level directory of this
+# distribution and at https://github.com/OpenRC/openrc/blob/master/LICENSE
+# This file may not be copied, modified, propagated, or distributed
+# except according to the terms contained in the LICENSE file.
+
+name="conserver"
+command="%%PREFIX%%/sbin/${name}"
+pidfile=/var/run/${name}.pid
+command_args="-d $conserver_flags"
+required_files=%%PREFIX%%/etc/${name}.cf
+extra_commands="reconnect reinit"
+
+depend()
+{
+	need localmount
+	keyword -shutdown
+}
+
+kill_cmd()
+{
+	_msg=$1
+	_sig=$2
+
+	if [ -z "$rc_pid" ]; then
+		if [ -n "$pidfile" ]; then
+			echo 1>&2 \
+		    "${name} not running? (check $pidfile)."
+		else
+			echo 1>&2 "${name} not running?"
+		fi
+		return 1
+	fi
+	echo "$_msg"
+	kill -${_sig:-HUP} $rc_pid
+	_return=$?
+	[ $_return -ne 0 ] && [ -z "$rc_force" ] && return 1
+}
+
+reconnect()
+{
+	kill_cmd "Try to reconnect all downed consoles." USR1
+}
+
+reinit()
+{
+	kill_cmd "Try to close and reopen all log files and downed connections." USR2
+}

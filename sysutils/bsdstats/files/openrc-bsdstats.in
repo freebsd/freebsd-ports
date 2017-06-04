@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name=bsdstats
+
+depend()
+{
+	need localmount
+	use net
+	keyword -stop -shutdown
+}
+
+start()
+{
+  ebegin "Starting $name"
+  start-stop-daemon -b -m -p /var/run/bsdstats.pid --start %%PREFIX%%/etc/periodic/monthly/300.statistics -- -shortdelay
+  eend $?
+}
+
+stop()
+{
+  return 0
+}

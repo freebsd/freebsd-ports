@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+# OpenRC script for SLiM
+# Copyright 2017 by Ken Moore <ken@ixsystems.com>
+# Available under 2-clause BSD license
+# Written May 9th, 2017
+
+name="slim"
+description="The Simple Login Manager (SLiM)"
+command=%%PREFIX%%/bin/slim
+command_args=""
+command_background="true"
+pidfile="/var/run/slim.pid"
+
+depend(){
+	provide xlogin
+	keyword -login -shutdown
+	need localmount dbus hald
+}
+

@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+#
+# tcpproxy_config (path):   Set to %%PREFIX%%/etc/tcpproxy.conf
+#                           by default.
+
+: ${tcpproxy_config="%%PREFIX%%/etc/tcpproxy.conf"}
+
+name="tcpproxy"
+pidfile=/var/run/${name}.pid
+command=%%PREFIX%%/bin/${name}
+command_args="-P $pidfile -c $tcpproxy_config -u _tcpproxy -g _tcpproxy"
+
+depend()
+{
+	need localmount
+	use net
+	keyword -shutdown -stop
+}

@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+
+command=/usr/local/bin/musicpd
+command_args=/usr/local/etc/musicpd.conf
+
+start_pre()
+{
+        if [ ! -d /var/mpd ] ; then
+           mkdir /var/mpd
+           chown mpd:mpd /var/mpd
+          if [ ! -d /var/mpd/music ] ; then
+             mkdir /var/mpd/music
+             chown mpd:mpd /var/mpd/music
+             if [ ! -d /var/mpd/.mpd ] ; then
+                mkdir /var/mpd/.mpd
+                chown mpd:mpd /var/mpd/.mpd
+                if [ ! -d /var/mpd/.mpd/playlists ] ; then
+                   mkdir /var/mpd/.mpd/playlists
+                   chown mpd:mpd /var/mpd/.mpd/playlists
+                   if [ ! -f /var/mpd/.mpd/log ] ; then
+                      touch /var/mpd/.mpd/log
+                      chown mpd:mpd /var/mpd/.mpd/log
+                fi
+              fi
+            fi
+          fi
+        fi
+}

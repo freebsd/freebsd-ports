@@ -22,7 +22,7 @@ XHEADER_DESC=		X-Tinyproxy header
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--program-transform-name=""
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	${PORTNAME}
+USE_OPENRC_SUBR=${PORTNAME}
 USES=		autoreconf gmake
 
 REVERSE_CONFIGURE_ENABLE=	reverse

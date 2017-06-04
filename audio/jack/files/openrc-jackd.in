@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+
+# Note that %%...%% are substituted by the FreeBSD ports
+# system
+# (see https://www.freebsd.org/doc/en/books/porters-handbook/rc-scripts.html)
+
+# Initialize variables if they are not already set.
+: ${jackd_user="root"}
+: ${jackd_args="-r -doss -r44100 -p1024 -n3 -w16"}
+
+# These assignments are sufficient for openrc to build a service.
+# See: `man openrc-run`
+
+name=jackd
+BINARY=%%PREFIX%%/bin/jackd
+PID=/var/run/jackd.pid
+
+# Service dependencies
+depend()
+{
+	need localmount
+	after network
+}
+
+start() {
+        ebegin "Starting ${name}"
+        start-stop-daemon --start --pidfile "${PID}" \
+                --exec "${BINARY}" -b -m -- ${jackd_args}
+        eend $?
+}
+
+stop() {
+        ebegin "Stopping ${name}"
+        start-stop-daemon --stop --pidfile "${PID}"
+        eend $?
+}
+

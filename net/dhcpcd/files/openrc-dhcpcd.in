@@ -1,0 +1,198 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2015 The OpenRC Authors.
+# See the Authors file at the top-level directory of this distribution and
+# https://github.com/OpenRC/openrc/blob/master/AUTHORS
+#
+# This file is part of OpenRC. It is subject to the license terms in
+# the LICENSE file found in the top-level directory of this
+# distribution and at https://github.com/OpenRC/openrc/blob/master/LICENSE
+# This file may not be copied, modified, propagated, or distributed
+# except according to the terms contained in the LICENSE file.
+
+command=%%PREFIX%%/sbin/dhcpcd
+command_args="-q"
+
+dhcpcd=${RC_SVCNAME##*.}
+if [ -n "$dhcpcd" -a "$dhcpcd" != "dhcpcd" ]; then
+        dhcpcd_device="$dhcpcd"
+fi
+name="DHCP Client Daemon"
+[ -n "$dhcpcd_device" ] && name="$name ($dhcpcd_device)"
+
+
+depend()
+{
+	keyword -stop -shutdown
+}
+
+uniqify()
+{
+	local result= i=
+	for i; do
+		case " $result " in
+		*" $i "*);;
+		*) result="$result $i";;
+		esac
+	done
+	echo "${result# *}"
+}
+
+reverse()
+{
+	local result= i=
+	for i; do
+		result="$i $result"
+	done
+	echo "${result# *}"
+}
+
+sys_interfaces()
+{
+	ifconfig -l$1
+}
+
+auto_interfaces()
+{
+	local ifs= c= f=
+
+	for f in /etc/ifconfig.*; do
+		[ -f "$f" ] && printf "%s" "${f##*.} "
+	done
+	for f in /etc/ip.*; do
+		[ -f "$f" ] && printf "%s" "${f##*.} "
+	done
+	echo
+}
+
+interfaces()
+{
+	uniqify $(sys_interfaces "$@") $interfaces $(auto_interfaces)
+}
+
+stop_pre()
+{
+	# When shutting down, kill dhcpcd but preserve network
+	# We do this as /var/run/dhcpcd could be cleaned out when we
+	# return to multiuser.
+	if yesno $RC_GOINGDOWN; then
+		: ${stopsig:=SIGKILL}
+	fi
+}
+
+check_dhcpcd()
+{
+	# Get our ifconfig settings
+	have_ipv4="false"
+	have_ipv6="false"
+
+        int="$1"
+	intv=$(shell_var "$int")
+	eval upcmd=\$ifup_$intv
+	for func in ip ifconfig; do
+		eval cmd=\$${func}_$intv
+		if [ -n "$cmd" -o -f /etc/"$func.$int" ]; then
+			cf=/etc/"$func.$int"
+			break
+		fi
+	done
+
+	echo $cmd | grep -q "DHCP"
+	if [ $? -eq 0 ] ; then have_ipv4="true"; fi
+
+	echo $cmd | grep -q "IPV6"
+	if [ $? -eq 0 ] ; then have_ipv6="true"; fi
+
+	echo $cmd | grep -q "ALL"
+	if [ $? -eq 0 ] ; then have_ipv4="true"; have_ipv6="true"; fi
+
+
+	# This is a v4 only request?
+	if [ "$have_ipv6" = "false" ] ; then
+		command_args="${command_args} -4"
+	fi
+
+	# This is a v6 only request?
+	if [ "$have_ipv4" = "false" ] ; then
+		command_args="${command_args} -6"
+	fi
+
+	# Is this device eben enabled for DHCP?
+	if [ "$have_ipv4" != "true" -a "$have_ipv6" != "true" ] ; then
+		mark_service_inactive
+		return 1
+	fi
+
+        command_args="${command_args} $int"
+	export command_args
+
+	# Determine the pidfile
+ 	export pidfile=$(${command} -P $command_args)
+
+	return 0
+
+}
+
+start()
+{
+	if [ ! -e /etc/rc.conf ] ; then return 1 ; fi
+
+	if [ -n "$dhcpcd_device" ] ; then
+		check_dhcpcd "$dhcpcd_device"
+		if [ $? -ne 0 ] ; then return 0; fi
+		if [ -z "$OPENRC_SILENT" ] ; then
+			ebegin "Starting $name"
+		fi
+		start-stop-daemon --start --exec $command -m -b -p $pidfile -- $command_args
+		stat=$?
+		if [ -z "$OPENRC_SILENT" ] ; then
+			eend $stat
+		fi
+		return $stat
+	fi
+	
+        # Spawn the network sub-services
+	for int in $(interfaces); do
+		check_dhcpcd "$int"
+		if [ $? -ne 0 ] ; then continue ; fi
+
+		# Skip devices not active
+		ifconfig $int | grep -q "no carrier"
+		if [ $? -eq 0 ] ; then continue ; fi
+
+		# We have a device that needs dhcpcd
+		export OPENRC_SILENT=TRUE
+		ln -fs %%PREFIX%%/etc/init.d/dhcpcd %%PREFIX%%/etc/init.d/dhcpcd.${int}
+		/sbin/service dhcpcd.${int} start
+	done
+	return 0
+}
+
+
+stop()
+{
+	if [ -n "$dhcpcd_device" ] ; then
+		check_dhcpcd "$dhcpcd_device"
+		if [ $? -ne 0 ] ; then return 0; fi
+		if [ -z "$OPENRC_SILENT" ] ; then
+			ebegin "Stopping $name"
+		fi
+		start-stop-daemon --stop --exec $command -p $pidfile
+		stat=$?
+		if [ -z "$OPENRC_SILENT" ] ; then
+			eend $stat
+		fi
+		return $stat
+	fi
+	
+        # Spawn the network sub-services
+	for int in $(interfaces); do
+		check_dhcpcd "$int"
+		if [ $? -ne 0 ] ; then continue ; fi
+
+		# We have a device that needs dhcpcd
+		export OPENRC_SILENT=TRUE
+		ln -fs %%PREFIX%%/etc/init.d/dhcpcd %%PREFIX%%/etc/init.d/dhcpcd.${int}
+		/sbin/service dhcpcd.${int} stop
+	done
+	return 0
+}

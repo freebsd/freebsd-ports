@@ -1,0 +1,203 @@
+#!/sbin/openrc-run
+# OpenRC script for the apache web server
+
+name="apache24"
+description="The Apache web server (version 2.4)"
+command="%%PREFIX%%/sbin/httpd"
+_pidprefix="/var/run/httpd"
+pidfile="${_pidprefix}.pid"
+required_files=%%PREFIX%%/etc/apache24/httpd.conf
+envvars="%%PREFIX%%/sbin/envvars"
+
+depend(){
+	provide apache
+	keyword -shutdown
+	need localmount sshd
+}
+
+#
+# Add the following lines to /etc/rc.conf to customize apache24:
+# apache24_profiles (str):     Set to "" by default.
+#                              Define your profiles here.
+# apache24limits_enable (bool):Set to "NO" by default.
+#                             Set it to yes to run `limits $limits_args`
+#                             just before apache starts.
+# apache24_flags (str):        Set to "" by default.
+#                             Extra flags passed to start command.
+# apache24limits_args (str):   Default to "-e -C daemon"
+#                             Arguments of pre-start limits run.
+# apache24_http_accept_enable (bool): Set to "NO" by default.
+#                             Set to yes to check for accf_http kernel
+#                             module on start up and load if not loaded.
+# apache24_fib (str):	      Set an altered default network view for apache
+# apache24_configcheck_disable (bool): Set to "YES" to disable sanity check on startup
+
+extra_commands="configtest"
+extra_started_commands="gracefulstop"
+
+#Set the default values for variables as needed
+[ -z "$apache24_enable" ]       && apache24_enable="NO"
+[ -z "$apache24limits_enable" ] && apache24limits_enable="NO"
+[ -z "$apache24limits_args" ]   && apache24limits_args="-e -C daemon"
+[ -z "$apache24_http_accept_enable" ] && apache24_http_accept_enable="NO"
+[ -z "$apache24_configcheck_disable" ] && apache24_configcheck_disable="NO"
+
+# === Define the internal functions/simplifications ===
+apache24_accf()
+{
+  if yesno ${apache24_http_accept_enable} ; then
+    /sbin/kldstat -qm accf_http || /sbin/kldload accf_http || return ${?}
+    /sbin/kldstat -qm accf_data || /sbin/kldload accf_data || return ${?}
+  else
+    apache24_flags="${apache24_flags} -DNOHTTPACCEPT"
+  fi
+}
+
+
+
+apache24_graceful() {
+
+	if ! yesno ${apache24_configcheck_disable}
+	then
+		configtest
+	fi
+
+	einfo "Performing a graceful restart"
+	${command} ${apache24_flags} -k graceful
+}
+
+apache24_precmd()
+{
+	if ! yesno ${apache24_configcheck_disable}
+	then
+		configtest
+	fi
+
+	if yesno ${apache24limits_enable}
+	then
+		eval `/usr/bin/limits ${apache24limits_args}` 2>/dev/null
+	else
+		return 0
+        fi
+
+}
+
+apache24_checkfib() {
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
+
+	$SYSCTL net.fibs >/dev/null 2>&1 || return 0
+
+	apache24_fib=${apache24_fib:-"NONE"}
+	if [ "x$apache24_fib" != "xNONE" ]
+	then
+		command="/usr/sbin/setfib -F ${apache24_fib} ${command}"
+	else
+		return 0
+	fi
+}
+
+# === Define the external/OpenRC functions
+configtest()
+{
+	if test -f ${apache24_envvars}
+	then
+		. ${apache24_envvars}
+	fi
+
+	einfo "Performing sanity check on apache24 configuration:"
+	${command} ${apache24_flags} -t
+}
+
+gracefulstop() {
+
+	if ! yesno ${apache24_configcheck_disable}
+	then
+		configtest
+	fi
+
+	einfo "Performing a graceful stop"
+	${command} ${apache24_flags} -k graceful-stop
+         #Now run the stop function for OpenRC to clean anything else up
+        service apache24 stop
+}
+
+start_pre() {
+	apache24_checkfib
+	apache24_precmd
+}
+
+# === Define the script-startup routine ===
+
+#Detect/modify the internal variables for individual profiles
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${apache24_profiles}" != "x" ]; then
+		pidfile="${_pidprefix}.${profile}.pid"
+		apache24_configfile="\${apache24_${profile}_configfile:-}"
+		if [ "x${apache24_configfile}" = "x" ]; then
+			eerror "You must define a configuration file (apache24_${profile}_configfile)"
+			exit 1
+		fi
+		required_files="${apache24_configfile}"
+		apache24_enable="\${apache24_${profile}_enable:-${apache24_enable}}"
+		apache24_flags="\${apache24_${profile}_flags:-${apache24_flags}}"
+		apache24_http_accept_enable="\${apache24_${profile}_http_accept_enable:-${apache24_http_accept_enable}}"
+		apache24limits_enable="\${apache24limits_${profile}_enable:-${apache24limits_enable}}"
+		apache24limits_args="\${apache24limits_${profile}_args:-${apache24limits_args}}"
+		apache24_fib="\${apache24_${profile}_fib:-${apache24_fib}}"
+		apache24_configcheck_disable="\${apache24_${profile}_configcheck_disable:-${apache24_configcheck_disable}}"
+		command="\${apache24_${profile}_command:-${command}}"
+		pidfile="\${apache24_${profile}_pidfile:-${pidfile}}"
+		apache24_envvars="\${apache24_${profile}_envvars:-${envvars}}"
+		apache24_flags="-f ${apache24_configfile} -c \"PidFile ${pidfile}\" ${apache24_flags}"
+	else
+		ewarn "$0: extra argument ignored"
+	fi
+else
+	apache24_envvars=${envvars}
+	if [ "x${apache24_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${apache24_profiles}; do
+			_enable="\${apache24_${profile}_enable}"
+			case "x${_enable:-${apache24_enable}}" in
+			x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+				continue
+				;;
+			x[Yy][Ee][Ss])
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=apache24_enable
+				else
+					_var=apache24_"${profile}"_enable
+				fi
+				ewarn "Bad value" \
+				    "'${_enable:-${apache24_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			einfo "===> apache24 profile: ${profile}"
+			service apache24 $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+if [ "${RC_CMD}" != "stop" ] ; then
+	apache24_accf
+fi
+
+if [ "${RC_CMD}" = "restart" ] ; then
+	#replace the restart routine with a graceful restart instead
+	apache24_graceful
+	return $?
+fi

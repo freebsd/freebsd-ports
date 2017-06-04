@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+# OpenRC script for lightdm
+# Copyright 2017 by Ken Moore <ken@ixsystems.com>
+# Available under 2-clause BSD license
+# Written May 9th, 2017
+
+name="lightdm"
+description="The light desktop manager (lightdm)"
+supervisor="supervise-daemon"
+command=%%PREFIX%%/bin/lightdm
+command_args=""
+pidfile="/var/run/lightdm.pid"
+
+depend(){
+	provide xlogin
+	keyword -login -shutdown
+	need localmount dbus moused cleanvar
+}
+
+start_pre{
+	export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
+}

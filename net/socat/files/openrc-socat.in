@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+# Copyright (c) 2007-2015 The OpenRC Authors.
+# See the Authors file at the top-level directory of this distribution and
+# https://github.com/OpenRC/openrc/blob/master/AUTHORS
+#
+# This file is part of OpenRC. It is subject to the license terms in
+# the LICENSE file found in the top-level directory of this
+# distribution and at https://github.com/OpenRC/openrc/blob/master/LICENSE
+# This file may not be copied, modified, propagated, or distributed
+# except according to the terms contained in the LICENSE file.
+
+name="socat"
+rcvar=socat_enable
+
+: ${socat_enable="NO"}
+
+start_precmd="socat_prestart"
+pidfile=/var/run/socat.pid
+procname="/usr/local/bin/socat"
+command=/usr/sbin/daemon
+command_args=" -f -p ${pidfile} ${procname} ${socat_flags}"
+
+socat_prestart()
+{
+        # socat_flags gets applied too early if we don't do this.
+        # I didn't want to force people to update their rc.conf files
+        # and change the socat_flags to something else.
+        rc_flags=""
+}

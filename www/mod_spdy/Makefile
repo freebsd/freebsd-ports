@@ -98,6 +98,10 @@ BROKEN_SSL_REASON=	please use www/apache24 with mod_http2
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT:Mlibressl*} || exists(/usr/lib/libtls.so)
+IGNORE=		${PORTNAME} is incompatible with LibreSSL, please use www/apache24 with mod_http2
+.endif
+
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
 CXXFLAGS+=	-Wno-unused-local-typedef
 .endif

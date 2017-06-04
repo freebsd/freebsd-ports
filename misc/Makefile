@@ -466,6 +466,8 @@
     SUBDIR += toilet
     SUBDIR += tpp
     SUBDIR += translate
+    SUBDIR += trueos-meta-hunspell
+    SUBDIR += trueos-toolchain
     SUBDIR += ttyrec
     SUBDIR += tudu
     SUBDIR += tvbrowser
