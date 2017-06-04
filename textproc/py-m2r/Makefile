@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	m2r
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	textproc devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,12 +11,14 @@ MAINTAINER=	john@saltant.com
 COMMENT=	Convert markdown formatted file with reST markup to reST format
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mistune>0:textproc/py-mistune \
 		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils
 
+# Actually 2.7,3.4+
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
