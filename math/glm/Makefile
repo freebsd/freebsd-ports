@@ -21,7 +21,7 @@ NO_BUILD=	yes
 USES=		cmake:outsource pkgconfig
 
 .ifndef MAINTAINER_MODE
-CMAKE_ARGS=	-DGLM_TEST_ENABLE:BOOL=OFF -DCMAKE_INSTALL_PKG_CONFIG_DIR:PATH="${PREFIX}/libdata/pkgconfig"
+CMAKE_ARGS=	-DGLM_TEST_ENABLE:BOOL=OFF
 .endif
 
 .include <bsd.port.mk>
