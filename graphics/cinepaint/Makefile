@@ -48,7 +48,7 @@ CONFIGURE_ENV+=	ac_cv_path_OY_CONFIG=no
 .endif
 
 .if ${PORT_OPTIONS:MPRINT}
-LIB_DEPENDS+=	libgutenprint.so:print/gutenprint-base
+LIB_DEPENDS+=	libgutenprint.so:print/gutenprint
 PLIST_SUB+=	PRINT=""
 .else
 CONFIGURE_ARGS+=	--disable-print
