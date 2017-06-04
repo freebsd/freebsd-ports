@@ -154,7 +154,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Xapian has been updated to 1.4.3. The 1.2.x series has been renamed with
   suffix "12". The Perl binding for Xapian 1.4.x is databases/p5-Xapian.
-  Since www/ikiwiki depends on Search::Xapian, it stays with Xapian 1.2. 
+  Since www/ikiwiki depends on Search::Xapian, it stays with Xapian 1.2.
   If you would like to keep using 1.2, please run the following commands
   to update pkg database:
 
