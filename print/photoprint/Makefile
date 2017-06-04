@@ -12,7 +12,7 @@ COMMENT=	Utility to print multiple images per sheet
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcups.so:print/cups \
-		libgutenprint.so:print/gutenprint-base \
+		libgutenprint.so:print/gutenprint \
 		liblcms.so:graphics/lcms \
 		libnetpbm.so:graphics/netpbm \
 		libpng.so:graphics/png \
