@@ -4,6 +4,7 @@
     COMMENT = Multimedia software
 
     SUBDIR += 2mandvd
+    SUBDIR += QtAV
     SUBDIR += ab25
     SUBDIR += abby
     SUBDIR += acidrip
@@ -352,7 +353,6 @@
     SUBDIR += qt5-phonon4-designerplugin
     SUBDIR += qt5-phonon4-gstreamer
     SUBDIR += qt5-phonon4-vlc
-    SUBDIR += QtAV
     SUBDIR += quark
     SUBDIR += quodlibet
     SUBDIR += quvi
