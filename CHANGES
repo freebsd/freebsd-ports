@@ -14,7 +14,7 @@ All ports committers are allowed to commit to this file.
 AUTHOR:	kwm@FreeBSD.org
 
   New USES: meson, to handle properly the meson building system.
-  
+
 20170313:
 AUTHOR: tijl@FreeBSD.org
 
