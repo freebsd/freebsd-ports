@@ -24,8 +24,12 @@ bin/groonga-benchmark
 %%ETCDIR%%/httpd/win-utf
 %%ETCDIR%%/synonyms.tsv
 include/groonga/groonga.h
+include/groonga/groonga.hpp
 include/groonga/groonga/accessor.h
 include/groonga/groonga/array.h
+include/groonga/groonga/arrow.h
+include/groonga/groonga/arrow.hpp
+include/groonga/groonga/cache.h
 include/groonga/groonga/column.h
 include/groonga/groonga/command.h
 include/groonga/groonga/config.h
@@ -63,6 +67,8 @@ include/groonga/groonga/windows.h
 include/groonga/groonga/windows_event_logger.h
 include/groonga/groonga/window_function.h
 %%RUBY%%lib/groonga/plugins/expression_rewriters/optimizer.rb
+lib/groonga/plugins/functions/index_column.a
+lib/groonga/plugins/functions/index_column.so
 lib/groonga/plugins/functions/number.a
 lib/groonga/plugins/functions/number.so
 lib/groonga/plugins/functions/string.a
