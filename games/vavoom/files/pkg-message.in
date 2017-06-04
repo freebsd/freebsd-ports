@@ -17,4 +17,6 @@ need VORBIS (build options).
 Refer to %%DOCSDIR%%/vavoom.txt for other options such as 
 game selection, network options and so on.
 
+If you enabled LAUNCHER (build option), run "vlaunch" for a launcher GUI.
+
 ==============================================================================
