@@ -19,11 +19,12 @@ LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis \
 		${PYTHON_PKGNAMEPREFIX}soya3d>0:graphics/py-soya3d \
 		${PYTHON_PKGNAMEPREFIX}tofu>0:net/py-tofu \
-		${PYTHON_PKGNAMEPREFIX}cerealizer>0:security/py-cerealizer
+		${PYTHON_PKGNAMEPREFIX}cerealizer>0:security/py-cerealizer \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
 NO_ARCH=	yes
 
-USES=		gettext python tar:bzip2 twisted
+USES=		gettext python tar:bzip2
 USE_GL=		glew
 USE_PYTHON=	autoplist distutils
 
