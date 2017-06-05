@@ -25,16 +25,11 @@ TEST_DEPENDS=	p5-Test-Deep>0:devel/p5-Test-Deep \
 		p5-Test-Requires>0:devel/p5-Test-Requires \
 		p5-Test-Warnings>=0.009:devel/p5-Test-Warnings
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	%%SITE_PERL%%/Test/CleanNamespaces.pm \
 		%%PERL5_MAN3%%/Test::CleanNamespaces.3.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001014:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
