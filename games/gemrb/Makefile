@@ -3,7 +3,7 @@
 
 PORTNAME=	gemrb
 PORTVERSION=	0.8.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION:.1=}%20Sources
 
@@ -24,7 +24,7 @@ OPTIONS_SUB=	yes
 OPENGL_USE=	gl=gl,glu,glew
 OPENGL_CMAKE_ON=	-DUSE_OPENGL=1
 
-USES=		cmake openal:al,alut python shebangfix iconv localbase
+USES=		cmake:outsource openal:al,alut python shebangfix iconv localbase
 SHEBANG_FILES=	admin/extend2da.py
 USE_SDL=	sdl2 mixer2 ttf2
 USE_LDCONFIG=	yes
