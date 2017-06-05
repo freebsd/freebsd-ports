@@ -1,0 +1,12 @@
+The minitar (previously called Archive::Tar::Minitar) library is a pure-Ruby
+library that provides the ability to deal with POSIX tar(1) archive files.
+
+This is release 0.6+, providing a number of bug fixes including a directory
+traversal vulnerability, CVE-2016-10173. This release starts the migration and
+modernization of the code:
+- the minitar command-line program has been separated into the minitar-cli gem;
+  and
+- the archive-tar-minitar gem now points to the minitar and minitar-cli gems and
+  discourages its installation.
+
+WWW: https://github.com/halostatue/minitar
