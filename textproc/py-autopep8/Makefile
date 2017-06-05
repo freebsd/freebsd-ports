@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	automatically formats Python code to conform to the PEP 8 style guide
+COMMENT=	Automatically formats Python code to conform to the PEP 8 style guide
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
