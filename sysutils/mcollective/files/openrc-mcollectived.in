@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mcollectived_flags (str):	Set as needed.  Empty by default.
+
+name="mcollectived"
+command="%%PREFIX%%/sbin/mcollectived"
+
+depend() {
+	keyword -shutdown
+}

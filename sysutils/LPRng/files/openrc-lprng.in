@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+
+name="lprng"
+command=%%PREFIX%%/sbin/lpd
+required_files="/etc/printcap %%PREFIX%%/etc/lpd.conf %%PREFIX%%/etc/lpd.perms"
+
+start_pre() {
+	%%PREFIX%%/sbin/checkpc -f
+}

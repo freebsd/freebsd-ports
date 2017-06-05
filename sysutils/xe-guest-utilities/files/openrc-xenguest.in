@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=xenguest
+
+autoxen=`sysctl kern.vm_guest`
+autoxen="${autoxen#kern.vm_guest: }"
+
+pidfile=/var/run/xe-daemon.pid
+command="%%PREFIX%%/sbin/xe-daemon"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown -jail
+}

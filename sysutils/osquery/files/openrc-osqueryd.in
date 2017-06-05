@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name=osqueryd
+command=%%PREFIX%%/sbin/osqueryd
+
+osqueryd_flags=${osqueryd_flags-""}
+osqueryd_config=${osqueryd_config-"%%PREFIX%%/etc/osquery.conf"}
+required_files=${osqueryd_config}
+command_args="--pidfile /var/run/osqueryd.pid --disable_watchdog --daemonize=true --database_path /var/db/osquery/osqueryd --extensions_socket /var/run/osquery.em --extensions_autoload %%PREFIX%%/etc/osquery.extensions --modules_autoload %%PREFIX%%/etc/osquery.modules --tls_server_certs /etc/ssl/cert.pem --flagfile %%PREFIX%%/etc/osquery.flags --config_path=${osqueryd_config}"
+extra_commands="configtest"
+
+configtest() {
+    ${command} ${osqueryd_flags} --config_check --config_path=${osqueryd_config} --verbose
+}
+
+start_pre() {
+    install -d /var/db/osquery
+}
+
+depend() {
+	keyword -shutdown
+}

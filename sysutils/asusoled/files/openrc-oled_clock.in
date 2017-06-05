@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+oled_clock_flags=${oled_clock_flags-"-R -i -w -P 1"}
+
+name=oled_clock
+
+oled_clock_pidfile="/var/run/${name}.pid"
+oled_clock_command="LANG=en_US.UTF-8 /bin/date '+%a %b %d %R %Y'"
+command="%%PREFIX%%/sbin/asusoled"
+command_args="${oled_clock_flags} -D p ${oled_clock_pidfile} -c ${oled_clock_command}"
+
+stop_pre() {
+	${command} -k -p ${oled_clock_pidfile}
+	${command} -d
+}
+
+depend() {
+	keyword -shutdown -jail
+}

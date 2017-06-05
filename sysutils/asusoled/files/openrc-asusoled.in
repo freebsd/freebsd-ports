@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name=asusoled
+
+asusoled_flags=${asusoled_flags-"-f %%PREFIX%%/share/asusoled/asus.png"}
+asusoled_command=${asusoled_command-""}
+command="%%PREFIX%%/sbin/asusoled"
+command_args="${asusoled_flags} -c ${asusoled_command}"
+
+start() {
+	if test ! -z "${asusoled_command}"
+	then
+	    ${command} ${asusoled_flags} -c "${asusoled_command}"
+	else
+	    ${command} ${asusoled_flags}
+	fi
+}
+
+stop_post() {
+	$command -k -p ${asusoled_pidfile}
+	$command -d
+}

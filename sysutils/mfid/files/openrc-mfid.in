@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=mfid
+
+required_files=/dev/mfi0
+
+raid_alert_mailto=${mfid_alert_mailto:-"root@localhost"}
+command=%%PREFIX%%/sbin/mfid
+command_args=${raid_alert_mailto}
+
+depend() {
+	keyword -shutdown -jail
+}

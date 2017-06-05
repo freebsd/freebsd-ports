@@ -1,0 +1,36 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable ataidle:
+#
+# ataidle_devices: list of devices on which to run ataidle
+# ataidle_adaX: parameters to pass to ataidle(8)
+
+# Example:
+# Put the disks ada0, ada1 and ada2 into Standby mode after 60 minutes:
+#
+# ataidle_devices="ada0 ada1 ada2"
+# ataidle_ada0="-S 60"
+# ataidle_ada1="-S 60"
+# ataidle_ada2="-S 60"
+
+name="ataidle"
+command=%%PREFIX%%/sbin/ataidle
+
+start() {
+	if [ -n "${ataidle_device}" -a -z "${ataidle_devices}" ]; then
+		ewarn "old ataidle rc settings found"
+		ataidle_devices=${ataidle_device}
+	fi
+
+	if [ -n "${ataidle_devices}" ]; then
+		for i in ${ataidle_devices}; do
+			eval ataidle_args=\$ataidle_${i}
+			enfo "ataidle: configuring device /dev/${i}"
+			${command} ${ataidle_args} /dev/${i}
+		done
+	fi
+}
+
+depend() {
+	keyword -shutdown
+}
