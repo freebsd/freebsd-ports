@@ -30,6 +30,7 @@ BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-String-ToIdentifier-EN>=0.05:textproc/p5-String-ToIdentifier-EN \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-namespace-clean>=0.20:devel/p5-namespace-clean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Config-General>=0:devel/p5-Config-General \
 		p5-DBD-SQLite>=1.29:databases/p5-DBD-SQLite \
 		p5-DBIx-Class-IntrospectableM2M>=0:databases/p5-DBIx-Class-IntrospectableM2M \
@@ -50,12 +51,4 @@ MYSQL_USE=		MYSQL=yes
 PGSQL_USES=		pgsql
 SQLITE_USES=		sqlite
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.40:lang/p5-Scalar-List-Utils
-.endif
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
