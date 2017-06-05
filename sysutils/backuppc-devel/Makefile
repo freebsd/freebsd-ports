@@ -13,7 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 EXTRACT_DEPENDS=	p5-BackupPC-XS>=0.53:sysutils/p5-BackupPC-XS
-RUN_DEPENDS=	p5-File-Listing>=0:sysutils/p5-File-Listing \
+RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
+		p5-File-Listing>=0:sysutils/p5-File-Listing \
 		p5-BackupPC-XS>=0.53:sysutils/p5-BackupPC-XS
 
 CONFLICTS=	backuppc-[0-9]* backuppc4-[0-9]*
@@ -95,10 +96,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/backuppc
 	${CP} ${WRKSRC}/configure.pl ${STAGEDIR}${PREFIX}/libexec/backuppc/configure.pl
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
