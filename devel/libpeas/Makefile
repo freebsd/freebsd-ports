@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpeas
-PORTVERSION=	1.16.0
+PORTVERSION=	1.20.0
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -10,6 +10,9 @@ DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Next evolution of the Gedit plugins engine
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 
@@ -23,7 +26,7 @@ PORTSCOUT=	ignore:1
 .endif
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gtk30 intlhack introspection:build
+USE_GNOME=	cairo gtk30 intlhack introspection
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
@@ -34,14 +37,14 @@ CONFIGURE_ARGS+=--disable-glade-catalog
 PLIST=          ${.CURDIR}/pkg-plist
 
 .if ${LIBPEAS_SLAVE} == python2
-USES+=		python:2
+USES+=		python:-2.7
 USE_GNOME+=	pygobject3
 .else
 CONFIGURE_ARGS+=	--disable-python2
 .endif
 
 .if ${LIBPEAS_SLAVE} == python3
-USES+=		python:3
+USES+=		python:3.3+
 USE_GNOME+=	py3gobject3
 .else
 CONFIGURE_ARGS+=	--disable-python3

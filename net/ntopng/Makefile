@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntopng
-PORTVERSION=	2.4.2017.05.12
+PORTVERSION=	3.0.2017.06.05
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -16,19 +16,23 @@ LIB_DEPENDS=	librrd.so:databases/rrdtool \
 		libzmq.so:net/libzmq4 \
 		libcurl.so:ftp/curl \
 		libndpi.so:net/ndpi \
-		libjson-c.so:devel/json-c
+		libjson-c.so:devel/json-c \
+		libsodium.so:security/libsodium
+BUILD_DEPENDS=  bash:shells/bash
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=	 	autoreconf cpe gmake libtool localbase mysql pathfix pkgconfig sqlite
+USES=	 	autoreconf cpe gmake libtool localbase mysql pathfix pkgconfig \
+		shebangfix sqlite ssl
 SUB_FILES=	ntopng-geoipupdate.sh pkg-deinstall
+SHEBANG_FILES=	httpdocs/misc/ntopng-add-user.sh
 
 USERS=		ntopng
 GROUPS=		ntopng
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	00c19bd
+GH_TAGNAME=	3de9516
 
 CPE_VENDOR=	ntop
 
@@ -44,6 +48,8 @@ NLS_USES=	gettext
 USE_RC_SUBR=	ntopng
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/configure.seed
 	cd ${WRKSRC} && ${SH} autogen.sh
 
 post-install:

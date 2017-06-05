@@ -56,8 +56,6 @@ share/applications/gemrb.desktop
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/en/CMakeFiles/CMakeDirectoryInformation.cmake
-%%PORTDOCS%%%%DOCSDIR%%/en/CMakeFiles/progress.marks
 %%PORTDOCS%%%%DOCSDIR%%/en/CheatKeys.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/CodingStyle.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Engine/Charcolors.txt
@@ -77,7 +75,6 @@ share/applications/gemrb.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/reserved_functions.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/GUIScript/start.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/en/Release.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/HPBARB.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/ability.txt
@@ -135,7 +132,6 @@ share/applications/gemrb.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/wssingle.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/wstwohnd.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/wstwowpn.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/cmake_install.cmake
 %%PORTDOCS%%%%DOCSDIR%%/en/default_ini.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/gemrb_ini.txt
 %%DATADIR%%/GUIScripts/Actor.py
