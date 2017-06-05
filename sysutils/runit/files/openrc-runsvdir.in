@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable `runsvdir':
+#
+#runsvdir_path="/service"	(default: %%SERVICE_DIR%%)
+
+PATH=/command:%%PREFIX%%/sbin:%%PREFIX%%/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+name=runsvdir
+
+: ${runsvdir_path=%%SERVICE_DIR%%}
+
+command="%%PREFIX%%/sbin/runsvdir"
+command_args=${runsvdir_path}
+supervisor=supervise-daemon
+
+start_pre() {
+	PATH=/command:%%PREFIX%%/sbin:%%PREFIX%%/bin:/sbin:/bin:/usr/sbin:/usr/bin
+	if [ ! -d ${runsvdir_path} ]; then
+		mkdir -p ${runsvdir_path}
+	fi
+	/usr/bin/env -i
+}
+
+stop_post() {
+	%%PREFIX%%/sbin/sv exit ${runsvdir_path}/*
+}
+
+depend() {
+	keyword -shutdown
+}

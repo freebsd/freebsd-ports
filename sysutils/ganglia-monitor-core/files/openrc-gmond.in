@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=gmond
+
+command="%%PREFIX%%/sbin/gmond"
+
+eval "conffile=\${gmond_conf-%%PREFIX%%/etc/gmond.conf}"
+
+pidfile="/var/run/${bname}.pid"
+command_args="-c ${conffile} -p ${pidfile}"
+required_files=${conffile}

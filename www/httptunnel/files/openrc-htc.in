@@ -1,15 +1,8 @@
-#!/bin/sh
+#!/sbin/openrc-run
 
-# $FreeBSD$
-#
-# PROVIDE: htc
-# REQUIRE: LOGIN
-#
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# htc_enable (bool): Set to NO by default.
-#                    Set it to YES to enable httptunnel client.
 # htc_port (string): host:port where hts is running
 # htc_forward (string): Talk to this socket.
 # htc_device (string): *or* talk to this device.
@@ -23,30 +16,16 @@
 # htc_flags (string): additional arguments to htc. Default set to -S.
 #
 
-. /etc/rc.subr
-
 name="htc"
-rcvar=htc_enable
 
 command=%%PREFIX%%/bin/${name}
 
-start_precmd="htc_prestart"
-
-htc_prestart()
-{
-	if checkyesno htc_enable; then
-		if [ -z "$htc_device" -a -z "$htc_forward" ]; then
-			err 1 "Specify either htc_device or htc_forward"
-		fi
+start_pre() {
+	if [ -z "$htc_device" -a -z "$htc_forward" ]; then
+		err 1 "Specify either htc_device or htc_forward"
 	fi
-
-	return 0
 }
 
-
-load_rc_config $name
-
-: ${htc_enable="NO"}
 : ${htc_user="httptunnel"}
 
 : ${htc_proxybuffer="1K"}
@@ -69,5 +48,3 @@ if [ -n "$htc_proxy" ]; then
 fi
 
 command_args="$command_args $htc_port"
-
-run_rc_command "$1"

@@ -1,0 +1,61 @@
+#!/sbin/openrc-run
+
+# Sample SEC startup script for FreeBSD (contributed by Jo Rhett)
+#
+# These parameters control the first (or only) instance of sec 
+# sec_flags (str):      Set to "" by default.
+# sec_configfile (str): Set to "%%PREFIX%%/etc/sec.conf" by default.
+#
+# To handle multiple instances you can also define
+# sec_instances="main auth" (list): define the instances (any string) which should be started/stopped
+# sec_instance_main_flags (str): define the invocation options for the first instance
+# sec_instance_main_configfile (str): define the config file for the first instance
+# sec_instance_auth_flags (str): define the invocation options for the second instance
+# sec_instance_auth_configfile (str): define the config file for the second instance
+#   ...etc
+
+name="sec"
+
+command="%%PREFIX%%/bin/sec"
+command_args="-detach"
+pidfile="/var/run/sec.pid"
+
+[ -z "${sec_flags}" ]        && sec_flags="-log=/var/log/sec.log"
+[ -z "${sec_configfile}" ]   && sec_configfile="%%PREFIX%%/etc/sec.conf"
+
+start_pre() {
+  if [ -z $instance ]
+  then
+    echo -n "Performing sanity check of sec configuration: "
+  else
+    echo -n "Performing sanity check of sec_${instance} configuration: "
+  fi
+  ${command} -debug=1 -testonly -conf=${sec_configfile} 2>&1 >/dev/null
+  if [ $? != 0 ]; then
+    eerror "FAILED"
+    ${command} -testonly -conf=${sec_configfile}
+    return 1
+  else
+    einfo "OK"
+  fi
+}
+
+required_files="${sec_configfile}"
+sec_flags="-conf=${sec_configfile} -pid=${pidfile} ${sec_flags}"
+
+# Are we handling multiple instances?
+if [ ! -z "${sec_instances}" ]
+then
+	for instance in $sec_instances
+	do
+                # Iterate through all instances
+                name="sec_${instance}"
+                pidfile="/var/run/sec_${instance}.pid"
+                eval required_files=\$sec_${instance}_configfile
+                eval sec_${instance}_flags="\"-conf=\$sec_${instance}_configfile -pid=\$pidfile \$sec_${instance}_flags\""
+	done
+fi
+
+depend() {
+	keyword -shutdown
+}

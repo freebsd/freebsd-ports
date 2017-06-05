@@ -1,0 +1,40 @@
+#!/sbin/openrc-run
+# Burp rc.d script, placed in the public domain by Jarkko Kniivilä @ 2014-05-14
+
+# Add the following lines to /etc/rc.conf to enable Burp:
+#
+#  # optional
+#  burp_config="%%PREFIX%%/etc/burp/burp-server.conf"
+
+export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
+
+name=burp
+
+# Set some defaults
+: ${burp_config:="%%PREFIX%%/etc/burp/burp-server.conf"}
+
+burp_flags="-c ${burp_config}"
+
+command="/usr/local/sbin/${name}"
+command_args="> /dev/null 2>&1"
+
+pidfile="/var/run/${name}.server.pid"  # this really depends on the config file so make sure they concur
+required_files="${burp_config}"
+extra_commands="monitor summary"
+
+monitor() {
+    rc_flags="-a s ${rc_flags}"
+    ${command} ${rc_flags}
+}
+
+summary() {
+    # This allows you to get the output of the '-a S' flag thusly:
+    # service burp summary -C $my_client
+
+    rc_flags="-a S ${rc_flags}"
+    ${command} ${rc_flags} "$@"
+}
+
+depend() {
+	keyword -shutdown
+}

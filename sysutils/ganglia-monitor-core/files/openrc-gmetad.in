@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+# $FreeBSD: head/sysutils/ganglia-monitor-core/files/gmetad.in 302141 2012-08-05 23:19:36Z dougb $
+
+name=gmetad
+command="%%PREFIX%%/sbin/${name}"
+
+start_pre() {
+	if [ ! -d ${gmetasnap_rrddir} ]; then
+		mkdir -p ${gmetasnap_rrddir}
+	fi
+	chown ganglia:ganglia ${gmetasnap_rrddir}
+	if [ ! -d ${gmetasnap_snapdir} ]; then
+		mkdir -p ${gmetasnap_snapdir}
+		chown ganglia:ganglia ${gmetasnap_snapdir}
+	fi
+	if [ `ls ${gmetasnap_rrddir} | egrep -v ^.snap | wc -l` -eq 0 ]; then
+		${gmetasnap_command} -r ${gmetasnap_rrddir} \
+		    -s ${gmetasnap_snapdir} ${gmetasnap_flags} \
+		    restore ${gmetasnap_snapname}
+	fi
+}
+
+stop_post() {
+	${gmetasnap_command} -r ${gmetasnap_rrddir} \
+	    -s ${gmetasnap_snapdir} ${gmetasnap_flags} \
+	    save ${gmetasnap_snapname}
+}
+
+gmetad_conf=${gmetad_conf-%%PREFIX%%/etc/gmetad.conf}
+
+gmetasnap_rrddir=${gmetasnap_rrddir-/var/db/ganglia/rrds}
+gmetasnap_snapdir=${gmetasnap_snapdir-/var/db/ganglia/snaps}
+gmetasnap_snapname=${gmetasnap_snapname-snap}
+gmetasnap_command=${gmetasnap_command-%%PREFIX%%/sbin/gmetasnap}
+
+command_args="-c ${gmetad_conf}"
+required_files=${gmetad_conf}

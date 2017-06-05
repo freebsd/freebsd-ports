@@ -1,0 +1,2 @@
+USE_OPENRC_SUBR=	openrc-gmond
+USE_OPENRC_SUBR+=	openrc-gmetad
