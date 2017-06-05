@@ -1,0 +1,12 @@
+--- configure.orig	2017-06-05 16:34:42.639211000 +0200
++++ configure	2017-06-05 16:38:29.273414000 +0200
+@@ -17437,6 +17437,9 @@
+ fi
+ 
+     ;;
++    *freebsd*|*dragonfly*)
++    DATADIRNAME=share
++    ;;
+     *)
+     DATADIRNAME=lib
+     ;;
