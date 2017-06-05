@@ -25,7 +25,6 @@ USE_PERL5=		build
 WRKSRC=			${WRKDIR}/js-${PORTVERSION}/js/src
 
 BROKEN_aarch64=		Does not compile: error: cacheFlush support is missing on this platform
-BROKEN_armv6=		Does not configure: error: compiler does not follow the C++ specification for temporary object destruction order
 BROKEN_mips64=		Does not compile: error: const union jsval_layout has no member named word
 BROKEN_sparc64=		Does not build: fails to link
 
