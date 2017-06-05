@@ -14,7 +14,8 @@ COMMENT=	Latency logging and graphing system
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	librrd.so:databases/rrdtool
-BUILD_DEPENDS=	p5-CGI-Session>=0:www/p5-CGI-Session \
+BUILD_DEPENDS=	p5-CGI-Fast>=0:www/p5-CGI-Fast \
+		p5-CGI-Session>=0:www/p5-CGI-Session \
 		p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
@@ -71,13 +72,6 @@ RADIUS_RUN_DEPENDS=	p5-Authen-Radius>=0:security/p5-Authen-Radius
 TELNET_RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet
 DNS_RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502100
-BUILD_DEPENDS+=	p5-CGI-Fast>=0:www/p5-CGI-Fast
-RUN_DEPENDS+=	p5-CGI-Fast>=0:www/p5-CGI-Fast
-.endif
-
 # We will take these from CPAN instead
 post-extract:
 	cd ${WRKSRC}/lib ; ${RM} BER.pm SNMP_util.pm SNMP_Session.pm
@@ -93,4 +87,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/smokeping/htdocs/img
 	${MKDIR} ${STAGEDIR}/${PREFIX}/var/smokeping
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
