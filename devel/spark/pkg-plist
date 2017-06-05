@@ -792,5 +792,6 @@
 %%DATADIR%%/sbin/stop-slave.sh
 %%DATADIR%%/sbin/stop-slaves.sh
 %%DATADIR%%/sbin/stop-thriftserver.sh
+@dir %%DATADIR%%/lib
 @dir(%%SPARK_USER%%,%%SPARK_GROUP%%,) /var/log/spark
 @dir(%%SPARK_USER%%,%%SPARK_GROUP%%,) /var/run/spark
