@@ -13,9 +13,7 @@ COMMENT=	Highly configurable, next generation framework window manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-		convert:graphics/ImageMagick \
-		xmlto:textproc/xmlto \
+BUILD_DEPENDS=	convert:graphics/ImageMagick \
 		xproto>=7.0.15:x11/xproto \
 		${LUA_MODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:devel/lua-lgi
 RUN_DEPENDS=	${LUA_MODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:devel/lua-lgi \
@@ -38,19 +36,23 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	awesomewm
 USES=		cmake:outsource execinfo gettext iconv pkgconfig lua shebangfix
 SHEBANG_FILES=	utils/awesome-client
-CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc \
+CMAKE_ARGS=	-DSYSCONFDIR=${PREFIX}/etc \
 		-DAWESOME_MAN_PATH=${MANPREFIX}/man \
 		-DGENERATE_DOC=OFF
 USE_GNOME=	glib20 pango gdkpixbuf2
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
 		xproto
 
-OPTIONS_DEFINE=	DBUS DOCS
-OPTIONS_DEFAULT=DBUS
+OPTIONS_DEFINE=	DBUS DOCS MANPAGES
+OPTIONS_DEFAULT=DBUS MANPAGES
+OPTIONS_SUB=	yes
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-DBUS_CMAKE_ON=		-DWITH_DBUS=ON
-DBUS_CMAKE_OFF=		-DWITH_DBUS=OFF
+DBUS_CMAKE_OFF=		-DWITH_DBUS:BOOL=OFF
+
+MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+			xmlto:textproc/xmlto
+MANPAGES_CMAKE_OFF=	-DGENERATE_MANPAGES:BOOL=OFF
 
 .include <bsd.port.pre.mk>
 
