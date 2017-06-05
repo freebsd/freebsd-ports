@@ -46,7 +46,7 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-build:
-	@(cd ${BUILD_WRKSRC}; make doc)
+	@(cd ${BUILD_WRKSRC}; ${MAKE_CMD} doc)
 .endif
 
 .include <bsd.port.mk>
