@@ -114,6 +114,6 @@ post-patch:
 .endif
 
 pre-build:
-	cd ${WRKSRC} && ${MAKE} generateVersionFiles
+	cd ${WRKSRC} && ${MAKE_CMD} generateVersionFiles
 
 .include <bsd.port.post.mk>
