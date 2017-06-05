@@ -195,10 +195,4 @@ post-install:
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-CORE_DEPS+=     p5-CGI>4.0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
