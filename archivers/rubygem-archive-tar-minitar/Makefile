@@ -1,21 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	archive-tar-minitar
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.1
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library and command-line utility for tar archives
 
-LICENSE=	GPLv2 GPLv3 RUBY
+LICENSE=	BSD3CLAUSE RUBY
 LICENSE_COMB=	dual
 
-NO_ARCH=	yes
+RUN_DEPENDS=	rubygem-minitar>=${PORTVERSION:R}:archivers/rubygem-minitar \
+		rubygem-minitar-cli>=${PORTVERSION:R}:archivers/rubygem-minitar-cli
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
-
-PLIST_FILES=	bin/minitar
 
 .include <bsd.port.mk>
