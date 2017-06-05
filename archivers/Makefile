@@ -193,6 +193,7 @@
     SUBDIR += rubygem-fpm
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
+    SUBDIR += rubygem-minitar-cli
     SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip2
