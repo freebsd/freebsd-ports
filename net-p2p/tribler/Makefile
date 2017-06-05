@@ -3,7 +3,7 @@
 
 PORTNAME=	tribler
 PORTVERSION=	6.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Tribler/tribler/releases/download/v${PORTVERSION}/
 DISTNAME=	Tribler-v${PORTVERSION}
@@ -28,12 +28,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>0:databases/py-apsw \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}feedparser>0:textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}cherrypy>0:www/py-cherrypy \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
-USES=		desktop-file-utils python:2,run ssl:run tar:xz twisted:run,web
+USES=		desktop-file-utils python:2,run ssl:run tar:xz
 USE_WX=		2.8
 WX_COMPS=	python
 INSTALLS_ICONS=	yes

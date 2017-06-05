@@ -66,7 +66,7 @@ do-install:
 # hack the install prefix now
 	@${REINPLACE_CMD} -e "s|/usr/local|${STAGEDIR}${PREFIX}|g" \
 		${CONFIGURE_WRKSRC}/cmake_install.cmake
-	cd ${CONFIGURE_WRKSRC} && ${MAKE} install
+	cd ${CONFIGURE_WRKSRC} && ${MAKE_CMD} install
 .for subdir in images
 	${CP} -Rp ${WRKDIR}/${IMAGE_FILE:S|.zip||}/share/uhd/${subdir} ${STAGEDIR}${DATADIR}
 .endfor

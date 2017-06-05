@@ -3,10 +3,10 @@
 
 PORTNAME=	apolicy
 PORTVERSION=	0.73
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail python
 MASTER_SITES=	http://download.gna.org/apolicy/%SUBDIR%/ \
-		http://www.chifeng.name/dist/apolicy/%SUBDIR%/ \
+		http://www.chifeng.name/dist/apolicy/%SUBDIR%/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,10 +16,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipy>=0:net-mgmt/py-ipy \
-		${PYTHON_PKGNAMEPREFIX}pyspf>=0:mail/py-pyspf
+		${PYTHON_PKGNAMEPREFIX}pyspf>=0:mail/py-pyspf \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
-USES=		python twisted
-USE_PYTHON=	distutils
+USES=		python:2.7
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	apolicyd

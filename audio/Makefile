@@ -647,6 +647,7 @@
     SUBDIR += py-pyliblo
     SUBDIR += py-shout
     SUBDIR += py-soundcloud
+    SUBDIR += py-soundscrape
     SUBDIR += py-speechrecognition
     SUBDIR += py-speex
     SUBDIR += py-tagpy
