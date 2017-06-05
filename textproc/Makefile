@@ -224,8 +224,8 @@
     SUBDIR += google-translate-cli
     SUBDIR += gpp
     SUBDIR += grap
-    SUBDIR += greple
     SUBDIR += grc-aspell
+    SUBDIR += greple
     SUBDIR += groff
     SUBDIR += groonga
     SUBDIR += gsed
@@ -950,6 +950,7 @@
     SUBDIR += p5-Text-Truncate
     SUBDIR += p5-Text-Typography
     SUBDIR += p5-Text-Unaccent
+    SUBDIR += p5-Text-Unaccent-PurePerl
     SUBDIR += p5-Text-VimColor
     SUBDIR += p5-Text-VisualWidth
     SUBDIR += p5-Text-WikiCreole
@@ -959,7 +960,6 @@
     SUBDIR += p5-Text-Wrapper
     SUBDIR += p5-Text-Xslate
     SUBDIR += p5-Text-Xslate-Bridge-TT2Like
-    SUBDIR += p5-Text-Unaccent-PurePerl
     SUBDIR += p5-Text-vCard
     SUBDIR += p5-Tiffany
     SUBDIR += p5-Time-Human

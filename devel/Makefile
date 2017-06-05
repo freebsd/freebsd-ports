@@ -4135,13 +4135,13 @@
     SUBDIR += py-appdirs
     SUBDIR += py-application
     SUBDIR += py-apptools
-    SUBDIR += py-argparse
     SUBDIR += py-apscheduler
     SUBDIR += py-archetypes.querywidget
     SUBDIR += py-archetypes.referencebrowserwidget
     SUBDIR += py-archetypes.schemaextender
     SUBDIR += py-argcomplete
     SUBDIR += py-argh
+    SUBDIR += py-argparse
     SUBDIR += py-args
     SUBDIR += py-arrow
     SUBDIR += py-aspects
@@ -4956,7 +4956,6 @@
     SUBDIR += py3-flake8-import-order
     SUBDIR += py3-flake8-polyfill
     SUBDIR += py3-flake8-quotes
-    SUBDIR += py3-pygit2
     SUBDIR += py3-gobject3
     SUBDIR += py3-hgtools
     SUBDIR += py3-jedi
@@ -4974,6 +4973,7 @@
     SUBDIR += py3-pycparser
     SUBDIR += py3-pydocstyle
     SUBDIR += py3-pyflakes
+    SUBDIR += py3-pygit2
     SUBDIR += py3-pyicu
     SUBDIR += py3-pylru-cache
     SUBDIR += py3-pytest

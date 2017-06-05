@@ -3,6 +3,7 @@
 
 PORTNAME=	azpainter
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://aarnet.dl.osdn.jp/azpainter/67805/ \
 		http://acc.dl.osdn.jp/azpainter/67805/ \
