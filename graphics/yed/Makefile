@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yed
-PORTVERSION=	3.16.2.1
+PORTVERSION=	3.17
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${PORTVERSION}
@@ -20,6 +20,7 @@ USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 NO_BUILD=	yes
+NO_ARCH=	yes
 RESTRICTED=	Downloading requires acceptance of license agreement
 DESKTOP_ENTRIES="yEd" "${COMMENT}" "" "yed" "Graphics;" false
 
