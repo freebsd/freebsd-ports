@@ -9,7 +9,8 @@ DISTNAME=	htmllint
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Another HTML-lint (all messages are written in Japanese)
 
-RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
+RUN_DEPENDS=	p5-CGI.pm>=0:www/p5-CGI.pm \
+		p5-libwww>=0:www/p5-libwww \
 		ja-p5-Jcode>=0:japanese/p5-Jcode
 
 USES=		dos2unix perl5 shebangfix zip
@@ -32,20 +33,14 @@ SEDSUB=		${SED} -i.bak -e 's@%%PREFIX%%@${PREFIX}@ ; s@%%DATADIR%%@${DATADIR}@'
 # Please set this!
 HTMLLINT_ADMIN?=	kuriyama@FreeBSD.org
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI.pm>=0:www/p5-CGI.pm
-.endif
-
 do-build:
 	@${SEDSUB} ${WRKSRC}/htmllintenv
 	@${MV} ${WRKSRC}/htmllintenv ${WRKSRC}/htmllint.env
 	@${SEDSUB} ${WRKSRC}/htmllint.cgi
 	@${SED} -i.bak -e 's|^</address>|</address><br>Maintained by <address>${HTMLLINT_ADMIN}</address>|' ${WRKSRC}/*.html
-.if ${PORT_OPTIONS:MW3M}
+
+do-build-W3M-on:
 	@${SED} -i.bak -e 's|^#$$W3M|$$W3M|' ${WRKSRC}/htmllint.env
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/rule ${STAGEDIR}${DATADIR}/html
@@ -54,4 +49,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PM} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${RULE} ${STAGEDIR}${DATADIR}/rule
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
