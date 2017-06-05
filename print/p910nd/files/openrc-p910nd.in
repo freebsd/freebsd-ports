@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable p910nd:
+#  # optional
+#  p910nd_flags=""
+#
+# Note:
+# p910nd bind per default at the ipv6 address!
+# If you want p910nd binding at ipv4 address, you have
+# to use option 'p910nd_flags' with -i parameter
+
+name=p910nd
+command=%%PREFIX%%/sbin/p910nd
+
+depend() {
+	keyword -shutdown
+}

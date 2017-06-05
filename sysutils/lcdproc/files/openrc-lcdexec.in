@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="lcdexec"
+
+: ${lcdexec_conf="%%PREFIX%%/etc/lcdexec.conf"}
+: ${lcdexec_flags="-c ${lcdexec_conf}"}
+
+required_files=${lcdexec_conf}
+command="%%PREFIX%%/bin/lcdexec"
+command_args=${lcdexec_flags}
+
+depend() {
+	need lcd
+}

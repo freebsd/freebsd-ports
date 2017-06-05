@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=cmogstored
+
+: ${cmogstored_config:="%%PREFIX%%/etc/mogstored.conf"}
+
+required_files="${cmogstored_config}"
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="--config='${cmogstored_config}' -d"
+
+depend() {
+	keyword -shutdown
+}
