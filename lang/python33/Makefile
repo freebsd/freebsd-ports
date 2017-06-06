@@ -2,7 +2,7 @@
 
 PORTNAME=	python33
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -121,5 +121,7 @@ post-install:
 .endif
 	for i in ${STAGEDIR}${PREFIX}/lib/python3.3/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done								# Strip shared extensions
+	${INSTALL_DATA} ${WRKSRC}/Tools/gdb/libpython.py \
+		${STAGEDIR}${PREFIX}/lib/libpython3.3${ABIFLAGS}.so.1-gdb.py
 
 .include <bsd.port.mk>
