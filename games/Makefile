@@ -64,6 +64,7 @@
     SUBDIR += atr3d
     SUBDIR += atris
     SUBDIR += atris-sounds
+    SUBDIR += auralquiz
     SUBDIR += avanor
     SUBDIR += avoision
     SUBDIR += awale

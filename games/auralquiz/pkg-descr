@@ -1,0 +1,14 @@
+Auralquiz is a simple music quiz game for GNU/Linux, using your own
+music files.
+
+The game plays short pieces of music files from your folders (in
+Ogg Vorbis, FLAC, Opus or MP3 formats), and presents a question and
+several answers about the current song. The fastest the answer, the
+more points you receive.
+
+Up to 8 people can play in a turn-based mode.
+
+In the highest difficulty level there are no answer buttons, and
+instead, you have to type the answer yourself.
+
+WWW: https://jancoding.wordpress.com/auralquiz/
