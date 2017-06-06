@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.26
+PORTVERSION=	1.28
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 
@@ -15,7 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
 
 USES=		php:cli python shebangfix
-SHEBANG_FILES=	mibs/process.pl scripts/deploy-docs.sh \
+SHEBANG_FILES=	mibs/process.pl scripts/auth_test.php scripts/deploy-docs.sh \
+		scripts/deploy-schema.sh scripts/github-remove \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
@@ -41,7 +42,7 @@ SHEBANG_FILES=	mibs/process.pl scripts/deploy-docs.sh \
 		vendor/ezyang/htmlpurifier/maintenance/update-config.php \
 		vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 
-USE_PHP=	ctype curl filter gd hash json mcrypt mysqli openssl session simplexml snmp tokenizer xml
+USE_PHP=	ctype curl filter gd hash json ldap mcrypt mysqli openssl session simplexml snmp tokenizer xml
 
 NO_BUILD=	yes
 
@@ -149,14 +150,11 @@ post-install:
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${TMPPLIST}
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${FIND} -s ${STAGEDIR}${WWWDIR} -type d | \
+		${SED} -e 's#^${STAGEDIR}#@dir #' >> ${TMPPLIST}
 	${INSTALL_DATA} ${WRKSRC}/config.php.default \
 	       ${STAGEDIR}/${WWWDIR}/config.php.sample
 	@${ECHO} @sample ${WWWDIR}/config.php.sample >> ${TMPPLIST}
-	@${ECHO} @dir ${WWWDIR}/rrd >> ${TMPPLIST}
-	@${ECHO} @dir ${WWWDIR}/logs >> ${TMPPLIST}
-	@${ECHO} @dir ${WWWDIR}/lib/influxdb-php/vendor/guzzlehttp/guzzle/build >> ${TMPPLIST}
-	@${ECHO} @dir ${WWWDIR}/lib/influxdb-php/vendor/guzzlehttp/guzzle/docs >> ${TMPPLIST}
-	@${ECHO} @dir ${WWWDIR}/lib/influxdb-php/vendor/guzzlehttp/guzzle/tests >> ${TMPPLIST}
 	@${ECHO_CMD} "@group" >> ${TMPPLIST}
 	@${ECHO_CMD} "@owner" >> ${TMPPLIST}
 
