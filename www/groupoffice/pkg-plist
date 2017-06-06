@@ -1510,6 +1510,7 @@
 %%WWWDIR%%/modules/billing/controller/TaxRateController.php
 %%WWWDIR%%/modules/billing/controller/TemplateController.php
 %%WWWDIR%%/modules/billing/controller/TrackingCodeController.php
+%%WWWDIR%%/modules/billing/customfields/model/Item.php
 %%WWWDIR%%/modules/billing/customfields/model/Order.php
 %%WWWDIR%%/modules/billing/customfields/model/Product.php
 %%WWWDIR%%/modules/billing/export/CurrentGrid.php
@@ -2217,6 +2218,7 @@
 %%WWWDIR%%/modules/defaultsite/views/site/site/login.php
 %%WWWDIR%%/modules/defaultsite/views/site/site/recoverPassword.php
 %%WWWDIR%%/modules/defaultsite/views/site/site/register.php
+%%WWWDIR%%/modules/defaultsite/views/site/site/resetExpiredPassword.php
 %%WWWDIR%%/modules/defaultsite/views/site/site/resetPassword.php
 %%WWWDIR%%/modules/defaultsite/views/site/tickets/newticket.php
 %%WWWDIR%%/modules/defaultsite/views/site/tickets/ticket.php
