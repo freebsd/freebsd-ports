@@ -1,8 +1,8 @@
---- includes/defaults.inc.php.orig      2017-01-01 15:50:41.000000000 +0000
-+++ includes/defaults.inc.php   2017-01-09 13:24:06.964918000 +0000
-@@ -36,26 +36,26 @@
+--- includes/defaults.inc.php.orig	2017-03-26 12:06:00 UTC
++++ includes/defaults.inc.php
+@@ -41,26 +41,26 @@ $config['db_port']               = 3306;
  $config['own_hostname'] = 'localhost';
-
+ 
  // Location of executables
 -$config['rrdtool']                  = '/usr/bin/rrdtool';
 +$config['rrdtool']                  = '/usr/local/bin/rrdtool';
@@ -38,6 +38,6 @@
 +$config['virsh']          = '/usr/local/bin/virsh';
 +$config['dot']            = '/usr/local/bin/dot';
 +$config['sfdp']           = '/usr/local/bin/sfdp';
-
+ 
  // Memcached - Keep immediate statistics
  $config['memcached']['enable'] = false;
