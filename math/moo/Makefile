@@ -3,6 +3,7 @@
 
 PORTNAME=	moo
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	skreuzer@FreeBSD.org
@@ -15,6 +16,10 @@ GH_ACCOUNT=	raylai
 GH_TAGNAME=	${PORTVERSION}
 
 PLIST_FILES=	bin/moo man/man1/moo.1.gz
+
+.if exists(/usr/include/sys/capsicum.h)
+CFLAGS+=	-DHAVE_CAPSICUM
+.endif
 
 MAKE_JOBS_UNSAFE=	yes
 
