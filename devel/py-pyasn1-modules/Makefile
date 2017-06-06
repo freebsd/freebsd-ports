@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyasn1-modules
-PORTVERSION=	0.0.8
-PORTREVISION=	1
+PORTVERSION=	0.0.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,10 +19,11 @@ USES=		python shebangfix
 SHEBANG_FILES=	tools/*.py
 USE_PYTHON=	autoplist distutils
 
-PORTDOCS=	CHANGES.txt README.txt
-TOOLS=		cmpdump.py crldump.py crmfdump.py ocspclient.py ocspreqdump.py \
-		ocsprspdump.py pkcs10dump.py pkcs1dump.py pkcs7dump.py \
-		pkcs8dump.py snmpget.py x509dump.py
+PORTDOCS=	CHANGES.txt README.md
+TOOLS=		cmcdump.py cmpdump.py crldump.py crmfdump.py ocspclient.py \
+		ocspreqdump.py ocsprspdump.py pkcs10dump.py pkcs1dump.py \
+		pkcs7dump.py pkcs8dump.py snmpget.py x509dump-rfc5280.py \
+		x509dump.py
 
 post-install:
 	${INSTALL_SCRIPT} ${TOOLS:S|^|${WRKSRC}/tools/|} ${STAGEDIR}${PREFIX}/bin
