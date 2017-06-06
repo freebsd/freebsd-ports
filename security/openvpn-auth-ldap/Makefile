@@ -15,17 +15,15 @@ COMMENT=	LDAP authentication plugin for OpenVPN
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	re2c:devel/re2c \
-		${NONEXISTENT}:security/openvpn:extract \
-		check>=0:devel/check
+		check>=0:devel/check \
+		${LOCALBASE}/include/openvpn-plugin.h:security/openvpn
 
-USES=		objc tar:xz
+USES=		autoreconf objc tar:xz
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf autoheader
 USE_OPENLDAP=	yes
-OPENVPN_WRKSRC=	`cd ${PORTSDIR}/security/openvpn; make -V WRKSRC`
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
-			--with-openvpn=${OPENVPN_WRKSRC}/include \
+			--with-openvpn=${LOCALBASE}/include \
 			--with-objc-runtime=GNU
 
 PORTDOCS=	README
@@ -62,9 +60,7 @@ CC+=		${DEBUG_FLAGS}
 # this is a local target to build a tarball from SVN
 # and another target to upload it
 # Note that googlecode.com is gone. Apparently someone exported the code
-# to Github, but aside from a README that got converted to Markdown
-# syntax, there hadn't been changes as of 2016-12-07.
-# https://github.com/threerings/openvpn-auth-ldap/
+# to Github:  https://github.com/threerings/openvpn-auth-ldap/
 build-tarball: ${DISTFILES}
 ${DISTFILES}:
 	${RM} -r ${WRKSRC}
