@@ -4,7 +4,8 @@
 PORTNAME=	backuppc
 PORTVERSION=	4.1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
+		SF
 PKGNAMESUFFIX=	4
 DISTNAME=	BackupPC-${DISTVERSION}
 
