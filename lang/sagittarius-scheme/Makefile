@@ -50,6 +50,6 @@ post-install:
 	@${LN} -sf ${PREFIX}/bin/sagittarius ${STAGEDIR}${PREFIX}/bin/sash
 
 post-build:
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} doc
+	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} doc
 
 .include <bsd.port.post.mk>

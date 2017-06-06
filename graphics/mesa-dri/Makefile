@@ -53,6 +53,10 @@ GALLIUM_DRIVERS+=	SVGA
 GALLIUM_DRIVERS+=	FREEDRENO VC4
 .endif
 
+.if ${ARCH} == armv6
+EXTRA_PATCHES+=	${PATCHDIR}/extra-src_gallium_drivers_vc4_Makefile.in
+.endif
+
 CONFIGURE_ARGS+=	--with-dri-drivers="${DRI_DRIVERS:tl}" \
 			--with-gallium-drivers="${GALLIUM_DRIVERS:tl}"
 
