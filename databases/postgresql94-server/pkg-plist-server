@@ -314,6 +314,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/America/Porto_Acre
 %%TZDATA%%%%DATADIR%%/timezone/America/Porto_Velho
 %%TZDATA%%%%DATADIR%%/timezone/America/Puerto_Rico
+%%TZDATA%%%%DATADIR%%/timezone/America/Punta_Arenas
 %%TZDATA%%%%DATADIR%%/timezone/America/Rainy_River
 %%TZDATA%%%%DATADIR%%/timezone/America/Rankin_Inlet
 %%TZDATA%%%%DATADIR%%/timezone/America/Recife

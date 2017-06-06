@@ -221,6 +221,7 @@ include/postgresql/server/commands/view.h
 include/postgresql/server/common/config_info.h
 include/postgresql/server/common/controldata_utils.h
 include/postgresql/server/common/fe_memutils.h
+include/postgresql/server/common/int128.h
 include/postgresql/server/common/keywords.h
 include/postgresql/server/common/pg_lzcompress.h
 include/postgresql/server/common/relpath.h
