@@ -101,6 +101,7 @@ include/python3.4%%ABI%%/warnings.h
 include/python3.4%%ABI%%/weakrefobject.h
 lib/libpython3.4%%ABI%%.so
 lib/libpython3.4%%ABI%%.so.1
+lib/libpython3.4%%ABI%%.so.1-gdb.py
 lib/python3.4/LICENSE.txt
 lib/python3.4/__future__.py
 lib/python3.4/__phello__.foo.py
