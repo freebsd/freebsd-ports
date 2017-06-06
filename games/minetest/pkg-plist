@@ -3,7 +3,7 @@
 @sample etc/minetest.conf.example etc/minetest.conf
 man/man6/minetest.6.gz
 man/man6/minetestserver.6.gz
-share/applications/minetest.desktop
-share/appdata/minetest.appdata.xml
+share/applications/net.minetest.minetest.desktop
 share/icons/hicolor/128x128/apps/minetest.png
 share/icons/hicolor/scalable/apps/minetest.svg
+share/metainfo/net.minetest.minetest.appdata.xml

@@ -21,6 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.lzma>=0.0.6:archivers/py-backports
 		${PYTHON_PKGNAMEPREFIX}texttable>=0.8.7:textproc/py-texttable \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests
 
+DEPRECATED=	obsoleted by sysutils/py3-iocage port using Python 3 instead of Python 2
+EXPIRATION_DATE=2017-07-07
+
 USE_GITHUB=	yes
 
 NO_ARCH=	yes

@@ -3,9 +3,8 @@
 
 PORTNAME=	mitmproxy
 PORTVERSION=	2.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
-MASTER_SITES=	http://github.com/mitmproxy/mitmproxy/archive/
-DISTFILES=	v${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	SSL-capable man-in-the-middle proxy
@@ -42,6 +41,7 @@ BROKEN=		fails in dependency check: mitmproxy-2.0.1 depends on package: py36-bli
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
+USE_GITHUB=	yes
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/brotlipy/brotli/' -e 's/, <.*",/",/' ${WRKSRC}/setup.py

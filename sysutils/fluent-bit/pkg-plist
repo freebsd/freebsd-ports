@@ -689,4 +689,4 @@ include/msgpack/zone.h
 include/msgpack/zone.hpp
 include/msgpack/zone_decl.hpp
 lib/libfluent-bit.so
-lib/pkgconfig/msgpack.pc
+@comment libdata/pkgconfig/msgpack.pc

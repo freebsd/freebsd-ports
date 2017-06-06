@@ -5,14 +5,6 @@ PORTNAME=	jfsw
 PORTVERSION=	20131019
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	https://github.com/jonof/${PORTNAME}/archive/${JFSW_COMMIT}.tar.gz?dummy=/ \
-		https://github.com/jonof/jfbuild/archive/${JFBUILD_COMMIT}.tar.gz?dummy=/ \
-		https://github.com/jonof/jfaudiolib/archive/${JFAUDIO_COMMIT}.tar.gz?dummy=/ \
-		https://github.com/jonof/jfmact/archive/${JFMACT_COMMIT}.tar.gz?dummy=/
-DISTFILES=	${PORTNAME}-${JFSW_COMMIT}.tar.gz \
-		jfbuild-${JFBUILD_COMMIT}.tar.gz \
-		jfaudiolib-${JFAUDIO_COMMIT}.tar.gz \
-		jfmact-${JFMACT_COMMIT}.tar.gz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Jonathon Fowler's Shadow Warrior Port
@@ -25,10 +17,14 @@ LICENSE_PERMS_BuildLic=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-acc
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
-JFSW_COMMIT=	5cff6a81708ff053b569ba4400fba073afe207fe
-JFBUILD_COMMIT=	a73583184aca466cebde152db2ce1020591d7049
-JFAUDIO_COMMIT=	a39ccf5e95961952d27754a255940be1d76ce85e
-JFMACT_COMMIT=	b1071da75cd465f59257240e5dbc60a014580190
+USE_GITHUB=	yes
+GH_ACCOUNT=	jonof
+GH_PROJECT=	jfbuild:build jfaudiolib:audio jfmact:mact
+GH_TAGNAME=	5cff6a81708ff053b569ba4400fba073afe207fe \
+		a73583184aca466cebde152db2ce1020591d7049:build \
+		a39ccf5e95961952d27754a255940be1d76ce85e:audio \
+		b1071da75cd465f59257240e5dbc60a014580190:mact
+GH_SUBDIR=	jfbuild:build jfaudiolib:audio jfmact:mact
 
 USE_GL=		gl
 USE_GNOME=	gtk20
@@ -39,7 +35,6 @@ DOS2UNIX_REGEX=	.*(\.(c|h)|Makefile)(\.deps)?
 
 NO_CDROM=	Must be distributed only through the Internet and free of charge
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${JFSW_COMMIT}
 MAKE_ENV+=	DATADIR="${DATADIR}" \
 		NOASM=1 \
 		LINKED_GTK=1
@@ -47,13 +42,6 @@ MAKE_ENV+=	DATADIR="${DATADIR}" \
 SUB_FILES=	pkg-message
 
 PORTDOCS=	readme.txt releasenotes.html
-
-post-extract:
-	@(cd ${WRKSRC} && \
-		${RMDIR} jfbuild jfaudiolib jfmact && \
-		${LN} -sf ${WRKDIR}/jfbuild-${JFBUILD_COMMIT} jfbuild && \
-		${LN} -sf ${WRKDIR}/jfaudiolib-${JFAUDIO_COMMIT} jfaudiolib && \
-		${LN} -sf ${WRKDIR}/jfmact-${JFMACT_COMMIT} jfmact)
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/X11R6|${LOCALBASE}|' \

@@ -169,10 +169,9 @@ post-patch:
 	     s|/usr/share/applications|${LOCALBASE}/share/applications|g; \
 	     s|/usr/share/cairo-dock|${LOCALBASE}/share/cairo-dock|g'
 
-post-install:
+#post-install:
 #.if defined(VALA)
 #	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/CDApplet.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 #.endif
-	${RM} -R ${STAGEDIR}${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>
