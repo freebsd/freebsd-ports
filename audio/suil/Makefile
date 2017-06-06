@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--no-qt5
 PLIST_SUB=	SUILVERSION=${PORTVERSION}
 
 post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/*.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsuil-0.so.${PORTVERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/suil-0/libsuil_gtk2_in_qt4.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/suil-0/libsuil_qt4_in_gtk2.so

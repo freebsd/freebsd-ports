@@ -64,8 +64,6 @@ post-build:
 	@${ECHO}
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata
-	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata
 	${MV} ${STAGEDIR}${PREFIX}/bin/pprof ${STAGEDIR}${PREFIX}/bin/perftools-pprof
 
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
