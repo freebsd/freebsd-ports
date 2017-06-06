@@ -1,7 +1,7 @@
 # Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	4
 
 DB=		odbc
 COMMENT=	Qt Open Database Connectivity plugin

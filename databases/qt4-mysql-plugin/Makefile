@@ -1,7 +1,7 @@
 # Created by: Kay Lehmann <kay_lehmann@web.de>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Qt MySQL database plugin
 DB=		mysql
