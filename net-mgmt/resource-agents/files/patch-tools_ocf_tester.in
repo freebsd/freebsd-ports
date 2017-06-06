@@ -4,7 +4,7 @@
  test_permissions() {
      action=meta-data
      debug ${1:-"Testing permissions with uid nobody"}
--    su nobody -s /bin/sh $agent $action > /dev/null
+-    su nobody -s /bin/sh -c "$agent $action" > /dev/null
 +    su -m nobody -c "$agent $action" > /dev/null
  }
  
