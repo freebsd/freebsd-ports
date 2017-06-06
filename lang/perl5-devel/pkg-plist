@@ -260,7 +260,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/JSON/PP/Boolean.pm
 %%PRIV_LIB%%/Locale/Codes.pm
 %%PRIV_LIB%%/Locale/Codes.pod
-%%PRIV_LIB%%/Locale/Codes/API.pod
 %%PRIV_LIB%%/Locale/Codes/Changes.pod
 %%PRIV_LIB%%/Locale/Codes/Constants.pm
 %%PRIV_LIB%%/Locale/Codes/Country.pm
@@ -291,6 +290,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Locale/Codes/Script.pod
 %%PRIV_LIB%%/Locale/Codes/Script_Codes.pm
 %%PRIV_LIB%%/Locale/Codes/Script_Retired.pm
+%%PRIV_LIB%%/Locale/Codes/Types.pod
 %%PRIV_LIB%%/Locale/Country.pm
 %%PRIV_LIB%%/Locale/Country.pod
 %%PRIV_LIB%%/Locale/Currency.pm
@@ -701,6 +701,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/handy.h
 %%ARCH_LIB%%/CORE/hv.h
 %%ARCH_LIB%%/CORE/hv_func.h
+%%ARCH_LIB%%/CORE/hv_macro.h
 %%ARCH_LIB%%/CORE/inline.h
 %%ARCH_LIB%%/CORE/intrpvar.h
 %%ARCH_LIB%%/CORE/invlist_inline.h
@@ -742,7 +743,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/regcomp.h
 %%ARCH_LIB%%/CORE/regexp.h
 %%ARCH_LIB%%/CORE/regnodes.h
+%%ARCH_LIB%%/CORE/sbox32_hash.h
 %%ARCH_LIB%%/CORE/scope.h
+%%ARCH_LIB%%/CORE/stadtx_hash.h
 %%ARCH_LIB%%/CORE/sv.h
 %%ARCH_LIB%%/CORE/thread.h
 %%ARCH_LIB%%/CORE/time64.h
@@ -756,6 +759,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/uudmap.h
 %%ARCH_LIB%%/CORE/vutil.h
 %%ARCH_LIB%%/CORE/warnings.h
+%%ARCH_LIB%%/CORE/zaphod32_hash.h
 %%ARCH_LIB%%/Compress/Raw/Bzip2.pm
 %%ARCH_LIB%%/Compress/Raw/Zlib.pm
 %%ARCH_LIB%%/Config.pm
@@ -971,6 +975,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5241delta.1.gz
 %%MAN1%%/perl5260delta.1.gz
 %%MAN1%%/perl5270delta.1.gz
+%%MAN1%%/perl5271delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1384,7 +1389,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/List::Util.3.gz
 %%MAN3%%/List::Util::XS.3.gz
 %%MAN3%%/Locale::Codes.3.gz
-%%MAN3%%/Locale::Codes::API.3.gz
 %%MAN3%%/Locale::Codes::Changes.3.gz
 %%MAN3%%/Locale::Codes::Country.3.gz
 %%MAN3%%/Locale::Codes::Currency.3.gz
@@ -1393,6 +1397,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Locale::Codes::LangVar.3.gz
 %%MAN3%%/Locale::Codes::Language.3.gz
 %%MAN3%%/Locale::Codes::Script.3.gz
+%%MAN3%%/Locale::Codes::Types.3.gz
 %%MAN3%%/Locale::Country.3.gz
 %%MAN3%%/Locale::Currency.3.gz
 %%MAN3%%/Locale::Language.3.gz
@@ -1750,6 +1755,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5241delta.pod
 %%PRIV_LIB%%/pod/perl5260delta.pod
 %%PRIV_LIB%%/pod/perl5270delta.pod
+%%PRIV_LIB%%/pod/perl5271delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
