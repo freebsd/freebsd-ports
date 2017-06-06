@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	umlgraph
-PORTVERSION=	5.7.2
+DISTVERSIONPREFIX=	R
+DISTVERSION=	5_7_2
 CATEGORIES=	devel java
-MASTER_SITES=	https://github.com/dspinellis/UMLGraph/archive/
-DISTNAME=	R${PORTVERSION:S/./_/g}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Automated drawing of UML diagrams
 
 LICENSE=	BSD3CLAUSE
 
-WRKSRC=		${WRKDIR}/UMLGraph-${DISTNAME}
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.8
+USE_GITHUB=	yes
+GH_ACCOUNT=	dspinellis
+GH_PROJECT=	UMLGraph
 
 BUILD_DEPENDS=	dot:graphics/graphviz \
 		pic2plot:graphics/plotutils

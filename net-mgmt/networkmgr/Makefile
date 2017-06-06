@@ -4,7 +4,6 @@
 PORTNAME=	networkmgr
 PORTVERSION=	2.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://github.com/GhostBSD/${PORTNAME}/archive/
 
 MAINTAINER=	ericturgeon.bsd@gmail.com
 COMMENT=	FreeBSD/GhostBSD network conection manager

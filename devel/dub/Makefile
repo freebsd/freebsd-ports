@@ -2,10 +2,8 @@
 
 PORTNAME=	dub
 PORTVERSION=	1.3.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/dlang/dub/archive/
-DISTFILES=	v${PORTVERSION}.tar.gz
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Package and build manager for D applications and libraries
@@ -15,8 +13,11 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	dlang
+
 PLIST_FILES=	bin/${PORTNAME} \
-		%%DATADIR%%/LICENSE
+		${DATADIR}/LICENSE
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${WRKSRC}/source/dub/version_.d

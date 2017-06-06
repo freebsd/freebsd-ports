@@ -3,11 +3,10 @@
 
 PORTNAME=	gngeo
 PORTVERSION=	0.8
+DISTVERSIONPREFIX=	${PORTNAME}_
 PORTREVISION=	4
 CATEGORIES=	emulators
-MASTER_SITES=	https://github.com/pepone42/gngeo/archive/ \
-		LOCAL/acm/${PORTNAME}
-DISTFILES=	${PORTNAME}_${PORTVERSION}.tar.gz
+MASTER_SITES=	LOCAL/acm/${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	NeoGeo emulator
@@ -17,6 +16,8 @@ LICENSE=	GPLv2
 USES=		autoreconf compiler:features gmake
 USE_SDL=	image sdl
 USE_GL=		yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	pepone42
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --disable-gp2x
@@ -28,7 +29,6 @@ USE_CSTD=	gnu89
 MAKE_ARGS+=	CC_FOR_BUILD=${CC}
 
 SUB_FILES=	pkg-message
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}_${PORTVERSION}
 
 OPTIONS_DEFINE_i386=	ASM RAZE STAR
 OPTIONS_DEFAULT_i386=	ASM

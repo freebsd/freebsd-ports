@@ -3,10 +3,10 @@
 
 PORTNAME=	libmapi
 PORTVERSION=	2.3
+DISTVERSIONPREFIX=	openchange-
+DISTVERSIONSUFFIX=	-VULCAN
 PORTREVISION=	8
 CATEGORIES=	mail
-MASTER_SITES=	https://github.com/openchange/openchange/archive/
-DISTNAME=	openchange-${PORTVERSION}-${CODENAME}
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Open Source implementation of Microsoft Exchange protocols
@@ -23,14 +23,14 @@ LIB_DEPENDS=	libical.so:devel/libical \
 		libtalloc.so:devel/talloc
 RUN_DEPENDS=	${SAMBA_DEP}
 
-CODENAME=	VULCAN
-WRKSRC=		${WRKDIR}/openchange-openchange-${PORTVERSION}-${CODENAME}
-
 USE_MYSQL=	yes
 USES=		autoreconf:build bison compiler:c++11-lib gmake pathfix \
 		pkgconfig python samba:lib shebangfix sqlite
 PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	openchange
+GH_PROJECT=	openchange
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
