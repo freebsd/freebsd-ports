@@ -7,4 +7,3 @@ lib/suil-0/libsuil_qt4_in_gtk2.so
 lib/suil-0/libsuil_x11_in_gtk2.so
 lib/suil-0/libsuil_x11_in_qt4.so
 libdata/pkgconfig/suil-0.pc
-@dir lib/pkgconfig
