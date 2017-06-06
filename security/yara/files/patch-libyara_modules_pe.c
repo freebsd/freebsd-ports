@@ -1,6 +1,6 @@
---- libyara/modules/pe.c.orig	2016-09-06 20:09:47 UTC
+--- libyara/modules/pe.c.orig	2017-06-05 16:57:34 UTC
 +++ libyara/modules/pe.c
-@@ -42,7 +42,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBI
+@@ -41,7 +41,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBI
  #include <openssl/bio.h>
  #include <openssl/pkcs7.h>
  #include <openssl/x509.h>
