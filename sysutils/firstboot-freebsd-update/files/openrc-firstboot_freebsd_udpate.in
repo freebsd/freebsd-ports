@@ -1,0 +1,41 @@
+#!/sbin/openrc-run
+
+# By default this script will only run on *-BETA*, *-RC*, and *-RELEASE*
+# systems, since those are the only ones for which updates are provided by
+# the FreeBSD project; to run freebsd-update anyway (e.g., on a custom
+# release for which you are providing your own update bits), set:
+#
+# firstboot_freebsd_update_nonstandard="YES"
+
+: ${firstboot_freebsd_update_nonstandard:="NO"}
+
+name="firstboot_freebsd_update"
+command="freebsd-update"
+
+firstboot_freebsd_update_run() {
+	if ! yesno firstboot_freebsd_update_nonstandard; then
+		case "`uname -r`" in
+		*-BETA* | *-RC* | *-RELEASE*)
+			;;
+		*)
+			einfo "Firstboot freebsd-update disabled on `uname -r`"
+			return 0
+		;;
+		esac
+	fi
+
+	freebsd-update fetch
+	if [ -e /var/db/freebsd-update/`echo / | sha256`-install ]; then
+		freebsd-update install
+		einfo "Requesting reboot after installing updates."
+		touch ${firstboot_sentinel}-reboot
+	fi
+}
+
+start() {
+	firstboot_freebsd_update_run | logger -s -t 'freebsd-update'
+}
+
+depend() {
+	use net
+}
