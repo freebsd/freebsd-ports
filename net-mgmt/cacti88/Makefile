@@ -1,24 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	cacti
-PORTVERSION=	1.1.7
+PORTVERSION=	0.8.8h
 CATEGORIES=	net-mgmt www
-MASTER_SITES=	http://www.cacti.net/downloads/ \
-		ftp://ftpmirror.uk/freebsd-ports/cacti/
+MASTER_SITES=	http://www.cacti.net/downloads/
+PKGNAMESUFFIX=	88
 
-MAINTAINER=	freebsd-ports@dan.me.uk
+MAINTAINER=	egypcio@googlemail.com
 COMMENT=	Web-driven graphing interface for RRDTool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rrdtool:databases/rrdtool
 
 USES=		cpe mysql php:web shebangfix
-USE_PHP=	ctype filter gd gettext gmp hash json ldap mbstring openssl pcre pdo pdo_mysql posix session simplexml sockets snmp xml zlib
+USE_PHP=	mysqli pcre session sockets snmp xml
+
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+IGNORE_WITH_PHP=	70 71
+
 SUB_FILES=	pkg-message
+
 SHEBANG_FILES=	scripts/3com_cable_modem.pl \
 		scripts/diskfree.pl \
 		scripts/linux_memory.pl \
@@ -32,19 +37,21 @@ SHEBANG_FILES=	scripts/3com_cable_modem.pl \
 		scripts/weatherbug.pl \
 		scripts/webhits.pl
 
-CACTIDIR?=	share/cacti
-CACTIUSER?=	cacti
-CACTIGROUP?=	cacti
+CACTIDIR=	share/cacti
+CACTIUSER=	cacti
+CACTIGROUP=	cacti
 
-USERS?=		${CACTIUSER}
-GROUPS?=	${CACTIGROUP}
+USERS=		${CACTIUSER}
+GROUPS=		${CACTIGROUP}
 
 PLIST_SUB+=	CACTIDIR=${CACTIDIR}  CACTIUSER=${CACTIUSER} \
 		CACTIGROUP=${CACTIGROUP}
 SUB_LIST+=	CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
 		CACTIGROUP=${CACTIGROUP}
 
-CONFLICTS_INSTALL=	cacti88
+CONFLICTS_INSTALL=	cacti
+
+PORTSCOUT=	limit:^0.*
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete; \
