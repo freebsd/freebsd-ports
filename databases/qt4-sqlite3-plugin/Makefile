@@ -1,7 +1,7 @@
 # Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	4
 
 COMMENT=	Qt SQLite 3 database plugin
 DB=		sqlite
