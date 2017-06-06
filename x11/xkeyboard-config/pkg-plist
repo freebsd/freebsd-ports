@@ -44,6 +44,7 @@ share/X11/xkb/geometry/sgi_vndr/O2
 share/X11/xkb/geometry/sgi_vndr/indigo
 share/X11/xkb/geometry/sgi_vndr/indy
 share/X11/xkb/geometry/sony
+share/X11/xkb/geometry/steelseries
 share/X11/xkb/geometry/sun
 share/X11/xkb/geometry/teck
 share/X11/xkb/geometry/thinkpad
@@ -97,7 +98,6 @@ share/X11/xkb/symbols/ba
 share/X11/xkb/symbols/bd
 share/X11/xkb/symbols/be
 share/X11/xkb/symbols/bg
-share/X11/xkb/symbols/bn
 share/X11/xkb/symbols/br
 share/X11/xkb/symbols/brai
 share/X11/xkb/symbols/bt

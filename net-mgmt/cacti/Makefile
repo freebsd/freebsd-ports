@@ -44,6 +44,8 @@ PLIST_SUB+=	CACTIDIR=${CACTIDIR}  CACTIUSER=${CACTIUSER} \
 SUB_LIST+=	CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
 		CACTIGROUP=${CACTIGROUP}
 
+CONFLICTS_INSTALL=	cacti88
+
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete; \
 	${MV} ${WRKSRC}/include/config.php ${WRKSRC}/include/config.php.sample

@@ -22,6 +22,8 @@ CPPFLAGS+=	`net-snmp-config --cflags`
 LDFLAGS+=	`net-snmp-config --libs`
 USES=		libtool mysql ssl
 
+CONFLICTS_INSTALL=	cacti88
+
 post-patch:
 	@${REINPLACE_CMD} 's,#define\ *DEFAULT_CONF_FILE .*,#define DEFAULT_CONF_FILE "${PREFIX}/etc/spine.conf",' ${WRKSRC}/spine.h
 

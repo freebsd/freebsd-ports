@@ -4,7 +4,8 @@
 PORTNAME=	backuppc
 PORTVERSION=	4.1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
+		SF
 PKGNAMESUFFIX=	4
 DISTNAME=	BackupPC-${DISTVERSION}
 
@@ -14,7 +15,8 @@ COMMENT=	Multi-platform backup to disk-based storage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-File-Listing>=0:sysutils/p5-File-Listing \
+RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
+		p5-File-Listing>=0:sysutils/p5-File-Listing \
 		p5-BackupPC-XS>=0.53:sysutils/p5-BackupPC-XS
 
 CONFLICTS=	backuppc-[0-9]* backuppc-devel-[0-9]*
@@ -85,10 +87,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/backuppc
 	${CP} ${WRKSRC}/configure.pl ${STAGEDIR}${PREFIX}/libexec/backuppc/configure.pl
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

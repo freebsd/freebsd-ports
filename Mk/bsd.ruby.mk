@@ -256,7 +256,9 @@ RUBY_SHLIBVER?=		${RUBY_VER:S/.//}
 
 RUBY_CONFIGURE_ARGS+=	--program-prefix=""
 
-DEPENDS_ARGS+=		RUBY_VER="${RUBY_VER}"
+.if ${RUBY_VER} != ${RUBY_DEFAULT_VER}
+DEPENDS_ARGS+=		RUBY_VER=${RUBY_VER}
+.endif
 
 RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 

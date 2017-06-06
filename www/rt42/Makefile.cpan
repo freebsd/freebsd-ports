@@ -75,6 +75,7 @@
 ### XML::RSS 1.05
 
 CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
+		p5-CGI>4.0:www/p5-CGI							\
 		p5-CGI-Emulate-PSGI>0:www/p5-CGI-Emulate-PSGI				\
 		p5-CGI-PSGI>=0.12:www/p5-CGI-PSGI						\
 		p5-CSS-Squish>=0.06:textproc/p5-CSS-Squish					\
