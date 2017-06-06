@@ -9401,3 +9401,4 @@ print/gutenprint-base|print/gutenprint|2017-06-04|Folded into gutenprint port
 print/gutenprint-cups|print/gutenprint|2017-06-04|Folded into gutenprint port
 print/gutenprint-foomatic||2017-06-04|Component removed upstream
 print/gutenprint-ijs||2017-06-04|Component removed upstream
+devel/py-PyDispatcher|devel/py-pydispatcher|2017-06-05|Change name to lower case

@@ -1,10 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	PyDispatcher
+PORTNAME=	pydispatcher
 PORTVERSION=	2.0.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	PyDispatcher-${PORTVERSION}
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Multi-producer-multi-consumer signal dispatching mechanism
