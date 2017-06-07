@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name="tuptime"
+
+command="%%PREFIX%%/bin/tuptime"
+command_args="-x"
+
+stop_pre() {
+	command_args="-xg"
+	$command $command_args
+}
+
+depend() {
+	keyword -shutdown -jail
+}

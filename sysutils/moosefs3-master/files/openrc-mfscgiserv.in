@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name=mfscgiserv
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=%%MFS_WORKDIR%%/mfs/.${name}.lock
+procname="python"
+
+stop_pre() {
+	$command stop
+}
+
+depend() {
+	keyword -shutdown
+}

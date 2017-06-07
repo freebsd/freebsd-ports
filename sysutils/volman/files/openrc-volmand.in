@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="volmand"
+
+pidfile="/var/run/volmand.pid"
+command="%%PREFIX%%/sbin/volmand"
+
+depend() {
+	keyword -shutdown -jail
+}

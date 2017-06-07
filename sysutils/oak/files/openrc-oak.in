@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="oak"
+command="%%PREFIX%%/bin/oak"
+
+: ${oak_config="%%PREFIX%%/etc/oak.conf"}
+: ${oak_flags="-c ${oak_config}"}
+: ${oak_user="nobody"}
+
+required_files="${oak_config}"
+
+depend() {
+	keyword -shutdown
+}

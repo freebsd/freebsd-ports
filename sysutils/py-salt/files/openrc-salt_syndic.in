@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=salt_syndic
+
+command="%%PREFIX%%/bin/salt-syndic"
+required_files="%%PREFIX%%/etc/salt"
+command_args="-c ${required_files} -d"
+
+depend() {
+	keyword -shutdown
+}

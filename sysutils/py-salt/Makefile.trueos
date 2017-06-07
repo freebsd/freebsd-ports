@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-salt_api openrc-salt_master openrc-salt_minion openrc-salt_proxy openrc-salt_syndic
