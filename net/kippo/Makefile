@@ -19,6 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	desaster
 
 USES=		python twisted:run,conch,web
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 USE_RC_SUBR=	kippo
