@@ -9402,3 +9402,8 @@ print/gutenprint-cups|print/gutenprint|2017-06-04|Folded into gutenprint port
 print/gutenprint-foomatic||2017-06-04|Component removed upstream
 print/gutenprint-ijs||2017-06-04|Component removed upstream
 devel/py-PyDispatcher|devel/py-pydispatcher|2017-06-05|Change name to lower case
+mail/linux-thunderbird||2017-06-07|Has expired: Use the native thunderbird mail/thunderbird instead
+devel/p5-Penguin||2017-06-07|Has expired: Depends on expired security/pgp
+security/p5-Crypt-PGPSimple||2017-06-07|Has expired: Depends on expired security/pgp
+mail/pgpsendmail||2017-06-07|Has expired: Depends on expired security/pgp
+security/pgp||2017-06-07|Has expired: This software was last updated in 1996, use security/gnupg1 as a drop-in replacement with legacy PGP support.
