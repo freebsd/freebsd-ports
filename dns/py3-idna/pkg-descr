@@ -1,0 +1,10 @@
+A library to support the Internationalised Domain Names in Applications
+(IDNA) protocol as specified in RFC 5891. This version of the protocol
+is often referred to as "IDNA2008" and can produce different res
+lts from the earlier standard from 2003.
+
+The library is also intended to act as a suitable drop-in replacement
+for the "encodings.idna" module that comes with the Python standard
+library but currently only supports the older 2003 specification.
+
+WWW: https://github.com/kjd/idna
