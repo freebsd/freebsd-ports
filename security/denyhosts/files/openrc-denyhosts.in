@@ -1,0 +1,7 @@
+#!/sbin/openrc-run
+
+name="denyhosts"
+
+command="%%PREFIX%%/bin/denyhosts.py"
+command_args="--config %%PREFIX%%/etc/denyhosts.conf --daemon"
+pidfile="/var/run/${name}.pid"

@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+
+# Add the following lines to /etc/rc.conf to enable sancp:
+# sancp_flags (str):		Extra flags passed to sancp
+#				Default: -D
+# sancp_conf (str):		Sancp configuration file
+#				Default: %%PREFIX%%/etc/sancp.conf
+# sancp_interface (str):	Default: none - MUST BE SET
+
+name="sancp"
+command="%%PREFIX%%/bin/sancp"
+
+start_pre() {
+	if [ -z "${sancp_interface}" ]; then
+		eerror 1 "sancp_interface must set."
+	fi
+}
+
+# set some defaults
+: ${sancp_flags="-D"}
+: ${sancp_conf="%%PREFIX%%/etc/sancp.conf"}
+
+command_args="-c ${sancp_conf} -i ${sancp_interface}"

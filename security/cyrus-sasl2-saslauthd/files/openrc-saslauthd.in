@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+# Define these saslauthd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/saslauthd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+saslauthd_flags=${saslauthd_flags:-"-a pam"}	# Flags to saslauthd program
+#saslauthd_runpath="%%SASLAUTHD_RUNPATH%%"	# Working directory
+#saslauthd_program="%%PREFIX%%/sbin/saslauthd"	# Location of saslauthd
+
+name="saslauthd"
+command="%%PREFIX%%/sbin/${name}"
+
+if [ -z "$saslauthd_runpath" ]; then
+	pidfile="%%SASLAUTHD_RUNPATH%%/${name}.pid"
+else
+	pidfile="${saslauthd_runpath}/${name}.pid"
+	command_args="-m ${saslauthd_runpath}"
+fi
+
+depend() {
+	keyword -shutdown
+}

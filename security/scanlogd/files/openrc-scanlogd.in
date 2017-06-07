@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable scanlogd:
+# scanlogd_flags="<set as needed>"
+
+name="scanlogd"
+command="%%PREFIX%%/bin/${name}"
+
+depend() {
+	keyword -shutdown
+}

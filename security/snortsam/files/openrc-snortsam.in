@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+#  # optional Snortsam configuration file:
+#  snortsam_conf="%%ETCDIR%%/snortsam.conf"
+#
+# DO NOT CHANGE THE DEFAULT VALUES HERE
+#
+
+name="snortsam"
+# defaults
+command="%%PREFIX%%/sbin/snortsam"
+snortsam_flags=${snortsam_conf:-"%%ETCDIR%%/snortsam.conf"}
+
+depend() {
+	keyword -shutdown
+}

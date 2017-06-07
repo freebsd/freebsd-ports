@@ -1,0 +1,41 @@
+#!/sbin/openrc-run
+
+name="shibboleth_sp"
+
+: ${shibboleth_sp_flags:=''}
+
+command=${shibboleth_sp_program:-%%PREFIX%%/sbin/shibd}
+pidfile="${shibboleth_sp_pidfile:-/var/run/shibboleth/${name}.pid}"
+extra_commands="keygen"
+shibboleth_sp_usr=%%SHIBD_USER%%
+shibboleth_sp_group=%%SHIBD_GROUP%%
+www_group=%%WWWGRP%%
+command_user=${shibboleth_sp_usr}
+command_args="${shibboleth_sp_flags} -u ${shibboleth_sp_usr} -g ${shibboleth_sp_group} -t"
+confdir=${SHIBSP_CFGDIR:-%%PREFIX%%/etc}/shibboleth
+cert=sp-cert.pem
+key=sp-key.pem
+
+start_pre() {
+	if [ ! -s ${confdir}/${key} -o ! -s ${confdir}/${cert} ]; then
+		keygen
+	else
+		# update from 2.4.x, chown %%SHIBD_USER%% the key and cert
+	       	chown ${shibboleth_sp_usr}:${shibboleth_sp_group} ${confdir}/${key} ${confdir}/${cert}
+		chmod 400 ${confdir}/${key}
+		chmod 444 ${confdir}/${cert}
+	fi
+	# In FreeBSD 10 (r258664), /var/cache mode is corrected to 755. make sure we have that mode.
+	chmod 755 /var/cache
+	install -d -o ${shibboleth_sp_usr} -g ${shibboleth_sp_group} /var/log/shibboleth
+	install -d -o ${shibboleth_sp_usr} -g ${shibboleth_sp_group} /var/cache/shibboleth
+	install -d -o ${shibboleth_sp_usr} -g ${www_group} -m 750 /var/run/shibboleth
+}
+
+keygen() {
+	%%SH%% ${confdir}/keygen.sh -o ${confdir} -u ${shibboleth_sp_usr} -g ${shibboleth_sp_group}
+}
+
+depend() {
+	keyword -shutdown
+}

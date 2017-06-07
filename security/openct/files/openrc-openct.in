@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+name="openct"
+
+openct_rundir="/var/run/openct"
+command="%%PREFIX%%/sbin/openct-control"
+command_args="init"
+required_files="%%PREFIX%%/etc/openct.conf"
+
+start_pre() {
+	if [ ! -d "${openct_rundir}/." ]; then
+		/bin/mkdir ${openct_rundir}
+	fi
+}
+
+stop_pre() {
+        if [ -f "${openct_rundir}/status" ]; then
+		${command} shutdown > /dev/null
+        fi
+}
+
+depend() {
+	keyword -shutdown
+}
