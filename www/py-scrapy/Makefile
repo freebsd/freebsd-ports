@@ -3,6 +3,7 @@
 
 PORTNAME=	Scrapy
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=15.5.0:devel/py-twisted \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}w3lib>=1.14.2:www/py-w3lib \
 		${PYTHON_PKGNAMEPREFIX}cssselect>=0.9:www/py-cssselect \
-		${PYTHON_PKGNAMEPREFIX}queuelib>=1.2.2:sysutils/py-queuelib
+		${PYTHON_PKGNAMEPREFIX}queuelib>=1.2.2:sysutils/py-queuelib \
+		${PYTHON_PKGNAMEPREFIX}pydispatcher>=2.0.5:devel/py-pydispatcher \
+		${PYTHON_PKGNAMEPREFIX}service_identity>0:security/py-service_identity \
+		${PYTHON_PKGNAMEPREFIX}parsel>=1.1:textproc/py-parsel
 
 USES=		python
 USE_PYTHON=	distutils autoplist
