@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.8:devel/py-pyasn1
 
+OPTIONS_DEFINE=	DOCS
+
 NO_ARCH=	yes
 USES=		python shebangfix
 SHEBANG_FILES=	tools/*.py
@@ -27,6 +29,8 @@ TOOLS=		cmcdump.py cmpdump.py crldump.py crmfdump.py ocspclient.py \
 
 post-install:
 	${INSTALL_SCRIPT} ${TOOLS:S|^|${WRKSRC}/tools/|} ${STAGEDIR}${PREFIX}/bin
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
