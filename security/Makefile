@@ -964,6 +964,7 @@
     SUBDIR += py-zope.session
     SUBDIR += py-zxcvbn-python
     SUBDIR += py3-certifi
+    SUBDIR += py3-cryptography
     SUBDIR += py3-libnacl
     SUBDIR += py3-pycrypto
     SUBDIR += qtkeychain-qt4
