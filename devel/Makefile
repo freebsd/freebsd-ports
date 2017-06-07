@@ -4979,6 +4979,7 @@
     SUBDIR += py3-pylru-cache
     SUBDIR += py3-pytest
     SUBDIR += py3-pytest-runner
+    SUBDIR += py3-pytest-xdist
     SUBDIR += py3-python-magic
     SUBDIR += py3-pytz
     SUBDIR += py3-rubymarshal
