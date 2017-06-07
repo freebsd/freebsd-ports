@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -18,7 +18,6 @@ CONFLICTS_BUILD=	mdds0
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		zip:archivers/zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
-		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		${LOCALBASE}/bin/gperf:devel/gperf \
 		${LOCALBASE}/include/mdds-1.2/mdds/global.hpp:devel/mdds \
@@ -84,7 +83,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
 DISTFILES+=	4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
-		86b1daaa438f5a7bea9a52d7b9799ac0-xmlsec1-1.2.23.tar.gz:src
+		86b1daaa438f5a7bea9a52d7b9799ac0-xmlsec1-1.2.23.tar.gz:src \
+		cppunit-1.13.2.tar.gz:src
 
 .if defined(PRERELEASE)
 MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
@@ -92,7 +92,7 @@ MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
 
 CONFLICTS_INSTALL=	libreoffice4-4.*
 
-INSTALL_TARGET=	install-strip distro-pack-install
+INSTALL_TARGET=	TMPDIR=${WRKDIR} distro-pack-install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
 GNU_CONFIGURE=	yes
@@ -204,6 +204,7 @@ SDK_DISTFILES=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
 
 SYSTRAY_CONFIGURE_ENABLE=	systray
 
+TEST_ALL_TARGET_OFF=	build-nocheck
 TEST_CONFIGURE_ENABLE=	cve-tests
 
 VERBOSE_CONFIGURE_ON=	--enable-verbose
@@ -251,7 +252,8 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-zlib \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
-		--without-myspell-dicts
+		--without-myspell-dicts \
+		--without-system-cppunit
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		GNUTAR="${TAR}" \
@@ -309,7 +311,7 @@ post-install:
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
-.for subdir in application-registry applications bash-completion icons mime mime-info mimelnk
+.for subdir in appdata application-registry applications bash-completion icons mime mime-info mimelnk
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
