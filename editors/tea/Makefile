@@ -7,19 +7,23 @@ CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
 MAINTAINER=	danilo@FreeBSD.org
-COMMENT=	Simple and powerful Qt4-based text editor
+COMMENT=	Simple and powerful Qt-based text editor
 
 LICENSE=	GPLv3
 
+OPTIONS_SINGLE=	TOOLKITS
+OPTIONS_SINGLE_TOOLKITS=	QT4 QT5
 OPTIONS_DEFINE=		DOCS
 OPTIONS_GROUP=		SPELL
 OPTIONS_GROUP_SPELL=	ASPELL HUNSPELL
-OPTIONS_DEFAULT=	ASPELL HUNSPELL
+OPTIONS_DEFAULT=	QT4 ASPELL HUNSPELL
 
 USES=		pkgconfig:build qmake tar:bzip2
 USE_GL=		gl
 USE_LOCALE=	en_US.UTF-8
-USE_QT4=	corelib gui moc_build network rcc_build
+
+QT4_USE=	qt4=corelib,gui,moc_build,network,rcc_build
+QT5_USE=	qt5=buildtools_build,core,gui,network,widgets,printsupport,qml,quick
 
 LDFLAGS+=	-lz
 PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png
