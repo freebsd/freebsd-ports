@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1.2:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}application>=1.1.5:devel/py-application
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		python twisted
 USE_PYTHON=	distutils autoplist
 
