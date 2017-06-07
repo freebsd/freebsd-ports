@@ -1,3 +1,5 @@
+@dir etc/newsyslog.conf.d
+@sample %%EXAMPLESDIR%%/newsyslog etc/newsyslog.conf.d/owncloud
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/.user.ini
 %%WWWDIR%%/AUTHORS
@@ -10612,7 +10614,7 @@
 %%WWWDIR%%/lib/public/User/IProvidesQuotaBackend.php
 %%WWWDIR%%/lib/public/UserInterface.php
 %%WWWDIR%%/lib/public/Util.php
-%%WWWDIR%%/occ
+@(,,0755) %%WWWDIR%%/occ
 %%WWWDIR%%/ocs-provider/index.php
 %%WWWDIR%%/ocs/providers.php
 %%WWWDIR%%/ocs/routes.php
