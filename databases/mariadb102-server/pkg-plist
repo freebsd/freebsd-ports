@@ -3,6 +3,7 @@ bin/aria_dump_log
 bin/aria_ftdump
 bin/aria_pack
 bin/aria_read_log
+bin/innochecksum
 bin/my_print_defaults
 bin/myisam_ftdump
 bin/myisamchk
@@ -124,7 +125,6 @@ lib/mysql/plugin/ha_blackhole.so
 lib/mysql/plugin/ha_connect.so
 lib/mysql/plugin/ha_federated.so
 lib/mysql/plugin/ha_federatedx.so
-%%INNOBASE%%lib/mysql/plugin/ha_innobase.so
 %%MROONGA%%lib/mysql/plugin/ha_mroonga.so
 %%OQGRAPH%%lib/mysql/plugin/ha_oqgraph.so
 %%ROCKSDB%%lib/mysql/plugin/ha_rocksdb.so
@@ -194,7 +194,7 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/magic
 %%SPIDER%%%%DATADIR%%/install_spider.sql
 @comment %%DATADIR%%/maria_add_gis_sp.sql
-@comment %%DATADIR%%/maria_add_gis_sp_bootstrap.sql
+%%DATADIR%%/maria_add_gis_sp_bootstrap.sql
 %%MROONGA%%%%DATADIR%%/mroonga/install.sql
 %%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
 %%DATADIR%%/my-huge.cnf

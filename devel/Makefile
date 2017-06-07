@@ -4940,6 +4940,7 @@
     SUBDIR += py-zope.viewlet
     SUBDIR += py27-setuptools
     SUBDIR += py3-Jinja2
+    SUBDIR += py3-apipkg
     SUBDIR += py3-babel
     SUBDIR += py3-cffi
     SUBDIR += py3-click
@@ -4969,6 +4970,7 @@
     SUBDIR += py3-ply
     SUBDIR += py3-prompt_toolkit
     SUBDIR += py3-py
+    SUBDIR += py3-pyasn1
     SUBDIR += py3-pycodestyle
     SUBDIR += py3-pycparser
     SUBDIR += py3-pydocstyle

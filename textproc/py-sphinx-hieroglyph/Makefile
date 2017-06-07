@@ -3,6 +3,7 @@
 
 PORTNAME=	sphinx-hieroglyph
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,8 +19,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nyergler
 GH_PROJECT=	hieroglyph
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
+SHEBANG_FILES=	src/hieroglyph/themes/slides2/static/scripts/md/render.py
 
 NO_ARCH=	yes
 

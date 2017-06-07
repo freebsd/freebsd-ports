@@ -963,7 +963,10 @@
     SUBDIR += py-zope.securitypolicy
     SUBDIR += py-zope.session
     SUBDIR += py-zxcvbn-python
+    SUBDIR += py3-certifi
+    SUBDIR += py3-cryptography
     SUBDIR += py3-libnacl
+    SUBDIR += py3-openssl
     SUBDIR += py3-pycrypto
     SUBDIR += qtkeychain-qt4
     SUBDIR += qtkeychain-qt5
