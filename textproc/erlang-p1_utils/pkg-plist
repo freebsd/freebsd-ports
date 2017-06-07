@@ -3,6 +3,7 @@ lib/erlang/lib/p1_utils-%%VERSION%%/ebin/p1_file_queue.beam
 lib/erlang/lib/p1_utils-%%VERSION%%/ebin/p1_fsm.beam
 lib/erlang/lib/p1_utils-%%VERSION%%/ebin/p1_http.beam
 lib/erlang/lib/p1_utils-%%VERSION%%/ebin/p1_nif_utils.beam
+lib/erlang/lib/p1_utils-%%VERSION%%/ebin/p1_options.beam
 lib/erlang/lib/p1_utils-%%VERSION%%/ebin/p1_queue.beam
 lib/erlang/lib/p1_utils-%%VERSION%%/ebin/p1_server.beam
 lib/erlang/lib/p1_utils-%%VERSION%%/ebin/p1_time_compat.beam
@@ -16,6 +17,7 @@ lib/erlang/lib/p1_utils-%%VERSION%%/src/p1_file_queue.erl
 lib/erlang/lib/p1_utils-%%VERSION%%/src/p1_fsm.erl
 lib/erlang/lib/p1_utils-%%VERSION%%/src/p1_http.erl
 lib/erlang/lib/p1_utils-%%VERSION%%/src/p1_nif_utils.erl
+lib/erlang/lib/p1_utils-%%VERSION%%/src/p1_options.erl
 lib/erlang/lib/p1_utils-%%VERSION%%/src/p1_queue.erl
 lib/erlang/lib/p1_utils-%%VERSION%%/src/p1_server.erl
 lib/erlang/lib/p1_utils-%%VERSION%%/src/p1_time_compat.erl
