@@ -4969,6 +4969,7 @@
     SUBDIR += py3-ply
     SUBDIR += py3-prompt_toolkit
     SUBDIR += py3-py
+    SUBDIR += py3-pyasn1
     SUBDIR += py3-pycodestyle
     SUBDIR += py3-pycparser
     SUBDIR += py3-pydocstyle
