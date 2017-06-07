@@ -17,7 +17,7 @@ GH_TAGNAME=	${PORTVERSION}
 
 PLIST_FILES=	bin/moo man/man1/moo.1.gz
 
-.if exists(/usr/include/sys/capsicum.h)
+.if exists(/usr/include/sys/capsicum.h) && exists(/usr/include/capsicum_helpers.h)
 CFLAGS+=	-DHAVE_CAPSICUM
 .endif
 
