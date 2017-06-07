@@ -1,4 +1,4 @@
---- Makefile.orig	2017-06-01 18:24:01 UTC
+--- Makefile.orig	2016-06-04 10:05:27 UTC
 +++ Makefile
 @@ -1,14 +1,14 @@
  PROG=		moo
