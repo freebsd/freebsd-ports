@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kea
-PORTVERSION=	1.1.0
-PORTREVISION=	5
+PORTVERSION=	1.2.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ISC/kea/${PORTVERSION}
 
@@ -27,6 +26,8 @@ CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 		--with-boost-lib-dir=${LOCALBASE}/lib \
 		--without-werror
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
 PORTDOCS=	AUTHORS COPYING ChangeLog README \
 		kea-guide.css kea-guide.html kea-guide.txt \
 		kea-messages.html kea-logo-100x70.png \
