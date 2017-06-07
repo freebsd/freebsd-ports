@@ -1,4 +1,4 @@
-# Created by: Philip Paeps <philip@FreeBSD.org>
+# Created by: Ben Woods <woodsb02@FreeBSD.org>
 # $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../py-cryptography
