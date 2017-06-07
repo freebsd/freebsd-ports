@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name="mbgsvcd"
+command="/usr/local/sbin/${name}"
+
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+## utility_pidfile=${utility_pidfile-"/var/run/utility.pid"}
+
+## pidfile="${utility_pidfile}"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,41 @@
+#!/sbin/openrc-run
+
+# to enable this service:
+#
+# spiped_pipes:		List of names of pipes to create.
+# spiped_pipe_X_mode:	"encrypt"/"client" or "decrypt"/"server".
+# spiped_pipe_X_source: Source address of pipe X.
+# spiped_pipe_X_target:	Target address of pipe X.
+# spiped_pipe_X_key:	Key file for pipe X.
+# spiped_pipe_X_flags:	Optional flags for pipe X. See spiped(1) for details.
+
+name="spiped"
+
+command=%%PREFIX%%/bin/${name}
+
+start() {
+	for P in ${spiped_pipes}; do
+		PIDFILE=/var/run/spiped_${P}.pid
+		eval MODE=\$spiped_pipe_${P}_mode
+		eval SOURCE=\$spiped_pipe_${P}_source
+		eval TARGET=\$spiped_pipe_${P}_target
+		eval KEY=\$spiped_pipe_${P}_key
+		eval FLAGS=\$spiped_pipe_${P}_flags
+		case "$MODE" in
+		encrypt | client)
+			MODEFLAG="-e"
+			;;
+		decrypt | server)
+			MODEFLAG="-d"
+			;;
+		*)
+			eerror Invalid value for spiped_pipe_${P}_mode: $MODE
+			continue
+		esac
+		${command} -D $MODEFLAG -s $SOURCE -t $TARGET -k $KEY -p $PIDFILE $FLAGS
+	done
+}
+
+depend() {
+	keyword -shutdown
+}

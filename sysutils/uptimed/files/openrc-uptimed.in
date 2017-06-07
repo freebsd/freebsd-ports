@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name="uptimed"
+
+: ${uptimed_pidfile="/var/run/${name}.pid"}
+
+pidfile=${uptimed_pidfile}
+uptimed_flags="-p ${pidfile}"
+
+command=%%PREFIX%%/sbin/${name}
+command_args=${uptimed_flags}
+
+depend() {
+	keyword -shutdown
+}

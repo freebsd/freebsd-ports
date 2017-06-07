@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+# Define these ipfs_go_* variables in /etc/rc.conf[.local]:
+#
+# ipfs_go_path="/tank/ipfs"
+
+: ${ipfs_go_path:="/root/.ipfs"}
+
+name=ipfs_go
+command="%%PREFIX%%/bin/ipfs-go"
+command_args="daemon"
+
+start_pre() {
+        [ -d ${ipfs_go_path}/datastore ] || env IPFS_PATH=${ipfs_go_path} ${command} init
+	env IPFS_PATH=${ipfs_go_path} > /dev/null
+}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name=twdm2
+
+command="%%PREFIX%%/sbin/3dm2"
+required_files=%%PREFIX%%/etc/3dm2/3dm2.conf
+
+start_pre() {
+	umask 077
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

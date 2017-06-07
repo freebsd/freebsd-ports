@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name="diskcheckd"
+command=%%PREFIX%%/sbin/diskcheckd
+
+depend() {
+	keyword -shutdown
+}

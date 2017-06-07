@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=webmin
+
+procname=%%PERL%%
+pidfile=/var/log/webmin/miniserv.pid
+required_dirs=%%PREFIX%%/etc/webmin
+command=%%PREFIX%%/etc/webmin/start
+
+depend() {
+	use net
+}

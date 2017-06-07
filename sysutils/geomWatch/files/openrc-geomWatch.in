@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+
+# Define these geomwatch_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/geomwatch
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+geomwatch_pidfile="/var/run/geomWatch.pid"
+
+name="geomwatch"
+
+: ${geomwatch_config="%%PREFIX%%/etc/geomWatch.conf"}
+: ${geomwatch_flags="-c ${geomwatch_config}"}
+
+pidfile="${geomwatch_pidfile}"
+required_files="${geomwatch_config}"
+command="%%PREFIX%%/sbin/geomWatch"
+command_args=${geomwatch_flags}
+
+start_pre() {
+	case "${geomwatch_flags}" in
+	*-p\ *)
+		eerror "ERROR: \$geomwatch_flags includes -p option." \
+			"Please use \$geomwatch_pidfile instead."
+		exit 1
+		;;
+	*)
+		geomwatch_flags="-p ${pidfile} ${geomwatch_flags}"
+		;;
+	esac
+}
+
+depend() {
+	keyword -shutdown
+}

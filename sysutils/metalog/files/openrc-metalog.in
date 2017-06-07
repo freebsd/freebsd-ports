@@ -1,0 +1,7 @@
+#!/sbin/openrc-run
+
+name=metalog
+pidfile="/var/run/metalog.pid"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/metalog.conf"
+supervisor=supervise-daemon

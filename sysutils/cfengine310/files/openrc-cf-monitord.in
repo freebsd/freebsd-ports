@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf[.local] to enable cf-monitord(8)
+#
+# cf_monitord_flags (str):          Custom additional arguments to be passed
+#                               to cf-monitord (default empty).
+
+name="cf_monitord"
+
+command="%%PREFIX%%/sbin/cf-monitord"
+
+depend() {
+	keyword -shutdown
+}

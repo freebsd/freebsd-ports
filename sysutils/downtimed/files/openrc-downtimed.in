@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# This file should be installed as %%PREFIX%%/etc/rc.d/downtimed
+#
+# Define downtimed_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/downtimed
+#
+# Add the following line to change the default options, see downtimed(8):
+#	downtimed_flags="<set as needed>"
+#
+# DO NOT CHANGE THE DEFAULT VALUES BELOW
+
+name="downtimed"
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+depend() {
+	keyword -shutdown
+}
