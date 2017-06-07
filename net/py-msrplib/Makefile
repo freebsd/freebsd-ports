@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gnutls>=1.1.6:security/py-gnutls \
 		${PYTHON_PKGNAMEPREFIX}application>=1.1.0:devel/py-application
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		python twisted:names
 USE_PYTHON=	distutils autoplist
 
