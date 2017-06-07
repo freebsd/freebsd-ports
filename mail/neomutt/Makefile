@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	neomutt
-PORTVERSION=	20170428
-PORTREVISION=	1
+PORTVERSION=	20170602
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	mail
 
@@ -45,15 +44,8 @@ SCREEN_DESC=	Screen options
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-docdir="${DOCSDIR}" \
 		--with-ssl="${OPENSSLBASE}" \
-		--enable-imap \
-		--enable-smtp \
-		--enable-pop \
-		--enable-nntp \
-		--enable-compressed \
-		--enable-sidebar \
 		--disable-fcntl \
 		--enable-locales-fix \
-		--enable-external-dotlock \
 		${ICONV_CONFIGURE_ARGS}
 
 # Header cache
@@ -82,7 +74,9 @@ FLOCK_CONFIGURE_ENABLE=	flock
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl
 
-GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
+GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme \
+			libassuan.so:security/libassuan \
+			libgpg-error.so:security/libgpg-error
 GPGME_CONFIGURE_ENABLE=	gpgme
 
 NOTMUCH_LIB_DEPENDS=	libnotmuch.so:mail/notmuch
@@ -100,6 +94,9 @@ DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 
 post-patch:
 	@${REINPLACE_CMD} '/LIBS=$$/d' ${WRKSRC}/configure.ac
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e 's/xsltproc.*//' ${WRKSRC}/doc/Makefile.am
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/etc/mime*

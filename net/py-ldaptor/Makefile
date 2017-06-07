@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing \
 
 GITVERSION=	aad8ded658b36337a08aeb7402b6b67eb8771bea
 
+NO_ARCH=	yes
 USES=		gettext python twisted
 USE_PYTHON=	distutils autoplist
 PYDISTUTILS_INSTALL_TARGET=	install_locale install

@@ -11,6 +11,7 @@ DISTNAME=	sippy-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	SIP Back-to-back user agent (B2BUA) server with Radius support
 
+NO_ARCH=	yes
 USE_PYTHON=	distutils
 USES=		python twisted
 PYDISTUTILS_PKGNAME=	sippy

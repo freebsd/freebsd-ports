@@ -898,8 +898,10 @@
     SUBDIR += py-uptime
     SUBDIR += py-zdaemon
     SUBDIR += py-zfs
+    SUBDIR += py3-execnet
     SUBDIR += py3-iocage
     SUBDIR += py3-pkginfo
+    SUBDIR += py3-ptyprocess
     SUBDIR += pydf
     SUBDIR += qchroot
     SUBDIR += qjail
