@@ -13,12 +13,12 @@ COMMENT=	HTTP library with thread-safe connection pooling, file post, and more
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=1.3.4:security/py-cryptography \
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}cryptography>=1.3.4:security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}idna>=2.0:dns/py-idna \
 		${PYTHON_PKGNAMEPREFIX}openssl>=16.0:security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=1.5.7:net/py-pysocks
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 SUB_FILES=	pkg-message

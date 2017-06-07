@@ -1078,6 +1078,7 @@
     SUBDIR += py-zsi
     SUBDIR += py3-netifaces
     SUBDIR += py3-pysocks
+    SUBDIR += py3-urllib3
     SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pyrad
