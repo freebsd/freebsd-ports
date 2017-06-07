@@ -9407,3 +9407,4 @@ devel/p5-Penguin||2017-06-07|Has expired: Depends on expired security/pgp
 security/p5-Crypt-PGPSimple||2017-06-07|Has expired: Depends on expired security/pgp
 mail/pgpsendmail||2017-06-07|Has expired: Depends on expired security/pgp
 security/pgp||2017-06-07|Has expired: This software was last updated in 1996, use security/gnupg1 as a drop-in replacement with legacy PGP support.
+dns/pear-Net_DNS||2017-06-07|Has expired: This Port use PHP4.2 - This PHP-Version is not longer supporded
