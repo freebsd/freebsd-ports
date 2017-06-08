@@ -26,8 +26,4 @@ PLIST_FILES=	include/cltune.h \
 		lib/libcltune.so \
 		libdata/pkgconfig/cltune.pc
 
-post-install:
-	@${MV} ${STAGEDIR}/${PREFIX}/lib/pkgconfig/cltune.pc ${STAGEDIR}/${PREFIX}/libdata/pkgconfig/cltune.pc
-	@${RM} -r ${STAGEDIR}/${PREFIX}/lib/pkgconfig
-
 .include <bsd.port.mk>

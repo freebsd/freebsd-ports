@@ -22,8 +22,4 @@ GH_PROJECT=	CLBlast
 USE_LDCONFIG=	yes
 USES=		cmake
 
-post-install:
-	@${MV} ${STAGEDIR}/${PREFIX}/lib/pkgconfig/clblast.pc ${STAGEDIR}/${PREFIX}/libdata/pkgconfig/clblast.pc
-	@${RM} -r ${STAGEDIR}/${PREFIX}/lib/pkgconfig
-
 .include <bsd.port.mk>
