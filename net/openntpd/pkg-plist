@@ -1,4 +1,5 @@
 @sample etc/ntpd.conf.sample
+etc/periodic/daily/480.status-openntpd
 man/man5/ntpd.conf.5.gz
 man/man8/ntpctl.8.gz
 man/man8/ntpd.8.gz

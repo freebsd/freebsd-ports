@@ -16,21 +16,27 @@ USES=		blaslapack fortran localbase
 
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC_SUBDIR=	src
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-blas --with-blas-lib=${BLASLIB} \
 		--with-lapack --with-lapack-lib=${LAPACKLIB} \
 		--enable-shared
-CONFIGURE_ENV=	CC=mpicc CXX=mpicxx
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_SINGLE=	MPI
+OPTIONS_DEFINE=		DOCS
+OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH2 OPENMPI
 OPTIONS_DEFAULT=	MPICH2
 
 MPICH2_LIB_DEPENDS=	libmpich.so.8:net/mpich2
+MPICH2_CONFIGURE_ENV=	CC=${LOCALBASE}/bin/mpicc CXX=${LOCALBASE}/bin/mpicxx
+MPICH2_CONFIGURE_WITH=	MPI-include=${LOCALBASE}/include \
+			MPI-lib-dirs=${LOCALBASE}/lib
 OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+OPENMPI_CONFIGURE_ENV=	CC=${LOCALBASE}/mpi/openmpi/bin/mpicc \
+			CXX=${LOCALBASE}/mpi/openmpi/bin/mpicxx
+OPENMPI_CONFIGURE_WITH=	MPI-include=${LOCALBASE}/mpi/openmpi/include \
+			MPI-lib-dirs=${LOCALBASE}/mpi/openmpi/lib
 
 .ifdef MAINTAINER_MODE
 TEST_TARGET=	check
