@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	10.0.1
-PORTREVISION=	1
+PORTVERSION=	10.0.2
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -49,7 +48,8 @@ do-install:
 	@cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} \
+		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/
 	${INSTALL_DATA} ${WRKDIR}/newsyslog ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
