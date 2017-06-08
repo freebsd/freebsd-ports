@@ -2,7 +2,7 @@
 
 PORTNAME=	openntpd
 PORTVERSION=	6.0p1
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD/OpenNTPD
@@ -23,12 +23,17 @@ USES=		ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cacert=${LOCALBASE}/etc/ssl/cert.pem
 
+SUB_FILES=	480.status-openntpd
+
 pre-build:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 	    ${WRKSRC}/src/ntpd.conf.5 ${WRKSRC}/src/ntpd.8
 
 post-install:
 	cd ${STAGEDIR}${PREFIX}/etc && ${MV} ntpd.conf ntpd.conf.sample
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/480.status-openntpd \
+		${STAGEDIR}${PREFIX}/etc/periodic/daily
 
 .include <bsd.port.pre.mk>
 
