@@ -192,6 +192,7 @@
 %%WWWDIR%%/apps/configreport/lib/AdminPanel.php
 %%WWWDIR%%/apps/configreport/lib/AppInfo/Application.php
 %%WWWDIR%%/apps/configreport/lib/Command/ConfigReport.php
+%%WWWDIR%%/apps/configreport/lib/ConfigReportEvent.php
 %%WWWDIR%%/apps/configreport/lib/Controller/ReportController.php
 %%WWWDIR%%/apps/configreport/lib/Http/ReportResponse.php
 %%WWWDIR%%/apps/configreport/lib/ReportDataCollector.php
@@ -4142,6 +4143,8 @@
 %%WWWDIR%%/core/doc/admin/_images/oracle-1.png
 %%WWWDIR%%/core/doc/admin/_images/ownbrander-1.png
 %%WWWDIR%%/core/doc/admin/_images/ownbrander-11.png
+%%WWWDIR%%/core/doc/admin/_images/owncloud-market-custom-groups-install.png
+%%WWWDIR%%/core/doc/admin/_images/owncloud-market-custom-groups.png
 %%WWWDIR%%/core/doc/admin/_images/phpinfo.png
 %%WWWDIR%%/core/doc/admin/_images/preview_images.png
 %%WWWDIR%%/core/doc/admin/_images/rackspace.png
@@ -4240,7 +4243,6 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration_user/reset_user_password.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_user/user_auth_ftp_smb_imap.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_user/user_auth_ldap.txt
-%%WWWDIR%%/core/doc/admin/_sources/configuration_user/user_auth_ldap_cleanup.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_user/user_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_user/user_provisioning_api.txt
 %%WWWDIR%%/core/doc/admin/_sources/contents.txt
@@ -4436,7 +4438,6 @@
 %%WWWDIR%%/core/doc/admin/configuration_user/reset_user_password.html
 %%WWWDIR%%/core/doc/admin/configuration_user/user_auth_ftp_smb_imap.html
 %%WWWDIR%%/core/doc/admin/configuration_user/user_auth_ldap.html
-%%WWWDIR%%/core/doc/admin/configuration_user/user_auth_ldap_cleanup.html
 %%WWWDIR%%/core/doc/admin/configuration_user/user_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_user/user_provisioning_api.html
 %%WWWDIR%%/core/doc/admin/contents.html
@@ -4497,12 +4498,15 @@
 %%WWWDIR%%/core/doc/admin/search.html
 %%WWWDIR%%/core/doc/admin/searchindex.js
 %%WWWDIR%%/core/doc/admin/whats_new_admin.html
+%%WWWDIR%%/core/doc/user/_images/add-user-to-guests.png
 %%WWWDIR%%/core/doc/user/_images/contact_thunderbird-Symbol_Gear.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_thunderbird-Symbol_Impeller.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_thunderbird-URL_config.jpg
+%%WWWDIR%%/core/doc/user/_images/content-shared-with-guest-user.png
 %%WWWDIR%%/core/doc/user/_images/create_public_share-6.png
 %%WWWDIR%%/core/doc/user/_images/create_public_share-8.png
 %%WWWDIR%%/core/doc/user/_images/create_public_share-9.png
+%%WWWDIR%%/core/doc/user/_images/custom-group-manage-group-members.png
 %%WWWDIR%%/core/doc/user/_images/direct-share-1.png
 %%WWWDIR%%/core/doc/user/_images/encryption1.png
 %%WWWDIR%%/core/doc/user/_images/encryption2.png
@@ -4545,12 +4549,16 @@
 %%WWWDIR%%/core/doc/user/_images/oc_personal_settings_dropdown.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav1.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav2.png
+%%WWWDIR%%/core/doc/user/_images/owncloud-create-custom-group-annotated.png
+%%WWWDIR%%/core/doc/user/_images/owncloud-share-to-custom-group.png
 %%WWWDIR%%/core/doc/user/_images/personal_settings.png
 %%WWWDIR%%/core/doc/user/_images/private-link.png
 %%WWWDIR%%/core/doc/user/_images/quota1.png
+%%WWWDIR%%/core/doc/user/_images/rename-custom-group.png
 %%WWWDIR%%/core/doc/user/_images/settings_devices.png
 %%WWWDIR%%/core/doc/user/_images/settings_devices_add.png
 %%WWWDIR%%/core/doc/user/_images/settings_sessions.png
+%%WWWDIR%%/core/doc/user/_images/share-with-guest-users.png
 %%WWWDIR%%/core/doc/user/_images/video_player_2.png
 %%WWWDIR%%/core/doc/user/_images/webdav_dolphin.png
 %%WWWDIR%%/core/doc/user/_images/webdav_gnome3_nautilus.png
@@ -4582,6 +4590,7 @@
 %%WWWDIR%%/core/doc/user/_sources/pim/troubleshooting.txt
 %%WWWDIR%%/core/doc/user/_sources/session_management.txt
 %%WWWDIR%%/core/doc/user/_sources/userpreferences.txt
+%%WWWDIR%%/core/doc/user/_sources/webdav-api/index.txt
 %%WWWDIR%%/core/doc/user/_sources/webinterface.txt
 %%WWWDIR%%/core/doc/user/_sources/whats_new.txt
 %%WWWDIR%%/core/doc/user/_static/ajax-loader.gif
@@ -4697,6 +4706,7 @@
 %%WWWDIR%%/core/doc/user/searchindex.js
 %%WWWDIR%%/core/doc/user/session_management.html
 %%WWWDIR%%/core/doc/user/userpreferences.html
+%%WWWDIR%%/core/doc/user/webdav-api/index.html
 %%WWWDIR%%/core/doc/user/webinterface.html
 %%WWWDIR%%/core/doc/user/whats_new.html
 %%WWWDIR%%/core/fonts/LICENSE.txt
@@ -10614,7 +10624,7 @@
 %%WWWDIR%%/lib/public/User/IProvidesQuotaBackend.php
 %%WWWDIR%%/lib/public/UserInterface.php
 %%WWWDIR%%/lib/public/Util.php
-@(,,0755) %%WWWDIR%%/occ
+%%WWWDIR%%/occ
 %%WWWDIR%%/ocs-provider/index.php
 %%WWWDIR%%/ocs/providers.php
 %%WWWDIR%%/ocs/routes.php
