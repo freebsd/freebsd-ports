@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zookeeper
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,6 +14,8 @@ LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
 USE_PHP=	session:build
 USES=		php:pecl
+
+PLIST_FILES=	%%DATADIR%%/zookeeper-api.php
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
