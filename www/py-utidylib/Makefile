@@ -1,12 +1,11 @@
 # Created by: Stefan Esser <se@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	utidy
+PORTNAME=	utidylib
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	uTidylib-${PORTVERSION}
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Python interface to tidy-lib
@@ -22,7 +21,7 @@ GH_TAGNAME=	8eb8b3041d4dd44d7b64314da477b93b98bd692d
 # XXX Better depend on tidy or tidy-devel???
 LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
-USES=		python:2
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 post-patch:
