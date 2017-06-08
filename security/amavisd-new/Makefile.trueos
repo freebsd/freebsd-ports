@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-amavis-milter openrc-amavis-p0fanalyzer openrc-amavisd-snmp openrc-amavisd

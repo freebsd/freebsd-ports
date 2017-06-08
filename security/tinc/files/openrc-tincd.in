@@ -1,0 +1,57 @@
+#!/sbin/openrc-run
+
+# Define these tincd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/tincd
+#
+# tincd_cfg (str):	Set to "" by default.
+#			Set it to NETNAMEs to use (ex.: "vpn1 vpn2").
+# tincd_flags (str):	Set to "" by default.
+#			Set it to flags to use (ex.: "-d 1 --logfile").
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+
+name="tincd"
+command="%%PREFIX%%/sbin/tincd"
+procname=${command:-tincd}
+ldconfig_command="/sbin/ldconfig"
+
+start() {
+	${ldconfig_command} -elf -m %%LOCALBASE%%/lib
+	if test -z "${tincd_cfg}"
+	then
+		ebegin "Starting tincd"
+		$command
+	else
+		for cfg in ${tincd_cfg}
+		do
+			ebegin "Starting tincd for: ${cfg}"
+			$command -n $cfg $tincd_flags
+		done
+	fi
+# code deliberately borrowed from /etc/rc.d/netif
+	if [ -f /etc/rc.d/ipfilter ] ; then
+		# Resync ipfilter
+		/etc/rc.d/ipfilter quietresync
+	fi
+}
+
+stop() {
+	if test -z "${tincd_cfg}"
+	then
+		eend "Stopping tincd"
+		$command -k
+	else
+		for cfg in $tincd_cfg
+		do
+			eend "Stopping tincd for: ${cfg}"
+			$command -n $cfg -k
+		done
+	fi
+}
+
+depend() {
+	use net
+	keyword -jail
+}

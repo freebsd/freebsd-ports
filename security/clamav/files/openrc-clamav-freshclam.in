@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable the freshclam daemon:
+#
+# clamav_freshclam_flags="<set as needed>"
+#
+# See freshclam(1) for flags
+
+name=clamav_freshclam
+
+command=%%PREFIX%%/bin/freshclam
+pidfile=%%RUNDIR%%/freshclam.pid
+command_args="--daemon -p ${pidfile}"
+required_dirs=%%DBDIR%%
+required_files=%%PREFIX%%/etc/freshclam.conf
+supervisor=supervise-daemon
+
+depend() {
+	need clamav-clam
+	keyword -shutdown
+}

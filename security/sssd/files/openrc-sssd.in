@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name=sssd
+
+: ${sssd_conf="%%PREFIX%%/etc/sssd/sssd.conf"}
+: ${sssd_flags="-f -D"}
+
+command="%%PREFIX%%/sbin/sssd"
+pidfile="/var/run/$name.pid"
+required_files="${sssd_conf}"
+
+start_pre() {
+	for i in db/sss db/sss_mc log/sssd run/sss/krb5.include.d run/sss/private run/sss; do
+		if [ ! -d var/${i} ]; then mkdir -p /var/${i}; fi
+	done
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+}

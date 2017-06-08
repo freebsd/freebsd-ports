@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable doorman:
+# doorman_config (path):      Set to "%%PREFIX%%/etc/doormand/doormand.cf" by default.
+
+name="doorman"
+
+[ -z "$doorman_config" ] && doorman_config="%%PREFIX%%/etc/doormand/doormand.cf"
+[ -f "$doorman_config" ] || (ewarn "$doorman_config" does not exist.; exit)
+
+command=%%PREFIX%%/sbin/doormand
+pidfile=/var/run/doormand.pid
+command_args="-p $pidfile -f $doorman_config"

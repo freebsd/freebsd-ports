@@ -1,0 +1,51 @@
+#!/sbin/openrc-run
+
+name="i2p"
+
+: ${i2p_user=""}
+
+command="%%PREFIX%%/sbin/i2prouter"
+extra_commands="status install uninstall update"
+
+i2p_check_vars() {
+  if [ -z "${i2p_user}" ]; then
+    i2p_user=$(whoami)
+  fi
+
+  if [ "x${i2p_user}" = "xroot" ]; then
+    eerror "You have to set i2p_user to a non-root user for security reasons"
+  fi
+}
+
+generic_cmd() {
+  i2p_check_vars
+  su -l ${i2p_user} -c "${command} ${1}"
+}
+
+start_pre() {
+  generic_cmd start
+}
+
+stop_pre() {
+  generic_cmd stop
+}
+
+status() {
+  generic_cmd status
+}
+
+restart_pre() {
+  generic_cmd restart
+}
+
+install() {
+  generic_cmd install
+}
+
+uninstall() {
+  generic_cmd uninstall
+}
+
+update() {
+  generic_cmd update
+}
