@@ -1,0 +1,7 @@
+HYPRE: Scalable Linear Solvers and Multigrid Methods
+
+HYPRE is a library of high performance preconditioners and solvers featuring
+multigrid methods for the solution of large, sparse linear systems of equations
+on massively parallel computers.
+
+WWW: http://www.llnl.gov/casc/hypre/
