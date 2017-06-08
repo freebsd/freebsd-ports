@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
 SHEBANG_FILES=	Lib/lib2to3/tests/data/*.py Lib/encodings/*.py
 
+BROKEN_SSL=	openssl-devel
+
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
 
