@@ -3,22 +3,27 @@
 
 PORTNAME=	utidy
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
-MASTER_SITES=	SF/utidylib
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	uTidylib-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Python interface to tidy-lib
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	xdissent
+GH_PROJECT=	utidylib
+GH_TAGNAME=	8eb8b3041d4dd44d7b64314da477b93b98bd692d
 
 # XXX Better depend on tidy or tidy-devel???
 LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
-USES=		python:2 zip
+USES=		python:2
 USE_PYTHON=	distutils autoplist
-
-BROKEN=		checksum mismatch
 
 post-patch:
 	@${REINPLACE_CMD} \
