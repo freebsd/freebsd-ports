@@ -4948,6 +4948,7 @@
     SUBDIR += py3-click-threading
     SUBDIR += py3-colorama
     SUBDIR += py3-coloredlogs
+    SUBDIR += py3-dateutil
     SUBDIR += py3-dbus
     SUBDIR += py3-defusedxml
     SUBDIR += py3-docopt
