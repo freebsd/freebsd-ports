@@ -1,6 +1,4 @@
 This is uTidylib, the Python wrapper for the HTML cleaning library named
 TidyLib:
 
-	http://tidy.sf.net
-
-WWW: http://utidylib.berlios.de/
+WWW: https://github.com/xdissent/utidylib
