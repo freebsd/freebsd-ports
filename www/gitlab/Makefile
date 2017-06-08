@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.17.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -61,7 +61,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.6:dns/rubygem-validates_hostname \
 	rubygem-browser>=2.2:www/rubygem-browser \
-	rubygem-gitlab_omniauth-ldap>=1.2.1:net/rubygem-gitlab_omniauth-ldap \
+	rubygem-gitlab_omniauth-ldap1>=1.2.1:net/rubygem-gitlab_omniauth-ldap1 \
 	rubygem-gollum-lib-gitlab>=4.2.0:www/rubygem-gollum-lib-gitlab \
 	rubygem-gollum-rugged_adapter>=0.4.2:www/rubygem-gollum-rugged_adapter \
 	rubygem-github-linguist>=4.7.0:textproc/rubygem-github-linguist \
