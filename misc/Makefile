@@ -45,6 +45,7 @@
     SUBDIR += colortail
     SUBDIR += colwide
     SUBDIR += compat10x
+    SUBDIR += compat11x
     SUBDIR += compat4x
     SUBDIR += compat5x
     SUBDIR += compat6x
