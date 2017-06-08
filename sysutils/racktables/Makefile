@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racktables
-DISTVERSION=	0.20.11
+DISTVERSION=	0.20.13
 CATEGORIES?=	sysutils www
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	RackTables-${DISTVERSION}
@@ -15,14 +15,13 @@ LICENSE=	GPLv2
 NO_BUILD=	yes
 RACKHOME?=	www/racktables
 
-PORTEXAMPLES=	init-sample-racks.sql syncdomain.php
+PORTEXAMPLES=	cleanup_ldap_cache.php init-sample-racks.sql syncdomain.php
 
-USES=		shebangfix perl5 python:run
+USES=		shebangfix php:web perl5 python:run
 USE_PERL5=	run
 SHEBANG_FILES=	gateways/*
 
-WANT_PHP_WEB=	yes
-USE_PHP=	bcmath gd json mbstring mysql pdo_mysql session
+USE_PHP=	bcmath gd json mbstring mysqli pdo_mysql session
 SUB_FILES=	pkg-message
 PLIST_SUB=	WWWDIR_REL=${WWWDIR_REL} WWWDIR=${WWWDIR}
 WWWUSER?=	www
