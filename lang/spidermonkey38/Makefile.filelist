@@ -1,0 +1,34 @@
+# $FreeBSD$
+
+BASEFILES=	js.msg jsalloc.h jsapi.h jsbytecode.h \
+		jsclist.h jscpucfg.h jsfriendapi.h perf/jsperf.h jsprf.h \
+		jsprototypes.h jspubtd.h jstypes.h jsversion.h jswrapper.h
+
+JSFILES=	CallArgs.h CallNonGenericMethod.h CharacterEncoding.h \
+		Class.h Conversions.h Date.h Debug.h GCAPI.h HashTable.h \
+		HeapAPI.h Id.h LegacyIntTypes.h MemoryMetrics.h Principals.h \
+		ProfilingFrameIterator.h ProfilingStack.h Proxy.h \
+		RequiredDefines.h RootingAPI.h SliceBudget.h \
+		StructuredClone.h TracingAPI.h TrackedOptimizationInfo.h \
+		TypeDecls.h UbiNode.h UbiNodeTraverse.h Utility.h Value.h \
+		Vector.h WeakMapPtr.h
+
+MOZILLAFILES=	Alignment.h AllocPolicy.h AlreadyAddRefed.h Array.h \
+		ArrayUtils.h Assertions.h Atomics.h Attributes.h \
+		BinarySearch.h BloomFilter.h Casting.h ChaosMode.h \
+		Char16.h CheckedInt.h Compiler.h Compression.h Constants.h \
+		DebugOnly.h decimal/Decimal.h Endian.h EnumSet.h EnumeratedArray.h \
+		FloatingPoint.h GuardObjects.h HashFunctions.h \
+		IntegerPrintfMacros.h IntegerRange.h IntegerTypeTraits.h \
+		IteratorTraits.h JSONWriter.h Likely.h LinkedList.h \
+		MacroArgs.h MacroForEach.h MathAlgorithms.h Maybe.h \
+		MaybeOneOf.h MemoryChecking.h MemoryReporting.h Move.h \
+		NullPtr.h  NumericLimits.h Opaque.h Pair.h \
+		PodOperations.h Poison.h Range.h RangedPtr.h \
+		ReentrancyGuard.h RefCountType.h RefPtr.h \
+		ReverseIterator.h RollingMean.h SHA1.h Scoped.h \
+		SegmentedVector.h SizePrintfMacros.h SplayTree.h \
+		TaggedAnonymousMemory.h TemplateLib.h  ThreadLocal.h \
+		ToString.h TypeTraits.h TypedEnumBits.h Types.h \
+		UniquePtr.h Vector.h WeakPtr.h double-conversion/double-conversion.h \
+		unused.h double-conversion/utils.h
