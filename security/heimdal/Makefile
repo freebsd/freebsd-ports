@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	7.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
