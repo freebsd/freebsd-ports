@@ -22,5 +22,6 @@
     SUBDIR += php_doc
     SUBDIR += trytond28_account_fr
     SUBDIR += verbiste
+    SUBDIR += wordpress
 
 .include <bsd.port.subdir.mk>
