@@ -1,0 +1,18 @@
+--- Makefile.in.orig	2017-06-05 19:05:02 UTC
++++ Makefile.in
+@@ -208,10 +208,13 @@ endif
+ SCRIPTS = $(JS_CONFIG_NAME)
+ SDK_BINARY = $(JS_CONFIG_NAME)
+ 
+-$(LIBRARY_NAME).pc: js.pc
++$(JS_CONFIG_NAME): js-config
+ 	cp $^ $@
+ 
+-install:: $(LIBRARY_NAME).pc
++$(JS_LIBRARY_NAME).pc: js.pc
++	cp $^ $@
++
++install:: $(JS_LIBRARY_NAME).pc
+ 	$(SYSINSTALL) $^ $(DESTDIR)$(prefix)/libdata/pkgconfig
+ 
+ install:: js-config.h
