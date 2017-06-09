@@ -17,6 +17,7 @@
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
+    SUBDIR += OpenTomb
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abuse_sdl
