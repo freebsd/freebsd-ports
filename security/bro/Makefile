@@ -23,6 +23,8 @@ USES=		cmake:outsource compiler:c++11-lang perl5 python shebangfix ssl
 CMAKE_ARGS+=	-D PYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 CXXFLAGS+=	-std=c++11 -Wextra -Wall -pedantic
 
+EXPLICIT_SAFESTACK=	yes
+
 SHEBANG_FILES=	aux/broctl/aux/trace-summary/trace-summary
 
 SUB_FILES=	pkg-message
