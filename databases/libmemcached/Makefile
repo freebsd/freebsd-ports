@@ -23,8 +23,8 @@ CONFIGURE_ARGS=	--without-memcached \
 		--without-sphinx-build \
 		--enable-libmemcachedprotocol
 
-LIBS+=		-L${LOCALBASE}/lib -lexecinfo -lthr
-CXXFLAGS+=	-D__STDC_CONSTANT_MACROS
+LIBS+=		-L${LOCALBASE}/lib -lexecinfo
+CXXFLAGS+=	-D__STDC_CONSTANT_MACROS -pthread
 
 OPTIONS_DEFINE=		DEBUG DTRACE MEMASLAP SASL
 OPTIONS_DEFAULT=	MEMASLAP SASL MURMUR FNV64
