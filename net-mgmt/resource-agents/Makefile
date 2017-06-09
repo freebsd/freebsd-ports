@@ -3,6 +3,7 @@
 
 PORTNAME=	resource-agents
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -25,7 +26,7 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 
 SHEBANG_LANG=	sh
-sh_OLD_CMD=	/bin/sh.${SH}
+sh_OLD_CMD=	/bin/sh
 sh_CMD=		${LOCALBASE}/bin/bash
 SHEBANG_FILES=	heartbeat/* \
 		ldirectord/ldirectord.in \
