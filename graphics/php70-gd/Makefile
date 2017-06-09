@@ -5,6 +5,8 @@ CATEGORIES=	graphics
 
 MASTERDIR=	${.CURDIR}/../../lang/php70
 
+PORTREVISION=	1
+
 PKGNAMESUFFIX=	-gd
 
 .include "${MASTERDIR}/Makefile"
