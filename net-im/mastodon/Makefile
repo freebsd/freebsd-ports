@@ -12,7 +12,8 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ffmpeg>0:multimedia/ffmpeg \
-		libpqtypes>1.5.0:databases/libpqtypes
+		libpqtypes>1.5.0:databases/libpqtypes \
+		npm>=0:www/npm
 
 # Dependencies below match Gemfile layout
 RUN_DEPENDS+=	rubygem-pkg-config>=1.2.0:devel/rubygem-pkg-config
