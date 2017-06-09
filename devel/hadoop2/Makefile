@@ -7,7 +7,7 @@
 # no problems encountered so far.  Thanks.
 PORTNAME=	hadoop
 PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/common/hadoop-${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -55,7 +55,7 @@ HADOOP_GROUP=	hadoop
 USERS=		${HDFS_USER} ${MAPRED_USER}
 GROUPS=		${HADOOP_GROUP}
 
-SUB_FILES=	hadoop-layout.sh
+SUB_FILES=	hadoop-layout.sh httpfs-env.sh kms-env.sh 
 USE_RC_SUBR=	historyserver nodemanager resourcemanager webappproxyserver datanode namenode secondarynamenode journalnode zkfc
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
@@ -106,11 +106,14 @@ do-install:
 	${LN} -sf libhdfs.so.0 ${STAGEDIR}${PREFIX}/lib/libhdfs.so
 	${LN} -sf libhadoop.so.1 ${STAGEDIR}${PREFIX}/lib/libhadoop.so
 	cd ${HADOOP_DIST}/share/hadoop && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DATADIR}/ "! -name *-sources.jar -and ! -name sources"
+	${CHMOD} a+x ${STAGEDIR}${DATADIR}/kms/tomcat/bin/*.sh ${STAGEDIR}${DATADIR}/httpfs/tomcat/bin/*.sh
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/conf
 	cd ${HADOOP_DIST}/etc/hadoop && ${COPYTREE_SHARE} "*" ${STAGEDIR}${EXAMPLESDIR}/conf/
 	${INSTALL_DATA} ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs/target/classes/hdfs-default.xml ${WRKSRC}/hadoop-hdfs-project/hadoop-hdfs-httpfs/target/classes/httpfs-default.xml ${WRKSRC}/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/target/classes/yarn-default.xml ${WRKSRC}/hadoop-common-project/hadoop-common/target/classes/core-default.xml ${WRKSRC}/hadoop-tools/hadoop-distcp/target/classes/distcp-default.xml ${WRKSRC}/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/target/classes/mapred-default.xml ${STAGEDIR}/${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKDIR}/hadoop-layout.sh ${STAGEDIR}${PREFIX}/libexec/
 	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKDIR}/httpfs-env.sh ${STAGEDIR}${PREFIX}/etc/hadoop/
+	${INSTALL_DATA} ${WRKDIR}/kms-env.sh ${STAGEDIR}${PREFIX}/etc/hadoop/
 	${MKDIR} ${STAGEDIR}${HADOOP_LOGDIR}
 	${MKDIR} ${STAGEDIR}${HADOOP_RUNDIR}
 
