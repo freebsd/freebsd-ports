@@ -8,9 +8,6 @@ bin/grabber
 bin/pack
 bin/pat2dat
 bin/rgbmap
-%%DEMOS%%%%EXAMPLES%%bin/shooter
-%%DEMOS%%%%EXAMPLES%%bin/skater
-%%DEMOS%%%%EXAMPLES%%bin/skater_agl
 bin/textconv
 include/alleggl.h
 include/allegro.h
@@ -118,11 +115,6 @@ include/jpgalleg.h
 include/loadpng.h
 include/logg.h
 include/xalleg.h
-%%ALSA%%lib/allegro/%%SHLIB_VER%%/alleg-alsadigi.so
-%%ALSA%%lib/allegro/%%SHLIB_VER%%/alleg-alsamidi.so
-%%ALSA%%lib/allegro/%%SHLIB_VER%%/alleg-dga2.so
-%%JACK%%lib/allegro/%%SHLIB_VER%%/alleg-jack.so
-lib/allegro/%%SHLIB_VER%%/modules.lst
 lib/liballeg.so
 lib/liballeg.so.4
 lib/liballeg.so.%%SHLIB_VER%%
@@ -1058,5 +1050,3 @@ man/man3/voice_sweep_pan.3.gz
 man/man3/vsync.3.gz
 man/man3/xor_mode.3.gz
 man/man3/xwin_set_window_name.3.gz
-%%DEMOS%%%%EXAMPLES%%share/pixmaps/shooter.png
-%%DEMOS%%%%EXAMPLES%%share/pixmaps/skater.png

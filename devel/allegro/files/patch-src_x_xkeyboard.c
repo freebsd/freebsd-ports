@@ -1,5 +1,5 @@
---- src/x/xkeyboard.c.orig	2010-12-08 09:13:50.000000000 +0100
-+++ src/x/xkeyboard.c	2013-07-28 00:17:52.000000000 +0200
+--- src/x/xkeyboard.c.orig	2010-12-08 08:13:50 UTC
++++ src/x/xkeyboard.c
 @@ -23,6 +23,7 @@
  #include <X11/Xos.h>
  #include <X11/Xlib.h>
@@ -8,7 +8,7 @@
  #include <X11/Xproto.h>
  
  #include "allegro.h"
-@@ -617,7 +618,7 @@
+@@ -617,7 +618,7 @@ void _xwin_get_keyboard_mapping(void)
  
        TRACE (PREFIX_I "Modifier %d:", i + 1);
        for (j = 0; j < xmodmap->max_keypermod; j++) {
