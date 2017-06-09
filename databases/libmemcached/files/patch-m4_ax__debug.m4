@@ -1,8 +1,7 @@
 Fixed a bug that caused configure to disobey the enable/disable debug flag.  The debug flag will default to disabled if not specified.
-diff -ru libmemcached-1.0.18-orig/m4/ax_debug.m4 libmemcached-1.0.18/m4/ax_debug.m4
---- m4/ax_debug.m4	2014-11-05 14:43:53.720284916 -0600
-+++ m4/ax_debug.m4	2014-11-19 14:23:19.512482198 -0600
-@@ -49,16 +49,18 @@
+--- m4/ax_debug.m4.orig	2014-02-09 11:52:42 UTC
++++ m4/ax_debug.m4
+@@ -49,16 +49,18 @@ AC_DEFUN([AX_DEBUG],
      [AC_PREREQ([2.63])dnl
      AC_ARG_ENABLE([debug],
        [AS_HELP_STRING([--enable-debug],
