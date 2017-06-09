@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mumble
-PORTVERSION=	1.2.18
-PORTREVISION=	4
+PORTVERSION=	1.2.19
+PORTREVISION=	0
 CATEGORIES=	audio
 
 MAINTAINER=	feld@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS+=	libspeex.so:audio/speex \
+		libspeexdsp.so:audio/speexdsp \
 		libsndfile.so:audio/libsndfile \
 		libboost_iostreams.so:devel/boost-libs \
 		libprotoc.so:devel/protobuf \
@@ -20,7 +21,7 @@ LIB_DEPENDS+=	libspeex.so:audio/speex \
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-USES=		compiler cpe gmake pkgconfig qmake
+USES=		compiler cpe desktop-file-utils gmake pkgconfig qmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	mumble-voip
 GH_PROJECT=	mumble celt-0.7.0:mumble_celt_0_7 celt-0.11.0:mumble_celt_0_11
@@ -28,35 +29,30 @@ GH_TAGNAME=	5a16cda:mumble_celt_0_7 e18de77:mumble_celt_0_11
 GH_SUBDIR=	celt-0.7.0-src:mumble_celt_0_7 celt-0.11.0-src:mumble_celt_0_11
 USE_QT4=	gui svg iconengines_run xml sql network l10n \
 		linguist_build moc_build rcc_build uic_build \
-		opengl sql-sqlite3_run
+		opengl sql-sqlite3_run corelib
 USE_LDCONFIG=	yes
 
-USE_XORG=	ice
+USE_XORG=	ice xi x11
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=yes
 
 CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-bundled-opus no-update \
-		bundled-celt no-g15 no-portaudio no-pulseaudio no-xevie no-embed-qt-translations
+		bundled-celt no-g15 no-pulseaudio no-xevie no-embed-qt-translations
 
 QMAKE_ARGS=	"CONFIG+=${CONFIG}"
 
-OPTIONS_DEFINE=	DBUS BONJOUR
+OPTIONS_DEFINE=	DBUS BONJOUR PORTAUDIO
 OPTIONS_DEFAULT=	DBUS
+
+DBUS_VARS_OFF=	CONFIG+=no-dbus
+DBUS_USE=	QT4=dbus
+
 BONJOUR_DESC=		Bonjour support
+BONJOUR_VARS_OFF=	CONFIG+=no-bonjour
+BONJOUR_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDBUS}
-CONFIG+=	no-dbus
-.else
-USE_QT4+=	dbus
-.endif
-
-.if ! ${PORT_OPTIONS:MBONJOUR}
-CONFIG+=	no-bonjour
-.else
-LIB_DEPENDS+=	libdns_sd.so:net/mDNSResponder
-.endif
+PORTAUDIO_VARS_OFF=	CONFIG+=no-portaudio
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 .include <bsd.port.pre.mk>
 
@@ -74,9 +70,9 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/release/libcelt0.so.0.11.0 ${STAGEDIR}${PREFIX}/lib/libcelt-mumble.so.0.11.0
 	${INSTALL_LIB} ${WRKSRC}/release/libcelt0.so.0.7.0 ${STAGEDIR}${PREFIX}/lib/libcelt-mumble.so.0.7.0
 	${INSTALL_LIB} ${WRKSRC}/release/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${PORTVERSION}
-	${LN} -s ${PREFIX}/lib/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so
-	${LN} -s ${PREFIX}/lib/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.1
-	${LN} -s ${PREFIX}/lib/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.1.2
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.1
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.1.2
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/services
 	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.protocol ${STAGEDIR}${PREFIX}/share/services
 	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.desktop ${STAGEDIR}${PREFIX}/share/applications
