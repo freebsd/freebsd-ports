@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	anope
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.5
+PORTREVISION=	0
 CATEGORIES=	irc
 
 MAINTAINER=	feld@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=		cmake:outsource shebangfix
 CMAKE_ARGS+=	-DINSTDIR:STRING="${LOCALBASE}/anope"
-CPPFLAGS+=	"-I${LOCALBASE}/include"
+CXXFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh
 
@@ -23,83 +23,34 @@ USE_RC_SUBR=	anope
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	GNUTLS LDAP MYSQL NLS OPENSSL PCRE POSIX SASL SQLITE STATS TRE
+OPTIONS_DEFINE=	GNUTLS LDAP MYSQL NLS OPENSSL PCRE POSIX REDIS SASL SQLITE STATS TRE
 OPTIONS_DEFAULT=	MYSQL OPENSSL POSIX
+OPTIONS_SUB=	yes
 POSIX_DESC=	POSIX Regex Module
 STATS_DESC=	Channel Statistics Module
 TRE_DESC=	Tre Regex Module
 
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+
+LDAP_VARS_ON=	USE_OPENLDAP=yes
+
+MYSQL_USES=	mysql
+
 NLS_USES=	gettext
 
+OPENSSL_USES=	ssl
+
+REDIS_RUN_DEPENDS=	redis:databases/redis
+
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+
+SQLITE_USES=	sqlite
+
+TRE_LIB_DEPENDS=	libtre.so:textproc/libtre
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNUTLS}
-PLIST_SUB+=	GNUTLS=""
-LIB_DEPENDS+=	libgnutls.so:security/gnutls
-.else
-PLIST_SUB+=	GNUTLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-PLIST_SUB+=	LDAP=""
-USE_OPENLDAP=	yes
-.else
-PLIST_SUB+=	LDAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-PLIST_SUB+=	MYSQL=""
-USE_MYSQL=	yes
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-PLIST_SUB+=	OPENSSL=""
-USES+=		ssl
-.else
-PLIST_SUB+=	OPENSSL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-PLIST_SUB+=	PCRE=""
-LIB_DEPENDS+=	libpcre.so:devel/pcre
-.else
-PLIST_SUB+=	PCRE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPOSIX}
-PLIST_SUB+=	POSIX=""
-.else
-PLIST_SUB+=	POSIX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSASL}
-PLIST_SUB+=	SASL=""
-LIB_DEPENDS+=	libsasl2.so:security/cyrus-sasl2
-.else
-PLIST_SUB+=	SASL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-PLIST_SUB+=	SQLITE=""
-USES+=		sqlite
-.else
-PLIST_SUB+=	SQLITE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSTATS}
-PLIST_SUB+=	STATS=""
-.else
-PLIST_SUB+=	STATS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTRE}
-PLIST_SUB+=	TRE=""
-LIB_DEPENDS+=	libtre.so:textproc/libtre
-.else
-PLIST_SUB+=	TRE="@comment "
-.endif
 
 .include <bsd.port.pre.mk>
 
