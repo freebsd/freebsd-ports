@@ -3,8 +3,8 @@
 
 PORTNAME=	BitcoinArmory
 PORTVERSION=	0.93.3
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	finance
 
 MAINTAINER=	yuri@rawbw.com
@@ -25,7 +25,7 @@ GH_ACCOUNT=	etotheipi
 
 USES=		compiler:c++11-lang compiler:c++11-lib gmake pyqt:4 python:2 shebangfix
 USE_PYQT=	core_run gui_run
-SHEBANG_FILES=	extras/extractKeysFromWallet.py
+SHEBANG_FILES=	ArmoryQt.py extras/extractKeysFromWallet.py
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM -fPIC
