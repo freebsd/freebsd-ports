@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	apache22
-PORTVERSION=	2.2.31
-PORTREVISION?=	1
+PORTVERSION=	2.2.32
+PORTREVISION?=	0
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libapr-1.so:devel/apr1 \
-		libpcre.so:devel/pcre
+		libpcre.so:devel/pcre \
+		libgdbm.so:databases/gdbm
 
 CONFLICTS_INSTALL=	caudium14-1.* \
 		apache-*-2.2.* apache22-*-2.2.* \
@@ -26,7 +27,8 @@ DEPRECATED=		Upstream propose EoL of apache 2.2.x during the next 12 months
 EXPIRATION_DATE=	2017-07-01
 
 USE_APACHE=	common22
-USES=		autoreconf cpe iconv libtool perl5 tar:bzip2
+USES=		autoreconf bdb cpe iconv libtool perl5 tar:bzip2
+
 USE_PERL5=	run
 USE_RC_SUBR=	apache22 htcacheclean
 GNU_CONFIGURE=	yes
@@ -54,9 +56,9 @@ WITH_MPM?=		prefork # or worker, event, itk, peruser
 WITH_HTTP_PORT?=	80
 WITH_SSL_PORT?=		443
 
-.if !defined(WITH_DEBUG)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-server_buildmark.c
-.endif
+#.if !defined(WITH_DEBUG)
+#EXTRA_PATCHES+=	${FILESDIR}/extra-patch-server_buildmark.c
+#.endif
 
 .include "${APACHEDIR}/Makefile.options"
 
