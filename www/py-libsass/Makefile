@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsass
-PORTVERSION=	0.12.3
+PORTVERSION=	0.13.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six
 BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option -std=c++0x
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
