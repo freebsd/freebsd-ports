@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
-CONFLICTS=	zabbix2${PKGNAMESUFFIX}-[0-9]* zabbix24${PKGNAMESUFFIX}[0-9]* zabbix3${PKGNAMESUFFIX}-[0-9]*
+CONFLICTS=	zabbix[0-13-9][0-13-9]${PKGNAMESUFFIX}-[0-9]* zabbix[0-9]${PKGNAMESUFFIX}-[0-9]*
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
