@@ -56,7 +56,7 @@ SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
 SVGALIB_CONFIGURE_ENABLE=	video-svga
 SVGALIB_LIB_DEPENDS=		libvga.so:graphics/svgalib
 VGL_CONFIGURE_ENABLE=		video-vgl
-VGL_VARS_OFF=			PKGMESSAGE=none
+VGL_VARS=			PKGMESSAGE=pkg-message.vgl
 X11_CONFIGURE_ENABLE=		video-x11
 X11_USE=			XORG=x11,xrender,xrandr,xextproto
 
@@ -69,12 +69,15 @@ post-patch-SNDIO-on:
 	@${CP} ${FILESDIR}/SDL_sndioaudio.* ${WRKSRC}/src/audio/sndio
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR} &&\
-		${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/ &&\
-	cd ${WRKSRC} &&\
-		${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/ "! -regex .*/man3.*"
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} &&\
-		${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSDL-1.2.so.0.11.4
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSDL-1.2.so.0.11.4
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/ "! -regex .*/man3.*"
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
