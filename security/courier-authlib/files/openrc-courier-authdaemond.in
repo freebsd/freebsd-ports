@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+# Define these courier_authdaemond_* variables in one of these files:
+# 	/etc/rc.conf
+# 	/etc/rc.conf.local
+# 	/etc/rc.conf.d/courier_authdaemond
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+
+name="courier_authdaemond"
+
+command="%%PREFIX%%/sbin/authdaemond"
+procname="%%PREFIX/sbin/courierlogger"
+pidfile="%%AUTHDAEMONVAR%%/pid"
+socket="%%AUTHDAEMONVAR%%/socket"
+
+start_pre() {
+		${command} start
+}
+
+stop_pre() {
+		${command} stop
+}
+
+required_dirs="%%AUTHDAEMONVAR%%"
+required_files="%%PREFIX%%/etc/authlib/authdaemonrc"
+
+depend() {
+		need mysql
+		keyword -shutdown
+}

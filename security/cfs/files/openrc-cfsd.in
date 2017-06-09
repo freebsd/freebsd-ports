@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+
+# Additional options:
+#
+# cfsd_port=3049		# the port to listen to
+# cfsd_mountpoint=/crypt	# the CFS mountpoint
+
+name=cfsd
+
+: ${cfsd_port=3049}
+: ${cfsd_mountpoint=/crypt}
+
+command=%%PREFIX%%/sbin/cfsd
+command_args="$cfsd_port > /dev/null 2>&1"
+required_dirs="%%CFSD_BOOTSTRAP%% $cfsd_mountpoint"
+
+start_post() {
+	if [ -n "$cfsd_mountpoint" ]; then
+		mount -o port="$cfsd_port",udp,nfsv2,nolockd 127.0.0.1:%%CFSD_BOOTSTRAP%% "$cfsd_mountpoint"
+	fi
+}
+
+stop_pre() {
+	if [ -n "$cfsd_mountpoint" ]; then
+		umount "$cfsd_mountpoint"
+	fi
+}
+
+depend() {
+		need localmount
+		keyword -shutdown
+}

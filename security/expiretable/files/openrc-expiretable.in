@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+# /etc/rc.conf tunables. 
+# - expiretable_flags	specify your own flags to expiretable
+
+name="expiretable"
+command="/usr/local/sbin/expiretable"
+
+depend() {
+		keyword -shutdown
+}
