@@ -667,6 +667,7 @@
     SUBDIR += nfcutils
     SUBDIR += nfsping
     SUBDIR += nitrogen
+    SUBDIR += ndmpd
     SUBDIR += no-login
     SUBDIR += node_exporter
     SUBDIR += nomad
