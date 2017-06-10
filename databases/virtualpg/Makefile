@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Loadable dynamic extension to both SQLite and SpatiaLite
 
 LICENSE=	MPL LGPL21 GPLv2

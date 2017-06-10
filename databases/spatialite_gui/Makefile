@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Graphical User Interface (GUI) tool supporting SpatiaLite
 
 LICENSE=	GPLv3

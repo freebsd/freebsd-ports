@@ -7,7 +7,7 @@ PORTREVISION=	21
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Open Source Geography Education application
 
 LICENSE=	GPLv3

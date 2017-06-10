@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Library supporting common-utility raster handling methods
 
 LIB_DEPENDS=	libpng.so:graphics/png \
