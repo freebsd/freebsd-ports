@@ -30,7 +30,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/nmap:security/nmap
 
 .if ${PORT_OPTIONS:MWXGTK}
 USE_WX=		2.6+
-WX_UNICODE=	yes
 WX_COMPS=	python:run
 .endif
 

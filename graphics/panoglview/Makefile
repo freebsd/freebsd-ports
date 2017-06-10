@@ -21,7 +21,6 @@ CXXFLAGS+=	-I${LOCALBASE}/include -ftemplate-depth-64
 LIBS+=		-L${LOCALBASE}/lib -lGLU -lGL
 
 USE_WX=		2.8
-WX_UNICODE=	yes
 WX_COMPS=	wx
 WX_CONF_ARGS=	relative
 
