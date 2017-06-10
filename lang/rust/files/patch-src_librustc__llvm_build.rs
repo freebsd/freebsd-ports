@@ -1,11 +1,11 @@
---- src/librustc_llvm/build.rs.orig	2017-02-09 01:37:48 UTC
+--- src/librustc_llvm/build.rs.orig	2017-06-06 00:42:59 UTC
 +++ src/librustc_llvm/build.rs
-@@ -233,6 +233,8 @@ fn main() {
-     // OpenBSD has a particular C++ runtime library name
+@@ -241,6 +241,8 @@ fn main() {
      let stdcppname = if target.contains("openbsd") {
+         // OpenBSD has a particular C++ runtime library name
          "estdc++"
 +    } else if target.contains("freebsd") {
 +        "c++"
-     } else {
-         "stdc++"
-     };
+     } else if target.contains("netbsd") && llvm_static_stdcpp.is_some() {
+         // NetBSD uses a separate library when relocation is required
+         "stdc++_pic"

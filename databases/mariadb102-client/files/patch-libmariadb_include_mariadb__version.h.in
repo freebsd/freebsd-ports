@@ -1,0 +1,21 @@
+From 422d0f786e5e6eb103000a75738322c8baa9aa12 Mon Sep 17 00:00:00 2001
+From: Georg Richter <georg@mariadb.com>
+Date: Wed, 7 Jun 2017 10:35:35 +0200
+Subject: [PATCH] Added MYSQL_VERSION_ID (beside MARIADB_VERSION_ID)
+
+---
+ include/mariadb_version.h.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/include/mariadb_version.h.in b/include/mariadb_version.h.in
+index c401d04..a82102f 100644
+--- libmariadb/include/mariadb_version.h.in.orig	2017-05-14 23:13:15 UTC
++++ libmariadb/include/mariadb_version.h.in
+@@ -12,6 +12,7 @@
+ #define PROTOCOL_VERSION		@PROTOCOL_VERSION@
+ #define MARIADB_CLIENT_VERSION_STR	"@MARIADB_CLIENT_VERSION@"
+ #define MARIADB_VERSION_ID		@MARIADB_VERSION_ID@
++#define MYSQL_VERSION_ID		@MARIADB_VERSION_ID@
+ #define MARIADB_PORT	        	@MARIADB_PORT@
+ #define MARIADB_UNIX_ADDR               "@MARIADB_UNIX_ADDR@"
+ #define MYSQL_CONFIG_NAME		"my"

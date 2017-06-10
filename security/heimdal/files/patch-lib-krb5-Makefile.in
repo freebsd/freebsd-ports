@@ -1,4 +1,4 @@
---- lib/krb5/Makefile.in.orig	2017-01-03 19:44:17 UTC
+--- lib/krb5/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ lib/krb5/Makefile.in
 @@ -330,10 +330,12 @@ derived_key_test_DEPENDENCIES = libkrb5.
  	$(am__DEPENDENCIES_1)
