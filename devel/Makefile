@@ -4970,6 +4970,7 @@
     SUBDIR += py3-mccabe
     SUBDIR += py3-nose
     SUBDIR += py3-pip
+    SUBDIR += py3-pluggy
     SUBDIR += py3-ply
     SUBDIR += py3-pretend
     SUBDIR += py3-prompt_toolkit
