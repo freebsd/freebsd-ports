@@ -4987,6 +4987,7 @@
     SUBDIR += py3-python-magic
     SUBDIR += py3-pytz
     SUBDIR += py3-rubymarshal
+    SUBDIR += py3-scripttest
     SUBDIR += py3-setproctitle
     SUBDIR += py3-setuptools_scm
     SUBDIR += py3-simplejson
