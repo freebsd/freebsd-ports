@@ -4958,6 +4958,7 @@
     SUBDIR += py3-flake8-import-order
     SUBDIR += py3-flake8-polyfill
     SUBDIR += py3-flake8-quotes
+    SUBDIR += py3-freezegun
     SUBDIR += py3-gobject3
     SUBDIR += py3-hgtools
     SUBDIR += py3-jedi
