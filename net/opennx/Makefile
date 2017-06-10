@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 USES=		gmake samba:lib
 USE_XORG=	xmu
 USE_WX=		2.8+
-WX_UNICODE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib -L${SAMBALIBS}
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}

@@ -13,13 +13,13 @@ COMMENT=	Mock unit tests for Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.3:devel/py-pbr \
+BUILD_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pbr>=1.3:devel/py-pbr \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TESTS_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox
+TESTS_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox
 
 NO_ARCH=	yes
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>

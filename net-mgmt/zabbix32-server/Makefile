@@ -14,7 +14,7 @@ COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/
 
 LICENSE=	GPLv2
 
-CONFLICTS=	zabbix2${PKGNAMESUFFIX}-[0-9]* zabbix22${PKGNAMESUFFIX}-[0-9]* zabbix24${PKGNAMESUFFIX}-[0-9]* zabbix3${PKGNAMESUFFIX}-[0-9]*
+CONFLICTS=	zabbix[0-24-9][0-13-9]${PKGNAMESUFFIX}-[0-9]* zabbix[0-9]${PKGNAMESUFFIX}-[0-9]*
 
 IGNORE_WITH_MYSQL=	41
 

@@ -13,9 +13,9 @@ COMMENT=	Pytest plugin to abort hanging tests
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.6.4:devel/py-pytest
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pytest>=2.6.4:devel/py-pytest
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

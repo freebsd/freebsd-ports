@@ -81,7 +81,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 .if ${WXGTK_FLAVOR} != "gtk2-contrib-common"
 USE_WX=		2.8
 RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/stc/stc.h:x11-toolkits/wxgtk28-contrib-common
-WX_UNICODE=	yes
 
 pre-configure:
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \

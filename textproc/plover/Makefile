@@ -20,7 +20,6 @@ USES=		python
 USE_PYTHON=	distutils
 USE_WX=		3.0+
 WX_COMPS=	wx
-WX_UNICODE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/setup.py

@@ -10,7 +10,7 @@ MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	osa@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Robust and small WWW server
 
 LICENSE=	BSD2CLAUSE
