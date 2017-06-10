@@ -29,8 +29,10 @@ SUB_FILES=	pkg-message
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddress>=0:net/py-ipaddress
 .endif
 
-.if ${PYTHON_REL} < 3400
+.if ${PYTHON_REL} < 3300
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi
+.elif ${PYTHON_REL} < 3400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py3-certifi
 .endif
 
 .include <bsd.port.post.mk>
