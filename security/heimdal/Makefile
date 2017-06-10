@@ -2,21 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	heimdal
-PORTVERSION=	7.1.0
-PORTREVISION=	3
+PORTVERSION=	7.3.0
 CATEGORIES=	security ipv6
-MASTER_SITES=	http://www.h5l.org/dist/src/ \
-		http://ftp.pdc.kth.se/pub/heimdal/src/ \
-		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
-		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/heimdal/src/
+MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Popular BSD-licensed implementation of Kerberos 5
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BUILD_DEPENDS=	p5-JSON>=0:converters/p5-JSON
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* krb5-maint-[0-9]* srp-[0-9]* \
 		wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
