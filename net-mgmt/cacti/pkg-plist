@@ -257,6 +257,8 @@
 %%CACTIDIR%%/images/tab_preview.gif
 %%CACTIDIR%%/images/tab_settings.gif
 %%CACTIDIR%%/images/tab_settings_down.gif
+%%CACTIDIR%%/images/tab_template_blue.gif
+%%CACTIDIR%%/images/tab_template_red.gif
 %%CACTIDIR%%/images/tab_tree.gif
 %%CACTIDIR%%/images/table.png
 %%CACTIDIR%%/images/table_go.png
@@ -1041,6 +1043,7 @@
 %%CACTIDIR%%/install/upgrades/1_1_4.php
 %%CACTIDIR%%/install/upgrades/1_1_6.php
 %%CACTIDIR%%/install/upgrades/1_1_7.php
+%%CACTIDIR%%/install/upgrades/1_1_8.php
 %%CACTIDIR%%/install/upgrades/index.php
 %%CACTIDIR%%/lib/aggregate.php
 %%CACTIDIR%%/lib/api_aggregate.php
