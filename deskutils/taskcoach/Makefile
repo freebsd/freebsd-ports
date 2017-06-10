@@ -19,7 +19,6 @@ USE_PYTHON=	distutils
 PYDISTUTILS_EGGINFO=${DISTNAME}-py${PYTHON_VER}.egg-info
 USE_WX=		3.0+
 WX_COMPS=	python:lib
-WX_UNICODE=	yes
 
 SHEBANG_FILES=	taskcoach.py
 

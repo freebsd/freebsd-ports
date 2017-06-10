@@ -22,7 +22,6 @@ LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell \
 USES=		bdb compiler:c++11-lib desktop-file-utils gettext gmake pkgconfig
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
-WX_UNICODE=	yes
 WITH_BDB_HIGHEST=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WXRC="${WXRC_CMD}"

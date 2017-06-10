@@ -21,7 +21,6 @@ USES=		perl5 compiler:env
 USE_PERL5=	modbuild
 USE_WX=		3.0
 WX_COMPS=	wx
-WX_UNICODE=	yes
 CONFIGURE_ARGS=	--wxWidgets-build=0 --wxWidgets-unicode=1
 
 post-patch:

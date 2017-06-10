@@ -12,7 +12,6 @@ USE_CABAL=	wxdirect>=0.91
 USES=		dos2unix
 USE_WX=		3.0
 WX_COMPS=	wx
-WX_UNICODE=	yes
 
 OPTIONS_EXCLUDE=DOCS
 
