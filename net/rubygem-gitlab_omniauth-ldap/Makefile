@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab_omniauth-ldap
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,9 @@ COMMENT=	LDAP strategy for OmniAuth
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-net-ldap>=0.16:net/rubygem-net-ldap \
-		rubygem-omniauth13>=1.3.1:security/rubygem-omniauth13 \
+		rubygem-omniauth>=1.3:security/rubygem-omniauth \
 		rubygem-pyu-ruby-sasl>=0.0.3.3:security/rubygem-pyu-ruby-sasl \
-		rubygem-rubyntlm05>=0.5.2:net/rubygem-rubyntlm05
+		rubygem-rubyntlm>=0.5:net/rubygem-rubyntlm
 
 NO_ARCH=	yes
 USE_RUBY=	yes
