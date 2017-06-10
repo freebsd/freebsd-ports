@@ -1,15 +1,15 @@
---- utilities.php.orig	2017-04-26 00:30:09 UTC
+--- utilities.php.orig	2017-06-05 03:49:49 UTC
 +++ utilities.php
-@@ -872,7 +872,7 @@ function utilities_view_logfile() {
- 	$logfile = read_config_option('path_cactilog');
- 
- 	if ($logfile == '') {
+@@ -877,7 +877,7 @@ function utilities_view_logfile() {
+ 			$logfile = $requestedFile;
+ 		}
+ 	} elseif ($logfile == '') {
 -		$logfile = $config['base_path'] . '/log/cacti.log';
 +		$logfile = '/var/log/cacti/log';
  	}
  
- 	/* helps determine output color */
-@@ -1155,7 +1155,7 @@ function utilities_clear_logfile() {
+ 	/* ================= input validation and session storage ================= */
+@@ -1194,7 +1194,7 @@ function utilities_clear_logfile() {
  	$logfile = read_config_option('path_cactilog');
  
  	if ($logfile == '') {

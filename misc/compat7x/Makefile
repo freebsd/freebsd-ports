@@ -7,7 +7,7 @@ MASTER_SITES=	LOCAL/garga/compat
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convenience package to install the compat7x libraries
 
 LICENSE=	BSD2CLAUSE

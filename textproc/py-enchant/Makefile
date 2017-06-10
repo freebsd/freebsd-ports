@@ -25,18 +25,11 @@ USES=		python
 USE_PYTHON=	distutils
 
 WX_USE=		WX=3.0+
+WX_VARS=WX_COMPS=	python:run
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWX}
-WX_COMPS=	python:run
-.endif
-
-post-install:
-.if ! ${PORT_OPTIONS:MWX}
+post-install-WX-off:
 	${RM] ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/checker/wxSpellCheckerDialog*
-.endif
 
 .include <bsd.port.mk>

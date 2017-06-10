@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-php
-PORTVERSION=	3.28.4
+PORTVERSION=	3.29.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	garga/${PORTNAME}
+MASTER_SITES=	https://github.com/aws/${PORTNAME}/releases/download/${PORTVERSION}/
+DISTFILES=	aws.zip
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	PHP interface for Amazon Web Services (AWS)

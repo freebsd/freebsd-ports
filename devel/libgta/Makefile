@@ -6,7 +6,7 @@ PORTVERSION=	1.0.5
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH/gta
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Portable library that implements the GTA file format
 
 OPTIONS_DEFINE=	DOCS

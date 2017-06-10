@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mail
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	mail www pear
 
