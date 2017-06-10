@@ -180,6 +180,8 @@
 %%WWWDIR%%/Aws/Glacier/GlacierClient.php
 %%WWWDIR%%/Aws/Glacier/MultipartUploader.php
 %%WWWDIR%%/Aws/Glacier/TreeHash.php
+%%WWWDIR%%/Aws/Greengrass/Exception/GreengrassException.php
+%%WWWDIR%%/Aws/Greengrass/GreengrassClient.php
 %%WWWDIR%%/Aws/Handler/GuzzleV5/GuzzleHandler.php
 %%WWWDIR%%/Aws/Handler/GuzzleV5/GuzzleStream.php
 %%WWWDIR%%/Aws/Handler/GuzzleV5/PsrStream.php
@@ -412,6 +414,7 @@
 %%WWWDIR%%/Aws/data/cognito-identity/2014-06-30/api-2.json.php
 %%WWWDIR%%/Aws/data/cognito-identity/2014-06-30/paginators-1.json.php
 %%WWWDIR%%/Aws/data/cognito-idp/2016-04-18/api-2.json.php
+%%WWWDIR%%/Aws/data/cognito-idp/2016-04-18/paginators-1.json.php
 %%WWWDIR%%/Aws/data/cognito-sync/2014-06-30/api-2.json.php
 %%WWWDIR%%/Aws/data/config/2014-11-12/api-2.json.php
 %%WWWDIR%%/Aws/data/config/2014-11-12/paginators-1.json.php
@@ -493,6 +496,7 @@
 %%WWWDIR%%/Aws/data/glacier/2012-06-01/paginators-1.json.php
 %%WWWDIR%%/Aws/data/glacier/2012-06-01/waiters-1.json.php
 %%WWWDIR%%/Aws/data/glacier/2012-06-01/waiters-2.json.php
+%%WWWDIR%%/Aws/data/greengrass/2017-06-07/api-2.json.php
 %%WWWDIR%%/Aws/data/health/2016-08-04/api-2.json.php
 %%WWWDIR%%/Aws/data/health/2016-08-04/paginators-1.json.php
 %%WWWDIR%%/Aws/data/iam/2010-05-08/api-2.json.php
@@ -503,10 +507,12 @@
 %%WWWDIR%%/Aws/data/inspector/2016-02-16/api-2.json.php
 %%WWWDIR%%/Aws/data/inspector/2016-02-16/paginators-1.json.php
 %%WWWDIR%%/Aws/data/iot/2015-05-28/api-2.json.php
+%%WWWDIR%%/Aws/data/iot/2015-05-28/paginators-1.json.php
 %%WWWDIR%%/Aws/data/kinesis/2013-12-02/api-2.json.php
 %%WWWDIR%%/Aws/data/kinesis/2013-12-02/paginators-1.json.php
 %%WWWDIR%%/Aws/data/kinesis/2013-12-02/waiters-2.json.php
 %%WWWDIR%%/Aws/data/kinesisanalytics/2015-08-14/api-2.json.php
+%%WWWDIR%%/Aws/data/kinesisanalytics/2015-08-14/paginators-1.json.php
 %%WWWDIR%%/Aws/data/kms/2014-11-01/api-2.json.php
 %%WWWDIR%%/Aws/data/kms/2014-11-01/paginators-1.json.php
 %%WWWDIR%%/Aws/data/lambda/2015-03-31/api-2.json.php
