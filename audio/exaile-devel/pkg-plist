@@ -419,12 +419,6 @@ share/exaile/data/images/scalable/genre.svg
 share/exaile/data/images/scalable/office-calendar.svg
 share/exaile/data/images/splash.png
 share/exaile/data/images/star.png
-share/exaile/data/migrations/__init__.py
-share/exaile/data/migrations/migration_200907100931/__init__.py
-share/exaile/data/migrations/migration_200907100931/olddb.py
-share/exaile/data/migrations/migration_200907100931/oldexailelib.py
-share/exaile/data/migrations/migration_200907100931/oldtrack.py
-share/exaile/data/migrations/migration_200907100931/xlmisc.py
 share/exaile/data/ui/about_dialog.ui
 share/exaile/data/ui/collection_manager.ui
 share/exaile/data/ui/coverchooser.ui
@@ -447,6 +441,7 @@ share/exaile/data/ui/preferences/playlists.ui
 share/exaile/data/ui/preferences/plugin.ui
 share/exaile/data/ui/preferences/preferences_dialog.ui
 share/exaile/data/ui/preferences/widgets/selection_list_preference.ui
+share/exaile/data/ui/shortcuts_dialog.ui
 share/exaile/data/ui/splash.ui
 share/exaile/data/ui/trackproperties_dialog.ui
 share/exaile/data/ui/trackproperties_dialog_cover_row.ui
@@ -643,6 +638,9 @@ share/exaile/plugins/grouptagger/__init__.pyo
 share/exaile/plugins/grouptagger/gt_common.py
 share/exaile/plugins/grouptagger/gt_common.pyc
 share/exaile/plugins/grouptagger/gt_common.pyo
+share/exaile/plugins/grouptagger/gt_export.py
+share/exaile/plugins/grouptagger/gt_export.pyc
+share/exaile/plugins/grouptagger/gt_export.pyo
 share/exaile/plugins/grouptagger/gt_import.py
 share/exaile/plugins/grouptagger/gt_import.pyc
 share/exaile/plugins/grouptagger/gt_import.pyo
@@ -925,9 +923,6 @@ share/exaile/plugins/wikipedia/PLUGININFO
 share/exaile/plugins/wikipedia/__init__.py
 share/exaile/plugins/wikipedia/__init__.pyc
 share/exaile/plugins/wikipedia/__init__.pyo
-share/exaile/plugins/wikipedia/config.py
-share/exaile/plugins/wikipedia/config.pyc
-share/exaile/plugins/wikipedia/config.pyo
 share/exaile/plugins/wikipedia/data/preferences.ui
 share/exaile/plugins/wikipedia/data/wikipanel.ui
 share/exaile/plugins/wikipedia/preferences.py
