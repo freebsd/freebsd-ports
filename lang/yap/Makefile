@@ -24,7 +24,8 @@ DOCS_INSTALL_TARGET=	install install_docs
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-max-performance
+CONFIGURE_ARGS=	--enable-max-performance \
+		--disable-myddas
 USES=		gmake localbase readline
 
 DOCSDIR=	${PREFIX}/share/doc/Yap
