@@ -4998,6 +4998,7 @@
     SUBDIR += py3-six
     SUBDIR += py3-tabulate
     SUBDIR += py3-threema-msgapi
+    SUBDIR += py3-tox
     SUBDIR += py3-urwid
     SUBDIR += py3-vcversioner
     SUBDIR += py3-virtualenv
