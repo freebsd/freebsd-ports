@@ -4995,6 +4995,7 @@
     SUBDIR += py3-threema-msgapi
     SUBDIR += py3-urwid
     SUBDIR += py3-vcversioner
+    SUBDIR += py3-virtualenv
     SUBDIR += py3-wcwidth
     SUBDIR += py3-xdg
     SUBDIR += py3-yaml
