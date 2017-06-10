@@ -116,8 +116,7 @@
 : ${ac_cv_header_random_h=no}
 : ${ac_cv_header_vfork_h=no}
 
-# This appears in FreeBSD 10 do not cache it.
-#: ${gl_cv_have_raw_decl_strchrnul=yes}
+: ${gl_cv_have_raw_decl_strchrnul=yes}
 : ${gl_cv_have_raw_decl_memcpy=no}
 : ${gl_cv_have_raw_decl_memmem=yes}
 : ${gl_cv_have_raw_decl_memrchr=yes}
@@ -230,13 +229,10 @@
 : ${gl_cv_sys_struct_timespec_in_time_h=yes}
 : ${gl_cv_sys_struct_timeval=yes}
 
-# Has appearred in FreeBSD 10
-#: ${ac_cv_func_waitid=yes}
-# Has appearred in FreeBSD 10
-#: ${ac_cv_func_strchrnul=yes}
-# Has appearred in FreeBSD 9
-#: ${ac_cv_func_uselocale=yes}
-#: ${ac_cv_func_newlocale=yes}
+: ${ac_cv_func_waitid=yes}
+: ${ac_cv_func_strchrnul=yes}
+: ${ac_cv_func_uselocale=yes}
+: ${ac_cv_func_newlocale=yes}
 
 # Functions
 : ${ac_cv_func___b64_ntop=yes}
