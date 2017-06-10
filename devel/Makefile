@@ -1477,6 +1477,7 @@
     SUBDIR += libtifiles2
     SUBDIR += libtool
     SUBDIR += libtpl
+    SUBDIR += libtrue
     SUBDIR += libtuntap
     SUBDIR += libublio
     SUBDIR += libudev-devd
