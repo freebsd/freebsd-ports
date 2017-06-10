@@ -4953,6 +4953,7 @@
     SUBDIR += py3-dbus
     SUBDIR += py3-defusedxml
     SUBDIR += py3-docopt
+    SUBDIR += py3-enum34
     SUBDIR += py3-flake8
     SUBDIR += py3-flake8-builtins
     SUBDIR += py3-flake8-docstrings
