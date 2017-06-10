@@ -4969,6 +4969,7 @@
     SUBDIR += py3-llfuse
     SUBDIR += py3-lxml
     SUBDIR += py3-mccabe
+    SUBDIR += py3-mock
     SUBDIR += py3-nose
     SUBDIR += py3-pbr
     SUBDIR += py3-pip
