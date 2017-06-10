@@ -1,4 +1,4 @@
---- appl/gssmask/Makefile.in.orig	2017-01-03 19:44:14 UTC
+--- appl/gssmask/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ appl/gssmask/Makefile.in
 @@ -151,9 +151,15 @@ CONFIG_CLEAN_VPATH_FILES =
  PROGRAMS = $(noinst_PROGRAMS)
