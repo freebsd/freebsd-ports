@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twisted
-PORTVERSION=	17.1.0
-PORTREVISION=	1
+PORTVERSION=	17.5.0
 CATEGORIES=	devel net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,7 +30,6 @@ USE_PYTHON=	autoplist concurrent distutils
 post-install:
 .if ${PYTHON_REL} < 3000
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/python/_sendmsg.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/runner/portmap.so
 .endif
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/test/raiser.so
 

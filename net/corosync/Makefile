@@ -12,6 +12,8 @@ COMMENT=	Corosync Cluster Engine
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libnss3.so:security/nss \
 		libqb.so:devel/libqb
 

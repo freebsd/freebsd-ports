@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ioncube
-DISTVERSION=	6.0.4
+DISTVERSION=	6.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads3.ioncube.com/loader_downloads/ \
 		http://dl.ispsystem.info/ioncube/${DISTVERSION}/ \
@@ -16,6 +16,8 @@ COMMENT=	Loader for ionCube-encoded PHP files
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USES=		php
+
+IGNORE_WITH_PHP=	71
 
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
