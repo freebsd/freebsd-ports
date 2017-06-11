@@ -8,6 +8,6 @@ CATEGORIES=	www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Implementation of the Yadis Specification 1.0 protocol for PHP5
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
