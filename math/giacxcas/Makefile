@@ -18,6 +18,8 @@ COMMENT=	Computer algebra system
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to link
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libpng.so:graphics/png \
