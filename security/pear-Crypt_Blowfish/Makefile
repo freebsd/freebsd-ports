@@ -8,7 +8,7 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class for blowfish encryption
 
-USES=	pear
+USES=		pear
 
 OPTIONS_DEFINE=	MCRYPT
 MCRYPT_DESC=	Additional MCrypt PHP support
