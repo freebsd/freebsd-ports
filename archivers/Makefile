@@ -32,6 +32,7 @@
     SUBDIR += gcab
     SUBDIR += gcpio
     SUBDIR += go-compress
+    SUBDIR += gnome-autoar
     SUBDIR += grzip
     SUBDIR += gtar
     SUBDIR += gzip
