@@ -8,6 +8,6 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Encrypts text which is later decoded using JavaScript on the client side
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
