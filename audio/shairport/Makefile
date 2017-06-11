@@ -26,9 +26,6 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${ECHO_CMD} '"'${PORTVERSION}'"' > ${WRKSRC}/version.h
 
-do-configure:
-	cd ${WRKSRC} ; ./configure
-
 do-install:
 	cd ${WRKSRC} ; ${GMAKE} PREFIX=${STAGEDIR}${PREFIX} install
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/shairport
