@@ -8,7 +8,7 @@ CATEGORIES=	devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR dispatch notifications using PHP callbacks
 
-USES=	pear
+USES=		pear
 
 post-extract:
 .for file in ${FILES}

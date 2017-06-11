@@ -8,6 +8,6 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Check the syntax of IPv4 addresses
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

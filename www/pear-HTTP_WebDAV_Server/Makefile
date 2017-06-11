@@ -9,6 +9,6 @@ DISTNAME=	${PORTNAME}-1.0.0RC4
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	WebDAV Server Baseclass
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

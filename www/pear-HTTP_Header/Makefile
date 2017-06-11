@@ -11,6 +11,6 @@ COMMENT=	PEAR OO interface to modify and handle HTTP headers and status codes
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP
 RUN_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

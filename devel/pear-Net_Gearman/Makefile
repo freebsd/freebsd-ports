@@ -15,6 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:devel/pear
 RUN_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:devel/pear
 
 USE_PHP=	json mbstring sockets
-USES=		pear
+USES=		pear php
 
 .include <bsd.port.mk>

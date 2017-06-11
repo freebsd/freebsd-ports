@@ -8,6 +8,6 @@ CATEGORIES=	audio pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Generates a sound clip saying the contents of a string of characters
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

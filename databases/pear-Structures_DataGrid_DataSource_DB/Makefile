@@ -12,6 +12,6 @@ RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
 		${PEARDIR}/DB.php:databases/pear-DB \
 		${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

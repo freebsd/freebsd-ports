@@ -8,6 +8,6 @@ CATEGORIES=	www devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR miscellaneous HTTP utilities
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

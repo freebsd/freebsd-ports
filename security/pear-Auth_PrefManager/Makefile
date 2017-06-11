@@ -8,6 +8,6 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR preferences management class
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -9,6 +9,6 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR::Image_Color manages and handles color data and conversions
 
 USE_PHP=	gd
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

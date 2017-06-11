@@ -8,7 +8,7 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Generic server class
 
-USES=	pear
+USES=		pear php
 USE_PHP=	sockets pcntl
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class allows you to use two-key strong cryptography
 
-USES=	pear
+USES=		pear
 
 OPTIONS_DEFINE=	BCMATH GMP
 BCMATH_DESC=	PHP BCMath extension support

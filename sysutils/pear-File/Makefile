@@ -9,7 +9,7 @@ CATEGORIES=	sysutils www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR common file and directory routines
 
-USES=		pear
+USES=		pear php
 USE_PHP=	pcre
 
 .include <bsd.port.mk>

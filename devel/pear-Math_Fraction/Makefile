@@ -8,6 +8,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Classes that represent and manipulate fractions
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

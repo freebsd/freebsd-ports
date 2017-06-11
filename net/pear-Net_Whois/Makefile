@@ -8,7 +8,7 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Tool to query internet domain name services
 
-USES=	pear
+USES=		pear
 
 RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 

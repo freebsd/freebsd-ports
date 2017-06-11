@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm \
 RUN_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm \
 		${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

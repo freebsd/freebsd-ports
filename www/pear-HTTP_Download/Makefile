@@ -11,6 +11,6 @@ COMMENT=	PEAR class to send HTTP downloads
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Header.php:www/pear-HTTP_Header
 RUN_DEPENDS=	${PEARDIR}/HTTP/Header.php:www/pear-HTTP_Header
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

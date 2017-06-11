@@ -9,6 +9,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Integrated template API
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

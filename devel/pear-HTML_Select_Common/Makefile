@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common	\
 RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common	\
 		${PEARDIR}/I18N/Common.php:devel/pear-I18N
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -8,6 +8,6 @@ CATEGORIES=	www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Abstracts parsing and rendering rules for Wiki markup
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
