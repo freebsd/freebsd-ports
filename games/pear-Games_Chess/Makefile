@@ -8,6 +8,6 @@ CATEGORIES=	games devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR methods for constructing and validating chess games in PGN
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
