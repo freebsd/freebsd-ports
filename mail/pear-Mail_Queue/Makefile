@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PEARDIR}/Mail.php:mail/pear-Mail \
 RUN_DEPENDS=	${PEARDIR}/Mail.php:mail/pear-Mail \
 		${PEARDIR}/Mail/mime.php:mail/pear-Mail_Mime
 
-USES=	pear
+USES=		pear
 
 OPTIONS_DEFINE=	PEAR_DB PEAR_MDB PEAR_MDB2
 PEAR_DB_DESC=	PEAR::DB support
