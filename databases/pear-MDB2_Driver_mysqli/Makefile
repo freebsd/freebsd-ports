@@ -14,7 +14,7 @@ BUILD_DEPENDS=	pear-MDB2>=0:databases/pear-MDB2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
-USES=		pear
+USES=		pear php
 USE_PHP=	mysqli
 
 .include <bsd.port.mk>
