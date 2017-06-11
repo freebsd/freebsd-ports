@@ -8,7 +8,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=1.3.4:security/py3-cryptograph
 		${PYTHON_PKGNAMEPREFIX}openssl>=16.0:security/py3-openssl \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=1.5.7:net/py3-pysocks
 
-USES=	python:3.3+
+USES=		python:3.3+
 
 .include "${MASTERDIR}/Makefile"
 

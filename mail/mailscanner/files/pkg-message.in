@@ -23,9 +23,6 @@
 
 	Either create those directories or change the configuration.
 
-	Sophos users: Please take a look at the Sophos install
-	script %%PREFIX%%/share/doc/MailScanner/Sophos.install.freebsd
-
 	*****************************************************************
 	A new optional rc variable called mailscanner_user has been added
 	to the startup script. This is a temporary workaround to address
