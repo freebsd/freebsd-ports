@@ -9,6 +9,6 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Standard interface to manipulate images using different libraries
 
 USE_PHP=	gd
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>
