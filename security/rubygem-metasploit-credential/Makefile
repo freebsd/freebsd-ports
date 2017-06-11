@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit-credential
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
 		rubygem-pg>=0:databases/rubygem-pg \
 		rubygem-railties4>=0:www/rubygem-railties4 \
+		rubygem-rex-socket>=0:security/rubygem-rex-socket \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip
 
