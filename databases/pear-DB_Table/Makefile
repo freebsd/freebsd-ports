@@ -10,7 +10,7 @@ CATEGORIES=	databases www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR object-oriented interface to a database table
 
-USES=	pear
+USES=		pear
 
 OPTIONS_DEFINE=	PEAR_HTML_QUICKFORM PEAR_DB PEAR_MDB2
 PEAR_HTML_QUICKFORM_DESC=	PEAR::HTML_QuickForm support
