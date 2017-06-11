@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP \
 RUN_DEPENDS=	${PEARDIR}/HTTP.php:www/pear-HTTP \
 		${PEARDIR}/Net/Server.php:net/pear-Net_Server
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
