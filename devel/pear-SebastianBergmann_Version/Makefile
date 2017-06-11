@@ -15,6 +15,8 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
+BROKEN=		unfetchable, redirects to https://phpunit.de/
+
 PEAR_CHANNEL=	phpunit
 USES=	pear
 
