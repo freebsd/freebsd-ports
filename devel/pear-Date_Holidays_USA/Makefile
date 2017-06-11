@@ -10,6 +10,6 @@ COMMENT=	Driver based class to calculate holidays in the USA
 BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays
 BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
