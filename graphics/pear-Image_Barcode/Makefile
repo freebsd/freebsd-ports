@@ -9,7 +9,7 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class for barcode generation
 
 USE_PHP=	gd
-USES=	pear
+USES=		pear php
 
 OPTIONS_DEFINE=		PEAR_PHP_COMPAT
 PEAR_PHP_COMPAT_DESC=	PEAR::PHP_Compat support
