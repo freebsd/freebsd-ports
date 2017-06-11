@@ -1,2 +1,3 @@
-SHA256 (pefile-2016.3.28.tar.gz) = f24021085b5c3ef7b0898bb1f1d93eecd3839e03512769e22b0c5a10d9095f7b
-SIZE (pefile-2016.3.28.tar.gz) = 58110
+TIMESTAMP = 1495864873
+SHA256 (pefile-2017.5.26.tar.gz) = 1fd02ae5489dd87ec7c9ecf44b675e92ee4a34e513efe7417befeb9f438e9987
+SIZE (pefile-2017.5.26.tar.gz) = 60766
