@@ -15,6 +15,6 @@ BUILD_DEPENDS=	${PEARDIR}/Cache.php:sysutils/pear-Cache \
 RUN_DEPENDS=	${PEARDIR}/Cache.php:sysutils/pear-Cache \
 		${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
