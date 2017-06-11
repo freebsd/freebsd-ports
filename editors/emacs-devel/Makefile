@@ -3,7 +3,6 @@
 
 PORTNAME=	emacs
 DISTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 PKGNAMESUFFIX=	-devel
@@ -20,10 +19,10 @@ BROKEN_aarch64=		Fails to link: missing sbrk
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	5e2cf8c
+GH_TAGNAME=	bdf4115
 
 EMACS_VER=	26.0.50
-EMACS_REV=	20170509
+EMACS_REV=	20170610
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info
