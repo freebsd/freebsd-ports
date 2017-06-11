@@ -17,6 +17,8 @@ RUN_DEPENDS=	pear-Console_CommandLine>=1.1.3:devel/pear-Console_CommandLine \
 		pear-File_Iterator>=1.3.0:devel/pear-File_Iterator \
 		pear-Log>=1.2.1:sysutils/pear-Log
 
+BROKEN=		unfetchable, redirects to https://phpunit.de/
+
 USES=	pear
 USE_PHP=	dom
 PEAR_CHANNEL=	phpunit
