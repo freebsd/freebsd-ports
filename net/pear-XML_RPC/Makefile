@@ -9,6 +9,6 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP implementation of the XML-RPC protocol
 
 USE_PHP=	xml
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>
