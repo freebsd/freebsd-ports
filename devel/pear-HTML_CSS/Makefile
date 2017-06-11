@@ -11,6 +11,6 @@ COMMENT=	PEAR class for generating CSS declarations
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
 RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
