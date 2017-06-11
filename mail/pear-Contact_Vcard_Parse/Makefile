@@ -8,6 +8,6 @@ CATEGORIES=	mail www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to parse vCard 2.1 and 3.0 files
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
