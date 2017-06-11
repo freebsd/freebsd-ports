@@ -12,6 +12,6 @@ RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
 		${PEARDIR}/HTML/Table.php:devel/pear-HTML_Table \
 		${PEARDIR}/Structures/DataGrid/Renderer/Pager.php:www/pear-Structures_DataGrid_Renderer_Pager
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
