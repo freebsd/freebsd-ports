@@ -8,6 +8,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides an interface for creating simple JS scripts
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
