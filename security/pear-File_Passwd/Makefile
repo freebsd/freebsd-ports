@@ -8,7 +8,7 @@ CATEGORIES=	security pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to manipulate many kinds of password files
 
-USES=	pear
+USES=		pear
 
 OPTIONS_DEFINE=	PEAR_CRYPT_CHAP
 PEAR_CRYPT_CHAP_DESC=	PEAR::Crypt_CHAP support
