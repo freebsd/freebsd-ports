@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
 
 BROKEN_powerpc64=	fails to package: Signal 11
 
-USES=		pear
+USES=		pear php
 USE_PHP=	spl xsl
 
 .include <bsd.port.mk>
