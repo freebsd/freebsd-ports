@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request \
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request \
 		${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

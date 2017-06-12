@@ -8,6 +8,6 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Implementation of Hashed Message Authentication Code for PHP5
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -8,6 +8,6 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR encryption class for RC4 encryption
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

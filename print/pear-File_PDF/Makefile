@@ -8,6 +8,6 @@ CATEGORIES=	print pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class to generate PDFs
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

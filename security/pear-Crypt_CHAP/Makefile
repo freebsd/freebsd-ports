@@ -8,7 +8,7 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class for generating CHAP packets
 
-USES=	pear
+USES=		pear php
 USE_PHP=	mcrypt hash
 
 .include <bsd.port.mk>

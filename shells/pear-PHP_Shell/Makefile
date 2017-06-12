@@ -10,6 +10,6 @@ COMMENT=	Interactive PHP Shell
 
 USE_PHP=	pcre tokenizer readline
 
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

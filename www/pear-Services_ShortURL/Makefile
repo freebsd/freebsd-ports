@@ -10,7 +10,7 @@ COMMENT=	Abstract PHP5 interface for shortening and expanding short URLs
 
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2
 
-USES=	pear
+USES=		pear php
 USE_PHP=	simplexml pcre spl
 
 .include <bsd.port.mk>

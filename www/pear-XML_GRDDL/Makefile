@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request \
 		${PEARDIR}/Log.php:sysutils/pear-Log \
 		${PEARDIR}/Validate.php:devel/pear-Validate
 
-USES=	pear
-USE_PHP+=	xsl tidy
+USES=		pear php
+USE_PHP=	xsl tidy
 
 .include <bsd.port.mk>
