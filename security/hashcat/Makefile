@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl \
 USE_GITHUB=	yes
 
 ALL_TARGET=	default
-USES=		gmake localbase shebangfix
+USES=		gmake iconv localbase shebangfix
 SHEBANG_FILES=	extra/tab_completion/install
 USE_CSTD=	c99
 
