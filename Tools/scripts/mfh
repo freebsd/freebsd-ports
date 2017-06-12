@@ -147,6 +147,13 @@ ask "Do you want to commit? (no = start a shell)" || (
 echo >> commit.txt
 echo "Approved by:	" >> commit.txt
 ${EDITOR:-vi} commit.txt
-"${svn}" ci -F commit.txt "${branch}"
+while ! "${svn}" ci -F commit.txt "${branch}"; do
+	if ! ask "Commit failed. Re-edit message and try again?"; then
+		save_log="$(mktemp -t mfh)"
+		cp -f commit.txt "${save_log}"
+		echo "Saving commit log to ${save_log}"
+		break
+	fi
+done
 rm -rf "${dir}"
 trap - 0
