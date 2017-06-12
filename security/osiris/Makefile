@@ -22,14 +22,12 @@ OSIRISD_DESC=	Scan agent
 PRINTDB_DESC=	Database print tool
 CLI_DESC=	Management CLI
 
-.include <bsd.port.pre.mk>
-
 .if exists(${LOCALBASE}/lib/libreadline.so.6)
-LIB_DEPENDS+=	libreadline.so.6:devel/readline
+USES+=		readline:port
 .endif
 
 post-build-PRINTDB-on:
-	cd ${WRKSRC}/src/tools && ${MAKE}
+	cd ${WRKSRC}/src/tools && ${MAKE_CMD}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/osiris
@@ -66,4 +64,4 @@ do-install-OSIRISMD-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirismd.sh \
 		${STAGEDIR}${PREFIX}/etc/rc.d
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
