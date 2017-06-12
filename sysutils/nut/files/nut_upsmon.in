@@ -32,9 +32,16 @@ pidfile="%%STATEDIR%%/upsmon.pid"
 nut_upsmon_flags=${nut_upsmon_flags-"localhost"}
 
 extra_commands=reload
+stop_cmd="upsmon_stop"
+
 reload()
 {
 	${command} -c reload
+}
+
+upsmon_stop()
+{
+	${command} -c stop
 }
 
 run_rc_command "$1"
