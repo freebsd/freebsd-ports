@@ -13,7 +13,7 @@ COMMENT=	Interactive astronomical ephemeris program
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gmake jpeg motif tar:tgz
+USES=		gmake groff jpeg motif tar:tgz
 LDFLAGS+=	-lfontconfig
 USE_XORG=	xp xt xext xmu x11 xft
 MAKE_JOBS_UNSAFE=	yes
@@ -26,10 +26,6 @@ RESTRICTED=	Personal use only
 XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tgz
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1200032
-BUILD_DEPENDS+=	nroff:textproc/groff
-.endif
 
 .for file in ${XEPHEMSRC}
 .if !exists(${DISTDIR}/${file})
