@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name="bruteblockd"
+
+pidfile="/var/run/${name}.pid"
+command=%%PREFIX%%/sbin/${name}
+command_args="-p ${pidfile} -t ${bruteblockd_table}"
+
+start_pre()
+{
+	if [ -z "${bruteblockd_table}" ]; then
+		eerror 1 "Please specify ipfw table number with bruteblockd_table parameter in /etc/rc.conf (see bruteblock(8))"
+	fi
+}
+
+depend() {
+		keyword -jail
+}
