@@ -28,6 +28,12 @@ MAKE_ARGS+=	PERL=${PERL}
 MAKE_JOBS_UNSAFE=yes
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} > 1200000
+BROKEN=		Does not build on head
+.endif
+
 DTPATHSRE=	's,/usr/dt,${STAGEDIR}${PREFIX}/dt,;s,/etc/dt,${STAGEDIR}${PREFIX}/etc/dt,;\
 		s,/var/dt,${STAGEDIR}${PREFIX}/dt/var,'
 post-patch:
