@@ -13,11 +13,11 @@ COMMENT=	Parser and generator of iCalender files for Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz
 
-USES=		python
-USE_PYTHON=	distutils concurrent autoplist
+USES?=		python
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 PORTDOCS=	*
