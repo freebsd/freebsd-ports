@@ -8,6 +8,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR use ANSI console colors
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

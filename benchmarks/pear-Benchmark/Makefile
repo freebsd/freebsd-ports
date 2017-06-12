@@ -8,7 +8,7 @@ CATEGORIES=	benchmarks devel www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR framework to benchmark PHP scripts or function calls
 
-USES=	pear
+USES=		pear php
 
 USE_PHP=	bcmath
 
