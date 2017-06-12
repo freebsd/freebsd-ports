@@ -20,6 +20,8 @@ BUILD_DEPENDS=	pear-Symfony_Component_Console>=1.1.0:devel/pear-Symfony_Componen
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		unfetchable, redirects to https://phpunit.de/
+
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	phpunit
 USES=	pear
