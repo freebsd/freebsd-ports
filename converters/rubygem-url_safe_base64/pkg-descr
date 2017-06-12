@@ -1,0 +1,4 @@
+Converts strings to/from a slightly modified base64 that contains only url-safe
+characters
+
+WWW: https://github.com/joenoon/url_safe_base64
