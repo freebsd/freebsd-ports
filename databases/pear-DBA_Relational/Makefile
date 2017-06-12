@@ -10,6 +10,6 @@ COMMENT=	Berkely-style database abstraction class
 
 PORTSCOUT=	skipv:0.19
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

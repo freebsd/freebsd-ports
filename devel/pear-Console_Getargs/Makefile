@@ -8,6 +8,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR command-line arguments parser
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
