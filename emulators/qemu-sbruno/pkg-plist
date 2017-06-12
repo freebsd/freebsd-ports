@@ -18,7 +18,6 @@
 %%NONX86%%bin/qemu-system-mips64el
 %%NONX86%%bin/qemu-system-mipsel
 %%NONX86%%bin/qemu-system-moxie
-%%NONX86%%bin/qemu-system-or32
 %%NONX86%%bin/qemu-system-ppc
 %%NONX86%%bin/qemu-system-ppc64
 %%NONX86%%bin/qemu-system-ppcemb
