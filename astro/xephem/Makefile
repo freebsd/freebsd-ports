@@ -13,7 +13,7 @@ COMMENT=	Interactive astronomical ephemeris program
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gmake jpeg motif tar:tgz
+USES=		gmake groff jpeg motif tar:tgz
 LDFLAGS+=	-lfontconfig
 USE_XORG=	xp xt xext xmu x11 xft
 MAKE_JOBS_UNSAFE=	yes
