@@ -1,0 +1,6 @@
+securecompare borrows the secure_compare private method from
+ActiveSupport::MessageVerifier which lets you do safely compare strings without
+being vulnerable to timing attacks. Useful for Basic HTTP Authentication in your
+rack/rails application.
+
+WWW: https://github.com/samuelkadolph/securecompare
