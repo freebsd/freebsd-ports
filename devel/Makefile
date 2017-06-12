@@ -4963,6 +4963,7 @@
     SUBDIR += py3-freezegun
     SUBDIR += py3-gobject3
     SUBDIR += py3-hgtools
+    SUBDIR += py3-icalendar
     SUBDIR += py3-jedi
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
