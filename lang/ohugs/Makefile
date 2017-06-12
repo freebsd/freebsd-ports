@@ -13,27 +13,18 @@ COMMENT=	Interpreter for Haskell with object-oriented features
 
 OPTIONS_DEFINE=		X11
 
-.include <bsd.port.options.mk>
-
-LIB_DEPENDS=	libreadline.so.6:devel/readline
-.if empty(PORT_OPTIONS:MX11)
-LIB_DEPENDS=	libTix8.4.3.so:x11-toolkits/tix
-.endif
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 BUILD_WRKSRC=	${WRKSRC}/src
-USES=		bison ncurses readline
+USES=		bison ncurses readline:port
 LDFLAGS+=	-lm -lreadline -lncurses
-
-.if ${PORT_OPTIONS:MX11}
-USES+=		tk
-CFLAGS+=	-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -ltk${TK_SHLIB_VER} -ltcl${TCL_SHLIB_VER} -lTix8.4.3
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_prelude.h
-.endif
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		INSTBIN=${PREFIX}/bin INSTLIB=${PREFIX}/lib/ohugs
+
+X11_CFLAGS=		-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR} -I${LOCALBASE}/include
+X11_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-src_prelude.h
+X11_LDFLAGS=		-L${LOCALBASE}/lib -ltk${TK_SHLIB_VER} -ltcl${TCL_SHLIB_VER} -lTix8.4.3
+X11_LIB_DEPENDS_OFF=	libTix8.4.3.so:x11-toolkits/tix
+X11_USES=		tk
 
 .include <bsd.port.mk>
