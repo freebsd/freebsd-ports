@@ -92,7 +92,7 @@ MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
 
 CONFLICTS_INSTALL=	libreoffice4-4.*
 
-INSTALL_TARGET=	TMPDIR=${WRKDIR} distro-pack-install
+INSTALL_TARGET=	distro-pack-install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
 GNU_CONFIGURE=	yes
@@ -265,6 +265,7 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
 
+MAKE_ARGS+=	TMPDIR=${WRKDIR}
 MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
 MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
