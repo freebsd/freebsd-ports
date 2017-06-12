@@ -21,19 +21,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:devel/py-zope.interfac
 		${PYTHON_PKGNAMEPREFIX}incremental>=16.10.1:devel/py-incremental \
 		${PYTHON_PKGNAMEPREFIX}Automat>=0.3.0:devel/py-Automat
 
-# Actually 2.7,3.3+
 USES=		python tar:bzip2
 USE_PYTHON=	autoplist concurrent distutils
 
-.include <bsd.port.pre.mk>
-
 post-install:
-.if ${PYTHON_REL} < 3000
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/python/_sendmsg.so
-.endif
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/twisted/test/raiser.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/ -name '*.so' -exec ${STRIP_CMD} {} +
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m twisted.trial -e twisted
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
