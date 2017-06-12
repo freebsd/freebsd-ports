@@ -4963,6 +4963,7 @@
     SUBDIR += py3-freezegun
     SUBDIR += py3-gobject3
     SUBDIR += py3-hgtools
+    SUBDIR += py3-icalendar
     SUBDIR += py3-jedi
     SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
@@ -5003,6 +5004,7 @@
     SUBDIR += py3-tabulate
     SUBDIR += py3-threema-msgapi
     SUBDIR += py3-tox
+    SUBDIR += py3-tzlocal
     SUBDIR += py3-urwid
     SUBDIR += py3-vcversioner
     SUBDIR += py3-virtualenv

@@ -1,5 +1,5 @@
---- src/client.c.orig	Sun Oct 26 22:31:18 2003
-+++ src/client.c	Sun Oct 26 22:31:34 2003
+--- src/client.c.orig	2003-06-20 10:39:31 UTC
++++ src/client.c
 @@ -8,6 +8,7 @@
  #include <config.h>
  #endif

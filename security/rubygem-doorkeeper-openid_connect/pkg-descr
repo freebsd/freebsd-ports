@@ -1,0 +1,8 @@
+Implements an OpenID Connect authentication provider for Rails applications on
+top of the Doorkeeper OAuth 2.0 framework.
+
+OpenID Connect is a single-sign-on and identity layer with a growing list of
+server and client implementations. If you're looking for a client in Ruby check
+out omniauth-openid-connect.
+
+WWW: https://github.com/doorkeeper-gem/doorkeeper-openid_connect
