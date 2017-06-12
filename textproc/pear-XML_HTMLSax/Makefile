@@ -8,6 +8,6 @@ CATEGORIES=	textproc devel pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR SAX parser for HTML and other badly formed XML documents
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

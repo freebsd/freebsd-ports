@@ -8,6 +8,6 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class to manipulate .htaccess files
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

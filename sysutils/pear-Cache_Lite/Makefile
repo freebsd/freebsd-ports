@@ -9,6 +9,6 @@ CATEGORIES=	sysutils www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR fast and safe little cache system
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

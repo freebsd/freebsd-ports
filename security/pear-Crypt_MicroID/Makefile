@@ -8,6 +8,6 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PHP MicroID library
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

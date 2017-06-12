@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pea
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array \
 		${PEARDIR}/XML/Util.php:devel/pear-XML_Util
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ RUN_DEPENDS=	${PEARDIR}/Event/Dispatcher.php:devel/pear-Event_Dispatcher
 
 PORTSCOUT=	skipv:0.61
 
-USES=	pear
+USES=		pear
 OPTIONS_DEFINE=	PEAD_DB PEAR_MDB PEAR_MDB2 PEAR_LOG PEAR_XML_TREE PEAR_CRYPT_RC4
 
 PEAR_DB_DESC=	PEAR::DB support

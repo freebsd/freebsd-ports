@@ -8,6 +8,6 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class to emulate Perl's Crypt::CBC module
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

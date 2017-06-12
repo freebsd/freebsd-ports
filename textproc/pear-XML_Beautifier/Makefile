@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser \
 RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:devel/pear-XML_Parser \
 		${PEARDIR}/XML/Util.php:devel/pear-XML_Util
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
