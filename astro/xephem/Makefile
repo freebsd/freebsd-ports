@@ -27,6 +27,10 @@ XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tgz
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 1200032
+BUILD_DEPENDS+=	nroff:textproc/groff
+.endif
+
 .for file in ${XEPHEMSRC}
 .if !exists(${DISTDIR}/${file})
 IGNORE=	because of licensing restrictions, you must manually fetch ${file}\
