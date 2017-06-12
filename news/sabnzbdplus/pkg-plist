@@ -38,6 +38,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/urlgrabber.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/certgen.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/checkdir.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/configobj.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/diskspeed.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/feedparser.py
@@ -45,7 +46,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/happyeyeballs.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/json.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/listquote.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pathbrowser.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pybonjour.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pystone.py
@@ -177,7 +177,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/jquery.peity.min.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/knockout-extensions.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/knockout-latest.js
-%%DATADIR%%/interfaces/Glitter/templates/static/javascripts/moment.js
+%%DATADIR%%/interfaces/Glitter/templates/static/javascripts/moment.min.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/da.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/de.js
 %%DATADIR%%/interfaces/Glitter/templates/static/javascripts/momentjs_locale/es.js
