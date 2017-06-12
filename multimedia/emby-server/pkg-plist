@@ -8,6 +8,8 @@ lib/emby-server/Emby.Dlna.dll
 lib/emby-server/Emby.Dlna.dll.mdb
 lib/emby-server/Emby.Drawing.ImageMagick.dll
 lib/emby-server/Emby.Drawing.ImageMagick.dll.mdb
+lib/emby-server/Emby.Drawing.Skia.dll
+lib/emby-server/Emby.Drawing.Skia.dll.mdb
 lib/emby-server/Emby.Drawing.dll
 lib/emby-server/Emby.Drawing.dll.mdb
 lib/emby-server/Emby.Photos.dll
@@ -52,6 +54,8 @@ lib/emby-server/SQLitePCLRaw.provider.sqlite3.dll.config
 lib/emby-server/ServiceStack.Text.dll
 lib/emby-server/SharpCompress.dll
 lib/emby-server/SimpleInjector.dll
+lib/emby-server/SkiaSharp.dll
+lib/emby-server/SkiaSharp.dll.config
 lib/emby-server/SocketHttpListener.dll
 lib/emby-server/SocketHttpListener.dll.mdb
 lib/emby-server/TagLib.Portable.dll
@@ -110,6 +114,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/alert/alert.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/alert/nativealert.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/alphapicker/alphapicker.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/alphapicker/style.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/appfooter/appfooter.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/appfooter/appfooter.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/appsettings.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/backdrop/backdrop.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/backdrop/style.css
@@ -230,6 +236,8 @@ lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/native-promise-
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/notifications/badge.png
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/notifications/notificationicon.png
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/notifications/notifications.js
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/nowplayingbar/nowplayingbar.css
+lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/nowplayingbar/nowplayingbar.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/packagemanager.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/pagejs/page.js
 lib/emby-server/dashboard-ui/bower_components/emby-webcomponents/photoplayer/plugin.js
@@ -431,8 +439,6 @@ lib/emby-server/dashboard-ui/channels.html
 lib/emby-server/dashboard-ui/cinemamodeconfiguration.html
 lib/emby-server/dashboard-ui/components/accessschedule/accessschedule.js
 lib/emby-server/dashboard-ui/components/accessschedule/accessschedule.template.html
-lib/emby-server/dashboard-ui/components/appfooter/appfooter.css
-lib/emby-server/dashboard-ui/components/appfooter/appfooter.js
 lib/emby-server/dashboard-ui/components/apphost.js
 lib/emby-server/dashboard-ui/components/categorysyncbuttons.js
 lib/emby-server/dashboard-ui/components/channelmapper/channelmapper.js
@@ -476,7 +482,6 @@ lib/emby-server/dashboard-ui/components/tvproviders/xmltv.template.html
 lib/emby-server/dashboard-ui/components/viewcontainer-lite.js
 lib/emby-server/dashboard-ui/connectlogin.html
 lib/emby-server/dashboard-ui/css/autoorganizetable.css
-lib/emby-server/dashboard-ui/css/chromecast.css
 lib/emby-server/dashboard-ui/css/dashboard.css
 lib/emby-server/dashboard-ui/css/detailtable.css
 lib/emby-server/dashboard-ui/css/images/ani_equalizer_black.gif
@@ -561,7 +566,6 @@ lib/emby-server/dashboard-ui/css/livetv.css
 lib/emby-server/dashboard-ui/css/metadataeditor.css
 lib/emby-server/dashboard-ui/css/notifications.css
 lib/emby-server/dashboard-ui/css/nowplaying.css
-lib/emby-server/dashboard-ui/css/nowplayingbar.css
 lib/emby-server/dashboard-ui/css/site.css
 lib/emby-server/dashboard-ui/css/videoosd.css
 lib/emby-server/dashboard-ui/dashboard.html
@@ -591,7 +595,6 @@ lib/emby-server/dashboard-ui/dlnasettings.html
 lib/emby-server/dashboard-ui/edititemmetadata.html
 lib/emby-server/dashboard-ui/encodingsettings.html
 lib/emby-server/dashboard-ui/favicon.ico
-lib/emby-server/dashboard-ui/files/dummy.mp4
 lib/emby-server/dashboard-ui/fonts/roboto/-l14jk06m6puhb-5mxqqnrjtnkitppoi_ivcxxdnrsc.woff2
 lib/emby-server/dashboard-ui/fonts/roboto/0ec6fl06luxeywpbsjvxcbjtnkitppoi_ivcxxdnrsc.woff2
 lib/emby-server/dashboard-ui/fonts/roboto/2tsd397wlxj96qwhynikxpeszw2xoq-xsnqo47m55da.woff2
@@ -735,7 +738,6 @@ lib/emby-server/dashboard-ui/scripts/notificationlist.js
 lib/emby-server/dashboard-ui/scripts/notifications.js
 lib/emby-server/dashboard-ui/scripts/notificationsetting.js
 lib/emby-server/dashboard-ui/scripts/notificationsettings.js
-lib/emby-server/dashboard-ui/scripts/nowplayingbar.js
 lib/emby-server/dashboard-ui/scripts/nowplayingpage.js
 lib/emby-server/dashboard-ui/scripts/photos.js
 lib/emby-server/dashboard-ui/scripts/playbackconfiguration.js
