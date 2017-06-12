@@ -5004,6 +5004,7 @@
     SUBDIR += py3-tabulate
     SUBDIR += py3-threema-msgapi
     SUBDIR += py3-tox
+    SUBDIR += py3-tzlocal
     SUBDIR += py3-urwid
     SUBDIR += py3-vcversioner
     SUBDIR += py3-virtualenv
