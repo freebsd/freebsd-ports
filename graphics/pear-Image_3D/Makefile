@@ -9,6 +9,6 @@ MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class allows the rendering of 3 dimensional objects
 
 USE_PHP=	gd
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

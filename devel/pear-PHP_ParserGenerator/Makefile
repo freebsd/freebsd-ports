@@ -8,6 +8,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Convert files from lemon parser to php5
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

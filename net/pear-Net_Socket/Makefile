@@ -8,6 +8,6 @@ CATEGORIES=	net www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR Network Socket Interface
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

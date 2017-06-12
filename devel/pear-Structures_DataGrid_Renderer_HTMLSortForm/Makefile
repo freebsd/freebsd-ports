@@ -11,6 +11,6 @@ COMMENT=	HTMLSortForm Renderer for pear-Structures_DataGrid
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
 		${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

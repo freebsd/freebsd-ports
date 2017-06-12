@@ -9,6 +9,6 @@ DISTNAME=	CodeGen-${PORTVERSION}
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Tool to create code generators that operate on XML descriptions
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

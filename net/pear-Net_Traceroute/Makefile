@@ -8,6 +8,6 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class to execute traceroute
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

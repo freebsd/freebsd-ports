@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear \
 		${PEARDIR}/Console/CommandLine.php:devel/pear-Console_CommandLine
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
 
-USES=		pear
+USES=		pear php
 USE_PHP=	spl xsl
 
 .include <bsd.port.mk>
