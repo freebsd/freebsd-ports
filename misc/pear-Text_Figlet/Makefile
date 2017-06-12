@@ -8,6 +8,6 @@ CATEGORIES=	misc www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Render text using FIGlet fonts
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -8,6 +8,6 @@ CATEGORIES=	net www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Pingback user-agent class
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -8,6 +8,6 @@ CATEGORIES=	devel pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	OO interface to handle Git repository
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

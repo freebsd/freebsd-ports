@@ -8,6 +8,6 @@ CATEGORIES=	mail www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR Read and modify Unix MBOXes
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

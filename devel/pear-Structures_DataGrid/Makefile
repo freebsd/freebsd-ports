@@ -10,6 +10,6 @@ COMMENT=	Full-featured tabular structured data management package
 
 RUN_DEPENDS=	${PEARDIR}/Console/Table.php:devel/pear-Console_Table
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

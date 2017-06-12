@@ -11,6 +11,6 @@ COMMENT=	Provides a POP3 class to access POP3 server
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

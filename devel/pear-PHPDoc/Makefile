@@ -8,6 +8,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Tool to generate documentation from the source
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
