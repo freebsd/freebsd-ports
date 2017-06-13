@@ -46,6 +46,7 @@ CONFLICTS_INSTALL?=	rust-nightly
 
 RUST_BOOTSTRAP_DIR?=		2017-04-27
 RUST_BOOTSTRAP_VERSION?=	1.17.0
+RUST_BOOTSTRAP_HASH?=		f4594d3e53dcb114
 RUSTC_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR}/rustc-${RUST_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
 RUST_STD_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR}/rust-std-${RUST_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
 
@@ -135,8 +136,8 @@ pre-fetch:
 		exit 1;\
 	fi
 
-LIBSTD=	rust-std-1.16.0-${RUST_ARCH_${ARCH}}-unknown-freebsd/rust-std-${RUST_ARCH_${ARCH}}-unknown-freebsd/lib/rustlib/${RUST_ARCH_${ARCH}}-unknown-freebsd/lib/libstd-aef6cb139bd07bdc.rlib
-STDF=	std-aef6cb139bd07bdc.0.o
+LIBSTD=	rust-std-${RUST_BOOTSTRAP_VERSION}-${RUST_ARCH_${ARCH}}-unknown-freebsd/rust-std-${RUST_ARCH_${ARCH}}-unknown-freebsd/lib/rustlib/${RUST_ARCH_${ARCH}}-unknown-freebsd/lib/libstd-f4594d3e53dcb114.rlib
+STDF=	std-${RUST_BOOTSTRAP_HASH}.0.o
 
 post-extract:
 	@${MKDIR} \
@@ -157,7 +158,7 @@ post-extract:
 	${LD} -r -o ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF} ${WRKSRC}/old_fstat.o
 	${MV} ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF}
 	(cd ${WRKSRC} && ${AR} r ${WRKSRC}/${LIBSTD} ${STDF})
-	${TAR} -cy -C ${WRKSRC} -f ${WRKSRC}/rustc.tbz rust-std-1.16.0-${RUST_ARCH_${ARCH}}-unknown-freebsd
+	${TAR} -cy -C ${WRKSRC} -f ${WRKSRC}/rustc.tbz rust-std-${RUST_BOOTSTRAP_VERSION}-${RUST_ARCH_${ARCH}}-unknown-freebsd
 	${MV} ${WRKSRC}/rustc.tbz ${WRKSRC}/build/cache/${RUST_STD_BOOTSTRAP}
 .endif
 
