@@ -1,0 +1,7 @@
+UDP server capable of handling netdump transfers
+
+This package contains a daemon which is used to receive
+kernel dumps over a network from a panicking kernel. The
+protocol uses UDP and is similar to TFTP.
+
+WWW: https://github.com/markjdb/netdumpd
