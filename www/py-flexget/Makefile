@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	2.10.43
+PORTVERSION=	2.10.60
 PORTEPOCH=	1
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	FlexGet-${PORTVERSION}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Program to automate downloading from different sources
@@ -27,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.3:devel/py-pyparsing \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar \
-		${PYTHON_PKGNAMEPREFIX}guessit>=2.0.4:multimedia/py-guessit \
+		${PYTHON_PKGNAMEPREFIX}guessit>=2.1.0:multimedia/py-guessit \
 		${PYTHON_PKGNAMEPREFIX}pynzb>0:news/py-pynzb \
 		${PYTHON_PKGNAMEPREFIX}zxcvbn-python>0:security/py-zxcvbn-python \
 		${PYTHON_PKGNAMEPREFIX}plumbum>=1.2:sysutils/py-plumbum \
@@ -45,9 +43,29 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy
 		${PYTHON_PKGNAMEPREFIX}flask-restplus08=0.8.6:www/py-flask-restplus08 \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.11:www/py-html5lib \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8.0:www/py-requests
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
+		${PYTHON_PKGNAMEPREFIX}pytest-capturelog>0:devel/py-pytest-capturelog \
+		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3 \
+		${PYTHON_PKGNAMEPREFIX}vcrpy>0:www/py-vcrpy
+
+USE_GITHUB=	yes
+GH_PROJECT=	Flexget
 
 NO_ARCH=	yes
 USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.mk>
+post-extract:
+# Unlock dependencies' versions
+	@${MV} ${WRKSRC}/requirements.in ${WRKSRC}/requirements.txt
+
+do-test:
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3300
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+.endif
+
+.include <bsd.port.post.mk>
