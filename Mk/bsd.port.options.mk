@@ -18,8 +18,6 @@ OPTIONS_Include_MAINTAINER=		portmgr@FreeBSD.org
 USEOPTIONSMK=	yes
 INOPTIONSMK=	yes
 
-.include "bsd.hardening.mk"
-
 .include "bsd.port.mk"
 
 .undef INOPTIONSMK
