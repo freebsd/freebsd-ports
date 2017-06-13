@@ -44,8 +44,8 @@ lib/libtotem_pg.so.5
 lib/libtotem_pg.so.5.0.0
 lib/libvotequorum.a
 lib/libvotequorum.so
-lib/libvotequorum.so.7
-lib/libvotequorum.so.7.0.0
+lib/libvotequorum.so.8
+lib/libvotequorum.so.8.0.0
 libdata/pkgconfig/corosync.pc
 libdata/pkgconfig/libcfg.pc
 libdata/pkgconfig/libcmap.pc
