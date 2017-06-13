@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vapoursynth
-PORTVERSION=	R37
-PORTREVISION=	2
+PORTVERSION=	R38
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -84,12 +83,13 @@ VSSCRIPT_CONFIGURE_ENABLE=	vsscript
 ASS_DESC=			Subtitles rendering via libass
 ASS_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg \
 				libass.so:multimedia/libass
+ASS_USES=			iconv
 ASS_CONFIGURE_ENABLE=		subtext
 
 EEDI3_DESC=			Very slow edge directed interpolation
 EEDI3_CONFIGURE_ENABLE=		eedi3
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-7.so:graphics/ImageMagick7
 IMAGEMAGICK_USES=		compiler:c++11-lib
 IMAGEMAGICK_CONFIGURE_ENABLE=	imwri
 
@@ -114,6 +114,8 @@ VIVTC_CONFIGURE_ENABLE=		vivtc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/x86_64/&|amd64/' \
+		-e '/AC_SEARCH.*libiconv/d' \
+		-e '/test/s/[^ ]*libiconv.*-a //' \
 		${WRKSRC}/configure.ac
 
 post-build-DOCS-on:

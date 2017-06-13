@@ -5,11 +5,11 @@ PORTNAME=	kexis
 PORTVERSION=	0.2.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Kexis/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lossless WAV file compressor
 
+USES=		tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/kexis
 
