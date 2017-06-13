@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# hfm_flags (bool):	Check the sources of hfm for flags
+
+name="hfm"
+
+hfm_user="_hfm"
+hfm_flags="${hfm_flags:-"-config %%ETCDIR%%/${name}.conf -facility local0 -log syslog"}"
+
+command="%%PREFIX%%/bin/${name}"
+command_user=${hfm_user}
+command_args=${hfm_flags}
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+extra_commands="checkconfig"
+
+required_files="%%ETCDIR%%/${name}.conf"
+
+checkconfig() {
+        eval ${command} ${hfm_flags} -n
+}
+
+depend() {
+	keyword -shutdown
+}

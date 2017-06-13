@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bacula_dir_flags (params):   Set params used to start bacula_dir.
+
+name="bacula_dir"
+
+: ${bacula_dir_flags=" -u bacula -g bacula -v -c %%PREFIX%%/etc/bacula/bacula-dir.conf"}
+: ${bacula_dir_pidfile="/var/run/bacula-dir.9101.pid"}
+
+command=%%PREFIX%%/sbin/bacula-dir
+command_args=${bacula_dir_flags}
+
+pidfile="${bacula_dir_pidfile}"
+
+depend() {
+	need %%REQ_MYSQL%%
+	need %%REQ_PGSQL%%
+	keyword -shutdown
+}
+
+

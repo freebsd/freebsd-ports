@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+name=amavis_p0fanalyzer
+command="%%PREFIX%%/bin/p0f"
+
+: ${amavis_p0fanalyzer_p0f_filter:=tcp dst port 25}
+: ${amavis_p0fanalyzer_pidfile1=/var/run/p0fanalyzer1.pid}
+: ${amavis_p0fanalyzer_pidfile2=/var/run/p0fanalyzer2.pid}
+: ${amavis_p0fanalyzer_flags=2345}
+
+start() {
+	ebegin "Starting p0f-analyzer." && \
+	  %%DAEMON%% ${amavis_p0fanalyzer_pidfile1} \
+	  $command "${amavis_p0fanalyzer_p0f_filter}" 2>&1 | \
+	  %%DAEMON%% ${amavis_p0fanalyzer_pidfile2} \
+	  %%PREFIX%%/sbin/p0f-analyzer.pl ${amavis_p0fanalyzer_flags}
+}
+
+stop() {
+	test -s ${amavis_p0fanalyzer_pidfile1} && /bin/kill `cat ${amavis_p0fanalyzer_pidfile2}`
+	test -s ${amavis_p0fanalyzer_pidfile1} && /bin/kill `cat ${amavis_p0fanalyzer_pidfile1}`
+}
+
+depend() {
+	provide amavis_p0fanalyzerd
+	keyword -shutdown
+}

@@ -1,0 +1,38 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable couchpotato:
+# couchpotato_user:     The user account CouchPotato daemon runs as what
+#                       you want it to be.
+# couchpotato_datadir:  Directory where CouchPotato user data lives.
+#                           Default: /var/db/couchpotato
+# couchpotato_conf:     Directory where CouchPotato user data lives.
+#                           Default: %%ETCDIR%%/settings.conf
+# couchpotato_flags:    Set additonal flags as needed.
+
+name=couchpotato
+
+: ${couchpotato_user:=%%USERS%%}
+: ${couchpotato_datadir=/var/db/couchpotato}
+: ${couchpotato_conf=%%ETCDIR%%/settings.conf}
+
+pidfile=/var/run/couchpotato/couchpotato.pid
+command="%%DATADIR%%/CouchPotato.py"
+command_args="--daemon --data_dir ${couchpotato_datadir} --pid_file ${pidfile} --config_file ${couchpotato_conf}"
+
+start_pre() {
+	if [ ! -d ${couchpotato_datadir} ]; then
+		install -d -o ${couchpotato_user} ${couchpotato_datadir}
+	fi
+	if [ ! -d ${pidfile%/*} ]; then
+		install -d -o ${couchpotato_user} ${pidfile%/*}
+	fi
+	if [ ! -d ${couchpotato_conf%/*} ]; then
+		install -d -o ${couchpotato_user} ${couchpotato_conf%/*}
+	fi
+}
+
+depend() {
+		need localmount
+		keyword -shutdown
+		after bootmisc
+}

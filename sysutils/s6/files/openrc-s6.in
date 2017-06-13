@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+#s6_path="/service"		(default: %%SERVICE_DIR%%)
+
+name=s6
+
+: ${s6_path:=%%SERVICE_DIR%%}
+s6_log=${s6_path}/s6-svscan-log
+s6_svc=${s6_path}/.s6-svscan
+
+command="%%PREFIX%%/bin/s6-svscanboot"
+command_args=${s6_path}
+supervisor=supervise-daemon
+
+start_pre() {
+	/bin/test -d ${s6_path} || /bin/mkdir -p ${s6_path}
+	/bin/test -L ${s6_log} || /bin/ln -sh %%PREFIX%%/etc/s6/s6-svscan-log \
+		${s6_log}
+	/bin/test -L ${s6_svc} || /bin/ln -sh %%PREFIX%%/etc/s6/s6-svscan \
+		${s6_svc}
+	/usr/bin/env -i \
+	PATH=/command:%%PREFIX%%/sbin:%%PREFIX%%/bin:/sbin:/bin:/usr/sbin:/usr/bin \
+}
+
+stop_pre() {
+	%%PREFIX%%/bin/s6-svscanctl -t ${s6_path}
+}
+
+stop_post() {
+	%%PREFIX%%/bin/s6-svc -h ${s6_log}/
+}
+
+depend() {
+	keyword -shutdown
+}

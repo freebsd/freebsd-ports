@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name="backuppc"
+
+: ${backuppc_flags:="-d"}
+: ${backuppc_user:="backuppc"}
+: ${backuppc_group:="backuppc"}
+: ${backuppc_config:="%%ETCDIR%%/config.pl"}
+
+command="%%PREFIX%%/bin/BackupPC"
+
+required_files="${backuppc_config}"
+pidfile="/var/run/BackupPC/BackupPC.pid"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+name=clsync
+command="%%PREFIX%%/sbin/clsync"
+
+start_pre()
+{
+	if [ "$clsync_config" = "" ]; then
+		clsync_config=/usr/local/etc/clsync/clsync.conf
+	fi
+
+	if [ "$clsync_config_groups" = "" ]; then
+		clsync_config_groups=default
+	fi
+}
+
+start() {
+	for config_group in $clsync_config_groups; do
+		ebegin "Running clsync (group ${config_group})."
+		$command -f "$clsync_config" -K "$config_block" -b \
+			--pid-file=/var/run/clsync-"${config_group}".pid
+	done
+}
+
+stop() {
+	for config_group in $clsync_config_groups; do
+		eend "Stopping clsync (group ${config_group})."
+		pkill -F /var/run/clsync-"${config_group}".pid
+	done
+}
+
+depend() {
+	keyword -shutdown
+}

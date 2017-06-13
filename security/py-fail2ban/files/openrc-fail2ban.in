@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable fail2ban:
+# fail2ban_flags="<set as needed>"
+
+fail2ban_pidfile=${fail2ban_pidfile-"/var/run/fail2ban/fail2ban.pid"}
+
+name="fail2ban"
+pidfile="${fail2ban_pidfile}"
+
+command="%%PREFIX%%/bin/fail2ban-server"
+command_args="start"
+client="%%PREFIX%%/bin/fail2ban-client"
+extra_commands="reload jailstatus"
+
+reload() {
+	${client} ${fail2ban_flags} reload
+}
+
+jailstatus() {
+	${client} ${fail2ban_flags} status
+}
+
+start_pre() {
+	${client} ${fail2ban_flags} stop
+}
+
+stop_pre() {
+	${client} ${fail2ban_flags} stop
+}
+
+depend() {
+	keyword -shutdown
+}

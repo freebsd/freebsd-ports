@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=dispatcher_safed
+
+pidfile="/var/run/dispatcher_safed.pid"
+command="%%PREFIX%%/bin/dispatcher_safed"
+supervisor=supervise-daemon
+
+depend() {
+	need dispatcherd
+	keyword -shutdown
+}

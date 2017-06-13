@@ -1,0 +1,35 @@
+#!/sbin/openrc-run
+
+name=dispatcher
+
+dispatcher_user=${dispatcher_user:-"razorback"}
+dispatcher_group=${dispatcher_group:-"razorback"}
+
+command=%%PREFIX%%/bin/dispatcher
+_piddir=/var/run/razorback
+pidfile=${_piddir}/dispatcher.pid
+
+start_pre-remote()
+{
+	if[ %%ACTIVEMQ_LOC%% = "remote"]; then
+		install -d -o $dispatcher_user -g $dispatcher_user -m 755 $_piddir
+	else
+		local iter
+
+		install -d -o $dispatcher_user -g $dispatcher_user -m 755 $_piddir
+		iter=0
+		while [ `sockstat -l | egrep -c '^activemq.*tcp.*'` -lt 4 ]; do
+			if [ ${iter} -eq 30 ]; then
+				eerror "Failed to detect a functional activemq.  Please check your configuration"
+			fi
+			sleep 2
+			iter=$(( ${iter} + 1))
+		done
+	fi
+}
+
+depend() {
+	need %%ACTIVEMQ%%mysql
+	provide dispatcherd
+	keyword -shutdown
+}

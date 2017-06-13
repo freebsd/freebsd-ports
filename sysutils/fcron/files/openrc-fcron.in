@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+description="Periodic command scheduler"
+name=fcron
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+depend() {
+	keyword -shutdown
+}

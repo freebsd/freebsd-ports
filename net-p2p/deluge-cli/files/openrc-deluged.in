@@ -1,0 +1,56 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# MANDATORY:
+#
+# deluged_user (str):		The UNPRIVILEGED user to run as
+#
+# OPTIONAL:
+#
+# deluged_flags (str):		Set as needed
+#				See deluged(1) for more information
+#
+# deluged_confdir (path):	Set to /home/$deluged_user/.config/deluge
+#				by default
+#
+# deluged_loglevel (str):	Set to "error" by default
+#
+# deluged_logfile (path):	Set to /var/tmp/deluged.log by default
+
+name="deluged"
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}/pid
+
+stat_pre() {
+	if [ "$deluged_user" = 'asjklasdfjklasdf' ]; then
+		eerror "You must set deluged_user to a real, unprivileged user"
+	fi
+
+	if [ ! -d "/var/run/${name}" ]; then
+		if [ -e "/var/run/${name}" ]; then
+			unlink /var/run/${name}
+		fi
+		mkdir -p /var/run/${name}
+	fi
+
+	chmod 0755 /var/run/${name}
+	chown -R $deluged_user /var/run/${name}
+}
+
+stop_post() {
+	[ -e "$pidfile" ] && unlink $pidfile
+	[ -d "${pidfile%/pid}" ] && rmdir ${pidfile%/pid}
+
+	[ -e "$deluged_logfile" -a ! -s "$deluged_logfile" ] &&
+		unlink $deluged_logfile
+}
+
+depend() {
+		need localmount
+		use net
+		keyword -shutdown
+		after bootmisc
+}

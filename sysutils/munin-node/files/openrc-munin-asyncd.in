@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+# Add the following lines to /etc/rc.conf to enable munin-asyncd:
+# munin_asyncd_spool:           The spool directory, default:
+#                               %%DBDIR%%/async
+# munin_asyncd_host:            Host to connect to, default: localhost:4949
+# munin_asyncd_args:            Extra args to pass to munin-asyncd
+
+name=munin_asyncd
+
+: ${munin_asyncd_spool:=%%SPOOLDIR%%/async}
+: ${munin_asyncd_host:=localhost:4949}
+
+command="%%DATADIR%%/munin-asyncd"
+command_args="--spool ${munin_asyncd_spool} --host ${munin_asyncd_host} ${munin_asyncd_args}"
+command_user=%%USER%%
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+
+depend() {
+	need munin-noded	
+	keyword -shutdown
+}

@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable clamd:
+#
+# clamav_clamd_flags="<set as needed>"
+#
+# See clamd(8) for flags
+
+name=clamav_clamd
+
+# read settings, set default values
+: ${clamav_clamd_socket="%%CLAMAV_CLAMD_SOCKET%%"}
+
+command=%%PREFIX%%/sbin/clamd
+required_dirs=%%DBDIR%%
+required_files=%%PREFIX%%/etc/clamd.conf
+
+#clamav .93 won't start without a valid main.c[vl]d file
+start_pre() {
+	if [ ! -f %%DBDIR%%/main.cvd -a ! -f %%DBDIR%%/main.cld ];then
+		eerror "Missing %%DBDIR%%/*.cvd or *.cld files.  You must run freshclam first"
+		exit 1
+	fi
+}
+
+depend() {
+	provide clamav-clam
+	keyword -shutdown
+}

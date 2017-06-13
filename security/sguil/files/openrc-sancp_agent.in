@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# $FreeBSD: head/security/sguil-sensor/files/sancp_agent.in 312466 2013-02-18 00:56:47Z miwi $
+
+# Add the following line to /etc/rc.conf to enable sancp_agent:
+# sancp_agent_conf (str):        Sancp_agent configuration file
+#                                Default: %%PREFIX%%/etc/%%SGUILDIR%%/sancp_agent.conf
+# sancp_agent_flags (str):       Default: -D
+
+name="sancp_agent"
+
+#set defaults
+: ${sancp_agent_conf:="%%PREFIX%%/etc/%%SGUILDIR%%/sancp_agent.conf"}
+: ${sancp_agent_flags:="-D -c ${sancp_agent_conf}"}
+
+command="%%PREFIX%%/bin/%%SGUILDIR%%/sancp_agent.tcl"
+procname="%%PREFIX%%/bin/%%TCLSH%%"
+pidfile="/var/run/${name}.pid"
+
+depend() {
+		keyword -shutdown
+}

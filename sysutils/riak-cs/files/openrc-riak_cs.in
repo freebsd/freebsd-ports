@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+name=riak_cs
+
+pidfile=/var/run/riak-cs/riak-cs.pid
+
+command="%%PREFIX%%/sbin/riak-cs"
+command_args="start"
+
+stop_pre() {
+	%%PREFIX%%/sbin/riak-cs stop
+}
+
+depend() {
+	keyword -shutdown
+}

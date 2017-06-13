@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+# Add some of the following variables to /etc/rc.conf to configure stunnel:
+# stunnel_config (str):		Default "%%ETCDIR%%/stunnel.conf"
+#				Set it to the full path to the config file
+#				that stunnel will use during the automated
+#				start-up.
+# stunnel_pidfile (str):	Default "%%PREFIX%%/var/stunnel/stunnel.pid"
+#				Set it to the value of 'pid' in
+#				the stunnel.conf file.
+
+name="stunnel"
+
+: ${stunnel_config="%%ETCDIR%%/${name}.conf"}
+: ${stunnel_pidfile="/var/run/${name}.pid"}
+
+command="%%PREFIX%%/bin/stunnel"
+command_args=${stunnel_config}
+pidfile=${stunnel_pidfile}
+required_files="${stunnel_config}"
+
+depend() {
+		use net
+		keyword -shutdown
+}

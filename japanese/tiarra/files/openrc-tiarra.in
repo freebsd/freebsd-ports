@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name="tiarra"
+
+tiarra_flags=${tiarra_flags:-"--quiet"}
+tiarra_user=${tiarra_user:-"%%TIARRA_USER%%"}
+tiarra_chdir=${tiarra_chdir:-"%%PREFIX%%/${name}"}
+
+command="${tiarra_chdir}/${name}"
+command_user=${tiarra_user}
+command_args=${tiarra_flags}
+required_dirs="${tiarra_chdir}"
+required_files="${tiarra_chdir}/${name}.conf"
+
+depend() {
+	keyword -shutdown
+}

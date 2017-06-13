@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+name=pkcsslotd
+command="%%PREFIX%%/sbin/$name"
+
+start_pre() {
+	install -d -o %%USERS%% -g %%GROUPS%% -m 0755 \
+	    /var/run/opencryptoki/swtok \
+	    /var/run/opencryptoki/tpm \
+	    /var/run/opencryptoki/icsf
+}
+
+depend() {
+		use tcsd
+		keyword -shutdown
+}

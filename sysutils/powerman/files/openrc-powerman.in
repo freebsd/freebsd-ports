@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Define these powermand_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/powermand
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# powermand_flags="<set as needed>"
+
+name="powermand"
+command="%%PREFIX%%/sbin/powermand"
+required_files="%%PREFIX%%/etc/powerman.conf"
+
+depend() {
+	keyword -shutdown
+}

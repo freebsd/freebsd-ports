@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=pbs_sched
+
+pidfile=/var/spool/torque/sched_priv/sched.lock
+command=%%PREFIX%%/sbin/${name}
+
+depend() {
+	keyword -shutdown
+}

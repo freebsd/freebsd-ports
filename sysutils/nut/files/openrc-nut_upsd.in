@@ -8,7 +8,6 @@ name="NUT UPS Daemon"
 
 depend() {
 #        use net
-         before upsmon
          after upsdrv
 }
 

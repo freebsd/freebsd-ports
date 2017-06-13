@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable `%%NAME%%':
+#
+# %%NAME%%_flags="<set as needed>"
+#
+# See %%NAME%%(1)
+#
+
+name="%%NAME%%"
+
+command="%%PREFIX%%/bin/dc_server"
+command_args="-daemon -listen IP:9001 -user nobody -pidfile /var/run/$name.pid"
+pidfile="/var/run/$name.pid"
+
+depend() {
+		keyword -shutdown
+}

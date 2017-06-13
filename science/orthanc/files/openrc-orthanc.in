@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# orthanc_flags (str):		Set to %%ETCDIR%%/orthanc.json
+#				by default.
+
+name=orthanc
+description="RESTful DICOM server for healthcare and medical research"
+
+: ${orthanc_flags="%%ETCDIR%%/orthanc.json"}
+
+pidfile=/var/run/orthanc.pid
+command=%%PREFIX%%/sbin/Orthanc
+command_user=orthanc
+command_args="${orthanc_flags}"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

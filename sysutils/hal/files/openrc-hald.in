@@ -2,25 +2,12 @@
 # Copyright (c) 2007-2015 The OpenRC Authors.
 # See the Authors file at the top-level directory of this distribution and
 # https://github.com/OpenRC/openrc/blob/master/AUTHORS
-#
-# $FreeBSD$
-#
-# PROVIDE: hald
-# REQUIRE: DAEMON devd dbus moused webcamd
-#
-# Add the following line to /etc/rc.conf to enable the HAL daemon:
-#
-# hald_enable="YES"
-#
 
-. /etc/rc.subr
 . %%GNOME_SUBR%%
 
-hald_enable=${hald_enable-${gnome_enable}}
 hald_flags=${hald_flags-""}
 
 name=hald
-rcvar=hald_enable
 
 command="%%PREFIX%%/sbin/hald"
 pidfile="/var/run/${name}/${name}.pid"
@@ -29,8 +16,7 @@ BINARY=%%PREFIX%%/sbin/hald
 PID=/var/run/hald.pid
 name="HAL"
 
-depend()
-{
+depend() {
 	need localmount
 	after dbus
 }
@@ -72,8 +58,7 @@ init_var_hal()
           org.freedesktop.policykit.read 1> /dev/null 2>&1
 }
 
-start_pre()
-{
+start_pre() {
     init_var_policykit
     init_var_polkit
     init_var_hal

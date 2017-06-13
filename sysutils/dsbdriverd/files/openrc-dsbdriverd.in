@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dsbdriverd_flags (str):	Flags passed to dsbdriverd on startup.
+#				Default is "".
+
+name=dsbdriverd
+
+command=%%PREFIX%%/libexec/dsbdriverd
+pidfile=/var/run/dsbdriverd.pid
+
+depend() {
+	use net
+	keyword -shutdown
+}

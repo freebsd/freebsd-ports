@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable amavisd-milter:
+#
+# amavisd_milter_flags="<set as needed>"
+
+name="amavisd_milter"
+
+# Set defaults
+: ${amavisd_milter_user="%%AMAVISUSER%%"}
+: ${amavisd_milter_socket:="%%RUNDIR%%/amavisd-milter.sock"}
+: ${amavisd_milter_socket_perm:="0666"}
+: ${amavisd_am_pdp_socket:="%%AMAVISDIR%%/amavisd.sock"}
+
+pidfile="${amavisd_milter_pidfile:-%%RUNDIR%%/amavisd-milter.pid}"
+command="%%PREFIX%%/sbin/amavisd-milter"
+command_args="-p ${pidfile} -s ${amavisd_milter_socket} -S ${amavisd_am_pdp_socket}"
+required_files="%%PREFIX%%/etc/amavisd.conf"
+
+start_post() {
+	if [ -e ${amavisd_milter_socket} ]; then
+		chmod ${amavisd_milter_socket_perm} ${amavisd_milter_socket}
+	fi
+}
+
+depend() {
+	need amavisdd
+	keyword -shutdown
+}

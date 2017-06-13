@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+# cbsdrsyncd_flags="<set as needed>"
+#
+# See rsync(1) for cbsdrsyncd_flags
+
+name="cbsdrsyncd"
+
+command="%%PREFIX%%/bin/rsync"
+command_args="--daemon"
+pidfile="/var/run/$name.pid"
+required_files="${cbsd_workdir}/etc/rsyncd.conf"
+
+depend() {
+	keyword -shutdown
+}

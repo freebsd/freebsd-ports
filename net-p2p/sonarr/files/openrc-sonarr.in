@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+#
+# Author: Mark Felder <feld@FreeBSD.org>
+
+name="sonarr"
+
+: ${sonarr_user:="sonarr"}
+: ${sonarr_data_dir:="%%PREFIX%%/sonarr"}
+
+pidfile="${sonarr_data_dir}/nzbdrone.pid"
+command="%%PREFIX%%/bin/mono"
+command_args="%%DATADIR%%/NzbDrone.exe --nobrowser --data=${sonarr_data_dir}"
+supervisor=supervise-daemon
+
+start_pre() {
+	export XDG_CONFIG_HOME=${sonarr_data_dir}
+
+	if [ ! -d ${sonarr_data_dir} ]; then
+		install -d -o ${sonarr_user} ${sonarr_data_dir}
+	fi
+}
+
+depend() {
+		need localmount
+		keyword -shutdown
+		after bootmisc
+}

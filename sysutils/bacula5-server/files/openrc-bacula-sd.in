@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bacula_sd_flags (params):  Set params used to start bacula_sd.
+
+name="bacula_sd"
+
+: ${bacula_sd_flags=" -u bacula -g bacula -v -c %%PREFIX%%/etc/bacula/bacula-sd.conf"}
+: ${bacula_sd_pidfile="/var/run/bacula-sd.9103.pid"}
+
+command=%%PREFIX%%/sbin/bacula-sd
+command_args=${bacula_sd_flags}
+
+pidfile="${bacula_sd_pidfile}"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="monitord"
+: ${monitord_flags="-f %%PREFIX%%/etc/monitord.conf"}
+
+command="%%PREFIX%%/sbin/monitord"
+required_files="%%PREFIX%%/etc/monitord.conf"
+
+depend() {
+	keyword -shutdown
+}

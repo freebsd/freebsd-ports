@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bareos_fd_flags (params):  Set params used to start bareos_fd.
+# bareos_fd_config (params):  Path to the config file/directory
+
+name="bareos_fd"
+
+: ${bareos_fd_flags="-u root -g wheel -v"}
+: ${bareos_fd_config="%%PREFIX%%/etc/bareos/bareos-fd.conf"}
+: ${bareos_fd_pidfile="/var/run/bareos/bareos-fd.9102.pid"}
+
+command=%%PREFIX%%/sbin/bareos-fd
+command_args="-c ${bareos_fd_config}"
+pidfile="${bareos_fd_pidfile}"
+
+start_pre() {
+	[ -d "${pidfile%/*}" ] || {
+		getent passwd bareos > /dev/null 2&>1
+		if [ $? -eq 0] ; then
+			# user bareos exists
+			install -d -o bareos -g bareos ${pidfile%/*}
+		else
+			# bareos_fd as solitair service
+			install -d -o root -g wheel ${pidfile%/*}
+		fi
+	}
+}
+
+depend() {
+	keyword -shutdown
+}

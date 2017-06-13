@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name=openvasmd
+command="%%PREFIX%%/sbin/openvasmd"
+pidfile=/var/run/openvasmd.pid
+
+depend() {
+		keyword -shutdown
+}

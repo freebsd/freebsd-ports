@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# serf_user (user):        Set user to run serf.
+#                               Default is "serf".
+# serf_group (group):      Set group to run serf.
+
+name=serf
+
+: ${serf_user:="serf"}
+: ${serf_group:="serf"}
+: ${serf_dir:="/var/tmp/serf"}
+
+pidfile=/var/run/serf.pid
+command="%%PREFIX%%/bin/serf"
+command_user=${serf-user}
+command_args="agent ${serf_args}"
+supervisor=supervise-daemon
+
+start_pre() {
+        if [ ! -e ${pidfile} ]; then
+                install -o ${serf_user} -g ${serf_group} /dev/null ${pidfile};
+        fi  
+}
+
+depend() {
+	keyword -shutdown
+}

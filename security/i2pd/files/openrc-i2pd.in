@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+name="i2pd"
+
+: ${i2pd_user="%%USER%%"}
+: ${i2pd_group="%%GROUP%%"}
+: ${i2pd_pidfile="/var/run/${name}/${name}.pid"}
+: ${i2pd_datadir="/var/db/${name}"}
+: ${i2pd_logfile="/var/log/${name}/${name}.log"}
+
+required_dirs=${i2pd_datadir}
+pidfile=${i2pd_pidfile}
+command="%%PREFIX%%/bin/${name}"
+command_args="--pidfile ${i2pd_pidfile} --service --datadir ${i2pd_datadir} --log file --logfile ${i2pd_logfile} --daemon"
+supervisor=supervise-daemon
+
+depend() {
+	use net
+	keyword -shutdown
+}

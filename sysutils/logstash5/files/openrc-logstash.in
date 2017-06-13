@@ -1,0 +1,87 @@
+#!/sbin/openrc-run
+
+# Configuration settings for logstash in /etc/rc.conf:
+#
+# logstash_home (string):
+#   Default value: "/usr/local/logstash"
+#   Logstash installation directory.
+#
+# logstash_config (string):
+#   Default value: /usr/local/etc/${name}/${name}.conf
+#   Logstash configuration file path.
+#
+# logstash_log (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable logstash logging to file
+#   Default output to /var/log/logstash.log
+#
+# logstash_log_file (string):
+#   Default value: "${logdir}/${name}.log"
+#   Log file path.
+#
+# logstash_java_home (string):
+#   Default value: "/usr/local/openjdk8"
+#   Root directory of the desired Java SDK.
+#   The JAVA_HOME environment variable is set with the contents of this
+#   variable.
+#
+# logstash_java_opts (string):
+#   Default value: ""
+#   Options to pass to the Java Virtual Machine.
+#   The JAVA_OPTS environment variable is set with the contents of this
+#   variable.
+#
+# logstash_opts (string):
+#   Default value: ""
+#   Additional command line flags for logstash, eg. "-r"
+
+name=logstash
+
+logdir="/var/log"
+
+: ${logstash_home="%%LOGSTASH_HOME%%"}
+: ${logstash_config="%%ETCDIR%%/${name}.conf"}
+: ${logstash_log="YES"}
+: ${logstash_log_dir="${logdir}/${name}"}
+: ${logstash_java_home="%%JAVA_HOME%%"}
+: ${logstash_java_opts=""}
+: ${logstash_opts=""}
+
+piddir=/var/run/${name}
+pidfile=${piddir}/${name}.pid
+
+if [ -d $piddir ]; then
+  mkdir -p $piddir
+fi
+
+procname="${logstash_java_home}/bin/java"
+
+logstash_chdir=${logstash_home}
+logstash_log_options=""
+
+if yesno logstash_log; then
+  logstash_log_options=" -l ${logstash_log_dir}" 
+fi
+
+logstash_args="${logstash_config} ${logstash_log_options} ${logstash_opts}"
+
+command="${logstash_java_home}/bin/java"
+command_args="${logstash_cmd} ${logstash_args}"
+required_files="${logstash_home} ${logstash_java_home} ${logstash_cmd} ${logstash_config}"
+supervisor=supervise_daemon
+
+# Include /usr/local/bin in path because Logstash startup scripts
+# assume bash is in path.
+PATH=/usr/local/bin:$PATH
+
+start_pre() {
+	JAVA_OPTS="${logstash_java_opts}"
+	JAVA_HOME="${logstash_java_home}"
+	export JAVA_OPTS
+	export JAVA_HOME
+	/usr/bin/install -d -o root -g wheel -m 750 ${logstash_log_dir}
+}
+
+depend() {
+	keyword -shutdown
+}

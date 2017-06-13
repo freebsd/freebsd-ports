@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+name=innd
+
+innd_user=${innd_user-"news"}
+innd_group=${innd_group-"news"}
+
+required_files="%%DBDIR%%/history.dir"
+command=%%NEWSBASE%%/bin/rc.news
+command_args=start
+command_user=${innd_user}
+
+stop_pre() {
+		$command stop
+}
+
+depend() {
+		keyword -shutdown
+}

@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+command="%%PREFIX%%/sbin/ipsec"
+command_args=start
+name="strongswan"
+
+stop_pre() {
+	$command stop
+}

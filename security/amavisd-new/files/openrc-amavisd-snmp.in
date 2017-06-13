@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+name=amavisd_snmp
+
+# defaults
+: ${amavisd_snmp_dbdir=%%AMAVISDIR%%/db}
+# log_level 0..5, default 0
+: ${amavisd_snmp_loglevel=0}
+
+command=%%PREFIX%%/sbin/amavisd-snmp-subagent
+pidfile=${amavisd_pidfile:-%%AMAVISDIR%%/amavisd-snmp.pid}
+
+required_dirs=${amavisd_snmp_dbdir}
+amavisd_snmp_flags="-D ${amavisd_snmp_dbdir} -d ${amavisd_snmp_loglevel} -P ${pidfile}"
+
+depend() {
+	need snmpd
+	keyword -shutdown
+}

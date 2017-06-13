@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable passivedns:
+# passivedns_interface (str):	
+#				Default: none - MUST BE SET
+# passivedns_logdir (str):   	Logging Directory
+#               Default: "/var/log/passivedns"
+# passivedns_fields (str):   	Passive DNS Fields to log
+#               Default: "SMcsCQTAtn"
+# passivedns_flags (str):		Extra flags passed to passivedns (-D is always passed)
+#				Default: none
+
+name="passivedns"
+command="%%PREFIX%%/bin/passivedns"
+
+start_pre() {
+	if [ -z "${passivedns_interface}" ]; then
+		eerror "passivedns_interface must set."
+	fi
+}
+
+# set some defaults
+: ${passivedns_logdir="/var/log/passivedns"}
+: ${passivedns_fields="SMcsCQTAtn"}
+: ${passivedns_flags=""}
+
+command_args="-i ${passivedns_interface} -l ${passivedns_logdir}/passivedns.log -f ${passivedns_fields} ${passivedns_flags} -D"
+
+depend() {
+		keyword -shutdown
+}

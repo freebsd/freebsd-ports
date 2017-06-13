@@ -12,12 +12,10 @@
 name="php_fpm"
 command="%%PREFIX%%/sbin/php-fpm"
 pidfile="/var/run/php-fpm.pid"
-stopsig="QUIT"
 extra_commands="configtest logrotate"
 required_files="%%PREFIX%%/etc/php-fpm.conf"
 
-depend()
-{
+depend() {
 	need localmount
 }
 
@@ -30,14 +28,7 @@ logrotate() {
         kill -USR1 $pidfile
 }
 
-configtest()
-{
+start_pre() {
         einfo "Performing sanity check on php-fpm configuration:"
         eval ${command} -t
-}
-
-start_pre()
-{
-	configtest
-	return $?
 }

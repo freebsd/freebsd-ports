@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable newscache:
+#
+# newscache_flags="<set as needed>"
+
+name=newscache
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid

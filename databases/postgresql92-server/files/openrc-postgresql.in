@@ -35,7 +35,6 @@ eval : ${postgresql_data:="~${postgresql_user}/data"}
 # name="postgresql daemon"
 command="%%PREFIX%%/bin/pg_ctl"
 initdb_command="%%PREFIX%%/bin/initdb"
-extra_started_commands="reload"
 extra_stopped_commands="initdb"
 
 

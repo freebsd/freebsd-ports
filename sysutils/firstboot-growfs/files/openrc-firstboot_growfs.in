@@ -1,0 +1,41 @@
+#!/sbin/openrc-run
+
+: ${firstboot_growfs_fs:="/"}
+
+name="firstboot_growfs"
+
+start() {
+	local FSTYPE DISK GPTLABEL GPART GDISK GPARTNO
+
+	FSTYPE=`mount -p | awk "{ if (\\$2 == \"${firstboot_growfs_fs}\") print \\$3 }"`
+	case ${FSTYPE} in
+	ufs)
+		;;
+	*)
+		eerror "${firstboot_growfs_fs} is not a UFS volume, cannot resize"
+		;;
+	esac
+
+	DISK=`mount -p | awk "{ if (\\$2 == \"${firstboot_growfs_fs}\") print \\$1 }"`
+	case ${DISK} in
+	/dev/gpt/*)
+		GPTLABEL=${DISK##/dev/gpt/}
+		;;
+	*)
+		eerror "${firstboot_growfs_fs} is not on a GPT disk, cannot resize"
+		return 0
+		;;
+	esac
+
+	GPART=`glabel status -s | awk "{ if (\\$1 == \"gpt/${GPTLABEL}\") print \\$3 }"`
+	GDISK=${GPART%p*}
+	GPARTNO=${GPART##*p}
+
+	gpart recover ${GDISK}
+	gpart resize -i ${GPARTNO} ${GDISK}
+	growfs -y ${firstboot_growfs_fs}
+}
+
+depend() {
+	use net
+}

@@ -1,4 +1,4 @@
-#! /sbin/openrc
+#!/sbin/openrc-run
 
 ### BEGIN INIT INFO
 # Provides:          gitlab
@@ -17,8 +17,7 @@
 PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 
 name=gitlab
-extra_commands=status
-
+extra_commands="reload status"
 gitlab_authBackend=${gitlab_authBackend:-"http://127.0.0.1:8080"}
 
 ### Environment variables
@@ -108,7 +107,6 @@ wait_for_pids(){
 # We use the pids in so many parts of the script it makes sense to always check them.
 # Only after start() is run should the pids change. Sidekiq sets its own pid.
 check_pids
-
 
 ## Checks whether the different parts of the service are already running or not.
 check_status(){
@@ -252,7 +250,7 @@ start() {
   # Wait for the pids to be planted
   wait_for_pids
   # Finally check the status to tell wether or not GitLab is running
-  print_status
+  status
 }
 
 ## Asks Unicorn, Sidekiq and MailRoom if they would be so kind as to stop, if not kills them.
@@ -296,11 +294,11 @@ stop() {
     rm "$mail_room_pid_path" 2>/dev/null
   fi
 
-  print_status
+  status
 }
 
 ## Prints the status of GitLab and its components.
-print_status() {
+status() {
   check_status
   if [ "$web_status" != "0" ] && [ "$sidekiq_status" != "0" ] && [ "$gitlab_workhorse_status" != "0" ] && { [ "$mail_room_enabled" != true ] || [ "$mail_room_status" != "0" ]; }; then
     einfo "GitLab is not running."
@@ -353,7 +351,7 @@ reload(){
   fi
 
   wait_for_pids
-  print_status
+  status
 }
 
 ## Restarts Sidekiq and Unicorn.

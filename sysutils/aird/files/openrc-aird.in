@@ -1,0 +1,35 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable aird:
+# aird_key:		Unset by default; see man page on pairing.
+#
+# The following options have defaults sane for musicpd, they can be reassigned
+# in /etc/rc.conf
+#
+# aird_play, aird_forward, aird_up, aird_down, aird_back, aird_menu
+
+name="aird"
+
+: ${aird_play="%%PREFIX%%/bin/mpc toggle"}
+: ${aird_forward="%%PREFIX%%/bin/mpc next"}
+: ${aird_up="/usr/sbin/mixer vol +2"}
+: ${aird_down="/usr/sbin/mixer vol -2"}
+: ${aird_back="%%PREFIX%%/bin/mpc prev"}
+: ${aird_menu="%%PREFIX%%/bin/xterm -e ncmpc"}
+
+aird_key="${aird_key:+-k ${aird_key}}"
+
+command="%%PREFIX%%/bin/aird"
+pidfile="/var/run/aird.pid"
+command_args="-p ${pidfile} -f /dev/uhid1 ${aird_key}\
+	-P \"${aird_play}\"	\
+	-F \"${aird_forward}\"	\
+	-U \"${aird_up}\"	\
+	-D \"${aird_down}\"	\
+	-B \"${aird_back}\"	\
+	-M \"${aird_menu}\""
+
+depend() {
+	keyword -shutdown
+}

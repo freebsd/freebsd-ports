@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-pbs_server openrc-pbs_sched openrc-pbs_mom

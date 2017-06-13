@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name=mptd
+
+raid_alert_mailto=${mptd_alert_mailto:-"root@localhost"}
+command="%%PREFIX%%/sbin/mptd"
+command_args=${raid_alert_mailto}
+
+start_pre() {
+	if ! [ -x "%%PREFIX%%/sbin/mptd" -a -e "/dev/mpt0" ]; then
+		eerror "Cannot run without an executable and a device"
+		exit 1
+	fi
+}
+
+depend() {
+	keyword -shutdown -jail
+}

@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=pbs_server
+
+pidfile=/var/spool/torque/server_priv/server.lock
+command=%%PREFIX%%/sbin/${name}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,2 +1,4 @@
 PKG_NOTES+=	icon
 PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/sysutils_munin-node.png
+USE_OPENRC_SUBR=	openrc-munin-asyncd openrc-munin-node openrc-munin-sched
+

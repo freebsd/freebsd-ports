@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+# Add the following lines to /etc/rc.conf to enable munin-sched:
+# munin_sched_config (path):      Set to "%%PREFIX%%/etc/munin/munin-node.conf" by default.
+
+name=munin_sched
+
+: ${munin_sched_config="%%PREFIX%%/etc/munin/munin-node.conf"}
+
+command="%%PREFIX%%/sbin/munin-sched"
+
+depend() {
+	keyword -shutdown
+}

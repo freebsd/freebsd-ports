@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+name=fwknopd
+
+command=%%PREFIX%%/sbin/fwknopd
+required_files=%%PREFIX%%/etc/fwknop/access.conf

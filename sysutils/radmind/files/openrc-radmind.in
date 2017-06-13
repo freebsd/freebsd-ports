@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+# You may also override the default daemon user & flags:
+#
+#radmind_user="radmind"
+#radmind_flags="-D /var/radmind -u 077 -w 0"
+#
+# See radmind(8) for flags
+
+name=radmind
+
+# set defaults
+
+radmind_user=${radmind_user:-"radmind"}
+radmind_flags=${radmind_flags:-"-D %%RADMIND_BASE_DIR%% -m 5 -u 077 -w 0"}
+
+command=%%PREFIX%%/sbin/radmind
+required_files=%%RADMIND_BASE_DIR%%/config
+command_args=${radmind_flags}
+command_user=${radmind_user}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+# Yes, here you can pass arguments to daemon
+#
+# msyslogd_flags=
+
+name=msyslogd
+
+command=%%PREFIX%%/sbin/syslogd
+pidfile=/var/run/syslog.pid
+required_files=%%PREFIX%%/etc/syslog.conf

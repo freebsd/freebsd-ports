@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=masterNugget_safed
+
+command="%%PREFIX%%/bin/masterNugget_safed"
+supervisor=supervise-daemon
+pidfile="/var/run/masterNugget_safed.pid"
+
+depend() {
+	need masterNuggetd
+	keyword -shutdown
+}

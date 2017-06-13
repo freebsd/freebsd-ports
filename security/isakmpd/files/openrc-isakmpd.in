@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="isakmpd"
+command="%%PREFIX%%/sbin/${name}"
+
+depend() {
+		provide ike isakmpd
+		need localmount
+		keyword -jail
+		after bootmisc
+}

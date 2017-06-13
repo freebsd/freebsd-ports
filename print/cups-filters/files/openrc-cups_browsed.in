@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/sbin/openrc-run
 
 # $FreeBSD$
 #
@@ -17,25 +17,12 @@
 # except according to the terms contained in the LICENSE file.
 
 name="cups_browsed"
-BINARY="%%PREFIX%%/sbin/cups-browsed"
+command="%%PREFIX%%/sbin/cups-browsed"
 pidfile=/var/run/cups-browsed.pid
+start_stop_daemon_args="-b -p ${pidfile} -m --"
 
-depend()
-{
-	need localmount cupsd avahi-daemon
+depend() {
+	need localmount cups avahi-daemon
 	after dbus
 	keyword -shutdown
-}
-
-start() {
-	ebegin "Starting ${SVCNAME}"
-	start-stop-daemon --start --exec "${BINARY}" \
-		-b -p ${pidfile} -m --
-	eend $?
-}
-
-stop() {
-	ebegin "Stopping ${SVCNAME}"
-	start-stop-daemon --stop --pidfile "${pidfile}"
-	eend $?
 }

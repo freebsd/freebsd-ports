@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+# Add the following lines to /etc/rc.conf to enable munin-node:
+# munin_node_config (path):      Set to "%%PREFIX%%/etc/munin/munin-node.conf" by default.
+
+name=munin_node
+
+: ${munin_node_config="%%PREFIX%%/etc/munin/munin-node.conf"}
+
+command="%%PREFIX%%/sbin/munin-node"
+pidfile=/var/run/munin/munin-node.pid
+
+depend() {
+	provide munin-noded
+	keyword -shutdown
+}

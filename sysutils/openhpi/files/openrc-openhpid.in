@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+: ${openhpid_config:=%%ETCDIR%%/openhpi.conf}
+
+name=openhpid
+command="%%PREFIX%%/sbin/openhpid"
+command_args="-c ${openhpid_config}"
+required_files="${openhpid_config}"
+
+depend() {
+	keyword -shutdown
+}

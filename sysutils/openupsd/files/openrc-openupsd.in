@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name="openupsd"
+
+pidfile=/var/run/${name}.pid
+required_files=%%PREFIX%%/etc/${name}.conf
+
+command=%%PREFIX%%/sbin/openupsd
+command_args="-p ${pidfile}"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name=vpnclient
+command=%%PREFIX%%/sbin/${name}
+command_args="start"
+
+stop_pre() {
+	$command stop
+}

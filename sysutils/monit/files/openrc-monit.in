@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable monit:
+# monit_flags (str):          Flags passed to monit on startup.
+#                             Default is "".
+
+name=monit
+
+default_config=%%PREFIX%%/etc/monitrc
+required_files=${default_config}
+command="%%PREFIX%%/bin/monit"
+command_args="-c ${default_config}"
+pidfile=/var/run/monit.pid
+
+restart_pre() {
+	einfo "Performing sanity check on monit configuration:"
+	${command} ${command_args} -t
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

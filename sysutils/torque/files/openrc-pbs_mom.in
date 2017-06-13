@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=pbs_mom
+
+pidfile=/var/spool/torque/mom_priv/mom.lock
+command=%%PREFIX%%/sbin/${name}
+
+depend() {
+	keyword -shutdown
+}

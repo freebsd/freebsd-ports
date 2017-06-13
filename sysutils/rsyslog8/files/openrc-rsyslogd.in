@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=rsyslogd
+command="%%PREFIX%%/sbin/${name}"
+: ${rsyslogd_pidfile:="/var/run/rsyslogd.pid"}
+: ${rsyslogd_config:="%%PREFIX%%/etc/rsyslog.conf"}
+pidfile="${rsyslogd_pidfile}"
+command_args="-i ${pidfile} -f ${rsyslogd_config}"
+required_files="${rsyslogd_config}"
+
+depend() {
+	need localmount
+}

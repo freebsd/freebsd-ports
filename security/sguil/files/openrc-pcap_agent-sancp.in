@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# $FreeBSD: head/security/sguil-sensor/files/pcap_agent-sancp.in 312466 2013-02-18 00:56:47Z miwi $
+
+# Add the following line to /etc/rc.conf to enable pcap_agent-sancp:
+# pcap_agent-sancp_conf (str):	Pads_agent configuration file
+#				Default: %%PREFIX%%/etc/%%SGUILDIR%%/pcap_agent-sancp.conf
+# pcap_agent-sancp_flags (str):	Default: -D
+
+name="pcap_agent-sancp"
+
+#set defaults
+: ${pcap_agent-sancp_conf:="%%PREFIX%%/etc/%%SGUILDIR%%/pcap_agent-sancp.conf"}
+: ${pcap_agent-sancp_flags:="-D -c ${pcap_agent-sancp_conf}"}
+
+command="%%PREFIX%%/bin/%%SGUILDIR%%/pcap_agent-sancp.tcl"
+procname="%%PREFIX%%/bin/%%TCLSH%%"
+pidfile="/var/run/${name}.pid"
+
+depend() {
+		keyword -shutdown
+}

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=nntpcached
+
+command=%%PREFIX%%/sbin/nntpcached
+required_files="%%PREFIX%%/etc/nntpcache/nntpcache.access %%PREFIX%%/etc/nntpcache/nntpcache.config %%PREFIX%%/etc/nntpcache/nntpcache.servers"
+
+depend() {
+		use net
+		keyword -shutdown
+}

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name='tenshi'
+
+command='%%PREFIX%%/bin/tenshi'
+pidfile='/var/run/tenshi.pid'
+required_files='%%PREFIX%%/etc/tenshi.conf'
+
+depend() {
+	keyword -shutdown
+}

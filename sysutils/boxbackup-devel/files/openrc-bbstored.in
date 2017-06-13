@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name="bbstored"
+
+: ${bbstored_flags:="%%PREFIX%%/etc/box/bbstored.conf"}
+
+pidfile=${bbstored_pidfile:-"/var/run/bbstored.pid"}
+
+command="%%PREFIX%%/sbin/bbstored"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable sshblock:
+# sshblock_flags (string):	Set sshblock flags (optional)
+
+name="sshblock"
+command="%%PREFIX%%/sbin/sshblock"
+
+depend() {
+		keyword -shutdown
+}

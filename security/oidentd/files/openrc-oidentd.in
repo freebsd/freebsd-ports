@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable oidentd:
+#
+# oidentd_flags="<set as needed>"
+#
+# See oidentd(8) for flags.
+
+name=oidentd
+command=%%PREFIX%%/sbin/${name}
+oidentd_conf=${oidentd_conf:-"%%PREFIX%%/etc/${name}.conf"}
+required_files=${oidentd_conf}
+
+start_pre() {
+	if [ -n "${oidentd_conf}" ]; then
+		rc_flags="${rc_flags} -C ${oidentd_conf}"
+	fi
+}
+
+depend() {
+	keyword -shutdown
+}

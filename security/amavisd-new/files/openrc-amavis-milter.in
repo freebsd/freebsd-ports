@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=amavis_milter
+
+: ${amavis_milter_flags=-D -p %%AMAVISDIR%%/amavis-milter.sock}
+: ${amavis_milter_user=%%AMAVISUSER%%}
+
+command=%%PREFIX%%/sbin/amavis-milter
+required_files=%%PREFIX%%/etc/amavisd.conf
+
+depend() {
+	need amavis
+	keyword -shutdown
+}

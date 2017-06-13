@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable the mbmon daemon:
+#
+# mbmon_flags="<set as needed>"
+#
+# See mbmon(1) for mbmon_flags
+# Set mbmon_port to the TCP port to listen to, default is 12999
+
+name="mbmon"
+
+# read configuration and set defaults
+: ${mbmon_port="12999"}
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-P ${mbmon_port}"
+
+depend() {
+	keyword -shutdown
+}

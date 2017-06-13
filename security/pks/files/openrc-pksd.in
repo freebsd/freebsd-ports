@@ -1,0 +1,63 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pksd_config (path):		Set to %%PREFIX%%/etc/pksd.conf
+#				by default.
+#
+# pksd_mailq_enable (bool):     Set to NO by default. Process incoming
+#                               mail queue of commands and key requests
+#                               (you will need to configure your mail
+#                               infrastructure to enable this. See:
+#                               %%PREFIX%%/share/doc/pks/README and
+#                               %%PREFIX%%/share/doc/pks/EMAIL for details.
+# 
+# pksd_queue_delay (int):       Periodically process incoming mail.
+#				Set to 60 seconds by default.
+
+name="pksd"
+
+: ${pksd_mailq_enable:="NO"}
+: ${pksd_config="%%PREFIX%%/etc/pksd.conf"}
+: ${pksd_queue_delay="60"}
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="%%PREFIX%%/etc/${name}.conf"
+required_files="${pksd_config}"
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+
+start_pre() {
+        dbdir=`awk '/db_dir/ { print $2 }' < %%PREFIX%%/etc/${name}.conf`
+        if [ ! -f ${dbdir}/keydb000 -a -x %%PREFIX%%/bin/pksclient ]
+        then
+                %%PREFIX%%/bin/pksclient ${dbdir} create
+		fi
+}
+
+#stop_post()
+#{
+#	if [ -x %%PREFIX%%/bin/${name}ctl -a -x %%PREFIX%%/bin/pks-queue-run.sh ] && yesno pksd_mailq_enable
+#        then
+#        	einfo "Doing queue run for ${name} every ${pksd_queue_delay} seconds."
+#	        sleep 2
+#        	%%PREFIX%%/bin/pks-queue-run.sh %%PREFIX%%/etc/${name}.conf ${pksd_queue_delay}
+#  fi
+#}
+
+stop() {
+        socket=`awk '/socket_name/ { print $2 }' < %%PREFIX%%/etc/${name}.conf`
+        if [ -x %%PREFIX%%/bin/${name}ctl -a -S ${socket} ]
+        then
+                eend "Shutting down ${name} socket connections using pksdctl."
+                %%PREFIX%%/bin/${name}ctl ${socket} shutdown
+        else
+                eerror "couldn't stop ${name}."
+        fi
+}
+
+depend() {
+		need localmount
+		keyword -shutdown
+}

@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable `bnbt':
+#
+# bnbt_flags="<set as needed>"
+#
+# See bnbt(1) for bnbt_flags
+
+name="bnbt"
+# path to your executable, might be libxec, bin, sbin, ...
+command="%%PREFIX%%/bin/$name"
+# extra required arguments
+command_args="&"
+
+# you can check for required_dirs and required_vars too, see rc.subr(8)
+#
+required_dirs="/var/log/$name"
+
+depend() {
+		keyword -shutdown
+}

@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=mfsmaster
+config_file=%%PREFIX%%/etc/mfs/${name}.cfg
+required_files=${config_file}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=%%MFS_WORKDIR%%/mfs/.${name}.lock
+command_args="-c $config_file"
+
+depend() {
+	keyword -shutdown
+}

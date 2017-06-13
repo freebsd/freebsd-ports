@@ -1,0 +1,42 @@
+#!/sbin/openrc-run
+
+# -----------------------------------------------------------------------------
+#
+# This script supports running multiple instances of fastd.
+# To run additional instances link this script to something like
+# % ln -s fastd fastd_foo
+# and define additional fastd_foo_* variables in one of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/fastd_foo
+#
+# Below NAME should be substituted with the name of this script. By default
+# it is fastd, so read as fastd_enable. If you linked the script to
+# fastd_foo, then read as fastd_foo_enable etc.
+#
+# The following variables are supported (defaults are shown).
+# You can place them in any of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/NAME
+#
+# NAME_enable="NO"  # set to YES to enable fastd
+#
+# # optional:
+# NAME_configfile="%%PREFIX%%/etc/fastd/NAME.conf"  # --config file
+#
+
+name="fastd"
+
+# pidfile
+pidfile="/var/run/${name}.pid"
+
+eval ": \${${name}_configfile:=\"%%PREFIX%%/etc/fastd/${name}.conf\"}"
+
+configfile="$(eval echo \${${name}_configfile})"
+required_files=${configfile}
+
+# command and arguments
+command="%%PREFIX%%/bin/fastd"
+command_args="--daemon --config ${configfile} --pid-file ${pidfile}"
+supervisor=supervise-daemon
+
+depend() {
+		keyword -shutdown
+}

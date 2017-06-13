@@ -1,0 +1,39 @@
+#!/sbin/openrc-run
+
+name="dropbear"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+extra_commands="keygen"
+etcdir="%%PREFIX%%/etc/${name}"
+
+keygen() {
+	(
+	umask 022
+
+	if [ -f ${etcdir}/dropbear_rsa_host_key ]; then
+		echo "You already have an RSA host key" \
+		    "in ${etcdir}/dropbear_rsa_host_key"
+		echo "Skipping protocol version 2 RSA Key Generation"
+	else
+		%%PREFIX%%/bin/dropbearkey -t rsa -f ${etcdir}/dropbear_rsa_host_key
+	fi
+
+	if [ -f ${etcdir}/dropbear_dss_host_key ]; then
+		echo "You already have an DSS host key" \
+		    "in ${etcdir}/dropbear_dss_host_key"
+		echo "Skipping protocol version 2 DSS Key Generation"
+	else
+		%%PREFIX%%/bin/dropbearkey -t dss -f ${etcdir}/dropbear_dss_host_key
+	fi
+	)
+}
+
+start_pre() {
+	if [ ! -f ${etcdir}/dropbear_rsa_host_key -o \
+		! -f ${etcdir}/dropbear_dss_host_key ]; then
+		keygen
+	fi
+}
+
+: ${dropbear_args:=""}
+command_args="-P $pidfile $dropbear_args"

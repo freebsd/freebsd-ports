@@ -16,8 +16,8 @@ name="cupsd"
 supervisor=supervise-daemon
 pidfile="/var/run/cupsd.pid"
 
-depend()
-{
+depend() {
+	provide cups
 	need localmount
 	after dbus avahi-daemon
 }

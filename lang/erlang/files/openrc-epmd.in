@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=epmd
+
+command=%%PREFIX%%/bin/epmd
+command_args="-daemon"
+
+stop_pre() {
+	$command -kill >/dev/null
+}

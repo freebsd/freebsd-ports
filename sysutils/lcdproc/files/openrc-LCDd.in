@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="LCDd"
+
+: ${LCDd_conf="%%PREFIX%%/etc/LCDd.conf"}
+: ${LCDd_flags="-c ${LCDd_conf}"}
+
+required_files=${LCDd_conf}
+command="%%PREFIX%%/sbin/LCDd"
+command_args=${LCDd_flags}
+
+depend() {
+	provide lcd
+}

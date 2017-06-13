@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# salt_master_paths (string):      Set to "/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/bin:%%PREFIX%%/sbin" by default.
+#               Default $PATH for salt_master.
+# salt_master_eggcache (string):   Set to "/tmp" by default.
+#               Allows defining egg cache directory to fix runtime on diskless systems.
+
+name=salt_master
+
+: ${salt_master_paths=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/bin:%%PREFIX%%/sbin}
+: ${salt_master_pidfile:=/var/run/salt-master.pid}
+: ${salt_master_eggcache=/tmp}
+
+command="%%PREFIX%%/bin/salt-master"
+required_files="%%PREFIX%%/etc/salt"
+command_args="-c ${required_files} -d"
+pidfile=${salt_master_pidfile}
+
+export PATH="${salt_master_paths}"
+export PYTHON_EGG_CACHE="${salt_master_eggcache}"
+
+depend() {
+	keyword -shutdown
+}

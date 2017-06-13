@@ -1,0 +1,2 @@
+USE_OPENRC_SUBR=	openrc-bbackupd
+USE_OPENRC_SUBR+=	openrc-bbstored

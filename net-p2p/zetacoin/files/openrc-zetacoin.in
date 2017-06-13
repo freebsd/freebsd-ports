@@ -1,0 +1,57 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# %%PORTNAME%%_config (path):	Set to %%PREFIX%%/etc/%%PORTNAME%%.conf
+#				by default.
+# %%PORTNAME%%_user:	The user account %%PORTNAME%% daemon runs as
+#				It uses '%%PORTNAME%%' user by default.
+# %%PORTNAME%%_group:	The group account %%PORTNAME%% daemon runs as
+#				It uses '%%PORTNAME%%' group by default.
+# %%PORTNAME%%_datadir (str):	Default to "/var/db/%%PORTNAME%%"
+#				Base data directory.
+
+name=%%PORTNAME%%
+
+: ${%%PORTNAME%%_config=%%PREFIX%%/etc/%%PORTNAME%%.conf}
+: ${%%PORTNAME%%_datadir=/var/db/%%PORTNAME%%}
+: ${%%PORTNAME%%_user="%%PORTNAME%%"}
+: ${%%PORTNAME%%_group="%%PORTNAME%%"}
+
+required_files=${%%PORTNAME%%_config}
+command=%%PREFIX%%/bin/%%PORTNAME%%d
+%%PORTNAME%%_chdir=${%%PORTNAME%%_datadir}
+pidfile="${%%PORTNAME%%_datadir}/%%PORTNAME%%d.pid"
+command_args="-conf=${%%PORTNAME%%_config} -datadir=${%%PORTNAME%%_datadir} -noupnp -daemon -pid=${pidfile}"
+extra_commands="reindex"
+
+%%PORTNAME%%_create_datadir()
+{
+	einfo "Creating data directory"
+	eval mkdir -p ${%%PORTNAME%%_datadir}
+	[ $? -eq 0 ] && chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${%%PORTNAME%%_datadir}
+}
+
+start_pre()
+{
+	if [ ! -d "${%%PORTNAME%%_datadir}/." ]; then
+		%%PORTNAME%%_create_datadir || return 1
+	fi
+}
+
+reindex() {
+	if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+	    %%PORTNAME%%_stop
+	fi
+
+	einfo "Reindexing ${name} blockchain."
+	command_args="${command_args} -reindex"
+	eval ${command} ${command_args}
+}
+
+depend() {
+		need localmount
+		keyword -shutdown
+		after bootmisc
+}

@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name="istatserver"
+command=%%PREFIX%%/bin/${name}
+
+: ${istatserver_config="%%PREFIX%%/etc/istatserver/istatserver.conf"}
+
+command_args="-d -c $istatserver_config"

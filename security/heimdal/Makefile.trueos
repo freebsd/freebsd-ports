@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-ipropd_master openrc-ipropd_slave

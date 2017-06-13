@@ -1,23 +1,11 @@
 #!/sbin/openrc-run
 
 name=bsdstats
+command="%%PREFIX%%/etc/periodic/monthly/300.statistics"
+command_args="-- -shortdelay >/dev/null 2>/dev/null &"
 
-depend()
-{
+depend() {
 	need localmount
 	use net
 	keyword -stop -shutdown
-}
-
-start()
-{
-  ebegin "Starting $name"
-  (%%PREFIX%%/etc/periodic/monthly/300.statistics -- -shortdelay >/dev/null 2>/dev/null) &
-  mark_service_started
-  eend $?
-}
-
-stop()
-{
-  return 0
 }

@@ -1,0 +1,33 @@
+#!/sbin/openrc-run
+
+name=maiad
+
+: ${maiad_pidfile="/var/run/maia/maiad.pid"}
+
+required_files=%%ETCDIR%%/maiad.conf
+
+command="%%PREFIX%%/sbin/maiad"
+command_args="start"
+pidfile=${maiad_pidfile}
+
+start_pre() {
+	for i in db tmp var virusmails; do
+		if [ ! -e %%MAIAHOME%%/${i} ]; then
+			install -d -o %%USERS%% -g %%GROUPS%% -m 750 %%MAIAHOME%%/${i}
+		fi
+	done
+			
+	for i in log run lock; do
+		if [ ! -e /var/${i}/maia ]; then
+			install -d -o %%USERS%% -g %%GROUPS%% /var/${i}/maia
+		fi
+	done
+
+	# not sure why, but previous maintainer had this in the rc script
+	rm -rf %%MAIAHOME%%/tmp/* %%MAIAHOME%%/tmp/.* 2>/dev/null || true
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+}

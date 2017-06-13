@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# $FreeBSD: head/security/sguil-server/files/sguild.in 312467 2013-02-18 01:01:11Z miwi $
+
+# Add the following lines to /etc/rc.conf to enable sguild:
+# sguild_flags (str):		Extra flags passed to sguild
+#				Default: -D -P ${pid}
+# sguild_conf (str):		Sguild configuration file
+#				Default: %%PREFIX%%/etc/%%SGUILDIR%%/sguild.conf
+# sguild_user (str):		Default: sguil
+# Note: this value MUST be set in /etc/rc.conf if you do not accept the default
+# user created by the pkg-install script
+
+name="sguild"
+# set some defaults
+: ${sguild_conf:="%%PREFIX%%/etc/%%SGUILDIR%%/sguild.conf"}
+: ${pid:="/var/run/%%SGUILDIR%%/sguild.pid"}
+: ${sguild_flags:="-D -P ${pid}"}
+: ${sguild_user:="sguil"}
+
+command="%%PREFIX%%/bin/${name}"
+procname="%%PREFIX%%/bin/%%TCLSH%%"
+
+depend() {
+		keyword -shutdown
+}

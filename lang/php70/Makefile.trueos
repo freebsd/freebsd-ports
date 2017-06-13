@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR+= php-fpm
+USE_OPENRC_SUBR=	openrc-php-fpm

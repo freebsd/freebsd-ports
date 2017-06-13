@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bareos_sd_flags (params):  Set params used to start bareos_sd.
+# bareos_sd_config (params): Path to the config file/directory
+
+name="bareos_sd"
+
+: ${bareos_sd_flags="-u bareos -g bareos -v"}
+: ${bareos_sd_config="%%PREFIX%%/etc/bareos/bareos-sd.conf"}
+: ${bareos_sd_pidfile="/var/run/bareos/bareos-sd.9103.pid"}
+
+command=%%PREFIX%%/sbin/bareos-sd
+command_args="-c ${bareos_sd_config}"
+pidfile="${bareos_sd_pidfile}"
+
+start_pre() {
+	[ -d "${pidfile%/*}" ] || install -d -o bareos -g bareos ${pidfile%/*}
+}
+
+depend() {
+	keyword -shutdown
+}

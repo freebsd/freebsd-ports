@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+# This can be changed as desired.
+# The username does not need to exist anywhere in your system.
+
+name=fakeidentd
+
+command=%%PREFIX%%/sbin/identd
+pidfile=/var/run/identd.pid
+command_args="nobody"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+name=masterNugget
+
+masterNugget_user=${masterNugget_user:-"razorback"}
+masterNugget_group=${masterNugget_group:-"razorback"}
+
+command=%%PREFIX%%/bin/masterNugget
+_piddir=/var/run/razorback
+pidfile=${_piddir}/masterNugget.pid
+
+start_pre()
+{
+	export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:%%PREFIX%%/bin:%%PREFIX%%/sbin
+	install -d -o $masterNugget_user -g $masterNugget_user -m 755 $_piddir
+	cd /var/lib/razorback
+	export HOME=/var/lib/razorback
+}
+
+depend() {
+	provide masterNuggetd
+	need localmount clamav-clam dispatcher
+	keyword -shutdown
+}
