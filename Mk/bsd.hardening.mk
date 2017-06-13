@@ -10,13 +10,35 @@ HARDENINGMKINCLUDED=	bsd.hardening.mk
 
 HARDENING_OFF?=
 
+# Can pass exceptions from port Makefile, too.
+
+USE_HARDENING?=		pie relro
+
+.if defined(PORTNAME)
+.if ${PORTNAME:Mlib*} && ${PORTNAME:Mlibre*} == ""
+USE_HARDENING+=	lib
+.endif
+.endif
+
+.if defined(PKGNAMEPREFIX)
+.if ${PKGNAMEPREFIX:Mlib}
+USE_HARDENING+=	lib
+.endif
+.endif
+
+.if defined(PKGNAMESUFFIX)
+.if ${PKGNAMESUFFIX:M-lib*}
+USE_HARDENING+=	lib
+.endif
+.endif
+
 #################################################
 ### Option-less PIC enforcement for libraries ###
 #################################################
 
-.if (defined(PORTNAME) && ${PORTNAME:Mlib*}) || (defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX:Mlib*})
-CFLAGS+=	-fPIC
-CXXFLAGS+=	-fPIC
+.if ${USE_HARDENING:Mlib}
+CFLAGS+=		-fPIC
+CXXFLAGS+=		-fPIC
 .endif
 
 ####################################################
