@@ -47,8 +47,8 @@
 %%SOFTMMU%%@sample etc/qemu-ifdown.sample
 %%SOFTMMU%%man/man1/qemu.1.gz
 %%SOFTMMU%%man/man1/qemu-img.1.gz
-%%SOFTMMU%%man/man7/qemu-ga-ref.7.gz
-%%SOFTMMU%%man/man7/qemu-qmp-ref.7.gz
+%%PORTDOCS%%%%SOFTMMU%%man/man7/qemu-ga-ref.7.gz
+%%PORTDOCS%%%%SOFTMMU%%man/man7/qemu-qmp-ref.7.gz
 %%SOFTMMU%%man/man8/qemu-ga.8.gz
 %%SOFTMMU%%man/man8/qemu-nbd.8.gz
 %%SOFTMMU%%%%DATADIR%%/QEMU,cgthree.bin
