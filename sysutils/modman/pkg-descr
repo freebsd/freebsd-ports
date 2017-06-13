@@ -1,0 +1,10 @@
+Developing extensions for software that doesn't allow you to separate
+your files from core files, and keeping that extension under version
+control and making it easy to deploy is now much, much easier.
+Development of this script was inspired by Magento which forces you
+to mix your extension files all throughout the core code directories.
+With modman, you can specify in a text file where you want your
+directories and files to be mapped to, and it will maintain symlinks
+for you so that your code is easy to hack and deploy.
+
+WWW: https://github.com/colinmollenhour/modman
