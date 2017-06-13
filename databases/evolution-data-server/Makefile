@@ -29,7 +29,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bdb:5 cmake compiler:c++11-lib gettext gnome \
+USES=		bdb:5 cmake compiler:c++11-lib gettext gnome gperf \
 		iconv localbase ninja pathfix pkgconfig python:3.3+,build\
 		sqlite tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2
