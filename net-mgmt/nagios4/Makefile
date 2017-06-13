@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagios
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://assets.nagios.com/downloads/nagioscore/releases/ \
