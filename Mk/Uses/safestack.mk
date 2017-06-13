@@ -9,7 +9,7 @@
 
 .if !defined(_INCLUDE_USES_SAFESTACK_MK)
 _INCLUDE_USES_SAFESTACK_MK=    yes
-.if ${OSVERSION} >= 1100508
+.if ${OSVERSION} >= 1100122
 .if ${ARCH} == "amd64"
 
 .if ${SAFESTACK_ARGS:Mconfigure}
