@@ -70,43 +70,21 @@ CXXFLAGS+=		-fPIC
 ### Position-Idependent Executable (PIE) support ###
 ####################################################
 
+.if ${USE_HARDENING:Mlib} || ${USE_HARDENING:Mkmod} || ${USE_HARDENING:Mfortran} || ${USE_HARDENING:Mlinux} || ${USE_HARDENING:Mstatic}
+# Do not enable PIE for libraries or kernel module ports.
+USE_HARDENING+=		nopie
+.endif
+
 .if ${HARDENING_OFF:Mpie} == ""
+.if ${USE_HARDENING:Mpie} && ${USE_HARDENING:Mnopie} == ""
 OPTIONS_DEFINE+=	PIE
 PIE_DESC=		Build as PIE
 PIE_USES=		pie
 PIE_ARGS?=
 
-# Do not enable PIE for libraries or kernel module ports. However,
-# provide a way for still enabling PIE if desired by the port's
-# maintainer by allowing them to define EXPLICIT_PIE.
-#
-# It's possible that keying off lib* as the port's name could
-# introduce false positives. Hence even more reason to have
-# EXPLICIT_PIE.
-.if defined(PORTNAME)
-.if !defined(EXPLICIT_PIE)
-.if ${PORTNAME:Mlib*} || ${PORTNAME:M*kmod*} || \
-	(defined(PKGNAMESUFFIX) && (${PKGNAMESUFFIX:Mlib*}))
-NOPIE_PORTS=	yes
-.endif
-.endif
-
-.endif
-
-.if defined(USES)
-.if ${USES:Mkmod} || ${USES:Mfortran}
-NOPIE_PORTS=	yes
-.endif
-.endif
-
-.if defined(CATEGORIES)
-.if ${CATEGORIES:Mlinux}
-NOPIE_PORTS=	yes
-.endif
-.endif
-
 .if !defined(NOPIE_PORTS)
 OPTIONS_DEFAULT+=	PIE
+.endif
 .endif
 .endif
 
@@ -115,6 +93,7 @@ OPTIONS_DEFAULT+=	PIE
 ################################
 
 .if ${USE_HARDENING:Mlib} || ${USE_HARDENING:Mkmod} || ${USE_HARDENING:Mfortran} || ${USE_HARDENING:Mx11} || ${USE_HARDENING:Mlinux} || ${USE_HARDENING:Mstatic}
+# Same reasoning here with RELRO as with PIE.
 USE_HARDENING+=		norelro
 .endif
 
