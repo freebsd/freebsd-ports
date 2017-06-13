@@ -114,35 +114,19 @@ OPTIONS_DEFAULT+=	PIE
 ### RELRO + BIND_NOW support ###
 ################################
 
+.if ${USE_HARDENING:Mlib} || ${USE_HARDENING:Mkmod} || ${USE_HARDENING:Mfortran} || ${USE_HARDENING:Mx11} || ${USE_HARDENING:Mlinux} || ${USE_HARDENING:Mstatic}
+USE_HARDENING+=		norelro
+.endif
+
 .if ${HARDENING_OFF:Mrelro} == ""
+.if ${USE_HARDENING:Mrelro} && ${USE_HARDENING:Mnorelro} == ""
 OPTIONS_DEFINE+=	RELRO
 RELRO_DESC=		Build with RELRO + BIND_NOW
 RELRO_USES=		relro
 
-# Same reasoning here with RELRO as with PIE.
-.if defined(PORTNAME)
-.if !defined(EXPLICIT_RELRO)
-.if ${PORTNAME:Mlib*} || ${PORTNAME:M*kmod*} || \
-	(defined(PKGNAMESUFFIX) && (${PKGNAMESUFFIX:Mlib*}))
-NORELRO_PORTS=	yes
-.endif
-.endif
-.endif
-
-.if defined(USES)
-.if ${USES:Mkmod} || ${USES:Mfortran}
-NORELRO_PORTS=	yes
-.endif
-.endif
-
-.if defined(CATEGORIES)
-.if ${CATEGORIES:Mx11-drivers} || ${CATEGORIES:Mlinux}
-NORELRO_PORTS=	yes
-.endif
-.endif
-
 .if !defined(NORELRO_PORTS)
 OPTIONS_DEFAULT+=	RELRO
+.endif
 .endif
 .endif
 
