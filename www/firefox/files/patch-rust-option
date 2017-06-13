@@ -1,0 +1,345 @@
+Revert bug 1284816 and bug 1341967 to postpone bustage on non-x86 archs.
+
+diff --git browser/confvars.sh browser/confvars.sh
+index d8dcd99c2757..740d9d3e5fcf 100755
+--- browser/confvars.sh
++++ browser/confvars.sh
+@@ -30,6 +30,7 @@ if test "$OS_ARCH" = "WINNT"; then
+   fi
+ fi
+ 
++MOZ_RUST_MP4PARSE=1
+ if test "$NIGHTLY_BUILD"; then
+   MOZ_RUST_URLPARSE=1
+ fi
+diff --git build/moz.configure/rust.configure build/moz.configure/rust.configure
+index 267d989f1597..f709820e60ae 100644
+--- build/moz.configure/rust.configure
++++ build/moz.configure/rust.configure
+@@ -4,10 +4,20 @@
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ 
+-# Rust is required by `rust_compiler` below. We allow_missing here
+-# to propagate failures to the better error message there.
+-rustc = check_prog('RUSTC', ['rustc'], allow_missing=True)
+-cargo = check_prog('CARGO', ['cargo'], allow_missing=True)
++option('--disable-rust', help='Don\'t include Rust language sources')
++
++@depends('--enable-rust')
++def rust_compiler_names(value):
++    if value:
++        return ['rustc']
++
++@depends('--enable-rust')
++def cargo_binary_names(value):
++    if value:
++        return ['cargo']
++
++rustc = check_prog('RUSTC', rust_compiler_names, allow_missing=True)
++cargo = check_prog('CARGO', cargo_binary_names, allow_missing=True)
+ 
+ @depends_if(rustc)
+ @checking('rustc version', lambda info: info.version)
+@@ -43,9 +53,12 @@ def cargo_info(cargo):
+         version=Version(version),
+     )
+ 
+-@depends(rustc_info, cargo_info)
++@depends('--enable-rust', rustc_info, cargo_info)
+ @imports(_from='textwrap', _import='dedent')
+-def rust_compiler(rustc_info, cargo_info):
++def rust_compiler(value, rustc_info, cargo_info):
++    if not value:
++        return None
++
+     if not rustc_info:
+         die(dedent('''\
+         Rust compiler not found.
+diff --git dom/media/MediaPrefs.h dom/media/MediaPrefs.h
+index 4dcc659222a4..559334d89fd1 100644
+--- dom/media/MediaPrefs.h
++++ dom/media/MediaPrefs.h
+@@ -165,7 +165,7 @@ private:
+   DECL_MEDIA_PREF("media.ogg.flac.enabled",                   FlacInOgg, bool, false);
+   DECL_MEDIA_PREF("media.flac.enabled",                       FlacEnabled, bool, true);
+ 
+-#if !defined(RELEASE_OR_BETA)
++#if defined(MOZ_RUST_MP4PARSE) && !defined(RELEASE_OR_BETA)
+   DECL_MEDIA_PREF("media.rust.test_mode",                     RustTestMode, bool, false);
+ #endif
+ 
+diff --git media/libstagefright/binding/DecoderData.cpp media/libstagefright/binding/DecoderData.cpp
+index 109ea329d154..a06e533b1e62 100644
+--- media/libstagefright/binding/DecoderData.cpp
++++ media/libstagefright/binding/DecoderData.cpp
+@@ -13,9 +13,11 @@
+ #include "mozilla/ArrayUtils.h"
+ #include "include/ESDS.h"
+ 
++#ifdef MOZ_RUST_MP4PARSE
+ // OpusDecoder header is really needed only by MP4 in rust
+ #include "OpusDecoder.h"
+ #include "mp4parse.h"
++#endif // MOZ_RUST_MP4PARSE
+ 
+ using namespace stagefright;
+ 
+@@ -187,6 +189,7 @@ MP4VideoInfo::Update(const MetaData* aMetaData, const char* aMimeType)
+ 
+ }
+ 
++#ifdef MOZ_RUST_MP4PARSE
+ static void
+ UpdateTrackProtectedInfo(mozilla::TrackInfo& aConfig,
+                          const mp4parse_sinf_info& aSinf)
+@@ -266,6 +269,7 @@ MP4VideoInfo::Update(const mp4parse_track_info* track,
+     mExtraData->AppendElements(video->extra_data.data, video->extra_data.length);
+   }
+ }
++#endif // MOZ_RUST_MP4PARSE
+ 
+ bool
+ MP4VideoInfo::IsValid() const
+diff --git media/libstagefright/binding/MP4Metadata.cpp media/libstagefright/binding/MP4Metadata.cpp
+index 5c3810d99a38..5d14dfd8b8a9 100644
+--- media/libstagefright/binding/MP4Metadata.cpp
++++ media/libstagefright/binding/MP4Metadata.cpp
+@@ -19,14 +19,18 @@
+ #include "mp4_demuxer/MP4Metadata.h"
+ #include "mp4_demuxer/Stream.h"
+ #include "MediaPrefs.h"
++#ifdef MOZ_RUST_MP4PARSE
+ #include "mp4parse.h"
++#endif // MOZ_RUST_MP4PARSE
+ 
+ #include <limits>
+ #include <stdint.h>
+ #include <vector>
+ 
+ 
++#ifdef MOZ_RUST_MP4PARSE
+ struct FreeMP4Parser { void operator()(mp4parse_parser* aPtr) { mp4parse_free(aPtr); } };
++#endif // MOZ_RUST_MP4PARSE
+ 
+ using namespace stagefright;
+ 
+@@ -101,6 +103,7 @@ private:
+   bool mCanSeek;
+ };
+ 
++#ifdef MOZ_RUST_MP4PARSE
+ // Wrap an mp4_demuxer::Stream to remember the read offset.
+ 
+ class RustStreamAdaptor {
+@@ -145,9 +149,11 @@ private:
+   RustStreamAdaptor mRustSource;
+   mozilla::UniquePtr<mp4parse_parser, FreeMP4Parser> mRustParser;
+ };
++#endif // MOZ_RUST_MP4PARSE
+ 
+ MP4Metadata::MP4Metadata(Stream* aSource)
+  : mStagefright(MakeUnique<MP4MetadataStagefright>(aSource))
++#ifdef MOZ_RUST_MP4PARSE
+  , mRust(MakeUnique<MP4MetadataRust>(aSource))
+  , mPreferRust(false)
+  , mReportedAudioTrackTelemetry(false)
+@@ -155,6 +161,7 @@ MP4Metadata::MP4Metadata(Stream* aSource)
+ #ifndef RELEASE_OR_BETA
+  , mRustTestMode(MediaPrefs::RustTestMode())
+ #endif
++#endif // MOZ_RUST_MP4PARSE
+ {
+ }
+ 
+@@ -186,6 +193,7 @@ MP4Metadata::GetNumberTracks(mozilla::TrackInfo::TrackType aType) const
+ {
+   uint32_t numTracks = mStagefright->GetNumberTracks(aType);
+ 
++#ifdef MOZ_RUST_MP4PARSE
+   if (!mRust) {
+     return numTracks;
+   }
+@@ -211,10 +219,12 @@ MP4Metadata::GetNumberTracks(mozilla::TrackInfo::TrackType aType) const
+     mPreferRust = true;
+     return numTracksRust;
+   }
++#endif // MOZ_RUST_MP4PARSE
+ 
+   return numTracks;
+ }
+ 
++#ifdef MOZ_RUST_MP4PARSE
+ bool MP4Metadata::ShouldPreferRust() const {
+   if (!mRust) {
+     return false;
+@@ -245,6 +255,7 @@ bool MP4Metadata::ShouldPreferRust() const {
+   // Otherwise, fall back.
+   return false;
+ }
++#endif // MOZ_RUST_MP4PARSE
+ 
+ mozilla::UniquePtr<mozilla::TrackInfo>
+ MP4Metadata::GetTrackInfo(mozilla::TrackInfo::TrackType aType,
+@@ -253,6 +264,7 @@ MP4Metadata::GetTrackInfo(mozilla::TrackInfo::TrackType aType,
+   mozilla::UniquePtr<mozilla::TrackInfo> info =
+       mStagefright->GetTrackInfo(aType, aTrackNumber);
+ 
++#ifdef MOZ_RUST_MP4PARSE
+   if (!mRust) {
+     return info;
+   }
+@@ -305,6 +317,7 @@ MP4Metadata::GetTrackInfo(mozilla::TrackInfo::TrackTyp
+   if (mPreferRust) {
+     return infoRust;
+   }
++#endif // MOZ_RUST_MP4PARSE
+ 
+   return info;
+ }
+@@ -319,6 +334,7 @@ const CryptoFile&
+ MP4Metadata::Crypto() const
+ {
+   const CryptoFile& crypto = mStagefright->Crypto();
++#ifdef MOZ_RUST_MP4PARSE
+   const CryptoFile& rustCrypto = mRust->Crypto();
+ 
+ #ifndef RELEASE_OR_BETA
+@@ -330,6 +347,7 @@ MP4Metadata::Crypto() const
+   if (mPreferRust) {
+     return rustCrypto;
+   }
++#endif // MOZ_RUST_MP4PARSE
+ 
+   return crypto;
+ }
+@@ -594,6 +612,7 @@ MP4MetadataStagefright::Metadata(Stream* aSource)
+   return parser->Metadata();
+ }
+ 
++#ifdef MOZ_RUST_MP4PARSE
+ bool
+ RustStreamAdaptor::Read(uint8_t* buffer, uintptr_t size, size_t* bytes_read)
+ {
+@@ -859,5 +878,6 @@ MP4MetadataRust::Metadata(Stream* aSource)
+   MOZ_ASSERT(false, "Not yet implemented");
+   return nullptr;
+ }
++#endif // MOZ_RUST_MP4PARSE
+ 
+ } // namespace mp4_demuxer
+diff --git media/libstagefright/binding/include/mp4_demuxer/DecoderData.h media/libstagefright/binding/include/mp4_demuxer/DecoderData.h
+index 3cd4b7c142f4..dc25ddf03b10 100644
+--- media/libstagefright/binding/include/mp4_demuxer/DecoderData.h
++++ media/libstagefright/binding/include/mp4_demuxer/DecoderData.h
+@@ -19,11 +19,13 @@ namespace stagefright
+ class MetaData;
+ }
+ 
++#ifdef MOZ_RUST_MP4PARSE
+ extern "C" {
+ typedef struct mp4parse_track_info mp4parse_track_info;
+ typedef struct mp4parse_track_audio_info mp4parse_track_audio_info;
+ typedef struct mp4parse_track_video_info mp4parse_track_video_info;
+ }
++#endif // MOZ_RUST_MP4PARSE
+ 
+ namespace mp4_demuxer
+ {
+@@ -71,8 +73,10 @@ public:
+   void Update(const stagefright::MetaData* aMetaData,
+               const char* aMimeType);
+ 
++#ifdef MOZ_RUST_MP4PARSE
+   void Update(const mp4parse_track_info* track,
+               const mp4parse_track_audio_info* audio);
++#endif // MOZ_RUST_MP4PARSE
+ 
+   virtual bool IsValid() const override;
+ };
+@@ -85,8 +89,10 @@ public:
+   void Update(const stagefright::MetaData* aMetaData,
+               const char* aMimeType);
+ 
++#ifdef MOZ_RUST_MP4PARSE
+   void Update(const mp4parse_track_info* track,
+               const mp4parse_track_video_info* video);
++#endif // MOZ_RUST_MP4PARSE
+ 
+   virtual bool IsValid() const override;
+ };
+diff --git media/libstagefright/binding/include/mp4_demuxer/MP4Metadata.h media/libstagefright/binding/include/mp4_demuxer/MP4Metadata.h
+index 492c9c1c1bc3..e16dbbd1155e 100644
+--- media/libstagefright/binding/include/mp4_demuxer/MP4Metadata.h
++++ media/libstagefright/binding/include/mp4_demuxer/MP4Metadata.h
+@@ -36,6 +36,7 @@ public:
+ 
+ private:
+   UniquePtr<MP4MetadataStagefright> mStagefright;
++#ifdef MOZ_RUST_MP4PARSE
+   UniquePtr<MP4MetadataRust> mRust;
+   mutable bool mPreferRust;
+   mutable bool mReportedAudioTrackTelemetry;
+@@ -44,6 +45,7 @@ private:
+   mutable bool mRustTestMode;
+ #endif
+   bool ShouldPreferRust() const;
++#endif // MOZ_RUST_MP4PARSE
+ };
+ 
+ } // namespace mp4_demuxer
+diff --git mobile/android/confvars.sh mobile/android/confvars.sh
+index e79b6f5c0707..eb62763acaf7 100644
+--- mobile/android/confvars.sh
++++ mobile/android/confvars.sh
+@@ -30,6 +30,8 @@ MOZ_XULRUNNER=
+ MOZ_CAPTURE=1
+ MOZ_RAW=1
+ 
++MOZ_RUST_MP4PARSE=1
++
+ # use custom widget for html:select
+ MOZ_USE_NATIVE_POPUP_WINDOWS=1
+ 
+diff --git toolkit/components/telemetry/Histograms.json toolkit/components/telemetry/Histograms.json
+index 061c55f6a5b6..e49dfd176952 100644
+--- toolkit/components/telemetry/Histograms.json
++++ toolkit/components/telemetry/Histograms.json
+@@ -6996,7 +6996,8 @@
+     "expires_in_version": "55",
+     "kind": "boolean",
+     "bug_numbers": [1220885],
+-    "description": "(Bug 1220885) Whether the rust mp4 demuxer successfully parsed a stream segment."
++    "description": "(Bug 1220885) Whether the rust mp4 demuxer successfully parsed a stream segment.",
++    "cpp_guard": "MOZ_RUST_MP4PARSE"
+   },
+   "MEDIA_RUST_MP4PARSE_ERROR_CODE": {
+     "alert_emails": ["giles@mozilla.com", "kinetik@flim.org"],
+@@ -7004,21 +7005,24 @@
+     "kind": "enumerated",
+     "n_values": 32,
+     "bug_numbers": [1238420],
+-    "description": "The error code reported when an MP4 parse attempt has failed.0 = OK, 1 = bad argument, 2 = invalid data, 3 = unsupported, 4 = unexpected end of file, 5 = read error."
++    "description": "The error code reported when an MP4 parse attempt has failed.0 = OK, 1 = bad argument, 2 = invalid data, 3 = unsupported, 4 = unexpected end of file, 5 = read error.",
++    "cpp_guard": "MOZ_RUST_MP4PARSE"
+   },
+   "MEDIA_RUST_MP4PARSE_TRACK_MATCH_AUDIO": {
+     "alert_emails": ["giles@mozilla.com", "kinetik@flim.org"],
+     "expires_in_version": "55",
+     "kind": "boolean",
+     "bug_numbers": [1231169],
+-    "description": "Whether rust and stagefight mp4 parser audio track results match."
++    "description": "Whether rust and stagefight mp4 parser audio track results match.",
++    "cpp_guard": "MOZ_RUST_MP4PARSE"
+   },
+   "MEDIA_RUST_MP4PARSE_TRACK_MATCH_VIDEO": {
+     "alert_emails": ["giles@mozilla.com", "kinetik@flim.org"],
+     "expires_in_version": "55",
+     "kind": "boolean",
+     "bug_numbers": [1231169],
+-    "description": "Whether rust and stagefight mp4 parser video track results match."
++    "description": "Whether rust and stagefight mp4 parser video track results match.",
++    "cpp_guard": "MOZ_RUST_MP4PARSE"
+   },
+   "MEDIA_WMF_DECODE_ERROR": {
+     "expires_in_version": "55",
