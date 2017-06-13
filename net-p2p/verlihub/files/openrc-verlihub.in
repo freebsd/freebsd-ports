@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name="verlihub"
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+logfile=/var/log/${name}.log
+errfile=/var/log/${name}.err
+command_args="> $logfile 2> $errfile &"
+
+: ${verlihub_configdir="`%%PREFIX%%/bin/vh_getcfg`"}
+required_dirs="$verlihub_configdir"
+required_files="$verlihub_configdir/dbconfig $verlihub_configdir/motd $verlihub_configdir/help_usr $verlihub_configdir/faq $verlihub_configdir/rules"
+
+depend() {
+		need mysql
+}
