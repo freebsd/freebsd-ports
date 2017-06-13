@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wget
-DISTVERSION=	1.19
+DISTVERSION=	1.19.1
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	GNU
 
@@ -12,7 +12,10 @@ COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		charsetfix cpe gmake iconv makeinfo perl5 tar:xz
+TEST_DEPENDS=	p5-HTTP-Daemon>=0:www/p5-HTTP-Daemon \
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
+
+USES=		charsetfix cpe iconv makeinfo perl5 tar:xz
 USE_PERL5=	build
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -32,10 +35,13 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LDFLAGS=		-L${LOCALBASE}/lib
 
-IDN_USES=		iconv
-IDN_LIB_DEPENDS=	libidn.so:dns/libidn
+IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2 \
+			libunistring.so:devel/libunistring
+IDN_CPPFLAGS=		-I${LOCALBASE}/include
+IDN_LDFLAGS=		-L${LOCALBASE}/lib
 IDN_CONFIGURE_ENABLE=	iri
-IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE}
+IDN_CONFIGURE_ON=	--with-libidn=${LOCALBASE} --with-libunistring-prefix=${LOCALBASE}
+IDN_CONFIGURE_OFF=	--with-included-libunistring
 
 METALINK_CONFIGURE_WITH=metalink
 METALINK_LIB_DEPENDS=	libmetalink.so:misc/libmetalink
@@ -43,14 +49,12 @@ METALINK_LIB_DEPENDS=	libmetalink.so:misc/libmetalink
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_CPPFLAGS=		-I${LOCALBASE}/include
 PCRE_LDFLAGS=		-L${LOCALBASE}/lib
-PCRE_CONFIGURE_ENV_OFF=	ac_cv_header_pcre_h=no
+PCRE_CONFIGURE_ENABLE=	pcre
 
 PSL_CONFIGURE_WITH=	libpsl
 PSL_LIB_DEPENDS=	libpsl.so:dns/libpsl
 
 .include <bsd.port.options.mk>
-
-CONFIGURE_ARGS+=--with-included-libunistring
 
 .if ${PORT_OPTIONS:MOPENSSL}
 USES+=		ssl
@@ -69,17 +73,13 @@ CONFIGURE_ARGS+=--without-ssl
 
 INFO=		wget
 
-# eliminate gmakism
+TEST_TARGET=	check
+
 post-patch:
-	${REINPLACE_CMD} -e 's,$$<,$$(srcdir)/wget.texi,' \
-			 -e 's,WGETRC = $$(sysconfdir)/wgetrc,&.sample,' \
+	${REINPLACE_CMD} -e 's,WGETRC = $$(sysconfdir)/wgetrc,&.sample,' \
 		${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e 's,/usr/local/etc/wgetrc,${PREFIX}/etc/wgetrc,' \
-			 -e 's,@file{},@file{${PREFIX}},' \
-		${WRKSRC}/doc/sample.wgetrc* ${WRKSRC}/doc/wget.texi
-	${REINPLACE_CMD} -e '/ac_fn_c_check_header_mongrel.*uuid\/uuid.h/ d' \
-			 -e 's|-R$$found_dir|-Wl,-rpath=$$found_dir|g' \
-		${WRKSRC}/configure
+		${WRKSRC}/doc/sample.wgetrc* ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/wget.info
 
 .include <bsd.port.pre.mk>
 
