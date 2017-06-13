@@ -57,42 +57,41 @@ PORTEXAMPLES=	kktsolve.cpp
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-	-e 's@CPP@CXX@g' \
-	-e '\@^(CC|CXX) =@s@^@#@' \
-	-e 's@^(C|CXX|LD)(FLAGS )(=)(.*)@\1\2+\3 $${PICFLAG}@' \
-	-e 's@ar r@${AR} r@' \
-	-e 's@ranlib@${RANLIB}@' \
-		${WRKSRC}/Makefile
+		-e 's@CPP@CXX@g' \
+		-e '\@^(CC|CXX) =@s@^@#@' \
+		-e 's@^(C|CXX|LD)(FLAGS )(=)(.*)@\1\2+\3 $${PICFLAG}@' \
+		-e 's@ar r@${AR} r@' \
+		-e 's@ranlib@${RANLIB}@' \
+			${WRKSRC}/Makefile
 
 pre-build:
 	${CP} -a ${WRKSRC} ${WRKSRC}_shared
 
 do-build:
-	@cd ${WRKSRC}_shared; ${DO_MAKE_BUILD} PICFLAG="${PICFLAG}" libkktdirect.a; \
-	${CXX} ${CXXFLAGS} -shared -Wl,-soname,libkktdirect.so.0 \
-	-o ${WRKDIR}/libkktdirect.so.0 -Wl,--whole-archive libkktdirect.a \
-	-Wl,--no-whole-archive -Wl,--as-needed ${LDFLAGS}; \
-	${CP} -af libkktdirect.a ${WRKDIR}/libkktdirect_pic.a
-	@cd ${WRKSRC}; ${DO_MAKE_BUILD} PICFLAG="" libkktdirect.a; \
-	${CP} -af libkktdirect.a ${WRKDIR}
+	@cd ${WRKSRC}_shared && ${DO_MAKE_BUILD} PICFLAG="${PICFLAG}" libkktdirect.a && \
+		${CXX} ${CXXFLAGS} -shared -Wl,-soname,libkktdirect.so.0 \
+		-o ${WRKDIR}/libkktdirect.so.0 -Wl,--whole-archive libkktdirect.a \
+		-Wl,--no-whole-archive -Wl,--as-needed ${LDFLAGS} && \
+		${CP} -af libkktdirect.a ${WRKDIR}/libkktdirect_pic.a
+	@cd ${WRKSRC} && ${DO_MAKE_BUILD} PICFLAG="" libkktdirect.a && \
+		${CP} -af libkktdirect.a ${WRKDIR}
 
-check regression-test test: build
-	@cd ${WRKSRC}; ${DO_MAKE_BUILD} PICFLAG="" stokes ; \
-	./stokes 3
+do-test:
+	@cd ${WRKSRC} && ${DO_MAKE_BUILD} PICFLAG="" stokes && ./stokes 3
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/kktdirect.h ${STAGEDIR}${PREFIX}/include
-	@cd ${WRKDIR} && ${INSTALL_DATA} libkktdirect.a libkktdirect_pic.a \
+	${INSTALL_DATA} ${WRKSRC}/kktdirect.h ${STAGEDIR}${PREFIX}/include
+	cd ${WRKDIR} && ${INSTALL_DATA} libkktdirect.a libkktdirect_pic.a \
 		${STAGEDIR}${PREFIX}/lib
-	@cd ${WRKDIR} && ${INSTALL_LIB} libkktdirect.so.0 ${STAGEDIR}${PREFIX}/lib
-	@cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libkktdirect.so.0 libkktdirect.so
-.if ${PORT_OPTIONS:MDOCS}
+	cd ${WRKDIR} && ${INSTALL_LIB} libkktdirect.so.0 ${STAGEDIR}${PREFIX}/lib
+	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libkktdirect.so.0 libkktdirect.so
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-.endif
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>
