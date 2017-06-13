@@ -1339,6 +1339,7 @@
     SUBDIR += py-sphinxcontrib-fulltoc
     SUBDIR += py-sphinxcontrib-httpdomain
     SUBDIR += py-sphinxcontrib-programoutput
+    SUBDIR += py-stemming
     SUBDIR += py-syck
     SUBDIR += py-tabletext
     SUBDIR += py-terminaltables
