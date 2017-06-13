@@ -18,6 +18,9 @@ USE_HARDENING?=		pie relro
 .if ${PORTNAME:Mlib*} && ${PORTNAME:Mlibre*} == ""
 USE_HARDENING+=	lib
 .endif
+.if ${PORTNAME:M*kmod*}
+USE_HARDENING+=	kmod
+.endif
 .endif
 
 .if defined(PKGNAMEPREFIX)
@@ -30,6 +33,28 @@ USE_HARDENING+=	lib
 .if ${PKGNAMESUFFIX:M-lib*}
 USE_HARDENING+=	lib
 .endif
+.endif
+
+.if defined(USES)
+.if ${USES:Mkmod}
+USE_HARDENING+=	kmod
+.endif
+.if ${USES:Mfortran}
+USE_HARDENING+=	fortran
+.endif
+.endif
+
+.if defined(CATEGORIES)
+.if ${CATEGORIES:Mx11-drivers}
+USE_HARDENING+=	x11
+.endif
+.if ${CATEGORIES:Mlinux}
+USE_HARDENING+=	linux
+.endif
+.endif
+
+.if defined(NO_BUILD) || defined(NO_ARCH)
+USE_HARDENING+=	static
 .endif
 
 #################################################
