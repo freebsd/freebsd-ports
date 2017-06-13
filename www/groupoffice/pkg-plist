@@ -53,6 +53,7 @@
 %%WWWDIR%%/go/base/controller/AbstractJsonController.php
 %%WWWDIR%%/go/base/controller/AbstractModelController.php
 %%WWWDIR%%/go/base/controller/AbstractMultiSelectModelController.php
+%%WWWDIR%%/go/base/controller/AbstractSyncController.php
 %%WWWDIR%%/go/base/cron/AbstractCron.php
 %%WWWDIR%%/go/base/cron/CalculateDiskUsage.php
 %%WWWDIR%%/go/base/cron/CronCollection.php
@@ -1507,6 +1508,8 @@
 %%WWWDIR%%/modules/billing/controller/SiteController.php
 %%WWWDIR%%/modules/billing/controller/StatusController.php
 %%WWWDIR%%/modules/billing/controller/StatusHistoryController.php
+%%WWWDIR%%/modules/billing/controller/SyncContractsController.php
+%%WWWDIR%%/modules/billing/controller/SyncController.php
 %%WWWDIR%%/modules/billing/controller/TaxRateController.php
 %%WWWDIR%%/modules/billing/controller/TemplateController.php
 %%WWWDIR%%/modules/billing/controller/TrackingCodeController.php
@@ -1889,6 +1892,7 @@
 %%WWWDIR%%/modules/calendar/themes/Default/images/arrowright.png
 %%WWWDIR%%/modules/calendar/themes/Default/images/arrows.png
 %%WWWDIR%%/modules/calendar/themes/Default/images/calendar.png
+%%WWWDIR%%/modules/calendar/themes/Default/images/pdf/arrow_down.png
 %%WWWDIR%%/modules/calendar/themes/Default/images/pdf/exception.png
 %%WWWDIR%%/modules/calendar/themes/Default/images/pdf/exception2.png
 %%WWWDIR%%/modules/calendar/themes/Default/images/pdf/paperclip.png
@@ -3207,6 +3211,7 @@
 %%WWWDIR%%/modules/leavedays/install/updates.inc.php
 %%WWWDIR%%/modules/leavedays/install/updatescripts/1_store_national_holiday_hours.php
 %%WWWDIR%%/modules/leavedays/install/updatescripts/2_update_to_credit_types.php
+%%WWWDIR%%/modules/leavedays/language/cs.php
 %%WWWDIR%%/modules/leavedays/language/de.php
 %%WWWDIR%%/modules/leavedays/language/en.php
 %%WWWDIR%%/modules/leavedays/language/fr.php
