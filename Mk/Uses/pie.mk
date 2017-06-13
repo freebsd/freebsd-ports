@@ -11,12 +11,16 @@
 .if !defined(_INCLUDE_USES_PIE_MK)
 _INCLUDE_USES_PIE_MK=    yes
 
+.if !empty(pie_ARGS)
+IGNORE=			USES=pie does not require args
+.endif
+
 .if ${PIE_ARGS:Mconfigure}
 CONFIGURE_ARGS+=	--enable-pie
 .else
-CFLAGS+=	-fPIE -fPIC
-CXXFLAGS+=	-fPIE -fPIC
-LDFLAGS+=	-pie
+CFLAGS+=		-fPIC -fPIE
+CXXFLAGS+=		-fPIC -fPIE
+LDFLAGS+=		-pie
 .endif
 
 .endif
