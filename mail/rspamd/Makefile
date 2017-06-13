@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.5.9
+PORTVERSION=	1.6.0
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	ragel:devel/ragel
 CONFLICTS_INSTALL=	rspamd-devel
 
 OPTIONS_DEFINE=	GPERF HYPERSCAN GD CGP
-OPTIONS_DEFAULT=	GD
 GPERF_DESC=		Google perf-tools profiling
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
 GD_DESC=		Enable libgd support for images fuzzy hashes
@@ -44,7 +43,7 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 USES=		cmake:outsource pkgconfig perl5 \
 		compiler:c11 sqlite ssl
 USE_LDCONFIG=	yes
-USE_PERL5=	build
+USE_PERL5=	build run
 
 USE_GNOME=	glib20
 
@@ -72,7 +71,6 @@ GH_ACCOUNT=	vstakhov
 .endif
 
 .if ${PORT_OPTIONS:MCGP}
- USE_PERL5+=	run
  PLIST_SUB+=	CGP=""
  RUN_DEPENDS+=	\
 	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
