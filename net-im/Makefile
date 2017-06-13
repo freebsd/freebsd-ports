@@ -72,6 +72,7 @@
     SUBDIR += licq-msn
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
+    SUBDIR += linux-telegram-desktop
     SUBDIR += loudmouth
     SUBDIR += mastodon
     SUBDIR += mbpurple

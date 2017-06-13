@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export QT_XKB_CONFIG_ROOT=%%PREFIX%%/share/X11/xkb
+exec %%PREFIX%%/%%TDESKTOPDIR%%/Telegram "$@"
