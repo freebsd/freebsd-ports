@@ -1831,6 +1831,7 @@
     SUBDIR += py-urlobject
     SUBDIR += py-user_agent
     SUBDIR += py-utidylib
+    SUBDIR += py-vcrpy
     SUBDIR += py-w3lib
     SUBDIR += py-waitress
     SUBDIR += py-webassets
