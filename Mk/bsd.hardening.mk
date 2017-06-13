@@ -150,15 +150,29 @@ OPTIONS_DEFAULT+=	RELRO
 ### SafeStack support ###
 #########################
 
+.if ${OSVERSION} >= 1100122
+
+.if ${USE_HARDENING:Mstatic} || ${ARCH} != "amd64"
+USE_HARDENING+=		nosafestack
+.endif
+
+.if defined(EXPLICIT_SAFESTACK) # XXX
+USE_HARDENING+=		safestack
+.endif
+
 .if ${HARDENING_OFF:Msafestack} == ""
+.if ${USE_HARDENING:Msafestack} && ${USE_HARDENING:Mnosafestack} == ""
 OPTIONS_DEFINE+=	SAFESTACK
 SAFESTACK_DESC=		Build with SafeStack
 SAFESTACK_USES=		safestack
 SAFESTACK_ARGS?=
 
-.if defined(EXPLICIT_SAFESTACK)
+.if defined(EXPLICIT_SAFESTACK) # XXX
 OPTIONS_DEFAULT+=	SAFESTACK
 .endif
+.endif
+.endif
+
 .endif
 
 ###################
