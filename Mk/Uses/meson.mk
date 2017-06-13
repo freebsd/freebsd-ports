@@ -62,6 +62,8 @@ TEST_TARGET=		test
 
 MESON_BUILD_DIR?=	_build
 
+CONFIGURE_LOG=		${MESON_BUILD_DIR}/meson-logs/meson-log.txt
+
 # Add meson build dir at the end.
 CONFIGURE_ARGS+=	${MESON_BUILD_DIR}
 
