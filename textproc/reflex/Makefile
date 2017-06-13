@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://invisible-island.net/reflex/ \
 		LOCAL/sunpoet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Relocalizable fast lexical scanner
 
 LICENSE=	BSD3CLAUSE
