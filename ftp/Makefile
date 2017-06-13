@@ -47,6 +47,7 @@
     SUBDIR += ncftp3
     SUBDIR += ncftpd
     SUBDIR += net2ftp
+    SUBDIR += netdumpd
     SUBDIR += ocaml-ocurl
     SUBDIR += oftpd
     SUBDIR += omi
