@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=fbsdmon
+
+command="%%PREFIX%%/sbin/$name"
+command_args="-D"
+
+depend() {
+		keyword -shutdown
+}

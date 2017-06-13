@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=nzbget
+
+command=%%PREFIX%%/bin/nzbget
+command_args="-D"
+
+depend() {
+		keyword -shutdown
+}
