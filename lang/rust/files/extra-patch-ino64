@@ -110,7 +110,7 @@
  pub type rlim_t = i64;
 --- ./src/libstd/os/freebsd/raw.rs.orig	2017-04-24 18:53:46.000000000 +0000
 +++ ./src/libstd/os/freebsd/raw.rs	2017-05-25 16:25:42.304715000 +0000
-@@ -38,32 +38,48 @@
+@@ -38,32 +38,52 @@
  #[stable(feature = "raw_ext", since = "1.1.0")]
  pub struct stat {
      #[stable(feature = "raw_ext", since = "1.1.0")]
@@ -136,26 +136,30 @@
      #[stable(feature = "raw_ext", since = "1.1.0")]
 +    pub st_rdev: u64,
 +    #[cfg(target_arch = "x86")]
++    #[stable(feature = "raw_ext", since = "1.1.0")]
 +    pub st_atime_ext: c_long,
 +    #[stable(feature = "raw_ext", since = "1.1.0")]
      pub st_atime: c_long,
      #[stable(feature = "raw_ext", since = "1.1.0")]
      pub st_atime_nsec: c_long,
 +    #[cfg(target_arch = "x86")]
-+    pub st_mtime_ext: c_long,
      #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_mtime_ext: c_long,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
      pub st_mtime: c_long,
      #[stable(feature = "raw_ext", since = "1.1.0")]
      pub st_mtime_nsec: c_long,
 +    #[cfg(target_arch = "x86")]
-+    pub st_ctime_ext: c_long,
      #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_ctime_ext: c_long,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
      pub st_ctime: c_long,
      #[stable(feature = "raw_ext", since = "1.1.0")]
      pub st_ctime_nsec: c_long,
 +    #[cfg(target_arch = "x86")]
-+    pub st_birthtime_ext: c_long,
      #[stable(feature = "raw_ext", since = "1.1.0")]
++    pub st_birthtime_ext: c_long,
++    #[stable(feature = "raw_ext", since = "1.1.0")]
 +    pub st_birthtime: c_long,
 +    #[stable(feature = "raw_ext", since = "1.1.0")]
 +    pub st_birthtime_nsec: c_long,
@@ -163,7 +167,7 @@
      pub st_size: i64,
      #[stable(feature = "raw_ext", since = "1.1.0")]
      pub st_blocks: i64,
-@@ -72,14 +88,7 @@
+@@ -72,14 +92,7 @@
      #[stable(feature = "raw_ext", since = "1.1.0")]
      pub st_flags: u32,
      #[stable(feature = "raw_ext", since = "1.1.0")]

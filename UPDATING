@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170613:
+  AFFECTS: users of net-im/ejabberd
+  AUTHOR: ashish@FreeBSD.org
+
+  After update to 17.04, there is an issue[1] expected with S2S connections,
+  which can be resolved by adding 'mod_s2s_dialback: {}' to 'modules' section
+  of configuration file.
+
+  [1] - https://github.com/processone/ejabberd/issues/1700  
+
 20170603:
   AFFECTS: users of www/kanboard
   AUTHOR: joneum@FreeBSD.org
