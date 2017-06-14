@@ -22,6 +22,8 @@ PORTDOCS=	CMDLINE.doom ChangeLog INSTALL.doom NEWS.md NOT-BUGS.md PHILOSOPHY.md 
 
 OPTIONS_DEFINE=	DOCS
 
+EXPLICIT_SAFESTACK=	yes
+
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 post-patch:
