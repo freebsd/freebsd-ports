@@ -1,0 +1,21 @@
+--- files/rkhunter.orig	2014-03-12 20:54:55 UTC
++++ files/rkhunter
+@@ -7275,6 +7275,9 @@ download_file() {
+ 		rm -f "${OUTPUT_FILE}" >/dev/null 2>&1
+ 
+ 		case "${RKHWEBCMD_BASE}" in
++		fetch)
++			CMD="${RKHWEBCMD} ${RKHWEBCMD_OPTS} -q -o \"${OUTPUT_FILE}\" ${MIRROR}${URL} 2>/dev/null"
++			;;
+ 		wget)
+ 			CMD="${RKHWEBCMD} ${RKHWEBCMD_OPTS} -q -O \"${OUTPUT_FILE}\" ${MIRROR}${URL} 2>/dev/null"
+ 			;;
+@@ -18557,7 +18560,7 @@ REQCMDS="awk cat chmod chown cp cut date egrep grep he
+ # List of commands used to download files from the web. This list is 
+ # used by the '--update' and '--versioncheck' options. Preferred commands
+ # are listed first. This can be overridden by the config file.
+-WEBCMDLIST="wget curl elinks links lynx bget GET"
++WEBCMDLIST="fetch wget curl elinks links lynx bget GET"
+ 
+ RKHWEBCMD=""
+ RKHWEBCMD_OPTS=""
