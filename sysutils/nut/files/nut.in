@@ -38,7 +38,12 @@ nut_prestart() {
 }
 
 nut_poststop() {
-	${nut_prefix}/sbin/upsdrvctl stop
+	if ${nut_prefix}/sbin/upsdrvctl stop && checkyesno nut_upsshut; then
+		if ${nut_prefix}/sbin/upsmon -K; then
+			${nut_prefix}/sbin/upsdrvctl shutdown
+		fi
+	fi
+
 }
 
 extra_commands=reload
