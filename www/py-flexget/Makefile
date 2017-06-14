@@ -46,7 +46,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=1.0.13:databases/py-sqlalchemy
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest \
 		${PYTHON_PKGNAMEPREFIX}pytest-capturelog>0:devel/py-pytest-capturelog \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3 \
-		${PYTHON_PKGNAMEPREFIX}vcrpy>0:www/py-vcrpy
+		${PYTHON_PKGNAMEPREFIX}vcrpy>0:devel/py-vcrpy
 
 USE_GITHUB=	yes
 GH_PROJECT=	Flexget
