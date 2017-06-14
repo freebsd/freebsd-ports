@@ -1477,6 +1477,7 @@
     SUBDIR += py-WebFlash
     SUBDIR += py-WebTest
     SUBDIR += py-aiohttp
+    SUBDIR += py-aiohttp-wsgi
     SUBDIR += py-albatross
     SUBDIR += py-amf
     SUBDIR += py-apachelog
