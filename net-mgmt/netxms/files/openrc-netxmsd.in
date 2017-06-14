@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="netxmsd"
+
+command="%%PREFIX%%/bin/netxmsd"
+required_files="%%PREFIX%%/etc/netxmsd.conf"
+command_args="-c %%PREFIX%%/etc/netxmsd.conf -d -e"
+
+depend() {
+	keyword -shutdown
+}

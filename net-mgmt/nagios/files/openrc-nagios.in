@@ -1,0 +1,74 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable nagios:
+# nagios_precache (bool):  Set to "NO" by default.
+#                          Set it to "YES" to enable pre-caching.
+# nagios_flags (str):      Set to "" by default.
+# nagios_configfile (str): Set to "%%PREFIX%%/etc/nagios/nagios.cfg" by default.
+
+name="nagios"
+
+command="%%PREFIX%%/bin/nagios"
+command_args="-d"
+extra_commands="checkconfig"
+pidfile="%%NAGIOSDIR%%/nagios.lock"
+nagios_user="%%NAGIOSUSER%%"
+command_user=${nagios_user}
+
+[ -z "${nagios_enable}" ]       && nagios_enable="NO"
+[ -z "${nagios_configfile}" ]   && nagios_configfile="%%PREFIX%%/etc/nagios/nagios.cfg"
+[ -z "${nagios_precache}" ]     && nagios_precache="NO"
+
+required_files="${nagios_configfile}"
+command_args="${command_args} ${nagios_configfile}"
+
+nagios_cacheconfig() {
+  if ! yesno nagios_precache; then
+    return 0
+  fi
+
+  echo -n "Pre-Caching nagios configuration: "
+  ${command} -pv ${nagios_configfile} 2>&1 >/dev/null
+  if [ $? != 0 ]; then
+    echo "FAILED"
+    ${command} -v ${nagios_configfile}
+    return 1
+  else
+    command_args="-u -x ${command_args}"
+    echo "OK"
+  fi
+}
+
+checkconfig() {
+  echo -n "Performing sanity check of nagios configuration: "
+  ${command} -v ${nagios_configfile} 2>&1 >/dev/null
+  if [ $? != 0 ]; then
+    echo "FAILED"
+    ${command} -v ${nagios_configfile}
+    return 1
+  else
+    echo "OK"
+  fi
+}
+
+start_pre() {
+  if ! checkconfig; then
+    return 1
+  fi
+
+  if ! nagios_cacheconfig; then
+    return 1
+  fi
+
+  su -m "${nagios_user}" -c "touch \"%%NAGIOSDIR%%/nagios.log\" \"%%NAGIOSDIR%%/status.sav\""
+  rm -f "%%NAGIOSDIR%%/rw/nagios.cmd"
+}
+
+stop_post() {
+  rm -f "%%NAGIOSDIR%%/nagios.tmp" "%%NAGIOSDIR%%/rw/nagios.cmd"
+}
+
+depend() {
+	provide nagios
+	keyword -shutdown
+}

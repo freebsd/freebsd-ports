@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable dhcp_probe:
+#
+# dhcp_probe_flags="<interface>"
+
+name=dhcp_probe
+description="Attempts to discover DHCP and BootP servers on a network."
+
+: ${dhcp_probe_config="%%PREFIX%%/etc/dhcp_probe.cf"}
+
+command=%%PREFIX%%/sbin/${name}
+command_args="-c ${dhcp_probe_config}" 
+
+depend() {
+	keyword -shutdown
+}

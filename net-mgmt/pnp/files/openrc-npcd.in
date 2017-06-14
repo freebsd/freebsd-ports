@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable/tune npcd:
+# npcd_flags (str):      Set to "" by default.
+# npcd_configfile (str): Set to "%%PREFIX%%/etc/pnp/npcd.cfg" by default.
+
+name="npcd"
+
+command="%%PREFIX%%/bin/npcd"
+command_args="-d"
+pidfile=/var/run/${name}.pid
+
+: ${npcd_configfile:="%%PREFIX%%/etc/pnp/npcd.cfg"}
+
+required_files="${npcd_configfile}"
+command_args="${command_args} -f ${npcd_configfile}"
+
+depend() {
+	keyword -shutdown
+}

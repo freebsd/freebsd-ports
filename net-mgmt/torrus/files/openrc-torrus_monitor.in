@@ -1,0 +1,45 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to run torrus_monitor:
+#
+# torrus_monitor_flags (flags):	Set extra flags here. More options in torrus_monitor(1)
+#			Default is empty "".
+# torrus_monitor_user (user):	Set user to run torrus_monitor.
+#			Default is "torrus".
+
+name="torrus_monitor"
+
+: ${torrus_monitor_user="torrus"}
+
+command=%%PREFIX%%/libexec/torrus/monitor
+
+start_pre() {
+	eval trees_monitor=\"`%%PREFIX%%/bin/perl -e 'require "'%%PREFIX%%/share/torrus/conf_defaults/torrus-config.pl'";
+		while((my $key, $val) = each %Torrus::Global::treeConfig) {
+			print "$key " if $val->{run}{'monitor'};
+		};'`\"
+}
+
+start() {
+	start_pre
+	eval trees=\"\$\{trees_monitor\}\"
+    	for t in ${trees}; do
+		einfo "starting Torrus monitor for tree ${t}"
+		command_args="--tree=${t}"
+		$command $command_args start
+	done
+}
+
+stop() {
+	start_pre
+	eval trees=\"\$\{trees_monitor\}\"
+    	for t in ${trees}; do
+		pidfile="/var/run/torrus/monitor.${t}.pid"
+		einfo "stopping Torrus monitor for tree ${t}"
+		$command "stop"
+	done
+}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,47 @@
+#!/sbin/openrc-run
+
+name=nfsen
+
+#nfsen_flags=${nfsen_flags-""}
+nfsen_user=${nfsen_user-"%%NFSENOWN%%"}
+
+command="%%PREFIX%%/bin/nfsen"
+command_args=start
+command_user=${nfsen_user}
+
+stop_pre() {
+	$command stop
+}
+
+start_pre() {
+	# This replicates functionality provided by
+	# the perl install script that we're bypassing.
+	# It also is better because you don't have to reinstall
+	# to get this file back
+	if [ ! -e %%PREFIX%%/var/nfsen/profiles-stat/live/profile.dat ]; then
+		time=$(/bin/date +%s);
+		timeu=$(/bin/expr $time - 300);
+		profile_dat=%%PREFIX%%/var/nfsen/profiles-stat/live/profile.dat
+		/usr/bin/printf "name = live
+		group = .
+		tbegin = $time
+		tcreate = $time
+		tstart = $time
+		tend = $time
+		updated = $timeu
+		expire = 0
+		maxsize = 0
+		size = 0
+		type = 0
+		locked = 0
+		status = OK
+		version = 130" | /usr/bin/tr -d '\011' > ${profile_dat}
+		chown ${nfsen_user} ${profile_dat}
+	fi
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

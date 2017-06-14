@@ -1,0 +1,115 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable icinga:
+# icinga_precache (bool):  Set to "NO" by default.
+#                          Set it to "YES" to enable pre-caching.
+# icinga_flags (str):      Set to "" by default.
+# icinga_configfile (str): Set to "%%PREFIX%%/etc/icinga/icinga.cfg" by default.
+
+name="icinga"
+
+: ${icinga_configfile="%%PREFIX%%/etc/icinga/icinga.cfg"}
+: ${icinga_precache:="NO"}
+
+command="%%PREFIX%%/bin/icinga"
+command_args="-d"
+extra_commands="checkconfig configtest"
+icinga_user="%%ICINGAUSER%%"
+icinga_group="%%ICINGAGROUP%%"
+command_user=${icinga_user}
+
+icinga_dir="%%ICINGADIR%%"
+icinga_logdir="%%ICINGALOGDIR%%"
+
+pidfile="${icinga_dir}/icinga.lock"
+icinga_logfile="${icinga_logdir}/${name}.log"
+icinga_statusfile="${icinga_dir}/status.sav"
+icinga_cmdfile="${icinga_dir}/rw/${name}.cmd"
+
+start_cmd="start_cmd"
+checkconfig_cmd="icinga_checkconfig verbose"
+configtest_cmd="${checkconfig_cmd}"
+start_precmd="start_precmd"
+stop_postcmd="stop_postcmd"
+restart_precmd="icinga_checkconfig"
+
+required_files="${icinga_configfile}"
+command_args="${command_args} ${icinga_configfile}"
+
+cacheconfig() {
+  if ! yesno icinga_precache; then
+    return 0
+  fi
+
+  echo -n "Pre-Caching icinga configuration: "
+  ${command} -pv ${icinga_configfile} 2>&1 >/dev/null
+  if [ $? != 0 ]; then
+    echo "FAILED"
+    ${command} -v ${icinga_configfile}
+    return 1
+  else
+    command_args="-u -x ${command_args}"
+    echo "OK"
+  fi
+}
+
+checkconfig() {
+  echo -n "Performing sanity check of icinga configuration: "
+
+  if [ "$1" != "verbose" ]; then
+    ${command} -v ${icinga_configfile} 2>&1 >/dev/null
+  else
+    ${command} -v ${icinga_configfile}
+  fi
+
+
+  if [ $? != 0 ]; then
+    echo "FAILED"
+    ${command} -v ${icinga_configfile}
+    return 1
+  else
+    echo "OK"
+  fi
+}
+
+start_pre() {
+  for d in "${icinga_dir}" \
+           "${icinga_dir}/checkresults" \
+           "${icinga_logdir}" \
+           "${icinga_logdir}/archives"; do
+    if [ ! -d "${d}" ]; then
+      install -d -o "${icinga_user}" -g "${icinga_group}" "${d}"
+    fi
+  done
+
+  if [ ! -d "${icingadir}/rw" ]; then
+    install -d -o "${icinga_user}" -g "%%WWWGRP%%" "${icinga_dir}"/rw
+  fi
+
+  if ! icinga_checkconfig; then
+    return 1
+  fi
+
+  if ! icinga_cacheconfig; then
+    return 1
+  fi
+
+  if [ ! -f "${icinga_logfile}" ]; then
+    install -o "${icinga_user}" -g "${icinga_group}" -m 644 /dev/null "${icinga_logfile}"
+  fi
+  if [ ! -f "${icinga_statusfile}" ]; then
+    install -o "${icinga_user}" -g "${icinga_group}" -m 644 /dev/null "${icinga_statusfile}"
+  fi
+  rm -f "${icinga_cmdfile}"
+}
+
+stop_post() {
+  rm -f "${icinga_dir}/icinga.tmp" "${icinga_cmdfile}"
+}
+
+depend() {
+	provide icinga
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

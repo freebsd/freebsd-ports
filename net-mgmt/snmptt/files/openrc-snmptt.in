@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable snmptt:
+#
+# snmptt_user:      The user account snmptt runs as what
+#                   you want it to be. It uses 'snmptt' user by
+#                   default.
+# snmptt_flags:     See snmptt documentation for flags.
+
+name=snmptt
+command=%%PREFIX%%/sbin/${name}
+command_args="--daemon > /dev/null 2>&1"
+
+: ${snmptt_user:="snmptt"}
+
+required_files=%%PREFIX%%/etc/snmp/${name}.ini

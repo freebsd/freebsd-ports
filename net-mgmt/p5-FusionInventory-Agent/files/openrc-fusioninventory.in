@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=fusioninventory
+pidfile=/var/run/${name}.pid
+
+command=%%PREFIX%%/bin/fusioninventory-agent
+command_args="--daemon --pidfile=${pidfile}"
+
+depend() {
+	keyword -shutdown
+}

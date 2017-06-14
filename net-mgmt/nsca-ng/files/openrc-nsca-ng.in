@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable nsca-ng:
+# nsca_ng_flags (str):      Empty by default.
+# nsca_ng_configfile (str): Set to "%%PREFIX%%/etc/nsca-ng.cfg" by default.
+
+name=nsca_ng
+description="Nagios Service Check Acceptor"
+
+command="%%PREFIX%%/sbin/nsca-ng"
+pidfile="/var/run/${name}.pid"
+
+nsca_ng_configfile=${nsca_ng_configfile:-"%%PREFIX%%/etc/nsca-ng.cfg"}
+
+required_files="${nsca_ng_configfile}"
+command_args="-c ${nsca_ng_configfile} -P ${pidfile}"
+
+depend() {
+	require nagios icinga
+	keyword -shutdown
+}

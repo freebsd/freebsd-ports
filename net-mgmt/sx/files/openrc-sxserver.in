@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name="sxserver"
+
+command="%%PREFIX%%/sbin/sxserver"
+command_args="start"
+
+stop_pre() {
+    eval "${command} stop"
+}
+
+restart_pre()
+{
+    eval "${command} restart"
+}

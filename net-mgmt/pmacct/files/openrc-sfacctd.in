@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# You can define flags for sfacctd running. 
+# See http://wiki.pmacct.net/OfficialConfigKeys for more details.
+#
+# Example:
+# sfacctd_flags="-f %%PREFIX%%/etc/sfacctd.conf -P mysql"
+#
+# Default flags: -f %%PREFIX%%/etc/sfacctd.conf
+
+name=sfacctd
+
+command=%%PREFIX%%/sbin/$name
+command_args="-D"
+
+# set defaults
+sfacctd_flags=${sfacctd_flags:-"-f %%PREFIX%%/etc/sfacctd.conf"}
+
+depend() {
+	use net
+	keyword -shutdown
+}

@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+choparp_iface=${choparp_iface-}
+choparp_macaddr=${choparp_macaddr-"auto"}
+choparp_network=${choparp_network-}
+
+name="choparp"
+
+start_pre() {
+	if [ -z "${choparp_iface}"   \
+	  -o -z "${choparp_macaddr}" \
+	  -o -z "${choparp_network}" ]; then
+		ewarn "set choparp_iface, choparp_macaddr and choparp_network."
+		return 1
+	fi
+}
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="${choparp_iface} ${choparp_macaddr} ${choparp_network}"
+
+depend() {
+	keyword -shutdown
+}

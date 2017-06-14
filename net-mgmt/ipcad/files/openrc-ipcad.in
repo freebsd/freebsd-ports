@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+#
+#
+# Add the following lines to /etc/rc.conf to run ipcad:
+#
+# ipcad_conf (file):		Set local of config file.
+#				Default is "%%PREFIX%%/etc/ipcad.conf".
+# ipcad_flags="<set as needed>"
+
+name="ipcad"
+
+: ${ipcad_conf="%%PREFIX%%/etc/ipcad.conf"}
+
+required_files="${ipcad_conf}"
+command=%%PREFIX%%/bin/ipcad
+command_args="-rds -c ${ipcad_conf}"
+
+depend() {
+	keyword -shutdown
+}

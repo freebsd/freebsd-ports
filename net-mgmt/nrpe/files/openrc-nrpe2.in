@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable nrpe2:
+# nrpe2_flags (str):      Not set by default.
+# nrpe2_configfile (str): Set to "%%PREFIX%%/etc/nrpe.cfg" by default.
+
+name=nrpe2
+
+: ${nrpe2_configfile:=%%PREFIX%%/etc/nrpe.cfg}
+
+required_files="${nrpe2_configfile}"
+command="%%PREFIX%%/sbin/nrpe2"
+command_args="-c ${nrpe2_configfile} -d"
+pidfile='%%PIDDIR%%/nrpe2.pid'
+
+start_pre() {
+	install -d -o ${nrpe_user:-nagios} ${pidfile}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

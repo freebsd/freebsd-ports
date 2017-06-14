@@ -1,0 +1,51 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable snmpd:
+#
+# snmpd_flags="<set as needed>"
+# snmpd_conffile="<set as needed>"
+
+name=snmpd
+
+snmpd_flush_cache=${snmpd_flush_cache-"NO"}
+pidfile=${snmpd_pidfile:-"/var/run/net_snmpd.pid"}
+command=%%PREFIX%%/sbin/${name}
+
+start_pre() {
+	local flag conffile snmpd_conffile_set
+
+	if yesno snmpd_flush_cache; then
+		rm -vf /var/net-snmp/.snmp-exec-cache
+	fi
+
+	for flag in ${snmpd_flags}; do
+		case "${flag}" in
+		-p*)
+			eerror "\$snmpd_flags includes -p option." \
+				"Please use \$snmpd_pidfile instead."
+			;;
+		-c*)
+			eerror "\$snmpd_flags includes -c option." \
+				"Please use \$snmpd_conffile instead."
+			;;
+		esac
+	done
+
+	for conffile in ${snmpd_conffile}; do
+		if [ -f "${conffile}" -a -s "${conffile}" ]; then
+		       snmpd_conffile_set="${snmpd_conffile_set},${conffile}"
+		else
+		       eerror "snmpd configuration file $conffile not found."
+		fi
+	done
+
+	# snmpd syntax requires that the listening address (if defined) be the last argument
+	if [ -n "${snmpd_conffile_set}" ]; then
+		command_args="-c ${snmpd_conffile_set#,}"
+	fi
+	command_args="-p ${pidfile}"
+}
+
+depend() {
+	keyword -shutdown
+}

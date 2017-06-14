@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# Add the following lines to /etc/rc.conf to run torrus_collector:
+#
+# torrus_collector_flags (flags):	Set extra flags here. More options in torrus_collector(1)
+#			Default is empty "".
+# torrus_collector_user (user):	Set user to run torrus_collector.
+#			Default is "torrus".
+
+name="torrus_collector"
+
+: ${torrus_collector_user="torrus"}
+
+command=%%PREFIX%%/libexec/torrus/collector
+
+start_pre() {
+	eval trees_collector=\"`/usr/bin/perl -e 'require "'%%PREFIX%%/share/torrus/conf_defaults/torrus-config.pl'";
+		while((my $key, $val) = each %Torrus::Global::treeConfig) {
+			print "$key " if $val->{run}{'collector'};
+		};'`\"
+
+	# Get the collector instance numbers for each tree
+	eval trees=\"\$\{trees_collector\}\"  
+	for t in ${trees}; do
+		eval col_inst_${t}=\"`/usr/bin/perl -e 'require "'%%PREFIX%%/share/torrus/conf_defaults/torrus-config.pl'";
+			print join(" ",
+			(0 .. $Torrus::Global::treeConfig{'${t}'}{run}{collector}-1))'`\"
+	done
+}
+
+start() {
+	eval trees=\"\$\{trees_collector\}\"
+    	for t in ${trees}; do
+		eval instances=\"\$\{col_inst_${t}\}\"
+		for i in ${instances}; do
+			einfo "starting Torrus collector instance ${i} for tree ${t}"
+			command_args="--tree=${t} --instance=${i}"
+			$command $command_args start
+		done
+	done
+}
+
+stop() {
+	start_pre
+	eval trees=\"\$\{trees_collector\}\"
+    	for t in ${trees}; do
+		eval instances=\"\$\{col_inst_${t}\}\"
+		for i in ${instances}; do
+			pidfile="/var/run/torrus/collector.${t}_${i}.pid"
+			einfo "stopping Torrus collector instance ${i} for tree ${t}"
+			$command "stop"
+			if [ -f $pidfile ]; then /bin/rm $pidfile; fi
+		done
+	done
+}
+
+depend() {
+	keyword -shutdown
+}
