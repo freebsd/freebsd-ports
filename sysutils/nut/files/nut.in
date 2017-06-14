@@ -15,9 +15,8 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-nut_enable=${nut_enable:-"NO"}
-nut_prefix=${nut_prefix:-"%%PREFIX%%"}
-nut_upsshut=${nut_upsshut:-"NO"}
+nut_enable=${nut_enable-"NO"}
+nut_prefix=${nut_prefix-"%%PREFIX%%"}
 
 . /etc/rc.subr
 
@@ -39,11 +38,7 @@ nut_prestart() {
 }
 
 nut_poststop() {
-	if ${nut_prefix}/sbin/upsdrvctl stop && checkyesno nut_upsshut; then
-		if ${nut_prefix}/sbin/upsmon -K; then
-			${nut_prefix}/sbin/upsdrvctl shutdown
-		fi
-	fi
+	${nut_prefix}/sbin/upsdrvctl stop
 }
 
 extra_commands=reload
