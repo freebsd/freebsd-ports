@@ -6,7 +6,7 @@ include/mtbl.h
 lib/libmtbl.a
 lib/libmtbl.so
 lib/libmtbl.so.1
-lib/libmtbl.so.1.0.0
+lib/libmtbl.so.1.0.1
 libdata/pkgconfig/libmtbl.pc
 man/man1/mtbl_dump.1.gz
 man/man1/mtbl_info.1.gz
