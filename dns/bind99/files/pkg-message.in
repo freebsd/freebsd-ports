@@ -12,4 +12,12 @@
 *                                                                    *
 *     The %%PREFIX%%/etc/rc.d/named script will do that for you.     *
 *                                                                    *
+*      If using syslog to log the BIND9 activity, and using a        *
+*     chroot'ed installation, you will need to tell syslog to        *
+*       install a log socket in the BIND9 chroot by running:         *
+*                                                                    *
+*            # sysrc altlog_proglist+=named                          *
+*                                                                    *
+*    And then restarting syslogd with: service syslogd restart       *
+*                                                                    *
 **********************************************************************
