@@ -1,2 +1,3 @@
-SHA256 (anholt-libepoxy-v1.3.1_GH0.tar.gz) = 6700ddedffb827b42c72cce1e0be6fba67b678b19bf256e1b5efd3ea38cc2bb4
-SIZE (anholt-libepoxy-v1.3.1_GH0.tar.gz) = 284227
+TIMESTAMP = 1496777736
+SHA256 (libepoxy-1.4.3.tar.xz) = 0b808a06c9685a62fca34b680abb8bc7fb2fda074478e329b063c1f872b826f6
+SIZE (libepoxy-1.4.3.tar.xz) = 783624
