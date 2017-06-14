@@ -17,8 +17,8 @@ bin/rspamc
 @sample %%ETCDIR%%/mid.inc.sample
 @sample %%ETCDIR%%/modules.conf.sample
 %%ETCDIR%%/modules.d/antivirus.conf
-%%ETCDIR%%/modules.d/asn.conf
 %%ETCDIR%%/modules.d/arc.conf
+%%ETCDIR%%/modules.d/asn.conf
 %%ETCDIR%%/modules.d/chartable.conf
 %%ETCDIR%%/modules.d/clickhouse.conf
 %%ETCDIR%%/modules.d/dcc.conf
@@ -68,11 +68,19 @@ bin/rspamc
 @sample %%ETCDIR%%/worker-controller.inc.sample
 @sample %%ETCDIR%%/worker-fuzzy.inc.sample
 @sample %%ETCDIR%%/worker-normal.inc.sample
+@sample %%ETCDIR%%/worker-proxy.inc.sample
 @sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
-%%ETCDIR%%/worker-proxy.inc
 etc/newsyslog.conf.d/rspamd.newsyslog.conf
 lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/effective_tld_names.dat
+%%DATADIR%%/lib/auth_results.lua
+%%DATADIR%%/lib/dkim_sign_tools.lua
+%%DATADIR%%/lib/fun.lua
+%%DATADIR%%/lib/global_functions.lua
+%%DATADIR%%/lib/lua_redis.lua
+%%DATADIR%%/lib/lua_util.lua
+%%DATADIR%%/lib/maps.lua
+%%DATADIR%%/lib/meta_functions.lua
 %%DATADIR%%/lua/antivirus.lua
 %%DATADIR%%/lua/arc.lua
 %%DATADIR%%/lua/asn.lua
@@ -115,14 +123,6 @@ lib/rspamd/librspamd-actrie.so
 %%DATADIR%%/lua/trie.lua
 %%DATADIR%%/lua/url_reputation.lua
 %%DATADIR%%/lua/whitelist.lua
-%%DATADIR%%/lib/auth_results.lua
-%%DATADIR%%/lib/dkim_sign_tools.lua
-%%DATADIR%%/lib/global_functions.lua
-%%DATADIR%%/lib/lua_redis.lua
-%%DATADIR%%/lib/lua_util.lua
-%%DATADIR%%/lib/maps.lua
-%%DATADIR%%/lib/meta_functions.lua
-%%DATADIR%%/lib/fun.lua
 %%DATADIR%%/rules/forwarding.lua
 %%DATADIR%%/rules/headers_checks.lua
 %%DATADIR%%/rules/html.lua

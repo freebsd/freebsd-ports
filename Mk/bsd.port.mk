@@ -483,7 +483,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  going locally to each port).
 #				  Default: ${PORTSDIR}/packages
 # WRKDIRPREFIX	- The place to root the temporary working directory
-#				  hierarchy.
+#				  hierarchy. This path must *not* end in '/'.
 #				  Default: none
 # WRKDIR		- A temporary working directory that gets *clobbered* on clean
 #				  Default: ${WRKDIRPREFIX}${.CURDIR}/work

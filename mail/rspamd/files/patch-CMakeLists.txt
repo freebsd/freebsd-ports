@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-01-17 14:11:25 UTC
+--- CMakeLists.txt.orig	2017-06-06 15:07:59 UTC
 +++ CMakeLists.txt
-@@ -1286,6 +1286,23 @@ ELSE(WANT_SYSTEMD_UNITS MATCHES "ON")
+@@ -1302,6 +1302,24 @@ ELSE(WANT_SYSTEMD_UNITS MATCHES "ON")
  ENDIF(WANT_SYSTEMD_UNITS MATCHES "ON")
  IF(BUILD_PORT)
  	INSTALL_IF_NOT_EXISTS(${MAIN_CONF} ${CONFDIR} "rspamd.conf" ".sample")
@@ -10,6 +10,7 @@
 +	INSTALL_IF_NOT_EXISTS("conf/worker-controller.inc" ${CONFDIR} "worker-controller.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/worker-fuzzy.inc" ${CONFDIR} "worker-fuzzy.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/worker-normal.inc" ${CONFDIR} "worker-normal.inc" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/worker-proxy.inc" ${CONFDIR} "worker-proxy.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/2tld.inc" ${CONFDIR} "2tld.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/mime_types.inc" ${CONFDIR} "mime_types.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/composites.conf" ${CONFDIR} "composites.conf" ".sample")
