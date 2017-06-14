@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.1
 CATEGORIES=	games
 MASTER_SITES=	http://ca.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
 		http://cz.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
