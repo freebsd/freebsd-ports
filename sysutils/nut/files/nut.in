@@ -15,8 +15,8 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-nut_enable=${nut_enable-"NO"}
-nut_prefix=${nut_prefix-"%%PREFIX%%"}
+nut_enable=${nut_enable:-"NO"}
+nut_prefix=${nut_prefix:-"%%PREFIX%%"}
 
 . /etc/rc.subr
 

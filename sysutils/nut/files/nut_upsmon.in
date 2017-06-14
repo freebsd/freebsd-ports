@@ -15,8 +15,8 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-nut_upsmon_enable=${nut_upsmon_enable-"NO"}
-nut_upsmon_prefix=${nut_upsmon_prefix-"%%PREFIX%%"}
+nut_upsmon_enable=${nut_upsmon_enable:-"NO"}
+nut_upsmon_prefix=${nut_upsmon_prefix:-"%%PREFIX%%"}
 
 . /etc/rc.subr
 
