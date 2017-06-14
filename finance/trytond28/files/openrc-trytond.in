@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+name=trytond
+
+trytond_config="${trytond_config:-"%%PREFIX%%/etc/trytond.conf"}"
+trytond_user="${trytond_user:-"trytond"}"
+trytond_logdir="${trytond_logdir:-"$(dirname `grep logfile %%PREFIX%%/etc/trytond.conf | awk -F "=" ' { print $2 } ' `)"}"
+
+command=%%PREFIX%%/bin/trytond
+command_args="--config=${trytond_config} >/dev/null 2>&1 &"
+command_user=${trytond_user}
+
+pidfile="${trytond_pidfile:-"$(grep pidfile %%PREFIX%%/etc/trytond.conf | awk -F "=" ' { print $2 } ' |sed 's/[ ]//g' )"}"
+required_files="${trytond_config}"
+
+start_pre() {
+	install -d -o ${trytond_user} -g ${trytond_user} $(dirname "${pidfile}") "${trytond_logdir}"
+}
+
+depend() {
+	need postgresql localmount
+	keyword -shutdown
+	after bootmisc
+}
