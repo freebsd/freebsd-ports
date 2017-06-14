@@ -30,7 +30,9 @@ PORTDOCS=	README.md
 
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/gogrepo.py ${STAGEDIR}${PREFIX}/bin/gogrepo
-		${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+		@${MKDIR} ${STAGEDIR}${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
