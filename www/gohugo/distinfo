@@ -1,6 +1,6 @@
-TIMESTAMP = 1497297338
-SHA256 (gohugo/spf13-hugo-v0.22_GH0.tar.gz) = c6ccf56e14cdca298d1e03d80e06860ff8174e81a18c3fa0d806d4b150954a05
-SIZE (gohugo/spf13-hugo-v0.22_GH0.tar.gz) = 10741655
+TIMESTAMP = 1497385590
+SHA256 (gohugo/spf13-hugo-v0.22.1_GH0.tar.gz) = cb7b5a653595e0c19f4509c15cd18a3d64df53689e6c028bdd9dfef74a4414ce
+SIZE (gohugo/spf13-hugo-v0.22.1_GH0.tar.gz) = 10740947
 SHA256 (gohugo/BurntSushi-toml-b26d9c3_GH0.tar.gz) = 9a822907202320fc6e49635c0b0e5efe455db3c8023e0e0903ca2a359d1f1f82
 SIZE (gohugo/BurntSushi-toml-b26d9c3_GH0.tar.gz) = 41562
 SHA256 (gohugo/PuerkitoBio-purell-b938d81_GH0.tar.gz) = b10cdc245094af0100616b8ea71cb68658b3dd29ce8fc32d0b956e1508288067
