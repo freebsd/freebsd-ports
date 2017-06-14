@@ -2,19 +2,16 @@
 #
 # Compile a port with SafeStack
 #
-# Feature:      safestack
-# Usage:        USES=safestack
+# Feature:	safestack
+# Usage:	USES=safestack or USES=safestack:args
+# Valid ARGS:	configure
 #
 # MAINTAINER:	shawn.webb@hardenedbsd.org
 
 .if !defined(_INCLUDE_USES_SAFESTACK_MK)
 _INCLUDE_USES_SAFESTACK_MK=    yes
 
-.if !empty(safestack_ARGS)
-IGNORE=			USES=safestack does not require args
-.endif
-
-.if ${SAFESTACK_ARGS:Mconfigure}
+.if ${safestack_ARGS:Mconfigure}
 CONFIGURE_ARGS+=	--enable-safestack
 .else
 CFLAGS+=		-fsanitize=safe-stack
