@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libevent.so:devel/libevent \
