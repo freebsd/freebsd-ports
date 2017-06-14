@@ -14,4 +14,4 @@ between these formats.
 Also part of the Toolkit are Python programs to create word counts,
 merge translations and perform various checks on PO and XLIFF files.
 
-WWW: http://translate.sourceforge.net/
+WWW: https://github.com/translate/translate/
