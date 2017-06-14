@@ -14,11 +14,10 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=autoreconf libtool pathfix
-GNU_CONFIGURE=yes
+USES=		autoreconf libtool pathfix
+GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ivmai
-GH_PROJECT=	libatomic_ops
 
 OPTIONS_DEFINE=	DOCS
 
