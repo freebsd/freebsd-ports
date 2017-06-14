@@ -1,3 +1,3 @@
-TIMESTAMP = 1488773295
-SHA256 (julia-0.5.1-full.tar.gz) = 533b6427a1b01bd38ea0601f58a32d15bf403f491b8415e9ce4305b8bc83bb21
-SIZE (julia-0.5.1-full.tar.gz) = 93326909
+TIMESTAMP = 1495877395
+SHA256 (julia-0.5.2-full.tar.gz) = f5ef56d79ed55eacba9fe968bb175317be3f61668ef93e747d76607678cc01dd
+SIZE (julia-0.5.2-full.tar.gz) = 93374133
