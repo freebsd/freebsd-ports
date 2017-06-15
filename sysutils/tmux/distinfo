@@ -1,5 +1,5 @@
-TIMESTAMP = 1493145411
-SHA256 (tmux-2.4.tar.gz) = 757d6b13231d0d9dd48404968fc114ac09e005d475705ad0cd4b7166f799b349
-SIZE (tmux-2.4.tar.gz) = 470549
+TIMESTAMP = 1497441574
+SHA256 (tmux-2.5.tar.gz) = ae135ec37c1bf6b7750a84e3a35e93d91033a806943e034521c8af51b12d95df
+SIZE (tmux-2.5.tar.gz) = 475717
 SHA256 (imomaliev-tmux-bash-completion-ef56d3e_GH0.tar.gz) = 2f8f3fe586bbdeec9b251ce3ef74f5edef19ba371968a8011acef860ddac59e1
 SIZE (imomaliev-tmux-bash-completion-ef56d3e_GH0.tar.gz) = 1526
