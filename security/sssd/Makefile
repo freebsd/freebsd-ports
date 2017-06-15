@@ -69,7 +69,8 @@ OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=	yes
 
 SMB_DESC=		Install IPA and AD providers (requires Samba4)
-SMB_USES=		samba:lib # libndr-krb5pac libndr-nbt libndr libsamba-util
+#SMB_USES=		samba:lib # libndr-krb5pac libndr-nbt libndr libsamba-util
+SMB_BUILD_DEPENDS=	samba46>=4.6.0:${PORTSDIR}/net/samba46
 SMB_CONFIGURE_WITH=	samba
 
 .include <bsd.port.options.mk>
