@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgxps
-PORTVERSION=	0.2.3.2
+PORTVERSION=	0.2.5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,14 +12,13 @@ COMMENT=	GObject based library for rendering XPS documents
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libtiff.so:graphics/tiff \
+		libpng16.so:graphics/png \
 		liblcms2.so:graphics/lcms2
 
-USES=		gettext gmake jpeg libtool libarchive pathfix pkgconfig tar:xz
+USES=		gettext gmake jpeg libtool libarchive localbase pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gnomeprefix glib20 intlhack
+USE_GNOME=	cairo glib20 gnomeprefix introspection:build
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-introspection \
-		--disable-compile-warnings
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
