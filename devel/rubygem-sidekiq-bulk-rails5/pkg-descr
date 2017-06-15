@@ -1,0 +1,3 @@
+Augments Sidekiq job classes with a push_bulk method for easier bulk pushing.
+
+WWW: https://github.com/aprescott/sidekiq-bulk
