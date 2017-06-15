@@ -1940,6 +1940,7 @@
     SUBDIR += rubygem-deckar01-task_list1
     SUBDIR += rubygem-domainatrix
     SUBDIR += rubygem-dropzonejs-rails
+    SUBDIR += rubygem-dropzonejs-rails07
     SUBDIR += rubygem-em-http-request
     SUBDIR += rubygem-em-socksify
     SUBDIR += rubygem-em-twitter
