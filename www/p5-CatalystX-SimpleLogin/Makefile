@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CatalystX-SimpleLogin
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	p5-Catalyst-Action-REST>=0.74:www/p5-Catalyst-Action-REST \
 		p5-CatalystX-Component-Traits>=0.13:www/p5-CatalystX-Component-Traits \
 		p5-CatalystX-InjectComponent>=0:www/p5-CatalystX-InjectComponent \
 		p5-HTML-FormHandler>=0.28001:www/p5-HTML-FormHandler \
-		p5-Moose-Autobox>=0.09:devel/p5-Moose-Autobox \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-MethodAttributes>=0.18:devel/p5-MooseX-MethodAttributes \
 		p5-MooseX-RelatedClassRoles>=0.004:devel/p5-MooseX-RelatedClassRoles \
