@@ -8,7 +8,7 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
+COMMENT=	Command line tool and library for transferring data with URLs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
