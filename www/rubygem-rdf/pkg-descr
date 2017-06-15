@@ -19,4 +19,4 @@ Features:
 * Performs auto-detection of input to select appropriate Reader class if one can
   not be determined from file characteristics.
 
-WWW: http://rubygems.org/gems/rdf
+WWW: http://ruby-rdf.github.io/

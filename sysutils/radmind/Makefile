@@ -15,7 +15,7 @@ LICENSE_NAME=	University of Michigan License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_OPENSSL=	yes
+USES=	ssl
 USE_RC_SUBR=	radmind
 MAKE_JOBS_UNSAFE=	yes
 
@@ -40,7 +40,7 @@ IGNORE_TIMESTAMPS_DESC=	Add '-t' option to fsdiff
 
 post-install:
 	# Ugly hack to remove generated man pages
-	${RM} -rf ${WRKSRC}/tmp
+	${RM} -r ${WRKSRC}/tmp
 
 	# Port's Docs (Copyright & wire protocol info)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -35,7 +35,7 @@
 +    snprintf (err->data, err->dsize, _("ifdef: too few arguments"));
 +    return (-1);
 +  }
-+  mutt_extract_token (tmp, s, M_TOKEN_SPACE);
++  mutt_extract_token (tmp, s, MUTT_TOKEN_SPACE);
 +
 +  if (res)
 +  {
@@ -67,7 +67,7 @@ diff -pruN mutt-1.5.4.orig/init.h mutt-1.5.4/init.h
 @@ -3715,6 +3716,7 @@
    { "hdr_order",	parse_list,		UL &HeaderOrderList },
  #ifdef HAVE_ICONV
-   { "iconv-hook",	mutt_parse_hook,	M_ICONVHOOK },
+   { "iconv-hook",	mutt_parse_hook,	MUTT_ICONVHOOK },
 +  { "ifdef",		parse_ifdef,		0 },
  #endif
    { "ignore",		parse_ignore,		0 },

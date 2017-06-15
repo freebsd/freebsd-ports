@@ -1,0 +1,4 @@
+gem-compare is a RubyGems plugin that helps to compare versions of the given
+gem. It searches for differences in metadata as well as in files.
+
+WWW: https://github.com/fedora-ruby/gem-compare

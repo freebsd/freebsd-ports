@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jquery-ui-rails
-PORTVERSION=	5.0.5
+PORTVERSION=	6.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails4

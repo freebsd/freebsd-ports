@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	an
-PORTVERSION=	0.95
+PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	DEBIAN_POOL
@@ -11,20 +11,15 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast anagram generator
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libicuuc.so:devel/icu
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USES=		gmake tar:xz
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz
-
-post-patch:
-	@${REINPLACE_CMD} -e '/<stdint.h>/d' ${WRKSRC}/an.c
-
-do-build:
-	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} an.c gan_qsort.c \
-		-o ${PORTNAME} ${LDFLAGS}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/an ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/an.6 ${STAGEDIR}${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>

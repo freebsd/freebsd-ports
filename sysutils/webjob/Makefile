@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	klm@uidzero.org
 COMMENT=	Download and execute a program over HTTP/HTTPS
 
+BROKEN_aarch64=	fails to build: aarch64 is not currently supported
+BROKEN_mips64=	fails to build: mips64 is not currently supported
+
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	tools/xshar/xshar
 GNU_CONFIGURE=	yes
@@ -33,7 +36,7 @@ PLIST_SUB+=		PAD_TOOLS="@comment "
 CONFIGURE_ARGS+=	--without-ssl
 PLIST_SUB+=		DSV_TOOLS="@comment "
 .else
-USE_OPENSSL=	yes
+USES+=	ssl
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .if ! ${PORT_OPTIONS:MDSV_TOOLS} # Note: DSV requires SSL
 PLIST_SUB+=		DSV_TOOLS="@comment "

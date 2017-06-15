@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -14,16 +15,14 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
 BROKEN_powerpc64=	Does not build
-BROKEN_FreeBSD_9=	Does not link
+BROKEN_sparc64=		Does not compile: error: to_string is not a member of std
 
-USES=		compiler:c++11-lib cpe gmake libtool pathfix pkgconfig ssl \
+USES=		compiler:c++11-lib cpe gmake libtool localbase:ldflags pathfix pkgconfig ssl \
 		tar:bzip2
 USE_LDCONFIG=	YES
 USE_SUBMAKE=	YES
 GNU_CONFIGURE=	YES
 INSTALL_TARGET=	install-strip
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-static \
 		--with-modules="" \
 		--with-dynmodules="pipe bind ${MODULES}" \
@@ -121,7 +120,7 @@ TINYDNS_DESC=		TinyDNS backend
 TOOLS_DESC=		Build extra tools
 ZEROMQ_DESC=		Enable ZeroMQ connector (Implies REMOTE enabled)
 
-post-stage::
+post-install::
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${STAGEDIR}${LOCALBASE}/sbin/pdns_server --module-dir=${STAGEDIR}${LOCALBASE}/lib/pdns --launch="pipe bind ${MODULES}" --config > ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 	@${REINPLACE_CMD} -e 's;${STAGEDIR};;' -i '' ${STAGEDIR}${EXAMPLESDIR}/pdns.conf

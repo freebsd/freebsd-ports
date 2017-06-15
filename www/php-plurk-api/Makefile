@@ -13,6 +13,8 @@ COMMENT=	Plurk API Implementation with PHP
 LICENSE=	BSD3CLAUSE
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -28,8 +30,6 @@ SUB_FILES=	pkg-message
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${CHMOD} 755 ${STAGEDIR}${WWWDIR}/example.php
 
 .include <bsd.port.mk>

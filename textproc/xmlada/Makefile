@@ -5,7 +5,7 @@ PORTNAME=	xmlada
 PORTVERSION=	17.0.0
 CATEGORIES=	textproc
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Adacore XML suite for the Ada language
 
 LICENSE=	GPLv3

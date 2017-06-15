@@ -2,12 +2,12 @@
 .\"     Title: talloc
 .\"    Author: [see the "AUTHOR" section]
 .\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
-.\"      Date: 05/13/2015
+.\"      Date: 2015-04-10
 .\"    Manual: System Administration tools
 .\"    Source: Samba 4.0
 .\"  Language: English
 .\"
-.TH "TALLOC" "3" "05/13/2015" "Samba 4\&.0" "System Administration tools"
+.TH "TALLOC" "3" "2015\-04\-10" "Samba 4\&.0" "System Administration tools"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -184,12 +184,12 @@ you can talloc_free() any parent of the original pointer\&. That will reduce the
 .sp -1
 .IP \(bu 2.3
 .\}
-you can talloc_free() the pointer itself\&. That will destroy the most recently established parent to the pointer and leave the pointer as a child of its current parent\&.
+you can talloc_free() the pointer itself if it has at maximum one parent\&. This behaviour has been changed since the release of version 2\&.0\&. Further informations in the description of "talloc_free"\&.
 .RE
 .PP
 For more control on which parent to remove, see
 \(lqtalloc_unlink()\(rq\&.
-.SS "int talloc_unlink(const void *ctx, const void *ptr);"
+.SS "int talloc_unlink(const void *ctx, void *ptr);"
 .PP
 The talloc_unlink() function removes a specific parent from
 \fIptr\fR\&. The

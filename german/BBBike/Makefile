@@ -76,19 +76,19 @@ do-build:
 	${MV} ${WRKSRC}/$f ${WRKSRC}/$f.tmp
 	${ECHO_CMD} "#! ${PERL}" > ${WRKSRC}/$f
 	${CAT} ${WRKSRC}/$f.tmp >> ${WRKSRC}/$f
-	${RM} -f ${WRKSRC}/$f.tmp
+	${RM} ${WRKSRC}/$f.tmp
 	${CHMOD} 0755 ${WRKSRC}/$f
 .endfor
 
 do-install:
-	-${RM} -rf ${MYDESTDIR}
+	-${RM} -r ${MYDESTDIR}
 	${INSTALL_MAN} ${WRKSRC}/bbbike.1 ${STAGEDIR}${PREFIX}/man/man1
 	${FIND} ${WRKSRC} | ${XARGS} ${CHMOD} ugo+r
 	${FIND} ${WRKSRC} -perm -u=x | ${XARGS} ${CHMOD} go+x
 	${CP} -rp ${WRKSRC} ${MYDESTDIR}
-	${RM} -f ${MYDESTDIR}/bbbike.1
+	${RM} ${MYDESTDIR}/bbbike.1
 .for f in ${BBBIKE_PERL_EXE}
-	-${RM} -f ${STAGEDIR}${PREFIX}/bin/$f
+	-${RM} ${STAGEDIR}${PREFIX}/bin/$f
 	${LN} -s  ../BBBike/$f ${STAGEDIR}${PREFIX}/bin/$f
 .endfor
 

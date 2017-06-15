@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s2n
-PORTVERSION=	20160628
+PORTVERSION=	20170202
 CATEGORIES=	security
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -10,9 +10,11 @@ COMMENT=	C99 implementation of the TLS/SSL protocols
 
 LICENSE=	APACHE20
 
+ONLY_FOR_ARCHS=	amd64
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
-GH_TAGNAME=	2bae833
+GH_TAGNAME=	c8e42e2
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -23,15 +25,7 @@ NO_CONFIGURE=	yes
 SUB_FILES=	pkg-message Makefile
 ALL_TARGET=	bin
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
-CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS |&+|' ${WRKSRC}/s2n.mk
 	@${REINPLACE_CMD} -e 's|CRYPTO_LDFLAGS |&+|' \
 		${WRKSRC}/tests/testlib/Makefile \
 		${WRKSRC}/tests/unit/Makefile
@@ -47,6 +41,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/Makefile ${STAGEDIR}${EXAMPLESDIR}
 
 tests: build
-	${GMAKE} PLATFORM=FreeBSD CRYPTO_LDFLAGS=-L${LOCALBASE}/lib -C ${WRKSRC}/tests
+	${GMAKE} PLATFORM=FreeBSD S2N_DONT_MLOCK=yes \
+		CRYPTO_LDFLAGS=-L${LOCALBASE}/lib -C ${WRKSRC}/tests
 
 .include <bsd.port.mk>

@@ -3,7 +3,6 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.1.11
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -15,7 +14,7 @@ COMMENT=	File server for Mac OS X
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
 USES=		bdb:5+ gettext gmake iconv libtool perl5 pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	yes
@@ -62,11 +61,11 @@ LDAP_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LDAP_USE=	OPENLDAP=yes
 LDAP_CONFIGURE_OFF=	--without-ldap
 SENDFILE_CONFIGURE_ENABLE=sendfile
-DBUS_USES=	python:3
+DBUS_USES=	python:2
 DBUS_USE=	GNOME=glib20
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 			libdbus-1.so:devel/dbus
-DBUS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py3-dbus
+DBUS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus
 MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_OFF=--with-mysql-config=/nonexistent
 ACL_LIB_DEPENDS=	libsunacl.so:sysutils/libsunacl

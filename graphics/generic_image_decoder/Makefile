@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	generic_image_decoder
-PORTVERSION=	05
-PORTREVISION=	1
+PORTVERSION=	06
 CATEGORIES=	graphics
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	gid-${PORTVERSION}
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Ada library for decoding various image formats inc. animations
 
 LICENSE=	MIT

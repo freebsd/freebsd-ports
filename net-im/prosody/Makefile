@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prosody
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.12
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 		http://redundancy.redundancy.org/mirror/
@@ -13,9 +13,9 @@ COMMENT=	Simple extensible XMPP server written in Lua
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket \
-		${LUA_MODLIBDIR}/ssl.so:security/luasec \
-		${LUA_MODLIBDIR}/lxp.so:textproc/luaexpat \
+RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket-51 \
+		${LUA_MODLIBDIR}/ssl.so:security/luasec-51 \
+		${LUA_MODLIBDIR}/lxp.so:textproc/luaexpat-51 \
 		${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem-51
 
 LIB_DEPENDS=	libidn.so:dns/libidn

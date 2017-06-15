@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
+CONFLICTS=	logstash5-[0-9]*
+
 USES=		cpe
 CPE_VENDOR=	elasticsearch
 USE_JAVA=	yes

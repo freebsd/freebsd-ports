@@ -3,6 +3,7 @@
 
 PORTNAME=	cgicc
 PORTVERSION=	3.2.16
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	GNU
 
@@ -11,7 +12,7 @@ COMMENT=	C++ class library for writing CGI applications
 
 LICENSE=	LGPL3+
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOXYGEN
 
 USES=		gmake pathfix libtool
 GNU_CONFIGURE=	yes
@@ -24,8 +25,8 @@ CXXFLAGS+=	-Wno-unknown-pragmas
 
 PORTDOCS=	*
 
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOCS_CONFIGURE_ENV_OFF=	ac_cv_prog_DOXYGEN="${ECHO_CMD}"
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_DOXYGEN="${ECHO_CMD}"
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	pslist
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://devel.ringlet.net/sysutils/pslist/
+MASTER_SITES=	http://devel.ringlet.net/files/sys/pslist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Utility to view or send signals to processes with all their children
 
+LICENSE=	BSD2CLAUSE
+#LICENSE_FILE=	${WRKSRC}/README # License on 4th paragraph
+
+NO_ARCH=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	pslist

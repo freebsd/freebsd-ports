@@ -99,7 +99,7 @@ Regex_LIB_DEPENDS=	libpcre.so:devel/pcre
 SQLite3_USES=		sqlite:3
 SampleRateConverter_LIB_DEPENDS=\
 			libsamplerate.so:audio/libsamplerate
-Socket_LIB_DEPENDS=	libevent.so:devel/libevent2
+Socket_LIB_DEPENDS=	libevent.so:devel/libevent
 TagLib_LIB_DEPENDS=	libtag.so:audio/taglib
 Theora_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 TokyoCabinet_LIB_DEPENDS=	\

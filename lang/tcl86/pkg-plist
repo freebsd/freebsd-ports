@@ -31,6 +31,7 @@ include/tcl%%TCL_VER%%/generic/tclTomMathDecls.h
 include/tcl%%TCL_VER%%/generic/tommath.h
 include/tcl%%TCL_VER%%/unix/tclUnixPort.h
 include/tcl%%TCL_VER%%/unix/tclUnixThrd.h
+%%DTRACE%%include/tcl%%TCL_VER%%/unix/tclDTrace.h
 include/tcl%%TCL_VER%%/tcl.h
 include/tcl%%TCL_VER%%/tclDecls.h
 include/tcl%%TCL_VER%%/tclPlatDecls.h
@@ -261,6 +262,7 @@ lib/tcl%%TCL_VER%%/parray.tcl
 lib/tcl%%TCL_VER%%/safe.tcl
 lib/tcl%%TCL_VER%%/tclAppInit.c
 lib/tcl%%TCL_VER%%/tclConfig.sh
+%%DTRACE%%lib/tcl%%TCL_VER%%/tclDTrace.d
 lib/tcl%%TCL_VER%%/tclIndex
 lib/tcl%%TCL_VER%%/tclooConfig.sh
 lib/tcl%%TCL_VER%%/tm.tcl

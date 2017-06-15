@@ -2,6 +2,7 @@
 
 PORTNAME=	ge-x2212
 PORTVERSION=	0.0.2010.09.15
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://members.shaw.ca/swstuff/ \
 		LOCAL/makc

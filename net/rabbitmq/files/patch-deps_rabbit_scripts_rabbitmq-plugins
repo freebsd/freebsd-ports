@@ -1,0 +1,10 @@
+--- deps/rabbit/scripts/rabbitmq-plugins.orig	2016-11-22 00:22:17 UTC
++++ deps/rabbit/scripts/rabbitmq-plugins
+@@ -25,6 +25,7 @@ if [ -z "$ERL_CRASH_DUMP_SECONDS" ]; the
+ fi
+ 
+ RABBITMQ_USE_LONGNAME=${RABBITMQ_USE_LONGNAME} \
++HOME=/var/db/rabbitmq \
+ exec ${ERL_DIR}erl \
+     -pa "${RABBITMQ_HOME}/ebin" \
+     -noinput \

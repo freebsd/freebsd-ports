@@ -1,0 +1,5 @@
+This library provides primitives to interface with pseudo terminal devices as
+well as a KProcess derived class for running child processes and communicating
+with them using a pty.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kpty/html/index.html

@@ -18,12 +18,10 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 CONFLICTS=	folks-0.4.[0-9]*
 
 USE_LDCONFIG=	yes
-USES=		gettext libtool gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	evolutiondataserver3 intlhack introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-bluez-backend
-CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=deprecated-declarations
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml

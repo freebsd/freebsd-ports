@@ -1,6 +1,18 @@
---- configure.orig	2014-06-25 04:04:20.000000000 -0300
-+++ configure	2014-06-25 04:04:05.000000000 -0300
-@@ -18682,7 +18682,7 @@
+--- configure.orig	2016-04-22 16:19:50 UTC
++++ configure
+@@ -18716,9 +18716,9 @@ then
+     as_fn_error $? "Please install zlib and zlib-devel packages" "$LINENO" 5
+ else
+ 
+-    vuln=`grep "ZLIB_VERSION \"1.2.0" $ZLIB_HOME/include/zlib.h`
++    vuln=`grep "ZLIB_VERSION \"1.2.0\"" $ZLIB_HOME/include/zlib.h`
+     if test -z "$vuln"; then
+-	vuln=`grep "ZLIB_VERSION \"1.2.1" $ZLIB_HOME/include/zlib.h`
++	vuln=`grep "ZLIB_VERSION \"1.2.1\"" $ZLIB_HOME/include/zlib.h`
+     fi
+ 
+     if test -n "$vuln"; then
+@@ -20758,7 +20758,7 @@ $as_echo "#define C_BSD 1" >>confdefs.h
      ;;
  freebsd*)
      if test "$have_pthreads" = "yes"; then
@@ -9,7 +21,7 @@
  	TH_SAFE="-thread-safe"
      fi
  
-@@ -18858,7 +18858,7 @@
+@@ -20934,7 +20934,7 @@ esac
  if test "$have_milter" = "yes"; then
  
          save_LIBS="$LIBS"

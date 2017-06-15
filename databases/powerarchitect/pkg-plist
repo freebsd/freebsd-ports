@@ -7,7 +7,7 @@ bin/powerarchitect
 %%DATADIR%%/lib/commons-beanutils-bean-collections.jar
 %%DATADIR%%/lib/commons-beanutils-core.jar
 %%DATADIR%%/lib/commons-beanutils.jar
-%%DATADIR%%/lib/commons-codec-20041127.091804.jar
+%%DATADIR%%/lib/commons-codec-1.10.jar
 %%DATADIR%%/lib/commons-collections-3.2.1.jar
 %%DATADIR%%/lib/commons-dbcp-1.2.2.jar
 %%DATADIR%%/lib/commons-digester.jar
@@ -20,7 +20,7 @@ bin/powerarchitect
 %%DATADIR%%/lib/edtftpj-1.5.4.jar
 %%DATADIR%%/lib/eigenbase-properties.jar
 %%DATADIR%%/lib/forms-1.3.0.jar
-%%DATADIR%%/lib/google-collect-1.0.jar
+%%DATADIR%%/lib/guava-11.0.2.jar
 %%DATADIR%%/lib/httpclient-4.0.jar
 %%DATADIR%%/lib/httpcore-4.0.1.jar
 %%DATADIR%%/lib/httpmime-4.0.jar
@@ -42,7 +42,7 @@ bin/powerarchitect
 %%DATADIR%%/lib/piccolo.jar
 %%DATADIR%%/lib/piccolox.jar
 %%DATADIR%%/lib/rsyntaxtextarea.jar
-%%DATADIR%%/lib/servlet-api-2.5.jar
+%%DATADIR%%/lib/servlet-api-3.0.jar
 %%DATADIR%%/lib/spring-core.jar
 %%DATADIR%%/lib/spring-security-core-2.0.5.RELEASE.jar
 %%DATADIR%%/lib/sqlpower_library.jar

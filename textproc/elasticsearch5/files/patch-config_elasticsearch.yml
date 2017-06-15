@@ -1,0 +1,18 @@
+--- config/elasticsearch.yml.orig	2016-11-24 10:05:27 UTC
++++ config/elasticsearch.yml
+@@ -31,10 +31,15 @@
+ # Path to directory where to store the data (separate multiple locations by comma):
+ #
+ #path.data: /path/to/data
++path.data: /var/db/elasticsearch
+ #
+ # Path to log files:
+ #
+ #path.logs: /path/to/logs
++path.logs: /var/log/elasticsearch
++#
++# Path to scripts dir:
++path.scripts: /usr/local/libexec/elasticsearch
+ #
+ # ----------------------------------- Memory -----------------------------------
+ #

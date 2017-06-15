@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-table-python
-PORTREVISION=	0
+PORTREVISION=	2
 
 COMMENT=	Python table support for OpenSMTPD
 

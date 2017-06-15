@@ -8,4 +8,4 @@ It adds user authentication and SSL support along with tab-completion and
 paging. It's compatble with MRI 1.9, or any other VM with support for Fibers
 and EventMachine.
 
-WWW: http://github.com/simulacre/pry-remote-em
+WWW: https://github.com/simulacre/pry-remote-em

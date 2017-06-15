@@ -2,9 +2,7 @@
 
 PORTNAME=	marble
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	astro kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	astro kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE

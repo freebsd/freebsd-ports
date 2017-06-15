@@ -19,7 +19,6 @@ GH_ACCOUNT=	meduketto
 GH_TAGNAME=	6cddfef
 
 USES=		autoreconf libtool makeinfo pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

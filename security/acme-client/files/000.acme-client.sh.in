@@ -9,50 +9,32 @@ fi
 PATH=$PATH:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
 export PATH
 
-case "$weekly_letskencrypt_enable" in
-    [Yy][Ee][Ss])
-        echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-        echo '!! WARNING: letskencrypt has been renamed to acme-client !!'
-        echo '!! rename all weekly_letskencrypt_* periodic variables   !!'
-        echo '!! to         weekly_acme_client_* in your periodic.conf !!'
-        echo '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-        : ${weekly_acme_client_enable:=$weekly_letskencrypt_enable}
-        : ${weekly_acme_client_renewscript:=$weekly_letskencrypt_renewscript}
-        : ${weekly_acme_client_domains:=$weekly_letskencrypt_domains}
-        : ${weekly_acme_client_challengedir:=$weekly_letskencrypt_challengedir}
-        : ${weekly_acme_client_args:=$weekly_letskencrypt_args}
-        : ${weekly_acme_client_deployscript:=$weekly_letskencrypt_deployscript}
-        ;;
-    *)
-        ;;
-esac
-
 case "$weekly_acme_client_enable" in
     [Yy][Ee][Ss])
 	echo
 	echo "Checking Let's Encrypt certificate status:"
 
-        : ${weekly_acme_client_args:="-b"}
-
 	if [ -x "$weekly_acme_client_renewscript" ] ; then
 		$weekly_acme_client_renewscript
 	else
+		: ${weekly_acme_client_args:="-b"}
 		if [ -z "$weekly_acme_client_domains" ] ; then
-			weekly_acme-client_domains=$(hostname -f)
+			weekly_acme_client_domains=$(hostname -f)
 			echo "Using hostname: $weekly_acme_client_domains"
 		fi
 		if [ -n "$weekly_acme_client_challengedir" ] ; then
-			weekly_acme-client_args="$weekly_acme_client_args -C $weekly_acme_client_challengedir"
+			weekly_acme_client_args="$weekly_acme_client_args -C $weekly_acme_client_challengedir"
 		fi
 		%%LOCALBASE%%/bin/acme-client $weekly_acme_client_args $weekly_acme_client_domains
 	fi
 
-	echo "Deploying Let's Encrypt certificates:"
-
-	if [ -x "$weekly_acme_client_deployscript" ] ; then
-		$weekly_acme_client_deployscript
-	else
-		echo 'Skipped, deploy script not set.'
+	if [ -n "$weekly_acme_client_deployscript" ] ; then
+		if [ -x "$weekly_acme_client_deployscript" ] ; then
+			echo "Deploying Let's Encrypt certificates:"
+			$weekly_acme_client_deployscript
+		else
+			echo 'Skipped, deploy script does not exist or is not executable'
+		fi
 	fi
         ;;
     *)

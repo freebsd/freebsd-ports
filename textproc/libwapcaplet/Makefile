@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	libwapcaplet
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	String internment library
 
 LICENSE=	MIT

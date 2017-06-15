@@ -1,6 +1,6 @@
---- utests/CMakeLists.txt.orig	2015-02-02 21:01:26.000000000 +0100
-+++ utests/CMakeLists.txt	2015-02-02 22:19:04.185677000 +0100
-@@ -230,12 +230,12 @@
+--- utests/CMakeLists.txt.orig	2017-01-20 10:40:51 UTC
++++ utests/CMakeLists.txt
+@@ -333,12 +333,12 @@ list (GET GBE_BIN_GENERATER -1 GBE_BIN_F
  if(GEN_PCI_ID)
    ADD_CUSTOM_COMMAND(
    OUTPUT ${kernel_bin}.bin

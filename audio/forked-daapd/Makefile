@@ -3,6 +3,7 @@
 
 PORTNAME=	forked-daapd
 PORTVERSION=	24.1
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	takumiiinn@gmail.com
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libavahi-client.so:net/avahi-app \
 		libavcodec.so:multimedia/ffmpeg \
 		libconfuse.so:devel/libconfuse \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libgcrypt.so:security/libgcrypt \
 		libinotify.so:devel/libinotify \
 		libmxml.so:textproc/mxml \
@@ -52,14 +53,7 @@ LASTFM_CONFIGURE_ENABLE=lastfm
 LASTFM_LIB_DEPENDS=	libcurl.so:ftp/curl
 MPD_CONFIGURE_ENABLE=	mpd
 
-.include <bsd.port.pre.mk>
-
-# Ensure FreeBSD 9 can find zlib library
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000712
-CONFIGURE_ENV+=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
-.endif
-
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/forked-daapd.conf ${STAGEDIR}${PREFIX}/etc/forked-daapd.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oauth2
-PORTVERSION=	1.9.0.post1
+DISTVERSION=	1.9.0.post1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ OPTIONS_DEFINE=		TESTS
 TESTS_DESC=		Install test suite requirements
 TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
 

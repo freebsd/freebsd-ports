@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reimplementation of Atomic Bomber Man
 
 LICENSE=	GPLv2
@@ -27,7 +27,7 @@ DESKTOP_ENTRIES="BomberMan clone" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-extract:
-	@${FIND} ${WRKSRC} -type d -name CVS | ${XARGS} ${RM} -rf ;
+	@${FIND} ${WRKSRC} -type d -name CVS | ${XARGS} ${RM} -r ;
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/games/${PACKAGE}|share/${PACKAGE}|' \

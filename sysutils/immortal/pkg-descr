@@ -1,0 +1,13 @@
+A *nix cross-platform (OS agnostic) supervisor
+
+immortal runs a command or script detached from the controlling terminal
+as a Unix daemon, it will supervise and restart the service if it has
+been terminated. The service can be controlled by querying a Unix socket
+"immortal.sock", this allows to remotely have full control over the service if
+required by exposing the socket using a web server like Nginx.
+
+immortal    - Starts and monitor a service
+immortaldir - Directory to scan for services *.yml
+immortalctl - Control existing services
+
+WWW: https://immortal.run

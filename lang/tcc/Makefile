@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	TinyCC
 GH_PROJECT=	tinycc
 
-USES=		gmake makeinfo perl5 tar:bzip2
+USES=		gmake makeinfo perl5
 USE_PERL5=	build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}"

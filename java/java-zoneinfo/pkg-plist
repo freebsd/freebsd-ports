@@ -121,6 +121,7 @@ share/java/zi/America/Port-au-Prince
 share/java/zi/America/Port_of_Spain
 share/java/zi/America/Porto_Velho
 share/java/zi/America/Puerto_Rico
+share/java/zi/America/Punta_Arenas
 share/java/zi/America/Rainy_River
 share/java/zi/America/Rankin_Inlet
 share/java/zi/America/Recife
@@ -161,6 +162,7 @@ share/java/zi/Asia/Anadyr
 share/java/zi/Asia/Aqtau
 share/java/zi/Asia/Aqtobe
 share/java/zi/Asia/Ashgabat
+share/java/zi/Asia/Atyrau
 share/java/zi/Asia/Baghdad
 share/java/zi/Asia/Baku
 share/java/zi/Asia/Bangkok
@@ -176,6 +178,7 @@ share/java/zi/Asia/Dhaka
 share/java/zi/Asia/Dili
 share/java/zi/Asia/Dubai
 share/java/zi/Asia/Dushanbe
+share/java/zi/Asia/Famagusta
 share/java/zi/Asia/Gaza
 share/java/zi/Asia/Hebron
 share/java/zi/Asia/Ho_Chi_Minh
@@ -207,7 +210,6 @@ share/java/zi/Asia/Pontianak
 share/java/zi/Asia/Pyongyang
 share/java/zi/Asia/Qatar
 share/java/zi/Asia/Qyzylorda
-share/java/zi/Asia/Rangoon
 share/java/zi/Asia/Riyadh
 share/java/zi/Asia/Sakhalin
 share/java/zi/Asia/Samarkand
@@ -227,6 +229,7 @@ share/java/zi/Asia/Urumqi
 share/java/zi/Asia/Ust-Nera
 share/java/zi/Asia/Vladivostok
 share/java/zi/Asia/Yakutsk
+share/java/zi/Asia/Yangon
 share/java/zi/Asia/Yekaterinburg
 share/java/zi/Asia/Yerevan
 share/java/zi/Atlantic/Azores
@@ -316,6 +319,7 @@ share/java/zi/Europe/Prague
 share/java/zi/Europe/Riga
 share/java/zi/Europe/Rome
 share/java/zi/Europe/Samara
+share/java/zi/Europe/Saratov
 share/java/zi/Europe/Simferopol
 share/java/zi/Europe/Sofia
 share/java/zi/Europe/Stockholm

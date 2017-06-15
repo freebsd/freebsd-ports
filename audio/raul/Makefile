@@ -3,7 +3,7 @@
 
 PORTNAME=	raul
 PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -20,10 +20,6 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-MAKE_ARGS=	--verbose
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libraul.so

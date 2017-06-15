@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-fuzzy-logic-toolkit
 PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -22,7 +22,7 @@ do-build:
 	@${DO_NADA}
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

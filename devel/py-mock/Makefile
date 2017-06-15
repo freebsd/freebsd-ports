@@ -14,7 +14,7 @@ COMMENT=	Mock unit tests for Python
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.3:devel/py-pbr \
-		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.3:devel/py-pbr \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six
 TESTS_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox

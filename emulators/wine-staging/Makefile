@@ -9,7 +9,7 @@ CONFLICTS_INSTALL=	wine-[0-9]* wine-devel-[0-9]* i386-wine-[0-9]* \
 			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
 
 OPTIONS_SLAVE=	STAGING
-OPTIONS_SET=	LIBXSLT MPG123 HAL V4L X11
+OPTIONS_DEFAULT=	LIBXSLT MPG123 HAL V4L X11
 
 MASTERDIR=	${.CURDIR}/../wine-devel
 PLIST=		${MASTERDIR}/pkg-plist

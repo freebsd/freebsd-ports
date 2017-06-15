@@ -1,11 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	hyperscan
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
-MASTER_SITES=	SF/boost/boost/1.59.0:boost
-DISTFILES=	boost_1_59_0.tar.gz:boost
+MASTER_SITES=	SF/boost/boost/1.61.0:boost
+DISTFILES=	boost_1_61_0.tar.gz:boost
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	High-performance multiple regex matching library
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	ragel:devel/ragel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	01org
-USES=	compiler:c++11-lib cmake:outsource python:build pkgconfig
+USES=	compiler:c++11-lib cmake:outsource pathfix python:build
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	SSSE3 is required for work
 
@@ -25,23 +26,15 @@ SHARED_DESC=		Build shared library
 NATIVE_DESC=		Build with native CPU tunes
 OPTIONS_DEFAULT=	SHARED
 
-.ifndef DEBUG_FLAGS
-CMAKE_BUILD_TYPE=	Release
-.else
-CMAKE_BUILD_TYPE=	Debug
-.endif
+CMAKE_ARGS+=	-DBOOST_ROOT=${WRKDIR}/boost_1_61_0
 
-CMAKE_ARGS+=	-DBOOST_ROOT=${WRKDIR}/boost_1_59_0
+NATIVE_CXXFLAGS=	-march=native -mtune=native
+NATIVE_CFLAGS=		-march=native -mtune=native
+
+NATIVE_CXXFLAGS_OFF=	-march=core2
+NATIVE_CFLAGS_OFF=	-march=core2
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNATIVE}
-CXXFLAGS+=	-march=native -mtune=native
-CFLAGS+=	-march=native -mtune=native
-.else
-CXXFLAGS+=	-march=core2
-CFLAGS+=	-march=core2
-.endif
 
 .if ${PORT_OPTIONS:MSHARED}
 CMAKE_ARGS+=	-DBUILD_STATIC_AND_SHARED=ON
@@ -52,9 +45,11 @@ PLIST_SUB+=	SHARED="" \
 PLIST_SUB+=	SHARED="@comment "
 .endif
 
-post-stage:
-	${MV} ${STAGEDIR}/${PREFIX}/lib/pkgconfig/libhs.pc \
-		${STAGEDIR}/${PREFIX}/libdata/pkgconfig/
-	${RMDIR} ${STAGEDIR}/${PREFIX}/lib/pkgconfig/
+# don't build hsbench tool
+post-patch:
+	${RM} ${WRKSRC}/tools/CMakeLists.txt
+
+do-test:
+	cd ${BUILD_WRKSRC} && ${MAKE_CMD} unit
 
 .include <bsd.port.mk>

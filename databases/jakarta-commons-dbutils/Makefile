@@ -17,25 +17,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	${INSTALL_DATA} ${WRKSRC}/commons-dbutils-1.6.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [DONE]"
-	@${ECHO_MSG} -n ">> Installing documentation..."
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/apidocs && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt \
-		${STAGEDIR}${DOCSDIR}/
-	@${ECHO_MSG} " [DONE]"
+	@cd ${WRKSRC}/apidocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

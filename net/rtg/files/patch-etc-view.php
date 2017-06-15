@@ -1,5 +1,5 @@
---- etc/view.php.orig	2003-09-26 16:58:34.000000000 +0100
-+++ etc/view.php	2014-06-22 15:24:14.720483023 +0100
+--- etc/view.php.orig	2003-09-26 15:58:34 UTC
++++ etc/view.php
 @@ -11,10 +11,8 @@
    print "<HTML>\n<!-- RTG Version $VERSION -->\n<HEAD>\n";
  

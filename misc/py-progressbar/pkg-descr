@@ -13,4 +13,5 @@ There are three types of widget:
 - a ProgressBarWidgetHFill, which is like ProgressBarWidget, except
   it expands to fill the remaining width of the line.
 
-WWW: http://code.google.com/p/python-progressbar
+WWW: https://pypi.python.org/pypi/progressbar
+WWW: https://github.com/niltonvolpato/python-progressbar

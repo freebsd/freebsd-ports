@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ytnef
-PORTVERSION=	2.6
-PORTREVISION=	2
+PORTVERSION=	1.9.2
+DISTVERSIONPREFIX=	v
+PORTEPOCH=	1
 CATEGORIES=	converters mail
-MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unpack data in MS Outlook TNEF format
@@ -13,25 +13,25 @@ COMMENT=	Unpack data in MS Outlook TNEF format
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libytnef.so:devel/libytnef
 RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
-USES=		perl5 shebangfix
-SHEBANG_FILES=	src/ytnef/*.pl
+USE_GITHUB=	yes
+GH_ACCOUNT=	Yeraze
+
+USES=		autoreconf libtool pathfix perl5 shebangfix
+SHEBANG_FILES=	ytnef/ytnefprocess
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-PORTDOCS=	AUTHORS NEWS README
-PLIST_FILES=	bin/ytnef bin/ytnefprint bin/ytnefprocess.pl
+PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|' \
-		${WRKSRC}/src/ytnef/*.pl
+	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
+		${WRKSRC}/ytnef/ytnefprocess
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

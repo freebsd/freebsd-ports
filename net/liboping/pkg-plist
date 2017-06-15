@@ -8,7 +8,7 @@ lib/liboping.so.0.2.11
 %%SITE_ARCH%%/Net/Oping.pm
 %%SITE_ARCH%%/auto/Net/Oping/Oping.so
 %%PERL5_MAN3%%/Net::Oping.3.gz
-lib/pkgconfig/liboping.pc
+libdata/pkgconfig/liboping.pc
 man/man3/liboping.3.gz
 man/man3/ping_construct.3.gz
 man/man3/ping_get_error.3.gz

@@ -38,15 +38,6 @@ CONFLICTS=	vsftpd-3* vsftpd${SSL_SUFFIX}${PKGNAMESUFFIX2}-3*
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-.if exists(/usr/bin/clang)
-CC=		clang
-.else
-BUILD_DEPENDS+=	clang33:lang/clang33
-CC=		clang33
-.endif
-.endif
-
 .if ${PORT_OPTIONS:MRC_SCRIPT}
 USE_RC_SUBR=	vsftpd
 .endif

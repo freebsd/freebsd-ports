@@ -1,3 +1,6 @@
+%%PYHELPERS%%bin/g-lensfun-update-data
+%%PYHELPERS%%bin/lensfun-add-adapter
+%%PYHELPERS%%bin/lensfun-update-data
 include/lensfun/lensfun.h
 lib/liblensfun.so
 lib/liblensfun.so.1
@@ -56,3 +59,6 @@ libdata/pkgconfig/lensfun.pc
 %%DATADIR%%/version_1/slr-vivitar.xml
 %%DATADIR%%/version_1/slr-zeiss.xml
 %%DATADIR%%/version_1/timestamp.txt
+%%PYHELPERS%%%%PYTHON_SITELIBDIR%%/lensfun-0.3.2-py%%PYTHON_VER%%.egg-info
+%%PYHELPERS%%%%PYTHON_SITELIBDIR%%/lensfun/__init__.py
+%%PYHELPERS%%%%PYTHON_SITELIBDIR%%/lensfun/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc

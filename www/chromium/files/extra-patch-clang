@@ -27,17 +27,6 @@
    if (*ptr == kFinalTlsValue)
      return;  // We've been called enough times.
    ASSERT_LT(kFinalTlsValue, *ptr);
---- base/tracked_objects.cc 2015-04-15 00:31:20.000000000 +0200
-+++ base/tracked_objects.cc 2015-04-18 21:57:33.000000000 +0200
-@@ -425,7 +425,7 @@
-   }
-   // We must NOT do any allocations during this callback.
-   // Using the simple linked lists avoids all allocations.
--  DCHECK_EQ(this->next_retired_worker_, reinterpret_cast<ThreadData*>(NULL));
-+  DCHECK_EQ(this->next_retired_worker_, static_cast<ThreadData*>(NULL));
-   this->next_retired_worker_ = first_retired_worker_;
-   first_retired_worker_ = this;
- }
 --- base/tracked_objects_unittest.cc.orig   2015-08-22 15:01:51.000000000 -0400
 +++ base/tracked_objects_unittest.cc    2015-09-03 09:20:53.370191000 -0400
 @@ -58,9 +58,9 @@
@@ -52,17 +41,6 @@
    }
 
    // Helper function to verify the most common test expectations.
---- components/sync_sessions/synced_session_tracker.cc.orig	2016-01-21 13:04:41.772845558 +0100
-+++ components/sync_sessions/synced_session_tracker.cc	2016-01-21 13:05:17.652842509 +0100
-@@ -286,7 +286,7 @@
-   }
-   DCHECK(window_ptr);
-   DCHECK_EQ(window_ptr->window_id.id(), window_id);
--  DCHECK_EQ(reinterpret_cast<sessions::SessionWindow*>(NULL),
-+  DCHECK_EQ(static_cast<sessions::SessionWindow*>(NULL),
-             GetSession(session_tag)->windows[window_id]);
-   GetSession(session_tag)->windows[window_id] = window_ptr;
- }
 --- media/audio/audio_output_proxy_unittest.cc	2015-04-15 00:18:55.000000000 +0200
 +++ media/audio/audio_output_proxy_unittest.cc	2015-04-18 22:02:38.000000000 +0200
 @@ -387,7 +387,7 @@
@@ -74,26 +52,17 @@
 
      EXPECT_CALL(callback_, OnError(_))
          .Times(2);
---- third_party/hunspell/src/hunspell/affentry.hxx.orig 2015-07-21 18:46:37.322427000 -0400
-+++ third_party/hunspell/src/hunspell/affentry.hxx  2015-07-21 18:48:02.034251000 -0400
-@@ -27,7 +27,7 @@
-   struct hentry *      checkword(const char * word, int len, char in_compound,
-                             const FLAG needflag = FLAG_NULL);
-
--  struct hentry *      check_twosfx(const char * word, int len, char in_compound, const FLAG needflag = NULL);
-+  struct hentry *      check_twosfx(const char * word, int len, char in_compound, const FLAG needflag = 0);
-
-   char *      check_morph(const char * word, int len, char in_compound,
-                             const FLAG needflag = FLAG_NULL);
-@@ -90,7 +90,7 @@
- //                    const FLAG cclass = FLAG_NULL, const FLAG needflag = FLAG_NULL, char in_compound=IN_CPD_NOT);
-                     const FLAG cclass = FLAG_NULL, const FLAG needflag = FLAG_NULL, const FLAG badflag = 0);
-
--  struct hentry *   check_twosfx(const char * word, int len, int optflags, PfxEntry* ppfx, const FLAG needflag = NULL);
-+  struct hentry *   check_twosfx(const char * word, int len, int optflags, PfxEntry* ppfx, const FLAG needflag = 0);
-
-   char *      check_twosfx_morph(const char * word, int len, int optflags,
-                  PfxEntry* ppfx, const FLAG needflag = FLAG_NULL);
+--- third_party/libjingle_xmpp/task_runner/taskrunner.cc.orig	2017-04-19 19:06:52 UTC
++++ third_party/libjingle_xmpp/task_runner/taskrunner.cc
+@@ -95,7 +95,7 @@ void TaskRunner::InternalRunTasks(bool i
+   std::vector<Task *>::iterator it;
+   it = std::remove(tasks_.begin(),
+                    tasks_.end(),
+-                   reinterpret_cast<Task *>(NULL));
++                   static_cast<Task *>(NULL));
+ 
+   tasks_.erase(it, tasks_.end());
+ 
 --- third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-15 00:31:48.000000000 +0200
 +++ third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-18 22:05:41.000000000 +0200
 @@ -439,7 +439,7 @@
@@ -140,15 +109,4 @@
 +    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
                      CMapFormat::kFormat4, cmap_id) {
  }
-
---- third_party/webrtc/base/taskrunner.cc	2015-04-15 00:32:17.000000000 +0200
-+++ third_party/webrtc/base/taskrunner.cc	2015-04-18 22:10:53.000000000 +0200
-@@ -102,7 +102,7 @@
-   std::vector<Task *>::iterator it;
-   it = std::remove(tasks_.begin(),
-                    tasks_.end(),
--                   reinterpret_cast<Task *>(NULL));
-+                   static_cast<Task *>(NULL));
-
-   tasks_.erase(it, tasks_.end());
 

@@ -4,4 +4,4 @@ and insert data into a database. Reverse engineering database schemas from
 existing databases is also supported. The format is compatible with both
 PEAR::MDB and Metabase.
 
-WWW: http://pear.php.net/package/MDB2_Schema/
+WWW: https://pear.php.net/package/MDB2_Schema

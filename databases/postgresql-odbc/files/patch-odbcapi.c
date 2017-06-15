@@ -1,10 +1,10 @@
---- odbcapi.c.orig	2016-01-10 13:25:14 UTC
+--- odbcapi.c.orig	2017-02-03 13:05:10 UTC
 +++ odbcapi.c
 @@ -913,11 +913,7 @@ RETCODE		SQL_API
  SQLExtendedFetch(HSTMT hstmt,
  				 SQLUSMALLINT fFetchType,
  				 SQLLEN irow,
--#if defined(WITH_UNIXODBC) && (SIZEOF_LONG != 8)
+-#if defined(WITH_UNIXODBC) && (SIZEOF_LONG_INT != 8)
 -				 SQLROWSETSIZE *pcrow,
 -#else
  				 SQLULEN *pcrow,

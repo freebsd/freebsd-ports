@@ -3,7 +3,7 @@
 
 PORTNAME=	agave
 PORTVERSION=	0.4.7
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://download.gna.org/colorscheme/releases/
 
@@ -33,6 +33,8 @@ OPTIONS_DEFINE=		GNOME
 
 GNOME_USE=		gnome=libgnomeui
 GNOME_CONFIGURE_ENABLE=	gnome
+
+BROKEN_aarch64=		Fails to compile: variable has incomplete type union compat_IEEEl2bits
 
 post-patch:
 	@${REINPLACE_CMD} -e \

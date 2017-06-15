@@ -21,6 +21,6 @@ load_rc_config $name
 
 command=%%PREFIX%%/bin/${name}
 pidfile="/var/run/${name}.pid"
-required_files=%%PREFIX%%/etc/${name}.conf
+required_files=%%ETCDIR%%/${name}.conf
 
 run_rc_command "$1"

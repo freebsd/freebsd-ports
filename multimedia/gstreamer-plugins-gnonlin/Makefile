@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer-plugins-gnonlin
 PORTVERSION=	0.10.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
 DISTNAME=	gnonlin-${PORTVERSION}

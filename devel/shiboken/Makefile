@@ -3,7 +3,7 @@
 
 PORTNAME=	shiboken
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://download.qt-project.org/official_releases/pyside/
 

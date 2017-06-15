@@ -206,5 +206,3 @@
 %%PYTHON_SITELIBDIR%%/Ice/Ice_ServantLocator_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_SliceChecksumDict_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Version_ice.py
-bin/slice2py
-man/man1/slice2py.1.gz

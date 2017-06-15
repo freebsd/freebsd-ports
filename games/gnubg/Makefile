@@ -3,6 +3,7 @@
 
 PORTNAME=	gnubg
 PORTVERSION=	1.05.002
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://files.gnubg.org/media/sources/
 DISTFILES=	gnubg-release-${PORTVERSION}-sources.tar.gz
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-CONFIGURE_ARGS=	--with-board3d --with-sqlite --with-python=${LOCALBASE}/bin/python
+CONFIGURE_ARGS=	--with-board3d --with-sqlite --with-python=${PYTHON_CMD}
 CONFIGURE_ENV=	ac_cv_path_ARTSC_CONFIG=no ac_cv_path_LIBART_CONFIG=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

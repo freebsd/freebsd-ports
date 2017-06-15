@@ -1,6 +1,6 @@
---- Makefile.am.orig	2015-09-10 09:19:15.000000000 +0200
-+++ Makefile.am	2015-09-10 09:21:00.000000000 +0200
-@@ -150,15 +150,6 @@
+--- Makefile.am.orig	2016-10-02 15:13:51 UTC
++++ Makefile.am
+@@ -176,15 +176,6 @@ patchlist.c: $(srcdir)/PATCHES $(srcdir)
  	$(srcdir)/patchlist.sh < $(srcdir)/PATCHES > patchlist.c
  
  install-exec-hook:

@@ -2,7 +2,7 @@
 
 PORTNAME=	libevhtp
 PORTVERSION=	1.2.11
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	ultima1252@gmail.com
@@ -11,7 +11,7 @@ COMMENT=	Flexible replacement for libevent httpd API
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ellzey

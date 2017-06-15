@@ -3,6 +3,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
@@ -35,14 +36,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	LIBCHECK
 LIBCHECK_DESC=	Unit tests support
 LIBCHECK_CONFIGURE_ENABLE=	check
-LIBCHECK_LIB_DEPENDS=	libcheck.so:devel/libcheck
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
-.endif
+LIBCHECK_LIB_DEPENDS=	libcheck.so:devel/check
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \

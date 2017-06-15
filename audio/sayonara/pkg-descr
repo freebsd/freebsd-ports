@@ -1,0 +1,15 @@
+Sayonara is a small, clear, and fast audio player for Unix-like systems,
+written in C++ on Qt 5.x framework and using GStreamer as audio backend.
+
+Although Sayonara is considered as a lightweight player, it holds a lot
+of features to organize even big music collections.
+
+Most of them are known from the bigger and well known audio players. But
+in contrast to most of the other players the main focus during developing
+has been performance, low CPU usage, and low memory consumption.
+
+So Sayonara is a good alternative to players like Rhythmbox, Clementine,
+or Amarok.  Those who miss Winamp for Unix should give Sayonara a try.
+One of Sayonara's goals is intuitive and easy usability.
+
+WWW: http://www.sayonara-player.com/

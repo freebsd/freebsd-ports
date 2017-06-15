@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nzbget
-PORTVERSION=	16.4
-PORTREVISION=	3
+PORTVERSION=	17.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	news
 
 MAINTAINER=	toxic@doobie.com
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-USES=		ncurses pkgconfig shebangfix
+USES=		ncurses pkgconfig shebangfix compiler:c++14-lang
 USE_RC_SUBR=	nzbget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libcurses-includes=${NCURSESINC} \
@@ -33,7 +33,7 @@ USE_GITHUB=	yes
 OPTIONS_DEFINE=	7Z PYTHON RAR DOCS
 OPTIONS_SINGLE=	TLSLIB
 OPTIONS_SINGLE_TLSLIB=	GNUTLS OPENSSL
-OPTIONS_DEFAULT=	GNUTLS PAR PYTHON RAR 7Z
+OPTIONS_DEFAULT=	OPENSSL PAR PYTHON RAR 7Z
 7Z_DESC=	Support extraction of 7z archives
 PYTHON_DESC=	Support for python post-processing scripts
 RAR_DESC=	Support extraction of rar archives
@@ -47,7 +47,7 @@ RAR_RUN_DEPENDS=	unrar:archivers/unrar
 OPENSSL_CONFIGURE_ON=	--with-tlslib=OpenSSL \
 			--with-openssl-includes=${OPENSSLINC} \
 			--with-openssl-libraries=${OPENSSLLIB}
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 
 GNUTLS_CONFIGURE_ON=	--with-tlslib=GnuTLS
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \

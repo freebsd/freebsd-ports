@@ -4,4 +4,4 @@ In addition to simple TCP sockets, it is moving towards transparent
 support for additional abstractions in a seamless manner, such as
 SSL and Socks5 proxies.
 
-WWW: http://sourceforge.net/projects/kageki
+WWW: https://sourceforge.net/projects/kageki/

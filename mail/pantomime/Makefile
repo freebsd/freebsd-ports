@@ -15,8 +15,7 @@ LICENSE=	LGPL21
 # The use of libiconv shouldn't be necessary, but a build dependency installs
 # it and we end up picking up the header.
 MAKE_ARGS+=	LIBRARIES_DEPEND_UPON='${ICONV_LIB} -lssl'
-USES=		gnustep iconv
-USE_OPENSSL=	yes
+USES=		gnustep iconv ssl
 USE_GNUSTEP=	back build
 USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 

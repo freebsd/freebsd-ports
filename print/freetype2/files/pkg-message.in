@@ -1,0 +1,19 @@
+The 2.7.x series now uses the new subpixel hinting mode (V40 port's option) as
+the default, emulating a modern version of ClearType. This change inevitably
+leads to different rendering results, and you might change port's options to
+adapt it to your taste (or use the new "FREETYPE_PROPERTIES" environment
+variable).
+
+The environment variable "FREETYPE_PROPERTIES" can be used to control the
+driver properties. Example:
+
+FREETYPE_PROPERTIES=truetype:interpreter-version=35 \
+	cff:no-stem-darkening=1 \
+	autofitter:warping=1
+
+This allows to select, say, the subpixel hinting mode at runtime for a given
+application.
+
+The controllable properties are listed in the section "Controlling FreeType
+Modules" in the reference's table of contents
+(%%DOCSDIR%%/reference/ft2-toc.html, if documentation was installed).

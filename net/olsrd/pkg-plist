@@ -1,5 +1,4 @@
 sbin/olsrd
-%%ETCDIR%%/olsrd.conf.default.full
 %%ETCDIR%%/olsrd.conf.default.rfc
 %%ETCDIR%%/olsrd.conf.default.lq
 lib/olsrd_dot_draw.so.0.3
@@ -7,6 +6,7 @@ lib/olsrd_httpinfo.so.0.1
 lib/olsrd_jsoninfo.so.0.0
 lib/olsrd_mini.so.0.1
 lib/olsrd_nameservice.so.0.3
+lib/olsrd_netjson.so.1.0
 lib/olsrd_pgraph.so.1.1
 lib/olsrd_secure.so.0.6
 lib/olsrd_txtinfo.so.0.1

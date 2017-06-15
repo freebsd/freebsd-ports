@@ -21,7 +21,7 @@ RE2C_RUN_DEPENDS=	re2c:devel/re2c
 
 USE_PHP=	spl
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--enable-spl-types
 CFLAGS+=	-I${LOCALBASE}/include

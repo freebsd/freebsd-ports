@@ -1,0 +1,5 @@
+gsh is a command line utility which is used to run the same command on multiple
+remote hosts in parallel. It is similar to dsh (distributed shell) but
+does not have any external dependencies other than Perl and OpenSSH.
+
+WWW: https://github.com/kees/gsh/

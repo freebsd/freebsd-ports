@@ -1,0 +1,11 @@
+--- DESCRIPTION.orig	2013-12-23 12:54:37 UTC
++++ DESCRIPTION
+@@ -8,7 +8,7 @@ Maintainer: Yohei Sato <yohei0511@gmail.
+ Description: Japanese stock market from Yahoo!-finance-Japan
+ License: BSD 3-clause License
+ LazyLoad: yes
+-Depends: XML,xts
++Depends: RCurl,XML,xts
+ Repository: CRAN
+ Date/Publication: 2013-08-13 09:37:24
+ Packaged: 2013-08-12 15:06:46 UTC; yokkuns

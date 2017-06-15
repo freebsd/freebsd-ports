@@ -2,4 +2,4 @@ CLucene is a C++ port of Lucene: the high-performance,
 full-featured text search engine written in Java.
 CLucene is faster than lucene as it is written in C++.
 
-WWW: http://sourceforge.net/projects/clucene/
+WWW: https://sourceforge.net/projects/clucene/

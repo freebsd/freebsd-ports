@@ -1,0 +1,21 @@
+--- lang/python/Makefile.in.orig	2016-11-16 12:46:35 UTC
++++ lang/python/Makefile.in
+@@ -756,7 +756,7 @@ config.h:
+ all-local: copystamp
+ 	for PYTHON in $(PYTHONS); do \
+ 	  CFLAGS="$(CFLAGS)" \
+-	    $$PYTHON setup.py build --verbose ; \
++	    $$PYTHON setup.py build --verbose build_ext --swig=$(SWIG) ; \
+ 	done
+ 
+ dist/gpg-$(VERSION).tar.gz dist/gpg-$(VERSION).tar.gz.asc: copystamp
+@@ -792,7 +792,8 @@ install-exec-local:
+ 	rm -f install_files.txt
+ 	for PYTHON in $(PYTHONS); do \
+ 	  $$PYTHON setup.py install \
+-	  --prefix $(DESTDIR)$(prefix) \
++	  -c -O1 --prefix=$(prefix) \
++	  --root=$(DESTDIR) \
+ 	  --record files.txt \
+ 	  --verbose ; \
+ 	  cat files.txt >> install_files.txt ; \

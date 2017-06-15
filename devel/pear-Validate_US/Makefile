@@ -5,12 +5,12 @@ PORTNAME=	Validate_US
 PORTVERSION=	0.5.5
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR data validation class for US
 
 BUILD_DEPENDS=	pear-Validate>=0.5.0:devel/pear-Validate
 RUN_DEPENDS=	pear-Validate>=0.5.0:devel/pear-Validate
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

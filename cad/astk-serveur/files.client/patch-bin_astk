@@ -1,5 +1,5 @@
---- bin/astk.orig	2011-12-20 13:33:00.000000000 +0100
-+++ bin/astk	2012-05-08 12:31:09.000000000 +0200
+--- bin/astk.orig	2015-08-05 15:37:44 UTC
++++ bin/astk
 @@ -17,15 +17,9 @@
  #    1 AVENUE DU GENERAL DE GAULLE, 92141 CLAMART CEDEX, FRANCE.
  # ==============================================================================
@@ -9,19 +9,18 @@
 -    local bin=`dirname $this`
 -    prefix=`dirname $bin`
 -}
+-
+-set_prefix $0
 +prefix=%%inst_dir%%/ASTK_CLIENT
  
--set_prefix $0
--
 -ASTER_ROOT=$prefix
 +ASTER_ROOT=?ASTER_ROOT?
  ASTER_ETC=$ASTER_ROOT/etc
  if [ "$ASTER_ROOT" = "/usr" ]; then
      ASTER_ETC=/etc
-@@ -43,5 +37,5 @@
+@@ -43,4 +37,4 @@ if [ -z "$WISHEXECUTABLE" ]; then
     WISHEXECUTABLE=wish
  fi
  
 -$WISHEXECUTABLE $ASTER_ROOT/lib/astk/astk.tcl -- $* &
 +$WISHEXECUTABLE $prefix/lib/astk.tcl -- $* &
- 

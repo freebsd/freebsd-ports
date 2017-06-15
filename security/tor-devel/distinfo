@@ -1,3 +1,3 @@
-TIMESTAMP = 1476741065
-SHA256 (tor-0.2.9.4-alpha.tar.gz) = fc5664fff4c86d3644043a068f11b17c57f9a295c37b7186bf90bb237913e400
-SIZE (tor-0.2.9.4-alpha.tar.gz) = 5481286
+TIMESTAMP = 1486672862
+SHA256 (tor-0.3.0.3-alpha.tar.gz) = 739adb4a7ae1eb12582a667d56f7e8348123b1e00fe9d8a6159776df6dba7a87
+SIZE (tor-0.3.0.3-alpha.tar.gz) = 5738504

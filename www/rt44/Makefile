@@ -29,14 +29,14 @@ NO_ARCH=	yes
 # builtin webserver, simply deselect all of the web options.
 #
 # See doc/full_text_indexing.pod if you need to set up full text
-# indexes on your ticket database.  PostgreSQL or Oracle are
+# indexes on your ticket database.  PostgreSQL is
 # recommended in this case: the MYSQL / SphinxSearch combination
 # mentioned in the docs is currently unsupported in the ports, but see
 # http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 OPTIONS_DEFINE=		DEVELOPER GD GPG GRAPHVIZ SMIME DOCS
 OPTIONS_SINGLE=		DB
-OPTIONS_SINGLE_DB=	MYSQL ORACLE PGSQL SQLITE
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
 OPTIONS_RADIO=		WEB
 OPTIONS_RADIO_WEB=	AP_MODFASTCGI AP_MODPERL LIGHTTPD SPAWN_FCGI
 
@@ -86,8 +86,6 @@ MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
 
 PGSQL_RUN_DEPENDS=		${PGSQL_DEPS}
 
-ORACLE_RUN_DEPENDS=		${ORACLE_DEPS}
-
 SQLITE_RUN_DEPENDS=		${SQLITE_DEPS}
 
 DEVELOPER_DESC=			Configure for developers
@@ -114,8 +112,8 @@ BUILD_DEPENDS+=	${RUN_DEPENDS}
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MMYSQL} && !${PORT_OPTIONS:MPGSQL} && \
-	! ${PORT_OPTIONS:MORACLE} && !${PORT_OPTIONS:MSQLITE}
-IGNORE=	please select one of MYSQL, PGSQL, ORACLE or SQLITE
+	!${PORT_OPTIONS:MSQLITE}
+IGNORE=	please select one of MYSQL, PGSQL or SQLITE
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -124,10 +122,6 @@ DB_TYPE=	mysql
 
 .if ${PORT_OPTIONS:MPGSQL}
 DB_TYPE=	Pg
-.endif
-
-.if ${PORT_OPTIONS:MORACLE}
-DB_TYPE=	Oracle
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
@@ -188,7 +182,7 @@ pre-fetch:
 .endif
 
 post-patch:
-	@${RM} -f ${WRKSRC}/lib/RT.pm.in.orig
+	@${RM} ${WRKSRC}/lib/RT.pm.in.orig
 	@${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!%%SITE_PERL%%!${PREFIX}/${SITE_PERL_REL}!g' ${WRKSRC}/config.layout
 	@${REINPLACE_CMD} -e 's!/path/to/your/etc!${RT_ETC_PATH}!g' ${WRKSRC}/etc/RT_SiteConfig.pm
@@ -196,10 +190,10 @@ post-patch:
 	    ${RM} ${WRKSRC}/lib/RT/Interface/CLI.pm.bak
 
 pre-install:
-	@${RM} -f ${WRKSRC}/lib/RT.pm.in
+	@${RM} ${WRKSRC}/lib/RT.pm.in
 
 post-install:
-	@${RM} -rf ${STAGEDIR}/${WWWDIR}${PKGNAMESUFFIX}
+	@${RM} -r ${STAGEDIR}/${WWWDIR}${PKGNAMESUFFIX}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/upgrade
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")

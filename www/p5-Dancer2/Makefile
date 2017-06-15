@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.202000
-PORTREVISION=	1
+PORTVERSION=	0.205000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,10 +12,10 @@ COMMENT=	Lightweight yet powerful web application framework
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny \
-		p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \
 		p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-ExtUtils-MakeMaker>=7.12:devel/p5-ExtUtils-MakeMaker \
@@ -28,23 +27,28 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Import-Into>=0:devel/p5-Import-Into \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
+		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Moo>=2.000000:devel/p5-Moo \
-		p5-MooX-Types-MooseLike>=0:devel/p5-MooX-Types-MooseLike \
 		p5-Plack>=1.0035:www/p5-Plack \
 		p5-Plack-Middleware-FixMissingBodyInRedirect>=0:www/p5-Plack-Middleware-FixMissingBodyInRedirect \
 		p5-Plack-Middleware-RemoveRedundantBody>=0:www/p5-Plack-Middleware-RemoveRedundantBody \
 		p5-Return-MultiLevel>=0:devel/p5-Return-MultiLevel \
 		p5-Role-Tiny>=2.000000:devel/p5-Role-Tiny \
 		p5-Safe-Isa>=0:devel/p5-Safe-Isa \
+		p5-Sub-Quote>=0:devel/p5-Sub-Quote \
 		p5-Template-Tiny>=0:textproc/p5-Template-Tiny \
+		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-Type-Tiny>=1.000006:devel/p5-Type-Tiny \
 		p5-URI>=0:net/p5-URI \
-		p5-libwww>=0:www/p5-libwww
+		p5-libwww>=0:www/p5-libwww \
+		p5-YAML>=0.86:textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+		p5-Exporter-Tiny>=0:devel/p5-Exporter-Tiny \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-LWP-Protocol-PSGI>=0.06:www/p5-LWP-Protocol-PSGI \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
-		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
+		p5-Test-EOL>=0:devel/p5-Test-EOL \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-MockTime>=0:devel/p5-Test-MockTime \

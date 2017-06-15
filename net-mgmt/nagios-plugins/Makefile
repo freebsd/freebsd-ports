@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	2.1.3
-PORTREVISION=	0
+PORTVERSION=	2.2.0
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/ \
@@ -17,8 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	monitoring-plugins-*
 
-USES=		charsetfix gmake perl5 libtool
-USE_OPENSSL=	yes
+USES=		charsetfix gmake perl5 libtool ssl
 USE_SUBMAKE=	yes
 
 OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 NLS DBI EXTRAOPTS SSH_PORTABLE
@@ -74,8 +73,8 @@ CONFIGURE_ARGS+=--with-nagios-user=${NAGIOSUSER} \
 CONFIGURE_ARGS+=ac_cv_path_PATH_TO_QMAIL_QSTAT=/var/qmail/bin/qmail-qstat \
 		ac_cv_path_PATH_TO_PING=/sbin/ping \
 		ac_cv_path_PATH_TO_PING6=/sbin/ping6 \
-		--with-ping-command="/sbin/ping -n -c %d %s" \
-		--with-ping6-command="/sbin/ping6 -n -c %d %s" \
+		--with-ping-command="/sbin/ping -n -t %d -c %d %s" \
+		--with-ping6-command="/sbin/ping6 -n -X %d -c %d %s" \
 		ac_cv_path_PATH_TO_SUDO=${LOCALBASE}/bin/sudo \
 		ac_cv_path_PATH_TO_SMBCLIENT=${LOCALBASE}/bin/smbclient
 
@@ -138,7 +137,7 @@ SSH_PORTABLE_CONFIGURE_ON=	--with-ssh-command=${LOCALBASE}/bin/ssh
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} > 1000055 && ${PORT_OPTIONS:MDNS_BASE}
+.if ${PORT_OPTIONS:MDNS_BASE}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dig-to-drill.diff
 CONFIGURE_ARGS+=--with-dig-command=/usr/bin/drill \
 		ac_cv_path_PATH_TO_NSLOOKUP=

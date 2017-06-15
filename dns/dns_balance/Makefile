@@ -2,23 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	dns_balance
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	dns
-MASTER_SITES=	http://www.netlab.cs.tsukuba.ac.jp/~yokota/archive/ \
-		http://BSDforge.com/projects/source/dns/dns_balance/
-DISTNAME=	DNS-Balance-${PORTVERSION}
+MASTER_SITES=	http://BSDforge.com/projects/source/dns/dns_balance/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Dynamic load-balancing DNS server
 
+LICENSE=	BSD2CLAUSE
+
 USE_RUBY=	yes
-USES=		shebangfix
+USES=		shebangfix tar:xz
 USE_RC_SUBR=	dns_balance
 
 NO_BUILD=	yes
-BROKEN_RUBY22=	yes
-BROKEN_RUBY23=	yes
 
 SHEBANG_FILES=	${WRKSRC}/dns_balance.rb \
 		${WRKSRC}/sample/makedb.rb \

@@ -14,6 +14,8 @@ COMMENT=	Free multi-platform Twitter client written in Python
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
@@ -28,7 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOS2UNIX_GLOB=	 *.py
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/twclient/simplejson
+	@${RM} -r ${WRKSRC}/twclient/simplejson
 	@${REINPLACE_CMD} -e "s|'simplejson|}, #&|" \
 		-e "s|pwParam|pwCache','&|" \
 		-e "s|d\[p\]|d\['share/'+p\]|g" \

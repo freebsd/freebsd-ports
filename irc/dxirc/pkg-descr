@@ -1,4 +1,10 @@
-dxirc is a simple IRC client for various os (Linux, *BSD, Windows), written
-using the FOX toolkit.
+dxirc is a simple, yet capable, cross-platform IRC client written
+in C++ for the FOX toolkit and the Qt toolkit.
+
+Features:
+ - Fully customizable look independent of system-wide settings
+ - Automated join to specified channels on selected server
+ - Support for multiple simultaneously connected servers
+ - Well-arranged and flexible configuration dialog
 
 WWW: http://www.dxirc.org/

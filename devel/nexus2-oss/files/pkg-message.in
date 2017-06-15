@@ -1,0 +1,31 @@
+========================================================================
+Nexus Repository Manager OSS %%VERSION%% has been successfully installed!
+
+To enable Nexus, add the following line to /etc/rc.conf[.local]:
+
+  %%NEXUS_RC%%_enable="YES"
+
+IMPORTANT: Nexus runs by default as user %%USER%%!
+
+Configuration
+=============
+* Start Nexus 'service %%NEXUS_RC%% start'
+* Open the following URL in your browser: http://localhost:8081/nexus
+* Log in with the admin account 'admin/admin123', configure Nexus and
+  change this password immediately!
+
+Common Locations
+================
+The configuration files can be found at:
+  %%ETCDIR%%
+
+The work, log, and run directories are located at:
+* %%WORKDIR%%
+* %%LOGDIR%%
+* %%RUNDIR%%
+
+Documentation
+=============
+Further documentation can be found in the official Nexus Book at:
+  http://books.sonatype.com/nexus-book/%%BOOKVERSION%%/reference/index.html
+========================================================================

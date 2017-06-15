@@ -1,6 +1,6 @@
 --- avidemux_core/ffmpeg_package/patches/configure.patch.orig	2015-06-01 05:59:45 UTC
 +++ avidemux_core/ffmpeg_package/patches/configure.patch
-@@ -0,0 +1,25 @@
+@@ -0,0 +1,16 @@
 +--- configure.orig	2015-03-16 20:26:04.000000000 +0100
 ++++ configure
 +@@ -2733,12 +2733,7 @@
@@ -17,12 +17,3 @@
 + cpu="generic"
 + intrinsics="none"
 + 
-+@@ -5621,7 +5616,7 @@
-+ SRC_PATH:=\$(SRC_PATH:.%=..%)
-+ endif
-+ CC_IDENT=$cc_ident
-+-ARCH=$arch
-++FFMPEG_ARCH=$arch
-+ INTRINSICS=$intrinsics
-+ CC=$cc
-+ CXX=$cxx

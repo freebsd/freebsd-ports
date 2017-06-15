@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gupnp-av
-PORTVERSION=	0.12.8
+PORTVERSION=	0.12.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -10,20 +11,18 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helpers for audio/video applications using GUPnP
 
 LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gobject-introspection>=0.9.5:devel/gobject-introspection \
-		gupnp>=0.19.0:net/gupnp
-LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp
-RUN_DEPENDS=	gupnp>=0.19.0:net/gupnp
+BUILD_DEPENDS=	gobject-introspection>=0.9.5:devel/gobject-introspection
 
 OPTIONS_DEFINE=	VALA
 OPTIONS_SUB=	yes
-VALA_DESC=	Vala binding (requires net/gssdp and net/gupnp with VALA enabled)
+VALA_DESC=	Vala binding
 
 CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_GNOME=	glib20 introspection:build
+USE_GNOME=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig tar:xz
 

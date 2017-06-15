@@ -15,11 +15,8 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 GH_MYTAG=	${DISTVERSIONPREFIX}${DISTVERSION:C/-[0-9]*$//}
 
-CPPFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
-
 OPTIONS_DEFINE=	TEST_PYTHON
 
-TEST_BUILD_DEPENDS=	googlemock>=1.6.0:devel/googlemock
 TEST_BROKEN=	logging.* tests always fail after 4e5fd111d84d
 
 TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}

@@ -4,4 +4,4 @@ This package used to be part of the Mail_Mime package, but has been split off.
 This class will parse a raw mime email and return the structure. Returned 
 structure is similar to that returned by imap_fetchstructure().
 
-WWW: http://pear.php.net/package/Mail_mimeDecode
+WWW: https://pear.php.net/package/Mail_mimeDecode

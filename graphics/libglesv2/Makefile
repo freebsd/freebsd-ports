@@ -8,12 +8,14 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL ES v2 library
 
+LICENSE=	MIT
+
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
 		libglapi.so:graphics/libglapi \
 		libexpat.so:textproc/expat2
 
 # stuff not needed by libglesv2 but configure wants it
-USE_XORG+=	glproto dri2proto xext xdamage xfixes presentproto \
+USE_XORG+=	dri2proto dri3proto glproto presentproto xdamage xext xfixes \
 		xshmfence
 
 .include <bsd.port.options.mk>
@@ -23,10 +25,5 @@ BUILD_WRKSRC=	${WRKSRC}/src/mapi
 INSTALL_WRKSRC=	${WRKSRC}/src/mapi
 
 .include "${.CURDIR}/../../graphics/libGL/Makefile.targets"
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/.mesa
-	@${MV} ${STAGEDIR}${PREFIX}/lib/libGLESv2.so* \
-		${STAGEDIR}${PREFIX}/lib/.mesa/
 
 .include <bsd.port.mk>

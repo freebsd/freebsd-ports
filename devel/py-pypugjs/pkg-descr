@@ -1,0 +1,6 @@
+PyPugJS is just a fork of PyJade with the name Jade changed to PugsJS.
+PyPugJS is a high performance port of PugJS for python,
+that converts any .pug source to the
+each Template-language (Django, Jinja2, Mako or Tornado).
+
+WWW: https://github.com/matannoam/pypugjs

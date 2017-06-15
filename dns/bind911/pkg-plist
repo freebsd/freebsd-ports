@@ -9,6 +9,15 @@ bin/mdig
 bin/named-rrchecker
 bin/nslookup
 bin/nsupdate
+etc/mtree/BIND.chroot.dist
+etc/mtree/BIND.chroot.local.dist
+%%ETCDIR%%/bind.keys
+%%ETCDIR%%/master/empty.db
+%%ETCDIR%%/master/localhost-forward.db
+%%ETCDIR%%/master/localhost-reverse.db
+@sample %%ETCDIR%%/named.conf.sample
+%%ETCDIR%%/named.root
+%%ETCDIR%%/rndc.conf.sample
 include/bind9/check.h
 include/bind9/getaddresses.h
 include/bind9/version.h
@@ -232,7 +241,6 @@ include/isccc/sexpr.h
 include/isccc/symtab.h
 include/isccc/symtype.h
 include/isccc/types.h
-include/pk11/site.h
 include/isccc/util.h
 include/isccc/version.h
 include/isccfg/aclconf.h
@@ -261,6 +269,7 @@ include/pk11/constants.h
 include/pk11/internal.h
 include/pk11/pk11.h
 include/pk11/result.h
+include/pk11/site.h
 include/pkcs11/cryptoki.h
 include/pkcs11/pkcs11.h
 include/pkcs11/pkcs11f.h
@@ -428,16 +437,7 @@ sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
 sbin/tsig-keygen
-%%ETCDIR%%/rndc.conf.sample
-%%ETCDIR%%/bind.keys
-%%NOBASE%%etc/mtree/BIND.chroot.dist
-%%NOBASE%%etc/mtree/BIND.chroot.local.dist
-%%NOBASE%%@sample %%ETCDIR%%/named.conf.sample
-%%NOBASE%%%%ETCDIR%%/named.root
-%%NOBASE%%%%ETCDIR%%/master/empty.db
-%%NOBASE%%%%ETCDIR%%/master/localhost-forward.db
-%%NOBASE%%%%ETCDIR%%/master/localhost-reverse.db
-%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/dynamic
-%%NOBASE%%@dir %%ETCDIR%%/master
-%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/slave
-%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/working
+@dir(bind,bind,) %%ETCDIR%%/dynamic
+@dir %%ETCDIR%%/master
+@dir(bind,bind,) %%ETCDIR%%/slave
+@dir(bind,bind,) %%ETCDIR%%/working

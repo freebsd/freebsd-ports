@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	madsonic
-PORTVERSION=	5.1.5250
+PORTVERSION=	6.1.8700
+PORTREVISION=	1
 CATEGORIES=	www java
-MASTER_SITES=	http://www.madsonic.org/download/5.1/
+MASTER_SITES=	http://madsonic.org/download/6.1/
 DISTFILES=	${DISTDATE}_${DISTNAME}-war-tomcat.zip \
 	${DISTDATE}_${DISTNAME}-war-jspc.zip
 
@@ -38,7 +39,7 @@ APE_DESC=	Depend on mac for Monkey's Audio transcoding #'
 OPTIONS_DEFAULT=	FFMPEG JETTY
 OPTIONS_SUB=	yes
 
-RUN_DEPENDS+=	${JAVAJARDIR}/servlet-api.jar:www/servlet-api \
+RUN_DEPENDS+=	${JAVALIBDIR}/servlet-api.jar:www/servlet-api \
 	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 TOMCAT8_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8
 TOMCAT8_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8
@@ -63,7 +64,7 @@ APE_RUN_DEPENDS=	mac:audio/mac
 .include <bsd.port.options.mk>
 
 NO_BUILD=	yes
-DISTDATE=	20150813
+DISTDATE=	20160915
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USES=	zip
@@ -132,11 +133,11 @@ pre-install:
 	@${ECHO} "@owner ${USER}" >> ${PLIST}
 	@${ECHO} "@group ${GROUP}" >> ${PLIST}
 	@cd ${WRKSRC}; ${FIND} . -type f | cut -c2- \
-		| ${SED} 's|^|${WEBAPPDIR:S,${PREFIX}/,,}/${PORTDIRNAME}|' \
+		| ${SED} 's|^|${WEBAPPDIR:S,${PREFIX}/,,}/${PORTNAME}|' \
 		| ${SORT} >> ${PLIST}
 	@${CAT} ${PKGDIR}/pkg-plist-chunk >> ${PLIST}
 	@cd ${WRKSRC}; ${FIND} . -type d | cut -c2- \
-		| ${SED} 's|^|@dir ${WEBAPPDIR:S,${PREFIX}/,,}/${PORTDIRNAME}|' \
+		| ${SED} 's|^|@dir ${WEBAPPDIR:S,${PREFIX}/,,}/${PORTNAME}|' \
 		| ${SORT} -r >> ${PLIST}
 	@${RM} ${PKGMESSAGE}
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
@@ -147,9 +148,8 @@ pre-install:
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
 
 do-install:
-	cd ${WRKDIR} && ${COPYTREE_SHARE} ${PORTDIRNAME} ${STAGEDIR}${WEBAPPDIR}
+	cd ${WRKDIR} && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${WEBAPPDIR}
 
-post-stage:
 	${MKDIR} ${STAGEDIR}${MADSONIC_HOME}
 	${MKDIR} ${STAGEDIR}${MADSONIC_HOME}/transcode
 

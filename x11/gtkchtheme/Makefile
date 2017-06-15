@@ -3,13 +3,16 @@
 
 PORTNAME=	gtkchtheme
 PORTVERSION=	0.3.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11
 MASTER_SITES=	http://plasmasturm.org/code/gtk-chtheme/
 DISTNAME=	gtk-chtheme-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 theme changer
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
@@ -19,6 +22,6 @@ PLIST_FILES=	bin/gtk-chtheme \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtk-chtheme ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gtk-chtheme.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gtk-chtheme.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

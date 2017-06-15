@@ -1,6 +1,6 @@
---- src/tcs/ps/tcsps.c.orig	2016-06-20 15:21:26 UTC
+--- src/tcs/ps/tcsps.c.orig	2016-11-19 03:09:49 UTC
 +++ src/tcs/ps/tcsps.c
-@@ -24,6 +24,11 @@
+@@ -30,6 +30,11 @@
  #define LE_16 htole16
  #define LE_32 htole32
  #define LE_64 htole64
@@ -12,7 +12,7 @@
  #else
  #define LE_16(x) (x)
  #define LE_32(x) (x)
-@@ -33,6 +38,26 @@
+@@ -39,6 +44,26 @@
  #include <fcntl.h>
  #include <limits.h>
  
@@ -39,7 +39,7 @@
  #include "trousers/tss.h"
  #include "trousers_types.h"
  #include "tcsps.h"
-@@ -43,6 +68,25 @@
+@@ -49,6 +74,25 @@
  #include "tcsd_wrap.h"
  #include "tcsd.h"
  

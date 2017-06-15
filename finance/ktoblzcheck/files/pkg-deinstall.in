@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "${2}" = "POST-DEINSTALL" ]; then
+	if [ -d %%DATADIR%% ]; then
+		echo ""
+		echo "--------------------------------------------------------------------"
+		echo "To completely remove the port, you may need to remove"
+		echo "the following directories and the content manually:"
+		echo ""
+		echo "	%%DATADIR%%"
+		echo "--------------------------------------------------------------------"
+		echo ""
+	fi
+fi

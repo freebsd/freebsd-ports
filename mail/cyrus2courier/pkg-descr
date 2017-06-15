@@ -1,4 +1,4 @@
 Convert a single mailbox from Cyrus-Imap into the Maildir++ format used by the
 Courier-IMAP and Dovecot IMAP servers.
 
-WWW: http://www.madness.at/projects/
+WWW: http://www.madness.at/projects/cyrus2courier/

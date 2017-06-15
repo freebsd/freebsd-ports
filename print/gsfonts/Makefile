@@ -3,7 +3,7 @@
 
 PORTNAME=	gsfonts
 PORTVERSION=	8.11
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	SF/gs-fonts/gs-fonts/${PORTVERSION}%20%28base%2035%2C%20GPL%29/:std \
 		SF/gs-fonts/gs-fonts/6.0%20%28misc%2C%20GPL%29/:other

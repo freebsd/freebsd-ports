@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -113,11 +113,6 @@ V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_CONFIGURE_ENABLE=		v4l
 
 .include <bsd.port.pre.mk>
-
-#Disable mmx on FreeBSD 10.1 due to a transient bug in clang
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
-CONFIGURE_ARGS+=	--disable-mmx
-.endif
 
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \

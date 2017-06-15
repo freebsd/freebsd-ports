@@ -3,17 +3,20 @@
 
 PORTNAME=	brlcad
 PORTVERSION=	7.24.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/BRL-CAD%20Source/${PORTVERSION}
 
 MAINTAINER=	erik@brlcad.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 
-BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:math/jama	\
+DEPRECATED=	Depends on expring graphics/urt
+EXPIRATION_DATE=2017-04-01
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs \
+		${LOCALBASE}/include/tnt/jama_lu.h:math/jama \
 		xsltproc:textproc/libxslt
-LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
-		libdrm.so:graphics/libdrm \
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libpng.so:graphics/png \
 		librle.so:graphics/urt \
 		libfreetype.so:print/freetype2 \

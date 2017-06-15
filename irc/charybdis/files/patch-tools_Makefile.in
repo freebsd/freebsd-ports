@@ -1,0 +1,30 @@
+--- tools/Makefile.in.orig	2016-12-13 14:45:17 UTC
++++ tools/Makefile.in
+@@ -4,6 +4,7 @@ CC		= @CC@
+ INSTALL		= @INSTALL@
+ INSTALL_BIN	= @INSTALL_PROGRAM@
+ INSTALL_DATA	= @INSTALL_DATA@
++INSTALL_SCRIPT	= @INSTALL_SCRIPT@
+ INSTALL_SUID	= @INSTALL_PROGRAM@ -o root -m 4755
+ RM		= @RM@
+ LEX		= @LEX@
+@@ -29,9 +30,9 @@ libexecdir	= @libexecdir@
+ sysconfdir	= @sysconfdir@
+ localstatedir	= @localstatedir@
+ 
+-PROGS		= viconf mkpasswd genssl
++PROGS		= viconf mkpasswd
+ 
+-all: $(PROGS)
++all: $(PROGS) genssl
+ 
+ build: all
+ 
+@@ -93,6 +94,7 @@ install: install-mkdirs build
+ 		fi; \
+ 		$(INSTALL_BIN) $$i $(DESTDIR)$(bindir)/$(PROGRAM_PREFIX)$$i; \
+ 	done; \
++	$(INSTALL_SCRIPT) genssl $(DESTDIR)$(bindir); \
+ 	$(RM) -f $(DESTDIR)$(bindir)/$(PROGRAM_PREFIX)vimotd
+ 	$(LN) $(DESTDIR)$(bindir)/$(PROGRAM_PREFIX)viconf $(DESTDIR)$(bindir)/$(PROGRAM_PREFIX)vimotd
+ 

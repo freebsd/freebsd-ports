@@ -1,7 +1,7 @@
 Index: hex-util.el
 ===================================================================
---- hex-util.el	(revision 2)
-+++ hex-util.el	(working copy)
+--- hex-util.el.orig	2007-09-05 23:39:48 UTC
++++ hex-util.el
 @@ -28,14 +28,14 @@
  
  (eval-when-compile

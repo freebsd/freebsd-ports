@@ -16,8 +16,7 @@ RUN_DEPENDS=	netcat:net/netcat
 .endif
 
 MAKEFILE=	${FILESDIR}/Makefile
-USES=		uidfix
-USE_OPENSSL=	YES
+USES=		uidfix ssl
 
 PLIST_FILES=	sbin/sst \
 		man/man1/sst.1.gz

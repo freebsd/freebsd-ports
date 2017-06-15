@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -15,7 +16,7 @@ COMMENT=	C++ and QML IDE for Qt development
 LIB_DEPENDS=	libqbscore.so:devel/qbs
 
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
-USES=		qmake compiler:c++11-lib
+USES=		qmake compiler:c++11-lib tar:xz
 USE_GL=		gl
 USE_QT5=	buildtools concurrent core declarative designer gui help \
 		linguist network printsupport qdoc qml quick quickcontrols \
@@ -37,6 +38,8 @@ QMAKE_ARGS+=	DEFINES+=_GLIBCXX_USE_C99
 DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 
+BROKEN_aarch64=		fails to build: invokes x86 asm
+
 OPTIONS_DEFINE=		DOCS EXAMPLES
 DOCS_DESC=		Install the Qt5 api documentation
 DOCS_USE=		QT5=doc_run
@@ -49,6 +52,8 @@ INSTALL_TARGET=		install
 
 DOCS_ALL_TARGET=	docs
 DOCS_INSTALL_TARGET=	install_docs
+
+PLIST_SUB=		SHLIB_VER="${PORTVERSION}"
 
 # Fix paths for gnuplot and ant.
 post-patch:
@@ -67,6 +72,5 @@ pre-configure:
 # occurrences of ${WRKSRC}/lib from .pc and .prl files when installing them.
 # See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${WRKSRC}/lib' >> ${WRKSRC}/.qmake.cache
-
 
 .include <bsd.port.mk>

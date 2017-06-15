@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia python gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

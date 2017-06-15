@@ -3,7 +3,7 @@
 
 PORTNAME=	comical
 PORTVERSION=	0.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -13,39 +13,34 @@ COMMENT=	Sequential image viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libunrar.so:archivers/libunrar
-
-MAKE_JOBS_UNSAFE=	yes
+LIB_DEPENDS=	libminizip.so:archivers/minizip \
+		libunrar.so.5:archivers/libunrar5
 
 USES=		gmake
 USE_WX=		2.8+
 
-PLIST_FILES=	bin/comical
+MAKE_ENV=	WX_CONFIG=${WX_CONFIG}
+INSTALL_TARGET=	install-strip
+MAKE_JOBS_UNSAFE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
-		s|\`wx-config --cxx\`|${CXX}|; \
-		s|wx-config|${WX_CONFIG}|; \
-		s|unrar/libunrar.a u|u|; \
-		s|-lunrar|-L${LOCALBASE}/lib -lunrar|;' \
-		${WRKSRC}/Makefile
+DESKTOP_ENTRIES="Comical" \
+		"Comic Book Viewer" \
+		"${PORTNAME}.png" \
+		"${PORTNAME}" \
+		"Graphics;Viewer;" \
+		false
 
-	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|; \
-		s|-D_UNIX|-D_UNIX -DwxUSE_UNICODE|; \
-		s|CFLAGS =|CFLAGS=${CFLAGS} |; \
-		s|CPPFLAGS =|CPPFLAGS=${CXXFLAGS} |; \
-		s|$$(CC)|${CXX}|; \
-		s|-I../unrar|-I${LOCALBASE}/include/libunrar3|;' \
-		${WRKSRC}/src/Makefile
+ICONS=		comical.png comical.xpm
+PLIST_FILES=	bin/comical \
+		share/pixmaps/comical.png \
+		share/pixmaps/comical.xpm
 
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|; \
-		s|CFLAGS=|CFLAGS+=|;' \
-		${WRKSRC}/unzip/Makefile
-
-	@${REINPLACE_CMD} -e 's|frame->SetIcon|//frame->SetIcon|' \
-		${WRKSRC}/src/ComicalApp.cpp
+# 'make makepatch' doesn't like dirs with spaces
+pre-patch:
+	@${MV} ${WRKSRC}/Comical\ Icons ${WRKSRC}/ComicalIcons
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	cd ${WRKSRC}/ComicalIcons && \
+		${INSTALL_DATA} ${ICONS} ${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

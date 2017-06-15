@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	Tue Nov 20 19:09:45 2001
-+++ etc/Makefile.in	Tue Nov 20 19:09:53 2001
-@@ -131,7 +131,7 @@
+--- etc/Makefile.in.orig	2000-02-24 17:55:34 UTC
++++ etc/Makefile.in
+@@ -131,7 +131,7 @@ l = @l@
  lispdir = @lispdir@
  
  

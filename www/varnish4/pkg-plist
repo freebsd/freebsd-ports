@@ -94,6 +94,7 @@ man/man7/vsl-query.7.gz
 man/man7/vsl.7.gz
 sbin/varnishd
 share/aclocal/varnish.m4
+share/aclocal/varnish-legacy.m4
 %%PORTDOCS%%%%DOCSDIR%%/builtin.vcl
 %%PORTDOCS%%%%DOCSDIR%%/example.vcl
 %%DATADIR%%/vmodtool.py

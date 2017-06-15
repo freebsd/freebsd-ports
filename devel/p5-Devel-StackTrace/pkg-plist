@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/Devel::StackTrace.3.gz
-%%PERL5_MAN3%%/Devel::StackTrace::Frame.3.gz
 %%SITE_PERL%%/Devel/StackTrace.pm
 %%SITE_PERL%%/Devel/StackTrace/Frame.pm
+%%PERL5_MAN3%%/Devel::StackTrace.3.gz
+%%PERL5_MAN3%%/Devel::StackTrace::Frame.3.gz

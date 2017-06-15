@@ -1,0 +1,51 @@
+--- doc/Makefile.orig	2016-10-05 08:10:40 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)browser.1 $(OBJDIR)browser.html $(OBJDIR)browser.xml $(OBJDIR)copy.1 $(OBJDIR)copy.html $(OBJDIR)copy.xml $(OBJDIR)delete.1 $(OBJDIR)delete.html $(OBJDIR)delete.xml $(OBJDIR)desktop.1 $(OBJDIR)desktop.html $(OBJDIR)desktop.xml $(OBJDIR)desktopctl.1 $(OBJDIR)desktopctl.html $(OBJDIR)desktopctl.xml $(OBJDIR)move.1 $(OBJDIR)move.html $(OBJDIR)move.xml $(OBJDIR)open.1 $(OBJDIR)open.html $(OBJDIR)open.xml $(OBJDIR)properties.1 $(OBJDIR)properties.html $(OBJDIR)properties.xml $(OBJDIR)view.1 $(OBJDIR)view.html $(OBJDIR)view.xml
++TARGETS	= $(OBJDIR)browser.1 $(OBJDIR)browser.xml $(OBJDIR)copy.1 $(OBJDIR)copy.xml $(OBJDIR)delete.1 $(OBJDIR)delete.xml $(OBJDIR)desktop.1 $(OBJDIR)desktop.xml $(OBJDIR)desktopctl.1 $(OBJDIR)desktopctl.xml $(OBJDIR)move.1 $(OBJDIR)move.xml $(OBJDIR)open.1 $(OBJDIR)open.xml $(OBJDIR)properties.1 $(OBJDIR)properties.xml $(OBJDIR)view.1 $(OBJDIR)view.xml
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -126,42 +126,24 @@ distclean: clean
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)browser.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)browser.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)copy.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)copy.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)delete.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)delete.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)desktop.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)desktop.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)desktopctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)desktopctl.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)move.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)move.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)open.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)open.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)properties.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)properties.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)view.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)view.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "browser.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "browser.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "copy.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "copy.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "delete.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "delete.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "desktop.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "desktop.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "desktopctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "desktopctl.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "move.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "move.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "open.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "open.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "properties.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "properties.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "view.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "view.html"
+ 
+ .PHONY: all clean distclean install uninstall

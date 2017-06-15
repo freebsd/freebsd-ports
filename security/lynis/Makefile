@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lynis
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.4.7
 CATEGORIES=	security
 MASTER_SITES=	https://cisofy.com/files/
 
@@ -12,6 +11,8 @@ COMMENT=	Security and system auditing tool
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	lsof:sysutils/lsof
 
 USES=		cpe
 CPE_VENDOR=	cisofy

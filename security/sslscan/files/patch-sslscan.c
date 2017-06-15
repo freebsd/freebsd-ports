@@ -1,6 +1,6 @@
---- sslscan.c.orig	2016-03-24 21:02:55 UTC
+--- sslscan.c.orig	2016-11-06 13:27:11 UTC
 +++ sslscan.c
-@@ -788,7 +788,7 @@ int testCompression(struct sslCheckOptio
+@@ -829,7 +829,7 @@ int testCompression(struct sslCheckOptio
  #endif
                          {
                              printf("%sOpenSSL version does not support compression%s\n", COL_RED, RESET);
@@ -9,7 +9,24 @@
                          }
  
                          // Disconnect SSL over socket
-@@ -1291,7 +1291,11 @@ int testCipher(struct sslCheckOptions *o
+@@ -1155,14 +1155,14 @@ int testRenegotiation(struct sslCheckOpt
+                                 printf_verbose("Attempting SSL_do_handshake(ssl)\n");
+                                 SSL_do_handshake(ssl); // Send renegotiation request to server //TODO :: XXX hanging here
+ 
+-                                if (ssl->state == SSL_ST_OK)
++                                if (SSL_get_state(ssl) == SSL_ST_OK)
+                                 {
+                                     res = SSL_do_handshake(ssl); // Send renegotiation request to server
+                                     if( res != 1 )
+                                     {
+                                         printf_error("\n\nSSL_do_handshake() call failed\n");
+                                     }
+-                                    if (ssl->state == SSL_ST_OK)
++                                    if (SSL_get_state(ssl) == SSL_ST_OK)
+                                     {
+                                         /* our renegotiation is complete */
+                                         renOut->supported = true;
+@@ -1504,7 +1504,11 @@ int testCipher(struct sslCheckOptions *o
                      return false;
                  }
  

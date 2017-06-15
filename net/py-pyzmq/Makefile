@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyzmq
-PORTVERSION=	15.4.0
+PORTVERSION=	16.0.2
 CATEGORIES=	net devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,11 @@ COMMENT=	Python bindings for ZeroMQ
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	libzmq.so:net/libzmq4
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+PYDISTUTILS_CONFIGUREARGS=	--zmq=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
@@ -23,11 +25,7 @@ USE_PYTHON=	distutils autoplist
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}asyncio>0:devel/py-asyncio
 .endif
 
-pre-configure:
-	@${SED} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.cfg.template > \
-		${WRKSRC}/setup.cfg
-
-regression-test: extract
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 

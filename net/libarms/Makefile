@@ -14,9 +14,8 @@ COMMENT=	SMFv2/ARMS client library for C
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		gmake libtool ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include

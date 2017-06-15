@@ -65,7 +65,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/cms-profile-path/s|".*"|"${LOCALBASE}/share/color/icc"| ; \
 		 s|/usr/share|${LOCALBASE}/share|' \
-		${WRKSRC}/cinepaintrc.in
+		${WRKSRC}/gimprc.in
 	@${REINPLACE_CMD} -e \
 		's|gimprc|cinepaintrc|g' \
 		${WRKSRC}/user_install.in

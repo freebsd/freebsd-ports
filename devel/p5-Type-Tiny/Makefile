@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny
-PORTVERSION=	1.000005
-PORTREVISION=	1
+PORTVERSION=	1.000006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -14,6 +13,7 @@ COMMENT=	Tiny, yet Moo(se)-compatible type constraint
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Exporter-Tiny>=0.026:devel/p5-Exporter-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -41,6 +41,7 @@ XS_DESC=	Use Type::Tiny::XS for speed boost (recommended)
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

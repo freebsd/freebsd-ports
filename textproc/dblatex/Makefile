@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	dblatex
-PORTVERSION=	0.3.7
-PORTREVISION=	1
+PORTVERSION=	0.3.9
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook to LaTeX/ConTeXt Publishing
+
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty:print/texlive-texmf
 RUN_DEPENDS=	xsltproc:textproc/libxslt \

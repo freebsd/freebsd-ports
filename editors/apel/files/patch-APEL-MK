@@ -1,5 +1,5 @@
---- APEL-MK.orig	Wed Dec 22 13:14:21 1999
-+++ APEL-MK	Wed May 10 23:45:36 2000
+--- APEL-MK.orig	2006-12-20 17:24:49 UTC
++++ APEL-MK
 @@ -41,7 +41,7 @@
        ;; Make "emu" subdirectory.
        "emu"

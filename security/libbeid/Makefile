@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbeid
-PORTVERSION=	4.1.11
+PORTVERSION=	4.1.19
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -18,7 +18,7 @@ GH_ACCOUNT=	Fedict
 GH_PROJECT=	eid-mw
 
 USES=		autoreconf dos2unix libtool pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	gtk30
 
 DOS2UNIX_FILES=	cardcomm/pkcs11/src/common/datafile.cpp \
 		cardcomm/pkcs11/src/common/logbase.cpp \
@@ -27,7 +27,7 @@ DOS2UNIX_FILES=	cardcomm/pkcs11/src/common/datafile.cpp \
 		cardcomm/pkcs11/src/log.h
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static --with-gtkvers=2
+CONFIGURE_ARGS=	--disable-static --with-gtkvers=3
 INSTALL_TARGET=	install-strip
 
 post-patch:

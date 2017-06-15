@@ -1,0 +1,31 @@
+--- src/CMakeLists.txt.orig	2016-10-22 17:13:46 UTC
++++ src/CMakeLists.txt
+@@ -10,6 +10,7 @@ project(GOGGLESMM VERSION 1.1.3)
+ option(WITH_OPENGL "Enable OpenGL Features" ON)
+ option(WITH_DBUS "Enable DBUS Features" ON)
+ option(WITH_NLS "Enable Native Language Support" ON)
++option(WITH_GCRYPT "Enable GCrypt Support" ON)
+ 
+ # Translation Files to share/locale
+ set(LOCALE_PATH ${CMAKE_INSTALL_PREFIX}/share/locale)
+@@ -62,6 +63,7 @@ if(SM_FOUND AND ICE_FOUND)
+ endif()
+ 
+ # libgrypt
++if(WITH_GCRYPT)
+ check_include_files(gcrypt.h HAVE_GCRYPT_H)
+ if (HAVE_GCRYPT_H)
+   find_library(LIBGCRYPT_LIBRARIES NAMES gcrypt )
+@@ -69,10 +71,11 @@ if (HAVE_GCRYPT_H)
+     set(HAVE_GCRYPT TRUE)
+   endif()
+ endif()
++endif()
+ 
+ 
+ # Detects reswrap version
+-find_program(RESWRAP NAMES reswrap-1.7 reswrap fox-reswrap)
++find_program(RESWRAP NAMES reswrap-1.7 reswrap fox-reswrap PATH_SUFFIXES fox-1.7)
+ if(RESWRAP)
+   message(STATUS "Found reswrap: ${RESWRAP}")
+   execute_process(COMMAND ${RESWRAP} -v OUTPUT_VARIABLE RESWRAP_OUTPUT)

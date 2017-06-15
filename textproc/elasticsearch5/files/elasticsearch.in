@@ -1,0 +1,174 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: elasticsearch
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable elasticsearch:
+#
+# elasticsearch_enable="YES"
+#
+# elasticsearch_user (username): Set to elasticsearch by default.
+#               Set it to required username.
+# elasticsearch_group (group):   Set to elasticsearch by default.
+#               Set it to required group.
+# elasticsearch_config (path):   Set to /usr/local/etc/elasticsearch/elasticsearch.yml by default.
+#               Set it to the config file location.
+# elasticsearch_tmp (path):  Set to /var/tmp/elasticsearch by default.
+#		Set it to the path to be used for temp files.
+#
+. /etc/rc.subr
+
+name=elasticsearch
+rcvar=elasticsearch_enable
+
+load_rc_config ${name}
+
+: ${elasticsearch_enable:="NO"}
+: ${elasticsearch_user:=%%SEARCHUSER%%}
+: ${elasticsearch_group:=%%SEARCHGROUP%%}
+: ${elasticsearch_config:="%%PREFIX%%/etc/elasticsearch"}
+: ${elasticsearch_tmp:="/var/tmp/elasticsearch"}
+
+required_files="${elasticsearch_config}/elasticsearch.yml"
+_pidprefix="/var/run/elasticsearch"
+pidfile="${_pidprefix}.pid"
+
+extra_commands="console status"
+console_cmd="elasticsearch_console"
+start_precmd="elasticsearch_precmd"
+status_cmd="elasticsearch_status"
+stop_cmd="elasticsearch_stop"
+command="%%PREFIX%%/lib/elasticsearch/bin/elasticsearch"
+command_args="-d --pidfile=${pidfile}"
+
+elasticsearch_precmd()
+{
+    touch ${pidfile}
+    chown ${elasticsearch_user}:${elasticsearch_group} ${pidfile}
+    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 ${elasticsearch_tmp}
+    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 /var/db/elasticsearch
+    /usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 /var/log/elasticsearch
+}
+
+elasticsearch_console()
+{
+    command_args=""
+    run_rc_command "start"
+}
+
+
+elasticsearch_stop()
+{
+    rc_pid=$(elasticsearch_check_pidfile $pidfile)
+
+    if [ -z "$rc_pid" ]; then
+        [ -n "$rc_fast" ] && return 0
+        echo "${name} not running? (check $pidfile)."
+        return 1
+    fi
+
+    echo "Stopping ${name}."
+    kill ${rc_pid} 2> /dev/null
+}
+
+elasticsearch_status()
+{
+    rc_pid=$(elasticsearch_check_pidfile $pidfile)
+
+    if [ -z "$rc_pid" ]; then
+        [ -n "$rc_fast" ] && return 0
+        echo "${name} not running? (check $pidfile)."
+        return 1
+    fi
+    echo "${name} is running as pid ${rc_pid}."
+}
+
+elasticsearch_check_pidfile()
+{
+    _pidfile=$1
+    if [ -z "$_pidfile" ]; then
+        err 3 'USAGE: elasticsearch_check_pidfile pidfile'
+    fi
+    if [ ! -f $_pidfile ]; then
+        debug "pid file ($_pidfile): not readable."
+        return
+    fi
+    read _pid _junk < $_pidfile
+    if [ -z "$_pid" ]; then
+        debug "pid file ($_pidfile): no pid in file."
+        return
+    fi
+    if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid"`" ]; then
+        echo -n $_pid
+    fi
+}
+if [ -n "$2" ]; then
+    profile="$2"
+    if [ "x${elasticsearch_profiles}" != "x" ]; then
+        pidfile="${_pidprefix}.${profile}.pid"
+        eval elasticsearch_config="\${elasticsearch_${profile}_config:-}"
+        if [ "x${elasticsearch_config}" = "x" ]; then
+            echo "You must define a configuration  (elasticsearch_${profile}_config)"
+            exit 1
+        fi
+        required_files="${elasticsearch_config}/elasticsearch.yml"
+        required_files="${elasticsearch_config}/jvm.options"
+        eval elasticsearch_enable="\${elasticsearch_${profile}_enable:-${elasticsearch_enable}}"
+        eval elasticsearch_tmp="\${elasticsearch_${profile}_args:-${elasticsearch_tmp}}"
+    else
+        echo "$0: extra argument ignored"
+    fi
+else
+    if [ "x${elasticsearch_profiles}" != "x" -a "x$1" != "x" ]; then
+        for profile in ${elasticsearch_profiles}; do
+            eval _enable="\${elasticsearch_${profile}_enable}"
+            case "x${_enable:-${elasticsearch_enable}}" in
+            x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+                continue
+                ;;
+            x[Yy][Ee][Ss])
+                ;;
+            *)
+                if test -z "$_enable"; then
+                    _var=elasticsearch_enable
+                else
+                    _var=elasticsearch_"${profile}"_enable
+                fi
+                echo "Bad value" \
+                    "'${_enable:-${elasticsearch_enable}}'" \
+                    "for ${_var}. " \
+                    "Profile ${profile} skipped."
+                continue
+                ;;
+            esac
+            echo "===> elasticsearch profile: ${profile}"
+            /usr/local/etc/rc.d/elasticsearch $1 ${profile}
+            retcode="$?"
+            if [ "0${retcode}" -ne 0 ]; then
+                failed="${profile} (${retcode}) ${failed:-}"
+            else
+                success="${profile} ${success:-}"
+            fi
+        done
+        exit 0
+    fi
+fi
+
+if [ "x${elasticsearch_mem_min}" != "x" ]; then
+    echo "The elasticsearch_mem_min variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    exit 1;
+fi
+if [ "x${elasticsearch_mem_max}" != "x" ]; then
+    echo "The elasticsearch_mem_max variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    exit 1;
+fi
+if [ "x${elasticsearch_props}" != "x" ]; then
+    echo "The elasticsearch_props variable is no longer supported please set this in %%PREFIX%%/etc/jvm.options"
+    exit 1;
+fi
+
+run_rc_command "$1"

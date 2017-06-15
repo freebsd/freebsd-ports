@@ -3,7 +3,7 @@
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
@@ -17,9 +17,10 @@ OPTIONS_DEFINE=	MYSQL OPENSSL PGSQL
 CONFLICTS=	flow-tools-ng-[0-9]*
 
 USES=		python:run
-USE_GCC=	any
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--localstatedir="${PREFIX}"
+MAKE_ARGS=	AM_CFLAGS="${CFLAGS}"
 
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	FLOW_CAPTURE_SPOOL="${FLOW_CAPTURE_SPOOL}" \

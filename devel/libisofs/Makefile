@@ -6,7 +6,7 @@ PORTVERSION=	1.4.6
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libburnia ISO9660 filesystem creation library
 
 LICENSE=	GPLv2

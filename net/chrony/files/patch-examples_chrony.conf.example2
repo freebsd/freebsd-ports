@@ -1,4 +1,4 @@
---- examples/chrony.conf.example2.orig	2015-10-19 09:18:37 UTC
+--- examples/chrony.conf.example2.orig	2017-01-31 10:22:11 UTC
 +++ examples/chrony.conf.example2
 @@ -1,9 +1,9 @@
  # Use public servers from the pool.ntp.org project.
@@ -10,14 +10,14 @@
 -driftfile /var/lib/chrony/drift
 +driftfile /var/db/chrony/drift
  
- # In first three updates step the system clock instead of slew
- # if the adjustment is larger than 1 second.
-@@ -19,7 +19,7 @@ rtcsync
+ # Allow the system clock to be stepped in the first three updates
+ # if its offset is larger than 1 second.
+@@ -26,7 +26,7 @@ rtcsync
  #local stratum 10
  
  # Specify file containing keys for NTP authentication.
 -#keyfile /etc/chrony.keys
 +#keyfile /usr/local/etc/chrony.keys
  
- # Disable logging of client accesses.
- noclientlog
+ # Specify directory for log files.
+ logdir /var/log/chrony

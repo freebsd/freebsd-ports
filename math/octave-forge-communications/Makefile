@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-communications
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -26,7 +26,7 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:math/octave-forge-signal
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2pp
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -30,7 +31,7 @@ DOXYGEN_IMPLIES=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
 .endif
 

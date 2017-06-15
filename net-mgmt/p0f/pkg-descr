@@ -1,23 +1,16 @@
-from the README:
-
 Passive OS fingerprinting is based on information coming from a remote host
 when it establishes a connection to our system.  Captured packets contain
 enough information to identify the operating system.  In contrast to active
-scanners such as nmap and QueSO, p0f does not send anything to the host being
-identified.
+scanners such as nmap and QueSO, p0f does not send anything to the host
+being identified.
 
-For more information, read Spitzner's text at:
-http://www.enteract.com/~lspitz/finger.html .
+For more information, refer to Lance Spitzner's old paper about passive OS
+fingerprinting: http://old.honeynet.org/papers/finger/.
 
-from the maintainer:
+Use of this program requires read access to the packet filtering device,
+typically /dev/bpf0.  Granting such access allows the users who have it to
+put your Ethernet device into promiscuous mode and sniff your network.
+Running p0f with no options will cause it to analyze packets intended for
+other hosts.
 
-Use of this program requires read access to the packet filtering
-device, typically /dev/bpf0.  Granting such access allows the users
-who have it to put your Ethernet device into promiscuous mode and
-sniff your network.  See
-http://www.infoworld.com/articles/op/xml/00/05/29/000529opswatch.xml
-if you do not understand how this can be harmful.  Running p0f with
-no options will cause it to analyse packets intended for other
-hosts.
-
-WWW:  http://lcamtuf.coredump.cx/p0f.shtml
+WWW: http://lcamtuf.coredump.cx/p0f3/

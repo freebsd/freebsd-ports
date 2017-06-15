@@ -3,7 +3,7 @@
 
 PORTNAME=	rxtx
 PORTVERSION=	2.2p2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	comms java
 MASTER_SITES=	http://rxtx.qbang.org/pub/rxtx/ \
 		ftp://jarvi.dsl.frii.com/pub/rxtx/
@@ -13,7 +13,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 MAINTAINER=	james@elstone.net
 COMMENT=	Native interface to serial ports in Java
 
-USES=		gmake libtool linux:c6 zip
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake libtool zip
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

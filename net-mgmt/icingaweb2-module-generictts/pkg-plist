@@ -1,0 +1,15 @@
+%%WWWDIR%%/.mailmap
+%%WWWDIR%%/AUTHORS
+%%WWWDIR%%/COPYING
+%%WWWDIR%%/README.md
+%%WWWDIR%%/application/controllers/IntegrationsController.php
+%%WWWDIR%%/application/forms/Config/TtsIntegrationConfigForm.php
+%%WWWDIR%%/application/views/scripts/integrations/index.phtml
+%%WWWDIR%%/application/views/scripts/integrations/new.phtml
+%%WWWDIR%%/application/views/scripts/integrations/remove.phtml
+%%WWWDIR%%/application/views/scripts/integrations/update.phtml
+%%WWWDIR%%/configuration.php
+%%WWWDIR%%/library/Generictts/Ticket.php
+%%WWWDIR%%/module.info
+%%WWWDIR%%/public/css/module.less
+%%WWWDIR%%/run.php

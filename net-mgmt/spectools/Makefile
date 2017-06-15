@@ -3,7 +3,7 @@
 
 PORTNAME=	spectools
 PORTVERSION=	201108.r1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/ \
 		LOCAL/brix
@@ -15,7 +15,7 @@ COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
-USES=		gmake pkgconfig
+USES=		gmake ncurses pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

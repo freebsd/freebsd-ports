@@ -18,7 +18,10 @@ LICENSE=	LGPL20
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libLLVM-3.3.so:devel/llvm33
 
-USES=		cmake perl5 tar:bzip2
+DEPRECATED=	Project is dead, has no end user, and relies on EOLed LLVM
+EXPIRATION_DATE=2017-04-15
+
+USES=		cmake pathfix perl5 tar:bzip2
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config33
 
@@ -38,10 +41,5 @@ post-patch:
 pre-configure:
 	${REINPLACE_CMD} -e 's|set(OPENGTL_LIB_SOVERSION.*|set(OPENGTL_LIB_SOVERSION "0")|' \
 		${PATCH_WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${PATCH_WRKSRC}/OpenCTL/OpenCTL/CMakeLists.txt \
-		${PATCH_WRKSRC}/OpenGTL/GTLCore/CMakeLists.txt \
-		${PATCH_WRKSRC}/OpenGTL/GTLImageIO/CMakeLists.txt \
-		${PATCH_WRKSRC}/OpenShiva/OpenShiva/CMakeLists.txt
 
 .include <bsd.port.mk>

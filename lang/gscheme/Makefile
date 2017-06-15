@@ -18,15 +18,12 @@ LICENSE=	GPLv2+
 USES=		gnustep
 USE_GNUSTEP=	back build
 
-post-extract:
-	@${CHMOD} -R u+w ${WRKSRC}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|setMark:|setMarkScheme:|' \
 		${WRKSRC}/SchemeTypes.h ${WRKSRC}/SchemeTypes.m
 
 post-install:
-	${RM} -f ${STAGEDIR}${GNUSTEP_PREFIX}/System/Applications/GScheme.app/Resources/library.scm~
+	${RM} ${STAGEDIR}${GNUSTEP_PREFIX}/System/Applications/GScheme.app/Resources/library.scm~
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/GScheme.app/GScheme
 
 .include <bsd.port.mk>

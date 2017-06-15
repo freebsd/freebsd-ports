@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	alainfrisch
 GH_PROJECT=	${PORTNAME:C/-/_/}
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/ppx_tools/ppx_tools.cmxs
 
 .include <bsd.port.mk>

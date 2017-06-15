@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/mcstas/${PORTVERSION}/bin/mcstas:science/mcstas
 
-USES=		cmake gmake
+USES=		cmake
 # Apparently cmake does not generate an install/strip target if nothing
 # is supposed to be stripped, so override the cmake-default install
 # target of install/strip by resetting STRIP

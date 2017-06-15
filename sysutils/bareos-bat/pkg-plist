@@ -1,3 +1,6 @@
 @sample %%ETCDIR%%/bat.conf.sample
+share/applications/bat.desktop
+share/pixmaps/bat.png
+share/pixmaps/bat.svg
 man/man1/bat.1.gz
-sbin/bat
+bin/bat

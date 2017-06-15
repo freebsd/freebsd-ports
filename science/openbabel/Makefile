@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chemistry file translation program
 
 BROKEN_powerpc64=	Does not build
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:math/eigen3
 
 CONFLICTS_INSTALL=	babel-*
 
+USE_CXXSTD=	gnu++98
 USE_GNOME=	libxml2
 USES=		cmake:outsource
 CMAKE_ARGS=	-DBUILD_GUI=off

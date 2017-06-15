@@ -3,21 +3,27 @@
 
 PORTNAME=	qstardict
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 based dictionary program (stardict clone)
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		dos2unix pkgconfig qmake tar:bzip2
-USE_QT4=	gui network xml uic_build moc_build rcc_build
+USE_QT4=	corelib gui network xml uic_build moc_build rcc_build
+USE_GNOME=	glib20
+USE_XORG=	x11
 DOS2UNIX_FILES=	qstardict.pri
 
 # Path to dictionaries installed by stardict-* ports
 DICPATH=	${LOCALBASE}/share/stardict/dic
 
 OPTIONS_DEFINE=	DBUS DOCS NLS
-OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT=DBUS
 OPTIONS_SUB=	yes
 
 DBUS_USE=	QT4=dbus
@@ -33,7 +39,7 @@ post-patch:
 		${WRKSRC}/plugins/stardict/stardict.cpp
 
 post-patch-DOCS-off:
-	${REINPLACE_CMD} -e "/^INSTALLS/s|docs||g" \
+	@${REINPLACE_CMD} -e "/^INSTALLS/s|docs||g" \
 		${WRKSRC}/qstardict.pro
 
 .include <bsd.port.mk>

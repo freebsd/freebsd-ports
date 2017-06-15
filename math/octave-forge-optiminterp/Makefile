@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-optiminterp
 PORTVERSION=	0.3.4
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 MAKE_ENV+=	MKOCTFILE_FORTRAN_90=yes MKOCTFILE=mkoctfile
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

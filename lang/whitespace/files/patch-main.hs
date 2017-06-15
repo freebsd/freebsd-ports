@@ -1,6 +1,6 @@
---- ./main.hs.orig	2003-03-31 17:33:44.000000000 +0200
-+++ ./main.hs	2012-05-12 21:52:07.000000000 +0200
-@@ -26,7 +26,7 @@
+--- main.hs.orig	2003-03-31 15:33:44 UTC
++++ main.hs
+@@ -26,7 +26,7 @@ import Input
  import VM
  import Tokens
  

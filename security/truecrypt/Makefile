@@ -3,7 +3,7 @@
 
 PORTNAME=	truecrypt
 PORTVERSION=	7.1a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF/wxwindows/${WX_VER}/:wxwidgets \
 		ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-11/v2-20/:rsa \

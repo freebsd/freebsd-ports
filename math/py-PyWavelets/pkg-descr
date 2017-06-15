@@ -1,0 +1,7 @@
+PyWavelets is a free Open Source library for wavelet transforms in Python.
+Wavelets are mathematical basis functions that are localized in both time and
+frequency. Wavelet transforms are time-frequency transforms employing wavelets.
+They are similar to Fourier transforms, the difference being that Fourier
+transforms are localized only in frequency instead of in time and frequency.
+
+WWW: https://github.com/PyWavelets/pywt

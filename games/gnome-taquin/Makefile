@@ -8,7 +8,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Move tiles so that they reach their places.
+COMMENT=	Move tiles so that they reach their places
 
 BUILD_DEPENDS=	vala:lang/vala \
 		itstool:textproc/itstool

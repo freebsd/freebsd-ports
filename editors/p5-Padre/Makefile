@@ -3,7 +3,7 @@
 
 PORTNAME=	Padre
 PORTVERSION=	1.00
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN/${PORTNAME}/ CPAN/Wx/:wxsc
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,8 @@ COMMENT=	Perl Application Development and Refactoring Environment
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/Artistic
+LICENSE_FILE_GPLv1=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-JSON-XS>=2.29:converters/p5-JSON-XS \
 		p5-DBD-SQLite>=1.35:databases/p5-DBD-SQLite \
@@ -61,7 +63,7 @@ BUILD_DEPENDS=	p5-JSON-XS>=2.29:converters/p5-JSON-XS \
 		p5-YAML-Tiny>=1.32:textproc/p5-YAML-Tiny \
 		p5-HTML-Parser>=3.58:www/p5-HTML-Parser \
 		p5-libwww>=5.815:www/p5-libwww \
-		p5-Wx>=0.97:x11-toolkits/p5-Wx \
+		p5-Wx>=0.9700:x11-toolkits/p5-Wx \
 		p5-Wx-Perl-ProcessStream>=0.25:x11-toolkits/p5-Wx-Perl-ProcessStream
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	p5-Module-Build>=0.36:devel/p5-Module-Build
@@ -73,8 +75,6 @@ WX_COMPS=	wx
 MAKE_JOBS_UNSAFE=	yes
 DOS2UNIX_WRKSRC=${WRKDIR}/${WXSC_DISTNAME}
 DOS2UNIX_FILES=	wx-scintilla/src/scintilla/src/Editor.cxx
-
-BROKEN_FreeBSD_9=	Does not build.
 
 DESKTOP_ENTRIES="Padre" \
 		"The Perl IDE" \

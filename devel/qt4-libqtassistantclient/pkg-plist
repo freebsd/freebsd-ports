@@ -2,10 +2,10 @@
 %%QT_INCDIR%%/QtAssistant/QtAssistant
 %%QT_INCDIR%%/QtAssistant/qassistantclient.h
 %%QT_INCDIR%%/QtAssistant/qassistantclient_global.h
-%%QT_LIBDIR%%/libQtAssistantClient.prl
-%%QT_LIBDIR%%/libQtAssistantClient.so
-%%QT_LIBDIR%%/libQtAssistantClient.so.4
-%%QT_LIBDIR%%/libQtAssistantClient.so.4.6
-%%QT_LIBDIR%%/libQtAssistantClient.so.4.6.3
+lib/qt4/libQtAssistantClient.prl
+lib/qt4/libQtAssistantClient.so
+lib/qt4/libQtAssistantClient.so.4
+lib/qt4/libQtAssistantClient.so.4.6
+lib/qt4/libQtAssistantClient.so.4.6.3
 libdata/pkgconfig/QtAssistantClient.pc
 %%QT_MKSPECDIR%%/features/assistant.prf

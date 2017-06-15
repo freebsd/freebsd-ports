@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge-optim
 PORTVERSION=	1.5.2
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -26,7 +27,7 @@ GNU_CONFIGURE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

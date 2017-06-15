@@ -3,7 +3,7 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	SF \
 		ftp://ftpmirror.uk/freebsd-ports/rtg/
@@ -18,30 +18,27 @@ RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
 USE_RC_SUBR=	rtgpoll
-USE_MYSQL=	client
 WANT_PERL=	yes
-USES=		shebangfix
+USES=		shebangfix mysql:client
 SHEBANG_FILES=	etc/95.pl etc/report.pl etc/rtgtargmkr.pl.in
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/${PORTNAME} \
 			--with-mysql=${LOCALBASE} \
 			--with-snmp=${LOCALBASE}
+
+USERS=		rtg
+GROUPS=		rtg
+
 OPTIONS_DEFINE=	WEB MYSQL
 OPTIONS_DEFAULT=WEB
 MYSQL_DESC=	Pull MySQL server in as a dependancy for local setups
 WEB_DESC=	Include PHP-based web client interface pre-requisites
 
-.include <bsd.port.options.mk>
+MYSQL_USES=	mysql:server
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MWEB}
-WANT_PHP_WEB=	yes
+WEB_USES=	php
 USE_PHP=	mysqli spl
-.endif
 
 CFLAGS+=	-fstack-protector
 LDFLAGS+=	-fstack-protector

@@ -3,6 +3,7 @@
 
 PORTNAME=	xmltooling
 PORTVERSION=	1.6.0
+PORTREVISION=	2
 CATEGORIES=	devel security
 MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/2.6.0/
 
@@ -18,9 +19,8 @@ BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} --with-curl=${LOCALBASE} --disable-doxygen-doc
-USES=		gmake libtool pkgconfig tar:bzip2
+USES=		gmake libtool pkgconfig tar:bzip2 ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 PORTDOCS=	*
 

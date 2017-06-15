@@ -2,35 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	libqalculate
-PORTVERSION=	0.9.7
-PORTREVISION=	5
+PORTVERSION=	0.9.10
+DISTVERSIONPREFIX=	v
 CATEGORIES=	math
-MASTER_SITES=	SF/qalculate/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (backend library)
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libcln.so:math/cln
 
-USES=		pkgconfig pathfix gmake libtool gettext-tools
+USES=		autoreconf gmake gettext libtool \
+		localbase pathfix pkgconfig readline:port
 USE_GNOME=	glib20 intltool libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Qalculate
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext-runtime
-
 .include <bsd.port.options.mk>
 
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|po ||g' ${WRKSRC}/Makefile.am
+
 post-patch:
-.if !${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|po ||g' ${WRKSRC}/Makefile.in
-.endif
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|docs||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|docs||g' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

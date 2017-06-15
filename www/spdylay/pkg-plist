@@ -8,5 +8,5 @@ include/spdylay/spdylayver.h
 lib/libspdylay.a
 lib/libspdylay.so
 lib/libspdylay.so.7
-lib/libspdylay.so.7.2.0
+lib/libspdylay.so.7.2.1
 libdata/pkgconfig/libspdylay.pc

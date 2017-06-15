@@ -3,4 +3,4 @@ flash, eeprom, and fuse bit memories of Atmel AVR microcontrollers.
 It operates with several programmers including STK500 and most
 directly connect parallel port style programmers.
 
-WWW: http://www.bsdhome.com/avrdude/
+WWW: http://www.nongnu.org/avrdude/

@@ -6,10 +6,10 @@ PORTVERSION=	0.4.7
 PORTREVISION=	1
 CATEGORIES=	www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PHP interface to Digg's API
 
-USES=	pear
+USES=		pear php
 USE_PHP=	curl
 
 .include <bsd.port.mk>

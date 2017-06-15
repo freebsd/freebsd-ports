@@ -1,8 +1,8 @@
 bin/pgp
 man/man1/pgp.1.gz
 man/man1/pgp2.1.gz
-share/pgp/pgp.hlp
-share/pgp/pgpdoc1.txt
-share/pgp/pgpdoc2.txt
+%%DATADIR%%/pgp.hlp
+%%DATADIR%%/pgpdoc1.txt
+%%DATADIR%%/pgpdoc2.txt
 @sample share/pgp/language.txt.sample
 @sample share/pgp/config.txt.sample

@@ -2,8 +2,6 @@ bin/ebug
 bin/ebug_backend_perl
 bin/ebug_client
 bin/ebug_server
-%%PERL5_MAN3%%/Devel::ebug.3.gz
-%%PERL5_MAN3%%/Devel::ebug::Console.3.gz
 %%SITE_PERL%%/Devel/ebug.pm
 %%SITE_PERL%%/Devel/ebug/Backend.pm
 %%SITE_PERL%%/Devel/ebug/Backend/Plugin/ActionPoints.pm
@@ -30,3 +28,5 @@ bin/ebug_server
 %%PERL5_MAN1%%/ebug.1.gz
 %%PERL5_MAN1%%/ebug_client.1.gz
 %%PERL5_MAN1%%/ebug_server.1.gz
+%%PERL5_MAN3%%/Devel::ebug.3.gz
+%%PERL5_MAN3%%/Devel::ebug::Console.3.gz

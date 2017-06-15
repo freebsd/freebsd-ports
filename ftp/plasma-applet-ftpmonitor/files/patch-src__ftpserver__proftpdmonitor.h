@@ -1,6 +1,6 @@
---- ./src/ftpserver/proftpdmonitor.h.orig	2010-06-12 01:33:45.000000000 +0400
-+++ ./src/ftpserver/proftpdmonitor.h	2010-06-15 22:42:56.463724571 +0400
-@@ -55,7 +55,7 @@
+--- src/ftpserver/proftpdmonitor.h.orig	2010-06-11 21:33:45 UTC
++++ src/ftpserver/proftpdmonitor.h
+@@ -55,7 +55,7 @@ class ProftpdMonitor : public FTPMonitor
  		{
  
  			if (whoPath=="")

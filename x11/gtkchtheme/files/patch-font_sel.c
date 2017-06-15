@@ -1,6 +1,6 @@
---- font_sel.c.orig	Sat Feb  7 04:50:09 2004
-+++ font_sel.c	Wed Jun 23 11:57:33 2004
-@@ -27,17 +27,19 @@
+--- font_sel.c.orig	2004-02-07 03:50:09 UTC
++++ font_sel.c
+@@ -27,17 +27,19 @@ static void font_dlg_ok_clicked(GtkWidge
  
  static void font_browse_clicked(GtkWidget *widget, gpointer u)
  {

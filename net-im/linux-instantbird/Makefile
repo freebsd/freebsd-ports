@@ -3,7 +3,7 @@
 PORTNAME=	instantbird
 DISTVERSION=	1.5
 DISTVERSIONSUFFIX=.${LOCALE}.linux-i686
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im irc ipv6
 MASTER_SITES=	http://ftp.instantbird.com/instantbird/releases/${DISTVERSION}/ \
 		GOOGLE_CODE
@@ -12,6 +12,8 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Instant Messaging client based on XULRunner and libpurple
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		tar:bzip2
 USE_LINUX=	libxml2 #avahiglib avahilibs

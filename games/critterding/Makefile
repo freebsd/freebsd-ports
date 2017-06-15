@@ -3,7 +3,7 @@
 
 PORTNAME=	critterding
 DISTVERSION=	beta12
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sources
 
@@ -12,7 +12,7 @@ COMMENT=	Evolving Artificial Life
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		autoreconf libtool pkgconfig tar:bzip2
+USES=		autoreconf libtool ncurses pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GL=		gl

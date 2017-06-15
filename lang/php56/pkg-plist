@@ -185,8 +185,8 @@ include/php/ext/standard/uniqid.h
 include/php/ext/standard/url.h
 include/php/ext/standard/url_scanner_ex.h
 include/php/ext/standard/winver.h
-@exec touch %D/include/php/ext/php_config.h
-@unexec [ -s %D/include/php/ext/php_config.h ] || rm %D/include/php/ext/php_config.h
+@postexec touch %D/include/php/ext/php_config.h
+@preunexec [ -s %D/include/php/ext/php_config.h ] || rm %D/include/php/ext/php_config.h
 include/php/main/SAPI.h
 include/php/main/build-defs.h
 include/php/main/fopen_wrappers.h

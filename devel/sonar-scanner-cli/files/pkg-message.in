@@ -1,0 +1,10 @@
+************************************************************************
+
+  Before start the SonarQube Scanner (default settings):
+  - create a new SONAR_RUNNER_HOME environment variable set to
+    "/usr/local/sonar-scanner-cli"
+
+  More information:
+  http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
+
+************************************************************************

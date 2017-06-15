@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION?=	2.2.0.0
+PORTVERSION?=	2.2.2.0
+PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Radically simple IT automation
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2
@@ -45,7 +46,7 @@ NETADDR_DESC=	Dependency on py-netaddr for ipaddr() filter
 NETADDR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr
 
 post-patch:
-.for f in bin/* docs/man/man1/* examples/* lib/ansible/*.py \
+.for f in bin/ansible docs/man/man1/* examples/* lib/ansible/*.py \
 	lib/ansible/*/*.py lib/ansible/*/*/*.py lib/ansible/*/*/*/*.py
 	@${REINPLACE_CMD} -e 's|/etc/ansible|${ETCDIR}|' ${WRKSRC}/${f}
 .endfor

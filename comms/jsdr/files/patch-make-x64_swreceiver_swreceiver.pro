@@ -1,6 +1,6 @@
---- make-x64/swreceiver/swreceiver.pro.orig
+--- make-x64/swreceiver/swreceiver.pro.orig	2012-09-16 16:12:33 UTC
 +++ make-x64/swreceiver/swreceiver.pro
-@@ -180,13 +180,19 @@ LIBS += -lwinmm
+@@ -180,13 +180,21 @@ LIBS += -lwinmm
  #}
  
  #for Fedora use the second set
@@ -26,5 +26,7 @@
 +	INCLUDEPATH += ${LOCALBASE}/include
 +	QMAKE_LIBDIR += ${LOCALBASE}/lib
 +	LIBS +=  -lqwt -lrt -lsndfile -lsamplerate  -lportaudio -lusb -lfftw3
++	target.path = $$INSTALL_ROOT/$$PREFIX/bin
++	INSTALLS += target
 +}
  

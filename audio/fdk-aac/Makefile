@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fdk-aac
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 

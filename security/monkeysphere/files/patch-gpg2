@@ -1,0 +1,410 @@
+--- examples/make-x509-certreqs.orig	2016-12-03 04:25:41 UTC
++++ examples/make-x509-certreqs
+@@ -69,12 +69,12 @@ EOF
+ gencertreq() {
+     keyid="$1"
+     
+-    timestamp=$(gpg --fixed-list-mode --with-colons --list-keys "0x$keyid!" | grep ^pub: | cut -f6 -d:)
++    timestamp=$(gpg2 --fixed-list-mode --with-colons --list-keys "0x$keyid!" | grep ^pub: | cut -f6 -d:)
+     
+     san=''
+     primary=''
+ # find all the $proto-using User IDs:
+-    uids=$(gpg --fixed-list-mode --with-colons --list-keys "0x$keyid!" | \
++    uids=$(gpg2 --fixed-list-mode --with-colons --list-keys "0x$keyid!" | \
+         grep '^uid:' | cut -f10 -d: | \
+         grep '^'"${proto}"'\\x3a//' | \
+         sed -r -e 's!^'"${proto}"'\\x3a//!!' -e 's!:[0-9]+$!!')
+@@ -83,7 +83,7 @@ gencertreq() {
+     printf "Certificate Request for TLS WWW server %s\n[OpenPGP key %s]\n" "$primary" "$keyid"
+     openssl req -text -new \
+         -config <(get_openssl_config "$timestamp" "$uids") \
+-        -key <(gpg --export-secret-key "$keyid" | openpgp2ssh "$keyid") \
++        -key <(gpg2 --export-secret-key "$keyid" | openpgp2ssh "$keyid") \
+         -subj "/CN=${primary}/"
+ }
+ 
+@@ -92,6 +92,6 @@ export GNUPGHOME=/var/lib/monkeysphere/h
+ # default to looking for https keys.
+ proto="${1:-https}"
+ 
+-for fpr in $(gpg --fixed-list-mode --with-colons --fingerprint --list-secret-keys "${proto}://" | awk -F: '/^fpr:/{ if (ok) { print $10 } ; ok=0 } /^sec:/{ ok=1 }'); do
++for fpr in $(gpg2 --fixed-list-mode --with-colons --fingerprint --list-secret-keys "${proto}://" | awk -F: '/^fpr:/{ if (ok) { print $10 } ; ok=0 } /^sec:/{ ok=1 }'); do
+     gencertreq "$fpr"
+ done
+--- examples/monkeysphere-monitor-keys.orig	2016-12-03 04:25:41 UTC
++++ examples/monkeysphere-monitor-keys
+@@ -31,7 +31,7 @@
+ 
+ # FIXME: does this handle revocations and re-keying?  if a sysadmin
+ # switches over to this arrangement, how will the system check for
+-# revocations?  Scheduling a simple gpg --refresh should handle
++# revocations?  Scheduling a simple gpg2 --refresh should handle
+ # revocations.  I'm not sure how to best handle re-keyings.
+ 
+ use strict;
+monkeysphere is currently written to use gnupg 2.1 or later and the
+freebsd security/gnupg port installs the program named gpg2.
+
+--- src/monkeysphere.orig	2016-12-03 04:25:41 UTC
++++ src/monkeysphere
+@@ -62,7 +62,7 @@ EOF
+ 
+ # user gpg command to define common options
+ gpg_user() {
+-    LC_ALL=C "${GPG:-gpg}" --fixed-list-mode --no-greeting --quiet --no-tty "$@"
++    LC_ALL=C "${GPG:-gpg2}" --fixed-list-mode --no-greeting --quiet --no-tty "$@"
+ }
+ 
+ # output the ssh fingerprint of a gpg key
+@@ -92,7 +92,7 @@ check_gpg_sec_key_id() {
+     case $(echo "$gpgSecOut" | grep -c '^sec:') in
+ 	0)
+ 	    failure "No secret keys found.  Create an OpenPGP key with the following command:
+- gpg --gen-key"
++ gpg2 --gen-key"
+ 	    ;;
+ 	1)
+ 	    echo "$gpgSecOut" | cut -d: -f5
+--- src/monkeysphere-authentication.orig	2016-12-03 04:25:41 UTC
++++ src/monkeysphere-authentication
+@@ -73,7 +73,7 @@ gpg_core() {
+     GNUPGHOME="$GNUPGHOME_CORE"
+     export GNUPGHOME
+ 
+-    gpg --fixed-list-mode --no-greeting --quiet --no-tty "$@"
++    gpg2 --fixed-list-mode --no-greeting --quiet --no-tty "$@"
+ }
+ 
+ # function to interact with the gpg sphere keyring
+@@ -81,7 +81,7 @@ gpg_sphere() {
+     GNUPGHOME="$GNUPGHOME_SPHERE"
+     export GNUPGHOME
+  
+-    su_monkeysphere_user gpg --fixed-list-mode --no-greeting --quiet --no-tty "$@"
++    su_monkeysphere_user gpg2 --fixed-list-mode --no-greeting --quiet --no-tty "$@"
+ }
+ 
+ check_openpgp2ssh_sanity() {
+--- src/monkeysphere-host.orig	2016-12-03 04:25:41 UTC
++++ src/monkeysphere-host
+@@ -71,7 +71,7 @@ EOF
+ 
+ # function to interact with the gpg keyring
+ gpg_host() {
+-    GNUPGHOME="$GNUPGHOME_HOST" LC_ALL=C gpg --no-auto-check-trustdb --trust-model=always --no-greeting --quiet --no-tty --fixed-list-mode "$@"
++    GNUPGHOME="$GNUPGHOME_HOST" LC_ALL=C gpg2 --no-auto-check-trustdb --trust-model=always --no-greeting --quiet --no-tty --fixed-list-mode "$@"
+ }
+ 
+ # list the info about the a key, in colon format, to stdout
+@@ -297,10 +297,10 @@ show_key() {
+     trap cleanup EXIT
+ 
+     # import the host key into the tmp dir
+-    gpg --quiet --import <"$HOST_KEY_FILE"
++    gpg2 --quiet --import <"$HOST_KEY_FILE"
+ 
+     # get the gpg fingerprint
+-    if gpg --quiet --list-keys \
++    if gpg2 --quiet --list-keys \
+ 	--with-colons --with-fingerprint "$id" \
+ 	| awk -F: '/^fpr:/{ if (ok) { print $10 } ; ok=0 } /^pub:/{ ok=1 }' > "$GNUPGHOME"/fingerprint ; then
+ 	fingerprint=$(cat "$GNUPGHOME"/fingerprint)
+@@ -311,13 +311,13 @@ show_key() {
+     # list the host key info
+     # FIXME: make no-show-keyring work so we don't have to do the grep'ing
+     # FIXME: can we show uid validity somehow?
+-    gpg --list-keys --list-options show-unusable-uids "$fingerprint" 2>/dev/null \
++    gpg2 --list-keys --list-options show-unusable-uids "$fingerprint" 2>/dev/null \
+         | egrep -v "^${GNUPGHOME}/pubring.(gpg|kbx)$" \
+         | egrep -v '^-+$' \
+         | grep -v '^$'
+ 
+     # list revokers, if there are any
+-    revokers=$(gpg --list-keys --with-colons --fixed-list-mode "$fingerprint" \
++    revokers=$(gpg2 --list-keys --with-colons --fixed-list-mode "$fingerprint" \
+ 	| awk -F: '/^rvk:/{ print $10 }' )
+     if [ "$revokers" ] ; then
+ 	echo "The following keys are allowed to revoke this host key:"
+@@ -331,7 +331,7 @@ show_key() {
+ 
+     # list the ssh fingerprint
+     printf "ssh fingerprint: %s\n" \
+-    "$(gpg --export --no-armor "$fingerprint" 2>/dev/null | "$SYSSHAREDIR/keytrans" openpgp2sshfpr "$fingerprint")"
++    "$(gpg2 --export --no-armor "$fingerprint" 2>/dev/null | "$SYSSHAREDIR/keytrans" openpgp2sshfpr "$fingerprint")"
+ 
+     # remove the tmp file
+     trap - EXIT
+--- src/share/common.orig	2016-12-03 04:25:41 UTC
++++ src/share/common
+@@ -490,7 +490,7 @@ gpg2ssh() {
+     
+     keyID="$1"
+ 
+-    gpg --export --no-armor "$keyID" | openpgp2ssh "$keyID" 2>/dev/null
++    gpg2 --export --no-armor "$keyID" | openpgp2ssh "$keyID" 2>/dev/null
+ }
+ 
+ # output known_hosts line from ssh key
+@@ -596,7 +596,7 @@ gpg2authorized_keys() {
+ 
+ # script to determine if gpg version is equal to or greater than specified version
+ is_gpg_version_greater_equal() {
+-    local gpgVersion=$(gpg --version | head -1 | awk '{ print $3 }')
++    local gpgVersion=$(gpg2 --version | head -1 | awk '{ print $3 }')
+     local latest=$(printf '%s\n%s\n' "$1" "$gpgVersion" \
+ 	| tr '.' ' ' | sort -g -k1 -k2 -k3 \
+ 	| tail -1 | tr ' ' '.')
+@@ -617,7 +617,7 @@ gpg_fetch_userid() {
+ 
+     log verbose " checking keyserver $KEYSERVER... "
+     foundkeyids="$(echo | \
+-	gpg --quiet --batch --with-colons \
++	gpg2 --quiet --batch --with-colons \
+ 	--command-fd 0 --keyserver "$KEYSERVER" \
+ 	--search ="$userID" 2>/dev/null)"
+     returnCode="$?"
+@@ -632,7 +632,7 @@ $foundkeyids
+         foundkeyids="$(printf "%s" "$foundkeyids" | grep '^pub:' | cut -f2 -d: | sed 's/^/0x/')"
+         log verbose " Found keyids on keyserver: $(printf "%s" "$foundkeyids" | tr '\n' ' ')"
+         if [ -n "$foundkeyids" ]; then
+-            echo | gpg --quiet --batch --with-colons \
++            echo | gpg2 --quiet --batch --with-colons \
+                 --command-fd 0 --keyserver "$KEYSERVER" \
+                 --recv-keys $foundkeyids &>/dev/null
+             returnCode="$?"
+@@ -688,7 +688,7 @@ process_user_id() {
+     gpg_fetch_userid "$userID"
+ 
+     # output gpg info for (exact) userid and store
+-    gpgOut=$(gpg --list-key --fixed-list-mode --with-colons \
++    gpgOut=$(gpg2 --list-key --fixed-list-mode --with-colons \
+ 	--with-fingerprint --with-fingerprint \
+ 	="$userID" 2>/dev/null) || returnCode="$?"
+ 
+@@ -957,8 +957,8 @@ list_primary_fingerprints() {
+         rm -rf "$fake"
+     }
+     trap cleanup EXIT
+-    GNUPGHOME="$fake" gpg --no-tty --quiet --import --ignore-time-conflict 2>/dev/null
+-    GNUPGHOME="$fake" gpg --with-colons --fingerprint --list-keys | \
++    GNUPGHOME="$fake" gpg2 --no-tty --quiet --import --ignore-time-conflict 2>/dev/null
++    GNUPGHOME="$fake" gpg2 --with-colons --fingerprint --list-keys | \
+ 	awk -F: '/^fpr:/{ if (ok) { print $10 } ; ok=0 } /^pub:/{ ok=1 }'
+     trap - EXIT
+     cleanup
+@@ -976,8 +976,8 @@ get_cert_info() {
+         fi
+         rm -rf "$fake"
+     }
+-    GNUPGHOME="$fake" gpg --no-tty --quiet --import --ignore-time-conflict 2>/dev/null
+-    GNUPGHOME="$fake" gpg --with-colons --fingerprint --fixed-list-mode --list-keys "$1"
++    GNUPGHOME="$fake" gpg2 --no-tty --quiet --import --ignore-time-conflict 2>/dev/null
++    GNUPGHOME="$fake" gpg2 --with-colons --fingerprint --fixed-list-mode --list-keys "$1"
+     trap - EXIT
+     cleanup
+ }
+--- src/share/keytrans.orig	2016-12-21 22:24:44 UTC
++++ src/share/keytrans
+@@ -20,7 +20,7 @@
+ 
+ # Usage:
+ 
+-# pem2openpgp 'ssh://'$(hostname -f) < /etc/ssh/ssh_host_rsa_key | gpg --import
++# pem2openpgp 'ssh://'$(hostname -f) < /etc/ssh/ssh_host_rsa_key | gpg2 --import
+ 
+ 
+ 
+@@ -35,7 +35,7 @@
+ 
+ # Example usage:
+ 
+-# gpg --export-secret-subkeys --export-options export-reset-subkey-passwd $KEYID | \
++# gpg2 --export-secret-subkeys --export-options export-reset-subkey-passwd $KEYID | \
+ #  openpgp2ssh $KEYID | ssh-add /dev/stdin
+ 
+ 
+--- src/share/m/gen_subkey.orig	2016-12-03 04:25:41 UTC
++++ src/share/m/gen_subkey
+@@ -46,7 +46,7 @@ Type '$PGRM help' for usage."
+ 
+     # determine which keyType to use from gpg version
+     keyType=7
+-    case $(gpg --version | head -1 | awk '{ print $3 }' | cut -d. -f1) in
++    case $(gpg2 --version | head -1 | awk '{ print $3 }' | cut -d. -f1) in
+ 	1)
+ 	    if is_gpg_version_greater_equal 1.4.10 ; then
+ 		keyType=8
+--- src/share/m/ssh_proxycommand.orig	2016-12-03 04:25:41 UTC
++++ src/share/m/ssh_proxycommand
+@@ -301,7 +301,7 @@ EOF
+ 
+ 	log info <<EOF
+ Run the following command for more info about the found keys:
+-gpg --check-sigs --list-options show-uid-validity =${userID}
++gpg2 --check-sigs --list-options show-uid-validity =${userID}
+ EOF
+ 
+ 	# FIXME: should we do anything extra here if the retrieved
+--- src/share/m/subkey_to_ssh_agent.orig	2016-12-03 04:25:41 UTC
++++ src/share/m/subkey_to_ssh_agent
+@@ -54,7 +54,7 @@ subkey_to_ssh_agent() {
+ 
+ 	if [ -z "$secretkeys" ]; then
+ 	    failure "You have no secret keys in your keyring!
+-You might want to run 'gpg --gen-key'."
++You might want to run 'gpg2 --gen-key'."
+ 	fi
+ 
+         # $2 regex means "is some kind of valid, or at least not invalid"
+--- src/share/mh/add_revoker.orig	2016-12-03 04:25:41 UTC
++++ src/share/mh/add_revoker
+@@ -71,12 +71,12 @@ else
+ 
+     # download the key from the keyserver as the monkeysphere user
+     log verbose "searching keyserver $KEYSERVER for revoker keyID $revokerKeyID..."
+-    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg --quiet --keyserver "$KEYSERVER" --recv-key "0x${revokerKeyID}!" \
++    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg2 --quiet --keyserver "$KEYSERVER" --recv-key "0x${revokerKeyID}!" \
+ 	|| failure "Could not receive a key with this ID from keyserver '$KEYSERVER'."
+ 
+     # get the full fingerprint of new revoker key
+     log debug "getting fingerprint of revoker key..."
+-    fingerprint=$(su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg --list-key --with-colons --with-fingerprint "${revokerKeyID}" \
++    fingerprint=$(su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg2 --list-key --with-colons --with-fingerprint "${revokerKeyID}" \
+ 	| awk -F: '/^fpr:/{ if (ok) { print $10 }; ok=0 } /^pub:/{ ok=1 }')
+ 
+     # test that there is only a single fingerprint
+@@ -90,7 +90,7 @@ EOF
+     fi
+ 
+     log info "revoker key found:"
+-    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg --fingerprint "0x${fingerprint}!"
++    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg2 --fingerprint "0x${fingerprint}!"
+ 
+     if [ "$PROMPT" = "true" ] ; then
+ 	printf "Are you sure you want to add the above key as a revoker\nof the key '$keyID'? (Y/n) " >&2
+@@ -104,7 +104,7 @@ EOF
+ 
+     # export the new key to the host keyring
+     log debug "loading revoker key into host keyring..."
+-    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg --quiet --export "0x${fingerprint}!" \
++    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg2 --quiet --export "0x${fingerprint}!" \
+ 	| gpg_host --import
+ fi
+ 
+--- src/share/mh/publish_key.orig	2016-12-03 04:25:41 UTC
++++ src/share/mh/publish_key
+@@ -46,7 +46,7 @@ trap cleanup EXIT
+ 
+ # import the key into the tmp dir
+ su_monkeysphere_user \
+-    gpg --quiet --import <"$HOST_KEY_FILE"
++    gpg2 --quiet --import <"$HOST_KEY_FILE"
+ 
+ ANCHORFILE=""
+ for anchorfile in "${SYSCONFIGDIR}/monkeysphere-host-x509-anchors.crt" "${SYSCONFIGDIR}/monkeysphere-x509-anchors.crt"; do
+@@ -59,7 +59,7 @@ done
+ # publish key
+ log debug "publishing key with the following gpg command line and options:"
+ su_monkeysphere_user \
+-    gpg --keyserver "$KEYSERVER" ${ANCHORFILE:+--keyserver-options "ca-cert-file=$ANCHORFILE"} --send-keys "0x${keyID}!"
++    gpg2 --keyserver "$KEYSERVER" ${ANCHORFILE:+--keyserver-options "ca-cert-file=$ANCHORFILE"} --send-keys "0x${keyID}!"
+ 
+ # remove the tmp file
+ trap - EXIT
+--- src/share/mh/revoke_key.orig	2016-12-03 04:25:41 UTC
++++ src/share/mh/revoke_key
+@@ -72,11 +72,11 @@ y
+     else
+     # note: we're not using the gpg_host function because we actually
+     # want to use gpg's UI in this case, so we want to omit --no-tty
+-	revcert=$(GNUPGHOME="$GNUPGHOME_HOST" gpg --no-greeting --quiet --armor --gen-revoke "0x${keyID}!") \
++	revcert=$(GNUPGHOME="$GNUPGHOME_HOST" gpg2 --no-greeting --quiet --armor --gen-revoke "0x${keyID}!") \
+ 	    || failure "Failed to generate revocation certificate!"
+     fi
+ 
+-    # if you run gpg --gen-revoke but cancel it or quit in the middle,
++    # if you run gpg2 --gen-revoke but cancel it or quit in the middle,
+     # it returns success, but emits no revocation certificate:
+     if ! [ "$revcert" ] ; then
+ 	failure "Revocation canceled."
+@@ -94,9 +94,9 @@ y
+ 	    printf "Not publishing.\n" >&2
+ 	else
+ 	    local newhome=$(msmktempdir)
+-	    GNUPGHOME="$newhome" gpg --no-tty --quiet --import < "$HOST_KEY_FILE"
+-	    GNUPGHOME="$newhome" gpg --no-tty --quiet --import <<< "$revcert"
+-	    GNUPGHOME="$newhome" gpg --keyserver "$KEYSERVER" --send "0x${keyID}!"
++	    GNUPGHOME="$newhome" gpg2 --no-tty --quiet --import < "$HOST_KEY_FILE"
++	    GNUPGHOME="$newhome" gpg2 --no-tty --quiet --import <<< "$revcert"
++	    GNUPGHOME="$newhome" gpg2 --keyserver "$KEYSERVER" --send "0x${keyID}!"
+ 	    rm -rf "$newhome"
+ 	fi
+     fi
+--- src/transitions/0.23.orig	2016-12-21 22:24:44 UTC
++++ src/transitions/0.23
+@@ -72,7 +72,7 @@ if [ -d "$SYSDATADIR"/gnupg-host ] ; the
+ 	# get the old host keygrip (don't know why there would be more
+ 	# than one, but we'll transfer all tsigs made by any key that
+ 	# had been given ultimate ownertrust):
+-	for authgrip in $(GNUPGHOME="$SYSDATADIR"/gnupg-host gpg --quiet --no-tty --no-permission-warning --export-ownertrust | \
++	for authgrip in $(GNUPGHOME="$SYSDATADIR"/gnupg-host gpg2 --quiet --no-tty --no-permission-warning --export-ownertrust | \
+ 	    grep ':6:$' | \
+ 	    sed -r 's/^[A-F0-9]{24}([A-F0-9]{16}):6:$/\1/') ; do
+ 	    
+@@ -88,7 +88,7 @@ if [ -d "$SYSDATADIR"/gnupg-host ] ; the
+ 	    # one of those certifications (even if later
+ 	    # certifications had different parameters).
+ 	    
+-	    GNUPGHOME="$SYSDATADIR"/gnupg-host gpg --quiet --no-tty --no-permission-warning --fingerprint --with-colons --fixed-list-mode --check-sigs | \
++	    GNUPGHOME="$SYSDATADIR"/gnupg-host gpg2 --quiet --no-tty --no-permission-warning --fingerprint --with-colons --fixed-list-mode --check-sigs | \
+ 		cut -f 1,2,5,8,9,10 -d: | \
+ 		egrep '^(fpr:::::|sig:!:'"$authgrip"':[[:digit:]]+ [[:digit:]]+:)' | \
+ 		while IFS=: read -r type validity grip trustparams trustdomain fpr ; do
+@@ -130,7 +130,7 @@ if [ -d "$SYSDATADIR"/gnupg-host ] ; the
+ 
+ 			    CERTKEY=$(mktemp ${TMPDIR:-/tmp}/mstransition.XXXXXXXX)
+ 			    log "Adding identity certifier with fingerprint %s\n" "$keyfpr"
+-			    GNUPGHOME="$SYSDATADIR"/gnupg-host gpg --quiet --no-tty --no-permission-warning --export "0x$keyfpr" --export-options export-clean >"$CERTKEY"
++			    GNUPGHOME="$SYSDATADIR"/gnupg-host gpg2 --quiet --no-tty --no-permission-warning --export "0x$keyfpr" --export-options export-clean >"$CERTKEY"
+ 			    MONKEYSPHERE_PROMPT=false monkeysphere-authentication add-identity-certifier $finaldomain --trust "$truststring" --depth "$trustdepth" "$CERTKEY"
+ 			    rm -f "$CERTKEY"
+ 			    # clear the fingerprint so that we don't
+@@ -150,9 +150,9 @@ if [ -d "$SYSDATADIR"/gnupg-host ] ; the
+ 	log "Not transferring host key info because host directory already exists.\n"
+     else
+ 	if [ -s "$SYSDATADIR"/ssh_host_rsa_key ] || \
+-	    GNUPGHOME="$SYSDATADIR"/gnupg-host gpg --quiet --no-tty --no-permission-warning --with-colons --list-secret-keys | grep -q '^sec:' ; then
++	    GNUPGHOME="$SYSDATADIR"/gnupg-host gpg2 --quiet --no-tty --no-permission-warning --with-colons --list-secret-keys | grep -q '^sec:' ; then
+ 	    
+-	    FPR=$(GNUPGHOME="$SYSDATADIR"/gnupg-host gpg --quiet --no-tty --no-permission-warning --with-colons --fixed-list-mode --list-secret-keys --fingerprint | awk -F: '/^fpr:/{ print $10 }' )
++	    FPR=$(GNUPGHOME="$SYSDATADIR"/gnupg-host gpg2 --quiet --no-tty --no-permission-warning --with-colons --fixed-list-mode --list-secret-keys --fingerprint | awk -F: '/^fpr:/{ print $10 }' )
+ 	    
+ 	# create host home
+ 	    mkdir -p $(dirname "$MHDATADIR")
+@@ -169,12 +169,12 @@ if [ -d "$SYSDATADIR"/gnupg-host ] ; the
+ # FIXME: if all self-sigs are expired, then the secret key import may
+ # fail anyway. How should we deal with that?
+ 	    
+-	    if (GNUPGHOME="$SYSDATADIR"/gnupg-host gpg --quiet --no-tty --no-permission-warning --export-secret-keys && \
+-		GNUPGHOME="$SYSDATADIR"/gnupg-host gpg --quiet --no-tty --no-permission-warning --export "$FPR") | \
+-		GNUPGHOME="$NEWDATADIR" gpg --quiet --no-tty --import ; then
++	    if (GNUPGHOME="$SYSDATADIR"/gnupg-host gpg2 --quiet --no-tty --no-permission-warning --export-secret-keys && \
++		GNUPGHOME="$SYSDATADIR"/gnupg-host gpg2 --quiet --no-tty --no-permission-warning --export "$FPR") | \
++		GNUPGHOME="$NEWDATADIR" gpg2 --quiet --no-tty --import ; then
+ 		: we are in good shape!
+ 	    else
+-		if ! GNUPGHOME="$NEWDATADIR" gpg --quiet --no-tty --list-secret-key >/dev/null ; then
++		if ! GNUPGHOME="$NEWDATADIR" gpg2 --quiet --no-tty --list-secret-key >/dev/null ; then
+ 		    log "The old host key (%s) was not imported properly.\n" "$FPR"
+ 		    exit 1
+ 		fi
+@@ -204,7 +204,7 @@ fi
+ if [ -d "${SYSDATADIR}/gnupg-authentication" ] ; then
+ 
+     GNUPGHOME="${SYSDATADIR}/gnupg-authentication" \
+-	gpg --quiet --no-tty --no-permission-warning --export 2>/dev/null | \
++	gpg2 --quiet --no-tty --no-permission-warning --export 2>/dev/null | \
+ 	monkeysphere-authentication gpg-cmd --import 2>/dev/null || \
+ 	log "No OpenPGP certificates imported into monkeysphere-authentication trust sphere.\n"
+ 

@@ -30,4 +30,10 @@ USES=		perl5 ssl
 USE_PERL5=	modbuild
 CONFIGURE_ARGS=	--openssl-cflags=-L${OPENSSLINC} --openssl-ldflags="-I${OPENSSLLIB} ${OPENSSL_LDFLAGS}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

@@ -15,7 +15,7 @@ LO_LANG_ALL=	af am ar as ast be bg bn bn_IN bo br brx bs ca ca_valencia \
 		ko kok ks lb lo lt lv mai mk ml mn mni mr my nb ne nl nn \
 		nr nso oc om or pa_IN pl pt_BR pt ro ru rw sa_IN sat sd si \
 		sid sk sl sq sr sr_Latn ss st sv sw_TZ ta te tg th tn tr \
-		ts tt ug uk uz ve vi xh zh_CN zh_TW zu
+		ts tt ug uk uz ve vec vi xh zh_CN zh_TW zu
 
 AR_PORT=	arabic/${PORTNAME}
 DE_PORT=	german/${PORTNAME}
@@ -38,7 +38,7 @@ OPTIONS_MULTI_LANG=	${LO_LANG_ALL:tu}
 OPTIONS_DEFAULT=	${LO_LANG_ALL:tu}
 
 .for lang in ${LO_LANG_ALL}
-${lang}_DETECT?=	${PREFIX}/lib/${PORTNAME}/readmes/README_${lang:S/_/-/}
+${lang}_DETECT?=	${LOCALBASE}/lib/${PORTNAME}/readmes/README_${lang:S/_/-/}
 ${lang}_NAME?=		${lang}
 ${lang:tu}_PORT?=	editors/${PORTNAME}-${lang}
 ${lang:tu}_DESC=	${${lang}_NAME} localization data

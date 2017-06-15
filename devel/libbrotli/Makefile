@@ -3,9 +3,8 @@
 
 PORTNAME=	libbrotli
 PORTVERSION=	1.0
-PORTREVISION=	4
-MASTER_SITES=	https://github.com/bagder/libbrotli/archive/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	6
 CATEGORIES=	devel archivers
 
 MAINTAINER=	osa@FreeBSD.org
@@ -15,16 +14,15 @@ LICENSE=	MIT
 
 BROTLI_VERSION=	v0.4.0
 
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	google:brotli
+USE_GITHUB=	yes
+GH_ACCOUNT=	bagder google:brotli
 GH_PROJECT=	brotli:brotli
 GH_TAGNAME=	${BROTLI_VERSION}:brotli
 GH_SUBDIR=	brotli:brotli
 
-USES=		pkgconfig autoreconf libtool compiler:c++0x
+USES=		pkgconfig autoreconf libtool compiler:c++0x pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh

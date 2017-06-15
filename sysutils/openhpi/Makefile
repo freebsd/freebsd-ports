@@ -22,11 +22,10 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		gmake gnome libtool pathfix perl5 pkgconfig shebangfix
+USES=		gmake gnome libtool pathfix perl5 pkgconfig shebangfix ssl
 SHEBANG_FILES=	plugins/snmp_bc/eventmap2code.pl scripts/text2cstr.pl
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	openhpid
 

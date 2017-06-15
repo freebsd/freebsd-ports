@@ -46,6 +46,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${STAGEDIR}${PREFIX}/bin
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/dot-tmda/filters ${STAGEDIR}${EXAMPLESDIR}/dot-tmda/lists
 	cd ${WRKSRC}/contrib && \
 		${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${EXAMPLESDIR} && \
@@ -54,6 +56,8 @@ do-install:
 		${INSTALL_DATA} [Rc]* ${STAGEDIR}${EXAMPLESDIR}/dot-tmda && \
 		${INSTALL_DATA} filters/* ${STAGEDIR}${EXAMPLESDIR}/dot-tmda/filters && \
 		${INSTALL_DATA} lists/* ${STAGEDIR}${EXAMPLESDIR}/dot-tmda/lists
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/html ${STAGEDIR}${DOCSDIR}/pdf
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR} && \
 		${CP} -r doc/html doc/pdf ${STAGEDIR}${DOCSDIR}

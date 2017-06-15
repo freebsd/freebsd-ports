@@ -13,6 +13,8 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library for working with graphs in Python, dot module
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot \
 		${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:graphics/py-graph-core
@@ -21,11 +23,11 @@ PROJECTHOST=	python-graph
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-# post-stage and add-plist-post should not act as reference on how to fix
+# post-install and add-plist-post should not act as reference on how to fix
 # egg-based conflicts.
 # https://code.google.com/p/python-graph/issues/detail?id=121 contains the
 # report for this issue.
-post-stage:
+post-install:
 .for suffix in py pyc pyo
 	rm ${STAGEDIR}${PYTHON_SITELIBDIR}/pygraph/readwrite/__init__.${suffix}
 .endfor

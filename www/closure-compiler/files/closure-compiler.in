@@ -2,4 +2,4 @@
 
 DATADIR="%%DATADIR%%"
 
-exec %%JAVA%% -jar "${DATADIR}/compiler.jar" $*
+exec %%JAVA%% -jar "${DATADIR}/closure-compiler-v%%PORTVERSION%%.jar" $*

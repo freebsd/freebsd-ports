@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2016-02-20 13:12:47 UTC
++++ src/Makefile
+@@ -30,7 +30,7 @@ subdirs:
+ 
+ locker_OBJS = $(OBJDIR)locker.o $(OBJDIR)main.o
+ locker_CFLAGS = $(CPPFLAGSF) $(CPPFLAGS) $(CFLAGSF) $(CFLAGS) `pkg-config --cflags x11 xscrnsaver`
+-locker_LDFLAGS = $(LDFLAGSF) $(LDFLAGS) `pkg-config --libs x11 xscrnsaver`
++locker_LDFLAGS = $(LDFLAGSF) $(LDFLAGS) -lXext `pkg-config --libs x11 xscrnsaver`
+ 
+ $(OBJDIR)locker$(EXEEXT): $(locker_OBJS)
+ 	$(CC) -o $(OBJDIR)locker$(EXEEXT) $(locker_OBJS) $(locker_LDFLAGS)

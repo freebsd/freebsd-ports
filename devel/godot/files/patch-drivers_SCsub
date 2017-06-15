@@ -1,0 +1,11 @@
+--- drivers/SCsub.orig	2016-11-30 21:41:21 UTC
++++ drivers/SCsub
+@@ -14,7 +14,7 @@ SConscript('windows/SCsub')
+ # Sounds drivers
+ SConscript('alsa/SCsub')
+ SConscript('pulseaudio/SCsub')
+-if (env["platform"] == "windows"):
++if (env["platform"] == "windows") or (env["platform"] == "x11"):
+     SConscript("rtaudio/SCsub")
+ 
+ # Graphics drivers

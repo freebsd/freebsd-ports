@@ -10,17 +10,14 @@ COMMENT=	Asynchronous I/O readiness notification library
 
 LICENSE=	LGPL21
 
-USES=		libtool pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buytenh
 
-post-stage:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/ivykis.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/ivykis.pc
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/pkgconfig
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libivykis.so.0.4.2
 
 .include <bsd.port.mk>

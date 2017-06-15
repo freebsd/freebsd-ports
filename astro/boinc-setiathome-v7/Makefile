@@ -8,7 +8,7 @@ CATEGORIES=	astro
 MASTER_SITES=	LOCAL/rene
 DISTNAME=	setiathome-svn-1924 # modified archive, see leftout in top directory
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Setiathome Enhanced for BOINC
 
 LICENSE=	GPLv2

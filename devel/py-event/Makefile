@@ -4,7 +4,7 @@
 PORTNAME=	event
 DISTVERSIONPREFIX=	PYEVENT_
 DISTVERSION=	0_3
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	devel net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,11 +14,13 @@ COMMENT=	Python bindings for libevent
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jaraco
 GH_PROJECT=	pyevent
+
+BROKEN=		fails to build with libevent 2.1
 
 USES=		python
 USE_PYTHON=	distutils autoplist

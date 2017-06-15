@@ -5,7 +5,7 @@ PORTVERSION=	1.0.6
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Uncompile an rgb corl-name database
+COMMENT=	Uncompile an rgb color-name database
 
 CONFIGURE_ARGS=	--with-rgb-db-dir=${PREFIX}/lib/X11/rgb
 

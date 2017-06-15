@@ -20,6 +20,6 @@ USES=		php:ext tar:tgz
 USE_PHP=	spl:build
 CONFIGURE_ARGS=	--enable-mongo
 SUB_FILES=	pkg-message
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

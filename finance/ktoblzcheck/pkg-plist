@@ -3,7 +3,7 @@ include/iban.h
 include/ktoblzcheck.h
 lib/libktoblzcheck.so
 lib/libktoblzcheck.so.1
-lib/libktoblzcheck.so.1.5.25
+lib/libktoblzcheck.so.1.5.26
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyo

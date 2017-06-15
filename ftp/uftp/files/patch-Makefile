@@ -1,23 +1,17 @@
---- makefile.orig	2014-05-28 06:22:37.000000000 +0400
-+++ makefile	2014-05-28 14:38:28.000000000 +0400
-@@ -42,15 +42,16 @@
- endif
+--- makefile.orig	2017-01-22 10:46:20.278794000 +0300
++++ makefile	2017-01-22 10:47:39.741756000 +0300
+@@ -43,12 +43,12 @@
  
  # defaults
--CC = gcc
-+CC ?= gcc
  OPTIONS=-g -Wall $(ENC_OPTS)
 -LDLIBS=-lc -lm $(CRYPT_LIB)
--CFLAGS=
-+LDLIBS+=-lm $(CRYPT_LIB)
-+CFLAGS?=
++LDLIBS=-lm $(CRYPT_LIB)
  MTFLAGS=
  
  # FreeBSD
  ifeq ("FreeBSD", "$(UNAME_S)")
 -OPTIONS=-g -Wall -DHAS_GETIFADDRS -DNO_DUAL -DSOCKADDR_LEN $(ENC_OPTS)
 +OPTIONS=-Wall -DHAS_GETIFADDRS -DNO_DUAL -DSOCKADDR_LEN $(ENC_OPTS)
-+OPENSSL=/usr
  endif
  
  # OSX, aka Darwin

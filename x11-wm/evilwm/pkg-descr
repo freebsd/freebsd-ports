@@ -1,13 +1,8 @@
-from the Web page:
+evilwm is a minimalist window manager for X11.  The name evil came from
+Stuart "Stuii" Ford, who reckons any window manager I use has to be evil
+and masochistic.  This is not the case at all, but I liked the name.
 
-	evilwm is a minimalist window manager for X. The name evil
-	came from Stuart 'Stuii' Ford, who reckons any window
-	manager I use has to be evil and masochistic.  This is not
-	the case at all, but I liked the name.
+It features movement, killing, lowering, raising, and moving windows by
+keyboard control.  It supports virtual desktops.
 
-It features movement, killing, lowering, raising, and moving windows
-by keyboard control.  It supports virtual desktops.
-
-WWW:   http://www.6809.org.uk/evilwm/
-
-Trevor Johnson
+WWW: http://www.6809.org.uk/evilwm/

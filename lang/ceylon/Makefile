@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ceylon
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.2
 CATEGORIES=	lang java
 MASTER_SITES=	http://downloads.ceylon-lang.org/cli/
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ceylon is a language for writing large programs in teams
 
 LICENSE=	APACHE20 GPLv2
@@ -27,7 +27,7 @@ CEYLON_DIRS=	contrib lib repo samples templates
 .include <bsd.port.pre.mk>
 
 do-install:
-	${RM} -f ${WRKSRC}/bin/*.bat
+	${RM} ${WRKSRC}/bin/*.bat
 
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man1/* ${STAGEDIR}/${MAN1PREFIX}/man/man1
 

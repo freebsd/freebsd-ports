@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sdoc
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Create rdoc html with javascript search index
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-json>=1.7.7:devel/rubygem-json
+RUN_DEPENDS=	rubygem-json1>=1.7.7:devel/rubygem-json1
 
 NO_ARCH=	yes
 

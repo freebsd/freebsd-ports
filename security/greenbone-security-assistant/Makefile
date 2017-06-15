@@ -2,7 +2,7 @@
 
 PORTNAME=	greenbone-security-assistant
 PORTVERSION=	6.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/2299/
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsmin
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,7 @@ MAINTAINER=	vlad-fbsd@acheronmedia.com
 COMMENT=	JavaScript minifier written in Python
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
 USE_PYTHON=	distutils autoplist

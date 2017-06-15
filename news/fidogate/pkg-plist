@@ -2,7 +2,7 @@ libexec/fidogate/areafix.help
 libexec/fidogate/areasbbssync
 libexec/fidogate/charset.bin
 libexec/fidogate/charset.map
-libexec/fidogate/ffx
+@(%%FIDOGATE_USER%%,news,4755) libexec/fidogate/ffx
 libexec/fidogate/ffxmail
 libexec/fidogate/ffxnews
 libexec/fidogate/ffxqt
@@ -10,7 +10,7 @@ libexec/fidogate/ffxrmail
 libexec/fidogate/ftn2ftn
 libexec/fidogate/ftn2rfc
 libexec/fidogate/ftnaf
-libexec/fidogate/ftnafmail
+@(%%FIDOGATE_USER%%,news,4755) libexec/fidogate/ftnafmail
 libexec/fidogate/ftnafpkt
 libexec/fidogate/ftnafutil
 libexec/fidogate/ftnbsy
@@ -24,7 +24,7 @@ libexec/fidogate/ftninpost
 libexec/fidogate/ftninrecomb
 libexec/fidogate/ftnlock
 libexec/fidogate/ftnlog
-libexec/fidogate/ftnmail
+@(%%FIDOGATE_USER%%,news,4755) libexec/fidogate/ftnmail
 libexec/fidogate/ftnoutpkt
 libexec/fidogate/ftnpack
 libexec/fidogate/ftnroute

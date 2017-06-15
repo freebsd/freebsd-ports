@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Business-PayPal
-PORTVERSION=	0.11
-PORTREVISION=	2
+PORTVERSION=	0.18
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for automating PayPal transactions
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Net-SSLeay>=1.35:security/p5-Net-SSLeay \
 		p5-CGI>=3.49:www/p5-CGI \

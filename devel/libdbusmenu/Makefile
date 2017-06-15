@@ -7,13 +7,14 @@ CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/243440794/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLib and Gtk Implementation of the DBusMenu protocol
 
 LICENSE=	GPLv3 LGPL21 LGPL3
 LICENSE_COMB=	multi
-LICENSE_DISTFILES=	${WRKSRC}/COPYING-GPL3 ${WRKSRC}/COPYING.2.1 \
-	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING-GPL3
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.2.1
 
 BUILD_DEPENDS=	vapigen:lang/vala \
 		gtkdoc-check:textproc/gtk-doc

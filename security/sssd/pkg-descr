@@ -6,4 +6,4 @@ basis to provide client auditing and policy services for projects
 like FreeIPA.  sssd also features caching, which can allow for
 offline use to assist laptop users.
 
-WWW: https://fedorahosted.org/sssd/
+WWW: https://pagure.io/SSSD/sssd

@@ -26,15 +26,4 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-
-PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION} \
-		PYVER=${PYTHON_VER:S/.//}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

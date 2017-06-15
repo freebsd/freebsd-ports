@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lxterminal
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%20${PORTVERSION}/
 
@@ -11,33 +12,28 @@ COMMENT=	Lightweight terminal emulator from the LXDE project
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
-LIB_DEPENDS=	libvte.so:x11-toolkits/vte
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+	libfreetype.so:print/freetype2
 
-USES=		gmake iconv pkgconfig
-USE_GNOME=	gtk20 intlhack
+USES=		gmake localbase pkgconfig tar:xz
+USE_GNOME=	gtk20 glib20 cairo vte intltool
+USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
-USE_GCC=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS README
 INSTALLS_ICONS=	YES
 
-OPTIONS_DEFINE=	DOCS NLS
+CONFIGURE_ARGS=	--enable-gtk3=no
+
+OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 NLS_USES_OFF=	gettext-tools
-NLS_CPPFLAGS=	-I${LOCALBASE}/include
-NLS_LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's|src po|src|' \
 		${WRKSRC}/Makefile.in
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

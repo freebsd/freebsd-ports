@@ -3,7 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.2.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 PKGNAMESUFFIX=	22
@@ -38,11 +38,10 @@ LDAP_USE=		OPENLDAP=yes
 INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool pkgconfig ssl
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 USE_GNOME=	glib20
-USE_OPENSSL=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -74,7 +73,7 @@ DATABASE+=	sqlite
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
+	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -r
 	@${FIND} ${WRKSRC} -name *.orig -type f -delete
 
 post-configure:

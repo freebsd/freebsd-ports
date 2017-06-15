@@ -21,7 +21,7 @@
 # $FreeBSD$
 #
 
-SDL_Include_MAINTAINER=		mva@FreeBSD.org
+SDL_Include_MAINTAINER=		ports@FreeBSD.org
 
 #
 # These are the current supported SDL1.2 modules

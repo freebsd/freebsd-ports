@@ -3,7 +3,7 @@
 
 PORTNAME=	raknet
 PORTVERSION=	3.9.2
-PORTREVISION=	3
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \
@@ -30,7 +30,7 @@ NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	any
 
-USES=		dos2unix cmake gmake zip
+USES=		dos2unix cmake zip
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
 # XXX Do not provide Samples for the following reason :

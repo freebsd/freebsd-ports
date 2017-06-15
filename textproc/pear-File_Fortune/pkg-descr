@@ -6,4 +6,4 @@ native array, including updating and deleting items. All write operations will
 produce a binary header file to allow compatibility with the fortune and
 fortune-mod programs (as well as other fortune interfaces).
 
-WWW: http://pear.php.net/package/File_Fortune/
+WWW: https://pear.php.net/package/File_Fortune

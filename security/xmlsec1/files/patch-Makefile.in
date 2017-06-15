@@ -1,0 +1,18 @@
+--- Makefile.in.orig	2017-01-05 17:38:02.402682000 +0900
++++ Makefile.in	2017-01-05 17:39:12.079701000 +0900
+@@ -468,13 +468,13 @@
+ top_srcdir = @top_srcdir@
+ NULL = 
+ SAFE_VERSION = @XMLSEC_VERSION_SAFE@
+-SUBDIRS = include src apps man docs
++SUBDIRS = include src apps man ${DOCS}
+ TEST_APP = apps/xmlsec1$(EXEEXT)
+ DEFAULT_CRYPTO = @XMLSEC_DEFAULT_CRYPTO@
+ bin_SCRIPTS = xmlsec1-config
+ pkgconfig_DATA = xmlsec1.pc @XMLSEC_CRYPTO_PC_FILES_LIST@
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = xmlsec1Conf.sh
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = xmlsec1.m4

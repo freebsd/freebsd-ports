@@ -1,0 +1,11 @@
+--- tinder.gemspec.orig	2017-01-15 03:44:25 UTC
++++ tinder.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<eventmachine>.freeze, ["~> 1.0"])
+-      s.add_runtime_dependency(%q<faraday>.freeze, ["~> 0.9.0"])
++      s.add_runtime_dependency(%q<faraday>.freeze, ["~> 0.9"])
+       s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["~> 0.9"])
+       s.add_runtime_dependency(%q<hashie>.freeze, [">= 1.0"])
+       s.add_runtime_dependency(%q<json>.freeze, ["~> 1.8.0"])

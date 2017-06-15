@@ -107,6 +107,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/eigrp.lua
 %%DATADIR%%/nselib/formulas.lua
 %%DATADIR%%/nselib/ftp.lua
+%%DATADIR%%/nselib/geoip.lua
 %%DATADIR%%/nselib/giop.lua
 %%DATADIR%%/nselib/gps.lua
 %%DATADIR%%/nselib/http.lua
@@ -185,6 +186,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/target.lua
 %%DATADIR%%/nselib/tftp.lua
 %%DATADIR%%/nselib/tls.lua
+%%DATADIR%%/nselib/tn3270.lua
 %%DATADIR%%/nselib/tns.lua
 %%DATADIR%%/nselib/unicode.lua
 %%DATADIR%%/nselib/unittest.lua
@@ -258,6 +260,8 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/cassandra-brute.nse
 %%DATADIR%%/scripts/cassandra-info.nse
 %%DATADIR%%/scripts/cccam-version.nse
+%%DATADIR%%/scripts/cics-enum.nse
+%%DATADIR%%/scripts/cics-user-enum.nse
 %%DATADIR%%/scripts/citrix-brute-xml.nse
 %%DATADIR%%/scripts/citrix-enum-apps-xml.nse
 %%DATADIR%%/scripts/citrix-enum-apps.nse
@@ -311,6 +315,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/eppc-enum-processes.nse
 %%DATADIR%%/scripts/fcrdns.nse
 %%DATADIR%%/scripts/finger.nse
+%%DATADIR%%/scripts/fingerprint-strings.nse
 %%DATADIR%%/scripts/firewalk.nse
 %%DATADIR%%/scripts/firewall-bypass.nse
 %%DATADIR%%/scripts/flume-master-info.nse
@@ -476,6 +481,9 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ip-forwarding.nse
 %%DATADIR%%/scripts/ip-geolocation-geoplugin.nse
 %%DATADIR%%/scripts/ip-geolocation-ipinfodb.nse
+%%DATADIR%%/scripts/ip-geolocation-map-bing.nse
+%%DATADIR%%/scripts/ip-geolocation-map-google.nse
+%%DATADIR%%/scripts/ip-geolocation-map-kml.nse
 %%DATADIR%%/scripts/ip-geolocation-maxmind.nse
 %%DATADIR%%/scripts/ip-https-discover.nse
 %%DATADIR%%/scripts/ipidseq.nse
@@ -567,6 +575,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/nfs-showmount.nse
 %%DATADIR%%/scripts/nfs-statfs.nse
 %%DATADIR%%/scripts/nje-node-brute.nse
+%%DATADIR%%/scripts/nje-pass-brute.nse
 %%DATADIR%%/scripts/nntp-ntlm-info.nse
 %%DATADIR%%/scripts/nping-brute.nse
 %%DATADIR%%/scripts/nrpe-enum.nse
@@ -684,11 +693,11 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/ssh2-enum-algos.nse
 %%DATADIR%%/scripts/sshv1.nse
 %%DATADIR%%/scripts/ssl-ccs-injection.nse
+%%DATADIR%%/scripts/ssl-cert-intaddr.nse
 %%DATADIR%%/scripts/ssl-cert.nse
 %%DATADIR%%/scripts/ssl-date.nse
 %%DATADIR%%/scripts/ssl-dh-params.nse
 %%DATADIR%%/scripts/ssl-enum-ciphers.nse
-%%DATADIR%%/scripts/ssl-google-cert-catalog.nse
 %%DATADIR%%/scripts/ssl-heartbleed.nse
 %%DATADIR%%/scripts/ssl-known-key.nse
 %%DATADIR%%/scripts/ssl-poodle.nse
@@ -716,8 +725,11 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/telnet-ntlm-info.nse
 %%DATADIR%%/scripts/tftp-enum.nse
 %%DATADIR%%/scripts/tls-nextprotoneg.nse
+%%DATADIR%%/scripts/tn3270-screen.nse
 %%DATADIR%%/scripts/tor-consensus-checker.nse
 %%DATADIR%%/scripts/traceroute-geolocation.nse
+%%DATADIR%%/scripts/tso-brute.nse
+%%DATADIR%%/scripts/tso-enum.nse
 %%DATADIR%%/scripts/unittest.nse
 %%DATADIR%%/scripts/unusual-port.nse
 %%DATADIR%%/scripts/upnp-info.nse
@@ -729,6 +741,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/vnc-info.nse
 %%DATADIR%%/scripts/vnc-title.nse
 %%DATADIR%%/scripts/voldemort-info.nse
+%%DATADIR%%/scripts/vtam-enum.nse
 %%DATADIR%%/scripts/vuze-dht-info.nse
 %%DATADIR%%/scripts/wdb-version.nse
 %%DATADIR%%/scripts/weblogic-t3-info.nse

@@ -1,0 +1,18 @@
+*****************************************************************************
+
+WARNING: THIS IS STILL-IN-DEV PROJECT! USE WITH CAUTION ON PRODUCTION ENVS!
+
+*****************************************************************************
+*****************************************************************************
+
+Remember to run mysql_upgrade the first time you start the MySQL server
+after an upgrade from an earlier version.
+
+There is no initial password for first time use of MySQL.
+Keep in mind to reset it to a secure password.
+
+MySQL80 has a default %%ETCDIR%%/my.cnf,
+remember to replace it wit your own
+or set `mysql_optfile="$YOUR_CNF_FILE` in rc.conf.
+
+*****************************************************************************

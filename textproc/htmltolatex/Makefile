@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	HTML to LaTeX to PDF Converter
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/copying.txt
+
 LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick
 
 USES=		bison gmake

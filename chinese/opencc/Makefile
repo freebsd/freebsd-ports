@@ -3,9 +3,9 @@
 
 PORTNAME=	opencc
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	ver.
 CATEGORIES=	chinese converters
-MASTER_SITES=	GITHUB
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Open Chinese Convert library and utilities

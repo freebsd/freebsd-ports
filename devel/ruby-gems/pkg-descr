@@ -12,4 +12,6 @@ Using RubyGems, you can:
 - easily remove libraries you no longer use
 - have power and control over your Ruby platform!
 
-WWW: http://docs.rubygems.org/
+You could browse source code at https://github.com/rubygems/rubygems
+
+WWW: https://rubygems.org/

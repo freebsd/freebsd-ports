@@ -1,0 +1,72 @@
+From d7a54ad53cd3bc1d50bf09a7cab682ed7aa0534b Mon Sep 17 00:00:00 2001
+From: Alberto Villa <avilla@FreeBSD.org>
+Date: Tue, 20 Dec 2016 14:33:42 +0100
+Subject: [PATCH 1/2] Ensure KDE 4 code is built when requested
+
+This fixes commit 6f8293d, which was incomplete.
+---
+ src/modules/qt/configure | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/modules/qt/configure b/src/modules/qt/configure
+index 1070bb19..57340182 100755
+--- ./src/modules/qt/configure
++++ ./src/modules/qt/configure
+@@ -195,9 +195,9 @@ else
+ 			if [ -d "$kde_includedir" ] && [ -d "$kde_libdir" ]
+ 			then
+ 				echo "- KDE version 4.x detected, will enable extra image formats"
+-				echo "#define USE_KDE4" >> config.h
+ 				echo "USE_KDE4=1" >> config.mak
+ 				echo KDECXXFLAGS=-I$kde_includedir >> config.mak
++				echo KDECXXFLAGS += -DUSE_KDE4 >> config.mak
+ 				# the -L with kde4/devel is for Fedora
+ 				echo KDELIBS=-L$kde_libdir -L${kde_libdir}/kde4/devel -lkdecore >> config.mak
+ 			fi
+-- 
+2.11.0
+
+From fc1e7fd095ac8607aa970e65e1060073d025e782 Mon Sep 17 00:00:00 2001
+From: Alberto Villa <avilla@FreeBSD.org>
+Date: Tue, 20 Dec 2016 14:55:55 +0100
+Subject: [PATCH 2/2] Properly make KDE code depend on Qt 4
+
+qt4_found was removed in 51b5668. Checking for it always returns
+false, thus disabling KDE code in every build. Just copy the logic
+from above.
+---
+ src/modules/qt/configure | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/modules/qt/configure b/src/modules/qt/configure
+index 57340182..24803baf 100755
+--- ./src/modules/qt/configure
++++ ./src/modules/qt/configure
+@@ -148,6 +148,7 @@ else
+ 		if [ $? -eq 0 ]
+ 		then
+ 			echo "- Qt version 5.x detected"
++			without_kde=true
+ 			echo QTCXXFLAGS=$(pkg-config --cflags Qt5Core Qt5Gui Qt5Xml Qt5Svg Qt5Widgets) >> config.mak
+ 			echo QTLIBS=$(pkg-config --libs Qt5Core Qt5Gui Qt5Xml Qt5Svg Qt5Widgets) >> config.mak
+ 			pkg-config --exists 'Qt5OpenGL'
+@@ -169,6 +170,7 @@ else
+ 			else
+ 				echo "- Qt not found - disabling"
+ 				touch ../disable-qt
++				exit 0
+ 			fi
+ 		fi
+ 	fi
+@@ -181,7 +183,7 @@ else
+ 	if [ "$without_kde" = "" ]
+ 	then
+ 		kde4-config
+-		if [ $? -eq 0 ] && [ "$qt4_found" != "" ]
++		if [ $? -eq 0 ]
+ 		then
+ 			# test if we have KDE4, required on some systems to get Qt extra formats (xcf, ...)
+ 			if [ "$kde_includedir" = "" ]
+-- 
+2.11.0
+

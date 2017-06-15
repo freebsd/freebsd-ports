@@ -18,7 +18,7 @@ USES=		desktop-file-utils gmake localbase pkgconfig \
 		shared-mime-info ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLDIR} \
-		--with-qt=${QT_PREFIX}
+		--with-qt=${PREFIX}
 MAKE_ARGS=	DOCTOOL="${TRUE}"
 DESTDIRNAME=	destdir
 

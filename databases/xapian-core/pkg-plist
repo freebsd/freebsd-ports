@@ -45,7 +45,7 @@ lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.a
 lib/libxapian.so
 lib/libxapian.so.22
-lib/libxapian.so.22.7.1
+lib/libxapian.so.22.7.2
 libdata/pkgconfig/xapian-core.pc
 man/man1/xapian-check.1.gz
 man/man1/xapian-chert-update.1.gz

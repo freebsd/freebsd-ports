@@ -6,7 +6,7 @@ CATEGORIES=	misc kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	151210-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE thumbnail generator for ePub files
 
 USES=		cmake:outsource kde:4

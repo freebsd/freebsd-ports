@@ -1,4 +1,5 @@
 %%SITE_ARCH%%/Math/GMPz.pm
+%%SITE_ARCH%%/Math/GMPz.pod
 %%SITE_ARCH%%/Math/GMPz/Random.pm
 %%SITE_ARCH%%/Math/GMPz/V.pm
 %%SITE_ARCH%%/auto/Math/GMPz/GMPz.so

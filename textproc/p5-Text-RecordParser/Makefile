@@ -2,7 +2,7 @@
 
 PORTNAME=	Text-RecordParser
 PORTVERSION=	1.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,9 +26,5 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	modbuild
-
-post-extract:
-		# workaround for https://rt.cpan.org/Public/Bug/Display.html?id=87855
-		${CHMOD} +w ${WRKSRC}/README.md
 
 .include <bsd.port.mk>

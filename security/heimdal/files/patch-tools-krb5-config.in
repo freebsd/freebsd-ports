@@ -1,20 +1,10 @@
---- tools/krb5-config.in.orig	2012-12-10 07:06:44.000000000 +0900
-+++ tools/krb5-config.in	2014-11-25 04:01:22.000000000 +0900
-@@ -120,7 +120,7 @@
- fi
- 
- if test "$do_libs" = "yes"; then
--    lib_flags="-L${libdir}"
-+    lib_flags="-L${libdir} -Wl,-rpath=${libdir}"
-     case $library in
-     gssapi)
- 	lib_flags="$lib_flags -lgssapi -lheimntlm"
-@@ -137,7 +137,7 @@
-     esac
-     lib_flags="$lib_flags -lkrb5 @LIB_pkinit@ -lcom_err"
-     lib_flags="$lib_flags @LIB_hcrypto_appl@ -lasn1 -lwind -lheimbase -lroken"
--    lib_flags="$lib_flags @LIB_crypt@ @PTHREAD_LIBADD@ @LIB_dlopen@"
-+    lib_flags="$lib_flags @LIB_crypt@ @LIB_dlopen@"
-     lib_flags="$lib_flags @LIB_door_create@ @LIBS@"
-     echo $lib_flags
- fi
+--- tools/krb5-config.in.orig	2017-01-04 10:37:40.213263000 +0900
++++ tools/krb5-config.in	2017-01-04 10:37:56.622658000 +0900
+@@ -82,6 +82,7 @@
+     ;;
+   --libs)
+     do_libs=yes
++    do_lib_deps=yes
+     ;;
+   --deps)
+     do_lib_deps=yes

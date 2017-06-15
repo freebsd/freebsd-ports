@@ -10,8 +10,8 @@ DIST_SUBDIR=	pure
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Pure interface to C++ STL map/unordered_map
 
-LICENSE=	GPLv3 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 USES=		pkgconfig pure
 
@@ -23,17 +23,12 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 1000000
-USE_GCC=	4.9+
-.endif
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

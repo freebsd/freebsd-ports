@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-table-mysql
-PORTREVISION=	0
+PORTREVISION=	2
 
 COMMENT=	MySQL table support for OpenSMTPD
 

@@ -1,0 +1,8 @@
+--- src/Makefile.am.orig	2016-10-31 08:14:11 UTC
++++ src/Makefile.am
+@@ -1,4 +1,4 @@
+-AM_CPPFLAGS = @VMOD_INCLUDES@ -Wall -Werror
++AM_CPPFLAGS = @VMOD_INCLUDES@
+ 
+ vmoddir = @VMOD_DIR@
+ vmod_LTLIBRARIES = libvmod_awsrest.la

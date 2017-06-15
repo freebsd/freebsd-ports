@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pulledpork
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTVERSION=	0.7.2
 CATEGORIES=	security
 MASTER_SITES=	GHL
 
@@ -26,7 +25,6 @@ SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shirkdog
-GH_TAGNAME=	8b9441a
 
 OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	syncplay
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
 
 MAINTAINER=	heckendorfc@gmail.com
@@ -14,6 +15,7 @@ GH_ACCOUNT=	Syncplay
 
 USES=		desktop-file-utils gmake python:2 twisted
 USE_TWISTED=	run
+NO_ARCH=	yes
 
 INSTALLS_ICONS=	yes
 

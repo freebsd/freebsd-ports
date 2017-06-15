@@ -2,7 +2,7 @@
 
 PORTNAME=	opencinematools
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 DISTVERSIONSUFFIX=	-src
@@ -11,6 +11,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Tools for creating multi-reel DCPs from MXF source material
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
 		libexpat.so:textproc/expat2 \

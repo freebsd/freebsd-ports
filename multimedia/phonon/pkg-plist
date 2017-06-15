@@ -157,6 +157,8 @@ include/phonon/videowidgetinterface.h
 include/phonon/volumefadereffect.h
 include/phonon/volumefaderinterface.h
 include/phonon/volumeslider.h
+%%QT_INCDIR%%/Phonon
+%%QT_INCDIR%%/phonon
 lib/cmake/phonon/PhononConfig.cmake
 lib/cmake/phonon/PhononConfigVersion.cmake
 lib/cmake/phonon/PhononExperimentalConfig.cmake
@@ -171,6 +173,10 @@ lib/libphonon.so.%%SHLIB_VER%%
 lib/libphononexperimental.so
 lib/libphononexperimental.so.4
 lib/libphononexperimental.so.%%SHLIB_VER%%
+lib/qt4/libphonon.so
+lib/qt4/libphonon.so.4
+lib/qt4/libphononexperimental.so
+lib/qt4/libphononexperimental.so.4
 libdata/pkgconfig/phonon.pc
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%DATADIR%%/buildsystem/COPYING-CMAKE-SCRIPTS
@@ -184,10 +190,4 @@ share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%DATADIR%%/buildsystem/PhononQt4.cmake
 %%DATADIR%%/buildsystem/PhononQt5.cmake
 %%DATADIR%%/buildsystem/cmake_uninstall.cmake.in
-%%QT_PREFIX%%/%%QT_INCDIR%%/Phonon
-%%QT_PREFIX%%/%%QT_INCDIR%%/phonon
-%%QT_PREFIX%%/%%QT_LIBDIR%%/libphonon.so
-%%QT_PREFIX%%/%%QT_LIBDIR%%/libphonon.so.4
-%%QT_PREFIX%%/%%QT_LIBDIR%%/libphononexperimental.so
-%%QT_PREFIX%%/%%QT_LIBDIR%%/libphononexperimental.so.4
-%%QT_PREFIX%%/%%QT_MKSPECDIR%%/modules/qt_phonon.pri
+%%QT_MKSPECDIR%%/modules/qt_phonon.pri

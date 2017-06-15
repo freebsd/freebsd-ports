@@ -23,7 +23,7 @@ NO_WRKSUBDIR=	yes
 MAKE_ENV=	DISTDIR=${DISTDIR} DISTFILES="${DISTFILES}" FONTSDIR="${FONTSDIR}"
 
 do-extract:
-	@${RM} -fr ${WRKSRC} && \
+	@${RM} -r ${WRKSRC} && \
 	${MKDIR} ${WRKSRC} && \
 	cd ${WRKSRC} && \
 	for file in ${DISTFILES}; do \

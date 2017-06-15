@@ -1,4 +1,4 @@
---- bsnes-libretro/Makefile.freebsd.orig	2015-11-10 19:32:17 UTC
+--- bsnes-libretro/Makefile.freebsd.orig	2016-11-09 04:30:27 UTC
 +++ bsnes-libretro/Makefile.freebsd
 @@ -0,0 +1,2 @@
 +all:

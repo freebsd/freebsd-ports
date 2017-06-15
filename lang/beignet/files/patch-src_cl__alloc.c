@@ -1,5 +1,5 @@
---- src/cl_alloc.c.orig	2015-01-16 11:24:13.000000000 +0100
-+++ src/cl_alloc.c	2015-02-03 15:31:13.983452000 +0100
+--- src/cl_alloc.c.orig	2017-01-20 10:40:51 UTC
++++ src/cl_alloc.c
 @@ -22,7 +22,7 @@
  
  #include <stdlib.h>
@@ -9,7 +9,7 @@
  
  static volatile int32_t cl_alloc_n = 0;
  
-@@ -41,8 +41,13 @@
+@@ -41,8 +41,13 @@ cl_aligned_malloc(size_t sz, size_t alig
  {
    void * p = NULL;
    atomic_inc(&cl_alloc_n);

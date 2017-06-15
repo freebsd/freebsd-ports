@@ -1,0 +1,11 @@
+--- platforms/etc/Makefile.orig	2014-04-09 22:15:34 UTC
++++ platforms/etc/Makefile
+@@ -8,7 +8,7 @@ all-uninstall: uninstall-etc
+ 
+ install-etc:
+ 	$(call MKDIR,$(sysconfdir))
+-	$(call INSTNEW,644,apcupsd.conf,$(sysconfdir))
++	$(call INSTDATA,644,apcupsd.conf,$(sysconfdir)/apcupsd.conf.sample)
+ 	$(call INSTORIG,744,changeme,$(sysconfdir))
+ 	$(call INSTORIG,744,commfailure,$(sysconfdir))
+ 	$(call INSTORIG,744,commok,$(sysconfdir))

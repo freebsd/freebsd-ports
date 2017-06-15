@@ -3,7 +3,7 @@
 
 PORTNAME=	modula3
 PORTVERSION=	5.10.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/m3/:boot
 DISTFILES=	${SRCDISTFILE} ${BOOTDIST}
@@ -128,7 +128,7 @@ do-install:
 		${RM} cm3 && ${LN} -s ../../../bin/cm3 .)
 
 new-bootstrap:
-	@${RM} -rf ${NEWBOOTDIR}
+	@${RM} -r ${NEWBOOTDIR}
 	@${MKDIR} ${NEWBOOTDIR:H}
 	${CP} -a ${INTERMED}/min-dist ${NEWBOOTDIR}
 	@${FIND} ${NEWBOOTDIR} -type f -perm +111 | \

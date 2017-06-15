@@ -33,7 +33,7 @@ PGSQL_CONFIGURE_ON=	--enable-pgsql=yes \
 			--with-pgsql_lib=${LOCALBASE}/lib
 
 post-patch:
-	@${RM} -f ${WRKSRC}/include/dbconn/README
+	@${RM} ${WRKSRC}/include/dbconn/README
 	@${REINPLACE_CMD} 's|gcc|${CC}|' \
 		${WRKSRC}/src/dbconnect/Makefile.in \
 		${WRKSRC}/src/driver_*/Makefile.in

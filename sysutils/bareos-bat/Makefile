@@ -12,7 +12,7 @@ LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \
 
 CONFLICTS=	bacula*-bat-*
 
-USES=		pkgconfig
+USES=		pkgconfig desktop-file-utils
 USE_QT4=	qmake_build uic_build moc_build rcc_build
 WITH_BAT=	yes
 

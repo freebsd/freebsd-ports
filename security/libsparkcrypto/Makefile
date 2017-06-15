@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://senier.net/libsparkcrypto/
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Cryptographic library implemented in SPARK
 
 LICENSE=	BSD3CLAUSE
@@ -18,6 +18,8 @@ DOS2UNIX_FILES=	Makefile build/libsparkcrypto.gpr \
 		src/shared/generic/lsc-types.ads
 SPARKARCH:=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
 ALL_TARGET=	all build
+
+BROKEN_aarch64=		fails to compile: unsupported architecture: aarch64
 
 MAKE_ENV+=	SPARKARCH=${SPARKARCH} \
 		SPARK_DIR=${WRKSRC}/src/spark \

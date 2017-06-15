@@ -7,8 +7,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 LIB_DEPENDS=	libdns_sd.so.1:net/mDNSResponder
 
-MAINTAINER=	dev@ixsystems.com
-COMMENT=	pybonjour 1.1.1 for Python 3
+LICENSE=	MIT
+
+BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		python
 USE_PYTHON=	autoplist distutils

@@ -2,6 +2,7 @@
 
 PORTNAME=	fluentd
 PORTVERSION=	0.12.14
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -31,14 +32,8 @@ SUB_LIST+=	USER=${USERS} GROUP=${GROUPS} RUBY=${RUBY}
 NO_ARCH=	YES
 NO_LATEST_LINK=	YES
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 2.0
-RUN_DEPENDS+=	rubygem-string-scrub>=0.0.3:textproc/rubygem-string-scrub
-.endif
-
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fluentd/plugin
 	${CP} ${WRKSRC}/fluent.conf.sample ${STAGEDIR}${PREFIX}/etc/fluentd/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

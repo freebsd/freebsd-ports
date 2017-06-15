@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/devel/gstreamer-plugins-gio/Makefile,v 1.1 2008/03/21 04:14:18 ahze Exp $
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 COMMENT=	Gstreamer gio (Glib I/O) plugin

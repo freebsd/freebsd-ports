@@ -3,6 +3,7 @@
 
 PORTNAME=	exult
 PORTVERSION=	1.5.0.20160514
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -58,5 +59,7 @@ post-install-DOCS-on:
 .for i in FAQ NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+BROKEN_aarch64=		Fails to compile: error: constant expression evaluates to -1 which cannot be narrowed to type char
 
 .include <bsd.port.mk>

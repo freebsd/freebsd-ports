@@ -3,14 +3,14 @@
 
 PORTNAME=	libleaftag
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel deskutils
 MASTER_SITES=	http://releases.chipx86.com/leaftag/libleaftag/
 
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	Leaftag is a library for tagging files on the desktop
 
-USES=		gmake pathfix pkgconfig libtool sqlite:2
+USES=		pathfix pkgconfig libtool sqlite:2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

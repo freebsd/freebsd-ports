@@ -11,7 +11,7 @@ MASTER_SITES=	http://wirehack7.opsys.de/FiSH/xchat/ \
 PKGNAMEPREFIX=	xchat-
 DISTNAME=	FiSH-XChat.v${DISTVERSION}-source
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encryption plugin for XChat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:math/miracl
@@ -31,7 +31,7 @@ PORTDOCS=	FiSH-xchat.txt \
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${RM} -f ${WRKSRC}/mir*
+	${RM} ${WRKSRC}/mir*
 	${CP} -pf ${FILESDIR}/Makefile ${WRKSRC}/
 
 do-install:

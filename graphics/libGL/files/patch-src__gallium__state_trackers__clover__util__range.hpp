@@ -5,13 +5,7 @@ Subject: [PATCH 3/3] Work around for clang 3.4 which fails to build Clover
 
 See:
   https://bugs.freedesktop.org/show_bug.cgi?id=74098#c3
----
- src/gallium/state_trackers/clover/util/range.hpp | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
-
-diff --git a/src/gallium/state_trackers/clover/util/range.hpp b/src/gallium/state_trackers/clover/util/range.hpp
-index afa5f77..359edda 100644
---- src/gallium/state_trackers/clover/util/range.hpp
+--- src/gallium/state_trackers/clover/util/range.hpp.orig	2016-11-10 22:05:17 UTC
 +++ src/gallium/state_trackers/clover/util/range.hpp
 @@ -362,6 +362,12 @@ namespace clover {
        return { i, i + n };
@@ -35,6 +29,3 @@ index afa5f77..359edda 100644
     map(F &&f, Rs &&... rs) {
        return { std::forward<F>(f), std::forward<Rs>(rs)... };
     }
--- 
-1.8.5.4
-

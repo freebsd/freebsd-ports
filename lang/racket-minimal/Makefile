@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	6.6
+PORTVERSION=	6.8
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -20,6 +20,11 @@ COMMENT=	Interactive, integrated, graphical Scheme programming environment
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	libffi.so:devel/libffi
+
+BROKEN_armv6=	does not build: error: GNU lightning does not support the current target
+BROKEN_aarch64=	does not build: error: Unported platform
+BROKEN_sparc64=	does not build
+BROKEN_i386=	does not build on i386 (Seg fault (internal error) at 0x606060a)
 
 MAKE_JOBS_UNSAFE=yes
 

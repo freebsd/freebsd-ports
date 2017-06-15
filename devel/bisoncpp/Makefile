@@ -2,6 +2,7 @@
 
 PORTNAME=	bisoncpp
 PORTVERSION=	4.10.01
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/bisonc%2B%2B/${PORTVERSION}
 DISTNAME=	bisonc++_${PORTVERSION}.orig
@@ -20,7 +21,7 @@ PORTDOCS=	*
 
 WRKSRC=		${WRKDIR}/bisonc++-${PORTVERSION}
 
-USE_GCC=	4.9+
+USE_GCC=	yes
 
 USES=		shebangfix
 

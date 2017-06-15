@@ -3,15 +3,16 @@
 
 PORTNAME=	libcsv
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bob@eager.cx
 COMMENT=	Small, simple and fast CSV library
 
 LICENSE=	LGPL21
 
-OPTIONS_DEFINE=	PROFILE
+OPTIONS_DEFINE=	EXAMPLES PROFILE
 
 MAKEFILE=	Makefile.lib
 USES=		uidfix
@@ -21,17 +22,16 @@ PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 SHLIB_MAJOR=	3
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPROFILE}
-PLIST_SUB+=	PROFILE=""
-.else
-MAKE_ENV+=	NO_PROFILE=true
-PLIST_SUB+=	PROFILE="@comment "
-.endif
+PROFILE_PLIST_SUB=	PROFILE=""
+PROFILE_MAKE_ENV_OFF=	NO_PROFILE=true
+PROFILE_PLIST_SUB_OFF=	PROFILE="@comment "
 
 do-configure:
 	@${SED} -e 's|%%SHLIB_MAJOR%%|${SHLIB_MAJOR}|' \
 		< ${FILESDIR}/Makefile > ${WRKSRC}/${MAKEFILE}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

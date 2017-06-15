@@ -1,7 +1,7 @@
 Index: pccl.el
 ===================================================================
---- pccl.el	(revision 2)
-+++ pccl.el	(working copy)
+--- pccl.el.orig	2005-07-06 02:08:53 UTC
++++ pccl.el
 @@ -27,138 +27,138 @@
  (require 'broken)
  

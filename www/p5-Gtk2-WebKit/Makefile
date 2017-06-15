@@ -3,7 +3,7 @@
 
 PORTNAME=	Gtk2-WebKit
 PORTVERSION=	0.09
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FLORA
@@ -29,7 +29,5 @@ USES=		compiler:c++11-lib perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	LDFLAGS="${LDFLAGS}" LD=${CC}
 MAKE_ARGS=	OTHERLDFLAGS="${LDFLAGS}"
-
-BROKEN_FreeBSD_9=	Perl messes up the linking
 
 .include <bsd.port.mk>

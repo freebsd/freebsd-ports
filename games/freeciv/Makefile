@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 		http://download.gna.org/freeciv/stable/
@@ -10,15 +10,15 @@ MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
 
+LICENSE=	GPLv2+
+
 RUN_DEPENDS=	hicolor-icon-theme>=0:misc/hicolor-icon-theme
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libcurl.so:ftp/curl
 
-USES=		gettext gmake iconv libtool pkgconfig tar:bzip2 python sqlite \
-		readline
+USES=		gmake iconv libtool localbase pkgconfig tar:bzip2 python \
+		sqlite readline
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --program-transform-name= \
 		--enable-aimodules --enable-shared \
 		--enable-fcdb=sqlite3
@@ -33,6 +33,8 @@ SDL_USE=		SDL=sdl,image,ttf,gfx
 MYSQL_CONFIGURE_ON=	--enable-fcdb=mysql --with-mysql-prefix=${LOCALBASE}
 MYSQL_USES=		mysql
 IPV6_CONFIGURE_EANBALE=	ipv6
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.options.mk>
 

@@ -16,7 +16,7 @@ RUN_DEPENDS=	ocaml-lwt>=2.3.0:devel/ocaml-lwt \
 		${SA_DIR}/deriving-ocsigen/deriving.a:devel/ocaml-deriving-ocsigen \
 		${SA_DIR}/cmdliner/cmdliner.a:devel/ocaml-cmdliner
 
-SA_DIR=		${PREFIX}/${OCAML_SITELIBDIR}
+SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
 USES=			gmake
 USE_OCAML=		yes

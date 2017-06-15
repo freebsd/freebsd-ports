@@ -6,7 +6,6 @@
     SUBDIR += R-cran-knitr
     SUBDIR += a2pdf
     SUBDIR += a2ps
-    SUBDIR += abc2mtex
     SUBDIR += abcm2ps
     SUBDIR += adobe-cmaps
     SUBDIR += afm
@@ -125,7 +124,8 @@
     SUBDIR += lilypond
     SUBDIR += lilypond-devel
     SUBDIR += linux-c6-cups-libs
-    SUBDIR += linux-f10-cups-libs
+    SUBDIR += linux-c7-cups-libs
+    SUBDIR += linux-c7-harfbuzz
     SUBDIR += lout
     SUBDIR += lpr-wrapper
     SUBDIR += lprps
@@ -137,7 +137,6 @@
     SUBDIR += mp-a4
     SUBDIR += mp-letter
     SUBDIR += mpage
-    SUBDIR += musixtex
     SUBDIR += muttprint
     SUBDIR += nenscript
     SUBDIR += okc321
@@ -196,11 +195,11 @@
     SUBDIR += py-preppy
     SUBDIR += py-pycups
     SUBDIR += py-pyscript
+    SUBDIR += py-python-ly
     SUBDIR += py-qt5-printsupport
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab
     SUBDIR += py-reportlab1
-    SUBDIR += py-reportlab2
     SUBDIR += py-rtf
     SUBDIR += py-trml2pdf
     SUBDIR += qpdf
@@ -224,6 +223,7 @@
     SUBDIR += rubygem-prawn-layout
     SUBDIR += rubygem-prawn-security
     SUBDIR += rubygem-prawn-svg
+    SUBDIR += rubygem-prawn_shapes
     SUBDIR += rubygem-rbpdf
     SUBDIR += rubygem-rbpdf-font
     SUBDIR += rubygem-ttfunk

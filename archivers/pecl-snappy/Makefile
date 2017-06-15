@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	php5-snappy
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	archivers
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PHP extension for the snappy compression algorithm
 
 LICENSE=	BSD3CLAUSE PHP301

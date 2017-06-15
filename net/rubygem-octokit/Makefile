@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octokit
-PORTVERSION=	4.3.0
+PORTVERSION=	4.6.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Simple wrapper for the GitHub API
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-sawyer>=0.7.0:www/rubygem-sawyer
+RUN_DEPENDS=	rubygem-sawyer>=0.8.0:www/rubygem-sawyer
 
 NO_ARCH=	yes
 USE_RUBY=	yes

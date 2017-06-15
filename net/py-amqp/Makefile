@@ -12,8 +12,7 @@ COMMENT=	Low-level AMQP client for Python (fork of amqplib)
 
 LICENSE=	LGPL21
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unittest2>=0.4.0:devel/py-unittest2 \
-		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 

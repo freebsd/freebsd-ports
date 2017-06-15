@@ -2,7 +2,7 @@
 
 PORTNAME=	vncreflector
 PORTVERSION=	1.2.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SF/vnc-reflector/vnc-reflector/${PORTVERSION}
 DISTNAME=	vnc_reflector-${PORTVERSION}

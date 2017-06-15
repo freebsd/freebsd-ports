@@ -2,21 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	uchardet
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.6
 CATEGORIES=	textproc
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME}/releases/
 
 MAINTAINER=	yuri@rawbw.com
-COMMENT=	Universal charset detection library by Mozilla
+COMMENT=	Universal charset detection library
 
-LICENSE=	MPL
+LICENSE=	GPLv2+ LGPL21+ MPL
+LICENSE_COMB=	dual
 
-BROKEN=		Unfetchable (google code has gone away)
-
-USES=		cmake
+USES=		cmake pathfix tar:xz
 USE_LDCONFIG=	yes
 
-post-patch:
-	@${REINPLACE_CMD} 's|_SHARE|_PREFIX|' ${WRKSRC}/doc/CMakeLists.txt
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man
 
 .include <bsd.port.mk>

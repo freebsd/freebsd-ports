@@ -3,7 +3,7 @@
 
 PORTNAME=	gforth
 PORTVERSION=	0.7.3
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 		GNU
@@ -70,7 +70,7 @@ install-doc:
 
 # Remove unused file
 remove-empty-files:
-	@${RM} -f ${STAGEDIR}${DATADIR}/site-forth/siteinit.fs
+	@${RM} ${STAGEDIR}${DATADIR}/site-forth/siteinit.fs
 
 # Remove unused directories
 remove-empty-dirs:

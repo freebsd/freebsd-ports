@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix3
-PORTVERSION=	3.0.4
-PORTREVISION?=	1
+PORTVERSION=	3.0.7
+PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -14,11 +14,8 @@ COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+CONFLICTS=	zabbix2${PKGNAMESUFFIX}-[0-9]* zabbix22${PKGNAMESUFFIX}-[0-9]* zabbix24${PKGNAMESUFFIX}-[0-9]* zabbix32${PKGNAMESUFFIX}-[0-9]*
 
-CONFLICTS=	zabbix2${PKGNAMESUFFIX}-[0-9]* zabbix22${PKGNAMESUFFIX}[0-9]* zabbix24${PKGNAMESUFFIX}-[0-9]*
-
-IGNORE_WITH_PHP=	52
 IGNORE_WITH_MYSQL=	41
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
@@ -58,6 +55,7 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--with-iconv=${ICONV_PREFIX}
 
 .if ${ZABBIX_BUILD} != "agent"
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 USES+=		execinfo
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -89,13 +87,13 @@ OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS POLARSSL
 
 MYSQL_CONFIGURE_WITH=	mysql
-MYSQL_USES+=	mysql
+MYSQL_USES+=		mysql
 
 PGSQL_CONFIGURE_WITH=	postgresql
-PGSQL_USES+=	pgsql
+PGSQL_USES+=		pgsql
 
 SQLITE_CONFIGURE_WITH=	sqlite3
-SQLITE_USES+=	sqlite:3
+SQLITE_USES+=		sqlite:3
 
 ORACLE_CONFIGURE_WITH=	oracle
 
@@ -148,10 +146,6 @@ POLARSSL_LIB_DEPENDS=	libmbedtls.so:security/polarssl13
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-IGNORE_FreeBSD_9=	Requires newer OpenSSL (set DEFAULT_VERSIONS+=ssl=openssl)
-.endif
-
 .if ${SSL_DEFAULT:Mlibressl*}
 IGNORE=	requires PSK which is unsupported by the selected LibreSSL
 .endif
@@ -165,15 +159,21 @@ post-patch:
 .if ${ZABBIX_BUILD} == "server"
 	@${REINPLACE_CMD} -e 's#PidFile=/tmp/zabbix_server.pid#PidFile=/var/run/zabbix/zabbix_server.pid#g' \
 		${WRKSRC}/conf/zabbix_server*.conf
+	@${REINPLACE_CMD} -e 's#Include=/usr/local/usr/local/etc/zabbix3#Include=/usr/local/etc/zabbix3/zabbix#g' \
+		${WRKSRC}/conf/zabbix_server*.conf
 .endif
 
 .if ${ZABBIX_BUILD} == "proxy"
 	@${REINPLACE_CMD} -e 's#PidFile=/tmp/zabbix_proxy.pid#PidFile=/var/run/zabbix/zabbix_proxy.pid#g' \
 		${WRKSRC}/conf/zabbix_proxy*.conf
+	@${REINPLACE_CMD} -e 's#Include=/usr/local/usr/local/etc/zabbix3#Include=/usr/local/etc/zabbix3/zabbix#g' \
+		${WRKSRC}/conf/zabbix_proxy*.conf
 .endif
 
 .if ${ZABBIX_BUILD} == "agent"
 	@${REINPLACE_CMD} -e 's#PidFile=/tmp/zabbix_agentd.pid#PidFile=/var/run/zabbix/zabbix_agentd.pid#g' \
+		${WRKSRC}/conf/zabbix_agentd*.conf
+	@${REINPLACE_CMD} -e 's#Include=/usr/local/usr/local/etc/zabbix3#Include=/usr/local/etc/zabbix3/zabbix#g' \
 		${WRKSRC}/conf/zabbix_agentd*.conf
 .endif
 
@@ -190,7 +190,7 @@ post-patch:
 		-Ee 's|(@sysconfdir@/(\$$\([A-Z]*_CONFIG\)))" ([|][|] cp "../../conf/\$$\([A-Z]*_CONFIG\)" "\$$\(DESTDIR\)@sysconfdir@)"|\1.sample" \3/\2.sample"|;' \
 		${WRKSRC}/src/zabbix_${ZABBIX_BUILD}/Makefile.in
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) \
-		-exec ${RM} -f {} +
+		-exec ${RM} {} +
 
 post-install:
 

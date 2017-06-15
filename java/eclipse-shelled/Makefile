@@ -35,6 +35,6 @@ do-install:
 		| ${SED} -ne 's,^,@dir lib/,p' >> ${TMPPLIST}
 	@${MV} ${WRKSRC}/eclipse/plugins ${WRKSRC}/plugins
 	@${MV} ${WRKSRC}/eclipse/features ${WRKSRC}/features
-	@${RM} -rf ${WRKSRC}/eclipse
+	@${RM} -r ${WRKSRC}/eclipse
 
 .include <bsd.port.mk>

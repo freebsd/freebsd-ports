@@ -3,8 +3,7 @@
 PORTNAME=	xcb-util-xrm
 PORTVERSION=	1.0
 CATEGORIES=	x11 devel
-MASTER_SITES=	http://github.com/Airblader/xcb-util-xrm/releases/download/v${PORTVERSION}/ \
-		https://github.com/Airblader/xcb-util-xrm/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/Airblader/xcb-util-xrm/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XCB utility functions for the X resource manager

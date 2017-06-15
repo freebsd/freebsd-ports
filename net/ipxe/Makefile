@@ -4,11 +4,11 @@
 # With helpful hints from net/gpxe
 
 PORTNAME=	ipxe
-PORTVERSION=	20160213
+PORTVERSION=	20161208
 PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Open source network boot firmware
 
 LICENSE=	GPLv2
@@ -27,7 +27,7 @@ GH_PROJECT=	ipxe
 #   A: iPXE uses a rolling release model, in which every commit is intended
 #      to be production-ready.  You should always use the latest code.
 #
-GH_TAGNAME=	7ecfe7159f94193a666200a17057d4cd5981b850
+GH_TAGNAME=	26050fd4c87c50503d5bd573b2ec91703676e211
 
 USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
@@ -35,6 +35,8 @@ USE_GCC=	yes
 MAKE_ARGS=	PERL=${PERL} \
 		CC=${CC} \
 		HOST_CC=${CC} \
+		NO_WERROR=1 \
+		V=1 \
 		OBJCOPY="${LOCALBASE}/bin/objcopy" \
 		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 		LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"

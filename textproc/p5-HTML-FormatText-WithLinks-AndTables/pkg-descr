@@ -1,3 +1,9 @@
-Converts HTML to Text with tables in tact
+This module was inspired by HTML::FormatText::WithLinks which has proven to be
+a useful `lynx -dump` work-alike. The aim was to provide facility to take a
+simple HTML based email template, and to also convert it to text with the
+<TABLE> structure intact for inclusion as "multipart/alternative" content.
+Further, it will preserve both the formatting specified by the <TD> tag's
+"align" attribute, and will also preserve multiline text inside of a <TD>
+element provided it is broken using <BR/> tags.
 
 WWW: http://search.cpan.org/dist/HTML-FormatText-WithLinks-AndTables/

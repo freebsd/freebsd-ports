@@ -1,0 +1,7 @@
+Extension to ActiveRecord::Base for validating hostnames and domain names.
+
+Features:
+- Adds validation for hostnames to ActiveModel
+- Supports i18n for the error messages
+
+WWW: https://github.com/KimNorgaard/validates_hostname

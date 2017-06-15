@@ -1,15 +1,15 @@
---- src/kauth/Makefile.in.orig
+--- src/kauth/Makefile.in.orig	2016-12-14 18:28:29 UTC
 +++ src/kauth/Makefile.in
-@@ -24,6 +24,8 @@ LT_deps = $(top_builddir)/src/ubik/liboafs_ubik.la \
- 	  $(top_builddir)/src/rxkad/liboafs_rxkad.la
- LT_libs =
+@@ -12,6 +12,8 @@ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
  
 +INSTALL_KAUTH = no
 +
  INCLS=${TOP_INCDIR}/ubik.h \
               ${TOP_INCDIR}/lwp.h \
               ${TOP_INCDIR}/lock.h  \
-@@ -248,62 +250,66 @@ rebuild: rebuild.o $(LIBS) libkauth.a
+@@ -266,62 +268,66 @@ rebuild: rebuild.o kautils.o $(LIBS)
  install: kaserver kas kpwvalid kas klog klog.krb knfs kpasswd libkauth.a \
  		libkauth.krb.a rebuild kdb ka-forwarder kautils.h kauth.h \
  		kaport.h

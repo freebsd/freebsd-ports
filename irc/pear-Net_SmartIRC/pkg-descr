@@ -6,4 +6,4 @@ It's an API that handles all IRC protocol messages.
 This class is designed for creating IRC bots, chats and show irc related
 info on webpages.
 
-WWW: http://pear.php.net/package/Net_SmartIRC/
+WWW: https://pear.php.net/package/Net_SmartIRC

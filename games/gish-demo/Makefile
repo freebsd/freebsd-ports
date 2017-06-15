@@ -8,7 +8,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://s159260531.onlinehome.us/demos/
 DISTNAME=	gishdemo
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform game with a gelatinous 12-pound ball of tar (Demo version)
 
 RESTRICTED=	(c) Copyright 2004 Chronic Logic All rights reserved

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cmark
-PORTVERSION=	0.26.1
+PORTVERSION=	0.27.1
 CATEGORIES=	textproc
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	CommonMark parsing and rendering library and program in C
 
 LICENSE=	BSD2CLAUSE
@@ -18,7 +18,6 @@ USES=		cmake:outsource python:3,test
 USE_LDCONFIG=	yes
 
 TEST_TARGET=	test
-TEST_WRKSRC=	${BUILD_WRKSRC}
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man
 

@@ -1,7 +1,0 @@
-usr/lib/alsa-lib/libasound_module_ctl_oss.so
-usr/lib/alsa-lib/libasound_module_pcm_oss.so
-usr/lib64/alsa-lib/libasound_module_ctl_oss.so
-usr/lib64/alsa-lib/libasound_module_pcm_oss.so
-%%PORTDOCS%%usr/share/doc/alsa-plugins-oss-1.1.0/COPYING
-%%PORTDOCS%%usr/share/doc/alsa-plugins-oss-1.1.0/COPYING.GPL
-%%PORTDOCS%%usr/share/doc/alsa-plugins-oss-1.1.0/README-pcm-oss

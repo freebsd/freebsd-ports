@@ -3,7 +3,7 @@
 
 PORTNAME=	ratbox-services
 PORTVERSION=	1.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	http://services.ratbox.org/download/		\
 		http://services.ratbox.org/download/old/

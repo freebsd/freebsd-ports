@@ -22,18 +22,11 @@ USES=		gmake pkgconfig
 
 CONFLICTS?=	vimb-gtk3-*
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	${MV} ${WRKSRC}/src/config.def.h ${WRKSRC}/src/config.h
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-# cc on FreeBSD-9 does not know -Wno-typedef-redefinition
-	${REINPLACE_CMD} -e 's|-Wno-typedef-redefinition|-Wall|' \
-		${WRKSRC}/config.mk
-.endif
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/vimb.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/vimb ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

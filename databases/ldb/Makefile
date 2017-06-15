@@ -2,7 +2,7 @@
 
 PORTNAME=		ldb
 PORTVERSION=		1.1.29
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA
@@ -32,9 +32,9 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 OPTIONS_DEFINE=		MANPAGES
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
-BUILD_DEPENDS+=		talloc>=2.1.5:devel/talloc \
-			tevent>=0.9.27:devel/tevent \
-			tdb>=1.3.8,1:databases/tdb \
+BUILD_DEPENDS+=		talloc>=2.1.8:devel/talloc \
+			tevent>=0.9.31:devel/tevent \
+			tdb>=1.3.12,1:databases/tdb \
 			popt>=0:devel/popt
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 

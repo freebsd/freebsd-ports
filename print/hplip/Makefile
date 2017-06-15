@@ -2,28 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.16.8
+PORTVERSION=	3.16.11
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
+MAINTAINER=	woodsb02@FreeBSD.org
+COMMENT=	Drivers and utilities for HP printers and All-in-One devices
 
 LICENSE=	GPLv2 MIT BSD3CLAUSE
 LICENSE_COMB=	multi
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcupsimage.so:print/cups \
 		libdbus-1.so:devel/dbus
-RUN_DEPENDS=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters \
-		${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus
+RUN_DEPENDS=	cups-filters>=0:print/cups-filters \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus
 
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 INSTALL_TARGET=	install-strip
-USES=		jpeg libtool pkgconfig python
+USES=		jpeg libtool pkgconfig python shebangfix
 USE_GNOME=	pygobject
 USE_LDCONFIG=	yes
+SHEBANG_GLOB=	*.py hpps pstotiff
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
@@ -37,79 +39,86 @@ CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-FILES4FIX=	Makefile.in \
-		base/codes.py \
-		base/g.py \
-		base/password.py \
-		base/pkit.py \
-		base/queues.py \
-		base/services.py \
-		base/utils.py \
-		check.py \
-		fax/backend/hpfax.py \
-		fax/coverpages.py \
-		fax/filters/pstotiff \
-		hplip.list.in \
-		installer/core_install.py \
-		installer/dcheck.py \
-		installer/pluginhandler.py \
-		logcapture.py \
-		prnt/cups.py \
-		prnt/filters/hpps \
-		prnt/hpcups/HPCupsFilter.cpp \
-		prnt/hpijs/globals.cpp \
-		prnt/hpijs/hpcupsfax.cpp \
-		prnt/hpijs/hpijs.cpp \
-		ui/devmgr4.py \
-		ui4/devmgr5.py
+OPTIONS_DEFINE=		DOCS FAX SNMP SCAN X11 XSANE
+OPTIONS_DEFAULT=	SNMP SCAN X11 QT5
+OPTIONS_RADIO=		GUI
+OPTIONS_RADIO_GUI=	QT4 QT5
+OPTIONS_SUB=		yes # FAX SNMP SCAN X11 QT4 QT5
 
-PYTHON_SITELIBDIR_REL=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
-
-OPTIONS_DEFINE=	DOCS FAX SNMP SCAN X11 XSANE
-OPTIONS_DEFAULT=SNMP SCAN X11
-OPTIONS_SUB=	yes # FAX SCAN X11
-
-FAX_DESC=	PC Send Fax support
-FAX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:print/py-reportlab2
+FAX_DESC=		PC Send Fax support
+FAX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>=0:print/py-reportlab
 FAX_CONFIGURE_ENABLE=	fax-build
 
-SNMP_DESC=	Network/JetDirect support
-SNMP_USES=	ssl
+SNMP_DESC=		Network/JetDirect support
+SNMP_USES=		ssl
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=	network-build
 
-SCAN_DESC=	Scanning support
+SCAN_DESC=		Scanning support
 SCAN_LIB_DEPENDS=	libsane.so:graphics/sane-backends
 SCAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
 SCAN_CONFIGURE_ENABLE=	scan-build
 
-X11_DESC=	Graphical User Interface (Qt 4)
-X11_RUN_DEPENDS=${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:devel/py-qt4-dbussupport
-X11_CONFIGURE_ENABLE=	qt4 gui-build
+X11_DESC=		Graphical User Interface (Qt)
+X11_CONFIGURE_ENABLE=	gui-build
 
-XSANE_DESC=	Install XSane for scanning (requires SCAN)
-XSANE_IMPLIES=	SCAN
+QT4_USES=		pyqt:4
+QT4_USE=		PYQT=core_run,dbussupport_run,gui_run
+QT4_CONFIGURE_ENABLE=	qt4
+QT4_IMPLIES=		X11
+
+QT5_USES=		pyqt:5
+QT5_USE=		PYQT=core_run,dbussupport_run,gui_run,widgets_run
+QT5_CONFIGURE_ENABLE=	qt5
+QT5_IMPLIES=		X11
+
+XSANE_DESC=		Install XSane for scanning (implies SCAN)
+XSANE_IMPLIES=		SCAN
 XSANE_RUN_DEPENDS=	xsane:graphics/xsane
 
 DOCS_CONFIGURE_ENABLE=	doc-build
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-ldld||g; s|-ldl||g' \
+	@${REINPLACE_CMD} -e 's|-ldld||g;' \
+		-e 's|-ldl||g' \
 		-e 's,-lusb-1.0,-lusb,g' \
 		-e 's,libusb-1.0/libusb.h,libusb.h,g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e '/[[:space:]]install-dist_rulesDATA/ s,install-dist_rulesDATA,,' \
+	@${REINPLACE_CMD} -e '/[[:space:]]install-dist_rulesDATA/ s,install-dist_rulesDATA,,' \
 		-e '/[[:space:]]install-dist_rulessystemDATA/ s,install-dist_rulessystemDATA,,' \
 		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's,/etc/hp,${PREFIX}&,g' \
+	@${REINPLACE_CMD} -e 's,/etc/hp,${PREFIX}&,g' \
 		-e 's,/etc/cups,${LOCALBASE}&,g' \
 		-e 's,/etc/init.d,${LOCALBASE}/etc/rc.d,g' \
 		-e 's,/etc/sane.d,${LOCALBASE}&,g' \
 		-e 's,/usr/share,${LOCALBASE}/share,g' \
 		-e 's,/usr/include,${LOCALBASE}/include,g' \
-		${FILES4FIX:S,^,${WRKSRC}/,}
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/base/codes.py \
+		${WRKSRC}/base/g.py \
+		${WRKSRC}/base/password.py \
+		${WRKSRC}/base/pkit.py \
+		${WRKSRC}/base/queues.py \
+		${WRKSRC}/base/services.py \
+		${WRKSRC}/base/utils.py \
+		${WRKSRC}/check.py \
+		${WRKSRC}/fax/backend/hpfax.py \
+		${WRKSRC}/fax/coverpages.py \
+		${WRKSRC}/fax/filters/pstotiff \
+		${WRKSRC}/hplip.list.in \
+		${WRKSRC}/installer/core_install.py \
+		${WRKSRC}/installer/dcheck.py \
+		${WRKSRC}/installer/pluginhandler.py \
+		${WRKSRC}/logcapture.py \
+		${WRKSRC}/prnt/cups.py \
+		${WRKSRC}/prnt/filters/hpps \
+		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
+		${WRKSRC}/prnt/hpijs/globals.cpp \
+		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \
+		${WRKSRC}/prnt/hpijs/hpijs.cpp \
+		${WRKSRC}/ui/devmgr4.py \
+		${WRKSRC}/ui4/devmgr5.py
 	@${REINPLACE_CMD} -e 's/umask(0)/umask(0o022)/' \
 		-e 's/umask(0o111)/umask(0o133)/' \
 		${WRKSRC}/base/os_utils.py \
@@ -117,21 +126,16 @@ post-patch:
 		${WRKSRC}/fax/backend/hpfax.py \
 		${WRKSRC}/hpdio.py \
 		${WRKSRC}/installer/pluginhandler.py
-	${REINPLACE_CMD} -e 's,%USB_INCLUDE%,/usr/include,' \
-		${WRKSRC}/installer/core_install.py
-	${FIND} ${WRKSRC} -name '*.py' | ${XARGS} ${SED} -i '' \
-		-e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' \
-		-e 's,^#!/usr/bin/env python,#!${PYTHON_CMD},' \
-		-e 's,^#!/bin/env python,#!${PYTHON_CMD},'
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/hp/hplip.conf \
 		${STAGEDIR}${PREFIX}/etc/hp/hplip.conf.sample
 	${MKDIR} ${STAGEDIR}${DATADIR}/ui4/plugins
 	${MKDIR} ${STAGEDIR}/var/lib/hp
-	${MKDIR} ${STAGEDIR}/var/lib
+
 post-install-SCAN-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.d
-	${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.conf ${STAGEDIR}${PREFIX}/etc/sane.d/dll.d/hpaio
+	${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.conf \
+		${STAGEDIR}${PREFIX}/etc/sane.d/dll.d/hpaio
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ USES=		qmake
 
 # qt5logo.png is installed by qt5-widgets.
 DESKTOP_ENTRIES="Qt 5 PixelTool" "" \
-		"${QT_PREFIX}/share/pixmaps/qt5logo.png" \
+		"${PREFIX}/share/pixmaps/qt5logo.png" \
 		"${PREFIX}/${QT_BINDIR_REL}/pixeltool" \
 		"Graphics;Qt;" true
 

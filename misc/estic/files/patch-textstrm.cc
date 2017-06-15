@@ -1,6 +1,6 @@
---- spunk/textstrm.cc.orig	Sat Feb 26 18:05:06 2000
-+++ spunk/textstrm.cc	Sat Feb 26 18:05:17 2000
-@@ -66,8 +66,8 @@
+--- spunk/textstrm.cc.orig	1996-11-07 17:06:52 UTC
++++ spunk/textstrm.cc
+@@ -66,8 +66,8 @@ void TextFileStream::MakeLineIndex (int 
  // LineLen is the estimated length of a line in the file used for
  // estimating the size of the buffer.
  {

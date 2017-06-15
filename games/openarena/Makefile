@@ -11,12 +11,12 @@ DISTNAME=	${PORTNAME}-engine-source-${GAMEVERSION}
 # Master port defines EXTRACT_SUFX unless already defined
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	kami@freebsd.org
+MAINTAINER=	kami@FreeBSD.org
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
 
 LICENSE?=	GPLv2
 
-RUN_DEPENDS=	${DATADIR}/${Q3BASE}/pak0.pk3:games/openarena-data
+RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/${Q3BASE}/pak0.pk3:games/openarena-data
 
 MASTERDIR=	${.CURDIR}/../ioquake3
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

@@ -3,11 +3,11 @@
 
 PORTNAME=	pop3vscan
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent POP3-Proxy with virus-scanning capabilities
 
 LIB_DEPENDS=	libpcre.so:devel/pcre

@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of administration scripts
 
 LICENSE=	BSD2CLAUSE
@@ -49,7 +49,7 @@ do-install:
 .endfor
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MV} ${STAGEDIR}${PREFIX}/etc/*.sample ${STAGEDIR}${ETCDIR}
-	${RM} -rf ${STAGEDIR}${PREFIX}/etc/*.sample
+	${RM} -r ${STAGEDIR}${PREFIX}/etc/*.sample
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

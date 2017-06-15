@@ -5,7 +5,9 @@ PORTNAME=	vegastrike
 PORTVERSION=	0.5.1.r1
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.1/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/ \
+		http://ports.toco-domains.de/ \
+		http://dist.codelabs.ru/fbsd/ports/vegastrike/
 PKGNAMESUFFIX=	-data
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 

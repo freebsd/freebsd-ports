@@ -1,4 +1,4 @@
---- src/mouse.h.orig	2014-08-12 06:36:34 UTC
+--- src/mouse.h.orig	2012-10-08 01:40:07 UTC
 +++ src/mouse.h
 @@ -220,10 +220,13 @@ typedef struct _MouseDevRec {
      Bool                emulate3ButtonsSoft;

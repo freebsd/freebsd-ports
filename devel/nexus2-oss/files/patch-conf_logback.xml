@@ -1,0 +1,11 @@
+--- conf/logback.xml.orig	2016-09-17 19:33:10 UTC
++++ conf/logback.xml
+@@ -17,7 +17,7 @@
+ <configuration>
+   <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+     <encoder>
+-      <pattern>%d{"yyyy-MM-dd HH:mm:ss,SSSZ"} %-5p [%thread] %X{userId} %c - %m%n</pattern>
++      <pattern>%d{"yyyy-MM-dd'T'HH:mm:ss,SSSXXX"} %-5p [%thread] %X{userId} %c - %m%n</pattern>
+     </encoder>
+   </appender>
+ 

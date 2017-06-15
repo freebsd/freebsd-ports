@@ -3,7 +3,7 @@
 
 PORTNAME=	numarray
 PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	SF/numpy/Old%20Numarray/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,11 +27,16 @@ post-configure:
 		${PYTHON_CMD} Include/numarray/genapis.py
 
 post-install:
-	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/numarray -name "*.so" -exec \
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/numarray -name "*.so" -exec \
 		${STRIP_CMD} {} \;
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/Doc -cf- .|${TAR} -C ${STAGEDIR}${DOCSDIR} -xf-
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/Examples -cf- .|${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf-
-	@${RM} -fr ${STAGEDIR}${EXAMPLESDIR}/ufunc/build
+	@${RM} -r ${STAGEDIR}${EXAMPLESDIR}/ufunc/build
 
 .include <bsd.port.mk>

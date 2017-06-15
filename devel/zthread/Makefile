@@ -14,7 +14,7 @@ COMMENT=	Platform-independent object-oriented C++ threading library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-ftime --disable-static
 MAKE_ARGS=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"

@@ -7,7 +7,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Import or update tickets from a CSV file or Excel file
 
 LICENSE=	BSD3CLAUSE # "same license as trac"

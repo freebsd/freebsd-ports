@@ -1,5 +1,6 @@
-SHA256 (mcmc-jags/JAGS-4.0.0.tar.gz) = a1d572269029d90d4e8b25757fd7ae9678994bd682937ec505ddcf06185d2c4c
-SIZE (mcmc-jags/JAGS-4.0.0.tar.gz) = 1880476
+TIMESTAMP = 1484058893
+SHA256 (mcmc-jags/JAGS-4.2.0.tar.gz) = af3e9d2896d3e712f99e2a0c81091c6b08f096650af6aa9d0c631c0790409cf7
+SIZE (mcmc-jags/JAGS-4.2.0.tar.gz) = 1875538
 SHA256 (mcmc-jags/jags_developer_manual.pdf) = 6e7c707b94ffc931807198cc162e8b254859bb774695ae39ef1c1c175560259b
 SIZE (mcmc-jags/jags_developer_manual.pdf) = 71319
 SHA256 (mcmc-jags/jags_installation_manual.pdf) = 022fcedcf85b259cfe52b13b8a1c3b02a4f0af3ab8370a160c9d5bc739699848

@@ -6,7 +6,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/sf-xpaint/${PORTNAME}
 DISTNAME=	libXaw3dXft-${DISTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Xaw (Athena Widget Set) replacement with extended fonts
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2

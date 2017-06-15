@@ -3,6 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.6.4
+PORTREVISION=	1
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	36
 .endif
@@ -31,7 +32,6 @@ OPTIONS_DEFAULT=	OPENSSL JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
 SPOOF_DESC=		Build with spoof source support
-IPV6_DESC=		Build with IPV6 support
 SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
@@ -53,8 +53,7 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=		yes
-WITH_OPENSSL_PORT=	yes
+USES+=			ssl
 CONFIGURE_ARGS+=	--enable-ssl
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"

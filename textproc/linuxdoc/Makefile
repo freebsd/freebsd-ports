@@ -19,7 +19,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 INSTDIR=	${PREFIX}/share/sgml/linuxdoc
-ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
+ISOCAT=		${LOCALBASE}/share/sgml/iso8879/catalog
 
 do-install:
 	${MKDIR} ${STAGEDIR}${INSTDIR}

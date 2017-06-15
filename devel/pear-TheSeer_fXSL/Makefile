@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.netpirates.net/get/
 PKGNAMEPREFIX=	pear-TheSeer_
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	XSL wrapper / extension to the PHP 5.x XSLTProcessor
 
 LICENSE=	BSD3CLAUSE

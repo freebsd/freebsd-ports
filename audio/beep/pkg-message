@@ -1,26 +1,26 @@
-Speaker sound Support:
+Speaker sound support:
 ======================
 
-For support speaker sound four user needs to be in the operator group and needs
-read and write permissions to the /dev/speaker device.
+For PC speaker sound to work you need to be in the operator group
+and need r/w permissions to /dev/speaker device.
 
-Load kernel modul:
+Load kernel module:
 
 # kldload speaker
 
-Add a user to a group operator's:
+Add a user to operator group:
 
 % pw groupmod operator -m jerry
 
-Uncomment the following lines in the file /etc/devfs.rules (create if it doesn't
-exist):
+Uncomment the following lines in /etc/devfs.rules file (create it
+if it doesn't exist):
 
 # Allow members of group operator to cat things to the speaker
 
 [speaker=10]
 add path 'speaker' mode 0660 group operator
 
-To load these new rule add the following to /etc/rc.conf:
+To load these new rules add the following to /etc/rc.conf:
 
 devfs_speaker_ruleset="speaker"
 

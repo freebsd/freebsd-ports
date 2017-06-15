@@ -10,6 +10,8 @@ MASTER_SITES=	http://ringtail.its.monash.edu.au/pub/midi/PROGRAMS/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language designed for creating and editing standard MIDI files
 
+BROKEN=		does not fetch, upstream gone
+
 USES+=		tcl uidfix
 MAKE_ENV=	TCL_INCLUDEDIR="${TCL_INCLUDEDIR}" TCL_LIBDIR="${TCL_LIBDIR}"
 MAKE_ENV+=	TCLSH=${TCLSH} FILESDIR="${FILESDIR}" MAN="${MAN1} ${MANN}"

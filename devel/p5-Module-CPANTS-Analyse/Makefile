@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Archive-Any-Lite>=0.06:archivers/p5-Archive-Any-Lite \
 		p5-IO-Capture>=0.05:devel/p5-IO-Capture \
 		p5-JSON-MaybeXS>0:converters/p5-JSON-MaybeXS \
 		p5-File-Find-Object>=0.2.1:devel/p5-File-Find-Object \
-		p5-Module-ExtractUse>=0.33:devel/p5-Module-ExtractUse \
+		p5-Module-ExtractUse>=0.330:devel/p5-Module-ExtractUse \
 		p5-Set-Scalar>=0:devel/p5-Set-Scalar \
 		p5-Software-License>=0.103008:misc/p5-Software-License \
 		p5-Software-License-CCpack>=0:misc/p5-Software-License-CCpack
@@ -34,11 +34,4 @@ BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker-CPANfile>=0.06:devel/p5-ExtUtils-MakeMaker
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-CPAN-Meta>=2.133380:devel/p5-CPAN-Meta
-RUN_DEPENDS+=	p5-CPAN-Meta>=2.133380:devel/p5-CPAN-Meta
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

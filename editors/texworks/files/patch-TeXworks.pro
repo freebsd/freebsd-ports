@@ -1,12 +1,11 @@
 --- TeXworks.pro.orig	2015-04-03 18:05:39 UTC
 +++ TeXworks.pro
-@@ -108,7 +108,8 @@ unix:!macx { # on Unix-ish platforms we 
+@@ -108,7 +108,7 @@ unix:!macx { # on Unix-ish platforms we 
  	CONFIG		+= link_pkgconfig
  	PKGCONFIG	+= hunspell
  	PKGCONFIG	+= poppler-qt4
 -	PKGCONFIG	+= zlib
-+	PKGCONFIG	+= synctex
-+	LIBS		+= -lz
++	PKGCONFIG	+= synctex zlib
  
  	# Enclose the path in \\\" (which later gets expanded to \", which in turn
  	# gets expanded to " in the c++ code)

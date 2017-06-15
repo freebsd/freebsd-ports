@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML
-DISTVERSION=	3.98-1.4
+DISTVERSION=	3.98-1.5
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,7 +11,7 @@ COMMENT=	Tools for parsing and generating XML
 
 LICENSE=	BSD2CLAUSE
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 USE_GNOME=	libxml2
 
 .include <bsd.port.mk>

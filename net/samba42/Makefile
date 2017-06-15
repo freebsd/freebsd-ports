@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}42
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -13,7 +13,10 @@ COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba43-4.3.* samba44-4.4.*
+CONFLICTS?=		samba4[3-9]-4.*
+
+DEPRECATED=             not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
+EXPIRATION_DATE=        2016-09-07
 
 EXTRA_PATCHES=		${PATCHDIR}/extra-patch-progress:-p1
 
@@ -84,7 +87,7 @@ BUILD_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=		libarchive>=3.1.2:archivers/libarchive
 # External Samba dependencies
 # IDL compiler
-BUILD_DEPENDS+=		p5-Parse-Pidl>=4.0.0:devel/p5-Parse-Pidl
+BUILD_DEPENDS+=		p5-Parse-Pidl44>=4.0.0:devel/p5-Parse-Pidl44
 #
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
@@ -128,7 +131,6 @@ AIO_SUPPORT_DESC=	Asyncronous IO support
 DNSUPDATE_DESC=		Dynamic DNS update (require ADS)
 EXP_MODULES_DESC=	Experimental modules
 FAM_DESC=		File Alteration Monitor support
-DEBUG_DESC=		With debug information in the binaries
 LDAP_DESC=		LDAP client support
 PAM_SMBPASS_DESC=	PAM authentication via passdb backends
 PTHREADPOOL_DESC=	Pthread pool
@@ -156,7 +158,6 @@ CONFIGURE_ARGS+=	\
 			--with-winbind \
 			--without-gettext \
 			--with-sendfile-support \
-			--builtin-libraries=smbclient \
 			${ICONV_CONFIGURE_BASE}
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
@@ -346,7 +347,6 @@ CONFIGURE_ARGS+=	--without-ads
 
 .if defined(SAMBA4_WANT_LDAP)
 USE_OPENLDAP=		yes
-#WANT_OPENLDAP_SASL=	yes
 CONFIGURE_ARGS+=	--with-ldap
 PLIST_SUB+=		LDAP=""
 .else
@@ -453,7 +453,7 @@ PORTDOCS=		README.FreeBSD
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 post-extract:
-			@${RM} -rf ${WRKSRC}/pidl
+			@${RM} -r ${WRKSRC}/pidl
 
 post-patch:
 			@${REINPLACE_CMD} -e 's|$${PKGCONFIGDIR}|${PKGCONFIGDIR}|g' \

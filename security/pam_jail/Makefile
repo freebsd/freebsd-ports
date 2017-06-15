@@ -21,8 +21,4 @@ do-install:
 	${LN} -sf pam_jail.so.1 ${STAGEDIR}${PREFIX}/lib/pam_jail.so
 	${INSTALL_MAN} ${WRKSRC}/pam_jail.8 ${STAGEDIR}${PREFIX}/man/man8/
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 .include <bsd.port.post.mk>

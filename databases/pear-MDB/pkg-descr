@@ -6,4 +6,4 @@ portability.
 Currently supported RDBMS are MySQL, PostGreSQL, Oracle, Frontbase, Querysim,
 Interbase/Firebird, and MSSQL
 
-WWW: http://pear.php.net/package/MDB
+WWW: https://pear.php.net/package/MDB

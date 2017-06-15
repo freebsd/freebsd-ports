@@ -1,4 +1,4 @@
---- testmain.c.orig	2015-10-11 17:48:47 UTC
+--- testmain.c.orig	2016-11-17 00:02:13 UTC
 +++ testmain.c
 @@ -296,6 +296,7 @@ void buildTestInterface(FICL_SYSTEM *pSy
      ficlBuild(pSys, "cd",       ficlChDir,    FW_DEFAULT);
@@ -8,7 +8,7 @@
      ficlBuild(pSys, "pwd",      ficlGetCWD,   FW_DEFAULT);
      ficlBuild(pSys, "system",   ficlSystem,   FW_DEFAULT);
      ficlBuild(pSys, "spewhash", spewHash,     FW_DEFAULT);
-@@ -316,17 +317,58 @@ int main(int argc, char **argv)
+@@ -316,17 +317,59 @@ int main(int argc, char **argv)
      buildTestInterface(pSys);
      pVM = ficlNewVM(pSys);
  
@@ -63,7 +63,8 @@
 +    ficlEvaluate(pVM, "draw-beastie");
 +    ficlEvaluate(pVM, "draw-brand");
 +    ficlEvaluate(pVM, "menu-init");
-+    printf("\n\n");
++    fflush(stdout);
++    sleep(3600); // sleep "forever"
 +    return 0;
 +
      for (;;)

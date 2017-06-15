@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION?=	1
+PORTREVISION?=	2
 AVIDEMUX_VERSION=	2.6.11
 MASTER_SITES=	\
 		SF/avidemux/avidemux/${PORTVERSION}
@@ -27,6 +27,7 @@ CMAKE_ARGS+=	-DAVIDEMUX_PACKAGER=none
 CMAKE_ARGS+=	-DQT5:BOOL=OFF
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
+NOPRECIOUSMAKEVARS=	yes # ARCH
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -99,7 +100,6 @@ PLIST_SUB+=	GTK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-CMAKE_ARGS+=	-DLRELEASE_EXECUTABLE=${LOCALBASE}/bin/lrelease-qt4
 USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build gui
 PLIST_SUB+=	QT4=""
 .else

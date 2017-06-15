@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: nsqd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable nsqd:
+# nsqd_enable="YES"
+# nsqd_args="<set as needed>"
+
+
+. /etc/rc.subr
+
+name=nsqd
+rcvar=nsqd_enable
+
+load_rc_config $name
+
+: ${nsqd_enable:="NO"}
+: ${nsqd_args:=""}
+
+pidfile=/var/run/nsqd.pid
+procname="%%PREFIX%%/bin/nsqd"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} ${nsqd_args}"
+
+start_precmd="nsqd_prestart"
+
+nsqd_prestart()
+{
+	if [ ! -d /var/db/nsq/nsqd ] ; then
+		mkdir -p /var/db/nsq/nsqd
+	fi
+	cd /var/db/nsq/nsqd
+}
+
+run_rc_command "$1"

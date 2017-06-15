@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libargon2
-PORTVERSION=	20160821
+PORTVERSION=	20161029
 CATEGORIES=	security devel
 
 MAINTAINER=	hsw@bitmark.com

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-06-28 21:22:55 UTC
-+++ Makefile.in
-@@ -83,19 +83,13 @@ screen: $(OFILES)
+--- Makefile.in.orig	2017-01-17 11:28:29.361404481 -0800
++++ Makefile.in	2017-01-18 04:51:33.277671000 -0800
+@@ -83,19 +83,13 @@
  	    $(OPTIONS) $(CFLAGS) $<
  
  install_bin: .version screen
@@ -20,10 +20,10 @@
  install: installdirs install_bin
 -	cd doc ; $(MAKE) install
 +	cd doc ; $(MAKE) $(MAKE_ARGS) install
- 	-if [ -d /usr/lib/terminfo ]; then \
+ 	-if [ -d $(DESTDIR)/usr/lib/terminfo ]; then \
  		PATH="$$PATH:/usr/5bin" tic ${srcdir}/terminfo/screeninfo.src; \
- 		chmod 644 /usr/lib/terminfo/s/screen*; \
-@@ -108,7 +102,7 @@ install: installdirs install_bin
+ 		chmod 644 $(DESTDIR)/usr/lib/terminfo/s/screen*; \
+@@ -108,7 +102,7 @@
  installdirs:
  # Path leading to ETCSCREENRC and Socketdirectory not checked.
  	$(srcdir)/etc/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(SCREENENCODINGS)
@@ -32,13 +32,13 @@
  
  uninstall: .version
  	rm -f $(DESTDIR)$(bindir)/$(SCREEN)
-@@ -350,7 +344,10 @@ layout.o: layout.h viewport.h canvas.h l
+@@ -350,7 +344,10 @@
  viewport.o: layout.h viewport.h canvas.h viewport.c config.h screen.h os.h osdef.h ansi.h acls.h \
   comm.h layer.h term.h image.h display.h window.h extern.h \
   braille.h
 -list_generic.o: list_generic.h list_generic.c layer.h screen.h osdef.h
 -list_display.o: list_generic.h list_display.c layer.h screen.h osdef.h
--list_window.o: list_generic.h list_window.c window.h layer.h screen.h osdef.h
+-list_window.o: list_generic.h list_window.c window.h layer.h screen.h osdef.h comm.h
 +list_generic.o: list_generic.h list_generic.c layer.h screen.h os.h osdef.h ansi.h acls.h \
 + comm.h layer.h term.h image.h display.h window.h
 +list_display.o: list_generic.h list_display.c layer.h screen.h os.h osdef.h ansi.h acls.h \

@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	PDL
-PORTVERSION=	2.015
-PORTREVISION=	1
+PORTVERSION=	2.017
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:CHM
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Data Language
@@ -79,8 +77,11 @@ post-patch:
 	@${REINPLACE_CMD} -e "/POSIX_THREADS_LIBS/ s|undef|'-lpthread'|" \
 		${WRKSRC}/perldl.conf
 
-# autogen plist
 post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL -name '*.so' \
+		| ${XARGS} ${STRIP_CMD}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pdl
+# autogen plist
 	@(cd ${WRKSRC}; ${PERL} -Iblib/lib -Iblib/arch Doc/scantree.pl)
 	@(cd ${WRKSRC}/blib/man3 ; \
 	  ${FIND} *.3 | ${SED} "s,^,${MAN3PREFIX}/man/man3/,;s/3$$/3.gz/" \

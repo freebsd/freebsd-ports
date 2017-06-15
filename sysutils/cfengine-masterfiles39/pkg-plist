@@ -1,4 +1,3 @@
-
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/CFE_cfengine.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/core/deprecated/cfengine_processes.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/core/host_info_report.cf

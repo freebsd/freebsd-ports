@@ -1,5 +1,5 @@
---- foo2hiperc-wrapper.in.orig	2013-12-02 00:25:17.000000000 +0400
-+++ foo2hiperc-wrapper.in	2014-03-31 13:01:56.653808270 +0400
+--- foo2hiperc-wrapper.in.orig	2013-12-01 20:25:17 UTC
++++ foo2hiperc-wrapper.in
 @@ -48,10 +48,6 @@ PATH=$PATH:.
  #
  #	Log the command line, for debugging and problem reports
@@ -22,7 +22,18 @@
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -723,18 +719,6 @@ $PREFILTER \
+@@ -539,10 +535,6 @@ create_crd() {
+ 	none | none.icm | */none.icm)
+ 	    ;;
+ 	*)
+-	    if [ -x /usr/bin/logger ]; then
+-		logger -t "$BASENAME" -p lpr.info -- \
+-		"`basename $ICC2PS` -o $GAMMAFILE -t$INTENT > $ICCTMP.crd.ps"
+-	    fi
+ 	    $ICC2PS -o $GAMMAFILE -t$INTENT > $ICCTMP.crd.ps 2>$ICCTMP.log \
+ 		|| error "Problem converting .ICM file to Postscript"
+ 	    ;;
+@@ -723,18 +715,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD $COMPRESSED -D$DEBUG
  
  #

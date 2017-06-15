@@ -2,6 +2,7 @@ bin/mysql-connector-c/my_print_defaults
 bin/mysql-connector-c/mysql_config
 bin/mysql-connector-c/perror
 include/mysql-connector-c/big_endian.h
+include/mysql-connector-c/binary_log_types.h
 include/mysql-connector-c/byte_order_generic.h
 include/mysql-connector-c/byte_order_generic_x86.h
 include/mysql-connector-c/decimal.h
@@ -12,6 +13,7 @@ include/mysql-connector-c/m_ctype.h
 include/mysql-connector-c/m_string.h
 include/mysql-connector-c/my_alloc.h
 include/mysql-connector-c/my_byteorder.h
+include/mysql-connector-c/my_command.h
 include/mysql-connector-c/my_compiler.h
 include/mysql-connector-c/my_config.h
 include/mysql-connector-c/my_dbug.h
@@ -19,14 +21,16 @@ include/mysql-connector-c/my_dir.h
 include/mysql-connector-c/my_getopt.h
 include/mysql-connector-c/my_global.h
 include/mysql-connector-c/my_list.h
-include/mysql-connector-c/my_pthread.h
 include/mysql-connector-c/my_sys.h
+include/mysql-connector-c/my_thread.h
+include/mysql-connector-c/my_thread_local.h
 include/mysql-connector-c/my_xml.h
 include/mysql-connector-c/mysql.h
 include/mysql-connector-c/mysql/client_authentication.h
 include/mysql-connector-c/mysql/client_plugin.h
 include/mysql-connector-c/mysql/client_plugin.h.pp
 include/mysql-connector-c/mysql/get_password.h
+include/mysql-connector-c/mysql/mysql_lex_string.h
 include/mysql-connector-c/mysql/plugin_auth_common.h
 include/mysql-connector-c/mysql/plugin_trace.h
 include/mysql-connector-c/mysql/psi/mysql_file.h
@@ -58,10 +62,10 @@ include/mysql-connector-c/sql_state.h
 include/mysql-connector-c/sslopt-case.h
 include/mysql-connector-c/sslopt-longopts.h
 include/mysql-connector-c/sslopt-vars.h
+include/mysql-connector-c/thr_cond.h
+include/mysql-connector-c/thr_mutex.h
+include/mysql-connector-c/thr_rwlock.h
 include/mysql-connector-c/typelib.h
 lib/mysql-connector-c/libmysqlclient.a
 lib/mysql-connector-c/libmysqlclient.so
 lib/mysql-connector-c/libmysqlclient.so.18
-lib/mysql-connector-c/libmysqlclient_r.a
-lib/mysql-connector-c/libmysqlclient_r.so
-lib/mysql-connector-c/libmysqlclient_r.so.18

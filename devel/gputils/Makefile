@@ -18,11 +18,4 @@ CONFIGURE_ARGS= --disable-dependency-tracking --disable-html-doc
 USES=		bison gmake tar:bz2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-.*//}
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=2.5.35:textproc/flex
-CONFIGURE_ARGS+=LEX=${LOCALBASE}/bin/flex
-.endif
-
 .include <bsd.port.mk>

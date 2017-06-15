@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dejavu
-PORTVERSION=	2.35
+PORTVERSION=	2.37
 DISTVERSIONPREFIX=	fonts-ttf-
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 USES=		fonts tar:bzip2
 
 PLIST_SUB=	FCDIR=${FCDIR} FCDIR_LINKS=${FCDIR_LINKS}
-PORTDOCS=	README langcover.txt status.txt unicover.txt
+PORTDOCS=	README.md langcover.txt status.txt unicover.txt
 SUB_FILES=	pkg-message
 
 FCDIR?=		etc/fonts/conf.avail

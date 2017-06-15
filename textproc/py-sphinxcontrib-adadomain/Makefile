@@ -9,7 +9,7 @@ MASTER_SITES=	https://pypi.python.org/packages/source/s/${PORTNAME}/ \
 		LOCAL/marino
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Sphinx Adadomain Extension
 
 LICENSE=	BSD2CLAUSE

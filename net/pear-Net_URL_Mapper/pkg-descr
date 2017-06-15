@@ -7,4 +7,4 @@ a router. Still, Net_URL_Mapper does not perform the dispatching like these
 frameworks and therefore can be used with your
 own router.
 
-WWW: http://pear.php.net/package/Net_URL_Mapper/
+WWW: https://pear.php.net/package/Net_URL_Mapper

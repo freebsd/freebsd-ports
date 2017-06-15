@@ -1,0 +1,17 @@
+--- GNUmakefile.orig	2016-11-05 17:27:10 UTC
++++ GNUmakefile
+@@ -125,7 +125,7 @@ $(TR_EXEFILE): $(OBJFILES)
+ 		printf "\t%s\n" $$file; \
+ 		done;
+ 	@printf "\t-> %s\n" $@
+-	@$(CXX) -o $@ $(OBJFILES) $(LDFLAGS)
++	@$(CXX) `sdl2-config --libs`  -o $@ $(OBJFILES) $(LDFLAGS)
+ 	@printf "strip\t%s\n" $@
+ 	@strip $@
+ 
+@@ -155,4 +155,4 @@ clean:
+ #
+ %.o: %.cpp GNUmakefile
+ 	@printf "%s\t%s -> %s\n" $(CXX) $< $@
+-	@$(CXX) $(CXXFLAGS) $(CPPFLAGS) -MMD -MP -c $< -o $@
++	@$(CXX) `sdl2-config --cflags` $(CXXFLAGS) $(CPPFLAGS) -MMD -MP -c $< -o $@

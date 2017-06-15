@@ -1,6 +1,6 @@
---- ./ConfigureChecks.cmake.orig	2009-11-21 12:44:36.000000000 +0300
-+++ ./ConfigureChecks.cmake	2010-01-27 00:04:40.445046695 +0300
-@@ -16,16 +16,7 @@
+--- ConfigureChecks.cmake.orig	2015-06-26 03:17:21 UTC
++++ ConfigureChecks.cmake
+@@ -21,16 +21,7 @@ if (PAM_FOUND)
      endmacro(define_pam_service)
  
      macro(install_pam_service APP)

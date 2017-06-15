@@ -1,0 +1,5 @@
+pamqp is a pure-Python AMQP 0-9-1 frame encoder and decoder. The
+aim is to create a client agnostic Python encoder and decoder for
+general purpose use.
+
+WWW: https://github.com/gmr/pamqp

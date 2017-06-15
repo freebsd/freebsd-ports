@@ -3,6 +3,7 @@
 
 PORTNAME=	goprotobuf
 PORTVERSION=	20151207
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.c-s.li/ports/
 

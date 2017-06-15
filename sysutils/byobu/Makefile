@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	byobu
-PORTVERSION=	5.80
-PORTREVISION=	1
+PORTVERSION=	5.113
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Profile and configuration utilities for GNU Screen
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	screen:sysutils/screen \
 		bash:shells/bash

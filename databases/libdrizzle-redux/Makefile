@@ -16,9 +16,8 @@ COMMENT=	Client and protocol library for the Drizzle database
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		gmake libtool ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 CONFLICTS=	libdrizzle-[0-9]*
 

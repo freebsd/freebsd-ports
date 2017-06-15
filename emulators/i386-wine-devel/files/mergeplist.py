@@ -117,7 +117,12 @@ def gen_list(plists):
             for line in sorted(lines.keys()):
                 suffix = lines[line][0].split('-', 2)
                 suffix = len(suffix) == 2 and suffix[-1]
-                if suffix and all(name.split('-', 2)[-1] == suffix for name in lines[line]):
+                single_suffix = False
+                if suffix:
+                    plists_suffix_len = sum(1 for name in names if name.endswith(suffix))
+                    single_suffix = plists_suffix_len == sum(1 for _ in lines[line]) and \
+                        all(name.split('-', 2)[-1] == suffix for name in lines[line])
+                if single_suffix:
                     yield "%%" + suffix + "%%" + line
                 else:
                     for name in lines[line]:

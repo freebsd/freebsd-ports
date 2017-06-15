@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	onscripter
-PORTVERSION=	20160925
+PORTVERSION=	20161102
 CATEGORIES=	devel games
 MASTER_SITES=	http://onscripter.osdn.jp/
 
@@ -19,7 +19,7 @@ USE_SDL=	image mixer ttf
 MAKEFILE=	Makefile.Linux
 ALL_TARGET=	ALL
 MAKE_ARGS=	RM="${RM}"
-LDFLAGS+=	-Wl,--as-needed
+LDFLAGS+=	-Wl,--as-needed # limit jpeg to bin/*conv
 PORTDOCS=	*
 PLIST_FILES?=	bin/nsaconv \
 		bin/nsadec \

@@ -20,4 +20,4 @@ processing.  With TK 3.3, send now uses xauthority mechanisms by default,
 unless you compile TK with -DTK_NO_SECURITY.  Generally, this means that
 you **MUST** must run xdm to start your Xserver.
 
-WWW:  http://www.beedub.com/exmh/
+WWW: http://www.beedub.com/exmh/

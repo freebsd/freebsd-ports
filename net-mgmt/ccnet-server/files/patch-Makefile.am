@@ -1,0 +1,15 @@
+--- Makefile.am.orig	2016-10-05 10:33:03 UTC
++++ Makefile.am
+@@ -15,8 +15,12 @@ install-data-local:
+ if MACOS
+ 	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+ else
++if BSD
++	sed -i '' "s|(DESTDIR)|${PREFIX}|g" $(pcfiles)
++else
+ 	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
+ endif
++endif
+ 
+ dist-hook:
+ 	git log --format='%H' -1 > $(distdir)/latest_commit

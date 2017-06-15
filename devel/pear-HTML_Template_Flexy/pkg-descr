@@ -3,4 +3,4 @@ however in Version 0.2, It became one of the first template engine to use a real
 Lexer, rather than regex'es, making it possible to do things like ASP.net or
 Cold Fusion tags.
 
-WWW: http://pear.php.net/package/HTML_Template_Flexy/
+WWW: https://pear.php.net/package/HTML_Template_Flexy

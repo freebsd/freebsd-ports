@@ -8,6 +8,10 @@
 # Feature:	shebangfix
 # Usage:	USES=shebangfix
 #
+#   SHEBANG_REGEX	a regular expression to match files that needs to be converted
+#   SHEBANG_FILES	list of files or glob pattern relative to ${WRKSRC}
+#   SHEBANG_GLOB	list of glob pattern find(1) will match with
+#
 # To specify that ${WRKSRC}/path1/file and all .pl files in ${WRKSRC}/path2
 # should be processed:
 #
@@ -75,7 +79,19 @@ _SHEBANG_REINPLACE_ARGS+=	-e "1s|^\#![[:space:]]*${old_cmd:C/\"//g}$$|\#!${${lan
 
 _USES_patch+=	210:fix-shebang
 fix-shebang:
+.if defined(SHEBANG_REGEX)
+	@cd ${WRKSRC}; \
+		${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
+		-exec ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS} {} +
+.elif defined(SHEBANG_GLOB)
+.for f in ${SHEBANG_GLOB}
+	@cd ${WRKSRC}; \
+		${FIND} . -type f -name '${f}' \
+		-exec ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS} {} +
+.endfor
+.else
 	@cd ${WRKSRC}; \
 		${ECHO_CMD} ${SHEBANG_FILES} | ${XARGS} ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS}
+.endif
 
 .endif

@@ -1,14 +1,15 @@
---- Plugins.cmake.orig	2015-02-21 00:27:48 UTC
+--- Plugins.cmake.orig	2016-10-16 20:09:16 UTC
 +++ Plugins.cmake
-@@ -117,11 +117,11 @@ if (UNIX AND NOT APPLE)
- 
+@@ -106,12 +106,12 @@ if (UNIX AND NOT APPLE)
  	# docking
  		# Indicator docking support
+ 		# Comment if you are not compilign under Ubuntu flavor
 -		indicator_docking
 +		#indicator_docking
  
  	# integration
  		# integration with Unity
+ 		# Comment if you are not compilign under Ubuntu flavor
 -		unity_integration
 +		#unity_integration
  

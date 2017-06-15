@@ -1,3 +1,5 @@
+Prevent consumers from picking up libomp.so from devel/llvm* ports
+
 --- runtime/src/CMakeLists.txt.orig	2016-06-28 19:25:13 UTC
 +++ runtime/src/CMakeLists.txt
 @@ -235,6 +235,8 @@ if(WIN32)

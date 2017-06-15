@@ -3,6 +3,7 @@
 
 PORTNAME=	silo
 PORTVERSION=	4.10.2
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-bsd
 CATEGORIES=	science
 MASTER_SITES=	http://wci.llnl.gov/content/assets/docs/simulation/computer-codes/${PORTNAME}/silo-${PORTVERSION}/
@@ -36,15 +37,12 @@ PYTHON_USES=			python:2
 
 QT4_USE=			XORG=ice,sm,x11,xext,xi,xmu,xt \
 				QT4=corelib,gui,linguisttools_build,moc_build,uic_build
-QT4_CONFIGURE_ON=		--with-Qt-dir=${QT_PREFIX} \
+QT4_CONFIGURE_ON=		--with-Qt-dir=${PREFIX} \
 				--with-Qt-lib="QtGui -lQtCore"
 QT4_CONFIGURE_ENABLE=		silex
 QT4_VARS=			QT_NONSTANDARD=yes
 QT4_DESKTOP_ENTRIES=		"Silex" "Silex browser for Silo files" \
 				"" "silex" "" true
-
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -1,0 +1,17 @@
+--- admin/Makefile.in.orig	2017-01-03 19:44:18 UTC
++++ admin/Makefile.in
+@@ -156,9 +156,13 @@ dist_ktutil_OBJECTS = add.$(OBJEXT) chan
+ 	rename.$(OBJEXT)
+ nodist_ktutil_OBJECTS = ktutil-commands.$(OBJEXT)
+ ktutil_OBJECTS = $(dist_ktutil_OBJECTS) $(nodist_ktutil_OBJECTS)
+-ktutil_LDADD = $(LDADD)
++ktutil_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ am__DEPENDENCIES_1 =
+ ktutil_DEPENDENCIES = $(top_builddir)/lib/kadm5/libkadm5clnt.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/sl/libsl.la $(am__DEPENDENCIES_1) \

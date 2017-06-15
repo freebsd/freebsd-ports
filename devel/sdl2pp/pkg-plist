@@ -4,6 +4,7 @@ include/SDL2pp/Chunk.hh
 include/SDL2pp/Config.hh
 include/SDL2pp/ContainerRWops.hh
 include/SDL2pp/Exception.hh
+include/SDL2pp/Export.hh
 include/SDL2pp/Font.hh
 include/SDL2pp/Mixer.hh
 include/SDL2pp/Music.hh
@@ -24,7 +25,7 @@ include/SDL2pp/Wav.hh
 include/SDL2pp/Window.hh
 include/SDL2pp/external/libcpp_optional.hh
 lib/libSDL2pp.so
-lib/libSDL2pp.so.7
-lib/libSDL2pp.so.7.0.0
+lib/libSDL2pp.so.8
+lib/libSDL2pp.so.8.0.0
 libdata/pkgconfig/sdl2pp.pc
 share/cmake/Modules/FindSDL2PP.cmake

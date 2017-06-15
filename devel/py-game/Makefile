@@ -9,7 +9,7 @@ MASTER_SITES=	http://pygame.seul.org/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}release
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Module designed to write games in Python
 
 LICENSE=	LGPL21

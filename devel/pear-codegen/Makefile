@@ -6,9 +6,9 @@ PORTVERSION=	1.0.7
 CATEGORIES=	devel pear
 DISTNAME=	CodeGen-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Tool to create code generators that operate on XML descriptions
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

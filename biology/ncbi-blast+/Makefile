@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	blast+
-PORTVERSION=	2.2.30
-PORTREVISION=	3
+PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/ \
 		http://acadix.biz/Ports/distfiles/
@@ -26,6 +26,8 @@ USES=		gmake shebangfix perl5 python
 SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
 		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
+
+MAKE_JOBS_UNSAFE=	yes
 
 # Requires openmp
 USE_GCC=	yes

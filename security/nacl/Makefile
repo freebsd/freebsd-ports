@@ -3,52 +3,44 @@
 
 PORTNAME=	nacl
 PORTVERSION=	20110221
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://hyperelliptic.org/nacl/
 
-MAINTAINER= 	johans@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	High speed cryptography library
 
-BROKEN_powerpc64=	Does not build
+LICENSE=	PD
 
 USES=		tar:bzip2
-ALL_TARGET=	do
 USE_BINUTILS=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-BROKEN_ia64=	Does not compile on ia64, powerpc, or sparc64
-BROKEN_powerpc=	Does not compile on ia64, powerpc, or sparc64
-BROKEN_sparc64=	Does not compile on ia64, powerpc, or sparc64
+ONLY_FOR_ARCHS=	i386 amd64
 
-HOSTNAME_CMD?=	/bin/hostname -s
-MYARCH=		${ARCH:S/i386/x86/:S/powerpc/ppc/}
+MYARCH=		${ARCH:S/i386/x86/}
 
 post-patch:
-	@${REINPLACE_CMD} -i -e "s|$$| -fPIC|" ${WRKSRC}/okcompilers/c
-	@${REINPLACE_CMD} -i -e "s|gcc|${CC}|" ${WRKSRC}/okcompilers/c
-	@${REINPLACE_CMD} -i -e "s|c++|${CXX}|" ${WRKSRC}/okcompilers/cpp
+	@${REINPLACE_CMD} -e "s|$$| -fPIC|" ${WRKSRC}/okcompilers/c
+	@${REINPLACE_CMD} -e "s|gcc|${CC}|" ${WRKSRC}/okcompilers/c
+	@${REINPLACE_CMD} -e "s|g++|${CXX}|" ${WRKSRC}/okcompilers/cpp
 
 pre-build:
-	${RM} -rf ${WRKSRC}/crypto_onetimeauth/poly1305/amd64
-
-do-build:
-	cd ${WRKSRC} && ./do
-
-.include <bsd.port.pre.mk>
+	${RM} -r ${WRKSRC}/crypto_onetimeauth/poly1305/amd64
+	${PRINTF} "%s\n\t%s\n" "all:" "${SH} ./do" > ${WRKSRC}/Makefile
 
 post-build:
-	${AR} -r ${WRKSRC}/build/`${HOSTNAME_CMD}`/lib/${MYARCH}/libnacl.a \
-		${WRKSRC}/build/`${HOSTNAME_CMD}`/lib/${MYARCH}/randombytes.o
+	${AR} -r ${WRKSRC}/build/HOSTNAME/lib/${MYARCH}/libnacl.a \
+	    ${WRKSRC}/build/HOSTNAME/lib/${MYARCH}/randombytes.o
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/bin/nacl-sha256 \
-		${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/bin/nacl-sha512 \
-		${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD}`/lib/${MYARCH}/* \
-		${STAGEDIR}${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD}`/include/${MYARCH}/* \
-		${STAGEDIR}${PREFIX}/include
+	${INSTALL_PROGRAM} ${WRKSRC}/build/HOSTNAME/bin/nacl-sha256 \
+	    ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/HOSTNAME/bin/nacl-sha512 \
+	    ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/build/HOSTNAME/lib/${MYARCH}/* \
+	    ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/build/HOSTNAME/include/${MYARCH}/* \
+	    ${STAGEDIR}${PREFIX}/include
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

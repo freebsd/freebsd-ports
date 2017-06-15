@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ntopng
-PORTVERSION=	2.4
+PORTVERSION=	2.4.2017.01.20
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -21,19 +22,23 @@ LIB_DEPENDS=	librrd.so:databases/rrdtool \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=	 	autoreconf cpe gmake libtool localbase mysql pathfix pkgconfig sqlite
-SUB_FILES=	ntopng-geoipupdate.sh
+SUB_FILES=	ntopng-geoipupdate.sh pkg-deinstall
 
 USERS=		ntopng
 GROUPS=		ntopng
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
+GH_TAGNAME=	2d9a513
 
 CPE_VENDOR=	ntop
 
 OPTIONS_DEFINE=		GEOIP NLS
 OPTIONS_DEFAULT=	GEOIP
-GEOIP_BUILD_DEPENDS=	geoiplookup:net/GeoIP
+
+OPTIONS_SUB=	yes
+
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 NLS_USES=	gettext
 
@@ -44,6 +49,8 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ntopng
+
+post-install-GEOIP-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/ntopng-geoipupdate.sh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

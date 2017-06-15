@@ -129,7 +129,7 @@ generate-distfile:
 	svn export -r${SVN_REV} \
 		https://svn.sourceforge.net/svnroot/q2pro/q2pro q2pro
 	${TAR} jcf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} q2pro
-	${RM} -rf q2pro
+	${RM} -r q2pro
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>

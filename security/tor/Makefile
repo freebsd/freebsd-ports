@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-PORTVERSION=	0.2.8.9
+PORTVERSION=	0.2.9.10
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -48,10 +48,6 @@ STATIC_TOR_USES_OFF=	ssl
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=	yes
-.endif
-
 .if !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
 empty(PORT_OPTIONS:MSTATIC_TOR) && empty(ARCH:Mia64)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
@@ -60,13 +56,13 @@ CONFIGURE_ARGS+=	--disable-gcc-hardening
 .endif
 
 .if ${PORT_OPTIONS:MSTATIC_TOR}
-BUILD_DEPENDS +=	${LOCALBASE}/lib/libevent.a:devel/libevent2
+BUILD_DEPENDS +=	${LOCALBASE}/lib/libevent.a:devel/libevent
 CONFIGURE_ARGS+=	--enable-static-tor \
 			--with-zlib-dir=/usr/lib --disable-linker-hardening
 TOR_LIBEVENT_LIBS=	${LOCALBASE}/lib/libevent.a
 .else
 CONFIGURE_ARGS+=	--enable-linker-hardening
-LIB_DEPENDS+=		libevent.so:devel/libevent2
+LIB_DEPENDS+=		libevent.so:devel/libevent
 TOR_LIBEVENT_LIBS=	-levent
 .endif
 

@@ -22,3 +22,12 @@
  
  using namespace std;
  #include "zlib.h"
+@@ -143,7 +143,7 @@ Error ThemeZip::CompressThemeZip(const s
+    pBuffer = new char[iBufferSize];
+    for(i = oFileList.begin(); i != oFileList.end(); i++)
+    {
+-       char *pPtr;
++       const char *pPtr;
+        time_t ltime;
+ 
+        oFile = *(*i);

@@ -2,7 +2,6 @@ bin/abiword
 include/abiword-%%ABIVERSION%%/abiwidget.h
 include/abiword-%%ABIVERSION%%/libabiword.h
 include/abiword-%%ABIVERSION%%/xap_UnixTableWidget.h
-%%AIKSAURUS%%lib/abiword-%%ABIVERSION%%/plugins/aiksaurus.so
 lib/abiword-%%ABIVERSION%%/plugins/applix.so
 lib/abiword-%%ABIVERSION%%/plugins/babelfish.so
 lib/abiword-%%ABIVERSION%%/plugins/bmp.so

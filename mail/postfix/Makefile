@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -328,11 +329,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${STAGEDIR}${PREFIX}/bin/qshape
 	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-do-install-TEST-on:
-	${INSTALL_PROGRAM} ${BINTEST:S|^|${WRKSRC}/bin/|} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${MANTEST:S|^|${WRKSRC}/man/man1/|} ${STAGEDIR}${MANPREFIX}/man/man1
-
-post-stage:
 # == do not overwrite existing config
 	${MV} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/main.cf.sample
 	${MV} ${STAGEDIR}${ETCDIR}/master.cf ${STAGEDIR}${ETCDIR}/master.cf.sample
@@ -361,5 +357,9 @@ post-stage:
 	-@${STRIP_CMD} ${STRIP_LIBEXEC:S|^|${STAGEDIR}${DAEMONDIR}/|}
 	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/*
 	-@${STRIP_CMD} ${STAGEDIR}${SHLIB_DIRECTORY}/*.so
+
+do-install-TEST-on:
+	${INSTALL_PROGRAM} ${BINTEST:S|^|${WRKSRC}/bin/|} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${MANTEST:S|^|${WRKSRC}/man/man1/|} ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

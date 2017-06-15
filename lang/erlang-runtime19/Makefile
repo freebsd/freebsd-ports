@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.1.1
+PORTVERSION=	19.3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -16,12 +16,14 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-19.1.1
+PATCHFILES=
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
 
 LICENSE=	APACHE20
+
+BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
 WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
@@ -46,10 +48,19 @@ WX_DESC=	Enable WX application
 
 NATIVE_IMPLIES=	HIPE
 
-OPTIONS_DEFAULT=HIPE KQUEUE OPENSSL SCTP SMP THREADS
+OPTIONS_DEFAULT=HIPE KQUEUE OPENSSL SCTP SMP THREADS DTRACE
 OPTIONS_EXCLUDE_DragonFly=	HIPE NATIVE SCTP
 
-ERL_RELEASE=	19.1
+.if !exists(/usr/sbin/dtrace)
+OPTIONS_EXCLUDE+=	DTRACE
+.endif
+
+OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
+OPTIONS_EXCLUDE_i386=		DTRACE
+# ld(1) fails to link probes: missing __dtrace_erlang___* symbols
+OPTIONS_EXCLUDE_aarch64=	DTRACE
+
+ERL_RELEASE=	19.3
 
 USES=		gmake ncurses perl5
 USE_PERL5=	build
@@ -65,12 +76,6 @@ DISTFILES+=	${ERLANG_DOCS}:erlangorg
 # If you run Erlang and get a message resembling "WARNING: number of
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
-
-.if ${OSVERSION} < 1000000
-.if ${ARCH} == "amd64" && ${PORT_OPTIONS:MDTRACE}
-IGNORE=		support for DTrace on amd64 requires at least FreeBSD 10
-.endif
-.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
 CFLAGS+=	-DMAP_NORESERVE=0
@@ -182,14 +187,6 @@ MAKE_ARGS+=	ARCH=arm
 # links in the documentation.
 
 pre-configure:
-.if ${PORT_OPTIONS:MDTRACE}
-	@if ! /sbin/kldstat | ${GREP} dtraceall >/dev/null 2>&1; then \
-		${ECHO_CMD}; \
-		${ECHO_CMD} "DTRACE option requires kernel module \"dtraceall\" to be loaded."; \
-		${ECHO_CMD}; \
-		exit 1; \
-	fi
-.endif
 .if ! ${PORT_OPTIONS:MWX}
 	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
 .endif
@@ -210,15 +207,10 @@ post-install:
 			-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB} \
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
 	done
-	${RM} -rf ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
 .if ${PORT_OPTIONS:MDOCS}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
-
-	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.0.2/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.0.3
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.0.2
-
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 .endif
@@ -245,4 +237,10 @@ post-install:
 		| ${SORT} \
 		>> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

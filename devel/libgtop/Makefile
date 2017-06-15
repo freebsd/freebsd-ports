@@ -10,6 +10,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME top library
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USE_PERL5=	build
 USE_XORG=	xau
 USES=		gettext gmake gnome libtool makeinfo pathfix perl5 \

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	science
-MASTER_SITES=	https://code.zmaw.de/attachments/download/12070/ \
+MASTER_SITES=	https://code.zmaw.de/attachments/download/13772/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,16 +13,17 @@ COMMENT=	Climate Data Operators
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
-OPTIONS_DEFAULT=CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS
+OPTIONS_DEFINE=	CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
+OPTIONS_DEFAULT=CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
 OPTIONS_SUB=	yes
+CGRIBEX_DESC=	Use CGRIBEX library for GRIB1 files
 HDF5_IMPLIES=	SZIP
 NETCDF_IMPLIES=	HDF5
+UUID_DESC=	UUID support
 
 PORTSCOUT=	site:https://code.zmaw.de/projects/cdo/files
 
-CONFIGURE_ARGS=	--disable-cgribex \
-		--disable-data \
+CONFIGURE_ARGS=	--disable-data \
 		--disable-extra \
 		--disable-grib \
 		--disable-ieg \
@@ -36,7 +36,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		gmake libtool localbase pathfix
+USES=		execinfo gmake libtool localbase pathfix
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex
@@ -52,6 +52,8 @@ SZIP_CONFIGURE_WITH=	szlib
 SZIP_LIB_DEPENDS=	libsz.so:science/szip
 UDUNITS_CONFIGURE_WITH=	udunits2
 UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
+UUID_CONFIGURE_OFF=	ac_cv_func_uuid_create=no ac_cv_have_decl_uuid_create=no ac_cv_have_decl_uuid_generate=no ac_cv_lib_uuid_uuid_generate=no
+UUID_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 .include <bsd.port.pre.mk>
 
@@ -60,6 +62,7 @@ CFLAGS+=	-DPTHREAD_MUTEXATTR_CONDATTR
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| contrib||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(libdir)/\($$$$pkgconfigfile\)|${PREFIX}/libdata/\1|' ${WRKSRC}/libcdi/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|unsigned32 |uint32_t |' ${WRKSRC}/libcdi/src/cdilib.c ${WRKSRC}/libcdi/src/util.c
 

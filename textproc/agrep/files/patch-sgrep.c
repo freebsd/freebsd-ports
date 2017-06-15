@@ -1,5 +1,5 @@
---- sgrep.c.orig	1992-04-11 00:12:02.000000000 +0200
-+++ sgrep.c	2011-11-27 12:44:11.000000000 +0100
+--- sgrep.c.orig	1992-04-10 22:12:02 UTC
++++ sgrep.c
 @@ -1,6 +1,9 @@
  /* Copyright (c) 1991 Sun Wu and Udi Manber.  All Rights Reserved. */
  #include <stdio.h>
@@ -24,7 +24,7 @@
  extern unsigned char CurrentFileName[],  Progname[]; 
  extern unsigned Mask[];
  extern unsigned endposition;
-@@ -30,6 +33,21 @@
+@@ -30,6 +33,21 @@ unsigned char BSize;                /* l
  unsigned char char_map[MAXSYM];
  	
  
@@ -46,7 +46,7 @@
  /* data area */
  int shift_1;
  CHARTYPE SHIFT[MAXSYM];
-@@ -39,7 +57,7 @@
+@@ -39,7 +57,7 @@ unsigned Hashmask;
  char MEMBER_1[MAXMEMBER_1];
  CHARTYPE TR[MAXSYM];
  
@@ -55,7 +55,7 @@
  	unsigned char *pat;
  	int *m;
  {
-@@ -64,7 +82,7 @@
+@@ -64,7 +82,7 @@ unsigned char temp[MAXPATT];
  	}
  }
  
@@ -64,7 +64,7 @@
  CHARTYPE *pat;  int fd, m, D;
  { 
      CHARTYPE text[BLOCKSIZE+2*MAXLINE+MAXPATT]; /* input text stream */
-@@ -126,7 +144,7 @@
+@@ -126,7 +144,7 @@ CHARTYPE *pat;  int fd, m, D;
  /* SUN: bm assumes that the content of text[n]...text[n+m-1] is 
  pat[m-1] such that the skip loop is guaranteed to terminated */
  
@@ -73,7 +73,7 @@
  	CHARTYPE *text, *textend, *pat;  int m;
  {
  register int shift;
-@@ -179,7 +197,7 @@
+@@ -179,7 +197,7 @@ return;
  /* initmask() initializes the mask table for the pattern                    */ 
  /* endposition is a mask for the endposition of the pattern                 */
  /* endposition will contain k mask bits if the pattern contains k fragments */
@@ -82,7 +82,7 @@
  CHARTYPE *pattern; unsigned *Mask; register int m, D; unsigned *endposition;
  {
    register unsigned Bit1, c;
-@@ -202,7 +220,7 @@
+@@ -202,7 +220,7 @@ CHARTYPE *pattern; unsigned *Mask; regis
    }
  }
  
@@ -91,7 +91,7 @@
  	CHARTYPE *Pattern;  /* can be fine-tuned to choose a better partition */
  	register int M, D;
  {
-@@ -250,7 +268,7 @@
+@@ -250,7 +268,7 @@ unsigned hash, b_size = 3;
  }
  
  
@@ -100,7 +100,7 @@
  int M, D ; register CHARTYPE *text, *textend, *pat;
  {
    register int i;
-@@ -357,7 +375,7 @@
+@@ -357,7 +375,7 @@ int M, D ; register CHARTYPE *text, *tex
    return;
  }
  
@@ -109,7 +109,7 @@
  int *i; CHARTYPE *text;
  {
  int kk, bp;
-@@ -375,9 +393,9 @@
+@@ -375,9 +393,9 @@ int kk, bp;
  }
  
  
@@ -121,7 +121,7 @@
  {
  int i, j;
  unsigned hash;
-@@ -404,7 +422,7 @@
+@@ -404,7 +422,7 @@ unsigned char lastc;
  
  /* a_monkey() the approximate monkey move */
  
@@ -130,7 +130,7 @@
  register int m, D ; register CHARTYPE *text, *textend, *pat;
  {
  register CHARTYPE *oldtext;
-@@ -451,7 +469,7 @@
+@@ -451,7 +469,7 @@ register int  m1 = m-1-D, j, pos; 
  
  CHARTYPE SHIFT_2[MAX_SHIFT_2];
  
@@ -139,7 +139,7 @@
  register int m  ; register CHARTYPE *text, *textend, *pat;
  {
  register unsigned hash, i; 
-@@ -494,7 +512,7 @@
+@@ -494,7 +512,7 @@ r_newline = '\n';
    }
  }
   
@@ -148,7 +148,7 @@
  CHARTYPE *Pattern;
  {
  int i, j, m;
-@@ -511,7 +529,7 @@
+@@ -511,7 +529,7 @@ unsigned hash;
  }
  
  
@@ -157,7 +157,7 @@
  register int m, n, D;
  CHARTYPE *pat, *text;
  {   
-@@ -566,7 +584,7 @@
+@@ -566,7 +584,7 @@ CHARTYPE *pat, *text;
  
  /* preprocessing for monkey()   */
  
@@ -166,7 +166,7 @@
  CHARTYPE *Pattern;
  {
  int i, j, m;
-@@ -595,7 +613,7 @@
+@@ -595,7 +613,7 @@ unsigned hash;
  
  char *MEMBER_D;
  
@@ -175,7 +175,7 @@
  register int m, D ; register unsigned char *text, *pat, *textend;
  {
  register unsigned char *oldtext;
-@@ -639,7 +657,7 @@
+@@ -639,7 +657,7 @@ register int m1=m-1-D, j, pos; 
    }
  }
   
@@ -184,7 +184,7 @@
  char *Pattern; int m;
  {
  int i, j, k;
-@@ -672,7 +690,7 @@
+@@ -672,7 +690,7 @@ char_map['n'] = char_map['n'] = 5;
          }
  }
  

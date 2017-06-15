@@ -2,38 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	goaccess
-PORTVERSION=	0.8.5
+PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tar.goaccess.io/
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Real-time Apache web log analyzer
 
-LICENSE=	GPLv2
-
-LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20
-USES=		pkgconfig
+USES=		alias pkgconfig ncurses
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+CFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
+LDFLAGS+=	-L${NCURSESLIB} -L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS DEBUG GEOIP UTF8
+OPTIONS_DEFAULT=	GEOIP UTF8
+OPTIONS_RADIO=	TOKYOCABINET
+OPTIONS_RADIO_TOKYOCABINET=	TOKYOCABINET_BTREE TOKYOCABINET_MHASH
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+DEBUG_CONFIGURE_ON=	--enable-debug
+UTF8_CONFIGURE_ON=	--enable-utf8
+
+GEOIP_CONFIGURE_ON=	--enable-geoip=legacy
+GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
+
+TOKYOCABINET_DESC=	Tokyo Cabinet support
+TOKYOCABINET_BTREE_DESC=	Storage using on-disk B+ Tree
+TOKYOCABINET_MHASH_DESC=	Storage using on-memory hash database
+TOKYOCABINET_BTREE_CONFIGURE_ON=	--enable-tcb=btree
+TOKYOCABINET_MHASH_CONFIGURE_ON=	--enable-tcb=memhash
+TOKYOCABINET_BTREE_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
+TOKYOCABINET_HASH_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>

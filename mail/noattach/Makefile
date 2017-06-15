@@ -4,7 +4,7 @@ PORTNAME=	noattach
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Attachment filter for Sendmail Milter

@@ -3,7 +3,7 @@
 
 PORTNAME=	eijiro-fpw
 PORTVERSION=	1.0b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/ \
 		ftp://relay1.tomsk.gov.ru/pub/FreeBSD/ports/distfiles/

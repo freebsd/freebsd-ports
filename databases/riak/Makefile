@@ -12,8 +12,6 @@ COMMENT=	Open source, distributed, noSQL database
 
 LICENSE=	APACHE20
 
-BROKEN_powerpc64=	Does not build
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang15/bin/erlc:lang/erlang-runtime15
 
 USES=		gmake readline shebangfix
@@ -46,13 +44,17 @@ ALL_TARGET=	rel
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang15/bin:${PATH}
 
+BROKEN_aarch64=		Does not compile: error: Unknown CPU architecture
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not compile: Please implement AtomicPointer for this platform
+
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/rel/vars.config
 
 pre-install:
-	${RM} -f ${PLIST}
+	${RM} ${PLIST}
 	${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
 	(cd ${WRKSRC}/rel/${PORTNAME}; ${FIND} releases -type f \
 		| ${AWK} '{print length, $$0}' | ${SORT} -rn | ${SED} -e 's/^/lib\//' \

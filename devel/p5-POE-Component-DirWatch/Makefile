@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Component-DirWatch
-PORTVERSION=	0.300003
+PORTVERSION=	0.300004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
-
-regression-test:
-	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

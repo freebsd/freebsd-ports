@@ -25,7 +25,6 @@ DOCSUBDIR=	/ RDF RDF/Core RDF/Core/Enumerator RDF/Core/Model \
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 .for DOCDIR in ${DOCSUBDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${DOCDIR}/*.html	${STAGEDIR}${DOCSDIR}/${DOCDIR}

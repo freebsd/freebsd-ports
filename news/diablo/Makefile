@@ -8,7 +8,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-REL
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Comprehensive newsfeeding and newsreading software package
 
 LICENSE=	BSD3CLAUSE
@@ -48,7 +48,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/news/spool/group
 	${MKDIR} ${STAGEDIR}${PREFIX}/news/spool/postq
 	(cd ${WRKSRC} && xmake install)
-	@${RM} -rf ${STAGEDIR}${PREFIX}/news/man
+	@${RM} -r ${STAGEDIR}${PREFIX}/news/man
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/news/dbin/*
 	${INSTALL_SCRIPT} ${WRKDIR}/diablo ${STAGEDIR}${PREFIX}/etc/rc.d
 

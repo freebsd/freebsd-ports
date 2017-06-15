@@ -18,9 +18,8 @@ RUN_DEPENDS=	p5-MIME-Base64>=0:converters/p5-MIME-Base64 \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		avahi-publish-service:net/avahi-app
 
-USES=		gmake perl5 pkgconfig
+USES=		gmake perl5 pkgconfig ssl
 USE_PERL5=	run
-USE_OPENSSL=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	miks
 GH_TAGNAME=	b1cb9ea

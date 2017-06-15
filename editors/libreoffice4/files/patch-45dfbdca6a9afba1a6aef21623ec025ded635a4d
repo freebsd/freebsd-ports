@@ -1,0 +1,183 @@
+--- canvas/source/cairo/cairo_spritecanvashelper.cxx.orig	2015-04-20 19:36:29 UTC
++++ canvas/source/cairo/cairo_spritecanvashelper.cxx
+@@ -402,11 +402,12 @@ namespace cairocanvas
+         ::basegfx::computeSetDifference( aUncoveredAreas,
+                                          rUpdateArea.maTotalBounds,
+                                          ::basegfx::B2DRange( rDestRect ) );
++        SurfaceSharedPtr surface(mpOwningSpriteCanvas->getBufferSurface());
+         ::std::for_each( aUncoveredAreas.begin(),
+                          aUncoveredAreas.end(),
+                          ::boost::bind( &repaintBackground,
+                                         boost::cref(pCompositingCairo),
+-                                        boost::cref(mpOwningSpriteCanvas->getBufferSurface()),
++                                        boost::cref(surface),
+                                         _1 ) );
+ 
+         cairo_rectangle( pWindowCairo.get(), 0, 0, rSize.getX(), rSize.getY() );
+--- canvas/source/vcl/spritecanvashelper.cxx.orig	2015-04-20 19:36:29 UTC
++++ canvas/source/vcl/spritecanvashelper.cxx
+@@ -573,12 +573,12 @@ namespace vclcanvas
+ 
+         // repaint all affected sprites on top of background into
+         // VDev.
++        ::basegfx::B2DPoint outPos( ::vcl::unotools::b2DPointFromPoint(aOutputPosition) );
+         ::std::for_each( rSortedUpdateSprites.begin(),
+                          rSortedUpdateSprites.end(),
+                          ::boost::bind( &spriteRedrawStub2,
+                                         ::boost::ref( maVDev.get() ),
+-                                        ::boost::cref(
+-                                            ::vcl::unotools::b2DPointFromPoint(aOutputPosition)),
++                                        ::boost::cref( outPos ),
+                                         _1 ) );
+ 
+         // flush to screen
+--- dbaccess/source/ui/tabledesign/TableController.cxx.orig	2015-04-20 19:36:29 UTC
++++ dbaccess/source/ui/tabledesign/TableController.cxx
+@@ -1392,7 +1392,8 @@ void OTableController::assignTable()
+                     setEditable( xMeta.is() && !xMeta->isReadOnly() && (isAlterAllowed() || isDropAllowed() || isAddAllowed()) );
+                     if(!isEditable())
+                     {
+-                        ::std::for_each(m_vRowList.begin(),m_vRowList.end(),boost::bind( &OTableRow::SetReadOnly, _1, boost::cref( sal_True )));
++                        sal_Bool t( sal_True );
++                        ::std::for_each(m_vRowList.begin(),m_vRowList.end(),boost::bind( &OTableRow::SetReadOnly, _1, boost::cref( t )));
+                     }
+                     m_bNew = false;
+                     // be notified when the table is in disposing
+--- oox/source/drawingml/table/tablecell.cxx.orig	2015-04-20 19:36:29 UTC
++++ oox/source/drawingml/table/tablecell.cxx
+@@ -142,9 +142,9 @@ void applyTableStylePart( const ::oox::c
+     if (rTableStylePart.getTextColor().isUsed())
+         aTextCharProps.maCharColor = rTableStylePart.getTextColor();
+     if( rTableStylePart.getTextBoldStyle().is_initialized() )
+-        aTextCharProps.moBold = rTableStylePart.getTextBoldStyle();
++        aTextCharProps.moBold = *rTableStylePart.getTextBoldStyle();
+     if( rTableStylePart.getTextItalicStyle().is_initialized() )
+-        aTextCharProps.moItalic = rTableStylePart.getTextItalicStyle();
++        aTextCharProps.moItalic = *rTableStylePart.getTextItalicStyle();
+ }
+ 
+ void applyTableCellProperties( const Reference < ::com::sun::star::table::XCell >& rxCell, const TableCell& rTableCell )
+--- reportdesign/source/core/api/ReportDefinition.cxx.orig	2015-04-20 19:36:29 UTC
++++ reportdesign/source/core/api/ReportDefinition.cxx
+@@ -1612,8 +1612,9 @@ void SAL_CALL OReportDefinition::switchT
+         m_pImpl->m_pObjectContainer->SwitchPersistence(m_pImpl->m_xStorage);
+     }
+     // notify our container listeners
++    OWeakObject *weakObjectThis = static_cast<OWeakObject*>(this);
+     m_pImpl->m_aStorageChangeListeners.forEach<document::XStorageChangeListener>(
+-            ::boost::bind(&document::XStorageChangeListener::notifyStorageChange,_1,boost::cref(static_cast<OWeakObject*>(this)),boost::cref(_xStorage)));
++            ::boost::bind(&document::XStorageChangeListener::notifyStorageChange,_1,boost::cref(weakObjectThis),boost::cref(_xStorage)));
+ }
+ 
+ uno::Reference< embed::XStorage > SAL_CALL OReportDefinition::getDocumentStorage(  ) throw (io::IOException, uno::Exception, uno::RuntimeException, std::exception)
+--- slideshow/source/engine/activities/activitybase.hxx.orig	2015-04-20 19:36:29 UTC
++++ slideshow/source/engine/activities/activitybase.hxx
+@@ -111,7 +111,7 @@ protected:
+     ShapeAttributeLayerSharedPtr getShapeAttributeLayer() const
+         { return mpAttributeLayer; }
+ 
+-    bool isRepeatCountValid() const { return maRepeats; }
++    bool isRepeatCountValid() const { return bool(maRepeats); }
+     double getRepeatCount() const { return *maRepeats; }
+     bool isAutoReverse() const { return mbAutoReverse; }
+ 
+--- slideshow/source/engine/rehearsetimingsactivity.cxx.orig	2015-04-20 19:36:29 UTC
++++ slideshow/source/engine/rehearsetimingsactivity.cxx
+@@ -400,11 +400,12 @@ void RehearseTimingsActivity::viewsChang
+     {
+         // new sprite pos, transformation might have changed:
+         maSpriteRectangle = calcSpriteRectangle( maViews.front().first );
++        ::basegfx::B2DPoint rectMin( maSpriteRectangle.getMinimum() );
+ 
+         // reposition sprites
+         for_each_sprite( boost::bind( &cppcanvas::Sprite::move,
+                                       _1,
+-                                      boost::cref(maSpriteRectangle.getMinimum())) );
++                                      boost::cref( rectMin )) );
+ 
+         // sprites changed, need screen update
+         mrScreenUpdater.notifyUpdate();
+--- slideshow/source/engine/shapes/appletshape.cxx.orig	2015-04-20 19:36:29 UTC
++++ slideshow/source/engine/shapes/appletshape.cxx
+@@ -148,12 +148,13 @@ namespace slideshow
+         void AppletShape::implViewsChanged()
+         {
+             // resize all ViewShapes
++            ::basegfx::B2DRectangle bounds( AppletShape::getBounds() );
+             ::std::for_each( maViewAppletShapes.begin(),
+                              maViewAppletShapes.end(),
+                              ::boost::bind(
+                                  &ViewAppletShape::resize,
+                                  _1,
+-                                 ::boost::cref( AppletShape::getBounds())) );
++                                 ::boost::cref( bounds )) );
+         }
+ 
+ 
+@@ -252,11 +253,12 @@ namespace slideshow
+ 
+         bool AppletShape::implStartIntrinsicAnimation()
+         {
++            ::basegfx::B2DRectangle bounds( getBounds() );
+             ::std::for_each( maViewAppletShapes.begin(),
+                              maViewAppletShapes.end(),
+                              ::boost::bind( &ViewAppletShape::startApplet,
+                                             _1,
+-                                            ::boost::cref( getBounds() )));
++                                            ::boost::cref( bounds )));
+             mbIsPlaying = true;
+ 
+             return true;
+--- slideshow/source/engine/shapes/drawshape.cxx.orig	2015-04-20 19:36:29 UTC
++++ slideshow/source/engine/shapes/drawshape.cxx
+@@ -168,6 +168,7 @@ namespace slideshow
+             }
+ 
+             // redraw all view shapes, by calling their update() method
++            ViewShape::RenderArgs renderArgs( getViewRenderArgs() );
+             if( ::std::count_if( maViewShapes.begin(),
+                                  maViewShapes.end(),
+                                  ::boost::bind<bool>(
+@@ -178,8 +179,7 @@ namespace slideshow
+                                                                              // the extra mem_fn. WTF.
+                                      _1,
+                                      ::boost::cref( mpCurrMtf ),
+-                                     ::boost::cref(
+-                                         getViewRenderArgs() ),
++                                     ::boost::cref( renderArgs ),
+                                      nUpdateFlags,
+                                      isVisible() ) )
+                 != static_cast<ViewShapeVector::difference_type>(maViewShapes.size()) )
+--- slideshow/source/engine/shapes/mediashape.cxx.orig	2015-04-20 19:36:29 UTC
++++ slideshow/source/engine/shapes/mediashape.cxx
+@@ -125,12 +125,13 @@ namespace slideshow
+         void MediaShape::implViewsChanged()
+         {
+             // resize all ViewShapes
++            ::basegfx::B2DRectangle bounds( getBounds() );
+             ::std::for_each( maViewMediaShapes.begin(),
+                              maViewMediaShapes.end(),
+                              ::boost::bind(
+                                  &ViewMediaShape::resize,
+                                  _1,
+-                                 ::boost::cref( getBounds())) );
++                                 ::boost::cref( bounds )) );
+         }
+ 
+ 
+--- slideshow/source/engine/unoviewcontainer.cxx.orig	2015-04-20 19:36:29 UTC
++++ slideshow/source/engine/unoviewcontainer.cxx
+@@ -45,11 +45,12 @@ namespace slideshow
+             const UnoViewVector::iterator aEnd( maViews.end() );
+ 
+             // already added?
++            uno::Reference<presentation::XSlideShowView> xView (rView->getUnoView());
+             if( ::std::find_if( maViews.begin(),
+                                 aEnd,
+                                 ::boost::bind(
+                                     ::std::equal_to< uno::Reference< presentation::XSlideShowView > >(),
+-                                    ::boost::cref( rView->getUnoView() ),
++                                    ::boost::cref( xView ),
+                                     ::boost::bind(
+                                         &UnoView::getUnoView,
+                                         _1 ) ) ) != aEnd )

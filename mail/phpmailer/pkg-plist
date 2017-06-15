@@ -1,5 +1,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/DKIM.phps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/code_generator.phps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contactform.phps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contents.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentsutf8.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exceptions.phps

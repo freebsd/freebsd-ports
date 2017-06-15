@@ -7,7 +7,6 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel textproc
 PKGNAMESUFFIX=	5
-DISTNAME=	onig-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	rob@theseusnetworking.com
@@ -18,13 +17,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-CONFLICTS=	oniguruma-2.*
+CONFLICTS_INSTALL=	oniguruma[46]-.*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kkos
 
 USES=		pathfix autoreconf libtool
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

@@ -36,7 +36,7 @@ LIBXML_USE=		GNOME=libxml2
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 OPENSSL_CONFIGURE_WITH=	ssl
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 PROXY_CONFIGURE_WITH=	libproxy
 PROXY_LIB_DEPENDS=	libproxy.so:net/libproxy
 
@@ -59,4 +59,10 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libneon.so.27.*
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

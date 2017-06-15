@@ -3,7 +3,7 @@
 
 PORTNAME=	vii
 PORTVERSION=	4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vii.sourceforge.net/ \
 		LOCAL/ehaupt

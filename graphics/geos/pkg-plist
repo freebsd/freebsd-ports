@@ -162,8 +162,11 @@ include/geos/index/quadtree/Root.h
 include/geos/index/strtree/AbstractNode.h
 include/geos/index/strtree/AbstractSTRtree.h
 include/geos/index/strtree/Boundable.h
+include/geos/index/strtree/BoundablePair.h
+include/geos/index/strtree/GeometryItemDistance.h
 include/geos/index/strtree/Interval.h
 include/geos/index/strtree/ItemBoundable.h
+include/geos/index/strtree/ItemDistance.h
 include/geos/index/strtree/SIRtree.h
 include/geos/index/strtree/STRtree.h
 include/geos/index/sweepline/SweepLineEvent.h
@@ -260,6 +263,8 @@ include/geos/operation/buffer/SubgraphDepthLocater.h
 include/geos/operation/distance/ConnectedElementLocationFilter.h
 include/geos/operation/distance/ConnectedElementPointFilter.h
 include/geos/operation/distance/DistanceOp.h
+include/geos/operation/distance/FacetSequence.h
+include/geos/operation/distance/FacetSequenceTreeBuilder.h
 include/geos/operation/distance/GeometryLocation.h
 include/geos/operation/intersection/Rectangle.h
 include/geos/operation/intersection/RectangleIntersection.h
@@ -335,6 +340,7 @@ include/geos/precision/CommonBitsOp.h
 include/geos/precision/CommonBitsRemover.h
 include/geos/precision/EnhancedPrecisionOp.h
 include/geos/precision/GeometryPrecisionReducer.h
+include/geos/precision/MinimumClearance.h
 include/geos/precision/PrecisionReducerCoordinateOperation.h
 include/geos/precision/SimpleGeometryPrecisionReducer.h
 include/geos/profiler.h
@@ -382,7 +388,7 @@ lib/libgeos.so
 lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.9.0
+lib/libgeos_c.so.1.10.1
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.so
@@ -391,4 +397,3 @@ lib/libgeos_c.so.1.9.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyo
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
-%%PHP%%lib/php/%%PHP_EXT_DIR%%/geos.so

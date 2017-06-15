@@ -1,8 +1,8 @@
 bin/wcd
-man/de/man1/wcd.1.gz
+%%NLS%%man/de/man1/wcd.1.gz
 man/man1/wcd.1.gz
-man/nl/man1/wcd.1.gz
-man/uk/man1/wcd.1.gz
+%%NLS%%man/nl/man1/wcd.1.gz
+%%NLS%%man/uk/man1/wcd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/RPM.txt
@@ -20,11 +20,13 @@ man/uk/man1/wcd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/wcd.htm
 %%PORTDOCS%%%%DOCSDIR%%/wcd.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%NLS%%share/locale/da/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wcd.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wcd.mo

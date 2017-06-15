@@ -3,7 +3,7 @@
 
 PORTNAME=	megapov
 PORTVERSION=	1.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 

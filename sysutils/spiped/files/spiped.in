@@ -15,6 +15,7 @@
 # spiped_pipe_X_source: Source address of pipe X.
 # spiped_pipe_X_target:	Target address of pipe X.
 # spiped_pipe_X_key:	Key file for pipe X.
+# spiped_pipe_X_flags:	Optional flags for pipe X. See spiped(1) for details.
 
 . /etc/rc.subr
 
@@ -39,6 +40,7 @@ spiped_start()
 		eval SOURCE=\$spiped_pipe_${P}_source
 		eval TARGET=\$spiped_pipe_${P}_target
 		eval KEY=\$spiped_pipe_${P}_key
+		eval FLAGS=\$spiped_pipe_${P}_flags
 		case "$MODE" in
 		encrypt | client)
 			MODEFLAG="-e"
@@ -50,7 +52,7 @@ spiped_start()
 			echo Invalid value for spiped_pipe_${P}_mode: $MODE
 			continue
 		esac
-		${command} -D $MODEFLAG -s $SOURCE -t $TARGET -k $KEY -p $PIDFILE
+		${command} -D $MODEFLAG -s $SOURCE -t $TARGET -k $KEY -p $PIDFILE $FLAGS
 	done
 }
 

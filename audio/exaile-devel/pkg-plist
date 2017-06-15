@@ -452,7 +452,6 @@ share/exaile/data/ui/trackproperties_dialog_cover_row.ui
 share/exaile/data/ui/widgets/filter_dialog.ui
 share/exaile/data/ui/widgets/progress.ui
 share/exaile/data/ui/widgets/track_info.ui
-share/exaile/data/ui/widgets/tracklist_info.ui
 share/exaile/data/ui/widgets/volume_control.ui
 share/exaile/plugins/abrepeat/PLUGININFO
 share/exaile/plugins/abrepeat/__init__.py
@@ -630,10 +629,6 @@ share/exaile/plugins/equalizer/__init__.py
 share/exaile/plugins/equalizer/__init__.pyc
 share/exaile/plugins/equalizer/__init__.pyo
 share/exaile/plugins/equalizer/equalizer.ui
-share/exaile/plugins/gnomemmkeys/PLUGININFO
-share/exaile/plugins/gnomemmkeys/__init__.py
-share/exaile/plugins/gnomemmkeys/__init__.pyc
-share/exaile/plugins/gnomemmkeys/__init__.pyo
 share/exaile/plugins/grouptagger/PLUGININFO
 share/exaile/plugins/grouptagger/__init__.py
 share/exaile/plugins/grouptagger/__init__.pyc
@@ -680,12 +675,9 @@ share/exaile/plugins/ipconsole/ipconsole_prefs.ui
 share/exaile/plugins/ipconsole/ipconsoleprefs.py
 share/exaile/plugins/ipconsole/ipconsoleprefs.pyc
 share/exaile/plugins/ipconsole/ipconsoleprefs.pyo
-share/exaile/plugins/ipconsole/ipython_view/__init__.py
-share/exaile/plugins/ipconsole/ipython_view/__init__.pyc
-share/exaile/plugins/ipconsole/ipython_view/__init__.pyo
-share/exaile/plugins/ipconsole/ipython_view/ipython_view.py
-share/exaile/plugins/ipconsole/ipython_view/ipython_view.pyc
-share/exaile/plugins/ipconsole/ipython_view/ipython_view.pyo
+share/exaile/plugins/ipconsole/ipython_view.py
+share/exaile/plugins/ipconsole/ipython_view.pyc
+share/exaile/plugins/ipconsole/ipython_view.pyo
 share/exaile/plugins/jamendo/PLUGININFO
 share/exaile/plugins/jamendo/__init__.py
 share/exaile/plugins/jamendo/__init__.pyc
@@ -758,7 +750,6 @@ share/exaile/plugins/lyricsviewer/PLUGININFO
 share/exaile/plugins/lyricsviewer/__init__.py
 share/exaile/plugins/lyricsviewer/__init__.pyc
 share/exaile/plugins/lyricsviewer/__init__.pyo
-share/exaile/plugins/lyricsviewer/images/loading.gif
 share/exaile/plugins/lyricsviewer/lyricsviewer.ui
 share/exaile/plugins/lyricsviewer/lyricsviewer_prefs.ui
 share/exaile/plugins/lyricsviewer/lyricsviewerprefs.py

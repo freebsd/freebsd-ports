@@ -1,6 +1,6 @@
---- configure.orig	2015-04-11 01:05:36 UTC
-+++ configure
-@@ -9216,7 +9216,7 @@ $as_echo_n "checking whether the $compil
+--- configure.orig	2017-03-26 09:14:47.000000000 +0000
++++ configure	2017-03-26 09:14:47.000000000 +0000
+@@ -9622,7 +9622,7 @@
    hardcode_minus_L=no
    hardcode_shlibpath_var=unsupported
    inherit_rpath=no
@@ -9,16 +9,7 @@
    module_cmds=
    module_expsym_cmds=
    old_archive_from_new_cmds=
-@@ -10913,7 +10913,7 @@ freebsd* | dragonfly*)
-   version_type=freebsd-$objformat
-   case $version_type in
-     freebsd-elf*)
--      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
-+      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
-       need_version=no
-       need_lib_prefix=no
-       ;;
-@@ -12248,7 +12248,7 @@ hardcode_automatic_CXX=no
+@@ -12871,7 +12871,7 @@
  inherit_rpath_CXX=no
  module_cmds_CXX=
  module_expsym_cmds_CXX=
@@ -27,81 +18,13 @@
  old_archive_cmds_CXX=$old_archive_cmds
  reload_flag_CXX=$reload_flag
  reload_cmds_CXX=$reload_cmds
-@@ -14748,7 +14748,7 @@ freebsd* | dragonfly*)
-   version_type=freebsd-$objformat
-   case $version_type in
-     freebsd-elf*)
--      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
-+      library_names_spec='$libname$release$shared_ext$versuffix  $libname$release$shared_ext$major	 $libname$shared_ext'			 soname_spec='$libname$release$shared_ext$major'
-       need_version=no
-       need_lib_prefix=no
-       ;;
-@@ -15767,6 +15767,9 @@ case $host_os in
- 	*mingw32* )
- 		WERROR=""
- 		;;
-+	freebsd* )
-+		WERROR=""
-+		;;
- 	*)
- 		;;
- esac
-@@ -31537,47 +31540,47 @@ fi
- # prepend DESTDIR where appropriate
- if ( test "`echo $ac_default_prefix | cut -c1`" = "/" )
- then
--	ac_default_prefix='${DESTDIR}'"$ac_default_prefix"
-+	ac_default_prefix="$ac_default_prefix"
- fi
- if ( test "`echo $prefix | cut -c1`" = "/" )
- then
--	prefix='${DESTDIR}'"$prefix"
-+	prefix="$prefix"
- fi
- if ( test "`echo $exec_prefix | cut -c1`" = "/" )
- then
--	exec_prefix='${DESTDIR}'"$exec_prefix"
-+	exec_prefix="$exec_prefix"
- fi
- if ( test "`echo $includedir | cut -c1`" = "/" )
- then
--	includedir='${DESTDIR}'"$includedir"
-+	includedir="$includedir"
- fi
- if ( test "`echo $libdir | cut -c1`" = "/" )
- then
--	libdir='${DESTDIR}'"$libdir"
-+	libdir="$libdir"
- fi
- if ( test "`echo $libexecdir | cut -c1`" = "/" )
- then
--	libexecdir='${DESTDIR}'"$libexecdir"
-+	libexecdir="$libexecdir"
- fi
- if ( test "`echo $bindir | cut -c1`" = "/" )
- then
--	bindir='${DESTDIR}'"$bindir"
-+	bindir="$bindir"
- fi
- if ( test "`echo $localstatedir | cut -c1`" = "/" )
- then
--	localstatedir='${DESTDIR}'"$localstatedir"
-+	localstatedir="$localstatedir"
- fi
- if ( test "`echo $sysconfdir | cut -c1`" = "/" )
- then
--	sysconfdir='${DESTDIR}'"$sysconfdir"
-+	sysconfdir="$sysconfdir"
- fi
- if ( test "`echo $mandir | cut -c1`" = "/" )
- then
--	mandir='${DESTDIR}'"$mandir"
-+	mandir="$mandir"
- fi
- if ( test "`echo $datadir | cut -c1`" = "/" )
- then
--	datadir='${DESTDIR}'"$datadir"
-+	datadir="$datadir"
- fi
- 
- 
+@@ -16512,6 +16512,9 @@
+ 			WERROR=""
+ 			;;
+ 		*mingw32* )
++			WERROR=""
++			;;
++		freebsd* )
+ 			WERROR=""
+ 			;;
+ 		*)

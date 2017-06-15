@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	openmp
-PORTVERSION=	3.9.0
+DISTVERSION=	4.0.0
 DISTVERSIONSUFFIX=	.src
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+MASTER_SITES=	http://llvm.org/releases/${DISTVERSION}/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	Support for the OpenMP language
+COMMENT=	Open Multi-Processing runtime for LLVM/Clang
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

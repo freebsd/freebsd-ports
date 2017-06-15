@@ -6,7 +6,7 @@ PORTVERSION=	2.4.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fs-uae.net/fs-uae/stable/${PORTVERSION}/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI launcher for the FS-UAE Amiga emulator
 
 LICENSE=	GPLv2

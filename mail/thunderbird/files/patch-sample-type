@@ -1,7 +1,7 @@
 # Let ports handle default sample type
 
---- mozilla/configure.in~
-+++ mozilla/configure.in
+--- mozilla/old-configure.in~
++++ mozilla/old-configure.in
 @@ -5144,7 +5144,7 @@ dnl Use integers over floats for audio o
  dnl (regarless of the CPU architecture, because audio
  dnl backends for those platforms don't support floats. We also

@@ -15,7 +15,7 @@ COMMENT=	Local/remote mirroring+incremental backup
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	librsync.so:net/librsync1
+LIB_DEPENDS=	librsync.so:net/librsync2
 
 CONFLICTS=	rdiff-backup-[0-9]*
 
@@ -23,13 +23,15 @@ USES=		python
 USE_PYTHON=	distutils
 
 MAN1S=		rdiff-backup.1 rdiff-backup-statistics.1
-DOCS=		CHANGELOG README COPYING FAQ.html
+DOCS=		CHANGELOG README FAQ.html
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/rdiff_backup/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/rdiff_backup/*.so
 	${INSTALL_MAN} ${MAN1S:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/man/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

@@ -1,5 +1,5 @@
---- main.c.orig	Wed Apr  5 03:51:53 1995
-+++ main.c	Mon Sep  4 18:17:45 2000
+--- main.c.orig	1995-04-05 08:51:53 UTC
++++ main.c
 @@ -59,6 +59,7 @@
  *************************************************************************/
  
@@ -17,7 +17,7 @@
  int main (argc, argv)
  
  int argc;
-@@ -93,6 +96,14 @@
+@@ -93,6 +96,14 @@ char* argv[];
      unsigned int which_streams=0;
      double	startup_delay=0;
  

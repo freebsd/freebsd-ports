@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	mail www
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.2
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows users to change their passwords stored in a SQL database
 
 USE_SM_COMPAT=	yes

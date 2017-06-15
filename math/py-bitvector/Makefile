@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitvector
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.7
 CATEGORIES=	math python
 MASTER_SITES=	https://engineering.purdue.edu/kak/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ PYDISTUTILS_PKGNAME=	BitVector
 PORTDOCS=	README BitVector-${PORTVERSION}.html
 
 post-extract:
-	@${RM} -f ${WRKSRC}/test.py
+	@${RM} ${WRKSRC}/test.py
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

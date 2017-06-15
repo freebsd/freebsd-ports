@@ -3,7 +3,7 @@
 
 PORTNAME=	liblouisxml
 PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,6 +14,8 @@ LICENSE=	LGPL3+ GPLv3+
 LICENSE_COMB=	multi
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 LIB_DEPENDS=	liblouis.so:devel/liblouis

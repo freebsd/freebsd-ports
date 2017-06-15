@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e \
 	    's,^#! /usr/bin/python,#!${PYTHON_CMD},' ${WRKSRC}/main.py
-	@${RM} -rf ${WRKSRC}/main.py.bak
+	@${RM} -r ${WRKSRC}/main.py.bak
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}

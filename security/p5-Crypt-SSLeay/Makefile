@@ -3,7 +3,7 @@
 
 PORTNAME=	Crypt-SSLeay
 PORTVERSION=	0.72
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,5 +22,8 @@ USES=		perl5 ssl
 USE_PERL5=	configure
 CONFIGURE_ARGS=	--no-live-tests
 CFLAGS+=	-I${OPENSSLINC}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/SSLeay/SSLeay.so
 
 .include <bsd.port.mk>

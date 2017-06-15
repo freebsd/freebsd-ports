@@ -1,13 +1,12 @@
-Index: libjava/Makefile.in
-===================================================================
---- libjava/Makefile.in	(revision 117734)
-+++ libjava/Makefile.in	(working copy)
-@@ -712,7 +712,7 @@
- 	$(am__append_2) $(am__append_3)
- toolexecmainlib_DATA = libgcj.spec
+--- UTC
+--- libjava/Makefile.in	2013-05-26 22:33:07.000000000 +0000
++++ libjava/Makefile.in	2013-05-31 21:19:23.000000000 +0000
+@@ -941,7 +941,7 @@
+ @BUILD_SUBLIBS_FALSE@LIBJAVA_CORE_EXTRA = 
+ @BUILD_SUBLIBS_TRUE@LIBJAVA_CORE_EXTRA = @LIBGCJ_SUBLIB_CORE_EXTRA_DEPS@
  dbexec_LTLIBRARIES = libjvm.la
--pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfigdir = $(toolexeclibdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  jardir = $(datadir)/java
- jar_DATA = libgcj-$(gcc_version).jar libgcj-tools-$(gcc_version).jar
- @JAVA_HOME_SET_FALSE@JAVA_HOME_DIR = $(prefix)
+ jar_DATA = libgcj-$(gcc_version).jar libgcj-tools-$(gcc_version).jar \
+ 	$(am__append_5)

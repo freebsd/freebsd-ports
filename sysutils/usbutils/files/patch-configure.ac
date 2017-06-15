@@ -1,0 +1,10 @@
+--- configure.ac.orig	2010-10-22 23:38:09 UTC
++++ configure.ac
+@@ -35,7 +35,6 @@ AC_CONFIG_HEADERS([config.h])
+ AC_CONFIG_FILES([
+ 	Makefile
+ ])
+-AC_CONFIG_SUBDIRS([usbhid-dump])
+ 
+ AC_OUTPUT
+ AC_MSG_RESULT([

@@ -1,0 +1,14 @@
+Notice:
+ This port runs per default using uid:gid domoticz:domoticz to
+ avoid security problems.
+
+ Some code of Domoticz may needs root access. If you are ok with
+ that change the following rc.conf to:
+
+domoticz_user="root"
+domoticz_group="wheel"
+
+ And restart domoticz.
+
+If you have issues with domoticz listen option, you can add
+ net.inet6.ip6.v6only=0 to /etc/sysctl.conf

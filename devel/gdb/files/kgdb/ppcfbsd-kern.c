@@ -58,7 +58,7 @@ ppcfbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 
 	tdep = gdbarch_tdep (target_gdbarch());
 
-	if (target_read_memory(pcb_addr, &pcb, sizeof(pcb)) != 0)
+	if (target_read_memory(pcb_addr, (gdb_byte *)&pcb, sizeof(pcb)) != 0)
 		memset(&pcb, 0, sizeof(pcb));
 
 	/*
@@ -118,7 +118,7 @@ ppcfbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
   int i, regnum;
 
   if (*this_cache)
-    return *this_cache;
+    return (struct trad_frame_cache *)*this_cache;
 
   cache = trad_frame_cache_zalloc (this_frame);
   *this_cache = cache;

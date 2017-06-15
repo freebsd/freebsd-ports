@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2014-06-09 14:12:14.000000000 +0200
-+++ ./Makefile.in	2014-06-09 14:12:30.000000000 +0200
-@@ -849,7 +849,7 @@
+--- Makefile.in.orig	2016-10-03 20:44:13 UTC
++++ Makefile.in
+@@ -866,7 +866,7 @@ install-nslcd_conf:
  	  echo "$(DESTDIR)$(NSLCD_CONF_PATH) already exists, install will not overwrite"; \
  	else \
  	  $(mkinstalldirs) `dirname $(DESTDIR)$(NSLCD_CONF_PATH)`; \

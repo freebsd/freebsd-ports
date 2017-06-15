@@ -1,0 +1,22 @@
+From 2cb8d7f67411d6958388705893f5e5de46b3bba0 Mon Sep 17 00:00:00 2001
+From: Craig Drummond <craig.p.drummond@gmail.com>
+Date: Sat, 29 Oct 2016 18:43:34 +0100
+Subject: [PATCH] Fix C++11 warning
+
+---
+ support/utils.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/support/utils.cpp b/support/utils.cpp
+index 2e0c885..4fad46c 100644
+--- support/utils.cpp
++++ support/utils.cpp
+@@ -773,7 +773,7 @@ QString Utils::helper(const QString &app)
+     #elif defined Q_OS_MAC
+     return fixPath(QCoreApplication::applicationDirPath())+app;
+     #else
+-    return QString(INSTALL_PREFIX "/"LINUX_LIB_DIR"/")+QCoreApplication::applicationName()+constDirSep+app;
++    return QString(INSTALL_PREFIX "/" LINUX_LIB_DIR "/")+QCoreApplication::applicationName()+constDirSep+app;
+     #endif
+ }
+ 

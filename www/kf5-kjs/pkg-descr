@@ -1,0 +1,5 @@
+This library provides an ECMAScript compatible interpreter.
+The ECMA standard is based on well known scripting languages
+such as Netscape's JavaScript and Microsoft's JScript.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kjs/html/index.html

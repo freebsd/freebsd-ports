@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -27,8 +28,8 @@ WRKSRC_SUBDIR=	swig/python
 
 SHEBANG_FILES=	scripts/*.py
 
-NUMPY_BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0:math/py-numpy
-NUMPY_RUN_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0:math/py-numpy
+NUMPY_BUILD_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0,1:math/py-numpy
+NUMPY_RUN_DEPENDS=	${PKGNAMEPREFIX}numpy>=1.0.0,1:math/py-numpy
 NUMPY_USES=		fortran
 
 post-install:

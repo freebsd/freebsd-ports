@@ -13,6 +13,8 @@ COMMENT=	IRC daemon with translation schemes and other useful features
 
 LICENSE=	GPLv1
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	ircd

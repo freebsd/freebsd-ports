@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-07-03 20:55:47 UTC
+--- CMakeLists.txt.orig	2016-10-19 16:09:11 UTC
 +++ CMakeLists.txt
-@@ -1223,6 +1223,21 @@ ELSE(WANT_SYSTEMD_UNITS MATCHES "ON")
+@@ -1261,6 +1261,23 @@ ELSE(WANT_SYSTEMD_UNITS MATCHES "ON")
  ENDIF(WANT_SYSTEMD_UNITS MATCHES "ON")
  IF(BUILD_PORT)
  	INSTALL_IF_NOT_EXISTS(${MAIN_CONF} ${CONFDIR} "rspamd.conf" ".sample")
@@ -13,7 +13,9 @@
 +	INSTALL_IF_NOT_EXISTS("conf/2tld.inc" ${CONFDIR} "2tld.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/mime_types.inc" ${CONFDIR} "mime_types.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/composites.conf" ${CONFDIR} "composites.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/maillist.inc" ${CONFDIR} "maillist.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/metrics.conf" ${CONFDIR} "metrics.conf" ".sample")
++	INSTALL_IF_NOT_EXISTS("conf/mid.inc" ${CONFDIR} "mid.inc" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/modules.conf" ${CONFDIR} "modules.conf" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/statistic.conf" ${CONFDIR} "statistic.conf" ".sample")
 +	INSTALL_IF_NOT_EXISTS("conf/surbl-whitelist.inc" ${CONFDIR} "surbl-whitelist.inc" ".sample")

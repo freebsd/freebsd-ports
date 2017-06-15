@@ -3,4 +3,4 @@ defect, ticket) tracking system using a Subversion repository instead
 of a backend database. It is written in Python and runs in UNIX
 environment (*BSD, Linux, MacOS X).
 
-WWW: http://sourceforge.net/projects/ditrack/
+WWW: https://sourceforge.net/projects/ditrack/

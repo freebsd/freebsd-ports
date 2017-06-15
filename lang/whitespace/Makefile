@@ -11,7 +11,8 @@ DISTNAME=	wspace-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreter for the Whitespace programming language
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	ghc:lang/ghc
 LIB_DEPENDS=	libgmp.so:math/gmp \
@@ -19,20 +20,24 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 USES=		perl5 gmake tar:tgz
 USE_PERL5=	build
-WRKSRC=	${WRKDIR}/WSpace
+WRKSRC=		${WRKDIR}/WSpace
 ALL_TARGET=	${TARGET}
 
 PLIST_FILES=	bin/wspace
 PORTEXAMPLES=	*
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wspace ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/tutorial.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail-translations
-PORTVERSION=	20160216
+PORTVERSION=	20161030
 CATEGORIES=	mail www
 MASTER_SITES=	LOCAL/adamw/squirrelmail
 DISTNAME=	squirrelmail-${PORTVERSION}_0200-SVN.locales
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NLS translations for Squirrelmail (mail/squirrelmail)
 
 LICENSE=	GPLv2

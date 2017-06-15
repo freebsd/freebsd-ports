@@ -21,7 +21,7 @@ USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 LDFLAGS+=	-pthread
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmongoc-1.0.so.${PORTVERSION}
 
 .include <bsd.port.mk>

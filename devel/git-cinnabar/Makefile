@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	git-cinnabar
-DISTVERSION=	0.4.0b3
+DISTVERSION=	0.4.0-13
+DISTVERSIONSUFFIX=	-ga93db61
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,6 +20,7 @@ GH_ACCOUNT=	glandium
 USES=		gmake python:2.7,run shebangfix
 SHEBANG_LANG=	python2.7
 SHEBANG_FILES=	${PORTNAME} git-remote-hg
+ALL_TARGET=	${PORTNAME}-helper
 .ifnmake describe
 MAKE_ENV!=	${MAKE} -V MAKE_ENV -C ${.CURDIR}/../git
 MAKE_ARGS!=	${MAKE} -V MAKE_ARGS -C ${.CURDIR}/../git

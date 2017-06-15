@@ -3,7 +3,6 @@
 
 PKGNAMESUFFIX=	-occ
 
-MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator with OpenCascade support
 
 MASTERDIR=	${.CURDIR}/../../cad/gmsh

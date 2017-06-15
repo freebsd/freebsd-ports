@@ -1,0 +1,5 @@
+Oniguruma is a regular expressions library. The characteristics of this 
+library is that different character encoding for every regular 
+expression object can be specified.
+
+WWW: https://github.com/kkos/oniguruma

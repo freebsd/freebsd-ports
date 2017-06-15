@@ -1,0 +1,13 @@
+--- projects/CMakeLists.txt.orig	2017-01-01 11:36:50 UTC
++++ projects/CMakeLists.txt
+@@ -25,7 +25,9 @@ if(${LLVM_BUILD_RUNTIME})
+     # first.
+     add_llvm_external_project(libcxxabi)
+     add_llvm_external_project(libcxx)
+-    add_llvm_external_project(libunwind)
++    if(FALSE)
++        add_llvm_external_project(libunwind)
++    endif()
+   endif()
+   if(NOT LLVM_BUILD_EXTERNAL_COMPILER_RT)
+     add_llvm_external_project(compiler-rt)

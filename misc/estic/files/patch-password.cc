@@ -1,6 +1,6 @@
---- spunk/password.cc.orig	Sat Feb 26 17:59:02 2000
-+++ spunk/password.cc	Sat Feb 26 18:01:24 2000
-@@ -525,14 +525,14 @@
+--- spunk/password.cc.orig	1996-11-07 17:06:48 UTC
++++ spunk/password.cc
+@@ -525,14 +525,14 @@ LINK (PasswordColl, ID_PasswordColl);
  
  
  

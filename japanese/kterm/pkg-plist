@@ -1,4 +1,6 @@
+@mode 4511
 bin/kterm
+@mode 0444
 man/ja/man1/kterm.1.gz
 man/man1/kterm.1.gz
 lib/X11/app-defaults/KTerm

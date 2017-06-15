@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-IDN-Encode
-PORTVERSION=	2.300
+PORTVERSION=	2.400
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 USES=		perl5
 USE_PERL5=	modbuild
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Net/IDN/Punycode/Punycode.so
+
 .include <bsd.port.mk>

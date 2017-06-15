@@ -1,4 +1,4 @@
---- src/trspi/Makefile.am.orig	2014-04-24 18:05:44 UTC
+--- src/trspi/Makefile.am.orig	2014-07-23 19:42:44 UTC
 +++ src/trspi/Makefile.am
 @@ -1,7 +1,8 @@
  noinst_LTLIBRARIES=libtrousers.la

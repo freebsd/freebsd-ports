@@ -1,6 +1,6 @@
---- adns/internal.h.orig	Thu Mar  3 16:00:32 2005
-+++ adns/internal.h	Thu Mar  3 16:02:10 2005
-@@ -567,7 +567,7 @@
+--- adns/internal.h.orig	2002-01-02 10:44:52 UTC
++++ adns/internal.h
+@@ -567,7 +567,7 @@ typedef enum {
  } parsedomain_flags;
  
  adns_status adns__parse_domain(adns_state ads, int serv, adns_query qu,

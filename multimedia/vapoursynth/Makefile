@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	vapoursynth
-DISTVERSION=	R33.1
+PORTVERSION=	R37
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +13,6 @@ LICENSE=	LGPL21+
 USE_GITHUB=	yes
 
 USES=		autoreconf gmake libtool localbase pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 INSTALL_TARGET=	install-strip
@@ -38,7 +38,8 @@ OPTIONS_GROUP=		COMPS PLUGINS
 COMPS_DESC=		Components
 OPTIONS_GROUP_COMPS=	CORE PYTHON VSPIPE VSSCRIPT
 PLUGINS_DESC=		Plugins
-OPTIONS_GROUP_PLUGINS=	ASS EEDI3 IMAGEMAGICK MORPHO TESSERACT REMOVEGRAIN VINVERSE VIVTC
+OPTIONS_GROUP_PLUGINS=	ASS EEDI3 IMAGEMAGICK MISCFILTERS MORPHO TESSERACT \
+			REMOVEGRAIN VINVERSE VIVTC
 
 # General options
 
@@ -59,7 +60,7 @@ SIMD_CONFIGURE_ENABLE=		x86-asm
 # COMPS group
 
 CORE_DESC=			Core library
-CORE_BUILD_DEPENDS=		sekrit-twc-zimg>=2.2:graphics/sekrit-twc-zimg
+CORE_BUILD_DEPENDS=		sekrit-twc-zimg>=2.4:graphics/sekrit-twc-zimg
 CORE_LIB_DEPENDS=		libzimg.so:graphics/sekrit-twc-zimg
 CORE_USES=			compiler:c++11-lib
 CORE_CONFIGURE_ENABLE=		core
@@ -95,6 +96,9 @@ IMAGEMAGICK_CONFIGURE_ENABLE=	imwri
 TESSERACT_DESC=			Optical Character Recognition via Tesseract
 TESSERACT_LIB_DEPENDS=		libtesseract.so:graphics/tesseract
 TESSERACT_CONFIGURE_ENABLE=	ocr
+
+MISCFILTERS_DESC=		Miscellaneous filters
+MISCFILTERS_CONFIGURE_ENABLE=	miscfilters
 
 MORPHO_DESC=			Morphological filter
 MORPHO_CONFIGURE_ENABLE=	morpho

@@ -3,7 +3,7 @@
 
 PORTNAME=	enma
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/ENMA/${PORTVERSION}
 
@@ -20,10 +20,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl-incdir=${OPENSSLINC} \
 		--with-ssl-libdir=${OPENSSLLIB}
 
-USES=		gmake libtool perl5
+USES=		gmake libtool perl5 ssl
 USE_RC_SUBR=	milter-enma
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_PERL5=	build
 LDFLAGS+=	-lssl
 MANLANG=	"" ja_JP.UTF-8

@@ -2,6 +2,7 @@
 
 PORTNAME=	liborcus
 PORTVERSION=	0.7.1
+PORTREVISION=	2
 CATEGORIES=	devel misc
 MASTER_SITES=	http://kohei.us/files/orcus/src/
 PKGNAMESUFFIX=	07
@@ -14,6 +15,9 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${LOCALBASE}/include/mdds/global.hpp:devel/mdds0
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
+DEPRECATED=	Deprecated by upstream, use devel/liborcus
+EXPIRATION_DATE=	2017-03-31
+
 BROKEN_sparc64=	cannot link with boost
 BROKEN_powerpc64=	Does not build
 
@@ -25,11 +29,10 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-spreadsheet-model --disable-werror \
 		--with-boost="${LOCALBASE}" \
 		--with-boost-system=boost_system
-CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-post-stage:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/*
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

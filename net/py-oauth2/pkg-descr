@@ -11,4 +11,4 @@ forefathers:
   * The library is likely no longer compatible with Python 2.3.
   * The Client class works and extends from httplib2.
 
-WWW: http://github.com/simplegeo/python-oauth2
+WWW: https://github.com/joestump/python-oauth2

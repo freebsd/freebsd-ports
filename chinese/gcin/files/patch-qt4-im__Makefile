@@ -1,5 +1,5 @@
---- qt4-im/Makefile.orig	2012-03-05 20:26:54.000000000 +0800
-+++ qt4-im/Makefile	2014-04-17 17:21:30.838404919 +0800
+--- qt4-im/Makefile.orig	2012-03-05 12:26:54 UTC
++++ qt4-im/Makefile
 @@ -3,7 +3,7 @@ QT=qt4
  QTIM=$(QT)/plugins/inputmethods
  IMMODULES=$(libdir)/$(DEB_BUILD_MULTIARCH)/$(QTIM)

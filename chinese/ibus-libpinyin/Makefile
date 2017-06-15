@@ -3,6 +3,7 @@
 
 PORTNAME=	ibus-libpinyin
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	SF/libpinyin/${PORTNAME}
 

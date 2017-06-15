@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	APACHE/perl
@@ -13,6 +13,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache server
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-BSD-Resource>=0:devel/p5-BSD-Resource
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -31,11 +32,6 @@ APMOD_FILE=	260_${PORTNAME}.conf.sample
 PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_VER} >= 5.22
-BROKEN=		PERL ${PERL_VER} is not supported by upstream,\
-		see http://svn.apache.org/viewvc/perl/modperl/trunk/README?view=markup
-.endif
 
 # Provider is build iff apache24 is in use
 .if ${APACHE_VERSION:M22}
@@ -92,9 +88,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 
 	-for f in `${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto -name \*.so` ; do \
-		${CHMOD} u+w $${f}; \
 		${STRIP_CMD} $${f}; \
-		${CHMOD} u-w $${f}; \
 	done;
 
 test:	build

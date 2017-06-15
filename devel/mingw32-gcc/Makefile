@@ -86,7 +86,7 @@ post-patch:
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
-	@${RM} -f ${SRCDIR}/gcc/*/*.info*
+	@${RM} ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:

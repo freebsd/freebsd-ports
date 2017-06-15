@@ -65,7 +65,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract-script:
 	@${MKDIR} ${WRKDIR}/${PORTNAME}
-	@(cd ${WRKDIR}/rnd_jue*/levels/rnd_jue && ${RM} -fr jue_sobigo)
+	@(cd ${WRKDIR}/rnd_jue*/levels/rnd_jue && ${RM} -r jue_sobigo)
 	@(cd ${WRKDIR}/rnd_jue*/levels && ${COPYTREE_SHARE} rnd_jue \
 		${WRKDIR}/${PORTNAME})
 .for l in ${LEVELS_ARTSOFT:S/$/.zip/} ${LEVELS_BD_FANS:S/$/.zip/}
@@ -75,7 +75,7 @@ post-extract-script:
 		${_DISTDIR}/Tutorial_Alpha.zip
 	@(cd ${WRKDIR}/${PORTNAME}/Tutorials && \
 		${MV} "Tutorial Alpha" rnd_tutorial_alpha)
-	@${RM} -f ${WRKDIR}/${PORTNAME}/Readme.txt
+	@${RM} ${WRKDIR}/${PORTNAME}/Readme.txt
 
 post-patch:
 	@${REINPLACE_CMD} \

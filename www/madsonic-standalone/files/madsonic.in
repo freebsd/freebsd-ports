@@ -74,7 +74,7 @@ if checkyesno madsonic_ssl; then
 	fi
 fi
 
-start_precmd="export LC_CTYPE='UTF-8'"
+start_precmd="export LC_CTYPE='en_US.UTF-8'"
 madsonic_chdir="%%DATADIR%%"
 command="/usr/sbin/daemon"
 command_args="-f ${procname} \

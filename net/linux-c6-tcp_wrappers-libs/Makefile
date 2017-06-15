@@ -1,22 +1,22 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
 # $FreeBSD$
 
-PORTNAME=	tcp_wrappers-libs
+PORTNAME=	tcp_wrappers
 PORTVERSION=	7.6
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	net linux
+PKGNAMESUFFIX=	-libs
+LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries tcp wrappers (Linux CentOS ${LINUX_DIST_VER})
 
+DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
+LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
 RPMVERSION=	58.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs
 USE_LINUX_RPM=	yes
-
-DOCSDIR=	${PREFIX}/usr/share/doc/tcp_wrappers-${PORTVERSION}
-
-SRC_DISTFILES=	tcp_wrappers-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
 
 .include <bsd.port.mk>

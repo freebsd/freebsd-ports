@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2016.3.1
+PORTVERSION=	2017.1.2
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_thread.so:devel/boost-libs \
 		libfltk.so:x11-toolkits/fltk \
+		libfreetype.so:print/freetype2 \
 		libosg.so:graphics/osg \
 		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp \
@@ -26,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xt
-USE_GL=		gl glu glut
+USE_GL=		gl glew glu glut
 
 USES=		alias cmake compiler cpe dos2unix jpeg openal:al,alut sqlite \
 		tar:bzip2
@@ -53,6 +54,7 @@ QT5_USE=	QT5=core,buildtools,gui,qmake,widgets
 # Chase devel/simgear compiler version
 .if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
 USE_GCC=	yes
+CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 post-install:

@@ -12,6 +12,8 @@ COMMENT=	Fast, simple, and transactional Java persistence engine
 LICENSE=	APACHE20
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	asclock-gtk
 PORTVERSION=	2.1.10
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	LOCAL/kuriyama
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta
@@ -38,7 +38,7 @@ SHAPED_THEME_DESC=	Shaped theme
 
 do-configure:
 	@(cd ${WRKSRC}; \
-	  ${RM} -rf default_theme; \
+	  ${RM} -r default_theme; \
 	  ${LN} -s themes/${PORT_OPTIONS:M*_THEME:S/_THEME//:tl} default_theme)
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-SHA256 (inn-2.6.0.tar.gz) = ba96be8e87c2b56bf896c9f96492ed7706beb68e082794f8fabc7058a1804da7
-SIZE (inn-2.6.0.tar.gz) = 2597729
-SHA256 (inn-2.6.0.tar.gz.asc) = 7e855a79b50606871f299bae8c47531a376ce87f0b99bb7cba30bcdc7a155020
-SIZE (inn-2.6.0.tar.gz.asc) = 473
+TIMESTAMP = 1481875845
+SHA256 (inn-2.6.1.tar.gz) = 50f03516d39922f5c4db68915d2a70c8d5ffe8c14a16ba01029c148700523bda
+SIZE (inn-2.6.1.tar.gz) = 2570558

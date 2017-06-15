@@ -1,6 +1,6 @@
---- videolib/videolib.c.orig	1999-11-03 03:22:04.000000000 +0100
-+++ videolib/videolib.c	2007-09-05 18:31:05.000000000 +0200
-@@ -479,9 +479,8 @@
+--- videolib/videolib.c.orig	1999-11-03 02:22:04 UTC
++++ videolib/videolib.c
+@@ -479,9 +479,8 @@ static void VIDEOLIBConvertRGBToRGB( VL_
              *(p++) = (*src16 >> 8) | (*src16 << 8);
              src16++;
            }
@@ -12,7 +12,7 @@
          }
  
          src16 = dst_line = (VL_UINT16 *) dst->buf;
-@@ -513,9 +512,9 @@
+@@ -513,9 +512,9 @@ static void VIDEOLIBConvertRGBToRGB( VL_
          if ( src_padded ) 
            src16 = (VL_UINT16 *)( (VL_UINT8 *)src16 + dst_line_pad );
          else
@@ -25,7 +25,7 @@
        }
  
        if ( !dst_swap_b ) {                       /*  More ugliness  */
-@@ -527,8 +526,8 @@
+@@ -527,8 +526,8 @@ static void VIDEOLIBConvertRGBToRGB( VL_
              *(p++) = (*src16 >> 8) | (*src16 << 8);
              src16++;
            }

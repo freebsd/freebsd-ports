@@ -4,6 +4,7 @@
 PORTNAME=	ring-daemon
 PORTVERSION=	0.160516
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -25,8 +26,6 @@ LIB_DEPENDS=	libyaml-cpp.so:devel/yaml-cpp \
 		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp \
 		libuuid.so:misc/e2fsprogs-libuuid
-
-BROKEN_FreeBSD_9=	Fails due to compiler issues
 
 USE_GITHUB=	yes
 GH_TUPLE+=	savoirfairelinux:ring-daemon:56ec56f
@@ -58,6 +57,10 @@ DBUS_LIB_DEPENDS=	\
 	libdbus-c++-1.so:devel/dbus-c++
 OPTIONS_SUB=	yes
 
+BROKEN_aarch64=		Fails to configure: machine arm64-portbld not recognized
+
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/contrib/native
 	@${MV} ${WRKDIR}/pjproject-2.4.5 ${WRKSRC}/contrib/native/
@@ -72,7 +75,7 @@ pre-configure:
 	    cd contrib/native && \
 	    ../bootstrap && \
 	    ${GMAKE} .pjproject)
-post-stage:
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libring.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

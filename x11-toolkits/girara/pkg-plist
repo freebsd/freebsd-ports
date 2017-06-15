@@ -7,6 +7,7 @@ include/girara/datastructures.h
 include/girara/entry.h
 include/girara/girara.h
 include/girara/input-history.h
+include/girara/log.h
 include/girara/macros.h
 include/girara/session.h
 include/girara/settings.h

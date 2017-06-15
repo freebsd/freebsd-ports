@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	msgpack
-PORTVERSION=	0.5.7
-PORTREVISION=	2
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,6 +14,6 @@ COMMENT=	Provides API for communicating with MessagePack serialization
 LICENSE=	BSD3CLAUSE
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	56
 
 .include <bsd.port.mk>

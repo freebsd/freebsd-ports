@@ -3,6 +3,7 @@
 
 PORTNAME=	go.net
 PORTVERSION=	20160708
+PORTREVISION=	1
 CATEGORIES=	net devel
 
 MAINTAINER=	jlaffaye@FreeBSD.org
@@ -30,6 +31,7 @@ GO_TARGET=	${GO_PKGNAME}/bpf               \
 		${GO_PKGNAME}/http2/hpack       \
 		${GO_PKGNAME}/icmp              \
 		${GO_PKGNAME}/idna              \
+		${GO_PKGNAME}/internal/iana     \
 		${GO_PKGNAME}/ipv4              \
 		${GO_PKGNAME}/ipv6              \
 		${GO_PKGNAME}/lex/httplex       \

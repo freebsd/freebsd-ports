@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wolfssl
-PORTVERSION=	3.9.8
+PORTVERSION=	3.10.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.wolfssl.com/
 
@@ -10,8 +10,11 @@ COMMENT=	Embedded SSL C-Library
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	bash:shells/bash
+
 USES=		libtool zip
 GNU_CONFIGURE=	yes
+CONFIGURE_SHELL=bash
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-shared --enable-static \
 		--enable-dtls --enable-opensslextra --enable-ipv6 \

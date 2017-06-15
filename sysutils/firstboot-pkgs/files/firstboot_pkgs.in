@@ -37,10 +37,10 @@ firstboot_pkgs_run()
 	fi
 
 	# Install requested packages, if any
-	if ! [ -z "$firstboot_pkgs_list" ]; then
-		env ASSUME_ALWAYS_YES=YES pkg install $firstboot_pkgs_list </dev/null |
+	for package in ${firstboot_pkgs_list}; do
+		env ASSUME_ALWAYS_YES=YES pkg install ${package} </dev/null |
 		    cat
-	fi
+	done
 
 	# Count rc.d scripts again
 	nscriptsn=`ls /usr/local/etc/rc.d | wc -l`

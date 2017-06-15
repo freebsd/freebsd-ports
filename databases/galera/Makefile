@@ -4,7 +4,7 @@
 PORTNAME=	galera
 PORTVERSION=	25.3.5
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	2
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	https://launchpadlibrarian.net/170877450/
 
@@ -13,17 +13,16 @@ COMMENT=	Synchronous multi-master replication engine
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	checkmk:devel/libcheck \
+BUILD_DEPENDS=	checkmk:devel/check \
 		doxygen:devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>=0:textproc/py-cloud_sptheme
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
-USES=		execinfo python:build scons shebangfix
+USES=		execinfo python:build scons shebangfix ssl
 
 USE_CXXSTD=	c++11
 USE_GCC=	yes
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 LDFLAGS+=	-lboost_program_options -lboost_system
 MAKE_ARGS+=	--config=force

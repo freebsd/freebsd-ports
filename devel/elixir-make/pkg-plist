@@ -1,0 +1,4 @@
+lib/elixir/lib/elixir_make/ebin/Elixir.Mix.Tasks.Compile.ElixirMake.beam
+lib/elixir/lib/elixir_make/ebin/elixir_make.app
+lib/elixir/lib/elixir_make/lib/mix/tasks/compile.make.ex
+%%PORTDOCS%%%%DOCSDIR%%/README.md

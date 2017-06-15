@@ -1,6 +1,6 @@
---- src/gnu/io/SerialPortEvent.java.orig	2007-04-26 06:26:06.000000000 +0100
-+++ src/gnu/io/SerialPortEvent.java	2015-05-11 16:51:34.000000000 +0100
-@@ -76,6 +76,8 @@
+--- src/gnu/io/SerialPortEvent.java.orig	2007-04-26 05:26:06 UTC
++++ src/gnu/io/SerialPortEvent.java
+@@ -76,6 +76,8 @@ public class SerialPortEvent extends Eve
  	public static final int PE                  =8;
  	public static final int FE                  =9;
  	public static final int BI                 =10;

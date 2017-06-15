@@ -2,29 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	pyproj
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.5.1
 CATEGORIES=	graphics python geography
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fmysh@iijmio-mail.jp
-COMMENT=	Pyrex wrapper to provide python interfaces to PROJ.4
+COMMENT=	Cython wrapper to provide python interfaces to PROJ.4 functions
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
+LIB_DEPENDS=	libproj.so:graphics/proj
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist concurrent
 
-PORTDOCS=	Changelog README LICENSE_proj4
+MAKE_ENV=	PROJ_DIR=${LOCALBASE}
+
+PORTDOCS=	*
+PORTDOCS1=	Changelog README.md docs/*
 PORTEXAMPLES=	datum_shift.py geodtest.py sample.out \
-		test.py test2.py test_transform.py
+		test.py test2.py test_datum.py test_transform.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/_proj.so
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS1:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/test/,} ${STAGEDIR}${EXAMPLESDIR}
 

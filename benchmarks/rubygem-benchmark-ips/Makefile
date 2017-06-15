@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	benchmark-ips
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.2
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 

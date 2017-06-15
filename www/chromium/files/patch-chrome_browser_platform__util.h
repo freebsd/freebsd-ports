@@ -1,6 +1,6 @@
---- chrome/browser/platform_util.h.orig	2016-08-04 11:19:03.775212000 -0400
-+++ chrome/browser/platform_util.h	2016-08-04 11:19:15.839097000 -0400
-@@ -40,7 +40,7 @@
+--- chrome/browser/platform_util.h.orig	2017-04-19 19:06:29 UTC
++++ chrome/browser/platform_util.h
+@@ -40,7 +40,7 @@ enum OpenOperationResult {
  enum OpenItemType {
    OPEN_FILE,
    OPEN_FOLDER,

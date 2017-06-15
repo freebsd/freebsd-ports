@@ -3,7 +3,7 @@
 
 PORTNAME=	id3lib
 PORTVERSION=	3.8.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/zlib
+	@${RM} -r ${WRKSRC}/zlib
 
 post-patch:
 	@${REINPLACE_CMD} '/main/s/unsigned int/int/' \

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grab
-PORTVERSION=	0.6.30
+PORTVERSION=	0.6.35
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}weblib>0:devel/py-weblib \
 		${PYTHON_PKGNAMEPREFIX}selection>0:devel/py-selection \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
-		${PYTHON_PKGNAMEPREFIX}user_agent>0:www/py-user_agent
+		${PYTHON_PKGNAMEPREFIX}user_agent>0:www/py-user_agent \
+		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml
 
 NO_ARCH=	yes
 USES=		python

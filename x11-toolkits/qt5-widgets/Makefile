@@ -17,28 +17,28 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-MORE_WRKSRCS=	src/tools/uic \
-		src/plugins/platformthemes
+MORE_WRKSRCS=	src/tools/uic
 
 QT_DEFINES=	ACCESSIBILITY WIDGETS XSYNC
 QT_CONFIG=	accessibility accessibility-atspi-bridge xlib
 
-OPTIONS_DEFINE=	GTK2
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	GTK3
+OPTIONS_SUB=	YES
 
-GTK2_DESC=	GTK+-based Qt theme
-GTK2_USE=	GNOME=gtk20
-GTK2_CONFIGURE_ON=	-gtkstyle
-GTK2_CONFIGURE_OFF=	-no-gtkstyle
+GTK3_DESC=	GTK+-based Qt theme
+GTK3_USE=	GNOME=gtk30 QT5=dbus
+GTK3_CONFIGURE_ON=	-gtk
+GTK3_CONFIGURE_OFF=	-no-gtk
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGTK2}
+.if ${PORT_OPTIONS:MGTK3}
 QT_DEFINES+=	STYLE_GTK
-QT_CONFIG+=	gtkstyle
+QT_CONFIG+=	gtk
+MORE_WRKSRCS+=	src/plugins/platformthemes
 .else
 QT_DEFINES+=	-STYLE_GTK
-QT_CONFIG+=	-gtkstyle
+QT_CONFIG+=	-gtk
 .endif
 
 # libQt5PlatformSupport.a is installed by qt5-core but needed for the gtk style plugin

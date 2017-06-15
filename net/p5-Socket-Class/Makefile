@@ -11,8 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class to communicate with sockets
 
-USES=		perl5
-USE_OPENSSL=	yes
+USES=		perl5 ssl
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

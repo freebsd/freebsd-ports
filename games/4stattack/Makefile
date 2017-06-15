@@ -12,18 +12,21 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Connect four stones in a straight line
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL
 
 RUN_DEPENDS=	${PYGAME}
 
 USES=		python
+NO_ARCH=	yes
 
 PORTDOCS=	changelog.txt credits.txt
-OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	16x16 22x22 32x32 48x48 64x64
 
 SUB_FILES=	${PORTNAME} pkg-message
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 .for s in 16 22 32 48 64
@@ -56,6 +59,7 @@ do-install:
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	rack-protection
 PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Collection of Rack middleware to protect against opportunistic attack
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/License
 
-RUN_DEPENDS=	rubygem-rack16>=0:www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack>=0:www/rubygem-rack
 
 NO_ARCH=	yes
 USE_RUBY=	yes

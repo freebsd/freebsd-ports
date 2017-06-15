@@ -2,11 +2,11 @@ bin/librecad
 bin/ttf2lff
 share/appdata/librecad.appdata.xml
 share/applications/librecad.desktop
-%%DATADIR%%/doc/LibreCADdoc.qch
-%%DATADIR%%/doc/LibreCADdoc.qhc
 %%DATADIR%%/fonts/OpenGostTypeA-Regular.lff
 %%DATADIR%%/fonts/OpenGostTypeB-Regular.lff
 %%DATADIR%%/fonts/amiri-regular.lff
+%%DATADIR%%/fonts/azomix.lff
+%%DATADIR%%/fonts/azomix_i.lff
 %%DATADIR%%/fonts/cursive.lff
 %%DATADIR%%/fonts/cyrillic_ii.lff
 %%DATADIR%%/fonts/gothgbt.lff
@@ -18,6 +18,8 @@ share/applications/librecad.desktop
 %%DATADIR%%/fonts/greekp.lff
 %%DATADIR%%/fonts/greeks.lff
 %%DATADIR%%/fonts/iso.lff
+%%DATADIR%%/fonts/iso3098.lff
+%%DATADIR%%/fonts/iso3098_i.lff
 %%DATADIR%%/fonts/italicc.lff
 %%DATADIR%%/fonts/italiccs.lff
 %%DATADIR%%/fonts/italict.lff
@@ -1418,6 +1420,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/librecad_es_uy.qm
 %%DATADIR%%/qm/librecad_es_ve.qm
 %%DATADIR%%/qm/librecad_et.qm
+%%DATADIR%%/qm/librecad_eu.qm
 %%DATADIR%%/qm/librecad_fi.qm
 %%DATADIR%%/qm/librecad_fr.qm
 %%DATADIR%%/qm/librecad_gl.qm
@@ -1474,6 +1477,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_es_uy.qm
 %%DATADIR%%/qm/plugins_es_ve.qm
 %%DATADIR%%/qm/plugins_et.qm
+%%DATADIR%%/qm/plugins_eu.qm
 %%DATADIR%%/qm/plugins_fi.qm
 %%DATADIR%%/qm/plugins_fr.qm
 %%DATADIR%%/qm/plugins_gl.qm

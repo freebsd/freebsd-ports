@@ -1,12 +1,11 @@
---- mix.exs.orig	2015-07-06 14:47:27 UTC
+--- mix.exs.orig	2017-02-08 16:14:01 UTC
 +++ mix.exs
-@@ -6,8 +6,7 @@ defmodule Protobuf.Mixfile do
-      version: "0.10.0",
-      elixir: "~> 1.0.0",
-      description: description,
--     package: package,
--     deps: deps]
-+     package: package]
+@@ -10,7 +10,7 @@ defmodule Protobuf.Mixfile do
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
+      consolidate_protocols: Mix.env == :prod,
+-     deps: deps()]
++     ]
    end
  
    def application do

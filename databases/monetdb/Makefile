@@ -3,7 +3,7 @@
 
 PORTNAME=	monetdb
 PORTVERSION=	11.15.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.monetdb.org/downloads/sources/Feb2013-SP6/
 DISTNAME=	MonetDB-${PORTVERSION}
@@ -209,13 +209,6 @@ CONFIGURE_ARGS+=	--with-password-backend=SHA256
 CONFIGURE_ARGS+=	-with-password-backend=SHA384
 .elif ${PORT_OPTIONS:MSHA512}
 CONFIGURE_ARGS+=	-with-password-backend=SHA512
-.endif
-
-# Compile chokes with  version of flex on FreeBSD 8 and 9
-# with "unknown flag '-'"
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CONFIGURE_ENV+=	LEX=${LOCALBASE}/bin/flex
 .endif
 
 pre-install:

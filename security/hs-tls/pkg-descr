@@ -6,4 +6,4 @@ Haskell features.  Currently implement the SSL3.0, TLS1.0, TLS1.1 and
 TLS1.2 protocol, and support RSA and Ephemeral (Elliptic curve and
 regular) Diffie Hellman key exchanges, and many extensions.
 
-WWW: http://github.com/vincenthz/hs-tls
+WWW: https://github.com/vincenthz/hs-tls

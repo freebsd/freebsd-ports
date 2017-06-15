@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	1.00.1
+PORTVERSION=	1.00.27
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
@@ -33,7 +33,7 @@ OPTIONS_SINGLE=		SSL ODBC
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
 OPTIONS_DEFAULT=	OPENSSL MARS UNIXODBC
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ON=	--with-gnutls
@@ -71,4 +71,10 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/interfaces ${STAGEDIR}${ETCDIR}/interfaces.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

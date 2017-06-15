@@ -13,7 +13,7 @@ COMMENT=	HTTP proxy server that eliminates ads
 
 LICENSE=	GPLv2+
 
-USES=		tar:tgz
+USES=		dos2unix tar:tgz
 ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster
 SUB_FILES=	junkbuster pkg-message
@@ -23,9 +23,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 GNUREGEXP=	's:gnu_regex.h:gnu/regex.h:'
 
 post-patch:
-.for f in junkbstr.ini saclfile.ini sblock.ini scookie.ini sforward.ini strust.ini win32.h
-	@${REINPLACE_CMD} -e "s:`/usr/bin/printf '\r'`::" ${WRKSRC}/${f}
-.endfor
 .for f in acl.c bind.c conn.c encode.c filters.c gnu_regex.c jcc.c loaders.c parsers.c socks4.c ssplit.c win32.c
 	@${REINPLACE_CMD} -e ${GNUREGEXP} ${WRKSRC}/${f}
 .endfor

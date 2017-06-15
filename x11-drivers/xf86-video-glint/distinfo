@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-glint-1.2.8.tar.bz2) = 657f883bb3a4e4278399eba73840862c3642706ae8b0a4798ec97a31b3524221
-SIZE (xorg/driver/xf86-video-glint-1.2.8.tar.bz2) = 395371
+TIMESTAMP = 1484715946
+SHA256 (xorg/driver/xf86-video-glint-1.2.9.tar.bz2) = 852833ab2ea9ce519195dfd061a6c7aa5945a093cdc19546d1e9e69df7d577d2
+SIZE (xorg/driver/xf86-video-glint-1.2.9.tar.bz2) = 419524

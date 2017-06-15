@@ -31,6 +31,7 @@ etc/bash_completion.d/rinse
 %%ETCDIR%%/opensuse-12.1.packages
 %%ETCDIR%%/opensuse-12.3.packages
 %%ETCDIR%%/opensuse-13.1.packages
+%%ETCDIR%%/opensuse-42.2.packages
 %%ETCDIR%%/rhel-5.packages
 @sample %%ETCDIR%%/rinse.conf.sample
 %%ETCDIR%%/slc-5.packages
@@ -69,6 +70,7 @@ etc/bash_completion.d/rinse
 %%DATADIR%%/opensuse-12.1/post-install.sh
 %%DATADIR%%/opensuse-12.3/post-install.sh
 %%DATADIR%%/opensuse-13.1/post-install.sh
+%%DATADIR%%/opensuse-42.2/post-install.sh
 %%DATADIR%%/rhel-5/post-install.sh
 %%DATADIR%%/slc-5/post-install.sh
 %%DATADIR%%/slc-6/post-install.sh

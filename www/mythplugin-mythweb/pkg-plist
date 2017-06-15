@@ -763,9 +763,9 @@
 @dir %%WWWDIR%%/js/dialog
 @dir %%WWWDIR%%/js
 @dir %%WWWDIR%%/includes
-@dir %%WWWDIR%%/data/tv_icons
-@dir %%WWWDIR%%/data/cache
-@dir %%WWWDIR%%/data
+@dir(,,775) %%WWWDIR%%/data/tv_icons
+@dir(,,775) %%WWWDIR%%/data/cache
+@dir(,,775) %%WWWDIR%%/data
 @dir %%WWWDIR%%/configuration
 @dir %%WWWDIR%%/classes/UPnP
 @dir %%WWWDIR%%/classes/Database/Query

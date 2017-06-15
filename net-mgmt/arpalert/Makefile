@@ -3,11 +3,14 @@
 
 PORTNAME=	arpalert
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.arpalert.org/src/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ARP traffic monitoring
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var

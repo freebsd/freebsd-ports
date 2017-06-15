@@ -46,10 +46,8 @@ post-install:
 		${WRKSRC}/../copyrght/gpl2 \
 		${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/../examples && ${TAR} -cf - --dereference \
-		--exclude=\*.orig --exclude=\*.bak --exclude=\*.w32 * | \
-		${TAR} -xf - -C "${STAGEDIR}${EXAMPLESDIR}"
-	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	cd ${WRKSRC}/../examples && ${COPYTREE_SHARE} . "${STAGEDIR}${EXAMPLESDIR}" \
+		'-not ( -name *\.orig -o -name *\.bak -o -name *\.w32 )'
 	@${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' \
 		${STAGEDIR}${PREFIX}/lib/mosml/header
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mosml/lib*.so

@@ -1,7 +1,6 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	0
 PKGNAMESUFFIX=	-lcl-qt
 
 COMMENT=	Lazarus components library - QT backend

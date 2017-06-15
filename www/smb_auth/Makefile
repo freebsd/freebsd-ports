@@ -3,7 +3,7 @@
 
 PORTNAME=	smb_auth
 PORTVERSION=	0.05
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dinoex
 
@@ -11,11 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Proxy authentication module against an SMB server
 
 .if !defined(WITHOUT_REGISTER_SAMBA)
-RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${SAMBA_PORT}
+USES=		samba:run # smbclient
 .endif
 
 ALL_TARGET=	smb_auth
-SAMBA_PORT?=	net/samba36
 
 OPTIONS_DEFINE=	DOCS
 

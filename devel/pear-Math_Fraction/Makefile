@@ -5,9 +5,9 @@ PORTNAME=	Math_Fraction
 PORTVERSION=	0.4.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Classes that represent and manipulate fractions
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

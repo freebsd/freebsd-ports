@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: amazon-ssm-agent
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# amazon_ssm_agent_enable:	Set to YES to enable the Amazon SSM Agent
+
+. /etc/rc.subr
+
+name="amazon_ssm_agent"
+rcvar=amazon_ssm_agent_enable
+
+load_rc_config $name
+
+: ${amazon_ssm_agent_enable="NO"}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -P ${pidfile} %%PREFIX%%/sbin/amazon-ssm-agent"
+
+run_rc_command "$1"

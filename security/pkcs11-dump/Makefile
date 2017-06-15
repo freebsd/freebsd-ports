@@ -4,17 +4,12 @@
 PORTNAME=	pkcs11-dump
 PORTVERSION=	0.3.4
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://github.com/alonbl/pkcs11-dump/releases/download/pkcs11-dump-${PORTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Allow dumping PKCS\#11 token content
 
-PROJECTHOST=	pkcs11-tools
-
-BROKEN=		Unfetchable (google code has gone away)
-
-USES=	tar:bzip2
-USE_OPENSSL=	yes
+USES=	tar:bzip2 ssl
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \

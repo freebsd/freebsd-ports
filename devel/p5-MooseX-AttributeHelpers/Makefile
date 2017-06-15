@@ -18,6 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 DEPRECATED=	Functionality is now a part of p5-Moose (Moose::Meta::Attribute::Native). Do not use for new projects
+EXPIRATION_DATE=	2017-03-01
 
 NO_ARCH=	yes
 USES=		perl5

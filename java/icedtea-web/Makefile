@@ -29,10 +29,6 @@ SHEBANG_FILES=	jrunscript.in launcher/launchers.in
 
 WANT_GNOME=	yes
 
-EXTRACT_CMD=	${GZIP_CMD}
-EXTRACT_BEFORE_ARGS=	-dc
-EXTRACT_AFTER_ARGS=	| ${SETENV} LC_ALL=en_US.UTF-8 ${TAR} -xf -
-
 CONFIGURE_ARGS=		--with-hamcrest="${HAMCREST_JAR}"
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
 CONFIGURE_ARGS+=	--with-jre-home="${JAVA_HOME}/jre"

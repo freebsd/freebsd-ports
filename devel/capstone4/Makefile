@@ -26,14 +26,4 @@ MAKE_ENV+=	INSTALL_LIB="${INSTALL_LIB}" \
 TEST_ENV=	${MAKE_ENV} LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib
 TEST_TARGET=	check
 
-post-patch:
-	${REINPLACE_CMD} -i '' \
-		-e 's|DESTDIR ?=|DESTDIR = ${STAGEDIR}|' \
-		-e 's|LIBDIR ?=.*|LIBDIR = ${PREFIX}/lib|' \
-		${WRKSRC}/Makefile
-
-post-install:
-	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||g' \
-		${STAGEDIR}/${PREFIX}/libdata/pkgconfig/capstone.pc
-
 .include <bsd.port.mk>

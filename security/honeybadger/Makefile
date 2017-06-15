@@ -10,12 +10,13 @@ COMMENT=	Quantum Insert detector and 0-day catcher
 BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	david415:DEFAULT google:gp fatih:co mattn:gc,gi \
-		golang:xs,xn
-GH_PROJECT=	HoneyBadger:DEFAULT gopacket:gp color:co go-colorable:gc \
-		go-isatty:gi net:xn sys:xs
-GH_TAGNAME=	11dc0ca:DEFAULT f361903:gp 7a5857d:co 9fdad7c:gc 56b76bd:gi \
-		b6d7b13:xn 50c6bc5:xs
+GH_TUPLE=	david415:HoneyBadger:11dc0ca:DEFAULT/src/github.com/david415/HoneyBadger \
+		google:gopacket:f361903:gp/src/github.com/google/gopacket \
+		fatih:color:7a5857d:co/src/github.com/fatih/color \
+		mattn:go-colorable:9fdad7c:gc/src/github.com/mattn/go-colorable \
+		mattn:go-isatty:56b76bd:gi/src/github.com/mattn/go-isatty \
+		golang:sys:50c6bc5:xs/src/golang.org/x/sys \
+		golang:net:b6d7b13:xn/src/golang.org/x/net
 
 BIN_FILES=	handshakeHijacker honeyBadger \
 		honeybadgerReportTool honeybadgerReportToolColor sprayInjector
@@ -27,33 +28,6 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	README.rst LICENSE LICENSE_BSD
 
 LICENSE=	GPLv3
-
-post-patch:
-	@${MKDIR} ${WRKSRC}/src/github.com/david415/HoneyBadger
-.for src in .travis.yml LICENSE LICENSE_BSD README.rst attack blocks cmd \
-	connection.go connection_test.go dispatcher.go dispatcher_test.go \
-	drivers logging ordered_coalesce.go ordered_coalesce_test.go \
-	pcap_integration_test.go retrospective.go retrospective_test.go \
-	sniffer.go supervisor.go types
-	@${MV} ${WRKSRC}/${src} \
-		${WRKSRC}/src/github.com/david415/HoneyBadger
-.endfor
-	@${MKDIR} ${WRKSRC}/src/github.com/google
-	@${MKDIR} ${WRKSRC}/src/github.com/fatih
-	@${MKDIR} ${WRKSRC}/src/github.com/mattn
-	@${MKDIR} ${WRKSRC}/src/golang.org/x
-	@${MV} ${WRKSRC_gp} \
-		${WRKSRC}/src/github.com/google/gopacket
-	@${MV} ${WRKSRC_co} \
-		${WRKSRC}/src/github.com/fatih/color
-	@${MV} ${WRKSRC_gc} \
-		${WRKSRC}/src/github.com/mattn/go-colorable
-	@${MV} ${WRKSRC_gi} \
-		${WRKSRC}/src/github.com/mattn/go-isatty
-	@${MV} ${WRKSRC_xn} \
-		${WRKSRC}/src/golang.org/x/net
-	@${MV} ${WRKSRC_xs} \
-		${WRKSRC}/src/golang.org/x/sys
 
 do-build:
 .for bin in ${BIN_FILES}

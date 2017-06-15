@@ -1,11 +1,23 @@
---- src/sis_driver.c.orig	2015-09-23 09:54:07.196489000 +0200
-+++ src/sis_driver.c	2015-09-23 09:56:45.740035000 +0200
-@@ -9390,7 +9390,7 @@ SISMergedPointerMoved(SCRN_ARG_TYPE arg,
- #if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 15
-         {
-             double dx = x, dy = y;
--            miPointerSetPosition(inputInfo.pointer, Absolute, &dx, &dy);
-+            miPointerSetPosition(inputInfo.pointer, Absolute, &dx, &dy, NULL, NULL);
-             x = (int)dx;
-             y = (int)dy;
-         }
+# Correct a string that should be const
+# Cast away a warning filling a const string
+#
+--- src/sis_driver.c.orig	2017-01-17 22:45:12 UTC
++++ src/sis_driver.c
+@@ -1305,7 +1305,7 @@ SiSCopyModeNLink(ScrnInfoPtr pScrn, Disp
+  * (Code base taken from mga driver)
+  */
+ static DisplayModePtr
+-SiSGetModeFromName(char* str, DisplayModePtr i)
++SiSGetModeFromName(const char* str, DisplayModePtr i)
+ {
+     DisplayModePtr c = i;
+     if(!i) return NULL;
+@@ -6065,7 +6065,7 @@ SISPreInit(ScrnInfoPtr pScrn, int flags)
+ 	        free(newm);
+ 		break;
+ 	     }
+-	     strcpy(newm->name, tempm->name);
++	     strcpy((char *)newm->name, tempm->name);
+ 	     if(!pSiS->CRT2pScrn->monitor->Modes) pSiS->CRT2pScrn->monitor->Modes = newm;
+ 	     if(currentm) {
+ 	        currentm->next = newm;

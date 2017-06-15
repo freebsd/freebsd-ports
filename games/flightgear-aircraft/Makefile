@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-aircraft
-PORTVERSION=	20160305
+PORTVERSION=	20161208
 CATEGORIES=	games
 # See http://www.flightgear.org/templates.js
-MASTER_SITES=	http://fgfs.goneabitbursar.com/official/ \
-	http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2016.1/ \
-	http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft-2016.1/
+MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Aircraft/ \
+	http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft/
 # Selection of production-ready/well-known planes
 # (planes already included in flightgear-data are excluded)
 # Please contact MAINTAINER if a plane is missing
@@ -72,7 +71,7 @@ post-patch:
 		\( -name COPYING -or -name LICENSE -or -name copyright \) -delete
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 	@cd ${WRKSRC} && \
 	${FIND} * -type d -empty | ${SORT} \
 		| ${SED} -e 's|^|@exec ${MKDIR} %D/share/flightgear/Aircraft/|' >> ${PLIST} && \

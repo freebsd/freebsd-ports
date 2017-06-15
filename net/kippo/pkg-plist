@@ -1,5 +1,5 @@
 %%DATADIR%%/fs.pickle
-%%DATADIR%%/kippo.cfg
+%%DATADIR%%/kippo.cfg.dist
 %%DATADIR%%/kippo.tac
 %%DATADIR%%/data/userdb.txt
 %%DATADIR%%/doc/COPYRIGHT

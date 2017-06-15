@@ -3,6 +3,7 @@
 
 PORTNAME=	libfprint
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
@@ -13,13 +14,11 @@ LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick \
 		libnss3.so:security/nss
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		libtool pathfix pkgconfig tar:xz ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_GNOME=	glib20
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ENV=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 CPPFLAGS+=	-DHAVE_MEMMEM
 MAKE_JOBS_UNSAFE=yes
 

@@ -7,8 +7,11 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ics.ele.tue.nl/pub/users/jos/poster/
 DISTNAME=	poster
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resize a postscript image to print on larger media and/or multiple sheets
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ALL_TARGET=	poster
 MAKEFILE=	/dev/null
@@ -19,6 +22,6 @@ PLIST_FILES=	bin/poster man/man1/poster.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${DISTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

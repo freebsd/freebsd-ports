@@ -13,6 +13,9 @@ COMMENT=	PGP International version - Public-Key encryption for the masses
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 BROKEN_amd64=	unable to validate signatures
+DEPRECATED=	This software was last updated in 1996, use security/gnupg1 as a\
+		drop-in replacement with legacy PGP support.
+EXPIRATION_DATE=	2017-04-01
 
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile
@@ -22,7 +25,7 @@ PGPLIB=		${STAGEDIR}${PREFIX}/share/pgp
 
 post-extract:
 	cd ${WRKDIR}; ${TAR} -xf pgp263ii.tar; \
-		${RM} -f pgp263ii.tar
+		${RM} pgp263ii.tar
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgp ${STAGEDIR}${PREFIX}/bin/

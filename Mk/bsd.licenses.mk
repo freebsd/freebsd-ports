@@ -301,7 +301,7 @@ _LICENSE_DISTFILES=	${LICENSE_DISTFILES}
 _LICENSE_GROUPS_${lic}?=#
 .		if ${_LICENSE_LIST:M${lic}} != ""
 # Case 1: license defined in the framework.
-_LICENSE_TYPE_${lic} =	known
+_LICENSE_TYPE_${lic}=	known
 .			for var in ${_LICENSE_LIST_PORT_VARS}
 .				if defined(LICENSE_${var}_${lic})
 _LICENSE_ERROR?=	redefining LICENSE_${var}_${lic} is not allowed for known licenses, to define a custom license try another LICENSE name for ${lic} like ${lic}-variant
@@ -314,25 +314,25 @@ _LICENSE_ERROR?=	ERROR: missing _LICENSE_${var}_${lic} in bsd.licenses.db.mk
 .			if !defined(LICENSE_FILE_${lic})
 .				if !defined(LICENSE_TEXT_${lic})
 .					if exists(${_LICENSE_STORE}/${lic})
-_LICENSE_FILE_${lic} =		${_LICENSE_STORE}/${lic}
+_LICENSE_FILE_${lic}=		${_LICENSE_STORE}/${lic}
 .					else
 #  No license file in /usr/ports/Templates/Licenses
-_LICENSE_TEXT_${lic} =	The license: ${lic} (${_LICENSE_NAME_${lic}}) is standard, please read from the web.
-_LICENSE_FILE_${lic} =	${WRKDIR}/${lic}
+_LICENSE_TEXT_${lic}=	The license: ${lic} (${_LICENSE_NAME_${lic}}) is standard, please read from the web.
+_LICENSE_FILE_${lic}=	${WRKDIR}/${lic}
 .					endif
 .				else
 _LICENSE_ERROR?=	defining LICENSE_TEXT_${lic} is not allowed for known licenses
 .				endif
 .			else
-_LICENSE_FILE_${lic} =	${LICENSE_FILE_${lic}}
+_LICENSE_FILE_${lic}=	${LICENSE_FILE_${lic}}
 .			endif
 
 .		else
 # Case 2: license only known by the port.
-_LICENSE_TYPE_${lic} =	unknown
+_LICENSE_TYPE_${lic}=	unknown
 .			for var in ${_LICENSE_LIST_PORT_VARS}
 .				if defined(LICENSE_${var}_${lic})
-_LICENSE_${var}_${lic} =	${LICENSE_${var}_${lic}}
+_LICENSE_${var}_${lic}=	${LICENSE_${var}_${lic}}
 .				elif !defined(_LICENSE_${var}_${lic})
 _LICENSE_ERROR?=	for unknown licenses, defining LICENSE_${var}_${lic} is mandatory (otherwise use a known LICENSE)
 .				endif
@@ -354,11 +354,11 @@ _LICENSE_PERMS_${lic}:=	${__LICENSE_PERMS}
 .				if !defined(LICENSE_TEXT_${lic})
 _LICENSE_ERROR?=		either LICENSE_FILE_${lic} or LICENSE_TEXT_${lic} must be defined
 .				else
-_LICENSE_TEXT_${lic} =	${LICENSE_TEXT_${lic}}
-_LICENSE_FILE_${lic} =	${WRKDIR}/${lic}
+_LICENSE_TEXT_${lic}=	${LICENSE_TEXT_${lic}}
+_LICENSE_FILE_${lic}=	${WRKDIR}/${lic}
 .				endif
 .			else
-_LICENSE_FILE_${lic} =	${LICENSE_FILE_${lic}}
+_LICENSE_FILE_${lic}=	${LICENSE_FILE_${lic}}
 .			endif
 .		endif
 
@@ -368,9 +368,9 @@ _LICENSE_ERROR?=		defining both LICENSE_FILE_${lic} and LICENSE_TEXT_${lic}is no
 .		endif
 # Distfiles
 .		if !defined(LICENSE_DISTFILES_${lic})
-_LICENSE_DISTFILES_${lic} =	${_DISTFILES}
+_LICENSE_DISTFILES_${lic}=	${_DISTFILES}
 .		else
-_LICENSE_DISTFILES_${lic} =	${LICENSE_DISTFILES_${lic}}
+_LICENSE_DISTFILES_${lic}=	${LICENSE_DISTFILES_${lic}}
 .		endif
 .	endfor
 .endif
@@ -616,12 +616,12 @@ ${_LICENSE_COOKIE}:
 		"$$(${CAT} ${_LICENSE_FILE})" 21 76
 
 .		elif ${_LICENSE_COMB} == "dual"
-	@${RM} -f ${_LICENSE_ASK_DATA}
+	@${RM} ${_LICENSE_ASK_DATA}
 .			for lic in ${_LICENSE_TO_ASK}
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
 .			endfor
 	@menu_cmd="${DIALOG} --hline \"This port requires you to accept at least one license\" --menu \"License for ${PKGNAME} (dual)\" 21 70 15"; \
-	trap '${RM} -f $$tmpfile' EXIT INT TERM; \
+	trap '${RM} $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	for lic in ${_LICENSE_TO_ASK}; do \
 		menu_cmd="$${menu_cmd} VIEW_$${lic} \"View the license $${lic}\" USE_$${lic} \"Accept the license $${lic}\""; \
@@ -642,12 +642,12 @@ ${_LICENSE_COOKIE}:
 	done
 
 .		elif ${_LICENSE_COMB} == "multi"
-	@${RM} -f ${_LICENSE_ASK_DATA}
+	@${RM} ${_LICENSE_ASK_DATA}
 .			for lic in ${_LICENSE_TO_ASK}
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
 .			endfor
 	@menu_cmd="${DIALOG} --hline \"This port requires you to accept all mentioned licenses\" --menu \"License for ${PKGNAME} (multi)\" 21 70 15"; \
-	trap '${RM} -f $$tmpfile' EXIT INT TERM; \
+	trap '${RM} $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	for lic in ${_LICENSE_TO_ASK}; do \
 		menu_cmd="$${menu_cmd} VIEW_$${lic} \"View the license $${lic}\""; \
@@ -693,12 +693,12 @@ ${_LICENSE_COOKIE}:
 	@${ECHO_MSG}
 	@exit 1
 .	endif
-	@${RM} -f ${_LICENSE_ASK_DATA}
+	@${RM} ${_LICENSE_ASK_DATA}
 .endif
 
 # Create report and catalog
 .if !defined(NO_LICENSES_INSTALL)
-	@${RM} -f ${_LICENSE_CATALOG_TMP} ${_LICENSE_REPORT_TMP}
+	@${RM} ${_LICENSE_CATALOG_TMP} ${_LICENSE_REPORT_TMP}
 .	if ${_LICENSE_COMB} == "single"
 # Catalog
 .		for var in _LICENSE _LICENSE_NAME _LICENSE_PERMS _LICENSE_GROUPS _LICENSE_DISTFILES

@@ -1,6 +1,6 @@
---- gpu/ipc/service/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
-+++ gpu/ipc/service/BUILD.gn	2016-10-10 14:57:36.952170000 +0300
-@@ -92,11 +92,12 @@
+--- gpu/ipc/service/BUILD.gn.orig	2017-04-19 19:06:34 UTC
++++ gpu/ipc/service/BUILD.gn
+@@ -110,11 +110,12 @@ target(link_target_type, "ipc_service_so
      ]
      libs += [ "android" ]
    }

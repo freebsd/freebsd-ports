@@ -1,11 +1,18 @@
---- config.c.orig	Fri Nov  8 19:06:04 2002
-+++ config.c	Fri Feb 14 13:07:09 2003
-@@ -204,7 +204,7 @@
-     filename= getenv( "HOME");
-     if ( filename != NULL && filename[0] != '\0')  {
- 	char path[1024];
--	sprintf( path, "%s/%s", filename, HOME_CONFIG_FILE);
+--- config.c.orig	2014-03-01 01:49:37 UTC
++++ config.c
+@@ -192,14 +192,7 @@ qsc_load_default_config_files()
+ 
+     var= getenv( "HOME");
+     if ( var != NULL && var[0] != '\0')  {
+-	int len= strlen(var);
+-	if ( len > 900)
+-	    len= 900;
+-	strncpy( path, var, len);
+-	path[len]= '\0';
+-	strcat( path, "/");
+-	strcat( path, HOME_CONFIG_FILE);
+-/*	sprintf( path, "%s/%s", var, HOME_CONFIG_FILE); */
 +	snprintf( path, sizeof(path), "%s/%s", var, HOME_CONFIG_FILE);
-     }
- /* 1. $QSTAT_CONFIG
-    2. UNIX: $HOME/.qstatrc         WIN: $HOME/qstat.cfg
+ 	rc= try_load_config_file( path, 0);
+ 	if ( rc == 0 || rc == -1)
+ 	    return rc;

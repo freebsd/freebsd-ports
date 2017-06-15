@@ -3,19 +3,21 @@
 
 PORTNAME=	mod_memcache
 PORTVERSION=	0.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Apache 2.2.x module to manage apr_memcache connections
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
-PROJECTHOST=	modmemcache
 USE_APACHE=	22+
+USE_GITHUB=	yes
+GH_ACCOUNT=	joshrotenberg
+GH_PROJECT=	modmemcache
+GH_TAGNAME=	8e6d912
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ndoutils
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
@@ -16,6 +16,8 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ndoutils \
 			--localstatedir=/var/run --enable-mysql \
 			--with-mysql=${LOCALBASE}
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=	DOCS NANOSLEEP
 OPTIONS_SINGLE=		NAGIOS_BACKEND
 OPTIONS_SINGLE_NAGIOS_BACKEND=	NAGIOS3X NAGIOS4X
@@ -27,7 +29,7 @@ NAGIOS3X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios
 NAGIOS4X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios4
 NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
 
-USES=		mysql perl5
+USES=		mysql perl5 ssl
 USE_RC_SUBR=	ndo2db
 SUB_FILES=	pkg-message
 

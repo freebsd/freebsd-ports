@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	3.8.6
+PORTVERSION=	3.8.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	38
@@ -34,6 +35,9 @@ SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
+
+DEPRECATED=	Upstream support ended, see http://tinyurl.com/puppet3eol
+EXPIRATION_DATE=	2017-02-05
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppet|${ETCDIR}|" \

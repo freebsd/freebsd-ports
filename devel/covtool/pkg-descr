@@ -3,4 +3,4 @@ different in implementation. This tool does its job by instrumenting the
 source as you compile. You can thus add your own instrumentation to every
 line on the fly.
 
-WWW: http://sourceforge.net/projects/covtool/
+WWW: https://sourceforge.net/projects/covtool/

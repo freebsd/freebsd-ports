@@ -1,5 +1,5 @@
---- image/new.c.orig	Tue Aug 31 20:50:32 2004
-+++ image/new.c	Fri Nov  5 13:53:17 2004
+--- image/new.c.orig	2004-09-01 03:50:32 UTC
++++ image/new.c
 @@ -11,7 +11,7 @@
  #include "copyright.h"
  #include "image.h"

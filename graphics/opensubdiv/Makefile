@@ -3,10 +3,10 @@
 PORTNAME=	opensubdiv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3_0_5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance subdivision surface libraries
 
 LICENSE=	APACHE20

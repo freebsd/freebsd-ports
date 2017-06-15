@@ -3,11 +3,11 @@
 
 PORTNAME=	pulseview
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/pulseview/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	GUI client that supports various hardware logic analyzers
 
 LICENSE=	GPLv3
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libsigrok.so:devel/libsigrok \
 		libsigrokdecode.so:devel/libsigrokdecode
 
-USES=		cmake gmake pkgconfig
+USES=		cmake pkgconfig
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
 		-DDISABLE_WERROR:BOOL=TRUE

@@ -23,6 +23,8 @@
 %%QT_QMLDIR%%/QtGraphicalEffects/RecursiveBlur.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/ThresholdMask.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/ZoomBlur.qml
+%%QT_QMLDIR%%/QtGraphicalEffects/libqtgraphicaleffectsplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtGraphicalEffects/libqtgraphicaleffectsplugin.so.debug
 %%QT_QMLDIR%%/QtGraphicalEffects/private/DropShadowBase.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/private/FastGlow.qml
 %%QT_QMLDIR%%/QtGraphicalEffects/private/FastInnerShadow.qml

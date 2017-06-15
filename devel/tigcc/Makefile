@@ -3,7 +3,7 @@
 
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b8
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=		GCC/snapshots/4.1-20060728:gcc \
 			GNU/binutils:gas \
@@ -17,8 +17,8 @@ COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 BROKEN_powerpc64=	Does not build
 
-USE_GCC=	any
-USES=		bison gmake tar:bzip2
+USE_CSTD=	gnu89
+USES=		bison compiler:nestedfct gmake tar:bzip2
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 

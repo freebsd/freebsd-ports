@@ -36,7 +36,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}
 	@cd ${WRKSRC}/src && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}/{}" \; && \
-			${FIND} -E * -type f -iregex ".*\.(py)" -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}/{}" \;
+			${FIND} -E * -type f -iregex ".*\.(py)" -exec ${INSTALL_DATA} {} "${STAGEDIR}${FOF_DIR}/${PORTNAME:S/f/F/g:S/o/O/}/{}" \;
 
 	@${MKDIR} ${STAGEDIR}${FOF_DIR}/data
 	${LN} -s ${LOCALBASE}/${DATADIR}/* ${STAGEDIR}${FOF_DIR}/data

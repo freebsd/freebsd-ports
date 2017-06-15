@@ -3,6 +3,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	2.3
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -35,8 +36,8 @@ BACKSPACE_DESC=	Build with tty/keys patch
 
 BACKSPACE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tty-keys.c
 
-LIBEVENT_STATIC_LIB_DEPENDS_OFF=	libevent.so:devel/libevent2
-LIBEVENT_STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:devel/libevent2
+LIBEVENT_STATIC_LIB_DEPENDS_OFF=	libevent.so:devel/libevent
+LIBEVENT_STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:devel/libevent
 LIBEVENT_STATIC_VARS=	LESTATIC=${LOCALBASE}/lib/libevent.a
 
 post-patch:

@@ -2,6 +2,7 @@
 
 PORTNAME=	baresip
 PORTVERSION=	0.4.19
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.creytiv.com/pub/
 
@@ -15,8 +16,7 @@ BUILD_DEPENDS=	re>=0.4.14:audio/re \
 		rem>=0.4.7:audio/rem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake pkgconfig
-USE_OPENSSL=	yes
+USES=		gmake pkgconfig ssl
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ilbc
 MAKE_ARGS=	MOD_AUTODETECT=""
 PLIST_FILES=	bin/baresip

@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: nslcd
-# REQUIRE: NETWORKING ldconfig resolv
+# REQUIRE: NETWORKING ldconfig resolv kstart
 # BEFORE: syslogd
 # KEYWORD: shutdown
 #
@@ -23,6 +23,7 @@ load_rc_config ${name}
 : ${nslcd_supervisor=NO}
 
 command="/usr/sbin/daemon";
+pidfile="%%NSLCD_PIDFILE%%"
 start_precmd=nslcd_prestart
 start_cmd=nslcd_start
 status_cmd=nslcd_status

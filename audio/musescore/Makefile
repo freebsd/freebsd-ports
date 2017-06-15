@@ -3,6 +3,7 @@
 
 PORTNAME=	musescore
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${PORTVERSION}/
 DISTNAME=	MuseScore-${PORTVERSION}
@@ -25,6 +26,8 @@ USE_QT5=	concurrent declarative designer help network scripttools svg \
 ALL_TARGET=	lrelease manpages all
 
 DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
+
+BROKEN_aarch64=		Fails to compile: error: constant expression evaluates to -1
 
 OPTIONS_DEFINE=		ALSA JACK PORTAUDIO PULSEAUDIO
 OPTIONS_DEFAULT=	PORTAUDIO

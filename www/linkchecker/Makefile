@@ -37,12 +37,8 @@ LOGIN_DESC=		Login form submission
 LOGIN_RUN_DEPENDS=	twill>=0:www/twill
 NLS_USES=		gettext
 QT4_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-noqt-setup.py
-QT4_RUN_DEPENDS=\
-		${PYTHON_PKGNAMEPREFIX}qt4-sql>=${PYQT_VERSION}:databases/py-qt4-sql \
-		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT_VERSION}:devel/py-qt4-core \
-		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT_VERSION}:x11-toolkits/py-qt4-gui \
-		${PYTHON_PKGNAMEPREFIX}qt4-help>=${PYQT4_VERSION}:devel/py-qt4-help \
-		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=${QSCI2_VERSION}:devel/py-qt4-qscintilla2
+QT4_USES=		pyqt:4
+QT4_USE=		PYQT=core_run,gui_run,help_run,qscintilla2_run,sql_run
 SQLITE3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 SYNTAX_DESC=		HTML/CSS syntax check
 SYNTAX_RUN_DEPENDS=\

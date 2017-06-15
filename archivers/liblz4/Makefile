@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lz4
-PORTVERSION=	131
-DISTVERSIONPREFIX=	r
+PORTVERSION=	1.7.5
+DISTVERSIONPREFIX=	v
+PORTEPOCH=	1
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	lib
 
@@ -14,22 +15,18 @@ LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Cyan4973
-
-USES=		gmake pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
+#PATHFIX_MAKEFILEIN=	Makefile
 
 ALL_TARGET=	default		# don't remove this
-SO_VER=		1.7.1
+SO_VER=		${PORTVERSION}
 PLIST_SUB+=	SO_VER=${SO_VER} SO_VER_MAJ=${SO_VER:R:R}
+LIBDIR=		${PREFIX}/lib
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
-		-e 's/LIBDIR?=/LOCALLIBDIR=/; s/$$(LIBDIR)/$$(LOCALLIBDIR)/g' \
-		-e 's|$$(LOCALLIBDIR)/pkgconfig|$$(PREFIX)/libdata/pkgconfig|' \
-		-e '/^MANDIR :=/s|share/||' \
-		-e 's/kFreeBSD/& FreeBSD/' \
-		-e 's|$$(MAKE)|${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}|'
+		-e '/^MANDIR :=/s|share/||'
 	@${REINPLACE_CMD} -e '/^all:/s/$$/ liblz4.pc/' \
 		${WRKSRC}/lib/Makefile
 	@${REINPLACE_CMD} -e '/^all:/s|fullbench.*||' \

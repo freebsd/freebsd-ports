@@ -1,11 +1,11 @@
---- wscript.orig	2011-01-08 01:43:04.000000000 +0100
-+++ wscript	2011-07-29 23:55:08.000000000 +0200
-@@ -71,7 +71,7 @@
+--- wscript.orig	2016-07-28 07:19:25 UTC
++++ wscript
+@@ -78,7 +78,7 @@ def build(bld):
      bld.RECURSE('lib/replace')
  
      if bld.env.standalone_talloc:
 -        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
 +        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
          bld.env.TALLOC_VERSION = VERSION
-         bld.PKG_CONFIG_FILES('talloc.pc', vnum=VERSION)
-         bld.INSTALL_FILES('${INCLUDEDIR}', 'talloc.h')
+         private_library = False
+ 

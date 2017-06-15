@@ -1,10 +1,5 @@
-%%PERL5_MAN3%%/Mail::Audit.3.gz
-%%PERL5_MAN3%%/Mail::Audit::KillDups.3.gz
-%%PERL5_MAN3%%/Mail::Audit::MAPS.3.gz
-%%PERL5_MAN3%%/Mail::Audit::MailInternet.3.gz
-%%PERL5_MAN3%%/Mail::Audit::MimeEntity.3.gz
-%%PERL5_MAN3%%/Mail::Audit::Util::Tempdir.3.gz
-%%PERL5_MAN3%%/Mail::Audit::Vacation.3.gz
+bin/popread
+bin/proc2ma
 %%SITE_PERL%%/Mail/Audit.pm
 %%SITE_PERL%%/Mail/Audit/KillDups.pm
 %%SITE_PERL%%/Mail/Audit/MAPS.pm
@@ -12,3 +7,12 @@
 %%SITE_PERL%%/Mail/Audit/MimeEntity.pm
 %%SITE_PERL%%/Mail/Audit/Util/Tempdir.pm
 %%SITE_PERL%%/Mail/Audit/Vacation.pm
+%%PERL5_MAN1%%/popread.1.gz
+%%PERL5_MAN1%%/proc2ma.1.gz
+%%PERL5_MAN3%%/Mail::Audit.3.gz
+%%PERL5_MAN3%%/Mail::Audit::KillDups.3.gz
+%%PERL5_MAN3%%/Mail::Audit::MAPS.3.gz
+%%PERL5_MAN3%%/Mail::Audit::MailInternet.3.gz
+%%PERL5_MAN3%%/Mail::Audit::MimeEntity.3.gz
+%%PERL5_MAN3%%/Mail::Audit::Util::Tempdir.3.gz
+%%PERL5_MAN3%%/Mail::Audit::Vacation.3.gz

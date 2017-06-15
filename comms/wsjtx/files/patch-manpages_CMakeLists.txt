@@ -1,11 +1,11 @@
---- manpages/CMakeLists.txt.orig	2015-12-11 00:00:14 UTC
+--- manpages/CMakeLists.txt.orig	2017-01-05 15:57:47 UTC
 +++ manpages/CMakeLists.txt
-@@ -1,8 +1,6 @@
- set (ASCIIDOC_MANS
+@@ -2,8 +2,6 @@ set (ASCIIDOC_MANS
    man1/wsjtx.1.txt
+   man1/wsprd.1.txt
    man1/jt65code.1.txt
 -  man1/rigctl-wsjtx.1.txt
 -  man1/rigctld-wsjtx.1.txt
    man1/message_aggregator.1.txt
+   man1/udp_daemon.1.txt
    )
- 

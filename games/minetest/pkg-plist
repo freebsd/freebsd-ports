@@ -5,4 +5,5 @@ man/man6/minetest.6.gz
 man/man6/minetestserver.6.gz
 share/applications/minetest.desktop
 share/appdata/minetest.appdata.xml
+share/icons/hicolor/128x128/apps/minetest.png
 share/icons/hicolor/scalable/apps/minetest.svg

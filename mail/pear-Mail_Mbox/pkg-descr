@@ -1,4 +1,4 @@
 It can split messages inside a Mbox, return the number of messages, return,
 update or remove an specific message or add a message on the Mbox.
 
-WWW: http://pear.php.net/package/Mail_Mbox/
+WWW: https://pear.php.net/package/Mail_Mbox

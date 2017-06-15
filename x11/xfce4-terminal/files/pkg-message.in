@@ -1,0 +1,9 @@
+To reduce the height of tabs, add the hidden 'MiscSlimTabs' option
+in ~/.config/xfce4/terminal/terminalrc.
+
+MiscSlimTabs=TRUE
+
+By default this option is not defined.
+
+Keep in mind, when you change an option in Preferences window, this file
+is overwritten. 

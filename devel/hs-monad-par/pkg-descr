@@ -4,4 +4,4 @@ pure version is deterministic.  The default implementation provides a
 work-stealing scheduler and supports forking tasks that are much lighter
 weight than IO-threads.
 
-WWW: http://github.com/simonmar/monad-par
+WWW: https://github.com/simonmar/monad-par

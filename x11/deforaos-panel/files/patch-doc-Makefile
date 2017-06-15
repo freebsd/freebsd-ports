@@ -1,0 +1,56 @@
+--- doc/Makefile.orig	2016-03-01 23:07:41.429960000 +0100
++++ doc/Makefile	2016-03-01 23:08:45.782008000 +0100
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)panel.1 $(OBJDIR)panel.html $(OBJDIR)panelctl.1 $(OBJDIR)panelctl.html $(OBJDIR)panel-embed.1 $(OBJDIR)panel-embed.html $(OBJDIR)panel-message.1 $(OBJDIR)panel-message.html $(OBJDIR)panel-notify.1 $(OBJDIR)panel-notify.html $(OBJDIR)wifibrowser.1 $(OBJDIR)wifibrowser.html
++TARGETS	= $(OBJDIR)panel.1 $(OBJDIR)panelctl.1 $(OBJDIR)panel-embed.1 $(OBJDIR)panel-message.1 $(OBJDIR)panel-notify.1 $(OBJDIR)wifibrowser.1
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -49,47 +49,29 @@
+ clean:
+ 	$(RM) -- $(panel.1_OBJS) $(panel.html_OBJS) $(panelctl.1_OBJS) $(panelctl.html_OBJS) $(panel-embed.1_OBJS) $(panel-embed.html_OBJS) $(panel-message.1_OBJS) $(panel-message.html_OBJS) $(panel-notify.1_OBJS) $(panel-notify.html_OBJS) $(wifibrowser.1_OBJS) $(wifibrowser.html_OBJS)
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panel.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panel.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panelctl.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panelctl.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panel-embed.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panel-embed.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panel-message.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panel-message.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panel-notify.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)panel-notify.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)wifibrowser.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)wifibrowser.html"
+ 
+ distclean: clean
+ 	$(RM) -- $(TARGETS)
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panel.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panel.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panelctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panelctl.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panel-embed.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panel-embed.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panel-message.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panel-message.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panel-notify.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)panel-notify.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)wifibrowser.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)wifibrowser.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panel.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panel.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panelctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panelctl.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panel-embed.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panel-embed.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panel-message.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panel-message.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panel-notify.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "panel-notify.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "wifibrowser.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "wifibrowser.html"
+ 
+ .PHONY: all clean distclean install uninstall

@@ -1,0 +1,5 @@
+KXMLGUI provides a framework for managing menu and toolbar actions in an
+abstract way. The actions are configured through a XML description and
+hooks in the application code.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kxmlgui/html/index.html

@@ -197,6 +197,8 @@ lib/libsamba-util.so
 lib/libsamba-util.so.0
 lib/libsamdb.so
 lib/libsamdb.so.0
+lib/libsmbclient.so
+lib/libsmbclient.so.0
 lib/libsmbclient-raw.so
 lib/libsmbclient-raw.so.0
 lib/libsmbconf.so
@@ -473,6 +475,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%PKGCONFIGDIR%%/samba-policy.pc
 %%PKGCONFIGDIR%%/samba-util.pc
 %%PKGCONFIGDIR%%/samdb.pc
+%%PKGCONFIGDIR%%/smbclient.pc
 %%PKGCONFIGDIR%%/smbclient-raw.pc
 %%PKGCONFIGDIR%%/torture.pc
 %%PKGCONFIGDIR%%/wbclient.pc

@@ -4,4 +4,4 @@ Named and unnamed Mutex, Semaphore, Event, and Reader-Writer objects provide
 OS-level synchronization on both *NIX (POSIX semaphores required) and Windows
 platforms.
 
-WWW: http://pecl.php.net/package/sync
+WWW: https://pecl.php.net/package/sync

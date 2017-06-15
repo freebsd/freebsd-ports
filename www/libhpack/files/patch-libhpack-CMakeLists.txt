@@ -1,0 +1,11 @@
+--- libhpack/CMakeLists.txt.orig	2014-07-09 21:59:50 UTC
++++ libhpack/CMakeLists.txt
+@@ -27,7 +27,7 @@ set_target_properties (
+ add_custom_command (
+     OUTPUT  ${CMAKE_CURRENT_SOURCE_DIR}/huffman_tables.c
+     COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/huffman-gen.py
+-    ARGS    -v -o ${CMAKE_CURRENT_SOURCE_DIR}/huffman_tables.c
++    ARGS    -v -i draft-ietf-httpbis-header-compression.xml -o ${CMAKE_CURRENT_SOURCE_DIR}/huffman_tables.c
+     COMMENT "Generating the huffman_tables.c file..."
+ )
+ 

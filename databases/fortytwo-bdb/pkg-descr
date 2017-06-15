@@ -7,6 +7,4 @@ classes and mechanisms offered by the Foundation library.
 In its present state BDB just offers a reduced set of functionality of
 Berkeley DB.
 
-LICENSE: LGPL2 or later
-
 WWW: http://fortytwo.sourceforge.net/

@@ -1,6 +1,6 @@
---- configure.orig	Wed Aug  4 09:23:35 2004
-+++ configure	Fri Nov  5 13:36:43 2004
-@@ -4134,6 +4134,8 @@
+--- configure.orig	2007-12-28 20:31:26 UTC
++++ configure
+@@ -5106,6 +5106,8 @@ echo $ECHO_N "checking for freetype1 lib
   		fi
   		if test -d $dir/include -a -f $dir/include/freetype.h; then
   			ac_cv_ft_include="$dir/include"

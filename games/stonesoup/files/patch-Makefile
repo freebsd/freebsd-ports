@@ -94,21 +94,3 @@
  endif
  
  ifdef PCH
-@@ -957,7 +932,7 @@ else
-   SYS_PROPORTIONAL_FONT = $(shell { name=$(OUR_PROPORTIONAL_FONT);\
-     {\
-       fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
--      for dir in /usr/share/fonts /usr/local/share/fonts /usr/*/lib/X11/fonts;\
-+      for dir in %%LOCALBASE%%/share/fonts;\
-       do [ -d $$dir ] && echo $$dir; done;\
-     } | xargs -I% find % -type f -iname $$name -print | head -n1; } 2>/dev/null)
-   ifneq (,$(SYS_PROPORTIONAL_FONT))
-@@ -982,7 +957,7 @@ else
-   SYS_MONOSPACED_FONT = $(shell { name=$(OUR_MONOSPACED_FONT);\
-     {\
-       fc-list | sed 's/: .*//' | grep -Fi "/$$name";\
--      for dir in /usr/share/fonts /usr/local/share/fonts /usr/*/lib/X11/fonts;\
-+      for dir in %%LOCALBASE%%/share/fonts;\
-       do [ -d $$dir ] && echo $$dir; done;\
-     } | xargs -I% find % -type f -iname $$name -print | head -n1; } 2>/dev/null)
-   ifneq (,$(SYS_MONOSPACED_FONT))

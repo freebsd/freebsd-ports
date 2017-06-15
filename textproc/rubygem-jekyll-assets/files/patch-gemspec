@@ -1,0 +1,11 @@
+--- jekyll-assets.gemspec.orig	2017-01-01 00:10:29 UTC
++++ jekyll-assets.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<rack>.freeze, ["< 2", "> 1"])
+-      s.add_runtime_dependency(%q<sprockets>.freeze, ["< 3.7", "~> 3.3"])
++      s.add_runtime_dependency(%q<sprockets>.freeze, ["~> 3.3"])
+       s.add_runtime_dependency(%q<fastimage>.freeze, [">= 1.8", "~> 2.0"])
+       s.add_runtime_dependency(%q<jekyll>.freeze, [">= 3.0", "~> 3.1"])
+       s.add_runtime_dependency(%q<pathutil>.freeze, [">= 0.8"])

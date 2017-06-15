@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	5.1.9
+PORTVERSION=	5.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -28,8 +28,7 @@ USES=		cpe jpeg
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
-USE_PHP=	mysql session zlib gd pdf dom xsl pcre
-WRKSRC=		${WRKDIR}/ILIAS-${PORTVERSION}
+USE_PHP=	pdo_mysql session zlib gd pdf dom xsl pcre simplexml
 ILIASDIR=	www/ilias
 ILIASDATADIR=	www/iliasdata
 PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
@@ -41,12 +40,22 @@ SCORM2004_USE=		php=json
 Checker_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request
 Mail_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail
 
+EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/_mocha \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/express \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/mocha \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/uuid \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/jade \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/mkdirp \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/supports-color \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/supertest/node_modules/superagent/node_modules/.bin/mime
 pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
 	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
 	@${ECHO_CMD} "@mode 755" >> ${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${ILIASDIR}?g" >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${ILIASDIR}?g" >> ${PLIST}
+.for i in ${EXTRA_FILES}
+	@${ECHO_CMD} ${i} >> ${PLIST}
+.endfor
 	@${ECHO} @dir ${ILIASDATADIR} >> ${PLIST}
 	@${ECHO_CMD} "@mode" >> ${PLIST}
 	@${ECHO_CMD} "@group" >> ${PLIST}

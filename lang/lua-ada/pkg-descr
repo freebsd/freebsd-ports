@@ -5,4 +5,4 @@ the version of Lua that is default on the system that builds the port.
 There is no documentation available, but two examples with sources are
 built and installed for illustration.
 
-WWW: http://github.com/AdaCore/ada-lua
+WWW: https://github.com/AdaCore/ada-lua

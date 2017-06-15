@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-MPC
-PORTVERSION=	1.05
+PORTVERSION=	1.07
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,9 +19,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAKE_ENV=	INC="-I${LOCALBASE}/include"
-USES=		perl5
 USE_PERL5=	configure
+USES=		localbase perl5
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Math/MPC/MPC.so

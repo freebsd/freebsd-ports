@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsonc
-PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTVERSION=	1.3.10
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,10 +13,8 @@ COMMENT=	PECL extension for JSON manipulation
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	libjson-c.so:devel/json-c
-
 USES=		php:ext pkgconfig tar:tgz
-CONFIGURE_ARGS=	--with-jsonc --with-libjson
+CONFIGURE_ARGS=	--with-jsonc
 MAKE_ARGS=	EXTRA_CFLAGS=-DCOMPILE_DL_JSON=1
 IGNORE_WITH_PHP=70
 CONFLICTS_INSTALL=	php54-json-5* php55-json-5* php5-json-5*

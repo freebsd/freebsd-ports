@@ -12,14 +12,13 @@ COMMENT=	Monte Carlo neutron ray tracing package
 
 LICENSE=	GPLv2
 
-USES=		bison:build cmake gmake
+USES=		bison:build cmake
 CMAKE_ARGS=	"-Denable_mcstas=1"
-GNU_CONFIGURE=	yes
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-deinstall pkg-install
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcformat
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/mcstas/${PORTVERSION}/bin/mcstas
 

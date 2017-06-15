@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}.tar.gz:src \
 		jd-gui-${PORTVERSION}.jar:jar
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Java Decompiler GUI
 
 LICENSE=	GPLv3

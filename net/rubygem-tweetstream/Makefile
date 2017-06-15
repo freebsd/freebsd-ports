@@ -3,6 +3,7 @@
 
 PORTNAME=	tweetstream
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

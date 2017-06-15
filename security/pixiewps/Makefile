@@ -11,10 +11,8 @@ COMMENT=	Offline WPS bruteforce utility
 
 LICENSE=	GPLv3
 
-USE_OPENSSL=	yes
-
-USES=		gmake
-WRKSRC_SUBDIR=	src/
+USES=		gmake ssl
+WRKSRC_SUBDIR=	src
 USE_GITHUB=	yes
 GH_ACCOUNT=	wiire
 

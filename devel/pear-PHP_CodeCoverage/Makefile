@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Library that provides PHP code coverage information
 
 LICENSE=	BSD3CLAUSE
@@ -20,6 +20,8 @@ RUN_DEPENDS=	pear-File_Iterator>=1.3.0:devel/pear-File_Iterator \
 		pear-PHP_TokenStream>=1.1.3:devel/pear-PHP_TokenStream \
 		pear-Text_Template>=1.1.1:textproc/pear-Text_Template \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+
+BROKEN=		unfetchable, redirects to https://phpunit.de/
 
 USES=	pear
 PEAR_CHANNEL=	phpunit

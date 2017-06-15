@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	docs
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/docs/ \
 		ftp://freepascal.stack.nl/pub/fpc/dist/${PORTVERSION}/docs/

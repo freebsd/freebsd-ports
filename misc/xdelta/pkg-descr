@@ -8,4 +8,4 @@ accepts two file versions and produces a delta, while patch
 accepts the original file version and delta and produces the
 second version.
 
-WWW: http://code.google.com/p/xdelta/
+WWW: https://github.com/jmacd/xdelta

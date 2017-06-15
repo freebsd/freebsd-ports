@@ -4,24 +4,25 @@ PORTNAME=	${JDK_NAME}
 PORTVERSION=	${DISTVERSION_${JDK_ARCH}}
 PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	LOCAL/jkim
+MASTER_SITES=	${JDK_MASTER_SITES}
 PKGNAMEPREFIX=	bootstrap-
 DISTNAME=	${JDK_PORT}-${JDK_ARCH}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	Oracle's Java 6 virtual machine release under the GPL v2
+COMMENT=	Oracle\'s Java 6 virtual machine release under the GPL v2
 
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	java-zoneinfo>0:java/java-zoneinfo
 BUNDLE_LIBS=	yes
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386
+ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386 powerpc64
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${JDK_ARCH}
 DISTVERSION_amd64=	r351880
 DISTVERSION_arm=	r378760
 DISTVERSION_i386=	r351880
+DISTVERSION_powerpc64=	r407937
 
 JDK_ARCH=	${ARCH:C/armv6.*/arm/}
 JDK_NAME=	openjdk
@@ -43,6 +44,8 @@ PLIST_SUB+=	LIBSTDCXX="@comment "
 
 .include <bsd.port.pre.mk>
 
+JDK_MASTER_SITES=	LOCAL/jkim
+
 .if ${ARCH:Marmv6*}
 JDK_PORT=	openjdk7
 .else
@@ -53,6 +56,12 @@ JDK_PORT=	openjdk6
 PLIST_SUB+=	CLIENTVM=""
 .else
 PLIST_SUB+=	CLIENTVM="@comment "
+.endif
+
+.if ${ARCH} == "powerpc64"
+JDK_PORT=	openjdk7
+JDK_NAME=	openjdk
+JDK_MASTER_SITES=	LOCAL/glewis/bootstrap-openjdk
 .endif
 
 do-install:

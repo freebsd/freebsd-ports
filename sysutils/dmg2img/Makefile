@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dmg2img
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vu1tur.eu.org/tools/
+
+LICENSE=	GPLv2
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	DMG2IMG convert tool

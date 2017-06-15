@@ -21,9 +21,8 @@ LICENSE=	BSD3CLAUSE
 CONFLICTS=	epic5-0.[0-2]*
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-USES=		ncurses tar:bzip2
+USES=		ncurses tar:bzip2 ssl
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
 OPTIONS_DEFINE=	IPV6 TCL PERL SSL DOCS
@@ -62,12 +61,8 @@ CONFIGURE_ARGS+=	--with-ssl
 CONFIGURE_ARGS+=	--without-ssl
 .endif
 
-.if ${PORT_OPTIONS:MTERMCAP}
-CONFIGURE_ARGS+=	--with-termcap
-.endif
-
 post-extract:
-	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -r
 
 post-patch:
 	@${RM} ${WRKDIR}/help/Makefile

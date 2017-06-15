@@ -1,5 +1,5 @@
---- remote.c.orig	Sat Sep  7 16:54:12 2002
-+++ remote.c	Sat Sep  7 16:54:24 2002
+--- remote.c.orig	2001-02-12 21:05:08 UTC
++++ remote.c
 @@ -65,7 +65,7 @@
  /*      ******************** Local defines                ************** */
  

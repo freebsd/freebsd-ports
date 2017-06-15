@@ -1,6 +1,6 @@
 PORTNAME?=		${SAMBA4_BASENAME}44
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		${REVISION}
+PORTREVISION?=		0
 CATEGORIES?=		net
 
 MAINTAINER?=		jakub@ixsystems.com
@@ -8,11 +8,11 @@ COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba41-4.1.* samba42-4.2.* samba43-4.3.*
+CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba4[1-356]-4.* p5-Parse-Pidl-4.*
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.4.5
+SAMBA4_VERSION=		4.4.14
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 NO_CHECKSUM=		yes
@@ -90,15 +90,17 @@ LIB_DEPENDS+=		libdbus-1.so:${PORTSDIR}/devel/dbus
 LIB_DEPENDS+=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 # External Samba dependencies
-# IDL compiler
-BUILD_DEPENDS+=		p5-Parse-Pidl>=4.3.0:${PORTSDIR}/devel/p5-Parse-Pidl
-# 
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:${PORTSDIR}/dns/py-dnspython
-
-
-# Using the bundled versions. Will make this conditional later.
-
+# Needed for IDL compiler
+BUILD_DEPENDS+=		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
+PLIST_SUB+=		PIDL=""
+# External Python modules
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dnspython>=1.9.4:dns/py-dnspython
+PLIST_SUB+=		PY_DNSPYTHON="@comment "
+#
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601
+PLIST_SUB+=		PY_ISO8601="@comment "
 # talloc
 BUILD_DEPENDS+=		talloc>=2.1.3_1:${PORTSDIR}/devel/talloc
 RUN_DEPENDS+=		talloc>=2.1.3_1:${PORTSDIR}/devel/talloc
@@ -151,7 +153,6 @@ DEBUG_DESC=		With debug information in the binaries
 DNSUPDATE_DESC=		Dynamic DNS update (require ADS)
 EXP_MODULES_DESC=	Experimental modules
 FAM_DESC=		File Alteration Monitor support
-GLUSTERFS=		Gluster filesystem support
 LDAP_DESC=		LDAP client support
 LIBZFS_DESC=		LibZFS support
 PTHREADPOOL_DESC=	Pthread pool
@@ -165,11 +166,12 @@ DEVELOPER_DESC=		With development support
 MANPAGES_DESC=		Build manpages from DOCBOOK templates
 
 OPTIONS_RADIO=		DNS ZEROCONF
-OPTIONS_RADIO_DNS=	NSUPDATE BIND99 BIND910
+OPTIONS_RADIO_DNS=	NSUPDATE BIND99 BIND910 BIND911
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
 
 BIND99_DESC=		Use bind99 as AD DC DNS server frontend
 BIND910_DESC=		Use bind910 as AD DC DNS server frontend
+BIND911_DESC=		Use bind911 as AD DC DNS server frontend
 NSUPDATE_DESC=		Use samba NSUPDATE utility for AD DC
 
 .include <bsd.port.options.mk>
@@ -181,16 +183,7 @@ CONFIGURE_ARGS+=	\
 			--with-pam \
 			--with-regedit \
 			--with-sendfile-support \
-			--with-winbind \
-			--without-fake-kaserver \
-			--without-lttng \
-			--without-profiling-data \
-			--without-systemd \
-			--enable-gnutls \
-			--builtin-libraries=smbclient \
-			--without-pie \
 			${ICONV_CONFIGURE_BASE}
-
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 .if ${ARCH} == "amd64"
 CFLAGS+=		-fno-omit-frame-pointer
@@ -201,6 +194,9 @@ RUN_DEPENDS+=		bind99>=9.9.0.0:${PORTSDIR}/dns/bind99
 SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MBIND910}
 RUN_DEPENDS+=		bind910>=9.10.0.0:${PORTSDIR}/dns/bind910
+SUB_LIST+=		NSUPDATE="@comment "
+.elif ${PORT_OPTIONS:MBIND911}
+RUN_DEPENDS+=		bind911>=9.11.0.0:dns/bind911
 SUB_LIST+=		NSUPDATE="@comment "
 .elif ${PORT_OPTIONS:MNSUPDATE}
 RUN_DEPENDS+=		samba-nsupdate:${PORTSDIR}/dns/samba-nsupdate
@@ -229,11 +225,12 @@ GDB_CMD?=		${LOCALBASE}/bin/gdb
 BUILD_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
 RUN_DEPENDS+=		${GDB_CMD}:${PORTSDIR}/devel/gdb
 SAMBA4_MODULES+=	auth_skel perfcount_test pdb_test vfs_shadow_copy_test vfs_skel_opaque vfs_skel_transparent vfs_fake_acls
-CONFIGURE_ARGS+=	--enable-developer --enable-selftest
-PLIST_SUB+=		DEVELOPER=""
+CONFIGURE_ARGS+=	--enable-developer --enable-selftest --with-ntvfs-fileserver --abi-check-disable
+PLIST_SUB+=		DEVELOPER="" NTVFS=""
 .else
 GDB_CMD=		true
-PLIST_SUB+=		DEVELOPER="@comment "
+CONFIGURE_ARGS+=	--without-ntvfs-fileserver
+PLIST_SUB+=		DEVELOPER="@comment " NTVFS="@comment "
 .endif
 ##############################################################################
 # XXX: That will blow up your installation
@@ -388,13 +385,14 @@ PLIST_SUB+=		PDB_FREENAS="@comment "
 
 .if defined(SAMBA4_WANT_ADS)
 CONFIGURE_ARGS+=	--with-ads
+PLIST_SUB+=		ADS=""
 .else
 CONFIGURE_ARGS+=	--without-ads
+PLIST_SUB+=		ADS="@comment "
 .endif
 
 .if defined(SAMBA4_WANT_LDAP)
 USE_OPENLDAP=		yes
-#WANT_OPENLDAP_SASL=	yes
 CONFIGURE_ARGS+=	--with-ldap
 PLIST_SUB+=		LDAP=""
 .else
@@ -517,13 +515,12 @@ IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with 
 
 
 post-extract:
-			@${RM} -rf ${WRKSRC}/pidl
+			@${RM} -r ${WRKSRC}/pidl/lib/Parse/Yapp
 
 post-patch:
 			@${REINPLACE_CMD} -e 's|$${PKGCONFIGDIR}|${PKGCONFIGDIR}|g' \
 				${PATCH_WRKSRC}/buildtools/wafsamba/pkgconfig.py
 			@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-				${PATCH_WRKSRC}/buildtools/wafsamba/samba_pidl.py \
 				${PATCH_WRKSRC}/buildtools/wafsamba/wafsamba.py
 			@${REINPLACE_CMD} -e 's|%%GDB_CMD%%|${GDB_CMD}|g' \
 				${PATCH_WRKSRC}/buildtools/scripts/abi_gen.sh
@@ -539,38 +536,28 @@ pre-configure:
 				${FALSE}; \
 			fi
 
-# XXX: Gross hack to allow build newer Samba while old one is installed.
-# This implies that LINKFLAGS_PYEMBED contains flags which are already
-# used in other parts of LINKFLAGS, namely -L$(LOCALBASE)/lib and -pthread
-post-configure:
-	-${REINPLACE_CMD} -e 's|LINKFLAGS_PYEMBED.*|LINKFLAGS_PYEMBED = []|' \
-		${CONFIGURE_WRKSRC}/bin/c4che/default.cache.py
-
-#pre-build:
-#.if ! ${PORT_OPTIONS:MMANPAGES}
-#.	for man in	libcli/nbt/man/nmblookup4.1 \
-#			librpc/tools/ndrdump.1 \
-#			source4/lib/registry/man/regdiff.1 \
-#			source4/lib/registry/man/regpatch.1 \
-#			source4/lib/registry/man/regshell.1 \
-#			source4/lib/registry/man/regtree.1 \
-#			source4/torture/man/gentest.1 \
-#			source4/torture/man/locktest.1 \
-#			source4/torture/man/masktest.1 \
-#			source4/torture/man/smbtorture.1 \
-#			source4/utils/man/ntlm_auth4.1 \
-#			source4/utils/man/oLschemaldif.1 \
-#			source4/utils/man/oLschema2ldif.1
-#			-@${MKDIR} `dirname ${BUILD_WRKSRC}/bin/default/${man}`
-#			${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
-#			#@${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
-#.	endfor
-#			-@${MKDIR} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
-#.	for man in ${SAMBA_MAN1} ${SAMBA_MAN5} ${SAMBA_MAN7} ${SAMBA_MAN8}
-#			-${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
-#			#-@${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
-#.	endfor
-#.endif
+pre-build:
+.if ! ${PORT_OPTIONS:MMANPAGES}
+.	for man in	libcli/nbt/man/nmblookup4.1 \
+			librpc/tools/ndrdump.1 \
+			source4/lib/registry/man/regdiff.1 \
+			source4/lib/registry/man/regpatch.1 \
+			source4/lib/registry/man/regshell.1 \
+			source4/lib/registry/man/regtree.1 \
+			source4/torture/man/gentest.1 \
+			source4/torture/man/locktest.1 \
+			source4/torture/man/masktest.1 \
+			source4/torture/man/smbtorture.1 \
+			source4/utils/man/ntlm_auth4.1 \
+			source4/utils/man/oLschema2ldif.1
+			-@${MKDIR} `dirname ${BUILD_WRKSRC}/bin/default/${man}`
+			${INSTALL_MAN} ${FILESDIR}/man/`basename ${man}` ${BUILD_WRKSRC}/bin/default/${man}
+.	endfor
+			-@${MKDIR} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
+.	for man in ${SAMBA_MAN1} ${SAMBA_MAN5} ${SAMBA_MAN7} ${SAMBA_MAN8}
+			-${INSTALL_MAN} ${BUILD_WRKSRC}/docs/manpages/${man} ${BUILD_WRKSRC}/bin/default/docs-xml/manpages
+.	endfor
+.endif
 
 post-install:
 			@${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz

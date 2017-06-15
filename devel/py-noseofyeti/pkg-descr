@@ -1,6 +1,6 @@
 Nose plugin providing BDD dsl for python
 
-Plugin for nose, inspired by http://github.com/fmeyer/yeti, which
+Plugin for nose, inspired by https://github.com/fmeyer/yeti, which
 uses a codec style to provide an RSpec style BDD dsl for python
 tests
 

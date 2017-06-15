@@ -1,0 +1,33 @@
+--- src/Makefile.orig	2016-06-27 06:54:00 UTC
++++ src/Makefile
+@@ -62,11 +62,19 @@ PREFIX ?= /usr/local
+ LIBDIRNAME ?= /lib/faketime
+ PLATFORM ?=$(shell uname)
+ 
+-CFLAGS += -std=gnu99 -Wall -Wextra -Werror -DFAKE_STAT -DFAKE_SLEEP -DFAKE_TIMERS -DFAKE_INTERNAL_CALLS -fPIC -DPREFIX='"'$(PREFIX)'"' -DLIBDIRNAME='"'$(LIBDIRNAME)'"'
++# Honour/Respect User *FLAGS
++# User variables come LAST. Do NOT append to them.
++
++WARNS ?= -Wall -Wextra -Werror
++FEATS ?= -DFAKE_STAT -DFAKE_SLEEP -DFAKE_TIMERS -DFAKE_INTERNAL_CALLS
++FLAGS ?= -std=gnu99 -fPIC $(WARNS) $(FEATS) -DPREFIX='"'$(PREFIX)'"' -DLIBDIRNAME='"'$(LIBDIRNAME)'"'
++
+ ifeq ($(PLATFORM),SunOS)
+-CFLAGS += -D__EXTENSIONS__ -D_XOPEN_SOURCE=600
++FLAGS += -D__EXTENSIONS__ -D_XOPEN_SOURCE=600
+ endif
+ 
++CFLAGS := $(FLAGS) $(CFLAGS)
++
+ LIB_LDFLAGS += -shared
+ 
+ LDFLAGS += -lpthread
+@@ -74,7 +82,7 @@ ifneq ($(PLATFORM),SunOS)
+ LDFLAGS += -Wl,--version-script=libfaketime.map
+ endif
+ 
+-LDADD += -ldl -lm -lrt
++LDADD += -lm -lrt
+ BIN_LDFLAGS += -lrt
+ 
+ SRC = libfaketime.c

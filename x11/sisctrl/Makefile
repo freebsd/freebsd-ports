@@ -3,7 +3,7 @@
 
 PORTNAME=	sisctrl
 PORTVERSION=	0.0.20051202
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://www.winischhofer.net/sis/
 

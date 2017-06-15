@@ -10,6 +10,7 @@
 %%LINKS%%%%FCDIR_LINKS%%/57-dejavu-sans-mono.conf
 %%LINKS%%%%FCDIR_LINKS%%/57-dejavu-sans.conf
 %%LINKS%%%%FCDIR_LINKS%%/57-dejavu-serif.conf
+%%FONTSDIR%%/DejaVuMathTeXGyre.ttf
 %%FONTSDIR%%/DejaVuSans-Bold.ttf
 %%FONTSDIR%%/DejaVuSans-BoldOblique.ttf
 %%FONTSDIR%%/DejaVuSans-ExtraLight.ttf

@@ -4,6 +4,7 @@
 
 PORTNAME=	telepathy-idle
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -13,10 +14,9 @@ COMMENT=	IRC Connection Manager for Telepathy Framework
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib
 
-USES=		execinfo gmake libtool pathfix pkgconfig python:build
+USES=		execinfo gmake libtool pathfix pkgconfig python:2,build ssl
 USE_GNOME=	glib20 libxslt:build
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip

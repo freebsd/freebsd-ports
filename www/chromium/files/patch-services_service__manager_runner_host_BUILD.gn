@@ -1,0 +1,11 @@
+--- services/service_manager/runner/host/BUILD.gn.orig	2017-04-19 19:06:37 UTC
++++ services/service_manager/runner/host/BUILD.gn
+@@ -28,7 +28,7 @@ source_set("lib") {
+     "//mojo/public/cpp/system",
+   ]
+ 
+-  if (is_linux && !is_android) {
++  if (is_linux && !is_android && !is_bsd) {
+     deps += [ "//sandbox/linux:sandbox_services" ]
+   }
+ }

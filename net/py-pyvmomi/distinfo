@@ -1,3 +1,3 @@
-TIMESTAMP = 1471345282
-SHA256 (pyvmomi-6.0.0.2016.6.tar.gz) = b0674174e2799ca4b29daacfb839c68ddd3cc6d92edeb28bf396ce0cb4d23a51
-SIZE (pyvmomi-6.0.0.2016.6.tar.gz) = 218882
+TIMESTAMP = 1479291270
+SHA256 (pyvmomi-6.5.tar.gz) = fa6a31c747a7d7042a2ad90e7895cab824ba036dcf26ff2f84374e150eac6dfa
+SIZE (pyvmomi-6.5.tar.gz) = 250996

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgeotiff
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
 		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \

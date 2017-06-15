@@ -2,16 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
-		ftp://gd.tuwien.ac.at/infosys/security/chkrootkit/ \
-		ftp://ftp.digitalvoodoo.org/pub/mirrors/chkrootkit/ \
-		http://www.spenneberg.org/chkrootkit-mirror/files/ \
-		http://www.mirrors.wiretapped.net/security/host-security/chkrootkit/ \
-		http://ftp.uni-stuttgart.de/pub/security/unix/forensics/chkrootkit/ \
-		http://ftp.bit.nl/mirror/chkrootkit/ \
-		http://chkrootkit.mirror.fr/
+MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
 MAINTAINER=	lacey.leanne@gmail.com
 COMMENT=	Tool to locally check for signs of a rootkit

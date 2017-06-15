@@ -7,11 +7,13 @@ CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR FileIterator implementation
 
 BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+
+BROKEN=		unfetchable, redirects to https://phpunit.de/
 
 USES=	pear
 PEAR_CHANNEL=	phpunit

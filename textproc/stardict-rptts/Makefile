@@ -4,16 +4,12 @@
 PORTNAME=	stardict-rptts
 PORTVERSION=	2.1.0
 CATEGORIES=	textproc
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/stardict-4/WyabdcRealPeopleTTS
 DISTNAME=	WyabdcRealPeopleTTS
 DIST_SUBDIR=	stardict
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Real People TTS for StarDict
-
-BROKEN=		Unfetchable (google code has gone away)
-
-PROJECTHOST=	stardict-3
 
 NO_BUILD=	yes
 USES=		tar:bzip2

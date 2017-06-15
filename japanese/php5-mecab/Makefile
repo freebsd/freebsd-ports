@@ -4,7 +4,7 @@ PORTNAME=	mecab
 PORTVERSION=	0.5.0
 PORTREVISION=	1
 CATEGORIES=	japanese
-MASTER_SITES=	http://github.com/downloads/rsky/php-${PORTNAME}/
+MASTER_SITES=	https://github.com/downloads/rsky/php-${PORTNAME}/
 DISTNAME=	php-mecab-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -14,7 +14,7 @@ COMMENT=	PHP5 extension for MeCab Morphological Analyzer
 LIB_DEPENDS=	libmecab.so:japanese/mecab
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config
 
 .include <bsd.port.pre.mk>

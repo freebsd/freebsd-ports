@@ -3,6 +3,10 @@ bin/jt65code
 bin/jt9
 bin/jt9code
 bin/message_aggregator
+bin/msk144code
+bin/qra64code
+bin/qra64sim
+bin/udp_daemon
 bin/wsjtx
 bin/wsprd
 man/man1/jt4code.1.gz
@@ -10,8 +14,10 @@ man/man1/jt65code.1.gz
 man/man1/jt9.1.gz
 man/man1/jt9code.1.gz
 man/man1/message_aggregator.1.gz
+man/man1/udp_daemon.1.gz
 man/man1/wsjtx.1.gz
 man/man1/wsprd.1.gz
+share/applications/message_aggregator.desktop
 share/applications/wsjtx.desktop
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/BUGS
@@ -22,6 +28,6 @@ share/applications/wsjtx.desktop
 %%DOCSDIR%%/THANKS
 %%DOCSDIR%%/changelog.Debian.gz
 %%DOCSDIR%%/copyright
-%%DOCSDIR%%/wsjtx-main-1.6.0.html
+%%DOCSDIR%%/wsjtx-main-1.7.0.html
 share/pixmaps/wsjtx_icon.png
 %%DATADIR%%/JPLEPH

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	security
 MASTER_SITES=	http://download.libsodium.org/libsodium/releases/
 
@@ -11,29 +11,20 @@ COMMENT=	Library to build higher-level cryptographic tools
 LICENSE=	ISCL
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig compiler:c11
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 CONFIGURE_ARGS+=	--enable-blocking-random
 INSTALL_TARGET?=	install-strip
+TEST_TARGET=		check
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${ARCH} == i386 && ${OSVERSION} < 1000036
-# resolve undefined reference to __stack_chk_fail_local
-LDFLAGS+=	-lssp_nonshared -Wl,--no-undefined
-.endif
-
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README.markdown ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/THANKS ${STAGEDIR}${DOCSDIR}/
 
-regression-test: build
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} check)
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

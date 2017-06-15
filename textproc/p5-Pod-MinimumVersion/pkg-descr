@@ -1,0 +1,5 @@
+Pod::MinimumVersion parses the POD in a Perl script, module, or document, and
+reports what version of Perl is required to process the directives in it with
+pod2man etc.
+
+WWW: http://search.cpan.org/dist/Pod-MinimumVersion/

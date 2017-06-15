@@ -23,14 +23,12 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		libfftw3.so:math/fftw3
 RUN_DEPENDS=	ladspa>0:audio/ladspa
 
-USES=		gmake ncurses pkgconfig
+USES=		gmake localbase ncurses pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-Wno-error=write-strings
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		ALSA WXGTK
 OPTIONS_DEFAULT=	WXGTK
@@ -41,25 +39,16 @@ ALSA_CONFIGURE_ENV_OFF=	ac_cv_header_alsa_asoundlib_h=no
 WXGTK_USE=		WX=3.0
 WXGTK_CONFIGURE_ON=	--with-wxconfig-path=${WX_CONFIG}
 WXGTK_CONFIGURE_OFF=	--without-gui
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWXGTK}
-DESKTOP_ENTRIES="SooperLooper" "" "${DATADIR}/sl_logo.xpm" "slgui" \
-		"AudioVideo;Audio;Player;GTK;" ""
-.endif
+WXGTK_DESKTOP_ENTRIES=	"SooperLooper" "" "${DATADIR}/sl_logo.xpm" "slgui" \
+			"AudioVideo;Audio;Player;GTK;" ""
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$OPT_FLAGS|$$CXXFLAGS| ; \
 		 /^CXXFLAGS/s|-g|$$CXXFLAGS| ; \
-		 s|-fo-merge-constants|| ; \
-		 s|-lpthread|-pthread|'
+		 s|-fo-merge-constants||'
 
-post-install:
-.if ${PORT_OPTIONS:MWXGTK}
-	(cd ${WRKSRC}/src/gui/pixmaps && ${INSTALL_DATA} sl_logo.xpm \
-		${STAGEDIR}${DATADIR})
-.endif
+post-install-WXGTK-on:
+	${INSTALL_DATA} ${WRKSRC}/src/gui/pixmaps/sl_logo.xpm ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

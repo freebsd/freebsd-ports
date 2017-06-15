@@ -13,6 +13,8 @@ COMMENT=	Embeddable Scheme interpreter
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libelf.so:devel/libelf
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		libtool motif tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

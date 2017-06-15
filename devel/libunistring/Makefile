@@ -1,15 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	libunistring
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Unicode string library
 
-LICENSE=	GPLv3 LGPL3
+LICENSE=	GPLv2 LGPL3+
 LICENSE_COMB=	dual
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LIB
 
 USES=		alias charsetfix gmake iconv libtool tar:xz
 USE_LDCONFIG=	yes

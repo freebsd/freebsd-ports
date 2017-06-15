@@ -5,9 +5,10 @@ PKGNAMESUFFIX=	-daemon
 
 COMMENT=	Virtual Peer-to-Peer Currency (Daemon)
 
-BROKEN_powerpc64=	Does not build
-
 SLAVE_PORT=	yes
+
+BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not build
 
 USES+=		cpe
 CPE_VENDOR=	bitcoin

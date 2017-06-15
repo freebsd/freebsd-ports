@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	dz@426.ch
 COMMENT=	Schedules periodic jobs on systems that are not permanently up
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake
 USE_RC_SUBR=	anacron
 SUB_FILES=	pkg-message
@@ -25,6 +28,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/anacron.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/anacrontab.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 	${INSTALL_DATA} ${FILESDIR}/anacrontab.sample ${STAGEDIR}${PREFIX}/etc
-	[ -d ${STAGEDIR}/var/spool/anacron ] || ${MKDIR} ${STAGEDIR}/var/spool/anacron
+	@${MKDIR} ${STAGEDIR}/var/spool/anacron
 
 .include <bsd.port.mk>

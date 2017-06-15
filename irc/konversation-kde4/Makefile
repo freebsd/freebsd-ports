@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	irc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	User friendly IRC client for KDE
 
 LIB_DEPENDS=	libqca.so:devel/qca

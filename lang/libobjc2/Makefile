@@ -18,19 +18,10 @@ BROKEN_sparc64=		Does not compile on sparc64: Cannot configure clang properly
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnustep
 
-.include <bsd.port.options.mk>
-
 SHLIB_MAJOR=	4
 SHLIB_MINOR=	6
 
 PLIST_SUB+=	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
-
-.if ${OSVERSION} < 902000
-CMAKE_ARGS+=	-DFORCE_LIBOBJCXX=ON
-PLIST_SUB+=	WITH_SEPARATECXX=""
-.else
-PLIST_SUB+=	WITH_SEPARATECXX="@comment "
-.endif
 
 CMAKE_ARGS+=	-DLIB_INSTALL_PATH=lib
 CMAKE_ARGS+=	-DTESTS=OFF
@@ -38,13 +29,7 @@ CMAKE_ARGS+=	-DTESTS=OFF
 # name...
 CMAKE_ARGS+=	-DLLVM_OPTS=OFF
 
-.if ${OSVERSION} < 902000
 post-install:
 	${LN} -sf libobjc.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libobjc.so.${SHLIB_MAJOR}
-	${LN} -sf libobjcxx.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libobjcxx.so.${SHLIB_MAJOR}
-.else
-post-install:
-	${LN} -sf libobjc.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libobjc.so.${SHLIB_MAJOR}
-.endif
 
 .include <bsd.port.mk>

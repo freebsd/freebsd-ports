@@ -5,15 +5,13 @@ PORTNAME=	xdelta
 PORTVERSION=	1.1.4
 PORTREVISION=	5
 CATEGORIES=	misc devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://www.mirrorservice.org/sites/vectorlinux.com/veclinux-6.0/source/extra/x-apps/xdelta/1.1.4/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Diff/patch utility for binary files
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES=		libtool pkgconfig
 USE_GNOME=	glib20

@@ -1,16 +1,6 @@
---- src/modules/module-detect.c.orig	2015-09-10 04:51:41 UTC
+--- src/modules/module-detect.c.orig	2016-05-10 12:28:04 UTC
 +++ src/modules/module-detect.c
-@@ -46,7 +46,9 @@ PA_MODULE_DESCRIPTION("Detect available 
- PA_MODULE_VERSION(PACKAGE_VERSION);
- PA_MODULE_LOAD_ONCE(true);
- PA_MODULE_USAGE("just-one=<boolean>");
-+#ifdef __linux__
- PA_MODULE_DEPRECATED("Please use module-udev-detect instead of module-detect!");
-+#endif
- 
- static const char* const valid_modargs[] = {
-     "just-one",
-@@ -157,11 +159,45 @@ static int detect_oss(pa_core *c, int ju
+@@ -160,11 +160,45 @@ static int detect_oss(pa_core *c, int ju
                  continue;
  
          } else if (sscanf(line, "pcm%u: ", &device) == 1) {
@@ -24,12 +14,12 @@
 +                continue;
 +
 +            if (!pa_endswith(line, "default"))
-                 continue;
++                continue;
 +
 +            const char *p = strrchr(line, '(');
 +
 +            if (!p)
-+                continue;
+                 continue;
 +
 +            if (!c->default_sink && (strstr(p, "play") || (strstr(p, "p:") && !strstr(p, "(0p:")))) {
 +                uint32_t idx = PA_IDXSET_INVALID;

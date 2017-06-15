@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: shairport_sync
+# REQUIRE: LOGIN avahi_daemon
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable shairport_sync:
+#
+# shairport_sync_enable (bool):	Set it to "YES" to enable shaiport.
+#				Default is "NO".
+# shairport_sync_flags (flags):	Set extra flags here.
+#				shairport_sync_flags="-a name" to change Airport name
+#				Default is empty "".
+# shairport_sync_user (user):	Set user to run shairport_sync.
+#				Default is "nobody".
+
+. /etc/rc.subr
+
+name="shairport_sync"
+rcvar=shairport_sync_enable
+
+load_rc_config ${name}
+
+: ${shairport_sync_enable="NO"}
+: ${shairport_sync_user="nobody"}
+
+command="%%PREFIX%%/bin/shairport-sync"
+pidfile="/var/run/shairport-sync/shairport-sync.pid"
+
+command_args="-d -w ${pidfile}"
+start_precmd="install -d -o ${shairport_sync_user} -g wheel -m 755 /var/run/shairport-sync"
+
+run_rc_command "$1"

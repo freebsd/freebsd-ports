@@ -341,7 +341,7 @@ gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.so
 gst_ogg_LIB_DEPENDS=	libogg.so:audio/libogg
 
 # opencv
-gst_opencv_LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv
+gst_opencv_LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv2
 gst_opencv_PLIST_FILES=	${GST_LIB_DIR}/libgstopencv.so \
 			share/gst-plugins-bad/${VERSION}/opencv_haarcascades/fist.xml \
 			share/gst-plugins-bad/${VERSION}/opencv_haarcascades/palm.xml

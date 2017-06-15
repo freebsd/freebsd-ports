@@ -3,7 +3,7 @@
 
 PORTNAME=	unworkable
 PORTVERSION=	0.53
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,11 +13,12 @@ COMMENT=	Free BitTorrent Implementation
 LICENSE=	MIT
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		scons
-USE_OPENSSL=	yes
+USES=		scons ssl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

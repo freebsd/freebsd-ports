@@ -12,4 +12,4 @@ Typical usage is as follows:
 
 Run `zfs-snapshot-clean -h' for details.
 
-WWW: http://github.com/knu/zfs-snapshot-clean
+WWW: https://github.com/knu/zfs-snapshot-clean

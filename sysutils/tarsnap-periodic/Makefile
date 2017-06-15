@@ -2,17 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	tarsnap-periodic
-PORTVERSION=	1.0.20160229
+PORTVERSION=	1.0.20160911
 CATEGORIES=	sysutils
 
 MAINTAINER=	kamila@ksp.sk
 COMMENT=	Simple way of making tarsnap backups using the periodic system
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=    tarsnap:sysutils/tarsnap
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	anotherkamila
-GH_TAGNAME=	e593907
+GH_TAGNAME=	16f5580
 
 NO_ARCH=	yes
 NO_BUILD=	yes

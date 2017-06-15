@@ -40,6 +40,9 @@ PLIST_FILES=	${U_BOOT_DIR}/u-boot.img \
 MAKE_ARGS+=	ARCH=arm \
 		CROSS_COMPILE=arm-none-eabi-
 
+post-patch:
+	@${LN} -sf compiler-gcc5.h ${WRKSRC}/include/linux/compiler-gcc6.h
+
 do-configure:
 	(cd ${WRKSRC}; ${MAKE_CMD} rpi_defconfig)
 

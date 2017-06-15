@@ -2,14 +2,14 @@
 
 PORTNAME=	oxygen
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	x11-themes kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
+CATEGORIES=	x11-themes kde kde-kde4
 PKGNAMEPREFIX=	kde4-icons-
 DISTNAME=	${PORTNAME}-icons-${PORTVERSION}
-DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The Oxygen icon theme for KDE
+
+CONFLICTS_INSTALL=	kf5-oxygen-icons5-5.*
 
 USES=		cmake:outsource kde:4 tar:xz
 INSTALL_TARGET=	install

@@ -2,7 +2,7 @@
 
 PORTNAME=	rack-accept
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	HTTP Accept* for Ruby/Rack
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack16>=0.4:www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack>=0.4:www/rubygem-rack
 
 NO_ARCH=	yes
 USE_RUBY=	yes

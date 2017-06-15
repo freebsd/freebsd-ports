@@ -3,7 +3,7 @@
 
 PORTNAME=	sane-frontends
 PORTVERSION=	1.0.14
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/1140/ \
 		ftp://ftp2.sane-project.org/pub/sane/

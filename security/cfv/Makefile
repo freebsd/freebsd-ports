@@ -6,7 +6,7 @@ PORTVERSION=	1.18.3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	matthew@reztek.cz
+MAINTAINER=	rezny@FreeBSD.org
 COMMENT=	Utility to both test and create .sfv, .csv, and md5sum files
 
 USES=		python:2

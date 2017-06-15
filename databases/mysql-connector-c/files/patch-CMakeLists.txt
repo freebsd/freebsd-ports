@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2015-02-25 21:09:49 UTC
+--- CMakeLists.txt.orig	2017-03-04 21:11:15 UTC
 +++ CMakeLists.txt
-@@ -541,7 +541,7 @@ ADD_SUBDIRECTORY(packaging/WiX)
+@@ -562,7 +562,7 @@ ADD_SUBDIRECTORY(packaging/WiX)
  #
  # RPM installs documentation directly from the source tree
  #
 -IF(NOT INSTALL_LAYOUT MATCHES "RPM")
 +IF(NOT INSTALL_LAYOUT MATCHES "RPM" AND 0)
-   INSTALL(FILES COPYING LICENSE.mysql 
-     DESTINATION ${INSTALL_DOCREADMEDIR} 
+   INSTALL(FILES COPYING LICENSE.mysql
+     DESTINATION ${INSTALL_DOCREADMEDIR}
      COMPONENT Readme

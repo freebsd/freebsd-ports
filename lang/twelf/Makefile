@@ -3,10 +3,10 @@
 
 PORTNAME=	twelf
 PORTVERSION=	1.7.1
+DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang math
 MASTER_SITES=	http://twelf.plparty.org/releases/ \
-	http://www-2.cs.cmu.edu/~twelf/dist/ http://www.cs.cmu.edu/~twelf/dist/
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+		http://www-2.cs.cmu.edu/~twelf/dist/ http://www.cs.cmu.edu/~twelf/dist/
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Meta-logical framework for deductive systems
@@ -18,43 +18,36 @@ RUN_DEPENDS=	mlton:lang/mlton
 BUILD_DEPENDS=	mlton:lang/mlton \
 		texi2html:textproc/texi2html
 
-USES=	gmake
+OPTIONS_DEFINE=	DOCS
+
+USES=		gmake
 ALL_TARGET=	mlton
 PLIST_FILES=	bin/${PORTNAME}-server
 PORTDATA=	emacs examples examples-clp examples-delphin tex vim README
 PORTDOCS=	dvi html info pdf ps
+WRKSRC=		${WRKDIR}/twelf
+INFO=		twelf
 
-.include <bsd.port.options.mk>
+DOCS_USE=	TEX=dvipsk:build,tex:build
+DOCS_USES=	makeinfo
 
-.if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	tex:build dvipsk:build
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:print/texinfo
-.endif
-
-post-patch:
-.if ${PORT_OPTIONS:MDOCS}
+post-patch-DOCS-on:
 	@${REINPLACE_CMD} 's|-number|-number-sections|g' \
 		${WRKSRC}/doc/guide/Makefile
 	@${REINPLACE_CMD} 's|twelf_\*.html|twelf/\*.html|g' \
 		${WRKSRC}/doc/guide/Makefile
-.endif
 
-post-build:
-.if ${PORT_OPTIONS:MDOCS}
+post-build-DOCS-on:
 	cd ${WRKSRC}/doc/guide && ${MAKE} all ${INSTALL_TARGET}
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME}-server \
 		${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
-.endif
-
-WRKSRC=		${WRKDIR}/twelf
-INFO=		twelf
 
 .include <bsd.port.mk>

@@ -5,4 +5,5 @@ OpenBSD, and NetBSD. It can test network stack behavior over physical
 NICs on a LAN, or on a single machine using a tun virtual network
 device.
 
-WWW: https://code.google.com/p/packetdrill/
+WWW: https://github.com/google/packetdrill
+WWW: https://github.com/freebsd-net/packetdrill

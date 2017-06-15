@@ -3,6 +3,7 @@
 
 PORTNAME=	cilkplus
 PORTVERSION=	20160603
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	https://www.cilkplus.org/sites/default/files/runtime_source/
 PKGNAMESUFFIX=	-rtl
@@ -15,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 HG_REVISION=	004467
 
-USE_GCC=	4.9+
+USE_GCC=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 

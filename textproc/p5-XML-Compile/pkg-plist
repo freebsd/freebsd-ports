@@ -1,4 +1,5 @@
 bin/schema2example
+bin/xml2json
 bin/xml2yaml
 %%SITE_PERL%%/XML/Compile.pm
 %%SITE_PERL%%/XML/Compile.pod
@@ -36,6 +37,7 @@ bin/xml2yaml
 %%SITE_PERL%%/XML/Compile/xsd/2001-XMLSchema.xsd
 %%SITE_PERL%%/XML/Compile/xsd/2001-datatypes.dtd
 %%PERL5_MAN1%%/schema2example.1.gz
+%%PERL5_MAN1%%/xml2json.1.gz
 %%PERL5_MAN1%%/xml2yaml.1.gz
 %%PERL5_MAN3%%/XML::Compile.3.gz
 %%PERL5_MAN3%%/XML::Compile::FAQ.3.gz

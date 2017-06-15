@@ -12,7 +12,7 @@ COMMENT=	Modern plotting toolkit supporting electronic publishing
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.7:math/py-numpy \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.7,1:math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}colormath>=2.1.1:math/py-colormath \
 		${PYTHON_PKGNAMEPREFIX}multipledispatch>=0.4.7:devel/py-multipledispatch
 

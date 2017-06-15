@@ -1,5 +1,5 @@
---- Makefile.orig	2015-05-16 17:22:04.000000000 +0200
-+++ Makefile	2015-12-20 13:01:04.141904000 +0100
+--- Makefile.orig	2016-10-21 15:02:43 UTC
++++ Makefile
 @@ -255,9 +255,6 @@
  	$(INSTALL) -m 0644 gen_ndr/ndr_property.h $(DESTDIR)$(includedir)/gen_ndr/
  	$(INSTALL) -m 0644 gen_ndr/asyncemsmdb.h $(DESTDIR)$(includedir)/gen_ndr/
@@ -25,7 +25,7 @@
 -	@$(SED) $(DESTDIR)$(includedir)/libmapiadmin/*.h
  
  libmapiadmin-uninstallpc:
- 	rm -f $(DESTDIR)$(libdir)/pkgconfig/libmapiadmin.pc
+ 	rm -f $(DESTDIR)$(prefix)/libdata/pkgconfig/libmapiadmin.pc
 @@ -643,7 +638,6 @@
  	@echo "[*] install: libocpf headers"
  	$(INSTALL) -d $(DESTDIR)$(includedir)/libocpf
@@ -33,17 +33,17 @@
 -	@$(SED) $(DESTDIR)$(includedir)/libocpf/*.h
  
  libocpf-uninstallpc:
- 	rm -f $(DESTDIR)$(libdir)/pkgconfig/libocpf.pc
+ 	rm -f $(DESTDIR)$(prefix)/libdata/pkgconfig/libocpf.pc
 @@ -830,7 +824,6 @@
  endif
  	$(INSTALL) -m 0644 mapiproxy/libmapiserver/libmapiserver.h $(DESTDIR)$(includedir)/
- 	$(INSTALL) -m 0644 mapiproxy/libmapiserver.pc $(DESTDIR)$(libdir)/pkgconfig
+ 	$(INSTALL) -m 0644 mapiproxy/libmapiserver.pc $(DESTDIR)$(prefix)/libdata/pkgconfig
 -	@$(SED) $(DESTDIR)$(includedir)/*.h
  
  libmapiserver-clean:
  	rm -f mapiproxy/libmapiserver/*.po mapiproxy/libmapiserver/*.o
 @@ -920,7 +913,6 @@
- 	$(INSTALL) -m 0644 mapiproxy/libmapiserver.pc $(DESTDIR)$(libdir)/pkgconfig
+ 	$(INSTALL) -m 0644 mapiproxy/libmapiserver.pc $(DESTDIR)$(prefix)/libdata/pkgconfig
  	$(INSTALL) -d $(DESTDIR)$(datadir)/setup/mapistore
  	$(INSTALL) -m 0644 setup/mapistore/*.ldif $(DESTDIR)$(datadir)/setup/mapistore/
 -	@$(SED) $(DESTDIR)$(includedir)/mapistore/*.h

@@ -3,7 +3,7 @@
 
 PORTNAME=	libtre
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://laurikari.net/tre/ \
 		LOCAL/bf
@@ -94,7 +94,7 @@ pgo-clean:
 . endfor
 # Only remove some files from lib to preserve profiling information.
 	@${FIND} -E ${BUILD_WRKSRC}/lib -iregex ".*\.(a|la|lai|lo|o|so|so\..*)$$" \
-		-exec ${RM} -f {} \;
+		-exec ${RM} {} \;
 .endif # if ${PORT_OPTIONS:MPGO}
 
 .include <bsd.port.mk>

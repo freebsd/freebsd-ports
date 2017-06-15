@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	5.0.10
+PORTVERSION=	5.0.14
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -134,7 +134,7 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -i '' \
 			-e 's|Digest::SHA::PurePerl|Digest::SHA|g'
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
-	@${RM} -rf ${WRKSRC}/Kernel/cpan-lib/ \
+	@${RM} -r ${WRKSRC}/Kernel/cpan-lib/ \
 		${CLEAN_FILES:S!^!${WRKSRC}/!}
 
 do-build:

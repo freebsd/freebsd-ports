@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongo
-PORTVERSION=	1.12.5
+PORTVERSION=	2.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Ruby driver for MongoDB
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-bson1>=${PORTVERSION}:devel/rubygem-bson1
+RUN_DEPENDS=	rubygem-bson>=${PORTVERSION}:devel/rubygem-bson
 
 NO_ARCH=	yes
 USE_RUBY=	yes

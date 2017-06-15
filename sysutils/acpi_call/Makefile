@@ -12,8 +12,8 @@ COMMENT=	Kernel module for calling ACPI methods from userspace
 
 LICENSE=	BSD2CLAUSE
 
-ONLY_FOR_ARCHS=	amd64 i386 ia64
-ONLY_FOR_ARCHS_REASON=	not relevant for non-x86-derived architectures
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS_REASON=	not relevant for most non-x86-derived architectures
 
 USES=		kmod
 

@@ -1,4 +1,3 @@
-bin/libzen-config
 include/ZenLib/BitStream.h
 include/ZenLib/BitStream_Fast.h
 include/ZenLib/BitStream_LE.h

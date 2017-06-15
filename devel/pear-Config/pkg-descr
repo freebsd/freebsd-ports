@@ -8,4 +8,4 @@ The Config package provides methods for configuration manipulation.
 * Parses configurations into a tree structure
 * Provides XPath like access to directives
 
-WWW: http://pear.php.net/package/Config/
+WWW: https://pear.php.net/package/Config

@@ -1,4 +1,4 @@
 Simple monadic parser for ASN1 stream types, when ASN1 pattern matching
 is not convenient.
 
-WWW: http://github.com/vincenthz/hs-asn1
+WWW: https://github.com/vincenthz/hs-asn1

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
 
 USES=		php:ext tar:tgz
 
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--with-gmagick=${LOCALBASE}
 

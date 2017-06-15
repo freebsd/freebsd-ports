@@ -1,6 +1,6 @@
---- sigscheme/doc/Makefile.in.orig	2007-09-25 01:31:53.000000000 +0900
-+++ sigscheme/doc/Makefile.in	2007-09-25 01:33:45.000000000 +0900
-@@ -151,7 +151,7 @@
+--- sigscheme/doc/Makefile.in.orig	2016-10-14 09:57:35 UTC
++++ sigscheme/doc/Makefile.in
+@@ -210,7 +210,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@

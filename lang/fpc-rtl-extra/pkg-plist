@@ -9,6 +9,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/objects.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/objects.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/printer.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/printer.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/serial.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/serial.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/sockets.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/sockets.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-extra/ucomplex.o

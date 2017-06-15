@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	exprotobuf
-DISTVERSION=	1.2
+DISTVERSION=	1.2.5
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
 

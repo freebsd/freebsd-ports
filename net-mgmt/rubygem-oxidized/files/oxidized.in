@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: oxidized
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Configuration settings for oxidized in /etc/rc.conf:
+#
+# oxidized_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable oxidized
+#
+# oxidized_args (str):
+#   Extra arguments passed to start command
+#
+# oxidized_home (str)
+#   Set to "/var/db/oxidized" by default.
+#   Set the OXIDIZED_HOME variable for oxidized process
+#
+# oxidized_user (str):
+#   Set to "oxidized" by default.
+#   User to run oxidized as.
+#
+# oxidized_group (str):
+#   Set to "oxidized" by default.
+#   Group for data file ownership.
+#
+
+. /etc/rc.subr
+
+name="oxidized"
+rcvar=oxidized_enable
+
+load_rc_config "${name}"
+
+: ${oxidized_enable="NO"}
+: ${oxidized_home="/var/db/oxidized"}
+: ${oxidized_args=""}
+: ${oxidized_user="oxidized"}
+: ${oxidized_group="oxidized"}
+
+piddir="/var/run/${name}"
+pidfile="${piddir}/${name}.pid"
+procname=%%RUBY%%
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} %%PREFIX%%/bin/oxidized ${oxidized_args}"
+
+export HOME=${oxidized_home}
+
+start_precmd="oxidized_prestart"
+
+oxidized_prestart() {
+	if [ ! -d ${piddir} ]; then
+		install -d -o "${oxidized_user}" -g "${oxidized_group}" -m 750 ${piddir}
+	fi
+}
+
+run_rc_command "$1"

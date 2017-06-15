@@ -8,10 +8,11 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://abloz.com/huzheng/stardict-dic/mova.org/
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionaries from www.mova.org for StarDict
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES=		tar:bzip2
 
 DATADIR=	${PREFIX}/share/stardict

@@ -8,8 +8,6 @@
 %%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/run-at-time.elc
 %%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/uudecode.el
 %%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/uudecode.elc
-%%TRAMP_LISPDIR%%/password.el
-%%TRAMP_LISPDIR%%/password.elc
 %%TRAMP_LISPDIR%%/tramp-adb.el
 %%TRAMP_LISPDIR%%/tramp-adb.elc
 %%TRAMP_LISPDIR%%/tramp-cmds.el

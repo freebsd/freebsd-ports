@@ -2,6 +2,7 @@
 @group www
 %%WWWDIR%%/LICENSE.TXT
 %%WWWDIR%%/changelog.txt
+%%WWWDIR%%/js/tinymce/jquery.tinymce.min.js
 %%WWWDIR%%/js/tinymce/langs/readme.md
 %%WWWDIR%%/js/tinymce/license.txt
 %%WWWDIR%%/js/tinymce/plugins/advlist/plugin.min.js
@@ -48,7 +49,6 @@
 %%WWWDIR%%/js/tinymce/plugins/legacyoutput/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/link/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/lists/plugin.min.js
-%%WWWDIR%%/js/tinymce/plugins/media/moxieplayer.swf
 %%WWWDIR%%/js/tinymce/plugins/media/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/nonbreaking/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/noneditable/plugin.min.js
@@ -64,6 +64,7 @@
 %%WWWDIR%%/js/tinymce/plugins/template/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/textcolor/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/textpattern/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/toc/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/visualblocks/css/visualblocks.css
 %%WWWDIR%%/js/tinymce/plugins/visualblocks/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/visualchars/plugin.min.js
@@ -84,6 +85,7 @@
 %%WWWDIR%%/js/tinymce/skins/lightgray/img/trans.gif
 %%WWWDIR%%/js/tinymce/skins/lightgray/skin.ie7.min.css
 %%WWWDIR%%/js/tinymce/skins/lightgray/skin.min.css
+%%WWWDIR%%/js/tinymce/themes/inlite/theme.min.js
 %%WWWDIR%%/js/tinymce/themes/modern/theme.min.js
 %%WWWDIR%%/js/tinymce/tinymce.min.js
 @owner

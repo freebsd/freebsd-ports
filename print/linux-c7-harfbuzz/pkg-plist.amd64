@@ -1,0 +1,8 @@
+usr/lib/libharfbuzz.so.0
+usr/lib/libharfbuzz.so.0.936.0
+usr/lib64/libharfbuzz.so.0
+usr/lib64/libharfbuzz.so.0.936.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README

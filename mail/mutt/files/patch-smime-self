@@ -1,55 +1,6 @@
-Base: http://descolada.dartmouth.edu/mutt/patch-1.5.4+-ow.smime-encrypt-self.2
---- crypt.c	7 Mar 2003 08:23:27 -0000	3.17
-+++ crypt.c	7 May 2003 14:57:00 -0000
-@@ -246,8 +246,18 @@
-     if ((WithCrypto & APPLICATION_SMIME)
-         && (msg->security & APPLICATION_SMIME))
-     {
--      if (!(tmp_pbody = crypt_smime_build_smime_entity (tmp_smime_pbody,
--                                                        keylist)))
-+	   char *new_keylist = keylist;
-+
-+		 if (SmimeDefaultKey && query_quadoption(OPT_SMIMEENCRYPTSELF, _("Encrypt message to S/MIME Default Key also?")) == M_YES)
-+		 {
-+			int size = mutt_strlen(keylist) + mutt_strlen (SmimeDefaultKey) + 2; /* +1 for NULL, +1 for \n */
-+			new_keylist = safe_malloc(size);
-+			snprintf(new_keylist, size, "%s%s\n", keylist, SmimeDefaultKey);
-+	   }
-+		 
-+	  tmp_pbody = crypt_smime_build_smime_entity (tmp_smime_pbody, new_keylist);
-+	  safe_free((void **)&new_keylist);
-+	  if (!tmp_pbody)
-       {
- 	/* signed ? free it! */
- 	return (-1);
---- init.h.orig	2015-09-10 09:06:48.000000000 +0200
-+++ init.h	2015-09-10 09:08:24.000000000 +0200
-@@ -2748,6 +2748,11 @@
-   ** possible \fCprintf(3)\fP-like sequences.
-   ** (S/MIME only)
-   */
-+  { "smime_encrypt_self",	DT_QUAD,	 R_NONE, OPT_SMIMEENCRYPTSELF, 1 },
-+  /*
-+  ** .pp
-+  ** Encrypt the message to smime_default_key too.
-+  */
-   { "smime_encrypt_with",	DT_STR,	 R_NONE, UL &SmimeCryptAlg, UL "aes256" },
-   /*
-   ** .pp
-diff -u -d -b -B -r3.18 mutt.h
---- mutt.h.orig	Thu Nov  6 08:15:51 2003
-+++ mutt.h	Thu Nov  6 08:16:43 2003
-@@ -275,6 +275,7 @@
-   OPT_DELETE,
-   OPT_FORWEDIT,
-   OPT_INCLUDE,
-+  OPT_SMIMEENCRYPTSELF,
-   OPT_MFUPTO,
-   OPT_MIMEFWD,
-   OPT_MIMEFWDREST,
---- contrib/smime.rc.orig	2015-08-30 19:06:38.000000000 +0200
-+++ contrib/smime.rc	2015-09-10 09:14:20.000000000 +0200
-@@ -23,8 +23,12 @@
+--- contrib/smime.rc.orig	2016-10-08 19:30:21 UTC
++++ contrib/smime.rc
+@@ -23,8 +23,12 @@ set crypt_verify_sig = yes
  
  # The (default) keyfile for signing/decrypting.  Uncomment the following
  # line and replace the keyid with your own.
@@ -63,3 +14,50 @@ diff -u -d -b -B -r3.18 mutt.h
  # Uncomment to make mutt ask what key to use when trying to decrypt a message.
  # It will use the default key above (if that was set) else.
  # unset smime_decrypt_use_default_key
+--- crypt.c.orig	2016-10-08 19:35:50 UTC
++++ crypt.c
+@@ -231,8 +231,18 @@ int mutt_protect (HEADER *msg, char *key
+     if ((WithCrypto & APPLICATION_SMIME)
+         && (msg->security & APPLICATION_SMIME))
+     {
+-      if (!(tmp_pbody = crypt_smime_build_smime_entity (tmp_smime_pbody,
+-                                                        keylist)))
++	   char *new_keylist = keylist;
++
++		 if (SmimeDefaultKey && query_quadoption(OPT_SMIMEENCRYPTSELF, _("Encrypt message to S/MIME Default Key also?")) == MUTT_YES)
++		 {
++			int size = mutt_strlen(keylist) + mutt_strlen (SmimeDefaultKey) + 2; /* +1 for NULL, +1 for \n */
++			new_keylist = safe_malloc(size);
++			snprintf(new_keylist, size, "%s%s\n", keylist, SmimeDefaultKey);
++	   }
++		 
++	  tmp_pbody = crypt_smime_build_smime_entity (tmp_smime_pbody, new_keylist);
++	  safe_free((void **)&new_keylist);
++	  if (!tmp_pbody)
+       {
+ 	/* signed ? free it! */
+ 	return (-1);
+--- init.h.orig	2016-10-08 19:35:50 UTC
++++ init.h
+@@ -2971,6 +2971,11 @@ struct option_t MuttVars[] = {
+   ** possible \fCprintf(3)\fP-like sequences.
+   ** (S/MIME only)
+   */
++  { "smime_encrypt_self",	DT_QUAD,	 R_NONE, OPT_SMIMEENCRYPTSELF, 1 },
++  /*
++  ** .pp
++  ** Encrypt the message to smime_default_key too.
++  */
+   { "smime_encrypt_with",	DT_STR,	 R_NONE, UL &SmimeCryptAlg, UL "aes256" },
+   /*
+   ** .pp
+--- mutt.h.orig	2016-10-08 19:30:21 UTC
++++ mutt.h
+@@ -263,6 +263,7 @@ enum
+   OPT_FORWEDIT,
+   OPT_FCCATTACH,
+   OPT_INCLUDE,
++  OPT_SMIMEENCRYPTSELF,
+   OPT_MFUPTO,
+   OPT_MIMEFWD,
+   OPT_MIMEFWDREST,

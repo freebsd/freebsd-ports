@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: cinder_scheduler
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable cinder_scheduler:
+#
+# cinder_scheduler_enable="YES"
+#
+# cinder_scheduler_enable (bool):
+#	Set it to "YES" to enable cinder_scheduler.
+# 	Default is "NO".
+#
+# cinder_scheduler_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/cinder"
+#
+# cinder_scheduler_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${cinder_scheduler_logdir}/cinder-scheduler.log"
+#
+
+. /etc/rc.subr
+
+name=cinder_scheduler
+rcvar=cinder_scheduler_enable
+
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/cinder-scheduler.pid"
+procname="%%PREFIX%%/bin/python2.7"
+
+start_precmd=cinder_precmd
+
+load_rc_config $name
+
+: ${cinder_scheduler_enable:="NO"}
+: ${cinder_scheduler_logdir:="/var/log/cinder"}
+: ${cinder_scheduler_args:="--log-file ${cinder_scheduler_logdir}/cinder-scheduler.log"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} cinder-scheduler ${cinder_scheduler_args}"
+
+cinder_precmd() {
+	mkdir -p ${cinder_scheduler_logdir}
+}
+
+run_rc_command "$1"

@@ -8,12 +8,12 @@ CATEGORIES=	mail www
 MASTER_SITES=	SF/squirrelmail/decode/${PORTVERSION}
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decoders to display extra character sets in SquirrelMail
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${SQUIRRELDIR}/index.php:mail/squirrelmail
+RUN_DEPENDS=	${SQUIRRELDIR:S,^${PREFIX}/,${LOCALBASE}/,}/index.php:mail/squirrelmail
 
 USES=		tar:bzip2
 NO_BUILD=	yes

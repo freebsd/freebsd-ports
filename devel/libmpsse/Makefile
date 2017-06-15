@@ -5,7 +5,7 @@ PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source library for SPI/I2C control via FTDI chips
 
 LICENSE=	GPLv2
@@ -14,6 +14,8 @@ BUILD_DEPENDS=	swig2.0:devel/swig20
 LIB_DEPENDS=	libftdi.so:devel/libftdi
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		gmake pkgconfig python:2
 USE_AUTOTOOLS=	autoconf
@@ -47,7 +49,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	(cd ${WRKSRC}/src/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -name Makefile")
 
-post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pylibmpsse.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpsse.so
 

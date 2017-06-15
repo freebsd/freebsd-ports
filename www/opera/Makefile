@@ -18,7 +18,8 @@ COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
-BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:misc/shared-mime-info
+BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:misc/shared-mime-info \
+		${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:misc/shared-mime-info
 
 BUNDLE_LIBS=	yes
@@ -68,20 +69,11 @@ INSTALLS_ICONS=	yes
 
 OPERA_ARCH=	${ARCH:S,i386,intel,}
 
-.if ${OSVERSION} >= 1000054
-BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
-PLIST_SUB+=	LIBSTDC=""
-.else
-PLIST_SUB+=	LIBSTDC="@comment "
-.endif
-
 post-extract:
 	${GUNZIP_CMD} ${WRKSRC}/share/man/man1/opera.1.gz
 
 do-build:
-.if ${OSVERSION} >= 1000054
 	${CP} ${LOCALBASE}/lib/compat/libstdc++.so.6 ${WRKSRC}
-.endif
 
 do-configure:
 	@${MV} ${WRKSRC}/share/man ${WRKSRC}/man
@@ -100,9 +92,7 @@ do-configure:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/opera ${STAGEDIR}${PREFIX}/bin/
 	${TAR} -C ${WRKSRC} -cf - lib man share | ${TAR} -C ${STAGEDIR}${PREFIX} -xf -
-.if ${OSVERSION} >= 1000054
 	${INSTALL_LIB} ${WRKSRC}/libstdc++.so.6 ${STAGEDIR}${PREFIX}/lib/opera
-.endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/libmap.d
 	${INSTALL_DATA} ${FILESDIR}/libmap.conf \
 		${STAGEDIR}${PREFIX}/etc/libmap.d/opera.conf

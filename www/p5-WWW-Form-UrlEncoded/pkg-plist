@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/WWW/Form/UrlEncoded.pm
+%%SITE_ARCH%%/WWW/Form/UrlEncoded/PP.pm
+%%SITE_ARCH%%/auto/WWW/Form/UrlEncoded/XS/.keep
+%%PERL5_MAN3%%/WWW::Form::UrlEncoded.3.gz
+%%PERL5_MAN3%%/WWW::Form::UrlEncoded::PP.3.gz

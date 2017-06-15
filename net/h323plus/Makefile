@@ -27,7 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_JOBS_UNSAFE=yes
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libh323.so.1.26.5
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediastreamer
-PORTVERSION=	2.12.1
+PORTVERSION=	2.14.0
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
@@ -13,10 +13,10 @@ COMMENT=	Real-time audio and video streaming and processing
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libortp.so:net/ortp \
+LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
+		libortp.so:net/ortp \
 		libsrtp.so:net/libsrtp \
-		libbzrtp.so:security/libbzrtp \
-		libmbedtls.so.9:security/polarssl13
+		libbzrtp.so:security/bzrtp
 
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
@@ -24,8 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-documentation --disable-matroska \
 		--disable-pulseaudio --disable-strict \
 		--with-gsm=${LOCALBASE} --with-srtp=${LOCALBASE} \
-		--with-polarssl=${LOCALBASE} xxd_found=yes
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_ARC4RANDOM
+		xxd_found=yes
+CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 USES=		gettext-tools gmake libtool pathfix pkgconfig
@@ -70,9 +70,7 @@ THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 UPNP_CONFIGURE_ENABLE=	upnp
 UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 
-V4L_CONFIGURE_ENABLE=	libv4l1 libv4l2
-V4L_CONFIGURE_OFF=	ac_cv_header_linux_videodev_h=no \
-			ac_cv_header_linux_videodev2_h=no
+V4L_CONFIGURE_ENABLE=	v4l
 V4L_BUILD_DEPENDS=	v4l_compat>=1.0.20120501:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 

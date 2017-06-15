@@ -1,0 +1,31 @@
+--- appl/kf/Makefile.in.orig	2017-01-03 19:44:14 UTC
++++ appl/kf/Makefile.in
+@@ -154,9 +154,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
+ PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS)
+ am_kf_OBJECTS = kf.$(OBJEXT)
+ kf_OBJECTS = $(am_kf_OBJECTS)
+-kf_LDADD = $(LDADD)
++kf_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ am__DEPENDENCIES_1 =
+ kf_DEPENDENCIES = $(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -165,8 +169,12 @@ am__v_lt_0 = --silent
+ am__v_lt_1 = 
+ am_kfd_OBJECTS = kfd.$(OBJEXT)
+ kfd_OBJECTS = $(am_kfd_OBJECTS)
+-kfd_LDADD = $(LDADD)
++kfd_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ kfd_DEPENDENCIES = $(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_P = $(am__v_P_@AM_V@)

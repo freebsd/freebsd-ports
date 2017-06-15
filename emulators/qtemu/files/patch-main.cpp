@@ -1,6 +1,6 @@
---- ./main.cpp.orig	Mon Mar 19 15:56:21 2007
-+++ ./main.cpp	Tue Jun 12 13:17:03 2007
-@@ -45,7 +45,7 @@
+--- main.cpp.orig	2007-11-12 19:31:00 UTC
++++ main.cpp
+@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
          translator.load(path);
      else
      {

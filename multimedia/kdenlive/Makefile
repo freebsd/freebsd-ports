@@ -2,6 +2,7 @@
 
 PORTNAME=	kdenlive
 PORTVERSION=	0.9.10
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src/
 
@@ -12,7 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmlt.so:multimedia/mlt \
 		libqjson.so:devel/qjson
-RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX}
+RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
+		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt4
 
 USES=		cmake kde:4 pkgconfig shared-mime-info tar:bzip2
 USE_KDE=	automoc4 kdelibs nepomuk-core

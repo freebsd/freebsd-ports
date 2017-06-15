@@ -5,4 +5,4 @@ types.  The combinators in Control.Lens provide a highly generic toolbox
 for composing families of getters, folds, isomorphisms, traversals,
 setters and lenses and their indexed variants.
 
-WWW: http://github.com/ekmett/lens/
+WWW: https://github.com/ekmett/lens/

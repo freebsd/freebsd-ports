@@ -14,10 +14,11 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Log the time between request and the first byte of the response served
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USE_APACHE=	22+
 
-PROJECTHOST=	mod-log-firstbyte
 PKGMESSAGE=	${WRKSRC}/readme.txt
 
 AP_FAST_BUILD=	yes

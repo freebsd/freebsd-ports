@@ -17,8 +17,6 @@ INFO=		festival
 FDOC=		${PREFIX}/share/doc/festival
 
 post-extract:
-	${CHMOD} -R a+r ${WRKSRC}
-	${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	${RM} ${WRKSRC}/festival/src-manual/c3750.htm~
 	${RM} ${WRKSRC}/speechtools/c16909.htm~
 	${RMDIR} ${WRKSRC}/festival/src-manual/images_gen
@@ -30,7 +28,7 @@ do-install:
 	  ${CP} $$info ${STAGEDIR}${PREFIX}/info && \
 	  ${CP} -r ${WRKSRC}/* ${STAGEDIR}${FDOC} && \
 	  cd ${STAGEDIR}${FDOC} && \
-	  ${RM} -f $$info && \
+	  ${RM} $$info && \
 	  ${RMDIR} festival/info
 
 .include <bsd.port.mk>

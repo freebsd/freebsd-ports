@@ -1,4 +1,4 @@
---- configure.orig	2016-09-12 16:11:24 UTC
+--- configure.orig	2017-03-08 17:15:08 UTC
 +++ configure
 @@ -140,10 +140,14 @@ CXX_FLAGS=""
  if [ "$OS" = "freebsd" ]; then
@@ -34,7 +34,17 @@
      test_execute
    fi
  }
-@@ -2126,8 +2133,8 @@ EOF
+@@ -1694,8 +1701,7 @@ EOF
+         if [ $? -eq 0 ]; then
+           echo "(Qt5 from pkg-config)" >> $LOG
+           FLGQT5=`pkg-config Qt5Core --cflags`
+-          # gcc 4.8 is able to compile with C++11 (see also VBOX_GCC_std in Config.kmk)
+-          [ $cc_maj -eq 4 -a $cc_min -eq 8 ] && FLGQT5="$FLGQT5 -std=c++11"
++          FLGQT5="$FLGQT5 -std=c++11"
+           INCQT5=`strip_I "$FLGQT5"`
+           LIBDIR5=`pkg-config Qt5Core --variable=libdir`
+           LIBQT5=`pkg-config Qt5Core --libs`
+@@ -2151,8 +2157,8 @@ EOF
          echo "compiling the following source file:" >> $LOG
          cat $ODIR.tmp_src.cc >> $LOG
          echo "using the following command line:" >> $LOG
@@ -45,7 +55,7 @@
          if [ $? -eq 0 ]; then
            found=1
            break
-@@ -2603,7 +2610,7 @@ for option in "$@"; do
+@@ -2628,7 +2634,7 @@ for option in "$@"; do
      --with-openssl-dir=*)
        OPENSSLDIR=`echo $option | cut -d'=' -f2`
        INCCRYPTO="-I${OPENSSLDIR}/include"
@@ -54,7 +64,7 @@
        ;;
      --with-ow-dir=*)
        WATCOM=`echo $option | cut -d'=' -f2`
-@@ -2944,13 +2951,20 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+@@ -2969,13 +2975,20 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
    [ $WITH_PYTHON -eq 1 ] && check_python
    [ $WITH_JAVA   -eq 1 ] && check_java
  
@@ -76,7 +86,7 @@
   fi
  fi
  
-@@ -2967,14 +2981,6 @@ if [ "$OS" = "linux" ]; then
+@@ -2992,14 +3005,6 @@ if [ "$OS" = "linux" ]; then
      cnf_append "VBOX_WITH_ADDITION_DRIVERS" ""
    fi
    if [ $ONLY_ADDITIONS -eq 0 ]; then

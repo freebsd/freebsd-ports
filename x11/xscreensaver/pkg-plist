@@ -45,7 +45,9 @@ bin/xscreensaver-hacks/crackberg
 bin/xscreensaver-hacks/crystal
 bin/xscreensaver-hacks/cube21
 bin/xscreensaver-hacks/cubenetic
+bin/xscreensaver-hacks/cubestack
 bin/xscreensaver-hacks/cubestorm
+bin/xscreensaver-hacks/cubetwist
 bin/xscreensaver-hacks/cubicgrid
 bin/xscreensaver-hacks/cwaves
 bin/xscreensaver-hacks/cynosure
@@ -54,6 +56,7 @@ bin/xscreensaver-hacks/decayscreen
 bin/xscreensaver-hacks/deco
 bin/xscreensaver-hacks/deluxe
 bin/xscreensaver-hacks/demon
+bin/xscreensaver-hacks/discoball
 bin/xscreensaver-hacks/discrete
 bin/xscreensaver-hacks/distort
 bin/xscreensaver-hacks/drift
@@ -101,6 +104,7 @@ bin/xscreensaver-hacks/halftone
 bin/xscreensaver-hacks/halo
 bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hexadrop
+bin/xscreensaver-hacks/hexstrut
 bin/xscreensaver-hacks/hilbert
 bin/xscreensaver-hacks/hopalong
 bin/xscreensaver-hacks/hydrostat
@@ -186,6 +190,7 @@ bin/xscreensaver-hacks/sonar
 bin/xscreensaver-hacks/speedmine
 bin/xscreensaver-hacks/spheremonics
 bin/xscreensaver-hacks/splitflap
+bin/xscreensaver-hacks/splodesic
 bin/xscreensaver-hacks/spotlight
 bin/xscreensaver-hacks/sproingies
 bin/xscreensaver-hacks/squiral
@@ -276,7 +281,9 @@ man/man6/crackberg.6.gz
 man/man6/crystal.6.gz
 man/man6/cube21.6.gz
 man/man6/cubenetic.6.gz
+man/man6/cubestack.6.gz
 man/man6/cubestorm.6.gz
+man/man6/cubetwist.6.gz
 man/man6/cubicgrid.6.gz
 man/man6/cwaves.6.gz
 man/man6/cynosure.6.gz
@@ -285,6 +292,7 @@ man/man6/decayscreen.6.gz
 man/man6/deco.6.gz
 man/man6/deluxe.6.gz
 man/man6/demon.6.gz
+man/man6/discoball.6.gz
 man/man6/discrete.6.gz
 man/man6/distort.6.gz
 man/man6/drift.6.gz
@@ -332,6 +340,7 @@ man/man6/halftone.6.gz
 man/man6/halo.6.gz
 man/man6/helix.6.gz
 man/man6/hexadrop.6.gz
+man/man6/hexstrut.6.gz
 man/man6/hilbert.6.gz
 man/man6/hopalong.6.gz
 man/man6/hydrostat.6.gz
@@ -413,6 +422,7 @@ man/man6/sonar.6.gz
 man/man6/speedmine.6.gz
 man/man6/spheremonics.6.gz
 man/man6/splitflap.6.gz
+man/man6/splodesic.6.gz
 man/man6/spotlight.6.gz
 man/man6/sproingies.6.gz
 man/man6/squiral.6.gz
@@ -523,7 +533,9 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/crystal.xml
 %%DATADIR%%/config/cube21.xml
 %%DATADIR%%/config/cubenetic.xml
+%%DATADIR%%/config/cubestack.xml
 %%DATADIR%%/config/cubestorm.xml
+%%DATADIR%%/config/cubetwist.xml
 %%DATADIR%%/config/cubicgrid.xml
 %%DATADIR%%/config/cwaves.xml
 %%DATADIR%%/config/cynosure.xml
@@ -532,6 +544,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/deco.xml
 %%DATADIR%%/config/deluxe.xml
 %%DATADIR%%/config/demon.xml
+%%DATADIR%%/config/discoball.xml
 %%DATADIR%%/config/discrete.xml
 %%DATADIR%%/config/distort.xml
 %%DATADIR%%/config/drift.xml
@@ -579,6 +592,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/halo.xml
 %%DATADIR%%/config/helix.xml
 %%DATADIR%%/config/hexadrop.xml
+%%DATADIR%%/config/hexstrut.xml
 %%DATADIR%%/config/hilbert.xml
 %%DATADIR%%/config/hopalong.xml
 %%DATADIR%%/config/hydrostat.xml
@@ -661,6 +675,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/speedmine.xml
 %%DATADIR%%/config/spheremonics.xml
 %%DATADIR%%/config/splitflap.xml
+%%DATADIR%%/config/splodesic.xml
 %%DATADIR%%/config/spotlight.xml
 %%DATADIR%%/config/sproingies.xml
 %%DATADIR%%/config/squiral.xml

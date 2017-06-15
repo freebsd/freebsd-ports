@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
-PATCH_SITES=	http://mirror.amdmi3.ru/distfiles/ \
+PATCH_SITES=	http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/ \
 		LOCAL/amdmi3
 PATCHFILES=	glewpy-${PORTVERSION}-generatedsources.diff.bz2
 

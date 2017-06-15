@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-input-joystick
-PORTVERSION=	1.6.2
-PORTREVISION=	4
+PORTVERSION=	1.6.3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org joystick input driver
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 XORG_CAT=	driver
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
+USES=		pathfix
 
 .include <bsd.port.mk>

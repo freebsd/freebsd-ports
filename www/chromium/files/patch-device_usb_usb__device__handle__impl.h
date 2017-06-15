@@ -1,6 +1,6 @@
---- device/usb/usb_device_handle_impl.h.orig	2016-05-11 19:02:22 UTC
+--- device/usb/usb_device_handle_impl.h.orig	2017-04-19 19:06:34 UTC
 +++ device/usb/usb_device_handle_impl.h
-@@ -17,7 +17,12 @@
+@@ -18,7 +18,12 @@
  #include "base/memory/ref_counted.h"
  #include "base/threading/thread_checker.h"
  #include "device/usb/usb_device_handle.h"

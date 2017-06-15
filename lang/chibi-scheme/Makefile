@@ -5,7 +5,7 @@ PORTNAME=	chibi-scheme
 PORTVERSION=	0.7.3
 CATEGORIES=	lang
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Minimal Scheme implementation for use as a C extension language
 
 LICENSE=	BSD3CLAUSE

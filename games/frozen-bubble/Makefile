@@ -3,11 +3,11 @@
 
 PORTNAME=	frozen-bubble
 DISTVERSION=	2.2.1-beta1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.frozen-bubble.org/data/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Throw colourful bubbles to build groups and destroy the groups
 
 LICENSE=	GPLv2

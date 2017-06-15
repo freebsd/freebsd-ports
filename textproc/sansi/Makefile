@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sansi
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc sysutils
 MASTER_SITES=	http://BSDforge.com/projects/source/textproc/sansi/
 

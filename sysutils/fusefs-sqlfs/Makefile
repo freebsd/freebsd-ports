@@ -13,24 +13,27 @@ DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQLite backed FUSE file system
 
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		fuse sqlite
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	README
-
 PLIST_FILES=	bin/sqlfs
+
+OPTIONS_DEFINE=	DOCS
 
 do-build:
 	(cd ${WRKSRC} && ${CC} -DFUSE -DFUSE_USE_VERSION=25		\
 		-D_FILE_OFFSET_BITS=64 -D_REENTRANT ${CFLAGS}		\
-		-I${LOCALBASE}/include -I. -L${LOCALBASE}/lib		\
+		-I. -I${LOCALBASE}/include -L${LOCALBASE}/lib		\
 		-lfuse -lsqlite${SQLITE_VER} sqlfs.c fuse_main.c 	\
 		-o sqlfs)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sqlfs ${STAGEDIR}${PREFIX}/bin
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

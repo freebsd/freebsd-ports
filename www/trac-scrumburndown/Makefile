@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Plugin to enable Scrum burndown chart capabilities
 
 LICENSE=	APACHE20

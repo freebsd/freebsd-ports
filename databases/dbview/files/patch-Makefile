@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Sep 27 00:05:30 1996
-+++ Makefile	Tue Apr 29 02:41:08 2003
-@@ -18,8 +18,6 @@
+--- Makefile.orig	2006-11-19 19:37:41 UTC
++++ Makefile
+@@ -19,8 +19,6 @@
  
  MAN=man
  
@@ -9,7 +9,7 @@
  # CFLAGS= -g -fomit-frame-pointer -Wall -pipe
  
  # Look where your install program is
-@@ -32,12 +30,12 @@
+@@ -33,12 +31,12 @@ mandir = $(prefix)/share/$(MAN)
  obj = db_dump.o dbview.o version.o
  
  .c.o:

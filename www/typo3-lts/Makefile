@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	6.2.25
+PORTVERSION=	7.6.16
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 PKGNAMESUFFIX=	-lts
@@ -13,15 +13,16 @@ COMMENT=	Typo3 content management system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${TYPO3SRC}/LICENSE.txt
 
-PORTSCOUT=	limit:^6\.2\.
+PORTSCOUT=	limit:^7\.6\.
 
-USES=		cpe shebangfix
-SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/update-static-composer.sh \
+USES=		cpe shebangfix php:web
+SHEBANG_FILES=	vendor/doctrine/instantiator/.travis.install.sh \
+		typo3/sysext/core/Build/Scripts/cglFixMyCommit.sh \
+		typo3/sysext/core/Build/Scripts/splitFunctionalTests.sh \
 		typo3/sysext/core/Build/Scripts/xlfcheck.sh
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml
-WANT_PHP_WEB=	yes
+USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session simplexml soap xml zip
 WRKSRC=		${WRKDIR}/${TYPO3SRC}
 
 TYPO3WWW=	www
@@ -69,12 +70,7 @@ post-install:
 		${FIND} * \( -type f -or -type l \) -path "${TYPO3WWW}/${TYPO3DIR}/*" | \
 		${SORT} >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}; \
-		${FIND} * \( -type f -or -type l \) \( -path "${TYPO3WWW}/${TYPO3SRC}/*" -and \
-		-not -path "${TYPO3WWW}/${TYPO3SRC}/typo3/ext/*" \) | \
+		${FIND} * \( -type f -or -type l \) -path "${TYPO3WWW}/${TYPO3SRC}/*" | \
 		${SORT} >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}; \
-		${FIND} * \( -type f -or -type l \) -path "${TYPO3WWW}/${TYPO3SRC}/typo3/ext/*" | \
-		${SORT} | ${SED} -ne 's#^#@(${WWWOWN},${WWWGRP},) #p' >> ${TMPPLIST}
-	@${ECHO} "@dir(${WWWOWN},${WWWGRP},) ${TYPO3WWW}/${TYPO3SRC}/typo3/ext" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

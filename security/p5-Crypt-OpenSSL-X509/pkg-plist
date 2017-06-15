@@ -1,3 +1,3 @@
-%%PERL5_MAN3%%/Crypt::OpenSSL::X509.3.gz
 %%SITE_ARCH%%/Crypt/OpenSSL/X509.pm
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/X509/X509.so
+%%PERL5_MAN3%%/Crypt::OpenSSL::X509.3.gz

@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: mailfromd
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name="mailfromd"
+rcvar=mailfromd_enable
+command="%%PREFIX%%/sbin/${name}"
+
+load_rc_config ${name}
+
+: ${mailfromd_enable="NO"}
+: ${mailfromd_flags}
+: ${mailfromd_runpath="%%MFD_RUN_DIR%%"}
+pidfile="${mailfromd_runpath}/${name}.pid"
+
+run_rc_command "$1"

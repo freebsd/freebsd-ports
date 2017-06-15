@@ -1,0 +1,10 @@
+arduino/tools-builder/CMSIS/%%CMSIS_VERS%%/CMSIS
+arduino/tools-builder/CMSIS/%%CMSIS_VERS%%/Device
+arduino/tools-builder/arm-none-eabi-gcc/%%ARMGCC_VERS%%/bin
+arduino/tools-builder/arm-none-eabi-gcc/%%ARMGCC_VERS%%/etc
+arduino/tools-builder/avr-gcc/%%AVRGCC_VERS%%/bin
+arduino/tools-builder/avr-gcc/%%AVRGCC_VERS%%/etc
+arduino/tools-builder/avrdude/%%AVRDUDE_VERS%%/bin
+arduino/tools-builder/avrdude/%%AVRDUDE_VERS%%/etc
+arduino/tools-builder/bossac/%%BOSSAC_VERS%%/bin
+arduino/tools-builder/bossac/%%BOSSAC_VERS%%/etc

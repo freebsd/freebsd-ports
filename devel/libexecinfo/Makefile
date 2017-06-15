@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/itetcu
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for inspecting program's backtrace
 
 OPTIONS_DEFINE=	DOCS

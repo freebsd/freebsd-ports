@@ -9,6 +9,13 @@ MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three-dimensional capacitance extraction program
 
+LICENSE=	FASTCAP
+LICENSE_NAME=	fastcap license
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	auto-accept
+
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 WRKSRC=		${WRKDIR}/fastcap-2.0wr
@@ -17,7 +24,8 @@ BINFILES=	busgen capgen cubegen fastcap pipedgen pyragen
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
+post-extract:
+	@${HEAD} -32 ${WRKSRC}/src/direct.c | ${TAIL} +2 > ${WRKSRC}/LICENSE
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,TYPE=other,TYPE=4,' \
@@ -41,8 +49,12 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BINFILES:S,^,${WRKSRC}/bin/,} ${STAGEDIR}${PREFIX}/bin
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CAT} ${WRKSRC}/README ${WRKSRC}/README.mit > ${STAGEDIR}${DOCSDIR}/readme
 	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${STAGEDIR}${DOCSDIR}

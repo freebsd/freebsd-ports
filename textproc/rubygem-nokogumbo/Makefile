@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nokogumbo
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.10
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
+
+CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
 
 USE_RUBY=	yes
 USES=		gem pkgconfig

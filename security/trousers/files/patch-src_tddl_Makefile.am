@@ -1,4 +1,4 @@
---- src/tddl/Makefile.am.orig	2014-04-24 18:05:44 UTC
+--- src/tddl/Makefile.am.orig	2014-07-23 19:42:44 UTC
 +++ src/tddl/Makefile.am
 @@ -1,4 +1,11 @@
 +libdir=@libdir@/tddl

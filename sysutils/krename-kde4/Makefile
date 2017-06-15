@@ -6,7 +6,7 @@ PORTREVISION=	9
 CATEGORIES=	sysutils kde
 MASTER_SITES=	SF/${PORTNAME}/KDE4%20${PORTNAME}-stable/${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful batch file renamer for KDE
 
 LIB_DEPENDS=	libtag.so:audio/taglib \

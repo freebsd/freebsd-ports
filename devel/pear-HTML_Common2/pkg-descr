@@ -4,4 +4,4 @@ attributes handling.
 * Handles global document options (charset, linebreak and more).
 * Provides methods to handle indentation and HTML comments.
 
-WWW: http://pear.php.net/package/HTML_Common2/
+WWW: https://pear.php.net/package/HTML_Common2

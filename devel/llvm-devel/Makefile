@@ -19,13 +19,18 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
 USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
+_USES_PYTHON?=	python:build
+USES+=		${_USES_PYTHON}
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
-#CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
-CMAKE_ARGS=
+CMAKE_ARGS=	-DLLVM_BUILD_LLVM_DYLIB=ON
+# Following commit https://github.com/kitware/cmake/commit/956054
+# we need to either change the whole man-shuffle below, or simply
+# redefine CMAKE_INSTALL_MANDIR
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	llvm-mirror
@@ -46,13 +51,17 @@ PLIST_FILES=
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fformat_extensions.diff \
+	${PATCHDIR}/clang-patch-fopenmp.diff \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
 CLANG_GH_PROJECT=	clang:clang
+CLANG_GH_SUBDIR=	tools/clang:clang
 CLANG_GH_TAGNAME=	${CLANG_COMMIT}:clang
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
 CLANG_PORTDOCS=		clang
+CLANG_USE=		GNOME=libxml2
 COMPILER_RT_DESC=	Sanitizer libraries
+COMPILER_RT_IMPLIES=	CLANG
 COMPILER_RT_GH_PROJECT=	compiler-rt:compiler_rt
 COMPILER_RT_GH_TAGNAME=	${COMPILER_RT_COMMIT}:compiler_rt
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|}
@@ -64,29 +73,39 @@ DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 EXTRAS_DESC=		Extra clang tools
 EXTRAS_IMPLIES=		CLANG
 EXTRAS_GH_PROJECT=	clang-tools-extra:extras
+EXTRAS_GH_SUBDIR=	tools/clang/tools/extra:extras
 EXTRAS_GH_TAGNAME=	${EXTRAS_COMMIT}:extras
 LIT_DESC=		Install lit and FileCheck test tools
 LLD_DESC=		Install lld, the LLVM linker
 LLD_GH_PROJECT=		lld:lld
+LLD_GH_SUBDIR=		tools/lld:lld
 LLD_GH_TAGNAME=		${LLD_COMMIT}:lld
-LLDB_DESC=		Install lldb, the LLVM debugger (ignored on 9.x)
+LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_GH_PROJECT=	lldb:lldb
+LLDB_GH_SUBDIR=		tools/lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
 LLDB_USES=		execinfo
+LLDB_VARS=		_USES_PYTHON=python
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
+OPENMP_GH_SUBDIR=	runtimes/openmp:openmp
 OPENMP_GH_TAGNAME=	${OPENMP_COMMIT}:openmp
+OPENMP_EXTRA_PATCHES= \
+	${PATCHDIR}/openmp-patch-bug32279 \
+	${PATCHDIR}/openmp-patch-tools_openmp_libomptarget_CMakeLists.txt
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
-GOLD_BUILD_DEPENDS=	ld.gold:devel/binutils
+GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
 
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
 
-PLIST_SUB+=	LLVM_MAJOR=${LLVM_MAJOR} LLVM_RELEASE=${LLVM_RELEASE}
+PLIST_SUB+=	LLVM_LIB_VER=${LLVM_MAJOR:C/\..*//} \
+		LLVM_MAJOR=${LLVM_MAJOR} \
+		LLVM_RELEASE=${LLVM_RELEASE}
 
 COMMANDS=	bugpoint \
 		llc \
@@ -94,6 +113,7 @@ COMMANDS=	bugpoint \
 		llvm-ar \
 		llvm-as \
 		llvm-bcanalyzer \
+		llvm-cat \
 		llvm-config \
 		llvm-cov \
 		llvm-diff \
@@ -104,8 +124,10 @@ COMMANDS=	bugpoint \
 		llvm-link \
 		llvm-mc \
 		llvm-mcmarkup \
+		llvm-modextract \
 		llvm-nm \
 		llvm-objdump \
+		llvm-opt-report \
 		llvm-profdata \
 		llvm-ranlib \
 		llvm-readobj \
@@ -113,6 +135,7 @@ COMMANDS=	bugpoint \
 		llvm-size \
 		llvm-split \
 		llvm-stress \
+		llvm-strings \
 		llvm-symbolizer \
 		llvm-tblgen \
 		macho-dump \
@@ -127,10 +150,12 @@ STRIP_LIBS=	BugpointPasses.so \
 
 EXTRAS_COMMANDS= \
 		clang-apply-replacements \
+		clang-change-namespace \
 		clang-include-fixer \
 		clang-modernize \
 		clang-query \
 		clang-rename \
+		clang-reorder-fields \
 		clang-tidy \
 		find-all-symbols \
 		modularize
@@ -147,7 +172,7 @@ EXTRAS_LIBS=	\
 		libclangTidyUtils \
 		libfindAllSymbols \
 		libmodernizeCore
-EXTRAS_PATTERN= ${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
+EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
 
@@ -158,6 +183,9 @@ COMMANDS+=	c-index-test \
 		clang-check \
 		clang-cpp \
 		clang-format \
+		clang-import-test \
+		clang-offload-bundler \
+		clangd \
 		scan-build \
 		scan-view
 MAN1SRCS+=	clang.1 \
@@ -166,13 +194,16 @@ CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|so
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
-COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|xray)
+COMPILER_RT_PATTERN=	(asan_blacklist.txt|sanitizer|include.xray)
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	lit.1 FileCheck.1
-_USES_PYTHON=	python
 LIT_COMMANDS=	lit llvm-lit FileCheck
+.endif
+
+.if ${PORT_OPTIONS:MLLD}
+COMMANDS+=	ld.lld
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
@@ -180,29 +211,25 @@ COMMANDS+=	lldb \
 		lldb-argdumper \
 		lldb-mi \
 		lldb-server
-_USES_PYTHON=	python
 .endif
 
 .if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
 # Hack to disable COMPILER_RT in plist of unsupported architectures
-PLIST_SUB+=    COMPILER_RT="@comment "
+PLIST_SUB+=	COMPILER_RT="@comment "
 .else
 .endif
 
 .if ! ${OPTIONS_DEFINE:MGOLD}
 # Hack to disable GOLD in plist of unsupported architectures
-PLIST_SUB+=    GOLD="@comment "
+PLIST_SUB+=	GOLD="@comment "
 .else
 .endif
 
 .if ! ${OPTIONS_DEFINE:MOPENMP}
 # Hack to disable OPENMP in plist of unsupported architectures
-PLIST_SUB+=    OPENMP="@comment "
+PLIST_SUB+=	OPENMP="@comment "
 .else
 .endif
-
-_USES_PYTHON?=	python:build
-USES+=		${_USES_PYTHON}
 
 MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
@@ -214,6 +241,11 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CMAKE_BUILD_TYPE=	RelWithDebInfo
+STRIP=
+.endif
 
 _CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/freebsd
 .if ${ARCH} == "amd64"
@@ -268,28 +300,9 @@ COMMANDS+=	lld \
 PORTDOCS+=	lld
 .endif
 
-.if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
-BROKEN=	Working C++11 compiler and library required
-.endif
-
 .if ${PORT_OPTIONS:MLLDB} && ${PYTHON_REL} >= 3000
 BROKEN=	LLDB does not build with Python 3
 .endif
-
-post-extract-CLANG-on:
-	${MV} ${WRKSRC_clang} ${PATCH_WRKSRC}/tools/clang
-
-post-extract-EXTRAS-on:
-	${MV} ${WRKSRC_extras} ${PATCH_WRKSRC}/tools/clang/tools/extra
-
-post-extract-LLD-on:
-	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
-
-post-extract-LLDB-on:
-	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
-
-post-extract-OPENMP-on:
-	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/tools/openmp
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
@@ -371,7 +384,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 build-plist:
-	${RM} -f ${PLIST} ${PLIST}.tmp
+	${RM} ${PLIST} ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}.tmp
 .endfor
@@ -385,7 +398,8 @@ build-plist:
 	    -e 's|${PORTVERSION}|%%PORTVERSION%%|' \
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
-	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' | \
+	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' \
+	    -e 's|\.${LLVM_MAJOR:C/\..*//}|.%%LLVM_LIB_VER%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
@@ -399,7 +413,7 @@ build-plist:
 	    if ($$0 ~ /lld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
-	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
+	    if ($$0 ~ /(lib[ig]*omp|omp.h)/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print} \
 	}' ${PLIST}.tmp >> ${PLIST}

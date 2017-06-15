@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: cinder_volume
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable cinder_volume:
+#
+# cinder_volume_enable="YES"
+#
+# cinder_volume_enable (bool):
+#	Set it to "YES" to enable cinder_volume.
+# 	Default is "NO".
+#
+# cinder_volume_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/cinder"
+#
+# cinder_volume_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${cinder_volume_logdir}/cinder-volume.log"
+#
+
+. /etc/rc.subr
+
+name=cinder_volume
+rcvar=cinder_volume_enable
+
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/cinder-volume.pid"
+procname="%%PREFIX%%/bin/python2.7"
+
+start_precmd=cinder_precmd
+
+load_rc_config $name
+
+: ${cinder_volume_enable:="NO"}
+: ${cinder_volume_logdir:="/var/log/cinder"}
+: ${cinder_volume_args:="--log-file ${cinder_volume_logdir}/cinder-volume.log"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} cinder-volume ${cinder_volume_args}"
+
+cinder_precmd() {
+	mkdir -p ${cinder_volume_logdir}
+}
+
+run_rc_command "$1"

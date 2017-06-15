@@ -46,13 +46,13 @@ include/medsubdomain.h
 lib/libmed.a
 lib/libmed.so
 lib/libmed.so.1
-lib/libmed.so.1.5.0
+lib/libmed.so.1.7.0
 lib/libmed3.settings
 lib/libmedC.a
 lib/libmedC.so
 lib/libmedC.so.1
-lib/libmedC.so.1.5.0
+lib/libmedC.so.1.7.0
 lib/libmedimport.a
 lib/libmedimport.so
 lib/libmedimport.so.0
-lib/libmedimport.so.0.2.0
+lib/libmedimport.so.0.2.2

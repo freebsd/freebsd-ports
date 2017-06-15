@@ -4,7 +4,7 @@
 
 PORTNAME=	guile
 PORTVERSION=	1.8.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 
@@ -44,7 +44,6 @@ NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 
 post-extract:
-	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
 	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete
 
 post-patch:

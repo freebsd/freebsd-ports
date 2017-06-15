@@ -3,7 +3,7 @@
 
 PORTNAME=	amqp-utils
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-amqp>=0.7.1:net/rubygem-amqp \
 		rubygem-clio>=0.3.0:devel/rubygem-clio \
 		rubygem-facets>=2.9:devel/rubygem-facets \
 		rubygem-heredoc_unindent>=1.1.2:textproc/rubygem-heredoc_unindent \
-		rubygem-json>=1.5:devel/rubygem-json \
+		rubygem-json1>=1.5:devel/rubygem-json1 \
 		rubygem-msgpack>=0.4.5:devel/rubygem-msgpack \
 		rubygem-trollop1>=1.16.2:devel/rubygem-trollop1
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	airbrussh
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

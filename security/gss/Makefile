@@ -3,6 +3,7 @@
 
 PORTNAME=	gss
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -12,8 +13,6 @@ COMMENT=	GNU Generic Security Service Library
 LIB_DEPENDS=	libshishi.so:security/shishi
 
 CONFLICTS=	heimdal-[0-9]*
-
-BROKEN_FreeBSD_9=	does not build
 
 USES=		libtool pathfix pkgconfig perl5
 USE_PERL5=	build

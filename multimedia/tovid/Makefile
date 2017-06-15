@@ -3,8 +3,9 @@
 
 PORTNAME=	tovid
 PORTVERSION=	0.35.2
+PORTREVISION=	1
 CATEGORIES=	multimedia python
-MASTER_SITES=	http://github.com//tovid-suite/tovid/archive/
+MASTER_SITES=	https://github.com//tovid-suite/tovid/archive/
 
 MAINTAINER=	grepper@gmail.com
 COMMENT=	Suite of tools for making DVD video disks

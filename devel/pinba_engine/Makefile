@@ -3,20 +3,22 @@
 
 PORTNAME=	pinba_engine
 PORTVERSION=	2011.08.18
-PORTREVISION=	4
+PORTREVISION=	8
 CATEGORIES=	devel
 
 MAINTAINER=	raven428@gmail.com
 COMMENT=	Mysql-engine part of statistics server for PHP
 
 BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:devel/protobuf \
-		${LOCALBASE}/include/event.h:devel/libevent2 \
+		${LOCALBASE}/include/event.h:devel/libevent \
 		${LOCALBASE}/include/Judy.h:devel/judy \
 		${LOCALBASE}/lib/mysql/plugin:${_MYSQL_SERVER} \
 		${NONEXISTENT}:${_MYSQL_SERVER}:configure \
 		bison:devel/bison \
 		cmake:devel/cmake
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+
+BROKEN=		fails to configure (error: Failed to find required header file include/mysql_version.h)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tony2001
@@ -39,6 +41,8 @@ CFLAGS+=	-I${LOCALBASE}/include/mysql
 
 SUB_FILES=	pkg-message
 PORTDOCS=	NEWS TODO README
+
+BROKEN_aarch64=		Fails to configure: failed to find required header file include/mysql_version.h
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

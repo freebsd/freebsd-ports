@@ -1,0 +1,19 @@
+--- configure.orig	2016-08-17 15:26:51 UTC
++++ configure
+@@ -3021,7 +3021,7 @@ if test "$pixman" = ""; then
+   fi
+ fi
+ if test "$pixman" = "none"; then
+-  if test "$want_tools" != "no" -o "$softmmu" != "no"; then
++  if test "$softmmu" != "no"; then
+     error_exit "pixman disabled but system emulation or tools build" \
+         "enabled.  You can turn off pixman only if you also" \
+         "disable all system emulation targets and the tools" \
+@@ -4584,7 +4584,6 @@ if test "$want_tools" = "yes" ; then
+   tools="qemu-img\$(EXESUF) qemu-io\$(EXESUF) $tools"
+   if [ "$linux" = "yes" -o "$bsd" = "yes" -o "$solaris" = "yes" ] ; then
+     tools="qemu-nbd\$(EXESUF) $tools"
+-    tools="ivshmem-client\$(EXESUF) ivshmem-server\$(EXESUF) $tools"
+   fi
+ fi
+ if test "$softmmu" = yes ; then

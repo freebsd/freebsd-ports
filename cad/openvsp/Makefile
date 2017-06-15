@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	3.9.1
+PORTVERSION=	3.11.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 CATEGORIES=	cad
 
@@ -14,10 +15,8 @@ LICENSE_NAME=	NASA Open Source Agreement version 1.3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
-		libjpeg.so:graphics/jpeg-turbo \
-		libdrm.so:graphics/libdrm \
-		libpng16.so:graphics/png \
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -27,19 +26,17 @@ LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/include/eli/code_eli.hpp:graphics/code-eli \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
-		${LOCALBASE}/include/eigen3/Eigen/Array:math/eigen3
-
-BROKEN_FreeBSD_9=	dependency graphics/code-eli needs additional math functions
+		${LOCALBASE}/include/eigen3/Eigen/Array:math/eigen3 \
+		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 
 USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP
 GH_ACCOUNT=	${GH_PROJECT}
 
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_PROJECT}_${PORTVERSION}
-
 CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
 CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
-USES=		cmake:outsource compiler:gcc-c++11-lib
+USES=		cmake:outsource compiler:gcc-c++11-lib jpeg
+
 CMAKE_ARGS=	-DVSP_USE_SYSTEM_CMINPACK:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_CPPTEST:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_LIBXML2:BOOLEAN=yes \

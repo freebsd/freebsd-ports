@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libass
-PORTVERSION=	0.13.3
+PORTVERSION=	0.13.6
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -19,7 +20,6 @@ USE_GITHUB=	yes
 USES=		autoreconf iconv libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=Makefile.am
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	HARFBUZZ

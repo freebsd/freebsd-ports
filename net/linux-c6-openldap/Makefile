@@ -3,26 +3,22 @@
 
 PORTNAME=	openldap
 PORTVERSION=	2.4.40
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	net linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Lightweight Directory Access Protocol libraries (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-f10-openldap-[0-9]*
-
-USES=		linux:c6
-USE_LINUX=	cyrus-sasl2 nss nspr
+DESCR=		${.CURDIR}/../${PORTNAME}24-server/pkg-descr
 RPMVERSION=	12.el6
-USE_LINUX_RPM=	yes
+USES=		linux:c6
 USE_LDCONFIG=	yes
-DESCR=	${.CURDIR}/../openldap24-server/pkg-descr
-
-PORTDOCS=	ANNOUNCEMENT CHANGES COPYRIGHT LICENSE README
+USE_LINUX=	cyrus-sasl2 nss nspr
+USE_LINUX_RPM=	yes
 
 # do not install any openldap configuration directories/files
-post-extract:
-	${RM} -rf ${WRKSRC}/etc
+post-patch:
+	@${RM} -r ${WRKSRC}/etc
 
 # use a native openldap configuration directories/files
 post-install:

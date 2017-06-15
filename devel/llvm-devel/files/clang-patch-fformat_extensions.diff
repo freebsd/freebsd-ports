@@ -21,17 +21,17 @@ diff -ruN tools/clang/include/clang/Driver/Options.td tools/clang/include/clang/
  def fgnu_keywords : Flag<["-"], "fgnu-keywords">, Group<f_Group>, Flags<[CC1Option]>,
    HelpText<"Allow GNU-extension keywords regardless of language standard">;
  def fgnu89_inline : Flag<["-"], "fgnu89-inline">, Group<f_Group>, Flags<[CC1Option]>,
-diff -ruN tools/clang/lib/Driver/Tools.cpp tools/clang/lib/Driver/Tools.cpp
---- tools/clang/lib/Driver/Tools.cpp	2015-08-18 08:10:39 UTC
-+++ tools/clang/lib/Driver/Tools.cpp
-@@ -4072,6 +4072,7 @@
+diff -ruN tools/clang/lib/Driver/ToolChains/Clang.cpp tools/clang/lib/Driver/ToolChains/Clang.cpp
+--- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig	2017-03-27 21:06:42.969177000 +0000
++++ tools/clang/lib/Driver/ToolChains/Clang.cpp	2017-03-27 21:07:03.523370000 +0000
+@@ -3188,6 +3188,7 @@
  
    // Forward -f (flag) options which we can pass directly.
    Args.AddLastArg(CmdArgs, options::OPT_femit_all_decls);
 +  Args.AddLastArg(CmdArgs, options::OPT_fformat_extensions);
    Args.AddLastArg(CmdArgs, options::OPT_fheinous_gnu_extensions);
-   Args.AddLastArg(CmdArgs, options::OPT_fstandalone_debug);
-   Args.AddLastArg(CmdArgs, options::OPT_fno_standalone_debug);
+   Args.AddLastArg(CmdArgs, options::OPT_fno_operator_names);
+   // Emulated TLS is enabled by default on Android, and can be enabled manually
 diff -ruN tools/clang/lib/Frontend/CompilerInvocation.cpp tools/clang/lib/Frontend/CompilerInvocation.cpp
 --- tools/clang/lib/Frontend/CompilerInvocation.cpp	2015-08-18 08:10:39 UTC
 +++ tools/clang/lib/Frontend/CompilerInvocation.cpp

@@ -1,0 +1,5 @@
+bin/mixer
+share/applications/deforaos-mixer.desktop
+%%PORTDOCS%%man/man1/mixer.1.gz
+%%NLS%%share/locale/fr/LC_MESSAGES/Mixer.mo
+%%NLS%%share/locale/es/LC_MESSAGES/Mixer.mo

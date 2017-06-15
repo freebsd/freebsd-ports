@@ -4,6 +4,7 @@
 PORTNAME=	nant
 PORTVERSION=	0.92
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -24,6 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 DATADIR=	${PREFIX}/share/NAnt
 DOCSDIR=	${PREFIX}/share/doc/NAnt
+EXAMPLESDIR=	${PREFIX}/share/examples/NAnt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/NAnt.build
@@ -31,7 +33,7 @@ post-patch:
 		${WRKSRC}/src/NAnt.Console/App.config \
 		${WRKSRC}/tests/NAnt.Core/Framework.config
 
-post-install:
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 

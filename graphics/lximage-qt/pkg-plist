@@ -1,0 +1,4 @@
+bin/lximage-qt
+share/applications/lximage-qt-screenshot.desktop
+share/applications/lximage-qt.desktop
+share/icons/hicolor/48x48/apps/lximage-qt.png

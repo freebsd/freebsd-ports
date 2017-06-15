@@ -1,0 +1,10 @@
+--- deps/rabbit/scripts/rabbitmqctl.orig	2016-11-22 00:23:32 UTC
++++ deps/rabbit/scripts/rabbitmqctl
+@@ -28,6 +28,7 @@ fi
+ # (e.g. forget_cluster_node --offline) require us to impersonate the
+ # real node.
+ RABBITMQ_USE_LONGNAME=${RABBITMQ_USE_LONGNAME} \
++HOME=/var/db/rabbitmq \
+ exec ${ERL_DIR}erl \
+     -pa "${RABBITMQ_HOME}/ebin" \
+     -noinput +B \

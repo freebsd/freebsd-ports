@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ocaml-gsl
-PORTVERSION=	1.15.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.19.1
 CATEGORIES=	math
-MASTER_SITES=	http://bitbucket.org/mmottl/gsl-ocaml/downloads/
-DISTNAME=	gsl-ocaml-${PORTVERSION}
 
 MAINTAINER=	michipili@gmail.com
 COMMENT=	Interface to GSL for the Objective Caml language
@@ -18,6 +16,10 @@ BUILD_DEPENDS=	gawk:lang/gawk \
 		${OCAMLC_DEPEND}
 RUN_DEPENDS=	ocamlfind:devel/ocaml-findlib
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmottl
+GH_PROJECT=	gsl-ocaml
+
 USES=			gmake
 USE_OCAML=		YES
 USE_OCAML_FINDLIB=	YES
@@ -26,7 +28,11 @@ USE_OCAML_LDCONFIG=	YES
 OCAML_PKGDIRS=		gsl
 HAS_CONFIGURE=		YES
 MAKE_JOBS_UNSAFE=	yes
-WRKSRC=			${WRKDIR}/gsl-ocaml-${PORTVERSION}
+
+NOT_FOR_ARCHS=		armv6
+NOT_FOR_ARCHS_REASON=	architectures with double-word alignment for doubles are not supported
+
+DOCSDIR=	${LOCALBASE}/share/doc
 
 OPTIONS_DEFINE=	DOCS
 

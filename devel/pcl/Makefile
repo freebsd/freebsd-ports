@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.xmailserver.org/
 MAINTAINER=	manuel.giraud@gmail.com
 COMMENT=	Portable Coroutine Library
 
-USES=		gmake libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

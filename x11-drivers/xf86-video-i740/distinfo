@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-i740-1.3.5.tar.bz2) = 1ce02dd0a11fbf6b43b8bca6663c67149d7d740c8985ae18bd956eddeaffe324
-SIZE (xorg/driver/xf86-video-i740-1.3.5.tar.bz2) = 321050
+TIMESTAMP = 1485130977
+SHA256 (xorg/driver/xf86-video-i740-1.3.6.tar.bz2) = 090d5d99a587b8074e939fa96cdcbb1c15a4c64dfc69d33eb10870ef3da01631
+SIZE (xorg/driver/xf86-video-i740-1.3.6.tar.bz2) = 347463

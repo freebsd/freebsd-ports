@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Specify fine granularity test plans
+
 DEPRECATED=	Marked as depreciated upstream
+EXPIRATION_DATE=	2017-03-01
 
 BUILD_DEPENDS=	p5-Test-Exception>=0.15:devel/p5-Test-Exception \
 		p5-Test-Simple>=0.47:devel/p5-Test-Simple

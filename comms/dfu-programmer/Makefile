@@ -12,9 +12,7 @@ COMMENT=	Device Firmware Update based USB programmer for Atmel chips
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lusb
+LIBS+=		-lusb
 
 PLIST_FILES=	bin/dfu-programmer man/man1/dfu-programmer.1.gz
 PORTDOCS=	*

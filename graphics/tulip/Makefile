@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tulip
-PORTVERSION=	4.9.0
+PORTVERSION=	4.10.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	_src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -47,11 +48,10 @@ OPTIONS_DEFAULT=	QT4
 QT4_USE=		qt4=corelib,gui,network,opengl,webkit \
 			qt4=xml,xmlpatterns \
 			qt4=moc_build,qmake_build,rcc_build,uic_build
-QT4_CMAKE_ON=		-DUSE_QT5_IF_INSTALLED:BOOL=OFF
 QT5_USE=		qt5=core,gui,network,opengl,webkit,widgets \
 			qt5=xml,xmlpatterns \
 			qt5=buildtools_build,qmake_build
-QT5_CMAKE_ON=		-DUSE_QT5_IF_INSTALLED:BOOL=ON
+QT5_CMAKE_BOOL=		USE_QT5_IF_INSTALLED
 
 post-build:
 	@${LN} -sf logo32x32.png \

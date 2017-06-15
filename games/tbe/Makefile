@@ -3,16 +3,16 @@
 PORTNAME=	tbe
 PORTVERSION=	0.9.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Butterfly Effect
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
-USES=		cmake compiler:c++11-lib execinfo gmake tar:tgz
+USES=		cmake compiler:c++11-lib execinfo tar:tgz
 USE_QT4=	gui linguisttools_build moc_build qmake_build rcc_build \
 		svg uic_build xml
 

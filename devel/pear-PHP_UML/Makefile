@@ -5,7 +5,7 @@ PORTNAME=	PHP_UML
 PORTVERSION=	1.6.2
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR Class to Create UML Representation of PHP Code
 
 LICENSE=	LGPL3
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear \
 		${PEARDIR}/Console/CommandLine.php:devel/pear-Console_CommandLine
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
 
-USES=		pear
+USES=		pear php
 USE_PHP=	spl xsl
 
 .include <bsd.port.mk>

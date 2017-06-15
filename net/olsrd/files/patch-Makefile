@@ -1,29 +1,6 @@
---- Makefile.orig	2015-09-20 12:22:23 UTC
+--- Makefile.orig	2016-11-22 19:39:42 UTC
 +++ Makefile
-@@ -143,15 +143,15 @@ cfgparser_clean:
- 		$(MAKECMDPREFIX)$(MAKECMD) -C $(CFGDIR) clean
- 
- install_bin:
--		mkdir -p $(SBINDIR)
--		install -m 755 $(EXENAME) $(SBINDIR)
--		$(STRIP) $(SBINDIR)/$(EXENAME)
-+		mkdir -p ${DESTDIR}$(SBINDIR)
-+		install -m 755 $(EXENAME) ${DESTDIR}$(SBINDIR)
-+		$(STRIP) ${DESTDIR}$(SBINDIR)/$(EXENAME)
- ifeq ($(SGW_SUPPORT),1)
--		$(MAKECMDPREFIX)if [ -e $(SBINDIR)/$(SGW_POLICY_SCRIPT) ]; then \
--			cp -f files/$(SGW_POLICY_SCRIPT) $(SBINDIR)/$(SGW_POLICY_SCRIPT).new; \
--			echo "Policy routing script was saved as $(SBINDIR)/$(SGW_POLICY_SCRIPT).new"; \
-+		$(MAKECMDPREFIX)if [ -e ${DESTDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT) ]; then \
-+			cp -f files/$(SGW_POLICY_SCRIPT) ${DESTDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT).new; \
-+			echo "Policy routing script was saved as ${DESTDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT).new"; \
- 		else \
--			cp -f files/$(SGW_POLICY_SCRIPT) $(SBINDIR)/$(SGW_POLICY_SCRIPT); \
-+			cp -f files/$(SGW_POLICY_SCRIPT) ${DESTDIR}$(SBINDIR)/$(SGW_POLICY_SCRIPT); \
- 		fi
- endif
- 
-@@ -162,29 +162,26 @@ uninstall_bin:
+@@ -167,20 +167,17 @@ uninstall_bin:
  install_olsrd:	install_bin
  		@echo ========= C O N F I G U R A T I O N - F I L E ============
  		@echo $(EXENAME) uses the configfile $(CFGFILE)
@@ -39,40 +16,17 @@
 +		@echo copy and edit one of these to $(CFGFILE)
 +		@echo If in doubt start with $(CFGFILE).default.lq
  		@echo ==========================================================
--		mkdir -p $(ETCDIR)
+ 		mkdir -p $(ETCDIR)
 -		$(MAKECMDPREFIX)if [ -e $(CFGFILE) ]; then \
 -			cp -f files/olsrd.conf.default.lq $(CFGFILE).new; \
 -			echo "Configuration file was saved as $(CFGFILE).new"; \
 -		else \
 -			cp -f files/olsrd.conf.default.lq $(CFGFILE); \
 -		fi
-+		mkdir -p ${DESTDIR}$(ETCDIR)
-+		-cp files/olsrd.conf.default.full ${DESTDIR}$(CFGFILE).default.full
-+		-cp files/olsrd.conf.default.rfc ${DESTDIR}$(CFGFILE).default.rfc
-+		-cp files/olsrd.conf.default.lq ${DESTDIR}$(CFGFILE).default.lq
-+		-cp files/olsrd.conf.default.lq-fisheye ${DESTDIR}$(CFGFILE).default.lq-fisheye
++		-cp files/olsrd.conf.default.full $(CFGFILE).default.full
++		-cp files/olsrd.conf.default.rfc $(CFGFILE).default.rfc
++		-cp files/olsrd.conf.default.lq $(CFGFILE).default.lq
++		-cp files/olsrd.conf.default.lq-fisheye $(CFGFILE).default.lq-fisheye
  		@echo -------------------------------------------
  		@echo Edit $(CFGFILE) before running olsrd!!
  		@echo -------------------------------------------
- 		@echo Installing manpages $(EXENAME)\(8\) and $(CFGNAME)\(5\)
- ifneq ($(MANDIR),)
--		mkdir -p $(MANDIR)/man8/
--		cp files/olsrd.8.gz $(MANDIR)/man8/$(EXENAME).8.gz
--		mkdir -p $(MANDIR)/man5/
--		cp files/olsrd.conf.5.gz $(MANDIR)/man5/$(CFGNAME).5.gz
-+		mkdir -p ${DESTDIR}$(MANDIR)/man8/
-+		cp files/olsrd.8.gz ${DESTDIR}$(MANDIR)/man8/$(EXENAME).8.gz
-+		mkdir -p ${DESTDIR}$(MANDIR)/man5/
-+		cp files/olsrd.conf.5.gz ${DESTDIR}$(MANDIR)/man5/$(CFGNAME).5.gz
- endif
- ifneq ($(RCDIR),)
- 		cp $(RCFILE) $(RCDIR)/olsrd
-@@ -239,7 +236,7 @@ libs_clean clean_libs:
- 		-for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=$(LIBDIR) clean;rm -f lib/$$dir/*.so lib/$$dir/*.dll;done
- 
- libs_install install_libs:
--		$(MAKECMDPREFIX)set -e;for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=$(LIBDIR) install;done
-+		$(MAKECMDPREFIX)set -e;for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=${DESTDIR}$(LIBDIR) install;done
- 
- libs_uninstall uninstall_libs:
- 		$(MAKECMDPREFIX)set -e;for dir in $(SUBDIRS);do $(MAKECMD) -C lib/$$dir LIBDIR=$(LIBDIR) uninstall;done

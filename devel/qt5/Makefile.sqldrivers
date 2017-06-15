@@ -16,7 +16,7 @@ CONFIGURE_ARGS+=-no-gui -no-xcb
 BUILD_WRKSRC?=	${WRKSRC}/src/plugins/sqldrivers/${DB:tl}
 INSTALL_WRKSRC?=${BUILD_WRKSRC}
 
-PLIST_FILES+=	${QT_LIBDIR_REL}/cmake/Qt5Sql/Qt5Sql_Q${DB}DriverPlugin.cmake \
+PLIST_FILES+=	${QT_CMAKEDIR_REL}/Qt5Sql/Qt5Sql_Q${DB}DriverPlugin.cmake \
 		${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:tl:C/^sql//}.so \
 		%%DEBUG%%${QT_PLUGINDIR_REL}/sqldrivers/libqsql${DB:tl:C/^sql//}.so.debug
 

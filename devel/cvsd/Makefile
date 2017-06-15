@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cvsd
-PORTVERSION=	1.0.18
+PORTVERSION=	1.0.24
 CATEGORIES=	devel
 MASTER_SITES=	http://arthurdejong.org/cvsd/ \
 		http://wiftp.com/
@@ -12,7 +12,8 @@ COMMENT=	CVS pserver daemon
 
 LICENSE=	GPLv2
 
-EXTRA_PATCHES=	${FILESDIR}/extra-cvsd-buildroot.in
+BUILD_DEPENDS=	cvs:devel/cvs
+RUN_DEPENDS=	cvs:devel/cvs
 
 USE_RC_SUBR=	cvsd
 USES=		perl5
@@ -24,13 +25,6 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	FAQ NEWS README
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
-BUILD_DEPENDS+=	cvs:devel/cvs
-RUN_DEPENDS+=	cvs:devel/cvs
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsd ${STAGEDIR}${PREFIX}/sbin/cvsd
@@ -46,4 +40,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

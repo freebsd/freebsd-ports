@@ -3,6 +3,7 @@
 
 PORTNAME=	Math-Int128
 PORTVERSION=	0.22
+PORTREVISION=	2
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +30,7 @@ CC=	/usr/bin/clang
 USE_GCC=	yes
 .endif
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Int128/Int128.so
 
 .include <bsd.port.post.mk>

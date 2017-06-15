@@ -13,6 +13,7 @@ bin/s4
 %%SITE_PERL%%/SVN/S4/Update.pm
 %%SITE_PERL%%/SVN/S4/ViewSpec.pm
 %%SITE_PERL%%/SVN/S4/WorkProp.pm
+%%PERL5_MAN1%%/s4.1.gz
 %%PERL5_MAN3%%/SVN::S4.3.gz
 %%PERL5_MAN3%%/SVN::S4::CatOrMods.3.gz
 %%PERL5_MAN3%%/SVN::S4::Commit.3.gz
@@ -27,4 +28,3 @@ bin/s4
 %%PERL5_MAN3%%/SVN::S4::Update.3.gz
 %%PERL5_MAN3%%/SVN::S4::ViewSpec.3.gz
 %%PERL5_MAN3%%/SVN::S4::WorkProp.3.gz
-%%PERL5_MAN1%%/s4.1.gz

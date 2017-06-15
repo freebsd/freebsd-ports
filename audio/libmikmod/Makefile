@@ -11,7 +11,7 @@ COMMENT=	MikMod Sound Library
 
 LICENSE=	LGPL21
 
-USES=		cpe gmake libtool pkgconfig
+USES=		cpe gmake libtool pathfix pkgconfig
 CPE_VENDOR=	raphael_assenat
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-esd

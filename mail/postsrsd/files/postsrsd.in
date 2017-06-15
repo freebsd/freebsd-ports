@@ -52,29 +52,15 @@ load_rc_config $name
 # Options other than above can be set with $postsrsd_flags.
 # see postsrsd documentation for detail.
 
-if [ "x${postsrsd_uid}" != "x" ];then
-    _uid_prefix="-u"
-fi
-if [ "x${postsrsd_domain}" != "x" ];then
-    postsrsd_domain="-d ${postsrsd_domain}"
-fi
-if [ "x${postsrsd_secret}" != "x" ];then
-    postsrsd_secret="-s ${postsrsd_secret}"
-fi
-if [ "x${postsrsd_forward_port}" != "x" ];then
-    postsrsd_forward_port="-f ${postsrsd_forward_port}"
-fi
-if [ "x${postsrsd_reverse_port}" != "x" ];then
-    postsrsd_reverse_port="-r ${postsrsd_reverse_port}"
-fi
-if [ "x${postsrsd_idle_timeout}" != "x" ];then
-    postsrsd_idle_timeout="-t ${postsrsd_idle_timeout}"
-fi
-if [ "x${postsrsd_exclude_domains}" != "x" ];then
-    postsrsd_exclude_domains="-X${postsrsd_exclude_domains}"
-fi
+[ -n "${postsrsd_uid}" ] && _uid_prefix="-u"
+[ -n "${postsrsd_domain}" ] && cmd_args="-d ${postsrsd_domain}"
+[ -n "${postsrsd_secret}" ] && cmd_args="${cmd_args} -s ${postsrsd_secret}"
+[ -n "${postsrsd_forward_port}" ] && cmd_args="${cmd_args} -f ${postsrsd_forward_port}"
+[ -n "${postsrsd_reverse_port}" ] && cmd_args="${cmd_args} -r ${postsrsd_reverse_port}"
+[ -n "${postsrsd_idle_timeout}" ] && cmd_args="${cmd_args} -t ${postsrsd_idle_timeout}"
+[ -n "${postsrsd_exclude_domains}" ] && cmd_args="${cmd_args} -X${postsrsd_exclude_domains}"
 
-command_args=" -D ${_uid_prefix} ${postsrsd_uid} -p ${pidfile} ${postsrsd_domain} ${postsrsd_secret} ${postsrsd_forward_port} ${postsrsd_reverse_port} ${postsrsd_idle_timeout} ${postsrsd_exclude_domains} ${postsrsd_flags}"
+command_args=" -D ${_uid_prefix} ${postsrsd_uid} -p ${pidfile} ${cmd_args} ${postsrsd_flags}"
 
 postsrsd_prepcmd ()
 {
@@ -83,6 +69,9 @@ postsrsd_prepcmd ()
     fi
     if [ -n "${postsrsd_uid}" ] ; then
 	chown ${postsrsd_uid} ${_piddir}
+    fi
+    if [ ! -f "${postsrsd_secret}" ] ; then
+	env -i tr -cd "[:alnum:]" < /dev/urandom | head -c 24 > "${postsrsd_secret}"
     fi
 }
 

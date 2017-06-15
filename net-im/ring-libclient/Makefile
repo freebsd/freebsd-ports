@@ -3,6 +3,7 @@
 
 PORTNAME=	ring-libclient
 PORTVERSION=	0.160516
+PORTREVISION=	1
 #DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im net-p2p
 
@@ -12,8 +13,6 @@ COMMENT=	Client library for the Ring VoIP SIP phone and IM
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libring.so:net-im/ring-daemon
-
-BROKEN_FreeBSD_9=	Fails due to compiler issues
 
 USE_GITHUB=	yes
 #GH_TUPLE+=	savoirfairelinux:ring-lrc:9eaac77

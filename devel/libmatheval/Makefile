@@ -16,10 +16,8 @@ LIB_DEPENDS=	libguile.so:lang/guile
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LEXLIB=-lfl_pic MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
-USES=		libtool makeinfo pathfix
+USES=		libtool localbase makeinfo pathfix
 INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		libmatheval
 

@@ -2,8 +2,8 @@
 
 PORTNAME=	consul-alerts
 PORTVERSION=	0.4.0
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@gmail.com
@@ -25,7 +25,7 @@ PLIST_FILES=	${PREFIX}/bin/consul-alerts
 
 USE_RC_SUBR=	consul-alerts
 
-STRIP=
+STRIP=		#none
 
 post-patch:
 	@${MKDIR} ${WRKDIR}/src/github.com/AcalephStorage
@@ -41,7 +41,9 @@ do-build:
 		-ldflags "-X main.GitDescribe=v${PORTVERSION}" -o bin/consul-alerts
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/src/github.com/AcalephStorage/consul-alerts/bin/consul-alerts ${STAGEDIR}${PREFIX}/bin/consul-alerts
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/src/github.com/AcalephStorage/consul-alerts/bin/consul-alerts \
+		${STAGEDIR}${PREFIX}/bin/consul-alerts
 
 .include <bsd.port.pre.mk>
 

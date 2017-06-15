@@ -1,4 +1,4 @@
---- libelf/gelf.h.orig	2014-02-05 00:21:44 UTC
+--- libelf/gelf.h.orig	2016-12-28 09:32:00 UTC
 +++ libelf/gelf.h
 @@ -65,6 +65,10 @@ typedef Elf64_Ehdr GElf_Ehdr;
  typedef Elf64_Shdr GElf_Shdr;
@@ -11,7 +11,7 @@
  /* XXX This should probably be a larger type in preparation of times when
     regular section indices can be larger.  */
  typedef Elf64_Section GElf_Section;
-@@ -107,6 +111,19 @@ typedef Elf64_Versym GElf_Versym;
+@@ -110,6 +114,19 @@ typedef Elf64_Versym GElf_Versym;
  
  
  /* Auxiliary vector.  */

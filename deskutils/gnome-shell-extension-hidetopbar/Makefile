@@ -14,7 +14,7 @@ BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
-USES=		gettext gmake gnome pkgconfig tar:xz
+USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -34,7 +34,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca
 	${INSTALL_DATA} ${WRKSRC}/org.gnome.shell.extensions.hidetopbar.gschema.xml \
 		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
-	@${RM} -fr ${WRKSRC}/org.gnome.shell.extensions.hidetopbar.gschema.xml
+	@${RM} -r ${WRKSRC}/org.gnome.shell.extensions.hidetopbar.gschema.xml
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/
 

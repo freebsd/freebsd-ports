@@ -1,6 +1,6 @@
---- areacode/areacode.c.orig	1997-02-16 11:24:50.000000000 +0100
-+++ areacode/areacode.c	2014-03-31 19:07:27.000000000 +0200
-@@ -352,7 +352,7 @@
+--- areacode/areacode.c.orig	1997-02-16 10:24:50 UTC
++++ areacode/areacode.c
+@@ -352,7 +352,7 @@ static void LoadTable (AreaCodeDesc* Des
  /* Load a part of the table into memory */
  {
      u32 SpaceNeeded = (Desc->Last - Desc->First + 1) * sizeof (u32);

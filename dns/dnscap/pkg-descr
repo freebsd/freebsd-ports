@@ -1,9 +1,7 @@
-dnscap is a network capture utility designed specifically for DNS
-traffic.  It normally produces binary data in pcap(3) format, either
-on standard output or in successive dump files (based on the -w
-command line option.)  This utility is similar to tcpdump(1), but
-has finer grained packet recognition tailored to DNS transactions
-and protocol options.  dnscap is expected to be used for gathering
-continuous research or audit traces.
+dnscap is a network capture utility designed specifically for DNS traffic. It
+produces binary data in pcap(3) format. This utility is similar to tcpdump(1),
+but has a number of features tailored to DNS transactions and protocol options.
+OARC uses dnscap for DITL data collections.
 
 WWW: https://www.dns-oarc.net/tools/dnscap
+WWW: https://github.com/DNS-OARC/dnscap

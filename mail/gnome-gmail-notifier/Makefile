@@ -2,7 +2,7 @@
 
 PORTNAME=	gnome-gmail-notifier
 PORTVERSION=	0.10.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail deskutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gmail Inbox Monitor for the GNOME2 desktop
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libsoup-2.4.so:devel/libsoup \

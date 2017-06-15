@@ -12,6 +12,7 @@
 %%WWWDIR%%/data/distros.ini
 %%WWWDIR%%/data/languages.ini
 %%WWWDIR%%/data/osnames.ini
+%%WWWDIR%%/data/raspberry.ini
 %%WWWDIR%%/gfx/ajax-loader.gif
 %%WWWDIR%%/gfx/ajaxLoader.gif
 %%WWWDIR%%/gfx/attention.gif
@@ -47,6 +48,7 @@
 %%WWWDIR%%/gfx/images/Darwin.png
 %%WWWDIR%%/gfx/images/Debian.png
 %%WWWDIR%%/gfx/images/Deepin.png
+%%WWWDIR%%/gfx/images/Devuan.png
 %%WWWDIR%%/gfx/images/DragonFly.png
 %%WWWDIR%%/gfx/images/Eisfair.png
 %%WWWDIR%%/gfx/images/Fedora.png
@@ -98,6 +100,7 @@
 %%WWWDIR%%/gfx/images/RedFlag.png
 %%WWWDIR%%/gfx/images/RedHat.png
 %%WWWDIR%%/gfx/images/Rubix.png
+%%WWWDIR%%/gfx/images/SalentOS.png
 %%WWWDIR%%/gfx/images/SMEServer.png
 %%WWWDIR%%/gfx/images/SMS.png
 %%WWWDIR%%/gfx/images/SUSE.png
@@ -236,7 +239,7 @@
 %%WWWDIR%%/js/jQuery/jquery.jgrowl.js
 %%WWWDIR%%/js/jQuery/jquery.js
 %%WWWDIR%%/js/jQuery/jquery.nyroModal.js
-%%WWWDIR%%/js/jQuery/jquery.timers.js
+%%WWWDIR%%/js/jQuery/jquery.timer.js
 %%WWWDIR%%/js/jQuery/jquery.treeTable.js
 %%WWWDIR%%/js/jQuery/jquery.treegrid.js
 %%WWWDIR%%/js/phpSysInfo/phpsysinfo.js
@@ -451,6 +454,7 @@
 %%WWWDIR%%/sample/distrotest/ClearOS/6.4.0-Beta.txt
 %%WWWDIR%%/sample/distrotest/Cloud/5.10.txt
 %%WWWDIR%%/sample/distrotest/Cloud/6.4.txt
+%%WWWDIR%%/sample/distrotest/Cloud/7.2.txt
 %%WWWDIR%%/sample/distrotest/CoreOS/367.1.0.txt
 %%WWWDIR%%/sample/distrotest/Crux/2.8.txt
 %%WWWDIR%%/sample/distrotest/Debian/5.0.3.txt
@@ -458,6 +462,7 @@
 %%WWWDIR%%/sample/distrotest/Debian/8-20140106-netinstall.txt
 %%WWWDIR%%/sample/distrotest/Debian/8-20140106.txt
 %%WWWDIR%%/sample/distrotest/Deepin/2013.txt
+%%WWWDIR%%/sample/distrotest/Devuan/1.0.txt
 %%WWWDIR%%/sample/distrotest/Eisfair/1-2.6.5.txt
 %%WWWDIR%%/sample/distrotest/Eisfair/2-1.8.1.txt
 %%WWWDIR%%/sample/distrotest/Fedora/20-lsb.txt
@@ -522,6 +527,7 @@
 %%WWWDIR%%/sample/distrotest/RedFlag/8.0.txt
 %%WWWDIR%%/sample/distrotest/RedHat/6.0.txt
 %%WWWDIR%%/sample/distrotest/RedHat/7.0-Beta.txt
+%%WWWDIR%%/sample/distrotest/SalentOS/1.0.1.txt
 %%WWWDIR%%/sample/distrotest/SMEServer/8.1beta3.txt
 %%WWWDIR%%/sample/distrotest/SMEServer/9.0beta3.txt
 %%WWWDIR%%/sample/distrotest/SMS/2.0.5.txt
@@ -534,6 +540,7 @@
 %%WWWDIR%%/sample/distrotest/Slackware/14.0.txt
 %%WWWDIR%%/sample/distrotest/Slax/7.0.1.txt
 %%WWWDIR%%/sample/distrotest/SliTaz/2014.02.16-cooking.txt
+%%WWWDIR%%/sample/distrotest/SliTaz/5.0-RC4.txt
 %%WWWDIR%%/sample/distrotest/Solus/1.0-rc1.txt
 %%WWWDIR%%/sample/distrotest/SolusOS/1.3.txt
 %%WWWDIR%%/sample/distrotest/SolusOS/2-alpha7.txt
@@ -564,6 +571,7 @@
 %%WWWDIR%%/sample/distrotest/Zorin/8.txt
 %%WWWDIR%%/sample/distrotest/antiX/2012.07.06.txt
 %%WWWDIR%%/sample/distrotest/elementaryOS/0.2.txt
+%%WWWDIR%%/sample/distrotest/elementaryOS/0.4.txt
 %%WWWDIR%%/sample/distrotest/gNewSense/3.0.txt
 %%WWWDIR%%/sample/distrotest/openSUSE/11.3.txt
 %%WWWDIR%%/sample/distrotest/openSUSE/13.1.txt
@@ -642,6 +650,7 @@
 %%WWWDIR%%/sample/plugin_mdstat/raid10.txt
 %%WWWDIR%%/sample/plugin_mdstat/raid11.txt
 %%WWWDIR%%/sample/plugin_mdstat/raid12.txt
+%%WWWDIR%%/sample/plugin_mdstat/raid13.txt
 %%WWWDIR%%/sample/plugin_mdstat/raid2.txt
 %%WWWDIR%%/sample/plugin_mdstat/raid3.txt
 %%WWWDIR%%/sample/plugin_mdstat/raid4.txt
@@ -713,6 +722,7 @@
 %%WWWDIR%%/tools/aptana/php.xml
 %%WWWDIR%%/tools/check.sh
 %%WWWDIR%%/tools/checkdistro.php
+%%WWWDIR%%/tools/cputest.php
 %%WWWDIR%%/tools/distrotest.php
 %%WWWDIR%%/tools/lint.bat
 %%WWWDIR%%/tools/phpsysinfo.ini

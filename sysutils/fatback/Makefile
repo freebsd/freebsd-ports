@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Recover deleted files from FAT filesystems
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 
 INFO=		fatback-manual

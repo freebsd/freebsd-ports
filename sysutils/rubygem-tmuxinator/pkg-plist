@@ -1,0 +1,4 @@
+bin/tmuxinator
+etc/bash_completion.d/_tmuxinator.bash
+%%GEM_LIB_DIR%%/completion/mux.fish
+share/zsh/site-functions/_tmuxinator

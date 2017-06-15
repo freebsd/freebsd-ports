@@ -68,7 +68,7 @@ all:
 .endif
 	@${ECHO} "Building ${DISTFILE}...."
 	@${ECHO} ""
-	@${ECHO} "Started at "`${SETENV} LANG=C date -u`"."
+	@${ECHO} "Started at "`date -u`"."
 	@${ECHO} ""
 	@${ECHO} "=============================================================="
 	@${ECHO} ""
@@ -97,7 +97,7 @@ all:
 	@${ECHO} ""
 	@${ECHO} "${DISTFILE} was built successfully!"
 	@${ECHO} ""
-	@${ECHO} "Finished at "`${SETENV} LANG=C date -u`"."
+	@${ECHO} "Finished at "`date -u`"."
 	@${ECHO} ""
 	@${ECHO} "You may clean up the build directory if everything looks okay,"
 	@${ECHO} "e.g., 'rm -fr ${FT2_PORTDIR}/work ${JDK_PORTDIR}/work'."

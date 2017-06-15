@@ -11,9 +11,7 @@ DISTNAME=	scriptNugget-ruby-${PORTVERSION}
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - Script Nugget Ruby
 
-GEM_NAME=		${DISTNAME}
 NO_ARCH=	yes
-
 USE_RUBY=		yes
 USES=		gem shebangfix
 SHEBANG_FILES=	lib/razorback.rb

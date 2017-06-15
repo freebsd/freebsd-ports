@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqliteodbc
-PORTVERSION=	0.9994
+PORTVERSION=	0.9995
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.ch-werner.de/sqliteodbc/

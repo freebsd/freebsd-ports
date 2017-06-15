@@ -3,6 +3,7 @@
 
 PORTNAME=	vcversioner
 PORTVERSION=	2.16.0.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ COMMENT=	Use version control tags to discover version numbers
 
 LICENSE=	ISCL
 
-USES=		python:3
+USES=		python:3.3+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

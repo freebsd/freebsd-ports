@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.elmar.co.il/Portable/fonts/
 PKGNAMESUFFIX=	-fonts
 DISTNAME=	H.fonts
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Hebrew fonts from El-Mar software, Ltd
 
 USES=		fonts tar:Z

@@ -3,6 +3,7 @@
 
 PORTNAME=	validns
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	dns security
 MASTER_SITES=	http://www.validns.net/download/
 
@@ -13,8 +14,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libJudy.so:devel/judy
 
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=yes
+USES=		ssl
 
 ALL_TARGET=
 
@@ -30,6 +30,10 @@ MAKE_ARGS+=	EXTRALPATH=-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

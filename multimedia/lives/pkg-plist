@@ -125,7 +125,6 @@ lib/lives/plugins/effects/realtime/weed/softlight.so
 lib/lives/plugins/effects/realtime/weed/targeted_zoom.so
 lib/lives/plugins/effects/realtime/weed/textfun.so
 lib/lives/plugins/effects/realtime/weed/tone_gen.so
-lib/lives/plugins/effects/realtime/weed/toonz.so
 lib/lives/plugins/effects/realtime/weed/tvpic.so
 lib/lives/plugins/effects/realtime/weed/vector_visualiser.so
 lib/lives/plugins/effects/realtime/weed/vertigo.so

@@ -3,7 +3,7 @@
 
 PORTNAME=	mydns
 PORTVERSION=	1.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--enable-alias
 .endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 CONFIGURE_ARGS+=--with-openssl \
 		--with-openssl-include=${OPENSSLINC} \
 		--with-openssl-lib=${OPENSSLLIB}

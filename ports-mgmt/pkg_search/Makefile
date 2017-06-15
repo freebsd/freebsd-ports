@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.mathematik.uni-marburg.de/~schmidtm/pkg_search/ \
 MAINTAINER=	schmidtm@mathematik.uni-marburg.de
 COMMENT=	Nifty script searching the ports database
 
+IGNORE_DragonFly=	Requires update to work for DragonFly
+
 PLIST_FILES=	bin/pkg_search man/man1/pkg_search.1.gz
 
 do-install:

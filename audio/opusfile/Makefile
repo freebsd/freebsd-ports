@@ -19,7 +19,6 @@ USES=		autoreconf gmake libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 PORTDOCS=	AUTHORS README.txt
 
@@ -50,7 +49,7 @@ post-patch:
 	@${CP} ${FILESDIR}/ftime.c ${WRKSRC}/src/
 
 post-install-DOXYGEN-on:
-	@${RM} -f ${WRKDIR}/PLIST.doc ; \
+	@${RM} ${WRKDIR}/PLIST.doc ; \
 	${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
 		${SED} 's|${STAGEDIR}${PREFIX}/||' \
 		>> ${WRKDIR}/PLIST.doc ; \

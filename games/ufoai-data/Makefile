@@ -26,13 +26,17 @@ NO_ARCH=	yes
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 PLIST=		${WRKDIR}/pkg-plist
 
+BROKEN_aarch64=		Fails to install: runaway process
+BROKEN_armv6=		Fails to install: runaway process
+BROKEN_mips64=		Fails to install: runaway process
+
 post-extract:
 	@cd ${WRKSRC}/base && \
-		${FIND} * -type f -exec ${UNZIP_CMD} "{}" -d ${WRKSRC}/base \;
+		${FIND} * -type f -exec ${UNZIP_CMD} {} -d ${WRKSRC}/base \;
 	@${RM} ${WRKSRC}/base/*.pk3
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 	@cd ${WRKSRC}/base && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/base/|' >> ${PLIST}
 

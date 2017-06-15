@@ -22,11 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-Text-Soundex>=0:textproc/p5-Text-Soundex
-RUN_DEPENDS+=	p5-Text-Soundex>=0:textproc/p5-Text-Soundex
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

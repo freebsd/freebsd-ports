@@ -12,7 +12,7 @@ COMMENT=	Google open source IPv4/IPv6 manipulation library in Python
 
 LICENSE=	APACHE20
 
-PROJECTHOST=	ipaddr-py
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
 

@@ -4,4 +4,4 @@ It provides blocking and non-blocking operation, with different reading
 and writing modes (byte-wise, block-wise, line-wise and special formats
 like network byte-order ip addresses).
 
-WWW: http://pear.php.net/package/Net_Socket/
+WWW: https://pear.php.net/package/Net_Socket

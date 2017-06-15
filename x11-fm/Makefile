@@ -22,6 +22,8 @@
     SUBDIR += nemo
     SUBDIR += p5-PerlFM
     SUBDIR += pcmanfm
+    SUBDIR += pcmanfm-qt
+    SUBDIR += pcmanfmqt-l10n
     SUBDIR += qtfm
     SUBDIR += rodent
     SUBDIR += rox-filer

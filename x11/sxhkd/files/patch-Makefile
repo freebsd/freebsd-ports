@@ -1,8 +1,8 @@
---- Makefile.orig	2016-03-15 16:20:41 UTC
+--- Makefile.orig	2016-10-30 12:28:09 UTC
 +++ Makefile
-@@ -1,14 +1,14 @@
- NAME     = sxhkd
- VERSION := $(shell git describe 2> /dev/null || cat VERSION)
+@@ -2,14 +2,14 @@ NAME     = sxhkd
+ VERCMD  ?= git describe 2> /dev/null
+ VERSION := $(shell $(VERCMD) || cat VERSION)
  
 -CPPFLAGS += -D_POSIX_C_SOURCE=200112L -DVERSION=\"$(VERSION)\"
 +CPPFLAGS += $(shell pkg-config --cflags xcb-keysyms) -DVERSION=\"$(VERSION)\"
@@ -16,11 +16,11 @@
 -DOCPREFIX ?= $(PREFIX)/share/doc/$(NAME)
 +BINPREFIX  = $(PREFIX)/bin
 +MANPREFIX  = $(PREFIX)/man
-+EXPREFIX  = $(PREFIX)/share/examples/$(NAME)
++EXPREFIX   = $(PREFIX)/share/examples/$(NAME)
  
- SRC = $(wildcard *.c)
- OBJ = $(SRC:.c=.o)
-@@ -27,11 +27,15 @@ $(NAME): $(OBJ)
+ SRC := $(wildcard *.c)
+ OBJ := $(SRC:.c=.o)
+@@ -28,11 +28,15 @@ $(NAME): $(OBJ)
  
  install:
  	mkdir -p "$(DESTDIR)$(BINPREFIX)"

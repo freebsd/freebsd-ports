@@ -12,7 +12,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libglapi.so:graphics/libglapi
 
 USES=		ssl
-USE_XORG=	x11 xau xcb xdmcp xvmc
+USE_XORG=	dri2proto dri3proto glproto presentproto x11 xau xcb xdmcp xvmc
 # libosmesa doesn't link agains libGL but osmesa.h needs GL/gl.h
 # and both headers are intalled by libGL ....
 USE_GL=		gl

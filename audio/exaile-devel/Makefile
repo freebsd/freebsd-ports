@@ -2,6 +2,7 @@
 
 PORTNAME=	exaile
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-devel
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py-bsddb3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	22c75bf
+GH_TAGNAME=	bf68e9c
 
 NO_ARCH=	yes
 USES=		desktop-file-utils gmake gnome python:2.7

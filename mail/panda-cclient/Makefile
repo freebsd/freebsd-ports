@@ -29,11 +29,15 @@ MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 PKGMESSAGE=	pkg-message-ssl
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
 
 USE_LDCONFIG=	yes
 ALL_TARGET=	bsf

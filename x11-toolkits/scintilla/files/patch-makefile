@@ -1,4 +1,4 @@
---- makefile.orig	2016-08-30 04:39:06 UTC
+--- makefile.orig	2016-12-01 09:53:41 UTC
 +++ makefile
 @@ -9,14 +9,6 @@
  srcdir ?= .
@@ -38,9 +38,9 @@
  
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
-@@ -116,9 +113,11 @@ $(COMPLIB): Accessor.o CharacterSet.o Le
+@@ -119,9 +116,11 @@ $(COMPLIB): Accessor.o CharacterSet.o Le
  	PropSetSimple.o PlatGTK.o \
- 	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o CharacterCategory.o ViewStyle.o \
+ 	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o ScintillaGTKAccessible.o CellBuffer.o CharacterCategory.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
 -	$(MARSHALLER) $(LEXOBJS)
 -	$(AR) $(ARFLAGS) $@ $^

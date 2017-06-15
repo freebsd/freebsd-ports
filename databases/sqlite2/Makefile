@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQL database engine in a C library
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig readline
+USES=		gmake libtool pathfix pkgconfig readline
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--with-hints=freebsd.hints
@@ -48,6 +48,7 @@ PLIST_SUB+=	WITH_TCLWRAPPER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
+ALL_TARGET=	all doc
 PORTDOCS=	*
 MAKE_ARGS+=	TCLSH=${TCLSH}
 MAKE_ENV+=	TCL_VER=${TCL_VER}
@@ -69,12 +70,6 @@ post-patch:
 		>> ${WRKSRC}/freebsd.hints
 	@${ECHO} "config_TARGET_LIBS=\"-lpthread\"" \
 		>> ${WRKSRC}/freebsd.hints
-.endif
-
-post-build:
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "===> Building docs"
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} doc)
 .endif
 
 post-install:

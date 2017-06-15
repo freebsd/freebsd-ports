@@ -1,0 +1,15 @@
+include/opensolaris-libm/complex.h
+include/opensolaris-libm/fenv.h
+include/opensolaris-libm/floatingpoint.h
+include/opensolaris-libm/iso/math_c99.h
+include/opensolaris-libm/iso/math_iso.h
+include/opensolaris-libm/math.h
+include/opensolaris-libm/sys/feature_tests.h
+include/opensolaris-libm/sys/ieeefp.h
+include/opensolaris-libm/tgmath.h
+lib/opensolaris/libm.a
+lib/opensolaris/libm.so
+lib/opensolaris/libm.so.2
+lib/opensolaris/libmvec.a
+lib/opensolaris/libmvec.so
+lib/opensolaris/libmvec.so.1

@@ -3,6 +3,7 @@
 
 PORTNAME=	userfw
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://userfw.net/files/release/ \
 		http://imax.in.ua/files/ \
@@ -26,6 +27,10 @@ BROKEN_powerpc=	does not compile
 
 .if !exists(${SRC_BASE}/sys/sys/module.h)
 IGNORE=		requires kernel source files
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
+BROKEN=		does not build on FreeBSD 11+
 .endif
 
 CMAKE_ARGS+=	-DDOMAIN_STUB:BOOL=OFF

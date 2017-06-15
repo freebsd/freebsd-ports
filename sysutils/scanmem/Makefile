@@ -13,6 +13,8 @@ COMMENT=	Locate and modify various data in an executing process
 LICENSE=	GPLv3
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	requires linprocfs(5)

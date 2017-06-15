@@ -1,0 +1,20 @@
+--- configure.orig	2017-04-03 12:17:53 UTC
++++ configure
+@@ -465,8 +465,6 @@ catanh.c
+ ccos.c
+ ccosh.c
+ cexp.c
+-clog.c
+-cpow.c
+ csin.c
+ csinh.c
+ csqrt.c
+@@ -485,6 +483,8 @@ ccot.c
+ ccoth.c
+ ccsc.c
+ ccsch.c
++clog.c
++cpow.c
+ clogb.c
+ clog10.c
+ csec.c

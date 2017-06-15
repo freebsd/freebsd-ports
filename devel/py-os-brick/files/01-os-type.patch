@@ -1,0 +1,47 @@
+From b2edffa81edb25202ec6ed08d131b8fa4153a1d5 Mon Sep 17 00:00:00 2001
+From: Alexander Nusov <alexander.nusov@nfvexpress.com>
+Date: Thu, 8 Dec 2016 16:26:21 +0300
+Subject: [PATCH] add support for freebsd os
+
+---
+ os_brick/initiator/__init__.py  | 1 +
+ os_brick/initiator/connector.py | 4 ++++
+ 2 files changed, 5 insertions(+)
+
+diff --git a/os_brick/initiator/__init__.py b/os_brick/initiator/__init__.py
+index 95e0b10..aa91615 100644
+--- a/os_brick/initiator/__init__.py
++++ b/os_brick/initiator/__init__.py
+@@ -34,6 +34,7 @@ PLATFORM_S390 = 'S390'
+ OS_TYPE_ALL = 'ALL'
+ OS_TYPE_LINUX = 'LINUX'
+ OS_TYPE_WINDOWS = 'WIN'
++OS_TYPE_FREEBSD = 'FREEBSD'
+ 
+ S390X = "s390x"
+ S390 = "s390"
+diff --git a/os_brick/initiator/connector.py b/os_brick/initiator/connector.py
+index 86adfa8..989b8d6 100644
+--- a/os_brick/initiator/connector.py
++++ b/os_brick/initiator/connector.py
+@@ -51,6 +51,7 @@ PLATFORM_S390 = 'S390'
+ OS_TYPE_ALL = 'ALL'
+ OS_TYPE_LINUX = 'LINUX'
+ OS_TYPE_WINDOWS = 'WIN'
++OS_TYPE_FREEBSD = 'FREEBSD'
+ 
+ S390X = "s390x"
+ S390 = "s390"
+@@ -204,6 +205,9 @@ def get_connector_properties(root_helper, my_ip, multipath, enforce_multipath,
+     props['ip'] = my_ip
+     props['host'] = host if host else socket.gethostname()
+ 
++    if sys.platform.startswith('freebsd'):
++        props['os_type'] = OS_TYPE_FREEBSD
++
+     for item in connector_list:
+         connector = importutils.import_class(item)
+ 
+-- 
+2.8.1
+

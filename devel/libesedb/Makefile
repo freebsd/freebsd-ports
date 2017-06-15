@@ -3,7 +3,7 @@
 
 PORTNAME=	libesedb
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20160622
+DISTVERSION=	experimental-20170121
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libesedb/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -17,18 +17,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfwnt.so:devel/libfwnt
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} \
-		--with-libfwnt=${LOCALBASE}
-USES=		gettext libtool pathfix python
+CONFIGURE_ARGS=	--enable-python --with-libfwnt=${LOCALBASE}
+USES=		libtool pathfix python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
 
+OPTIONS_DEFINE=	DOCS NLS
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
+NLS_CONFIGURE_OFF=	--disable-nls
+
 PORTDOCS=	AUTHORS ChangeLog
 
-OPTIONS_DEFINE=	DOCS
-
-post-install-DOCS-on:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

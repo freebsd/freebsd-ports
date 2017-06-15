@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	pypy3
-DISTVERSION=	5.2.0-alpha1
+PORTREVISION=	1
+DISTVERSION=	5.5.0-alpha
 DISTNAME=	${PORTNAME}.3-v${DISTVERSION}-src
 
 MASTERDIR=	${.CURDIR}/../pypy
 
-BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-pypy3.3-v5.2-0/testing_1
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${DISTVERSION:C/-.*//}-src
+BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-${PORTNAME}.3-${DISTVERSION:C/-.*//}-0/testing_1
 
 PACKAGE_ARGS=	--without-_gdbm --without-sqlite3 --without-tk
 
-PYPY_CFFI_VER=	pypy3-52
+PYPY_CFFI_VER=	pypy3-55
 
 .include "${MASTERDIR}/Makefile"

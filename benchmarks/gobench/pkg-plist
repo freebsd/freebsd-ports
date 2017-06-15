@@ -1,0 +1,3 @@
+bin/gobench
+bin/gobench.go
+man/man1/gobench.1.gz

@@ -12,7 +12,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese marumoji fonts
 
 LICENSE=	MIT
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	mkbold:x11-fonts/mkbold-mkitalic \
 		bdftopcf:x11-fonts/bdftopcf

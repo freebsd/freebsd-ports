@@ -11,25 +11,3 @@
            do \
  	  ( if test -e $$lib ; then \
  		$(INSTALL) -m 444 $$lib $(DESTDIR)$(LIBDIR); \
-@@ -160,9 +158,9 @@
- 	$(INSTALL) -m 755 make/ptlib-config $(DESTDIR)$(PREFIX)/share/ptlib/make/
- 	(cd $(DESTDIR)$(PREFIX)/bin; rm -f ptlib-config ; ln -snf ../share/ptlib/make/ptlib-config ptlib-config)
- 
--	mkdir -p $(DESTDIR)$(LIBDIR)/pkgconfig
--	chmod 755 $(DESTDIR)$(LIBDIR)/pkgconfig
--	$(INSTALL) -m 644 ptlib.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
-+	mkdir -p $(DESTDIR)$(PREFIX)/libdata/pkgconfig
-+	chmod 755 $(DESTDIR)$(PREFIX)/libdata/pkgconfig
-+	$(INSTALL) -m 644 ptlib.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
- 
- uninstall:
- 	rm -rf $(DESTDIR)$(PREFIX)/include/ptlib \
-@@ -171,7 +169,7 @@
- 	       $(DESTDIR)$(PREFIX)/include/ptbuildopts.h \
- 	       $(DESTDIR)$(PREFIX)/share/ptlib \
- 	       $(DESTDIR)$(LIBDIR)/$(DEV_PLUGIN_DIR) \
--	       $(DESTDIR)$(LIBDIR)/pkgconfig/ptlib.pc
-+	       $(DESTDIR)$(PREFIX)/libdata/pkgconfig/ptlib.pc
- 	rm -f $(DESTDIR)$(LIBDIR)/lib$(PTLIB_BASE)_s.a \
- 	      $(DESTDIR)$(LIBDIR)/$(PTLIB_FILE) \
- 	      $(DESTDIR)$(LIBDIR)/$(LIB_SONAME)

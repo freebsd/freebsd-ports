@@ -1,0 +1,11 @@
+Shapes library for Prawn
+
+Available thus far:
+- star
+- half_star
+- arc
+- pie_slice
+- half_circle
+- quarter_circle
+
+WWW: https://github.com/Bluejade/prawn-shapes

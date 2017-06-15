@@ -2,7 +2,7 @@
 
 PORTNAME=	tesla
 DISTVERSION=	0.0.20140425
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel lang
 
 MAINTAINER=	brooks@FreeBSD.org
@@ -23,7 +23,5 @@ CC=		clang33
 CXX=		clang++33
 
 CMAKE_ARGS+=	-DCMAKE_LLVM_CONFIG=llvm-config33
-
-BROKEN_FreeBSD_9=	does not build
 
 .include <bsd.port.mk>

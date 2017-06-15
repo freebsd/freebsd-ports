@@ -16,7 +16,6 @@ man/man8/pure-statsdecode.8.gz
 man/man8/pure-uploadscript.8.gz
 sbin/pure-alwaysfail
 sbin/pure-authd
-sbin/pure-config.pl
 sbin/pure-ftpd
 sbin/pure-ftpwho
 sbin/pure-mrtginfo

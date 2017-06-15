@@ -25,7 +25,7 @@ QT4_USE=	qt4=corelib,gui,qmake_build,moc_build
 QT5_USE=	qt5=core,gui,qmake_build,buildtools_build
 MAKE_ARGS+=	${PORT_OPTIONS:MQT*:S/QT/QT=/}
 
-WRKSRC=	${WRKDIR}/QtAwesome-${GH_TAGNAME}/QtAwesome
+WRKSRC_SUBDIR=	QtAwesome
 #MAKEFILE=	${FILESDIR}/BSDmakefile
 EXTRACT_AFTER_ARGS=--no-same-owner --no-same-permissions	\
 		--exclude QtAwesomeSample --exclude fonts

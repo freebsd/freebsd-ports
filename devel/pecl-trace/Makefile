@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trace
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,24 +14,15 @@ COMMENT=	Low-overhead tracing tool for PHP
 LICENSE=	APACHE20
 
 WRKSRC_SUBDIR=	extension
-CMDTOOLSRC=	${WRKSRC}/../cmdtool
 
-GNU_CONFIGURE=	yes
-USES=		gmake php:ext shebangfix tar:tgz
-IGNORE_WITH_PHP=	70
+USES=		gmake php:ext tar:tgz
+PLIST_FILES=	bin/phptrace
 
-SHEBANG_FILES=	${CMDTOOLSRC}/phptrace
-PLIST_FILES=	bin/phptrace \
-		bin/trace-php
-
-post-patch:
-	${REINPLACE_CMD} -e 's|Darwin|FreeBSD|g' ${CMDTOOLSRC}/phptrace
-
-post-build:
-	(cd ${CMDTOOLSRC} && ${GMAKE} ${MAKE_ENV})
+pre-install:
+	cd ${WRKSRC} && \
+		${MAKE_CMD} install-cli PHP_TRACE_BINDIR=${STAGEDIR}${PREFIX}/bin
 
 post-install:
-	${INSTALL_PROGRAM} ${CMDTOOLSRC}/trace-php ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${CMDTOOLSRC}/phptrace ${STAGEDIR}${PREFIX}/bin
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/phptrace
 
 .include <bsd.port.mk>

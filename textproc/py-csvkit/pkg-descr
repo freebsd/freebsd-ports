@@ -1,2 +1,4 @@
 csvkit is a suite of command-line tools for converting to and working
 with CSV, the king of tabular file formats.
+
+WWW: https://csvkit.readthedocs.io/

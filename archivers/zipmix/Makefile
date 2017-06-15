@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_src
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Produce .ZIP file from two other ones with the best compressed files
 
-USES=		dos2unix zip
+USES=		dos2unix ncurses zip
 MAKEFILE=	${FILESDIR}/Makefile
 NO_WRKSUBDIR=	yes
 

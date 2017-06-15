@@ -56,8 +56,7 @@ CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
-USES=		fam gettext gmake libtool perl5 pkgconfig tar:bzip2
-USE_OPENSSL=	yes
+USES=		fam gettext gmake libtool perl5 pkgconfig tar:bzip2 ssl
 USE_SUBMAKE=	yes
 USE_RC_SUBR=	courier
 
@@ -329,7 +328,7 @@ post-install:
 .endfor
 	@${INSTALL_DATA} ${STAGEDIR}${DATADIR}/htmldoc/* ${STAGEDIR}${DOCSDIR}/html
 .endif
-	@${RM} -rf ${STAGEDIR}${DATADIR}/htmldoc
+	@${RM} -r ${STAGEDIR}${DATADIR}/htmldoc
 	@-${CHOWN} -Rh ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}
 	@${CHMOD} -R a+r ${STAGEDIR}${DATADIR}/courierwebadmin
 	@${CHMOD} -R a-w ${STAGEDIR}${DATADIR} ${STAGEDIR}${LIBEXECDIR}/courier

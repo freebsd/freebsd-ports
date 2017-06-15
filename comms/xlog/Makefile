@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.13
+PORTVERSION=	2.0.14
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
@@ -12,14 +12,16 @@ COMMENT=	Amateur Radio logging application
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhamlib.so:comms/hamlib
+LIB_DEPENDS=	libhamlib.so:comms/hamlib \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 USES=		pkgconfig shared-mime-info
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mime-update
 CONFIGURE_ENV+=	ac_cv_c_compiler_gnu=no
-MAKE_ARGS=	PREFIX=/${PREFIX}
+MAKE_ARGS=	PREFIX=${PREFIX}
 
 LIBS+=		-lm
 

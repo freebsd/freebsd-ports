@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-tool-stats
-PORTREVISION=		0
+PORTREVISION=		2
 
 COMMENT=		Statistics tool for OpenSMTPD
 

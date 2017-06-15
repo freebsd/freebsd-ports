@@ -1,0 +1,65 @@
+From 434436b75f00c5475f66ff0f4062e168aa409688 Mon Sep 17 00:00:00 2001
+From: ivan-83 <rozhuk.im@gmail.com>
+Date: Tue, 10 Mar 2015 01:21:28 +0300
+Subject: [PATCH] * BSD/FreeBSD build fix
+
+---
+ CMakeLists.txt                      | 14 ++++++++++++++
+ winpr/libwinpr/synch/wait.c         |  2 +-
+ winpr/libwinpr/sysinfo/sysinfo.c    |  1 +
+ winpr/libwinpr/utils/CMakeLists.txt |  4 ++++
+ 4 files changed, 20 insertions(+), 1 deletion(-)
+
+--- CMakeLists.txt.orig	2016-12-11 05:41:21 UTC
++++ CMakeLists.txt
+@@ -319,6 +319,14 @@ if(APPLE)
+ 	endif()
+ endif(APPLE)
+ 
++# BSD
++if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
++	set(BSD TRUE)
++	if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++		set(FREEBSD TRUE)
++	endif()
++endif()
++
+ # Android
+ if(ANDROID)
+   set(WITH_LIBRARY_VERSIONING "OFF")
+@@ -558,6 +566,12 @@ set(FREERDP_EXTENSION_PATH "${CMAKE_INST
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
+ include_directories(${CMAKE_CURRENT_BINARY_DIR}/include)
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
++if(BSD)
++	if(IS_DIRECTORY /usr/local/include)
++		include_directories(/usr/local/include)
++		link_directories(/usr/local/lib)
++	endif()
++endif()
+ 
+ # Configure files
+ add_definitions("-DHAVE_CONFIG_H")
+--- winpr/libwinpr/sysinfo/sysinfo.c.orig	2014-09-11 22:46:32 UTC
++++ winpr/libwinpr/sysinfo/sysinfo.c
+@@ -54,6 +54,7 @@
+ #ifndef _WIN32
+ 
+ #include <time.h>
++#include <sys/time.h>
+ 
+ #ifdef HAVE_UNISTD_H
+ #include <unistd.h>
+--- winpr/libwinpr/utils/CMakeLists.txt.orig	2014-09-11 22:46:32 UTC
++++ winpr/libwinpr/utils/CMakeLists.txt
+@@ -105,6 +105,10 @@ if(UNIX)
+ 	winpr_library_add(m)
+ endif()
+ 
++if(BSD)
++	winpr_library_add(execinfo)
++endif()
++
+ if(BUILD_TESTING)
+ 	add_subdirectory(test)
+ endif()

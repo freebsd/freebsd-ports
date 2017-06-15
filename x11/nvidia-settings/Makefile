@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	355.11
-PORTREVISION=	3
+PORTVERSION=	378.13
 CATEGORIES=	x11
 
 MAINTAINER=	bland@FreeBSD.org
@@ -11,16 +10,18 @@ COMMENT=	Display Control Panel for X NVidia driver
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjansson.so:devel/jansson \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libjansson.so:devel/jansson \
 		libvdpau.so:multimedia/libvdpau
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NVIDIA
 
-USE_GNOME=	gtk20
-USES=		gmake pkgconfig
+USE_GNOME=	gtk20 cairo gdkpixbuf2
+USES=		gmake pkgconfig gettext-runtime
 USE_GL=		gl
-USE_XORG=	xext xv
+USE_XORG=	x11 xext xv xxf86vm
 
 PLIST_FILES=	bin/nvidia-settings \
 		man/man1/nvidia-settings.1.gz \
@@ -31,8 +32,7 @@ PLIST_FILES=	bin/nvidia-settings \
 LDFLAGS+=	-pthread
 MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
 		NV_VERBOSE= \
-		STRIP_CMD=${TRUE} \
-		INSTALL_BIN_ARGS="${INSTALL_PROGRAM:Ninstall}" \
+		GTK3_AVAILABLE=0 \
 		INSTALL_DOC_ARGS="${INSTALL_MAN:Ninstall}" \
 		X_CFLAGS=-I${LOCALBASE}/include \
 		X_LDFLAGS=-L${LOCALBASE}/lib

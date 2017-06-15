@@ -23,11 +23,4 @@ CONFIGURE_ARGS=	--enable-introspection=yes \
 		--with-bash-completion-dir=${PREFIX}/share/bash-completion/completions
 PLIST_SUB=	VERSION=1.0 SOVERSION=0.800.0
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
-.endif
-
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5 pgsql
 USE_PERL5=	configure
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/DBD/Pg/Pg.so
 
 .include <bsd.port.mk>

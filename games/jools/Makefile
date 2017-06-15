@@ -32,7 +32,7 @@ post-extract:
 .endfor
 
 post-patch:
-	@${FIND} ${WRKSRC} -name ".arch-ids" | ${XARGS} ${RM} -fr
+	@${FIND} ${WRKSRC} -name ".arch-ids" | ${XARGS} ${RM} -r
 	@${FIND} ${WRKSRC} -name ".arch-ids" -delete \
 		-or -name ".placeholder" -delete
 

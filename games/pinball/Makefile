@@ -11,13 +11,15 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Emilia Pinball is a free pinball game
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool:keepla # .la needed for plugin loading
-USE_GL=		gl
+USES=		gmake localbase:ldflags libtool:keepla # .la needed for plugin loading
+USE_GL=		gl glu
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-debug
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --without-debug
+CPPFLAGS+=	-DRZR_LIBSTATIC
 
 OPTIONS_DEFINE=	DOCS
 
@@ -29,12 +31,7 @@ USE_GL+=	glu
 .else
 USE_SDL=	image mixer sdl
 .endif
-
-CPPFLAGS+=	-I${LOCALBASE}/include -DRZR_LIBSTATIC
-LDFLAGS+=	-L${LOCALBASE}/lib
 #MAKE_JOBS_UNSAFE=	yes
-
-DOCS=		README
 
 # For gmake>=3.82
 pre-configure:
@@ -49,9 +46,7 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pinball/lib*.so*
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for FILE in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

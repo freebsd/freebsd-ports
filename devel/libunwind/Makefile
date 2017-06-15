@@ -17,7 +17,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USES=		autoreconf libtool pathfix pkgconfig
 

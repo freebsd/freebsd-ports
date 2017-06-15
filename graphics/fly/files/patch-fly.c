@@ -1,6 +1,6 @@
---- fly.c.orig	Sun Nov 25 19:39:28 2001
-+++ fly.c	Mon Oct 17 23:48:51 2005
-@@ -1270,6 +1270,11 @@
+--- fly.c.orig	2009-06-17 01:29:36 UTC
++++ fly.c
+@@ -1270,6 +1270,11 @@ void copy_to_img(FILE *infile, gdImagePt
  	} else {
  		img_file = gdImageCreateFromPng(img_to_copy);
  	}

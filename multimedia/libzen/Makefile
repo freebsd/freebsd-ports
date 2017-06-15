@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libzen
-PORTVERSION=	0.7.85
+PORTVERSION=	0.7.94
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/../../../License.txt
 
 CONFLICTS_INSTALL=	mediainfo-0.[0-6]* mediainfo-0.7.[0-5]*
 
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --enable-static
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

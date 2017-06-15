@@ -2,6 +2,7 @@
 
 PORTNAME=	ipdbtools
 PORTVERSION=	1.1.1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cyclaero.com/public/ipdbtools/
 
@@ -19,5 +20,8 @@ PLIST_FILES=	bin/ipup \
 		man/man1/ipup.1.gz \
 		man/man1/ipdb.1.gz \
 		man/man1/ipdb-update.sh.1.gz
+
+BROKEN_aarch64=		Fails to compile: error: invalid conversion between vector type and integer type
+BROKEN_sparc64=		Fails to compile: error: unrecognized command line option -mssse3
 
 .include <bsd.port.mk>

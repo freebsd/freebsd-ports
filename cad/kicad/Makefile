@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	20140622%2Bbzr4027
-PORTREVISION=	1
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://launchpadlibrarian.net/179199115/
@@ -19,15 +19,8 @@ RUN_DEPENDS=	xpdf:graphics/xpdf
 
 CONFLICTS=	kicad-devel*
 
-USES=		cmake desktop-file-utils dos2unix shared-mime-info tar:xz
-
-# Does not compile with Gcc48
-USE_GCC=	4.7
-#USES+=		compiler:gcc-c++11-lib
-LDFLAGS+=	-L${LOCALBASE}/lib/c++
-CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
-BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+USES=		cmake compiler:gcc-c++11-lib desktop-file-utils dos2unix \
+		shared-mime-info tar:xz
 
 DOS2UNIX_GLOB=	*.cmake sch_bus_entry.h sch_line.h sch_no_connect.h
 USE_XORG=	ice x11 xext
@@ -44,7 +37,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.${DISTVERSION:C/%2B/+/}
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	DOCS DOXYGEN NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
@@ -53,10 +46,11 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 
-# undefined reference to `std::chrono::_V2::steady_clock::now()@GLIBCXX_3.4.19'
-BROKEN_FreeBSD_9=	does not link
-
-DOCS_VARS=	LICENSE+=GFDL LICENSE_COMB=multi
+DOXYGEN_VARS=	LICENSE+=GFDL LICENSE_COMB=multi
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_ALL_TARGET=	all doxygen-docs
+DOXYGEN_PORTDOCS=	doxygen
 
 post-patch:
 	${MV} ${WRKSRC}/include/boost ${WRKSRC}/include/boost.orig
@@ -80,7 +74,7 @@ post-install-NLS-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}/internat
 	(cd ${WRKSRC}/doc/internat &&	\
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/internat)
-	${RM} -f ${STAGEDIR}${DATADIR}/internat/CMakeLists.txt
+	${RM} ${STAGEDIR}${DATADIR}/internat/CMakeLists.txt
 	${FIND} ${STAGEDIR}${DATADIR}/internat -name kicad.po -delete
 
 post-install-DOCS-on:

@@ -13,6 +13,6 @@ LICENSE=	PHP301
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm
 RUN_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:devel/pear-HTML_QuickForm
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

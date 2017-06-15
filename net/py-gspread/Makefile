@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gspread
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.2
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Google Spreadsheets Python API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>2.2.1:www/py-requests
 
 USES=	python:2
 USE_PYTHON=	distutils autoplist

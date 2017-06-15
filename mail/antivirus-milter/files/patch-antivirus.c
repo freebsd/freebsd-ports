@@ -1,6 +1,6 @@
---- antivirus.c.orig	Tue Jul 15 21:27:14 2003
-+++ antivirus.c	Mon Jun 20 17:45:16 2005
-@@ -85,6 +85,8 @@
+--- antivirus.c.orig	2003-07-15 19:27:14 UTC
++++ antivirus.c
+@@ -85,6 +85,8 @@ static char *VIRUSACTION=NULL;
  static char *FORMAT=NULL;
  static sfsistat avfailcode=0;
  static int purgevirus=0;
@@ -9,7 +9,7 @@
  static char *avargs[]={NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL};
  
  /*
-@@ -128,6 +130,12 @@
+@@ -128,6 +130,12 @@ static char *badext[]={".com",".scr",".v
  #define FORMAT_SOPHOS ">>> Virus '%[^']s' found in file %*s"
  
  /*
@@ -22,7 +22,7 @@
  ** this can be given on the command line
  */
  static char *configfile=NULL;
-@@ -502,6 +510,7 @@
+@@ -502,6 +510,7 @@ sfsistat virusscan(SMFICTX *ctx, char *p
    int retval;
    int fd;
    int i;
@@ -30,7 +30,7 @@
    char *p=NULL;
    char *av[]={NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL};
  
-@@ -552,13 +561,26 @@
+@@ -552,13 +561,26 @@ sfsistat virusscan(SMFICTX *ctx, char *p
  	     (int)ctx, retval,priv->workdir);
      }
  
@@ -58,7 +58,7 @@
  	    {
  	      if (viruses[0])
  		strncat(viruses," ",sizeof(viruses));
-@@ -572,10 +594,8 @@
+@@ -572,10 +594,8 @@ sfsistat virusscan(SMFICTX *ctx, char *p
        if (viruses[0])
  	priv->viruses=strdup(viruses);
        else
@@ -70,7 +70,7 @@
  	  return(avfailcode);
  	}
        return(SMFIS_REJECT);
-@@ -1211,6 +1231,7 @@
+@@ -1211,6 +1231,7 @@ int init(void)
    if (AVFAILACTION==NULL) AVFAILACTION=CONF_AVFAILACTION;
    if (VIRUSACTION==NULL) VIRUSACTION=CONF_VIRUSACTION;
  
@@ -78,7 +78,7 @@
    if (strcasecmp(AVPRODUCT,"mcafee")==0)
      {
        FORMAT=FORMAT_MCAFEE;
-@@ -1225,10 +1246,17 @@
+@@ -1225,10 +1246,17 @@ int init(void)
      {
        FORMAT=FORMAT_FSAV;
      }

@@ -69,7 +69,6 @@ doom3-linux-*		games/linux-doom3	Redistribution is limited, see license; Request
 doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license; Requested by id Software
 doomsrc.zip		games/doom		Redistribution is limited, see license; Requested by id Software
 dr_freebsd_*.zip	sysutils/megarc		Must be downloaded directly from the manufacturer
-dsnake-*		games/dsnake		License prohibits any reselling
 eagle-lin-*.run		cad/linux-eagle5	Usage permitted for non-commercial purposes only
 eawpats*		audio/eawpats		Some of the patches are not for commercial use
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
@@ -123,8 +122,6 @@ jaf-*.zip		java/jaf		See the license
 jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
 javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
-jdk-6*-apidocs.zip	java/jdk16-doc		This documentation is under license and export control
-jdk-7*-apidocs.zip	java/jdk7-doc		This documentation is under license and export control
 jdk-8*-apidocs.zip	java/jdk8-doc		This documentation is under license and export control
 jdk-8*-i586.tar.gz	java/linux-oracle-jdk18	Redistribution of repackaged binaries not permitted
 jfbuild-*		games/jfsw		Must be distributed only through the Internet and free of charge
@@ -163,21 +160,16 @@ molden*			biology/molden		Free for academic, non-profit usage; do not redistribu
 ncftpd-*		ftp/ncftpd		30 day evaluation license
 nero2_linux_*		games/linux-nerogame	Freeware, but license terms are unclear
 NeroDigitalAudio.zip	audio/linux-neroaaccodec Redistribution forbidden
-nerolinux-*		sysutils/linux-nero	Must be downloaded from their website and a serial number must be bought
 NetComponents-*		java/netcomponents	No redistribution except as part of a substantially different product
 nntpcache-*		news/nntpcache		Free for individuals and non-military, non-profit organisations only
 nttcp-*			benchmarks/nttcp	No commercial use
 nwresources*.tar.gz	games/nwndata		Distribution not allowed
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from CARDCAPTOR SAKURA
 OptimFROG*		audio/optimfrog		No commercial use
-oracle/*		databases/jdbc-oracle10g	This software is under license and export controls
 oracle/*		databases/jdbc-oracle11g	This software is under license and export controls
-oracle/*		databases/jdbc-oracle8i	This software is under license and export controls
-oracle/*		databases/jdbc-oracle9i	This software is under license and export controls
 oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and export controls
 oracle/instantclient-basic-linux*	databases/linux-oracle-instantclient-basic	Packaging prohibited by Oracle license
 oracle/instantclient-sqlplus-linux*	databases/linux-oracle-instantclient-sqlplus	Packaging prohibited by Oracle license
-palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
 pcsv*fb.tar.gz		lang/petite-chez	User must accept license terms before installation
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
 perforce/*/p4		devel/p4		Restricted distribution
@@ -227,7 +219,6 @@ TrueCrypt*		security/truecrypt	May not be redistributed.  Must accept license to
 tuc-*			converters/tuc		Author does not allow CD-ROM distribution
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
-unifi-4*/UniFi.unix.zip	net-mgmt/unifi4		Redistribution of bundled firmware images is not permitted
 unifi-5*/UniFi.unix.zip	net-mgmt/unifi5		Redistribution of bundled firmware images is not permitted
 uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any way.

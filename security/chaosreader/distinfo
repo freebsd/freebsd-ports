@@ -1,4 +1,3 @@
-SHA256 (chaosreader0.94) = e84e2044aec3371ea5505d7d7db2c746d62ee1d24c970b90775e25c3625ab982
-SIZE (chaosreader0.94) = 185986
-SHA256 (sshkeydata0.20) = 324b6b7b4110dbfbb9ca93309853b651d290018b4d0d3fe68ae3078fca27e36d
-SIZE (sshkeydata0.20) = 11341
+TIMESTAMP = 1483617658
+SHA256 (brendangregg-Chaosreader-0.96_GH0.tar.gz) = c443795f0f65e51e0577e561a3ae074ad2bdd4a42b89181b28326ccddecd9e32
+SIZE (brendangregg-Chaosreader-0.96_GH0.tar.gz) = 99124

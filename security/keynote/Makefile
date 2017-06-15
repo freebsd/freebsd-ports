@@ -13,8 +13,8 @@ COMMENT=	Trust-Management System
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake		# required to support parallel (-jX) builds
-USE_OPENSSL=	yes
+# gmake required to support parallel (-jX) builds
+USES=		gmake ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SSLEAY="${OPENSSLBASE}/bin" OPENSSLLIB="${OPENSSLLIB}" \
 		OPENSSLINC="${OPENSSLINC}"

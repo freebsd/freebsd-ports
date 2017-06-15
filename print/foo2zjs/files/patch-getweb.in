@@ -5,7 +5,7 @@
  VERSION='$Id: getweb.in,v 1.112 2013/12/25 21:00:11 rick Exp $'
  
 -WGETOPTS="--passive-ftp -q"
-+FETCHOPTS="-p -m -o"
++FETCHOPTS="-p -m"
  
  usage() {
  cat <<EOF
@@ -14,7 +14,7 @@
      shift; shift
      
 -    wget $WGETOPTS -O $exefile "$url/$exefile" ||
-+    fetch $FETCHOPTS $exefile "$url/$exefile" ||
++    fetch $FETCHOPTS -o $exefile "$url/$exefile" ||
  	error "Couldn't download $url/$exefile"
      unzip -oj $exefile "$@"
      rm $exefile
@@ -23,7 +23,7 @@
      what="$3"
      
 -    wget $WGETOPTS -O $file "$url/$file" ||
-+    fetch $FETCHOPTS $file "$url/$file" ||
++    fetch $FETCHOPTS -o $file "$url/$file" ||
  	error "Couldn't download $url/$file"
      gunzip <$file | tar xvf - $what
      rm $file
@@ -50,7 +50,7 @@
  	    URL="$URL&.submit=Generate+PPD+file"
  	    URL="$URL&show=1&.cgifields=shortgui&.cgifields=show"
 -	    wget $WGETOPTS -O PPD/$printer.ppd "$URL" ||
-+	    fetch $FETCHOPTS PPD/$printer.ppd "$URL" ||
++	    fetch $FETCHOPTS -o PPD/$printer.ppd "$URL" ||
  		error "Couldn't dowload $URL"
  	done
  	;;
@@ -59,7 +59,7 @@
  	url=${URLZJS}
  	file=foo2zjs.tar.gz
 -	wget $WGETOPTS -O $file $url/$file ||
-+	fetch $FETCHOPTS $file $url/$file ||
++	fetch $FETCHOPTS -o $file $url/$file ||
  		error "Couldn't download $url/$exefile"
  	mv getweb getweb.old
  	HERE=`pwd`

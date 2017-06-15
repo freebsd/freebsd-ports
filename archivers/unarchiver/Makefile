@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	unar
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.10.1
+PORTREVISION=	3
 CATEGORIES=	archivers gnustep
 MASTER_SITES=	http://wakaba.c3.cx/releases/TheUnarchiver/
 DISTNAME=	${PORTNAME}${PORTVERSION}_src
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 # XXX: USES=gnustep overrides MAKEFILE we set below, so depend explicitly
 LIB_DEPENDS=	libgnustep-base.so:lang/gnustep-base \
+		libicuuc.so:devel/icu \
 		libwavpack.so:audio/wavpack
 
 USES=		gmake zip
@@ -30,13 +31,6 @@ PORTEXAMPLES=	lsar.bash_completion unar.bash_completion
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000024
-CC=		clang
-CXX=		clang++
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/XADMaster/??ar ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/Extra/??ar.1 ${STAGEDIR}${MANPREFIX}/man/man1
@@ -50,4 +44,4 @@ do-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/Extra/??ar.bash_completion \
 		${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

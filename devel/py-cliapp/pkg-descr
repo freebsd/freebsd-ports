@@ -1,0 +1,5 @@
+cliapp is a Python framework for Unix-like command line programs. It contains
+the typical stuff such programs need to do, such as parsing the command line for
+options, and iterating over input files.
+
+WWW: https://liw.fi/cliapp/

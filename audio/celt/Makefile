@@ -3,7 +3,7 @@
 
 PORTNAME=	celt
 PORTVERSION=	0.11.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/celt/
 

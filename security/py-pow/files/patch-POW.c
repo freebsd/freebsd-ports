@@ -150,8 +150,12 @@
  
     if ( !(self = PyObject_New( x509_crl_object, &x509_crltype ) ) )
        goto error;
-@@ -2435,7 +2428,7 @@ static X509_REVOKED *
- X509_REVOKED_dup(X509_REVOKED *rev)
+@@ -2432,10 +2425,10 @@ static char x509_crl_object_set_revoked_
+ 
+ // added because we don't already have one!
+ static X509_REVOKED *
+-X509_REVOKED_dup(X509_REVOKED *rev)
++X509_REVOKED_dupe(X509_REVOKED *rev)
  {
     return((X509_REVOKED *)ASN1_dup((int (*)())i2d_X509_REVOKED,
 -      (char *(*)())d2i_X509_REVOKED,(char *)rev));
@@ -159,6 +163,15 @@
  }
  
  static PyObject *
+@@ -2464,7 +2457,7 @@ x509_crl_object_set_revoked(x509_crl_obj
+       if ( !X_X509_revoked_Check( revoked ) )
+          { PyErr_SetString( PyExc_TypeError, "inapropriate type" ); goto error; }
+ 
+-      if ( !(tmp_revoked = X509_REVOKED_dup( revoked->revoked ) ) )
++      if ( !(tmp_revoked = X509_REVOKED_dupe( revoked->revoked ) ) )
+          { PyErr_SetString( SSLErrorObject, "could not allocate memory" ); goto error; }
+ 
+       if (!sk_X509_REVOKED_push( revoked_stack, tmp_revoked ) )
 @@ -2815,7 +2808,6 @@ static char x509_crl_object_sign__doc__[
  "         signed, it should be one of the following:\n"
  "      </para>\n"

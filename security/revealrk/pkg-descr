@@ -6,4 +6,4 @@ Reveal RootKit is intended to run out of cron or similar services
 on a regular basis and avoids verbose output as long as nothing was
 found.
 
-WWW: http://sourceforge.net/projects/revealrk
+WWW: https://sourceforge.net/projects/revealrk/

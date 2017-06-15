@@ -3,7 +3,7 @@
 
 PORTNAME=	sdcv
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -22,12 +22,6 @@ SUB_FILES=	pkg-message
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-BROKEN=		does not build on < 10.x: error expanding embedded variable
-.endif
-
 post-patch:
 .for i in doc/sdcv.1 src/sdcv.cpp
 	@${REINPLACE_CMD} -e \
@@ -37,8 +31,8 @@ post-patch:
 		's|@mandir@/uk|@mandir@|' ${WRKSRC}/doc/uk/Makefile.am
 	@${REINPLACE_CMD} -e \
 		's|getopt1.c getopt.h||' ${WRKSRC}/src/Makefile.am
-	@${RM} -f ${WRKSRC}/src/getopt.h
+	@${RM} ${WRKSRC}/src/getopt.h
 	@${REINPLACE_CMD} '/AM_GNU_GETTEXT_VERSION/s/0\.14\.1/0.19.1/' \
 		${WRKSRC}/configure.ac
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

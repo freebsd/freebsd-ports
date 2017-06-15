@@ -2,6 +2,7 @@
 
 PORTNAME=	libgrading
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libdistance.so:devel/libdistance
 USE_GITHUB=	yes
 GH_ACCOUNT=	trombonehero
 
-USES=		cmake
+USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/libgrading.h \

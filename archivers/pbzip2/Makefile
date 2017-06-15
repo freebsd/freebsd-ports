@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.13
 CATEGORIES=	archivers
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.1/${PORTVERSION}/+download/
 

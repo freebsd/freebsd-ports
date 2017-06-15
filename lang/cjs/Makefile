@@ -3,6 +3,7 @@
 
 PORTNAME=	cjs
 PORTVERSION=	2.4.1
+PORTREVISION=	2
 CATEGORIES=	lang gnome
 DIST_SUBDIR=	gnome3
 
@@ -21,7 +22,6 @@ USE_GNOME=	cairo glib20 gnomeprefix introspection:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include

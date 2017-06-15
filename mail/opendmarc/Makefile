@@ -3,7 +3,7 @@
 
 PORTNAME=	opendmarc
 PORTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail security
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/Previous%20Releases
@@ -11,12 +11,13 @@ MASTER_SITES=	SF/${PORTNAME} \
 MAINTAINER=	freebsd@gushi.org
 COMMENT=	DMARC library and milter implementation
 
-LICENSE=		BSD3CLAUSE SENDMAIL
-LICENSE_COMB=		multi
+LICENSE=	BSD3CLAUSE SENDMAIL
+LICENSE_COMB=	multi
 
 RUN_DEPENDS=	p5-Switch>=0:lang/p5-Switch \
 		p5-DBI>=0:databases/p5-DBI \
-		p5-DBD-mysql>=0:databases/p5-DBD-mysql
+		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message
 
 LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
 LICENSE_GROUPS_SENDMAIL=	FSF OSI

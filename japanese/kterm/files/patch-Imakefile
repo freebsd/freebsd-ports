@@ -1,6 +1,6 @@
---- Imakefile.orig	2010-01-25 00:56:38.287976000 +0900
-+++ Imakefile	2010-01-25 00:59:31.955886193 +0900
-@@ -13,6 +13,17 @@
+--- Imakefile.orig	2016-11-05 06:41:21.000000000 +0900
++++ Imakefile	2016-11-05 07:43:25.595182000 +0900
+@@ -13,6 +13,16 @@
        XPOLL_DEF = -DNO_XPOLL_H
  #endif
  
@@ -14,11 +14,10 @@
 +#define XawClientLibs	-lneXtaw $(XMULIB) $(XTOOLLIB) $(XLIB)
 +#endif
 +
-+
  /*
   * add -DWTMP and -DLASTLOG if you want them.
   */
-@@ -27,9 +38,12 @@
+@@ -27,9 +37,12 @@
   OSMAJORVERSION = OSMajorVersion
   OSMINORVERSION = OSMinorVersion
  
@@ -32,7 +31,7 @@
     MISC_DEFINES = /* -DALLOWLOGFILEEXEC */ 
      XKB_DEFINES = XkbClientDefines
          DEFINES = $(XKB_DEFINES) $(XPOLL_DEF) -DKTERM -DSTATUSLINE -DKEEPALIVE -DWALLPAPER
-@@ -72,7 +86,7 @@
+@@ -72,7 +85,7 @@
  #endif
  #endif
  

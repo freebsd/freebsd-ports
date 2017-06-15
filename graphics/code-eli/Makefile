@@ -3,7 +3,7 @@
 
 PORTNAME=	code-eli
 PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	fernando.apesteguia@gmail.com
@@ -20,7 +20,6 @@ GH_ACCOUNT=	ddmarshall
 
 USES=		cmake:outsource compiler:c++11-lib
 PORTEXAMPLES=	AirfoilFitExample VSPPodExample test
-PORTDOCS=	html latex
 ALL_TARGET=	all
 
 # Some useful variables
@@ -28,15 +27,13 @@ AIRFOIL_DIR=	airfoil_fit
 VSPPOD_DIR=	vsp_pod
 
 # Build options
-OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_DEFINE=		DOXYGEN EXAMPLES
 EXAMPLES_LIB_DEPENDS=	libcpptest.so:devel/cpptest
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
-DOCS_ALL_TARGET=	doc
+DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
+DOXYGEN_ALL_TARGET=	doc
+DOXYGEN_PORTDOCS=	html latex
 
-# The code uses std::cbrt(). Even if one passes some additional macros for
-# libstdc++ to enable additional math functions in math.h some of them, such as
-# acoshl() are not defined and linking fails.
-BROKEN_FreeBSD_9=	Needs additional math functions
+BROKEN_armv6=		Fails to compile: undefined reference to cbrtl
 
 post-patch-EXAMPLES-off:
 	${REINPLACE_CMD} \
@@ -45,16 +42,15 @@ post-patch-EXAMPLES-off:
 		${WRKSRC}/CMakeLists.txt
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/eli \
-		${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} \
-		${STAGEDIR}${EXAMPLESDIR} \
-		${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/eli
 	${INSTALL_DATA} ${BUILD_WRKSRC}/include/eli/code_eli.hpp \
 		${STAGEDIR}${PREFIX}/include/eli
 	(cd ${WRKSRC}/include/eli && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/eli "*")
 
 do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} \
+		${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} \
 		${BUILD_WRKSRC}/example/${VSPPOD_DIR}/VSPPodExample \
 		${BUILD_WRKSRC}/example/${AIRFOIL_DIR}/AirfoilFitExample \
@@ -69,7 +65,8 @@ do-install-EXAMPLES-on:
 	${FIND} ${STAGEDIR}${EXAMPLESDIR}${TEST_SUBDIR} -name *Test | \
 		${XARGS} ${STRIP_CMD}
 
-do-install-DOCS-on:
+do-install-DOXYGEN-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${BUILD_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

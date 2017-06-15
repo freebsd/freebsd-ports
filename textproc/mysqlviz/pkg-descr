@@ -6,4 +6,4 @@ Features:
 - Handles partial dumps (FK to tables that are not defined within the dump)
 - Fast! Uses sed and grep for data extraction (MySQL only)
 
-WWW: http://code.google.com/p/mysqlviz/
+WWW: https://github.com/globalcitizen/mysqlviz

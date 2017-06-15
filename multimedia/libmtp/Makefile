@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmtp
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.13
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
@@ -25,17 +25,5 @@ OPTIONS_DEFAULT=MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 MTPZ_CONFIGURE_ENABLE=	mtpz
 MTPZ_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
-
-.if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
-CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
-.endif
-
-post-patch:
-.if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
-	@${REINPLACE_CMD} -i .pkgconf.bak -e \
-		'/LIBUSB_REQUIRES/s|libusb-1.0||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -i .pkgconf.bak -e \
-		'/Libs.private/s|:|& @LIBUSB_LIBS@|' ${WRKSRC}/libmtp.pc.in
-.endif
 
 .include <bsd.port.mk>

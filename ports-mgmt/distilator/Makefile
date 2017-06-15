@@ -3,6 +3,7 @@
 
 PORTNAME=	distilator
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -20,5 +21,10 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=SSL
+
+SSL_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
 
 .include <bsd.port.mk>

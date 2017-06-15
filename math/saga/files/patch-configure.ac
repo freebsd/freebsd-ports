@@ -1,0 +1,12 @@
+--- configure.ac.orig	2016-08-23 13:23:41 UTC
++++ configure.ac
+@@ -26,7 +26,7 @@ AC_CHECK_LIB([odbc], [SQLFetch], ODBCFOU
+ AC_CHECK_LIB([proj], [pj_is_latlong], PROJFOUND=1,,)
+ AC_CHECK_LIB([vigraimpex], [VIGRA_RGBE_ReadPixels_Raw],VIGRAFOUND=1,)
+ AC_CHECK_LIB([gomp], [omp_get_num_threads], GOMPFOUND=1,,)
+-AC_CHECK_HEADER([libsvm/svm.h],[AC_CHECK_LIB([svm], [svm_get_svm_type], SVMFOUND=1,,)])
++AC_CHECK_HEADER([svm.h],[AC_CHECK_LIB([svm], [svm_get_svm_type], SVMFOUND=1,,)])
+ PKG_CHECK_MODULES([DXFLIB], [dxflib], [LIBDXFFOUND=1],[LIBDXFFOUND=0])
+ PKG_CHECK_MODULES([HDF5],[hdf5],LIBHDF5FOUND=1,LIBHDF5FOUND=0)
+ 
+

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	APCu
-PORTVERSION=	4.0.10
-PORTREVISION=	1
+PORTVERSION=	5.1.8
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,11 +14,10 @@ COMMENT=	APC User Caching
 
 LICENSE=	PHP301
 
-CONFLICTS=	pecl-APC-[0-9]*
+CONFLICTS_INSTALL=	pecl-APC-
 
-CFLAGS+=	-I${LOCALBASE}/include
-IGNORE_WITH_PHP=	70
-USES=		php:ext tar:tgz
+IGNORE_WITH_PHP=56
+USES=		localbase php:ext tar:tgz
 PHP_MODNAME=	${PORTNAME:tl}
 
 .include <bsd.port.mk>

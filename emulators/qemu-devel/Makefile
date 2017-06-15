@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 DISTVERSION=	2.6.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 PKGNAMESUFFIX=	-devel
@@ -63,7 +63,7 @@ PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch ${FILESDIR}/pcap-patch-net_net.c
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK2 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
-SAMBA_RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:net/samba36
+SAMBA_USES=		samba:run # smbd
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
@@ -110,6 +110,7 @@ CONFIGURE_ARGS+=	--sparc_cpu=v9
 # but it shouldn't matter much
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
+		 -e '/libusb/s/ --atleast-version=1\.0\.[0-9]*//' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E \

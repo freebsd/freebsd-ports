@@ -2,7 +2,7 @@
 
 PORTNAME=	rrd-ffi
 PORTVERSION=	0.2.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rrdtool:databases/rrdtool \
-		rubygem-activesupport>=0:devel/rubygem-activesupport \
+		rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
 		rubygem-ffi>=0:devel/rubygem-ffi
 
 NO_ARCH=	yes

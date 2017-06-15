@@ -3,14 +3,15 @@
 
 PORTNAME=	lxtask
 PORTVERSION=	0.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF/lxde/LXTask%20%28task%20manager%29/LXTask%20${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight desktop-independent task manager
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake iconv pkgconfig
 USE_GNOME=	gtk20 intlhack
@@ -22,22 +23,13 @@ PORTDOCS=	AUTHORS README
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
+NLS_USES=	gettext localbase
+NLS_USES_OFF=	gettext-tools
 
-.include <bsd.port.options.mk>
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e 's|po src|src|' ${WRKSRC}/Makefile.in
 
-.if ${PORT_OPTIONS:MNLS}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
-post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|po src|src|' \
-		${WRKSRC}/Makefile.in
-.endif
-
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

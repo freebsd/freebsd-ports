@@ -1,6 +1,6 @@
---- ./wad.c.orig	2005-09-13 07:19:36.000000000 -0300
-+++ ./wad.c	2013-11-01 20:55:13.000000000 -0200
-@@ -1632,14 +1632,13 @@
+--- wad.c.orig	2005-09-13 10:19:36 UTC
++++ wad.c
+@@ -1632,14 +1632,13 @@ void ReportOverflows(boolean_g hard)
  void ReportV5Switches(void)
  {
    lump_t *cur;

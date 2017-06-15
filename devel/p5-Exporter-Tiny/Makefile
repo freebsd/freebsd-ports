@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Exporter-Tiny
-PORTVERSION=	0.042
-PORTREVISION=	1
+PORTVERSION=	0.044
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,10 +12,12 @@ COMMENT=	Exporter with features of Sub::Exporter but only core dependencies
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

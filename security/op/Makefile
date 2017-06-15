@@ -11,6 +11,9 @@ MASTER_SITES=	http://swapoff.org/files/op/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Controlled privilege escalation tool
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 
 post-install:

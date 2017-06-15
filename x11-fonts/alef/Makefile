@@ -7,7 +7,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://alef.hagilda.com/
 DISTNAME=	Alef
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free multi-lingual font designed for screens
 
 LICENSE=	OFL11

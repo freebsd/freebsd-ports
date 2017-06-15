@@ -1,2 +1,3 @@
-SHA256 (py-leveldb-0.1.20130428.tar.xz) = bf7509b59497e54aa367e3b63d54516be881c86382da1866781499a7a5b75a3b
-SIZE (py-leveldb-0.1.20130428.tar.xz) = 13744
+TIMESTAMP = 1483295328
+SHA256 (leveldb-0.20.tar.gz) = 9ffc9b68c8c0e0a996e2409e4a95ef1fbb4dcf0f6040b21b9153cbd57c90e079
+SIZE (leveldb-0.20.tar.gz) = 235491

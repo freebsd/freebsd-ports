@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2016-10-22 17:13:46 UTC
++++ CMakeLists.txt
+@@ -57,6 +57,11 @@ if(HAS_CXX_OPTIMIZE_DEBUG AND CMAKE_BUIL
+   add_compile_options(-Og)
+ endif()
+ 
++CHECK_CXX_COMPILER_FLAG(-Wno-inconsistent-missing-override HAS_CXX_NOOVERRIDE)
++if(HAS_CXX_NOOVERRIDE AND NOT CMAKE_BUILD_TYPE MATCHES Debug)
++  add_compile_options(-Wno-inconsistent-missing-override)
++endif()
++
+ # FIXME Doesn't work on all platforms.
+ #CHECK_CXX_COMPILER_FLAG(-flto HAS_CXX_OPTIMIZE_LINKTIME)
+ if(HAS_CXX_OPTIMIZE_LINKTIME AND NOT CMAKE_BUILD_TYPE MATCHES Debug)
+@@ -96,7 +101,7 @@ install(FILES extra/gogglesmm_64.png DES
+ install(FILES extra/gogglesmm.svg DESTINATION share/icons/hicolor/scalable/apps RENAME gogglesmm.svg)
+ install(FILES extra/gogglesmm.appdata.xml DESTINATION share/appdata)
+ install(FILES extra/gogglesmm.desktop DESTINATION share/applications)
+-install(FILES extra/gogglesmm.1 DESTINATION share/man/man1)
++install(FILES extra/gogglesmm.1 DESTINATION man/man1)
+ 
+ # Install translations when native language support has been enabled
+ if(WITH_NLS)

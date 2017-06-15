@@ -1,0 +1,28 @@
+Backport of the "export baloofiles with the rest of the targets" part.
+
+This is necessary so that the CMake exports file has an entry for baloofiles,
+and linking against it passes "/full/path/to/libbaloofiles.so" instead of
+"-lbaloofiles" to the linker. The latter may fail if -L/full/path/to is not
+passed as well.
+
+commit 66068074c64b2a4a68a3dda567904704b0ae1f02
+Author: Aleix Pol <aleixpol@kde.org>
+Date:   Wed Mar 12 17:51:02 2014 +0100
+
+Improvements on Baloo's cmake architecture
+
+Install a file indicating the version
+Port linking variables into the proper targets
+Export baloofiles with the rest of the targets
+
+--- src/file/lib/CMakeLists.txt
++++ src/file/lib/CMakeLists.txt
+@@ -33,7 +33,7 @@ set_target_properties(baloofiles PROPERTIES
+     SOVERSION ${BALOO_VERSION_MAJOR}
+ )
+ 
+-install(TARGETS baloofiles ${INSTALL_TARGETS_DEFAULT_ARGS})
++install(TARGETS baloofiles EXPORT BalooLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 
+ install(FILES
+     file.h

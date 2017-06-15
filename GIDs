@@ -103,12 +103,12 @@ pootle:*:158:
 nocat:*:159:
 _ypldap:*:160:
 solr:*:161:
-# free: 162
-# free: 163
-# free: 164
-# free: 165
-# free: 166
-# free: 167
+octoprint:*:162:
+_iked:*:163:
+lightdm:*:164:
+uwsgi:*:165:
+yule:*:166:
+ceph:*:167:
 # free: 168
 # free: 169
 tile38:*:170:
@@ -118,7 +118,7 @@ polipo:*:173:
 flowtools:*:174:
 twms:*:175:
 mlvpn:*:176:
-# free: 177
+_mdnsd:*:177:
 otpw:*:178:
 gdnsd:*:179:
 rt:*:180:
@@ -131,20 +131,20 @@ dnslog:*:186:
 swift:*:187:
 netxms:*:188:
 leofs:*:189:
-# free: 190
-# free: 191
+keystone:*:190:
+glance:*:191:
 moinmoin:*:192:
 cups:*:193:
 saned:*:194:
 radns:*:195:
-# free: 196
-# free: 197
-# free: 198
+nova:*:196:
+dq:*:197:
+horizon:*:198:
 mcserver:*:199:
 sympa:*:200:
 privoxy:*:201:
 dspam:*:202:
-# free: 203
+cinder:*:203:
 yate:*:204:
 gnugk:*:205:
 gini:*:206:
@@ -196,7 +196,7 @@ fcron:*:247:
 # free: 252
 _adsuck:*:253:
 # free: 254
-# free: 255
+_i2pd:*:255:
 _tor:*:256:
 _smtpd:*:257:
 _smtpq:*:258:
@@ -219,7 +219,7 @@ meta1:*:264:
 haclient:*:275:
 frontbase:*:276:
 # free: 277
-# free: 278
+rtg:*:278:
 mrtg:*:279:
 xymon:*:280:
 prelude:*:281:
@@ -254,7 +254,7 @@ netdata:*:302:
 # free: 310
 # free: 311
 _sphinx:*:312:
-# free: 313
+_fastdfs:*:313:
 # free: 314
 # free: 315
 # free: 316
@@ -361,7 +361,7 @@ uhub:*:411:
 # free: 417
 # free: 418
 # free: 419
-# free: 420
+oxidized:*:420:
 # free: 421
 # free: 422
 # free: 423
@@ -419,7 +419,7 @@ minio:*:473:
 # free: 475
 # free: 476
 # free: 477
-# free: 478
+prometheus:*:478:
 # free: 479
 # free: 480
 # free: 481
@@ -516,7 +516,7 @@ polkitd:*:565:
 # free: 572
 # free: 573
 # free: 574
-# free: 575
+nexus:*:575:
 # free: 576
 # free: 577
 # free: 578
@@ -720,7 +720,7 @@ postgres:*:770:
 # free: 776
 openxpki:*:777:
 # free: 778
-# free: 779
+bitcoin:*:779:
 zetacoin:*:780:
 # free: 781
 # free: 782
@@ -741,7 +741,7 @@ zetacoin:*:780:
 # free: 797
 # free: 798
 # free: 799
-# free: 800
+clickhouse:*:800:
 # free: 801
 # free: 802
 # free: 803
@@ -790,7 +790,7 @@ subsonic:*:844:
 sogod:*:846:
 domoticz:*:847:
 graylog:*:848:
-# free: 849
+chronyd:*:849:
 # free: 850
 # free: 851
 # free: 852
@@ -837,7 +837,7 @@ graylog:*:848:
 # free: 893
 # free: 894
 # free: 895
-# free: 896
+istat:*:896:
 znc:*:897:
 ufdb:*:898:
 guacamole:*:899:

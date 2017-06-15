@@ -1,0 +1,5 @@
+This is a client for the Barbican Key Management API. There is a Python
+library for accessing the API (barbicanclient module), and a command-line
+script (barbican).
+
+WWW: http://pypi.python.org/pypi/python-barbicanclient

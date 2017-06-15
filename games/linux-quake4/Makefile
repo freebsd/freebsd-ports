@@ -70,30 +70,30 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${Q4DIR}/q4base
 	@cd ${WRKSRC} && \
 		${FIND} -E pb -type f -iregex ".*\.(so)" \
-			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \; && \
+			-exec ${INSTALL_DATA} {} "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \; && \
 		${FIND} -E pb/htm -type f -iregex ".*\.(htm)" \
-			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
+			-exec ${INSTALL_DATA} {} "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
 	# Q4base
 	 @cd ${WRKSRC} && \
 		${FIND} -E q4base -type f -iregex ".*\.(cfg|scriptcfg|pk4|off)" \
-			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
+			-exec ${INSTALL_DATA} {} "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
 
 	# All version (except germany) or only germany version
 .if ${PORT_OPTIONS:MGERMANY}
 	@cd ${WRKSRC}/germany && \
 		${FIND} -E q4base -type f -iregex ".*\.(pk4)" \
-			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
+			-exec ${INSTALL_DATA} {} "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
 .else
 	@cd ${WRKSRC}/us && \
 		${FIND} -E q4base -type f -iregex ".*\.(pk4)" \
-			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
+			-exec ${INSTALL_DATA} {} "${STAGEDIR}${PREFIX}/${Q4DIR}/{}" \;
 .endif
 
 	# Documentation
 .if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/Docs && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DOCSDIR}/{}" \;
 	${INSTALL_DATA} ${WRKSRC}/License.txt ${STAGEDIR}${DOCSDIR}/LICENSE && \
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README && \
 	${INSTALL_DATA} ${WRKSRC}/pb/PBEULA.txt ${STAGEDIR}${DOCSDIR}/PBEULA

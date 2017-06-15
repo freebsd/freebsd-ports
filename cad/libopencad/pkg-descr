@@ -1,0 +1,17 @@
+Libopencad is a library written in C++11, which provides a way to
+read/write CAD  (DWG/DXF/DXFB) files. It was designed to have a
+uniformal API to work with any CAD files.
+
+It has a base class - CADFile.
+
+Inheriting this class it's possible to create a driver for any CAD
+format, all you need to do - is to overwrite interface functions
+like GetGeometry(index), and others.
+
+Now it has an implementation for DWG2000 (R15), but only for read.
+
+Library comes with cadinfo utility, which prints out everything
+library can get from file - header variables, CAD custom classes,
+presented layers and geometries with their attributes.
+
+WWW: https://trac.osgeo.org/gdal/wiki/DWG_driver

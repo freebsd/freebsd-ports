@@ -38,12 +38,8 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2 \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 .endif
-
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

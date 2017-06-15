@@ -1,4 +1,5 @@
+TIMESTAMP = 1479241494
 SHA256 (nntp.1.5.12.2.tar.gz) = c4b4b6e7aa6abfe06300c1667fc55049b01d9f3a2c6f8714845a1dfd4c33fe46
 SIZE (nntp.1.5.12.2.tar.gz) = 153634
-SHA256 (nntp-patch-y2k) = bc2d66717670fdffc029334d17af17da9b6e89d89dde1ff1b77c8cb585270f0b
-SIZE (nntp-patch-y2k) = 6629
+SHA256 (nntp-patch-ansi) = 7f977465945aa9a051ab91c2e8648968e9f94f16b782e55ccc26b530d523c572
+SIZE (nntp-patch-ansi) = 73091

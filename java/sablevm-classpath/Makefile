@@ -3,7 +3,7 @@
 
 PORTNAME=	sablevm-classpath
 PORTVERSION=	1.13
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	java devel
 MASTER_SITES=	SF/sablevm/sablevm/${PORTVERSION}
 
@@ -56,6 +56,8 @@ PLIST_SUB+=		WITHOUT_ZIP="@comment " WITH_ZIP=""
 CONFIGURE_ARGS+=	--with-compressed-classes=no
 PLIST_SUB+=		WITHOUT_ZIP="" WITH_ZIP="@comment "
 .endif
+
+BROKEN_aarch64=		Fails to configure: Endianess not declared
 
 post-patch:
 	@${CP} -f ${WRKSRC}/resource/java/security/classpath.security \

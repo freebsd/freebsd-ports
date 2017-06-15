@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmill
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	devel
 MASTER_SITES=	http://libmill.org/
 
@@ -15,5 +15,6 @@ USES=		pathfix libtool
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

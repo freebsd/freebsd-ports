@@ -1,0 +1,4 @@
+cmocka is a fork for Google's cmockery unit testing framework to fix bugs and
+support it in future.
+
+WWW: https://cmocka.org/

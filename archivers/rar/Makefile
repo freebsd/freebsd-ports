@@ -40,7 +40,7 @@ IGNORE=	requires a kernel with compiled-in IA32 compatibility
 .endif
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054 && ${PORT_OPTIONS:MSFX}
+.if ${OPSYS} == FreeBSD && ${PORT_OPTIONS:MSFX}
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 .endif
 

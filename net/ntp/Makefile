@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.8p9
+PORTVERSION=	4.2.8p10
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
 		http://archive.ntp.org/ntp4/ntp-4.2/ \
@@ -12,15 +13,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-LIB_DEPENDS=	libevent.so:devel/libevent2 \
-		libmd5.so:www/libwww
+LIB_DEPENDS=	libevent.so:devel/libevent
 
-CONFLICTS=	ntp-rc-* ntp-devel-*
+CONFLICTS=	ntp-devel-*
 
 USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
-		pkgconfig ssl
+		pkgconfig
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-leap-smear
 
 TEST_TARGET=	check
 
@@ -53,13 +54,21 @@ PERL_UTILS_USES=	perl5
 SSL_CONFIGURE_ON=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
 SSL_CONFIGURE_OFF=	--without-crypto
+SSL_USES=		ssl
+
+DEBUG_CONFIGURE_ON=	--enable-debug
 
 THREADS_CONFIGURE_ENABLE=	thread-support
 THREADS_CONFIGURE_WITH=		threads
 
+MD5_LIB_DEPENDS=	libmd5.so:www/libwww
+MD5_IMPLIES=		SSL
+
 .for D in ${NTP_DRIVERS}
-${D}_CONFIGURE_ON=	--enable-${D}
+${D}_CONFIGURE_ENABLE=	${D}
 .endfor
+
+.include <bsd.port.pre.mk>
 
 # XXX Temporary hack. Remember to remove this next commit.
 post-extract:
@@ -74,4 +83,4 @@ post-install:
 	@cd ${WRKSRC}/html && ${FIND} . -print | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,4 +1,3 @@
-SHA256 (w3m-0.5.3.tar.gz) = e994d263f2fd2c22febfbe45103526e00145a7674a0fda79c822b97c2770a9e3
-SIZE (w3m-0.5.3.tar.gz) = 2202328
-SHA256 (w3m-0.5-version-xhtml.patch) = 3cc144a233f566a4b718eec480f3008bb67b8155ecf10663bb98b0aa47a33796
-SIZE (w3m-0.5-version-xhtml.patch) = 8965
+TIMESTAMP = 1483884967
+SHA256 (tats-w3m-0.5.3.20170102-1ac245b_GH0.tar.gz) = 77b1fc96baeea6ae713dd029cf86b5b4711b4fe1a93487a280ef5cf913b77a18
+SIZE (tats-w3m-0.5.3.20170102-1ac245b_GH0.tar.gz) = 2180133

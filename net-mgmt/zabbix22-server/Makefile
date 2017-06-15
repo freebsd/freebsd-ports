@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
-PORTVERSION=	2.2.14
+PORTVERSION=	2.2.15
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -82,13 +82,13 @@ OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
 MYSQL_CONFIGURE_WITH=	mysql
-USES+=	mysql
+MYSQL_USES+=	mysql
 
 PGSQL_CONFIGURE_WITH=	postgresql
-USES+=	pgsql
+PGSQL_USES+=	pgsql
 
 SQLITE_CONFIGURE_WITH=	sqlite3
-USES+=	sqlite:3
+SQLITE_USES+=	sqlite:3
 
 ORACLE_CONFIGURE_WITH=	oracle
 
@@ -146,7 +146,7 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -Ee 's|(@sysconfdir@/(\$$\([A-Z]*_CONFIG\)))" ([|][|] cp "../../conf/\$$\([A-Z]*_CONFIG\)" "\$$\(DESTDIR\)@sysconfdir@)"|\1.sample" \3/\2.sample"|;' \
 		${WRKSRC}/src/zabbix_${ZABBIX_BUILD}/Makefile.in
-	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} -f {} +
+	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} {} +
 
 .if ${ZABBIX_BUILD} == "server"
 	@${REINPLACE_CMD} -e 's#PidFile=/tmp/zabbix_server.pid#PidFile=/var/run/zabbix/zabbix_server.pid#g' \

@@ -18,7 +18,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		cpe execinfo gmake libtool perl5 pkgconfig sqlite ssl tar:bzip2 tcl
+USES=		cpe execinfo gmake libtool ncurses pathfix perl5 pkgconfig \
+		sqlite ssl tar:bzip2 tcl
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
 USE_PERL5=	build run
@@ -50,13 +51,6 @@ SPDY_DESC=	Enable SPDY
 WCCP_CONFIGURE_ENABLE=	wccp
 SPDY_CONFIGURE_ENABLE=	spdy
 SPDY_LIB_DEPENDS=	libspdylay.so:www/spdylay
-
-BROKEN_FreeBSD_9=	Trafficserver is only supported on FreeBSD 10.1 or newer
-
-.if ! exists(/var/cache)
-# FreeBSD 8.x
-PLIST_DIRS+=	/var/cache
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

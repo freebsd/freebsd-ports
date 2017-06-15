@@ -1,8 +1,8 @@
 Index: sha1-el.el
 ===================================================================
---- sha1-el.el	(revision 2)
-+++ sha1-el.el	(working copy)
-@@ -125,91 +125,91 @@
+--- sha1-el.el.orig	2007-09-05 23:39:48 UTC
++++ sha1-el.el
+@@ -125,91 +125,91 @@ If this variable is set to nil, use inte
  
  ;;; original definition of sha1-F0.
  ;;; (defmacro sha1-F0 (B C D)

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-DBIx-Class
-PORTVERSION=	0.47
+PORTVERSION=	0.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Easier test cases for your DBIx::Class applications
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Config-Any>=0.19:devel/p5-Config-Any \
 		p5-DBIx-Class>=0.08123:databases/p5-DBIx-Class \
@@ -33,8 +34,7 @@ BUILD_DEPENDS=	p5-Config-Any>=0.19:devel/p5-Config-Any \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-Types-LoadableClass>=0:devel/p5-MooseX-Types-LoadableClass \
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
-		p5-Test-mysqld>=0:databases/p5-Test-mysqld \
-		p5-Test-postgresql>=0:databases/p5-Test-postgresql
+		p5-Test-mysqld>=0:databases/p5-Test-mysqld
 # Also for test:
 #USE_MYSQL+=	server
 

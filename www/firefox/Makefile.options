@@ -5,24 +5,25 @@ OPTIONS_DEFINE+= 	BUNDLED_CAIRO CANBERRA DBUS DEBUG DTRACE FFMPEG GCONF \
 			OPTIMIZED_CFLAGS PGO PROFILE TEST
 
 OPTIONS_DEFAULT+=	DBUS DTRACE FFMPEG OPTIMIZED_CFLAGS \
-			${OPTIONS_MULTI_AUDIO} \
-			${MACHINE_CPU:tu:MSOFTFP:S/SOFTFP/INTEGER_SAMPLES/}
+			ALSA PULSEAUDIO \
+			${MACHINE_CPU:Msoftfp:C/.+/INTEGER_SAMPLES/}
 
 OPTIONS_MULTI+=		AUDIO
-OPTIONS_MULTI_AUDIO=	ALSA PULSEAUDIO
+OPTIONS_MULTI_AUDIO=	ALSA PULSEAUDIO SNDIO
+
+# No lazy-bindings and inconsistent fallback order (libcubeb vs. audio_device)
+SNDIO_PREVENTS=		${OPTIONS_MULTI_AUDIO:NSNDIO}
 
 # dragonfly, sparc64, riscv
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
-# dtrace(1) crashes during build or fails to allocate space for probe
-OPTIONS_EXCLUDE_FreeBSD_9+=	DTRACE
-OPTIONS_EXCLUDE+=	${OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R}}
+# ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
+OPTIONS_EXCLUDE_aarch64=	DTRACE
 
 BUNDLED_CAIRO_DESC?=	Use bundled fork of cairo-1.9.5
 CANBERRA_DESC?=		Sound theme alerts
-ENIGMAIL_DESC?=		Enigmail extension
 GNOMEUI_DESC?=		libgnomeui support module
 INTEGER_SAMPLES_DESC?=	Integer audio sample format
 LIBPROXY_DESC?=		Proxy support via libproxy

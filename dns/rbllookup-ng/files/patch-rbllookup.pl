@@ -1,6 +1,6 @@
---- rbllookup.pl.orig	Mon Nov 13 23:55:52 2006
-+++ rbllookup.pl	Tue Nov 14 00:04:11 2006
-@@ -39,7 +39,7 @@
+--- rbllookup.pl.orig	2014-05-11 10:08:39 UTC
++++ rbllookup.pl
+@@ -39,7 +39,7 @@ print "\n";
  
  # Reading configuration
  

@@ -3,4 +3,4 @@ script to connect to and interact with a POP3 mail server.
 It is based on the PHP streams interface and requires no
 external library.
 
-WWW: http://pecl.php.net/package/POP3
+WWW: https://pecl.php.net/package/POP3

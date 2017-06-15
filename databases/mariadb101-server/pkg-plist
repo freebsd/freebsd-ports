@@ -4,6 +4,8 @@ bin/aria_ftdump
 bin/aria_pack
 bin/aria_read_log
 bin/innochecksum
+bin/mariabackup
+bin/mbstream
 bin/my_print_defaults
 bin/myisam_ftdump
 bin/myisamchk
@@ -24,6 +26,7 @@ bin/mysql_zap
 bin/mysqlbug
 bin/mysqld_multi
 bin/mysqld_safe
+bin/mysqld_safe_helper
 bin/mysqldumpslow
 bin/mysqlhotcopy
 bin/mysqltest
@@ -36,6 +39,7 @@ bin/resolveip
 %%TOKUDB%%bin/tokuft_logprint
 %%TOKUDB%%bin/tokuftdump
 bin/wsrep_sst_common
+bin/wsrep_sst_mariabackup
 bin/wsrep_sst_mysqldump
 bin/wsrep_sst_rsync
 bin/wsrep_sst_xtrabackup
@@ -45,7 +49,6 @@ include/mysql/private/atomic/generic-msvc.h
 include/mysql/private/atomic/nolock.h
 include/mysql/private/atomic/solaris.h
 include/mysql/private/atomic/x86-gcc.h
-include/mysql/private/base64.h
 include/mysql/private/config.h
 include/mysql/private/ft_global.h
 include/mysql/private/embedded_priv.h
@@ -89,8 +92,6 @@ include/mysql/private/probes_mysql_nodtrace.h
 include/mysql/private/queues.h
 include/mysql/private/rijndael.h
 include/mysql/private/service_versions.h
-include/mysql/private/sha1.h
-include/mysql/private/sha2.h
 include/mysql/private/t_ctype.h
 include/mysql/private/thr_alarm.h
 include/mysql/private/thr_lock.h
@@ -106,6 +107,7 @@ lib/mysql/libmysqld.so
 lib/mysql/libmysqld.so.18
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth_0x0100.so
+lib/mysql/plugin/auth_ed25519.so
 %%NO_GSSAPI_NONE%%lib/mysql/plugin/auth_gssapi.so
 lib/mysql/plugin/auth_pam.so
 lib/mysql/plugin/auth_socket.so
@@ -151,7 +153,10 @@ man/man1/aria_dump_log.1.gz
 man/man1/aria_ftdump.1.gz
 man/man1/aria_pack.1.gz
 man/man1/aria_read_log.1.gz
+man/man1/galera_new_cluster.1.gz
+man/man1/galera_recovery.1.gz
 man/man1/innochecksum.1.gz
+man/man1/mariadb-service-convert.1.gz
 man/man1/my_print_defaults.1.gz
 man/man1/myisam_ftdump.1.gz
 man/man1/myisamchk.1.gz
@@ -169,6 +174,7 @@ man/man1/mysql_zap.1.gz
 man/man1/mysqlbug.1.gz
 man/man1/mysqld_multi.1.gz
 man/man1/mysqld_safe.1.gz
+man/man1/mysqld_safe_helper.1.gz
 man/man1/mysqldumpslow.1.gz
 man/man1/mysqlhotcopy.1.gz
 man/man1/mysqltest.1.gz
@@ -176,6 +182,13 @@ man/man1/perror.1.gz
 man/man1/replace.1.gz
 man/man1/resolve_stack_dump.1.gz
 man/man1/resolveip.1.gz
+%%TOKUDB%%man/man1/tokuft_logdump.1.gz
+%%TOKUDB%%man/man1/tokuftdump.1.gz
+man/man1/wsrep_sst_common.1.gz
+man/man1/wsrep_sst_mysqldump.1.gz
+man/man1/wsrep_sst_rsync.1.gz
+man/man1/wsrep_sst_xtrabackup-v2.1.gz
+man/man1/wsrep_sst_xtrabackup.1.gz
 man/man8/mysqld.8.gz
 %%DATADIR%%/binary-configure
 %%DATADIR%%/charsets/Index.xml
@@ -220,8 +233,8 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/japanese/errmsg.sys
 %%DATADIR%%/korean/errmsg.sys
 %%DATADIR%%/magic
-@comment %%DATADIR%%/maria_add_gis_sp.sql
-@comment %%DATADIR%%/maria_add_gis_sp_bootstrap.sql
+%%DATADIR%%/maria_add_gis_sp.sql
+%%DATADIR%%/maria_add_gis_sp_bootstrap.sql
 %%MROONGA%%%%DATADIR%%/mroonga/install.sql
 %%MROONGA%%%%DATADIR%%/mroonga/uninstall.sql
 %%DATADIR%%/my-huge.cnf

@@ -1,4 +1,3 @@
-bin/libmediainfo-config
 include/MediaInfo/MediaInfo.h
 include/MediaInfo/MediaInfoList.h
 include/MediaInfo/MediaInfo_Const.h

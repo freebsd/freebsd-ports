@@ -13,8 +13,7 @@ COMMENT=	DragonFly Mail Agent, a small MTA for local/outbound mail
 
 LICENSE=	BSD3CLAUSE
 
-USE_OPENSSL=	yes
-USES=		uidfix
+USES=		uidfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	corecode
@@ -40,7 +39,7 @@ CONFFILES+=	dma.conf auth.conf
 .include <bsd.port.pre.mk>
 
 # 11.x has dma imported into base and /var/spool/dma added to mtree
-.if ${OSVERSION} < 1100009
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100009
 PLIST_SUB+=	VARDIR=""
 .else
 PLIST_SUB+=	VARDIR="@comment "
@@ -53,9 +52,6 @@ post-patch:
 		${WRKSRC}/dma.conf
 	@${REINPLACE_CMD} -e '/^MK_MAN/d' -e 's/^NOMAN/NO_MAN/' \
 		${WRKSRC}/bsd/dma-mbox-create/Makefile
-.if ${OSVERSION} < 1000013
-	@${REINPLACE_CMD} -e 's,^YFLAGS.*,,' ${WRKSRC}/bsd/dma/Makefile
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}

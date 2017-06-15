@@ -3,12 +3,12 @@ include/postgresql/server/plpython.h
 %%DOCSDIR%%/README-plpython
 %%PYTHON2%%lib/postgresql/plpython2.so
 %%PYTHON3%%lib/postgresql/plpython3.so
-%%PYTHON2%%%%DATADIR%%/extension/plpythonu.control
-%%PYTHON2%%%%DATADIR%%/extension/plpythonu--1.0.sql
-%%PYTHON2%%%%DATADIR%%/extension/plpythonu--unpackaged--1.0.sql
-%%PYTHON2%%%%DATADIR%%/extension/plpython2u.control
 %%PYTHON2%%%%DATADIR%%/extension/plpython2u--1.0.sql
 %%PYTHON2%%%%DATADIR%%/extension/plpython2u--unpackaged--1.0.sql
-%%PYTHON3%%%%DATADIR%%/extension/plpython3u.control
+%%PYTHON2%%%%DATADIR%%/extension/plpython2u.control
 %%PYTHON3%%%%DATADIR%%/extension/plpython3u--1.0.sql
 %%PYTHON3%%%%DATADIR%%/extension/plpython3u--unpackaged--1.0.sql
+%%PYTHON3%%%%DATADIR%%/extension/plpython3u.control
+%%PYTHON2%%%%DATADIR%%/extension/plpythonu--1.0.sql
+%%PYTHON2%%%%DATADIR%%/extension/plpythonu--unpackaged--1.0.sql
+%%PYTHON2%%%%DATADIR%%/extension/plpythonu.control

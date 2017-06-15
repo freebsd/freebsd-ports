@@ -5,4 +5,4 @@ It also (originally) generalized a group (a monoid with all inverses) to
 a type where every element did not have to have an inverse, thus the
 name semigroup.
 
-WWW: http://github.com/ekmett/semigroups/
+WWW: https://github.com/ekmett/semigroups/

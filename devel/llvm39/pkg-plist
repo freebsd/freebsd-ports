@@ -2125,6 +2125,7 @@ llvm39/lib/LLVMHello.so
 %%CLANG%%llvm39/lib/clang/%%LLVM_RELEASE%%/include/mm_malloc.h
 %%CLANG%%llvm39/lib/clang/%%LLVM_RELEASE%%/include/mmintrin.h
 %%CLANG%%llvm39/lib/clang/%%LLVM_RELEASE%%/include/module.modulemap
+%%CLANG%%llvm39/lib/clang/%%LLVM_RELEASE%%/include/msa.h
 %%CLANG%%llvm39/lib/clang/%%LLVM_RELEASE%%/include/mwaitxintrin.h
 %%CLANG%%llvm39/lib/clang/%%LLVM_RELEASE%%/include/nmmintrin.h
 %%OPENMP%%llvm39/lib/clang/%%LLVM_RELEASE%%/include/omp.h
@@ -2180,6 +2181,9 @@ llvm39/lib/cmake/llvm/LLVMInstallSymlink.cmake
 llvm39/lib/cmake/llvm/LLVMProcessSources.cmake
 llvm39/lib/cmake/llvm/TableGen.cmake
 llvm39/lib/cmake/llvm/VersionFromVCS.cmake
+llvm39/lib/libLLVM-%%LLVM_MAJOR%%.so
+llvm39/lib/libLLVM-%%LLVM_RELEASE%%.so
+llvm39/lib/libLLVM.so
 llvm39/lib/libLLVMAArch64AsmParser.a
 llvm39/lib/libLLVMAArch64AsmPrinter.a
 llvm39/lib/libLLVMAArch64CodeGen.a
@@ -2481,6 +2485,10 @@ llvm39/lib/libLTO.so
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/TestingConfig.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/__init__.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/discovery.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit39/formats/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit39/formats/base.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit39/formats/googletest.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit39/formats/shtest.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/main.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/run.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit39/util.py

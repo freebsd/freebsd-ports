@@ -4,4 +4,4 @@ Guard (GPG). It requires the GPG executable to be on the system.
 Though GPG can support symmetric-key cryptography, this package is intended
 only to facilitate public-key cryptography.
 
-WWW: http://pear.php.net/package/Crypt_GPG/
+WWW: https://pear.php.net/package/Crypt_GPG

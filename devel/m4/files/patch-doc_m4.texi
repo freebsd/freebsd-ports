@@ -1,7 +1,0 @@
---- doc/m4.texi.orig	Mon Nov 20 05:55:43 2006
-+++ doc/m4.texi	Sun Dec  3 17:15:41 2006
-@@ -60,3 +60,3 @@
- @direntry
--* M4: (m4).                     A powerful macro processor.
-+* GM4: (m4).                     A powerful macro processor.
- @end direntry

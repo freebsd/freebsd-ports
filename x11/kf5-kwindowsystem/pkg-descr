@@ -1,0 +1,5 @@
+KWindowSystem provides information about the windowing system and allows
+interaction with the windowing system. It provides an high level API which
+is windowing system independent and has platform specific implementations.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kwindowsystem/html/index.html

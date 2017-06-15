@@ -3,6 +3,7 @@
 
 PORTNAME=	pacemaker
 PORTVERSION=	1.1.14
+PORTREVISION=	2
 DISTVERSIONPREFIX=	Pacemaker-
 CATEGORIES=	net
 
@@ -42,8 +43,6 @@ CONFIGURE_ARGS=	--disable-fatal-warnings \
 		--with-corosync \
 		--without-heartbeat
 INSTALL_TARGET=	install-strip
-
-PATHFIX_MAKEFILEIN=	Makefile.am
 
 SHEBANG_LANG=	sh
 sh_OLD_CMD=	${SH}

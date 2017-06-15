@@ -6,7 +6,7 @@ PORTVERSION=	20120501
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 
 PEAR_CHANNEL_HOST=	pear.netpirates.net

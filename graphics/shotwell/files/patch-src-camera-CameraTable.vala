@@ -1,6 +1,6 @@
---- src/camera/CameraTable.vala.orig	2015-03-28 15:15:28.000000000 +0100
-+++ src/camera/CameraTable.vala	2015-03-28 15:20:51.000000000 +0100
-@@ -26,7 +26,6 @@
+--- src/camera/CameraTable.vala.orig	2017-02-25 22:55:36 UTC
++++ src/camera/CameraTable.vala
+@@ -26,7 +26,6 @@ public class CameraTable {
      
      private static CameraTable instance = null;
      
@@ -8,7 +8,7 @@
      private OneShotScheduler camera_update_scheduler = null;
      private GPhoto.Context null_context = new GPhoto.Context();
      private GPhoto.CameraAbilitiesList abilities_list;
-@@ -43,7 +42,6 @@
+@@ -43,7 +42,6 @@ public class CameraTable {
              on_update_cameras);
          
          // listen for interesting events on the specified subsystems
@@ -16,7 +16,7 @@
          volume_monitor = VolumeMonitor.get();
          volume_monitor.volume_changed.connect(on_volume_changed);
          volume_monitor.volume_added.connect(on_volume_changed);
-@@ -107,36 +105,10 @@
+@@ -107,36 +105,10 @@ public class CameraTable {
          do_op(GPhoto.CameraAbilitiesList.create(out abilities_list), "create camera abilities list");
          do_op(abilities_list.load(null_context), "load camera abilities list");
      }
@@ -56,7 +56,7 @@
      }
      
      // USB (or libusb) is a funny beast; if only one USB device is present (i.e. the camera),
-@@ -211,24 +183,8 @@
+@@ -211,24 +183,8 @@ public class CameraTable {
          return port.has_prefix("usb:") ? 
              "/dev/bus/usb/%s".printf(port.substring(4).replace(",", "/")) : null;
      }
@@ -83,7 +83,7 @@
  
      private void update_camera_table() throws GPhotoError {
          // need to do this because virtual ports come and go in the USB world (and probably others)
-@@ -334,22 +290,7 @@
+@@ -326,22 +282,7 @@ public class CameraTable {
              }
              
              // Get display name for camera.
@@ -107,7 +107,7 @@
              if (null == display_name) {
                  // Default to GPhoto detected name.
                  display_name = name;
-@@ -393,14 +334,8 @@
+@@ -381,14 +322,8 @@ public class CameraTable {
              camera_added(camera);
          }
      }

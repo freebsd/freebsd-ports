@@ -1,15 +1,15 @@
---- content/common/BUILD.gn.orig	2016-08-03 22:02:18.000000000 +0300
-+++ content/common/BUILD.gn	2016-10-09 05:21:51.439131000 +0300
-@@ -179,7 +179,7 @@
-   if (use_seccomp_bpf) {
-     defines += [ "USE_SECCOMP_BPF" ]
-   } else {
+--- content/common/BUILD.gn.orig	2017-04-19 19:06:33 UTC
++++ content/common/BUILD.gn
+@@ -503,7 +503,7 @@ source_set("common") {
+   }
+ 
+   if (!use_seccomp_bpf) {
 -    if (is_linux) {
 +    if (is_linux || is_bsd) {
        sources -= [
          "sandbox_linux/bpf_cros_arm_gpu_policy_linux.cc",
          "sandbox_linux/bpf_cros_arm_gpu_policy_linux.h",
-@@ -193,6 +193,15 @@
+@@ -517,6 +517,16 @@ source_set("common") {
          "sandbox_linux/bpf_utility_policy_linux.h",
          "sandbox_linux/sandbox_bpf_base_policy_linux.cc",
          "sandbox_linux/sandbox_bpf_base_policy_linux.h",
@@ -19,6 +19,7 @@
 +    }
 +    if (is_bsd) {
 +      sources -= [
++        "quarantine/quarantine_linux.cc",
 +        "sandbox_linux/sandbox_linux.cc",
 +        "sandbox_linux/sandbox_linux.h",
 +        "sandbox_linux/sandbox_init_linux.cc",

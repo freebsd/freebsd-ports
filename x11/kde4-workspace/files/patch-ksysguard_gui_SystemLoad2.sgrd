@@ -1,0 +1,24 @@
+* Provide a detailed view of Memory and Swap Used instead of the simplistic and
+* misleading view that showed only application use (kernel use was neglected)
+* 
+--- ksysguard/gui/SystemLoad2.sgrd.orig	2015-06-26 03:17:21 UTC
++++ ksysguard/gui/SystemLoad2.sgrd
+@@ -3,11 +3,14 @@
+ <WorkSheet title="System Load" interval="0.5" locked="1" rows="3" columns="1" >
+  <host port="-1" command="ksysguardd" shell="" name="localhost" />
+  <display title="CPU History" svgBackground="widgets/plot-background" autoRange="0" class="FancyPlotter" column="0" row="0" version="1">
+-  <beam sensorType="float" hostName="localhost" regexpSensorName="cpu/cpu.*/TotalLoad" color="0xffff8000,0xffe20800" />
++  <beam sensorType="float" hostName="localhost" regexpSensorName="cpu/cpu.*/TotalLoad" />
+  </display>
+- <display title="Memory and Swap History" svgBackground="widgets/plot-background" autoRange="0" class="FancyPlotter" column="0" row="1" version="1" >
+-  <beam summationName="Memory" sensorName="mem/physical/application" sensorType="integer" hostName="localhost" color="0xffc000c0" />
+-  <beam summationName="Swap" sensorName="mem/swap/used" sensorType="integer" hostName="localhost" color="0xff00c000" />
++ <display title="Memory and Swap History" svgBackground="widgets/plot-background" autoRange="1" class="FancyPlotter" column="0" row="1" version="1" stacked="1">
++  <beam sensorType="integer" hostName="localhost" sensorName="mem/physical/wired" color="0xffc00000" />
++  <beam sensorType="integer" hostName="localhost" sensorName="mem/physical/inactive" color="0xffc0c000" />
++  <beam sensorType="integer" hostName="localhost" sensorName="mem/physical/active" color="0xff0000c0" />
++  <beam sensorType="integer" hostName="localhost" sensorName="mem/physical/free" color="0xff00c000" />
++  <beam sensorType="integer" hostName="localhost" sensorName="mem/swap/used" description="Swap Used" color="0xffc000c0" />
+  </display>
+  <display title="Network History" svgBackground="widgets/plot-background" autoRange="1" class="FancyPlotter" column="0" row="2" version="1" min="0" max="20" manualRange="1">
+   <beam sensorType="float" hostName="localhost" summationName="Receiving" regexpSensorName="network/interfaces/(?!lo|bridge|usbus|bond).*/receiver/data" color="0xB3A52D" />

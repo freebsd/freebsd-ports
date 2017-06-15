@@ -3,6 +3,7 @@
 
 PORTNAME=	dante
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	net security ipv6
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \

@@ -9,5 +9,5 @@ lib/libkqoauth.so
 lib/libkqoauth.so.0
 lib/libkqoauth.so.0.97
 lib/libkqoauth.so.0.97.0
-%%QT_PREFIX%%/%%QT_MKSPECDIR%%/features/kqoauth.prf
+%%QT_MKSPECDIR%%/features/kqoauth.prf
 libdata/pkgconfig/kqoauth.pc

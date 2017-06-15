@@ -7,7 +7,7 @@
 
 PORTNAME=	snow-apple
 PORTVERSION=	20030202
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Snow-Apple

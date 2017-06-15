@@ -4,6 +4,7 @@
 PORTNAME=	bitcoin
 PORTVERSION=	0.12.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	9
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	robbak@robbak.com
@@ -12,7 +13,7 @@ COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
 USES=		autoreconf compiler:c++0x gmake libtool pkgconfig shebangfix ssl
 SHEBANG_FILES=	src/test/*.py
@@ -30,7 +31,7 @@ BUILD_DEPENDS+=	protoc:devel/protobuf
 LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
 
 TESTS_USE=		QT4=testlib
-TESTS_PLIST_FILES=	%%QT_BINDIR%%/test_bitcoin-qt \
+TESTS_PLIST_FILES=	bin/test_bitcoin-qt \
 			bin/test_bitcoin
 .endif
 

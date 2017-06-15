@@ -6,7 +6,7 @@ PORTVERSION=	20151019
 PORTREVISION=	1
 CATEGORIES=	security
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Crypto library for Ada with a nice API
 
 LICENSE=	GMGPL

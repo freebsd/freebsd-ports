@@ -1,0 +1,5 @@
+A small, portable GNU readline replacement for FreeBSD, Linux, Windows and
+macOS which is capable of handling UTF-8 characters. Unlike GNU readline, which
+is GPL, this library uses a BSD license and can be used in any kind of program.
+
+WWW: https://github.com/arangodb/linenoise-ng

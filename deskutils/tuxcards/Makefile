@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.tuxcards.de/src/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for managing notes within a hierarchical tree
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

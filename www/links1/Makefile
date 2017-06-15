@@ -9,8 +9,14 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.jikos.cz/~mikulas/links/download/
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Lynx-like text WWW browser
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+PLIST_FILES=	man/man1/links.1.gz \
+		bin/links
 
 GNU_CONFIGURE=	yes
 

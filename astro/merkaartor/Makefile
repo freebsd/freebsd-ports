@@ -3,7 +3,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.18.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	astro
 
 MAINTAINER=	dev2@heesakkers.info
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
-GH_PROJECT=	${PORTNAME}
 USES=		pkgconfig sqlite:3 qmake
 USE_LDCONFIG=	yes
 

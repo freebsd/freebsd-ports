@@ -1,0 +1,6 @@
+This module wraps JSON and LWP::UserAgent to create a flexible utility for
+accessing APIs that accept/provide JSON data.
+
+It supports all the options LWP supports, including authentication.
+
+WWW: http://search.cpan.org/dist/JSON-API/

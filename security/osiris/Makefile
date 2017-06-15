@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shmoo client/server host integrity checker
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
+USES=		ssl
 
 OPTIONS_DEFINE=	OSIRISMD OSIRISD PRINTDB CLI
 OPTIONS_DEFAULT=	OSIRISD

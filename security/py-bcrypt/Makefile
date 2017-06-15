@@ -22,8 +22,6 @@ USE_PYTHON=	distutils autoplist
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PROJECTHOST=	py-bcrypt
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bcrypt/_bcrypt.so
 

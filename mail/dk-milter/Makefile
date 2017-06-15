@@ -107,7 +107,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dk-filter/gentxt.csh \
 		${STAGEDIR}${PREFIX}/sbin/gentxt-dk
 .for i in dk-filter.8
-	@${RM} -f ${STAGEDIR}${PREFIX}/man/cat8/${i} \
+	@${RM} ${STAGEDIR}${PREFIX}/man/cat8/${i} \
 		${STAGEDIR}${PREFIX}/man/cat8/${i}.gz
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${STAGEDIR}${PREFIX}/man/man8/
 .endfor

@@ -16,7 +16,7 @@ USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=		yes
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsrs2.so.0.0.0
 
 .include <bsd.port.mk>

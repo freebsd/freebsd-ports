@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	bird
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.3
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/ \
@@ -13,7 +13,7 @@ COMMENT?=	Dynamic IP routing daemon (IPv4 version)
 
 LICENSE=	GPLv2
 
-USES=		bison gmake readline
+USES=		bison gmake ncurses readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var
 

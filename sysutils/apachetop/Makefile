@@ -11,7 +11,7 @@ MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Apache RealTime log stats
 
 GNU_CONFIGURE=	yes
-USES=		readline
+USES=		ncurses readline
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 

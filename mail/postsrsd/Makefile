@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postsrsd
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	ports@bsdserwis.com
@@ -12,9 +12,7 @@ COMMENT=	Postfix Sender Rewriting Scheme daemon
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	help2man:misc/help2man \
-		base64:converters/base64
-RUN_DEPENDS=	base64:converters/base64
+BUILD_DEPENDS=	help2man:misc/help2man
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	roehling
@@ -29,8 +27,8 @@ PORTDOCS=	README.md main.cf.ex README_UPGRADE.md
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_CMAKE_ON=	-DENABLE_DOCS:STRING="ON"
+DOCS_CMAKE_BOOL=	ENABLE_DOCS
 
-PLIST_FILES=	sbin/postsrsd man/man8/postsrsd.8.gz etc/postsrsd.secret
+PLIST_FILES=	sbin/postsrsd man/man8/postsrsd.8.gz
 
 .include <bsd.port.mk>

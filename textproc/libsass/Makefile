@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libsass
-PORTVERSION=	3.3.6
+PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org

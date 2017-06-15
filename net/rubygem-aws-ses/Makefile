@@ -3,6 +3,7 @@
 
 PORTNAME=	aws-ses
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Client library for REST API of Amazon SES
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-builder32>=0:devel/rubygem-builder32 \
+RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-mail>=2.2.5:mail/rubygem-mail \
 		rubygem-mime-types>=0:misc/rubygem-mime-types \
 		rubygem-xml-simple>=0:textproc/rubygem-xml-simple

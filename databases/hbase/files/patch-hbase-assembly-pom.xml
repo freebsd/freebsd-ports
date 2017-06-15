@@ -1,0 +1,11 @@
+--- hbase-assembly/pom.xml	2016-10-09 00:48:11.000000000 -0400
++++ hbase-assembly/pom.xml	2016-11-14 21:50:05.891026000 -0500
+@@ -138,7 +138,7 @@ 
+                 <argument>bash</argument>
+                 <argument>-c</argument>
+                 <argument>cat maven-shared-archive-resources/META-INF/NOTICE \
+-                  `find ${project.build.directory}/dependency -iname NOTICE -or -iname NOTICE.txt` \
++                  `find ${project.build.directory}/dependency -iname NOTICE -or -iname NOTICE.txt`
+                 </argument>
+               </arguments>
+               <outputFile>${project.build.directory}/NOTICE.aggregate</outputFile>

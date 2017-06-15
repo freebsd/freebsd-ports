@@ -3,7 +3,6 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	5
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
@@ -12,7 +11,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Collector part of Munin
 
 BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
-		munin-common>=0:sysutils/munin-common \
+		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		rrdtool>=0:databases/rrdtool \
 		p5-Storable>=0:devel/p5-Storable \
 		p5-CGI>=0:www/p5-CGI \
@@ -25,7 +24,7 @@ BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
 		p5-Params-Validate>=0:devel/p5-Params-Validate \
 		p5-Text-Balanced>=0:textproc/p5-Text-Balanced
-RUN_DEPENDS=	munin-common>=0:sysutils/munin-common \
+RUN_DEPENDS=	munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		rrdtool>=0:databases/rrdtool \
 		p5-CGI>=0:www/p5-CGI \
 		p5-Storable>=0:devel/p5-Storable \
@@ -62,5 +61,12 @@ post-install:
 	)
 	(cd ${STAGEDIR}${ETCDIR}; for i in `find . -type f`; do mv $$i $$i.sample; done)
 	${MV} ${STAGEDIR}${WWWDIR}/.htaccess ${STAGEDIR}${WWWDIR}/.htaccess.sample
+	${INSTALL_DATA} ${FILESDIR}/newsyslog ${STAGEDIR}${ETCDIR}/munin-master.newsyslog
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502100
+RUN_DEPENDS+=	p5-CGI-Fast>=0:www/p5-CGI-Fast
+.endif
+
+.include <bsd.port.post.mk>

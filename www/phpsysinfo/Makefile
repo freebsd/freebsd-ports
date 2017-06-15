@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpsysinfo
-PORTVERSION=	3.2.6
+PORTVERSION=	3.2.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -16,8 +16,9 @@ USE_GITHUB=	yes
 
 USES=		php:web shebangfix
 SHEBANG_FILES=	tools/check.sh
-NO_BUILD=	yes
 USE_PHP=	dom pcre xml simplexml mbstring
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
 PLIST_SUB=	NOBINMODE="${NOBINMODE}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"

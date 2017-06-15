@@ -4,3 +4,4 @@ matching symbol names, it is not needed. This tool will work best if all
 classes, variables, constants, functions, etc. have unique names.
 
 WWW: http://code.google.com/p/checkheaders/
+WWW: https://github.com/anastmag/checkheaders/

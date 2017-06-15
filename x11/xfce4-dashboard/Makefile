@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dashboard
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/src/apps/xfdashboard/${PORTVERSION:R}/
 PKGNAMEPREFIX=	xfce4-
-DISTNAME=	xfdashboard-${PORTVERSION}
+DISTNAME=	xfdashboard-${DISTVERSIONFULL}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -19,8 +19,6 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 	libjson-glib-1.0.so:devel/json-glib \
 	libcogl.so:graphics/cogl \
 	libclutter-1.0.so:graphics/clutter
-
-BROKEN_FreeBSD_9=	requires recent GPU drivers
 
 GNU_CONFIGURE=	yes
 USES=	gettext-tools gmake localbase libtool pathfix perl5 pkgconfig \

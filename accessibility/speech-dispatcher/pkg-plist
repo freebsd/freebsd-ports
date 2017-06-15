@@ -7,6 +7,7 @@ bin/speech-dispatcher
 @sample %%ETCDIR%%/modules/epos-generic.conf.sample
 @sample %%ETCDIR%%/modules/espeak-generic.conf.sample
 @sample %%ETCDIR%%/modules/espeak-mbrola-generic.conf.sample
+@sample %%ETCDIR%%/modules/espeak-ng.conf.sample
 @sample %%ETCDIR%%/modules/espeak.conf.sample
 @sample %%ETCDIR%%/modules/festival.conf.sample
 @sample %%ETCDIR%%/modules/flite.conf.sample

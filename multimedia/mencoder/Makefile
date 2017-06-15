@@ -3,7 +3,6 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
-PORTREVISION=	2
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -11,13 +10,13 @@ COMMENT=	Convenient video file and movie encoder
 
 .include "${.CURDIR}/../mplayer/Makefile.common"
 
-OPTIONS_DEFINE=	AMR_NB AMR_WB BLURAY CDIO DEBUG DV DVDNAV FAAC FONTCONFIG \
+OPTIONS_DEFINE=	AMR_NB AMR_WB ASS BLURAY CDIO DEBUG DV DVDNAV FAAC FONTCONFIG \
 		FRIBIDI GIF GNUTLS GSM IPV6 JACK LADSPA LIBMNG LZO \
-		MAD NAS OCFLAGS OPENAL OPENJPEG OPUS PULSEAUDIO \
+		MAD NAS OPENAL OPENJPEG OPUS PULSEAUDIO \
 		RTMP SCHROEDINGER SMB SPEEX THEORA TWOLAME V4L VPX \
 		X264 XVID
 
-OPTIONS_DEFAULT=DVDNAV FONTCONFIG GIF GNUTLS OCFLAGS X264 XVID
+OPTIONS_DEFAULT=ASS DVDNAV FONTCONFIG GIF GNUTLS X264 XVID
 
 OPTIONS_DEFINE_i386=	RTCPU
 OPTIONS_DEFINE_amd64=	RTCPU
@@ -27,10 +26,10 @@ OPTIONS_DEFAULT_i386=	RTCPU
 OPTIONS_DEFAULT_amd64=	RTCPU
 OPTIONS_DEFAULT_powerpc=RTCPU
 
+ASS_DESC?=	Subtitles rendering via libass
 BLURAY_DESC?=	BluRay support
 DVDNAV_DESC?=	DVD navigation features support
 LZO_DESC?=	Enable external liblzo library
-OCFLAGS_DESC?=	Use optimized compiler flags
 RTCPU_DESC?=	Use runtime CPU detection
 
 RESTRICTED=	Port has restricted dependencies
@@ -89,29 +88,7 @@ pre-everything::
 	@${ECHO_MSG} "DEFAULT_DVD_DEVICE=${DEFAULT_DVD_DEVICE}"
 	@${ECHO_MSG} "DEFAULT_CDROM_DEVICE=${DEFAULT_CDROM_DEVICE}"
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
-		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
-		-e 's|/usr/local|${LOCALBASE}|' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		-e 's|-lbz2|/usr/lib/libbz2.so|' \
-		-e 's|-lncurses|/usr/lib/libncurses.so|' \
-		-e 's|-liconv|${ICONV_LIB}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${FIND} -E ${WRKSRC} -type f \
-		-iregex ".*(configure|.sh|Makefile)" -print0 | \
-		${XARGS} -x -0 -n 10 \
-		${REINPLACE_CMD} -E \
-			-e 's|[[:space:]]gcc[-[:digit:]\.]+| ${CC}|' \
-			-e 's|[[:space:]]gcc| ${CC}|' \
-			-e 's|\$$\(CC\)|${CC}|' \
-			-e 's|/usr/X11R6|${LOCALBASE}|' \
-			-e 's|%%LOCALBASE%%|${LOCALBASE}|'
-	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
-		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
-		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
-		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
+post-patch: common-post-patch
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mencoder ${STAGEDIR}${PREFIX}/bin

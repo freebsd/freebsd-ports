@@ -3,7 +3,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.6.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	p5-CGI-Session>=0:www/p5-CGI-Session \
 		p5-IO-Pty-Easy>=0:devel/p5-IO-Pty-Easy \
 		p5-SNMP_Session>=0:net-mgmt/p5-SNMP_Session \
 		p5-libwww>=0:www/p5-libwww \
+		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-CGI>=0:www/p5-CGI \
 		p5-FCGI>=0:www/p5-FCGI \
 		p5-Config-Grammar>=0:devel/p5-Config-Grammar \

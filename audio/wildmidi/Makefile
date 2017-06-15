@@ -14,7 +14,7 @@ LICENSE=	LGPL3
 USE_GITHUB=	yes
 GH_ACCOUNT=	Mindwerks
 
-USES=		gmake cmake:outsource
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
 
 OPTIONS_SUB=	yes
@@ -68,7 +68,7 @@ post-patch:
 		${REINPLACE_CMD} '/INSTALL/s@share/man@man@'
 
 pre-install:
-	@${RM} -f ${WRKSRC}/docs/man/man1/wildmidi.1${REINPLACE_ARGS:S/-i//} \
+	@${RM} ${WRKSRC}/docs/man/man1/wildmidi.1${REINPLACE_ARGS:S/-i//} \
 		${WRKSRC}/docs/man/man5/wildmidi.cfg.5${REINPLACE_ARGS:S/-i//}
 	${MKDIR} ${STAGEDIR}${DATADIR} ; \
 	${CP} ${WRKSRC}/cfg/wildmidi.cfg ${STAGEDIR}${DATADIR}/wildmidi.cfg.sample

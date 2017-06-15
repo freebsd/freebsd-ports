@@ -71,6 +71,7 @@
     SUBDIR += libdockapp
     SUBDIR += libwraster
     SUBDIR += lwm
+    SUBDIR += lxappearance-obconf
     SUBDIR += lxmed
     SUBDIR += lxsession
     SUBDIR += marco
@@ -102,10 +103,13 @@
     SUBDIR += ratmen
     SUBDIR += ratmenu
     SUBDIR += ratpoison
+    SUBDIR += rubygem-uh-layout
+    SUBDIR += rubygem-uh-wm
     SUBDIR += sawfish
     SUBDIR += selectwm
     SUBDIR += simple-ccsm
     SUBDIR += spectrwm
+    SUBDIR += subtle
     SUBDIR += swm
     SUBDIR += tinywm
     SUBDIR += transset

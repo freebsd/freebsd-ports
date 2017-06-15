@@ -1,0 +1,8 @@
+With zfs-snap-diff you can explore file differences and restore changes from 
+older file versions in different zfs snapshots. You can restore the whole file 
+from an older version, or select single changes to revert in the 'diff' view.
+
+zfs-snap-diff has a web frontend, so it can run on your local work machine or 
+on your remote file / backup server (no Xserver necessary).
+
+WWW: https://github.com/j-keck/zfs-snap-diff

@@ -3,6 +3,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	6.7
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
@@ -62,14 +63,14 @@ post-patch:
 	@${CHMOD} +x ${WRKSRC}/local/bin/ld
 
 post-build:
-	${RM} -rf ${WRKSRC}/tmp/.sage
+	${RM} -r ${WRKSRC}/tmp/.sage
 	${CHMOD} -R a+rX ${WRKSRC}
 
 check regression-test test: build
 	@${ECHO_MSG} This test can also be performed after installation by typing \"sage -testall\".
 	@${ECHO_MSG}
 	cd ${WRKSRC} && ${SETENV} DOT_SAGE=${WRKSRC}/tmp/.sage ./sage -testall
-	${RM} -f ${WRKSRC}/python*.core
+	${RM} ${WRKSRC}/python*.core
 
 # Don't build docs (because of mysterious race conditions).
 ALL_TARGET=	build
@@ -83,7 +84,7 @@ do-install:
 		${SED} -e 's#${WRKDIR}/##' | \
 		${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}
 	${ECHO_CMD} | ${SETENV} DOT_SAGE=${STAGED_SAGE_DIR}/tmp/.sage ${STAGED_SAGE_DIR}/sage
-	${RM} -rf ${STAGED_SAGE_DIR}/tmp/.sage
+	${RM} -r ${STAGED_SAGE_DIR}/tmp/.sage
 	${SED} -e "s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+" ${WRKSRC}/sage > ${STAGEDIR}${PREFIX}/bin/sage
 	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/sage
 
@@ -99,7 +100,7 @@ MAKE_ENV+=	MAKE="${MAKE} -j${MAKE_JOBS_NUMBER}"
 
 .ifdef MAINTAINER_MODE
 test-fbsd-patches:	patch
-	${RM} -rf ${WRKSRC}/build/pkgs/*/src; \
+	${RM} -r ${WRKSRC}/build/pkgs/*/src; \
 	for d in ${WRKSRC}/build/pkgs/*; do \
 		if ls $$d/fbsd-patch-* > /dev/null 2>&1; then \
 			${ECHO_MSG} Testing patches in $${d##*/}; \
@@ -123,7 +124,7 @@ test-fbsd-patches:	patch
 			fi; \
 		fi; \
 	done; \
-	${RM} -rf ${WRKSRC}/build/pkgs/*/src
+	${RM} -r ${WRKSRC}/build/pkgs/*/src
 .endif
 
 .include <bsd.port.post.mk>

@@ -2,14 +2,13 @@
 
 PORTNAME=	lokalize
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	devel kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+PORTREVISION=	2
+CATEGORIES=	devel kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Computer-aided translation system
 
-LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
+LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
 
 USES=		cmake:outsource kde:4 tar:xz
 USE_KDE=	kdelibs automoc4

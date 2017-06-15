@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lftp
-PORTVERSION=	4.7.3
+PORTVERSION=	4.7.7
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	http://lftp.yar.ru/ftp/ \
-		http://lftp.yar.ru/ftp/old/ \
+MASTER_SITES=	http://lftp.tech/ftp/ \
+		http://lftp.tech/ftp/old/ \
 		http://lftp.cybermirror.org/ \
 		http://lftp.cybermirror.org/old/ \
 		http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
@@ -47,15 +47,6 @@ GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=	pkgconfig
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL}
-. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-. endif
-.endif
-
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/lftp.conf \
 		${STAGEDIR}${PREFIX}/etc/lftp.conf.sample
@@ -64,4 +55,10 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,22 +1,37 @@
---- Makefile.orig	2011-09-15 15:43:52.000000000 -0700
-+++ Makefile	2011-09-15 15:44:01.000000000 -0700
-@@ -1,8 +1,8 @@
- VERSION=1.30
+--- Makefile.orig	2016-10-12 19:04:55 UTC
++++ Makefile
+@@ -18,6 +18,7 @@ CFLAGS += -Wstrict-prototypes -Wmissing-
+ CFLAGS += -Wswitch-enum
+ CFLAGS += -Wundef
+ CFLAGS += -Wwrite-strings
++CFLAGS += `pkg-config --cflags libpci`
  
--CFLAGS = -g -O2 -Werror -Wall -Wshadow -Wextra -Wmissing-declarations -Wdeclaration-after-statement -Wredundant-decls
-+CFLAGS += -Wall -Wshadow -Wextra -Wmissing-declarations -Wdeclaration-after-statement -Wredundant-decls `pkg-config --cflags libpci`
+ # gcc specific
+ ifneq ($(shell $(CC) -v 2>&1 | grep -c "clang"), 1)
+@@ -37,7 +38,7 @@ CFLAGS  += $(shell if [ $(CPP_MAJOR) -eq
  LDFLAGS = -Wl,-z,relro,-z,now
+ 
+ ifeq ($(CC),"")
 -CC = gcc
 +CC ?= gcc
+ endif
  
- SHELL = /bin/sh
+ ifdef STATIC_LIBPCI
+@@ -50,7 +51,7 @@ SHELL = /bin/sh
  
-@@ -91,7 +91,7 @@
- X86INFO_OBJS = $(X86INFO_SRC:%.c=%.o)
+ V	= @
+ Q	= $(V:1=)
+-QUIET_CC = $(Q:@=@echo    '  CC '$@;)
++#QUIET_CC = $(Q:@=@echo    '  CC '$@;)
  
- x86info: $(X86INFO_OBJS)
--	$(CC) $(CFLAGS) $(LDFLAGS) -o x86info $(X86INFO_OBJS) -lpci
-+	$(CC) $(CFLAGS) $(LDFLAGS) -o x86info $(X86INFO_OBJS) `pkg-config --libs libpci` -lpci
+ all: x86info
  
+@@ -67,7 +68,7 @@ X86INFO_OBJS = $(sort $(patsubst %.c,%.o
  
+ x86info: $(X86INFO_OBJS) $(X86INFO_HEADERS)
+ 	$(QUIET_CC)$(CC) $(CFLAGS) $(LDFLAGS) -o x86info $(X86INFO_OBJS) \
+-	    $(LIBPCI)
++	    `pkg-config --libs libpci` $(LIBPCI)
  
+ DEPDIR= .deps
+ -include $(X86INFO_SRC:%.c=$(DEPDIR)/%.d)

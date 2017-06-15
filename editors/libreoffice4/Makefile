@@ -2,7 +2,7 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	4.3.7
-PORTREVISION=	7
+PORTREVISION=	15
 CATEGORIES=	editors
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/extern/:ext \
@@ -55,7 +55,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libnss3.so:security/nss \
 		libclucene-core.so:textproc/clucene \
 		libexpat.so:textproc/expat2 \
-		libhunspell-1.3.so:textproc/hunspell \
+		libhunspell-1.6.so:textproc/hunspell \
 		libhyphen.so:textproc/hyphen \
 		libabw-0.1.so:textproc/libabw \
 		libe-book-0.1.so:textproc/libe-book \
@@ -77,6 +77,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosext
 		${LOCALBASE}/share/fonts/GentiumBasic/GenBasI.ttf:x11-fonts/gentium-basic \
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
+
+DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=	2017-03-31
 
 CONFLICTS_INSTALL=	libreoffice-5.*
 ONLY_FOR_ARCHS=	amd64 i386
@@ -267,7 +270,7 @@ KDE4_USES=	kde:4
 KDE4_USE=	KDE=kdelibs QT4=moc_build,qmake_build
 KDE4_CONFIGURE_ENABLE=	kde4
 KDE4_CONFIGURE_ENV=	KDE4DIR="${KDE_PREFIX}" \
-			QT4DIR="${QT_PREFIX}" \
+			QT4DIR="${PREFIX}" \
 			QT4INC="${QT_INCDIR}" \
 			QT4LIB="${QT_LIBDIR}"
 
@@ -337,11 +340,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-libc++.i386:-p0
 EXTRA_PATCHES+=	${FILESDIR}/extra-configure.ac
 .endif
 
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
-.endif
-
 ACLOCAL_ARGS=	-I "${WRKSRC}/m4"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -349,7 +347,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	ENVCFLAGS="${CFLAGS}" ENVCFLAGSCXX="${CXXFLAGS}"
 MAKE_ENV+=	ENVLINKFLAGS="${LDFLAGS}"
 MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
-MAKE_ENV+=	LANG=C LC_ALL=C
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
@@ -359,7 +356,7 @@ post-configure:
 
 do-install:
 	@cd ${WRKSRC} && ${MAKE_CMD} ${MAKE_ARGS} distro-pack-install
-	@${RM} -f ${PLISTD} ${PLISTF}
+	@${RM} ${PLISTD} ${PLISTF}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} -d lib/libreoffice -type d \
 	    -empty -exec ${ECHO_CMD} "@dir {}" \; >> ${PLISTD}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} -H -s bin etc lib man \

@@ -4,7 +4,7 @@
 PKGNAMEPREFIX=	i386-
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT?=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
+COMMENT?=	32-bit Microsoft Windows compatibility environment for 64-bit FreeBSD
 
 # Use the wine port to do most of the heavy lifting
 SLAVEDIR?=	${.CURDIR}
@@ -35,7 +35,7 @@ IGNORE=		This port is not for consumption on FreeBSD/i386.  To cross-build for F
 post-install-script:
 	# Fix pkg-plist references
 	${REINPLACE_CMD} -e 's!lib/!lib32/!g' ${TMPPLIST}
-	# Install bounce script to access the 32bit executables
+	# Install bounce script to access the 32-bit executables
 	${INSTALL_SCRIPT} ${SLAVEDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
 	for i in `grep ^bin ${TMPPLIST} | xargs -n1 basename` ; do \
 		[ "$${i}" = "wine" ] || ${LN} -f ${STAGEDIR}${PREFIX}/bin/wine ${STAGEDIR}${PREFIX}/bin/$${i} ; \

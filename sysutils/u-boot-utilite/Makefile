@@ -2,7 +2,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	2015.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/:source1 \
 		http://www.compulab.co.il/wp-content/uploads/2015/10/:source2
@@ -15,9 +15,9 @@ COMMENT=	Cross-build U-Boot loader for Utilite (and Utilite Pro)
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${CROSS_GCC}:devel/arm-none-eabi-gcc
+BUILD_DEPENDS=	${CROSS_GCC}:devel/arm-none-eabi-gcc492
 
-CROSS_GCC=	arm-none-eabi-gcc
+CROSS_GCC=	arm-none-eabi-gcc-4.9.2
 
 EXTRA_PATCHES=	${WRKDIR}/cm-fx6-u-boot/u-boot/u-boot-2015.07-cm-fx6-3.patch:-p1
 

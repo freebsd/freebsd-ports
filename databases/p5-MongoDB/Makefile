@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MongoDB
-PORTVERSION=	1.4.2
+PORTVERSION=	1.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -15,6 +15,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Authen-SCRAM>=0.003:security/p5-Authen-SCRAM \
+		p5-BSON>=1:databases/p5-BSON \
 		p5-Class-XSAccessor>0:devel/p5-Class-XSAccessor \
 		p5-DateTime>=0.78:devel/p5-DateTime \
 		p5-Moose>=2:devel/p5-Moose \
@@ -30,6 +31,7 @@ BUILD_DEPENDS+=	p5-Config-AutoConf>=0.220:devel/p5-Config-AutoConf \
 		p5-Path-Tiny>=0.052:devel/p5-Path-Tiny
 TEST_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-JSON>=2:converters/p5-JSON \
+		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Test-Deep>=0.111:devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Warn>=0:devel/p5-Test-Warn

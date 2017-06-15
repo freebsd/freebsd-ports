@@ -1,0 +1,11 @@
+--- Makefile.build.orig	2016-12-08 15:13:52 UTC
++++ Makefile.build
+@@ -101,7 +101,7 @@ TIMER=$(if $(TIMED), $(STDTIME), $(TIMEC
+ #   TIME="%C (%U user, %S sys, %e total, %M maxres)"
+ 
+ COQOPTS=$(COQ_XML) $(NATIVECOMPUTE)
+-BOOTCOQC=$(TIMER) $(COQTOPEXE) -boot $(COQOPTS) -compile
++BOOTCOQC=$(TIMER) env CAML_LD_LIBRARY_PATH=$${PWD}/kernel/byterun $(COQTOPEXE) -boot $(COQOPTS) -compile
+ 
+ LOCALINCLUDES=$(addprefix -I , $(SRCDIRS) )
+ MLINCLUDES=$(LOCALINCLUDES) -I $(MYCAMLP4LIB)

@@ -1,0 +1,11 @@
+bin/caf
+bin/cafrun
+include/OpenCoarrays/GNU/%%GCC_VER%%/opencoarrays.mod
+include/libcaf-gfortran-descriptor.h
+include/libcaf.h
+include/opencoarrays.mod
+lib/cmake/opencoarrays/OpenCoarraysConfig.cmake
+lib/cmake/opencoarrays/OpenCoarraysConfigVersion.cmake
+lib/cmake/opencoarrays/OpenCoarraysTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/opencoarrays/OpenCoarraysTargets.cmake
+lib/libcaf_mpi.a

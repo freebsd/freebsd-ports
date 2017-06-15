@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	convertall
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -12,15 +12,12 @@ COMMENT=	Another unit converter
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:x11-toolkits/py-qt4-gui
-
-USES=		python:3.3+
+USES=		pyqt:4 python:3.3+
+USE_PYQT=	core gui
 
 CONFIGURE_ARGS=	-p ${PREFIX} -d ${DOCSDIR} -i ${DATADIR}/icons -b ${STAGEDIR}
+NO_ARCH=	yes
 NO_BUILD=	yes
-
-PLIST_SUB=	PYTHON_SUFFIX="${PYTHON_SUFFIX}"
 WRKSRC=		${WRKDIR}/ConvertAll
 
 DESKTOP_ENTRIES="ConvertAll" \
@@ -44,7 +41,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+.if defined(PACKAGE_BUILDING) && !defined(PACKAGE_BUILDING_FLAVORS) && \
+    ${PYTHON_VER} != ${PYTHON_DEFAULT}
 IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
 .endif
 

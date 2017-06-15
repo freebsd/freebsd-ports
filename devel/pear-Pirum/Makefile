@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.pirum-project.org/get/
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Simple PEAR channel server manager
 
 LICENSE=	MIT

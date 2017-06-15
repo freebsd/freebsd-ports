@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@grosbein.net
+MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Basic building blocks for python applications
 
 USES=		python

@@ -1,0 +1,9 @@
+The ParagraphLayout object will analyze the text into runs of text in
+the same font, script and direction, and will create a LayoutEngine
+object for each run. The LayoutEngine will transform the characters into
+glyph codes in visual order.
+
+Clients can use this to break a paragraph into lines, and to display the
+glyphs in each line.
+
+WWW: http://site.icu-project.org/

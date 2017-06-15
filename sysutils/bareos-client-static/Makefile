@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bareos
-PORTREVISION=	0
+#PORTREVISION=	1
 PKGNAMESUFFIX=	-client-static
 
 COMMENT=	Backup archiving recovery open sourced (static client)
@@ -25,5 +25,6 @@ CONFIGURE_ARGS+=	--enable-client-only \
 			--disable-build-stored \
 			--with-jansson=${LOCALBASE}
 
+BROKEN_aarch64=	Fails to link: missing sbrk
 
 .include "${MASTERDIR}/Makefile"

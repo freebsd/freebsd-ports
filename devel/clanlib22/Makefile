@@ -6,8 +6,8 @@ PORTVERSION=	2.2.12
 PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-2.0/
-DISTNAME=	ClanLib-${PORTVERSION}
 PKGNAMESUFFIX=	22
+DISTNAME=	ClanLib-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
@@ -47,6 +47,9 @@ CONFIGURE_ARGS=	--disable-docs \
 INSTALL_TARGET=	install-strip
 PLIST_SUB+=	VER=${PORTVERSION:R} \
 		SHORT_VER=${PORTVERSION:R:R}${PORTVERSION:R:E}
+
+BROKEN_aarch64=		Fails to configure: error:  Requires SSE2 Support
+BROKEN_sparc64=		Fails to configure: error:  Requires SSE2 Support
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^extra_LIBS_clanSqlite/s|-ldl||g' \

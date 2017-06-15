@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	nio4r
-PORTVERSION=	1.2.1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	New IO for Ruby
+COMMENT=	Cross-platform asynchronous I/O primitives
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

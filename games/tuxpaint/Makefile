@@ -46,8 +46,7 @@ PORTDATA=	*
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-	@${RM} -rf ${WRKSRC}/fonts/locale/vi_docs
+	@${RM} -r ${WRKSRC}/fonts/locale/vi_docs
 
 post-patch:
 .for file in src/tuxpaint-import.sh src/tp_magic_api.h.in src/tuxpaint.conf \

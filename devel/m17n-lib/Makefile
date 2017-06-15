@@ -3,12 +3,15 @@
 
 PORTNAME=	m17n-lib
 PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel textproc
 MASTER_SITES=	SAVANNAH/m17n
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Library for the multilingual text handling
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bison:devel/bison \
 		m17n-db>=1.6.4:devel/m17n-db
@@ -21,8 +24,8 @@ RUN_DEPENDS=	m17n-db>=1.6.4:devel/m17n-db
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		autoreconf gettext-tools libtool pkgconfig
-USE_XORG=	ice sm x11 xaw xft xt
+USES=		autoreconf gettext-tools libtool pathfix pkgconfig
+USE_XORG=	ice sm x11 xaw xft xmu xrender xt
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -47,8 +50,6 @@ THAI_LIB_DEPENDS=	libthai.so:devel/libthai
 THAI_CONFIGURE_OFF=	--without-libthai
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|libdir}/pkgconfig|prefix}/libdata/pkgconfig|g ; \
-		 s|-ldl||g'
+	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e 's|-ldl||g'
 
 .include <bsd.port.mk>

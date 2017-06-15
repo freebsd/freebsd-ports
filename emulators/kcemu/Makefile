@@ -3,7 +3,7 @@
 
 PORTNAME=	kcemu
 PORTVERSION=	0.5.1
-PORTREVISION=	8
+PORTREVISION=	11
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/KCemu/KCemu-${PORTVERSION}
 DISTNAME=	KCemu-${PORTVERSION}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 GNU_CONFIGURE=	yes
 USE_XORG=	xmu
 USE_GNOME=	gtk20
-USES=		gettext pkgconfig
+USES=		gettext ncurses pkgconfig
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/KCemu-${PORTVERSION}

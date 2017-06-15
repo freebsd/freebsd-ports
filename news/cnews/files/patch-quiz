@@ -1,0 +1,11 @@
+--- quiz.orig	1995-04-28 00:50:34 UTC
++++ quiz
+@@ -272,7 +272,7 @@ newfakehdrs=
+ #then
+ #	newfakehdrs="$newfakehdrs sys/timeb.h"
+ #fi
+-newfakehdrs="$newfakehdrs sys/timeb.h"
++#newfakehdrs="$newfakehdrs sys/timeb.h"
+ if test " `$notinlist "$newfake" gettimeofday.o`" != " yes"
+ then
+ 	newfakehdrs="$newfakehdrs sys/time.h"

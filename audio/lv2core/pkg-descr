@@ -1,6 +1,0 @@
-LV2 is a standard for plugins and matching host applications, mainly targeted at
-audio processing and generation.
-LV2 is a simple but extensible successor of LADSPA, intended to address the
-limitations of LADSPA which many applications have outgrown.
-
-WWW: http://lv2plug.in/

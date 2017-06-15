@@ -1,10 +1,10 @@
-# Created by: Ralf Nolden <nolden@kde.org>
+# Created by: Marie Loise Nolden <nolden@kde.org>
 # $FreeBSD$
 
 PORTNAME=	doc
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	misc
-MASTER_SITES=	QT/official_releases/qt/${QT5_VERSION:R}/${QT5_VERSION}/${QT5_SUBDIR}/single
+MASTER_SITES=	QT/official_releases/qt/${QT5_VERSION:R}/${QT5_VERSION}/single
 PKGNAMEPREFIX=	qt5-
 DISTNAME=	qt-everywhere-opensource-src-${QT5_VERSION}
 DIST_SUBDIR=	KDE/Qt/${QT5_VERSION}
@@ -13,7 +13,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 documentation
 
 USES=		gmake python:build qmake:norecursive,outsource tar:xz
-USE_QT5=	buildtools_build concurrent_build help_build qdoc_build
+USE_QT5=	buildtools_build concurrent_build help_build qdoc_build \
+		sql_build sql-sqlite3_build
 QMAKE_SOURCE_PATH=	${WRKSRC}/qt.pro
 
 ALL_TARGET=	docs

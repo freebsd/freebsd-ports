@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	fabric
-PORTVERSION=	1.10.2
+PORTVERSION=	1.12.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:C/f/F/}-${DISTVERSION}
+DISTNAME=	Fabric-${DISTVERSION}
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Simple, Pythonic remote execution and deployment
@@ -15,7 +16,7 @@ COMMENT=	Simple, Pythonic remote execution and deployment
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.10:security/py-paramiko
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko1>=1.10:security/py-paramiko1
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}fudge>0:devel/py-fudge \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0.6:devel/py-Jinja2

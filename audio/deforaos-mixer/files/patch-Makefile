@@ -1,0 +1,11 @@
+--- Makefile.orig	2017-01-16 13:02:55 UTC
++++ Makefile
+@@ -89,8 +89,6 @@ install:
+ 		if [ -n "$(OBJDIR)" ]; then \
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/" install; \
+ 		else $(MAKE) install; fi) || exit; done
+-	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/Mixer
+-	$(INSTALL) -m 0644 README.md $(DESTDIR)$(PREFIX)/share/doc/Mixer/README.md
+ 
+ uninstall:
+ 	@for i in $(SUBDIRS); do (cd "$$i" && \

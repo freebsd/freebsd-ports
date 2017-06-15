@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kadu
-PORTVERSION=	2.1
+PORTVERSION=	4.3
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
@@ -19,13 +19,15 @@ COMMENT=	Internet communicator supporting Gadu-Gadu and Jabber/XMPP
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash \
-		pl-libgadu>=1.12.1:polish/libgadu
+		pl-libgadu>=1.12.2:polish/libgadu
 LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libsndfile.so:audio/libsndfile \
 		libinjeqt.so:devel/injeqt \
 		libqca-qt5.so:devel/qca-qt5 \
 		libidn.so:dns/libidn \
+		libqxmpp.so:net-im/qxmpp-qt5 \
 		libgadu.so:polish/libgadu \
+		libgcrypt.so:security/libgcrypt \
 		libotr.so.5:security/libotr \
 		libenchant.so:textproc/enchant
 # TODO ntrack and ntrack-qt (needs porting) ?
@@ -34,17 +36,18 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
-USES=		cmake compiler:c++11-lib execinfo libarchive pkgconfig tar:bzip2
-USE_XORG=	xscrnsaver
-CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
+USES=		cmake compiler:c++11-lib execinfo gettext-runtime \
+		libarchive pkgconfig readline tar:bzip2
+USE_XORG=	x11 xext xfixes xscrnsaver
+USE_GNOME=	glib20
+USE_QT5=	concurrent core dbus declarative gui multimedia network \
+		qml quick script scripttools sql webkit widgets x11extras \
+		xml xmlpatterns buildtools_build linguisttools_build \
+		qmake_build imageformats_run sql-sqlite3_run
 # Setting KADU_VERSION disables git invocation
-
-USE_QT5=	buildtools_build concurrent dbus declarative gui multimedia \
-		network script scripttools webkit x11extras phonon4 \
-		xml linguisttools_build qmake_build imageformats_run \
-		sql-sqlite3_run
+CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON \
+		-DENABLE_TESTS=OFF
 LDFLAGS+=	-lexecinfo
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GG_EMOTS
 OPTIONS_SUB=	yes
@@ -52,6 +55,10 @@ GG_EMOTS_DESC=	GG-compatible emoticons
 
 GG_EMOTS_DISTFILES=	${GG6_EMOTS_DISTFILE}:additions \
 			${GG7_EMOTS_DISTFILE}:additions
+
+post-patch:
+	@${REINPLACE_CMD} '/kadu_add_test/ s|^|#|' \
+		${WRKSRC}/kadu-core/plugin/CMakeLists.txt
 
 post-install-GG_EMOTS-on:
 	@${MKDIR} ${WRKSRC}/varia/themes/emoticons

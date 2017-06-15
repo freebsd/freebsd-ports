@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rinse
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -23,14 +23,10 @@ MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}" VERSION=${DISTVERSION}
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+IGNORE_DragonFly=	requires linuxulator to register rpms
+
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires linuxulator to register rpms
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == DragonFly
-IGNORE=		requires linuxulator to register rpms
-.endif
 
 post-extract:
 	${MV} ${WRKSRC}/etc/rinse.conf ${WRKSRC}/etc/rinse.conf.sample

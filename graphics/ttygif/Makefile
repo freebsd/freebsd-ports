@@ -16,7 +16,7 @@ RUN_DEPENDS=	convert:graphics/ImageMagick
 USE_GITHUB=	yes
 GH_ACCOUNT=	icholy
 
-USES=		tar:bzip2 gmake
+USES=		gmake
 
 PLIST_FILES=	bin/${PORTNAME}
 

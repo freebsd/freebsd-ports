@@ -1,2 +1,3 @@
-SHA256 (phabricator-0.6.0.tar.gz) = 88bd46013199123f3d0e2681aa538bb65b0c622f89c5e3ec81744cc2b94388af
-SIZE (phabricator-0.6.0.tar.gz) = 19274
+TIMESTAMP = 1480537698
+SHA256 (disqus-python-phabricator-0.7.0-dac1219_GH0.tar.gz) = 27f5521c903e3d3a8c4bcd67e41b54cda83720753bdda3349744606e43820f4a
+SIZE (disqus-python-phabricator-0.7.0-dac1219_GH0.tar.gz) = 20646

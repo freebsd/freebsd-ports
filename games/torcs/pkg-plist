@@ -946,7 +946,6 @@ share/games/torcs/drivers/human/car.xml
 share/games/torcs/drivers/human/human.xml
 share/games/torcs/drivers/human/logo.rgb
 share/games/torcs/drivers/human/preferences.xml
-share/games/torcs/drivers/human/tracks/dirt-2/car-pw-206wrc.xml
 share/games/torcs/drivers/inferno/1/default.xml
 share/games/torcs/drivers/inferno/10/car1-trb3.rgb
 share/games/torcs/drivers/inferno/10/default.xml
@@ -2776,9 +2775,9 @@ share/games/torcs/wheels/trb1-6/wheel1.acc
 share/games/torcs/wheels/trb1-6/wheel2.acc
 share/games/torcs/wheels/trb1-6/wheel3.acc
 share/games/torcs/wheels/trb1-6/wheel3d.png
-@dir share/games/torcs/drivers/bt/1/race
-@dir share/games/torcs/drivers/bt/1/qualifying
-@dir share/games/torcs/drivers/bt/1/practice
-@dir share/games/torcs/drivers/bt/0/race
-@dir share/games/torcs/drivers/bt/0/qualifying
 @dir share/games/torcs/drivers/bt/0/practice
+@dir share/games/torcs/drivers/bt/0/qualifying
+@dir share/games/torcs/drivers/bt/0/race
+@dir share/games/torcs/drivers/bt/1/practice
+@dir share/games/torcs/drivers/bt/1/qualifying
+@dir share/games/torcs/drivers/bt/1/race

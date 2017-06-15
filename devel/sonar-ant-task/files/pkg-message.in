@@ -1,0 +1,13 @@
+************************************************************************
+
+  To integrate SonarQube with SonarQube Scanner for Ant (default
+  settings):
+  - define a new sonar Ant target in your Ant build script
+  - for the SonarQube target set classpath value to
+   %%DATADIR%%/sonar-ant-task.jar
+
+
+  More information:
+  http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Ant
+
+************************************************************************

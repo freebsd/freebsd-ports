@@ -1,33 +1,46 @@
 # $FreeBSD$
 
 PORTNAME=	skrooge
-PORTVERSION=	1.12.5
+PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
+DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE4 personal finance manager
+COMMENT=	KDE personal finance manager
 
-PORTSCOUT=	limit:^1\.
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 LIB_DEPENDS=	libofx.so:finance/libofx \
-		libqca.so:devel/qca \
-		libkactivities.so:x11/kactivities
+		libqca-qt5.so:devel/qca-qt5 \
+		libsqlcipher.so:databases/sqlcipher
 
-USES=		cmake:outsource gettext grantlee:4 kde:4 shared-mime-info \
+USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
+		gettext grantlee:5 kde:5 pkgconfig shared-mime-info \
 		sqlite:3 tar:xz
-USE_QT4=	qmake_build moc_build uic_build rcc_build designer_build \
-		corelib dbus gui script sql webkit xml sql-sqlite3_run
-USE_KDE=	automoc4 kdelibs pimlibs
+USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
+		config configwidgets coreaddons crash dbusaddons \
+		designerplugin doctools ecm emoticons guiaddons i18n \
+		iconthemes init itemmodels itemviews jobwidgets \
+		kdelibs4support kio newstuff notifications notifyconfig \
+		package parts plasma-framework runner service solid sonnet \
+		textwidgets unitconversion wallet widgetsaddons windowsystem \
+		xmlgui
+USE_QT5=	concurrent core dbus designer gui network printsupport qml \
+		quick script sql svg webkit widgets xml \
+		qmake_build buildtools_build
+
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	SHLIB_VER="${PORTVERSION}"
 
 # Skrooge creates several empty directories due to how it calls CMake's
 # install(DIRECTORY ...) function, so we need some code to remove them.
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/share/apps/skrooge/html \
+	${FIND} ${STAGEDIR}${PREFIX}/share/skrooge/html \
 		-type d -empty -delete
 
 .include <bsd.port.mk>

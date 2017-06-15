@@ -1,0 +1,23 @@
+--- client/X11/cli/CMakeLists.txt.orig	2016-12-04 14:35:40 UTC
++++ client/X11/cli/CMakeLists.txt
+@@ -15,7 +15,7 @@
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ 
+-set(MODULE_NAME "xfreerdp-cli")
++set(MODULE_NAME "xfreerdp1-cli")
+ set(MODULE_PREFIX "FREERDP_CLIENT_X11")
+ 
+ include_directories(..)
+@@ -24,9 +24,9 @@ set(${MODULE_PREFIX}_SRCS
+ 	xfreerdp.c)
+ 
+ add_executable(${MODULE_NAME} ${${MODULE_PREFIX}_SRCS})
+-set_target_properties(${MODULE_NAME} PROPERTIES OUTPUT_NAME "xfreerdp" RUNTIME_OUTPUT_DIRECTORY "..")
++set_target_properties(${MODULE_NAME} PROPERTIES OUTPUT_NAME "xfreerdp1" RUNTIME_OUTPUT_DIRECTORY "..")
+ 
+-set(${MODULE_PREFIX}_LIBS ${${MODULE_PREFIX}_LIBS} xfreerdp-client)
++set(${MODULE_PREFIX}_LIBS ${${MODULE_PREFIX}_LIBS} xfreerdp1-client)
+ 
+ target_link_libraries(${MODULE_NAME} ${${MODULE_PREFIX}_LIBS})
+ 

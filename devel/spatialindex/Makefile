@@ -16,7 +16,7 @@ USES=		gmake libtool pathfix tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-post-stage:
+post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspatialindex*.so.*
 
 .include <bsd.port.mk>

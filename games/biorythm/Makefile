@@ -9,6 +9,8 @@ MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple biorhythm calculation program
 
+LICENSE=	ART10
+
 LIB_DEPENDS=	libshhmsg.so:devel/libshhmsg \
 		libshhopt.so:devel/libshhopt
 
@@ -29,6 +31,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

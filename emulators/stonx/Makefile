@@ -10,6 +10,8 @@ DISTNAME=	STonX-0.6.7.6
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AtariST emulator
 
+LICENSE=	GPLv2+
+
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		gccmakedep:devel/gccmakedep \
 		mkfontdir:x11-fonts/mkfontdir \
@@ -20,7 +22,7 @@ RESTRICTED=	Contains ROM (C) by Atari
 
 TOSIMG?=	tos.img
 USES=		fonts
-FONTNAME=	# empty
+FONTNAME=	misc
 USE_XORG=	x11 sm ice xext xextproto
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
@@ -28,7 +30,6 @@ CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
 ALL_TARGET=	all fnttobdf tosfonts fonts
 
 BINDIR=	${PREFIX}/bin
-FNTDIR=	${PREFIX}/share/fonts/misc
 
 DATA=	atari/bench1.pas atari/bench1.prg
 ETCFILES=	keysyms-alternative keysyms-german keysyms-spanish
@@ -49,10 +50,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/$f ${STAGEDIR}${ETCDIR}/
 .endfor
 	@${ECHO_MSG} "===> Installing fonts"
-	${MKDIR} ${STAGEDIR}${FNTDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for f in ${FONTS}
-	${INSTALL_DATA} ${WRKSRC}/data/$f ${STAGEDIR}${FNTDIR}/
-	${GZIP_CMD} ${STAGEDIR}${FNTDIR}/$f
+	${INSTALL_DATA} ${WRKSRC}/data/$f ${STAGEDIR}${FONTSDIR}/
+	${GZIP_CMD} ${STAGEDIR}${FONTSDIR}/$f
 .endfor
 
 post-install-DOCS-on:

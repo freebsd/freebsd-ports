@@ -1,8 +1,3 @@
-
-Note:
-Dbskkd-cdb is designed to run with inetd or daemontools.  Example config
-for both superdaemons are available at %%DOCSDIR%%.
-
-Also note that dbskkd-cdb no longer required to run 'root' (1.71dev does),
-nor chroot(8) to the dictionary directory.
-
+Note: the dbskkd-cdb requires inetd or daemontools to run.
+Example configurations are available at %%DOCSDIR%%/examples.md.
+*Note well*: dbskkd-cdb must not be invoked with the root privilege.

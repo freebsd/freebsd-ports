@@ -8,7 +8,6 @@
 %%DATADIR%%/default.cfg
 %%DATADIR%%/dpdemo1.dem
 %%DATADIR%%/dpdemo2.dem
-%%DATADIR%%/effectinfo.txt
 %%DATADIR%%/env/sky1_dpzoo_bk.tga
 %%DATADIR%%/env/sky1_dpzoo_dn.tga
 %%DATADIR%%/env/sky1_dpzoo_ft.tga
@@ -45,6 +44,7 @@
 %%DATADIR%%/maps/dpzoo.lit
 %%DATADIR%%/maps/dpzoo.map
 %%DATADIR%%/maps/dpzoo.wad
+%%DATADIR%%/maps/e1m1.rtlights
 %%DATADIR%%/menu/main.menu
 %%DATADIR%%/menu/options.menu
 %%DATADIR%%/progs.dat
@@ -81,6 +81,10 @@
 %%DATADIR%%/qc/CTF.qc
 %%DATADIR%%/qc/ai.qc
 %%DATADIR%%/qc/buttons.qc
+%%DATADIR%%/qc/client/csmain.qc
+%%DATADIR%%/qc/client/csvars.qc
+%%DATADIR%%/qc/client/gamesettings.qc
+%%DATADIR%%/qc/client/progs.src
 %%DATADIR%%/qc/client.qc
 %%DATADIR%%/qc/damage.qc
 %%DATADIR%%/qc/darkp.qc
@@ -89,7 +93,16 @@
 %%DATADIR%%/qc/defs.qc
 %%DATADIR%%/qc/domination.qc
 %%DATADIR%%/qc/doors.qc
+%%DATADIR%%/qc/dpdefs/README.txt
+%%DATADIR%%/qc/dpdefs/csprogsdefs.qc
+%%DATADIR%%/qc/dpdefs/dpextensions.qc
+%%DATADIR%%/qc/dpdefs/keycodes.qc
+%%DATADIR%%/qc/dpdefs/menudefs.qc
+%%DATADIR%%/qc/dpdefs/progsdefs.qc
+%%DATADIR%%/qc/dpdefs/source_compare.pl
+%%DATADIR%%/qc/dpdefs/source_compare.txt
 %%DATADIR%%/qc/dpextensions.qc
+%%DATADIR%%/qc/dpextensions_csqc.qc
 %%DATADIR%%/qc/fight.qc
 %%DATADIR%%/qc/fteqcc.log
 %%DATADIR%%/qc/halflife.qc
@@ -113,6 +126,7 @@
 %%DATADIR%%/qc/m_tarbaby.qc
 %%DATADIR%%/qc/m_wizard.qc
 %%DATADIR%%/qc/m_zombie.qc
+%%DATADIR%%/qc/mapgen.qc
 %%DATADIR%%/qc/menu/cursor.qc
 %%DATADIR%%/qc/menu/cursor.qh
 %%DATADIR%%/qc/menu/graphic.qc
@@ -159,6 +173,7 @@
 %%DATADIR%%/quake.rc
 %%DATADIR%%/romi_rtlights.pk3
 %%DATADIR%%/romi_rtlights_dm.pk3
+%%DATADIR%%/sample_effectinfo.txt
 %%DATADIR%%/sound/explo2.wav
 %%DATADIR%%/sound/fire/burn.wav
 %%DATADIR%%/sound/fire/launch.wav
@@ -187,3 +202,4 @@
 %%DATADIR%%/textures/roof1_dpzoo.jpg
 %%DATADIR%%/textures/wall1_dpzoo.jpg
 %%DATADIR%%/textures/window1_dpzoo.jpg
+%%DATADIR%%/waypoints/dm1.waypoints

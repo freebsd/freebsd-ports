@@ -10,9 +10,9 @@ COMMENT=	Examine periodic stack traces of all running processes
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_i386=		Does not build: don't know how to make sample_support_i386.c
-BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=		Does not build: don't know how to make sample_support_sparc64.c
+BROKEN_i386=		does not build: don't know how to make sample_support_i386.c
+BROKEN_powerpc64=	does not build
+BROKEN_sparc64=		does not build: don't know how to make sample_support_sparc64.c
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:devel/libbfd \
 		${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty \
@@ -28,7 +28,7 @@ USES=		python:build kmod
 
 MAKE_ENV=	SYSDIR=${SRC_BASE}/sys
 
-SSP_UNSAFE=	YES
+SSP_UNSAFE=	yes
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/driver/sample_driver.ko ${STAGEDIR}${KMODDIR}

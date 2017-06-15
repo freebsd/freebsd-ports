@@ -5,7 +5,8 @@ PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.4.0.s1379
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	LOCAL/mandree
+MASTER_SITES=	LOCAL/mandree # figure out proper GitHub commit and use that.
+# https://github.com/threerings/openvpn-auth-ldap/
 DISTNAME=	auth-ldap-${PORTVERSION}
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -14,17 +15,15 @@ COMMENT=	LDAP authentication plugin for OpenVPN
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	re2c:devel/re2c \
-		${NONEXISTENT}:security/openvpn:extract \
-		libcheck>=0:devel/libcheck
+		check>=0:devel/check \
+		${LOCALBASE}/include/openvpn-plugin.h:security/openvpn
 
-USES=		objc tar:xz
+USES=		autoreconf objc tar:xz
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf autoheader
 USE_OPENLDAP=	yes
-OPENVPN_WRKSRC=	`cd ${PORTSDIR}/security/openvpn; make -V WRKSRC`
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
-			--with-openvpn=${OPENVPN_WRKSRC}/include \
+			--with-openvpn=${LOCALBASE}/include \
 			--with-objc-runtime=GNU
 
 PORTDOCS=	README
@@ -60,14 +59,15 @@ CC+=		${DEBUG_FLAGS}
 
 # this is a local target to build a tarball from SVN
 # and another target to upload it
-# Note that googlecode.com is gone.
+# Note that googlecode.com is gone. Apparently someone exported the code
+# to Github:  https://github.com/threerings/openvpn-auth-ldap/
 build-tarball: ${DISTFILES}
 ${DISTFILES}:
-	${RM} -rf ${WRKSRC}
+	${RM} -r ${WRKSRC}
 	svn export -r${PORTVERSION:E:C/^s//} \
 	    http://openvpn-auth-ldap.googlecode.com/svn/trunk/ ${WRKSRC}
 	tar -C ${WRKSRC}/.. -cvf - ${WRKSRC:T} | ${XZ_CMD} -vvc >${DISTFILES} || \
-	    { ${RM} -f ${DISTFILES} ; exit 1 ; }
+	    { ${RM} ${DISTFILES} ; exit 1 ; }
 
 upload-tarball: build-tarball
 	scp ${DISTFILES} freefall.freebsd.org:public_distfiles/

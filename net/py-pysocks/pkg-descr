@@ -5,3 +5,5 @@ Derived from SocksiPy - a Python SOCKS module.
   this module can be used with urllib2. See example code in sockshandler.py.
 - urllib3, which powers the requests module, is working on integrating SOCKS
   proxy support based on this branch
+
+WWW: https://github.com/Anorov/PySocks

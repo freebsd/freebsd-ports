@@ -1,0 +1,4 @@
+This is a client library for Heat built on the Heat orchestration API. It
+provides a Python API (the heatclient module) and a command-line tool (heat).
+
+WWW: http://pypi.python.org/pypi/python-heatclient

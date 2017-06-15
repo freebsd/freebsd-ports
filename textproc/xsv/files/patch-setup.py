@@ -1,6 +1,6 @@
---- ./setup.py.orig	2008-01-18 13:17:40.000000000 +0100
-+++ ./setup.py	2014-03-23 02:06:18.690868591 +0100
-@@ -16,20 +16,10 @@
+--- setup.py.orig	2008-01-18 12:17:40 UTC
++++ setup.py
+@@ -16,20 +16,10 @@ class smart_install_data(install_data):
      self.install_dir = getattr(install_cmd, 'install_lib')
      return install_data.run(self)
  

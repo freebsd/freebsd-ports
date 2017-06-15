@@ -1,14 +1,31 @@
+%%ETCDIR%%/web/angular-translate-loader-url.min.js
+%%ETCDIR%%/web/angular-translate.min.js
+%%ETCDIR%%/web/angular.min.js
 %%ETCDIR%%/web/aprsc.css
 %%ETCDIR%%/web/aprsc.js
-%%ETCDIR%%/web/index.html
-%%ETCDIR%%/web/favicon.ico
-%%ETCDIR%%/web/aprsc-logo.png
+%%ETCDIR%%/web/aprsc-graph.js
 %%ETCDIR%%/web/aprsc-joulukissa.jpg
+%%ETCDIR%%/web/aprsc-logo4.png
+%%ETCDIR%%/web/aprsc-logo4@2x.png
+%%ETCDIR%%/web/bootstrap.min.css
 %%ETCDIR%%/web/excanvas.min.js
+%%ETCDIR%%/web/favicon.ico
+%%ETCDIR%%/web/glyphicons-halflings-regular.eot
+%%ETCDIR%%/web/glyphicons-halflings-regular.ttf
+%%ETCDIR%%/web/glyphicons-halflings-regular.woff
+%%ETCDIR%%/web/glyphicons-halflings-regular.woff2
+%%ETCDIR%%/web/index.html
 %%ETCDIR%%/web/jquery.min.js
 %%ETCDIR%%/web/jquery.flot.min.js
+%%ETCDIR%%/web/jquery.flot.resize.min.js
 %%ETCDIR%%/web/jquery.flot.selection.min.js
-@sample etc/aprsc/aprsc.conf.sample
+%%ETCDIR%%/web/jquery.flot.time.min.js
+%%ETCDIR%%/web/ngDialog-theme-plain.min.css
+%%ETCDIR%%/web/ngDialog.min.css
+%%ETCDIR%%/web/ngDialog.min.js
+%%ETCDIR%%/web/strings-en.json
+%%ETCDIR%%/web/strings-fi.json
+@sample %%ETCDIR%%/aprsc.conf.sample
 man/man8/aprsc.8.gz
 sbin/aprsc
 sbin/aprsc_munin

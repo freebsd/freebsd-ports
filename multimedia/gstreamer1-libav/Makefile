@@ -3,6 +3,7 @@
 
 PORTNAME=	gstreamer1-libav
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}

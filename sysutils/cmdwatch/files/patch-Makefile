@@ -5,11 +5,27 @@
  
  all : startup $(OBJS) 
 -	@$(CC) -o cmdwatch $(OBJS) -lcurses
-+	@$(CC) -o cmdwatch $(OBJS) $(LDFLAGS) -lncurses
++	@$(CC) $(CFLAGS) -o cmdwatch $(OBJS) $(LDFLAGS) -lncurses
  	@strip cmdwatch
  	@echo " done."
  
-@@ -26,9 +26,9 @@ clean :
+@@ -13,22 +13,22 @@ startup :
+ 	@echo -n "Making cmdwatch..."
+ 
+ getopt.o : getopt.c
+-	@$(CC) -c getopt.c
++	@$(CC) $(CFLAGS) -c getopt.c
+ 
+ getopt1.o : getopt1.c
+-	@$(CC) -c getopt1.c
++	@$(CC) $(CFLAGS) -c getopt1.c
+ 
+ cmdwatch.o : cmdwatch.c
+-	@$(CC) -c cmdwatch.c
++	@$(CC) $(CFLAGS) -c cmdwatch.c
+ 
+ clean :
+ 	@echo "Making clean..."
  	@rm -f *.o cmdwatch
  
  install : all

@@ -3,7 +3,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.1.6
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/libnet-dev
@@ -46,4 +46,10 @@ post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/sample/*.c ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100030
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-configure
+.endif
+
+.include <bsd.port.post.mk>

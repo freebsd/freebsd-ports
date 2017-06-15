@@ -20,17 +20,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SHEBANG_FILES=	examples/*.py examples/*/*.py test/*.py
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-
-PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//} \
-		PYOEXTENSION=${PYOEXTENSION}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|python %s|${PYTHON_CMD} %s|g' \
 		${WRKSRC}/test/examples_test.py
@@ -50,4 +39,4 @@ post-install:
 		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cairo/_cairo.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

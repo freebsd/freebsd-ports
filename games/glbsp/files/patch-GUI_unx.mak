@@ -1,6 +1,6 @@
---- ./GUI_unx.mak.orig	2005-09-16 02:29:39.000000000 -0300
-+++ ./GUI_unx.mak	2013-11-01 20:56:43.000000000 -0200
-@@ -8,16 +8,16 @@
+--- GUI_unx.mak.orig	2005-09-16 05:29:39 UTC
++++ GUI_unx.mak
+@@ -8,16 +8,16 @@ SRC_DIR=glbsp
  
  PROGNAME=glBSPX
  

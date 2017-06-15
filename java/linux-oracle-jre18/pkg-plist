@@ -6,7 +6,7 @@
 %%T%%/Welcome.html
 %%T%%/bin/ControlPanel
 %%T%%/bin/java
-@javavm %%T%%/bin/java
+@javavm %%RESETPREFIX%%/%%T%%/bin/java
 %%T%%/bin/javaws
 %%T%%/bin/jcontrol
 %%T%%/bin/jjs

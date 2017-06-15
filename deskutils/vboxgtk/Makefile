@@ -11,12 +11,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK frontend for VirtualBox
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:emulators/virtualbox-ose
 
 USES=		python
 USE_PYTHON=	distutils autoplist
-USE_GNOME=	gtk30 intltool pygtk2
+USE_GNOME=	gtk30 intltool
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS

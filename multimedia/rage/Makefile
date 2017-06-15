@@ -3,6 +3,7 @@
 
 PORTNAME=	rage
 PORTVERSION=	0.2.1
+PORTREVISION=	2
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
@@ -15,6 +16,6 @@ LIB_DEPENDS=	libefl.so:devel/efl
 
 DIST_SUBDIR=	enlightenment
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils pkgconfig tar:xz
+USES=		compiler:c11 desktop-file-utils pkgconfig tar:xz
 
 .include <bsd.port.mk>

@@ -6,11 +6,13 @@ PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send DHCP request to DHCP server for monitoring purposes
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dhcping \
 		man/man8/dhcping.8.gz

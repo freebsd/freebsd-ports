@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep-gui
 PORTVERSION=	0.24.1
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	GNUSTEP/core
 
@@ -23,6 +23,7 @@ DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
 LIB_DEPENDS+=	libtiff.so:graphics/tiff
 LIB_DEPENDS+=	libpng.so:graphics/png
 LIB_DEPENDS+=	libgif.so:graphics/giflib
+LIB_DEPENDS+=	libicui18n.so:devel/icu
 LIB_DEPENDS+=	libsndfile.so:audio/libsndfile
 LIB_DEPENDS+=	libao.so:audio/libao
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:audio/flite

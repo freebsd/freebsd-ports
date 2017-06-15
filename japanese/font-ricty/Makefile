@@ -47,7 +47,7 @@ SUB_LIST+=	DISCORD="" RICTY=\#
 .endif
 
 .if ${PORT_OPTIONS:MDISCORD}
-RUN_DEPENDS+=	${DATADIR}/RictyDiscord-Regular.ttf:japanese/font-ricty-discord
+RUN_DEPENDS+=	${LOCALBASE}/${DATADIR_REL}/RictyDiscord-Regular.ttf:japanese/font-ricty-discord
 .endif
 
 do-extract:

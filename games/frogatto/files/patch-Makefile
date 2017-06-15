@@ -9,7 +9,7 @@
  CCACHE?=ccache
  USE_CCACHE?=$(shell which $(CCACHE) 2>&1 > /dev/null && echo yes)
  ifneq ($(USE_CCACHE),yes)
-@@ -34,14 +34,14 @@ BASE_CXXFLAGS += -O2
+@@ -34,7 +34,7 @@ BASE_CXXFLAGS += -O2
  endif
  
  # Initial compiler options, used before CXXFLAGS and CPPFLAGS.
@@ -17,16 +17,7 @@
 +BASE_CXXFLAGS += -fno-inline-functions -fthreadsafe-statics -Wnon-virtual-dtor -Werror -Wformat -Wswitch
  
  # Compiler include options, used after CXXFLAGS and CPPFLAGS.
--INC := $(shell pkg-config --cflags x11 sdl glu glew SDL_image libpng zlib)
-+INC := $(shell pkg-config --cflags x11 sdl glu glew SDL_image libpng)
- 
- # Linker library options.
- LIBS := $(shell pkg-config --libs x11 ) -lSDLmain \
--	$(shell pkg-config --libs sdl glu glew SDL_image libpng zlib) -lSDL_ttf -lSDL_mixer
-+	$(shell pkg-config --libs sdl glu glew SDL_image libpng) -lz -lSDL_ttf -lSDL_mixer
- 
- include Makefile.common
- 
+ INC := $(shell pkg-config --cflags x11 sdl glu glew SDL_image libpng zlib)
 @@ -60,7 +60,7 @@ game: $(objects)
  	$(CCACHE) $(CXX) \
  		$(BASE_CXXFLAGS) $(LDFLAGS) $(CXXFLAGS) $(CPPFLAGS) $(INC) \

@@ -1,6 +1,6 @@
---- src/packaging/FreeBSD/Makefile.man.orig	2014-06-12 17:30:48.000000000 +0900
-+++ src/packaging/FreeBSD/Makefile.man	2014-06-13 11:49:29.000000000 +0900
-@@ -7,6 +7,7 @@
+--- src/packaging/FreeBSD/Makefile.man.orig	2016-12-14 18:28:29 UTC
++++ src/packaging/FreeBSD/Makefile.man
+@@ -7,6 +7,7 @@ MAN1+=	copyauth.1
  MAN1+=	dlog.1
  MAN1+=	fs.1
  MAN1+=	fs_apropos.1
@@ -8,7 +8,7 @@
  MAN1+=	fs_checkservers.1
  MAN1+=	fs_checkvolumes.1
  MAN1+=	fs_chgrp.1
-@@ -61,11 +62,7 @@
+@@ -61,11 +62,7 @@ MAN1+=	fs_uuid.1
  MAN1+=	fs_whereis.1
  MAN1+=	fs_whichcell.1
  MAN1+=	fs_wscell.1
@@ -20,7 +20,7 @@
  MAN1+=	livesys.1
  MAN1+=	pagsh.1
  MLINKS+=	pagsh.1 pagsh.krb.1
-@@ -177,8 +174,6 @@
+@@ -177,8 +174,6 @@ MAN5+=	butc.5
  MAN5+=	butc_logs.5
  MAN5+=	cacheinfo.5
  MAN5+=	fms.log.5
@@ -29,7 +29,7 @@
  MAN5+=	krb.conf.5
  MAN5+=	prdb.DB0.5
  MAN5+=	salvage.lock.5
-@@ -188,6 +183,7 @@
+@@ -188,6 +183,7 @@ MAN5+=	uss.5
  MAN5+=	uss_bulk.5
  MAN5+=	vldb.DB0.5
  MAN8+=	afsd.8
@@ -37,7 +37,7 @@
  MAN8+=	asetkey.8
  MAN8+=	backup.8
  MAN8+=	backup_adddump.8
-@@ -262,7 +258,6 @@
+@@ -262,7 +258,6 @@ MAN8+=	butc.8
  MAN8+=	davolserver.8
  MAN8+=	dasalvager.8
  MAN8+=	dafileserver.8
@@ -45,7 +45,7 @@
  MAN8+=	fileserver.8
  MAN8+=	fms.8
  MAN8+=	fssync-debug_volop.8
-@@ -295,28 +290,6 @@
+@@ -295,28 +290,6 @@ MAN8+=	fstrace_lslog.8
  MAN8+=	fstrace_lsset.8
  MAN8+=	fstrace_setlog.8
  MAN8+=	fstrace_setset.8

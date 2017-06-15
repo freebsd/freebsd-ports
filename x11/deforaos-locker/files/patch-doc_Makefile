@@ -1,0 +1,34 @@
+--- doc/Makefile.orig	2016-02-20 13:12:47 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)index.html $(OBJDIR)locker.1 $(OBJDIR)locker.html $(OBJDIR)lockerctl.1 $(OBJDIR)lockerctl.html
++TARGETS	= $(OBJDIR)locker.1 $(OBJDIR)lockerctl.1
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -27,25 +27,18 @@ $(OBJDIR)lockerctl.html: lockerctl.css.x
+ 
+ clean:
+ 	$(RM) -- $(index.html_OBJS) $(locker.1_OBJS) $(locker.html_OBJS) $(lockerctl.1_OBJS) $(lockerctl.html_OBJS)
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)index.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)locker.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)locker.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)lockerctl.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)lockerctl.html"
+ 
+ distclean: clean
+ 	$(RM) -- $(TARGETS)
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)locker.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)locker.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)lockerctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)lockerctl.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "locker.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "locker.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "lockerctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "lockerctl.html"
+ 
+ .PHONY: all clean distclean install uninstall

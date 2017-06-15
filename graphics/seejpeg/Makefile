@@ -3,7 +3,7 @@
 
 PORTNAME=	seejpeg
 PORTVERSION=	1.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE/apps/graphics/viewers/svga
 
@@ -18,12 +18,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/seejpeg man/man1/seejpeg.1.gz
-
-post-extract:
-	${CHMOD} 0644 ${WRKSRC}/Makefile
-
-post-patch:
-	${MV}	${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
-	${SED}	"s|-O3|${CFLAGS}|g" ${WRKSRC}/Makefile.prev >  ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -1,4 +1,0 @@
-For security reasons, FreeBSD no longer allows mmap() at zero address.
-To remove this security protection and allow doscmd to work, you will need
-to set sysctl security.bsd.map_at_zero=1 either before running doscmd, or
-in /etc/sysctl.conf.

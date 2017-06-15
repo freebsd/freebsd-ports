@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 DISTNAME=	phploc-${PORTVERSION}
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Tool for quickly measuring the size of a PHP project
 
 LICENSE=	BSD3CLAUSE
@@ -19,6 +19,8 @@ BUILD_DEPENDS=	pear-Symfony_Component_Console>=1.1.0:devel/pear-Symfony_Componen
 		pear-SebastianBergmann_Version>=1.0.0:devel/pear-SebastianBergmann_Version \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+BROKEN=		unfetchable, redirects to https://phpunit.de/
 
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	phpunit

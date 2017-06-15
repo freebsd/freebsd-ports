@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Thunar
-PORTVERSION=	1.6.10
-PORTREVISION=	2
+PORTVERSION=	1.6.11
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	XFCE/src/xfce/${PORTNAME:tl}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -16,15 +15,18 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libtumbler-1.so:deskutils/xfce4-tumbler \
-	libdbus-glib-1.so:devel/dbus-glib
+	libdbus-1.so:devel/dbus \
+	libdbus-glib-1.so:devel/dbus-glib \
+	libfontconfig.so:x11-fonts/fontconfig \
+	libfreetype.so:print/freetype2
 RUN_DEPENDS=	pkexec:sysutils/polkit
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gtk20 intltool intlhack gdkpixbuf2
+USE_GNOME=	glib20 gtk20 intltool cairo gdkpixbuf2
 USE_LDCONFIG=	yes
 USE_XFCE=	libexo
-USE_XORG=	sm x11
+USE_XORG=	ice sm x11
 USES=		desktop-file-utils gmake pathfix perl5 libtool pkgconfig \
 	gettext-tools xfce tar:bzip2
 INSTALL_TARGET=	install-strip
@@ -63,9 +65,5 @@ CONFIGURE_ARGS+=--enable-gio-unix \
 post-patch:
 	${REINPLACE_CMD} -e 's|internet-mail|mail-send|' \
 		${WRKSRC}/plugins/thunar-sendto-email/thunar-sendto-email.desktop.in.in
-# Workaround for missing 'inode/directory' content-type icon.
-# https://bugs.freedesktop.org/show_bug.cgi?id=89150
-	${FIND} ${WRKSRC} -type f -name '*.c' \
-		| ${XARGS} ${REINPLACE_CMD} -e 's|inode/directory|folder|'
 
 .include <bsd.port.mk>

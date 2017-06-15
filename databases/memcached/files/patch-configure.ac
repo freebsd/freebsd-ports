@@ -1,6 +1,16 @@
---- configure.ac.orig	2015-06-27 18:28:54 UTC
+--- configure.ac.orig	2016-12-04 13:19:07 UTC
 +++ configure.ac
-@@ -581,7 +581,7 @@ then
+@@ -137,8 +137,7 @@ if test "x$enable_dtrace" = "xyes"; then
+   if test "x$DTRACE" != "xno"; then
+     AC_DEFINE([ENABLE_DTRACE],1,[Set to nonzero if you want to include DTRACE])
+     build_dtrace=yes
+-    # DTrace on MacOSX does not use -G option
+-    $DTRACE -G -o conftest.$$ -s memcached_dtrace.d 2>/dev/zero
++    /usr/bin/true
+     if test $? -eq 0
+     then
+         dtrace_instrument_obj=yes
+@@ -594,7 +593,7 @@ then
  elif test "$GCC" = "yes"
  then
    GCC_VERSION=`$CC -dumpversion`

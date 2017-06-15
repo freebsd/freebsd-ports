@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 post-patch:
 	${REINPLACE_CMD} -e 's|$$JAVAHELP_HOME/javahelp/bin/|${JAVAJARDIR}/|' ${WRKSRC}/javahelp/bin/jhindexer
 	${REINPLACE_CMD} -e 's|$$JAVAHELP_HOME/javahelp/bin/|${JAVAJARDIR}/|' ${WRKSRC}/javahelp/bin/jhsearch
-	(cd ${WRKSRC} && ${RM} -rf `${FIND} . -type d -name .svn`)
+	(cd ${WRKSRC} && ${RM} -r `${FIND} . -type d -name .svn`)
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.html ${STAGEDIR}${JAVAJARDIR}/LICENSE.${PORTNAME}.html

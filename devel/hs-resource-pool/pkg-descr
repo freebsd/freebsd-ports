@@ -1,4 +1,4 @@
 A high-performance striped pooling abstraction for managing flexibly-sized
 collections of resources such as database connections.
 
-WWW: http://github.com/bos/pool
+WWW: https://github.com/bos/pool

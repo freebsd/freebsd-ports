@@ -2,7 +2,7 @@
 
 PORTNAME=	libosmo-abis
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmo-abis/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libosmocore.so:devel/libosmocore \
 		libortp.so:net/ortp
 
 USES=		autoreconf gmake libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=Makefile.am
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

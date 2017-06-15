@@ -1,6 +1,6 @@
---- configure.orig	2014-01-27 04:04:34.000000000 +0100
-+++ configure	2014-01-29 13:12:46.268622841 +0100
-@@ -16216,7 +16216,7 @@
+--- configure.orig	2014-01-27 03:04:34 UTC
++++ configure
+@@ -16216,7 +16216,7 @@ if test "x$ac_cv_func_bind_textdomain_co
                 DATADIRNAME=share
  else
    CATOBJEXT=.mo
@@ -9,7 +9,7 @@
  fi
  
  	    ;;
-@@ -16226,7 +16226,7 @@
+@@ -16226,7 +16226,7 @@ fi
  	    ;;
  	    *)
  	    CATOBJEXT=.mo
@@ -18,7 +18,7 @@
  	    ;;
  	    esac
  fi
-@@ -16914,12 +16914,12 @@
+@@ -16914,12 +16914,12 @@ else
  if test "x$ac_cv_func_bind_textdomain_codeset" = xyes; then :
    DATADIRNAME=share
  else
@@ -33,7 +33,7 @@
      ;;
      esac
  fi
-@@ -17612,8 +17612,8 @@
+@@ -17612,8 +17612,8 @@ else
    THREAD_LIBS=""
  fi
  
@@ -44,7 +44,16 @@
  saved_libs="${LIBS}"
  LIBS="${LIBS} ${AMIDE_LIBDCMDATA_LIBS}"
  saved_cxxflags="${CXXFLAGS}"
-@@ -18154,6 +18154,7 @@
+@@ -17643,6 +17643,8 @@ if ac_fn_cxx_try_link "$LINENO"; then :
+ else
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libdcmdata was not found." >&5
+ $as_echo "$as_me: WARNING: libdcmdata was not found." >&2;}
++  AMIDE_LIBDCMDATA_LIBS=""
++  AMIDE_LIBDCMDATA_CFLAGS=""
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+@@ -18154,6 +18156,7 @@ $as_echo_n "checking for libfame - versi
        ac_save_CFLAGS="$CFLAGS"
        ac_save_LIBS="$LIBS"
        CFLAGS="$CFLAGS $LIBFAME_CFLAGS"
@@ -52,7 +61,7 @@
        LIBS="$LIBFAME_LIBS $LIBS"
        rm -f conf.libfametest
        if test "$cross_compiling" = yes; then :
-@@ -18165,6 +18166,7 @@
+@@ -18165,6 +18168,7 @@ else
  #include <fame.h>
  #include <stdio.h>
  #include <stdlib.h>

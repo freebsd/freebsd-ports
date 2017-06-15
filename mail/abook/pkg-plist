@@ -2,6 +2,12 @@ bin/abook
 man/man1/abook.1.gz
 man/man5/abookrc.5.gz
 %%NLS%%share/locale/de/LC_MESSAGES/abook.mo
+%%NLS%%share/locale/de/LC_TIME/abook.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/abook.mo
+%%NLS%%share/locale/fr/LC_TIME/abook.mo
+%%NLS%%share/locale/it/LC_MESSAGES/abook.mo
+%%NLS%%share/locale/it/LC_TIME/abook.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/abook.mo
+%%NLS%%share/locale/ja/LC_TIME/abook.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/abook.mo
+%%NLS%%share/locale/sv/LC_TIME/abook.mo

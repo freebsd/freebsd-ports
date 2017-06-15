@@ -1,6 +1,6 @@
 diff -ru contrib.orig/card.in contrib/card.in
---- contrib.orig/card.in	Thu Dec 30 19:23:25 2004
-+++ contrib/card.in	Thu Dec 30 19:29:49 2004
+--- contrib.orig/card.in	2000-01-27 00:42:36 UTC
++++ contrib/card.in
 @@ -38,7 +38,7 @@
  LC_ALL="${LC_ALL-C}" export LC_ALL
  print_form_feeds=:
@@ -19,8 +19,8 @@ diff -ru contrib.orig/card.in contrib/card.in
  case $LC_ALL in
    fr) footer="Engendré par $version_short" ;;
 diff -ru contrib.orig/fixps.in contrib/fixps.in
---- contrib.orig/fixps.in	Thu Dec 30 19:23:25 2004
-+++ contrib/fixps.in	Thu Dec 30 19:31:22 2004
+--- contrib.orig/fixps.in	2000-02-21 08:16:15 UTC
++++ contrib/fixps.in
 @@ -38,7 +38,7 @@
  run_gs=0
  # What action to perform: fixps, cat, check, and gs
@@ -39,8 +39,8 @@ diff -ru contrib.orig/fixps.in contrib/fixps.in
  
  # If printing from stdin, save into a tmp file
 diff -ru contrib.orig/pdiff.in contrib/pdiff.in
---- contrib.orig/pdiff.in	Thu Dec 30 19:23:25 2004
-+++ contrib/pdiff.in	Thu Dec 30 19:16:59 2004
+--- contrib.orig/pdiff.in	1999-10-24 15:07:51 UTC
++++ contrib/pdiff.in
 @@ -34,7 +34,7 @@
  diff_options='-u'
  file=
@@ -51,8 +51,8 @@ diff -ru contrib.orig/pdiff.in contrib/pdiff.in
  wdiff_prog=${WDIFF:-wdiff}
  wdiff_options='-w[wd- -x-wd] -y{wd+ -z+wd}'
 diff -ru contrib.orig/psmandup.in contrib/psmandup.in
---- contrib.orig/psmandup.in	Thu Dec 30 19:23:25 2004
-+++ contrib/psmandup.in	Thu Dec 30 19:32:30 2004
+--- contrib.orig/psmandup.in	1999-10-24 13:06:42 UTC
++++ contrib/psmandup.in
 @@ -36,7 +36,7 @@
  message=
  psselect=${PSSELECT:-psselect}
@@ -72,8 +72,8 @@ diff -ru contrib.orig/psmandup.in contrib/psmandup.in
  # If printing from stdin, save into a tmp file
  if test $file = '-'; then
 diff -ru contrib.orig/psset.in contrib/psset.in
---- contrib.orig/psset.in	Thu Dec 30 19:23:25 2004
-+++ contrib/psset.in	Thu Dec 30 19:33:50 2004
+--- contrib.orig/psset.in	1999-10-24 12:41:46 UTC
++++ contrib/psset.in
 @@ -33,7 +33,7 @@
  output=-
  pagedevices=	# `;' separated list of `key:value'
@@ -93,8 +93,8 @@ diff -ru contrib.orig/psset.in contrib/psset.in
  if test -n "$debug"; then
    # Set -x now if debugging
 diff -ru contrib.orig/texi2dvi4a2ps contrib/texi2dvi4a2ps
---- contrib.orig/texi2dvi4a2ps	Thu Dec 30 19:23:25 2004
-+++ contrib/texi2dvi4a2ps	Thu Dec 30 19:34:36 2004
+--- contrib.orig/texi2dvi4a2ps	2000-02-24 17:45:31 UTC
++++ contrib/texi2dvi4a2ps
 @@ -91,7 +91,7 @@
  quiet=          # by default let the tools' message be displayed
  set_language=

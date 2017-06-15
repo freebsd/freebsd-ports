@@ -1,13 +1,12 @@
 ---------------------------------------------------
-%%PORTNAME%% has been successfully installed.
+cgit has been successfully installed.
 
-You probably want to add a 'Directory' section for cgit, along the lines of:
+To enable cgit in Apache, use something like the following:
 
   <Directory "%%WWWDIR%%/">
       AllowOverride None
       Options +ExecCGI
-      Order allow,deny
-      Allow from all
+      Require all granted 
   </Directory>
 
 Documentation and sample configuration can be found

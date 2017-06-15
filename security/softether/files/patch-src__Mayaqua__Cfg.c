@@ -1,6 +1,6 @@
---- src/Mayaqua/Cfg.c.orig	2014-06-08 06:19:14 UTC
+--- src/Mayaqua/Cfg.c.orig	2016-05-03 06:16:53 UTC
 +++ src/Mayaqua/Cfg.c
-@@ -124,7 +124,7 @@
+@@ -139,7 +139,7 @@ void BackupCfgWEx(CFG_RW *rw, FOLDER *f,
  	}
  
  	// Determine the directory name

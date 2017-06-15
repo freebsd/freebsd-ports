@@ -3,7 +3,7 @@ http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html
 specification.
 
 Text::Haml passes specification tests written by Norman Clarke
-http://github.com/norman/haml-spec and supports only cross-language
+https://github.com/norman/haml-spec and supports only cross-language
 Haml features.  Do not expect Ruby specific things to work.
 
 WWW: http://search.cpan.org/dist/Text-Haml/

@@ -3,4 +3,4 @@ capture devices that supports bktr(4) with composite and svideo inputs. Tuner
 support is not yet implemented. Latest port versions supports webcams supported
 by pwcbsd.
 
-WWW: http://motion.sourceforge.net/
+WWW: https://motion-project.github.io/

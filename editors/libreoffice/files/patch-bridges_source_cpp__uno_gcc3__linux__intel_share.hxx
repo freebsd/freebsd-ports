@@ -1,6 +1,6 @@
---- bridges/source/cpp_uno/gcc3_linux_intel/share.hxx.orig	2015-08-22 06:41:35 UTC
+--- bridges/source/cpp_uno/gcc3_linux_intel/share.hxx.orig	2016-10-28 14:50:26 UTC
 +++ bridges/source/cpp_uno/gcc3_linux_intel/share.hxx
-@@ -32,10 +32,34 @@
+@@ -33,10 +33,34 @@
  #include <uno/any2.h>
  #include "uno/mapping.h"
  
@@ -35,18 +35,18 @@
 +namespace CPPU_CURRENT_NAMESPACE
 +{
  
- // ----- following decl from libstdc++-v3/libsupc++/unwind-cxx.h and unwind.h
+ // ----- following decl from libstdc++-v3/libsupc++/unwind-cxx.h
  
-@@ -104,6 +128,8 @@ extern "C" void __cxa_throw(
-     __attribute__((noreturn));
+@@ -98,6 +122,8 @@ extern "C" void __cxa_throw(
  }
  #endif
-+}
-+#endif
  
++#endif
++
  extern "C" void privateSnippetExecutorGeneral();
  extern "C" void privateSnippetExecutorVoid();
-@@ -115,12 +141,17 @@ extern "C" void privateSnippetExecutorCl
+ extern "C" void privateSnippetExecutorHyper();
+@@ -108,12 +134,17 @@ extern "C" void privateSnippetExecutorCl
  namespace CPPU_CURRENT_NAMESPACE
  {
  

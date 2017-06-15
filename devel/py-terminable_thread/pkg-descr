@@ -14,4 +14,4 @@ unreported issues with it.
 It uses the unexposed PyThreadState_SetAsyncExc function (via ctypes)
 to raise an exception for the given thread.
 
-WWW: http://github.com/intuited/terminable_thread
+WWW: https://github.com/intuited/terminable_thread

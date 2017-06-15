@@ -5,13 +5,16 @@ PORTNAME=	ffcall
 PORTVERSION=	1.10
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.santafe.edu/pub/gnu/ GNUSTEP/libs
+MASTER_SITES=	GNUSTEP/libs
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foreign function call libraries
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		Does not build: No rule to make target avcall-aarch64.lo
+BROKEN_armv6=		Does not build: error: invalid instruction
+BROKEN_mips64==		Does not build: error: duplicate member anum
 BROKEN_powerpc64=	Does not build
 
 GNU_CONFIGURE=	yes

@@ -14,6 +14,8 @@ COMMENT=	Ncurses based, lynx style info documentation browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		autoreconf gettext-tools libtool makeinfo ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

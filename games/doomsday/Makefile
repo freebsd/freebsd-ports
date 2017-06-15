@@ -3,7 +3,7 @@
 
 PORTNAME=	doomsday
 PORTVERSION=	1.15.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
@@ -45,7 +45,7 @@ post-patch:
 		${WRKSRC}/doomsday/client/client.pro \
 		${WRKSRC}/doomsday/server/server.pro
 	# Removing (three) non-ascii bytes from the beginning of the file
-	@LANG=C ${REINPLACE_CMD} '1s,^...,,' \
+	@${REINPLACE_CMD} '1s,^...,,' \
 		${WRKSRC}/doomsday/client/src/client/cl_sound.cpp
 
 .include <bsd.port.mk>

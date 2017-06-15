@@ -18,6 +18,7 @@ bin/scanimage-perl
 %%SITE_PERL%%/Gscan2pdf/Page.pm
 %%SITE_PERL%%/Gscan2pdf/PageRange.pm
 %%SITE_PERL%%/Gscan2pdf/Scanner/Options.pm
+%%SITE_PERL%%/Gscan2pdf/Scanner/Profile.pm
 %%SITE_PERL%%/Gscan2pdf/Tesseract.pm
 %%SITE_PERL%%/Gscan2pdf/Unpaper.pm
 man/man1/gscan2pdf.1.gz

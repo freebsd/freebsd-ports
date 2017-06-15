@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vdirsyncer
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,5 +24,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomicwrites>=0.1.7:devel/py-atomicwrites \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

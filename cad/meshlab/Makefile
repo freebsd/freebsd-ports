@@ -3,7 +3,7 @@
 
 PORTNAME=	meshlab
 PORTVERSION=	1.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MeshLab%20v${PORTVERSION}/
 DISTNAME=	MeshLabSrc_AllInc_v${PORTVERSION:C|\.||g}
@@ -16,6 +16,8 @@ LICENSE=	GPLv2
 EXTRACT_DEPENDS=gtar:archivers/gtar
 LIB_DEPENDS=	libQtSolutions_SOAP-head.so:devel/qt4-qtsolutions-soap	\
 		libmpir.so:math/mpir
+
+BROKEN_aarch64=	Fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char
 
 USES=		dos2unix qmake compiler:c++11-lib tar:tgz
 USE_CXXSTD=	c++11

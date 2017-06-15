@@ -1,0 +1,126 @@
+--- hardware/package_index_bundled.json.orig	2016-11-22 14:49:35 UTC
++++ hardware/package_index_bundled.json
+@@ -17,10 +17,6 @@
+           "help": {
+             "online": "http://www.arduino.cc/en/Reference/HomePage"
+           },
+-          "url": "http://downloads.arduino.cc/cores/avr-1.6.15.tar.bz2",
+-          "archiveFileName": "avr-1.6.15.tar.bz2",
+-          "checksum": "SHA-256:c222efcabbdf6fa63ba3d64afb8d149f83fa73693c413aa05a2ccd9f986ed2fa",
+-          "size": "4993959",
+           "boards": [
+             {"name": "Arduino Yún"},
+             {"name": "Arduino/Genuino Uno"},
+@@ -55,6 +51,22 @@
+               "version": "6.3.0-arduino6"
+             }
+           ]
++        },
++        {
++          "name": "Arduino SAM Boards (32-bits ARM Cortex-M3)",
++          "architecture": "sam",
++          "version": "1.6.9",
++          "category": "Arduino",
++          "boards": [
++            {"name": "Arduino Due"}
++          ],
++          "toolsDependencies": [
++            {
++              "packager": "arduino",
++              "name": "bossac",
++              "version": "1.7.0"
++            }
++          ]
+         }
+       ],
+       "tools": [
+@@ -63,39 +75,7 @@
+           "version": "6.3.0-arduino6",
+           "systems": [
+             {
+-              "size": "644600",
+-              "checksum": "SHA-256:2426207423d58eb0e5fc4df9493418f1cb54ba3f328fdc7c3bb582f920b9cbe7",
+-              "host": "arm-linux-gnueabihf",
+-              "archiveFileName": "avrdude-6.3.0-arduino6-armhf-pc-linux-gnu.tar.bz2",
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-armhf-pc-linux-gnu.tar.bz2"
+-            },
+-            {
+-              "size": "696273",
+-              "checksum": "SHA-256:d9a039c9e92d3dbb2011e75e6c044a1a4a2789e2fbf8386b1d580994811be084",
+-              "host": "i386-apple-darwin11",
+-              "archiveFileName": "avrdude-6.3.0-arduino6-i386-apple-darwin11.tar.bz2",
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-i386-apple-darwin11.tar.bz2"
+-            },
+-            {
+-              "size": "746653",
+-              "checksum": "SHA-256:97b4875cad6110c70101bb776f3ac37b64a2e73f036cd0b10afb6f4be96a6621",
+-              "host": "x86_64-linux-gnu",
+-              "archiveFileName": "avrdude-6.3.0-arduino6-x86_64-pc-linux-gnu.tar.bz2",
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-x86_64-pc-linux-gnu.tar.bz2"
+-            },
+-            {
+-              "size": "733127",
+-              "checksum": "SHA-256:5f4bc4b0957b1d34cec9908b7f84a7c297b894b39fe16a4992c284b24c00d6fb",
+-              "host": "i686-linux-gnu",
+-              "archiveFileName": "avrdude-6.3.0-arduino6-i686-pc-linux-gnu.tar.bz2",
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-i686-pc-linux-gnu.tar.bz2"
+-            },
+-            {
+-              "size": "645859",
+-              "checksum": "SHA-256:7468a1bcdfa459d175a095b102c0de28efc466accfb104305fbcad7832659ddc",
+-              "host": "i686-mingw32",
+-              "archiveFileName": "avrdude-6.3.0-arduino6-i686-w64-mingw32.zip",
+-              "url": "http://downloads.arduino.cc/tools/avrdude-6.3.0-arduino6-i686-w64-mingw32.zip"
++              "host": "%%ARCH%%-freebsd%%OSREL%%"
+             }
+           ]
+         },
+@@ -104,39 +84,16 @@
+           "version": "4.9.2-atmel3.5.3-arduino2",
+           "systems": [
+             {
+-              "size": "27400889",
+-              "checksum": "SHA-256:77f300d519bc6b9a25df17b36cb303218e9a258c059b2f6bff8f71a0d8f96821",
+-              "host": "arm-linux-gnueabihf",
+-              "archiveFileName": "avr-gcc-4.9.2-atmel3.5.3-arduino2-armhf-pc-linux-gnu.tar.bz2",
+-              "url": "http://downloads.arduino.cc/tools/avr-gcc-4.9.2-atmel3.5.3-arduino2-armhf-pc-linux-gnu.tar.bz2"
+-            },
+-            {
+-              "size": "27048070",
+-              "checksum": "SHA-256:311258af188defe24a4b341e4e1f4dc93ca6c80516d3e3b55a2fc07a7050248b",
+-              "host": "i386-apple-darwin11",
+-              "archiveFileName": "avr-gcc-4.9.2-atmel3.5.3-arduino2-i386-apple-darwin11.tar.bz2",
+-              "url": "http://downloads.arduino.cc/tools/avr-gcc-4.9.2-atmel3.5.3-arduino2-i386-apple-darwin11.tar.bz2"
+-            },
+-            {
+-              "size": "43847945",
+-              "checksum": "SHA-256:f8e6ede8746c70be01ec79a30803277cd94360cc5b2e104762da0fbcf536fcc6",
+-              "host": "i686-mingw32",
+-              "archiveFileName": "avr-gcc-4.9.2-atmel3.5.3-arduino2-i686-mingw32.zip",
+-              "url": "http://downloads.arduino.cc/tools/avr-gcc-4.9.2-atmel3.5.3-arduino2-i686-mingw32.zip"
+-            },
+-            {
+-              "size": "29292729",
+-              "checksum": "SHA-256:f108951e7c4dc90926d1fc76cc27549f6ea63c702a2bb7ff39647a19ae86ec68",
+-              "host": "i686-linux-gnu",
+-              "archiveFileName": "avr-gcc-4.9.2-atmel3.5.3-arduino2-i686-pc-linux-gnu.tar.bz2",
+-              "url": "http://downloads.arduino.cc/tools/avr-gcc-4.9.2-atmel3.5.3-arduino2-i686-pc-linux-gnu.tar.bz2"
+-            },
++              "host": "%%ARCH%%-freebsd%%OSREL%%"
++            }
++          ]
++        },
++        {
++          "name": "bossac",
++          "version": "1.7.0",
++          "systems": [
+             {
+-              "size": "29882960",
+-              "checksum": "SHA-256:3903a6d1bb9fdd91727e504b5993d5501f119bcb7f99f7aee98a2101e5629188",
+-              "host": "x86_64-linux-gnu",
+-              "archiveFileName": "avr-gcc-4.9.2-atmel3.5.3-arduino2-x86_64-pc-linux-gnu.tar.bz2",
+-              "url": "http://downloads.arduino.cc/tools/avr-gcc-4.9.2-atmel3.5.3-arduino2-x86_64-pc-linux-gnu.tar.bz2"
++              "host": "%%ARCH%%-freebsd%%OSREL%%"
+             }
+           ]
+         }

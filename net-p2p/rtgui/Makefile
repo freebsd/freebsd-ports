@@ -9,6 +9,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Web based front end for rTorrent
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS+=	xmlrpc-c-config:net/xmlrpc-c
 

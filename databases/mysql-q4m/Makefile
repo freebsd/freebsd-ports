@@ -3,7 +3,7 @@
 
 PORTNAME=	q4m
 PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://q4m.kazuhooku.com/dist/
 PKGNAMEPREFIX=	${_MYSQL_SERVER:T:C/-server$/-/}
@@ -12,6 +12,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Message queue that works as a pluggable storage engine of MySQL
 
 FETCH_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:build
+
+BROKEN=		does not build (ha_queue.cc:35:27: fatal error: mysql_version.h: No such file or directory)
 
 USES=		gmake perl5 libtool
 USE_MYSQL=	server

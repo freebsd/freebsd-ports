@@ -1,6 +1,6 @@
---- content/browser/media/media_internals.cc.orig	2016-10-06 04:02:18.000000000 +0300
-+++ content/browser/media/media_internals.cc	2016-10-13 06:53:50.938946000 +0300
-@@ -724,7 +724,7 @@
+--- content/browser/media/media_internals.cc.orig	2017-04-19 19:06:33 UTC
++++ content/browser/media/media_internals.cc
+@@ -774,7 +774,7 @@ void MediaInternals::UpdateVideoCaptureD
      device_dict->SetString("name", descriptor.GetNameAndModel());
      device_dict->Set("formats", format_list);
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

@@ -8,12 +8,12 @@ include/curl/easy.h
 include/curl/mprintf.h
 include/curl/multi.h
 include/curl/stdcheaders.h
+include/curl/system.h
 include/curl/typecheck-gcc.h
 lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.4
 lib/libcurl.so.4.4.0
-lib/libcurl.so.7
 libdata/pkgconfig/libcurl.pc
 man/man1/curl-config.1.gz
 man/man1/curl.1.gz
@@ -130,6 +130,8 @@ man/man3/CURLMOPT_SOCKETDATA.3.gz
 man/man3/CURLMOPT_SOCKETFUNCTION.3.gz
 man/man3/CURLMOPT_TIMERDATA.3.gz
 man/man3/CURLMOPT_TIMERFUNCTION.3.gz
+man/man3/CURLOPT_ABSTRACT_UNIX_SOCKET.3.gz
+man/man3/CURLOPT_ACCEPTTIMEOUT_MS.3.gz
 man/man3/CURLOPT_ACCEPT_ENCODING.3.gz
 man/man3/CURLOPT_ACCEPTTIMEOUT_MS.3.gz
 man/man3/CURLOPT_ADDRESS_SCOPE.3.gz
@@ -342,6 +344,7 @@ man/man3/CURLOPT_STDERR.3.gz
 man/man3/CURLOPT_STREAM_DEPENDS_E.3.gz
 man/man3/CURLOPT_STREAM_DEPENDS.3.gz
 man/man3/CURLOPT_STREAM_WEIGHT.3.gz
+man/man3/CURLOPT_SUPPRESS_CONNECT_HEADERS.3.gz
 man/man3/CURLOPT_TCP_FASTOPEN.3.gz
 man/man3/CURLOPT_TCP_KEEPALIVE.3.gz
 man/man3/CURLOPT_TCP_KEEPIDLE.3.gz

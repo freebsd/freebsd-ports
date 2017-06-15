@@ -2,7 +2,7 @@
 
 PORTNAME=	sofia-sip
 PORTVERSION=	1.12.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -14,8 +14,7 @@ LICENSE=	LGPL21
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # Looks like GNU make(1) is needed for parallel (-jX) builds to work
-USES=		gmake libtool pathfix pkgconfig
-USE_OPENSSL=	yes
+USES=		gmake libtool pathfix pkgconfig ssl
 USE_GNOME=	glib20
 
 .include <bsd.port.mk>

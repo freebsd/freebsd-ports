@@ -2,4 +2,4 @@ Abstract class to manipulate sequence of bytes.  The use case of this
 class is abstracting manipulation of types that are just wrapping a
 bytestring with stronger and more meaniful name.
 
-WWW: http://github.com/vincenthz/hs-byteable
+WWW: https://github.com/vincenthz/hs-byteable

@@ -5,10 +5,13 @@ PORTNAME=	mboxstats
 PORTVERSION=	3.1
 CATEGORIES=	mail
 MASTER_SITES=	http://vanheusden.com/mboxstats/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates top-10 lists of the messages in a mailbox
+
+LICENSE=	GPLv2
+
+USES=		tar:tgz
 
 PLIST_FILES=	bin/mboxstats
 

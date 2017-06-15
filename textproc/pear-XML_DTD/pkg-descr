@@ -6,4 +6,4 @@ Currently supports most of the current XML spec, including entities,
 elements and attributes. Some uncommon parts of the spec may still be
 unsupported.
 
-WWW: http://pear.php.net/package/XML_DTD/
+WWW: https://pear.php.net/package/XML_DTD

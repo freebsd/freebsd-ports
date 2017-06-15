@@ -1,6 +1,6 @@
---- modules/ssl/ssl_engine_init.c.orig	2014-07-16 06:04:38 UTC
+--- modules/ssl/ssl_engine_init.c.orig	2017-01-05 18:57:49 UTC
 +++ modules/ssl/ssl_engine_init.c
-@@ -406,9 +406,11 @@ void ssl_init_Engine(server_rec *s, apr_
+@@ -251,9 +251,11 @@ void ssl_init_Engine(server_rec *s, apr_
              ssl_die();
          }
  
@@ -12,26 +12,24 @@
  
          if (!ENGINE_set_default(e, ENGINE_METHOD_ALL)) {
              ap_log_error(APLOG_MARK, APLOG_ERR, 0, s,
-@@ -584,6 +586,10 @@ static void ssl_init_ctx_protocol(server
+@@ -446,6 +448,9 @@ static void ssl_init_ctx_protocol(server
+     }
  #endif
- 
  
 +#ifdef SSL_NO_COMP
 +#define OPENSSL_NO_COMP
 +#endif
-+
+ 
  #ifndef OPENSSL_NO_COMP
      if (sc->compression != TRUE) {
- #ifdef SSL_OP_NO_COMPRESSION
-@@ -831,7 +837,11 @@ static void ssl_init_ctx_cert_chain(serv
-         }
+@@ -708,7 +713,11 @@ static void ssl_init_ctx_cert_chain(serv
      }
  
--    n = SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
+     ERR_clear_error();
 +#ifndef HAVE_SSL_CTX_USE_CERTIFICATE_CHAIN
-+          n = SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
+     n = SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
 +#else
-+          n = _SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
++    n = _SSL_CTX_use_certificate_chain(mctx->ssl_ctx,
 +#endif
                                        (char *)chain,
                                        skip_first, NULL);

@@ -1,4 +1,4 @@
---- deps/v8/src/base/platform/platform-freebsd.cc.orig	2016-09-14 17:37:01 UTC
+--- deps/v8/src/base/platform/platform-freebsd.cc.orig	2016-10-19 22:02:03 UTC
 +++ deps/v8/src/base/platform/platform-freebsd.cc
 @@ -35,6 +35,48 @@
  namespace v8 {

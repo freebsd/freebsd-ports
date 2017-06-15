@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: fdfs_storaged
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable `fdfs_storaged':
+#
+# fdfs_storaged_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="fdfs_storaged"
+rcvar=fdfs_storaged_enable
+
+command="%%PREFIX%%/bin/fdfs_storaged"
+pidfile="/var/run/fdfs_storaged.pid"
+
+start_postcmd="${name}_poststart"
+stop_postcmd="rm ${pidfile}"
+
+fdfs_storaged_poststart()
+{
+        /bin/ps auxwww|/usr/bin/grep fdfs_storaged|/usr/bin/grep -v 'grep'|grep -v 'rc.d'|/usr/bin/awk '{print $2;}' > /var/run/fdfs_storaged.pid
+
+        currpid=`/bin/cat /var/run/fdfs_storaged.pid`
+
+        if [ "$currpid" -gt 0 ]; then
+                echo "Started fdfs_storaged."
+        fi
+}
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${fdfs_storaged_enable="NO"}
+: ${fdfs_storaged_config="%%PREFIX%%/etc/fdfs/storage.conf"}
+
+command_args="${fdfs_storaged_config}"
+required_files="${fdfs_storaged_config}"
+
+run_rc_command "$1"
+

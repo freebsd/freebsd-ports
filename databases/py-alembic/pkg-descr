@@ -9,4 +9,4 @@ SQLAlchemy. A migrations tool offers the following functionality:
   "downgrade" similarly, doing the same steps in reverse.
 - Allows the scripts to execute in some sequential manner.
 
-WWW: http://bitbucket.org/zzzeek/alembic
+WWW: http://alembic.zzzcomputing.com/

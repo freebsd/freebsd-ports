@@ -1,5 +1,5 @@
---- ./xlibvid.cxx.orig	2008-03-03 23:09:06.000000000 +0800
-+++ ./xlibvid.cxx	2008-03-03 23:09:16.000000000 +0800
+--- xlibvid.cxx.orig	2006-04-06 18:21:49 UTC
++++ xlibvid.cxx
 @@ -88,6 +88,7 @@
  #include <sys/time.h>
  #include <unistd.h>

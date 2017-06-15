@@ -14,10 +14,14 @@
 # mysql_limits (bool):	Set to "NO" by default.
 #			Set it to yes to run `limits -e -U mysql`
 #			just before mysql starts.
-# mysql_dbdir (str):	Default to "/var/db/mysql"
+# mysql_dbdir (str):	Default to "%%MY_DBDIR%%"
 #			Base database directory.
+# mysql_confdir (str):	Default to "%%ETCDIR%%"
+#			Base configuration directory.
 # mysql_optfile (str):	Server-specific option file.
-#			Default to "${mysql_dbdir}/my.cnf".
+#			Set it in the rc.conf or default behaviour of
+#			`mysqld_safe` itself, will be picking
+#			${mysql_confdir}/my.cnf if it exists.
 # mysql_pidfile (str):	Custum PID file path and name.
 #			Default to "${mysql_dbdir}/${hostname}.pid".
 # mysql_args (str):	Custom additional arguments to be passed
@@ -33,20 +37,28 @@ load_rc_config $name
 
 : ${mysql_enable="NO"}
 : ${mysql_limits="NO"}
-: ${mysql_dbdir="/var/db/mysql"}
+: ${mysql_dbdir="%%MY_DBDIR%%"}
+: ${mysql_confdir="%%ETCDIR%%"}
+if [ -f "${mysql_confdir}/my.cnf" ]; then
+: ${mysql_optfile="${mysql_confdir}/my.cnf"}
+elif [ -f "${mysql_dbdir}/my.cnf" ]; then
 : ${mysql_optfile="${mysql_dbdir}/my.cnf"}
+fi
+if [ ! -z "${mysql_optfile}" ]; then
+mysql_extra="--defaults-extra-file=${mysql_optfile}"
+fi
 
 mysql_user="mysql"
 mysql_limits_args="-e -U ${mysql_user}"
 : ${hostname:=`/bin/hostname`}
 pidfile=${mysql_pidfile:-"${mysql_dbdir}/${hostname}.pid"}
 command="/usr/sbin/daemon"
-command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_optfile} --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args}"
+command_args="-c -f %%PREFIX%%/bin/mysqld_safe ${mysql_extra} --basedir=%%PREFIX%% --datadir=${mysql_dbdir} --pid-file=${pidfile} --user=${mysql_user} ${mysql_args} %%FEDER%% %%PERFSCHEMRC%%"
 procname="%%PREFIX%%/libexec/mysqld"
 start_precmd="${name}_prestart"
 start_postcmd="${name}_poststart"
 mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
-mysql_install_db_args="--basedir=%%PREFIX%% --defaults-extra-file=${mysql_optfile} --datadir=${mysql_dbdir} --force"
+mysql_install_db_args="${mysql_extra} --basedir=%%PREFIX%% --datadir=${mysql_dbdir} --force"
 
 mysql_create_auth_tables()
 {

@@ -3,7 +3,7 @@
 
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}.${LAPACKVER}
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/maho/gotoblas \
 		NL/lapack:lapack NL/lapack/timing:lapack_tmg
@@ -13,13 +13,14 @@ DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
 DIST_SUBDIR=	gotoblas
 EXTRACT_ONLY=	${GOTOBLAS2_SRCFILE}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast implementation of Basic Linear Algebra Subprograms
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/00License.txt
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not build
+BROKEN_i386=		does not build (terminates with SIGBUS)
 
 GOTOBLAS2VER=	1.13
 GOTOBLAS2_SRCFILE=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz

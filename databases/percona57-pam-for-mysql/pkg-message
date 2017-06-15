@@ -1,0 +1,10 @@
+Documentation for using percona-pam-for-mysql authentication plugin can
+be found at:
+
+https://www.percona.com/doc/percona-pam-for-mysql/index.html
+
+Please note that you need this plugin installed on both the client and
+server for authentication to be successful.
+
+This version of the plugin is compatible with the new auth plugin API
+introduced in MySQL 5.7.

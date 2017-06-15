@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 WRKSRC_SUBDIR=	src-sh/syscache
 USE_QT5=	core network buildtools qmake
-USES=		pkgconfig tar:xz
+USES=		pkgconfig
 NO_BUILD=	yes
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
@@ -25,10 +25,4 @@ GH_ACCOUNT=	pcbsd
 GH_PROJECT=	pcbsd
 GH_TAGNAME=	3c4d2b
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-IGNORE=		requires FreeBSD 10 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

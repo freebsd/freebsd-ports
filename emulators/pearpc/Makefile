@@ -3,7 +3,7 @@
 
 PORTNAME=	pearpc
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 
@@ -36,10 +36,6 @@ SDL_CONFIGURE_OFF=	--enable-ui=x11
 USE_GCC=	yes
 .else
 CONFIGURE_ARGS+=	--enable-cpu=generic
-.endif
-
-.if ${ARCH} == "amd64" && ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		does not build on FreeBSD < 10.x amd64
 .endif
 
 post-patch:

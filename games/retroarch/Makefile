@@ -4,6 +4,7 @@
 PORTNAME=	RetroArch
 PORTVERSION=	1.3.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	5
 CATEGORIES=	games
 
 MAINTAINER=	yuri@rawbw.com
@@ -53,8 +54,6 @@ CFLAGS+=	-pthread
 LDFLAGS+=	-pthread
 CONFIGURE_ARGS+=--enable-threads
 CONFIGURE_ENV+=	MAN_DIR=${MANPREFIX}/man
-
-BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro

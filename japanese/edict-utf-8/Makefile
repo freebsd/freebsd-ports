@@ -3,6 +3,7 @@
 
 PORTNAME=	edict-utf-8
 PORTVERSION=	20100420
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://redundancy.redundancy.org/mirror/${PORTNAME}/
 DISTFILES=	${DICTFILES}
@@ -34,7 +35,7 @@ PLIST_SUB= 	OWNER="${SHAREOWN}" GROUP="${SHAREGRP}" MODE="${SHAREMODE}"
 NO_WRKSUBDIR=	yes
 
 do-extract:
-	@${RM} -rf ${WRKSRC}
+	@${RM} -r ${WRKSRC}
 	@${MKDIR} ${WRKSRC}
 	@for file in ${DICTFILES}; do \
 		${ECHO} "Extracting $$file"; \

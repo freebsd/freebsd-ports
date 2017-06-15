@@ -1,16 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	libav
-PORTVERSION=	11.7
-PORTREVISION=	3
+PORTVERSION=	11.8
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
 MAINTAINER=	dem.procopiou@gmail.com
 COMMENT=	Realtime audio/video conversion library
 
+LICENSE=	GPLv2+
+
 BUILD_DEPENDS=	yasm:devel/yasm
-LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
+LIB_DEPENDS=	libopencv_core.so:graphics/opencv2-core \
 		libgmp.so:math/gmp \
 		libvdpau.so:multimedia/libvdpau \
 		libhogweed.so:security/nettle
@@ -20,6 +21,7 @@ USE_XORG=	x11
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+NOPRECIOUSMAKEVARS=	yes # ARCH
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
@@ -99,7 +101,7 @@ JACK_CONFIGURE_OFF=		--disable-indev=jack
 LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=		libmp3lame
 
-OPENCV_LIB_DEPENDS=		libopencv_gpu.so:graphics/opencv
+OPENCV_LIB_DEPENDS=		libopencv_gpu.so:graphics/opencv2
 OPENCV_CONFIGURE_ENABLE=	libopencv
 
 OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
@@ -188,7 +190,6 @@ AV_NONFREE=		true
 .if ${PORT_OPTIONS:MCDIO} || ${PORT_OPTIONS:MX264} || ${PORT_OPTIONS:MXVID} || ${PORT_OPTIONS:MX11GRAB}
 CONFIGURE_ARGS+=	--enable-gpl
 .if !defined(AV_NONFREE)
-LICENSE=		GPLv2+
 AV_ISGPL=		true
 .endif
 .endif
@@ -221,12 +222,12 @@ post-patch:
 post-configure-DOCS-off:
 	@${REINPLACE_CMD} -e 's|CONFIG_TEXI2HTML=yes|!CONFIG_TEXI2HTML=yes|' ${WRKSRC}/config.mak
 
-post-stage:
+post-install:
 .for a in bin/avconv bin/avprobe lib/libav/libavdevice.so.55.0.0\
 	lib/libav/libavfilter.so.5.0.0 lib/libav/libavformat.so.56.1.0\
 	lib/libav/libavcodec.so.56.1.0 lib/libav/libavresample.so.2.1.0\
 	lib/libav/libswscale.so.3.0.0 lib/libav/libavutil.so.54.3.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${a}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${a}
 .endfor
 
 .include <bsd.port.mk>

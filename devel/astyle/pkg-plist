@@ -1,7 +1,6 @@
 bin/astyle
 %%PORTDOCS%%%%DOCSDIR%%/astyle.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
 %%PORTDOCS%%%%DOCSDIR%%/news.html
 %%PORTDOCS%%%%DOCSDIR%%/notes.html
 %%PORTDOCS%%%%DOCSDIR%%/styles.css

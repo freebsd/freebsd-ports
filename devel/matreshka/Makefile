@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://forge.ada-ru.org/matreshka/downloads/
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Ada framework for information systems development
 
 LICENSE=	BSD3CLAUSE

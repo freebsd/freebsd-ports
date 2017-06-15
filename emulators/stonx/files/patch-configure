@@ -7,7 +7,7 @@
 +*freebsd*)
 +	echo 'A FreeBSD box...'
 +	case $t in
-+	i*86-*)
++	i*86-*freebsd9*)
 +	  cat >>confdefs.h <<\_ACEOF
 +#define NZREG "%ebx"
 +_ACEOF

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sssd
-DISTVERSION=	1.11.7
-PORTREVISION=	4
+PORTVERSION=	1.11.7
+PORTREVISION=	8
 CATEGORIES=	security
-MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/ \
-		http://mirrors.rit.edu/zi/
+MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
 MAINTAINER=	lukas.slebodnik@intrak.sk
 COMMENT=	System Security Services Daemon
@@ -55,7 +54,6 @@ USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 USES=		autoreconf cpe gettext gmake iconv libtool pathfix pkgconfig \
 		python:2 shebangfix gssapi:mit
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
 
@@ -71,7 +69,7 @@ OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=	yes
 
 SMB_DESC=		Install IPA and AD providers (requires Samba4)
-SMB_BUILD_DEPENDS=	samba46>=4.6.0:${PORTSDIR}/net/samba46
+SMB_USES=		samba:lib # libndr-krb5pac libndr-nbt libndr libsamba-util
 SMB_CONFIGURE_WITH=	samba
 
 .include <bsd.port.options.mk>

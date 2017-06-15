@@ -22,12 +22,13 @@ rcvar=repmgrd_enable
 load_rc_config $name
 
 : ${repmgrd_enable:="NO"}
+: ${repmgrd_user:="pgsql"}
 : ${repmgrd_config="%%PREFIX%%/etc/repmgr.conf"}
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
 
-command_args="-p $pidfile -f $repmgrd_config"
+command_args="-m -d -p $pidfile -f $repmgrd_config"
 
 run_rc_command "$1"
 

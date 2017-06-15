@@ -12,6 +12,7 @@ COMMENT=	Delay program with feedback to the user
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_header_curses_h=yes
 
 PLIST_FILES=	bin/delay man/man1/delay.1.gz
 

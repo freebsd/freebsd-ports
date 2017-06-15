@@ -1,0 +1,14 @@
+subtle is a manual tiling window manager with a rather uncommon approach
+of tiling: instead of relying on predefined layouts, subtle divides the
+screen into a grid with customizeable slots (called gravities).  For better
+understanding, the default config uses a 3x3 grid and maps each gravity to
+one key of the numpad.  With those keys, windows can be moved directly to
+the desired gravity -- the same can be done with tagging rules in the
+config.
+
+Another unique concept is the strict tagging: Unlike other tiling window
+managers, subtle does not allow weak tagging and always maps windows to
+virtual desktops (called views) with matching tags, regardless of the
+current active view.
+
+WWW: http://subtle.subforge.org/

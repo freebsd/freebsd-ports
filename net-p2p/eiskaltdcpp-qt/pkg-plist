@@ -265,6 +265,7 @@ share/applications/eiskaltdcpp-qt.desktop
 %%DATADIR%%/qt/ts/el.qm
 %%DATADIR%%/qt/ts/en.qm
 %%DATADIR%%/qt/ts/es.qm
+%%DATADIR%%/qt/ts/eu.qm
 %%DATADIR%%/qt/ts/fr.qm
 %%DATADIR%%/qt/ts/hu.qm
 %%DATADIR%%/qt/ts/it.qm
@@ -272,5 +273,9 @@ share/applications/eiskaltdcpp-qt.desktop
 %%DATADIR%%/qt/ts/pt_BR.qm
 %%DATADIR%%/qt/ts/ru.qm
 %%DATADIR%%/qt/ts/sk.qm
+%%DATADIR%%/qt/ts/sr.qm
 %%DATADIR%%/qt/ts/sr@latin.qm
+%%DATADIR%%/qt/ts/sv_SE.qm
 %%DATADIR%%/qt/ts/uk.qm
+%%DATADIR%%/qt/ts/vi.qm
+%%DATADIR%%/qt/ts/zh_CN.qm

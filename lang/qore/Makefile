@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 
 BROKEN_powerpc64=	Does not build
 
-USES=	gmake iconv libtool:build pathfix autoreconf
-USE_OPENSSL=	yes
+USES=	gmake iconv libtool:build pathfix autoreconf ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
@@ -42,6 +41,5 @@ pre-configure:
 
 post-configure:
 	${REINPLACE_CMD} -e 's|; make|; $${MAKE}|g' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's#$$(libdir)/pkgconfig#${PREFIX}/libdata/pkgconfig#g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

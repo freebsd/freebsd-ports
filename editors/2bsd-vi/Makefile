@@ -15,13 +15,15 @@ COMMENT=	The original vi editor, updated to run on modern OSes
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		ncurses tar:bzip2
 
 PRESERVEDIR=	/var/preserve/${PKGBASE}
 PLIST_SUB=	PRESERVEDIR="${PRESERVEDIR}"
 
 post-extract:	.SILENT
-	${RM} -fr ${WRKSRC}/libuxre ${WRKSRC}/regexp.h
+	${RM} -r ${WRKSRC}/libuxre ${WRKSRC}/regexp.h
 
 post-patch:
 .for f in Makefile ex.1 expreserve.c exrecover.c vi.1

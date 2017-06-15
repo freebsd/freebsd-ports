@@ -1,0 +1,12 @@
+--- gnome/include/libopenraw-gnome/Makefile.in.orig	2016-11-27 01:53:40 UTC
++++ gnome/include/libopenraw-gnome/Makefile.in
+@@ -529,7 +529,8 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-libopenrawgnomeHEADERS
++@BUILD_GNOME_SUPPORT_TRUE@install-data-am: install-libopenrawgnomeHEADERS
++@BUILD_GNOME_SUPPORT_FALSE@install-data-am:
+ 
+ install-dvi: install-dvi-am
+ 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gollum-rugged_adapter
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-mime-types>=1.1.5:misc/rubygem-mime-types \
-		rubygem-rugged>=0.23:devel/rubygem-rugged
+		rubygem-rugged>=0.24.0:devel/rubygem-rugged
 
 NO_ARCH=	yes
 USE_RUBY=	yes

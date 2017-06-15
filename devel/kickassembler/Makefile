@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	kickassembler
-PORTVERSION=	3.36
+PORTVERSION=	3.42
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.theweb.dk/KickAssembler/
 DISTNAME=	KickAssembler${PORTVERSION}
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced MOS 65xx assembler with embedded script language
+
+LICENSE=	NONE
 
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_LIST=	PORTNAME=${PORTNAME}
 SUB_FILES=	kickassembler.sh
@@ -28,9 +31,14 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/KickAss.jar ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/KickAss.cfg ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/kickassembler.sh ${STAGEDIR}${PREFIX}/bin/kickassembler
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/KickAssembler.pdf ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Examples/*/* ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/kickassembler.sh ${STAGEDIR}${PREFIX}/bin/kickassembler
 
 .include <bsd.port.mk>

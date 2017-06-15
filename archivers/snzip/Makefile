@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	snzip
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	archivers
 
 MAINTAINER=	mizhka@gmail.com

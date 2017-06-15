@@ -1,6 +1,7 @@
-SHA256 (electricBinary-9.06.jar) = 07d61c7f9adf1146da03916f4c623af3c33287720791ce3de71dc8608502205b
-SIZE (electricBinary-9.06.jar) = 20718871
-SHA256 (ElectricManual-9.06.pdf) = 939300bba9af8d559d5ecef08c6fe0e17e973c0d524a2538823817ad26adee07
-SIZE (ElectricManual-9.06.pdf) = 3612989
-SHA256 (electricSFS-9.06.jar) = 3c8e2537deab424a661c92ca2fb07b84ceeed1a6e559a6256c08debd1912a8ef
-SIZE (electricSFS-9.06.jar) = 194780
+TIMESTAMP = 1479994492
+SHA256 (electricBinary-9.07.jar) = 3e383f673183265700e0c13a5f7b1d3348247465c3d8817c845d62e4c92d86ce
+SIZE (electricBinary-9.07.jar) = 21244560
+SHA256 (ElectricManual-9.07.pdf) = 836ebf850051cf797310fb7d61c40439d2582bb3b3fb3d5c2165059423b11ab4
+SIZE (ElectricManual-9.07.pdf) = 3622536
+SHA256 (electricSFS-9.07.jar) = a0377ca806d759cdd54ef9ea52bc2578dd8fe066c2018fdb7f31fd8936b533e2
+SIZE (electricSFS-9.07.jar) = 194665

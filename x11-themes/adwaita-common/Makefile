@@ -2,29 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	adwaita
-PORTVERSION=	0.4
+PORTVERSION=	0.98
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-common
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adwaita theme for Qt applications
 
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	MartinBriza
-GH_PROJECT=	adwaita-qt
+RUN_DEPENDS=	adwaita-qt4>=0.98:x11-themes/adwaita-qt4 \
+	adwaita-qt5>=0.98:x11-themes/adwaita-qt5
 
-NO_BUILD=	yes
-NO_ARCH=	yes
-
-THEMES_DIR=	themes/Adwaita/qt
-
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/${THEMES_DIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} assets \
-		${STAGEDIR}${PREFIX}/share/${THEMES_DIR} \
-		"! -name CMakeLists.txt"
+USES=	metaport
 
 .include <bsd.port.mk>

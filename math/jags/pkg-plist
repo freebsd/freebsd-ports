@@ -102,7 +102,7 @@ lib/JAGS/modules-%%MODULEVERSION%%/mix.so
 lib/JAGS/modules-%%MODULEVERSION%%/msm.so
 lib/libjags.so
 lib/libjags.so.4
-lib/libjags.so.4.0.0
+lib/libjags.so.4.0.2
 lib/libjrmath.so
 lib/libjrmath.so.0
 lib/libjrmath.so.0.0.0

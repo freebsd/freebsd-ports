@@ -7,11 +7,11 @@ include/libraw/libraw_types.h
 include/libraw/libraw_version.h
 lib/libraw.a
 lib/libraw.so
-lib/libraw.so.15
-lib/libraw.so.15.0.0
+lib/libraw.so.16
+lib/libraw.so.16.0.0
 lib/libraw_r.a
 lib/libraw_r.so
-lib/libraw_r.so.15
-lib/libraw_r.so.15.0.0
+lib/libraw_r.so.16
+lib/libraw_r.so.16.0.0
 libdata/pkgconfig/libraw.pc
 libdata/pkgconfig/libraw_r.pc

@@ -3,6 +3,7 @@
 
 PORTNAME=	tuxpaint-config
 PORTVERSION=	0.0.13
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION}
 
@@ -30,8 +31,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	DOCS
-
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
 
 .include <bsd.port.mk>

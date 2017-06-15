@@ -5,14 +5,16 @@ PORTNAME=	gngeo
 PORTVERSION=	0.8
 PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	GOOGLE_CODE/${PORTNAME}
+MASTER_SITES=	https://github.com/pepone42/gngeo/archive/ \
+		LOCAL/acm/${PORTNAME}
+DISTFILES=	${PORTNAME}_${PORTVERSION}.tar.gz
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	NeoGeo emulator
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	GPLv2
 
-USES=		compiler:features gmake
+USES=		autoreconf compiler:features gmake
 USE_SDL=	image sdl
 USE_GL=		yes
 
@@ -26,6 +28,7 @@ USE_CSTD=	gnu89
 MAKE_ARGS+=	CC_FOR_BUILD=${CC}
 
 SUB_FILES=	pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}_${PORTVERSION}
 
 OPTIONS_DEFINE_i386=	ASM RAZE STAR
 OPTIONS_DEFAULT_i386=	ASM
@@ -74,8 +77,14 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
 		${WRKSRC}/src/generator68k/Makefile.in
 
+pre-configure:
+	@cd ${WRKSRC} && ${AUTORECONF} -i
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sample_gngeorc ${STAGEDIR}${EXAMPLESDIR}/gngeorc
+	${INSTALL_DATA} ${WRKSRC}/romrc ${STAGEDIR}${DATADIR}/romrc
+	${INSTALL_DATA} ${WRKSRC}/gngeo.dat/gngeo_data.zip ${STAGEDIR}${DATADIR}/gngeo_data.zip
 
 .include <bsd.port.post.mk>

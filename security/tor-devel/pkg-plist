@@ -3,10 +3,14 @@ bin/tor-gencert
 bin/tor-resolve
 bin/torify
 @sample etc/tor/torrc.sample
-man/man1/tor-gencert.1.gz
-man/man1/tor-resolve.1.gz
-man/man1/tor.1.gz
-man/man1/torify.1.gz
+%%MANPAGES%%man/man1/tor-gencert.1.gz
+%%MANPAGES%%man/man1/tor-resolve.1.gz
+%%MANPAGES%%man/man1/tor.1.gz
+%%MANPAGES%%man/man1/torify.1.gz
+%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/tor-gencert.html
+%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/tor-resolve.html
+%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/tor.html
+%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/torify.html
 %%DATADIR%%/geoip
 %%DATADIR%%/geoip6
 @dir(_tor,_tor,750) /var/run/tor

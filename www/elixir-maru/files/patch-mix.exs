@@ -4,7 +4,7 @@
        elixir: "~> 1.0",
        build_embedded: Mix.env == :prod,
        start_permanent: Mix.env == :prod,
--      deps: deps,
+-      deps: deps(),
        description: "REST-like API micro-framework for elixir inspired by grape.",
        source_url: "https://github.com/falood/maru",
        package: package,

@@ -3,7 +3,7 @@
 
 PORTNAME=	xzx
 PORTVERSION=	4.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://wos.meulie.net/pub/sinclair/emulators/unix/ \
 		http://fossies.org/linux/misc/old/

@@ -1,0 +1,7 @@
+This port is the static file package for angular-bootstrap JavaScript library
+that provides a Bootstrap widgets for Angular framework.
+
+It uses the XStatic packaging standard, aimed to bring an ability to
+install javascript libraries via easy_install or pip utility.
+
+WWW: http://pypi.python.org/pypi/XStatic-Angular-Bootstrap

@@ -1,5 +1,5 @@
---- src/tlStream.cc.orig	2014-03-14 22:31:20.000000000 +0900
-+++ src/tlStream.cc	2014-03-14 22:33:08.000000000 +0900
+--- src/tlStream.cc.orig	2016-06-19 16:35:29 UTC
++++ src/tlStream.cc
 @@ -31,6 +31,7 @@
  #ifdef _WIN32 
  #  include <io.h>
@@ -8,7 +8,7 @@
  
  #include "tlStream.h"
  #include "tlHttpStream.h"
-@@ -624,7 +625,7 @@
+@@ -624,7 +625,7 @@ InputFile::~InputFile ()
  #if defined(_WIN32)
      _close (m_fd);
  #else
@@ -17,7 +17,7 @@
  #endif
      m_fd = -1;
    }  
-@@ -654,7 +655,7 @@
+@@ -654,7 +655,7 @@ InputFile::reset ()
  #elif defined(_WIN64)
      _lseek (m_fd, 0, SEEK_SET);
  #else
@@ -26,7 +26,7 @@
  #endif
    }
  }
-@@ -1068,7 +1069,7 @@
+@@ -1068,7 +1069,7 @@ OutputFile::seek (size_t s)
  #elif defined(_WIN32)
    _lseek (m_fd, s, SEEK_SET);
  #else

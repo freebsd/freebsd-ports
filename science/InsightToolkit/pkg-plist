@@ -46,7 +46,6 @@ include/ITK-%%ITK_VER%%/ITKLabelMapExport.h
 include/ITK-%%ITK_VER%%/ITKMeshExport.h
 include/ITK-%%ITK_VER%%/ITKOptimizersExport.h
 include/ITK-%%ITK_VER%%/ITKOptimizersv4Export.h
-include/ITK-%%ITK_VER%%/ITKPathExport.h
 include/ITK-%%ITK_VER%%/ITKPolynomialsExport.h
 include/ITK-%%ITK_VER%%/ITKQuadEdgeMeshExport.h
 include/ITK-%%ITK_VER%%/ITKStatisticsExport.h
@@ -128,6 +127,20 @@ include/ITK-%%ITK_VER%%/blas/ztrmm.h
 include/ITK-%%ITK_VER%%/blas/ztrmv.h
 include/ITK-%%ITK_VER%%/blas/ztrsv.h
 include/ITK-%%ITK_VER%%/cached-powers.h
+include/ITK-%%ITK_VER%%/compilers/ITK_COMPILER_INFO_AppleClang_CXX.h
+include/ITK-%%ITK_VER%%/compilers/ITK_COMPILER_INFO_Clang_CXX.h
+include/ITK-%%ITK_VER%%/compilers/ITK_COMPILER_INFO_GNU_CXX.h
+include/ITK-%%ITK_VER%%/compilers/ITK_COMPILER_INFO_Intel_CXX.h
+include/ITK-%%ITK_VER%%/compilers/ITK_COMPILER_INFO_MSVC_CXX.h
+include/ITK-%%ITK_VER%%/compilers/ITK_COMPILER_INFO_SunPro_CXX.h
+include/ITK-%%ITK_VER%%/compilers/ITK_COMPILER_INFO_UNKNOWN_CXX.h
+include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_AppleClang_CXX.h
+include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_Clang_CXX.h
+include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_GNU_CXX.h
+include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_Intel_CXX.h
+include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_MSVC_CXX.h
+include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_SunPro_CXX.h
+include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_UNKNOWN_CXX.h
 include/ITK-%%ITK_VER%%/config.h
 include/ITK-%%ITK_VER%%/core/testlib/testlib_register.h
 include/ITK-%%ITK_VER%%/core/testlib/testlib_root_dir.h
@@ -1213,6 +1226,8 @@ include/ITK-%%ITK_VER%%/itkHessian3DToVesselnessMeasureImageFilter.h
 include/ITK-%%ITK_VER%%/itkHessian3DToVesselnessMeasureImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkHessianRecursiveGaussianImageFilter.h
 include/ITK-%%ITK_VER%%/itkHessianRecursiveGaussianImageFilter.hxx
+include/ITK-%%ITK_VER%%/itkHessianToObjectnessMeasureImageFilter.h
+include/ITK-%%ITK_VER%%/itkHessianToObjectnessMeasureImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkHexahedronCell.h
 include/ITK-%%ITK_VER%%/itkHexahedronCell.hxx
 include/ITK-%%ITK_VER%%/itkHexahedronCellTopology.h
@@ -1847,6 +1862,7 @@ include/ITK-%%ITK_VER%%/itkMeshFileReader.hxx
 include/ITK-%%ITK_VER%%/itkMeshFileReaderException.h
 include/ITK-%%ITK_VER%%/itkMeshFileWriter.h
 include/ITK-%%ITK_VER%%/itkMeshFileWriter.hxx
+include/ITK-%%ITK_VER%%/itkMeshFileWriterException.h
 include/ITK-%%ITK_VER%%/itkMeshIOBase.h
 include/ITK-%%ITK_VER%%/itkMeshIOFactory.h
 include/ITK-%%ITK_VER%%/itkMeshRegion.h
@@ -2164,7 +2180,6 @@ include/ITK-%%ITK_VER%%/itkPathIterator.h
 include/ITK-%%ITK_VER%%/itkPathIterator.hxx
 include/ITK-%%ITK_VER%%/itkPathSource.h
 include/ITK-%%ITK_VER%%/itkPathSource.hxx
-include/ITK-%%ITK_VER%%/itkPathTemplateExport.h
 include/ITK-%%ITK_VER%%/itkPathToChainCodePathFilter.h
 include/ITK-%%ITK_VER%%/itkPathToChainCodePathFilter.hxx
 include/ITK-%%ITK_VER%%/itkPathToImageFilter.h
@@ -2856,6 +2871,8 @@ include/ITK-%%ITK_VER%%/itkUnaryFunctorImageFilter.h
 include/ITK-%%ITK_VER%%/itkUnaryFunctorImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkUniformRandomSpatialNeighborSubsampler.h
 include/ITK-%%ITK_VER%%/itkUniformRandomSpatialNeighborSubsampler.hxx
+include/ITK-%%ITK_VER%%/itkUnsharpMaskImageFilter.h
+include/ITK-%%ITK_VER%%/itkUnsharpMaskImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkUnsharpMaskLevelSetImageFilter.h
 include/ITK-%%ITK_VER%%/itkUnsharpMaskLevelSetImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkUpdateMalcolmSparseLevelSet.h
@@ -3071,6 +3088,7 @@ include/ITK-%%ITK_VER%%/itkZeroFluxNeumannPadImageFilter.h
 include/ITK-%%ITK_VER%%/itkZeroFluxNeumannPadImageFilter.hxx
 include/ITK-%%ITK_VER%%/itk_H5Cpp.h
 include/ITK-%%ITK_VER%%/itk_NrrdIO_mangle.h
+include/ITK-%%ITK_VER%%/itk_compiler_detection.h
 include/ITK-%%ITK_VER%%/itk_hdf5.h
 include/ITK-%%ITK_VER%%/itk_jpeg.h
 include/ITK-%%ITK_VER%%/itk_kwiml.h
@@ -3097,7 +3115,6 @@ include/ITK-%%ITK_VER%%/itksys/String.hxx
 include/ITK-%%ITK_VER%%/itksys/System.h
 include/ITK-%%ITK_VER%%/itksys/SystemInformation.hxx
 include/ITK-%%ITK_VER%%/itksys/SystemTools.hxx
-include/ITK-%%ITK_VER%%/itksys/auto_ptr.hxx
 include/ITK-%%ITK_VER%%/itksys/hash_fun.hxx
 include/ITK-%%ITK_VER%%/itksys/hash_map.hxx
 include/ITK-%%ITK_VER%%/itksys/hash_set.hxx
@@ -3252,7 +3269,10 @@ include/ITK-%%ITK_VER%%/laso/dnppla.h
 include/ITK-%%ITK_VER%%/laso/dortqr.h
 include/ITK-%%ITK_VER%%/laso/dvsort.h
 include/ITK-%%ITK_VER%%/laso/urand.h
-include/ITK-%%ITK_VER%%/linalg/lsqr.h
+include/ITK-%%ITK_VER%%/linalg/lsmrBase.h
+include/ITK-%%ITK_VER%%/linalg/lsmrDense.h
+include/ITK-%%ITK_VER%%/linalg/lsqrBase.h
+include/ITK-%%ITK_VER%%/linalg/lsqrDense.h
 include/ITK-%%ITK_VER%%/linpack/cqrdc.h
 include/ITK-%%ITK_VER%%/linpack/cqrsl.h
 include/ITK-%%ITK_VER%%/linpack/csvdc.h
@@ -3354,6 +3374,7 @@ include/ITK-%%ITK_VER%%/vcl_climits.h
 include/ITK-%%ITK_VER%%/vcl_clocale.h
 include/ITK-%%ITK_VER%%/vcl_cmath.h
 include/ITK-%%ITK_VER%%/vcl_compiler.h
+include/ITK-%%ITK_VER%%/vcl_compiler_detection.h
 include/ITK-%%ITK_VER%%/vcl_complex.h
 include/ITK-%%ITK_VER%%/vcl_config_compiler.h
 include/ITK-%%ITK_VER%%/vcl_config_headers.h
@@ -3620,7 +3641,9 @@ include/ITK-%%ITK_VER%%/vnl/vnl_vector_fixed.hxx
 include/ITK-%%ITK_VER%%/vnl/vnl_vector_fixed_ref.h
 include/ITK-%%ITK_VER%%/vnl/vnl_vector_fixed_ref.hxx
 include/ITK-%%ITK_VER%%/vnl/vnl_vector_ref.h
+include/ITK-%%ITK_VER%%/vnl_algo_export_override.h
 include/ITK-%%ITK_VER%%/vnl_complex_traits+char-.h
+include/ITK-%%ITK_VER%%/vnl_export_override.h
 include/ITK-%%ITK_VER%%/vxl_config.h
 include/ITK-%%ITK_VER%%/vxl_copyright.h
 include/ITK-%%ITK_VER%%/vxl_version.h
@@ -3748,6 +3771,7 @@ lib/cmake/ITK-%%ITK_VER%%/Modules/ITKTIFF.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKTestKernel.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKThresholding.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKTransform.cmake
+lib/cmake/ITK-%%ITK_VER%%/Modules/ITKTransformFactory.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVNL.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVNLInstantiation.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVTK.cmake
@@ -3850,6 +3874,8 @@ lib/libITKStatistics-%%ITK_VER%%.so
 lib/libITKStatistics-%%ITK_VER%%.so.1
 lib/libITKTransform-%%ITK_VER%%.so
 lib/libITKTransform-%%ITK_VER%%.so.1
+lib/libITKTransformFactory-%%ITK_VER%%.so
+lib/libITKTransformFactory-%%ITK_VER%%.so.1
 lib/libITKVNLInstantiation-%%ITK_VER%%.so
 lib/libITKVNLInstantiation-%%ITK_VER%%.so.1
 lib/libITKVTK-%%ITK_VER%%.so

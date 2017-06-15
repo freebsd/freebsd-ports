@@ -16,6 +16,4 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PREFIX}/libdata/pkgconfig
-
 .include <bsd.port.mk>

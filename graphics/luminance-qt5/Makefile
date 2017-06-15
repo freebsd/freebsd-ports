@@ -3,7 +3,7 @@
 
 PORTNAME=	luminance-hdr
 DISTVERSION=	2.4.0
-PORTREVISION=	8
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
 PKGNAMESUFFIX=	-qt5
@@ -34,12 +34,6 @@ CONFLICTS_INSTALL=	luminance-hdr-[0-9]*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000024
-USE_GCC=	yes
-.endif
-
 post-patch:
 # Do not install yet another copy of GPL (we use license framework instead)
 # and fix installation path for docs (but not for internal help files)
@@ -60,4 +54,4 @@ post-patch:
 pre-install:
 	QT_BINDIR_REL=bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

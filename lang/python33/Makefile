@@ -2,7 +2,7 @@
 
 PORTNAME=	python33
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -16,9 +16,12 @@ LICENSE=	PSFL
 DEPRECATED=	No longer receives bug fixes, only security updates. Please update to Python 3.5
 EXPIRATION_DATE=	2017-09-01
 
-USES=		cpe ncurses pkgconfig readline ssl tar:xz
+USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix
+PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
+SHEBANG_FILES=	Lib/lib2to3/tests/data/*.py Lib/encodings/*.py
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
@@ -28,7 +31,6 @@ CONFIGURE_ENV+=		OPT=""							# Null out OPT to respect user CFLAGS and remove o
 
 INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
 MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
-MAKE_ARGS+=		LIBPC="${PREFIX}/libdata/pkgconfig"			# Until pathfix gets support for files other than Makefile.in
 MAKE_JOBS_UNSAFE=	yes							# Parser/pgen build bug. See Issue: 200622, 201974
 
 TEST_TARGET=		buildbottest
@@ -106,6 +108,8 @@ PLIST_SUB+=	NO_NIS=""
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
+	${WRKSRC}/Lib/cgi.py
 .if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
 	@${REINPLACE_CMD} -e 's/disabled_module_list =[^]]*/&, "nis"/' \
 		${WRKSRC}/setup.py

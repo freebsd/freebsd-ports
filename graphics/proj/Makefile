@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	proj
-PORTVERSION=	4.9.2
+PORTVERSION=	4.9.3
 CATEGORIES=	graphics geography
-MASTER_SITES=	ftp://ftp.remotesensing.org/proj/ \
-		http://download.osgeo.org/proj/
+MASTER_SITES=	http://download.osgeo.org/proj/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATUM_GRID_FILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -17,13 +16,27 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
-DATUM_GRID_FILES=	proj-datumgrid-1.6RC1.zip
+DATUM_GRID_FILES=	proj-datumgrid-1.6.zip
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix
+USES=		compiler gmake libtool pathfix
 USE_LDCONFIG=	yes
+
+FMAN1=	cs2cs.1 geod.1 proj.1
+FMAN3=	geodesic.3 pj_init.3
+
+INSTALL_TARGET=	install-strip
 
 post-extract:
 	@${UNZIP_CMD} -q ${DISTDIR}/${DATUM_GRID_FILES} -d ${WRKSRC}/nad
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|gcc|${COMPILER_TYPE}|' \
+		${WRKSRC}/cmake/Proj4SystemInfo.cmake
+
+post-install:
+.for m in 1 3
+	(cd ${STAGEDIR}${MANPREFIX}/man/man${m} && ${GZIP_CMD} ${FMAN${m}})
+.endfor
 
 .include <bsd.port.mk>

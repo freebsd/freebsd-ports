@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	3.0.8
-PORTREVISION=	8
+PORTVERSION=	3.0.10
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
@@ -14,6 +14,8 @@ COMMENT=	Advanced, stable IRC daemon, used widely on EFnet
 LICENSE=	GPLv2
 
 CONFLICTS=	ircd-ratbox-devel-[0-9]* charybdis-[0-9]*
+
+BROKEN_aarch64=		Fails to link: missing sbrk
 
 USES=		cpe libtool sqlite tar:bzip2
 CPE_VENDOR=	ratbox
@@ -49,8 +51,6 @@ PORTDOCS=	[^i]*.txt README.* technical/[^i]*.txt Tao-of-IRC.*
 
 OPTIONS_DEFINE=		OPENSSL IPV6 ZIPLINKS SHARED_MODS ASSERT SMALL_NET	\
 			SERVICES SHORTCUTS
-OPENSSL_DESC=		Support OpenSSL encrypted connections
-IPV6_DESC=		Enable IPv6 support
 ZIPLINKS_DESC=		Support compressed server links
 SHARED_MODS_DESC=	Support shared modules
 ASSERT_DESC=		Enable debugging code
@@ -65,7 +65,7 @@ OPTIONS_SUB=		yes
 
 ASSERT_CONFIGURE_ENABLE=	assert
 IPV6_CONFIGURE_ENABLE=		ipv6
-OPENSSL_USE=		openssl=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
 OPENSSL_CONFIGURE_OFF=	--disable-openssl
 SERVICES_CONFIGURE_ENABLE=	services

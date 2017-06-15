@@ -31,14 +31,4 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-Pod-Parser>=1.62:textproc/p5-Pod-Parser
-RUN_DEPENDS+=	p5-Pod-Parser>=1.62:textproc/p5-Pod-Parser
-TEST_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.86:devel/p5-ExtUtils-MakeMaker \
-		p5-File-Temp>=0.23.04:devel/p5-File-Temp \
-		p5-Test-Simple>=1.001002:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

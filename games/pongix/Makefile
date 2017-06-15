@@ -28,7 +28,7 @@ do-install:
 	cd ${WRKSRC}/data && ${FIND} * -type d \
 		-exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
 		${FIND} -E * -type f -iregex ".*\.(jpg|bmp)" \
-		-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+		-exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/{}" \;
 	cd ${WRKSRC} && ${INSTALL_DATA} \
 		AUTHORS ChangeLog README ${STAGEDIR}${DOCSDIR}
 

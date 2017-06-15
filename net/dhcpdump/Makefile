@@ -6,13 +6,16 @@ PORTVERSION=	1.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decode and diagnose sniffed DHCP packets
 
-PLIST_FILES=	bin/dhcpdump man/man8/dhcpdump.8.gz
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		perl5
 USE_PERL5=	build
+
+PLIST_FILES=	bin/dhcpdump man/man8/dhcpdump.8.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dhcpdump ${STAGEDIR}${PREFIX}/bin

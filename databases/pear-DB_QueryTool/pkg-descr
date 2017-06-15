@@ -7,4 +7,4 @@ HTML-forms using arrays that contain the column data, that shall be
 updated/added in a DB. This package bases on an SQL-Builder which lets you
 easily build SQL-Statements and execute them.
 
-WWW: http://pear.php.net/package/DB_QueryTool/
+WWW: https://pear.php.net/package/DB_QueryTool

@@ -4,4 +4,4 @@ package you can connect to a running instance of the validator and
 retrieve the validation results (true|false) as well as the errors
 and warnings for a web page.
 
-WWW: http://pear.php.net/package/Services_W3C_HTMLValidator
+WWW: https://pear.php.net/package/Services_W3C_HTMLValidator

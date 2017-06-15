@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	love
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -27,8 +28,6 @@ USES=		compiler:c++11-lib desktop-file-utils gmake libtool \
 USE_SDL=	sdl2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	zlib_CFLAGS=" " \
-		zlib_LIBS="-lz"
 WRKSRC=		${WRKDIR}/love-${PORTVERSION}
 INSTALL_TARGET=	install-strip
 

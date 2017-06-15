@@ -1,6 +1,6 @@
---- image/png.c.orig	2001-04-11 10:37:00.000000000 +0200
-+++ image/png.c	2012-05-05 08:48:02.000000000 +0200
-@@ -86,7 +86,7 @@
+--- image/png.c.orig	2001-04-11 08:37:00 UTC
++++ image/png.c
+@@ -86,7 +86,7 @@ pngLoad(fullname, name, verbose)
  		return NULL;
  	}
  
@@ -9,7 +9,7 @@
  		png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
  		fclose(fp);
  		return NULL;
-@@ -134,7 +134,7 @@
+@@ -134,7 +134,7 @@ pngLoad(fullname, name, verbose)
  	} 
  
  	if (colortype == PNG_COLOR_TYPE_GRAY && bitdepth < 8){

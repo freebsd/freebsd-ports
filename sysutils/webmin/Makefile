@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmin
-PORTVERSION=	1.810
+PORTVERSION=	1.831
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
@@ -26,7 +26,7 @@ SUB_FILES=	pkg-message
 WEBMIN_MODULES=
 
 post-extract:
-	@${RM} -f ${WRKSRC}/mount/freebsd-mounts-?
+	@${RM} ${WRKSRC}/mount/freebsd-mounts-?
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
 		for webmin_module in ${WEBMIN_MODULES}; do \
 			${ECHO} "===> Unpacking updated module: $${webmin_module}"; \
@@ -37,7 +37,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/setup.sh
 
-	@${FIND} ${WRKSRC} \( -name config-freebsd\* -or -name config \)  \
+	@${FIND} ${WRKSRC} \( -type f -and \( -name config-freebsd\* -or -name config \) \) \
 		-exec ${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" {} \; \
 		-exec ${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" {} \;
 

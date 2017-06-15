@@ -11,6 +11,8 @@ COMMENT=	Ferret is a ruby port of Lucene
 
 LICENSE=	MIT
 
+BROKEN_aarch64=	Fails to build: cannot determine target CPU
+
 USE_RUBY=	yes
 USES=		gem
 

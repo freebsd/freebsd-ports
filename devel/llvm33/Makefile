@@ -135,16 +135,12 @@ MAN1SRCS+=	bugpoint.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 PLIST_FILES+=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 .endif
 
-NOT_FOR_ARCH=	ia64
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "aarch64"
 BROKEN=		Does not compile on aarch64
 .elif ${ARCH} == "arm"
 BROKEN=		Does not compile on arm
-.elif ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64
 .endif
 
 .if ${ARCH} == "amd64"
@@ -241,7 +237,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 build-plist:
-	${RM} -f ${PLIST}
+	${RM} ${PLIST}
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}
 .endfor

@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.8.18
+PORTVERSION=	1.8.20
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4179/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/39/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Smartcard development library
 
 LICENSE=	BSD3CLAUSE
@@ -15,18 +16,22 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
+USES=		libtool pathfix perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
 SHEBANG_FILES=	${WRKSRC}/src/spy/pcsc-spy
 
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
-		LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
+CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_GROUP=		FEATURES
+OPTIONS_GROUP_FEATURES=	FILTER
+FEATURES_DESC=		Default features knobs
+FILTER_DESC=		Control (Ignore or Extend) reader names reported by PCSC
+FILTER_CONFIGURE_ENABLE=	filter
 
 .include <bsd.port.options.mk>
 

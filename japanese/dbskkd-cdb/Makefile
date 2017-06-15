@@ -2,38 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	dbskkd-cdb
-PORTVERSION=	2.00
-PORTREVISION=	1
+PORTVERSION=	3.00
+#PORTREVISION=	0
 CATEGORIES=	japanese
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	GH
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Yet another dictionary server for SKK
+MAINTAINER=	kenji@k2r.org
+COMMENT=	SKK dictionary server based on cdb
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcdb.a:databases/tinycdb
 RUN_DEPENDS=	${SKKJISYOCDB}:japanese/skk-jisyo-cdb
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	jj1bdx
+MAKE_ENV=	LOCALBASE="${LOCALBASE}" \
+		SKKJISYOCDB="${SKKJISYOCDB}"
 PLIST_FILES=	libexec/dbskkd-cdb
 SUB_FILES=	pkg-message
+PORTDOCS=	${PORTDOCS_FILE} ${PORTDOCS_SH}
 
 SKKDIR?=	share/skk
 SKKJISYO_TYPE?=	L
 SKKJISYOCDB?=	${LOCALBASE}/${SKKDIR}/SKK-JISYO.${SKKJISYO_TYPE}.cdb
-
-MAKE_ENV+=	LOCALBASE="${LOCALBASE}"
-MAKE_ENV+=	SKKJISYOCDB="${SKKJISYOCDB}"
-
-PORTDOCS=	${PORTDOCS_FILE} ${PORTDOCS_SH}
-PORTDOCS_FILE=	CHANGES LICENSE READMEJP \
-		example-daemontools.txt example-inetd.txt
+PORTDOCS_FILE=	CHANGES.md LICENSE README.md READMEJP.md \
+		examples.md skk-server-protocol.md
 PORTDOCS_SH=	makeskkcdb.sh skktocdbm.sh
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 post-patch:
-.for f in READMEJP makeskkcdb.sh
+.for f in READMEJP.md makeskkcdb.sh
 	${REINPLACE_CMD} -e "s!%%PREFIX%%!${PREFIX}!g" \
 		-e "s!%%SKKDIR%%!${SKKDIR}!g" \
 		-e "s!%%JISYONAME%%!SKK-JISYO.${SKKJISYO_TYPE}!g" ${WRKSRC}/${f}
@@ -41,6 +43,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dbskkd-cdb ${STAGEDIR}${PREFIX}/libexec
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS_FILE:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${PORTDOCS_SH:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

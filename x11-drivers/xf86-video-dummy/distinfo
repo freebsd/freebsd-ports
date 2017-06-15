@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-dummy-0.3.7.tar.bz2) = 56f84fcbc515685529ad8e10bca1072731d9c096b97c5d35ddc95cd589b98680
-SIZE (xorg/driver/xf86-video-dummy-0.3.7.tar.bz2) = 279806
+TIMESTAMP = 1484388618
+SHA256 (xorg/driver/xf86-video-dummy-0.3.8.tar.bz2) = 3712bb869307233491e4c570732d6073c0dc3d99adfdb9977396a3fdf84e95b9
+SIZE (xorg/driver/xf86-video-dummy-0.3.8.tar.bz2) = 302353

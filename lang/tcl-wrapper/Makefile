@@ -3,7 +3,7 @@
 
 PORTNAME=	wrapper
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang tcl
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${TX_PORT}-
@@ -57,7 +57,7 @@ SUB_LIST+=	ECHO_CMD="${ECHO_CMD}" GREP="${GREP}" LS="${LS}" \
 		TX_CONF_FULL="${TX_CONF_FULL:S/${STAGEDIR}//}"
 
 do-build: apply-slist
-	${MAKE_ENV} ${LOCALBASE}/bin/shc -r -T -f ${WRKDIR}/wrapper
+	${MAKE_ENV} ${LOCALBASE}/bin/shc -r -f ${WRKDIR}/wrapper
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/wrapper.x ${STAGEDIR}${PREFIX}/bin/${TX_SHELL}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sanitize
-PORTVERSION=	4.0.1
+PORTVERSION=	4.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

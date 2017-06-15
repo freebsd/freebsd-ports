@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pefs
-DISTVERSION=	2016-06-11
+DISTVERSION=	2017-02-19
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/gleb
 PKGNAMESUFFIX=	-kmod
@@ -12,6 +12,7 @@ COMMENT=	PEFS kernel level stacked cryptographic filesystem
 
 LICENSE=	BSD2CLAUSE
 
+MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 		NO_MANCOMPRESS=
 
@@ -28,7 +29,7 @@ PLIST_FILES=	sbin/pefs \
 		lib/pam_pefs.so \
 		man/man8/pam_pefs.8.gz \
 		man/man8/pefs.8.gz \
-		/${KMODDIR}/pefs.ko
+		${KMODDIR}/pefs.ko
 
 .include <bsd.port.options.mk>
 

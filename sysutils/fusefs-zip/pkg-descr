@@ -3,4 +3,4 @@ archives based on libzip, implemented in C++.  With fuse-zip, you can work
 with ZIP archives as real directories.  Unlike KIO or Gnome VFS, it can be
 be used in any application without modifications.
 
-WWW: http://code.google.com/p/fuse-zip/
+WWW: https://bitbucket.org/agalanin/fuse-zip/

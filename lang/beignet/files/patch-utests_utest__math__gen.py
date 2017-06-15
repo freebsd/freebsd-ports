@@ -1,4 +1,4 @@
---- utests/utest_math_gen.py.orig	2015-02-02 20:01:26 UTC
+--- utests/utest_math_gen.py.orig	2017-01-20 10:40:51 UTC
 +++ utests/utest_math_gen.py
 @@ -241,10 +241,11 @@ static float atan2pi(float y, float x){
    exp2Utests = func('exp2','exp2',[exp2_input_type],exp2_output_type,[exp2_input_values],'4 * FLT_ULP')

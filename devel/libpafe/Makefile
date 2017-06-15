@@ -24,7 +24,4 @@ PLIST_FILES=	bin/felica_dump bin/pasori_test \
 		lib/libpafe.a lib/libpafe.so lib/libpafe.so.0 \
 		lib/libpafe.so.0.0.8
 
-CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \
-		LIBUSB_LIBS="-L/usr/lib -lusb"
-
 .include <bsd.port.mk>

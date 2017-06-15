@@ -1,6 +1,7 @@
 %%GO_LIBDIR%%/github.com/mattn/go-runewidth.a
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/README.mkd
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/runewidth.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/runewidth_js.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/runewidth_posix.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/runewidth_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/runewidth_windows.go

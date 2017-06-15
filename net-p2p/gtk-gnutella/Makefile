@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
@@ -55,9 +55,6 @@ TLS_CONFIGURE_OFF=	-Ud_gnutls
 .if !defined(INTERACTIVE_CONFIGURE)
 CONFIGURE_ARGS+=	-ders
 .endif
-
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.SH" | ${XARGS} ${REINPLACE_CMD} -e \

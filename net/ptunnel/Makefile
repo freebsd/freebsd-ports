@@ -3,18 +3,19 @@
 
 PORTNAME=	ptunnel
 PORTVERSION=	0.72
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.uit.no/~daniels/PingTunnel/
 DISTNAME=	PingTunnel-${PORTVERSION}
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Tunneling TCP connections over ICMP echo request and reply
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WRKSRC=		${WRKDIR}/PingTunnel
 USES=		gmake
-
+WRKSRC=		${WRKDIR}/PingTunnel
 PLIST_FILES=	bin/ptunnel man/man8/ptunnel.8.gz
 
 post-patch:

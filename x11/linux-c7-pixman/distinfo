@@ -1,0 +1,7 @@
+TIMESTAMP = 1482090227
+SHA256 (centos/pixman-0.34.0-1.el7.i686.rpm) = 20ad14223dc671fcc5b425656a59b29186b21a8aee3c33d18b9bc7548e0f62ac
+SIZE (centos/pixman-0.34.0-1.el7.i686.rpm) = 254716
+SHA256 (centos/pixman-0.34.0-1.el7.x86_64.rpm) = 4de698c8cf15c28cae3c6e3a7280ae9ee617803533648153891b2fef2f26bb5a
+SIZE (centos/pixman-0.34.0-1.el7.x86_64.rpm) = 253932
+SHA256 (centos/pixman-0.34.0-1.el7.src.rpm) = 83c498c550e7fef9043f53dfcc8d19a60ebe76e755667803432d330ca5e3f391
+SIZE (centos/pixman-0.34.0-1.el7.src.rpm) = 753933

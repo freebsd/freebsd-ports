@@ -3,7 +3,7 @@
 
 PORTNAME=	spybye
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	security www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
@@ -12,7 +12,7 @@ COMMENT=	Web proxy to detect malware
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 OPTIONS_DEFINE=	CLAMAV
 CLAMAV_DESC=	Enable CLAMAV support

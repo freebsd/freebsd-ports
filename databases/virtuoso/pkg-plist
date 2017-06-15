@@ -1,5 +1,3 @@
-@owner virtuoso
-@group virtuoso
 bin/inifile
 %%WITH_IODBC%%bin/isql-iodbc
 bin/isql-vt
@@ -7,7 +5,6 @@ bin/isql-vt
 bin/isqlw-vt
 %%WITH_IODBC%%bin/odbc_mail
 bin/virt_mail
-%%WITH_IODBC%%bin/virtuoso-iodbc-t
 bin/virtuoso-t
 lib/hibernate/virt_dialect.jar
 lib/jdbc-2.0/virtjdbc2.jar
@@ -16,16 +13,19 @@ lib/jdbc-3.0/virtjdbc3ssl.jar
 lib/jdbc-4.0/virtjdbc4.jar
 lib/jdbc-4.0/virtjdbc4ssl.jar
 lib/jdbc-4.1/virtjdbc4_1.jar
-lib/jdbc-4.1/virtjdbc4ssl.jar
+lib/jdbc-4.1/virtjdbc4_1ssl.jar
+lib/jdbc-4.2/virtjdbc4_2.jar
+lib/jdbc-4.2/virtjdbc4_2ssl.jar
 lib/jena/virt_jena.jar
 lib/jena2/virt_jena2.jar
-%%WITH_IODBC%%lib/libvirtuoso-iodbc-t.a
+lib/jena3/virt_jena3.jar
 lib/libvirtuoso-t.a
 lib/sesame/create-virtuoso.xsl
 lib/sesame/create.xsl
 lib/sesame/virt_sesame.jar
 lib/sesame/virt_sesame2.jar
 lib/sesame/virt_sesame3.jar
+lib/sesame/virt_sesame4.jar
 lib/virtodbc.a
 lib/virtodbc.so
 lib/virtodbc_r.a
@@ -1211,6 +1211,17 @@ virtuoso/doc/images/ui/virthost3.png
 virtuoso/doc/images/ui/virthost3a.png
 virtuoso/doc/images/ui/virthost4.png
 virtuoso/doc/images/ui/vsmx001.png
+virtuoso/doc/images/ui/win_destination_folder.jpg
+virtuoso/doc/images/ui/win_file_copystart.jpg
+virtuoso/doc/images/ui/win_install_folder.jpg
+virtuoso/doc/images/ui/win_install_type.jpg
+virtuoso/doc/images/ui/win_installer_program.jpg
+virtuoso/doc/images/ui/win_launch_manager.jpg
+virtuoso/doc/images/ui/win_license_agreement.jpg
+virtuoso/doc/images/ui/win_locate_manager.jpg
+virtuoso/doc/images/ui/win_obtain_license.jpg
+virtuoso/doc/images/ui/win_start_service.jpg
+virtuoso/doc/images/ui/win_virt_admin.jpg
 virtuoso/doc/images/ui/winpinst14.png
 virtuoso/doc/images/ui/winpinst15.png
 virtuoso/doc/images/ui/winpinst16.png

@@ -1,4 +1,4 @@
 %%SITE_PERL%%/Locale/SubCountry.pm
-%%SITE_PERL%%/Locale/SubCountry/Data.pm
+%%SITE_PERL%%/Locale/SubCountry/Codes.pm
 %%PERL5_MAN3%%/Locale::SubCountry.3.gz
-%%PERL5_MAN3%%/Locale::SubCountry::Data.3.gz
+%%PERL5_MAN3%%/Locale::SubCountry::Codes.3.gz

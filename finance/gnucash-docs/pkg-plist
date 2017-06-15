@@ -5,11 +5,7 @@ share/gnome/help/gnucash-guide/C/appendixd.xml
 share/gnome/help/gnucash-guide/C/ch_accts.xml
 share/gnome/help/gnucash-guide/C/ch_basics.xml
 share/gnome/help/gnucash-guide/C/ch_budgets.xml
-share/gnome/help/gnucash-guide/C/ch_bus_ap.xml
-share/gnome/help/gnucash-guide/C/ch_bus_ar.xml
-share/gnome/help/gnucash-guide/C/ch_bus_intro.xml
-share/gnome/help/gnucash-guide/C/ch_bus_pay.xml
-share/gnome/help/gnucash-guide/C/ch_bus_setup.xml
+share/gnome/help/gnucash-guide/C/ch_bus_features.xml
 share/gnome/help/gnucash-guide/C/ch_capgain.xml
 share/gnome/help/gnucash-guide/C/ch_cbook.xml
 share/gnome/help/gnucash-guide/C/ch_cc.xml
@@ -22,6 +18,7 @@ share/gnome/help/gnucash-guide/C/ch_loans.xml
 share/gnome/help/gnucash-guide/C/ch_oth_assets.xml
 share/gnome/help/gnucash-guide/C/ch_oview.xml
 share/gnome/help/gnucash-guide/C/ch_python_bindings.xml
+share/gnome/help/gnucash-guide/C/ch_reports.xml
 share/gnome/help/gnucash-guide/C/ch_txns.xml
 share/gnome/help/gnucash-guide/C/fdl-appendix.xml
 share/gnome/help/gnucash-guide/C/figures/accts_CreateAssetsAccount.png
@@ -125,8 +122,20 @@ share/gnome/help/gnucash-guide/C/figures/currency_purchase_ToAmount.png
 share/gnome/help/gnucash-guide/C/figures/dep_assetmain.png
 share/gnome/help/gnucash-guide/C/figures/dep_assetreg.png
 share/gnome/help/gnucash-guide/C/figures/dep_example.png
+share/gnome/help/gnucash-guide/C/figures/invest2Lots0RegB4Scrub.png
+share/gnome/help/gnucash-guide/C/figures/invest2Lots1B4Scrub.png
+share/gnome/help/gnucash-guide/C/figures/invest2Lots2LotsAftScrubAcct.png
+share/gnome/help/gnucash-guide/C/figures/invest2Lots3RegAftScrubAcct.png
+share/gnome/help/gnucash-guide/C/figures/investLots0_RegB4Scrub.png
+share/gnome/help/gnucash-guide/C/figures/investLots1_BeforeCreateLot.png
+share/gnome/help/gnucash-guide/C/figures/investLots2_BeforeScrub1Lot.png
+share/gnome/help/gnucash-guide/C/figures/investLots2_RegAfterScrub1Lot.png
+share/gnome/help/gnucash-guide/C/figures/investLotsSplitLot0.png
+share/gnome/help/gnucash-guide/C/figures/investLotsSplitLot1.png
+share/gnome/help/gnucash-guide/C/figures/investLotsSplitReg.png
 share/gnome/help/gnucash-guide/C/figures/invest_AccountsPredef.png
 share/gnome/help/gnucash-guide/C/figures/invest_SetupPortfolio2.png
+share/gnome/help/gnucash-guide/C/figures/invest_SetupPortfolio3.png
 share/gnome/help/gnucash-guide/C/figures/invest_dividendcash.png
 share/gnome/help/gnucash-guide/C/figures/invest_dividendreinvest1.png
 share/gnome/help/gnucash-guide/C/figures/invest_int1.png
@@ -143,8 +152,10 @@ share/gnome/help/gnucash-guide/C/figures/invest_ret_of_cap.png
 share/gnome/help/gnucash-guide/C/figures/invest_selectsecurity.png
 share/gnome/help/gnucash-guide/C/figures/invest_sellstock.png
 share/gnome/help/gnucash-guide/C/figures/invest_sellstock2.png
-share/gnome/help/gnucash-guide/C/figures/invest_sellstockLoss.png
 share/gnome/help/gnucash-guide/C/figures/invest_sellstockLoss2.png
+share/gnome/help/gnucash-guide/C/figures/invest_sellstockManProfCombNet.png
+share/gnome/help/gnucash-guide/C/figures/invest_sellstockManProfSep.png
+share/gnome/help/gnucash-guide/C/figures/invest_sellstockManProfSepNet.png
 share/gnome/help/gnucash-guide/C/figures/invest_setup_current.png
 share/gnome/help/gnucash-guide/C/figures/invest_setup_portfolio1.png
 share/gnome/help/gnucash-guide/C/figures/invest_simplesplit1.png
@@ -194,6 +205,7 @@ share/gnome/help/gnucash-guide/C/figures/txns_sxn_ledger1.png
 share/gnome/help/gnucash-guide/C/figures/txns_sxn_ledger2.png
 share/gnome/help/gnucash-guide/C/figures/txns_sxn_ledger3.png
 share/gnome/help/gnucash-guide/C/figures/txns_sxn_ledger4.png
+share/gnome/help/gnucash-guide/C/gnc-glossary.xml
 share/gnome/help/gnucash-guide/C/gnucash-guide.xml
 share/gnome/help/gnucash-guide/C/legal.xml
 share/gnome/help/gnucash-guide/de/appendixa.xml
@@ -214,6 +226,7 @@ share/gnome/help/gnucash-guide/de/ch_cbook.xml
 share/gnome/help/gnucash-guide/de/ch_cc.xml
 share/gnome/help/gnucash-guide/de/ch_currency.xml
 share/gnome/help/gnucash-guide/de/ch_dep.xml
+share/gnome/help/gnucash-guide/de/ch_expenses.xml
 share/gnome/help/gnucash-guide/de/ch_import_business_data.xml
 share/gnome/help/gnucash-guide/de/ch_invest.xml
 share/gnome/help/gnucash-guide/de/ch_loans.xml
@@ -349,6 +362,7 @@ share/gnome/help/gnucash-guide/de/figures/dep_assetmain.png
 share/gnome/help/gnucash-guide/de/figures/dep_assetreg.png
 share/gnome/help/gnucash-guide/de/figures/dep_example.png
 share/gnome/help/gnucash-guide/de/figures/gnc_welcome.png
+share/gnome/help/gnucash-guide/de/figures/investLots2_BeforeScrub1Lot.png
 share/gnome/help/gnucash-guide/de/figures/invest_AccountsPredef.png
 share/gnome/help/gnucash-guide/de/figures/invest_SetupPortfolio2.png
 share/gnome/help/gnucash-guide/de/figures/invest_dividendcash.png
@@ -363,6 +377,7 @@ share/gnome/help/gnucash-guide/de/figures/invest_newaccount.png
 share/gnome/help/gnucash-guide/de/figures/invest_newsecurity.png
 share/gnome/help/gnucash-guide/de/figures/invest_peditor.png
 share/gnome/help/gnucash-guide/de/figures/invest_peditor2.png
+share/gnome/help/gnucash-guide/de/figures/invest_ret_of_cap.png
 share/gnome/help/gnucash-guide/de/figures/invest_selectsecurity.png
 share/gnome/help/gnucash-guide/de/figures/invest_sellstock.png
 share/gnome/help/gnucash-guide/de/figures/invest_sellstock2.png
@@ -1023,6 +1038,10 @@ share/gnome/help/gnucash-help/C/figures/Help_Pref_Reports.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Sched.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Windows.png
 share/gnome/help/gnucash-help/C/figures/Help_Report_Screen.png
+share/gnome/help/gnucash-help/C/figures/Help_Tool_LotsBus.png
+share/gnome/help/gnucash-help/C/figures/Help_Tool_LotsStk.png
+share/gnome/help/gnucash-help/C/figures/Help_Tool_Lots_h_double_arrow.png
+share/gnome/help/gnucash-help/C/figures/Help_Tool_Lots_v_double_arrow.png
 share/gnome/help/gnucash-help/C/figures/Help_TxRptOpt_Screen.png
 share/gnome/help/gnucash-help/C/figures/Main-window-callouts.png
 share/gnome/help/gnucash-help/C/figures/Report_Screen.png

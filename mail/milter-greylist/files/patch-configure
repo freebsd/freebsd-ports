@@ -1,12 +1,12 @@
 Index: configure
---- configure.orig	2013-03-07 13:26:11 UTC
+--- configure.orig	2016-07-12 03:09:29 UTC
 +++ configure
-@@ -5899,7 +5899,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
- $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
--  LIBS="$LIBS -lpthread"
-+  true; #LIBS="$LIBS -lpthread"
+@@ -6083,7 +6083,7 @@ if test "${ac_cv_lib_pthread_pthread_cre
+   $as_echo_n "(cached) " >&6
  else
-   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lc_r" >&5
- $as_echo_n "checking for pthread_create in -lc_r... " >&6; }
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++true; #LIBS="-lpthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

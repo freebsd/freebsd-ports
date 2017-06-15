@@ -5,4 +5,7 @@ FreeBSD operating system has to offer.
 It is geared for ease of use with a simple and easy to
 understand command syntax.
 
-WWW: https://github.com/iocage/iocage
+This version of iocage is now deprecated in favor of
+Python based version in sysutils/py-iocage.
+
+WWW: https://github.com/iocage/iocage_legacy

@@ -1,4 +1,4 @@
 bin/autopod
 %%SITE_PERL%%/Pod/Autopod.pm
-%%PERL5_MAN3%%/Pod::Autopod.3.gz
 %%PERL5_MAN1%%/autopod.1.gz
+%%PERL5_MAN3%%/Pod::Autopod.3.gz

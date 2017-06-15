@@ -1,0 +1,14 @@
+======================================================================
+You installed butterfly, the web terminal that works through your
+browser.
+
+It is recommended to run butterfly as a service:
+# sysrc butterfly_enable="YES"
+# service butterfly start
+
+To access butterfly please navigate to:
+http://localhost:57575
+
+The port and other parameters can be configured in
+%%ETCDIR%%/butterfly.conf
+======================================================================

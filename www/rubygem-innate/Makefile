@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	innate
-PORTVERSION=	2013.02.21
+PORTVERSION=	2015.10.28
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,12 +12,12 @@ COMMENT=	Powerful web-framework wrapper for Rack
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-rack15>=1.5.2:www/rubygem-rack15
+RUN_DEPENDS=	rubygem-rack16>=1.6.4:www/rubygem-rack16
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem shebangfix
+
 SHEBANG_FILES=	.load_gemset
 
 .include <bsd.port.mk>

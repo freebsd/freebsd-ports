@@ -1,8 +1,0 @@
-This is a library for Qt-based Telepathy clients.
-
-Telepathy is a D-Bus framework for unifying real time communication,
-including instant messaging, voice calls and video calls. It abstracts
-differences between protocols to provide a unified interface for
-applications.
-
-WWW: http://telepathy.freedesktop.org/doc/telepathy-qt

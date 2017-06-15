@@ -6,4 +6,4 @@ prefetching in later processing steps (e.g. compression) and reduces the sytem
 call overhead when writing the resulting lazy bytestring to a file or sending
 it over the network.
 
-WWW: http://github.com/lpsmith/blaze-builder
+WWW: https://github.com/lpsmith/blaze-builder

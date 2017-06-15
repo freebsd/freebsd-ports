@@ -1,6 +1,6 @@
---- spunk/palette.h.orig	Sat Feb 26 17:52:03 2000
-+++ spunk/palette.h	Sat Feb 26 17:52:34 2000
-@@ -40,19 +40,19 @@
+--- spunk/palette.h.orig	1996-11-07 17:06:48 UTC
++++ spunk/palette.h
+@@ -40,19 +40,19 @@ extern class Palette* Pal;
  
  
  // Indices into the palette arrays

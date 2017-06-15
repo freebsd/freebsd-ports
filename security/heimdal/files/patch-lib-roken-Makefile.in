@@ -1,26 +1,26 @@
---- lib/roken/Makefile.in.orig	2012-12-10 07:09:39.000000000 +0900
-+++ lib/roken/Makefile.in	2015-03-04 21:35:04.000000000 +0900
-@@ -150,8 +150,7 @@
-   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
-   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+--- lib/roken/Makefile.in.orig	2017-01-03 19:44:15 UTC
++++ lib/roken/Makefile.in
+@@ -194,8 +194,7 @@ am__uninstall_files_from_dir = { \
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
  am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(man3dir)" \
 -	"$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)" \
 -	"$(DESTDIR)$(rokenincludedir)"
 +	"$(DESTDIR)$(includedir)" "$(DESTDIR)$(includedir)"
  LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
  am__DEPENDENCIES_1 =
- libroken_la_DEPENDENCIES = @LTLIBOBJS@ $(am__DEPENDENCIES_1)
-@@ -305,8 +304,7 @@
+ libroken_la_DEPENDENCIES = @LTLIBOBJS@ $(am__DEPENDENCIES_1) \
+@@ -396,8 +395,7 @@ MANS = $(man_MANS)
  am__dist_include_HEADERS_DIST = base64.h getarg.h hex.h parse_bytes.h \
  	parse_time.h parse_units.h resolve.h roken-common.h rtbl.h \
  	xdbm.h socket_wrapper.h
 -HEADERS = $(dist_include_HEADERS) $(nodist_include_HEADERS) \
 -	$(nodist_rokeninclude_HEADERS)
 +HEADERS = $(dist_include_HEADERS) $(nodist_include_HEADERS)
- ETAGS = etags
- CTAGS = ctags
- am__tty_colors = \
-@@ -1721,7 +1719,7 @@
+ am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
+ # Read a list of newline-separated strings from the standard input,
+ # and print each of them once, without duplicates.  Input order is
+@@ -2274,7 +2272,7 @@ check: $(BUILT_SOURCES)
  all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(MANS) $(HEADERS) \
  		all-local
  installdirs:
@@ -29,7 +29,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -1777,8 +1775,7 @@
+@@ -2338,8 +2336,7 @@ info: info-am
  info-am:
  
  install-data-am: install-dist_includeHEADERS install-man \

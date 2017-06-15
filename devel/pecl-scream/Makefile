@@ -16,7 +16,7 @@ COMMENT=	Break the silence operator
 LICENSE=	PHP301
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 test: build
 	@(cd ${WRKSRC} && ${MAKE} test)

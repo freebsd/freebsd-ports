@@ -1,2 +1,0 @@
-sbin/filebeat
-@sample etc/filebeat.yml.sample

@@ -29,10 +29,10 @@ SHEBANG_FILES=	share/bin/imgmerge share/bin/xpaint_ocr
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-MAKE_ENV+=	RM="${RM} -f"
+MAKE_ENV+=	RM="${RM}"
 
 post-patch:
-	@${RM} -f ${WRKSRC}/XPaint.ad
+	@${RM} ${WRKSRC}/XPaint.ad
 	@${REINPLACE_CMD} -e 's/-ldl //' \
 		${WRKSRC}/configure ${WRKSRC}/rw/configure
 	@${REINPLACE_CMD} -e '/^LIBTOOL =/s|=.*|= ${LOCALBASE}/bin/libtool|' \

@@ -6,7 +6,7 @@ PORTVERSION=	0.51
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fastforward handles qmail forwarding according to a cdb database
 
 USES=	gmake

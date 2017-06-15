@@ -13,7 +13,6 @@ include/boost/network/message/directives/detail/string_directive.hpp
 include/boost/network/message/directives/detail/string_value.hpp
 include/boost/network/message/directives/header.hpp
 include/boost/network/message/directives/remove_header.hpp
-include/boost/network/message/message_concept.hpp
 include/boost/network/message/modifiers/add_header.hpp
 include/boost/network/message/modifiers/body.hpp
 include/boost/network/message/modifiers/clear_headers.hpp
@@ -74,7 +73,6 @@ include/boost/network/protocol/http/message/directives/version.hpp
 include/boost/network/protocol/http/message/header.hpp
 include/boost/network/protocol/http/message/header/name.hpp
 include/boost/network/protocol/http/message/header/value.hpp
-include/boost/network/protocol/http/message/header_concept.hpp
 include/boost/network/protocol/http/message/message_base.hpp
 include/boost/network/protocol/http/message/modifiers/body.hpp
 include/boost/network/protocol/http/message/modifiers/clear_headers.hpp
@@ -118,10 +116,8 @@ include/boost/network/protocol/http/policies/pooled_connection.hpp
 include/boost/network/protocol/http/policies/simple_connection.hpp
 include/boost/network/protocol/http/policies/sync_resolver.hpp
 include/boost/network/protocol/http/request.hpp
-include/boost/network/protocol/http/request_concept.hpp
 include/boost/network/protocol/http/request_parser.hpp
 include/boost/network/protocol/http/response.hpp
-include/boost/network/protocol/http/response_concept.hpp
 include/boost/network/protocol/http/server.hpp
 include/boost/network/protocol/http/server/async_connection.hpp
 include/boost/network/protocol/http/server/async_server.hpp
@@ -131,15 +127,12 @@ include/boost/network/protocol/http/server/request.hpp
 include/boost/network/protocol/http/server/request_parser.hpp
 include/boost/network/protocol/http/server/socket_options_base.hpp
 include/boost/network/protocol/http/server/storage_base.hpp
-include/boost/network/protocol/http/server/sync_connection.hpp
-include/boost/network/protocol/http/server/sync_server.hpp
 include/boost/network/protocol/http/support/client_or_server.hpp
 include/boost/network/protocol/http/support/is_client.hpp
 include/boost/network/protocol/http/support/is_http.hpp
 include/boost/network/protocol/http/support/is_keepalive.hpp
 include/boost/network/protocol/http/support/is_server.hpp
 include/boost/network/protocol/http/support/is_simple.hpp
-include/boost/network/protocol/http/support/sync_only.hpp
 include/boost/network/protocol/http/tags.hpp
 include/boost/network/protocol/http/traits.hpp
 include/boost/network/protocol/http/traits/connection_keepalive.hpp
@@ -170,7 +163,6 @@ include/boost/network/protocol/http/traits/message_traits.hpp
 include/boost/network/protocol/http/traits/parser_traits.hpp
 include/boost/network/protocol/http/traits/resolver.hpp
 include/boost/network/protocol/http/traits/resolver_policy.hpp
-include/boost/network/protocol/http/traits/vector.hpp
 include/boost/network/protocol/stream_handler.hpp
 include/boost/network/support/is_async.hpp
 include/boost/network/support/is_default_string.hpp
@@ -183,7 +175,6 @@ include/boost/network/support/is_sync.hpp
 include/boost/network/support/is_tcp.hpp
 include/boost/network/support/is_udp.hpp
 include/boost/network/support/pod_or_normal.hpp
-include/boost/network/support/sync_only.hpp
 include/boost/network/tags.hpp
 include/boost/network/traits/char.hpp
 include/boost/network/traits/headers_container.hpp
@@ -215,6 +206,7 @@ include/boost/network/uri/uri.ipp
 include/boost/network/uri/uri_io.hpp
 include/boost/network/utils/base64/encode-io.hpp
 include/boost/network/utils/base64/encode.hpp
+include/boost/network/utils/thread_group.hpp
 include/boost/network/utils/thread_pool.hpp
 include/boost/network/version.hpp
 lib/cmake/cppnetlib/cppnetlibConfig.cmake
@@ -223,10 +215,10 @@ lib/cmake/cppnetlib/cppnetlibTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cppnetlib/cppnetlibTargets.cmake
 lib/libcppnetlib-client-connections.so
 lib/libcppnetlib-client-connections.so.0
-lib/libcppnetlib-client-connections.so.0.11.1
+lib/libcppnetlib-client-connections.so.0.12.0
 lib/libcppnetlib-server-parsers.so
 lib/libcppnetlib-server-parsers.so.0
-lib/libcppnetlib-server-parsers.so.0.11.1
+lib/libcppnetlib-server-parsers.so.0.12.0
 lib/libcppnetlib-uri.so
 lib/libcppnetlib-uri.so.0
-lib/libcppnetlib-uri.so.0.11.1
+lib/libcppnetlib-uri.so.0.12.0

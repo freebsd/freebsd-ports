@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	java-sigar>=0:java/sigar
 
-CONFLICTS=	elasticsearch2-[0-9]*
+CONFLICTS=	elasticsearch[0-9]-[0-9]*
 
 USES=		cpe
 NO_ARCH=	yes
@@ -67,17 +67,11 @@ GROUPS=		${SEARCHGROUP}
 ELASTIC_DBDIR=	/var/db/elasticsearch
 ELASTIC_LOGDIR=	/var/log/elasticsearch
 
-.if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} >= 1000000
-PLATFORM_VER=	1
-.  else
-PLATFORM_VER=	9
-.  endif
-.else
-BROKEN=		${OPSYS} platform is not supported
+.if ${OPSYS} != FreeBSD
+IGNORE=		${OPSYS} platform is not supported
 .endif
 
-SIGAR_LIBNAME=	libsigar-${ARCH:S,i386,x86,}-freebsd-${PLATFORM_VER}.so
+SIGAR_LIBNAME=	libsigar-${ARCH:S,i386,x86,}-freebsd-9.so
 
 SUB_LIST=	SEARCHUSER=${SEARCHUSER} \
 		SEARCHGROUP=${SEARCHGROUP} \

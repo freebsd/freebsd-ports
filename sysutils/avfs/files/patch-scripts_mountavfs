@@ -1,0 +1,11 @@
+--- scripts/mountavfs.orig	2016-09-16 18:43:19 UTC
++++ scripts/mountavfs
+@@ -14,7 +14,7 @@ else
+     MntDir=${HOME}/.avfs
+ fi
+ 
+-grep -qE "avfsd ${MntDir}" /proc/mounts || {
++mount -p | grep -qE "${MntDir}.*fusefs" || {
+    if [ ! -e "$MntDir" ]; then
+       mkdir -p "$MntDir"
+    fi

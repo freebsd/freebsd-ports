@@ -1,7 +1,7 @@
 from unittest import SkipTest, TestSuite
 
 
-def load_tests(loader, tests, pattern):
+def load_tests(*args, **kwargs):
     import suite
     return suite.suite
 

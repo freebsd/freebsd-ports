@@ -1,24 +1,24 @@
---- build/FreeBSD.inc.orig	2015-06-11 14:18:55 UTC
-+++ build/FreeBSD.inc
-@@ -29,14 +29,14 @@ ifndef arch
+--- build/FreeBSD.inc.orig	2017-03-06 12:36:15.780368000 +0000
++++ build/FreeBSD.inc	2017-03-06 12:37:56.563219000 +0000
+@@ -29,14 +29,14 @@
  endif
  
  ifndef runtime
--        gcc_version:=$(shell gcc -dumpversion)
-+        gcc_version:=$(shell $(CC) -dumpversion)
+-        clang_version:=$(shell clang -v 2>&1 | grep version | sed "s/.*version \([0-9]*\.[0-9]*\).*/\1/")
++        clang_version:=$(shell $(CC) -dumpversion)
          os_version:=$(shell uname -r)
          os_kernel_version:=$(shell uname -r | sed -e 's/-.*$$//')
-         export runtime:=cc$(gcc_version)_kernel$(os_kernel_version)
+         export runtime:=cc$(clang_version)_kernel$(os_kernel_version)
  endif
  
--native_compiler := gcc
--export compiler ?= gcc
+-native_compiler := clang
+-export compiler ?= clang
 +native_compiler := $(CC)
 +export compiler ?= $(CC)
  debugger ?= gdb
  
  CMD=$(SHELL) -c
-@@ -46,7 +46,7 @@ RD?=rmdir
+@@ -46,7 +46,7 @@
  MD?=mkdir -p
  NUL= /dev/null
  SLASH=/

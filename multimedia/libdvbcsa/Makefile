@@ -20,12 +20,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
 
-# Workaround for GCC in 9.x post r260075
-# OSVERSION taken from r260135, the closest OSVERSION
-.if ${OSVERSION} >  902505 && ${OSVERSION} < 1000000
-CFLAGS+=	-flax-vector-conversions
-.endif
-
 .if defined(MACHINE_CPU) && ${MACHINE_CPU:Msse2}
 CONFIGURE_ARGS+=--enable-sse2
 .elif defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx}

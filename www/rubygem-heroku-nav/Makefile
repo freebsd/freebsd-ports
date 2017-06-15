@@ -5,7 +5,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Heroku Rack middleware
 
 LICENSE=	MIT

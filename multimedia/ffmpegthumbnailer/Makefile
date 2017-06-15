@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpegthumbnailer
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia graphics
 
 MAINTAINER=	clutton@zoho.com
@@ -21,8 +22,7 @@ USES=		cmake:outsource compiler:c++11-lib jpeg localbase pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DENABLE_GIO=ON \
-		-DCMAKE_INSTALL_MANDIR:PATH="man"
+CMAKE_ARGS=	-DENABLE_GIO=ON
 
 OPTIONS_DEFINE=	THUMBNAILER
 THUMBNAILER_DESC=Register as a system thumbnailer

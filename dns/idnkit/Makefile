@@ -3,7 +3,7 @@
 
 PORTNAME=	idnkit
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nic.ad.jp/ja/idn/idnkit/download/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

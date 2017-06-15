@@ -2,7 +2,7 @@
 
 PORTNAME=	i7z
 PORTVERSION=	0.27.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		gmake
 USE_GCC=	yes

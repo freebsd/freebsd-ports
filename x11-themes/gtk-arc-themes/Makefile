@@ -21,11 +21,9 @@ GH_ACCOUNT=	horst3180
 GH_PROJECT=	arc-theme
 GH_TAGNAME=	e10fefb
 
-USES=		autoreconf pkgconfig tar:xz
+USES=		autoreconf pkgconfig
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gtk30
 NO_ARCH=	yes
-
-pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
 
 .include <bsd.port.mk>

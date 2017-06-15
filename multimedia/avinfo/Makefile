@@ -20,9 +20,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 PORTDOCS=	*
 
-
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/ d; /^CFLAGS=/ d; /^PREFIX=/ d' \
 		${WRKSRC}/config.mk

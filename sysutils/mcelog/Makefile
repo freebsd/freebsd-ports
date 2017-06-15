@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcelog
-PORTVERSION=	141
+PORTVERSION=	149
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -11,14 +11,21 @@ COMMENT=	Collects and decodes Machine Check Exception data
 
 LICENSE=	GPLv2
 
+TEST_DEPENDS=	bash:shells/bash
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	andikleen
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 
-USES=		alias gmake
+USES=		alias gmake shebangfix
+
+SHEBANG_FILES=	tests/cache/inject tests/memdb/inject tests/page/inject \
+		tests/pfa/inject tests/server/inject tests/socket/inject \
+		tests/trigger tests/unknown/inject
 
 MAKE_ENV+=	FREEBSD=1
+MAKE_ARGS+=	CFLAGS="${CFLAGS}" prefix="${PREFIX}"
 LDFLAGS+=	-lkvm
 
 PLIST_FILES=	bin/mcelog man/man8/mcelog.8.gz

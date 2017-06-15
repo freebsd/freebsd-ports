@@ -1,0 +1,124 @@
+--- lib/krb5/Makefile.in.orig	2017-01-03 19:44:17 UTC
++++ lib/krb5/Makefile.in
+@@ -330,10 +330,12 @@ derived_key_test_DEPENDENCIES = libkrb5.
+ 	$(am__DEPENDENCIES_1)
+ krbhst_test_SOURCES = krbhst-test.c
+ krbhst_test_OBJECTS = krbhst-test.$(OBJEXT)
+-krbhst_test_LDADD = $(LDADD)
++krbhst_test_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ krbhst_test_DEPENDENCIES = libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/wind/libwind.la $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ n_fold_test_SOURCES = n-fold-test.c
+ n_fold_test_OBJECTS = n-fold-test.$(OBJEXT)
+@@ -386,10 +388,12 @@ test_addr_DEPENDENCIES = libkrb5.la $(am
+ 	$(am__DEPENDENCIES_1)
+ test_alname_SOURCES = test_alname.c
+ test_alname_OBJECTS = test_alname.$(OBJEXT)
+-test_alname_LDADD = $(LDADD)
++test_alname_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_alname_DEPENDENCIES = libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/wind/libwind.la $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ test_ap_req_SOURCES = test_ap-req.c
+ test_ap_req_OBJECTS = test_ap-req.$(OBJEXT)
+@@ -421,10 +425,12 @@ test_config_DEPENDENCIES = libkrb5.la $(
+ 	$(am__DEPENDENCIES_1)
+ test_crypto_SOURCES = test_crypto.c
+ test_crypto_OBJECTS = test_crypto.$(OBJEXT)
+-test_crypto_LDADD = $(LDADD)
++test_crypto_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_crypto_DEPENDENCIES = libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/wind/libwind.la $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ test_crypto_wrapping_SOURCES = test_crypto_wrapping.c
+ test_crypto_wrapping_OBJECTS = test_crypto_wrapping.$(OBJEXT)
+@@ -442,10 +448,12 @@ test_expand_toks_DEPENDENCIES = libkrb5.
+ 	$(am__DEPENDENCIES_1)
+ test_forward_SOURCES = test_forward.c
+ test_forward_OBJECTS = test_forward.$(OBJEXT)
+-test_forward_LDADD = $(LDADD)
++test_forward_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_forward_DEPENDENCIES = libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/wind/libwind.la $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ test_fx_SOURCES = test_fx.c
+ test_fx_OBJECTS = test_fx.$(OBJEXT)
+@@ -456,17 +464,21 @@ test_fx_DEPENDENCIES = libkrb5.la $(am__
+ 	$(am__DEPENDENCIES_1)
+ test_get_addrs_SOURCES = test_get_addrs.c
+ test_get_addrs_OBJECTS = test_get_addrs.$(OBJEXT)
+-test_get_addrs_LDADD = $(LDADD)
++test_get_addrs_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_get_addrs_DEPENDENCIES = libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/wind/libwind.la $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ test_gic_SOURCES = test_gic.c
+ test_gic_OBJECTS = test_gic.$(OBJEXT)
+-test_gic_LDADD = $(LDADD)
++test_gic_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_gic_DEPENDENCIES = libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/wind/libwind.la $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ test_hostname_SOURCES = test_hostname.c
+ test_hostname_OBJECTS = test_hostname.$(OBJEXT)
+@@ -484,10 +496,12 @@ test_keytab_DEPENDENCIES = libkrb5.la $(
+ 	$(am__DEPENDENCIES_1)
+ test_kuserok_SOURCES = test_kuserok.c
+ test_kuserok_OBJECTS = test_kuserok.$(OBJEXT)
+-test_kuserok_LDADD = $(LDADD)
++test_kuserok_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_kuserok_DEPENDENCIES = libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/wind/libwind.la $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ test_mem_SOURCES = test_mem.c
+ test_mem_OBJECTS = test_mem.$(OBJEXT)
+@@ -540,10 +554,12 @@ test_princ_DEPENDENCIES = libkrb5.la $(a
+ 	$(am__DEPENDENCIES_1)
+ test_renew_SOURCES = test_renew.c
+ test_renew_OBJECTS = test_renew.$(OBJEXT)
+-test_renew_LDADD = $(LDADD)
++test_renew_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_renew_DEPENDENCIES = libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/wind/libwind.la $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ test_rfc3961_SOURCES = test_rfc3961.c
+ test_rfc3961_OBJECTS = test_rfc3961.$(OBJEXT)
+@@ -581,10 +597,12 @@ test_x500_DEPENDENCIES = libkrb5.la $(am
+ 	$(am__DEPENDENCIES_1)
+ verify_krb5_conf_SOURCES = verify_krb5_conf.c
+ verify_krb5_conf_OBJECTS = verify_krb5_conf.$(OBJEXT)
+-verify_krb5_conf_LDADD = $(LDADD)
++verify_krb5_conf_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ verify_krb5_conf_DEPENDENCIES = libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/wind/libwind.la $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)

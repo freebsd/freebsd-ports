@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beets
-PORTVERSION=	1.3.19
+PORTVERSION=	1.4.2
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
@@ -12,14 +12,15 @@ COMMENT=	Media library management system for obsessive-compulsive music geeks
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.27:audio/py-mutagen \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.33:audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0:converters/py-unidecode \
 		${PYTHON_PKGNAMEPREFIX}musicbrainzngs>=0.4:audio/py-musicbrainzngs \
 		${PYTHON_PKGNAMEPREFIX}munkres>=0:math/py-munkres \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}enum34>=1.0.4:devel/py-enum34 \
 		${PYTHON_PKGNAMEPREFIX}jellyfish>=0:devel/py-jellyfish \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six
 
 USES=		python
 USE_PYTHON=	autoplist distutils
@@ -60,7 +61,8 @@ BADFILES_RUN_DEPENDS=	flac:audio/flac \
 			mp3val:audio/mp3val
 BEATPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
 			${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.6.1:www/py-requests-oauthlib
-BPD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>=0:multimedia/py-gstreamer1
+BPD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>=0:multimedia/py-gstreamer1 \
+			${PYTHON_PKGNAMEPREFIX}gobject>=0:devel/py-gobject
 CHROMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyacoustid>=0:audio/py-pyacoustid
 DISCOGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discogs-client>=2.1.0:audio/py-discogs-client
 EMBYUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests

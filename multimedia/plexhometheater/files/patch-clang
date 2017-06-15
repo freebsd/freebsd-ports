@@ -1,26 +1,6 @@
-diff --git xbmc/screensavers/rsxs-0.9/lib/argp-fmtstream.h xbmc/screensavers/rsxs-0.9/lib/argp-fmtstream.h
-index e045a72..ff4f575 100644
---- xbmc/screensavers/rsxs-0.9/lib/argp-fmtstream.h
-+++ xbmc/screensavers/rsxs-0.9/lib/argp-fmtstream.h
-@@ -198,8 +198,12 @@ extern int __argp_fmtstream_ensure (argp_fmtstream_t __fs, size_t __amount);
- #endif
- 
- #ifndef ARGP_FS_EI
-+#ifdef __clang__
-+#define ARGP_FS_EI extern inline __attribute__ ((__gnu_inline__))
-+#else
- #define ARGP_FS_EI extern inline
- #endif
-+#endif
- 
- ARGP_FS_EI size_t
- __argp_fmtstream_write (argp_fmtstream_t __fs,
-
-diff --git lib/cpluff/libcpluff/cpluff.c lib/cpluff/libcpluff/cpluff.c
-index a7e8725..0f5bb90 100644
---- lib/cpluff/libcpluff/cpluff.c
+--- lib/cpluff/libcpluff/cpluff.c.orig	2015-05-11 07:54:22 UTC
 +++ lib/cpluff/libcpluff/cpluff.c
-@@ -77,6 +77,7 @@ CP_C_API const char *cp_get_host_type(void) {
+@@ -77,6 +77,7 @@ CP_C_API const char *cp_get_host_type(vo
  	return CP_HOST;
  }
  
@@ -28,7 +8,7 @@ index a7e8725..0f5bb90 100644
  CP_HIDDEN void cpi_lock_framework(void) {
  #if defined(CP_THREADS)
  	cpi_lock_mutex(framework_mutex);
-@@ -93,6 +94,7 @@ CP_HIDDEN void cpi_unlock_framework(void) {
+@@ -93,6 +94,7 @@ CP_HIDDEN void cpi_unlock_framework(void
  	framework_locked--;
  #endif
  }
@@ -36,11 +16,9 @@ index a7e8725..0f5bb90 100644
  
  static void reset(void) {
  #ifdef CP_THREADS
-diff --git lib/cpluff/libcpluff/logging.c lib/cpluff/libcpluff/logging.c
-index 928f0b4..f0f873d 100644
---- lib/cpluff/libcpluff/logging.c
+--- lib/cpluff/libcpluff/logging.c.orig	2015-05-11 07:54:22 UTC
 +++ lib/cpluff/libcpluff/logging.c
-@@ -129,10 +129,12 @@ CP_C_API cp_status_t cp_register_logger(cp_context_t *context, cp_logger_func_t
+@@ -129,10 +129,12 @@ CP_C_API cp_status_t cp_register_logger(
  	// Report error
  	if (status == CP_ERR_RESOURCE) {
  		cpi_error(context, N_("Logger could not be registered due to insufficient memory."));		
@@ -53,7 +31,7 @@ index 928f0b4..f0f873d 100644
  	}
  	cpi_unlock_context(context);
  
-@@ -166,11 +168,13 @@ CP_C_API void cp_unregister_logger(cp_context_t *context, cp_logger_func_t logge
+@@ -166,11 +168,13 @@ CP_C_API void cp_unregister_logger(cp_co
  		free(lh);
  		update_logging_limits(context);
  	}
@@ -67,11 +45,9 @@ index 928f0b4..f0f873d 100644
  	cpi_unlock_context(context);
  }
  
-diff --git lib/cpluff/libcpluff/pinfo.c lib/cpluff/libcpluff/pinfo.c
-index cfbf049..f7b4a4b 100644
---- lib/cpluff/libcpluff/pinfo.c
+--- lib/cpluff/libcpluff/pinfo.c.orig	2015-05-11 07:54:22 UTC
 +++ lib/cpluff/libcpluff/pinfo.c
-@@ -569,10 +569,12 @@ CP_C_API cp_status_t cp_register_plistener(cp_context_t *context, cp_plugin_list
+@@ -569,10 +569,12 @@ CP_C_API cp_status_t cp_register_plisten
  	// Report error or success
  	if (status != CP_OK) {
  		cpi_error(context, _("A plug-in listener could not be registered due to insufficient memory."));
@@ -84,7 +60,7 @@ index cfbf049..f7b4a4b 100644
  	}
  	cpi_unlock_context(context);
  	
-@@ -591,10 +593,12 @@ CP_C_API void cp_unregister_plistener(cp_context_t *context, cp_plugin_listener_
+@@ -591,11 +593,13 @@ CP_C_API void cp_unregister_plistener(cp
  	if (node != NULL) {
  		process_unregister_plistener(context->env->plugin_listeners, node, NULL);
  	}
@@ -97,11 +73,10 @@ index cfbf049..f7b4a4b 100644
 +#endif
  	cpi_unlock_context(context);
  }
-diff --git lib/cpluff/libcpluff/psymbol.c lib/cpluff/libcpluff/psymbol.c
-index 632b087..fdc15af 100644
---- lib/cpluff/libcpluff/psymbol.c
+ 
+--- lib/cpluff/libcpluff/psymbol.c.orig	2015-05-11 07:54:22 UTC
 +++ lib/cpluff/libcpluff/psymbol.c
-@@ -248,11 +248,13 @@ CP_C_API void * cp_resolve_symbol(cp_context_t *context, const char *id, const c
+@@ -248,11 +248,13 @@ CP_C_API void * cp_resolve_symbol(cp_con
  		symbol_info->usage_count++;
  		provider_info->usage_count++;
  
@@ -115,7 +90,7 @@ index 632b087..fdc15af 100644
  	} while (0);
  
  	// Clean up
-@@ -314,11 +316,13 @@ CP_C_API void cp_release_symbol(cp_context_t *context, const void *ptr) {
+@@ -314,11 +316,13 @@ CP_C_API void cp_release_symbol(cp_conte
  		if (symbol_info->usage_count == 0) {
  			hash_delete_free(context->resolved_symbols, node);
  			free(symbol_info);
@@ -129,3 +104,18 @@ index 632b087..fdc15af 100644
  		}
  	
  		// Check if the symbol providing plug-in is not being used anymore
+--- xbmc/screensavers/rsxs-0.9/lib/argp-fmtstream.h.orig	2015-05-11 07:54:22 UTC
++++ xbmc/screensavers/rsxs-0.9/lib/argp-fmtstream.h
+@@ -198,8 +198,12 @@ extern int __argp_fmtstream_ensure (argp
+ #endif
+ 
+ #ifndef ARGP_FS_EI
++#ifdef __clang__
++#define ARGP_FS_EI extern inline __attribute__ ((__gnu_inline__))
++#else
+ #define ARGP_FS_EI extern inline
+ #endif
++#endif
+ 
+ ARGP_FS_EI size_t
+ __argp_fmtstream_write (argp_fmtstream_t __fs,

@@ -3,7 +3,7 @@
 
 PORTNAME=	wavelet-decompose
 DISTVERSION=	0.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 PKGNAMEPREFIX=	gimp-

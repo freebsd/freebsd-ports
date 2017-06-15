@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.d${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -213,7 +214,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 build-plist:
-	${RM} -f ${PLIST} ${PLIST}.tmp
+	${RM} ${PLIST} ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${COMMAND_PREFIX}${command}%%COMMAND_SUFFIX%% >> ${PLIST}.tmp
 .endfor
@@ -234,7 +235,7 @@ build-plist:
 	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	awk '{if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} print}' ${PLIST}.tmp >> ${PLIST}
-	${RM} -f ${PLIST}.tmp
+	${RM} ${PLIST}.tmp
 
 check-commands:
 .for command in ${COMMANDS}

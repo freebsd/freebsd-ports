@@ -25,7 +25,7 @@ post-patch:
 		${WRKSRC}/configure
 
 # Remove backup files somehow installed to the stagedir
-post-stage:
+post-install:
 	${FIND} ${STAGEDIR}/${DATADIR} -name '*~' -delete -or -name '*~?' -delete
 
 .include <bsd.port.mk>

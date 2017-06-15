@@ -20,6 +20,8 @@ COMMENT=	PYGGEL demo game
 LICENSE=	PD
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyggel>=0:graphics/py-pyggel
 

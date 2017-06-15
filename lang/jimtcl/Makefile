@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jimtcl
-PORTVERSION=	0.76
+PORTVERSION=	0.77
 CATEGORIES=	lang tcl
 
 MAINTAINER=	ports@FreeBSD.org

@@ -17,7 +17,7 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libsphinxclient.so:textproc/libsphinxclient
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

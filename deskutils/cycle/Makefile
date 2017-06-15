@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calendar program for women
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 USES=		python:run tar:bzip2
 USE_WX=		3.0+

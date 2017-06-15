@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://stephe-leake.org/ada/
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Lexical analyser and parser for the Ada language
 
 LICENSE=	GPLv3 GPLv3RLE

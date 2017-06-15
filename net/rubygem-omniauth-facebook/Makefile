@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniauth-facebook
-PORTVERSION=	3.0.0
+PORTVERSION=	4.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

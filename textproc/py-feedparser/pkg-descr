@@ -7,4 +7,4 @@ file, feedparser.py, and it has one primary public function, parse.  parse
 takes a number of arguments, but only one is required, and it can be a URL, a
 local filename, or a raw string containing feed data in any format.
 
-WWW: http://github.com/kurtmckee/feedparser
+WWW: https://github.com/kurtmckee/feedparser

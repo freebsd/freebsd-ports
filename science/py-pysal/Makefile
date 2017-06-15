@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysal
-PORTVERSION=	1.11.2
+PORTVERSION=	1.13.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ COMMENT=	Cross-platform library of spatial analysis functions
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.3:math/py-numpy \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.7:science/py-scipy
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.3,1:math/py-numpy \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.11:science/py-scipy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose
 

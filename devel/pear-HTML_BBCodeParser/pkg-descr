@@ -6,4 +6,4 @@ produce xhtml 1.0 compliant code. All tags are validated and so are all
 their attributes. It should be easy to extend this parser with your own
 tags.
 
-WWW: http://pear.php.net/package/HTML_BBCodeParser/
+WWW: https://pear.php.net/package/HTML_BBCodeParser

@@ -9,19 +9,20 @@ MASTER_SITES=	http://www.arda.homeunix.net/software-downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User authentication and password changing utility
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libcourierauth.so:security/courier-authlib-base
 
 GNU_CONFIGURE=	yes
-USES=		gmake
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		gmake localbase
 
-MINUID?=	100
+MINUID?=	100 # XXX: set this to 1000 for FreeBSD?
 
-CONFIGURE_ARGS+=	--with-minuid=${MINUID}
+CONFIGURE_ARGS=	--with-minuid=${MINUID}
 
 PLIST_FILES=	sbin/courierpasswd man/man8/courierpasswd.8.gz
-PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL NEWS README
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 
 OPTIONS_DEFINE=	DOCS
 

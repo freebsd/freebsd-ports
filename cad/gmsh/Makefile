@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.13.2
+PORTVERSION=	2.16.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DIST_SUBDIR=	gmsh
 
-MAINTAINER?=	jrm@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT?=	Automatic 3D finite element mesh generator
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ = ${WRKSRC}/doc/LICENSE.txt
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -27,9 +29,9 @@ BROKEN_FreeBSD_12_i386=Does not build on FreeBSD 12 i386 due to a clang bug: htt
 
 SLAVEDIRS=	cad/gmsh-occ
 
-USES=		blaslapack cmake fortran gmake jpeg tar:tgz
+USES=		blaslapack cmake fortran jpeg tar:tgz
 USE_GL=		gl glu
-USE_XORG=	x11 xext xfixes xft
+USE_XORG=	x11 xcursor xext xinerama xfixes xft
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -62,7 +64,8 @@ OCC_CMAKE_BOOL=		ENABLE_OCC
 OCC_CMAKE_ON=		-DOCC_INC=${LOCALBASE}/include/OpenCASCADE
 OCC_CONFLICTS=		gmsh-2.*
 OCC_CONFLICTS_OFF=	gmsh-occ-2.*
-OCC_LIB_DEPENDS=	libTKernel.so:cad/opencascade
+OCC_LIB_DEPENDS=	libopenblas.so:math/openblas libTKernel.so:cad/opencascade
+OCC_USE=		gnome=cairo
 SHARED_ALL_TARGET=	shared
 SHARED_CMAKE_BOOL=	ENABLE_BUILD_SHARED
 SHARED_VARS=		USE_LDCONFIG=yes

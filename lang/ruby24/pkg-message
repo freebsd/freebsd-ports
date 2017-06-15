@@ -1,0 +1,14 @@
+====
+Some of the standard commands are provided as separate ports for ease
+of upgrading:
+
+	devel/ruby-gems:	gem - RubyGems package manager
+	devel/rubygem-rake:	rake - Ruby Make
+
+And some of the standard libraries are provided as separate ports
+since they require extra dependencies:
+
+	databases/ruby-gdbm:	GDBM module
+
+Install them as occasion demands.
+====

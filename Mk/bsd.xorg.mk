@@ -59,15 +59,12 @@ USE_XORG+=      xorg-macros
 
 . if ${XORG_CAT} == "driver"
 USE_XORG+=	xorg-server xproto randrproto xi renderproto xextproto \
-		inputproto kbproto fontsproto videoproto dri2proto xf86driproto \
-		presentproto glproto xineramaproto resourceproto scrnsaverproto
-# work around a llvm bug on i386, llvm bug #15806 
-# reproduced with clang 3.2 (current release) and 3.1
-.  if ${ARCH} == i386
-CFLAGS+=	-fno-optimize-sibling-calls
-.  endif
+		inputproto kbproto fontsproto videoproto dri2proto dri3proto \
+		xf86driproto presentproto glproto xineramaproto resourceproto \
+		scrnsaverproto
 CONFIGURE_ENV+=	DRIVER_MAN_SUFFIX=4x DRIVER_MAN_DIR='$$(mandir)/man4'
 USES+=		libtool
+INSTALL_TARGET=	install-strip
 . endif
 
 . if ${XORG_CAT} == "font"
@@ -101,7 +98,7 @@ CONFIGURE_ARGS+=	--with-xkb-path=${LOCALBASE}/share/X11/xkb \
 					--with-fontrootdir=${LOCALBASE}/share/fonts
 
 LIB_PC_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/dri
-USE_XORG+=	pciaccess xextproto videoproto fontsproto dri2proto fontutil:build
+USE_XORG+=	fontutil:build
 . endif
 
 .endif
@@ -115,7 +112,7 @@ Xorg_Post_Include=		bsd.xorg.mk
 # Register all xorg .pc files here.
 # foo_LIB_PC_DEPENDS means it should go to BUILD_DEPENDS *and* RUN_DEPENDS.
 
-XORG_MODULES=	bigreqsproto \
+XORG_MODULES=			bigreqsproto \
 				compositeproto \
 				damageproto \
 				dmx \
@@ -169,6 +166,7 @@ XORG_MODULES=	bigreqsproto \
 				xf86vidmodeproto \
 				xfixes \
 				xfont \
+				xfont2 \
 				xfontcache \
 				xft \
 				xi \
@@ -238,7 +236,7 @@ xaw_LIB_PC_DEPENDS=		${xaw7_LIB_PC_DEPENDS}
 xaw6_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xaw6.pc:x11-toolkits/libXaw
 xaw7_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xaw7.pc:x11-toolkits/libXaw
 xbitmaps_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xbitmaps.pc:x11/xbitmaps
-xcb_LIB_PC_DEPENDS=			${LOCALBASE}/libdata/pkgconfig/xcb.pc:x11/libxcb
+xcb_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xcb.pc:x11/libxcb
 xcmiscproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcmiscproto.pc:x11/xcmiscproto
 xcomposite_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcomposite.pc:x11/libXcomposite
 xcursor_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xcursor.pc:x11/libXcursor
@@ -255,6 +253,7 @@ xf86rushproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xf86rushproto.pc:x11
 xf86vidmodeproto_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xf86vidmodeproto.pc:x11/xf86vidmodeproto
 xfixes_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xfixes.pc:x11/libXfixes
 xfont_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xfont.pc:x11-fonts/libXfont
+xfont2_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xfont2.pc:x11-fonts/libXfont2
 xfontcache_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xfontcache.pc:x11-fonts/libXfontcache
 xft_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xft.pc:x11-fonts/libXft
 xi_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xi.pc:x11/libXi

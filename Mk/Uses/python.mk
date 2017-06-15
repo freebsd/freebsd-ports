@@ -193,10 +193,16 @@
 #	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;}
 #	PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}
 #	PYTHON_PLATFORM=${PYTHON_PLATFORM}
+#	PYTHON_PYOEXTENSION=${PYTHON_PYOEXTENSION}
 #	PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+#	PYTHON_SUFFIX=${PYTHON_SUFFIX}
 #	PYTHON_VER=${PYTHON_VER}
 #	PYTHON_VERSION=${PYTHON_VERSION}
 #
+# and PYTHON2 and PYTHON3 will be set according to the Python version:
+#
+#	PYTHON2="" PYTHON3="@comment " for Python 2.x
+#	PYTHON2="@comment " PYTHON3="" for Python 3.x
 #
 # Deprecated variables, which exist for compatibility and will be removed
 # soon:
@@ -222,7 +228,7 @@ _INCLUDE_USES_PYTHON_MK=	yes
 # What Python version and what Python interpreters are currently supported?
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_PYTHON_VERSIONS=		2.7 3.4 3.5 3.3	# preferred first
+_PYTHON_VERSIONS=		2.7 3.6 3.5 3.4 3.3	# preferred first
 _PYTHON_PORTBRANCH=		2.7		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
@@ -371,7 +377,8 @@ IGNORE=		needs an unsupported version of Python
 # try to find a different one, if the passed version fits into
 # the supported version range.
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
-.if !defined(PYTHON_NO_DEPENDS)
+.if !defined(PYTHON_NO_DEPENDS) && \
+    ${PYTHON_VERSION} != ${PYTHON_DEFAULT_VERSION}
 DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
 .endif
 
@@ -433,6 +440,13 @@ PYTHONPREFIX_SITELIBDIR=	${PYTHON_SITELIBDIR:S;${PYTHONBASE};${PREFIX};}
 # Used for recording the installed files.
 _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 
+# PEP 0488 (https://www.python.org/dev/peps/pep-0488/)
+.if ${PYTHON_REL} < 3500
+PYTHON_PYOEXTENSION=	pyo
+.else
+PYTHON_PYOEXTENSION=	opt-1.pyc
+.endif
+
 # Ports bound to a certain python version SHOULD
 # - use the PYTHON_PKGNAMEPREFIX
 # - use directories using the PYTHON_PKGNAMEPREFIX
@@ -468,9 +482,9 @@ UNIQUE_FIND_SUFFIX_FILES=	\
 
 _CURRENTPORT:=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 .if defined(_PYTHON_FEATURE_DISTUTILS) && \
-	${_CURRENTPORT:S/${PYTHON_SUFFIX}$//} != ${PYTHON_PKGNAMEPREFIX}setuptools
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX}
+	${_CURRENTPORT} != ${PYTHON_PKGNAMEPREFIX}setuptools
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools
 .endif
 
 # distutils support
@@ -529,11 +543,6 @@ add-plist-pymod:
 # of TMPPLIST that end with .py[co], so that they conform
 # to PEP 3147 (see http://www.python.org/dev/peps/pep-3147/)
 PYMAGICTAG=		${PYTHON_CMD} -c 'import imp; print(imp.get_tag())'
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
 _USES_stage+=	935:add-plist-python
 add-plist-python:
 	@${AWK} '\
@@ -542,7 +551,7 @@ add-plist-python:
 		/^@dirrmtry / {d = substr($$0, 11); if (d in dirs) {print $$0 "/" pc}; print $$0; next} \
 		{print} \
 		' \
-		pc="__pycache__" mt="$$(${PYMAGICTAG})" pyo="${PYOEXTENSION}" \
+		pc="__pycache__" mt="$$(${PYMAGICTAG})" pyo="${PYTHON_PYOEXTENSION}" \
 		${TMPPLIST} > ${TMPPLIST}.pyc_tmp
 	@${MV} ${TMPPLIST}.pyc_tmp ${TMPPLIST}
 .endif # ${PYTHON_REL} >= 3200 && defined(_PYTHON_FEATURE_PY3KPLIST)
@@ -591,9 +600,16 @@ PREFIX=		${PYTHONBASE}
 PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;} \
 		PYTHON_PLATFORM=${PYTHON_PLATFORM} \
+		PYTHON_PYOEXTENSION=${PYTHON_PYOEXTENSION} \
 		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
+		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER} \
-		PYTHON_VERSION=python${_PYTHON_VERSION}
+		PYTHON_VERSION=${PYTHON_VERSION}
+.if ${PYTHON_REL} < 3000
+PLIST_SUB+=	PYTHON2="" PYTHON3="@comment "
+.else
+PLIST_SUB+=	PYTHON2="@comment " PYTHON3=""
+.endif
 
 _USES_POST+=	python
 .endif # _INCLUDE_USES_PYTHON_MK

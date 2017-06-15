@@ -6,12 +6,15 @@ PORTVERSION=	0.4.8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/fraqtive/Fraqtive/Fraqtive%20${PORTVERSION}/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
 
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		qmake tar:bzip2
-USE_QT4=	gui opengl xml uic_build moc_build rcc_build
-USE_GL=		glu
+USE_QT4=	corelib gui opengl xml uic_build moc_build rcc_build
+USE_GL=		gl glu
 
 OPTIONS_DEFINE=	SSE2
 SSE2_DESC=	Enable SSE2 optimization

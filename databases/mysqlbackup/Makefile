@@ -4,8 +4,7 @@
 PORTNAME=	mysqlbackup
 PORTVERSION=	2.8
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE \
-		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Creates MySQL backups on a periodic basis
@@ -13,10 +12,9 @@ COMMENT=	Creates MySQL backups on a periodic basis
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Unfetchable (google code has gone away)
-
-USE_MYSQL=	yes
+USES=		mysql
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PERIODICS=	200.mysqlbackup.daily \
 		200.mysqlbackup.weekly \
@@ -27,12 +25,12 @@ PLIST_FILES=	bin/mysqlbackup \
 		man/man1/mysqlbackup.1.gz
 
 pre-install:
-	${REINPLACE_CMD} ${SUB_LIST:S,$,!g,:S,^, -e s!%%,:S,=,%%!,} \
+	@${REINPLACE_CMD} ${SUB_LIST:S,$,!g,:S,^, -e s!%%,:S,=,%%!,} \
 		${PERIODICS:S,^,${WRKSRC}/,}
 
 do-install:
 .for periodic in ${PERIODICS}
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/${periodic:E}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/${periodic:E}
 	${INSTALL_SCRIPT} ${WRKSRC}/${periodic} \
 		${STAGEDIR}${PREFIX}/etc/periodic/${periodic:E}/${periodic:R}
 .endfor

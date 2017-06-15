@@ -3,6 +3,7 @@
 
 PORTNAME=	samesame
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://samesame.kruijff.org/ \
 		LOCAL/dhn

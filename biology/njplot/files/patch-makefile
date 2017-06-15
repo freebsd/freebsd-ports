@@ -1,0 +1,49 @@
+--- makefile.orig	2012-01-04 08:50:43 UTC
++++ makefile
+@@ -1,5 +1,5 @@
+ #uncomment and locally adapt next line to fix the full helpfile path name
+-HELPFILENAME = -DHELPFILENAME=\"/usr/share/njplot/njplot.help\"
++HELPFILENAME = -DHELPFILENAME=\"${DATADIR}/njplot.help\"
+ 
+ #comment out next line and uncomment next 2 to use the PDFLib Lite library 
+ NO_PDF = -DNO_PDF
+@@ -7,27 +7,31 @@ NO_PDF = -DNO_PDF
+ #PDFLIB = -L$(PDF) -lpdf
+ 
+ # c compiler and linker
+-CC = gcc
++CC ?= cc
+ 
+-# Vibrant top directory
+-VIBRANT = /usr/include/ncbi
++NCBIINC = $(LOCALBASE)/include/ncbi
++NCBILIB = $(LOCALBASE)/lib/ncbi
+ 
+ OBJECTS = njplot-vib.o
+ OBJUNROOTED = unrooted-vib.o preptree.o
+ 
++CFLAGS  = -c -DWIN_MOTIF -Dunix -I${LOCALBASE}/include -I$(NCBIINC) $(HELPFILENAME) $(NO_PDF) -Wimplicit-function-declaration
+ 
+-CFLAGS  = -c -DWIN_MOTIF -Dunix -I$(VIBRANT) $(HELPFILENAME) $(NO_PDF)
+-	
+ all: njplot  unrooted newicktops newicktotxt
+ 
+ 
+ njplot : $(OBJECTS)
+ 	$(CC) -o njplot $(OBJECTS) \
+-        -lvibrant -lncbi -lXm -lXt
+-        
++	-L$(NCBILIB) \
++        -lvibrant -lncbi \
++	$(MOTIFLIB) \
++	-L$(LOCALBASE)/lib -lXmu -lXt -lX11 -lm
++
+ unrooted : $(OBJUNROOTED)
+ 	$(CC) -o unrooted $(OBJUNROOTED) \
+-        -lvibrant -lncbi -lXm -lXt
++        -L$(NCBILIB) -lvibrant -lncbi \
++	$(MOTIFLIB) \
++	-L$(LOCALBASE)/lib -lXmu -lXt -lX11 -lm
+ 
+ newicktops: njplot-vib.c
+ 	$(CC) -DNO_GUI  -DNO_PDF -o $@ njplot-vib.c -lm

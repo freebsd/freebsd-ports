@@ -1,0 +1,61 @@
+--- fox/CMakeLists.txt.orig	2015-11-16 14:35:35 UTC
++++ fox/CMakeLists.txt
+@@ -20,8 +20,17 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_C
+ 
+ if(PKG_CONFIG_FOUND)
+     pkg_check_modules(FOX fox)
+-    list(APPEND DXIRCFOX_LIBS ${FOX_LIBRARIES})
+-    list(APPEND DXIRCFOX_INCLUDE_DIRS ${FOX_INCLUDE_DIRS})
++    find_path(FOX_INCLUDE_DIR FXApp.h
++    PATHS
++    ${FOX_INCLUDE_DIRS}
++    /usr/include/fox-1.6
++    /usr/local/include/fox-1.6)
++    find_library(FOX_LIBRARY FOX-1.6
++    ${FOX_LIBRARY_DIRS}
++    /usr/lib
++    /usr/local/lib)
++    list(APPEND DXIRCFOX_LIBS ${FOX_LIBRARY})
++    list(APPEND DXIRCFOX_INCLUDE_DIRS ${FOX_INCLUDE_DIR})
+ endif(PKG_CONFIG_FOUND)
+ 
+ if(NOT FOX_FOUND)
+@@ -47,16 +56,14 @@ endif()
+ 
+ set(HAVE_X11 FALSE)
+ if(NOT WIN32)
+-    if(PKG_CONFIG_FOUND)
+-        pkg_check_modules(X11 x11)
++    find_package(X11)
+         list(APPEND DXIRCFOX_LIBS ${X11_LIBRARIES})
+-        list(APPEND DXIRCFOX_INCLUDE_DIRS ${X11_INCLUDE_DIRS})
++        list(APPEND DXIRCFOX_INCLUDE_DIRS ${X11_INCLUDE_DIR})
+         if(X11_FOUND)
+             set(HAVE_X11 TRUE)
+         else(X11_FOUND)
+             set(FOX_HAVE_TRAY FALSE)
+         endif(X11_FOUND)
+-    endif(PKG_CONFIG_FOUND)
+ else(NOT WIN32)
+     list(APPEND DXIRCFOX_LIBS "ws2_32" "winmm")
+ endif(NOT WIN32)
+@@ -89,8 +96,17 @@ endif(HAVE_LUA)
+ if(HAVE_ENCHANT)
+     if(PKG_CONFIG_FOUND)
+         pkg_check_modules(ENCHANT enchant)
+-        list(APPEND DXIRCFOX_LIBS ${ENCHANT_LIBRARIES})
+-        list(APPEND DXIRCFOX_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIRS})
++        find_path(ENCHANT_INCLUDE_DIR enchant++.h
++        PATHS
++        ${ENCHANT_INCLUDE_DIRS}
++        /usr/include/enchant
++        /usr/local/include/enchant)
++        find_library(ENCHANT_LIBRARY enchant
++        ${ENCHANT_LIBRARY_DIRS}
++        /usr/lib
++        /usr/local/lib)
++        list(APPEND DXIRCFOX_LIBS ${ENCHANT_LIBRARY})
++        list(APPEND DXIRCFOX_INCLUDE_DIRS ${ENCHANT_INCLUDE_DIR})
+     endif(PKG_CONFIG_FOUND)
+     if(NOT ENCHANT_FOUND)
+         set(ENCHANT_INCLUDE_DIR "" CACHE PATH "Path to enchant include dir")

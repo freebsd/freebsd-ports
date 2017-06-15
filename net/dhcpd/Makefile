@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpd
-PORTVERSION=	5.8.20151202
+PORTVERSION=	6.0.20170207
 CATEGORIES=	net
 
 MAINTAINER=	koue@chaosophia.net
@@ -9,15 +9,14 @@ COMMENT=	OpenBSD dhcp daemon
 
 LICENSE=	BSD3CLAUSE
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/usr.sbin/${PORTNAME}
+WRKSRC_SUBDIR=	src/usr.sbin/${PORTNAME}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koue
 
 CONFLICTS=	isc-dhcp4[1-3]-server*
 
-USES=		uidfix
-USE_OPENSSL=	yes
+USES=		ssl uidfix
 USE_RC_SUBR=	dhcpd
 
 CFLAGS+=	-Wall

@@ -49,7 +49,7 @@ pre-patch:
 		${WRKSRC}/glkterm/Makefile ${WRKSRC}/dungeon-gdt/Makefile
 
 do-build:
-	@(cd ${WRKSRC}/glkterm && ${MAKE})
+	@(cd ${WRKSRC}/glkterm && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC}/dungeon-gdt/ && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS})
 

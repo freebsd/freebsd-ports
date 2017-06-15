@@ -6,7 +6,7 @@ PORTVERSION=	${SNAPSHOT}
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Python package used in Ada testsuites
 
 LICENSE=	GPLv3

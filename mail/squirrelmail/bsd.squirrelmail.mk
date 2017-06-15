@@ -33,7 +33,7 @@ PKGNAMEPREFIX?=	squirrelmail-
 PKGNAMESUFFIX?=	-plugin
 DIST_SUBDIR?=	squirrelmail
 
-RUN_DEPENDS+=	${SQUIRRELDIR}/index.php:mail/squirrelmail
+RUN_DEPENDS+=	${LOCALBASE}/${SQUIRRELDIR_REL}/index.php:mail/squirrelmail
 
 .ifdef USE_SM_COMPAT
 RUN_DEPENDS+=	squirrelmail-compatibility-plugin>0:mail/squirrelmail-compatibility-plugin
@@ -48,7 +48,9 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 USE_PHP?=	yes
-WANT_PHP_WEB=	yes
+.if empty(USES:Mphp*)
+USES+=		php:web
+.endif
 
 SQUIRREL_PLUGIN_NAME?=   ${PORTNAME}
 PLIST_SUB+=     SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}

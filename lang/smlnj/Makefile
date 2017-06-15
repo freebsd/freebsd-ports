@@ -18,6 +18,8 @@ LICENSE_TEXT=	The text of the license can be obtained from the following URL:\
 		http://www.smlnj.org/license.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-install
@@ -39,21 +41,6 @@ POSITION64_DESC=	use 64bit file${CALM} positions - implies RECOMPILE
 # Recompiling the compiler currently fails on amd64
 .if ${ARCH} == "i386"
 ML_RECOMPILE_OPTIONS=	RECOMPILE POSITION64
-.endif
-
-.if (${ARCH} == "amd64") && (${OSVERSION} >= 1000029)
-ONLY_FOR_ARCHS=	i386 amd64
-.elif (${ARCH} == "amd64")
-ONLY_FOR_ARCHS=	i386 amd64
-# Compilation of the i386 runtime source on older amd64 systems requires
-# i386 system headers from the respective FreeBSD Version, taken from
-# stable/N/sys/i386/include, r196045 (N=8) and r225736 (N=9).
-EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_SIGNAL=\\\"freebsd-8-i386-signal.h\\\"
-EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_IEEEFP=\\\"freebsd-8-i386-ieeefp.h\\\"
-EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386__TYPES=\\\"freebsd-9-i386-_types.h\\\"
-EXTRA_DEFS+=	-DINCLUDE_FREEBSD_I386_ENDIAN=\\\"freebsd-9-i386-endian.h\\\"
-.else
-ONLY_FOR_ARCHS=	i386
 .endif
 
 .if (${ARCH} == "amd64")
@@ -204,7 +191,7 @@ MLSOURCEPATCHES_CMD=	${TRUE}
 
 do-build:
 	cd ${WRKSRC} && unset PWD && \
-	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
+	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	MLNORUNTIMECLEAN=yes \
 	MLRUNTIMEPATCHES=`${MLRUNTIMEPATCHES_CMD}` \
 	MLSTANDARDPATCHES=`${MLSTANDARDPATCHES_CMD}` \
@@ -225,7 +212,7 @@ do-build:
 	./makeml
 	@${ECHO} '(* Removing old libs and heaps: *)'
 	cd ${WRKSRC}/${RECOMPILEDIR} && \
-	${RM} -rf ../../lib && ${MKDIR} ../../lib && \
+	${RM} -r ../../lib && ${MKDIR} ../../lib && \
 	${FIND} ../../bin/.heap -name '*.${MLARCH}-bsd' \
 	\! -name 'sml.${MLARCH}-bsd' -delete -print
 	@${ECHO} '(* Installing the recompiled libs and heap: *)'
@@ -233,7 +220,7 @@ do-build:
 	./installml
 	@${ECHO} '(* Building requested targets: *)'
 	cd ${WRKSRC} && unset PWD && \
-	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
+	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	MLNORUNTIMECLEAN=yes RECOMPILEDIR="${RECOMPILEDIR}" \
 	CFLAGS='${CFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh
@@ -333,7 +320,7 @@ do-install:
 	${MKDIR} "${STAGEDIR}${MLROOT}"
 .if ! defined(ML_RECOMPILE)
 	cd ${WRKSRC} && unset PWD && \
-	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
+	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	STAGEDIR="${STAGEDIR}" MLLIB="${MLLIB}" \
 	INSTALLDIR="${STAGEDIR}${MLROOT}" \
 	CFLAGS='${CFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
@@ -350,7 +337,7 @@ do-install:
 	./makeml
 	@${ECHO} '(* Installing into ${MLROOT}: *)'
 	cd ${WRKSRC} && unset PWD && \
-	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="${PATCH_ARGS}" \
+	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	STAGEDIR="${STAGEDIR}" MLLIB="${MLLIB}" \
 	INSTALLDIR="${STAGEDIR}${MLROOT}" RECOMPILEDIR="${RECOMPILEDIR}" \
 	CFLAGS='${CFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
@@ -379,7 +366,6 @@ do-install:
 	@${ECHO} ' done. *)'
 .endif
 
-post-install:
 # Only execute ${PKGINSTALL} when installing to ${PREFIX},
 # but not when staging.
 .ifmake install${CALM}
@@ -387,7 +373,6 @@ post-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-post-stage:
 	${FIND} ${STAGEDIR} -type f -name '\._*' -delete
 	MLARCHOPSYS=`${STAGEDIR}${MLBIN}/.arch-n-opsys` && \
 	( eval $${MLARCHOPSYS} ; \

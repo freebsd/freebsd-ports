@@ -25,7 +25,6 @@ regression-test: build
 	${MAKE} -C ${WRKSRC} test
 
 post-install:
-		@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 		@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 		${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 

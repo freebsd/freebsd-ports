@@ -11,16 +11,19 @@ DIST_SUBDIR=	pure
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rational number library for the Pure language
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pure
-PORTDOCS=	README
-OPTIONS_DEFINE=	DOCS
+NO_ARCH=	yes
 
+PORTDOCS=	README
 PLIST_FILES=	lib/pure/rational.pure \
 		lib/pure/rat_interval.pure
 
-post-install:
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

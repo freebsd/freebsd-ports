@@ -17,11 +17,12 @@ USES=		uidfix
 MAKE_ARGS=	LIBDIR=${PREFIX}/lib
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	include/libuutil.h lib/libuutil.a lib/libuutil.so \
+PLIST_FILES=	include/libuutil.h \
+		lib/libuutil.a \
+		lib/libuutil.so \
 		lib/libuutil.so.1
 
 post-install:
-	(cd ${WRKSRC} && ${INSTALL_DATA} libuutil.h \
-		${STAGEDIR}${PREFIX}/include/)
+	${INSTALL_DATA} ${WRKSRC}/libuutil.h ${STAGEDIR}${PREFIX}/include/
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
@@ -133,7 +133,7 @@ pre-configure:
 
 # replace bundled mp4v2 with placeholder
 post-configure:
-	@${RM} -rf ${WRKSRC}/lib/mp4v2
+	@${RM} -r ${WRKSRC}/lib/mp4v2
 	@${MKDIR} ${WRKSRC}/lib/mp4v2
 	@echo '#include "mpeg4ip.h"' > ${WRKSRC}/lib/mp4v2/mp4.h
 

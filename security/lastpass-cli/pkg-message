@@ -16,14 +16,6 @@ lpass.* or within your $SECURE_TMPDIR.  For example, with vim:
 
 
 ===============================================================================
-Using OpenSSL from ports
-===============================================================================
-
-If you're using security/openssl, ensure ftp/curl is configured with the
-HEIMDAL_PORT option to avoid linking to two different OpenSSL libraries.
-
-
-===============================================================================
 Other steps
 ===============================================================================
 

@@ -1,0 +1,32 @@
+--- Makefile.orig	2009-02-20 21:46:51 UTC
++++ Makefile
+@@ -2,14 +2,15 @@ HOST=generic
+ #HOST=mingw
+ #HOST=haiku
+ 
+-CC=g++
++CXX?=g++
+ RM=rm
+-CFLAGS= -O3
+-COPTS=  $(CFLAGS) -funsigned-char \
++CXXFLAGS?= -O3
++CXXFLAGS+= `sdl-config --cflags`
++COPTS=  $(CXXFLAGS) -funsigned-char \
+ 	-DRESOURCEPATH=\"$(INSTALLRESOURCEPATH)\" \
+ 	-DSCOREPATH=\"$(INSTALLHISCORES)\"
+-LIBS= -lm -lSDL -lSDL_mixer -lGL -lGLU
+-SRCS= alien.c asylum.c bullet.c file.c keyboard.c maze.c menus.c player.c projectile.c sound.c vdu.c
++LIBS= -lm `sdl-config --libs` -lSDL_mixer -lGL -lGLU
++SRCS= alien.cpp asylum.cpp bullet.cpp file.cpp keyboard.cpp maze.cpp menus.cpp player.cpp projectile.cpp sound.cpp vdu.cpp
+ 
+ RESOURCES=data/Resources data/Ego data/Psyche data/Id data/Voices
+ 
+@@ -95,7 +96,7 @@ oggs:
+ build: asylum$(EXE)
+ 
+ asylum$(EXE): $(SRCS) $(OS_SOURCE) asylum.h Makefile
+-	$(CC) $(COPTS) $(LDFLAGS) -o asylum$(EXE) $(SRCS) $(OS_SOURCE) $(LIBS)
++	$(CXX) $(COPTS) $(LDFLAGS) -o asylum$(EXE) $(SRCS) $(OS_SOURCE) $(LIBS)
+ 
+ clean:
+ 	$(RM) asylum$(EXE)

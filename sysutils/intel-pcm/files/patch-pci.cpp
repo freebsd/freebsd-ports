@@ -1,10 +1,10 @@
---- pci.cpp.orig	2016-04-20 10:01:09 UTC
+--- pci.cpp.orig	2016-10-31 10:26:34 UTC
 +++ pci.cpp
-@@ -20,6 +20,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIG
+@@ -17,6 +17,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIG
+ 
+ #include <iostream>
+ #include <stdio.h>
++#include <strings.h> //for bzero
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <fcntl.h>
-+#include <strings.h> // for bzero()
- #include "pci.h"
- 
- #ifndef _MSC_VER

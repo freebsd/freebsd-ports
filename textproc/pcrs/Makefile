@@ -3,7 +3,7 @@
 
 PORTNAME=	pcrs
 PORTVERSION=	0.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://distfiles.master.finkmirrors.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

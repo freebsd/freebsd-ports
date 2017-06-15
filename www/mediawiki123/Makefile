@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.23.15
+PORTVERSION=	1.23.17
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	123
@@ -12,11 +13,12 @@ COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki12[4567]-[0-9]*
+CONFLICTS=	mediawiki12[678]-[0-9]*
 
-USES=		shebangfix
+USES=		python:run shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
-		maintenance/hiphop/run-server
+		maintenance/hiphop/run-server \
+		maintenance/language/zhtable/Makefile.py
 SHEBANG_LANG=	hhvm
 hhvm_OLD_CMD=	/usr/bin/hhvm
 hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet

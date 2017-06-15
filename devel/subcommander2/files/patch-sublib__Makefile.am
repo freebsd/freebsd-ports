@@ -1,13 +1,5 @@
 --- sublib/Makefile.am.orig	2009-09-20 18:10:18.000000000 +0900
 +++ sublib/Makefile.am	2012-05-10 05:23:34.000000000 +0900
-@@ -1,6 +1,6 @@
- ## process this file with automake to produce Makefile.in
- 
--QT_MOC               = @QT_BIN@/moc
-+QT_MOC               = @QT_BIN@/moc-qt4
- QT_RCC               = @QT_BIN@/rcc
- 
- scdir                = $(datadir)/subcommander
 @@ -121,7 +121,7 @@
  	$(QT_MOC) $< -o $@
  

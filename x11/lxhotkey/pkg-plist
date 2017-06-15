@@ -1,0 +1,15 @@
+bin/lxhotkey
+include/lxhotkey/lxhotkey.h
+lib/locale/cs/LC_MESSAGES/lxhotkey.mo
+lib/locale/gl/LC_MESSAGES/lxhotkey.mo
+lib/locale/nl/LC_MESSAGES/lxhotkey.mo
+lib/locale/pt/LC_MESSAGES/lxhotkey.mo
+lib/locale/ru/LC_MESSAGES/lxhotkey.mo
+lib/locale/sr/LC_MESSAGES/lxhotkey.mo
+lib/locale/sr@latin/LC_MESSAGES/lxhotkey.mo
+lib/locale/uk/LC_MESSAGES/lxhotkey.mo
+lib/lxhotkey/gtk.so
+lib/lxhotkey/ob.so
+libdata/pkgconfig/lxhotkey.pc
+man/man1/lxhotkey.1.gz
+share/applications/lxhotkey-gtk.desktop

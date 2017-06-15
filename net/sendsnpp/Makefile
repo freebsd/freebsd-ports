@@ -8,7 +8,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendSNPP/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for sending messages through a RFC1861 compliant SNPP server
 
 NO_BUILD=	yes

@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-siliconmotion-1.7.8.tar.bz2) = e9d449a9fd9e58b4e018447b6c64005f7874cffb1777e513ac9fc41a86071beb
-SIZE (xorg/driver/xf86-video-siliconmotion-1.7.8.tar.bz2) = 398928
+TIMESTAMP = 1485132207
+SHA256 (xorg/driver/xf86-video-siliconmotion-1.7.9.tar.bz2) = d0f3c691e71108d27a061beb62bf78b36ec35bd755905692734dd68cfb3359bc
+SIZE (xorg/driver/xf86-video-siliconmotion-1.7.9.tar.bz2) = 416351

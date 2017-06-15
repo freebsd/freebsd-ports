@@ -18,18 +18,10 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mlr man/man1/mlr.1.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-.endif
+BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
 
 post-configure:
-	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-c_Makefile
-	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-libtool
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-	${REINPLACE_CMD} -e 's|flex|${LOCALBASE}/bin/flex|' \
-		${WRKSRC}/c/dsls/Makefile
-.endif
+	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-c_Makefile
+	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-libtool
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

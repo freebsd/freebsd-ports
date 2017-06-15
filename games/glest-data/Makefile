@@ -44,7 +44,7 @@ do-install:
 .for DIRE in ${GLESTDATADIRE}
 	@cd ${WRKSRC} && \
 		${FIND} ${DIRE} -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
-			${FIND} ${DIRE} -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+			${FIND} ${DIRE} -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/{}" \;
 .endfor
 
 .include <bsd.port.mk>

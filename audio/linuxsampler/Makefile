@@ -3,7 +3,7 @@
 
 PORTNAME=	linuxsampler
 PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
@@ -17,10 +17,10 @@ RESTRICTED=	no commercial use
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported"
 
-OPTIONS_DEFINE=	JACK ALSA DSSI LV2CORE
+OPTIONS_DEFINE=	JACK ALSA DSSI LV2
 OPTIONS_DEFAULT=	JACK
 DSSI_DESC=	Enable DSSI support
-LV2CORE_DESC=	Enable LV2 support
+LV2_DESC=	Enable LV2 support
 
 USES=		tar:bzip2 libtool gmake pathfix pkgconfig sqlite:3
 GNU_CONFIGURE=	yes
@@ -57,13 +57,13 @@ CONFIGURE_ENV+=	ac_cv_header_dssi_h=no
 PLIST_SUB+=	DSSI="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MLV2CORE}
-BUILD_DEPENDS+=	lv2core>=0:audio/lv2core
-RUN_DEPENDS+=	lv2core>=0:audio/lv2core
-PLIST_SUB+=	LV2CORE=""
+.if ${PORT_OPTIONS:MLV2}
+BUILD_DEPENDS+=	lv2>=1.14.0_1:audio/lv2
+RUN_DEPENDS+=	lv2>=1.14.0_1:audio/lv2
+PLIST_SUB+=	LV2=""
 .else
 CONFIGURE_ENV+=	ac_cv_header_lv2_h=no
-PLIST_SUB+=	LV2CORE="@comment "
+PLIST_SUB+=	LV2="@comment "
 .endif
 
 post-patch:

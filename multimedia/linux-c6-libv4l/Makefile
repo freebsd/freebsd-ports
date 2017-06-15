@@ -3,18 +3,16 @@
 
 PORTNAME=	libv4l
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	multimedia linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Collection of video4linux support libraries (CentOS 6)
+COMMENT=	Video4Linux library (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-f10-libv4l-[0-9]*
-
-USES=		linux:c6
-USE_LINUX_RPM=	yes
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	2.el6
+USES=		linux:c6
 USE_LDCONFIG=	yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+USE_LINUX_RPM=	yes
 
 .include <bsd.port.mk>

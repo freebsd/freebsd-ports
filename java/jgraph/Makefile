@@ -45,7 +45,7 @@ do-build:
 .if ${PORT_OPTIONS:MCOMPILE} || ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGETS}
 	@${MV} -f ${WRKSRC}/build/lib/${PORTNAME}.jar ${WRKSRC}/lib
-	@${RM} -fr ${WRKSRC}/doc && \
+	@${RM} -r ${WRKSRC}/doc && \
 		${MV} -f ${WRKSRC}/build/doc/api ${WRKSRC}/doc
 .endif
 

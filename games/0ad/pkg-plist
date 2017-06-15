@@ -3,7 +3,7 @@ bin/0ad
 bin/ActorEditor
 lib/0ad/libAtlasUI.so
 lib/0ad/libCollada.so
-lib/0ad/libmozjs31-ps-release.so
+lib/0ad/libmozjs38-ps-release.so
 lib/0ad/libnvcore.so
 lib/0ad/libnvimage.so
 lib/0ad/libnvmath.so

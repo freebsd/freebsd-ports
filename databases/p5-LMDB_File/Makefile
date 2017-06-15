@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	LMDB_File
-PORTVERSION=	0.10
+PORTVERSION=	0.12
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +14,10 @@ LICENSE=	ART20
 
 LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
-CFLAGS+=	-I${LOCALBASE}/include
-USES=		perl5
+USES=		localbase perl5
 USE_PERL5=	configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/LMDB_File/LMDB_File.so
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502308
-BROKEN=		Fails to build after dMULTICALL cleanup
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

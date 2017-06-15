@@ -53,39 +53,11 @@ delete_crontab_entries() {
     rm $TMPFILE
 }
 
-delnewsyslog() {
-    tmp=`mktemp -t munin` || exit 1
-    sed -e '/^\/var\/log\/munin\/\*\.log[	]/d' /etc/newsyslog.conf >${tmp}
-    cat ${tmp} > /etc/newsyslog.conf
-    rm ${tmp}
-}
-
-newsyslog() {
-    ENTRY=`fgrep '/var/log/munin/*' /etc/newsyslog.conf`
-    DEFAULT='/var/log/munin/*.log munin:munin	644  7	   *	@T00  GNWZ'
-    if [ -z "$ENTRY" ]
-    then
-	exit 0
-    elif [ "$ENTRY" = "$DEFAULT" ]
-    then
-	delnewsyslog
-    elif yesno "You have changed the default munin-master entry in \"/etc/newsyslog.conf\".
-Do you want me to delete it?" y
-    then
-	delnewsyslog
-	echo "Done."
-    fi
-}
-
-
 case $2 in
     DEINSTALL)
 	if [ -z "${PACKAGE_BUILDING}" ]
 	then
 	    delete_crontab_entries '#BEGIN_MUNIN_MAIN' '#END_MUNIN_MAIN'
-	    newsyslog
 	fi
-	;;
-    POST-DEINSTALL)
 	;;
 esac

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bossa
-PORTVERSION=	1.7.0.a
+PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bsdports@kyle-evans.net
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	shumatech
 GH_PROJECT=	${PORTNAME:tu}
-GH_TAGNAME=	ae08c63
 
 USES=		compiler:c++11-lang gmake
 

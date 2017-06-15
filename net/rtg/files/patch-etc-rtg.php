@@ -1,5 +1,5 @@
---- etc/rtg.php.orig	2003-09-24 21:42:03.000000000 +0100
-+++ etc/rtg.php	2014-06-22 15:25:22.471477252 +0100
+--- etc/rtg.php.orig	2003-09-24 20:42:03 UTC
++++ etc/rtg.php
 @@ -4,10 +4,8 @@
    print "<HTML>\n<!-- RTG Version $VERSION -->\n<HEAD>\n";
  
@@ -35,7 +35,7 @@
      $router = $selectRow->router;
    }
  
-@@ -71,8 +69,8 @@
+@@ -71,8 +69,8 @@ echo "<FORM ACTION=\"$PHP_SELF\" METHOD=
  if (!$rid && !$iid) {
   echo "<SELECT NAME=\"rid\" SIZE=10>\n";
   $selectQuery="SELECT DISTINCT name, rid FROM router ORDER BY name";
@@ -46,7 +46,7 @@
      echo "<OPTION VALUE=\"$selectRow->rid\">$selectRow->name\n";
   }
   echo "</SELECT>\n";
-@@ -91,8 +89,8 @@
+@@ -91,8 +89,8 @@ if ($rid && !$iid) {
  
    echo "<SELECT MULTIPLE NAME=\"iid[]\" SIZE=10>\n"; 
    $selectQuery="SELECT id, name, description FROM interface WHERE rid=$rid ORDER BY name";
@@ -57,7 +57,7 @@
       echo "<OPTION VALUE=\"$selectRow->id\">$selectRow->name ($selectRow->description)\n";
    }
    echo "</SELECT>\n";
-@@ -152,8 +150,8 @@
+@@ -152,8 +150,8 @@ if (($bt || $smonth) && $iid) { 
    $range="$range AND id=$iid[0]";
  
    $selectQuery="SELECT description, name, speed FROM interface WHERE rid=$rid AND id=$iid[0]";
@@ -68,7 +68,7 @@
    echo "<TABLE BORDER=0>\n";
    echo "<TD><I>Device</I>:</TD><TD>$router ($rid)</TD><TR>\n";
    echo "<TD><I>Interface</I>:</TD><TD>$selectRow->name ($iid[0])</TD><TR>\n";
-@@ -165,12 +163,15 @@
+@@ -165,12 +163,15 @@ if (($bt || $smonth) && $iid) { 
    echo "<P>\n";
   
    #$selectQuery="SELECT DISTINCT id FROM ifInOctets_$rid WHERE $range";
@@ -86,7 +86,7 @@
      foreach ($iid as $value) {
        $args="$args&iid=$value";
      }
-@@ -181,8 +182,11 @@
+@@ -181,8 +182,11 @@ if (($bt || $smonth) && $iid) { 
      if ($borderb) $args = "$args&borderb=$borderb";
      if ($aggr) $args = "$args&aggr=yes";
      if ($percentile) $args = "$args&percentile=$nth";
@@ -99,7 +99,7 @@
      foreach ($iid as $value) {
        $args="$args&iid=$value";
      }
-@@ -192,13 +196,17 @@
+@@ -192,13 +196,17 @@ if (($bt || $smonth) && $iid) { 
      if ($borderb) $args = "$args&borderb=$borderb";
      if ($aggr) $args = "$args&aggr=yes";
      if ($percentile) $args = "$args&percentile=$nth";

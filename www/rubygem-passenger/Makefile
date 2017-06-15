@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	5.0.30
+PORTVERSION=	5.1.2
 PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
@@ -11,7 +11,10 @@ PKGNAMEPREFIX=	rubygem-
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
 
-BUILD_DEPENDS=		${LOCALBASE}/bin/rake:devel/rubygem-rake
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	rake:devel/rubygem-rake
 
 CPE_VENDOR=	phusion
 CPE_PRODUCT=	passenger
@@ -37,7 +40,7 @@ USE_APACHE=	22+
 
 LIB_DEPENDS+=	libuv.so:devel/libuv \
 		libcurl.so:ftp/curl
-BUILD_DEPENDS+= rubygem-rack16>=0:www/rubygem-rack16
+BUILD_DEPENDS+=	rubygem-rack16>=0:www/rubygem-rack16
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
@@ -72,7 +75,7 @@ pre-patch:
 		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
 		s!-O2!!g; \
 		s! -feliminate-unused-debug-symbols -feliminate-unused-debug-types!!g; \
-		165s!true!false!' \
+		166s!true!false!' \
 		${WRKSRC}/build/basics.rb
 .if ${PORT_OPTIONS:NDEBUG}
 	@${REINPLACE_CMD} \

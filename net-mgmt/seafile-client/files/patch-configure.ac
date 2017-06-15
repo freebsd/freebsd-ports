@@ -1,0 +1,80 @@
+--- configure.ac.orig	2017-01-05 08:05:21 UTC
++++ configure.ac
+@@ -51,8 +51,16 @@ else
+   AC_MSG_RESULT(no)
+ fi
+ 
++AC_MSG_CHECKING(for BSD)
++if test `uname | grep -e BSD -e DragonFly | wc -l` = "1"; then
++  bbsd=true
++  AC_MSG_RESULT(compile in BSD)
++else
++  AC_MSG_RESULT(no)
++fi
++
+ AC_MSG_CHECKING(for Linux)
+-if test "$bmac" != "true" -a "$bwin32" != "true"; then
++if test "$bmac" != "true" -a "$bwin32" != "true" -a "$bbsd" != "true"; then
+   blinux=true
+   AC_MSG_RESULT(compile in linux)
+ else
+@@ -61,6 +69,7 @@ fi
+ 
+ AM_CONDITIONAL([WIN32], [test "$bwin32" = "true"])
+ AM_CONDITIONAL([MACOS], [test "$bmac" = "true"])
++AM_CONDITIONAL([BSD], [test "$bbsd" = "true"])
+ AM_CONDITIONAL([LINUX], [test "$blinux" = "true"])
+ 
+ 
+@@ -105,6 +114,8 @@ if test "$bwin32" = true; then
+   LIB_MAC=
+   MSVC_CFLAGS="-D__MSVCRT__ -D__MSVCRT_VERSION__=0x0601"
+   LIB_CRYPT32=-lcrypt32
++  LIB_INOTIFY=
++  LIB_KVM=
+ elif test "$bmac" = true ; then
+   LIB_WS32=
+   LIB_GDI32=
+@@ -119,6 +130,24 @@ elif test "$bmac" = true ; then
+   LIB_MAC="-framework CoreServices"
+   LIB_CRYPT32=
+   LIB_ICONV=-liconv
++  LIB_INOTIFY=
++  LIB_KVM=
++elif test "$bbsd" = true ; then
++  LIB_WS32=
++  LIB_GDI32=
++  LIB_RT=
++  LIB_INTL=
++  LIB_RESOLV=
++  LIB_UUID=-luuid
++  LIB_IPHLPAPI=
++  LIB_SHELL32=
++  LIB_PSAPI=
++  LIB_MAC=
++  MSVC_CFLAGS=
++  LIB_CRYPT32=
++  LIB_ICONV=-liconv
++  LIB_INOTIFY=-linotify
++  LIB_KVM=-lkvm
+ else
+   LIB_WS32=
+   LIB_GDI32=
+@@ -132,6 +161,8 @@ else
+   LIB_MAC=
+   MSVC_CFLAGS=
+   LIB_CRYPT32=
++  LIB_INOTIFY=-linotify
++  LIB_KVM=
+ fi
+ 
+ AC_SUBST(LIB_WS32)
+@@ -144,6 +175,8 @@ AC_SUBST(LIB_IPHLPAPI)
+ AC_SUBST(LIB_SHELL32)
+ AC_SUBST(LIB_PSAPI)
+ AC_SUBST(LIB_MAC)
++AC_SUBST(LIB_INOTIFY)
++AC_SUBST(LIB_KVM)
+ AC_SUBST(MSVC_CFLAGS)
+ AC_SUBST(LIB_CRYPT32)
+ AC_SUBST(LIB_ICONV)

@@ -3,6 +3,7 @@
 
 PORTNAME=	frobtads
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	games lang
 MASTER_SITES=	http://www.tads.org/${PORTNAME}/ \
 		http://www.ifarchive.org/if-archive/programming/tads3/source/

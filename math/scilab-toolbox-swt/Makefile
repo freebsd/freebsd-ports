@@ -2,13 +2,13 @@
 
 PORTNAME=	swt
 PORTVERSION=	0.1.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://atoms.scilab.org/toolboxes/swt/${PORTVERSION}/files/
 PKGNAMEPREFIX=	scilab-toolbox-
 DISTFILES=	${DISTNAME}-3-src${EXTRACT_SUFX}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 
 BUILD_DEPENDS=	${SCILAB_CMD}:math/scilab
@@ -16,7 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SCILAB_CMD=	${LOCALBASE}/bin/scilab-adv-cli
 SCILAB_ARGS=	-noatomsautoload -nb -nouserstartup
-MAKE_ENV=	LC_ALL="C" SCI_JAVA_ENABLE_HEADLESS=1 SCI_DISABLE_TK=1
+MAKE_ENV=	SCI_JAVA_ENABLE_HEADLESS=1 SCI_DISABLE_TK=1
 
 CONTRIBDIR?=	share/scilab/contrib
 TOOLBOXDIR_REL?=	${CONTRIBDIR}/${PORTNAME}

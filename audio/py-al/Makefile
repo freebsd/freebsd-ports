@@ -7,12 +7,15 @@ MASTER_SITES=	http://bitbucket.org/marcusva/py-al/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyAL-${PORTVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PyAL is a binding of OpenAL for Python
 
-LICENSE=	ZLIB
+LICENSE=	PD ZLIB
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/doc/copying.rst
 
 USES=		openal:al python
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

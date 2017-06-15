@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libvmime
-PORTVERSION=	0.9.2.s20140721
-PORTREVISION=	3
+PORTVERSION=	0.9.2
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +19,6 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 USE_GITHUB=	yes
 GH_ACCOUNT=	kisli
 GH_PROJECT=	vmime
-GH_TAGNAME=	03a0e36
 
 USES=		cmake:outsource compiler:c++11-lib iconv pkgconfig
 USE_LDCONFIG=	yes

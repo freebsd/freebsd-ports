@@ -12,10 +12,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to encode Unicode string in Punycode
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
 post-patch:
-	@${RM} -f ${WRKSRC}/lib/IDNA/.Punycode.pm.swp
+	@${RM} ${WRKSRC}/lib/IDNA/.Punycode.pm.swp
 
 .include <bsd.port.mk>

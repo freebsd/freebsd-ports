@@ -3,6 +3,7 @@
 
 PORTNAME=	idjc
 PORTVERSION=	0.8.16
+PORTREVISION=	4
 CATEGORIES=	audio python
 MASTER_SITES=	SF/idjc/idjc/0.8
 
@@ -21,6 +22,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libFLAC.so:audio/flac \
 		libmp3lame.so:audio/lame \
 		libvorbis.so:audio/libvorbis \
+		libsamplerate.so:audio/libsamplerate \
 		libshout-idjc.so:audio/shout-idjc
 RUN_DEPENDS=	oggenc:audio/vorbis-tools \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen \
@@ -44,10 +46,14 @@ BROKEN_powerpc64=	Does not build
 PLIST_SUB+=		PORTVERSION="${PORTVERSION}"
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+
+post-patch:
+	${REINPLACE_CMD} 's,PYTHON=python,PYTHON=${PYTHON_CMD},' ${WRKSRC}/py-compile
+
 pre-install:
 	${REINPLACE_CMD} 's|libvorbis.so.0|libvorbis.so|' \
 		${WRKSRC}/python/format.py
-	${REINPLACE_CMD} 's|#! /usr/local/bin/python2.72.7|#\!${LOCALBASE}/bin/${PYTHON_VERSION}|' \
+	${REINPLACE_CMD} 's|#! /usr/local/bin/python2.72.7|#\!${PYTHON_CMD}|' \
 		${WRKSRC}/idjc
 
 .include <bsd.port.mk>

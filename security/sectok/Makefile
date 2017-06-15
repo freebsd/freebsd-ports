@@ -13,7 +13,7 @@ COMMENT=	ISO 7816 Smartcard Utility
 
 LIB_DEPENDS=	libsectok.so:security/libsectok
 
-USE_OPENSSL=	yes
+USES=		ssl
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

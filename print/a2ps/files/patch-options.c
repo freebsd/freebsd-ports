@@ -1,6 +1,6 @@
---- lib/options.c.orig	Thu Sep 21 23:22:36 2000
-+++ lib/options.c	Thu Sep 21 23:22:42 2000
-@@ -493,6 +493,15 @@
+--- lib/options.c.orig	1999-08-31 17:42:41 UTC
++++ lib/options.c
+@@ -493,6 +493,15 @@ a2ps_handle_options (a2ps_job * job, int
  	  /* A font size is given */
  	  job->fontsize = get_length ("--font-size", cp,
  				      0.0, 0.0, "pt", range_min_strict);

@@ -16,6 +16,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lossless compression library for scientific data
 
+CONFLICTS_INSTALL=	libaec-
+
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
@@ -27,7 +29,7 @@ USES=		libtool
 
 PORTDOCS=	Release_notes_2_0.pdf
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 

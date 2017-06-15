@@ -3,6 +3,7 @@
 
 PORTNAME=	ncs
 PORTVERSION=	2.0.8
+PORTREVISION=	2
 CATEGORIES=	science parallel
 MASTER_SITES=	http://code-saturne.org/releases/
 
@@ -11,8 +12,7 @@ COMMENT=	Code_Saturne Kernel
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=0:devel/py-qt4	\
-		cs_preprocess:science/ecs	\
+BUILD_DEPENDS=	cs_preprocess:science/ecs	\
 		pyrcc4:textproc/py-qt4-xml
 LIB_DEPENDS=	libfvm.so:science/fvm	\
 		libmei.so:science/mei
@@ -21,8 +21,9 @@ RUN_DEPENDS=	xmgrace:math/grace	\
 		xterm:x11/xterm	\
 		cs_preprocess:science/ecs
 
-USES=		fortran gettext gmake iconv libtool python shebangfix
+USES=		fortran gettext gmake iconv libtool pyqt:4 python shebangfix
 USE_GNOME=	libxml2
+USE_PYQT=	core
 SHEBANG_FILES=	bin/runcase.in
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 GNU_CONFIGURE=	yes

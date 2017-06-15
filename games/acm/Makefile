@@ -3,12 +3,12 @@
 
 PORTNAME=	acm
 PORTVERSION=	5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Arial combat simulator for X11
+COMMENT=	Aerial combat simulator for X11
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

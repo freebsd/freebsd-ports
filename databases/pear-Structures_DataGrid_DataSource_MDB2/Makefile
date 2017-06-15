@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_DataSource_MDB2
 PORTVERSION=	0.1.11
 CATEGORIES=	databases www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	DataSource driver using PEAR::MDB2 and an SQL query
 
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
 
 USES=	pear
 USE_PHP=	mysql
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

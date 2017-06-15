@@ -149,7 +149,7 @@
    [
      AC_MSG_RESULT([yes])
      AC_DEFINE([SC_HAVE_BDB],[1],[berkeley db])
-@@ -635,11 +624,11 @@
+@@ -635,7 +624,7 @@
  
    QT_BIN="$qt_path/bin"
    QT_PATH="$qt_path"
@@ -158,11 +158,6 @@
  
    # extract version numbers of qt
    
--  QT_VERSION=`$QT_BIN/moc -v 2>&1 | sed "s/.*(Qt \(.*\))/\1/"`
-+  QT_VERSION=`$QT_BIN/moc-qt4 -v 2>&1 | sed "s/.*(Qt \(.*\))/\1/"`
-   QT_MAJOR=`echo $QT_VERSION | sed "s/\(.*\)[[.]].*[[.]].*/\1/"`
-   QT_MINOR=`echo $QT_VERSION | sed "s/.*[[.]]\(.*\)[[.]].*/\1/"`
- 
 @@ -669,7 +658,7 @@
      *)
        # any other Unix platform directly link with the libs

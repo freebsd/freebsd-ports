@@ -1,5 +1,5 @@
---- backend/src/sys/alloc.cpp.orig	2015-07-02 09:39:05.000000000 +0200
-+++ backend/src/sys/alloc.cpp	2015-08-26 11:57:00.901815000 +0200
+--- backend/src/sys/alloc.cpp.orig	2017-01-20 10:40:51 UTC
++++ backend/src/sys/alloc.cpp
 @@ -69,7 +69,7 @@ namespace gbe
      /*! Total number of allocations done */
      volatile intptr_t allocNum;

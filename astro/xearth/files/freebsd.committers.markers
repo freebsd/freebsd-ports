@@ -58,6 +58,7 @@
  13.6325,	78.4552,	"jkoshy"			# Rishi Valley, India
  28.599623,	77.314412	"ashish"			# Delhi, India
  43.219564,	76.851597,	"bp"				# Almaty, Kazakhstan
+ 35.72689,	51.54698,	"mmokhi"			# Tehran, Iran
  51.33,		46.00,		"novel"				# Saratov, Russia
  48.805,	44.586,		"den"				# Volgograd, Russia
  55.740978,	37.830851,	"sem"				# Moscow, Russia
@@ -69,7 +70,6 @@
  55.7895,	37.635261,	"dchagin"			# Moscow, Russia
  55.8,		37.6,		"ache,bsam,demon,maxim,rik,skv,vsevolod,yar"	# Moscow, Russia
  55.768764,	37.588938,	"sergei"			# Moscow, Russia
- 55.750799,	37.565689,	"krion"				# Moscow, Russia
  55.7203,	37.4314,	"sat"				# Moscow, Russia
  48.464722,	35.046111,	"mav"				# Dniepropetrovsk, Ukraine
  44.95,		34.1,		"phantom,ru"			# Simferopol, Ukraine
@@ -95,6 +95,7 @@
  48.204319,	16.982337,	"danger"			# Bratislava, Slovakia
  48.253,	16.435,		"gerald"			# Vienna, Austria
  48.170744,	16.361604,	"arved"				# Vienna, Austria
+ 48.178311,	16.326855,	"krion"				# Vienna, Austria
  48.2168,	16.3339,	"le"				# Vienna, Austria
  48.2114,	16.3105,	"stefanf"			# Vienna, Austria
  46.9703,	15.6947,	"decke"				# Oberdorf am Hochegg, Austria
@@ -141,6 +142,7 @@
  45.875896,	8.941637,	"gahr"				# Arzo, Switzerland
  52.05,		8.9,		"lkoeller"			# Lemgo, Germany
  45.667,	8.867,		"nivit"		align=left	# Fagnano Olona, Italy
+ 53.0793,	8.8017,		"tobik"				# Bremen, Germany
  47.420,	8.6,		"beat"				# Wallisellen, Switzerland
  49.85958,	8.55246,	"bcr"				# Griesheim, Germany
  47.1666,	8.5166,		"dhartmei"			# Zug, Switzerland
@@ -217,10 +219,11 @@
  52.188649,	-2.2341,	"crees"				# Worcester, West Midlands, United Kingdom
  42.8474,	-2.66976,	"carvay"			# Araba, Vitoria-Gasteiz, Spain
  51.49,		-3.16,		"ceri"				# Cardiff, UK
+ 37.1876,	-3.6149,	"cpm"				# Granada, Spain
  53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
  53.286499,	-6.196429,	"flz"				# Stillorgan, Co. Dublin, Ireland
  53.65,		-6.67,		"peadar"	align=above	# Navan, Co. Meath, Ireland
- 41.157889,	-8.628699,	"rpaulo"			# Porto, Portugal
+ 37.533333,	-122.033333,	"rpaulo"			# Newark, CA, USA.
 -9.603815,	-35.724911,	"lippe"				# Maceio, AL, Brazil
 -19.917,	-43.933,	"jmelo"				# Belo Horizonte, MG, Brazil
 -15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
@@ -284,6 +287,7 @@
  44.89,		-93.35,		"bdrewery"			# Minneapolis, MN, USA
  42.02,		-93.67,		"ghelmer"			# Ames, IA, USA
  29.834,	-95.00,		"     ,chris"			# Houston, TX, USA
+ 30.47702408	-97.64801025	"ler"				# Pflugerville, TX, USA
  30.715833	-95.5525,	"ade"				# Huntsville, TX, USA
  37.0625,	-95.677068,	"kmacy"				# Palo Alto, CA, USA
  29.7925,	-95.8225,	"dwcjr"				# Katy, TX, USA

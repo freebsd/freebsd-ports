@@ -3,4 +3,4 @@ daemon. It supports all vpopmaild commands, such as adding/removing
 domains, users, robots (autoresponders), and ezmlm lists (todo),
 as well as modifying domain limits, ip maps, etc.
 
-WWW:   http://pear.php.net/package/Net_Vpopmaild/
+WWW: https://pear.php.net/package/Net_Vpopmaild

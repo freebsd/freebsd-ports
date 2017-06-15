@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	babeltrace
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 USE_GITHUB=	yes
 GH_ACCOUNT=	efficios
 
-USES=		autoreconf:build bison gettext-runtime gmake libtool pkgconfig
+USES=		autoreconf:build bison gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug-info
 USE_GNOME=	glib20
@@ -31,35 +31,16 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	ChangeLog std-ext-lib.txt API.txt lttng-live.txt
 
-.include <bsd.port.pre.mk>
-
-# FreeBSD 9.x and earlier do not have an updated flex
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	flex>=2.5.35:textproc/flex
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|LICENSE mit-license.txt gpl-2.0.txt||' \
 		${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|/pkgconfig|/../libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|machine\/endian|sys\/endian|' \
 		${WRKSRC}/include/babeltrace/endian.h
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-	@${REINPLACE_CMD} -e 's|\[FLEX\],\[flex\]|\[FLEX\],\[flex\],\[\/usr\/bin\/flex\],${LOCALBASE}/bin:${PATH}|' \
-		${WRKSRC}/configure.ac
-.endif
 
 pre-configure:
 	(cd ${WRKSRC}; ./bootstrap )
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000033
-pre-build:
-	@${REINPLACE_CMD} -e 's|(LEX)|(FLEX)|' \
-		${WRKSRC}/formats/ctf/metadata/Makefile
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libbabeltrace*so.1.0.0
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

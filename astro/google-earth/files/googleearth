@@ -1,0 +1,2 @@
+#! /bin/sh
+exec /compat/linux/bin/sh /opt/google/earth/free/googleearth "$@"

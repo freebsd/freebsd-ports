@@ -3,11 +3,11 @@
 
 PORTNAME=	wol
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/ahh/OldFiles
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	david@catwhisker.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
 LICENSE=	GPLv2+

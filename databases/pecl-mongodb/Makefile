@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -15,5 +14,6 @@ LICENSE=	APACHE20
 
 USES=		php:ext ssl tar:tgz
 USE_PHP=	spl:build
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

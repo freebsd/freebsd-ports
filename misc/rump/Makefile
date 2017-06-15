@@ -3,6 +3,7 @@
 
 PORTNAME=	rump
 PORTVERSION=	20131213
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/stacktic/
 DISTNAME=	buildrump-${PORTVERSION}
@@ -21,10 +22,6 @@ USE_LDCONFIG=	yes
 USE_GCC=	any
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000510
-IGNORE=		require 10.0-Release or later
-.endif
 
 do-build:
 	cd ${WRKSRC}; ${SETENV} CC=${CC} AR=${AR} NM=${NM} OBJCOPY=${OBJCOPY} ./buildrump.sh -r fullbuild

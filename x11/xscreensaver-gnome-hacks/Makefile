@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xscreensaver-gnome-hacks
-PORTREVISION=	2
+PORTREVISION=	3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screensaver modules for use with xscreensaver and gnome-screensaver

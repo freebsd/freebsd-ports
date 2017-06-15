@@ -1,6 +1,6 @@
---- configure.orig	2016-04-14 20:19:53 UTC
-+++ configure
-@@ -245,7 +245,7 @@ DSOSUF=".so"
+--- configure.orig	2016-12-20 13:16:44.000000000 -0700
++++ configure	2017-03-05 08:10:46.513171000 -0700
+@@ -247,7 +247,7 @@
  LDFLAGS_SHARED="-shared"
  modules="no"
  prefix="/usr/local"
@@ -9,27 +9,18 @@
  datadir="\${prefix}/share"
  qemu_docdir="\${prefix}/share/doc/qemu"
  bindir="\${prefix}/bin"
-@@ -316,6 +316,10 @@ virglrenderer=""
- tpm="yes"
- libssh2=""
- vhdx=""
-+quorum="no"
+@@ -322,6 +322,10 @@
+ tcmalloc="no"
+ jemalloc="no"
+ replication="yes"
 +pcap="no"
 +pcap_create="no"
 +bpf="no"
- numa=""
- tcmalloc="no"
- jemalloc="no"
-@@ -575,7 +579,7 @@ FreeBSD)
-   audio_drv_list="oss"
-   audio_possible_drivers="oss sdl pa"
-   # needed for kinfo_getvmmap(3) in libutil.h
--  LIBS="-lutil $LIBS"
-+  LIBS="-lprocstat -lkvm -lelf -lutil $LIBS"
-   netmap=""  # enable netmap autodetect
-   HOST_VARIANT_DIR="freebsd"
- ;;
-@@ -878,6 +882,10 @@ for opt do
++
+ 
+ # parse CC options first
+ for opt do
+@@ -887,6 +891,10 @@
    ;;
    --enable-vnc-png) vnc_png="yes"
    ;;
@@ -39,8 +30,8 @@
 +  ;;
    --disable-slirp) slirp="no"
    ;;
-   --disable-uuid) uuid="no"
-@@ -2157,7 +2165,7 @@ if test "$gtk" != "no"; then
+   --disable-vde) vde="no"
+@@ -2266,7 +2274,7 @@
              gtk_cflags="$gtk_cflags $x11_cflags"
              gtk_libs="$gtk_libs $x11_libs"
          fi
@@ -49,7 +40,7 @@
          gtk="yes"
      elif test "$gtk" = "yes"; then
          feature_not_found "gtk" "Install gtk2 or gtk3 devel"
-@@ -2384,6 +2392,14 @@ if ! check_include "ifaddrs.h" ; then
+@@ -2485,6 +2493,14 @@
  fi
  
  ##########################################
@@ -64,7 +55,7 @@
  # VTE probe
  
  if test "$vte" != "no"; then
-@@ -2526,6 +2542,50 @@ EOF
+@@ -2644,6 +2660,50 @@
    fi
  fi
  
@@ -115,7 +106,7 @@
  
  ##########################################
  # VNC SASL detection
-@@ -3857,14 +3917,7 @@ fi
+@@ -3970,14 +4030,7 @@
  
  # Check if tools are available to build documentation.
  if test "$docs" != "no" ; then
@@ -130,33 +121,7 @@
  fi
  
  # Search for bswap_32 function
-@@ -3992,6 +4045,17 @@ fi
- 
- # check for libusb
- if test "$libusb" != "no" ; then
-+    cat > $TMPC << EOF
-+#include <libusb.h>
-+
-+int main(void) { return libusb_get_port_path(NULL, NULL, NULL, 0); }
-+EOF
-+    if compile_prog "-Werror" "-lusb -pthread" ; then
-+        libusb="yes"
-+        libusb_cflags=""
-+        libusb_libs=-lusb
-+        libs_softmmu="$libs_softmmu $libusb_libs"
-+    else
-     if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
-         libusb="yes"
-         libusb_cflags=$($pkg_config --cflags libusb-1.0)
-@@ -4004,6 +4068,7 @@ if test "$libusb" != "no" ; then
-         fi
-         libusb="no"
-     fi
-+    fi
- fi
- 
- # check for usbredirparser for usb network redirection support
-@@ -4769,6 +4834,7 @@ echo "Audio drivers     $audio_drv_list"
+@@ -5026,6 +5079,7 @@
  echo "Block whitelist (rw) $block_drv_rw_whitelist"
  echo "Block whitelist (ro) $block_drv_ro_whitelist"
  echo "VirtFS support    $virtfs"
@@ -164,7 +129,7 @@
  echo "VNC support       $vnc"
  if test "$vnc" = "yes" ; then
      echo "VNC SASL support  $vnc_sasl"
-@@ -4950,6 +5016,15 @@ fi
+@@ -5204,6 +5258,15 @@
  if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
@@ -180,9 +145,9 @@
  if test "$slirp" = "yes" ; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
-@@ -5153,6 +5228,9 @@ fi
- if test "$have_ifaddrs_h" = "yes" ; then
-     echo "HAVE_IFADDRS_H=y" >> $config_host_mak
+@@ -5415,6 +5478,9 @@
+ if test "$have_fsxattr" = "yes" ; then
+     echo "HAVE_FSXATTR=y" >> $config_host_mak
  fi
 +if test "$have_ifaddrs_h" = "yes" ; then
 +    echo "HAVE_IFADDRS_H=y" >> $config_host_mak

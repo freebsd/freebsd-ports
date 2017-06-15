@@ -12,7 +12,7 @@ COMMENT=	open source implementation of the GLUT library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake
+USES=		cmake pathfix
 USE_LDCONFIG=	yes
 USE_XORG=	ice x11 xi xrandr
 USE_GL=		gl glu

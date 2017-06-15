@@ -2,15 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	hebcal
-PORTVERSION=	3.7
+PORTVERSION=	3.11
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-c/${PORTVERSION}/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hebrew Calendar calculator
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		makeinfo
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/hebcal \
 		man/man1/hebcal.1.gz

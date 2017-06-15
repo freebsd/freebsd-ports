@@ -21,6 +21,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Date.pm
 %%SITE_PERL%%/Mojo/EventEmitter.pm
 %%SITE_PERL%%/Mojo/Exception.pm
+%%SITE_PERL%%/Mojo/File.pm
 %%SITE_PERL%%/Mojo/Headers.pm
 %%SITE_PERL%%/Mojo/HelloWorld.pm
 %%SITE_PERL%%/Mojo/Home.pm
@@ -30,6 +31,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/IOLoop/Server.pm
 %%SITE_PERL%%/Mojo/IOLoop/Stream.pm
 %%SITE_PERL%%/Mojo/IOLoop/Subprocess.pm
+%%SITE_PERL%%/Mojo/IOLoop/TLS.pm
 %%SITE_PERL%%/Mojo/IOLoop/resources/server.crt
 %%SITE_PERL%%/Mojo/IOLoop/resources/server.key
 %%SITE_PERL%%/Mojo/JSON.pm
@@ -157,6 +159,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::Date.3.gz
 %%PERL5_MAN3%%/Mojo::EventEmitter.3.gz
 %%PERL5_MAN3%%/Mojo::Exception.3.gz
+%%PERL5_MAN3%%/Mojo::File.3.gz
 %%PERL5_MAN3%%/Mojo::Headers.3.gz
 %%PERL5_MAN3%%/Mojo::HelloWorld.3.gz
 %%PERL5_MAN3%%/Mojo::Home.3.gz
@@ -166,6 +169,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::IOLoop::Server.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::Stream.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::Subprocess.3.gz
+%%PERL5_MAN3%%/Mojo::IOLoop::TLS.3.gz
 %%PERL5_MAN3%%/Mojo::JSON.3.gz
 %%PERL5_MAN3%%/Mojo::JSON::Pointer.3.gz
 %%PERL5_MAN3%%/Mojo::Loader.3.gz

@@ -1,0 +1,13 @@
+--- test/Makefile.orig	2016-06-27 06:54:00 UTC
++++ test/Makefile
+@@ -1,7 +1,7 @@
+-CC = gcc
++CC ?= gcc
+ 
+-CFLAGS = -std=gnu99 -Wall -DFAKE_STAT -Werror -Wextra
+-LDFLAGS = -lrt
++CFLAGS ?= -std=gnu99 -Wall -DFAKE_STAT -Werror -Wextra
++LDFLAGS = -lrt -lcompat
+ 
+ SRC = timetest.c
+ OBJ = ${SRC:.c=.o}

@@ -3,7 +3,7 @@
 
 PORTNAME=	patchage
 PORTVERSION=	0.5.0
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/ \
 		http://frugalware.mirrors.tds.net/pub/linux/frugalware/frugalware-current/source/xmultimedia-extra/patchage/
@@ -29,10 +29,6 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 			--no-lash
 
 CFLAGS+=	-I${LOCALBASE}/include
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-MAKE_ARGS=	--verbose
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

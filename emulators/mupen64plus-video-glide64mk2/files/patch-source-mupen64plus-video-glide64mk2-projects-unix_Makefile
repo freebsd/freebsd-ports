@@ -17,17 +17,6 @@
  endif
  
  ifeq ($(origin PKG_CONFIG), undefined)
-@@ -199,6 +200,10 @@
-   ZLIB_LDLIBS += -lz
- endif
- 
-+ifeq ($(OS), FREEBSD) # use system zlib on FreeBSD
-+  ZLIB_LDLIBS += -lz
-+endif
-+
- ifeq ($(origin ZLIB_CFLAGS) $(origin ZLIB_LDLIBS), undefined undefined)
-   ifeq ($(shell $(PKG_CONFIG) --modversion zlib 2>/dev/null),)
-     $(error No zlib development libraries found!)
 @@ -292,8 +297,8 @@
  endif
  

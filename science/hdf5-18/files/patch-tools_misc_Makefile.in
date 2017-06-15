@@ -1,0 +1,25 @@
+--- tools/misc/Makefile.in.orig	2016-05-10 21:24:56 UTC
++++ tools/misc/Makefile.in
+@@ -674,7 +674,7 @@ LIBH5CPP_HL = $(top_builddir)/hl/c++/src
+ # Scripts used to build examples
+ # If only shared libraries have been installed, have h5cc build examples with
+ # shared libraries instead of static libraries
+-H5CC = ${DESTDIR}$(bindir)/h5cc
++H5CC = ${DESTDIR}$(bindir)/$(H5CC_NAME)
+ H5CC_PP = ${DESTDIR}$(bindir)/h5pcc
+ H5FC = ${DESTDIR}$(bindir)/h5fc
+ H5FC_PP = ${DESTDIR}$(bindir)/h5pfc
+@@ -715,11 +715,11 @@ DISTCLEANFILES = h5cc testh5repart.sh
+ 
+ # All programs rely on hdf5 library and h5tools library
+ LDADD = $(LIBH5TOOLS) $(LIBHDF5)
+-@BUILD_PARALLEL_CONDITIONAL_FALSE@H5CC_NAME = h5cc
++@BUILD_PARALLEL_CONDITIONAL_FALSE@H5CC_NAME = h5cc-18
+ 
+ # h5cc needs custom install and uninstall rules, since it may be
+ # named h5pcc if hdf5 is being built in parallel mode.
+-@BUILD_PARALLEL_CONDITIONAL_TRUE@H5CC_NAME = h5pcc
++@BUILD_PARALLEL_CONDITIONAL_TRUE@H5CC_NAME = h5pcc-18
+ 
+ # Automake needs to be taught how to build lib, progs, and tests targets.
+ # These will be filled in automatically for the most part (e.g.,

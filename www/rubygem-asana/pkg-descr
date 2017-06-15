@@ -2,4 +2,4 @@ This gem is a simple Ruby wrapper for the Asana REST API. It uses
 ActiveResource to provide a simple, familiar interface for
 accessing your Asana account.
 
-WWW: http://github.com/rbright/asana
+WWW: https://github.com/Asana/ruby-asana

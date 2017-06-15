@@ -13,6 +13,8 @@ COMMENT=	Python script that converts CHM files into PDF files
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	htmldoc:textproc/htmldoc \
 		${PYTHON_SITELIBDIR}/chm/chm.py:textproc/pychm

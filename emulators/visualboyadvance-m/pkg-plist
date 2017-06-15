@@ -1,24 +1,34 @@
 %%GVBAM%%bin/gvbam
 %%SDL%%bin/vbam
-@sample etc/vbam.cfg-example etc/vbam.cfg
+%%SDL%%@sample etc/vbam.cfg-example etc/vbam.cfg
 %%GVBAM%%share/applications/gvbam.desktop
 %%GVBAM%%share/icons/hicolor/16x16/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/22x22/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/24x24/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/32x32/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/scalable/apps/vbam.svg
+%%GVBAM%%%%NLS%%share/locale/ca/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/ca_ES/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/cs/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/de/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/en/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/en_GB/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/es/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/es_ES/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/fr/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/gl/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/id/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/it_IT/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/ko/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/nb/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/nl/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/pl/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/pt_BR/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/pt_PT/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/ru/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/sr/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/sv/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/tr/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/zh_CN/LC_MESSAGES/gvbam.mo
 %%GVBAM%%%%NLS%%share/locale/zh_TW/LC_MESSAGES/gvbam.mo
 %%GVBAM%%share/vbam/ui/cheatedit.ui
@@ -35,5 +45,5 @@
 %%GVBAM%%share/icons/hicolor/48x48/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/64x64/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/96x96/apps/vbam.png
-@dir share/man/man1
 man/man1/vbam.1.gz
+%%GVBAM%%man/man1/gvbam.1.gz

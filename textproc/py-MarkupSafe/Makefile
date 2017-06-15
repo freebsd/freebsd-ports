@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MarkupSafe
-PORTVERSION=	0.23
+PORTVERSION=	1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,5 +14,8 @@ LICENSE=	BSD3CLAUSE
 
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/markupsafe/_speedups.so
 
 .include <bsd.port.mk>

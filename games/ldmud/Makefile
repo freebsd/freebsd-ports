@@ -16,8 +16,7 @@ BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig ssl
 CONFIGURE_ARGS+=--libdir=${DATADIR} \
 		--bindir=${PREFIX}/sbin \
 		--enable-use-pcre \
@@ -66,7 +65,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc && ${FIND} . \
 		| ${CPIO} -pdmu ${STAGEDIR}${DOCSDIR}
-	@${RM} -f ${STAGEDIR}${DOCSDIR}/Makefile
+	@${RM} ${STAGEDIR}${DOCSDIR}/Makefile
 .endif
 
 .include <bsd.port.mk>

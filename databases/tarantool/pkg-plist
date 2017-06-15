@@ -16,4 +16,3 @@ man/man1/tarantoolctl.1.gz
 @dir lib/tarantool
 @dir(%%TT_USER%%,%%TT_GROUP%%,) %%TT_DATADIR%%
 @dir(%%TT_USER%%,%%TT_GROUP%%,) %%TT_LOGDIR%%
-@dir(%%TT_USER%%,%%TT_GROUP%%,) %%TT_RUNDIR%%

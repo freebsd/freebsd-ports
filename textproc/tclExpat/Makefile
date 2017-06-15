@@ -3,7 +3,7 @@
 
 PORTNAME=	TclExpat
 PORTVERSION=	1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc tcl
 #MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 
 # Remove the old version of expat bundled with the package:
 post-extract:
-	${RM} -rf ${WRKSRC}/expat
+	${RM} -r ${WRKSRC}/expat
 
 post-build test:
 	${LN} -sf libtclexpat.so ${WRKSRC}/tclexpat.so

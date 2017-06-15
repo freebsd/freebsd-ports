@@ -1,5 +1,5 @@
---- Makefile.orig	2007-04-22 13:42:22.000000000 +0200
-+++ Makefile	2009-06-15 09:28:29.000000000 +0200
+--- Makefile.orig	2007-04-22 11:42:22 UTC
++++ Makefile
 @@ -2,21 +2,21 @@
  
  # If you change destination of executables, remember to change

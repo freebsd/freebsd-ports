@@ -5,8 +5,11 @@ PORTVERSION=	1.8
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python VISA bindings for GPIB, RS232, and USB instruments
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyvisa-py>0:devel/py-pyvisa-py
 
@@ -15,6 +18,7 @@ GH_ACCOUNT=	hgrecco
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 

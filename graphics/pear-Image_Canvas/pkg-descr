@@ -1,4 +1,4 @@
 A PHP PEAR package providing a common interface to image drawing, making image
 source code independent on the library used.
 
-WWW: http://pear.php.net/package/Image_Canvas/
+WWW: https://pear.php.net/package/Image_Canvas

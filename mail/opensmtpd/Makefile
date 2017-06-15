@@ -4,18 +4,18 @@
 PORTNAME=	opensmtpd
 PORTVERSION=	5.9.2p1
 PORTEPOCH=	1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
 		http://distfiles.pirateparty.in/ashish/
 
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Security- and simplicity-focused SMTP server from OpenBSD
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 OPTIONS_DEFINE=	CA_BUNDLE LIBASRDEVEL MAILERCONF PAM SSL_PORT TABLE_DB
 
@@ -27,8 +27,7 @@ MAILERCONF_DESC=	Activate OpenSMTPD in mailer.conf(5)
 SSL_PORT_DESC=		SSL/TLS support via OpenSSL/LibreSSL from port
 TABLE_DB_DESC=		Build table-db plugin (aliases)
 
-USES=		cpe libtool
-USE_OPENSSL=	yes
+USES=		cpe libtool ssl
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	openbsd
@@ -53,14 +52,6 @@ PAM_CONFIGURE_WITH=	auth-pam=smtpd
 SSL_PORT_VARS=		with_openssl_port=yes
 TABLE_DB_CONFIGURE_WITH=	table-db
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1000015
-WITH_OPENSSL_PORT=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
 CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 			--with-libevent=${LOCALBASE} \
 			--with-libssl=${OPENSSLBASE} \
@@ -69,9 +60,7 @@ CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 post-patch:
 	${REINPLACE_CMD} -e '/chmod 2555/d' ${WRKSRC}/mk/smtpctl/Makefile.in
 
-.if ${PORT_OPTIONS:MTABLE_DB}
-post-install:
+post-install-TABLE_DB-on:
 	@${LN} -sf ${PREFIX}/sbin/smtpctl ${STAGEDIR}${PREFIX}/libexec/opensmtpd/makemap
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -71,7 +71,7 @@ include/SDL2/begin_code.h
 include/SDL2/close_code.h
 lib/cmake/SDL2/sdl2-config.cmake
 lib/libSDL2-2.0.so.0
-lib/libSDL2-2.0.so.0.4.0
+lib/libSDL2-2.0.so.0.4.1
 lib/libSDL2.a
 lib/libSDL2.so
 lib/libSDL2_test.a

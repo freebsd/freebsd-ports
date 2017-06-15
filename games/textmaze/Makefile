@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generates mazes on a text terminal and lets you traverse them
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/gpl.txt
+
 RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses
 
 USES=		shebangfix perl5

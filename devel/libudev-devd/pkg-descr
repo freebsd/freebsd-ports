@@ -1,0 +1,5 @@
+libudev-compatible interface for devd
+
+Intended to work with xorg-server and libinput
+
+WWW: https://github.com/FreeBSDDesktop/libudev-devd

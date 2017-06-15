@@ -1,4 +1,4 @@
---- post/src/screensave.c.orig	2016-07-15 11:02:59 UTC
+--- post/src/screensave.c.orig	2016-10-26 13:01:22 UTC
 +++ post/src/screensave.c
 @@ -32,6 +32,7 @@
  #include <GL/glu.h>

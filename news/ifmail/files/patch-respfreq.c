@@ -1,6 +1,6 @@
---- ifcico/respfreq.c.orig	Sun Jul 13 01:38:51 1997
-+++ ifcico/respfreq.c	Mon Aug 11 17:34:09 2003
-@@ -17,7 +17,11 @@
+--- ifcico/respfreq.c.orig	1997-07-12 23:38:51 UTC
++++ ifcico/respfreq.c
+@@ -17,7 +17,11 @@ int re_exec(char*);
  #include "lutil.h"
  #include "config.h"
  #ifndef NOFREQREPORT
@@ -12,7 +12,7 @@
  #include "ftnmsg.h"
  #endif
  #include "version.h"
-@@ -43,7 +47,7 @@
+@@ -43,7 +47,7 @@ static file_list *resplist(char*);
  
  #ifndef NOFREQREPORT
  static void attach_report(file_list**);
@@ -21,7 +21,7 @@
  static char *report_text=NULL;
  static unsigned long report_total=0L;
  #endif
-@@ -519,15 +523,25 @@
+@@ -519,15 +523,25 @@ file_list **fl;
  	report_text=NULL;
  }
  

@@ -11,7 +11,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
-BUILD_DEPENDS=	itstool:textproc/itstool
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	appstream-glib>=0:devel/appstream-glib \
+		itstool:textproc/itstool \
+		gnome-autogen.sh:devel/gnome-common \
+		yelp-tools>=0:textproc/yelp-tools
 LIB_DEPENDS=	libgtk-vnc-2.0.so:net/gtk-vnc \
 		libgdbm.so:databases/gdbm \
 		libsecret-1.so:security/libsecret
@@ -19,8 +25,8 @@ RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig \
-		shared-mime-info tar:xz
+USES=		autoreconf desktop-file-utils gettext gmake gnome pathfix \
+		pkgconfig shared-mime-info tar:xz
 USE_GNOME=	gtk30 intlhack libxml2 vte3
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

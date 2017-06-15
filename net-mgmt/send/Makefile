@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
-USES=		gmake readline
+USES=		gmake readline ssl
 USE_RC_SUBR=	sendd
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

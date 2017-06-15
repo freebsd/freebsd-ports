@@ -28,12 +28,3 @@
      check_cflags -Qunused-arguments
  elif enabled armcc; then
      # 2523: use of inline assembler is deprecated
-@@ -3322,7 +3322,7 @@
- SRC_PATH="$source_path"
- SRC_PATH_BARE=$source_path
- CC_IDENT=$cc_ident
--ARCH=$arch
-+FFMPEG_ARCH=$arch
- CC=$cc
- AS=$as
- LD=$ld

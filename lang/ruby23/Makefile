@@ -30,24 +30,19 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-ruby-version=minor \
 		--with-sitedir="${PREFIX}/lib/ruby/site_ruby" \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
-CONFIGURE_ENV=	LC_ALL=C debugflags=
+CONFIGURE_ENV=	debugflags=
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread -L${LOCALBASE}/lib
-MAKE_ENV=	LC_ALL=C
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-USES=		autoreconf cpe execinfo tar:xz
+USES=		autoreconf cpe execinfo ssl tar:xz
 WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=		2.3
 USE_RUBY=		yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
-
-NOT_FOR_ARCHS=	ia64
-NOT_FOR_ARCHS_REASON_ia64=	does not build
 
 OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC
 OPTIONS_DEFAULT=	RDOC LIBEDIT
@@ -60,7 +55,7 @@ RDOC_DESC=		Build and install Rdoc indexes
 EDIT_DESC=		Which line editing lib to use
 LIBEDIT_DESC=		Use libedit
 READLINE_DESC=		Use libreadline
-CAPIDOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen \
+CAPIDOCS_BUILD_DEPENDS=	doxygen>=1.8.13,2:devel/doxygen \
 			dot:graphics/graphviz
 CAPIDOCS_CONFIGURE_ENABLE=	install-capi
 GMP_CONFIGURE_WITH=	gmp
@@ -77,6 +72,10 @@ CPE_VERSION=	${RUBY_RELVERSION}
 CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 
 .include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == openssl-devel
+BROKEN=		Does not detect and buid the openssl*.rb bits.
+.endif
 
 # PORTREVISION/PORTEPOCH hack
 
@@ -96,8 +95,8 @@ CONFIGURE_ARGS+=--disable-dtrace
 .endif
 .endif
 
-.if (${ARCH} == "powerpc64" || ${ARCH} == "powerpc")
-USE_GCC=	4.9+
+.if ${ARCH} == "powerpc64"
+USE_GCC=	yes
 .endif
 
 .if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
@@ -146,11 +145,11 @@ post-patch:
 # Remove modules we don't want
 #
 .for d in win32ole
-	@${RM} -rf ${BUILD_WRKSRC}/ext/${d}
+	@${RM} -r ${BUILD_WRKSRC}/ext/${d}
 .endfor
 # We get rake from ports.
 .for d in bin/rake doc/rake lib/rake test/rake man/rake.1 lib/rake.rb
-	@${RM} -rf ${BUILD_WRKSRC}/${d}
+	@${RM} -r ${BUILD_WRKSRC}/${d}
 .endfor
 # We get the gem executable from ports.
 	@${RM} ${BUILD_WRKSRC}/bin/gem

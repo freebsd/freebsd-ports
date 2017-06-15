@@ -70,6 +70,7 @@ man/man1/proxytrack.1.gz
 man/man1/webhttrack.1.gz
 share/applications/WebHTTrack-Websites.desktop
 share/applications/WebHTTrack.desktop
+%%NO_DOCS%%@dir(,,755) %%DATADIR%%/html
 %%ICONS%%share/icons/hicolor/16x16/apps/httrack.png
 %%ICONS%%share/icons/hicolor/32x32/apps/httrack.png
 %%ICONS%%share/icons/hicolor/48x48/apps/httrack.png

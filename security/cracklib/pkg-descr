@@ -2,4 +2,4 @@ CrackLib is a library containing a C function (well, lots of functions
 really, but you only need to use one of them) which may be used in a
 "passwd"-like program.
 
-WWW: http://sourceforge.net/projects/cracklib/
+WWW: https://sourceforge.net/projects/cracklib/

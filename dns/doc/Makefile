@@ -7,7 +7,7 @@ CATEGORIES=	dns
 MASTER_SITES=   LOCAL/sanpei \
 		ftp://ftp.shub-internet.org/pub/shub/brad/dns/
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Diagnose unhealthy DNS domains
 
 RUN_DEPENDS=	dig:dns/bind-tools

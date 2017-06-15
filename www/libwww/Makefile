@@ -5,7 +5,7 @@ PORTNAME=	libwww
 PORTVERSION=	5.4.0
 PORTREVISION=	6
 CATEGORIES=	www devel
-MASTER_SITES=	http://www.w3.org/Library/Distribution/
+MASTER_SITES=	http://www.w3.org/Library/Distribution/old/
 DISTNAME=	w3c-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dbaio@bsd.com.br
@@ -27,4 +27,10 @@ post-install:
 		${STAGEDIR}${PREFIX}/include/w3c-libwww/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

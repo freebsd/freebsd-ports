@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hydra
-PORTVERSION=	8.3
+PORTVERSION=	8.4
 CATEGORIES=	security
 MASTER_SITES=	https://www.thc.org/releases/ \
 		PACKETSTORM/groups/thc/
@@ -16,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libidn.so:dns/libidn \
 		libpcre.so:devel/pcre \
 		libsasl2.so:security/cyrus-sasl2
-
-CONFLICTS_INSTALL=	hydra-web-[0-9]*
 
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh bin/hydra-wizard.sh \
 		man/man1/hydra.1.gz man/man1/pw-inspector.1.gz

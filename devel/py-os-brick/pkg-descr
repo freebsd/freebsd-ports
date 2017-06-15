@@ -1,0 +1,3 @@
+OpenStack Cinder brick library for managing local volume attaches
+
+WWW: http://pypi.python.org/pypi/os-brick

@@ -1,0 +1,4 @@
+KNotifyConfig provides a configuration dialog for desktop notifications which
+can be embedded in your application.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/knotifyconfig/html/index.html

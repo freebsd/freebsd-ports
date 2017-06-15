@@ -1,0 +1,11 @@
+@owner cinder
+@dir %%ETCDIR%%
+@sample %%ETCDIR%%/api-httpd.conf.sample
+@sample %%ETCDIR%%/logging.conf.sample
+@sample %%ETCDIR%%/cinder.conf.sample
+%%ETCDIR%%/api-paste.ini
+%%ETCDIR%%/policy.json
+@owner root
+@sample %%ETCDIR%%/rootwrap.conf.sample
+@dir etc/cinder/rootwrap.d
+%%ETCDIR%%/rootwrap.d/volume.filters

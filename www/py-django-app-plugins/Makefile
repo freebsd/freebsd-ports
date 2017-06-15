@@ -12,6 +12,8 @@ MAINTAINER=	ports@caomhin.org
 COMMENT=	Reusable django application for writing pluggable reusable django applications
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:www/py-django18
 

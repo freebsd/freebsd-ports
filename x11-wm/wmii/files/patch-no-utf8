@@ -1,6 +1,6 @@
---- cmd/wmii/Makefile.orig
+--- cmd/wmii/Makefile.orig	2007-11-16 13:59:15 UTC
 +++ cmd/wmii/Makefile
-@@ -8,8 +8,16 @@
+@@ -8,8 +8,16 @@ TARG =	wmii
  HFILES=	dat.h fns.h x11.h
  
  LIB =	${LIBIXP}
@@ -19,7 +19,7 @@
  OBJ =	area	\
  	bar	\
  	client	\
---- cmd/wmii/utf.c.orig
+--- cmd/wmii/utf.c.orig	2007-11-16 13:59:15 UTC
 +++ cmd/wmii/utf.c
 @@ -1,12 +1,17 @@
  /* Public Domain --Kris Maglione */
@@ -39,7 +39,7 @@
  	static iconv_t cd;
  	char *buf, *pos;
  	size_t nbuf, bsize;
-@@ -30,6 +35,7 @@
+@@ -30,6 +35,7 @@ toutf8n(char *str, size_t nstr) {
  			break;
  	*pos = '\0';
  	return buf;
@@ -47,9 +47,9 @@
  }
  
  char*
---- cmd/wmii/x11.c.orig
+--- cmd/wmii/x11.c.orig	2007-11-16 13:59:15 UTC
 +++ cmd/wmii/x11.c
-@@ -18,6 +18,12 @@
+@@ -18,6 +18,12 @@ static Map wmap, amap;
  static MapEnt *wbucket[137];
  static MapEnt *abucket[137];
  
@@ -62,7 +62,7 @@
  XRectangle
  XRect(Rectangle r) {
  	XRectangle xr;
-@@ -444,7 +450,7 @@
+@@ -444,7 +450,7 @@ drawstring(Image *dst, Font *font,
  
  	setgccol(dst, col);
  	if(font->set)
@@ -71,7 +71,7 @@
  				font->set, dst->gc,
  				x, y,
  				buf, len);
-@@ -552,7 +558,7 @@
+@@ -552,7 +558,7 @@ textwidth_l(Font *font, char *text, uint
  	XRectangle r;
  
  	if(font->set) {
@@ -80,7 +80,7 @@
  		return r.width;
  	}
  	return XTextWidth(font->xfont, text, len);
-@@ -638,7 +644,7 @@
+@@ -638,7 +644,7 @@ gettextlistproperty(Window *w, char *nam
  
  	XGetTextProperty(display, w->w, &prop, xatom(name));
  	if(prop.nitems > 0) {
@@ -89,7 +89,7 @@
  			*ret = list;
  		XFree(prop.value);
  	}
-@@ -653,9 +659,10 @@
+@@ -653,9 +659,10 @@ gettextproperty(Window *w, char *name) {
  	str = nil;
  
  	n = gettextlistproperty(w, name, &list);

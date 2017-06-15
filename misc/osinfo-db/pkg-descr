@@ -1,0 +1,5 @@
+The osinfo database provides information about operating systems
+and hypervisor platforms to facilitate the automated configuration
+and provisioning of new virtual machines.
+
+WWW: https://libosinfo.org/

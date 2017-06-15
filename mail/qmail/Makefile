@@ -18,7 +18,7 @@ DIST_SUBDIR=	qmail
 CONFLICTS?=	qmail-ldap-[0-9]* *qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* *qmail-tls-[0-9]*
 CONFLICTS+=	qmail-vida-[0-9]*
 
-USES=		qmail:vars fakeroot
+USES+=		qmail:vars fakeroot
 PREFIX?=	${QMAIL_PREFIX}
 PLIST_SUB+=	QMAIL_PREFIX="${PREFIX}"
 
@@ -377,7 +377,7 @@ CONFIGUREPROGRAMS=	dnsfq hostname dnsip ipmeprint dnsptr
 CONFIGURESCRIPTS=	config config-fast
 
 .if defined(SLAVE_LDAP)
-TLS_USE=	OPENSSL=yes
+TLS_USES=		ssl
 .endif
 
 # Port will control all PREFIX handling.
@@ -424,6 +424,8 @@ LDAPFLAGS+=	-D${param}
 BUILD_DEPENDS+=	srs:mail/libsrs2
 MASTER_SITES+=	http://qmail-ldap-smtpauthuser.googlecode.com/svn/trunk/:srs_ldap
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 SRS_LDAP_PATCH=		qmail-ldap-1.03-20060201-SRS.patch
 DISTFILES+=	${SRS_LDAP_PATCH}:srs_ldap
 . endif
@@ -818,7 +820,7 @@ post-build:
 	@${MV} -f ${WRKSRC}/conf-qmail ${WRKSRC}/conf-qmail.sav
 	@${ECHO_CMD} "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-qmail
 	@${MV} -f ${WRKSRC}/install ${WRKSRC}/install.nostage
-	@cd ${WRKSRC} ; ${RM} -f install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
+	@cd ${WRKSRC} ; ${RM} install instcheck install.o instcheck.o hier.o auto_qmail.o auto_qmail.c
 	@cd ${WRKSRC} ; ${DO_MAKE_BUILD} install instcheck
 	@${MV} -f ${WRKSRC}/conf-qmail.sav ${WRKSRC}/conf-qmail
 
@@ -912,7 +914,7 @@ post-install:
 	  ${ECHO_CMD} "@unexec rmdir ${QMAIL_PREFIX} 2>/dev/null || :"; \
 	} >> ${TMPPLIST}
 # Stop check-orphans finding the queue dir
-	${RM} -rf ${STAGEDIR}${PREFIX}/queue/
+	${RM} -r ${STAGEDIR}${PREFIX}/queue/
 
 certificate:
 .if defined(SLAVE_TLS) || defined(SLAVE_LDAP)

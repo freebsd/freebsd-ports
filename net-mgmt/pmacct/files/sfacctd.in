@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: sfacctd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable sfacctd:
+#
+# sfacctd_enable="YES"
+#
+# You can define flags for sfacctd running. 
+# See http://wiki.pmacct.net/OfficialConfigKeys for more details.
+#
+# Example:
+# sfacctd_flags="-f %%PREFIX%%/etc/sfacctd.conf -P mysql"
+#
+# Default flags: -f %%PREFIX%%/etc/sfacctd.conf
+#
+
+. /etc/rc.subr
+
+name=sfacctd
+rcvar=sfacctd_enable
+
+command=%%PREFIX%%/sbin/$name
+command_args="-D"
+
+# set defaults
+
+sfacctd_enable=${sfacctd_enable:-"NO"}
+sfacctd_flags=${sfacctd_flags:-"-f %%PREFIX%%/etc/sfacctd.conf"}
+
+load_rc_config $name
+run_rc_command "$1"

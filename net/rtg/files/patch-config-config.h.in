@@ -1,5 +1,5 @@
---- config/config.h.in.orig	Thu Sep 25 08:21:14 2003
-+++ config/config.h.in	Sat May 14 01:31:47 2005
+--- config/config.h.in.orig	2003-09-25 15:21:14 UTC
++++ config/config.h.in
 @@ -91,19 +91,19 @@
  #undef PACKAGE
  

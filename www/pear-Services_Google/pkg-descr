@@ -1,13 +1,9 @@
-pear-Services_Google is a pear class that
-provides access to the Google SOAP Web APIs.
-It allows easy access to the Google SOAP
-Web APIs for the search engine, spelling
-suggestions, and cache.
+pear-Services_Google is a pear class that provides access to the Google
+SOAP Web APIs.  It allows easy access to the Google SOAP Web APIs for the
+search engine, spelling suggestions, and cache.
 
-Please note that as of December 5, 2006
-Google is no longer issuing new API keys
-for the SOAP search API, so this package
-is only for developers which has an API
-key already.
+Please note that as of December 5, 2006 Google is no longer issuing new
+API keys for the SOAP search API, so this package is only for developers
+which has an API key already.
 
-WWW:   http://pear.php.net/package/Services_Google/
+WWW: https://pear.php.net/package/Services_Google

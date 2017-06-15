@@ -1,6 +1,6 @@
---- util.c.orig	Wed Jun 23 11:31:52 2004
-+++ util.c	Wed Jun 23 11:32:20 2004
-@@ -34,10 +34,11 @@
+--- util.c.orig	2004-02-08 13:42:33 UTC
++++ util.c
+@@ -34,10 +34,11 @@ GtkLabel* gtk_label_new_from_pango_marku
  {
  	PangoAttrList *attrs;
  	gchar* parsed_text;

@@ -3,6 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.4.6
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
@@ -24,7 +25,8 @@ COMMENT=	Open source Geographical Information System (GIS)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig:devel/swig13
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig:devel/swig13 \
+		python:lang/python
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libpng.so:graphics/png \
 		libproj.so:graphics/proj \
@@ -33,8 +35,8 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		fortran gettext gmake iconv jpeg perl5 pkgconfig python:2 \
-		readline shebangfix tk
+USES=		fortran gettext gmake iconv jpeg ncurses perl5 pkgconfig \
+		python:2 readline shebangfix tk
 SHEBANG_FILES=	scripts/i.spectral/i.spectral \
 		scripts/r.tileset/r.tileset \
 		visualization/nviz/scripts/nviz2.2_script \
@@ -74,7 +76,9 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-wxwidgets=${WX_CONFIG}
 ALL_TARGET=	default
 USE_LDCONFIG=	${PREFIX}/${GRASS_INST_DIR}/lib
-MAKE_JOBS_UNSAFE=yes
+CPPFLAGS+=	-I${NCURSESINC}
+
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	GRASS_INST_DIR="${GRASS_INST_DIR}" \
 		VERSION="${PORTVERSION}" \

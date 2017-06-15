@@ -10,8 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Implementation of ANSI Forth
 
-BROKEN_i386=	does not link
-BROKEN_powerpc=	does not compile
+BROKEN_aarch64=		does not compile: error: implicit declaration of function 'PFE_SBR_COMPILE_EXIT' is invalid in C99
+BROKEN_i386=		does not link
+BROKEN_powerpc=		does not compile
 BROKEN_powerpc64=	Does not build
 
 GNU_CONFIGURE=	yes

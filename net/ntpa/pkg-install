@@ -1,0 +1,21 @@
+#! /bin/sh
+
+newsyslog() {
+    if grep -q /var/log/ntpa/ntpa.log /etc/newsyslog.conf; then
+        :
+    else
+        cat >> /etc/newsyslog.conf <<EOT
+/var/log/ntpa/ntpa.log root:ntpa       660  10    *    @T00  C  /var/run/ntpa/ntpa.pid SIGUSR2
+EOT
+    fi
+}
+
+case $2 in
+    PRE-INSTALL)
+        ;;      
+    POST-INSTALL)
+        if [ -z "${PACKAGE_BUILDING}" ]; then
+            newsyslog
+        fi
+        ;;
+esac

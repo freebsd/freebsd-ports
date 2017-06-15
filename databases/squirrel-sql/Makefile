@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
-DISTNAME=	squirrelsql-${PORTVERSION:R}-optional
+DISTNAME=	squirrelsql-${PORTVERSION}-optional
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	Universal SQL Client
@@ -31,7 +31,7 @@ DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		false
 
 post-extract:
-	cd "${WRKSRC}" && ${RM} -rf Uninstaller *.bat *.sh .installationinformation
+	cd "${WRKSRC}" && ${RM} -r Uninstaller *.bat *.sh .installationinformation
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

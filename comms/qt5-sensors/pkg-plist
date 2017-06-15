@@ -114,11 +114,11 @@
 %%QT_INCDIR%%/QtSensors/qtapsensor.h
 %%QT_INCDIR%%/QtSensors/qtiltsensor.h
 %%QT_INCDIR%%/QtSensors/qtsensorsversion.h
-%%QT_LIBDIR%%/cmake/Qt5Sensors/Qt5SensorsConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5Sensors/Qt5SensorsConfigVersion.cmake
-%%QT_LIBDIR%%/cmake/Qt5Sensors/Qt5Sensors_QShakeSensorGesturePlugin.cmake
-%%QT_LIBDIR%%/cmake/Qt5Sensors/Qt5Sensors_QtSensorGesturePlugin.cmake
-%%QT_LIBDIR%%/cmake/Qt5Sensors/Qt5Sensors_genericSensorPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5Sensors/Qt5SensorsConfig.cmake
+%%QT_CMAKEDIR%%/Qt5Sensors/Qt5SensorsConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5Sensors/Qt5Sensors_QShakeSensorGesturePlugin.cmake
+%%QT_CMAKEDIR%%/Qt5Sensors/Qt5Sensors_QtSensorGesturePlugin.cmake
+%%QT_CMAKEDIR%%/Qt5Sensors/Qt5Sensors_genericSensorPlugin.cmake
 %%QT_LIBDIR%%/libQt5Sensors.prl
 %%QT_LIBDIR%%/libQt5Sensors.so
 %%QT_LIBDIR%%/libQt5Sensors.so.5

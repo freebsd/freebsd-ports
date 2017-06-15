@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	2.38.0
-PORTREVISION=	13
+PORTVERSION=	2.40.1
+PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
+
+LICENSE=	EPL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpng.so:graphics/png \
@@ -29,7 +32,7 @@ SHEBANG_LANG=	tcl
 tcl_OLD_CMD=	/usr/bin/tclsh
 tcl_CMD=	${TCLSH}
 
-FIX_INCLUDE=	ast_common.h \
+FIX_INCLUDE=	\
 		lib/cdt/dthdr.h \
 		lib/pathplan/tri.h lib/pathplan/pathplan.h \
 		lib/pathplan/pathutil.h lib/pathplan/solvers.h \
@@ -39,8 +42,7 @@ FIX_INCLUDE=	ast_common.h \
 		lib/gvc/gvcint.h
 
 PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted.tcl \
-			tclpkg/tclpathplan/demo/pathplan.tcl \
-			tclpkg/tkspline/demo/spline.tcl
+			tclpkg/tclpathplan/demo/pathplan.tcl
 PATCH_TK_SCRIPTS=	${PATCH_TCL_SCRIPTS}
 
 PDOCS_TXT=	doc/Dot.ref doc/latex_suggestions.txt
@@ -56,8 +58,8 @@ OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 POPPLER \
 OPTIONS_DEFAULT=	XPM DIGCOLA IPSEPCOLA ICONV PANGOCAIRO NVTHREADS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
-DIGCOLA_DESC=	neato layout engine wiwth DIGCOLA features
-IPSEPCOLA_DESC=	neato layout engine wiwth IPSEPCOLA features
+DIGCOLA_DESC=	neato layout engine with DIGCOLA features
+IPSEPCOLA_DESC=	neato layout engine with IPSEPCOLA features
 PANGOCAIRO_DESC=pangocairo support
 ANN_DESC=	ANN edge bundling support
 GTS_DESC=	GNU Triangulated Surface Library support
@@ -83,11 +85,11 @@ NVTHREADS_DESC=	Link with threads (needed for nvidia)
 XPM_USE=	XORG=xaw,xpm,xmu,xt,sm,ice,xext,x11,xau,xdmcp,xp
 ICONV_USES=	iconv
 NLS_USES=	gettext
-PANGOCAIRO_USE=	GNOME=pango XORG=xrender,x11,xau,xdmcp
+PANGOCAIRO_USE=	GNOME=pango,cairo XORG=xrender,x11,xau,xdmcp
 LIBRSVG2_USE=	GNOME=librsvg2 GL=gl,glu,glut
 GTK2_USE=	XORG=sm,ice,xext,xinerama,xi,xrandr,xcursor,xfixes GNOME=gtk20
 GNOMEUI_USE=	GNOME=libgnomeui
-SMYRNA_USE=	GNOME=libglade2 GL=glut
+SMYRNA_USE=	GNOME=libglade2,pangox-compat GL=glut
 GVEDIT_USE=	qt4=qmake_build,moc_build,rcc_build,uic_build \
 		qt4=linguist_build,corelib,gui
 GHOSTSCRIPT_USES=ghostscript
@@ -98,6 +100,7 @@ RUBY_USE=	RUBY=yes
 LUA_USES=	lua
 TCL_USES=	tcl:build
 TK_USES=	tk:build
+TK_IMPLIES=	TCL
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 ANN_LIB_DEPENDS=	libann.so:math/ann
 GTS_LIB_DEPENDS=	libgts.so:graphics/gts
@@ -105,28 +108,36 @@ SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 			libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 MING_LIB_DEPENDS=	libming.so:graphics/ming
 DEVIL_LIB_DEPENDS=	libIL.so:graphics/devil
-GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+			libgc-threaded.so:devel/boehm-gc-threaded
 
 XPM_CONFIGURE_WITH=		x
 DIGCOLA_CONFIGURE_WITH=		digcola
 IPSEPCOLA_CONFIGURE_WITH=	ipsepcola
+IPSEPCOLA_IMPLIES=		DIGCOLA
 NLS_CONFIGURE_ENABLE=		nls
 PANGOCAIRO_CONFIGURE_WITH=	pangocairo
 LIBRSVG2_CONFIGURE_WITH=	rsvg
+LIBRSVG2_IMPLIES=		PANGOCAIRO
 POPPLER_CONFIGURE_WITH=		poppler
 ANN_CONFIGURE_WITH=		ann
 ANN_CONFIGURE_ENV=	ANN_CFLAGS=-I${LOCALBASE}/include ANN_LIBS=-lann
 GTS_CONFIGURE_WITH=		gts
 GTK2_CONFIGURE_WITH=		gtk
+GTK2_IMPLIES=			PANGOCAIRO
 GDK_CONFIGURE_WITH=		gdk
 GDK_PIXBUF_CONFIGURE_WITH=	gdk-pixbuf
+GDK_PIXBUF_IMPLIES=		GTK2 GDK
 GNOMEUI_CONFIGURE_WITH=		gnomeui
+GNOMEUI_IMPLIES=		GTK2
 SMYRNA_CONFIGURE_WITH=		smyrna glade gtkgl gtkglext
+SMYRNA_IMPLIES=			GTK2 GTS
 GVEDIT_CONFIGURE_ON=		--with-gvedit=yes
 GVEDIT_CONFIGURE_OFF=		--with-qt=no
 MING_CONFIGURE_WITH=		ming
 DEVIL_CONFIGURE_WITH=		devil
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-ghostscript=no
+GHOSTSCRIPT_IMPLIES=		PANGOCAIRO
 PERL_CONFIGURE_ENABLE=		perl
 PHP_CONFIGURE_ENABLE=		php
 PHP_CPPFLAGS=		-I${LOCALBASE}/include/php/Zend
@@ -169,9 +180,6 @@ BROKEN=	Ming incomplete, uses removed libgraph
 .endif
 
 .if ${PORT_OPTIONS:MTK}
-.if empty(PORT_OPTIONS:MTCL)
-IGNORE=	option TCL is required for option TK
-.endif
 # USES=tk:build is BROKEN: Does not allow to set both tcl and tk depedencies
 BUILD_DEPENDS+=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
 .endif
@@ -185,52 +193,6 @@ CONFIGURE_ARGS+=	--with-iconvlibdir=${ICONV_PREFIX}/lib
 CONFIGURE_ARGS+=	--with-iconvincludedir=${ICONV_PREFIX}/include
 .else
 CONFIGURE_ARGS+=	--without-libiconv-prefix
-.endif
-
-.if ${PORT_OPTIONS:MLIBRSVG2}
-.if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=	option PANGOCAIRO is required for option LIBRVG2
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGHOSTSCRIPT}
-.if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=	option PANGOCAIRO is required for option GHOSTSCRIPT
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-.if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=	option PANGOCAIRO is required for option GTK2
-.endif
-.else
-.if ${PORT_OPTIONS:MGNOMEUI}
-IGNORE=	option GTK2 is required for option GNOMEUI
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MGDK_PIXBUF}
-.if empty(PORT_OPTIONS:MGTK2)
-IGNORE=	option GTK2 is required for option GDK_PIXBUF
-.endif
-.if empty(PORT_OPTIONS:MGDK)
-IGNORE=	option GDK is required for option GDK_PIXBUF
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MSMYRNA}
-.if empty(PORT_OPTIONS:MGTK2)
-IGNORE=	option GTK2 is required for option SMYRNA
-.endif
-.if empty(PORT_OPTIONS:MGTS)
-IGNORE=	option GTS is required for option SMYRNA
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MIPSEPCOLA}
-.if empty(PORT_OPTIONS:MDIGCOLA)
-IGNORE=		option WITH_DIGCOLA is required for option WITH_IPSEPCOLA
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MPERL} || ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || \
@@ -247,6 +209,7 @@ CONFIGURE_ENV+=		SWIG="/nonexistent"
 
 .if ${PORT_OPTIONS:MPHP}
 SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.php
+IGNORE_WITH_PHP=	56 71
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
@@ -287,7 +250,6 @@ post-patch:
 		-e "s|vendorarchdir|sitearchdir|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" \
 		-e "s|ruby-1[.]9|ruby-${RUBY_VER}|g" \
-		-e "s|Config::|RbConfig::|" \
 		-e 's|PHP_INSTALL_DIR=.*|PHP_INSTALL_DIR="${PREFIX}/lib/php/${PHP_EXT_DIR}"|' \
 		-e 's|PHP_INSTALL_DATADIR=.*|PHP_INSTALL_DATADIR="${PREFIX}/share/php"|' \
 		-e '/if test/ s| == | = |g' ${WRKSRC}/configure
@@ -303,6 +265,11 @@ post-patch:
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
 		${WRKSRC}/Makefile.in
+.endif
+
+.if ${PORT_OPTIONS:MPHP}
+pre-install:
+	${MKDIR} "${STAGEDIR}/${PREFIX}/share/php"
 .endif
 
 post-install: install-ldconfig-file
@@ -327,14 +294,12 @@ post-install: install-ldconfig-file
 		${WRKSRC}/tclpkg/tcldot/demo/doted.tcl \
 		${WRKSRC}/tclpkg/tcldot/demo/gcat.tcl \
 		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.tcl \
-		${WRKSRC}/tclpkg/tkspline/demo/spline.tcl \
 		${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} \
 		${WRKSRC}/tclpkg/gdtclft/demo/entities.tcl.README \
 		${WRKSRC}/tclpkg/tcldot/demo/doted.tcl.README \
 		${WRKSRC}/tclpkg/tcldot/demo/gcat.tcl.README \
 		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.tcl.README \
-		${WRKSRC}/tclpkg/tkspline/demo/spline.tcl.README \
 		${STAGEDIR}${EXAMPLESDIR}/
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/pathplan_data
 	${INSTALL_DATA} \

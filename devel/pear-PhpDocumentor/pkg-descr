@@ -5,4 +5,4 @@ templates, Windows help file CHM output, PDF output, and XML DocBook peardoc2
 output for use with documenting PEAR. In addition, it can do PHPXref source
 code highlighting and linking.
 
-WWW: http://pear.php.net/package/PhpDocumentor/
+WWW: https://pear.php.net/package/PhpDocumentor

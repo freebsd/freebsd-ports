@@ -10,7 +10,7 @@ MASTER_SITES=	SF/g19linux/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	armin@frozen-zone.org
 COMMENT=	G19 library
 
-USES=		libtool
+USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

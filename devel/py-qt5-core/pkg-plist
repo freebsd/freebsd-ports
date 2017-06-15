@@ -213,6 +213,7 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/quuid.sip
 %%PYQT_SIPDIR%%/QtCore/qvariant.sip
 %%PYQT_SIPDIR%%/QtCore/qvariantanimation.sip
+%%PYQT_SIPDIR%%/QtCore/qversionnumber.sip
 %%PYQT_SIPDIR%%/QtCore/qwaitcondition.sip
 %%PYQT_SIPDIR%%/QtCore/qwineventnotifier.sip
 %%PYQT_SIPDIR%%/QtCore/qxmlstream.sip

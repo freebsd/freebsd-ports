@@ -110,22 +110,22 @@ lib/Unreal/m_who.so
 lib/Unreal/m_whois.so
 lib/Unreal/m_whowas.so
 libexec/ircd
-%%EXAMPLESDIR%%/aliases/aliases.conf
-%%EXAMPLESDIR%%/aliases/anope.conf
-%%EXAMPLESDIR%%/aliases/atheme.conf
-%%EXAMPLESDIR%%/aliases/auspice.conf
-%%EXAMPLESDIR%%/aliases/cygnus.conf
-%%EXAMPLESDIR%%/aliases/epona.conf
-%%EXAMPLESDIR%%/aliases/generic.conf
-%%EXAMPLESDIR%%/aliases/genericstats.conf
-%%EXAMPLESDIR%%/aliases/ircservices.conf
-%%EXAMPLESDIR%%/aliases/operstats.conf
-%%EXAMPLESDIR%%/badwords.channel.conf
-%%EXAMPLESDIR%%/badwords.message.conf
-%%EXAMPLESDIR%%/badwords.quit.conf
-%%EXAMPLESDIR%%/help.conf
-%%EXAMPLESDIR%%/spamfilter.conf
-%%EXAMPLESDIR%%/unrealircd.conf
+@sample %%EXAMPLESDIR%%/aliases/aliases.conf etc/Unreal/aliases/aliases.conf
+@sample %%EXAMPLESDIR%%/aliases/anope.conf etc/Unreal/aliases/anope.conf
+@sample %%EXAMPLESDIR%%/aliases/atheme.conf etc/Unreal/aliases/atheme.conf
+@sample %%EXAMPLESDIR%%/aliases/auspice.conf etc/Unreal/aliases/auspice.conf
+@sample %%EXAMPLESDIR%%/aliases/cygnus.conf etc/Unreal/aliases/cygnus.conf
+@sample %%EXAMPLESDIR%%/aliases/epona.conf etc/Unreal/aliases/epona.conf
+@sample %%EXAMPLESDIR%%/aliases/generic.conf etc/Unreal/aliases/generic.conf
+@sample %%EXAMPLESDIR%%/aliases/genericstats.conf etc/Unreal/aliases/genericstats.conf
+@sample %%EXAMPLESDIR%%/aliases/ircservices.conf etc/Unreal/aliases/ircservices.conf
+@sample %%EXAMPLESDIR%%/aliases/operstats.conf etc/Unreal/aliases/operstats.conf
+@sample %%EXAMPLESDIR%%/badwords.channel.conf etc/Unreal/badwords.channel.conf
+@sample %%EXAMPLESDIR%%/badwords.message.conf etc/Unreal/badwords.message.conf
+@sample %%EXAMPLESDIR%%/badwords.quit.conf etc/Unreal/badwords.quit.conf
+@sample %%EXAMPLESDIR%%/help.conf etc/Unreal/help.conf
+@sample %%EXAMPLESDIR%%/spamfilter.conf etc/Unreal/spamfilter.conf
+@sample %%EXAMPLESDIR%%/unrealircd.conf etc/Unreal/unrealircd.conf
 %%SQLMOD%%%%ETCDIR%%/m_sqlmod.conf
 %%SQLMOD%%lib/Unreal/m_sqlmod.so
 @owner ircd
@@ -135,37 +135,5 @@ libexec/ircd
 @dir /var/log/ircd
 @dir /var/run/ircd/tmp
 @dir /var/run/ircd
-@unexec if cmp -s %D/etc/Unreal/aliases/aliases.conf %D/%%EXAMPLESDIR%%/aliases/aliases.conf; then rm -f %D/etc/Unreal/aliases/aliases.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/aliases.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/aliases.conf %D/etc/Unreal/aliases/aliases.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/atheme.conf %D/%%EXAMPLESDIR%%/aliases/atheme.conf; then rm -f %D/etc/Unreal/aliases/atheme.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/atheme.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/atheme.conf %D/etc/Unreal/aliases/atheme.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/anope.conf %D/%%EXAMPLESDIR%%/aliases/anope.conf; then rm -f %D/etc/Unreal/aliases/anope.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/anope.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/anope.conf %D/etc/Unreal/aliases/anope.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/auspice.conf %D/%%EXAMPLESDIR%%/aliases/auspice.conf; then rm -f %D/etc/Unreal/aliases/auspice.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/aliases.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/aliases.conf %D/etc/Unreal/aliases/aliases.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/cygnus.conf %D/%%EXAMPLESDIR%%/aliases/cygnus.conf; then rm -f %D/etc/Unreal/aliases/cygnus.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/cygnus.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/cygnus.conf %D/etc/Unreal/aliases/cygnus.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/epona.conf %D/%%EXAMPLESDIR%%/aliases/epona.conf; then rm -f %D/etc/Unreal/aliases/epona.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/epona.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/epona.conf %D/etc/Unreal/aliases/epona.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/generic.conf %D/%%EXAMPLESDIR%%/aliases/generic.conf; then rm -f %D/etc/Unreal/aliases/generic.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/generic.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/generic.conf %D/etc/Unreal/aliases/generic.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/genericstats.conf %D/%%EXAMPLESDIR%%/aliases/genericstats.conf; then rm -f %D/etc/Unreal/aliases/genericstats.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/genericstats.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/genericstats.conf %D/etc/Unreal/aliases/genericstats.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/ircservices.conf %D/%%EXAMPLESDIR%%/aliases/ircservices.conf; then rm -f %D/etc/Unreal/aliases/ircservices.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/ircservices.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/ircservices.conf %D/etc/Unreal/aliases/ircservices.conf
-@unexec if cmp -s %D/etc/Unreal/aliases/operstats.conf %D/%%EXAMPLESDIR%%/aliases/operstats.conf; then rm -f %D/etc/Unreal/aliases/operstats.conf; fi
-@exec [ -f %D/etc/Unreal/aliases/operstats.conf ] || cp %D/%%EXAMPLESDIR%%/aliases/operstats.conf %D/etc/Unreal/aliases/operstats.conf
-@unexec if cmp -s %D/etc/Unreal/badwords.channel.conf %D/%%EXAMPLESDIR%%/badwords.channel.conf; then rm -f %D/etc/Unreal/badwords.channel.conf; fi
-@exec [ -f %D/etc/Unreal/badwords.channel.conf ] || cp %D/%%EXAMPLESDIR%%/badwords.channel.conf %D/etc/Unreal/badwords.channel.conf
-@unexec if cmp -s %D/etc/Unreal/badwords.message.conf %D/%%EXAMPLESDIR%%/badwords.message.conf; then rm -f %D/etc/Unreal/badwords.message.conf; fi
-@exec [ -f %D/etc/Unreal/badwords.message.conf ] || cp %D/%%EXAMPLESDIR%%/badwords.message.conf %D/etc/Unreal/badwords.message.conf
-@unexec if cmp -s %D/etc/Unreal/badwords.quit.conf %D/%%EXAMPLESDIR%%/badwords.quit.conf; then rm -f %D/etc/Unreal/badwords.quit.conf; fi
-@exec [ -f %D/etc/Unreal/badwords.quit.conf ] || cp %D/%%EXAMPLESDIR%%/badwords.quit.conf %D/etc/Unreal/badwords.quit.conf
-@unexec if cmp -s %D/etc/Unreal/help.conf %D/%%EXAMPLESDIR%%/help.conf; then rm -f %D/etc/Unreal/help.conf; fi
-@exec [ -f %D/etc/Unreal/help.conf ] || cp %D/%%EXAMPLESDIR%%/help.conf %D/etc/Unreal/help.conf
-@unexec if cmp -s %D/etc/Unreal/spamfilter.conf %D/%%EXAMPLESDIR%%/spamfilter.conf; then rm -f %D/etc/Unreal/spamfilter.conf; fi
-@exec [ -f %D/etc/Unreal/spamfilter.conf ] || cp %D/%%EXAMPLESDIR%%/spamfilter.conf %D/etc/Unreal/spamfilter.conf
-@unexec if cmp -s %D/etc/Unreal/unrealircd.conf %D/%%EXAMPLESDIR%%/unrealircd.conf; then rm -f %D/etc/Unreal/unrealircd.conf; fi
-@exec [ -f %D/etc/Unreal/unrealircd.conf ] || cp %D/%%EXAMPLESDIR%%/unrealircd.conf %D/etc/Unreal/unrealircd.conf
 @owner root
 @group wheel

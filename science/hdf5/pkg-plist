@@ -127,7 +127,7 @@ lib/libhdf5.a
 lib/libhdf5.settings
 lib/libhdf5.so
 lib/libhdf5.so.100
-lib/libhdf5.so.100.0.0
+lib/libhdf5.so.100.0.1
 lib/libhdf5_cpp.a
 lib/libhdf5_cpp.so
 lib/libhdf5_cpp.so.100
@@ -135,7 +135,7 @@ lib/libhdf5_cpp.so.100.0.0
 %%FORTRAN%%lib/libhdf5_fortran.a
 %%FORTRAN%%lib/libhdf5_fortran.so
 %%FORTRAN%%lib/libhdf5_fortran.so.100
-%%FORTRAN%%lib/libhdf5_fortran.so.100.0.0
+%%FORTRAN%%lib/libhdf5_fortran.so.100.0.1
 lib/libhdf5_hl.a
 lib/libhdf5_hl.so
 lib/libhdf5_hl.so.100

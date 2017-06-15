@@ -4,6 +4,7 @@
 PORTNAME=	sdr-wspr
 PORTVERSION=	0.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	jeff@baitis.net

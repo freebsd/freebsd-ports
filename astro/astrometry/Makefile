@@ -25,6 +25,7 @@ ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}/${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	pkg-message
+LDFLAGS=	-lz
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,python (setup|-c),${PYTHON_CMD} \1,' \

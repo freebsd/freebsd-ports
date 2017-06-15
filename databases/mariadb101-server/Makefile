@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.19
+PORTVERSION=	10.1.23
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -21,13 +22,15 @@ LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_powerpc64=	Does not build
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb101-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo ssl shebangfix
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo ncurses \
+		shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -102,9 +105,6 @@ OPTIONS_SUB=		yes
 # MySQL-Client part
 USES+=		readline
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
-
-post-install:
-	${RM} ${STAGEDIR}${PREFIX}/bin/wsrep*
 .else
 # MySQL-Server part
 USES+=		mysql:101m
@@ -142,7 +142,8 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/msql2mysql \
 		${STAGEDIR}${PREFIX}/bin/mysql_config \
 		${STAGEDIR}${PREFIX}/bin/mysql_find_rows \
-		${STAGEDIR}${PREFIX}/bin/mysqlaccess
+		${STAGEDIR}${PREFIX}/bin/mysqlaccess \
+		${STAGEDIR}${PREFIX}/lib/mysql/plugin/client_ed25519.so
 	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy \
 		${STAGEDIR}${PREFIX}/share/pkgconfig
 .endif # defined(CLIENT_ONLY)
@@ -154,14 +155,7 @@ IGNORE=		BASE_GSSAPI is not compatible with OpenSSL from ports. Use other GSSAPI
 .endif
 
 .if ${OPSYS} == FreeBSD
-. if ${OSVERSION} >= 1000012
 CMAKE_ARGS+=	-DWITH_JEMALLOC="system"
-. else
-CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
-.  if ${PORT_OPTIONS:MGSSAPI_BASE}
-IGNORE=	requires a Kerberos implementation from ports on FreeBSD < 10. Select GSSAPI_HEIMDAL or GSSAPI_MIT option
-.  endif
-. endif
 .endif
 
 post-patch:

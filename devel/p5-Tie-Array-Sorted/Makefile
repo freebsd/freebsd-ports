@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	Tie-Array-Sorted
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl array which is kept sorted
 
+LICENSE=	GPLv2+
+
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

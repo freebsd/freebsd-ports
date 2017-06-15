@@ -1,0 +1,10 @@
+--- doc/Muttrc.orig	2016-10-08 19:48:13 UTC
++++ doc/Muttrc
+@@ -626,6 +626,7 @@ attachments   -I message/external-body
+ # will be saved for later references.  Also see $record,
+ # $save_name, $force_name and ``fcc-hook''.
+ # 
++set followup_to=no
+ # 
+ # set crypt_autoencrypt=no
+ #

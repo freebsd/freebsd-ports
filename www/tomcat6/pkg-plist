@@ -42,8 +42,7 @@
 %%T%%/temp/safeToDelete.tmp
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
-%%T%%/webapps/ROOT/asf-logo-wide.gif
-%%T%%/webapps/ROOT/build.xml
+%%T%%/webapps/ROOT/asf-logo-wide.svg
 %%T%%/webapps/ROOT/favicon.ico
 %%T%%/webapps/ROOT/index.html
 %%T%%/webapps/ROOT/index.jsp
@@ -133,13 +132,14 @@
 %%T%%/webapps/docs/funcspecs/mbean-names.html
 %%T%%/webapps/docs/html-manager-howto.html
 %%T%%/webapps/docs/images/add.gif
-%%T%%/webapps/docs/images/asf-logo.gif
+%%T%%/webapps/docs/images/asf-logo.svg
 %%T%%/webapps/docs/images/code.gif
 %%T%%/webapps/docs/images/design.gif
 %%T%%/webapps/docs/images/docs.gif
 %%T%%/webapps/docs/images/fix.gif
 %%T%%/webapps/docs/images/printer.gif
 %%T%%/webapps/docs/images/tomcat.gif
+%%T%%/webapps/docs/images/tomcat.png
 %%T%%/webapps/docs/images/tomcat.svg
 %%T%%/webapps/docs/images/update.gif
 %%T%%/webapps/docs/images/void.gif
@@ -456,7 +456,7 @@
 %%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
 %%T%%/webapps/host-manager/WEB-INF/web.xml
 %%T%%/webapps/host-manager/images/add.gif
-%%T%%/webapps/host-manager/images/asf-logo.gif
+%%T%%/webapps/host-manager/images/asf-logo.svg
 %%T%%/webapps/host-manager/images/code.gif
 %%T%%/webapps/host-manager/images/design.gif
 %%T%%/webapps/host-manager/images/docs.gif
@@ -473,7 +473,7 @@
 %%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 %%T%%/webapps/manager/WEB-INF/web.xml
 %%T%%/webapps/manager/images/add.gif
-%%T%%/webapps/manager/images/asf-logo.gif
+%%T%%/webapps/manager/images/asf-logo.svg
 %%T%%/webapps/manager/images/code.gif
 %%T%%/webapps/manager/images/design.gif
 %%T%%/webapps/manager/images/docs.gif

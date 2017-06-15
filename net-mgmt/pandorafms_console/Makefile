@@ -56,7 +56,7 @@ post-patch:
 
 post-install:
 	@cd ${STAGEDIR}${WWWDIR} \
-		&& ${RM} -rf pandora_console_[il]* DEBIAN/ *.spec \
+		&& ${RM} -r pandora_console_[il]* DEBIAN/ *.spec \
 			attachment/downloads/.gitignore ${PORTDOCS} \
 			Dockerfile docker_entrypoint.sh \
 			*.sql.bak extras/check_other_languages.sh.bak

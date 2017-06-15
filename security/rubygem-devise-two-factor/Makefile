@@ -3,7 +3,7 @@
 
 PORTNAME=	devise-two-factor
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

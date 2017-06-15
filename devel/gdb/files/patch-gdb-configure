@@ -1,6 +1,18 @@
---- gdb/configure.orig	2016-03-07 10:33:02.757803766 +0100
-+++ gdb/configure	2016-03-07 10:32:39.480804873 +0100
-@@ -14297,8 +14297,7 @@
+--- gdb/configure.orig	2016-10-07 19:09:21.000000000 +0200
++++ gdb/configure	2016-10-18 11:11:30.452542000 +0200
+@@ -14256,9 +14256,8 @@
+ 
+ # These options work in either C or C++ modes.
+ build_warnings="-Wall -Wpointer-arith \
+--Wno-unused -Wunused-value -Wunused-function \
+--Wno-switch -Wno-char-subscripts \
+--Wempty-body -Wunused-but-set-parameter -Wunused-but-set-variable"
++-Wno-unused -Wno-switch -Wno-char-subscripts \
++-Wempty-body"
+ 
+ # Now add in C and C++ specific options, depending on mode.
+ if test "$enable_build_with_cxx" = "yes"; then
+@@ -14266,8 +14265,7 @@
  -Wno-narrowing"
  else
     build_warnings="$build_warnings -Wpointer-sign -Wmissing-prototypes \

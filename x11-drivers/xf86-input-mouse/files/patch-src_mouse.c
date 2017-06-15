@@ -1,6 +1,6 @@
---- src/mouse.c.orig	2014-08-12 06:36:34 UTC
+--- src/mouse.c.orig	2016-09-06 03:53:31 UTC
 +++ src/mouse.c
-@@ -293,13 +293,39 @@ MouseCommonOptions(InputInfoPtr pInfo)
+@@ -304,13 +304,39 @@ MouseCommonOptions(InputInfoPtr pInfo)
  
      pMse = pInfo->private;
  
@@ -41,7 +41,7 @@
      pMse->emulate3Buttons = xf86SetBoolOption(pInfo->options,
                                                "Emulate3Buttons", FALSE);
      if (!xf86FindOptionValue(pInfo->options,"Emulate3Buttons")) {
-@@ -311,6 +337,8 @@ MouseCommonOptions(InputInfoPtr pInfo)
+@@ -322,6 +348,8 @@ MouseCommonOptions(InputInfoPtr pInfo)
                                               "Emulate3Timeout", 50);
      if (pMse->emulate3Buttons || pMse->emulate3ButtonsSoft) {
          MessageType from = X_CONFIG;
@@ -50,7 +50,7 @@
          if (pMse->emulate3ButtonsSoft)
              from = X_DEFAULT;
          xf86Msg(from, "%s: Emulate3Buttons, Emulate3Timeout: %d\n",
-@@ -318,6 +346,8 @@ MouseCommonOptions(InputInfoPtr pInfo)
+@@ -329,6 +357,8 @@ MouseCommonOptions(InputInfoPtr pInfo)
      }
  
      pMse->chordMiddle = xf86SetBoolOption(pInfo->options, "ChordMiddle", FALSE);
@@ -59,7 +59,7 @@
      pMse->flipXY = xf86SetBoolOption(pInfo->options, "FlipXY", FALSE);
      if (xf86SetBoolOption(pInfo->options, "InvX", FALSE)) {
          pMse->invX = -1;
-@@ -328,7 +358,7 @@ MouseCommonOptions(InputInfoPtr pInfo)
+@@ -339,7 +369,7 @@ MouseCommonOptions(InputInfoPtr pInfo)
      } else
          pMse->invY = 1;
      pMse->angleOffset = xf86SetIntOption(pInfo->options, "AngleOffset", 0);
@@ -68,7 +68,7 @@
  
      if (pMse->pDragLock)
          free(pMse->pDragLock);
-@@ -438,14 +468,17 @@ MouseCommonOptions(InputInfoPtr pInfo)
+@@ -449,14 +479,17 @@ MouseCommonOptions(InputInfoPtr pInfo)
          free(s);
      }
  
@@ -88,7 +88,7 @@
              pMse->negativeZ = pMse->positiveZ = MSE_MAPTOX;
              msg = xstrdup("X axis");
          } else if (!xf86NameCmp(s, "y")) {
-@@ -594,29 +627,6 @@ MouseCommonOptions(InputInfoPtr pInfo)
+@@ -605,29 +638,6 @@ MouseCommonOptions(InputInfoPtr pInfo)
                  pInfo->name, wheelButton, pMse->wheelInertia,
                  pMse->wheelButtonTimeout);
      }
@@ -118,7 +118,7 @@
      if (origButtons != pMse->buttons)
          buttons_from = X_CONFIG;
      xf86Msg(buttons_from, "%s: Buttons: %d\n", pInfo->name, pMse->buttons);
-@@ -698,7 +708,6 @@ MouseHWOptions(InputInfoPtr pInfo)
+@@ -709,7 +719,6 @@ MouseHWOptions(InputInfoPtr pInfo)
      }
      pMse->sampleRate = xf86SetIntOption(pInfo->options, "SampleRate", 0);
      pMse->resolution = xf86SetIntOption(pInfo->options, "Resolution", 0);
@@ -126,7 +126,7 @@
  }
  
  static void
-@@ -986,6 +995,8 @@ MousePreInit(InputDriverPtr drv, InputIn
+@@ -997,6 +1006,8 @@ MousePreInit(InputDriverPtr drv, InputIn
      /* Default Mapping: 1 2 3 8 9 10 11 ... */
      for (i = 0; i < MSE_MAXBUTTONS; i++)
          pMse->buttonMap[i] = 1 << (i > 2 && i < MSE_MAXBUTTONS-4 ? i+4 : i);
@@ -135,7 +135,7 @@
  
      protocol = MousePickProtocol(pInfo, device, protocol, &protocolID);
  
-@@ -2181,7 +2192,7 @@ MouseDoPostEvent(InputInfoPtr pInfo, int
+@@ -2198,7 +2209,7 @@ MouseDoPostEvent(InputInfoPtr pInfo, int
  
      if (pMse->emulateWheel) {
          /* Emulate wheel button handling */
@@ -144,7 +144,7 @@
              wheelButtonMask = 0;
          else
              wheelButtonMask = 1 << (pMse->wheelButton - 1);
-@@ -2271,6 +2282,9 @@ MouseDoPostEvent(InputInfoPtr pInfo, int
+@@ -2288,6 +2299,9 @@ MouseDoPostEvent(InputInfoPtr pInfo, int
                          }
                      }
                  }
@@ -154,7 +154,7 @@
              }
  
              /* Absorb the mouse movement while the wheel button is pressed. */
-@@ -2288,7 +2302,7 @@ MouseDoPostEvent(InputInfoPtr pInfo, int
+@@ -2305,7 +2319,7 @@ MouseDoPostEvent(InputInfoPtr pInfo, int
      if (pMse->emulate3ButtonsSoft && pMse->emulate3Pending && (dx || dy))
          buttonTimer(pInfo);
  
@@ -163,7 +163,7 @@
          xf86PostMotionEvent(pInfo->dev, 0, 0, 2, dx, dy);
  
      if (change) {
-@@ -2401,12 +2415,10 @@ MousePostEvent(InputInfoPtr pInfo, int t
+@@ -2418,12 +2432,10 @@ MousePostEvent(InputInfoPtr pInfo, int t
                 int dx, int dy, int dz, int dw)
  {
      MouseDevPtr pMse;
@@ -176,7 +176,7 @@
  
      if (pMse->protocolID == PROT_MMHIT)
          b = reverseBits(hitachMap, truebuttons);
-@@ -2499,11 +2511,11 @@ MousePostEvent(InputInfoPtr pInfo, int t
+@@ -2516,11 +2528,11 @@ MousePostEvent(InputInfoPtr pInfo, int t
  
      /* Accumulate the scaled dx, dy in the private variables
         fracdx,fracdy and return the integer number part */

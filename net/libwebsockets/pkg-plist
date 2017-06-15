@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 %%WEBSERVER%%bin/lwsws
+%%WEBSERVER%%include/lejp.h
 include/libwebsockets.h
 include/lws_config.h
 lib/cmake/libwebsockets/LibwebsocketsConfig.cmake
@@ -8,7 +9,24 @@ lib/cmake/libwebsockets/LibwebsocketsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libwebsockets/LibwebsocketsTargets.cmake
 lib/libwebsockets.a
 lib/libwebsockets.so
-lib/libwebsockets.so.8
+lib/libwebsockets.so.9
 libdata/pkgconfig/libwebsockets.pc
-%%WEBSERVER%%%%DATADIR%%-test-server/server-status/lwsws-logo.png
-%%WEBSERVER%%%%DATADIR%%-test-server/server-status/server-status.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/failed-login.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/index.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/lwsgs-logo.png
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/lwsgs.js
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/needadmin/admin-login.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/needauth/successful-login.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/post-forgot-fail.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/post-forgot-ok.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/post-register-fail.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/post-register-ok.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/post-verify-fail.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/post-verify-ok.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/seats.jpg
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/sent-forgot-fail.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/sent-forgot-ok.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-table/index.html
+%%PLUGINS%%%%DATADIR%%-test-server/generic-table/lwsgt.js
+%%PLUGINS%%%%DATADIR%%-test-server/server-status/lwsws-logo.png
+%%PLUGINS%%%%DATADIR%%-test-server/server-status/server-status.html

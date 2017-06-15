@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcin
-PORTVERSION=	2.8.2
-PORTREVISION=	2
+PORTVERSION=	2.8.5
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
@@ -41,7 +40,8 @@ post-patch:
 		s,-ldl,,; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
 		s,/usr/share,$$prefix/share,; \
-		s,/usr/bin/moc,${LOCALBASE}/bin/moc-qt4,; \
+		s,/usr/bin/moc,${MOC},; \
+		s,%%MOC%%,${MOC},; \
 		1, 300 s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,; \
 		/GCIN_DEBUG/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,; \
@@ -68,6 +68,7 @@ post-patch:
 		${WRKSRC}/scripts/utf8-edit
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/X11R6/lib,${LOCALBASE}/lib,' ${WRKSRC}/im-client/Makefile
+
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} '/install.*DOC_DIR/d' ${WRKSRC}/Makefile
 

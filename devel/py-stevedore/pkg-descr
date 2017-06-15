@@ -5,4 +5,4 @@ for doing this, using __import__ or importlib. Stevedore avoids
 creating yet another extension mechanism by building on top of setuptools
 entry points.
 
-WWW: https://github.com/dreamhost/stevedore/
+WWW: http://docs.openstack.org/developer/stevedore/

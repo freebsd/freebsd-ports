@@ -1,0 +1,4 @@
+XWayland is an X Server running as a Wayland client, thus capable of displaying
+native X11 client applications in a Wayland compositor environment.
+
+WWW: https://wayland.freedesktop.org/xserver.html

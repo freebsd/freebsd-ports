@@ -13,7 +13,7 @@ COMMENT=	Plugin for ploy to provision Amazon EC2 instances
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools${PYTHON_SUFFIX}>0:devel/py-setuptools${PYTHON_SUFFIX} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/${PYTHON_PKGNAMEPREFIX}setuptools \
 		${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:sysutils/py-ploy \
 		${PYTHON_PKGNAMEPREFIX}boto>=2.0:devel/py-boto \
 		${PYTHON_PKGNAMEPREFIX}lazy>0:devel/py-lazy

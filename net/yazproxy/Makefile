@@ -3,7 +3,7 @@
 
 PORTNAME=	yazproxy
 PORTVERSION=	1.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazproxy/
 

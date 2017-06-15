@@ -9,12 +9,11 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for high quality hyphenation and justification
 
-LICENSE=	LGPL21 LGPL3 MPL
+LICENSE=	LGPL21+ MPL
 LICENSE_COMB=	dual
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_MPL=	${WRKSRC}/COPYING.MPL
 
-BUILD_DEPENDS=	gawk:lang/gawk
-
-CONFIGURE_ENV=	ac_cv_prog_AWK=gawk
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix perl5 shebangfix
 USE_LDCONFIG=	yes

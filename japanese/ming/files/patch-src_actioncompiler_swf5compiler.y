@@ -1,5 +1,20 @@
---- actioncompiler/swf5compiler.y.orig	2009-03-06 11:34:48.000000000 +0100
-+++ actioncompiler/swf5compiler.y	2009-03-06 11:37:13.000000000 +0100
+--- actioncompiler/swf5compiler.y.orig	2002-06-24 12:21:54 UTC
++++ actioncompiler/swf5compiler.y
+@@ -8,12 +8,12 @@
+ #include "compile.h"
+ #include "assembler.h"
+ 
+-#define YYPARSE_PARAM buffer
+-
+ Buffer bf, bc;
+ 
+ %}
+ 
++%parse-param {void *buffer}
++
+ %union
+ {
+   Buffer action;
 @@ -239,7 +239,7 @@ expr_opt
  
  switch_stmt

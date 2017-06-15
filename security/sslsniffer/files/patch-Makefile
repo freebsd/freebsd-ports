@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Nov 18 18:52:28 2002
-+++ Makefile	Mon Nov 18 18:55:30 2002
+--- Makefile.orig	2001-10-08 22:11:16 UTC
++++ Makefile
 @@ -1,26 +1,24 @@
 -CC= gcc
  PFLAGS= -cache-dir=/tmp/${USER} 
@@ -32,4 +32,3 @@
  
  $(UTL_LIB): general_utilities.o net_utilities.o
  	${AR} ${ARFLAGS} $@ general_utilities.o net_utilities.o
-

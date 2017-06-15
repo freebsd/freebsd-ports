@@ -9,4 +9,4 @@ time:
           `memoize()` call or `memoize.default_ttl` are used.
 - memcached: Uses libmemcached or the memcached PHP extension
 
-WWW: http://pecl.php.net/package/memoize
+WWW: https://pecl.php.net/package/memoize

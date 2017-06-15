@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pgrouting
-PORTVERSION=	2.2.4
-DISTVERSIONPREFIX=	${PORTNAME}-
+PORTVERSION=	2.3.2
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org

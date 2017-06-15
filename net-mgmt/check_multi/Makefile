@@ -1,33 +1,38 @@
 # $FreeBSD$
 
 PORTNAME=	check_multi
-PORTVERSION=	0.19
+PORTVERSION=	0.26
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
-#MASTER_SITES=	http://my-plugin.de/${PORTNAME}/
-#PKGNAMEPREFIX=	nagios-
-#DISTNAME=	${PORTNAME}-${PORTVERSION}.current
-MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-purpose wrapper plugin for Nagios
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		shebangfix perl5 tar:tgz
-USE_PERL5=	run
-NO_BUILD=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	flackem
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PLUGIN_DIR=	libexec/nagios
+USES=		gmake perl5 shebangfix
+SHEBANG_FILES=	sample_config/feed_passive/gencfg.in
+GNU_CONFIGURE=	yes
+NO_ARCH=	yes
+CONFIGURE_ARGS=	--sysconfdir=${EXAMPLESDIR:H} \
+		--libexecdir=${PREFIX}/libexec/nagios
+INSTALL_TARGET=	install
+TEST_TARGET=	test
 
-SHEBANG_FILES=	check_multi
+PORTDOCS=	Changelog README
+PORTEXAMPLES=	*
+PLIST_FILES=	libexec/nagios/check_multi
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-do-install:
-	-${MKDIR} ${STAGEDIR}${PREFIX}/${PLUGIN_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/check_multi ${STAGEDIR}${PREFIX}/${PLUGIN_DIR}/
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${TAR} -C ${WRKSRC}/contrib -cf - . | ${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf -
+EXAMPLES_INSTALL_TARGET=	install-config
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

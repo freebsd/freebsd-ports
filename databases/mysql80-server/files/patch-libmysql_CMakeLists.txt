@@ -1,0 +1,29 @@
+--- libmysql/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
++++ libmysql/CMakeLists.txt
+@@ -215,7 +215,7 @@ IF(WIN32)
+ ENDIF()
+ 
+ # Merge several convenience libraries into one big mysqlclient
+-MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development)
++MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
+ 
+ # Visual Studio users need debug  static library for debug projects
+ IF(MSVC)
+@@ -257,7 +257,8 @@ IF(NOT DISABLE_SHARED)
+   # and link them together into shared library.
+   MERGE_LIBRARIES(libmysql SHARED ${LIBS}
+     EXPORTS ${CLIENT_API_FUNCTIONS} ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
+-    COMPONENT SharedLibraries)
++    COMPONENT SharedLibraries NOINSTALL)
++IF(FALSE)
+   IF(UNIX)
+     # libtool compatability
+     IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
+@@ -313,6 +314,7 @@ ENDIF()
+ # to initialize api_calls[] array in api_test.c
+ #
+ SET(CLIENT_API_FUNCTION_LIST "")
++ ENDIF()
+ FOREACH(api ${CLIENT_API_FUNCTIONS})
+   SET(CLIENT_API_FUNCTION_LIST "${CLIENT_API_FUNCTION_LIST} ${api},")
+ ENDFOREACH()

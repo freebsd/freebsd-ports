@@ -3,6 +3,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
@@ -40,11 +41,25 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		compiler dos2unix iconv gmake zip
-USE_XORG+=	x11 xext xi xrender xt xtst
+# Even when not building with X11 support, openjdk7 requires Xrender, X11, and
+# Xt headers.
+X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/x11.pc:x11/libX11
+X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/xext.pc:x11/libXext
+X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/xrender.pc:x11/libXrender
+X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt
+# Add more X11 build deps and runtime deps when X11 is enabled
+X11_LIB_DEPENDS+=	libX11.so.6:x11/libX11
+X11_LIB_DEPENDS+=	libXext.so.6:x11/libXext
+X11_LIB_DEPENDS+=	libXi.so.6:x11/libXi
+X11_LIB_DEPENDS+=	libXrender.so.1:x11/libXrender
+X11_LIB_DEPENDS+=	libXt.so.6:x11-toolkits/libXt
+X11_LIB_DEPENDS+=	libXtst.so.6:x11/libXtst
+X11_MAKE_ENV_OFF=	BUILD_HEADLESS_ONLY=1
+
 MAKE_ARGS=	CC=${CC:Q} CXX=${CXX:Q} HOST_CC=${CC:Q}
 
-OPTIONS_DEFINE=		POLICY TZUPDATE
-OPTIONS_DEFAULT=	POLICY TZUPDATE
+OPTIONS_DEFINE=		POLICY TZUPDATE X11
+OPTIONS_DEFAULT=	POLICY TZUPDATE X11
 DEBUG_DESC=		Enable extra debugging info
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
@@ -89,9 +104,7 @@ NOPRECIOUSMAKEVARS=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 _MAKE_JOBS=	#
-MAKE_ENV+=	LANG="C" \
-		LC_ALL="C" \
-		JAVA_HOME="" \
+MAKE_ENV+=	JAVA_HOME="" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
 		MAKEFLAGS="" \
@@ -170,11 +183,11 @@ post-patch:
 pre-install:
 	@# Update time zones
 .if !defined(BUILD_JRE)
-	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
+	@${RM} -r ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
 	@${LN} -s -f ${LOCALBASE}/share/java/zi \
 	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib
 .else
-	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib/zi
+	@${RM} -r ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib/zi
 	@${LN} -s -f ${LOCALBASE}/share/java/zi \
 	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib
 .endif

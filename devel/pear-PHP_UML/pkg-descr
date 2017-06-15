@@ -1,4 +1,4 @@
 PHP_UML is a reverse-engineering package that scans PHP files and directories,
 and delivers an UML/XMI representation of the classes and packages found.
 
-WWW: http://pear.php.net/package/PHP_UML/
+WWW: https://pear.php.net/package/PHP_UML

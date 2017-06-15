@@ -274,6 +274,7 @@ man/man5/gmtcolors.5.gz
 %%DATADIR%%/conf/gmt_custom_media.conf
 %%DATADIR%%/conf/gmt_custom_symbols.conf
 %%DATADIR%%/conf/gmt_setup.conf
+%%DATADIR%%/conf/gmt_setup.conf.win
 %%DATADIR%%/conf/gmtdefaults_SI
 %%DATADIR%%/conf/gmtdefaults_US
 %%DATADIR%%/cpt/GMT_cool.cpt

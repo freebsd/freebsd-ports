@@ -11,6 +11,7 @@ MASTER_SITES=	SUNSITE/apps/sound/players
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOD/S3M player
 
+USES=		alias
 ALL_TARGET=	freebsd
 PLIST_FILES=	bin/s3mod
 

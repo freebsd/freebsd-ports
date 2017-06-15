@@ -1,9 +1,0 @@
-gPXE is an open-source PXE implementation and bootloader.
-
-Create network booting code that allows computers to load
-their operating system from a network or to extend an
-existing PXE implementation with support for additional
-protocols, such iSCSI, HTTP, TFTP, NFS, FTP and ATA
-over Ethernet.
-
-WWW: http://etherboot.org/wiki/index.php

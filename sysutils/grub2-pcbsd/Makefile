@@ -3,7 +3,7 @@
 
 PORTNAME=	grub2-pcbsd
 PORTVERSION=	2.02q
-PORTREVISION=	17
+PORTREVISION=	10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -84,7 +84,7 @@ post-configure:
 	@${LN} -sfh /usr/include/machine /usr/include/sys /usr/include/x86 ${WRKSRC}/grub-core
 
 post-install:
-	${RM} -rf ${STAGEDIR}${PREFIX}/lib/charset.alias
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/charset.alias
 	${INSTALL_SCRIPT} ${WRKDIR}/00_header ${STAGEDIR}${PREFIX}/etc/grub.d/
 	${INSTALL_SCRIPT} ${WRKDIR}/10_kfreebsd ${STAGEDIR}${PREFIX}/etc/grub.d/
 	${INSTALL_SCRIPT} ${WRKDIR}/10_ktrueos ${STAGEDIR}${PREFIX}/etc/grub.d/

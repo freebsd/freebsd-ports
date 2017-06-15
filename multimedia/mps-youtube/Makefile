@@ -3,7 +3,7 @@
 
 PORTNAME=	mps-youtube
 PORTVERSION=	0.2.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	CHEESESHOP
 DISTFILES=	${PORTNAME}-${PORTVERSION}-2.tar.gz
@@ -47,7 +47,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+.if defined(PACKAGE_BUILDING) && !defined(PACKAGE_BUILDING_FLAVORS) && \
+    ${PYTHON_VER} != ${PYTHON_DEFAULT}
 IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
 .endif
 

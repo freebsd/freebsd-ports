@@ -21,12 +21,6 @@ PLIST_FILES=	bin/yabasic man/man1/yabasic.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "amd64" && ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		all tests end up with segfault on FreeBSD < 10.x amd64
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|= -DUNIX|= @X_CFLAGS@ -DUNIX|g' ${WRKSRC}/Makefile.in

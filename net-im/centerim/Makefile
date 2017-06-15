@@ -3,7 +3,7 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/releases/ \
 		ftp://ftp.centerim.org/releases/
@@ -13,8 +13,7 @@ COMMENT=	Text mode menu- and window-driven IM interface
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		iconv gmake ncurses pkgconfig shebangfix
-USE_OPENSSL=	yes
+USES=		iconv gmake ncurses pkgconfig shebangfix ssl
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include

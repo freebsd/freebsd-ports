@@ -16,3 +16,12 @@
  
  #ifdef WIN32
  #include <io.h>
+@@ -768,7 +768,7 @@ int32_t Http::GetContentLengthFromHeader
+ {
+     int32_t result = -1;
+ 
+-    char* cp = strstr(buffer, "Content-Length:");
++    const char* cp = strstr(buffer, "Content-Length:");
+ 
+     if(cp)
+     {

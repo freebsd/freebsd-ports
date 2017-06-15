@@ -3,7 +3,7 @@
 
 PORTNAME=	cvsweb
 PORTVERSION=	3.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel www
 MASTER_SITES=	LOCAL/scop http://people.FreeBSD.org/~scop/cvsweb/
 PKGNAMESUFFIX=	3
@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	3
 # the <freebsd-cvsweb@FreeBSD.org> mailing list.
 MAINTAINER=	noackjr@alumni.rice.edu
 COMMENT=	WWW CGI script to browse CVS repository trees version 3
+
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run \
 		p5-URI>=0:net/p5-URI
@@ -31,6 +33,7 @@ CONFLICTS=	cvsweb-2.*
 USES=		perl5 shebangfix
 SHEBANG_FILES=	cvsweb.cgi
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 

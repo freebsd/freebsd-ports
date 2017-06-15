@@ -1,5 +1,5 @@
---- Include/lnphost.h.orig	Sat Nov 20 14:22:00 2004
-+++ Include/lnphost.h	Thu Sep 13 22:22:20 2007
+--- Include/lnphost.h.orig	2004-11-20 20:22:00 UTC
++++ Include/lnphost.h
 @@ -21,6 +21,8 @@
  
  #if defined(LINUX) || defined(linux)

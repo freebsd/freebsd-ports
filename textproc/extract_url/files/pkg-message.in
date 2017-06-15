@@ -8,7 +8,7 @@ the extract_url configuration file can be copied, please type as user:
 
     su - user
 
-    cp %%PREFIX%%/etc/extract_urlview.sample ~/.extract_urlview
+    cp %%DATADIR%%/extract_urlview.sample ~/.extract_urlview
 
     exit
 

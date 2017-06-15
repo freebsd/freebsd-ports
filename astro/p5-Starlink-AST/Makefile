@@ -22,7 +22,7 @@ TEST_DEPENDS=	p5-Test-Number-Delta>=0:devel/p5-Test-Number-Delta
 USES=		perl5
 USE_PERL5=	modbuild
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Starlink/AST/AST.so
 
 .include <bsd.port.mk>

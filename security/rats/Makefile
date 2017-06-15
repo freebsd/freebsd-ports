@@ -3,6 +3,7 @@
 
 PORTNAME=	rats
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.fortify.com/downloads2/public/ \
 		http://redundancy.redundancy.org/mirror/

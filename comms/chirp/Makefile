@@ -1,34 +1,25 @@
 # $FreeBSD$
 
 PORTNAME=	chirp
-PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTVERSION=	0.4.1.2017.02.22
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://chirp.danplanet.com/download/${PORTVERSION}/ \
+MASTER_SITES=	http://trac.chirp.danplanet.com/chirp_daily/daily-${PORTVERSION:C/[0-9]+\.[0-9]+\.[0-9]+\.//:C/\.//g}/ \
 		LOCAL/db
+DISTNAME=	${PORTNAME}-daily-${PORTVERSION:C/[0-9]+\.[0-9]+\.[0-9]+\.//:C/\.//g}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Free, open-source tool for programming your amateur radio
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${CHIRP_DEPENDS}
 RUN_DEPENDS=	${CHIRP_DEPENDS}
 CHIRP_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libxml2>0:textproc/py-libxml2 \
-		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial
+		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial \
+		${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2
 
 USES=		desktop-file-utils gettext python
-USE_PYTHON=	distutils
-
-OPTIONS_DEFINE=	DOCS
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/chirpui/mainapp.py
-
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${RMDIR} ${STAGEDIR}${PREFIX}/share/chirp/images
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

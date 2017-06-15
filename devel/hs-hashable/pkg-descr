@@ -3,4 +3,4 @@ to a hash value. This class exists for the benefit of hashing-based data
 structures. The package provides instances for basic types and a way to
 combine hash values.
 
-WWW: http://github.com/tibbe/hashable
+WWW: https://github.com/tibbe/hashable

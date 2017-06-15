@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2016-01-22 07:34:26 UTC
+--- src/Makefile.in.orig	2016-06-24 23:00:54 UTC
 +++ src/Makefile.in
-@@ -11042,7 +11042,7 @@ info-am:
+@@ -11092,7 +11092,7 @@ info-am:
  
  install-data-am: install-commonlibLTLIBRARIES install-dbuspolicyDATA \
  	install-dist_alsapathsDATA install-dist_alsaprofilesetsDATA \

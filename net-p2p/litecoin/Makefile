@@ -4,7 +4,7 @@
 PORTNAME=	litecoin
 PORTVERSION=	0.10.4.0
 DISTVERSIONPREFIX=	v
-#PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	LOCAL/swills
 
@@ -37,7 +37,7 @@ LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
 DBUS_USE=		QT4=dbus
 
 TESTS_USE=		QT4=testlib
-TESTS_PLIST_FILES=	%%QT_BINDIR%%/test_litecoin-qt
+TESTS_PLIST_FILES=	bin/test_litecoin-qt
 .endif
 
 OPTIONS_DEFINE?=	DBUS DEBUG HARDENING QRCODES TESTS UPNP WALLET

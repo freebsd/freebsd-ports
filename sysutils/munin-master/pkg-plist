@@ -33,6 +33,11 @@ bin/munin-cron
 @sample %%ETCDIR%%/templates/partial/logo_path.tmpl.sample
 @sample %%ETCDIR%%/templates/partial/navigation.tmpl.sample
 @sample %%ETCDIR%%/templates/partial/path.tmpl.sample
+@comment the directory exists in STAGEDIR because it is present in
+@comment BSD.local.dist but if not registered here, it will not exist in PREFIX
+@comment when the package is installed.
+@dir etc/newsyslog.conf.d
+@sample %%ETCDIR%%/munin-master.newsyslog etc/newsyslog.conf.d/munin-master
 %%SITE_PERL%%/Munin/Master/Config.pm
 %%SITE_PERL%%/Munin/Master/GraphOld.pm
 %%SITE_PERL%%/Munin/Master/Group.pm

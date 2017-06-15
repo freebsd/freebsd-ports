@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numdiff
-PORTVERSION=	5.8.1
-PORTREVISION=	1
+PORTVERSION=	5.9.0
 CATEGORIES=	math textproc
 MASTER_SITES=	SAVANNAH
 
@@ -16,9 +15,6 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		numdiff
 
@@ -34,7 +30,6 @@ NLS_INSTALL_TARGET=	install install-nls
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/$$(DOCS)/s|$$(INSTALL_DATA)|:| ; \
-		 /$$(INFOFILE).gz/s|$$(INSTALL_DATA)|:|' ${WRKSRC}/Makefile.in
+		'/$$(INFOFILE).gz/s|$$(INSTALL_DATA)|:|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

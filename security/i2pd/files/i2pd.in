@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# PROVIDE: i2pd
+# REQUIRE: DAEMON NETWORKING FILESYSTEMS
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable i2pd:
+#
+# i2pd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="i2pd"
+rcvar=i2pd_enable
+
+load_rc_config ${name}
+
+: ${i2pd_enable="NO"}
+: ${i2pd_user="%%USER%%"}
+: ${i2pd_group="%%GROUP%%"}
+: ${i2pd_pidfile="/var/run/${name}/${name}.pid"}
+: ${i2pd_datadir="/var/db/${name}"}
+: ${i2pd_logfile="/var/log/${name}/${name}.log"}
+
+required_dirs=${i2pd_datadir}
+pidfile=${i2pd_pidfile}
+command="%%PREFIX%%/bin/${name}"
+command_args="--pidfile ${i2pd_pidfile} --service --datadir ${i2pd_datadir} --log file --logfile ${i2pd_logfile} --daemon"
+
+run_rc_command "$1"

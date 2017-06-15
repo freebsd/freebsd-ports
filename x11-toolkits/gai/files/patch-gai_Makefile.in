@@ -1,5 +1,5 @@
---- gai/Makefile.in.orig	Thu Oct 27 15:00:22 2005
-+++ gai/Makefile.in	Thu Oct 27 15:02:47 2005
+--- gai/Makefile.in.orig	2016-10-04 15:54:42 UTC
++++ gai/Makefile.in
 @@ -1,9 +1,9 @@
  
  # Makefile for the General Applet Interface Library
@@ -12,7 +12,7 @@
  LDFLAGS += @GNOME_LIBS@ @GL_LIBS@ @SDL_LIBS@ @GTHREAD_LIBS@ @PANGO_LIBS@
  
  CC = @CC@
-@@ -23,13 +23,13 @@
+@@ -23,13 +23,13 @@ libgai@LIB_END@: $(OBJS)
  
  install: libgai@LIB_END@
  	mkdir -p $(DESTDIR)$(PREFIX)/include/gai
@@ -23,9 +23,8 @@
 +	$(BSD_INSTALL_PROGRAM) libgai@LIB_END@ $(DESTDIR)$(LIBDIR)/libgai@LIB_START@.@GAI_MAJOR@.@GAI_MINOR@.@GAI_MICRO@@LIB_DARWIN@
  	ln -sf libgai@LIB_START@.@GAI_MAJOR@.@GAI_MINOR@.@GAI_MICRO@@LIB_DARWIN@ $(DESTDIR)$(LIBDIR)/libgai@LIB_START@.@GAI_MAJOR@@LIB_DARWIN@
  	ln -sf libgai@LIB_START@.@GAI_MAJOR@@LIB_DARWIN@ $(DESTDIR)$(LIBDIR)/libgai@LIB_END@
--	mkdir -p $(DESTDIR)$(LIBDIR)/pkgconfig
--	cp ../gai.pc $(DESTDIR)$(LIBDIR)/pkgconfig/
-+	mkdir -p $(DESTDIR)$(PREFIX)/libdata/pkgconfig
+ 	mkdir -p $(DESTDIR)$(PREFIX)/libdata/pkgconfig
+-	cp ../gai.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
 +	$(BSD_INSTALL_DATA) ../gai.pc $(DESTDIR)$(PREFIX)/libdata/pkgconfig/
  uninstall:
  	rm -f $(DESTDIR)$(PREFIX)/include/gai/gai.h

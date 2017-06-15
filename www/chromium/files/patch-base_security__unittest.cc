@@ -1,6 +1,6 @@
---- base/security_unittest.cc.orig	2016-05-11 19:02:11 UTC
+--- base/security_unittest.cc.orig	2017-04-19 19:06:28 UTC
 +++ base/security_unittest.cc
-@@ -73,7 +73,7 @@ bool IsTcMallocBypassed() {
+@@ -74,7 +74,7 @@ bool IsTcMallocBypassed() {
  // FAILS_ is too clunky.
  void OverflowTestsSoftExpectTrue(bool overflow_detected) {
    if (!overflow_detected) {

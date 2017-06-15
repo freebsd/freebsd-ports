@@ -1,5 +1,14 @@
 --- libflatfile/DB.cpp.orig	Thu Jun 19 16:37:46 2003
 +++ libflatfile/DB.cpp
+@@ -221,7 +221,7 @@ void PalmLib::FlatFile::DB::extract_list
+             throw PalmLib::error("list view is corrupt");
+ 
+         // Determine the length of the name string.
+-        pi_char_t* null_ptr = reinterpret_cast<pi_char_t*>
++        const pi_char_t* null_ptr = reinterpret_cast<const pi_char_t*>
+             (memchr(chunk.data() + 4, 0, 32));
+         if (null_ptr)
+             lv.name = std::string((char *) (chunk.data() + 4),
 @@ -511,7 +511,8 @@
                              f.type = PalmLib::FlatFile::Field::LIST;
                  if (!field(j).argument().empty()) {

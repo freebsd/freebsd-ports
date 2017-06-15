@@ -2,4 +2,4 @@ Utilities for dealing with IEEE floating point numbers, ported from the
 Tango math library; approximate and exact equality comparisons for general
 types.
 
-WWW: http://github.com/patperry/hs-ieee754
+WWW: https://github.com/patperry/hs-ieee754

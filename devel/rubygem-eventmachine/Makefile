@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eventmachine
-PORTVERSION=	1.2.0.1
+PORTVERSION=	1.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,6 @@ LICENSE_FILE_RUBY=	${WRKSRC}/GNU
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
 
 USE_RUBY=	yes
-USES=		gem
+USES=		gem ssl
 
 .include <bsd.port.mk>

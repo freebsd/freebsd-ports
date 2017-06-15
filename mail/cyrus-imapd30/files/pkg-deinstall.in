@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# $FreeBSD$
+# Created by: hetzels@westbend.net
+
+#set -vx
+
+PKG_BATCH=${BATCH:=NO}
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+
+#
+# Modify the 'cyrus' user created from the cyrus-sasl port
+#
+
+modify_cyrus_user() {
+	USER=${CYRUS_USER}
+	PW=/usr/sbin/pw
+	if [ -x /usr/sbin/nologin ]; then
+		shell=/usr/sbin/nologin
+	elif [ -x /sbin/nologin ]; then
+		shell=/sbin/nologin
+	else
+		shell=/nonexistent
+	fi
+	uhome=/nonexistent
+
+	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}"; then
+		echo "*** Failed to update user \`${USER}'."
+	else
+		echo "*** Updated user \`${USER}'."
+	fi
+}
+
+case $2 in
+	DEINSTALL)
+		;;
+	POST-DEINSTALL)
+		modify_cyrus_user
+		;;
+
+esac

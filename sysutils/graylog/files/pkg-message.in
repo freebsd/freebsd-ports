@@ -1,0 +1,10 @@
+======================================================================
+
+Please see %%ETCDIR%% for sample versions of
+server.conf
+
+For GeoIP support you need to install the net/GeoIP port and
+configure the path to the GeoIP databases in the Graylog Web Interface
+
+When running graylog in a jail, you need to set enforce_statfs for the jail.
+======================================================================

@@ -3,11 +3,15 @@
 
 PORTNAME=	udptunnel
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/lennox/udptunnel/
+MASTER_SITES=	http://www.cs.columbia.edu/~lennox/udptunnel/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Tunnel UDP packets over a TCP connection
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/udptunnel

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	coppermine
-PORTVERSION=	1.5.44
+PORTVERSION=	1.5.46
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Coppermine/1.5.x/
 DISTNAME=	cpg${PORTVERSION}
@@ -37,9 +37,6 @@ pre-everything::
 	@${ECHO_MSG} "By default, coppermine depends on PHP with GD support."
 	@${ECHO_MSG} "You may select IMAGEMAGICK to depend on ImageMagick instead of GD."
 	@${ECHO_MSG} ""
-
-post-extract:
-	@${CHMOD} -R o-w ${WRKSRC}/
 
 pre-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/

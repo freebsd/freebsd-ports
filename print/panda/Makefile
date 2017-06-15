@@ -25,7 +25,6 @@ LIBS+=		-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 USES=		autoreconf bdb dos2unix gmake jpeg libtool pathfix pkgconfig tar:bzip2
 DOS2UNIX_GLOB=	*.c
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

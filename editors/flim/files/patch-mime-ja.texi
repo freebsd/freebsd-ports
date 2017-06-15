@@ -1,5 +1,5 @@
---- ./mime-ja.texi.orig	2002-10-08 15:50:05.000000000 +0000
-+++ ./mime-ja.texi	2014-06-28 06:59:01.000000000 +0000
+--- mime-ja.texi.orig	2002-10-08 15:50:05 UTC
++++ mime-ja.texi
 @@ -1,7 +1,11 @@
  \input texinfo.tex
  @c Generated automatically from mime-ja.sgml by sinfo 3.7.

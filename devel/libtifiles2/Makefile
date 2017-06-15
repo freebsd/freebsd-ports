@@ -15,7 +15,7 @@ LIB_DEPENDS=	libticonv.so:converters/libticonv
 
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USES=		gmake libarchive libtool pathfix pkgconfig tar:bzip2
+USES=		libarchive libtool pathfix pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

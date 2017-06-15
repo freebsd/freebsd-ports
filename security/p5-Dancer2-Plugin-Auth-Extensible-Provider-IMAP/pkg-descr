@@ -1,0 +1,6 @@
+IMAP authentication provider for Dancer2::Plugin::Auth::Extensible
+
+See Dancer2::Plugin::Auth::Extensible for details on how to use
+the authentication framework.
+
+WWW: http://search.cpan.org/dist/Dancer2-Plugin-Auth-Extensible-Provider-IMAP/

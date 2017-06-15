@@ -1,6 +1,7 @@
 bin/dvbcut
 share/applications/dvbcut.desktop
 share/mime/packages/dvbcut.xml
+share/icons/dvbcut/icons.qrc
 share/icons/dvbcut/bookmark.png
 share/icons/dvbcut/chapter.svgz
 share/icons/dvbcut/dvbcut.svg

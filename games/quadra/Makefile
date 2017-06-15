@@ -39,6 +39,6 @@ maint-gen-distfile:
 	fi
 	svn export -r${SVN_REV} ${SVN_SRC} ${PORTNAME}-${PORTVERSION}
 	${TAR} cjf ${DISTDIR}/${DISTNAME}.tar.bz2 ${PORTNAME}-${PORTVERSION}
-	${RM} -rf ${PORTNAME}-${PORTVERSION}
+	${RM} -r ${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

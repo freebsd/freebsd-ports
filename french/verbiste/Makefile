@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.43
+PORTVERSION=	0.1.44
 CATEGORIES=	french textproc
 MASTER_SITES=	http://sarrazip.com/dev/
 

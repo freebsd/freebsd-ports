@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ume
-PORTVERSION=	0.0.470
-PORTREVISION=	3
+PORTVERSION=	0.0.660
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SOURCEFORGE_JP/${PORTNAME}-font/22212
 PKGNAMEPREFIX=	ja-font-
@@ -10,6 +9,9 @@ DISTNAME=	umefont_${PORTVERSION:E}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Ume Japanese TrueType fonts
+
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/license.html
 
 USES=		fonts:fc tar:xz
 FONTNAME=	TTF
@@ -19,9 +21,6 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
 DATADIR=	${PREFIX}/share/font-${PORTNAME}
-PORTDOCS=	license.html
-
-OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -38,9 +37,5 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.46.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -60,7 +60,7 @@ GDB_DESC=	Install python gdb scripts
 CONFIGURE_ARGS+=--disable-dtrace
 
 .if empty(ICONV_LIB)
-CONFIGURE_ARGS+=	--with-libiconv=native
+CONFIGURE_ARGS+=	--with-libiconv=no
 .else
 CONFIGURE_ARGS+=	--with-libiconv=gnu
 .endif

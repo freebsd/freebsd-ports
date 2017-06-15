@@ -1,6 +1,6 @@
 # Unbundle sleuthkit and talloc
 
---- setup.py.orig	2016-07-21 19:02:40 UTC
+--- setup.py.orig	2017-01-28 14:19:35 UTC
 +++ setup.py
 @@ -169,9 +169,9 @@ class BuildExtCommand(build_ext):
  

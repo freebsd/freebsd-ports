@@ -1,19 +1,22 @@
-# Based in a port created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
+# Based on a port created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 # $FreeBSD$
 
 PORTNAME=	susv4
-PORTVERSION=	20140725
+PORTVERSION=	20160930
 CATEGORIES=	misc
 MASTER_SITES=	#
-DISTNAME=	susv4tc1
+DISTNAME=	susv4tc2
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	The Open Group Base Specifications Issue 7/IEEE Std 1003.1, 2013 Edition
+COMMENT=	Open Group Base Specifications Issue 7/IEEE Std 1003.1, 2016 Edition
+
+LICENSE=	NONE
 
 RESTRICTED=	Redistribution of the documents is not permitted
 
 USES=		tar:bzip2
+NO_ARCH=	yes
 NO_BUILD=	yes
 PORTDOCS=	*
 

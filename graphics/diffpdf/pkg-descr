@@ -1,0 +1,8 @@
+DiffPDF is used to compare two PDF files-textually or visually.
+
+DiffPDF can compare two PDF files.
+It offers three comparison modes: Words, Characters, and Appearance.
+
+LICENSE: GPL2 or later
+
+WWW: http://www.qtrac.eu/diffpdf-foss.html

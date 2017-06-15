@@ -63,6 +63,7 @@ libdata/pkgconfig/shiboken.pc
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/down.png

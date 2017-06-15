@@ -6,6 +6,7 @@ bin/yaz-icu
 bin/yaz-illclient
 bin/yaz-json-parse
 bin/yaz-marcdump
+bin/yaz-record-conv
 bin/yaz-url
 bin/yaz-ztest
 bin/zoomsh
@@ -35,6 +36,7 @@ include/yaz/item-req.h
 include/yaz/json.h
 include/yaz/log.h
 include/yaz/logrpn.h
+include/yaz/malloc_info.h
 include/yaz/marcdisp.h
 include/yaz/match_glob.h
 include/yaz/matchstr.h
@@ -143,6 +145,7 @@ man/man1/yaz-icu.1.gz
 man/man1/yaz-illclient.1.gz
 man/man1/yaz-json-parse.1.gz
 man/man1/yaz-marcdump.1.gz
+man/man1/yaz-record-conv.1.gz
 man/man1/yaz-url.1.gz
 man/man1/zoomsh.1.gz
 man/man7/bib1-attr.7.gz

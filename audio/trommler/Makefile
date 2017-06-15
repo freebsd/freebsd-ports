@@ -3,7 +3,7 @@
 
 PORTNAME=	trommler
 PORTVERSION=	3.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://muth.org/Robert/Trommler/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -13,7 +13,8 @@ COMMENT=	GTK+2 based drum machine
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig python:build shebangfix
+SHEBANG_FILES=	genexport.py
 USE_GNOME=	gtk20
 
 WRKSRC=		${WRKDIR}/Trommler

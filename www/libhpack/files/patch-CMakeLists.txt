@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2014-02-06 23:24:37.000000000 +0800
-+++ CMakeLists.txt	2014-02-07 00:29:15.339541948 +0800
-@@ -19,6 +19,8 @@
+--- CMakeLists.txt.orig	2014-07-09 21:59:50 UTC
++++ CMakeLists.txt
+@@ -19,6 +19,8 @@ math(EXPR hpack_SOVERSION_PATCH "${hpack
  
  set(hpack_VERSION ${hpack_SOVERSION_MAJOR}.${hpack_SOVERSION_MINOR}.${hpack_SOVERSION_PATCH})
  set(hpack_SOVERSION ${hpack_SOVERSION_MAJOR})
 +set(chula_VERSION ${hpack_VERSION})
 +set(chula_SOVERSION ${hpack_SOVERSION})
  
- # Options
- option(BUILD_TESTS "Build the test suite" ON)
+ # Standard replacements
+ set(prefix      ${CMAKE_INSTALL_PREFIX})

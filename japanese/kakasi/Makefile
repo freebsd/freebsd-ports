@@ -3,7 +3,7 @@
 
 PORTNAME=	kakasi
 PORTVERSION=	2.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://kakasi.namazu.org/stable/
 

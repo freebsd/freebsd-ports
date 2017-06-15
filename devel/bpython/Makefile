@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bpython
-PORTVERSION=	0.15
+PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://bpython-interpreter.org/releases/
@@ -12,6 +13,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fancy interface to the Python interpreter
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curtsies>=0.1.18:devel/py-curtsies \
@@ -24,7 +26,7 @@ OPTIONS_DEFINE=	EXAMPLES NLS
 OPTIONS_SUB=	yes
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 PORTEXAMPLES=	light.theme sample.theme

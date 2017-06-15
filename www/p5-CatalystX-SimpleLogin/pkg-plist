@@ -1,13 +1,13 @@
 %%SITE_PERL%%/Catalyst/ActionRole/NeedsLogin.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin.pm
 %%SITE_PERL%%/CatalystX/SimpleLogin/Controller/Login.pm
-%%SITE_PERL%%/CatalystX/SimpleLogin/Form/LoginOpenID.pm
 %%SITE_PERL%%/CatalystX/SimpleLogin/Form/Login.pm
-%%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login/RenderAsTTTemplate.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/Form/LoginOpenID.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/Manual.pod
 %%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login/Logout.pm
 %%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login/OpenID.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login/RenderAsTTTemplate.pm
 %%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login/WithRedirect.pm
-%%SITE_PERL%%/CatalystX/SimpleLogin/Manual.pod
-%%SITE_PERL%%/CatalystX/SimpleLogin.pm
 %%PERL5_MAN3%%/Catalyst::ActionRole::NeedsLogin.3.gz
 %%PERL5_MAN3%%/CatalystX::SimpleLogin.3.gz
 %%PERL5_MAN3%%/CatalystX::SimpleLogin::Controller::Login.3.gz

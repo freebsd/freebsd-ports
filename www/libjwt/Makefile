@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libjwt
-PORTVERSION=	1.3.1
+PORTVERSION=	1.7.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -12,16 +12,22 @@ COMMENT=	JSON Web Token implementation in C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libcheck.so:devel/libcheck \
+LIB_DEPENDS=	libcheck.so:devel/check \
 		libjansson.so:devel/jansson
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	benmcollins
 
-USES=		libtool pkgconfig pathfix ssl
+USES=		autoreconf gmake libtool pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I/usr/include" \
+		OPENSSL_LIBS="-lcrypto -lssl"
+
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^pkgconfiglibdir.*|pkgconfiglibdir = ${PREFIX}/libdata/pkgconfig|g' \
+		${WRKSRC}/libjwt/Makefile.am
 
 .include <bsd.port.mk>

@@ -417,6 +417,17 @@
  #endif // defined (JOYSTICK_SUPPORT)
  
  START_EXTERN_C
+@@ -1162,8 +1448,8 @@ void _splitpath(const char *path, char *
+ {
+   *drive = 0;
+ 
+-  char *slash = strrchr(path, SLASH_CHAR);
+-  char *dot = strrchr(path, '.');
++  const char *slash = strrchr(path, SLASH_CHAR);
++  const char *dot = strrchr(path, '.');
+ 
+   if (dot && slash && dot < slash)
+   {
 @@ -1716,7 +2002,7 @@
  }
  #endif

@@ -3,6 +3,7 @@
 
 PORTNAME=	marisa-tire
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GH
 
@@ -18,7 +19,7 @@ GH_ACCOUNT=	s-yata
 GH_PROJECT=	marisa-trie
 GH_TAGNAME=	961ed33
 
-USES=	autoreconf libtool:build
+USES=	autoreconf libtool:build pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -27,6 +28,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	SSE2 SSE3 SSSE3 SSE4 SSE41 SSE42 SSE4A POPCNT
+OPTIONS_DEFAULT=${MACHINE_CPU:tu}
 
 SSE2_DESC=	Support for SSE2
 SSE2_CONFIGURE_ENABLE=	sse2

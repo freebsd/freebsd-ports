@@ -3,7 +3,7 @@
 
 PORTNAME=	kvirc
 PORTVERSION=	4.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.gmake.de/pub/kvirc/%SUBDIR%/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.bcoos.net/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}/source
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	IRC client for KDE 4
 
 USE_PERL5=	build

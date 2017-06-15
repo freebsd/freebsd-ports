@@ -1,0 +1,49 @@
+--- kpasswd/Makefile.in.orig	2017-01-03 19:44:14 UTC
++++ kpasswd/Makefile.in
+@@ -155,9 +155,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
+ PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS)
+ am_kpasswd_OBJECTS = kpasswd.$(OBJEXT)
+ kpasswd_OBJECTS = $(am_kpasswd_OBJECTS)
+-kpasswd_LDADD = $(LDADD)
++kpasswd_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ am__DEPENDENCIES_1 =
+ kpasswd_DEPENDENCIES = $(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -166,8 +170,12 @@ am__v_lt_0 = --silent
+ am__v_lt_1 = 
+ kpasswd_generator_SOURCES = kpasswd-generator.c
+ kpasswd_generator_OBJECTS = kpasswd-generator.$(OBJEXT)
+-kpasswd_generator_LDADD = $(LDADD)
++kpasswd_generator_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ kpasswd_generator_DEPENDENCIES = $(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1)
+ am_kpasswdd_OBJECTS = kpasswdd.$(OBJEXT)
+@@ -176,6 +184,8 @@ am__DEPENDENCIES_2 = $(top_builddir)/lib
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1)
+ kpasswdd_DEPENDENCIES = $(top_builddir)/lib/kadm5/libkadm5srv.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/hdb/libhdb.la $(am__DEPENDENCIES_2) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@@ -532,6 +542,8 @@ kpasswdd_SOURCES = kpasswdd.c kpasswd_lo
+ kpasswdd_LDADD = \
+ 	$(top_builddir)/lib/kadm5/libkadm5srv.la \
+ 	$(top_builddir)/lib/hdb/libhdb.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(LDADD) \
+ 	$(LIB_pidfile) \
+ 	$(LIB_dlopen) \

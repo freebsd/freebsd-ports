@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	pen
-PORTVERSION=	0.33.2
+PORTVERSION=	0.34.1
 CATEGORIES=	net
 MASTER_SITES=	http://siag.nu/pub/pen/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Load balancer for UDP and TCP based protocols
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
+USES=		ssl
 USE_RC_SUBR=	pen
 CONFIGURE_ARGS=	--with-daemon --with-docdir=${DOCSDIR} --with-geoip \
 		--with-ssl=${OPENSSLBASE}
@@ -37,14 +39,7 @@ KQUEUE_CONFIGURE_ON=	--with-kqueue
 KQUEUE_CONFIGURE_OFF=	--with-poll
 DEBUG_CONFIGURE_ENABLE=	debugging
 
-.include <bsd.port.pre.mk>
-
-# DSR needs a newer version of the netmap's API
-.if ${OSVERSION} < 903000 || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1001000)
-CONFIGURE_ARGS+=	--without-dsr
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's/-pg//' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

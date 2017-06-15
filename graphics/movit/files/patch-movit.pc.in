@@ -1,0 +1,14 @@
+--- movit.pc.in.orig	2016-11-05 10:46:12 UTC
++++ movit.pc.in
+@@ -10,9 +10,9 @@ shaderdir=@datadir@/movit
+ 
+ Name: movit
+ Description: Movit is a library for high-quality, high-performance video filters.
+-Version: git
++Version: @PACKAGE_VERSION@
+ Requires: epoxy eigen3
+ Requires.private: fftw3
+ Conflicts:
+-Libs: -lmovit
++Libs: -L${libdir} -lmovit
+ Cflags: -I${includedir}/movit

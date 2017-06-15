@@ -22,6 +22,8 @@ ALL_TARGET=	default
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN_aarch64=		Fails to link: undefined reference to find_nonzero_arm8
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dd_rescue ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/libddr_hash.so ${STAGEDIR}${PREFIX}/lib

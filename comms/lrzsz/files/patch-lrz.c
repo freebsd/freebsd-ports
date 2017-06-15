@@ -1,6 +1,6 @@
---- src/lrz.c.orig	1998-12-30 08:49:24.000000000 +0100
-+++ src/lrz.c	2010-01-14 09:33:32.000000000 +0100
-@@ -494,6 +494,8 @@
+--- src/lrz.c.orig	1998-12-30 07:49:24 UTC
++++ src/lrz.c
+@@ -494,6 +494,8 @@ main(int argc, char *argv[])
  		usage(2,_("garbage on commandline"));
  	if (protocol!=ZM_XMODEM && npats)
  		usage(2, _("garbage on commandline"));
@@ -9,7 +9,7 @@
  	if (Restricted && allow_remote_commands) {
  		allow_remote_commands=FALSE;
  	}
-@@ -1159,9 +1161,9 @@
+@@ -1159,9 +1161,9 @@ procheader(char *name, struct zm_fileinf
  
  	nameend = name + 1 + strlen(name);
  	if (*nameend) {	/* file coming from Unix or DOS system */

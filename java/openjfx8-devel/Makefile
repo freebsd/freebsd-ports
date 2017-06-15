@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	freebsd${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaFX (OpenJFX) SDK overlay for OpenJDK 8
 
 LICENSE=	GPLv2
@@ -20,17 +20,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
 		antlr3>0:devel/antlr3 \
 		gradle:devel/gradle \
+		${JAVALIBDIR}/junit.jar:java/junit \
 		swt-devel>0:x11-toolkits/swt-devel
 RUN_DEPENDS=	swt-devel>0:x11-toolkits/swt-devel
-LIB_DEPENDS=	libjpeg.so:graphics/jpeg-turbo
 
+USES=		jpeg
 USE_GL=		yes
 USE_GNOME=	gtk20
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.8
-
-BROKEN_FreeBSD_9=	does not build
 
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_SUB=	ARCH=${ARCH} \

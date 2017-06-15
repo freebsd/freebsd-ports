@@ -1,5 +1,5 @@
---- src/findlib/Makefile.orig	2016-03-07 14:46:34.000000000 +0100
-+++ src/findlib/Makefile	2016-03-10 22:51:25.362057000 +0100
+--- src/findlib/Makefile.orig	2016-11-18 13:04:46 UTC
++++ src/findlib/Makefile
 @@ -19,6 +19,7 @@ OCAMLDEP = ocamldep
  OCAMLLEX = ocamllex
  #CAMLP4O =  camlp4 pa_o.cmo pa_op.cmo pr_o.cmo --
@@ -8,7 +8,7 @@
  
  
  OBJECTS        = findlib_config.cmo fl_split.cmo fl_metatoken.cmo fl_meta.cmo \
-@@ -112,23 +113,23 @@ clean:
+@@ -119,23 +120,23 @@ clean:
  	  ocamlfind$(EXEC_SUFFIX) ocamlfind_opt$(EXEC_SUFFIX)
  
  install: all
@@ -18,25 +18,24 @@
 +	mkdir -p "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$(NAME)"
 +	mkdir -p "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)"
 +	test $(INSTALL_TOPFIND) -eq 0 || cp topfind "$(DESTDIR)$(prefix)$(OCAML_CORE_STDLIB)"
- 	files=`$(TOP)/tools/collect_files $(TOP)/Makefile.config findlib.cmi findlib.mli findlib.cma topfind.cmi topfind.mli fl_package_base.mli fl_package_base.cmi fl_metascanner.mli fl_metascanner.cmi fl_metatoken.cmi findlib_top.cma findlib.cmxa findlib.a findlib.cmxs findlib_dynload.cma findlib_dynload.cmxa findlib_dynload.a findlib_dynload.cmxs fl_dynload.mli fl_dynload.cmi META` && \
+ 	files=`$(TOP)/tools/collect_files $(TOP)/Makefile.config findlib.cmi findlib.mli findlib.cma findlib.cmxa findlib.a findlib.cmxs topfind.cmi topfind.mli fl_package_base.mli fl_package_base.cmi fl_metascanner.mli fl_metascanner.cmi fl_metatoken.cmi findlib_top.cma findlib_top.cmxa findlib_top.a findlib_top.cmxs findlib_dynload.cma findlib_dynload.cmxa findlib_dynload.a findlib_dynload.cmxs fl_dynload.mli fl_dynload.cmi META` && \
 -	cp $$files "$(prefix)$(OCAML_SITELIB)/$(NAME)"
-+	${BSD_INSTALL_DATA} $$files "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$(NAME)"
++	cp $$files "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$(NAME)"
  	f="ocamlfind$(EXEC_SUFFIX)"; { test -f ocamlfind_opt$(EXEC_SUFFIX) && f="ocamlfind_opt$(EXEC_SUFFIX)"; }; \
 -	cp $$f "$(prefix)$(OCAMLFIND_BIN)/ocamlfind$(EXEC_SUFFIX)"
-+	${BSD_INSTALL_DATA} $$f "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)/ocamlfind$(EXEC_SUFFIX)"
++	cp $$f "$(DESTDIR)$(prefix)$(OCAMLFIND_BIN)/ocamlfind$(EXEC_SUFFIX)"
  	# the following "if" block is only needed for 4.00beta2
  	if [ $(OCAML_REMOVE_DIRECTORY) -eq 0 -a -f "$(OCAML_CORE_STDLIB)/compiler-libs/topdirs.cmi" ]; then \
  	    cd "$(OCAML_CORE_STDLIB)/compiler-libs/"; \
 -	    cp topdirs.cmi toploop.cmi "$(prefix)$(OCAML_SITELIB)/$(NAME)/"; \
-+	    ${BSD_INSTALL_DATA} topdirs.cmi toploop.cmi "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$(NAME)/"; \
++	    cp topdirs.cmi toploop.cmi "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/$(NAME)/"; \
  	fi
  
  install-num-top:
 -	mkdir -p "$(prefix)$(OCAML_SITELIB)/num-top"
--	cp num_top.cma num_top.cmi num_top_printers.cmi \
--		"$(prefix)$(OCAML_SITELIB)/num-top"
 +	mkdir -p "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/num-top"
-+	${BSD_INSTALL_DATA} num_top.cma num_top.cmi num_top_printers.cmi \
+ 	cp num_top.cma num_top.cmi num_top_printers.cmi \
+-		"$(prefix)$(OCAML_SITELIB)/num-top"
 +		"$(DESTDIR)$(prefix)$(OCAML_SITELIB)/num-top"
  
  # Note: uninstall-num-top is part of the removal of the META files.

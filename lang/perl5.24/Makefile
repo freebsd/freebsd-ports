@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-DISTVERSION=	${PERL_VERSION}-RC4
+DISTVERSION=	${PERL_VERSION}
 PORTREVISION=	0
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0 CPAN/../by-authors/id/S/SH/SHAY
@@ -16,16 +16,29 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
+# Uncomment when the default Perl is switched to 5.26
+#DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
+#EXPIRATION_DATE=2019-05-09
+
 TEST_TARGET=	test_harness
 TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
 		LD_LIBRARY_PATH=${WRKSRC}
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
-		MULTIPLICITY SITECUSTOMIZE
+		MULTIPLICITY SITECUSTOMIZE DTRACE
 # it seems perl malloc has problems with threaded perl on FreeBSD
 OPTIONS_RADIO=	EXCLUSIVE
 OPTIONS_RADIO_EXCLUSIVE=	THREADS PERL_MALLOC
-OPTIONS_DEFAULT=	PERL_64BITINT THREADS PTHREAD MULTIPLICITY
+OPTIONS_DEFAULT=	PERL_64BITINT THREADS PTHREAD MULTIPLICITY DTRACE
+
+OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
+.if !exists(/usr/sbin/dtrace)
+OPTIONS_EXCLUDE+=	DTRACE
+.endif
+.for a in aarch64 arm armeb armv6 mips mips64 mips64el mipsel mipsn32 powerpc \
+	powerpc64 sparc64
+OPTIONS_EXCLUDE_${a}=	DTRACE
+.endfor
 
 EXCLUSIVE_DESC=	Exclusive OPTIONS
 GDBM_DESC=	GDBM_File extension
@@ -39,6 +52,8 @@ SITECUSTOMIZE_DESC=	Run-time customization of @INC
 OPTIONS_SUB=		yes
 DEBUG_CONFIGURE_ON=	-Doptimize="-g" -DDEBUGGING
 DEBUG_CONFIGURE_OFF=	-Doptimize="${CFLAGS}"
+DTRACE_CONFIGURE_ON=	-Dusedtrace
+DTRACE_CONFIGURE_OFF=	-Uusedtrace
 GDBM_CONFIGURE_ON=	-Di_gdbm
 GDBM_CONFIGURE_OFF=	-Ui_gdbm
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
@@ -86,7 +101,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
 	-Dcf_by=${MAINTAINER:C,@.*,,} -Dcf_email=${MAINTAINER} \
-	-Dcf_time="`env LANG=C ${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
+	-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
 # Keep the following two in sync.
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
@@ -97,11 +112,7 @@ CONFIGURE_ARGS+= \
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
 
-LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
-		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
-		LC_TIME=""
-CONFIGURE_ENV+=	${LOCALE_CLEANUP} UNAME_v="$$(uname -v | sed 'y/=/ /')"
-MAKE_ENV+=	${LOCALE_CLEANUP}
+CONFIGURE_ENV+=	UNAME_v="$$(uname -v | sed 'y/=/ /')"
 
 SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \

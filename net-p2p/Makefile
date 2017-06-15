@@ -13,13 +13,14 @@
     SUBDIR += bnbt
     SUBDIR += btpd
     SUBDIR += btsync
+    SUBDIR += couchpotato
     SUBDIR += cpuminer
     SUBDIR += createtorrent
     SUBDIR += ctcs
     SUBDIR += ctorrent
     SUBDIR += dclib
     SUBDIR += deluge
-    SUBDIR += digitalcoin
+    SUBDIR += deluge-cli
     SUBDIR += dogecoin
     SUBDIR += ed2k
     SUBDIR += edonkey-tool-hash
@@ -32,8 +33,6 @@
     SUBDIR += frost
     SUBDIR += gkremldk
     SUBDIR += gnewtellium
-    SUBDIR += gnunet
-    SUBDIR += gnunet-gtk
     SUBDIR += go-ethereum
     SUBDIR += gtk-gnutella
     SUBDIR += gtorrentviewer
@@ -75,6 +74,7 @@
     SUBDIR += py-vertex
     SUBDIR += qbittorrent
     SUBDIR += qbittorrent-nox11
+    SUBDIR += radarr
     SUBDIR += retroshare
     SUBDIR += rtgui
     SUBDIR += rtorrent

@@ -3,6 +3,7 @@
 
 PORTNAME=	vanitygen
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	finance
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,8 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	samr7
 GH_TAGNAME=	cd1a728
 
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
 ALL_TARGET=	most
 
 PLIST_FILES=	bin/keyconv bin/vanitygen

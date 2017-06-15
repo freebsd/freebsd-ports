@@ -3,13 +3,14 @@
 
 PORTNAME=	mol2ps
 PORTVERSION=	0.4b
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/${PORTNAME}/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pas
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Read molecular structure files and generate Postscript output
 
 LICENSE=	GPLv2+

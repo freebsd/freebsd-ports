@@ -1,10 +1,11 @@
---- ./src/Makefile.in.orig	2014-03-21 20:04:20.389912049 -0300
-+++ ./src/Makefile.in	2014-03-21 20:06:15.225011088 -0300
-@@ -82,7 +82,7 @@
+--- src/Makefile.in.orig	2014-11-17 21:43:31 UTC
++++ src/Makefile.in
+@@ -82,7 +82,7 @@ EXTRA_SUBDIRS = sdl gtk psion
  bin_PROGRAMS = @SOPWITH_BINS@
  EXTRA_PROGRAMS = sopwith gtksopwith psopwith
  
 -CFLAGS = @CFLAGS@ -I.. -I/usr/include/SDL ${SDL_CGLAFS}
-+CFLAGS = @CFLAGS@ -I.. -I/usr/include/SDL -I/usr/local/include/SDL ${SDL_CGLAFS}
++CFLAGS = @CFLAGS@ -I.. ${SDL_CFLAGS}
  
  COMMON_SRC =  video.h	    swcollsn.c  swgames.h   swmain.h    swutil.h 	font.h      swcollsn.h  swground.c  swmisc.c    tcpcomm.c 	pcsound.h   swconf.c    swground.h  swmisc.h    swsound.c   tcpcomm.h 	std.h       swconf.h    swgrpha.c   swmove.c    swsound.h   timer.h 	sw.h        swdisp.c    swgrpha.h   swmove.h    swsymbol.c 		swasynio.c  swdisp.h    swinit.c    swsymbol.h 		swasynio.h  swend.c     swinit.h    swtitle.c 		swauto.c    swend.h     swobject.c  swtitle.h 		swauto.h    swgames.c   swmain.c    swobject.h  swutil.c		video.c
+ 

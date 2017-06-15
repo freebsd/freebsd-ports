@@ -3,7 +3,7 @@
 PORTNAME=	jo
 PORTVERSION=	1.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://github.com/jpmens/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/jpmens/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Small utility to create JSON objects

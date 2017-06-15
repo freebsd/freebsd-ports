@@ -1,5 +1,5 @@
---- spunk/bsdsrc/kbd.cc.orig	Tue Dec 10 14:41:06 1996
-+++ spunk/bsdsrc/kbd.cc	Tue Sep  6 09:54:21 2005
+--- spunk/bsdsrc/kbd.cc.orig	1996-12-10 13:41:06 UTC
++++ spunk/bsdsrc/kbd.cc
 @@ -27,7 +27,7 @@
  #include <sys/time.h>
  #include <sys/ioctl.h>
@@ -9,7 +9,7 @@
  #endif
  
  #include "../machine.h"
-@@ -64,7 +64,7 @@
+@@ -64,7 +64,7 @@ static CharSet		AvailExtKeys;
  
  
  // An array for mapping extended to virtual keys
@@ -18,7 +18,7 @@
  struct { Key EK; Key VK; } VirtualMap [VirtualMapSize];
  static unsigned VirtualMapCount = 0;
  
-@@ -192,7 +192,11 @@
+@@ -192,7 +192,11 @@ static char* KbdGetCap (const char* Cap)
  {
      static char CapBuf [128];
      char* CapPtr = CapBuf;
@@ -30,7 +30,7 @@
  }
  
  
-@@ -649,10 +653,22 @@
+@@ -649,10 +653,22 @@ void Keyboard::GetMappedKey (int Wait)
  	    }
  
  	    // Now read in a new chunk of chars.

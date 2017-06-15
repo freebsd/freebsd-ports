@@ -12,8 +12,8 @@ LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
 		libglapi.so:graphics/libglapi \
 		libexpat.so:textproc/expat2
 
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto:both \
-		presentproto xshmfence
+USE_XORG=	dri2proto dri3proto glproto presentproto x11 xcb xdamage xext \
+		xfixes xshmfence xxf86vm
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR}/Makefile.common"
@@ -24,10 +24,7 @@ MESA_INSTALL_WRKSRC=	src/glx
 .include "${.CURDIR}/Makefile.targets"
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/.mesa
-	@${MV} ${STAGEDIR}${PREFIX}/lib/libGL* \
-		${STAGEDIR}${PREFIX}/lib/.mesa/
-	@cd ${WRKSRC}/src/mesa && ${SETENV} DESTDIR=${STAGEDIR} \
-		${MAKE_CMD} install-pkgconfigDATA install-glHEADERS
+	@cd ${WRKSRC}/src && ${SETENV} DESTDIR=${STAGEDIR} \
+		${MAKE_CMD} install-pkgconfigDATA install-glHEADERS install-glxHEADERS
 
 .include <bsd.port.mk>

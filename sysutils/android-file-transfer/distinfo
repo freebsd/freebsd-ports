@@ -1,3 +1,5 @@
-TIMESTAMP = 1474277998
-SHA256 (whoozle-android-file-transfer-linux-v3.0-10-g40640fb_GH0.tar.gz) = 077ac7e798eb5b6de454bf487b4f2b83aa80e20e0048e2d0aab7a798c7a26d55
-SIZE (whoozle-android-file-transfer-linux-v3.0-10-g40640fb_GH0.tar.gz) = 419736
+TIMESTAMP = 1488052834
+SHA256 (whoozle-android-file-transfer-linux-v3.1_GH0.tar.gz) = d6350e273fa18c3c6d9e0a65c620ec35f41ef7e926acdf423a454f597e4314ec
+SIZE (whoozle-android-file-transfer-linux-v3.1_GH0.tar.gz) = 546978
+SHA256 (7a1db96cd2e2.patch) = c3dd367c374c587421f43c78492987c9838300c48736edfc3819a3c5bcae2d87
+SIZE (7a1db96cd2e2.patch) = 1780

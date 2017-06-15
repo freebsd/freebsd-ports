@@ -20,6 +20,7 @@ share/pixmaps/peazip.png
 %%DATADIR%%/res/lang/chs.txt
 %%DATADIR%%/res/lang/cht.txt
 %%DATADIR%%/res/lang/cz.txt
+%%DATADIR%%/res/lang/de-uml-alt.txt
 %%DATADIR%%/res/lang/de-uml.txt
 %%DATADIR%%/res/lang/default.txt
 %%DATADIR%%/res/lang/en-gb.txt

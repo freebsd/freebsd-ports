@@ -1,0 +1,4 @@
+lib/erlang/lib/hut-%%VERSION%%/ebin/hut.app
+lib/erlang/lib/hut-%%VERSION%%/include/hut.hrl
+lib/erlang/lib/hut-%%VERSION%%/src/hut.app.src
+%%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -1,0 +1,36 @@
+--- appl/afsutil/Makefile.in.orig	2017-01-03 19:44:14 UTC
++++ appl/afsutil/Makefile.in
+@@ -152,13 +152,17 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
+ PROGRAMS = $(bin_PROGRAMS)
+ am_afslog_OBJECTS = afslog.$(OBJEXT)
+ afslog_OBJECTS = $(am_afslog_OBJECTS)
+-afslog_LDADD = $(LDADD)
++afslog_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ am__DEPENDENCIES_1 =
+ @NO_AFS_FALSE@am__DEPENDENCIES_2 =  \
+ @NO_AFS_FALSE@	$(top_builddir)/lib/kafs/libkafs.la \
+ @NO_AFS_FALSE@	$(am__DEPENDENCIES_1)
+ afslog_DEPENDENCIES = $(am__DEPENDENCIES_2) \
+ 	$(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -167,9 +171,13 @@ am__v_lt_0 = --silent
+ am__v_lt_1 = 
+ am_pagsh_OBJECTS = pagsh.$(OBJEXT)
+ pagsh_OBJECTS = $(am_pagsh_OBJECTS)
+-pagsh_LDADD = $(LDADD)
++pagsh_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ pagsh_DEPENDENCIES = $(am__DEPENDENCIES_2) \
+ 	$(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_P = $(am__v_P_@AM_V@)

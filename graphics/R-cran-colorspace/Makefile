@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	colorspace
-DISTVERSION=	1.2-6
+DISTVERSION=	1.3-2
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,6 +11,6 @@ COMMENT=	Color Space Manipulation
 
 LICENSE=	BSD3CLAUSE
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>

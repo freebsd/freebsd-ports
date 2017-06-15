@@ -7,7 +7,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://mokaproject.com/packages/zip/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moka Plank theme
 
 LICENSE=	GPLv3

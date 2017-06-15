@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tigervnc
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net x11-servers
 
@@ -25,7 +26,7 @@ CONFLICTS=	tigervnc-devel-[0-9]* \
 		tridiavnc-[0-9]* \
 		vnc-[0-9]*
 
-USES=		autoreconf:build cmake cpe gmake iconv jpeg libtool pkgconfig \
+USES=		autoreconf:build cmake cpe iconv jpeg libtool pkgconfig \
 		python ssl
 USE_GL=		gl
 USE_LDCONFIG=	yes
@@ -113,7 +114,7 @@ CONFIGURE_ARGS+=	\
 
 .include <bsd.port.pre.mk>
 
-TIGERVNC_XORG_PATCH_VER=	117
+TIGERVNC_XORG_PATCH_VER=	118
 
 # import from x11-server/xorg-server/Makefile
 .if ${SSL_DEFAULT} == base
@@ -141,5 +142,6 @@ post-build:
 
 post-install:
 	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/Xvnc ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/libvnc.so
 
 .include <bsd.port.post.mk>

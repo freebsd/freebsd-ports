@@ -3,11 +3,11 @@
 
 PORTNAME=	ktorrent
 DISTVERSION=	4.3.1
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION}/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:devel/boost-libs

@@ -2,29 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	packit
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://packit.sourceforge.net/downloads/
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Network auditing tool
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnet.so:net/libnet
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	eribertomota
+
+USES=		autoreconf
 GNU_CONFIGURE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	sbin/packit \
 		man/man8/packit.8.gz
 
-.if defined(WITHOUT_CAPTURE)
-CONFIGURE_ARGS+=	--without-capture
-.endif
-.if defined(WITHOUT_INJECTION)
-CONFIGURE_ARGS+=	--without-injection
-.endif
+OPTIONS_DEFINE=	CAPTURE INJECTION
+
+CAPTURE_DESC=	Capture support
+INJECTION_DESC=	Injection support
+
+OPTIONS_DEFAULT=CAPTURE INJECTION
+
+CAPTURE_CONFIGURE_OFF=		--without-capture
+INJECTION_CONFIGURE_OFF=	--without-injection
 
 .include <bsd.port.mk>

@@ -24,7 +24,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
 post-patch:
-	@${RM} -f ${WRKSRC}/data/Thumbs.db
+	@${RM} ${WRKSRC}/data/Thumbs.db
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|g' \
 		${WRKSRC}/desktop/gfx.c ${WRKSRC}/desktop/snd.c
 

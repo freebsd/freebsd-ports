@@ -1,6 +1,5 @@
 %%SITE_ARCH%%/Filter/Util/Call.pm
 %%SITE_ARCH%%/Filter/Util/Exec.pm
-%%SITE_ARCH%%/Filter/Util/filter-util.pl
 %%SITE_ARCH%%/Filter/Util/perlfilter.pod
 %%SITE_ARCH%%/Filter/cpp.pm
 %%SITE_ARCH%%/Filter/decrypt.pm

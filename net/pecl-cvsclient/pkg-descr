@@ -1,5 +1,0 @@
-This extension is CVS pserver client extension.
-Current version has read-only, diff, and log support.
-Later versions to include add/commit/remove.
-
-WWW: http://pecl.php.net/package/cvsclient/

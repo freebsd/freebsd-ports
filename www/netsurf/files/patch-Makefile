@@ -1,0 +1,10 @@
+--- Makefile.orig	2016-11-19 13:37:41 UTC
++++ Makefile
+@@ -555,7 +555,6 @@ ifeq ($(HOST),mint)
+ else
+     $(eval $(call pkg_config_find_and_add_enabled,CURL,libcurl,Curl))
+ endif
+-$(eval $(call pkg_config_find_and_add_enabled,OPENSSL,openssl,OpenSSL))
+ 
+ $(eval $(call pkg_config_find_and_add_enabled,PNG,libpng,PNG))
+ $(eval $(call pkg_config_find_and_add_enabled,BMP,libnsbmp,BMP))

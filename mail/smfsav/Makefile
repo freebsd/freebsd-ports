@@ -3,7 +3,7 @@
 
 PORTNAME=	smfsav
 PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF/smfs
 DISTNAME=	smf-sav-${PORTVERSION}
@@ -26,7 +26,11 @@ CPPFLAGS+=	-D_REENTRANT
 LDFLAGS+=	-lmilter -lpthread
 
 SMFSAV_RUN_DIR?=/var/run/smfs
+PLIST_SUB=	SMFSAV_RUN_DIR=${SMFSAV_RUN_DIR}
 SUB_FILES+=	pkg-message
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/readme
@@ -43,4 +47,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog readme ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

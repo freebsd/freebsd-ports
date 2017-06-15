@@ -5,3 +5,4 @@ lib/libdevq.so
 lib/libdevq.so.0
 lib/libdevq.so.0.0.0
 libdata/pkgconfig/libdevq-1.0.pc
+man/man3/libdevq.3.gz

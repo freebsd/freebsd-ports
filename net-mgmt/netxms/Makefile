@@ -43,8 +43,7 @@ SQLITE_USES=		sqlite
 ODBC_CONFIGURE_ON=	--with-odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-USE_OPENSSL=	yes
-USES=		gmake iconv libtool perl5
+USES=		gmake iconv libtool perl5 ssl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

@@ -11,8 +11,9 @@ COMMENT=	PC-BSD Shell Library
 LICENSE=	BSD3CLAUSE
 
 WRKSRC_SUBDIR=	src-sh/libsh
-USES=		pkgconfig tar:xz
+USES=		pkgconfig
 NO_BUILD=	yes
+NO_ARCH=	yes
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 USE_GITHUB=	yes
@@ -22,10 +23,4 @@ GH_TAGNAME=	2c5a0c
 
 PLIST_FILES=	share/pcbsd/scripts/functions.sh
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-IGNORE=		requires FreeBSD 10 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

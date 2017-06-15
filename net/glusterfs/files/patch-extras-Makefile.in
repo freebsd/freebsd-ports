@@ -1,6 +1,6 @@
---- extras/Makefile.in.orig	2015-11-08 21:57:56 UTC
+--- extras/Makefile.in.orig	2016-11-15 14:54:33 UTC
 +++ extras/Makefile.in
-@@ -529,8 +529,8 @@ install-volDATA: $(vol_DATA)
+@@ -635,8 +635,8 @@ install-volDATA: $(vol_DATA)
  	  echo "$$d$$p"; \
  	done | $(am__base_list) | \
  	while read files; do \
@@ -11,9 +11,9 @@
  	done
  
  uninstall-volDATA:
-@@ -865,7 +865,7 @@ install-data-local:
+@@ -935,7 +935,7 @@ install-data-local:
  	fi
- 	$(MKDIR_P) $(DESTDIR)$(GLUSTERD_WORKDIR)/groups
+ 	$(mkdir_p) $(DESTDIR)$(GLUSTERD_WORKDIR)/groups
  	$(INSTALL_DATA) $(top_srcdir)/extras/group-virt.example \
 -		$(DESTDIR)$(GLUSTERD_WORKDIR)/groups/virt
 +		$(DESTDIR)$(GLUSTERD_WORKDIR)/groups/virt.sample

@@ -6,4 +6,4 @@ Converts conforming link headers to and from text, LinkHeader objects
 and corresponding (JSON-friendly) Array representations, also HTML
 link elements.
 
-WWW: http://rubygems.org/gems/link_header
+WWW: https://rubygems.org/gems/link_header

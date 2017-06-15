@@ -1,0 +1,10 @@
+--- lttng-ust.pc.in.orig	2015-06-01 11:38:44 UTC
++++ lttng-ust.pc.in
+@@ -8,6 +8,6 @@ Description: The LTTng Userspace Tracer 
+ Version: @PACKAGE_VERSION@
+ Requires:
+ Requires.private: liburcu-bp
+-Libs: -L${libdir} -llttng-ust -ldl
++Libs: -L${libdir} -llttng-ust
+ Cflags: -I${includedir} 
+ 

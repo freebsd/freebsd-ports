@@ -4,7 +4,7 @@
 
 PORTNAME=	libdmapsharing
 PORTVERSION=	2.9.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	https://www.flyn.org/projects/libdmapsharing/
 DIST_SUBDIR=	gnome3

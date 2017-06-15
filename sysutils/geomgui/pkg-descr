@@ -1,6 +1,0 @@
-Geomgui is a viewer for the geom layer in the kernel written in C.
-It can show the geom layout on the host computer or fetch info from
-a remote system via ssh. It has the same arrow key bindings as fx, vi,
-(h,j,k and l)and uses z to soom out and Z to zoom in, u is for updating.
-
-WWW: http://tinkering.hambrew.net/geomgui

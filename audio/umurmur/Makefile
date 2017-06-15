@@ -16,9 +16,8 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig \
 
 USE_GITHUB=	yes
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool ssl
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-ssl=openssl
 
 USE_RC_SUBR=	umurmur

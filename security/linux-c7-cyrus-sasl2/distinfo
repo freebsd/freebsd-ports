@@ -1,0 +1,7 @@
+TIMESTAMP = 1482091501
+SHA256 (centos/cyrus-sasl-lib-2.1.26-20.el7_2.i686.rpm) = e328871faf9ec6f073a0667acc03815b2267e4e07aa6ec3c701718168cbb780f
+SIZE (centos/cyrus-sasl-lib-2.1.26-20.el7_2.i686.rpm) = 157376
+SHA256 (centos/cyrus-sasl-lib-2.1.26-20.el7_2.x86_64.rpm) = 61f7eedd1a8eb447bb790c085f71b586d2583934a30ec9c4bed66b56b0fbf632
+SIZE (centos/cyrus-sasl-lib-2.1.26-20.el7_2.x86_64.rpm) = 158372
+SHA256 (centos/cyrus-sasl-2.1.26-20.el7_2.src.rpm) = f8dc7cff9cbd04d416fac1f63eaf51d96b6f99439975dfdb3ecaec1dd2a71452
+SIZE (centos/cyrus-sasl-2.1.26-20.el7_2.src.rpm) = 1775427

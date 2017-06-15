@@ -4,5 +4,4 @@ interactive programs.  It is briefly described by its man page, expect(1).
 It uses pseudo-tty's to control the child processes, so it is not affected
 by programs that refuse to read from stdin or pipes. (eg: passwd(1) etc).
 
-WWW: http://expect.nist.gov/
-FAQ: http://expect.nist.gov/FAQ.html
+WWW: http://expect.sourceforge.net

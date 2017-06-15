@@ -1,0 +1,47 @@
+--- doc/Makefile.orig	2017-01-12 16:11:40 UTC
++++ doc/Makefile
+@@ -1,7 +1,7 @@
+ MKDIR	= mkdir -m 0755 -p
+ INSTALL	= install
+ RM	= rm -f
+-TARGETS	= $(OBJDIR)gprs.1 $(OBJDIR)gprs.html $(OBJDIR)index.html $(OBJDIR)phone.1 $(OBJDIR)phone.html $(OBJDIR)phonectl.1 $(OBJDIR)phonectl.html
++TARGETS	= $(OBJDIR)gprs.1 $(OBJDIR)phone.1 $(OBJDIR)phonectl.1
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -37,23 +37,16 @@ $(OBJDIR)phonectl.html: manual.css.xml p
+ clean:
+ 	$(RM) -- $(gprs.1_OBJS) $(gprs.html_OBJS) $(index.html_OBJS) $(phone.1_OBJS) $(phone.html_OBJS) $(phonectl.1_OBJS) $(phonectl.html_OBJS)
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)gprs.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)gprs.html"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)index.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)phone.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)phone.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)phonectl.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)phonectl.html"
+ 
+ distclean: clean
+ 	$(RM) -- $(TARGETS)
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)gprs.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)gprs.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)phone.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)phone.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)phonectl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)phonectl.html"
+ 	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/Phone
+ 	$(INSTALL) -m 0644 phone.conf $(DESTDIR)$(PREFIX)/share/doc/Phone/phone.conf
+ 	$(MKDIR) $(DESTDIR)$(PREFIX)/share/doc/Phone
+@@ -65,11 +58,8 @@ install: $(TARGETS)
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "gprs.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "gprs.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phone.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phone.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phonectl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "phonectl.html"
+ 	$(RM) -- $(DESTDIR)$(PREFIX)/share/doc/Phone/phone.conf
+ 	$(RM) -- $(DESTDIR)$(PREFIX)/share/doc/Phone/pppd-chat_gprs
+ 	$(RM) -- $(DESTDIR)$(PREFIX)/share/doc/Phone/pppd-peers_gprs

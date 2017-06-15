@@ -16,6 +16,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

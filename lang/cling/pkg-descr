@@ -1,0 +1,17 @@
+Cling is an interactive C++ interpreter,
+built on the top of LLVM and Clang libraries.
+Its advantages over the standard interpreters are that it has command prompt
+and uses just-in-time (JIT) compiler for compilation.
+One of Cling's main goals is to provide contemporary, high-performance
+alternative of the current C++ interpreter in the ROOT project "CINT".
+The backward-compatibility with CINT is major priority during the development.
+
+Its main advantages are:
+    Production-grade parser.
+    Just-in-time compiler (JIT).
+    Modular C++ API from the ground up.
+    Separate parser and execution engine.
+    C++ 11 support through clang.
+
+
+WWW: https://root.cern.ch/cling

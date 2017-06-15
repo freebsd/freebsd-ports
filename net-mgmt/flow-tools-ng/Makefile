@@ -14,6 +14,8 @@ COMMENT=	Suite of tools and library to work with netflow data
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 OPTIONS_DEFINE=	MYSQL OPENSSL PGSQL
 PGSQL_CONFIGURE_OFF=	--without-postgresql
@@ -24,7 +26,7 @@ MYSQL_CONFIGURE_ON=	--with-mysql="${PREFIX}"
 MYSQL_USE=		MYSQL=yes
 OPENSSL_CONFIGURE_OFF=	--without-openssl
 OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 
 CONFLICTS=	flow-tools-[0-9]*
 

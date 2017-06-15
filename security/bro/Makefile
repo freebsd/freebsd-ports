@@ -3,7 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 
@@ -60,7 +60,6 @@ OPTIONS_SUB=	yes
 BROCCOLI_DESC=	Build support for libbroccoli communications
 BROCTL_DESC=	BroControl support (implies BROCCOLI and IPSUMDUMP)
 BROKER_DESC=	Enable the Broker communication library
-DEBUG_DESC=	Compile in debugging mode
 IPSUMDUMP_DESC=	Enables traffic summaries
 LBL_CF_DESC=	Unix time to formated time/date filter support
 LBL_HF_DESC=	Address to hostname filter support
@@ -84,18 +83,6 @@ LBL_HF_RUN_DEPENDS=	${LOCALBASE}/bin/hf:sysutils/lbl-hf
 LBL_CF_RUN_DEPENDS=	${LOCALBASE}/bin/cf:sysutils/lbl-cf
 PERFTOOLS_CMAKE_BOOL=	ENABLE_PERFTOOLS
 PERFTOOLS_RUN_DEPENDS=	${LOCALBASE}/bin/pprof:devel/google-perftools
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBROKER}
-.  if ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000
-# Bro 2.4 with BROKER requires caf, clang and libc++
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang++34:lang/clang34 \
-		${LOCALBASE}/lib/c++/libstdc++.so:devel/libc++
-CXXFLAGS+=	-stdlib=libc++ -I${LOCALBASE}/include/c++/v1 -L${LOCALBASE}/lib
-CXX=		${LOCALBASE}/bin/clang++34
-.  endif
-.endif
 
 post-install-BROCTL-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/logs

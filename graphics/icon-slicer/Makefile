@@ -3,7 +3,7 @@
 
 PORTNAME=	icon-slicer
 PORTVERSION=	0.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/icon-slicer/releases/
 

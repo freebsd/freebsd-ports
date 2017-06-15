@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafdav
-PORTVERSION=	5.1.6
+PORTVERSION=	${SEAFILE_VER}
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www python
@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Python library for accessing seafile data model
 
-LICENSE=	APACHE20
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
@@ -46,5 +47,7 @@ do-install:
 			-f ${WRKSRC}/wsgidav)
 	(cd ${WRKSRC}/wsgidav && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITEPACKAGEDIR}/wsgidav)
+
+.include "${.CURDIR}/../../net-mgmt/seafile-server/Makefile.include"
 
 .include <bsd.port.mk>

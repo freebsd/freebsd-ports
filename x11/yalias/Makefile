@@ -3,7 +3,7 @@
 
 PORTNAME=	yalias
 PORTVERSION=	0.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11
 MASTER_SITES=	http://offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/

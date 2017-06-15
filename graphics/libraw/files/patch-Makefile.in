@@ -1,16 +1,14 @@
---- Makefile.in.orig	2013-12-23 02:36:04.000000000 +0200
-+++ Makefile.in	2013-12-23 02:36:23.000000000 +0200
-@@ -462,12 +462,7 @@
+--- Makefile.in.orig	2016-12-27 15:20:16 UTC
++++ Makefile.in
+@@ -474,10 +474,7 @@ nobase_include_HEADERS = libraw/libraw.h
  
  
  # Docs
 -doc_DATA = COPYRIGHT \
 -			LICENSE.CDDL \
 -			LICENSE.LGPL \
--			LICENSE.LibRaw.pdf \
 -			Changelog.txt
--
-+doc_DATA =
++doc_DATA = 
+ 
  
  # pkg-config .pc files
- pkgconfigdir = $(libdir)/pkgconfig

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	taskwarrior
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 PORTREVISION=	1
 CATEGORIES=	deskutils
-DISTNAME=	task-${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Feature-rich command-line todo list manager
@@ -14,6 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls
+TEST_DEPENDS=	faketime:devel/libfaketime
 
 USES=		compiler:c++11-lib cmake python:test shebangfix
 

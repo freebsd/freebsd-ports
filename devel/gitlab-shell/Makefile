@@ -1,8 +1,8 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de
+# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	3.0.0
+PORTVERSION=	4.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=v${PORTVERSION}&dummy=/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	stlink
-PORTVERSION=	1.2.0.20160506
+PORTVERSION=	1.3.1
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -11,21 +12,22 @@ LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=		GTK3
 OPTIONS_SUB=		GTK3
-GTK3_CONFIGURE_ON=	--with-gtk
+GTK3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-pacth-turn-off-gtk
 GTK3_USE=		GNOME=gtk30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	texane
-GH_TAGNAME=	e454fe9
+GH_TAGNAME=	1.3.1
 
-USES=		autoreconf gmake pkgconfig
-GNU_CONFIGURE=	yes
+USES=		cmake pkgconfig
+USE_LDCONFIG=	yes
 
-PORTDOCS=	README tutorial.md
+PORTDOCS=	README.md tested-boards.md tutorial.md
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/README.md
+	${INSTALL_DATA} ${WRKSRC}/doc/tested-boards.md ${STAGEDIR}${DOCSDIR}/tested-boards.md
 	${INSTALL_DATA} ${WRKSRC}/doc/tutorial.md ${STAGEDIR}${DOCSDIR}/tutorial.md
 
 .include <bsd.port.mk>

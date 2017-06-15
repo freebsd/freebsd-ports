@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sweethome3d
-PORTVERSION=	5.2
+PORTVERSION=	5.4
 CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
@@ -29,7 +29,7 @@ SUB_FILES=	sweethome3d.sh
 SUB_LIST=	JARNAME=${JARNAME}
 
 PLIST_FILES=	bin/sweethome3d \
-		%%JAVAJARDIR%%/${JARNAME} \
+		${JAVAJARDIR}/${JARNAME} \
 		share/pixmaps/sweethome3d-icon.png
 
 DESKTOP_ENTRIES="Sweet Home 3D" "" "${PORTNAME}-icon" "${PORTNAME}" "" ${FALSE}

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zookeeper
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTVERSION=	0.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,7 +17,6 @@ LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
 USE_PHP=	session:build
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

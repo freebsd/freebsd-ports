@@ -37,7 +37,6 @@ __FBSDID("$FreeBSD$");
 #include <sys/wait.h>
 #include <errno.h>
 #include <err.h>
-#include <inttypes.h>
 #include <kvm.h>
 #include <limits.h>
 #include <paths.h>
@@ -208,7 +207,8 @@ add_arg(struct captured_main_args *args, char *arg)
 {
 
 	args->argc++;
-	args->argv = reallocf(args->argv, (args->argc + 1) * sizeof(char *));
+	args->argv = (char **)reallocf(args->argv, (args->argc + 1) *
+	    sizeof(char *));
 	if (args->argv == NULL)
 		err(1, "Out of memory building argument list");
 	args->argv[args->argc] = arg;
@@ -248,7 +248,7 @@ main(int argc, char *argv[])
 	kgdb_quiet = 0;
 	memset (&args, 0, sizeof args);
 	args.interpreter_p = INTERP_CONSOLE;
-	args.argv = malloc(sizeof(char *));
+	args.argv = (char **)xmalloc(sizeof(char *));
 	args.argv[0] = argv[0];
 
 	while ((ch = getopt(argc, argv, "ab:c:d:fn:qr:vw")) != -1) {

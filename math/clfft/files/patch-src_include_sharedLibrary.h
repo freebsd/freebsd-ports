@@ -1,4 +1,4 @@
---- src/include/sharedLibrary.h.orig	2016-04-22 02:47:39 UTC
+--- src/include/sharedLibrary.h.orig	2016-08-31 21:46:51 UTC
 +++ src/include/sharedLibrary.h
 @@ -52,7 +52,7 @@ inline void* LoadSharedLibrary( std::str
    {

@@ -1,13 +1,12 @@
-Description: Install config files with -dist, do not add -fPIC.
+Description: Install config files with -dist.
  Install the config files with a -dist extension.
- Do not unconditionally add -fPIC, this is done only for shared libs.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2010-09-13
 
 --- Makefile.in.orig	2011-02-28 11:00:45.000000000 -0600
 +++ Makefile.in	2014-04-10 11:17:21.360658218 -0500
-@@ -357,13 +357,12 @@
+@@ -357,9 +357,9 @@
  noinst_HEADERS = md5.h vpopmail.h file_lock.h vauth.h vlimits.h maildirquota.h vcdb.h vldap.h vmysql.h voracle.h vpgsql.h vsybase.h vlog.h global.h hmac_md5.h seek.h vutil.h
  COMMONSOURCES = vpopmail.c md5.c bigdir.c vauth.c file_lock.c vpalias.c seek.c vlimits.c maildirquota.c vutil.c vlistlib.c backfill.c client.c conf.c ippp.c
  CONFIG_CLEAN_FILES = vauth.c cdb/conf-cc cdb/conf-ld cdb/compile cdb/load
@@ -20,7 +19,3 @@ Last-Update: 2010-09-13
  noinst_LIBRARIES = libvpopmail.a
  libvpopmail_a_SOURCES = $(COMMONSOURCES) 
  libvpopmail_a_LIBADD = cdb/*.o
--libvpopmail_a_CFLAGS = -fPIC
- vpopmailbindir = @vpopmaildir@/bin
- vusagec_SOURCES = vusagec.c client.c conf.c ippp.c
- vusagec_LDADD = libvpopmail.a @auth_libs@

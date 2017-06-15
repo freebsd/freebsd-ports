@@ -19,14 +19,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
-USES=		cpe gmake shebangfix tar:xz
+USES=		cpe gmake shebangfix tar:xz ssl
 SHEBANG_FILES=	fetchmailconf.py
 
 USE_RC_SUBR=	fetchmail
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 		--without-hesiod --enable-fallback=no \
 		--with-ssl=${OPENSSLBASE}
@@ -79,7 +78,7 @@ post-patch:
 post-build:
 	@${MAKE_CMD} -C ${WRKSRC} check
 
-post-stage:
+post-install:
 	${INSTALL} -d ${STAGEDIR}/var/run/fetchmail
 	${INSTALL_DATA} ${FILESDIR}/fetchmailrc.sample \
 		${STAGEDIR}${PREFIX}/etc/fetchmailrc.sample
@@ -92,4 +91,10 @@ post-install-X11-off:
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${STAGEDIR}${PREFIX}/libexec
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

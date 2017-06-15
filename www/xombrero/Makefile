@@ -6,7 +6,7 @@ PORTVERSION=	1.6.4
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
 
 LICENSE=	ISCL
@@ -14,7 +14,6 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libsoup-2.4.so:devel/libsoup
 
-BROKEN_FreeBSD_9=	does not build
 BROKEN_FreeBSD_10=	does not build
 
 USES=		desktop-file-utils pkgconfig perl5 tar:tgz

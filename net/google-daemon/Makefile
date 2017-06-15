@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_PROJECT=	compute-image-packages
 USE_RC_SUBR=	google-accounts-manager
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/${PORTNAME}
+WRKSRC_SUBDIR=	${PORTNAME}
 
 SHEBANG_FILES=	usr/share/google/google_daemon/accounts.py \
 		usr/share/google/google_daemon/accounts_manager.py \

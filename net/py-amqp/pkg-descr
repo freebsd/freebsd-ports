@@ -4,4 +4,4 @@ alternative when librabbitmq is not available.
 
 This library should be API compatible with librabbitmq.
 
-WWW: http://github.com/celery/py-amqp
+WWW: https://github.com/celery/py-amqp

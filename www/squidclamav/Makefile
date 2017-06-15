@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	squidclamav
-PORTVERSION=	6.14
+PORTVERSION=	6.16
 CATEGORIES=	www security
 MASTER_SITES=	SF
 

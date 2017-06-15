@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-prof
-PORTVERSION=	0.15.9
+PORTVERSION=	0.16.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	skyeye
 PORTVERSION=	1.2.5
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	_REL
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -12,6 +13,7 @@ COMMENT=	Environment simulates typical ARM-base embedded computer systems
 
 LICENSE=	GPLv2
 
+USE_CSTD=	gnu89
 USE_BINUTILS=	yes
 USE_GCC=	any
 GNU_CONFIGURE=	yes

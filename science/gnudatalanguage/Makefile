@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9.6v2
-PORTREVISION=	2
+DISTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	science lang
-MASTER_SITES=	SF/${PORTNAME}/gdl/${PORTVERSION:R}
+MASTER_SITES=	SF/${PORTNAME}/gdl/${PORTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 .endif
@@ -17,8 +17,9 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libplplot.so:math/plplot	\
-		libpng.so:graphics/png	\
-		libps.so:print/pslib	\
+		libpng.so:graphics/png		\
+		libsz.so:science/szip		\
+		libps.so:print/pslib		\
 		libgsl.so:math/gsl
 
 USE_WX=		2.8
@@ -29,17 +30,20 @@ USES=		cmake:outsource compiler:gcc-c++11-lib dos2unix ncurses pkgconfig readlin
 # Disable ImageMagick (does'nt work with plplot because dynamic drivers
 #	are enabled by default)
 # TODO: add a slave port for mpich
+# TODO: create a port for Cmsvlib http://cow.physics.wisc.edu/~craigm/idl/down/cmsvlib.tar.gz
+# TODO:	create a port for Astron http://idlastro.gsfc.nasa.gov/ftp/astron.tar.gz
+# TODO:	create a port for TexToIdl http://physics.mnstate.edu/mcraig/textoidl/textoidl-2-1-2.tar
+
 CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"		\
 		-DNCURSESDIR:STRING="/usr"		\
 		-DMPICH:BOOL=NO				\
 		-DMAGICK:BOOL=NO
 CPPFLAGS+=	${CFLAGS} -fno-inline -DNPY_NO_DEPRECATED_API -DNPY_1_7_API_VERSION
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-WRKSRC=		${WRKDIR}/gdl-${PORTVERSION:R}
 
 SLAVEDIRS=	science/py-gnudatalanguage
 
-OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 MPICH2 NETCDF PYTHON UDUNITS
+OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 MPICH2 NETCDF PYTHON QHULL UDUNITS
 OPTIONS_DEFAULT=EIGEN FFTW GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 NETCDF PYTHON UDUNITS
 
 EIGEN_DESC=	Eigen3 support (boost performance)
@@ -67,7 +71,7 @@ HDF5_CMAKE_ON=		-DHDF5:BOOL=YES
 HDF5_CMAKE_OFF=		-DHDF5:BOOL=NO -DHDF:BOOL=NO
 
 LIBPROJ4_DESC=		Support cartographic processes
-LIBPROJ4_LIB_DEPENDS=	libproj4.so:math/libproj4
+LIBPROJ4_LIB_DEPENDS=	libproj.so:graphics/proj
 LIBPROJ4_CMAKE_ON=	-DLIBPROJ4:BOOL=YES
 LIBPROJ4_CMAKE_OFF=	-DLIBPROJ4:BOOL=NO
 
@@ -86,11 +90,10 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 PYTHON_CMAKE_ON=	-DPYTHON:BOOL=YES -DPYTHONVERSION:STRING="${PYTHON_VER}"
 PYTHON_CMAKE_OFF=	-DPYTHON:BOOL=NO
 
-# math/qhull conflicts with math/plplot
-#QHULL_DESC=		Enable Qhull support
-#QHULL_LIB_DEPENDS=	libqhull.so:math/qhull
-#QHULL_CMAKE_ON=		-DQHULL:BOOL=YES
-#QHULL_CMAKE_OFF=	-DQHULL:BOOL=NO
+QHULL_DESC=		Enable Qhull support
+QHULL_LIB_DEPENDS=	libqhull.so:math/qhull
+QHULL_CMAKE_ON=		-DQHULL:BOOL=YES
+QHULL_CMAKE_OFF=	-DQHULL:BOOL=NO
 
 UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
 UDUNITS_CMAKE_ON=	-DUDUNITS:BOOL=YES
@@ -111,7 +114,7 @@ do-install:
 .endif
 
 .if !defined(BUILD_PYTHON_MODULE)
-post-stage:
+post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/testsuite
 	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/testsuite/)
 .endif

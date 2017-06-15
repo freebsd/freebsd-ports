@@ -14,10 +14,7 @@ RUN_DEPENDS=	rubygem-rubyinlineaccel>=0.0.1:devel/rubygem-rubyinlineaccel
 
 LICENSE=	GPLv2
 
-GEM_NAME=	${DISTNAME}
-
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

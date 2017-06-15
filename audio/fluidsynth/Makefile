@@ -3,7 +3,7 @@
 
 PORTNAME=	fluidsynth
 PORTVERSION=	1.1.6
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,8 +13,9 @@ COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO SNDFILE
-OPTIONS_DEFAULT=	JACK
+OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO READLINE \
+		SNDFILE SNDIO
+OPTIONS_DEFAULT=	JACK READLINE
 
 USE_GNOME=	glib20
 USES=		cmake pkgconfig ninja tar:bzip2
@@ -46,10 +47,17 @@ PORTAUDIO_CMAKE_ON=	-Denable-portaudio:BOOL=TRUE
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-Denable-pulseaudio:BOOL=FALSE
 
+READLINE_USES=		readline
+READLINE_CMAKE_OFF=	-Denable-readline:BOOL=FALSE
+
 SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CMAKE_OFF=	-Denable-libsndfile:BOOL=FALSE
 
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CMAKE_OFF=	-Denable-sndio:BOOL=FALSE
+
 post-patch:
+	${CP} ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/drivers/
 	@${REINPLACE_CMD} -e \
 		'/Linux/s|^|#| ; \
 		 /_init_lib_suffix/s|"64"|""| ; \

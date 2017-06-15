@@ -34,7 +34,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .ifndef WITHOUT_SSL
-USE_OPENSSL=	yes
+USES+=	ssl
 CONFIGURE_ARGS+=	--with-ssl
 .endif
 

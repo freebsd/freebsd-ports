@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/${PORTVERSION}/ \
 		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
@@ -18,14 +19,16 @@ LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff \
 		libgif.so:graphics/giflib \
 		libjson-c.so:devel/json-c \
 		libpng.so:graphics/png \
+		libproj.so:graphics/proj \
 		libtiff.so:graphics/tiff
 
 OPTIONS_DEFINE=	ARMADILLO CFITSIO CURL ECW EXPAT FREEXL GEOS GTA HDF5 JASPER \
-		KML LIBXML2 MYSQL NETCDF ODBC OPENJPEG PCRE PGSQL PROJ \
-		SPATIALITE SQLITE WEBP XERCES
+		KML LIBXML2 MYSQL NETCDF ODBC OPENJPEG PCRE PGSQL SPATIALITE \
+		SQLITE WEBP XERCES
 OPTIONS_DEFAULT=JASPER
 OPTIONS_RADIO=	PDF
 OPTIONS_RADIO_PDF=	PODOFO POPPLER
+OPTIONS_SUB=	yes
 PCRE_DESC=	Regular expression support for SQLite
 
 CFLAGS+=	-fPIC
@@ -33,12 +36,14 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--enable-static=yes \
 		--with-geotiff=yes \
 		--with-gif=yes \
+		--with-gnm=yes \
 		--with-jpeg=yes \
 		--with-libjson-c=yes \
 		--with-liblzma=yes \
 		--with-libtiff=yes \
 		--with-libz=/usr \
 		--with-png=yes \
+		--with-static-proj4=no \
 		--with-threads=yes \
 		--without-libtool \
 		${ICONV_CONFIGURE_ARG}
@@ -97,10 +102,8 @@ PGSQL_CONFIGURE_ON=	--with-pg=${LOCALBASE}/bin/pg_config
 PGSQL_USES=		pgsql
 PODOFO_CONFIGURE_WITH=	podofo
 PODOFO_LIB_DEPENDS=	libpodofo.so:graphics/podofo
-POPPLER_CONFIGURE_WITH=	poppler
+POPPLER_CONFIGURE_WITH=	poppler=${LOCALBASE}
 POPPLER_LIB_DEPENDS=	libpoppler.so:graphics/poppler
-PROJ_CONFIGURE_WITH=	static-proj4
-PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 SPATIALITE_CONFIGURE_WITH=	spatialite
 SPATIALITE_LIB_DEPENDS=	libspatialite.so:databases/spatialite
 SQLITE_CONFIGURE_WITH=	sqlite3
@@ -113,26 +116,21 @@ XERCES_LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} -e 's|-lminizip|-lkmlminizip|' ${WRKSRC}/configure
-# Cleanup bundled libraries
-	@${RM} -fr ${WRKSRC}/frmts/gif/giflib/
-	@${RM} -fr ${WRKSRC}/frmts/gtiff/libgeotiff/
-	@${RM} -fr ${WRKSRC}/frmts/gtiff/libtiff/
-	@${RM} -fr ${WRKSRC}/frmts/jpeg/libjpeg/
-	@${RM} -fr ${WRKSRC}/frmts/jpeg/libjpeg12/
-	@${RM} -fr ${WRKSRC}/frmts/png/libpng/
-	@${RM} -fr ${WRKSRC}/frmts/zlib/
-	@${RM} -fr ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/frmts/gif/giflib/
+	@${RM} -r ${WRKSRC}/frmts/gtiff/libgeotiff/
+	@${RM} -r ${WRKSRC}/frmts/gtiff/libtiff/
+	@${RM} -r ${WRKSRC}/frmts/jpeg/libjpeg/
+	@${RM} -r ${WRKSRC}/frmts/jpeg/libjpeg12/
+	@${RM} -r ${WRKSRC}/frmts/png/libpng/
+	@${RM} -r ${WRKSRC}/frmts/zlib/
+	@${RM} -r ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
 
 post-install:
+	cd ${WRKSRC}/gnm/ && ${INSTALL_DATA} gnm.h gnm_api.h gnm_priv.h gnmgraph.h ${STAGEDIR}${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/gdalplugins/.keepme
 	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${STAGEDIR}${DATADIR}/
-	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libgdal.so.${PORTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdal.so.${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-CFLAGS+=	-flax-vector-conversions
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

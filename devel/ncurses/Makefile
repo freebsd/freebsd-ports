@@ -125,7 +125,7 @@ post-install:
 . endfor
 .endfor
 
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/libncurses.so \
+	${RM} ${STAGEDIR}${PREFIX}/lib/libncurses.so \
 		${STAGEDIR}${PREFIX}/lib/libncursesw.so
 	${ECHO} "INPUT(libncurses.so.${PORTVERSION:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
 	${ECHO} "INPUT(libncursesw.so.${PORTVERSION:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so

@@ -1,8 +1,6 @@
 # Created by: Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 # $FreeBSD$
 
-# Don't reset PORTREVISION and keep bumping it even if PORTVERSION is changed.
-PORTREVISION=	9
 CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org

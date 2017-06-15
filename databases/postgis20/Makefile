@@ -2,7 +2,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	20
@@ -17,14 +17,16 @@ LIB_DEPENDS=	libgeos.so:graphics/geos \
 		libjson-c.so:devel/json-c \
 		libproj.so:graphics/proj
 
-CONFLICTS_INSTALL=	postgis-2.1.* postgis22-*
+CONFLICTS_INSTALL=	postgis- postgis22- postgis23-
 
 OPTIONS_DEFINE=	LOADERGUI NLS RASTER TOPOLOGY
-OPTIONS_DEFAULT=TOPOLOGY
+OPTIONS_DEFAULT=RASTER TOPOLOGY
 OPTIONS_SUB=	yes
 LOADERGUI_DESC=	Enable shp2pgsql-gui
 RASTER_DESC=	Raster support
 TOPOLOGY_DESC=	Topology support
+
+PORTSCOUT=	limit:^2.0.[0-9]*
 
 CONFIGURE_ARGS=	--with-geosconfig=${LOCALBASE}/bin/geos-config \
 		--with-jsondir=${LOCALBASE} \
@@ -37,7 +39,7 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USES=		gmake iconv:wchar_t libtool perl5 pgsql pkgconfig shebangfix
-WANT_PGSQL=	server
+WANT_PGSQL=	lib server
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

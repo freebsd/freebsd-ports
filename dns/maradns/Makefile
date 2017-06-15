@@ -17,7 +17,6 @@ DEADWOOD_VER=	3.2.09
 
 REINPLACE_ARGS=	-i ""
 MAKE_ENV=	FLAGS="${CFLAGS}"
-CONFIGURE_ENV=	LANG=
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME} zoneserver Deadwood
@@ -66,7 +65,7 @@ do-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/en && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	@${RM} -rf ${STAGEDIR}${DOCSDIR}/man \
+	@${RM} -r ${STAGEDIR}${DOCSDIR}/man \
 		${STAGEDIR}${DOCSDIR}/source \
 		${STAGEDIR}${DOCSDIR}/pdf
 	@${FIND} ${STAGEDIR}${DOCSDIR} -name Makefile -delete

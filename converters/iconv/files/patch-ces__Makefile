@@ -9,3 +9,26 @@
  
  INTERNALLIB =
  
+@@ -27,9 +27,9 @@ ces_builtin.c:	${CHARSETS_C} ${CHARSETS_
+ 		${.CURDIR}/../iconv_builtin -mo ${.TARGET} \
+ 			${CHARSETS_C} PIC ${CHARSETS_O}
+ 
+-.SUFFIXES:	.so .So
++.SUFFIXES:	.so .So .pico
+ 
+-.So.so:
++.So.so .pico.so:
+ 	@${LDDESTDIRENV} ${CC} -shared -Wl,-x -o ${.TARGET} \
+ 		-Wl,-soname,${.TARGET} `lorder ${.ALLSRC} | tsort -q` \
+ 		${LDDESTDIR} ${LDADD}
+@@ -41,8 +41,8 @@ beforeinstall:
+ 		${INSTALLFLAGS} ${SHLINSTALLFLAGS} ${CHARSETS_SO} \
+ 		${DESTDIR}${MODULEDIR}
+ 
+-CLEANFILES +=	*.so *.So ces_builtin.c *.lst
++CLEANFILES +=	*.so *.So *.pico ces_builtin.c *.lst
+ 
+ .include <bsd.lib.mk>
+ 
+-.SUFFIXES:	.so .So
++.SUFFIXES:	.so .So .pico

@@ -3,7 +3,7 @@
 
 PORTNAME=	mecab
 PORTVERSION=	0.996
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE&dummy=/
 

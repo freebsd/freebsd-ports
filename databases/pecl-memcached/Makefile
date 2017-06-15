@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	2.2.0
-PORTREVISION=	4
+PORTVERSION=	3.0.3
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -21,7 +20,7 @@ OPTIONS_DEFINE=	IGBINARY SASL
 IGBINARY_DESC=	Binary serializer support
 
 CONFIGURE_ARGS=	--with-libmemcached-dir=${LOCALBASE}
-IGNORE_WITH_PHP=70
+IGNORE_WITH_PHP=56
 USE_PHP=	json:build session:build
 USES=		php:ext pkgconfig tar:tgz
 

@@ -1,0 +1,17 @@
+--- makefile.orig	2016-12-06 17:20:09 UTC
++++ makefile
+@@ -1,4 +1,5 @@
+-CXX = g++
++CXX ?= g++
++CXXFLAGS ?= -O2
+ SRCS = library/preprocessor.cpp
+ OUT = bin/preprocessor
+ 
+@@ -15,6 +16,6 @@ clean:
+ 	rm -f $(OUT)
+ 
+ $(OUT): $(SRCS)
+-	$(CXX) -o $(OUT) -O2 -s $(SRCS)
++	$(CXX) -o $(OUT) $(CXXFLAGS) -s $(SRCS)
+ 
+ .PHONY: all help clean

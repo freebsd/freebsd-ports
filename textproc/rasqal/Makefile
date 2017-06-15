@@ -18,8 +18,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libraptor2.so:textproc/raptor2 \
 		libpcre.so:devel/pcre
 
-USES=		gmake libtool pathfix perl5 pkgconfig
-USE_OPENSSL=	yes
+USES=		gmake libtool pathfix perl5 pkgconfig ssl
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

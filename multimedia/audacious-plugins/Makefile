@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	3.8
+PORTVERSION=	3.8.2
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 
 LICENSE=	GPLv3

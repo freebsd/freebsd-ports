@@ -31,7 +31,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # USE_RUBY		- Says that the port uses ruby for building and running.
 # RUBY_NO_BUILD_DEPENDS	- Says that the port should not build-depend on ruby.
 # RUBY_NO_RUN_DEPENDS	- Says that the port should not run-depend on ruby.
-# USE_LIBRUBY		- Says that the port uses libruby.
 # USE_RUBY_EXTCONF	- Says that the port uses extconf.rb to configure.
 #			  Implies USE_RUBY.
 # RUBY_EXTCONF		- Set to the alternative name of extconf.rb
@@ -95,7 +94,6 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
 # RUBY_RDOC_PORT	- Port path of rdoc without PORTSDIR.
 #
-# DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
 # DEPEND_RUBY_RDOC	- BUILD_DEPENDS entry for rdoc.
 #
@@ -156,7 +154,7 @@ RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 #
 # Ruby 2.1
 #
-RUBY_RELVERSION=	2.1.9
+RUBY_RELVERSION=	2.1.10
 RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	0
@@ -166,7 +164,7 @@ RUBY21=			""	# PLIST_SUB helpers
 #
 # Ruby 2.2
 #
-RUBY_RELVERSION=	2.2.5
+RUBY_RELVERSION=	2.2.6
 RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	0
@@ -176,11 +174,21 @@ RUBY22=			""	# PLIST_SUB helpers
 #
 # Ruby 2.3
 #
-RUBY_RELVERSION=	2.3.1
-RUBY_PORTREVISION=	1
+RUBY_RELVERSION=	2.3.3
+RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	0
 RUBY23=			""	# PLIST_SUB helpers
+
+. elif ${RUBY_VER} == 2.4
+#
+# Ruby 2.4
+#
+RUBY_RELVERSION=	2.4.1
+RUBY_PORTREVISION=	0
+RUBY_PORTEPOCH=		1
+RUBY_PATCHLEVEL=	0
+RUBY24=			""	# PLIST_SUB helpers
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
@@ -188,7 +196,7 @@ RUBY23=			""	# PLIST_SUB helpers
 #
 # Other versions
 #
-IGNORE=	Only ruby 2.1, 2.2 and 2.3 are supported
+IGNORE=	Only ruby 2.1, 2.2, 2.3 and 2.4 are supported
 _INVALID_RUBY_VER=	1
 . endif
 .endif # defined(RUBY_VER)
@@ -198,6 +206,7 @@ _INVALID_RUBY_VER=	1
 RUBY21?=		"@comment "
 RUBY22?=		"@comment "
 RUBY23?=		"@comment "
+RUBY24?=		"@comment "
 
 .if defined(BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E})
 .if ${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}} == "yes"
@@ -258,7 +267,9 @@ RUBY_SHLIBVER?=		${RUBY_VER:S/.//}
 
 RUBY_CONFIGURE_ARGS+=	--program-prefix=""
 
-DEPENDS_ARGS+=		RUBY_VER="${RUBY_VER}"
+.if ${RUBY_VER} != ${RUBY_DEFAULT_VER}
+DEPENDS_ARGS+=		RUBY_VER=${RUBY_VER}
+.endif
 
 RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 
@@ -272,7 +283,6 @@ RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
 RUBY_PORT?=		${RUBY_BASE_PORT}
 
 # Depends
-DEPEND_LIBRUBY?=	lib${RUBY_NAME}.so.${RUBY_SHLIBVER}:${RUBY_PORT}
 DEPEND_RUBY?=		${RUBY}:${RUBY_PORT}
 
 # Directories
@@ -392,10 +402,6 @@ ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
 	@cd ${INSTALL_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install --prefix=${STAGEDIR}
-.endif
-
-.if defined(USE_LIBRUBY)
-LIB_DEPENDS+=		${DEPEND_LIBRUBY}
 .endif
 
 .if defined(USE_RUBY)

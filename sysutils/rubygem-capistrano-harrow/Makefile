@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	capistrano-harrow
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

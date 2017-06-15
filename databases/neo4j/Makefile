@@ -2,7 +2,7 @@
 
 PORTNAME=	neo4j
 DISTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases java
 MASTER_SITES=	http://dist.neo4j.org/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}-unix

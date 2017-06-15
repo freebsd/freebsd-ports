@@ -3,7 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	16
+PORTREVISION=	19
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
@@ -216,7 +216,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|tools examples|tools|g' \
 		${WRKSRC}/Makefile.in
 .endif
-	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g ; s|x86_64|amd64|g' \
+	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g ; s|x86_64|amd64|g ; s|libopenraw-1.0|libopenraw-0.1|g' \
 		${WRKSRC}/configure
 
 .if ${PORT_OPTIONS:MDOCS}

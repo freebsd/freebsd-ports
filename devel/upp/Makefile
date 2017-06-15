@@ -38,7 +38,7 @@ MAKE_ARGS=	UPPOUT="../_out/" OutFile="../theide" \
 
 MAKE_JOBS_UNSAFE=	yes
 
-BROKEN_ia64=	Does not compile on ${ARCH}
+BROKEN_aarch64=	Does not compile on ${ARCH}: error Unknown CPU architecture
 BROKEN_powerpc=	Does not compile on ${ARCH}
 BROKEN_sparc64=	Does not compile on ${ARCH}
 

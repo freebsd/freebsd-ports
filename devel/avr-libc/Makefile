@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.8.1
+PORTVERSION=	2.0.0
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -50,12 +50,6 @@ PLIST_DOC=	${PKGDIR}/pkg-plist.doc
 CONFIGURE_ARGS=	--build=`./config.guess` --host=avr --prefix=${PREFIX}
 PLIST_DOC=
 .endif
-# Work around the braind***ness introduced by <bsd.cpu.mk> in freebsd-5.
-# Sorry, the user is no longer be able to override the optimization and
-# debugging settings now.
-MAKE_ENV=	NO_CPU_CFLAGS=true
-CFLAGS+=	-O
-CXXFLAGS+=	-O
 
 post-patch:
 .if ! ${PORT_OPTIONS:MDOXYGEN}
@@ -63,12 +57,13 @@ post-patch:
 .endif
 
 do-install:
-		${RM} -f ${TMPPLIST}
+		${RM} ${TMPPLIST}
 .if ${PORT_OPTIONS:MDOXYGEN}
 		(cd ${BUILD_WRKSRC}/doc/api/avr-libc-user-manual && \
 		 ${FIND} . -type f \
 		  \( -name '*.html' -or -name '*.css' -or \
 		     -name '*.jpg' -or -name '*.png' \) |\
+		 ${GREP} -v '/search/' |\
 		 ${SORT} |\
 		 ${SED} -e 's|^\.|share/doc/avr-libc/avr-libc-user-manual|' \
 		 >> ${TMPPLIST})

@@ -15,6 +15,8 @@ COMMENT=	Simple ECMAScript Engine (SEE)
 
 LICENSE=	BSD
 
+BROKEN_aarch64=	Fails to build: floating point not detected: Exactly one of IEEE_8087, IEEE_MC68k, VAX, or IBM should be defined
+
 OPTIONS_DEFINE=	GC DEBUG DOCS
 OPTIONS_DEFAULT=	GC
 GC_DESC=	Use Boehm-Weiser garbage collection package

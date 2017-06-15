@@ -1,0 +1,11 @@
+--- convert-utility/Makefile.am.orig	2016-07-03 20:18:03 UTC
++++ convert-utility/Makefile.am
+@@ -14,7 +14,7 @@
+ 
+ bin_PROGRAMS = alacconvert$(EXEEXT)
+ 
+-alacconvert_CPPFLAGS = -Wno-multichar
++alacconvert_CPPFLAGS = -Wno-multichar -I../codec
+ alacconvert_LDADD = ../codec/libalac.la
+ alacconvert_SOURCES = \
+     main.cpp \

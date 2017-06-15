@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	m2crypto
-PORTVERSION=	0.24.0
+PORTVERSION=	0.26.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,35 +17,19 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 BUILD_DEPENDS=	swig3.0:devel/swig30
 
 PYDISTUTILS_BUILDARGS=	build_ext --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig3.0
-USE_OPENSSL=	yes
 USE_PYTHON=	autoplist concurrent distutils
-USES=		python
+USES=		python ssl
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/M2Crypto/_m2crypto.py \
-		%%PYTHON_SITELIBDIR%%/M2Crypto/${PYCACHE_DIR}${PYCACHE_FILE}.pyc \
-		%%PYTHON_SITELIBDIR%%/M2Crypto/${PYCACHE_DIR}${PYCACHE_FILE}.${PYOEXTENSION}
+post-patch:
+	@${REINPLACE_CMD} -e "s|swig\(', '-version\)|swig3.0\1|" ${WRKSRC}/${PYSETUP}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/M2Crypto/_m2crypto.so
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000 && ${SSL_DEFAULT} == base
-IGNORE=		py-m2crypto requires OpenSSL 1.0.1e+
-.endif
-
-.if ${PYTHON_REL} < 3200
-PYCACHE_DIR=	# empty
-PYCACHE_FILE=	_${PORTNAME}
-.else
-PYCACHE_DIR=	__pycache__/
-PYCACHE_FILE=	_${PORTNAME}.cpython-${PYTHON_SUFFIX}
-.endif
-
 .if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing>=0:devel/py-typing
 .endif
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/M2Crypto/__m2crypto.so
 
 .include <bsd.port.post.mk>

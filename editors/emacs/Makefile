@@ -18,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL?=	emacs-devel-[0-9]* emacs-nox11-[0-9]*
 
+BROKEN_aarch64=		Fails to link: missing sbrk
+
 EMACS_VER=	25.1
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo ncurses pkgconfig tar:xz
@@ -34,8 +36,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-gameuser=games:games
 
 PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
-
-MAKE_ENV=	LC_ALL=C
 
 INFO=	ada-mode auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede	\
 	ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime epa erc	\

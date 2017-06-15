@@ -56,8 +56,8 @@
 %%QT_INCDIR%%/QtScript/qscriptvalueiterator.h
 %%QT_INCDIR%%/QtScript/qtscriptglobal.h
 %%QT_INCDIR%%/QtScript/qtscriptversion.h
-%%QT_LIBDIR%%/cmake/Qt5Script/Qt5ScriptConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5Script/Qt5ScriptConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5Script/Qt5ScriptConfig.cmake
+%%QT_CMAKEDIR%%/Qt5Script/Qt5ScriptConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5Script.prl
 %%QT_LIBDIR%%/libQt5Script.so
 %%QT_LIBDIR%%/libQt5Script.so.5

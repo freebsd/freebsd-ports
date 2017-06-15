@@ -1,6 +1,6 @@
---- include/libnet.h.in.orig	2012-03-06 01:45:46.000000000 +0100
+--- include/libnet.h.in.orig	2012-03-06 00:45:46 UTC
 +++ include/libnet.h.in
-@@ -81,6 +81,9 @@
+@@ -81,6 +81,9 @@ extern "C" {
  #if !defined(__WIN32__)
  # include <sys/socket.h>
  # include <net/if.h>

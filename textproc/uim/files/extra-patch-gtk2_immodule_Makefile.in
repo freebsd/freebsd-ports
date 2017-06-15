@@ -1,7 +1,7 @@
---- gtk2/immodule/Makefile.in.orig	2012-04-01 04:00:38.000000000 +0900
-+++ gtk2/immodule/Makefile.in	2012-04-01 04:04:21.000000000 +0900
-@@ -82,8 +82,7 @@
-   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+--- gtk2/immodule/Makefile.in.orig	2016-10-14 09:57:35 UTC
++++ gtk2/immodule/Makefile.in
+@@ -105,8 +105,7 @@ am__uninstall_files_from_dir = { \
+   }
  am__installdirs = "$(DESTDIR)$(moduledir)"
  LTLIBRARIES = $(module_LTLIBRARIES)
 -@GTK2_TRUE@im_uim_la_DEPENDENCIES = $(top_builddir)/uim/libuim-scm.la \
@@ -10,7 +10,7 @@
  @GTK2_TRUE@	$(top_builddir)/uim/libuim-counted-init.la \
  @GTK2_TRUE@	$(am__append_1)
  am__im_uim_la_SOURCES_DIST = gtk-im-uim.c gtk-im-uim.h key-util-gtk.c \
-@@ -411,8 +410,8 @@
+@@ -442,8 +441,8 @@ moduledir = $(uim_gtk_im_module_path)/@G
  @GTK2_TRUE@module_LTLIBRARIES = $(im_uim_la)
  @GTK2_TRUE@im_uim_la_SOURCES = $(IM_UIM_SOURCES)
  @GTK2_TRUE@im_uim_la_LDFLAGS = -module -avoid-version @GTK2_LIBS@

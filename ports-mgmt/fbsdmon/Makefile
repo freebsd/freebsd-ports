@@ -3,6 +3,7 @@
 
 PORTNAME=	fbsdmon
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	LOCAL/gblach/
 
@@ -11,6 +12,13 @@ COMMENT=	Submit system and ports statistics to fbsdmon.org
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjansson.so:devel/jansson
+
+DEPRECATED=	no longer maintained, web site it sends data to has been taken over by cybersquatters
+EXPIRATION_DATE=2017-09-01
+
+.if !defined(PACKAGE_BUILDING)
+IGNORE=		${DEPRECATED}
+.endif
 
 SUB_FILES=	600.fbsdmon pkg-message
 USE_RC_SUBR=	fbsdmon

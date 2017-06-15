@@ -1,0 +1,4 @@
+KConfigWidgets provides easy-to-use classes to create configuration dialogs,
+as well as a set of widgets which uses KConfig to store their settings.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kconfigwidgets/html/index.html

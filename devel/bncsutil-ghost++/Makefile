@@ -15,6 +15,8 @@ COMMENT=	Utility library for Battle.net clients in C++
 LICENSE=	APACHE20
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 

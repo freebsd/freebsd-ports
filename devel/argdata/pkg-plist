@@ -1,0 +1,4 @@
+include/argdata.h
+include/argdata.hpp
+lib/libargdata.so
+lib/libargdata.so.1

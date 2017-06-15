@@ -3,7 +3,7 @@
 
 PORTNAME=	sary
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://sary.sourceforge.net/
 

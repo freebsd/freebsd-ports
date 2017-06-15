@@ -1,4 +1,5 @@
-SHA256 (eclipse/eclipse.platform.releng.aggregator-4.5.2.xz) = 71e46eadfcc7c8fd0c758585a228cdee5810bfbea3190a27b577e3e972b662b2
-SIZE (eclipse/eclipse.platform.releng.aggregator-4.5.2.xz) = 187185556
-SHA256 (eclipse/eclipse-maven-repo-4.5.2.xz) = 038fe0c5a2bed3e2d10611e79fb327a171ec4efe10f0dcbcf84630d0273d9eac
-SIZE (eclipse/eclipse-maven-repo-4.5.2.xz) = 138007292
+TIMESTAMP = 1466985570
+SHA256 (eclipse/eclipse.platform.releng.aggregator-4.6.xz) = 916df36f28bd53dd17c9f059b19bad2f58c58865705c1d81ca59bf128bda32f7
+SIZE (eclipse/eclipse.platform.releng.aggregator-4.6.xz) = 215088004
+SHA256 (eclipse/eclipse-maven-repo-4.6.xz) = 5f6e816b012158a5c7e4b5bc7ecc1b12d1cae91e530ec503e8cd9910ab28a624
+SIZE (eclipse/eclipse-maven-repo-4.6.xz) = 135692066

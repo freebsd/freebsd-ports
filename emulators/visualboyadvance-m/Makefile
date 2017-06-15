@@ -3,6 +3,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	2.0.0b2
+PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	root@cooltrainer.org
@@ -11,6 +12,8 @@ COMMENT=	Game Boy Advance emulator with GTK frontend
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
+
+BROKEN_aarch64=	Fails to build: regparm is not valid on this platform
 
 USE_GITHUB=	yes
 GH_TAGNAME=	VBA-M_Beta_2
@@ -31,100 +34,54 @@ DEBUGGER_DESC=	Enable the debugger
 ASMCORE_DESC=	Enable x86 ASM CPU cores (i386 only)
 ASMSCALERS_DESC=	Enable x86 ASM graphic filters (i386 only)
 
-NLS_USES=	gettext
 WANT_GNOME=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h|ypp)
 USE_XORG=	x11 xext
 USE_GL=		gl glu
 USE_SDL=	sdl
-USES=		cmake dos2unix pkgconfig tar:bzip2
+USES=		cmake dos2unix pkgconfig
 INSTALLS_ICONS=	yes
-CMAKE_ARGS+=	-DVERSION:STRING="${PORTVERSION}" \
+CMAKE_ARGS=	-DVERSION:STRING="${PORTVERSION}" \
 		-DSYSCONFDIR:STRING="${PREFIX}/etc"  \
 		-DENABLE_WX:BOOL=no
 
-.include <bsd.port.options.mk>
+ASMCORE_BUILD_DEPENDS=	as:devel/binutils
+ASMCORE_CMAKE_BOOL=	ENABLE_ASM_CORE
 
-.if ${PORT_OPTIONS:MASMCORE} || ${PORT_OPTIONS:MASMSCALERS}
-BUILD_DEPENDS+=	as:devel/binutils
-.if ${PORT_OPTIONS:MASMCORE}
-CMAKE_ARGS+=	-DENABLE_ASM_CORE:BOOL=yes
-.else
-CMAKE_ARGS+=	-DENABLE_ASM_CORE:BOOL=no
-.endif
-.if ${PORT_OPTIONS:MASMSCALERS}
-CMAKE_ARGS+=	-DENABLE_ASM_SCALERS:BOOL=yes
-.else
-CMAKE_ARGS+=	-DENABLE_ASM_SCALERS:BOOL=no
-.endif
-.endif
+ASMSCALERS_BUILD_DEPENDS=	as:devel/binutils
+ASMSCALERS_CMAKE_ARGS=	ENABLE_ASM_SCALERS
 
-.if ${PORT_OPTIONS:MGVBAM}
-USE_GNOME=	gtk20
-LIB_DEPENDS+=	libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
-		libglibmm-2.4.so:devel/glibmm \
-		libgiomm-2.4.so:devel/glibmm \
-		libcairomm-1.0.so:graphics/cairomm \
-		libglademm-2.4.so:devel/libglademm24 \
-		libgdkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm
-CMAKE_ARGS+=	-DENABLE_GTK:BOOL=yes
-USES+=	desktop-file-utils
-.else
-CMAKE_ARGS+=	-DENABLE_GTK:BOOL=no
-.endif
+GVBAM_USE_GNOME=	gtk20
+GVBAM_LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
+			libglibmm-2.4.so:devel/glibmm \
+			libgiomm-2.4.so:devel/glibmm \
+			libcairomm-1.0.so:graphics/cairomm \
+			libglademm-2.4.so:devel/libglademm24 \
+			libgdkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm
+GVBAM_CMAKE_BOOL=	ENABLE_GTK
+GVBAM_USES=		desktop-file-utils
 
-.if ${PORT_OPTIONS:MSDL}
-.if !${PORT_OPTIONS:MDEBUGGER}
-BROKEN=	SDL requires DEBUGGER
-.endif
-CMAKE_ARGS+=	-DENABLE_SDL:BOOL=yes
-.else
-CMAKE_ARGS+=	-DENABLE_SDL:BOOL=no
-.endif
+SDL_IMPLIES=		DEBUGGER
+SDL_CMAKE_BOOL=		ENABLE_SDL
 
-.if ${PORT_OPTIONS:MDEBUGGER}
-CMAKE_ARGS+=	-DENABLE_DEBUGGER:BOOL=yes
-.else
-CMAKE_ARGS+=	-DENABLE_DEBUGGER:BOOL=no
-.endif
+DEBUGGER_CMAKE_BOOL=	ENABLE_DEBUGGER
 
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
-CMAKE_ARGS+=	-DENABLE_FFMPEG:BOOL=yes
-.else
-CMAKE_ARGS+=	-DENABLE_FFMPEG:BOOL=no
-.endif
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_CMAKE_BOOL=	ENABLE_FFMPEG
 
-.if ${PORT_OPTIONS:MNLS}
-CMAKE_ARGS+=	-DENABLE_NLS:BOOL=yes
-.else
-CMAKE_ARGS+=	-DENABLE_NLS:BOOL=no
-.endif
+NLS_USES=		gettext
+NLS_CMAKE_BOOL=		ENABLE_NLS
 
-.if ${PORT_OPTIONS:MLINK}
-CMAKE_ARGS+=	-DENABLE_LINK:BOOL=yes
-LIB_DEPENDS+=	libsfml1-system.so:devel/sfml1
-.else
-CMAKE_ARGS+=	-DENABLE_LINK:BOOL=no
-.endif
+LINK_CMAKE_BOOL=	ENABLE_LINK
+LINK_LIB_DEPENDS=	libsfml-system.so:devel/sfml
 
-.if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	liblirc_client.so:comms/lirc
-RUN_DEPENDS+=	lircd:comms/lirc
-CMAKE_ARGS+=	-DENABLE_LIRC:BOOL=yes
-.else
-CMAKE_ARGS+=	-DENABLE_LIRC:BOOL=no
-.endif
+LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
+LIRC_RUN_DEPENDS=	lircd:comms/lirc
+LIRC_CMAKE_BOOL=	ENABLE_LIRC
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; s|include/SFML|&1|; \
-		s|NAMES sfml-|NAMES sfml1-|' ${WRKSRC}/CMakeScripts/FindSFML.cmake
-	@${REINPLACE_CMD} -e '/#include/ s|SFML|&1|' \
-		${WRKSRC}/src/gba/GBASockClient.h \
-		${WRKSRC}/src/gba/GBALink.cpp \
-		${WRKSRC}/src/gba/GBALink.h
-	@${REINPLACE_CMD} -e '/SET.*LIRC_CLIENT_LIBRARY/ s|lirc_client|${LOCALBASE}/lib/lib&.so|' \
-		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/SET.*LIRC_CLIENT_LIBRARY/ s|lirc_client|${LOCALBASE}/lib/lib&.so|; \
+       		s|share/man|man|' ${WRKSRC}/CMakeLists.txt
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
@@ -134,10 +91,12 @@ maint-gen-distfile:
 	svn export -r${SVN_REV} \
 		 https://svn.code.sf.net/p/vbam/code/trunk/ ${DISTNAME}
 	${TAR} jcf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}
-	${RM} -rf ${DISTNAME}
+	${RM} -r ${DISTNAME}
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vbam
-	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/vbam.1 ${STAGEDIR}${PREFIX}/man/man1/
+post-install-SDL-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vbam
+
+post-install-GVBAM-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gvbam
 
 .include <bsd.port.mk>

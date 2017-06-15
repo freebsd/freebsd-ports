@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.91.0
+PORTVERSION=	0.92.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -62,13 +63,13 @@ post-patch:
 		${REINPLACE_CMD} -e '1s|/usr/bin/perl|${perl_CMD}|'
 
 post-patch-XINE-off:
-	@${RM} -f ${WRKSRC}/makers/emAv.maker.pm
+	@${RM} ${WRKSRC}/makers/emAv.maker.pm
 
 post-patch-RSVG-off:
-	@${RM} -f ${WRKSRC}/makers/emSvg.maker.pm
+	@${RM} ${WRKSRC}/makers/emSvg.maker.pm
 
 post-patch-PDF-off:
-	@${RM} -f ${WRKSRC}/makers/emPdf.maker.pm
+	@${RM} ${WRKSRC}/makers/emPdf.maker.pm
 
 do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \

@@ -24,17 +24,14 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
-CONFLICTS=	gcc-4.8.*
 CPE_VENDOR=	gnu
-CPE_VERSION=	${GCC_VERSION}
 
-# DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
-# of executables and directories once installed.
-DISTVERSION=	${PORTVERSION}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
+# GCC_VERSION and SUFFIX relate to names of executables and directories
+# once installed.
+GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
-USES=		cpe gmake iconv libtool makeinfo perl5 tar:bzip2
+ONLY_FOR_ARCHS=	amd64 armv6 i386 powerpc powerpc64 sparc64
+USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
@@ -67,6 +64,18 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
 .endif
 
+.if ${ARCH} == "armv6"
+# Override sys.mk including -O in CFLAGS which breaks libgomp building.
+CFLAGS:=	${CFLAGS:S/-O/-O2/g}
+. if ${COMPILER_TYPE} == clang
+.  if empty(PORT_OPTIONS:MBOOTSTRAP)
+MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
+.  else
+MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
+.  endif
+. endif
+.endif
+
 LANGUAGES:=	c,c++,objc,fortran
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
@@ -90,10 +99,7 @@ CONFIGURE_ARGS+=--disable-nls \
 		${ICONV_CONFIGURE_ARG} \
 		--with-pkgversion="FreeBSD Ports Collection" \
 		--with-system-zlib
-# On FreeBSD 11 and above AWK uses the locale's collating order which
-# runs into a bug in GCC (PR 211742).
-MAKE_ARGS+=	MAKEINFOFLAGS="--no-split" \
-		AWK="${SETENV} LC_ALL=C ${AWK:Q}"
+MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VERSION=${GCC_VERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
@@ -135,7 +141,7 @@ pre-everything::
 
 pre-configure:
 	cd ${WRKSRC} ; contrib/gcc_update --touch
-	@${RM} -f ${WRKSRC}/gcc/*/*.info*
+	@${RM} ${WRKSRC}/gcc/*/*.info*
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
@@ -144,11 +150,11 @@ full-regression-test: build
 .endif
 
 post-stage:
-	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
-	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
+	${RM} ${STAGEDIR}${PREFIX}/man/man7/*
+	${RM} ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
 	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
 	# Add target libraries and include files to packaging list.
-	${RM} -f ${WRKDIR}/PLIST.lib
+	${RM} ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
 	cd ${STAGEDIR}${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\

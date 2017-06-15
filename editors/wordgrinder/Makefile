@@ -13,7 +13,7 @@ RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem
 USE_GITHUB=	yes
 GH_ACCOUNT=	davidgiven
 
-USES=		gmake lua:52
+USES=		gmake lua:52 ncurses
 
 PLIST_FILES=	bin/wordgrinder \
 		share/doc/wordgrinder/README.wg \

@@ -1,5 +1,5 @@
---- Makefile.orig	2002-05-01 23:15:20.000000000 +0200
-+++ Makefile	2014-01-14 17:56:34.000000000 +0100
+--- Makefile.orig	2002-05-01 21:15:20 UTC
++++ Makefile
 @@ -11,8 +11,8 @@
  
  # --- The default settings will install SMM++ nicely into an
@@ -11,7 +11,7 @@
  
  # --- If you don't have root access, you could choose to install
  #     SMM++ locally in your home directory. Therefore use the
-@@ -58,6 +58,8 @@
+@@ -58,6 +58,8 @@ TROUBLEoptionmenu=0
  #      this Makefile. If you can read Makefiles, feel free
  #      to do whatever you like.
  
@@ -20,7 +20,7 @@
  smm: Makefile
  	@echo "--- Building startup file."
  	@if [ -z ${ITKWISH} ] ; then \
-@@ -80,18 +82,18 @@
+@@ -80,18 +82,18 @@ install-bin:
  	@echo "--- Installing startup file to '${BIN}'."
  	@echo "    Please make sure, that '${BIN}' is part of your PATH variable."
  	@echo "    Or start SMM++ with ${BIN}/smm."

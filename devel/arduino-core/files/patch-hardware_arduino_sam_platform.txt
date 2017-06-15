@@ -1,0 +1,11 @@
+--- hardware/arduino/sam/platform.txt.orig	2016-09-21 10:09:37 UTC
++++ hardware/arduino/sam/platform.txt
+@@ -96,7 +96,7 @@ recipe.size.regex=\.text\s+([0-9]+).*
+ # -------------------
+ 
+ # BOSSA
+-tools.bossac.path={runtime.tools.bossac.path}
++tools.bossac.path={runtime.tools.bossac.path}/bin
+ tools.bossac.cmd=bossac
+ tools.bossac.cmd.windows=bossac.exe
+ 

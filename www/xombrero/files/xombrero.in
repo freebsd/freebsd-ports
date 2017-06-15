@@ -19,4 +19,4 @@ if [ -f "%%EXAMPLESDIR%%/playflash.sh" ] && [ ! -f "$HOME/.xombrero/playflash.sh
 	chmod +x $HOME/.xombrero/playflash.sh
 fi
 
-exec %%PREFIX%%/bin/xombrero-bin $@
+exec %%PREFIX%%/bin/xombrero-bin "$@"

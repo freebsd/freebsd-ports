@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/Crypt::OpenSSL::DSA.3.gz
-%%PERL5_MAN3%%/Crypt::OpenSSL::DSA::Signature.3.gz
 %%SITE_ARCH%%/Crypt/OpenSSL/DSA.pm
 %%SITE_ARCH%%/Crypt/OpenSSL/DSA/Signature.pod
 %%SITE_ARCH%%/auto/Crypt/OpenSSL/DSA/DSA.so
+%%PERL5_MAN3%%/Crypt::OpenSSL::DSA.3.gz
+%%PERL5_MAN3%%/Crypt::OpenSSL::DSA::Signature.3.gz

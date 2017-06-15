@@ -1,4 +1,4 @@
 Supports GET/POST/HEAD/TRACE/PUT/DELETE, Basic authentication, Proxy,
 Proxy Authentication, SSL, file uploads etc.
 
-WWW: http://pear.php.net/package/HTTP_Request/
+WWW: https://pear.php.net/package/HTTP_Request

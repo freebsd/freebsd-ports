@@ -3,7 +3,7 @@
 
 PORTNAME=	gkrellfire
 PORTVERSION=	0.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freenet-homepage.de/thomas-steinke/ \
 		LOCAL/novel

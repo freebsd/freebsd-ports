@@ -1,5 +1,5 @@
---- utmp.c.orig	2016-06-19 12:41:03.000000000 -0700
-+++ utmp.c	2016-06-21 04:10:22.500131000 -0700
+--- utmp.c.orig	2017-01-17 11:28:29.397404660 -0800
++++ utmp.c	2017-02-10 16:48:34.902236000 -0800
 @@ -26,6 +26,7 @@
   ****************************************************************
   */
@@ -21,7 +21,7 @@
  
    wi->w_slot = (slot_t)0;
    if (!utmpok || wi->w_type != W_TYPE_PTY)
-@@ -435,51 +430,12 @@
+@@ -435,51 +430,13 @@
      makeuser(&u, stripdev(wi->w_tty), LoginName, wi->w_pid);
  
  #ifdef UTHOST
@@ -66,7 +66,8 @@
 -
  # if !defined(_SEQUENT_) && !defined(sequent)
 -  strncpy(u.ut_host, host, sizeof(u.ut_host));
-+  strncpy(u.ut_host, D_loginhost, sizeof(u.ut_host));
++  if (display)
++    strncpy(u.ut_host, D_loginhost, sizeof(u.ut_host));
  # endif
  #endif /* UTHOST */
  
@@ -75,7 +76,7 @@
      {
        Msg(errno,"Could not write %s", UtmpName);
        UT_CLOSE;
-@@ -598,7 +554,7 @@
+@@ -598,7 +555,7 @@
  struct utmp *u;
  {
    u->ut_type = DEAD_PROCESS;
@@ -84,7 +85,7 @@
    u->ut_exit.e_termination = 0;
    u->ut_exit.e_exit = 0;
  #endif
-@@ -631,7 +587,11 @@
+@@ -631,7 +588,11 @@
    /* must use temp variable because of NetBSD/sparc64, where
     * ut_xtime is long(64) but time_t is int(32) */
    (void)time(&now);
@@ -97,7 +98,7 @@
  }
  
  static slot_t
-@@ -743,7 +703,11 @@
+@@ -743,7 +704,11 @@
    strncpy(u->ut_line, line, sizeof(u->ut_line));
    strncpy(u->ut_name, user, sizeof(u->ut_name));
    (void)time(&now);

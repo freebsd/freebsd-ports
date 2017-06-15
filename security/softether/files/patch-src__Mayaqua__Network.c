@@ -1,6 +1,6 @@
---- src/Mayaqua/Network.c.orig	2015-07-26 06:38:18 UTC
+--- src/Mayaqua/Network.c.orig	2016-05-03 06:16:53 UTC
 +++ src/Mayaqua/Network.c
-@@ -12920,7 +12920,16 @@ bool StartSSLEx(SOCK *sock, X *x, K *pri
+@@ -12983,7 +12983,16 @@ bool StartSSLEx(SOCK *sock, X *x, K *pri
  		{
  			if (client_tls == false)
  			{

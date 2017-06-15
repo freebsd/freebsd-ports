@@ -24,7 +24,6 @@ USE_GITHUB=	yes
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-NO_ARCH=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	multiprocessing_example.py swmr_multiprocess.py \
@@ -33,11 +32,12 @@ PORTEXAMPLES=	multiprocessing_example.py swmr_multiprocess.py \
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}
 	${COPYTREE_SHARE} ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
+
 do-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
 
 do-test:

@@ -19,13 +19,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>0:devel/py-ipaddr \
 		${PYTHON_PKGNAMEPREFIX}pyspf>0:mail/py-pyspf \
 		${PYTHON_PKGNAMEPREFIX}authres>0:mail/py-authres
 
-USES=		python
-USE_PYTHON=	distutils
-PYDISTUTILS_PKGNAME=	pypolicyd-spf
+USES=		python:2.7+
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 PORTDOCS=	CHANGES \
-		COPYING \
 		README \
 		README.per_user_whitelisting \
 		policyd-spf.conf.commented

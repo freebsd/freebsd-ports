@@ -5,9 +5,9 @@ PORTNAME=	File_Bittorrent2
 DISTVERSION=	1.3.1
 CATEGORIES=	net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Decode and Encode data in Bittorrent format
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -1,6 +1,23 @@
---- configure.orig	2012-12-31 21:47:31 UTC
+--- configure.orig	2016-09-05 22:33:24 UTC
 +++ configure
-@@ -5411,7 +5411,7 @@ if test "x$enable_fhs_paths" = "xyes"; t
+@@ -677,6 +677,7 @@ MV
+ CP
+ RM
+ INSTALL_DATA
++INSTALL_LIB
+ INSTALL_SCRIPT
+ INSTALL_PROGRAM
+ SET_MAKE
+@@ -4833,6 +4834,8 @@ test -z "$INSTALL_SCRIPT" && INSTALL_SCR
+ 
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
++test -z "$INSTALL_LIB" && INSTALL_LIB='${INSTALL} -s -m 644'
++
+ # Extract the first word of "rm", so it can be a program name with args.
+ set dummy rm; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+@@ -5424,7 +5427,7 @@ if test "x$enable_fhs_paths" = "xyes"; t
    	pkglibexecdir='${libexecdir}/${PACKAGE_TARNAME}'
  	rundir=${rundir-'${prefix}/run'}
  	pkgrundir='${rundir}/${PACKAGE_TARNAME}'

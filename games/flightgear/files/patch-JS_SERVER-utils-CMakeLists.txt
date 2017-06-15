@@ -1,6 +1,6 @@
---- utils/CMakeLists.txt.orig	2016-03-04 21:48:12.374333305 +0000
-+++ utils/CMakeLists.txt	2016-03-04 21:48:56.931894245 +0000
-@@ -34,3 +34,7 @@
+--- utils/CMakeLists.txt.orig	2016-11-24 08:26:29.486200480 +0000
++++ utils/CMakeLists.txt	2016-11-24 08:26:58.661198446 +0000
+@@ -30,3 +30,7 @@
  if(ENABLE_STGMERGE)
      add_subdirectory(stgmerge)
  endif()

@@ -1,4 +1,4 @@
-SassC is a wrapper around libsass (http://github.com/hcatlin/libsass) used
+SassC is a wrapper around libsass (https://github.com/hcatlin/libsass) used
 to generate a useful command-line application that can be installed and
 packaged for several operating systems.
 

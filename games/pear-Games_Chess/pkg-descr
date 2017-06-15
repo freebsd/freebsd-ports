@@ -4,4 +4,4 @@ FEN (Farnsworth-Edwards Notation) for describing a position as well as SAN
 class can be used as a backend driver for playing chess, or for validating
 and/or creating PGN files using the File_ChessPGN package.
 
-WWW: http://pear.php.net/package/Games_Chess/
+WWW: https://pear.php.net/package/Games_Chess

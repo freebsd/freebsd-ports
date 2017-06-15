@@ -15,6 +15,7 @@
     SUBDIR += adplay
     SUBDIR += afsp
     SUBDIR += aften
+    SUBDIR += alac
     SUBDIR += alienwah
     SUBDIR += alsa-lib
     SUBDIR += alsa-plugins
@@ -26,6 +27,7 @@
     SUBDIR += ample
     SUBDIR += aqualung
     SUBDIR += ardour
+    SUBDIR += ardour5
     SUBDIR += ario
     SUBDIR += arss
     SUBDIR += ascd
@@ -42,7 +44,6 @@
     SUBDIR += audiere
     SUBDIR += audiotag
     SUBDIR += aumix
-    SUBDIR += aureal-kmod
     SUBDIR += autocd
     SUBDIR += autotalent
     SUBDIR += autozen
@@ -97,6 +98,7 @@
     SUBDIR += deadbeef-musical-spectrum-plugin
     SUBDIR += deadbeef-playback-status-plugin
     SUBDIR += deadbeef-quick-search-plugin
+    SUBDIR += deadbeef-spectrogram-plugin
     SUBDIR += deadbeef-vu-meter-plugin
     SUBDIR += deadbeef-waveform-seekbar-plugin
     SUBDIR += decibel-audio-player
@@ -286,6 +288,7 @@
     SUBDIR += gstreamer1-plugins-pulse
     SUBDIR += gstreamer1-plugins-shout2
     SUBDIR += gstreamer1-plugins-sidplay
+    SUBDIR += gstreamer1-plugins-sndio
     SUBDIR += gstreamer1-plugins-soundtouch
     SUBDIR += gstreamer1-plugins-speex
     SUBDIR += gstreamer1-plugins-taglib
@@ -378,6 +381,7 @@
     SUBDIR += libgig
     SUBDIR += libgme
     SUBDIR += libgpod
+    SUBDIR += libgpod-sharp
     SUBDIR += libgroove
     SUBDIR += libid3tag
     SUBDIR += libkcddb
@@ -397,7 +401,6 @@
     SUBDIR += libmusicbrainz5
     SUBDIR += libnjb
     SUBDIR += libnoise
-    SUBDIR += libofa
     SUBDIR += libogg
     SUBDIR += liboggz
     SUBDIR += libopenspc
@@ -415,13 +418,12 @@
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += libxmp
+    SUBDIR += lilv
     SUBDIR += lingot
     SUBDIR += linux-c6-alsa-lib
     SUBDIR += linux-c6-alsa-plugins-oss
     SUBDIR += linux-c6-alsa-plugins-pulseaudio
     SUBDIR += linux-c6-alsa-utils
-    SUBDIR += linux-c6-arts
-    SUBDIR += linux-c6-esound
     SUBDIR += linux-c6-flac
     SUBDIR += linux-c6-libaudiofile
     SUBDIR += linux-c6-libogg
@@ -433,20 +435,19 @@
     SUBDIR += linux-c6-pulseaudio-libs
     SUBDIR += linux-c6-pulseaudio-utils
     SUBDIR += linux-c6-sdl_mixer
-    SUBDIR += linux-f10-alsa-lib
-    SUBDIR += linux-f10-alsa-plugins-oss
-    SUBDIR += linux-f10-arts
-    SUBDIR += linux-f10-esound
-    SUBDIR += linux-f10-freealut
-    SUBDIR += linux-f10-libaudiofile
-    SUBDIR += linux-f10-libogg
-    SUBDIR += linux-f10-libvorbis
-    SUBDIR += linux-f10-mikmod
-    SUBDIR += linux-f10-nas-libs
-    SUBDIR += linux-f10-openal
-    SUBDIR += linux-f10-openal-soft
-    SUBDIR += linux-f10-pulseaudio-libs
-    SUBDIR += linux-f10-sdl_mixer
+    SUBDIR += linux-c7-alsa-lib
+    SUBDIR += linux-c7-alsa-plugins-oss
+    SUBDIR += linux-c7-alsa-plugins-pulseaudio
+    SUBDIR += linux-c7-alsa-utils
+    SUBDIR += linux-c7-audiofile
+    SUBDIR += linux-c7-flac
+    SUBDIR += linux-c7-libogg
+    SUBDIR += linux-c7-libsndfile
+    SUBDIR += linux-c7-libvorbis
+    SUBDIR += linux-c7-openal-soft
+    SUBDIR += linux-c7-pulseaudio-libs
+    SUBDIR += linux-c7-pulseaudio-utils
+    SUBDIR += linux-c7-sdl_mixer
     SUBDIR += linux-genpuid
     SUBDIR += linux-laudio
     SUBDIR += linux-mbrola
@@ -455,10 +456,16 @@
     SUBDIR += linuxsampler
     SUBDIR += listener
     SUBDIR += lmms
+    SUBDIR += logitechmediaserver
+    SUBDIR += logitechmediaserver-dynamicplaylist
+    SUBDIR += logitechmediaserver-lazysearch
+    SUBDIR += logitechmediaserver-sqlplaylist
+    SUBDIR += logitechmediaserver-superdatetime
+    SUBDIR += logitechmediaserver-trackstat
     SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lua51-mpd
-    SUBDIR += lv2core
+    SUBDIR += lv2
     SUBDIR += lxmusic
     SUBDIR += mac
     SUBDIR += madfufw
@@ -536,6 +543,7 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod
+    SUBDIR += nuvolaplayer
     SUBDIR += ocp
     SUBDIR += ogg2mp3
     SUBDIR += openal
@@ -660,6 +668,7 @@
     SUBDIR += rem
     SUBDIR += resid
     SUBDIR += rexima
+    SUBDIR += rezound
     SUBDIR += rhythmbox
     SUBDIR += rio500
     SUBDIR += rioutil
@@ -669,8 +678,6 @@
     SUBDIR += rplay
     SUBDIR += rsynth
     SUBDIR += rubberband
-    SUBDIR += ruby-audiofile
-    SUBDIR += ruby-mp3tag
     SUBDIR += ruby-smf
     SUBDIR += ruby-taglib
     SUBDIR += ruby-xmms2
@@ -679,6 +686,7 @@
     SUBDIR += rubygem-ruby-ogginfo
     SUBDIR += rubygem-ruby-shout
     SUBDIR += s3mod
+    SUBDIR += sayonara
     SUBDIR += sbagen
     SUBDIR += schism
     SUBDIR += scrobbler
@@ -688,6 +696,7 @@
     SUBDIR += sfront
     SUBDIR += shairplay
     SUBDIR += shairport
+    SUBDIR += shairport-sync
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
@@ -707,6 +716,7 @@
     SUBDIR += sndio
     SUBDIR += solfege
     SUBDIR += sonata
+    SUBDIR += sonic-visualiser
     SUBDIR += sooperlooper
     SUBDIR += sound-juicer
     SUBDIR += soundconverter
@@ -716,6 +726,7 @@
     SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += specimen
+    SUBDIR += spectrogram
     SUBDIR += speex
     SUBDIR += speexdsp
     SUBDIR += spek
@@ -728,15 +739,12 @@
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += squash
-    SUBDIR += squeezeboxserver
-    SUBDIR += squeezeboxserver-dynamicplaylist
-    SUBDIR += squeezeboxserver-lazysearch
-    SUBDIR += squeezeboxserver-sqlplaylist
-    SUBDIR += squeezeboxserver-superdatetime
-    SUBDIR += squeezeboxserver-trackstat
+    SUBDIR += sratom
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += stymulator
+    SUBDIR += suil
+    SUBDIR += supercollider
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += taglib
@@ -780,6 +788,8 @@
     SUBDIR += vagalume
     SUBDIR += vamp-plugin-sdk
     SUBDIR += ventrilo-server
+    SUBDIR += virtual_oss
+    SUBDIR += virtual_oss_ctl
     SUBDIR += vitunes
     SUBDIR += vo-aacenc
     SUBDIR += vo-amrwbenc
@@ -826,7 +836,6 @@
     SUBDIR += xmms-mailnotify
     SUBDIR += xmms-nas
     SUBDIR += xmms-nsf
-    SUBDIR += xmms-openspc
     SUBDIR += xmms-sapplug
     SUBDIR += xmms-scrobbler
     SUBDIR += xmms-sexypsf
@@ -848,6 +857,7 @@
     SUBDIR += xwave
     SUBDIR += yell
     SUBDIR += zinf
+    SUBDIR += zita-resampler
     SUBDIR += zynaddsubfx
 
 .include <bsd.port.subdir.mk>

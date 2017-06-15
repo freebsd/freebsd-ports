@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-PORTVERSION=	2.033006
+PORTVERSION=	2.034002
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OLIVER
@@ -30,6 +30,7 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Dancer-Plugin-DBIC>=0.2001:databases/p5-Dancer-Plugin-DBIC \
 		p5-Dancer-Plugin-Auth-Extensible>=0.30:security/p5-Dancer-Plugin-Auth-Extensible \
 		p5-Dancer-Plugin-Passphrase>=2.0.1:security/p5-Dancer-Plugin-Passphrase \
+		p5-Dancer-Session-Cookie>=0.27:www/p5-Dancer-Session-Cookie \
 		p5-Env-Path>=0:devel/p5-Env-Path \
 		p5-File-ShareDir>=1.03:devel/p5-File-ShareDir \
 		p5-File-Slurp>=9999.19:devel/p5-File-Slurp \
@@ -58,7 +59,7 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Sereal>=0:converters/p5-Sereal \
 		p5-Socket6>=0.23:net/p5-Socket6 \
 		p5-Starman>=0.4008:www/p5-Starman \
-		p5-SNMP-Info>=3.18:net-mgmt/p5-SNMP-Info \
+		p5-SNMP-Info>=3.34:net-mgmt/p5-SNMP-Info \
 		p5-SQL-Translator>=0.11018:databases/p5-SQL-Translator \
 		p5-Template-Toolkit>=2.24:www/p5-Template-Toolkit \
 		p5-Template-Plugin-CSV>=0.04:textproc/p5-Template-Plugin-CSV \

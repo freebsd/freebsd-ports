@@ -3,6 +3,7 @@
 
 PORTNAME=	supertuxkart
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,8 +20,11 @@ LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	fails to build: invokes x86 asm
+
 USES=		alias cmake compiler:c++11-lib dos2unix gettext \
-		gmake jpeg openal:al pkgconfig tar:xz
+		jpeg openal:al pkgconfig tar:xz
 USE_GL=		gl glu
 USE_SDL=	sdl
 USE_XORG=	x11 xext sm ice

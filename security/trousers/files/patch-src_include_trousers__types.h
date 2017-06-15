@@ -1,4 +1,4 @@
---- src/include/trousers_types.h.orig	2016-06-20 15:21:26 UTC
+--- src/include/trousers_types.h.orig	2016-11-19 03:09:49 UTC
 +++ src/include/trousers_types.h
 @@ -11,6 +11,14 @@
  #ifndef _TROUSERS_TYPES_H_
@@ -24,19 +24,3 @@
  
  typedef struct tdTSS_KEY {
  	union {
-@@ -118,11 +126,10 @@ typedef struct tdTSS_KEY {
- 	BYTE *encData;
- } TSS_KEY;
- 
--#if (defined (__linux) || defined (linux) || defined (SOLARIS) || defined (__GLIBC__))
--#define BSD_CONST
--#elif (defined (__OpenBSD__) || defined (__FreeBSD__))
-+#if defined (__FreeBSD__)
- #define BSD_CONST const
--#endif
--
-+#else
-+#define BSD_CONST /* */
-+#endif 
- 
- #endif

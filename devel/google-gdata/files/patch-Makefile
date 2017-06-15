@@ -1,15 +1,6 @@
---- Makefile.orig	2014-10-03 03:48:04.991079598 +0600
-+++ Makefile	2014-10-03 03:48:20.722118155 +0600
-@@ -5,7 +5,7 @@
- 
- VERSION=$(shell egrep AssemblyVersion version/AssemblyVersion.cs | egrep -o \([[:digit:]]\.\)+[[:digit:]]+)
- PREFIX=/usr/local
--PKGCONFIGDIR = $(PREFIX)/lib/pkgconfig
-+PKGCONFIGDIR = $(PREFIX)/libdata/pkgconfig
- 
- CORELIBS= \
-   Google.GData.Client.dll \
-@@ -33,7 +33,7 @@
+--- Makefile.orig	2016-10-16 13:47:41 UTC
++++ Makefile
+@@ -33,7 +33,7 @@ ALLLIBS = \
  
  UNINSTALLLIBS = $(basename $(ALLLIBS))
  
@@ -18,7 +9,7 @@
  
  PKGCONFIG_FILES = $(patsubst %.pc.in,%.pc,$(wildcard misc/*.pc.in))
  
-@@ -112,7 +112,7 @@
+@@ -112,7 +112,7 @@ clean:
  install: all
  	for i in $(ALLLIBS); do gacutil -i $$i -package GData-Sharp -root "$(DESTDIR)$(PREFIX)/lib"; done
  	install -d "$(DESTDIR)$(PKGCONFIGDIR)"

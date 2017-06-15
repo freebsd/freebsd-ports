@@ -2,11 +2,19 @@
 
 The musicpd package has been successfully installed.
 
-In order to run the MPD server, you need to edit
+In order to run the MPD server, you need to edit the provided
+sample configuration file
 
 	%%PREFIX%%/etc/musicpd.conf
 
-and add the following line to /etc/rc.conf:
+Edit the variables in the section "Files and directories"
+according to your local environment. Ensure that the referenced
+directories exist and owned by the 'mpd' user, except for the
+variable music_directory. It is sufficient for the 'mpd' user
+to have read permissions to the referenced directory.
+
+To enable the service at boot time, add the following line to
+/etc/rc.conf:
 
 	musicpd_enable="YES"
 
@@ -16,8 +24,6 @@ Then start the server with
 
 or reboot.
 
-The example configuration of MPD server requires music files to
-be stored in the /var/mpd/music directory.
 
 NOTE: The musicpd server is pretty useless without a client.
       You might want to install one of the following ports too:

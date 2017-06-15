@@ -12,12 +12,12 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/as.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/az.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/be.pl
-%%SITE_ARCH%%/Unicode/Collate/Locale/bg.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/bn.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ca.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/cs.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/cy.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/da.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/de_at_ph.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/de_phone.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ee.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/eo.pl
@@ -29,10 +29,11 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/fi_phone.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/fil.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/fo.pl
-%%SITE_ARCH%%/Unicode/Collate/Locale/fr.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/fr_ca.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/gu.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ha.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/haw.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/he.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/hi.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/hr.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/hu.pl
@@ -60,7 +61,6 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/pa.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/pl.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ro.pl
-%%SITE_ARCH%%/Unicode/Collate/Locale/ru.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/sa.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/se.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/si.pl
@@ -77,9 +77,11 @@
 %%SITE_ARCH%%/Unicode/Collate/Locale/tn.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/to.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/tr.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/ug_cyrl.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/uk.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/ur.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/vi.pl
+%%SITE_ARCH%%/Unicode/Collate/Locale/vo.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/wae.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/wo.pl
 %%SITE_ARCH%%/Unicode/Collate/Locale/yo.pl

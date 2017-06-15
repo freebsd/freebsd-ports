@@ -20,4 +20,4 @@ is intended to be fast to parse, fast to generate, stream-based and
 document-based processing compatible, and require a very small
 memory footprint in order to operate.
 
-WWW: http://github.com/digitalbazaar/pyld
+WWW: https://github.com/digitalbazaar/pyld

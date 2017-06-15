@@ -1,5 +1,5 @@
---- matchrx.c.orig	Wed Jun 21 01:12:18 2000
-+++ matchrx.c	Thu Jun 16 17:31:09 2005
+--- matchrx.c.orig	2000-06-20 23:12:18 UTC
++++ matchrx.c
 @@ -23,6 +23,7 @@
  
  

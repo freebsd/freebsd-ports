@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	peha
 GH_PROJECT=	deco-archive:archive
-GH_TAGNAME=	1.6.4 1.7:archive
+GH_TAGNAME=	1.7:archive
 
 RUN_DEPENDS=	arc:archivers/arc \
 		arj:archivers/arj \
@@ -41,7 +41,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deco ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in LICENSE Makefile NEWS README config.mk
-	${RM} -rf ${WRKSRC}/../${PORTNAME}-archive-1.7/${i}
+	${RM} -r ${WRKSRC}/../${PORTNAME}-archive-1.7/${i}
 .endfor
 	@cd ${WRKDIR}/${PORTNAME}-archive-1.7/x/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	@${FIND} ${STAGEDIR}${DATADIR} -type f -exec ${CHMOD} +x {} \;

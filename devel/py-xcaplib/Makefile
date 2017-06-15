@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.ag-projects.com/XCAP/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@grosbein.net
+MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Python XCAP client library
 
 LICENSE=	LGPL20 LGPL21 LGPL3

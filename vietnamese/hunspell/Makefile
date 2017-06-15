@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	20080604
-PORTREVISION=	1
+PORTVERSION=	20141110
 CATEGORIES=	vietnamese textproc
-MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
-DISTNAME=	vi_VN-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
@@ -13,17 +10,21 @@ COMMENT=	Vietnamese hunspell dictionaries
 
 LICENSE=	GPLv3
 
-USES=		zip
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-PROJECTHOST=	hunspell-spellcheck-vi
 
-PLIST_FILES=	%%DATADIR%%/vi_VN.aff \
-		%%DATADIR%%/vi_VN.dic
+PLIST_FILES=	%%DATADIR%%/vi-DauCu.aff \
+		%%DATADIR%%/vi-DauCu.dic \
+		%%DATADIR%%/vi-DauMoi.aff \
+		%%DATADIR%%/vi-DauMoi.dic
+
+GH_ACCOUNT=	1ec5
+GH_PROJECT=	${PORTNAME}-vi
+GH_TAGNAME=	v2.2.0
+USE_GITHUB=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/vi_VN.aff ${WRKSRC}/vi_VN.dic ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/dictionaries/*.aff ${WRKSRC}/dictionaries/*.dic ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

@@ -3,6 +3,8 @@
 
 PORTNAME=	octave-forge-ltfat
 PORTVERSION=	2.1.2
+PORTREVISION=	2
+PORTEPOCH=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -26,9 +28,9 @@ GNU_CONFIGURE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
-	${RM} -f ${WRKSRC}/../inst/DESCRIPTION
-	${RM} -f ${WRKSRC}/../inst/ltfat/DESCRIPTION
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/../inst/DESCRIPTION
+	${RM} ${WRKSRC}/../inst/ltfat/DESCRIPTION
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

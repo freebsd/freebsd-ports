@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	1.5.2
+PORTVERSION=	1.7.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -27,8 +27,7 @@ BUILD_DEPENDS=	p5-Config-General>=2.40:devel/p5-Config-General \
 		p5-Gtk2>=1.090:x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-Simple-List>0:x11-toolkits/p5-Gtk2-Ex-Simple-List \
 		p5-Gtk2-ImageView>0:x11-toolkits/p5-Gtk2-ImageView
-RUN_DEPENDS:=	p5-Archive-Tar>0:archivers/p5-Archive-Tar \
-		p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
+RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		xdg-open:devel/xdg-utils \
 		cjb2:graphics/djvulibre \
 		scanimage:graphics/sane-backends \
@@ -38,6 +37,7 @@ RUN_DEPENDS:=	p5-Archive-Tar>0:archivers/p5-Archive-Tar \
 		p5-Gtk2-Ex-PodViewer>0.17:x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-Filesys-Df>0.92:sysutils/p5-Filesys-Df \
 		p5-Data-UUID>=1.220:devel/p5-Data-UUID \
+		p5-Date-Calc>=6.4:devel/p5-Date-Calc \
 		${BUILD_DEPENDS}
 
 NO_ARCH=	yes

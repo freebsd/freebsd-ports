@@ -1,2 +1,3 @@
-SHA256 (cabal/xmonad-0.11.1.tar.gz) = 39e0bf227df782d7a5799c811ad0d8b70c9d6eaaa94e8cc395fcf25895d6d2dd
-SIZE (cabal/xmonad-0.11.1.tar.gz) = 59307
+TIMESTAMP = 1486836802
+SHA256 (cabal/xmonad-0.13.tar.gz) = f9f81b63569f18c777a939741024ec3ae34e4ec84015e5cc50f6622034a303ca
+SIZE (cabal/xmonad-0.13.tar.gz) = 72034

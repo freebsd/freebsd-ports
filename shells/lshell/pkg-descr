@@ -3,4 +3,4 @@ commands, choose to enable or disable any command over SSH (e.g. SCP,
 SFTP, rsync, etc.) log user's commands, implement timing restrictions,
 and more.
 
-WWW: http://lshell.ghantoos.org
+WWW: https://github.com/ghantoos/lshell/

@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Code browser that augments the code with information
 
 BUILD_DEPENDS=	pear-Console_CommandLine>=1.1.3:devel/pear-Console_CommandLine \
@@ -16,6 +16,8 @@ BUILD_DEPENDS=	pear-Console_CommandLine>=1.1.3:devel/pear-Console_CommandLine \
 RUN_DEPENDS=	pear-Console_CommandLine>=1.1.3:devel/pear-Console_CommandLine \
 		pear-File_Iterator>=1.3.0:devel/pear-File_Iterator \
 		pear-Log>=1.2.1:sysutils/pear-Log
+
+BROKEN=		unfetchable, redirects to https://phpunit.de/
 
 USES=	pear
 USE_PHP=	dom

@@ -3,7 +3,6 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-common
@@ -16,7 +15,6 @@ BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
 RUN_DEPENDS=	p5-Net-SSLeay>=0:security/p5-Net-SSLeay
 
 USES=		gmake perl5 cpe
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 

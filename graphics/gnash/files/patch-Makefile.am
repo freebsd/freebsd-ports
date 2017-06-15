@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2016-07-21 12:25:09 UTC
++++ Makefile.am
+@@ -512,7 +512,7 @@ install-plugins install-plugin uninstall
+ apidoc:
+ 	$(MAKE) -C doc $@
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
+ pkgconfig_DATA = \
+ 	gnash.pc \
+ 	$(NULL)

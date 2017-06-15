@@ -72,7 +72,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/language
 	${INSTALL_DATA} ${WRKSRC}/language/core.*.lang ${STAGEDIR}${DATADIR}/language
 	@cd ${WRKSRC}/src/mod \
-		&& ${FIND} . -name "*.lang" -exec ${INSTALL_DATA} "{}" \
+		&& ${FIND} . -name "*.lang" -exec ${INSTALL_DATA} {} \
 			${STAGEDIR}${DATADIR}/language ";"
 	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts
 .for f in CONTENTS action.fix.tcl autobotchk alltools.tcl botchk \

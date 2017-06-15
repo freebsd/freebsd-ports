@@ -1,5 +1,5 @@
---- data/Makefile.in.orig	2014-07-14 18:09:56.136673852 +0800
-+++ data/Makefile.in	2014-07-14 18:11:00.321698621 +0800
+--- data/Makefile.in.orig	2001-04-29 06:53:32 UTC
++++ data/Makefile.in
 @@ -172,10 +172,10 @@ mostlyclean distclean maintainer-clean
  
  

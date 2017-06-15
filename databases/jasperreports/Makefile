@@ -15,15 +15,13 @@ RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:devel/itext			\
 		${JAVALIBDIR}/crimson.jar:textproc/crimson		\
 		${JAVALIBDIR}/poi.jar:textproc/apache-poi		\
 		${JAVALIBDIR}/jfreechart.jar:java/jfreechart	\
-		${JAVASHAREDIR}/batik/batik.jar:graphics/batik	\
+		${JAVALIBDIR}/../batik/batik.jar:graphics/batik	\
 		${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils\
 		${JAVALIBDIR}/commons-digester.jar:textproc/jakarta-commons-digester
 
-OPTIONS_DEFINE=	MYSQL PGSQL ORACLE8 ORACLE9 HSQLDB
+OPTIONS_DEFINE=	MYSQL PGSQL HSQLDB
 OPTIONS_DEFAULT=MYSQL PGSQL
 
-ORACLE8_DESC=	Install libraries required for Oracle 8
-ORACLE9_DESC=	Install libraries required for Oracle 9
 HSQLDB_DESC=	Install libraries required for HSQLDB
 
 USE_JAVA=	yes
@@ -47,17 +45,6 @@ RUN_DEPENDS+=	${JAVALIBDIR}/log4j.jar:devel/log4j
 
 .if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc
-.endif
-
-
-.if ${PORT_OPTIONS:MORACLE8}
-WITH_ORACLE8=	yes
-RUN_DEPENDS+=	${JAVALIBDIR}/classes12.zip:databases/jdbc-oracle8i
-.endif
-
-.if ${PORT_OPTIONS:MORACLE9}
-WITH_ORACLE9=	yes
-RUN_DEPENDS+=	${JAVALIBDIR}/ojdbc14.jar:databases/jdbc-oracle9i
 .endif
 
 .if ${PORT_OPTIONS:MHSQLDB}

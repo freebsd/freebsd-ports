@@ -1,0 +1,7 @@
+%%DATADIR%%/gc.png
+%%PORTDOCS%%%%DOCSDIR%%/GC3-FAQ.pdf
+%%PORTDOCS%%%%DOCSDIR%%/GC3-Manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/GC3-Release.pdf
+%%PORTDOCS%%%%DOCSDIR%%/GC31-Release.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Golden Cheetah Science v1.pdf
+bin/GoldenCheetah

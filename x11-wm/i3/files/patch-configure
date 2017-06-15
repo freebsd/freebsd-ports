@@ -1,0 +1,11 @@
+--- configure.orig	2016-11-08 18:54:08 UTC
++++ configure
+@@ -3351,7 +3351,7 @@ if test "x$_cv_gnu_make_command" = x""; 
+ fi
+ 
+ case $srcdir in #(
+-  .|.*) :
++ *) :
+ 
+     # pwd -P is specified in IEEE 1003.1 from 2004
+     as_dir=`cd "$srcdir" && pwd -P`

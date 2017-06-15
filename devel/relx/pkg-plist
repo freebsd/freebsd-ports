@@ -20,10 +20,14 @@ lib/erlang/lib/relx-%%VERSION%%/ebin/rlx_prv_relup.beam
 lib/erlang/lib/relx-%%VERSION%%/ebin/rlx_rel_discovery.beam
 lib/erlang/lib/relx-%%VERSION%%/ebin/rlx_release.beam
 lib/erlang/lib/relx-%%VERSION%%/ebin/rlx_state.beam
+lib/erlang/lib/relx-%%VERSION%%/ebin/rlx_topo.beam
 lib/erlang/lib/relx-%%VERSION%%/ebin/rlx_util.beam
 lib/erlang/lib/relx-%%VERSION%%/include/relx.hrl
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/bin
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/bin_windows
+lib/erlang/lib/relx-%%VERSION%%/priv/templates/builtin_hook_pid
+lib/erlang/lib/relx-%%VERSION%%/priv/templates/builtin_hook_wait_for_process
+lib/erlang/lib/relx-%%VERSION%%/priv/templates/builtin_hook_wait_for_vm_start
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/erl_ini
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/erl_script
 lib/erlang/lib/relx-%%VERSION%%/priv/templates/extended_bin
@@ -54,6 +58,7 @@ lib/erlang/lib/relx-%%VERSION%%/src/rlx_prv_relup.erl
 lib/erlang/lib/relx-%%VERSION%%/src/rlx_rel_discovery.erl
 lib/erlang/lib/relx-%%VERSION%%/src/rlx_release.erl
 lib/erlang/lib/relx-%%VERSION%%/src/rlx_state.erl
+lib/erlang/lib/relx-%%VERSION%%/src/rlx_topo.erl
 lib/erlang/lib/relx-%%VERSION%%/src/rlx_util.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/relx.config

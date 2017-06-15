@@ -1,27 +1,28 @@
---- Makefile.gtk.orig	2015-02-28 15:33:27 UTC
-+++ Makefile.gtk
-@@ -110,7 +110,7 @@ GTK_CONFIG = sh -c 'pkg-config gtk+-2.0 
+--- Makefile.gtk.orig	2017-03-16 02:47:16.000000000 +0000
++++ Makefile.gtk	2017-03-16 02:47:16.000000000 +0000
+@@ -111,7 +111,7 @@
  
  unexport CFLAGS # work around a weird issue with krb5-config
  
 -CFLAGS = -O2 -Wall -Werror -g -I.././ -I../charset/ -I../windows/ -I../unix/ \
 +CFLAGS := $(CFLAGS) -Wall -Werror -I.././ -I../charset/ -I../windows/ -I../unix/ \
- 		-I../macosx/ $(shell $(GTK_CONFIG) --cflags) -D _FILE_OFFSET_BITS=64
+ 		$(shell $(GTK_CONFIG) --cflags) -D _FILE_OFFSET_BITS=64
  XLDFLAGS = $(LDFLAGS) $(shell $(GTK_CONFIG) --libs)
  ULDFLAGS = $(LDFLAGS)
-@@ -137,7 +137,11 @@ man1dir=$(mandir)/man1
+@@ -138,8 +138,12 @@
  .SUFFIXES:
  
  
 +ifdef PUTTY_WITH_GTK
- all: plink pscp psftp pterm putty puttygen puttytel
+ all: cgtest fuzzterm osxlaunch pageant plink pscp psftp pterm ptermapp putty \
+ 		puttyapp puttygen puttytel testbn
 +else
 +all: plink pscp psftp puttygen
 +endif
  
- plink: be_all_s.o callback.o cmdline.o conf.o cproxy.o ldisc.o logging.o \
- 		misc.o noterm.o pgssapi.o pinger.o portfwd.o proxy.o raw.o \
-@@ -920,6 +924,8 @@ install:
+ cgtest: cgtest.o conf.o import.o misc.o notiming.o sshaes.o sshbcrypt.o \
+ 		sshblowf.o sshbn.o sshdes.o sshdss.o sshdssg.o sshecc.o \
+@@ -1050,6 +1054,8 @@
  	$(INSTALL_PROGRAM) -m 755 plink $(DESTDIR)$(bindir)/plink
  	$(INSTALL_PROGRAM) -m 755 pscp $(DESTDIR)$(bindir)/pscp
  	$(INSTALL_PROGRAM) -m 755 psftp $(DESTDIR)$(bindir)/psftp
@@ -30,7 +31,7 @@
  	$(INSTALL_PROGRAM) -m 755 pterm $(DESTDIR)$(bindir)/pterm
  	if test -n "$(UTMP_GROUP)"; then \
  	  chgrp $(UTMP_GROUP) $(DESTDIR)$(bindir)/pterm && \
-@@ -929,15 +935,17 @@ install:
+@@ -1059,15 +1065,17 @@
  	    chmod 4755 $(DESTDIR)$(bindir)/pterm; \
  	fi
  	$(INSTALL_PROGRAM) -m 755 putty $(DESTDIR)$(bindir)/putty

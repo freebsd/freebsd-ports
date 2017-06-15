@@ -1,5 +1,5 @@
---- src/filed/Makefile.in	2015-12-03 03:22:54.000000000 -0500
-+++ src/filed/Makefile.in	2016-02-01 18:17:25.879376000 -0500
+--- src/files/Makefile.in	2016-10-16 10:14:36.000000000 -0500
++++ src/filed/Makefile.in	2016-11-10 01:33:16.120709000 -0500
 @@ -25,6 +25,7 @@
  GNUTLS_LIBS_NONSHARED = @GNUTLS_LIBS_NONSHARED@
  
@@ -8,23 +8,32 @@
  COMPRESS_CPPFLAGS += @ZLIB_INC@ @LZO_INC@ @FASTLZ_INC@
  
  first_rule: all
-@@ -76,7 +77,7 @@
+@@ -78,7 +79,7 @@
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -L../lib -L../findlib -o $@ $(SVROBJS) \
- 	  $(FDLIBS) -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) \
+ 	  -lbareosfind -lbareoscfg -lbareos -lm $(FDLIBS) $(LIBS) \
 -	  $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
 +	  $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  static-bareos-fd: Makefile $(SVROBJS) \
  		  ../findlib/libbareosfind.a \
-@@ -84,8 +85,8 @@
- 		  ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
+@@ -87,7 +88,7 @@
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -static -L../lib -L../findlib -o $@ $(SVROBJS) \
--	   $(FDLIBS) -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) \
+ 	   -lbareosfind -lbareoscfg -lbareos -lm $(FDLIBS) $(LIBS) \
 -	   $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS)
-+	   -lbareosfind -lbareoscfg -lbareos -lm $(FDLIBS) $(LIBS) \
-+	   $(DLIB) $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS) $(JANSSON_LDFLAGS)
++	   $(DLIB) $(WRAPLIBS) $(GETTEXT_STATIC_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS) $(JANSSON_LDFLAGS)
  	strip $@
  
  Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
+@@ -137,8 +138,8 @@
+ 	            destconf="$$RESDIR/$$RES.new"; \
+ 	            echo "    $$RESTYPE/$$RES as \"$$destconf\" (keep existing)"; \
+ 	         else \
+-	            destconf="$$RESDIR/$$RES"; \
+-	            echo "    $$RESTYPE/$$RES as \"$$destconf\""; \
++	            destconf="$$RESDIR/$$RES.sample"; \
++	            echo "    $$RESTYPE/$$RES as \"$$destconf\".sample"; \
+ 	         fi; \
+ 	         ${INSTALL_CONFIG} "$$f" "$$destconf"; \
+ 	         if test "x${fd_group}" != "x"; then \

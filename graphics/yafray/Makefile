@@ -3,7 +3,7 @@
 
 PORTNAME=	yafray
 PORTVERSION=	0.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 		#http://www.yafaray.org/sites/default/files/download/builds/

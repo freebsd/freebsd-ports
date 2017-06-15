@@ -3,7 +3,7 @@
 
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.99.20160129
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -42,13 +42,13 @@ JAM?=		${LOCALBASE}/bin/jam
 
 .include <bsd.port.pre.mk>
 
-# force Clang when on FreeBSD 10+
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+# force Clang when on FreeBSD
+.if ${OPSYS} == FreeBSD
 JAMARG=	"-sCLANG=1"
 .endif
 
 post-patch:
-	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
+	@${EGREP} -Rl '%%[[:alpha:]]+%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,%%PREFIX%%,${PREFIX},g'
 	${REINPLACE_CMD} -e "s|\(C++FLAGS =\)|\1 -I${OPENSSLINC}|g" \
 		-e"s|INSTALLROOT ?= \"\" ;|INSTALLROOT = \"${STAGEDIR}\" ;|" \

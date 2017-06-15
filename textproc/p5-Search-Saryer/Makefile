@@ -3,7 +3,7 @@
 
 PORTNAME=	Search-Saryer
 PORTVERSION=	0.40
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://namazu.org/~tsuchiya/perl/
 PKGNAMEPREFIX=	p5-

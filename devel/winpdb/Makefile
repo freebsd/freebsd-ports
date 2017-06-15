@@ -7,12 +7,14 @@ PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Python debugger
 
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:security/py-pycrypto
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	honeyd
 PORTVERSION=	1.5c
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	http://www.honeyd.org/uploads/ \
 		http://www.citi.umich.edu/u/provos/honeyd/
@@ -14,7 +14,7 @@ COMMENT=	Simulate virtual network hosts (honeypots)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2 \
+LIB_DEPENDS=	libevent.so:devel/libevent \
 		libdnet.so:net/libdnet \
 		libpcre.so:devel/pcre
 

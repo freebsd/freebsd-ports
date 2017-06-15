@@ -1,0 +1,8 @@
+The SonarQube Scanner for Ant is an Ant Task that is wrapper of SonarQube
+Scanner, which works by invoking SonarQube Scanner and passing to it all
+properties named following a sonar.* convention. This has the downside of not
+being very Ant-y, but the upside of providing instant availability of any new
+analysis parameter introduced by a new version of a plugin or of SonarQube
+itself.
+
+WWW: http://docs.sonarqube.org/display/SONAR/Installing+and+Configuring+Ant+SonarQube+Task

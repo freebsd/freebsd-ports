@@ -10,19 +10,28 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S!.!!}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brendan McKay's graph isomorphism tester
 
+LICENSE=	NAUTY
+LICENSE_NAME=	nauty license
+LICENSE_FILE=	${WRKDIR}/LICENSE
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
+
+PROGRAMS=	NRswitchg addedgeg amtog biplabg catg complg copyg \
+		countg deledgeg directg dreadnaut dretog genbg geng \
+		genrang gentourng labelg listg multig newedgeg pickg \
+		planarg shortg showg
 
 PORTDOCS=	nug.pdf
 PLIST_FILES=	${PROGRAMS:S!^!bin/!}
 
 OPTIONS_DEFINE=	DOCS
 
-PROGRAMS=	NRswitchg addedgeg amtog biplabg catg complg copyg \
-		countg deledgeg directg dreadnaut dretog genbg geng \
-		genrang gentourng labelg listg multig newedgeg pickg \
-		planarg shortg showg
+post-extract:
+	@${SED} -ne '/AUTHOR/,/RIP/ {s|^\*   ||; s|  *\*$$||;p;}' \
+		< ${WRKSRC}/nauty.h > ${WRKDIR}/LICENSE
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -31,11 +40,13 @@ post-patch:
 
 do-install:
 .for i in ${PROGRAMS}
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${i} ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>

@@ -34,7 +34,7 @@ CMAKE_ARGS+=	-DUSE_QT:BOOL=NO
 USE_LDCONFIG=	yes
 
 ALL_TARGET?=	all man
-OPTIONS_DEFINE=	DOCS STATIC
+OPTIONS_DEFINE=	DOXYGEN STATIC
 STATIC_DESC=	Build and install static libraries
 STATIC_CMAKE_ON=	-DBUILD_STATIC_LIBS=YES
 .if ${PORTNAME}==svxlink
@@ -47,9 +47,9 @@ ALSA_CMAKE_ON=	-DUSE_ALSA:BOOL=ON
 OSS_CMAKE_OFF=	-DUSE_OSS:BOOL=OFF
 OSS_CMAKE_ON=	-DUSE_OSS:BOOL=ON
 .endif
-DOCS_ALL_TARGET=doc
-DOCS_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:BOOL=TRUE
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+DOXYGEN_ALL_TARGET=doc
+DOXYGEN_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:BOOL=TRUE
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
 OPTIONS_SUB=	yes
 PORTDOCS=	*
@@ -74,7 +74,7 @@ post-patch-OSS-on:
 		${REINPLACE_CMD} -e 's|alsa:plughw:0|oss:/dev/dsp|'
 
 .if ${PORTNAME}==svxlink
-post-stage:
+post-install:
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc \
 		${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/TclVoiceMail.conf \

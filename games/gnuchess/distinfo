@@ -1,4 +1,5 @@
-SHA256 (gnuchess-6.2.2.tar.gz) = 7776c114eeb5889dea69dc4715a3622ec57f65efab667987e7d7183cc05381a8
-SIZE (gnuchess-6.2.2.tar.gz) = 747054
+TIMESTAMP = 1478382958
+SHA256 (gnuchess-6.2.4.tar.gz) = 3c425c0264f253fc5cc2ba969abe667d77703c728770bd4b23c456cbe5e082ef
+SIZE (gnuchess-6.2.4.tar.gz) = 757985
 SHA256 (book_1.02.pgn.gz) = deac77edb061a59249a19deb03da349cae051e52527a6cb5af808d9398d32d44
 SIZE (book_1.02.pgn.gz) = 26265281

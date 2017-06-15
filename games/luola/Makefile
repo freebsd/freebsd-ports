@@ -5,7 +5,7 @@ PORTNAME=	luola
 PORTVERSION=	1.3.2
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ # master site gone
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/ # master site gone
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		stdlevels-6.0${EXTRACT_SUFX} \
 		nostalgia-1.2${EXTRACT_SUFX}

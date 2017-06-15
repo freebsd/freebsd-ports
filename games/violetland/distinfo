@@ -1,2 +1,7 @@
-SHA256 (ooxi-violetland-0.4.3_GH0.tar.gz) = 678996c02ba780f6cb4199e7d85e508c6c86dd8d3793b9ff9618f1cc7c7755ad
-SIZE (ooxi-violetland-0.4.3_GH0.tar.gz) = 9257919
+TIMESTAMP = 1478881706
+SHA256 (ooxi-violetland-0.5_GH0.tar.gz) = f82c41c67515fbb34207cc34ce91a616da1bb2c8922e3dca30873478b79191cb
+SIZE (ooxi-violetland-0.5_GH0.tar.gz) = 9283612
+SHA256 (jarro2783-CMake-Gettext-6ee6405_GH0.tar.gz) = cfca4e2828d9e67c22b71e35c2a7c6fffa9452081f7602e870108f20d8d3cddd
+SIZE (jarro2783-CMake-Gettext-6ee6405_GH0.tar.gz) = 3602
+SHA256 (fcitx-fcitx-a636a83_GH0.tar.gz) = 6b496d580b08be122cea691cc4562ae88a7f8f1621e08f05d18bc104a27ab45c
+SIZE (fcitx-fcitx-a636a83_GH0.tar.gz) = 2199925

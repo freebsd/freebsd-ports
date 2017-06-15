@@ -9,8 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Open%20DC%20Hub/${PORTVERSION}
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 
-USES=		perl5 gmake
-USE_OPENSSL=	yes
+USES=		perl5 gmake ssl
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS

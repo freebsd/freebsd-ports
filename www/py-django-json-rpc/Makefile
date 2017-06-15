@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	john@ixsystems.com
+MAINTAINER=	jhixson@gmail.com
 COMMENT=	Simple JSON-RPC implementation for Django
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django110>0:www/py-django110

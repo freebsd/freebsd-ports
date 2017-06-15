@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	deforaos-browser
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www.defora.org/os/download/download/4418/
+MASTER_SITES=	http://www.defora.org/os/download/download/4442/
 DISTNAME=	Browser-${PORTVERSION}
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -16,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libDesktop.so:x11/deforaos-libdesktop \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libXrandr.so:x11/libXrandr
 
 OPTIONS_DEFINE=	DOCS NLS
@@ -24,7 +25,8 @@ NLS_USES=		gettext
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
     ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 cairo
+USE_XORG=	x11
 USES=		desktop-file-utils pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

@@ -1,0 +1,65 @@
+--- gdb/arm-tdep.c.orig	2016-07-08 15:42:17.131392993 +0200
++++ gdb/arm-tdep.c	2016-07-08 15:44:10.506386463 +0200
+@@ -9880,7 +9880,7 @@
+       && !INSN_RECORDED(arm_insn_r))
+     {
+       /* Handle MLA(S) and MUL(S).  */
+-      if (0 <= insn_op1 && 3 >= insn_op1)
++      if (3 >= insn_op1)
+       {
+         record_buf[0] = bits (arm_insn_r->arm_insn, 12, 15);
+         record_buf[1] = ARM_PS_REGNUM;
+--- gdb/cris-tdep.c.orig	2016-07-08 15:45:26.575379589 +0200
++++ gdb/cris-tdep.c	2016-07-08 15:47:07.849372792 +0200
+@@ -1441,7 +1441,7 @@
+       /* Indeterminate/obsolete.  */
+       return 0;
+     case cris_ver_v0_3:
+-      return (version >= 0 && version <= 3);
++      return (version <= 3);
+     case cris_ver_v3p:
+       return (version >= 3);
+     case cris_ver_v8:
+@@ -1449,7 +1449,7 @@
+     case cris_ver_v8p:
+       return (version >= 8);
+     case cris_ver_v0_10:
+-      return (version >= 0 && version <= 10);
++      return (version <= 10);
+     case cris_ver_v3_10:
+       return (version >= 3 && version <= 10);
+     case cris_ver_v8_10:
+--- gdb/main.c.orig	2016-08-03 17:55:42.243017327 +0200
++++ gdb/main.c	2016-08-03 17:56:04.478015630 +0200
+@@ -226,7 +226,7 @@
+ 	    {
+ 	      /* Append the part of SYSTEM_GDBINIT that follows GDB_DATADIR
+ 		 to gdb_datadir.  */
+-	      char *tmp_sys_gdbinit = xstrdup (SYSTEM_GDBINIT + datadir_len);
++	      char *tmp_sys_gdbinit = xstrdup (&(SYSTEM_GDBINIT[datadir_len]));
+ 	      char *p;
+ 
+ 	      for (p = tmp_sys_gdbinit; IS_DIR_SEPARATOR (*p); ++p)
+--- gdb/dtrace-probe.c.orig	2016-08-03 17:57:18.454010903 +0200
++++ gdb/dtrace-probe.c	2016-08-03 17:58:01.001007519 +0200
+@@ -421,7 +421,8 @@
+ 	  arg.type_str = xstrdup (p);
+ 
+ 	  /* Use strtab_size as a sentinel.  */
+-	  while (*p++ != '\0' && p - strtab < strtab_size);
++	  while (*p++ != '\0' && p - strtab < strtab_size)
++		;
+ 
+ 	  /* Try to parse a type expression from the type string.  If
+ 	     this does not work then we set the type to `long
+--- libiberty/stack-limit.c.orig	2016-08-05 14:12:21.942893014 +0200
++++ libiberty/stack-limit.c	2016-08-05 14:12:58.794890125 +0200
+@@ -51,7 +51,7 @@
+   struct rlimit rlim;
+   if (getrlimit (RLIMIT_STACK, &rlim) == 0
+       && rlim.rlim_cur != RLIM_INFINITY
+-      && rlim.rlim_cur < pref
++      && rlim.rlim_cur < (rlim_t)pref
+       && (rlim.rlim_max == RLIM_INFINITY || rlim.rlim_cur < rlim.rlim_max))
+     {
+       rlim.rlim_cur = pref;

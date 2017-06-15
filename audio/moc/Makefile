@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moc
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.2
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.daper.net/pub/soft/moc/stable/
 

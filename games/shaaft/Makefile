@@ -3,7 +3,7 @@
 
 PORTNAME=	shaaft
 PORTVERSION=	0.5.0
-PORTREVISION=	16
+PORTREVISION=	18
 CATEGORIES=	games
 MASTER_SITES=	SF/criticalmass/OldFiles
 DISTNAME=	Shaaft-${PORTVERSION}
@@ -21,6 +21,7 @@ USES=		tar:bzip2
 USE_SDL=	mixer image sdl
 USE_GL=		yes
 USE_GCC=	any
+USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize
 

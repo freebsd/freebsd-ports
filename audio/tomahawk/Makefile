@@ -3,7 +3,7 @@
 
 PORTNAME=	tomahawk
 PORTVERSION=	0.8.4
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,6 +29,7 @@ LIB_DEPENDS=	libattica.so:x11-toolkits/attica \
 
 CMAKE_ARGS=	-DBUILD_RELEASE="ON"
 CXXFLAGS+=	-Wno-cast-align -I${LOCALBASE}/include
+LDFLAGS+=	-lz
 
 GH_ACCOUNT=	tomahawk-player
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	49071
+PORTVERSION=	50088
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -49,14 +49,10 @@ TXT_DESC=		Plain text
 
 # if PACKAGE_BUILDING=yes, enable all of $AVAILABLEFORMATS.
 .if defined(PACKAGE_BUILDING)
-OPTIONS_SET+=	${AVAILABLEFORMATS}
+OPTIONS_DEFAULT+=	${AVAILABLEFORMATS}
 .endif
 
 .include <bsd.port.options.mk>
-
-.if defined(PACKAGE_BUILDING) && ${OSVERSION} < 1000000 && ${ARCH} == i386
-IGNORE=	fails to build on the package builders in 9.x i386 jails due to java exceptions
-.endif
 
 .for O in ${AVAILABLEFORMATS}
 .if ${PORT_OPTIONS:M${O}}

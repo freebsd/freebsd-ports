@@ -2,12 +2,15 @@
 
 PORTNAME=	puppetdb
 PORTVERSION=	2.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 
-MAINTAINER=	xaque208@gmail.com
+MAINTAINER=	freebsd@zleslie.info
 COMMENT=	PuppetDB storeconfigs backend
+
+DEPRECATED=	Depends on expired sysutils/puppet38, use puppetdb[34] instead
+EXPIRATION_DATE=2017-04-05
 
 LICENSE=	APACHE20
 

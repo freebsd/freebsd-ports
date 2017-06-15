@@ -3,7 +3,7 @@
 
 PORTNAME=	pdftk
 PORTVERSION=	2.02
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/ LOCAL/mat/pdftk
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -28,7 +28,7 @@ WRKSRC=		${PATCH_WRKSRC}/${PORTNAME}
 
 MAKEFILE=	Makefile.FreeBSD
 MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF} GCPP=cpp${CSUFF} \
-		OBJCOPY=${OBJCOPY} LANG=C LC_CTYPE=C
+		OBJCOPY=${OBJCOPY}
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 

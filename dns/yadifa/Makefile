@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	yadifa
-PORTVERSION=	2.2.1
-DISTVERSIONSUFFIX=	-6281
+PORTVERSION=	2.2.3
+DISTVERSIONSUFFIX=	-6711
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/
 
@@ -14,8 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		libtool compiler:c11
-USE_OPENSSL=	yes
+USES=		libtool compiler:c11 ssl
 CONFIGURE_ARGS=	--localstatedir=/var
 
 OPTIONS_DEFINE=	CTRL DOCS EXAMPLES TCL RRL MESSAGES NSID
@@ -42,6 +42,9 @@ PORTDOCS=	AUTHORS COPYING ChangeLog \
 post-configure:
 	${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${EXAMPLESDIR}|' ${WRKSRC}/etc/Makefile
 	${REINPLACE_CMD} -e 's|/usr/local/var|/var|' -e 's|/var/zones|/var/${PORTNAME}|' ${WRKSRC}/etc/yadifad.conf.example
+
+pre-build:
+	@cd ${WRKSRC} && ${MAKE_CMD} features
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/yadifad.conf \

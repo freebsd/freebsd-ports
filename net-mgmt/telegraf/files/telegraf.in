@@ -22,14 +22,14 @@ rcvar=telegraf_enable
 load_rc_config $name
 
 : ${telegraf_enable:="NO"}
-: ${telegraf_flags:=""}
+: ${telegraf_flags:="-quiet"}
 : ${telegraf_conf:="%%PREFIX%%/etc/${name}.conf"}
 
 # daemon
 start_precmd=telegraf_prestart
 pidfile="/var/run/${name}.pid"
 command=/usr/sbin/daemon
-command_args="-crP ${pidfile} %%PREFIX%%/bin/${name} ${telegraf_flags} -config=${telegraf_conf} 2>> /var/log/telegraf.log"
+command_args="-crP ${pidfile} %%PREFIX%%/bin/${name} ${telegraf_flags} -config=${telegraf_conf} >> /var/log/telegraf.log 2>&1"
 
 telegraf_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)

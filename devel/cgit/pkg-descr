@@ -1,4 +1,4 @@
-Cgit is an attempt to create a fast web interface for the git scm, using
-a builtin cache to decrease server io-pressure.
+cgit is a fast web interface for the Git SCM, using a built-in cache to
+decrease server I/O pressure.
 
 WWW: http://git.zx2c4.com/cgit/about/

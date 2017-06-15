@@ -1,17 +1,17 @@
---- shared/commonlib.c.orig	Sat Mar 18 07:16:42 2006
-+++ shared/commonlib.c	Sat Sep  2 21:01:39 2006
-@@ -4,7 +4,7 @@
- #ifdef INTEGERTIME
- # include <time.h>
+--- shared/commonlib.c.orig	2016-05-06 09:25:24 UTC
++++ shared/commonlib.c
+@@ -6,7 +6,7 @@
+ #elif defined EnhTime
+ # include <windows.h>
  #else
 -# include <sys/timeb.h>
 +# include <sys/time.h>
  #endif
  
  #include <stdlib.h>
-@@ -673,10 +673,12 @@
- #elif defined CLOCKTIME
-   return((double)clock()/CLOCKS_PER_SEC /* CLK_TCK */);
+@@ -844,10 +844,12 @@ double timeNow(void)
+   }
+   return( timeBase + (double) now.QuadPart/(double) freq.QuadPart );
  #else
 -  struct timeb buf;
 +  struct timeval tv;

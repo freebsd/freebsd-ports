@@ -8,7 +8,7 @@ CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Drop-down terminal emulator for KDE
 
 LICENSE=	GPLv2

@@ -3,7 +3,7 @@
 
 PORTNAME=	pdo_cassandra
 PORTVERSION=	0.2.1
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	databases
 PKGNAMEPREFIX=	php5-
 
@@ -25,7 +25,7 @@ USES=		compiler:c++11-lib php:ext pkgconfig
 USE_CXXSTD=	c++11
 USE_PHP=	pdo:build
 
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/thrift/bsd.thrift.mk"

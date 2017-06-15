@@ -2,6 +2,7 @@
 
 PORTNAME=	gomdb
 PORTVERSION=	20140824
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	cheffo@freebsd-bg.org

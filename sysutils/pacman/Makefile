@@ -3,6 +3,7 @@
 
 PORTNAME=	pacman
 PORTVERSION=	4.2.0
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.archlinux.org/other/pacman/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libarchive.so.13:archivers/libarchive
 
-USES=		gmake libtool perl5 pkgconfig shebangfix
+USES=		gmake libtool pathfix perl5 pkgconfig shebangfix
 SHEBANG_FILES=	${WRKSRC}/scripts/makepkg-template.pl.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-root-dir="${PACMAN_ROOT}" \

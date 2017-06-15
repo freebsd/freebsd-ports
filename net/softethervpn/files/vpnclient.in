@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: vpnclient
+# REQUIRE: LOGIN
+#
+. /etc/rc.subr
+
+name=vpnclient
+rcvar=${name}_enable
+command=%%PREFIX%%/sbin/${name}
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+vpnclient_start()
+{
+
+	$command start
+}
+
+vpnclient_stop()
+{
+
+	$command stop
+}
+
+load_rc_config $name
+: ${vpnclient_enable:=NO}
+run_rc_command "$1"

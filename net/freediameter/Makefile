@@ -15,13 +15,6 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 
 USES=		cmake bison
 USE_LDCONFIG=	yes
-CMAKE_ARGS+=	-DSCTP_USE_MAPPED_ADDRESSES:BOOL=ON
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CMAKE_ARGS+=	-DFLEX_EXECUTABLE:FILEPATH="${LOCALBASE}/bin/flex"
-.endif
+CMAKE_ARGS=	-DSCTP_USE_MAPPED_ADDRESSES:BOOL=ON
 
 .include <bsd.port.mk>

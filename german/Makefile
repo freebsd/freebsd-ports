@@ -20,7 +20,7 @@
     SUBDIR += jdictionary-ger-hun
     SUBDIR += kde4-l10n
     SUBDIR += libreoffice
-    SUBDIR += mediathek
+    SUBDIR += mediathekview
     SUBDIR += mythes
     SUBDIR += phone
     SUBDIR += php_doc

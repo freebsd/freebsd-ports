@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	profanity
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.profanity.im/
 
@@ -12,16 +12,16 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libstrophe.so:net-im/libstrophe \
-		libglib-2.0.so:devel/glib20 \
 		libcurl.so:ftp/curl \
 		libotr.so.5:security/libotr \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libgpgme.so:security/gpgme
 
-USES=		ncurses pkgconfig
+USES=		ncurses pkgconfig ssl python readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-otr
 CONFIGURE_ENV=	LIBS="${CFLAGS} -lcrypto"
+USE_GNOME=	glib20
 
 OPTIONS_DEFINE=	NOTIFY
 

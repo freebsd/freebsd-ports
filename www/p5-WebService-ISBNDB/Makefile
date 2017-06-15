@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Business-ISBN>=1.80:misc/p5-Business-ISBN \
 		p5-TimeDate>=1.16:devel/p5-TimeDate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
 

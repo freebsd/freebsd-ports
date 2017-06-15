@@ -23,7 +23,7 @@ DESKTOP_ENTRIES="Vectoroids" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
-	@${FIND} ${WRKDIR} -name .xvpics | ${XARGS} ${RM} -fr
+	@${FIND} ${WRKDIR} -name .xvpics | ${XARGS} ${RM} -r
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

@@ -107,6 +107,7 @@ share/applications/idjc.desktop
 %%DATADIR%%/stop.png
 %%DATADIR%%/volume2.png
 %%NLS%%share/locale/fr/LC_MESSAGES/idjc.mo
+%%NLS%%share/locale/es/LC_MESSAGES/idjc.mo
 %%NLS%%share/locale/it/LC_MESSAGES/idjc.mo
 man/man1/idjc-auto.1.gz
 man/man1/idjc-ls.1.gz

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.43.3
-PORTREVISION?=	3
+PORTVERSION=	1.43.4
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -13,6 +13,8 @@ COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 LICENSE=	GPLv2
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
+
+BROKEN_aarch64=	Fails to link: missing sbrk
 
 USES=		cpe gmake pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
@@ -42,18 +44,11 @@ NOTESTS_DESC=	Do not run any self-tests (only Tier-1 & DISCOURAGED)
 SMALLTESTS_DESC=Run tests that fit into 500 MB disk space (DEFAULT)
 ALLTESTS_DESC=	Run most self-tests (requires more RAM & disk space)
 PARALLELTESTS_DESC=	Run self-tests in parallel (requires more disk space)
-
-post-extract:
-	@${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-# get more details into tinderbox logs
-.if defined(PACKAGE_BUILDING)
 MAKE_ARGS+=	V=1
-.endif
 
 .include <bsd.port.options.mk>
 
@@ -128,13 +123,6 @@ post-patch::
 		u_mke2fs_opt_offset
 	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
 .endfor
-# m_rootdir behaves erratically on 9.x and fails randomly,
-# but may succeed when run again. Disable for now.
-.if ${OSVERSION} < 1000000
-.for i in m_rootdir
-	@${MV} ${WRKSRC}/tests/${i} ${WRKSRC}/tests/disabled_test-${i}
-.endfor
-.endif
 .endif
 
 # Master port stuff that is not to be seen by the slave ports.
@@ -142,7 +130,7 @@ post-patch::
 # NOTE: The previous .if block goes all the way to the end of the file.
 
 .if !empty(PORT_OPTIONS:MNOTESTS) && (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1100000 || ((${ARCH} != i386) && (${ARCH} != amd64)))
-BROKEN=e2fsprogs has not been tested on your system by the maintainer. You must run self-tests.
+BROKEN=	it was not tested on your system by the maintainer; you must run self-tests
 .endif
 
 pre-build:
@@ -165,7 +153,7 @@ post-build:
 # system are statically linked against anything that is outside the root fs,
 # else we're in trouble if e2fsck is needed for boot:
 # (we don't use e2fsck.static, since we can link libc.so dynamically)
-	cd ${WRKSRC}/e2fsck && ${RM} -f e2fsck \
+	cd ${WRKSRC}/e2fsck && ${RM} e2fsck \
 		&& ${MAKE_CMD} e2fsck \
 		STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
 		../lib/libblkid.a  ../lib/libuuid.a" \
@@ -205,7 +193,7 @@ post-build:
 .endif
 
 post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/sbin/uuidd
+	${RM} ${STAGEDIR}${PREFIX}/sbin/uuidd
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${STAGEDIR}${PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}

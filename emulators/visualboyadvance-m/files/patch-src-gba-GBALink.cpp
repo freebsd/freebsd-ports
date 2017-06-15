@@ -12,12 +12,3 @@
  #include <stdlib.h>
  #else
  #include <malloc.h>
-@@ -89,7 +90,7 @@ bool speedhack = true;
- #include "GBALink.h"
- #include "GBASockClient.h"
- 
--#include <SFML/Network.hpp>
-+#include <SFML1/Network.hpp>
- 
- #ifdef ENABLE_NLS
- #include <libintl.h>

@@ -35,7 +35,7 @@ OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS OPENSSL
 OPTIONS_DEFAULT?=	NLS OPENSSL PGSQL
 MTX_DESC=		Install mtx for control of autochanger devices
 
-OPENSSL_USE=	OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 OPENSSL_CONFIGURE_OFF=	--with-openssl="no"
 
@@ -187,4 +187,10 @@ post-install:
 .else
 .include "${MASTERDIR}/Makefile.common"
 .endif # -client and -server are defined
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -53,10 +53,8 @@ post-patch:
 		${WRKSRC}/src/components/ogre/terrain/HeightMap.cpp
 
 post-install:
-	(cd ${WRKDIR}/ember-media-${PORTVERSION}/media && ${FIND} . -type f -print | \
-		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/media)
-	${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
-	${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
+	(cd ${WRKDIR}/ember-media-${PORTVERSION}/media && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/media)
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

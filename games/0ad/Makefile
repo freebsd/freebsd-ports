@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	0ad
-PORTVERSION=	0.0.20
-PORTREVISION=	2
+PORTVERSION=	0.0.21
+PORTREVISION=	6
 CATEGORIES=	games
-MASTER_SITES=	SF/zero-ad/releases \
-		http://releases.wildfiregames.com/
+MASTER_SITES=	http://releases.wildfiregames.com/ \
+		SF/zero-ad/releases
 DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
 		${PORTNAME}-${PORTVERSION}-alpha-unix-data.tar.xz
 
@@ -13,8 +13,10 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real-time strategy (RTS) game of ancient warfare
 
 BUILD_DEPENDS=	zip:archivers/zip \
+		python:lang/python \
 		cmake:devel/cmake
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libicui18n.so:devel/icu \
 		libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
@@ -39,13 +41,12 @@ USE_WX=		2.8+
 WX_COMPS=	wx:lib
 MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 
+BROKEN_aarch64=		Fails to compile: no member named verifyHeapAccessDisassembly
+BROKEN_armv6=		Fails to link: fatal error: conftest: Unknown error: -1
+
 PORTDATA=	*
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000024
-BROKEN=		segfaults during build
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
@@ -70,7 +71,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/ActorEditor ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
-	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libmozjs31-ps-release.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libmozjs38-ps-release.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DATADIR}

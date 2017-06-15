@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-contact-form
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,5 +18,8 @@ NO_ARCH=	yes
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

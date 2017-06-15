@@ -1,0 +1,6 @@
+This is a library for mathematical computations. Our purpose is to express the
+mathematical object naturally in Ruby. Though it is not operated fast, we can
+see the algorithm of the mathematical processing not in black box but in
+scripts. This library is in development stage.
+
+WWW: https://github.com/kunishi/algebra-ruby2

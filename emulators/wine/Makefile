@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.8.4
-PORTREVISION=	1
+DISTVERSION=	2.0
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -66,7 +66,7 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 DOSBOX_RUN_DEPENDS=	dosbox:emulators/dosbox
 
-GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.40-x86.msi:emulators/wine-gecko
+GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.47-x86.msi:emulators/wine-gecko-devel
 
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
@@ -80,7 +80,7 @@ LDAP_USE=		OPENLDAP=yes
 LIBXSLT_CONFIGURE_WITH=	xslt
 LIBXSLT_LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
-MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.6.msi:emulators/wine-mono
+MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.6.4.msi:emulators/wine-mono
 
 MPG123_CONFIGURE_WITH=	mpg123
 MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
@@ -89,6 +89,7 @@ OPENAL_CONFIGURE_WITH=	openal
 OPENAL_USES=		openal
 
 V4L_CONFIGURE_WITH=	v4l
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML
@@ -118,18 +119,11 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
 PLIST_SUB+=		WINE32="@comment " WINE64=""
 
-# Force the use of GCC where it is the system compiler since
-# COMPILER_VERSION will be 42 (the GCC version) even if clang
-# is CHOSEN_COMPILER_TYPE in that case.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000054
-USE_GCC=		yes
-.else
-. if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 38
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 38
 CPPFLAGS+=		-D__builtin_ms_va_list=__builtin_va_list \
 			-D__builtin_ms_va_start=__builtin_va_start \
 			-D__builtin_ms_va_end=__builtin_va_end \
 			-D__builtin_ms_va_copy=__builtin_va_copy
-. endif
 .endif
 
 # Wine assumes a WoW64 package is available however WoW64 is not yet available on FreeBSD.

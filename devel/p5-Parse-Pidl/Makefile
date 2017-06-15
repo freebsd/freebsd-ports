@@ -17,10 +17,10 @@ RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 CONFLICTS=
 
-SAMBA4_PORT?=		samba46
+SAMBA4_PORT?=		net/samba46
 SAMBA4_SUBPORT=		yes
 
-MASTERDIR=		${.CURDIR}/../../net/${SAMBA4_PORT}
+MASTERDIR=		${.CURDIR}/../../${SAMBA4_PORT}
 PKGDIR=			${.CURDIR}
 
 USES=			perl5
@@ -28,7 +28,7 @@ USE_PERL5=		configure
 PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}
 
 post-extract:
-			@${RM} -rf ${WRKSRC}/lib/Parse/Yapp ${WRKSRC}/lib/wscript_build
+			@${RM} -r ${WRKSRC}/lib/Parse/Yapp ${WRKSRC}/lib/wscript_build
 
 .include "${MASTERDIR}/Makefile"
 

@@ -1,5 +1,5 @@
---- ed2k.c.orig	Sun Jun 13 19:47:20 2004
-+++ ed2k.c	Thu Dec 14 10:40:21 2006
+--- ed2k.c.orig	2004-06-13 17:47:20 UTC
++++ ed2k.c
 @@ -32,7 +32,7 @@
  #include <sys/stat.h>
  
@@ -40,7 +40,7 @@
  
  static char *progname;
  
-@@ -86,16 +97,16 @@
+@@ -86,16 +97,16 @@ void hash_fd(int fd, md4_t digest) {
  }
  
  
@@ -60,7 +60,7 @@
  	*(str++) = hdigit(d >> 4 );
  	*(str++) = hdigit(d & 0xf);
      }
-@@ -181,6 +192,7 @@
+@@ -181,6 +192,7 @@ int main(int argc, char *argv[]) {
  }
  
  
@@ -68,7 +68,7 @@
  
  /*==> RSA Data Security, Inc. MD4 Message-Digest Algorithm =============*/
  
-@@ -323,3 +335,5 @@
+@@ -323,3 +335,5 @@ void md4_finish (md4_ctx_t *context, md4
      md4_update (context, bits, 8);
      md4_encode (digest, context->state, 16);
  }

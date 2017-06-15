@@ -14,6 +14,9 @@ COMMENT=	Perl5 module for building, finding and using wxWidgets binaries
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-Module-Pluggable>=5.1:devel/p5-Module-Pluggable
+RUN_DEPENDS=	p5-Module-Pluggable>=5.1:devel/p5-Module-Pluggable
+
 USES=		perl5 compiler:env
 USE_PERL5=	modbuild
 USE_WX=		3.0
@@ -31,11 +34,4 @@ post-install:
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} * -type f -name gtk2_\* -print \
 		>> ${TMPPLIST})
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502000
-BUILD_DEPENDS+=	p5-Module-Pluggable>=5.1:devel/p5-Module-Pluggable
-RUN_DEPENDS+=	p5-Module-Pluggable>=5.1:devel/p5-Module-Pluggable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

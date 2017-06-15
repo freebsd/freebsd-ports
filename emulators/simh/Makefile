@@ -3,6 +3,7 @@
 
 PORTNAME=	simh
 PORTVERSION=	3.9.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
 DISTNAME=	${PORTNAME}v${PORTVERSION:R:S/.//}-${PORTVERSION:E}
@@ -10,10 +11,12 @@ DISTNAME=	${PORTNAME}v${PORTVERSION:R:S/.//}-${PORTVERSION:E}
 MAINTAINER=	bob@eager.cx
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
+LICENSE=	BSD3CLAUSE
+
 NO_WRKSUBDIR=	yes
 
 USES=		gmake dos2unix zip
-DOS2UNIX_FILES=	makefile VAX/vax_sysdev.c
+CFLAGS+=	-Wno-format-extra-args -Wno-comment -Wno-logical-op-parentheses -Wno-bitwise-op-parentheses
 MAKE_ENV=	GCC="${CC}" CFLAGS_O="${CFLAGS}" USE_NETWORK=1
 MAKEFILE=	makefile
 

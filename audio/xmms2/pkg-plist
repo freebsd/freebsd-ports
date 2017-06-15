@@ -113,7 +113,6 @@ lib/libxmmsclient.so.6.0.0
 %%LIBDIR%%/libxmms_normalize.so
 %%LIBDIR%%/libxmms_null.so
 %%LIBDIR%%/libxmms_nulstripper.so
-%%OFA%%%%LIBDIR%%/libxmms_ofa.so
 %%LIBDIR%%/libxmms_oss.so
 %%LIBDIR%%/libxmms_pls.so
 %%PULSEAUDIO%%%%LIBDIR%%/libxmms_pulse.so

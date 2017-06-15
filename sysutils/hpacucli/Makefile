@@ -32,9 +32,6 @@ do-install:
 
 .if ${ARCH} == amd64
 USE_LDCONFIG32=	${APP_PREFIX}
-.  if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000019
-BROKEN=		currently does not work on amd64 (see PR ports/128288)
-.  endif
 .else
 USE_LDCONFIG=	${APP_PREFIX}
 .endif

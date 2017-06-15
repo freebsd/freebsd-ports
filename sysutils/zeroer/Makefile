@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/ehaupt
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line utility for wiping unallocated space on a filesystem
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libpopt.so:devel/popt
 
 PLIST_FILES=	bin/zeroer man/man1/zeroer.1.gz

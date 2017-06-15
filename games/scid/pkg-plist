@@ -391,17 +391,29 @@ bin/tkscid
 %%DATADIR%%/img/flags/flag_yug.gif
 %%DATADIR%%/img/flags/flag_zam.gif
 %%DATADIR%%/img/flags/flag_zim.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_25.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_30.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_35.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_40.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_45.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_50.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_55.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_60.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_65.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_70.gif
-%%DATADIR%%/img/pieces/Alpha/Alpha_80.gif
+%%DATADIR%%/img/pieces/Alpha/alpha2_100.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_105.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_110.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_115.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_130.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_145.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_170.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_200.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_25.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_30.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_35.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_40.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_45.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_50.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_55.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_60.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_65.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_70.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_75.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_80.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_85.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_90.png
+%%DATADIR%%/img/pieces/Alpha/alpha2_95.png
 %%DATADIR%%/img/pieces/Alpha/copyright
 %%DATADIR%%/img/pieces/Bauhaus/Bauhaus_25.gif
 %%DATADIR%%/img/pieces/Bauhaus/Bauhaus_30.gif
@@ -427,6 +439,29 @@ bin/tkscid
 %%DATADIR%%/img/pieces/Blindfold/Blindfold_70.gif
 %%DATADIR%%/img/pieces/Blindfold/Blindfold_75.gif
 %%DATADIR%%/img/pieces/Blindfold/Blindfold_80.gif
+%%DATADIR%%/img/pieces/Cburnett/cburnett_100.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_105.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_110.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_115.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_130.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_145.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_170.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_200.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_25.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_30.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_35.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_40.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_45.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_50.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_55.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_60.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_65.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_70.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_75.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_80.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_85.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_90.png
+%%DATADIR%%/img/pieces/Cburnett/cburnett_95.png
 %%DATADIR%%/img/pieces/Eboard/Eboard_25.gif
 %%DATADIR%%/img/pieces/Eboard/Eboard_30.gif
 %%DATADIR%%/img/pieces/Eboard/Eboard_35.gif
@@ -449,6 +484,29 @@ bin/tkscid
 %%DATADIR%%/img/pieces/Fantasy2/Fantasy2_65.gif
 %%DATADIR%%/img/pieces/Fantasy2/Fantasy2_70.gif
 %%DATADIR%%/img/pieces/Fantasy2/Fantasy2_80.gif
+%%DATADIR%%/img/pieces/Good Companion/good_companion_100.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_105.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_110.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_115.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_130.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_145.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_170.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_200.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_25.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_30.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_35.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_40.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_45.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_50.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_55.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_60.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_65.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_70.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_75.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_80.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_85.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_90.png
+%%DATADIR%%/img/pieces/Good Companion/good_companion_95.png
 %%DATADIR%%/img/pieces/Kingdom/Kingdom_25.gif
 %%DATADIR%%/img/pieces/Kingdom/Kingdom_30.gif
 %%DATADIR%%/img/pieces/Kingdom/Kingdom_35.gif
@@ -473,19 +531,30 @@ bin/tkscid
 %%DATADIR%%/img/pieces/Leipzig/Leipzig_70.gif
 %%DATADIR%%/img/pieces/Leipzig/Leipzig_80.gif
 %%DATADIR%%/img/pieces/Leipzig/copyright
-%%DATADIR%%/img/pieces/Merida/Merida_25.gif
-%%DATADIR%%/img/pieces/Merida/Merida_30.gif
-%%DATADIR%%/img/pieces/Merida/Merida_35.gif
-%%DATADIR%%/img/pieces/Merida/Merida_40.gif
-%%DATADIR%%/img/pieces/Merida/Merida_45.gif
-%%DATADIR%%/img/pieces/Merida/Merida_50.gif
-%%DATADIR%%/img/pieces/Merida/Merida_55.gif
-%%DATADIR%%/img/pieces/Merida/Merida_60.gif
-%%DATADIR%%/img/pieces/Merida/Merida_65.gif
-%%DATADIR%%/img/pieces/Merida/Merida_70.gif
-%%DATADIR%%/img/pieces/Merida/Merida_75.gif
-%%DATADIR%%/img/pieces/Merida/Merida_80.gif
 %%DATADIR%%/img/pieces/Merida/copyright
+%%DATADIR%%/img/pieces/Merida/merida2_100.png
+%%DATADIR%%/img/pieces/Merida/merida2_105.png
+%%DATADIR%%/img/pieces/Merida/merida2_110.png
+%%DATADIR%%/img/pieces/Merida/merida2_115.png
+%%DATADIR%%/img/pieces/Merida/merida2_130.png
+%%DATADIR%%/img/pieces/Merida/merida2_145.png
+%%DATADIR%%/img/pieces/Merida/merida2_170.png
+%%DATADIR%%/img/pieces/Merida/merida2_200.png
+%%DATADIR%%/img/pieces/Merida/merida2_25.png
+%%DATADIR%%/img/pieces/Merida/merida2_30.png
+%%DATADIR%%/img/pieces/Merida/merida2_35.png
+%%DATADIR%%/img/pieces/Merida/merida2_40.png
+%%DATADIR%%/img/pieces/Merida/merida2_45.png
+%%DATADIR%%/img/pieces/Merida/merida2_50.png
+%%DATADIR%%/img/pieces/Merida/merida2_55.png
+%%DATADIR%%/img/pieces/Merida/merida2_60.png
+%%DATADIR%%/img/pieces/Merida/merida2_65.png
+%%DATADIR%%/img/pieces/Merida/merida2_70.png
+%%DATADIR%%/img/pieces/Merida/merida2_75.png
+%%DATADIR%%/img/pieces/Merida/merida2_80.png
+%%DATADIR%%/img/pieces/Merida/merida2_85.png
+%%DATADIR%%/img/pieces/Merida/merida2_90.png
+%%DATADIR%%/img/pieces/Merida/merida2_95.png
 %%DATADIR%%/img/pieces/Merida1/Merida1_100.png
 %%DATADIR%%/img/pieces/Merida1/Merida1_114.png
 %%DATADIR%%/img/pieces/Merida1/Merida1_25.png
@@ -592,6 +661,8 @@ bin/tkscid
 %%DATADIR%%/tcl/utils/sound.tcl
 %%DATADIR%%/tcl/utils/string.tcl
 %%DATADIR%%/tcl/utils/tooltip.tcl
+%%DATADIR%%/tcl/utils/tklib_license.terms
+%%DATADIR%%/tcl/utils/tklib_tooltip.tcl
 %%DATADIR%%/tcl/utils/validate.tcl
 %%DATADIR%%/tcl/utils/win.tcl
 %%DATADIR%%/tcl/utils.tcl

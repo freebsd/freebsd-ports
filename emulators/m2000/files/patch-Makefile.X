@@ -1,5 +1,5 @@
---- Makefile.X.orig	Fri Feb 14 04:53:43 1997
-+++ Makefile.X	Wed Aug 24 16:01:47 2005
+--- Makefile.X.orig	1997-02-13 17:53:43 UTC
++++ Makefile.X
 @@ -18,14 +18,14 @@
  # aware though, screen refresh is much slower when shared
  # memory is not used
@@ -19,7 +19,7 @@
  
  OBJECTS = M2000.o P2000.o Z80.o Z80Debug.o \
            Unix.o X.o
-@@ -33,13 +33,13 @@
+@@ -33,13 +33,13 @@ OBJECTS = M2000.o P2000.o Z80.o Z80Debug
  all:    m2000 fontc splitape z80dasm
  
  m2000:	$(OBJECTS)

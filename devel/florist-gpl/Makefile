@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	POSIX Ada binding, IEEE Standards 1003.5(b,c)
 
 LICENSE=	GPLv3

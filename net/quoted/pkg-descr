@@ -1,5 +1,3 @@
-quoted - QOTD Daemon
-
 The QOTD Daemon 'quoted' listens on the qotd port (17) and responds with
 a randomly selected 'quote of the day' from a 'quotes' text file, which
 you can update with quotes of your own.  It will operate either as a
@@ -8,4 +6,4 @@ stand-alone daemon, or can also be invoked via inetd.
 If you want, you can also have it listen on a different port, other than
 the default 'qotd' port (17).
 
-WWW:  http://www.mrp3.com/webutil/quoted.html
+WWW: http://www.mrp3.com/webutil/quoted.html

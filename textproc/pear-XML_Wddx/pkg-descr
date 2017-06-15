@@ -13,4 +13,4 @@ use wddx_deserialize if it is built in.
 No support for recordsets is available at present in the PHP version of the
 deserializer.
 
-WWW: http://pear.php.net/package/XML_Wddx/
+WWW: https://pear.php.net/package/XML_Wddx

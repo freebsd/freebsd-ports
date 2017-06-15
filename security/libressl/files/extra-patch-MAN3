@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2016-11-15 22:35:43.105912000 +0100
++++ Makefile.in	2016-11-15 22:35:43.126013000 +0100
+@@ -360,7 +360,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = crypto ssl tls include apps tests man
++SUBDIRS = crypto ssl tls include apps tests
+ ACLOCAL_AMFLAGS = -I m4
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libcrypto.pc libssl.pc libtls.pc openssl.pc

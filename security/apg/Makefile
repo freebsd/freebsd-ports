@@ -20,10 +20,6 @@ CRACKLIB_DESC=	CrackLib support for password quality
 CRACKLIB_LIB_DEPENDS=	libcrack.so:security/cracklib
 CRACKLIB_MAKE_ARGS=	-DWITH_CRACKLIB
 
-post-extract:
-	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} u+wx
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} u+w
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/apg ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/apgbfm ${STAGEDIR}${PREFIX}/bin

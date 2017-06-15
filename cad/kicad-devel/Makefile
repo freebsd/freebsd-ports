@@ -3,6 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
+PORTREVISION=	1
 #PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	LOCAL/mr
@@ -15,7 +16,6 @@ COMMENT=		Schematic and PCB editing software
 LICENSE=	GPLv3
 
 BUILD_DEPENDS= ${LOCALBASE}/include/glm/glm.hpp:math/glm
-
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
@@ -29,8 +29,10 @@ CXXFLAGS+=	-msse
 USE_GL=		glew glu gl
 USE_WX=		3.0
 WX_COMPS=	wx
-WX_UNICODE=	yes
 USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
+USE_XORG+=	pixman
+
+BROKEN_aarch64=		Fails to compile: use of undeclared identifier builtin_ia32_emms
 
 OPTIONS_DEFINE=	DOCS
 
@@ -49,6 +51,7 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DKICAD_BUILD_VERSION=${DISTVERSION} \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
+		-DwxWidgets_USE_DEBUG=ON \
 		-DKICAD_SKIP_BOOST=YES
 
 .if exists(${LOCALBASE}/bin/konqueror)
@@ -57,21 +60,9 @@ RUN_DEPENDS+=	konqueror:x11/kde4-baseapps
 RUN_DEPENDS+=	xpdf:graphics/xpdf
 .endif
 
-.if defined(BOOTSTRAP)
-BOOST_RELEASE=	1.54.0
-BOOST_VERS=	${BOOST_RELEASE:S|.|_|g}
-
-GIT_SRC_HASH=`cd ${WRKDIR}/kicad; git log -n 1 --pretty=format:"%H"`
-GIT_SRC_DATE=`cd "${WRKDIR}/kicad"; git log -n 1 --date=iso-local -n 1 --pretty=format:"%cd" | \
-	cut -c '1-19' | sed -e 's,-,,g' -e 's,:,,g' -e 's, ,,g'`
-
-.else
 .include "Makefile.git_rev"
-.endif
 
 showversions:
-	@${ECHO} "BOOST_RELEASE: ${BOOST_RELEASE}"
-	@${ECHO} "BOOST_VERS: ${BOOST_VERS}"
 	@${ECHO} "GIT_SRC_HASH: ${GIT_SRC_HASH}"
 	@${ECHO} "GIT_SRC_DATE: ${GIT_SRC_DATE}"
 	@${ECHO} "DISTDIR: ${DISTDIR}"
@@ -79,48 +70,13 @@ showversions:
 	@${ECHO} "DISTNAME: ${DISTNAME}"
 	@${ECHO} "DISTVERSION: ${DISTVERSION}"
 
-.if defined(BOOTSTRAP)
-
 # Updating to new rev:
-# make do-fetch BOOTSTRAP=YES && make do-revisions BOOTSTRAP=YES && make do-distfile BOOTSTRAP=YES
+# sh files/newVersion.sh
 # make makesum && make clean
-# make && make makeplist && make generate-plist && make check-plist
+# make install #breaks probably due to plist differences
+# make makeplist > pkg-plist #One has to edit/review the generated plist
+# make generate-plist && make check-plist
 # < Check PLIST_FILE_LIST below >
-
-FETCH_DEPENDS+=	svn:devel/subversion
-BUILD_DEPENDS+=	git:devel/git
-FETCH_DEPENDS+=	git:devel/git
-
-do-distfile:
-	@if [ \! -d "${WRKDIR}/kicad-r${GIT_SRC_DATE}" ]; then \
-	  cd ${WRKDIR}; \
-	  mkdir "${WRKDIR}/kicad-r${GIT_SRC_DATE}"; \
-	  cd kicad; \
-	  find . -type d -name .git -prune -o -print | cpio -pdamuv "../kicad-r${GIT_SRC_DATE}"; \
-	fi;
-	@cd ${WRKDIR}; \
-	  tar xvf master.zip; \
-	  tar cvfy ${DISTDIR}/${DIST_SUBDIR}/kicad-r${GIT_SRC_DATE}.tar.bz2 \
-	    kicad-r${GIT_SRC_DATE} kicad-library-master
-
-do-revisions:
-	echo "BOOST_RELEASE=  ${BOOST_RELEASE}" > ${MASTERDIR}/Makefile.git_rev
-	echo "BOOST_VERS=  ${BOOST_VERS}"   >> ${MASTERDIR}/Makefile.git_rev
-	echo "GIT_SRC_HASH=  ${GIT_SRC_HASH}"   >> ${MASTERDIR}/Makefile.git_rev
-	echo "GIT_SRC_DATE=  ${GIT_SRC_DATE}"   >> ${MASTERDIR}/Makefile.git_rev
-
-do-fetch:
-	${MKDIR} ${WRKDIR}
-	@${ECHO} ${WRKSRC}
-	@if [ \! -d "${WRKDIR}/kicad" ]; then \
-	  cd ${WRKDIR}; \
-	  echo git clone https://git.launchpad.net/kicad; \
-	fi;
-	@if [ \! -f "${WRKDIR}/master.zip" ]; then \
-	  ${FETCH_CMD} --no-verify-peer -o ${WRKDIR}/master.zip https://github.com/KiCad/kicad-library/archive/master.zip; \
-	fi;
-
-.endif
 
 tmp:
 	echo "${DATADIR} ${DATADIR:H}"
@@ -183,10 +139,8 @@ PLIST_SHAREDDIR_LIST=	share/mimelnk/application \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} < 1000000 || ${COMPILER_TYPE} == "gcc"
-  IGNORE= builds only on greater than 10 and with clang
-.endif
+.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == gcc
+IGNORE=		builds only with clang
 .endif
 
 .include <bsd.port.post.mk>

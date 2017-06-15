@@ -9,6 +9,7 @@ bin/satpass
 %%SITE_PERL%%/Astro/Coord/ECI/TLE/Iridium.pm
 %%SITE_PERL%%/Astro/Coord/ECI/TLE/Set.pm
 %%SITE_PERL%%/Astro/Coord/ECI/Utils.pm
+%%PERL5_MAN1%%/satpass.1.gz
 %%PERL5_MAN3%%/Astro::Coord::ECI.3.gz
 %%PERL5_MAN3%%/Astro::Coord::ECI::Mixin.3.gz
 %%PERL5_MAN3%%/Astro::Coord::ECI::Moon.3.gz
@@ -19,4 +20,3 @@ bin/satpass
 %%PERL5_MAN3%%/Astro::Coord::ECI::TLE::Iridium.3.gz
 %%PERL5_MAN3%%/Astro::Coord::ECI::TLE::Set.3.gz
 %%PERL5_MAN3%%/Astro::Coord::ECI::Utils.3.gz
-%%PERL5_MAN1%%/satpass.1.gz

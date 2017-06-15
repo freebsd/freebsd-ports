@@ -1,5 +1,5 @@
---- Makefile.orig	2014-03-24 16:30:37.000000000 +0400
-+++ Makefile	2014-03-31 13:19:31.290736089 +0400
+--- Makefile.orig	2016-12-03 21:16:15 UTC
++++ Makefile
 @@ -17,28 +17,26 @@ SYSNAME := $(shell uname -n)
  VERSION=0.0
  
@@ -161,21 +161,21 @@
  endif
  
  install-crd:
-@@ -847,10 +832,10 @@ install-extra:
+@@ -840,10 +825,10 @@ install-extra:
  	    fi; \
  	done
  
--MODEL=$(DESTDIR)/usr/share/cups/model
+-MODEL=$(PREFIX)/share/cups/model
 -LOCALMODEL=$(DESTDIR)/usr/local/share/cups/model
 +MODEL=$(DESTDIR)$(PREFIX)/share/cups/model
 +LOCALMODEL=$(DESTDIR)$(PREFIX)/share/cups/model
  MACMODEL=/Library/Printers/PPDs/Contents/Resources
--PPD=$(DESTDIR)/usr/share/ppd
+-PPD=$(PREFIX)/share/ppd
 +PPD=$(DESTDIR)$(PREFIX)/ppd
  VARPPD=/var/lp/ppd
  install-ppd:
  	#
-@@ -885,6 +870,7 @@ install-ppd:
+@@ -878,6 +863,7 @@ install-ppd:
  	fi
  	#
  	export PATH=$$PATH:`pwd`:; \

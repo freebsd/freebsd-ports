@@ -154,6 +154,6 @@ maint-gen-distfile:
 	fi
 	svn export svn://70.86.44.154/evolution/trunk/evq3 ${PORTNAME}
 	tar cjf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}
-	${RM} -rf ${PORTNAME}
+	${RM} -r ${PORTNAME}
 
 .include <bsd.port.post.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack
-PORTVERSION=	1.0036
+PORTVERSION=	1.0039
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -30,7 +30,7 @@ RUN_DEPENDS=	\
 	p5-URI>=1.59:net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 	p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install
-TEST_DEPENDS=  \
+TEST_DEPENDS=	\
 	p5-Authen-Simple-Passwd>0:security/p5-Authen-Simple-Passwd \
 	p5-CGI-Compile>0:www/p5-CGI-Compile \
 	p5-CGI-Emulate-PSGI>0:www/p5-CGI-Emulate-PSGI \

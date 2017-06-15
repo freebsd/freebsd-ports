@@ -4,7 +4,7 @@
 PORTNAME=	bam
 PORTVERSION=	0.4.0
 CATEGORIES=	devel
-MASTER_SITES=	http://github.com/downloads/matricks/bam/
+MASTER_SITES=	https://github.com/downloads/matricks/bam/
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Fast and flexible build system using Lua

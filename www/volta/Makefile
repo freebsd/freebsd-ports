@@ -17,7 +17,6 @@ LIB_DEPENDS=	libcdb.so:databases/tinycdb
 
 USES=		gmake pkgconfig lua tar:tgz
 ALL_TARGET=	${PORTNAME}
-NO_INSTALL=	yes
 
 CFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
@@ -26,7 +25,7 @@ PLIST_FILES=	bin/volta
 PORTDOCS=	README INSTALL LICENSE ChangeLog
 SUB_FILES=	pkg-message
 
-post-install:
+do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}

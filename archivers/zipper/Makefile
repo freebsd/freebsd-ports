@@ -15,6 +15,6 @@ USES=		gnustep
 USE_GNUSTEP=	back build
 
 post-patch:
-	cd ${WRKSRC} && ${FIND} . -name "*#*" -exec ${RM} -f -v "{}" ";"
+	cd ${WRKSRC} && ${FIND} . -name "*#*" -exec ${RM} -v {} ";"
 
 .include <bsd.port.mk>

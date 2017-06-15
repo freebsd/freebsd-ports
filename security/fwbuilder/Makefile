@@ -45,10 +45,9 @@ USE_QT4=	corelib \
 		uic_build \
 		xml
 
-QTDIR?=		${QT_PREFIX}
+QTDIR?=		${PREFIX}
 
-USE_OPENSSL=	yes
-USES=		autoreconf:build gmake libtool
+USES=		autoreconf:build gmake libtool ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		INSTALL_ROOT=${STAGEDIR}

@@ -3,15 +3,17 @@
 
 PORTNAME=	texmaker
 PORTVERSION=	4.5
-PORTREVISION=	5
+PORTREVISION=	9
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	LaTeX Development Environment
 
-LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell \
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell \
 		libpoppler.so:graphics/poppler
 
 USES=		desktop-file-utils ghostscript:x11,run pkgconfig qmake tar:bzip2

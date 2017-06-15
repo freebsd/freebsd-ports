@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uncrustify
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,15 +12,17 @@ COMMENT=	Highly configurable source code beautifier
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-USES=		gmake
-TEST_TARGET=	check
+NO_WRKSUBDIR=	yes
+USES=		cmake:outsource
+TEST_TARGET=	test
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
-PORTDATA=	*
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/*.cfg ${STAGEDIR}${ETCDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

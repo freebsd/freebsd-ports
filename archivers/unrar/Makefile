@@ -21,7 +21,6 @@ CONFLICTS_INSTALL?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 LDFLAGS+=	-lpthread
 MAKE_ARGS=	CXX=${CXX} LDFLAGS="${LDFLAGS}" STRIP=${STRIP_CMD}
 MAKEFILE=	makefile
-USES+=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/unrar
@@ -38,4 +37,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

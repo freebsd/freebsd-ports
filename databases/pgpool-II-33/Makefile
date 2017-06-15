@@ -39,9 +39,8 @@ LIBMEMCACHED_DESC=		Build with MemCached support
 LIBMEMCACHED_BUILD_DEPENDS=	libmemcached>=1.0:databases/libmemcached
 LIBMEMCACHED_CONFIGURE_ON=	--with-memcached=${LOCALBASE}/lib/libmemcached
 
-SSL_DESC=		Build with OpenSSL support
 SSL_CONFIGURE_WITH=	openssl
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 
 PAM_DESC=		Build with PAM support
 PAM_CONFIGURE_ON=	--with-pam

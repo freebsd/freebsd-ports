@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exabgp
-PORTVERSION=	3.4.16
+PORTVERSION=	3.4.18
 CATEGORIES=	net
 MASTER_SITES=	GH \
 		http://mirrors.rit.edu/zi/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Exa-Networks
-USES=		python:2 tar:tgz
+USES=		python:2
 SUB_FILES=	pkg-message exabgp.sh
 SUB_LIST=	PYTHON_LIBDIR=${PYTHON_LIBDIR} PYTHON_CMD=${PYTHON_CMD} \
 		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}

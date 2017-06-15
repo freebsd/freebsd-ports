@@ -3,7 +3,7 @@
 
 PORTNAME=	vorbisgain
 PORTVERSION=	0.37
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://sjeng.org/ftp/vorbis/
 
@@ -23,8 +23,5 @@ PLIST_FILES=	bin/vorbisgain \
 		man/man1/vorbisgain.1.gz
 
 RECURSIVE_CONFIGURE_ARGS=	--enable-recursive
-
-pre-configure:
-	@${CHMOD} +x ${WRKSRC}/configure
 
 .include <bsd.port.mk>

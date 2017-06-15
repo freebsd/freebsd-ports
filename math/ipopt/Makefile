@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Ipopt
-PORTVERSION=	3.12.5
+PORTVERSION=	3.12.7
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Ipopt/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/:metis \
@@ -11,17 +12,18 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		metis-4.0.3.tar.gz:metis MUMPS_4.10.0.tar.gz:mumps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software package for large-scale nonlinear optimization
 
 LICENSE=	EPL
 
-USES=		blaslapack fortran libtool pkgconfig tar:tgz
+USES=		blaslapack fortran libtool pathfix pkgconfig tar:tgz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+TEST_TARGET=	test
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${STAGEDIR}${PREFIX}/libdata/pkgconfig \
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PREFIX}/libdata/pkgconfig \
 		CXX="${CXX} -B${LOCALBASE}/bin"
 CONFIGURE_ARGS=	--with-lapack-lib="${LAPACKLIB} -L${LOCALBASE}/lib"	\
 		--with-blas-lib="${BLASLIB} -L${LOCALBASE}/lib"
@@ -33,11 +35,6 @@ PORTDOCS=	*
 
 DEBUG_CXXFLAGS=	-fomit-frame-pointer
 
-post-patch::
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		-e 's|$$(DESTDIR)$$(addlibsdir)|$$(addlibsdir)|g'
-
 post-extract:
 	@(${ECHO} "Extracting Metis and Mumps ThirdParty libraries ..." )
 	@(cd ${WRKSRC}/ThirdParty/Metis && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/metis-4.0.3.tar.gz ${EXTRACT_AFTER_ARGS});
@@ -45,18 +42,23 @@ post-extract:
 	@(cd ${WRKSRC}/ThirdParty/Mumps && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/MUMPS_4.10.0.tar.gz ${EXTRACT_AFTER_ARGS});
 	@(${MV} ${WRKSRC}/ThirdParty/Mumps/MUMPS_4.10.0 ${WRKSRC}/ThirdParty/Mumps/MUMPS);
 
+pre-patch:
+	@(cd ${WRKSRC}/ThirdParty/Mumps && ${PATCH} -p0 < mumps.patch && ${PATCH} -p0 < mumps_mpi.patch )
+	@(${MV} ${WRKSRC}/ThirdParty/Mumps/MUMPS/libseq/mpi.h ${WRKSRC}/ThirdParty/Mumps/MUMPS/libseq/mumps_mpi.h);
+
 post-install-DOCS-off:
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/coin
+	${RM} -r ${STAGEDIR}${PREFIX}/share/coin
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Ipopt/doc/documentation.pdf\
 	   ${STAGEDIR}${DOCSDIR}
 	${MV} ${STAGEDIR}${PREFIX}/share/coin/doc ${STAGEDIR}${DOCSDIR}
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/coin
+	${RM} -r ${STAGEDIR}${PREFIX}/share/coin
 
-check regression-test test: build
-	@(cd ${WRKSRC};  ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} test)
+.if defined(MAINTAINER_MODE)
+regression-test:
+	(cd ${WRKSRC}; ${MAKE_CMD} test)
+.endif
 
 .include <bsd.port.mk>

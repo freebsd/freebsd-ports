@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.4.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -246,7 +246,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 build-plist:
-	${RM} -f ${PLIST}
+	${RM} ${PLIST}
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}%%LLVM_SUFFIX%% >> ${PLIST}
 .endfor

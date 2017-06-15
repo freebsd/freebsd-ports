@@ -3,8 +3,9 @@
 
 PORTNAME=		oolite
 PORTVERSION=		1.84
+PORTREVISION=	1
 CATEGORIES=		games gnustep
-MASTER_SITES=		http://github.com/OoliteProject/oolite/releases/download/1.84/
+MASTER_SITES=		https://github.com/OoliteProject/oolite/releases/download/1.84/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
 DIST_SUBDIR=		oolite
 
@@ -50,6 +51,9 @@ PLIST_FILES+=	bin/oolite %%DATADIR%%/oolite \
 		share/pixmaps/oolite-icon.png
 
 OPTIONS_DEFINE=	DOCS
+
+BROKEN_aarch64=		fails to configure: error: These compiler flags are invalid: -O
+BROKEN_armv6=		fails to compile: your compiler does not follow the C++ specification for temporary object destruction order
 
 .include <bsd.port.pre.mk>
 

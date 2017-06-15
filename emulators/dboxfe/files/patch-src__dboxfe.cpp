@@ -1,6 +1,6 @@
---- ./src/dboxfe.cpp.orig	2007-09-22 13:25:00.000000000 +0400
-+++ ./src/dboxfe.cpp	2007-12-08 16:43:17.000000000 +0300
-@@ -65,7 +65,7 @@
+--- src/dboxfe.cpp.orig	2007-09-22 09:25:00 UTC
++++ src/dboxfe.cpp
+@@ -65,7 +65,7 @@ DBoxFE::DBoxFE ( QWidget *parent, Qt::WF
  	connect ( chkBoxStartTrayIcon, SIGNAL ( toggled ( bool ) ), this, SLOT ( slotChkBoxStartTrayIconToggled ( bool ) ) );
  
  	// windows title for the application
@@ -9,7 +9,7 @@
  	titleWin = tr ( "DBoxFE - Front End for DOSBox 0.7x - Windows Version " ) + getAppVersion();
  	titleMac = tr ( "DBoxFE - Front End for DOSBox 0.7x - Mac Version " ) + getAppVersion();
  
-@@ -83,18 +83,6 @@
+@@ -83,18 +83,6 @@ DBoxFE::DBoxFE ( QWidget *parent, Qt::WF
  	QApplication::setStyle ( "plastique" );
  #endif
  

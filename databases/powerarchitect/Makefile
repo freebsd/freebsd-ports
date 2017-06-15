@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	powerarchitect
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	databases java
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://download.sqlpower.ca/architect/1.0.8/community/
 DISTNAME=	SQL-Power-Architect-generic-jdbc-${PORTVERSION}
 
 MAINTAINER=	jjuanino@gmail.com
@@ -12,11 +12,8 @@ COMMENT=	Data modeling and profiling tool
 
 LICENSE=	GPLv3
 
-BROKEN=		Unfetchable (google code has gone away)
+OPTIONS_DEFINE=	MYSQL_JDBC PGSQL_JDBC
 
-OPTIONS_DEFINE=	ORACLE_JDBC MYSQL_JDBC PGSQL_JDBC
-
-ORACLE_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/ojdbc-10.2.0.5.jar:databases/jdbc-oracle10g
 MYSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
 PGSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc
 
@@ -27,7 +24,6 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PORTDOCS=	*
-PROJECTHOST=	power-architect
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/architect-${PORTVERSION}
 SUB_FILES=	${PORTNAME}

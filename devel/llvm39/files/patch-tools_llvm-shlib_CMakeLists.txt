@@ -1,0 +1,13 @@
+Otherwise we end up with a 4k library without any symbols.
+
+--- tools/llvm-shlib/CMakeLists.txt.orig	2016-05-26 06:35:35.000000000 +0200
++++ tools/llvm-shlib/CMakeLists.txt	2016-11-15 17:07:29.937965000 +0100
+@@ -39,7 +39,7 @@
+ add_llvm_library(LLVM SHARED DISABLE_LLVM_LINK_LLVM_DYLIB SONAME ${SOURCES})
+ 
+ list(REMOVE_DUPLICATES LIB_NAMES)
+-if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux") # FIXME: It should be "GNU ld for elf"
++if(("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux") OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "FreeBSD") OR ("${CMAKE_SYSTEM_NAME}" STREQUAL "DragonFly")) # FIXME: It should be "GNU ld for elf"
+   # GNU ld doesn't resolve symbols in the version script.
+   set(LIB_NAMES -Wl,--whole-archive ${LIB_NAMES} -Wl,--no-whole-archive)
+ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")

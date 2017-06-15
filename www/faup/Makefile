@@ -20,7 +20,6 @@ GH_ACCOUNT=	stricaud
 
 USES=		cmake:outsource lua
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man
 
 PORTDOCS=	*
 

@@ -6,4 +6,4 @@ of the output (it even works with front controllers and mod_rewrite).
 
 Two operating modes available: "Jumping" and "Sliding" window style.
 
-WWW: http://pear.php.net/package/Pager/
+WWW: https://pear.php.net/package/Pager

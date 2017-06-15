@@ -3,7 +3,7 @@
 
 PORTNAME=	tochnog
 PORTVERSION=	20140100
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/Tochnog%20Latest%20January%202014
 DISTFILES=	Sources${EXTRACT_SUFX} gid${EXTRACT_SUFX} \
@@ -94,7 +94,7 @@ do-install:
 	  ${STAGEDIR}${GID_PTYPES}/tochnog.gid
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${RM} -f ${WRKDIR}/Sources/test/*.orig
+	${RM} ${WRKDIR}/Sources/test/*.orig
 	${INSTALL_DATA} ${WRKDIR}/Sources/test/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

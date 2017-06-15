@@ -1,4 +1,5 @@
 bin/qt5ct
 %%QT_PLUGINDIR%%/platformthemes/libqt5ct.so
+%%QT_PLUGINDIR%%/styles/libqt5ct-style.so
 share/applications/qt5ct.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README

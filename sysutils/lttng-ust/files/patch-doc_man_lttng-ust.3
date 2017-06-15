@@ -1,0 +1,38 @@
+--- doc/man/lttng-ust.3.orig	2016-11-29 22:13:51 UTC
++++ doc/man/lttng-ust.3
+@@ -88,7 +88,7 @@ lttng-ust \- LTTng user space tracing
+ #define \fBtracepoint_enabled\fR(\fIprov_name\fR, \fIt_name\fR)
+ .fi
+ .sp
+-Link with \fB-llttng-ust -ldl\fR, following this man page\&.
++Link with \fB-llttng-ust\fR, following this man page\&.
+ .SH "DESCRIPTION"
+ .sp
+ The \fILinux Trace Toolkit: next generation\fR <http://lttng.org/> is an open source software package used for correlated tracing of the Linux kernel, user applications, and user libraries\&.
+@@ -919,7 +919,7 @@ Then, link your application with this ob
+ .RS 4
+ .\}
+ .nf
+-cc \-o app tp\&.o app\&.o \-llttng\-ust \-ldl
++cc \-o app tp\&.o app\&.o \-llttng\-ust
+ .fi
+ .if n \{\
+ .RE
+@@ -1004,7 +1004,7 @@ This tracepoint provider shared object i
+ .RS 4
+ .\}
+ .nf
+-cc \-o app app\&.o tp\-define\&.o \-ldl
++cc \-o app app\&.o tp\-define\&.o
+ .fi
+ .if n \{\
+ .RE
+@@ -1544,7 +1544,7 @@ You can compile the source files and lin
+ .nf
+ cc \-c \-I\&. tp\&.c
+ cc \-c app\&.c
+-cc \-o app tp\&.o app\&.o \-llttng\-ust \-ldl
++cc \-o app tp\&.o app\&.o \-llttng\-ust
+ .fi
+ .if n \{\
+ .RE

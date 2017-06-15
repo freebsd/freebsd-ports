@@ -4,4 +4,4 @@ plugins.  It can also be used for general RDF manipulation.
 It can read RDF/XLM and N3 files and export N3 files, it also has a light
 taxonomic inference capability.
 
-WWW: http://sourceforge.net/projects/lrdf/
+WWW: https://sourceforge.net/projects/lrdf/

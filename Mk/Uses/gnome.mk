@@ -213,7 +213,8 @@ gnomemimedata_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
 gnomemimedata_BUILD_DEPENDS=${gnomemimedata_DETECT}:misc/gnome-mime-data
 gnomemimedata_RUN_DEPENDS=${gnomemimedata_DETECT}:misc/gnome-mime-data
 
-glib20_LIB_DEPENDS=	libglib-2.0.so:devel/glib20
+glib20_LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
+					libintl.so:devel/gettext-runtime
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
 
 atk_LIB_DEPENDS=	libatk-1.0.so:accessibility/atk
@@ -712,7 +713,7 @@ gnome-post-omf:
 .if defined(INSTALLS_ICONS)
 _USES_install+=	690:gnome-post-icons
 gnome-post-icons:
-	@${RM} -f ${TMPPLIST}.icons1
+	@${RM} ${TMPPLIST}.icons1
 	@for i in `${GREP} "^share/icons/.*/" ${TMPPLIST} | ${CUT} -d / -f 1-3 | ${SORT} -u`; do \
 		${ECHO_CMD} "@rmtry $${i}/icon-theme.cache" \
 			>> ${TMPPLIST}.icons1; \
@@ -723,7 +724,7 @@ gnome-post-icons:
 	done
 	@if test -f ${TMPPLIST}.icons1; then \
 		${CAT} ${TMPPLIST}.icons1 ${TMPPLIST} > ${TMPPLIST}.icons2; \
-		${RM} -f ${TMPPLIST}.icons1; \
+		${RM} ${TMPPLIST}.icons1; \
 		${MV} -f ${TMPPLIST}.icons2 ${TMPPLIST}; \
 	fi
 .endif

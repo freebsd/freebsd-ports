@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_proctitle
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

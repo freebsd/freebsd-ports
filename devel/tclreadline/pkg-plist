@@ -1,6 +1,5 @@
 include/tclreadline.h
 lib/libtclreadline-%%PORTVERSION%%.so
-lib/libtclreadline.a
 lib/libtclreadline.so
 lib/%%TCL_PKG%%/pkgIndex.tcl
 lib/%%TCL_PKG%%/tclreadlineCompleter.tcl

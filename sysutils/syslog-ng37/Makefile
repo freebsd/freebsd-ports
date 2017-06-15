@@ -35,7 +35,6 @@ OPTIONS_DEFAULT=	JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
 SPOOF_DESC=		Build with spoof source support
-IPV6_DESC=		Build with IPV6 support
 SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
@@ -96,6 +95,7 @@ JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
 JSON_PLIST_FILES= 		lib/syslog-ng/libjson-plugin.so
 
 JAVA_CONFIGURE_ENABLE=		java
+JAVA_BROKEN=			Unsupported maven downloads.
 JAVA_USE_JAVA=			yes
 JAVA_BUILD_DEPENDS=		gradle:devel/gradle
 JAVA_BUILD_DEPENDS=		bash:shells/bash

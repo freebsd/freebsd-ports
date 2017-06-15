@@ -5,19 +5,17 @@ PORTNAME=	speedcrunch
 DISTVERSION=	0.11
 CATEGORIES=	math
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keyboard-oriented desktop scientific calculator
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build gui network
-USES=		cmake:outsource
-CMAKE_SOURCE_PATH=	${WRKSRC}/src
+LICENSE=	GPLv2+
 
 USE_GITHUB=	yes
 GH_PROJECT=	SpeedCrunch
 
-pre-configure:
-	${REINPLACE_CMD} -e '/CMAKE_COLOR_MAKEFILE/d' \
-			-e '/CMAKE_VERBOSE_MAKEFILE/d' \
-			${WRKSRC}/src/CMakeLists.txt
+USES=		cmake:outsource
+CMAKE_SOURCE_PATH=	${WRKSRC}/src
+USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui network
+USE_XORG=	x11 xext sm ice
 
 .include <bsd.port.mk>

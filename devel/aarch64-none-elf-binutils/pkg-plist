@@ -64,6 +64,9 @@ aarch64-none-elf/lib/ldscripts/aarch64elfb.xw
 aarch64-none-elf/lib/ldscripts/armelf.x
 aarch64-none-elf/lib/ldscripts/armelf.xbn
 aarch64-none-elf/lib/ldscripts/armelf.xc
+aarch64-none-elf/lib/ldscripts/armelf.xd
+aarch64-none-elf/lib/ldscripts/armelf.xdc
+aarch64-none-elf/lib/ldscripts/armelf.xdw
 aarch64-none-elf/lib/ldscripts/armelf.xn
 aarch64-none-elf/lib/ldscripts/armelf.xr
 aarch64-none-elf/lib/ldscripts/armelf.xs
@@ -74,6 +77,9 @@ aarch64-none-elf/lib/ldscripts/armelf.xw
 aarch64-none-elf/lib/ldscripts/armelfb.x
 aarch64-none-elf/lib/ldscripts/armelfb.xbn
 aarch64-none-elf/lib/ldscripts/armelfb.xc
+aarch64-none-elf/lib/ldscripts/armelfb.xd
+aarch64-none-elf/lib/ldscripts/armelfb.xdc
+aarch64-none-elf/lib/ldscripts/armelfb.xdw
 aarch64-none-elf/lib/ldscripts/armelfb.xn
 aarch64-none-elf/lib/ldscripts/armelfb.xr
 aarch64-none-elf/lib/ldscripts/armelfb.xs

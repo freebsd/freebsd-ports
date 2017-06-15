@@ -3,11 +3,11 @@
 
 PORTNAME=	easystroke
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easystroke is a gesture-recognition application for X11
 
 LICENSE=	ISCL

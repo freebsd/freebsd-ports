@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	Kvantum
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	V
 CATEGORIES=	x11-themes
 PKGNAMEPREFIX=	qt4-style-
 
-MAINTAINER=	matthew@reztek.cz
+MAINTAINER=	rezny@FreeBSD.org
 COMMENT=	SVG-based theme engine for Qt4/5, KDE and LXQT
 
 LICENSE=	GPLv3+

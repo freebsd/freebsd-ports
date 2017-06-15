@@ -1,5 +1,5 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD: head/www/npm3/Makefile 431486 2017-01-14 18:14:03Z sunpoet $
+# $FreeBSD$
 
 PORTNAME=	npm
 PORTVERSION=	3.10.10

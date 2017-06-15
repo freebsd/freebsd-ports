@@ -1,0 +1,96 @@
+--- Makefile.orig	2017-03-03 17:51:06 UTC
++++ Makefile
+@@ -1581,12 +1581,12 @@ install-lib: clean-install
+ 
+ install-doc-code:
+ 	$(PRINT_INSTALL) API documentation
+-	$(MKDIR) $(FRAMAC_DATADIR)/doc/code
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/doc/code
+ 	(cd doc ; tar cf - --exclude='.svn' --exclude='*.toc' \
+ 			--exclude='*.htm' --exclude='*.txt' \
+ 			--exclude='*.ml' \
+ 			code \
+-		| (cd $(FRAMAC_DATADIR)/doc ; tar xf -))
++		| (cd $(STAGEDIR)$(FRAMAC_DATADIR)/doc ; tar xf -))
+ 
+ .PHONY: install
+ install:: install-lib
+@@ -1595,38 +1595,38 @@ install:: install-lib
+ 	$(MKDIR) $(MANDIR)/man1
+ 	$(MKDIR) $(FRAMAC_PLUGINDIR)/top
+ 	$(MKDIR) $(FRAMAC_PLUGINDIR)/gui
+-	$(MKDIR) $(FRAMAC_DATADIR)/theme/default
+-	$(MKDIR) $(FRAMAC_DATADIR)/theme/colorblind
+-	$(MKDIR) $(FRAMAC_DATADIR)/libc/sys
+-	$(MKDIR) $(FRAMAC_DATADIR)/libc/netinet
+-	$(MKDIR) $(FRAMAC_DATADIR)/libc/linux
+-	$(MKDIR) $(FRAMAC_DATADIR)/libc/net
+-	$(MKDIR) $(FRAMAC_DATADIR)/libc/arpa
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/theme/default
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/theme/colorblind
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/libc/sys
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/libc/netinet
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/libc/linux
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/libc/net
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/libc/arpa
+ 	$(PRINT_INSTALL) shared files
+ 	$(CP) \
+ 	  $(wildcard share/*.c share/*.h) \
+ 	  share/Makefile.dynamic share/Makefile.plugin.template share/Makefile.kernel \
+ 	  share/Makefile.config share/Makefile.common share/Makefile.generic \
+ 	  share/configure.ac \
+-	  $(FRAMAC_DATADIR)
+-	$(MKDIR) $(FRAMAC_DATADIR)/emacs
+-	$(CP) $(wildcard share/emacs/*.el) $(FRAMAC_DATADIR)/emacs
+-	$(CP) share/frama-c.rc $(ICONS) $(FRAMAC_DATADIR)
+-	$(CP) $(FEEDBACK_ICONS_DEFAULT) $(FRAMAC_DATADIR)/theme/default
+-	$(CP) $(FEEDBACK_ICONS_COLORBLIND) $(FRAMAC_DATADIR)/theme/colorblind
++	  $(STAGEDIR)$(FRAMAC_DATADIR)
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/emacs
++	$(CP) $(wildcard share/emacs/*.el) $(STAGEDIR)$(FRAMAC_DATADIR)/emacs
++	$(CP) share/frama-c.rc $(ICONS) $(STAGEDIR)$(FRAMAC_DATADIR)
++	$(CP) $(FEEDBACK_ICONS_DEFAULT) $(STAGEDIR)$(FRAMAC_DATADIR)/theme/default
++	$(CP) $(FEEDBACK_ICONS_COLORBLIND) $(STAGEDIR)$(FRAMAC_DATADIR)/theme/colorblind
+ 	if [ -d $(EMACS_DATADIR) ]; then \
+ 	  $(CP) $(wildcard share/emacs/*.el) $(EMACS_DATADIR); \
+ 	fi
+ 	$(CP) share/Makefile.dynamic_config.external \
+-	      $(FRAMAC_DATADIR)/Makefile.dynamic_config
++	      $(STAGEDIR)$(FRAMAC_DATADIR)/Makefile.dynamic_config
+ 	$(PRINT_INSTALL) C standard library
+ 	$(CP) $(wildcard share/libc/*.c share/libc/*.i share/libc/*.h) \
+-	      $(FRAMAC_DATADIR)/libc
+-	$(CP) share/libc/sys/*.[ch] $(FRAMAC_DATADIR)/libc/sys
+-	$(CP) share/libc/arpa/*.[ch] $(FRAMAC_DATADIR)/libc/arpa
+-	$(CP) share/libc/net/*.[ch] $(FRAMAC_DATADIR)/libc/net
+-	$(CP) share/libc/netinet/*.[ch] $(FRAMAC_DATADIR)/libc/netinet
+-	$(CP) share/libc/linux/*.[ch] $(FRAMAC_DATADIR)/libc/linux
++	      $(STAGEDIR)$(FRAMAC_DATADIR)/libc
++	$(CP) share/libc/sys/*.[ch] $(STAGEDIR)$(FRAMAC_DATADIR)/libc/sys
++	$(CP) share/libc/arpa/*.[ch] $(STAGEDIR)$(FRAMAC_DATADIR)/libc/arpa
++	$(CP) share/libc/net/*.[ch] $(STAGEDIR)$(FRAMAC_DATADIR)/libc/net
++	$(CP) share/libc/netinet/*.[ch] $(STAGEDIR)$(FRAMAC_DATADIR)/libc/netinet
++	$(CP) share/libc/linux/*.[ch] $(STAGEDIR)$(FRAMAC_DATADIR)/libc/linux
+ 	$(PRINT_INSTALL) binaries
+ 	$(CP) bin/toplevel.$(OCAMLBEST) $(BINDIR)/frama-c$(EXE)
+ 	$(CP) bin/toplevel.byte$(EXE) $(BINDIR)/frama-c.byte$(EXE)
+@@ -1647,8 +1647,8 @@
+ 	$(PRINT_INSTALL) config files
+ 	$(CP) $(addprefix ptests/,$(PTESTS_FILES)) $(FRAMAC_LIBDIR)
+ 	$(PRINT_INSTALL) API documentation
+-	$(MKDIR) $(FRAMAC_DATADIR)/doc/code
+-	$(CP) $(wildcard $(DOC_GEN_FILES)) $(FRAMAC_DATADIR)/doc/code
++	$(MKDIR) $(STAGEDIR)$(FRAMAC_DATADIR)/doc/code
++	$(CP) $(wildcard $(DOC_GEN_FILES)) $(STAGEDIR)$(FRAMAC_DATADIR)/doc/code
+ 	$(PRINT_INSTALL) dynamic plug-ins
+ 	if [ -d "$(FRAMAC_PLUGIN)" -a "$(PLUGIN_DYN_EXISTS)" = "yes" ]; then \
+ 	  $(CP)  $(PLUGIN_DYN_CMI_LIST) $(PLUGIN_META_LIST) \
+@@ -1672,7 +1672,7 @@
+ 	$(PRINT_RM) installed binaries
+ 	$(RM) $(BINDIR)/frama-c* $(BINDIR)/ptests.$(PTESTSBEST)$(EXE)
+ 	$(PRINT_RM) installed shared files
+-	$(RM) -R $(FRAMAC_DATADIR)
++	$(RM) -R $(STAGEDIR)$(FRAMAC_DATADIR)
+ 	$(PRINT_RM) installed libraries
+ 	$(RM) -R $(FRAMAC_LIBDIR) $(FRAMAC_PLUGINDIR)
+ 	$(PRINT_RM) installed man files

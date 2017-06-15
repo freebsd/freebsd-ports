@@ -8,40 +8,27 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		ftp://ftp.imagemagick.org/pub/ImageMagick/delegates/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the codec specified in the JPEG-2000 standard
 
 LICENSE=	MIT
 
-USES=		zip libtool:keepla jpeg
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--enable-shared --enable-static
-USE_LDCONFIG=	yes
-
 OPTIONS_DEFINE=	OPENGL UUID DOCS
 OPTIONS_DEFAULT=UUID
+OPTIONS_SUB=	yes
 UUID_DESC=	UUID support (required by GDAL)
 
-.include <bsd.port.options.mk>
+CONFIGURE_ARGS=	--enable-shared --enable-static
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USES=		jpeg libtool:keepla localbase zip
 
-.if ${PORT_OPTIONS:MOPENGL}
-USE_XORG=	x11 xmu xi xext
-USE_GL=		glut
-CONFIGURE_ARGS+=--enable-opengl
-PLIST_SUB+=	OPENGL=""
-.else
-CONFIGURE_ARGS+=--disable-opengl
-PLIST_SUB+=	OPENGL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MUUID}
-EXTRA_PATCHES+=	${FILESDIR}/uuid.patch
-.endif
+OPENGL_CONFIGURE_ENABLE=opengl
+OPENGL_USE=		GL=glut XORG=x11,xext,xi,xmu
+UUID_EXTRA_PATCHES=	${PATCHDIR}/uuid.patch
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

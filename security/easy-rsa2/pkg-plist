@@ -2,7 +2,7 @@
 %%DOCSDIR%%/COPYRIGHT.GPL
 %%DOCSDIR%%/COPYING
 %%DATADIR%%/build-ca
-%%DATADIR%%/vars
+@sample %%DATADIR%%/vars.sample
 %%DATADIR%%/sign-req
 %%DATADIR%%/revoke-full
 %%DATADIR%%/pkitool

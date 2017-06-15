@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	hexalate
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -11,8 +12,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Color matching game
 
-USES=		tar:bzip2 qmake
-USE_QT4=	corelib gui moc_build rcc_build
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		compiler:c++11-lib qmake tar:bzip2
+USE_QT5=	core gui widgets buildtools_build linguisttools_build
+USE_GL=		gl
 INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

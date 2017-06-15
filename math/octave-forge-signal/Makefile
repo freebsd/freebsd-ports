@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-signal
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -26,7 +26,7 @@ post-patch:
 	${REINPLACE_CMD} s/-Wall// ${WRKSRC}/Makefile
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

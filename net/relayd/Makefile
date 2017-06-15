@@ -12,9 +12,8 @@ LICENSE=	ISCL
 
 GH_ACCOUNT=	mmatuska
 
-USES=		uidfix
+USES=		uidfix ssl
 USE_GITHUB=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	relayd
 WRKSRC_SUBDIR=	src/usr.sbin
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	libelf
 PORTVERSION=	0.8.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mr511.de/software/ \
 		SUNSITE/libs
@@ -22,7 +22,7 @@ SANITY_DESC=	Avoid loading invalid ELF files
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared --disable-compat
 USE_LDCONFIG=	yes
-USES=		desthack
+USES=		desthack pathfix
 
 .if ${PORT_OPTIONS:MNLS}
 CPPFLAGS+=	-I${LOCALBASE}/include

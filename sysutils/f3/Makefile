@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	f3
-PORTVERSION=	4.0
+PORTVERSION=	6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Fight Flash Fraud or Fight Fake Flash test tool
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AltraMayor

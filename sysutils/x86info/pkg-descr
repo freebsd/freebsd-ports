@@ -3,4 +3,4 @@ the system.  Cache information, flags, registers, frequency, processor name,
 family, and model are all displayed.  It works with all Intel, AMD, Centaur,
 Cyrix, VIA processors.
 
-WWW: http://codemonkey.org.uk/projects/x86info/
+WWW: https://github.com/kernelslacker/x86info/

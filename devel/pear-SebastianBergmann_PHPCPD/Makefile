@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 DISTNAME=	phpcpd-${PORTVERSION}
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Copy/Paste Detector (CPD) for PHP code
 
 LICENSE=	BSD3CLAUSE
@@ -21,6 +21,8 @@ RUN_DEPENDS=	pear-ezc_ConsoleTools>=1.6:devel/pear-ezc_ConsoleTools \
 		pear-SebastianBergmann_FinderFacade>=1.0.4:devel/pear-SebastianBergmann_FinderFacade \
 		pear-PHP_Timer>=1.0.4:devel/pear-PHP_Timer \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+
+BROKEN=		unfetchable, redirects to https://phpunit.de/
 
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	phpunit

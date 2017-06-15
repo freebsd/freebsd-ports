@@ -1,0 +1,7 @@
+OpenVPN is a robust, scalable and highly configurable VPN (Virtual Private
+Network) daemon which can be used to securely link two or more private networks
+using an encrypted tunnel over the internet. It can operate over UDP or TCP,
+can use SSL or a pre-shared secret to authenticate peers, and in SSL mode, one
+server can handle many clients.
+
+WWW: http://openvpn.net/index.php/open-source.html

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	http
-PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf \
 RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf \
 		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/propro.so:devel/pecl-propro
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 
 IGNORE_WITH_PHP=70
 USES=		php:ext tar:tgz

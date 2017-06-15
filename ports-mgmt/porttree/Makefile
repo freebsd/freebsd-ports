@@ -23,7 +23,6 @@ FETCH_DEPENDS+=	svn:devel/subversion
 SVNROOT?=	http://porttree.googlecode.com/svn/trunk/
 SVN_REV=	52
 NO_BUILD=	yes
-NO_INSTALL=	yes
 PLIST_FILES=	bin/porttree man/man1/porttree.1.gz
 NO_ARCH=	yes
 
@@ -33,7 +32,7 @@ do-install:
 
 gen-dist:
 	${MKDIR} ${WRKDIR}
-	${RM} -rf ${WRKSRC}
+	${RM} -r ${WRKSRC}
 	svn export -r ${SVN_REV} ${SVNROOT} ${WRKSRC}
 	${TAR} -cvy -C ${WRKDIR} --exclude FreeBSDport -f ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 

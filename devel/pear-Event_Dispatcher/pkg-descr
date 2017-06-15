@@ -7,4 +7,4 @@ an object posts an appropriate notification to the Event_Dispatcher.
 The Event_Dispatcher dispatches a message to each registered
 observer, passing the notification as the sole argument.
 
-WWW: http://pear.php.net/package/Event_Dispatcher/
+WWW: https://pear.php.net/package/Event_Dispatcher

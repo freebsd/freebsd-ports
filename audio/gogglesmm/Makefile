@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gogglesmm
-PORTVERSION=	1.0.12
+PORTVERSION=	1.1.5
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Music collection manager and player
 
 LICENSE=	GPLv3+
@@ -18,104 +18,75 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lang desktop-file-utils gmake pkgconfig sqlite
-USE_GL=		glew
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	LINK="${CXX}" \
-		OPT_CFLAGS="${CXXFLAGS}" \
-		OPT_LDFLAGS="${LDFLAGS}" \
-		RESWRAP="${LOCALBASE}/bin/fox-1.7/reswrap"
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--libdir=${PREFIX}/lib \
-		--fox-prefix=${LOCALBASE} \
-		--without-rsound
+USES=		cmake compiler:c++11-lib desktop-file-utils \
+		localbase:ldflags pkgconfig sqlite
+USE_XORG=	ice sm x11
 INSTALLS_ICONS=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		ALSA CDIO DBUS DOCS FAAD FFMPEG FLAC GCRYPT JACK \
-			MAD MMS NLS OGG OPUS PULSEAUDIO SAMPLERATE SMB WAVPACK
+OPTIONS_DEFINE=		ALSA DBUS DOCS FAAD FLAC GCRYPT MAD NLS \
+			OGG OPENGL OPUS PULSEAUDIO
 OPTIONS_RADIO=		VORBISDEC
+VORBISDEC_DESC=		Vorbis decoder library
 OPTIONS_RADIO_VORBISDEC=	TREMOR VORBIS
-OPTIONS_DEFAULT=	CDIO DBUS FAAD FLAC MAD OGG OPUS SAMPLERATE SMB \
-			VORBIS WAVPACK
+OPTIONS_DEFAULT=	DBUS FAAD FLAC MAD OGG OPENGL OPUS VORBIS
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_CONFIGURE_OFF=	--without-alsa
-CDIO_LIB_DEPENDS=	libcdio.so:sysutils/libcdio
-CDIO_CONFIGURE_OFF=	--without-cdda
+ALSA_CMAKE_BOOL=	WITH_ALSA
+
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-DBUS_CONFIGURE_OFF=	--without-dbus
+DBUS_CMAKE_BOOL=	WITH_DBUS
+
 FAAD_LIB_DEPENDS=	libfaad.so:audio/faad
-FAAD_CONFIGURE_ON=	--faad-prefix=${LOCALBASE}
-FAAD_CONFIGURE_OFF=	--without-faad
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-FFMPEG_CONFIGURE_ON=	--with-avcodec
+FAAD_CMAKE_BOOL=	WITH_FAAD
+
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
-FLAC_CONFIGURE_OFF=	--without-flac
+FLAC_CMAKE_BOOL=	WITH_FLAC
+FLAC_IMPLIES=		OGG
+
 GCRYPT_DESC=		Use libgcrypt for md5 calculation
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
-GCRYPT_CONFIGURE_ON=	--with-md5=gcrypt
-GCRYPT_CONFIGURE_OFF=	--with-md5=internal
-JACK_LIB_DEPENDS=	libjack.so:audio/jack
-JACK_CONFIGURE_OFF=	--without-jack
+GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
+
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
-MAD_CONFIGURE_ON=	--mad-prefix=${LOCALBASE}
-MAD_CONFIGURE_OFF=	--without-mad
-MMS_LIB_DEPENDS=	libmms.so:net/libmms
-MMS_CONFIGURE_OFF=	--without-mms
+MAD_CMAKE_BOOL=		WITH_MAD
+
 NLS_USES=		gettext
-NLS_LIBS=		-lintl
-NLS_CONFIGURE_OFF=	--without-nls
+NLS_LDFLAGS=		-lintl
+NLS_CMAKE_BOOL=		WITH_NLS
+
 OGG_LIB_DEPENDS=	libogg.so:audio/libogg
-OGG_CONFIGURE_OFF=	--without-ogg
+OGG_CMAKE_BOOL=		WITH_OGG
+
+OPENGL_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+OPENGL_USE=		GL=gl,glu
+OPENGL_CMAKE_BOOL=	WITH_OPENGL
+
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
-OPUS_CONFIGURE_OFF=	--without-opus
+OPUS_CMAKE_BOOL=	WITH_OPUS
+OPUS_IMPLIES=		OGG
+
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_CONFIGURE_OFF=	--without-pulse
-SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
-SAMPLERATE_CONFIGURE_OFF=	--without-samplerate
-SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
-SMB_CONFIGURE_ON=	--smb-prefix=${LOCALBASE}
-SMB_CONFIGURE_OFF=	--without-smb
+PULSEAUDIO_CMAKE_BOOL=	WITH_PULSE
+
 TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
-TREMOR_CONFIGURE_ON=	--with-tremor
+TREMOR_CMAKE_BOOL=	WITH_TREMOR
 TREMOR_IMPLIES=		OGG
+
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
-VORBIS_CONFIGURE_OFF=	--without-vorbis
+VORBIS_CMAKE_BOOL=	WITH_VORBIS
 VORBIS_IMPLIES=		OGG
-VORBISDEC_DESC=		Vorbis decoder library
-WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
-WAVPACK_CONFIGURE_OFF=	--without-wavpack
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|share/man|man|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|$$(sharedir)/man|$$(installdir)/man| ; \
-		 /INSTALL/s|-D|-c| ; \
-		 s|@$$(CXX)|$$(CXX)|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e \
-		's|@$$(LINK)|$$(LINK)|' ${WRKSRC}/build/*.mk
+.include <bsd.port.options.mk>
 
-pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gogglesmm
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata
-	@${MKDIR} ${STAGEDIR}${DATADIR}/utils
-.for i in 16 22 24 32 48
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps
-.endfor
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gogglesmm
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gogglesmm/libgap_*.so
+.if ${PORT_OPTIONS:MOGG} && !${PORT_OPTIONS:MTREMOR} && !${PORT_OPTIONS:MVORBIS}
+IGNORE=	you have selected an option that requires a Vorbis decoder. Run 'make config' and select one
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

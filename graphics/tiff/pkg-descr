@@ -14,6 +14,4 @@ for some of the more esoteric portions of the 6.0 TIFF spec.
 Unless NOPORTDOCS is defined, the html documentations is also
 installed locally in /usr/local/share/doc/tiff.
 
-LICENSE: Permission to use, copy, modify, distribute, and sell for any purpose
-
-WWW: http://www.remotesensing.org/libtiff/
+WWW: http://www.simplesystems.org/libtiff/

@@ -3,6 +3,7 @@
 
 PORTNAME=	python34
 PORTVERSION=	${PYTHON_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -13,9 +14,12 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		cpe ncurses pkgconfig readline ssl tar:xz
+USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix
+PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
+SHEBANG_FILES=	Lib/lib2to3/tests/data/*.py Lib/encodings/*.py
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
@@ -30,7 +34,6 @@ TEST_TARGET=		buildbottest
 TEST_ARGS=		TESTOPTS=-j${MAKE_JOBS_NUMBER}
 
 MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
-MAKE_ARGS+=		LIBPC="${PREFIX}/libdata/pkgconfig"			# Until pathfix gets support for files other than Makefile.in
 MAKE_JOBS_UNSAFE=	yes							# Parser/pgen build bug. See Issue: 200622, 201974
 
 SUB_FILES=		pkg-message
@@ -113,6 +116,10 @@ DISABLED_EXTENSIONS+=	nis
 .else
 PLIST_SUB+=	NO_NIS=""
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
+		${WRKSRC}/Lib/cgi.py
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}

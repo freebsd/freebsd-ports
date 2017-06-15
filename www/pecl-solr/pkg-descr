@@ -3,4 +3,4 @@ light-weight, feature-rich library that allows PHP
 applications to communicate easily and efficiently
 with Apache Solr server instances using an object-oriented API.
 
-WWW: http://pecl.php.net/package/solr/
+WWW: https://pecl.php.net/package/solr

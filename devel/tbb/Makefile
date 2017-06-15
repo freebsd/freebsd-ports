@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	4.4.2
-PORTREVISION=	1
+PORTVERSION=	2017.5
 CATEGORIES=	devel
-MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
-		LOCAL/martymac
-DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20151115oss_src
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
 
 LICENSE=	GPLv2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	01org
+GH_TAGNAME=	${PORTVERSION:S/./_U/}
 
 SUB_FILES=	tbb.pc
 SUB_LIST=	prefix="${PREFIX}" \
@@ -30,33 +30,31 @@ USE_LDCONFIG=	yes
 USES=	compiler gmake tar:tgz
 ALL_TARGET=	default
 
-WRKSRC=	${WRKDIR}/${DISTNAME:S/_src//}
+CC_BASENAME=	${CC:C,^.*/,,}
 
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if ${CC} != "gcc"
-	@${CP} ${WRKSRC}/build/FreeBSD.gcc.inc ${WRKSRC}/build/FreeBSD.${CC}.inc
+.if ${CC_BASENAME} != ${COMPILER_TYPE}
+	@${LN} -sf FreeBSD.${COMPILER_TYPE}.inc ${WRKSRC}/build/FreeBSD.${CC_BASENAME}.inc
 .endif
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' -e 's|g++|${CXX}|g' \
-		${WRKSRC}/build/FreeBSD.${CC}.inc
-.if ${COMPILER_TYPE} != "gcc"
-	@${REINPLACE_CMD} -e 's| -fno-schedule-insns2||g' \
-		${WRKSRC}/build/FreeBSD.${CC}.inc
-.endif
+	@${REINPLACE_CMD} \
+		-e '/^CONLY =/s|^CONLY =.*|CONLY = ${CC}|' \
+		-e '/^CPLUS =/s|^CPLUS =.*|CPLUS = ${CXX}|' \
+			${WRKSRC}/build/FreeBSD.${COMPILER_TYPE}.inc
 
 do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_LIB} build/FreeBSD*release/libtbb.so \
-		${STAGEDIR}${PREFIX}/lib/libtbb.so.4; \
-	${LN} -sf libtbb.so.4 \
+		${STAGEDIR}${PREFIX}/lib/libtbb.so.2; \
+	${LN} -sf libtbb.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libtbb.so; \
 	${INSTALL_LIB} build/FreeBSD*release/libtbbmalloc.so \
-		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so.4; \
-	${LN} -sf libtbbmalloc.so.4 \
+		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so.2; \
+	${LN} -sf libtbbmalloc.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libtbbmalloc.so; \
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/tbb/; \
 	cd include/tbb/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/tbb/

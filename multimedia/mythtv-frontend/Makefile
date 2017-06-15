@@ -6,8 +6,11 @@ PORTVERSION=	0.27.5.20150616
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		yasm:devel/yasm
@@ -38,12 +41,12 @@ DESTDIRNAME=	INSTALL_ROOT
 
 DATADIR=	${PREFIX}/share/mythtv
 
-MAKE_ENV=	QTDIR="${QT_PREFIX}" \
+MAKE_ENV=	QTDIR="${PREFIX}" \
 		QMAKESPEC="${QMAKESPEC}"
 
 CPPFLAGS+=	${QTCPPFLAGS}
 CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
-		QTDIR="${QT_PREFIX}" \
+		QTDIR="${PREFIX}" \
 		PKG_CONFIG_PATH="${LOCALBASE}/libdata/pkgconfig"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -73,13 +76,13 @@ OPENGL_CONFIGURE_ENABLE=	opengl-video
 OPENGL_USE=	QT4=opengl
 
 post-patch:
-		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-			${WRKSRC}/configure \
-			${WRKSRC}/libs/libmythtv/libmythtv.pro \
-			${WRKSRC}/bindings/perl/MythTV/Recording.pm \
-			${WRKSRC}/programs/mythtranscode/replex/Makefile.standalone \
-			${WRKSRC}/programs/scripts/database/mythconverg_backup.pl \
-			${WRKSRC}/programs/scripts/database/mythconverg_restore.pl \
-			${WRKSRC}/programs/mythcommflag/mythcommflag-analyze
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/libs/libmythtv/libmythtv.pro \
+		${WRKSRC}/bindings/perl/MythTV/Recording.pm \
+		${WRKSRC}/programs/mythtranscode/replex/Makefile.standalone \
+		${WRKSRC}/programs/scripts/database/mythconverg_backup.pl \
+		${WRKSRC}/programs/scripts/database/mythconverg_restore.pl \
+		${WRKSRC}/programs/mythcommflag/mythcommflag-analyze
 
 .include <bsd.port.mk>

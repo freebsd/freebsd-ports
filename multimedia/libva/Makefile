@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libva
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	VAAPI wrapper and dummy driver
@@ -21,6 +20,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=va
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	01org
+GH_TAGNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+
 LDFLAGS+=	-lpthread
 # prevent types conflict: videodev2.h vs. drm.h
 CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES
@@ -36,10 +39,6 @@ CFLAGS+=	-DNDEBUG
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		glXCreateContext fails during configure
-.endif
 
 .if defined(STRIP) && ${STRIP} != ""
 INSTALL_TARGET=	install-strip

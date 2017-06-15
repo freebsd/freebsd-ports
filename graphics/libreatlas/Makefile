@@ -3,7 +3,7 @@
 
 PORTNAME=	libreatlas
 PORTVERSION=	1.0.0a
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
@@ -12,10 +12,10 @@ COMMENT=	Open Source Geography Education application
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libmspack.so:archivers/libmspack \
 		libspatialite.so:databases/spatialite \
 		libsqlite3.so:databases/sqlite3 \
-		libpthread-stubs.so:devel/libpthread-stubs \
 		libpcre.so:devel/pcre \
 		libcairo.so:graphics/cairo \
 		libgeos.so:graphics/geos \
@@ -31,7 +31,7 @@ LIB_DEPENDS=	libmspack.so:archivers/libmspack \
 		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake iconv jpeg pkgconfig
+USES=		gettext gmake iconv jpeg pathfix pkgconfig
 USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender xxf86vm
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango
@@ -49,7 +49,5 @@ DESKTOP_ENTRIES="LibreAtlas" "${COMMENT}" "" "LibreAtlas" \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|$${WX_CONFIG}|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

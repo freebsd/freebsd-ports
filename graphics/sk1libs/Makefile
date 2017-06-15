@@ -5,18 +5,17 @@ PORTNAME=	sk1libs
 PORTVERSION=	0.9.1
 PORTREVISION=	2
 CATEGORIES=	graphics python
-MASTER_SITES=	GOOGLE_CODE \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://downloads.sk1project.net/uniconvertor/v1.1.5/ \
+		https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/uniconvertor/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Set of python libraries for sK1 Project
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/GNU_LGPL_v2
 
 LIB_DEPENDS=	liblcms.so:graphics/lcms \
 		libfreetype.so:print/freetype2
-
-PROJECTHOST=	uniconvertor
 
 USES=		jpeg python
 USE_PYTHON=	distutils
@@ -28,7 +27,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/src/utils/fs.py
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sk1libs/ft2engine/*.so \
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sk1libs/ft2engine/*.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sk1libs/pycms/*.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sk1libs/imaging/*.so
 

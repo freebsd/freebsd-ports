@@ -10,10 +10,7 @@ DISTNAME=	Platform-${PORTVERSION}
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Hopefully robust platform sensing
 
-GEM_NAME=	${DISTNAME}
-
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

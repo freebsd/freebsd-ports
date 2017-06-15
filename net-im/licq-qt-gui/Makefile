@@ -3,7 +3,7 @@
 
 PORTNAME=	qt4-gui
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	net-im
 PKGNAMESUFFIX?=	${KDE_SUFFIX}${PKGNAMESUFFIX2}
 
@@ -15,19 +15,19 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${LICQ_PORT}-icq
 
-USE_XORG=	x11 xext ice xscrnsaver
+USE_XORG=	x11 xext ice xscrnsaver sm
 USES=		cmake
 USE_QT4=	qmake_build moc_build rcc_build uic_build linguisttools_build \
-		corelib xml gui
+		corelib xml gui network dbus svg
 
 OPTIONS_DEFINE=	HUNSPELL KDE4
 OPTIONS_DEFAULT=HUNSPELL
 
 LICQ_PORT?=	net-im/licq
 
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
 HUNSPELL_CMAKE_ON=	-DHUNSPELL_INCLUDE_DIRS=${LOCALBASE}/include/hunspell \
-			-DHUNSPELL_LIBRARIES=${LOCALBASE}/lib/libhunspell-1.3.so \
+			-DHUNSPELL_LIBRARIES=${LOCALBASE}/lib/libhunspell-1.6.so \
 			-DHUNSPELL_FOUND:BOOL=ON
 HUNSPELL_CMAKE_OFF=	-DHUNSPELL_FOUND:BOOL=OFF
 

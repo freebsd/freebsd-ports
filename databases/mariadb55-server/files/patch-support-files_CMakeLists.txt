@@ -1,10 +1,11 @@
---- support-files/CMakeLists.txt.orig	2012-11-28 17:49:47.000000000 +0200
-+++ support-files/CMakeLists.txt	2012-12-23 05:40:39.000000000 +0200
-@@ -66,10 +66,11 @@
+--- support-files/CMakeLists.txt.orig	2017-04-11 20:03:17 UTC
++++ support-files/CMakeLists.txt
+@@ -67,10 +67,12 @@ IF(UNIX)
    ENDFOREACH()
    IF(INSTALL_SUPPORTFILESDIR)
      INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
--    INSTALL(DIRECTORY RHEL4-SElinux/ DESTINATION ${inst_location}/SELinux/RHEL4 COMPONENT SupportFiles)
+-    ADD_SUBDIRECTORY(SELinux)
++#    ADD_SUBDIRECTORY(SELinux)
    ENDIF()
  
 +IF(FALSE)

@@ -1,4 +1,4 @@
---- pixelview_remote.c.orig
+--- pixelview_remote.c.orig	2000-05-21 15:10:09 UTC
 +++ pixelview_remote.c
 @@ -39,9 +39,16 @@
  #include <sys/fcntl.h>

@@ -3,6 +3,7 @@
 
 PORTNAME=	getdp
 PORTVERSION=	2.8.0
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/README.txt
 LIB_DEPENDS=	libgsl.so:math/gsl	\
 		liblapack.so:math/lapack
 
-USES=		fortran gmake tar:tgz cmake
+USES=		fortran tar:tgz cmake
 WANT_PERL=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

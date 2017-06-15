@@ -1,21 +1,20 @@
---- config.m4.orig	2015-06-05 23:06:29 UTC
+--- config.m4.orig	2016-08-07 07:36:22 UTC
 +++ config.m4
-@@ -53,13 +53,9 @@ AC_DEFUN([AC_JSONNET_EPOLL],
+@@ -53,12 +53,9 @@ AC_DEFUN([AC_JSONNET_EPOLL],
  ])
  
  if test "$PHP_JSONNET" != "no"; then
--  cd libjsonnet
--  make libjsonnet.so
--  cd ../
+-  THIS_DIR=`dirname $0`
+-  MAKE_LIB_JSONNET=`cd ${THIS_DIR}/libjsonnet && make libjsonnet.so`
 -
    # --with-jsonnet -> check with-path
-   SEARCH_PATH="/usr/lib/jsonnet"
+   SEARCH_PATH="/usr/local/lib"
 -  SEARCH_FOR="libjsonnet.h"
 +  SEARCH_FOR="include/libjsonnet.h"
    if test -r $PHP_JSONNET/$SEARCH_FOR; then # path given as parameter
      JSONNET_DIR=$PHP_JSONNET
    else # search default path list
-@@ -78,13 +74,12 @@ if test "$PHP_JSONNET" != "no"; then
+@@ -77,13 +74,12 @@ if test "$PHP_JSONNET" != "no"; then
    fi
  
    # --with-jsonnet -> add include path

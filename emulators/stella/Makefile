@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	stella
-PORTVERSION=	4.6.1
+PORTVERSION=	4.7.3
+PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/stella-emu/stella/releases/download/release-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	acm@FreeBSD.org
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_SDL=	sdl2
-USES=		compiler:c++11-lib gmake
+USES=		compiler:c++11-lib gmake tar:xz
 HAS_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

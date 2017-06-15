@@ -21,7 +21,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SHEBANG_FILES=	sgmlspl.pl \
-		DOC/HTML/SGMLSpm/sample.pl \
+		DOC/sample.pl \
 		DOC/HTML/SGMLSpm/example.html
 
 INSTALL_TARGET=	install BINDIR=${STAGEDIR}${PREFIX}/bin \

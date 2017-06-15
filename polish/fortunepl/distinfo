@@ -1,6 +1,3 @@
-SHA256 (fortunes-pl_0.0.20051022.orig.tar.gz) = fa53dde791ade70a9a63f7fc1f3b2e9d0b441d74f8d4ec28f334d777d2315dab
-SIZE (fortunes-pl_0.0.20051022.orig.tar.gz) = 823076
-SHA256 (fortunes-pl_0.0.20051022.freebsd.pl) = 1ec67244a0b1d08e6639d41f25fd11ca61e6de8b54149eefc2b4fa448ca383af
-SIZE (fortunes-pl_0.0.20051022.freebsd.pl) = 149400
-SHA256 (fortunes-pl_0.0.20051022.filozofia) = 8b0dd23d6bb9b08406a0c6304218f478b7229875e45abea34a1cc1ddff7b0cb1
-SIZE (fortunes-pl_0.0.20051022.filozofia) = 4732
+TIMESTAMP = 1480247337
+SHA256 (fortunes-pl-20091121-3.src.rpm) = a1b50fc3f18e020111b12653941e1209f1a8e2cd77c6bcffa2f62cab153a35e8
+SIZE (fortunes-pl-20091121-3.src.rpm) = 741621

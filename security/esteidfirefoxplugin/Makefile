@@ -13,9 +13,8 @@ LICENSE=	LGPL21
 RUN_DEPENDS=	opensc-tool:security/opensc \
 		pcscd:devel/pcsc-lite
 
-USE_OPENSSL=	yes
 USE_GNOME=	gtk20
-USES=		webplugin:gecko pkgconfig
+USES=		webplugin:gecko pkgconfig ssl
 WEBPLUGIN_DIR=	${PREFIX}/lib
 WEBPLUGIN_FILES=	npesteid-firefox-plugin.so
 

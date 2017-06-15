@@ -24,7 +24,7 @@ PORTDATA=	*
 
 post-extract:
 	@${MV} "${WRKDIR}/Structure Synth Source Code" ${WRKSRC}
-	@${RM} -rf ${WRKSRC}/Examples/DontDeploy
+	@${RM} -r ${WRKSRC}/Examples/DontDeploy
 
 post-patch:
 	@${REINPLACE_CMD} -e '/examplesDir/ s|"Examples"|"${DATADIR}/Examples"|; \

@@ -1,0 +1,26 @@
+--- doc/Makefile.orig	2017-01-16 00:02:08 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)mixer.1 $(OBJDIR)mixer.html
++TARGETS	= $(OBJDIR)mixer.1
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -19,17 +19,14 @@ $(OBJDIR)mixer.html: manual.css.xml mixe
+ clean:
+ 	$(RM) -- $(mixer.1_OBJS) $(mixer.html_OBJS)
+ 	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)mixer.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "$(OBJDIR)mixer.html"
+ 
+ distclean: clean
+ 	$(RM) -- $(TARGETS)
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)mixer.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)mixer.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "mixer.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "mixer.html"
+ 
+ .PHONY: all clean distclean install uninstall

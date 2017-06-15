@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.9.20
+DISTVERSION=	2.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -42,7 +43,7 @@ WINELIBDIR?=	${PREFIX}/lib
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:bzip2
+USES=		bison compiler:c11 desktop-file-utils gmake shebangfix tar:xz
 SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
 		tools/winedump/function_grep.pl
 
@@ -81,7 +82,7 @@ LDAP_USE=		OPENLDAP=yes
 LIBXSLT_CONFIGURE_WITH=	xslt
 LIBXSLT_LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
-MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.6.3.msi:emulators/wine-mono-devel
+MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.7.0.msi:emulators/wine-mono-devel
 
 MPG123_CONFIGURE_WITH=	mpg123
 MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
@@ -122,10 +123,7 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
 PLIST_SUB+=		WINE32="@comment " WINE64=""
 
-# On FreeBSD 9.x, even when CHOSEN_COMPILER_TYPE from Mk/Uses/compiler.mk
-# is set to clang, COMPILER_VERSION is still at 42 from the system compiler
-# that is GCC 4.2.  Hack around this a bit.
-.if ${CHOSEN_COMPILER_TYPE} == clang && ( ${COMPILER_VERSION} < 38 || ${COMPILER_VERSION} == 42 )
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 38
 CPPFLAGS+=		-D__builtin_ms_va_list=__builtin_va_list \
 			-D__builtin_ms_va_start=__builtin_va_start \
 			-D__builtin_ms_va_end=__builtin_va_end \
@@ -149,8 +147,6 @@ EXTRACT_DEPENDS=bash:shells/bash \
 		git:devel/git \
 		${AUTOCONF_DEPENDS}
 
-# Fix build on FreeBSD 9.x (false positive: powl)
-CONFIGURE_ENV+=	ac_cv_have_powl=no
 CONFIGURE_ARGS+=--without-pulse
 USE_AUTOTOOLS=	autoconf:env
 

@@ -6,17 +6,20 @@ COMMENT=	Build tool from the boost.org
 
 PLIST_FILES=	bin/bjam
 
-EXTRACT_AFTER_ARGS=	${DISTNAME}/tools/build/v2/engine
+EXTRACT_AFTER_ARGS=	${DISTNAME}/${WRKSRC_SUBDIR}
+MAKE_CMD=	./build.sh
+ALL_TARGET=	cc
+MAKE_FLAGS=	#
+_MAKE_JOBS=	#
+MAKEFILE=	#
+
+WRKSRC_SUBDIR=	tools/build/src/engine
 
 .include "${.CURDIR}/../boost-all/common.mk"
 
-do-build:
-	cd ${WRKSRC}/tools/build/v2/engine && \
-		${MAKE_ENV} ./build.sh cc
-
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/v2/engine/bin.*/bjam \
+	${INSTALL_PROGRAM} ${WRKSRC}/bin.*/bjam \
 		${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

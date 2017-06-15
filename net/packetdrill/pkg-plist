@@ -1,4 +1,0 @@
-bin/packetdrill
-bin/checksum_test
-bin/packet_parser_test
-bin/packet_to_string_test

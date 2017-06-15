@@ -18,14 +18,12 @@ DESKTOP_ENTRIES="hfsexplorer" "reader Mac-formatted harddisk" \
 		"System;Utility;Java;" false
 
 USE_GITHUB=	yes
-GH_PROJECT=	${PORTNAME}
 GH_ACCOUNT=	unsound
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 OPTIONS_DEFINE= DOCS
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_PROJECT}-${DISTVERSION}
 
 do-configure:
 	@cd ${WRKSRC}/dist/bin && ${REINPLACE_CMD} -e 's|BASEDIR=".*"|BASEDIR="${DATADIR}/lib"|g' \

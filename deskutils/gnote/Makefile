@@ -3,6 +3,7 @@
 
 PORTNAME=	gnote
 PORTVERSION=	3.18.1
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -37,12 +38,6 @@ GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
 DOCS=		AUTHORS ChangeLog NEWS README TODO
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-EXTRA_PATCHES=	${FILESDIR}/extra-src_base_macros.hpp
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

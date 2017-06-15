@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 BROKEN_powerpc64=	Does not build
 
-USES=		gmake tar:bzip2
+USES=		gmake ssl tar:bzip2
 USE_RC_SUBR=	oscam
 MAKE_ARGS+=	HOSTCC=clang CC=clang
 
@@ -25,7 +25,7 @@ SVN_REV=	11062
 SVN_SRC=	http://www.streamboard.tv/svn/oscam/trunk
 
 do-install:
-	${RM} -f ${WRKSRC}/Distribution/*.debug
+	${RM} ${WRKSRC}/Distribution/*.debug
 	${INSTALL_PROGRAM} ${WRKSRC}/Distribution/${PORTNAME}-${PORTVERSION}-* ${STAGEDIR}${PREFIX}/bin/oscam
 	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.5 ${STAGEDIR}${PREFIX}/man/man5/

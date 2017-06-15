@@ -2,24 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.8.0
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER?=	bofh@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator
 
 LICENSE=	GPLv2
 
 HAS_CONFIGURE=	yes
-USES=		cpe gmake pkgconfig bison perl5 python:2,build tar:bzip2
+USES?=		cpe gmake pkgconfig bison perl5 python:2,build tar:bzip2
 USE_PERL5=	build
+MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
+.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != "-utils"
 USE_XORG=	pixman
 USE_GNOME+=	cairo glib20
-MAKE_ENV+=	BSD_MAKE="${MAKE}"
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
+.endif
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
@@ -58,28 +60,29 @@ USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
 PCAP_CONFIGURE_ON=	--enable-pcap
-PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch ${FILESDIR}/pcap-patch-net_net.c
+PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch ${FILESDIR}/pcap-patch-net_net.c \
+			${FILESDIR}/pcap-patch-net_clients.h
 STATIC_LINK_CONFIGURE_ON=	--static
 STATIC_LINK_PREVENTS=		GTK2 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
 NCURSES_USES=		ncurses:base
-SAMBA_RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:net/samba36
+SAMBA_USES=		samba:run # smbd
 DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
 
-PORTDOCS=	docs qemu-doc.html qemu-tech.html qmp-commands.txt
+PORTDOCS?=	docs qemu-doc.html qmp-commands.txt
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS+=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
-		--disable-libssh2 --enable-debug \
+CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
+		--extra-ldflags=-L\"${LOCALBASE}/lib\" --disable-libssh2 --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-docs --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--smbd=${LOCALBASE}/sbin/smbd --enable-debug-info --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
-LIB_DEPENDS+=	libnettle.so:security/nettle \
+LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
@@ -105,10 +108,18 @@ MAKE_ARGS+=	ARCH=ppc64
 CONFIGURE_ARGS+=	--sparc_cpu=v9
 .endif
 
+# clang in freebsd 10 is unable to assemble linuxboot_dma.bin 
+.if (${OSVERSION} < 1100000) 
+PLIST_SUB+=     LINUXBOOT_DMA="@comment " 
+.else 
+PLIST_SUB+=     LINUXBOOT_DMA="" 
+.endif
+
 # -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
 # but it shouldn't matter much
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
+		 -e '/libusb/s/ --atleast-version=1\.0\.[0-9]*//' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E \
@@ -125,9 +136,18 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
 		${WRKSRC}/scripts/texi2pod.pl
+# clang in freebsd 10 is unable to assemble linuxboot_dma.bin
+.if (${OSVERSION} < 1100000)
+	@${REINPLACE_CMD} -E \
+		-e 's|linuxboot_dma.bin||' \
+		${WRKSRC}/pc-bios/optionrom/Makefile
+	@${REINPLACE_CMD} -E \
+		-e 's|linuxboot_dma.bin||' \
+		${WRKSRC}/Makefile
+.endif
 
 post-patch-CDROM_DMA-off:
-	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/hw/ide/internal.h
+	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
 
 post-patch-GNS3-on:
 	@${REINPLACE_CMD} -e 's|(buf\[0\] & 1) && (rctl & E1000_RCTL_MPE)|buf[0] \& 1|' \

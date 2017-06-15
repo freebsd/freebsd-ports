@@ -69,7 +69,7 @@ if checkyesno subsonic_ssl; then
 	fi
 fi
 
-start_precmd="export LC_CTYPE='UTF-8'"
+start_precmd="export LC_CTYPE='en_US.UTF-8'"
 subsonic_chdir="%%DATADIR%%"
 command="/usr/sbin/daemon"
 command_args="-f ${procname} \

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	samplicator
-DISTVERSION=	1.3.7-beta6
-PORTREVISION=	2
+DISTVERSION=	1.3.8rc1
 CATEGORIES=	net
 
 MAINTAINER=	me@falz.net
@@ -15,7 +14,6 @@ USES=		autoreconf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sleinen
-GH_TAGNAME=	d64d1ca
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}

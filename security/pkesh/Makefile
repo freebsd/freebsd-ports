@@ -12,7 +12,6 @@ COMMENT=	Public Key Encryption SHell script
 LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
-NO_INSTALL=	yes
 
 PLIST_FILES=	bin/pkesh
 PORTDOCS=	README

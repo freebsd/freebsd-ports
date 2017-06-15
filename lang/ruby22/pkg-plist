@@ -755,6 +755,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/GeoTrustGlobalCA.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/GlobalSignRootCA.pem
 %%RUBY_LIBDIR%%/rubygems/stub_specification.rb
 %%RUBY_LIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_LIBDIR%%/rubygems/test_case.rb
@@ -3932,6 +3933,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d28/struct7_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d2a/fiddle_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d2a/fiddle_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d2a/union_f_l_o_a_t___s_w_a_p_p_e_r.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d2d/structchild__info.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d31/struct_dbls.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d32/dir_8c.html
@@ -4246,6 +4248,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dc6/ossl__pkey_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dc6/ossl__pkey_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dc6/structrb__blocking__region__buffer.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dc6/union_d_o_u_b_l_e___s_w_a_p_p_e_r.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dca/arm_2ffi_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dca/arm_2ffi_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dca/arm_2ffi_8c__incl.png
@@ -10349,6 +10352,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/BN/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/BN/eql%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/BN/generate_prime-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/OpenSSL/BN/hash-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/BN/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/BN/pretty_print-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/OpenSSL/BN/prime%3f-i.ri

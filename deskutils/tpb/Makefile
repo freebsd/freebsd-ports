@@ -3,28 +3,27 @@
 
 PORTNAME=	tpb
 PORTVERSION=	0.6.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-Screen-Display for hotkeys of IBM ThinkPads
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxosd.so:misc/xosd
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=	yes
-
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv localbase pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
+USE_XORG=	x11 sm ice xext
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALABASE}/lib
+OPTIONS_DEFINE=	EXAMPLES NLS
+OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
@@ -39,10 +38,10 @@ post-patch:
 		's|void test()||' ${WRKSRC}/configure
 
 post-install:
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} tpbrc \
-		${STAGEDIR}${PREFIX}/etc/tpbrc.default)
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} callback_example.sh \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/doc/tpbrc ${STAGEDIR}${PREFIX}/etc/tpbrc.default
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/callback_example.sh ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

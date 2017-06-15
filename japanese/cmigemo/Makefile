@@ -17,7 +17,7 @@ COMMENT=	C implementation of Migemo Japanese incremental search tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE_MIT.txt
 
-RUN_DEPENDS=	${DATADIR}/cp932/migemo-dict:japanese/cmigemo-dict
+RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/cp932/migemo-dict:japanese/cmigemo-dict
 
 USE_LDCONFIG=	yes
 
@@ -40,11 +40,6 @@ CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
 
 .if !defined(PKGNAMESUFFIX) && ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET+=gcc-install-doc
-.endif
-
-.if !target(post-extract)
-post-extract:
-	${CHMOD} a+x ${WRKSRC}/configure
 .endif
 
 post-patch:

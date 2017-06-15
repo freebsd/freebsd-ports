@@ -5,7 +5,7 @@
  #endif
  
 -#if defined(__linux__) || defined(WIN32) || defined(__APPLE__)
-+#if defined(__linux__) || defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__DragonFly__)
  #ifdef _ARCH_PPC
  
  /*

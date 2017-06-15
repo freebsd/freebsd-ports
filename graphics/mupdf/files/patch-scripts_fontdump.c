@@ -1,4 +1,4 @@
---- scripts/fontdump.c.orig	2016-04-21 11:14:32 UTC
+--- scripts/fontdump.c.orig	2016-11-28 13:34:04 UTC
 +++ scripts/fontdump.c
 @@ -50,7 +50,6 @@ main(int argc, char **argv)
  	fprintf(fo, "#ifndef __STRICT_ANSI__\n");

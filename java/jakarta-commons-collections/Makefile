@@ -12,8 +12,10 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Classes that extend/augment the Java Collections Framework
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6 1.7
+JAVA_VERSION=	1.6+
 USE_ANT=	yes
+USES=		dos2unix
+DOS2UNIX_GLOB=	Multi*.java Test*.java
 
 ALL_TARGET=	jar
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar

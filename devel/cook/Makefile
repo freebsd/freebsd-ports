@@ -3,7 +3,7 @@
 
 PORTNAME=	cook
 PORTVERSION=	2.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://miller.emu.id.au/pmiller/software/cook/ \
 		LOCAL/jasone
@@ -28,6 +28,6 @@ pre-install:
 # cook installs extra copies of the manpages in a directory that MANLANG can't
 # cope with.  Delete the extra copies.
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/share/cook/en/man1
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/cook/en/man1
 
 .include <bsd.port.mk>

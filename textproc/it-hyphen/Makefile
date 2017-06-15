@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	hyphen
-PORTVERSION=	2013.09.05
+PORTVERSION=	2016.02.10
 CATEGORIES=	textproc
-MASTER_SITES=	http://sourceforge.net/projects/aoo-extensions/files/1204/13/
+MASTER_SITES=	http://sourceforge.net/projects/aoo-extensions/files/1204/14/
 PKGNAMEPREFIX=	it-
 DISTNAME=	dict-it
 EXTRACT_SUFX=	.oxt

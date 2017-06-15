@@ -80,11 +80,11 @@ DESCR?=			${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=			${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
 
-# Emacs-25.x (development version)
+# Emacs-26.x (development version)
 .elif (${EMACS_PORT_NAME} == "emacs-devel")
 EMACS_NAME=		emacs
-EMACS_VER=		25.2.50
-EMACS_MAJOR_VER=	25
+EMACS_VER=		26.0.50
+EMACS_MAJOR_VER=	26
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTDIR=		editors/emacs-devel

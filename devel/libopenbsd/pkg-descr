@@ -1,0 +1,2 @@
+libopenbsd is a thin compatibility layer intended to allow a limited set of
+OpenBSD software to compile on other BSDs with little or no modification.

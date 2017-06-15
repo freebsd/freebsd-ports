@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	spine
-PORTVERSION=	0.8.8h
+PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
@@ -10,10 +11,12 @@ DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Multithreaded poller for Cacti written in C
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	help2man:misc/help2man
-LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
+		libpkg.so:ports-mgmt/pkg
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}

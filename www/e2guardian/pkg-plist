@@ -4,6 +4,7 @@
 @sample %%ETCDIR%%/authplugins/port.conf.sample
 @sample %%ETCDIR%%/authplugins/proxy-basic.conf.sample
 @sample %%ETCDIR%%/authplugins/proxy-digest.conf.sample
+@sample %%ETCDIR%%/authplugins/proxy-header.conf.sample
 %%TRICKLE%%@sample %%ETCDIR%%/downloadmanagers/trickle.conf.sample
 %%NTLM%%@sample %%ETCDIR%%/authplugins/proxy-ntlm.conf.sample
 %%CLAMD%%@sample %%ETCDIR%%/contentscanners/clamdscan.conf.sample
@@ -215,6 +216,7 @@ sbin/e2guardian
 %%DATADIR%%/languages/polish/template.html
 %%DATADIR%%/languages/portuguese/fancydmtemplate.html
 %%DATADIR%%/languages/portuguese/messages
+%%DATADIR%%/languages/portuguese/messagesaccents
 %%DATADIR%%/languages/portuguese/template.html
 %%DATADIR%%/languages/ptbrazilian/fancydmtemplate.html
 %%DATADIR%%/languages/ptbrazilian/messages
@@ -239,6 +241,7 @@ sbin/e2guardian
 %%DATADIR%%/languages/turkish/template.html
 %%DATADIR%%/languages/ukenglish/fancydmtemplate.html
 %%DATADIR%%/languages/ukenglish/messages
+%%DATADIR%%/languages/ukenglish/messages.alt
 %%DATADIR%%/languages/ukenglish/template.html
 %%DATADIR%%/scripts/bsd-init
 %%DATADIR%%/scripts/e2guardian

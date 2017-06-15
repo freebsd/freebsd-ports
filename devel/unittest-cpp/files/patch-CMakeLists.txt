@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2017-01-14 14:55:56 UTC
++++ CMakeLists.txt
+@@ -106,5 +106,10 @@ set(exec_prefix ${CMAKE_INSTALL_PREFIX}/
+ set(libdir      ${CMAKE_INSTALL_PREFIX}/lib)
+ set(includedir  ${CMAKE_INSTALL_PREFIX}/include/UnitTest++)
+ configure_file("UnitTest++.pc.in" "UnitTest++.pc" @ONLY)
++if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++    set(pkgconfdir  ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig)
++else()
++    set(pkgconfdir  ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
++endif()
+ install(FILES       "${CMAKE_CURRENT_BINARY_DIR}/UnitTest++.pc"
+-        DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig")
++        DESTINATION "${pkgconfdir}")

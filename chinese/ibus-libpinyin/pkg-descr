@@ -3,4 +3,4 @@ Intelligent Pinyin engine based on libpinyin for IBus
 It includes a Chinese Pinyin input method and a Chinese ZhuYin (Bopomofo)
 input method based on libpinyin for IBus.
 
-WWW: http://github.com/libpinyin/ibus-libpinyin
+WWW: https://github.com/libpinyin/ibus-libpinyin

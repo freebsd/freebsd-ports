@@ -8,4 +8,4 @@ decided to follow the rules and create one that required no patching or
 modification to the core cc-mode engine (which is a good thing). So, this is
 the C# mode.
 
-WWW: http://code.google.com/p/csharpmode/
+WWW: https://github.com/josteink/csharp-mode

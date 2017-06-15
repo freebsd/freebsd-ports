@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicbrainzngs
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

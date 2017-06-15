@@ -8,4 +8,4 @@ make up this package:
 Currently available are containers using:
 PEAR::DB, PEAR::MDB, PEAR::MDB2, PEAR::XML_Tree and PEAR::Auth.
 
-WWW: http://pear.php.net/package/LiveUser/
+WWW: https://pear.php.net/package/LiveUser

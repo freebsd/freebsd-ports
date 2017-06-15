@@ -3,6 +3,7 @@
 
 PORTNAME=	netgen
 PORTVERSION=	5.3.1
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:C|\.[[:digit:]]+$||}/
 
@@ -15,13 +16,13 @@ LIB_DEPENDS=	libTix8.4.3.so:x11-toolkits/tix \
 OCC_BROKEN=	Does not compile because of issues with cad/opencascade
 
 USE_LDCONFIG=	yes
-USES=		gmake jpeg libtool tk:tea
-USE_GL=		yes
-USE_XORG=	xmu xi
+USES=		gmake jpeg libtool localbase tk:tea
+USE_GL=		gl glu
+USE_XORG=	x11 xmu xi
 MAKE_JOBS_UNSAFE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/lib/Togl-1.7
+CPPFLAGS+=	-isystem ${LOCALBASE}/lib/Togl-1.7
 CONFIGURE_ARGS=	--enable-jpeglib
+INSTALL_TARGET=	install-strip
 
 FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
@@ -36,7 +37,7 @@ OCC_LIB_DEPENDS=	libTKernel.so:cad/opencascade
 OCC_CXXFLAGS=		-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
 OCC_CONFIGURE_ON=	--enable-occ
 
-FFMPEG_LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ON=	--enable-ffmpeg
 
 MACHINE=	${OPSYS:tu}
@@ -48,13 +49,10 @@ MAKE_ENV=	TK_VER=${TK_VER} TCL_VER=${TCL_VER}	\
 		TK_INCLUDEDIR="${TK_INCLUDEDIR}"	\
 		MACHINE=${MACHINE} MAKE=${MAKE_CMD}
 
-pre-configure:
-	@${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
+post-patch:
+	@${REINPLACE_CMD} -e '/ngdir/s,"\.","${PREFIX}/bin",' \
+		${WRKSRC}/ng/ng.tcl \
 		${WRKSRC}/ng/ngappinit.cpp
-
-post-configure:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|"	\
-		${WRKSRC}/configure
 
 post-install:
 #	copy some additional headers for build cad/salome-netgenplugin

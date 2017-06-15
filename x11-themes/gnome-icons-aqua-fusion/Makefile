@@ -7,7 +7,7 @@
 
 PORTNAME=	aqua-fusion
 PORTVERSION=	20030216
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-AquaFusion

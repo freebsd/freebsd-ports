@@ -39,6 +39,8 @@ ESOUND_LDFLAGS=		`pkgconf --libs-only-L esound `
 ESOUND_CONFIGURE_ENV_OFF=	ac_cv_lib_esd_esd_open_sound=no \
 				ac_cv_header_esd_h=no
 
+BROKEN_aarch64=		Fails to compile: error: passing char * to parameter of incompatible type __builtin_va_list
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|= @X_LIBS@|= @LDFLAGS@ @X_LIBS@|g' \
 		${WRKSRC}/Makefile.in

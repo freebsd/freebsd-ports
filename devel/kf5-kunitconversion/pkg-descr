@@ -1,0 +1,5 @@
+KUnitConversion provides functions to convert values in different physical
+units. It supports converting different prefixes (e.g. kilo, mega, giga) as
+well as converting between different unit systems (e.g. liters, gallons).
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kunitconversion/html/index.html

@@ -3,63 +3,70 @@
 
 PORTNAME=	quassel
 PORTVERSION=	0.12.4
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
-MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Qt 5 based distributed IRC client
+MAINTAINER=	woodsb02@FreeBSD.org
+COMMENT?=	Qt 5 based distributed IRC client (client and monolithic binary)
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake:outsource compiler:c++11-lib cpe execinfo pkgconfig tar:bzip2
-USE_QT5=	core network buildtools_build qmake_build
-CMAKE_ARGS=	-DWITH_KDE=off \
-		-DUSE_QT5=on
 
 CPE_VENDOR=	quassel-irc
 CPE_PRODUCT=	quassel_irc
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_MULTI=	MODULE
-MODULE_DESC=	Quassel components
-OPTIONS_MULTI_MODULE=	MONO CORE CLIENT
-OPTIONS_DEFAULT=	${OPTIONS_MULTI_MODULE}
-OPTIONS_SUB=	yes
+USE_QT5=	buildtools_build core network qmake_build
+CMAKE_ARGS=	-DWITH_KDE=off \
+		-DUSE_QT5=on
 
-MONO_DESC=	Quassel standalone client
-MONO_CMAKE_ON=	-DWANT_MONO=on
-MONO_CMAKE_OFF=	-DWANT_MONO=off
+OPTIONS_DEFINE=		NLS
+OPTIONS_MULTI=		MODULE DB
+MODULE_DESC=		Quassel components
+DB_DESC=		Database for Quassel core / monolithic
+OPTIONS_MULTI_MODULE=	CLIENT CORE MONO
+OPTIONS_MULTI_DB=	PGSQL SQLITE3
+OPTIONS_DEFAULT=	CLIENT MONO SQLITE3
+OPTIONS_SUB=		yes
 
-CORE_DESC=	Quassel core (for use with client)
+CLIENT_DESC=		Quassel client (for use with core)
+CLIENT_CMAKE_BOOL=	WANT_QTCLIENT
+CLIENT_USE=		qt5=dbus,gui,phonon4,webkit,widgets
+CLIENT_LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt5
+
+CORE_DESC=		Quassel core server (for use with client)
+CORE_CMAKE_BOOL=	WANT_CORE
+CORE_USE=		qt5=script,sql
 CORE_LIB_DEPENDS=	libqca-qt5.so:devel/qca-qt5
-CORE_USE=	QT5=script,sql,sql-sqlite3_run
-CORE_CMAKE_ON=	-DWANT_CORE=on
-CORE_CMAKE_OFF=	-DWANT_CORE=off
+CORE_SUB_FILES=		pkg-message
+CORE_VARS=		use_rc_subr=quasselcore \
+			users=quasselcore \
+			groups=quasselcore \
+			plist=${NONEXISTENT} # allow core to override PLIST_FILES
+CORE_PLIST_FILES=	bin/quasselcore
 
-CLIENT_DESC=	Quassel client (for use with core)
-CLIENT_CMAKE_ON=	-DWANT_QTCLIENT=on
-CLIENT_CMAKE_OFF=	-DWANT_QTCLIENT=off
+MONO_DESC=		Quassel standalone (monolithic binary: core+client combined)
+MONO_CMAKE_BOOL=	WANT_MONO
+MONO_USE=		qt5=script,sql
+MONO_LIB_DEPENDS=	libqca-qt5.so:devel/qca-qt5
 
-NLS_USE=	QT5=linguisttools_build
+NLS_USE=		QT5=linguisttools_build
 
-.include <bsd.port.options.mk>
+PGSQL_USE=		qt5=sql-pgsql
 
-.if ${PORT_OPTIONS:MMONO} || ${PORT_OPTIONS:MCLIENT}
-USE_QT5+=	dbus gui widgets phonon4 webkit
-LIB_DEPENDS+=	libdbusmenu-qt5.so:devel/libdbusmenu-qt5
-PLIST_SUB+=	MONO_OR_CLIENT=""
-.else
-PLIST_SUB+=	MONO_OR_CLIENT="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCORE}
-USE_RC_SUBR=	quasselcore
-USERS=		quasselcore
-GROUPS=		${USERS}
-SUB_FILES=	pkg-message
-.endif
+SQLITE3_USE=		qt5=sql-sqlite3_run
 
 post-patch-NLS-off:
 	${REINPLACE_CMD} -e '/add_subdirectory(po)/d' \
 		${WRKSRC}/CMakeLists.txt
+
+post-install-CLIENT-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/quasselclient
+post-install-CORE-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/quasselcore
+post-install-MONO-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/quassel
 
 .include <bsd.port.mk>

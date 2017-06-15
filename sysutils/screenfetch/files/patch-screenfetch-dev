@@ -1,0 +1,33 @@
+--- screenfetch-dev.orig	2015-07-14 12:32:02 UTC
++++ screenfetch-dev
+@@ -515,6 +515,14 @@ detectdistro () {
+ 		if [ "$distro" == "Unknown" ]; then
+ 			if [ $(uname -o 2>/dev/null) ]; then
+ 				case "$(uname -o)" in
++					"FreeBSD")
++						distro="FreeBSD"
++						fake_distro="${distro}"
++					;;
++					"DragonFly")
++						distro="DragonFlyBSD"
++						fake_distro="${distro}"
++					;;
+ 					"Cygwin")
+ 						distro="Cygwin"
+ 						fake_distro="${distro}"
+@@ -4151,11 +4159,10 @@ for i in "${display[@]}"; do
+ 			 ! [[ $Win_theme ]] && detectwmtheme;
+ 		else
+ 			if [[ "${display[*]}" =~ "$i" ]]; then 
+-				if [[ "$errorSuppress" == "1" ]]; then detect${i} 2>/dev/null
+-				else 
+-					exec 3> >(stderrOut)
+-					detect${i} 2>&3
+-					exec 3>&-
++				if [[ "$errorSuppress" == "1" ]]; then
++					detect${i} 2>/dev/null
++				else
++					detect${i}
+ 				fi
+ 			fi
+ 		fi

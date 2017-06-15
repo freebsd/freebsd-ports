@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20160918
+PORTVERSION=	20170116
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -27,7 +27,6 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 		libvmdk>=e:devel/libvmdk \
 		libvshadow>=0:devel/libvshadow \
 		libvslvm>=e:devel/libvslvm \
-		${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma \
 		${PYTHON_PKGNAMEPREFIX}construct>=0:devel/py-construct \
 		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto \
@@ -36,10 +35,19 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 
 NO_ARCH=	yes
 USES=		python:2.7
+USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	distutils autoplist
-TEST_ENV=	${MAKE_ENV} LANG=en_US.UTF-8 PYTHONHTTPSVERIFY=0
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyliblzma>=0:archivers/py-pyliblzma
+TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
+.else
+TEST_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
+.endif
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_tests.py)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

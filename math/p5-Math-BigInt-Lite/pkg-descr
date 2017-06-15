@@ -1,0 +1,15 @@
+Math::BigInt is not very good suited to work with small (read: typical less than
+10 digits) numbers, since it has a quite high per-operation overhead and is thus
+much slower than normal Perl for operations.
+
+But for some applications, you want fast speed for small numbers without the
+risk of overflowing. This is were Math::BigInt::Lite comes into play.
+
+Math::BigInt::Lite objects should behave in every way like Math::BigInt objects,
+that is apart from the different label, you should not be able to tell the
+difference. Since Math::BigInt::Lite is designed with speed in mind, there are
+certain limitations build-in. In praxis, however, you will not feel them,
+because everytime something gets to big to pass as Lite (literally), it will
+upgrade the objects and operation in question to Math::BigInt.
+
+WWW: http://search.cpan.org/dist/Math-BigInt-Lite/

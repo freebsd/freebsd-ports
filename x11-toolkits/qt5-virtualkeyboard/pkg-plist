@@ -1,0 +1,9 @@
+%%QT_CMAKEDIR%%/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake
+%%QT_PLUGINDIR%%/platforminputcontexts/libqtvirtualkeyboardplugin.so
+%%DEBUG%%%%QT_PLUGINDIR%%/platforminputcontexts/libqtvirtualkeyboardplugin.so.debug
+%%QT_QMLDIR%%/QtQuick/VirtualKeyboard/Styles/libqtvirtualkeyboardstylesplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/VirtualKeyboard/Styles/libqtvirtualkeyboardstylesplugin.so.debug
+%%QT_QMLDIR%%/QtQuick/VirtualKeyboard/plugins.qmltypes
+%%QT_QMLDIR%%/QtQuick/VirtualKeyboard/qmldir
+%%QT_QMLDIR%%/QtQuick/VirtualKeyboard/Styles/plugins.qmltypes
+%%QT_QMLDIR%%/QtQuick/VirtualKeyboard/Styles/qmldir

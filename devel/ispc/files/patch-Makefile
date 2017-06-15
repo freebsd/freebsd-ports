@@ -1,0 +1,22 @@
+--- Makefile.orig	2016-07-08 11:13:52 UTC
++++ Makefile
+@@ -241,16 +241,16 @@ dirs:
+ 	@/bin/mkdir -p objs
+ 
+ llvm_check:
+-	@llvm-config --version > /dev/null || \
++	@$(LLVM_CONFIG) --version > /dev/null || \
+ 	(echo; \
+ 	 echo "******************************************"; \
+-	 echo "ERROR: llvm-config not found in your PATH";  \
++	 echo "ERROR: $(LLVM_CONFIG) not found in your PATH";  \
+ 	 echo "******************************************"; \
+ 	 echo; exit 1)
+ 	@echo -e '$(subst $(newline), ,$(RIGHT_LLVM))'
+ 
+ print_llvm_src: llvm_check
+-	@echo Using LLVM `llvm-config --version` from `llvm-config --libdir`
++	@echo Using LLVM `$(LLVM_CONFIG) --version` from `$(LLVM_CONFIG) --libdir`
+ 	@echo Using compiler to build: `$(CXX) --version | head -1`
+ 
+ clean:

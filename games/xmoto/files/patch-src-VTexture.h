@@ -1,6 +1,6 @@
---- src/VTexture.h.orig	2011-10-12 00:18:35.000000000 +0400
-+++ src/VTexture.h	2014-11-24 22:08:42.749026473 +0300
-@@ -135,7 +135,7 @@
+--- src/VTexture.h.orig	2011-10-11 20:18:35 UTC
++++ src/VTexture.h
+@@ -135,7 +135,7 @@ private:
  
    void cleanUnregistredTextures();
  

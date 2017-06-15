@@ -1,0 +1,4 @@
+Framework Integration is a set of plugins responsible for better integration
+of Qt applications when running on a KDE Plasma workspace.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/frameworkintegration/html/index.html

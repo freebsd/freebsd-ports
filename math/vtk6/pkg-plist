@@ -825,7 +825,7 @@
 %%QT%%lib/cmake/vtk-%%VER2%%/Modules/vtkGUISupportQtWebkit.cmake
 %%QT%%lib/cmake/vtk-%%VER2%%/Modules/vtkRenderingQt.cmake
 %%QT%%lib/cmake/vtk-%%VER2%%/Modules/vtkViewsQt.cmake
-%%SHARED%%%%DESIGNER%%%%QT_LIBDIR%%/plugins/designer/libQVTKWidgetPlugin-%%VER2%%.so
+%%SHARED%%%%DESIGNER%%lib/qt4/plugins/designer/libQVTKWidgetPlugin-%%VER2%%.so
 %%SHARED%%%%JAVA%%%%MPI%%lib/vtk-%%VER2%%/libvtkFiltersParallelGeometryJava.so
 %%SHARED%%%%JAVA%%%%MPI%%lib/vtk-%%VER2%%/libvtkFiltersParallelMPIJava.so
 %%SHARED%%%%JAVA%%%%MPI%%lib/vtk-%%VER2%%/libvtkIOMPIImageJava.so

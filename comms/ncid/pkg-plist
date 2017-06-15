@@ -1,16 +1,20 @@
 bin/cidalias
 bin/cidcall
 bin/cidupdate
+bin/email2ncid
 bin/ncid
 bin/ncid2ncid
 bin/ncidutil
+bin/ncid-setup
 bin/obi2ncid
 bin/rn2ncid
 bin/wc2ncid
 bin/wct
 bin/yac2ncid
-%%DATADIR%%/extensions/hangup-message.sh
-%%DATADIR%%/extensions/hangup-skel.sh
+%%DATADIR%%/extensions/hangup-calls
+%%DATADIR%%/extensions/hangup-closed-skel
+%%DATADIR%%/extensions/hangup-message-skel
+%%DATADIR%%/extensions/hangup-skel
 %%DATADIR%%/modules/ncid-alert
 %%DATADIR%%/modules/ncid-initmodem
 %%DATADIR%%/modules/ncid-kpopup
@@ -25,13 +29,30 @@ bin/yac2ncid
 %%DATADIR%%/recordings/CallingDeposit.rmd
 %%DATADIR%%/recordings/NotInService.rmd
 %%DATADIR%%/recordings/NumberDisconnected.rmd
-%%LOGROTATE%%%%DATADIR%%/sys/ncidrotate.sh
+%%DATADIR%%/setup/ncid-email2ncid-setup
+%%DATADIR%%/setup/ncid-mysql-setup
+%%LOGROTATE%%%%DATADIR%%/sys/ncid-yearlog
+%%LOGROTATE%%%%DATADIR%%/sys/ncidrotate
+%%LOGROTATE%%%%ETCDIR%%/ncidrotate.conf.sample
 %%LOGROTATE%%etc/logrotate.d/ncid
 %%LOGROTATE%%man/man1/ncidrotate.1.gz
 %%LOGROTATE%%man/man5/ncidrotate.conf.5.gz
-%%ETCDIR%%/ncid.conf
-%%ETCDIR%%/ncidd.alias
-%%ETCDIR%%/ncidd.conf
+%%PORTDOCS%%%%DOCSDIR%%/recordings/CallingDeposit.pvf
+%%PORTDOCS%%%%DOCSDIR%%/recordings/NotInService.pvf
+%%PORTDOCS%%%%DOCSDIR%%/recordings/NumberDisconnected.pvf
+%%PORTDOCS%%%%DOCSDIR%%/recordings/README.recordings
+@sample %%ETCDIR%%/email2ncid.conf.sample
+@sample %%ETCDIR%%/ncid2ncid.conf.sample
+@sample %%ETCDIR%%/ncid.conf.sample
+@sample %%ETCDIR%%/ncidd.alias.sample
+@sample %%ETCDIR%%/ncidd.blacklist.sample
+@sample %%ETCDIR%%/ncidd.conf.sample
+@sample %%ETCDIR%%/ncidd.whitelist.sample
+@sample %%ETCDIR%%/obi2ncid.conf.sample
+@sample %%ETCDIR%%/rn2ncid.conf.sample
+@sample %%ETCDIR%%/sip2ncid.conf.sample
+@sample %%ETCDIR%%/wc2ncid.conf.sample
+@sample %%ETCDIR%%/yac2ncid.conf.sample
 etc/rc.d/ncid-initmodem
 etc/rc.d/ncid-mythtv
 etc/rc.d/ncid-notify
@@ -49,19 +70,26 @@ etc/rc.d/yac2ncid
 man/man1/cidalias.1.gz
 man/man1/cidcall.1.gz
 man/man1/cidupdate.1.gz
-man/man1/hangup-message.1.gz
+man/man1/email2ncid.1.gz
+man/man1/hangup-calls.1.gz
+man/man1/hangup-closed-skel.1.gz
+man/man1/hangup-message-skel.1.gz
 man/man1/hangup-skel.1.gz
 man/man1/ncid-alert.1.gz
+man/man1/ncid-email2ncid-setup.1.gz
 man/man1/ncid-initmodem.1.gz
 man/man1/ncid-kpopup.1.gz
+man/man1/ncid-mysql.1.gz
 man/man1/ncid-mythtv.1.gz
 man/man1/ncid-notify.1.gz
 man/man1/ncid-page.1.gz
 man/man1/ncid-samba.1.gz
+man/man1/ncid-setup.1.gz
 man/man1/ncid-skel.1.gz
 man/man1/ncid-speak.1.gz
 man/man1/ncid-wakeup.1.gz
 man/man1/ncid-yac.1.gz
+man/man1/ncid-yearlog.1.gz
 man/man1/ncid.1.gz
 man/man1/ncid2ncid.1.gz
 man/man1/ncidutil.1.gz
@@ -70,6 +98,7 @@ man/man1/rn2ncid.1.gz
 man/man1/wc2ncid.1.gz
 man/man1/wct.1.gz
 man/man1/yac2ncid.1.gz
+man/man5/email2ncid.conf.5.gz
 man/man5/ncid.conf.5.gz
 man/man5/ncid2ncid.conf.5.gz
 man/man5/ncidd.alias.5.gz
@@ -85,6 +114,7 @@ man/man7/ncid-modules.7.gz
 man/man7/ncidgateways.7.gz
 man/man7/ncidtools.7.gz
 man/man8/ncidd.8.gz
+man/man8/ncid-mysql-setup.8.gz
 man/man8/sip2ncid.8.gz
 sbin/ncidd
 sbin/sip2ncid

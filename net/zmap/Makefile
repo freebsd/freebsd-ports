@@ -27,22 +27,13 @@ OPTIONS_DEFAULT=JSON
 JSON_DESC=	Build with support for JSON
 
 REDIS_LIB_DEPENDS=	libhiredis.so:/databases/hiredis
-REDIS_CMAKE_ON+=	-DWITH_REDIS=ON
-REDIS_CMAKE_OFF+=	-DWITH_REDIS=OFF
+REDIS_CMAKE_BOOL=	WITH_REDIS
 
-MONGO_LIB_DEPENDS+=	libmongoc-1.0.so:/devel/mongo-c-driver
-MONGO_CMAKE_ON+=	-DWITH_MONGO=ON
-MONGO_CMAKE_OFF+=	-DWITH_MONGO=OFF
+MONGO_LIB_DEPENDS=	libmongoc-1.0.so:/devel/mongo-c-driver
+MONGO_CMAKE_BOOL=	WITH_MONGO
 
 JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
-JSON_CMAKE_ON+=		-DWITH_JSON=ON
-JSON_CMAKE_OFF+=	-DWITH_JSON=OFF
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-.endif
+JSON_CMAKE_BOOL=	WITH_JSON
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap|${LOCALBASE}/etc/zmap|g' -e 's|/usr/local|${LOCALBASE}|g' \
@@ -55,10 +46,6 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap/blacklist.conf|${LOCALBASE}/etc/zmap/blacklist.conf|g' \
 		${WRKSRC}/conf/zmap.conf \
 		${WRKSRC}/src/zmap.c
-.if ${OSVERSION} < 1000033
-	@${REINPLACE_CMD} -i '' -e 's|COMMAND flex |COMMAND ${LOCALBASE}/bin/flex |g' \
-		${WRKSRC}/src/CMakeLists.txt
-.endif
 
 post-install:
 .for m in ${MANPAGE}

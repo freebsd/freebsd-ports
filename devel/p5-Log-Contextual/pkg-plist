@@ -2,6 +2,7 @@
 %%PERL5_MAN3%%/Log::Contextual::Easy::Default.3.gz
 %%PERL5_MAN3%%/Log::Contextual::Easy::Package.3.gz
 %%PERL5_MAN3%%/Log::Contextual::Role::Router.3.gz
+%%PERL5_MAN3%%/Log::Contextual::Role::Router::HasLogger.3.gz
 %%PERL5_MAN3%%/Log::Contextual::Role::Router::SetLogger.3.gz
 %%PERL5_MAN3%%/Log::Contextual::Role::Router::WithLogger.3.gz
 %%PERL5_MAN3%%/Log::Contextual::Router.3.gz
@@ -12,6 +13,7 @@
 %%SITE_PERL%%/Log/Contextual/Easy/Default.pm
 %%SITE_PERL%%/Log/Contextual/Easy/Package.pm
 %%SITE_PERL%%/Log/Contextual/Role/Router.pm
+%%SITE_PERL%%/Log/Contextual/Role/Router/HasLogger.pm
 %%SITE_PERL%%/Log/Contextual/Role/Router/SetLogger.pm
 %%SITE_PERL%%/Log/Contextual/Role/Router/WithLogger.pm
 %%SITE_PERL%%/Log/Contextual/Router.pm

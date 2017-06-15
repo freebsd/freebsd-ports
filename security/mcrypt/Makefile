@@ -3,14 +3,14 @@
 
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/MCrypt/${PORTVERSION} \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/ \
 		ftp://mcrypt.hellug.gr/pub/mcrypt/attic/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
 
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \

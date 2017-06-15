@@ -1,31 +1,6 @@
 --- src/src.gpr.orig	2015-06-22 10:52:10 UTC
 +++ src/src.gpr
-@@ -21,13 +21,14 @@ with "../.build/projects/aws_xmlada";
- with "../shared";
- with "../include/include";
- with "../ssl/ssl";
-+with "../templates_parser/temparse";
- 
- library project Src is
- 
-    for Languages use ("Ada", "Project file", "Makefile");
- 
-    for Source_Dirs use
--     ("core", "extended", "../templates_parser/src", "../config/src",
-+     ("core", "extended", "../config/src",
-       "../config/ssl", "../" & Shared.Target_Dir & "/setup/src", ".");
- 
-    --  XMLAda Installed, add xsrc and soap directories
-@@ -35,7 +36,7 @@ library project Src is
-    case Shared.XMLAda is
-       when "Installed" =>
-          for Source_Dirs use project'Source_Dirs &
--           ("xsrc", "soap", "../templates_parser/xsrc");
-+           ("xsrc", "soap");
-       when "Disabled" =>
-          null;
-    end case;
-@@ -68,7 +69,7 @@ library project Src is
+@@ -68,7 +68,7 @@ library project Src is
              when "Windows_NT" =>
                 for Library_Options use ("-lwsock32", "-lws2_32");
              when others =>
@@ -34,7 +9,7 @@
           end case;
  
           case Shared.LDAP is
-@@ -79,7 +80,7 @@ library project Src is
+@@ -79,7 +79,7 @@ library project Src is
                         Project'Library_Options & ("-lwldap32");
                    when others =>
                       for Library_Options use
@@ -43,21 +18,3 @@
                 end case;
  
              when "Disabled" =>
-@@ -124,17 +125,6 @@ library project Src is
-       for Implementation_Suffix ("Makefile") use ".txt";
-       for Implementation_Exceptions ("Makefile") use ("Makefile");
- 
--      -- Templates Parser
--
--      for Specification ("Templates_Parser.Configuration")
--        use "templates_parser-configuration__aws.ads";
--
--      for Implementation ("Templates_Parser.Input")
--        use "templates_parser-input__aws.adb";
--
--      for Implementation ("Templates_Parser_Tasking")
--        use "templates_parser_tasking__standard_tasking.adb";
--
-       --  SOCKLIB
- 
-       case Shared.SOCKLIB is

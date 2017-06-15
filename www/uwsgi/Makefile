@@ -3,18 +3,22 @@
 
 PORTNAME=	uwsgi
 PORTVERSION=	2.0.14
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python ssl
 USE_PYTHON=	distutils
 USE_RC_SUBR=	uwsgi
+
+USERS=	uwsgi
+GROUPS=	uwsgi
 
 OPTIONS_DEFINE=	DEBUG JSON PCRE XML
 
@@ -43,6 +47,8 @@ O_XML=		libxml2
 O_XML=		false
 .endif
 
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	${OPENSSL_LDFLAGS}
 MAKE_ENV+=	CPUCOUNT=${MAKE_JOBS_NUMBER} UWSGI_EMBED_PLUGINS=cgi
 
 PYSETUP=			uwsgiconfig.py

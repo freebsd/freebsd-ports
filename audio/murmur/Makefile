@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	murmur
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.19
 PORTREVISION=	1
 CATEGORIES=	audio net
 
@@ -10,16 +10,15 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Murmur is the server component of Mumble
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USERS=		murmur
 GROUPS=		murmur
-USES=		compiler:c++11-lang qmake pkgconfig
+USES=		compiler:c++11-lang qmake pkgconfig ssl
 USE_QT4=	moc_build corelib network xml sql sql-sqlite3_run
-
-USE_OPENSSL=	YES
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	mumble-voip
@@ -58,12 +57,8 @@ CONFIG+=	no-bonjour
 
 .include <bsd.port.pre.mk>
 # PCH is broken on GCC
-.if ${COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 CONFIG+=	no-pch
-.endif
-
-.if ${OSVERSION} < 1000510
-EXTRA_PATCHES=	${FILESDIR}/FreeBSD9-patch-src_SSL.cpp
 .endif
 
 post-patch:
@@ -80,11 +75,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/scripts/murmur.ini ${STAGEDIR}${PREFIX}/etc/murmur.ini.sample
 	${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${CP} ${WRKSRC}/man/murmurd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in CHANGES INSTALL LICENSE README README.Linux
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in CHANGES INSTALL README README.Linux
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

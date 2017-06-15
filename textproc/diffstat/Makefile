@@ -5,11 +5,14 @@ PORTNAME=	diffstat
 PORTVERSION=	1.61
 CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Makes a histogram summarizing "diff" output
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 

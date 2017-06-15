@@ -3,4 +3,4 @@ just like apache's htaccess. It is especially useful with fastcgi.
 
 This package was originally developed by Bart Vanbrabant.
 
-WWW: http://pecl.php.net/package/htscanner/
+WWW: https://pecl.php.net/package/htscanner

@@ -12,6 +12,8 @@ COMMENT=	Replacement for qmail's sendmail drop-in
 
 USES=		qmail
 
+BROKEN_aarch64=	Fails to build: regparm is not valid on this platform
+
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}
 
 PLIST_FILES=	sbin/usendmail

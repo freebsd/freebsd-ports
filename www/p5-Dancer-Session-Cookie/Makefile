@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer-Session-Cookie
-PORTVERSION=	0.25
-PORTREVISION=	1
+PORTVERSION=	0.27
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +24,7 @@ TEST_DEPENDS=	\
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=	perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 NO_ARCH=	YES
 
 .include <bsd.port.mk>

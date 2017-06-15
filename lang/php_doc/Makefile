@@ -8,7 +8,7 @@ CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	PHP documentation in HTML
 
 NO_BUILD=	yes

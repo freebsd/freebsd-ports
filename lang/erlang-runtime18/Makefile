@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	18.3.4.4
+PORTVERSION=	18.3.4.5
+PORTREVISION=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -18,7 +19,7 @@ PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
 PATCHFILES=	patch-otp-18.3.1 patch-otp-18.3.2 patch-otp-18.3.3 \
 		patch-otp-18.3.4 patch-otp-18.3.4.1 patch-otp-18.3.4.2 \
-		patch-otp-18.3.4.3 patch-otp-18.3.4.4
+		patch-otp-18.3.4.3 patch-otp-18.3.4.4 patch-otp-18.3.4.5
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -64,12 +65,6 @@ DISTFILES+=	${ERLANG_DOCS}:erlangorg
 # If you run Erlang and get a message resembling "WARNING: number of
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
-
-.if ${OSVERSION} < 1000000
-.if ${ARCH} == "amd64" && ${PORT_OPTIONS:MDTRACE} && ! ${PORT_OPTIONS:MGCC}
-IGNORE=		support for DTrace on amd64 requires GCC option
-.endif
-.endif
 
 .if ${PORT_OPTIONS:MGCC}
 USE_GCC?=	yes
@@ -197,17 +192,17 @@ post-install:
 			-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB} \
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
 	done
-	${RM} -rf ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
 .if ${PORT_OPTIONS:MDOCS}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-7.3/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-7.3.1.2
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-7.3.1.3
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-7.3
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.2/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.2.4
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.2.4.1
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.2
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/mnesia-4.13.3/* \
@@ -223,8 +218,12 @@ post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/common_test-1.12
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.2.2/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.2.2.2
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.2.2.3
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.2.2
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/crypto-3.6.3/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/crypto-3.6.3.1
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/crypto-3.6.3
 
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/

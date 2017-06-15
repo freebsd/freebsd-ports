@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opennebula
-PORTVERSION=	4.14.2
+PORTVERSION=	5.2.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

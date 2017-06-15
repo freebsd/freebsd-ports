@@ -1,0 +1,4 @@
+NSQ is a realtime distributed messaging platform designed to operate at scale,
+handling billions of messages per day.
+
+WWW: https://nsq.io

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblogging
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/liblogging/
 
@@ -17,8 +17,7 @@ USES=		libtool pathfix pkgconfig
 CONFIGURE_ARGS+=	--disable-journal --enable-rfc3195
 
 post-install:
-.for l in rfc3195 stdlog
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblogging-${l}.so.0.0.0
-.endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblogging-rfc3195.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblogging-stdlog.so.0.1.0
 
 .include <bsd.port.mk>

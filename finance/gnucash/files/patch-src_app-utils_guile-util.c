@@ -1,6 +1,6 @@
---- src/app-utils/guile-util.c.orig	2014-01-19 00:44:17.000000000 +0100
-+++ src/app-utils/guile-util.c	2014-01-27 22:15:08.578610605 +0100
-@@ -1083,6 +1083,8 @@
+--- src/app-utils/guile-util.c.orig	2016-12-17 17:28:09 UTC
++++ src/app-utils/guile-util.c
+@@ -1083,6 +1083,8 @@ gnc_parse_time_to_time64 (const gchar *s
  
      g_return_val_if_fail(s && format, -1);
  

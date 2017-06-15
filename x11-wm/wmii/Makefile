@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libixp.so:devel/libixp
 RUN_DEPENDS=	dmenu:x11/dmenu
 
-CONFLICTS=	wmii-3.9*
+CONFLICTS=	wmii-devel-[0-9]*
 
 USE_XORG=	x11 xextproto xt xext
 
@@ -51,7 +51,7 @@ post-patch: .SILENT
 
 post-install:
 .for f in wmii wmii9menu wmiir
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
 .include <bsd.port.mk>

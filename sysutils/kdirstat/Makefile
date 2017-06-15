@@ -3,6 +3,7 @@
 
 PORTNAME=	kdirstat
 PORTVERSION=	2.7.8
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	https://bitbucket.org/jeromerobert/k4dirstat/get/
 DISTNAME=	k4dirstat-${PORTVERSION}
@@ -15,11 +16,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/jeromerobert-k4dirstat-3a4663ee20e7
 
-USES=		cmake cpe desktop-file-utils gettext-tools kde:4 tar:bzip2
+USES=		cmake cpe gettext-tools kde:4 tar:bzip2
 CPE_VENDOR=	kdirstat_project
 USE_KDE=	automoc4 kdelibs libkonq
-USE_QT4=	moc_build qmake_build rcc_build uic_build
-INSTALLS_ICONS=	yes
+USE_QT4=	corelib dbus gui network qt3support svg xml \
+		moc_build qmake_build rcc_build uic_build
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	poppler
-PORTVERSION=	0.46.0
-PORTREVISION?=	2
+PORTVERSION=	0.50.0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -17,7 +16,9 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfontconfig.so:x11-fonts/fontconfig \
 		liblcms2.so:graphics/lcms2 \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libnss3.so:security/nss \
+		libnspr4.so:devel/nspr
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
 USES=		cpe gmake jpeg libtool localbase pathfix pkgconfig tar:xz
@@ -30,7 +31,8 @@ CONFIGURE_ARGS=	--enable-zlib \
 		--disable-libnss \
 		--disable-gtk-test \
 		--without-html-dir \
-		--disable-static
+		--disable-static \
+		--enable-libnss
 
 INSTALL_TARGET=	install-strip
 
@@ -72,6 +74,8 @@ CONFIGURE_ARGS+=--disable-poppler-qt4
 CONFIGURE_ARGS+=--enable-poppler-qt5
 CONFIGURE_ENV+=	MOCQT5=${MOC}
 USE_QT5=	core gui widgets xml buildtools_build testlib_build
+# Qt from 5.7.0 on requires c++11.
+USE_CXXSTD=	c++11
 BUILD_WRKSRC=	${WRKSRC}/qt5
 INSTALL_WRKSRC=	${WRKSRC}/qt5
 .else
@@ -110,11 +114,9 @@ CONFIGURE_ARGS+=--disable-libcurl
 PLIST_SUB+=	CURL="@comment "
 .endif
 
-# stick with openjpeg1 for now due to regression in openjpeg2 (configure)
-# https://bugs.freedesktop.org/show_bug.cgi?id=58906 Comment #35
 .if ${PORT_OPTIONS:MOPENJPEG}
-CONFIGURE_ARGS+=--enable-libopenjpeg=openjpeg1
-LIB_DEPENDS+=	libopenjpeg.so:graphics/openjpeg15
+CONFIGURE_ARGS+=--enable-libopenjpeg=openjpeg2
+LIB_DEPENDS+=	libopenjp2.so:graphics/openjpeg
 .else
 CONFIGURE_ARGS+=--disable-libopenjpeg
 .endif

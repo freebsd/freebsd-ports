@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.88
+PORTVERSION=	2.90
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Powerful, extensible charting
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Color-Scheme>=0:graphics/p5-Color-Scheme \
 		p5-Moose>=0:devel/p5-Moose \
@@ -28,6 +29,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Pod>=1:devel/p5-Test-Pod
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

@@ -1,6 +1,6 @@
---- media/capture/BUILD.gn.orig	2016-08-03 22:02:20.000000000 +0300
-+++ media/capture/BUILD.gn	2016-10-10 16:10:21.736539000 +0300
-@@ -114,6 +114,16 @@
+--- media/capture/BUILD.gn.orig	2017-04-19 19:06:35 UTC
++++ media/capture/BUILD.gn
+@@ -153,6 +153,16 @@ component("capture_lib") {
      ]
    }
  
@@ -15,5 +15,5 @@
 +  }
 +
    if (is_win) {
-     public_deps += [ "//media/base/win" ]
+     deps += [ "//media/base/win" ]
      libs = [

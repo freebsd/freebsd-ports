@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	2.0.0b3
+PORTVERSION=	2.0.0b7
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -25,7 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 
 NO_ARCH=	yes
-USES=		gettext python tar:bzip2
+USES=		gettext python:2.7+ tar:bzip2
 USE_PYTHON=	autoplist distutils
 
 # list of manual pages to generate

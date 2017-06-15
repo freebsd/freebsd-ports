@@ -1,6 +1,6 @@
---- arpalert.c.orig	2008-04-01 03:36:42.000000000 +0900
-+++ arpalert.c	2009-10-21 19:45:53.000000000 +0900
-@@ -179,6 +179,12 @@
+--- arpalert.c.orig	2011-11-08 19:36:51 UTC
++++ arpalert.c
+@@ -179,6 +179,12 @@ int main(int argc, char **argv){
  		if(cur_timeout.tv_sec != -1){
  		   time_sous(&cur_timeout, &current_t, &timeout);
  
@@ -13,7 +13,7 @@
  			// prevent negative timeout
  			if(timeout.tv_sec < 0){
  				timeout.tv_usec = 0;
-@@ -188,6 +194,12 @@
+@@ -188,6 +194,12 @@ int main(int argc, char **argv){
  			timeout.tv_usec += 10000;
  			tmout = &timeout;
  
@@ -26,5 +26,3 @@
  		// if no timeout
  		} else {
  			tmout = NULL;
-
-

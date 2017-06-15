@@ -1,11 +1,12 @@
 --- Platoon.h.orig	2002-02-13 05:06:01 UTC
 +++ Platoon.h
-@@ -1,13 +1,11 @@
+@@ -1,13 +1,12 @@
  #ifndef Platoon_H
  #define Platoon_H
  #include "robouser.h"
 -#include <list.h>
 +#include <list>
++#include <cstring>
  
  /* FIXME: 'reasonable' upper bound on number of users CPU can handle */
  #define Platoon_MAXUSERS (1 << 16)
@@ -15,7 +16,7 @@
  /**----------------------------------------------------------------------
   Platoon of robousers.
  ----------------------------------------------------------------------*/
-@@ -150,7 +148,7 @@ private:
+@@ -150,7 +149,7 @@ private:
  	robouser_t *m_users[Platoon_MAXUSERS];
  
  	/** List of dead robousers waiting to be reaped */

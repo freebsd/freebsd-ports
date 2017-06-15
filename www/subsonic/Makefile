@@ -3,6 +3,7 @@
 
 PORTNAME=	subsonic
 PORTVERSION=	5.3
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-war
@@ -37,7 +38,7 @@ APE_DESC=	Depend on mac for Monkey's Audio transcoding #'
 OPTIONS_DEFAULT=	FFMPEG JETTY
 OPTIONS_SUB=	yes
 
-RUN_DEPENDS+=	${JAVAJARDIR}/servlet-api.jar:www/servlet-api \
+RUN_DEPENDS+=	${JAVALIBDIR}/servlet-api.jar:www/servlet-api \
 	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 TOMCAT8_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8
 TOMCAT8_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8
@@ -59,8 +60,6 @@ XMP_RUN_DEPENDS=	xmp:audio/xmp
 MPC_RUN_DEPENDS=	mpcdec:audio/musepack
 APE_RUN_DEPENDS=	mac:audio/mac
 
-.include <bsd.port.options.mk>
-
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -77,6 +76,8 @@ PLIST_SUB+=	SUBSONIC_HOME="${SUBSONIC_HOME}" \
 SUB_FILES=	message-common\
 	message-transcoding
 SUB_LIST=	SUBSONIC_HOME="${SUBSONIC_HOME}"
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOMCAT8}
 APPPKGMESSAGE=	pkg-message-tomcat
@@ -120,18 +121,18 @@ SUB_LIST+=	CONTAINERFLAGS="resin3_flags"
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAR} -xf ${WRKDIR}/${PORTNAME}.war -C ${WRKSRC}
+	@${EXTRACT_CMD} -d ${WRKSRC} ${WRKDIR}/${PORTNAME}.war
 
 pre-install:
 	@${RM} ${PLIST}
 	@${ECHO} "@owner ${USER}" >> ${PLIST}
 	@${ECHO} "@group ${GROUP}" >> ${PLIST}
 	@cd ${WRKSRC}; ${FIND} . -type f | cut -c2- \
-		| ${SED} 's|^|${WEBAPPDIR:S,${PREFIX}/,,}/${PORTDIRNAME}|' \
+		| ${SED} 's|^|${WEBAPPDIR:S,${PREFIX}/,,}/${PORTNAME}|' \
 		| ${SORT} >> ${PLIST}
 	@${CAT} ${PKGDIR}/pkg-plist-chunk >> ${PLIST}
 	@cd ${WRKSRC}; ${FIND} . -type d | cut -c2- \
-		| ${SED} 's|^|@dir ${WEBAPPDIR:S,${PREFIX}/,,}/${PORTDIRNAME}|' \
+		| ${SED} 's|^|@dir ${WEBAPPDIR:S,${PREFIX}/,,}/${PORTNAME}|' \
 		| ${SORT} -r >> ${PLIST}
 	@${RM} ${PKGMESSAGE}
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
@@ -142,9 +143,8 @@ pre-install:
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
 
 do-install:
-	cd ${WRKDIR} && ${COPYTREE_SHARE} ${PORTDIRNAME} ${STAGEDIR}${WEBAPPDIR}
+	cd ${WRKDIR} && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${WEBAPPDIR}
 
-post-stage:
 	${MKDIR} ${STAGEDIR}${SUBSONIC_HOME}
 	${MKDIR} ${STAGEDIR}${SUBSONIC_HOME}/transcode
 

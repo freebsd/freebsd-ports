@@ -35,8 +35,6 @@ JACK_CONFIGURE_ENABLE=	jack
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-BROKEN_FreeBSD_9=	Does not build on FreeBSD < 10.x
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \

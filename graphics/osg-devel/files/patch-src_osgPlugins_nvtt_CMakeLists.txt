@@ -1,0 +1,8 @@
+--- src/osgPlugins/nvtt/CMakeLists.txt.orig	2011-04-19 11:40:22 UTC
++++ src/osgPlugins/nvtt/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-INCLUDE_DIRECTORIES( ${NVTT_INCLUDE_DIR} )
++INCLUDE_DIRECTORIES(SYSTEM ${NVTT_INCLUDE_DIR})
+ 
+ 
+ SET(TARGET_SRC

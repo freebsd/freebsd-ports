@@ -27,10 +27,4 @@ OPTIONS_DEFINE=	XS
 XS_BUILD_DEPENDS=	p5-XML-LibXML>=1.85:textproc/p5-XML-LibXML
 XS_RUN_DEPENDS=		${XS_BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501905
-TEST_DEPENDS+=	p5-Scalar-List-Utils>=1.33:lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -2,7 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lkl
-PORTVERSION=	4.5.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.8-493
+PORTREVISION=	2
+DISTVERSIONSUFFIX=	-g4b77c32b1a88
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -19,12 +22,10 @@ USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	linux
-GH_TAGNAME=	e145a5a5bdf4b70753495b5ccd2439a354655341
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=No one has added other architecture ld formats yet
 
-IGNORE_FreeBSD_9=	requires FreeBSD 11 or newer
 IGNORE_FreeBSD_10=	requires FreeBSD 11 or newer
 
 WRKSRC_SUBDIR=	tools/lkl

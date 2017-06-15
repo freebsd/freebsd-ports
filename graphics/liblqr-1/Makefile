@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	liblqr-1
-DISTVERSION=	0.4.1
-PORTREVISION=	8
+PORTVERSION=	0.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Easy to use C/C++ seam carving library
+
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 USES=		tar:bzip2 gettext gmake pkgconfig libtool
 GNU_CONFIGURE=	yes

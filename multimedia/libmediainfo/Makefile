@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmediainfo
-PORTVERSION=	0.7.85
+PORTVERSION=	0.7.94
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	CURL MMS TINYXML2
 OPTIONS_DEFAULT=TINYXML2
 TINYXML2_DESC=	Use textproc/tinyxml2 instead of bundled one
 
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --enable-static
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
@@ -40,7 +40,6 @@ TINYXML2_LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 post-patch:
 	@${TOUCH} ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} \
-		-e 's|../../../../ZenLib/Project/GNU/Library/libzen-config|${LOCALBASE}/bin/libzen-config|' \
 		-e 's|lib/pkgconfig/|libdata/pkgconfig/|g' \
 		-e 's|-DMEDIAINFO_LIBMMS_FROMSOURCE||g' \
 		-e 's|with_libmms/pkgconfig/|with_libmms/libdata/pkgconfig/|' \
@@ -48,8 +47,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '1 s|bin/bash|bin/sh|' ${WRKSRC}/libmediainfo-config.in
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/libmediainfo-config ${STAGEDIR}${PREFIX}/bin/libmediainfo-config
 	${INSTALL_DATA} ${WRKSRC}/libmediainfo.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libmediainfo.pc
-	${RM} -fr ${STAGEDIR}${PREFIX}/include/MediaInfoDLL/
+	${RM} -r ${STAGEDIR}${PREFIX}/include/MediaInfoDLL/
 
 .include <bsd.port.mk>

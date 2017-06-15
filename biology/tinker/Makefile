@@ -3,6 +3,7 @@
 
 PORTNAME=	tinker
 PORTVERSION=	7.1.3
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 
@@ -41,11 +42,8 @@ FFLAGS+=	-mfancy-math-387 -malign-double
 .endif # i386
 .endif
 
-post-extract:
-	@${CHMOD} -R u+w ${WRKSRC}
-
 pre-build:
-	@${RM} -f ${BUILD_WRKSRC}/*.c
+	@${RM} ${BUILD_WRKSRC}/*.c
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

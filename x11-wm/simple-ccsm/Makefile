@@ -3,7 +3,7 @@
 
 PORTNAME=	simple-ccsm
 PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -12,10 +12,13 @@ COMMENT=	Python/GTK based settings manager for CompizConfig
 
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:x11-wm/compizconfig-python
 
-USES=		gettext gmake pkgconfig python:2 tar:bzip2
+USES=		gettext gmake pkgconfig python:2.7 tar:bzip2
 USE_GNOME=	intltool pygtk2
 
 INSTALLS_ICONS=	yes
+
+post-patch:
+	${REINPLACE_CMD} 's,@python ,@${PYTHON_CMD} ,' ${WRKSRC}/Makefile
 
 do-install:
 	@(cd ${WRKSRC}; ${PYTHON_CMD} setup.py install --root=${STAGEDIR} --prefix=${PREFIX})

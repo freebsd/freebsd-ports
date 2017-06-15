@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	polyorb-gpl-${YEAR}-src
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	CORBA, SOAP, Ada 95 Distributed System Annex middleware
 
 LICENSE=	GPLv3

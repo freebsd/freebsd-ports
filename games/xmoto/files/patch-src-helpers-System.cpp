@@ -1,8 +1,8 @@
---- src/helpers/System.cpp.orig	2011-10-12 00:18:14.000000000 +0400
-+++ src/helpers/System.cpp	2013-09-13 22:36:38.029229232 +0400
-@@ -25,6 +25,8 @@
- #include "VExcept.h"
- #include <sstream>
+--- src/helpers/System.cpp.orig	2014-03-29 06:14:14 UTC
++++ src/helpers/System.cpp
+@@ -31,6 +31,8 @@ Foundation, Inc., 59 Temple Place, Suite
+ #include <unistd.h>
+ #endif
  
 +#include <unistd.h> // for getpid()
 +

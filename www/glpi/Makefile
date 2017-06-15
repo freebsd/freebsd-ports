@@ -2,21 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	glpi
-PORTVERSION=	0.90.5
+PORTVERSION=	9.1.2
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/
 
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
 
 LICENSE=	GPLv2
 
-USES=		cpe gettext php
+USES=		cpe gettext php tar:tgz
 CPE_VENDOR=	glpi-project
-USE_PHP=	mysqli mbstring pcre session xml json ctype gd
+USE_PHP=	ctype fileinfo filter gd json mbstring mysqli \
+		pcre session simplexml wddx xml xmlrpc zlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_ARCH=	yes
 NO_BUILD=	yes
 GLPIDIR?=	www/${PORTNAME}
 

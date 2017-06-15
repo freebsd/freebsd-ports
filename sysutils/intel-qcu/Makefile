@@ -29,12 +29,8 @@ PLIST_FILES=	sbin/qcu
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1001000
-IGNORE=		is not supported on FreeBSD 10.0 and older
-.endif
-
-.if ${OSVERSION} >= 1100000
-BROKEN=		core dump on application startup
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
+BROKEN=		core dump on application startup on FreeBSD 11+
 .endif
 
 do-install:

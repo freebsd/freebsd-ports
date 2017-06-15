@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.5.23
+PORTVERSION=	3.5.24
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -46,9 +47,8 @@ SUB_FILES+=	pkg-install pkg-message
 
 OPTIONS_SUB=	yes
 OPTIONS_GROUP=	AUTH
-OPTIONS_RADIO=	SMB FW
-OPTIONS_GROUP_AUTH=AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SQL
-OPTIONS_RADIO_SMB=AUTH_SMB3 AUTH_SMB4
+OPTIONS_RADIO=	FW
+OPTIONS_GROUP_AUTH=AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB AUTH_SQL
 OPTIONS_RADIO_FW=TP_IPF TP_IPFW TP_PF
 OPTIONS_DEFINE=	ARP_ACL CACHE_DIGESTS DEBUG DELAY_POOLS ECAP ESI \
 		FOLLOW_XFF FS_AUFS FS_DISKD FS_ROCK HTCP ICAP ICMP IDENT IPV6 \
@@ -72,12 +72,8 @@ AUTH_SASL_CPPFLAGS=		-I${LOCALBASE}/include
 AUTH_SASL_LDFLAGS=		-L${LOCALBASE}/lib
 AUTH_SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 AUTH_SASL_VARS=			BASIC_AUTH+=SASL
-AUTH_SMB3_RUN_DEPENDS=		smbclient:net/samba36
-AUTH_SMB3_VARS=			BASIC_AUTH+=SMB EXTERNAL_ACL+=wbinfo_group
-AUTH_SMB3_PLIST_SUB=		AUTH_SMB=""
-AUTH_SMB4_RUN_DEPENDS=		smbclient:net/samba42
-AUTH_SMB4_VARS=			BASIC_AUTH+=SMB EXTERNAL_ACL+=wbinfo_group
-AUTH_SMB4_PLIST_SUB=		AUTH_SMB=""
+AUTH_SMB_USES=			samba:run
+AUTH_SMB_VARS=			BASIC_AUTH+=SMB EXTERNAL_ACL+=wbinfo_group
 AUTH_SQL_RUN_DEPENDS=		p5-DBI>=1.08:databases/p5-DBI
 AUTH_SQL_VARS=			EXTERNAL_ACL+=SQL_session
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
@@ -138,8 +134,6 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-heimdal-krb5 \
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
 GSSAPI_BASE_PLIST_SUB=		AUTH_KERB=""
-# Make it build on FreeBSD < 10
-GSSAPI_BASE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-build-8-9
 
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
@@ -157,8 +151,7 @@ AUTH_DESC=		Authentication helpers
 AUTH_LDAP_DESC=		Install LDAP authentication helpers
 AUTH_NIS_DESC=		Install NIS/YP authentication helpers
 AUTH_SASL_DESC=		Install SASL authentication helpers
-AUTH_SMB3_DESC=		Install SMB3 auth. helpers (req. net/samba36)
-AUTH_SMB4_DESC=		Install SMB4 auth. helpers (req. net/samba42)
+AUTH_SMB_DESC=		Samba authentication helpers
 AUTH_SQL_DESC=		Install SQL based auth
 CACHE_DIGESTS_DESC=	Use cache digests
 DEBUG_DESC=		Build with extended debugging support
@@ -176,7 +169,6 @@ IDENT_DESC=		Ident lookups (RFC 931)
 KQUEUE_DESC=		Kqueue(2) support
 LARGEFILE_DESC=		Support large (>2GB) cache and log files
 NETTLE_DESC=		Nettle MD5 algorithm support
-SMB_DESC=		Samba authentication helpers
 SNMP_DESC=		SNMP support
 SSL_CRTD_DESC=		Use ssl_crtd to handle SSL cert requests
 SSL_DESC=		SSL gatewaying support
@@ -238,10 +230,6 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 
 BASIC_AUTH+=	DB SMB_LM MSNT-multi-domain NCSA PAM POP3 RADIUS fake getpwnam
 EXTERNAL_ACL+=	file_userip time_quota unix_group
-
-.if !defined(AUTH_SMB)
-PLIST_SUB+=	AUTH_SMB="@comment "
-.endif
 
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MAUTH_NIS} && !defined(NO_NIS) && !defined(WITHOUT_NIS)

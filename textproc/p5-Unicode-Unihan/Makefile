@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Unihan Data Base 5.1.0
 
 USES=		perl5

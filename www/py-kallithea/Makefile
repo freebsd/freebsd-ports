@@ -3,7 +3,7 @@
 
 PORTNAME=	kallithea
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}waitress>=0.8.8:www/py-waitress \
 		${PYTHON_PKGNAMEPREFIX}beaker>=1.6.4:www/py-beaker \
 		${PYTHON_PKGNAMEPREFIX}webhelpers>=1.3:www/py-webhelpers \
 		${PYTHON_PKGNAMEPREFIX}formencode>=1.2.4:www/py-formencode \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>=0.7.10:databases/py-sqlalchemy07 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.7.10:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.9.0:textproc/py-mako \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.5:textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}whoosh>=2.4.0:textproc/py-whoosh \

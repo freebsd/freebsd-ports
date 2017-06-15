@@ -1,0 +1,8 @@
+bin/pod-minimumversion
+%%SITE_PERL%%/Pod/MinimumVersion.pm
+%%SITE_PERL%%/Pod/MinimumVersion/Parser.pm
+%%SITE_PERL%%/Pod/MinimumVersion/Report.pm
+%%PERL5_MAN1%%/pod-minimumversion.1.gz
+%%PERL5_MAN3%%/Pod::MinimumVersion.3.gz
+%%PERL5_MAN3%%/Pod::MinimumVersion::Parser.3.gz
+%%PERL5_MAN3%%/Pod::MinimumVersion::Report.3.gz

@@ -29,7 +29,7 @@ load_rc_config $name
 start_precmd=kapacitord_prestart
 pidfile="/var/run/${name}.pid"
 command=/usr/sbin/daemon
-command_args="-crP ${pidfile} %%PREFIX%%/bin/${name} ${kapacitord_flags} -config=${kapacitord_conf} 2>> /var/log/kapacitord.log"
+command_args="-f -crP ${pidfile} %%PREFIX%%/bin/${name} ${kapacitord_flags} -config=${kapacitord_conf} >> /var/log/kapacitord.log 2>&1"
 
 kapacitord_prestart() {
 # Have to empty rc_flags so they don't get passed to daemon(8)

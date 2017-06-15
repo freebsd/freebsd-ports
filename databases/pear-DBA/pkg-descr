@@ -2,4 +2,4 @@ PEAR::DBA is a wrapper for the php DBA functions. It includes a file-based
 emulator and provides a uniform, object-based interface for the
 Berkeley-style database systems.
 
-WWW: http://pear.php.net/package/DBA/
+WWW: https://pear.php.net/package/DBA

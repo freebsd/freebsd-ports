@@ -11,6 +11,7 @@ MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Build data structures from CGI request parameters
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 

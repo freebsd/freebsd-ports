@@ -1,0 +1,32 @@
+--- doc/Makefile.orig	2017-01-13 15:29:31 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)editor.1 $(OBJDIR)editor.html $(OBJDIR)filter.1 $(OBJDIR)filter.html
++TARGETS	= $(OBJDIR)editor.1 $(OBJDIR)filter.1
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -25,23 +25,17 @@ $(OBJDIR)filter.html: filter.css.xml fil
+ clean:
+ 	$(RM) -- $(editor.1_OBJS) $(editor.html_OBJS) $(filter.1_OBJS) $(filter.html_OBJS)
+ 	./docbook.sh -c -P "$(PREFIX)" -- "editor.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "editor.html"
+ 	./docbook.sh -c -P "$(PREFIX)" -- "filter.1"
+-	./docbook.sh -c -P "$(PREFIX)" -- "filter.html"
+ 
+ distclean: clean
+ 	$(RM) -- $(TARGETS)
+ 
+ install: $(TARGETS)
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)editor.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)editor.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)filter.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)filter.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "editor.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "editor.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "filter.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "filter.html"
+ 
+ .PHONY: all clean distclean install uninstall

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	menu-cache
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/${PORTNAME}/${PORTVERSION:R}/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfm-extra.so:x11/libfm-extra
 
-USES=		gmake pathfix pkgconfig libtool tar:xz
+USES=		gmake gettext-runtime libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

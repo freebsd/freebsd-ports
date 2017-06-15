@@ -3,6 +3,7 @@
 
 PORTNAME=	arirang
 PORTVERSION=	2.03
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://monkey.org/~pilot/arirang/
@@ -12,10 +13,11 @@ COMMENT=	Powerful webserver security scanner for network
 
 LICENSE=	BSD3CLAUSE
 
+LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT}
+
 USES=		ssl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_LIBRUBY=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 CFLAGS+=	-DRUBY_19

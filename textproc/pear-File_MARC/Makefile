@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File_MARC
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	textproc pear
 
 MAINTAINER=	dbaio@bsd.com.br

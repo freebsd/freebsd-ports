@@ -1,6 +1,20 @@
---- unix/vncserver.orig	2012-05-27 21:16:41.000000000 +0900
-+++ unix/vncserver	2012-05-27 21:17:13.000000000 +0900
-@@ -422,7 +422,7 @@
+--- unix/vncserver.orig	2016-09-08 10:31:18 UTC
++++ unix/vncserver
+@@ -240,7 +240,13 @@ unlink($desktopLog);
+ 
+ # Make an X server cookie and set up the Xauthority file
+ 
++# mcookie is a part of util-linux, usually only GNU/Linux systems have it.
+ $cookie = `mcookie`;
++# Alternative method for cookie. For non GNU/Linux operating systems.
++$cookie ||= `dd if=/dev/urandom bs=16 count=1 2>/dev/null| od -x -An | tr -d ' '`;
++if ($cookie eq '') {
++    die "couldn't generate magic cookie.\n";
++}
+ 
+ open(XAUTH, "|xauth -f $xauthorityFile source -");
+ print XAUTH "add $host:$displayNumber . $cookie\n";
+@@ -470,7 +476,7 @@ sub CheckDisplayNumber
  
      socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
      eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
@@ -9,7 +23,7 @@
  	close(S);
  	return 0;
      }
-@@ -430,7 +430,7 @@
+@@ -478,7 +484,7 @@ sub CheckDisplayNumber
  
      socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
      eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
@@ -18,3 +32,12 @@
  	close(S);
  	return 0;
      }
+@@ -778,7 +784,7 @@ sub SanityCheck
+     #
+ 
+  cmd:
+-    foreach $cmd ("uname","mcookie","xauth") {
++    foreach $cmd ("uname","xauth") {
+ 	for (split(/:/,$ENV{PATH})) {
+ 	    if (-x "$_/$cmd") {
+ 		next cmd;

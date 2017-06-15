@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apex
-PORTVERSION=	0.5.2
+PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
@@ -15,6 +15,7 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	BjRo
 
+MIX_REWRITE=	yes
 MIX_BUILD_NAME=	shared
 
 .include <bsd.port.mk>

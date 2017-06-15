@@ -1,0 +1,19 @@
+ParallelUserAgent (or PUA for short) is an extension of the existing libwww-5.x
+distribution. It allows you to connect to download several Web pages in
+_parallel_, without having to request each page one after the other.
+
+Instead of retrieving each single page using LWP::UserAgent::request or
+::simple_request methods, you first "register" all pages that you wish to
+download in parallel and then call PUA's "wait" method, which will then make all
+the necessary connections and download the pages.
+
+You can define callback routines which will be called whenever a connection is
+established, is cut off, new data comes in or a request finishes. The
+subroutines can be global for all requests you registered, or different for
+every single request.
+
+Callbacks for example allow you to print status updates as the responses come
+in, or even immediately post follow-up requests based on the responses, all
+within the same single "wait" cycle.
+
+WWW: http://search.cpan.org/dist/ParallelUserAgent/

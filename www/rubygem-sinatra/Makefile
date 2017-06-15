@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Classy web development framework in ruby
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-rack16>=1.5:www/rubygem-rack16 \
 		rubygem-rack-protection>=1.4:www/rubygem-rack-protection \

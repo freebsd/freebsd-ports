@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	opentsdb
-PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	databases java
 MASTER_SITES=	https://github.com/OpenTSDB/opentsdb/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	johannes@perceivon.net
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	OpenTSDB is the Scalable Timeseries Database
 
-LICENSE=	LGPL3
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \
@@ -23,6 +23,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 SHEBANG_FILES=	tools/check_tsd tools/opentsdb_restart.py \
 		tools/tsddrain.py
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		GNUPLOT
 OPTIONS_DEFAULT=	GNUPLOT

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	geminabox
-PORTVERSION=	0.13.0
+PORTVERSION=	0.13.5
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ COMMENT=	Sinatra based gem hosting app
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-builder32>=0:devel/rubygem-builder32 \
+RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-faraday>=0:www/rubygem-faraday \
 		rubygem-httpclient>=2.2.7:www/rubygem-httpclient \
 		rubygem-nesty>=0:devel/rubygem-nesty \

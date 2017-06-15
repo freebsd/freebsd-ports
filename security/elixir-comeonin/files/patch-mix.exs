@@ -1,10 +1,10 @@
---- mix.exs.orig	2015-12-17 02:11:33 UTC
+--- mix.exs.orig	2016-12-15 12:02:47 UTC
 +++ mix.exs
-@@ -120,7 +120,6 @@ defmodule Comeonin.Mixfile do
-       package: package,
-       source_url: "https://github.com/elixircnx/comeonin",
-       compilers: [:comeonin] ++ Mix.compilers,
--      deps: deps
-     ]
+@@ -16,7 +16,6 @@ defmodule Comeonin.Mixfile do
+      package: package(),
+      source_url: "https://github.com/riverrun/comeonin",
+      compilers: [:elixir_make] ++ Mix.compilers,
+-     deps: deps(),
+      dialyzer: [plt_file: ".dialyzer/local.plt"]]
    end
  

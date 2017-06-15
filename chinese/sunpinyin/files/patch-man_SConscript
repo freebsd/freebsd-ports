@@ -1,0 +1,11 @@
+--- man/SConscript.orig	2014-11-14 14:17:48 UTC
++++ man/SConscript
+@@ -1,7 +1,7 @@
+ import os
+ Import('env')
+ 
+-pod2man = Builder(action = 'pod2man < $SOURCE > $TARGET')
++pod2man = Builder(action = 'pod2man $SOURCE $TARGET')
+ env.Append(BUILDERS = {'Man': pod2man})
+ 
+ env.Man('mmseg.1', 'mmseg.pod')

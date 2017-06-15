@@ -5,9 +5,9 @@ PORTNAME=	PHP_Parser
 PORTVERSION=	0.2.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PHP Grammar Parser
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

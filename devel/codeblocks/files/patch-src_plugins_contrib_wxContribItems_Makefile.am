@@ -1,9 +1,0 @@
---- src/plugins/contrib/wxContribItems/Makefile.am.orig	2016-05-06 22:22:42 UTC
-+++ src/plugins/contrib/wxContribItems/Makefile.am
-@@ -9,5 +9,5 @@ SUBDIRS = wxchart wxFlatNotebook wxthing
- 
- EXTRA_DIST = $(srcdir)/*.cbp $(TREELIST_DIST)
- 
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = ${STAGEDIR}${PREFIX}/libdata/pkgconfig
- pkgconfig_DATA = wxsmith-contrib.pc cb_wxcontrib.pc cb_wxchartctrl.pc cb_wxcustombutton.pc cb_wxflatnotebook.pc cb_wximagepanel.pc cb_wxspeedbutton.pc cb_wxKWIC.pc $(TREELIST_PC) cb_wxled.pc cb_wxmathplot.pc

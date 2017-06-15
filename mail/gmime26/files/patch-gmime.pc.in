@@ -1,6 +1,6 @@
---- gmime.pc.in.orig	2013-05-22 08:39:38.000000000 +0000
-+++ gmime.pc.in	2013-05-22 08:39:54.000000000 +0000
-@@ -7,7 +7,7 @@
+--- gmime.pc.in.orig	2016-12-09 15:08:58 UTC
++++ gmime.pc.in
+@@ -7,7 +7,7 @@ includedir=@includedir@
  Name: GMime
  Version: @VERSION@
  Description: MIME parser and utility library

@@ -1,4 +1,4 @@
 Usbutils contains the lsusb utility for displaying information about
 USB buses in the system and the devices connected to them.
 
-WWW: http://sourceforge.net/projects/linux-usb/
+WWW: https://github.com/gregkh/usbutils

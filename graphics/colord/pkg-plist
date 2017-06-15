@@ -11,6 +11,7 @@ include/colord-1/colord/cd-buffer.h
 include/colord-1/colord/cd-client-sync.h
 include/colord-1/colord/cd-client.h
 include/colord-1/colord/cd-color.h
+include/colord-1/colord/cd-compat-edid.h
 include/colord-1/colord/cd-device-sync.h
 include/colord-1/colord/cd-device.h
 include/colord-1/colord/cd-dom.h
@@ -42,6 +43,8 @@ lib/libcolord.a
 lib/libcolord.so
 lib/libcolord.so.2
 lib/libcolord.so.2.0.4
+lib/libcolordcompat.a
+lib/libcolordcompat.so
 lib/libcolordprivate.a
 lib/libcolordprivate.so
 lib/libcolordprivate.so.2

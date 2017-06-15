@@ -1,2 +1,5 @@
+TIMESTAMP = 1482450416
 SHA256 (ssldump-0.9b3.tar.gz) = 6422c16718d27c270bbcfcc1272c4f9bd3c0799c351f1d6dd54fdc162afdab1e
 SIZE (ssldump-0.9b3.tar.gz) = 137435
+SHA256 (2-ssldump-tls12.diff) = a6cca3012eb5b7ebead5d56e3184e9c355817a6fa033287d11a836eff3f01d2b
+SIZE (2-ssldump-tls12.diff) = 15265

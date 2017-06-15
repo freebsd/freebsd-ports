@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc.orig	2016-05-11 19:02:14 UTC
+--- chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc.orig	2017-04-19 19:06:29 UTC
 +++ chrome/browser/extensions/api/image_writer_private/image_writer_private_api.cc
-@@ -166,10 +166,12 @@ ImageWriterPrivateListRemovableStorageDe
+@@ -167,10 +167,12 @@ ImageWriterPrivateListRemovableStorageDe
  }
  
  bool ImageWriterPrivateListRemovableStorageDevicesFunction::RunAsync() {

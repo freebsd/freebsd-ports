@@ -1,0 +1,25 @@
+--- lib/base/Makefile.in.orig	2017-01-03 19:44:15 UTC
++++ lib/base/Makefile.in
+@@ -222,11 +222,11 @@ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ am__mv = mv -f
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(INCLUDE_libintl)
+ LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
+ 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+-	$(AM_CFLAGS) $(CFLAGS)
++	$(AM_CFLAGS) $(CFLAGS) $(INCLUDE_libintl)
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+@@ -705,7 +705,7 @@ heim_verbose_0 = @echo "  GEN    "$@;
+ IMPLEMENT_TLS = $(am__append_1)
+ lib_LTLIBRARIES = libheimbase.la
+ libheimbase_la_LDFLAGS = -version-info 1:0:0 $(am__append_3)
+-libheimbase_la_LIBADD = $(PTHREAD_LIBADD)
++libheimbase_la_LIBADD = $(PTHREAD_LIBADD) $(LIB_libintl)
+ include_HEADERS = heimbase.h
+ dist_libheimbase_la_SOURCES = \
+ 	array.c			\

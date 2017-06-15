@@ -1,6 +1,6 @@
---- examples/Makefile.orig	2009-05-09 20:41:30.000000000 +0400
-+++ examples/Makefile	2009-05-12 20:52:42.000000000 +0400
-@@ -63,17 +63,17 @@
+--- examples/Makefile.orig	2009-05-09 16:41:30 UTC
++++ examples/Makefile
+@@ -63,17 +63,17 @@ all: $(tt1out) $(tt2out)
  
  # linking
  $(tt1out) : $(tt1obj)

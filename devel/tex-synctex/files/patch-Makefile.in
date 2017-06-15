@@ -29,12 +29,3 @@
  proglib = lib/lib.a
  EXTRA_LIBRARIES = libmf.a libmputil.a libmplib.a libkanji.a \
  	libukanji.a libpdftex.a libluasocket.a libluajitsocket.a \
-@@ -3557,7 +3557,7 @@
- 
- nodist_libsynctex_a_SOURCES = $(libsynctex_la_SOURCES)
- syncincludedir = ${includedir}/synctex
--pkgconfigdir = ${libdir}/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- @SYNCTEX_TRUE@syncinclude_HEADERS = \
- @SYNCTEX_TRUE@	synctexdir/synctex_parser.h \
- @SYNCTEX_TRUE@	synctexdir/synctex_parser_utils.h

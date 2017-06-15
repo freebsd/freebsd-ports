@@ -34,8 +34,6 @@ DEBUG_QMAKE_ON=	CONFIG+=debug
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
-		-e 's|lupdate|lupdate-qt4|' \
-		-e 's|lrelease|lrelease-qt4|' \
 		${WRKSRC}/${PORTNAME}.pro
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
 		${WRKSRC}/src/notifications_dbus.cpp

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.9
+PORTVERSION=	2.5.10
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libpcre.so:devel/pcre
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].*
+CONFLICTS_INSTALL=	cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].* \
+			cyrus-imapd3*
 
 USE_RC_SUBR=	imapd
 
@@ -195,7 +196,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-patch-DRAC-on:
-	@${RM} -rf ${WRKSRC}/autom4te.cache
+	@${RM} -r ${WRKSRC}/autom4te.cache
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

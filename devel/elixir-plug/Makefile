@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plug
-PORTVERSION=	1.1.6
+PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	elixir-
@@ -14,6 +14,9 @@ LICENSE=	APACHE20
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
+
+MIX_BUILD_DEPS=	misc/elixir-mime
+MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 MIX_REWRITE=	yes
 
 .include <bsd.port.mk>

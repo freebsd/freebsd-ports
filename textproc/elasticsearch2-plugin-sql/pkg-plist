@@ -447,5 +447,6 @@ lib/elasticsearch/plugins/sql/_site/vendor/jquery/jquery-2.1.1.min.js
 lib/elasticsearch/plugins/sql/_site/vendor/jquery/jquery-2.1.4.min.js
 lib/elasticsearch/plugins/sql/deleteByQuery.jar
 lib/elasticsearch/plugins/sql/druid.jar
+lib/elasticsearch/plugins/sql/elasticsearch-sql-%%VERSION%%-sources.jar
 lib/elasticsearch/plugins/sql/elasticsearch-sql-%%VERSION%%.jar
 lib/elasticsearch/plugins/sql/plugin-descriptor.properties

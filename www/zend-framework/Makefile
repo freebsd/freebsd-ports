@@ -3,7 +3,7 @@
 
 PORTNAME=	ZendFramework
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 
@@ -11,9 +11,11 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 CONFLICTS=	ZendFramework-1.*
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
@@ -21,7 +23,7 @@ USES=		gettext tar:tgz
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS MYSQL MYSQLI DBLIB PGSQL ODBC SQLITE REQPHP OPTPHP
+OPTIONS_DEFINE=	DOCS MYSQL MYSQLI DBLIB PGSQL ODBC SQLITE REQPHP OPTPHP MEMCACHE
 OPTIONS_DEFAULT=REQPHP
 
 MYSQL_DESC=	Enable MySQL PDO support
@@ -32,6 +34,7 @@ ODBC_DESC=	Enable ODBC PDO support
 SQLITE_DESC=	Enable SQLite v3 PDO support
 REQPHP_DESC=	Install required PHP dependencies
 OPTPHP_DESC=	Install optional PHP dependencies
+MEMCACHE_DESC=	Enable memcache support
 
 PORTDOCS=	CHANGELOG.md INSTALL.md README-GIT.md CONTRIBUTING.md README.md
 
@@ -41,17 +44,15 @@ PORTDOCS=	CHANGELOG.md INSTALL.md README-GIT.md CONTRIBUTING.md README.md
 # if chosen by the user.
 .if ${PORT_OPTIONS:MREQPHP}
 USE_PHP+=	ctype curl dom gd hash iconv mbstring ldap mcrypt \
-		opcache pcre pdo session simplexml soap wddx xml zlib
-.if ${PHP_VER} == 52
-USE_PHP+=	sqlite
-.else
-USE_PHP+=	sqlite3
+		opcache pcre pdo session simplexml soap sqlite3 wddx xml zlib
 .endif
-RUN_DEPENDS+=	pecl-memcache>=0:databases/pecl-memcache \
-		pecl-memcached>=0:databases/pecl-memcached
-.endif
+
 .if ${PORT_OPTIONS:MOPTPHP}
 USE_PHP+=	bcmath bitset json posix
+.endif
+
+.if ${PORT_OPTIONS:MMEMCACHE}
+USE_PHP+=	memcache memcached
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}

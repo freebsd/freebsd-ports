@@ -1,6 +1,6 @@
---- src/pthread_debug.h.orig	2010-11-12 20:19:20.000000000 +0800
-+++ src/pthread_debug.h	2011-02-26 03:30:00.000000000 +0800
-@@ -15,8 +15,10 @@
+--- src/pthread_debug.h.orig	2016-04-18 08:41:42 UTC
++++ src/pthread_debug.h
+@@ -15,8 +15,10 @@ void Pthread_cond_signal(const char *cal
  void Pthread_cond_wait(const char *caller, pthread_cond_t *cond, pthread_mutex_t *mutex);
  
  void print_pthread_attr(const char *caller, pthread_attr_t *attr);

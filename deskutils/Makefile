@@ -4,6 +4,7 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
     SUBDIR += affiche
+    SUBDIR += alarm-clock-applet
     SUBDIR += anamnesis
     SUBDIR += appwrapper
     SUBDIR += aspostit
@@ -71,7 +72,6 @@
     SUBDIR += gnome-screenshot
     SUBDIR += gnome-search-tool
     SUBDIR += gnome-shell-extension-audio-output-switcher
-    SUBDIR += gnome-shell-extension-backslide
     SUBDIR += gnome-shell-extension-coverflow
     SUBDIR += gnome-shell-extension-dashtodock
     SUBDIR += gnome-shell-extension-filesmenu
@@ -94,6 +94,7 @@
     SUBDIR += gnote
     SUBDIR += gnotime
     SUBDIR += gnustep-wrapper
+    SUBDIR += go-for-it
     SUBDIR += gourmet
     SUBDIR += griffith
     SUBDIR += growl-for-linux
@@ -122,7 +123,7 @@
     SUBDIR += jjclient
     SUBDIR += jlj
     SUBDIR += kcharselect
-    SUBDIR += kchmviewer-kde4
+    SUBDIR += kchmviewer
     SUBDIR += kdeconnect
     SUBDIR += kdepim4
     SUBDIR += kdepim4-runtime
@@ -164,6 +165,7 @@
     SUBDIR += osynctool
     SUBDIR += owncloudclient
     SUBDIR += p5-Data-ICal
+    SUBDIR += p5-Data-ICal-DateTime
     SUBDIR += p5-Goo
     SUBDIR += p5-ZConf-BGSet
     SUBDIR += p5-ZConf-Runner
@@ -261,7 +263,6 @@
     SUBDIR += xchm
     SUBDIR += xfce4-generic-slider
     SUBDIR += xfce4-notes-plugin
-    SUBDIR += xfce4-notification-daemon
     SUBDIR += xfce4-notifyd
     SUBDIR += xfce4-tumbler
     SUBDIR += xfce4-volumed

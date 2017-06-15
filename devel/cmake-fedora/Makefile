@@ -17,7 +17,7 @@ NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-printf .*$$|-exec basename "{}" ";"|' \
+	@${REINPLACE_CMD} -e 's|-printf .*$$|-exec basename {} ";"|' \
 		${WRKSRC}/ManageTranslation.cmake
 
 do-install:

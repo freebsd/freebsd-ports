@@ -3,6 +3,7 @@
 
 PORTNAME=	liblas
 PORTVERSION=	1.8.1
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	wen@FreeBSD.org
@@ -15,12 +16,17 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 CONFLICTS=	liblas12-1.2*
 
-USES=		cmake libtool
+PORTSCOUT=	skipv:progress-20071229
+
+USES=		cmake compiler:c++11-lang libtool
 LDFLAGS+=	-lpthread
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libLAS
 GH_PROJECT=	${GH_ACCOUNT}
+
+BROKEN_aarch64=		Fails to compile: file liblas/detail/endian.hpp needs to be set up for your CPU type
+BROKEN_armv6=		Fails to compile: file liblas/detail/endian.hpp needs to be set up for your CPU type
 
 .include <bsd.port.mk>

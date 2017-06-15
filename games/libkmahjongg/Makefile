@@ -3,9 +3,7 @@
 PORTNAME=	libkmahjongg
 PORTVERSION=	${KDE4_VERSION}
 PORTREVISION=	1
-CATEGORIES=	games kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	games kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for the Mahjongg Solitaire for KDE 4

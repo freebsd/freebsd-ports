@@ -74,10 +74,10 @@ COMPAT4X_MASTER_SITES=	LOCAL/kris/${COMPAT4X_ARCH}
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${CAT} ${DISTFILES} | ${TAR} -xzf - -C ${WRKDIR} )
+	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${CAT} ${DISTFILES} | ${TAR} -xzf - -C ${WRKDIR} usr/lib/compat )
 .if !defined(FORCE_VULNERABLE_OPENSSL)
 .for lib in ${OPENSSL_LIBS}
-	@${RM} -f ${WRKSRC}/${lib}
+	@${RM} ${WRKSRC}/${lib}
 .endfor
 .endif
 

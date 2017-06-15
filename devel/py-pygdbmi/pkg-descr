@@ -1,0 +1,15 @@
+Parse gdb machine interface string output and
+return structured data types (Python dicts) that
+are JSON serializable.
+Useful for writing the backend to a gdb frontend.
+For example, gdbgui uses pygdbmi on the backend.
+
+Also implements a class to control gdb, GdbController,
+which allows programmatic control of gdb using Python,
+which is also useful if creating a front end.
+
+To get machine interface output from gdb,
+run gdb with the --interpreter=mi2 flag.
+
+
+WWW: https://github.com/cs01/pygdbmi

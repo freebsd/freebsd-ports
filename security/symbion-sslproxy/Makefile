@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSL proxy for securing insecure connections
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake ssl tar:tgz
 CFLAGS+=	-I${OPENSSLINC}
@@ -21,6 +22,8 @@ SUB_FILES=	pkg-message
 PORTDOCS=	README
 PLIST_FILES=	sbin/ssl_proxy
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC =|CC ?=| ; \
@@ -29,8 +32,10 @@ post-patch:
 		 s|^LDFLAGS =|#LDFLAGS =|' ${WRKSRC}/Makefile.global
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ssl_proxy ${STAGEDIR}${PREFIX}/sbin)
+	${INSTALL_PROGRAM} ${WRKSRC}/ssl_proxy ${STAGEDIR}${PREFIX}/sbin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

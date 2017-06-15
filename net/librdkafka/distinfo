@@ -1,3 +1,3 @@
-TIMESTAMP = 1466039785
-SHA256 (edenhill-librdkafka-0.9.1_GH0.tar.gz) = 5ad57e0c9a4ec8121e19f13f05bacc41556489dfe8f46ff509af567fdee98d82
-SIZE (edenhill-librdkafka-0.9.1_GH0.tar.gz) = 478341
+TIMESTAMP = 1488318786
+SHA256 (edenhill-librdkafka-v0.9.4_GH0.tar.gz) = 5007ad20a6753f709803e72c5f2c09483dcbce0f16b94b17cf677fb3e6045907
+SIZE (edenhill-librdkafka-v0.9.4_GH0.tar.gz) = 696078

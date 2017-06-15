@@ -51,6 +51,7 @@ share/argyll/ref/CMP_DT_003.cht
 share/argyll/ref/CMP_Digital_Target-4.cht
 share/argyll/ref/CMP_Digital_Target-4.cie
 share/argyll/ref/CMP_Digital_Target-4.ti2
+share/argyll/ref/CMP_Digital_Target-7.cht
 share/argyll/ref/ClayRGB1998.icm
 share/argyll/ref/ColorChecker.cht
 share/argyll/ref/ColorChecker.cie
@@ -101,6 +102,8 @@ share/argyll/ref/SMPTE_RP145_NTSC.icm
 share/argyll/ref/SOtele.sp
 share/argyll/ref/SpyderChecker.cht
 share/argyll/ref/SpyderChecker.cie
+share/argyll/ref/SpyderChecker24.cht
+share/argyll/ref/SpyderChecker24.cie
 share/argyll/ref/Trulux.sp
 share/argyll/ref/TruluxPlus.sp
 share/argyll/ref/ccxx.ti1

@@ -12,8 +12,7 @@ COMMENT=	Framework for performance analysis
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
-	${PYTHON_PKGNAMEPREFIX}pytz>=2013.8:devel/py-pytz \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=2013.8,1:devel/py-pytz \
 	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2 \
 	${PYTHON_PKGNAMEPREFIX}luminol>0:math/py-luminol \
 	bash:shells/bash \

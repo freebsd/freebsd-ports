@@ -1,4 +1,5 @@
 bin/ansiweather
+man/man1/ansiweather.1.gz
 %%DATADIR%%/ansiweather.plugin.zsh
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README.md

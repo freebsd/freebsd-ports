@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		cryptlib
-PORTVERSION=		3.4.1
+PORTVERSION=		3.4.3
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/
 DISTNAME=		cl${PORTVERSION:S/.//g}
@@ -21,6 +21,7 @@ MAKEFILE=		makefile
 ALL_TARGET=		default FreeBSD shared
 USE_LDCONFIG=		yes
 MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=		-DUSE_PKCS11
 
 PLIST_FILES=		include/cryptlib.h \
 			lib/libcl.a lib/libcl.so \

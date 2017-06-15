@@ -3,6 +3,7 @@
 
 PORTNAME=	posixtestsuite
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/posixtest/posixtest/${PORTNAME}-${PORTVERSION}
 
@@ -63,7 +64,7 @@ help:	pre-everything
 
 aclean:	all
 	@${ECHO} "Cleaning tests tree..."
-	-@(cd ${WRKSRC} && ${RM} -f ${RUN_RESULT} && ${MAKE_CMD} clean)
+	-@(cd ${WRKSRC} && ${RM} ${RUN_RESULT} && ${MAKE_CMD} clean)
 
 rerun:	all
 .if defined(WITH_THRLIB)

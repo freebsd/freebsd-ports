@@ -4,4 +4,4 @@ stores PHP data structures in a compact binary form. Savings are
 significant when using memcached or similar memory based storages for
 serialized data.
 
-WWW: http://pecl.php.net/package/igbinary
+WWW: https://pecl.php.net/package/igbinary

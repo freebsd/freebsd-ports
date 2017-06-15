@@ -3,7 +3,7 @@
 
 PORTNAME=	pcsxr
 PORTVERSION=	1.9.94.r87113
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac

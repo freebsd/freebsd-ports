@@ -6,4 +6,4 @@ Both compressed and non-compressed archives/volumes are supported but
 full media seek support (aka. indexing) is only available for
 non-compressed plaintext archives.
 
-WWW: http://code.google.com/p/rar2fs/
+WWW: http://hasse69.github.io/rar2fs/

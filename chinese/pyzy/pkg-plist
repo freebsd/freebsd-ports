@@ -5,7 +5,6 @@ lib/libpyzy-1.0.so
 lib/libpyzy-1.0.so.0
 lib/libpyzy-1.0.so.0.100.0
 libdata/pkgconfig/pyzy-1.0.pc
-%%ANDROID_DB%%%%DATADIR%%/db/android.db
-%%OPENPHRASE_DB%%%%DATADIR%%/db/open-phrase.db
+%%DATADIR%%/db/android.db
 %%DATADIR%%/db/create_index.sql
 %%DATADIR%%/phrases.txt

@@ -3,7 +3,7 @@
 
 PORTNAME=	gettext
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${COMMIT}/src/lib/lua/gettext/ \
 		http://BSDforge.com/projects/source/devel/lua-gettext/

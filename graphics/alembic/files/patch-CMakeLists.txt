@@ -1,67 +1,21 @@
---- CMakeLists.txt.orig	2015-01-15 18:28:49 UTC
+--- CMakeLists.txt.orig	2017-03-24 00:18:21 UTC
 +++ CMakeLists.txt
-@@ -78,7 +78,7 @@ IF( "${CMAKE_SYSTEM_NAME}" MATCHES "Darw
+@@ -111,7 +111,7 @@ IF ("${CMAKE_SYSTEM_NAME}" MATCHES "Darw
  ENDIF()
  
- SET( LINUX FALSE )
--IF( "${CMAKE_SYSTEM_NAME}" MATCHES "Linux" )
-+IF( "${CMAKE_SYSTEM_NAME}" MATCHES "Linux|FreeBSD" )
-   SET( LINUX TRUE )
+ SET(LINUX FALSE)
+-IF ("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
++IF ("${CMAKE_SYSTEM_NAME}" MATCHES "Linux|FreeBSD")
+     SET(LINUX TRUE)
  ENDIF()
  
-@@ -90,9 +90,6 @@ IF ( "${CMAKE_BUILD_TYPE}" MATCHES "Debu
-   ENDIF()
- ELSEIF ( "${CMAKE_BUILD_TYPE}" MATCHES "Release" )
-   ADD_DEFINITIONS( -DNDEBUG=1 -UDEBUG )
--  IF ( NOT WINDOWS )
--    ADD_DEFINITIONS( -O3 )
--  ENDIF()
+@@ -140,9 +140,6 @@ IF ("${CMAKE_BUILD_TYPE}" MATCHES "Debug
+     ENDIF()
+ ELSEIF ("${CMAKE_BUILD_TYPE}" MATCHES "Release")
+     ADD_DEFINITIONS(-DNDEBUG=1 -UDEBUG)
+-    IF (NOT WINDOWS)
+-        ADD_DEFINITIONS(-O3)
+-    ENDIF()
  ENDIF()
  
- IF ( NOT WINDOWS )
-@@ -130,10 +127,6 @@ endif ()
- IF ( DEFINED ENV{ALEMBIC_INSTALL_PREFIX} )
-   SET( CMAKE_INSTALL_PREFIX
-     $ENV{ALEMBIC_INSTALL_PREFIX}/alembic-${VERSION} )
--ELSE ()
--  SET( ORIGINAL_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX} )
--  SET( CMAKE_INSTALL_PREFIX
--    ${ORIGINAL_INSTALL_PREFIX}/alembic-${VERSION} )
- ENDIF ()
- 
- # Tell me what my install location would be
-@@ -192,6 +185,7 @@ FIND_PACKAGE(ZLIB REQUIRED)
- #-******************************************************************************
- FIND_PACKAGE( OpenGL )
- FIND_PACKAGE( GLUT )
-+FIND_PACKAGE( GLEW )
- 
- IF ( ${WINDOWS} )
-   # Do a windows OpenGL thing, whatever that may be
-@@ -203,7 +197,7 @@ ELSEIF( ${DARWIN} )
-   # Do a darwin OpenGL thing.
-   SET( ALEMBIC_GL_LIBS ${GLUT_LIBRARY} "-framework OpenGL" )
- ELSE()
--  SET( ALEMBIC_GL_LIBS GLEW ${GLUT_LIBRARY} ${OPENGL_LIBRARIES} )
-+  SET( ALEMBIC_GL_LIBS ${GLEW_LIBRARY} ${GLUT_LIBRARY} ${OPENGL_LIBRARIES} )
- ENDIF()
- 
- MESSAGE( STATUS "OpenGL Libraries: ${ALEMBIC_GL_LIBS}" )
-@@ -250,9 +244,6 @@ ELSE()
-   INCLUDE_DIRECTORIES( ${ALEMBIC_PYILMBASE_INCLUDE_DIRECTORY} )
- ENDIF ()
- 
--# Include Python stuff
--INCLUDE("./build/AlembicPython.cmake")
--
- # Include HDF5 stuff
- INCLUDE("./build/AlembicHDF5.cmake")
- if ( ALEMBIC_HDF5_FOUND )
-@@ -310,6 +301,7 @@ IF(DEFINED USE_PYALEMBIC AND NOT USE_PYA
-     MESSAGE(STATUS "Skipping Alembic Python bindings")
- ELSE()
-     MESSAGE(STATUS "About to include Python cmake files")
-+    INCLUDE("./build/AlembicPython.cmake")
-     ADD_SUBDIRECTORY( python )
- ENDIF()
- 
+ IF (NOT ${WINDOWS})

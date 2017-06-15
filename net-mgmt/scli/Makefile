@@ -3,7 +3,7 @@
 
 PORTNAME=	scli
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/local/${PORTNAME}/ \
 		http://matt.peterson.org/FreeBSD/ports/
@@ -14,7 +14,7 @@ COMMENT=	A collection of SNMP command line management tools
 LIB_DEPENDS=	libgsnmp.so:net-mgmt/gsnmp
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig readline
+USES=		gmake ncurses pkgconfig readline
 USE_GNOME=	libxml2
 
 INFO=		scli

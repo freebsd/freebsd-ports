@@ -401,8 +401,8 @@
 %%QT_INCDIR%%/QtXmlPatterns/qxmlschema.h
 %%QT_INCDIR%%/QtXmlPatterns/qxmlschemavalidator.h
 %%QT_INCDIR%%/QtXmlPatterns/qxmlserializer.h
-%%QT_LIBDIR%%/cmake/Qt5XmlPatterns/Qt5XmlPatternsConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5XmlPatterns/Qt5XmlPatternsConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5XmlPatterns/Qt5XmlPatternsConfig.cmake
+%%QT_CMAKEDIR%%/Qt5XmlPatterns/Qt5XmlPatternsConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5XmlPatterns.prl
 %%QT_LIBDIR%%/libQt5XmlPatterns.so
 %%QT_LIBDIR%%/libQt5XmlPatterns.so.5

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	selenium
-PORTVERSION=	2.53.1
+PORTVERSION=	3.3.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,10 @@ OPTIONS_DEFINE=	FIREFOX
 FIREFOX_DESC=	Install Firefox
 
 FIREFOX_USES=	gecko:firefox
+
+# Don't install binary Firefox extension
+post-extract:
+	@${RM} ${WRKSRC}/py/selenium/webdriver/firefox/amd64/x_ignore_nofocus.so
+	@${RM} ${WRKSRC}/py/selenium/webdriver/firefox/x86/x_ignore_nofocus.so
 
 .include <bsd.port.mk>

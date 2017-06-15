@@ -1,0 +1,4 @@
+Gocode is a helper tool which is intended to be integrated with your source
+code editor, like vim, neovim and emacs.
+
+WWW: https://github.com/nsf/gocode

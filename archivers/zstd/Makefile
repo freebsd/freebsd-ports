@@ -2,26 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	zstd
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Zstandard - Fast real-time compression algorithm
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
-USE_GITHUB=	yes
-GH_ACCOUNT=	facebook
-
-PLIST_SUB=	LIBVER=${PORTVERSION}
 ALL_TARGET=	default
-MAKE_ARGS=	MANDIR="${PREFIX}/man/man1" \
-		LIBDIR="${PREFIX}/lib" \
-		INCLUDEDIR="${PREFIX}/include"
+MAKE_ARGS=	INCLUDEDIR="${PREFIX}/include" LIBDIR="${PREFIX}/lib" MANDIR="${PREFIX}/man/man1"
+USES=		gmake
 
-BROKEN_FreeBSD_9=	missing builtin bswap32 and bswap64
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+GH_ACCOUNT=	facebook
+USE_GITHUB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|INSTALL_|BSD_&|' ${WRKSRC}/lib/Makefile ${WRKSRC}/programs/Makefile
 
 .include <bsd.port.mk>

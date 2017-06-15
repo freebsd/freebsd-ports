@@ -1,0 +1,10 @@
+--- console/Makefile.in.orig	2016-08-30 14:20:12 UTC
++++ console/Makefile.in
+@@ -464,6 +464,7 @@ COMMON_CFLAGS = \
+ @BUILD_CONSOLE_TRUE@linphonec_CFLAGS = $(COMMON_CFLAGS) $(CONSOLE_FLAGS) $(BELLESIP_CFLAGS)
+ @BUILD_CONSOLE_TRUE@linphonec_LDADD = $(top_builddir)/coreapi/liblinphone.la \
+ @BUILD_CONSOLE_TRUE@		$(READLINE_LIBS)  \
++@BUILD_CONSOLE_TRUE@		$(MEDIASTREAMER_LIBS) -lbctoolbox \
+ @BUILD_CONSOLE_TRUE@		$(SQLITE3_LIBS) \
+ @BUILD_CONSOLE_TRUE@		$(X11_LIBS) \
+ @BUILD_CONSOLE_TRUE@		$(BELLESIP_LIBS) \

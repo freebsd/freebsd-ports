@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_gssapi
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -22,8 +22,8 @@ CONFIGURE_ARGS+=	KRB5_CONFIG=${KRB5CONFIG}
 CONFIGURE_ARGS+=	OPENSSL_CFLAGS=-I${OPENSSLINC}
 CONFIGURE_ARGS+=	OPENSSL_LIBS=-lcrypto
 
-PLIST_FILES=	@sample\ %%APACHEETCDIR%%/modules.d/%%APMOD_FILE%% \
-		%%APACHEMODDIR%%/mod_auth_gssapi.so
+PLIST_FILES=	@sample\ ${APACHEETCDIR}/modules.d/%%APMOD_FILE%% \
+		${APACHEMODDIR}/mod_auth_gssapi.so
 
 SUB_FILES=	${APMOD_FILE}
 APMOD_FILE=	240_${PORTNAME}.conf.sample
@@ -31,9 +31,7 @@ PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000 && ${SSL_DEFAULT} == base
-IGNORE=		mod_auth_gssapi requires OpenSSL 1.0.0+
-.elif ${SSL_DEFAULT:Mlibressl*}
+.if ${SSL_DEFAULT:Mlibressl*}
 IGNORE=		mod_auth_gssapi currently only supports OpenSSL
 .endif
 

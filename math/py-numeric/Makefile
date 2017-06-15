@@ -13,7 +13,7 @@ DISTFILES=	Numeric-${PORTVERSION}${EXTRACT_SUFX}:source \
 EXTRACT_ONLY=	Numeric-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Numeric Extension to Python
+COMMENT=	Numeric Extension to Python
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -26,8 +26,6 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.pre.mk>
 
 post-extract:
 	@${CP} ${DISTDIR}/numpy.pdf ${WRKDIR}
@@ -43,13 +41,17 @@ post-extract:
 		${WRKSRC}/setup.py
 
 post-install:
-	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Numeric -name "*.so" -exec \
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Numeric -name "*.so" -exec \
 		${STRIP_CMD} {} \;
-	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/NumTut
-	${INSTALL_DATA} ${WRKSRC}/Demo/NumTut/* ${STAGEDIR}${EXAMPLESDIR}/NumTut
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/numpy.pdf ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/NumTut
+	${INSTALL_DATA} ${WRKSRC}/Demo/NumTut/* ${STAGEDIR}${EXAMPLESDIR}/NumTut
+
+.include <bsd.port.mk>

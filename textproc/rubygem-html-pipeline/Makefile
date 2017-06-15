@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	html-pipeline
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

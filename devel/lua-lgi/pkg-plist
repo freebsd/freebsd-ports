@@ -12,6 +12,7 @@
 %%LUA_MODSHAREDIR%%/lgi/override/GLib-Bytes.lua
 %%LUA_MODSHAREDIR%%/lgi/override/GLib-Error.lua
 %%LUA_MODSHAREDIR%%/lgi/override/GLib-Markup.lua
+%%LUA_MODSHAREDIR%%/lgi/override/GLib-Source.lua
 %%LUA_MODSHAREDIR%%/lgi/override/GLib-Timer.lua
 %%LUA_MODSHAREDIR%%/lgi/override/GLib-Variant.lua
 %%LUA_MODSHAREDIR%%/lgi/override/GLib.lua

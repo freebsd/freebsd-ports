@@ -1,22 +1,22 @@
---- sdl/sdlport.c.orig	2013-12-29 14:05:10 UTC
+Store settings under ~/.openbor instead of current directory
+
+--- sdl/sdlport.c.orig	2015-04-18 21:21:56 UTC
 +++ sdl/sdlport.c
-@@ -6,6 +6,11 @@
-  * Copyright (c) 2004 - 2014 OpenBOR Team
-  */
- 
-+#include <errno.h>
-+#include <unistd.h>
-+#include <err.h>
-+#include <sys/stat.h>
-+
- #include "sdlport.h"
- #include "packfile.h"
+@@ -11,6 +11,8 @@
  #include "ram.h"
-@@ -92,6 +97,15 @@ int main(int argc, char *argv[])
+ #include "video.h"
+ #include "menu.h"
++#include <sys/stat.h>
++#include <err.h>
+ #include <time.h>
+ #include <unistd.h>
+ 
+@@ -103,6 +105,16 @@ int main(int argc, char *argv[])
  #ifdef ANDROID
  	dirExists(rootDir, 1);
      chdir(rootDir);
 +#else
++	if(!getenv("OPENBOR_USE_CURDIR"))
 +	{
 +		if (chdir(getenv("HOME")) != 0)
 +			err(1, "cannot cd to $HOME");

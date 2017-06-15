@@ -1,15 +1,10 @@
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-bananapi
+MAINTAINER=	imp@FreeBSD.org
+MASTERDIR=	${.CURDIR}/../u-boot-master
 
-COMMENT=	Cross-build U-Boot loader for Banana Pi
-
-LICENSE=	GPLv2
-
-# Local overrides
-MASTERDIR=	${.CURDIR}/../u-boot-cubieboard
-DESCR=		${.CURDIR}/pkg-descr
 MODEL=		bananapi
-CONF_TARGET=	Bananapi_defconfig
+BOARD_CONFIG=	Bananapi_defconfig
+FAMILY=		allwinner
 
 .include "${MASTERDIR}/Makefile"

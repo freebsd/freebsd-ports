@@ -3,6 +3,7 @@
 
 PORTNAME=	cdcl
 PORTVERSION=	5.4.8
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/ \
 		http://dennou-h.gfd-dennou.org/arch/dcl/ \

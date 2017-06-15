@@ -9,7 +9,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half-Life game master server daemon
 
-USES=	dos2unix
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		dos2unix
 DOS2UNIX_GLOB=	*.cpp
 GNU_CONFIGURE=	yes
 
@@ -20,9 +23,11 @@ pre-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} -e 's|CXXFLAGS = -O2 -Wall||'
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.list ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/woncomm.lst ${STAGEDIR}${EXAMPLESDIR}

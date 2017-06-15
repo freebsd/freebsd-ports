@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake pathfix
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include
 
@@ -29,8 +29,7 @@ post-extract:
 	@${RM} ${WRKSRC}/doc/index.html~
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
-		-e 's|DATADIR =.*|DATADIR = ${DOCSDIR}|' \
+	@${REINPLACE_CMD} -e 's|DATADIR =.*|DATADIR = ${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

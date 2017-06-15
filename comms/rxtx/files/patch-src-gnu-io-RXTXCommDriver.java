@@ -1,5 +1,5 @@
---- src/gnu/io/RXTXCommDriver.java.orig	2008-11-14 00:44:01.000000000 +0000
-+++ src/gnu/io/RXTXCommDriver.java	2015-05-11 16:51:34.000000000 +0100
+--- src/gnu/io/RXTXCommDriver.java.orig	2008-11-14 00:44:01 UTC
++++ src/gnu/io/RXTXCommDriver.java
 @@ -56,10 +56,15 @@
  |   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  |   All trademarks belong to their respective owners.
@@ -20,7 +20,7 @@
  
  package gnu.io;
  
-@@ -69,132 +74,196 @@
+@@ -69,132 +74,196 @@ import java.io.*;
  import java.util.StringTokenizer;
  
  /**
@@ -73,12 +73,12 @@
 -		} catch ( Error UnsatisfiedLinkError )
 +		
 +		try 
-+		{
+ 		{
+-			// for rxtx prior to 2.1.7
 +			LibVersion = RXTXVersion.nativeGetVersion();
 +		} 
 +		catch ( Error UnsatisfiedLinkError )
- 		{
--			// for rxtx prior to 2.1.7
++		{
 +			
 +			/**
 +			*	for rxtx prior to 2.1.7
@@ -278,7 +278,7 @@
  		for( p[0] =97 ;p[0] < 123; p[0]++ )
  		{
  			if (testRead(PortName.concat(new String(p)),PortType))
-@@ -206,7 +275,11 @@
+@@ -206,7 +275,11 @@ public class RXTXCommDriver implements C
  				);
  			}
  		}
@@ -291,7 +291,7 @@
  		for( p[0] =48 ;p[0] <= 57; p[0]++ )
  		{
  			if (testRead(PortName.concat(new String(p)),PortType))
-@@ -218,73 +291,109 @@
+@@ -218,73 +291,109 @@ public class RXTXCommDriver implements C
  				);
  			}
  		}
@@ -450,7 +450,7 @@
  					if(osName.toLowerCase().indexOf("windows") == -1 )
  					{
  						PortName = deviceDirectory + C;
-@@ -293,85 +402,136 @@
+@@ -293,85 +402,136 @@ public class RXTXCommDriver implements C
  					{
  						PortName = C;
  					}
@@ -633,7 +633,7 @@
  		while (tok.hasMoreElements())
  		{
  			String PortName = tok.nextToken();
-@@ -380,94 +540,186 @@
+@@ -380,94 +540,186 @@ public class RXTXCommDriver implements C
  				CommPortIdentifier.addPortName(PortName,
  					PortType, this);
  		}
@@ -880,7 +880,7 @@
  			CandidateDeviceNames=temp;
  		}
  		else if(osName.toLowerCase().indexOf("windows") != -1 )
-@@ -482,329 +734,338 @@
+@@ -482,329 +734,338 @@ public class RXTXCommDriver implements C
  				temp[i + 255] = "LPT" + i;
  			}
  			CandidateDeviceNames=temp;
@@ -930,11 +930,38 @@
 +			*
 +			*	The uucp lock files should not cause problems.
  			*/
--
++			
++			/**
++			*	File dev = new File( "/dev/term" );
++			*	String deva[] = dev.list();
++			*	dev = new File( "/dev/cua" );
++			*	String devb[] = dev.list();
++			*	String[] temp = new String[ deva.length + devb.length ];
++			*	for(int j =0;j<deva.length;j++)
++			*		deva[j] = "term/" + deva[j];
++			*	for(int j =0;j<devb.length;j++)
++			*		devb[j] = "cua/" + devb[j];
++			*	System.arraycopy( deva, 0, temp, 0, deva.length );
++			*	System.arraycopy( devb, 0, temp,
++			*			deva.length, devb.length );
++			*	if( debug ) {
++			*		for( int j = 0; j< temp.length;j++)
++			*			System.out.println( temp[j] );
++			*	}
++			*	CandidateDeviceNames=temp;
++			**/
+ 
 -				String term[] = new String[2];
 -				int l = 0;
 -				File dev = null;
--
++			/**
++			*	ok..  Look the the dirctories representing the port
++			*	kernel driver interface.
++			*
++			*	If there are entries there are possibly ports we can
++			*	use and need to enumerate.
++			**/
+ 
 -				dev = new File( "/dev/term" );
 -				if( dev.list().length > 0 )
 -					term[l++] ="term/";
@@ -958,35 +985,6 @@
 -			{
 -				if (debug)
 -					System.out.println("RXTXCommDriver:registerScannedPorts() no Device files to check ");
-+			
-+			/**
-+			*	File dev = new File( "/dev/term" );
-+			*	String deva[] = dev.list();
-+			*	dev = new File( "/dev/cua" );
-+			*	String devb[] = dev.list();
-+			*	String[] temp = new String[ deva.length + devb.length ];
-+			*	for(int j =0;j<deva.length;j++)
-+			*		deva[j] = "term/" + deva[j];
-+			*	for(int j =0;j<devb.length;j++)
-+			*		devb[j] = "cua/" + devb[j];
-+			*	System.arraycopy( deva, 0, temp, 0, deva.length );
-+			*	System.arraycopy( devb, 0, temp,
-+			*			deva.length, devb.length );
-+			*	if( debug ) {
-+			*		for( int j = 0; j< temp.length;j++)
-+			*			System.out.println( temp[j] );
-+			*	}
-+			*	CandidateDeviceNames=temp;
-+			**/
-+
-+			/**
-+			*	ok..  Look the the dirctories representing the port
-+			*	kernel driver interface.
-+			*
-+			*	If there are entries there are possibly ports we can
-+			*	use and need to enumerate.
-+			**/
-+
 +			String term[] = new String[2];
 +			int l = 0;
 +			File dev = null;
@@ -1523,7 +1521,7 @@
  					};
  					CandidatePortPrefixes=temp;
  				}
-@@ -827,37 +1088,51 @@
+@@ -827,37 +1088,51 @@ public class RXTXCommDriver implements C
  					String [] temp={};
  					CandidatePortPrefixes=temp;
  				}
@@ -1595,7 +1593,7 @@
  						return new RXTXPort( PortName );
  					}
  					else
-@@ -868,18 +1143,30 @@
+@@ -868,18 +1143,30 @@ public class RXTXCommDriver implements C
  					return new LPRPort( PortName );
  				default:
  					if (debug)

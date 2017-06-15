@@ -14,10 +14,9 @@ COMMENT=	Python OpenSSL Wrappers
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python ssl
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	POW
-USE_OPENSSL=	yes
 
 PORTDOCS=	POW.pdf
 

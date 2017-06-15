@@ -58,6 +58,7 @@
     SUBDIR += libaccounts-glib
     SUBDIR += libaccounts-qt5
     SUBDIR += libjreen
+    SUBDIR += libmesode
     SUBDIR += libnice
     SUBDIR += libnice-gst010
     SUBDIR += libnice-gst1
@@ -102,6 +103,7 @@
     SUBDIR += papyon
     SUBDIR += pebrot
     SUBDIR += pecl-stomp
+    SUBDIR += pecl-stomp2
     SUBDIR += pidgin
     SUBDIR += pidgin-birthday-reminder
     SUBDIR += pidgin-bs
@@ -138,6 +140,7 @@
     SUBDIR += py-slackclient
     SUBDIR += py-sleekxmpp
     SUBDIR += py-telepot
+    SUBDIR += py-toxcore-c
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
@@ -147,6 +150,7 @@
     SUBDIR += qwit
     SUBDIR += qwit-devel
     SUBDIR += qxmpp
+    SUBDIR += qxmpp-qt5
     SUBDIR += ramblercontacts
     SUBDIR += ricochet
     SUBDIR += ring-daemon
@@ -186,7 +190,6 @@
     SUBDIR += tkabber-plugins
     SUBDIR += tox
     SUBDIR += toxic
-    SUBDIR += ttytter
     SUBDIR += turpial
     SUBDIR += twirssi
     SUBDIR += twitmail

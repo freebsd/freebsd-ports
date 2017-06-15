@@ -1,6 +1,0 @@
-Polkit-Qt is a library that lets developers use the Polkit API through
-a nice Qt-styled API. It is mainly a wrapper around QAction and
-QAbstractButton that lets you integrate those two component easily
-with Polkit.
-
-WWW: http://projects.kde.org/projects/kdesupport/polkit-qt-1

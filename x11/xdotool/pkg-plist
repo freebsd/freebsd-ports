@@ -1,5 +1,0 @@
-bin/xdotool
-include/xdo.h
-lib/libxdo.so
-lib/libxdo.so.3
-man/man1/xdotool.1.gz

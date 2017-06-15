@@ -1,0 +1,13 @@
+usr/bin/cairo-sphinx
+usr/lib/libcairo-script-interpreter.so.2
+usr/lib/libcairo-script-interpreter.so.2.11400.2
+usr/lib/libcairo.so.2
+usr/lib/libcairo.so.2.11400.2
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BIBLIOGRAPHY
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING-LGPL-2.1
+%%PORTDOCS%%%%DOCSDIR%%/COPYING-MPL-1.1
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README

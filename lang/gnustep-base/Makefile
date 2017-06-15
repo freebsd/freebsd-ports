@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep-base
 PORTVERSION=	1.24.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	GNUSTEP/core
 
@@ -52,7 +52,7 @@ ICU_CONFIGURE_OFF=	--disable-icu
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ENABLE=tls
 
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_OFF=	--disable-openssl
 
 .include <bsd.port.options.mk>

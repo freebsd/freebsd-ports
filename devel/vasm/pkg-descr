@@ -7,13 +7,13 @@ Currently the following CPUs are officially supported by vasm:
     M680x0 family (including M6888x, M68851 and CPU32)
     ColdFire family (all models of V2, V3, V4, V4e)
     80x86 family (IA32 8/16/32 bit, using MIT-syntax)
-    PowerPC family (POWER, 40x, 6xx, 7xx, 7xxx, 860, e300)
+    PowerPC family (POWER, 40x, 440, 460, 6xx, 7xx, 860, Book-E, e300 and e500)
     ARM (architecture ARMv1 to ARMv4, including THUMB mode)
     Jaguar RISC (GPU and DSP instruction sets)
     Z80 family (Z80, 8080, GBZ80, 64180, RCM2/3/4k)
     C16x/ST10
     6502 family
-    6800 family (6800, 68HC11)
+    6800 family (6800, 6801, 6803, 68HC11)
 
 These syntax flavours are supported:
 

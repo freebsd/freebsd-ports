@@ -3,7 +3,7 @@
 
 PORTNAME=	gaddr
 PORTVERSION=	1.1.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.wirelesscouch.net/software/gaddr/ \
 		http://bsd-geek.de/FreeBSD/distfiles/

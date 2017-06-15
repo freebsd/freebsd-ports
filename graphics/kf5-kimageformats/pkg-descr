@@ -1,0 +1,5 @@
+This framework provides additional image format plugins for QtGui.
+Read-only support for dds, xcf, exr, psd and ras
+Read-write suport for eps, jp2, pcx, rgb, rgba, sgi, bw, pic, tga, xv
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kimageformats/html/index.html

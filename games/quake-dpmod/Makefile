@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpmod
-PORTVERSION=	20071120
-PORTREVISION=	2
+PORTVERSION=	20130301
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/twilight/darkplaces/files/
 PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
@@ -22,9 +21,7 @@ DATADIR=	${Q1DIR}/${PORTNAME}
 
 post-extract:
 # Remove CVS directories
-	@${FIND} ${WRKSRC} -type d -name CVS -print0 | ${XARGS} -0 ${RM} -rf
-# Fix permissions
-	@${CHMOD} go-w ${WRKSRC}/dpmod/progs.dat
+	@${FIND} ${WRKSRC} -type d -name CVS -print0 | ${XARGS} -0 ${RM} -r
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

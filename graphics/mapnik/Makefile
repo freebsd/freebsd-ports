@@ -4,7 +4,7 @@
 PORTNAME=	mapnik
 PORTVERSION=	3.0.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	8
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://mapnik.s3.amazonaws.com/dist/v${PORTVERSION}/
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz
 
 BROKEN_powerpc=	does not install: runs out of virtual memory
-BROKEN_FreeBSD_9=	does not build: lack of c++11 support
 
 USES=		compiler:c++11-lib pkgconfig python scons tar:bzip2
 USE_GNOME=	libxml2
@@ -78,7 +77,7 @@ CAIRO_MAKE_ARGS_OFF=	CAIRO=False
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
 .endif
 

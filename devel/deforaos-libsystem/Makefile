@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libsystem
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.defora.org/os/download/download/4392/
+MASTER_SITES=	http://www.defora.org/os/download/download/4446/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	libSystem-${PORTVERSION}
 
@@ -14,9 +14,8 @@ COMMENT=	DeforaOS core system library
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		pkgconfig ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ARGS+=	PREFIX=${PREFIX}
@@ -28,8 +27,6 @@ OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 	gtkdoc-check:textproc/gtk-doc
-
-BROKEN_FreeBSD_9=	This port works only on FreeBSD 10 and newer
 
 post-patch:
 	${REINPLACE_CMD} 's|/lib/|/libdata/|g' \

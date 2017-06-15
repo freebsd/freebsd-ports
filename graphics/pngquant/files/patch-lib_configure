@@ -1,11 +1,12 @@
-Index: lib/configure
+--- lib/configure.orig	2017-03-02 11:48:03 UTC
++++ lib/configure
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  
  CONFIG="config.mk"
  PREFIX="/usr/local"
-@@ -80,7 +80,7 @@
+@@ -79,7 +79,7 @@ done
  
  # If someone runs sudo make install as very first command, and configure later,
  # $CONFIG cannot be overwritten, and must be deleted before continuing.
@@ -14,20 +15,22 @@ Index: lib/configure
      echo "Cannot overwrite file $CONFIG! Please delete it."
      exit 1
  fi
-@@ -135,10 +135,8 @@
- 
+@@ -138,12 +138,8 @@ fi
  # SSE
  if [ "$SSE" = 'auto' ]; then
--    if [[ "$(uname -m)" =~ (amd|x86_)64 ||
--          "$(grep -E -m1 "^flags" /proc/cpuinfo)" =~ "sse" ]]; then
--        SSE=1
+     SSE=0
+-    if type uname > /dev/null; then
+-        if [[ "$(uname -m)" =~ "amd64" || "$(uname -m)" =~ "x86_64" ||
+-              "$(grep -E -m1 "^flags" /proc/cpuinfo)" =~ "sse" ]]; then
+-            SSE=1
+-        fi
 -    fi
 +    echo $(uname -m) | grep -E -q '(amd|x86_)64' && SSE=1
 +    grep -E -m1 -q '^flags.*sse' /proc/cpuinfo 2>/dev/null && SSE=1
  fi
  
  if [ "$SSE" -eq 1 ]; then
-@@ -161,9 +159,8 @@
+@@ -166,9 +162,8 @@ if [ -n "$OPENMP" ]; then
      else
          OPENMPFLAGS="-fopenmp"
      fi

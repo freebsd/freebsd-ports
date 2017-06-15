@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zentest
-PORTVERSION=	4.11.0
+PORTVERSION=	4.11.1
 PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
@@ -13,9 +13,7 @@ COMMENT=	Ruby Unit Testing Utility
 
 LICENSE=	MIT
 
-GEM_NAME=	${DISTNAME}
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

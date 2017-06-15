@@ -23,7 +23,7 @@ CPE_VENDOR=	gnu
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-[2-57-9]*
+CONFLICTS=	cfengine-[12-57-9]*
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
@@ -57,6 +57,7 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	--with-postgresql=${LOCALBASE}
 
 MYSQL_USES=		mysql
+MYSQL_BROKEN=		configure: error: MySQL client library exports symbols (EVP_CIPHER_CTX_init) clashing with OpenSSL.
 MYSQL_CONFIGURE_WITH=	--with-mysql=${LOCALBASE}
 MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql

@@ -40,7 +40,7 @@ post-patch:
 		-e "s/%%EBNETD_GROUP%%/${EBNETD_GROUP}/" \
 		${WRKSRC}/ebnetd.conf.sample.in
 
-post-stage:
+post-install:
 	${MKDIR} -m 0755 ${STAGEDIR}${RUNDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

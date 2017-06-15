@@ -21,8 +21,7 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}
 
-OPTIONS_DEFINE=	DOCS MYSQL_JDBC PGSQL_JDBC ORACLE_JDBC
-ORACLE_JDBC_RUN_DEPENDS=${JAVALIBDIR}/ojdbc-10.2.0.5.jar:databases/jdbc-oracle10g
+OPTIONS_DEFINE=	DOCS MYSQL_JDBC PGSQL_JDBC
 MYSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
 PGSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc
 

@@ -14,4 +14,4 @@ supposed to do debugging on production servers, but its main goal
 is to help developers to locate bottlenecks in realtime and direct
 their attention to the code that really needs it.
 
-WWW:    http://pinba.org/
+WWW: http://pinba.org/

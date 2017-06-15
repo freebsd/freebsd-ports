@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix2
-PORTVERSION=	2.0.18
+PORTVERSION=	2.0.20
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -90,7 +90,7 @@ OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
 MYSQL_CONFIGURE_WITH=	mysql
-MYSQL_USE=	MYSQL=yes
+MYSQL_USES=	mysql
 
 PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES=	pgsql
@@ -149,7 +149,7 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -Ee 's|(@sysconfdir@/(\$$\([A-Z]*_CONFIG\)))" ([|][|] cp "../../conf/\$$\([A-Z]*_CONFIG\)" "\$$\(DESTDIR\)@sysconfdir@)"|\1.sample" \3/\2.sample"|;' \
 		${WRKSRC}/src/zabbix_${ZABBIX_BUILD}/Makefile.in
-	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} -f {} +
+	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} {} +
 
 post-install:
 .if ${PORT_OPTIONS:MJAVAGW}

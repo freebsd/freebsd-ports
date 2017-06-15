@@ -25,7 +25,7 @@
     SUBDIR += kmousetool
     SUBDIR += kmouth
     SUBDIR += linux-c6-atk
-    SUBDIR += linux-f10-atk
+    SUBDIR += linux-c7-atk
     SUBDIR += mousetweaks
     SUBDIR += orca
     SUBDIR += py-atspi

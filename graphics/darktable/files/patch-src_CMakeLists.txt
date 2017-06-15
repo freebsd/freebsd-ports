@@ -1,6 +1,15 @@
---- src/CMakeLists.txt.orig	2016-02-02 11:36:06 UTC
+--- src/CMakeLists.txt.orig	2017-01-27 11:03:43 UTC
 +++ src/CMakeLists.txt
-@@ -415,8 +415,9 @@ if(NOT CUSTOM_CFLAGS)
+@@ -257,7 +257,7 @@ if(USE_OPENJPEG)
+     add_definitions("-DHAVE_OPENJPEG")
+     list(APPEND SOURCES "common/imageio_j2k.c")
+ 
+-    include_directories(SYSTEM ${OpenJPEG_INCLUDE_DIRS})
++    include_directories(BEFORE SYSTEM ${OpenJPEG_INCLUDE_DIRS})
+     list(APPEND LIBS ${OpenJPEG_LIBRARIES})
+   endif(OpenJPEG_FOUND)
+ endif(USE_OPENJPEG)
+@@ -418,8 +418,9 @@ if(NOT CUSTOM_CFLAGS)
    #-g MUST be set for ALL builds, or there will be no support for them when bugs happen
    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${MARCH} ${DT_REQ_INSTRUCTIONS} -g")
    set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2")
@@ -8,10 +17,10 @@
 +  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3")
    if(CMAKE_COMPILER_IS_GNUCC)
 +    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -ffast-math -fno-finite-math-only")
-     execute_process(COMMAND ${CMAKE_C_COMPILER} -dumpversion OUTPUT_VARIABLE GCC_VERSION)
- 
-     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfpmath=sse")
-@@ -428,8 +429,9 @@ if(NOT CUSTOM_CFLAGS)
+     if(BUILD_SSE2_CODEPATHS)
+       set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfpmath=sse")
+     endif()
+@@ -432,8 +433,9 @@ if(NOT CUSTOM_CFLAGS)
  
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${MARCH} ${DT_REQ_INSTRUCTIONS} -g")
    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2")
@@ -19,23 +28,6 @@
 +  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
    if(CMAKE_COMPILER_IS_GNUCXX)
 +    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -ffast-math -fno-finite-math-only")
-     execute_process(COMMAND ${CMAKE_CXX_COMPILER} -dumpversion OUTPUT_VARIABLE GCC_VERSION)
- 
-     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfpmath=sse")
-@@ -677,14 +679,14 @@ endif(CMAKE_C_COMPILER_ID STREQUAL "GCC"
- #
- if(NOT ${Xsltproc_BIN} STREQUAL "Xsltproc_BIN-NOTFOUND")
-   add_custom_command(
--    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../tools/generate_prefs.xsl ${CMAKE_CURRENT_SOURCE_DIR}/../data/darktableconfig.dtd ${CMAKE_CURRENT_BINARY_DIR}/../data/darktableconfig.xml
-+    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../tools/generate_prefs.xsl ${CMAKE_CURRENT_BINARY_DIR}/../data/darktableconfig.dtd ${CMAKE_CURRENT_BINARY_DIR}/../data/darktableconfig.xml
-     OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/preferences_gen.h
-     COMMAND ${Xsltproc_BIN} --stringparam HAVE_OPENCL ${HAVE_OPENCL} ${CMAKE_CURRENT_SOURCE_DIR}/../tools/generate_prefs.xsl ${CMAKE_CURRENT_BINARY_DIR}/../data/darktableconfig.xml > ${CMAKE_CURRENT_BINARY_DIR}/preferences_gen.h
-   )
- else(NOT ${Xsltproc_BIN} STREQUAL "Xsltproc_BIN-NOTFOUND")
-   if(NOT ${Saxon_BIN} STREQUAL "Saxon_BIN-NOTFOUND")
-     add_custom_command(
--      DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../tools/generate_prefs.xsl ${CMAKE_CURRENT_SOURCE_DIR}/../data/darktableconfig.dtd ${CMAKE_CURRENT_BINARY_DIR}/../data/darktableconfig.xml
-+      DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../tools/generate_prefs.xsl ${CMAKE_CURRENT_BINARY_DIR}/../data/darktableconfig.dtd ${CMAKE_CURRENT_BINARY_DIR}/../data/darktableconfig.xml
-       OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/preferences_gen.h
-       COMMAND ${Saxon_BIN} ${CMAKE_CURRENT_BINARY_DIR}/../data/darktableconfig.xml ${CMAKE_CURRENT_SOURCE_DIR}/../tools/generate_prefs.xsl HAVE_OPENCL=${HAVE_OPENCL} > ${CMAKE_CURRENT_BINARY_DIR}/preferences_gen.h
-     )
+     if(BUILD_SSE2_CODEPATHS)
+       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfpmath=sse")
+     endif()

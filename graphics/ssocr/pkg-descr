@@ -1,0 +1,7 @@
+Seven Segment Optical Character Recognition or ssocr for short is a program to
+recognize digits of a seven segment display. An image of one row of digits is
+used for input and the recognized number is written to the standard output. The
+program runs on GNU/Linux, Mac OS X (using Homebrew to install Imlib2), and even
+on Windows (using Cygwin). It uses Imlib2 to access image data.
+
+WWW: https://www.unix-ag.uni-kl.de/~auerswal/ssocr/

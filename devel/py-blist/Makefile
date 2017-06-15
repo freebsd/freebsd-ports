@@ -17,9 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
-
 do-test:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
 

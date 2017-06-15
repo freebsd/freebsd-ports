@@ -1,0 +1,11 @@
+--- omniauth-cas3.gemspec.orig	2017-01-03 18:40:32 UTC
++++ omniauth-cas3.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<omniauth>.freeze, ["~> 1.2"])
+-      s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.6.6"])
++      s.add_runtime_dependency(%q<nokogiri>.freeze, [">= 1.6.6"])
+       s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.3"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
+       s.add_development_dependency(%q<webmock>.freeze, ["~> 1.19.0"])

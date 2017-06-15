@@ -1,0 +1,7 @@
+
+phpliteadmin has been installed into:
+
+    %%WWWDIR%%
+
+Please copy phpliteadmin.config.sample.php to phpliteadmin.config.php and
+ edit as you needs.

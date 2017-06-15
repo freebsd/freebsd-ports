@@ -1,0 +1,8 @@
+s6-rc is a service manager for s6-based systems, i.e. a suite of programs
+that can start and stop services, both long-running daemons and one-time
+initialization scripts, in the proper order according to a dependency tree.
+
+It ensures that long-running daemons are supervised by the s6 infrastructure,
+and that one-time scripts are also run in a controlled environment.
+
+WWW: http://www.skarnet.org/software/s6-rc/

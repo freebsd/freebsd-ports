@@ -1,24 +1,25 @@
 # $FreeBSD$
 
-PORTNAME=	otter
-PORTVERSION=	0.9.10
+PORTNAME=	otter-browser
+PORTVERSION=	0.9.12
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	www
-# Avoid pkgname conflict with misc/otter
-PKGNAMESUFFIX=	-browser
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Browser based on Qt 5
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
+
+USES=		cmake:outsource compiler:c++11-lib desktop-file-utils
 USE_QT5=	concurrent core dbus gui multimedia network printsupport \
-		script sql sql-sqlite3 webkit widgets xmlpatterns \
+		qml script sql sql-sqlite3 webkit widgets xmlpatterns \
 		buildtools_build qmake_build
-USES=		cmake:outsource desktop-file-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OtterBrowser
-GH_PROJECT=	otter-browser
-
-CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man
 
 .include <bsd.port.mk>

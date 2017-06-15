@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	plan9port
-PORTVERSION=	20140306
-PORTREVISION=	5
+PORTVERSION=	20170210
 CATEGORIES=	devel plan9
-MASTER_SITES=	https://plan9port.googlecode.com/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of many Plan 9 programs to Unix-like operating systems
@@ -15,10 +13,15 @@ LICENSE_NAME=	Lucent Public License Version 1.02
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		Unfetchable (google code has gone away)
+GH_ACCOUNT=	9fans
+GH_TAGNAME=	9f34853
+USE_GITHUB=	yes
 
 BROKEN_ia64=	does not install: cleanname not found
 BROKEN_sparc64=	does not install: cleanname not found
+
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 RUN_DEPENDS=	rc:shells/rc
 
@@ -58,7 +61,7 @@ EMPTY_DIRS=	plan9/mail/queue \
 		plan9/bin/lpbin
 
 post-extract:
-	${MV} ${WRKDIR}/plan9port ${WRKDIR}/plan9
+	${MV} ${WRKDIR}/plan9port-${GH_TAGNAME} ${WRKDIR}/plan9
 
 post-patch:
 	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
@@ -79,8 +82,8 @@ do-build:
 
 # Dynamic PLIST sucks, but it's over 8K lines, which sucks even more :(
 post-build:
-	${RM} -rf `${FIND} ${WRKSRC}/dist -type f ! -regex ".*\.png"`
-	${RM} -rf `${FIND} ${WRKSRC} -name .hg -o -name .hgignore \
+	${RM} -r `${FIND} ${WRKSRC}/dist -type f ! -regex ".*\.png"`
+	${RM} -r `${FIND} ${WRKSRC} -name .hg -o -name .hgignore \
 		-o -name .hgtags -o -name .cvsignore`
 	@( cd ${WRKDIR} ; \
 	  ${FIND} plan9 -type f; \

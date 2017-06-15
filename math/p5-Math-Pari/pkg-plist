@@ -4,4 +4,6 @@
 %%SITE_ARCH%%/Math/Pari.pm
 %%SITE_ARCH%%/Math/PariInit.pm
 %%SITE_ARCH%%/Math/libPARI.pod
+%%SITE_ARCH%%/auto/Math/Pari/libpari-gmp.so.2
+%%SITE_ARCH%%/auto/Math/Pari/libpari-gmp.so.2.3.5
 %%SITE_ARCH%%/auto/Math/Pari/Pari.so

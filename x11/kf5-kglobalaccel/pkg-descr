@@ -1,0 +1,5 @@
+KGlobalAccel allows you to have global accelerators that are independent of the
+focused window. Unlike regular shortcuts, the application's window does not need
+focus for them to be activated.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kglobalaccel/html/index.html

@@ -1,0 +1,3 @@
+MySQL built with WSREP patch to support replication using the Galera library.
+
+WWW: http://www.galeracluster.com/

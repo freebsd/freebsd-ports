@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.6.8
+PORTVERSION=	1.6.13
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/ \
 		http://files.freeswitch.org/releases/sounds/:sounds
@@ -16,20 +17,24 @@ LICENSE=	MPL
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
+		libspeexdsp.so:audio/speexdsp \
 		libspeex.so:audio/speex \
 		libldns.so:dns/ldns \
 		libopus.so:audio/opus \
-		libsndfile.so:audio/libsndfile
+		libsndfile.so:audio/libsndfile \
+		libfreetype.so:print/freetype2 \
+		libpng16.so:graphics/png \
+		libjbig.so:graphics/jbigkit
 
 CONFLICTS_BUILD=	xmlrpc-c-*
 
-BROKEN_FreeBSD_9=	Fails in configure due to compiler issues
 ONLY_FOR_ARCHS=	amd64
 
-USES=		gmake jpeg pkgconfig lua perl5 libtool shebangfix tar:xz
+USES=		gmake jpeg pkgconfig lua perl5 libtool shebangfix tar:xz iconv libedit ssl
 USE_LDCONFIG=	yes
 
 ALL_MODULES_DESC=	Build all modules
+X11_DESC=		graphics/ImageMagick[-nox11] dependency
 8K_DESC=	8kHz Audio Files
 16K_DESC=	16kHz Audio Files
 32K_DESC=	32kHz Audio Files
@@ -38,7 +43,7 @@ ENGLISH_DESC=	US English Language Sounds
 FRENCH_DESC=	French Canadian Language Sounds
 RUSSIAN_DESC=	Russian Language Sounds
 
-OPTIONS_DEFINE=		ALL_MODULES
+OPTIONS_DEFINE=		ALL_MODULES X11
 OPTIONS_MULTI=		BITRATE LANGUAGE
 OPTIONS_MULTI_BITRATE=	8K 16K 32K 48K
 OPTIONS_MULTI_LANGUAGE=	ENGLISH FRENCH RUSSIAN
@@ -46,10 +51,14 @@ OPTIONS_DEFAULT=	8K 16K ENGLISH
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=		yes
 
+ALL_MODULES_CONFLICTS_BUILD+=	apr
 ALL_MODULES_EXTRA_PATCHES=	${FILESDIR}/extrapatch-modules.conf
 
 GNU_CONFIGURE=		yes
-INSTALL_TARGET=		install-strip
+# install-strip causes `make stage' to fail:
+# libtool: install: strip --strip-debug /wrkdirs/usr/ports/net/freeswitch/work/stage/usr/local/lib/libfreeswitch.a
+# strip: file format not recognized
+# INSTALL_TARGET=		install-strip
 SHEBANG_FILES=		scripts/fsxs.in
 USE_RC_SUBR=		freeswitch
 
@@ -66,11 +75,13 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALL_MODULES}
+USE_XORG=	x11
 BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		${LOCALBASE}/bin/aclocal:devel/automake
 RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
-		libopencv_legacy.so:graphics/opencv \
+		libopencv_gpu.so:graphics/opencv2 \
+		libopencv_core.so:graphics/opencv2-core \
 		libhiredis.so:databases/hiredis \
 		libmemcached.so:databases/libmemcached \
 		libSoundTouch.so:audio/soundtouch \
@@ -82,10 +93,13 @@ LIB_DEPENDS+=	libavformat.so:multimedia/ffmpeg \
 		libmp3lame.so:audio/lame \
 		libnetsnmp.so:net-mgmt/net-snmp \
 		libvlc.so:multimedia/vlc \
-		libyaml.so:textproc/libyaml \
-		libMagickWand-6.so:graphics/ImageMagick-nox11
+		libyaml.so:textproc/libyaml
 USE_OPENLDAP=	yes
-USE_OPENSSL=	yes
+.if ${PORT_OPTIONS:MX11}
+LIB_DEPENDS+=	libMagickWand-6.so:graphics/ImageMagick
+.else
+LIB_DEPENDS+=	libMagickWand-6.so:graphics/ImageMagick-nox11
+.endif
 .endif
 
 EDPRE=	freeswitch-sounds

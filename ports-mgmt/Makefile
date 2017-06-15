@@ -4,6 +4,7 @@
     COMMENT = Ports for managing, installing, and developing FreeBSD ports and packages
 
     SUBDIR += chucky
+    SUBDIR += create-rb-port
     SUBDIR += dialog4ports
     SUBDIR += dialog4ports-static
     SUBDIR += distilator
@@ -39,6 +40,7 @@
     SUBDIR += pkgcompare
     SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
+    SUBDIR += port-index-uniquifier
     SUBDIR += port-maintenance-tools
     SUBDIR += portal
     SUBDIR += portconf
@@ -50,6 +52,7 @@
     SUBDIR += portlint
     SUBDIR += portmaster
     SUBDIR += portrac
+    SUBDIR += ports-tools
     SUBDIR += portscout
     SUBDIR += portsearch
     SUBDIR += portshaker

@@ -6,9 +6,9 @@ PORTVERSION=	1.3.0
 PORTEPOCH=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR Integrated template API
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

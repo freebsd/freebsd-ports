@@ -17,7 +17,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	libneon.so:www/neon
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 post-extract:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/config.m4

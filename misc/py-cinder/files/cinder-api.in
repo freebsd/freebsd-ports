@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: cinder_api
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable cinder_api:
+#
+# cinder_api_enable="YES"
+#
+# cinder_api_enable (bool):
+#	Set it to "YES" to enable cinder_api.
+# 	Default is "NO".
+#
+# cinder_api_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/cinder"
+#
+# cinder_api_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${cinder_api_logdir}/cinder-api.log"
+#
+
+. /etc/rc.subr
+
+name=cinder_api
+rcvar=cinder_api_enable
+
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/cinder-api.pid"
+procname="%%PREFIX%%/bin/python2.7"
+
+start_precmd=cinder_precmd
+
+load_rc_config $name
+
+: ${cinder_api_enable:="NO"}
+: ${cinder_api_logdir:="/var/log/cinder"}
+: ${cinder_api_args:="--log-file ${cinder_api_logdir}/cinder-api.log"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} cinder-api ${cinder_api_args}"
+
+cinder_precmd() {
+	mkdir -p ${cinder_api_logdir}
+}
+
+run_rc_command "$1"

@@ -1,3 +1,3 @@
-TIMESTAMP = 1466951086
-SHA256 (sqlalchemy-migrate-0.10.0.tar.gz) = f83c5cce9c09e5c05527279b7fe1565b32e5353342ff30b24f594fa2e5a7e003
-SIZE (sqlalchemy-migrate-0.10.0.tar.gz) = 127356
+TIMESTAMP = 1489575145
+SHA256 (sqlalchemy-migrate-0.11.0.tar.gz) = e68af5e3e0561f629d4eb23d9d0ea77d2649747f2eff37fd29aece74615ca251
+SIZE (sqlalchemy-migrate-0.11.0.tar.gz) = 128299

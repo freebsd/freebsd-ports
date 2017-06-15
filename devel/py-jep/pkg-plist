@@ -1,11 +1,12 @@
 bin/jep
 %%PYTHON_SITELIBDIR%%/jep/__init__.py
 %%PYTHON_SITELIBDIR%%/jep/console.py
-%%PYTHON_SITELIBDIR%%/jep/hook.py
+%%PYTHON_SITELIBDIR%%/jep/java_import_hook.py
 %%PYTHON_SITELIBDIR%%/jep/jdbc.py
 %%PYTHON_SITELIBDIR%%/jep/jep-%%VERSION%%.jar
 %%PYTHON_SITELIBDIR%%/jep/jep.so
 %%PYTHON_SITELIBDIR%%/jep/libjep.so
 %%PYTHON_SITELIBDIR%%/jep/redirect_streams.py
+%%PYTHON_SITELIBDIR%%/jep/shared_modules_hook.py
 %%PYTHON_SITELIBDIR%%/jep/version.py
 %%JAVAJARDIR%%/jep.jar

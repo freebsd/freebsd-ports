@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tea
-PORTVERSION=	42.0.0
+PORTVERSION=	43.1.0
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://semiletov.org/tea/dloads/
 
@@ -12,13 +13,16 @@ COMMENT=	Simple and powerful Qt4-based text editor
 LICENSE=	GPLv3
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_RADIO=		SPELL
-OPTIONS_RADIO_SPELL=	ASPELL HUNSPELL
-OPTIONS_DEFAULT=	ASPELL
+OPTIONS_GROUP=		SPELL
+OPTIONS_GROUP_SPELL=	ASPELL HUNSPELL
+OPTIONS_DEFAULT=	ASPELL HUNSPELL
 
 USES=		pkgconfig:build qmake tar:bzip2
+USE_GL=		gl
+USE_LOCALE=	en_US.UTF-8
 USE_QT4=	corelib gui moc_build network rcc_build
 
+LDFLAGS+=	-lz
 PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png
 PORTDOCS=	*
 
@@ -26,10 +30,10 @@ DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
 		"${PORTNAME}" "" ""
 
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
-ASPELL_QMAKE_ON=	CONFIG=nohunspell
+ASPELL_QMAKE_OFF=	CONFIG+=noaspell
 
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
-HUNSPELL_QMAKE_ON=	CONFIG=noaspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
+HUNSPELL_QMAKE_OFF=	CONFIG+=nohunspell
 
 post-patch:
 	@${REINPLACE_CMD} -e \

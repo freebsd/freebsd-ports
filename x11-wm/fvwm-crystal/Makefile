@@ -35,13 +35,13 @@ IMAGEMAGICK_RUN_DEPENDS=	display:graphics/ImageMagick
 XSCREENSAVER_RUN_DEPENDS=	xscreensaver:x11/xscreensaver
 TRAYER_RUN_DEPENDS=	trayer:x11/trayer
 SUDO_RUN_DEPENDS=	sudo:security/sudo
-SETROOT_RUN_DEPENDS=	hsetroot:graphics/hsetroot
+SETROOT_RUN_DEPENDS=	hsetroot:x11/hsetroot
 CMUS_RUN_DEPENDS=	cmus:audio/cmus
 DOCS_INSTALL_TARGET=	install-doc
 
 post-extract:
 	@cd ${WRKSRC} && ${FIND} . -depth -type d -name .svn \
-		-exec ${RM} -rf {} \;
+		-exec ${RM} -r {} \;
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cp -r -d|cp -r|; s|cp -d|cp|' \

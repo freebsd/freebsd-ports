@@ -1,0 +1,6 @@
+KPlotWidget is a QWidget-derived class that provides a virtual base class for
+easy data-plotting. The idea behind KPlotWidget is that you only have to specify
+information in "data units"; i.e., the natural units of the data being plotted.
+KPlotWidget automatically converts everything to screen pixel units.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kplotting/html/index.html

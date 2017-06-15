@@ -5,4 +5,4 @@ jsonschema is an implementation of JSON Schema for Python
  - Small and extensible
  - Programmatic querying of which properties or items failed validation.
 
-WWW: http://github.com/Julian/jsonschema
+WWW: https://github.com/Julian/jsonschema

@@ -15,8 +15,7 @@ COMMENT=	Keep track of the computers configuration and software
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	dmidecode:sysutils/dmidecode \
-		lspci:sysutils/pciutils \
+RUN_DEPENDS=	lspci:sysutils/pciutils \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
@@ -36,7 +35,6 @@ OPTIONS_DEFINE=	DAEMON IPMI SSL PRINTER SNMP
 
 DAEMON_DESC=	Daemon mode
 IPMI_DESC=	Collect information about IPMI
-SSL_DESC=	Get SSL communications working
 PRINTER_DESC=	Printers detection
 SNMP_DESC=	Scan network devices using SNMP
 
@@ -54,4 +52,9 @@ SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
 			p5-Nmap-Parser>=0:security/p5-Nmap-Parser \
 			nmap:security/nmap
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
+.endif
+.include <bsd.port.post.mk>

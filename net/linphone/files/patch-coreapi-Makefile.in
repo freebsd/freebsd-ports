@@ -1,10 +1,10 @@
---- coreapi/Makefile.in.orig	2015-06-09 13:01:46 UTC
+--- coreapi/Makefile.in.orig	2016-10-14 19:03:24 UTC
 +++ coreapi/Makefile.in
-@@ -646,6 +646,7 @@ liblinphone_la_LIBADD = \
- 		$(LIBXML2_LIBS) \
+@@ -640,6 +640,7 @@ liblinphone_la_LIBADD = \
  		$(LDAP_LIBS) \
  		$(SASL_LIBS) \
-+		$(LTLIBICONV) \
+ 		$(BELCARD_LIBS) \
++		$(LTLIBICONV) -lbctoolbox \
  		$(ZLIB_LIBS)
  
- @ENABLE_TESTS_TRUE@test_lsd_SOURCES = test_lsd.c
+ AM_CPPFLAGS = \

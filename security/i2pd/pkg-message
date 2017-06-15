@@ -1,0 +1,5 @@
+You may want to increase default i2pd bandwidth limit by adding
+--bandwidth to i2pd_flags in /etc/rc.conf. Add the following to
+allow the highest traffic:
+
+i2pd_flags="--bandwidth X"

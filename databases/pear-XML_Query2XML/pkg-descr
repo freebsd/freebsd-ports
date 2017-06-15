@@ -3,4 +3,4 @@ more SQL SELECT queries into XML data. Very simple to highly complex
 transformations are supported. Is was written with performance in mind
 and can handel large amounts of data.
 
-WWW: http://pear.php.net/package/XML_Query2XML
+WWW: https://pear.php.net/package/XML_Query2XML

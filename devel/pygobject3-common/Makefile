@@ -65,22 +65,14 @@ RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo
 USES+=		python:3
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/py3cairo.pc:graphics/py3-cairo
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/py3cairo.pc:graphics/py3-cairo
-PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//}
 .endif
 
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/include/pygobject-3.0 \
+	@${RM} -r ${STAGEDIR}${PREFIX}/include/pygobject-3.0 \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/pygobject-3.0.pc
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION}
 
 UNAME_R!=	${UNAME} -r
 UNAME_M!=	${UNAME} -m

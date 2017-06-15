@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.23.2
+PORTVERSION=	0.23.5
 CATEGORIES=	security devel
-MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
+MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${PORTVERSION}/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for loading and enumerating of PKCS\#11 modules
@@ -22,6 +22,8 @@ INSTALL_TARGET=	install-strip
 
 USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+
+TEST_TARGET=	check
 
 pre-configure:
 	@${REINPLACE_CMD} -e \

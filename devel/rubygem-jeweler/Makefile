@@ -3,6 +3,7 @@
 
 PORTNAME=	jeweler
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ COMMENT=	Simple and opinionated helper for creating Rubygem projects
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-builder32>=0:devel/rubygem-builder32 \
+RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-bundler>=1.0:sysutils/rubygem-bundler \
 		rubygem-git>=1.2.5:devel/rubygem-git \
 		rubygem-github_api>=0:devel/rubygem-github_api \

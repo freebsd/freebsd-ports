@@ -2,4 +2,4 @@ ebnf2yacc is a tool to help write yacc parsers/compilers. It takes as input a
 grammar written in ebnf, and outputs a c++ abstract syntax tree that supports
 the visitor pattern, along with a yacc file to build the tree.
 
-WWW: http://sourceforge.net/projects/ebnf2yacc/
+WWW: https://sourceforge.net/projects/ebnf2yacc/

@@ -4,7 +4,6 @@
 PORTNAME=	omping
 PORTVERSION=	0.0.4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://fedorahosted.org/releases/o/m/${PORTNAME}/
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Tool to test IP multicast functionality
@@ -12,6 +11,8 @@ COMMENT=	Tool to test IP multicast functionality
 LICENSE=	MIT
 
 USES=		gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	jfriesse
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man8/omping.8.gz

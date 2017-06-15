@@ -3,13 +3,15 @@
 PORTNAME=	zoneminder
 PORTVERSION=	1.30.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
 COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
+
+CONFLICTS_INSTALL=	zoneminder-h264
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
@@ -27,17 +29,16 @@ ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 BUILD_DEPENDS=	${ZM_DEPENDS}
 RUN_DEPENDS=	${ZM_DEPENDS} \
 		sudo:security/sudo \
+		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
 		zip:archivers/zip
 
 USE_GITHUB=	yes
-GH_TUPLE=	zoneminder:zoneminder:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
-		FriendsOfCake:crud:c3976f1:crud
-
-WRKSRC=		${WRKDIR}/ZoneMinder-${DISTVERSION}${DISTVERSIONSUFFIX}
+GH_PROJECT=	ZoneMinder
+GH_TUPLE=	FriendsOfCake:crud:c3976f1:crud
 
 USES=		cmake jpeg mysql perl5 php shebangfix ssl
 USE_RC_SUBR=	zoneminder
-USE_PHP=	json pdo_mysql session gd sockets
+USE_PHP=	json pdo_mysql session gd sockets ctype
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -80,17 +81,6 @@ CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \
 		-DGNUTLS_LIBRARIES=0 \
 		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 && ${ARCH} == i386
-CFLAGS+=	-msse
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-LIB_DEPENDS+=	libexecinfo.so:devel/libexecinfo
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-extract:
@@ -115,4 +105,4 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

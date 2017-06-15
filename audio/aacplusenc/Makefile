@@ -3,7 +3,7 @@
 
 PORTNAME=	aacplusenc
 PORTVERSION=	0.17.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ppa.launchpad.net/teknoraver/ppa/ubuntu/pool/main/a/aacplusenc/
 DISTFILES=	${DISTNAME:S,-,_,}${EXTRACT_SUFX}

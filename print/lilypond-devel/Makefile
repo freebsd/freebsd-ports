@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-PORTVERSION=	2.19.47
+PORTVERSION=	2.19.57
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -25,11 +25,11 @@ BUILD_DEPENDS=	pdftexi2dvi:print/texinfo \
 		zip:archivers/zip
 RUN_DEPENDS=	mftrace:print/mftrace \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
-LIB_DEPENDS=	libguile.so:lang/guile \
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libguile.so:lang/guile \
 		libgmp.so:math/gmp \
-		libfreetype.so:print/freetype2
-
-BROKEN_FreeBSD_9=	does not build on FreeBSD < 10.x
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 INFO=		internals \
 		lilypond-changes \
@@ -53,7 +53,6 @@ USE_GNOME=	pango
 
 MAKEFILE=	GNUmakefile
 GNU_MAKEFILE=	yes
-MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-texgyre-dir=${LOCALBASE}/${TEXMFDISTDIR}/fonts/opentype/public/tex-gyre \
@@ -68,27 +67,19 @@ NO_CCACHE=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_SUB=	yes
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.cc" | ${XARGS} \
 	    ${REINPLACE_CMD} -e 's|isinf[ ]*(|::isinf(|g' -e 's|isnan|::isnan|g'
 	${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
 	    ${WRKSRC}/lily/include/includable-lexer.hh
-.if !${PORT_OPTIONS:MNLS}
+
+post-patch-NLS-off:
 	${REINPLACE_CMD} -e '/po \\$$/d' ${WRKSRC}/${MAKEFILE}.in
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilypond
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lilypond/${PORTVERSION}/python/midi.so
-	@${LN} -fs ${DATADIR}/${PORTVERSION} ${STAGEDIR}${DATADIR}/current
+	(cd ${STAGEDIR}/${DATADIR} && ${LN} -fs ${PORTVERSION} current)
 
 .include <bsd.port.mk>

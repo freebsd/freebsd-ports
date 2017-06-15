@@ -1,27 +1,23 @@
 @sample %%ETCDIR%%/monkeysphere-authentication.conf.sample
 @sample %%ETCDIR%%/monkeysphere-host.conf.sample
 @sample %%ETCDIR%%/monkeysphere.conf.sample
+bin/agent-transfer
 bin/monkeysphere
-bin/monkeysphere-e
 bin/openpgp2pem
 bin/openpgp2spki
 bin/openpgp2ssh
 bin/pem2openpgp
-man/man1/monkeysphere.1-e.gz
+man/man1/agent-transfer.1.gz
 man/man1/monkeysphere.1.gz
 man/man1/openpgp2pem.1.gz
 man/man1/openpgp2spki.1.gz
 man/man1/openpgp2ssh.1.gz
 man/man1/pem2openpgp.1.gz
 man/man7/monkeysphere.7.gz
-man/man8/monkeysphere-authentication.8-e.gz
 man/man8/monkeysphere-authentication.8.gz
-man/man8/monkeysphere-host.8-e.gz
 man/man8/monkeysphere-host.8.gz
 sbin/monkeysphere-authentication
-sbin/monkeysphere-authentication-e
 sbin/monkeysphere-host
-sbin/monkeysphere-host-e
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/examples/make-x509-certreqs
 %%PORTDOCS%%%%DOCSDIR%%/examples/monkeysphere-monitor-keys
@@ -32,7 +28,6 @@ sbin/monkeysphere-host-e
 %%DATADIR%%/checkperms
 %%DATADIR%%/common
 %%DATADIR%%/defaultenv
-%%DATADIR%%/defaultenv-e
 %%DATADIR%%/keytrans
 %%DATADIR%%/m/gen_subkey
 %%DATADIR%%/m/import_subkey
@@ -57,7 +52,5 @@ sbin/monkeysphere-host-e
 %%DATADIR%%/mh/set_expire
 %%DATADIR%%/monkeysphere-authentication-keys-for-user
 %%DATADIR%%/transitions/0.23
-%%DATADIR%%/transitions/0.23-e
 %%DATADIR%%/transitions/0.28
-%%DATADIR%%/transitions/0.28-e
 %%DATADIR%%/transitions/README.txt

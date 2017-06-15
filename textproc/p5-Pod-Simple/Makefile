@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Simple
-PORTVERSION=	3.30
+PORTVERSION=	3.35
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DWHEELER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -16,6 +15,7 @@ LICENSE_COMB=	dual
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

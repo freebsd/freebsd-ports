@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-DISTVERSION=	3.1.14
-PORTREVISION=	2
+DISTVERSION=	3.1.17
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		GH
+
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Port build and test system
 
@@ -29,6 +29,24 @@ RUN_DEPENDS+=	freebsd-release-manifests>0:misc/freebsd-release-manifests
 
 QEMU_DESC=	Add qemu-user-static to compile ports for non-x86 architectures
 QEMU_RUN_DEPENDS=	qemu-user-static>0:emulators/qemu-user-static
+
+.include <bsd.port.options.mk>
+
+# rm -x support came in 10.0.  A bundled rm is used if not supported in base.
+# While <10 is technically not supported in the Ports Tree, Poudriere
+# detects this and it being a package build tool it should still be
+# supported as a user may be installing this to build packages for upgrading
+# their system to a supported release.
+.if ${OSVERSION} < 1000000
+PLIST_SUB+=	RM=""
+.else
+PLIST_SUB+=	RM="@comment "
+.endif
+
+pre-install:
+	${REINPLACE_CMD} \
+	    -e "s,^\(POUDRIERE_VERSION\)=.*,\1='${PKGVERSION}'," \
+	    ${WRKSRC}/src/bin/poudriere
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/

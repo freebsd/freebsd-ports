@@ -1,8 +1,9 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
-# $FreeBSD: head/lang/python36/Makefile 429551 2016-12-26 16:45:31Z sunpoet $
+# $FreeBSD$
 
 PORTNAME=	python
-DISTVERSION=	${PYTHON_PORTVERSION}
+PORTVERSION=	${PYTHON_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PYTHON_PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -14,14 +15,15 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz
+USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
+SHEBANG_FILES=	Lib/lib2to3/tests/data/*.py Lib/encodings/*.py
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
-CPE_VERSION=	${DISTVERSION}
 
 # Duplicate python.mk variables. TODO: Let lang/python?? ports use python.mk bits.
 PYTHON_VER=		${PYTHON_PORTVERSION:R}
@@ -118,6 +120,10 @@ DISABLED_EXTENSIONS+=	nis
 .else
 PLIST_SUB+=	NO_NIS=""
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
+		${WRKSRC}/Lib/cgi.py
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}

@@ -4,12 +4,16 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-PORTVERSION=	1.10.4
+PORTVERSION=	1.10.6
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libltdl.so:devel/libltdl

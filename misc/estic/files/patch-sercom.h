@@ -1,5 +1,5 @@
---- spunk/sercom.h.orig	Thu Nov  7 18:06:52 1996
-+++ spunk/sercom.h	Tue Sep  6 09:54:21 2005
+--- spunk/sercom.h.orig	1996-11-07 17:06:52 UTC
++++ spunk/sercom.h
 @@ -43,29 +43,29 @@
  
  

@@ -1,0 +1,11 @@
+--- winpr/tools/makecert/CMakeLists.txt.orig	2016-12-04 14:56:48 UTC
++++ winpr/tools/makecert/CMakeLists.txt
+@@ -28,7 +28,7 @@ add_library(${MODULE_NAME} STATIC ${${MO
+ set(${MODULE_PREFIX}_LIBS
+ 	${ZLIB_LIBRARIES}
+ 	${OPENSSL_LIBRARIES}
+-	winpr)
++	winpr1)
+ 
+ target_link_libraries(${MODULE_NAME} ${${MODULE_PREFIX}_LIBS})
+ 

@@ -1,11 +1,11 @@
---- Makefile.in.orig	2015-08-22 06:41:35 UTC
+--- Makefile.in.orig	2016-10-28 14:50:26 UTC
 +++ Makefile.in
-@@ -321,7 +321,7 @@ else
- 	@exit 1
- endif
+@@ -52,7 +52,7 @@ $(BUILDDIR)/config_host.mk : $(wildcard 
  
--distro-pack-install: install
-+distro-pack-install: install-strip
- 	$(SRCDIR)/bin/distro-install-clean-up
- 	$(SRCDIR)/bin/distro-install-desktop-integration
- 	$(SRCDIR)/bin/distro-install-sdk
+ else # MAKE_RESTARTS
+ 
+-all: check-if-root build
++all: build
+ 
+ check-if-root:
+ 	@if test `id -u` = 0; then \

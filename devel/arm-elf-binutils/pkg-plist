@@ -17,6 +17,9 @@ arm-elf/bin/strip
 arm-elf/lib/ldscripts/armelf.x
 arm-elf/lib/ldscripts/armelf.xbn
 arm-elf/lib/ldscripts/armelf.xc
+arm-elf/lib/ldscripts/armelf.xd
+arm-elf/lib/ldscripts/armelf.xdc
+arm-elf/lib/ldscripts/armelf.xdw
 arm-elf/lib/ldscripts/armelf.xn
 arm-elf/lib/ldscripts/armelf.xr
 arm-elf/lib/ldscripts/armelf.xs

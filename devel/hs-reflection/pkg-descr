@@ -8,4 +8,4 @@ That package is an implementation of the ideas presented in the paper
 Chung-chieh Shan (original paper).  However, the API has been
 streamlined to improve performance.
 
-WWW: http://github.com/ekmett/reflection
+WWW: https://github.com/ekmett/reflection

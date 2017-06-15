@@ -4,7 +4,7 @@
 PORTNAME=	tvheadend
 PORTVERSION=	4.0.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
@@ -30,9 +30,9 @@ USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	${WRKSRC}/Autobuild.sh \
 		${WRKSRC}/configure \
+		${WRKSRC}/support/apt-update \
 		${WRKSRC}/support/configure.inc \
 		${WRKSRC}/support/getmuxlist \
-		${WRKSRC}/support/pbuilder \
 		${WRKSRC}/support/version
 
 TVHUSER?=	tvheadend
@@ -48,8 +48,8 @@ CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib
 CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lcrypto -lz
 
-OPTIONS_DEFINE=	AVAHI DVBCSA HDHOMERUN TRANSCODING XMLTV
-OPTIONS_DEFAULT=DVBCSA HDHOMERUN
+OPTIONS_DEFINE=	AVAHI DVBCSA HDHOMERUN INOTIFY TRANSCODING XMLTV
+OPTIONS_DEFAULT=DVBCSA HDHOMERUN INOTIFY
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
@@ -60,6 +60,11 @@ DVBCSA_CONFIGURE_ENABLE=	dvbcsa
 HDHOMERUN_DESC=		Native support for HDHomeRun network tuners
 HDHOMERUN_LIB_DEPENDS=	libhdhomerun.so:multimedia/libhdhomerun
 HDHOMERUN_CONFIGURE_ENABLE=	hdhomerun_client
+
+INOTIFY_DESC=		File system notifications support
+INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
+INOTIFY_CONFIGURE_ENABLE=	inotify
+INOTIFY_LDFLAGS=	-linotify
 
 TRANSCODING_DESC=	Transcoding for mobile and web clients
 TRANSCODING_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg

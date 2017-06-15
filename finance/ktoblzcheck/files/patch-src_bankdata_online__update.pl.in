@@ -1,0 +1,43 @@
+- Use fetch(1) instead of requiring wget or lynx
+- Download over a secure connection
+
+--- src/bankdata/online_update.pl.in.orig	2012-10-01 21:03:49 UTC
++++ src/bankdata/online_update.pl.in
+@@ -21,8 +21,8 @@ $pkgdatadir="$datadir/@PACKAGE@";
+ $BANKDATADIR="@BANKDATA_PATH@";
+ 
+ ## Sanity checks
+-die "Neither wget nor lynx is available on your system, or was available on the system where the installed rpm was built. This tool requires wget or lynx. If you have it i
+-nstalled, then edit the script and set the variable WGET or LYNX to the full path to wget or lynx. Aborting for now."
++die "Neither fetch nor lynx is available on your system, or was available on the system where the installed package was built. This tool requires fetch or lynx. If you have it i
++nstalled, then edit the script and set the variable WGET or LYNX to the full path to fetch or lynx. Aborting for now."
+   if $WGET eq "NO" and $LYNX eq "NO";
+ #die "sed or grep is not available on your system. This tool requires it. Aborting."
+ #  if $SED eq "NO" || $GREP eq "NO";
+@@ -35,13 +35,13 @@ die "The directory for the bankdata \"$B
+ 
+ ## Common constants
+ $debug=0; # set this to nonzero for activating debugging mode
+-$BASE_URL="http://www.bundesbank.de";
++$BASE_URL="https://www.bundesbank.de";
+ $MAIN_URL="$BASE_URL";
+ $MAIN_DOC="$MAIN_URL/Redaktion/DE/Standardartikel/Kerngeschaeftsfelder/Unbarer_Zahlungsverkehr/bankleitzahlen_download.html";
+ 
+ if ($debug == 0) {
+   if ($WGET ne "NO") {
+-    $DOWNLOADCMD = "$WGET -O - $MAIN_DOC";
++    $DOWNLOADCMD = "$WGET -q -o - $MAIN_DOC";
+   } else {
+     $DOWNLOADCMD = "$LYNX -source $MAIN_DOC";
+   }
+@@ -145,8 +145,8 @@ if ($debug == 0) {
+ ##
+ ## 1. Download
+ if ($WGET ne "NO") {
+-  print "$ECHO $WGET -O $install_1 $download\n";
+-  system("$ECHO $WGET -O $install_1 $download");
++  print "$ECHO $WGET -q -o $install_1 $download\n";
++  system("$ECHO $WGET -q -o $install_1 $download");
+ } else {
+   print "$ECHO $LYNX -source $download $gt $install_1\n";
+   system("$ECHO $LYNX -source $download $gt $install_1");# || die "can't call system: $!";

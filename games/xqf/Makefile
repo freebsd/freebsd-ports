@@ -3,7 +3,7 @@
 
 PORTNAME=	xqf
 PORTVERSION=	1.0.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
@@ -34,6 +34,8 @@ GEOIP_CONFIGURE_ENABLE=	geoip
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 BZIP2_CONFIGURE_ENABLE=	bzip2
+
+BROKEN_aarch64=		Fails to linkld: final link failed: Bad value
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

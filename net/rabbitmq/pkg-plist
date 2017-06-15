@@ -9,6 +9,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-BSD-base64js
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-BSD-glMatrix
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-EPL-OTP
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-EJS10
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-Erlware-Commons
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-Flot
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-Mochi
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-Mochiweb
@@ -28,8 +29,6 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/gm.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/lqueue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/mirrored_supervisor_sups.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/mnesia_sync.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/mochinum.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/pg2_fixed.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/pg_local.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.app
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.beam
@@ -51,6 +50,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_client_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_connection_helper_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_connection_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_control_main.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_control_pbe.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ctl_usage.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_dead_letter.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_diagnostics.beam
@@ -94,6 +94,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_password.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_password_hashing_md5.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_password_hashing_sha256.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_password_hashing_sha512.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_pbe.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_plugins.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_plugins_main.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_plugins_usage.beam

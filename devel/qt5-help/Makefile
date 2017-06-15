@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt online help integration module
 
-USE_QT5=	clucene core gui network sql widgets \
+USE_QT5=	core gui network sql widgets \
 		buildtools_build sql-sqlite3_run
 QT_DIST=	tools
 USES=		qmake

@@ -1,6 +1,7 @@
+TIMESTAMP = 1487502029
 SHA256 (webalizer-2.23-08-src.tgz) = edaddb5aa41cc4a081a1500e3fa96615d4b41bc12086bcedf9938018ce79ed8d
 SIZE (webalizer-2.23-08-src.tgz) = 537037
 SHA256 (webalizer-flags.tgz) = df9961fec7da2c16ed3faefb763f912c2db5ddce6a24e4f46647d7e64b8ab29a
 SIZE (webalizer-flags.tgz) = 146658
-SHA256 (webalizer-geodb-20150901.tgz) = dfc3023924968d45c1bad52ec89f63c6e885ce88c6aec48ae098a2db783709e7
-SIZE (webalizer-geodb-20150901.tgz) = 962059
+SHA256 (webalizer-geodb-20170201.tgz) = 7610f08125e1f7cdc3c57363470bc8c234257fb45ff8d18899e49e3011950f67
+SIZE (webalizer-geodb-20170201.tgz) = 1205029

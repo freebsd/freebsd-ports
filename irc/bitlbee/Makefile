@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee
-PORTVERSION=	3.4.2
+PORTVERSION=	3.5
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		LOCAL/brix
@@ -32,7 +33,10 @@ OPTIONS_SINGLE_EVENTS=	GLIB LIBEVENT
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS NSS
 
 OPTIONS_MULTI=		PROTO
-OPTIONS_MULTI_PROTO=	JABBER LIBPURPLE MSN OSCAR SKYPE TWITTER YAHOO
+OPTIONS_MULTI_PROTO=	LIBPURPLE JABBER MSN OSCAR SKYPE TWITTER YAHOO
+
+LIBPURPLE_PREVENTS=	JABBER MSN OSCAR SKYPE TWITTER YAHOO
+LIBPURPLE_PREVENTS_MSG=	If libpurple is enabled, all native protocols must be disabled
 
 OTR_DESC=		Off-the-Record Messaging support
 LIBPURPLE_DESC=		Use libpurple for protocol support
@@ -57,7 +61,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libgcrypt.so:security/libgcrypt
 JABBER_CONFIGURE_OFF=	--jabber=0
 LIBEVENT_CONFIGURE_ON=	--events=libevent --libevent=${LOCALBASE}
-LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent2
+LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent
 LIBPURPLE_CONFIGURE_ON=	--purple=1
 LIBPURPLE_LIB_DEPENDS=	libpurple.so:net-im/libpurple
 MSN_CONFIGURE_OFF=	--msn=0

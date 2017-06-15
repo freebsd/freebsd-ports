@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php70
-PORTVERSION=	7.0.14
+PORTVERSION=	7.0.20
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -44,8 +44,8 @@ OPTIONS_EXCLUDE_mips64=FPM
 OPTIONS_SUB=	yes
 
 OPTIONS_EXCLUDE_DragonFly=	DTRACE
-OPTIONS_EXCLUDE_FreeBSD_9+=	DTRACE
-OPTIONS_EXCLUDE+=               ${OPTIONS_EXCLUDE_${OPSYS}_${OSREL:R}}
+# ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
+OPTIONS_EXCLUDE_aarch64=	DTRACE
 
 CLI_DESC=	Build CLI version
 CGI_DESC=	Build CGI version
@@ -54,7 +54,6 @@ EMBED_DESC=	Build embedded library
 DEBUG_DESC=	Enable debug
 PHPDBG_DESC=	Interactive PHP debugger
 DTRACE_DESC=	Enable DTrace support
-IPV6_DESC=	Enable ipv6 support
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
@@ -87,7 +86,7 @@ CONFIGURE_ARGS+=--enable-fpm \
 .if defined(PKGNAMEPREFIX)
 USES+=	php
 PHP_VER=	70
-IGNORE_WITH_PHP=	55 56
+IGNORE_WITH_PHP=	56
 USE_APACHE=	22+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${PORT_OPTIONS:MAP2FILTER}

@@ -25,8 +25,11 @@ desc="OpenXPKI daemon"
 rcvar=openxpki_enable
 load_rc_config ${name}
 : ${openxpki_enable:=no}
-: ${openxpki_conf=%%PREFIX%%/etc/openxpki/config.git}
+: ${openxpki_conf=%%ETCDIR%%/config.d}
 command=%%PREFIX%%/bin/openxpkictl
+start_precmd="${name}_prestart"
+restart_precmd="${name}_prestart"
+reload_precmd="${name}_prestart"
 procname=openxpkid
 openxpki_user=${name}
 pidfile=/var/openxpki/openxpkid.pid
@@ -38,8 +41,21 @@ restart_cmd=control
 status_cmd=control
 reload_cmd=control
 
+openxpki_prestart()
+{
+	chown -R ${openxpki_user}:${openxpki_user} %%ETCDIR%%
+	chmod -R 754 %%ETCDIR%%
+	mkdir -p -m 751 /var/log/${name}
+	chown -R ${openxpki_user}:${openxpki_user} /var/log/${name}
+	mkdir -p -m 750 /var/${name}
+	mkdir -p -m 750 /var/${name}/session
+	chown -R ${openxpki_user}:${openxpki_user} /var/${name}
+	echo "Service dirs recreated..."
+}
+
 control()
 {
+	echo "Executing: USER=${openxpki_user} ${command} --config ${openxpki_conf} ${rc_arg}"
 	USER=${openxpki_user} ${command} --config ${openxpki_conf} ${rc_arg}
 }
 

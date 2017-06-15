@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	1.1.0c
+PORTVERSION=	1.1.0e
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -14,9 +14,9 @@ COMMENT=	SSL and crypto library (1.1.x)
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	libressl-[0-9]* \
-		libressl-devel-[0-9]* \
-		openssl-[0-9]*
+CONFLICTS_INSTALL=	libressl-[0-9]* \
+			libressl-devel-[0-9]* \
+			openssl-[0-9]*
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config

@@ -1,7 +1,4 @@
-lib/erlang/lib/yamerl-%%VERSION%%/ebin/Makefile.am
 lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl.app
-lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl.app.in.in
-lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl.appup.in
 lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl.beam
 lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl_app.beam
 lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl_constr.beam
@@ -29,7 +26,6 @@ lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl_node_timestamp.beam
 lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl_parser.beam
 lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl_sup.beam
 lib/erlang/lib/yamerl-%%VERSION%%/ebin/yamerl_yamler_compat.beam
-lib/erlang/lib/yamerl-%%VERSION%%/include/Makefile.am
 lib/erlang/lib/yamerl-%%VERSION%%/include/internal/yamerl_constr.hrl
 lib/erlang/lib/yamerl-%%VERSION%%/include/internal/yamerl_parser.hrl
 lib/erlang/lib/yamerl-%%VERSION%%/include/yamerl_errors.hrl
@@ -37,8 +33,6 @@ lib/erlang/lib/yamerl-%%VERSION%%/include/yamerl_nodes.hrl
 lib/erlang/lib/yamerl-%%VERSION%%/include/yamerl_nodes_yamerl_extensions.hrl
 lib/erlang/lib/yamerl-%%VERSION%%/include/yamerl_tokens.hrl
 lib/erlang/lib/yamerl-%%VERSION%%/include/yamerl_types.hrl
-lib/erlang/lib/yamerl-%%VERSION%%/src/Emakefile.in.in
-lib/erlang/lib/yamerl-%%VERSION%%/src/Makefile.am
 lib/erlang/lib/yamerl-%%VERSION%%/src/yamerl.app.src
 lib/erlang/lib/yamerl-%%VERSION%%/src/yamerl.erl
 lib/erlang/lib/yamerl-%%VERSION%%/src/yamerl_app.erl
@@ -68,12 +62,4 @@ lib/erlang/lib/yamerl-%%VERSION%%/src/yamerl_parser.erl
 lib/erlang/lib/yamerl-%%VERSION%%/src/yamerl_sup.erl
 lib/erlang/lib/yamerl-%%VERSION%%/src/yamerl_yamler_compat.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/README.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/alternatives.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/features.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/installation.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/reference-manual/README.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/reference-manual/module-yamerl_constr.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/user-guide/README.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/user-guide/recipe-basic-parsing.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/user-guide/recipe-error-handling.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/overview.edoc

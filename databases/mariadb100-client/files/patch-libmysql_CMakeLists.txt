@@ -1,6 +1,6 @@
---- libmysql/CMakeLists.txt.orig	2014-09-24 22:29:47 UTC
+--- libmysql/CMakeLists.txt.orig	2017-01-12 01:45:16 UTC
 +++ libmysql/CMakeLists.txt
-@@ -437,6 +437,8 @@ IF(NOT DISABLE_SHARED)
+@@ -479,6 +479,8 @@ IF(NOT DISABLE_SHARED)
      # libtool compatability
      IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
        SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}")

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libqdbm.so.14:databases/qdbm
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv
+USES=		iconv pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bzip2 --disable-zlib
@@ -38,11 +38,10 @@ MECAB_LIB_DEPENDS=	libmecab.so:japanese/mecab
 MECAB_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/matrix.bin:japanese/mecab-ipadic
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		-e 's/@MYCFLAGS@/@CFLAGS@ -Wall -fPIC -fsigned-char/' \
+	@${REINPLACE_CMD} -e 's/@MYCFLAGS@/@CFLAGS@ -Wall -fPIC -fsigned-char/' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
-	@${RM} -f ${WRKSRC}/doc/intro-en.html~ ${WRKSRC}/doc/intro-ja.html~
+	@${RM} ${WRKSRC}/doc/intro-en.html~ ${WRKSRC}/doc/intro-ja.html~
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libestraier.so

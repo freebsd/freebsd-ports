@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fontforge
-PORTVERSION=	20160404
+PORTVERSION=	20161005
 CATEGORIES=	print
 DISTFILES=	# Empty but needed because of the freetype distfile
 

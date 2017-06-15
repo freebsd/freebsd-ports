@@ -1,0 +1,11 @@
+awless is a fast, powerful and easy-to-use command line interface (CLI) to
+manage Amazon Web Services. It will help you
+
+  - Run frequent actions by using simple commands
+  - Easily explore your infrastructure and cloud resources via CLI
+  - Ensure smart defaults & security best practices
+  - Manage resources through robust runnable & scriptable templates
+  - Explore, analyse and query your infrastructure offline
+  - Explore, analyse and query your infrastructure through time
+
+WWW: https://github.com/wallix/awless

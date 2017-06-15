@@ -1,0 +1,32 @@
+Fix configure for users that have 'WITHOUT_GNU_GREP_COMPAT=yes' set
+m4/qt.m4 fixed upstream in git 211844f.
+
+--- configure.orig	2016-12-20 07:27:31 UTC
++++ configure
+@@ -18746,7 +18746,7 @@ fi
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking moc version" >&5
+ $as_echo_n "checking moc version... " >&6; }
+     mocversion=`$MOC -v 2>&1`
+-    mocversiongrep=`echo $mocversion | grep "Qt 5\|moc 5"`
++    mocversiongrep=`echo $mocversion | grep -E "Qt 5|moc 5"`
+     if test x"$mocversiongrep" != x"$mocversion"; then
+       { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+@@ -18844,7 +18844,7 @@ else
+ fi
+ 
+       mocversion=`$MOC2 -v 2>&1`
+-      mocversiongrep=`echo $mocversion | grep "Qt 5\|moc-qt5 5\|moc 5"`
++      mocversiongrep=`echo $mocversion | grep -E "Qt 5|moc-qt5 5|moc 5"`
+       if test x"$mocversiongrep" != x"$mocversion"; then
+         if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}qtchooser", so it can be a program name with args.
+@@ -18940,7 +18940,7 @@ fi
+ 
+         qt5tooldir=`QT_SELECT=qt5 qtchooser -print-env | grep QTTOOLDIR | cut -d '=' -f 2 | cut -d \" -f 2`
+         mocversion=`$qt5tooldir/moc -v 2>&1`
+-        mocversiongrep=`echo $mocversion | grep "Qt 5\|moc 5"`
++        mocversiongrep=`echo $mocversion | grep -E "Qt 5|moc 5"`
+         if test x"$mocversiongrep" != x"$mocversion"; then
+           # no valid moc found
+           have_qt5_libs="no";

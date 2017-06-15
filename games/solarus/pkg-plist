@@ -229,4 +229,4 @@ include/solarus/third_party/snes_spc/spc.h
 lib/libsolarus-gui.so
 lib/libsolarus.so
 lib/libsolarus.so.1
-lib/libsolarus.so.1.5.0
+lib/libsolarus.so.1.5.1

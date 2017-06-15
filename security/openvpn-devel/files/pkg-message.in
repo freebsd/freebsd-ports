@@ -2,22 +2,17 @@
 ###  Edit /etc/rc.conf[.local] to start OpenVPN automatically at system
 ###  startup. See %%PREFIX%%/etc/rc.d/openvpn for details.
 ### ------------------------------------------------------------------------
+###  Connect to VPN server as a client with this command to include
+###  the client.up/down scripts in the initialization:
+###  openvpn-client <spec>.ovpn
+### ------------------------------------------------------------------------
 ###  For compatibility notes when interoperating with older OpenVPN
 ###  versions, please, see <http://openvpn.net/relnotes.html>
 ### ------------------------------------------------------------------------
-###  NOTE THIS IS AN UNSTABLE BETA VERSION UNDER DEVELOPMENT!
+###  
+###
+###              THIS IS AN UNSTABLE DEVELOPMENT VERSION!
+###
+###
 ###  It may or may not be suitable for production. Use at your own risk.
 ### ------------------------------------------------------------------------
-###
-### PLUGIN LOCATION CHANGED!
-### The following plugin locations have changed.  There is a symlink to the
-### new file for the duration of the 2.3 release.  This will be removed in
-### OpenVPN 2.4+.
-### New Location:
-### %%PREFIX%%/openvpn/plugins/openvpn-plugin-auth-pam.so
-### %%PREFIX%%/openvpn/plugins/openvpn-plugin-down-root.so
-###
-### Old Location:
-### %%PREFIX%%/lib/openvpn-plugin-down-root.so
-### %%PREFIX%%/lib/openvpn-plugin-auth-pam.so
-

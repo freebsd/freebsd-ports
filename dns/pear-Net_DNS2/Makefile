@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Net_DNS2
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	dns net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PHP5 Resolver library used to communicate with a DNS server
 
 LICENSE=	BSD3CLAUSE

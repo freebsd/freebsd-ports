@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/PySolFC/PySolFC-${PORTVERSION} \
 DISTFILES=	PySolFC-${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire game, written in Python and the successor of PySol
 
 LICENSE=	GPLv3
@@ -45,7 +45,7 @@ post-patch:
 		-e 's|^Exec.*|Exec=${PORTNAME}|' \
 		${WRKSRC}/data/pysol.desktop
 	@${FIND} ${WRKDIR} -name .thumbnails -or -name .xvpics | \
-		${XARGS} ${RM} -rf
+		${XARGS} ${RM} -r
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 post-patch-NLS-off:
@@ -58,7 +58,7 @@ post-install:
 
 post-install-CARDSETS-on:
 .for cdir in ${CARDSET_DUPS}
-	@${RM} -rf ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION}/cardset-${cdir}
+	@${RM} -r ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION}/cardset-${cdir}
 .endfor
 	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}

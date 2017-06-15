@@ -6,7 +6,8 @@ Details
 * Dependecy Injector (DI) support, load once, trigger when required.
 * APC, Disk, Memcache, Redis.io cache support.
 * Group caching cache by groups and flush by groups or individual keys.
-* Prepared statements ready, support dynamic building queries, auto detect types (i,d,s,b).
+* Prepared statements ready, support dynamic building queries, auto
+  detect types (i,d,s,b).
 * Secure connections with SSL.
 * SQLite3 Encryption.
 * Save sessions in database (mysql/sqlite) or a cache like redis/memcache/apc.

@@ -29,13 +29,12 @@ DOS2UNIX_REGEX=	"*.p[lm]"
 SHEBANG_FILES=	examples/*.pl
 
 post-install:
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tpj_images
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${STAGEDIR}${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/docs/tpj_images/* ${STAGEDIR}${DOCSDIR}/tpj_images
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/README \
 		${WRKSRC}/examples/republic.png ${STAGEDIR}${EXAMPLESDIR}

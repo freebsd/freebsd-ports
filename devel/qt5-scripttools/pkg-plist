@@ -88,8 +88,8 @@
 %%QT_INCDIR%%/QtScriptTools/QtScriptToolsVersion
 %%QT_INCDIR%%/QtScriptTools/qscriptenginedebugger.h
 %%QT_INCDIR%%/QtScriptTools/qtscripttoolsversion.h
-%%QT_LIBDIR%%/cmake/Qt5ScriptTools/Qt5ScriptToolsConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5ScriptTools/Qt5ScriptToolsConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5ScriptTools/Qt5ScriptToolsConfig.cmake
+%%QT_CMAKEDIR%%/Qt5ScriptTools/Qt5ScriptToolsConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5ScriptTools.prl
 %%QT_LIBDIR%%/libQt5ScriptTools.so
 %%QT_LIBDIR%%/libQt5ScriptTools.so.5

@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: nova_serialproxy
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable nova_serialproxy:
+#
+# nova_serialproxy_enable="YES"
+#
+# nova_serialproxy_enable (bool):
+#	Set it to "YES" to enable nova_serialproxy.
+# 	Default is "NO".
+#
+# nova_serialproxy_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/nova"
+#
+# nova_serialproxy_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${nova_serialproxy_logdir}/nova-serialproxy.log"
+#
+
+. /etc/rc.subr
+
+name=nova_serialproxy
+rcvar=nova_serialproxy_enable
+
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/nova-serialproxy.pid"
+procname="%%PREFIX%%/bin/python2.7"
+
+start_precmd=nova_precmd
+
+load_rc_config $name
+
+: ${nova_serialproxy_enable:="NO"}
+: ${nova_serialproxy_logdir:="/var/log/nova"}
+: ${nova_serialproxy_args:="--log-file ${nova_serialproxy_logdir}/nova-serialproxy.log"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} nova-serialproxy ${nova_serialproxy_args}"
+
+nova_precmd() {
+	mkdir -p ${nova_serialproxy_logdir}
+}
+
+run_rc_command "$1"

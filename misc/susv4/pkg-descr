@@ -1,8 +1,8 @@
 The Single UNIX Specification Version 4, technically identical to IEEE
-Std 1003.1, 2013 Edition or The Open Group Base Specifications Issue 7
+Std 1003.1, 2016 Edition or The Open Group Base Specifications Issue 7
 is a technical standard. It includes IEEE Std 1003.1-2008/Cor 1-2013,
-the Technical Corrigendum 1 addressing problems discovered since the
-approval of the 2008 edition.
+the Technical Corrigenda No. 1 and No. 2 addressing problems discovered
+since the approval of the 2008 edition.
 
 This port permits to install and register the HTML personal copy
 that the user must download in .tar.bz2 format by himself.

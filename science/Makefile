@@ -61,13 +61,16 @@
     SUBDIR += harminv
     SUBDIR += hdf
     SUBDIR += hdf5
+    SUBDIR += hdf5-18
     SUBDIR += hs-bio
     SUBDIR += isaac-cfd
     SUBDIR += jstrack
     SUBDIR += kalzium
     SUBDIR += kst2
     SUBDIR += lamprop
+    SUBDIR += libaec
     SUBDIR += libctl
+    SUBDIR += libgeodecomp
     SUBDIR += libghemical
     SUBDIR += libint
     SUBDIR += libkml
@@ -179,6 +182,7 @@
     SUBDIR += step
     SUBDIR += svmlight
     SUBDIR += szip
+    SUBDIR += tfel
     SUBDIR += udunits
     SUBDIR += v_sim
     SUBDIR += veusz

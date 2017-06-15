@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	uget
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/urlget/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download manager application
 
 LICENSE=	LGPL21
@@ -15,12 +16,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	curl-config:ftp/curl
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 	libgcrypt.so:security/libgcrypt \
-	libgnutls.so:security/gnutls
+	libgpg-error.so:security/libgpg-error \
+	libgnutls.so:security/gnutls \
+	libcurl.so:ftp/curl
 RUN_DEPENDS=	aria2c:www/aria2
 
 USES=	compiler:c11 gettext-tools gmake pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk30 intltool intlhack
+USE_GNOME=	glib20 gtk30 intltool cairo
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
@@ -29,6 +32,7 @@ CFLAGS+=	-Wno-typedef-redefinition
 
 CONFIGURE_ARGS=--enable-appindicator=no \
 	--disable-pwmd \
+	--disable-rss-notify \
 	--enable-unix-socket \
 	--with-gnutls=yes
 

@@ -3,12 +3,14 @@
 
 PORTNAME=	ohphone
 PORTVERSION=	1.4.5
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Video Conferencing Program, compatible with NetMeeting
+
+LICENSE=	MPL
 
 LIB_DEPENDS=	libh323_r.so:net/openh323
 
@@ -35,9 +37,13 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj_r/ohphone ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ohphone.1 ${STAGEDIR}${PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/${PORTNAME}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${STAGEDIR}${DOCSDIR}/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/check_listen.awk ${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/regtest ${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/stresstest ${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}

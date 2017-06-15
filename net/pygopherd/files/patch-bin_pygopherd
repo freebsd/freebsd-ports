@@ -1,0 +1,11 @@
+--- bin/pygopherd.orig	2005-09-22 13:00:21 UTC
++++ bin/pygopherd
+@@ -23,7 +23,7 @@
+ from pygopherd import *
+ import sys
+ 
+-conffile = '/etc/pygopherd/pygopherd.conf'
++conffile = '%%PREFIX%%/etc/pygopherd/pygopherd.conf'
+ if len(sys.argv) > 1:
+     conffile = sys.argv[1]
+ 

@@ -3,7 +3,7 @@
 
 PORTNAME=	xcpc
 PORTVERSION=	20070122
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -19,8 +19,7 @@ USE_XORG=	ice
 USE_GNOME=	glib20
 USES=		gettext iconv pkgconfig
 
-LIB_DEPENDS+=	libicui18n.so:devel/icu \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS+=	libpcre.so:devel/pcre \
 		libdsk.so:emulators/libdsk
 
 OPTIONS_DEFINE=	MOTIF ATHENA XSHM DEBUG

@@ -1,0 +1,17 @@
+NJplot is a tree drawing program able to draw any phylogenetic tree expressed
+in the Newick phylogenetic tree format (e.g., the format used by the PHYLIP
+package). NJplot is especially convenient for rooting the unrooted trees
+obtained from parsimony, distance or maximum likelihood tree-building methods.
+
+The package contains the following programs:
+njplot      - draw phylogenetic trees and interactively modify them
+newicktops  - non-interactive version rendering into a PostScript file
+newicktotxt - non-interactive version rendering into a text file
+unrooted    - draw unrooted circular trees
+
+If you use NJplot in a published work, please cite the following reference:
+
+Perriere, G. and Gouy, M. (1996) WWW-Query: An on-line retrieval system for
+biological sequence banks. Biochimie, 78, 364-369.
+
+WWW: http://pbil.univ-lyon1.fr/software/njplot.html

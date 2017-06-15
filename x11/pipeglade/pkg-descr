@@ -1,0 +1,21 @@
+Pipeglade is a helper program that displays graphical user interfaces
+for other programs.  It renders the GUI definition found in a
+GtkBuilder file (created using the Glade Interface Designer), and
+communicates with the main program solely via pipes or fifos.
+
+To have its GUI rendered by pipeglade, a program must be able to
+ - send plain text commands to standard output or a named pipe and/or
+ - receive and parse simple plain text messages from standard input or
+ a named pipe.
+
+Simple one-shot dialogs as well as more complex, long-running programs
+can be built.
+
+Pipeglade provides access to a subset of the features available in
+GTK+ 3.  Widgets able to communicate via pipeglade include text labels
+and images, statusbars and progress indicators, various kinds of
+buttons, spinbuttons and scales/sliders, comboboxes and menus, various
+text and tabular inputs, various standard dialog windows, calendars,
+drawing areas.
+
+WWW: http://pipeglade.boundp.org

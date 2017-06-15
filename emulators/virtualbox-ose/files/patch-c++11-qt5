@@ -1,0 +1,54 @@
+--- src/VBox/Frontends/VirtualBox/Makefile.kmk.orig	2017-01-17 08:26:40.000000000 +0100
++++ src/VBox/Frontends/VirtualBox/Makefile.kmk	2017-02-10 19:08:22.842186000 +0100
+@@ -238,6 +238,7 @@
+  VirtualBox_LIBS.linux   += xcb
+  VirtualBox_LIBS.solaris += xcb
+  VirtualBox_LIBS.freebsd += xcb
++ VirtualBox_CXXFLAGS.freebsd += -std=c++11 
+ endif # VBOX_WITH_QTGUI_V5
+ 
+ ifneq ($(KBUILD_TARGET),win)
+@@ -888,6 +889,7 @@
+  VirtualBox_SOURCES += \
+ 	src/VBoxFBOverlay.cpp \
+ 	src/VBoxGLSupportInfo.cpp
++ VirtualBox_CXXFLAGS += -std=c++11
+ endif
+ 
+ #
+@@ -1222,6 +1224,7 @@
+   VBoxOGL2D_SOURCES = \
+ 	src/VBoxGLSupportInfo.cpp
+   VBoxOGL2D_INCS = include
++  VBoxOGL2D_CXXFLAGS += -std=c++11
+  endif
+ endif
+
+--- src/VBox/Debugger/Makefile.kmk.orig	2017-02-10 19:55:21.598089000 +0100
++++ src/VBox/Debugger/Makefile.kmk	2017-02-10 20:12:29.292761000 +0100
+@@ -115,6 +115,7 @@
+ 	VBoxDbgBase.cpp \
+ 	VBoxDbgConsole.cpp \
+ 	VBoxDbgStatsQt4.cpp
++VBoxDbg_CXXFLAGS += -std=c++11
+ VBoxDbg_LIBS = \
+ 	$(VBOX_LIB_VMM_LAZY)
+ VBoxDbg_LDFLAGS.darwin = \
+@@ -141,6 +142,7 @@
+  tstVBoxDbg_LIBS.linux   += xcb
+  tstVBoxDbg_LIBS.solaris += xcb
+  tstVBoxDbg_LIBS.freebsd += xcb
++ tstVBoxDbg_CXXFLAGS     += -std=c++1
+ endif # VBOX_WITH_QTGUI_V5
+ tstVBoxDbg_SOURCES      = testcase/tstVBoxDbg.cpp
+ tstVBoxDbg_LIBS         = \
+--- src/VBox/HostServices/SharedOpenGL/Makefile.kmk.orig	2017-02-10 20:31:10.812441000 +0100
++++ src/VBox/HostServices/SharedOpenGL/Makefile.kmk	2017-02-10 20:32:04.804107000 +0100
+@@ -444,6 +444,7 @@
+     VBoxTestOGL_LIBS.linux   += xcb
+     VBoxTestOGL_LIBS.solaris += xcb
+     VBoxTestOGL_LIBS.freebsd += xcb
++    VBoxTestOGL_CXXFLAGS += -std=c++11
+    endif # VBOX_WITH_QTGUI_V5
+    VBoxTestOGL_LDFLAGS.darwin += -framework OpenGL
+    VBoxTestOGL_LIBS.win       += $(PATH_SDK_$(VBOX_WINPSDK)_LIB)/Opengl32.lib

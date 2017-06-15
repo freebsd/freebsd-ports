@@ -3,7 +3,7 @@
 
 PORTNAME=	libecwj2
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://glebius.int.ru/tmp/403/
 DISTFILES=	ecw_jpeg_2000_sdk_3_3_source.zip

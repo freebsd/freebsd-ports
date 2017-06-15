@@ -39,9 +39,6 @@ DIRECTORY_LISTING_DESC=	Enable directory listing
 LOGGING_DESC=		Enable logging
 SSI_DESC=		Enable SSI
 THREADS_DESC=		Enable threads
-SSL_DESC=		Enable SSL
-IPV6_DESC=		Enable IPv6 support
-DEBUG_DESC=		Build with debug enabled
 DEBUG_HEXDUMP_DESC=	Enable hexdump of sent and received traffic
 
 SSL_USES=		ssl

@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_spdy
 PORTVERSION=	0.9.4.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~masaki/ports/:mod_spdy \
 		APACHE_HTTPD:apache22
@@ -25,9 +25,8 @@ BUILD_DEPENDS=	python:lang/python \
 		bash:shells/bash
 
 ONLY_FOR_ARCHS=	amd64 i386
-USE_OPENSSL=	yes
 USE_APACHE=	22
-USES=		compiler execinfo gmake python:2 tar:xz
+USES=		compiler execinfo gmake python:2 ssl tar:xz
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_source_${PORTVERSION}/mod_spdy/src
@@ -84,6 +83,10 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE=		${PORTNAME} is incompatible with LibreSSL, please use www/apache24 with mod_http2
+.endif
 
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
 CXXFLAGS+=	-Wno-unused-local-typedef

@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/3.6.2/
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -148,7 +148,7 @@ NOT_FOR_ARCH=	ia64
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MCMAKE} && ${COMPILER_TYPE} != clang
+.if ${PORT_OPTIONS:MCMAKE} && ${CHOSEN_COMPILER_TYPE} != clang
 BROKEN=	CMake support only works with clang
 .endif
 
@@ -250,7 +250,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 build-plist:
-	${RM} -f ${PLIST}
+	${RM} ${PLIST}
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}%%LLVM_SUFFIX%% >> ${PLIST}
 .endfor

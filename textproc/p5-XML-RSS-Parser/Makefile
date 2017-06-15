@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Liberal object-oriented parser for RSS feeds
 
 RUN_DEPENDS=	p5-XML-Elemental>=0:textproc/p5-XML-Elemental \

@@ -3,6 +3,7 @@
 
 PORTNAME=		libswift
 PORTVERSION=	20160817
+PORTREVISION=	2
 CATEGORIES=		net-p2p
 
 MAINTAINER=		dch@skunkwerks.at
@@ -10,7 +11,7 @@ COMMENT=	 IETF Peer-to-Peer Streaming Peer Protocol implementation
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=		libevent.so:devel/libevent2
+LIB_DEPENDS=		libevent.so:devel/libevent
 
 USE_GITHUB=		yes
 GH_TAGNAME=		dda307f

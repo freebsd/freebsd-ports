@@ -1,5 +1,5 @@
---- estic/imon.cc.orig	Sat Feb 26 18:33:03 2000
-+++ estic/imon.cc	Sat Feb 26 18:33:29 2000
+--- estic/imon.cc.orig	1996-11-08 16:41:46 UTC
++++ estic/imon.cc
 @@ -22,6 +22,7 @@
  #include <stdio.h>
  #include <errno.h>

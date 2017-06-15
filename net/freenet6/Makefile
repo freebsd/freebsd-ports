@@ -8,10 +8,13 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://go6.net/4105/file.asp?file_id=166&
 DISTNAME=	tspc-${PORTVERSION}-src
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexago Freenet6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
-USES=		gmake tar:tgz
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../CLIENT-LICENSE.TXT
+
+USES=		gmake ssl tar:tgz
 MAKE_ARGS=	target=freebsd CC="${CC}" CXX="${CXX}" \
 		installdir="${STAGEDIR}${PREFIX}" ETCDIR="${ETCDIR}"
 

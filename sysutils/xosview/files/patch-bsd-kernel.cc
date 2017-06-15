@@ -83,7 +83,7 @@
  #endif
  { NULL }
  };
-@@ -338,7 +323,21 @@ BSDGetPageStats(uint64_t *meminfo, uint6
+@@ -338,7 +323,23 @@ BSDGetPageStats(uint64_t *meminfo, uint6
  #else  /* HAVE_UVM */
  	struct vmmeter vm;
  #if defined(XOSVIEW_FREEBSD)
@@ -95,7 +95,9 @@
 +	GET_VM_STATS(v_active_count);
 +	GET_VM_STATS(v_inactive_count);
 +	GET_VM_STATS(v_wire_count);
++#if __FreeBSD_version < 1200017
 +	GET_VM_STATS(v_cache_count);
++#endif
 +	GET_VM_STATS(v_free_count);
 +	GET_VM_STATS(v_page_size);
 +	GET_VM_STATS(v_vnodepgsin);
@@ -106,7 +108,19 @@
  #else  /* XOSVIEW_DFBSD */
  	struct vmstats vms;
  	size_t size = sizeof(vms);
-@@ -468,99 +467,37 @@ BSDGetCPUTimes(uint64_t *timeArray, unsi
+@@ -353,7 +354,11 @@ BSDGetPageStats(uint64_t *meminfo, uint6
+ 		meminfo[0] = (uint64_t)vm.v_active_count * vm.v_page_size;
+ 		meminfo[1] = (uint64_t)vm.v_inactive_count * vm.v_page_size;
+ 		meminfo[2] = (uint64_t)vm.v_wire_count * vm.v_page_size;
++#if __FreeBSD_version < 1200017
+ 		meminfo[3] = (uint64_t)vm.v_cache_count * vm.v_page_size;
++#else
++		meminfo[3] = 0;
++#endif
+ 		meminfo[4] = (uint64_t)vm.v_free_count * vm.v_page_size;
+ #else  /* XOSVIEW_DFBSD */
+ 		meminfo[0] = (uint64_t)vms.v_active_count * vms.v_page_size;
+@@ -468,99 +473,37 @@ BSDGetCPUTimes(uint64_t *timeArray, unsi
  int
  BSDNetInit() {
  	OpenKDIfNeeded();

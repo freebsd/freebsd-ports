@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb32-tools
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.11
 DISTVERSIONPREFIX=	r
 CATEGORIES=	databases net
 
@@ -23,7 +23,8 @@ OPTIONS_DEFAULT=	SSL
 SASL_USE=	my_tags=sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-SSL_USE=	openssl=yes my_tags=ssl
+SSL_USES=	ssl
+SSL_USE=	my_tags=ssl
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
@@ -38,13 +39,6 @@ MAKE_ENV=	GOPATH="${WRKSRC}/.gopath:${WRKSRC}/vendor" \
 
 USES=	localbase
 MY_TAGS=	-tags "${USE_MY_TAGS}"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-# Cannot be built
-IGNORE=	unsupported on FreeBSD 9 or older
-.endif
 
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} ${WRKSRC}/.gopath/src/github.com/${GH_ACCOUNT} ; \
@@ -68,4 +62,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

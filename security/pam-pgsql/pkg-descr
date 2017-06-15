@@ -4,4 +4,4 @@ It also supports:
  - Checking account information (pam_acct_expired,new_authtok_reqd)
  - Updating auth token
 
-WWW: http://sourceforge.net/projects/pam-pgsql/
+WWW: https://sourceforge.net/projects/pam-pgsql/

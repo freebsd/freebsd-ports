@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.6.1
+PORTVERSION=	4.7.5
 DISTVERSIONSUFFIX=	-ja
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
@@ -50,7 +50,7 @@ pre-install:
 do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}${WWWDIR}/
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
-	${FIND} ${STAGEDIR}${WWWDIR}/ -type d -exec ${CHMOD} g+w '{}' \;
+	${FIND} ${STAGEDIR}${WWWDIR}/ -type d -exec ${CHMOD} g+w {} \;
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

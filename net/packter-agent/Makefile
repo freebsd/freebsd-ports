@@ -3,7 +3,7 @@
 
 PORTNAME=	packter-agent
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.packter.jp/
 DISTNAME=	PackterAgent-${PORTVERSION}

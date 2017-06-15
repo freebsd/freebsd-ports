@@ -1,20 +1,21 @@
 bin/lxde-logout
 bin/openbox-lxde
 bin/startlxde
+etc/xdg/lxpanel/LXDE/config
+etc/xdg/lxpanel/LXDE/panels/panel
 etc/xdg/lxsession/LXDE/autostart
 @sample etc/xdg/lxsession/LXDE/desktop.conf.sample
+etc/xdg/openbox/LXDE/menu.xml
+etc/xdg/openbox/LXDE/rc.xml
 @sample etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample
 man/man1/lxde-logout.1.gz
 man/man1/openbox-lxde.1.gz
 man/man1/startlxde.1.gz
 share/applications/lxde-logout.desktop
-share/lxde/images/logout-banner.png
-share/lxde/images/lxde-icon.png
-share/lxde/openbox/menu.xml
-share/lxde/openbox/rc.xml
-share/lxde/wallpapers/lxde_blue.jpg
-share/lxde/wallpapers/lxde_green.jpg
-share/lxde/wallpapers/lxde_red.jpg
-share/lxpanel/profile/LXDE/config
-share/lxpanel/profile/LXDE/panels/panel
+share/applications/lxde-screenlock.desktop
+%%DATADIR%%/images/logout-banner.png
+%%DATADIR%%/images/lxde-icon.png
+%%DATADIR%%/wallpapers/lxde_blue.jpg
+%%DATADIR%%/wallpapers/lxde_green.jpg
+%%DATADIR%%/wallpapers/lxde_red.jpg
 share/xsessions/LXDE.desktop

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	em-http-request
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

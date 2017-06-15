@@ -1,15 +1,14 @@
---- src/tspi/tsp_tcsi_param.c.orig	2016-06-20 15:21:26 UTC
+--- src/tspi/tsp_tcsi_param.c.orig	2016-11-19 03:09:49 UTC
 +++ src/tspi/tsp_tcsi_param.c
-@@ -11,7 +11,12 @@
- #include <stdlib.h>
- #include <string.h>
+@@ -13,7 +13,10 @@
  #include <stdio.h>
-+#if !defined(__FreeBSD__)
- #include <bits/local_lim.h>
-+#else
+ 
+ 
+-#ifndef __APPLE__
++#ifdef __FreeBSD__
 +#include <sys/param.h>
-+#define	HOST_NAME_MAX	MAXHOSTNAMELEN
-+#endif
- #include "trousers/tss.h"
- #include "trousers/trousers.h"
- #include "trousers_types.h"
++#define        HOST_NAME_MAX   MAXHOSTNAMELEN
++#elif !defined(__APPLE__)
+ #include <limits.h>
+ #else
+ #define HOST_NAME_MAX 64

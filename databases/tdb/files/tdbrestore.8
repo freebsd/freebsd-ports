@@ -1,13 +1,22 @@
 '\" t
 .\"     Title: tdbrestore
 .\"    Author: [see the "AUTHOR" section]
-.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
-.\"      Date: 03/29/2011
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 2015-04-25
 .\"    Manual: System Administration tools
 .\"    Source: Samba 3.6
 .\"  Language: English
 .\"
-.TH "TDBRESTORE" "8" "03/29/2011" "Samba 3\&.6" "System Administration tools"
+.TH "TDBRESTORE" "8" "2015\-04\-25" "Samba 3\&.6" "System Administration tools"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
 .\" -----------------------------------------------------------------
 .\" * set default formatting
 .\" -----------------------------------------------------------------
@@ -30,7 +39,7 @@ This tool is part of the
 suite\&.
 .PP
 \fBtdbrestore\fR
-is a very simple utility that \'restores\' the contents of dump file into TDB (Trivial DataBase) file\&. The dump file is obtained from the tdbdump command\&.
+is a very simple utility that \*(Aqrestores\*(Aq the contents of dump file into TDB (Trivial DataBase) file\&. The dump file is obtained from the tdbdump command\&.
 .PP
 This tool wait on the standard input for the content of the dump and will write the tdb in the tdbfilename parameter\&.
 .PP

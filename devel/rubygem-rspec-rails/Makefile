@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec-rails
-PORTVERSION=	3.4.2
+PORTVERSION=	3.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Testing framework for Rails
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/License.md
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-actionpack4>=3.0:www/rubygem-actionpack4 \
 		rubygem-activesupport4>=3.0:devel/rubygem-activesupport4 \

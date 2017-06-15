@@ -16,8 +16,7 @@ LIB_DEPENDS=	libosmocore.so:devel/libosmocore
 
 CONFLICTS_INSTALL=libmtp-[0-9]* # lib/libmtp.a
 
-USES=		autoreconf gmake pathfix pkgconfig
-PATHFIX_MAKEFILEIN=Makefile.am
+USES=		autoreconf pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
 post-patch:

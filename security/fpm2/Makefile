@@ -3,6 +3,7 @@
 
 PORTNAME=	fpm2
 PORTVERSION=	0.79
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://als.regnet.cz/fpm2/download/
 

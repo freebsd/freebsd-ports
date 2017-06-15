@@ -18,8 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	DOCS
 
-USES+=		tcl:tea
-USE_OPENSSL=	yes
+USES+=		tcl:tea ssl
 CONFIGURE_ARGS+=--with-ssl-dir=${OPENSSLBASE}
 
 WRKSRC=		${WRKDIR}/${TCL_PKG}

@@ -1,0 +1,13 @@
+--- puppet_forge.gemspec.orig	2017-01-15 00:58:04 UTC
++++ puppet_forge.gemspec
+@@ -23,8 +23,8 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<faraday>.freeze, ["~> 0.9.0"])
+-      s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["< 0.11.0", ">= 0.9.0"])
++      s.add_runtime_dependency(%q<faraday>.freeze, [">= 0.9.0"])
++      s.add_runtime_dependency(%q<faraday_middleware>.freeze, [">= 0.9.0"])
+       s.add_runtime_dependency(%q<semantic_puppet>.freeze, ["~> 0.1.0"])
+       s.add_runtime_dependency(%q<minitar>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<gettext-setup>.freeze, [">= 0.3"])

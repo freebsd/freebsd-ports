@@ -1,5 +1,5 @@
---- examples/makefile.orig	2004-05-19 05:53:57.000000000 -0400
-+++ examples/makefile	2010-02-06 20:58:35.000000000 -0500
+--- examples/makefile.orig	2004-05-19 09:53:57 UTC
++++ examples/makefile
 @@ -11,7 +11,7 @@
  # distribution of RANLIP assuming different installations of the library. this
  # include the following examples for both static and shared linking.
@@ -28,7 +28,7 @@
  
  # Object file fo the example
  OBJ = ranliptest.o
-@@ -38,68 +35,68 @@
+@@ -38,68 +35,68 @@ OBJ3 = ranliptestproc.o
  
  # LIB_PATH used to store the path in which the library files were installed.
  # The commented out assignment is for when the library is installed into the

@@ -1,0 +1,27 @@
+--- Makefile.orig	2012-05-25 09:50:02 UTC
++++ Makefile
+@@ -16,10 +16,10 @@
+ #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+ 
+-INSTALLDIR := $(DESTDIR)/usr/games
+-MANDIR := $(DESTDIR)/usr/share/man/man6
++INSTALLDIR := $(DESTDIR)$(PREFIX)/bin
++MANDIR := $(DESTDIR)$(PREFIX)/man/man6
+ 
+-CC:=gcc
++CC?=gcc
+ INSTALL:=install
+ 
+ CFLAGS += $(shell icu-config --cflags)
+@@ -43,8 +43,8 @@ $(BIN):	$(OBJS)
+ $(MAN):
+ 
+ install:	$(BIN)
+-	$(INSTALL) -m 755 $(BIN) $(INSTALLDIR)/$(BIN)
+-	$(INSTALL) -m 644 $(MAN) $(MANDIR)/$(MAN)
++	$(BSD_INSTALL_PROGRAM) $(BIN) $(INSTALLDIR)/$(BIN)
++	$(BSD_INSTALL_MAN) $(MAN) $(MANDIR)/$(MAN)
+ 
+ clean:
+ 	rm -f *.o $(BIN)

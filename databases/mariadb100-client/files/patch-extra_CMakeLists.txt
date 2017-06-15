@@ -1,6 +1,6 @@
---- extra/CMakeLists.txt.orig	2015-01-25 16:21:40.000000000 +0100
-+++ extra/CMakeLists.txt	2015-01-29 20:20:56.846047266 +0100
-@@ -54,6 +54,7 @@
+--- extra/CMakeLists.txt.orig	2017-01-12 01:45:16 UTC
++++ extra/CMakeLists.txt
+@@ -54,6 +54,7 @@ ADD_CUSTOM_TARGET(GenError
                    DEPENDS 
                    ${CMAKE_BINARY_DIR}/include/mysqld_error.h.tmp)
  
@@ -8,7 +8,7 @@
  MYSQL_ADD_EXECUTABLE(my_print_defaults my_print_defaults.c)
  TARGET_LINK_LIBRARIES(my_print_defaults  mysys)
  
-@@ -74,9 +75,12 @@
+@@ -74,9 +75,12 @@ ENDIF()
  
  MYSQL_ADD_EXECUTABLE(replace replace.c COMPONENT Server)
  TARGET_LINK_LIBRARIES(replace mysys)
@@ -21,7 +21,7 @@
  
    MYSQL_ADD_EXECUTABLE(mysql_waitpid mysql_waitpid.c COMPONENT Client)
    TARGET_LINK_LIBRARIES(mysql_waitpid mysys)
-@@ -97,7 +101,9 @@
+@@ -100,7 +104,9 @@ ENDIF()
        ../storage/innobase/page/page0zip.cc
        )
  

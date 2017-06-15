@@ -5,4 +5,4 @@ sensitive detection, and automatic annotation, of potential problems and
 security-relevant design patterns based on the observation of existing,
 user-initiated traffic in complex web 2.0 environments.
 
-WWW: http://code.google.com/p/ratproxy/
+WWW: https://github.com/codenote/ratproxy

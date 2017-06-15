@@ -1,5 +1,5 @@
---- ./bin/tartarus.orig	2014-06-28 01:35:27.535761589 +0200
-+++ ./bin/tartarus	2014-06-28 01:38:03.361776923 +0200
+--- bin/tartarus.orig	2016-08-08 16:38:21.322171000 +0000
++++ bin/tartarus	2016-08-08 16:39:07.701706000 +0000
 @@ -41,6 +41,8 @@
  set -f
  shopt -s nocasematch
@@ -94,7 +94,7 @@
 -            if isEnabled "$STORAGE_FTP_USE_SFTP"; then
 -                PROTO="sftp"
 -            fi
-+	    [ "$SFTP_AUTH_METHOD" != "pubkey" && "$STORAGE_FTP_PASSWORD" != "" ] && OPTS="${OPTS}${STORAGE_FTP_PASSWORD}"
++	    [ "$SFTP_AUTH_METHOD" != "pubkey" -a "$STORAGE_FTP_PASSWORD" != "" ] && OPTS="${OPTS}${STORAGE_FTP_PASSWORD}"
 +	    if isEnabled "$STORAGE_FTP_USE_SFTP"; then
 +	       PROTO="sftp"
 +	       if isEnabled "$STORAGE_FTP_SSL_INSECURE"; then

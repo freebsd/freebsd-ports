@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubyntlm
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

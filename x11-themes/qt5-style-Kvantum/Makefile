@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	Kvantum
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	V
 CATEGORIES=	x11-themes
 PKGNAMEPREFIX=	qt5-style-
 
-MAINTAINER=	matthew@reztek.cz
+MAINTAINER=	rezny@FreeBSD.org
 COMMENT=	SVG-based theme engine for Qt4/5, KDE and LXQT
 
 LICENSE=	GPLv3+
@@ -19,7 +20,6 @@ USES=		compiler:c++11-lang qmake
 USE_QT5=	core gui svg widgets x11extras buildtools_build
 USE_XORG=	x11 xext
 USE_GL=		gl
-INSTALLS_ICONS=	yes
 
 WRKSRC_SUBDIR=	${PORTNAME}
 

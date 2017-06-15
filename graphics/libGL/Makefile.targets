@@ -4,12 +4,22 @@
 
 post-patch:
 .if ${OPSYS} == FreeBSD
-	@${REINPLACE_CMD} -e 's|x86_64|amd64|' \
+	@${REINPLACE_CMD} -e 's|x86_64|amd64|' -e 's|\\S\*//|[:space:]* //|' \
 		${WRKSRC}/configure
+# Clang 3.4 in 10.x on i386 fails with the following error when using "GCC atomics"
+#
+# glsl/cache.c:613:4: error: cannot compile this atomic library call yet
+#   p_atomic_add(cache->size, size); note: expanded from macro 'p_atomic_add'
+# define p_atomic_add(v, i) (void) __atomic_add_fetch((v), (i), __ATOMIC_ACQ_REL)
+#
+.if ${OSVERSION} < 1100000 && ${ARCH} == "i386"
+	@${REINPLACE_CMD} -e 's|-DUSE_GCC_ATOMIC_BUILTINS||' ${WRKSRC}/configure
 .endif
-#	Sed on 9.x and dragonfly don't support \< or \>
-	@${REINPLACE_CMD} -e 's|\\>//|[[:>:]]//|' \
+.else # ${OPSYS} == DragonFly
+#	Sed on dragonfly doesn't support \< or \>
+	@${REINPLACE_CMD} -e 's|\\>//|[[:>:]]//|' -e 's|\\S\*//|[:space:]* //|' \
 		${WRKSRC}/configure
+.endif # ${OPSYS}
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/src/mesa/drivers/dri/common/xmlconfig.c
 	@${REINPLACE_CMD} -e 's|#!/use/bin/python|#!${PYTHON_CMD}|g' \

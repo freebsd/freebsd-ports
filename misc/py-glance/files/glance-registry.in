@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: glance_registry
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable glance_registry:
+#
+# glance_registry_enable="YES"
+#
+# glance_registry_enable (bool):
+#	Set it to "YES" to enable glance_registry.
+# 	Default is "NO".
+#
+# glance_registry_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/glance"
+#
+# glance_registry_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${glance_registry_logdir}/glance-registry.log"
+#
+
+. /etc/rc.subr
+
+name=glance_registry
+rcvar=glance_registry_enable
+
+required_files=%%PREFIX%%/etc/glance/glance-registry.conf
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/glance-registry.pid"
+procname="%%PREFIX%%/bin/python2.7"
+
+start_precmd=glance_precmd
+
+load_rc_config $name
+
+: ${glance_registry_enable:="NO"}
+: ${glance_registry_logdir:="/var/log/glance"}
+: ${glance_registry_args:="--log-file ${glance_registry_logdir}/glance-registry.log"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -u glance glance-registry ${glance_registry_args}"
+
+glance_precmd() {
+	mkdir -p ${glance_registry_logdir}
+	chown glance ${glance_registry_logdir}
+}
+
+run_rc_command "$1"

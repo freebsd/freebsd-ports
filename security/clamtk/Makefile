@@ -3,7 +3,7 @@
 
 PORTNAME=	clamtk
 PORTVERSION=	4.45
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 
@@ -37,7 +37,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/usr/bin|${LOCALBASE}/bin|g ; \
+		's|/usr/local|${LOCALBASE}|g ; \
 		 s|/usr/share|${PREFIX}/share|g ; \
 		 s|/var/lib/clamav|/var/db/clamav|g' ${WRKSRC}/lib/*.pm
 
@@ -55,6 +55,8 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/po/$${l}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/$${l}/LC_MESSAGES/${PORTNAME}.mo; \
 	done
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CHANGES DISCLAIMER README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

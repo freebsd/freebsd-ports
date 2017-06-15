@@ -21,4 +21,6 @@ CONFIGURE_ARGS+=	--enable-client-only \
 			--disable-build-dird \
 			--disable-build-stored
 
+BROKEN_aarch64=		Fails to link: missing sbrk
+
 .include "${MASTERDIR}/Makefile"

@@ -1,5 +1,5 @@
-'nohtml' is a filter which strips HTML attachments from email
-messages.  It is primarily intended to be used with remailers like
-mailing lists to suppress HTML from ever hitting those lists.
+'nohtml' is a filter which strips HTML attachments from email messages.
+It is primarily intended to be used with remailers like mailing lists
+to suppress HTML from ever hitting those lists.
 
-WWW:  http://www.tundraware.com/Software/nohtml/
+WWW: http://www.tundraware.com/Software/nohtml/

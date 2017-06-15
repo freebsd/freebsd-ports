@@ -1,4 +1,4 @@
---- microphone.c.orig	2015-11-27 20:43:24 UTC
+--- microphone.c.orig	2016-10-25 20:57:54 UTC
 +++ microphone.c
 @@ -56,7 +56,7 @@ static int timeVOX = 2000;				// VOX han
  
@@ -8,4 +8,4 @@
 +static complex double TxCorrectDc;
  
  // Used for the Hermes protocol
- #define HERMES_TX_BUF_SAMPLES	4800
+ #define HERMES_TX_BUF_SAMPLES	4800	// buffer size in I/Q samples (two shorts)

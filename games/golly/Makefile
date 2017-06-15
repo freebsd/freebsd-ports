@@ -2,11 +2,12 @@
 
 PORTNAME=	golly
 PORTVERSION=	2.7
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conway's Game of Life and other cellular automata
 
 USES=		compiler:c++11-lib cmake:outsource perl5 python

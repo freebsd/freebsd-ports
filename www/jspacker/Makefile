@@ -13,6 +13,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	JavaScript compressor/obfuscator (Perl version)
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 JSPACKER=	jsPacker.pl
 

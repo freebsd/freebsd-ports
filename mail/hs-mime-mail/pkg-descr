@@ -4,4 +4,4 @@ and the ability to send bytestrings via the sendmail executable.  You
 can also use any other library you wish to send via different methods,
 eg directly to SMTP.
 
-WWW: http://github.com/snoyberg/mime-mail
+WWW: https://github.com/snoyberg/mime-mail

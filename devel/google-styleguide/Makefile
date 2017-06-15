@@ -1,37 +1,48 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	google-styleguide
-PORTVERSION=	66
+PORTNAME=	styleguide
+PORTVERSION=	20170302
 CATEGORIES=	devel
-MASTER_SITES=	http://google-styleguide.googlecode.com/svn/trunk/cpplint/
-DISTFILES=	cpplint.py cpplint_unittest.py README
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+PKGNAMEPREFIX=	google-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to assist with Google style guide compliance
 
-BROKEN=		Unfetchable (google code has gone away)
+# cpplint.py and cpplint_unittest.py under BSD3CLAUSE
+# style guides under CC-BY-3.0
+# google-c-style.el under GPLv1+
+LICENSE=	BSD3CLAUSE CC-BY-3.0 GPLv1+
+LICENSE_COMB=	multi
 
-USES=		python
+USES=		python shebangfix
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+GH_TAGNAME=	15f2836
+
+NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-
-PLIST_FILES=	bin/cpplint.py
-PORTDOCS=	README
+SHEBANG_FILES=	cpplint/cpplint.py cpplint/cpplint_unittest.py
 
 OPTIONS_DEFINE=	DOCS
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}
-
-post-patch:
-	@${REINPLACE_CMD} -Ee "s,#!.*,#!${PYTHON_CMD}," ${WRKSRC}/*.py
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cpplint.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cpplint/cpplint.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cpplint/cpplint_unittest.py ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.xml ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/google_python_style.vim  ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/google-c-style.el  ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.css ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/cpplint
+	${INSTALL_DATA} ${WRKSRC}/cpplint/README ${STAGEDIR}${DOCSDIR}/cpplint
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/docguide
+	(cd ${WRKSRC}/docguide && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/docguide)
 
 .include <bsd.port.mk>

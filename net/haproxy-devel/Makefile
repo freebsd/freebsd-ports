@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
-DISTVERSION=	1.7-dev4
+DISTVERSION=	1.7-dev6
 CATEGORIES=	net www
-MASTER_SITES=	http://haproxy.1wt.eu/download/1.7/src/devel/
+MASTER_SITES=	http://www.haproxy.org/download/1.7/src/devel/
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -15,6 +15,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 CONFLICTS_INSTALL=	haproxy-[1234567890]\*
+IGNORE=		no devel version available
 
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy
@@ -62,6 +63,9 @@ IGNORE?=	enable PCRE support to use DeviceAtlas
 .if ${PORT_OPTIONS:MOPENSSL}
 USES+=		ssl
 MAKE_ARGS+=	USE_OPENSSL=1
+.if !empty(SSL_DEFAULT:Mlibressl*)
+BROKEN= does not build with libressl
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MLUA}

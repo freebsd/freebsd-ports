@@ -14,8 +14,7 @@ COMMENT=	Lightweight and fast http server
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
 USE_RC_SUBR=	0W-httpd
 ALL_TARGET=	#none
 

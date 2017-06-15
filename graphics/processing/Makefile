@@ -5,15 +5,13 @@ PORTNAME=	processing
 PORTVERSION=	1.5.1
 PORTEPOCH=	1
 CATEGORIES=	graphics cad java
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://download.processing.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Programming environment for images, animation, and interactions
 
 LICENSE=	GPLv2
-
-BROKEN=		Unfetchable (google code has gone away)
 
 RUN_DEPENDS=	jikes>=1.22:java/jikes \
 		${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx
@@ -27,7 +25,7 @@ SUB_FILES=	processing
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-extract:
-	${RM} -rf ${WRKSRC}/java
+	${RM} -r ${WRKSRC}/java
 	${MV} ${WRKSRC}/processing ${WRKSRC}/start-processing
 	${LN} -s ${JAVA_HOME} ${WRKSRC}/java
 	${FIND} ${WRKSRC}/modes/java/reference/ -exec ${CHMOD} 555 {} \;

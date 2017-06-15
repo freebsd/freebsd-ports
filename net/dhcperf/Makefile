@@ -7,7 +7,7 @@ CATEGORIES=	net benchmarks
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1-freebsd-5.4-i386
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DHCPerf delivers accurate performance metrics of Dynamic Host Configuration Protocol service
 
 LIB_DEPENDS=	libc.so.5:misc/compat5x

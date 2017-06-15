@@ -2,7 +2,7 @@
 
 PORTNAME=	dfc
 PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://projects.gw-computing.net/attachments/download/467/
 

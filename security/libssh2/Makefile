@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libssh2
-PORTVERSION=	1.7.0
-PORTEPOCH=	2
+PORTVERSION=	1.8.0
+PORTEPOCH=	3
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
 		LOCAL/sbz
@@ -26,18 +26,21 @@ TRACE_DESC=	Enable debug packet traces
 
 TRACE_CONFIGURE_ENABLE=	debug
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
-GCRYPT_CONFIGURE_ON=	--with-libgcrypt --without-openssl
-GCRYPT_CONFIGURE_OFF=	--without-libgcrypt --with-openssl
+GCRYPT_CONFIGURE_ON=	--with-libgcrypt
+GCRYPT_CONFIGURE_OFF=	--with-openssl
 GCRYPT_CPPFLAGS=	-I${LOCALBASE}/include
 GCRYPT_LIBS=		-L${LOCALBASE}/lib
-GCRYPT_USE_OFF=	openssl=yes
+GCRYPT_USES_OFF=	ssl
 ZLIB_CONFIGURE_WITH=	libz
-
 
 .include <bsd.port.pre.mk>
 
+.if empty(PORT_OPTIONS:MGCRYPT) && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e '/Libs:/s/@LDFLAGS@//' -e '/Libs:/s/@LIBS@//' \
+	@${REINPLACE_CMD} -e '/Libs:/s/@LIBS@//' \
 		${WRKSRC}/libssh2.pc.in
 .if ! ${PORT_OPTIONS:MGCRYPT}
 .  if ${SSL_DEFAULT} == base
@@ -45,14 +48,5 @@ post-patch:
 		${WRKSRC}/configure
 .  endif
 .endif
-
-post-build:
-	@${REINPLACE_CMD} -E -e '/Requires.private:/{s/[[:<:]]zlib[[:>:]]//;s/,,/,/;s/ ,/ /;s/,$$//;}' \
-		${WRKSRC}/libssh2.pc
-
-# allow maintainer to generate MAN3 manpages list (make extract is required before)
-x-generate-man3: extract
-	@(cd ${WRKSRC}/docs && ${LS} -1F *.3 | ${SORT} | ${CUT} -d '/' -f4 \
-		| ${GREP} -v template)
 
 .include <bsd.port.post.mk>

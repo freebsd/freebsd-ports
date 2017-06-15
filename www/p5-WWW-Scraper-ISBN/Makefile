@@ -12,16 +12,12 @@ COMMENT=	Retrieving information about books by ISBN number
 
 LICENSE=	ART20
 
+BUILD_DEPENDS=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
+RUN_DEPENDS=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
+
 CONFLICTS_INSTALL=	p5-WWW-Scraper-ISBN-Driver-[0-9]* p5-WWW-Scraper-ISBN-Record-[0-9]*
 
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502000
-BUILD_DEPENDS+=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
-RUN_DEPENDS+=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

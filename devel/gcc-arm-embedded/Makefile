@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	5.4.20160622
+PORTVERSION=	6.3.20170223
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpad.net/gcc-arm-embedded/5.0/5-2016-q2-update/+download/
+MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/6_1-2017q1/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -13,7 +13,7 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not build
 
 OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=PYGDB
@@ -28,7 +28,6 @@ PURE_LIB_DEPENDS_OFF=	\
 			libmpfr.so:math/mpfr \
 			libmpc.so:math/mpc \
 			libisl.so:devel/isl \
-			libcloog-isl.so:math/cloog \
 			libelf.so:devel/libelf
 
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
@@ -48,8 +47,8 @@ GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
-GCC_VERSION=		5.4.1
-FULL_VERSION=		5_4-2016q2-20160622
+GCC_VERSION=		6.3.1
+FULL_VERSION=		6-2017-q1-update
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
@@ -74,16 +73,15 @@ BUILD_DIR=	${WRKDIR}/build
 INTERIM_WORLD=	${WRKDIR}/install
 INTERIM_PREFIX=	${INTERIM_WORLD}/${PORTNAME}-${FULL_VERSION}
 
-BUNDLED_LIBS=			EXPAT:gz ZLIB:gz LIBELF:gz \
-				GMP:bz2 MPFR:bz2 MPC:gz ISL:bz2 CLOOG:gz
-BUNDLED_VERSION_EXPAT=		2.0.1
+BUNDLED_LIBS=			EXPAT:bz2 ZLIB:gz LIBELF:gz \
+				GMP:bz2 MPFR:bz2 MPC:gz ISL:bz2
+BUNDLED_VERSION_EXPAT=		2.1.1
 BUNDLED_VERSION_ZLIB=		1.2.8
 BUNDLED_VERSION_LIBELF=		0.8.13
-BUNDLED_VERSION_GMP=		4.3.2
-BUNDLED_VERSION_MPFR=		2.4.2
-BUNDLED_VERSION_MPC=		0.8.1
-BUNDLED_VERSION_ISL=		0.12.2
-BUNDLED_VERSION_CLOOG=		0.18.1
+BUNDLED_VERSION_GMP=		6.1.0
+BUNDLED_VERSION_MPFR=		3.1.4
+BUNDLED_VERSION_MPC=		1.0.3
+BUNDLED_VERSION_ISL=		0.15
 
 VAR_TO_SUBMAKE=	BUILD_DIR CC CFLAGS CHOSEN_COMPILER_TYPE CONFIG_SITE \
 		CONFIGURE_MAX_CMD_LEN CONFIGURE_SHELL CP CPP CPPFLAGS CXX \
@@ -115,12 +113,12 @@ post-extract:
 	@${TAR} -xf ${SRC_DIR}/newlib.tar.bz2 -C ${SRC_DIR}
 
 do-configure:
-	@${RM} -rf ${BUILD_DIR}
+	@${RM} -r ${BUILD_DIR}
 	@${MKDIR} ${BUILD_DIR}
-	@${RM} -rf ${INTERIM_PREFIX}
+	@${RM} -r ${INTERIM_PREFIX}
 	@${MKDIR} ${INTERIM_PREFIX}
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
-	@${RM} -f ${WRKDIR}/Makefile.inc
+	@${RM} ${WRKDIR}/Makefile.inc
 .for VAR in ${VAR_TO_SUBMAKE}
 	@${ECHO} '${VAR}=${${VAR}}' >> ${WRKDIR}/Makefile.inc
 .endfor

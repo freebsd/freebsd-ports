@@ -16,9 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libidn.so:dns/libidn
 
-USES=		cpe libtool
+USES=		cpe libtool ssl
 CPE_VENDOR=	echoping_project
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
 		--enable-ttcp --enable-tos --with-libidn=${LOCALBASE} \

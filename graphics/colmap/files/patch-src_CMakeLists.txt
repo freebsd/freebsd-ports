@@ -1,0 +1,27 @@
+build: properly limit -lpthread and -ldl
+
+--- src/CMakeLists.txt.orig	2016-12-07 13:47:54 UTC
++++ src/CMakeLists.txt
+@@ -34,6 +34,7 @@ set(COLMAP_LIBRARIES
+     sqlite3
+     sift_gpu
+     vlfeat
++    ${CMAKE_DL_LIBS}
+     ${Boost_LIBRARIES}
+     ${GLOG_LIBRARIES}
+     ${FREEIMAGE_LIBRARIES}
+@@ -41,11 +42,11 @@ set(COLMAP_LIBRARIES
+     ${OPENGL_LIBRARIES})
+ 
+ if(CUDA_ENABLED)
+-    set(COLMAP_LIBRARIES mvs mvs_cuda ${COLMAP_LIBRARIES})
++    list(APPEND COLMAP_LIBRARIES mvs mvs_cuda)
+ endif()
+ 
+-if("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU")
+-    set(COLMAP_LIBRARIES ${COLMAP_LIBRARIES} pthread dl)
++if(UNIX)
++    list(APPEND COLMAP_LIBRARIES pthread)
+ endif()
+ 
+ set(COLMAP_UI_LIBRARIES ui)

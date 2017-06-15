@@ -57,6 +57,7 @@
     SUBDIR += dnswalk
     SUBDIR += dnswall
     SUBDIR += doc
+    SUBDIR += dq
     SUBDIR += dualserver
     SUBDIR += erlang-idna
     SUBDIR += ez-ipupdate
@@ -78,6 +79,7 @@
     SUBDIR += inadyn-mt
     SUBDIR += ipcheck
     SUBDIR += ironsides
+    SUBDIR += kf5-kdnssd
     SUBDIR += knot-resolver
     SUBDIR += knot1
     SUBDIR += knot2
@@ -89,9 +91,10 @@
     SUBDIR += libdjbdns
     SUBDIR += libidn
     SUBDIR += libidn2
+    SUBDIR += libnspsl
     SUBDIR += libpsl
     SUBDIR += linux-c6-libasyncns
-    SUBDIR += linux-f10-libasyncns
+    SUBDIR += linux-c7-libasyncns
     SUBDIR += mDNSResponder_nss
     SUBDIR += maradns
     SUBDIR += mdnsd
@@ -107,6 +110,7 @@
     SUBDIR += opendnssec
     SUBDIR += opendnssec13
     SUBDIR += opendnssec2
+    SUBDIR += openmdns
     SUBDIR += openresolv
     SUBDIR += p5-AnyEvent-CacheDNS
     SUBDIR += p5-AnyEvent-DNS-EtcHosts
@@ -190,6 +194,8 @@
     SUBDIR += rubygem-net-dns
     SUBDIR += rubygem-public_suffix
     SUBDIR += rubygem-public_suffix_service
+    SUBDIR += rubygem-simpleidn
+    SUBDIR += rubygem-validates_hostname
     SUBDIR += samba-nsupdate
     SUBDIR += scavenge
     SUBDIR += sheerdns
@@ -203,6 +209,7 @@
     SUBDIR += validns
     SUBDIR += vhostcname
     SUBDIR += vizone
+    SUBDIR += void-zones-tools
     SUBDIR += walker
     SUBDIR += wdns
     SUBDIR += whoseip

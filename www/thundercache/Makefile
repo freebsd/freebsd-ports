@@ -28,8 +28,7 @@ APACHE_DESC=	Install apache for reporting viewing
 PHP_DESC=	Install PHP for reporting generating
 PGSQL_DESC=	Install PostgreSQL (report data storing)
 
-USE_OPENSSL=	yes
-USES=		shebangfix tar:bzip2
+USES=		shebangfix tar:bzip2 ssl
 SHEBANG_FILES=	sbin/thunderlog.php
 
 ONLY_FOR_ARCHS=	i386 amd64

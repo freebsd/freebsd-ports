@@ -13,6 +13,9 @@ USES=		gmake pgsql:9.0
 WANT_PGSQL=	server:build
 WRKSRC=		${WRKDIR}/pg_lesslog_${PORTVERSION}_pg90
 
+DEPRECATED=	Does not build with recent PostgreSQL versions
+EXPIRATION_DATE=	2017-04-08
+
 PGSQL_PORT=	databases/postgresql${PGSQL_VER:S,.,,}
 PGSQL_SRCDIR=	`cd ${PORTSDIR}/${PGSQL_PORT}-server; ${MAKE} -VWRKSRC`
 

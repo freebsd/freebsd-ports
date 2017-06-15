@@ -49,7 +49,7 @@ post-configure:
 		-e '/^FULL_AR = / s|.*|FULL_AR = ${AR}|' \
 		`${FIND} ${WRKSRC} -name Makefile`
 
-post-stage:
+post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Tk/pTk/extralibs.ld
 	@${RMDIR} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Tk/pTk
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Tk/Tk.so

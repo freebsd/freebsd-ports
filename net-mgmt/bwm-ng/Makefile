@@ -13,7 +13,7 @@ COMMENT=	Small and simple bandwidth monitor
 LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		ncurses pkgconfig
 USE_CSTD=	gnu89
 PLIST_FILES=	bin/bwm-ng man/man1/bwm-ng.1.gz
 

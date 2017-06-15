@@ -1,10 +1,12 @@
 include/kcgi.h
 include/kcgihtml.h
 include/kcgijson.h
+include/kcgiregress.h
 include/kcgixml.h
 lib/libkcgi.a
 lib/libkcgihtml.a
 lib/libkcgijson.a
+lib/libkcgiregress.a
 lib/libkcgixml.a
 man/man3/kcgi.3.gz
 man/man3/kcgihtml.3.gz
@@ -24,6 +26,8 @@ man/man3/khttp_write.3.gz
 man/man3/khttpbasic_validate.3.gz
 man/man3/khttpdigest_validate.3.gz
 man/man3/kmalloc.3.gz
+man/man3/kutil_epoch2str.3.gz
+man/man3/kutil_log.3.gz
 man/man3/kutil_urlencode.3.gz
 man/man3/kvalid_string.3.gz
 man/man8/kfcgi.8.gz

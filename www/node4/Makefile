@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	4.6.1
+PORTVERSION=	4.8.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -15,9 +16,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS
+OPTIONS_DEFAULT=
 OPTIONS_SUB=	yes
 
-BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
+OPTIONS_DEFAULT_FreeBSD_10=	BUNDLED_SSL
+OPTIONS_DEFAULT+=		${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
+
+BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation #'
 BUNDLED_SSL_USES_OFF=		ssl
 BUNDLED_SSL_CONFIGURE_OFF=	--shared-openssl
 
@@ -28,7 +33,7 @@ USES=		compiler:c++11-lib execinfo gmake python:2 pkgconfig localbase
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	node-[0-9]* node-devel-0.[0-9]* node010-[0-9]* node012-[0-9]* iojs-[0-9]* node5-[0-9]*
+CONFLICTS_INSTALL=	node[56]-[0-9]* node01[02]-[0-9]* node-[0-9]* node-devel-[0-9]* iojs-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
@@ -45,19 +50,14 @@ LIB_DEPENDS+=	libuv.so:devel/libuv
 
 .if empty(PORT_OPTIONS:MBUNDLED_SSL)
 
-.if ${OSVERSION} < 1100085
-# node.js requires openssl 1.0.2, use the port since base isn't new enough
-WITH_OPENSSL_PORT=yes
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 && ${SSL_DEFAULT} == base
+IGNORE=		node.js requires openssl 1.0.2, add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf or enable BUNDLED_SSL option
 .endif
 
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if empty(PORT_OPTIONS:MBUNDLED_SSL)
 .if !empty(SSL_DEFAULT:Mlibressl*)
 IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 .endif
+
 .endif
 
 post-patch:
@@ -89,4 +89,4 @@ post-configure:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

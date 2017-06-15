@@ -3,7 +3,7 @@
 
 PORTNAME=	wmget
 PORTVERSION=	0.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ftp
 MASTER_SITES=	http://amtrickey.net/download/ \
 		LOCAL/uqs

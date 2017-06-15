@@ -28,7 +28,7 @@ do-install:
 	@cd ${WRKSRC} && ${FIND} . -type d -exec \
 		${MKDIR} "${STAGEDIR}${DATADIR}/{}" \;
 	@cd ${WRKSRC} && ${FIND} . -type f -exec \
-		${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
+		${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/{}" \;
 	${INSTALL_SCRIPT} ${WRKDIR}/tvbrowser ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

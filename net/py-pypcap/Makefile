@@ -3,17 +3,21 @@
 
 PORTNAME=	pypcap
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net python
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Simplified object-oriented Python extension module for libpcap
 
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	pyrexc:devel/pyrex
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dugsong
+GH_TAGNAME=	PYPCAP_${PORTVERSION:S/./_/g}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -23,5 +27,8 @@ post-patch:
 
 pre-build:
 	(cd ${WRKSRC}; pyrexc pcap.pyx)
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pcap.so
 
 .include <bsd.port.mk>

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	peg-e
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/peg-e/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,7 +16,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib qmake tar:bzip2
-USE_QT5=	core gui widgets qmake_build buildtools_build
+USE_QT5=	core gui widgets qmake_build buildtools_build linguisttools_build
+USE_GL=		gl
 INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

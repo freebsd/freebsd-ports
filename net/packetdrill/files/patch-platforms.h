@@ -1,18 +1,16 @@
---- platforms.h.orig	2013-07-21 04:53:41.000000000 +0900
-+++ platforms.h	2013-09-04 10:34:56.000000000 +0900
-@@ -43,12 +43,14 @@
+--- platforms.h.orig	2016-10-01 08:55:57 UTC
++++ platforms.h
+@@ -50,11 +50,12 @@
  
- #if defined(__FreeBSD__)
- 
+ #include <netinet/sctp.h>
+ #include <sys/param.h>
 +#include <paths.h>
+ #if __FreeBSD_version >= 1001000
+ #include <netinet/udplite.h>
+ #endif
  #define USE_LIBPCAP             1
 -#define TUN_PATH                "/dev/tun0"
 +#define TUN_PATH                _PATH_DEV "tun0"
  #define TUN_DEV                 "tun0"
- 
  #define HAVE_TCP_INFO           1
- 
-+#include "ports_config.h"
- #include "open_memstream.h"
- #include "fmemopen.h"
- 
+ #if (__FreeBSD_version < 1000000 && __FreeBSD_version > 902000) || __FreeBSD_version > 1000028

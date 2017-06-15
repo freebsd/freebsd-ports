@@ -1,0 +1,22 @@
+--- vdumper/Makefile.orig	2016-10-04 16:28:00 UTC
++++ vdumper/Makefile
+@@ -7,8 +7,18 @@ install: vtable-dumper
+ 	mkdir -p $(DESTDIR)$(prefix)/bin/
+ 	install vtable-dumper $(DESTDIR)$(prefix)/bin/
+ 
++OS=$(shell uname -s)
++ifeq ($(OS), Linux)
++LIBDL=-ldl
++else  ifeq ($(OS), FreeBSD)
++LIBDL=
++else
++LIBDL=UNKNOWN
++endif
++
+ vtable-dumper: dump-vtable.c dump-vtable.h
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o vtable-dumper dump-vtable.c -ldl -lelf -lstdc++
++	$(CC) $(CFLAGS) $(LDFLAGS) -o vtable-dumper dump-vtable.c \
++		$(LIBDL) -lelf -lstdc++
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(prefix)/bin/vtable-dumper

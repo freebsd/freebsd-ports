@@ -51,6 +51,7 @@ share/applications/oracle.desktop
 %%DATADIR%%/translations/cockatrice_pt.qm
 %%DATADIR%%/translations/cockatrice_pt_BR.qm
 %%DATADIR%%/translations/cockatrice_ru.qm
+%%DATADIR%%/translations/cockatrice_sr.qm
 %%DATADIR%%/translations/cockatrice_sv.qm
 %%DATADIR%%/translations/cockatrice_zh-Hans.qm
 share/icons/hicolor/48x48/apps/cockatrice.png
@@ -73,5 +74,6 @@ share/oracle/translations/oracle_pl.qm
 share/oracle/translations/oracle_pt.qm
 share/oracle/translations/oracle_pt_BR.qm
 share/oracle/translations/oracle_ru.qm
+share/oracle/translations/oracle_sr.qm
 share/oracle/translations/oracle_sv.qm
 share/oracle/translations/oracle_zh-Hans.qm

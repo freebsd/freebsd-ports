@@ -1,13 +1,13 @@
---- Makefile.orig
+--- Makefile.orig	2016-09-04 17:18:17 UTC
 +++ Makefile
-@@ -87,8 +87,8 @@
+@@ -87,8 +87,8 @@ LDFLAGS     += -lncurses -lreadline
  ###########################
  # FreeBSD (Thanks to Peter Brevik)
  ###########################
 -#CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
 -#LDFLAGS     = -lncurses -lcompat
-+CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
-+LDFLAGS     = -lncurses -lcompat
++CFLAGS      += -DCOLOR_SUPPORT -DNCURSES
++LDFLAGS     += -lncurses -lcompat
  
  ###########################
  # MAC OS X

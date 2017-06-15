@@ -13,6 +13,8 @@ COMMENT=	Phil Cockroft's Basic Interpreter (previously Rabbit Basic)
 # Ask maintainer if you want newer sources or author's latest e-mail
 #  (which is currently "phil@cockcroft.de")
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile
 PLIST_FILES=	bin/pbasic man/man1/pbasic.1.gz
@@ -24,7 +26,7 @@ post-patch:	.SILENT
 	${ECHO_CMD} '.PHONY: $$(SYSTEMS)' >>${WRKSRC}/makefile
 
 do-configure:
-	-cd ${WRKSRC} ; ${RM} -rf termio m68000 msdos vax pyramid ns32000 \
+	-cd ${WRKSRC} ; ${RM} -r termio m68000 msdos vax pyramid ns32000 \
 			pdp11 cursor/cursor.dos cursor/cursor.ukc
 
 do-install:

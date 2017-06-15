@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Convenience wrapper for Symfony's Finder component
 
 LICENSE=	BSD3CLAUSE
@@ -18,6 +18,8 @@ BUILD_DEPENDS=	pear-TheSeer_fDOMDocument>=1.3.1:devel/pear-TheSeer_fDOMDocument 
 RUN_DEPENDS=	pear-TheSeer_fDOMDocument>=1.3.1:devel/pear-TheSeer_fDOMDocument \
 		pear-Symfony_Component_Finder>=2.2.0:devel/pear-Symfony_Component_Finder \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+
+BROKEN=		unfetchable, redirects to https://phpunit.de/
 
 PEAR_CHANNEL=	phpunit
 USES=	pear

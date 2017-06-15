@@ -12,4 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	xt xaw
 
+BROKEN_aarch64=		Fails to build: exec(xgettext) failed (No such file or directory)
+
 .include <bsd.port.mk>

@@ -1,5 +1,0 @@
-# $FreeBSD$
-
-PROG=	checksum_test
-
-.include <bsd.prog.mk>

@@ -2,29 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	peco
-PORTVERSION=	0.3.5
+PORTVERSION=	0.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
+MASTER_SITES=	LOCAL/knu
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Simplistic interactive filtering tool
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/jessevdk/go-flags.a:devel/go-flags \
-		${LOCALBASE}/${GO_LIBDIR}/github.com/mattn/go-runewidth.a:devel/go-runewidth \
-		${LOCALBASE}/${GO_LIBDIR}/github.com/nsf/termbox-go.a:devel/go-termbox \
-		${LOCALBASE}/${GO_LIBDIR}/github.com/google/btree.a:devel/go-btree
-
 USES=		go
-USE_GITHUB=	yes
 
-WRKSRC_SUBDIR=	cmd/peco
-GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}/cmd/peco
+WRKSRC_SUBDIR=	${GO_PKG_SUBDIR}
+WRKSRC_GITDIR=	${WRKSRC:S|/${WRKSRC_SUBDIR}$$||}
+GO_PKG_GITURL=	https://github.com/${PORTNAME}/${PORTNAME}
+GO_PKG_SUBDIR=	cmd/peco
+GO_PKGNAME=	${GO_PKG_GITURL:S|^https://||}/${GO_PKG_SUBDIR}
 PLIST_FILES=	bin/peco
+UPLOAD_FILE=	${_DISTDIR:S|/$||}/${DISTFILES:Mpeco-*.tar.gz}
 
 post-extract:
 	@${MKDIR} ${GO_WRKSRC:H:H:H}
 	@${LN} -sf ${WRKSRC:H:H} ${GO_WRKSRC:H:H}
+
+maintainer-fetch:
+	@${MAKE} clean
+	@${MKDIR} ${WRKSRC_GITDIR}
+	@git clone ${GO_PKG_GITURL} \
+		--branch v${DISTVERSION} --depth 1 ${WRKSRC_GITDIR}
+	@cd ${WRKSRC_GITDIR} && glide install
+	@${TAR} zcf ${UPLOAD_FILE} \
+		-C ${WRKSRC_GITDIR}/.. --exclude .git ${DISTNAME}
+	@${MAKE} makesum
+	@${MAKE} clean
+
+${UPLOAD_FILE}: maintainer-fetch
+
+maintainer-distfile: ${UPLOAD_FILE}
+	@rsync -aP ${UPLOAD_FILE} freefall.freebsd.org:public_distfiles/
 
 .include <bsd.port.mk>

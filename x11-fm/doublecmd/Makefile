@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.8
+PORTREVISION=	4
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -30,7 +31,7 @@ WANT_GNOME=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
 PROJECT_FILE=	src/doublecmd.lpi
-LAZARUS_VER=	1.6.0
+LAZARUS_VER=	1.6.4
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d --pcp=${WRKSRC}/tmppcp
 LAZARUS_DIR=	${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
@@ -105,8 +106,8 @@ GTK2_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interf
 QT4_LIB_DEPENDS=	libQt4Pas.so:x11-toolkits/qt4pas
 QT4_BUILD_DEPENDS=	${LAZARUS_DIR}/lcl/units/${BUILDNAME}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-lcl-qt
 
-WCX_UNRAR_LIB_DEPENDS=	libunrar.so:archivers/libunrar
-WFX_SAMBA_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
+WCX_UNRAR_LIB_DEPENDS=	libunrar.so.5:archivers/libunrar5
+WFX_SAMBA_USES=		samba:lib
 WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 .include <bsd.port.options.mk>
@@ -212,10 +213,10 @@ do-build:
 		${LAZBUILD_CMD} --ws=${LCL_PLATFORM} --bm="${BUILD_MODE}" --lazarusdir=${LAZARUS_DIR} ${PROJECT_FILE}
 
 post-build:
-	@${RM} -rf ${DOCSRC}/*/dev-help
+	@${RM} -r ${DOCSRC}/*/dev-help
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 
 	@${ECHO_CMD} "@dir %%DATADIR%%/plugins/wcx" >> ${PLIST}
 	@${ECHO_CMD} "@dir %%DATADIR%%/plugins/wdx" >> ${PLIST}
@@ -276,7 +277,7 @@ pre-install:
 
 .for FILE in %%DATADIR%%/doublecmd.ext.example %%DATADIR%%/pixmaps.txt \
 	%%DATADIR%%/multiarc.ini bin/doublecmd share/applications/doublecmd.desktop \
-	share/pixmaps/doublecmd.png share/pixmaps/doublecmd.xpm \
+	share/pixmaps/doublecmd.png share/icons/hicolor/scalable/apps/doublecmd.svg \
 	%%DATADIR%%/doublecmd.xml
 	@${ECHO_CMD} ${FILE} >> ${PLIST}
 .endfor
@@ -367,16 +368,16 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${DIRE}
 	@cd ${WRKSRC}/${DIRE} && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
+			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
 .endfor
 
 .for FILE in doublecmd.ext.example pixmaps.txt multiarc.ini install/linux/doublecmd.xml
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DATADIR}
 .endfor
 
-.for FILE in doublecmd.png install/linux/doublecmd.xpm
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/share/pixmaps/
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/doublecmd.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/mainicon/alt/dcfinal.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/doublecmd.svg
 
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/install/linux/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
@@ -386,7 +387,7 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@cd ${DOCSRC} && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
+			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DOCSDIR}/{}" \;
 .endif
 
 .include <bsd.port.mk>

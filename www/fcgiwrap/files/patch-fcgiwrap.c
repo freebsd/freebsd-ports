@@ -1,5 +1,5 @@
---- fcgiwrap.c.orig	2013-02-03 14:25:17.000000000 +0100
-+++ fcgiwrap.c	2014-12-22 13:25:23.000000000 +0100
+--- fcgiwrap.c.orig	2013-02-03 13:25:17 UTC
++++ fcgiwrap.c
 @@ -43,6 +43,7 @@
  #include <ctype.h>
  
@@ -17,7 +17,7 @@
  
  static const char * blacklisted_env_vars[] = {
  	"AUTH_TYPE",
-@@ -485,6 +488,19 @@
+@@ -485,6 +488,19 @@ static void inherit_environment(void)
  	}
  }
  
@@ -37,7 +37,7 @@
  static void cgi_error(const char *message, const char *reason, const char *filename)
  {
  	printf("Status: %s\r\nContent-Type: text/plain\r\n\r\n%s\r\n",
-@@ -541,6 +557,9 @@
+@@ -541,6 +557,9 @@ static void handle_fcgi_request(void)
  			if (!filename)
  				cgi_error("403 Forbidden", "Cannot get script name, are DOCUMENT_ROOT and SCRIPT_NAME (or SCRIPT_FILENAME) set and is the script executable?", NULL);
  
@@ -47,7 +47,7 @@
  			last_slash = strrchr(filename, '/');
  			if (!last_slash)
  				cgi_error("403 Forbidden", "Script name must be a fully qualified path", filename);
-@@ -587,14 +606,29 @@
+@@ -587,14 +606,29 @@ err_pipein:
  	FCGI_puts("System error");
  }
  
@@ -78,7 +78,7 @@
  		handle_fcgi_request();
  	}
  }
-@@ -671,7 +705,7 @@
+@@ -671,7 +705,7 @@ static int listen_on_fd(int fd) {
  	return 0;
  }
  
@@ -87,7 +87,7 @@
  	char *p = url;
  	char *q;
  	int fd;
-@@ -751,6 +785,7 @@
+@@ -751,6 +785,7 @@ invalid_url:
  		return -1;
  	}
  
@@ -95,7 +95,7 @@
  	return listen_on_fd(fd);
  }
  
-@@ -758,9 +793,10 @@
+@@ -758,9 +793,10 @@ int main(int argc, char **argv)
  {
  	int nchildren = 1;
  	char *socket_url = NULL;
@@ -107,7 +107,7 @@
  		switch (c) {
  			case 'f':
  				stderr_to_fastcgi++;
-@@ -773,6 +809,7 @@
+@@ -773,6 +809,7 @@ int main(int argc, char **argv)
  					"  -c <number>\t\tNumber of processes to prefork\n"
  					"  -s <socket_url>\tSocket to bind to (say -s help for help)\n"
  					"  -h\t\t\tShow this help message and exit\n"
@@ -115,7 +115,7 @@
  					"\nReport bugs to Grzegorz Nosek <"PACKAGE_BUGREPORT">.\n"
  					PACKAGE_NAME" home page: <http://nginx.localdomain.pl/wiki/FcgiWrap>\n",
  					argv[0]
-@@ -784,8 +821,14 @@
+@@ -784,8 +821,14 @@ int main(int argc, char **argv)
  			case 's':
  				socket_url = strdup(optarg);
  				break;
@@ -131,7 +131,7 @@
  					fprintf(stderr, "Option -%c requires an argument.\n", optopt);
  				else if (isprint(optopt))
  					fprintf(stderr, "Unknown option `-%c'.\n", optopt);
-@@ -808,13 +851,24 @@
+@@ -808,13 +851,24 @@ int main(int argc, char **argv)
  	} else
  #endif
  	if (socket_url) {

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rancid
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.2
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
@@ -30,8 +30,8 @@ CONFIGURE_ARGS=	--localstatedir=${LOCALBASE}/var/${PORTNAME}/ \
 
 OLDCONFIG_FILE1=	bin/env
 OLDCONFIG_FILE2=	util/lg/lg.conf
-NEWERCONFIG_FILES1=	etc/rancid.conf
-NEWERCONFIG_FILES2=	etc/lg.conf
+NEWERCONFIG_FILE1=	etc/rancid.conf
+NEWERCONFIG_FILE2=	etc/lg.conf
 NEWCONFIG_FILES=	rancid.conf lg.conf
 
 OPTIONS_DEFINE=		COMWARE SVN
@@ -39,8 +39,6 @@ OPTIONS_DEFAULT=
 
 COMWARE_DESC=		Add experimental support for Comware devices
 SVN_DESC=		Use Subversion instead of CVS
-
-CONFLICTS=	rancid-[0-9]*
 
 .include <bsd.port.options.mk>
 
@@ -55,9 +53,7 @@ CONFIGURE_ARGS+=	--with-svn
 BUILD_DEPENDS+=		svn:devel/subversion
 .else
 CONFIGURE_ARGS+=	--without-svn
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-RUN_DEPENDS+=	cvs>0:devel/cvs
-.endif
+RUN_DEPENDS+=		cvs:devel/cvs
 .endif
 
 pre-everything::
@@ -66,9 +62,12 @@ pre-everything::
 post-patch:
 .if ${PORT_OPTIONS:MCOMWARE}
 	${CAT} ${FILESDIR}/comware_types.conf >> ${WRKSRC}/etc/rancid.types.base
+	${SED} -e 's/@VERSION@/${PORTVERSION}/g' ${FILESDIR}/cmwlogin.in > ${WRKDIR}/cmwlogin
+	${SED} -e 's/@VERSION@/${PORTVERSION}/g' ${FILESDIR}/cmw.pm.in > ${WRKDIR}/cmw.pm
 .endif
 	${REINPLACE_CMD} "s|par.1|rancid-par.1|" ${WRKSRC}/man/Makefile.in
 	${MV} ${WRKSRC}/man/par.1 ${WRKSRC}/man/rancid-par.1
+	${REINPLACE_CMD} 's|uid=`perl|uid=`${PERL}|' ${WRKSRC}/etc/rancid.conf.sample.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/periodic/hourly
@@ -76,8 +75,8 @@ post-install:
 	${LN} -s ${LOCALBASE}/libexec/${PORTNAME}/rancid-cvs ${STAGEDIR}${LOCALBASE}/bin
 	${LN} -s ${LOCALBASE}/libexec/${PORTNAME}/rancid-run ${STAGEDIR}${LOCALBASE}/bin
 .if ${PORT_OPTIONS:MCOMWARE}
-	${INSTALL_DATA} ${FILESDIR}/cmw.pm ${STAGEDIR}/${LOCALBASE}/lib/rancid
-	${INSTALL_SCRIPT} ${FILESDIR}/cmwlogin ${STAGEDIR}/${LOCALBASE}/libexec/rancid
+	${INSTALL_DATA} ${WRKDIR}/cmw.pm ${STAGEDIR}/${LOCALBASE}/lib/rancid
+	${INSTALL_SCRIPT} ${WRKDIR}/cmwlogin ${STAGEDIR}/${LOCALBASE}/libexec/rancid
 .endif
 .for file in ${NEWCONFIG_FILES}
 	@ if [ -f ${LOCALBASE}/etc/${PORTNAME}/${file} ] ; then \

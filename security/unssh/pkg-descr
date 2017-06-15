@@ -1,6 +1,6 @@
-Provide a fast way to delete entries from OpenSSH's known_hosts
-file. This is a simple automation of the things normally done by
-the user when having an "offending key" in his/her known_hosts file
-caused by a changing host key of the destination.
+Provide a fast way to delete entries from OpenSSH's known_hosts file.
+This is a simple automation of the things normally done by the user
+when having an "offending key" in his/her known_hosts file caused by
+a changing host key of the destination.
 
-WWW:    http://unssh.sourceforge.net/
+WWW: http://unssh.sourceforge.net/

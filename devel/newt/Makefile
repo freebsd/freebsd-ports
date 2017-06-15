@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	newt
-PORTVERSION=	0.52.19
+PORTVERSION=	0.52.20
 CATEGORIES=	devel
-MASTER_SITES=	https://fedorahosted.org/releases/n/e/newt/
+MASTER_SITES=	https://releases.pagure.org/newt/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Not Eriks Windowing Toolkit: console I/O handling library

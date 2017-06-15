@@ -1,4 +1,4 @@
---- cpp/util/etcd_masterelection.cc.orig	2016-02-02 11:35:23 UTC
+--- cpp/util/etcd_masterelection.cc.orig	2016-10-14 17:11:57 UTC
 +++ cpp/util/etcd_masterelection.cc
 @@ -24,7 +24,7 @@ DEFINE_string(node_id, "", "unique node 
  

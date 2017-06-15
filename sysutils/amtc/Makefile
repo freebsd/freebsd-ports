@@ -22,7 +22,7 @@ SHEBANG_FILES=	${WRKSRC}/../amtc-web/cli/amtc-web.phpsh
 
 WRKSRC_SUBDIR=	src
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/amtc
 
 .include <bsd.port.mk>

@@ -427,7 +427,7 @@ gst_ogg_PLIST_FILES=	${GST_LIB_DIR}/libgstogg.la \
 gst_ogg_DIST=	base
 
 # opencv
-gst_opencv_LIB_DEPENDS+=libopencv_highgui.so:graphics/opencv
+gst_opencv_LIB_DEPENDS+=libopencv_highgui.so:graphics/opencv2
 gst_opencv_CONFIGURE_ENV+=	OPENCV_CFLAGS="-I${LOCALBASE}/include/opencv"
 gst_opencv_PLIST_FILES= ${GST_LIB_DIR}/libgstopencv.la \
 			${GST_LIB_DIR}/libgstopencv.so

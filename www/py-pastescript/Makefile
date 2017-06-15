@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PasteScript
-PORTVERSION=	1.7.5
-PORTREVISION=	2
+PORTVERSION=	2.0.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:devel/py-cheetah \
 		${PYTHON_PKGNAMEPREFIX}flup>0:www/py-flup \
 		${PYTHON_PKGNAMEPREFIX}Paste>=1.7.2:www/py-paste \
 		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.3.2:www/py-pastedeploy \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}wsgiutils>0:devel/py-wsgiutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

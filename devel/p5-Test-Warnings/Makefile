@@ -12,7 +12,7 @@ COMMENT=	Test for warnings and the lack of them
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENCE_FILE=	${WRKSRC}/LICENCE
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \

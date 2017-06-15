@@ -9,10 +9,15 @@ CATEGORIES=	sysutils
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Full featured, no dependency Jail container manager
 
+DEPRECATED=	Outdated version. Please use sysutils/py-iocage instead
+EXPIRATION_DATE=	2017-04-01
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	iocage_legacy
 
 NO_BUILD=	yes
 NO_ARCH=	yes

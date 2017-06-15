@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat-native
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.12
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/tomcat/tomcat-connectors/native/${PORTVERSION}/source
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -28,20 +28,15 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 PLIST_FILES=	lib/libtcnative-1.a \
 		lib/libtcnative-1.so \
 		lib/libtcnative-1.so.0 \
-		lib/libtcnative-1.so.0.2.7
+		lib/libtcnative-1.so.0.2.12
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtcnative-1.so.0.2.7
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtcnative-1.so.0.2.12
 
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
-IGNORE_FreeBSD_9=	Requires OpenSSL 1.0.2 (set DEFAULT_VERSIONS+=ssl=openssl)
 IGNORE_FreeBSD_10=	Requires OpenSSL 1.0.2 (set DEFAULT_VERSIONS+=ssl=openssl)
-.endif
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Detected LibreSSL (missing numerous symbols during linking)
 .endif
 
 .include <bsd.port.post.mk>

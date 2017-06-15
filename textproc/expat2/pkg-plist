@@ -6,6 +6,5 @@ lib/libexpat.a
 lib/libexpat.so
 lib/libexpat.so.1
 lib/libexpat.so.1.6.2
-lib/libexpat.so.6
 libdata/pkgconfig/expat.pc
 man/man1/xmlwf.1.gz

@@ -1,2 +1,3 @@
-SHA256 (texane-stlink-1.2.0.20160506-e454fe9_GH0.tar.gz) = ebd6203d8b89a836e02cfc48447e3d94550b8acd659ded8e4e17e76f86a13f1d
-SIZE (texane-stlink-1.2.0.20160506-e454fe9_GH0.tar.gz) = 108952
+TIMESTAMP = 1488203800
+SHA256 (texane-stlink-1.3.1_GH0.tar.gz) = 5d346b884b5cf1f7f9bb7fd7ee049b3b2e880785c7a15774d0b1a6574823e63b
+SIZE (texane-stlink-1.3.1_GH0.tar.gz) = 130587

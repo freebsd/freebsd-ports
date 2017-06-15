@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.8.1
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -31,6 +31,10 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=
+# Following commit https://github.com/kitware/cmake/commit/956054
+# we need to either change the whole man-shuffle below, or simply
+# redefine CMAKE_INSTALL_MANDIR
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 
 OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
@@ -72,9 +76,10 @@ LLDB_BUILD_DEPENDS=	swig:devel/swig13
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
+OPENMP_EXTRA_PATCHES=	${PATCHDIR}/openmp-patch-bug32279
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
-GOLD_BUILD_DEPENDS=	ld.gold:devel/binutils
+GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
 .for option in CLANG COMPILER_RT EXTRAS LLD LLDB OPENMP
@@ -177,7 +182,6 @@ _USES_PYTHON=	python
 .if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
 # Hack to disable COMPILER_RT in plist of unsupported architectures
 PLIST_SUB+=    COMPILER_RT="@comment "
-.else
 .endif
 
 .if ! ${OPTIONS_DEFINE:MGOLD}
@@ -301,6 +305,7 @@ post-patch:
 
 post-patch-COMPILER_RT-on:
 	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-svn-261229
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-svn-294806
 .if ${ARCH} == "amd64"
 	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-no-m32
 .endif
@@ -393,7 +398,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 build-plist:
-	${RM} -f ${PLIST} ${PLIST}.tmp
+	${RM} ${PLIST} ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}.tmp
 .endfor
@@ -421,8 +426,7 @@ build-plist:
 	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
-	${RM} -f ${PLIST}.tmp
-
+	${RM} ${PLIST}.tmp
 
 check-commands:
 .for command in ${COMMANDS}

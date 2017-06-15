@@ -1,0 +1,5 @@
+TIMESTAMP = 1480046230
+SHA256 (arduino/arduino-Arduino-1.6.13_GH0.tar.gz) = 1f12a3f681f75affacf6b59bae840070c64795ea46d4e2fd2dcc1b3f4de2d7ab
+SIZE (arduino/arduino-Arduino-1.6.13_GH0.tar.gz) = 80205958
+SHA256 (arduino/arduino-ArduinoCore-samd-1.6.8_GH0.tar.gz) = 2e7eded445d9b9cb88babf8d17e63886258ca52103ca4b3760fbb33311e5ffe7
+SIZE (arduino/arduino-ArduinoCore-samd-1.6.8_GH0.tar.gz) = 922278

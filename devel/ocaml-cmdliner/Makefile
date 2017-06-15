@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://erratique.ch/software/cmdliner/releases/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml module for handling of command line interfaces
 
 LICENSE=	BSD3CLAUSE

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wdns
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -15,5 +15,14 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
+OPTIONS_DEFINE=		EXAMPLES
+OPTIONS_DEFAULT=	EXAMPLES
+PORTEXAMPLES=		*
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.[ch] ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

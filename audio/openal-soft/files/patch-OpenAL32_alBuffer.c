@@ -1,8 +1,8 @@
---- OpenAL32/alBuffer.c.orig	2014-08-15 07:06:59 UTC
+--- OpenAL32/alBuffer.c.orig	2016-01-25 03:12:39 UTC
 +++ OpenAL32/alBuffer.c
-@@ -1179,7 +1179,7 @@ static ALboolean DecomposeFormat(ALenum 
-         { AL_7POINT1_16_SOFT,  FmtX71, FmtShort },
-         { AL_7POINT1_32F_SOFT, FmtX71, FmtFloat },
+@@ -1209,7 +1209,7 @@ static ALboolean DecomposeFormat(ALenum 
+         { AL_FORMAT_BFORMAT3D_16,      FmtBFormat3D, FmtShort },
+         { AL_FORMAT_BFORMAT3D_FLOAT32, FmtBFormat3D, FmtFloat },
      };
 -    ALuint i;
 +    volatile ALuint i;

@@ -3,7 +3,7 @@
 
 PORTNAME=	dirvish
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	http://www.dirvish.org/
 
@@ -25,11 +25,11 @@ USE_PERL5=	run
 EXECUTABLES=	dirvish   dirvish-expire   dirvish-locate   dirvish-runall
 
 do-patch:
-	@${SED} -e 's:%%CONFDIR%%:${PREFIX}/etc/dirvish:' -e 's:%%PERL%%:${PERL5}:' \
+	@${SED} -e 's:%%CONFDIR%%:${PREFIX}/etc/dirvish:' -e 's:%%PERL%%:${PERL}:' \
 		${FILESDIR}/header.pl > ${WRKDIR}/header.pl
 .for _E in ${EXECUTABLES}
 	@(cd ${WRKSRC} && ${CAT} ${WRKDIR}/header.pl ${_E}.pl loadconfig.pl \
-		> ${_E} && ${CHMOD} 755 ${_E})
+		> ${_E})
 .endfor
 
 do-install:

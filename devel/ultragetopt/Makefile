@@ -15,7 +15,7 @@ LICENSE=	MIT
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_ARGS=	PREFIX="${PREFIX}"
-USES=		gmake libtool
+USES=		libtool
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/ultragetopt.h \

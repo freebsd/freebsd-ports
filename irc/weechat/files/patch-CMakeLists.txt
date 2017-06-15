@@ -1,0 +1,60 @@
+--- CMakeLists.txt.orig	2016-05-01 10:50:12 UTC
++++ CMakeLists.txt
+@@ -64,6 +64,10 @@ else()
+   set(LIBDIR ${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME})
+ endif()
+ 
++if(NOT DEFINED LIBDATADIR)
++  set (LIBDATADIR ${CMAKE_INSTALL_PREFIX}/lib)
++endif()
++
+ if(NOT DEFINED SHAREDIR)
+   set(SHAREDIR ${CMAKE_INSTALL_PREFIX}/share)
+ endif()
+@@ -88,10 +92,12 @@ option(ENABLE_GNUTLS     "Enable SSLv3/T
+ option(ENABLE_LARGEFILE  "Enable Large File Support"                 ON)
+ option(ENABLE_ALIAS      "Enable Alias plugin"                       ON)
+ option(ENABLE_ASPELL     "Enable Aspell plugin"                      ON)
++option(ENABLE_BACKTRACE  "Enable backtraces (via libexecinfo)"       ON)
+ option(ENABLE_ENCHANT    "Enable Enchant lib for Aspell plugin"      OFF)
+ option(ENABLE_CHARSET    "Enable Charset plugin"                     ON)
+ option(ENABLE_EXEC       "Enable Exec plugin"                        ON)
+ option(ENABLE_FIFO       "Enable FIFO plugin"                        ON)
++option(ENABLE_ICONV      "Enable character conversion support"       ON)
+ option(ENABLE_IRC        "Enable IRC plugin"                         ON)
+ option(ENABLE_LOGGER     "Enable Logger plugin"                      ON)
+ option(ENABLE_RELAY      "Enable Relay plugin"                       ON)
+@@ -167,6 +173,7 @@ endif()
+ # Check for libgcrypt
+ find_package(GCRYPT REQUIRED)
+ add_definitions(-DHAVE_GCRYPT)
++add_definitions(${GCRYPT_CFLAGS})
+ list(APPEND EXTRA_LIBS ${GCRYPT_LDFLAGS})
+ 
+ # Check for GnuTLS
+@@ -185,10 +192,12 @@ endif()
+ find_package(ZLIB REQUIRED)
+ add_definitions(-DHAVE_ZLIB)
+ 
+-# Check for iconv
+-find_package(Iconv)
+-if(ICONV_FOUND)
+-  add_definitions(-DHAVE_ICONV)
++if (ENABLE_ICONV)
++  # Check for iconv
++  find_package(Iconv)
++  if(ICONV_FOUND)
++    add_definitions(-DHAVE_ICONV)
++  endif()
+ endif()
+ 
+ # Check for CURL
+@@ -247,7 +256,7 @@ set(exec_prefix "\${prefix}")
+ set(libdir "\${exec_prefix}/lib")
+ set(includedir "\${prefix}/include")
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/weechat.pc.in ${CMAKE_CURRENT_BINARY_DIR}/weechat.pc @ONLY)
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/weechat.pc DESTINATION ${LIBDIR}/../pkgconfig)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/weechat.pc DESTINATION ${LIBDATADIR}/pkgconfig)
+ 
+ # cygport file (used to build Cygwin packages)
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/weechat.cygport.in ${CMAKE_CURRENT_BINARY_DIR}/weechat-${VERSION}-1.cygport @ONLY)

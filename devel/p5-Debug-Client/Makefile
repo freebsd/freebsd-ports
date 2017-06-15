@@ -3,6 +3,7 @@
 
 PORTNAME=	Debug-Client
 PORTVERSION=	0.29
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-PadWalker>=1.96:devel/p5-PadWalker \
-		p5-Term-ReadLine-Perl>=1.0303:devel/p5-Term-ReadLine-Perl
+		p5-Term-ReadLine-Gnu>=1.2:devel/p5-Term-ReadLine-Gnu
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-HomeDir>=1:devel/p5-File-HomeDir \
 		p5-Term-ReadLine-Gnu>=1.20:devel/p5-Term-ReadLine-Gnu \
@@ -27,11 +28,4 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.21:net/p5-IO-Socket-IP
-RUN_DEPENDS+=	p5-IO-Socket-IP>=0.21:net/p5-IO-Socket-IP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

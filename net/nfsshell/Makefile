@@ -3,21 +3,23 @@
 
 PORTNAME=	nfsshell
 PORTVERSION=	20130510
+PORTREVISION=	1
 CATEGORIES=	net
 #MASTER_SITES=	http://www.cs.vu.nl/pub/leendert/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Userland NFS command tool
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		localbase readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	NetDirect
 GH_TAGNAME=	09cdd52
-
-USES=		readline
-
 ALL_TARGET=	nfsshell
-MAKE_ARGS=	CC="${CC}" LIBS="-lreadline ${LDFLAGS}"
-
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DREADLINE" \
+		LIBS="-lreadline ${LDFLAGS}"
 PLIST_FILES=	bin/nfsshell
 
 do-install:

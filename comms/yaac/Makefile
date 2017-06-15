@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/yaac
 
 do-install:
 	${UNZIP_NATIVE_CMD} -d ${STAGEDIR}/${JAVASHAREDIR}/${PORTNAME} ${WRKSRC}/YAAC.zip
-	${RM} -rf ${STAGEDIR}/${JAVASHAREDIR}/${PORTNAME}/lib/rxtx-2.2pre2-bins
+	${RM} -r ${STAGEDIR}/${JAVASHAREDIR}/${PORTNAME}/lib/rxtx-2.2pre2-bins
 	${INSTALL_SCRIPT} ${WRKDIR}/yaac.sh ${STAGEDIR}${PREFIX}/bin/yaac
 
 .include <bsd.port.mk>

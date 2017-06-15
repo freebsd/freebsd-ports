@@ -5,10 +5,9 @@ PORTNAME=	wmMoonClock
 PORTVERSION=	1.27
 PORTREVISION=	3
 CATEGORIES=	astro windowmaker
-MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays the phase of the moon, plus orbital data
 
 LICENSE=	GPLv2

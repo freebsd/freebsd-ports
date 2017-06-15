@@ -30,10 +30,6 @@ PORTEXAMPLES=	config.py.example
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-extract:
-	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
-	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} 644 {} \;
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHONCMD@|${PYTHON_CMD}|;s|@DATADIR@|${DATADIR}|'\
 		${WRKSRC}/r2e
@@ -41,9 +37,20 @@ post-patch:
 		${WRKSRC}/rss2email.py
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/rss2email.py ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/r2e ${STAGEDIR}${PREFIX}/bin
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/config.py.example ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
+# chmod -R bug.
+post-extract:
+	@${CHMOD} 0755 ${WRKSRC}
+.endif
+
+.include <bsd.port.post.mk>

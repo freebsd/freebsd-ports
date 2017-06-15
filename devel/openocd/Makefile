@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openocd
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -15,15 +15,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-werror
 CONFIGURE_ENV=	MAKEINFO=${LOCALBASE}/bin/makeinfo
 
-OPTIONS_DEFINE=	DOC JIMTCL VERBOSE JTAG_IO USB_IO PARPORT DUMMY FT2232 FTDI \
+OPTIONS_DEFINE=	DOXYGEN JIMTCL VERBOSE JTAG_IO USB_IO PARPORT DUMMY FT2232 FTDI \
 	USBBLASTER EP93XX AT91RM9200 PRESTO USBPROG JLINK VSLLINK RLINK ULINK \
 	ARMJTAGEW BUSPIRATE TIICDI STLINK OSBDM OPENDOUS SYSFSGPIO RMTBITBANG \
-	MINIDRIVER CMSISDAP
-OPTIONS_DEFAULT=DOC JIMTCL PARPORT DUMMY FT2232 FTDI USBBLASTER EP93XX \
+	MINIDRIVER CMSISDAP USB_COMMS
+OPTIONS_DEFAULT=JIMTCL PARPORT DUMMY FT2232 FTDI USBBLASTER EP93XX \
 	AT91RM9200 PRESTO USBPROG JLINK VSLLINK RLINK ULINK ARMJTAGEW \
 	BUSPIRATE STLINK OSBDM OPENDOUS RMTBITBANG
 
-DOC_DESC=	Build HTML and PDF documentation with Doxygen
+DOXYGEN_DESC=	Build HTML and PDF documentation with Doxygen
 JIMTCL_DESC=	Build with internal JimTCL interpreter
 VERBOSE_DESC=	Enable verbose JTAG I/O messages
 JTAG_IO_DESC=	Enable verbose JTAG I/O messages
@@ -42,22 +42,25 @@ VSLLINK_DESC=	Support Versaloon-Link JTAG Programmer
 RLINK_DESC=	Support Raisonance RLink JTAG Programmer
 ULINK_DESC=	Support Keil ULINK-JTAG Programmer
 ARMJTAGEW_DESC=	Support Olimex ARM-JTAG-EW Programmer
-BUSPIRATE=	Support BusPirate Programmer
+BUSPIRATE_DESC=	Support BusPirate Programmer
 STLINK_DESC=	Support STLink Programmer
 TI_ICDI_DESC=	Support TI ICDI JTAG Programmer
 OSBDM_DESC=	Support OSBDM Programmer (JTAG only)
-OPENDOUS=	Support EStick/OpenDous Programmer
-SYSFSGPIO=	Support Programming via sysfs GPIOs
-RMTBITBANG_DESC=Support Remote-Bitbang Driver
-MINIDRIVER_DESC=Dummy minidriver only (will exclude others!)
-CMSISDAP_DESC=Support for CMSIS-DAP Compliant Debugger
+OPENDOUS_DESC=	Support EStick/OpenDous Programmer
+SYSFSGPIO_DESC=	Support Programming via sysfs GPIOs
+RMTBITBANG_DESC=	Support Remote-Bitbang Driver
+MINIDRIVER_DESC=	Dummy minidriver only (will exclude others!)
+CMSISDAP_DESC=	Support for CMSIS-DAP Compliant Debugger
+TIICDI_DESC=	Support for the TI ICDI JTAG Programmer
+USB_COMMS_DESC=	Enable verbose USB communication messages
 
 USES=		gmake libtool pkgconfig tar:bzip2
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -Wno-error=unused-command-line-argument
 INFO=		openocd
 
 post-patch:
-	chmod +x ${WRKSRC}/libusb_finder
+	@${REINPLACE_CMD} -e '/PKG_CONFIG/{/1\.0/!s/libusb/&-0.1/;}' \
+		${WRKSRC}/configure
 
 # IMPORTANT INFORMATION FOR DEVELOPERS:
 # Some Interfaces and Options are not on the list because they break a build.
@@ -65,7 +68,7 @@ post-patch:
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOC}
+.if ${PORT_OPTIONS:MDOXYGEN}
 CONFIGURE_ARGS+=	--enable-doxygen-pdf
 WITH_DOXYGEN=		yes
 .else

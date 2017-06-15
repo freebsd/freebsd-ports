@@ -3,20 +3,20 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.8.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	GNU Transport Layer Security library
+COMMENT=	GNU Transport Layer Security library (Linux CentOS ${LINUX_DIST_VER})
 
-USES=		linux:c6
-USE_LINUX_RPM=	yes
-USE_LINUX=	libtasn1 libgcrypt libgpg-error
-
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	19.el6_7
+USES=		linux:c6
 USE_LDCONFIG=	yes
+USE_LINUX=	libtasn1 libgcrypt libgpg-error
+USE_LINUX_RPM=	yes
 
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
-DESCR=		${.CURDIR}/../gnutls/pkg-descr
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>

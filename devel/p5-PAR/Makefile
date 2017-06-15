@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PAR
-PORTVERSION=	1.010
+PORTVERSION=	1.014
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Perl Archive Toolkit
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1:archivers/p5-Archive-Zip \
 		p5-PAR-Dist>=0.32:devel/p5-PAR-Dist

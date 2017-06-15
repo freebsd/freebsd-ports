@@ -3,6 +3,7 @@
 
 PORTNAME=	libsdr-gui
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
@@ -22,10 +23,4 @@ USE_QT5=	core buildtools_build qmake widgets
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

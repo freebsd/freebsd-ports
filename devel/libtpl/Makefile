@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		libtool tar:bzip2
+USES=		libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman
 GH_TAGNAME=	8fa17e5
@@ -29,7 +29,7 @@ PLIST_FILES=	lib/libtpl.a lib/libtpl.so \
 
 PORTDOCS=	ChangeLog.txt examples.txt userguide.txt compiling.txt
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}

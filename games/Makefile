@@ -19,6 +19,7 @@
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abuse_sdl
+    SUBDIR += ace-of-penguins
     SUBDIR += acm
     SUBDIR += adgali
     SUBDIR += adom
@@ -27,11 +28,14 @@
     SUBDIR += affenspiel
     SUBDIR += afternoonstalker
     SUBDIR += agame
+    SUBDIR += ags
     SUBDIR += aisleriot
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += alephone-scenarios
     SUBDIR += alex4
+    SUBDIR += alienarena
+    SUBDIR += alienarena-data
     SUBDIR += alienblaster
     SUBDIR += alienwave
     SUBDIR += allacrost
@@ -48,10 +52,12 @@
     SUBDIR += armagetron
     SUBDIR += arx-libertatis
     SUBDIR += asc
+    SUBDIR += ascii-invaders
     SUBDIR += asciiquarium
     SUBDIR += assaultcube
     SUBDIR += asteroid
     SUBDIR += asteroids3d
+    SUBDIR += asylum
     SUBDIR += atanks
     SUBDIR += atomix
     SUBDIR += atr3d
@@ -103,9 +109,11 @@
     SUBDIR += braincurses
     SUBDIR += brainparty
     SUBDIR += brainworkshop
+    SUBDIR += brickout
     SUBDIR += brickshooter
     SUBDIR += brikx
     SUBDIR += briquolo
+    SUBDIR += brumbrumrally
     SUBDIR += brutalchess
     SUBDIR += bs
     SUBDIR += bsdgames
@@ -166,6 +174,7 @@
     SUBDIR += crafty-open-medium
     SUBDIR += crafty-tablebase-no-pawn
     SUBDIR += crafty-tablebase-pawn
+    SUBDIR += crashtest
     SUBDIR += cre
     SUBDIR += cretan-hubris
     SUBDIR += crimson
@@ -194,6 +203,7 @@
     SUBDIR += diameter
     SUBDIR += diaspora
     SUBDIR += digger-vgl
+    SUBDIR += divide-and-succeed
     SUBDIR += dmjava
     SUBDIR += dodgindiamond2
     SUBDIR += domination
@@ -210,7 +220,6 @@
     SUBDIR += dopewars
     SUBDIR += drcreep
     SUBDIR += drm
-    SUBDIR += dsnake
     SUBDIR += duckmaze
     SUBDIR += duel
     SUBDIR += dunelegacy
@@ -230,6 +239,7 @@
     SUBDIR += el
     SUBDIR += el-data
     SUBDIR += ember
+    SUBDIR += emptyepsilon
     SUBDIR += endgame-singularity
     SUBDIR += endgame-singularity-music
     SUBDIR += endless-sky
@@ -355,15 +365,18 @@
     SUBDIR += gnomekiss
     SUBDIR += gnono
     SUBDIR += gnubg
+    SUBDIR += gnubik
     SUBDIR += gnuchess
     SUBDIR += gnudoku
     SUBDIR += gnugo
+    SUBDIR += gnujump
     SUBDIR += gnurobbo
     SUBDIR += gnurobots
     SUBDIR += gnushogi
     SUBDIR += gnustep-ladder
     SUBDIR += gnustep-sudoku
     SUBDIR += golddig
+    SUBDIR += goldencheetah
     SUBDIR += golly
     SUBDIR += gomoku
     SUBDIR += gondola
@@ -409,6 +422,7 @@
     SUBDIR += hoverboard-sdl
     SUBDIR += hs-scroll
     SUBDIR += hypatia_engine
+    SUBDIR += hyperrogue
     SUBDIR += iagno
     SUBDIR += icbm3d
     SUBDIR += icebreaker
@@ -512,6 +526,7 @@
     SUBDIR += libfov
     SUBDIR += libgames-support
     SUBDIR += libggz
+    SUBDIR += libgnome-games-support
     SUBDIR += libkdegames
     SUBDIR += libkmahjongg
     SUBDIR += liblcf
@@ -526,6 +541,7 @@
     SUBDIR += linux-defcon
     SUBDIR += linux-doom3
     SUBDIR += linux-doom3-demo
+    SUBDIR += linux-dwarffortress
     SUBDIR += linux-enemyterritory
     SUBDIR += linux-enemyterritory-etpro
     SUBDIR += linux-enemyterritory-jaymod
@@ -577,6 +593,7 @@
     SUBDIR += maitretarot
     SUBDIR += manaplus
     SUBDIR += mangband
+    SUBDIR += mari0
     SUBDIR += marsnomercy
     SUBDIR += masterserver
     SUBDIR += maxr
@@ -745,6 +762,7 @@
     SUBDIR += popstar
     SUBDIR += pouetchess
     SUBDIR += powder
+    SUBDIR += powder-toy
     SUBDIR += powermanga
     SUBDIR += powwow
     SUBDIR += ppracer
@@ -823,6 +841,7 @@
     SUBDIR += railroad-rampage
     SUBDIR += redeclipse
     SUBDIR += redeclipse-data
+    SUBDIR += redorblack
     SUBDIR += reminiscence
     SUBDIR += rescue
     SUBDIR += residualvm
@@ -965,7 +984,6 @@
     SUBDIR += traingame
     SUBDIR += tremulous
     SUBDIR += trenchbroom
-    SUBDIR += trigger-data
     SUBDIR += trigger-rally
     SUBDIR += trimines
     SUBDIR += triplane
@@ -1017,6 +1035,8 @@
     SUBDIR += vodovod
     SUBDIR += volleyball
     SUBDIR += vor
+    SUBDIR += voxelands
+    SUBDIR += voxelands-server
     SUBDIR += vultures-eye
     SUBDIR += wanderer
     SUBDIR += wargus
@@ -1037,6 +1057,7 @@
     SUBDIR += wolfpack
     SUBDIR += wop
     SUBDIR += wordplay
+    SUBDIR += wordwarvi
     SUBDIR += worldofpadman
     SUBDIR += wtf
     SUBDIR += wxlauncher

@@ -1,0 +1,4 @@
+bin/gnujump
+man/man6/gnujump.6.gz
+%%NLS%%share/locale/it/LC_MESSAGES/gnujump.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/gnujump.mo

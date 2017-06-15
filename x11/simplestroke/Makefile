@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Detect mouse gestures
 
 LICENSE=	ISCL

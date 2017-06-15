@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack-xml_parser
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

@@ -1,6 +1,6 @@
---- lib/sl/slc-lex.l.orig	2013-03-28 14:22:37.561924559 +1030
-+++ lib/sl/slc-lex.l	2013-03-28 14:23:21.647677881 +1030
-@@ -47,8 +47,6 @@
+--- lib/sl/slc-lex.l.orig	2016-11-29 01:35:27 UTC
++++ lib/sl/slc-lex.l
+@@ -47,8 +47,6 @@ unsigned lineno = 1;
  static void handle_comment(void);
  static char * handle_string(void);
  

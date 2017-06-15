@@ -1,6 +1,6 @@
-This automatically logs a user out if they're idle for a set amount
-of time. We define 'idle' as having not refreshed the right-hand
-frame. The administrator can set a standard time for all users or
-allow users to set their own timeout values.
+This automatically logs a user out if they're idle for a set amount of
+time.  We define 'idle' as having not refreshed the right-hand frame.
+The administrator can set a standard time for all users or allow users
+to set their own timeout values.
 
-WWW:    http://www.squirrelmail.org/plugin_view.php?id=38
+WWW: http://www.squirrelmail.org/plugin_view.php?id=38

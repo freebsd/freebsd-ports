@@ -1,3 +1,5 @@
-TIMESTAMP = 1465542815
-SHA256 (AdaCore-aws-17.0.0-31d491e_GH0.tar.gz) = ffa837c757164b9f0c7383f43f6e846f19ab80f77ade8ce43d9efc68e6e0b99d
-SIZE (AdaCore-aws-17.0.0-31d491e_GH0.tar.gz) = 2079967
+TIMESTAMP = 1488270744
+SHA256 (AdaCore-aws-17.1_GH0.tar.gz) = 107d2fcec8e20b4f00d390e9db858a0723ed1baed9a696e869c05b362da98d8b
+SIZE (AdaCore-aws-17.1_GH0.tar.gz) = 2085674
+SHA256 (AdaCore-templates-parser-17.1_GH0.tar.gz) = efd2f2d21a532014802c5dc2083453b9c945c146c7bf910c348387ef48c22b62
+SIZE (AdaCore-templates-parser-17.1_GH0.tar.gz) = 216649

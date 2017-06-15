@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds TMDA support to SquirrelMail
 
 RUN_DEPENDS=	tmda-filter:mail/tmda \
-		${SQUIRRELDIR}/index.php:mail/squirrelmail
+		${SQUIRRELDIR:S,^${PREFIX}/,${LOCALBASE}/,}/index.php:mail/squirrelmail
 
 USES=		perl5
 NO_BUILD=	yes

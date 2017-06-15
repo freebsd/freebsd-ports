@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-RHash
-PORTVERSION=	0.91
-PORTREVISION=	1
+PORTVERSION=	0.93
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +11,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compute hash sums and magnet links
 
 LICENSE=	MIT
+
+BROKEN_aarch64=	Fails to build: error Cannot detect CPU architechture
+BROKEN_mips64=	Fails to build: error Cannot detect CPU architechture
 
 USES=		perl5
 USE_PERL5=	configure

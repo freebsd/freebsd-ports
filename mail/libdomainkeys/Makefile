@@ -9,13 +9,11 @@ MASTER_SITES=	SF/domainkeys/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DomainKeys library
 
-USES=		uidfix
+USES=		uidfix ssl
 USE_LDCONFIG=	yes
 SHLIB_MAJOR=	3
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}"
-
-USE_OPENSSL=	yes
 
 post-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile

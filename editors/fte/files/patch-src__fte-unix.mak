@@ -1,5 +1,5 @@
---- src/fte-unix.mak	Sun Nov 13 12:47:25 2005
-+++ src/fte-unix.mak	Tue Feb 28 12:29:41 2006
+--- src/fte-unix.mak.orig	2010-03-16 18:03:51 UTC
++++ src/fte-unix.mak
 @@ -5,10 +5,10 @@
  
  #  vfte - for Linux console directly (with limitations, see con_linux.cpp)
@@ -14,7 +14,7 @@
  TGT_XFTE = xfte
  
  TARGETS = $(TGT_XFTE) $(TGT_VFTE) $(TGT_NFTE) $(TGT_SFTE) $(TGT_QFTE)
-@@ -27,15 +27,16 @@
+@@ -27,15 +27,16 @@ LD = $(CXX)
  CPPOPTIONS = -Wall -Wpointer-arith -Wconversion -Wwrite-strings -Winline
  
  # try this for smaller/faster code and less dependencies
@@ -34,7 +34,7 @@
  
  #######################################################################
  # HP/UX
-@@ -55,7 +56,7 @@
+@@ -55,7 +56,7 @@ UOS      = -DLINUX
  #MINCDIR  = -I/usr/include/Motif1.2
  #MLIBDIR  = -L/usr/lib/Motif1.2
  
@@ -43,7 +43,7 @@
  
  #######################################################################
  # AIX
-@@ -111,18 +112,18 @@
+@@ -111,18 +112,18 @@ SINCDIR   = -I/usr/include/slang
  
  #######################################################################
  
@@ -67,7 +67,7 @@
  #OPTIMIZE = -O2
  #OPTIMIZE = -Os
  #OPTIMIZE = -O2 -s
-@@ -148,7 +149,7 @@
+@@ -148,7 +149,7 @@ SRCS = $(OBJS:.o=.cpp)\
   $(XOBJS:.o=.cpp)
  
  XLIBS    = $(XLIBDIR) -lX11 $(SOCKETLIB) $(XPMLIB) $(XTLIB)
@@ -76,7 +76,7 @@
  NLIBS    = $(NLIBDIR) -lncurses
  SLIBS    = $(SLIBDIR) -lslang
  #QLIBS    = $(QLIBDIR) -lqt
-@@ -223,6 +224,6 @@
+@@ -223,6 +224,6 @@ clean:
  #
  # include dependency files if they exist
  #

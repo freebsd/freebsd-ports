@@ -1,4 +1,0 @@
-bin/ruby-pwgen
-man/man1/ruby-pwgen.1.gz
-%%RUBY_SITEARCHLIBDIR%%/crack.so
-%%RUBY_SITELIBDIR%%/password.rb

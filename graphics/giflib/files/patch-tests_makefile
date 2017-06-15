@@ -1,0 +1,24 @@
+--- tests/makefile.orig	2014-05-16 10:46:53 UTC
++++ tests/makefile
+@@ -27,7 +27,7 @@ rebuild: render-rebuild \
+ UTILS = ../util
+ PICS = ../pic
+ 
+-GIFS := $(shell ls ../pic/*.gif)
++GIFS := `ls ../pic/*.gif`
+ 
+ # Test decompression and rendering by unpacking images,
+ # converting them to RGB, and comparing that result to a check file.
+@@ -103,10 +103,10 @@ giffilter-regress:
+ 
+ giffix-rebuild:
+ 	@echo "Rebuilding giffix test."
+-	@head --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d >giffixed.ico
++	@ghead --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d >giffixed.ico
+ giffix-regress:
+ 	@echo "giffix: Testing giffix behavior"
+-	@head --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d | diff -u giffixed.ico -
++	@ghead --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d | diff -u giffixed.ico -
+ 
+ gifinto-regress:
+ 	@echo "gifinto: Checking behavior on short files."

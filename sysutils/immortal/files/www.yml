@@ -1,0 +1,10 @@
+# expose via web the /tmp directory by using www
+# pkg install go-www
+cmd: /usr/local/bin/www
+cwd: /tmp
+log:
+    file: /var/log/www.log
+    age: 86400 # seconds
+    num: 7     # int
+    size: 1    # MegaBytes
+user: www

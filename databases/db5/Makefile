@@ -3,7 +3,7 @@
 
 PORTNAME=	db5
 PORTVERSION=	5.3.28
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -15,11 +15,15 @@ DIST_SUBDIR=	bdb
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Oracle Berkeley DB, revision ${BDBVER}
 
+LICENSE_NAME=	Sleepycat
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_FILE=	${WRKSRC}/../LICENSE
+LICENSE_GROUPS=	FSF GPL OSI
+
 BDBVER=		${PORTVERSION:R}
 BDBMAJ=		${BDBVER:R}
 CONFIGURE_ARGS=	--enable-cxx --enable-stl \
 		--enable-compat185 --enable-dump185 \
-		--disable-tcl \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME} \
 		--bindir=${PREFIX}/bin/${PORTNAME}
@@ -34,11 +38,7 @@ PLIST_SUB=	BDBMAJ=${BDBMAJ} BDBVER=${BDBVER}
 MAKE_ARGS+=	docdir=${DOCSDIR}
 CFLAGS+=	-Wall -Wextra
 
-OPTIONS_DEFINE=	CRYPTO L10N SQL JAVA DOCS TCL
-# WARNING: DO NOT ADD TCL TO OPTIONS:
-# On FreeBSD 10.3 this causes a heap of warnings of the following kind
-# and is deemed unsafe.
-# ./lang/tcl/tcl_*.c:*:*: warning: the value of the size argument in 'strncat' is too large, might lead to a buffer overflow [-Wstrncat-size]
+OPTIONS_DEFINE=	CRYPTO L10N SQL JAVA TCL DOCS
 OPTIONS_DEFAULT=CRYPTO
 OPTIONS_SUB=	yes
 CRYPTO_DESC=	Cryptography support
@@ -73,6 +73,11 @@ DOCS_INSTALL_TARGET=	install_docs
 # db5 uses a deprecated instruction for mutexes on ARM, fbsd bug#197227
 # and also bug#205001
 CONFIGURE_ARGS+=	--enable-posixmutexes
+. if ${OSVERSION} > 1100100
+#                 ^ leave that as ">" it really is greater than but NOT equal
+# force POSIX mutexes - the OS supports PTHREAD_PROCESS_SHARED
+CONFIGURE_ARGS+=	--with-mutex=POSIX/pthreads
+. endif
 .endif
 
 post-patch:
@@ -91,23 +96,24 @@ post-install:
 	cd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}; \
 	for i in *; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER} ; \
 		       ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBMAJ} ; done
-.if empty(PORT_OPTIONS:MJAVA)
-	${RM} -r -f ${STAGEDIR}${DOCSDIR}/java
+
+post-install-JAVA-off:
+	${RM} -r ${STAGEDIR}${DOCSDIR}/java
 .for i in gsg gsg_db_rep gsg_txn
-	${RM} -r -f ${STAGEDIR}${DOCSDIR}/${i}/JAVA
+	${RM} -r ${STAGEDIR}${DOCSDIR}/${i}/JAVA
 .endfor
-.endif
-.if empty(PORT_OPTIONS:MSQL)
-	${RM} -r -f ${STAGEDIR}${DOCSDIR}/bdb-sql
-.endif
-.if !empty(PORT_OPTIONS:MTCL)
+
+post-install-SQL-off:
+	${RM} -r ${STAGEDIR}${DOCSDIR}/bdb-sql
+
+post-install-TCL-on:
 	echo "package ifneeded Db_tcl ${BDBVER} \
 	      [list load [file join $$dir libdb_tcl-${BDBVER}.so]] \
 	     " > ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/pkgIndex.tcl
-.else
+
+post-install-TCL-off:
 .for i in api_reference/TCL
-	${RM} -r -f ${STAGEDIR}${DOCSDIR}/${i}
+	${RM} -r ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	iaxmodem
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	net comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 36
+.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang
 # gsm0610_rpe.c:81:10: error: invalid operand for instruction
 USE_GCC=	yes
 .endif

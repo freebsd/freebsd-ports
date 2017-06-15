@@ -15,7 +15,6 @@ GH_ACCOUNT=	crees
 GH_TAGNAME=	947dba4
 
 USES=		autoreconf makeinfo pkgconfig pathfix libtool
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes

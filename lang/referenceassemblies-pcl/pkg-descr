@@ -1,0 +1,7 @@
+You can build .NET apps across a wide variety of platforms, and the
+Portable Class Library (PCL) helps you share your code and libraries across
+.NET platforms.  Specifically, the PCL provides a set of common reference
+assemblies that enable .NET libraries and binaries to be used on any .NET
+based runtime - from phones, to clients, to servers and clouds.
+
+WWW: https://blogs.msdn.microsoft.com/dotnet/2013/10/14/portable-class-library-pcl-now-available-on-all-platforms/

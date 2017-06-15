@@ -2,4 +2,4 @@ A singly-linked list offers the ability to insert or delete
 nodes at any point within the list. A doubly-linked list also offers the
 ability to request previous nodes in the list.
 
-WWW: http://pear.php.net/package/Structures_LinkedList/
+WWW: https://pear.php.net/package/Structures_LinkedList

@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	mailest
-PORTVERSION=	0.9.20
+PORTVERSION=	0.9.22
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_${L}=	${WRKSRC}/LICENSE.${L}
 .endfor
 
-LIB_DEPENDS=	libevent.so:devel/libevent2 \
+LIB_DEPENDS=	libevent.so:devel/libevent \
 		libqdbm.so:databases/qdbm \
 		libestraier.so:textproc/hyperestraier
 RUN_DEPENDS=	mewl:mail/mew

@@ -1,7 +1,7 @@
 # Created by: Matthias Andree <matthias.andree@gmx.de>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	misc devel
 PKGNAMESUFFIX=	-libblkid
 
@@ -19,6 +19,8 @@ INSTALL_TARGET=	install install-shlibs
 INSTALL_WRKSRC=	${WRKSRC}/lib/blkid
 
 PKGDIR=		${.CURDIR}
+
+BROKEN_aarch64=		Fails to build: No targets specified and no makefile found
 
 pre-build:
 	${MKDIR} ${WRKSRC}/lib/blkid/elfshared

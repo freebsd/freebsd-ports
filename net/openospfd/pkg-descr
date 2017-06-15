@@ -1,5 +1,0 @@
-OpenOSPFD is a FREE implementation of the Open Shortest Path First Protocol.
-It allows ordinary machines to be used as routers exchanging routes with
-other systems speaking the OSPF protocol.
-
-WWW: http://www.openbgp.org/

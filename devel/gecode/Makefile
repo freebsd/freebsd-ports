@@ -2,17 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	gecode
-PORTVERSION=	4.4.0
+PORTVERSION=	5.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gecode.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dem.procopiou@gmail.com
 COMMENT=	Generic Constraint Development Environment
 
 LICENSE=	BSL MIT
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libmpfr.so:math/mpfr
+LIB_DEPENDS=	libmpfr.so:math/mpfr \
+		libgmp.so:math/gmp
+
+NOT_FOR_ARCHS=		aarch64 armv6 mips mips64
+NOT_FOR_ARCHS_REASON=	needs code written to specify rounding control mechanism in Boost.Numeric.Interval
 
 USES=		bison gmake perl5
 USE_PERL5=	build
@@ -35,7 +39,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-mpfr-lib=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-PLIST_SUB=	SHLIB_VERSION=41
+PLIST_SUB=	SHLIB_VERSION=43
 
 OPTIONS_DEFINE=	GIST
 OPTIONS_SUB=	yes

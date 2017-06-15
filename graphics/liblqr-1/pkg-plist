@@ -13,7 +13,7 @@ include/lqr-1/lqr/lqr_vmap_list_pub.h
 include/lqr-1/lqr/lqr_vmap_pub.h
 lib/liblqr-1.so
 lib/liblqr-1.so.0
-lib/liblqr-1.so.0.3.1
+lib/liblqr-1.so.0.3.2
 libdata/pkgconfig/lqr-1.pc
 %%HTMLDOCS%%%%DOCSDIR%%/Introduction.html
 %%HTMLDOCS%%%%DOCSDIR%%/about-this-doc.html

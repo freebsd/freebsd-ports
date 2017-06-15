@@ -456,6 +456,7 @@ share/applications/gnucash.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2013
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2014
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2015
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2016
 %%PORTDOCS%%%%DOCSDIR%%/DOCUMENTERS
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -959,6 +960,8 @@ share/applications/gnucash.desktop
 %%DATADIR%%/pixmaps/gnc-account-new.png
 %%DATADIR%%/pixmaps/gnc-account-open-16.png
 %%DATADIR%%/pixmaps/gnc-account-open.png
+%%DATADIR%%/pixmaps/gnc-account-report-16.png
+%%DATADIR%%/pixmaps/gnc-account-report.png
 %%DATADIR%%/pixmaps/gnc-account.png
 %%DATADIR%%/pixmaps/gnc-gnome-pdf-16.png
 %%DATADIR%%/pixmaps/gnc-gnome-pdf-24.png

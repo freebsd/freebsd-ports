@@ -3,7 +3,7 @@
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net parallel
 MASTER_SITES=	NL/pvm3 ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
 DISTNAME=	pvm${PORTVERSION}
@@ -17,16 +17,16 @@ USES=		tar:tgz
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/pvm3
-MAKE_ENV=	PVM_ROOT=${WRKSRC} SHAREDLDFLAGS="-shared"
+MAKE_ENV=	PVM_ROOT=${WRKSRC} SHAREDLDFLAGS="${LDFLAGS} -shared"
 PVM_ROOT_REL=	lib/pvm
 PVM_ROOT=	${PREFIX}/${PVM_ROOT_REL}
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
-X11_USE=	XORG=x11,xaw,xt
+X11_USE=	XORG=x11,xaw,xext,xmu,xt
 
 .include <bsd.port.options.mk>
 
@@ -69,6 +69,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libgpvm3.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libpvmtrc.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/lib/FREEBSD/libpvm3.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib/FREEBSD/libgpvm3.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/conf/FREEBSD.def ${STAGEDIR}${PVM_ROOT}/conf
 	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${PREFIX}/man/man1

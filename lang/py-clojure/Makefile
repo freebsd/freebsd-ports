@@ -8,12 +8,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}_py-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	rpaulo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of Clojure in Python
 
 LICENSE=	EPL
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

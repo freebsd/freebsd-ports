@@ -35,6 +35,12 @@ MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 
+THREADS_CONFIGURE_WITH=	pthread
+MOUSE_CONFIGURE_ENABLE=	mouse
+NLS_CONFIGURE_ENABLE=	nls
+IPV6_CONFIGURE_WITH=	ipv6
+SSL_USES=		ssl
+
 .if !defined(PICO_ALPINE_SLAVE)
 
 PORTDOCSbase=	LICENSE NOTICE README
@@ -60,27 +66,19 @@ MAKE_ARGS+=	CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-.if  ${OSVERSION} < 1000000
-# OpenSSL is pre v1.0 in FBSD9.x so the ports version needs to be used
-WITH_OPENSSL_PORT=	yes
-.endif
-
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLDIR} \
 			--with-ssl-include-dir=${OPENSSLINC} \
 			--with-ssl-lib-dir=${OPENSSLLIB} \
 			--with-ssl-certs-dir=${OPENSSLDIR}/certs
 .else
 CONFIGURE_ARGS+=	--without-ssl
-USE_OPENSSL=		no
 .endif
 
 .include <bsd.port.pre.mk>
 
-THREADS_CONFIGURE_WITH=	pthread
-MOUSE_CONFIGURE_ENABLE=	mouse
-NLS_CONFIGURE_ENABLE=	nls
-IPV6_CONFIGURE_WITH=	ipv6
+.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
 
 .if ! ${PORT_OPTIONS:MNOSPELL}
 .if ! ${PORT_OPTIONS:MISPELL}
@@ -115,16 +113,12 @@ CONFIGURE_ARGS+=	--with-passfile=.alpine.pwd
 
 .if ${PORT_OPTIONS:MMAILDIR}
 PATCH_SITES=		http://patches.freeiz.com/alpine/patches/alpine-${PORTVERSION}/
-PATCHFILES+=		maildir.patch.gz
-PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
+PATCHFILES+=		maildir.patch.gz:-p1
 .endif
 
 .if ${PORT_OPTIONS:MCONS25}
 EXTRA_PATCHES=		${FILESDIR}/cons25-alpine_keymenu.c
 .endif
-
-pre-patch:
-	@${CHMOD} -R u+w ${WRKSRC}
 
 post-patch:
 	@${CP} ${WRKSRC}/imap/Makefile ${WRKSRC}/imap/Makefile.presed

@@ -12,7 +12,7 @@ COMMENT=	Nice wrapper for libmagic
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-USES=		perl5 gmake
+USES=		perl5
 USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=yes
 

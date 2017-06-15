@@ -1,5 +1,0 @@
-Osmium is a C++ framework for working with OSM data files. Osmium
-can read OSM data in XML or binary format (PBF) and can call different
-handlers for each OSM object.
-
-WWW: http://wiki.openstreetmap.org/wiki/Osmium

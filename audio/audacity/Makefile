@@ -3,7 +3,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	2.1.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/audacity/audacity/archive/
 DISTNAME=	Audacity-${PORTVERSION}
@@ -47,7 +47,6 @@ OPTIONS_DEFINE_i386=	SSE
 OPTIONS_DEFAULT_amd64=	SSE
 OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:MSSE}
 
-DEBUG_DESC=	Enable debug support
 DYNLOAD_DESC=	Enable dynamic loading of lame and FFmpeg
 LAME_DESC=	Use lame for import and export support
 LV2_DESC=	Add LV2 plug-in support

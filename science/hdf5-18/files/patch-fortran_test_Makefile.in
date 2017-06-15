@@ -1,0 +1,20 @@
+--- fortran/test/Makefile.in.orig	2016-05-10 21:24:52 UTC
++++ fortran/test/Makefile.in
+@@ -150,7 +150,7 @@ fortranlib_test_DEPENDENCIES = libh5test
+ 	$(LIBH5F) $(LIBHDF5)
+ fortranlib_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=FC \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(FCLD) \
+-	$(fortranlib_test_FCFLAGS) $(FCFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
++	$(fortranlib_test_FCFLAGS) $(FCFLAGS) $(LDFLAGS) \
+ 	-o $@
+ am_fortranlib_test_1_8_OBJECTS = tH5O.$(OBJEXT) tH5A_1_8.$(OBJEXT) \
+ 	tH5G_1_8.$(OBJEXT) tH5MISC_1_8.$(OBJEXT) tHDF5_1_8.$(OBJEXT) \
+@@ -219,7 +219,7 @@ am__v_FC_1 = 
+ FCLD = $(FC)
+ FCLINK = $(LIBTOOL) $(AM_V_lt) --tag=FC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(FCLD) $(AM_FCFLAGS) $(FCFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(LDFLAGS) -o $@
+ AM_V_FCLD = $(am__v_FCLD_@AM_V@)
+ am__v_FCLD_ = $(am__v_FCLD_@AM_DEFAULT_V@)
+ am__v_FCLD_0 = @echo "  FCLD    " $@;

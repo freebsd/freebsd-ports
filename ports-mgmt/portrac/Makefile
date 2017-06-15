@@ -2,6 +2,7 @@
 
 PORTNAME=	portrac
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://e-soul.org/distfiles/ \
 		http://home.e-soul.org/~mgp/distfiles/
@@ -10,8 +11,6 @@ MAINTAINER=	Mario.G.Pavlov@gmail.com
 COMMENT=	Simple GUI tool for tracking port updates
 
 LICENSE=	BSD2CLAUSE
-
-BROKEN_sparc64=	fails to compile: error in C++ code
 
 PLIST_FILES=	bin/portrac \
 		share/portrac/portrac.png \

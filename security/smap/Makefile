@@ -3,12 +3,16 @@
 
 PORTNAME=	smap
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://www.wormulon.net/smap/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIP scanner and identifier
+
+# does not really specify # of clauses, so stay
+# with strictest variant to be on a safe side
+LICENSE=	BSD4CLAUSE
 
 USES=		gmake
 

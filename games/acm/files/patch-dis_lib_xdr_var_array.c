@@ -1,19 +1,14 @@
---- dis/lib/xdr_var_array.c~	Mon May 11 20:58:55 1998
-+++ dis/lib/xdr_var_array.c	Sun Jul  6 03:21:47 2003
-@@ -75,6 +75,12 @@
+--- dis/lib/xdr_var_array.c.orig	1998-05-12 03:58:55 UTC
++++ dis/lib/xdr_var_array.c
+@@ -75,6 +75,7 @@ static char *rcsid = "$Id: xdr_var_array.c,v 1.2 1998/
  
  #include <stdio.h>
  #include <stdlib.h>
-+#include <sys/param.h>
-+#if __FreeBSD_Version__ >= 500113
-+#  include <sys/limits.h>
-+#else
-+#  include <machine/limits.h>
-+#endif
++#include <limits.h>
  #include <rpc/types.h>
  #include <rpc/xdr.h>
  
-@@ -104,7 +110,7 @@
+@@ -104,7 +105,7 @@ xdr_var_array(register XDR * xdrs, caddr_t * addrp, u_
  	register u_int nodesize;
  
  	c = size;

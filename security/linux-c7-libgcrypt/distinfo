@@ -1,0 +1,7 @@
+TIMESTAMP = 1482083864
+SHA256 (centos/libgcrypt-1.5.3-13.el7_3.1.i686.rpm) = aa89bae855cf4d3d26dce9e353b076ff2c1c5c78fed2df0702f5a6c6c07c8cee
+SIZE (centos/libgcrypt-1.5.3-13.el7_3.1.i686.rpm) = 271648
+SHA256 (centos/libgcrypt-1.5.3-13.el7_3.1.x86_64.rpm) = 15dd1dd50ecc5b4e3a4a4e03febb066c410f99d56ceb7aa9fa3256ec894e85b1
+SIZE (centos/libgcrypt-1.5.3-13.el7_3.1.x86_64.rpm) = 269052
+SHA256 (centos/libgcrypt-1.5.3-13.el7_3.1.src.rpm) = e5e19b5a3035ff2d90aca9644a317bcfdc55ae0c135741a1d441851e97e399bf
+SIZE (centos/libgcrypt-1.5.3-13.el7_3.1.src.rpm) = 1397001

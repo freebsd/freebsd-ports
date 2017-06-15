@@ -14,9 +14,11 @@ COMMENT=	Local/remote mirroring+incremental backup
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	librsync.so:net/librsync1
+LIB_DEPENDS=	librsync.so:net/librsync2
 
 CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*
+
+PORTSCOUT=	limitw:1,even
 
 USES=		python
 USE_PYTHON=	distutils

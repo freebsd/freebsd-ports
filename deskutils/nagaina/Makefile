@@ -14,6 +14,8 @@ COMMENT=	Notes-taking application based on Qt 4
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
 		libpcre.so:devel/pcre \

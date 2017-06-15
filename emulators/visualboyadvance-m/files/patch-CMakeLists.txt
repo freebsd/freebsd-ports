@@ -7,15 +7,6 @@
  
  cmake_minimum_required( VERSION 2.6.0 )
  if( COMMAND cmake_policy )
-@@ -354,7 +354,7 @@ IF( ENABLE_SDL )
-     ENDIF( WIN32 )
- 
-     IF( ENABLE_LIRC )
--        SET( LIRC_CLIENT_LIBRARY lirc_client )
-+        SET( LIRC_CLIENT_LIBRARY /usr/local/lib/liblirc_client.so )
-     ENDIF( ENABLE_LIRC )
- 
-     TARGET_LINK_LIBRARIES (
 @@ -369,8 +369,7 @@ IF( ENABLE_SDL )
  		INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/vbam DESTINATION bin)
  	ENDIF( WIN32 )

@@ -10,6 +10,8 @@ MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	IRC proxy to Twitter
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	p5-JSON-Any>=0:converters/p5-JSON-Any \
 		p5-libwww>=0:www/p5-libwww \

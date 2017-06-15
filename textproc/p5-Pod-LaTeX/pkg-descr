@@ -1,0 +1,6 @@
+Pod::LaTeX is a module to convert documentation in the Pod format into Latex.
+The pod2latex command uses this module for translation.
+
+Pod::LaTeX is a derived class from Pod::Select.
+
+WWW: http://search.cpan.org/dist/Pod-LaTeX/

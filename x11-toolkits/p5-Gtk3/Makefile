@@ -10,10 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Perl module for Gtk+ 3.x graphical user interface library
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Glib-Object-Introspection>=0.002:devel/p5-Glib-Object-Introspection
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 USE_GNOME=	gtk30

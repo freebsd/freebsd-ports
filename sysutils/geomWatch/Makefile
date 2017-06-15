@@ -25,6 +25,8 @@ USE_RC_SUBR=	${PORTNAME}
 
 MAKE_ARGS=	WITH_ZFS=28
 
+BROKEN_aarch64=		Fails to compile: error: ISA not supported
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == DragonFly

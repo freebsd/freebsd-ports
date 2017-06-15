@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	debootstrap
-PORTVERSION=	1.0.82
+PORTVERSION=	1.0.89
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN/pool/main/d/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Install Debian base system into a directory
 
 LICENSE=	MIT
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/debian/copyright
 
 RUN_DEPENDS=	wget:ftp/wget
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		gmake perl5

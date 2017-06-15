@@ -8,12 +8,20 @@ CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.cs.utoronto.ca/pub/radford/
 DISTNAME=	xgraph-11
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that helps you plot graphs
+
+LICENSE=	XGRAPH
+LICENSE_NAME=	xgraph license
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		imake tar:Z
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-extract:
+	@${SED} -ne '2,19 {s|^ \* *||;p;}' < ${WRKSRC}/copyright.h > ${WRKSRC}/COPYING
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/xgraph

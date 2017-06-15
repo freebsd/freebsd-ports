@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.1.1
+PORTVERSION=	19.3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=	patch-otp-19.1.1
+PATCHFILES=
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang interface for Java
@@ -31,7 +31,7 @@ MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	DOCS
 
-ERL_RELEASE=	19.1
+ERL_RELEASE=	19.3
 
 USES=		gmake ncurses perl5
 USE_PERL5=	build
@@ -54,10 +54,6 @@ USE_JAVA=	yes
 
 ERLANG_DOCS=	otp_doc_html_${ERL_RELEASE}.tar.gz
 
-.if ${ARCH} == i386
-MAKE_ARGS+=	ARCH=x86
-.endif
-
 do-build:
 	@${MKDIR} ${WRKSRC}/lib/jinterface/ebin
 	cd ${WRKSRC}/lib/jinterface && ${GMAKE} ERL_TOP=${WRKSRC} TARGET=${CONFIGURE_TARGET}
@@ -69,11 +65,11 @@ do-install:
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} ebin ${STAGEDIR}${APP_DIR}
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} java_src ${STAGEDIR}${APP_DIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/jinterface/priv/OtpErlang.jar ${STAGEDIR}${APP_DIR}/priv
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} doc ${STAGEDIR}${APP_DIR}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/erlang lib/jinterface-${APP_VERSION}
-.endif
-	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty -delete
+	@${FIND} ${STAGEDIR}${APP_DIR} -type d -empty -delete
 
 .include <bsd.port.mk>

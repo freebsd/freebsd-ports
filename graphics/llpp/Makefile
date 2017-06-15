@@ -2,49 +2,49 @@
 # $FreeBSD$
 
 PORTNAME=	llpp
-PORTVERSION=	22
-PORTREVISION=	2
+PORTVERSION=	25
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://repo.or.cz/llpp.git/snapshot/
-DISTNAME=	561dc5673cea431e930668b0d87b0c4b31a36b39
+DISTNAME=	v${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	PDF pager
 
 # llpp itself is in the public domain, but it bundles lablGL which
-# uses a BSD 3-clause license and statically links to mupdf which is
-# AGPLv3 licensed.
-LICENSE=	PUBLIC_DOMAIN BSD3CLAUSE AGPLv3
+# uses a BSD 3-clause license
+LICENSE=	PUBLIC_DOMAIN BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_NAME_PUBLIC_DOMAIN=	Public Domain
 LICENSE_FILE_PUBLIC_DOMAIN=	${WRKSRC}/README
 LICENSE_PERMS_PUBLIC_DOMAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	gsed:textproc/gsed \
-		${LOCALBASE}/lib/libmupdf.a:graphics/mupdf
+BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libjbig2dec.so:graphics/jbig2dec \
+		libmupdf.so:graphics/mupdf \
 		libopenjp2.so:graphics/openjpeg
 RUN_DEPENDS=	xsel:x11/xsel-conrad
 
 STRIP=	# Stripping renders the executable unusable, so don't do it for now
-USES=		desktop-file-utils gmake jpeg
+USES=		desktop-file-utils gmake jpeg ssl
 USE_GL=		gl
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_OPENGL=	yes
 USE_XORG=	x11 xext
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-561dc56
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}-14986ea
 
 do-build:
-	(cd ${WRKSRC} && ${SETENV} \
+	@(cd ${WRKSRC} && ${SETENV} \
 		LOCALBASE="${LOCALBASE}" \
 		PORTVERSION="${PORTVERSION}" \
-		${SH} build.sh build/)
-	(cd ${WRKSRC}/misc/completions && ${GMAKE})
+		${SH} build.sh build)
+	@(cd ${WRKSRC}/misc/completions && ${GMAKE})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/llpp ${STAGEDIR}${PREFIX}/bin/llpp

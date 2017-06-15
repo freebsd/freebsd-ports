@@ -9,7 +9,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
 		http://untroubled.org/nullmailer/archive/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MTA for hosts which relay to a fixed set of smart relays
 
 LICENSE=	GPLv2

@@ -2,4 +2,4 @@ A library supporting IR communication over the Lego Mindstorms IR tower.
 It can be used from C programs on Posix compliant platforms, supports
 multiple protocols and is designed to be a replacement for lnpd.
 
-WWW: http://sourceforge.net/projects/lnphost/?source=directory
+WWW: https://sourceforge.net/projects/lnphost/?source=directory/

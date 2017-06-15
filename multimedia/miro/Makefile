@@ -3,7 +3,7 @@
 
 PORTNAME=	miro
 PORTVERSION=	6.0
-PORTREVISION=	7
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/ \
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -67,7 +67,7 @@ post-patch:
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
-	LANG=C LC_ALL=C ${PREFIX}/bin/miro --unittest
+	${PREFIX}/bin/miro --unittest
 .endif
 
 .include <bsd.port.post.mk>

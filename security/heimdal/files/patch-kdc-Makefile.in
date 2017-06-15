@@ -1,0 +1,122 @@
+--- kdc/Makefile.in.orig	2017-01-03 19:44:12 UTC
++++ kdc/Makefile.in
+@@ -213,6 +213,8 @@ PROGRAMS = $(bin_PROGRAMS) $(libexec_PRO
+ am_digest_service_OBJECTS = digest-service.$(OBJEXT)
+ digest_service_OBJECTS = $(am_digest_service_OBJECTS)
+ am__DEPENDENCIES_2 = $(top_builddir)/lib/hdb/libhdb.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@@ -224,6 +226,8 @@ digest_service_DEPENDENCIES = libkdc.la 
+ am_hprop_OBJECTS = hprop.$(OBJEXT) mit_dump.$(OBJEXT)
+ hprop_OBJECTS = $(am_hprop_OBJECTS)
+ hprop_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@@ -232,6 +236,8 @@ hprop_DEPENDENCIES = $(top_builddir)/lib
+ am_hpropd_OBJECTS = hpropd.$(OBJEXT)
+ hpropd_OBJECTS = $(am_hpropd_OBJECTS)
+ hpropd_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@@ -241,6 +247,8 @@ am_kdc_OBJECTS = kdc-connect.$(OBJEXT) k
+ 	kdc-announce.$(OBJEXT) kdc-main.$(OBJEXT)
+ kdc_OBJECTS = $(am_kdc_OBJECTS)
+ kdc_DEPENDENCIES = libkdc.la $(am__DEPENDENCIES_2) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ kdc_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(kdc_CFLAGS) $(CFLAGS) \
+@@ -248,23 +256,35 @@ kdc_LINK = $(LIBTOOL) $(AM_V_lt) --tag=C
+ kdc_replay_SOURCES = kdc-replay.c
+ kdc_replay_OBJECTS = kdc-replay.$(OBJEXT)
+ kdc_replay_DEPENDENCIES = libkdc.la $(am__DEPENDENCIES_2) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1)
+ am_kdc_tester_OBJECTS = config.$(OBJEXT) kdc-tester.$(OBJEXT)
+ kdc_tester_OBJECTS = $(am_kdc_tester_OBJECTS)
+ kdc_tester_DEPENDENCIES = libkdc.la $(am__DEPENDENCIES_2) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(LIB_heimbase)
+ am_kstash_OBJECTS = kstash.$(OBJEXT)
+ kstash_OBJECTS = $(am_kstash_OBJECTS)
+-kstash_LDADD = $(LDADD)
++kstash_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ kstash_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ am_string2key_OBJECTS = string2key.$(OBJEXT)
+ string2key_OBJECTS = $(am_string2key_OBJECTS)
+-string2key_LDADD = $(LDADD)
++string2key_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ string2key_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@@ -636,6 +656,8 @@ libkdc_la_LDFLAGS = -version-info 2:0:0 
+ hprop_LDADD = \
+ 	$(top_builddir)/lib/hdb/libhdb.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(LIB_kdb)  \
+ 	$(LIB_hcrypto) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+@@ -645,6 +667,8 @@ hprop_LDADD = \
+ hpropd_LDADD = \
+ 	$(top_builddir)/lib/hdb/libhdb.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(LIB_kdb)  \
+ 	$(LIB_hcrypto) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+@@ -671,17 +695,24 @@ LDADD = $(top_builddir)/lib/hdb/libhdb.l
+ 	$(LIB_roken) \
+ 	$(DB3LIB) $(DB1LIB) $(LMDBLIB) $(NDBMLIB)
+ 
+-kdc_LDADD = libkdc.la $(LDADD) $(LIB_pidfile) $(CAPNG_LIBS)
++kdc_LDADD = libkdc.la $(LDADD) $(LIB_pidfile) $(CAPNG_LIBS) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ @FRAMEWORK_SECURITY_TRUE@kdc_LDFLAGS = -framework SystemConfiguration -framework CoreFoundation
+ kdc_CFLAGS = $(CAPNG_CFLAGS)
+ digest_service_LDADD = \
+ 	libkdc.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/ntlm/libheimntlm.la \
+ 	$(top_builddir)/lib/ipc/libheim-ipcs.la \
+ 	$(LDADD) $(LIB_pidfile)
+ 
+-kdc_replay_LDADD = libkdc.la $(LDADD) $(LIB_pidfile)
+-kdc_tester_LDADD = libkdc.la $(LDADD) $(LIB_pidfile) $(LIB_heimbase)
++kdc_replay_LDADD = libkdc.la $(LDADD) $(LIB_pidfile) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
++kdc_tester_LDADD = libkdc.la $(LDADD) $(LIB_pidfile) $(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ include_HEADERS = kdc.h $(srcdir)/kdc-protos.h
+ noinst_HEADERS = $(srcdir)/kdc-private.h
+ krb5dir = $(includedir)/krb5

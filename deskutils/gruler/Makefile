@@ -3,7 +3,7 @@
 
 PORTNAME=	gruler
 PORTVERSION=	0.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils
 MASTER_SITES=	http://BSDforge.com/projects/source/deskutils/gruler/ \
 		#http://linuxadvocate.org/projects/gruler/downloads/

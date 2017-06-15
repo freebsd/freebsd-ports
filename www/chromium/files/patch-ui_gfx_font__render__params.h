@@ -1,6 +1,6 @@
---- ui/gfx/font_render_params.h.orig	2016-05-27 10:24:30.925944000 -0400
-+++ ui/gfx/font_render_params.h	2016-05-27 10:24:56.069225000 -0400
-@@ -102,13 +102,13 @@
+--- ui/gfx/font_render_params.h.orig	2017-04-19 19:06:54 UTC
++++ ui/gfx/font_render_params.h
+@@ -106,13 +106,13 @@ GFX_EXPORT FontRenderParams GetFontRende
      const FontRenderParamsQuery& query,
      std::string* family_out);
  

@@ -9,7 +9,9 @@ bin/pypy3
 %%PYPY_DIR%%/include/README
 %%PYPY_DIR%%/include/abstract.h
 %%PYPY_DIR%%/include/boolobject.h
+%%PYPY_DIR%%/include/bytearrayobject.h
 %%PYPY_DIR%%/include/bytesobject.h
+%%PYPY_DIR%%/include/cStringIO.h
 %%PYPY_DIR%%/include/ceval.h
 %%PYPY_DIR%%/include/code.h
 %%PYPY_DIR%%/include/compile.h
@@ -1918,6 +1920,8 @@ bin/pypy3
 %%PYPY_DIR%%/lib_pypy/_pypy_irc_topic.py
 %%PYPY_DIR%%/lib_pypy/_pypy_testcapi.py
 %%PYPY_DIR%%/lib_pypy/_pypy_wait.py
+%%PYPY_DIR%%/lib_pypy/_pypy_winbase_build.py
+%%PYPY_DIR%%/lib_pypy/_pypy_winbase_cffi.py
 %%PYPY_DIR%%/lib_pypy/_resource_build.py
 %%PYPY_DIR%%/lib_pypy/_resource_cffi.%%PYPY_CFFI_VER%%.so
 %%PYPY_DIR%%/lib_pypy/_scproxy.py

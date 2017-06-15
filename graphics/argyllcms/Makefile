@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	argyllcms
-PORTVERSION=	1.7.0
+PORTVERSION=	1.9.2
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.argyllcms.com/
@@ -16,11 +16,12 @@ LICENSE=	AGPLv3
 BROKEN_powerpc64=	Does not build
 
 BUILD_DEPENDS=	jam:devel/jam
-LIB_DEPENDS=	libtiff.so:graphics/tiff
+LIB_DEPENDS=	libtiff.so:graphics/tiff \
+		libpng16.so:graphics/png
 
 WRKSRC=		${WRKDIR}/Argyll_V${PORTVERSION}
 
-USES=		compiler:c11 cpe jpeg zip
+USES=		compiler:c11 cpe jpeg ssl zip
 USE_XORG=	x11 xau xdmcp xext xinerama xrandr xscrnsaver xxf86vm
 
 post-patch:

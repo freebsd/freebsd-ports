@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.25
+DISTVERSION=	1.1.26
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.viewvc.org/ \
-		LOCAL/ohauer
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
 
 LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
 
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		WEBSRV APMOD SVN MYSQL

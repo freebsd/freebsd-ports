@@ -38,7 +38,7 @@ post-install:
 .endif
 
 post-patch:
-	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
+	@${RM} -r ${WRKSRC}/examples ${WRKSRC}/tutorial
 	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \
 		-e 's|gcc|${CC}|' \
 		-e 's|g++|${CXX}|' \

@@ -1,0 +1,9 @@
+Mailutils is a Swiss Army knife of electronic mail handling.  It offers
+a rich set of utilities, daemons, and filters for processing the e-mail.
+
+All Mailutils programs are able to operate on mailboxes of any existing
+format, ranging from standard Unix maildrops, through maildir and up to
+remote mailboxes, which are transparently accessed using IMAP4, POP3,
+and SMTP.
+
+WWW: http://mailutils.org/

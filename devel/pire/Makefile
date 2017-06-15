@@ -18,7 +18,7 @@ GH_ACCOUNT=	dprokoptsev
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf bison gmake libtool
+USES=		autoreconf bison libtool
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 

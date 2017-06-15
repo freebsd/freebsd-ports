@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgd
-PORTVERSION=	2.2.3
-PORTREVISION?=	0
+PORTVERSION=	2.2.4
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/gd-${PORTVERSION}/
@@ -25,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	FONTCONFIG ICONV XPM WEBP
-OPTIONS_DEFAULT=FONTCONFIG
+OPTIONS_DEFAULT=FONTCONFIG WEBP
 NO_OPTIONS_SORT=yes
 FONTCONFIG_LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 FONTCONFIG_CONFIGURE_OFF=	--with-fontconfig=no
@@ -36,7 +35,6 @@ XPM_CONFIGURE_ON=	--with-x
 XPM_CONFIGURE_OFF=	--with-xpm=no
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CONFIGURE_OFF=	--without-webp
-WEBP_BROKEN=	circular dependencies
 
 .include <bsd.port.options.mk>
 
@@ -90,6 +88,6 @@ pre-build:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/gdhelpers.h \
 		${STAGEDIR}${PREFIX}/include/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgd.so.6.0.3
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgd.so.6.0.4
 
 .include <bsd.port.mk>

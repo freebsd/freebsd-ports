@@ -1,0 +1,3 @@
+Pycapsicum is a python interface to Capsicum (sandboxing for FreeBSD).
+
+WWW: https://github.com/stillson/pycapsicum2

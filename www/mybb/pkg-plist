@@ -1,7 +1,9 @@
 @owner www
 @group www
 %%WWWDIR%%/CONTRIBUTING.md
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/announcements.php
+%%WWWDIR%%/admin/backups/.htaccess
 %%WWWDIR%%/admin/backups/index.html
 %%WWWDIR%%/admin/inc/class_form.php
 %%WWWDIR%%/admin/inc/class_page.php
@@ -100,6 +102,7 @@
 %%WWWDIR%%/admin/modules/config/post_icons.php
 %%WWWDIR%%/admin/modules/config/profile_fields.php
 %%WWWDIR%%/admin/modules/config/questions.php
+%%WWWDIR%%/admin/modules/config/report_reasons.php
 %%WWWDIR%%/admin/modules/config/settings.php
 %%WWWDIR%%/admin/modules/config/smilies.php
 %%WWWDIR%%/admin/modules/config/spiders.php
@@ -139,6 +142,7 @@
 %%WWWDIR%%/admin/modules/tools/tasks.php
 %%WWWDIR%%/admin/modules/tools/warninglog.php
 %%WWWDIR%%/admin/modules/user/admin_permissions.php
+%%WWWDIR%%/admin/modules/user/awaiting_activation.php
 %%WWWDIR%%/admin/modules/user/banning.php
 %%WWWDIR%%/admin/modules/user/group_promotions.php
 %%WWWDIR%%/admin/modules/user/groups.php
@@ -470,6 +474,7 @@
 %%WWWDIR%%/inc/languages/english/admin/config_post_icons.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_profile_fields.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_questions.lang.php
+%%WWWDIR%%/inc/languages/english/admin/config_report_reasons.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_settings.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_smilies.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_spiders.lang.php
@@ -507,6 +512,7 @@
 %%WWWDIR%%/inc/languages/english/admin/tools_tasks.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_warninglog.lang.php
 %%WWWDIR%%/inc/languages/english/admin/user_admin_permissions.lang.php
+%%WWWDIR%%/inc/languages/english/admin/user_awaiting_activation.lang.php
 %%WWWDIR%%/inc/languages/english/admin/user_banning.lang.php
 %%WWWDIR%%/inc/languages/english/admin/user_group_promotions.lang.php
 %%WWWDIR%%/inc/languages/english/admin/user_groups.lang.php
@@ -635,6 +641,9 @@
 %%WWWDIR%%/install/resources/upgrade33.php
 %%WWWDIR%%/install/resources/upgrade34.php
 %%WWWDIR%%/install/resources/upgrade35.php
+%%WWWDIR%%/install/resources/upgrade36.php
+%%WWWDIR%%/install/resources/upgrade37.php
+%%WWWDIR%%/install/resources/upgrade38.php
 %%WWWDIR%%/install/resources/upgrade4.php
 %%WWWDIR%%/install/resources/upgrade5.php
 %%WWWDIR%%/install/resources/upgrade6.php

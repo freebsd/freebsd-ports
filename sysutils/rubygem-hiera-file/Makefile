@@ -15,6 +15,6 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
-RUN_DEPENDS=	${PKGNAMEPREFIX}hiera1>=0:sysutils/rubygem-hiera1
+RUN_DEPENDS=	rubygem-hiera1>=0:sysutils/rubygem-hiera1
 
 .include <bsd.port.mk>

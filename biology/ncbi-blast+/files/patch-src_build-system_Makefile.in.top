@@ -1,0 +1,11 @@
+--- src/build-system/Makefile.in.top.orig	2014-11-13 01:41:55.000000000 +0900
++++ src/build-system/Makefile.in.top	2016-12-02 16:39:58.415910000 +0900
+@@ -51,7 +51,7 @@
+ 	    done
+ 	cd $(includedir0) && find * -name CVS -prune -o -print |\
+             cpio -pd $(pincludedir)
+-	$(INSTALL) -m 644 $(incdir)/* $(pincludedir)
++	cd $(incdir) && find * | cpio -pd $(pincludedir)
+ ## set up appropriate build and status directories somewhere under $(libdir)?
+ 
+ install-gbench:

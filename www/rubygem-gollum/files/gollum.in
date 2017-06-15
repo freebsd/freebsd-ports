@@ -1,0 +1,51 @@
+#!/bin/sh
+# Created by: l33tname <sirl33tname@gmail.com>
+# $FreeBSD$
+#
+# PROVIDE: gollum
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gollum_enable (bool):    Set to NO by default.
+#                                Set it to YES to enable.
+#
+# gollum_path              Set it to the location where 
+#                                your git repo is located.
+#
+# gollum_user              User to run command as 
+#                                  Default is root
+#
+# gollum_ip                Set the IP address gollum listens on
+#                                  Default is "0.0.0.0"
+#
+# gollum_port              Set the IP address gollum listens on
+#                                  Default is "80"
+
+. /etc/rc.subr
+
+# setup enviroment
+export PATH=$PATH:%%PREFIX%%/bin
+
+. /etc/rc.subr
+
+name="gollum"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${gollum_enable:=NO}
+: ${gollum_path:=%%PREFIX%%/www/gollum}
+: ${gollum_user:=root}
+: ${gollum_ip:=0.0.0.0}
+: ${gollum_port:=80}
+
+pidfile=/var/run/${name}.pid
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f gollum --host ${gollum_ip} --port ${gollum_port} --live-preview ${gollum_path}"
+
+load_rc_config $name
+run_rc_command "$1"
+

@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	libowfat
-PORTVERSION=	0.29
-PORTREVISION=	1
+PORTVERSION=	0.31
 CATEGORIES=	devel ipv6
-MASTER_SITES=	http://dl.fefe.de/
+MASTER_SITES=	http://www.fefe.de/libowfat/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	General purpose library based on code by D. J. Bernstein
 
-USES=		gmake tar:bzip2
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake tar:xz
 ALL_TARGET=	dep all
 
 MAKEFILE=	GNUmakefile

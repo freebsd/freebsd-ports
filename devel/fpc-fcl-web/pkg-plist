@@ -4,6 +4,12 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/cgiapp.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/cgiapp.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/cgiprotocol.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/cgiprotocol.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custapache.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custapache.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custapache.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custapache24.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custapache24.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custapache24.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custcgi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custcgi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custcgi.rsj
@@ -28,10 +34,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fcgigate.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fcgigate.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache24.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache24.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache24.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpcgi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpcgi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpdatasetform.o

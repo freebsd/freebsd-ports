@@ -11,7 +11,7 @@ MASTER_SITES=	LOCAL/laszlof \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library required by smssend (same author)
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool ssl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

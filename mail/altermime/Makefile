@@ -6,7 +6,7 @@ PORTVERSION=	0.3.11.a1
 CATEGORIES=	mail textproc
 MASTER_SITES=	http://ionut.tetcu.info/FreeBSD/ports/distfiles/
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small C program which is used to alter your mime-encoded mailpacks
 
 PLIST_FILES=	bin/altermime

@@ -126,6 +126,9 @@ man/man1/slsh.1.gz
 %%DATADIR%%/slsmg.sl
 %%DATADIR%%/socket.sl
 %%DATADIR%%/stats.sl
+%%DATADIR%%/statslib/ad_test.sl
+%%DATADIR%%/statslib/ks_test.sl
+%%DATADIR%%/statslib/kuiper.sl
 %%DATADIR%%/stkcheck.sl
 %%DATADIR%%/structfuns.sl
 %%DATADIR%%/sysconf.sl

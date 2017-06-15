@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/x11-toolkits/py-vte/Makefile,v 1.5 2010/09/30 09:15:43 kwm Exp $
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

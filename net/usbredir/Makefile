@@ -16,6 +16,5 @@ USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ENV=	LIBUSB_CFLAGS=-DLIBUSB_CALL= LIBUSB_LIBS=-lusb
 
 .include <bsd.port.mk>

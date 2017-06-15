@@ -22,9 +22,8 @@ AMIGA4D_CONFIGUTE_WITH=	aso
 HTTPS_CONFIGURE_WITH=	https
 
 pre-configure:
-	@${RM} -rf ${WRKSRC}/mkfls/unix/CVS
+	@${RM} -r ${WRKSRC}/mkfls/unix/CVS
 	@${CP} ${WRKSRC}/mkfls/unix/* ${WRKSRC}/
-	@${CHMOD} a+x ${WRKSRC}/configure
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/binkd ${STAGEDIR}${PREFIX}/sbin

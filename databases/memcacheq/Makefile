@@ -3,7 +3,7 @@
 
 PORTNAME=	memcacheq
 PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	GENTOO
 
@@ -12,7 +12,7 @@ COMMENT=	Simple queue service over Memcache
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USE_CSTD=	gnu89
 CFLAGS+=	-I"${BDB_INCLUDE_DIR}"

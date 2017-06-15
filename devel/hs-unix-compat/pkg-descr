@@ -2,4 +2,4 @@ This package provides portable implementations of parts of the Unix package.
 This package re-exports the Unix package when available. When it isn't
 available, portable implementations are used.
 
-WWW: http://github.com/jystic/unix-compat
+WWW: https://github.com/jystic/unix-compat

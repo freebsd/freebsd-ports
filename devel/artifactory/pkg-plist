@@ -32,6 +32,7 @@
 %%APP_HOME%%/misc/tomcat/logging.properties
 %%APP_HOME%%/misc/tomcat/server.xml
 %%APP_HOME%%/misc/tomcat/web.xml
+%%APP_HOME%%/misc/%%APP_HOME%%.config.template.yml
 %%APP_HOME%%/tomcat/LICENSE
 %%APP_HOME%%/tomcat/NOTICE
 %%APP_HOME%%/tomcat/RELEASE-NOTES
@@ -78,6 +79,7 @@
 %%VARDIR%%/tomcat/webapps/ROOT/index.html
 %%VARDIR%%/etc/artifactory.config.xml
 %%VARDIR%%/etc/artifactory.system.properties
+%%VARDIR%%/etc/binarystore.xml
 %%VARDIR%%/etc/mimetypes.xml
 %%VARDIR%%/etc/logback.xml
 @dir %%VARDIR%%/tomcat/work

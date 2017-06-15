@@ -2,51 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	watchmen
-PORTVERSION=	0.08
-PORTREVISION=	2
+PORTVERSION=	0.09
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	Watch and restart daemons
 
-LICENSE=	GPLv3
-
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE=	GPLv3+
 
 RUN_DEPENDS=	p5-libwww>=6.04:www/p5-libwww \
 		p5-URI>=0:net/p5-URI
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	proller
+
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	watchmen
-
-OPTIONS_DEFINE=	MYSQL PGSQL EMAIL
-MYSQL_DESC=	Want test mysql queries
-PGSQL_DESC=	Want test postgresql queries
-EMAIL_DESC=	report problems by email
-
-POD2MAN?=	pod2man
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample etc/${PORTNAME}.conf.sample" \
 		${SITE_MAN1}/${PORTNAME}.1.gz
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	MYSQL PGSQL EMAIL
+MYSQL_DESC=	Enable test mysql queries
+PGSQL_DESC=	Enable test postgresql queries
+EMAIL_DESC=	Report problems by email
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-RUN_DEPENDS+=	p5-DBD-Pg>=2.19.2:databases/p5-DBD-Pg
-.endif
-
-.if ${PORT_OPTIONS:MEMAIL}
-RUN_DEPENDS+=	p5-MIME-Lite>=0:mail/p5-MIME-Lite
-.endif
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=2.19.2:databases/p5-DBD-Pg
+EMAIL_RUN_DEPENDS=	p5-MIME-Lite>=0:mail/p5-MIME-Lite
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.dist ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample

@@ -1,0 +1,11 @@
+--- tests/ust-elf/Makefile.am.orig	2016-10-18 22:44:06 UTC
++++ tests/ust-elf/Makefile.am
+@@ -23,6 +23,6 @@ EXTRA_DIST = test_ust_elf.in \
+ 	$(srcdir)/data/pic/hello.c \
+ 	$(srcdir)/data/pic/libhello.c
+ 
+-$(noinst_SCRIPTS): %: %.in
+-	sed "s#@ABSTOPSRCDIR@#$(abs_top_srcdir)#g" < $< > $@
++$(noinst_SCRIPTS): $(noinst_SCRIPTS).in *
++	sed "s#@ABSTOPSRCDIR@#$(abs_top_srcdir)#g" < $(noinst_SCRIPTS).in > $@
+ 	chmod +x $@

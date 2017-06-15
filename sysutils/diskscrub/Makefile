@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	diskscrub
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6.1
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://github.com/chaos/scrub/releases/download/${PORTVERSION}/
 DISTNAME=	scrub-${PORTVERSION}
 
 MAINTAINER=	erik@elfga.com
 COMMENT=	Writes patterns on files to make retrieving the data more difficult
 
 LICENSE=	GPLv2
-
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2
 
 PLIST_FILES=	bin/scrub man/man1/scrub.1.gz
 

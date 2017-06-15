@@ -3,7 +3,7 @@
 
 PORTNAME=	delaboratory
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -14,6 +14,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		compiler:c++11-lib gmake
 MAKE_ARGS=	CXX="${CXX}" WXCONFIG="${WX_CONFIG}"

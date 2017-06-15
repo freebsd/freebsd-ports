@@ -3,7 +3,7 @@
 
 PORTNAME=		spidermonkey24
 PORTVERSION=		24.2.0
-PORTREVISION=		1
+PORTREVISION=		5
 CATEGORIES=		lang
 MASTER_SITES=		MOZILLA/js
 #http://people.mozilla.org/~sstangl/
@@ -33,7 +33,6 @@ OPTIONS_DEFINE=		DEBUG GCZEAL JEMALLOC METHODJIT OPTIMIZE READLINE \
 OPTIONS_DEFAULT=	METHODJIT OPTIMIZE READLINE THREADSAFE TRACEJIT
 OPTIONS_SUB=	yes
 
-DEBUG_DESC=		Enable Debug build
 DEBUG_CONFIGURE_ENABLE=	debug debug-symbols
 DEBUG_CONFIGURE_DISABLE=debug
 DTRACE_CONFIGURE_ENABLE=dtrace profiling
@@ -59,10 +58,6 @@ UTF8_CFLAGS=		-DJS_C_STRINGS_ARE_UTF8
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
-
-.if ${PORT_OPTIONS:MDTRACE} && ${OSVERSION} < 1000510
-BROKEN=		dtrace -G crashes with C++ object files
 .endif
 
 regression-test: build

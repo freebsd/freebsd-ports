@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer-plugins-good/Makefile,v 1.14 2008/03/19 14:05:36 ahze Exp $
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 COMMENT=	Good gstreamer-plugins

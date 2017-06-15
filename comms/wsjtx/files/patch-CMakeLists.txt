@@ -1,20 +1,25 @@
---- CMakeLists.txt.orig	2015-12-11 00:00:13 UTC
+--- CMakeLists.txt.orig	2017-01-05 15:57:44 UTC
 +++ CMakeLists.txt
-@@ -93,6 +93,13 @@ if (CMAKE_BUILD_TYPE MATCHES "[Dd][Ee][B
+@@ -1,5 +1,4 @@
+ cmake_minimum_required (VERSION 2.8.10 FATAL_ERROR)
+-
+ if (APPLE)
+   #
+   # The following variables define the portability and compatability attributes of the Mac OS X build
+@@ -97,6 +96,12 @@ if (CMAKE_BUILD_TYPE MATCHES "[Dd][Ee][B
    set (is_debug_build 1)
  endif ()
  
 +if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+ set (FREEBSD 1)
++  set (FREEBSD TRUE)
++  link_directories("/usr/lib" "${LOCALBASE}/lib")
++  include_directories("/usr/include" "${LOCALBASE}/include")
 +endif()
 +
-+if (FREEBSD)
-+       set (WSJT_INCLUDE_KVASD Off)
-+endif ()
  
  #
  # Options & features
-@@ -153,7 +160,14 @@ set (LIB_DESTINATION lib)
+@@ -161,7 +166,14 @@ set (INCLUDE_DESTINATION include)
  set (SHARE_DESTINATION share)
  set (DOC_DESTINATION doc/${CMAKE_PROJECT_NAME})
  set (DATA_DESTINATION ${CMAKE_PROJECT_NAME})
@@ -30,24 +35,45 @@
  set (PLUGIN_DESTINATION lib/plugins)
  set (QT_CONF_DESTINATION bin)
  
-@@ -937,7 +951,13 @@ set_target_properties (wsjtx PROPERTIES
-   MACOSX_BUNDLE_GUI_IDENTIFIER "org.k1jt.wsjtx"
-   )
- 
--target_link_libraries (wsjtx wsjt_fort wsjt_cxx wsjt_qt ${hamlib_LIBRARIES} ${FFTW3_LIBRARIES} Qt5::Multimedia)
-+if(FREEBSD)
-+  set (extraLIBS "ltdl" "usb")
-+else()
-+  set (extraLIBS "")
-+endif()
+@@ -721,7 +733,20 @@ find_program(ETAGS etags)
+ #
+ # OpenMP
+ #
+-find_package (OpenMP)
++message (status "ZZZ About to find_package (OpenMP)")
++#    OpenMP_C_FLAGS - flags to add to the C compiler for OpenMP support
++#    OpenMP_CXX_FLAGS - flags to add to the CXX compiler for OpenMP support
++#    OpenMP_Fortran_FLAGS - flags to add to the Fortran compiler for OpenMP support
++#    OPENMP_FOUND - true if openmp is detected
 +
-+target_link_libraries (wsjtx wsjt_fort wsjt_cxx wsjt_qt ${hamlib_LIBRARIES} ${extraLIBS} ${FFTW3_LIBRARIES} Qt5::Multimedia)
- qt5_use_modules (wsjtx SerialPort) # not sure why the interface link library syntax above doesn't work
++if (FREEBSD)
++  set (OpenMP_C_FLAGS "-openmp")
++  set (OpenMP_CXX_FLAGS "-openmp")
++  set (OpenMP_Fortran_FLAGS "-openmp")
++  set (OPENMP_FOUND TRUE)
++else()
++  find_package (OpenMP)
++endif()
  
- add_resources (message_aggregator_RESOURCES /qss ${message_aggregator_STYLESHEETS})
-@@ -1011,20 +1031,6 @@ else (WSJT_INCLUDE_KVASD)
-   endif (APPLE)
- endif (WSJT_INCLUDE_KVASD)
+ #
+ # fftw3 single precision library
+@@ -1132,6 +1157,13 @@ if (APPLE)
+   target_link_libraries (wsjtx wsjt_fort wsjt_cxx wsjt_qt wsjt_qtmm ${hamlib_LIBRARIES} ${FFTW3_LIBRARIES})
+ else ()
+   target_link_libraries (wsjtx wsjt_fort_omp wsjt_cxx wsjt_qt wsjt_qtmm ${hamlib_LIBRARIES} ${FFTW3_LIBRARIES})
++
++  if(FREEBSD)
++    set (extraLIBS "ltdl" "usb")
++  else()
++    set (extraLIBS "")
++  endif()
++  
+   set_target_properties (wsjtx PROPERTIES
+     COMPILE_FLAGS "${OpenMP_C_FLAGS}"
+     LINK_FLAGS "${OpenMP_C_FLAGS}"
+@@ -1232,20 +1264,6 @@ install (TARGETS jt9 jt65code qra64code 
+   BUNDLE DESTINATION ${WSJT_BIN_DESTINATION} COMPONENT runtime
+   )
  
 -install (PROGRAMS
 -  ${RIGCTL_EXE}

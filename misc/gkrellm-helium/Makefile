@@ -3,7 +3,7 @@
 
 PORTNAME=	gkrellm-helium
 PORTVERSION=	2.3.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc
 MASTER_SITES=	https://sites.google.com/site/makovick/projects/
 

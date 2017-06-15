@@ -3,7 +3,7 @@
 
 PORTNAME=	openscad
 PORTVERSION=	2015.03
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	cad
 MASTER_SITES=	http://files.openscad.org/
 DISTNAME=	openscad-${PORTVERSION}.src
@@ -36,7 +36,7 @@ QMAKE_ARGS+=	VERSION=${PORTVERSION} \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,share/man,man,' \
+	@${REINPLACE_CMD} -e 's,share/man,man,' \
 		${WRKSRC}/openscad.pro
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblouis
-PORTVERSION=	2.6.5
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -17,7 +17,7 @@ USES=		autoreconf gmake libtool pathfix
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

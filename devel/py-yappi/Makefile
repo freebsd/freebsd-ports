@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yappi
-PORTVERSION=	0.94
+PORTVERSION=	0.98
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,14 +19,12 @@ PORTDOCS=	*
 USES=		python
 USE_PYTHON=	distutils concurrent autoplist
 
-NO_ARCH=	yes
-
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_yappi.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_yappi.so
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-taskmanager
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -14,22 +14,16 @@ COMMENT=	Task manager for the Xfce desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+	libfreetype.so:print/freetype2
+
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig tar:bzip2
-USE_GNOME=	gtk20 glib20 cairo intltool intlhack
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		gettext gmake localbase pkgconfig tar:bzip2
+USE_GNOME=	gtk20 glib20 cairo gdkpixbuf2 intltool libwnck
+USE_XORG=	ice sm x11 xmu xt
 
-OPTIONS_DEFINE=	GTK3
-GTK3_USE=	gnome=gtk30,libwnck3
-GTK3_CONFIGURE_ON=	--enable-gtk3 --enable-wnck3 --disable-wnck
-GTK3_USE_OFF=	gnome=libwnck
-GTK3_CONFIGURE_OFF=	--enable-wnck --disable-wnck3
-
-CONFIGURE_ARGS+=	--disable-gksu
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|prefix)/$$(DATADIRNAME)|datadir)|' \
-		${WRKSRC}/po/Makefile.in.in
+CONFIGURE_ARGS+=	--disable-gksu \
+	--disable-gtk3 --disable-wnck3 \
+	--enable-wnck
 
 .include <bsd.port.mk>

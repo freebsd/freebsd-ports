@@ -4,4 +4,4 @@ This package serves two purposes:
  (ii) Use the map as a background image to overlay plots within R.
 This requires proper coordinate scaling.
 
-WWW: http://cran.r-project.org/web/packages/RgoogleMaps/
+WWW: https://cran.r-project.org/web/packages/RgoogleMaps/

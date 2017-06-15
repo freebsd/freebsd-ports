@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	homard
-DISTVERSION=	11.2-1
+DISTVERSION=	11.7-1
 CATEGORIES=	french cad linux
 
 MAINTAINER=	thierry@FreeBSD.org

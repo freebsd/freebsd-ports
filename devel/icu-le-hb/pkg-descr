@@ -1,0 +1,9 @@
+icu-le-hb is a library implementing the ICU Layout Engine (icu-le) API
+using external HarfBuzz library for implementation. This is useful as
+a compatibility layer to make applications using ICU Layout Engine to
+use HarfBuzz without porting them to use the HarfBuzz API.
+
+The code is mostly a trimmed down version of icu/source/layout, with
+all shapers stripped out, and HarfBuzz integrated.
+
+WWW: http://www.freedesktop.org/wiki/Software/HarfBuzz/

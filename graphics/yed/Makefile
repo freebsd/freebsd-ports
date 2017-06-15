@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yed
-PORTVERSION=	3.16.1
+PORTVERSION=	3.16.2.1
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${PORTVERSION}
@@ -18,7 +18,7 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.8+
 NO_BUILD=	yes
 RESTRICTED=	Downloading requires acceptance of license agreement
 DESKTOP_ENTRIES="yEd" "${COMMENT}" "" "yed" "Graphics;" false
@@ -40,19 +40,24 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/license.html ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/thirdpartylicenses.html ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${DATADIR}
 	@${MKDIR}  ${STAGEDIR}${DATADIR}/lib
 .	for lib in common-image.jar \
 		common-io.jar \
 		common-lang.jar \
+		imageio-bmp.jar \
 		imageio-core.jar \
+		imageio-hdr.jar \
 		imageio-icns.jar \
-		imageio-ico.jar \
 		imageio-iff.jar \
 		imageio-jpeg.jar \
 		imageio-metadata.jar \
+		imageio-pcx.jar \
 		imageio-pict.jar \
 		imageio-psd.jar \
+		imageio-sgi.jar \
+		imageio-tga.jar \
 		imageio-thumbsdb.jar \
 		imageio-tiff.jar \
 		vectorgraphics.jar

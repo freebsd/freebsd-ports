@@ -5,15 +5,13 @@ PORTNAME=	twms
 PORTVERSION=	0.02w
 PORTREVISION=	2
 CATEGORIES=	www astro
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tiny WMS server
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Unfetchable (google code has gone away)
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:graphics/py-pyproj \
 		${PYTHON_SITELIBDIR}/web/__init__.py:www/webpy \

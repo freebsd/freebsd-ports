@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-XTEA
-PORTVERSION=	0.0107
+PORTVERSION=	0.0108
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implementation of the eXtended Tiny Encryption Algorithm
 
 LICENSE=	ART10 GPLv1

@@ -3,7 +3,7 @@
 
 PORTNAME=	ldapdiff
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://launchpadlibrarian.net/20391352/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--with-iconv-dir=${LOCALBASE}
 .endif
 
 post-extract:
-	@cd ${WRKSRC} && ${RM} -f *.o ldapdiff Makefile config.h
+	@cd ${WRKSRC} && ${RM} *.o ldapdiff Makefile config.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${STAGEDIR}${PREFIX}/bin

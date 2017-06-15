@@ -3,17 +3,16 @@
 
 PORTNAME=	hashcat-legacy
 PORTVERSION=	2.00
+PORTREVISION=	2
 CATEGORIES=	security
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Advanced CPU-based password recovery utility
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
 LIB_DEPENDS=	libgmp.so:math/gmp
-
-BROKEN_FreeBSD_9=	does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashcat
@@ -26,6 +25,9 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	uses amd64 instructions
 
 ALL_TARGET=	posix64 posixXOP
+
+post-patch:
+	@${REINPLACE_CMD} -r 's|^(CC_.*[[:blank:]]*=[[:blank:]]*)gcc[[:blank:]]*$$|\1${CC}|' ${WRKSRC}/src/Makefile
 
 do-install:
 .for v in 64 XOP

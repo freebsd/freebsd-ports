@@ -3,24 +3,31 @@
 
 PORTNAME=	beautifyphp
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 MASTER_SITES=	SF
 DISTNAME=	beautify_php_${PORTVERSION}
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR beautifier for PHP4
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear
 
+USES=		shebangfix
+SHEBANG_FILES=	beautify_php
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/beautify_php share/${PORTNAME}/beautify_php.php \
+PLIST_FILES=	bin/beautify_php \
+		share/${PORTNAME}/beautify_php.php \
 		share/pear/beautify_php.class.inc
 
 post-patch:
-	@${REINPLACE_CMD} 's,/usr/bin/php,${LOCALBASE}/bin/php,g' ${WRKSRC}/beautify_php
-	@${FIND} ${WRKSRC} -name "*.bak" -or -name "*.orig" -delete
+	@${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/beautify_php
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/beautify_php ${STAGEDIR}${PREFIX}/bin

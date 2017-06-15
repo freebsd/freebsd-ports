@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	7.0.0.s20161002
-CATEGORIES=	lang java
+PORTVERSION=	7.0.1.s20170326
+PORTREVISION=	1
+CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DISTVERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
 
@@ -31,20 +32,17 @@ CPE_VERSION=	${GCC_VERSION}
 # Y.2.1.s20140817 results in values of Y-20140817, Y.2.1, and Y
 # for these three.
 DISTVERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
+PORTREVISION=	1
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64 arm armv6 armv6hf
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 sparc64 arm armv6
 USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
 
 OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE
-OPTIONS_DEFINE_i386=	JAVA
-OPTIONS_DEFINE_amd64=	JAVA
-OPTIONS_DEFINE_powerpc64=	JAVA
 OPTIONS_DEFAULT=	BOOTSTRAP
-OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
 GRAPHITE_DESC=		Support for Graphite loop optimizations
 
@@ -65,10 +63,10 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
 .if ${ARCH} == powerpc64
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
-USE_GCC=	4.9+
+USE_GCC=	yes
 .endif
 
-.if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
+.if ${ARCH} == "armv6"
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
@@ -125,21 +123,6 @@ LIB_DEPENDS+=	libisl.so:devel/isl
 CONFIGURE_ARGS+=--with-isl=${LOCALBASE}
 .endif
 
-.if ${PORT_OPTIONS:MJAVA}
-ECJ_JAR=	${LOCALBASE}/share/java/ecj-4.5.jar
-BUILD_DEPENDS+=	${ECJ_JAR}:lang/gcc-ecj45 \
-		zip:archivers/zip
-RUN_DEPENDS+=	${ECJ_JAR}:lang/gcc-ecj45
-EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
-CONFIGURE_ARGS+=--with-ecj-jar=${ECJ_JAR}
-LANGUAGES:=	${LANGUAGES},java
-INFO+=		gcc${SUFFIX}/cp-tools \
-		gcc${SUFFIX}/gcj
-PLIST_SUB+=	JAVA=""
-.else
-CONFIGURE_ARGS+=--disable-libgcj
-PLIST_SUB+=	JAVA="@comment "
-.endif
 CONFIGURE_ARGS+=--enable-languages=${LANGUAGES}
 
 pre-everything::
@@ -147,7 +130,7 @@ pre-everything::
 
 pre-configure:
 	cd ${WRKSRC} ; contrib/gcc_update --touch
-	@${RM} -f ${WRKSRC}/gcc/*/*.info*
+	@${RM} ${WRKSRC}/gcc/*/*.info*
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
@@ -156,12 +139,10 @@ full-regression-test: build
 .endif
 
 post-stage:
-	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
-	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
-	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
+	${RM} ${STAGEDIR}${PREFIX}/man/man7/*
 	# Add target libraries and include files to packaging list.
-	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
+	${RM} ${WRKDIR}/PLIST.lib
+.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
 	cd ${STAGEDIR}${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	fi

@@ -17,12 +17,12 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libpcre.so:devel/pcre
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^4].* cyrus-imapd2[^4]-2.[^4].*
+CONFLICTS_INSTALL=	cyrus-imapd-2.[^4].* cyrus-imapd2[^4]-2.[^4].* \
+			cyrus-imapd3*
 
 USE_RC_SUBR=	imapd
 
-USES=		cpe perl5
-USE_OPENSSL=	yes
+USES=		cpe perl5 ssl
 GNU_CONFIGURE=	yes
 CYRUS_PREFIX=	${PREFIX}/cyrus
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
@@ -169,7 +169,7 @@ post-patch:
 		${WRKSRC}/tools/masssievec
 
 post-patch-DRAC-on:
-	@${RM} -rf ${WRKSRC}/autom4te.cache
+	@${RM} -r ${WRKSRC}/autom4te.cache
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

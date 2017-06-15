@@ -23,14 +23,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/trunk
 
 USES=		python shebangfix
 SHEBANG_FILES=	*.py mopelib/mopelib.py
+NO_ARCH=	yes
 
 PORTDOCS=	index.html style.css
-OPTIONS_DEFINE= DOCS
 
 SUB_FILES=	${PORTNAME}.sh
 
 DESKTOP_ENTRIES="duckmaze" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+OPTIONS_DEFINE= DOCS
 
 post-extract:
 	${MV} ${WRKSRC}/doc/*.png ${WRKSRC}/images/
@@ -56,6 +58,7 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 

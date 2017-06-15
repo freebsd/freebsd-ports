@@ -1,5 +1,5 @@
-TIMESTAMP = 1474066136
-SHA256 (stack-dependencies-1.2.0.tar.gz) = 10be720c45d6a0441cc6544dbe09d6fa9aa787462545577a79746f6b34fe09bc
-SIZE (stack-dependencies-1.2.0.tar.gz) = 37424751
-SHA256 (applicative-tech-stack-dependencies-1.2.0_GH0.tar.gz) = 09439541370d3ed65c10c748be668731d50faba73bc7f47da24405accb369a94
-SIZE (applicative-tech-stack-dependencies-1.2.0_GH0.tar.gz) = 983
+TIMESTAMP = 1489590499
+SHA256 (stack-dependencies-1.4.0.tar.gz) = f617a76913e6310651c77968e3cbafe141b33a2abfa17932aebe40e6e51211e3
+SIZE (stack-dependencies-1.4.0.tar.gz) = 40761699
+SHA256 (applicative-tech-stack-dependencies-v1.4.0_GH0.tar.gz) = 4b895b8ad3be0ece28942e0ef566d80721440f8d7d35e25559dcf3db3ffa4403
+SIZE (applicative-tech-stack-dependencies-v1.4.0_GH0.tar.gz) = 999

@@ -10,13 +10,13 @@ MASTER_SITES=	CHEESESHOP \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyStemmer-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Snowball Stemming Algorithms for Information Retrieval
 
 LICENSE=	MIT BSD3CLAUSE
 LICENSE_COMB=	dual
 
-USES=		python
+USES?=		python
 USE_PYTHON=	distutils autoplist
 
 post-install:

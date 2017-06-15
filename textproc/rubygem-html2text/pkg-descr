@@ -1,0 +1,5 @@
+html2text is a very simple script that uses Ruby's DOM
+methods to load HTML from a string, and then iterates
+over the resulting DOM to correctly output plain text.
+
+WWW: https://github.com/soundasleep/html2text_ruby

@@ -1,4 +1,4 @@
 Reshape lets you flexibly restructure and aggregate data using just
 two functions: melt and cast.
 
-WWW: http://cran.r-project.org/web/packages/reshape2/
+WWW: https://cran.r-project.org/web/packages/reshape2/

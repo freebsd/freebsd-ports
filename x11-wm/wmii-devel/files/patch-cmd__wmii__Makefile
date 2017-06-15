@@ -1,6 +1,6 @@
---- cmd/wmii/Makefile.orig
+--- cmd/wmii/Makefile.orig	2010-06-10 07:24:02 UTC
 +++ cmd/wmii/Makefile
-@@ -9,7 +9,7 @@
+@@ -9,7 +9,7 @@ HFILES=	dat.h fns.h
  
  PACKAGES += $(X11PACKAGES) xext xrandr xrender xinerama
  

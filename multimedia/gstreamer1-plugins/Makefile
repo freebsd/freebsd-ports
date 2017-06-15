@@ -5,7 +5,7 @@ PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
 # When chasing a shared library for a plug-in bump the PORTREVISION in the
 # plug-in port instead, like ${category}/gstreamer1-plugin-${PLUGIN}.
-PORTREVISION?=	0
+PORTREVISION?=	2
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
 		http://gstreamer.freedesktop.org/src/gst-plugins-bad/:bad \
@@ -40,7 +40,7 @@ UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES+=		gettext gmake libtool pathfix pkgconfig tar:xz
 WANT_GSTREAMER=	yes
 USE_GNOME+=	glib20 introspection:build libxml2
 GNU_CONFIGURE=	yes
@@ -125,11 +125,6 @@ DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 DEFAULT_DVD_DEVICE=/dev/cd0
 .endif
 
-# openssl in 9.x is too old
-.if ${GST_PLUGIN} == dtls && ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=yes
-.endif
-
 post-patch:
 .if ${DIST} == bad
 # custom rule to fix opencv detection in configure
@@ -169,12 +164,6 @@ post-patch:
 	  s|$$(top_builddir)/gst-libs/gst/uridownloader/libgsturidownloader-$$(GST_API_VERSION).la|-lgsturidownloader-${VERSION}|; \
 	  s|$$(top_builddir)/gst-libs/gst/adaptivedemux/libgstadaptivedemux-@GST_API_VERSION@.la|-lgstadaptivedemux-${VERSION}|; \
 	  s|$$(top_builddir)/gst-libs/gst/video/libgstbadvideo-$$(GST_API_VERSION).la|-lgstbadvideo-${VERSION}|'
-.endif
-
-# workaround a crash in clang 3.3 crash llvm bug # 15840
-.if ((${OSVERSION} >= 901504 && ${OSVERSION} < 902502) || \
-     (${OSVERSION} >= 1000037 && ${OSVERSION} < 1000056))
-USE_GCC=	any
 .endif
 
 pre-install:

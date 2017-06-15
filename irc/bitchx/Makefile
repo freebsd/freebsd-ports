@@ -42,7 +42,7 @@ OPTIONS_DEFAULT=	PLUGINS SSL
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 SSL_CONFIGURE_WITH=	ssl
-SSL_USE=	openssl=yes
+SSL_USES=		ssl
 
 PLUGINS_CONFIGURE_WITH=		plugins="${PLUGIN_LIST:C/\$$/,/g}"
 
@@ -74,4 +74,10 @@ post-patch:
 	cd ${WRKSRC}/bitchx-docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,6 +1,0 @@
-This module contains methods to test the reachability of remote
-hosts on a network.  A ping object is first created with optional
-parameters, a variable number of hosts may be pinged multiple
-times and then the connection is closed.
-
-WWW: http://search.cpan.org/dist/Net-Ping/

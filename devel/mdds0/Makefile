@@ -12,6 +12,9 @@ COMMENT=	Multi-dimensional data index algorithm
 
 LICENSE=	MIT
 
+DEPRECATED=	Deprecated by upstream, use devel/mdds
+EXPIRATION_DATE=	2017-03-31
+
 USES=		tar:bzip2
 NO_ARCH=	yes
 NO_BUILD=	yes

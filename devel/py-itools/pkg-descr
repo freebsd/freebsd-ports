@@ -1,7 +1,0 @@
-The itools library offers a collection of packages covering
-a wide range of capabilities. Including support for many file
-formats (XML, CSV, HTML, etc.), a virtual file system (itools.vfs),
-the simple template language (STL), an index and search engine,
-and much more.
-
-WWW: http://www.hforge.org/itools

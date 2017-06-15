@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	googlemock
-PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	1
+DISTVERSION=	1.8.0-11
+DISTVERSIONSUFFIX=	-ga2b8a8e
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,13 +14,15 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_pthread.m4:devel/autoconf-archive \
-		googletest>=1.7.0:devel/googletest
+		googletest>=1.8.0:devel/googletest
 LIB_DEPENDS=	libgtest.so:devel/googletest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
+GH_PROJECT=	googletest
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool localbase
+WRKSRC_SUBDIR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 # fused-src python tests are only useful for bundling. There's no point in
 # running them before installing system-wide without source files.

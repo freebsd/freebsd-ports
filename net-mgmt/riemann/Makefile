@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	riemann
-PORTVERSION=	0.2.11
+PORTVERSION=	0.2.12
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
-MASTER_SITES=	https://wintermute.skunkwerks.at/${PORTNAME}/releases/${PORTVERSION}/ \
-		http://aphyr.com/${PORTNAME}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	dch@skunkwerks.at
 COMMENT=	Monitors distributed systems
@@ -18,8 +18,7 @@ NO_ARCH=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 
-SUB_FILES=	${PORTNAME}
-SUB_LIST+=	JAVA_HOME=${JAVA_HOME} \
+SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		RIEMANN_USER=${RIEMANN_USER} \
 		RIEMANN_GROUP=${RIEMANN_GROUP} \
 		RIEMANN_PIDFILE=${RIEMANN_PIDFILE} \
@@ -50,13 +49,14 @@ do-install:
 	${MKDIR} \
 		${STAGEDIR}${JAVAJARDIR} \
 		${STAGEDIR}${ETCDIR} \
+		${STAGEDIR}${ETCDIR}/conf.d \
 		${STAGEDIR}${RIEMANN_LOGDIR}
 	${INSTALL_DATA} \
 				${WRKSRC}/lib/${PORTNAME}.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	${SED} -i -e "s:riemann.log:${RIEMANN_LOGDIR}${PORTNAME}.log:g" \
 		${WRKSRC}/etc/${PORTNAME}.config
-	${CP} -p ${WRKSRC}/etc/${PORTNAME}.config \
+	${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.config \
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.config.sample
 
 .include <bsd.port.mk>

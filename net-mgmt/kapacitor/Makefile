@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kapacitor
-PORTVERSION=	0.13.1
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -11,7 +11,7 @@ COMMENT=	Time-series data collection
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	go>=1.5.0:lang/go
+BUILD_DEPENDS=	go>=1.6.0:lang/go
 
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 
@@ -20,8 +20,9 @@ USE_RC_SUBR=	kapacitord
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	influxdata:DEFAULT
-GH_TUPLE=	golang:crypto:b6789ab:crypto \
-		stretchr:testify:6cb3b85:testify
+
+# This should work, but go gets confused with the symlinks.
+#GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 
 SUB_FILES=	kapacitord
 SUB_LIST+=	KAPACITORD_PIDDIR=${KAPACITORD_PIDDIR}
@@ -30,25 +31,29 @@ PLIST_SUB=	KAPACITORD_PIDDIR=${KAPACITORD_PIDDIR}
 STRIP=		# stripping can break go binaries
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME} \
-	${WRKSRC}/src/github.com/stretchr \
-	${WRKSRC}/src/golang.org/x
-	@cd ${WRKSRC} && ${MV} CHANGELOG.md CONTRIBUTING.md DESIGN.md Dockerfile_build_ubuntu32 \
-	Dockerfile_build_ubuntu64 Dockerfile_build_ubuntu64_git LICENSE LICENSE_OF_DEPENDENCIES.md \
-	README.md alert.go batch.go build.py build.sh circle-test.sh circle.yml client clock cmd \
-	default.go derivative.go doc.go edge.go edge_test.go etc eval.go examples expr.go expvar \
-	global_stats.go gobuild.sh group_by.go http_out.go influxdb_out.go influxql.gen.go \
-	influxql.gen.go.tmpl influxql.go install-deps.sh integrations join.go log.go models \
-	node.go noop.go output.go pipeline query.go replay.go result.go sample.go scripts services \
-	shift.go stats.go stream.go task.go task_master.go test.sh tick tickdoc.conf timer \
-	tmpldata udf udf.go udf_test.go union.go update_tick_docs.sh vendor vendor.yml where.go \
-	window.go window_test.go \
+	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
+	@cd ${WRKSRC} && ${MV} \
+	alert alert.go auth batch.go BLOB_STORE_DESIGN.md bufpool build.py \
+	build.sh CHANGELOG.md circle-test.sh circle.yml client clock cmd \
+	combine_test.go combine.go command CONTRIBUTING.md default.go delete.go \
+	derivative.go DESIGN.md doc.go Dockerfile_build_ubuntu32 \
+	Dockerfile_build_ubuntu64 Dockerfile_build_ubuntu64_git edge_test.go \
+	edge.go etc eval.go examples expr.go expvar flatten.go gobuild.sh \
+	group_by.go http_out.go influxdb influxdb_out.go influxql.gen.go \
+	influxql.gen.go.tmpl influxql.go integrations join.go k8s_autoscale.go \
+	LICENSE LICENSE_OF_DEPENDENCIES.md list-deps log.go metaclient.go \
+	models node.go noop.go output.go pipeline query_test.go query.go \
+	README.md replay.go result.go sample.go scripts server services \
+	shift.go stats.go stream.go task_master.go task.go template.go \
+	test.sh tick tickdoc.conf timer tmpldata udf udf_test.go udf.go \
+	union.go update_tick_docs.sh usr vars vendor vendor.list vendor.sh \
+	where.go window_test.go window.go \
 		${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
-	@${MV} ${WRKSRC_testify} ${WRKSRC}/src/github.com/stretchr/testify ;\
-	${MV} ${WRKSRC_crypto} ${WRKSRC}/src/golang.org/x/crypto
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/influxdata/${PORTNAME} && ${SETENV} GOPATH=${WRKSRC} go install ./...
+	@cd ${WRKSRC}/src/github.com/influxdata/${PORTNAME} \
+		&& ${SETENV} GOPATH=${WRKSRC} go install -ldflags "-X main.version=${DISTVERSION}" ./cmd/${PORTNAME} \
+		&& ${SETENV} GOPATH=${WRKSRC} go install -ldflags "-X main.version=${DISTVERSION}" ./cmd/${PORTNAME}d
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

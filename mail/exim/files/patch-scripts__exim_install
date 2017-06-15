@@ -1,5 +1,5 @@
---- scripts/exim_install.orig	2014-05-26 20:14:16.000000000 +0100
-+++ scripts/exim_install	2014-07-04 12:40:45.002262243 +0100
+--- scripts/exim_install.orig	2016-12-18 14:02:28.000000000 +0000
++++ scripts/exim_install	2017-01-02 11:48:46.939703000 +0000
 @@ -29,6 +29,7 @@
  
  do_chown=yes
@@ -30,17 +30,17 @@
  
  # Overrides of other things
  case "$inst_uid"     in ?*) INST_UID="$inst_uid";; esac
-@@ -217,8 +220,7 @@
-   # The exim binary is handled specially
+@@ -218,8 +221,7 @@
  
    if [ $name = exim${EXE} ]; then
--    version=exim-`./exim -bV -C /dev/null | \
+     exim="./exim -bV -C /dev/null"
+-    version=exim-`$exim 2>/dev/null | \
 -      awk '/Exim version/ { OFS=""; print $3,"-",substr($4,2,length($4)-1) }'`${EXE}
 +    version=exim
  
      if [ "${version}" = "exim-${EXE}" ]; then
        echo $com ""
-@@ -382,9 +384,8 @@
+@@ -384,9 +386,8 @@
    echo $com ' ' ${CONFIGURE_FILE}
    echo $com Therefore, skipping automatic installation.
  
@@ -52,7 +52,7 @@
    if [ "${SYSTEM_ALIASES_FILE}" = "" ] ; then
      SYSTEM_ALIASES_FILE=/etc/aliases
      echo $com This configuration has system aliases in ${SYSTEM_ALIASES_FILE}.
-@@ -394,8 +395,8 @@
+@@ -396,8 +397,8 @@
    ${real} ${MKDIR} -p `${DIRNAME} ${CONFIGURE_FILE}`
  
    echo sed -e '\\'
@@ -63,7 +63,7 @@
  
    # I can't find a way of writing this using the ${real} feature because
    # it seems that the output redirection always happens, even when -n was
-@@ -403,8 +404,8 @@
+@@ -405,8 +406,8 @@
  
    if [ "$real" = "" ] ; then
      sed -e \
@@ -74,7 +74,7 @@
    else
      true
    fi
-@@ -414,24 +415,22 @@
+@@ -416,24 +417,22 @@
      echo $com "*** Exim installation ${ver}failed ***"
      exit 1
    fi

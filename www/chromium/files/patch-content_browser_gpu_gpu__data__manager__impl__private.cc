@@ -1,6 +1,6 @@
---- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2016-10-06 04:02:18.000000000 +0300
-+++ content/browser/gpu/gpu_data_manager_impl_private.cc	2016-10-14 17:58:04.977933000 +0300
-@@ -363,7 +363,7 @@
+--- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2017-04-19 19:06:33 UTC
++++ content/browser/gpu/gpu_data_manager_impl_private.cc
+@@ -396,7 +396,7 @@ bool GpuDataManagerImplPrivate::GpuAcces
      // strings even if all features are blacklisted. If all GPU features are
      // disabled, the GPU process will only initialize GL bindings, create a GL
      // context, and collect full GPU info.
@@ -9,7 +9,7 @@
      if (reason) {
        *reason = "All GPU features are blacklisted.";
      }
-@@ -486,8 +486,10 @@
+@@ -513,8 +513,10 @@ void GpuDataManagerImplPrivate::SetGLStr
    gpu_info.gl_renderer = gl_renderer;
    gpu_info.gl_version = gl_version;
  
@@ -20,7 +20,7 @@
  
    UpdateGpuInfo(gpu_info);
    UpdateGpuSwitchingManager(gpu_info);
-@@ -542,10 +544,12 @@
+@@ -572,10 +574,12 @@ void GpuDataManagerImplPrivate::Initiali
      // Skip collecting the basic driver info if SetGpuInfo() is already called.
      if (IsCompleteGpuInfoAvailable()) {
        gpu_info = gpu_info_;
@@ -33,7 +33,7 @@
      }
  
      if (command_line->HasSwitch(switches::kGpuTestingVendorId) &&
-@@ -657,7 +661,9 @@
+@@ -686,7 +690,9 @@ void GpuDataManagerImplPrivate::UpdateGp
      return;
  
    bool was_info_available = IsCompleteGpuInfoAvailable();

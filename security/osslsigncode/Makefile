@@ -3,6 +3,7 @@
 
 PORTNAME=	osslsigncode
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -11,9 +12,8 @@ COMMENT=	OpenSSL-based signcode utility
 
 PLIST_FILES=	bin/osslsigncode
 
-USES=		pkgconfig
+USES=		pkgconfig ssl
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=		CURL GSF
 OPTIONS_DEFAULT=	CURL GSF

@@ -1,5 +1,5 @@
---- spunk/unixsrc/filesys.cc.orig	Sat Feb 26 17:57:13 2000
-+++ spunk/unixsrc/filesys.cc	Sat Feb 26 17:57:39 2000
+--- spunk/unixsrc/filesys.cc.orig	1996-11-07 17:06:58 UTC
++++ spunk/unixsrc/filesys.cc
 @@ -42,10 +42,10 @@
  
  extern const char FileSysPathSep	= '/';	// Path separator

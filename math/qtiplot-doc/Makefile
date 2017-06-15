@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 PKGNAMESUFFIX=	-doc
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The QtiPlot Handbook
 
 BUILD_DEPENDS=	docbook2html:textproc/docbook-utils \
@@ -25,7 +25,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${RM} -rf ${WRKSRC}/html/pics-it
+	${RM} -r ${WRKSRC}/html/pics-it
 	cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

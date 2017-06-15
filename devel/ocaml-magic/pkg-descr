@@ -4,4 +4,4 @@ An ocaml wrapper for the libmagic(3) API. The libmagic API consults
 on a magic(5) database file in order to provide information to
 identify the type of a given file.
 
-WWW: http://sourceforge.net/projects/ocaml-magic/
+WWW: https://sourceforge.net/projects/ocaml-magic/

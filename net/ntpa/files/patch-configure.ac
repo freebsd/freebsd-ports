@@ -1,0 +1,25 @@
+--- configure.ac.orig	2016-12-26 13:35:44 UTC
++++ configure.ac
+@@ -12,6 +12,12 @@ if test "x$MCS" = "xno"; then
+         AC_MSG_ERROR([mcs Not found])
+ fi
+ 
++dnl pkg-config
++AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
++if test "x$PKG_CONFIG" = "xno"; then
++	AC_MSG_ERROR([You need to install pkg-config])
++fi
++
+ AC_ARG_ENABLE(debug,
+ 	AC_HELP_STRING([--enable-debug],
+ 		[Use 'DEBUG' Configuration [default=NO]]),
+@@ -33,6 +39,9 @@ if test -z "$CONFIG_REQUESTED" ; then
+ 	enable_release=yes
+ fi
+ 
++dnl package checks
++PKG_CHECK_MODULES([NPLOT], [NPlot])
++
+ AC_CONFIG_FILES([
+ Ntp.Analyzer.Objects/Makefile
+ Ntp.Common/Makefile

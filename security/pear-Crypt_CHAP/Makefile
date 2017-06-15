@@ -5,10 +5,10 @@ PORTNAME=	Crypt_CHAP
 PORTVERSION=	1.5.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class for generating CHAP packets
 
-USES=	pear
+USES=		pear php
 USE_PHP=	mcrypt hash
 
 .include <bsd.port.mk>

@@ -14,10 +14,9 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	strophe
-USES=		libtool pkgconfig autoreconf
+USES=		libtool pkgconfig autoreconf ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

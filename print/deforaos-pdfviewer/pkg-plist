@@ -1,0 +1,5 @@
+bin/pdfviewer
+share/applications/deforaos-pdfviewer.desktop
+%%NLS%%share/locale/es/LC_MESSAGES/PDFViewer.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/PDFViewer.mo
+%%PORTDOCS%%man/man1/pdfviewer.1.gz

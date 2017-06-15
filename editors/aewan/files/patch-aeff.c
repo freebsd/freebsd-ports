@@ -1,6 +1,6 @@
---- aeff.c.orig	Wed Aug 11 10:04:50 2004
-+++ aeff.c	Thu Sep  2 23:56:24 2004
-@@ -187,11 +187,12 @@
+--- aeff.c.orig	2005-10-01 01:50:41 UTC
++++ aeff.c
+@@ -187,11 +187,12 @@ void aeff_write_header(AeFile *f, const 
  static bool aeff_read_mark(AeFile *f, const char *mark_name, char pref) {
     char *line;
     char *s;

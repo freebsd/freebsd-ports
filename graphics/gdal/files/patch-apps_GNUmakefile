@@ -1,0 +1,13 @@
+--- apps/GNUmakefile.orig	2016-10-24 11:00:31 UTC
++++ apps/GNUmakefile
+@@ -215,7 +215,7 @@ gdal-config-inst:	gdal-config.in ../GDAL
+ 
+ 
+ install: default
+-	for f in $(BIN_LIST) ; do $(INSTALL) $$f $(DESTDIR)$(INST_BIN) ; done
+-	$(INSTALL) gdal_utils.h $(DESTDIR)$(INST_INCLUDE)
+-	$(INSTALL) gdal-config-inst $(DESTDIR)$(INST_BIN)/gdal-config
++	for f in $(BIN_LIST) ; do $(BSD_INSTALL_PROGRAM) $$f $(DESTDIR)$(INST_BIN) ; done
++	$(BSD_INSTALL_DATA) gdal_utils.h $(DESTDIR)$(INST_INCLUDE)
++	$(BSD_INSTALL_SCRIPT) gdal-config-inst $(DESTDIR)$(INST_BIN)/gdal-config
+ 

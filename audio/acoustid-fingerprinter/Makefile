@@ -2,10 +2,8 @@
 
 PORTNAME=	acoustid-fingerprinter
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	http://bitbucket.org/acoustid/${PORTNAME}/downloads/ \
-		GHC
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	AcoustID audio fingerprint submission tool
@@ -16,19 +14,18 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libtag.so:audio/taglib \
 		libavcodec.so:multimedia/ffmpeg
 
-USES=		cmake
-USE_QT4=	gui network \
+USES=		cmake desktop-file-utils
+USE_QT4=	corelib gui network \
 		qmake_build moc_build rcc_build uic_build
 USE_GITHUB=	yes
-GH_ACCOUNT=	lalinsky
+GH_ACCOUNT=	acoustid
+GH_TAGNAME=	632e879
 
 INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		 ${WRKSRC}/cmake/modules/*.cmake
-	@${REINPLACE_CMD} -e 's,CodecID,AVCodecID,g' \
-		${WRKSRC}/ffmpeg/audioconvert.h
 
 post-install:
 .for i in 16 24 32 48 128 256

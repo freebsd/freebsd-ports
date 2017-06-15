@@ -10,6 +10,7 @@ include/jrtplib3/rtcpsdesinfo.h
 include/jrtplib3/rtcpsdespacket.h
 include/jrtplib3/rtcpsrpacket.h
 include/jrtplib3/rtcpunknownpacket.h
+include/jrtplib3/rtpabortdescriptors.h
 include/jrtplib3/rtpaddress.h
 include/jrtplib3/rtpbyteaddress.h
 include/jrtplib3/rtpcollisionlist.h
@@ -37,12 +38,17 @@ include/jrtplib3/rtprandomrand48.h
 include/jrtplib3/rtprandomrands.h
 include/jrtplib3/rtprandomurandom.h
 include/jrtplib3/rtprawpacket.h
+include/jrtplib3/rtpsecuresession.h
+include/jrtplib3/rtpselect.h
 include/jrtplib3/rtpsession.h
 include/jrtplib3/rtpsessionparams.h
 include/jrtplib3/rtpsessionsources.h
+include/jrtplib3/rtpsocketutil.h
 include/jrtplib3/rtpsourcedata.h
 include/jrtplib3/rtpsources.h
 include/jrtplib3/rtpstructs.h
+include/jrtplib3/rtptcpaddress.h
+include/jrtplib3/rtptcptransmitter.h
 include/jrtplib3/rtptimeutilities.h
 include/jrtplib3/rtptransmitter.h
 include/jrtplib3/rtptypes.h

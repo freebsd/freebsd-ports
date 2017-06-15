@@ -3,7 +3,7 @@
 
 PORTNAME=	enblend
 PORTVERSION=	4.1.4
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION:R}
 DISTNAME=	enblend-enfuse-${PORTVERSION}
@@ -15,7 +15,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	help2man:misc/help2man \
-		${LOCALBASE}/bin/makeinfo:print/texinfo \
 		OpenEXR>=1.0:graphics/OpenEXR
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff \

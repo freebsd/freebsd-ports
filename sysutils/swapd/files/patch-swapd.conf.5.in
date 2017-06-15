@@ -1,6 +1,6 @@
---- swapd.conf.5.in.orig	2010-06-24 16:22:44.000000000 -0700
-+++ swapd.conf.5.in	2010-06-24 16:22:57.000000000 -0700
-@@ -14,7 +14,7 @@
+--- swapd.conf.5.in.orig	2005-02-19 04:22:44 UTC
++++ swapd.conf.5.in
+@@ -14,7 +14,7 @@ at startup.  The configuration file is i
  	maxfree 0
  	swapsize 32m
  	swapdir /var/tmp

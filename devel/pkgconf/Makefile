@@ -1,17 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	pkgconf
-PORTVERSION=	1.0.1
+PORTVERSION=	1.3.0
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://rabbit.dereferenced.org/~nenolod/distfiles/ \
+MASTER_SITES=	https://distfiles.dereferenced.org/pkgconf/ \
 		http://files.etoilebsd.net/pkgconf/
 
+# NOTE: before committing to this port, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to help to configure compiler and linker flags
 
 LICENSE=	ISCL
 
-USES=		tar:xz libtool
+USES=		tar:xz libtool pathfix
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

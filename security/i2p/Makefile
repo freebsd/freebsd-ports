@@ -37,11 +37,11 @@ USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VERSION=	1.6+
+USE_LOCALE=	en_US.UTF-8
 
 ALL_TARGET=	\
 		updater \
 		tarball
-MAKE_ENV=	LANG=en_US.UTF-8
 
 PORTDATA=	*
 
@@ -91,7 +91,7 @@ do-install:
 # line taken from textproc/xerces-j maintained by hq@FreeBSD.org
 	@cd ${JAVADOC_WRKSRC} && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
-		${FIND} * -not -type d -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
+		${FIND} * -not -type d -exec ${INSTALL_DATA} {} "${STAGEDIR}${DOCSDIR}/{}" \;
 .endif
 
 .include <bsd.port.post.mk>

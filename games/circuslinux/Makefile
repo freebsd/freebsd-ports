@@ -24,6 +24,6 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION} ${STAGEDIR}${DOCSDIR}
+	@${MV} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

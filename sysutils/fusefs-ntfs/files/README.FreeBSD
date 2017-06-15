@@ -51,7 +51,7 @@ Then create the following symlink:
 
 $ ln -s `which ntfs-3g` /usr/sbin/mount_ntfs-3g
 
-And add the appropiate line to /etc/fstab: the filesystem should be "ntfs-3g"
+And add the appropriate line to /etc/fstab: the filesystem should be "ntfs-3g"
 instead of "ntfs", and the additional "late" parameter is required. Example:
 
 /dev/ad4s1		/wxp		ntfs-3g	rw,late		0	0
@@ -67,7 +67,7 @@ NTFS_USE_UBLIO	- Enable the UBLIO cache.
 UBLIO_BLOCKSIZE	- Actual reads/writes will be multiples of this quantity.
 UBLIO_ITEMS	- Number of cache entries, each of UBLIO_BLOCKSIZE length.
 UBLIO_GRACE	- Number of times a cache entry will refuse being recycled.
-UBLIO_SYNC_IO	- If enabled, all writes will be immediatly executed.
+UBLIO_SYNC_IO	- If enabled, all writes will be immediately executed.
 
 To give an idea about tuning, here are the default values with some notes
 (they are only based on some simple benchmarks, and may be wrong):
@@ -77,11 +77,11 @@ UBLIO_BLOCKSIZE	- 262144 (256KB). Larger improves reading/writing speed of
 		  large files, and smaller makes filesystem operations
 		  (creation, deletion, moving, find(1)) perform faster.
 		  Try 2/4MB and 512/256KB for the different approaches. Note
-		  that after that points performance descreases again.
+		  that after that points performance decreases again.
 UBLIO_ITEMS	- 64. Higher increases speed of filesystem operations. Try 128.
 UBLIO_GRACE	- 32. Makes the cache items have more chances to be reused.
 UBLIO_SYNC_IO	- 0. If enabled, highly decreases writing speed, but the data
-		  is immediatly written to the disk.
+		  is immediately written to the disk.
 
 For example (improves performance over large files, but read below):
 
@@ -114,7 +114,7 @@ instance, you may not be able to create ntfs filesystem because of this with
    Initializing device with zeroes:  99%Failed to complete writing to
    /dev/ada0s1 after three retries.
 
-- When reading/writting the same file repeatedly while doing many simultaneous
+- When reading/writing the same file repeatedly while doing many simultaneous
 operations on different files sometimes the former one fails: read(2) returns
 -1 and sets errno to EAGAIN. This is because of a difference between the FUSE
 kernel implementation in Linux and FreeBSD, and is being worked on. An example

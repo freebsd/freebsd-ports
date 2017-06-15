@@ -1,0 +1,15 @@
+include/KF5/KIdleTime/KIdleTime
+include/KF5/KIdleTime/kidletime.h
+include/KF5/KIdleTime/kidletime_export.h
+include/KF5/KIdleTime/private/abstractsystempoller.h
+include/KF5/kidletime_version.h
+lib/cmake/KF5IdleTime/KF5IdleTimeConfig.cmake
+lib/cmake/KF5IdleTime/KF5IdleTimeConfigVersion.cmake
+lib/cmake/KF5IdleTime/KF5IdleTimeTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF5IdleTime/KF5IdleTimeTargets.cmake
+lib/libKF5IdleTime.so
+lib/libKF5IdleTime.so.5
+lib/libKF5IdleTime.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_MKSPECDIR%%/modules/qt_KIdleTime.pri
+%%QT_PLUGINDIR%%/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin0.so
+%%QT_PLUGINDIR%%/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin1.so

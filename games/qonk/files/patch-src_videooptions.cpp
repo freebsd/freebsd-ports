@@ -1,5 +1,5 @@
---- src/videooptions.cpp.orig	2015-03-27 02:53:21.432311000 +0300
-+++ src/videooptions.cpp	2015-03-27 02:53:29.960147000 +0300
+--- src/videooptions.cpp.orig	2007-09-14 05:43:03 UTC
++++ src/videooptions.cpp
 @@ -1,5 +1,6 @@
  #include <vector>
  #include <sstream>

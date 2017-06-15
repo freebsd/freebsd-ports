@@ -12,8 +12,8 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2
 
 USES=		ssl
-USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto \
-		presentproto xvmc xshmfence
+USE_XORG=	dri2proto dri3proto glproto presentproto x11 xext xdamage \
+		xfixes xshmfence xv xvmc xxf86vm 
 
 OPTIONS_DEFINE=	TEXTURE
 OPTIONS_DEFAULT=TEXTURE
@@ -34,6 +34,6 @@ PKGHELP=	${.CURDIR}/pkg-help
 .include "${.CURDIR}/../../graphics/libGL/Makefile.targets"
 
 post-install:
-	@${RM} -rf ${STAGEDIR}/etc/OpenCL
+	@${RM} -r ${STAGEDIR}/etc/OpenCL
 
 .include <bsd.port.mk>

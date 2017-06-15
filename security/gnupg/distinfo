@@ -1,5 +1,3 @@
-TIMESTAMP = 1466242693
-SHA256 (gnupg-2.1.13.tar.bz2) = 4f9d83a6221daa60130fa79f0b1d37d6c20fffdd0320b640c7a597c5b6219675
-SIZE (gnupg-2.1.13.tar.bz2) = 5545361
-SHA256 (gnupg-2.1.13.tar.bz2.sig) = b39e70bfd034c7d1a240ed654cc053b856637c9d9bd9b5250a85e438beea520b
-SIZE (gnupg-2.1.13.tar.bz2.sig) = 287
+TIMESTAMP = 1494886846
+SHA256 (gnupg-2.1.21.tar.bz2) = 7aead8a8ba75b69866f583b6c747d91414d523bfdfbe9a8e0fe026b16ba427dd
+SIZE (gnupg-2.1.21.tar.bz2) = 6472887

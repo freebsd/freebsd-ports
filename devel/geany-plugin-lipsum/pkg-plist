@@ -1,6 +1,6 @@
-lib/geany/geanylipsum.so
-%%DOCSDIR%%/geanylipsum/AUTHORS
-%%DOCSDIR%%/geanylipsum/COPYING
-%%DOCSDIR%%/geanylipsum/ChangeLog
-%%DOCSDIR%%/geanylipsum/NEWS
-%%DOCSDIR%%/geanylipsum/README
+lib/geany/lipsum.so
+%%DOCSDIR%%/lipsum/AUTHORS
+%%DOCSDIR%%/lipsum/COPYING
+%%DOCSDIR%%/lipsum/ChangeLog
+%%DOCSDIR%%/lipsum/NEWS
+%%DOCSDIR%%/lipsum/README

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 USE_PERL5=	configure
 USES=		localbase perl5
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/GCrypt/GCrypt.so
 
 .include <bsd.port.mk>

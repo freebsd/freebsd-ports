@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: %%SQ_RC%%
 # REQUIRE: LOGIN
@@ -39,6 +36,10 @@ status_cmd="%%SQ_RC%%_status"
 		chown -R "%%SQ_USER%%:%%SQ_GROUP%%" "%%SQ_LOG_DIR%%"
 		chmod 755 "%%SQ_LOG_DIR%%"
 		chmod 640 "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%"
+	fi
+	if [ ! -d "%%SQ_DB_DIR%%/data" ]; then
+		install -d -m 755 -o %%SQ_USER%% -g %%SQ_GROUP%% "%%SQ_DB_DIR%%/data"
+		install -d -m 755 -o %%SQ_USER%% -g %%SQ_GROUP%% "%%SQ_DB_DIR%%/temp"
 	fi
 }
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmusicapi
-PORTVERSION=	7.0.0
+PORTVERSION=	10.1.0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.3.0:devel/py-appdirs \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.2:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}decorator>=3.4.0:devel/py-decorator \
+		${PYTHON_PKGNAMEPREFIX}future>=0.0:devel/py-future \
 		${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=1.18:audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}oauth2client>=1.2:security/py-oauth2client \

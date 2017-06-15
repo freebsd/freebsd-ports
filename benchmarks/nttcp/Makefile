@@ -3,7 +3,7 @@
 
 PORTNAME=	nttcp
 PORTVERSION=	1.47
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://freeware.sgi.com/source/nttcp/ \
 		http://reality.sgiweb.org/freeware/source/nttcp/ \

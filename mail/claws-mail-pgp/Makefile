@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgp
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	PGP plugins for Claws Mail
 

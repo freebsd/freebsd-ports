@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.7
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -33,19 +33,23 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "aarch64"
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-aarch64
+.endif
+
 .if ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-asm
 .endif
 
 post-patch:
-	${RM} -f ${WRKSRC}/doc/gcrypt.info*
-	${REINPLACE_CMD} -e 's|ALIGN (3)|ALIGN (2)|g' ${WRKSRC}/mpi/i386/*.S
+	@${RM} ${WRKSRC}/doc/gcrypt.info*
+	@${REINPLACE_CMD} -e 's|ALIGN (3)|ALIGN (2)|g' ${WRKSRC}/mpi/i386/*.S
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	7.0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print perl5 java
 MASTER_SITES=	http://www.pdflib.com/binaries/PDFlib/${PORTVERSION:S/.//g}/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}p3

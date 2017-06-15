@@ -15,10 +15,9 @@ COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
-USES=		tar:tgz
+USES=		tar:tgz ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
-USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 SUB_LIST=	NAME=${PORTNAME}

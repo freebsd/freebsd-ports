@@ -1,20 +1,49 @@
---- Makefile.orig	Wed Sep 20 13:44:49 2006
-+++ Makefile	Wed Sep 20 13:45:05 2006
-@@ -126,7 +126,7 @@ adt/hashs.lo: libcompile adt/hashs.c adt
- adt/hashs.o: compile adt/hashs.c adt/common.h
- 	./compile adt/hashs.c
+--- Makefile.orig	2015-02-06 23:57:34 UTC
++++ Makefile
+@@ -69,7 +69,7 @@ adt/hashb.lo adt/hashb.o: ltcompile adt/
+ adt/hashs.lo adt/hashs.o: ltcompile adt/hashs.c include/bglibs/adt_common.h
+ 	./ltcompile adt/hashs.c
  
--all: dotlibs sysdeps.h libraries bg-installer cli-generate selftests
-+all: dotlibs sysdeps.h libraries bg-installer cli-generate
+-all: sysdeps.h libraries programs man selftests
++all: sysdeps.h libraries programs man
  
- base64/asc2bin.lo: libcompile base64/asc2bin.c base64/base64.h str/str.h
- 	./libcompile base64/asc2bin.c
-@@ -877,7 +877,7 @@
+ base64/asc2bin.lo base64/asc2bin.o: ltcompile base64/asc2bin.c include/bglibs/base64.h include/bglibs/str.h sysdeps.h
+ 	./ltcompile base64/asc2bin.c
+@@ -93,16 +93,16 @@ bg-installer: bg-installer.o ltload libb
+ 	./ltload bg-installer libbg-cli.la libbg.la bg-installer-cli.o -lbg-cli -static 
  
-  perl-head.pl: 
-	( set -e; PATH="/bin:/usr/bin:/usr/local/bin:$$PATH"; export PATH; \
+ bg-installer-cli.c: bg-installer.cli cli-generate sysdeps.h
+-	./cli-generate -c $< >$@
++	./cli-generate -c bg-installer.cli >$@
+ 
+ bg-installer-cli.h: bg-installer.cli cli-generate
+-	./cli-generate -h $< >$@
++	./cli-generate -h bg-installer.cli >$@
+ 
+ bg-installer-cli.o: compile bg-installer-cli.c
+ 	./compile bg-installer-cli.c
+ 
+ bg-installer.1: bg-installer.cli cli-generate
+-	./cli-generate -m $< >$@
++	./cli-generate -m bg-installer.cli >$@
+ 
+ bg-installer.o: compile bg-installer.c sysdeps.h include/bglibs/cli.h include/bglibs/fmt.h include/bglibs/ibuf.h include/bglibs/iobuf_common.h include/bglibs/obuf.h sysdeps.h include/iobuf_common.h include/bglibs/iobuf.h include/ibuf.h include/obuf.h sysdeps.h include/bglibs/msg.h sysdeps.h include/bglibs/debug.h include/bglibs/wrap.h include/bglibs/path.h include/bglibs/str.h sysdeps.h include/str.h sysdeps.h include/bglibs/striter.h bg-installer-cli.h
+ 	./compile bg-installer.c
+@@ -152,7 +152,7 @@ compile: conf-cc
+ 	( echo '#!/bin/sh'; \
+ 	  echo 'source=$$1; shift'; \
+ 	  echo 'base=`echo "$$source" | sed -e s:\\\\.c$$::`'; \
+-	  echo exec `head -n 1 conf-cc` -I.  "-I'include/bglibs'" "-I'include'" '-o $${base}.o -c $$source $${1+"$$@"}'; \
++	  echo exec `head -n 1 conf-cc` -I. "-I'include/bglibs'" "-I'/usr/local/include'" '-o $${base}.o -c $$source $${1+"$$@"}'; \
+ 	) >compile
+ 	chmod 755 compile
+ 
+@@ -864,7 +864,7 @@ path/mktemp.lo path/mktemp.o: ltcompile 
+ 
+ perl-head.pl: 
+ 	( set -e; PATH="/bin:/usr/bin:/usr/local/bin:$$PATH"; export PATH; \
 -	  perl=`which perl`; \
 +	  perl=`which perl` || perl="/usr/local/bin/perl"; \
-	  echo "#! $$perl"; \
-	  echo "# WARNING: This file was auto-generated. Do not edit!"; \
-	  echo ) >perl-head.pl
+ 	  echo "#! $$perl"; \
+ 	  echo "# WARNING: This file was auto-generated. Do not edit!"; \
+ 	  echo ) >perl-head.pl

@@ -2,7 +2,7 @@
 
 PORTNAME=	lingoteach
 PORTVERSION=	0.3.9
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/OldFiles:src
 DISTFILES=	${PORTNAME}-ui-${PORTVERSION}.tar.gz:src
@@ -54,7 +54,7 @@ post-patch::
 .if ${PORT_OPTIONS:MSOUND}
 post-install::
 	cd ${WRKDIR}/${PORTNAME}-sound-${SOUNDV}/data; \
-		${RM} -f Make*; \
+		${RM} Make*; \
 		${CP} -R ${WRKDIR}/${PORTNAME}-sound-${SOUNDV}/data \
 		${STAGEDIR}${DATADIR};
 .endif

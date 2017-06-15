@@ -37,10 +37,12 @@ post-patch:
 		 /fterc/s|^|#|' ${WRKSRC}/install
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .for i in cfte xfte
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

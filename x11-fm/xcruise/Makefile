@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Navigate through a three-dimensional view of a file system
 
 USES=		imake

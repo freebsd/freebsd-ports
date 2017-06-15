@@ -63,7 +63,7 @@ post-patch:
 
 .if !defined(MASTERDIR)
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/share/gtk-doc
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/gtk-doc
 .endif
 
 .include <bsd.port.mk>

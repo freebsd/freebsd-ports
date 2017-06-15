@@ -113,6 +113,7 @@ include/guile/%%GUILE_VER%%/libguile/tags.h
 include/guile/%%GUILE_VER%%/libguile/threads.h
 include/guile/%%GUILE_VER%%/libguile/throw.h
 include/guile/%%GUILE_VER%%/libguile/trees.h
+include/guile/%%GUILE_VER%%/libguile/unicode.h
 include/guile/%%GUILE_VER%%/libguile/uniform.h
 include/guile/%%GUILE_VER%%/libguile/validate.h
 include/guile/%%GUILE_VER%%/libguile/values.h
@@ -127,8 +128,8 @@ include/guile/%%GUILE_VER%%/libguile/weaks.h
 lib/libguile-%%GUILE_VER%%.a
 lib/libguile-%%GUILE_VER%%.so
 lib/libguile-%%GUILE_VER%%.so.22
-lib/libguile-%%GUILE_VER%%.so.22.7.2
-lib/libguile-%%GUILE_VER%%.so.22.7.2-gdb.scm
+lib/libguile-%%GUILE_VER%%.so.22.8.1
+lib/libguile-%%GUILE_VER%%.so.22.8.1-gdb.scm
 lib/libguilereadline-v-18.a
 lib/libguilereadline-v-18.so
 lib/libguilereadline-v-18.so.18
@@ -201,6 +202,7 @@ lib/guile/%%GUILE_VER%%/ccache/ice-9/syncase.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/threads.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/time.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/top-repl.go
+lib/guile/%%GUILE_VER%%/ccache/ice-9/unicode.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/vlist.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/weak-vector.go
 lib/guile/%%GUILE_VER%%/ccache/language/assembly.go
@@ -322,6 +324,7 @@ lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-19.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-2.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-26.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-27.go
+lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-28.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-31.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-34.go
 lib/guile/%%GUILE_VER%%/ccache/srfi/srfi-35.go
@@ -470,6 +473,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/ice-9/threads.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/time.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/top-repl.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/unicode.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/vlist.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/weak-vector.scm
 %%DATADIR%%/%%GUILE_VER%%/language/assembly.scm
@@ -591,6 +595,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-2.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-26.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-27.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-28.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-31.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-34.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-35.scm

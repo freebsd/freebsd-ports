@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--enable-elf-shlibs
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-ALL_TARGET=	subs
+BUILD_WRKSRC=	${WRKSRC}/lib/ss
 INSTALL_WRKSRC=	${WRKSRC}/lib/ss
 FILESDIR=	${.CURDIR}/files
 
@@ -30,9 +30,5 @@ PKGDIR=		${.CURDIR}
 pre-build:
 	@(cd ${WRKSRC}/lib/ss && compile_et ss_err.et && \
 	${REINPLACE_CMD} -f ${FILESDIR}/fix-ss_err.h.sed ss_err.h)
-
-post-build:
-	@(cd ${WRKSRC}/lib/ss && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
-	${_MAKE_JOBS} ${MAKE_ARGS} all)
 
 .include "${MASTERDIR}/Makefile"

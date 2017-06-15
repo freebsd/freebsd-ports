@@ -61,15 +61,15 @@ MASTER_SITES_PYQT5=	SF/pyqt/PyQt5/PyQt-${PORTVERSION} \
 MASTER_SITES_QSCI2=	SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			GENTOO
 
-SIP_VERSION=		4.17
+SIP_VERSION=		4.18
 QSCI2_VERSION=		2.9.1
 PYQT4_VERSION=		4.11.4
-PYQT5_VERSION=		5.5.1
+PYQT5_VERSION=		5.6
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
 PYQT4_DISTNAME=		PyQt-x11-gpl-${PYQT4_VERSION}
 PYQT4_DISTINFO_FILE=	${.CURDIR}/../../devel/${PYQT_RELNAME}/distinfo
-PYQT5_DISTNAME=		PyQt-gpl-${PYQT5_VERSION}
+PYQT5_DISTNAME=		PyQt5_gpl-${PYQT5_VERSION}
 PYQT5_DISTINFO_FILE=	${.CURDIR}/../../devel/py-qt5/distinfo
 QSCI2_DISTNAME=		QScintilla-gpl-${QSCI2_VERSION}
 
@@ -209,6 +209,8 @@ QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 # PyQt5's configure.py generates .pro files and calls qmake to generate the
 # Makefiles. qmake's Makefiles use INSTALL_ROOT instead of DESTDIR.
 DESTDIRNAME=	INSTALL_ROOT
+# Limit PyQt5's version to the Qt5 version in ports
+PORTSCOUT?=	limit:^${_QT_VERSION:R}
 .endif
 
 PATCHDIR=	${.CURDIR}/../../devel/${PYQT_RELNAME}-core/files

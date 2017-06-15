@@ -41,7 +41,7 @@ GH_ACCOUNT=	mozilla
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLINEDIT}
-JLINEJAR=	${JAVAJARDIR}/jline.jar
+JLINEJAR=	${JAVALIBDIR}/jline.jar
 .else
 JLINEJAR=""
 .endif

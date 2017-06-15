@@ -17,7 +17,7 @@ RUN_DEPENDS=	nkf:japanese/nkf
 DOS2UNIX_FILES=	Makefile nkfwrap/Makefile nkfwrap/nkfwrap_test.c \
 		wizd_http.c wizd_menu.c
 USE_RC_SUBR=	wizd
-USES=		dos2unix jpeg zip
+USES=		dos2unix jpeg ncurses zip
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 post-patch:

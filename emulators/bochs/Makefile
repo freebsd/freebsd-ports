@@ -3,6 +3,7 @@
 
 PORTNAME=	bochs
 PORTVERSION=	2.6.8
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
@@ -11,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
 LICENSE=	LGPL21
+
+BROKEN_i386=		does not build on i386 (../cpu.h:4513:117: error: 'regparm' parameter must be between 0 and 3 inclusive)
 
 USES=		gmake libtool:keepla pkgconfig
 GNU_CONFIGURE=	yes

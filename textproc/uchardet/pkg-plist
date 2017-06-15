@@ -3,6 +3,6 @@ include/uchardet/uchardet.h
 lib/libuchardet.a
 lib/libuchardet.so
 lib/libuchardet.so.0
-lib/libuchardet.so.0.0.0
+lib/libuchardet.so.0.0.6
 libdata/pkgconfig/uchardet.pc
 man/man1/uchardet.1.gz

@@ -2,10 +2,11 @@
 
 PORTNAME=	msilbc
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	SAVANNAH/linphone/plugins/sources/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Mediastreamer plugin for the iLBC audio codec
 
 LIB_DEPENDS=	libortp.so:net/ortp \

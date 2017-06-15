@@ -1,4 +1,4 @@
 Exposes Chromium Compact Language Detector to PHP to find out what language a
 text is
 
-WWW: http://pecl.php.net/package/cld
+WWW: https://pecl.php.net/package/cld

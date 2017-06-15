@@ -1,6 +1,6 @@
---- src/Mayaqua/Cfg.h.orig	2014-06-08 06:19:14 UTC
+--- src/Mayaqua/Cfg.h.orig	2016-05-03 06:16:53 UTC
 +++ src/Mayaqua/Cfg.h
-@@ -102,7 +102,7 @@
+@@ -117,7 +117,7 @@
  // Macro
  //#define	CHECK_CFG_NAME_EXISTS			// Check duplication of the existing name
  

@@ -3,8 +3,8 @@
 
 PORTNAME=	mydumper
 PORTVERSION=	0.9.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
-MASTER_SITES=	http://code.launchpad.net/mydumper/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MySQL Data Dumper
@@ -15,10 +15,12 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CMAKE_ARGS=	-DBUILD_DOCS=OFF -DWITH_BINLOG=OFF
 USE_GNOME=	glib20
-USE_MYSQL=	yes
-USES=		cmake pkgconfig
+USES=		cmake mysql pkgconfig
 
 PLIST_FILES=	sbin/mydumper sbin/myloader
+
+GH_ACCOUNT=	maxbube
+USE_GITHUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/link_libraries(mydumper/ s|)$$| -lm)|; s|-Werror||' ${WRKSRC}/CMakeLists.txt

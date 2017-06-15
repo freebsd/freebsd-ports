@@ -1,31 +1,13 @@
---- configure.orig	2014-11-27 02:46:58 UTC
+--- configure.orig	2017-01-01 03:46:48 UTC
 +++ configure
-@@ -17885,7 +17885,7 @@ _ACEOF
- 
- asm_optimisation=no
- case "$host_cpu" in
--	x86_64)
-+	amd64|x86_64)
- 		if test $ac_cv_sizeof_voidp = 4 ; then
- 			# This must be a 32 bit user space running on 64 bit kernel so treat
- 			# this as ia32.
-@@ -19874,8 +19874,8 @@ if test "x$debug" = xtrue; then
+@@ -20547,8 +20547,8 @@ if test "x$debug" = xtrue; then
  	CFLAGS="-g $CFLAGS"
  else
  	CPPFLAGS="-DNDEBUG $CPPFLAGS"
--	CFLAGS=$(echo "$CFLAGS" | sed 's/-O2//;s/-g//')
+-	CFLAGS=$(echo "$CFLAGS" | sed 's/-O2//')
 -	CFLAGS="-O3 -funroll-loops $CFLAGS"
-+	#CFLAGS=$(echo "$CFLAGS" | sed 's/-O2//;s/-g//')
++	#CFLAGS=$(echo "$CFLAGS" | sed 's/-O2//')
 +	#CFLAGS="-O3 -funroll-loops $CFLAGS"
  fi
  
  
-@@ -20051,7 +20051,7 @@ rm -f core conftest.err conftest.$ac_obj
- 
- 		fi
- 
--	if test "x$asm_optimisation$sse_os" = "xyesyes" ; then
-+	if false test "x$asm_optimisation$sse_os" = "xyesyes" ; then
- 		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if $CC accepts -msse2" >&5
- $as_echo_n "checking if $CC accepts -msse2... " >&6; }
- 	ac_add_cflags__old_cflags="$CFLAGS"

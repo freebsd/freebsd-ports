@@ -35,7 +35,7 @@ MEMDEBUG_CONFIGURE_ENABLE=	memdebug
 FDDEBUG_CONFIGURE_ENABLE=	fddebug
 IPV6_CONFIGURE_ENABLE=		ipv6
 SSL_CONFIGURE_ENABLE=		ssl
-SSL_USE=			OPENSSL=yes
+SSL_USES=		ssl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|EUSER="ircproxy"|EUSER="ircproxyd"|g; \

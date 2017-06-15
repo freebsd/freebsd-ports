@@ -1,5 +1,5 @@
---- Makefile.orig	2008-12-30 16:19:24.000000000 +0800
-+++ Makefile	2008-12-30 16:20:32.000000000 +0800
+--- Makefile.orig	2008-11-29 13:49:38 UTC
++++ Makefile
 @@ -1,6 +1,6 @@
  DESTDIR=
 -PREFIX=/usr/local
@@ -9,7 +9,7 @@
  TAR=tar
  FIND=find
  SED=sed
-@@ -10,11 +10,11 @@
+@@ -10,11 +10,11 @@ all: manpage
  install: all
  	mkdir -p $(DESTDIR)$(MANDIR)/man1/
  	mkdir -p $(DESTDIR)$(PREFIX)/bin/

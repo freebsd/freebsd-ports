@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	seqtools
-PORTVERSION=	4.43.0
+PORTVERSION=	4.44.1
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/seqtools/PRODUCTION/
 
@@ -14,8 +15,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsqlite3.so:databases/sqlite3 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
-
-BROKEN_FreeBSD_9=	Fails to build due to C++ std issues
 
 USES=		compiler:c++14-lang execinfo gettext libtool pkgconfig
 GNU_CONFIGURE=	yes

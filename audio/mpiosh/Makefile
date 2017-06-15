@@ -3,7 +3,7 @@
 
 PORTNAME=	mpiosh
 PORTVERSION=	0.7.1.p2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/mpio/mpio%20pre-release/0.7.1-pre2
 DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}

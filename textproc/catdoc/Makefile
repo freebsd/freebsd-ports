@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	catdoc
-PORTVERSION=	0.94.2
-PORTREVISION=	3
+PORTVERSION=	0.95
 CATEGORIES=	textproc
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
-		LOCAL/amdmi3 \
-		ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
-		ftp://ftp.demos.ru/pub/sunfreeware/SOURCES/
+MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/ \
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-install-root="${STAGEDIR}"

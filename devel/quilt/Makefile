@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	quilt
-PORTVERSION=	0.64
+PORTVERSION=	0.65
+PORTSREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	doj@cubic.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of bash scripts to ease working with patch files
 
 LICENSE=	GPLv2
@@ -15,6 +16,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gcp:sysutils/coreutils \
 		gsed:textproc/gsed \
 		gpatch:devel/patch \
+		gdiff:textproc/diffutils \
 		diffstat:textproc/diffstat \
 		gawk:lang/gawk
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
@@ -30,7 +32,8 @@ RPMBUILD_DESC=	rpmbuild support
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
 		--without-getopt \
-		--with-patch=${LOCALBASE}/bin/gpatch
+		--with-patch=${LOCALBASE}/bin/gpatch \
+		--with-diff=${LOCALBASE}/bin/gdiff
 
 PORTDOCS=	README README.MAIL quilt.pdf
 

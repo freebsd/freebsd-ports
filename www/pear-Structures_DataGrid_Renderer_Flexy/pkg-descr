@@ -3,4 +3,4 @@ It adds a couple of variables to a Flexy instance and adds paging
 functionality. This renderer also enables customised result messages,
 customised column labels and a column label formatter
 
-WWW: http://pear.php.net/package/Structures_DataGrid_Renderer_Flexy/
+WWW: https://pear.php.net/package/Structures_DataGrid_Renderer_Flexy

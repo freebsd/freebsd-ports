@@ -1,0 +1,11 @@
+--- gsuica.orig	2017-01-05 05:49:39 UTC
++++ gsuica
+@@ -2076,7 +2076,7 @@ unless (FileTest.exist?(APP_PATH))
+   Dir::mkdir(path)
+ end
+ 
+-Icon = Gdk::Pixbuf.new($SUICA_XPM)
++Icon = GdkPixbuf::Pixbuf.new(:xpm => $SUICA_XPM)
+ 
+ suica = Suica.new(path)
+ 

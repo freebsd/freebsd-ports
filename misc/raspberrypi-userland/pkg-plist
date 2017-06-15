@@ -9,6 +9,11 @@ bin/containers_test
 bin/containers_test_bits
 bin/containers_test_uri
 bin/containers_uri_pipe
+bin/dtmerge
+bin/dtoverlay
+bin/dtoverlay-post
+bin/dtoverlay-pre
+bin/dtparam
 bin/mmal_vc_diag
 bin/raspistill
 bin/raspivid
@@ -189,7 +194,6 @@ include/interface/vmcs_host/vc_fileservice_defs.h
 include/interface/vmcs_host/vc_gencmd_defs.h
 include/interface/vmcs_host/vc_hdmi.h
 include/interface/vmcs_host/vc_hdmi_property.h
-include/interface/vmcs_host/vc_hostreq_defs.h
 include/interface/vmcs_host/vc_ilcs_defs.h
 include/interface/vmcs_host/vc_imageconv_defs.h
 include/interface/vmcs_host/vc_sdtv.h
@@ -207,7 +211,7 @@ include/interface/vmcs_host/vcfilesys.h
 include/interface/vmcs_host/vcfilesys_defs.h
 include/interface/vmcs_host/vcgencmd.h
 include/interface/vmcs_host/vchost.h
-include/interface/vmcs_host/vchostreq.h
+include/interface/vmcs_host/vchost_platform_config.h
 include/interface/vmcs_host/vcilcs.h
 include/interface/vmcs_host/vcilcs_common.h
 include/vcinclude/common.h
@@ -220,9 +224,14 @@ lib/libGLESv2_static.a
 lib/libOpenVG.so
 lib/libWFC.so
 lib/libbcm_host.so
+lib/libbrcmEGL.so
+lib/libbrcmGLESv2.so
+lib/libbrcmOpenVG.so
+lib/libbrcmWFC.so
 lib/libcontainers.so
 lib/libdebug_sym.so
 lib/libdebug_sym_static.a
+lib/libdtovl.so
 lib/libkhrn_client.a
 lib/libkhrn_static.a
 lib/libmmal.so
@@ -261,6 +270,13 @@ lib/plugins/writer_dummy.so
 lib/plugins/writer_mp4.so
 lib/plugins/writer_raw_video.so
 lib/plugins/writer_simple.so
+libdata/pkgconfig/bcm_host.pc
+libdata/pkgconfig/brcmegl.pc
+libdata/pkgconfig/brcmglesv2.pc
+libdata/pkgconfig/brcmvg.pc
+libdata/pkgconfig/egl.pc
+libdata/pkgconfig/glesv2.pc
+libdata/pkgconfig/vg.pc
 sbin/vcfiled
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/Makefile.include
@@ -287,7 +303,6 @@ sbin/vcfiled
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hello_fft.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hello_fft_2d.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hello_fft_2d_bitmap.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_4096k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_1024k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_128k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_16k.hex
@@ -297,6 +312,7 @@ sbin/vcfiled
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_256k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_2k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_32k.hex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_4096k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_4k.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_512.hex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/hex/shader_512k.hex
@@ -307,7 +323,6 @@ sbin/vcfiled
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/mailbox.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft.qinc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_4096k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_1024k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_128k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_16k.qasm
@@ -318,6 +333,7 @@ sbin/vcfiled
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_256k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_2k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_32k.qasm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_4096k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_4k.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_512.qasm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello_pi/hello_fft/qasm/gpu_fft_512k.qasm

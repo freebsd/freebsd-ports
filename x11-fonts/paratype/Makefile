@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	paratype
-PORTVERSION=	2.004
-PORTREVISION=	6
+PORTVERSION=	2.005
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://paratype.0xdc.ru/
-DISTFILES=	PTSansOFL-2.004.zip PTSerifOFL-1.000.zip PTMonoOFL-1.002_1.zip
+MASTER_SITES=	http://www.paratype.com/uni/public/
+DISTFILES=	PTSans.zip PTSerif.zip PTMono.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ParaType font collection for the languages of Russia

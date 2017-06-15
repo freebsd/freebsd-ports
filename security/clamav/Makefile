@@ -3,7 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.99.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
@@ -44,7 +44,7 @@ MILTER_CONFIGURE_ENABLE=milter
 TESTS_CONFIGURE_ENABLE=	check
 JSON_CONFIGURE_WITH=	libjson
 PCRE_CONFIGURE_WITH=	pcre
-TESTS_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:devel/libcheck
+TESTS_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:devel/check
 ICONV_CONFIGURE_ON=	--with-iconv
 ICONV_CONFIGURE_OFF=	--without-iconv
 ICONV_USES=		iconv
@@ -56,7 +56,7 @@ DMG_XAR_USE=		GNOME=libxml2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		cpe gmake libtool ncurses
+USES=		cpe gmake libtool ncurses pathfix
 INSTALL_TARGET=	install-strip
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
@@ -82,6 +82,7 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--enable-readdir_r \
 		--enable-gethostbyname_r \
 		--disable-dependency-tracking \
+		--disable-zlib-vcheck \
 		--enable-clamdtop
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -177,8 +178,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lthr|g' \
 			  -e 's|LC_REVISION=22|LC_REVISION=24|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's,^\(pkgconfigdir = \).*$$,\1$$\(prefix\)/libdata/pkgconfig,g' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} ${SED_CONF} \
 		${WRKSRC}/etc/clamd.conf.sample \
 		${WRKSRC}/etc/freshclam.conf.sample \

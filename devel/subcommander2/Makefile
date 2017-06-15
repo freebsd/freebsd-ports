@@ -3,7 +3,7 @@
 
 PORTNAME=	subcommander
 PORTVERSION=	2.0.0.b5.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION:R:S,.b,~b,}p${PORTVERSION:E}.orig
@@ -20,14 +20,13 @@ CONFLICTS=	subcommander-1.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S,.b,b,}p${PORTVERSION:E}
 
-USES=		autoreconf gmake dos2unix
+USES=		autoreconf gmake dos2unix ssl
 DOS2UNIX_GLOB=	*.cpp *.h
 USE_QT4=	corelib gui network qt3support moc_build rcc_build uic_build
 QT_NONSTANDARD=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include \
-		--with-subversion=${LOCALBASE} --with-qt=${QT_PREFIX} \
+		--with-subversion=${LOCALBASE} --with-qt=${PREFIX} \
 		--with-apr=${LOCALBASE}/bin/apr-1-config \
 		--with-apr-util=${LOCALBASE}/bin/apu-1-config \
 		--with-openssl=${OPENSSLBASE}

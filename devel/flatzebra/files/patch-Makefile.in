@@ -1,11 +1,25 @@
---- Makefile.in.orig	2009-08-21 08:55:05.575153056 +0000
-+++ Makefile.in	2009-08-21 08:56:07.604907117 +0000
-@@ -204,7 +204,7 @@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- SUBDIRS = src
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
+--- Makefile.in.orig	2016-11-23 17:35:51 UTC
++++ Makefile.in
+@@ -233,7 +233,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -269,12 +269,8 @@ pkgconfigdir = $(prefix)/libdata/pkgconf
  pkgconfig_DATA = $(PACKAGE)-$(API).pc
  doc_DATA = \
  	AUTHORS \
+-	COPYING \
+-	INSTALL \
+ 	NEWS \
+-	README \
+-	THANKS \
+-	TODO
++	README
+ 
+ RPMBUILD = rpmbuild
+ M4_MACROS = \

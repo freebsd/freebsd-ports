@@ -9,4 +9,4 @@ can be built separately, though the others may have to be built
 first. If all projects are built using guacamole-client, Maven will
 take care of the proper build order.
 
-WWW: https://github.com/glyptodon/guacamole-client
+WWW: http://guacamole.incubator.apache.org

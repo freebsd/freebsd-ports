@@ -15,16 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=    libosmocore.so:devel/libosmocore
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf gmake libtool pathfix pkgconfig
 
 USE_LDCONFIG=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|pkgconfigdir.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtp.so.0
 
 .include <bsd.port.mk>

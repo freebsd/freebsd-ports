@@ -1,29 +1,19 @@
---- ./build.xml.orig
-+++ ./build.xml
+--- build.xml.orig	2016-03-16 14:37:28 UTC
++++ build.xml
 @@ -99,7 +99,7 @@
    <condition property="test.compatibility" value="1.5" else="${compatibility}">
      <equals arg1="${compatibility}" arg2="1.4"/>
    </condition>
--  <condition property="tests.exclude-patterns" value="**/VarArgsTest.java,**/AnnotatedLibraryTest.java,**/WebStartTest.java,**/PointerBufferTest.java,**/HeadlessLoadLibraryTest.java,**/StructureBufferFieldTest.java,**/PerformanceTest.java,**/*BufferArgumentsMarshalTest.java" else="**/wince/*.java">
-+  <condition property="tests.exclude-patterns" value="**/VarArgsTest.java,**/AnnotatedLibraryTest.java,**/WebStartTest.java,**/PointerBufferTest.java,**/HeadlessLoadLibraryTest.java,**/StructureBufferFieldTest.java,**/PerformanceTest.java,**/*BufferArgumentsMarshalTest.java" else="**/wince/*.java **/LibraryLoadTest.java **/WebStartTest.java">
+-  <condition property="tests.exclude-patterns" value="**/VarArgsTest.java,**/AnnotatedLibraryTest.java,**/WebStartTest.java,**/PointerBufferTest.java,**/HeadlessLoadLibraryTest.java,**/StructureBufferFieldTest.java,**/PerformanceTest.java,**/*BufferArgumentsMarshalTest.java" else="**/wince/*.java,**/WebStartTest.java">
++  <condition property="tests.exclude-patterns" value="**/VarArgsTest.java,**/AnnotatedLibraryTest.java,**/WebStartTest.java,**/PointerBufferTest.java,**/HeadlessLoadLibraryTest.java,**/StructureBufferFieldTest.java,**/PerformanceTest.java,**/*BufferArgumentsMarshalTest.java" else="**/wince/*.java,**/WebStartTest.java,**/LibraryLoadTest.java">
      <equals arg1="${os.prefix}" arg2="w32ce-arm"/>
    </condition>
    <property name="dist-jar" value="${dist}/${jar}"/>
-@@ -805,9 +805,6 @@
-     <jar jarfile="${build}/jws/jnidispatch.jar">
-       <fileset dir="${build.native}" includes="*jnidispatch.*"/>
-     </jar>
--    <signjar alias="jna" keystore="jna.keystore" storepass="jnadev" lazy="true">
--      <fileset dir="${build}/jws" includes="${jar},${testjar},junit.jar,jnidispatch.jar,clover.jar"/>
--    </signjar>
-   </target>
- 
-   <target name="android-test-setup" depends="compile-tests"
-@@ -965,7 +962,6 @@
+@@ -1084,7 +1084,6 @@ osname=macosx;processor=x86;processor=x8
        <doctitle>JNA API Documentation</doctitle>
        <header>${header}</header>
        <bottom>${footer}</bottom>
--      <link href="http://download.oracle.com/javase/1.4.2/docs/api/"/>
+-      <link href="http://download.oracle.com/javase/${compatibility}/docs/api/"/>
  
        <packageset dir="${src}" defaultexcludes="yes">
          <patternset>

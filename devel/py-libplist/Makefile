@@ -10,6 +10,8 @@ COMMENT=	Python bindings for libplist
 LIB_DEPENDS=	libplist.so:${MASTER_PORT}
 BUILD_DEPENDS=	cython:lang/cython
 
+PORTSCOUT=	ignore:1
+
 USES=		python
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 SLAVE_PORT=	yes

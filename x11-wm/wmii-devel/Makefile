@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libixp.so:devel/libixp
 
-CONFLICTS=	wmii-3.6*
+CONFLICTS=	wmii-[0-9]*
 
 USES=		pkgconfig tar:tbz
 USE_XORG=	x11 xext xrandr xrender xinerama xft
@@ -37,7 +37,7 @@ post-patch:
 
 post-install:
 .for f in bin/wimenu bin/wmii bin/wmii9menu bin/wmiir lib/libwmii_hack.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
 .endfor
 
 .include <bsd.port.mk>

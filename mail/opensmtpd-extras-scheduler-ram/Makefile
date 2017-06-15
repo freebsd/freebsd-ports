@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-scheduler-ram
-PORTREVISION=		0
+PORTREVISION=		2
 
 COMMENT=		RAM scheduler support for OpenSMTPD
 

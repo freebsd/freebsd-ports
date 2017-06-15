@@ -3,8 +3,8 @@
 
 PORTNAME=	dalmp
 PORTVERSION=	3.0.3
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	nbari@dalmp.com
@@ -17,9 +17,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nbari
 GH_PROJECT=	${PORTNAME:tu}
 
-USES=		tar:bzip2
+USES=		php
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_PHP=	pcre mysqli session memcache sqlite3 curl
 
 do-install:

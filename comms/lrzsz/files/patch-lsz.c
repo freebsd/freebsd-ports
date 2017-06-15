@@ -1,6 +1,6 @@
---- src/lsz.c.orig	1998-12-30 07:07:59.000000000 +0900
-+++ src/lsz.c	2012-01-21 10:44:49.000000000 +0900
-@@ -1191,6 +1191,7 @@
+--- src/lsz.c.orig	1998-12-29 22:07:59 UTC
++++ src/lsz.c
+@@ -1191,6 +1191,7 @@ wctxpn(struct zm_fileinfo *zi)
  	struct stat f;
  
  	name2=alloca(PATH_MAX+1);

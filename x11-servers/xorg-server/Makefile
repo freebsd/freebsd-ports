@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	xorg-server
-PORTVERSION=	1.17.4
+PORTVERSION?=	1.18.4
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
@@ -14,8 +14,6 @@ COMMENT?=	X.Org X server and related programs
 
 LICENSE=	MIT
 
-LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
-		libepoxy.so:graphics/libepoxy
 RUN_DEPENDS+=	xkeyboard-config>=2.5:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
 
@@ -25,38 +23,46 @@ SLAVE_PORT?=	no
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	SUID
 OPTIONS_RADIO=	CONF
-OPTIONS_RADIO_CONF=	HAL DEVD
-SUID_DESC=	Install the Xorg server with setuid bit set
-HAL_DESC=	Compile with HAL config support
+OPTIONS_RADIO_CONF=	DEVD HAL
 DEVD_DESC=	Use devd for autoconfiguration of input devices
-OPTIONS_DEFAULT=SUID DEVD
+HAL_DESC=	Use hald for autoconfiguration of input devices
+SUID_DESC=	Install the Xorg server with setuid bit set
+OPTIONS_DEFAULT=DEVD SUID
 
 OPTIONS_EXCLUDE_sparc64=	HAL
 
 .include <bsd.port.options.mk>
 
-USES=		gmake libtool perl5 tar:bzip2
+USES=		gmake libtool perl5 ssl tar:bzip2
 USE_PERL5=	build
-USE_GL=		gbm egl gl
-USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
-		xmu xt xpm xext randrproto renderproto fixesproto damageproto \
-		dri2proto xcmiscproto xextproto xproto xtrans \
-		xf86miscproto xf86vidmodeproto xf86bigfontproto scrnsaverproto \
-		bigreqsproto resourceproto fontsproto inputproto xf86dgaproto \
-		videoproto compositeproto trapproto presentproto recordproto \
-		xineramaproto xinerama evieproto xfont fontenc xkbui pixman \
-		pciaccess xshmfence
-USE_OPENSSL=	yes
-CONFIGURE_ARGS?=--disable-dmx --disable-xvfb --disable-xnest \
-		--without-xmlto --disable-docs --disable-devel-docs \
-		--localstatedir=/var --without-dtrace --disable-xephyr \
-		--enable-record=yes --disable-dri3 --disable-xwayland \
-		--enable-glamor
+USE_GL+=	gl
+USE_XORG+=	bigreqsproto compositeproto damageproto dri2proto dri3proto \
+		fixesproto fontsproto glproto inputproto kbproto pixman \
+		presentproto randrproto recordproto renderproto \
+		resourceproto scrnsaverproto videoproto xau \
+		xcmiscproto xdmcp xextproto xf86driproto xfont \
+		xineramaproto xkbfile xproto xshmfence xtrans
+CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
+		--localstatedir=/var --with-shared-memory-dir=/tmp \
+		--disable-config-udev --disable-config-udev-kms \
+		--without-dtrace --enable-glamor
 INSTALL_TARGET=	install-strip
 
+.if ${SLAVE_PORT} == "no" || ${PORTNAME} == "xephyr" || ${PORTNAME} == "xwayland"
+LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
+		libepoxy.so:graphics/libepoxy
+.else
+BUILD_DEPENDS+=	libepoxy>0:graphics/libepoxy	# only for configure
+.endif
+
 .if ${SLAVE_PORT} == "no"
+USE_GL+=	gbm
+USE_XORG+=	pciaccess xf86dgaproto xf86vidmodeproto
+CONFIGURE_ARGS+=--disable-dmx --disable-xephyr --disable-xnest --disable-xvfb \
+		--disable-xwayland
 SUB_FILES=	pkg-install pkg-deinstall
 .else
+CONFIGURE_ARGS+=--disable-xorg
 # for slave ports we need to overwrite PLIST, so it doesn't overwrite
 # PLIST_FILES, with the masterport plist.
 PLIST=		${.CURDIR}/pkg-plist
@@ -73,29 +79,20 @@ CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
 
 .if ${PORT_OPTIONS:MHAL}
 LIB_DEPENDS+=	libhal.so:sysutils/hal
-CONFIGURE_ARGS+=	--enable-config-hal=yes
+CONFIGURE_ARGS+=	--enable-config-hal
 .else
-CONFIGURE_ARGS+=	--enable-config-hal=no
+CONFIGURE_ARGS+=	--disable-config-hal
 .endif
 
 # We handle Xorg setuid in the plist. This allows to build xorg-server as a user.
 CONFIGURE_ARGS+=--disable-install-setuid
 
-.if ${ARCH} == i386
-EXTRA_PATCHES+=	${FILESDIR}/extra-arch-i386
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-.if ${ARCH} == ia64
-EXTRA_PATCHES+=	${FILESDIR}/extra-arch-ia64
-.endif
-
-.if ${ARCH} == powerpc || ${ARCH} == powerpc64
-EXTRA_PATCHES+=	${FILESDIR}/extra-arch-powerpc
-.endif
-
-.if ${ARCH} == sparc64
+.if ${ARCH} == "sparc64"
 PLIST_SUB+=	SPARC64=""
-EXTRA_PATCHES+=	${FILESDIR}/extra-arch-sparc64
 .else
 PLIST_SUB+=	SPARC64="@comment "
 .endif

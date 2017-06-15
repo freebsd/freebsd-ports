@@ -1,2 +1,3 @@
-SHA256 (grep-2.25.tar.xz) = e21e83bac50450e0d0d61a42c154ee0dceaacdbf4f604ef6e79071cb8e596830
-SIZE (grep-2.25.tar.xz) = 1327856
+TIMESTAMP = 1482836406
+SHA256 (grep-2.27.tar.xz) = ad4cc44d23074a1c3a8baae8fbafff2a8c60f38a9a6108f985eef6fbee6dcaeb
+SIZE (grep-2.27.tar.xz) = 1360388

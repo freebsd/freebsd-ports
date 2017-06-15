@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radare2
-PORTVERSION=	0.10.4
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://rada.re/get/
 
@@ -12,14 +12,18 @@ COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		Does not build: Unsupported BSD architecture
+BROKEN_mips64=		Does not build: Unsupported BSD architecture
 BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not build
 
 BUILD_DEPENDS+=		pkg-config:devel/pkgconf
 LIB_DEPENDS+=		libcapstone.so:devel/capstone4
 
 CONFIGURE_ARGS+=	--with-syscapstone
 
-USES=		gmake pkgconfig tar:xz
+USES=		gmake pathfix pkgconfig tar:xz
+PATHFIX_MAKEFILEIN=	Makefile
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -29,8 +33,6 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|..LIBDIR./pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/libr/Makefile
 	${ECHO_CMD} 'CFLAGS+=-I${LOCALBASE}/include' >> ${WRKSRC}/libr/anal/Makefile
 	${ECHO_CMD} 'CFLAGS+=-I${LOCALBASE}/include' >> ${WRKSRC}/libr/asm/Makefile
 

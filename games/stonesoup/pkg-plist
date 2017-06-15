@@ -3,8 +3,8 @@ bin/stonesoup
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.crawlrc
 %%LUA%%%%DATADIR%%/dat/clua/autofight.lua
 %%LUA%%%%DATADIR%%/dat/clua/automagic.lua
+%%LUA%%%%DATADIR%%/dat/clua/delays.lua
 %%LUA%%%%DATADIR%%/dat/clua/kills.lua
-%%LUA%%%%DATADIR%%/dat/clua/runrest.lua
 %%LUA%%%%DATADIR%%/dat/clua/stash.lua
 %%DATADIR%%/dat/database/FAQ.txt
 %%DATADIR%%/dat/database/el/monflee.txt
@@ -75,6 +75,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/branches/swamp.des
 %%DATADIR%%/dat/des/branches/tar.des
 %%DATADIR%%/dat/des/branches/temple.des
+%%DATADIR%%/dat/des/branches/temple_compat.des
 %%DATADIR%%/dat/des/branches/tomb.des
 %%DATADIR%%/dat/des/branches/vaults.des
 %%DATADIR%%/dat/des/branches/vaults_rooms_empty.des
@@ -108,6 +109,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/guide.txt
 %%DATADIR%%/dat/des/portals/bailey.des
 %%DATADIR%%/dat/des/portals/bazaar.des
+%%DATADIR%%/dat/des/portals/desolation.des
 %%DATADIR%%/dat/des/portals/icecave.des
 %%DATADIR%%/dat/des/portals/lab.des
 %%DATADIR%%/dat/des/portals/ossuary.des
@@ -143,7 +145,6 @@ bin/stonesoup
 %%DATADIR%%/dat/des/test.des
 %%DATADIR%%/dat/des/test/suite-los.des
 %%DATADIR%%/dat/des/test/suite.des
-%%DATADIR%%/dat/des/traps/boulders.des
 %%DATADIR%%/dat/des/traps/grate.des
 %%DATADIR%%/dat/des/traps/rats_trap.des
 %%DATADIR%%/dat/des/traps/spider_basket.des
@@ -166,6 +167,8 @@ bin/stonesoup
 %%DATADIR%%/dat/des/variable/mini.des
 %%DATADIR%%/dat/des/variable/mini_features.des
 %%DATADIR%%/dat/des/variable/mini_monsters.des
+%%DATADIR%%/dat/des/variable/polyominoes.des
+%%DATADIR%%/dat/des/variable/the_grid.des
 %%DATADIR%%/dat/descript/ability.txt
 %%DATADIR%%/dat/descript/backgrounds.txt
 %%DATADIR%%/dat/descript/branches.txt
@@ -530,6 +533,7 @@ bin/stonesoup
 %%SDL%%%%DATADIR%%/dat/tiles/wall.png
 %%DATADIR%%/docs/CREDITS.txt
 %%DATADIR%%/docs/aptitudes.txt
+%%DATADIR%%/docs/aptitudes-wide.txt
 %%DATADIR%%/docs/arena.txt
 %%DATADIR%%/docs/changelog.txt
 %%DATADIR%%/docs/crawl_manual.txt
@@ -544,6 +548,7 @@ bin/stonesoup
 %%DATADIR%%/docs/develop/levels/introduction.txt
 %%DATADIR%%/docs/develop/levels/syntax.txt
 %%DATADIR%%/docs/develop/levels/triggerables.txt
+%%DATADIR%%/docs/develop/monster_creation.txt
 %%DATADIR%%/docs/develop/monster_speech.txt
 %%DATADIR%%/docs/develop/new_dev_checklist.txt
 %%DATADIR%%/docs/develop/patch_guide.txt
@@ -571,6 +576,7 @@ bin/stonesoup
 %%DATADIR%%/settings/0.14_monster_glyphs.txt
 %%DATADIR%%/settings/0.16_monster_glyphs.txt
 %%DATADIR%%/settings/0.17_monster_glyphs.txt
+%%DATADIR%%/settings/0.18_monster_glyphs.txt
 %%DATADIR%%/settings/0.9_monster_glyphs.txt
 %%DATADIR%%/settings/034_command_keys.txt
 %%DATADIR%%/settings/052_monster_glyphs.txt

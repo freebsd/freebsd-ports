@@ -2,11 +2,15 @@
 
 PORTNAME=	mp3unicode
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://github.com/downloads/alonbl/mp3unicode/
+MASTER_SITES=	https://github.com/downloads/alonbl/mp3unicode/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ID3 tags charset converter
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtag.so:audio/taglib
 
@@ -17,8 +21,11 @@ CONFIGURE_ENV=	ICONV_CFLAGS="-I${LOCALBASE}/include" \
 
 PLIST_FILES=	bin/mp3unicode \
 		man/man1/mp3unicode.1.gz
-PORTDOCS=	COPYING README
+PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e '/dist_doc_DATA/ s|COPYING||' ${WRKSRC}/Makefile.*
 
 .include <bsd.port.mk>

@@ -45,7 +45,7 @@ PORTSCOUT=	limitw:1,even
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 MAKE_ARGS+=	--ssl
 .endif
 

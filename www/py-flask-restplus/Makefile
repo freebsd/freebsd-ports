@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	flask-restplus
-PORTVERSION=	0.9.2
+PORTVERSION=	0.10.0
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -36,7 +36,7 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 .endif
 
 do-test:
-	@${RM} -fr ${TEST_WRKSRC}/build/lib/tests
+	@${RM} -r ${TEST_WRKSRC}/build/lib/tests
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.post.mk>

@@ -1,4 +1,4 @@
---- flower/include/std-vector.hh.orig	2016-08-30 10:23:53 UTC
+--- flower/include/std-vector.hh.orig	2017-02-26 12:08:59 UTC
 +++ flower/include/std-vector.hh
 @@ -212,6 +212,6 @@ junk_pointers (vector<T> &v)
  vector<string> string_split (string str, char c);

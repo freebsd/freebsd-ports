@@ -56,7 +56,7 @@ MASTER_SITE_APACHE+= \
 	http://apache.mirror.uber.com.au/%SUBDIR%/ \
 	http://apache.spd.co.il/%SUBDIR%/ \
 	http://ftp.mirrorservice.org/sites/ftp.apache.org/%SUBDIR%/ \
-	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/%SUBDIR%/ \
+	http://ftp-stud.hs-esslingen.de/pub/Mirrors/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://mir1.ovh.net/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.forthnet.gr/pub/www/apache/%SUBDIR%/ \
 	ftp://xenia.sote.hu/pub/mirrors/www.apache.org/%SUBDIR%/ \
@@ -117,6 +117,25 @@ MASTER_SITE_COMP_SOURCES+= \
 	http://ftp.fi.netbsd.org/pub/misc/archive/comp.sources.%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_CRAN)
+MASTER_SITE_CRAN+= \
+	https://cloud.r-project.org/%SUBDIR%/ \
+	https://stat.ethz.ch/CRAN/%SUBDIR%/ \
+	http://cran.utstat.utoronto.ca/%SUBDIR%/ \
+	https://cran.cnr.berkeley.edu/%SUBDIR%/ \
+	http://cran.csiro.au/%SUBDIR%/ \
+	https://mirrors.tuna.tsinghua.edu.cn/CRAN/%SUBDIR%/ \
+	http://camoruco.ing.uc.edu.ve/cran/%SUBDIR%/ \
+	https://mirror.las.iastate.edu/CRAN/%SUBDIR%/ \
+	https://cran.ma.imperial.ac.uk/%SUBDIR%/ \
+	https://cran.gis-lab.info/%SUBDIR%/ \
+	https://cran.ism.ac.jp/%SUBDIR%/
+.endif
+
+.if !defined(IGNORE_MASTER_SITE_CRAN_ARCHIVE)
+MASTER_SITE_CRAN_ARCHIVE+= ${MASTER_SITE_CRAN:S,$,Archive/${PORTNAME}/,}
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
 MASTER_SITE_DEBIAN+= \
 	http://cdn.debian.net/debian/%SUBDIR%/ \
@@ -175,7 +194,7 @@ MASTER_SITE_EASYSW+= \
 MASTER_SITE_ECLIPSE+= \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/eclipse.org/%SUBDIR%/ \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/eclipse/%SUBDIR%/ \
-	http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/%SUBDIR%/ \
+	http://ftp-stud.hs-esslingen.de/pub/Mirrors/eclipse/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/eclipse/downloads/drops/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/eclipse/eclipse/downloads/drops4/%SUBDIR%/ \
@@ -186,61 +205,53 @@ MASTER_SITE_ECLIPSE+= \
 .if !defined(IGNORE_MASTER_SITE_EXIM)
 MASTER_SITE_EXIM+= \
 	ftp://ftp.exim.org/pub/exim/%SUBDIR%/ \
-	ftp://exim.inode.at/exim/%SUBDIR%/ \
-	ftp://exim-ftp.itsoft.at/exim/exim/%SUBDIR%/ \
-	http://exim-ftp.itsoft.at/exim/%SUBDIR%/ \
-	ftp://ftp.easynet.be/exim/exim/%SUBDIR%/ \
-	ftp://mirror.kn.vutbr.cz/pub/ftp.exim.org/exim/%SUBDIR%/ \
-	http://exim.mirror.fr/exim/%SUBDIR%/ \
-	http://mirrors.zerg.biz/exim/exim/%SUBDIR%/ \
+	ftp://mirror.easyname.at/exim-ftp/%SUBDIR%/ \
 	http://dl.ambiweb.de/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
 	ftp://exim.noris.de/exim/%SUBDIR%/ \
 	ftp://ftp.bytemine.net/exim/exim/%SUBDIR%/ \
-	ftp://exim.mirror.iphh.net/ftp/exim/%SUBDIR%/ \
-	http://exim.mirror.iphh.net/ftp/exim/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/unix/mail/exim/%SUBDIR%/ \
-	http://exim-ftp.octet.hu/exim/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/pub/exim/%SUBDIR%/ \
 	http://ftp.heanet.ie/pub/exim/%SUBDIR%/ \
 	http://washitake.com/mail/exim/mirror/exim/%SUBDIR%/ \
-	ftp://ftp.tin.org/pub/mail/exim/%SUBDIR%/ \
-	http://exim.psshee.com/ftp/exim/%SUBDIR%/ \
-	ftp://mirror.hostfuss.com/exim/ftp/exim/%SUBDIR%/ \
-	http://mirror.hostfuss.com/exim/ftp/exim/%SUBDIR%/ \
-	ftp://ftp.nl.uu.net/pub/unix/mail/exim/exim/%SUBDIR%/ \
+	ftp://ftp.kaist.ac.kr/exim/%SUBDIR%/ \
+	http://ftp.kaist.ac.kr/exim/%SUBDIR%/ \
 	ftp://sunsite.uio.no/pub/mail/exim/exim/%SUBDIR%/ \
-	http://piotrkosoft.net/pub/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
-	ftp://ftp.piotrkosoft.net/pub/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
 	http://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
-	ftp://ftp.is.co.za/networking/mail/mta/exim/ftp/exim/%SUBDIR%/ \
 	ftp://mirrors.dominios.pt/pub/ftp.exim.org/exim/%SUBDIR%/ \
 	ftp://mirror.switch.ch/mirror/exim/exim/%SUBDIR%/ \
 	http://mirror.switch.ch/ftp/mirror/exim/exim/%SUBDIR%/ \
-	ftp://ftp.reaper.org/pub/exim/exim/%SUBDIR%/ \
-	ftp://sunsite.cnlab-switch.ch/mirror/exim/exim/%SUBDIR%/ \
-	ftp://ftp.demon.co.uk/pub/mirrors/exim/%SUBDIR%/ \
-	ftp://mirror.tje.me.uk/pub/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
-	http://mirror.tje.me.uk/pub/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
-	ftp://ftp.fsckit.net/pub/exim/exim/%SUBDIR%/ \
-	ftp://idcnetwork.org/pub/exim/exim/%SUBDIR%/ \
-	http://ftp.exim.llorien.org/exim/%SUBDIR%/
+	ftp://ftp.mirrorservice.org/sites/ftp.exim.org/pub/%SUBDIR%/ \
+	http://exim.telcom.net.ua/ftp/%SUBDIR/ \
+	ftp://idcnetwork.org/pub/exim/exim/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX+= \
-	http://mirror.centos.org/%SUBDIR%/:DEFAULT,SOURCE \
-	http://vault.centos.org/%SUBDIR%/:DEFAULT,SOURCE
+	http://mirror.centos.org/%SUBDIR%/:DEFAULT,amd64,i386 \
+	http://vault.centos.org/%SUBDIR%/:DEFAULT,amd64,i386,SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EPEL)
 MASTER_SITE_EPEL+= \
-	http://dl.fedoraproject.org/pub/epel/6/${LINUX_ARCH}/ \
+	https://dl.fedoraproject.org/pub/epel/6/x86_64/:DEFAULT,amd64 \
+	https://dl.fedoraproject.org/pub/epel/6/i386/:DEFAULT,i386 \
+	https://dl.fedoraproject.org/pub/epel/6/SRPMS/:SOURCE \
+	http://dl.fedoraproject.org/pub/epel/6/x86_64/:DEFAULT,amd64 \
+	http://dl.fedoraproject.org/pub/epel/6/i386/:DEFAULT,i386 \
 	http://dl.fedoraproject.org/pub/epel/6/SRPMS/:SOURCE
+.endif
+
+.if !defined(IGNORE_MASTER_SITE_EPEL7)
+MASTER_SITE_EPEL7+= \
+	https://dl.fedoraproject.org/pub/epel/7/x86_64/%SUBDIR%/:DEFAULT,amd64 \
+	https://dl.fedoraproject.org/pub/epel/7/SRPMS/%SUBDIR%/:SOURCE \
+	http://dl.fedoraproject.org/pub/epel/7/x86_64/%SUBDIR%/:DEFAULT,amd64 \
+	http://dl.fedoraproject.org/pub/epel/7/SRPMS/%SUBDIR%/:SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
 MASTER_SITE_FEDORA_LINUX+= \
+	https://archives.fedoraproject.org/pub/archive/fedora/linux/%SUBDIR%/:DEFAULT,SOURCE \
 	http://archives.fedoraproject.org/pub/archive/fedora/linux/%SUBDIR%/:DEFAULT,SOURCE \
 	ftp://ftp.pbone.net/vol4/archive.fedoraproject.org/fedora/linux/%SUBDIR%/:DEFAULT,SOURCE \
 	ftp://ftp.gmd.de/archives.fedoraproject.org/fedora/linux/%SUBDIR%/:DEFAULT,SOURCE \
@@ -298,7 +309,7 @@ MASTER_SITE_FRUGALWARE+= \
 
 .if !defined(IGNORE_MASTER_SITE_GCC)
 MASTER_SITE_GCC+= \
-	http://mirrors.kernel.org/sources.redhat.com/gcc/%SUBDIR%/ \
+	http://mirrors.kernel.org/sourceware/gcc/%SUBDIR%/ \
 	http://gcc.parentingamerica.com/%SUBDIR%/ \
 	http://gcc.skazkaforyou.com/%SUBDIR%/ \
 	http://gcc.cybermirror.org/%SUBDIR%/ \
@@ -306,8 +317,8 @@ MASTER_SITE_GCC+= \
 	http://www.netgull.com/gcc/%SUBDIR%/ \
 	http://robotlab.itk.ppke.hu/gcc/%SUBDIR%/ \
 	http://gcc.fyxm.net/%SUBDIR%/ \
-	http://gcc.igor.onlinedirect.bg/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/mirrors/sources.redhat.com/pub/gcc/%SUBDIR%/ \
+	http://ftp-stud.hs-esslingen.de/pub/Mirrors/sourceware.org/gcc/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/sourceware.org/pub/gcc/%SUBDIR%/ \
 	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.irisa.fr/pub/mirrors/gcc.gnu.org/gcc/%SUBDIR%/ \
@@ -529,9 +540,9 @@ DISTFILES+=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
 .  if !empty(GH_SUBDIR)
 _SITES_extract:=	690:post-extract-gh-DEFAULT
 post-extract-gh-DEFAULT:
-	@${RMDIR} ${WRKSRC}/${GH_SUBDIR} 2>/dev/null || :
-	@${MKDIR} ${WRKSRC}/${GH_SUBDIR:H} 2>/dev/null || :
-	@${LN} -s ${GH_SUBDIR:C/[^\/]//g:C/\//..\//g} ${WRKSRC}/${GH_SUBDIR}
+	@${RMDIR} ${WRKSRC}/${GH_SUBDIR_DEFAULT} 2>/dev/null || :
+	@${MKDIR} ${WRKSRC}/${GH_SUBDIR_DEFAULT:H} 2>/dev/null || :
+	@${LN} -s ${GH_SUBDIR_DEFAULT:C/[^\/]//g:C/\//..\//g:S/^$/./} ${WRKSRC}/${GH_SUBDIR_DEFAULT}
 .  endif
 # If there are non default groups
 .  if !empty(_GITHUB_GROUPS:NDEFAULT)
@@ -544,6 +555,7 @@ GH_PROJECT_${_group}?=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME_${_group}?=	${GH_TAGNAME_DEFAULT}
 GH_TAGNAME_${_group}_SANITIZED=	${GH_TAGNAME_${_group}:S,/,-,}
 GH_TAGNAME_${_group}_EXTRACT=	${GH_TAGNAME_${_group}_SANITIZED:C/^[vV]([0-9])/\1/}
+_GH_TUPLE_OUT:=	${_GH_TUPLE_OUT} ${GH_ACCOUNT_${_group}}:${GH_PROJECT_${_group}}:${GH_TAGNAME_${_group}}:${_group}/${GH_SUBDIR_${_group}}
 DISTNAME_${_group}:=	${GH_ACCOUNT_${_group}}-${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_SANITIZED}
 DISTFILE_${_group}:=	${DISTNAME_${_group}}_GH${_GITHUB_REV}${_GITHUB_EXTRACT_SUFX}
 DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
@@ -559,6 +571,8 @@ post-extract-gh-${_group}:
 .      endif
 .    endfor
 .  endif
+convert-to-gh-tuple:
+	@${ECHO_MSG} ${GH_ACCOUNT}:${GH_PROJECT}:${GH_TAGNAME} ${_GH_TUPLE_OUT:S/\/$//}
 .endif # defined(USE_GITHUB)
 .endif # !defined(IGNORE_MASTER_SITE_GITHUB)
 
@@ -607,7 +621,7 @@ MASTER_SITE_GNU+= \
 
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= \
-	http://artfiles.org/gnupg.org/%SUBDIR%/ \
+	https://gnupg.org/ftp/gcrypt/%SUBDIR%/ \
 	http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/security/gnupg/%SUBDIR%/ \
 	ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
@@ -617,6 +631,7 @@ MASTER_SITE_GNUPG+= \
 	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	ftp://ftp.crysys.hu/pub/gnupg/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	http://artfiles.org/gnupg.org/%SUBDIR%/ \
 	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/
 .endif
@@ -719,7 +734,7 @@ MASTER_SITE_KDE+= \
 	http://www-ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
 	http://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
-	http://ftp-stud.fht-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
+	http://ftp-stud.hs-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/X/KDE/%SUBDIR%/ \
 	ftp://ftp.na.kde.org/pub/kde/%SUBDIR%/ \
@@ -744,7 +759,6 @@ MASTER_SITE_KDE+= \
 	http://ftp.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
 	http://kde-mirror.freenux.org/%SUBDIR%/ \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
-	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/
 .endif
@@ -861,43 +875,12 @@ MASTER_SITE_NVIDIA+= \
 
 .if !defined(IGNORE_MASTER_SITE_OPENBSD)
 MASTER_SITE_OPENBSD+= \
-	http://anga.funkfeuer.at/ftp/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.eu.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
-	ftp://openbsd.informatik.uni-erlangen.de/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp5.usa.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp3.usa.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
-	ftp://rt.fm/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.heanet.ie/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.belnet.be/packages/openbsd/%SUBDIR%/ \
-	http://mirror.pacific.net.au/OpenBSD/%SUBDIR%/ \
-	http://ftp.openbsd.dk/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.estpak.ee/pub/OpenBSD/%SUBDIR%/ \
-	http://mirror.internode.on.net/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.chg.ru/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.arcane-networks.fr/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.netbsd.se/OpenBSD/%SUBDIR%/ \
-	http://www.mirrorservice.org/pub/OpenBSD/%SUBDIR%/ \
-	http://mirror.switch.ch/ftp/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.jaist.ac.jp/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.cc.uoc.gr/mirrors/OpenBSD/%SUBDIR%/ \
-	http://mirror.hostfuss.com/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.stacken.kth.se/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.ca.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.freebsdchina.org/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.dkuug.dk/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.jyu.fi/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.irisa.fr/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.nara.wide.ad.jp/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.inet.no/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.nluug.nl/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.gamma.ru/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.rediris.es/pub/OpenBSD/%SUBDIR%/ \
-	ftp://ftp.su.se/pub/OpenBSD/%SUBDIR%/ \
-	ftp://osmirrors.cerias.purdue.edu/pub/OpenBSD/%SUBDIR%/ \
-	ftp://carroll.cac.psu.edu/pub/OpenBSD/%SUBDIR%/ \
-	ftp://openbsd.mirrors.tds.net/pub/OpenBSD/%SUBDIR%/ \
-	http://mirrors.nic.funet.fi/pub/OpenBSD/%SUBDIR%/
+	https://ftp.OpenBSD.org/pub/OpenBSD/%SUBDIR%/ \
+	https://ftp.eu.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
+	https://ftp3.usa.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
+	https://openbsd.hk/pub/OpenBSD/%SUBDIR%/ \
+	https://mirror.aarnet.edu.au/pub/OpenBSD/%SUBDIR%/ \
+	https://mirrors.evowise.com/pub/OpenBSD/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_OSSP)
@@ -910,7 +893,6 @@ MASTER_SITE_OSSP+= \
 MASTER_SITE_PACKETSTORM+= \
 	http://dl.packetstormsecurity.net/%SUBDIR%/ \
 	http://packetstorm.codar.com.br/%SUBDIR%/ \
-	http://packetstorm.igor.onlinedirect.bg/%SUBDIR%/ \
 	http://packetstorm.interhost.co.il/%SUBDIR%/ \
 	http://packetstorm.foofus.com/%SUBDIR%/ \
 	http://packetstorm.tacticalflex.com/%SUBDIR%/ \
@@ -1055,15 +1037,15 @@ MASTER_SITE_SAVANNAH+= \
 	ftp://gnu.mirrors.pair.com/savannah/%SUBDIR%/
 .endif
 
-# List:		http://sourceforge.net/apps/trac/sourceforge/wiki/Mirrors
-# Updated:	2013-03-25
+# List:		https://sourceforge.net/p/forge/documentation/Mirrors/
+# Updated:	2017-03-13
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-MASTER_SITE_SOURCEFORGE+= http://downloads.sourceforge.net/project/%SUBDIR%/
-.for mirror in heanet sunet iweb switch freefr garr aarnet jaist master \
-	nchc ncu internode waix hivelocity superb-dca3 ufpr tenet \
-	netcologne ignum kent
-MASTER_SITE_SOURCEFORGE+= \
-	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
+.for p in https http
+MASTER_SITE_SOURCEFORGE+= ${p}://downloads.sourceforge.net/project/%SUBDIR%/
+.for m in cytranet dronedata excellmedia freefr jaist kent liquidtelecom nchc \
+	netassist netcologne netix superb-dca2 superb-sea2 tenet ufpr vorboss
+MASTER_SITE_SOURCEFORGE+= ${p}://${m}.dl.sourceforge.net/project/%SUBDIR%/
+.endfor
 .endfor
 .endif
 
@@ -1076,9 +1058,9 @@ MASTER_SITE_SOURCEFORGE_JP+= \
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEWARE)
 MASTER_SITE_SOURCEWARE+= \
-	http://mirrors.kernel.org/sources.redhat.com/%SUBDIR%/ \
+	http://mirrors.kernel.org/sourceware/%SUBDIR%/ \
 	http://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/mirrors/sources.redhat.com/pub/%SUBDIR%/
+	ftp://ftp.funet.fi/pub/mirrors/sourceware.org/pub/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SUDO)

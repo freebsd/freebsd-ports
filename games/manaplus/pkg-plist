@@ -2,6 +2,7 @@ bin/dyecmd
 bin/manaplus
 man/man6/manaplus.6.gz
 man/man6/manaplustest.6.gz
+share/appdata/manaplus.appdata.xml
 share/applications/manaplus.desktop
 share/applications/manaplustest.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/manaplus.mo
@@ -145,6 +146,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/gui/sell.xml
 %%DATADIR%%/data/graphics/gui/server.xml
 %%DATADIR%%/data/graphics/gui/shop.xml
+%%DATADIR%%/data/graphics/gui/skillrectanglelistbox.xml
 %%DATADIR%%/data/graphics/gui/slider.xml
 %%DATADIR%%/data/graphics/gui/slider_highlighted.xml
 %%DATADIR%%/data/graphics/gui/speechbrowserbox.xml
@@ -275,14 +277,25 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/test/arrow_up_A.png
 %%DATADIR%%/data/test/arrow_up_B.png
 %%DATADIR%%/data/test/arrow_up_S.png
+%%DATADIR%%/data/test/dir1/file1.txt
+%%DATADIR%%/data/test/dir2/file1.txt
+%%DATADIR%%/data/test/dir2/file2.txt
 %%DATADIR%%/data/test/dye.png
 %%DATADIR%%/data/test/equipmentwindow.xml
+%%DATADIR%%/data/test/hide.png
 %%DATADIR%%/data/test/items.xml
 %%DATADIR%%/data/test/palette.gpl
 %%DATADIR%%/data/test/paths.xml
 %%DATADIR%%/data/test/quests.xml
 %%DATADIR%%/data/test/serverlistplus.xml
 %%DATADIR%%/data/test/simplefile.txt
+%%DATADIR%%/data/test/test.txt
+%%DATADIR%%/data/test/test.zip
+%%DATADIR%%/data/test/test2.txt
+%%DATADIR%%/data/test/test2.zip
+%%DATADIR%%/data/test/test3.zip
+%%DATADIR%%/data/test/test4.zip
+%%DATADIR%%/data/test/test5.zip
 %%DATADIR%%/data/test/testintmap.xml
 %%DATADIR%%/data/test/units.xml
 %%DATADIR%%/data/themes/blacknblack/bubble.png
@@ -417,6 +430,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/golden-delicious/shoplistbox.xml
 %%DATADIR%%/data/themes/golden-delicious/skilllistbox.xml
 %%DATADIR%%/data/themes/golden-delicious/skillpopup.xml
+%%DATADIR%%/data/themes/golden-delicious/skillrectanglelistbox.xml
 %%DATADIR%%/data/themes/golden-delicious/slider.xml
 %%DATADIR%%/data/themes/golden-delicious/slider_highlighted.xml
 %%DATADIR%%/data/themes/golden-delicious/social.xml
@@ -530,6 +544,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/jewelry/shoplistbox.xml
 %%DATADIR%%/data/themes/jewelry/skilllistbox.xml
 %%DATADIR%%/data/themes/jewelry/skillpopup.xml
+%%DATADIR%%/data/themes/jewelry/skillrectanglelistbox.xml
 %%DATADIR%%/data/themes/jewelry/slider.xml
 %%DATADIR%%/data/themes/jewelry/slider_highlighted.xml
 %%DATADIR%%/data/themes/jewelry/social.xml

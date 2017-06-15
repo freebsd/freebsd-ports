@@ -1,31 +1,25 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
 # $FreeBSD$
 
-PORTNAME=	alsa-plugins-pulseaudio
+PORTNAME=	alsa-plugins
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	audio linux
+PKGNAMESUFFIX=	-pulseaudio
+LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	PulseAudio plugin for ALSA (Linux CentOS ${LINUX_DIST_VER})
 
 LICENSE=	GPLv3
 
-CONFLICTS=	linux-f10-alsa-plugins-pulseaudio-[0-9]*
-
-.if defined(PACKAGE_BUILDING)
-SRC_DISTFILES=	alsa-plugins-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
-.endif
-
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
+LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
+RPMVERSION=	1.el6
 USES=		linux:c6
+USE_LDCONFIG=	yes
 USE_LINUX=	alsalib pulseaudio-libs
 USE_LINUX_RPM=	yes
-RPMVERSION=	1.el6
-
-USE_LDCONFIG=	yes
-
-# We will use native configuration file, so delete a linux one
-post-extract:
-	@${RM} -r ${WRKSRC}/etc
 
 .include <bsd.port.mk>

@@ -27,7 +27,7 @@ PORTDATA=	*
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	${RM} -f ${WRKSRC}/bin/jelly.bat ${WRKSRC}/bin/jelly
+	${RM} ${WRKSRC}/bin/jelly.bat ${WRKSRC}/bin/jelly
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "custom lib bin" \

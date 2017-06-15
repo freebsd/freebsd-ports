@@ -1,4 +1,4 @@
---- libdwfl/dwfl_error.c.orig	2015-06-10 19:44:33 UTC
+--- libdwfl/dwfl_error.c.orig	2016-12-25 13:36:55 UTC
 +++ libdwfl/dwfl_error.c
 @@ -136,7 +136,7 @@ __libdwfl_seterrno (Dwfl_Error error)
    global_error = canonicalize (error);
@@ -7,9 +7,9 @@
 -
 +static __thread char strerr_buf[64];
  const char *
- dwfl_errmsg (error)
-      int error;
-@@ -155,7 +155,9 @@ dwfl_errmsg (error)
+ dwfl_errmsg (int error)
+ {
+@@ -154,7 +154,9 @@ dwfl_errmsg (int error)
    switch (error &~ 0xffff)
      {
      case OTHER_ERROR (ERRNO):

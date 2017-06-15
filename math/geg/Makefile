@@ -3,7 +3,7 @@
 
 PORTNAME=	geg
 PORTVERSION=	1.0.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	SUNSITE/science/visualization/plotting \
 		http://www.infolaunch.com/~daveb/

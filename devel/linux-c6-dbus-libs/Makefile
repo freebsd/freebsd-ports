@@ -1,23 +1,21 @@
 # Created by: Artyom Mirgorodskiy <artyom.mirgorodsky@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	dbus-libs
+PORTNAME=	dbus
 PORTVERSION=	1.2.24
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	devel linux
+PKGNAMESUFFIX=	-libs
+LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries for accessing D-BUS (Linux CentOS ${LINUX_DIST_VER})
 
-
-USES=		linux:c6
-USE_LINUX_RPM=	yes
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
 RPMVERSION=	8.el6_6
+USES=		linux:c6
 USE_LDCONFIG=	yes
-DESCR=		${.CURDIR}/../dbus/pkg-descr
-
-CONFLICTS=	linux-dbus-libs-[0-9]*  linux-f10-dbus-libs-[0-9]*
-
-SRC_DISTFILES=	dbus-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
+USE_LINUX_RPM=	yes
 
 .include <bsd.port.mk>

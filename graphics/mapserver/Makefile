@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		7.0.2
+PORTVERSION=		7.0.4
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -15,7 +15,9 @@ LIB_DEPENDS=		libgd.so:graphics/gd \
 			libproj.so:graphics/proj \
 			libpng.so:graphics/png \
 			libgif.so:graphics/giflib \
-			libharfbuzz.so:print/harfbuzz
+			libharfbuzz.so:print/harfbuzz \
+			libsvg.so:graphics/libsvg \
+			libfreetype.so:print/freetype2
 
 USES=			cpe cmake:outsource jpeg
 CPE_VENDOR=		umn
@@ -125,7 +127,7 @@ CMAKE_ARGS+=		-DWITH_POSTGIS=0
 
 .if ${PORT_OPTIONS:MPHP}
 USES+=			php:build
-IGNORE_WITH_PHP=	55 70
+IGNORE_WITH_PHP=	70
 CMAKE_ARGS+=		-DWITH_PHP=1
 PLIST_SUB+=		PHP=""
 .else
@@ -185,8 +187,8 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
 
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.7.0.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
+	@${LN} -sf libmapserver.so.7.0.4 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
+	@${LN} -sf libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
 do-install-PHP-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}

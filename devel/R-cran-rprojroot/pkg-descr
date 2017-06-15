@@ -1,0 +1,5 @@
+Robust, reliable and flexible paths to files below a project root.
+The 'root' of a project is defined as a directory that matches a
+certain criterion, e.g., it contains a certain regular file.
+
+WWW: https://cran.r-project.org/web/packages/rprojroot/

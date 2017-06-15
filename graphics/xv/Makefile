@@ -42,7 +42,7 @@ DESCR=	${FILESDIR}/pkg-descr
 .endif
 
 pre-patch:
-	${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-fix-enh-patch-20070520.txt
+	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-fix-enh-patch-20070520.txt
 
 post-patch:
 	${REINPLACE_CMD} -e "s@%%LOCALBASE%%@${LOCALBASE}@" \

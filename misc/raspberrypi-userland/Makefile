@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	raspberrypi-userland
-PORTVERSION=	20160306
+PORTVERSION=	20161026
 CATEGORIES=	misc
 
 MAINTAINER=	mikael.urankar@gmail.com
@@ -17,13 +17,15 @@ CONFLICTS_INSTALL=	libglesv2 libEGL
 USE_GITHUB=	yes
 GH_ACCOUNT=	gonzoua
 GH_PROJECT=	userland
-GH_TAGNAME=	c702cd3
+GH_TAGNAME=	e143b48
 
 USE_LDCONFIG=	yes
 
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig shebangfix
 CMAKE_ARGS+=	-DVMCS_INSTALL_PREFIX=${PREFIX} \
 		-DCMAKE_TOOLCHAIN_FILE=${WRKSRC}/makefiles/cmake/toolchains/arm-freebsd.cmake
+SHEBANG_FILES=	host_applications/linux/apps/dtoverlay/dtoverlay-post \
+		host_applications/linux/apps/dtoverlay/dtoverlay-pre
 
 OPTIONS_DEFINE=	EXAMPLES DEBUG
 EXAMPLES_DESC=	Install test applications source code (hello_pi)

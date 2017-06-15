@@ -3,6 +3,7 @@
 
 PORTNAME=	gprolog
 PORTVERSION=	1.4.4
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gprolog.org/
 
@@ -18,43 +19,36 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USES=		gmake
 USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
-CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}"
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
+PORTDOCS=	*
+PORTEXAMPLES=	*
+CFLAGS+=	-O3 # gcc5/gcc6 + -O2 = pl2wam hangs
+PLIST_SUB=	GPROLOG_VER=${PORTVERSION}
+CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}" \
+		--with-doc-dir="${DOCSDIR}" \
+		--with-examples-dir="${EXAMPLESDIR}"
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_SUB+=	GPROLOG_VER=${PORTVERSION}
+OPTIONS_DEFINE=		FD DOCS EXAMPLES
+OPTIONS_DEFAULT=	FD
+OPTIONS_SUB=		yes
 
-OPTIONS_DEFINE=	FD DOCS EXAMPLES
-OPTIONS_DEFAULT=FD
-FD_DESC=	Enable finite domain constraint solver
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-CONFIGURE_ARGS+=--with-doc-dir="${DOCSDIR}"
-.else
-CONFIGURE_ARGS+=--with-doc-dir="${WRKDIR}/docs"
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PORTEXAMPLES=	*
-CONFIGURE_ARGS+=--with-examples-dir="${EXAMPLESDIR}"
-.else
-CONFIGURE_ARGS+=--with-examples-dir="${WRKDIR}/examples"
-.endif
-
-.if empty(PORT_OPTIONS:MFD)
-CONFIGURE_ARGS+=--disable-fd-solver
-PLIST_SUB+=	FD="@comment "
-PKGNAMESUFFIX=	-nofd
-.else
-PLIST_SUB+=	FD=""
-.endif
+FD_DESC=		Enable finite domain constraint solver
+FD_CONFIGURE_OFF=	--disable-fd-solver
 
 post-configure:
-	${REINPLACE_CMD} -E 's|^(INSTALL_PROGRAM *= *install +-s +-m) 555|\1 755|g' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -E 's|^(INSTALL_DATA *= *install +-m) 444|\1 644|g' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} 's|$$(LN_S) $$(INSTALL_DIR)/bin|$$(LN_S) ../${PORTNAME}-${PORTVERSION}/bin|g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} \
+		-E 's|^(INSTALL_PROGRAM *= *install +-s +-m) 555|\1 755|g' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -E 's|^(INSTALL_DATA *= *install +-m) 444|\1 644|g' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's|$$(LN_S) $$(INSTALL_DIR)/bin|$$(LN_S) ../${PORTNAME}-${PORTVERSION}/bin|g' \
+		${WRKSRC}/Makefile
+
+post-install-EXAMPLES-off:
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-off:
+	${RM} -r ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

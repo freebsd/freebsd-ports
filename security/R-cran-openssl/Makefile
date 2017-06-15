@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,14 +11,17 @@ COMMENT=	Toolkit for Encryption, Signatures and Certificates Based on OpenSSL
 
 LICENSE=	MIT
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles ssl
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000015
-WITH_OPENSSL_PORT=	yes
 R_POSTCMD_INSTALL_OPTIONS+=	--configure-vars="INCLUDE_DIR=${OPENSSLINC} LIB_DIR=${OPENSSLLIB}"
-USES+=		ssl
+
+post-patch:
+	${REINPLACE_CMD} -e '1,5d' ${WRKSRC}/src/ssl.c
+
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mlibressl*}
+IGNORE=	Detected LibreSSL (missing RSA_get0_key and others)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

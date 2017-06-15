@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.76rc2
+DISTVERSION=	2.77test4
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
-#MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
+#MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
+MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -14,7 +14,7 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-IGNORE=		build stable version instead, it is newer than this release candidate
+#IGNORE=		build stable version instead, it is newer than this release candidate
 CONFLICTS_INSTALL=dnsmasq-2*
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
@@ -25,14 +25,15 @@ CFLAGS+=	-Wall -Wno-unused-value -Wno-unused-parameter
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
-OPTIONS_DEFINE=		IPV6 DBUS LUA DNSSEC DOCS
-OPTIONS_DEFAULT=	DNSSEC
+OPTIONS_DEFINE=		IPSET IPV6 DBUS LUA DNSSEC DOCS
+OPTIONS_DEFAULT=	DNSSEC IPSET
 OPTIONS_EXCLUDE+=	EXAMPLES
 OPTIONS_RADIO=		INTL
 OPTIONS_RADIO_INTL=	IDN NLS
 INTL_DESC=	Internationalization Support Level
 NLS_DESC=	IDN+NLS: Int'l Domain Names & National Language support
 IDN_DESC=	IDN: Int'l Domain Names WITHOUT full NLS
+IPSET_DESC=	Dynamic firewall managment of resolved names (require PF)
 LUA_DESC=	Support lease-change scripts written in Lua
 DNSSEC_DESC=	Enable DNSSEC caching and validation
 USES=		cpe shebangfix tar:xz
@@ -42,11 +43,10 @@ CPE_VENDOR=	thekelleys
 CPE_VERSION=	${DISTVERSION:C/r.*//}
 CPE_UPDATE=	${DISTVERSION:C/.*rc/rc/}
 
-.include <bsd.port.options.mk>
+IPV6_CFLAGS_OFF=-DNO_IPV6
+IPSET_CFLAGS_OFF=-DNO_IPSET
 
-.if empty(PORT_OPTIONS:MIPV6)
-CFLAGS+=	-DNO_IPV6
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext gmake iconv pkgconfig
@@ -99,8 +99,8 @@ post-patch:
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
 .if empty(PORT_OPTIONS:MNLS)
-	@if ${OBJDUMP} -p ${LOCALBASE}/lib/libidn.so \
-		| ${EGREP} -q 'NEEDED[[:space:]]+libintl\.so' ; \
+	@if ${READELF} -d ${LOCALBASE}/lib/libidn.so \
+		| ${EGREP} -q '\<NEEDED\>.*\[libintl\.so' ; \
 	then ${ECHO} ; ${ECHO} 'WARNING: dns/libidn was compiled with NLS support!' ; \
 	${ECHO} 'Recompile libidn WITHOUT_NLS to get rid of NLS dependencies.' ; ${ECHO} ; \
 	fi

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	synth
-PORTVERSION=	1.52
+PORTVERSION=	1.68
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	ericturgeon.bsd@gmail.com
 COMMENT=	Custom package repository builder for FreeBSD and DragonFly
 
 LICENSE=	ISCL
@@ -26,9 +26,8 @@ MAKE_ENV=	NCURSES_LINK=static
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if (${OPSYS} == FreeBSD   && ${OSVERSION} < 1000000) || \
-    (${OPSYS} == DragonFly && ${OSVERSION} < 400600)
-	${REINPLACE_CMD} -e 's|"re"|"r"|' ${WRKSRC}/src/unix.adb
+.if ${OPSYS} == DragonFly && ${OSVERSION} < 400600
+	@${REINPLACE_CMD} -e 's|"re"|"r"|' ${WRKSRC}/src/unix.adb
 .endif
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" \
 		${WRKSRC}/src/definitions.ads
@@ -44,6 +43,7 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions \
+		${STAGEDIR}${PREFIX}/share/synth \
 		${STAGEDIR}/var/log/synth \
 		${STAGEDIR}/var/synth/live_packages
 	${INSTALL_PROGRAM} ${WRKSRC}/build/synth \
@@ -55,5 +55,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/shell-completers/_synth \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/www/* ${STAGEDIR}${PREFIX}/share/synth
 
 .include <bsd.port.post.mk>

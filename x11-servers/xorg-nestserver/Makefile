@@ -2,56 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	xorg-nestserver
-PORTVERSION=	1.18.3
-PORTEPOCH=	1
-CATEGORIES=	x11-servers
-MASTER_SITES=	XORG/individual/xserver
-DISTNAME=	xorg-server-${PORTVERSION}
-DIST_SUBDIR=	xorg/xserver
+PORTVERSION=	1.19.1
+PORTEPOCH=	2
 
-MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Nesting X server from X.Org
 
-LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
+LICENSE=	MIT
 
-USES=		tar:bzip2 pkgconfig ssl
-INSTALL_WRKSRC= ${WRKSRC}/hw/xnest
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --disable-dmx \
-		--disable-xephyr \
-		--enable-xnest \
-		--disable-xfbdev \
-		--disable-kdrive \
-		--disable-xfake \
-		--disable-screensaver \
-		--disable-xwin \
-		--disable-xwayland \
-		--disable-xorg \
-		--without-xmlto \
-		--disable-docs \
-		--disable-devel-docs \
-		--localstatedir=/var \
-		--without-dtrace \
-		--without-doxygen \
-		--disable-glx \
-		--disable-dri  \
-		--disable-config-hal \
-		--disable-libdrm \
-		--disable-glx-tls \
-		--disable-vbe \
-		--disable-vgahw \
-		--disable-xvfb \
-		--with-fontrootdir=${PREFIX}/share/fonts
+MASTERDIR=	${.CURDIR}/../xorg-server
+DESCR=		${.CURDIR}/pkg-descr
+DISTINFO_FILE=	${.CURDIR}/distinfo
+PATCHDIR=	${.CURDIR}/files
 
-USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
-		damageproto xcmiscproto xextproto xf86miscproto inputproto \
-		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
-		dri2proto resourceproto fontsproto xf86dgaproto videoproto \
-		compositeproto trapproto recordproto resourceproto \
-		xineramaproto xinerama evieproto xkbfile xfont fontenc xkbui \
-		xxf86misc xxf86vm xaw7 xmu xpm xext pixman xtrans presentproto
+RUN_DEPENDS=	xkeyboard-config>=2.5:x11/xkeyboard-config
 
-PLIST_FILES=	bin/Xnest \
-		man/man1/Xnest.1.gz
+SLAVE_PORT=	yes
+OPTIONS_EXCLUDE=DEVD HAL SUID
 
-.include <bsd.port.mk>
+USE_XORG=	x11 xext xfont2
+
+CONFIGURE_ARGS+=--enable-xnest --disable-dmx --disable-xephyr --disable-xvfb \
+		--disable-xwayland
+
+PLIST_FILES=	bin/Xnest man/man1/Xnest.1.gz
+
+do-install:
+	cd ${WRKSRC}/hw/xnest; DESTDIR=${STAGEDIR} ${MAKE} install
+
+.include "${MASTERDIR}/Makefile"

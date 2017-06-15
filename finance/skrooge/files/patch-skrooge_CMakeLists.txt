@@ -1,0 +1,10 @@
+Do not update the mime database when installing the port, we do it ourselves
+later.
+--- skrooge/CMakeLists.txt.orig	2016-09-25 07:12:32 UTC
++++ skrooge/CMakeLists.txt
+@@ -103,5 +103,4 @@ endif (NOT SHARED_MIME_INFO_MINIMUM_VERS
+ find_package(SharedMimeInfo REQUIRED)
+ 
+ install(FILES x-skg.xml DESTINATION ${XDG_MIME_INSTALL_DIR})
+-update_xdg_mimetypes(${XDG_MIME_INSTALL_DIR})
+ 

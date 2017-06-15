@@ -1,0 +1,7 @@
+yt supports structured, variable-resolution meshes, unstructured meshes,
+and discrete or sampled data such as particles. Focused on driving
+physically-meaningful inquiry, yt has been applied in domains such as
+astrophysics, seismology, nuclear engineering, molecular dynamics, and
+oceanography.
+
+WWW: http://yt-project.org

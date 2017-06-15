@@ -41,7 +41,7 @@ TCL_CONFIGURE_OFF=	--without-tcl
 TCL_USES=		tcl
 
 OPENSSL_CONFIGURE_ENABLE=	openssl
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 
 GNUTLS_CONFIGURE_ENABLE=	gnutls
 GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls

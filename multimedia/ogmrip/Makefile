@@ -136,8 +136,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e '/local/s|^CFLAGS=|#CFLAGS=|g ; \
 		 /local/s|^CPPFLAGS=|#CPPFLAGS=|g ; \
-		 /local/s|^LDFLAGS=|#LDFLAGS=|g ; \
-		 s|libpng zlib|libpng|g' ${WRKSRC}/configure
+		 /local/s|^LDFLAGS=|#LDFLAGS=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^SUBDIRS|#SUBDIRS|g' ${WRKSRC}/docs/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/PROGRAM/s|MP4Box|mp4box|g' ${WRKSRC}/libogmrip/ogmrip-mp4.c

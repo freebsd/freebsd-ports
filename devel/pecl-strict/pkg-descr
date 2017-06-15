@@ -9,4 +9,4 @@ without changing Zend. Support for the following types is introduced:
 
 Variadic support for all of the above types is also included.
 
-WWW: http://pecl.php.net/package/strict
+WWW: https://pecl.php.net/package/strict

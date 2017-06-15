@@ -1,0 +1,26 @@
+--- configure.ac.orig	2016-08-30 15:45:02.000000000 +0300
++++ configure.ac	2016-10-25 19:39:44.610155000 +0300
+@@ -106,7 +106,10 @@
+ 
+ PKG_CHECK_MODULES(SSL, openssl)
+ 
+-SPICE_GLIB_REQUIRES="${SPICE_GLIB_REQUIRES} openssl"
++case $host_os in
++	freebsd*)	;;
++	*)		SPICE_GLIB_REQUIRES="${SPICE_GLIB_REQUIRES} openssl" ;;
++esac
+ 
+ SPICE_CHECK_SASL
+ 
+@@ -155,6 +158,11 @@
+ PKG_CHECK_EXISTS([gtk+-x11-$with_gtk], [PKG_CHECK_MODULES(X11, x11)])
+ AC_CHECK_HEADERS([X11/XKBlib.h])
+ 
++AS_IF([test "x$have_quartz" != "xyes" && test "x$have_win32" != "xyes"],
++      [PKG_CHECK_MODULES(X11,x11)])
++AC_SUBST(X11_CFLAGS)
++AC_SUBST(X11_LIBS)
++
+ AC_ARG_WITH([pnp-ids-path],
+   AC_HELP_STRING([--with-pnp-ids-path],
+                  [Specify the path to pnp.ids @<:@default=(internal)@:>@]),

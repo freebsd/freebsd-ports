@@ -1,0 +1,4 @@
+libgnome-games-support is a small library intended for internal use by
+GNOME Games, but it may be used by others.
+
+WWW: https://github.com/GNOME/libgnome-games-support

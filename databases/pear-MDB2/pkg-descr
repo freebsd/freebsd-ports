@@ -6,4 +6,4 @@ most other DB abstraction packages is that MDB2 goes much further to
 ensure portability. MDB2 provides most of its many features optionally
 that can be used to construct portable SQL statements.
 
-WWW: http://pear.php.net/package/MDB2
+WWW: https://pear.php.net/package/MDB2

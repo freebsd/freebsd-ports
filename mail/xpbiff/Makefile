@@ -3,7 +3,7 @@
 
 PORTNAME?=	xpbiff
 PORTVERSION?=	1.27
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	LOCAL/sanpei
 
@@ -14,7 +14,6 @@ MAINTAINER?=	sanpei@FreeBSD.org
 COMMENT?=	Replacement for xbiff that handles popup window with mail header
 
 USES=		imake:noman
-USE_GCC=	any
 USE_XORG=	xpm xaw xmu
 PLIST_FILES=	bin/xpbiff
 WRKSRC=		${WRKDIR}/xpbiff
@@ -28,7 +27,7 @@ YOUBINBINDIR=	${LOCALBASE}
 .include <bsd.port.pre.mk>
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@(cd ${WRKDIR}; \
 	  if [ ! -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
@@ -38,7 +37,7 @@ do-extract:
 	  fi)
 
 pre-patch:
-	@(${RM} -rf ${WRKSRC}/LocPixmap.c; \
+	@(${RM} -r ${WRKSRC}/LocPixmap.c; \
 	  ${CP} ${FILESDIR}/LocPixmap.c ${WRKSRC} );
 
 post-patch:

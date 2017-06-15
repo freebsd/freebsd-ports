@@ -15,4 +15,4 @@ direct and reverse geocoding,finding places through postal codes,
 finding places next to a given place, and finding Wikipedia articles
 about neighbouring places.
 
-WWW: http://pear.php.net/package/Services_GeoNames
+WWW: https://pear.php.net/package/Services_GeoNames

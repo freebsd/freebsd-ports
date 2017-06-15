@@ -1,4 +1,4 @@
---- lang/tcl/tcl_seq.c.orig	2016-05-24 08:18:03 UTC
+--- lang/tcl/tcl_seq.c.orig	2013-09-09 15:35:07 UTC
 +++ lang/tcl/tcl_seq.c
 @@ -555,9 +555,10 @@ tcl_SeqGetFlags(interp, objc, objv, seq)
  		for (i = 0; seq_flags[i].flag != 0; i++)

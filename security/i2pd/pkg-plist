@@ -1,0 +1,6 @@
+bin/i2pd
+etc/newsyslog.conf.d/i2pd.conf
+man/man1/i2pd.1.gz
+@dir(%%USER%%,%%GROUP%%,755) /var/run/i2pd
+@dir(%%USER%%,%%GROUP%%,755) /var/log/i2pd
+@dir(%%USER%%,%%GROUP%%,755) /var/db/i2pd

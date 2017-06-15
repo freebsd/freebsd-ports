@@ -3,7 +3,7 @@
 
 PORTNAME=	xosmulti
 PORTVERSION=	1.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/flathill
 DISTNAME=	${PORTNAME}_${PORTVERSION}_tar
@@ -12,8 +12,11 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little girl cartoon on the top of the active window
 
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/README.jp
+
 WRKSRC=		${WRKDIR}/xosmulti
-USE_XORG=	xbitmaps x11 xt xi
+USE_XORG=	x11 xbitmaps xext
 
 OPTIONS_DEFINE=	DOCS
 

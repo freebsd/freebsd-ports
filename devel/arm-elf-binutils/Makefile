@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	binutils
-PORTVERSION=	2.27
+PORTVERSION=	2.28
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 PKGNAMEPREFIX=	arm-elf-
@@ -23,7 +23,7 @@ post-install:
 .endfor
 	cd ${WRKSRC}/libiberty ; ${CP} libiberty.a \
 		${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib
-	${RM} -f ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info/*
+	${RM} ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info/*
 	${RMDIR} ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
 
 .include <bsd.port.mk>

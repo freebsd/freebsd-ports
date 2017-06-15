@@ -553,4 +553,5 @@ lib/dpdk
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_sched.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_table.a
 %%DATADIR%%/x86_64-native-bsdapp-clang/lib/librte_timer.a
+%%TOOLS%%bin/dpdk-pmdinfo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%

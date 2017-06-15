@@ -1,0 +1,6 @@
+lua-zlib is a simple streaming interface to zlib for the Lua Programming
+Language. It consists of two functions: inflate and deflate. Both functions
+return "stream functions" (takes a buffer of input and returns a buffer
+of output).
+
+WWW: https://github.com/brimworks/lua-zlib/

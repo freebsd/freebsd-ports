@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	peazip
-PORTVERSION=	6.0.0
+PORTVERSION=	6.3.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free archiver and file compressor
+
+LICENSE=	LGPL3
 
 BUILD_DEPENDS=	lazbuild:editors/lazarus \
 		fpcres:lang/fpc-utils
@@ -23,7 +26,7 @@ DOS2UNIX_REGEX=		.*\.([txt]|pas|lpi|txt)
 LAZARUS_PROJECT_FILES=	project_pea.lpi project_peach.lpi project_gwrap.lpi
 LAZBUILD_CMD=		${LOCALBASE}/bin/lazbuild -d
 LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
-LAZARUS_VER=		1.6.0
+LAZARUS_VER=		1.6.4
 LAZARUS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 ARCHIVER_FILES=		#
 

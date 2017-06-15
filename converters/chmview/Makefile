@@ -10,7 +10,8 @@ MASTER_SITES=	https://googledrive.com/host/0BwCT-sp3iBCaeDRPYm1jTjl1Qmc/
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Extractor from .chm files
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libchm.so:misc/chmlib
 
@@ -19,8 +20,5 @@ USES=		tar:xz uidfix
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/chmview
-
-post-extract:
-	@${CHMOD} -R u+w ${WRKSRC}
 
 .include <bsd.port.mk>

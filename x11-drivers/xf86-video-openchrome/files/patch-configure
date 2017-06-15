@@ -1,6 +1,6 @@
---- configure.orig	2013-05-23 15:11:54 UTC
+--- configure.orig	2016-07-06 16:22:03 UTC
 +++ configure
-@@ -12742,7 +12742,7 @@ $as_echo "#define X_HAVE_XAAGETROP 1" >>
+@@ -13388,7 +13388,7 @@ $as_echo "#define X_HAVE_XAAGETROP 1" >>
  $as_echo "#define X_NEED_I2CSTART 1" >>confdefs.h
  
  

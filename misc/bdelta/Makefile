@@ -11,7 +11,7 @@ COMMENT=	Advanced delta creator, patcher, and library
 
 LICENSE=	MPL
 
-WRKSRC=		${WRKDIR}/BDelta-${PORTVERSION}/src
+WRKSRC_SUBDIR=	src
 
 USES=		gmake
 USE_LDCONFIG=	yes

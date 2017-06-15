@@ -2,7 +2,7 @@
 
 PORTNAME=	gnome-clipboard-daemon
 PORTVERSION=	1.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://members.chello.nl/~h.lai/gnome-clipboard-daemon/
 DISTNAME=	${PORTNAME:S,^gnome-,,}-${PORTVERSION}

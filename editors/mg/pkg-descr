@@ -3,17 +3,4 @@ editor maintained by the OpenBSD Project.  It is intended for people
 who can't, or don't want to, run the real GNU Emacs, or are not
 familiar with the vi(1) editor.
 
-Although it is intended to be largely compatible with GNU Emacs, Mg
-doesn't have special modes for tasks other than editing plain text.
-Moreover, since it is written entirely in C, there is no language in
-which to write extensions in (read: no builtin Lisp interpreter).
-
-If you are looking for something that looks like Emacs (don't want to
-learn another editor) but don't have the resources to run the latter,
-this may be what you're looking for.
-
-Enjoy!
-
-					Dima Dorfman
-					dima@unixfreak.org
-					14 May 2001
+WWW: http://homepage.boetes.org/software/mg/

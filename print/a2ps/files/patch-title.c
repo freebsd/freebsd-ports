@@ -1,4 +1,4 @@
---- lib/title.c.orig	2015-09-25 08:26:23 UTC
+--- lib/title.c.orig	1999-08-28 16:54:19 UTC
 +++ lib/title.c
 @@ -88,6 +88,8 @@ title (stream, c, center_p, format, va_a
    if (center_p)

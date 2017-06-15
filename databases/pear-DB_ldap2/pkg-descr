@@ -1,4 +1,4 @@
 PEAR::DB_ldap class provides a DB compliant
 interface to LDAP v2 and v3 database.
 
-WWW: http://pear.php.net/package/DB_ldap2/
+WWW: https://pear.php.net/package/DB_ldap2

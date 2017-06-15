@@ -1,0 +1,17 @@
+bin/uncrustify
+%%ETCDIR%%/amxmodx.cfg
+%%ETCDIR%%/ben.cfg
+%%ETCDIR%%/ben2.cfg
+%%ETCDIR%%/d.cfg
+%%ETCDIR%%/defaults.cfg
+%%ETCDIR%%/freebsd.cfg
+%%ETCDIR%%/gnu-indent.cfg
+%%ETCDIR%%/klaus.cfg
+%%ETCDIR%%/kr-indent.cfg
+%%ETCDIR%%/linux-indent.cfg
+%%ETCDIR%%/linux.cfg
+%%ETCDIR%%/mono.cfg
+%%ETCDIR%%/objc.cfg
+%%ETCDIR%%/sun.cfg
+%%ETCDIR%%/xsupplicant.cfg
+man/man1/uncrustify.1.gz

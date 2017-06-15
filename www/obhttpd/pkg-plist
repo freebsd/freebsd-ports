@@ -1,0 +1,7 @@
+@sample etc/obhttpd.conf.sample
+man/man1/obhtpasswd.1.gz
+man/man5/obhttpd.conf.5.gz
+man/man7/patterns.7.gz
+man/man8/obhttpd.8.gz
+sbin/obhtpasswd
+sbin/obhttpd

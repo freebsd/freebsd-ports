@@ -2,39 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	jing
-PORTVERSION=	2008.10.28
+PORTVERSION=	2015.11.27
 CATEGORIES=	textproc java
-MASTER_SITES=	http://jing-trang.googlecode.com/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	RELAX NG validator in Java
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/doc/copying.html
+LICENSE_FILE=	${WRKSRC}/copying.txt
 
-BROKEN=		Unfetchable (google code has gone away)
+USE_GITHUB=	yes
+GH_ACCOUNT=	relaxng
+GH_PROJECT=	jing-trang
+GH_TAGNAME=	1e74846
 
-USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-NO_BUILD=	yes
+JAVA_BUILD=	yes
+JAVA_RUN=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
 SUB_FILES=	jing.sh
 
 PLIST_FILES=	bin/jing %%JAVAJARDIR%%/jing.jar
 
+do-build:
+	(cd ${WRKSRC} && JAVA_HOME=${JAVA_HOME} ./ant)
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jing.sh ${STAGEDIR}${PREFIX}/bin/jing
-	${INSTALL_DATA} ${WRKSRC}/bin/jing.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/build/jing.jar ${STAGEDIR}${JAVAJARDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

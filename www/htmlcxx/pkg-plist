@@ -12,7 +12,6 @@ include/htmlcxx/html/ci_string.h
 include/htmlcxx/html/tld.h
 include/htmlcxx/html/tree.h
 include/htmlcxx/html/utils.h
-libdata/pkgconfig/htmlcxx.pc
 lib/libcss_parser.so
 lib/libcss_parser.so.0
 lib/libcss_parser.so.0.0.0
@@ -22,4 +21,5 @@ lib/libcss_parser_pp.so.0.0.0
 lib/libhtmlcxx.so
 lib/libhtmlcxx.so.3
 lib/libhtmlcxx.so.3.1.0
-share/htmlcxx/css/default.css
+libdata/pkgconfig/htmlcxx.pc
+%%DATADIR%%/css/default.css

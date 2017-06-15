@@ -18,6 +18,9 @@ KMODDIR=	${PREFIX}/lib/aoe
 
 USE_RC_SUBR=	aoe
 
+BROKEN_aarch64=		Fails to compile: error: redefinition of frame
+BROKEN_sparc64=		Fails to compile: error: redefinition of frame
+
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/aoe.ko ${STAGEDIR}${PREFIX}/lib/aoe
 	${INSTALL_MAN} ${WRKDIR}/aoe.4 ${STAGEDIR}${PREFIX}/man/man4/

@@ -1,3 +1,4 @@
+%%DATADIR%%/ume-hgo4.ttf
 %%DATADIR%%/ume-pgc4.ttf
 %%DATADIR%%/ume-pgc5.ttf
 %%DATADIR%%/ume-pgo4.ttf
@@ -20,6 +21,7 @@ etc/fonts/conf.avail/20-unhint-ume.conf
 etc/fonts/conf.avail/62-fonts-ume.conf
 etc/fonts/conf.d/20-unhint-ume.conf
 etc/fonts/conf.d/62-fonts-ume.conf
+%%FONTSDIR%%/ume-hgo4.ttf
 %%FONTSDIR%%/ume-pgc4.ttf
 %%FONTSDIR%%/ume-pgc5.ttf
 %%FONTSDIR%%/ume-pgo4.ttf

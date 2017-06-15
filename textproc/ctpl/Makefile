@@ -5,8 +5,11 @@ PORTVERSION=	0.3.4
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://download.tuxfamily.org/ctpl/releases/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C Template (Parser) Library
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

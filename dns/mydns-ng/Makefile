@@ -3,7 +3,7 @@
 
 PORTNAME=	mydns-ng
 PORTVERSION=	1.2.8.31
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns databases
 MASTER_SITES=	SF/${PORTNAME}/mydns/${PORTVERSION}
 DISTNAME=	mydns-${PORTVERSION}
@@ -32,7 +32,7 @@ OPTIONS_SUB=	yes
 
 ALIAS_CONFIGURE_ENABLE=	alias
 
-SSL_USE=	OPENSSL=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--with-openssl \
 			--with-openssl-include=${OPENSSLINC} \
 			--with-openssl-lib=${OPENSSLLIB}

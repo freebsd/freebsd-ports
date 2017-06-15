@@ -1,0 +1,10 @@
+Your terminal can display color, but most diff tools don't make good use of it.
+By highlighting changes, icdiff can show you the differences between similar
+files without getting in the way. This is especially helpful for identifying
+and understanding small changes within existing lines.
+
+Instead of trying to be a diff replacement for all circumstances, the goal of
+icdiff is to be a tool you can reach for to get a better picture of what
+changed when it's not immediately obvious from diff.
+
+WWW: https://www.jefftk.com/icdiff

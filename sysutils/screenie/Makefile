@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	screenie
-PORTVERSION=	1.30.0
-PORTREVISION=	1
+PORTVERSION=	20120406
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/ehaupt
+MASTER_SITES=	SF/screenie
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Small and lightweight screen(1) wrapper
@@ -18,6 +17,8 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/screenie man/man1/screenie.1.gz
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin

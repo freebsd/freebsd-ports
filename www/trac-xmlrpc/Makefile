@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Provides an XML-RPC interface to Trac
 
 LICENSE=	BSD3CLAUSE

@@ -8,4 +8,4 @@ This PEAR package provides a Virtual File System API, with backends for:
 supported, and there are both object-based and array-based interfaces
 to directory listings.
 
-WWW: http://pear.php.net/package/VFS
+WWW: https://pear.php.net/package/VFS

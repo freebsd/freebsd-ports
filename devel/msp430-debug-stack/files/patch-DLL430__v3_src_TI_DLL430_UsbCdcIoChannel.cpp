@@ -1,6 +1,6 @@
---- DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp.orig	2016-03-12 13:23:34 UTC
-+++ DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp
-@@ -303,6 +303,22 @@ void UsbCdcIoChannel::createCdcPortList(
+--- DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp.orig	2016-05-02 09:51:53.763023000 +0200
++++ DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp	2016-05-02 09:53:56.332580000 +0200
+@@ -303,6 +303,22 @@
  	}
  #else
  	stringstream cdcIdStream;
@@ -23,16 +23,7 @@
  	cdcIdStream << hex << setfill('0') << "usb:v" << setw(4) << vendorId << "p" << setw(4) << productId;
  
  	path p("/sys/class/tty/");
-@@ -317,13 +333,14 @@ void UsbCdcIoChannel::createCdcPortList(
- 				string modalias;
- 				int interfaceNumber = -1;
- 
--				ifstream modAliasStream((it->path()/"device/modalias").string().c_str());
-+				std::ifstream modAliasStream((it->path()/"device/modalias").string().c_str());
- 				modAliasStream >> modalias;
- 
--				ifstream ifNumStream((it->path()/"device/bInterfaceNumber").string().c_str());
-+				std::ifstream ifNumStream((it->path()/"device/bInterfaceNumber").string().c_str());
+@@ -324,6 +340,7 @@
  				ifNumStream >> interfaceNumber;
  				if (modalias.find(cdcIdStream.str()) == 0 && interfaceNumber == 0)
  				{

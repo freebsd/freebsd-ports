@@ -1,6 +1,6 @@
---- ./configure.ac.orig	2008-12-16 11:21:54.000000000 -0500
-+++ ./configure.ac	2011-02-09 20:52:34.000000000 -0500
-@@ -78,7 +78,6 @@
+--- configure.ac.orig	2014-05-23 20:25:28 UTC
++++ configure.ac
+@@ -78,7 +78,6 @@ AH_BOTTOM([
  ])
  
  AC_CHECK_LIB(socket, socket)
@@ -8,7 +8,7 @@
  
  AC_SUBST(ADD_INCLUDES)
  case $build in
-@@ -179,11 +178,21 @@
+@@ -179,11 +178,21 @@ MU_CHECK_GSASL(0.2.3, [
      ANUBIS_BIN_ADM='$(adm_bin_programs)'
      M4_DEFS="$M4_DEFS -DWITH_GSASL"
  
@@ -31,7 +31,7 @@
  
      AC_ARG_WITH(mysql,
  	AC_HELP_STRING([--with-mysql],
-@@ -285,8 +294,8 @@
+@@ -285,8 +294,8 @@ AC_ARG_WITH(pam,
  	[with_pam=no])
  if test "$with_pam" = "yes"; then
   AC_CHECK_LIB(pam, main,, with_pam=no)
@@ -42,7 +42,7 @@
  fi
  if test "$with_pam" = "yes"; then
   AC_MSG_RESULT([Enabling PAM support...])
-@@ -300,7 +309,6 @@
+@@ -300,7 +309,6 @@ AC_ARG_WITH(tcp-wrappers,
  	[with_tcp_wrappers=no])
  if test "$with_tcp_wrappers" = "yes"; then
   AC_CHECK_LIB(wrap, main,, with_tcp_wrappers=no)

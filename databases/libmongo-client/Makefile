@@ -4,7 +4,7 @@
 PORTNAME=	libmongo-client
 PORTVERSION=	0.1.6.3
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	gd.workbox@gmail.com
@@ -19,6 +19,5 @@ GNU_CONFIGURE=	yes
 USES=		autoreconf libtool pkgconfig gmake pathfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=Makefile.am
 
 .include <bsd.port.mk>

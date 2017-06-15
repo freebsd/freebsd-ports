@@ -1,4 +1,0 @@
-%%RUBY_SITELIBDIR%%/tserver.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/tommy.css
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/port-forward

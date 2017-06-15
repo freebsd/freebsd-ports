@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuchess
-PORTVERSION=	6.2.2
+PORTVERSION=	6.2.4
 CATEGORIES=	games
 MASTER_SITES=	GNU/chess
 # The DISTFILES here is explicitly needed because it can be extended later.

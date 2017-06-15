@@ -65,6 +65,7 @@
 %%PYQT_SIPDIR%%/QtGui/qrawfont.sip
 %%PYQT_SIPDIR%%/QtGui/qregion.sip
 %%PYQT_SIPDIR%%/QtGui/qrgb.sip
+%%PYQT_SIPDIR%%/QtGui/qrgba64.sip
 %%PYQT_SIPDIR%%/QtGui/qscreen.sip
 %%PYQT_SIPDIR%%/QtGui/qsessionmanager.sip
 %%PYQT_SIPDIR%%/QtGui/qstandarditemmodel.sip

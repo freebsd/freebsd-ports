@@ -1,6 +1,6 @@
 bin/eiskaltdcpp-cli-jsonrpc
 bin/eiskaltdcpp-cli-xmlrpc
-@sample etc/eiskaltdcpp/cli-jsonrpc-config.pl.sample
-@sample etc/eiskaltdcpp/cli-xmlrpc-config.pl.sample
+@sample %%ETCDIR%%/cli-jsonrpc-config.pl.sample
+@sample %%ETCDIR%%/cli-xmlrpc-config.pl.sample
 man/man1/eiskaltdcpp-cli-jsonrpc.1.gz
 man/man1/eiskaltdcpp-cli-xmlrpc.1.gz

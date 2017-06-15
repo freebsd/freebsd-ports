@@ -1,6 +1,6 @@
---- Display_SDL.i.orig	Wed Jan  2 22:42:42 2002
-+++ Display_SDL.i	Sat Sep  6 07:54:35 2003
-@@ -213,7 +213,7 @@
+--- Display_SDL.i.orig	2002-01-02 21:42:42 UTC
++++ Display_SDL.i
+@@ -213,7 +213,7 @@ void C64Display::draw_string(SDL_Surface
   *  LED error blink
   */
  

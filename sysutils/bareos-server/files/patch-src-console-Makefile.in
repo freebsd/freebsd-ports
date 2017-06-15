@@ -1,25 +1,35 @@
---- src/console/Makefile.in	2015-12-03 03:22:54.000000000 -0500
-+++ src/console/Makefile.in	2016-02-01 18:21:25.511282000 -0500
-@@ -29,6 +29,7 @@
- CONS_LDFLAGS = @CONS_LDFLAGS@
+--- src/console/Makefile.in	2016-10-16 10:14:36.000000000 -0500
++++ src/console/Makefile.in	2016-11-16 01:14:33.054997000 -0500
+@@ -28,6 +28,7 @@
+ CONS_LIBS = @CONS_LIBS@
  
  JANSSON_CPPFLAGS = @JANSSON_INC@
 +JANSSON_LDFLAGS = @JANSSON_LIBS@
  
  INCLUDES += -I$(srcdir) -I$(basedir) -I$(basedir)/include
  
-@@ -52,12 +53,12 @@
+@@ -51,12 +52,12 @@
  bconsole: Makefile $(CONSOBJS) ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE) ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE)
- 	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) $(CONS_LDFLAGS) -L../lib -L../cats -o $@ $(CONSOBJS) \
- 	      $(DLIB) $(CONS_LIBS) -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) \
+ 	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -L../lib -L../cats -o $@ $(CONSOBJS) \
+ 	      $(DLIB) -lbareoscfg -lbareos -lm $(CONS_LIBS) $(LIBS) $(GETTEXT_LIBS) \
 -	      $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
 +	      $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  static-bconsole: Makefile $(CONSOBJS) ../lib/libbareos.a ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE)
- 	$(LIBTOOL_LINK) $(CXX) -static $(LDFLAGS) $(CONS_LDFLAGS) -L../lib -L../cats -o $@ $(CONSOBJS) \
- 	      $(DLIB) $(CONS_LIBS) -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) \
+ 	$(LIBTOOL_LINK) $(CXX) -static $(LDFLAGS) -L../lib -L../cats -o $@ $(CONSOBJS) \
+-	      $(DLIB) -lbareoscfg -lbareos -lm $(CONS_LIBS) $(LIBS) $(GETTEXT_LIBS) \
 -	      $(OPENSSL_LIBS) $(GNUTLS_LIBS)
++	      $(DLIB) -lbareoscfg -lbareos -lm $(CONS_LIBS) $(LIBS) $(GETTEXT_STATIC_LIBS) \
 +	      $(OPENSSL_LIBS) $(GNUTLS_LIBS) $(JANSSON_LDFLAGS)
  	strip $@
  
  
+@@ -93,7 +94,7 @@
+ 	$(MKDIR) $(DESTDIR)$(bindir)
+ 	$(MKDIR) $(DESTDIR)$(sbindir)
+ 	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) bconsole $(DESTDIR)$(bindir)/bconsole;
+-	@if ! [ -r $(DESTDIR)$(sbindir)/bconsole ]; then $(SYMLINK) $(bindir)/bconsole $(DESTDIR)$(sbindir)/bconsole; fi
++	@if ! [ -r $(DESTDIR)$(sbindir)/bconsole ]; then $(SYMLINK) ../bin/bconsole $(DESTDIR)$(sbindir)/bconsole; fi
+ 	@srcconf=bconsole.conf; \
+ 	if  test -f ${DESTDIR}${confdir}/$$srcconf; then \
+ 	   destconf=$$srcconf.new; \

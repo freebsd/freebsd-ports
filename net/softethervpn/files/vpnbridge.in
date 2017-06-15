@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: vpnbridge
+# REQUIRE: LOGIN
+#
+. /etc/rc.subr
+
+name=vpnbridge
+rcvar=${name}_enable
+command=%%PREFIX%%/sbin/${name}
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+vpnbridge_start()
+{
+
+	$command start
+}
+
+vpnbridge_stop()
+{
+
+	$command stop
+}
+
+load_rc_config $name
+: ${vpnbridge_enable:=NO}
+run_rc_command "$1"

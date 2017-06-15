@@ -1,35 +1,34 @@
---- ./panel-plugin/wavelan.c.orig	2012-06-29 20:07:10.000000000 +0000
-+++ ./panel-plugin/wavelan.c	2014-05-20 21:45:00.000000000 +0000
-@@ -98,11 +98,11 @@
+--- panel-plugin/wavelan.c.orig	2016-10-29 06:46:02 UTC
++++ panel-plugin/wavelan.c
+@@ -99,11 +99,11 @@ wavelan_set_state(t_wavelan *wavelan, gi
  
     if (wavelan->signal_colors) {
      /* set color */
 -     if (state > 70)
 +     if (state > 75)
-       gdk_color_parse(signal_color_strong, &color);
+       gdk_rgba_parse(&color, signal_color_strong);
 -     else if (state > 55)
 +     else if (state > 50)
-       gdk_color_parse(signal_color_good, &color);
+       gdk_rgba_parse(&color, signal_color_good);
 -     else if (state > 40)
 +     else if (state > 25)
-       gdk_color_parse(signal_color_weak, &color);
+       gdk_rgba_parse(&color, signal_color_weak);
       else
-       gdk_color_parse(signal_color_bad, &color);
-@@ -163,7 +163,16 @@
+       gdk_rgba_parse(&color, signal_color_bad);
+@@ -183,7 +183,15 @@ wavelan_timer(gpointer data)
        }
      }
      else {
 -      wavelan_set_state(wavelan, stats.ws_quality);
++      /*
++       * Usual formula is: qual = 4 * (signal - noise)
++       * where noise is typically about -96dBm, but we don't have
++       * the actual noise value here, so approximate one.
++       */
 +      if (strcmp(stats.ws_qunit, "dBm") == 0)
-+        /*
-+	 * Usual formula is:
-+	 *	qual = 4 * (signal - noise)
-+	 * where noise is typically about -96dBm, but we don't have
-+	 * the actual noise value here, so approximate one.
-+	 */
 +        wavelan_set_state(wavelan, 4 * (stats.ws_quality - (-96)));
 +      else
 +        wavelan_set_state(wavelan, stats.ws_quality);
  
        if (strlen(stats.ws_netname) > 0)
-         tip = g_strdup_printf("%s: %d%s at %dMb/s", stats.ws_netname, stats.ws_quality, stats.ws_qunit, stats.ws_rate);
+         /* Translators: net_name: quality quality_unit at rate Mb/s*/

@@ -14,6 +14,7 @@ lib/rancid/eos.pm
 lib/rancid/exos.pm
 lib/rancid/foundry.pm
 lib/rancid/ios.pm
+lib/rancid/iosshtech.pm
 lib/rancid/iosxr.pm
 lib/rancid/junos.pm
 lib/rancid/mrv.pm
@@ -170,5 +171,6 @@ man/man5/router.db.5.gz
 %%DATADIR%%/lgnotes.html
 %%DATADIR%%/rancid-cvspurge
 %%DATADIR%%/rancid.conf.sample
+%%DATADIR%%/rancid.types.conf
 %%DATADIR%%/rtrfilter
 @dir(rancid,rancid,755) var/rancid

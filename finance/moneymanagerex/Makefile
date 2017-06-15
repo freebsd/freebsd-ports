@@ -4,6 +4,7 @@
 PORTNAME=	mmex
 PORTVERSION=	1.2.7
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	finance
 MASTER_SITES=	https://github.com/vslavik/bakefile/releases/download/v0.2.9/:bakefile
 DISTFILES=	bakefile-0.2.9${EXTRACT_SUFX}:bakefile
@@ -50,6 +51,7 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${CHOSEN_COMPILER_TYPE} == "gcc"
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/lexical_cast.hpp:devel/boost-libs
 .endif
 
 post-extract:

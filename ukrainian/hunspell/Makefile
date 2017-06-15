@@ -2,6 +2,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	ukrainian textproc
 MASTER_SITES=	SF/ispell-uk/spell-uk/${PORTVERSION}
 DISTNAME=	spell-uk-${PORTVERSION}

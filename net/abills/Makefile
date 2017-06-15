@@ -37,10 +37,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/abills
-	@(${TAR} -C ${WRKSRC} --exclude "*.DS*" --exclude "*.bak" \
-		--exclude "*.orig" -cf - . | ${TAR} -C ${STAGEDIR}${PREFIX}/abills \
-		--unlink -xf -)
-	@${FIND} ${STAGEDIR}${PREFIX}/abills -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${STAGEDIR}${PREFIX}/abills -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/abills \
+		'-not ( -name *\.DS* -o -name *\.bak -o -name *\.orig )'
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -13,6 +13,7 @@ COMMENT=	Perl modules that implement asynchronous filehandle IO
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Future>=0.33:devel/p5-Future \
 		p5-Struct-Dumb>0:devel/p5-Struct-Dumb

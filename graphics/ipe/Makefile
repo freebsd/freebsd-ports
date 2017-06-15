@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ipe
-PORTVERSION=	7.2.5
+PORTVERSION=	7.2.7
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.bintray.com/otfried/generic/ipe/${PORTVERSION:R}/
@@ -55,7 +56,7 @@ post-patch:
 		'/%s/s|gnome-open|xdg-open|' ${WRKSRC}/ipe/lua/prefs.lua
 
 post-install:
-	@${LN} -sf ${DATADIR}${PORTVERSION}/ipe.png \
+	@${LN} -sf ${DATADIR}/${PORTVERSION}/ipe.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

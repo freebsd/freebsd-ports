@@ -1,11 +1,11 @@
-%%SITE_PERL%%/IO/Compress/Lzma.pm
-%%SITE_PERL%%/IO/Compress/Xz.pm
 %%SITE_PERL%%/IO/Compress/Adapter/Lzma.pm
 %%SITE_PERL%%/IO/Compress/Adapter/Xz.pm
-%%SITE_PERL%%/IO/Uncompress/UnLzma.pm
-%%SITE_PERL%%/IO/Uncompress/UnXz.pm
+%%SITE_PERL%%/IO/Compress/Lzma.pm
+%%SITE_PERL%%/IO/Compress/Xz.pm
 %%SITE_PERL%%/IO/Uncompress/Adapter/UnLzma.pm
 %%SITE_PERL%%/IO/Uncompress/Adapter/UnXz.pm
+%%SITE_PERL%%/IO/Uncompress/UnLzma.pm
+%%SITE_PERL%%/IO/Uncompress/UnXz.pm
 %%PERL5_MAN3%%/IO::Compress::Lzma.3.gz
 %%PERL5_MAN3%%/IO::Compress::Xz.3.gz
 %%PERL5_MAN3%%/IO::Uncompress::UnLzma.3.gz

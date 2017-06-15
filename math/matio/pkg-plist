@@ -3,8 +3,8 @@ include/matio.h
 include/matio_pubconf.h
 lib/libmatio.a
 lib/libmatio.so
-lib/libmatio.so.2
-lib/libmatio.so.2.0.2
+lib/libmatio.so.4
+lib/libmatio.so.4.2.0
 libdata/pkgconfig/matio.pc
 man/man3/Mat_Close.3.gz
 man/man3/Mat_CreateVer.3.gz

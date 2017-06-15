@@ -1,0 +1,9 @@
+Meson is a cross-platform build system designed to be both as fast and as
+user friendly as possible. It supports many languages and compilers, including
+GCC, Clang and Visual Studio. Its build definitions are written in a simple
+non-turing complete DSL. The main design point of Meson is that every moment
+a developer spends writing or debugging build definitions is a second wasted.
+So is every second spent waiting for the build system to actually start
+compiling code.
+
+WWW: http://mesonbuild.com

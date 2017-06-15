@@ -4,12 +4,11 @@
 PORTNAME=	ratproxy
 PORTVERSION=	1.58
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	ftp://ftp.bit.nl/openbsd/distfiles/ \
+		ftp://mirror.wdc1.us.leaseweb.net/gentoo/distfiles/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Semi-automated, largely passive web application security audit tool
-
-BROKEN=		Unfetchable (google code has gone away)
 
 USES=		shebangfix ssl
 CFLAGS+=	-I${OPENSSLINC}

@@ -1,7 +1,7 @@
---- pam_duo/Makefile.in.orig	2015-03-02 13:18:58 UTC
+--- pam_duo/Makefile.in.orig	2017-05-03 23:03:21 UTC
 +++ pam_duo/Makefile.in
-@@ -713,15 +713,6 @@ semodule-remove:
- .PHONY: semodule semodule-remove
+@@ -725,20 +725,6 @@ clean-local-semodule:
+ .PHONY: semodule semodule-enable semodule-install semodule-remove clean-local-semodule
  
  install-data-local:
 -	$(MKDIR_P) $(DESTDIR)$(sysconfdir)
@@ -13,6 +13,11 @@
 -		echo "Found existing ${DESTDIR}$(sysconfdir)/pam_duo.conf - updating permissions"; \
 -	fi
 -	-chmod 600 $(DESTDIR)$(sysconfdir)/pam_duo.conf
+-	-@if test "x$(IS_AIX)" = "xyes"; then \
+-		rm -f $(PAMDIR)/pam_duo.so; \
+-		ar x $(top_builddir)/pam_duo/.libs/pam_duo.a $(PAMDIR)/pam_duo.so; \
+-		echo "Extracting shared object ${PAMDIR}/pam_duo.so from $(top_builddir)/pam_duo/.libs/pam_duo.a"; \
+-	fi
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ uninstall-local:
+ 	-@if test "x$(IS_AIX)" = "xyes"; then \

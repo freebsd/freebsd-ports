@@ -1,14 +1,2 @@
 %%SITE_PERL%%/Authen/Radius.pm
 %%PERL5_MAN3%%/Authen::Radius.3.gz
-%%DATADIR%%/dictionary
-%%DATADIR%%/dictionary.ascend
-%%DATADIR%%/dictionary.cisco
-%%DATADIR%%/dictionary.compat
-%%DATADIR%%/dictionary.livingston
-%%DATADIR%%/dictionary.quintum
-%%DATADIR%%/dictionary.rfc2869
-%%DATADIR%%/dictionary.shiva
-%%DATADIR%%/dictionary.tunnel
-%%DATADIR%%/dictionary.usr
-%%DATADIR%%/dictionary.versanet
-%%DATADIR%%/dictionary.xtradius

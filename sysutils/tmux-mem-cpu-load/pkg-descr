@@ -1,0 +1,7 @@
+A simple, lightweight program provided for system monitoring in the status line
+of tmux. The memory monitor displays the used and available memory. The CPU
+usage monitor outputs a percent CPU usage over all processors. It also displays
+a textual bar graph of the current percent usage. The system load average is
+also displayed.
+
+WWW: https://github.com/thewtex/tmux-mem-cpu-load

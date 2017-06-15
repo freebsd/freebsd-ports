@@ -1,0 +1,12 @@
+The man page for cat says that it can: concatenate files and print on the
+standard output. Often its main use is for the latter. mog tries to help you
+"print on the standard output" in a more intelligent way. For example, it can
+be configured to:
+
+   * Syntax highlight scripts
+   * Print a hex dump of binary files
+   * Show details of image files
+   * Perform objdump on executables
+   * List a directory
+
+WWW: https://github.com/witchard/mog/

@@ -4,6 +4,7 @@
 PORTNAME=	ledger
 PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	finance
 
 MAINTAINER=	woodycarey@hotmail.com

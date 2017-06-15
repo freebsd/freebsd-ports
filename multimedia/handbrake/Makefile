@@ -3,7 +3,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	0.10.5
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.handbrake.fr/releases/${PORTVERSION}/ \
 		http://download.handbrake.fr/handbrake/contrib/:contrib \
@@ -45,6 +45,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libx264.so:multimedia/libx264 \
 		libmp3lame.so:audio/lame
 
+BROKEN_aarch64=	Fails to build: invokes x86 asm
+BROKEN_armv6=	Fails to build: invokes x86 asm
+
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread-5.0.0-6-gcb1ae87/src/dvd_input.c (dlopen'ed)
 LIB_DEPENDS+=	libdvdcss.so.2:multimedia/libdvdcss
@@ -52,7 +55,8 @@ LIB_DEPENDS+=	libdvdcss.so.2:multimedia/libdvdcss
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build compiler:features gmake iconv \
-		libtool:build localbase pkgconfig python:build
+		libtool:build localbase:ldflags pkgconfig python:build
+MAKE_ENV=	V=1
 
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 PLIST_FILES=	bin/HandBrakeCLI

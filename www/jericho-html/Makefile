@@ -20,8 +20,8 @@ PORTDOCS=	*
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 do-build:
-	(cd ${WRKSRC} && ${RM} -rf classes/* && ${SETENV}         \
-		LANG=en_US.ISO8859-1 ${JAVAC}                     \
+	(cd ${WRKSRC} && ${RM} -r classes/* && ${SETENV}         \
+		LANG=en_US.ISO8859-1 LC_ALL=en_US.ISO8859-1 ${JAVAC} \
 		-classpath ${INTERFACES:S, ,,g}                   \
 		-d classes src/java/net/htmlparser/jericho/*.java \
 		src/java/net/htmlparser/jericho/nodoc/*.java)

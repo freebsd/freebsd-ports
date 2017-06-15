@@ -3,7 +3,7 @@
 
 PORTNAME=	pcre++
 PORTVERSION=	0.9.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/pcre++/
 

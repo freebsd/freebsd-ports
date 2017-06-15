@@ -1,7 +1,6 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	0
 PKGNAMESUFFIX=	-lcl-nogui
 
 COMMENT=	Lazarus components library - No gui backend

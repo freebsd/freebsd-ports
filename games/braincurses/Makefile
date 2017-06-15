@@ -3,6 +3,7 @@
 
 PORTNAME=	braincurses
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -11,7 +12,7 @@ COMMENT=	Clone of the Mastermind game
 
 LICENSE=	GPLv2
 
-USES=		compiler:c11 gmake ncurses
+USES=		compiler:c++11-lib gmake ncurses
 USE_CSTD=	c++11
 
 USE_GITHUB=	yes

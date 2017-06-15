@@ -1,6 +1,6 @@
---- gtk2/pref/Makefile.in.orig	2012-04-01 03:22:10.000000000 +0900
-+++ gtk2/pref/Makefile.in	2012-04-01 03:28:01.000000000 +0900
-@@ -69,9 +69,6 @@
+--- gtk2/pref/Makefile.in.orig	2016-10-14 09:57:35 UTC
++++ gtk2/pref/Makefile.in
+@@ -86,9 +86,6 @@ am__uim_pref_gtk_SOURCES_DIST = gtk.c gt
  @GTK2_4_TRUE@@PREF_TRUE@	uim_pref_gtk-key-util-gtk.$(OBJEXT)
  uim_pref_gtk_OBJECTS = $(am_uim_pref_gtk_OBJECTS)
  @GTK2_4_TRUE@@PREF_TRUE@uim_pref_gtk_DEPENDENCIES =  \
@@ -10,7 +10,7 @@
  @GTK2_4_TRUE@@PREF_TRUE@	$(am__append_1)
  uim_pref_gtk_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_pref_gtk_CFLAGS) \
-@@ -367,9 +364,9 @@
+@@ -392,9 +389,9 @@ helper_defs = -DUIM_DATADIR=\""$(datadir
  @GTK2_4_TRUE@@PREF_TRUE@			../immodule/key-util-gtk.h
  
  @GTK2_4_TRUE@@PREF_TRUE@uim_pref_gtk_LDADD = @GTK2_LIBS@ \

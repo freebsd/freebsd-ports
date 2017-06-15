@@ -40,7 +40,7 @@ post-extract:
 # Clean up turds from building the library.  Some systems just have
 # .o, some also end up with .s, so clean up both.
 post-build:
-	@${RM} -f ${WRKSRC}/bin/*/*.[os]
+	@${RM} ${WRKSRC}/bin/*/*.[os]
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/lmbench

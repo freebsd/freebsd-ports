@@ -66,8 +66,13 @@ CONFIGURE_ARGS+=	--with-mp3-support=no --with-ogg-support=no
 
 CONFIGURE_ARGS+=	--without-pcctsbin --without-pcctsinc \
 			--with-posix-threads=no --with-scglib
-MAKE_ENV=		CCOM=cc LANG=C
+MAKE_ENV=		CCOM=cc
 SCSILIBTARGET=		${ARCH:S/powerpc64/powerpc/}-freebsd-cc
+
+BROKEN_aarch64=		Fails to install: gmake: p: Command not found
+BROKEN_armv6=		Fails to install: gmake: p: Command not found
+BROKEN_mips=		Fails to install: gmake: p: Command not found
+BROKEN_mips64=		Fails to install: gmake: p: Command not found
 
 .include <bsd.port.pre.mk>
 

@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.pdepend.org/get/
 PKGNAMEPREFIX=	pear-${PEAR_CHANNEL}_
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	staticReflection package for PHP
 
 LICENSE=	BSD3CLAUSE

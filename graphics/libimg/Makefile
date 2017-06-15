@@ -36,7 +36,6 @@ EXTRACT_AFTER_ARGS=	-x '*/libz/*' -x zlib \
 		-x '*/compat/*' -x '*/libtiff/*' \
 		-x '*/libjpeg/*' -x '*/libpng/*' -a -d ${WRKDIR}
 MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}"
-MAKE_ENV+=	LANG=
 CONFIGURE_ENV=	WRKDIR="${WRKDIR}"
 
 post-patch:

@@ -12,7 +12,6 @@ COMMENT=	Module for using Textile in Ruby
 
 LICENSE=	MIT
 
-GEM_NAME=	${DISTNAME}
 USE_RUBY=	yes
 USES=		gem
 

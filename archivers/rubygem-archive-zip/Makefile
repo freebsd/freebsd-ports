@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	archive-zip
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 

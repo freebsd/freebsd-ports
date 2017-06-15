@@ -15,6 +15,7 @@ NO_CDROM=	Redistribution on a not-for-profit basis only
 
 USE_TEX=	latex
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 
 LATEX_CMD=	${LOCALBASE}/bin/latex
 
@@ -22,11 +23,11 @@ FOIL_DIR=	share/texmf/tex/latex/${PORTNAME}
 FOIL_FILES=	foil17.clo foil20.clo foil25.clo foil30.clo foils.cls \
 		foils.sty foilshrt.clo fltfonts.def
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 PORTDOCS=	foiltex.dtx foiltex.dvi
 PORTEXAMPLES=	sampfoil.tex
 PLIST_FILES=	${FOIL_FILES:S,^,${FOIL_DIR}/,}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -44,10 +45,14 @@ do-install:
 .for file in ${FOIL_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/${FOIL_DIR}
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for file in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${EXAMPLESDIR}

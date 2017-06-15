@@ -2,7 +2,7 @@
 
 PORTNAME=	libpwquality
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/libpwquality/
 
@@ -24,11 +24,7 @@ OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 PYTHON_USES=	python
-PYTHON_BUILD_DEPENDS=	python:lang/python
 PYTHON_CONFIGURE_ENABLE=	python-bindings
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python setup.py build|${PYTHON_VERSION} setup.py build|g' \
-		${WRKSRC}/python/Makefile.in
+PYTHON_CONFIGURE_ON=	--with-python-binary=${PYTHON_CMD}
 
 .include <bsd.port.mk>

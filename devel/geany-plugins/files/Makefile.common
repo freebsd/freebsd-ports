@@ -17,8 +17,7 @@ USE_GNOME+=	gtk20 intltool
 .if ${PORTNAME} == "geany-plugins-l10n"
 GEANY_PLUGIN=	po
 po_SWITCH=	--enable-nls
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES+=		localbase
 .else
 INSTALL_TARGET=	install-strip
 .endif
@@ -28,10 +27,6 @@ ${GEANY_PLUGIN}_DIR?=		${GEANY_PLUGIN}
 ${GEANY_PLUGIN}_SWITCH?=	--enable-${${GEANY_PLUGIN}_DIR}
 
 CONFIGURE_ARGS+=	${${GEANY_PLUGIN}_SWITCH}
-
-.if defined(VERBOSE_BUILD) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--disable-silent-rules
-.endif
 
 BUILD_WRKSRC=	${WRKSRC}/${${GEANY_PLUGIN}_DIR}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

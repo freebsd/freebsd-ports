@@ -1,4 +1,5 @@
 bin/reflow
 %%SITE_ARCH%%/Text/Reflow.pm
 %%SITE_ARCH%%/auto/Text/Reflow/Reflow.so
+%%PERL5_MAN1%%/reflow.1.gz
 %%PERL5_MAN3%%/Text::Reflow.3.gz

@@ -3,14 +3,14 @@
 
 PORTNAME=	libdnsres
 PORTVERSION=	0.1a
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Provides a non-blocking thread-safe API for resolving DNS names
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:devel/libevent2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:devel/libevent
 
 USES=		libtool
 GNU_CONFIGURE=	yes

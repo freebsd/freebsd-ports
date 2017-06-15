@@ -1,17 +1,18 @@
---- poller-wrapper.py.orig	2014-11-04 16:14:27 UTC
+--- poller-wrapper.py.orig	2016-12-05 00:19:29 UTC
 +++ poller-wrapper.py
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#! %%LOCALBASE%%/bin/python
- """
-  poller-wrapper A small tool which wraps around the Observium poller
-                 and tries to guide the polling process with a more modern
-@@ -38,6 +38,8 @@ except:
-     print "threading, Queue, sys, subprocess, time, os, json"
+@@ -45,6 +45,8 @@ except:
+     print("threading, sys, subprocess, time, os, json")
      sys.exit(2)
  
 +os.environ['PATH'] += ':%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin'
 +
- try:
-     import MySQLdb
- except:
+ # start time
+ s_time = time.time()
+ 
+@@ -608,4 +610,4 @@ db.close()
+ # Return exit code
+ sys.exit(exit_code)
+ 
+-# EOF
+\ No newline at end of file
++# EOF

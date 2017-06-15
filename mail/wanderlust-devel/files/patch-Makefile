@@ -5,7 +5,7 @@
  
  info:
 -	$(EMACS) $(FLAGS) -l WL-MK -f wl-texinfo-format $(INFODIR)
-+	LANG=ja $(EMACS) $(FLAGS) -l WL-MK -f wl-texinfo-format $(INFODIR)
++	LANG=ja LC_ALL=ja $(EMACS) $(FLAGS) -l WL-MK -f wl-texinfo-format $(INFODIR)
  
  install-info:
  	$(EMACS) $(FLAGS) -l WL-MK -f install-wl-info $(INFODIR)

@@ -2,24 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	phpserialize
-PORTVERSION=	0.4
-PORTREVISION=	2
-CATEGORIES=	devel lang www python
-MASTER_SITES=	http://www.hurring.com/scott/code/python/serialize/
+PORTVERSION=	1.3
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PHPSerialize_v${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+
+LICENSE=	BSD3CLAUSE
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
-COMMENT=	Python implementation of PHP's native serialize() and unserialize()
+COMMENT=	Port of the serialize and unserialize functions of PHP to Python
 
-WRKSRC=		${WRKDIR}/v${PORTVERSION}
-
-USES=		python
-USE_PYTHON=	distutils autoplist
-
-post-extract:
-	${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${FILESDIR}/setup.py \
-		> ${WRKSRC}/setup.py
+NO_ARCH=	yes
+USES=		python:2.7+
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

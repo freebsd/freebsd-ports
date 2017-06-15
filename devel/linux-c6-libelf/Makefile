@@ -1,22 +1,23 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
 # $FreeBSD$
 
-PORTNAME=	libelf
+PORTNAME=	elfutils
 PORTVERSION=	0.164
+PORTREVISION=	2
 CATEGORIES=	devel
-LIB_DISTFILES=	elfutils-libelf-${DISTVERSION}-${RPMVERSION}${EXTRACT_SUFX}
-SRC_DISTFILES=	elfutils-${DISTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
+PKGNAMESUFFIX=	-libelf
+LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	ELF file handling library (CentOS ${LINUX_DIST_VER})
 
-DOCSDIR=	${PREFIX}/usr/share/doc/elfutils-libelf-${PORTVERSION}
+DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
+LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
 RPMVERSION=	2.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>

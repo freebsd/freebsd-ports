@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.1.6
-PORTREVISION=	1
+PORTVERSION=	5.1.18
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
 EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	vbox@FreeBSD.org
+MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	General-purpose full virtualizer for x86 hardware
 
 LICENSE=	GPLv2
@@ -38,21 +37,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-java --passive-mesa
 CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-additions-[4,5]* \
-			virtualbox-ose-additions-devel-4* \
-			virtualbox-ose-devel-4* \
-			virtualbox-ose-legacy-4*
-
-.if defined(LITE)
-CONFIGURE_ARGS+=	--build-headless --disable-alsa --disable-dbus \
-			--disable-docs --disable-libvpx --disable-pulse
-CONFLICTS_INSTALL+=	${PORTNAME}-[4,5]*
-PKGNAMESUFFIX=		-lite
-PLIST_SUB=		GUESTADDITIONS="@comment " MANUAL="@comment " \
-			NLS="@comment " QT="@comment " X11="@comment "
-.else
-CONFLICTS_INSTALL+=	${PORTNAME}-lite-[4,5]*
-.endif
+CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
+			virtualbox-ose-devel-[0-9]* \
+			virtualbox-ose-legacy-[0-9]* \
+			virtualbox-ose-lite-[0-9]*
 
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
@@ -67,15 +55,11 @@ VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
 
-OPTIONS_DEFINE=		PYTHON R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE
-OPTIONS_DEFAULT=	UDPTUNNEL VNC
-.if !defined(LITE)
-OPTIONS_DEFINE+=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO
-OPTIONS_DEFINE+=	VPX X11
-OPTIONS_DEFAULT+=	DBUS PYTHON QT5 WEBSERVICE X11
+OPTIONS_DEFINE=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO \
+		PYTHON R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
+OPTIONS_DEFAULT=	DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
 OPTIONS_RADIO=		GUI
 OPTIONS_RADIO_GUI=	QT4 QT5
-.endif
 OPTIONS_SUB=	yes
 
 DEBUG_DESC=	Debug symbols, additional logs and assertions
@@ -90,27 +74,24 @@ VNC_DESC=	Build with VNC support
 VPX_DESC=	Use vpx for video capturing
 WEBSERVICE_DESC=	Build Webservice
 
+ALSA_CONFIGURE_OFF=	--disable-alsa
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+DBUS_CONFIGURE_OFF=	--disable-dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+DEBUG_CONFIGURE_ON=	--build-debug
 MANUAL_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
+MANUAL_CONFIGURE_OFF=	--disable-docs
+PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PYTHON_CONFIGURE_OFF=	--disable-python
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
 VDE_CONFIGURE_ON=	--enable-vde
 VDE_RUN_DEPENDS=	vde_switch:net/vde2
 VNC_CONFIGURE_ON=	--enable-vnc
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
-
-.if !defined(LITE)
-ALSA_CONFIGURE_OFF=	--disable-alsa
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-DBUS_CONFIGURE_OFF=	--disable-dbus
-DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-DEBUG_CONFIGURE_ON=	--build-debug
-MANUAL_CONFIGURE_OFF=	--disable-docs
-PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 VPX_CONFIGURE_OFF=	--disable-libvpx
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 X11_CONFIGURE_OFF=	--build-headless
-.endif
 
 # bmake doesn't know about unsetenv=true
 .if defined(.PARSEDIR)
@@ -120,18 +101,29 @@ ENV=
 .SHELL:		path="/bin/sh" unsetenv=true
 .endif
 
-PLIST_SUB+=	GUEST_VER=${PORTVERSION} \
+PLIST_SUB=	GUEST_VER=${PORTVERSION} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \
 		VBOXGROUP=${VBOXGROUP}
-SUB_LIST+=	VBOXDIR=${VBOX_DIR} \
+SUB_LIST=	VBOXDIR=${VBOX_DIR} \
 		VBOXGROUP=${VBOXGROUP} \
 		VBOXUSER=${VBOXUSER} \
 		VBOXWSUSER=${VBOXWSUSER}
-USE_RC_SUBR+=	vboxheadless vboxwatchdog
+USE_RC_SUBR=	vboxheadless vboxwatchdog
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45]) && !defined(LITE)
+.if ${SLAVE_PORT} == no
+CONFLICTS_INSTALL+=	virtualbox-ose-nox11-[0-9]*
+OPTIONS_DEFAULT+=	PYTHON
+.else
+CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
+.endif
+
+.if ${ARCH} == "amd64"
+_ELF32!=	kldstat -q -m elf32 && echo yes || echo no
+.endif
+
+.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT[45])
 BROKEN=		NLS support requires QT frontend. Run 'make config' again!
 .endif
 
@@ -181,6 +173,9 @@ VBOX_PROGS+=	VirtualBox
 VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1
 .if ${PORT_OPTIONS:MQT4}
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderAdditions.cpp \
+		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_net_UIDownloaderExtensionPack.cpp \
+		${PATCHDIR}/extrapatch-src_VBox_Frontends_VirtualBox_src_settings_global_UIGlobalSettingsNetworkDetailsHost.cpp
 CONFIGURE_ARGS+=	--enable-qt4
 USE_QT4=	corelib gui linguist_build moc_build network opengl
 USE_QT4+=	rcc_build uic_build
@@ -250,9 +245,13 @@ CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 
 pre-everything::
 .if ${ARCH} == "amd64"
-.if !exists(/usr/lib32/libc.so)
+.if ${_ELF32} != yes
+	@${ECHO} 'Requires 32-bit runtime support in kernel.'
+	@${ECHO} 'Rebuild kernel with "options COMPAT_FREEBSD32" and reboot.'
+	@${FALSE}
+.elif !exists(/usr/lib32/libc.so)
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
-	@${ECHO} 'Do: cd /usr/src; make build32 install32; /etc/rc.d/ldconfig restart'
+	@${ECHO} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
 	@${FALSE}
 .endif
 .endif
@@ -288,9 +287,6 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_VALIDATIONKIT =' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
-.if ${PORT_OPTIONS:MQT4}
-	@${ECHO} 'TOOL_QT4_BIN_SUFF = -qt4' >> ${WRKSRC}/LocalConfig.kmk
-.endif
 .if empty(PORT_OPTIONS:MQT5)
 	@${ECHO} 'VBOX_WITH_QTGUI_V5 =' >> ${WRKSRC}/LocalConfig.kmk
 .endif
@@ -390,7 +386,7 @@ do-install:
 	    ${STAGEDIR}${DOCSDIR}
 .endif
 
-.if ${PORT_OPTIONS:MNLS} && !defined(LITE)
+.if ${PORT_OPTIONS:MNLS}
 	cd ${KMK_BUILDDIR}/obj/VirtualBox/qtnls && \
 	    ${COPYTREE_SHARE} "*.qm" ${STAGEDIR}${DATADIR}/nls
 .endif

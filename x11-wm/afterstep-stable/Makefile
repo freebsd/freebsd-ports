@@ -3,7 +3,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	AFTERSTEP/stable
 DISTNAME=	AfterStep-${PORTVERSION}
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 RUN_DEPENDS=	xli:graphics/xli
 
 USES=		execinfo gmake jpeg pkgconfig shebangfix tar:bzip2
+USE_CSTD=	gnu89
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 librsvg2 pango
 USE_XORG+=	ice sm x11 xcomposite xcursor xdamage xext xfixes xi xinerama \
 		xrandr xrender

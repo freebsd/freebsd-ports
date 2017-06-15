@@ -1,0 +1,44 @@
+--- CMakeLists.txt.orig	2015-10-28 18:53:26 UTC
++++ CMakeLists.txt
+@@ -5,13 +5,17 @@ set(PROJECT_VERSION "1.30.0")
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ 
+ find_package(PkgConfig)
+-find_package(Libintl)
+-find_package(Gettext)
+ 
+ # Enable i10n.
+-if(LIBINTL_LIB_FOUND)
++option(WITH_NLS "Enable NLS support" TRUE)
++if(WITH_NLS)
++  find_package(Libintl)
++  find_package(Gettext)
++
++  if(LIBINTL_LIB_FOUND)
+     set(ENABLE_NLS TRUE)
+-endif(LIBINTL_LIB_FOUND)
++  endif(LIBINTL_LIB_FOUND)
++endif(WITH_NLS)
+ 
+ if(NOT WIN32)
+     option(HAVE_ENCHANT "Enable spellchecking" FALSE)
+@@ -23,11 +27,14 @@ if(APPLE)
+ option(ENABLE_OSX_BUNDLE "Package dxirc as an OSX bundle (ignored on other platforms)." OFF)
+ endif(APPLE)
+ 
+-set(HAVE_LUA FALSE)
+-find_package(Lua)
+-if(LUA_FOUND)
+-    set(HAVE_LUA TRUE)
+-endif(LUA_FOUND)
++option(WITH_LUA "Enable LUA support" FALSE)
++if(WITH_LUA)
++  set(HAVE_LUA FALSE)
++  find_package(Lua)
++  if(LUA_FOUND)
++      set(HAVE_LUA TRUE)
++  endif(LUA_FOUND)
++endif(WITH_LUA)
+ 
+ if(APPLE AND ENABLE_OSX_BUNDLE)
+     add_definitions(-DLOCALEDIR="./locale")

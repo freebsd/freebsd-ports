@@ -23,7 +23,7 @@ PLIST_FILES=	bin/renattach \
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${RM} -f ${WRKSRC}/src/getopt*
+	@${RM} ${WRKSRC}/src/getopt*
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.ex \

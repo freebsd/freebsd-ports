@@ -3,7 +3,7 @@
 
 PORTNAME=	sword
 PORTVERSION=	1.7.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v${PORTVERSION:R}/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v${PORTVERSION:R}/
@@ -12,6 +12,8 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Framework for manipulating Bible texts
 
 LICENSE=	GPLv2
+
+BROKEN_FreeBSD_12= does not build on 12.X
 
 BUILD_DEPENDS=	cppunit-config:devel/cppunit
 

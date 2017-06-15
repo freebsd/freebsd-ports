@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	iortcw
-PORTVERSION=	1.42d
+DISTVERSION=	1.5a
+PORTEPOCH=	1
 CATEGORIES=	games
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Game engine for Return to Castle Wolfenstein
 
 LICENSE=	GPLv3
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopus.so:audio/opus \
 		libfreetype.so:print/freetype2
 
-USES=		jpeg openal pkgconfig gmake
+USES=		jpeg pkgconfig gmake
 USE_GL=		gl
 USE_SDL=	sdl2
 
@@ -27,8 +28,9 @@ MAKE_ARGS=	BINDIR="${STAGEDIR}${PREFIX}/bin" \
 
 PLIST_SUB=	ARCH="${ARCH}" WOLFDIR="${WOLFDIR}"
 
-SUB_FILES=	iowolfsp iowolfmp iowolfded
-SUB_LIST=	ARCH="${ARCH}" WOLFDIR="${PREFIX}/${WOLFDIR}"
+SUB_FILES=	iowolfsp iowolfmp iowolfded pkg-message
+SUB_LIST=	ARCH="${ARCH}" WOLFDIR="${PREFIX}/${WOLFDIR}" \
+		DISTVERSION="${DISTVERSION}"
 
 OPTIONS_DEFINE=	MP SP
 OPTIONS_DEFAULT=	MP SP
@@ -43,8 +45,15 @@ SP_INSTALL_TARGET=	sp-install
 MP_ALL_TARGET=	mp
 MP_INSTALL_TARGET=	mp-install
 
+BROKEN_aarch64=		Fails to configure: error: Architecture not supported
+BROKEN_armv6=		Fails to configure: error: Architecture not supported
+
 post-extract:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} '/\.git\/index/d' ${WRKSRC}/SP/Makefile
+	@${REINPLACE_CMD} '/\.git\/index/d' ${WRKSRC}/MP/Makefile
 
 post-install-MP-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/iowolfmp ${STAGEDIR}${PREFIX}/bin/iowolfmp

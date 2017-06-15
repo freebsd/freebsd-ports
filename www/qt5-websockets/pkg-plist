@@ -22,8 +22,8 @@
 %%QT_INCDIR%%/QtWebSockets/qwebsocketprotocol.h
 %%QT_INCDIR%%/QtWebSockets/qwebsockets_global.h
 %%QT_INCDIR%%/QtWebSockets/qwebsocketserver.h
-%%QT_LIBDIR%%/cmake/Qt5WebSockets/Qt5WebSocketsConfig.cmake
-%%QT_LIBDIR%%/cmake/Qt5WebSockets/Qt5WebSocketsConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5WebSockets/Qt5WebSocketsConfig.cmake
+%%QT_CMAKEDIR%%/Qt5WebSockets/Qt5WebSocketsConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5WebSockets.prl
 %%QT_LIBDIR%%/libQt5WebSockets.so
 %%QT_LIBDIR%%/libQt5WebSockets.so.5

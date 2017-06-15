@@ -1,5 +1,5 @@
---- ./cmake/CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
-+++ ./cmake/CMakeLists.txt	2011-10-10 11:10:30.000000000 +0300
+--- cmake/CMakeLists.txt.orig	2015-04-19 21:57:16.000000000 +0000
++++ cmake/CMakeLists.txt	2016-10-04 14:43:18.859197000 +0000
 @@ -37,12 +37,14 @@
  
  endmacro(GET_RELATIVE_SOURCES)
@@ -25,7 +25,7 @@
  					OUTPUT ${dcpp_SOURCE_DIR}/po/${LANG}.po
 @@ -194,6 +197,7 @@
  				WORKING_DIRECTORY ${dcpp_SOURCE_DIR}/po
- 				COMMENT "pot-update [dcpp-${LANG}]: Updated po file."
+ 				COMMENT "pot-update {dcpp-${LANG}}: Updated po file."
  			)
 +			endif (BUILD_LIB)
  
@@ -57,26 +57,26 @@
  
 +		if (BUILD_LIB)
  			add_custom_command(
- 				OUTPUT ${dcpp_BINARY_DIR}/locale/${LANG}/LC_MESSAGES
- 				COMMAND ${CMAKE_COMMAND} -E make_directory
-@@ -346,6 +355,7 @@
+ 				OUTPUT ${dcpp_BINARY_DIR}/${LANG}_libeiskaltdcpp.mo
+ 				COMMAND ${GETTEXT_MSGFMT_EXECUTABLE}
+@@ -339,6 +348,7 @@
  				WORKING_DIRECTORY ${dcpp_SOURCE_DIR}/po
- 				COMMENT "mo-update [dcpp-${LANG}]: Creating mo file."
+ 				COMMENT "Creating mo file ${dcpp_BINARY_DIR}/${LANG}_libeiskaltdcpp.mo"
  			)
 +			endif (BUILD_LIB)
  			if (USE_GTK OR USE_GTK3)
+ 
  			add_custom_command(
- 				OUTPUT ${eiskaltdcpp-gtk_BINARY_DIR}/locale/${LANG}/LC_MESSAGES
-@@ -374,12 +384,14 @@
+@@ -360,12 +370,14 @@
  			)
  			endif (USE_GTK OR USE_GTK3)
  
 +			if (BUILD_LIB)
- 			set(mo-update-SRC ${mo-update-SRC}
- 			    ${dcpp_BINARY_DIR}/locale/${LANG}/LC_MESSAGES/libeiskaltdcpp.mo
+ 			list(APPEND mo-update-SRC
+ 				${dcpp_BINARY_DIR}/${LANG}_libeiskaltdcpp.mo
  			)
- 			set(mo-update-LANG-SRC ${mo-update-LANG-SRC}
- 			    ${dcpp_BINARY_DIR}/locale/${LANG}/LC_MESSAGES/libeiskaltdcpp.mo
+ 			list(APPEND mo-update-LANG-SRC
+ 				${dcpp_BINARY_DIR}/${LANG}_libeiskaltdcpp.mo
  			)
 +			endif (BUILD_LIB)
  

@@ -4,9 +4,9 @@ bin/tidy_changelog
 %%SITE_PERL%%/CPAN/Changes/Release.pm
 %%SITE_PERL%%/CPAN/Changes/Spec.pod
 %%SITE_PERL%%/Test/CPAN/Changes.pm
+%%PERL5_MAN1%%/tidy_changelog.1.gz
 %%PERL5_MAN3%%/CPAN::Changes.3.gz
 %%PERL5_MAN3%%/CPAN::Changes::Group.3.gz
 %%PERL5_MAN3%%/CPAN::Changes::Release.3.gz
 %%PERL5_MAN3%%/CPAN::Changes::Spec.3.gz
 %%PERL5_MAN3%%/Test::CPAN::Changes.3.gz
-%%PERL5_MAN1%%/tidy_changelog.1.gz

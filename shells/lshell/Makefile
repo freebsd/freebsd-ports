@@ -2,17 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	lshell
-PORTVERSION=	0.9.16
-PORTREVISION=	2
+PORTVERSION=	0.9.18.20160916
 CATEGORIES=	shells
-MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}_0.9.18
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dam@my.gd
 COMMENT=	Shell environment to limited sets of commands to users
 
 LICENSE=	GPLv3+
 
+GH_ACCOUNT=	ghantoos
+GH_PROJECT=	lshell
+GH_TAGNAME=	279d7ab
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GH_TAGNAME}
+
+NO_ARCH=	yes
 USES=		python
+USE_GITHUB=	yes
 USE_PYTHON=	distutils
 
 post-patch:

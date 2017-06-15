@@ -1,6 +1,6 @@
---- Imakefile.orig	Sun Mar  9 07:03:27 1997
-+++ Imakefile	Sun Aug 25 18:27:44 2002
-@@ -18,7 +18,6 @@
+--- Imakefile.orig	1997-03-09 14:03:27 UTC
++++ Imakefile
+@@ -18,7 +18,6 @@ ALLSUBDIRS = lib \
            modules/Wharf \
  	  modules/Banner \
  	  modules/Pager \
@@ -8,7 +8,7 @@
  		modules/Animate
  
  SUBDIRS = $(ALLSUBDIRS) $(XPMSUBDIRS) $(SHAPESUBDIRS)
-@@ -28,4 +27,4 @@
+@@ -28,4 +27,4 @@ SUBDIRS = $(ALLSUBDIRS) $(XPMSUBDIRS) $(
  MakeSubdirs($(SUBDIRS))
  
  /* Doesn't work for me! */

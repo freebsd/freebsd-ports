@@ -18,6 +18,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/extension
 
 USES=		php:ext
 ONLY_FOR_ARCHS=	i386 amd64
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

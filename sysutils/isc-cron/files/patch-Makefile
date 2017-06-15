@@ -1,11 +1,20 @@
---- Makefile.orig	2013-10-18 04:21:17.000000000 +1100
-+++ Makefile	2013-10-18 04:21:22.000000000 +1100
-@@ -66,7 +66,7 @@
+--- Makefile.orig	2016-11-23 12:27:46 UTC
++++ Makefile
+@@ -66,7 +66,7 @@ CDEBUG		=	-g
  #<<lint flags of choice?>>
  LINTFLAGS	=	-hbxa $(INCLUDE) $(DEBUGGING)
  #<<want to use a nonstandard CC?>>
 -CC		=	gcc -Wall -Wno-unused -Wno-comment
-+CC		=	cc -Wall -Wno-unused -Wno-comment
++CC		+=	-Wall -Wno-unused -Wno-comment
  #<<manifest defines>>
  DEFS		=
  #(SGI IRIX systems need this)
+@@ -79,7 +79,7 @@ LDFLAGS		=
+ #################################### end configurable stuff
+ 
+ SHELL		=	/bin/sh
+-CFLAGS		=	$(CDEBUG) $(INCLUDE) $(DEFS)
++CFLAGS		+=	$(INCLUDE) $(DEFS)
+ 
+ INFOS		=	README CHANGES FEATURES INSTALL CONVERSION THANKS MAIL
+ MANPAGES	=	bitstring.3 crontab.5 crontab.1 cron.8 putman.sh

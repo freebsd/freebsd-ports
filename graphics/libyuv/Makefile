@@ -15,4 +15,6 @@ MAKE_JOBS_UNSAFE=	yes
 CXXFLAGS+=		-fPIC
 USE_LDCONFIG=		yes
 
+BROKEN_aarch64=		Fails to compile: undefined reference to SplitUVRow_NEON
+
 .include <bsd.port.mk>

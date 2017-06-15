@@ -1,0 +1,48 @@
+--- doc/vice.texi.orig	2016-12-15 21:30:13 UTC
++++ doc/vice.texi
+@@ -1555,8 +1555,8 @@ System files can still be installed in a
+ specify a complete path instead of just a file name.  For example, if
+ you specify @file{./kernal} as the kernal image name, the kernal image
+ will be loaded from the current directory.  This can be done by using
+-command-line options or by modifying resource values (@pxref{Resource
+-files}).
++command-line options or by modifying
++resource values (@pxref{Resource files}).
+ 
+ @menu
+ * ROM files::                   Files containing dumps of the original ROMs.
+@@ -11013,8 +11013,9 @@ character cell, the 8 colour bits are us
+ @subsection Changing screen colors
+ 
+ It is also possible to choose what color set is used for the emulation
+-window.  This is done by specifying a palette file name (@pxref{Palette
+-files}) in the @code{PaletteName} resource.  The menu provides the
++window.  This is done by specifying a palette file
++name (@pxref{Palette files}) in the @code{PaletteName}
++resource.  The menu provides the
+ following values:
+ 
+ @itemize @bullet
+@@ -11442,8 +11443,9 @@ xcbm5x0: (510)
+ @subsection Changing screen colors
+ 
+ It is also possible to choose what color set is used for the emulation
+-window.  This is done by specifying a palette file name (@pxref{Palette
+-files}) in the @code{PaletteName} resource.  The menu provides the
++window.  This is done by specifying a palette file name
++(@pxref{Palette files}) in the @code{PaletteName}
++resource.  The menu provides the
+ following values:
+ 
+ @itemize @bullet
+@@ -27895,8 +27897,8 @@ the VICE FAQ (it is available on the Int
+ VICE home page:
+ @uref{http://vice-emu.sourceforge.net});
+ @item
+-the @code{comp.emulators.cbm} and @code{comp.sys.cbm} FAQs (@pxref{FAQs
+-you should read}).
++the @code{comp.emulators.cbm} and @code{comp.sys.cbm}
++FAQs (@pxref{FAQs you should read}).
+ @end itemize
+ 
+ @item

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	auctex
-PORTVERSION=	11.88
-PORTREVISION=	4
+PORTVERSION=	11.90
 CATEGORIES=	print elisp
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -14,7 +13,7 @@ COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
 LICENSE=	GPLv3
 
 NOT_FOR_ARCHS=	ia64
-USES=		ghostscript
+USES=		ghostscript gmake
 USE_EMACS=	yes
 USE_TEX=	latex texhash
 TEXHASHDIRS=	${TEXMFDIR}

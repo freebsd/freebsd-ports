@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tetzle
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.0
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tetzle/ \
@@ -12,13 +12,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Jigsaw puzzle with tetrominoes
 
-USES=		tar:bzip2 qmake desktop-file-utils
-USE_QT4=	corelib gui moc_build opengl rcc_build xml
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		compiler:c++11-lib desktop-file-utils qmake tar:bzip2
+USE_QT5=	core gui widgets buildtools_build linguisttools_build
+USE_GL=		gl
 INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-post-install:
-	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

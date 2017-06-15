@@ -10,6 +10,72 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20170313:
+AUTHOR: tijl@FreeBSD.org
+
+  HTTPS certificates are now verified when "make makesum" fetches distfiles.
+  If this fails make sure you have a CA certificate bundle installed such as
+  security/ca_root_nss.  If it still fails and there are other HTTPS sites
+  with a valid certificate consider removing the site from MASTER_SITES.
+  If the site cannot be removed you can disable certificate verification by
+  adding the following line to the port Makefile:
+
+  FETCH_ENV=	SSL_NO_VERIFY_PEER=1 SSL_NO_VERIFY_HOSTNAME=1
+
+20170218:
+AUTHOR: kde@FreeBSD.org
+
+  * Qt 4's binaries have been moved to lib/qt4/bin to match what is already done
+    to Qt 5's binaries. Since these binaries are no longer in ${LOCALBASE}/bin,
+    they also do not have the -qt4 suffix in their names any more.
+
+  * Consequently, there are no Qt 4 or Qt 5 binaries in the default $PATH, and
+    misc/qtchooser is now used to select the actual Qt binaries. In other
+    words, calling "qmake" or "moc" now goes through qtchooser, which prefers
+    Qt 5 binaries by default.
+
+    The ports framework handles this automatically. The UPDATING entry covers
+    this in more detail.
+
+  * Qt 5.7.1 requires a C++11-capable compiler to be used. qmake and CMake pass
+    the appropriate flags to the compiler (such as -std=c++11) automatically,
+    but if your port fetches Qt's build flags via pkg-config (which can be the
+    case for autotools-based ports), you might need to take care of this
+    manually by setting USE_CXXSTD in your Makefile:
+
+      USE_CXXSTD=	c++11
+
+20160116:
+AUTHOR: mat@FreeBSD.org
+
+  A new EXTRA_PATCH_TREE has been added.  Points to a directory hierarchy with
+  the same layout as the ports tree, where local patches can be found.  This
+  allows a third party to keep their patches in some other source control
+  system if needed.
+
+  For example, if you have EXTRA_PATCH_TREE=/patches, when building
+  lang/perl5.24, any file named patch-* in /patches/lang/perl5.24/ will be used
+  to patch the Perl distribution.
+
+20160116:
+AUTHOR: mat@FreeBSD.org
+
+  During extraction of the do-patch target into a separate script, the "-d
+  PATCH_WRKSRC" had to be removed from the PATCH_ARGS and PATCH_DIST_ARGS
+  variables.  If using these variables directly, you will need to adapt the
+  Makefile. For example:
+
+    ${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch
+
+    needs to be changed to:
+
+    ${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extra-patch
+
+20161218:
+AUTHOR: tcberner@FreeBSD.org
+
+  QT_PREFIX has been dropped, in favour of using PREFIX directly.
+
 20160911:
 AUTHOR: amdmi3@FreeBSD.org
 

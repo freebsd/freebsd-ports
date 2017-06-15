@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Event-Recurrence
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DateTime>=0.27:devel/p5-DateTime \
-		p5-DateTime-Set>=0.36:devel/p5-DateTime-Set
+		p5-DateTime-Set>=0.3600:devel/p5-DateTime-Set
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS

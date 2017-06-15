@@ -2,26 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-i18n
-PORTVERSION=	0.9.0
-DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-Release
+PORTVERSION=	1.0.0
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Lumina desktop environment localization files
 
+BROKEN=		fails to install, conflicts with its run depends
+DEPRECATED=	Obsolete, i18n files included in x11/lumina
+EXPIRATION_DATE=	2017-04-01
+
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	lumina>=0:x11/lumina
 
-USES=		tar:xz
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	pcbsd
+GH_ACCOUNT=	trueos
+GH_PROJECT=	lumina-i18n
+GH_TAGNAME=	a96928d
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/Lumina-DE/i18n
-	tar xvf ${WRKSRC}/dist/${PORTNAME}.txz -C ${STAGEDIR}${PREFIX}/share/Lumina-DE/i18n
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/lumina-desktop/i18n
+	${TAR} xvf ${WRKSRC}/dist/${PORTNAME}.txz -C ${STAGEDIR}${PREFIX}/share/lumina-desktop/i18n
 
 .include <bsd.port.mk>

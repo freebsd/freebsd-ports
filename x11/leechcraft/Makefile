@@ -3,7 +3,7 @@
 
 PORTNAME=	leechcraft
 PORTVERSION=	0.6.70
-PORTREVISION=	10
+PORTREVISION=	19
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.leechcraft.org/LeechCraft/0.6.70/
 
@@ -287,7 +287,7 @@ QROSP_LIB_DEPENDS=	libqrosscore.so:devel/qross
 ROSENTHAL_DESC=		Spellchecking support
 ROSENTHAL_CMAKE_ON=	-DENABLE_ROSENTHAL:BOOL=true
 ROSENTHAL_CMAKE_OFF=	-DENABLE_ROSENTHAL:BOOL=false
-ROSENTHAL_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
+ROSENTHAL_LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
 
 SB2_DESC=		Sidebar for LeechCraft with combined launcher and tab switcher
 SB2_CMAKE_ON=		-DENABLE_SB2:BOOL=true
@@ -404,12 +404,6 @@ BROKEN=		Lemon has not supported yet because depended by libnl
 
 .if ${PORT_OPTIONS:MOTLOZHU}
 BROKEN=		Otlozhu has not supported yet (not ported liblaretz)
-.endif
-
-.if ${OSVERSION} < 1000000
-PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
-PORT_OPTIONS:=	${PORT_OPTIONS:NBITTORRENT}
-USE_GCC=	yes
 .endif
 
 post-install:

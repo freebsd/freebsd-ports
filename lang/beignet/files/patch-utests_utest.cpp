@@ -1,6 +1,6 @@
---- utests/utest.cpp.orig	2015-08-26 12:00:07.664830000 +0200
-+++ utests/utest.cpp	2015-08-26 12:00:37.039946000 +0200
-@@ -44,6 +44,7 @@
+--- utests/utest.cpp.orig	2017-01-20 10:40:51 UTC
++++ utests/utest.cpp
+@@ -52,6 +52,7 @@ vector<int> v;
  RStatistics UTest::retStatistics;
  
  void releaseUTestList(void) { delete UTest::utestList; }
@@ -8,7 +8,7 @@
  void runSummaryAtExit(void) {
    // If case crashes, count it as fail, and accumulate finishrun
    if(UTest::retStatistics.finishrun != UTest::utestList->size()) {
-@@ -113,7 +114,6 @@
+@@ -146,7 +147,6 @@ UTest::UTest(Function fn, const char *na
      utestList = new vector<UTest>;
  
      catch_signal();

@@ -4,21 +4,20 @@
 PORTNAME=	ossec-hids
 PORTVERSION=	2.8.3
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	security
-USE_GITHUB=	yes
-GH_ACCOUNT=	ossec
 PKGNAMESUFFIX=	-server
 
 MAINTAINER=	brd@FreeBSD.org
 COMMENT?=	Security tool to monitor and check logs and intrusions
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ossec
 USE_RC_SUBR=	ossec-hids
 
 CFLAGS+=	-ferror-limit=0
 
-USES=		readline
-USE_OPENSSL=	yes
+USES=		readline ssl
 
 .if defined(MAINTAINER_MODE)
 UID_FILES+=	../../UIDs
@@ -64,8 +63,9 @@ PLIST_SUB=	PORTNAME=${PORTNAME}
 DOCSFILES=	BUGS CONFIG CONTRIBUTORS INSTALL LICENSE
 PORTDOCS=	${DOCSFILES}
 
-.include <bsd.port.pre.mk>
+BROKEN_aarch64=		Fails to compile: error: use of undeclared identifier __LDPGSZ
 
+.include <bsd.port.pre.mk>
 
 STRIP_FILES=	ossec-luac agent_control ossec-lua ossec-dbd ossec-regex ossec-monitord ossec-makelists verify-agent-conf ossec-analysisd ossec-agentlessd syscheck_control ossec-execd manage_agents ossec-csyslogd ossec-syscheckd ossec-logtest ossec-authd ossec-logcollector list_agents ossec-maild clear_stats ossec-remoted ossec-reportd rootcheck_control syscheck_update
 .if defined(CLIENT_ONLY)
@@ -88,6 +88,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-DLUA_USE_LINUX|& ${CPPFLAGS}|' \
 		-e 's|-lreadline|& ${LDFLAGS}|' \
 		${WRKSRC}/src/external/lua-5.2.3/src/Makefile
+	@${REINPLACE_CMD} -e 's|OPENSSLCMD=|OPENSSLCMD=-L${OPENSSLLIB} |' \
+		${WRKSRC}/src/Makeall
 
 do-build:
 .if defined(WITH_DB)

@@ -183,4 +183,9 @@ man/man1/xxd.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimdiff.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/vimtutor.1.gz
 %%NON_LITE%%%%NLS%%man/ru.UTF-8/man1/xxd.1.gz
+%%DESKTOP%%%%NON_LITE%%share/applications/gvim.desktop
+%%DESKTOP%%%%NON_LITE%%share/applications/vim.desktop
+%%DESKTOP%%%%NON_LITE%%share/icons/hicolor/48x48/apps/gvim.png
+%%DESKTOP%%%%NON_LITE%%share/icons/locolor/16x16/apps/gvim.png
+%%DESKTOP%%%%NON_LITE%%share/icons/locolor/32x32/apps/gvim.png
 %%NO_NLS%%@dir %%DATADIR%%/%%VIM_VER%%/lang

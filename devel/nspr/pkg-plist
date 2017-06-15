@@ -80,14 +80,11 @@ include/nspr/prtrace.h
 include/nspr/prtypes.h
 include/nspr/prvrsion.h
 include/nspr/prwin16.h
-lib/libnspr4.a
-lib/libnspr4.so
-lib/libnspr4.so.1
-lib/libplc4.a
-lib/libplc4.so
-lib/libplc4.so.1
-lib/libplds4.a
-lib/libplds4.so
-lib/libplds4.so.1
+@(,,444) lib/libnspr4.a
+@(,,444) lib/libnspr4.so
+@(,,444) lib/libplc4.a
+@(,,444) lib/libplc4.so
+@(,,444) lib/libplds4.a
+@(,,444) lib/libplds4.so
 libdata/pkgconfig/nspr.pc
 share/aclocal/nspr.m4

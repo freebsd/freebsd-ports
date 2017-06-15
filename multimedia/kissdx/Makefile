@@ -3,7 +3,7 @@
 
 PORTNAME=	kissdx
 PORTVERSION=	0.13.10a
-PORTREVISION=	13
+PORTREVISION=	15
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://paragi.dk/kiss/
 
@@ -43,7 +43,7 @@ post-patch:
 		 /^all:/s| $$(OBJS)||' ${WRKSRC}/Makefile
 
 pre-build:
-	@${RM} -f ${WRKSRC}/kissdx.o
+	@${RM} ${WRKSRC}/kissdx.o
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kissdx ${STAGEDIR}${PREFIX}/sbin

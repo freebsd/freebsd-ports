@@ -3,7 +3,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	5.0.1
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
-		libevent.so:devel/libevent2
+		libevent.so:devel/libevent
 BUILD_DEPENDS=	rrdtool12>=1.2:databases/rrdtool12 \
 		dot:graphics/graphviz \
 		geoiplookup:net/GeoIP
@@ -23,9 +23,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 DBDIR?=		/var/db
 
-USES=		autoreconf:build cpe gmake libtool python
+USES=		autoreconf:build cpe gmake libtool python ssl
 USE_GNOME=	libxml2
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	DBDIR=${DBDIR} \
@@ -34,7 +33,6 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-ossl-root=${OPENSSLBASE} \
 		--with-gdbm-root=${LOCALBASE} \
 		--with-zlib-root=/usr
-INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -73,6 +71,6 @@ pre-install:
 	@cd ${WRKSRC} && ${MAKE_CMD} dnetter
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ntop/plugins/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so ${STAGEDIR}${PREFIX}/lib/ntop/plugins/*.so
 
 .include <bsd.port.mk>

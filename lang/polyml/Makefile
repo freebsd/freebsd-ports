@@ -3,8 +3,8 @@
 
 PORTNAME=	polyml
 PORTVERSION=	5.6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
-DISTNAME=	${PORTNAME}.${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	beyert@cs.ucr.edu
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libffi.so:devel/libffi
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GITHUB=	yes
-GH_TUPLE=	polyml:polyml:v5.6
 
 USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes

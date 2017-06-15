@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	sqtop
-DISTVERSION=	2013-12-17
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2015-02-08
 CATEGORIES=	net
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	Console-based display of Squid proxy connections
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable (google code has gone away)
-
-USES=	tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	paleg
 
 PLIST_FILES=	bin/sqtop \
 		man/man1/sqtop.1.gz

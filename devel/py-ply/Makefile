@@ -2,27 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	ply
-PORTVERSION=	3.9
+PORTVERSION=	3.10
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.dabeaz.com/ply/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	dbaio@bsd.com.br
 COMMENT=	Python Lex-Yacc
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist concurrent distutils
+NO_ARCH=	yes
 
 PORTDOCS=	ply.html internal.html
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/ply.html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/internal.html ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/example/ ${STAGEDIR}${EXAMPLESDIR}
 

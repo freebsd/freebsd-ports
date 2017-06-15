@@ -3,6 +3,7 @@
 
 PORTNAME=	libboard
 DISTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -10,7 +11,6 @@ COMMENT=	Vector graphics C++ library
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	doxygen:devel/doxygen
 LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 
 HAS_CONFIGURE=	yes
@@ -26,7 +26,8 @@ GH_TAGNAME=	5b38274
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOXYGEN EXAMPLES
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 .include <bsd.port.pre.mk>
 
@@ -41,19 +42,19 @@ pre-configure:
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/libboard.so ${STAGEDIR}${PREFIX}/lib/libboard.so.0
 	${LN} -sf libboard.so.0 ${STAGEDIR}${PREFIX}/lib/libboard.so
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
-	${RM} -rf ${STAGEDIR}${DOCSDIR}/.svn
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+	${RM} -r ${STAGEDIR}${DOCSDIR}/.svn
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/bin/ && ${COPYTREE_BIN} . ${STAGEDIR}${EXAMPLESDIR}/
-	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}/.svn
-.endif
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/.svn
 
-regression-test:
+do-test:
 	(cd ${WRKDIR} && ${WRKSRC}/bin/arithmetic bec)
 .for ex in 1 2 3
 	(cd ${WRKDIR} && ${WRKSRC}/bin/example${ex})

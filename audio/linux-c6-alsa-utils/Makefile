@@ -3,20 +3,21 @@
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Advanced Linux Sound Architecture libraries (Linux CentOS ${LINUX_DIST_VER})
+COMMENT=	Advanced Linux Sound Architecture utilities (Linux CentOS ${LINUX_DIST_VER})
 
 LICENSE=	GPLv3
 
-CONFLICTS=	linux-alsa-lib-[0-9]* linux-f10-alsa-lib-[0-9]*
-
-USE_LINUX=	alsalib alsa-plugins-oss
-
-USES=		linux:c6
-USE_LINUX_RPM=	nolib
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	8.el6
+USES=		linux:c6
+USE_LINUX=	alsalib alsa-plugins-oss
+USE_LINUX_RPM=	nolib
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>

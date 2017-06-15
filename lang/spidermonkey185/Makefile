@@ -3,16 +3,13 @@
 
 PORTNAME=		spidermonkey185
 PORTVERSION=		1.8.5
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		lang
 MASTER_SITES=		MOZILLA/js
 DISTNAME=		js185-1.0.0
 
 MAINTAINER=		koobs@FreeBSD.org
 COMMENT=		Standalone JavaScript (1.8.5) interpreter from Mozilla
-
-NOT_FOR_ARCHS=		powerpc powerpc64
-NOT_FOR_ARCHS_REASON=	PowerPC is not supported; use lang/spidermonkey170
 
 BUILD_DEPENDS=		zip:archivers/zip \
 			autoconf-2.13:devel/autoconf213
@@ -27,6 +24,14 @@ USE_PERL5=		build
 
 WRKSRC=			${WRKDIR}/js-${PORTVERSION}/js/src
 
+BROKEN_aarch64=		Does not compile: error: cacheFlush support is missing on this platform
+BROKEN_armv6=		Does not configure: error: compiler does not follow the C++ specification for temporary object destruction order
+BROKEN_mips64=		Does not compile: error: const union jsval_layout has no member named word
+BROKEN_sparc64=		Does not build: fails to link
+
+NOT_FOR_ARCHS=		powerpc powerpc64
+NOT_FOR_ARCHS_REASON=	PowerPC is not supported; use lang/spidermonkey170
+
 CONFIGURE_ARGS=		--with-pthreads \
 			--with-system-nspr
 
@@ -40,7 +45,6 @@ OPTIONS_DEFINE=		DEBUG GCZEAL JEMALLOC METHODJIT OPTIMIZE READLINE \
 
 OPTIONS_DEFAULT=	METHODJIT OPTIMIZE READLINE THREADSAFE TRACEJIT
 
-DEBUG_DESC=		Enable Debug build
 GCZEAL_DESC=		Enable Zealous garbage collecting
 JEMALLOC_DESC=		Use jemalloc as memory allocator
 METHODJIT_DESC=		Enable method JIT support
@@ -66,10 +70,6 @@ UTF8_CFLAGS=			-DJS_C_STRINGS_ARE_UTF8
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=			Does not build on sparc64: fails to link
 .endif
 
 .if ${ARCH} == "amd64"

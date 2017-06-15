@@ -13,14 +13,6 @@ share/locale/pt/LC_MESSAGES/toppler.mo
 share/locale/ro/LC_MESSAGES/toppler.mo
 share/locale/sv/LC_MESSAGES/toppler.mo
 share/pixmaps/toppler.xpm
-%%DATADIR%%/abc.ttm
-%%DATADIR%%/ball1.ttm
-%%DATADIR%%/ball2.ttm
-%%DATADIR%%/ball3.ttm
-%%DATADIR%%/david1.ttm
-%%DATADIR%%/m1.ttm
-%%DATADIR%%/m2.ttm
-%%DATADIR%%/pasi2.ttm
 %%DATADIR%%/toppler.dat
 %%DATADIR%%/toppler.ogg
 @sample(,games,664) /var/games/toppler/toppler.hsc.sample

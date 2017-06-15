@@ -1,8 +1,8 @@
 bin/gpa
 man/man1/gpa.1.gz
 share/applications/gpa.desktop
-share/gpa/gpa-logo.ppm
-share/gpa/gpa.png
+%%DATADIR%%/gpa-logo.ppm
+%%DATADIR%%/gpa.png
 %%NLS%%share/locale/ar/LC_MESSAGES/gpa.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gpa.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gpa.mo
@@ -15,5 +15,6 @@ share/gpa/gpa.png
 %%NLS%%share/locale/ru/LC_MESSAGES/gpa.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gpa.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gpa.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gpa.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gpa.mo
 share/pixmaps/gpa.png

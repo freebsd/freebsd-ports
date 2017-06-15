@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-profitbricks
-PORTVERSION=	0.0.5
+PORTVERSION=	3.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

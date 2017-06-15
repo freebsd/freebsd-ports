@@ -94,7 +94,8 @@ fbsd_vmcore_set_supply_pcb (struct gdbarch *gdbarch,
 			    void (*supply_pcb) (struct regcache *,
 						CORE_ADDR))
 {
-  struct fbsd_vmcore_ops *ops = gdbarch_data (gdbarch, fbsd_vmcore_data);
+  struct fbsd_vmcore_ops *ops = (struct fbsd_vmcore_ops *)
+    gdbarch_data (gdbarch, fbsd_vmcore_data);
   ops->supply_pcb = supply_pcb;
 }
 
@@ -106,7 +107,8 @@ void
 fbsd_vmcore_set_cpu_pcb_addr (struct gdbarch *gdbarch,
 			      CORE_ADDR (*cpu_pcb_addr) (u_int))
 {
-  struct fbsd_vmcore_ops *ops = gdbarch_data (gdbarch, fbsd_vmcore_data);
+  struct fbsd_vmcore_ops *ops = (struct fbsd_vmcore_ops *)
+    gdbarch_data (gdbarch, fbsd_vmcore_data);
   ops->cpu_pcb_addr = cpu_pcb_addr;
 }
 
@@ -198,8 +200,6 @@ fbsd_kernel_osabi_sniffer(bfd *abfd)
 	return (GDB_OSABI_UNKNOWN);
 }
 
-#define	INKERNEL(x)	((x) >= kernstart)
-
 #ifdef HAVE_KVM_OPEN2
 static int
 kgdb_resolve_symbol(const char *name, kvaddr_t *kva)
@@ -217,8 +217,8 @@ kgdb_resolve_symbol(const char *name, kvaddr_t *kva)
 static void
 kgdb_trgt_open(const char *arg, int from_tty)
 {
-	struct fbsd_vmcore_ops *ops = gdbarch_data (target_gdbarch(),
-	    fbsd_vmcore_data);
+	struct fbsd_vmcore_ops *ops = (struct fbsd_vmcore_ops *)
+	    gdbarch_data (target_gdbarch(), fbsd_vmcore_data);
 	struct inferior *inf;
 	struct cleanup *old_chain;
 	struct thread_info *ti;
@@ -421,8 +421,8 @@ static void
 kgdb_trgt_fetch_registers(struct target_ops *tops,
 			  struct regcache *regcache, int regnum)
 {
-	struct fbsd_vmcore_ops *ops = gdbarch_data (target_gdbarch(),
-	    fbsd_vmcore_data);
+	struct fbsd_vmcore_ops *ops = (struct fbsd_vmcore_ops *)
+	    gdbarch_data (target_gdbarch(), fbsd_vmcore_data);
 	struct kthr *kt;
 
 	if (ops->supply_pcb == NULL)
@@ -465,8 +465,16 @@ kgdb_trgt_xfer_partial(struct target_ops *ops, enum target_object object,
 }
 
 static int
-kgdb_trgt_ignore_breakpoints(struct target_ops *ops, struct gdbarch *gdbarch,
+kgdb_trgt_insert_breakpoint(struct target_ops *ops, struct gdbarch *gdbarch,
     struct bp_target_info *bp_tgt)
+{
+
+	return 0;
+}
+
+static int
+kgdb_trgt_remove_breakpoint(struct target_ops *ops, struct gdbarch *gdbarch,
+    struct bp_target_info *bp_tgt, enum remove_bp_reason reason)
 {
 
 	return 0;
@@ -499,7 +507,7 @@ kgdb_set_proc_cmd (char *arg, int from_tty)
 
 	addr = parse_and_eval_address (arg);
 
-	if (!INKERNEL (addr)) {
+	if (addr < kernstart) {
 		thr = kgdb_thr_lookup_pid((int)addr);
 		if (thr == NULL)
 			error ("invalid pid");
@@ -522,7 +530,7 @@ kgdb_set_tid_cmd (char *arg, int from_tty)
 
 	addr = (CORE_ADDR) parse_and_eval_address (arg);
 
-	if (kvm != NULL && INKERNEL (addr)) {
+	if (kvm != NULL && addr >= kernstart) {
 		thr = kgdb_thr_lookup_taddr(addr);
 		if (thr == NULL)
 			error("invalid thread address");
@@ -564,8 +572,8 @@ _initialize_kgdb_target(void)
 	kgdb_trgt_ops.to_pid_to_str = kgdb_trgt_pid_to_str;
 	kgdb_trgt_ops.to_thread_alive = kgdb_trgt_thread_alive;
 	kgdb_trgt_ops.to_xfer_partial = kgdb_trgt_xfer_partial;
-	kgdb_trgt_ops.to_insert_breakpoint = kgdb_trgt_ignore_breakpoints;
-	kgdb_trgt_ops.to_remove_breakpoint = kgdb_trgt_ignore_breakpoints;
+	kgdb_trgt_ops.to_insert_breakpoint = kgdb_trgt_insert_breakpoint;
+	kgdb_trgt_ops.to_remove_breakpoint = kgdb_trgt_remove_breakpoint;
 
 	add_target(&kgdb_trgt_ops);
 

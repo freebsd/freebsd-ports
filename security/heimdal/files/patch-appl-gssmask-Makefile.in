@@ -1,0 +1,35 @@
+--- appl/gssmask/Makefile.in.orig	2017-01-03 19:44:14 UTC
++++ appl/gssmask/Makefile.in
+@@ -151,9 +151,15 @@ CONFIG_CLEAN_VPATH_FILES =
+ PROGRAMS = $(noinst_PROGRAMS)
+ am_gssmaestro_OBJECTS = gssmaestro.$(OBJEXT) common.$(OBJEXT)
+ gssmaestro_OBJECTS = $(am_gssmaestro_OBJECTS)
+-gssmaestro_LDADD = $(LDADD)
++gssmaestro_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
++	$(top_builddir)/lib/asn1/libasn1.la
+ am__DEPENDENCIES_1 =
+ gssmaestro_DEPENDENCIES = $(top_builddir)/lib/gssapi/libgssapi.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
++	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/krb5/libkrb5.la
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -161,8 +167,14 @@ am__v_lt_0 = --silent
+ am__v_lt_1 = 
+ am_gssmask_OBJECTS = gssmask.$(OBJEXT) common.$(OBJEXT)
+ gssmask_OBJECTS = $(am_gssmask_OBJECTS)
+-gssmask_LDADD = $(LDADD)
++gssmask_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
++	$(top_builddir)/lib/asn1/libasn1.la
+ gssmask_DEPENDENCIES = $(top_builddir)/lib/gssapi/libgssapi.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
++	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/krb5/libkrb5.la
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)

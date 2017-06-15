@@ -1,0 +1,46 @@
+From 7dbfb0aed508451e8237c34472815e44925a545c Mon Sep 17 00:00:00 2001
+From: Mikhail Titov <mlt@gmx.us>
+Date: Thu, 30 Apr 2015 17:51:20 +0200
+Subject: Fix the build with C++11 compilers, such as MS Visual C++ 2013.
+
+Implicit conversions from streams to bool are no longer allowed.
+---
+ libxml++/io/istreamparserinputbuffer.cc | 2 +-
+ libxml++/io/ostreamoutputbuffer.cc      | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/libxml++/io/istreamparserinputbuffer.cc b/libxml++/io/istreamparserinputbuffer.cc
+index b1d6e5b..7a7f283 100644
+--- libxml++/io/istreamparserinputbuffer.cc
++++ libxml++/io/istreamparserinputbuffer.cc
+@@ -39,6 +39,6 @@ namespace xmlpp
+ 
+   bool IStreamParserInputBuffer::do_close()
+   {
+-    return input_;
++    return input_.good();
+   }
+ }
+diff --git a/libxml++/io/ostreamoutputbuffer.cc b/libxml++/io/ostreamoutputbuffer.cc
+index 0a3e6db..b23a8b6 100644
+--- libxml++/io/ostreamoutputbuffer.cc
++++ libxml++/io/ostreamoutputbuffer.cc
+@@ -29,13 +29,13 @@ namespace xmlpp
+     // here we rely on the ostream implicit conversion to boolean, to know if the stream can be used and/or if the write succeded.
+     if(output_)
+       output_.write(buffer, len);
+-    return output_;
++    return output_.good();
+   }
+ 
+   bool OStreamOutputBuffer::do_close()
+   {
+     if(output_)
+         output_.flush();
+-    return output_;
++    return output_.good();
+   }
+ }
+-- 
+cgit v0.12
+

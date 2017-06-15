@@ -13,4 +13,4 @@ This package is much faster than bundled into PHP BCMath and consists almost
 all functions, which are implemented in PHP GMP extension, but it needn't any
 external libraries.
 
-WWW: http://pecl.php.net/package/big_int/
+WWW: https://pecl.php.net/package/big_int

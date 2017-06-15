@@ -3,7 +3,7 @@
 
 PORTNAME=	rejik
 PORTVERSION=	3.2.11
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/
 DISTNAME=	redirector-${PORTVERSION}_squid_3.4
@@ -22,5 +22,7 @@ MAKE_ARGS=	CC=${CC} INSTALL_PATH=${PREFIX}/rejik3
 
 USERS=		squid
 GROUPS=		squid
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

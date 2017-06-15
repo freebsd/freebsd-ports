@@ -6,4 +6,4 @@ internet, although your IP might be changing. It checks periodically whether
 the IP address stored by the DNS server is the real current IP address of the
 machine that is running it.
 
-WWW: http://sourceforge.net/projects/inadyn-mt/
+WWW: https://sourceforge.net/projects/inadyn-mt/

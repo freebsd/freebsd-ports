@@ -16,6 +16,6 @@ COMMENT=	PHP extension for AMQP API
 LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c-devel
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 .include <bsd.port.mk>

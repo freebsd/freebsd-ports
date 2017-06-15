@@ -4,4 +4,4 @@ prefered ciphers, which SSL protocols are supported and returns the
 SSL certificate. Client certificates and private key can be configured
 and output is to text / XML.
 
-WWW: http://sourceforge.net/projects/sslscan/
+WWW: https://sourceforge.net/projects/sslscan/

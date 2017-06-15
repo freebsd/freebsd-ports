@@ -15,7 +15,7 @@ USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_SSL)
-USE_OPENSSL=	YES
+USES+=		ssl
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 CPPFLAGS+=	-I${OPENSSLBASE}/include
 LDFLAGS+=	-L${OPENSSLBASE}/lib -lssl -lcrypto

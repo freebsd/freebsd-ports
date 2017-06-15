@@ -1,10 +1,10 @@
---- mix.exs.orig	2015-07-07 20:48:03 UTC
+--- mix.exs.orig	2017-02-08 09:05:33 UTC
 +++ mix.exs
-@@ -7,7 +7,6 @@ defmodule EXJSX.Mixfile do
-       elixir: ">= 0.13.3",
-       description: description,
-       package: package,
--      deps: deps
+@@ -8,7 +8,6 @@ defmodule EXJSX.Mixfile do
+       consolidate_protocols: Mix.env != :test,
+       description: description(),
+       package: package(),
+-      deps: deps()
      ]
    end
  

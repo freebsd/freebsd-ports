@@ -2,4 +2,4 @@ Obtains geographical information based on IP number, domain name,
 or AS number. Makes use of CAIDA Net_Geo lookup, HostIP or
 localizer extension.
 
-WWW: http://pear.php.net/package/Net_Geo/
+WWW: https://pear.php.net/package/Net_Geo

@@ -1,0 +1,8 @@
+Implementations of functions which have been introduced in R since
+version 3.0.0. The backports are conditionally exported which results
+in R resolving the function names to the version shipped with R (if
+available) and uses the implemented backports as fallback. This way
+package developers can make use of the new functions without worrying
+about the minimum required R version.
+
+WWW: https://cran.r-project.org/web/packages/backports/

@@ -6,7 +6,7 @@ PORTVERSION=	2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.irendi.com/~msharpe/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Random .signature generator with header file included
 
 MAKEFILE=	makefile

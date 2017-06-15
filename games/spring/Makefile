@@ -3,6 +3,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	98.0
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION} \
 		http://springrts.com/dl/
@@ -79,10 +80,6 @@ CXXFLAGS+=	-Wno-deprecated		# Too much noise
 PR_DOWNLOADER_LIB_DEPENDS=libcurl.so:ftp/curl
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BROKEN=		does not build (lack of proper c++11 support)
-.endif
 
 .if defined(WITH_SYNC_DEBUG)
 CFLAGS=		# empty

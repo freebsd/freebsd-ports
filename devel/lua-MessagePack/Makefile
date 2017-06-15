@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	MessagePack
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	devel
 PKGNAMEPREFIX=  ${LUA_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ COMMENT=	Efficient binary serialization format
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		lua gmake
+USES=		lua
 NO_BUILD=	yes
 NO_ARCH=	yes
 

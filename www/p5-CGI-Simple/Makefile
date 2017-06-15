@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Simple totally OO CGI interface that is CGI.pm compliant
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 TEST_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy
 
 USES=		perl5

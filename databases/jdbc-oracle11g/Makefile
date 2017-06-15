@@ -2,6 +2,7 @@
 
 PORTNAME=	oracle11g
 PORTVERSION=	11.2.0.4
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	# http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html
 PKGNAMEPREFIX=	jdbc-

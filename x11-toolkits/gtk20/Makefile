@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.24.29
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	2
@@ -22,10 +22,10 @@ PORTSCOUT=	limitw:0,even
 .if !defined(REFERENCE_PORT)
 
 RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
-		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
-		python:lang/python
+		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
-USES+=		gettext gmake libtool pathfix perl5 pkgconfig
+USES+=		gettext gmake libtool pathfix perl5 pkgconfig python:run shebangfix
+SHEBANG_FILES=	gtk/gtk-builder-convert
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk pango gdkpixbuf2 introspection:build \
 		gtk-update-icon-cache

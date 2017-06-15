@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediainfo
-PORTVERSION=	0.7.85
+PORTVERSION=	0.7.94
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mediaarea.net/download/binary/${PORTNAME}/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
 
 BROKEN_powerpc64=	does not build
 
-CONFIGURE_ARGS=	--enable-shared
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig tar:xz

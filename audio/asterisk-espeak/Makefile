@@ -15,11 +15,10 @@ LIB_DEPENDS=	libespeak.so:audio/espeak \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zaf
-GH_PROJECT=	Asterisk-Espeak
+GH_PROJECT=	Asterisk-eSpeak
 
 USES=		compiler gmake localbase
 INSTALL_TARGET=	install samples
-WRKSRC=		${WRKDIR}/Asterisk-eSpeak-${PORTVERSION}
 
 OPTIONS_SINGLE=		ASTVER
 OPTIONS_SINGLE_ASTVER=	ASTERISK11 ASTERISK13

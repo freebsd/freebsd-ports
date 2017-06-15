@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	2.99001
+PORTVERSION=	2.99006
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,11 +27,4 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502000
-BUILD_DEPENDS+=	p5-IO-Socket-IP>=0:net/p5-IO-Socket-IP
-RUN_DEPENDS+=	p5-IO-Socket-IP>=0:net/p5-IO-Socket-IP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

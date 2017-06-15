@@ -13,7 +13,7 @@ MASTER_SITES=	http://home.comcast.net/~SCSIguy/SCSI_FAQ/RMiller_Tools/ftp/dt/ \
 #DISTNAME=	${PORTNAME}-source-v${PORTVERSION
 DISTNAME=	${PORTNAME}-source
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data Test Program - disk/tape error diagnostic tool
 
 LICENSE=	ISCL

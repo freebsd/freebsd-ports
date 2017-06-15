@@ -3,20 +3,22 @@
 
 PORTNAME=	gini
 PORTVERSION=	0.5.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net multimedia
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight media streaming server
 
-LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2 gmake
-USE_GNOME=	glib12
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg
+
+USES=		gmake localbase tar:bzip2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_GNOME=	glib12
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
@@ -27,7 +29,9 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/gini.sh.sample ${STAGEDIR}${PREFIX}/etc/rc.d
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

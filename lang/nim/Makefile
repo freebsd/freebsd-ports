@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nim
-PORTVERSION=	0.11.2
+PORTVERSION=	0.16.0
 CATEGORIES=	lang
 MASTER_SITES=	http://nim-lang.org/download/
 
@@ -11,12 +11,15 @@ COMMENT=	Nim programming language
 
 LICENSE=	MIT
 
+BROKEN_aarch64=		Does not compile: crt1.c: undefined reference to main
+BROKEN_mips64=		Does not build: build.sh: clang: not found
 BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not build: build.sh: clang: not found
 
 OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		compiler zip
+USES=		compiler tar:xz
 
 .include <bsd.port.pre.mk>
 

@@ -1,0 +1,11 @@
+--- configure.orig	2014-03-14 15:01:05 UTC
++++ configure
+@@ -3427,7 +3427,7 @@ fi
+ 
+ #if ocamlfind is used it gives the install path for ocaml library
+ if test "$USEOCAMLFIND" = yes; then
+-   OCAMLINSTALLLIB=$(ocamlfind printconf destdir)
++   OCAMLINSTALLLIB=$(ocamlfind printconf destdir | sed 's/:.*//')
+ else
+    OCAMLINSTALLLIB=$OCAMLLIB
+ fi

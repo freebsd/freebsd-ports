@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby2ruby
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Pure ruby code generator easily from ParseTree's Sexps # '
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-ruby_parser>=3.1:devel/rubygem-ruby_parser \
-		rubygem-sexp_processor>=4.0:devel/rubygem-sexp_processor
+		rubygem-sexp_processor>=4.6:devel/rubygem-sexp_processor
 
 NO_ARCH=	yes
 USE_RUBY=	yes

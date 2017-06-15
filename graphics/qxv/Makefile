@@ -3,7 +3,7 @@
 
 PORTNAME=	qxv
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	graphics
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/422/
 

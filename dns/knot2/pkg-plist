@@ -1,5 +1,6 @@
 bin/kdig
 bin/khost
+bin/kjournalprint
 bin/knsec3hash
 bin/knsupdate
 bin/kzonecheck
@@ -85,6 +86,7 @@ libdata/pkgconfig/libzscanner.pc
 libexec/knot1to2
 man/man1/kdig.1.gz
 man/man1/khost.1.gz
+man/man1/kjournalprint.1.gz
 man/man1/knot1to2.1.gz
 man/man1/knsec3hash.1.gz
 man/man1/knsupdate.1.gz

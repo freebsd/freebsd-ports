@@ -12,6 +12,7 @@ COMMENT=	File manager extensions for the Cinnamon desktop
 
 BUILD_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gtkdocize:textproc/gtk-doc \
+		python:lang/python \
 		rst2html:textproc/py-docutils \
 		gnome-autogen.sh:devel/gnome-common \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:devel/gsettings-desktop-schemas
@@ -36,7 +37,7 @@ GH_TAGNAME=	6c8ec3a
 USE_GNOME=	gconf2 gnomeprefix gnomedocutils gtksourceview3 intlhack \
 		introspection:build libxml2 pygtk2
 USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig \
-		shebangfix
+		python shebangfix
 SHEBANG_FILES=	nemo-dropbox/dropbox.in
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

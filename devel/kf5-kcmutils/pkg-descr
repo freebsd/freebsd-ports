@@ -1,0 +1,4 @@
+KCMUtils provides various classes to work with KCModules.
+KCModules can be created with the KConfigWidgets framework.
+
+WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kcmutils/html/index.html

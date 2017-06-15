@@ -3,7 +3,7 @@
 
 PORTNAME=	lsdvd
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -23,7 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/lsdvd \
 		man/man1/lsdvd.1.gz
 
-WITH_DVD_DEVICE?=/dev/acd0
+WITH_DVD_DEVICE?=/dev/cd0
 
 pre-everything::
 	@${ECHO_MSG} "===> The default DVD device is ${WITH_DVD_DEVICE}"

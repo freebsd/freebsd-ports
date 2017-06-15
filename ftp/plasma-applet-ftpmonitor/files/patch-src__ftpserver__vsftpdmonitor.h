@@ -1,6 +1,6 @@
---- ./src/ftpserver/vsftpdmonitor.h.orig	2010-06-12 01:33:45.000000000 +0400
-+++ ./src/ftpserver/vsftpdmonitor.h	2010-06-15 22:33:09.875079873 +0400
-@@ -53,7 +53,7 @@
+--- src/ftpserver/vsftpdmonitor.h.orig	2010-06-11 21:33:45 UTC
++++ src/ftpserver/vsftpdmonitor.h
+@@ -53,7 +53,7 @@ class VsftpdMonitor : public FTPMonitorL
  // 			else
  // 				mFtpWhoCommand.bin = whoPath + "ps";
  

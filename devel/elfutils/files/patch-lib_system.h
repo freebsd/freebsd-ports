@@ -1,15 +1,15 @@
---- lib/system.h.orig	2014-02-05 00:21:43 UTC
+--- lib/system.h.orig	2016-12-28 09:32:00 UTC
 +++ lib/system.h
-@@ -29,6 +29,8 @@
- #ifndef LIB_SYSTEM_H
- #define LIB_SYSTEM_H	1
+@@ -33,6 +33,8 @@
+ # include <config.h>
+ #endif
  
 +#include <ssp/string.h>
 +
  #include <argp.h>
+ #include <errno.h>
  #include <stddef.h>
- #include <stdint.h>
-@@ -36,16 +38,18 @@
+@@ -42,16 +44,18 @@
  #include <byteswap.h>
  #include <unistd.h>
  

@@ -90,12 +90,13 @@ include/dovecot/crc32.h
 include/dovecot/cydir-storage.h
 include/dovecot/cydir-sync.h
 include/dovecot/data-stack.h
-include/dovecot/dcrypt-iostream-private.h
+include/dovecot/dcrypt-iostream.h
 include/dovecot/dcrypt-private.h
 include/dovecot/dcrypt.h
 include/dovecot/db-checkpassword.h
 include/dovecot/db-dict.h
 include/dovecot/db-ldap.h
+include/dovecot/db-oauth2.h
 include/dovecot/db-passwd-file.h
 include/dovecot/db-sql.h
 include/dovecot/dbox-attachment.h
@@ -110,6 +111,7 @@ include/dovecot/dict-sql.h
 include/dovecot/dict-transaction-memory.h
 include/dovecot/dict.h
 include/dovecot/dns-lookup.h
+include/dovecot/dns-util.h
 include/dovecot/doveadm-cmd.h
 include/dovecot/doveadm-dsync.h
 include/dovecot/doveadm-dump.h
@@ -146,11 +148,13 @@ include/dovecot/fs-api-private.h
 include/dovecot/fs-api.h
 include/dovecot/fs-sis-common.h
 include/dovecot/fs-test.h
+include/dovecot/fs-wrapper.h
 include/dovecot/fsync-mode.h
 include/dovecot/fts-api-private.h
 include/dovecot/fts-api.h
 include/dovecot/fts-common.h
 include/dovecot/fts-expunge-log.h
+include/dovecot/fts-filter-common.h
 include/dovecot/fts-filter-private.h
 include/dovecot/fts-filter.h
 include/dovecot/fts-icu.h
@@ -175,6 +179,7 @@ include/dovecot/hex-dec.h
 include/dovecot/hmac-cram-md5.h
 include/dovecot/hmac.h
 include/dovecot/home-expand.h
+include/dovecot/hook-build.h
 include/dovecot/hostpid.h
 include/dovecot/http-auth.h
 include/dovecot/http-client-private.h
@@ -312,6 +317,7 @@ include/dovecot/lib-signals.h
 include/dovecot/lib.h
 include/dovecot/llist.h
 include/dovecot/lmtp-client.h
+include/dovecot/log-throttle.h
 include/dovecot/login-common.h
 include/dovecot/login-proxy-state.h
 include/dovecot/login-proxy.h
@@ -335,6 +341,9 @@ include/dovecot/mail-index-view-private.h
 include/dovecot/mail-index.h
 include/dovecot/mail-namespace.h
 include/dovecot/mail-search-build.h
+include/dovecot/mail-search-mime-build.h
+include/dovecot/mail-search-mime-register.h
+include/dovecot/mail-search-mime.h
 include/dovecot/mail-search-parser-private.h
 include/dovecot/mail-search-parser.h
 include/dovecot/mail-search-register.h
@@ -381,6 +390,7 @@ include/dovecot/maildir-settings.h
 include/dovecot/maildir-storage.h
 include/dovecot/maildir-sync.h
 include/dovecot/maildir-uidlist.h
+include/dovecot/malloc-overflow.h
 include/dovecot/master-auth.h
 include/dovecot/master-instance.h
 include/dovecot/master-interface.h
@@ -423,6 +433,7 @@ include/dovecot/message-header-parser.h
 include/dovecot/message-id.h
 include/dovecot/message-parser.h
 include/dovecot/message-part.h
+include/dovecot/message-part-data.h
 include/dovecot/message-part-serialize.h
 include/dovecot/message-search.h
 include/dovecot/message-size.h
@@ -439,11 +450,13 @@ include/dovecot/nfs-workarounds.h
 include/dovecot/notify-plugin-private.h
 include/dovecot/notify-plugin.h
 include/dovecot/numpack.h
+include/dovecot/oauth2.h
 include/dovecot/ostream-cmp.h
 include/dovecot/ostream-dot.h
 include/dovecot/ostream-encrypt.h
 include/dovecot/ostream-escaped.h
 include/dovecot/ostream-failure-at.h
+include/dovecot/ostream-file-private.h
 include/dovecot/ostream-hash.h
 include/dovecot/ostream-metawrap.h
 include/dovecot/ostream-null.h
@@ -470,6 +483,7 @@ include/dovecot/primes.h
 include/dovecot/printf-format-fix.h
 include/dovecot/priorityq.h
 include/dovecot/process-title.h
+include/dovecot/program-client.h
 include/dovecot/push-notification-drivers.h
 include/dovecot/push-notification-event-flagsclear.h
 include/dovecot/push-notification-event-flagsset.h
@@ -517,8 +531,10 @@ include/dovecot/seq-range-array.h
 include/dovecot/service-settings.h
 include/dovecot/settings-parser.h
 include/dovecot/settings.h
+include/dovecot/sha-common.h
 include/dovecot/sha1.h
 include/dovecot/sha2.h
+include/dovecot/sha3.h
 include/dovecot/shared-storage.h
 include/dovecot/smtp-client.h
 include/dovecot/sort.h
@@ -552,9 +568,12 @@ include/dovecot/userdb-vpopmail.h
 include/dovecot/userdb.h
 include/dovecot/utc-mktime.h
 include/dovecot/utc-offset.h
+include/dovecot/var-expand-private.h
 include/dovecot/var-expand.h
 include/dovecot/wildcard-match.h
 include/dovecot/write-full.h
+lib/dovecot/auth/lib20_auth_var_expand_crypt.a
+lib/dovecot/auth/lib20_auth_var_expand_crypt.so
 lib/dovecot/auth/libauthdb_imap.a
 lib/dovecot/auth/libauthdb_imap.so
 lib/dovecot/doveadm/lib10_doveadm_acl_plugin.a
@@ -565,6 +584,8 @@ lib/dovecot/doveadm/lib10_doveadm_quota_plugin.a
 lib/dovecot/doveadm/lib10_doveadm_quota_plugin.so
 lib/dovecot/doveadm/lib20_doveadm_fts_plugin.a
 lib/dovecot/doveadm/lib20_doveadm_fts_plugin.so
+lib/dovecot/doveadm/libdoveadm_mail_crypt_plugin.a
+lib/dovecot/doveadm/libdoveadm_mail_crypt_plugin.so
 lib/dovecot/dovecot-config
 lib/dovecot/lib01_acl_plugin.a
 lib/dovecot/lib01_acl_plugin.so
@@ -572,12 +593,16 @@ lib/dovecot/lib02_imap_acl_plugin.a
 lib/dovecot/lib02_imap_acl_plugin.so
 lib/dovecot/lib02_lazy_expunge_plugin.a
 lib/dovecot/lib02_lazy_expunge_plugin.so
+lib/dovecot/lib05_mail_crypt_acl_plugin.a
+lib/dovecot/lib05_mail_crypt_acl_plugin.so
 lib/dovecot/lib05_pop3_migration_plugin.a
 lib/dovecot/lib05_pop3_migration_plugin.so
 lib/dovecot/lib05_snarf_plugin.a
 lib/dovecot/lib05_snarf_plugin.so
 lib/dovecot/lib10_last_login_plugin.a
 lib/dovecot/lib10_last_login_plugin.so
+lib/dovecot/lib10_mail_crypt_plugin.a
+lib/dovecot/lib10_mail_crypt_plugin.so
 lib/dovecot/lib10_mail_filter_plugin.a
 lib/dovecot/lib10_mail_filter_plugin.so
 lib/dovecot/lib10_quota_plugin.a
@@ -606,6 +631,8 @@ lib/dovecot/lib20_quota_clone_plugin.a
 lib/dovecot/lib20_quota_clone_plugin.so
 lib/dovecot/lib20_replication_plugin.a
 lib/dovecot/lib20_replication_plugin.so
+lib/dovecot/lib20_var_expand_crypt.a
+lib/dovecot/lib20_var_expand_crypt.so
 lib/dovecot/lib20_virtual_plugin.a
 lib/dovecot/lib20_virtual_plugin.so
 lib/dovecot/lib20_zlib_plugin.a
@@ -620,6 +647,7 @@ lib/dovecot/lib95_imap_stats_plugin.a
 lib/dovecot/lib95_imap_stats_plugin.so
 lib/dovecot/lib99_welcome_plugin.a
 lib/dovecot/lib99_welcome_plugin.so
+lib/dovecot/libdcrypt_openssl.a
 lib/dovecot/libdcrypt_openssl.so
 lib/dovecot/libdovecot-compression.a
 lib/dovecot/libdovecot-compression.so
@@ -655,6 +683,10 @@ lib/dovecot/libdovecot.so.0
 lib/dovecot/libdovecot.so.0.0.0
 lib/dovecot/libfs_compress.a
 lib/dovecot/libfs_compress.so
+lib/dovecot/libfs_crypt.a
+lib/dovecot/libfs_crypt.so
+lib/dovecot/libfs_mail_crypt.a
+lib/dovecot/libfs_mail_crypt.so
 lib/dovecot/stats/libstats_auth.a
 lib/dovecot/stats/libstats_auth.so
 lib/dovecot/stats/libstats_mail.a
@@ -718,6 +750,7 @@ man/man1/doveadm-index.1.gz
 man/man1/doveadm-instance.1.gz
 man/man1/doveadm-kick.1.gz
 man/man1/doveadm-log.1.gz
+man/man1/doveadm-mailbox-cryptokey.1.gz
 man/man1/doveadm-mailbox.1.gz
 man/man1/doveadm-mount.1.gz
 man/man1/doveadm-move.1.gz

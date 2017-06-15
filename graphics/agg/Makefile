@@ -28,10 +28,4 @@ MAKE_JOBS_UNSAFE=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I../include -L./
 
-BROKEN_sparc64=		Does not compile
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
-
 .include <bsd.port.mk>

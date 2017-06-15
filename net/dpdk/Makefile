@@ -2,6 +2,7 @@
 
 PORTNAME=	dpdk
 PORTVERSION=	16.07
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.dpdk.org/browse/dpdk/snapshot/
 
@@ -17,8 +18,18 @@ ONLY_FOR_ARCHS_REASON=	Only works on 64-bit x86 hardware
 NO_PACKAGE=	ignores cflags
 RTE_TARGET=	x86_64-native-bsdapp-clang
 WRKBUILD=	${WRKSRC}/${RTE_TARGET}
+MAKE_ENV=	V=1
 
 ALL_TARGET=	install T=${RTE_TARGET}
+
+OPTIONS_DEFINE=	DEBUG TOOLS
+OPTIONS_SUB=	yes
+DEBUG_DESC=	Debugging support (unoptimized build, impacts performance)
+TOOLS_DESC=	Install tool scripts
+
+DEBUG_MAKE_ENV=	EXTRA_CFLAGS='-O0 -g'
+TOOLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>=0:devel/py-pyelftools
+TOOLS_USES=	python
 
 # build up the list of files in the compiled directory that should be executable
 EXEC_FILES=	app/cmdline_test \
@@ -33,7 +44,7 @@ post-patch:
 		${WRKSRC}/mk/exec-env/bsdapp/rte.vars.mk
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/${RTE_TARGET}/app \
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${RTE_TARGET}/app \
 	  ${STAGEDIR}${DATADIR}/${RTE_TARGET}/lib \
 	  ${STAGEDIR}${DATADIR}/${RTE_TARGET}/include/generic \
 	  ${STAGEDIR}${DATADIR}/${RTE_TARGET}/include/exec-env
@@ -59,5 +70,9 @@ do-install:
 	${LN} -sf ${DATADIR}/${RTE_TARGET}/include ${STAGEDIR}${PREFIX}/include/dpdk
 	${LN} -sf ${DATADIR}/examples ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_KLD} ${WRKBUILD}/kmod/* ${STAGEDIR}${KMODDIR}
+
+do-install-TOOLS-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dpdk-pmdinfo.py ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

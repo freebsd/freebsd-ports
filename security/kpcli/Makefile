@@ -2,6 +2,7 @@
 
 PORTNAME=	kpcli
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/kpcli/
 EXTRACT_SUFX=	.pl
@@ -21,7 +22,8 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=1.08:security/p5-Crypt-Rijndael \
 		p5-Data-Password>=0:security/p5-Data-Password \
 		p5-Clone>=0.31:devel/p5-Clone \
 		p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
-		p5-Clipboard>=0:x11/p5-Clipboard
+		p5-Clipboard>=0:x11/p5-Clipboard \
+		p5-Math-Random-ISAAC>=1.0.1:math/p5-Math-Random-ISAAC
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5 shebangfix

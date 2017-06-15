@@ -22,6 +22,7 @@ BUILD_DEPENDS=	p5-Moose>=1.15:devel/p5-Moose \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 DEPRECATED=	deprecated by upstream (obsolete with modern Moose)
+EXPIRATION_DATE=	2017-03-01
 
 USES=		perl5
 USE_PERL5=	configure

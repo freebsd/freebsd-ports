@@ -1,6 +1,6 @@
---- Makefile.in.orig	2016-02-21 23:18:58 UTC
+--- Makefile.in.orig	2016-12-09 15:12:18 UTC
 +++ Makefile.in
-@@ -853,7 +853,6 @@ am__leading_dot = @am__leading_dot@
+@@ -865,7 +865,6 @@ am__leading_dot = @am__leading_dot@
  am__quote = @am__quote@
  am__tar = @am__tar@
  am__untar = @am__untar@
@@ -8,16 +8,16 @@
  bindir = @bindir@
  build = @build@
  build_alias = @build_alias@
-@@ -899,7 +898,7 @@ top_builddir = @top_builddir@
+@@ -911,7 +910,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I m4
- DISTCHECK_CONFIGURE_FLAGS = \
+ AM_DISTCHECK_CONFIGURE_FLAGS = \
 -	--enable-appdata-check \
 +	--disable-appdata-check \
  	--enable-flac \
  	--enable-id3v23 \
  	--enable-ogg \
-@@ -1104,8 +1103,6 @@ easytag_enum_headers = \
+@@ -1116,8 +1115,6 @@ easytag_enum_headers = \
  @ENABLE_NAUTILUS_ACTIONS_TRUE@	$(NAUTILUS_LIBS)
  
  @ENABLE_NAUTILUS_ACTIONS_TRUE@nautilus_appdata_in_file = data/easytag-nautilus.metainfo.xml.in
@@ -26,7 +26,7 @@
  desktopdir = $(datadir)/applications
  desktop_in_files = data/easytag.desktop.in
  desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-@@ -1172,7 +1169,6 @@ dist_appiconsymbolic_DATA = \
+@@ -1184,7 +1181,6 @@ dist_appiconsymbolic_DATA = \
  
  UPDATE_ICON_CACHE = gtk-update-icon-cache --ignore-theme-index --force
  dist_noinst_DATA = \
@@ -34,7 +34,7 @@
  	$(desktop_in_files) \
  	$(gsettings_SCHEMAS) \
  	$(easytag_headers) \
-@@ -1319,7 +1315,6 @@ dist_noinst_SCRIPTS = \
+@@ -1343,7 +1339,6 @@ dist_noinst_SCRIPTS = \
  @EASYTAG_ENABLE_TESTS_TRUE@	$(check_SCRIPTS)
  
  CLEANFILES = \

@@ -1,7 +1,3 @@
-%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD.3.gz
-%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD::Manual::DBICTips.3.gz
-%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD::Manual::Limitations.3.gz
-%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD::Manual::Troubleshooting.3.gz
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD.pm
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/AJAX.pm
 %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller/DisplayEngine/ExtJS2.pm
@@ -75,3 +71,7 @@
 %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD/StorageEngine/DBIC/ProxyColumns.pm
 %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD/StorageEngine/DBIC/Relationships.pm
 %%SITE_PERL%%/SQL/Translator/Filter/AutoCRUD/StorageEngine/DBIC/ViewsAsTables.pm
+%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD::Manual::DBICTips.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD::Manual::Limitations.3.gz
+%%PERL5_MAN3%%/Catalyst::Plugin::AutoCRUD::Manual::Troubleshooting.3.gz

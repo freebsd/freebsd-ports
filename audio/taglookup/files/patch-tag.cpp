@@ -31,3 +31,20 @@
                  return true;
              else
                  return false;
+@@ -261,8 +262,14 @@ namespace TagLookup
+         
+         void operator() (const OldNameNewName &onnn)
+         {
+-            std::string new_base(basename(onnn.new_name.c_str()));
+-            std::string new_path(dirname(onnn.old_name.c_str()));
++            std::vector<char> newbuf(onnn.new_name.begin(), onnn.new_name.end());
++            newbuf.push_back('\0');
++
++            std::vector<char> oldbuf(onnn.old_name.begin(), onnn.old_name.end());
++            oldbuf.push_back('\0');
++
++            std::string new_base(basename(newbuf.data()));
++            std::string new_path(dirname(oldbuf.data()));
+             
+             new_path.append("/");
+             new_path.append(new_base);

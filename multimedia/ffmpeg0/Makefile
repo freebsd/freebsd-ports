@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.17
-PORTREVISION=	5
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -27,6 +27,7 @@ USES=		cpe gmake perl5 pkgconfig tar:bzip2 shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 USE_PERL5=	build
 SHEBANG_FILES=	doc/texi2pod.pl
+NOPRECIOUSMAKEVARS=	yes # ARCH
 
 FFMPEG_SUFFIX=	0
 HAS_CONFIGURE=	yes
@@ -37,7 +38,7 @@ PLIST_SUB+=	SUFF="${FFMPEG_SUFFIX}"
 PROGS=		ffmpeg ffprobe
 
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin V=1
 
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man" \
@@ -47,6 +48,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--datadir="${DATADIR}" \
 		--build-suffix="${FFMPEG_SUFFIX}" \
 		--enable-shared \
+		--enable-pic \
 		--enable-gpl \
 		--enable-postproc \
 		--enable-avfilter \
@@ -101,13 +103,13 @@ GSM_CONFIGURE_ENABLE=		libgsm
 LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=		libmp3lame
 
-OPENCV_LIB_DEPENDS=		libopencv_imgproc.so:graphics/opencv-core
+OPENCV_LIB_DEPENDS=		libopencv_imgproc.so:graphics/opencv2-core
 OPENCV_CONFIGURE_ENABLE=	libopencv
 
 OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg
 
-RTMP_USE=			OPENSSL=yes
+RTMP_USES=			ssl
 
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
@@ -161,10 +163,6 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 	libswscale/swscale.h
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000000
-CONFIGURE_ARGS+=	--enable-memalign-hack
-.endif
 
 .if ${ARCH} == armv6
 CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as

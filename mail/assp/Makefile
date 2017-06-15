@@ -53,8 +53,6 @@ MYSQL_DESC=	Use MySQL db to store white/red/delaylists
 MATCHRE_DESC=	Match IP ranges and CIDR blocks in lists
 SENDERB_DESC=	Country Code checks
 MIMEMOD_DESC=	Multiple Attachement detection
-SSL_DESC=	SSL secure sockets support
-IPV6_DESC=	IPv6 sockets support
 
 OPTIONS_DEFAULT=	EMVALID SPF SRS SEND FBACKW CLAMAV DNSBL MATCHRE SENDERB MIMEMOD SSL
 
@@ -87,7 +85,7 @@ RUN_DEPENDS+=	p5-File-ReadBackwards>=1.05:devel/p5-File-ReadBackwards
 .endif
 
 .if ${PORT_OPTIONS:MCLAMAV}
-RUN_DEPENDS+=	p5-File-Scan-ClamAV>=1.9.1:security/p5-File-Scan-ClamAV
+RUN_DEPENDS+=	p5-File-Scan-ClamAV>=1.91:security/p5-File-Scan-ClamAV
 PLIST_SUB+=	ASSP_CLAMAV=""
 .else
 PLIST_SUB+=	ASSP_CLAMAV="@comment "

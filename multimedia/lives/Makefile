@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	http://lives-video.com/releases/
+DISTNAME=	LiVES-${PORTVERSION}
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video editing system
 
 LICENSE=	GPLv3
@@ -20,8 +22,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		liboil-0.3.so:devel/liboil \
 		libprojectM.so:graphics/libprojectm \
 		libvisual-0.4.so:graphics/libvisual04 \
-		libopencv_calib3d.so:graphics/opencv \
-		libopencv_core.so:graphics/opencv-core \
+		libopencv_calib3d.so:graphics/opencv2 \
+		libopencv_core.so:graphics/opencv2-core \
 		libpng16.so:graphics/png \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
@@ -42,6 +44,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:audio/ladspa \
 		transcode:multimedia/transcode \
 		x264:multimedia/x264 \
 		cdrecord:sysutils/cdrtools
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		compiler:c++11-lib gettext-runtime ghostscript:run libtool \
 		localbase pathfix perl5 pkgconfig python shebangfix tar:bzip2
@@ -91,6 +95,9 @@ post-patch:
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
 	@${REINPLACE_CMD} '/selectRandom/d' \
 		${WRKSRC}/lives-plugins/weed-plugins/projectM.cpp
+
+pre-build-NLS-on:
+	@(cd ${WRKSRC}/po && ${DO_MAKE_BUILD} update-po)
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

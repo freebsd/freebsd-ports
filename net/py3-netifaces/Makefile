@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netifaces
-PORTVERSION=	0.10.4
+PORTVERSION=	0.10.5
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Getting network addresses from Python 3
 
 LICENSE=	MIT
 
-USES=		python:3
+USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
 
 post-install:

@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
 
 LICENSE=	ZLIB
@@ -45,6 +45,8 @@ CONFIGURE_ARGS+=	--enable-sse2
 .else
 CONFIGURE_ARGS+=	--disable-sse2
 .endif
+
+MAKE_ENV=	V=1
 
 OPTIONS_DEFINE=		ALSA ASM DLOPEN ESOUND NAS OSS \
 			PULSEAUDIO SNDIO PTHREADS SDL_ATOMIC SDL_AUDIO \

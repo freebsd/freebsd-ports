@@ -1,7 +1,11 @@
---- configure.orig	2015-06-16 17:43:10.000000000 +0200
-+++ configure	2015-10-21 23:07:22.017310000 +0200
-@@ -22640,6 +22640,11 @@
-   arm*)
+--- configure.orig	2016-07-19 17:27:31 UTC
++++ configure
+@@ -23168,9 +23168,14 @@ $as_echo "#define USE_ALPHA_PIO 1" >>con
+ 	esac
+ 	GLX_ARCH_DEFINES="-D__GLX_ALIGN64 -mieee"
+ 	;;
+-  arm*)
++  arm*|aarch64*)
  	ARM_VIDEO=yes
  	DEFAULT_INT10="stub"
 +	case $host_os in
@@ -12,12 +16,12 @@
  	;;
    i*86)
  	I386_VIDEO=yes
-@@ -25559,7 +25564,7 @@
+@@ -26057,7 +26062,7 @@ fi
  case "x$XTRANS_SEND_FDS" in
  xauto)
  	case "$host_os" in
 -	linux*|solaris*)
-+	linux*|solaris*|freebsd*|dragonfly*)
++	linux*|solaris*|freebsd*|dragonfly*|openbsd*)
  		XTRANS_SEND_FDS=yes
  		;;
  	*)

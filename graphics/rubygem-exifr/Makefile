@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exifr
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

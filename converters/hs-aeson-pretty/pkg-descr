@@ -6,4 +6,4 @@ for human readers.  The /command-line tool/ reads JSON from stdin and
 writes prettified JSON to stdout.  It also offers a complementary
 "compact"-mode, essentially the opposite of pretty-printing.
 
-WWW: http://github.com/informatikr/aeson-pretty
+WWW: https://github.com/informatikr/aeson-pretty

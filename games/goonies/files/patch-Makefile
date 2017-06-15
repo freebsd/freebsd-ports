@@ -1,0 +1,49 @@
+--- Makefile.orig	2009-03-12 10:05:30 UTC
++++ Makefile
+@@ -1,11 +1,11 @@
+ EXE = goonies
+ SRC = src
+-PREFIX = /usr
++PREFIX ?= /usr
+ EXTRADIR = ./build/linux
+ 
+-GAMEDIR = $(PREFIX)/games
++GAMEDIR = $(PREFIX)/bin
+ STARTUP = $(GAMEDIR)/$(EXE)
+-BINDIR = $(PREFIX)/share/games/$(EXE)
++BINDIR = $(PREFIX)/share/$(EXE)
+ ICNDIR = $(PREFIX)/share/pixmaps
+ APPDIR = $(PREFIX)/share/applications
+ 
+@@ -56,24 +56,24 @@ OBJS = \
+ 	$(SRC)/Symbol.o			$(SRC)/TheGooniesApp.o \
+ 	$(SRC)/TheGoonies.o		$(SRC)/Vector.o
+ 
+-CC = gcc
+-CFLAGS = -g3 -O3 -Wno-write-strings `sdl-config --cflags` -I/usr/X11R6/include
+-LDFLAGS = `sdl-config --libs` -L/usr/X11R6/lib/ -lSDL_image -lSDL_mixer -lGL -lGLU
++CXX ?= gcc
++CXXFLAGS ?= -g3 -O3
++CXXFLAGS += -Wno-write-strings `sdl-config --cflags`
++LDFLAGS += `sdl-config --libs` -lSDL_image -lSDL_mixer -lGL -lGLU -lm
+ RM = rm -f
+ CP = cp -r
+ MD = mkdir -p
+ ECHO = echo
+ CHMOD = chmod
+-STRIP = strip
++STRIP ?= strip
+ 
+ all: $(EXE)
+ 
+ %.o: %.cpp
+-	$(CC) $(CFLAGS) -c $< -o $@
++	$(CXX) $(CXXFLAGS) -c $< -o $@
+ 
+ $(EXE): $(OBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
+-	@$(STRIP) $@
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
+ 	@$(ECHO) " o If there are no errors, the game compiled succesfully"
+ 
+ clean:

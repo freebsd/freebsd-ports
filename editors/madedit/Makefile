@@ -3,7 +3,7 @@
 
 PORTNAME=	madedit
 PORTVERSION=	0.2.9
-PORTREVISION=	12
+PORTREVISION=	14
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/MadEdit/MadEdit-${PORTVERSION}
 
@@ -21,7 +21,5 @@ USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 LIBS+=		-L${LOCALBASE}/lib -lX11
-
-BROKEN_sparc64=	yes
 
 .include <bsd.port.mk>

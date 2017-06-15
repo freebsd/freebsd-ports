@@ -12,4 +12,7 @@ For rancid looking-glass copy the actual CGIs (located at
 
 Schedule rancid-run with cron at your desired interval or add
 hourly_rancid_enable="YES" to /etc/periodic.conf for automatic hourly
-runs.
+runs. Note, you'll need to enable an hourly job in /etc/crontab:
+
+0       *       *       *       *       root    periodic hourly
+

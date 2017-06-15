@@ -1,8 +1,7 @@
 # $FreeBSD: head/sysutils/consul/Makefile 426106 2016-11-14 14:45:04Z swills $
 
 PORTNAME=	consul
-PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTVERSION=	0.7.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -23,8 +22,6 @@ USE_RC_SUBR=	consul
 
 USERS=		consul
 GROUPS=		consul
-
-STRIP=		# stripping can break go binaries
 
 post-extract:
 	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src/

@@ -41,7 +41,7 @@ LATE_INSTALL_ARGS=	fpc_exampleinstall
 
 post-extract:
 	@cd ${WRKDIR}/${WRKUNITDIR} && \
-		${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -rf
+		${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -r
 .if ${PKGNAMESUFFIX:M-utils} || ${PKGNAMESUFFIX:M-ide}
 	${REINPLACE_CMD} -e '/globalunit/ s|\.\./packages|${FPCDIR}|' \
 		${WRKDIR}/${WRKUNITDIR}/Makefile
@@ -54,4 +54,8 @@ post-patch:
 .if ${PKGNAMESUFFIX} == "-fppkg"
 	@${REINPLACE_CMD} -e 's|packages_${OPSYS:tl}=fcl-net fcl-web|packages_${OPSYS:tl}=fcl-net|g' \
 		${WRKDIR}/${WRKUNITDIR}/Makefile.fpc
+.endif
+.if ${PKGNAMESUFFIX} == "-rtl-extra"
+	@${REINPLACE_CMD} -e 's|android,linux,|android,linux,freebsd,dragonfly,|g' \
+		${WRKDIR}/${WRKUNITDIR}/fpmake.pp
 .endif

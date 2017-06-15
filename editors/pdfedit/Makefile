@@ -3,7 +3,7 @@
 
 PORTNAME=	pdfedit
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
@@ -34,6 +34,8 @@ PORTDOCS=	Changelog README AUTHORS
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=DOCS
+
+BROKEN_sparc64=		Fails to configure: error: Could not link against boost_program_options
 
 post-extract:
 	${INSTALL_DATA} ${WRKSRC}/doc/AUTHORS ${WRKSRC}

@@ -30,7 +30,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER=   erwin@FreeBSD.org
+# MAINTAINER=   portmgr@FreeBSD.org
 #
 # PORTVERSION and PKGORIGIN auditing script
 #
@@ -127,7 +127,6 @@ foreach (qw(ARCH OPSYS OSREL OSVERSION UID)) {
     my @cachedenv = readfrom $portsdir, $make, "-V$_";
     $ENV{$_} = $cachedenv[0];
 }
-$ENV{WITH_OPENSSL_BASE} = 'yes';
 
 my %pkgname;
 my %pkgorigin;

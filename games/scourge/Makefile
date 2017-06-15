@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like game
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
-RUN_DEPENDS=	${DATADIR}/config/scourge.cfg:games/scourge-data
+RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/config/scourge.cfg:games/scourge-data
 
 USES=		autoreconf gettext gmake
 USE_GL=		gl

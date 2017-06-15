@@ -1,5 +1,5 @@
-TIMESTAMP = 1465507095
-SHA256 (fuse-emulator-roms-0.9.0-6.fc22.noarch.rpm) = cd4e336b2eb86f89c992515daf09feea01eeefad5e3bff43c0ab58c4e49c2e16
-SIZE (fuse-emulator-roms-0.9.0-6.fc22.noarch.rpm) = 130852
+TIMESTAMP = 1480880081
+SHA256 (fuse-emulator-roms-0.9.0-6.fc25.noarch.rpm) = 371627ee8b3b2f97351ca463694e317c9a000f66fc0c2f0c5ea3ec7b857c957c
+SIZE (fuse-emulator-roms-0.9.0-6.fc25.noarch.rpm) = 130778
 SHA256 (Opus-22.rom) = 0a658b83257db99370f086f8ec57a5c9108ffc846e6fe567f262b63befc85dc9
 SIZE (Opus-22.rom) = 8192

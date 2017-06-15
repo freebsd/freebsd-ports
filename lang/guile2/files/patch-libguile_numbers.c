@@ -1,6 +1,6 @@
---- libguile/numbers.c	2008-07-09 14:50:22.000000000 +0800
-+++ libguile/numbers.c	2008-07-09 14:53:05.000000000 +0800
-@@ -183,7 +183,7 @@
+--- libguile/numbers.c.orig	2014-03-12 13:24:54 UTC
++++ libguile/numbers.c
+@@ -183,7 +183,7 @@ static double atanh (double x) { return 
  
  
  #if defined (GUILE_I)

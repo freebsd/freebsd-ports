@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of simple statistical analysis bits for Squid
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 RUN_DEPENDS=	p5-Config-IniFiles>=2.39:devel/p5-Config-IniFiles \
 		p5-RRD-Simple>=1.44:databases/p5-RRD-Simple \

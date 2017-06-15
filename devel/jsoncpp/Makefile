@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	jsoncpp
-DISTVERSION=	1.7.3
+PORTVERSION=	1.8.0
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@rawbw.com
@@ -26,7 +27,12 @@ MAKE_ARGS=	platform=linux-gcc
 # Certain new compiler features unlock parts of jsoncpp API (ex. see JSON_HAS_RVALUE_REFERENCES).
 # Use c++11 above to be the most inclusive.
 USES+=		compiler:c++11-lang
+# lang/gcc5 fix
+.if ${COMPILER_TYPE} == clang
 CXXFLAGS+=	--std=c++11
+.else
+CXXFLAGS+=	--std=gnu++11 -D_GLIBCXX_USE_C99=1
+.endif
 .endif
 
 do-install:
@@ -41,8 +47,8 @@ do-install:
 	${CP} ${WRKSRC}/pkg-config/jsoncpp.pc.in ${STAGEDIR}${PREFIX}/libdata/pkgconfig/jsoncpp.pc
 	@${REINPLACE_CMD} -i '' \
 		-e 's|@CMAKE_INSTALL_PREFIX@|${PREFIX}|g' \
-		-e 's|@LIBRARY_INSTALL_DIR@|lib|g' \
-		-e 's|@INCLUDE_INSTALL_DIR@|include/jsoncpp|g' \
+		-e 's|@CMAKE_INSTALL_LIBDIR@|lib|g' \
+		-e 's|@CMAKE_INSTALL_INCLUDEDIR@|include/jsoncpp|g' \
 		-e 's|@JSONCPP_VERSION@|${DISTVERSION}|g' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/jsoncpp.pc
 

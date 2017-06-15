@@ -3,7 +3,7 @@
 
 PORTNAME=	ldapvi
 PORTVERSION=	1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.lichteblau.com/download/ \
 		LOCAL/sbz
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv ncurses pkgconfig
 USE_OPENLDAP=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

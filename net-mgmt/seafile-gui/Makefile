@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-gui
-PORTVERSION=	5.1.4
+PORTVERSION=	6.0.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt devel
 
@@ -11,23 +12,22 @@ COMMENT=	Open Source Cloud Storage (Client)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
-		libsearpc.so:devel/libsearpc \
-		libseafile.so:net-mgmt/seafile \
+LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
+		libseafile.so:net-mgmt/seafile-client \
 		libsqlite3.so:databases/sqlite3 \
-		libccnet.so:net-mgmt/ccnet \
+		libccnet.so:net-mgmt/ccnet-client \
 		libjansson.so:devel/jansson \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile-client
 
-USES=		compiler:c++11-lang cmake gettext pkgconfig shebangfix
+USES=		compiler:c++11-lang cmake gettext pkgconfig shebangfix ssl
 SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \
 		scripts/*.py
-USE_OPENSSL=	yes
+USE_GNOME=	glib20
 USE_QT5=	core dbus gui network testlib widgets \
 		qmake_build buildtools_build linguisttools_build
 INSTALLS_ICONS=	yes

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	11.0.1
+PORTVERSION=	11.0.14
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -11,12 +11,12 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	rsync:net/rsync \
 		sudo:security/sudo \
-		sqlite3:databases/sqlite3
+		sqlite3:databases/sqlite3 \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 LIB_DEPENDS=	libssh2.so:security/libssh2 \
 		libsqlite3.so:databases/sqlite3
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	olevole
 
 USES=	libedit
 USE_RC_SUBR=	cbsdd cbsdrsyncd
@@ -26,14 +26,8 @@ PLIST_FILES+=	man/man8/cbsd.8.gz
 
 CBSD_HOME?=	${PREFIX}/cbsd
 
-.include <bsd.port.pre.mk>
-
 USERS=	${PORTNAME}
 GROUPS=	${PORTNAME}
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-IGNORE=	does not support FreeBSD versions < 10.0
-.endif
 
 do-install:
 	@${ECHO} "Installing in ${CBSD_HOME}"
@@ -49,4 +43,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bsdconfig
 	@${LN} -sf ${CBSD_HOME}/share/bsdconfig/cbsd ${STAGEDIR}${PREFIX}/libexec/bsdconfig/cbsd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

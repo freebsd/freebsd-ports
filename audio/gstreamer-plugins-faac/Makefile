@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/audio/gstreamer-plugins-faac/Makefile,v 1.5 2008/03/19 14:05:28 ahze Exp $
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer MPEG-2 and MPEG-4 AAC encoder plugin

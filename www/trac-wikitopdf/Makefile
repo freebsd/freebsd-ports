@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Plugin to generate PDF documents from the Wiki
 
 RUN_DEPENDS=	htmldoc:textproc/htmldoc \

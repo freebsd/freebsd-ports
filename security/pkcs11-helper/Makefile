@@ -16,9 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/COPYING.BSD
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPL
 
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		libtool:keepla pathfix pkgconfig tar:bzip2 ssl
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -37,4 +36,10 @@ post-patch:
 	@${REINPLACE_CMD} 's|install-data-am: install-apidocDATA|install-data-am:|' \
 		${WRKSRC}/doc/api/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

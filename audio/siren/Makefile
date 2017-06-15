@@ -3,10 +3,11 @@
 
 PORTNAME=	siren
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kariliq.nl/${PORTNAME}/dist/
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based audio player
 
 LICENSE=	ISCL

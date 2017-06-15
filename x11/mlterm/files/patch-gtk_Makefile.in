@@ -1,4 +1,4 @@
---- gtk/Makefile.in.orig	2016-03-13 10:57:40 UTC
+--- gtk/Makefile.in.orig	2017-01-07 22:24:38 UTC
 +++ gtk/Makefile.in
 @@ -30,7 +30,7 @@ LIB_VERSION_2.90 = 9:0:0
  LIB_VERSION_2.91 = 0:0:0

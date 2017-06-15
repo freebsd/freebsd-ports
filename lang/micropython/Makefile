@@ -3,9 +3,10 @@
 PORTNAME=	micropython
 PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	lang python
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the Python language for microcontrollers
 
 LICENSE=	MIT
@@ -18,20 +19,14 @@ USE_GITHUB=	yes
 
 PLIST_FILES=	bin/micropython
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix
+BROKEN_armv6=	fails to assemble: error: invalid operand for instruction
+
+WRKSRC_SUBDIR=	unix
 
 SHEBANG_FILES=	../tools/make-frozen.py
 MAKE_ARGS+=	V=1
 MAKE_ENV+=	PYTHON=${PYTHON_CMD} CFLAGS_EXTRA="${CPPFLAGS} ${CFLAGS}"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000024
-# Our default GCC 4.2.1 build can't handle some quirks correctly.
-# Use an up to date version for FreeBSD releases, which use GCC
-# as default compiler
-USE_GCC=	yes
-.endif
+TEST_TARGET=	test
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||;/^COPT =/d; \
@@ -48,8 +43,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/micropython ${STAGEDIR}${PREFIX}/bin
 
-regression-test: build
-	${RM} ${WRKSRC}/../tests/basics/memoryerror.py
-	cd ${WRKSRC} && ${MAKE_CMD} test
+pre-test:
+	@${RM} ${WRKSRC}/../tests/basics/memoryerror.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

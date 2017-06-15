@@ -4,8 +4,9 @@ bin/poudriere
 %%ETCDIR%%/hooks/pkgbuild.sh.sample
 @sample etc/poudriered.conf.sample
 etc/rc.d/poudriered
+libexec/poudriere/cachec
 libexec/poudriere/cached
-libexec/poudriere/clock_monotonic
+libexec/poudriere/clock
 libexec/poudriere/cpdup
 libexec/poudriere/dirempty
 libexec/poudriere/dirwatch
@@ -13,8 +14,11 @@ libexec/poudriere/jexecd
 libexec/poudriere/locked_mkdir
 libexec/poudriere/nc
 libexec/poudriere/poudriered
+libexec/poudriere/ptsort
+libexec/poudriere/pwait
 libexec/poudriere/rename
 libexec/poudriere/rexec
+%%RM%%libexec/poudriere/rm
 libexec/poudriere/sh
 libexec/poudriere/timeout
 libexec/poudriere/timestamp
@@ -70,16 +74,20 @@ man/man8/poudriere.8.gz
 %%DATADIR%%/html/jail.html
 %%DATADIR%%/html/robots.txt
 %%DATADIR%%/image.sh
-%%DATADIR%%/include/common.sh.dragonfly
-%%DATADIR%%/include/common.sh.freebsd
+%%DATADIR%%/include/cache.sh
 %%DATADIR%%/include/colors.pre.sh
 %%DATADIR%%/include/colors.sh
+%%DATADIR%%/include/common.sh.dragonfly
+%%DATADIR%%/include/common.sh.freebsd
 %%DATADIR%%/include/display.sh
 %%DATADIR%%/include/fs.sh
 %%DATADIR%%/include/hash.sh
 %%DATADIR%%/include/html.sh
 %%DATADIR%%/include/parallel.sh
+%%DATADIR%%/include/shared_hash.sh
+%%DATADIR%%/include/util.sh
 %%DATADIR%%/jail.sh
+%%DATADIR%%/logclean.sh
 %%DATADIR%%/options.sh
 %%DATADIR%%/pkgclean.sh
 %%DATADIR%%/ports.sh

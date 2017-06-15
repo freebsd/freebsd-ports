@@ -14,6 +14,8 @@ COMMENT=	Plugin for Pidgin to displays the music track currently playing
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin
 RUN_DEPENDS=	pidgin:net-im/pidgin

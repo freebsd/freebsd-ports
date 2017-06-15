@@ -12,7 +12,7 @@ DISTNAME=	bennugd-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High level open source game development suite, core libs
 
-USES=		dos2unix libtool tar:bzip2
+USES=		dos2unix libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --bindir="${PREFIX}/libexec"
 SUB_FILES=	bgdc bgdi
@@ -22,8 +22,6 @@ INSTALL_TARGET=	install-strip
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Segfaults on !i386
-
-CONFIGURE_ENV=	ZLIB_CFLAGS=" " ZLIB_LIBS="-lz"
 
 WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
 

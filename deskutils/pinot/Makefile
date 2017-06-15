@@ -3,6 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.09
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org

@@ -6,9 +6,9 @@
 # Submitted by: antoine@ (r358029)
 # TODO: Upstream
 
---- Makefile.pre.in.orig	2015-09-08 00:49:41 UTC
-+++ Makefile.pre.in
-@@ -70,23 +70,20 @@ MAKESETUP=      $(srcdir)/Modules/makese
+--- Makefile.pre.in.orig	2017-01-21 18:48:21.942822000 +0800
++++ Makefile.pre.in	2017-01-21 18:55:44.342228000 +0800
+@@ -76,23 +76,20 @@
  OPT=		@OPT@
  BASECFLAGS=	@BASECFLAGS@
  BASECPPFLAGS=	@BASECPPFLAGS@
@@ -28,14 +28,14 @@
  # Both CPPFLAGS and LDFLAGS need to contain the shell's value for setup.py to
  # be able to build extension modules using the directories specified in the
  # environment variables
--PY_CPPFLAGS=	$(BASECPPFLAGS) -I. -IInclude -I$(srcdir)/Include $(CONFIGURE_CPPFLAGS) $(CPPFLAGS)
+-PY_CPPFLAGS=	$(BASECPPFLAGS) -I. -I$(srcdir)/Include $(CONFIGURE_CPPFLAGS) $(CPPFLAGS)
 -PY_LDFLAGS=	$(CONFIGURE_LDFLAGS) $(LDFLAGS)
-+PY_CPPFLAGS=	$(BASECPPFLAGS) -I. -IInclude -I$(srcdir)/Include $(CPPFLAGS)
++PY_CPPFLAGS=	$(BASECPPFLAGS) -I. -I$(srcdir)/Include $(CPPFLAGS)
 +PY_LDFLAGS=	$(LDFLAGS)
  NO_AS_NEEDED=	@NO_AS_NEEDED@
  LDLAST=		@LDLAST@
  SGI_ABI=	@SGI_ABI@
-@@ -1100,12 +1097,6 @@ bininstall: altbininstall
+@@ -1130,12 +1127,6 @@
  	else true; \
  	fi
  	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)$(EXE) python3$(EXE))
@@ -48,7 +48,7 @@
  	-rm -f $(DESTDIR)$(BINDIR)/python3-config
  	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)-config python3-config)
  	-rm -f $(DESTDIR)$(LIBPC)/python3.pc
-@@ -1381,6 +1372,12 @@ libainstall:	all python-config
+@@ -1412,6 +1403,12 @@
  	$(INSTALL_SCRIPT) $(srcdir)/install-sh $(DESTDIR)$(LIBPL)/install-sh
  	$(INSTALL_SCRIPT) python-config.py $(DESTDIR)$(LIBPL)/python-config.py
  	$(INSTALL_SCRIPT) python-config $(DESTDIR)$(BINDIR)/python$(LDVERSION)-config
@@ -58,6 +58,6 @@
 +		rm -f $(DESTDIR)$(LIBPC)/python-$(LDVERSION).pc; \
 +		(cd $(DESTDIR)$(LIBPC); $(LN) -s python-$(VERSION).pc python-$(LDVERSION).pc); \
 +	fi
- 	@if [ -s Programs/python.exp -a \
+ 	@if [ -s Modules/python.exp -a \
  		"`echo $(MACHDEP) | sed 's/^\(...\).*/\1/'`" = "aix" ]; then \
  		echo; echo "Installing support files for building shared extension modules on AIX:"; \

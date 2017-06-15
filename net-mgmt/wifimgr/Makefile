@@ -3,7 +3,7 @@
 
 PORTNAME=	wifimgr
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
 		LOCAL/ehaupt

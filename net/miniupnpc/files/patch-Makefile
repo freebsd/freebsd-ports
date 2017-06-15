@@ -1,12 +1,16 @@
---- Makefile.orig	2014-01-31 14:57:23.000000000 +0100
-+++ Makefile	2014-10-07 23:26:17.000000000 +0200
-@@ -117,13 +117,11 @@
+--- Makefile.orig	2016-12-16 10:04:32.000000000 +0100
++++ Makefile	2016-12-25 20:17:08.952901000 +0100
+@@ -141,7 +141,6 @@
  TESTIGDDESCPARSE := $(TESTIGDDESCPARSE) minissdpc.o
  endif
  
 -LIBDIR ?= lib
  # install directories
--INSTALLPREFIX ?= $(PREFIX)/usr
+ ifeq ($(strip $(PREFIX)),)
+ INSTALLPREFIX ?= /usr
+@@ -149,9 +148,9 @@
+ INSTALLPREFIX ?= $(PREFIX)
+ endif
  INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
 -INSTALLDIRLIB = $(INSTALLPREFIX)/$(LIBDIR)
 +INSTALLDIRLIB = $(INSTALLPREFIX)/lib

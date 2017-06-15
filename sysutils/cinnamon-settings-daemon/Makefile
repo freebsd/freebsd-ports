@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-settings-daemon
 PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -35,7 +35,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_XORG=	xxf86misc
 GNU_CONFIGURE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gudev \

@@ -1,0 +1,4 @@
+bin/mysqldump-secure
+@sample etc/mysqldump-secure.cnf.sample
+@sample etc/mysqldump-secure.conf.sample
+man/man1/mysqldump-secure.1.gz

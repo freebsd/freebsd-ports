@@ -1,6 +1,6 @@
---- configure.orig	2015-12-18 14:53:21 UTC
+--- configure.orig	2016-11-14 23:29:59 UTC
 +++ configure
-@@ -646,7 +646,7 @@ armthumb=auto
+@@ -649,7 +649,7 @@ armthumb=auto
  _iwmmxt=auto
  _mtrr=auto
  _altivec=auto
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _windres=windres
  _cc=cc
-@@ -988,7 +988,7 @@ for ac_option do
+@@ -992,7 +992,7 @@ for ac_option do
      ld_static=''
      ;;
    --enable-profile)
@@ -18,7 +18,7 @@
      ;;
    --disable-profile)
      _profile=
-@@ -1459,7 +1459,6 @@ for ac_option do
+@@ -1464,7 +1464,6 @@ for ac_option do
  
    *)
      echo "Unknown parameter: $ac_option"
@@ -26,7 +26,48 @@
      ;;
  
    esac
-@@ -1712,7 +1711,7 @@ if test -z "$_target" ; then
+@@ -1502,40 +1501,6 @@ rm -f "$TMPLOG"
+ echo configuration: $configuration > "$TMPLOG"
+ echo >> "$TMPLOG"
+ 
+-
+-# local FFmpeg checkout handling
+-if test -e ffmpeg/.svn ; then
+-    echo "You have an outdated FFmpeg SVN checkout in ffmpeg/, please (re)move or replace it"
+-    exit 1
+-fi
+-
+-FFBRANCH=master
+-test -e FFBRANCH && FFBRANCH=$(cat FFMPEG_BRANCH)
+-
+-if test -e ffmpeg/mp_auto_pull ; then
+-    echo "Updating FFmpeg, (re)move ffmpeg/mp_auto_pull to disable"
+-    (cd ffmpeg && git checkout $FFBRANCH)
+-    if ! (cd ffmpeg && git pull --rebase --ff-only) ; then
+-        echo "git pull failed, (re)move ffmpeg/mp_auto_pull to disable pulling"
+-        exit 1
+-    fi
+-fi
+-
+-if test "$ffmpeg_a" != "no" && ! test -e ffmpeg ; then
+-    echo "No FFmpeg checkout, press enter to download one with git or CTRL+C to abort"
+-    read tmp
+-    if ! git clone -b $FFBRANCH --depth 1 git://source.ffmpeg.org/ffmpeg.git ffmpeg ; then
+-        rm -rf ffmpeg
+-        echo "Failed to get a FFmpeg checkout"
+-        echo "Please try again or put FFmpeg source code copy into ffmpeg/ manually."
+-        echo "Nightly snapshot: http://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2"
+-        echo "To use a github mirror via http (e.g. because a firewall blocks git):"
+-        echo "git clone --depth 1 https://github.com/FFmpeg/FFmpeg ffmpeg; touch ffmpeg/mp_auto_pull"
+-        exit 1
+-    fi
+-    touch ffmpeg/mp_auto_pull
+-fi
+-
+ list_subparts() {
+   test ! -e ffmpeg/libav${3} && return 1
+   pattern="s/^[^#]*${1}.*([^ ,]*, *\([^ ,)]*\).*/\1_${2}/p"
+@@ -1732,7 +1697,7 @@ if test -z "$_target" ; then
    case "$1" in
        x86_64|amd64|i[3-9]86*|i86pc|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686) host_arch=i386 ;;
        ia64) host_arch=ia64 ;;
@@ -35,7 +76,7 @@
        alpha) host_arch=alpha ;;
        sun4*|sparc*) host_arch=sparc ;;
        parisc*|hppa*|9000*) host_arch=hppa ;;
-@@ -1835,7 +1834,11 @@ echocheck "working compiler"
+@@ -1855,7 +1820,11 @@ echocheck "working compiler"
  cflag_check "" || die "Compiler is not functioning correctly. Check your installation and custom CFLAGS $CFLAGS ."
  echo "yes"
  
@@ -48,7 +89,7 @@
  
  if test -z "$_target" ; then
    cat > $TMPC << EOF
-@@ -3194,6 +3197,13 @@ if arm ; then
+@@ -3224,6 +3193,13 @@ if arm ; then
    fi
    echores "$setend"
  
@@ -62,7 +103,7 @@
    echocheck "softfloat ABI"
    softfloat=yes
    cpp_condition_check '' 'defined(__ARM_PCS_VFP) || (!defined(__ARM_PCS) && !defined(__SOFTFP__))' && softfloat=no
-@@ -3944,7 +3954,7 @@ echocheck "pthread"
+@@ -3993,7 +3969,7 @@ echocheck "pthread"
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
@@ -71,7 +112,7 @@
  fi
  if test "$_pthreads" = auto ; then
  cat > $TMPC << EOF
-@@ -3954,7 +3964,7 @@ int main(void) { pthread_t tid; return p
+@@ -4003,7 +3979,7 @@ int main(void) { pthread_t tid; return p
  EOF
  _pthreads=no
  if ! hpux ; then
@@ -80,7 +121,7 @@
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
      cc_check $THREAD_CFLAGS $ld_tmp && (tmp_run || test "$ld_static") && ld_pthread="$ld_tmp" && _pthreads=yes && break
    done
-@@ -4103,7 +4113,7 @@ int main(void) {
+@@ -4152,7 +4128,7 @@ int main(void) {
  }
  EOF
    _iconv=no
@@ -89,7 +130,7 @@
      cc_check $ld_tmp && extra_ldflags="$extra_ldflags $ld_tmp" &&
        ld_iconv="$ld_tmp" && _iconv=yes && break
    done
-@@ -5505,15 +5515,6 @@ EOF
+@@ -5565,15 +5541,6 @@ EOF
        break
      fi
    done
@@ -105,7 +146,7 @@
    if win32 && cc_check -DGL_WIN32 -lopengl32 ; then
      _gl=yes
      _gl_win32=yes
-@@ -6077,7 +6078,7 @@ elif darwin ; then
+@@ -6137,7 +6104,7 @@ elif darwin ; then
  elif dragonfly ; then
    default_cdrom_device="/dev/cd0"
  elif freebsd ; then
@@ -114,7 +155,7 @@
  elif openbsd ; then
    default_cdrom_device="/dev/rcd0c"
  elif sunos ; then
-@@ -6090,7 +6091,7 @@ else
+@@ -6150,7 +6117,7 @@ else
    default_cdrom_device="/dev/cdrom"
  fi
  
@@ -123,7 +164,7 @@
    default_dvd_device=$default_cdrom_device
  elif darwin ; then
    default_dvd_device="/dev/rdiskN"
-@@ -6607,7 +6608,7 @@ echores "$_speex"
+@@ -6667,7 +6634,7 @@ echores "$_speex"
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
    _libgsm=no
@@ -132,7 +173,7 @@
  fi
  if test "$_libgsm" = yes ; then
    def_libgsm='#define CONFIG_LIBGSM 1'
-@@ -7092,6 +7093,16 @@ if test "$_librtmp" = yes && test "$netw
+@@ -7152,6 +7119,16 @@ if test "$_librtmp" = yes && test "$netw
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -149,7 +190,7 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7493,7 +7504,7 @@ echores "$_mp3lame"
+@@ -7553,7 +7530,7 @@ echores "$_mp3lame"
  echocheck "mencoder"
  if test "$_mencoder" = no ; then
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
@@ -158,7 +199,7 @@
  fi
  echores "$_mencoder"
  
-@@ -8094,7 +8105,7 @@ libs_mplayer=$ld_tmp
+@@ -8159,7 +8136,7 @@ libs_mplayer=$ld_tmp
  
  #############################################################################
  
@@ -167,12 +208,3 @@
  
  CXXFLAGS=" $CFLAGS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS"
  
-@@ -8375,7 +8386,7 @@ TIMER = $_timer
- EXESUF      = $_exesuf
- EXESUFS_ALL = .exe
- 
--ARCH = $arch
-+MPLAYER_ARCH = $arch
- $(mak_enable "$arch_all"    "$arch"    ARCH)
- $(mak_enable "$subarch_all" "$subarch" ARCH)
- $(mak_enable "$cpuexts_all" "$cpuexts" HAVE)

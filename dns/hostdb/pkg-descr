@@ -6,5 +6,4 @@ source.
 A system for generating internal DNS zones, external DNS zones, and
 DHCP configuration data from the same simple repository.
 
-WWW: http://code.google.com/p/hostdb
-     http://everythingsysadmin.com/hostdb
+WWW: http://everythingsysadmin.com/hostdb

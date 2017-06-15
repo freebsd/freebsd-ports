@@ -3,7 +3,7 @@
 
 PORTNAME=	fluxbg
 PORTVERSION=	0.7
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -25,4 +25,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/src/fluxbg_conf.cc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
+# chmod -R bug
+post-extract:
+	${CHMOD} +x ${WRKSRC}/autom4te.cache
+.endif
+
+.include <bsd.port.post.mk>

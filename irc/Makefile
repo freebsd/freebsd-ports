@@ -29,6 +29,7 @@
     SUBDIR += gruftistats
     SUBDIR += gseen.mod
     SUBDIR += hexchat
+    SUBDIR += hexchat-fish
     SUBDIR += hybserv
     SUBDIR += icbirc
     SUBDIR += ii
@@ -99,14 +100,13 @@
     SUBDIR += py-supybot
     SUBDIR += py-supybot-plugins
     SUBDIR += quassel
+    SUBDIR += quassel-core
     SUBDIR += quirc
+    SUBDIR += ratbox-respond
     SUBDIR += ratbox-services
     SUBDIR += rbot
     SUBDIR += riece
     SUBDIR += roxirc
-    SUBDIR += ruby-irc
-    SUBDIR += ruby-rica
-    SUBDIR += ruby-rice
     SUBDIR += rubygem-cinch
     SUBDIR += rubygem-cogbot
     SUBDIR += rubygem-lita-irc

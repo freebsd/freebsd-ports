@@ -1,6 +1,6 @@
---- media/audio/BUILD.gn.orig	2016-08-03 22:02:19.000000000 +0300
-+++ media/audio/BUILD.gn	2016-09-25 15:11:18.731892000 +0300
-@@ -202,7 +202,7 @@
+--- media/audio/BUILD.gn.orig	2017-04-19 19:06:35 UTC
++++ media/audio/BUILD.gn
+@@ -212,7 +212,7 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  
@@ -9,7 +9,7 @@
      sources += [ "linux/audio_manager_linux.cc" ]
    }
  
-@@ -251,10 +251,12 @@
+@@ -261,10 +261,12 @@ source_set("audio") {
        configs += [ ":libpulse" ]
      } else {
        # TODO(ajwong): Technically, this dl should go in the action.

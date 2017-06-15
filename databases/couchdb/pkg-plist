@@ -2,7 +2,7 @@ bin/couch-config
 bin/couchdb
 bin/couchjs
 %%ETCDIR%%/default.ini
-@sample(couchdb,,) %%ETCDIR%%/local.ini.sample
+@sample(couchdb,couchdb,600) %%ETCDIR%%/local.ini.sample
 etc/logrotate.d/couchdb
 lib/couchdb/bin/couchjs
 lib/couchdb/erlang/lib/couch-%%VERSION%%/ebin/couch.app
@@ -632,8 +632,8 @@ man/man1/couchjs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.gz
 %%PORTDOCS%%%%DOCSDIR%%/THANKS.gz
-@dir %%ETCDIR%%/default.d
-@dir %%ETCDIR%%/local.d
-@dir /var/db/couchdb
-@dir /var/log/couchdb
-@dir /var/run/couchdb
+@dir(couchdb,couchdb,750) %%ETCDIR%%/default.d
+@dir(couchdb,couchdb,750) %%ETCDIR%%/local.d
+@dir(couchdb,couchdb,750) /var/db/couchdb
+@dir(couchdb,couchdb,750) /var/log/couchdb
+@dir(couchdb,couchdb,750) /var/run/couchdb

@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	potrace
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.14
 CATEGORIES=	graphics
 MASTER_SITES=	http://sourceforge.net/projects/potrace/files/${PORTVERSION}/
 
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Transforms bitmaps into vector graphics
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/potrace bin/mkbitmap \
@@ -20,17 +23,9 @@ OPTIONS_DEFINE=	METRIC A4
 OPTIONS_DEFAULT=METRIC A4
 
 METRIC_DESC=	Use metric units (cm) as default
+METRIC_CONFIGURE_ENABLE=	metric
 A4_DESC=	Use A4 as the default papersize
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MA4}
-CONFIGURE_ARGS+=	--enable-a4
-.endif
-
-.if ${PORT_OPTIONS:MMETRIC}
-CONFIGURE_ARGS+=	--enable-metric
-.endif
+A4_CONFIGURE_ENABLE=	a4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/potrace ${STAGEDIR}${PREFIX}/bin

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	7.11.1
-PORTREVISION=	3
+PORTVERSION=	7.12.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -15,7 +14,7 @@ LICENSE=	GPLv3
 TEST_DEPENDS=	runtest:misc/dejagnu
 
 TEST_TARGET=	check
-USES=		cpe iconv gmake libtool tar:xz
+USES=		compiler:env cpe iconv gmake libtool tar:xz
 USE_CSTD=	gnu89
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -25,59 +24,38 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--with-gdb-datadir=${PREFIX}/share/gdb${PORTVERSION:S/.//g} \
 		--with-separate-debug-dir=/usr/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
+		--with-expat=yes --with-libexpat-prefix=${LOCALBASE} \
 		--without-libunwind-ia64
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-EXTRA_PATCHES=	${FILESDIR}/commit-21002a6 \
-		${FILESDIR}/commit-b00f86d \
-		${FILESDIR}/commit-aa1ed4a \
-		${FILESDIR}/commit-7697fc9 \
-		${FILESDIR}/commit-3350c5f \
-		${FILESDIR}/commit-2faa344 \
-		${FILESDIR}/commit-82372b2 \
-		${FILESDIR}/commit-e6cdd38 \
-		${FILESDIR}/commit-a3405d1 \
-		${FILESDIR}/commit-5077bff \
-		${FILESDIR}/commit-bb2a62e \
-		${FILESDIR}/commit-8607ea6 \
-		${FILESDIR}/commit-2c5c2a3 \
-		${FILESDIR}/commit-ee95032 \
-		${FILESDIR}/commit-bc7b765 \
-		${FILESDIR}/commit-0064d22 \
-		${FILESDIR}/commit-da95a26 \
-		${FILESDIR}/commit-5fa14c6 \
-		${FILESDIR}/commit-dbaed38
+EXTRA_PATCHES=	${FILESDIR}/commit-387360daf9 \
+		${FILESDIR}/commit-b268007c68
+LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6	# untested elsewhere, might work
+ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6 mips	# untested elsewhere, might work
 
-OPTIONS_DEFINE=	DEBUG EXPAT GDB_LINK GUILE KGDB PYTHON TUI
+OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB PYTHON TUI
 
-OPTIONS_DEFAULT=	EXPAT GDB_LINK KGDB PYTHON TUI PORT_READLINE
+OPTIONS_DEFAULT=	GDB_LINK KGDB PYTHON TUI PORT_READLINE
 
 OPTIONS_SINGLE=	READLINE
-OPTIONS_SINGLE_READLINE=	BASE_READLINE BUNDLED_READLINE PORT_READLINE
+OPTIONS_SINGLE_READLINE=	BUNDLED_READLINE PORT_READLINE
 
 GDB_LINK_DESC=		Create ${PREFIX}/bin/gdb symlink
 KGDB_DESC=		Kernel Debugging Support
-BASE_READLINE_DESC=	from base system
 BUNDLED_READLINE_DESC=	from gdb distfile
 PORT_READLINE_DESC=	from devel/readline port
 TUI_DESC=		Text User Interface enabled
 
 OPTIONS_SUB=	yes
 
-BASE_READLINE_USES=	readline
-BASE_READLINE_CFLAGS=	-D_rl_echoing_p=readline_echoing_p
-BASE_READLINE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-base-readline
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
 DEBUG_CFLAGS=		-g
-EXPAT_CONFIGURE_WITH=	expat
-EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 GUILE_CONFIGURE_WITH=	guile
 GUILE_USES=		pkgconfig
 GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
@@ -87,12 +65,7 @@ PYTHON_CONFIGURE_OFF=	--without-python
 PYTHON_USES=		python:2
 TUI_CONFIGURE_ENABLE=	tui
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000010
-# FreeBSD 9.x and earlier do not define SIGLIBRT in <sys/signal.h>
-CFLAGS+=	-DSIGLIBRT=33
-.endif
+.include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MBUNDLED_READLINE}
 EXCLUDE+=	readline
@@ -102,19 +75,25 @@ EXCLUDE+=	readline
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
+.if ${COMPILER_TYPE} == "clang"
+CFLAGS+=	-Wno-extended-offsetof
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$| [GDB v${PORTVERSION} for FreeBSD]|' \
 		${WRKSRC}/gdb/version.in
 
 post-patch-KGDB-on:
 	@${CP} -r ${FILESDIR}/kgdb/*.[ch] ${WRKSRC}/gdb/
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-kgdb
+	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-kgdb
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
 		${STAGEDIR}${PREFIX}/bin/gdb${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/doc/gdb.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/gdb${VER}.1
+	(cd ${WRKSRC}/gdb/data-directory ; \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
 
 do-install-KGDB-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/kgdb \
@@ -122,10 +101,6 @@ do-install-KGDB-on:
 
 do-install-TUI-on:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdbtui${VER}
-
-do-install-EXPAT-on:
-	(cd ${WRKSRC}/gdb/data-directory ; \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
 
 do-install-GDB_LINK-on:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdb
@@ -146,4 +121,4 @@ do-install-GUILE-on:
 	(cd ${WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-guile )
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

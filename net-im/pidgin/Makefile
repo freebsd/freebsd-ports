@@ -20,6 +20,7 @@ PLIST=		${.CURDIR}/pkg-plist
 PIDGIN_SLAVE=	yes
 WITH_GTKUI=	yes
 
+USES=		python:build
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gtk20 intltool
 USE_XORG=	xscrnsaver sm
@@ -29,7 +30,7 @@ CONFIGURE_ARGS=	--disable-consoleui \
 		--enable-screensaver \
 		--with-dynamic_prpls=${PRPL_MODULES:S/,$//}
 
-post-stage-PERL-on:
+post-install-PERL-on:
 	@${SED} -i '' -e 's|^${STAGEDIR}||g' \
 		${STAGEDIR}${PREFIX}/lib/pidgin/perl/auto/Pidgin/.packlist
 

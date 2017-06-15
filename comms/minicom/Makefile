@@ -3,6 +3,7 @@
 
 PORTNAME=	minicom
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3977/ \
 		http://alioth.debian.org/frs/download.php/file/3977/ \

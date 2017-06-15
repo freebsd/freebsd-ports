@@ -2,36 +2,49 @@
 
 PORTNAME=	euclid-wm
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
-#MASTER_SITES=	http://euclid-wm.googlecode.com/files/
-MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	anastmag@gmail.com
+MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Minimalist, tiling window manager for X11
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		Unfetchable (google code has gone away)
+USE_GITHUB=	yes
+GH_ACCOUNT=	wmdiem
+GH_PROJECT=	euclid-wm
+GH_TAGNAME=	b6b0319
 
-OPTIONS_DEFINE=	XINERAMA
-XINERAMA_DESC=	X11 Xinerama extention support
-OPTIONS_DEFAULT=XINERAMA
+OPTIONS_DEFINE=		XINERAMA EUCLID_MENU
+OPTIONS_SUB=		yes
+OPTIONS_DEFAULT=	XINERAMA
+XINERAMA_DESC=		X11 Xinerama extension support
+EUCLID_MENU_DESC=	Custom built menuing program (work in progress)
 
+ALL_TARGET=		noxinerama
 XINERAMA_ALL_TARGET=	euclid-wm
-XINERAMA_USE=	XORG=xinerama
+EUCLID_MENU_ALL_TARGET=	euclid-menu
+XINERAMA_USE=		XORG=xinerama
 
-USES=	gmake
+USES=		gmake
 USE_XORG=	x11
 
 PLIST_FILES=	bin/euclid-wm \
 		bin/start-euclid \
 		man/man1/euclid-wm.1.gz \
-		share/euclid-wm/euclid-wm.conf \
-		share/euclid-wm/euclidrc \
-		share/euclid-wm/VERSION \
-		share/xsessions/euclid.desktop
+		share/xsessions/euclid.desktop \
+		%%DATADIR%%/VERSION \
+		%%DATADIR%%/euclid-wm.conf \
+		%%DATADIR%%/euclidrc \
+		%%EUCLID_MENU%%bin/euclid-menu \
+		%%EUCLID_MENU%%share/euclid-menu/handlers/.echo_file.sh \
+		%%EUCLID_MENU%%share/euclid-menu/handlers/c.sh \
+		%%EUCLID_MENU%%share/euclid-menu/handlers/default.sh
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/euclid-wm
+
+post-install-EUCLID_MENU-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/euclid-menu
 
 .include <bsd.port.mk>

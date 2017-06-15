@@ -2,10 +2,8 @@
 
 PORTNAME=	ksysguardd
 PORTVERSION=	${KDE4_WORKSPACE_VERSION}
-CATEGORIES=	sysutils kde
-MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${KDE4_APPLICATIONS_VERSION}/src
+CATEGORIES=	sysutils kde kde-applications
 DISTNAME=	kde-workspace-${PORTVERSION}
-DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE System Guard Daemon
@@ -15,11 +13,13 @@ USES=		cmake kde:4 tar:xz
 CMAKE_ARGS+=	-DBIN_INSTALL_DIR:STRING="${PREFIX}/bin" \
 		-DSYSCONF_INSTALL_DIR:STRING="${PREFIX}/etc"
 
+KDE_APPLICATIONS_VERSION=	15.08.0
+
 EXTRACT_AFTER_ARGS=	'${DISTNAME}/ksysguard/${PORTNAME}' \
 			'${DISTNAME}/ksysguard/example/${PORTNAME}rc' \
 			'${DISTNAME}/ksysguard/gui/SignalIDs.h'
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/ksysguard/${PORTNAME}
+WRKSRC_SUBDIR=	ksysguard/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/${PORTNAME}rc

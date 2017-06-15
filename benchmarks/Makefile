@@ -5,6 +5,7 @@
 
     SUBDIR += autobench
     SUBDIR += blogbench
+    SUBDIR += bombardier
     SUBDIR += bonnie
     SUBDIR += bonnie++
     SUBDIR += clpeak
@@ -21,6 +22,7 @@
     SUBDIR += flowgrind
     SUBDIR += forkbomb
     SUBDIR += glmark2
+    SUBDIR += gobench
     SUBDIR += gtkperf
     SUBDIR += himenobench
     SUBDIR += hpl

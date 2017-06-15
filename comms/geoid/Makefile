@@ -3,7 +3,7 @@
 PORTNAME=	geoid
 PORTVERSION=	1.0
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/LinuxApps/ \
 		LOCAL/db

@@ -1,6 +1,6 @@
---- configure.orig	2016-08-07 08:08:37 UTC
+--- configure.orig	2016-11-12 20:55:45 UTC
 +++ configure
-@@ -21130,7 +21130,7 @@ $as_echo "#define HAVE_LIBSOUP_GNOME 1" 
+@@ -21147,7 +21147,7 @@ $as_echo "#define HAVE_LIBSOUP_GNOME 1" 
  fi
  
  
@@ -9,11 +9,12 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for archive_read_new in -larchive" >&5
  $as_echo_n "checking for archive_read_new in -larchive... " >&6; }
  if ${ac_cv_lib_archive_archive_read_new+:} false; then :
-@@ -21175,6 +21175,7 @@ else
+@@ -21192,7 +21192,7 @@ else
    HAVE_ARCHIVE=no
  
  fi
+-
 +LIBS=$OLDLIBS
  
  
- 
+ pkg_failed=no

@@ -1,0 +1,15 @@
+TIMESTAMP = 1490044553
+SHA256 (llvm-4.0.0.src.tar.xz) = 8d10511df96e73b8ff9e7abbfb4d4d432edbdbe965f1f4f07afaf370b8a533be
+SIZE (llvm-4.0.0.src.tar.xz) = 21016340
+SHA256 (cfe-4.0.0.src.tar.xz) = cea5f88ebddb30e296ca89130c83b9d46c2d833685e2912303c828054c4dc98a
+SIZE (cfe-4.0.0.src.tar.xz) = 10900916
+SHA256 (compiler-rt-4.0.0.src.tar.xz) = d3f25b23bef24c305137e6b44f7e81c51bbec764c119e01512a9bd2330be3115
+SIZE (compiler-rt-4.0.0.src.tar.xz) = 1435104
+SHA256 (clang-tools-extra-4.0.0.src.tar.xz) = 41b7d37eb128fd362ab3431be5244cf50325bb3bb153895735c5bacede647c99
+SIZE (clang-tools-extra-4.0.0.src.tar.xz) = 583088
+SHA256 (lld-4.0.0.src.tar.xz) = 33e06457b9ce0563c89b11ccc7ccabf9cff71b83571985a5bf8684c9150e7502
+SIZE (lld-4.0.0.src.tar.xz) = 592728
+SHA256 (lldb-4.0.0.src.tar.xz) = 2dbd8f05c662c1c9f11270fc9d0c63b419ddc988095e0ad107ed911cf882033d
+SIZE (lldb-4.0.0.src.tar.xz) = 19122324
+SHA256 (openmp-4.0.0.src.tar.xz) = db55d85a7bb289804dc42fc5c8e35ca24dfc3885782261b675a194fd7e206e26
+SIZE (openmp-4.0.0.src.tar.xz) = 2040104

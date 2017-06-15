@@ -1,7 +1,7 @@
---- VTK/GUISupport/Qt/CMakeLists.txt.orig	2014-01-11 15:02:07.000000000 +0100
-+++ VTK/GUISupport/Qt/CMakeLists.txt	2014-01-29 23:50:07.000000000 +0100
-@@ -114,7 +114,10 @@
-     set(QT_LIBRARIES ${Qt5Designer_LIBRARIES})
+--- VTK/GUISupport/Qt/CMakeLists.txt.orig	2016-11-14 15:41:57 UTC
++++ VTK/GUISupport/Qt/CMakeLists.txt
+@@ -135,7 +135,10 @@ if(BUILD_SHARED_LIBS AND VTK_BUILD_QT_DE
+     set(QT_LIBRARIES Qt5::${qt_component})
    else()
      add_definitions(-DQT_PLUGIN)
 -    include_directories(${QT_QTDESIGNER_INCLUDE_DIR})

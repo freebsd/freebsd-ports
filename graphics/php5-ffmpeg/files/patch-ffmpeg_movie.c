@@ -36,7 +36,7 @@
                      _php_get_filename(ffmovie_ctx));
              return NULL;
          }
-@@ -964,12 +964,14 @@ static const char* _php_get_codec_name(f
+@@ -964,13 +964,15 @@ static const char* _php_get_codec_name(f
      /* Copied from libavcodec/utils.c::avcodec_string */
      if (p) {
          codec_name = p->name;
@@ -47,7 +47,27 @@
              else if (decoder_ctx->sub_id == 1)
                  codec_name = "mp1";
          }
+-    } else if (decoder_ctx->codec_id == CODEC_ID_MPEG2TS) {
 + */
-     } else if (decoder_ctx->codec_id == CODEC_ID_MPEG2TS) {
++    } else if (decoder_ctx->codec_id == AV_CODEC_ID_MPEG2TS) {
          /* fake mpeg2 transport stream codec (currently not registered) */
          codec_name = "mpeg2ts";
+     } else if (decoder_ctx->codec_name[0] != '\0') {
+@@ -1223,7 +1225,7 @@ static AVFrame* _php_read_av_frame(ff_mo
+         return NULL;
+     }
+ 
+-    frame = avcodec_alloc_frame();
++    frame = av_frame_alloc();
+ 
+     /* read next frame */ 
+     while (av_read_frame(ffmovie_ctx->fmt_ctx, &packet) >= 0) {
+@@ -1353,7 +1355,7 @@ static int _php_get_ff_frame(ff_movie_co
+         ff_frame->keyframe = is_keyframe;
+         ff_frame->pts = pts;
+         
+-        ff_frame->av_frame = avcodec_alloc_frame();
++        ff_frame->av_frame = av_frame_alloc();
+         avpicture_alloc((AVPicture*)ff_frame->av_frame, ff_frame->pixel_format,
+             ff_frame->width, ff_frame->height);
+  

@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.1.6
-PORTREVISION=	1
+PORTVERSION=	5.1.18
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
-PKGNAMESUFFIX=	-additions
+PKGNAMESUFFIX?=	-additions
 DISTNAME=	VirtualBox-${PORTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
@@ -38,10 +37,12 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-[3-5]* \
-			virtualbox-ose-additions-devel-[3,4]* \
-			virtualbox-ose-devel-[3,4]* \
-			virtualbox-ose-legacy-[3,4]*
+CONFLICTS_INSTALL=	virtualbox-ose-[0-9]* \
+			virtualbox-ose-additions-devel-[0-9]* \
+			virtualbox-ose-devel-[0-9]* \
+			virtualbox-ose-legacy-[0-9]* \
+			virtualbox-ose-lite-[0-9]* \
+			virtualbox-ose-nox11-[0-9]*
 
 OPTIONS_DEFINE=	DBUS DEBUG OPENGL X11
 OPTIONS_DEFAULT=	DBUS X11
@@ -52,6 +53,12 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 
 .include <bsd.port.options.mk>
+
+.if ${SLAVE_PORT} == no
+CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11-[0-9]*
+.else
+CONFLICTS_INSTALL+=	virtualbox-ose-additions-[0-9]*
+.endif
 
 .if ${PORT_OPTIONS:MOPENGL} && empty(PORT_OPTIONS:MX11)
 BROKEN=		OPENGL requires X11 support. Run 'make config' again!
@@ -121,7 +128,7 @@ pre-everything::
 .if ${ARCH} == "amd64"
 .if !exists(/usr/lib32/libc.so)
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
-	@${ECHO} 'Do: cd /usr/src; make build32 install32; ldconfig -v -m -R /usr/lib32'
+	@${ECHO} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
 	@${FALSE}
 .endif
 .endif

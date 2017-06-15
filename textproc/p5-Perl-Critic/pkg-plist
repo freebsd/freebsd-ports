@@ -62,6 +62,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUnlessBlocks.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUnreachableCode.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUntilBlocks.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitYadaOperator.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/PodSpelling.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePackageMatchesPodName.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodAtEnd.pm
@@ -196,6 +197,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Utils/Perl.pm
 %%SITE_PERL%%/Perl/Critic/Violation.pm
 %%SITE_PERL%%/Test/Perl/Critic/Policy.pm
+%%PERL5_MAN1%%/perlcritic.1.gz
 %%PERL5_MAN3%%/Perl::Critic.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Annotation.3.gz
 %%PERL5_MAN3%%/Perl::Critic::CORE_DEVELOPER.3.gz
@@ -259,6 +261,7 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::ControlStructures::ProhibitYadaOperator.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::Documentation::PodSpelling.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::Documentation::RequirePackageMatchesPodName.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::Documentation::RequirePodAtEnd.3.gz
@@ -393,4 +396,3 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Utils::Perl.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Violation.3.gz
 %%PERL5_MAN3%%/Test::Perl::Critic::Policy.3.gz
-%%PERL5_MAN1%%/perlcritic.1.gz

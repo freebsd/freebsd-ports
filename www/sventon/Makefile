@@ -13,6 +13,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		zip
 NO_BUILD=	yes
@@ -41,11 +43,11 @@ SHAREGRP=	www
 PLIST_SUB+=	APPHOME=${APPHOME:S|^${PREFIX}/||}
 
 post-extract:
-	@${MKDIR} ${WRKDIR}/${PORTDIRNAME}
-	@${TAR} xf ${WRKSRC}/svn.war -C ${WRKDIR}/${PORTDIRNAME}
+	@${MKDIR} ${WRKDIR}/${PORTNAME}
+	@${TAR} xf ${WRKSRC}/svn.war -C ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${STAGEDIR}${APPHOME}/webapps/${PORTDIRNAME}
-	cd ${WRKDIR}/${PORTDIRNAME} && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTDIRNAME}
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}
+	cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} \* ${STAGEDIR}${APPHOME}/webapps/${PORTNAME}
 
 .include <bsd.port.mk>

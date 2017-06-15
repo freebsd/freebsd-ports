@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2016-11-24 13:19:47 UTC
++++ CMakeLists.txt
+@@ -156,6 +156,11 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+ 	endif()
+ endif()
+ 
++if(${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
++	set(BSD TRUE)
++	set(FREEBSD TRUE)
++endif()
++
+ # Configure MSVC Runtime
+ if(MSVC)
+ 	include(MSVCRuntime)

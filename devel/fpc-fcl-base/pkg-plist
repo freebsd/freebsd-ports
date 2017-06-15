@@ -1,4 +1,10 @@
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-base.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/advancedipc.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/advancedipc.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/advancedipc.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/advancedsingleinstance.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/advancedsingleinstance.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/advancedsingleinstance.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/ascii85.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/ascii85.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/avl_tree.o
@@ -64,6 +70,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/rtfpars.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/rtfpars.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/rttiutils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/rttiutils.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/singleinstance.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/singleinstance.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamcoll.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamcoll.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamcoll.rsj

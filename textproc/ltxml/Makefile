@@ -3,6 +3,7 @@
 
 PORTNAME=	ltxml
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GENTOO \
 		ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
@@ -19,16 +20,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/XML
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-zlib=/usr --datadir=${STAGEDIR}${PREFIX}/lib/ltxml12
+# textproc/py-ltxml links libltapi12.a and libltstd12.a into a shared library.
+CFLAGS+=	-fPIC
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-Wuninitialized -ffast-math -finline-functions \
 		-fomit-frame-pointer -fexpensive-optimizations -O3
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
 .endif
 
 post-patch:
@@ -37,4 +36,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@prefix@|${STAGEDIR}${PREFIX}|' \
 		${WRKSRC}/src/Makefile.sub.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

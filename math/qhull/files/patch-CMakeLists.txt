@@ -1,0 +1,25 @@
+Install docs into share/doc/ rather than include/
+
+--- CMakeLists.txt.orig	2016-01-19 00:21:32 UTC
++++ CMakeLists.txt
+@@ -91,7 +91,7 @@ else()
+     if(WIN32)
+         set(MAN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/man/man1)
+     else()
+-        set(MAN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/share/man/man1)
++        set(MAN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/man/man1)
+     endif()
+ endif()
+ if(DOC_INSTALL_DIR)
+@@ -616,9 +616,9 @@ install(TARGETS ${qhull_TARGETS_INSTALL}
+         ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
+ 
+ install(FILES ${libqhull_HEADERS}    DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull)
+-install(FILES ${libqhull_DOC}        DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull)
++install(FILES ${libqhull_DOC}        DESTINATION ${DOC_INSTALL_DIR}/libqhull)
+ install(FILES ${libqhullr_HEADERS}    DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull_r)
+-install(FILES ${libqhullr_DOC}        DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull_r)
++install(FILES ${libqhullr_DOC}        DESTINATION ${DOC_INSTALL_DIR}/libqhull_r)
+ install(FILES ${libqhullcpp_HEADERS} DESTINATION ${INCLUDE_INSTALL_DIR}/libqhullcpp)
+ install(FILES html/qhull.man         DESTINATION ${MAN_INSTALL_DIR} RENAME qhull.1)
+ install(FILES html/rbox.man          DESTINATION ${MAN_INSTALL_DIR} RENAME rbox.1)

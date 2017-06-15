@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	numix
-PORTVERSION=	2.6.4
+PORTVERSION=	2.6.6
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk flat themes
 
 LICENSE=	GPLv3
@@ -37,7 +37,7 @@ do-install:
 	@cd ${WRKSRC}/src && \
 		${COPYTREE_SHARE} ${dir} \
 		${STAGEDIR}${PREFIX}/share/themes/Numix \
-		"! -name thumbnail.png ! -path *scss*"
+		"! -name thumbnail.png ! -name all-assets* ! -path *scss*"
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/src/index.theme \
 		${STAGEDIR}${PREFIX}/share/themes/Numix

@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libvncserver
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 DISTVERSIONPREFIX=	LibVNCServer-
-PORTREVISION=	1
 CATEGORIES=	net devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LibVNC
 
 USES=		autoreconf jpeg libtool pathfix pkgconfig
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -36,7 +34,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
 
 OPENSSL_CONFIGURE_WITH=	crypto ssl
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
@@ -50,4 +48,10 @@ VAAPI_CONFIGURE_WITH=	libva
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/rfb/default8x16.h ${STAGEDIR}${PREFIX}/include/rfb
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

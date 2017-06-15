@@ -23,10 +23,4 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.PL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

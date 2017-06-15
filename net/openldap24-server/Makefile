@@ -140,7 +140,7 @@ PORTDOCS=		CHANGES drafts rfc
 PORT_OPTIONS+=	SASL
 .endif
 .if defined(USE_OPENLDAP)
-BROKEN=			You have 'USE_OPENLDAP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+BROKEN=			you have USE_OPENLDAP variable defined either in environment or in make(1) arguments; please undefine and try again
 .endif
 .else
 USE_OPENLDAP=		yes
@@ -504,6 +504,10 @@ PLIST_SUB+=		SHLIB_MINOR=${OPENLDAP_SHLIB_MINOR}
 PLIST_SUB+=		OPENLDAP_MAJOR=${OPENLDAP_MAJOR}
 
 .include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
 
 .if !${PORT_OPTIONS:MFETCH}
 CONFIGURE_ARGS+=	--without-fetch

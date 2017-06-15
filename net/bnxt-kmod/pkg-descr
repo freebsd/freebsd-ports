@@ -1,0 +1,5 @@
+This is the Broadcom bnxt driver for the NetXtreme-C and NetXtreme-E iflib
+driver from -CURRENT.
+
+Is only supported for FreeBSD versions which have iflib, but do not already
+include the driver (currently 11.0-STABLE and 12-CURRENT before r308696).

@@ -2,4 +2,4 @@ Python module interface to the cURL library which is
 a tool for transferring files with URL syntax, supporting
 many protocols.
 
-WWW: http://pycurl.sourceforge.net/
+WWW: http://pycurl.io/

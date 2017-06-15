@@ -1,0 +1,127 @@
+--- csv.3.orig	2013-01-10 00:04:17 UTC
++++ csv.3
+@@ -1,4 +1,4 @@
+-.TH CSV 3 "9 January 2013"
++.TH CSV 3 "2 January 2016"
+ .SH NAME
+ csv \- CSV parser and writer library
+ .SH SYNOPSIS
+@@ -36,6 +36,9 @@ void csv_free(struct csv_parser *\fIp\fB
+ 
+ unsigned char csv_get_delim(struct csv_parser *\fIp\fB);
+ unsigned char csv_get_quote(struct csv_parser *\fIp\fB);
++void csv_set_delim(struct csv_parser *\fIp\fB, unsigned char \fIc\fB);
++void csv_set_quote(struct csv_parser *\fIp\fB, unsigned char \fIc\fP);
++
+ void csv_set_space_func(struct csv_parser *\fIp\fB, int (*\fIf\fB)(unsigned char));
+ void csv_set_term_func(struct csv_parser *\fIp\fB, int (*\fIf\fB)(unsigned char));
+ 
+@@ -75,7 +78,7 @@ The idea behind parsing with \fBlibcsv\f
+ end-of-row events.  \fBcsv_parse()\fP parses the data provided calling the
+ user-defined callback functions as it reads fields and rows.
+ When complete, \fBcsv_fini()\fP is called to finish processing the current
+-field and make a final call to the callback functions if neccessary.
++field and make a final call to the callback functions if necessary.
+ \fBcsv_free()\fP is then called to free the parser object.
+ \fBcsv_error()\fP and \fBcsv_strerror()\fP provide information about errors
+ encountered by the functions.
+@@ -147,8 +150,8 @@ Multiple options can be specified by OR-
+ .RE
+ 
+ By default \fIcb2\fP is not called when rows that do not contain any fields
+-are encountered.  This behavior is meant to accomodate files using
+-only either a linefeed or a carriage return as a record seperator to
++are encountered.  This behavior is meant to accommodate files using
++only either a linefeed or a carriage return as a record separator to
+ be parsed properly while at the same time being able to parse files with rows
+ terminated by multiple characters from resulting in blank rows after
+ each actual row of data (for example, processing a text CSV file
+@@ -178,7 +181,7 @@ functions may be called many times durin
+ depending on the amount of data being processed in a given call.
+ .PP
+ \fBcsv_parse()\fP returns the number of bytes processed, on a successful
+-call this will be \fIlen\fP, if it is less than len an error has occured.
++call this will be \fIlen\fP, if it is less than len an error has occurred.
+ An error can occur, for example, if there is insufficient memory
+ to store the contents of the current field in the entry buffer.
+ An error can also occur if malformed data is encountered while running
+@@ -192,7 +195,7 @@ of the error. \fBcsv_error()\fP takes a 
+ .PP
+ .RS
+ .TP
+-\fBCSV_EPARSE\fP\ \ \ A parse error has occured while in strict mode
++\fBCSV_EPARSE\fP\ \ \ A parse error has occurred while in strict mode
+ .TP
+ \fBCSV_ENOMEM\fP\ \ \ There was not enough memory while attempting to increase the entry buffer for the current field
+ .TP
+@@ -210,7 +213,7 @@ to call the \fBcsv_fini()\fP function.  
+ function with any remaining data in the entry buffer (if there is
+ any) and call the \fIcb2\fP function unless we are already at the end of a row
+ (the last byte processed was a newline character for example).
+-It is neccessary to call this function because the file being
++It is necessary to call this function because the file being
+ processed might not end with a carriage return or newline but the
+ data that has been read in to this point still needs to be 
+ submitted to the callback routines.
+@@ -293,13 +296,14 @@ CUSTOMIZING THE PARSER
+ .br
+ The \fBcsv_set_delim()\fP and \fBcsv_set_quote()\fP functions provide a
+ means to change the characters that the parser will consider the delimiter
+-and quote characters respetively, cast to unsigned char.  \fBcsv_get_delim()\fP  and \fBcsv_get_delim()\fP
++and quote characters respetively, cast to unsigned char.  \fBcsv_get_delim()\fP
++and \fBcsv_set_delim()\fP
+ return the current delimiter and quote characters respectively.  When
+ \fBcsv_init()\fP is called the delimiter is set to \fBCSV_COMMA\fP and the quote
+ to \fBCSV_QUOTE\fP.  Note that the rest of the CSV conventions still apply
+ when these functions are used to change the delimiter and/or quote characters,
+ fields containing the new quote character or delimiter must be quoted and quote
+-characters must be escaped with an immediately preceeding instance of the same
++characters must be escaped with an immediately preceding instance of the same
+ character.
+ Additionally, the \fBcsv_set_space_func()\fP and \fBcsv_set_term_func()\fP
+ allow a user-defined function to be provided which will be used determine
+@@ -333,7 +337,7 @@ reflect the most common usage of the for
+ .PP
+ .RS
+ .TP
+-Fields are seperated with commas.
++Fields are separated with commas.
+ .TP
+ Rows are delimited by newline sequences (see below).
+ .TP
+@@ -385,7 +389,7 @@ will be interpreted as 3 fields, equival
+ RFC 4180 limits the allowable characters in a CSV field, \fBlibcsv\fP
+ allows any character to be present in a field provided it adheres
+ to the conventions mentioned above.  This makes it possible to
+-store binary data in CSV format, an attribute that many application rely on.
++store binary data in CSV format, an attribute that many applications rely on.
+ .PP
+ RFC 4180 states that a Carriage Return plus Linefeed combination is
+ used to delimit records, \fBlibcsv\fP allows any combination of Carriage
+@@ -409,7 +413,7 @@ would be parsed equivalently to the corr
+ .fi
+ This is often desirable as there are some applications that do
+ not adhere to the specifications previously discussed.  However,
+-there are instances where malformed CSV data is ambigious, namely
++there are instances where malformed CSV data is ambiguous, namely
+ when a comma or newline is the next non-space character following
+ a quote such as:
+ .nf
+@@ -420,7 +424,7 @@ This could either be parsed as a single 
+ 
+ \fBSally said "Hello", Wally said "Goodbye"\fP
+ 
+-or as 2 seperate fields:
++or as 2 separate fields:
+ 
+ .fi
+ \fBSally said "Hello\fP
+@@ -431,7 +435,7 @@ Since the data is malformed, there is no
+ before the comma is meant to be a literal quote or if it signifies
+ the end of the field.  This is of course not an issue for properly
+ formed data as all quotes must be escaped.  \fBlibcsv\fP will parse this
+-example as 2 seperate fields.
++example as 2 separate fields.
+ 
+ \fBlibcsv\fP provides a strict mode that will return with a parse error
+ if a quote is seen inside a non-quoted field or if a non-escaped

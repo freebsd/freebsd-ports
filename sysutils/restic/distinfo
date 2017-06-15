@@ -1,8 +1,3 @@
-SHA256 (restic-restic-v0.1.0_GH0.tar.gz) = df7842cb690a56ce5371013a958d9f324072429897511d4bbfc092d76303f198
-SIZE (restic-restic-v0.1.0_GH0.tar.gz) = 13368404
-SHA256 (restic-chunker-16a28ff_GH0.tar.gz) = e5028b6fbc39997cf8ac6ba81025681228ddb1d80558a9acd6c2f10a0051c3cc
-SIZE (restic-chunker-16a28ff_GH0.tar.gz) = 12241
-SHA256 (juju-errors-1b5e39b_GH0.tar.gz) = bf7ec9986aa03ad916f88e96c3860b8c7fb2705ed760f72f4149a6fc2341d53d
-SIZE (juju-errors-1b5e39b_GH0.tar.gz) = 15611
-SHA256 (golang-crypto-74f810a_GH0.tar.gz) = 25e0c9cb7c6d6a5935aa318c9792fa6e18c8e0238994b5be039f90c8d58fd680
-SIZE (golang-crypto-74f810a_GH0.tar.gz) = 864642
+TIMESTAMP = 1486552602
+SHA256 (restic-restic-v0.4.0_GH0.tar.gz) = 746dbc7b73f5a542be57b71714b243266a011f1d750f56f5100c08a59df1aeac
+SIZE (restic-restic-v0.4.0_GH0.tar.gz) = 22926188

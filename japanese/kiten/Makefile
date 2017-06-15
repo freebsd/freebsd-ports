@@ -3,9 +3,7 @@
 PORTNAME=	kiten
 PORTVERSION=	${KDE4_VERSION}
 PORTREVISION=	1
-CATEGORIES=	japanese kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	japanese kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Japanese reference/study tool for KDE 4

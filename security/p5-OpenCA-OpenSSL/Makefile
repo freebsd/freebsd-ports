@@ -17,9 +17,8 @@ BUILD_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 		p5-X500-DN>=0:net/p5-X500-DN
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 ssl
 USE_PERL5=	configure
-USE_OPENSSL=	yes
 MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 
 .include <bsd.port.mk>

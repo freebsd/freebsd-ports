@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C-library for generating multi page PostScript documents
 
 LICENSE=	GPLv2
@@ -56,7 +56,7 @@ post-patch:
 
 post-install:
 	${MKDIR} -m 0755 ${STAGEDIR}${EXAMPLESDIR}
-	@${RM} -f ${EX_WRKSRC}/Makefile.unix ${EX_WRKSRC}/ChangeLog \
+	@${RM} ${EX_WRKSRC}/Makefile.unix ${EX_WRKSRC}/ChangeLog \
 		${EX_WRKSRC}/CMakeLists.txt
 	cd ${EX_WRKSRC} && ${PAX} -rw * ${STAGEDIR}${EXAMPLESDIR}
 

@@ -43,10 +43,6 @@ FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=	Does not install on sparc64
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DISTDIR%%|${DISTDIR}|' \
 			  -e 's|%%PFBFER%%|${PFBFER}|' \

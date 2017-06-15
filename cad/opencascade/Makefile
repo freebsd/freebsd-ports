@@ -3,7 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	6.9.1
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -31,7 +31,7 @@ SHEBANG_FILES=	adm/templates/env.sh.in adm/templates/draw.sh		\
 		gendoc codeblocks.sh
 VTKVER=		6.2
 
-OPTIONS_DEFINE=	VIS DOCS
+OPTIONS_DEFINE=	VIS DOXYGEN
 VIS_DESC=	Build Visualizazion module (requires OpenGL, freetype, ftgl and gl2ps)
 OPTIONS_DEFAULT=VIS
 OPTIONS_SUB=	yes
@@ -55,7 +55,7 @@ USE_LDCONFIG=	yes
 
 LOCCROOT=	OpenCAS
 OCCROOT=	${PREFIX}/${LOCCROOT}
-PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${COMPILER_TYPE}
+PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${CHOSEN_COMPILER_TYPE}
 
 VIS_CMAKE_ON=		-DUSE_FREEIMAGE:BOOL=ON -DUSE_GL2PS:BOOL=ON	\
 			-DUSE_FREETYPE:BOOL=ON
@@ -71,12 +71,12 @@ VIS_CMAKE_ON=	-D3RDPARTY_FREETYPE_DIR=${LOCALBASE}	\
 		-D3RDPARTY_FREEIMAGE_DIR=${LOCALBASE}	\
 		-D3RDPARTY_GL2PS_DIR=${LOCALBASE}
 
-DOCS_USE=	TEX=latex:build
-DOCS_BUILD_DEPENDS=	bash:shells/bash		\
+DOXYGEN_USE=	TEX=latex:build
+DOXYGEN_BUILD_DEPENDS=	bash:shells/bash		\
 			doxygen:devel/doxygen	\
 			dot:graphics/graphviz	\
 			inkscape:graphics/inkscape
-DOCS_RUN_DEPENDS=	${LOCALBASE}/www/MathJax/MathJax.js:www/mathjax
+DOXYGEN_RUN_DEPENDS=	${LOCALBASE}/www/MathJax/MathJax.js:www/mathjax
 
 .include <bsd.port.options.mk>
 
@@ -106,28 +106,28 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|lin|bsd|' ${WRKSRC}/${es}
 .endfor
 
-post-build-DOCS-on:
+post-build-DOXYGEN-on:
 	(cd ${WRKSRC} && ./gendoc -overview)
 
 post-install:
-	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/bin/DRAWEXE	\
+	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${CHOSEN_COMPILER_TYPE}/bin/DRAWEXE	\
 		${STAGEDIR}${PREFIX}/bin/
 	(cd ${STAGEDIR}${PREFIX}/bin &&							\
-	${LN} -sf DRAWEXE ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/bin/DRAWEXE)
-	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/lib/lib*.so	\
+	${LN} -sf DRAWEXE ${STAGEDIR}${OCCROOT}/bsd${BITS}/${CHOSEN_COMPILER_TYPE}/bin/DRAWEXE)
+	${MV} ${STAGEDIR}${OCCROOT}/bsd${BITS}/${CHOSEN_COMPILER_TYPE}/lib/lib*.so	\
 		${STAGEDIR}${PREFIX}/lib/
 	(cd ${STAGEDIR}${PREFIX}/lib							\
 	&& for l in lib*.so; do								\
 	${MV} $${l} $${l}.0;								\
 	${LN} -sf $${l}.0 $${l};							\
-	${LN} -sf $${l}.0 ${STAGEDIR}${OCCROOT}/bsd${BITS}/${COMPILER_TYPE}/lib/$${l};	\
+	${LN} -sf $${l}.0 ${STAGEDIR}${OCCROOT}/bsd${BITS}/${CHOSEN_COMPILER_TYPE}/lib/$${l};	\
 	done)
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/OpenCASCADE
 	(cd ${STAGEDIR}${OCCROOT}/inc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/OpenCASCADE)
-	${RM} -rf ${STAGEDIR}${OCCROOT}/inc
+	${RM} -r ${STAGEDIR}${OCCROOT}/inc
 	${LN} -sf ${PREFIX}/include/OpenCASCADE ${STAGEDIR}${OCCROOT}/inc
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} tests ${STAGEDIR}${OCCROOT})
-post-install-DOCS-on:
+post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/overview && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${RMDIR} ${STAGEDIR}${DOCSDIR}/latex

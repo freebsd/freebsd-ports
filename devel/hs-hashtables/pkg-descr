@@ -3,4 +3,4 @@ hash tables in the ST monad, as well as a type class abstracting their
 common operations, and a set of wrappers to use the hash tables in the
 IO monad.
 
-WWW: http://github.com/gregorycollins/hashtables
+WWW: https://github.com/gregorycollins/hashtables

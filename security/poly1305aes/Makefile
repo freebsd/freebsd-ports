@@ -9,10 +9,13 @@ MASTER_SITES=	http://cr.yp.to/mac/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Poly1305 message authentication reference implementation using AES
 
+LICENSE=	PD
+
 ALL_TARGET=	default
 
 CC+=		${CPPFLAGS} ${CFLAGS} ${LDFLAGS}
 
+BROKEN_aarch64=		Fails to build: poly1305aes.impl.do: fatal: all tests failed
 NOT_FOR_ARCHS=	amd64
 
 .include <bsd.port.pre.mk>

@@ -13,7 +13,7 @@ COMMENT=	Cluster synchronization tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	librsync.so.2:net/librsync1 \
+LIB_DEPENDS=	librsync.so.2:net/librsync2 \
 		libgnutls.so:security/gnutls \
 		libsqlite3.so:databases/sqlite3
 

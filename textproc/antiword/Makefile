@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for displaying Microsoft(R) Word documents
 
 LICENSE=	GPLv2
@@ -38,7 +38,7 @@ CFLAGS+=	-DNDEBUG
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,/usr/share,${LOCALBASE}/share,g; s,fonts2,fonts,' ${WRKSRC}/Unix-only/fontinfo.pl
-	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS|OPT)/d; s,/usr/share,${PREFIX}/share,g; s|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS|OPT)/d; s,/usr/share,${PREFIX}/share,g; s|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/Makefile.Linux
 	@${REINPLACE_CMD} -E 's,/usr/share,${PREFIX}/share,g' ${WRKSRC}/antiword.h
 
 post-install:

@@ -2,6 +2,7 @@
 
 PORTNAME=	libbobcat
 PORTVERSION=	3.25.01
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/bobcat/bobcat/${PORTVERSION}
 DISTNAME=	bobcat_${PORTVERSION}
@@ -15,7 +16,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	icmake:devel/icmake \
 		yodl>=3.0:textproc/yodl
 
-USE_GCC=	4.9+
+USE_GCC=	yes
 USE_XORG=	x11
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}

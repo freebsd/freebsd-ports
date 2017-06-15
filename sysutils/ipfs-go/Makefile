@@ -37,6 +37,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
+# golang assumes that if clang is in use, it is called "clang" and not "cc". If
+# it's called "cc", go fails.
 .if ${COMPILER_TYPE} == clang
 BUILD_ENV=  CC=clang
 .endif

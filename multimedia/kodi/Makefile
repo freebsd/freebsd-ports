@@ -2,7 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	16.1
-PORTREVISION=	2
+PORTREVISION=	11
 CATEGORIES=	multimedia java
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -28,21 +28,34 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libdcadec.so:multimedia/libdcadec \
 		libdrm.so:graphics/libdrm \
 		libenca.so:converters/enca \
+		libexpat.so:textproc/expat2\
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
+		libgcrypt.so:security/libgcrypt \
+		libgmp.so:math/gmp \
+		libgpg-error.so:security/libgpg-error \
 		libgnutls.so:security/gnutls \
+		libidn.so:dns/libidn \
+		libinotify.so:devel/libinotify \
 		libjasper.so:graphics/jasper \
 		libltdl.so:devel/libltdl \
 		liblzo2.so:archivers/lzo2 \
 		libmodplug.so:audio/libmodplug \
 		libmpeg2.so:multimedia/libmpeg2 \
+		libnettle.so:security/nettle \
+		libogg.so:audio/libogg \
+		libp11-kit.so:security/p11-kit \
 		libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
 		libsamplerate.so:audio/libsamplerate \
 		libsqlite3.so:databases/sqlite3 \
 		libtag.so:audio/taglib \
+		libtasn1.so:security/libtasn1 \
+		libtiff.so:graphics/tiff \
 		libtinyxml.so:textproc/tinyxml \
+		libtspi.so:security/trousers \
+		libuuid.so:misc/e2fsprogs-libuuid \
 		libvorbis.so:audio/libvorbis \
 		libxslt.so:textproc/libxslt	\
 		libyajl.so:devel/yajl
@@ -51,16 +64,20 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3 \
 		python:lang/python \
 		xdpyinfo:x11/xdpyinfo
 
+CONFLICTS_BUILD=compat9x
+
 USE_GITHUB=	yes
-GH_TUPLE=	xbmc:xbmc:c327c53 xbmc:FFmpeg:2.8.6-Jarvis-16.0:ffmpeg
+GH_TUPLE=	xbmc:xbmc:c327c53 \
+		xbmc:FFmpeg:2.8.6-Jarvis-16.0:ffmpeg/tools/depends/target/ffmpeg
 
 USES=		autoreconf:build compiler:c++11-lib gettext gmake iconv jpeg \
-		libtool pkgconfig python:2
+		libtool pkgconfig python:2 ssl
 GNU_CONFIGURE=	yes
-USE_XORG=	xmu xrandr xt xtst
-USE_GL=		glu glew
+USE_XORG=	x11 xcb xext xmu xrandr xt xtst
+USE_GL=		gl glu glew
 USE_SDL=	image sdl2
 USE_JAVA=	yes
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 JAVA_BUILD=	jre
 NOPRECIOUSMAKEVARS=	yes
@@ -119,8 +136,7 @@ PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	rtmp
 
-SMB_LIB_DEPENDS=	libsmbclient.so:net/samba-libsmbclient
-SMB_RUN_DEPENDS=	nmblookup:net/samba-nmblookup
+SMB_USES=		samba:lib
 SMB_CONFIGURE_ENABLE=	samba
 
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
@@ -137,9 +153,6 @@ SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 SFTP_CONFIGURE_ENABLE=	ssh
 
 CONFIGURE_ARGS+=	--disable-debug --disable-alsa --disable-texturepacker
-
-post-extract:
-	${MV} ${WRKSRC_ffmpeg} ${WRKSRC}/tools/depends/target/ffmpeg/
 
 post-patch:
 	${REINPLACE_CMD} 's;make;gmake;' \

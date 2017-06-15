@@ -1,0 +1,4 @@
+Several helpers CMake modules needed to build LXQt itself as well as other
+components.
+
+WWW: https://github.com/lxde/lxqt-build-tools

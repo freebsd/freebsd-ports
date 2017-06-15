@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	spark
-PORTVERSION=	1.6.1
+PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		LOCAL/demon/:maven \
@@ -17,14 +18,16 @@ COMMENT=	Fast big data processing engine
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33 \
-		${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java
+		${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java \
+		bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash \
 		yarn:devel/hadoop2
 
-USES=		python:2
+USES=		python:2 shebangfix
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M -XX:ReservedCodeCacheSize=512m"
+SHEBANG_FILES=	bin/sparkR
 
 USERS=		spark
 GROUPS=		spark
@@ -52,18 +55,18 @@ do-build:
 		-Dmaven.repo.local=${WRKDIR}/m2 clean package \
 		-Dhadoop.version=2.7.2 -Pyarn -Phadoop-2.6 -DskipTests \
 		-Duser.home=${WRKDIR}
-	${JAR} uvf ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar \
+	${JAR} uvf ${WRKSRC}/assembly/target/scala*/jars/snappy-java-*.jar \
 		-C ${WRKDIR}/snappy org
 
 post-build:
 	${RM} ${WRKSRC}/bin/*.cmd ${WRKSRC}/sbin/spark-daemon.sh.orig
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/lib ${STAGEDIR}${DATADIR}/examples ${STAGEDIR}${DATADIR}/bin ${STAGEDIR}${DATADIR}/sbin ${STAGEDIR}${DATADIR}/conf
-	${ECHO_CMD} "Spark $PORTVERSION built for Hadoop 2.7.2" > ${STAGEDIR}${DATADIR}/RELEASE
-	${INSTALL_DATA} ${WRKSRC}/assembly/target/scala*/*assembly*hadoop*.jar ${STAGEDIR}${DATADIR}/lib/
-	${INSTALL_DATA} ${WRKSRC}/examples/target/scala*/spark-examples*.jar ${STAGEDIR}${DATADIR}/lib/
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} src ${STAGEDIR}${DATADIR}/examples/
+	${MKDIR} ${STAGEDIR}${DATADIR}/lib ${STAGEDIR}${DATADIR}/examples/jars ${STAGEDIR}${DATADIR}/bin ${STAGEDIR}${DATADIR}/sbin ${STAGEDIR}${DATADIR}/conf
+	${ECHO_CMD} "Spark ${PORTVERSION} built for Hadoop 2.7.2" > ${STAGEDIR}${DATADIR}/RELEASE
+	(cd  ${WRKSRC}/assembly/target/scala* && ${COPYTREE_SHARE} jars  ${STAGEDIR}${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/examples/target/spark-examples*.jar ${STAGEDIR}${DATADIR}/examples/jars
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} src ${STAGEDIR}${DATADIR}/examples
 	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} * ${STAGEDIR}${DATADIR}/bin/
 	cd ${WRKSRC}/sbin && ${INSTALL_SCRIPT} * ${STAGEDIR}${DATADIR}/sbin/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} python ${STAGEDIR}${DATADIR}/

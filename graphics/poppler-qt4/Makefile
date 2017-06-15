@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-qt4
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -6,7 +6,7 @@ CATEGORIES=	net python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	harm@weites.com
+MAINTAINER=	bertjw@regeer.org
 COMMENT=	Init scripts for use on cloud images
 
 LICENSE=	GPLv3
@@ -20,7 +20,6 @@ RUN_DEPENDS=	dmidecode>0:sysutils/dmidecode \
 		${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests \
@@ -36,6 +35,9 @@ SHEBANG_FILES=	tools/validate-yaml.py tools/read-dependencies \
 USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"
+
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	currently depends on dmidecode which is x86-only
 
 post-build:
 	@cd ${WRKSRC} && ${MV} config/cloud.cfg-freebsd config/cloud.cfg

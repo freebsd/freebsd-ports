@@ -1,3 +1,5 @@
+Implement Linux-like memory stats for BSDs
+
 --- source/ramlib/ram.c.orig	2015-04-18 21:21:56 UTC
 +++ source/ramlib/ram.c
 @@ -25,6 +25,21 @@

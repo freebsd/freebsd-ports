@@ -4,6 +4,7 @@
 
 PORTNAME=	xdg
 PORTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://people.freedesktop.org/~takluyver/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ COMMENT=	Python library to access freedesktop.org standards
 LICENSE=	LGPL20
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2
 USE_PYTHON=	autoplist distutils
 
 post-patch:

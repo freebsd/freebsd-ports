@@ -125,6 +125,7 @@ include/freeipmi/spec/ipmi-system-software-id-spec.h
 include/freeipmi/spec/ipmi-timestamp-spec.h
 include/freeipmi/spec/oem/ipmi-cmd-oem-dell-spec.h
 include/freeipmi/spec/oem/ipmi-cmd-oem-fujitsu-spec.h
+include/freeipmi/spec/oem/ipmi-cmd-oem-gigabyte-spec.h
 include/freeipmi/spec/oem/ipmi-cmd-oem-ibm-spec.h
 include/freeipmi/spec/oem/ipmi-cmd-oem-intel-node-manager-spec.h
 include/freeipmi/spec/oem/ipmi-cmd-oem-intel-spec.h
@@ -156,6 +157,7 @@ include/freeipmi/spec/oem/ipmi-netfn-oem-supermicro-spec.h
 include/freeipmi/spec/oem/ipmi-netfn-oem-wistron-spec.h
 include/freeipmi/spec/oem/ipmi-oem-dell-spec.h
 include/freeipmi/spec/oem/ipmi-oem-fujitsu-spec.h
+include/freeipmi/spec/oem/ipmi-oem-gigabyte-spec.h
 include/freeipmi/spec/oem/ipmi-oem-ibm-spec.h
 include/freeipmi/spec/oem/ipmi-oem-intel-spec.h
 include/freeipmi/spec/oem/ipmi-oem-inventec-spec.h
@@ -165,6 +167,7 @@ include/freeipmi/spec/oem/ipmi-oem-supermicro-spec.h
 include/freeipmi/spec/oem/ipmi-oem-wistron-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-dell-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-fujitsu-spec.h
+include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-gigabyte-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-hp-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-intel-node-manager-spec.h
 include/freeipmi/spec/oem/ipmi-sensor-and-event-code-tables-oem-intel-spec.h
@@ -251,11 +254,11 @@ include/ipmidetect.h
 lib/libfreeipmi.a
 lib/libfreeipmi.so
 lib/libfreeipmi.so.17
-lib/libfreeipmi.so.17.1.0
+lib/libfreeipmi.so.17.1.3
 lib/libipmiconsole.a
 lib/libipmiconsole.so
 lib/libipmiconsole.so.2
-lib/libipmiconsole.so.2.3.2
+lib/libipmiconsole.so.2.3.4
 lib/libipmidetect.a
 lib/libipmidetect.so
 lib/libipmidetect.so.0

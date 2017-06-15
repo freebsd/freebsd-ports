@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmap
-DISTVERSION=	7.31
+DISTVERSION=	7.40
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=--without-localdirs \
 
 # XXX limit results if we do a grep in the sources!
 post-extract:
-	@${RM} -rf ${WRKSRC}/mswin32
+	@${RM} -r ${WRKSRC}/mswin32
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|" ${WRKSRC}/Makefile

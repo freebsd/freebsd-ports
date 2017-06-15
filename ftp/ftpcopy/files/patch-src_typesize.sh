@@ -5,7 +5,7 @@
        else
  	x=$?
 -	p=`echo $i | sed 's/ /_/g' | tr "[a-z]]" "[A-Z]"`
-+	p=`echo $i | sed 's/ /_/g' | env LC_COLLATE=C tr "[:lower:]" "[:upper:]"`
++	p=`echo $i | sed 's/ /_/g' | tr "[:lower:]" "[:upper:]"`
  	echo "#define SIZEOF_$p $x /* systype-info */"
        fi
      fi

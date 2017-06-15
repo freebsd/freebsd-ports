@@ -12,14 +12,13 @@ COMMENT=	Library for Hangul processing
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/check.pc:devel/libcheck
+TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/check.pc:devel/check
 
 GH_ACCOUNT=	choehwanjin
 GH_TAGNAME=	9fe2d4e
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 TEST_TARGET=	test
 TEST_WRKSRC=	${WRKSRC}/test
 USE_LDCONFIG=	yes

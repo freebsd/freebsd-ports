@@ -26,7 +26,6 @@ USES=		cpe uidfix tar:bzip2
 CPE_VENDOR=	eterna
 
 HTPASSWD_DESC=		Enable htpassword support
-SSL_DESC=		Enable SSL support
 CGI_DESC=		Enable CGI support
 
 .include <bsd.port.options.mk>

@@ -16,4 +16,4 @@ Its goals are:
   different OSes and Ruby VMs
 - Provide inherently thread-safe facilities for working with IO objects
 
-WWW: https://github.com/celluloid/nio4r
+WWW: https://github.com/socketry/nio4r

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2009-11-07 03:47:20.000000000 +0100
-+++ Makefile.in	2009-12-26 12:53:16.000000000 +0100
-@@ -13,7 +13,7 @@
+--- Makefile.in.orig	2016-11-13 03:24:32 UTC
++++ Makefile.in
+@@ -37,7 +37,7 @@ libexecdir=@libexecdir@
  datadir=@datadir@
  datarootdir=@datarootdir@
  mandir=@mandir@
@@ -9,7 +9,7 @@
  sysconfdir=@sysconfdir@
  piddir=@piddir@
  srcdir=@srcdir@
-@@ -130,7 +130,7 @@
+@@ -157,7 +157,7 @@ uninstallall:	uninstall
  
  uninstall:
  	-rm -f $(DESTDIR)$(libexecdir)/pam_ssh_agent_auth.so

@@ -1,9 +1,0 @@
---- eclipse/features/org.eclipse.cdt.source_3.1.2.200702150621/feature.xml.orig	Thu Mar 30 19:51:01 2006
-+++ eclipse/features/org.eclipse.cdt.source_3.1.2.200702150621/feature.xml	Thu Mar 30 19:52:13 2006
-@@ -22,4 +22,6 @@
- 	<plugin ws="win32"  os="win32" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.cdt.source.win32.win32.x86" version="3.1.2"/>
- 	<plugin ws="motif"  os="solaris" fragment="true" arch="sparc" download-size="0" install-size="0" id="org.eclipse.cdt.source.solaris.motif.sparc" version="3.1.2"/>
- 	<plugin ws="gtk"  os="linux" fragment="true" arch="x86_64" download-size="0" install-size="0" id="org.eclipse.cdt.source.linux.gtk.x86_64" version="3.1.2"/>
-+	<plugin ws="gtk"  os="freebsd" fragment="true" arch="x86" download-size="0" install-size="0" id="org.eclipse.cdt.source.freebsd.gtk.x86" version="3.1.2"/>
-+	<plugin ws="gtk"  os="freebsd" fragment="true" arch="amd64" download-size="0" install-size="0" id="org.eclipse.cdt.source.freebsd.gtk.amd64" version="3.1.2"/>
- </feature>

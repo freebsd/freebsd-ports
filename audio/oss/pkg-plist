@@ -29,6 +29,7 @@ lib/oss/conf/oss_ymf7xx.conf.sample
 lib/oss/conf/osscore.conf.sample
 lib/oss/etc/devices.list
 lib/oss/include/sys/soundcard.h
+lib/oss/modules/lynxone.ko
 lib/oss/modules/oss_ali5455.ko
 lib/oss/modules/oss_atiaudio.ko
 lib/oss/modules/oss_audigyls.ko
@@ -73,6 +74,7 @@ man/man1/osstest.1.gz
 man/man1/ossxmix.1.gz
 man/man1/soundoff.1.gz
 man/man1/soundon.1.gz
+man/man7/lynxone.7.gz
 man/man7/oss_ali5455.7.gz
 man/man7/oss_atiaudio.7.gz
 man/man7/oss_audigyls.7.gz

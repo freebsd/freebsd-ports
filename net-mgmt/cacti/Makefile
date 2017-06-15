@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.8h${PATCHLEVEL}
+PORTVERSION=	1.0.1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/
@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rrdtool:databases/rrdtool
 
-USES=		cpe mysql shebangfix
-USE_PHP=	mysqli pcre session sockets snmp xml
-WANT_PHP_WEB=	yes
+USES=		cpe mysql php:web shebangfix
+USE_PHP=	ctype filter gd gmp hash json ldap mbstring openssl pcre pdo pdo_mysql posix session simplexml sockets snmp xml zlib
 NO_ARCH=	yes
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message

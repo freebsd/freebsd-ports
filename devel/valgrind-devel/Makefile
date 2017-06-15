@@ -4,7 +4,7 @@
 PORTNAME=	valgrind
 PORTVERSION=	3.10.1.20160113
 DISTVERSIONPREFIX=	freebsd-
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/ \
@@ -44,7 +44,6 @@ MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
 
 OPTIONS_SUB=	yes
 USES=		pathfix pkgconfig gmake perl5 shebangfix autoreconf
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -85,7 +84,7 @@ PLIST_SUB+=	AMD64="@comment "
 
 .if !${PORT_OPTIONS:MDOCS}
 post-patch:
-	@${RM} -rf ${WRKSRC}/docs/html
+	@${RM} -r ${WRKSRC}/docs/html
 .endif
 
 post-build:

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pry-rails
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Use Pry as your rails console
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	rubygem-pry>=0.9.10:devel/rubygem-pry
+RUN_DEPENDS=	rubygem-pry>=0.10.4:devel/rubygem-pry
 
 NO_ARCH=	yes
 USE_RUBY=	yes

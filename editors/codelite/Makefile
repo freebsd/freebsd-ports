@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	codelite
-PORTVERSION=	9.2
+PORTVERSION=	10.0
 PORTREVISION=	1
 CATEGORIES=	editors devel
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Open Source IDE for C/C++
 
 LICENSE=	GPLv2+
 
 RUN_DEPENDS=	xterm:x11/xterm
-LIB_DEPENDS+=	libhunspell-1.3.so:textproc/hunspell
+LIB_DEPENDS+=	libhunspell-1.6.so:textproc/hunspell
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eranif
@@ -46,11 +46,16 @@ SFTP_USES=		localbase
 
 CLANG_DESC=		Clang code-completion
 
-.for v in 34 35 36 37 38
+.for v in 34 35 36 37 38 39
 OPTIONS_RADIO_CLANG+=	CLANG$v
 CLANG$v_DESC=		Clang ${v:C/(.)(.)/\1.\2.x/}
+.if $v == 39
+CLANG$v_BUILD_DEPENDS=	llvm$v>0:devel/llvm$v
+CLANG$v_RUN_DEPENDS=	llvm$v>0:devel/llvm$v
+.else
 CLANG$v_BUILD_DEPENDS=	clang$v>0:lang/clang$v
 CLANG$v_RUN_DEPENDS=	clang$v>0:lang/clang$v
+.endif
 
 post-patch-CLANG$v-on:
 	@${REINPLACE_CMD} -e \

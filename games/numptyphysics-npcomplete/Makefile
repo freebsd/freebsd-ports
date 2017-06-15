@@ -21,7 +21,7 @@ DATADIR=	${PREFIX}/share/numptyphysics
 
 post-extract:
 # this level will crash the game
-	@${RM} -f "${WRKSRC}/L02_bridge Gaps tut.nph"
+	@${RM} "${WRKSRC}/L02_bridge Gaps tut.nph"
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

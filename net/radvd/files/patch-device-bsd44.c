@@ -1,13 +1,16 @@
---- device-bsd44.c.orig	2014-07-21 07:21:42 UTC
+
+$FreeBSD$
+
+--- device-bsd44.c.orig	2015-11-19 13:58:52 UTC
 +++ device-bsd44.c
-@@ -171,6 +171,24 @@ int setup_linklocal_addr(struct Interfac
+@@ -116,6 +116,24 @@ int update_device_info(int sock, struct 
  
- int setup_allrouters_membership(struct Interface *iface)
+ int setup_allrouters_membership(int sock, struct Interface *iface)
  {
 +	struct ipv6_mreq mreq;
 +
 +	memset(&mreq, 0, sizeof(mreq));
-+	mreq.ipv6mr_interface = iface->if_index;
++	mreq.ipv6mr_interface = iface->props.if_index;
 +
 +	/* all-routers multicast address */
 +	if (inet_pton(AF_INET6, "ff02::2",
@@ -18,7 +21,7 @@
 +
 +	if (setsockopt(sock, IPPROTO_IPV6, IPV6_JOIN_GROUP,
 +			&mreq, sizeof(mreq)) < 0) {
-+		flog(LOG_ERR, "can't join ipv6-allrouters on %s", iface->Name);
++		flog(LOG_ERR, "can't join ipv6-allrouters on %s", iface->props.name);
 +		return (-1);
 +	}
 +

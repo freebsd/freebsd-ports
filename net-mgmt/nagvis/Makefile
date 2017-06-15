@@ -53,7 +53,7 @@ RUN_DEPENDS+=	dot:graphics/graphviz
 .endif
 
 post-extract:
-	@${RM} -f ${WRKSRC}/.gitignore ${WRKSRC}/install.sh ${WRKSRC}/INSTALL
+	@${RM} ${WRKSRC}/.gitignore ${WRKSRC}/install.sh ${WRKSRC}/INSTALL
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|@NAGVIS_WEB@|/nagvis|g' \

@@ -32,7 +32,7 @@ USES=		perl5
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 502000
+.if ${PERL_LEVEL} >= 502200
 TEST_DEPENDS+=	p5-Module-Build>=0:devel/p5-Module-Build
 .endif
 

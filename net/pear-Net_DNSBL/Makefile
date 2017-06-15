@@ -5,7 +5,7 @@ PORTNAME=	Net_DNSBL
 PORTVERSION=	1.3.7
 CATEGORIES=	net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR DNSBL Checker
 
 BUILD_DEPENDS=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite \
@@ -17,7 +17,7 @@ RUN_DEPENDS:=	${PEARDIR}/Cache/Lite.php:sysutils/pear-Cache_Lite \
 		${PEARDIR}/Net/DNS/RR/A.php:dns/pear-Net_DNS \
 		${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2
 
-USES=	pear
+USES=		pear
 
 PORTSCOUT=	skipv:1.3.0a1
 

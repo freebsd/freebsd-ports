@@ -19,7 +19,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libfftw3.so:math/fftw3
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

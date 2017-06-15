@@ -14,5 +14,5 @@ Using libnet, quick and simple packet assembly applications can be whipped up
 with little effort.  With a bit more time, more complex programs can be written
 (Traceroute and ping were easily rewritten using libnet and libpcap).
 
-WWW: http://sourceforge.net/projects/libnet-dev/
+WWW: https://sourceforge.net/projects/libnet-dev/
 WWW: https://github.com/sam-github/libnet

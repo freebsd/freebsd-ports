@@ -3,7 +3,7 @@
 
 PORTNAME=	sed
 PORTVERSION=	3.62
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://sed.sourceforge.net/grabbag/ssed/
 PKGNAMEPREFIX=	s

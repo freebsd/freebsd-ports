@@ -1,0 +1,16 @@
+--- configure.ac.orig	2017-02-05 22:41:56 UTC
++++ configure.ac
+@@ -79,7 +79,12 @@ AS_IF([test x$enable_asm != xno], [
+         [*darwin*], [
+             ASFLAGS="$ASFLAGS -f macho$BITS -DPREFIX -DHAVE_ALIGNED_STACK=1" ],
+         [*linux*|*dragonfly*|*bsd*|*solaris*], [
+-            ASFLAGS="$ASFLAGS -f elf -DHAVE_ALIGNED_STACK=1" ],
++            AS_IF([test x$BITS = x64], [
++                ASFLAGS="$ASFLAGS -f elf -DHAVE_ALIGNED_STACK=1"
++            ], [
++                ASFLAGS="$ASFLAGS -f elf -DHAVE_ALIGNED_STACK=0"
++            ])
++        ],
+         [*cygwin*|*mingw*], [
+             ASFLAGS="$ASFLAGS -f win$BITS"
+             AS_IF([test x$BITS = x64], [

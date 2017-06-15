@@ -1,6 +1,6 @@
---- client/CMakeLists.txt.orig	2014-08-09 00:13:48.000000000 +0200
-+++ client/CMakeLists.txt	2014-09-05 22:40:26.210338712 +0200
-@@ -38,11 +38,12 @@
+--- client/CMakeLists.txt.orig	2017-01-12 01:45:16 UTC
++++ client/CMakeLists.txt
+@@ -38,11 +38,12 @@ IF(UNIX)
    SET_TARGET_PROPERTIES(mysql PROPERTIES ENABLE_EXPORTS TRUE)
  ENDIF(UNIX)
  
@@ -14,8 +14,8 @@
  
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
  TARGET_LINK_LIBRARIES(mysqlcheck mysqlclient)
-@@ -53,21 +54,25 @@
- MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
+@@ -54,21 +55,25 @@ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlim
+ SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
  
 +IF(FALSE)
@@ -41,7 +41,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysqlslap mysqlslap.c)
  SET_SOURCE_FILES_PROPERTIES(mysqlslap.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
-@@ -79,10 +84,12 @@
+@@ -80,10 +85,12 @@ IF(WIN32)
  ENDIF(WIN32)
  
  # async_example is just a code example, do not install it.

@@ -2,7 +2,6 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -26,7 +25,9 @@ PATCHFILES=	patch-8u05-b13.xz \
 		patch-8u74-b02.xz \
 		patch-8u77-b03.xz \
 		patch-8u92-b14.xz \
-		patch-8u102-b14.xz
+		patch-8u102-b14.xz \
+		patch-8u112-b16.xz \
+		patch-8u121-b13.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
@@ -37,8 +38,8 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
+		libfreetype.so:print/freetype2
+X11_LIB_DEPENDS= libfontconfig.so:x11-fonts/fontconfig \
 		libgif.so:graphics/giflib
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		dejavu>0:x11-fonts/dejavu
@@ -46,13 +47,25 @@ RUN_DEPENDS=	javavm:java/javavmwrapper \
 USES=		compiler:features dos2unix gmake iconv pkgconfig \
 		shebangfix
 USE_AUTOTOOLS=	autoconf
-USE_XORG=	x11 xext xi xrender xt xtst
+# Even when not building with X11 support, openjdk8 requires Xrender, X11,
+# Xext, and Xt headers.
+X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/x11.pc:x11/libX11
+X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/xext.pc:x11/libXext
+X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/xrender.pc:x11/libXrender
+X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt
+# Add more X11 build deps and runtime deps when X11 is enabled
+X11_LIB_DEPENDS+=	libX11.so.6:x11/libX11
+X11_LIB_DEPENDS+=	libXext.so.6:x11/libXext
+X11_LIB_DEPENDS+=	libXi.so.6:x11/libXi
+X11_LIB_DEPENDS+=	libXrender.so.1:x11/libXrender
+X11_LIB_DEPENDS+=	libXt.so.6:x11-toolkits/libXt
+X11_LIB_DEPENDS+=	libXtst.so.6:x11/libXtst
 
 .if !exists(/usr/bin/unzip)
 BUILD_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
 .endif
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386
+ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386 powerpc powerpc64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOS2UNIX_FILES= jdk/src/bsd/doc/man/appletviewer.1 \
@@ -184,10 +197,14 @@ SHEBANG_FILES=	configure
 _MAKE_JOBS=	#
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	LANG="C" LC_ALL="C"
-MAKE_ENV+=	CLASSPATH="" JAVA_HOME="" LD_LIBRARY_PATH="" MAKEFLAGS=""
+MAKE_ENV=	CLASSPATH="" JAVA_HOME="" LD_LIBRARY_PATH=""
 MAKE_ENV+=	IGNORE_OLD_CONFIG=true
 MAKE_ENV+=	COMPILER_WARNINGS_FATAL="false"
+# openjdk8 normally sets X_CFLAGS in the ./configure script, but it won't do
+# that if you say --disable-headful, even though it still needs some X headers.
+# Set it here instead.
+X11_MAKE_ENV_OFF=	MAKEFLAGS="X_CFLAGS=-I${LOCALBASE}/include" \
+			BUILD_HEADLESS_ONLY=1
 
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-normal-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
 .if !defined(BUILD_JRE)
@@ -196,16 +213,16 @@ JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2sdk-image/jre
 .else
 JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2re-image
 .endif
-JDK_JVMDIR=	lib/${ARCH:S/armv6/arm/}
-JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/armv6/arm/:S/i386/x86/}
+JDK_JVMDIR=	lib/${ARCH:C/armv6.*/arm/:S/powerpc64/ppc64/}
+JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:C/armv6.*/arm/:S/i386/x86/:S/powerpc64/ppc64/}
 INSTALLDIR=	${PREFIX}/${PKGBASE}
 
 NO_CCACHE=		yes
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	102
-JDK_BUILD_NUMBER=	14
+JDK_UPDATE_VERSION=	121
+JDK_BUILD_NUMBER=	13
 DIST_BUILD_NUMBER=	132
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
@@ -225,18 +242,21 @@ CONFIGURE_ARGS+=	--disable-ccache \
 			--with-debug-level=${JDK_BUILD_TYPE} \
 			--with-freetype=${LOCALBASE} \
 			--with-freetype-include=${LOCALBASE}/include/freetype2 \
-			--with-giflib=system \
 			--with-jobs=${MAKE_JOBS_NUMBER} \
 			--with-jvm-variants=${JDK_BUILD_JVM} \
 			--with-milestone=fcs \
 			--with-package-path=${LOCALBASE} \
 			--with-zlib=system
+X11_CONFIGURE_ON=	--with-giflib=system \
+			--x-libraries=${LOCALBASE}/lib \
+			--x-includes=${LOCALBASE}/include
+X11_CONFIGURE_OFF=	--disable-headful
 CONFIGURE_SCRIPT=	../../configure
 CONFIGURE_WRKSRC=	${WRKSRC}/common/autoconf
 
-OPTIONS_DEFINE=		POLICY TZUPDATE
+OPTIONS_DEFINE=		POLICY TZUPDATE X11
 OPTIONS_DEFINE_armv6=	FPUHACK
-OPTIONS_DEFAULT=	POLICY TZUPDATE
+OPTIONS_DEFAULT=	POLICY TZUPDATE X11
 OPTIONS_DEFAULT_armv6=	FPUHACK
 FPUHACK_DESC=		Hack denormalized numbers in flush-to-zero mode
 POLICY_DESC=		Install the Unlimited Strength Policy Files
@@ -298,7 +318,7 @@ CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs="-Xmx768m"
 MAKE_ENV+=	JAVADOC_CMD_MEM="-Xmx768m"
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+.if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "powerpc64"
 JDK_BUILD_JVM=	server
 .else
 JDK_BUILD_JVM=	zero
@@ -330,11 +350,6 @@ BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/openjdk7
 .  endif
 .endif
 
-# PR193009: work around the rtld bug
-.if ${OSVERSION} < 1001511
-CONFIGURE_ARGS+=	--enable-static-libjli
-.endif
-
 .if ${COMPILER_TYPE} == clang
 .if ${COMPILER_VERSION} >= 35
 MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false
@@ -347,7 +362,11 @@ CONFIGURE_ENV+=	LIBCXX="-lc++"
 
 # GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
 .if ${COMPILER_TYPE} == gcc
+.if ${ARCH} == "powerpc64"
+MAKE_ARGS+=	USE_PRECOMPILED_HEADER=1
+.else
 MAKE_ARGS+=	USE_PRECOMPILED_HEADER=0
+.endif
 .endif
 
 .if empty(ICONV_LIB)
@@ -418,7 +437,7 @@ post-build:
 
 post-build-TZUPDATE-on:
 	@# Update time zones
-	@${RM} -rf ${JRE_IMAGEDIR}/lib/zi
+	@${RM} -r ${JRE_IMAGEDIR}/lib/zi
 	@${LN} -sf ${LOCALBASE}/share/java/zi ${JRE_IMAGEDIR}/lib
 
 do-install:

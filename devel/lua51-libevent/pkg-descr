@@ -1,0 +1,5 @@
+This is a binding of libevent to Lua. It will serve as a drop-in
+replacement for copas, and eventually support more features (async DNS,
+HTTP, RPC...).
+
+WWW: https://github.com/harningt/luaevent

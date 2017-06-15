@@ -21,7 +21,6 @@ PLIST_FILES=	bin/aecat bin/aewan bin/aemakeflic \
 		man/man1/aewan.1.gz \
 		man/man1/aemakeflic.1.gz \
 		man/man5/aewan.5.gz
-
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -30,7 +29,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|OSTYPE == |OSTYPE = |g' ${WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}

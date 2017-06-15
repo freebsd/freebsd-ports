@@ -5,4 +5,4 @@ a XOAP service from Weather.com and METAR from noaa.gov are supported.
 Further services will get included, if they become available, have a
 usable API and are properly documented.
 
-WWW: http://pear.php.net/package/Services_Weather
+WWW: https://pear.php.net/package/Services_Weather

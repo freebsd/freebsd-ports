@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	sndio
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.sndio.org/
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Small audio and MIDI framework from the OpenBSD project
 
 LICENSE=	ISCL
@@ -18,19 +18,17 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	sndiod
 
-.include <bsd.port.pre.mk>
-
-# FreeBSD 9.x does not have SOCK_CLOEXEC
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-CFLAGS+=	-DSOCK_CLOEXEC=0
-.endif
-
-USERS=	_sndio
-GROUPS=	_sndio
+USERS=		_sndio
+GROUPS=		_sndio
 
 # Parallel build leads to problems, but sndio is very quick to compile
 # as is so not worth fixing
 MAKE_JOBS_UNSAFE=	yes
+
+post-patch:
+# Make sure sndiod can be started inside jails as root
+	@${REINPLACE_CMD} 's|err(1, "setpriority")|warn("setpriority")|' \
+		${WRKSRC}/sndiod/sndiod.c
 
 post-install:
 	@${STRIP_CMD} \
@@ -39,4 +37,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/aucat \
 		${STAGEDIR}${PREFIX}/bin/midicat
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

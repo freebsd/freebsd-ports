@@ -3,6 +3,7 @@
 
 PORTNAME=	xemeraldia
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.reloco.com.ar/xemeraldia/ \
 		SUNSITE/games/tetris \

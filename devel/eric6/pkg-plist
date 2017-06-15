@@ -19,10 +19,9 @@ bin/eric6_trpreviewer
 bin/eric6_uipreviewer
 bin/eric6_unittest
 bin/eric6_webbrowser
-@comment lib/python2.7/site-packages/eric6.pth
-lib/python2.7/site-packages/eric6config.py
-lib/python2.7/site-packages/eric6config.pyc
-lib/python2.7/site-packages/eric6plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/eric6config.py
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/eric6config.pyc
+%%PYTHON_SITELIBDIR%%/eric6plugins/__init__.py
 share/applications/eric6.desktop
 share/pixmaps/eric6.png
 share/qt4/qsci/api/python/eric6.api

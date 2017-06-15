@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-level-set
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -24,13 +24,7 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:
-	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-BROKEN=		Doesn't build on FreeBSD 9 or older
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

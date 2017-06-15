@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.2.18
-PORTREVISION?=	1
+DISTVERSION?=	9.2.21
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
-COMMENT?=	The most advanced open-source database available anywhere
+COMMENT?=	PostgreSQL is the most advanced open-source database available anywhere
+
+LICENSE=	PostgreSQL
 
 CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
 		${PORTNAME}${COMPONENT}-[^${PORTVERSION:R:R}].* \
@@ -104,8 +106,6 @@ MIT_KRB5_DESC=	Build with MIT kerberos support
 HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
 GSSAPI_DESC=	Build with GSSAPI support
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
-DEBUG_DESC=	Builds with debugging symbols
-
 
 OPTIONS_DEFINE+=	SSL
 SSL_DESC=	Build with OpenSSL support
@@ -204,6 +204,10 @@ CONFIGURE_ARGS+=--with-krb5
 # For testing files in FILESDIR
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if defined(SERVER_ONLY)
 pre-build:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
@@ -244,9 +248,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily ;\
 	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
 			${STAGEDIR}${PREFIX}/etc/periodic/daily
-.	if ${PORTVERSION:M9.[2345].*}
-		${MKDIR} ${STAGEDIR}${PREFIX}/${PG_USER}
-.	endif	
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
 	@ cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-local

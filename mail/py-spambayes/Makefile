@@ -45,9 +45,6 @@ PORTDOCS=	CHANGELOG.txt \
 		utilities/ \
 		contrib/
 
-post-extract:
-	@${CHMOD} -Rf u+w ${WRKSRC}
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/persistent_storage_file/s|hammie.db|${DBDIR}/hammie.db|' \

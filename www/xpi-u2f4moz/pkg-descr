@@ -1,0 +1,4 @@
+With this Firefox extension you would be able to use your Yubico device as
+2nd factor in authentication on pages that are using U2F standard.
+
+WWW: https://github.com/prefiks/u2f4moz

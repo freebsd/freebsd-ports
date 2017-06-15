@@ -387,7 +387,7 @@ _LICENSE_GROUPS_RUBY=	FSF
 
 _LICENSE_NAME_NONE=	No license specified
 _LICENSE_GROUPS_NONE=	# empty
-_LICENSE_PERMS_NONE=	auto-accept
+_LICENSE_PERMS_NONE=	none
 
 _LICENSE_NAME_ZLIB=		zlib License
 _LICENSE_GROUPS_ZLIB=	GPL FSF OSI
@@ -399,8 +399,6 @@ _LICENSE_GROUPS_ZPL21=	GPL OSI
 
 .for lic in ${_LICENSE_LIST}
 .	if !defined(_LICENSE_PERMS_${lic})
-# note that space before = is needed to correctly handle licenses
-# ending with a plus sign
-_LICENSE_PERMS_${lic} =	${_LICENSE_PERMS_DEFAULT}
+_LICENSE_PERMS_${lic}=	${_LICENSE_PERMS_DEFAULT}
 .	endif
 .endfor

@@ -14,8 +14,7 @@ COMMENT=	Network tool designed for high performance and accurate monitoring
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		alias
-USE_OPENSSL=	yes
+USES=		alias ssl
 
 OPTIONS_DEFINE=	DOCS
 

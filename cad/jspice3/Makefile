@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.wrcad.com/ftp/pub/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptation of the Berkeley Spice3f4 with superconductivity
 
+BROKEN_aarch64=	Fails to link jspice3
+
 CONFLICTS=	spice-[0-9]*
 
 OPTIONS_DEFINE=	X11 EXAMPLES

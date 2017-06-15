@@ -1,4 +1,5 @@
 bin/GPSsmooth
+bin/JSBSim
 bin/MIDGsmooth
 bin/UGsmooth
 bin/fgcom
@@ -6,6 +7,7 @@ bin/fgelev
 bin/fgfs
 bin/fgjs
 bin/fgpanel
+bin/fgtraffic
 bin/fgviewer
 bin/js_demo
 bin/js_server

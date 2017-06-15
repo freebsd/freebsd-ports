@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	qsstv
-PORTVERSION=	9.1.5
+PORTVERSION=	9.2.4
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/ \
-		LOCAL/shurd
+		LOCAL/db
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -16,13 +17,14 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libhamlib.so:comms/hamlib \
-		libopenjp2.so.7:graphics/openjpeg \
+		libopenjp2.so:graphics/openjpeg \
 		libpulse.so:audio/pulseaudio \
 		libv4l2.so:multimedia/libv4l
 BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 
 USES=		qmake
 USE_QT5=	buildtools core gui network widgets xml
+USE_GL+=	gl
 
 OPTIONS_DEFINE=	DOCS
 DOCS_CXXFLAGS=	-DWITH_DOCS
@@ -40,7 +42,7 @@ post-patch:
 	${RM} ${WRKSRC}/qsstv/documentation/manual/manual.txt.*
 	${RM} ${WRKSRC}/qsstv/documentation/manual/manual.*.orig
 
-post-stage:
+post-install:
 	-${RM} ${STAGEDIR}/${DOCSDIR}/manual.doxy
 	-${RM} ${STAGEDIR}/${DOCSDIR}/doxygen_sqlite3.db
 	-${RM} ${STAGEDIR}/${DOCSDIR}/*.bak

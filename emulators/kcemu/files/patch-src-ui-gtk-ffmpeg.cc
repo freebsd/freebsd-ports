@@ -1,5 +1,5 @@
---- src/ui/gtk/ffmpeg.cc.orig	2010-03-07 20:50:23.000000000 +0100
-+++ src/ui/gtk/ffmpeg.cc	2015-07-03 22:59:12.842256554 +0200
+--- src/ui/gtk/ffmpeg.cc.orig	2010-03-07 19:50:23 UTC
++++ src/ui/gtk/ffmpeg.cc
 @@ -48,7 +48,7 @@ FfmpegVideoEncoder::init(const char *fil
  
    av_register_all();
@@ -27,7 +27,14 @@
    _stream->codec->codec_tag = MKTAG('D', 'X', '5', '0');
  
    _stream->codec->bit_rate = 79000 + 1000 * pow(1.4, quality * 20.0);
-@@ -81,14 +82,8 @@ FfmpegVideoEncoder::init(const char *fil
+@@ -75,20 +76,14 @@ FfmpegVideoEncoder::init(const char *fil
+   _stream->codec->time_base.den = 50;
+   _stream->codec->time_base.num = fps_den;
+   _stream->codec->gop_size = 100 / fps_den;
+-  _stream->codec->pix_fmt = PIX_FMT_YUV420P;
++  _stream->codec->pix_fmt = AV_PIX_FMT_YUV420P;
+ 
+   // some formats want stream headers to be separate
    if (_context->oformat->flags & AVFMT_GLOBALHEADER)
      _stream->codec->flags |= CODEC_FLAG_GLOBAL_HEADER;
  
@@ -43,6 +50,15 @@
      {
        close();
        return false;
+@@ -102,7 +97,7 @@ FfmpegVideoEncoder::init(const char *fil
+       return false;
+     }
+ 
+-  _frame = avcodec_alloc_frame();
++  _frame = av_frame_alloc();
+   if (_frame == NULL)
+     {
+       close();
 @@ -119,14 +114,14 @@ FfmpegVideoEncoder::init(const char *fil
  
    avpicture_fill((AVPicture *) _frame, buf, _stream->codec->pix_fmt, width, height);
@@ -60,16 +76,36 @@
    return true;
  }
  
-@@ -171,7 +166,7 @@ FfmpegVideoEncoder::encode(byte_t *image
+@@ -161,20 +156,21 @@ FfmpegVideoEncoder::encode(byte_t *image
+         }
+     }
+ 
+-  int out_size = avcodec_encode_video(_stream->codec, _buf, _bufsize, _frame);
+-  if (out_size == 0)
+-    return true;
+-
+   AVPacket pkt;
+   av_init_packet(&pkt);
++  pkt.data = _buf;
++  pkt.size = _bufsize;
++
++  int got_packet = 0;
++  int ret = avcodec_encode_video2(_stream->codec, &pkt, _frame, &got_packet);
++  if (ret < 0 || !got_packet || pkt.size <= 0)
++    return true;
+ 
    if (_stream->codec->coded_frame->pts != AV_NOPTS_VALUE)
      pkt.pts = av_rescale_q(_stream->codec->coded_frame->pts, _stream->codec->time_base, _stream->time_base);
    if (_stream->codec->coded_frame->key_frame)
 -    pkt.flags |= PKT_FLAG_KEY;
 +    pkt.flags |= AV_PKT_FLAG_KEY;
    pkt.stream_index = _stream->index;
-   pkt.data = _buf;
-   pkt.size = out_size;
-@@ -197,7 +192,7 @@ FfmpegVideoEncoder::close(void)
+-  pkt.data = _buf;
+-  pkt.size = out_size;
+ 
+   return av_interleaved_write_frame(_context, &pkt) == 0;
+ }
+@@ -197,7 +193,7 @@ FfmpegVideoEncoder::close(void)
        av_freep(&_context->streams[i]->codec);
        av_freep(&_context->streams[i]);
      }
@@ -78,7 +114,7 @@
    
    av_free(_context);
    
-@@ -207,4 +202,4 @@ FfmpegVideoEncoder::close(void)
+@@ -207,4 +203,4 @@ FfmpegVideoEncoder::close(void)
    _buf = NULL;
  }
  

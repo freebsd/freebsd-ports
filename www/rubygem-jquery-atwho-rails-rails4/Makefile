@@ -11,8 +11,10 @@ COMMENT=	jQuery plugin that implements GitHub-like mentions
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
+DEPRECATED=	Use www/rubygem-jquery-atwho-rails instead
+EXPIRATION_DATE=2017-03-31
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

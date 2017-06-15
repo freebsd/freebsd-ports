@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
-USES=		libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"

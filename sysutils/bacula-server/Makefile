@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-DISTVERSION=	7.4.4
-PORTREVISION=   1
+DISTVERSION=	7.4.7
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -12,10 +11,9 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
 
-USES+=		libtool readline shebangfix
+USES+=		libtool readline shebangfix ssl
 SHEBANG_FILES=	scripts/dvd-handler.in src/cats/make_catalog_backup.pl.in
 python_OLD_CMD=	@PYTHON@
-USE_OPENSSL=	yes
 
 CONFLICTS?=	bacula5-server-*
 
@@ -32,10 +30,9 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS ENABLE_IPV6
-OPTIONS_DEFAULT?=	NLS PGSQL ENABLE_IPV6
+OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS IPV6
+OPTIONS_DEFAULT?=	NLS PGSQL
 MTX_DESC=		Install mtx for control of autochanger devices
-ENABLE_IPV6_DESC=	Enable IPv6 support
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 
@@ -116,7 +113,7 @@ MYSQL_USE=		MYSQL=yes
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=yes
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 PGSQL_CONFIGURE_ON=	--with-postgresql=yes
-PGSQL_USES=		pgsql
+#PGSQL_USE=		USES+=pgsql
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 
@@ -130,11 +127,17 @@ DBTYPE=			sqlite3
 .else
 DBTYPE=			postgresql
 SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
+USES+=  pgsql
 .endif
 PLIST_SUB+=		DBTYPE=${DBTYPE}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
 .if ${readline_ARGS} == "port"
 readline_CONFIGURE=	${LOCALBASE}
 .else
@@ -142,7 +145,7 @@ readline_CONFIGURE=	yes
 .endif
 
 # if IPv6 is not in the kernel, it generates many errors
-.if ! ${PORT_OPTIONS:MENABLE_IPV6}
+.if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
@@ -188,10 +191,13 @@ post-patch:
 post-install:
 .if defined(WITH_CLIENT_ONLY)
 	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/examples/sample-query.sql ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql.sample
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${STAGEDIR}${ETCDIR}/bacula-barcodes.sample
-	${MV} ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql.sample
+	# bacula-dir attempts to install query.sql as bpart of bacula-server, but that should only installed by bacula-client.
+	${RM} ${STAGEDIR}${LOCALBASE}/share/bacula/query.sql
+
 	#the following are installed by the -CLIENT port, and I (ler@lerctr.org)
 	#don't know how to remove them from being built for the -SERVER port.
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/bpipe-fd.so

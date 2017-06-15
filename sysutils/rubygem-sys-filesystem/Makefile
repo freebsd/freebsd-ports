@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sys-filesystem
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.7
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	cataclysm-dda
 PORTVERSION=	0.C
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -58,6 +59,8 @@ SOUND_MAKE_ARGS=	SOUND=1
 SOUND_IMPLIES=		SDL
 
 SOUND_FILES=	cataclysmthemeREV6.ogg Dark_Days_Ahead_demo_2.ogg
+
+BROKEN_aarch64=		Fails to compile: error: comparison of integers of different signs: wchar_t and const int
 
 .include <bsd.port.pre.mk>
 

@@ -2,40 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	lxinput
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/lxde/LXInput%20%28Kbd%20and%20amp_%20mouse%20config%29/LXInput%200.3.2/
+MASTER_SITES=	SF/lxde/LXInput%20%28Kbd%20and%20amp_%20mouse%20config%29/LXInput%20${PORTVERSION:R}.x/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Keyboard and mouse config tool from the LXDE project
+COMMENT=	Keyboard and mouse settings
 
-USES=		iconv gmake pkgconfig
-USE_GNOME=	gtk20 intlhack
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+	libfreetype.so:print/freetype2
+
+USES=		gmake localbase pkgconfig tar:xz
+USE_GNOME=	gtk20 cairo gdkpixbuf2 intltool
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-PORTDOCS=	AUTHORS README
+NLS_USES=	gettext
+NLS_USES_OFF=	gettext-tools
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=  yes
-
-NLS_USES=		gettext
-
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's|po man|man|' \
-		${WRKSRC}/Makefile.in
-.endif
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e 's|po man|man|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	liblrdf
 PORTVERSION=	0.5.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	textproc
 MASTER_SITES=	GENTOO
 
@@ -14,17 +14,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
-LIB_DEPENDS=	libicuuc.so:devel/icu \
-		libyajl.so:devel/yajl \
-		libcurl.so:ftp/curl \
-		libraptor2.so:textproc/raptor2
+LIB_DEPENDS=	libraptor2.so:textproc/raptor2
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf iconv libtool pathfix pkgconfig
-USE_GNOME=	libxml2 libxslt
+USES=		autoreconf libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-I${OPENSSLINC}

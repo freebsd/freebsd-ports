@@ -1,0 +1,7 @@
+smenu is a selection filter like sed is an editing filter.
+
+This simple terminal utility reads words from standard input, presents them
+in a cool interactive window and writes the selected word, if any, to
+standard output.
+
+WWW: https://github.com/p-gen/smenu

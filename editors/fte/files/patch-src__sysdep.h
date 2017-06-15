@@ -1,6 +1,6 @@
---- src/sysdep.h.orig	Sun Apr 13 14:43:59 2003
-+++ src/sysdep.h	Sun Apr 13 13:54:17 2003
-@@ -38,6 +38,7 @@
+--- src/sysdep.h.orig	2011-06-29 22:32:34 UTC
++++ src/sysdep.h
+@@ -21,6 +21,7 @@
      !defined(IRIX) && \
      !defined(SCO) && \
      !defined(SUNOS) && \

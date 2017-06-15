@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	minissdpd
-PORTVERSION=	1.2
+PORTVERSION=	1.5.20161216
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	UPnP IGD discovery speed enhancer
+
+LICENSE=	BSD3CLAUSE
 
 USES=		gmake
 USE_RC_SUBR=	minissdpd

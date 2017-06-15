@@ -1,6 +1,6 @@
 --- lib/eu-config.h.orig	2015-06-11 11:38:55 UTC
 +++ lib/eu-config.h
-@@ -187,4 +187,167 @@ asm (".section predict_data, \"aw\"; .pr
+@@ -187,4 +187,170 @@ asm (".section predict_data, \"aw\"; .pr
  #endif
  
  
@@ -75,6 +75,9 @@
 +		slash = path;
 +	return (__DECONST(char *, slash));
 +}
++#ifdef	basename
++#undef	basename
++#endif
 +#define	basename	eu_basename
 +
 +#ifndef	TEMP_FAILURE_RETRY

@@ -1,4 +1,4 @@
---- src/tcsd/svrside.c.orig	2016-06-20 15:21:26 UTC
+--- src/tcsd/svrside.c.orig	2016-11-19 03:09:49 UTC
 +++ src/tcsd/svrside.c
 @@ -92,12 +92,19 @@ tcsd_signal_term(int signal)
  	term = 1;

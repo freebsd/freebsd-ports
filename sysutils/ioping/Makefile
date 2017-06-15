@@ -2,23 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	ioping
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Simple disk I/0 latency measuring tool
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koct9i
 
-PLIST_FILES=	bin/ioping man/man1/ioping.1.gz
+USES=		gmake
 
-do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DVERSION=${PORTVERSION} ioping.c \
-		-o ioping ${LDFLAGS} -lm)
+PLIST_FILES=	bin/ioping man/man1/ioping.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ioping ${STAGEDIR}${PREFIX}/bin

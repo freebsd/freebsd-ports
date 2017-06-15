@@ -103,9 +103,9 @@ include/eiskaltdcpp/dcpp/stdinc.h
 include/eiskaltdcpp/dcpp/typedefs.h
 include/eiskaltdcpp/dcpp/version.h
 include/eiskaltdcpp/dcpp/w.h
-lib/libeiskaltdcpp.so.2.2
-lib/libeiskaltdcpp.so.2
 lib/libeiskaltdcpp.so
+lib/libeiskaltdcpp.so.2
+lib/libeiskaltdcpp.so.2.2.10
 share/locale/be/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/bg/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/cs/LC_MESSAGES/libeiskaltdcpp.mo
@@ -113,6 +113,7 @@ share/locale/de/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/el/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/en/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/es/LC_MESSAGES/libeiskaltdcpp.mo
+share/locale/eu/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/fr/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/hu/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/it/LC_MESSAGES/libeiskaltdcpp.mo
@@ -120,5 +121,9 @@ share/locale/pl/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/pt_BR/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/ru/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/sk/LC_MESSAGES/libeiskaltdcpp.mo
+share/locale/sr/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/sr@latin/LC_MESSAGES/libeiskaltdcpp.mo
+share/locale/sv_SE/LC_MESSAGES/libeiskaltdcpp.mo
 share/locale/uk/LC_MESSAGES/libeiskaltdcpp.mo
+share/locale/vi/LC_MESSAGES/libeiskaltdcpp.mo
+share/locale/zh_CN/LC_MESSAGES/libeiskaltdcpp.mo

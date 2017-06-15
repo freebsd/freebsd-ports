@@ -1,5 +1,3 @@
-TIMESTAMP = 1472424237
-SHA256 (gmsh/gmsh-2.13.2-source.tgz) = d68e1569f7ccf61cfd70d6845defe8dd73676745beafcf1de60ba9874ad15f26
-SIZE (gmsh/gmsh-2.13.2-source.tgz) = 11415014
-SHA256 (gmsh/manual.pdf) = 8a682ee7f02380f52d5efdde5f9f9d8e927a4f4eb29287a878c1016225568911
-SIZE (gmsh/manual.pdf) = 206713
+TIMESTAMP = 1484140398
+SHA256 (gmsh/gmsh-2.16.0-source.tgz) = e829eaf32ea02350a385202cc749341f2a3217c464719384b18f653edd028eea
+SIZE (gmsh/gmsh-2.16.0-source.tgz) = 10867812

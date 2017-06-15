@@ -71,7 +71,8 @@ ILBC_LIB_DEPENDS=	libilbc.so:net/ilbc
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_USE=		mysql=yes
 
-OPENSSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
+SSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
+SSL_USES=		ssl
 
 PGSQL_CONFIGURE_WITH=	libpq=${LOCALBASE}
 PGSQL_USES=		pgsql
@@ -87,7 +88,7 @@ SQLITE_USES=		pkgconfig sqlite
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yate
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyate*.so.5.5.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/*.yate

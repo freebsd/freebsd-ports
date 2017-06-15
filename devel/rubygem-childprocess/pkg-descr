@@ -5,4 +5,4 @@ combination.
 The code originated in the selenium-webdriver gem, but should prove
 useful as a standalone library.
 
-WWW: https://github.com/jarib/childprocess
+WWW: https://github.com/enkessler/childprocess

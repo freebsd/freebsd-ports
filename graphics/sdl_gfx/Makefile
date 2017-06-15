@@ -8,13 +8,12 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/SDL_gfx-${PORTVERSION:R}/
 DISTNAME=	SDL_gfx-${PORTVERSION}
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
 LICENSE=	ZLIB
 
 USES=		autoreconf gmake libtool pathfix
-PATHFIX_MAKEFILEIN=	Makefile.am
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include

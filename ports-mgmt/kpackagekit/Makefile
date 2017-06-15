@@ -2,7 +2,7 @@
 
 PORTNAME=	KPackageKit
 PORTVERSION=	0.6.3.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ports-mgmt sysutils kde
 MASTER_SITES=	http://opendesktop.org/CONTENT/content-files/
 DISTNAME=	84745-${PORTNAME:tl}-${PORTVERSION}

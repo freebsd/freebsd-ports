@@ -14,14 +14,18 @@ COMMENT=	Ming and Kai face of OpenDesktop fonts
 CONFLICTS=	zh-fireflyttf-[0-9]*
 DIST_SUBDIR=	OpenFonts
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 TTF=		odokai-ExtB.ttf odokai.ttf odosung-ExtB.ttf odosung.ttc
 PLIST_FILES=	${FONTSDIR_REL}/local.conf-odo
 
 .include "${.CURDIR}/../ttfm/Makefile.ttf"
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
+# chmod -R bug
 post-extract:
 	@${CHMOD} 0755 ${WRKSRC}/license
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},; s,opendesktop,,g' \

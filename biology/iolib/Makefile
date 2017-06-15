@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	io_lib
-PORTVERSION=	1.14.8
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	1-14-9
 CATEGORIES=	biology
-MASTER_SITES=	SF/staden/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	General purpose trace file (and Experiment File) reading interface
@@ -13,7 +13,10 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gmake libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	jkbonfield
+
+USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

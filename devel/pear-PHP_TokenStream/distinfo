@@ -1,2 +1,3 @@
-SHA256 (PEAR/PHP_TokenStream-1.1.5.tgz) = 9ac8f3c2345d5a65920dd176cbe4334b8f4e52511bcb617967cc925e4a8b7945
-SIZE (PEAR/PHP_TokenStream-1.1.5.tgz) = 9859
+TIMESTAMP = 1488485031
+SHA256 (sebastianbergmann-php-token-stream-1.4.11_GH0.tar.gz) = 6b95960c1a162d321da8b7d42bc9361bdcc991478e0db93a659a433c2b6a9008
+SIZE (sebastianbergmann-php-token-stream-1.4.11_GH0.tar.gz) = 13388

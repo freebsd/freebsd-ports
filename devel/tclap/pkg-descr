@@ -1,9 +1,7 @@
-To quote the description:
-
- TCLAP is a small, flexible library that provides a simple interface
- for defining and accessing command line arguments.
+TCLAP is a small, flexible library that provides a simple interface for
+defining and accessing command line arguments.
 
 It seems to do everything that getopt(3) can do.  It is needed here as
-a dependency for graphics/hugin.
+a dependency for `graphics/hugin'.
 
-WWW:  http://tclap.sourceforge.net/
+WWW: http://tclap.sourceforge.net/

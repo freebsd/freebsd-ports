@@ -2,4 +2,4 @@
 requring binaries, shared libraries etc within the chroot or any support from
 the application. Works with any dynamically linked application.
 
-WWW: http://sourceforge.net/projects/chrootsafe/
+WWW: https://sourceforge.net/projects/chrootsafe/

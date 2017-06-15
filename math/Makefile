@@ -22,10 +22,10 @@
     SUBDIR += R-cran-RcppEigen
     SUBDIR += R-cran-Rmpfr
     SUBDIR += R-cran-SparseM
-    SUBDIR += R-cran-SuppDists
     SUBDIR += R-cran-VGAM
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-assertthat
+    SUBDIR += R-cran-backports
     SUBDIR += R-cran-bdsmatrix
     SUBDIR += R-cran-car
     SUBDIR += R-cran-coda
@@ -55,6 +55,7 @@
     SUBDIR += R-cran-nloptr
     SUBDIR += R-cran-nnls
     SUBDIR += R-cran-nortest
+    SUBDIR += R-cran-numDeriv
     SUBDIR += R-cran-outliers
     SUBDIR += R-cran-pbkrtest
     SUBDIR += R-cran-psych
@@ -74,10 +75,12 @@
     SUBDIR += abacus
     SUBDIR += abakus
     SUBDIR += abs
+    SUBDIR += acalc
     SUBDIR += add
     SUBDIR += algae
     SUBDIR += algotutor
     SUBDIR += alt-ergo
+    SUBDIR += amath
     SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += apc
@@ -106,6 +109,7 @@
     SUBDIR += carve
     SUBDIR += cblas
     SUBDIR += ccmath
+    SUBDIR += ceres-solver
     SUBDIR += cgal
     SUBDIR += chaco
     SUBDIR += chryzodus
@@ -243,7 +247,6 @@
     SUBDIR += laspack
     SUBDIR += ldouble
     SUBDIR += levmar
-    SUBDIR += libR
     SUBDIR += libRmath
     SUBDIR += libflame
     SUBDIR += libjbigi
@@ -251,12 +254,12 @@
     SUBDIR += libmissing
     SUBDIR += libocas
     SUBDIR += liborigin
-    SUBDIR += libproj4
     SUBDIR += libqalculate
     SUBDIR += libranlip
     SUBDIR += librsb
     SUBDIR += libtommath
     SUBDIR += libtsnnls
+    SUBDIR += libxls
     SUBDIR += linpack
     SUBDIR += lll_spect
     SUBDIR += lp_solve
@@ -283,6 +286,7 @@
     SUBDIR += mpexpr
     SUBDIR += mpfr
     SUBDIR += mpir
+    SUBDIR += mprime
     SUBDIR += msieve
     SUBDIR += mtl
     SUBDIR += mtrxmath
@@ -304,7 +308,6 @@
     SUBDIR += octave
     SUBDIR += octave-forge
     SUBDIR += octave-forge-actuarial
-    SUBDIR += octave-forge-ad
     SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-base
     SUBDIR += octave-forge-bim
@@ -316,7 +319,6 @@
     SUBDIR += octave-forge-data-smoothing
     SUBDIR += octave-forge-database
     SUBDIR += octave-forge-dataframe
-    SUBDIR += octave-forge-dicom
     SUBDIR += octave-forge-divand
     SUBDIR += octave-forge-doctest
     SUBDIR += octave-forge-econometrics
@@ -361,7 +363,6 @@
     SUBDIR += octave-forge-oct2mat
     SUBDIR += octave-forge-octcdf
     SUBDIR += octave-forge-octclip
-    SUBDIR += octave-forge-octgpr
     SUBDIR += octave-forge-octproj
     SUBDIR += octave-forge-odebvp
     SUBDIR += octave-forge-odepkg
@@ -384,7 +385,6 @@
     SUBDIR += octave-forge-sparsersb
     SUBDIR += octave-forge-specfun
     SUBDIR += octave-forge-special-matrix
-    SUBDIR += octave-forge-spline-gcvspl
     SUBDIR += octave-forge-splines
     SUBDIR += octave-forge-statistics
     SUBDIR += octave-forge-stk
@@ -396,7 +396,6 @@
     SUBDIR += octave-forge-tisean
     SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-video
-    SUBDIR += octave-forge-xraylib
     SUBDIR += octave-forge-zenity
     SUBDIR += octave-forge-zeromq
     SUBDIR += ogdf
@@ -404,6 +403,7 @@
     SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
+    SUBDIR += opensolaris-libm
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic
@@ -437,6 +437,7 @@
     SUBDIR += p5-Math-BigInt
     SUBDIR += p5-Math-BigInt-FastCalc
     SUBDIR += p5-Math-BigInt-GMP
+    SUBDIR += p5-Math-BigInt-Lite
     SUBDIR += p5-Math-BigInt-Pari
     SUBDIR += p5-Math-BigRat
     SUBDIR += p5-Math-CDF
@@ -550,6 +551,7 @@
     SUBDIR += p5-Task-Math-Symbolic
     SUBDIR += p5-Text-AsciiTeX
     SUBDIR += p5-bignum
+    SUBDIR += pantheon-calculator
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += parmgridgen
@@ -560,13 +562,14 @@
     SUBDIR += pecl-bitset
     SUBDIR += pecl-bitset2
     SUBDIR += pecl-stats
+    SUBDIR += pecl-stats2
     SUBDIR += pecl-trader
-    SUBDIR += php55-bcmath
-    SUBDIR += php55-gmp
     SUBDIR += php56-bcmath
     SUBDIR += php56-gmp
     SUBDIR += php70-bcmath
     SUBDIR += php70-gmp
+    SUBDIR += php71-bcmath
+    SUBDIR += php71-gmp
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += plman
@@ -580,6 +583,7 @@
     SUBDIR += pspp
     SUBDIR += pure-mpfr
     SUBDIR += pure-rational
+    SUBDIR += py-PyWavelets
     SUBDIR += py-altgraph
     SUBDIR += py-apgl
     SUBDIR += py-basemap
@@ -620,7 +624,6 @@
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
     SUBDIR += py-pycosat
-    SUBDIR += py-pyfst
     SUBDIR += py-pyhull
     SUBDIR += py-pymc
     SUBDIR += py-pysparse
@@ -634,6 +637,7 @@
     SUBDIR += py-theano
     SUBDIR += py-ufl
     SUBDIR += py-viper
+    SUBDIR += py-yt
     SUBDIR += qalculate
     SUBDIR += qd
     SUBDIR += qhull
@@ -653,7 +657,7 @@
     SUBDIR += rpcalc
     SUBDIR += rpy
     SUBDIR += rpy2
-    SUBDIR += ruby-algebra
+    SUBDIR += rubygem-algebra
     SUBDIR += rubygem-expression_parser
     SUBDIR += rubygem-fftw3
     SUBDIR += rubygem-narray
@@ -664,6 +668,7 @@
     SUBDIR += saga
     SUBDIR += sage
     SUBDIR += sc
+    SUBDIR += sc-im
     SUBDIR += scalapack
     SUBDIR += scilab
     SUBDIR += scilab-toolbox-sivp

@@ -1,0 +1,5 @@
+TIMESTAMP = 1480535311
+SHA256 (ngrok/2.1.18/ngrok-stable-freebsd-amd64.zip) = ef4d20b9c695f00e1d8113c776f9c1680f7ead9fa2c9a251ead5955a1bfca428
+SIZE (ngrok/2.1.18/ngrok-stable-freebsd-amd64.zip) = 5074462
+SHA256 (ngrok/2.1.18/ngrok-stable-freebsd-386.zip) = 27f05a6eda430f0767c804bb96e6dbe0dbe3b873a2933b0b2e97c1faaef830a2
+SIZE (ngrok/2.1.18/ngrok-stable-freebsd-386.zip) = 4901446

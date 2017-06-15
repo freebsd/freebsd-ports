@@ -1,3 +1,4 @@
+lib/erlang/lib/cowboy-%%VERSION%%/ebin/cow_uri.beam
 lib/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy.app
 lib/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy.beam
 lib/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_app.beam
@@ -18,6 +19,7 @@ lib/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_sub_protocol.beam
 lib/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_sup.beam
 lib/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_websocket.beam
 lib/erlang/lib/cowboy-%%VERSION%%/ebin/cowboy_websocket_handler.beam
+lib/erlang/lib/cowboy-%%VERSION%%/src/cow_uri.erl
 lib/erlang/lib/cowboy-%%VERSION%%/src/cowboy.app.src
 lib/erlang/lib/cowboy-%%VERSION%%/src/cowboy.erl
 lib/erlang/lib/cowboy-%%VERSION%%/src/cowboy_app.erl

@@ -10,7 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.2.6c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive, multi-threaded web browser for text terminals
 
-USES=		gettext ncurses
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gettext localbase ncurses
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
 		--enable-i18n --enable-local-cgi --enable-ipv6
@@ -23,18 +26,16 @@ PLIST_FILES=	bin/retawq \
 		share/locale/pt_BR/LC_MESSAGES/retawq.mo
 PORTDOCS=	*
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
-
 OPTIONS_DEFINE=	DOCS
 OPTIONS_RADIO=	BACKEND
-BACKEND_DESC=	SSL Backend
 OPTIONS_RADIO_BACKEND=	OPENSSL GNUTLS
+
+BACKEND_DESC=	SSL Backend
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ON=	--set-tls=1
 
-OPENSSL_USE=		OPENSSL=yes
+OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--set-tls=2
 OPENSSL_LDFLAGS=	-lssl -lcrypto
 
@@ -50,6 +51,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docu/*.html ${STAGEDIR}${DOCSDIR}
 

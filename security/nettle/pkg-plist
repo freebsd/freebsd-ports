@@ -38,6 +38,7 @@ include/nettle/md2.h
 include/nettle/md4.h
 include/nettle/md5-compat.h
 include/nettle/md5.h
+include/nettle/memops.h
 include/nettle/memxor.h
 include/nettle/nettle-meta.h
 include/nettle/nettle-stdint.h
@@ -63,10 +64,10 @@ include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
 lib/libhogweed.so.4
-lib/libhogweed.so.4.2
+lib/libhogweed.so.4.3
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.6
-lib/libnettle.so.6.2
+lib/libnettle.so.6.3
 libdata/pkgconfig/hogweed.pc
 libdata/pkgconfig/nettle.pc

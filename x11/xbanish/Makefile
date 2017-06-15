@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Banish the mouse cursor when typing
 
 LICENSE=	BSD3CLAUSE

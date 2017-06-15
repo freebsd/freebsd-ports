@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	girara
-PORTVERSION=	0.2.6
-PORTREVISION=	2
+PORTVERSION=	0.2.7
 CATEGORIES=	x11-toolkits graphics
-MASTER_SITES=	http://pwmt.org/projects/girara/download/
+MASTER_SITES=	https://pwmt.org/projects/girara/download/ \
+		http://www.madpilot.net/~mad/pwmt.org/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK3 Interface Library for Zathura PDF Viewer
 
 USE_GNOME=	glib20 gtk30
-USES=		gmake pkgconfig
+USES=		gmake pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu99
 LIBDIR=		${PREFIX}/lib
@@ -24,8 +25,6 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's|$${LIBDIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|^\(CFLAGS +=\) -std=c11|\1|' \
 		${WRKSRC}/config.mk
 

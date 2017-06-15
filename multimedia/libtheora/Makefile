@@ -3,7 +3,7 @@
 
 PORTNAME=	libtheora
 PORTVERSION=	1.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 		http://distfiles.master.finkmirrors.net/
@@ -11,7 +11,11 @@ MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Theora video codec for the Ogg multimedia streaming system
 
-LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-sdltest \
@@ -19,7 +23,7 @@ CONFIGURE_ARGS=	--disable-sdltest \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		libtool tar:bzip2
+USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>

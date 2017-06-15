@@ -11,6 +11,8 @@ DISTNAME=	NeroAACCodec-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nero AAC reference quality MPEG-4 and 3GPP audio codec
 
+BROKEN=		does not fetch (no such directory 'tools')
+
 USES=		dos2unix linux zip
 DOS2UNIX_REGEX=	.*\.txt
 ONLY_FOR_ARCHS=	i386 amd64
@@ -23,9 +25,9 @@ PLIST_FILES=	bin/neroAacDec \
 		bin/neroAacTag
 
 PORTDOCS=	NeroAAC_tut.pdf \
-	changelog.txt \
-	license.txt \
-	readme.txt
+		changelog.txt \
+		license.txt \
+		readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
@@ -33,6 +35,8 @@ do-install:
 .for f in ${PLIST_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/linux/${f:T} ${STAGEDIR}${PREFIX}/bin
 .endfor
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/

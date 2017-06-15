@@ -1,5 +1,5 @@
---- ./po/Makefile.in.in.orig	2013-02-26 19:25:06.000000000 +0100
-+++ ./po/Makefile.in.in	2013-02-26 19:25:37.000000000 +0100
+--- po/Makefile.in.in.orig	2006-06-13 16:40:55 UTC
++++ po/Makefile.in.in
 @@ -13,6 +13,7 @@
  PACKAGE = @PACKAGE@
  VERSION = @VERSION@

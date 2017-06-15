@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Mar 29 07:41:40 1999
-+++ Makefile	Sat Jun 26 18:00:10 1999
+--- Makefile.orig	1999-08-30 14:14:17 UTC
++++ Makefile
 @@ -1,14 +1,17 @@
 -LIBDIR = -L/usr/X11R6/lib
 +CC ?= gcc
@@ -21,10 +21,10 @@
  
  clean:
  	for i in $(OBJS) ; do \
-@@ -17,5 +20,4 @@
- 	rm wmtictactoe
+@@ -17,5 +20,4 @@ clean:
+ 	rm -rf wmtictactoe core *~
  
  install:
 -	/usr/bin/install -c -o 0 -g 0 -s -m 755 wmtictactoe /usr/local/bin/wmtictactoe
 -
-+	@/usr/bin/install -c -s -m 755 wmtictactoe ${DESTDIR}${PREFIX}/bin/wmtictactoe
++	${BSD_INSTALL_PROGRAM} wmtictactoe ${DESTDIR}${PREFIX}/bin/wmtictactoe

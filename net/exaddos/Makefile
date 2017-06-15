@@ -17,11 +17,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4-mibs>=0.1.4:net-mgmt/py-snmp4-mibs \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Exa-Networks
-USES=		python tar:tgz
+USES=		python
 SUB_FILES=	pkg-message exaddos.sh exaddos.conf.sample
 SUB_LIST=	PYTHON_LIBDIR=${PYTHON_LIBDIR} PYTHON_CMD=${PYTHON_CMD} \
 		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 USE_RC_SUBR=	${PORTNAME}
+NO_ARCH=	yes
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}

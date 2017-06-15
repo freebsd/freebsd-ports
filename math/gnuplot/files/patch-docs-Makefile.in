@@ -1,6 +1,6 @@
---- docs/Makefile.in.orig	2015-12-31 21:24:50.000000000 -0800
-+++ docs/Makefile.in	2016-02-21 16:00:10.574203000 -0800
-@@ -927,15 +927,15 @@
+--- docs/Makefile.in.orig	2016-10-09 17:24:51 UTC
++++ docs/Makefile.in
+@@ -927,15 +927,15 @@ groff: grotxt grodvi grops
  
  grotxt: gnuplot.txt
  gnuplot.txt: gnuplot.ms $(srcdir)/titlepag.ms
@@ -19,7 +19,7 @@
  
  ### doc2xxx dependencies
  gnuplot.ms: doc2ms$(EXEEXT) $(srcdir)/gnuplot.doc
-@@ -1077,11 +1077,11 @@
+@@ -1077,11 +1077,11 @@ wxhelp/wgnuplot.html: doc2wxhtml$(EXEEXT
  	$(AM_V_GEN) ./doc2wxhtml$(EXEEXT) $(srcdir)/gnuplot.doc wxhelp/
  
  doc2wxhtml$(EXEEXT): wxhelp/doc2html.o termdoc.o xref.o $(SRC_VERSION_O)

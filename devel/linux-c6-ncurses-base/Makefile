@@ -1,20 +1,20 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
 # $FreeBSD$
 
-PORTNAME=	${LINUX_NAME}-base
+PORTNAME=	ncurses
 PORTVERSION=	5.7
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel linux
+PKGNAMESUFFIX=	-base
+BIN_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL}
 
-MAINTAINER=	bacon4000@gmail.com
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Terminfo database required by Linux ncurses programs
 
-LINUX_NAME=	ncurses
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
 RPMVERSION=	4.20090207.el6
 USES=		linux:c6
 USE_LINUX_RPM=	nolib
-
-SRC_DISTFILES=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
-DESCR=		${.CURDIR}/../${LINUX_NAME}/pkg-descr
 
 .include <bsd.port.mk>

@@ -1,2 +1,3 @@
-SHA256 (libchipcard-5.0.2.tar.gz) = d0968594c8ed0fc4cb6d681a74a5f000b48b0ac7a9375648b57d397ac49c1808
-SIZE (libchipcard-5.0.2.tar.gz) = 736107
+TIMESTAMP = 1474517468
+SHA256 (libchipcard-5.0.4.tar.gz) = d25a79adcf09f1058ca9168b80e843fadbd556fb0f23c890d871124ad380423a
+SIZE (libchipcard-5.0.4.tar.gz) = 801499

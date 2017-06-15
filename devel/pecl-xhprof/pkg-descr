@@ -6,4 +6,4 @@ CPU times and number of calls for each function. Additionally, it supports
 ability to compare two runs (hierarchical DIFF reports), or aggregate results
 from multiple runs.
 
-WWW: http://pecl.php.net/package/xhprof/
+WWW: https://pecl.php.net/package/xhprof

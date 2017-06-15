@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.22.2
+PORTVERSION=	0.24
 CATEGORIES=	mail
 MASTER_SITES=	http://notmuchmail.org/releases/
 
@@ -16,11 +16,38 @@ BUILD_DEPENDS=	c++filt:devel/binutils
 LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
 		libxapian.so:databases/xapian-core \
 		libtalloc.so:devel/talloc
+TEST_DEPENDS=	bash:shells/bash \
+		emacs:editors/emacs-nox11 \
+		dtach:misc/dtach \
+		gdate:sysutils/coreutils \
+		gbase64:sysutils/coreutils \
+		gwc:sysutils/coreutils \
+		gsed:sysutils/coreutils \
+		gsha256sum:sysutils/coreutils \
+		gpg:security/gnupg \
+		${LOCALBASE}/bin/gdb:devel/gdb
 
 BROKEN_powerpc64=	Does not build
 
-OPTIONS_DEFINE=	BASH DOXYGEN EMACS MANPAGES RUBY ZSH
+HAS_CONFIGURE=	yes
+USES=		gmake pkgconfig python:build
+USE_GNOME=	glib20
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
+USE_LDCONFIG=	yes
+
+MAKE_ENV+=	PYTHONCMD=${PYTHON_CMD}
+
+TEST_ENV+=	NOTMUCH_SKIP_TESTS="basic count insert smime atomicity \
+		message-property" \
+		V=1 \
+		TEST_CFLAGS="-g -O0 -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+		BSD_GDB=${LOCALBASE}/bin/gdb
+
+TEST_TARGET=	test
+
+OPTIONS_DEFINE=	BASH DOXYGEN EMACS MANPAGES MUTT RUBY ZSH
 EMACS_DESC=	Install EMACS lisp files (requires emacs)
+MUTT_DESC=	Install notmuch-mutt script
 OPTIONS_SUB=	yes
 
 BASH_BUILD_DEPENDS=	bash-completion>=1.90:shells/bash-completion
@@ -33,19 +60,24 @@ EMACS_CONFIGURE_ON=	--emacslispdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
 			--emacsetcdir=${PREFIX}/${EMACS_SITE_LISPDIR}
 EMACS_USE=	EMACS=yes
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+MUTT_RUN_DEPENDS=	p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu \
+			p5-Mail-Tools>0:mail/p5-Mail-Tools \
+			p5-Mail-Box>0:mail/p5-Mail-Box \
+			p5-String-ShellQuote>0:textproc/p5-String-ShellQuote
+MUTT_USE=	PERL=yes
 RUBY_USE=	RUBY=yes
 ZSH_CONFIGURE_WITH=	zsh-completion
 
-HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig python:build
-USE_GNOME=	glib20
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
-USE_LDCONFIG=	yes
+do-build-MUTT-on:
+	${MAKE_CMD} -C ${WRKSRC}/contrib/notmuch-mutt all
+	${GZIP_CMD} ${WRKSRC}/contrib/notmuch-mutt/notmuch-mutt.1
 
-MAKE_ENV+=		PYTHONCMD=${PYTHON_CMD}
+do-install-MUTT-on:
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/notmuch-mutt/notmuch-mutt ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/contrib/notmuch-mutt/notmuch-mutt.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.4.3.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.4.4.0
 
 .include <bsd.port.mk>

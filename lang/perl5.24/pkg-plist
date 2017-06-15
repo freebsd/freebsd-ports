@@ -689,6 +689,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/patchlevel.h
 %%ARCH_LIB%%/CORE/perl.h
 %%ARCH_LIB%%/CORE/perlapi.h
+%%DTRACE%%%%ARCH_LIB%%/CORE/perldtrace.h
 %%ARCH_LIB%%/CORE/perlio.h
 %%ARCH_LIB%%/CORE/perliol.h
 %%ARCH_LIB%%/CORE/perlsdio.h

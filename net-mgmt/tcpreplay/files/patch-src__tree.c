@@ -1,6 +1,6 @@
---- ./src/tree.c.orig	2009-07-28 09:16:43.000000000 +0200
-+++ ./src/tree.c	2009-07-28 09:16:57.000000000 +0200
-@@ -48,6 +48,8 @@
+--- src/tree.c.orig	2016-11-19 19:41:38 UTC
++++ src/tree.c
+@@ -37,6 +37,8 @@ extern tcpprep_t *tcpprep;
  extern int debug;
  #endif
  

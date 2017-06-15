@@ -3,19 +3,18 @@
 PORTNAME=	openark-kit
 PORTVERSION=	196
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/openarkkit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common utilities for MySQL
 
 LICENSE=	BSD3CLAUSE
-
-BROKEN=		Unfetchable (google code has gone away)
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb
 
-PROJECTHOST=	openarkkit
+NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

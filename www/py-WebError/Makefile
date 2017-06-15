@@ -20,7 +20,4 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.7:www/py-paste \
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-post-extract:
-		${CHMOD} -R a+r ${WRKSRC}
-
 .include <bsd.port.mk>

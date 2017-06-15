@@ -4,7 +4,7 @@
 PORTNAME=	eiskaltdcpp
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	-data
-PORTREVISION=	4
+PORTREVISION=	0
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared data for EiskaltDC++ GUIs

@@ -3,6 +3,7 @@
 
 PORTNAME=	resynthesizer
 PORTVERSION=	2.0.1
+PORTREVISION=	2
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	gimp-
 

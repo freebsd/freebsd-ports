@@ -4,6 +4,6 @@ lib/libshout-idjc.so
 lib/libshout-idjc.so.3
 lib/libshout-idjc.so.3.2.0
 libdata/pkgconfig/shout-idjc.pc
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
+share/aclocal/shout.m4
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

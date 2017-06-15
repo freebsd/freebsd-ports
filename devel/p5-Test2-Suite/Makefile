@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test2-Suite
-PORTVERSION=	0.000036
+PORTVERSION=	0.000070
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -15,7 +15,10 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Test-Simple>=1.302032:devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-Importer>=0.024:devel/p5-Importer \
+		p5-Sub-Info>=0.001:devel/p5-Sub-Info \
+		p5-Term-Table>=0.002:devel/p5-Term-Table \
+		p5-Test-Simple>=1.302073:devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes

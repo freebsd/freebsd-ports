@@ -6,7 +6,7 @@ PORTVERSION=	4.40.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://files.ax86.net/terminus-ttf/files/${PORTVERSION}/
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Terminus Font - a clean fixed width font (TTF version)
 
 LICENSE=	OFL11

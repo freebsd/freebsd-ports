@@ -11,15 +11,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-20111030
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIMulation LIBrary for C++ programming language
 
-BROKEN_powerpc64=	Does not build
-
 USES=		gmake
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CXXFLAGS+=	-fPIC
 
-NOT_FOR_ARCHS=		ia64 powerpc sparc64
+NOT_FOR_ARCHS=		armv6 aarch64 mips mips64 powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
 
 post-patch:

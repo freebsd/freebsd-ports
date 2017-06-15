@@ -17,7 +17,6 @@ LIB_DEPENDS=	libmp3splt.so:audio/libmp3splt \
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oggsplt_symlink
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

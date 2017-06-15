@@ -2,29 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	glpk
-PORTVERSION=	4.55
+PORTVERSION=	4.61
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Linear Programming Kit
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgmp.so:math/gmp
+
+CONFLICTS=	goblin-[0-9]*
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool localbase
 USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 CPPFLAGS+=	-D_LSEEK_DECLARED
-CONFIGURE_ARGS+=	--with-gmp
-CONFLICTS=	goblin-[0-9]*
+CONFIGURE_ARGS=	--with-gmp
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
-DOCS1=		cnfsat.pdf glpk.pdf gmpl.pdf graphs.pdf miplib2.txt \
-		miplib3.txt netlib.txt
-DOCS2=		dfeas.pdf gomory.pdf keller.pdf scaling.pdf
-PORTDOCS=	${DOCS1} ${DOCS2}
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	IODBC MYSQL DOCS
 
@@ -40,14 +41,13 @@ MYSQL_USES=		mysql
 
 post-patch:
 	@${REINPLACE_CMD} -e "s;\/usr\/include\/mysql;${LOCALBASE}\/include\/mysql;g" \
-	${WRKSRC}/configure
+		${WRKSRC}/configure
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc ; \
-	${INSTALL_DATA} ${DOCS1} ${DOCS2:S|^|notes/|} ${STAGEDIR}${DOCSDIR}
-
-check regression-test test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check)
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} cnfsat.pdf glpk.pdf gmpl.pdf \
+		graphs.pdf miplib2.txt miplib3.txt netlib.txt ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/notes && ${INSTALL_DATA} gomory.pdf keller.pdf \
+		scf.pdf simplex1.pdf simplex2.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

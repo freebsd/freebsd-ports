@@ -1,12 +1,12 @@
---- multplex.c.orig	Tue Jun  6 07:16:52 1995
-+++ multplex.c	Mon Sep  4 18:17:45 2000
+--- multplex.c.orig	1995-06-06 12:16:52 UTC
++++ multplex.c
 @@ -1,4 +1,5 @@
  #include "main.h"
 +extern int Interactive;
  #ifdef TIMER
      extern long total_sec;
      extern long total_usec;
-@@ -129,6 +130,7 @@
+@@ -129,6 +130,7 @@ unsigned int    which_streams;
  	picture_start = TRUE;
      }
  
@@ -14,7 +14,7 @@
  printf("\nMerging elementary streams to MPEG/SYSTEMS multiplexed stream.\n");
  printf("\n+------------------ MPEG/SYSTEMS INFORMATION -----------------+\n");
      
-@@ -144,6 +146,12 @@
+@@ -144,6 +146,12 @@ printf("\n+------------------ MPEG/SYSTE
      scanf ("%ld", &video_buffer_size);
      printf   ("STD audio buffer in kB (CSPS: max  4 kB) : ");
      scanf ("%ld", &audio_buffer_size);
@@ -27,7 +27,7 @@
  
      write_pack = packets_per_pack;
      video_buffer_size *= 1024;
-@@ -197,6 +205,7 @@
+@@ -197,6 +205,7 @@ printf("\n+------------------ MPEG/SYSTE
  		 (double)(packets_per_pack-1.))) / (double)(packets_per_pack) );
      data_rate = ceil(dmux_rate/50.)*50;
  
@@ -35,7 +35,7 @@
      printf ("\ncomputed multiplexed stream data rate    : %7.3f\n",dmux_rate);
      printf ("target data rate (e.g. %6u)           : ",data_rate);
      scanf  ("%lf", &dmux_rate);
-@@ -206,12 +215,21 @@
+@@ -206,12 +215,21 @@ printf("\n+------------------ MPEG/SYSTE
      scanf  ("%u", &video_delay_ms);
      printf ("audio stream startup offset (ms)         : ");
      scanf  ("%u", &audio_delay_ms);

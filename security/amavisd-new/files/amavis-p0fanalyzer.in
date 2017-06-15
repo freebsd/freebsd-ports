@@ -32,8 +32,8 @@ p0fanalyzer_start()
 
 p0fanalyzer_stop()
 {
-	/bin/kill `cat ${amavis_p0fanalyzer_pidfile2}` && rm ${amavis_p0fanalyzer_pidfile2}
-	/bin/kill `cat ${amavis_p0fanalyzer_pidfile1}` && rm ${amavis_p0fanalyzer_pidfile1}
+	test -s ${amavis_p0fanalyzer_pidfile1} && /bin/kill `cat ${amavis_p0fanalyzer_pidfile2}`
+	test -s ${amavis_p0fanalyzer_pidfile1} && /bin/kill `cat ${amavis_p0fanalyzer_pidfile1}`
 }
 
 run_rc_command $1

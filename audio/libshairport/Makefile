@@ -13,9 +13,8 @@ COMMENT=	Airport Extreme Emulator
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

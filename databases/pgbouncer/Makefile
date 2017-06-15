@@ -3,6 +3,7 @@
 
 PORTNAME=	pgbouncer
 PORTVERSION=	1.7.2
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
@@ -12,7 +13,7 @@ COMMENT=	Lightweight connection pooler for PostgreSQL
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gsed:textproc/gsed
 
 PORTSCOUT=	site:https://pgbouncer.github.io/downloads/
@@ -23,8 +24,7 @@ GROUPS=		pgbouncer
 USE_RC_SUBR=	pgbouncer
 
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_OPENSSL=	yes
+USES=		gmake ssl
 
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --enable-evdns
 CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread"
@@ -40,12 +40,6 @@ PLIST_SUB+=	PGBOUNCER_USER="${USERS}" \
 		PGBOUNCER_LOGDIR="${PGBOUNCER_LOGDIR}" \
 		PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 SUB_LIST+=	PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-WITH_OPENSSL_PORT=	yes
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|= pgbouncer.log|= ${PGBOUNCER_LOGDIR}/pgbouncer.log|g" \

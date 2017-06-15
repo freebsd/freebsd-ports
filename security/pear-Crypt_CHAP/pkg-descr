@@ -6,4 +6,4 @@ Currently these types of CHAP are supported:
 
 For MS-CHAP the mhash and mcrypt extensions must be loaded.
 
-WWW: http://pear.php.net/package/Crypt_CHAP/
+WWW: https://pear.php.net/package/Crypt_CHAP

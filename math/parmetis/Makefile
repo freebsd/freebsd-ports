@@ -3,7 +3,7 @@
 
 PORTNAME=	ParMetis
 PORTVERSION=	4.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math parallel
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
@@ -17,15 +17,10 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
-# libc++.so is a linker script, not a symlink.
-# Ignore portlint, the linker needs the actual library specified
-LIB_DEPENDS=	libc++.so.1:devel/libc++
-
 OPTIONS_DEFINE=	OPENMPI DOCS
 OPENMPI_DESC=	Use openmpi instead of mpich2
 
 USES=		cmake gmake
-LDFLAGS+=	-L${LOCALBASE}/lib -lc++
 
 PLIST_FILES=	include/parmetis/metis.h \
 		include/parmetis/parmetis.h \

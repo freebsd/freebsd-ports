@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--enable-idoutils \
 			--with-dbi-inc=${LOCALBASE}/include
 ALL_TARGET+=		idoutils
 INSTALL_TARGET+=	install-idoutils
-USE_OPENSSL=		yes
+USES+=			ssl
 USE_RC_SUBR+=		ido2db
 PLIST_SUB+=		IDOUTILS=""
 .else

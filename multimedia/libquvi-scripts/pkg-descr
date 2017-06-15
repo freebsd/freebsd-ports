@@ -8,4 +8,4 @@ libquvi-scripts contains the embedded lua scripts that libquvi uses for parsing
 the media details. Some additional utility scripts are also included.
 
 WWW: http://quvi.sourceforge.net/
-WWW: http://repo.or.cz/w/libquvi-scripts.git
+WWW: https://github.com/legatvs/libquvi-scripts

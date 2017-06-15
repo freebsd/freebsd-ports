@@ -1,9 +1,18 @@
+%%TEST%%bin/bt_get
+%%TEST%%bin/bt_get2
+%%TEST%%bin/client_test
+%%TEST%%bin/connection_tester
+%%TEST%%bin/dump_torrent
+%%TEST%%bin/fuzz_torrent
+%%TEST%%bin/make_torrent
+%%TEST%%bin/simple_client
+%%TEST%%bin/stats_counters
+%%TEST%%bin/upnp_test
 include/libtorrent/ConvertUTF.h
 include/libtorrent/add_torrent_params.hpp
 include/libtorrent/address.hpp
 include/libtorrent/alert.hpp
 include/libtorrent/alert_manager.hpp
-include/libtorrent/alert_observer.hpp
 include/libtorrent/alert_types.hpp
 include/libtorrent/alloca.hpp
 include/libtorrent/allocator.hpp
@@ -172,6 +181,7 @@ include/libtorrent/time.hpp
 include/libtorrent/timestamp_history.hpp
 include/libtorrent/tommath.h
 include/libtorrent/tommath_class.h
+include/libtorrent/tommath_private.h
 include/libtorrent/tommath_superclass.h
 include/libtorrent/torrent.hpp
 include/libtorrent/torrent_handle.hpp

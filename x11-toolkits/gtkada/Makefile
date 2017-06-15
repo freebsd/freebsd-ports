@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gtkada-rm-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Ada graphical toolkit based on Gtk2+
 
 LICENSE=	GPLv2
@@ -66,6 +66,6 @@ do-build:
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata
 	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata/
-	${RM} -rf ${STAGEDIR}${PREFIX}/share/doc/gtkada/gtkada_ug/_sources
+	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/gtkada/gtkada_ug/_sources
 
 .include <bsd.port.mk>

@@ -17,12 +17,6 @@ ALL_TARGET=	${PORTNAME}
 
 DESKTOP_ENTRIES=	"Xfracint" "${COMMENT}" "" "${PORTNAME}" "" "false"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000034
-EXTRA_PATCHES=	${FILESDIR}/pre-1000034-libm-patch
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xfractint ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/unix/xfractint.man \
@@ -34,4 +28,4 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

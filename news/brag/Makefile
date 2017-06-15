@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	brag
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	news tcl
-MASTER_SITES=	http://brag.sourceforge.net/ \
-		LOCAL/ehaupt
+MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Download and assemble multipart binaries from newsgroups

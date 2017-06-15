@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eiskaltdcpp
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	-daemon
 
@@ -15,8 +15,7 @@ LIB_DEPENDS=	libeiskaltdcpp.so:net-p2p/eiskaltdcpp-lib
 
 MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
 
-USES=		cmake gettext compiler:c++11-lib
-USE_OPENSSL=	yes
+USES=		cmake gettext compiler:c++11-lib ssl
 
 OPTIONS_SINGLE=	UI
 OPTIONS_SINGLE_UI=	NOUI XMLRPC JSONRPC

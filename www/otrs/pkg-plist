@@ -5,6 +5,7 @@ otrs/.mailfilter.dist
 otrs/.procmailrc.dist
 otrs/ARCHIVE
 @sample otrs/Kernel/Config.pm.dist otrs/Kernel/Config.pm
+otrs/Kernel/Config.pod.dist
 otrs/Kernel/Config/Defaults.pm
 otrs/Kernel/Config/Files/CloudServices.xml
 otrs/Kernel/Config/Files/Daemon.xml
@@ -62,6 +63,7 @@ otrs/Kernel/Language/he.pm
 otrs/Kernel/Language/hi.pm
 otrs/Kernel/Language/hr.pm
 otrs/Kernel/Language/hu.pm
+otrs/Kernel/Language/id.pm
 otrs/Kernel/Language/it.pm
 otrs/Kernel/Language/ja.pm
 otrs/Kernel/Language/lt.pm
@@ -164,6 +166,7 @@ otrs/Kernel/Modules/AgentDashboardCommon.pm
 otrs/Kernel/Modules/AgentHTMLReference.pm
 otrs/Kernel/Modules/AgentInfo.pm
 otrs/Kernel/Modules/AgentLinkObject.pm
+otrs/Kernel/Modules/AgentOTRSBusiness.pm
 otrs/Kernel/Modules/AgentPreferences.pm
 otrs/Kernel/Modules/AgentSearch.pm
 otrs/Kernel/Modules/AgentSpelling.pm
@@ -272,6 +275,7 @@ otrs/Kernel/Output/HTML/NavBar/ModuleAdmin.pm
 otrs/Kernel/Output/HTML/Notification/AgentCloudServicesDisabled.pm
 otrs/Kernel/Output/HTML/Notification/AgentOTRSBusiness.pm
 otrs/Kernel/Output/HTML/Notification/AgentOnline.pm
+otrs/Kernel/Output/HTML/Notification/AgentSessionLimit.pm
 otrs/Kernel/Output/HTML/Notification/AgentTicketEscalation.pm
 otrs/Kernel/Output/HTML/Notification/CustomerOTRSBusiness.pm
 otrs/Kernel/Output/HTML/Notification/CustomerOnline.pm
@@ -418,6 +422,7 @@ otrs/Kernel/Output/HTML/Templates/Standard/AgentHTMLReferencePageLayout.tt
 otrs/Kernel/Output/HTML/Templates/Standard/AgentInfo.tt
 otrs/Kernel/Output/HTML/Templates/Standard/AgentLinkObject.tt
 otrs/Kernel/Output/HTML/Templates/Standard/AgentNavigationBar.tt
+otrs/Kernel/Output/HTML/Templates/Standard/AgentOTRSBusinessBlockScreen.tt
 otrs/Kernel/Output/HTML/Templates/Standard/AgentPreferences.tt
 otrs/Kernel/Output/HTML/Templates/Standard/AgentSpelling.tt
 otrs/Kernel/Output/HTML/Templates/Standard/AgentStatisticsAdd.tt
@@ -662,12 +667,16 @@ otrs/Kernel/System/Console/Command/Maint/Database/PasswordCrypt.pm
 otrs/Kernel/System/Console/Command/Maint/GenericAgent/Run.pm
 otrs/Kernel/System/Console/Command/Maint/Loader/CacheCleanup.pm
 otrs/Kernel/System/Console/Command/Maint/Loader/CacheGenerate.pm
+otrs/Kernel/System/Console/Command/Maint/Log/Clear.pm
+otrs/Kernel/System/Console/Command/Maint/Log/Print.pm
 otrs/Kernel/System/Console/Command/Maint/OTRSBusiness/AvailabilityCheck.pm
 otrs/Kernel/System/Console/Command/Maint/OTRSBusiness/EntitlementCheck.pm
 otrs/Kernel/System/Console/Command/Maint/PostMaster/MailAccountFetch.pm
 otrs/Kernel/System/Console/Command/Maint/PostMaster/Read.pm
 otrs/Kernel/System/Console/Command/Maint/PostMaster/SpoolMailsReprocess.pm
 otrs/Kernel/System/Console/Command/Maint/Registration/UpdateSend.pm
+otrs/Kernel/System/Console/Command/Maint/SMIME/CustomerCertificate/Fetch.pm
+otrs/Kernel/System/Console/Command/Maint/SMIME/CustomerCertificate/Renew.pm
 otrs/Kernel/System/Console/Command/Maint/SMIME/KeysRefresh.pm
 otrs/Kernel/System/Console/Command/Maint/Session/DeleteAll.pm
 otrs/Kernel/System/Console/Command/Maint/Session/DeleteExpired.pm
@@ -800,11 +809,13 @@ otrs/Kernel/System/PostMaster.pm
 otrs/Kernel/System/PostMaster/DestQueue.pm
 otrs/Kernel/System/PostMaster/Filter.pm
 otrs/Kernel/System/PostMaster/Filter/CMD.pm
+otrs/Kernel/System/PostMaster/Filter/Decrypt.pm
 otrs/Kernel/System/PostMaster/Filter/ExternalTicketNumberRecognition.pm
 otrs/Kernel/System/PostMaster/Filter/FollowUpArticleTypeCheck.pm
 otrs/Kernel/System/PostMaster/Filter/Match.pm
 otrs/Kernel/System/PostMaster/Filter/MatchDBSource.pm
 otrs/Kernel/System/PostMaster/Filter/NewTicketReject.pm
+otrs/Kernel/System/PostMaster/Filter/SMIMEFetchFromCustomer.pm
 otrs/Kernel/System/PostMaster/FollowUp.pm
 otrs/Kernel/System/PostMaster/FollowUpCheck/Attachments.pm
 otrs/Kernel/System/PostMaster/FollowUpCheck/Body.pm
@@ -905,6 +916,7 @@ otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/FQDN.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/FileSystemWritable.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/PackageDeployment.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/PackageList.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/SpoolMails.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/SystemID.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/DefaultType.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/Ticket/IndexModule.pm
@@ -918,7 +930,6 @@ otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/LoadedModules.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/MPMModel.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Apache/Performance.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/EnvironmentVariables.pm
-otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/IIS/Performance.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/Webserver/Version.pm
 otrs/Kernel/System/SupportDataCollector/PluginAsynchronous.pm
 otrs/Kernel/System/SupportDataCollector/PluginAsynchronous/OTRS/ConcurrentUsers.pm
@@ -1150,6 +1161,7 @@ otrs/var/httpd/htdocs/js/Core.Agent.CustomerInformationCenterSearch.js
 otrs/var/httpd/htdocs/js/Core.Agent.CustomerSearch.js
 otrs/var/httpd/htdocs/js/Core.Agent.DaemonInfo.js
 otrs/var/httpd/htdocs/js/Core.Agent.Dashboard.js
+otrs/var/httpd/htdocs/js/Core.Agent.LinkObject.js
 otrs/var/httpd/htdocs/js/Core.Agent.Login.js
 otrs/var/httpd/htdocs/js/Core.Agent.Responsive.js
 otrs/var/httpd/htdocs/js/Core.Agent.Search.js
@@ -1572,6 +1584,7 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/codesnippe
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/codesnippet/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/codesnippetgeshi/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/colordialog/dialogs/colordialog.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/contextmenu_linkopen/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/_translationstatus.txt
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/ar.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/bg.js
@@ -2577,28 +2590,44 @@ otrs/var/httpd/htdocs/skins/Customer/default/img/inputfield_tree.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/loader.gif
 otrs/var/httpd/htdocs/skins/Customer/default/img/logo.png
 otrs/var/logo-otrs.png
+otrs/var/processes/examples/Application_for_leave.yml
+otrs/var/processes/examples/Application_for_leave_post.pm
+otrs/var/processes/examples/Application_for_leave_pre.pm
+otrs/var/processes/examples/Base.pm
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.en.xml
+otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.hu.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.en.xml
+otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.hu.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilSolutionDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilSolutionDeadlineExpires.en.xml
+otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilSolutionDeadlineExpires.hu.xml
 otrs/var/stats/ListOfTheMostTimeConsumingTickets.de.xml
 otrs/var/stats/ListOfTheMostTimeConsumingTickets.en.xml
+otrs/var/stats/ListOfTheMostTimeConsumingTickets.hu.xml
 otrs/var/stats/ListOfTicketsClosedLastMonth.de.xml
 otrs/var/stats/ListOfTicketsClosedLastMonth.en.xml
+otrs/var/stats/ListOfTicketsClosedLastMonth.hu.xml
 otrs/var/stats/ListOfTicketsClosedSortedByResponseTime.de.xml
 otrs/var/stats/ListOfTicketsClosedSortedByResponseTime.en.xml
+otrs/var/stats/ListOfTicketsClosedSortedByResponseTime.hu.xml
 otrs/var/stats/ListOfTicketsClosedSortedBySolutionTime.de.xml
 otrs/var/stats/ListOfTicketsClosedSortedBySolutionTime.en.xml
+otrs/var/stats/ListOfTicketsClosedSortedBySolutionTime.hu.xml
 otrs/var/stats/ListOfTicketsCreatedLastMonth.de.xml
 otrs/var/stats/ListOfTicketsCreatedLastMonth.en.xml
+otrs/var/stats/ListOfTicketsCreatedLastMonth.hu.xml
 otrs/var/stats/Stats.NewTickets.de.xml
 otrs/var/stats/Stats.NewTickets.en.xml
+otrs/var/stats/Stats.NewTickets.hu.xml
 otrs/var/stats/Stats.StatusActionOverview.de.xml
 otrs/var/stats/Stats.StatusActionOverview.en.xml
+otrs/var/stats/Stats.StatusActionOverview.hu.xml
 otrs/var/stats/Stats.TicketOverview.de.xml
 otrs/var/stats/Stats.TicketOverview.en.xml
+otrs/var/stats/Stats.TicketOverview.hu.xml
+otrs/var/webservices/examples/Base.pm
 @owner
 @group
 @owner root
@@ -2606,7 +2635,6 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dir otrs/var/article
 @dir otrs/var/httpd/htdocs/js/js-cache
 @dir otrs/var/log
-@dir otrs/var/processes/examples
 @dir otrs/var/sessions
 @dir otrs/var/spool
 @dir otrs/var/tmp

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloud_sptheme
-PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +14,10 @@ COMMENT=	Sphinx theme
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3:textproc/py-sphinx
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3:textproc/py-sphinx
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3:textproc/py-sphinx \
+		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-fulltoc>=1.1:textproc/py-sphinxcontrib-fulltoc
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3:textproc/py-sphinx \
+		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-fulltoc>=1.1:textproc/py-sphinxcontrib-fulltoc
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -28,9 +29,6 @@ PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
-
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR2}

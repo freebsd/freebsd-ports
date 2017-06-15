@@ -1,6 +1,6 @@
---- include/Optimized.h.orig	Sat Dec 31 06:26:59 2005
-+++ include/Optimized.h	Thu Oct 11 02:07:55 2007
-@@ -193,7 +193,7 @@
+--- include/Optimized.h.orig	2005-12-31 03:26:59 UTC
++++ include/Optimized.h
+@@ -193,7 +193,7 @@ namespace SharpConstruct
  		void Normalize( Point3D& );
  		
  		typedef Point3D Normal3D;

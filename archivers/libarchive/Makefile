@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://libarchive.org/downloads/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
+
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
@@ -33,7 +35,7 @@ PLIST_FILES=	bin/bsdcat \
 		lib/libarchive.a \
 		lib/libarchive.so \
 		lib/libarchive.so.13 \
-		lib/libarchive.so.13.2.1 \
+		lib/libarchive.so.13.3.1 \
 		libdata/pkgconfig/libarchive.pc \
 		man/man1/bsdcat.1.gz \
 		man/man1/bsdcpio.1.gz \
@@ -91,14 +93,10 @@ LZ4_CONFIGURE_WITH=	lz4
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NETTLE_CONFIGURE_WITH=	nettle
 NETTLE_CONFIGURE_ON=	--without-openssl
-NETTLE_USE_OFF=		OPENSSL=yes
+NETTLE_USES_OFF=	ssl
 NETTLE_CONFIGURE_OFF=	--with-openssl
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1002504
-CONFIGURE_ENV+=	ac_cv_lzma_has_mt=no
-.endif
 
 .if empty(ICONV_LIB)
 CONFIGURE_ENV+=	ac_cv_header_localcharset_h=no \

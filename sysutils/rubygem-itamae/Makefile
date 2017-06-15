@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	itamae
-PORTVERSION=	1.9.9
+PORTVERSION=	1.9.11
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,13 +10,13 @@ MAINTAINER=	naito.yuichiro@gmail.com
 COMMENT=	Simple and lightweight configuration management tool
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	\
-	rubygem-thor>=0:devel/rubygem-thor \
-	rubygem-specinfra>=2.37.0:sysutils/rubygem-specinfra \
-	rubygem-hashie>=0:devel/rubygem-hashie \
-	rubygem-ansi>=0:devel/rubygem-ansi \
-	rubygem-schash>=0.1.0:devel/rubygem-schash
+RUN_DEPENDS=	rubygem-ansi>=0:devel/rubygem-ansi \
+		rubygem-hashie>=0:devel/rubygem-hashie \
+		rubygem-schash>=0.1.0:devel/rubygem-schash \
+		rubygem-specinfra>=2.64.0:sysutils/rubygem-specinfra \
+		rubygem-thor>=0:devel/rubygem-thor
 
 NO_ARCH=	yes
 USE_RUBY=	yes

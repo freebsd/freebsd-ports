@@ -85,7 +85,7 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USES+=		cpe gmake iconv perl5 pkgconfig \
+USES+=		cpe gmake iconv localbase perl5 pkgconfig \
 			python:2.7,build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_PERL5=	build
@@ -137,14 +137,13 @@ MOZ_EXPORT+=	${CONFIGURE_ENV} \
 MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 
-CPPFLAGS+=		-isystem${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib \
-			-Wl,-rpath,${PREFIX}/lib/${MOZILLA} -Wl,--as-needed
+LDFLAGS+=		-Wl,--as-needed
 
+.if ${MOZILLA_VER:R:R} < 55
 .if ${OPSYS} != DragonFly # XXX xpcshell crash during install
 # use jemalloc 3.0.0 (4.0 for firefox 43+) API for stats/tuning
 MOZ_EXPORT+=	MOZ_JEMALLOC3=1 MOZ_JEMALLOC4=1
-.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1000012 || ${MOZILLA_VER:R:R} >= 37
+.if ${OPSYS} != FreeBSD || ${MOZILLA_VER:R:R} >= 37
 . if ${MOZILLA_VER:R:R} >= 48
 MOZ_OPTIONS+=	--enable-jemalloc=4
 .else
@@ -152,6 +151,7 @@ MOZ_OPTIONS+=	--enable-jemalloc
 . endif
 .endif
 .endif # !DragonFly
+.endif # Mozilla < 55
 
 # Standard depends
 _ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss png pixman soundtouch sqlite vpx
@@ -169,7 +169,7 @@ cairo_LIB_DEPENDS=	libcairo.so:graphics/cairo
 cairo_MOZ_OPTIONS=	--enable-system-cairo
 .endif
 
-event_LIB_DEPENDS=	libevent.so:devel/libevent2
+event_LIB_DEPENDS=	libevent.so:devel/libevent
 event_MOZ_OPTIONS=	--with-system-libevent
 
 ffi_LIB_DEPENDS=	libffi.so:devel/libffi
@@ -183,7 +183,7 @@ harfbuzz_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 harfbuzz_MOZ_OPTIONS=	--with-system-harfbuzz
 .endif
 
-hunspell_LIB_DEPENDS=	libhunspell-1.3.so:textproc/hunspell
+hunspell_LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
 hunspell_MOZ_OPTIONS=	--enable-system-hunspell
 
 icu_LIB_DEPENDS=		libicui18n.so:devel/icu
@@ -251,10 +251,12 @@ BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
 
 # Standard options
 MOZ_CHROME?=	omni
-MOZ_TOOLKIT?=	cairo-gtk2
+MOZ_TOOLKIT?=	cairo-gtk3
+MOZ_CHANNEL?=	${PKGNAMESUFFIX:Urelease:S/^-//}
 MOZ_OPTIONS+=	\
 		--enable-chrome-format=${MOZ_CHROME} \
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
+		--enable-update-channel=${MOZ_CHANNEL} \
 		--enable-pie \
 		--with-pthreads
 # Configure options for install
@@ -276,12 +278,10 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 # http://www.chromium.org/developers/how-tos/api-keys
 # Note: these are for FreeBSD use ONLY. For your own distribution,
 # please get your own set of keys.
-MOZ_EXPORT+=	MOZ_GOOGLE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8 \
-				MOZ_GOOGLE_OAUTH_API_CLIENTID=996322985003.apps.googleusercontent.com \
-				MOZ_GOOGLE_OAUTH_API_KEY=IR1za9-1VK0zZ0f_O8MVFicn
+MOZ_EXPORT+=	MOZ_GOOGLE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
 
-.if ${PORT_OPTIONS:MGTK3}
-MOZ_TOOLKIT=	cairo-gtk3
+.if ${PORT_OPTIONS:MGTK2}
+MOZ_TOOLKIT=	cairo-gtk2
 .endif
 
 .if ${MOZ_TOOLKIT:Mcairo-gtk3}
@@ -330,6 +330,7 @@ MOZ_OPTIONS+=	--enable-gconf
 MOZ_OPTIONS+=	--disable-gconf
 .endif
 
+.if ${MOZILLA_VER:R:R} < 55
 .if ${PORT_OPTIONS:MGNOMEUI}
 BUILD_DEPENDS+=	${libgnomeui_DETECT}:${libgnomeui_LIB_DEPENDS:C/.*://}
 USE_GNOME+=		libgnomeui:build
@@ -337,6 +338,7 @@ MOZ_OPTIONS+=	--enable-gnomeui
 .else
 MOZ_OPTIONS+=	--disable-gnomeui
 .endif
+.endif # Mozilla < 55
 
 .if ${PORT_OPTIONS:MLIBPROXY}
 LIB_DEPENDS+=	libproxy.so:net/libproxy
@@ -372,8 +374,29 @@ MOZ_OPTIONS+=	--enable-pulseaudio
 MOZ_OPTIONS+=	--disable-pulseaudio
 .endif
 
+.if ${PORT_OPTIONS:MSNDIO}
+LIB_DEPENDS+=	libsndio.so:audio/sndio
+post-patch-SNDIO-on:
+	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
+		${MOZSRC}/media/libcubeb/src/moz.build \
+		${MOZSRC}/toolkit/library/moz.build
+. for tests in tests gtest
+	@if [ -f "${MOZSRC}/media/libcubeb/${tests}/moz.build" ]; then \
+		${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
+			 ${MOZSRC}/media/libcubeb/${tests}/moz.build \
+	; fi
+. endfor
+	@${REINPLACE_CMD} -e 's|OS==\"openbsd\"|OS==\"${OPSYS:tl}\"|g' \
+		${MOZSRC}/media/webrtc/trunk/webrtc/build/common.gypi
+	@${ECHO} "OS_LIBS += ['sndio']" >> \
+		${MOZSRC}/media/webrtc/signaling/test/common.build
+.endif
+
 .if ${PORT_OPTIONS:MRUST}
-BUILD_DEPENDS+=	rustc:${RUST_PORT}
+BUILD_DEPENDS+=	rust>=1.15.1:${RUST_PORT}
+. if ${MOZILLA_VER:R:R} >= 51
+BUILD_DEPENDS+=	cargo>=0.16.0:devel/cargo
+. endif
 RUST_PORT?=		lang/rust
 MOZ_OPTIONS+=	--enable-rust
 .else
@@ -494,7 +517,7 @@ gecko-post-patch:
 .if exists(${PKGDEINSTALL_INC})
 	@${MOZCONFIG_SED} < ${PKGDEINSTALL_INC} > ${PKGDEINSTALL}
 .endif
-	@${RM} -f ${MOZCONFIG}
+	@${RM} ${MOZCONFIG}
 .if !defined(NOMOZCONFIG)
 	@if [ -e ${PORT_MOZCONFIG} ] ; then \
 		${MOZCONFIG_SED} < ${PORT_MOZCONFIG} >> ${MOZCONFIG} ; \
@@ -585,7 +608,7 @@ post-install-script: gecko-create-plist
 
 gecko-create-plist:
 # Create the plist
-	${RM} -f ${PLISTF}
+	${RM} ${PLISTF}
 .for dir in ${MOZILLA_PLIST_DIRS}
 	@cd ${STAGEDIR}${PREFIX}/${dir} && ${FIND} -H -s * ! -type d | \
 		${SED} -e 's|^|${dir}/|' >> ${PLISTF}

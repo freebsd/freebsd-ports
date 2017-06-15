@@ -1,0 +1,4 @@
+pecl-xdiff is a php extension that creates and applies
+patches to both text and binary files.
+
+WWW: https://pecl.php.net/package/xdiff

@@ -1,5 +1,5 @@
---- eficasQt.orig	2014-04-17 22:44:45.000000000 +0200
-+++ eficasQt	2014-04-17 22:49:47.000000000 +0200
+--- eficasQt.orig	2015-08-22 20:27:05 UTC
++++ eficasQt
 @@ -18,21 +18,19 @@
  # ==============================================================================
  
@@ -30,10 +30,9 @@
  fi
  
  # start Python interpreter
-@@ -44,5 +42,5 @@
+@@ -44,4 +42,4 @@ PYTHONPATH=$PYTHONPATH:$EFICAS_ROOT
  PYTHONPATH=$PYTHONPATH:$EFICAS_ROOT/UiQT4
  PYTHONPATH=$PYTHONPATH:$EFICAS_ROOT/Editeur
  
 -$PYTHONEXECUTABLE $eficasdir/Aster/qtEficas_aster.py $*
 +LD_LIBRARY_PATH=$FIXNUMPY $PYTHONEXECUTABLE $eficasdir/Aster/qtEficas_aster.pyo $*
- 

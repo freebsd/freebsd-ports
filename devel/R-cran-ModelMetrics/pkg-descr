@@ -1,0 +1,4 @@
+Collection of metrics for evaluating models written in C++ using
+'Rcpp'.
+
+WWW: https://cran.r-project.org/web/packages/ModelMetrics/

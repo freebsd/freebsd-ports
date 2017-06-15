@@ -3,7 +3,7 @@
 
 PORTNAME=	Net-Server
 PORTVERSION=	2.008
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,9 @@ OPTIONS_DEFINE=	IPV6
 USES=		perl5
 USE_PERL5=	configure
 
-IPV6_BUILD_DEPENDS=	p5-Socket6>=0.23:net/p5-Socket6
-IPV6_RUN_DEPENDS=	p5-Socket6>=0.23:net/p5-Socket6
+IPV6_BUILD_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
+			p5-Socket6>=0.23:net/p5-Socket6
+IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
+			p5-Socket6>=0.23:net/p5-Socket6
 
 .include <bsd.port.mk>

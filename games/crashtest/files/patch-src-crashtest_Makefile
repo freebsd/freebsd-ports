@@ -1,0 +1,32 @@
+--- src-crashtest/Makefile.orig	2009-02-15 22:11:31 UTC
++++ src-crashtest/Makefile
+@@ -1,8 +1,7 @@
+ # EDIT THESE SETTINGS
+ 
+-PLIBPREFIX=/usr
+-ODEPREFIX=/usr
+-CXX=g++
++PLIBPREFIX=${LOCALBASE}
++ODEPREFIX=${LOCALBASE}
+ 
+ #PLIBPREFIX=$(HOME)
+ #ODEPREFIX=$(HOME)
+@@ -10,15 +9,13 @@ CXX=g++
+ 
+ # END OF CUSTOM SETTINGS
+ 
+-CXXFLAGS=\
++CXXFLAGS+=\
+   -I$(ODEPREFIX)/include \
+   -I$(PLIBPREFIX)/include \
+-  -I../src-common \
+-  -O2 -g -Wall
++  -I../src-common
+ 
+ LFLAGS=\
+-  -L$(PLIBPREFIX)/lib \
+-  -L/usr/X11R6/lib
++  -L$(PLIBPREFIX)/lib
+ 
+ OBJS=staticworldobject.o crashtest.o dynamicobject.o cartobject.o
+ 

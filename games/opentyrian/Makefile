@@ -5,7 +5,7 @@ PORTNAME=	opentyrian
 PORTVERSION=	2.1.20130907
 CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/opentyrian/opentyrian/get/ \
-		http://mirror.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	opentyrian
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	gigedit
 PORTVERSION=	0.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
@@ -21,7 +21,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib/linuxsampler
 LIBS+=		-lsigc-2.0
 USES=		gettext gmake pkgconfig libtool
 USE_LDCONFIG=	yes

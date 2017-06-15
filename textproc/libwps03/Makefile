@@ -3,7 +3,7 @@
 
 PORTNAME=	libwps
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	03
@@ -32,7 +32,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 CONFIGURE_ARGS+=	--with-sharedptr=boost
 .endif
 
-post-stage:
-	@${RM} -f ${STAGEDIR}${PREFIX}/bin/*
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.post.mk>

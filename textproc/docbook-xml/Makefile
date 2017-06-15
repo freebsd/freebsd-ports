@@ -27,7 +27,7 @@ DBCAT_SGML=	${PREFIX}/${DBKDIR}/catalog
 PLIST_SUB=	DBKDIR=${DBKDIR}
 
 do-extract:
-	@${RM} -rf ${WRKDIR}
+	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 .for df in ${DISTFILES:C,:.*,,}
 	@cd ${WRKDIR} && ${TAR} \

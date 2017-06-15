@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-attack
-PORTVERSION=	4.4.1
+PORTVERSION=	5.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Rack middleware for throttling and blocking abusive requests
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rack16>=0:www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack>=0:www/rubygem-rack
 
 NO_ARCH=	yes
 USE_RUBY=	yes

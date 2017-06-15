@@ -3,6 +3,7 @@
 
 PORTNAME=	ut
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://bigfoot.morphos-team.net/misc/Quake3Mods/
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}

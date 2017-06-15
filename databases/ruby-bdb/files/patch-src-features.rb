@@ -1,5 +1,5 @@
---- src/features.rb.orig	2011-04-06 19:35:39.000000000 +0000
-+++ src/features.rb	2015-01-22 16:40:53.000000000 +0000
+--- src/features.rb.orig	2011-04-06 19:35:39 UTC
++++ src/features.rb
 @@ -813,7 +813,6 @@
  begin
     conftest = CONFTEST_C.dup

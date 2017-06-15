@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	scss_lint
-PORTVERSION=	0.48.0
+PORTVERSION=	0.52.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-rake>=0.9:devel/rubygem-rake \
-		rubygem-sass>=3.4.15:textproc/rubygem-sass
+		rubygem-sass>=3.4.20:textproc/rubygem-sass
 
 NO_ARCH=	yes
 USE_RUBY=	yes

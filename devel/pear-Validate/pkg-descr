@@ -6,4 +6,4 @@ Package to validate various data. It includes:
 * uri (RFC2396)
 * possibility valid multiple data with a single method call (::multiple)
 
-WWW: http://pear.php.net/package/Validate
+WWW: https://pear.php.net/package/Validate

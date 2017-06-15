@@ -1,0 +1,12 @@
+--- configure.ac.orig	2017-01-22 02:35:42 UTC
++++ configure.ac
+@@ -1225,7 +1225,8 @@ if test "$MAKEINFO" != "no"; then
+     MAKEINFO=makeinfo
+   fi
+   case `($MAKEINFO --version) 2>/dev/null` in
+-    *' (GNU texinfo) '4.1[[3-9]]* | \
++    *' (GNU texinfo) '4.[[8-9]]* | \  
++    *' (GNU texinfo) '4.1[[0-9]]* | \
+     *' (GNU texinfo) '[[5-9]]* | \
+     *' (GNU texinfo) '[[1-9][0-9]]* ) ;;
+     *) MAKEINFO=no;;

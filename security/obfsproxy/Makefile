@@ -13,7 +13,6 @@ COMMENT=	Pluggable transport proxy
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyptlib>=0.0.5:security/py-pyptlib \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.1:security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml
 

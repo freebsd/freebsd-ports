@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	4.8.5
-PORTREVISION=	2
+PORTVERSION=	5.4.0
 CATEGORIES=	lang java
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 4.8
+COMMENT=	GNU Compiler Collection 5
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
@@ -23,28 +22,29 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
-CONFLICTS=	gcc48*
+CONFLICTS=	gcc5*
 CPE_VENDOR=	gnu
 
-# DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
-# of executables and directories once installed.
-DISTVERSION=	${PORTVERSION}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
-SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
-ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386 powerpc powerpc64 sparc64
+# GCC_VERSION and SUFFIX relate to names of executables and directories
+# once installed.
+GCC_VERSION=	${PORTVERSION}
+SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
+ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 i386 powerpc powerpc64 sparc64
 USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
 
-OPTIONS_DEFINE=		BOOTSTRAP
+OPTIONS_DEFINE=		BOOTSTRAP GRAPHITE
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
+OPTIONS_DEFINE_powerpc64=	JAVA
 OPTIONS_DEFAULT_i386=	JAVA
 OPTIONS_DEFAULT_amd64=	JAVA
 OPTIONS_DEFAULT_powerpc64=	BOOTSTRAP
 OPTIONS_EXCLUDE_DragonFly=	JAVA
 BOOTSTRAP_DESC=		Build using a full bootstrap
+GRAPHITE_DESC=		Support for Graphite loop optimizations
 
 .if exists(/usr/lib32/libc.so)
 OPTIONS_DEFINE_powerpc64+=	MULTILIB
@@ -65,9 +65,7 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
 .endif
 
-.if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
-# Override sys.mk including -O in CFLAGS which breaks libgomp building.
-CFLAGS:=	${CFLAGS:S/-O/-O2/g}
+.if ${ARCH} == "armv6" || ${ARCH} == "aarch64"
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
@@ -100,10 +98,7 @@ CONFIGURE_ARGS+=--disable-nls \
 		${ICONV_CONFIGURE_ARG} \
 		--with-pkgversion="FreeBSD Ports Collection" \
 		--with-system-zlib
-# On FreeBSD 11 and above AWK uses the locale's collating order which
-# runs into a bug in GCC (PR 211742).
-MAKE_ARGS+=	MAKEINFOFLAGS="--no-split" \
-		AWK="${SETENV} LC_ALL=C ${AWK:Q}"
+MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VERSION=${GCC_VERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
@@ -122,6 +117,11 @@ INFO+=		gcc${SUFFIX}/libquadmath \
 #.endif
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
+
+.if ${PORT_OPTIONS:MGRAPHITE}
+LIB_DEPENDS+=	libisl.so:devel/isl
+CONFIGURE_ARGS+=--with-isl=${LOCALBASE}
+.endif
 
 .if ${PORT_OPTIONS:MJAVA}
 ECJ_JAR=	${LOCALBASE}/share/java/ecj-4.5.jar
@@ -145,7 +145,7 @@ pre-everything::
 
 pre-configure:
 	cd ${WRKSRC} ; contrib/gcc_update --touch
-	@${RM} -f ${WRKSRC}/gcc/*/*.info*
+	@${RM} ${WRKSRC}/gcc/*/*.info*
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
@@ -154,11 +154,11 @@ full-regression-test: build
 .endif
 
 post-stage:
-	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
-	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
+	${RM} ${STAGEDIR}${PREFIX}/man/man7/*
+	${RM} ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
 	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
 	# Add target libraries and include files to packaging list.
-	${RM} -f ${WRKDIR}/PLIST.lib
+	${RM} ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
 	cd ${STAGEDIR}${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
@@ -167,8 +167,8 @@ post-stage:
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
 	# This is the canonical GCC port, so add key commands without
 	# version numbers as part of their names.
-	for c in gfortran g++ gcc; do \
-	    ${LN} -s ${PREFIX}/bin/"$$c"${SUFFIX} ${STAGEDIR}${PREFIX}/bin/$$c ; \
-	done
+.for c in gfortran g++ gcc
+	    ${LN} -s ${c}${SUFFIX} ${STAGEDIR}${PREFIX}/bin/${c}
+.endfor
 
 .include <bsd.port.post.mk>

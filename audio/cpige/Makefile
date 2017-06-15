@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://old.ed.zehome.com/cpige/ \
 		http://T32.TecNik93.com/FreeBSD/ports/cpige/sources/
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Icecast/Shoutcast stream ripper
 
 USES=		gmake

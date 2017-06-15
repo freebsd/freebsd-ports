@@ -14,7 +14,7 @@ COMMENT=	Embedded Perl
 
 LICENSE=	PHP301
 
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 USES=		perl5 php:ext tar:tgz
 

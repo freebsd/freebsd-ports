@@ -1,5 +1,0 @@
-TIMESTAMP = 1472387540
-SHA256 (rpm/i686/centos/6.8/avahi-libs-0.6.25-15.el6_8.1.i686.rpm) = 926c94db33c0b9cd9bdb0a40a6afd24b88a78c69f03ddbe1cac4bca4ee4227d3
-SIZE (rpm/i686/centos/6.8/avahi-libs-0.6.25-15.el6_8.1.i686.rpm) = 56048
-SHA256 (rpm/i686/centos/6.8/avahi-0.6.25-15.el6_8.1.src.rpm) = 41c2b606ed52dc56b3c8ed17026c225987518cd29da0dfb5e2e49a2a5cf7f8f5
-SIZE (rpm/i686/centos/6.8/avahi-0.6.25-15.el6_8.1.src.rpm) = 1139504

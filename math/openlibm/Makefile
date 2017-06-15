@@ -14,14 +14,15 @@ LICENSE=	MIT ISCL BSD2CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_powerpc64=	Does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	JuliaLang
 GH_PROJECT=	openlibm
 
 USES=	gmake
 USE_LDCONFIG=	yes
+
+BROKEN_aarch64=		Does not compile: the clang compiler does not support -march=aarch64
+BROKEN_powerpc64=	Does not build
 
 .include <bsd.port.pre.mk>
 

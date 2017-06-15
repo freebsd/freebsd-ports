@@ -3,19 +3,16 @@
 
 PORTNAME=	nspr
 PORTVERSION=	4.11.0
+PORTREVISION=	2
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Netscape Portable Runtime (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-f10-nspr-[0-9]*
-
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	1.el6
 USES=		linux:c6
-
-USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
-
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+USE_LINUX_RPM=	yes
 
 .include <bsd.port.mk>

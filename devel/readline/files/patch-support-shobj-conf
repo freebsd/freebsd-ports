@@ -1,20 +1,6 @@
---- support/shobj-conf.orig	2009-10-28 14:20:21.000000000 +0100
-+++ support/shobj-conf	2011-11-05 18:02:22.000000000 +0100
-@@ -118,7 +118,7 @@
- 	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)$(SHLIB_MINOR)'
- 	;;
- 
--freebsd2*)
-+freebsd2.*)
- 	SHOBJ_CFLAGS=-fpic
- 	SHOBJ_LD=ld
- 	SHOBJ_LDFLAGS='-x -Bshareable'
-@@ -128,25 +128,18 @@
- 	;;
- 
- # FreeBSD-3.x ELF
--freebsd3*|freebsdaout*)
-+freebsd3.*|freebsdaout*)
+--- support/shobj-conf.orig	2009-10-28 13:20:21 UTC
++++ support/shobj-conf
+@@ -128,17 +128,10 @@
  	SHOBJ_CFLAGS=-fPIC
  	SHOBJ_LD='${CC}'
  
@@ -32,7 +18,3 @@
  	;;
  
  # FreeBSD-4.x and later have only ELF
- freebsd[4-9]*|freebsd1[0-9]*|freebsdelf*|dragonfly*)
- 	SHOBJ_CFLAGS=-fPIC
- 	SHOBJ_LD='${CC}'
- 

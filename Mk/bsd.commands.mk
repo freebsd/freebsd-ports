@@ -88,7 +88,7 @@ SU_CMD?=		/usr/bin/su root -c
 SYSCTL?=		/sbin/sysctl
 TAIL?=			/usr/bin/tail
 TEST?=			test	# Shell builtin
-TR?=			LANG=C /usr/bin/tr
+TR?=			/usr/bin/tr
 TRUE?=			true	# Shell builtin
 UMOUNT?=		/sbin/umount
 UNAME?=			/usr/bin/uname
@@ -123,7 +123,7 @@ ECHO_MSG?=		${ECHO_CMD}
 .elif !defined(_PKGTOOLSDEFINED)
 _PKGTOOLSDEFINED=	yes
 PKG_BIN?=		${LOCALBASE}/sbin/pkg-static
-PKG_CMD?=		${PKG_BIN} register
+PKG_REGISTER?=		${PKG_BIN} register
 PKG_DELETE?=		${PKG_BIN} delete -y
 PKG_INFO?=		${PKG_BIN} info -g
 PKG_VERSION?=		${PKG_BIN} version

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	visNetwork
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,10 +11,12 @@ COMMENT=	Network Visualization using 'vis.js' Library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-htmlwidgets>0:www/R-cran-htmlwidgets \
+CRAN_DEPENDS=	R-cran-htmlwidgets>0:www/R-cran-htmlwidgets \
 		R-cran-htmltools>0:textproc/R-cran-htmltools \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-magrittr>0:devel/R-cran-magrittr
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist
 

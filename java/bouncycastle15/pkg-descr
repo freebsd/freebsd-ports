@@ -4,14 +4,20 @@ The Bouncy Castle Crypto APIs consist of the following:
 . A provider for the JCE and JCA.
 . A clean room implementation of the JCE 1.2.1.
 . A library for reading and writing encoded ASN.1 objects.
+. Lightweight APIs for TLS (RFC 2246, RFC 4346) and DTLS (RFC 4347).
 . Generators for Version 1 and Version 3 X.509 certificates, Version 2 CRLs,
   and PKCS12 files.
 . Generators for Version 2 X.509 attribute certificates.
-. Generators/Processors for S/MIME and CMS (PKCS7).
+. Generators/Processors for S/MIME and CMS (PKCS7/RFC 3852).
 . Generators/Processors for OCSP (RFC 2560).
-. Generators/Processors for TSP (RFC 3161).
+. Generators/Processors for TSP (RFC 3161 & RFC 5544).
+. Generators/Processors for CMP and CRMF (RFC 4210 & RFC 4211).
 . Generators/Processors for OpenPGP (RFC 2440).
-. A signed jar version suitable for JDK 1.4/1.5 and the Sun JCE.
+. Generators/Processors for Extended Access Control (EAC).
+. Generators/Processors for Data Validation and Certification Server (DVCS) -
+  RFC 3029.
+. Generators/Processors for DNS-based Authentication of Named Entities (DANE).
+. A signed jar version suitable for JDK 1.4-1.8 and the Sun JCE.
 
 It's distributed under a modified X license.
 

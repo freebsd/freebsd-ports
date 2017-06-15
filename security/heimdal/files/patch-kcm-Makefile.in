@@ -1,0 +1,16 @@
+--- kcm/Makefile.in.orig	2017-01-03 19:44:13 UTC
++++ kcm/Makefile.in
+@@ -157,10 +157,12 @@ am_kcm_OBJECTS = acl.$(OBJEXT) acquire.$
+ 	events.$(OBJEXT) glue.$(OBJEXT) log.$(OBJEXT) main.$(OBJEXT) \
+ 	protocol.$(OBJEXT) sessions.$(OBJEXT) renew.$(OBJEXT)
+ kcm_OBJECTS = $(am_kcm_OBJECTS)
+-kcm_LDADD = $(LDADD)
++kcm_LDADD = $(LDADD) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ am__DEPENDENCIES_1 =
+ kcm_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/ntlm/libheimntlm.la \
+ 	$(top_builddir)/lib/ipc/libheim-ipcs.la $(am__DEPENDENCIES_1) \

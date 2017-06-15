@@ -1,0 +1,20 @@
+--- data/CMakeLists.txt.orig	2015-10-28 18:53:26 UTC
++++ data/CMakeLists.txt
+@@ -1,9 +1,16 @@
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+ 
++if(WITH_NLS)
+ add_subdirectory(translations)
++endif(WITH_NLS)
+ 
+ if(NOT WIN32)
+-install(FILES dxirc-fox.desktop dxirc-qt.desktop DESTINATION share/applications)
++  if(BUILD_FOX)
++    install(FILES dxirc-fox.desktop DESTINATION share/applications)
++  endif(BUILD_FOX)
++  if(BUILD_QT)
++     install(FILES dxirc-qt.desktop DESTINATION share/applications)
++  endif(BUILD_QT)
+ endif(NOT WIN32)
+ install(FILES icons/dxirc.png DESTINATION share/icons/hicolor/48x48/apps)
+ install(DIRECTORY icons/ DESTINATION share/dxirc/icons FILES_MATCHING PATTERN "*.png" PATTERN "*.smiley" PATTERN ".svn" EXCLUDE)

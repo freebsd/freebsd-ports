@@ -1,5 +1,5 @@
 bin/ngrams.pl
-%%PERL5_MAN3%%/Text::Ngrams.3.gz
 %%SITE_PERL%%/Text/Ngrams.pm
 %%SITE_PERL%%/Text/ngrams.pl
 %%PERL5_MAN1%%/ngrams.pl.1.gz
+%%PERL5_MAN3%%/Text::Ngrams.3.gz

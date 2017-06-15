@@ -21,6 +21,8 @@ USE_GNOME=	gtk20 intltool
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
+BROKEN_sparc64=	Fails to link: relocation truncated to fit: R_SPARC_GOT13 against symbol input_fp
+
 post-extract:
 	${CP} ${PATCHDIR}/clog.c ${WRKSRC}/src
 	${TOUCH} ${WRKSRC}/src/cexp.c

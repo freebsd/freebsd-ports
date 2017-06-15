@@ -3,7 +3,7 @@
 
 PORTNAME=	sharefonts
 PORTVERSION=	0.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://download.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/   \
@@ -18,8 +18,9 @@ RESTRICTED=	Shareware: cannot be distributed without prior authorization
 
 NO_BUILD=	yes
 
-USES=		fonts
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
+USES=		fonts
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

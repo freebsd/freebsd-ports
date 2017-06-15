@@ -7,7 +7,7 @@ CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	5-designerplugin
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt Designer plugin for Qwt
 
 LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5

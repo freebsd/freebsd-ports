@@ -3,7 +3,7 @@
 
 PORTNAME=	vegastrike
 PORTVERSION=	0.5.1.r1
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -14,7 +14,7 @@ COMMENT=	Open source 3D space simulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${DATADIR}/vegastrike.ico:games/vegastrike-data
+RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/vegastrike.ico:games/vegastrike-data
 LIB_DEPENDS=	libboost_python.so:devel/boost-python-libs \
 		libexpat.so:textproc/expat2 \
 		libvorbis.so:audio/libvorbis \
@@ -48,11 +48,7 @@ MESHER_PLIST_FILES=	bin/mesher
 MESHER_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d
 MESHER_CONFIGURE_ENABLE=	ogre
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002000
-BROKEN=		does not build on 10.1
-.endif
+BROKEN_aarch64=		Fails to compile: POSH cannot determine target CPU
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,/usr/(local|X11R6),${LOCALBASE},' \
@@ -64,4 +60,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,2 @@
+# logfilename          owner:group        mode count size when  flags pid_file               sig_num
+/var/log/i2pd/i2pd.log %%USER%%:%%GROUP%% 644  7     100  *     J     /var/run/i2pd/i2pd.pid 1

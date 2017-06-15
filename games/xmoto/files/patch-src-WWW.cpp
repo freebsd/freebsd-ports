@@ -1,5 +1,5 @@
---- src/WWW.cpp.orig	2015-01-10 18:11:22.000000000 +0100
-+++ src/WWW.cpp	2015-01-10 18:21:32.000000000 +0100
+--- src/WWW.cpp.orig	2011-10-11 20:18:35 UTC
++++ src/WWW.cpp
 @@ -206,7 +206,7 @@ void FSWeb::downloadFile(const std::stri
    std::string v_www_agent = WWW_AGENT;
  

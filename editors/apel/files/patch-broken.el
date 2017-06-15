@@ -1,8 +1,8 @@
 Index: broken.el
 ===================================================================
---- broken.el	(revision 2)
-+++ broken.el	(working copy)
-@@ -58,51 +58,51 @@
+--- broken.el.orig	2005-07-06 02:08:52 UTC
++++ broken.el
+@@ -58,51 +58,51 @@ FACILITY must be symbol.
  
  If ASSERTION is not omitted and evaluated to nil and NO-NOTICE is nil,
  it is noticed."

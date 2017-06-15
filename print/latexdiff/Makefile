@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	latexdiff
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	print perl5
 MASTER_SITES=	TEX_CTAN/support
 DISTNAME=	${PORTNAME}
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 zip
 USE_PERL5=	run
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:

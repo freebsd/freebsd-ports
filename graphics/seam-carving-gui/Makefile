@@ -12,6 +12,8 @@ MAINTAINER=	buganini@gmail.com
 COMMENT=	The Seam Carving GUI is a GUI front end to CAIR
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 USES=		dos2unix gmake qmake
 DOS2UNIX_GLOB=	*.cpp

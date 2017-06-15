@@ -21,9 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dworkin
 
 DIST_SUBDIR=	dgd
-BASE_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKSRC=		${BASE_WRKSRC}/src
-PATCH_WRKSRC=	${BASE_WRKSRC}
+BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	install
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV+=	EXTRA_DEFINES="${EXTRA_DEFINES}"
@@ -53,10 +51,10 @@ post-patch:
 	@cd ${PATCH_WRKSRC} && ${FIND} . -name '*.orig' -delete
 
 do-install:
-	${INSTALL_PROGRAM} ${BASE_WRKSRC}/bin/driver ${STAGEDIR}${PREFIX}/sbin/dgd
-	${INSTALL_PROGRAM} ${BASE_WRKSRC}/bin/precomp ${STAGEDIR}${PREFIX}/bin/precomp
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/driver ${STAGEDIR}${PREFIX}/sbin/dgd
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/precomp ${STAGEDIR}${PREFIX}/bin/precomp
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${BASE_WRKSRC}/mud.dgd \
+	${INSTALL_DATA} ${WRKSRC}/mud.dgd \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/mud.dgd.sample
 	@# Install an RC script for DGD
 	${CAT} ${FILESDIR}/dgd.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
@@ -64,8 +62,8 @@ do-install:
 			${STAGEDIR}${PREFIX}/etc/rc.d/dgd.sh.sample
 	${CHMOD} a+x ${STAGEDIR}${PREFIX}/etc/rc.d/dgd.sh.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${BASE_WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${BASE_WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	cd ${BASE_WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

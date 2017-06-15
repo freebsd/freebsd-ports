@@ -4,8 +4,7 @@
 PORTNAME=	delatt
 DISTVERSION=	1.1.3
 CATEGORIES=	mail
-MASTER_SITES=	http://danborn.net/delatt/ \
-		LOCAL/ehaupt
+MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Strip attachments from email

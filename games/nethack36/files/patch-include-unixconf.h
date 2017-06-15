@@ -16,15 +16,6 @@
                       /* of Linux */
  /* #define HPUX */   /* Hewlett-Packard's Unix, version 6.5 or higher */
                       /* use SYSV for < v6.5 */
-@@ -46,7 +46,7 @@
-                         * job control (note that AIX is SYSV otherwise)
-                         * Also define this for AIX 3.2 */
- 
--#define TERMINFO       /* uses terminfo rather than termcap */
-+/* #define TERMINFO */ /* uses terminfo rather than termcap */
-                        /* Should be defined for most SYSV, SVR4 (including
-                         * Solaris 2+), HPUX, and Linux systems.  In
-                         * particular, it should NOT be defined for the UNIXPC
 @@ -297,7 +297,7 @@
  #endif
  

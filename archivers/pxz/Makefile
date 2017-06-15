@@ -3,7 +3,7 @@
 
 PORTNAME=	pxz
 PORTVERSION=	0.20141018
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	LOCAL/delphij
 DISTNAME=	pxz-git-${PORTVERSION:S/0.//}
@@ -23,8 +23,6 @@ MAKE_ENV+=	BINDIR=${PREFIX}/bin \
 		MANDIR=${MANPREFIX}/man
 
 MAKE_ARGS+=	CC="${CC}"
-
-BROKEN_sparc64=	Does not link on sparc64
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pxz

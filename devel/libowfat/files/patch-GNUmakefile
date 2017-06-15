@@ -1,5 +1,5 @@
---- GNUmakefile.orig	2012-04-17 14:26:31.000000000 -0700
-+++ GNUmakefile	2014-06-04 17:26:54.000000000 -0700
+--- GNUmakefile.orig	2016-10-01 16:07:35.000000000 -0700
++++ GNUmakefile	2017-02-13 11:05:04.236623000 -0800
 @@ -4,10 +4,10 @@
  # in /opt/diet, where they are in the default search path for my diet libc
  # work but don't conflict with anything there.  YMMV.
@@ -14,39 +14,54 @@
  
  LIBS=byte.a fmt.a scan.a str.a uint.a open.a stralloc.a unix.a socket.a \
  buffer.a mmap.a taia.a tai.a dns.a case.a mult.a array.a io.a \
-@@ -15,14 +15,6 @@
+@@ -15,26 +15,14 @@
  
- all: $(LIBS) libowfat.a libsocket t
+ all: ent $(LIBS) libowfat.a libsocket t
  
 -CROSS=
 -#CROSS=i686-mingw-
--CC=$(CROSS)gcc
--CFLAGS=-pipe -W -Wall -O2 -fomit-frame-pointer
--#CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
--
--# CFLAGS += -fstrict-aliasing -Wstrict-aliasing=2
--
- CFLAGS += -D_REENTRANT
+-CC=gcc
+-CCC=$(CROSS)$(CC)
++CCC=${CC}
+ WERROR=
+ WARN=-W -Wall -Wextra $(WERROR)
  
- # startrip
-@@ -169,16 +161,16 @@
- errmsg.h cdb.h cdb_make.h rangecheck.h iarray.h va_narg.h isset.h
+-# Use the second version if you are building for a binary that is only
+-# supposed to run on this machine. It tells gcc to use CPU instructions
+-# that are specific to the CPU the code is compiled on.
+-NATIVE=
+-#NATIVE=-march=native -mtune=native
+-
+-OPT_REG=-O2
+-OPT_PLUS=-O3 $(NATIVE)
+-
+ DEFINE=-D_REENTRANT
+ 
+-CFLAGS=-pipe $(WARN) $(DEFINE) $(OPT_REG)
+-CFLAGS_OPT=-pipe $(WARN) $(DEFINE) $(OPT_PLUS)
++CFLAGS+=-pipe $(WARN) $(DEFINE)
++CFLAGS_OPT=$(CFLAGS)
+ 
+ #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
+ 
+@@ -205,16 +193,16 @@
+ compiletimeassert.h critbit.h
  
  install-inc:
--	install -d $(INCLUDEDIR)
--	install -m 644 $(INCLUDES) $(INCLUDEDIR)
+-	install -d $(DESTDIR)$(INCLUDEDIR)
+-	install -m 644 $(INCLUDES) $(DESTDIR)$(INCLUDEDIR)
 +	${INSTALL} -d $(INCLUDEDIR)
 +	${BSD_INSTALL_DATA} -m 644 $(INCLUDES) $(INCLUDEDIR)
  
  install-lib: libowfat.a
--	install -d $(LIBDIR)
--	install -m 644 libowfat.a $(LIBDIR)
+-	install -d $(DESTDIR)$(LIBDIR)
+-	install -m 644 libowfat.a $(DESTDIR)$(LIBDIR)
 +	${INSTALL} -d $(LIBDIR)
 +	${BSD_INSTALL_DATA} -m 644 libowfat.a $(LIBDIR)
  
  install-man:
--	install -d $(MAN3DIR)
--	install -m 644 $(wildcard */*.3) $(MAN3DIR)
+-	install -d $(DESTDIR)$(MAN3DIR)
+-	install -m 644 $(wildcard */*.3) $(DESTDIR)$(MAN3DIR)
 +	${INSTALL} -d $(MAN3DIR)
 +	${BSD_INSTALL_MAN} -m 644 $(wildcard */*.3) $(MAN3DIR)
  

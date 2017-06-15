@@ -3,7 +3,7 @@
 
 PORTNAME=	superswitcher
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,6 +13,8 @@ COMMENT=	Alt-Tab replacement
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 

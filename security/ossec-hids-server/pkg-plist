@@ -126,6 +126,8 @@
 %%PORTNAME%%/agentless/ssh_pixconfig_diff
 %%PORTNAME%%/agentless/sshlogin.exp
 %%PORTNAME%%/agentless/su.exp
+@(ossec,,) %%PORTNAME%%/logs/active-responses.log
+@(ossec,,) %%PORTNAME%%/logs/ossec.log
 @mode 550
 @dir %%PORTNAME%%/.ssh
 @dir %%PORTNAME%%/active-response/bin

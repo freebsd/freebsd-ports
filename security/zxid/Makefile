@@ -16,8 +16,7 @@ LICENSE_PERMS=	# none
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gmake localbase tar:tgz
-USE_OPENSSL=	yes
+USES=		gmake localbase tar:tgz ssl
 USE_CSTD=	gnu89
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		LD="${CC}" LDFLAGS="${LDFLAGS}" \

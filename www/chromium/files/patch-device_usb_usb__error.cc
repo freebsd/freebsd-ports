@@ -1,4 +1,4 @@
---- device/usb/usb_error.cc.orig	2016-03-25 13:04:49 UTC
+--- device/usb/usb_error.cc.orig	2017-04-19 19:06:34 UTC
 +++ device/usb/usb_error.cc
 @@ -4,7 +4,11 @@
  

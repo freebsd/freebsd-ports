@@ -12,9 +12,8 @@ COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
 LICENSE=	GPLv3
 
 USE_XORG=	x11
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv pkgconfig ssl
 CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG} --disable-credssp
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
 

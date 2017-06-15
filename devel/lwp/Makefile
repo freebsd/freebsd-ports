@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lwp
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.8
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.coda.cs.cmu.edu/pub/lwp/src/ \
 		http://ftp.wu-wien.ac.at/pub/systems/coda/src/ \

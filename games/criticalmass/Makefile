@@ -3,7 +3,7 @@
 
 PORTNAME=	criticalmass
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Critical%20Mass/${PORTVERSION}
@@ -23,6 +23,7 @@ DOS2UNIX_FILES=	tinyxml/*.cpp tinyxml/*.h
 USE_XORG=	x11
 USE_GL=		gl
 USE_SDL=	image mixer sdl
+USE_CXXSTD=	gnu++98
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize

@@ -4,7 +4,8 @@
 %%JAVAJARDIR%%/bcprov.jar
 %%JAVAJARDIR%%/bcprov-ext.jar
 %%JAVAJARDIR%%/bctest.jar
-%%DATADIR%%/bcmail-src.zip
-%%DATADIR%%/bcpg-src.zip
-%%DATADIR%%/bcpkix-src.zip
-%%DATADIR%%/bcprov-src.zip
+%%JAVAJARDIR%%/bctls.jar
+%%ZIPSRC%%%%DATADIR%%/bcmail-src.zip
+%%ZIPSRC%%%%DATADIR%%/bcpg-src.zip
+%%ZIPSRC%%%%DATADIR%%/bcpkix-src.zip
+%%ZIPSRC%%%%DATADIR%%/bcprov-src.zip

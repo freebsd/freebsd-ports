@@ -3,4 +3,4 @@ is based on the Judy C library. A Judy array consumes memory only when it is
 populated, yet can grow to take advantage of all available memory if desired.
 Judy's key benefits are scalability, high performance, and memory efficiency.
 
-WWW: http://pecl.php.net/package/Judy
+WWW: https://pecl.php.net/package/Judy

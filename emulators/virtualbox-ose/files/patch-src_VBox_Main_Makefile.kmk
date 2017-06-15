@@ -1,0 +1,10 @@
+--- src/VBox/Main/Makefile.kmk.orig	2017-03-08 17:20:11 UTC
++++ src/VBox/Main/Makefile.kmk
+@@ -445,6 +445,7 @@ VBoxSVC_SOURCES.os2 = \
+ 
+ VBoxSVC_SOURCES.freebsd = \
+ 	src-server/freebsd/HostHardwareFreeBSD.cpp \
++	$(if $(VBOX_WITH_DBUS),src-server/linux/HostPowerLinux.cpp) \
+ 	src-server/HostDnsServiceResolvConf.cpp
+ 
+ 

@@ -1,28 +1,28 @@
---- tools/gn/bootstrap/bootstrap.py.orig	2016-10-06 04:02:43.000000000 +0300
-+++ tools/gn/bootstrap/bootstrap.py	2016-10-31 01:50:52.450019000 +0200
-@@ -23,6 +23,7 @@
+--- tools/gn/bootstrap/bootstrap.py.orig	2017-04-19 19:06:54 UTC
++++ tools/gn/bootstrap/bootstrap.py
+@@ -23,6 +23,7 @@ import os
  import shutil
  import subprocess
  import sys
 +import platform
  import tempfile
-
+ 
  BOOTSTRAP_DIR = os.path.dirname(os.path.abspath(__file__))
-@@ -31,8 +32,9 @@
-
+@@ -31,8 +32,9 @@ SRC_ROOT = os.path.dirname(os.path.dirna
+ 
  is_win = sys.platform.startswith('win')
  is_linux = sys.platform.startswith('linux')
 +is_bsd = platform.system().lower().endswith('bsd')
  is_mac = sys.platform.startswith('darwin')
 -is_posix = is_linux or is_mac
 +is_posix = is_linux or is_mac or is_bsd
-
+ 
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -594,6 +596,39 @@
+@@ -624,6 +626,41 @@ def write_gn_ninja(path, root_gen_dir, o
          'base/third_party/libevent/epoll.c',
      ])
-
+ 
 +  if is_bsd:
 +    libs.extend(['-lexecinfo', '-lkvm'])
 +    ldflags.extend(['-pthread'])
@@ -36,8 +36,10 @@
 +    static_libraries['base']['sources'].extend([
 +        'base/allocator/allocator_shim.cc',
 +        'base/allocator/allocator_shim_default_dispatch_to_glibc.cc',
++        'base/callback_helpers.cc',
 +        'base/memory/shared_memory_posix.cc',
 +        'base/nix/xdg_util.cc',
++        'base/process/memory_stubs.cc',
 +        #'base/process/internal_linux.cc',
 +        'base/process/process_handle_' + platform.system().lower() + '.cc',
 +        'base/process/process_iterator_' + platform.system().lower() + '.cc',
@@ -56,6 +58,6 @@
 +    ])
 +    # Suppressing warnings
 +    cflags.extend(['-Wno-deprecated-register', '-Wno-parentheses-equality'])
-
+ 
    if is_mac:
      static_libraries['base']['sources'].extend([

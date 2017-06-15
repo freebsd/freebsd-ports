@@ -9,26 +9,30 @@
    %{symbolic:-Bsymbolic}"
  
  #undef  LINK_SPEC
+--- gcc/config/aarch64/aarch64-freebsd.h.orig
++++ gcc/config/aarch64/aarch64-freebsd.h
+@@ -41,6 +41,7 @@
+     %{symbolic:-Bsymbolic}                                      \
+     %{static:-Bstatic}                                          \
+     %{!static:                                                  \
++    %{!static:--hash-style=gnu -rpath @PREFIX@/@GCCAUX@/lib}   \
+       %{rdynamic:-export-dynamic}                               \
+       %{!shared:-dynamic-linker " FBSD_DYNAMIC_LINKER " }}      \
+     -X" SUBTARGET_EXTRA_LINK_SPEC "                             \
+@@ -91,4 +92,6 @@
+ #undef TARGET_BINDS_LOCAL_P
+ #define TARGET_BINDS_LOCAL_P default_binds_local_p_2
+ 
++/* Static stack checking is supported by means of probes.  */
++#define STACK_CHECK_STATIC_BUILTIN 1
+ #endif  /* GCC_AARCH64_FREEBSD_H */
 --- gcc/config/i386/freebsd.h.orig
 +++ gcc/config/i386/freebsd.h
-@@ -77,6 +77,12 @@
-    When the -shared link option is used a final link is not being
-    done.  */
- 
-+#if FBSD_MAJOR < 10
-+#define ELF_HASH_STYLE "--hash-style=both "
-+#else
-+#define ELF_HASH_STYLE "--hash-style=gnu "
-+#endif
-+
- #undef	LINK_SPEC
- #define LINK_SPEC "\
-   %{p:%nconsider using '-pg' instead of '-p' with gprof(1)} \
-@@ -88,6 +94,7 @@
+@@ -88,6 +88,7 @@
          %{rdynamic:-export-dynamic} \
          -dynamic-linker %(fbsd_dynamic_linker) } \
      %{static:-Bstatic}} \
-+  %{!static:" ELF_HASH_STYLE "-rpath @PREFIX@/@GCCAUX@/lib} \
++  %{!static:--hash-style=gnu -rpath @PREFIX@/@GCCAUX@/lib} \
    %{symbolic:-Bsymbolic}"
  
  /* A C statement to output to the stdio stream FILE an assembler
@@ -38,8 +42,116 @@
          %{rdynamic:-export-dynamic} \
  	-dynamic-linker %(fbsd_dynamic_linker) } \
      %{static:-Bstatic}} \
-+  %{!static:" ELF_HASH_STYLE "-rpath @PREFIX@/@GCCAUX@/lib} \
++  %{!static:--hash-style=gnu -rpath @PREFIX@/@GCCAUX@/lib} \
    %{symbolic:-Bsymbolic}"
+--- /dev/null
++++ libgcc/config/aarch64/freebsd-unwind.h
+@@ -0,0 +1,105 @@
++/* DWARF2 EH unwinding support for FreeBSD/ARM64 (aarch64).
++   Copyright (C) 2017 Free Software Foundation, Inc.
++   Contributed by John Marino <gnugcc@marino.st>
++
++This file is part of GCC.
++
++GCC is free software; you can redistribute it and/or modify
++it under the terms of the GNU General Public License as published by
++the Free Software Foundation; either version 3, or (at your option)
++any later version.
++
++GCC is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++GNU General Public License for more details.
++
++Under Section 7 of GPL version 3, you are granted additional
++permissions described in the GCC Runtime Library Exception, version
++3.1, as published by the Free Software Foundation.
++
++You should have received a copy of the GNU General Public License and
++a copy of the GCC Runtime Library Exception along with this program;
++see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++<http://www.gnu.org/licenses/>.  */
++
++/* Do code reading to identify a signal frame, and set the frame
++   state data appropriately.  See unwind-dw2.c for the structs. */
++
++#include <sys/types.h>
++#include <signal.h>
++#include <unistd.h>
++#include <sys/ucontext.h>
++#include <machine/frame.h>
++#include <sys/user.h>
++#include <sys/sysctl.h>
++
++#define REG_NAME(reg)	mc_gpregs.gp_## reg
++#define XREG(num)	mc_gpregs.gp_x[num]
++#define DARC		__LIBGCC_DWARF_ALT_FRAME_RETURN_COLUMN__
++
++#define MD_FALLBACK_FRAME_STATE_FOR aarch64_freebsd_fallback_frame_state
++
++static int
++aarch64_outside_sigtramp_range (unsigned char *pc)
++{
++  static int sigtramp_range_determined = 0;
++  static unsigned char *sigtramp_start, *sigtramp_end;
++  
++  if (sigtramp_range_determined == 0)
++    {
++      struct kinfo_sigtramp kst = {0};
++      size_t len = sizeof (kst);
++      int mib[4] = { CTL_KERN, KERN_PROC, KERN_PROC_SIGTRAMP, getpid() };
++
++      sigtramp_range_determined = 1;
++      if (sysctl (mib, 4, &kst, &len, NULL, 0) == 0)
++      {
++        sigtramp_range_determined = 2;
++        sigtramp_start = kst.ksigtramp_start;
++        sigtramp_end   = kst.ksigtramp_end;
++      }
++    }
++  if (sigtramp_range_determined < 2)  /* sysctl failed if < 2 */
++    return 1;
++
++  return (pc < sigtramp_start || pc >= sigtramp_end );
++}
++
++static _Unwind_Reason_Code
++aarch64_freebsd_fallback_frame_state
++(struct _Unwind_Context *context, _Unwind_FrameState *fs)
++{
++  int n;
++  struct sigframe *sf;
++  mcontext_t *sc;
++  _Unwind_Ptr new_cfa;
++
++  if (aarch64_outside_sigtramp_range(context->ra))
++    return _URC_END_OF_STACK;
++
++  sf = (struct sigframe *) context->cfa;
++  sc = &sf->sf_uc.uc_mcontext;
++
++  new_cfa = (_Unwind_Ptr) sc;
++  fs->regs.cfa_how = CFA_REG_OFFSET;
++  fs->regs.cfa_reg = __LIBGCC_STACK_POINTER_REGNUM__;
++  fs->regs.cfa_offset = new_cfa - (_Unwind_Ptr) context->cfa;
++
++  for (n = 0; n < 32; n++)
++    fs->regs.reg[n].how = REG_SAVED_OFFSET;
++  
++  for (n = 0; n < 30; n++)
++    fs->regs.reg[n].loc.offset = (_Unwind_Ptr) &(sc->XREG(n)) - new_cfa;
++
++  fs->regs.reg[30].loc.offset = (_Unwind_Ptr) &(sc->REG_NAME(lr)) - new_cfa;
++  fs->regs.reg[31].loc.offset = (_Unwind_Ptr) &(sc->REG_NAME(sp)) - new_cfa;
++  
++  fs->regs.reg[DARC].how = REG_SAVED_OFFSET;
++  fs->regs.reg[DARC].loc.offset = (_Unwind_Ptr) &(sc->REG_NAME(elr)) - new_cfa;
++  
++  fs->retaddr_column = DARC;
++  fs->signal_frame = 1;
++
++  return _URC_NO_REASON;
++}
 --- gcc/Makefile.in.orig
 +++ gcc/Makefile.in
 @@ -1185,7 +1185,6 @@
@@ -50,7 +162,7 @@
  	insn-opinit.o \
  	insn-output.o \
  	insn-peep.o \
-@@ -1556,6 +1555,7 @@
+@@ -1557,6 +1556,7 @@
    $(OBJS-libcommon-target) main.o c-family/cppspec.o \
    $(COLLECT2_OBJS) $(EXTRA_GCC_OBJS) $(GCOV_OBJS) $(GCOV_DUMP_OBJS) \
    $(GCOV_TOOL_OBJS) $(GENGTYPE_OBJS) gcc-ar.o gcc-nm.o gcc-ranlib.o \
@@ -58,7 +170,7 @@
    lto-wrapper.o collect-utils.o
  
  # This lists all host object files, whether they are included in this
-@@ -1563,6 +1563,11 @@
+@@ -1564,6 +1564,11 @@
  ALL_HOST_OBJS = $(ALL_HOST_FRONTEND_OBJS) $(ALL_HOST_BACKEND_OBJS)
  
  BACKEND = libbackend.a main.o libcommon-target.a libcommon.a \
@@ -70,7 +182,7 @@
  	$(CPPLIB) $(LIBDECNUMBER)
  
  # This is defined to "yes" if Tree checking is enabled, which roughly means
-@@ -2217,6 +2222,7 @@
+@@ -2218,6 +2223,7 @@
  
  insn-modes.c: s-modes; @true
  insn-modes.h: s-modes-h; @true
@@ -78,7 +190,7 @@
  min-insn-modes.c: s-modes-m; @true
  
  s-modes: build/genmodes$(build_exeext)
-@@ -2234,6 +2240,12 @@
+@@ -2235,6 +2241,12 @@
  	$(SHELL) $(srcdir)/../move-if-change tmp-min-modes.c min-insn-modes.c
  	$(STAMP) s-modes-m
  
@@ -91,7 +203,7 @@
  insn-preds.c: s-preds; @true
  tm-preds.h: s-preds-h; @true
  tm-constrs.h: s-constrs-h; @true
-@@ -3419,6 +3431,9 @@
+@@ -3420,6 +3432,9 @@
  	    ( cd $(DESTDIR)$(bindir) && \
  	      $(LN) $(GCC_INSTALL_NAME)$(exeext) $(FULL_DRIVER_NAME) ); \
  	  fi; \
@@ -101,3 +213,111 @@
  	  if [ ! -f gcc-cross$(exeext) ] \
  	      && [ "$(GCC_INSTALL_NAME)" != "$(GCC_TARGET_INSTALL_NAME)" ]; then \
  	    rm -f $(DESTDIR)$(bindir)/$(target_noncanonical)-gcc-tmp$(exeext); \
+--- gcc/expmed.c.orig
++++ gcc/expmed.c
+@@ -2286,11 +2286,13 @@
+    and AMOUNT the rtx for the amount to shift by.
+    Store the result in the rtx TARGET, if that is convenient.
+    If UNSIGNEDP is nonzero, do a logical shift; otherwise, arithmetic.
+-   Return the rtx for where the value is.  */
++   Return the rtx for where the value is.
++   If that cannot be done, abort the compilation unless MAY_FAIL is true,
++   in which case 0 is returned.  */
+ 
+ static rtx
+ expand_shift_1 (enum tree_code code, machine_mode mode, rtx shifted,
+-		rtx amount, rtx target, int unsignedp)
++		rtx amount, rtx target, int unsignedp, bool may_fail = false)
+ {
+   rtx op1, temp = 0;
+   int left = (code == LSHIFT_EXPR || code == LROTATE_EXPR);
+@@ -2487,7 +2489,7 @@
+ 	 define_expand for lshrsi3 was added to vax.md.  */
+     }
+ 
+-  gcc_assert (temp);
++  gcc_assert (temp != NULL_RTX || may_fail);
+   return temp;
+ }
+ 
+@@ -2506,6 +2508,16 @@
+ 			 shifted, GEN_INT (amount), target, unsignedp);
+ }
+ 
++/* Likewise, but return 0 if that cannot be done.  */
++
++static rtx
++maybe_expand_shift (enum tree_code code, machine_mode mode, rtx shifted,
++		    int amount, rtx target, int unsignedp)
++{
++  return expand_shift_1 (code, mode,
++			 shifted, GEN_INT (amount), target, unsignedp, true);
++}
++
+ /* Output a shift instruction for expression code CODE,
+    with SHIFTED being the rtx for the value to shift,
+    and AMOUNT the tree for the amount to shift by.
+@@ -5811,11 +5823,12 @@
+       if (rtx_equal_p (subtarget, op0))
+ 	subtarget = 0;
+ 
+-      tem = expand_shift (RSHIFT_EXPR, mode, op0,
+-			  GET_MODE_BITSIZE (mode) - 1,
+-			  subtarget, 0);
+-      tem = expand_binop (mode, sub_optab, tem, op0, subtarget, 0,
+-			  OPTAB_WIDEN);
++      tem = maybe_expand_shift (RSHIFT_EXPR, mode, op0,
++				GET_MODE_BITSIZE (mode) - 1,
++				subtarget, 0);
++      if (tem)
++	tem = expand_binop (mode, sub_optab, tem, op0, subtarget, 0,
++			    OPTAB_WIDEN);
+     }
+ 
+   if (code == EQ || code == NE)
+@@ -5877,9 +5890,9 @@
+     }
+ 
+   if (tem && normalizep)
+-    tem = expand_shift (RSHIFT_EXPR, mode, tem,
+-			GET_MODE_BITSIZE (mode) - 1,
+-			subtarget, normalizep == 1);
++    tem = maybe_expand_shift (RSHIFT_EXPR, mode, tem,
++			      GET_MODE_BITSIZE (mode) - 1,
++			      subtarget, normalizep == 1);
+ 
+   if (tem)
+     {
+--- libgcc/config.host.orig
++++ libgcc/config.host
+@@ -242,7 +242,8 @@
+   extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
+   ;;
+ *-*-netbsd*)
+-  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
++  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-eh-dw2-dip"
++  tmake_file="$tmake_file t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
+   # NetBSD 1.7 and later are set up to use GCC's crtstuff for
+   # ELF configurations.  We will clear extra_parts in the
+   # a.out configurations.
+@@ -337,6 +338,7 @@
+ 	extra_parts="$extra_parts crtfastmath.o"
+ 	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
+ 	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp t-crtfm"
++	md_unwind_header=aarch64/freebsd-unwind.h
+ 	;;
+ aarch64*-*-linux*)
+ 	extra_parts="$extra_parts crtfastmath.o"
+@@ -609,9 +611,12 @@
+ 	md_unwind_header=i386/freebsd-unwind.h
+ 	;;
+ i[34567]86-*-netbsdelf*)
++	tmake_file="${tmake_file} i386/t-crtstuff"
++	#md_unwind_header=i386/netbsd-unwind.h
+ 	;;
+ x86_64-*-netbsd*)
+ 	tmake_file="${tmake_file} i386/t-crtstuff"
++	#md_unwind_header=i386/netbsd-unwind.h
+ 	;;
+ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
+ 	;;

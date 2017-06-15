@@ -3,6 +3,7 @@
 
 PORTNAME=	smbftpd
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/SmbFTPD/${PORTVERSION}	\
 		http://www.twbsd.org/download/download.php?file=smbftpd/

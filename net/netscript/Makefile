@@ -11,7 +11,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable/multi-platform lightweight TCP socket scripting
 
-OPTIONS_DEFINE=	DOCS EXAMPLES GTK1
+LICENSE=	PD
 
 USES=		ncurses shebangfix tar:tgz
 SHEBANG_FILES=	examples/*.ruleset examples/gui/*.ruleset \
@@ -27,6 +27,8 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/netscript
 
+OPTIONS_DEFINE=	DOCS EXAMPLES GTK1
+
 GTK1_USE=	GNOME=gtk12
 GTK1_CFLAGS=	-DGTK
 GTK1_CPPFLAGS=	$$(gtk-config --cflags gthread)
@@ -37,11 +39,13 @@ do-build:
 		-o netscript ${LDFLAGS})
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} netscript \
-		${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/netscript ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README \
-		${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR})

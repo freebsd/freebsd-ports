@@ -3,10 +3,9 @@
 
 PORTNAME=	ibus-qt
 PORTVERSION=	1.3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${PORTVERSION}/ \
-		http://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -29,7 +28,6 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PROJECTHOST=	ibus
 WRKSRC=			${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.mk>

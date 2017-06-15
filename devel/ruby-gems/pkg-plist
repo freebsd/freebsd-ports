@@ -1,6 +1,5 @@
 bin/gem
 bin/gem%%RUBY_VER_SHORT%%
-%%RUBY_SITELIBDIR%%/gauntlet_rubygems.rb
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/rubygems/available_set.rb
 %%RUBY_SITELIBDIR%%/rubygems/basic_specification.rb
@@ -116,7 +115,18 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/resolver/lock_specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/delegates/resolution_state.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/delegates/specification_provider.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/action.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/add_edge_no_circular.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/add_vertex.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/delete_edge.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/detach_vertex_named.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/log.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/set_payload.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/tag.rb
+%%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/dependency_graph/vertex.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/errors.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/gem_metadata.rb
 %%RUBY_SITELIBDIR%%/rubygems/resolver/molinillo/lib/molinillo/modules/specification_provider.rb
@@ -150,9 +160,9 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/source_specific_file.rb
 %%RUBY_SITELIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/index.rubygems.org/GlobalSignRoot.pem
+%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/index.rubygems.org/GlobalSignRootCA.pem
 %%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/DigiCertHighAssuranceEVRootCA.pem
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot-2048.pem
+%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot.pem
 %%RUBY_SITELIBDIR%%/rubygems/stub_specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_SITELIBDIR%%/rubygems/test_case.rb

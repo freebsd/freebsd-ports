@@ -1,6 +1,6 @@
---- chrome/browser/safe_browsing/permission_reporter.cc.orig	2016-10-06 04:02:12.000000000 +0300
-+++ chrome/browser/safe_browsing/permission_reporter.cc	2016-10-14 06:15:01.051089000 +0300
-@@ -190,7 +190,7 @@
+--- chrome/browser/safe_browsing/permission_reporter.cc.orig	2017-04-19 19:06:30 UTC
++++ chrome/browser/safe_browsing/permission_reporter.cc
+@@ -188,7 +188,7 @@ bool PermissionReporter::BuildReport(con
  #if defined(OS_ANDROID)
    report.set_platform_type(PermissionReport::ANDROID_PLATFORM);
  #elif defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_CHROMEOS) || \

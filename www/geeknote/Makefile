@@ -3,7 +3,7 @@
 
 PORTNAME=	geeknote
 DISTVERSION=	0.2a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}evernote>=1.17:www/py-evernote \
 		${PYTHON_PKGNAMEPREFIX}html2text>0:textproc/py-html2text \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy07>0:databases/py-sqlalchemy07 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}markdown2>0:textproc/py-markdown2 \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.0:www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}thrift>0:devel/py-thrift

@@ -3,6 +3,8 @@ lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Client.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Error.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Request.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Response.beam
+lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Serializer.NullSerializer.beam
+lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Serializer.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Strategy.AuthCode.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Strategy.ClientCredentials.beam
 lib/elixir/lib/oauth2/ebin/Elixir.OAuth2.Strategy.Password.beam
@@ -17,6 +19,7 @@ lib/elixir/lib/oauth2/lib/oauth2/client.ex
 lib/elixir/lib/oauth2/lib/oauth2/error.ex
 lib/elixir/lib/oauth2/lib/oauth2/request.ex
 lib/elixir/lib/oauth2/lib/oauth2/response.ex
+lib/elixir/lib/oauth2/lib/oauth2/serializer.ex
 lib/elixir/lib/oauth2/lib/oauth2/strategy.ex
 lib/elixir/lib/oauth2/lib/oauth2/strategy/auth_code.ex
 lib/elixir/lib/oauth2/lib/oauth2/strategy/client_credentials.ex

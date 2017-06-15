@@ -1,0 +1,43 @@
+--- carddav.php.orig	2016-10-02 08:48:52 UTC
++++ carddav.php
+@@ -420,14 +420,16 @@ class carddav extends rcube_plugin
+ 		$this->add_texts('localization/', false);
+ 		$prefs = carddav_common::get_adminsettings();
+ 
+-		if (version_compare(PHP_VERSION, '7.0.0') < 0) {
+-			$args['blocks']['cd_preferences'] = array(
+-				'options' => array(
+-					array('title'=> self::$helper->Q($this->gettext('cd_php_too_old')), 'content' => PHP_VERSION)
+-				),
+-				'name' => self::$helper->Q($this->gettext('cd_title'))
+-			);
+-			return $args;
++		if (!$prefs['_GLOBAL']['suppress_version_warning']){
++			if (version_compare(PHP_VERSION, '7.0.0', '<')) {
++				$args['blocks']['cd_preferences'] = array(
++					'options' => array(
++						array('title'=> self::$helper->Q($this->gettext('cd_php_too_old')), 'content' => PHP_VERSION)
++					),
++					'name' => self::$helper->Q($this->gettext('cd_title'))
++				);
++				return $args;
++			}
+ 		}
+ 
+ 		$abooks = carddav_backend::get_dbrecord($_SESSION['user_id'],'*','addressbooks',false,'user_id');
+--- config.inc.php.dist.orig	2016-10-02 08:48:52 UTC
++++ config.inc.php.dist
+@@ -27,6 +27,13 @@
+ //             needs to reenter them.
+ // $prefs['_GLOBAL']['pwstore_scheme'] = 'base64';
+ 
++// Allow suppression of the warning that PHP is too old.
++//
++// If true, the PHP version is not checked. Use at own risk.
++// If false, the PHP version is checked and RCMCardDAV will not run if it is
++// too old.
++$prefs['_GLOBAL']['suppress_version_warning'] = false;
++
+ //// ** ADDRESSBOOK PRESETS
+ 
+ // Each addressbook preset takes the following form:

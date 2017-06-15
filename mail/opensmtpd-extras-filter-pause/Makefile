@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-pause
-PORTREVISION=		0
+PORTREVISION=		2
 
 COMMENT=		Pause incoming OpenSMTPD messages to reduce spam
 

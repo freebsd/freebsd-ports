@@ -3,7 +3,7 @@
 
 PORTNAME=	Elixir
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -14,7 +14,7 @@ COMMENT=	Declarative Mapper for SQLAlchemy
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.4.0:databases/py-sqlalchemy06
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0.4.0:databases/py-sqlalchemy10
 
 USES=		python
 USE_PYTHON=	distutils autoplist

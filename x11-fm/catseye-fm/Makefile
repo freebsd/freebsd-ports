@@ -3,13 +3,12 @@
 
 PORTNAME=	catseye-fm
 PORTVERSION=	4.2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://catseye-fm.sourceforge.net/downloads/ \
-		http://catseye-fm-temp.sourceforge.net/downloads/ \
-		http://www.skysmurf.nl/comp/FreeBSD/distfiles/
+		http://catseye-fm-temp.sourceforge.net/downloads/
 
-MAINTAINER=	freebsd@skysmurf.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clear, fast, powerful file browser using gtk+2.0
 
 LICENSE=	GPLv3

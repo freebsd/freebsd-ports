@@ -3,7 +3,7 @@
 
 PORTNAME=	hot-babe
 PORTVERSION=	0.2.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dindinx.net/hotbabe/downloads/ \
 		LOCAL/novel

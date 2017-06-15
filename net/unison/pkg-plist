@@ -1,7 +1,8 @@
 bin/unison
-%%TEXT%%share/applications/unison.desktop
-%%TEXT%%bin/unison-text
-%%TEXT%%share/pixmaps/unison.png
+%%FSMONITOR%%bin/unison-fsmonitor
+%%X11%%share/applications/unison.desktop
+%%X11%%bin/unison-text
+%%X11%%share/pixmaps/unison.png
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

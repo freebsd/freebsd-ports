@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multi_xml
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library provide swappable XML backends
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 OPTIONS_DEFINE=	NOKOGIRI
 NOKOGIRI_DESC=	Nokogiri is a HTML, XML, SAX, and Reader parser

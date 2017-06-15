@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	unifi5
-PORTVERSION=	5.2.9
-PORTREVISION=	0
+PORTVERSION=	5.4.11
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
-MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}/ \
+MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}-${UNIFI_TAG}/ \
 		LOCAL/feld/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	UniFi.unix
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -16,11 +16,13 @@ COMMENT=	UniFi Controller v5
 RUN_DEPENDS=	mongodb>0:databases/mongodb \
 		snappyjava>0:archivers/snappy-java
 
-BUILD=		0
+BUILD=		2
+BUNDLEDFW=	3.7.37.6065
+UNIFI_TAG=	6cbeae59e7
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR} \
 		JAVA=${JAVA}
-PLIST_SUB+=	BUILDVERSION="${PORTVERSION}.${BUILD}"
+PLIST_SUB+=	BUILDVERSION="${PORTVERSION}.${BUILD}" BUNDLEDFW="${BUNDLEDFW}"
 
 USES=		cpe zip
 CPE_VENDOR=	ubnt

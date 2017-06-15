@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-honoka
 PORTVERSION=	0.9.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	japanese
 MASTER_SITES=	http://nop.net-p.org/files/honoka/
 DISTNAME=	honoka-${PORTVERSION}

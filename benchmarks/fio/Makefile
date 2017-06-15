@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fio
-PORTVERSION=	2.14
+PORTVERSION=	2.18
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
@@ -18,16 +18,8 @@ GNUPLOT_DESC=	Support for plotting graphs
 
 GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000013
-BUILD_DEPENDS+=	byacc>0:devel/byacc
-MAKE_ARGS+=	YACC=${LOCALBASE}/bin/yacc
-
-BUILD_DEPENDS+=	flex>0:textproc/flex
-MAKE_ARGS+=	LEX=${LOCALBASE}/bin/flex
-.endif
-
+BROKEN_aarch64=		Fails to compile: error: sys/auxv.h file not found
+BROKEN_armv6=		Fails to compile: error: use of undeclared identifier nop
 BROKEN_powerpc64=	Does not build on powerpc64
 
 do-install:

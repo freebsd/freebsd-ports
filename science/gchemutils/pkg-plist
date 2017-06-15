@@ -128,6 +128,7 @@ share/gchemutils/%%VER%%/ui/paint/plugins/selection/brackets.ui
 share/gchemutils/%%VER%%/ui/paint/plugins/selection/group.ui
 share/gchemutils/%%VER%%/ui/paint/plugins/templates/new-template.ui
 share/gchemutils/%%VER%%/ui/paint/plugins/templates/templates.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/text/eq-props.ui
 share/gchemutils/%%VER%%/ui/paint/plugins/text/fontsel.ui
 share/gchemutils/%%VER%%/ui/paint/preferences.ui
 share/gchemutils/%%VER%%/ui/paint/tools.ui
@@ -196,9 +197,12 @@ share/gnome/help/gchempaint-%%VER%%/C/figures/cyclentool-opt.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/cyclentool.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/cycletools.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/downbond.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/einstein.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/electrons.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/element.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/elt-menu.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/equation-props.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/equation.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/eraser.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/fragment.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/ghemical.png

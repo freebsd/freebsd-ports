@@ -1,6 +1,6 @@
---- Radio.cpp.orig	2015-12-11 00:00:13 UTC
+--- Radio.cpp.orig	2017-01-05 15:57:45 UTC
 +++ Radio.cpp
-@@ -33,7 +33,7 @@ namespace Radio
+@@ -30,7 +30,7 @@ namespace Radio
        {
          value = v.toDouble ();
        }
@@ -9,7 +9,7 @@
    }
  
    FrequencyDelta frequency_delta (QVariant const& v, int scale, QLocale const& locale)
-@@ -47,7 +47,7 @@ namespace Radio
+@@ -44,7 +44,7 @@ namespace Radio
        {
          value = v.toDouble ();
        }

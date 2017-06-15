@@ -91,7 +91,7 @@ post-extract-script:
 
 .for l in DX_Boulderdash Supaplex
 	@${FIND} ${WRKDIR}/${PORTNAME}/${l} -name '*.level' | ${XARGS} \
-		${CHMOD} 644
+		${CHMOD} go-w
 .endfor
 
 .for l in ${LEVELS_BD_FANS:S/$/.zip/} Alans_Random_Levels.zip \
@@ -104,7 +104,7 @@ post-extract-script:
 	@(cd ${WRKDIR}/${PORTNAME} && ${MV} "Gavin Davidson 2006" \
 		Gavin_Davidson_2006)
 	@(cd ${WRKDIR}/${PORTNAME} && ${MV} "Veysi Orak 2006" Veysi_Orak_2006)
-	@(cd ${WRKDIR}/${PORTNAME} && ${RM} -f Readme.txt levelinfo.conf)
+	@(cd ${WRKDIR}/${PORTNAME} && ${RM} Readme.txt levelinfo.conf)
 
 do-install:
 	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . \

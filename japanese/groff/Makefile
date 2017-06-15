@@ -4,7 +4,7 @@
 PORTNAME=	groff
 PORTVERSION=	1.18.1
 DISTVERSIONSUFFIX=	.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	japanese print
 MASTER_SITES=	LOCAL/hrs
 DISTFILES=	${DISTNAME:S,-,_,}.orig${EXTRACT_SUFX} ${TMAC_DISTNAME}.tar.gz
@@ -50,7 +50,7 @@ post-patch:
 	    ${WRKSRC}/doc/groff.texinfo
 
 post-build:
-	${RM} -f ${WRKSRC}/doc/groff ${WRKSRC}/doc/groff-*
+	${RM} ${WRKSRC}/doc/groff ${WRKSRC}/doc/groff-*
 	cd ${WRKSRC}/doc && makeinfo --no-split groff.texinfo
 	cd ${WRKSRC} && ${FIND} font -name DESC \
 	    | ${XARGS} ${REINPLACE_CMD} -E \

@@ -29,48 +29,20 @@ GLIB_SCHEMAS=	org.gnome.eog.plugins.exif-display.gschema.xml
 
 OPTIONS_DEFINE=	CHAMPLAIN PYTHON
 OPTIONS_DEFAULT=CHAMPLAIN PYTHON
+OPTIONS_SUB=	yes
 CHAMPLAIN_DESC=	Champlain map plugin
 
-.include <bsd.port.options.mk>
+CHAMPLAIN_LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain
+CHAMPLAIN_USE=		GL=gl
+PYTHON_CONFIGURE_ENABLE=python
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
+PYTHON_USES=		python:3
+PYTHON_VARS=		GLIB_SCHEMAS+="org.gnome.eog.plugins.export-to-folder.gschema.xml org.gnome.eog.plugins.fullscreenbg.gschema.xml org.gnome.eog.plugins.pythonconsole.gschema.xml"
 
-.if ${PORT_OPTIONS:MCHAMPLAIN}
-USE_GL=		gl
-LIB_DEPENDS+=	libchamplain-0.12.so:graphics/libchamplain
-PLIST_SUB+=	CHAMPLAIN=""
-.else
-PLIST_SUB+=	CHAMPLAIN="@comment "
-.endif
-
-PLIST_SUB+=	PYVER=${PYTHON_VER:S|.||}
-.if ${PORT_OPTIONS:MPYTHON}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py3-libpeas
-CONFIGURE_ARGS+=--enable-python
-USES+=		python:3
-PLIST_SUB+=	PYTHON=""
-GLIB_SCHEMAS+=	org.gnome.eog.plugins.export-to-folder.gschema.xml \
-		org.gnome.eog.plugins.fullscreenbg.gschema.xml \
-		org.gnome.eog.plugins.pythonconsole.gschema.xml
-.else
-CONFIGURE_ARGS+=--disable-python
-PLIST_SUB+=	PYTHON="@comment "
-.endif
-
-.if ! ${PORT_OPTIONS:MCHAMPLAIN}
-post-patch:
+post-patch-CHAMPLAIN-off:
 	@${REINPLACE_CMD} -e 's|champlain-gtk|disabled-champlain-gtk|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} '/^DEFAULT_PLUGINS=/,/^$$/ s/map//' \
 		${WRKSRC}/configure
-.endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-
-PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

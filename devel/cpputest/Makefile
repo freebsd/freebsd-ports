@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cpputest
-PORTVERSION=	3.7.1
+PORTVERSION=	3.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool pathfix
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

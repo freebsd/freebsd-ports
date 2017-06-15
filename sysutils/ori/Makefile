@@ -3,19 +3,20 @@
 
 PORTNAME=	ori
 PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cdn.bitbucket.org/orifs/ori/downloads/
 
 MAINTAINER=	mashti@cs.stanford.edu
 COMMENT=	Ori distributed file system
 
-LIB_DEPENDS=	libevent.so:devel/libevent2 \
+LIB_DEPENDS=	libevent.so:devel/libevent \
 		libboost_date_time.so:devel/boost-libs
 
-USES=		execinfo fuse pkgconfig scons tar:xz
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
+USES=		execinfo fuse pkgconfig scons ssl tar:xz
+CPPFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
+MAKE_ARGS=	VERBOSE=1
 
 PLIST_FILES=	bin/ori \
 		bin/oridbg \

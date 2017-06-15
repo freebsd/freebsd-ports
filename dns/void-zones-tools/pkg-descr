@@ -1,0 +1,6 @@
+Tool to prepare a list of void zones that can be readily fed into Unbound.
+
+Void zones are the most straightforward way of blocking ad, tracking and other
+malware domains.
+
+WWW: https://github.com/cyclaero/void-zones-tools

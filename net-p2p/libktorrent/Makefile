@@ -2,11 +2,11 @@
 
 PORTNAME=	libktorrent
 DISTVERSION=	1.3.1
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION:C,^1,4,:C,-.*,,}/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Torrent library from KTorrent project
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs

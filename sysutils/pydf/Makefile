@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pydf
-PORTVERSION=	10
+PORTVERSION=	12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kassiopeia.juls.savba.sk/~garabik/software/pydf/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

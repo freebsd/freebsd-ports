@@ -3,6 +3,7 @@
 
 PORTNAME=	gnocl
 DISTVERSION=	${BASE_VERSION}-${NIGHTLY_BUILD}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF/${PORTNAME}/Gnocl-Nightly-Build/
 
@@ -33,9 +34,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 BASEDIR=	lib/${PORTNAME}${BASE_VERSION}
 PLIST_FILES=	${BASEDIR}/${PORTNAME}.so \
 		${BASEDIR}/pkgIndex.tcl
-
-post-extract:
-	${CHMOD} -R u+w ${WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|; \

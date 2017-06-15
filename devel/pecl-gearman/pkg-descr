@@ -1,4 +1,4 @@
 This extension uses libgearman library to provide API for
 communicating with gearmand, and writing clients and workers.
 
-WWW: http://pecl.php.net/package/gearman
+WWW: https://pecl.php.net/package/gearman

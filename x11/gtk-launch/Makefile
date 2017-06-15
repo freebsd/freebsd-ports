@@ -11,6 +11,9 @@ MASTER_SITES=	http://pierric.descamps.free.fr/pierric/downloads/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fast GTK+ program launcher
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		gettext-runtime
 USE_GNOME=	gtk12
 USE_XORG=	x11 xext xi

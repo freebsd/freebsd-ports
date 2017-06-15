@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SecretStorage
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Store passwords using the SecretService DBus API
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography
 
 NO_ARCH=	yes
 USES=		python

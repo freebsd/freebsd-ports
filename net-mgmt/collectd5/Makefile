@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.7.1
-PORTREVISION=	6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://collectd.org/files/ \
 		http://collectd.org/files/
@@ -34,7 +34,6 @@ CURL_DESC=		Enable curl-based plugins (apache, nginx, etc)
 CURL_JSON_DESC=		Enable curl_json plugin (implies curl and json)
 CURL_XML_DESC=		Enable ascent, bind, curl_xml plugins (implies curl and xml)
 DBI_DESC=		Enable dbi plugin
-DEBUG_DESC=		Enable debugging
 GCRYPT_DESC=		Build with libgcrypt
 IPMI_DESC=		Enable OpenIPMI plugin
 JSON_DESC=		Enable JSON plugins
@@ -342,14 +341,8 @@ CONFIGURE_ARGS+=--enable-aggregation \
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	contrib/collection.cgi
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBZFS} && exists(/usr/lib/libzfs.so) && exists(/usr/lib/libzfs_core.so)
-CONFIGURE_ARGS+=   --with-libzfs
-.endif
-.if ${PORT_OPTIONS:MLIBDTRACE} && exists(/usr/lib/libdtrace.so)
-CONFIGURE_ARGS+=   --with-libdtrace
-.endif
+INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	contrib/collection.cgi
 
 post-patch:
 	@${REINPLACE_CMD} 's/-Werror//' \

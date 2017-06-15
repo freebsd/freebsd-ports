@@ -3,7 +3,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/nvi/
 
@@ -26,16 +26,14 @@ CONFIGURE_SCRIPT=	../dist/configure
 
 WIDECHAR_CONFIGURE_ON=	--enable-widechar
 
-CPPFLAGS+=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
+CPPFLAGS+=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include -I${NCURSESINC}
 LDFLAGS+=		-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
 
-# configure is 555, so you can't do a "make configure" as non-root.
 post-patch:
 	@${REINPLACE_CMD} -e '/libvi_la_LIBADD =/s,$$, ${ICONV_LIB},' \
 		${WRKSRC}/../dist/Makefile.in
 	@${REINPLACE_CMD} -e 's,-ldb,-l${BDB_LIB_NAME},g' \
 		${WRKSRC}/../dist/configure
-	@${CHMOD} 755 ${WRKSRC}/../dist/configure
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/man/cat1/*.0

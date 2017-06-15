@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		LOCAL/marino:boot GCC/${MS_SUBDIR}
 DISTFILES=	${IDENTIFICATION}.tar.bz2
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 
 LICENSE=	GPLv3 GPLv3RLE
@@ -287,7 +287,7 @@ post-stage:
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/include ${NEWBSDIR}/
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/libexec ${NEWBSDIR}/
 	${RM} ${NEWBSDIR}/bin/${GARCH}*
-	${RM} -rf ${NEWBSDIR}/lib/gcc/${BLD_TARGET}/${GCC_VERSION}/include-fixed
+	${RM} -r ${NEWBSDIR}/lib/gcc/${BLD_TARGET}/${GCC_VERSION}/include-fixed
 	(cd ${NEWBSDIR}/.. ; ${TAR} -cyf ${BSFILENAME} bootstrap)
 .endif
 

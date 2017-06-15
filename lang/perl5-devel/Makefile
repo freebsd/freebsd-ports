@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perl
-PORTREVISION=	0
+PORTREVISION=	1
 # XXX Remove second line, uncomment first
 #DISTVERSION=	${PERL_VERSION}
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
@@ -22,6 +22,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
+# Uncomment when the default Perl is switched to 5.2(X+2)
+#DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
+#EXPIRATION_DATE=<Release date of .0 + 3 years>
+
 TEST_TARGET=	test_harness
 TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
 		LD_LIBRARY_PATH=${WRKSRC}
@@ -30,29 +34,37 @@ TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.25.5-24-g98fce2a
+GH_TAGNAME=	v5.25.11-22-g2e3b2a1
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT PTHREAD \
-		MULTIPLICITY SITECUSTOMIZE
-# it seems perl malloc has problems with threaded perl on FreeBSD
-OPTIONS_RADIO=	EXCLUSIVE
-OPTIONS_RADIO_EXCLUSIVE=	THREADS PERL_MALLOC
-OPTIONS_DEFAULT=	PERL_64BITINT THREADS PTHREAD MULTIPLICITY
+OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT MULTIPLICITY SITECUSTOMIZE \
+		THREADS PERL_MALLOC DTRACE DOT_INC
+OPTIONS_DEFAULT=	PERL_64BITINT THREADS MULTIPLICITY DTRACE
+
+OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
+.if !exists(/usr/sbin/dtrace)
+OPTIONS_EXCLUDE+=	DTRACE
+.endif
+.for a in aarch64 arm armeb armv6 mips mips64 mips64el mipsel mipsn32 powerpc \
+	powerpc64 sparc64
+OPTIONS_EXCLUDE_${a}=	DTRACE
+.endfor
 
 EXCLUSIVE_DESC=	Exclusive OPTIONS
 GDBM_DESC=	GDBM_File extension
 PERL_MALLOC_DESC=	Use Perl malloc
 PERL_64BITINT_DESC=	Use 64 bit integers (on i386)
 THREADS_DESC=		Build threaded perl
-PTHREAD_DESC=		Build with -lpthread
 MULTIPLICITY_DESC=	Use multiplicity
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
+DOT_INC_DESC=		Add '.' to @INC (unsafe)
 
 OPTIONS_SUB=		yes
 DEBUG_CONFIGURE_ON=	-Doptimize="-g" -DDEBUGGING
 DEBUG_CONFIGURE_OFF=	-Doptimize="${CFLAGS}"
+DTRACE_CONFIGURE_ON=	-Dusedtrace
+DTRACE_CONFIGURE_OFF=	-Uusedtrace
 GDBM_CONFIGURE_ON=	-Di_gdbm
 GDBM_CONFIGURE_OFF=	-Ui_gdbm
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
@@ -64,12 +76,13 @@ THREADS_CONFIGURE_ON=	-Dusethreads=y
 THREADS_CONFIGURE_OFF=	-Dusethreads=n
 PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
+DOT_INC_CONFIGURE_ON=		-Ddefault_inc_excludes_dot=n
 
 # XXX uncomment PORTSCOUT line
 #PORTSCOUT=	limit:^${PERL_VER}.
 
 .include "version.mk"
-PERL_VER=	${PERL_VERSION:C/\.[0-9]+$//}
+PERL_VER?=	${PERL_VERSION:C/\.[0-9]+$//}
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl
 SITE_PERL?=	${PREFIX}/${SITE_PERL_REL}
@@ -105,7 +118,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
 	-Dcf_by=${MAINTAINER:C,@.*,,} -Dcf_email=${MAINTAINER} \
-	-Dcf_time="`env LANG=C ${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
+	-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
 # Keep the following two in sync.
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
@@ -120,11 +133,7 @@ USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
 # XXX Remove
 CONFIGURE_ARGS+=	-Dusedevel -Uversiononly
 
-LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
-		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
-		LC_TIME=""
-CONFIGURE_ENV+=	${LOCALE_CLEANUP} UNAME_v="$$(uname -v | sed 'y/=/ /')"
-MAKE_ENV+=	${LOCALE_CLEANUP}
+CONFIGURE_ENV+=	UNAME_v="$$(uname -v | sed 'y/=/ /')"
 
 SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \
@@ -162,9 +171,11 @@ MANDIRS+=	${PERLMANPREFIX}/man
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 		PERL_VER=${PERL_VER} \
 		PERL_ARCH=${PERL_ARCH} \
+		PERL_ARCH_regex=\b${PERL_ARCH}\b \
 		MAN1=${PERLMANPREFIX_REL}/man/man1 \
 		MAN3=${PERLMANPREFIX_REL}/man/man3 \
 		PERLMANPREFIX=${PERLMANPREFIX_REL} \
+		PERLMANPREFIX_regex=${PERLMANPREFIX_REL}\b \
 		SITEMANPREFIX=${SITE_MAN_PREFIX} \
 		SITE_PERL=${SITE_PERL_REL} \
 		SITE_ARCH=${SITE_ARCH_REL} \
@@ -274,25 +285,22 @@ post-patch:
 		/^if.*nopods.*versiononly || /s/.*/if (1) {/' \
 		${WRKSRC}/installperl
 .endif
-post-patch-PTHREAD-on:
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|-lpthread|g;' \
-		${WRKSRC}/hints/freebsd.sh
-post-patch-PTHREAD-off:
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%||g;' \
-		${WRKSRC}/hints/freebsd.sh
-
-post-build:
-	@${REINPLACE_CMD} -e '/^lddlflags/s|-L${WRKSRC} ||' \
-		${WRKSRC}/lib/Config_heavy.pl
-.if ${CC} == /nxb-bin/usr/bin/cc
-	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
-		${WRKSRC}/lib/Config.pm ${WRKSRC}/lib/Config_heavy.pl
-# Restore Config.pm's timestamp so that Perl's build system does not think it
-# needs to rebuild everything.
-	@${TOUCH} -r ${WRKSRC}/lib/Config.pm.bak ${WRKSRC}/lib/Config.pm
-.endif
 
 post-install:
+	@${REINPLACE_CMD} -e '/^lddlflags/s|-L${WRKSRC} ||' \
+		${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl
+	@${TOUCH} -r ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl.bak ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl
+	@${RM} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl.bak
+.if ${CC} == /nxb-bin/usr/bin/cc
+	@${REINPLACE_CMD} -e 's=/nxb-bin==' \
+		${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config.pm ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl
+# Restore Config.pm's timestamp so that Perl's build system does not think it
+# needs to rebuild everything.
+	@${TOUCH} -r ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config.pm.bak ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config.pm
+	@${TOUCH} -r ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl.bak ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl
+	@${RM} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config.pm.bak ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl.bak
+.endif
+
 	${MKDIR} ${STAGEDIR}${SITE_MAN1} ${STAGEDIR}${SITE_MAN3}
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/auto
 	${MKDIR} ${STAGEDIR}${SITE_PERL}/auto

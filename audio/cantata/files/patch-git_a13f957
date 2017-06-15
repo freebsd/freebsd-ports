@@ -1,0 +1,22 @@
+From a13f9575e6226ef7378f3da6b700416354231767 Mon Sep 17 00:00:00 2001
+From: Craig Drummond <craig.p.drummond@gmail.com>
+Date: Sat, 12 Nov 2016 20:05:46 +0000
+Subject: [PATCH] C++ 11
+
+---
+ devices/musicbrainz.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/devices/musicbrainz.cpp b/devices/musicbrainz.cpp
+index cc1a7a0..89f5409 100644
+--- devices/musicbrainz.cpp
++++ devices/musicbrainz.cpp
+@@ -248,7 +248,7 @@ void MusicBrainz::lookup(bool full)
+     }
+     DBUG << "Should lookup " << discId;
+
+-    MusicBrainz5::CQuery Query("cantata-"PACKAGE_VERSION_STRING);
++    MusicBrainz5::CQuery Query("cantata-" PACKAGE_VERSION_STRING);
+     QList<CdAlbum> m;
+     QList<QNetworkProxy> proxies=NetworkProxyFactory::self()->queryProxy(QNetworkProxyQuery(QUrl("http://musicbrainz.org")));
+     foreach (const QNetworkProxy &p, proxies) {

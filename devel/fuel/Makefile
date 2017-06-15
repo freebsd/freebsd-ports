@@ -2,26 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	fuel
-DISTVERSION=	0.9.6
+DISTVERSION=	1.0.1
 CATEGORIES=	devel
-MASTER_SITES=	https://fuel-scm.googlecode.com/files/
+MASTER_SITES=	https://fuel-scm.org/files/releases/
 
 MAINTAINER=	nukama+maintainer@gmail.com
-COMMENT=	GUI front-end to fossil SCM tool
+COMMENT=	GUI Front-End to the Fossil SCM tool
 
 LICENSE=	GPLv2
 
-BROKEN=		Unfetchable (google code has gone away)
+BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	fossil:devel/fossil
 
-RUN_DEPENDS=	${LOCALBASE}/bin/fossil:devel/fossil
+OPTIONS_SINGLE=		GUI
+OPTIONS_SINGLE_GUI=	QT4 QT5
+OPTIONS_DEFAULT=	QT5
 
-USES=		qmake
-USE_QT4=	corelib gui \
-		moc_build rcc_build uic_build
+USES=		qmake shebangfix
+QT4_USE=	QT4=corelib,gui,webkit,linguisttools_build,moc_build,rcc_build,uic_build
+QT5_USE=	QT5=core,gui,network,webkit,widgets,buildtools_build,linguisttools_build
 
-PLIST_FILES=	bin/Fuel
+SHEBANG_FILES=	intl/convert.sh
+PLIST_FILES=	bin/fuel share/applications/fuel.desktop \
+		share/icons/hicolor/256x256/apps/fuel.png
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Fuel ${STAGEDIR}${PREFIX}/bin/Fuel
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		-e 's|/usr$$|${PREFIX}|' ${WRKSRC}/fuel.pro
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/rsrc/fuel.desktop
 
 .include <bsd.port.mk>

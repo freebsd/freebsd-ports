@@ -3,7 +3,7 @@
 
 PORTNAME=	rvm
 PORTVERSION=	1.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.coda.cs.cmu.edu/pub/rvm/src/ \
 		http://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
@@ -17,7 +17,9 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	liblwp.so:devel/lwp
 
-USES=		gmake libtool pathfix pkgconfig
+BROKEN_aarch64=	Fails to link: missing sbrk
+
+USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

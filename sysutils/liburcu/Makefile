@@ -2,25 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	liburcu
-PORTVERSION=	0.7.13
+PORTVERSION=	0.9.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${PORTVERSION}
 
-MAINTAINER=	freebsd@dns-lab.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Userspace read-copy-update (RCU) data synchronization library
 
 LICENSE=	LGPL21
 
-PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
+BROKEN_aarch64=	Fails to build: Cannot build: unrecognized architecture detected
+BROKEN_armv6=	Fails to build: address argument to atomic builtin must be a pointer
+BROKEN_mips=	Fails to build: undefined reference to `__sync_bool_compare_and_swap_4
+BROKEN_mips64=	Fails to build: undefined reference to `__sync_bool_compare_and_swap_4
 
 USES=		pathfix libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 INSTALL_TARGET=	install-strip
-
-regression-test: build
-	@cd ${WRKSRC} && ${MAKE} check
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

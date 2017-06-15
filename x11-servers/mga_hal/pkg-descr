@@ -1,9 +1,0 @@
-mga_hal packages the Matrox binary HAL for X.Org/XFree86.  It provides dualhead
-support for G400 cards (G450 and G550 card do not need this) and TV-out.  It
-also provides a "Merged Framebuffer" mode that is supposed to allow 3d
-acceleration on both heads.
-
-WWW: http://www.matrox.com/mga/support/drivers/previous/home.cfm
-
-Eric Anholt
-anholt@FreeBSD.org

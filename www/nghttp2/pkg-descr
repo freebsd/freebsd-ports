@@ -1,6 +1,8 @@
-nghttp2 - HTTP/2.0 C Library
+nghttp2 is an implementation of HTTP/2 and its header compression algorithm
+HPACK in C.
 
-This is an experimental implementation of Hypertext Transfer Protocol version
-2.0.
+The framing layer of HTTP/2 is implemented as a form of reusable C library. On
+top of that, we have implemented HTTP/2 client, server and proxy. We have also
+developed load test and benchmarking tool for HTTP/2 and SPDY.
 
 WWW: https://nghttp2.org/

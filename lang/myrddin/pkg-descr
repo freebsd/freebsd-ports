@@ -1,0 +1,16 @@
+Myrddin is a systems programming language that covers a similar niche
+as C including desktop, OS, and embedded development, but at the same
+time making it harder to shoot yourself in the foot.
+
+It is designed to be a simple language that runs close to the metal,
+giving the programmer predictable and transparent behavior and mental
+model.  It also does strong type checking, generics, type inference,
+closures, and traits.
+
+Myrddin is not a language designed to explore the forefront of type
+theory or compiler technology.  It is not a language that is focused
+on guaranteeing perfect safety.  It is satisfied to be a practical,
+small, fairly well defined, and easy to understand language for code
+that needs to be close to the hardware.
+
+WWW: https://myrlang.org/

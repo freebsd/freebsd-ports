@@ -2,11 +2,11 @@
 
 PORTNAME=	emelfm2
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://emelfm2.net/rel/
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gtk2+ port of emelfm, a fast graphical filemanager
 
 LICENSE=	GPLv3

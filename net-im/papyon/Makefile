@@ -20,8 +20,6 @@ RUN_DEPENDS=	py*-openssl>0:security/py-openssl \
 		${LOCALBASE}/lib/gstreamer-0.10/libgstpython.so:multimedia/py-gstreamer \
 		${PYTHON_SITELIBDIR}/farsight.so:net-im/farsight2
 
-BROKEN_FreeBSD_9=	does not build
-
 USE_GNOME=	pygobject
 USES=		python
 USE_PYTHON=	distutils

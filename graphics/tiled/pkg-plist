@@ -11,6 +11,7 @@ lib/tiled/plugins/libcsv.so
 lib/tiled/plugins/libdefold.so
 lib/tiled/plugins/libdroidcraft.so
 lib/tiled/plugins/libflare.so
+lib/tiled/plugins/libgmx.so
 lib/tiled/plugins/libjson.so
 lib/tiled/plugins/liblua.so
 %%PYTHON%%lib/tiled/plugins/libpython.so
@@ -29,6 +30,7 @@ share/icons/hicolor/32x32/mimetypes/application-x-tiled.png
 share/icons/hicolor/scalable/apps/tiled.svg
 share/icons/hicolor/scalable/mimetypes/application-x-tiled.svg
 share/mime/packages/tiled.xml
+share/thumbnailers/tiled.thumbnailer
 %%DATADIR%%/translations/tiled_ar_DZ.qm
 %%DATADIR%%/translations/tiled_bg.qm
 %%DATADIR%%/translations/tiled_cs.qm
@@ -47,3 +49,4 @@ share/mime/packages/tiled.xml
 %%DATADIR%%/translations/tiled_tr.qm
 %%DATADIR%%/translations/tiled_zh.qm
 %%DATADIR%%/translations/tiled_zh_TW.qm
+%%DATADIR%%/translations/tiled_he.qm

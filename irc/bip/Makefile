@@ -45,4 +45,10 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.include <bsd.port.post.mk>

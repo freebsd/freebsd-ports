@@ -2,6 +2,7 @@ bin/tulip
 bin/tulip-config
 bin/tulip_perspective
 include/tulip/APIDataBase.h
+include/tulip/AboutTulipPage.h
 include/tulip/AbstractGlCurve.h
 include/tulip/AbstractProperty.h
 include/tulip/AcyclicTest.h
@@ -35,6 +36,7 @@ include/tulip/ColorScale.h
 include/tulip/ColorScaleButton.h
 include/tulip/ColorScaleConfigDialog.h
 include/tulip/ColorScaleWidget.h
+include/tulip/ColorScalesManager.h
 include/tulip/ConcatIterator.h
 include/tulip/ConnectedTest.h
 include/tulip/ConsoleUtils.h
@@ -199,7 +201,6 @@ include/tulip/PropertyAnimation.h
 include/tulip/PropertyCreationDialog.h
 include/tulip/PropertyInterface.h
 include/tulip/PropertyTypes.h
-include/tulip/PropertyWrapper.h
 include/tulip/PythonCodeEditor.h
 include/tulip/PythonCppTypesConverter.h
 include/tulip/PythonEditorsTabWidget.h
@@ -238,7 +239,6 @@ include/tulip/StringProperty.h
 include/tulip/StringsListSelectionDialog.h
 include/tulip/StringsListSelectionWidget.h
 include/tulip/StringsListSelectionWidgetInterface.h
-include/tulip/SystemDefinition.h
 include/tulip/TemplateAlgorithm.h
 include/tulip/TextureFileDialog.h
 include/tulip/TlpQtTools.h
@@ -263,7 +263,6 @@ include/tulip/TulipSettings.h
 include/tulip/TulipViewSettings.h
 include/tulip/TypeInterface.h
 include/tulip/Vector.h
-include/tulip/VectorCast.h
 include/tulip/VectorEditor.h
 include/tulip/VectorPropertyAnimation.h
 include/tulip/View.h
@@ -295,7 +294,6 @@ include/tulip/memorypool.h
 include/tulip/minmaxproperty.h
 include/tulip/tulipconf.h
 include/tulip/tuliphash.h
-include/tulip/uniqueiterator.h
 include/tulip/vectorgraph.h
 include/tulip/vectorgraphproperty.h
 include/tulip2ogdf/OGDFLayoutPluginBase.h
@@ -308,8 +306,6 @@ lib/libgzstream-tulip-%%TULIP_VERS%%.so.0
 lib/libquazip-tulip-%%TULIP_VERS%%.so
 lib/libquazip-tulip-%%TULIP_VERS%%.so.1
 lib/libquazip-tulip-%%TULIP_VERS%%.so.1.0.0
-lib/libqxt-tulip-%%TULIP_VERS%%.so
-lib/libqxt-tulip-%%TULIP_VERS%%.so.0
 lib/libtess2-tulip-%%TULIP_VERS%%.so
 lib/libtulip-core-%%TULIP_VERS%%.so
 lib/libtulip-gui-%%TULIP_VERS%%.so
@@ -412,6 +408,7 @@ lib/tulip/libLinkCommunities-%%TULIP_VERSION%%.so
 lib/tulip/libLoopSelection-%%TULIP_VERSION%%.so
 lib/tulip/libLouvainClustering-%%TULIP_VERSION%%.so
 lib/tulip/libMCLClustering-%%TULIP_VERSION%%.so
+lib/tulip/libMakeGraph-%%TULIP_VERSION%%.so
 lib/tulip/libMetricSizeMapping-%%TULIP_VERSION%%.so
 lib/tulip/libMixedModel-%%TULIP_VERSION%%.so
 lib/tulip/libMultipleSelection-%%TULIP_VERSION%%.so
@@ -486,6 +483,8 @@ lib/tulip/view/libSOMView-%%TULIP_VERSION%%.so
 lib/tulip/view/libScatterPlot2DView-%%TULIP_VERSION%%.so
 lib/tulip/view/libTableView-%%TULIP_VERSION%%.so
 share/pixmaps/tulip.png
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/COPYING.LESSER
 %%DATADIR%%/FindGLEW.cmake
 %%DATADIR%%/FindQtX.cmake
 %%DATADIR%%/FindTULIP.cmake
@@ -499,6 +498,7 @@ share/pixmaps/tulip.png
 %%DATADIR%%/apiFiles/Python-3.2.api
 %%DATADIR%%/apiFiles/Python-3.3.api
 %%DATADIR%%/apiFiles/Python-3.4.api
+%%DATADIR%%/apiFiles/Python-3.5.api
 %%DATADIR%%/apiFiles/tulip.api
 %%DATADIR%%/apiFiles/tulipgui.api
 %%DATADIR%%/apiFiles/tulipogl.api
@@ -888,11 +888,8 @@ share/pixmaps/tulip.png
 %%DATADIR%%/bitmaps/radialGradientTexture.png
 %%DATADIR%%/bitmaps/roundTexture.png
 %%DATADIR%%/bitmaps/samplePictures/1221.png
-%%DATADIR%%/bitmaps/samplePictures/1291.png
 %%DATADIR%%/bitmaps/samplePictures/1531.png
 %%DATADIR%%/bitmaps/samplePictures/1861.jpg
-%%DATADIR%%/bitmaps/samplePictures/741.png
-%%DATADIR%%/bitmaps/samplePictures/891.png
 %%DATADIR%%/bitmaps/titlebarGradient.png
 %%DATADIR%%/bitmaps/tulip-file-icon.ico
 %%DATADIR%%/bitmaps/tulip.ico

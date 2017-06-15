@@ -1,2 +1,3 @@
-SHA256 (portupgrade/pkgtools-2.4.14_GH0.tar.gz) = 7df55c5ddf043eff095c87b98fe70b80373a8fbc06fa34ab45a270119ff2aef3
-SIZE (portupgrade/pkgtools-2.4.14_GH0.tar.gz) = 108092
+TIMESTAMP = 1490893255
+SHA256 (portupgrade/freebsd-portupgrade-2.4.15_GH0.tar.gz) = 988183017f891f053e6abce27556a9dc4ba3a513d03399f51d76cf3b0ea9849f
+SIZE (portupgrade/freebsd-portupgrade-2.4.15_GH0.tar.gz) = 108122

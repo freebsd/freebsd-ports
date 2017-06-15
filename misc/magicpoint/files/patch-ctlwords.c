@@ -1,10 +1,11 @@
---- ctlwords.c.orig	1999-02-15 00:02:25.000000000 +0100
-+++ ctlwords.c	2013-11-08 09:05:06.000000000 +0100
-@@ -24,6 +24,7 @@
+--- ctlwords.c.orig	1999-02-14 23:02:25 UTC
++++ ctlwords.c
+@@ -24,6 +24,8 @@ BEGIN {
  
  #include <stdio.h>
  #include <string.h>
 +#include <stdlib.h>
++#include <ctype.h>
  
  main(int argc, char *argv[])
  {

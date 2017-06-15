@@ -17,7 +17,10 @@
 %%DATADIR%%/adodb-xmlschema.inc.php
 %%DATADIR%%/adodb-xmlschema03.inc.php
 %%DATADIR%%/adodb.inc.php
+%%DATADIR%%/fix-202.php
+%%DATADIR%%/fix-226.php
 %%DATADIR%%/pivottable.inc.php
+%%DATADIR%%/pr265.php
 %%DATADIR%%/rsfilter.inc.php
 %%DATADIR%%/server.php
 %%DATADIR%%/toexport.inc.php

@@ -1,6 +1,24 @@
---- configure.orig	2015-05-25 16:16:33 UTC
+--- configure.orig	2016-04-23 16:22:43 UTC
 +++ configure
-@@ -20986,7 +20986,7 @@ $as_echo_n "checking for fox libraries..
+@@ -948,6 +948,8 @@ with_x
+ with_qt5_qmake
+ with_qt5_moc
+ with_qt5_uic
++with_qt5_lrelease
++with_qt5_lupdate
+ with_docpath
+ enable_release
+ enable_memtrace
+@@ -1668,6 +1670,8 @@ Optional Packages:
+   --with-qt5-qmake=FILE    uses given qmake
+   --with-qt5-moc=FILE      uses given qt moc
+   --with-qt5-uic=FILE      uses given qt uic
++  --with-qt5-lrelease=FILE     uses given qt lrelease
++  --with-qt5-lupdate=FILE      uses given qt lupdate
+   --with-docpath=DIR where to store the apidoc
+   --with-buffer-hardlimit=VALUE new default buffer hard limit
+   --with-plugins-ct=LIST list of CT plugins to build
+@@ -21079,7 +21083,7 @@ $as_echo_n "checking for fox libraries..
  
  # Check whether --with-fox-libs was given.
  if test "${with_fox_libs+set}" = set; then :
@@ -9,3 +27,38 @@
  else
  
        ac_ext=cpp
+@@ -22445,8 +22449,8 @@ percent.commands = @echo -n "\$(\$(@))\ 
+ QMAKE_EXTRA_TARGETS += percent
+ EOF
+     $QT_QMAKE $am_have_qt_pro -o $am_have_qt_makefile
+-    QT_CXXFLAGS=`make -f $am_have_qt_makefile CXXFLAGS INCPATH`
+-    QT_LIBS=`make -f $am_have_qt_makefile LIBS`
++    QT_CXXFLAGS=`make -f $am_have_qt_makefile -VCXXFLAGS -VINCPATH | tr '\n' ' '`
++    QT_LIBS=`make -f $am_have_qt_makefile -VLIBS | tr '\n' ' '`
+     rm $am_have_qt_pro $am_have_qt_makefile
+ 
+     # Look for specific tools in $PATH
+@@ -22469,9 +22473,21 @@ else
+ 
+ fi
+ 
++# Check whether --with-qt5-lrelease was given.
++if test "${with_qt5_lrelease+set}" = set; then :
++  withval=$with_qt5_lrelease; QT_LRELEASE="$withval"
++else
++  QT_RELEASE=`which lrelease`
++
++fi
++
++# Check whether --with-qt5-lupdate was given.
++if test "${with_qt5_lupdate+set}" = set; then :
++  withval=$with_qt5_lupdate; QT_LUPDATE="$withval"
++else
++  QT_LUPDATE=`which lupdate`
+ 
+-    QT_LRELEASE=`which lrelease`
+-    QT_LUPDATE=`which lupdate`
++fi
+ 
+     # Get Qt version from qmake
+     QT_DIR=`$QT_QMAKE --version | grep -o -E /.+`

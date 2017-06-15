@@ -3,6 +3,7 @@
 
 PORTNAME=	plinkseq
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	biology science
 MASTER_SITES=	http://psychgen.u.hpc.mssm.edu/plinkseq_downloads/
 # Default DISTNAME is correct, so leave it alone.
@@ -13,6 +14,8 @@ COMMENT=	Toolset for working with human genetic variation data
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		Does not build: Host architecture was not detected as supported by protobuf
+BROKEN_mips64=		Does not build: Host architecture was not detected as supported by protobuf
 BROKEN_powerpc64=	Does not build
 
 USES=		libtool gmake

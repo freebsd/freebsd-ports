@@ -1,6 +1,57 @@
---- lib/hdb/Makefile.in.orig	2014-08-31 01:38:01.000000000 +0900
-+++ lib/hdb/Makefile.in	2014-08-31 01:44:03.000000000 +0900
-@@ -451,7 +451,8 @@
+--- lib/hdb/Makefile.in.orig	2017-01-03 19:44:16 UTC
++++ lib/hdb/Makefile.in
+@@ -225,26 +225,46 @@ libhdb_la_LINK = $(LIBTOOL) $(AM_V_lt) -
+ PROGRAMS = $(noinst_PROGRAMS)
+ test_dbinfo_SOURCES = test_dbinfo.c
+ test_dbinfo_OBJECTS = test_dbinfo.$(OBJEXT)
+-test_dbinfo_LDADD = $(LDADD)
++test_dbinfo_LDADD = $(LDADD) \
++	../asn1/libasn1.la \
++	$(top_builddir)/lib/base/libheimbase.la \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_dbinfo_DEPENDENCIES = libhdb.la ../krb5/libkrb5.la \
++	$(top_builddir)/lib/base/libheimbase.la \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	../asn1/libasn1.la $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ test_hdbkeys_SOURCES = test_hdbkeys.c
+ test_hdbkeys_OBJECTS = test_hdbkeys.$(OBJEXT)
+-test_hdbkeys_LDADD = $(LDADD)
++test_hdbkeys_LDADD = $(LDADD) \
++	../asn1/libasn1.la \
++	$(top_builddir)/lib/base/libheimbase.la \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_hdbkeys_DEPENDENCIES = libhdb.la ../krb5/libkrb5.la \
++	$(top_builddir)/lib/base/libheimbase.la \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	../asn1/libasn1.la $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ test_hdbplugin_SOURCES = test_hdbplugin.c
+ test_hdbplugin_OBJECTS = test_hdbplugin.$(OBJEXT)
+-test_hdbplugin_LDADD = $(LDADD)
++test_hdbplugin_LDADD = $(LDADD) \
++	../asn1/libasn1.la \
++	$(top_builddir)/lib/base/libheimbase.la \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_hdbplugin_DEPENDENCIES = libhdb.la ../krb5/libkrb5.la \
++	$(top_builddir)/lib/base/libheimbase.la \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	../asn1/libasn1.la $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ test_mkey_SOURCES = test_mkey.c
+ test_mkey_OBJECTS = test_mkey.$(OBJEXT)
+-test_mkey_LDADD = $(LDADD)
++test_mkey_LDADD = $(LDADD) \
++	../asn1/libasn1.la \
++	$(top_builddir)/lib/base/libheimbase.la \
++	$(top_builddir)/lib/hx509/libhx509.la
+ test_mkey_DEPENDENCIES = libhdb.la ../krb5/libkrb5.la \
++	$(top_builddir)/lib/base/libheimbase.la \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	../asn1/libasn1.la $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ AM_V_P = $(am__v_P_@AM_V@)
+@@ -574,7 +594,8 @@ heim_verbose_0 = @echo "  GEN    "$@;
  BUILT_SOURCES = \
  	$(gen_files_hdb:.x=.c)	\
  	hdb_err.c \

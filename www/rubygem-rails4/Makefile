@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	4.2.7.1
+PORTVERSION=	4.2.8
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -14,19 +15,19 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:mail/rubygem-actionmailer4 \
 		rubygem-actionpack4>=${PORTVERSION}:www/rubygem-actionpack4 \
-		rubygem-actionview>=${PORTVERSION}:devel/rubygem-actionview \
-		rubygem-activejob>=${PORTVERSION}:devel/rubygem-activejob \
+		rubygem-actionview4>=${PORTVERSION}:devel/rubygem-actionview4 \
+		rubygem-activejob4>=${PORTVERSION}:devel/rubygem-activejob4 \
 		rubygem-activemodel4>=${PORTVERSION}:databases/rubygem-activemodel4 \
 		rubygem-activerecord4>=${PORTVERSION}:databases/rubygem-activerecord4 \
 		rubygem-activeresource4>=4.0.0:www/rubygem-activeresource4 \
 		rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4 \
-		rubygem-builder32>=3.2.2:devel/rubygem-builder32 \
+		rubygem-builder>=3.2.2:devel/rubygem-builder \
 		rubygem-bundler>=1.3.0:sysutils/rubygem-bundler \
 		rubygem-byebug>=5.0.0:devel/rubygem-byebug \
-		rubygem-coffee-rails4>=4.1.0:devel/rubygem-coffee-rails4 \
+		rubygem-coffee-rails41>=4.1.1:devel/rubygem-coffee-rails41 \
 		rubygem-execjs>=2.2.1:devel/rubygem-execjs \
 		rubygem-jbuilder>=2.1.3:devel/rubygem-jbuilder \
-		rubygem-jquery-rails4>=4.0:www/rubygem-jquery-rails4 \
+		rubygem-jquery-rails>=4.0:www/rubygem-jquery-rails \
 		rubygem-railties4>=${PORTVERSION}:www/rubygem-railties4 \
 		rubygem-rake>=10.3:devel/rubygem-rake \
 		rubygem-rdoc>=4.0.2:devel/rubygem-rdoc \
@@ -40,7 +41,7 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:mail/rubygem-actionmailer4 \
 		rubygem-thread_safe>=0.3.4:devel/rubygem-thread_safe \
 		rubygem-turbolinks>=2.3.0:www/rubygem-turbolinks \
 		rubygem-uglifier>=2.5.0:www/rubygem-uglifier \
-		rubygem-web-console>=2.1.2:devel/rubygem-web-console
+		rubygem-web-console2>=2.1.2:devel/rubygem-web-console2
 
 NO_ARCH=	yes
 USE_RUBY=	yes

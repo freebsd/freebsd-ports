@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-Lint
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:MOZNION
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -19,6 +18,7 @@ BUILD_DEPENDS=	p5-B-Keywords>=0:devel/p5-B-Keywords \
 		p5-Email-Address>=0:mail/p5-Email-Address \
 		p5-List-Flatten>=0:devel/p5-List-Flatten \
 		p5-List-MoreUtils>=0.33:lang/p5-List-MoreUtils \
+		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-Path-Tiny>=0.068:devel/p5-Path-Tiny \
 		p5-Regexp-Lexer>=0.05:devel/p5-Regexp-Lexer \
 		p5-String-CamelCase>=0:textproc/p5-String-CamelCase \
@@ -35,17 +35,7 @@ OPTIONS_DEFINE=	EXAMPLES
 PORTEXAMPLES=	lint.pl lint_string.pl
 
 post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/eg/|} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502000
-BUILD_DEPENDS+=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
-RUN_DEPENDS+=	p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
-.else
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.41:lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.41:lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

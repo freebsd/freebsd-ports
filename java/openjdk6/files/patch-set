@@ -842,28 +842,6 @@
    #define JNIEXPORT     __attribute__((visibility("default")))
    #define JNIIMPORT     __attribute__((visibility("default")))
  #else
---- hotspot/src/cpu/x86/vm/stubGenerator_x86_32.cpp
-+++ hotspot/src/cpu/x86/vm/stubGenerator_x86_32.cpp
-@@ -94,7 +94,7 @@
-  private:
- 
- #ifdef PRODUCT
--#define inc_counter_np(counter) (0)
-+#define inc_counter_np(counter) ((void)0)
- #else
-   void inc_counter_np_(int& counter) {
-     __ incrementl(ExternalAddress((address)&counter));
---- hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp
-+++ hotspot/src/cpu/x86/vm/stubGenerator_x86_64.cpp
-@@ -92,7 +92,7 @@
-  private:
- 
- #ifdef PRODUCT
--#define inc_counter_np(counter) (0)
-+#define inc_counter_np(counter) ((void)0)
- #else
-   void inc_counter_np_(int& counter) {
-     // This can destroy rscratch1 if counter is far from the code cache
 --- hotspot/src/os/bsd/vm/globals_bsd.hpp
 +++ hotspot/src/os/bsd/vm/globals_bsd.hpp
 @@ -26,25 +26,19 @@
@@ -2366,35 +2344,6 @@
      return arena->Amalloc(size);
    }
    void  operator delete(void* p) {} // nothing to do
---- hotspot/src/share/vm/c1/c1_IR.cpp
-+++ hotspot/src/share/vm/c1/c1_IR.cpp
-@@ -499,7 +499,7 @@
-   _loop_map(0, 0),          // initialized later with correct size
-   _compilation(c)
- {
--  TRACE_LINEAR_SCAN(2, "***** computing linear-scan block order");
-+  TRACE_LINEAR_SCAN(2, tty->print_cr("***** computing linear-scan block order"));
- 
-   init_visited();
-   count_edges(start_block, NULL);
-@@ -665,7 +665,7 @@
- }
- 
- void ComputeLinearScanOrder::assign_loop_depth(BlockBegin* start_block) {
--  TRACE_LINEAR_SCAN(3, "----- computing loop-depth and weight");
-+  TRACE_LINEAR_SCAN(3, tty->print_cr("----- computing loop-depth and weight"));
-   init_visited();
- 
-   assert(_work_list.is_empty(), "work list must be empty before processing");
-@@ -839,7 +839,7 @@
- }
- 
- void ComputeLinearScanOrder::compute_order(BlockBegin* start_block) {
--  TRACE_LINEAR_SCAN(3, "----- computing final block order");
-+  TRACE_LINEAR_SCAN(3, tty->print_cr("----- computing final block order"));
- 
-   // the start block is always the first block in the linear scan order
-   _linear_scan_order = new BlockList(_num_blocks);
 --- hotspot/src/share/vm/c1/c1_Instruction.hpp
 +++ hotspot/src/share/vm/c1/c1_Instruction.hpp
 @@ -311,7 +311,7 @@
@@ -2415,40 +2364,6 @@
      Compilation* c = Compilation::current();
      void* res = c->arena()->Amalloc(size);
      ((BlockBegin*)res)->_id = c->get_next_id();
---- hotspot/src/share/vm/ci/ciUtilities.hpp
-+++ hotspot/src/share/vm/ci/ciUtilities.hpp
-@@ -93,7 +93,7 @@
-     CLEAR_PENDING_EXCEPTION;                     \
-     return (result);                             \
-   }                                              \
--  (0
-+  (void)(0
- 
- #define KILL_COMPILE_ON_ANY                      \
-   THREAD);                                       \
-@@ -101,7 +101,7 @@
-     fatal("unhandled ci exception");             \
-     CLEAR_PENDING_EXCEPTION;                     \
-   }                                              \
--(0
-+(void)(0
- 
- 
- inline const char* bool_to_str(bool b) {
---- hotspot/src/share/vm/classfile/verifier.hpp
-+++ hotspot/src/share/vm/classfile/verifier.hpp
-@@ -85,9 +85,9 @@
- // These macros are used similarly to CHECK macros but also check
- // the status of the verifier and return if that has an error.
- #define CHECK_VERIFY(verifier) \
--  CHECK); if ((verifier)->has_error()) return; (0
-+  CHECK); if ((verifier)->has_error()) return; ((void)0
- #define CHECK_VERIFY_(verifier, result) \
--  CHECK_(result)); if ((verifier)->has_error()) return (result); (0
-+  CHECK_(result)); if ((verifier)->has_error()) return (result); ((void)0
- 
- // A new instance of this class is created for each class being verified
- class ClassVerifier : public StackObj {
 --- hotspot/src/share/vm/code/codeBlob.cpp
 +++ hotspot/src/share/vm/code/codeBlob.cpp
 @@ -242,7 +242,7 @@
@@ -2517,17 +2432,6 @@
      assert(ignore == sizeof(DIR_Chunk), "");
      if (dir->_next_chunk >= dir->_next_chunk_limit) {
        const int CHUNK = 100;
---- hotspot/src/share/vm/code/dependencies.cpp
-+++ hotspot/src/share/vm/code/dependencies.cpp
-@@ -932,7 +932,7 @@
-   assert(changes.involves_context(context_type), "irrelevant dependency");
-   klassOop new_type = changes.new_type();
- 
--  count_find_witness_calls();
-+  (void)count_find_witness_calls();
-   NOT_PRODUCT(deps_find_witness_singles++);
- 
-   // Current thread must be in VM (not native mode, as in CI):
 --- hotspot/src/share/vm/code/nmethod.cpp
 +++ hotspot/src/share/vm/code/nmethod.cpp
 @@ -784,7 +784,7 @@
@@ -2539,16 +2443,6 @@
    // Always leave some room in the CodeCache for I2C/C2I adapters
    if (CodeCache::largest_free_block() < CodeCacheMinimumFreeSpace) return NULL;
    return CodeCache::allocate(nmethod_size);
-@@ -2488,7 +2488,8 @@
-                       relocation_begin()-1+ip[1]);
-       for (; ip < index_end; ip++)
-         tty->print_cr("  (%d ?)", ip[0]);
--      tty->print_cr("          @" INTPTR_FORMAT ": index_size=%d", ip, *ip++);
-+      tty->print_cr("          @" INTPTR_FORMAT ": index_size=%d", ip, *ip);
-+      ip++;
-       tty->print_cr("reloc_end @" INTPTR_FORMAT ":", ip);
-     }
-   }
 --- hotspot/src/share/vm/code/nmethod.hpp
 +++ hotspot/src/share/vm/code/nmethod.hpp
 @@ -263,7 +263,7 @@
@@ -2812,17 +2706,6 @@
      address res = (address)resource_allocate_bytes(size, AllocFailStrategy::RETURN_NULL);
      DEBUG_ONLY(if (res != NULL) set_allocation_type(res, RESOURCE_AREA);)
      return res;
---- hotspot/src/share/vm/memory/cardTableModRefBS.cpp
-+++ hotspot/src/share/vm/memory/cardTableModRefBS.cpp
-@@ -389,7 +389,7 @@
-   }
-   // Touch the last card of the covered region to show that it
-   // is committed (or SEGV).
--  debug_only(*byte_for(_covered[ind].last());)
-+  debug_only((void) (*byte_for(_covered[ind].last()));)
-   debug_only(verify_guard();)
- }
- 
 --- hotspot/src/share/vm/memory/memRegion.hpp
 +++ hotspot/src/share/vm/memory/memRegion.hpp
 @@ -99,13 +99,13 @@
@@ -2842,19 +2725,6 @@
          return ResourceObj::operator new(size);
    }
  
---- hotspot/src/share/vm/memory/universe.cpp
-+++ hotspot/src/share/vm/memory/universe.cpp
-@@ -657,7 +657,9 @@
-   if (vt) vt->initialize_vtable(false, CHECK);
-   if (ko->oop_is_instance()) {
-     instanceKlass* ik = (instanceKlass*)ko;
--    for (KlassHandle s_h(THREAD, ik->subklass()); s_h() != NULL; s_h = (THREAD, s_h()->klass_part()->next_sibling())) {
-+    for (KlassHandle s_h(THREAD, ik->subklass());
-+         s_h() != NULL;
-+         s_h = KlassHandle(THREAD, s_h()->klass_part()->next_sibling())) {
-       reinitialize_vtable_of(s_h, CHECK);
-     }
-   }
 --- hotspot/src/share/vm/oops/klass.cpp
 +++ hotspot/src/share/vm/oops/klass.cpp
 @@ -190,7 +190,7 @@
@@ -2960,15 +2830,6 @@
            return TypeKlassPtr::make(ciArrayKlass::make(t));
          }
          if (!t->is_klass()) {
-@@ -4163,7 +4168,7 @@
-   }
- }
- #else // !ASSERT
--#define verify_memory_slice(m,i,n) (0)  // PRODUCT version is no-op
-+#define verify_memory_slice(m,i,n) (void)(0)  // PRODUCT version is no-op
- #endif
- 
- 
 --- hotspot/src/share/vm/opto/node.cpp
 +++ hotspot/src/share/vm/opto/node.cpp
 @@ -284,6 +284,10 @@
@@ -3027,17 +2888,6 @@
      Compile* compile = Compile::current();
      compile->set_type_last_size(x);
      void *temp = compile->type_arena()->Amalloc_D(x);
---- hotspot/src/share/vm/prims/forte.cpp
-+++ hotspot/src/share/vm/prims/forte.cpp
-@@ -635,7 +635,7 @@
-                             void* null_argument_3);
- #pragma weak collector_func_load
- #define collector_func_load(x0,x1,x2,x3,x4,x5,x6) \
--        ( collector_func_load ? collector_func_load(x0,x1,x2,x3,x4,x5,x6),0 : 0 )
-+        ( collector_func_load ? collector_func_load(x0,x1,x2,x3,x4,x5,x6),(void)0 : (void)0 )
- #endif // __APPLE__
- #endif // !_WINDOWS
- 
 --- hotspot/src/share/vm/runtime/arguments.cpp
 +++ hotspot/src/share/vm/runtime/arguments.cpp
 @@ -2507,7 +2507,9 @@
@@ -3138,17 +2988,6 @@
      void operator delete (void * a) ;
  
    public:
---- hotspot/src/share/vm/runtime/sharedRuntime.cpp
-+++ hotspot/src/share/vm/runtime/sharedRuntime.cpp
-@@ -2778,7 +2778,7 @@
-   // ResourceObject, so do not put any ResourceMarks in here.
-   char *s = sig->as_C_string();
-   int len = (int)strlen(s);
--  *s++; len--;                  // Skip opening paren
-+  s++; len--;                   // Skip opening paren
-   char *t = s+len;
-   while( *(--t) != ')' ) ;      // Find close paren
- 
 --- hotspot/src/share/vm/runtime/thread.cpp
 +++ hotspot/src/share/vm/runtime/thread.cpp
 @@ -170,7 +170,7 @@
@@ -3171,48 +3010,6 @@
    void  operator delete(void* p);
   private:
  
---- hotspot/src/share/vm/services/diagnosticArgument.cpp
-+++ hotspot/src/share/vm/services/diagnosticArgument.cpp
-@@ -191,7 +191,7 @@
-   } else {
-     _value._time = 0;
-     _value._nanotime = 0;
--    strcmp(_value._unit, "ns");
-+    strcpy(_value._unit, "ns");
-   }
- }
- 
---- hotspot/src/share/vm/utilities/exceptions.hpp
-+++ hotspot/src/share/vm/utilities/exceptions.hpp
-@@ -182,15 +182,15 @@
- #define HAS_PENDING_EXCEPTION                    (((ThreadShadow*)THREAD)->has_pending_exception())
- #define CLEAR_PENDING_EXCEPTION                  (((ThreadShadow*)THREAD)->clear_pending_exception())
- 
--#define CHECK                                    THREAD); if (HAS_PENDING_EXCEPTION) return       ; (0
--#define CHECK_(result)                           THREAD); if (HAS_PENDING_EXCEPTION) return result; (0
-+#define CHECK                                    THREAD); if (HAS_PENDING_EXCEPTION) return       ; (void)(0
-+#define CHECK_(result)                           THREAD); if (HAS_PENDING_EXCEPTION) return result; (void)(0
- #define CHECK_0                                  CHECK_(0)
- #define CHECK_NH                                 CHECK_(Handle())
- #define CHECK_NULL                               CHECK_(NULL)
- #define CHECK_false                              CHECK_(false)
- 
--#define CHECK_AND_CLEAR                         THREAD); if (HAS_PENDING_EXCEPTION) { CLEAR_PENDING_EXCEPTION; return;        } (0
--#define CHECK_AND_CLEAR_(result)                THREAD); if (HAS_PENDING_EXCEPTION) { CLEAR_PENDING_EXCEPTION; return result; } (0
-+#define CHECK_AND_CLEAR                         THREAD); if (HAS_PENDING_EXCEPTION) { CLEAR_PENDING_EXCEPTION; return;        } (void)(0
-+#define CHECK_AND_CLEAR_(result)                THREAD); if (HAS_PENDING_EXCEPTION) { CLEAR_PENDING_EXCEPTION; return result; } (void)(0
- #define CHECK_AND_CLEAR_0                       CHECK_AND_CLEAR_(0)
- #define CHECK_AND_CLEAR_NH                      CHECK_AND_CLEAR_(Handle())
- #define CHECK_AND_CLEAR_NULL                    CHECK_AND_CLEAR_(NULL)
-@@ -263,7 +263,7 @@
-     CLEAR_PENDING_EXCEPTION;               \
-     ex->print();                           \
-     ShouldNotReachHere();                  \
--  } (0
-+  } (void)(0
- 
- // ExceptionMark is a stack-allocated helper class for local exception handling.
- // It is used with the EXCEPTION_MARK macro.
 --- hotspot/src/share/vm/utilities/globalDefinitions.hpp
 +++ hotspot/src/share/vm/utilities/globalDefinitions.hpp
 @@ -421,7 +421,7 @@
@@ -3254,22 +3051,7 @@
  #define X86_ONLY(code) code
 --- hotspot/src/share/vm/utilities/taskqueue.hpp
 +++ hotspot/src/share/vm/utilities/taskqueue.hpp
-@@ -334,8 +334,12 @@
-   if (dirty_n_elems == N - 1) {
-     // Actually means 0, so do the push.
-     uint localBot = _bottom;
--    // g++ complains if the volatile result of the assignment is unused.
--    const_cast<E&>(_elems[localBot] = t);
-+    // g++ complains if the volatile result of the assignment is
-+    // unused, so we cast the volatile away.  We cannot cast directly
-+    // to void, because gcc treats that as not using the result of the
-+    // assignment.  However, casting to E& means that we trigger an
-+    // unused-value warning.  So, we cast the E& to void.
-+    (void)const_cast<E&>(_elems[localBot] = t);
-     OrderAccess::release_store(&_bottom, increment_index(localBot));
-     TASKQUEUE_STATS_ONLY(stats.record_push());
-     return true;
-@@ -385,13 +389,24 @@
+@@ -389,7 +389,13 @@
  template<class E, unsigned int N>
  bool GenericTaskQueue<E, N>::pop_global(E& t) {
    Age oldAge = _age.get();
@@ -3284,19 +3066,7 @@
    uint n_elems = size(localBot, oldAge.top());
    if (n_elems == 0) {
      return false;
-   }
- 
--  const_cast<E&>(t = _elems[oldAge.top()]);
-+  // g++ complains if the volatile result of the assignment is
-+  // unused, so we cast the volatile away.  We cannot cast directly
-+  // to void, because gcc treats that as not using the result of the
-+  // assignment.  However, casting to E& means that we trigger an
-+  // unused-value warning.  So, we cast the E& to void.
-+  (void) const_cast<E&>(t = _elems[oldAge.top()]);
-   Age newAge(oldAge);
-   newAge.increment();
-   Age resAge = _age.cmpxchg(newAge, oldAge);
-@@ -668,13 +683,17 @@
+@@ -677,7 +683,7 @@
  template<class E, unsigned int N> inline bool
  GenericTaskQueue<E, N>::push(E t) {
    uint localBot = _bottom;
@@ -3305,32 +3075,6 @@
    idx_t top = _age.top();
    uint dirty_n_elems = dirty_size(localBot, top);
    assert(dirty_n_elems < N, "n_elems out of range.");
-   if (dirty_n_elems < max_elems()) {
--    // g++ complains if the volatile result of the assignment is unused.
--    const_cast<E&>(_elems[localBot] = t);
-+    // g++ complains if the volatile result of the assignment is
-+    // unused, so we cast the volatile away.  We cannot cast directly
-+    // to void, because gcc treats that as not using the result of the
-+    // assignment.  However, casting to E& means that we trigger an
-+    // unused-value warning.  So, we cast the E& to void.
-+    (void) const_cast<E&>(_elems[localBot] = t);
-     OrderAccess::release_store(&_bottom, increment_index(localBot));
-     TASKQUEUE_STATS_ONLY(stats.record_push());
-     return true;
-@@ -698,7 +717,12 @@
-   // This is necessary to prevent any read below from being reordered
-   // before the store just above.
-   OrderAccess::fence();
--  const_cast<E&>(t = _elems[localBot]);
-+  // g++ complains if the volatile result of the assignment is
-+  // unused, so we cast the volatile away.  We cannot cast directly
-+  // to void, because gcc treats that as not using the result of the
-+  // assignment.  However, casting to E& means that we trigger an
-+  // unused-value warning.  So, we cast the E& to void.
-+  (void) const_cast<E&>(t = _elems[localBot]);
-   // This is a second read of "age"; the "size()" above is the first.
-   // If there's still at least one element in the queue, based on the
-   // "_bottom" and "age" we've read, then there can be no interference with
 --- hotspot/src/share/vm/utilities/vmError.cpp
 +++ hotspot/src/share/vm/utilities/vmError.cpp
 @@ -1043,7 +1043,7 @@
@@ -14197,6 +13941,15 @@
      }
      dgaAvailable = JNI_FALSE;
      if (lib != NULL) {
+@@ -430,7 +431,7 @@
+         if (width <= 0 || height <= 0 || width > 32767 || height > 32767) {
+             JNU_ThrowOutOfMemoryError(env,
+                                   "Can't create offscreen surface");
+-            return JNI_FALSE;
++            return;
+         }
+         xsdo->isPixmap = JNI_TRUE;
+         /* REMIND: workaround for bug 4420220 on pgx32 boards:
 --- jdk/src/solaris/native/sun/jdga/dgalock.c
 +++ jdk/src/solaris/native/sun/jdga/dgalock.c
 @@ -44,6 +44,7 @@

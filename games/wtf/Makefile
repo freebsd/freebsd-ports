@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	wtf
-PORTVERSION=	20160814
+PORTVERSION=	20170313
 CATEGORIES=	games
 MASTER_SITES=	SF/bsdwtf
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Translates common Internet acronyms
 
 LICENSE=	PD

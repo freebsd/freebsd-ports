@@ -20,14 +20,12 @@ LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
 		libgee-0.8.so:devel/libgee \
 		libgcr-3.so:security/gcr
 
-USES=		cmake desktop-file-utils gettext gmake \
+USES=		cmake desktop-file-utils gettext \
 		libtool pkgconfig shebangfix tar:xz
 USE_GNOME=	gnomedocutils gnomeprefix gtk30 intlhack
 SHEBANG_FILES=	desktop/geary-attach
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

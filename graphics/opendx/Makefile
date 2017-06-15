@@ -3,7 +3,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	graphics math java
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
@@ -71,7 +71,7 @@ PLIST_SUB+=	UNAMEP=${ARCH}
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${RM} -f ${WRKSRC}/include/stamp-h.in
+	@${RM} ${WRKSRC}/include/stamp-h.in
 .for dir in doc help html man
 	@${FIND} ${WRKSRC}/${dir} -type f | ${XARGS} \
 		${REINPLACE_CMD} -e "s;/usr/lpp;${PREFIX};g"

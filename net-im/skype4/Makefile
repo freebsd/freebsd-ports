@@ -3,7 +3,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	4.3.0.37
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
@@ -17,12 +17,12 @@ RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:audio/linux-skype_
 CONFLICTS=	skype-devel-[0-9]*
 
 OPTIONS_DEFINE=	VIDEO
-OPTIONS_DEFAULT=	VIDEO
+OPTIONS_DEFAULT=VIDEO
 
 NO_BUILD=	yes
 
 USES=		cpe desktop-file-utils linux tar:bzip2
-USE_LINUX=	fontconfig xorglibs qt47 qt47-x11 qt47-webkit openssl pulseaudio-libs
+USE_LINUX=	fontconfig xorglibs qt qt-x11 qtwebkit openssl pulseaudio-libs
 
 RESTRICTED=	Redistribution prohibited.
 
@@ -32,15 +32,7 @@ PLIST_SUB+=	SKYPEDIR=${SKYPEDIR}
 SUB_FILES=	skype.sh
 SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
-NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-NVIDIA_GL_USE=		LINUX=xorglibs
-NVIDIA_GL_USE_OFF=	LINUX=dri
-
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1100000 && ${OSVERSION} < 1100075 || ${OSVERSION} >= 1000000 && ${OSVERSION} < 1002507)
-BROKEN=		Skype 4.3 requires Linux 2.6.32 emulation.
-.endif
 
 .if ${PORT_OPTIONS:MVIDEO}
 RUN_DEPENDS+=	webcamd:multimedia/webcamd

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.5.10
-PORTREVISION=	1
+PORTVERSION=	2.5.12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -46,12 +45,6 @@ NLS_CONFIGURE_ENABLE=	nls
 XML_USE=		GNOME=libxml2
 XML_CONFIGURE_OFF=	--with-libxml-2.0=no
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000040
-CONFIGURE_ENV+=	LIBUSB1_CFLAGS=" " LIBUSB1_LIBS="-lusb"
-.endif
-
 post-patch:
 .for i in configure libgphoto2_port/configure
 	@${REINPLACE_CMD} -e \
@@ -63,9 +56,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^doc_DATA/s|COPYING||' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|-lusb-1.0|-lusb|' \
-		${WRKSRC}/libgphoto2_port/configure
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|linux-hotplug||' \
 		${WRKSRC}/packaging/Makefile.in

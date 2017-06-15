@@ -4,6 +4,7 @@
 PORTNAME=	openclonk
 PORTVERSION=	7.0
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/
 
@@ -19,8 +20,6 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libogg.so:audio/libogg \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
-
-BROKEN_FreeBSD_9=	does not build (lack of proper c++11 support)
 
 USES=		compiler:c++14-lang cmake desktop-file-utils jpeg pkgconfig tar:bzip2
 USE_GL=		glew

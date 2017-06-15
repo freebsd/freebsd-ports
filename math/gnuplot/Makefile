@@ -1,12 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	gnuplot
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Command-line driven graphing utility
+
+LICENSE=	Gnuplot
+LICENSE_NAME=	Gnuplot license
+LICENSE_FILE=	${WRKSRC}/Copyright
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		iconv lua pkgconfig readline
 USE_TEX=	kpathsea
@@ -81,6 +87,11 @@ post-patch:
 post-build:
 	@cd ${WRKSRC}/docs && ${MAKE} groff
 .endif
+
+pre-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}/5.0 ; \
+		${INSTALL_DATA} ${WRKSRC}/share/gnuplotrc \
+		${STAGEDIR}${DATADIR}/5.0/gnuplotrc.sample
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -3,7 +3,7 @@
 
 PORTNAME=	soya3d
 PORTVERSION=	0.14
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,9 @@ DIST_SUBDIR=	python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very high level 3D engine for Python
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:devel/ode \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
-LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow
+LIB_DEPENDS=	libode.so:devel/ode \
+		libcal3d.so:graphics/cal3d \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:graphics/py-editobj \
 		${PYTHON_SITELIBDIR}/tofu/client.py:net/py-tofu \
@@ -44,10 +44,6 @@ DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS	+=	-fPIC
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

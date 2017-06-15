@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mail-iso-2022-jp
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.6
 CATEGORIES=	japanese mail rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides 'mail' gem with iso-2022-jp conversion capability
 
 LICENSE=	MIT
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

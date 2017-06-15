@@ -43,7 +43,7 @@ MOINSCRIPT=	${MOINDIR}/server/moin.cgi
 .elif ${MOINTYPE} == "WSGI"
 MOINSCRIPT=	${MOINDIR}/server/moin.wsgi
 .else
-BROKEN=		MOINTYPE must be a STANDALONE, FCGI, WSGI, MOD_PYTHON or CGI.
+BROKEN=		MOINTYPE must be a STANDALONE, FCGI, WSGI, MOD_PYTHON, or CGI
 .endif
 
 pre-everything::

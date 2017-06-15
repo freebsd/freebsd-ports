@@ -3,12 +3,15 @@
 
 PORTNAME=	libiconv
 PORTVERSION=	1.14
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	converters devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Character set conversion library
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -37,8 +40,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:gawk:awk:g' ${WRKSRC}/configure \
 		${WRKSRC}/libcharset/configure \
 		${WRKSRC}/preload/configure
-
-post-install:
-	${LN} -s libiconv.so.2 ${STAGEDIR}${PREFIX}/lib/libiconv.so.3
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	pygments
 PORTVERSION=	2.1.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ COMMENT=	Syntax highlighter written in Python
 LICENSE=	BSD2CLAUSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

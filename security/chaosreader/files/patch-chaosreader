@@ -1,9 +1,9 @@
---- chaosreader.orig	2010-07-23 11:18:46.000000000 +0300
-+++ chaosreader	2010-07-23 11:21:34.000000000 +0300
-@@ -4028,7 +4028,11 @@
- 	   ### This causes the replay program to pause
+--- chaosreader.orig	2014-06-15 19:30:11 UTC
++++ chaosreader
+@@ -4275,7 +4275,11 @@ END
  	   print REPLAY "ms($timediff1);\n";
  	}
+ 	$duration = 0.01 if $duration == 0;     # avoid divide by 0,
 -	$speed = sprintf("%.2f",$bytes / (1024 * $duration));
 +	if ( $duration > 0 ) {
 +		$speed = sprintf("%.2f",$bytes / (1024 * $duration));

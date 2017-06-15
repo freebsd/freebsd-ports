@@ -3,7 +3,7 @@
 
 PORTNAME=	childsplay
 PORTVERSION=	2.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3 # only
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy08>0:databases/py-sqlalchemy08 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10 \
 		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game
 
 NO_BUILD=	yes
@@ -41,17 +41,18 @@ do-configure:
 	@${ECHO_CMD} "#!${SH}" > ${WRKDIR}/childsplay.sh
 	@${ECHO_CMD} >> ${WRKDIR}/childsplay.sh
 	@${ECHO_CMD} 'cd "${CHILDSPLAYDIR}"' >> ${WRKDIR}/childsplay.sh
-	@${ECHO_CMD} 'exec ${PYTHON_CMD} childsplay.py $$@' >> ${WRKDIR}/childsplay.sh
+	@${ECHO_CMD} 'exec ${PYTHON_CMD} childsplay.py "$$@"' \
+		>> ${WRKDIR}/childsplay.sh
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/childsplay.sh ${STAGEDIR}${PREFIX}/bin/childsplay
+	${INSTALL_SCRIPT} ${WRKDIR}/childsplay.sh \
+		${STAGEDIR}${PREFIX}/bin/childsplay
 	@${MKDIR} ${STAGEDIR}${CHILDSPLAYDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${CHILDSPLAYDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "SPWidgets alphabetsounds lib" \
 		${STAGEDIR}${CHILDSPLAYDIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${STAGEDIR}${PREFIX}/share)
 	${INSTALL_DATA} ${WRKSRC}/sp_content.db ${STAGEDIR}${CHILDSPLAYDIR}
-
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 

@@ -13,7 +13,7 @@ COMMENT=	Defines an abstract type of buffer that can move data without copying
 
 LIB_DEPENDS=	libex.so:devel/ossp-ex
 
-USES=		gmake libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
 USE_LDCONFIG=	yes

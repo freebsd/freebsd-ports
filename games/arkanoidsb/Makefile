@@ -19,10 +19,11 @@ USE_LINUX=	libogg sdlmixer sdlimage
 SUB_FILES=	${PORTNAME}.sh
 
 PORTDOCS=	README
-OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Arkanoid: Space Ball" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
@@ -32,6 +33,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

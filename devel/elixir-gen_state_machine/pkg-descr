@@ -1,0 +1,3 @@
+An idiomatic Elixir wrapper for gen_statem in OTP 19 (and above).
+
+WWW: https://github.com/antipax/gen_state_machine

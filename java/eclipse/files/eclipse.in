@@ -43,4 +43,4 @@ if [ ! -x "${ECLIPSE_HOME}/eclipse" ]; then
 	exit 1
 fi
 
-JAVA_VERSION="%%JAVA_VERSION%%" JAVA_OS="%%JAVA_OS%%" PATH=${JAVA_HOME}/bin:${PATH} %%SWTGTK3OPT%% exec "${ECLIPSE_HOME}/eclipse" $@
+JAVA_VERSION="%%JAVA_VERSION%%" JAVA_OS="%%JAVA_OS%%" PATH=${JAVA_HOME}/bin:${PATH} %%SWTGTK3OPT%% exec "${ECLIPSE_HOME}/eclipse" "$@"

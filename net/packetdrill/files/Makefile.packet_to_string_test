@@ -1,5 +1,0 @@
-# $FreeBSD$
-
-PROG=	packet_to_string_test
-
-.include <bsd.prog.mk>

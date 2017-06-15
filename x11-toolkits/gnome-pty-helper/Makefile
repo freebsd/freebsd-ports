@@ -26,15 +26,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/gnome-pty-helper
 BUILD_WRKSRC=	${WRKSRC}/gnome-pty-helper
 INSTALL_WRKSRC=	${WRKSRC}/gnome-pty-helper
 
-.include <bsd.port.options.mk>
-
 post-patch:
-# borrowed osversion from bsd.ssp.mk
-.if ${OSVERSION} < 1000036 && ${ARCH} == i386
-	@${REINPLACE_CMD} -e 's|-fstack-protector-strong||g; \
-		s|-fstack-protector||g' \
-		${WRKSRC}/configure
-.endif
 	@${REINPLACE_CMD} -e 's|(AM_MAKEFLAGS) install-exec-hook|(AM_MAKEFLAGS)|g' \
 		${WRKSRC}/gnome-pty-helper/Makefile.in
 

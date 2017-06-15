@@ -7,7 +7,7 @@ CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get stock quotes from Yahoo! Finance
 
 RUN_DEPENDS=	p5-HTML-Parser>=2.2:www/p5-HTML-Parser \

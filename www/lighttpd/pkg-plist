@@ -29,11 +29,11 @@ lib/lighttpd/mod_accesslog.so
 lib/lighttpd/mod_alias.so
 lib/lighttpd/mod_auth.so
 lib/lighttpd/mod_authn_file.so
-lib/lighttpd/mod_authn_gssapi.so
-lib/lighttpd/mod_authn_ldap.so
-lib/lighttpd/mod_authn_mysql.so
+%%KRB5%%lib/lighttpd/mod_authn_gssapi.so
+%%LDAP%%lib/lighttpd/mod_authn_ldap.so
+%%MYSQL%%lib/lighttpd/mod_authn_mysql.so
 lib/lighttpd/mod_cgi.so
-lib/lighttpd/mod_cml.so
+%%LUA%%lib/lighttpd/mod_cml.so
 lib/lighttpd/mod_compress.so
 lib/lighttpd/mod_deflate.so
 lib/lighttpd/mod_dirlisting.so
@@ -43,10 +43,10 @@ lib/lighttpd/mod_expire.so
 lib/lighttpd/mod_extforward.so
 lib/lighttpd/mod_fastcgi.so
 lib/lighttpd/mod_flv_streaming.so
-lib/lighttpd/mod_geoip.so
+%%GEOIP%%lib/lighttpd/mod_geoip.so
 lib/lighttpd/mod_indexfile.so
-lib/lighttpd/mod_magnet.so
-lib/lighttpd/mod_mysql_vhost.so
+%%LUA%%lib/lighttpd/mod_magnet.so
+%%MYSQL%%lib/lighttpd/mod_mysql_vhost.so
 lib/lighttpd/mod_proxy.so
 lib/lighttpd/mod_redirect.so
 lib/lighttpd/mod_rewrite.so
@@ -58,12 +58,13 @@ lib/lighttpd/mod_simple_vhost.so
 lib/lighttpd/mod_ssi.so
 lib/lighttpd/mod_staticfile.so
 lib/lighttpd/mod_status.so
-lib/lighttpd/mod_trigger_b4_dl.so
+%%MEMCACHED%%lib/lighttpd/mod_trigger_b4_dl.so
 lib/lighttpd/mod_uploadprogress.so
 lib/lighttpd/mod_userdir.so
 lib/lighttpd/mod_usertrack.so
 lib/lighttpd/mod_webdav.so
 man/man8/lighttpd.8.gz
+%%KRB5%%man/man8/lighttpd-angel.8.gz
 sbin/lighttpd
 sbin/lighttpd-angel
-@dir(%%USER%%,%%GROUP%%,700) %%LOGROOT%%
+@dir(www,www,700) %%LOGROOT%%

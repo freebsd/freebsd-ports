@@ -1,16 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	rndpassw
-PORTVERSION=	0.2
+PORTVERSION=	0.2.2
 CATEGORIES=	security
-MASTER_SITES=	SF
 
 MAINTAINER=	melanhit@gmail.com
 COMMENT=	CLI password generator
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	melanhit
+
+USES=		cmake:outsource
 
 PLIST_FILES=	bin/rndpassw \
 		man/man1/rndpassw.1.gz

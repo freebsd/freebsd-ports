@@ -65,6 +65,8 @@ man/man1/emms-print-metadata.1.gz
 %%EMACS_SITE_LISPDIR%%/emms/emms-score.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-setup.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-setup.elc
+%%EMACS_SITE_LISPDIR%%/emms/emms-show-all.el
+%%EMACS_SITE_LISPDIR%%/emms/emms-show-all.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-source-file.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-source-file.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-source-playlist.el
@@ -79,6 +81,8 @@ man/man1/emms-print-metadata.1.gz
 %%EMACS_SITE_LISPDIR%%/emms/emms-url.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-volume-amixer.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-volume-amixer.elc
+%%EMACS_SITE_LISPDIR%%/emms/emms-volume-pulse.el
+%%EMACS_SITE_LISPDIR%%/emms/emms-volume-pulse.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-volume.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-volume.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms.el
@@ -87,5 +91,3 @@ man/man1/emms-print-metadata.1.gz
 %%EMACS_SITE_LISPDIR%%/emms/jack.elc
 %%EMACS_SITE_LISPDIR%%/emms/later-do.el
 %%EMACS_SITE_LISPDIR%%/emms/later-do.elc
-%%EMACS_SITE_LISPDIR%%/emms/tq.el
-%%EMACS_SITE_LISPDIR%%/emms/tq.elc

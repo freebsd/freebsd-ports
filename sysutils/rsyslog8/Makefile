@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	8.21.0
-PORTREVISION=	1
+PORTVERSION=	8.25.0
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -17,22 +17,23 @@ LIB_DEPENDS=	libee.so:devel/libee \
 		libfastjson.so:devel/libfastjson \
 		liblogging-stdlog.so:devel/liblogging \
 		libuuid.so:misc/e2fsprogs-libuuid
-
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
 PORTSCOUT=	limit:^8\.
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DBI DOCS GCRYPT GNUTLS GSSAPI MYSQL PGSQL RELP \
-		SNMP NORMALIZE
+OPTIONS_DEFINE=	DBI DOCS ELASTIC GCRYPT GNUTLS GSSAPI JSONPARSE  MYSQL PGSQL \
+		RELP SNMP NORMALIZE
 OPTIONS_DEFAULT=GCRYPT
 OPTIONS_SUB=	yes
 
 DBI_DESC=	LibDBI output module for rsyslog
+ELASTIC_DESC=	Elasticsearch module for rsyslog
 GCRYPT_DESC=	Enable support for encrypted logfiles
 GNUTLS_DESC=	GNUTLS module for rsyslog
 GSSAPI_DESC=	GSS API input/output module for rsyslog
+JSONPARSE_DESC=	JSONPARSE module for rsyslog
 MYSQL_DESC=	MySQL output module for rsyslog
 PGSQL_DESC=	PostgreSQL output module for rsyslog
 RELP_DESC=	RELP input/output module for rsyslog
@@ -44,6 +45,10 @@ USES=		libtool pkgconfig autoreconf
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 DBI_CONFIGURE_ENABLE=	libdbi
 DBI_PLIST_FILES=	lib/rsyslog/omlibdbi.so
+
+ELASTIC_CONFIGURE_ENABLE=	elasticsearch
+ELASTIC_LIB_DEPENDS=	libcurl.so:ftp/curl
+ELASTIC_PLIST_FILES=	lib/rsyslog/omelasticsearch.so
 
 GCRYPT_CONFIGURE_ENABLE=libgcrypt
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
@@ -60,7 +65,10 @@ GSSAPI_PLIST_FILES=	lib/rsyslog/imgssapi.so \
 			lib/rsyslog/lmgssutil.so \
 			lib/rsyslog/omgssapi.so
 
-MYSQL_USE=		MYSQL=yes
+JSONPARSE_CONFIGURE_ENABLE=	mmjsonparse
+JSONPARSE_PLIST_FILES=	lib/rsyslog/mmjsonparse.so
+
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ENABLE=	mysql
 MYSQL_PLIST_FILES=	lib/rsyslog/ommysql.so
 

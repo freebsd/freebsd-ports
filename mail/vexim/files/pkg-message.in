@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------
 
 For post-install configuration steps, please read
-  %%PREFIX%%/share/doc/vexim/INSTALL
+  %%DOCSDIR%%/README.md
 
 ------------------------------------------------------------------------

@@ -1,0 +1,20 @@
+libfaketime intercepts various system calls which programs use to
+retrieve the current date and time. It can then report faked dates and
+times (as specified by you, the user) to these programs. This means you
+can modify the system time a program sees without having to change the
+time system-wide.
+
+libfaketime allows you to specify both absolute dates (e.g., 01/01/2004)
+and relative dates (e.g., 10 days ago).
+
+libfaketime might be used for various purposes, for example
+
+- Running legacy software with y2k bugs
+- Testing software for year-2038 compliance
+- Debugging time-related issues, such as expired SSL certificates
+- Running software which ceases to run outside a certain timeframe
+- Using different system-wide date and time settings, e.g., on OpenVZ-
+  based virtual machines running on the same host
+- Deterministic build processes.
+
+WWW: https://github.com/wolfcw/libfaketime

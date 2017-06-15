@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b40
+PORTVERSION=	b41
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/ant/binaries/:ant \
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		dejavu>0:x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	22_aug_2016
+OPENJDK_BUILDDATE=	04_jan_2017
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA TZUPDATE
@@ -97,7 +97,7 @@ BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk
 BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk
 .endif
 
-MAKE_ENV=	LANG=C LC_ALL=C OS= \
+MAKE_ENV=	OS= \
 		ALT_JDK_IMPORT_PATH=${BOOTSTRAPJDKDIR} \
 		ALT_BOOTDIR=${BOOTSTRAPJDKDIR} \
 		ALT_CACERTS_FILE=${FILESDIR}/cacerts \
@@ -265,11 +265,11 @@ post-build:
 .if ${PORT_OPTIONS:MTZUPDATE}
 	@# Update time zones
 .if defined(BUILD_JRE)
-	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib/zi
+	@${RM} -r ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib/zi
 	@${LN} -s -f ${LOCALBASE}/share/java/zi \
 	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2re-image/lib
 .else
-	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
+	@${RM} -r ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
 	@${LN} -s -f ${LOCALBASE}/share/java/zi \
 	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib
 .endif

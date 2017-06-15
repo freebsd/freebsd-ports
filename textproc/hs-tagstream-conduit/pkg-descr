@@ -3,4 +3,4 @@ parse unstructured and malformed HTML from the web. It also provides an
 Enumeratee which can parse streamline html, which means it consumes constant
 memory.
 
-WWW: http://github.com/yihuang/tagstream-conduit
+WWW: https://github.com/yihuang/tagstream-conduit

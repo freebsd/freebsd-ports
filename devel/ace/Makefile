@@ -33,7 +33,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 CONFLICTS=	ace+tao-5*
 
-BROKEN_ia64=		Does not compile on ${ARCH}
+BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_powerpc=		Does not compile on ${ARCH}
 BROKEN_powerpc64=	Does not build on ${ARCH}
 BROKEN_sparc64=		Does not compile on ${ARCH}
@@ -46,10 +46,10 @@ FLTK_DESC=		FLTK GUI toolkit
 FLTK_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 FLTK_MAKE_ENV=		fl=1
 QT4_USE=		QT4=corelib,gui,moc_build
-QT4_MAKE_ENV=		qt=1 qt4=1 QTDIR="${QT_PREFIX}"
+QT4_MAKE_ENV=		qt=1 qt4=1 QTDIR="${PREFIX}"
 QT4_CPPFLAGS=		-I${QT_INCDIR}
 QT4_LDFLAGS=		-L${QT_LIBDIR}
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 SSL_MAKE_ENV=		ssl=1
 TK_USES=		tk
 TK_MAKE_ENV=		tk=1

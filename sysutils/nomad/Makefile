@@ -2,7 +2,6 @@
 
 PORTNAME=	nomad
 PORTVERSION=	0.5.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -55,7 +54,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-BUILD_ENV=  CC=clang
+BUILD_ENV=	CC=clang
 .endif
 
 .include <bsd.port.post.mk>

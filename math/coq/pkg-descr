@@ -1,5 +1,3 @@
-From the website:
-
 Developed in the LogiCal project, the Coq tool is a formal proof
 management system: a proof done with Coq is mechanically checked
 by the machine.
@@ -14,9 +12,6 @@ Coq is based on a logical framework called "Calculus of Inductive
 Constructions" extended by a modular development system for
 theories.
 
-Coq is distributed under the GNU Lesser General Public Licence
-Version 2.1 (LGPL).
-
 CoqIde is installed if the x11-toolkits/ocaml-lablgtk2 port is installed.
 
-WWW:    http://coq.inria.fr/
+WWW: http://coq.inria.fr/

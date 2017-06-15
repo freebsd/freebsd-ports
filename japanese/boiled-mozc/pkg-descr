@@ -1,0 +1,15 @@
+boiled-mozc.el wraps("boil"s) mozc.el to offer modeless input style,
+where you can type a Romaji sequence without activating the Mozc input
+method and then just hit \M-o or \C-o to obtain its Hiragana and
+Kana-Kanji conversion, respectively.
+
+To use `boiled-mozc.el`, just add the following code into your `.emacs`:
+
+    (autoload 'boiled-mozc-rK-conv "boiled-mozc"
+      "Romaji to Kana-Kanji conversion" t)
+    (autoload 'boiled-mozc-rhkR-conv "boiled-mozc"
+      "Romaji to Hiragana conversion" t)
+    (global-set-key "\C-o" 'boiled-mozc-rK-conv)
+    (global-set-key "\M-o" 'boiled-mozc-rhkR-conv)
+
+WWW: https://github.com/tadanagao/boiled-mozc

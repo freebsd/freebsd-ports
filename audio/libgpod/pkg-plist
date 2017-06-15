@@ -5,11 +5,6 @@ lib/libgpod.a
 lib/libgpod.so
 lib/libgpod.so.4
 lib/libgpod.so.4.3.2
-%%MONO%%lib/libgpod/libgpod-sharp-test.exe
-%%MONO%%lib/libgpod/libgpod-sharp-test.exe.mdb
-%%MONO%%lib/libgpod/libgpod-sharp.dll
-%%MONO%%lib/libgpod/libgpod-sharp.dll.config
-%%MONO%%lib/libgpod/libgpod-sharp.dll.mdb
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.pyo
@@ -24,7 +19,6 @@ lib/libgpod.so.4.3.2
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/ipod.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/ipod.pyo
 libdata/pkgconfig/libgpod-1.0.pc
-%%MONO%%libdata/pkgconfig/libgpod-sharp.pc
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html

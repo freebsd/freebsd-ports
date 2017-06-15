@@ -14,10 +14,10 @@ COMMENT=	Package implementing the client side of the HTTP standard
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:java/jakarta-commons-logging
-BUILD_DEPENDS+=	${JAVAJARDIR}/commons-codec.jar:java/jakarta-commons-codec
-RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:java/jakarta-commons-logging
-RUN_DEPENDS+=	${JAVAJARDIR}/commons-codec.jar:java/jakarta-commons-codec
+BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
+BUILD_DEPENDS+=	${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec
+RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
+RUN_DEPENDS+=	${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,7 +37,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	*
 
 post-patch:
-	@LANG=C ${REINPLACE_CMD} 's/Ortwin Gl.*ck/Ortwin Glueck/' \
+	@${REINPLACE_CMD} 's/Ortwin Gl.*ck/Ortwin Glueck/' \
 		${WRKSRC}/src/java/org/apache/commons/httpclient/*.java \
 		${WRKSRC}/src/java/org/apache/commons/httpclient/*/*.java
 

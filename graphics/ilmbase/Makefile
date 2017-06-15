@@ -35,7 +35,7 @@ regression-test regression test check:	build
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libHalf.so.${VER}
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/*.la
+	${RM} ${STAGEDIR}${PREFIX}/lib/*.la
 .for l in libIex libIexMath libImath libIlmThread
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${l}-${MAJORVER}.so.${VER}
 	${LN} -s ${l}-${MAJORVER}.so.${VER} ${STAGEDIR}${PREFIX}/lib/${l}.so

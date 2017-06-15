@@ -15,7 +15,7 @@ PLIST_FILES=	bin/vnroff man/man1/vnroff.1.gz
 NO_WRKSUBDIR=	yes
 
 do-extract:
-	@${RM} -rf ${WRKSRC}
+	@${RM} -r ${WRKSRC}
 	@${MKDIR} ${WRKSRC}
 	@(cd ${WRKSRC} && ${GZCAT} ${DISTDIR}/vnroff.c.Z \
 		| ${SED} -e '1,/-cut here-/d' \

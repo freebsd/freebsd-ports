@@ -3,6 +3,7 @@
 PORTNAME=	sdcc
 PORTVERSION=	3.6.0
 DISTVERSIONPREFIX=	src-
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -50,6 +51,8 @@ Z80_CONFIGURE_OFF=	--disable-z80 --disable-z80-port		\
 			--disable-z180-port --disable-gbz80-port	\
 			--disable-r2k-port --disable-r3ka-port		\
 			--disable-tlcs90-port
+
+BROKEN_aarch64=		Fails to configure: BFD does not support target aarch64-portbld-freebsd11.0
 
 .include <bsd.port.options.mk>
 

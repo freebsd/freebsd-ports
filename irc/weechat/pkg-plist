@@ -80,5 +80,6 @@ libdata/pkgconfig/weechat.pc
 %%NLS%%share/locale/ja/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/weechat.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/weechat.mo

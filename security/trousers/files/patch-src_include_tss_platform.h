@@ -1,4 +1,4 @@
---- src/include/tss/platform.h.orig	2016-06-20 15:21:26 UTC
+--- src/include/tss/platform.h.orig	2016-11-19 03:09:49 UTC
 +++ src/include/tss/platform.h
 @@ -15,7 +15,7 @@ There are platform dependent and general
  #if !defined(WIN32)

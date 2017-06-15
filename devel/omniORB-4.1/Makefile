@@ -18,8 +18,7 @@ CONFLICTS=	omniORB-4.2.*
 
 PLIST_SUB+=	SONUM=${PORTVERSION:C/.*\.//}
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
-USES=		gmake pkgconfig python tar:bzip2
+USES=		gmake pkgconfig python tar:bzip2 ssl
 USE_LDCONFIG=	yes
 MAKEFILE=	GNUmakefile
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}

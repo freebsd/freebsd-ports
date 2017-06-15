@@ -1,6 +1,6 @@
---- ui/views/examples/widget_example.cc.orig	2016-05-11 19:02:36 UTC
+--- ui/views/examples/widget_example.cc.orig	2017-04-19 19:06:55 UTC
 +++ ui/views/examples/widget_example.cc
-@@ -84,7 +84,7 @@ void WidgetExample::CreateExampleView(Vi
+@@ -77,7 +77,7 @@ void WidgetExample::CreateExampleView(Vi
    BuildButton(container, "Popup widget", POPUP);
    BuildButton(container, "Dialog widget", DIALOG);
    BuildButton(container, "Modal Dialog", MODAL_DIALOG);

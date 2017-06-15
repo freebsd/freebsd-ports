@@ -1,0 +1,8 @@
+greple has almost the same function as Unix command egrep(1) but the
+search is done in the manner similar to search engine.  greple also
+search the pattern across the line boundaries. This is especially
+useful to handle Asian multi-byte text. Japanese text can be separated
+by newline almost any place of the text. So the search pattern may
+spread out on multiple lines.
+
+WWW: https://github.com/kaz-utashiro/greple

@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpopt.so:devel/popt
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf alias gmake libtool pkgconfig tar:bzip2
+USES=		autoreconf alias gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=     distcc
 GH_TAGNAME=	9a09372
@@ -122,14 +122,14 @@ do-install:
 	cd ${WRKSRC}/gnome && ${INSTALL_DATA} distccmon-gnome-icon.png \
 	    ${STAGEDIR}${PREFIX}/share/pixmaps
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN_FILES} \
+	    ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${README_FILES} \
 	    ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOC_FILES} \
 	    ${STAGEDIR}${DOCSDIR}
-.endif
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN_FILES} \
-	    ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

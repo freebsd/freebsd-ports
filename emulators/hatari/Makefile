@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hatari
-PORTVERSION=	1.9.0
+PORTVERSION=	2.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libpng.so:graphics/png
+BUILD_DEPENDS=	python:lang/python
+RUN_DEPENDS=	python:lang/python
 
 USES=		cmake desktop-file-utils python readline shared-mime-info \
 		shebangfix tar:bzip2
@@ -24,6 +26,9 @@ CMAKE_ARGS=	-DETCDIR:PATH="${PREFIX}/etc" \
 		-DMANDIR:PATH="man/man1" \
 		-DREADLINE_FOUND:BOOL=ON
 INSTALLS_ICONS=	yes
+
+BROKEN_aarch64=		Fails to configure: error: unrecognized CPU type
+BROKEN_armv6=		Fails to configure: CMake Error: Generator: execution of make failed
 
 OPTIONS_DEFINE=		DEBUG DOCS SDL2 WINUAE
 

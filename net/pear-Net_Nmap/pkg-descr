@@ -6,4 +6,4 @@ Net_Nmap can be used to auto discovery hosts
 and services in your network or simply to
 parse Nmap XML output.
 
-WWW: http://pear.php.net/package/Net_Nmap/
+WWW: https://pear.php.net/package/Net_Nmap

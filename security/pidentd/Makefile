@@ -19,7 +19,7 @@ COMMENT=	RFC1413 identification server
 CONFLICTS_INSTALL=	fakeident-[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
+USES=		ssl
 
 PLIST_FILES=	sbin/ibench sbin/identd sbin/idecrypt sbin/ikeygen \
 		man/man8/identd.8.gz man/man8/idecrypt.8.gz

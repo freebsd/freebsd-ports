@@ -4,8 +4,7 @@
 PORTNAME=	pathneck
 PORTVERSION=	1.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.cs.cmu.edu/~hnn/pathneck/ \
-		http://gs274.sp.cs.cmu.edu/www/pathneck/
+MASTER_SITES=	http://www.cs.cmu.edu/~hnn/pathneck/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Active network path probing tool

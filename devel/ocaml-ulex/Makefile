@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cduce.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lexer generator for Unicode and OCaml
 
 USES=		gmake

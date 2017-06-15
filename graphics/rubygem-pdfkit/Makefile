@@ -10,11 +10,11 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Uses wkhtmltopdf to create PDFs using HTML
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	wkhtmltopdf:converters/wkhtmltopdf
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

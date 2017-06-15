@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTFILES=	33194-${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple utility to manipulate PS and PDF files
 
 RUN_DEPENDS=	convert:graphics/ImageMagick

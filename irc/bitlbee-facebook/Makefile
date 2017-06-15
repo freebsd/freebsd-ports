@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee-facebook
-PORTVERSION=	1.0.0
-PORTEPOCH=	1
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=v
+PORTEPOCH=	1
 CATEGORIES=	irc
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -16,11 +16,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 BUILD_DEPENDS=	bitlbee:irc/bitlbee
 
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf gettext-runtime libtool pkgconfig
+USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	jgeboski
+GH_ACCOUNT=	bitlbee
 
 MAKE_JOBS_UNSAFE=	yes
 

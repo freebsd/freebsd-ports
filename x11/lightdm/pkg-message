@@ -1,0 +1,2 @@
+For lightdm to function, it requires one of the available greeters to be
+installed, which are available in the ports tree at x11/lightdm-*greeter*

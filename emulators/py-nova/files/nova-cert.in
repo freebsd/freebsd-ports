@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: nova_cert
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable nova_cert:
+#
+# nova_cert_enable="YES"
+#
+# nova_cert_enable (bool):
+#	Set it to "YES" to enable nova_cert.
+# 	Default is "NO".
+#
+# nova_cert_logdir (str):
+#	Set it to chagge log directory
+#	Default is "/var/log/nova"
+#
+# nova_cert_args (str):
+#	Set it to change command line arguments.
+#	Default is "--log-file ${nova_cert_logdir}/nova-cert.log"
+#
+
+. /etc/rc.subr
+
+name=nova_cert
+rcvar=nova_cert_enable
+
+PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
+
+pidfile="/var/run/nova-cert.pid"
+procname="%%PREFIX%%/bin/python2.7"
+
+start_precmd=nova_precmd
+
+load_rc_config $name
+
+: ${nova_cert_enable:="NO"}
+: ${nova_cert_logdir:="/var/log/nova"}
+: ${nova_cert_args:="--log-file ${nova_cert_logdir}/nova-cert.log"}
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} nova-cert ${nova_cert_args}"
+
+nova_precmd() {
+	mkdir -p ${nova_cert_logdir}
+}
+
+run_rc_command "$1"

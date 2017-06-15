@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	eyed3
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.10
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +14,6 @@ COMMENT=	Python module for processing ID3 tags
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}magic>0:devel/py-magic
 
 NO_ARCH=	yes
 USES=		python
@@ -28,7 +27,8 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	${REINPLACE_CMD} -e 's/bash/sh/g' ${WRKSRC}/bin/eyeD3
+	${REINPLACE_CMD} -e 's,bash,sh,g;s,python,${PYTHON_CMD},g' \
+		${WRKSRC}/bin/eyeD3
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

@@ -3,19 +3,23 @@
 
 PORTNAME=	xfe
 PORTVERSION=	1.42
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fast MS-Explorer like file manager for X
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
+LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libpng16.so:graphics/png
 
 USES=		desktop-file-utils gmake localbase pathfix
-USE_XORG=	xft
+USE_XORG=	x11 xft xrandr xrender
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 

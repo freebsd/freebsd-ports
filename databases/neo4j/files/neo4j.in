@@ -20,7 +20,7 @@ load_rc_config $name
 
 : ${neo4j_enable:=NO}
 
-command=%%PREFIX%%/libexec/neo4j
+command=%%PREFIX%%/libexec/neo4j/neo4j
 start_cmd="$command start"
 start_precmd=neo4j_prestart
 stop_cmd="$command stop"

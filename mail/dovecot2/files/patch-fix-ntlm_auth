@@ -1,0 +1,36 @@
+From a319c3201bff1ea7bae3e7ab1fae42e9c4759056 Mon Sep 17 00:00:00 2001
+From: Andriy Syrovenko <andriys@gmail.com>
+Date: Mon, 17 Apr 2017 01:14:02 +0300
+Subject: [PATCH] auth: Fixed dovecot/auth hanging when child ntlm_auth crashes
+ while processing an authentication request
+
+---
+ src/auth/mech-winbind.c | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/src/auth/mech-winbind.c b/src/auth/mech-winbind.c
+index 4a65696..c12fb5e 100644
+--- src/auth/mech-winbind.c
++++ src/auth/mech-winbind.c
+@@ -187,12 +187,18 @@ do_auth_continue(struct auth_request *auth_request,
+ 	request->continued = FALSE;
+ 
+ 	while ((answer = i_stream_read_next_line(in_pipe)) == NULL) {
+-		if (in_pipe->stream_errno != 0)
++		if (in_pipe->stream_errno != 0 || in_pipe->eof)
+ 			break;
+ 	}
+ 	if (answer == NULL) {
+-		auth_request_log_error(auth_request, AUTH_SUBSYS_MECH,
+-				       "read(in_pipe) failed: %m");
++		if (in_pipe->stream_errno != 0) {
++			auth_request_log_error(auth_request, AUTH_SUBSYS_MECH,
++					       "read(in_pipe) failed: %m");
++		} else {
++			auth_request_log_error(auth_request, AUTH_SUBSYS_MECH,
++					       "read(in_pipe) failed: "
++					       "unexpected end of file");
++		}
+ 		return HR_RESTART;
+ 	}
+ 

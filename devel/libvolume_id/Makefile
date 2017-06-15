@@ -9,9 +9,11 @@ MASTER_SITES=	http://www.marcuscom.com/downloads/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to provide file system type information
 
+LICENSE=	GPLv2
+
 USES=		gmake tar:bzip2
 USE_LDCONFIG=	yes
-MAKE_ENV=	E=${ECHO_MSG} RANLIB=${RANLIB} AR=${AR} Q=@ \
+MAKE_ENV=	E=@${TRUE} RANLIB=${RANLIB} AR=${AR} Q= \
 		prefix=${PREFIX}
 
 PLIST_FILES=	include/libvolume_id.h \
@@ -21,7 +23,7 @@ PLIST_FILES=	include/libvolume_id.h \
 		libdata/pkgconfig/libvolume_id.pc
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/libvolume_id.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libvolume_id.pc
 	${INSTALL_DATA} ${WRKSRC}/libvolume_id.h ${STAGEDIR}${PREFIX}/include/libvolume_id.h
 	${INSTALL_DATA} ${WRKSRC}/libvolume_id.a ${STAGEDIR}${PREFIX}/lib/libvolume_id.a

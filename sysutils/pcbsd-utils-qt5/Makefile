@@ -3,7 +3,7 @@
 
 PORTNAME=	pcbsd-utils-qt5
 PORTVERSION=	1444236547
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -43,12 +43,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
 GH_PROJECT=	pcbsd
 GH_TAGNAME=	3c4d2b
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000000
-IGNORE=		requires FreeBSD 10 or later
-.endif
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/share/pcbsd/doc/html -type f | \

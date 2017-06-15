@@ -25,14 +25,13 @@ CONFIGURE_ARGS=	--disable-fatal-warnings \
 		--with-initdir=${PREFIX}/etc/rc.d \
 		--with-ocf-root=${PREFIX}/etc/ocf
 INSTALL_TARGET=	install-strip
-USES=		autoreconf gettext gmake libtool localbase perl5 pkgconfig python shebangfix tar:bz2
+USES=		autoreconf gettext gmake libtool localbase perl5 pkgconfig python shebangfix tar:bz2 ssl
 SHEBANG_FILES=	lib/plugins/stonith/external/ibmrsa-telnet \
 		lib/plugins/stonith/external/vmware \
 		lib/plugins/stonith/external/xen0-ha.in \
 		lib/plugins/stonith/external/xen0-ha-dom0-stonith-helper
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	ha_logd
 WRKSRC=		${WRKDIR}/Reusable-Cluster-Components-glue--${DISTNAME}
 

@@ -1,0 +1,11 @@
+--- sql/CMakeLists.txt.orig	2016-08-25 11:52:06 UTC
++++ sql/CMakeLists.txt
+@@ -24,6 +24,8 @@ INCLUDE_DIRECTORIES(
+   ${ZLIB_INCLUDE_DIR}
+   ${SSL_INCLUDE_DIRS}
+   ${CMAKE_BINARY_DIR}/sql
++  ${CMAKE_BINARY_DIR}/include
++  ${CMAKE_BINARY_DIR}
+   ${LZ4_INCLUDE_DIR}
+ )
+ 

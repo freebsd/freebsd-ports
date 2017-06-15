@@ -1,0 +1,83 @@
+build: don't force SSE2/AVX, enable at runtime instead
+
+--- CMakeLists.txt.orig	2016-12-07 13:47:54 UTC
++++ CMakeLists.txt
+@@ -16,8 +16,6 @@ include(CheckCXXCompilerFlag)
+ # the CMake policies in this file
+ include(${CMAKE_SOURCE_DIR}/cmake/CMakeHelper.cmake NO_POLICY_SCOPE)
+ 
+-include(${CMAKE_SOURCE_DIR}/cmake/CheckSSEExtensions.cmake)
+-
+ if(EXISTS ${CMAKE_SOURCE_DIR}/LocalConfig.cmake)
+     include(${CMAKE_SOURCE_DIR}/LocalConfig.cmake)
+ endif()
+@@ -29,6 +27,7 @@ endif()
+ 
+ enable_testing()
+ 
++option(SIMD_ENABLED "Wether to enable SIMD optimizations" ON)
+ option(OPENMP_ENABLED "Whether to enable OpenMP" ON)
+ option(LTO_ENABLED "Whether to enable link-time optimization" ON)
+ option(CUDA_ENABLED "Whether to enable CUDA, if available" ON)
+--- src/ext/VLFeat/CMakeLists.txt.orig	2016-12-07 13:47:54 UTC
++++ src/ext/VLFeat/CMakeLists.txt
+@@ -1,8 +1,27 @@
+-if(IS_MSVC OR NOT HAS_AVX_EXTENSION)
+-    add_definitions(-DVL_DISABLE_AVX)
++set(VLFEAT_SOURCE_FILES)
++
++if(CMAKE_SYSTEM_PROCESSOR MATCHES "[ix].?86|amd64|AMD64")
++    set(IS_X86 TRUE)
+ endif()
+ 
+-if(IS_MSVC OR NOT HAS_SSE2_EXTENSION)
++if(SIMD_ENABLED AND IS_X86 AND NOT IS_MSVC)
++    set(SSE2_SOURCES
++        imopv_sse2.c
++        imopv_sse2.h
++        mathop_sse2.c
++        mathop_sse2.h)
++    set(AVX_SOURCES
++        mathop_avx.c
++        mathop_avx.h)
++
++    list(APPEND VLFEAT_SOURCE_FILES ${AVX_SOURCES} ${SSE2_SOURCES})
++
++    set_source_files_properties(${AVX_SOURCES}
++        PROPERTIES COMPILE_FLAGS "-mavx")
++    set_source_files_properties(${SSE2_SOURCES}
++        PROPERTIES COMPILE_FLAGS "-msse2")
++else()
++    add_definitions(-DVL_DISABLE_AVX)
+     add_definitions(-DVL_DISABLE_SSE2)
+ endif()
+ 
+@@ -10,7 +29,7 @@ if(NOT OPENMP_ENABLED OR NOT OPENMP_FOUN
+     add_definitions(-DVL_DISABLE_OPENMP)
+ endif()
+ 
+-set(VLFEAT_SOURCE_FILES
++list(APPEND VLFEAT_SOURCE_FILES
+     aib.c
+     aib.h
+     array.c
+@@ -44,8 +63,6 @@ set(VLFEAT_SOURCE_FILES
+     ikmeans_lloyd.tc
+     imopv.c
+     imopv.h
+-    imopv_sse2.c
+-    imopv_sse2.h
+     kdtree.c
+     kdtree.h
+     kmeans.c
+@@ -56,10 +73,6 @@ set(VLFEAT_SOURCE_FILES
+     liop.h
+     mathop.c
+     mathop.h
+-    mathop_avx.c
+-    mathop_avx.h
+-    mathop_sse2.c
+-    mathop_sse2.h
+     mser.c
+     mser.h
+     pgm.c

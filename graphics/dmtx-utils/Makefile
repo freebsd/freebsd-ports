@@ -3,19 +3,21 @@
 
 PORTNAME=	dmtx-utils
 PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/libdmtx/libdmtx/${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Software for reading and writing Data Matrix barcodes
 
-LIB_DEPENDS=	libdmtx.so:graphics/libdmtx
+LICENSE=	LGPL21+
 
-USES=		tar:bzip2 pkgconfig
+LIB_DEPENDS=	libdmtx.so:graphics/libdmtx \
+		libMagickWand-6.so:graphics/ImageMagick \
+		libMagickCore-6.so:graphics/ImageMagick
+
+USES=		localbase tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-
 PLIST_FILES=	bin/dmtxread bin/dmtxwrite bin/dmtxquery \
 		man/man1/dmtxread.1.gz man/man1/dmtxwrite.1.gz \
 		man/man1/dmtxquery.1.gz

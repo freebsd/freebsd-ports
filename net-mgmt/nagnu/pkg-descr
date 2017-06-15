@@ -1,0 +1,4 @@
+Nagnu is a curses/terminal based dashboard for nagios showing current
+status of hosts and services.
+
+WWW: https://github.com/frlen/nagnu

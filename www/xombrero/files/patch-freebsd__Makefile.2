@@ -1,0 +1,32 @@
+--- freebsd/Makefile.old	2016-12-25 23:58:00.917123000 +0300
++++ freebsd/Makefile	2016-12-25 23:58:00.917136000 +0300
+@@ -20,6 +20,11 @@
+ 
+ CC?= cc
+ 
++PARENT_OBJS= \
++	../xombrero.o freebsd.o ../marco.o ../about.o ../inspector.o ../whitelist.o \
++	../settings.o ../cookie.o ../history.o ../completion.o ../inputfocus.o ../tldlist.o \
++	../externaleditor.o ../unix.o
++
+ all: ../javascript.h ../tooltip.h xombrero
+ 
+ ../javascript.h: ../js-merge-helper.pl ../hinting.js ../autoscroll.js
+@@ -57,11 +62,13 @@
+ 
+ tldlist.o: ../tldlist.o
+ 
+-../xombrero.o: ../javascript.h ../tooltip.h
++../settings.o: ../tooltip.h
+ 
+-xombrero: ../xombrero.o freebsd.o ../marco.o ../about.o ../inspector.o ../whitelist.o \
+-	../settings.o ../cookie.o ../history.o ../completion.o ../inputfocus.o ../tldlist.o \
+-	../externaleditor.o ../unix.o
++$(PARENT_OBJS): ../xombrero.h
++
++../xombrero.h: ../javascript.h
++
++xombrero: freebsd.o $(PARENT_OBJS)
+ 	$(CC) $(LDFLAGS) -o $@ ${.ALLSRC} $(LDADD)
+ 
+ install: all

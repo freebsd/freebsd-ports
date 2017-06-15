@@ -13,10 +13,10 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.25
-PORTREVISION=	5
+PORTVERSION=	2.2.29.1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
+MASTER_SITES=	https://www.dovecot.org/releases/${PORTVERSION:R:R}/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -72,31 +72,24 @@ GSSAPI_BASE_DESC=	Use GSSAPI from base
 GSSAPI_HEIMDAL_DESC=	Use Heimdal GSSAPI from security/heimdal
 GSSAPI_MIT_DESC=	Use MIT GSSAPI from security/krb5
 
-CDB_CONFIGURE_WITH=	cdb
-CDB_LIB_DEPENDS=	libcdb.so:databases/tinycdb
-
-GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
-GSSAPI_NONE_CONFIGURE_OFF=	--with-gssapi ${GSSAPI_CONFIGURE_ARGS}
-GSSAPI_BASE_USES=		gssapi
-GSSAPI_HEIMDAL_USES=		gssapi:heimdal
-GSSAPI_MIT_USES=		gssapi:mit
-
-ICU_CONFIGURE_WITH=	icu
-ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
-ICU_USES=		pkgconfig
-
+# General options
 KQUEUE_CONFIGURE_OFF=	--with-ioloop=poll --with-notify=none
 KQUEUE_CONFIGURE_ON=	--with-ioloop=kqueue --with-notify=kqueue
 
-LDAP_USE=		OPENLDAP=yes
-LDAP_CONFIGURE_WITH=	ldap
-
 LIBWRAP_CONFIGURE_WITH=	libwrap
 
-LUCENE_CONFIGURE_WITH=	lucene
-LUCENE_LIB_DEPENDS=	libclucene-core.so:textproc/clucene
-
+LZ4_CONFIGURE_WITH=	lz4
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+
+VPOPMAIL_BUILD_DEPENDS=	vpopmail>=0:mail/vpopmail
+VPOPMAIL_CONFIGURE_WITH=vpopmail
+
+# Databases
+CDB_CONFIGURE_WITH=	cdb
+CDB_LIB_DEPENDS=	libcdb.so:databases/tinycdb
+
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_WITH=	ldap
 
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	mysql
@@ -104,18 +97,30 @@ MYSQL_CONFIGURE_WITH=	mysql
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	pgsql
 
-SOLR_CONFIGURE_WITH=	solr
-SOLR_BUILD_DEPENDS=	curl:ftp/curl
-SOLR_LIB_DEPENDS=	libexpat.so:textproc/expat2
-
 SQLITE_USES=		sqlite:3
 SQLITE_CONFIGURE_WITH=	sqlite
+
+# FTS
+ICU_CONFIGURE_WITH=	icu
+ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
+ICU_USES=		pkgconfig
+
+LUCENE_CONFIGURE_WITH=	lucene
+LUCENE_LIB_DEPENDS=	libclucene-core.so:textproc/clucene
+
+SOLR_CONFIGURE_WITH=	solr
+SOLR_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			libexpat.so:textproc/expat2
 
 TEXTCAT_CONFIGURE_WITH=	textcat
 TEXTCAT_LIB_DEPENDS=	libtextcat.so:textproc/libtextcat
 
-VPOPMAIL_BUILD_DEPENDS=	${LOCALBASE}/vpopmail/bin/vchkpw:mail/vpopmail
-VPOPMAIL_CONFIGURE_WITH=vpopmail
+# GSSAPI
+GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
+GSSAPI_NONE_CONFIGURE_OFF=	--with-gssapi ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_BASE_USES=		gssapi
+GSSAPI_HEIMDAL_USES=		gssapi:heimdal
+GSSAPI_MIT_USES=		gssapi:mit
 
 DOCS=		AUTHORS COPYING COPYING.LGPL COPYING.MIT INSTALL NEWS TODO README
 PORTDOCS=	*
@@ -128,17 +133,8 @@ LDAP_VARS=	_REQUIRE+=slapd
 MYSQL_VARS=	_REQUIRE+=mysql
 PGSQL_VARS=	_REQUIRE+=postgresql
 
-.include <bsd.port.options.mk>
-
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 SUB_FILES+=	pkg-message
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000011
-USES+=		compiler:c11
-WITH_OPENSSL_PORT=	yes
-.endif
-
-.include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
@@ -156,13 +152,13 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^[^#]/s|/usr|${LOCALBASE}|' \
 		${WRKSRC}/src/plugins/fts/decode2text.sh
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
-
-post-install-EXAMPLES-on:
+post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${MV} ${STAGEDIR}${DOCSDIR}/dovecot-openssl.cnf ${STAGEDIR}${EXAMPLESDIR}
 	${MV} ${STAGEDIR}${DOCSDIR}/mkcert.sh ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>

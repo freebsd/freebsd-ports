@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfwinreg
-PORTVERSION=	20160428
+PORTVERSION=	20170301
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfwinreg/releases/download/${PORTVERSION}/ \
 		CHEESESHOP

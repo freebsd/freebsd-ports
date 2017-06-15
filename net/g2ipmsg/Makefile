@@ -3,7 +3,7 @@
 
 PORTNAME=	g2ipmsg
 PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	http://ipmsg.org/archive/
 
@@ -12,10 +12,9 @@ COMMENT=	Popup style message communication tool for GNOME2
 
 LICENSE=	GPLv2+
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig ssl
 USE_GNOME=	gnomeprefix intltool libgnomeui
 USE_GSTREAMER=	vorbis
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen-doc \
 		--enable-systray \

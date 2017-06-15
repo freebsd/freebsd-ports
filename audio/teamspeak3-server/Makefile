@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.13.4
+PORTVERSION=	3.0.13.6
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://dl.4players.de/ts/releases/${PORTVERSION}/ \
@@ -17,17 +17,11 @@ LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
-BROKEN_FreeBSD_11=Will not start on 11, Bug 212493
-
 USES=		tar:bz2
 NO_BUILD=	yes
 USE_LDCONFIG=	${LIBDIR}
 USE_RC_SUBR=	teamspeak
 SUB_FILES=	pkg-message
-
-# see release note
-# http://forum.teamspeak.com/threads/123250-TeamSpeak-3-Server-3-0-12-3-released
-BROKEN_FreeBSD_9=	No longer starts on 9.x
 
 RESTRICTED=	No redistribution
 ONLY_FOR_ARCHS=	amd64 i386
@@ -49,6 +43,10 @@ SUB_LIST+=	DBDIR=${DBDIR} \
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000 && ${OSVERSION} < 1100507
+BROKEN=	Will not start on FreeBSD 11, Bug 212493
+.endif
 
 .if ${ARCH} ==	"i386"
 TEAMSPEAK_ARCH=	x86

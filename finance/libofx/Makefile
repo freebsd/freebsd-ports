@@ -2,21 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	libofx
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	0.9.11
 CATEGORIES=	finance
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml++-2.6.so:textproc/libxml++26 \
 		libosp.so:textproc/opensp
 
-USES=		gmake iconv pkgconfig pathfix libtool
+USES=		gettext-runtime gmake iconv libtool localbase pathfix pkgconfig
+USE_GNOME=	glib20 glibmm libsigc++20 libxml2
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP \
 		--with-opensp-libs=${LOCALBASE}/lib
@@ -25,12 +26,9 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${RM} -f ${STAGEDIR}${DOCSDIR}/COPYING
+	${RM} ${STAGEDIR}${DOCSDIR}/COPYING
 
 .include <bsd.port.mk>

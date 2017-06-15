@@ -2,86 +2,89 @@
 # $FreeBSD$
 
 PORTNAME=	inkscape
-PORTVERSION=	0.91
-PORTREVISION=	8
+PORTVERSION=	0.92.0
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	https://inkscape.global.ssl.fastly.net/media/resources/file/ \
+MASTER_SITES=	https://media.inkscape.org/dl/resources/file/ \
 		LOCAL/kwm
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
+
+LICENSE=	GPLv2+ GPLv3+ LGPL21 MPL
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/GPL2.txt
+LICENSE_FILE_GPLv3=	${WRKSRC}/GPL3.txt
+LICENSE_FILE_LGPL2=	${WRKRSC}/LGPL2.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libgc.so:devel/boehm-gc \
 		libgsl.so:math/gsl \
 		libgtkspell.so:textproc/gtkspell \
-		liblcms.so:graphics/lcms \
+		liblcms2.so:graphics/lcms2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libpotrace.so:graphics/libpotrace \
 		libpng.so:graphics/png \
 		libMagick++-6.so:graphics/ImageMagick
+#aspell?
 #RUN_DEPENDS=	p5-XML-XQL>=0:textproc/p5-XML-XQL
 
-USE_GNOME=	gtkmm24 intlhack libxslt
-USES=		compiler:c++11-lib cpe desktop-file-utils gettext gmake iconv \
-		libtool pathfix perl5 pkgconfig python:run shebangfix tar:bzip2
-GNU_CONFIGURE=	yes
+USE_GNOME=	gtkmm24 libxslt
+USES=		compiler:c++11-lib cmake cpe desktop-file-utils \
+		gmake iconv jpeg pathfix perl5 pkgconfig python:2 \
+		shebangfix tar:bzip2
+USE_XORG=	x11
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--without-gnome-vfs
+CMAKE_ARGS+=	-DWITH_GNOME_VFS:BOOL=NO
 
 python_CMD?=	${LOCALBASE}/bin/python2
 SHEBANG_FILES=	cxxtest/cxxtestgen.pl share/extensions/*.p[lm] \
-		share/extensions/*.py share/extensions/genpofiles.sh
+		share/extensions/*.py share/extensions/genpofiles.sh \
+		fix-roff-punct
 
-OPTIONS_DEFINE=	POPPLER OPENMP VISIO CDR DBUS WPG
+OPTIONS_DEFINE=	POPPLER VISIO CDR DBUS WPG
 OPTIONS_DEFAULT=POPPLER VISIO CDR WPG
 OPTIONS_SUB=	yes
 
 CDR_DESC=		Support for CorelDRAW diagrams
-CDR_CONFIGURE_ENABLE=	cdr
+CDR_CMAKE_BOOL=		WITH_LIBCDR
 CDR_LIB_DEPENDS=	librevenge-stream-0.0.so:textproc/librevenge \
 			libcdr-0.1.so:graphics/libcdr01
 
-DBUS_CONFIGURE_ENABLE=	dbusapi
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+DBUS_CMAKE_BOOL=	WITH_DBUS
+DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+			libdbus-1.so:devel/dbus
 
-OPENMP_USES=		compiler:openmp
-OPENMP_USES_OFF=	compiler:features
+#OPENMP_USES=		compiler:openmp
+#OPENMP_USES_OFF=	compiler:c++11-lib
+#OPENMP_CMAKE_BOOL=	WITH_OPENMP
+CMAKE_ARGS+=		-DWITH_OPENMP:BOOL=NO
 
 POPPLER_DESC=		PDF preview rendering
-POPPLER_CONFIGURE_ENABLE=	poppler-cairo
-POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
+POPPLER_CMAKE_BOOL=	ENABLE_POPPLER ENABLE_POPPLER_CAIRO
+POPPLER_LIB_DEPENDS=	libpoppler.so:graphics/poppler \
+			libpoppler-glib.so:graphics/poppler-glib
 
 VISIO_DESC=		Support for Microsoft Visio diagrams
-VISIO_CONFIGURE_ENABLE=	visio
+VISIO_CMAKE_BOOL=	WITH_LIBVISIO
 VISIO_LIB_DEPENDS=	librevenge-stream-0.0.so:textproc/librevenge \
 			libvisio-0.1.so:textproc/libvisio01
 
 WPG_DESC=		Support for WordPerfect graphics
-WPG_CONFIGURE_ENABLE=	wpg
+WPG_CMAKE_BOOL=		WITH_LIBWPG
 WPG_LIB_DEPENDS=	libwpg-0.3.so:graphics/libwpg03
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == clang
-CPPFLAGS+=	-Wno-mismatched-tags -Wno-unknown-attributes
-.endif
-
-# Base clang 3.4.1 in FreeBSD 9.3 fails to compile this code on i386
-# but base clang 3.4.1 in FreeBSD 10.1 succeeds.  The difference *appears*
-# to be the patch applied in r271597 (head) / r271739 (stable/10).  The
-# latter happened shortly before 10.1 was branched.
-.if ${ARCH} == i386 && ${OPSYS} == FreeBSD && ${OSVERSION} < 1001000 && \
-    ( ${COMPILER_TYPE} == clang || ${ALT_COMPILER_TYPE} == clang )
-BUILD_DEPENDS+=	clang34:lang/clang34
-CPP=    ${LOCALBASE}/bin/clang-cpp34
-CC=     ${LOCALBASE}/bin/clang34
-CXX=    ${LOCALBASE}/bin/clang++34
-.endif
+# temporary until the build works for the !NLS case
+USES+=			gettext
+#NLS_CMAKE_BOOL=		WITH_NLS
+#NLS_USES=		gettext
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl||g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|COMMAND python|COMMAND python2|g' \
+		${WRKSRC}/share/*/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

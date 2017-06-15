@@ -53,11 +53,11 @@ do-install:
 	${MKDIR} ${STAGEDIR}/${DATADIR}/lang
 	cd ${WRKSRC}/lang && \
 	${FIND} . -type f -regex '.*\.lng' -exec \
-		${INSTALL_DATA} "{}" "${STAGEDIR}/${DATADIR}/lang/{}" \;
+		${INSTALL_DATA} {} "${STAGEDIR}/${DATADIR}/lang/{}" \;
 	${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}
 	cd ${WRKSRC}/ip2name && \
 	${FIND} . -type f -exec \
-		${INSTALL_DATA} "{}" "${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/{}" \;
+		${INSTALL_DATA} {} "${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/{}" \;
 	${MKDIR} ${STAGEDIR}/${ETCDIR}
 .for i in ${CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}/${ETCDIR}/${i}.sample
@@ -68,10 +68,10 @@ do-install:
 	${FIND} . -type d ! -empty -exec \
 		${MKDIR} "${STAGEDIR}/${WWWDIR}/tpl/{}" \; && \
 	${FIND} . -type f -exec \
-		${INSTALL_DATA} "{}" "${STAGEDIR}/${WWWDIR}/tpl/{}" \;
+		${INSTALL_DATA} {} "${STAGEDIR}/${WWWDIR}/tpl/{}" \;
 	cd ${WRKSRC} && \
 	${FIND} -E . -maxdepth 1 -regex '.*\.(cgi|pl)' -exec \
-		${INSTALL_SCRIPT} "{}" "${STAGEDIR}/${WWWDIR}/{}" \; && \
+		${INSTALL_SCRIPT} {} "${STAGEDIR}/${WWWDIR}/{}" \; && \
 		${INSTALL_DATA} .htaccess ${STAGEDIR}/${WWWDIR}/
 
 do-install-DOCS-on:
@@ -80,4 +80,10 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}/${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 502200
+RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
+.endif
+
+.include <bsd.port.post.mk>

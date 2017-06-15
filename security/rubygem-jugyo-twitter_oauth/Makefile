@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-json>=1.1.9:devel/rubygem-json \
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-GEM_NAME=	${PORTNAME}-${DISTVERSION}
 USES=		gem
 
 .include <bsd.port.mk>

@@ -6,12 +6,14 @@ PORTVERSION=	0.11.8.3.2
 CATEGORIES=	net-im irc
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	j@scre.ws
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 GNU_CONFIGURE=	yes
 USES=		ncurses tar:bzip2

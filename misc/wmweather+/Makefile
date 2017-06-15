@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wmweather+
-PORTVERSION=	2.15
-PORTREVISION=	4
+PORTVERSION=	2.16
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	SF/wmweatherplus/wmweather%2B/ \
 		SF/nemysisfreebsdp/misc/:icons
@@ -11,7 +10,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Displays current conditions and forecasts with icons and text
 
 LICENSE=	GPLv2+

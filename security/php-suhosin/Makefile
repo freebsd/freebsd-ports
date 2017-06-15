@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	EXAMPLES
 
 USES=		php:ext
 USE_PHP=	session:build
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--enable-suhosin
 

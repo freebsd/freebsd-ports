@@ -1,9 +1,3 @@
-bin/wdns-dump-file
-bin/wdns-dump-pcap
-bin/wdns-test-deserialize-rrset
-bin/wdns-test-downcase-rrset
-bin/wdns-test-print-message
-bin/wdns-test-serialize-rrset
 include/wdns.h
 lib/libwdns.a
 lib/libwdns.so

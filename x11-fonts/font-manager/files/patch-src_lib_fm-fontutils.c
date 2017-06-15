@@ -1,5 +1,5 @@
---- src/lib/fm-fontutils.c~	2010-12-23 21:48:30.000000000 -0600
-+++ src/lib/fm-fontutils.c	2012-05-30 17:04:54.303401685 -0500
+--- src/lib/fm-fontutils.c.orig	2015-05-29 06:45:34 UTC
++++ src/lib/fm-fontutils.c
 @@ -24,6 +24,7 @@
  #include <glib.h>
  #include <glib/gprintf.h>

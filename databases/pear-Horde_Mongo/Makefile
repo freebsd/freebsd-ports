@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Mongo
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	databases www pear
 PKGNAMEPREFIX=	pear-
 

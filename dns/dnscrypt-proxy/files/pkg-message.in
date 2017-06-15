@@ -4,8 +4,8 @@ This port/software comes all 'working out of the box'.
 By default this port is using OpenDNS' resolvers, other services are possible.
 
 To enable dnscrypt-proxy at boot:
-echo dnscrypt_proxy_enable=\"YES\" >> /etc/rc.conf
-echo dnscrypt_proxy_flags=\"-a 127.0.0.2\" >> /etc/rc.conf
+sysrc dnscrypt_proxy_enable=YES
+sysrc dnscrypt_proxy_flags='-a 127.0.0.2'
 
 To view available options, run:
 %%PREFIX%%/sbin/dnscrypt-proxy --help

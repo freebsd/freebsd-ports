@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jose
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	security
 PKGNAMEPREFIX=	elixir-
 
@@ -15,6 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	potatosalad
 GH_PROJECT=	erlang-jose
 DOCSDIR=	${PREFIX}/share/doc/elixir-${PORTNAME}
+NO_ARCH=	yes
 
 MIX_BUILD_DEPS=	converters/erlang-base64url \
 		security/erlang-jose

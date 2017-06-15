@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	4.5.3
+PORTVERSION=	4.7.4
 DISTVERSIONSUFFIX=	-zh_CN
 CATEGORIES=	chinese www
 MASTER_SITES=	http://cn.wordpress.org/
@@ -47,7 +47,7 @@ pre-install:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
-	${FIND} ${STAGEDIR}${WWWDIR}/ -type d -exec ${CHMOD} g+w '{}' \;
+	${FIND} ${STAGEDIR}${WWWDIR}/ -type d -exec ${CHMOD} g+w {} \;
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

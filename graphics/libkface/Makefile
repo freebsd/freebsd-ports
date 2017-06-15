@@ -2,6 +2,7 @@
 
 PORTNAME=	libkface
 PORTVERSION=	${KDE4_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/${KDE4_APPLICATIONS_BRANCH}/applications/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -12,7 +13,7 @@ COMMENT=	KDE4 library for face recognition
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv
+LIB_DEPENDS=	libopencv_legacy.so:graphics/opencv2
 
 USES=		cmake:outsource kde:4 pathfix pkgconfig tar:xz
 USE_KDE=	kdelibs automoc4 marble

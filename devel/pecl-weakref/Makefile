@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	pecl-
 DISTNAME=	Weakref-${PORTVERSION}
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PECL Weakref extension
 
 LICENSE=	PHP301

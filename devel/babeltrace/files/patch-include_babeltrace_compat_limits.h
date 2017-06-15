@@ -1,15 +1,10 @@
---- include/babeltrace/compat/limits.h.orig	2016-07-28 12:52:51 UTC
+--- include/babeltrace/compat/limits.h.orig	2016-11-30 13:02:44 UTC
 +++ include/babeltrace/compat/limits.h
-@@ -29,10 +29,11 @@
+@@ -31,6 +31,7 @@
  
- #define BABELTRACE_HOST_NAME_MAX HOST_NAME_MAX
- 
-+/*
  #elif defined(__FreeBSD__)
  
++#include <sys/param.h>
  #define BABELTRACE_HOST_NAME_MAX MAXHOSTNAMELEN
--
-+*/
- #elif defined(_POSIX_HOST_NAME_MAX)
  
- #define BABELTRACE_HOST_NAME_MAX _POSIX_HOST_NAME_MAX
+ #elif defined(_POSIX_HOST_NAME_MAX)

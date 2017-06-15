@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	default_assign
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	www
 PKGNAMEPREFIX=	redmine-
 

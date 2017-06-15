@@ -19,7 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 post-install:
 .for f in libitl.so libitl.so.0
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/itl/$f
+	${RM} ${STAGEDIR}${PREFIX}/lib/itl/$f
 	${LN} -s libitl.so.0.0.7 ${STAGEDIR}${PREFIX}/lib/itl/$f
 .endfor
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/itl/libitl.so

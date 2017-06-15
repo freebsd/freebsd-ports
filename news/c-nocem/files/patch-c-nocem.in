@@ -1,12 +1,12 @@
---- c-nocem.in.orig	2000-05-23 11:39:01.000000000 +0200
-+++ c-nocem.in	2013-09-23 20:20:58.000000000 +0200
+--- c-nocem.in.orig	2000-05-23 09:39:01 UTC
++++ c-nocem.in
 @@ -1,4 +1,4 @@
 -#!@PERL@ -w
 +#!@PERL@
  # and once again for Emacs: -*-perl-*-
  
  # NoCeM in the spool for C News and INN - grand unified program
-@@ -30,9 +30,9 @@
+@@ -30,9 +30,9 @@ $tmp="@newstmp@"; # create this director
  $logfile="@newslogfile@";
  $ENV{'PATH'}="@newspath@";
  

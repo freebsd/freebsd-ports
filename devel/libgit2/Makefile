@@ -13,9 +13,8 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	libgit2
 
-USES=		cmake pkgconfig python:build
+USES=		cmake pathfix pkgconfig python:build ssl
 USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_VER=${PORTVERSION:R:E}
 
@@ -33,13 +32,10 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CMAKE_ON=		-DCURL=ON
 CURL_CMAKE_OFF=		-DCURL=OFF
 
-BROKEN_sparc64=	does not install: thread-local storage not supported
-
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/pkgconfig|/../libdata/pkgconfig|; \
-		/LIBGIT2_PC_REQUIRES.*zlib/ d" ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e "/LIBGIT2_PC_REQUIRES.*zlib/ d" ${WRKSRC}/CMakeLists.txt
 .if ${SSL_DEFAULT} == base
 	@${REINPLACE_CMD} -e "/LIBGIT2_PC_REQUIRES.*openssl/ d" \
 		${WRKSRC}/CMakeLists.txt

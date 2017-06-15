@@ -27,7 +27,7 @@ RELDIR=		docbook/dsssl/modular
 INSTDIR=	${PREFIX}/share/sgml/${RELDIR}
 
 do-build:
-	${RM} -Rf ${WRKSRC}/docsrc
+	${RM} -R ${WRKSRC}/docsrc
 
 do-install:
 	${MKDIR} ${STAGEDIR}${INSTDIR}

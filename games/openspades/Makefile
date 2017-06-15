@@ -4,7 +4,7 @@
 PORTNAME=	openspades
 PORTVERSION=	0.0.12
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://yvt.jp/files/programs/osppaks/:data
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} DevPaks27.zip:data
@@ -17,8 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	convert:graphics/ImageMagick # for building icons
 LIB_DEPENDS=	libcurl.so:ftp/curl
-
-BROKEN_FreeBSD_9=	does not build on FreeBSD 9.x
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yvt
@@ -36,6 +34,8 @@ PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
+
+BROKEN_aarch64=		Fails to compile: unknown register name %xmm0 in asm
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/Resources/DevPak

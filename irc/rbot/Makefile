@@ -10,6 +10,11 @@ CATEGORIES=	irc ruby
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Ruby IRC bot similar to infobot
 
+LICENSE=	GPLv2 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/GPLv2
+LICENSE_FILE_MIT=	${WRKSRC}/COPYING.rbot
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tokyocabinet.so:databases/ruby-tokyocabinet \
 		rubygem-mechanize>=0:www/rubygem-mechanize \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
@@ -23,7 +28,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ruby-${PORTNAME}
-GH_TAGNAME=	545f21791ad804a52f6b7470403a1fa5a3976f5f
+GH_TAGNAME=	545f217
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
@@ -35,7 +40,7 @@ OPTIONS_DEFINE=	DOCS
 BROKEN_RUBY22=	yes
 BROKEN_RUBY23=	yes
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

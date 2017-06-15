@@ -1,4 +1,4 @@
---- lib/qemu/bswap.h.orig	2014-11-08 06:32:35 UTC
+--- lib/qemu/bswap.h.orig	2017-02-12 23:23:49 UTC
 +++ lib/qemu/bswap.h
 @@ -5,6 +5,9 @@
  

@@ -1,5 +1,5 @@
---- lib/xgethostname.c.orig	Tue Sep  4 00:51:26 2001
-+++ lib/xgethostname.c	Tue Sep  4 00:55:39 2001
+--- lib/xgethostname.c.orig	1999-08-28 17:11:35 UTC
++++ lib/xgethostname.c
 @@ -21,6 +21,7 @@
  # include <config.h>
  #endif
@@ -8,7 +8,7 @@
  #include <sys/types.h>
  
  #include <errno.h>
-@@ -38,7 +39,7 @@
+@@ -38,7 +39,7 @@ extern int errno;
  int gethostname ();
  
  #ifndef INITIAL_HOSTNAME_LENGTH
@@ -17,7 +17,7 @@
  #endif
  
  char *
-@@ -63,7 +64,7 @@
+@@ -63,7 +64,7 @@ xgethostname ()
        if (err == 0 && hostname[k] == '\0')
  	break;
  #ifdef ENAMETOOLONG

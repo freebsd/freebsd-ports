@@ -1,0 +1,13 @@
+--- arduino.orig	2017-03-06 20:47:44 UTC
++++ arduino
+@@ -15,8 +15,9 @@ done
+ export CLASSPATH
+ 
+ LD_LIBRARY_PATH=`pwd`/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
++
+ export LD_LIBRARY_PATH
+ 
+ export PATH="${APPDIR}/java/bin:${PATH}"
+ 
+-java -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel processing.app.Base "$@"
++java -Dgnu.io.rxtx.CheckLPT=false -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel processing.app.Base "$@"

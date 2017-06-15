@@ -1,0 +1,6 @@
+bin/dnscap
+lib/dnscap/pcapdump.a
+lib/dnscap/pcapdump.so
+lib/dnscap/txtout.a
+lib/dnscap/txtout.so
+man/man1/dnscap.1.gz

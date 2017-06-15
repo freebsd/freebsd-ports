@@ -12,7 +12,7 @@ COMMENT=	Shows information about Java class, dependencies, and more
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 post-patch:

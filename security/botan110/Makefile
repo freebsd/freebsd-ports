@@ -3,6 +3,7 @@
 
 PORTNAME=	botan
 PORTVERSION=	1.10.13
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	110
@@ -30,10 +31,12 @@ PLIST_FILES=	bin/botan-config-1.10 lib/libbotan-1.10.a lib/libbotan-1.10.so lib/
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
+BROKEN_aarch64=		Fails to configure: unknown or unidentifiable processor arm64
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
+USES+=		ssl
 CONFIGURE_ARGS+=--with-openssl
 .endif
 

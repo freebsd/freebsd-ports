@@ -9,7 +9,7 @@ COMMENT=	Partial OpenSSL binding for Haskell
 
 USE_CABAL=	network>=2.1 old-locale>=1.0
 
-USE_OPENSSL=	yes
+USES=	ssl
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

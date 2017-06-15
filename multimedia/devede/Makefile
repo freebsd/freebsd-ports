@@ -4,7 +4,7 @@
 PORTNAME=	devede
 PORTVERSION=	3.23.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -50,7 +50,7 @@ post-patch:
 		-e 's|%%PORTNAME%%|${PORTNAME}|' \
 		-e 's|%%DATADIR%%|${DATADIR}|' \
 		-e 's|%%DOCSDIR%%|${DOCSDIR}|' \
-		${WRKSRC}/devede.py
+		${WRKSRC}/devede
 	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/devede-debug
 # Fix font location
 	@${REINPLACE_CMD} -e \

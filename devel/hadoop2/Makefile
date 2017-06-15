@@ -9,10 +9,10 @@ PORTNAME=	hadoop
 PORTVERSION=	2.7.2
 PORTREVISION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	APACHE/${PORTNAME}/common/stable \
+MASTER_SITES=	APACHE/${PORTNAME}/common/hadoop-${PORTVERSION} \
 		LOCAL/demon/:maven \
 		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat \
-		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
+		LOCAL/demon/:jetty
 PKGNAMESUFFIX=	2
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat jetty-6.1.14.zip:jetty
@@ -30,8 +30,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3 \
 LIB_DEPENDS=	libsnappy.so:archivers/snappy
 RUN_DEPENDS=	bash:shells/bash \
 		ssid:sysutils/ssid
-
-BROKEN_FreeBSD_9=	fails to build
 
 CONFLICTS_INSTALL=	hadoop-1*
 

@@ -1,19 +1,8 @@
 @owner www
 @group www
-%%WWWDIR%%/blank.gif
-%%WWWDIR%%/fancybox_loading.gif
-%%WWWDIR%%/fancybox_loading@2x.gif
-%%WWWDIR%%/fancybox_overlay.png
-%%WWWDIR%%/fancybox_sprite.png
-%%WWWDIR%%/fancybox_sprite@2x.png
-%%WWWDIR%%/helpers/fancybox_buttons.png
-%%WWWDIR%%/helpers/jquery.fancybox-buttons.css
-%%WWWDIR%%/helpers/jquery.fancybox-buttons.js
-%%WWWDIR%%/helpers/jquery.fancybox-media.js
-%%WWWDIR%%/helpers/jquery.fancybox-thumbs.css
-%%WWWDIR%%/helpers/jquery.fancybox-thumbs.js
 %%WWWDIR%%/jquery.fancybox.css
 %%WWWDIR%%/jquery.fancybox.js
-%%WWWDIR%%/jquery.fancybox.pack.js
+%%WWWDIR%%/jquery.fancybox.min.css
+%%WWWDIR%%/jquery.fancybox.min.js
 @owner
 @group

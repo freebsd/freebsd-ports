@@ -3,4 +3,4 @@ file contents before unlinking. The goal is to provide drop-in security for
 users who wish to prevent command-line recovery of deleted information, even if
 the machine is compromised.
 
-WWW: http://sourceforge.net/projects/srm
+WWW: https://sourceforge.net/projects/srm/

@@ -2,9 +2,7 @@
 
 PORTNAME=	kturtle
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	lang kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	lang kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Educational programming environment for KDE 4

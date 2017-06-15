@@ -1,0 +1,6 @@
+--- xbmc/freebsd/CMakeLists.txt.orig	2017-01-08 15:03:09 UTC
++++ xbmc/freebsd/CMakeLists.txt
+@@ -0,0 +1,3 @@
++find_all_sources(. freebsd_SRCS)
++
++add_sources(${freebsd_SRCS})

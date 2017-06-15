@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PKGNAMESUFFIX=	-kernel
-PORTVERSION=	4.7.1
-PORTREVISION=   3
+PORTVERSION=	4.7.2
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
+PKGNAMESUFFIX=	-kernel
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
@@ -40,23 +40,21 @@ PLIST_FILES=	/boot/xen \
 EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patch:-p1 \
 		${FILESDIR}/0002-xen-rework-paging_log_dirty_op-to-work-with-hvm-gues.patch:-p1 \
 		${FILESDIR}/kconf_arch.patch:-p1 \
-		${FILESDIR}/xsa191.patch \
-		${FILESDIR}/xsa192.patch \
-		${FILESDIR}/xsa193-4.7.patch \
-		${FILESDIR}/xsa194.patch \
-		${FILESDIR}/xsa195.patch \
-		${FILESDIR}/xsa200-4.7.patch \
-		${FILESDIR}/xsa204-4.7.patch \
-		${FILESDIR}/xsa202.patch
+		${FILESDIR}/0001-x86-drop-unneeded-__packed-attributes.patch:-p1 \
+		${FILESDIR}/0002-build-clang-fix-XSM-dummy-policy-when-using-clang-4..patch:-p1 \
+		${FILESDIR}/xsa212.patch:-p1 \
+		${FILESDIR}/xsa213-4.7.patch:-p1 \
+		${FILESDIR}/xsa214.patch:-p1 \
+		${FILESDIR}/xsa215.patch:-p1
 
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} != FreeBSD
-IGNORE=		Only supported on FreeBSD
+IGNORE=		only supported on FreeBSD
 .endif
 
 .if ${OSVERSION} < 1100055
-IGNORE=		Only supported on recent FreeBSD 11
+IGNORE=		only supported on recent FreeBSD 11
 .endif
 
 pre-build:

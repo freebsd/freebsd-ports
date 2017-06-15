@@ -3,8 +3,8 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6.0.20120114
-PORTREVISION=	2
 DISTVERSIONPREFIX=	php-
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMEPREFIX=	php5-
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libavutil.so:multimedia/ffmpeg
 
-IGNORE_WITH_PHP=70
+IGNORE_WITH_PHP=70 71
 USES=		localbase php:ext tar:xz
 
 .include <bsd.port.mk>

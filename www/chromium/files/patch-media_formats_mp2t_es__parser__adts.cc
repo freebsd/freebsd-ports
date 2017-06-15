@@ -1,6 +1,6 @@
---- media/formats/mp2t/es_parser_adts.cc.orig	2016-05-11 19:02:24 UTC
+--- media/formats/mp2t/es_parser_adts.cc.orig	2017-04-19 19:06:35 UTC
 +++ media/formats/mp2t/es_parser_adts.cc
-@@ -62,11 +62,11 @@ bool EsParserAdts::LookForAdtsFrame(Adts
+@@ -60,11 +60,11 @@ bool EsParserAdts::LookForAdtsFrame(Adts
    const uint8_t* es;
    es_queue_->Peek(&es, &es_size);
  

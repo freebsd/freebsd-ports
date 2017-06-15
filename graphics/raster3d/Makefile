@@ -3,7 +3,7 @@
 
 PORTNAME=	raster3d
 PORTVERSION=	3.0.2
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${PORTVERSION:R}-${PORTVERSION:E}
@@ -32,20 +32,18 @@ FFLAGS+=	-fno-range-check -ffixed-line-length-132
 IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
 OPTIONS_SUB=		yes
 
-BROKEN_sparc64=	Does not compile with GCC 4.2: internal compiler error
-
 .include <bsd.port.options.mk>
 
 do-install:
-.for file in avs2ps balls normal3d rastep render ribbon rings3d rods
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${file} ${STAGEDIR}${PREFIX}/bin
+.for install_file in avs2ps balls normal3d rastep render ribbon rings3d rods
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${install_file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.for file in worms
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${file} ${STAGEDIR}${PREFIX}/bin
+.for install_file in worms
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${install_file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-.for file in label3d stereo3d
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${file} ${STAGEDIR}${PREFIX}/bin
+.for install_file in label3d stereo3d
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${install_file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .endif
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.l ${STAGEDIR}${MANLPREFIX}/man/manl
@@ -60,7 +58,7 @@ do-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}/msms/CVS
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/msms/CVS
 .endif
 
 .include <bsd.port.mk>

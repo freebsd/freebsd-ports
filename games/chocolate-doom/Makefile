@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chocolate-doom
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.chocolate-doom.org/downloads/${PORTVERSION}/
 
@@ -11,13 +11,14 @@ COMMENT=	Doom/Heretic/Hexen/Strife engine port compatible with the originals
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	python:lang/python
+LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gmake
 USE_SDL=	mixer net sdl
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	CMDLINE.doom ChangeLog INSTALL.doom NEWS NOT-BUGS PHILOSOPHY \
-		README README.Music
+PORTDOCS=	CMDLINE.doom ChangeLog INSTALL.doom NEWS.md NOT-BUGS.md PHILOSOPHY.md \
+		README.md README.Music.md
 
 OPTIONS_DEFINE=	DOCS
 

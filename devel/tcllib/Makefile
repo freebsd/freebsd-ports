@@ -18,14 +18,14 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 OPTIONS_DEFINE?=DOCS MANPAGES
 OPTIONS_SUB=	yes
 
-WRKSRC=		${WRKDIR}/tcllib-tcllib_${DISTVERSION}
 USE_GITHUB=	yes
 GH_ACCOUNT=	tcltk
 USES+=		tcl
+USE_LOCALE=	en_US.UTF-8
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
-MAKE_ENV+=	LANG=C
-TEST_TARGET=	do-test
+TEST_TARGET=	test
+TEST_ENV=	${MAKE_ENV} DISPLAY= TZ=utc
 PORTDOCS=	*
 
 INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
@@ -104,8 +104,5 @@ post-patch:
 do-install:
 	cd ${WRKSRC} && ${TCLSH} ./installer.tcl ${INSTALL_ARGS}
 .endif
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} LANG=C LC_ALL=en_US.UTF-8 DISPLAY= TZ=utc ${MAKE} test
 
 .include <bsd.port.mk>

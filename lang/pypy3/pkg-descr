@@ -1,0 +1,17 @@
+PyPy3 (alpha) is a fast, compliant alternative implementation of the Python
+language (3.3.5). It has several advantages and distinct features:
+
+ - Speed: thanks to its Just-in-Time compiler, Python programs often run faster
+          on PyPy3.
+ - Memory usage: large, memory-hungry Python programs might end up taking less
+                 space than they do in CPython.
+ - Compatibility: PyPy3 is highly compatible with existing python code. It
+                  supports ctypes and can run popular python libraries like
+                  twisted and django.
+ - Sandboxing: PyPy3 provides the ability to run untrusted code in a fully
+               secure way.
+ - Stackless: PyPy3 can be configured to run in stackless mode, providing
+              micro-threads for massive concurrency.
+ - As well as other features.
+
+WWW: http://pypy.org

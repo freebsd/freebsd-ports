@@ -15,11 +15,14 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z80 assembly code assembler and disassembler
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
+
+USES=		gmake
 
 PORTDOCS=	CHANGELOG README TODO z80-asm.html z80-mon.html
 
-USES=		gmake
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/hardware/bus_masters
@@ -44,6 +47,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}

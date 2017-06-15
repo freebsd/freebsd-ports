@@ -12,6 +12,8 @@ COMMENT=	GUI component of the Rekall framework
 
 LICENSE=	GPLv2
 
+IGNORE=		does not work with rekall-core 1.6.0
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rekall-core>=1.5.0.p:security/py-rekall-core \
 		${PYTHON_PKGNAMEPREFIX}codegen>=1.0:devel/py-codegen \
 		${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask \
@@ -26,8 +28,5 @@ USE_PYTHON=	distutils autoplist
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_INSTALLARGS+=--install-data ${PYTHONPREFIX_SITELIBDIR}
-
-post-extract:
-	@${CHMOD} -R a+rX ${WRKSRC}
 
 .include <bsd.port.post.mk>

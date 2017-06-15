@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	7.6.9
+PORTVERSION=	8.6.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 
@@ -12,12 +12,20 @@ COMMENT=	Typo3 content management system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe shebangfix
-SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/xlfcheck.sh
+IGNORE_WITH_PHP=	56
+
+PORTSCOUT=	limit:^8\.6\.
+
+USES=		cpe php:web shebangfix
+SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/cglFixMyCommit.sh \
+		typo3/sysext/core/Build/Scripts/checkFilePermissions.sh \
+		typo3/sysext/core/Build/Scripts/duplicateExceptionCodeCheck.sh \
+		typo3/sysext/core/Build/Scripts/validateRstFiles.sh \
+		typo3/sysext/core/Build/Scripts/xlfcheck.sh \
+		vendor/doctrine/instantiator/.travis.install.sh
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session soap xml zip simplexml
-WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${TYPO3SRC}
 
 TYPO3WWW=	www
@@ -30,7 +38,7 @@ GROUPS=		${WWWGRP}
 DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX}
 
 OPTIONS_DEFINE=	CURL GD GMP IMAGICK MBSTRING MYSQL ZLIB
-OPTIONS_DEFAULT=	GD ZLIB
+OPTIONS_DEFAULT=
 GD_DESC=	GDlib/freetype support
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 MBSTRING_DESC=	${MULTIBYTE_DESC}
@@ -69,15 +77,10 @@ post-install:
 		${FIND} * \( -type f -or -type l \) -path "${TYPO3WWW}/${TYPO3SRC}/*" | \
 		${SORT} >> ${TMPPLIST}
 
-	${TOUCH} ${STAGEDIR}${PREFIX}/${TYPO3WWW}/${TYPO3DIR}/FIRST_INSTALL
-	@${ECHO_CMD} ${TYPO3WWW}/${TYPO3DIR}/FIRST_INSTALL >> ${TMPPLIST}
-
-	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@group ${WWWGRP}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@mode 755" >> ${TMPPLIST}
-	@${ECHO} "@dir ${TYPO3WWW}/${TYPO3DIR}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@mode" >> ${TMPPLIST}
-	@${ECHO_CMD} "@group" >> ${TMPPLIST}
-	@${ECHO_CMD} "@owner" >> ${TMPPLIST}
+	@${ECHO} "@dir ${TYPO3WWW}/${TYPO3SRC}/vendor/doctrine/common/lib/vendor/doctrine-build-common" >> ${TMPPLIST}
+	@${ECHO} "@dir ${TYPO3WWW}/${TYPO3SRC}/vendor/doctrine/dbal/lib/vendor/Symfony/Component/Console" >> ${TMPPLIST}
+	@${ECHO} "@dir ${TYPO3WWW}/${TYPO3SRC}/vendor/doctrine/dbal/lib/vendor/doctrine-build-common" >> ${TMPPLIST}
+	@${ECHO} "@dir ${TYPO3WWW}/${TYPO3SRC}/vendor/doctrine/dbal/lib/vendor/doctrine-common" >> ${TMPPLIST}
+	@${ECHO} "@dir ${TYPO3WWW}/${TYPO3SRC}/vendor/guzzlehttp/guzzle/build" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

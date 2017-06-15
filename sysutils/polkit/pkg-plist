@@ -64,7 +64,8 @@ share/polkit-1/actions/org.freedesktop.policykit.policy
 @dir etc/polkit-1/localauthority/30-site.d
 @dir etc/polkit-1/localauthority/20-org.d
 @dir etc/polkit-1/localauthority/10-vendor.d
-@dir(,,700) etc/polkit-1
+@dir(,,700) etc/polkit-1/localauthority
+@dir etc/polkit-1
 @dir /var/lib/polkit-1/localauthority/90-mandatory.d
 @dir /var/lib/polkit-1/localauthority/50-local.d
 @dir /var/lib/polkit-1/localauthority/30-site.d

@@ -1,0 +1,15 @@
+DBIx::Lite was written with some goals in mind, that no other
+available module provides. Such goals/key features are:
+
+no need to define your database schema (most features work without
+one and some advanced features only require some bits, and still
+not the full table definitions)
+no need to connect to database: the module can just generate SQL
+for you
+chained methods with lazy SQL generation
+joins/relationships
+optional custom classes for results and resultsets with custom methods
+SQL::Abstract syntax
+paging features (with Data::Page)
+
+WWW: http://search.cpan.org/dist/DBIx-Lite/

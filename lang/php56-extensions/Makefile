@@ -11,7 +11,7 @@ COMMENT=	"meta-port" to install PHP extensions
 
 USES=		metaport php
 PHP_VER=	56
-IGNORE_WITH_PHP=	55 70
+IGNORE_WITH_PHP=	70
 
 OPTIONS_DEFINE=	BCMATH BZ2 CALENDAR CTYPE CURL DBA \
 		DOM ENCHANT EXIF FILEINFO FILTER FTP GD GETTEXT \
@@ -52,7 +52,6 @@ MYSQL_DESC=		MySQL database support
 MYSQLI_DESC=		MySQLi database support
 ODBC_DESC=		ODBC support
 OPCACHE_DESC=		OPcache support
-OPENSSL_DESC=		OpenSSL support
 PCNTL_DESC=		pcntl support (CLI only)
 PDF_DESC=		PDFlib support (implies GD)
 PDO_DESC=		PHP Data Objects Interface (PDO)

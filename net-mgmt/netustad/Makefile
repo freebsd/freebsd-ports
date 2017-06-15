@@ -3,7 +3,7 @@
 
 PORTNAME=	netustad
 PORTVERSION=	0.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.enderunix.org/netustad/
 
@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	SSL NLS DOCS
 OPTIONS_DEFAULT=SSL
 SSL_DESC=	Use netUstad with SSL support
 
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	ssl
 
 NLS_CONFIGURE_WITH=	nls

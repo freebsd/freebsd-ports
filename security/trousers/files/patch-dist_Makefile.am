@@ -1,4 +1,4 @@
---- dist/Makefile.am.orig	2014-04-24 18:05:43 UTC
+--- dist/Makefile.am.orig	2014-07-23 19:42:44 UTC
 +++ dist/Makefile.am
 @@ -1,14 +1,14 @@
  EXTRA_DIST = system.data.auth system.data.noauth \

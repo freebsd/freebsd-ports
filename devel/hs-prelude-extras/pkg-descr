@@ -1,4 +1,4 @@
 Haskell 98 - higher order versions of Prelude classes to ease
 programming with polymorphic recursion and reduce UndecidableInstances.
 
-WWW: http://github.com/ekmett/prelude-extras
+WWW: https://github.com/ekmett/prelude-extras

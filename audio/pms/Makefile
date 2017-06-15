@@ -3,7 +3,7 @@
 
 PORTNAME=	pms
 PORTVERSION=	0.42
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	ncurses-based client for the Music Player Daemon
 
 LICENSE=	GPLv3
 
-USES=		gettext pkgconfig tar:bzip2
+USES=		gettext ncurses pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 

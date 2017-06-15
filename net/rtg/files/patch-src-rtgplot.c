@@ -1,6 +1,6 @@
---- src/rtgplot.c.orig	2003-10-02 16:27:52.000000000 +0100
-+++ src/rtgplot.c	2010-07-04 03:45:21.927295776 +0100
-@@ -221,7 +221,10 @@
+--- src/rtgplot.c.orig	2003-10-02 15:27:52 UTC
++++ src/rtgplot.c
+@@ -221,7 +221,10 @@ int main(int argc, char **argv) {
  						plot_line(data[i][j], &img, &graph, colors->shade, TRUE);
  					else
  						plot_line(data[i][j], &img, &graph, colors->shade, FALSE);
@@ -12,7 +12,7 @@
  					plot_legend(&img, rate[i][j], &graph, colors->shade, intname, offset);
  					offset++;
  				}
-@@ -629,15 +632,15 @@
+@@ -629,15 +632,15 @@ void plot_legend(gdImagePtr * img, rate_
  	if (set.verbose >= HIGH)
  		fprintf(dfp, "Plotting legend (%s).\n", __FUNCTION__);
  
@@ -34,7 +34,7 @@
  	}
  	snprintf(string, sizeof(string), "%s", interface);
  	for (i = 0; i < (17 - strlen(interface)); i++) {
-@@ -662,7 +665,7 @@
+@@ -662,7 +665,7 @@ void plot_legend(gdImagePtr * img, rate_
  			units(rate.cur, cur), graph->units,
  			units((float)rate.total, total));
  	}
@@ -43,7 +43,7 @@
  		      BORDER_T + graph->image.yplot_area + 33 + (10 * offset), string, std_colors[black]);
  }
  
-@@ -866,6 +869,13 @@
+@@ -866,6 +869,13 @@ void plot_labels(gdImagePtr * img, graph
  	title_offset = 1 - (0.01 * (strlen(VERSION) + strlen(COPYRIGHT) + 2));
  	snprintf(string, sizeof(string), "%s %s", COPYRIGHT, VERSION);
  	gdImageString(*img, gdFontSmall, BORDER_L + (graph->image.xplot_area * title_offset), BORDER_T - 15, string, std_colors[black]);
@@ -57,7 +57,7 @@
  }
  
  
-@@ -1342,10 +1352,14 @@
+@@ -1342,10 +1352,14 @@ void parseWeb(arguments_t *arguments, gr
  			}
  		}
  /* XXX REB - Warning: Deprecated, tN argument will go away in RTG 0.8 XXX */

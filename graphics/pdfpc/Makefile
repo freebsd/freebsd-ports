@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	pdfpc
-PORTVERSION=	4.0.2
-PORTREVISION=	1
+PORTVERSION=	4.0.6
 CATEGORIES=	graphics
 DISTVERSIONPREFIX=	v
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Keynote-like multi-monitor presentation viewer
+
+LICENSE=	GPLv2
+LICENSE_FILES=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
@@ -19,7 +21,7 @@ USES=		cmake gnome pkgconfig pathfix
 USE_GNOME=	gtk30
 USE_GSTREAMER1=	yes
 
-CMAKE_ARGS=	-DMANDIR:STRING="man/man1"
+CMAKE_ARGS=	-DMANDIR:STRING="man/"
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/pdfpcrc \

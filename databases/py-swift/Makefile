@@ -3,6 +3,7 @@
 
 PORTNAME=	swift
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://launchpadlibrarian.net/196367574/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:www/py-pastedeploy \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=1.10.0:dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.8:net/py-eventlet \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0:net/py-netifaces \
-		${PYTHON_PKGNAMEPREFIX}swiftclient>=0:databases/py-swiftclient \
+		${PYTHON_PKGNAMEPREFIX}python-swiftclient>=0:databases/py-python-swiftclient \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}webob>=0.9.8:www/py-webob \

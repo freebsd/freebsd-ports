@@ -1,18 +1,11 @@
---- configure.orig	2016-07-06 11:37:52 UTC
-+++ configure
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
+--- configure.orig	2016-11-09 01:55:36.202443000 -0500
++++ configure	2016-11-09 01:57:47.331793000 -0500
+@@ -49,7 +49,7 @@
  
- #
- # Note: When adding make options to this script, ensure that the source still
-@@ -235,7 +235,8 @@ genConfigMake() {
-   cfgwrite "#         $MAKE debug=yes"
-   cfgwrite ""
  
--  cfgwrite "TOPDIR:=$( sed 's/ /\\\ /g' <<< ${TOPDIR} )"
-+  TOPDIR_CFGWRITE=`echo ${TOPDIR} | sed 's/ /\\\ /g'`
-+  cfgwrite "TOPDIR:=${TOPDIR_CFGWRITE}"
-   cfgwrite ""
+ NGSTREAMS_DIR="./sope-core/NGStreams"
+-LINK_SYSLIBDIRS="-L/usr/local/pgsql/lib -L/usr/local/lib -L/usr/lib"
++LINK_SYSLIBDIRS="-L%%LOCALBASE%%/lib/postgresql -L%%LOCALBASE%%/lib/mysql -L%%LOCALBASE%%/lib -L/usr/lib"
  
-   cfgwrite "NEEDS_GUI=no"
+ # ******************** usage ********************
+ 

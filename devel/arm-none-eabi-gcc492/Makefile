@@ -51,7 +51,7 @@ INSTALL_TARGET=	install-gcc install-target-libgcc
 
 CONFIGURE_TARGET=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 
-post-stage:
+post-install:
 	@if [ -f ${STAGEDIR}${PREFIX}/bin/cpp ] ; then \
 		${MV} ${STAGEDIR}${PREFIX}/bin/cpp  \
 		    ${STAGEDIR}${PREFIX}/bin/${GCC_TARGET}-cpp ; \

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flac
-PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTVERSION=	1.3.2
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/flac/
 
@@ -22,7 +21,7 @@ USES=		iconv libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
-		--enable-sse \
+		--disable-sse \
 		--with-ogg="${LOCALBASE}" \
 		--disable-doxygen-docs \
 		--disable-thorough-tests \

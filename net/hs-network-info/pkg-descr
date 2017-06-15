@@ -3,4 +3,4 @@ networking configuration.  It is currently capable of getting a list of
 all the network interfaces and their respective IPv4, IPv6 and MAC
 addresses.
 
-WWW: http://github.com/jystic/network-info
+WWW: https://github.com/jystic/network-info

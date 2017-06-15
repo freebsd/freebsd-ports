@@ -1,0 +1,6 @@
+Generic TTS implements Icinga Web 2's ticket hook for replacing ticket patterns
+with links to your trouble ticket system (TTS). Icinga Web 2's core module
+monitoring for example uses the ticket hook for acknowledgements, downtimes and
+comments. Other modules may use the ticket hook for all kinds of text too.
+
+WWW: https://github.com/Icinga/icingaweb2-module-generictts

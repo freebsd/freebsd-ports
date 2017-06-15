@@ -1,18 +1,24 @@
-OptimFROG is a lossless audio compression program. Its main goal is to
-reduce at maximum the size of audio files, while permitting bit identical
-restoration for all input. It is similar with the ZIP compression, but it
-is highly specialized to compress audio data.
+OptimFROG is a lossless audio compression program. Its main goal is to reduce
+at maximum the size of audio files, while permitting bit identical restoration
+for all input. It is similar with the ZIP compression, but it is highly
+specialized to compress audio data.
 
-OptimFROG obtains asymptotically the best lossless audio compression
-ratios. It has Windows, Linux, and Mac versions, fully featured input
-plug-ins for the Windows Media Player, foobar2000, Winamp2/3/5, dBpowerAMP,
-XMPlay, QCD, and XMMS audio players (with bitstream error resilience,
-ID3v1.1 and APEv2 read tagging support, ID3v2 compatible), optimal support
-for all integer PCM wave formats up to 32 bits and an extensible streamable
-(error tolerant) compressed format. It is also fast, the default mode
-encodes CD quality audio data at 12.4x real-time and decodes at 17.4x real-
-time on AMD Athlon XP 1800+ (the fastest mode encodes at 28.1x real-time
-and decodes at 24.7x real-time). Self-extracting (sfx) archives can also be
-created with a small overhead of just 54 KB.
+OptimFROG usually obtains the best lossless audio compression ratios. It has
+Windows, Linux, OS X, and FreeBSD versions, fully featured input plug-ins for
+the Windows Media Player, foobar2000, Winamp 2/3/5, dBpowerAMP, XMPlay, QCD,
+XMMS, and many other audio players (with bitstream error resilience, ID3v1.1
+and APEv2 read tagging support, ID3v2 compatible), optimal support for all
+integer PCM wave formats up to 32 bits and an extensible streamable (error
+tolerant) compressed format. It is also fast, the default mode (preset 2)
+encodes CD quality audio data at 66.9x real-time and decodes at 96.9x real-time
+on Intel Core i7-6700HQ at 2.6 GHz, while the fastest mode (preset 0) encodes
+at 140.0x real-time and decodes at 138.0x real-time. Self-extracting (sfx)
+archives can also be created with a small overhead of just 173 kB.
+
+The compression ratios which can obtained with OptimFROG are generally ranging
+from 25% (silent classical music) to 70% (loud rock music) of the original
+audio file size. This is less compared with around 13% obtained with high
+quality MP3 files (~176 kbps), but you have the great advantage of archiving
+and listening at perfect copies of your original music.
 
 WWW: http://www.losslessaudio.org/

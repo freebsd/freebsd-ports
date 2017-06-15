@@ -9,7 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SquirrelMail plugin for Server-Side Mail Filtering management
 
 pre-install:
-	${RM} -Rf ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/po
+	${RM} -R ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/po
 	${FIND} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} -type f \
 		\( -name '.cvsignore' -o -name '*.bak' -o -name '*.orig' \) -exec ${RM} {} \;
 

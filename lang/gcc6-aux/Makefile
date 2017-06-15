@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		LOCAL/marino:boot GCC/${MS_SUBDIR}
 DISTFILES=	${IDENTIFICATION}.tar.bz2
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 
 LICENSE=	GPLv3 GPLv3RLE
@@ -24,7 +24,7 @@ GARCH=			${ARCH:S/amd64/x86_64/}
 BOOTSTRAP_COMPILER=	gnat-bootstrap.${GARCH}.${OPSYS:tl}.tar.bz2
 BLD_TARGET=		${GARCH}-aux-${OPSYS:tl}${OSREL}
 FULL_GNATGCC=		NOT_SET
-OS_LABEL4VERS=		[${OPSYS}${GARCH:M*64:S/amd_//:S/x86_//}]
+OS_LABEL4VERS=		[${OPSYS}${GARCH:S/amd//:S/x86_//:S/aarch/\/ARM/:S/i386/32/}]
 NO_MTREE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -49,13 +49,17 @@ BOOTSTRAP_DESC=		Create bootstrap compiler (overrides other options)
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS=		amd64 i386 aarch64
 MODERN_BINUTILS=	yes
+.  if ${ARCH} == aarch64
+BOOTSTRAP_COMPILER=	ada-bootstrap.aarch64.freebsd.120.tar.bz2
+.  else
 BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.100B.tar.bz2
+.  endif
 .endif
 .if ${OPSYS} == DragonFly
 ONLY_FOR_ARCHS=		x86_64
-BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.dragonfly.41.tar.bz2
+BOOTSTRAP_COMPILER=	ada-bootstrap.x86_64.dragonfly.41.tar.bz2
 .endif
 
 .if defined(MODERN_BINUTILS)
@@ -109,7 +113,8 @@ DISTFILES=	\
    ${IDENTIFICATION}.tar.bz2 \
    ada-bootstrap.i386.freebsd.100B.tar.bz2:boot \
    ada-bootstrap.x86_64.dragonfly.41.tar.bz2:boot \
-   ada-bootstrap.x86_64.freebsd.100B.tar.bz2:boot
+   ada-bootstrap.x86_64.freebsd.100B.tar.bz2:boot \
+   ada-bootstrap.aarch64.freebsd.120.tar.bz2:boot
 .endif
 
 .if ${PORT_OPTIONS:MFORTRAN} && !${PORT_OPTIONS:MBOOTSTRAP}
@@ -204,7 +209,8 @@ post-extract:
 		-e 's;\@GCCAUX\@;${PORTNAME};' \
 		${WRKSRC}/gcc/config/dragonfly.h \
 		${WRKSRC}/gcc/config/i386/freebsd64.h \
-		${WRKSRC}/gcc/config/i386/freebsd.h
+		${WRKSRC}/gcc/config/i386/freebsd.h \
+		${WRKSRC}/gcc/config/aarch64/aarch64-freebsd.h
 .if defined(MODERN_BINUTILS)
 	# Use dwarf4-compatible addr2line (affects FreeBSD only)
 	${REINPLACE_CMD} -e 's|/usr/bin/addr2line|${PREFIX}/bin/addr2line|g' \
@@ -273,7 +279,7 @@ post-stage:
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/include ${NEWBSDIR}/
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/libexec ${NEWBSDIR}/
 	${RM} ${NEWBSDIR}/bin/${GARCH}*
-	${RM} -rf ${NEWBSDIR}/lib/gcc/${BLD_TARGET}/${GCC_VERSION}/include-fixed
+	${RM} -r ${NEWBSDIR}/lib/gcc/${BLD_TARGET}/${GCC_VERSION}/include-fixed
 	(cd ${NEWBSDIR}/.. ; ${TAR} -cyf ${BSFILENAME} bootstrap)
 .endif
 

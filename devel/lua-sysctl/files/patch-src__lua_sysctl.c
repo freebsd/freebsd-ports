@@ -1,6 +1,6 @@
---- ./src/lua_sysctl.c.orig	2013-03-06 16:38:20.000000000 +0100
-+++ ./src/lua_sysctl.c	2014-01-10 18:09:08.582550597 +0100
-@@ -596,7 +596,7 @@
+--- src/lua_sysctl.c.orig	2016-12-23 20:58:56 UTC
++++ src/lua_sysctl.c
+@@ -582,7 +582,7 @@ luaA_sysctl_IK2farenheit(lua_State *L)
   */
  
  
@@ -9,7 +9,7 @@
  {
  	{"get",			luaA_sysctl_get},
  	{"set",			luaA_sysctl_set},
-@@ -612,7 +612,11 @@
+@@ -598,7 +598,11 @@ LUALIB_API int
  luaopen_sysctl_core(lua_State *L)
  {
  

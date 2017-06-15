@@ -1,6 +1,7 @@
 bin/sip
 %%PYTHON_INCLUDEDIR%%/sip.h
 %%PYTHON_SITELIBDIR%%/sip.so
+%%PYTHON_SITELIBDIR%%/sip.pyi
 %%PYTHON_SITELIBDIR%%/sipconfig.py
 %%PYTHON_SITELIBDIR%%/sipconfig.pyc
 %%PYTHON_SITELIBDIR%%/sipconfig.pyo

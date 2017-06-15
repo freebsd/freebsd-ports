@@ -15,22 +15,23 @@ COMMENT=	Python bindings for XML Security Library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not build (x509.c:46:60: error: too many arguments to function call, expected 2, have 3)
+
 LIB_DEPENDS=	libxmlsec1.so:security/xmlsec1
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-USES=		python:2
+USES=		python:2 ssl
 USE_PYTHON=	distutils autoplist
-NO_ARCH=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/xmlsecmod.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/xmlsecmod.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

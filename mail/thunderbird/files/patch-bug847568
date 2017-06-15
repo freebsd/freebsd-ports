@@ -1,104 +1,54 @@
 # Allow building against system-wide graphite2/harfbuzz.
 
 diff --git config/Makefile.in config/Makefile.in
-index 14bfc0d..5383399 100644
+index e2e11dc0e27e..a6206bb0ff30 100644
 --- mozilla/config/Makefile.in
 +++ mozilla/config/Makefile.in
-@@ -49,6 +49,8 @@ export:: $(export-preqs)
- 		-DMOZ_NATIVE_LIBEVENT=$(MOZ_NATIVE_LIBEVENT) \
- 		-DMOZ_NATIVE_LIBVPX=$(MOZ_NATIVE_LIBVPX) \
- 		-DMOZ_NATIVE_ICU=$(MOZ_NATIVE_ICU) \
-+		-DMOZ_NATIVE_GRAPHITE2=$(MOZ_NATIVE_GRAPHITE2) \
-+		-DMOZ_NATIVE_HARFBUZZ=$(MOZ_NATIVE_HARFBUZZ) \
- 		$(srcdir)/system-headers | $(PERL) $(topsrcdir)/nsprpub/config/make-system-wrappers.pl system_wrappers
- 	$(INSTALL) system_wrappers $(DIST)
- 
+@@ -41,6 +41,8 @@ export:: $(export-preqs)
+ 	$(PYTHON) -m mozbuild.action.preprocessor $(DEFINES) $(ACDEFINES) \
+ 		-DMOZ_TREE_CAIRO=$(MOZ_TREE_CAIRO) \
+ 		-DMOZ_TREE_PIXMAN=$(MOZ_TREE_PIXMAN) \
++		-DMOZ_SYSTEM_GRAPHITE2=$(MOZ_SYSTEM_GRAPHITE2) \
++		-DMOZ_SYSTEM_HARFBUZZ=$(MOZ_SYSTEM_HARFBUZZ) \
+ 		-DMOZ_SYSTEM_HUNSPELL=$(MOZ_SYSTEM_HUNSPELL) \
+ 		-DMOZ_SYSTEM_BZ2=$(MOZ_SYSTEM_BZ2) \
+ 		-DMOZ_SYSTEM_ZLIB=$(MOZ_SYSTEM_ZLIB) \
 diff --git config/system-headers config/system-headers
-index 18e8703..bdc5f82 100644
+index a0c53c651a3e..5ee7f71f9634 100644
 --- mozilla/config/system-headers
 +++ mozilla/config/system-headers
-@@ -1344,3 +1344,11 @@ unicode/utypes.h
+@@ -1269,6 +1269,15 @@ libsn/sn-launcher.h
+ libsn/sn-monitor.h
+ libsn/sn-util.h
  #endif
- libutil.h
- unwind.h
-+#if MOZ_NATIVE_GRAPHITE2==1
++#if MOZ_SYSTEM_GRAPHITE2==1
 +graphite2/Font.h
 +graphite2/Segment.h
 +#endif
-+#if MOZ_NATIVE_HARFBUZZ==1
++#if MOZ_SYSTEM_HARFBUZZ==1
++harfbuzz/hb-glib.h
 +harfbuzz/hb-ot.h
 +harfbuzz/hb.h
 +#endif
-diff --git configure.in configure.in
-index ac38f40..87536b7 100644
---- mozilla/configure.in
-+++ mozilla/configure.in
-@@ -7989,6 +7989,49 @@ if test "$USE_FC_FREETYPE"; then
- fi
- 
- dnl ========================================================
-+dnl Check for harfbuzz
-+dnl ========================================================
-+
-+MOZ_ARG_WITH_BOOL(system-harfbuzz,
-+[  --with-system-harfbuzz  Use system harfbuzz (located with pkgconfig)],
-+MOZ_NATIVE_HARFBUZZ=1,
-+MOZ_NATIVE_HARFBUZZ=)
-+
-+if test -n "$MOZ_NATIVE_HARFBUZZ"; then
-+    PKG_CHECK_MODULES(MOZ_HARFBUZZ, harfbuzz >= 1.1.0)
-+fi
-+
-+AC_SUBST(MOZ_NATIVE_HARFBUZZ)
-+
-+dnl ========================================================
-+dnl Check for graphite2
-+dnl ========================================================
-+
-+MOZ_ARG_WITH_BOOL(system-graphite2,
-+[  --with-system-graphite2 Use system graphite2 (located with pkgconfig)],
-+MOZ_NATIVE_GRAPHITE2=1,
-+MOZ_NATIVE_GRAPHITE2=)
-+
-+if test -n "$MOZ_NATIVE_GRAPHITE2"; then
-+    PKG_CHECK_MODULES(MOZ_GRAPHITE2, graphite2)
-+
-+    dnl graphite2.pc has bogus version, check manually
-+    AC_TRY_COMPILE([ #include <graphite2/Font.h>
-+                     #define GR2_VERSION_REQUIRE(major,minor,bugfix)  \
-+                             ( GR2_VERSION_MAJOR * 10000 + GR2_VERSION_MINOR \
-+                               * 100 + GR2_VERSION_BUGFIX >= \
-+                               (major) * 10000 + (minor) * 100 + (bugfix) )
-+                   ], [
-+                     #if !GR2_VERSION_REQUIRE(1,3,7)
-+                     #error "Insufficient graphite2 version."
-+                     #endif
-+                   ], [],
-+                   [AC_MSG_ERROR([--with-system-graphite2 requested but no working libgraphite2 found])])
-+fi
-+
-+AC_SUBST(MOZ_NATIVE_GRAPHITE2)
-+
-+dnl ========================================================
- dnl Check for pixman and cairo
- dnl ========================================================
- 
+ #if MOZ_SYSTEM_HUNSPELL==1
+ hunspell.hxx
+ #endif
 diff --git dom/base/moz.build dom/base/moz.build
-index a660ba4..6b2f602 100644
+index 8e19020315ae..2fcdbb6f7b42 100644
 --- mozilla/dom/base/moz.build
 +++ mozilla/dom/base/moz.build
-@@ -397,6 +397,9 @@ if CONFIG['INTEL_ARCHITECTURE']:
-     SOURCES += ['nsTextFragmentSSE2.cpp']
-     SOURCES['nsTextFragmentSSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+@@ -464,6 +464,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser', 'mobile/android', 'xulrunner']:
+ if CONFIG['MOZ_X11']:
+     CXXFLAGS += CONFIG['TK_CFLAGS']
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
-+    SOURCES['nsContentUtils.cpp'].flags += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- EXTRA_COMPONENTS += [
-     'ConsoleAPI.manifest',
-     'ConsoleAPIStorage.js',
+ GENERATED_FILES += [
+     'PropertyUseCounterMap.inc',
+     'UseCounterList.h',
 diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
-index f3d76ea..a9e7fb6 100644
+index faaab1b17971..04eff5f09882 100644
 --- mozilla/gfx/graphite2/moz-gr-update.sh
 +++ mozilla/gfx/graphite2/moz-gr-update.sh
 @@ -1,6 +1,7 @@
@@ -109,13 +59,13 @@ index f3d76ea..a9e7fb6 100644
  
  # This script lives in gfx/graphite2, along with the library source,
  # but must be run from the top level of the mozilla-central tree.
-@@ -37,12 +38,16 @@ echo "See" $0 "for update procedure." >>
+@@ -37,12 +38,16 @@ echo "See" $0 "for update procedure." >> gfx/graphite2/README.mozilla
  #find gfx/graphite2/ -name "*.cpp" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
  #find gfx/graphite2/ -name "*.h" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
  
 +# chase version for --with-system-graphite2
 +perl -p -i -e "s/[0-9]+\,[0-9]+\,[0-9]+/$RELEASE/ and tr/./,/ \
-+  if /GR2_VERSION_REQUIRE/" configure.in
++  if /GR2_VERSION_REQUIRE/" old-configure.in
 +
  # summarize what's been touched
  echo Updated to $RELEASE.
@@ -123,41 +73,41 @@ index f3d76ea..a9e7fb6 100644
  echo
  
 -hg stat gfx/graphite2
-+hg stat configure.in gfx/graphite2
++hg stat old-configure.in gfx/graphite2
  
  echo
  echo If gfx/graphite2/src/files.mk has changed, please make corresponding
 diff --git gfx/harfbuzz/README-mozilla gfx/harfbuzz/README-mozilla
-index ca57d16..1ce21fe 100644
+index 22c76a7df020..a01490bd49ee 100644
 --- mozilla/gfx/harfbuzz/README-mozilla
 +++ mozilla/gfx/harfbuzz/README-mozilla
-@@ -18,3 +18,8 @@ the mozilla tree.
- In addition, the src/Makefile.in file here is NOT from upstream, nor is it
- generated from src/Makefile.am (the original harfbuzz version); it is a mozilla-
- specific makefile that is maintained by hand.
+@@ -19,3 +19,8 @@ the mozilla tree.
+ 
+ If the collection of source files changes, manual updates to moz.build may be
+ needed, as we don't use the upstream makefiles.
 +
 +The in-tree copy may be omitted during build by --with-system-harfbuzz.
-+Make sure to keep pkg-config version check within configure.in in sync
++Make sure to keep pkg-config version check within toolkit/moz.configure in sync
 +with checkout version or increment latest tag by one if it's not based
 +on upstream release.
 diff --git gfx/moz.build gfx/moz.build
-index 519aa46..6929751 100644
+index 771f652e837a..3b358d84e384 100644
 --- mozilla/gfx/moz.build
 +++ mozilla/gfx/moz.build
-@@ -7,6 +7,12 @@
+@@ -10,6 +10,12 @@ with Files('**'):
  if CONFIG['MOZ_TREE_CAIRO']:
      DIRS += ['cairo']
  
-+if not CONFIG['MOZ_NATIVE_GRAPHITE2']:
++if not CONFIG['MOZ_SYSTEM_GRAPHITE2']:
 +    DIRS += ['graphite2/src' ]
 +
-+if not CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if not CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    DIRS += ['harfbuzz/src']
 +
  DIRS += [
      '2d',
      'ycbcr',
-@@ -15,8 +21,6 @@ DIRS += [
+@@ -18,8 +24,6 @@ DIRS += [
      'qcms',
      'gl',
      'layers',
@@ -167,91 +117,155 @@ index 519aa46..6929751 100644
      'thebes',
      'ipc',
 diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
-index 28fa6b5..240dced 100755
+index e06ae3457a47..93faa61594a3 100755
 --- mozilla/gfx/skia/generate_mozbuild.py
 +++ mozilla/gfx/skia/generate_mozbuild.py
-@@ -134,6 +134,9 @@ if CONFIG['CLANG_CXX'] or CONFIG['CLANG_
+@@ -143,6 +143,9 @@ if CONFIG['CLANG_CXX'] or CONFIG['CLANG_CL']:
          '-Wno-unused-private-field',
      ]
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android', 'gonk', 'qt'):
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android'):
      CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
      CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
 diff --git gfx/skia/moz.build gfx/skia/moz.build
-index 1d0c2f9..adb8941 100644
+index 2118677ca3a8..e4978b413784 100644
 --- mozilla/gfx/skia/moz.build
 +++ mozilla/gfx/skia/moz.build
-@@ -752,6 +752,9 @@ if CONFIG['CLANG_CXX'] or CONFIG['CLANG_
+@@ -753,6 +753,9 @@ if CONFIG['CLANG_CXX'] or CONFIG['CLANG_CL']:
          '-Wno-unused-private-field',
      ]
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android', 'gonk', 'qt'):
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3', 'android'):
      CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
      CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
 diff --git gfx/thebes/moz.build gfx/thebes/moz.build
-index d5852fa..aeeab25 100644
+index dee9b7bfa2cb..bd801f3a468e 100644
 --- mozilla/gfx/thebes/moz.build
 +++ mozilla/gfx/thebes/moz.build
-@@ -306,7 +306,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk
+@@ -273,7 +273,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3'):
  
  LOCAL_INCLUDES += CONFIG['SKIA_INCLUDES']
  
 -DEFINES['GRAPHITE2_STATIC'] = True
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
-+    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
-+
-+if CONFIG['MOZ_NATIVE_GRAPHITE2']:
++if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
 +    CXXFLAGS += CONFIG['MOZ_GRAPHITE2_CFLAGS']
 +else:
 +    DEFINES['GRAPHITE2_STATIC'] = True
++
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
  
  if CONFIG['CLANG_CXX']:
      # Suppress warnings from Skia header files.
-index d736943..41a931f 100644
+diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
+index cb1233c56d7e..06fb1f9f174b 100644
 --- mozilla/intl/unicharutil/util/moz.build
 +++ mozilla/intl/unicharutil/util/moz.build
-@@ -44,4 +44,7 @@ if CONFIG['ENABLE_INTL_API']:
-     LOCAL_INCLUDES += CONFIG['MOZ_ICU_INCLUDES']
+@@ -40,4 +40,7 @@ if CONFIG['_MSC_VER']:
+ if CONFIG['ENABLE_INTL_API']:
      USE_LIBS += ['icu']
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
  DIST_INSTALL = True
 diff --git netwerk/dns/moz.build netwerk/dns/moz.build
-index 0b0717a..2e665c9 100644
+index 79c26e3e7001..c4d93bc5f7dc 100644
 --- mozilla/netwerk/dns/moz.build
 +++ mozilla/netwerk/dns/moz.build
-@@ -66,6 +66,9 @@ LOCAL_INCLUDES += [
+@@ -69,6 +69,9 @@ LOCAL_INCLUDES += [
      '/netwerk/base',
  ]
  
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'gonk' and CONFIG['ANDROID_VERSION'] > '19':
-     LOCAL_INCLUDES += ['%' + '%s/bionic/libc/dns/include' % CONFIG['ANDROID_SOURCE']]
+ if CONFIG['ENABLE_INTL_API']:
+     DEFINES['IDNA2008'] = True
+     USE_LIBS += ['icu']
+diff --git old-configure.in old-configure.in
+index 95a58b634593..b614eef85c89 100644
+--- mozilla/old-configure.in
++++ mozilla/old-configure.in
+@@ -4888,6 +4888,27 @@ dnl ========================================================
+ AC_SUBST(MOZ_LINUX_32_SSE2_STARTUP_ERROR)
+ 
+ dnl ========================================================
++dnl Check for graphite2
++dnl ========================================================
++if test -n "$MOZ_SYSTEM_GRAPHITE2"; then
++    dnl graphite2.pc has bogus version, check manually
++    _SAVE_CFLAGS=$CFLAGS
++    CFLAGS="$CFLAGS $MOZ_GRAPHITE2_CFLAGS"
++    AC_TRY_COMPILE([ #include <graphite2/Font.h>
++                     #define GR2_VERSION_REQUIRE(major,minor,bugfix)  \
++                             ( GR2_VERSION_MAJOR * 10000 + GR2_VERSION_MINOR \
++                               * 100 + GR2_VERSION_BUGFIX >= \
++                               (major) * 10000 + (minor) * 100 + (bugfix) )
++                   ], [
++                     #if !GR2_VERSION_REQUIRE(1,3,8)
++                     #error "Insufficient graphite2 version."
++                     #endif
++                   ], [],
++                   [AC_MSG_ERROR([--with-system-graphite2 requested but no working libgraphite2 found])])
++    CFLAGS=$_SAVE_CFLAGS
++fi
++
++dnl ========================================================
+ dnl Check for pixman and cairo
+ dnl ========================================================
  
 diff --git toolkit/library/moz.build toolkit/library/moz.build
-index 67f0db9..d42137a 100644
+index 24f940e1ed7e..079a575adec3 100644
 --- mozilla/toolkit/library/moz.build
 +++ mozilla/toolkit/library/moz.build
-@@ -231,6 +231,12 @@ if CONFIG['MOZ_NATIVE_LIBVPX']:
- if not CONFIG['MOZ_TREE_PIXMAN']:
-     OS_LIBS += CONFIG['MOZ_PIXMAN_LIBS']
+@@ -228,6 +228,12 @@ if CONFIG['MOZ_SYSTEM_JPEG']:
+ if CONFIG['MOZ_SYSTEM_PNG']:
+     OS_LIBS += CONFIG['MOZ_PNG_LIBS']
  
-+if CONFIG['MOZ_NATIVE_GRAPHITE2']:
++if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
 +    OS_LIBS += CONFIG['MOZ_GRAPHITE2_LIBS']
 +
-+if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    OS_LIBS += CONFIG['MOZ_HARFBUZZ_LIBS']
 +
- if CONFIG['MOZ_OSS']:
-     OS_LIBS += CONFIG['MOZ_OSS_LIBS']
+ if CONFIG['MOZ_SYSTEM_HUNSPELL']:
+     OS_LIBS += CONFIG['MOZ_HUNSPELL_LIBS']
  
+diff --git toolkit/moz.configure toolkit/moz.configure
+index 9297e4d6f501..d8e273887e4b 100644
+--- mozilla/toolkit/moz.configure
++++ mozilla/toolkit/moz.configure
+@@ -343,6 +343,26 @@ add_old_configure_assignment('FT2_LIBS',
+ add_old_configure_assignment('FT2_CFLAGS',
+                              delayed_getattr(ft2_info, 'cflags'))
+ 
++# Graphite2
++# ==============================================================
++option('--with-system-graphite2',
++       help="Use system graphite2 (located with pkgconfig)")
++
++system_graphite2 = pkg_check_modules('MOZ_GRAPHITE2', 'graphite2',
++                                     when='--with-system-graphite2')
++
++set_config('MOZ_SYSTEM_GRAPHITE2', depends_if(system_graphite2)(lambda _: True))
++
++# HarfBuzz
++# ==============================================================
++option('--with-system-harfbuzz',
++       help="Use system harfbuzz (located with pkgconfig)")
++
++system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 1.4.1',
++                                    when='--with-system-harfbuzz')
++
++set_config('MOZ_SYSTEM_HARFBUZZ', depends_if(system_harfbuzz)(lambda _: True))
++
+ # Apple platform decoder support
+ # ==============================================================
+ @depends(toolkit)

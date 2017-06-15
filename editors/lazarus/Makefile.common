@@ -61,7 +61,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} LCL_PLATFORM=${LCL_INTERFACE}
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${RM} ${PLIST}
 
 	@cd ${WRKSRC}/units/${BUILDNAME}/${LCL_INTERFACE} && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/lcl/units/%%BUILDNAME%%/${LCL_INTERFACE}/|' -e 's|//|/|' >> ${PLIST}
@@ -89,16 +89,16 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}
 
 	@cd ${WRKSRC}/units/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/lcl/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
 .if ${PKGNAMESUFFIX} == "-lcl-nogui"
 	@cd ${WRKDIR}/${PORTNAME}/components/debuggerintf/lib/${BUILDNAME} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/debuggerintf/lib/${BUILDNAME}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/components/debuggerintf/lib/${BUILDNAME}/{}" \;
 	@cd ${WRKDIR}/${PORTNAME}/components/lazdebuggergdbmi/lib/${BUILDNAME} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/lazdebuggergdbmi/lib/${BUILDNAME}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/components/lazdebuggergdbmi/lib/${BUILDNAME}/{}" \;
 .endif
 	@cd ${WRKDIR}/${PORTNAME}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/components/ideintf/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
 	@cd ${WRKDIR}/${PORTNAME}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/components/synedit/units/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
 	@cd ${WRKDIR}/${PORTNAME}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE} && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}/{}" \;
+		${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/components/lazcontrols/lib/${BUILDNAME}/${LCL_INTERFACE}/{}" \;

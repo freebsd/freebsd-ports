@@ -1,4 +1,4 @@
---- ppapi/shared_impl/private/net_address_private_impl.cc.orig	2016-05-11 19:02:25 UTC
+--- ppapi/shared_impl/private/net_address_private_impl.cc.orig	2017-04-19 19:06:36 UTC
 +++ ppapi/shared_impl/private/net_address_private_impl.cc
 @@ -26,9 +26,12 @@
  #include <arpa/inet.h>

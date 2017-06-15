@@ -7,4 +7,4 @@ at http://www.mozilla.org/docs/web-developer/sniffer/browser_type.html.
 This module had many influences from the lib/Browser.php code in
 version 1.3 of Horde.
 
-WWW: http://pear.php.net/package/Net_UserAgent_Detect/
+WWW: https://pear.php.net/package/Net_UserAgent_Detect

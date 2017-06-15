@@ -14,6 +14,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/APLRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/ARecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/Address.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CAARecord.Flags.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CAARecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CERTRecord.CertificateType.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CERTRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CNAMERecord.html
@@ -89,6 +91,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/NXTRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/Name.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/NameTooLongException.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/OPENPGPKEYRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/OPTRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/Opcode.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/Options.html
@@ -108,6 +111,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/ReverseMap.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/SIG0.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/SIGRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/SMIMEARecord.CertificateUsage.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/SMIMEARecord.MatchingType.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/SMIMEARecord.Selector.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/SMIMEARecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/SOARecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/SPFRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/SRVRecord.html
@@ -153,7 +160,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/spi/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/spi/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/spi/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/utils/HMAC.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/utils/base16.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/utils/base32.Alphabet.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/utils/base32.html
@@ -166,11 +172,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/package-list
-%%PORTDOCS%%%%DOCSDIR%%/resources/background.gif
 %%JDK6%%%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
-%%PORTDOCS%%%%DOCSDIR%%/resources/tab.gif
-%%PORTDOCS%%%%DOCSDIR%%/resources/titlebar.gif
-%%PORTDOCS%%%%DOCSDIR%%/resources/titlebar_end.gif
 %%JDK8%%%%PORTDOCS%%%%DOCSDIR%%/script.js
 %%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css

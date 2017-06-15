@@ -29,6 +29,7 @@ man/man1/Xvnc.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tigervnc.mo
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE.TXT

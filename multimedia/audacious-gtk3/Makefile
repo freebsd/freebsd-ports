@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	audacious
-PORTVERSION=	3.8
+PORTVERSION=	3.8.2
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-gtk3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 PKGNAMESUFFIX=	${DISTVERSIONSUFFIX}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+3 port of lightweight and versatile audio player
 
 LICENSE=	GPLv3
@@ -21,6 +22,7 @@ CONFLICTS_INSTALL=	audacious-3.*
 
 MASTERDIR=	${.CURDIR}/../audacious
 DISTINFO_FILE=	${.CURDIR}/distinfo
+FILESDIR=	${MASTERDIR}/files
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes

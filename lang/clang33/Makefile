@@ -86,10 +86,6 @@ RELTYPE=		Release
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 .if ${PORT_OPTIONS:MASSERTS}
 pre-fetch:
 	@if [ "`llvm-config${LLVM_SUFFIX} --build-mode`" != ${RELTYPE} ]; then \
@@ -102,7 +98,7 @@ pre-fetch:
 .endif
 
 post-extract:
-	${RM} -f ${BUILD_WRKSRC}
+	${RM} ${BUILD_WRKSRC}
 	${MV} ${WRKDIR}/${CLANG_NAME} ${BUILD_WRKSRC}
 
 post-patch:
@@ -179,7 +175,7 @@ PLIST_DIR_LIST=		include/clang \
 			lib/python
 
 build-plist:
-	${RM} -f ${PLIST}
+	${RM} ${PLIST}
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}
 .endfor

@@ -1,0 +1,23 @@
+--- modules/Makefile.in.orig	2016-12-13 14:45:17 UTC
++++ modules/Makefile.in
+@@ -16,6 +16,7 @@ MKDEP		= @MKDEP@ -DIRCD_PREFIX=\"@prefix
+ INSTALL		= @INSTALL@
+ INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+ INSTALL_DATA	= @INSTALL_DATA@
++INSTALL_LIB	= @INSTALL_LIB@
+ INSTALL_SUID    = @INSTALL_PROGRAM@ -o root -m 4755
+ SEDOBJ		= @SEDOBJ@
+ SHELL		= /bin/sh
+@@ -179,10 +180,10 @@ install_libmodules.a: libmodules.a
+ install_shared_modules: install-mkdirs
+ 	@echo "ircd: installing modules"
+ 	@for file in $(SH_CORE_OBJS); do \
+-		$(INSTALL_DATA) $$file $(DESTDIR)$(moduledir); \
++		$(INSTALL_LIB) $$file $(DESTDIR)$(moduledir); \
+ 	done
+ 	@for file in $(SH_OBJS); do \
+-		$(INSTALL_DATA) $$file $(DESTDIR)$(automoduledir); \
++		$(INSTALL_LIB) $$file $(DESTDIR)$(automoduledir); \
+ 	done
+ 
+ install_hpux_shared: install-mkdirs

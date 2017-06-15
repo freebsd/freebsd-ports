@@ -1,2 +1,3 @@
 bin/easyrpg-player
 man/man6/easyrpg-player.6.gz
+share/bash-completion/completions/easyrpg-player

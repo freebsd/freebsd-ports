@@ -1,2 +1,3 @@
-SHA256 (ruby/ruby-2.3.1.tar.xz) = 6725b5534d5a3a21ec4f14d6d7b9921a0d00d08acb88fd04cd50b47b70496338
-SIZE (ruby/ruby-2.3.1.tar.xz) = 11407048
+TIMESTAMP = 1479773431
+SHA256 (ruby/ruby-2.3.3.tar.xz) = 1a4fa8c2885734ba37b97ffdb4a19b8fba0e8982606db02d936e65bac07419dc
+SIZE (ruby/ruby-2.3.3.tar.xz) = 11444164

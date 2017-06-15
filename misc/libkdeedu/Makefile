@@ -3,9 +3,7 @@
 PORTNAME=	libkdeedu
 PORTVERSION=	${KDE4_VERSION}
 PORTREVISION=	1
-CATEGORIES=	misc kde
-MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	misc kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries used by KDE educational applications

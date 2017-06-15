@@ -34,6 +34,9 @@ libdata/pkgconfig/xcb-proto.pc
 %%PYTHON_SITELIBDIR%%/xcbgen/__init__.py
 %%PYTHON_SITELIBDIR%%/xcbgen/__init__.pyc
 %%PYTHON_SITELIBDIR%%/xcbgen/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xcbgen/align.py
+%%PYTHON_SITELIBDIR%%/xcbgen/align.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/align.pyo
 %%PYTHON_SITELIBDIR%%/xcbgen/error.py
 %%PYTHON_SITELIBDIR%%/xcbgen/error.pyc
 %%PYTHON_SITELIBDIR%%/xcbgen/error.pyo

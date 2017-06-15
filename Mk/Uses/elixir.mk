@@ -44,7 +44,7 @@ ELIXIR_APP_ROOT?=	${PREFIX}/lib/elixir/lib/${ELIXIR_APP_NAME}
 ELIXIR_HIDDEN?=		"^${ELIXIR_APP_NAME}$$"
 ELIXIR_LOCALE?=		en_US.UTF-8
 MIX_CMD?=		${LOCALBASE}/bin/mix
-MIX_COMPILE?=		${SETENV} ${MIX_ENV} LANG=${ELIXIR_LOCALE} MIX_ENV=${MIX_ENV_NAME} ELIXIR_HIDDEN=${ELIXIR_HIDDEN} ${MIX_CMD} ${MIX_TARGET}
+MIX_COMPILE?=		${SETENV} ${MIX_ENV} LANG=${ELIXIR_LOCALE} LC_ALL=${ELIXIR_LOCALE} MIX_ENV=${MIX_ENV_NAME} ELIXIR_HIDDEN=${ELIXIR_HIDDEN} ${MIX_CMD} ${MIX_TARGET}
 MIX_REWRITE?=
 MIX_BUILD_DEPS?=
 MIX_RUN_DEPS?=
@@ -81,10 +81,10 @@ do-build:
 	fi
 .endfor
 .endif
-	@${RM} -f ${WRKSRC}/mix.lock
+	@${RM} ${WRKSRC}/mix.lock
 	@cd ${WRKSRC} && ${MIX_COMPILE}
 .for app in ${MIX_EXTRA_APPS}
-	@${RM} -f ${WRKSRC}/${app}/mix.lock
+	@${RM} ${WRKSRC}/${app}/mix.lock
 	@cd ${WRKSRC}/${app} && ${MIX_COMPILE}
 .endfor
 .endif # .if !target(do-build)

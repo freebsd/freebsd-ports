@@ -12,20 +12,27 @@
 # bareos_sd_enable  (bool):  Set to NO by default.
 #               Set it to YES to enable bareos_sd.
 # bareos_sd_flags (params):  Set params used to start bareos_sd.
+# bareos_sd_config (params): Path to the config file/directory
 #
 
 . /etc/rc.subr
 
 name="bareos_sd"
 rcvar=${name}_enable
-command=%%PREFIX%%/sbin/bareos-sd
 
 load_rc_config $name
 
 : ${bareos_sd_enable="NO"}
-: ${bareos_sd_flags=" -u bareos -g bareos -v -c %%PREFIX%%/etc/bareos/bareos-sd.conf"}
+: ${bareos_sd_flags="-u bareos -g bareos -v"}
+: ${bareos_sd_config="%%PREFIX%%/etc/bareos/bareos-sd.d"}
 : ${bareos_sd_pidfile="/var/run/bareos/bareos-sd.9103.pid"}
 
-pidfile="${bacula_sd_pidfile}"
+command=%%PREFIX%%/sbin/bareos-sd
+command_args="-c ${bareos_sd_config}"
+pidfile="${bareos_sd_pidfile}"
+
+start_precmd() {
+	[ -d "${pidfile%/*}" ] || install -d -o bareos -g bareos ${pidfile%/*}
+}
 
 run_rc_command "$1"

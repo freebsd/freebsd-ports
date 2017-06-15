@@ -2,4 +2,4 @@ pear-Services_Amazon_S3 provides an object-oriented interface
 to the Amazon Simple Storage Service (S3). This package is
 based on the 2006-03-01 REST API.
 
-WWW: http://pear.php.net/package/Services_Amazon_S3/
+WWW: https://pear.php.net/package/Services_Amazon_S3

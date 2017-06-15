@@ -3,6 +3,7 @@
 
 PORTNAME=	irssi-fish
 DISTVERSION=	1.4.20160122
+PORTREVISION=	2
 CATEGORIES=	irc security
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -17,14 +18,14 @@ GH_PROJECT=	FiSH-irssi
 GH_ACCOUNT=	falsovsky
 GH_TAGNAME=	2b0c1c09
 
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig ssl
+CMAKE_ARGS=	-D__pkg_config_checked_OPENSSL=1 -DOPENSSL_FOUND=1 \
+		-DOPENSSL_INCLUDE_DIRS=${OPENSSLINC} \
+		-DOPENSSL_LIBRARY_DIRS=${OPENSSLLIB}
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/irssi/modules/libfish.so
 PORTDOCS=	README.md FiSH-irssi.txt
-
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/local,${LOCALBASE},g" \

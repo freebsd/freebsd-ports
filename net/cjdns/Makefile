@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cjdns
-PORTVERSION=	17.4
+PORTVERSION=	19.1
 DISTVERSIONPREFIX=	cjdns-v
 CATEGORIES=	net security
 

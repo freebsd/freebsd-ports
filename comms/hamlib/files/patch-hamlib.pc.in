@@ -1,4 +1,4 @@
---- hamlib.pc.in.orig	2015-10-02 13:17:24 UTC
+--- hamlib.pc.in.orig	2016-12-31 20:01:25 UTC
 +++ hamlib.pc.in
 @@ -7,7 +7,6 @@ Name: @PACKAGE_NAME@
  Description: Library to control radio and rotator equipment.

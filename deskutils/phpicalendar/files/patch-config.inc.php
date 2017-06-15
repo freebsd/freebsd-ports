@@ -1,6 +1,6 @@
---- config.inc.php.orig	2009-04-08 06:42:59.000000000 +0200
-+++ config.inc.php	2012-05-04 19:43:02.000000000 +0200
-@@ -100,7 +100,7 @@
+--- config.inc.php.orig	2009-04-08 04:42:59 UTC
++++ config.inc.php
+@@ -100,7 +100,7 @@ these arrays provide extra calendar opti
  */
  $list_webcals = array(
  #	'webcal://dimer.tamu.edu/calendars/seminars/Biochem.ics'

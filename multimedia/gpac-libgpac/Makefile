@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --X11-path="${LOCALBASE}" \
 		--use-ft=no --use-mad=no --use-ogg=no --use-xvid=no \
 		--use-openjpeg=no --use-theora=no --use-vorbis=no
 
-SSL_USE=	OPENSSL=yes
+SSL_USES=		ssl
 SSL_CONFIGURE_ENABLE=	ssl
 OPENGL_USE=	GL=gl GL=glu
 OPENGL_CONFIGURE_ENABLE=3d

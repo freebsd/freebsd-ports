@@ -6,10 +6,11 @@ CATEGORIES=	graphics
 MASTER_SITES=	#
 DISTFILES=	#
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta port for all povray ports
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 PLIST_FILES=	bin/povray
 
 POV_VERSIONS_ALL=	31 36 37

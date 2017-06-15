@@ -4,10 +4,7 @@ include/gpgme.h
 lib/common-lisp/gpgme/gpgme-package.lisp
 lib/common-lisp/gpgme/gpgme.asd
 lib/common-lisp/gpgme/gpgme.lisp
-lib/libgpgme-pthread.so
-lib/libgpgme-pthread.so.11
-lib/libgpgme-pthread.so.11.14.0
 lib/libgpgme.so
 lib/libgpgme.so.11
-lib/libgpgme.so.11.14.0
+lib/libgpgme.so.11.17.0
 share/aclocal/gpgme.m4

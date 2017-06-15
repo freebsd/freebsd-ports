@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	qt5ct
-PORTVERSION=	0.27
+PORTVERSION=	0.30
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 5 configuration tool
 
 LICENSE=	BSD2CLAUSE
@@ -18,6 +18,7 @@ USE_QT5=	core dbus gui svg widgets buildtools_build \
 	linguisttools_build
 USE_GL=	egl gl
 USE_XORG=	x11 xext xrender
+USE_GNOME=	glib20
 
 OPTIONS_DEFINE=	DOCS
 

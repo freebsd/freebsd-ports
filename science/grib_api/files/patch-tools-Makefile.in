@@ -1,4 +1,4 @@
---- tools/Makefile.in.orig	2016-03-16 17:11:30 UTC
+--- tools/Makefile.in.orig	2016-10-10 09:29:13 UTC
 +++ tools/Makefile.in
 @@ -90,11 +90,11 @@ bin_PROGRAMS = grib_keys$(EXEEXT) grib_h
  	grib_corruption_check$(EXEEXT) grib_compare$(EXEEXT) \
@@ -7,7 +7,7 @@
 -	grib1to2$(EXEEXT) gg_sub_area_check$(EXEEXT) \
 +	gg_sub_area_check$(EXEEXT) \
  	grib_moments$(EXEEXT) grib_to_netcdf$(EXEEXT) \
- 	grib_to_json$(EXEEXT)
+ 	grib_to_json$(EXEEXT) grib_check_gaussian_grid$(EXEEXT)
  noinst_PROGRAMS = gaussian$(EXEEXT) grib_diff$(EXEEXT) \
 -	mars_request$(EXEEXT) xref$(EXEEXT) all_keys$(EXEEXT)
 +	mars_request$(EXEEXT) xref$(EXEEXT) all_keys$(EXEEXT) grib1to2$(EXEEXT)

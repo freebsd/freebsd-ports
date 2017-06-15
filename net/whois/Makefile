@@ -3,6 +3,7 @@
 
 PORTNAME=	whois
 PORTVERSION=	5.1.5
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	coco@executive-computing.de
@@ -40,7 +41,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|# define ENABLE_NLS||" ${WRKSRC}/config.h
 .endif
 
-post-stage:
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mwhois
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mkpasswd
 

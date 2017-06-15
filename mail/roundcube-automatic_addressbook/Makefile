@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	automatic_addressbook
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
 
-MAINTAINER=	anes@anes.su
+MAINTAINER=	andrej@ebert.su
 COMMENT=	Roundcube webmail automatic addressbook plugin
 
 LICENSE=	GPLv3

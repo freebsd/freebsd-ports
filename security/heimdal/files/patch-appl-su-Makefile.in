@@ -1,0 +1,20 @@
+--- appl/su/Makefile.in.orig	2017-01-03 19:44:14 UTC
++++ appl/su/Makefile.in
+@@ -152,12 +152,16 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
+ PROGRAMS = $(bin_PROGRAMS)
+ am_su_OBJECTS = su.$(OBJEXT)
+ su_OBJECTS = $(am_su_OBJECTS)
+-su_LDADD = $(LDADD)
++su_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ am__DEPENDENCIES_1 =
+ @NO_AFS_FALSE@am__DEPENDENCIES_2 =  \
+ @NO_AFS_FALSE@	$(top_builddir)/lib/kafs/libkafs.la \
+ @NO_AFS_FALSE@	$(am__DEPENDENCIES_1)
+ su_DEPENDENCIES = $(am__DEPENDENCIES_2) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)

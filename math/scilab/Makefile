@@ -3,7 +3,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.5.2
-PORTREVISION=	2
+PORTREVISION=	6
 CATEGORIES=	math cad java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -24,7 +24,8 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		cpe desktop-file-utils fortran gettext gmake iconv \
-		libtool pathfix pkgconfig shared-mime-info
+		libtool ncurses pathfix pkgconfig shared-mime-info
+USE_LOCALE=	en_US.UTF-8
 GNU_CONFIGURE=	yes
 
 INSTALLS_ICONS=	yes
@@ -35,8 +36,6 @@ CONFIGURE_ARGS=	--with-gfortran \
 		--without-emf \
 		-disable-static-system-lib
 CONFIGURE_ENV=	BLAS_LIBS="${BLASLIB}" LAPACK_LIBS="${LAPACKLIB}"
-MAKE_ENV=	LANG=en_US.UTF-8 \
-		LC_ALL=en_US.UTF-8
 INSTALL_TARGET=	install-strip
 
 MAKE_JOBS_UNSAFE=	yes
@@ -115,6 +114,7 @@ TK_CONFIGURE_ON=	--with-tk-library=${LOCALBASE}/lib \
 			--with-tcl-include=${TCL_INCLUDEDIR}
 TK_USES=	tk
 TK_USE=		XORG=x11
+TK_RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:x11-toolkits/bwidget
 
 .if !exists(/usr/include/omp.h)
 CONFIGURE_ARGS+=	--without-openmp

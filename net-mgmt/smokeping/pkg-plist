@@ -161,8 +161,6 @@ man/man7/smokeping_extend.7.gz
 man/man7/smokeping_install.7.gz
 man/man7/smokeping_master_slave.7.gz
 man/man7/smokeping_upgrade.7.gz
-@dir smokeping/htdocs/img
-@dir var/smokeping
+@dir(www,www,) smokeping/htdocs/img
+@dir(smokeping,smokeping,) var/smokeping
 %%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
-@exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
-@exec mkdir -p %D/var/smokeping; chown smokeping:smokeping %D/var/smokeping

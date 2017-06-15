@@ -135,9 +135,11 @@ lib/libcgwrap.a
 lib/libcgwrap.so
 lib/libcgwrap.so.2
 lib/libcgwrap.so.2.0.0
+%%DATADIR%%/backupManager
 %%DATADIR%%/cgbackup
 %%DATADIR%%/cgmkdb
 %%DATADIR%%/cgrecover
 %%DATADIR%%/cgsimload
+%%DATADIR%%/logManager
 %%DATADIR%%/startdb
 %%DATADIR%%/stopdb

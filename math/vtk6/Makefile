@@ -217,8 +217,4 @@ BUILD_DEPENDS+=	doxygen:devel/doxygen
 CMAKE_ARGS+=	-DBUILD_DOCUMENTATION:BOOL=OFF
 .endif
 
-post-install:
-# So that this port doesn't clash with science/paraview:
-	${RM} ${STAGEDIR}${PREFIX}/share/cmake/hdf5/libhdf5.settings
-
 .include <bsd.port.mk>

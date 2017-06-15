@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	c
 COMMENT=	Compiled implementations of some of the modules of Tcllib
 
 BUILD_DEPENDS=	critcl:devel/critcl
-RUN_DEPENDS=	${PREFIX}/lib/tcllib/pkgIndex.tcl:${MASTERDIR}	# PREFIX, not LOCALBASE
+RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/pkgIndex.tcl:${MASTERDIR}	# PREFIX, not LOCALBASE
 
 MASTERDIR=	${.CURDIR:H}/tcllib
 TMPPLIST=	${WRKDIR}/PLIST
@@ -18,7 +18,7 @@ post-patch:
 	cd ${WRKSRC}/modules/json/c && ${YACC} -b json json.y
 
 do-install:
-	${RM} -f ${WRKSRC}/modules/tcllibc/license.terms
+	${RM} ${WRKSRC}/modules/tcllibc/license.terms
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/tcllib
 	${MV} ${WRKSRC}/modules/tcllibc ${STAGEDIR}${PREFIX}/lib/tcllib/
 	${SED} -e s,%%PLATFORM%%,`${LOCALBASE}/bin/critcl -show | ${SED} -n 's| *platform *||p'`,\

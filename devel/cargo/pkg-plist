@@ -3,6 +3,7 @@ etc/bash_completion.d/cargo
 lib/rustlib/manifest-cargo
 man/man1/cargo-bench.1.gz
 man/man1/cargo-build.1.gz
+man/man1/cargo-check.1.gz
 man/man1/cargo-clean.1.gz
 man/man1/cargo-doc.1.gz
 man/man1/cargo-fetch.1.gz

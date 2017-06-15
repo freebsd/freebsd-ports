@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeradius
-DISTVERSION=	3.0.11
+DISTVERSION=	3.0.14
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -28,10 +28,9 @@ CONFLICTS_INSTALL=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 
 USE_RC_SUBR=	radiusd
 
-USES=		gmake shebangfix tar:bzip2
+USES=		gmake shebangfix ssl tar:bzip2
 SHEBANG_FILES=	src/modules/rlm_counter/rad_counter scripts/sql/radsqlrelay
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 # Prevent /root/.rnd leftover
 MAKE_ARGS+=	HOME=/dev/null
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -44,7 +43,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT LDAP MYSQL \
 		PGSQL UNIXODBC FIREBIRD REDIS PYTHON RUBY \
 		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR PERL REST \
-		FREETDS IDN SSL_PORT DOCS SQLITE3
+		FREETDS IDN DOCS SQLITE3
 OPTIONS_DEFAULT=USER PERL
 
 USER_DESC=		Run as user freeradius, group freeradius
@@ -57,7 +56,6 @@ UDPFROMTO_DESC=		Compile in UDPFROMTO support
 DEVELOPER_DESC=		Enable developer options
 EDIR_DESC=		Enable eDirectory support (implies LDAP)
 REST_DESC=		Enable RESTful API support
-SSL_PORT_DESC=		Use OpenSSL from the ports collection
 
 SQLITE3_CONFIGURE_WITH=rlm_sql_sqlite
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
@@ -283,10 +281,6 @@ CONFIGURE_ARGS+=--quiet
 CONFIGURE_ARGS+=--with-udpfromto
 .endif
 
-.if ${PORT_OPTIONS:MSSL_PORT}
-WITH_OPENSSL_PORT=yes
-.endif
-
 .include <bsd.port.pre.mk>
 
 # if we're installing, place sample configs into ${EXAMPLESDIR}
@@ -362,11 +356,14 @@ post-patch:
 		${WRKSRC}/src/modules/rlm_krb5/configure
 .endif
 .if empty(PORT_OPTIONS:MRUBY)
-	@${RM} -fr ${WRKSRC}/src/modules/rlm_ruby/
+	@${RM} -r ${WRKSRC}/src/modules/rlm_ruby/
 .endif
 
 post-build:
 	@${FIND} ${WRKSRC}/build/lib -type f -name '*.so' -exec ${STRIP_CMD} {} \;
 	@${FIND} ${WRKSRC}/build/bin -type f -exec ${STRIP_CMD} {} \;
+
+post-install:
+	${MKDIR} ${STAGEDIR}/var/run/radiusd
 
 .include <bsd.port.post.mk>

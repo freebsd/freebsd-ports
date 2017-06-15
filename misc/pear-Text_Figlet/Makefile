@@ -5,9 +5,9 @@ PORTNAME=	Text_Figlet
 PORTVERSION=	1.0.2
 CATEGORIES=	misc www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Render text using FIGlet fonts
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

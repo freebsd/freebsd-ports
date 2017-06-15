@@ -183,6 +183,7 @@ share/audacious/Skins/TinyPlayer/text.png
 share/audacious/Skins/TinyPlayer/titlebar.png
 share/audacious/Skins/TinyPlayer/viscolor.txt
 share/audacious/Skins/TinyPlayer/volume.png
+%%NLS%%share/locale/ar/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/be/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo

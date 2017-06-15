@@ -9,7 +9,7 @@ MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Advanced Ticket Workflow Plugin for Trac
 
 RUN_DEPENDS=	tracd:www/trac

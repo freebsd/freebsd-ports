@@ -11,6 +11,4 @@ to Microsoft Windows.
 - Be able to list contents of InstallShield Cabinet Files
 - Be able to extract files from InstallShield Cabinet Files
 
-SVN: https://synce.svn.sourceforge.net/svnroot/synce/trunk/unshield/
-WWW: http://www.synce.org/oldwiki/index.php/Unshield
-     http://www.synce.org/moin/ComponentOverview
+WWW: https://github.com/twogood/unshield

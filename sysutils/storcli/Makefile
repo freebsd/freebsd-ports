@@ -1,22 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	storcli
-PORTVERSION=	1.17.08
+PORTVERSION=	1.20.15
 CATEGORIES=	sysutils
-MASTER_SITES=	http://docs.avagotech.com/docs-and-downloads/https:/avagodocs.s3.amazonaws.com:443/docs-and-downloads/raid-controllers/raid-controllers-common-files/
-DISTNAME=	MR_SAS_StorCLI_${PORTVERSION}
+MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
+DISTNAME=	${PORTVERSION}_StorCLI
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	SAS MegaRAID FreeBSD StorCLI
 
 LICENSE=	storcli
-LICENSE_NAME=	LSI
-LICENSE_TEXT=	${RESTRICTED}
+LICENSE_NAME=	BROADCOM
+LICENSE_TEXT=	Source recipient must acknowledge license.\
+		Reproduction or redistribution prohibited.\
+		See https://www.broadcom.com/cs/Satellite?pagename=AVG2/Utilities/EulaMsg
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
-
-RESTRICTED=	Source recipient must acknowledge license. Reproduction or \
-		redistribution prohibited. See \
-		http://www.avagotech.com/docs/12354864
 
 USES=		zip
 
@@ -27,11 +25,9 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/storcli
 PKGMESSAGE=	${WRKDIR}/pkg-message
-BINSRC=		${WRKSRC}/FreeBSD
-FETCH_AFTER_ARGS=-v
+BINSRC=		${WRKSRC}/storcli_All_OS/storcli_All_OS/FreeBSD
 
 post-extract:
-	@${TAR} xf ${WRKSRC}/storcli_all_os.zip -C${WRKSRC}
 	@${TAR} xf ${BINSRC}/storcli${ARCH:S/i386//:S/amd64/64/}.tar -C${WRKSRC}
 	@${REINPLACE_CMD} 's#\(StorCli\).*StorCli64#\1#'\
 		${BINSRC}/FreeBSD_readme.txt

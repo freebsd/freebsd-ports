@@ -1,10 +1,5 @@
 bin/qterminal
+share/appdata/qterminal.appdata.xml
 share/applications/qterminal.desktop
 share/applications/qterminal_drop.desktop
-share/pixmaps/qterminal.png
-%%DATADIR%%/translations/qterminal_cs.qm
-%%DATADIR%%/translations/qterminal_de.qm
-%%DATADIR%%/translations/qterminal_es.qm
-%%DATADIR%%/translations/qterminal_et.qm
-%%DATADIR%%/translations/qterminal_it.qm
-%%DATADIR%%/translations/qterminal_ru.qm
+share/icons/hicolor/64x64/apps/qterminal.png

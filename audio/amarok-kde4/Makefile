@@ -3,7 +3,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	2.8.0
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -13,8 +13,6 @@ COMMENT=	KDE music player
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libtag-extras.so:audio/taglib-extras \
 		liblastfm.so:audio/liblastfm \
-		libofa.so:audio/libofa \
-		libavcodec.so:multimedia/ffmpeg \
 		libqjson.so:devel/qjson \
 		libqca.so:devel/qca \
 		libdbus-1.so:devel/dbus
@@ -22,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:dev
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:devel/qtscriptgenerator \
 		${KDE_PREFIX}/lib/kde4/kio_upnp_ms.so:net/kio-upnp-ms
 
-USES=		cmake kde:4 mysql pkgconfig \
+USES=		cmake:outsource kde:4 mysql pkgconfig \
 		shared-mime-info shebangfix tar:bzip2
 USE_GL=		gl
 USE_KDE=	automoc4 kdelibs libkcddb libkcompactdisc \
@@ -33,6 +31,7 @@ USE_QT4=	corelib dbus designer gui network opengl \
 USE_XORG=	ice sm x11 xau xdmcp xext xft xpm
 SHEBANG_FILES=	src/kconf_update/amarok-2.4.1-tokens_syntax_update.pl
 USE_LDCONFIG=	yes
+CMAKE_ARGS=	-DWITH_FFmpeg:BOOL=off
 
 BROKEN_sparc64=	does not build (GCC-related error)
 

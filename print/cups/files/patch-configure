@@ -1,19 +1,5 @@
 --- configure.orig	2016-02-05 17:22:09 UTC
 +++ configure
-@@ -5390,6 +5390,13 @@ $as_echo "yes" >&6; }
- 			CFLAGS="$CFLAGS `$PKGCONFIG --cflags libusb-1.0`"
- 			LIBUSB="`$PKGCONFIG --libs libusb-1.0`"
- 			USBQUIRKS="\$(DATADIR)/usb"
-+		elif test -f /usr/lib/libusb.so; then
-+			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-+$as_echo "yes" >&6; }
-+			$as_echo "#define HAVE_LIBUSB 1" >>confdefs.h
-+
-+			LIBUSB="-lusb"
-+			USBQUIRKS="\$(DATADIR)/usb"
- 		else
- 			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
- $as_echo "no" >&6; }
 @@ -5656,7 +5663,6 @@ if test "${with_dbusdir+set}" = set; the
  fi
  

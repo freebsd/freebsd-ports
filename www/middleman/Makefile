@@ -13,7 +13,6 @@ COMMENT=	Robust proxy server
 OPTIONS_DEFINE=	SYSLOG DEBUG MTIME DOCS
 
 SYSLOG_DESC=	Enable syslog support
-DEBUG_DESC=	Enable debugging support
 MTIME_DESC=	Enable mtime support
 
 SYSLOG_CONFIGURE_ON=	--enable-syslog

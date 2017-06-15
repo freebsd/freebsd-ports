@@ -1,6 +1,6 @@
---- check_compilers.py.orig	2014-07-07 21:31:29.000000000 +0200
-+++ check_compilers.py	2014-08-17 17:54:05.000000000 +0200
-@@ -420,8 +420,7 @@
+--- check_compilers.py.orig	2016-09-07 08:44:22 UTC
++++ check_compilers.py
+@@ -420,8 +420,7 @@ class GNU_COMPILER(CONFIGURE_COMPILER):
     def after_compilers(self):
        """Define libs to search."""
        # prefer always libstdc++.so to the static one

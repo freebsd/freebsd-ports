@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.6.2
+PORTVERSION=	3.7.2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-gui
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/Copyright.txt
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libjsoncpp.so:devel/jsoncpp
+		libjsoncpp.so:devel/jsoncpp \
+		libuv.so:devel/libuv
 
 USE_QT5=	core gui widgets buildtools_build qmake_build
 USES=		cmake:run desktop-file-utils execinfo libarchive \

@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/perky \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-freebsd-${PORTVERSION}
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to FreeBSD-specific system libraries
 
@@ -18,7 +21,7 @@ USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1100002
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100002
 EXTRA_PATCHES+=	${FILESDIR}/freebsd11_patch-src__.const.def \
 		${FILESDIR}/freebsd11_patch-src__netstat.c
 .endif

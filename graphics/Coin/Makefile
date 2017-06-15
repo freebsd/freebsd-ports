@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsimage.so:graphics/simage
 
-USES=		openal:al libtool
+USES=		openal:al libtool pathfix
 USE_GL=		yes
 USE_XORG=	ice sm x11 xext xt
 GNU_CONFIGURE=	yes
@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe	\
 		--enable-3ds-import --enable-sound	\
 		--enable-javascript-api --enable-debug=no
 USE_LDCONFIG=	yes
-MAKE_ENV=	LANG=C
 INSTALL_TARGET=	install-strip
 
 pre-configure:

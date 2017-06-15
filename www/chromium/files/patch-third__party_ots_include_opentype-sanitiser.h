@@ -1,4 +1,4 @@
---- third_party/ots/include/opentype-sanitiser.h.orig	2016-03-25 13:05:02 UTC
+--- third_party/ots/include/opentype-sanitiser.h.orig	2017-04-19 19:06:52 UTC
 +++ third_party/ots/include/opentype-sanitiser.h
 @@ -22,6 +22,7 @@ typedef unsigned __int64 uint64_t;
  #else

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	endless-sky
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -13,9 +14,8 @@ LICENSE=	GPLv3+ CC-BY-4.0 CC-BY-SA-3.0 CC-BY-SA-4.0 PD
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/license.txt
 
-LIB_DEPENDS=	libpng.so:graphics/png
-
-BROKEN_FreeBSD_9=	does not build # revisit when ports gcc is switched to 4.9
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libmad.so:audio/libmad
 
 USE_GITHUB=	yes
 
@@ -32,5 +32,6 @@ post-build:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${LN} -s ../icons/hicolor/32x32/apps/endless-sky.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

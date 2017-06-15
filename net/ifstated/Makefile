@@ -3,6 +3,7 @@
 
 PORTNAME=	ifstated
 PORTVERSION=	5.1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	net
 MASTER_SITES=	http://christianserving.org/ports/net/ifstated/
@@ -10,7 +11,7 @@ MASTER_SITES=	http://christianserving.org/ports/net/ifstated/
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Interface state daemon
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 PLIST_FILES=	etc/ifstated.conf-sample \
 		sbin/ifstated \

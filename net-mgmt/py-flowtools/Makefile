@@ -13,6 +13,8 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python extension module for reading flow-tools' data
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:net-mgmt/flow-tools
 

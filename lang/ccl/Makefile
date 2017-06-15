@@ -42,11 +42,11 @@ SUB_FILES=	ccl.sh
 post-patch:
 	@${SED}	-i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/tools/asdf.lisp
 	@${FIND} ${WRKSRC} -name .svn -or -name .cvsignore -or -name "*.orig" \
-		| ${XARGS} ${RM} -r -f
+		| ${XARGS} ${RM} -r
 
 do-build:
-	@${RM} -f ${WRKSRC}/fx86cl ${WRKSRC}/fx86cl64
-	@cd ${WRKSRC}/lisp-kernel/freebsd${LISP_ARCH} && ${MAKE} && ${RM} -f *.o
+	@${RM} ${WRKSRC}/fx86cl ${WRKSRC}/fx86cl64
+	@cd ${WRKSRC}/lisp-kernel/freebsd${LISP_ARCH} && ${MAKE} && ${RM} *.o
 	@cd ${WRKSRC} && ${ECHO_CMD} | ${SETENV} -u CCL_DEFAULT_DIRECTORY ./${FX86CL} --no-init --batch --quiet \
 		--eval "(ccl:rebuild-ccl :full t)" \
 		--eval "(quit)"
@@ -55,7 +55,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ccl
 	${CP} -r ${WRKSRC}/* ${STAGEDIR}${CCL_DIRECTORY}
 	@for i in ${EXCLUDE}; do \
-		${RM} -r -f ${STAGEDIR}${CCL_DIRECTORY}/$${i}; \
+		${RM} -r ${STAGEDIR}${CCL_DIRECTORY}/$${i}; \
 	done
 	${INSTALL_SCRIPT} ${WRKDIR}/ccl.sh ${STAGEDIR}${PREFIX}/bin/ccl
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	gscmxx
 PORTVERSION=	0.4.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
@@ -11,9 +11,9 @@ MAINTAINER=	svmohr@gmail.com
 COMMENT=	Graphical frontend for scmxx
 
 RUN_DEPENDS=	p5-Image-Size>=0:graphics/p5-Image-Size \
-		p5-Gtk>=0:x11-toolkits/p5-Gtk
+		p5-Gtk-Perl>=0:x11-toolkits/p5-Gtk-Perl
 BUILD_DEPENDS=	p5-Image-Size>=0:graphics/p5-Image-Size \
-		p5-Gtk>=0:x11-toolkits/p5-Gtk \
+		p5-Gtk-Perl>=0:x11-toolkits/p5-Gtk-Perl \
 		scmxx:comms/scmxx \
 		convert:graphics/ImageMagick
 

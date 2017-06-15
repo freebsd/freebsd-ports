@@ -7,7 +7,7 @@
 
 PORTNAME=	gentoo-test
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Gentoo-Test

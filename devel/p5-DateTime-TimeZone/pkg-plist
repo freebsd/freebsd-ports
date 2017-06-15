@@ -162,6 +162,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Aqtau.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Aqtobe.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Ashgabat.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Atyrau.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Baghdad.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Baku.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Bangkok.pm
@@ -177,6 +178,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Dili.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Dubai.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Dushanbe.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Famagusta.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Gaza.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Hebron.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Ho_Chi_Minh.pm
@@ -288,6 +290,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Riga.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Rome.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Samara.pm
+%%SITE_PERL%%/DateTime/TimeZone/Europe/Saratov.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Simferopol.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Sofia.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Stockholm.pm

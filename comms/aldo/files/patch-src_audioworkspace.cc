@@ -1,5 +1,5 @@
---- src/audioworkspace.cc.orig	2007-11-05 03:58:46.000000000 -0500
-+++ src/audioworkspace.cc	2014-06-08 20:17:26.477449983 -0400
+--- src/audioworkspace.cc.orig	2007-11-05 08:58:46 UTC
++++ src/audioworkspace.cc
 @@ -31,7 +31,8 @@
  #include <cmath>
  #include <iostream>
@@ -10,7 +10,7 @@
  using namespace std;
  using namespace libaudiostream;
  
-@@ -104,6 +105,7 @@
+@@ -104,6 +105,7 @@ oastream AudioWorkSpace::create_output_s
  {
      ao_sample_format format;
      

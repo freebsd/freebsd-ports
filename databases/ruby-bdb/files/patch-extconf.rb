@@ -1,5 +1,5 @@
---- extconf.rb.orig	2011-04-06 19:35:39.000000000 +0000
-+++ extconf.rb	2015-01-22 14:56:21.000000000 +0000
+--- extconf.rb.orig	2011-04-06 19:35:39 UTC
++++ extconf.rb
 @@ -50,7 +50,7 @@
  rdoc: docs/doc/index.html
  

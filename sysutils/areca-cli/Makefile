@@ -10,8 +10,10 @@ MASTER_SITES=	http://www.areca.us/support/s_freebsd/cli/ \
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	freebsdcli_V${CLI_VER}_${CLI_REV}
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line Interface for the Areca ARC-xxxx RAID controllers
+
+LICENSE=	NONE
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -23,7 +25,7 @@ NO_BUILD=	yes
 CLI_VER=	1.14.7
 CLI_REV=	150519
 
-SUB_FILES+=	${PERIODICSCRIPT}
+SUB_FILES=	${PERIODICSCRIPT}
 
 WRKSRC=		${WRKDIR}/freebsdcli_V${CLI_VER}_${CLI_REV}
 
@@ -31,11 +33,11 @@ WRKSRC=		${WRKDIR}/freebsdcli_V${CLI_VER}_${CLI_REV}
 
 do-install:
 .if ${ARCH} == "i386"
-		${INSTALL_PROGRAM} ${WRKSRC}/${ARCH}/cli32 ${STAGEDIR}${PREFIX}/sbin/areca-cli
+	${INSTALL_PROGRAM} ${WRKSRC}/${ARCH}/cli32 ${STAGEDIR}${PREFIX}/sbin/areca-cli
 .elif ${ARCH} == "amd64"
-		${INSTALL_PROGRAM} ${WRKSRC}/x86_64/cli64 ${STAGEDIR}${PREFIX}/sbin/areca-cli
+	${INSTALL_PROGRAM} ${WRKSRC}/x86_64/cli64 ${STAGEDIR}${PREFIX}/sbin/areca-cli
 .endif
-		@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
-		${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 
 .include <bsd.port.post.mk>

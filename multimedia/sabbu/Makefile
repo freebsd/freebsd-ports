@@ -2,7 +2,7 @@
 
 PORTNAME=	sabbu
 PORTVERSION=	0.3.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Sabbu%20${PORTVERSION}
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0 \
 USES=		tar:bzip2 gmake pkgconfig iconv
 GNU_CONFIGURE=	yes
 
+USE_SDL=	sdl
 USE_GNOME=	gtk20
 CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib

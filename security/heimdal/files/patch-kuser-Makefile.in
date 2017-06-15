@@ -1,0 +1,92 @@
+--- kuser/Makefile.in.orig	2017-01-03 19:44:13 UTC
++++ kuser/Makefile.in
+@@ -157,9 +157,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
+ PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS)
+ generate_requests_SOURCES = generate-requests.c
+ generate_requests_OBJECTS = generate-requests.$(OBJEXT)
+-generate_requests_LDADD = $(LDADD)
++generate_requests_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ am__DEPENDENCIES_1 =
+ generate_requests_DEPENDENCIES = $(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -184,8 +188,12 @@ heimtools_DEPENDENCIES = $(top_builddir)
+ 	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_1)
+ kdecode_ticket_SOURCES = kdecode_ticket.c
+ kdecode_ticket_OBJECTS = kdecode_ticket.$(OBJEXT)
+-kdecode_ticket_LDADD = $(LDADD)
++kdecode_ticket_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ kdecode_ticket_DEPENDENCIES = $(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1)
+ kdestroy_SOURCES = kdestroy.c
+@@ -195,13 +203,20 @@ dist_kdigest_OBJECTS = kdigest.$(OBJEXT)
+ nodist_kdigest_OBJECTS = kdigest-commands.$(OBJEXT)
+ kdigest_OBJECTS = $(dist_kdigest_OBJECTS) $(nodist_kdigest_OBJECTS)
+ kdigest_DEPENDENCIES = $(top_builddir)/lib/ntlm/libheimntlm.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/sl/libsl.la $(am__DEPENDENCIES_1)
+ kgetcred_SOURCES = kgetcred.c
+ kgetcred_OBJECTS = kgetcred.$(OBJEXT)
+-kgetcred_LDADD = $(LDADD)
++kgetcred_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
++	$(LIB_libintl)
+ kgetcred_DEPENDENCIES = $(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1)
+ kimpersonate_SOURCES = kimpersonate.c
+@@ -211,13 +226,19 @@ kinit_SOURCES = kinit.c
+ kinit_OBJECTS = kinit.$(OBJEXT)
+ kinit_DEPENDENCIES = $(am__DEPENDENCIES_3) \
+ 	$(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/ntlm/libheimntlm.la $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ kverify_SOURCES = kverify.c
+ kverify_OBJECTS = kverify.$(OBJEXT)
+-kverify_LDADD = $(LDADD)
++kverify_LDADD = $(LDADD) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la
+ kverify_DEPENDENCIES = $(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_P = $(am__v_P_@AM_V@)
+@@ -583,6 +604,8 @@ man_MANS = \
+ 
+ kinit_LDADD = \
+ 	$(afs_lib) \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la \
+ 	$(top_builddir)/lib/ntlm/libheimntlm.la \
+ 	$(LIB_hcrypto) \
+@@ -604,6 +627,8 @@ nodist_kdigest_SOURCES = kdigest-command
+ kdigest_LDADD = \
+ 	$(top_builddir)/lib/ntlm/libheimntlm.la \
+ 	$(top_builddir)/lib/krb5/libkrb5.la \
++	$(LIB_heimbase) \
++	$(top_builddir)/lib/hx509/libhx509.la \
+ 	$(LIB_hcrypto) \
+ 	$(top_builddir)/lib/asn1/libasn1.la \
+ 	$(top_builddir)/lib/sl/libsl.la \

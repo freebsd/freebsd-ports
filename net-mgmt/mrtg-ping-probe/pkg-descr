@@ -4,6 +4,3 @@ its output to generate graphs visualizing minimum and maximum round
 trip times or packet loss.
 
 WWW: http://pwo.de/projects/mrtg/
-
-Yoshiro MIHIRA
-<sanpei@FreeBSD.org>

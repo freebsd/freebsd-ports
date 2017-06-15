@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencryptoki
-PORTVERSION=	3.5
-PORTREVISION=	2
+PORTVERSION=	3.6
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -19,9 +18,6 @@ LIB_DEPENDS=	libtspi.so:security/trousers
 
 USES=		alias autoreconf gmake libtool ssl tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
-.if exists(/usr/include/openssl/md2.h)
-WITH_OPENSSL_PORT=yes
-.endif
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes

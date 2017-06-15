@@ -1,2 +1,9 @@
-Should the game have trouble meeting com_maxfps, which would result in less
-effective strafe jumping, set com_busywait 1 to restore the old behaviour.
+The default renderer has switched to OpenGL2. Should you encounter
+a performance drop with this update, you can return to the old
+OpenGL1 rendere by executing:
+
+	ioquake3-devel +seta cl_renderer opengl1
+
+If you have chosen to build without the DLRENDERER option OpenGL1
+is used by default, OpenGL2 can be used by executing the
+`iqouake3_opengl2-devel` binary.

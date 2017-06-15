@@ -12,20 +12,35 @@
 # bareos_dir_enable  (bool):   Set to NO by default.
 #                Set it to YES to enable bareos_dir.
 # bareos_dir_flags (params):   Set params used to start bareos_dir.
+# bareos_dir_config (params):  Path to the config file/directory
 #
 
 . /etc/rc.subr
 
 name="bareos_dir"
 rcvar=${name}_enable
-command=%%PREFIX%%/sbin/bareos-dir
 
 load_rc_config $name
 
 : ${bareos_dir_enable="NO"}
-: ${bareos_dir_flags=" -u bareos -g bareos -v -c %%PREFIX%%/etc/bareos/bareos-dir.conf"}
+: ${bareos_dir_flags="-u bareos -g bareos -v"}
+: ${bareos_dir_config="%%PREFIX%%/etc/bareos/bareos-dir.d"}
 : ${bareos_dir_pidfile="/var/run/bareos/bareos-dir.9101.pid"}
 
+command=%%PREFIX%%/sbin/bareos-dir
+command_args="-c ${bareos_dir_config}"
+start_precmd="bareos_dir_testconfig"
+restart_precmd="bareos_dir_testconfig"
 pidfile="${bareos_dir_pidfile}"
+
+bareos_dir_testconfig()
+{
+	echo Performing sanity check on bareos-dir configuration:
+	eval ${command} ${bareos_dir_flags} -t
+}
+
+start_precmd() {
+	[ -d "${pidfile%/*}" ] || install -d -o bareos -g bareos ${pidfile%/*}
+}
 
 run_rc_command "$1"

@@ -1,14 +1,5 @@
 --- Makefile.in.orig	2015-06-21 19:07:53 UTC
 +++ Makefile.in
-@@ -434,7 +434,7 @@ EXTRA_DIST = \
- 
- dist_doc_DATA = $(docfiles)
- SUBDIRS = port libtiff tools build contrib test man html
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = libtiff-4.pc
- all: all-recursive
- 
 @@ -485,19 +485,6 @@ distclean-libtool:
  	-rm -f libtool config.lt
  install-dist_docDATA: $(dist_doc_DATA)

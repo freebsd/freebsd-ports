@@ -1,0 +1,148 @@
+https://ssl.icu-project.org/trac/ticket/12827
+
+Index: test/intltest/apicoll.h
+===================================================================
+--- test/intltest/apicoll.h	(revision 39483)
++++ test/intltest/apicoll.h	(revision 39484)
+@@ -35,6 +35,7 @@ class CollationAPITest: public IntlTestCollator {
+      * - displayable name in the desired locale
+      */
+     void TestProperty(/* char* par */);
++    void TestKeywordValues();
+ 
+     /**
+     * This tests the RuleBasedCollator
+Index: test/intltest/apicoll.cpp
+===================================================================
+--- test/intltest/apicoll.cpp	(revision 39483)
++++ test/intltest/apicoll.cpp	(revision 39484)
+@@ -81,17 +81,10 @@ CollationAPITest::TestProperty(/* char* par */)
+     logln("Test ctors : ");
+     col = Collator::createInstance(Locale::getEnglish(), success);
+     if (U_FAILURE(success)){
+-        errcheckln(success, "Default Collator creation failed. - %s", u_errorName(success));
++        errcheckln(success, "English Collator creation failed. - %s", u_errorName(success));
+         return;
+     }
+ 
+-    StringEnumeration* kwEnum = col->getKeywordValuesForLocale("", Locale::getEnglish(),true,success);
+-    if (U_FAILURE(success)){
+-        errcheckln(success, "Get Keyword Values for Locale failed. - %s", u_errorName(success));
+-        return;
+-    }
+-    delete kwEnum;
+-
+     col->getVersion(versionArray);
+     // Check for a version greater than some value rather than equality
+     // so that we need not update the expected version each time.
+@@ -231,6 +224,29 @@ CollationAPITest::TestProperty(/* char* par */)
+     delete junk;
+ }
+ 
++void CollationAPITest::TestKeywordValues() {
++    IcuTestErrorCode errorCode(*this, "TestKeywordValues");
++    LocalPointer<Collator> col(Collator::createInstance(Locale::getEnglish(), errorCode));
++    if (errorCode.logIfFailureAndReset("English Collator creation failed")) {
++        return;
++    }
++
++    LocalPointer<StringEnumeration> kwEnum(
++        col->getKeywordValuesForLocale("collation", Locale::getEnglish(), TRUE, errorCode));
++    if (errorCode.logIfFailureAndReset("Get Keyword Values for English Collator failed")) {
++        return;
++    }
++    assertTrue("expect at least one collation tailoring for English", kwEnum->count(errorCode) > 0);
++    const char *kw;
++    UBool hasStandard = FALSE;
++    while ((kw = kwEnum->next(NULL, errorCode)) != NULL) {
++        if (strcmp(kw, "standard") == 0) {
++            hasStandard = TRUE;
++        }
++    }
++    assertTrue("expect at least the 'standard' collation tailoring for English", hasStandard);
++}
++
+ void 
+ CollationAPITest::TestRuleBasedColl()
+ {
+@@ -2466,6 +2482,7 @@ void CollationAPITest::runIndexedTest( int32_t ind
+     if (exec) logln("TestSuite CollationAPITest: ");
+     TESTCASE_AUTO_BEGIN;
+     TESTCASE_AUTO(TestProperty);
++    TESTCASE_AUTO(TestKeywordValues);
+     TESTCASE_AUTO(TestOperators);
+     TESTCASE_AUTO(TestDuplicate);
+     TESTCASE_AUTO(TestCompare);
+Index: i18n/ucol_res.cpp
+===================================================================
+--- i18n/ucol_res.cpp	(revision 39483)
++++ i18n/ucol_res.cpp	(revision 39484)
+@@ -680,6 +680,7 @@ ucol_getKeywordValuesForLocale(const char* /*key*/
+         return NULL;
+     }
+     memcpy(en, &defaultKeywordValues, sizeof(UEnumeration));
++    ulist_resetList(sink.values);  // Initialize the iterator.
+     en->context = sink.values;
+     sink.values = NULL;  // Avoid deletion in the sink destructor.
+     return en;
+Index: common/ulist.c
+===================================================================
+--- common/ulist.c	(revision 39483)
++++ common/ulist.c	(revision 39484)
+@@ -29,7 +29,6 @@ struct UList {
+     UListNode *tail;
+     
+     int32_t size;
+-    int32_t currentIndex;
+ };
+ 
+ static void ulist_addFirstItem(UList *list, UListNode *newItem);
+@@ -51,7 +50,6 @@ U_CAPI UList *U_EXPORT2 ulist_createEmptyList(UErr
+     newList->head = NULL;
+     newList->tail = NULL;
+     newList->size = 0;
+-    newList->currentIndex = -1;
+     
+     return newList;
+ }
+@@ -80,8 +78,9 @@ static void ulist_removeItem(UList *list, UListNod
+     } else {
+         p->next->previous = p->previous;
+     }
+-    list->curr = NULL;
+-    list->currentIndex = 0;
++    if (p == list->curr) {
++        list->curr = p->next;
++    }
+     --list->size;
+     if (p->forceDelete) {
+         uprv_free(p->data);
+@@ -150,7 +149,6 @@ U_CAPI void U_EXPORT2 ulist_addItemBeginList(UList
+         newItem->next = list->head;
+         list->head->previous = newItem;
+         list->head = newItem;
+-        list->currentIndex++;
+     }
+     
+     list->size++;
+@@ -193,7 +191,6 @@ U_CAPI void *U_EXPORT2 ulist_getNext(UList *list)
+     
+     curr = list->curr;
+     list->curr = curr->next;
+-    list->currentIndex++;
+     
+     return curr->data;
+ }
+@@ -209,7 +206,6 @@ U_CAPI int32_t U_EXPORT2 ulist_getListSize(const U
+ U_CAPI void U_EXPORT2 ulist_resetList(UList *list) {
+     if (list != NULL) {
+         list->curr = list->head;
+-        list->currentIndex = 0;
+     }
+ }
+ 
+@@ -272,4 +268,3 @@ U_CAPI void U_EXPORT2 ulist_reset_keyword_values_i
+ U_CAPI UList * U_EXPORT2 ulist_getListFromEnum(UEnumeration *en) {
+     return (UList *)(en->context);
+ }
+-

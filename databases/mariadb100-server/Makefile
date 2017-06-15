@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.27
+PORTVERSION=	10.0.31
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -17,17 +18,20 @@ MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
+#LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_powerpc64=	Does not build
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb100-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo gmake shebangfix ssl
+USES=		bison:build cmake compiler:c++11-lib cpe execinfo \
+		ncurses shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql ${PREFIX}/lib/mysql/plugin
 SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
@@ -92,8 +96,6 @@ OPTIONS_SUB=	yes
 .endif
 
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
-# See PR209419, MariaDB 10.0 fails to build with base SSL libs
-WITH_OPENSSL_PORT=	yes
 
 .if defined(CLIENT_ONLY)
 # MySQL-Client part
@@ -114,6 +116,7 @@ ${ENGINE}_CMAKE_OFF=    -DWITHOUT_${ENGINE}=1
 
 MAXKEY_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_my__compare.h
 MROONGA_CMAKE_OFF=	-DWITHOUT_MROONGA=1
+MROONGA_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 # Currently OQGraph does not build using clang.
@@ -129,32 +132,33 @@ post-install:
 	# These are "client" components, so there should be a switch that
 	# prevents them from being installed but it's unknown right now
 .	for f in bin/msql2mysql bin/mysql_config bin/mysql_find_rows \
-		bin/mysqlaccess COPYING.AGPLv3 COPYING.GPLv2
+		bin/mysqlaccess COPYING.AGPLv3 COPYING.GPLv2 share/aclocal/mysql.m4
 		${RM} ${STAGEDIR}${PREFIX}/${f}
 .	endfor
+	${RM} -r ${STAGEDIR}${DATADIR}/SELinux
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000012
+.if ${OPSYS} == FreeBSD
 CMAKE_ARGS+=	-DWITH_JEMALLOC="system"
 .else
 CMAKE_ARGS+=	-DWITH_JEMALLOC="no"
 .endif
 
 .if ${PORT_OPTIONS:MTOKUDB}
-NOT_FOR_ARCHS=  i386
-NOT_FOR_ARCHS_REASON=   TokuDB not supported on 32-bit platforms, see \
-                        https://github.com/percona/PerconaFT/blob/master/README.md
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	TokuDB not supported on 32-bit platforms, see \
+			https://github.com/percona/PerconaFT/blob/master/README.md
 .endif
 
-.if ${ARCH} == 'i386' && ${OSVERSION} >= 1001000
+.if ${ARCH} == 'i386'
 # Server segfaults on i386 when built with clang >= 3.4
 USE_GCC=	yes
 .endif
 
 post-extract-OQGRAPH-off:
-	@${RM} -rf ${WRKSRC}/storage/oqgraph
+	@${RM} -r ${WRKSRC}/storage/oqgraph
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
@@ -165,5 +169,9 @@ post-patch:
 		${WRKSRC}/cmake/os/DragonFly.cmake
 	${MV} ${WRKSRC}/storage/tokudb ${WRKSRC}/skip-tokudb
 .endif
+
+post-configure-MROONGA-on:
+	${REINPLACE_CMD} 's|-llz4|-L${LOCALBASE}/lib -llz4|' \
+		${WRKSRC}/storage/mroonga/CMakeFiles/mroonga.dir/link.txt
 
 .include <bsd.port.post.mk>

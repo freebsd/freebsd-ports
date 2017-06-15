@@ -29,6 +29,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=	2017-03-01
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

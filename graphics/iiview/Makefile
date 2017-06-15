@@ -19,7 +19,6 @@ USE_XORG=	xpm x11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nakal
-WRKSRC=		${WRKDIR}/iiview-${PORTVERSION}
 
 PLIST_FILES=	bin/iiview man/man1/iiview.1.gz
 

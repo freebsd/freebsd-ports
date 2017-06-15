@@ -26,6 +26,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 EXTRACT_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAKEFILE=	${FILESDIR}/Makefile
 CONFIGURE_ENV=	CONFIGFILE="${CONFIGFILE}" \

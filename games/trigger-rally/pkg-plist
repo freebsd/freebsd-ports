@@ -1,0 +1,20 @@
+bin/trigger-rally
+%%DATADIR%%/data.md5
+%%DATADIR%%/data.zip
+%%DATADIR%%/icon/trigger-rally-win.ico
+%%DATADIR%%/trigger-rally.config.defs
+share/icons/hicolor/128x128/apps/trigger.png
+share/icons/hicolor/16x16/apps/trigger.png
+share/icons/hicolor/192x192/apps/trigger.png
+share/icons/hicolor/22x22/apps/trigger.png
+share/icons/hicolor/24x24/apps/trigger.png
+share/icons/hicolor/256x256/apps/trigger.png
+share/icons/hicolor/32x32/apps/trigger.png
+share/icons/hicolor/36x36/apps/trigger.png
+share/icons/hicolor/48x48/apps/trigger.png
+share/icons/hicolor/64x64/apps/trigger.png
+share/icons/hicolor/72x72/apps/trigger.png
+share/icons/hicolor/96x96/apps/trigger.png
+share/icons/hicolor/scalable/apps/trigger-rally-icons.svg
+@dir %%DATADIR%%/defplayers
+@dir %%DATADIR%%/plugins

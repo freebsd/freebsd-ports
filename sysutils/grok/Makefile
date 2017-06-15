@@ -2,7 +2,7 @@
 
 PORTNAME=	grok
 PORTVERSION=	1.20110708.1
-PORTREVISION=	3
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
@@ -11,12 +11,14 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Expert system for real-time log analysis
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
 OPTIONS_DEFINE=	DOCS
 
 BUILD_DEPENDS=	gperf>=3.0.3:devel/gperf
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libevent.so:devel/libevent2 \
+		libevent.so:devel/libevent \
 		libtokyocabinet.so:databases/tokyocabinet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

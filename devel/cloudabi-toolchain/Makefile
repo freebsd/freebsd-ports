@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudabi-toolchain
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	devel
 MASTER_SITES=	# None
 DISTFILES=	# None
@@ -16,7 +16,7 @@ RUN_DEPENDS=	clang${LLVM_SUFFIX}:devel/llvm${LLVM_SUFFIX} \
 		lld${LLVM_SUFFIX}:devel/llvm${LLVM_SUFFIX} \
 		pkgconf:devel/pkgconf
 
-LLVM_SUFFIX=	39
+LLVM_SUFFIX=	40
 
 CLOUDABI_ARCHS=	aarch64-unknown-cloudabi armv6-unknown-cloudabi-eabihf \
 		i686-unknown-cloudabi x86_64-unknown-cloudabi

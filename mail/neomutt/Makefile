@@ -1,38 +1,43 @@
 # $FreeBSD$
 
 PORTNAME=	neomutt
-PORTVERSION=	20160916
+PORTVERSION=	20170306
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Bringing together all the Mutt Code
 
-LICENSE=	GPLv1
-LICENSE_FILE=	${WRKSRC}/GPL
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
+		urlview:textproc/urlview
 
 USE_GITHUB=	yes
 
-USES=		autoreconf localbase ncurses shebangfix ssl
+USES=		autoreconf localbase shebangfix ssl
 GNU_CONFIGURE=	yes
-
-LIB_DEPENDS=	libnotmuch.so:mail/notmuch
-BUILD_DEPENDS=	gdate:sysutils/coreutils
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
-		urlview:textproc/urlview
 
 OPTIONS_SUB=	yes
 SHEBANG_FILES=	smime_keys.pl
 
-OPTIONS_DEFINE=	NLS DOCS SASL ICONV IDN FLOCK GPGME
-OPTIONS_DEFAULT=SASL TOKYOCABINET
-OPTIONS_RADIO=	HCACHE
-OPTIONS_RADIO_HCACHE=	TOKYOCABINET LMDB
+OPTIONS_DEFINE=	NLS DOCS SASL ICONV IDN FLOCK GPGME NOTMUCH
+OPTIONS_DEFAULT=SASL TOKYOCABINET NOTMUCH GPGME LMDB NCURSES
+OPTIONS_MULTI=	HCACHE
+OPTIONS_MULTI_HCACHE=	BDB GDBM KYOTOCABINET LMDB QDBM TOKYOCABINET
+OPTIONS_SINGLE=	SCREEN
+OPTIONS_SINGLE_SCREEN=	NCURSES SLANG
 
 FLOCK_DESC=	Use flock() to lock files
 GPGME_DESC=	Use gpgme to handle pgp
-TOKYOCABINET_DESC=	Use TokyoCabinet as header-cache backend
-LMDB_DESC=		Use LMDB as header-cache backend
+NOTMUCH_DESC=	Use notmuch for tagging and searching
+HCACHE_DESC=	Header-cache backend
+KYOTOCABINET_DESC=	Kyoto Cabinet support
+LMDB_DESC=		Lightning Memory-Mapped Database support
+QDBM_DESC=		Quick DataBase Manager support
+TOKYOCABINET_DESC=	Tokyo Cabinet support
+SCREEN_DESC=	Screen options
 
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-docdir="${DOCSDIR}" \
@@ -42,18 +47,24 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-pop \
 		--enable-nntp \
 		--enable-compressed \
-		--enable-hcache \
 		--enable-sidebar \
-		--enable-notmuch \
-		--without-qdbm \
 		--disable-fcntl \
+		--enable-locales-fix \
 		--enable-external-dotlock
 
+# Header cache
+BDB_CONFIGURE_WITH=		bdb
+BDB_USES=			bdb
+GDBM_CONFIGURE_WITH=		gdbm
+GDBM_LIB_DEPENDS=		libgdbm.so:databases/gdbm
+KYOTOCABINET_CONFIGURE_WITH=	kyotocabinet
+KYOTOCABINET_LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
+LMDB_CONFIGURE_WITH=		lmdb
+LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
+QDBM_CONFIGURE_WITH=		qdbm
+QDBM_LIB_DEPENDS=		libqdbm.so:databases/qdbm
 TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet
 TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
-
-LMDB_CONFIGURE_WITH=	lmdb
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
@@ -75,15 +86,23 @@ SASL_CONFIGURE_ON=	--with-sasl
 GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
 GPGME_CONFIGURE_ENABLE=	gpgme
 
+NOTMUCH_LIB_DEPENDS=	libnotmuch.so:mail/notmuch
+NOTMUCH_CONFIGURE_ENABLE=	notmuch
+
+SLANG_CONFIGURE_ON=	--with-slang=${LOCALBASE}
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
+SLANG_VARS=	PKGMESSAGE=${FILESDIR}/pkg-message.slang
+
+NCURSES_USES=	ncurses
+
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 			lynx:www/lynx
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/\`date/\`gdate/" ${WRKSRC}/Makefile.am ${WRKSRC}/doc/Makefile.am
 	@${REINPLACE_CMD} '/LIBS=$$/d' ${WRKSRC}/configure.ac
 
 post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/etc/mime*
+	${RM} ${STAGEDIR}${PREFIX}/etc/mime*
 
 .include <bsd.port.mk>

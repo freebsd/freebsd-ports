@@ -5,7 +5,7 @@ PORTVERSION=	r769
 CATEGORIES=	devel
 MASTER_SITES=	http://opsec.eu/src/xc3sprog/
 
-MAINTAINER=	uffe@uffe.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free programmer for Xilinx Spartan S3E Starter Kit
 
 LIB_DEPENDS=	libftdi.so:devel/libftdi

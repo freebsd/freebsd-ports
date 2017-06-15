@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Simple wrapper for Git
 
 LICENSE=	BSD3CLAUSE
@@ -16,6 +16,8 @@ BUILD_DEPENDS=	pear>=1.9.4:devel/pear \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 RUN_DEPENDS=	pear>=1.9.4:devel/pear \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
+
+BROKEN=		unfetchable, redirects to https://phpunit.de/
 
 USES=	pear
 PEAR_CHANNEL=	phpunit

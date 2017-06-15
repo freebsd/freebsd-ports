@@ -19,7 +19,6 @@ OPTIONS_DEFINE=	NOKEEPALIVE NOUSERCHANLIST DEBUG HIDDENCAVES DOTQ \
 
 NOKEEPALIVE_DESC=	Disable socket keepalive option
 NOUSERCHANLIST_DESC=	Disable userlist based on channel
-DEBUG_DESC=		Compile in debug code
 HIDDENCAVES_DESC=	Enable hidden caves feature
 DOTQ_DESC=		Compile in .Q option
 FUSERLIST_DESC=		Support saving current userlist to a file

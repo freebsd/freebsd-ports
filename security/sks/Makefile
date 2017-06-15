@@ -9,8 +9,6 @@ MASTER_SITES=	http://bitbucket.org/skskeyserver/sks-keyserver/downloads/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 
-PROJECTHOST=	sks-keyserver
-
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 USES=		bdb:5 perl5 gmake shebangfix tar:tgz
@@ -30,7 +28,7 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	@: > ${WRKSRC}/Makefile.local
 	@${REINPLACE_CMD} 's/-ccopt -pg //' ${WRKSRC}/Makefile
-	@cd ${WRKSRC} && ${RM} -f .depend
+	@cd ${WRKSRC} && ${RM} .depend
 
 post-patch:
 	@${REINPLACE_CMD} -Ee '/^CC=/d; /^CFLAGS=/s/=/+=/' \

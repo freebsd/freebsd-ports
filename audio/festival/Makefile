@@ -7,6 +7,7 @@ CATEGORIES=	audio accessibility
 MASTER_SITES=	FESTIVAL
 DISTFILES=	${DISTNAME}-release.tar.gz 	\
 		speech_tools-${PORTVERSION}-release.tar.gz
+DIST_SUBDIR=	festival
 
 PATCHFILES=	src_modules_diphone_diphone.h.diff?id=b58a836:debian	\
 		src_modules_diphone_di_io.cc.diff?id=b58a836:debian	\
@@ -24,11 +25,14 @@ PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patch
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
+BROKEN_aarch64=		Fails to link: arm64_unknown.mak: No such file or directory
+BROKEN_armv6=		Fails to link: cc.mak: No such file or directory
+BROKEN_mips64=		Fails to link: cc.mak: No such file or directory
+BROKEN_powerpc64=	Does not build
+
 OPTIONS_DEFINE=	NAS ESD
 OPTIONS_DEFAULT=NAS ESD
 ESD_DESC=	${ESOUND_DESC}
-
-DIST_SUBDIR=	festival
 
 CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib
 CONFIGURE_WRKSRC=	${WRKDIR}/festival
@@ -42,8 +46,6 @@ WRKSRC=		${WRKDIR}
 
 SPT_PATCHES=	include_ling__class_EST__FeatureFunctionPackage.h	\
 		include_unix_EST__socket__unix.h
-
-BROKEN_powerpc64=	Does not build
 
 do-build:
 .for d in speech_tools festival
@@ -85,14 +87,11 @@ do-configure:
 	# This step helps non-i386 systems and is harmless on i386
 	-${LN} -s ix86_FreeBSD.mak ${WRKDIR}/$d/config/systems/${ARCH:S/armv6/arm/}_unknown.mak
 .endfor
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 	    -e '/^CFLAGS *=/s|$$| ${CFLAGS}|' \
 	    -e '/^CXXFLAGS *=/s|$$| ${CXXFLAGS}|' \
 	    -e 's,^OPTIMI,#OPTIMI,' \
 	    ${WRKSRC}/speech_tools/config/compilers/gcc*.mak
-	# This step helps to use a compiler, the vendor has not seen before:
-	${TEST} -e ${WRKDIR}/speech_tools/config/compilers/${CC}.mak ||	\
-		${LN} -s gcc_defaults.mak ${WRKDIR}/speech_tools/config/compilers/${CC}.mak
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -100,7 +99,7 @@ do-install:
 	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	${FIND} ${FESTIVAL} -type f -name *.orig -delete
 	${CP} -pPR ${FESTIVAL}/lib ${FESTIVAL}/examples ${STAGEDIR}${DATADIR}
-	${RM} -rf ${STAGEDIR}${DATADIR}/lib/etc/Makefile ${STAGEDIR}${DATADIR}/lib/etc/*FreeBSD* \
+	${RM} -r ${STAGEDIR}${DATADIR}/lib/etc/Makefile ${STAGEDIR}${DATADIR}/lib/etc/*FreeBSD* \
 	    ${STAGEDIR}${DATADIR}/lib/etc/*unknown
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*/audsp ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${FESTIVAL}/src/main/festival ${STAGEDIR}${PREFIX}/libexec/festival.naked

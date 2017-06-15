@@ -4,4 +4,4 @@ like locale based formatting of dates, numbers and currencies.
 Beside that it attempts to provide an OS independent way to setlocale()
 and aims to provide language and country names translated into many languages.
 
-WWW: http://pear.php.net/package/I18Nv2/
+WWW: https://pear.php.net/package/I18Nv2

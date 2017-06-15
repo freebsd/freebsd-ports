@@ -10,7 +10,7 @@ MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring daemon
 
-USES=		tar:tgz
+USES=		tar:tgz ssl
 USE_RC_SUBR=	nefu
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 USERS=		nefu
 GROUPS=		nefu
 
-USE_OPENSSL=	yes
 OPTIONS_DEFINE=	LDAP HTML
 HTML_DESC=	HTML support
 OPTIONS_SUB=	yes

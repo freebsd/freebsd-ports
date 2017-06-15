@@ -31,6 +31,7 @@
     SUBDIR += enscript
     SUBDIR += eric6
     SUBDIR += eterm
+    SUBDIR += fandol
     SUBDIR += fcitx
     SUBDIR += fcitx-chewing
     SUBDIR += fcitx-cloudpinyin
@@ -56,7 +57,6 @@
     SUBDIR += ibus-libpinyin
     SUBDIR += ibus-pinyin
     SUBDIR += ibus-table-chinese
-    SUBDIR += irssi
     SUBDIR += jis2gb
     SUBDIR += kcfonts
     SUBDIR += kde4-l10n-zh_CN
@@ -71,7 +71,6 @@
     SUBDIR += lunar
     SUBDIR += moettf
     SUBDIR += muni
-    SUBDIR += mutt
     SUBDIR += oicq
     SUBDIR += opencc
     SUBDIR += opendesktop-fonts
@@ -95,6 +94,7 @@
     SUBDIR += p5-cconv
     SUBDIR += pcmanx
     SUBDIR += php-cconv
+    SUBDIR += php-opencc
     SUBDIR += phpbb-tw
     SUBDIR += phpbb3-tw
     SUBDIR += py-cconv

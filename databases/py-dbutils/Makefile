@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	dbutils
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	databases python
-MASTER_SITES=	http://www.w4py.org/downloads/DBUtils/ \
-		CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	DBUtils-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Providing solid, persistent, and pooled connections to a database
 
-USES=		python:2
-USE_PYTHON=	distutils autoplist
+LICENSE=	MIT
+
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

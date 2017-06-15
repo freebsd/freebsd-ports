@@ -5,7 +5,7 @@ PORTNAME=	PEAR_PackageFileManager
 PORTVERSION=	1.7.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	PEAR class to maintain PEAR packages
 
 OPTIONS_DEFINE=	PEAR_PHP_COMPATINFO PEAR_XML_TREE

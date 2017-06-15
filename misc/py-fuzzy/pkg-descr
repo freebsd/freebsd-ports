@@ -1,0 +1,9 @@
+Fuzzy is a python library implementing common phonetic algorithms quickly.
+Typically this is in string similarity exercises, but they're pretty versatile.
+The algorithms are:
+* Soundex
+* NYSIIS
+* Double Metaphone Based on Maurice Aubrey's C code from his perl
+  implementation.
+
+WWW: https://pypi.python.org/pypi/Fuzzy

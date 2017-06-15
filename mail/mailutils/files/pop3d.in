@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pop3d
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name="pop3d"
+rcvar=pop3d_enable
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config ${name}
+
+: ${pop3d_enable="NO"}
+
+run_rc_command "$1"

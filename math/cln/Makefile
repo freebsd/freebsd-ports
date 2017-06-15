@@ -21,11 +21,11 @@ USE_LDCONFIG=	yes
 
 INFO=		cln
 
-BROKEN_sparc64=	Does not compile on sparc64
+BROKEN_aarch64=	Fails to compile: error: declaration of divu_64_rest in global scope conflicts with declaration with C language linkage
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == armv6
+.if ${ARCH} == aarch64 || ${ARCH} == armv6
 CPPFLAGS+=	-DNO_ASM
 .endif
 

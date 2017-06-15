@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	SF/gnochm/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	cpm@fbsd.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bindings for CHMLIB library
 
 LICENSE=	GPLv2+

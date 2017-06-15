@@ -1,6 +1,6 @@
---- src/plugin_xmms/Makefile.in.orig	2014-11-27 02:47:01 UTC
+--- src/plugin_xmms/Makefile.in.orig	2017-01-01 03:46:49 UTC
 +++ src/plugin_xmms/Makefile.in
-@@ -156,8 +156,7 @@ libxmms_flac_la_DEPENDENCIES =  \
+@@ -166,8 +166,7 @@ libxmms_flac_la_DEPENDENCIES =  \
  	$(top_builddir)/src/share/grabbag/libgrabbag.la \
  	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
  	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
@@ -10,7 +10,7 @@
  am__objects_1 = charset.lo configure.lo fileinfo.lo http.lo plugin.lo \
  	tag.lo
  am_libxmms_flac_la_OBJECTS = $(am__objects_1)
-@@ -413,8 +412,7 @@ libxmms_flac_la_LIBADD = \
+@@ -429,8 +428,7 @@ libxmms_flac_la_LIBADD = \
  	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
  	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
  	$(top_builddir)/src/share/utf8/libutf8.la \

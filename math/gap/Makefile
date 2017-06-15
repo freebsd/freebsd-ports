@@ -2,15 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	gap
-PORTVERSION=	4.8.4.${GAP_DISTDATE}
+PORTVERSION=	4.8.6.${GAP_DISTDATE}
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap48/tar.bz2/ \
 		ftp://ftp.stack.nl/pub/users/johans/gap/ \
 		ftp://ftp.gap-system.org/pub/gap/gap48/old/
 DISTNAME=	${GAP_VERSION}p${PORTVERSION:R:E}_${GAP_DISTTIME}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GAP is a system for computational discrete algebra
+
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
@@ -28,18 +31,30 @@ SHEBANG_FILES=	configure \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 ALL_TARGET=	default
+INSTALL_TARGET=	install-strip
 
 MAKE_JOBS_UNSAFE=yes
 
 GAP_VERSION=	${PORTNAME}${PORTVERSION:R:R:S/./r/}	# gap4r5
-GAP_DISTTIME=	2016_06_04-12_41
+GAP_DISTTIME=	2016_11_12-14_25
 GAP_DISTDATE=	${GAP_DISTTIME:C/-.*//:S/_//g}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
 WRKSRC=		${WRKDIR}/${GAP_VERSION}
 PLIST_FILES=	bin/gap
 
+BROKEN_aarch64=		Fails to link: undefined reference to SyAllocBags
+
 post-patch:
-	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/sh|/bin/sh|' ${WRKSRC}/pkg/happrime/make_tarball
+	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/sh|/bin/sh|' \
+	    ${WRKSRC}/pkg/happrime/make_tarball
+
+post-build:
+	cd ${WRKSRC}/pkg/simpcomp && \
+	    ${SETENV} ${CONFIGURE_ENV} ${SH} configure \
+		${CONFIGURE_ARGS:N--with-*} && \
+	    ${MAKE} ${MAKEFLAGS} && \
+	    ${MAKE} ${MAKEFLAGS} install-strip && \
+	    ${RM} bistellar
 
 do-install:
 	${SED} -e "s:GAP_DIR=.*:GAP_DIR=${GAP_LIBDIR}:g" \

@@ -1,0 +1,10 @@
+--- deps/rabbit/scripts/rabbitmq-server.orig	2016-11-22 00:22:59 UTC
++++ deps/rabbit/scripts/rabbitmq-server
+@@ -151,6 +151,7 @@ start_rabbitmq_server() {
+     ensure_thread_pool_size
+     check_start_params &&
+     RABBITMQ_CONFIG_FILE=$RABBITMQ_CONFIG_FILE \
++    HOME=/var/db/rabbitmq \
+     exec ${ERL_DIR}erl \
+         -pa ${RABBITMQ_SERVER_CODE_PATH} ${RABBITMQ_EBIN_ROOT} \
+         ${RABBITMQ_START_RABBIT} \

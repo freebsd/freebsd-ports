@@ -1,5 +1,5 @@
---- examples/smsd.conf.easy.orig	2006-02-04 20:52:06.000000000 +0100
-+++ examples/smsd.conf.easy	2014-06-26 15:07:50.021638337 +0200
+--- examples/smsd.conf.easy.orig	2006-02-04 19:52:06 UTC
++++ examples/smsd.conf.easy
 @@ -1,9 +1,12 @@
  # Example smsd.conf. Read the manual for a description
  

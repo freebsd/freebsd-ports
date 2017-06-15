@@ -25,6 +25,6 @@ DOCS_MAKE_ENV_OFF=	NOPORTDOCS=yes
 EXAMPLES_MAKE_ENV_OFF=	NOPORTEXAMPLES=yes
 
 post-build:
-	${RM} -f ${WRKSRC}/ode/._*
+	${RM} ${WRKSRC}/ode/._*
 
 .include <bsd.port.mk>

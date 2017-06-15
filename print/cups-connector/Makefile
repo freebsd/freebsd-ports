@@ -16,12 +16,12 @@ BUILD_DEPENDS=	go:lang/go \
 
 USES=		compiler pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	google:DEFAULT codegangsta:cli coreos:gosystemd \
-		golang:oauth2,net mildred:xdg
-GH_PROJECT=	cli:cli go-systemd:gosystemd oauth2:oauth2 net:net \
-		go-xdg:xdg
-GH_TAGNAME=	1fdc26d:DEFAULT a294348:cli 7b2428f:gosystemd \
-		2cd4472:oauth2 6acef71:net 875014b:xdg
+GH_TUPLE=	google:cups-connector:1fdc26d:DEFAULT/src/github.com/google/cups-connector \
+		codegangsta:cli:a294348:cli/src/github.com/codegangsta/cli \
+		coreos:go-systemd:7b2428f:gosystemd/src/github.com/coreos/go-systemd \
+		golang:oauth2:2cd4472:oauth2/src/golang.org/x/oauth2 \
+		golang:net:6acef71:net/src/golang.org/x/net \
+		mildred:go-xdg:875014b:xdg/src/launchpad.net/go-xdg/v0
 
 BIN_FILES=	gcp-connector-util gcp-cups-connector
 PLIST_FILES=	${BIN_FILES:S/^/bin\//}
@@ -33,21 +33,6 @@ PORTDOCS=	CONTRIBUTING.md README.md
 post-patch:
 	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" \
 		${WRKSRC}/cups/core.go ${WRKSRC}/privet/avahi.go
-	@${MKDIR} ${WRKSRC}/src/github.com/google/cups-connector
-.for src in cdd cups gcp gcp-connector-util gcp-cups-connector \
-	gcp-windows-connector lib log manager monitor privet winspool xmpp
-	@${MV} ${WRKSRC}/${src} \
-		${WRKSRC}/src/github.com/google/cups-connector
-.endfor
-	@${MKDIR} ${WRKSRC}/src/github.com/codegangsta
-	@${MKDIR} ${WRKSRC}/src/github.com/coreos
-	@${MKDIR} ${WRKSRC}/src/golang.org/x
-	@${MKDIR} ${WRKSRC}/src/launchpad.net/go-xdg
-	@${MV} ${WRKSRC_cli} ${WRKSRC}/src/github.com/codegangsta/cli
-	@${MV} ${WRKSRC_gosystemd} ${WRKSRC}/src/github.com/coreos/go-systemd
-	@${MV} ${WRKSRC_oauth2} ${WRKSRC}/src/golang.org/x/oauth2
-	@${MV} ${WRKSRC_net} ${WRKSRC}/src/golang.org/x/net
-	@${MV} ${WRKSRC_xdg} ${WRKSRC}/src/launchpad.net/go-xdg/v0
 
 do-build:
 .for bin in ${BIN_FILES}

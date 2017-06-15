@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ssl
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	security devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSSL bindings for OCaml
+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	savonet
@@ -35,7 +38,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}/html
 

@@ -13,8 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libafflib.so:sysutils/afflib
 
-USE_OPENSSL=	yes
-USES=		gmake
+USES=		gmake ssl
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/aimage

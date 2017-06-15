@@ -30,6 +30,7 @@
     SUBDIR += bottlerocket
     SUBDIR += boxes
     SUBDIR += brs
+    SUBDIR += bsod
     SUBDIR += buffer
     SUBDIR += cave
     SUBDIR += cdcollect
@@ -44,6 +45,7 @@
     SUBDIR += colortail
     SUBDIR += colwide
     SUBDIR += compat10x
+    SUBDIR += compat11x
     SUBDIR += compat4x
     SUBDIR += compat5x
     SUBDIR += compat6x
@@ -98,7 +100,6 @@
     SUBDIR += fortune-mod-ferengi_rules_of_acquisition
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortune-mod-psalms
-    SUBDIR += fortune_strfile
     SUBDIR += fortuneit
     SUBDIR += fpc-chm
     SUBDIR += freebsd-doc-all
@@ -165,7 +166,6 @@
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += gregexp
-    SUBDIR += grun
     SUBDIR += gtkfind
     SUBDIR += gwhich
     SUBDIR += hb
@@ -185,7 +185,6 @@
     SUBDIR += iso-codes
     SUBDIR += jargon
     SUBDIR += jbidwatcher
-    SUBDIR += jive
     SUBDIR += kbdscan
     SUBDIR += kcd
     SUBDIR += kde-thumbnailer-chm
@@ -284,6 +283,7 @@
     SUBDIR += opencyc
     SUBDIR += openr2
     SUBDIR += orville-write
+    SUBDIR += osinfo-db
     SUBDIR += ossp-uuid
     SUBDIR += otter
     SUBDIR += p5-Acme-ButFirst
@@ -313,7 +313,6 @@
     SUBDIR += p5-File-Sort
     SUBDIR += p5-Geo-Cache
     SUBDIR += p5-Geo-Coder-Bing
-    SUBDIR += p5-Geo-Coder-Geocoder-US
     SUBDIR += p5-Geo-Coder-Google
     SUBDIR += p5-Geo-Coder-Googlev3
     SUBDIR += p5-Geo-Coder-Many
@@ -362,9 +361,9 @@
     SUBDIR += pear-Text_Figlet
     SUBDIR += pecl-timezonedb
     SUBDIR += pfm
-    SUBDIR += php55-calendar
     SUBDIR += php56-calendar
     SUBDIR += php70-calendar
+    SUBDIR += php71-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
@@ -373,6 +372,10 @@
     SUBDIR += proxyper
     SUBDIR += pspresent
     SUBDIR += py-YABT
+    SUBDIR += py-cinder
+    SUBDIR += py-crudini
+    SUBDIR += py-fuzzy
+    SUBDIR += py-glance
     SUBDIR += py-osd
     SUBDIR += py-pexpect
     SUBDIR += py-powerline-status
@@ -389,6 +392,7 @@
     SUBDIR += py-spdx-lookup
     SUBDIR += py-tqdm
     SUBDIR += py-yolk
+    SUBDIR += py3-tqdm
     SUBDIR += pylize
     SUBDIR += qbrew
     SUBDIR += qlas
@@ -401,6 +405,7 @@
     SUBDIR += qt5-examples
     SUBDIR += qt5-l10n
     SUBDIR += qt5ct
+    SUBDIR += qtchooser
     SUBDIR += raspberrypi-userland
     SUBDIR += raspbsd-led
     SUBDIR += ree
@@ -450,7 +455,6 @@
     SUBDIR += termatrix
     SUBDIR += terraform
     SUBDIR += teseq
-    SUBDIR += teslams
     SUBDIR += timediff
     SUBDIR += tkcron
     SUBDIR += tkinfo

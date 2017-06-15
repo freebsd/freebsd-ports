@@ -2,24 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	dicewaregen
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	security
-MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	graudeejs@gmail.com
-COMMENT=	Simple perl script to generate Diceware dictionaries for passwords
+COMMENT=	Perl script to generate Diceware dictionaries for passwords
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	graudeejs
+GH_PROJECT=	dicewaregen.pl
 
 LIB_DEPENDS+=	libaspell.so:textproc/aspell
+RUN_DEPENDS+=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
 
 USES=		perl5
 USE_PERL5=	run
 
 PLIST_FILES=	bin/${PORTNAME}
 
+NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/dicewaregen-${REV}
-REV=		20c777eac1db
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dicewaregen.pl \

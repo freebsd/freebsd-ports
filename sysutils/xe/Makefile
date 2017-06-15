@@ -6,7 +6,7 @@ PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	t@tobik.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Simple xargs and apply replacement
 
 LICENSE=	CC0-1.0

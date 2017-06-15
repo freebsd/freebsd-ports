@@ -1,0 +1,22 @@
+In 2006, Sun Microsystems released math and vector math libraries as
+part of their effort to open-source Solaris:
+
+libmvec - vector math library
+  This library contains function to evaluate common mathematical functions
+  for several arguments at once. The argument values are specified by one
+  or more vectors (arrays) of data, and the corresponding result values
+  are stored in another vector.
+
+libm - C99 math library
+  Functions  in  this  library provide common elementary mathematical
+  functions and floating point environment routines defined by System V,
+  ANSI C, POSIX, and so on.  Additional functions in this library provide
+  extended support for handling floating point exceptions.
+
+The original source has been modified to build on FreeBSD and DragonFly
+using GCC or clang and the GNU assembler.  All fixes introduced by Nexenta
+and Illumos projects have also been incorporated.  Missing x86_64 variants
+of lrint and lround have added.  The floating-point exception logging
+including address->symbol translation has also been implemented.
+
+WWW: https://docs.oracle.com/cd/E19422-01/819-3693/ncg_lib.html

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	net-http-digest_auth
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 

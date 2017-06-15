@@ -17,7 +17,7 @@ XPI_DIRS=	chrome/adblock chrome components defaults/preferences defaults
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.0a3|2.0.*|g' ${WRKSRC}/install.rdf
-	@${RM} -f ${WRKSRC}/install.rdf?*
+	@${RM} ${WRKSRC}/install.rdf?*
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

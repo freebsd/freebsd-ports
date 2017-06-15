@@ -2,9 +2,10 @@
 
 PORTNAME=	powerdxx
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	kami@freebsd.org
+MAINTAINER=	kami@FreeBSD.org
 COMMENT=	CPU clock speed/frequency daemon
 
 LICENSE=	BSD2CLAUSE

@@ -5,3 +5,4 @@ libexec/softether/vpncmd
 libexec/softether/vpnserver
 sbin/vpncmd
 @dir libexec/softether
+@dir %%LOGDIR%%

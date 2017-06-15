@@ -1,0 +1,14 @@
+bin/darkbot
+%%ETCDIR%%/AddServer
+%%ETCDIR%%/Adduser
+%%ETCDIR%%/config
+%%ETCDIR%%/configure
+@sample %%ETCDIR%%/dat/deop.ini.dist %%ETCDIR%%/dat/deop.ini
+@sample %%ETCDIR%%/dat/info2.db.dist %%ETCDIR%%/dat/info2.db
+@sample %%ETCDIR%%/dat/perform.ini.dist %%ETCDIR%%/dat/perform.ini
+@sample %%ETCDIR%%/dat/permbans.db.dist %%ETCDIR%%/dat/permbans.db
+@sample %%ETCDIR%%/dat/random.ini.dist %%ETCDIR%%/dat/random.ini
+@sample %%ETCDIR%%/dat/randomstuff.ini.dist %%ETCDIR%%/dat/randomstuff.ini
+@sample %%ETCDIR%%/dat/seen.db.dist %%ETCDIR%%/dat/seen.db
+%%ETCDIR%%/logs/.pkgcreate
+man/man1/darkbot.1.gz

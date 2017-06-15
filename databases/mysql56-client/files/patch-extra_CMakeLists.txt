@@ -1,6 +1,14 @@
---- extra/CMakeLists.txt.orig	2016-03-03 16:35:33.000000000 +0100
-+++ extra/CMakeLists.txt	2016-04-19 17:37:34.634528313 +0200
-@@ -60,6 +60,7 @@ IF (WIN32 AND WITH_SSL_PATH AND HAVE_CRY
+--- extra/CMakeLists.txt.orig	2016-11-28 13:36:22 UTC
++++ extra/CMakeLists.txt
+@@ -35,6 +35,7 @@ ENDIF()
+ 
+ ADD_CUSTOM_COMMAND(OUTPUT ${PROJECT_BINARY_DIR}/include/mysqld_error.h 
+                    ${PROJECT_BINARY_DIR}/sql/share/english/errmsg.sys
++                   COMMAND mkdir -p ${PROJECT_BINARY_DIR}/sql/share/
+                    COMMAND comp_err
+                     --charset=${PROJECT_SOURCE_DIR}/sql/share/charsets 
+                     --out-dir=${PROJECT_BINARY_DIR}/sql/share/
+@@ -60,6 +61,7 @@ IF (WIN32 AND WITH_SSL_PATH AND HAVE_CRY
  ENDIF()
  
  
@@ -8,7 +16,7 @@
  MYSQL_ADD_EXECUTABLE(my_print_defaults my_print_defaults.c)
  TARGET_LINK_LIBRARIES(my_print_defaults  mysys mysys_ssl)
  SET_TARGET_PROPERTIES(my_print_defaults PROPERTIES LINKER_LANGUAGE CXX)
-@@ -96,10 +97,13 @@ IF(WITH_INNOBASE_STORAGE_ENGINE)
+@@ -96,10 +98,13 @@ IF(WITH_INNOBASE_STORAGE_ENGINE)
    MYSQL_ADD_EXECUTABLE(innochecksum innochecksum.cc ${INNOBASE_SOURCES})
    TARGET_LINK_LIBRARIES(innochecksum mysys mysys_ssl)
  ENDIF()

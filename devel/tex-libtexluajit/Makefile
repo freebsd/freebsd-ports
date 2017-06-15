@@ -14,9 +14,13 @@ COMMENT=	LuaJIT library for TeXLive
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LuaJIT-2.0.3/COPYRIGHT
 
+BROKEN_aarch64=		Does not configure: error: Sorry, can not preprocess lj_arch.h
+BROKEN_mips=		Does not configure: error: Sorry, can not preprocess lj_arch.h
+BROKEN_mips64=		Does not configure: error: Sorry, can not preprocess lj_arch.h
 BROKEN_powerpc64=	Does not build
+BROKEN_sparc64=		Does not configure: error: Sorry, can not preprocess lj_arch.h
 
-USES=		tar:xz libtool pkgconfig
+USES=		tar:xz libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=		build-aux libs/luajit

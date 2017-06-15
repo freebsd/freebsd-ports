@@ -1,4 +1,4 @@
---- components/json_schema/json_schema_validator.cc.orig	2016-05-11 19:02:18 UTC
+--- components/json_schema/json_schema_validator.cc.orig	2017-04-19 19:06:32 UTC
 +++ components/json_schema/json_schema_validator.cc
 @@ -20,7 +20,11 @@
  #include "base/strings/stringprintf.h"

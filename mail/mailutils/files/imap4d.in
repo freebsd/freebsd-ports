@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: imap4d
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name="imap4d"
+rcvar=imap4d_enable
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config ${name}
+
+: ${imap4d_enable="NO"}
+
+run_rc_command "$1"

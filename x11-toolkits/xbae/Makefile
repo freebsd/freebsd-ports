@@ -14,6 +14,8 @@ COMMENT=	Motif-based widget which displays a grid of cells as a spreadsheet
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	Fails to link: missing sbrk
+
 USES=		libtool motif
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

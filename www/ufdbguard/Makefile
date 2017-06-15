@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ufdbGuard
-PORTVERSION=	1.31
-DISTVERSIONSUFFIX=	-16
+PORTVERSION=	1.33.1
 CATEGORIES=	www
-MASTER_SITES=	SF/ufdbguard/${PORTVERSION}
+MASTER_SITES=	SF/ufdbguard/1.33
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	URL filter for the Squid web proxy
@@ -13,12 +12,10 @@ COMMENT=	URL filter for the Squid web proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BROKEN_aarch64=		fails to compile: error: regparm is not valid on this platform
 
 USES=		perl5 shebangfix ssl
-SHEBANG_FILES=	samples/URLblocked.cgi src/ufdb_analyse_urls.pl \
-		src/ufdb_top_urls.pl src/ufdb_analyse_users.pl \
-		src/ufdb_top_users.pl
+SHEBANG_FILES=	samples/URLblocked.cgi
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	ufdbguardd
 
@@ -57,6 +54,8 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 		--with-ufdb-dbhome=${DBDIR} \
 		--with-ufdb-images_dir=${EXAMPLESDIR}/images
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=	UNIXSOCKETS
 OPTIONS_DEFAULT=	UNIXSOCKETS
 
@@ -65,12 +64,22 @@ UNIXSOCKETS_CONFIGURE_OFF=	--without-unix-sockets
 
 UNIXSOCKETS_DESC=	Unix sockets support
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT:Mopenssl-devel}
+BROKEN=		Does not build with openssl-devel
+.endif
+
+.if ${SSL_DEFAULT:Mlibressl-devel}		
+BROKEN=		Does not build with libressl-devel
+.endif
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ufdbguardd \
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ufdbguardd \
 		${STAGEDIR}${PREFIX}/bin/ufdbgclient \
 		${STAGEDIR}${PREFIX}/bin/ufdbsignal \
 		${STAGEDIR}${PREFIX}/bin/ufdbGenTable \
 		${STAGEDIR}${PREFIX}/bin/ufdbAnalyse \
 		${STAGEDIR}${PREFIX}/bin/ufdbhttpd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

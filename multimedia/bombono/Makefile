@@ -3,7 +3,7 @@
 
 PORTNAME=	bombono
 PORTVERSION=	1.2.2
-PORTREVISION=	8
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dvd/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-dvd-${PORTVERSION}
@@ -27,6 +27,7 @@ RUN_DEPENDS=	gm:graphics/GraphicsMagick \
 
 USES=		desktop-file-utils gettext pkgconfig scons shared-mime-info \
 		tar:bzip2
+USE_CXXSTD=	gnu++98
 USE_GNOME=	gtkmm24
 INSTALLS_ICONS=	yes
 

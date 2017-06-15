@@ -3,6 +3,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/

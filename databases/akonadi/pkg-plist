@@ -41,4 +41,4 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 share/dbus-1/services/org.freedesktop.Akonadi.Control.service
 share/mime/packages/akonadi-mime.xml
-%%SQLITE%%%%QT_PREFIX%%/%%QT_PLUGINDIR%%/sqldrivers/libqsqlite3.so
+%%SQLITE%%%%QT_PLUGINDIR%%/sqldrivers/libqsqlite3.so

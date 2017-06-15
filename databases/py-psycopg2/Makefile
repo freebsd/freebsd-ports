@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-${PORTVERSION:R:S|.|-|}/ \
 		CHEESESHOP
@@ -17,7 +16,7 @@ LICENSE=	LGPL3
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_PYTHON=	autoplist concurrent distutils
-USES=		pgsql python
+USES?=		pgsql python
 
 PORTDOCS=	AUTHORS INSTALL NEWS PKG-INFO README.rst
 PORTEXAMPLES=	*

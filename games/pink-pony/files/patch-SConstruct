@@ -1,13 +1,17 @@
---- SConstruct.orig	2013-09-12 00:21:39.000000000 +0400
-+++ SConstruct	2013-09-18 21:30:59.110518891 +0400
-@@ -1,8 +1,7 @@
- import os
+--- SConstruct.orig	2014-01-01 01:39:36 UTC
++++ SConstruct
+@@ -3,11 +3,10 @@ import os
+ optimization_flags = ['-O3']
+ #optimization_flags = ['-O0', '-ggdb']
  
 -env = Environment()
--env['CC'] = 'g++'
--env['CCFLAGS'] = '-Wall -Wextra -Wno-reorder -Wno-unused-parameter -O3 -I/usr/include/OpenEXR -I./lib -I./external/tinyXML'
 +env = Environment(ENV=os.environ, **dict((k, v.split()) for k, v in ARGUMENTS.iteritems()))
-+env.Append(CCFLAGS = '-Wall -Wextra -Wno-reorder -Wno-unused-parameter -I./lib -I./external/tinyXML'.split())
+-env['CC'] = 'g++'
+-env['CCFLAGS'] = ['-Wall', '-Wextra', '-Wno-reorder', '-Wno-unused-parameter'] + optimization_flags
++env.Append(CCFLAGS = ['-Wall', '-Wextra', '-Wno-reorder', '-Wno-unused-parameter'])
  env['LIBS'] = ['GLU', 'GL', 'protobuf', 'IL']
+-env['CPPPATH'] = ['#', '#/src', '#/external/tinyXML', '#/external/flextGL/', '/usr/include/OpenEXR']
++env['CPPPATH'] = ['#', '#/src', '#/external/tinyXML', '#/external/flextGL/']
+ 
  env.ParseConfig("pkg-config IlmBase --cflags --libs")
  env.ParseConfig("pkg-config libglfw --cflags --libs")

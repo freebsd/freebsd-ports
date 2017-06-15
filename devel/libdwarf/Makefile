@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libdwarf
-PORTVERSION=	20130207
+PORTVERSION=	20161124
 CATEGORIES=	devel
-MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/libdwarf/libdwarf-20130207.tar.gz/64b42692e947d5180e162e46c689dfbf/
+MASTER_SITES=	https://www.prevanders.net/	\
+		http://pkgs.fedoraproject.org/repo/pkgs/libdwarf/
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Library to analyze DWARF debugging information in ELF files
+
+LICENSE=	LGPL21
 
 CONFLICTS_INSTALL=	bsdlibdwarf*
 
@@ -22,7 +25,7 @@ CFLAGS+=	-I. -I${LOCALBASE}/include
 USES=		dos2unix
 DOS2UNIX_GLOB=	*.h
 
-PS_FILES=	dwarf.v2.pdf index.v2.pdf libdwarf2.1.pdf libdwarf2p.1.pdf mips_extensions.pdf
+PS_FILES=	libdwarf2.1.pdf libdwarf2p.1.pdf mips_extensions.pdf
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libdwarf.a ${STAGEDIR}${PREFIX}/lib

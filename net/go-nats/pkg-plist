@@ -1,9 +1,8 @@
 %%GO_LIBDIR%%/%%GO_PKGNAME%%.a
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/TODO.md
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/enc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bench/bench.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bench/benchlib_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/enc_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/enc.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoders/builtin/default_enc.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoders/builtin/enc_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoders/builtin/gob_enc.go
@@ -21,10 +20,12 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples/nats-req.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples/nats-rply.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/examples/nats-sub.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/nats.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/nats_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/nats.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/netchan.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/parser.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/scripts/cov.sh
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/auth_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/basic_test.go
@@ -42,3 +43,6 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/reconnect_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/sub_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/TODO.md
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/util/tls_pre17.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/util/tls.go

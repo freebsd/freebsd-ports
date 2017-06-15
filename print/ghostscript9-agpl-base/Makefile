@@ -35,7 +35,7 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USES=		autoreconf gmake iconv jpeg pkgconfig:build tar:bzip2
+USES=		autoreconf compiler gmake iconv jpeg pkgconfig:build tar:bzip2
 USE_LDCONFIG=	yes
 EXTRACT_AFTER_ARGS=	${EXCLUDE_DIRS:S/^/--exclude /}
 DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
@@ -103,6 +103,10 @@ PORTDOC_FILES=	japanese/Gdevlips.htm japanese/README.gs550j		\
 post-patch:
 	${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},' \
 	    ${WRKSRC}/contrib/japanese/dmp_site.ps
+# XXX CHOSEN_COMPILER_VERSION isn't supported, so check CC hasn't changed
+	@if [ '${ARCH}:${CC}:${COMPILER_TYPE}:${COMPILER_VERSION}' = 'aarch64:cc:clang:38' ]; then \
+		${REINPLACE_CMD} '/CC.*trio\./s/$$/ -O0/' ${WRKSRC}/base/trio.mak; \
+	fi
 
 pre-build-drivers.mak:
 	@${ECHO_CMD} '# automatically generated' > ${WRKSRC}/base/drivers.mak
@@ -129,7 +133,7 @@ pre-build: pre-build-drivers.mak
 	${MKDIR} ${WRKSRC}/bin
 
 pre-install:
-	cd ${WRKSRC}/Resource/Init && ${RM} -f \
+	cd ${WRKSRC}/Resource/Init && ${RM} \
 	    gs_statd.ps.orig gs_ttf.ps.orig pdf_font.ps.orig
 	${MKDIR} ${STAGEDIR}${DATADIR}
 

@@ -1,3 +1,9 @@
-%%ETCDIR%%/graylog.conf.example
-%%ETCDIR%%/graylog_logging.xml
-graylog/graylog.jar
+@sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/server/server.conf.sample
+%%DATADIR%%/graylog.jar
+%%DATADIR%%/plugin/graylog-plugin-anonymous-usage-statistics-%%PORTVERSION%%.jar
+%%DATADIR%%/plugin/graylog-plugin-beats-%%PORTVERSION%%.jar
+%%DATADIR%%/plugin/graylog-plugin-collector-%%PORTVERSION%%.jar
+%%DATADIR%%/plugin/graylog-plugin-enterprise-integration-%%PORTVERSION%%.jar
+%%DATADIR%%/plugin/graylog-plugin-map-widget-%%PORTVERSION%%.jar
+%%DATADIR%%/plugin/graylog-plugin-pipeline-processor-%%PORTVERSION%%.jar
+@dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%GRAYLOG_DATA_DIR%%

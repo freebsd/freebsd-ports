@@ -7,4 +7,4 @@ Background jobs will be completed in nohup mode if you exit
 or close modem connection. Lftp has reput, mirror, reverse
 mirror among its features.
 
-WWW: http://lftp.yar.ru/
+WWW: http://lftp.tech/

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fortune_gem
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	games rubygems
 MASTER_SITES=	RG
 

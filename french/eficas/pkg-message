@@ -1,9 +1,2 @@
 Warning: if py27-Pmw and py27-tkinter are built against different
 versions of Tk, eficas won't run!
-
-When upgrading, don't forget to remove the line
-catalogues      = (('ASTER', ...
-from your $HOME/.Eficas_install/editeur.ini .
-
-The documentation is available as a separate package.
-Please see the port french/eficas_doc.

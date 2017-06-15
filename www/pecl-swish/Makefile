@@ -9,7 +9,7 @@ MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@bsdproject.de
 COMMENT=	Swish-e bindings for PHP
 
 LICENSE=	PHP301
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	swish-config:www/swish-e
 RUN_DEPENDS:=	swish-config:www/swish-e
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70
+IGNORE_WITH_PHP=	70 71
 
 CONFIGURE_ARGS=	--enable-swish --with-swish=${LOCALBASE}/bin
 

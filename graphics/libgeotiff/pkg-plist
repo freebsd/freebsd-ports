@@ -1,7 +1,6 @@
 bin/applygeo
 bin/geotifcp
 bin/listgeo
-bin/makegeo
 include/cpl_serv.h
 include/epsg_datum.inc
 include/epsg_ellipse.inc
@@ -28,5 +27,7 @@ include/xtiffio.h
 lib/libgeotiff.a
 lib/libgeotiff.so
 lib/libgeotiff.so.2
-lib/libgeotiff.so.2.1.1
+lib/libgeotiff.so.2.1.2
+man/man1/applygeo.1.gz
+man/man1/geotifcp.1.gz
 man/man1/listgeo.1.gz

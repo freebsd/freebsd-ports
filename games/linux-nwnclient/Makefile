@@ -3,7 +3,7 @@
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.69
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinternights/updates/linux/${PORTVERSION:S/.//}/:CLIENT \
 		http://nwdownloads.bioware.com/neverwinternights/linux/129/:ORIG \
@@ -19,26 +19,20 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
+BROKEN=		does not fetch
+
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:games/nwndata
 
 NO_BUILD=	yes
 RESTRICTED=	Distribution not allowed
 USES=		linux
-USE_LINUX=	sdl12 xorglibs
+USE_LINUX=	dri sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
-
-.ifdef WITH_NVIDIA_GL
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:x11/nvidia-driver
-USE_LINUX+=	libglu
-.else
-USE_LINUX+=	dri
-.endif
 
 OPTIONS_DEFINE=	NWMOVIES
 NWMOVIES_DESC=	Support for movies using BinkPlayer
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 # Client detection.  Currently, detects only original and Diamond editions.
 .if exists(${LOCALBASE}/share/nwndata/xp2.key)
@@ -89,10 +83,7 @@ do-configure:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${FIND} . -print | \
-		${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR})
-	${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
-	${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
 .if defined(BINKPLAYERFILE)
 	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 0755 nwmovies/BinkPlayer)
@@ -101,4 +92,4 @@ do-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -4,7 +4,7 @@
 -CFLAGS		=-O -DNSIG=32
 +.include "../Makefile.inc"
 +
-+CFLAGS		+=-DNSIG=32
++CFLAGS		+=-DNSIG=32 -m32
 +#CFLAGS		+=-Wall		# too many warnings
  LDFLAGS 	=
  

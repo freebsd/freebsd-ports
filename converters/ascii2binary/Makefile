@@ -3,6 +3,7 @@
 
 PORTNAME=	ascii2binary
 PORTVERSION=	2.14
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 

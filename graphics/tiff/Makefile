@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tiff
-PORTVERSION=	4.0.6
-PORTREVISION=	2
+PORTVERSION=	4.0.8
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
-		http://download.osgeo.org/libtiff/
+MASTER_SITES=	http://download.osgeo.org/libtiff/
 
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
@@ -16,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libjbig.so:graphics/jbigkit
 
-USES=		cpe jpeg libtool
+USES=		cpe jpeg libtool pathfix
 CPE_PRODUCT=	libtiff
 CPE_VERSION=	${DISTVERSION:C/[a-z]+//}
 CPE_UPDATE=	${DISTVERSION:C/[0-9.]+//}
@@ -110,7 +108,6 @@ pre-configure:
 		-e 's|man html|man|' ${WRKSRC}/Makefile.in
 
 post-install:
-	${LN} -s libtiff.so.5 ${STAGEDIR}${PREFIX}/lib/libtiff.so.4
 	( cd ${STAGEDIR}${PREFIX}/man/man3 && ${__pmlinks3} )
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/images ${STAGEDIR}${DOCSDIR}/man

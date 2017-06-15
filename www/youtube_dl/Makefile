@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2016.08.31
+PORTVERSION=	2017.03.24
 CATEGORIES=	www
 MASTER_SITES=	https://yt-dl.org/downloads/${PORTVERSION}/
 DISTNAME=	youtube-dl-${PORTVERSION}
@@ -39,7 +39,7 @@ RTMPDUMP_RUN_DEPENDS=	${LOCALBASE}/bin/rtmpdump:multimedia/rtmpdump
 
 post-extract:
 	@# remove tarball provided version, build our own
-	@${RM} -f ${WRKSRC}/youtube-dl
+	@${RM} ${WRKSRC}/youtube-dl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|python devscripts/|${PYTHON_CMD} devscripts/|' ${WRKSRC}/Makefile

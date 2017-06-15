@@ -3,6 +3,7 @@
 
 PORTNAME=	gjs
 PORTVERSION=	1.44.0
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -24,6 +25,6 @@ LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/libexec/gjs
+	@${RM} -r ${STAGEDIR}${PREFIX}/libexec/gjs
 
 .include <bsd.port.mk>

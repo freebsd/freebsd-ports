@@ -5,12 +5,12 @@ lib/libkid3-core.so
 lib/libkid3-core.so.%%SHLIB_VER%%
 lib/libkid3-gui.so
 lib/libkid3-gui.so.%%SHLIB_VER%%
-%%CHROMAPRINT%%lib/kid3/libacoustidimport.so
+%%ACOUSTID%%lib/kid3/libacoustidimport.so
 lib/kid3/libamazonimport.so
 lib/kid3/libdiscogsimport.so
 lib/kid3/libfreedbimport.so
-%%ID3LIB%%lib/kid3/libid3libmetadata.so
-%%MP4V2%%lib/kid3/libmp4v2metadata.so
+%%MP3%%lib/kid3/libid3libmetadata.so
+%%MP4%%lib/kid3/libmp4v2metadata.so
 lib/kid3/libmusicbrainzimport.so
 %%OGGFLAC%%lib/kid3/liboggflacmetadata.so
 %%TAGLIB%%lib/kid3/libtaglibmetadata.so

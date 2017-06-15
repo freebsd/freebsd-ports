@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.7.1
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -29,6 +29,10 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON
+# Following commit https://github.com/kitware/cmake/commit/956054
+# we need to either change the whole man-shuffle below, or simply
+# redefine CMAKE_INSTALL_MANDIR
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 
 OPTIONS_DEFINE=	CLANG COMPILER_RT DOCS EXTRAS LIT LLD LLDB
 OPTIONS_DEFINE_amd64=	OPENMP GOLD
@@ -51,7 +55,8 @@ CLANG_PORTDOCS=		clang
 COMPILER_RT_DESC=	Build compiler-rt (sanitizers)
 COMPILER_RT_DISTFILES=	compiler-rt-${DISTVERSION}.src${EXTRACT_SUFX}
 COMPILER_RT_EXTRA_PATCHES= \
-	${PATCHDIR}/compiler-rt-patch-svn-249051
+	${PATCHDIR}/compiler-rt-patch-svn-249051 \
+	${PATCHDIR}/compiler-rt-patch-svn-294806
 DOCS_PORTDOCS=		llvm
 DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DSPHINX_WARNINGS_AS_ERRORS=OFF \
@@ -69,10 +74,11 @@ LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_EXTRA_PATCHES= \
+	${PATCHDIR}/openmp-patch-bug32279 \
 	${PATCHDIR}/openmp-patch-tools_openmp_runtime_tools_expand-vars.pl
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
-GOLD_BUILD_DEPENDS=	ld.gold:devel/binutils
+GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
 .for option in CLANG COMPILER_RT EXTRAS LLD LLDB OPENMP
@@ -199,7 +205,7 @@ PLIST_FILES+=	\
 	${SAN_LIBDIR}/libclang_rt.ubsan_standalone-i386.a \
 	${SAN_LIBDIR}/libclang_rt.ubsan_standalone_cxx-i386.a
 .else
-BROKEN=	no packaging data for sanitizers on ${ARCH}.  Disable COMPILER_RT.
+BROKEN=	no packaging data for sanitizers on ${ARCH}; disable COMPILER_RT
 .endif
 .endif
 
@@ -229,7 +235,7 @@ PLIST_SUB+=	GOLD="@comment "
 
 .if ! ${OPTIONS_DEFINE:MOPENMP}
 # Hack to disable OPENMP in plist of unsupported architectures
-PLIST_SUB+=    OPENMP="@comment "
+PLIST_SUB+=	OPENMP="@comment "
 .else
 .endif
 
@@ -368,7 +374,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 build-plist:
-	${RM} -f ${PLIST} ${PLIST}.tmp
+	${RM} ${PLIST} ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}.tmp
 .endfor
@@ -395,7 +401,7 @@ build-plist:
 	    if ($$0 ~ /lib.*omp/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
-	${RM} -f ${PLIST}.tmp
+	${RM} ${PLIST}.tmp
 
 check-commands:
 .for command in ${COMMANDS}

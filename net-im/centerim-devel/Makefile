@@ -3,7 +3,7 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.10.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
 		ftp://ftp.centerim.org/mobshots/
@@ -16,9 +16,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		iconv gmake ncurses perl5 pkgconfig python:run shebangfix
+USES=		iconv gmake ncurses perl5 pkgconfig python:run shebangfix ssl
 USE_PERL5=	run
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --with-openssl
 CPPFLAGS+=	-I${LOCALBASE}/include

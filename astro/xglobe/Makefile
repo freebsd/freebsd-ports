@@ -12,7 +12,6 @@ COMMENT=	Displays a view of the Earth (like xearth) with a rendered photo map
 
 USES=		gmake
 USE_QT4=	corelib gui qt3support moc_build
-MAKE_ENV=	QT_PREFIX=${QT_PREFIX}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

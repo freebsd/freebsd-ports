@@ -2,4 +2,4 @@ The Abstract Large File (ALF) project is a portable library for writing files
 that can be larger than 2GB or contain holes on systems that don't natively
 support one or both properties.
 
-WWW: http://sourceforge.net/projects/largefiles/
+WWW: https://sourceforge.net/projects/largefiles/

@@ -3,6 +3,7 @@
 
 PORTNAME=	mjpg-streamer
 PORTVERSION=	r63
+PORTREVISION=	1
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Sourcecode
 

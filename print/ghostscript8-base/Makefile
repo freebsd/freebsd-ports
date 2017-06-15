@@ -134,7 +134,7 @@ pre-build: pre-build-drivers.mak
 	    ${WRKSRC}/freetype/objs/freetype214MT_D.so
 
 pre-install:
-	cd ${WRKSRC}/Resource/Init && ${RM} -f \
+	cd ${WRKSRC}/Resource/Init && ${RM} \
 	    gs_statd.ps.orig gs_ttf.ps.orig pdf_font.ps.orig
 	${MKDIR} ${STAGEDIR}${DATADIR}
 

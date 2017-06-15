@@ -98,7 +98,6 @@
     SUBDIR += irssi-themes
     SUBDIR += kde-gtk-config
     SUBDIR += kde-icons-black-and-white
-    SUBDIR += kde-icons-cezanne
     SUBDIR += kde-icons-dark-glass
     SUBDIR += kde-icons-gartoon-blue-svg
     SUBDIR += kde-icons-gartoon-svg
@@ -110,7 +109,6 @@
     SUBDIR += kde-icons-noia
     SUBDIR += kde-icons-nuovext2
     SUBDIR += kde-icons-nuvola
-    SUBDIR += kde-icons-sky
     SUBDIR += kde-icons-umicons
     SUBDIR += kde4-base-artwork
     SUBDIR += kde4-icons-oxygen
@@ -124,10 +122,10 @@
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
     SUBDIR += kdeartwork4
-    SUBDIR += linux-c6-hicolor-icon-theme
-    SUBDIR += linux-f10-hicolor-icon-theme
-    SUBDIR += linux-f10-qtcurve-gtk2
-    SUBDIR += linux-hicolor-icon-theme
+    SUBDIR += kf5-breeze-icons
+    SUBDIR += kf5-kemoticons
+    SUBDIR += kf5-kiconthemes
+    SUBDIR += kf5-oxygen-icons5
     SUBDIR += lxappearance
     SUBDIR += lxde-icon-theme
     SUBDIR += mate-backgrounds

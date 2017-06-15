@@ -3,7 +3,7 @@
 
 PORTNAME=	clsync
 DISTVERSION=	0.4~rc2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	dyokunev@ut.mephi.ru

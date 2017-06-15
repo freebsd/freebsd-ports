@@ -1,4 +1,4 @@
---- doc/authforce.texi.orig
+--- doc/authforce.texi.orig	2007-05-13 22:54:20 UTC
 +++ doc/authforce.texi
 @@ -2,6 +2,9 @@
  @c %**start of header

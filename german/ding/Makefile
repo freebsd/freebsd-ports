@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ding
-PORTVERSION=	1.8
+PORTVERSION=	1.8.1
 CATEGORIES=	german tk
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	beat@FreeBSD.org
-COMMENT=	A German-English dictionary program for X windows/Unix
+COMMENT=	German-English dictionary program for X windows/Unix
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	wish8.4:x11-toolkits/tk84 \
 		agrep:textproc/agrep

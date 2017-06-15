@@ -3,7 +3,7 @@
 
 PORTNAME=	bundy
 PORTVERSION=	0.20160125
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	dns
 MASTER_SITES=	LOCAL/mat/bundy SF/boost/boost/1.55.0:boost
 DISTFILES+=	boost_1_55_0.tar.bz2:boost
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/log4cplus/logger.h:devel/log4cplus \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
 LIB_DEPENDS=	libbotan-1.10.so:security/botan110 \
 		liblog4cplus.so:devel/log4cplus \
-		libicuuc.so:devel/icu \
 		libgmp.so:math/gmp \
 		libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
@@ -31,12 +30,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bundy-dns
 GH_TAGNAME=	d310c5d
 
-USE_OPENSSL=	yes
-
-USES=	compiler:c++11-lang pathfix pkgconfig libtool python:3 autoreconf
+USES=	compiler:c++11-lang pathfix pkgconfig libtool python:3 autoreconf ssl
 
 USE_LDCONFIG=	yes
-PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var	\
 		--without-werror \
@@ -47,20 +43,8 @@ CPPFLAGS+=	-I${WRKDIR}/boost_1_55_0
 
 OPTIONS_DEFINE=	DOCS
 
-PLIST_SUB=	PYTHON_SUFFIX=cpython-${PYTHON_SUFFIX}
-
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem.sample
 	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-keyfile.pem.sample
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-PYOEXTENSION=	pyo
-.else
-PYOEXTENSION=	opt-1.pyc
-.endif
-
-PLIST_SUB+=	PYOEXTENSION=${PYOEXTENSION}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

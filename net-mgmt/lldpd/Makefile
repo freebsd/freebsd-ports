@@ -3,6 +3,7 @@
 
 PORTNAME=	lldpd
 PORTVERSION=	0.9.4
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/ \
 		http://mirror.1labs.ch/${PORTNAME}/
@@ -12,7 +13,7 @@ COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
 LICENSE=	ISCL
 
-LIB_DEPENDS=	libevent.so:devel/libevent2
+LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		libtool
 USE_LDCONFIG=	yes

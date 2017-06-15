@@ -1,5 +1,5 @@
---- frmts/mrf/mrf_band.cpp.orig	2016-04-26 01:35:55.000000000 +0800
-+++ frmts/mrf/mrf_band.cpp	2016-05-04 02:26:58.154088997 +0800
+--- frmts/mrf/mrf_band.cpp.orig	2016-04-25 17:35:55 UTC
++++ frmts/mrf/mrf_band.cpp
 @@ -57,7 +57,7 @@
  
  #include <vector>

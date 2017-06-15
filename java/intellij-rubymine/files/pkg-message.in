@@ -1,0 +1,8 @@
+There is experimental native (faster) file watching support which is
+disabled by default.  Currently there are problems with watching large
+trees.  To enable edit %%DATADIR%%/bin/idea.properties and append
+
+      idea.filewatcher.disabled=false
+      idea.filewatcher.executable.path=%%DATADIR%%/bin/fsnotifier
+
+Only enable fsnotifier if your projects have < 600 files.

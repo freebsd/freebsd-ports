@@ -1,5 +1,5 @@
---- lib/ortho/trapezoid.c.orig	2011-05-20 18:55:22.000000000 +0200
-+++ lib/ortho/trapezoid.c	2011-05-20 18:57:31.000000000 +0200
+--- lib/ortho/trapezoid.c.orig	2016-09-20 04:45:02 UTC
++++ lib/ortho/trapezoid.c
 @@ -30,6 +30,11 @@
  #define log2(x)  (log(x)/log(2))
  #endif

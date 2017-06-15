@@ -132,11 +132,11 @@ for _line in ${dp_RAWDEPENDS} ; do
 		target=${last}
 		if [ -n "${dp_DEPENDS_PRECLEAN}" ]; then
 			target="clean ${target}"
-			depends_args="NOCLEANDEPENDS=yes"
+			depends_args="${depends_args:+${depends_args} }NOCLEANDEPENDS=yes"
 		fi
 		if [ -n "${dp_DEPENDS_CLEAN}" ]; then
 			target="${target} clean"
-			depends_args="NOCLEANDEPENDS=yes"
+			depends_args="${depends_args:+${depends_args} }NOCLEANDEPENDS=yes"
 		fi
 	fi
 

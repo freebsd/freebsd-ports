@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Lazy string Python module for translations
 
 LICENSE=	BSD3CLAUSE

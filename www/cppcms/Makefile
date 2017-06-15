@@ -2,7 +2,7 @@
 
 PORTNAME=	cppcms
 PORTVERSION=	1.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	SF/cppcms/${PORTNAME}/${PORTVERSION}
 
@@ -13,12 +13,9 @@ LICENSE=	LGPL3
 
 BROKEN_powerpc64=	Does not build
 
-BROKEN_FreeBSD_9=	does not build on 9.x
-
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		cmake python:2 tar:bzip2
-USE_OPENSSL=	yes
+USES=		cmake python:2 tar:bzip2 ssl
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		EXAMPLES GCRYPT ICU

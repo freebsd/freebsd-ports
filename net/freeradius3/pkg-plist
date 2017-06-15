@@ -13,7 +13,6 @@ bin/radsqlrelay
 bin/radtest
 bin/radwho
 bin/radzap
-bin/rbmonkey
 bin/rlm_ippool_tool
 bin/smbencrypt
 include/freeradius/attributes.h
@@ -72,6 +71,7 @@ include/freeradius/rfc7055.h
 include/freeradius/rfc7155.h
 include/freeradius/rfc7268.h
 include/freeradius/rfc7499.h
+include/freeradius/rfc7930.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
@@ -142,6 +142,9 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_eap_gtc.a
 %%LIBDIR%%/rlm_eap_gtc.la
 %%LIBDIR%%/rlm_eap_gtc.so
+%%LIBDIR%%/rlm_eap_fast.a
+%%LIBDIR%%/rlm_eap_fast.la
+%%LIBDIR%%/rlm_eap_fast.so
 %%LIBDIR%%/rlm_eap_leap.a
 %%LIBDIR%%/rlm_eap_leap.la
 %%LIBDIR%%/rlm_eap_leap.so
@@ -298,6 +301,8 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_wimax.a
 %%LIBDIR%%/rlm_wimax.la
 %%LIBDIR%%/rlm_wimax.so
+man/man1/dhcpclient.1.gz
+man/man1/rad_counter.1.gz
 man/man1/radclient.1.gz
 man/man1/radeapclient.1.gz
 man/man1/radlast.1.gz
@@ -466,7 +471,6 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius.schema
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/README
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/radius-mapping.sh
-%%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/kibana3-dashboard.json
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/kibana4-dashboard.json
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/log-courier.conf
 %%PORTDOCS%%%%DOCSDIR%%/schemas/logstash/logstash-radius.conf
@@ -547,6 +551,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/mac2ip
 %%EXAMPLESDIR%%/raddb/mods-available/mac2vlan
 %%EXAMPLESDIR%%/raddb/mods-available/mschap
+%%EXAMPLESDIR%%/raddb/mods-available/moonshot-targeted-ids
 %%EXAMPLESDIR%%/raddb/mods-available/ntlm_auth
 %%EXAMPLESDIR%%/raddb/mods-available/opendirectory
 %%EXAMPLESDIR%%/raddb/mods-available/otp
@@ -643,11 +648,18 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/setup.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/mysql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/mysql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/postgresql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/postgresql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/sqlite/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/sqlite/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/unbound/default.conf
 %%EXAMPLESDIR%%/raddb/mods-enabled/always
 %%EXAMPLESDIR%%/raddb/mods-enabled/attr_filter
 %%EXAMPLESDIR%%/raddb/mods-enabled/cache_eap
 %%EXAMPLESDIR%%/raddb/mods-enabled/chap
+%%EXAMPLESDIR%%/raddb/mods-enabled/date
 %%EXAMPLESDIR%%/raddb/mods-enabled/detail
 %%EXAMPLESDIR%%/raddb/mods-enabled/detail.log
 %%EXAMPLESDIR%%/raddb/mods-enabled/dhcp
@@ -684,6 +696,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/policy.d/dhcp
 %%EXAMPLESDIR%%/raddb/policy.d/eap
 %%EXAMPLESDIR%%/raddb/policy.d/filter
+%%EXAMPLESDIR%%/raddb/policy.d/moonshot-targeted-ids
 %%EXAMPLESDIR%%/raddb/policy.d/operator-name
 %%EXAMPLESDIR%%/raddb/proxy.conf
 %%EXAMPLESDIR%%/raddb/radiusd.conf
@@ -724,6 +737,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.acc
 %%DATADIR%%/dictionary.acme
 %%DATADIR%%/dictionary.actelis
+%%DATADIR%%/dictionary.adtran
 %%DATADIR%%/dictionary.aerohive
 %%DATADIR%%/dictionary.airespace
 %%DATADIR%%/dictionary.alcatel
@@ -758,6 +772,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.cablelabs
 %%DATADIR%%/dictionary.cabletron
 %%DATADIR%%/dictionary.camiant
+%%DATADIR%%/dictionary.checkpoint
 %%DATADIR%%/dictionary.chillispot
 %%DATADIR%%/dictionary.cisco
 %%DATADIR%%/dictionary.cisco.asa
@@ -766,12 +781,14 @@ sbin/radmin
 %%DATADIR%%/dictionary.cisco.vpn5000
 %%DATADIR%%/dictionary.citrix
 %%DATADIR%%/dictionary.clavister
+%%DATADIR%%/dictionary.cnergee
 %%DATADIR%%/dictionary.colubris
 %%DATADIR%%/dictionary.columbia_university
 %%DATADIR%%/dictionary.compat
 %%DATADIR%%/dictionary.compatible
 %%DATADIR%%/dictionary.cosine
 %%DATADIR%%/dictionary.dante
+%%DATADIR%%/dictionary.dellemc
 %%DATADIR%%/dictionary.dhcp
 %%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.dlink
@@ -816,6 +833,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.localweb
 %%DATADIR%%/dictionary.lucent
 %%DATADIR%%/dictionary.manzara
+%%DATADIR%%/dictionary.microsemi
 %%DATADIR%%/dictionary.meinberg
 %%DATADIR%%/dictionary.meraki
 %%DATADIR%%/dictionary.merit
@@ -877,11 +895,13 @@ sbin/radmin
 %%DATADIR%%/dictionary.rfc7155
 %%DATADIR%%/dictionary.rfc7268
 %%DATADIR%%/dictionary.rfc7499
+%%DATADIR%%/dictionary.rfc7930
 %%DATADIR%%/dictionary.riverbed
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.ruckus
 %%DATADIR%%/dictionary.ruggedcom
+%%DATADIR%%/dictionary.sangoma
 %%DATADIR%%/dictionary.sg
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva

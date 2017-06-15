@@ -13,8 +13,10 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Chromium compact language detector library
 
 BROKEN=		Unfetchable (google code has gone away)
+DEPRECATED=	Unfetchable for more than six months (google code has gone away)
+EXPIRATION_DATE=	2017-04-30
 
-USES=		libtool
+USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

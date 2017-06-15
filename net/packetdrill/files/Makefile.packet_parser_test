@@ -1,5 +1,0 @@
-# $FreeBSD$
-
-PROG=	packet_parser_test
-
-.include <bsd.prog.mk>

@@ -2,38 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	nettle
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	security
 MASTER_SITES=	GNU \
-		http://www.lysator.liu.se/~nisse/archive/:liu \
-		ftp://ftp.lysator.liu.se/pub/security/lsh/:liu
+		http://www.lysator.liu.se/~nisse/archive/ 
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low-level cryptographic library
 
-LICENSE=	LGPL3 GPLv2+
+LICENSE=	GPLv2+ LGPL3
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYINGv2
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYINGv3
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSERv3
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake makeinfo
-USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	M4="/usr/bin/m4 -g"
-CONFIGURE_ARGS=	--enable-shared
-MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
-
-PORTDOCS=	NEWS README TODO nettle.html nettle.pdf
-PORTEXAMPLES=	*.c *.h
-INFO=		nettle
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ENV=	M4="/usr/bin/m4 -g"
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USES=		gmake localbase makeinfo pathfix ssl
+
+INFO=		nettle
+PORTDOCS=	NEWS README TODO nettle.html nettle.pdf
+PORTEXAMPLES=	*.c *.h
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
 CONFIGURE_ENV+=	CCPIC=-fPIC
@@ -42,13 +39,12 @@ CONFIGURE_ENV+=	CCPIC=-fPIC
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} \
-		${STAGEDIR}${EXAMPLESDIR}
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+
+.include <bsd.port.mk>

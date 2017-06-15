@@ -1,6 +1,6 @@
---- configure.orig	2014-04-08 22:42:56.000000000 -0700
-+++ configure	2014-04-08 22:43:21.000000000 -0700
-@@ -7205,7 +7205,7 @@
+--- configure.orig	2017-01-20 12:42:02 UTC
++++ configure
+@@ -6143,7 +6143,7 @@ $as_echo "$FLTK_CONFIG" >&6; }
            FLTK_LIBS=`$FLTK_CONFIG --ldflags --use-images`
            if test "x$target_mingw32" != "xyes"; then
                if test "x$target_darwin" != "xyes"; then

@@ -2,6 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.6.2
+PORTREVISION=	1
 PORTREVISON=	1
 CATEGORIES=	lang devel
 MASTER_SITES=   http://llvm.org/releases/3.6.2/
@@ -103,7 +104,7 @@ pre-fetch:
 .endif
 
 post-extract:
-	${RM} -f ${BUILD_WRKSRC}
+	${RM} ${BUILD_WRKSRC}
 	${MV} ${WRKDIR}/${CLANG_EXTRACT} ${BUILD_WRKSRC}
 
 post-patch:
@@ -174,7 +175,7 @@ PLIST_DIR_LIST=		include/clang \
 			lib/python
 
 build-plist:
-	${RM} -f ${PLIST}
+	${RM} ${PLIST}
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}%%LLVM_SUFFIX%% >> ${PLIST}
 .endfor

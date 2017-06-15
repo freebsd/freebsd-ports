@@ -1,0 +1,38 @@
+--- doc/man/lttng-ust.3.txt.orig	2016-11-29 21:06:58 UTC
++++ doc/man/lttng-ust.3.txt
+@@ -65,7 +65,7 @@ SYNOPSIS
+ #define *tracepoint*('prov_name', 't_name', ...)
+ #define *tracepoint_enabled*('prov_name', 't_name')
+ 
+-Link with `-llttng-ust -ldl`, following this man page.
++Link with `-llttng-ust`, following this man page.
+ 
+ 
+ DESCRIPTION
+@@ -636,7 +636,7 @@ library containing it) and with `liblttn
+ 
+ [role="term"]
+ -------------------------------------
+-cc -o app tp.o app.o -llttng-ust -ldl
++cc -o app tp.o app.o -llttng-ust
+ -------------------------------------
+ 
+ 
+@@ -696,7 +696,7 @@ libdl:
+ 
+ [role="term"]
+ --------------------------------
+-cc -o app app.o tp-define.o -ldl
++cc -o app app.o tp-define.o
+ --------------------------------
+ 
+ There are two ways to dynamically load the tracepoint provider shared
+@@ -1036,7 +1036,7 @@ like this:
+ -------------------------------------
+ cc -c -I. tp.c
+ cc -c app.c
+-cc -o app tp.o app.o -llttng-ust -ldl
++cc -o app tp.o app.o -llttng-ust
+ -------------------------------------
+ 
+ Using the man:lttng(1) tool, create an LTTng tracing session, enable

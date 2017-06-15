@@ -9,7 +9,7 @@ MASTER_SITES=	SF/allegator/Alex4/source%20and%20data/ \
 DISTFILES=	alex4src_data.zip ${PORTNAME}.png:icons
 EXTRACT_ONLY=	alex4src_data.zip
 
-MAINTAINER=	lifanov@mail.lifanov.com
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Classic platformer with Alex the Allegator
 
 LICENSE=	GPLv2

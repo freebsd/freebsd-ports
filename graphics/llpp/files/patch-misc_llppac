@@ -1,4 +1,4 @@
---- misc/llppac.orig	2015-10-13 20:12:27 UTC
+--- misc/llppac.orig	2016-11-29 15:11:31 UTC
 +++ misc/llppac
 @@ -7,7 +7,7 @@ die() {
  }
@@ -9,7 +9,24 @@
  
  caspsuf=
  type=
-@@ -197,7 +197,7 @@ EOF
+@@ -49,6 +49,7 @@ while getopts m:t:f opt; do
+         m) mime=$OPTARG;;
+         t) type=$OPTARG;;
+         f) force=1;;
++        c) css="-s $OPTARG";;
+         ?) die "usage: $0 [-m mime/type] [-t filter] [-f] [path|url]";;
+     esac
+ done
+@@ -117,7 +118,7 @@ case $type in
+     djvu) conv='ddjvu -format=pdf - "$casp"';;
+     html) {
+         missing prince "PrinceXML(http://www.princexml.com/)"
+-        conv='prince -s /home/malc/xsrc/llpp/misc/rr.css - -o "$casp"'
++        conv='prince $css - -o "$casp"'
+     };;
+     word) {
+         if executable_p unoconv && test -z "$dc"; then
+@@ -200,7 +201,7 @@ EOF
      *) die "unhandled filter type: '$type'";;
  esac
  

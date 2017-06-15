@@ -18,11 +18,10 @@ COMMENT=	KAME racoon IKE daemon, ipsec-tools version
 CONFLICTS=	racoon-[0-9]*
 
 USE_RC_SUBR=	racoon
-USE_OPENSSL=	yes
 
 INSTALL_TARGET=	install-strip
 
-USES=		libtool tar:bzip2
+USES=		libtool tar:bzip2 ssl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \
@@ -92,7 +91,7 @@ post-install:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
-	@${RM} -f ${WRKSRC}/src/racoon/samples/*.in
+	@${RM} ${WRKSRC}/src/racoon/samples/*.in
 	@${CP} -r ${WRKSRC}/src/racoon/samples/* ${STAGEDIR}/${EXAMPLESDIR}
 
 post-install-DOCS-on:

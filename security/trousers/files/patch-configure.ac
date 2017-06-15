@@ -1,0 +1,41 @@
+--- configure.ac.orig	2016-11-09 20:26:34 UTC
++++ configure.ac
+@@ -58,7 +58,7 @@ AC_ARG_WITH(openssl,
+ 		AC_MSG_ERROR([$OPENSSL_INCLUDE_DIR or $OPENSSL_LIB_DIR doen't exist!])
+ 	 else
+ 		AC_MSG_RESULT([yes])
+-		CFLAGS="$CFLAGS -L$OPENSSL_LIB_DIR -I$OPENSSL_INCLUDE_DIR"
++		AC_SUBST([OPENSSL_INCLUDE_DIR])
+ 		AC_SUBST([OPENSSL_LIB_DIR])
+ 	 fi],
+ 	[AC_MSG_RESULT([no])
+@@ -78,6 +78,21 @@ AC_ARG_ENABLE(gcov,
+ 		[CFLAGS="$CFLAGS -ftest-coverage -fprofile-arcs"
+ 		 AC_MSG_RESULT([*** Enabling gcov at user request ***])],)
+ 
++# Check for tss user
++AC_ARG_WITH(tssuser,
++	[  --with-tssuser[[=USER]]    set tss user [[tss]]],
++	[tss_user=$withval],
++	[tss_user=tss]
++)
++# Check for tss group
++AC_ARG_WITH(tssgroup,
++	[  --with-tssgroup[[=GROUP]]  set tss group [[tss]]],
++	[tss_group=$withval],
++	[tss_group=tss]
++)
++AC_SUBST(TSS_USER_NAME, $tss_user)
++AC_SUBST(TSS_GROUP_NAME, $tss_group)
++
+ # profiling support
+ AC_ARG_ENABLE(gprof,
+ 		[AC_HELP_STRING([--enable-gprof], [enable profiling with gprof [default=off]])],
+@@ -369,6 +384,7 @@ if test "x${GCC}" = "xyes"; then
+ fi
+ 
+ CFLAGS="$CFLAGS -I../include \
++	-DTSS_USER_NAME=\\\"$tss_user\\\" -DTSS_GROUP_NAME=\\\"$tss_group\\\" \
+ 	-DTCSD_DEFAULT_PORT=${TCSD_DEFAULT_PORT} -DTSS_VER_MAJOR=${TSS_VER_MAJOR} \
+ 	-DTSS_VER_MINOR=${TSS_VER_MINOR} -DTSS_SPEC_MAJOR=${TSS_SPEC_MAJOR} \
+ 	-DTSS_SPEC_MINOR=${TSS_SPEC_MINOR}"

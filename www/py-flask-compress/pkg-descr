@@ -1,3 +1,9 @@
-Extension for Flask that compresses responses with gzip
+Flask-Compress both adds the various headers required for a compressed
+response and gzips the response data. This makes serving gzip compressed
+static files extremely easy.
 
-WWW: https://github.com/libwilliam/flask-compress
+Internally, every time a request is made the extension will check if
+it matches one of the compressible MIME types and will automatically
+attach the appropriate headers.
+
+WWW: https://pypi.python.org/pypi/Flask-Compress

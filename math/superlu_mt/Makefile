@@ -3,7 +3,7 @@
 
 PORTNAME=	superlu_mt
 PORTVERSION=	2.0.20080115
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/:doc
@@ -88,15 +88,15 @@ post-patch:
 do-build:
 	cd ${WRKSRC} ; ${MAKE_CMD} LDFLAGS="${LDFLAGS}"
 	cd ${WRKSRC_SHARED} ; ${MAKE_CMD} LDFLAGS="${LDFLAGS}"
-	${RM} -rf ${WRKDIR}/tmp_static
+	${RM} -r ${WRKDIR}/tmp_static
 	${MKDIR} ${WRKDIR}/tmp_static
 	cd ${WRKDIR}/tmp_static
 	${FIND} ${WRKSRC} -name "*\.a" -exec ${CP} {} ${WRKDIR}/tmp_static \;
-	${RM} -rf ${WRKDIR}/tmp_shared
+	${RM} -r ${WRKDIR}/tmp_shared
 	${MKDIR} ${WRKDIR}/tmp_shared
 	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${CP} {} ${WRKDIR}/tmp_shared \;
 	@cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
-	${RM} -f $${i}.so.* $${i}.so ; \
+	${RM} $${i}.so.* $${i}.so ; \
 	${FC} ${CFLAGS} ${FPIC} ${LDFLAGS} -shared -o $${i}.so.${SVERSION} \
 	-Wl,-soname,$${i}.so.${SVERSION} -Wl,--allow-multiple-definition \
 	-Wl,--whole-archive $${i}.a -Wl,--no-whole-archive -Wl,--as-needed; \

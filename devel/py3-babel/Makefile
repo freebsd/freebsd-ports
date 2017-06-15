@@ -3,6 +3,7 @@
 
 PORTNAME=	Babel
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +12,11 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Collection of tools for internationalizing Python applications
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py3-pytz
 
-USES=		python:3
+USES=		python:3.3+
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

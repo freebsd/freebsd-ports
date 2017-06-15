@@ -1,8 +1,8 @@
-lib/libchromeXvMC.so
-lib/libchromeXvMC.so.1
-lib/libchromeXvMC.so.1.0.0
-lib/libchromeXvMCPro.so
-lib/libchromeXvMCPro.so.1
-lib/libchromeXvMCPro.so.1.0.0
+%%XVMC%%lib/libchromeXvMC.so
+%%XVMC%%lib/libchromeXvMC.so.1
+%%XVMC%%lib/libchromeXvMC.so.1.0.0
+%%XVMC%%lib/libchromeXvMCPro.so
+%%XVMC%%lib/libchromeXvMCPro.so.1
+%%XVMC%%lib/libchromeXvMCPro.so.1.0.0
 lib/xorg/modules/drivers/openchrome_drv.so
 man/man4/openchrome.4x.gz

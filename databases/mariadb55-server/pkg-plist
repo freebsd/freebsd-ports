@@ -14,6 +14,7 @@ bin/mysql_convert_table_format
 bin/mysql_fix_extensions
 bin/mysql_install_db
 bin/mysql_plugin
+bin/mysqld_safe_helper
 bin/mysql_secure_installation
 bin/mysql_setpermission
 bin/mysql_tzinfo_to_sql

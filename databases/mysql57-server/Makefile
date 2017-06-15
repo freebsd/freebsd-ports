@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.7.15
-PORTREVISION?=	0
+PORTVERSION=	5.7.18
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.7
 PKGNAMESUFFIX?=	57-server
 DISTNAME=	${PORTNAME}-boost-${PORTVERSION}
 
-MAINTAINER=	mokhi64@gmail.com
+MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
@@ -26,7 +25,7 @@ MY_DBDIR=	/var/db/mysql
 MY_SECDIR=	/var/db/mysql_secure
 MY_TMPDIR=	/var/db/mysql_tmpdir
 
-LIB_DEPENDS+=	libevent.so:devel/libevent2 \
+LIB_DEPENDS+=	libevent.so:devel/libevent \
 		liblz4.so:archivers/liblz4
 
 CMAKE_BUILD_TYPE=	Release
@@ -125,30 +124,22 @@ FEATURES_DESC=		Default features knobs
 PERFSCHM_DESC=		Enable "Performance Schema" by default (High RAM usage)
 OPTIONS_DEFAULT+=	PERFSCHM
 
-PERFSCHM_SUB_LIST+=	PERFSCHEMRC=""
-PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
-.endif
-
-.include <bsd.port.options.mk>
-
-### Just for the sake of FreeBSD 9.X ###
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-.  if !defined(CLIENT_ONLY)
-EXTRA_PATCHES+=		${PATCHDIR}/rapid_plugin-patch-_x_mysqlxtest__src_mysqlxtest.cc
-.  endif
+PERFSCHM_SUB_LIST+=		PERFSCHEMRC=""
+PERFSCHM_SUB_LIST_OFF+=		PERFSCHEMRC="--skip-performance-schema"
+FEDERATED_SUB_LIST+=		FEDER="--federated"
+FEDERATED_SUB_LIST_OFF+=	FEDER=""
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_9=	FreeBSD 9.x requires SSL from ports
 CMAKE_ARGS+=		-DWITH_SSL=system
 .else
 CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
 .endif
 
 post-extract:
-	@${RM} -rvf ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
+	@${RM} -rv ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
@@ -157,8 +148,6 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/my.cnf.sample ${STAGEDIR}${ETCDIR}/my.cnf.sample
-
-post-stage:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
 	${MKDIR} ${STAGEDIR}${MY_SECDIR}
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}

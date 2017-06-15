@@ -1,0 +1,23 @@
+RawTherapee is a powerful RAW image processing appliction. It features:
+
+High Image Quality
+- Various demosaicing algorithms: AMaZE, DCB, fast, AHD, EAHD, HPHD & VNG4.
+- Advanced color handling, including color management.
+- Enhanced exposure and tonality tools
+- Multiple denoising methods and several tools to enhance details.
+
+Efficiency
+- Multi-threaded algorithms for high performance
+- Batch processing: convert all the developed images at once without not
+  loading the processor while you work.
+- Basic tools immediately at your hands.
+- Parallel editing of multiple images.
+- An optional secondary display can be used.
+
+Versatility
+- Wide variety of supported cameras
+- Advanced control over the algorithms with many fine-tuning parameters.
+- Command line usage besides the normal graphical interface.
+- Various layouts: single/multiple/vertical tab, with/without filmstrip.
+
+WWW: http://www.rawtherapee.com/

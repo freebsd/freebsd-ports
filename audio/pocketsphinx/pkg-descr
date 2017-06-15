@@ -1,12 +1,19 @@
-Pocket Sphinx is a frontend to the sphinxbase large-vocabulary,
-speaker-independent, continuous speech recognition engine.
+CMUSphinx collects over 20 years of the CMU research. All
+advantages are hard to list, but just to name a few:
 
-This is an early release of a research system.  The APIs and function
-names are likely to change, and several tools still need to be made
-available to make this all complete.
+ + State of art speech recognition algorithms for efficient
+   speech recognition. CMUSphinx tools are designed specifically
+   for low-resource platforms
+ + Flexible design
+ + Focus on practical application development and not on research
+ + Support for several languages like US English, UK English, French,
+   Mandarin, German, Dutch, Russian and ability to build a models for
+   others
+ + BSD-like license which allows commercial distribution
+ + Commercial support
+ + Active development and release schedule
+ + Active community (more than 400 users on Linkedin CMUSphinx group)
+ + Wide range of tools for many speech-recognition related purposes
+   (keyword spotting, alignment, pronuncation evaluation)
 
-Once the system is built, try running the Perl script sphinx2-demo.
-The pocketsphinx-test script should run pocketsphinx-batch over an example
-utterance of "go forward ten meters."
-
-WWW: http://www.speech.cs.cmu.edu/sphinx/
+WWW: http://cmusphinx.sourceforge.net/

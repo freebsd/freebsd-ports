@@ -1,4 +1,4 @@
---- src/include/tcsd_ops.h.orig	2016-06-20 15:21:26 UTC
+--- src/include/tcsd_ops.h.orig	2016-11-19 03:09:49 UTC
 +++ src/include/tcsd_ops.h
 @@ -123,7 +123,7 @@
  

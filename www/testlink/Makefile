@@ -61,7 +61,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/var/testlink|${WWWDIR}|' ${WRKSRC}/config.inc.php
 	@${FIND} ${WRKSRC} -name "\.*" -delete
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
-	@${RM} -rf ${WRKSRC}/.idea
+	@${RM} -r ${WRKSRC}/.idea
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

@@ -1,0 +1,745 @@
+--- UTC
+Index: configure
+===================================================================
+--- configure	(revision 218760)
++++ configure	(working copy)
+@@ -3352,6 +3352,9 @@
+   alpha*-*-*vms*)
+     noconfigdirs="$noconfigdirs ${libgcj}"
+     ;;
++  arm*-*-freebsd*)
++    noconfigdirs="$noconfigdirs ${libgcj}"
++    ;;
+   arm-wince-pe)
+     noconfigdirs="$noconfigdirs ${libgcj}"
+     ;;
+Index: configure.ac
+===================================================================
+--- configure.ac	(revision 218760)
++++ configure.ac	(working copy)
+@@ -691,6 +691,9 @@
+   alpha*-*-*vms*)
+     noconfigdirs="$noconfigdirs ${libgcj}"
+     ;;
++  arm*-*-freebsd*)
++    noconfigdirs="$noconfigdirs ${libgcj}"
++    ;;
+   arm-wince-pe)
+     noconfigdirs="$noconfigdirs ${libgcj}"
+     ;;
+Index: gcc/config/arm/arm.c
+===================================================================
+--- gcc/config/arm/arm.c	(revision 218760)
++++ gcc/config/arm/arm.c	(working copy)
+@@ -1239,7 +1239,7 @@
+ {
+   /* For Linux, we have access to kernel support for atomic operations.  */
+   if (arm_abi == ARM_ABI_AAPCS_LINUX)
+-    init_sync_libfuncs (2 * UNITS_PER_WORD);
++    init_sync_libfuncs (MAX_SYNC_LIBFUNC_SIZE);
+ 
+   /* There are no special library functions unless we are using the
+      ARM BPABI.  */
+Index: gcc/config/arm/arm.h
+===================================================================
+--- gcc/config/arm/arm.h	(revision 218760)
++++ gcc/config/arm/arm.h	(working copy)
+@@ -720,6 +720,11 @@
+ #define PCC_BITFIELD_TYPE_MATTERS TARGET_AAPCS_BASED
+ #endif
+ 
++/* The maximum size of the sync library functions supported.  */
++#ifndef MAX_SYNC_LIBFUNC_SIZE
++#define MAX_SYNC_LIBFUNC_SIZE (2 * UNITS_PER_WORD);
++#endif
++
+ 
+ /* Standard register usage.  */
+ 
+Index: gcc/config/arm/freebsd.h
+===================================================================
+--- gcc/config/arm/freebsd.h	(revision 0)
++++ gcc/config/arm/freebsd.h	(working copy)
+@@ -0,0 +1,180 @@
++/* Definitions of target machine for GNU compiler, FreeBSD/arm version.
++   Copyright (C) 2002-2014 Free Software Foundation, Inc.
++   Contributed by Wasabi Systems, Inc.
++
++   This file is part of GCC.
++
++   GCC is free software; you can redistribute it and/or modify it
++   under the terms of the GNU General Public License as published
++   by the Free Software Foundation; either version 3, or (at your
++   option) any later version.
++
++   GCC is distributed in the hope that it will be useful, but WITHOUT
++   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
++   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
++   License for more details.
++
++   Under Section 7 of GPL version 3, you are granted additional
++   permissions described in the GCC Runtime Library Exception, version
++   3.1, as published by the Free Software Foundation.
++
++   You should have received a copy of the GNU General Public License
++   along with GCC; see the file COPYING3.  If not see
++   <http://www.gnu.org/licenses/>.  */
++
++#undef  SUBTARGET_CPP_SPEC
++#define SUBTARGET_CPP_SPEC FBSD_CPP_SPEC
++
++#undef  SUBTARGET_EXTRA_SPECS
++#define SUBTARGET_EXTRA_SPECS					\
++  { "subtarget_extra_asm_spec",	SUBTARGET_EXTRA_ASM_SPEC },	\
++  { "subtarget_asm_float_spec", SUBTARGET_ASM_FLOAT_SPEC }, 	\
++  { "fbsd_dynamic_linker", FBSD_DYNAMIC_LINKER }
++
++#undef SUBTARGET_EXTRA_ASM_SPEC
++#define SUBTARGET_EXTRA_ASM_SPEC \
++  "%{mabi=apcs-gnu|mabi=atpcs:-meabi=gnu;:-meabi=5} " TARGET_FIX_V4BX_SPEC " \
++  %{fpic|fpie:-k} %{fPIC|fPIE:-k}"
++
++#undef SUBTARGET_ASM_FLOAT_SPEC
++#ifdef TARGET_FREEBSD_ARM_HARD_FLOAT
++/* Default to full vfp if we build for arm*hf.  */
++#define SUBTARGET_ASM_FLOAT_SPEC "%{!mfpu=*:-mfpu=vfp}"
++#else
++#define SUBTARGET_ASM_FLOAT_SPEC "%{!mfpu=*:-mfpu=softvfp}"
++#endif
++
++#undef	LINK_SPEC
++#define LINK_SPEC "							\
++  %{p:%nconsider using `-pg' instead of `-p' with gprof (1) }		\
++  %{v:-V}								\
++  %{assert*} %{R*} %{rpath*} %{defsym*}					\
++  %{shared:-Bshareable %{h*} %{soname*}}				\
++  %{!shared:								\
++    %{!static:								\
++      %{rdynamic:-export-dynamic}					\
++      %{!dynamic-linker:-dynamic-linker %(fbsd_dynamic_linker) }}	\
++    %{static:-Bstatic}}							\
++  %{!static:--hash-style=both --enable-new-dtags}			\
++  %{symbolic:-Bsymbolic}						\
++  -X %{mbig-endian:-EB} %{mlittle-endian:-EL}"
++
++/* TARGET_BIG_ENDIAN_DEFAULT is set in
++   config.gcc for big endian configurations.  */
++#if TARGET_BIG_ENDIAN_DEFAULT
++#define TARGET_ENDIAN_DEFAULT    MASK_BIG_END
++#define TARGET_ENDIAN_OPTION     "mbig-endian"
++#define TARGET_LINKER_EMULATION  "armelfb_fbsd"
++#else
++#define TARGET_ENDIAN_DEFAULT    0
++#define TARGET_ENDIAN_OPTION     "mlittle-endian"
++#define TARGET_LINKER_EMULATION  "armelf_fbsd"
++#endif
++
++#undef	SUBTARGET_EXTRA_LINK_SPEC
++#define SUBTARGET_EXTRA_LINK_SPEC " -m " TARGET_LINKER_EMULATION " -p"
++
++#undef  TARGET_OS_CPP_BUILTINS
++#define TARGET_OS_CPP_BUILTINS() 		\
++  do						\
++    {						\
++	FBSD_TARGET_OS_CPP_BUILTINS ();		\
++	TARGET_BPABI_CPP_BUILTINS ();		\
++    }						\
++  while (false)
++
++/* We default to a soft-float ABI so that binaries can run on all
++   target hardware.  */
++#undef TARGET_DEFAULT_FLOAT_ABI
++#ifdef TARGET_FREEBSD_ARM_HARD_FLOAT
++#define TARGET_DEFAULT_FLOAT_ABI ARM_FLOAT_ABI_HARD
++#else
++#define TARGET_DEFAULT_FLOAT_ABI ARM_FLOAT_ABI_SOFT
++#endif
++
++#undef ARM_DEFAULT_ABI
++
++/* AACPS_LINUX has access to kernel atomic ops while we don't.
++   But AACPS defaults to short_enums.  */
++#define ARM_DEFAULT_ABI ARM_ABI_AAPCS_LINUX
++
++#undef TARGET_DEFAULT
++#define TARGET_DEFAULT (MASK_INTERWORK | TARGET_ENDIAN_DEFAULT)
++
++/* We do not have any MULTILIB_OPTIONS specified, so there are no
++   MULTILIB_DEFAULTS.  */
++#undef  MULTILIB_DEFAULTS
++
++/*  Use the AAPCS type for wchar_t, override the one from config/freebsd.h.  */
++#undef  WCHAR_TYPE
++#define WCHAR_TYPE  "unsigned int"
++
++#undef  WCHAR_TYPE_SIZE
++#define WCHAR_TYPE_SIZE BITS_PER_WORD
++
++#if defined (TARGET_FREEBSD_ARMv6)
++#undef  SUBTARGET_CPU_DEFAULT
++#define SUBTARGET_CPU_DEFAULT TARGET_CPU_arm1176jzs
++#else
++#undef  SUBTARGET_CPU_DEFAULT
++#define SUBTARGET_CPU_DEFAULT   TARGET_CPU_arm9
++#endif
++
++#define SUBTARGET_OVERRIDE_OPTIONS		\
++do {						\
++    if (unaligned_access)			\
++	unaligned_access = 0;			\
++} while (0)
++
++#undef MAX_SYNC_LIBFUNC_SIZE
++#define MAX_SYNC_LIBFUNC_SIZE 4 /* UNITS_PER_WORD not defined yet.  */
++
++/* FreeBSD does its profiling differently to the Acorn compiler.  We
++   don't need a word following the mcount call; and to skip it
++   requires either an assembly stub or use of fomit-frame-pointer when
++   compiling the profiling functions.  Since we break Acorn CC
++   compatibility below a little more won't hurt.  */
++
++#undef ARM_FUNCTION_PROFILER
++#define ARM_FUNCTION_PROFILER(STREAM,LABELNO)		\
++{							\
++  asm_fprintf (STREAM, "\tmov\t%Rip, %Rlr\n");		\
++  asm_fprintf (STREAM, "\tbl\t__mcount%s\n",		\
++	       (TARGET_ARM && NEED_PLT_RELOC)		\
++	       ? "(PLT)" : "");				\
++}
++
++/* Clear the instruction cache from `BEG' to `END'.  This makes a
++   call to the ARM_SYNC_ICACHE architecture specific syscall.  */
++#define CLEAR_INSN_CACHE(BEG, END)					\
++do									\
++  {									\
++    extern int sysarch (int number, void *args);			\
++    struct								\
++      {									\
++	unsigned int addr;						\
++	int          len;						\
++      } s;								\
++    s.addr = (unsigned int) (BEG);					\
++    s.len = (END) - (BEG);						\
++    (void) sysarch (0, &s);						\
++  }									\
++while (0)
++
++/* This is how we tell the assembler that two symbols have the same value.  */
++#define ASM_OUTPUT_DEF(FILE, NAME1, NAME2) \
++  do					   \
++    {					   \
++     assemble_name (FILE, NAME1); 	   \
++     fputs (" = ", FILE);		   \
++     assemble_name (FILE, NAME2);	   \
++     fputc ('\n', FILE);		   \
++    }					   \
++  while (0)
++
++/* Add  .note.GNU-stack.  */
++#undef NEED_INDICATE_EXEC_STACK
++#define NEED_INDICATE_EXEC_STACK 1
++
++#define ARM_TARGET2_DWARF_FORMAT (DW_EH_PE_pcrel | DW_EH_PE_indirect)
++
+
+Property changes on: gcc/config/arm/freebsd.h
+___________________________________________________________________
+Added: svn:eol-style
+## -0,0 +1 ##
++native
+\ No newline at end of property
+Added: svn:keywords
+## -0,0 +1 ##
++FreeBSD=%H
+\ No newline at end of property
+Added: svn:mime-type
+## -0,0 +1 ##
++text/plain
+\ No newline at end of property
+Index: gcc/config.gcc
+===================================================================
+--- gcc/config.gcc	(revision 218760)
++++ gcc/config.gcc	(working copy)
+@@ -267,7 +267,6 @@
+    arm*-wince-pe*			\
+  | arm*-*-ecos-elf			\
+  | arm*-*-elf				\
+- | arm*-*-freebsd*			\
+  | arm*-*-linux*			\
+  | arm*-*-uclinux*			\
+  | i[34567]86-go32-*			\
+@@ -865,6 +864,28 @@
+ 	extra_options="${extra_options} arm/vxworks.opt"
+ 	tmake_file="${tmake_file} arm/t-arm arm/t-vxworks"
+ 	;;
++arm*-*-freebsd*)                # ARM FreeBSD EABI
++	tm_file="dbxelf.h elfos.h ${fbsd_tm_file} arm/elf.h"
++	case $target in
++	arm*b-*-freebsd*)
++	    tm_defines="${tm_defines} TARGET_BIG_ENDIAN_DEFAULT=1"
++	    ;;
++	esac
++	tmake_file="${tmake_file} arm/t-arm arm/t-bpabi"
++	tm_file="${tm_file} arm/bpabi.h arm/freebsd.h arm/aout.h arm/arm.h"
++	case $target in
++	armv6*-*-freebsd*)
++	    tm_defines="${tm_defines} TARGET_FREEBSD_ARMv6=1"
++	    ;;
++	esac
++	case $target in
++	arm*hf-*-freebsd*)
++	    tm_defines="${tm_defines} TARGET_FREEBSD_ARM_HARD_FLOAT=1"
++	    ;;
++	esac
++	need_64bit_hwint=yes
++	with_tls=${with_tls:-gnu}
++	;;
+ arm*-*-netbsdelf*)
+ 	tm_file="dbxelf.h elfos.h netbsd.h netbsd-elf.h arm/elf.h arm/aout.h ${tm_file} arm/netbsd-elf.h"
+ 	extra_options="${extra_options} netbsd.opt netbsd-elf.opt"
+Index: gcc/config.host
+===================================================================
+--- gcc/config.host	(revision 218760)
++++ gcc/config.host	(working copy)
+@@ -99,7 +99,7 @@
+ esac
+ 
+ case ${host} in
+-  arm*-*-linux*)
++  arm*-*-freebsd* | arm*-*-linux*)
+     case ${target} in
+       arm*-*-*)
+ 	host_extra_gcc_objs="driver-arm.o"
+Index: gcc/ginclude/unwind-arm-common.h
+===================================================================
+--- gcc/ginclude/unwind-arm-common.h	(revision 218760)
++++ gcc/ginclude/unwind-arm-common.h	(working copy)
+@@ -82,7 +82,11 @@
+ 
+   struct _Unwind_Control_Block
+     {
++#ifdef __FreeBSD__
++      unsigned exception_class __attribute__((__mode__(__DI__)));
++#else
+       char exception_class[8];
++#endif
+       void (*exception_cleanup)(_Unwind_Reason_Code, _Unwind_Control_Block *);
+       /* Unwinder cache, private fields for the unwinder's use */
+       struct
+@@ -181,7 +185,11 @@
+ 
+   /* Support functions for the PR.  */
+ #define _Unwind_Exception _Unwind_Control_Block
++#ifdef __FreeBSD__
++  typedef unsigned _Unwind_Exception_Class __attribute__((__mode__(__DI__)));
++#else
+   typedef char _Unwind_Exception_Class[8];
++#endif
+ 
+   void * _Unwind_GetLanguageSpecificData (_Unwind_Context *);
+   _Unwind_Ptr _Unwind_GetRegionStart (_Unwind_Context *);
+Index: libatomic/configure.tgt
+===================================================================
+--- libatomic/configure.tgt	(revision 218760)
++++ libatomic/configure.tgt	(working copy)
+@@ -33,10 +33,15 @@
+ 
+   arm*)
+ 	ARCH=arm
+-	# ??? Detect when -march=armv7 is already enabled.
+-	try_ifunc=yes
+-	;;
+-
++	case "${target}" in
++            arm*-*-freebsd*)
++                ;;
++            *)
++                # ??? Detect when -march=armv7 is already enabled.
++                try_ifunc=yes
++                ;;
++        esac
++        ;;
+   sparc)
+ 	case " ${CC} ${CFLAGS} " in
+ 	  *" -m64 "*)
+Index: libgcc/config/arm/freebsd-atomic.c
+===================================================================
+--- libgcc/config/arm/freebsd-atomic.c	(revision 0)
++++ libgcc/config/arm/freebsd-atomic.c	(working copy)
+@@ -0,0 +1,224 @@
++/* FreeBSD specific atomic operations for ARM EABI.
++   Copyright (C) 2014 Free Software Foundation, Inc.
++
++This file is part of GCC.
++
++GCC is free software; you can redistribute it and/or modify it under
++the terms of the GNU General Public License as published by the Free
++Software Foundation; either version 3, or (at your option) any later
++version.
++
++GCC is distributed in the hope that it will be useful, but WITHOUT ANY
++WARRANTY; without even the implied warranty of MERCHANTABILITY or
++FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++for more details.
++
++Under Section 7 of GPL version 3, you are granted additional
++permissions described in the GCC Runtime Library Exception, version
++3.1, as published by the Free Software Foundation.
++
++You should have received a copy of the GNU General Public License and
++a copy of the GCC Runtime Library Exception along with this program;
++see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
++<http://www.gnu.org/licenses/>.  */
++
++#include <sys/types.h>
++
++#define HIDDEN __attribute__ ((visibility ("hidden")))
++
++#define ARM_VECTORS_HIGH 0xffff0000U
++#define ARM_TP_ADDRESS   (ARM_VECTORS_HIGH + 0x1000)
++#define ARM_RAS_START    (ARM_TP_ADDRESS + 4)
++
++void HIDDEN
++__sync_synchronize (void)
++{
++#if defined (__ARM_ARCH_6__) || defined (__ARM_ARCH_6J__)       \
++    || defined (__ARM_ARCH_6K__) || defined (__ARM_ARCH_6T2__)  \
++    || defined (__ARM_ARCH_6Z__) || defined (__ARM_ARCH_6ZK__)  \
++    || defined (__ARM_ARCH_7__) || defined (__ARM_ARCH_7A__)
++#if defined (__ARM_ARCH_7__) || defined (__ARM_ARCH_7A__)
++    __asm __volatile ("dmb" : : : "memory");
++#else
++    __asm __volatile ("mcr p15, 0, r0, c7, c10, 5" : : : "memory");
++#endif
++#else
++    __asm __volatile ("nop" : : : "memory");
++#endif
++}
++
++#if defined (__ARM_ARCH_6__) || defined (__ARM_ARCH_6J__)        \
++    || defined (__ARM_ARCH_6K__) || defined (__ARM_ARCH_6T2__)   \
++    || defined (__ARM_ARCH_6Z__) || defined (__ARM_ARCH_6ZK__)   \
++    || defined (__ARM_ARCH_7__) || defined (__ARM_ARCH_7A__)
++
++/* These systems should be supported by the compiler.  */
++
++#else /* __ARM_ARCH_5__  */
++
++#define	SYNC_LOCK_TEST_AND_SET_N(N, TYPE, LDR, STR)			\
++TYPE HIDDEN    								\
++__sync_lock_test_and_set_##N (TYPE *mem, TYPE val)			\
++{									\
++        unsigned int old, temp, ras_start;                              \
++                                                                        \
++        ras_start = ARM_RAS_START;					\
++        __asm volatile (						\
++                /* Set up Restartable Atomic Sequence.  */		\
++                "1:"							\
++                "\tadr   %2, 1b\n"					\
++                "\tstr   %2, [%5]\n"					\
++                "\tadr   %2, 2f\n"					\
++                "\tstr   %2, [%5, #4]\n"				\
++                                                                        \
++                "\t"LDR" %0, %4\n"	/* Load old value.  */		\
++                "\t"STR" %3, %1\n"	/* Store new value.  */		\
++                                                                        \
++                /* Tear down Restartable Atomic Sequence.  */		\
++                "2:"							\
++                "\tmov   %2, #0x00000000\n"				\
++                "\tstr   %2, [%5]\n"					\
++                "\tmov   %2, #0xffffffff\n"				\
++                "\tstr   %2, [%5, #4]\n"				\
++                : "=&r" (old), "=m" (*mem), "=&r" (temp)		\
++                : "r" (val), "m" (*mem), "r" (ras_start));		\
++        return (old);							\
++}
++
++#define SYNC_LOCK_RELEASE_N(N, TYPE)					\
++void HIDDEN								\
++__sync_lock_release_##N (TYPE *ptr)     				\
++{					       				\
++    /* All writes before this point must be seen before we release	\
++       the lock itself.  */						\
++    __sync_synchronize ();     						\
++    *ptr = 0;								\
++}
++
++#define	SYNC_VAL_CAS_N(N, TYPE, LDR, STREQ)             		\
++TYPE HIDDEN    								\
++__sync_val_compare_and_swap_##N (TYPE *mem, TYPE expected,		\
++    TYPE desired)							\
++{									\
++        unsigned int old, temp, ras_start;                              \
++                                                                        \
++        ras_start = ARM_RAS_START;					\
++        __asm volatile (						\
++                /* Set up Restartable Atomic Sequence.  */		\
++                "1:"							\
++                "\tadr   %2, 1b\n"					\
++                "\tstr   %2, [%6]\n"					\
++                "\tadr   %2, 2f\n"					\
++                "\tstr   %2, [%6, #4]\n"				\
++                                                                        \
++                "\t"LDR" %0, %5\n"     /* Load old value.  */		\
++                "\tcmp   %0, %3\n"     /* Compare to expected value.  */\
++                "\t"STREQ" %4, %1\n"   /* Store new value.  */		\
++                                                                        \
++                /* Tear down Restartable Atomic Sequence.  */		\
++                "2:"							\
++                "\tmov   %2, #0x00000000\n"				\
++                "\tstr   %2, [%6]\n"					\
++                "\tmov   %2, #0xffffffff\n"				\
++                "\tstr   %2, [%6, #4]\n"				\
++                : "=&r" (old), "=m" (*mem), "=&r" (temp)		\
++                : "r" (expected), "r" (desired), "m" (*mem),		\
++                  "r" (ras_start));					\
++        return (old);							\
++}
++
++typedef unsigned char bool;
++
++#define SYNC_BOOL_CAS_N(N, TYPE)                                        \
++bool HIDDEN								\
++__sync_bool_compare_and_swap_##N (TYPE *ptr, TYPE oldval,		\
++                                  TYPE newval)                          \
++{									\
++    TYPE actual_oldval							\
++      = __sync_val_compare_and_swap_##N (ptr, oldval, newval);          \
++    return (oldval == actual_oldval);					\
++}
++
++#define	SYNC_FETCH_AND_OP_N(N, TYPE, LDR, STR, NAME, OP)		\
++TYPE HIDDEN								\
++__sync_fetch_and_##NAME##_##N (TYPE *mem, TYPE val)	       		\
++{									\
++        unsigned int old, temp, ras_start;                              \
++                                                                        \
++        ras_start = ARM_RAS_START;					\
++        __asm volatile (						\
++                /* Set up Restartable Atomic Sequence.  */		\
++                "1:"							\
++                "\tadr   %2, 1b\n"					\
++                "\tstr   %2, [%5]\n"					\
++                "\tadr   %2, 2f\n"					\
++                "\tstr   %2, [%5, #4]\n"				\
++                                                                        \
++                "\t"LDR" %0, %4\n"	/* Load old value.  */		\
++                "\t"OP"  %2, %0, %3\n"	/* Calculate new value.  */	\
++                "\t"STR" %2, %1\n"	/* Store new value.  */		\
++                                                                        \
++                /* Tear down Restartable Atomic Sequence.  */		\
++                "2:"							\
++                "\tmov   %2, #0x00000000\n"				\
++                "\tstr   %2, [%5]\n"					\
++                "\tmov   %2, #0xffffffff\n"				\
++                "\tstr   %2, [%5, #4]\n"				\
++                : "=&r" (old), "=m" (*mem), "=&r" (temp)		\
++                : "r" (val), "m" (*mem), "r" (ras_start));		\
++        return (old);							\
++}
++
++#define	SYNC_OP_AND_FETCH_N(N, TYPE, LDR, STR, NAME, OP)		\
++TYPE HIDDEN   								\
++__sync_##NAME##_and_fetch_##N (TYPE *mem, TYPE val)	       		\
++{									\
++        unsigned int old, temp, ras_start;                              \
++                                                                        \
++        ras_start = ARM_RAS_START;					\
++        __asm volatile (						\
++                /* Set up Restartable Atomic Sequence.  */		\
++                "1:"							\
++                "\tadr   %2, 1b\n"					\
++                "\tstr   %2, [%5]\n"					\
++                "\tadr   %2, 2f\n"					\
++                "\tstr   %2, [%5, #4]\n"				\
++                                                                        \
++                "\t"LDR" %0, %4\n"	/* Load old value.  */		\
++                "\t"OP"  %2, %0, %3\n"	/* Calculate new value.  */	\
++                "\t"STR" %2, %1\n"	/* Store new value.  */		\
++                                                                        \
++                /* Tear down Restartable Atomic Sequence.  */		\
++                "2:"							\
++                "\tmov   %2, #0x00000000\n"				\
++                "\tstr   %2, [%5]\n"					\
++                "\tmov   %2, #0xffffffff\n"				\
++                "\tstr   %2, [%5, #4]\n"				\
++                : "=&r" (old), "=m" (*mem), "=&r" (temp)		\
++                : "r" (val), "m" (*mem), "r" (ras_start));		\
++        return (old);							\
++}
++
++#define	EMIT_ALL_OPS_N(N, TYPE, LDR, STR, STREQ)			\
++SYNC_LOCK_TEST_AND_SET_N (N, TYPE, LDR, STR)				\
++SYNC_LOCK_RELEASE_N (N, TYPE)                                           \
++SYNC_VAL_CAS_N (N, TYPE, LDR, STREQ)	                		\
++SYNC_BOOL_CAS_N (N, TYPE)                                               \
++SYNC_FETCH_AND_OP_N (N, TYPE, LDR, STR, add, "add")		        \
++SYNC_FETCH_AND_OP_N (N, TYPE, LDR, STR, and, "and")		        \
++SYNC_FETCH_AND_OP_N (N, TYPE, LDR, STR, or, "orr")		        \
++SYNC_FETCH_AND_OP_N (N, TYPE, LDR, STR, sub, "sub")		        \
++SYNC_FETCH_AND_OP_N (N, TYPE, LDR, STR, xor, "eor")                     \
++SYNC_OP_AND_FETCH_N (N, TYPE, LDR, STR, add, "add")		        \
++SYNC_OP_AND_FETCH_N (N, TYPE, LDR, STR, and, "and")		        \
++SYNC_OP_AND_FETCH_N (N, TYPE, LDR, STR, or, "orr")		        \
++SYNC_OP_AND_FETCH_N (N, TYPE, LDR, STR, sub, "sub")		        \
++SYNC_OP_AND_FETCH_N (N, TYPE, LDR, STR, xor, "eor")
++
++
++
++EMIT_ALL_OPS_N (1, unsigned char, "ldrb", "strb", "streqb")
++EMIT_ALL_OPS_N (2, unsigned short, "ldrh", "strh", "streqh")
++EMIT_ALL_OPS_N (4, unsigned int, "ldr", "str", "streq")
++
++#endif
+
+Property changes on: libgcc/config/arm/freebsd-atomic.c
+___________________________________________________________________
+Added: svn:eol-style
+## -0,0 +1 ##
++native
+\ No newline at end of property
+Added: svn:keywords
+## -0,0 +1 ##
++FreeBSD=%H
+\ No newline at end of property
+Added: svn:mime-type
+## -0,0 +1 ##
++text/plain
+\ No newline at end of property
+Index: libgcc/config/arm/t-freebsd
+===================================================================
+--- libgcc/config/arm/t-freebsd	(revision 0)
++++ libgcc/config/arm/t-freebsd	(working copy)
+@@ -0,0 +1,9 @@
++# Just for these, we omit the frame pointer since it makes such a big
++# difference.  It is then pointless adding debugging.
++HOST_LIBGCC2_CFLAGS += -fomit-frame-pointer
++
++LIB2ADD_ST += $(srcdir)/config/arm/freebsd-atomic.c
++
++# Use a version of div0 which raises SIGFPE.
++LIB1ASMFUNCS := $(filter-out _dvmd_tls,$(LIB1ASMFUNCS)) _dvmd_lnx
++
+Index: libgcc/config/arm/unwind-arm.h
+===================================================================
+--- libgcc/config/arm/unwind-arm.h	(revision 218760)
++++ libgcc/config/arm/unwind-arm.h	(working copy)
+@@ -48,7 +48,8 @@
+       if (!tmp)
+ 	return 0;
+ 
+-#if (defined(linux) && !defined(__uClinux__)) || defined(__NetBSD__)
++#if (defined(linux) && !defined(__uClinux__)) || defined(__NetBSD__) \
++    || defined(__FreeBSD__)
+       /* Pc-relative indirect.  */
+ #define _GLIBCXX_OVERRIDE_TTYPE_ENCODING (DW_EH_PE_pcrel | DW_EH_PE_indirect)
+       tmp += ptr;
+Index: libgcc/config.host
+===================================================================
+--- libgcc/config.host	(revision 218760)
++++ libgcc/config.host	(working copy)
+@@ -319,6 +319,13 @@
+ 	tmake_file="$tmake_file arm/t-arm arm/t-vxworks t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
+ 	extra_parts="$extra_parts crti.o crtn.o"
+ 	;;
++arm*-*-freebsd*)                # ARM FreeBSD EABI
++	tmake_file="${tmake_file} arm/t-arm t-fixedpoint-gnu-prefix arm/t-elf"
++	tmake_file="${tmake_file} arm/t-bpabi arm/t-freebsd t-slibgcc-libgcc"
++	tm_file="${tm_file} arm/bpabi-lib.h"
++	unwind_header=config/arm/unwind-arm.h
++	tmake_file="${tmake_file} t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
++	;;
+ arm*-*-netbsdelf*)
+ 	tmake_file="$tmake_file arm/t-arm arm/t-netbsd t-slibgcc-gld-nover"
+ 	;;
+Index: libstdc++-v3/configure.host
+===================================================================
+--- libstdc++-v3/configure.host	(revision 218760)
++++ libstdc++-v3/configure.host	(working copy)
+@@ -352,6 +352,9 @@
+ 	;;
+     esac
+     ;;
++  arm*-*-freebsd*)
++     port_specific_symbol_files="\$(srcdir)/../config/os/gnu-linux/arm-eabi-extra.ver"
++     ;;
+   powerpc*-*-darwin*)
+     port_specific_symbol_files="\$(srcdir)/../config/os/bsd/darwin/ppc-extra.ver"
+     ;;
+Index: libstdc++-v3/libsupc++/unwind-cxx.h
+===================================================================
+--- libstdc++-v3/libsupc++/unwind-cxx.h	(revision 218760)
++++ libstdc++-v3/libsupc++/unwind-cxx.h	(working copy)
+@@ -230,7 +230,7 @@
+   return reinterpret_cast<__cxa_dependent_exception *>(exc + 1) - 1;
+ }
+ 
+-#ifdef __ARM_EABI_UNWINDER__
++#if defined(__ARM_EABI_UNWINDER__) && !defined(__FreeBSD__)
+ static inline bool
+ __is_gxx_exception_class(_Unwind_Exception_Class c)
+ {
+@@ -304,13 +304,7 @@
+   c[6] = 'R';
+   c[7] = '\0';
+ }
+-
+-static inline void*
+-__gxx_caught_object(_Unwind_Exception* eo)
+-{
+-  return (void*)eo->barrier_cache.bitpattern[0];
+-}
+-#else // !__ARM_EABI_UNWINDER__
++#else // !__ARM_EABI_UNWINDER__ || __FreeBSD__
+ // This is the primary exception class we report -- "GNUCC++\0".
+ const _Unwind_Exception_Class __gxx_primary_exception_class
+ = ((((((((_Unwind_Exception_Class) 'G' 
+@@ -334,6 +328,16 @@
+     << 8 | (_Unwind_Exception_Class) '+')
+    << 8 | (_Unwind_Exception_Class) '\x01');
+ 
++const _Unwind_Exception_Class __gxx_forced_unwind_class
++= ((((((((_Unwind_Exception_Class) 'G'
++        << 8 | (_Unwind_Exception_Class) 'N')
++       << 8 | (_Unwind_Exception_Class) 'U')
++      << 8 | (_Unwind_Exception_Class) 'C')
++     << 8 | (_Unwind_Exception_Class) 'F')
++    << 8 | (_Unwind_Exception_Class) 'O')
++   << 8 | (_Unwind_Exception_Class) 'R')
++  << 8 | (_Unwind_Exception_Class) '\0');
++
+ static inline bool
+ __is_gxx_exception_class(_Unwind_Exception_Class c)
+ {
+@@ -341,6 +345,12 @@
+       || c == __gxx_dependent_exception_class;
+ }
+ 
++static inline bool
++__is_gxx_forced_unwind_class(_Unwind_Exception_Class c)
++{
++  return c ==  __gxx_forced_unwind_class;
++}
++
+ // Only checks for primary or dependent, but not that it is a C++ exception at
+ // all.
+ static inline bool
+@@ -352,7 +362,18 @@
+ #define __GXX_INIT_PRIMARY_EXCEPTION_CLASS(c) c = __gxx_primary_exception_class
+ #define __GXX_INIT_DEPENDENT_EXCEPTION_CLASS(c) \
+   c = __gxx_dependent_exception_class
++#define __GXX_INIT_FORCED_UNWIND_CLASS(c) c = __gxx_forced_unwind_class 
++#endif // __ARM_EABI_UNWINDER__ && !__FreeBSD__
+ 
++#ifdef __ARM_EABI_UNWINDER__
++static inline void*
++__gxx_caught_object(_Unwind_Exception* eo)
++{
++    return (void*)eo->barrier_cache.bitpattern[0];
++}
++
++#else // !__ARM_EABI_UNWINDER__
++
+ // GNU C++ personality routine, Version 0.
+ extern "C" _Unwind_Reason_Code __gxx_personality_v0
+      (int, _Unwind_Action, _Unwind_Exception_Class,

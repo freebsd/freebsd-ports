@@ -130,7 +130,7 @@ kgdb_thr_add_procs(CORE_ADDR paddr, CORE_ADDR (*cpu_pcb_addr) (u_int))
 			} CATCH(e, RETURN_MASK_ERROR) {
 				break;
 			} END_CATCH
-			kt = malloc(sizeof(*kt));
+			kt = XNEW (struct kthr);
 			kt->next = first;
 			kt->kaddr = tdaddr;
 			if (tid == dumptid)

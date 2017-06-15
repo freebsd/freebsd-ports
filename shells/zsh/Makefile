@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zsh
-DISTVERSION=	5.2
-PORTREVISION=	3
+DISTVERSION=	5.3.1
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.zsh.org/pub/ \
 		SF \
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.zsh.org/pub/ \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	The Z shell
 
 LICENSE=	ZSH

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	2.2.0
+PORTVERSION=	3.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -18,11 +18,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libssh2.so:security/libssh2
 BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
 		xsltproc:textproc/libxslt
-RUN_DEPENDS=	dnsmasq:dns/dnsmasq \
-		dmidecode:sysutils/dmidecode
+RUN_DEPENDS=	dnsmasq:dns/dnsmasq
 
-OPTIONS_DEFINE=	DOCS GNUTLS NLS NSS QEMU SASL
-OPTIONS_DEFAULT=	GNUTLS
+OPTIONS_DEFINE=	DOCS GNUTLS NLS NSS QEMU READLINE SASL ZFS
+OPTIONS_DEFAULT=	GNUTLS READLINE ZFS
 OPTIONS_DEFINE_amd64=	XEN
 .if exists(/usr/sbin/bhyve)
 OPTIONS_DEFINE_amd64+=	BHYVE
@@ -36,6 +35,7 @@ QEMU_DESC=	QEMU driver
 BHYVE_DESC=	bhyve driver
 XEN_DESC=	Xen support via libxl
 NSS_DESC=	Name Service Switch plugin
+ZFS_DESC=	ZFS storage driver
 
 OPTIONS_SUB=	yes
 
@@ -57,6 +57,9 @@ NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
 NSS_CONFIGURE_WITH=	nss-plugin
 
+READLINE_CONFIGURE_WITH=	readline
+READLINE_USES=		readline
+
 SASL_CONFIGURE_WITH=	sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
@@ -64,12 +67,15 @@ XEN_CONFIGURE_WITH=	libxl
 XEN_CFLAGS=	-I${LOCALBASE}/include
 XEN_LIB_DEPENDS=	libxenlight.so:sysutils/xen-tools
 
+ZFS_CONFIGURE_WITH=	storage-zfs
+
 VARDIR=		/var
 
 USE_RC_SUBR=	libvirtd virtlogd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-avahi \
+		--without-dbus \
 		--without-polkit \
 		--without-hal \
 		--without-udev \
@@ -77,6 +83,8 @@ CONFIGURE_ARGS+=	--without-avahi \
 		--without-sysctl \
 		--without-xen \
 		--without-login-shell \
+		--without-wireshark-dissector \
+		--without-storage-scsi \
 		--with-ssh2 \
 		--localstatedir=${VARDIR}
 
@@ -104,7 +112,7 @@ SUB_LIST+=	PORTVERSION="-${PORTVERSION}"
 .include <bsd.port.options.mk>
 
 .if !${PLIST_SUB:MXEN}
-PLIST_SUB+=     XEN="@comment "
+PLIST_SUB+=	XEN="@comment "
 .endif
 
 CONF_FILES=	\
@@ -158,4 +166,10 @@ post-install:
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
+.endif
+
+.include <bsd.port.post.mk>

@@ -10,6 +10,7 @@ include/wxSVG/DocumentEvent.h
 include/wxSVG/Element.h
 include/wxSVG/ElementTimeControl.h
 include/wxSVG/EventTarget.h
+include/wxSVG/ExifHandler.h
 include/wxSVG/GetSVGDocument.h
 include/wxSVG/NodeList.h
 include/wxSVG/NodeListCls.h
@@ -192,5 +193,5 @@ include/wxSVGXML/svgxmlhelpr.h
 lib/libwxsvg.a
 lib/libwxsvg.so
 lib/libwxsvg.so.3
-lib/libwxsvg.so.3.10.2
+lib/libwxsvg.so.3.10.4
 libdata/pkgconfig/libwxsvg.pc

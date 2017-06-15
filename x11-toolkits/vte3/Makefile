@@ -3,7 +3,7 @@
 
 PORTNAME=	vte
 PORTVERSION=	0.42.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -32,25 +32,8 @@ INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=2.91
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 || ${OPSYS} == DragonFly
-LIBS+=	-lz
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-but-set-variable||g' \
 		${WRKSRC}/src/Makefile.in
-# zlib.pc only is available on 10.1-R and newer.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000 || ${OPSYS} == DragonFly
-	@${REINPLACE_CMD} -e 's|gio-unix-2.0 zlib|gio-unix-2.0|g' \
-		${WRKSRC}/configure
-.endif
-# borrowed osversion from bsd.ssp.mk
-.if ${OSVERSION} < 1000036 && ${ARCH} == i386
-	@${REINPLACE_CMD} -e 's|-fstack-protector-strong||g; \
-		s|-fstack-protector||g' \
-		${WRKSRC}/configure
-.endif
 
 .include <bsd.port.mk>

@@ -30,7 +30,7 @@ ALL_TARGET=	bsf
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-SSL_USE=		OPENSSL=yes
+SSL_USES=		ssl
 
 .include <bsd.port.options.mk>
 

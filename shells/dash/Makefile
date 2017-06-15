@@ -8,9 +8,6 @@ MASTER_SITES=	http://gondor.apana.org.au/~herbert/dash/files/
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	POSIX-compliant implementation of /bin/sh
 
-SEPARATE_BUILD=	flavored
-FLAVORS=	static
-FLAVOR?=
 GNU_CONFIGURE=	yes
 # This work in 11-CURRENT r266677M amd64 but fails to work in 11.0-CURRENT r266677 i386
 CFLAGS+=	-DUNUSABLE_RT_SIGNALS
@@ -18,10 +15,6 @@ CFLAGS+=	-DUNUSABLE_RT_SIGNALS
 USES=		gmake
 
 PLIST_FILES=	bin/dash man/man1/dash.1.gz
-
-.if ${FLAVOR:Mstatic}
-LDFLAGS+=	-static
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/COMMON_CFLAGS =/ s|$$| ${CFLAGS}|' \

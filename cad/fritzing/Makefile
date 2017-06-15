@@ -3,7 +3,7 @@
 
 PORTNAME=	fritzing
 PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/fritzing/fritzing-app/archive/:source \
 		https://github.com/fritzing/fritzing-parts/archive/:parts
@@ -29,7 +29,7 @@ MAKE_ENV=	INSTALL_ROOT="${STAGEDIR}"
 
 BUILD_DEPENDS+=	boost-libs>1.52:devel/boost-libs
 
-RUN_DEPENDS+=	py${PYTHON_SUFFIX}-sqlite3>0:databases/py-sqlite3
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 .include <bsd.port.pre.mk>
 

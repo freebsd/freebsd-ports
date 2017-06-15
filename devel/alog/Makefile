@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libalog-${PORTVERSION}
 
-MAINTAINER=	marino@FreeBSD.org
+MAINTAINER=	freebsd.contact@marino.st
 COMMENT=	Stackable logging framework for Ada
 
 LICENSE=	LGPL21

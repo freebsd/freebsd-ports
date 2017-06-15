@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	4.01020
+PORTVERSION=	4.01042
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Perl interface to twitter.com
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-Class-Load>=0:devel/p5-Class-Load \
@@ -39,6 +40,12 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 
 NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502502
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.11.01:devel/p5-ExtUtils-MakeMaker
+.endif
+
+.include <bsd.port.post.mk>

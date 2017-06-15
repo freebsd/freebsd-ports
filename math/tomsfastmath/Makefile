@@ -2,6 +2,7 @@
 
 PORTNAME=	tomsfastmath
 PORTVERSION=	0.12
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://libtom.net/files/
 DISTNAME=	tfm-${PORTVERSION}

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fceux
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/fceultra/Source%20Code/${PORTVERSION}%20src/
 
@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		compiler:c++0x desktop-file-utils dos2unix pkgconfig scons
 USE_SDL=	sdl
+USE_XORG=	x11
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -62,8 +63,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/PUBLIC/s|^|#| ; \
 		 /CheckLib/s|lua5.1|lua-${LUA_VER}| ; \
-		 /LINKFLAGS/s|"-ldl",|| ; \
 		 /LINKFLAGS/s|lua5.1|lua-${LUA_VER}| ; \
+		 s|"-ldl"|| ; \
 		 s|/usr/include/lua5.1|${LUA_INCDIR}| ; \
 		 s|-O2||' ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e \
@@ -88,6 +89,8 @@ do-install:
 		${STAGEDIR}${DESKTOPDIR})
 	(cd ${WRKSRC} && ${INSTALL_DATA} *.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in TODO-PROJECT Videolog.txt cheat.html faq fcs.txt fm2.txt \
 	protocol.txt snes9x-lua.html
