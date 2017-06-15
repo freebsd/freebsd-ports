@@ -13,13 +13,20 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monsters, explosions, destruction game for X Window System
 
-USES=		tar:bzip2
+LICENSE=	batallion
+LICENSE_NAME=	batallion license
+LICENSE_FILE=	${WRKSRC}/README
+# non-commercial and prohibits distribution of modified versions
+LICENSE_PERMS=	dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
+
+USES=		tar:bzip2 localbase
 USE_GL=		gl glu
+USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 
-CFLAGS+=	-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include \
+CFLAGS+=	-I${LOCALBASE}/include/X11 \
 		-DLINUXVERSION -DLINUXAUDIO
-LIBS+=		-L${LOCALBASE}/lib -lX11 -lm
+LIBS+=		-lX11 -lm
 
 PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz
 PORTDATA=	*
@@ -54,8 +61,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/SOUNDS/*.au ${STAGEDIR}${DATADIR}/SOUNDS
 	@${MKDIR} ${STAGEDIR}${DATADIR}/TEXTURES
 	${INSTALL_DATA} ${WRKSRC}/TEXTURES/*.tex ${STAGEDIR}${DATADIR}/TEXTURES
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/battalionSUN4/HELP/*.gif ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
