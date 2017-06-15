@@ -58,6 +58,10 @@ _USE_HARDENING+=	linux
 _USE_HARDENING+=	static
 .endif
 
+.if defined(PACKAGE_BUILDING) || defined(BATCH)
+_USE_HARDENING+=	batch
+.endif
+
 .for h in ${USE_HARDENING}
 _h:=		${h:C/\:.*//}
 .if ${_h} == "pie" || ${_h} == "relro" || ${_h} == "safestack"
@@ -95,13 +99,18 @@ USE_HARDENING+=		nopie
 
 pie_ARGS:=		${PIE_ARGS} # XXX
 
-OPTIONS_DEFINE+=	PIE
 PIE_DESC=		Build as PIE
 PIE_USES=		pie
+
+.if ${_USE_HARDENING:Mbatch} == ""
+OPTIONS_DEFINE+=	PIE
+.endif
+
 .if ${USE_HARDENING:Mpie} && ${USE_HARDENING:Mnopie} == ""
 .if !defined(NOPIE_PORTS)
 OPTIONS_DEFAULT+=	PIE
 .endif
+OPTIONS_DEFINE+=	PIE
 .endif
 
 .endif
@@ -121,14 +130,18 @@ USE_HARDENING+=		norelro
 .endif
 .endif
 
-OPTIONS_DEFINE+=	RELRO
 RELRO_DESC=		Build with RELRO + BIND_NOW
 RELRO_USES=		relro
+
+.if ${_USE_HARDENING:Mbatch} == ""
+OPTIONS_DEFINE+=	RELRO
+.endif
 
 .if ${USE_HARDENING:Mrelro} && ${USE_HARDENING:Mnorelro} == ""
 .if !defined(NORELRO_PORTS)
 OPTIONS_DEFAULT+=	RELRO
 .endif
+OPTIONS_DEFINE+=	RELRO
 .endif
 
 .endif
@@ -150,12 +163,16 @@ USE_HARDENING+=		nosafestack
 
 safestack_ARGS:=	${SAFESTACK_ARGS} # XXX
 
-OPTIONS_DEFINE+=	SAFESTACK
 SAFESTACK_DESC=		Build with SafeStack
 SAFESTACK_USES=		safestack
 
+.if ${_USE_HARDENING:Mbatch} == ""
+OPTIONS_DEFINE+=	SAFESTACK
+.endif
+
 .if ${USE_HARDENING:Msafestack} && ${USE_HARDENING:Mnosafestack} == ""
 OPTIONS_DEFAULT+=	SAFESTACK
+OPTIONS_DEFINE+=	SAFESTACK
 .endif
 
 .endif
@@ -174,12 +191,16 @@ USE_HARDENING+=		cfi
 USE_HARDENING+=		nocfi
 .endif
 
-OPTIONS_DEFINE+=	CFIHARDEN
 CFIHARDEN_DESC=		Build with CFI (Requires lld 4.0.0 in base)
 CFIHARDEN_USES=		cfi
 
+.if ${_USE_HARDENING:Mbatch} == ""
+OPTIONS_DEFINE+=	CFIHARDEN
+.endif
+
 .if ${USE_HARDENING:Mcfi} && ${USE_HARDENING:Mnocfi} == ""
 OPTIONS_DEFAULT+=	CFIHARDEN
+OPTIONS_DEFINE+=	CFIHARDEN
 .endif
 
 .endif
