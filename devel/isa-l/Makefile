@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	isa-l
-PORTVERSION=	2.17.0
-DISTVERSIONPREFIX=v
+PORTVERSION=	2.18.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	m.bielicki@lizardfs.com
 COMMENT=	Intel(R) Intelligent Storage Acceleration Libray
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	yasm:devel/yasm
 
@@ -24,6 +25,6 @@ ONLY_FOR_ARCHS=	amd64
 
 INSTALL_TARGET=	install-strip
 
-BROKEN_aarch64=		Fails to compile: invalid conversion between vector type and integer type
+BROKEN_aarch64=	fails to compile: invalid conversion between vector type and integer type
 
 .include <bsd.port.mk>
