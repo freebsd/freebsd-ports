@@ -528,6 +528,7 @@
     SUBDIR += p5-Algorithm-CheckDigits
     SUBDIR += p5-Algorithm-RabinKarp
     SUBDIR += p5-Apache-ParseLog
+    SUBDIR += p5-Apache-Solr
     SUBDIR += p5-BibTeX-Parser
     SUBDIR += p5-Bloom-Filter
     SUBDIR += p5-CAM-PDF
