@@ -1,0 +1,7 @@
+Mupen64Plus-Qt is a basic launcher for the mupen64plus-ui-console frontend. It
+was adapted from CEN64-Qt to work with Mupen64Plus.
+
+See the README at https://www.github.com/dh4/mupen64plus-qt for a detailed
+description of its features and usage.
+
+WWW: https://www.github.com/dh4/mupen64plus-qt

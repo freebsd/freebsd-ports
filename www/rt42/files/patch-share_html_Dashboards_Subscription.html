@@ -1,0 +1,11 @@
+--- share/html/Dashboards/Subscription.html.orig	2016-06-08 21:49:02 UTC
++++ share/html/Dashboards/Subscription.html
+@@ -75,7 +75,7 @@
+ <ol class="dashboard-queries">
+ %    for my $portlet (@portlets) {
+         <li class="dashboard-query">
+-            <% loc($portlet->{description}, $fields{'Rows'}) %>
++            <% loc( RT::SavedSearch->EscapeDescription($portlet->{description}), $fields{'Rows'}) %>
+         </li>
+ %    }
+ </ol>
