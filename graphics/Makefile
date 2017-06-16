@@ -1048,6 +1048,7 @@
     SUBDIR += uniconvw
     SUBDIR += unpaper
     SUBDIR += urt
+    SUBDIR += vapoursynth-fmtconv
     SUBDIR += vapoursynth-waifu2x-w2xc
     SUBDIR += variety
     SUBDIR += vcg
