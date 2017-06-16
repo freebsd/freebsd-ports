@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-activesupport5>0:devel/rubygem-activesupport5 \
 		rubygem-railties5>0:www/rubygem-railties5 \
 		yarn>0:www/yarn
 
+PORTSCOUT=	limit:^1\.
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
