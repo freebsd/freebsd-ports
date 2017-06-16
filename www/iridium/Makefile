@@ -3,7 +3,7 @@
 
 PORTNAME=	iridium
 PORTVERSION=	58.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -60,14 +60,14 @@ LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf
 
-ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler bison cpe desktop-file-utils execinfo jpeg \
+ONLY_FOR_ARCHS=	amd64 i386
+USES=		bison compiler cpe desktop-file-utils execinfo jpeg \
 		ninja perl5 pkgconfig python:2,build shebangfix tar:xz
 
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xdamage xfixes xi \
 		xproto xrandr xrender xscrnsaver xtst
-USE_GNOME=	atk glib20 gtk20 gtk30 dconf libxslt libxml2
+USE_GNOME=	atk dconf glib20 gtk20 gtk30 libxml2 libxslt
 MAKE_ARGS=	-C out/${BUILDTYPE}
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
@@ -76,20 +76,21 @@ INSTALLS_ICONS=	yes
 # Some parts don't have use_system_* flag, and can be turned on/off by using
 # replace_gn_files.py script, some parts just turned on/off for target host
 # OS "target_os == is_bsd", like libusb, libpci.
-GN_ARGS+=	is_clang=true \
-		clang_use_chrome_plugins=false \
+GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_media_router=true \
 		enable_nacl=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		enable_webrtc=false \
 		fieldtrial_testing_like_official_build=true \
+		is_clang=true \
 		toolkit_views=true \
+		treat_warnings_as_errors=false \
 		use_allocator="none" \
 		use_aura=true \
 		use_cups=true \
 		use_experimental_allocator_shim=false \
-		treat_warnings_as_errors=false \
+		use_lld=true \
 		use_sysroot=false \
 		use_system_libjpeg=true \
 		use_system_sqlite=false   # chrome has additional patches
@@ -132,17 +133,13 @@ GN_ARGS+=	proprietary_codecs=false
 GN_ARGS+=	enable_hevc_demuxing=false
 .endif
 
-DEBUG_MAKE_ENV=	V=1
 .if ${PORT_OPTIONS:MDEBUG}
 BUILDTYPE=	Debug
 GN_ARGS+=	is_debug=true
 GN_BOOTSTRAP_FLAGS+=	--debug
-#GN_ARGS+=	is_component_build=true
+MAKE_ENV+=	V=1
 .else
 BUILDTYPE=	Release
-.if ${ARCH} == amd64
-GN_ARGS+=	use_lld=true # harder, better, faster, stronger
-.endif
 GN_ARGS+=	is_debug=false
 GN_ARGS+=	symbol_level=0
 GN_ARGS+=	remove_webcore_debug_symbols=true
@@ -218,8 +215,8 @@ do-configure:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for t in font_service test_ime_driver ui
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${t}.service \
+.for m in font_service test_ime_driver ui
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${m}.service \
 		${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${STAGEDIR}${MANPREFIX}/man/man1/iridium.1

@@ -15,6 +15,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_BR \
 		LANG_BS \
 		LANG_CA \
+		LANG_CAK \
 		LANG_CS \
 		LANG_CY \
 		LANG_DA \
@@ -51,6 +52,8 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_IS \
 		LANG_IT \
 		LANG_JA \
+		LANG_KA \
+		LANG_KAB \
 		LANG_KK \
 		LANG_KM \
 		LANG_KN \
@@ -63,6 +66,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_ML \
 		LANG_MR \
 		LANG_MS \
+		LANG_MY \
 		LANG_NB \
 		LANG_NL \
 		LANG_NN \
@@ -86,6 +90,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_TH \
 		LANG_TR \
 		LANG_UK \
+		LANG_UR \
 		LANG_UZ \
 		LANG_VI \
 		LANG_XH \
@@ -100,14 +105,19 @@ LANG_ACH_DESC?=	Acholi language support
 LANG_AN_DESC?=	Aragonese language support
 LANG_AS_DESC?=	Assamese language support
 LANG_AZ_DESC?=	Azerbaijani language support
+LANG_CAK_DESC?=	Kaqchikel (Guatemala) language support
 LANG_CSB_DESC?=	Kashubian language support
 LANG_DSB_DESC?=	Lower Sorbian language support
 LANG_FF_DESC?=	Fulah language support
 LANG_GN_DESC?=	Guarani (Paraguay) language support
 LANG_HSB_DESC?=	Upper Sorbian language support
+LANG_KA_DESC?=	Georgian language support
+LANG_KAB_DESC?=	Taqbaylit language support
 LANG_KM_DESC?=	Khmer language support
 LANG_LIJ_DESC?=	Ligurian (Genoa) language support
 LANG_MS_DESC?=	Malay language support
+LANG_MY_DESC?=	Burmese language support
 LANG_SW_DESC?=	Swahili language support
-LANG_UZ_DESC?=  Uzbek language support
+LANG_UR_DESC?=	Urdu (Pakistan) language support
+LANG_UZ_DESC?=	Uzbek language support
 LANG_XH_DESC?=	Xhosa language support

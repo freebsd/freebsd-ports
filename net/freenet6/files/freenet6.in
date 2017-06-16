@@ -23,6 +23,7 @@
 
 name=freenet6
 rcvar=freenet6_enable
+sig_stop="HUP"
 
 command=%%PREFIX%%/bin/gw6c
 required_files=%%PREFIX%%/etc/freenet6/gw6c.conf
