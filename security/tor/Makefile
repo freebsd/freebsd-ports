@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-PORTVERSION=	0.2.9.10
+PORTVERSION=	0.3.0.8
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -12,26 +12,25 @@ COMMENT=	Anonymizing overlay network for TCP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_mips64=	Does not build: error: Need a uint128_t implementation!
-BROKEN_powerpc64=	Does not build
-BROKEN_sparc64=	Does not build: error: Need a uint128_t implementation!
+BROKEN_mips64=	does not build: error: Need a uint128_t implementation!
+BROKEN_powerpc64=	does not build: error: Need a uint128_t implementation!
+BROKEN_sparc64=	does not build: error: Need a uint128_t implementation!
 
 USES=		cpe gmake
 CPE_VENDOR=	torproject
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
+CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}"
 CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
-OPTIONS_DEFINE=	STATIC_TOR TCMALLOC TOR2WEB TRANSPARENT
+OPTIONS_DEFINE=	MANPAGES DOCS STATIC_TOR TCMALLOC TOR2WEB
+OPTIONS_DEFAULT=MANPAGES
+OPTIONS_SUB=	yes
 
 STATIC_TOR_DESC=	Build a static tor
 TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 TOR2WEB_DESC=		(EXPERT OPTION) Faster but non-anonymous hidden services
-TRANSPARENT_DESC=	Transparent proxy support
-
-OPTIONS_DEFAULT=	TRANSPARENT
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
@@ -47,6 +46,12 @@ STATIC_TOR_USES=	ssl:build
 STATIC_TOR_USES_OFF=	ssl
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
+BUILD_DEPENDS+=	asciidoc:textproc/asciidoc
+.else
+CONFIGURE_ARGS+=	--disable-asciidoc
+.endif
 
 .if !defined(USE_GCC) && empty(CC:T:M*gcc4*) && \
 empty(PORT_OPTIONS:MSTATIC_TOR) && empty(ARCH:Mia64)
@@ -79,12 +84,6 @@ LIB_DEPENDS+=		libtcmalloc.so:devel/google-perftools
 CONFIGURE_ARGS+=	--enable-tor2web-mode
 .endif
 
-.if ${PORT_OPTIONS:MTRANSPARENT}
-CONFIGURE_ARGS+=	--enable-transparent
-.else
-CONFIGURE_ARGS+=	--disable-transparent
-.endif
-
 pre-everything::
 .if ${PORT_OPTIONS:MTOR2WEB}
 	@${ECHO_MSG}
@@ -110,10 +109,6 @@ post-patch-STATIC_TOR-off:
 post-patch-STATIC_TOR-on:
 	@${REINPLACE_CMD} -e "s@-ltcmalloc@${LOCALBASE}/lib/libtcmalloc.a@" \
 		${WRKSRC}/configure
-
-post-configure:
-	@${REINPLACE_CMD} -e '\|^nodist_man1_MANS =|s|$$|$$(install_mans:=.1)|' \
-		${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/log/tor ${STAGEDIR}/var/run/tor ${STAGEDIR}/var/db/tor
