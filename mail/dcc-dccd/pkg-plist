@@ -29,7 +29,6 @@ dcc/libexec/dcc-stats-update
 @(%%DCCUSER%%,%%DCCGROUP%%,4555) dcc/libexec/dccsight
 %%IFD_MILT%%dcc/libexec/dns-helper
 dcc/libexec/fetchblack
-dcc/libexec/fetchids
 dcc/libexec/fetch-testmsg-whitelist
 dcc/libexec/fix-map
 dcc/libexec/hackmc

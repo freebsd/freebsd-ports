@@ -1684,6 +1684,7 @@
     SUBDIR += py-meld
     SUBDIR += py-meld3
     SUBDIR += py-mt
+    SUBDIR += py-multidict
     SUBDIR += py-nevow
     SUBDIR += py-notebook
     SUBDIR += py-octoprint
@@ -1847,6 +1848,7 @@
     SUBDIR += py-wsaccel
     SUBDIR += py-wsgiauth
     SUBDIR += py-wsgidav
+    SUBDIR += py-yarl
     SUBDIR += py-zope.app.wsgi
     SUBDIR += py3-cssutils
     SUBDIR += py3-requests
