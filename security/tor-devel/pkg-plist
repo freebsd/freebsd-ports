@@ -7,11 +7,12 @@ bin/torify
 %%MANPAGES%%man/man1/tor-resolve.1.gz
 %%MANPAGES%%man/man1/tor.1.gz
 %%MANPAGES%%man/man1/torify.1.gz
-%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/tor-gencert.html
-%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/tor-resolve.html
-%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/tor.html
-%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/torify.html
+%%PORTDOCS%%%%DOCSDIR%%/tor-gencert.html
+%%PORTDOCS%%%%DOCSDIR%%/tor-resolve.html
+%%PORTDOCS%%%%DOCSDIR%%/tor.html
+%%PORTDOCS%%%%DOCSDIR%%/torify.html
 %%DATADIR%%/geoip
 %%DATADIR%%/geoip6
-@dir(_tor,_tor,750) /var/run/tor
-@dir(_tor,_tor,750) /var/log/tor
+@dir(%%USER%%,%%GROUP%%,700) /var/run/tor
+@dir(%%USER%%,%%GROUP%%,700) /var/log/tor
+@dir(%%USER%%,%%GROUP%%,700) /var/db/tor
