@@ -4,7 +4,7 @@
    gpu_info->pixel_shader_version = glsl_version;
    gpu_info->vertex_shader_version = glsl_version;
  
-+#ifndef __FreeBSD__
++#if !defined(OS_BSD)
    IdentifyActiveGPU(gpu_info);
    return CollectDriverInfoGL(gpu_info);
 +#endif
