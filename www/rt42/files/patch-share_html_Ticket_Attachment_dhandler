@@ -1,0 +1,18 @@
+--- share/html/Ticket/Attachment/dhandler.orig	2016-06-08 21:49:02 UTC
++++ share/html/Ticket/Attachment/dhandler
+@@ -68,11 +68,13 @@ unless ( $AttachmentObj->TransactionId()
+ my $content = $AttachmentObj->OriginalContent;
+ my $content_type = $AttachmentObj->ContentType || 'text/plain';
+ 
+-if ( RT->Config->Get('AlwaysDownloadAttachments') ) {
++my $attachment_regex = qr{^(image/svg\+xml|application/pdf)}i;
++if ( RT->Config->Get('AlwaysDownloadAttachments') || ($content_type =~ $attachment_regex) ) {
+     $r->headers_out->{'Content-Disposition'} = "attachment";
+ }
+ elsif ( !RT->Config->Get('TrustHTMLAttachments') ) {
+-    $content_type = 'text/plain' if ( $content_type =~ /^text\/html/i );
++    my $text_plain_regex = qr{^(text/html|application/xhtml\+xml|text/xml|application/xml)}i;
++    $content_type = 'text/plain' if ( $content_type =~ $text_plain_regex );
+ }
+ elsif (lc $content_type eq 'text/html') {
+     # If we're trusting and serving HTML for display not download, try to do
