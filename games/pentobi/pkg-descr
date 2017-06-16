@@ -1,0 +1,14 @@
+Pentobi is a computer opponent for the board game Blokus.
+
+* Supported game variants: Classic, Duo, Trigon, Junior, Nexos,
+  GembloQ, Callisto
+* Strong Blokus engine with 9 different playing levels
+* Player rating by playing rated games against the computer
+* Game analysis function
+* Save and load games in Smart Game Format including comments and
+  move variations
+* Source code is available under the GNU General Public License
+* System requirements: 1 GB RAM, 1 GHz CPU (4 GB RAM, 2.5 GHz
+  dual-core or faster CPU recommended for playing level 9)
+
+WWW: https://pentobi.sourceforge.io/
