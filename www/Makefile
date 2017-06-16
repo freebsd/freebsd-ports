@@ -1684,6 +1684,7 @@
     SUBDIR += py-meld
     SUBDIR += py-meld3
     SUBDIR += py-mt
+    SUBDIR += py-multidict
     SUBDIR += py-nevow
     SUBDIR += py-notebook
     SUBDIR += py-octoprint
