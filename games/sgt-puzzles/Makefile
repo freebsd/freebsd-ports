@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puzzles
-PORTVERSION=	20170508
+PORTVERSION=	20170606
 CATEGORIES=	games
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/puzzles/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,12 +15,14 @@ COMMENT=	Simon Tatham's Portable Puzzle Collection
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-COMMITHASH=	cce13ed
+COMMITHASH=	272beef
 
 USES=		autoreconf gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=sgt-
 INSTALL_TARGET=	install-strip
+
+PORTDOCS=	*
 
 PUZZLE_LIST=	blackbox bridges cube dominosa fifteen filling flip \
 		flood galaxies guess inertia keen lightup loopy magnets map \
@@ -41,7 +43,7 @@ DESKTOP_FILES_DESKTOP_ENTRIES+=\
 		""
 .endfor
 
-OPTIONS_DEFINE=	DESKTOP_FILES
+OPTIONS_DEFINE=	DESKTOP_FILES DOCS
 OPTIONS_DEFAULT=DESKTOP_FILES GTK2
 OPTIONS_SINGLE=	GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3
@@ -62,5 +64,9 @@ post-install-DESKTOP_FILES-on:
 .for f in ${PUZZLE_LIST}
 	${INSTALL_DATA} ${WRKSRC}/icons/${f}-48d24.png ${STAGEDIR}${PREFIX}/share/pixmaps/sgt-${f}.png
 .endfor
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/puzzles.txt ${WRKSRC}/HACKING ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
