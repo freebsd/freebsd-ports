@@ -4091,7 +4091,6 @@
     SUBDIR += py-Products.contentmigration
     SUBDIR += py-Products.statusmessages
     SUBDIR += py-Products.validation
-    SUBDIR += py-pydispatcher
     SUBDIR += py-PyExecJS
     SUBDIR += py-PyLD
     SUBDIR += py-RPyC
@@ -4575,6 +4574,7 @@
     SUBDIR += py-pycodestyle
     SUBDIR += py-pycparser
     SUBDIR += py-pydenticon
+    SUBDIR += py-pydispatcher
     SUBDIR += py-pydocstyle
     SUBDIR += py-pydoop
     SUBDIR += py-pydrive
@@ -5011,6 +5011,7 @@
     SUBDIR += py3-urwid
     SUBDIR += py3-vcversioner
     SUBDIR += py3-virtualenv
+    SUBDIR += py3-voluptuous
     SUBDIR += py3-wcwidth
     SUBDIR += py3-xdg
     SUBDIR += py3-yaml
