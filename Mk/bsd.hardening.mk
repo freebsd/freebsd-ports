@@ -110,7 +110,9 @@ OPTIONS_DEFINE+=	PIE
 .if !defined(NOPIE_PORTS)
 OPTIONS_DEFAULT+=	PIE
 .endif
+.if ${_USE_HARDENING:Mbatch} != ""
 OPTIONS_DEFINE+=	PIE
+.endif
 .endif
 
 .endif
@@ -141,7 +143,9 @@ OPTIONS_DEFINE+=	RELRO
 .if !defined(NORELRO_PORTS)
 OPTIONS_DEFAULT+=	RELRO
 .endif
+.if ${_USE_HARDENING:Mbatch} != ""
 OPTIONS_DEFINE+=	RELRO
+.endif
 .endif
 
 .endif
@@ -172,7 +176,9 @@ OPTIONS_DEFINE+=	SAFESTACK
 
 .if ${USE_HARDENING:Msafestack} && ${USE_HARDENING:Mnosafestack} == ""
 OPTIONS_DEFAULT+=	SAFESTACK
+.if ${_USE_HARDENING:Mbatch} != ""
 OPTIONS_DEFINE+=	SAFESTACK
+.endif
 .endif
 
 .endif
@@ -200,7 +206,9 @@ OPTIONS_DEFINE+=	CFIHARDEN
 
 .if ${USE_HARDENING:Mcfi} && ${USE_HARDENING:Mnocfi} == ""
 OPTIONS_DEFAULT+=	CFIHARDEN
+.if ${_USE_HARDENING:Mbatch} != ""
 OPTIONS_DEFINE+=	CFIHARDEN
+.endif
 .endif
 
 .endif
