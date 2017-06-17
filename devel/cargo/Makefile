@@ -5,7 +5,7 @@ PORTNAME=	cargo
 PORTVERSION=	0.19.0
 CATEGORIES=	devel
 
-MAINTAINER=	dumbbell@FreeBSD.org
+MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Rust's Package Manager
 # ' <-- Help Vim syntax hilighting...
 
