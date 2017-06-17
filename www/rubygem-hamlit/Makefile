@@ -3,7 +3,7 @@
 
 PORTNAME=	hamlit
 PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-temple>=0.8.0:devel/rubygem-temple \
 		rubygem-thor>=0:devel/rubygem-thor \
 		rubygem-tilt>=0:devel/rubygem-tilt
 
-NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	bin/setup bin/test bin/ruby
