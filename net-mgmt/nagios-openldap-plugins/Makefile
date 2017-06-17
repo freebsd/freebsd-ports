@@ -3,6 +3,7 @@
 
 PORTNAME=	openldap-plugins
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.ltb-project.org/attachments/download/629/ \
 		http://mirrors.rit.edu/zi/
@@ -15,11 +16,11 @@ COMMENT=	Nagios Plugins to monitor OpenLDAP
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
-		p5-Date-Manip>=6.30:devel/p5-Date-Manip \
-		p5-Time-HiRes>=0:devel/p5-Time-HiRes
+		p5-Date-Manip>=6.30:devel/p5-Date-Manip
 
 PORTSCOUT=	ignore:1
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	run
