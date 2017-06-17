@@ -9410,3 +9410,34 @@ dns/pear-Net_DNS||2017-06-07|Has expired: This Port use PHP4.2 - This PHP-Versio
 net/samba42|net/samba44|2016-09-07|Has expired: not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
 net/samba43|net/samba44|2017-03-07|Has expired: not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
 www/py-utidy|www/py-utidylib|2017-06-08|Rename to comply with PyPI scheme
+chinese/calligra-l10n-zh_CN||2017-06-12|Merged with editors/calligra
+chinese/calligra-l10n-zh_TW||2017-06-12|Merged with editors/calligra
+french/calligra-l10n||2017-06-12|Merged with editors/calligra
+german/calligra-l10n||2017-06-12|Merged with editors/calligra
+hungarian/calligra-l10n||2017-06-12|Merged with editors/calligra
+japanese/calligra-l10n||2017-06-12|Merged with editors/calligra
+polish/calligra-l10n||2017-06-12|Merged with editors/calligra
+portuguese/calligra-l10n-pt_BR||2017-06-12|Merged with editors/calligra
+portuguese/calligra-l10n||2017-06-12|Merged with editors/calligra
+russian/calligra-l10n||2017-06-12|Merged with editors/calligra
+ukrainian/calligra-l10n||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-bs||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-ca||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-ca_valencia||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-cs||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-da||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-el||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-en_GB||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-es||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-et||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-fi||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-gl||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-it||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-kk||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-nb||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-nl||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-sk||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-sv||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-tr||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n||2017-06-12|Merged with editors/calligra
+
