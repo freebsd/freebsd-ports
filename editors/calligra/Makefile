@@ -94,5 +94,17 @@ post-patch:
 		${PATCH_WRKSRC}/krita/plugins/formats/ora/CMakeLists.txt \
 		${PATCH_WRKSRC}/krita/plugins/formats/ora/CMakeLists.txt \
 		${PATCH_WRKSRC}/plugins/vectorshape/CMakeLists.txt
+# Enteigen krita: Do not use the complete 'Eigen' namespace, as it conflicts
+# with opencv now, but only include the qualified class names.
+# This is a simplified version of upstreams:
+#       https://phabricator.kde.org/R37:2db4438671e17002c7b02e3ad3a5208930765e4f
+	@${REINPLACE_CMD} -e 's|using namespace Eigen;|using Eigen::Matrix;using Eigen::Dynamic;using Eigen::Vector2i;|' \
+		${PATCH_WRKSRC}/krita/plugins/extensions/dockers/advancedcolorselector/kis_color_selector_ring.cpp \
+		${PATCH_WRKSRC}/krita/plugins/filters/blur/kis_gaussian_blur_filter.h \
+		${PATCH_WRKSRC}/krita/plugins/filters/blur/kis_motion_blur_filter.h \
+		${PATCH_WRKSRC}/krita/plugins/filters/blur/kis_lens_blur_filter.h \
+		${PATCH_WRKSRC}/krita/plugins/filters/convolutionfilters/convolutionfilters.cpp \
+		${PATCH_WRKSRC}/krita/image/kis_convolution_kernel.h \
+		${PATCH_WRKSRC}/krita/image/kis_gaussian_kernel.h
 
 .include <bsd.port.mk>
