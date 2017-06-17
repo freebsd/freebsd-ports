@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	ninja:devel/ninja
 
-USES=		python:3
+USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
