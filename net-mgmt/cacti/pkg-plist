@@ -376,7 +376,6 @@
 %%CACTIDIR%%/include/js/jquery.multiselect.filter.js
 %%CACTIDIR%%/include/js/jquery.multiselect.js
 %%CACTIDIR%%/include/js/jquery.sparkline.js
-%%CACTIDIR%%/include/js/jquery.storageapi.js
 %%CACTIDIR%%/include/js/jquery.tablednd.js
 %%CACTIDIR%%/include/js/jquery.tablesorter.js
 %%CACTIDIR%%/include/js/jquery.tablesorter.pager.js
@@ -386,6 +385,7 @@
 %%CACTIDIR%%/include/js/jquery.zoom.js
 %%CACTIDIR%%/include/js/jquery-migrate.js
 %%CACTIDIR%%/include/js/jquery-ui.js
+%%CACTIDIR%%/include/js/js.storage.js
 %%CACTIDIR%%/include/js/jstree.js
 %%CACTIDIR%%/include/js/pace.js
 %%CACTIDIR%%/include/js/screenfull.js

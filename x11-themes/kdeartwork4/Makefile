@@ -3,13 +3,11 @@
 
 PORTNAME=	kdeartwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Artworks Themes
-
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3
 
 USES=		cmake:outsource kde:4 tar:xz
 USE_KDE=	kdelibs libkexiv2 workspace automoc4
@@ -23,6 +21,9 @@ GNOME_BUILD_DEPENDS=	${LOCALBASE}/share/applications/xscreensaver-properties.des
 GNOME_RUN_DEPENDS=	${GNOME_BUILD_DEPENDS}
 GNOME_BUILD_DEPENDS_OFF=	xscreensaver:x11/xscreensaver
 GNOME_RUN_DEPENDS_OFF=		${GNOME_BUILD_DEPENDS_OFF}
+
+# Do not look for eigen. Eigen3 dropped the eigen2 compatibility with 3.2+. 
+CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Eigen3:BOOL=TRUE
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}|g' \
