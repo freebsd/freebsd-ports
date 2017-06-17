@@ -2,7 +2,7 @@
 
 PORTNAME=	uclcmd
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	allanjude@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libucl.so:textproc/libucl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	allanjude
-GH_TAGNAME=	9450b2d
+GH_TAGNAME=	da1ac0f
 
 USES=		pkgconfig
 PLIST_FILES=	bin/uclcmd
