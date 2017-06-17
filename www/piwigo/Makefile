@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwigo
-PORTVERSION=	2.8.6
-PORTREVISION=	1
+PORTVERSION=	2.9.0
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
