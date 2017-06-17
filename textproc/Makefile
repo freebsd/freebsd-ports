@@ -383,6 +383,7 @@
     SUBDIR += kmflcomp
     SUBDIR += kn-aspell
     SUBDIR += kompare
+    SUBDIR += kreport
     SUBDIR += ku-aspell
     SUBDIR += ky-aspell
     SUBDIR += l2a
