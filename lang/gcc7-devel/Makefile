@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	7.1.1.s20170608
+PORTVERSION=	7.1.1.s20170615
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -68,9 +68,9 @@ USE_GCC=	yes
 .if ${ARCH} == "armv6"
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
-MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
+MAKE_ARGS+=CXXFLAGS+=-fbracket-depth=512
 .  else
-MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
+MAKE_ARGS+=STAGE1_CXXFLAGS+=-fbracket-depth=512
 .  endif
 . endif
 .endif
