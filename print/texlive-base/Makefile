@@ -26,12 +26,11 @@ LIB_DEPENDS=	libicuio.so:devel/icu \
 		libpoppler.so:graphics/poppler \
 		libpotrace.so:graphics/libpotrace
 
-BROKEN_powerpc64=	fails to configure: checking requested system `icu' library... failed
-
 CONFLICTS_INSTALL=	texlive-texmf-201[234]*
 
 USE_TEX=	web2c kpathsea ptexenc tlmgr texhash-bootstrap
-USES=		ghostscript pkgconfig perl5 python:run shebangfix tar:xz
+USES=		compiler:c++11-lib ghostscript pkgconfig perl5 \
+		python:run shebangfix tar:xz
 USE_PERL5=	run
 # during build phase gnu configure is run a lot
 MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}

@@ -261,6 +261,7 @@ man/uk/man1/plasmapkg2.1.gz
 share/kdevappwizard/templates/cpp-plasmoid.tar.bz2
 share/kdevappwizard/templates/plasma-wallpaper.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid.tar.bz2
+share/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
 share/kservices5/plasma-dataengine-testengine.desktop
 share/kservices5/plasma-scriptengine-applet-declarative.desktop
 share/kservicetypes5/plasma-applet.desktop
@@ -471,6 +472,7 @@ share/plasma/desktoptheme/default/icons/touchpad.svgz
 share/plasma/desktoptheme/default/icons/user.svgz
 share/plasma/desktoptheme/default/icons/video.svgz
 share/plasma/desktoptheme/default/icons/view.svgz
+share/plasma/desktoptheme/default/icons/vlc.svgz
 share/plasma/desktoptheme/default/icons/wallet.svgz
 share/plasma/desktoptheme/default/icons/window.svgz
 share/plasma/desktoptheme/default/icons/zoom.svgz
