@@ -14,8 +14,6 @@ LICENSE=		LGPL3
 
 CONFLICTS=		samba33-3.*
 
-BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option "-Wno-format-length"
-
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
 WAF_CMD=		buildtools/bin/waf
@@ -43,6 +41,10 @@ PLIST_FILES+=		include/pytalloc.h \
 			lib/libpytalloc-util.so.2 \
 			%%PYTHON_SITELIBDIR%%/talloc.so \
 			%%PKGCONFIGDIR%%/pytalloc-util.pc
+.endif
+
+.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+EXTRA_PATCHES+=		${FILESDIR}/powerpc-patch-lib_replace_wscript
 .endif
 
 .include <bsd.port.pre.mk>
