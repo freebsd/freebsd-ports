@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	superlu_mt
-PORTVERSION=	2.0.20080115
-PORTREVISION=	9
+PORTVERSION=	3.1.20160319
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/:doc
-DISTNAME=	${PORTNAME}_2.0
+DISTNAME=	${PORTNAME}_3.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} simax97.ps.gz:doc
 DIST_SUBDIR=	superlu2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,7 +14,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/License.txt
+
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
+BROKEN_sparc64=		Does not link on sparc64
 
 USES=		fortran gmake
 
@@ -49,21 +52,16 @@ FPIC=	-fPIC
 FPIC=	-fpic
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64
-.endif
-
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/SuperLU_MT_2.0
-WRKSRC_SHARED=	${WRKDIR}/SuperLU_MT_2.0_shared
+WRKSRC=		${WRKDIR}/SuperLU_MT_3.1
+WRKSRC_SHARED=	${WRKDIR}/SuperLU_MT_3.1_shared
 ALL_TARGET=	lib
-SVERSION=	1
+SVERSION=	3
 
 ARCH2FIX=	CBLAS/Makefile MAKE_INC/make.openmp MAKE_INC/make.exemplar \
-		MAKE_INC/make.pthreads TESTING/MATGEN/Makefile	\
-		make.inc SRC/Makefile
+		make.inc SRC/Makefile TESTING/MATGEN/Makefile
 
-post-patch:
+do-configure:
 .for fmk in ${ARCH2FIX}
 	@${REINPLACE_CMD} -e 's|^ARCH *.= ar|ARCMD = ar| ; \
 		s|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/${fmk}
@@ -106,20 +104,24 @@ do-build:
 	done
 
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/tmp_static/libsuperlu_mt.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKDIR}/tmp_shared/libsuperlu_mt.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib
-	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s -f libsuperlu_mt.so.${SVERSION} libsuperlu_mt.so
+	${INSTALL_DATA} ${WRKDIR}/tmp_static/libsuperlu_mt_*.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKDIR}/tmp_shared/libsuperlu_mt_*.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libsuperlu_mt_PTHREAD.so.${SVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libsuperlu_mt_PTHREAD.so
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libsuperlu_mt_PTHREAD.so.${SVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libsuperlu_mt.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/SRC/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-#	${INSTALL_DATA} ${WRKSRC}/INSTALL/*.ps ${STAGEDIR}${DOCSDIR}
-#	${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/*.ps
+	${INSTALL_DATA} ${WRKSRC}/DOC/*.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/simax97.ps.gz ${STAGEDIR}${DOCSDIR}
 .endif
 
+.ifdef MAINTAINER_MODE
 regression-test: do-build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} testing)
 	@(cd ${WRKSRC_SHARED} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} testing)
+.endif
 
 .include <bsd.port.post.mk>
