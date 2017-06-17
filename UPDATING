@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170614:
+  AFFECTS: users of editors/calligra
+  AUTHOR: groot@kde.org
+
+  Calligra has been updated to 3.0.1, which is a KDE Frameworks 5 (KF5)
+  based application. Calligra now uses Qt5 and KF5. The translations have
+  been merged (upstream) into the application, so separate language /
+  translation ports are no longer provided. Krita has been split out
+  (upstream) into a separate application, which is packaged as 
+  graphics/krita. Kexi, the visual database applications creator,
+  is packaged separately as databases/kexi.
+
+  Users of Calligra are encouraged to install Krita and Kexi separately,
+  and to report issues with the upgrade to kde@.
+
 20170613:
   AFFECTS: users of net-im/ejabberd
   AUTHOR: ashish@FreeBSD.org

@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-DBus
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,12 +11,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Perl extension for the DBus message system
 
-LIB_DEPENDS=	libdbus-1.so:devel/dbus
-RUN_DEPENDS=	p5-XML-Twig>=0:textproc/p5-XML-Twig \
-		p5-XML-Grove>=0:textproc/p5-XML-Grove \
-		p5-Time-HiRes>=0:devel/p5-Time-HiRes
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		pkgconfig perl5
+BUILD_DEPENDS=	p5-XML-Grove>=0:textproc/p5-XML-Grove \
+		p5-XML-Twig>=0:textproc/p5-XML-Twig
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USES=		perl5 pkgconfig
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

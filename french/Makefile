@@ -5,7 +5,6 @@
 
     SUBDIR += aspell
     SUBDIR += aster
-    SUBDIR += calligra-l10n
     SUBDIR += eficas
     SUBDIR += eric6
     SUBDIR += fortune-mod-zarathoustra

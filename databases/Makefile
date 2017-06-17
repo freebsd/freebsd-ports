@@ -124,6 +124,8 @@
     SUBDIR += jrobin
     SUBDIR += jrrd
     SUBDIR += kbibtex
+    SUBDIR += kdb
+    SUBDIR += kexi
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb
