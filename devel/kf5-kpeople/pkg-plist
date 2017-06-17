@@ -17,6 +17,7 @@ include/KF5/KPeople/kpeople/persondata.h
 include/KF5/KPeople/kpeople/personsmodel.h
 include/KF5/KPeople/kpeople/widgets/abstractfieldwidgetfactory.h
 include/KF5/KPeople/kpeople/widgets/actions.h
+include/KF5/KPeople/kpeople/widgets/kpeoplewidgets_export.h
 include/KF5/KPeople/kpeople/widgets/mergedialog.h
 include/KF5/KPeople/kpeople/widgets/persondetailsdialog.h
 include/KF5/KPeople/kpeople/widgets/persondetailsview.h
@@ -25,6 +26,7 @@ include/KF5/KPeople/kpeoplebackend/abstractpersonaction.h
 include/KF5/KPeople/kpeoplebackend/allcontactsmonitor.h
 include/KF5/KPeople/kpeoplebackend/basepersonsdatasource.h
 include/KF5/KPeople/kpeoplebackend/contactmonitor.h
+include/KF5/KPeople/kpeoplebackend/kpeoplebackend_export.h
 lib/cmake/KF5People/KF5PeopleConfig.cmake
 lib/cmake/KF5People/KF5PeopleConfigVersion.cmake
 lib/cmake/KF5People/KPeopleTargets-%%CMAKE_BUILD_TYPE%%.cmake

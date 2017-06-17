@@ -2,6 +2,7 @@ share/ECM/cmake/ECMConfig.cmake
 share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
 share/ECM/find-modules/FindEGL.cmake
+share/ECM/find-modules/FindGperf.cmake
 share/ECM/find-modules/FindInotify.cmake
 share/ECM/find-modules/FindKF5.cmake
 share/ECM/find-modules/FindLibGit2.cmake
