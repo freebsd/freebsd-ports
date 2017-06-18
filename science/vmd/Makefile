@@ -3,7 +3,7 @@
 
 PORTNAME=	vmd
 DISTVERSION=	1.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics python tcl tk
 MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b6/:tachyon \
 		http://www.photonlimited.com/~johns/tachyon/files/0.99b6/:tachyon \
@@ -21,15 +21,14 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	makedepend:devel/makedepend \
 		${PYNUMPY}
-LIB_DEPENDS=	libtcl85.so:lang/tcl85 \
-		libtk85.so:x11-toolkits/tk85 \
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfltk.so:x11-toolkits/fltk \
 		libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYNUMPY}
 
 LICENSE_FILE_VMD=	${WRKSRC}/LICENSE
 LICENSE_PERMS_VMD=	auto-accept
-LICENSE_NAME_VMD=	Visaul Molecular Dynamics Software License Agreement
+LICENSE_NAME_VMD=	Visual Molecular Dynamics Software License Agreement
 LICENSE_DISTFILES_VMD=	${VMD_DIST}
 
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/lib/tachyon/Copyright
@@ -40,7 +39,9 @@ LICENSE_PERMS_STRIDE=	dist-mirror pkg-mirror auto-accept
 LICENSE_NAME_STRIDE=	Stride Copyright Notice
 LICENSE_DISTFILES_STRIDE=${STRIDE_DIST}
 
-USES=		gmake perl5 python
+USES=		gmake perl5 python shebangfix sqlite tcl tk
+
+SHEBANG_FILES=	${WRKDIR}/plugins/topotools/*.tcl
 
 USE_PERL5=	build
 USE_GL=		gl glu
@@ -51,8 +52,28 @@ ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ENV=	PYTHON_INCLUDE_DIR=${PYTHON_INCLUDEDIR} \
 		PYTHON_LIBRARY_DIR=${PYTHON_LIBDIR} \
 		NUMPY_INCLUDE_DIR=${PYTHON_SITELIBDIR}/numpy/core/include \
-		NUMPY_LIBRARY_DIR=${PYTHON_SITELIBDIR}
+		NUMPY_LIBRARY_DIR=${PYTHON_SITELIBDIR} \
+		TCL_INCLUDE_DIR=${TCL_INCLUDEDIR} \
+		TCL_LIBRARY_DIR=${LOCALBASE}/lib \
+		TK_INCLUDE_DIR=${TK_INCLUDEDIR} \
+		TK_LIBRARY_DIR=${LOCALBASE}/lib
+CONFIGURE_ARGS=	${VMD_ARCH} OPENGL FLTK TK IMD TCL PTHREADS LIBTACHYON NETCDF NUMPY PYTHON
 INSTALL_WRKSRC=	${WRKSRC}/src
+MAKE_ENV=	EXPATINC=-I${LOCALBASE}/include \
+		EXPATLIB=-L${LOCALBASE}/lib \
+		EXPATLDFLAGS=-lexpat \
+		EXPATDYNAMIC=1 \
+		NETCDFINC=-I${LOCALBASE}/include \
+		NETCDFLIB=-L${LOCALBASE}/lib \
+		NETCDFLDFLAGS=-lnetcdf \
+		SQLITEINC=-I${LOCALBASE}/include \
+		SQLITELIB=-L${LOCALBASE}/lib \
+		SQLITELDFLAGS=-lsqlite3 \
+		SQLITEDYNAMIC=1 \
+		TCLLIB=-L${LOCALBASE}/lib \
+		TCLINC=-I${TCL_INCLUDEDIR} \
+		TCLLDFLAGS=-ltcl${TCL_VER:S/.//} \
+		TKLDFLAGS="-ltk${TK_VER:S/.//} -lX11"
 
 VMD_DIST=	${PORTNAME}-${DISTVERSION}.src.tar.gz
 TACHYON_DIST=	tachyon-0.99b6.tar.gz
@@ -63,10 +84,8 @@ STRIDE_DOC=	stride.doc
 
 .if ${ARCH} == "amd64"
 VMD_ARCH=		FREEBSDAMD64
-VMD_TARGET=		freebsd.amd64.opengl
 .else
 VMD_ARCH=		FREEBSD
-VMD_TARGET=		freebsd.opengl
 .endif
 
 PLIST_SUB+=		VMD_ARCH=${VMD_ARCH}
@@ -89,14 +108,10 @@ do-extract:
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e "s|-ltk8.5|-ltk85|" \
-		-e "s|-ltcl8.5|-ltcl85|" \
 		-e "s|-lpython2.5|-l${PYTHON_VERSION}${PYTHON_ABIVER}|" \
-		-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|/usr/local|${LOCALBASE}|g"  \
 		-e "s|-fno-for-scope||g" \
-		${WRKSRC}/configure
-	${REINPLACE_CMD} "s/\"gcc\"/\"${CC}\"/;s/\"g++\"/\"${CXX}\"/" \
+		-e "s/\"gcc\"/\"${CC}\"/;s/\"g++\"/\"${CXX}\"/" \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/Makefile
 	${REINPLACE_CMD} "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/*/Makefile
@@ -122,24 +137,16 @@ post-patch:
 		${WRKSRC}/lib/surf/*.c
 
 do-build:
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} bsd -C ${WRKSRC}/lib/tachyon/unix \
-		&& ${MV} ${WRKSRC}/lib/tachyon/compile/bsd/tachyon \
-			${WRKSRC}/lib/tachyon/tachyon_${VMD_ARCH}
-	${SETENV} ${MAKE_ENV} TCLLIB=-L${PREFIX}/lib/tcl8.5 \
-		TCLINC=-I${PREFIX}/include/tcl8.5 PLUGINDIR=${WRKSRC}/plugins \
-		${MAKE_CMD} ${VMD_ARCH} distrib -C ${WRKDIR}/plugins
-	${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.5 \
-		TK_INCLUDE_DIR=${PREFIX}/include/tk8.5 ${MAKE_CMD} \
-		${VMD_TARGET} -C ${WRKSRC}
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} all -C ${WRKSRC}/src
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} depend -C ${WRKSRC}/lib/surf \
-		&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD} surf -C \
-			${WRKSRC}/lib/surf \
-		&& ${MV} ${WRKSRC}/lib/surf/surf \
-			${WRKSRC}/lib/surf/surf_${VMD_ARCH}
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/lib/stride \
-		&& ${MV} ${WRKSRC}/lib/stride/stride \
-			${WRKSRC}/lib/stride/stride_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} bsd -C ${WRKSRC}/lib/tachyon/unix
+		${MV} ${WRKSRC}/lib/tachyon/compile/bsd/tachyon ${WRKSRC}/lib/tachyon/tachyon_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} PLUGINDIR=${WRKSRC}/plugins ${MAKE_CMD} ${VMD_ARCH} distrib -C ${WRKDIR}/plugins
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} all -C ${WRKSRC}/src
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} depend -C ${WRKSRC}/lib/surf
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} surf -C ${WRKSRC}/lib/surf
+		${MV} ${WRKSRC}/lib/surf/surf ${WRKSRC}/lib/surf/surf_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} -C ${WRKSRC}/lib/stride 
+		${MV} ${WRKSRC}/lib/stride/stride ${WRKSRC}/lib/stride/stride_${VMD_ARCH}
 
 post-install:
 	${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||g' ${STAGEDIR}${PREFIX}/bin/vmd
