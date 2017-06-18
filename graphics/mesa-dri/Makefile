@@ -42,19 +42,21 @@ GALLIUM_DRIVERS=	""
  || ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS+=		RADEON R200
 GALLIUM_DRIVERS+=	R300 R600
-.if "${MESA_LLVM_VER}" != ""	# until PPC gets LLVM in base
+. if "${MESA_LLVM_VER}" != ""	# until PPC gets LLVM in base
 GALLIUM_DRIVERS+=	RADEONSI
-.endif
+. endif
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
 DRI_DRIVERS+=		I915 I965
 GALLIUM_DRIVERS+=	SVGA
+. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-src_mesa_drivers_dri_i965_intel__screen.c
+. endif
 .elif ${ARCH} == armv6 || ${ARCH} == aarch64
 GALLIUM_DRIVERS+=	FREEDRENO VC4
-.endif
-
-.if ${ARCH} == armv6
+. if ${ARCH} == armv6
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src_gallium_drivers_vc4_Makefile.in
+. endif
 .endif
 
 CONFIGURE_ARGS+=	--with-dri-drivers="${DRI_DRIVERS:tl}" \
