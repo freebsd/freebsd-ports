@@ -1,8 +1,8 @@
---- src/Gui/CMakeLists.txt.orig	2016-09-07 14:39:54 UTC
+--- src/Gui/CMakeLists.txt.orig	2017-06-16 13:00:26 UTC
 +++ src/Gui/CMakeLists.txt
-@@ -57,7 +57,7 @@ else(MSVC)
+@@ -58,7 +58,7 @@ else(MSVC)
+         FreeCADApp
          ${COIN3D_LIBRARIES}
-         ${QT_LIBRARIES}
          ${Boost_LIBRARIES}
 -        ${OPENGL_gl_LIBRARY}
 +        ${OPENGL_gl_LIBRARY} -L%%LOCALBASE%%/lib
