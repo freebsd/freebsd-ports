@@ -738,6 +738,7 @@ include/wine/windows/softpub.h
 include/wine/windows/sql.h
 include/wine/windows/sqlext.h
 include/wine/windows/sqltypes.h
+include/wine/windows/sqlucode.h
 include/wine/windows/srcrst.idl
 include/wine/windows/srrestoreptapi.h
 include/wine/windows/sspi.h
@@ -994,6 +995,7 @@ lib32/wine/acledit.dll.so
 lib32/wine/aclui.dll.so
 lib32/wine/activeds.dll.so
 lib32/wine/actxprxy.dll.so
+lib32/wine/adsldpc.dll.so
 lib32/wine/advapi32.dll.so
 lib32/wine/advpack.dll.so
 lib32/wine/amstream.dll.so
@@ -1151,6 +1153,7 @@ lib32/wine/api-ms-win-power-setting-l1-1-0.dll.so
 %%STAGING%%lib32/wine/api-ms-win-rtcore-ntuser-draw-l1-1-0.dll.so
 lib32/wine/api-ms-win-rtcore-ntuser-private-l1-1-0.dll.so
 %%STAGING%%lib32/wine/api-ms-win-rtcore-ntuser-window-l1-1-0.dll.so
+lib32/wine/api-ms-win-security-activedirectoryclient-l1-1-0.dll.so
 lib32/wine/api-ms-win-security-audit-l1-1-1.dll.so
 lib32/wine/api-ms-win-security-base-l1-1-0.dll.so
 lib32/wine/api-ms-win-security-base-l1-2-0.dll.so
@@ -1327,6 +1330,8 @@ lib32/wine/dwrite.dll.so
 lib32/wine/dxdiag.exe.so
 lib32/wine/dxdiagn.dll.so
 lib32/wine/dxgi.dll.so
+%%STAGING%%lib32/wine/dxgkrnl.sys.so
+%%STAGING%%lib32/wine/dxgmms1.sys.so
 lib32/wine/dxva2.dll.so
 lib32/wine/eject.exe.so
 lib32/wine/esent.dll.so
@@ -1362,6 +1367,7 @@ lib32/wine/fakedlls/acledit.dll
 lib32/wine/fakedlls/aclui.dll
 lib32/wine/fakedlls/activeds.dll
 lib32/wine/fakedlls/actxprxy.dll
+lib32/wine/fakedlls/adsldpc.dll
 lib32/wine/fakedlls/advapi32.dll
 lib32/wine/fakedlls/advpack.dll
 lib32/wine/fakedlls/amstream.dll
@@ -1519,6 +1525,7 @@ lib32/wine/fakedlls/api-ms-win-power-setting-l1-1-0.dll
 %%STAGING%%lib32/wine/fakedlls/api-ms-win-rtcore-ntuser-draw-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-rtcore-ntuser-private-l1-1-0.dll
 %%STAGING%%lib32/wine/fakedlls/api-ms-win-rtcore-ntuser-window-l1-1-0.dll
+lib32/wine/fakedlls/api-ms-win-security-activedirectoryclient-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-security-audit-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-security-base-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-security-base-l1-2-0.dll
@@ -1695,6 +1702,8 @@ lib32/wine/fakedlls/dwrite.dll
 lib32/wine/fakedlls/dxdiag.exe
 lib32/wine/fakedlls/dxdiagn.dll
 lib32/wine/fakedlls/dxgi.dll
+%%STAGING%%lib32/wine/fakedlls/dxgkrnl.sys
+%%STAGING%%lib32/wine/fakedlls/dxgmms1.sys
 lib32/wine/fakedlls/dxva2.dll
 lib32/wine/fakedlls/eject.exe
 lib32/wine/fakedlls/esent.dll
@@ -2033,6 +2042,7 @@ lib32/wine/fakedlls/taskkill.exe
 lib32/wine/fakedlls/tasklist.exe
 lib32/wine/fakedlls/taskmgr.exe
 lib32/wine/fakedlls/taskschd.dll
+lib32/wine/fakedlls/tdh.dll
 lib32/wine/fakedlls/tdi.sys
 lib32/wine/fakedlls/termsv.exe
 lib32/wine/fakedlls/toolhelp.dll16
@@ -2086,6 +2096,7 @@ lib32/wine/fakedlls/wevtapi.dll
 lib32/wine/fakedlls/wevtutil.exe
 lib32/wine/fakedlls/wiaservc.dll
 lib32/wine/fakedlls/wimgapi.dll
+%%STAGING%%lib32/wine/fakedlls/win32k.sys
 lib32/wine/fakedlls/win32s16.dll16
 lib32/wine/fakedlls/win87em.dll16
 lib32/wine/fakedlls/winaspi.dll16
@@ -2302,6 +2313,7 @@ lib32/wine/libkernel32.def
 lib32/wine/libloadperf.def
 lib32/wine/liblz32.def
 lib32/wine/libmapi32.def
+lib32/wine/libmf.def
 lib32/wine/libmfplat.def
 lib32/wine/libmlang.def
 lib32/wine/libmpr.def
@@ -2657,6 +2669,7 @@ lib32/wine/taskkill.exe.so
 lib32/wine/tasklist.exe.so
 lib32/wine/taskmgr.exe.so
 lib32/wine/taskschd.dll.so
+lib32/wine/tdh.dll.so
 lib32/wine/tdi.sys.so
 lib32/wine/termsv.exe.so
 lib32/wine/toolhelp.dll16.so
@@ -2710,6 +2723,7 @@ lib32/wine/wevtapi.dll.so
 lib32/wine/wevtutil.exe.so
 lib32/wine/wiaservc.dll.so
 lib32/wine/wimgapi.dll.so
+%%STAGING%%lib32/wine/win32k.sys.so
 lib32/wine/win32s16.dll16.so
 lib32/wine/win87em.dll16.so
 lib32/wine/winaspi.dll16.so
