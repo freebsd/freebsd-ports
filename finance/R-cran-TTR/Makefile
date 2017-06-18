@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	TTR
+PORTREVISION=	1
 DISTVERSION=	0.23-1
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -13,6 +14,6 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	R-cran-xts>=0.9.3:math/R-cran-xts
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

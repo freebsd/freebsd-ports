@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sp
+PORTREVISION=	1
 DISTVERSION=	1.2-4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -12,6 +13,6 @@ COMMENT=	R Classes and Methods for Spatial Data
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

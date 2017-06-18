@@ -3,6 +3,7 @@
 
 PORTNAME=	RSQLite
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -14,6 +15,6 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	R-cran-DBI>=0.2.5:databases/R-cran-DBI
 RUN_DEPENDS=	R-cran-DBI>=0.2.5:databases/R-cran-DBI
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

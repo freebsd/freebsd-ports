@@ -3,7 +3,7 @@
 
 PORTNAME=	nnls
 PORTVERSION=	1.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,6 +12,6 @@ COMMENT=	R implementation of an algorithm for non-negative least squares
 
 LICENSE=	GPLv2
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
