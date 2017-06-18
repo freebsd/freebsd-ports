@@ -5,13 +5,19 @@
 post-patch:
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|x86_64|amd64|' ${WRKSRC}/configure
+. if ${COMPONENT} == osmesa
+	@${REINPLACE_CMD} -e 's|x86_64|amd64|' ${WRKSRC}/configure.ac
+. endif
 # Disable use of GCC_ATOMICs on i386 to avoid build failures
 # Clang in 10.3 fails with cannot compile this atomic library call yet 'p_atomic_add'
 # Clang in 11.0 fails with undefined reference to `__atomic_fetch_add_8`
-.if ${ARCH} == "i386"
+. if ${ARCH} == "i386"
 	@${REINPLACE_CMD} -e 's|-DUSE_GCC_ATOMIC_BUILTINS||' ${WRKSRC}/configure
+.  if ${COMPONENT} == osmesa
+	@${REINPLACE_CMD} -e 's|-DUSE_GCC_ATOMIC_BUILTINS||' ${WRKSRC}/configure.ac
+.  endif
+. endif
 .endif
-.endif # ${OPSYS}
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/src/mesa/drivers/dri/common/xmlconfig.c
 

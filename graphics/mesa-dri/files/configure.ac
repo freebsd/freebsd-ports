@@ -9,15 +9,6 @@
      dri3_default=yes
      ;;
  *)
-@@ -1631,7 +1631,7 @@ dnl platform checks. Set DEFINES and LIB
- if test "x$enable_dri" = xyes; then
-     # Platform specific settings and drivers to build
-     case "$host_os" in
--    linux*)
-+    linux* | freebsd*)
-         if test "x$enable_dri3" = xyes; then
-             DEFINES="$DEFINES -DHAVE_DRI3"
-         fi
 @@ -2002,9 +2002,18 @@ if test "x$enable_opencl" = xyes; then
          AC_MSG_ERROR([cannot enable OpenCL without Gallium])
      fi
