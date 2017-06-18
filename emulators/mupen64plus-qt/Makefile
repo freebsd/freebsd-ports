@@ -26,7 +26,6 @@ PLIST_FILES=	bin/mupen64plus-qt \
 		share/pixmaps/mupen64plus-qt.png
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
