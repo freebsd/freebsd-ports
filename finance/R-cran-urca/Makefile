@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	urca
+PORTREVISION=	1
 DISTVERSION=	1.3-0
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -11,6 +12,6 @@ COMMENT=	Unit root and cointegration tests for time series data
 
 LICENSE=	GPLv2+
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

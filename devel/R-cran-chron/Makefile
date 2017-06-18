@@ -3,7 +3,7 @@
 
 PORTNAME=	chron
 DISTVERSION=	2.3-43
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,6 +12,6 @@ COMMENT=	R package for creating objects which can handle dates and times
 
 LICENSE=	GPLv2
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

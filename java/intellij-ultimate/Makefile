@@ -25,6 +25,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 
 NO_ARCH=	yes
+NO_ARCH_IGNORE=	libnative_auth.so libnative_console.so libnative_filesystem.so \
+		libnative_misc.so libnative_synchronization.so
 NO_BUILD=	yes
 USE_LDCONFIG=	${IDEA_HOME}/plugins/tfsIntegration/lib/native/freebsd/x86_64/
 USE_LDCONFIG32=	${IDEA_HOME}/plugins/tfsIntegration/lib/native/freebsd/x86/
