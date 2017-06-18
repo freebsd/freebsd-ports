@@ -13,7 +13,7 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-DEPRECATED=	No longer receives bug fixes, only security updates. Please update to Python 3.5
+DEPRECATED=	No longer receives bug fixes, only security updates. Please update to Python 3.6
 EXPIRATION_DATE=	2017-09-01
 
 USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix

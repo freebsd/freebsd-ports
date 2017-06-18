@@ -1,6 +1,24 @@
---- CMakeLists.txt.orig	2016-04-05 02:30:11 UTC
+--- CMakeLists.txt.orig	2017-06-09 15:03:09 UTC
 +++ CMakeLists.txt
-@@ -893,7 +893,7 @@ INSTALL(
+@@ -636,7 +636,7 @@ IF ("${FCS_ENABLE_DBM_SOLVER}")
+         SET (DEBONDT_DELTA_STATES 1)
+     ENDIF ()
+ 
+-    SET (DBM_LIBS "pthread")
++    SET (DBM_LIBS "-pthread")
+     # LINK_DIRECTORIES("/home/shlomif/progs/C/pthreads/rwlock/fcfs-rwlock/pthreads")
+     # INCLUDE_DIRECTORIES("/home/shlomif/progs/C/pthreads/rwlock/fcfs-rwlock/pthreads")
+ 
+@@ -703,7 +703,7 @@ ENDIF ()
+ 
+ IF (CMAKE_USE_PTHREADS_INIT)
+     FCS_ADD_EXEC(freecell-solver-multi-thread-solve threaded_range_solver.c)
+-    TARGET_LINK_LIBRARIES(freecell-solver-multi-thread-solve "pthread")
++    TARGET_LINK_LIBRARIES(freecell-solver-multi-thread-solve "-pthread")
+ ENDIF ()
+ 
+ IF (UNIX)
+@@ -872,7 +872,7 @@ INSTALL(
      FILES
          "${CMAKE_CURRENT_BINARY_DIR}/lib${CPACK_PACKAGE_NAME}.pc"
      DESTINATION
@@ -9,3 +27,12 @@
  )
  
  # Rebuild config.h if ver.txt has changed.
+@@ -1061,7 +1061,7 @@ IF(ASCIIDOC_FOUND)
+     ADD_CUSTOM_COMMAND(
+         OUTPUT "${_manpage}"
+         COMMAND "xsltproc" "--output" "${_manpage}"
+-            "--nonet" "/etc/asciidoc/docbook-xsl/manpage.xsl"
++            "--nonet" "/usr/local/etc/asciidoc/docbook-xsl/manpage.xsl"
+              "${_out}"
+         DEPENDS "${_out}"
+         COMMENT "Build man page ${_out}"
