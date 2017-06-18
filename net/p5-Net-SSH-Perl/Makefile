@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-SSH-Perl
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +30,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 BROKEN_powerpc64=	fails to compile: src/chacha/poly1305.c: subscripted value is neither array nor pointer
 
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="1"
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

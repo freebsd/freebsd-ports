@@ -3,6 +3,7 @@
 
 PORTNAME=	timelimit
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/files/sys/timelimit/ \
 		LOCAL/sunpoet
@@ -15,7 +16,6 @@ LICENSE=	BSD2CLAUSE
 # bin/timelimit man/man1/timelimit.1.gz
 CONFLICTS_INSTALL=	netpipes
 
-NO_ARCH=	yes
 USES=		tar:xz
 
 PLIST_FILES=	bin/timelimit man/man1/timelimit.1.gz

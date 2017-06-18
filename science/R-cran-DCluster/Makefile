@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DCluster
+PORTREVISION=	1
 DISTVERSION=	0.2-7
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -14,6 +15,6 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-spdep>0:math/R-cran-spdep
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
