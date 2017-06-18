@@ -3,6 +3,7 @@
 
 PORTNAME=	netif
 PORTVERSION=	1.0.20170424
+PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,6 +13,7 @@ COMMENT=	Python network configuration library for FreeBSD
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	cython>0:lang/cython
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsd>0:devel/py-bsd
 
 USE_GITHUB=     yes
 GH_ACCOUNT=	freenas
