@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
@@ -14,10 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libnet.so:net/libnet \
-		libgnutls.so:security/gnutls \
-		libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error \
-		libltdl.so:devel/libltdl \
 		libyaml.so:textproc/libyaml
 
 USES=		autoreconf cpe gmake libtool pathfix pkgconfig
@@ -58,7 +54,7 @@ TESTS_DESC=		Unit tests in suricata binary
 GEOIP_LIB_DEPENDS=		libGeoIP.so:net/GeoIP
 GEOIP_CONFIGURE_ON=		--enable-geoip
 
-HTP_PORT_BUILD_DEPENDS=		libhtp>=0.5.20:devel/libhtp
+HTP_PORT_BUILD_DEPENDS=		libhtp>=0.5.24:devel/libhtp
 HTP_PORT_LIB_DEPENDS=		libhtp.so:devel/libhtp
 HTP_PORT_CONFIGURE_ON=		--enable-non-bundled-htp
 HTP_PORT_CONFIGURE_OFF=		--enable-bundled-htp
@@ -98,7 +94,11 @@ PORTS_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
 PORTS_PCAP_CONFIGURE_OFF=	--with-libpcap-includes=/usr/include \
 				--with-libpcap-libraries=/usr/lib
 
-PRELUDE_LIB_DEPENDS=		libprelude.so:security/libprelude
+PRELUDE_LIB_DEPENDS=		libprelude.so:security/libprelude \
+				libgnutls.so:security/gnutls \
+				libgcrypt.so:security/libgcrypt \
+				libgpg-error.so:security/libgpg-error \
+				libltdl.so:devel/libltdl
 PRELUDE_CONFIGURE_ENABLE=	prelude
 PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
 
