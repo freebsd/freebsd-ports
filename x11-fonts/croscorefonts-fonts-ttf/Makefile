@@ -22,7 +22,7 @@ SUB_FILES=	pkg-message
 FONTNAME=	ChromeOS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>
