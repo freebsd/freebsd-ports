@@ -1,7 +1,6 @@
 bin/osqueryi
 @dir /var/db/osquery
 @dir /var/log/osquery
-etc/osquery.flags
 include/osquery/config.h
 include/osquery/core.h
 include/osquery/database.h
@@ -23,3 +22,4 @@ include/osquery/tables.h
 lib/libosquery.a
 sbin/osqueryd
 @sample etc/osquery.conf.sample
+@sample etc/osquery.flags.sample
