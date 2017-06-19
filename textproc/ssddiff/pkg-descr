@@ -1,0 +1,15 @@
+Semistructured data is a generic term for data that does have structure
+information, while not being tabular or very tightly restricted.  XML and
+HTML data is the most prominent examples for this.  You normally would not
+use this term e.g. for database tables (which for example do not allow
+nesting of entries).
+
+While this application currently only supports XML, the algorithms should be
+able to process other semistructured data as well.
+
+The approach used here is usually much slower than other well-known xmldiff
+applications, however it produces better results in many "tricky" cases.
+You say that other xmldiff applications try to do a syntactic diff, whereas
+xmldiff tries to do a semantic diff.
+
+WWW: http://ssddiff.alioth.debian.org/

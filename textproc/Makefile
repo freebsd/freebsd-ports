@@ -1641,6 +1641,7 @@
     SUBDIR += sr-hunspell
     SUBDIR += srilm
     SUBDIR += ss-hunspell
+    SUBDIR += ssddiff
     SUBDIR += stardict-dict-fa_IR
     SUBDIR += stardict-dictd_mova
     SUBDIR += stardict-quick
