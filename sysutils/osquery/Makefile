@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osquery
-PORTVERSION=	2.4.6
+PORTVERSION=	2.5.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -25,7 +25,8 @@ LIB_DEPENDS=	libaugeas.so:textproc/augeas \
 		libsnappy.so:archivers/snappy \
 		librocksdb-lite.so:databases/rocksdb-lite \
 		libthrift.so:devel/thrift-cpp \
-		libcppnetlib-uri.so:devel/cpp-netlib
+		libcppnetlib-uri.so:devel/cpp-netlib \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 USES=		cmake:outsource gmake libtool python:build compiler:c++11-lib \
@@ -40,7 +41,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	facebook ${PORTNAME}:tp
 GH_PROJECT=	third-party:tp
 GH_SUBDIR=	third-party:tp
-GH_TAGNAME=	2.4.5:tp
+GH_TAGNAME=	${PORTVERSION}:tp
 
 # Some options for things that bring in many dependencies
 OPTIONS_DEFINE=	TSK AWS YARA LLDPD
@@ -84,7 +85,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/deployment/osquery.example.conf \
 		${STAGEDIR}${PREFIX}/etc/osquery.conf.sample
 
-	${TOUCH} ${STAGEDIR}${PREFIX}/etc/osquery.flags
 	${MKDIR} ${STAGEDIR}/var/db/osquery ${STAGEDIR}/var/log/osquery
+	# The flags file must exist, even if empty. Using @sample
+	# prevents a populated flags file from being nuked on upgrade.
+	${TOUCH} ${STAGEDIR}${PREFIX}/etc/osquery.flags.sample \
+		${STAGEDIR}${PREFIX}/etc/osquery.flags
 
 .include <bsd.port.post.mk>
