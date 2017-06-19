@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20170225
-PORTREVISION=	2
+PORTVERSION=	20170614
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNREVISION}/:eduke32 \
 		http://www.duke4.org/files/nightfright/hrp/:hrp \
@@ -30,12 +29,11 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libpng16.so:graphics/png
 
 USES=		execinfo gmake pkgconfig tar:xz
-USE_GCC=	any
 USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
-SVNREVISION=	6079
+SVNREVISION=	6180
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
@@ -46,12 +44,14 @@ PORTEXAMPLES=	*
 
 BROKEN_sparc64=	does not compile on sparc64
 
-OPTIONS_DEFINE=		EXAMPLES HRP OFFENSIVE SHAREWARE VOXEL
+OPTIONS_DEFINE=		EXAMPLES GCC HRP OFFENSIVE SHAREWARE VOXEL
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_i386=	ASM
 
 ASM_BUILD_DEPENDS=	nasm:devel/nasm
 ASM_MAKE_ARGS_OFF=	NOASM=1
+GCC_MAKE_ARGS_OFF=	CLANG=1 LTO=0
+GCC_USE=		gcc=yes
 HRP_DESC=		Install High Resolution Pack
 HRP_DISTFILES=		duke3d_hrp.zip:hrp
 HRP_PLIST_FILES=	${DATADIR}/duke3d_hrp.zip
