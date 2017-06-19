@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ttygif
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org

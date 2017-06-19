@@ -1,10 +1,10 @@
---- t/porting/customized.dat.orig	2017-03-19 18:51:10 UTC
+--- t/porting/customized.dat.orig	2017-06-18 21:44:07 UTC
 +++ t/porting/customized.dat
 @@ -1,6 +1,7 @@
  Digest cpan/Digest/Digest.pm 43f7f544cb11842b2f55c73e28930da50774e081
  Encode cpan/Encode/Unicode/Unicode.pm 9749692c67f7d69083034de9184a93f070ab4799
  ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t a0369c919e216fb02767a637666bb4577ad79b02
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
- File::Path cpan/File-Path/lib/File/Path.pm fd8ce4420a0c113d3f47dd3223859743655c1da8
- File::Path cpan/File-Path/t/Path_win32.t 94b9276557ce7f80b91f6fd9bfa7a0cd9bf9683e
- JSON::PP cpan/JSON-PP/bin/json_pp a7b8de6c201ef177ee82624ee4ca6a47cc1a3b4f
+ Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
+ Math::Complex cpan/Math-Complex/lib/Math/Complex.pm 198ea6c6c584f5ea79a0fd7e9d411d0878f3b2af
+ Math::Complex cpan/Math-Complex/t/Complex.t 4f307ed6fc59f1e5fb0e6b11103fc631b6bdb335

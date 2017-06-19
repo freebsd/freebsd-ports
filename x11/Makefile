@@ -66,6 +66,7 @@
     SUBDIR += fireflies
     SUBDIR += fixesproto
     SUBDIR += florence
+    SUBDIR += flruler
     SUBDIR += fluxbg
     SUBDIR += fpc-x11
     SUBDIR += fstobdf
