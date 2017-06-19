@@ -11,24 +11,73 @@
 #
 # apcupsd_enable (bool):	Set to "NO" by default.
 #				Set it to "YES" to enable apcupsd.
-# apcupsd_args (str):		Custom additional arguments to be passed
-#				to apcupsd (default empty).
+# apcupsd_flags (str):		Custom additional arguments to be passed
+#				to apcupsd (default --kill-on-powerfail).
+# apcupsd_configs (str):	A list of configs to run multiple instances.
 #
 
 . /etc/rc.subr
 
-name="apcupsd"
+name=apcupsd
 rcvar=apcupsd_enable
 
 load_rc_config $name
 
 : ${apcupsd_enable="NO"}
 : ${apcupsd_flags="--kill-on-powerfail"}
-: ${apcupsd_pidfile="/var/run/apcupsd.pid"}
-: ${apcupsd_lockfile="/var/spool/lock/apcupsd.lock"}
 
-pidfile="/var/run/apcupsd.pid"
-required_files="%%ETCDIR%%/apcupsd.conf"
-command="%%PREFIX%%/sbin/apcupsd"
+pidfile=/var/run/${name}.pid
+required_files="${apcupsd_configs:-%%ETCDIR%%/apcupsd.conf}"
+command=%%PREFIX%%/sbin/${name}
+restart_cmd=${name}_restart_cmd
 
-run_rc_command "$1"
+apcupsd_precmd()
+{
+	config=$1
+
+	dn="`/usr/bin/dirname ${pidfile}`"
+	if [ -n "${config}" ]; then
+		# Specific config
+		base="`/usr/bin/basename ${config} .conf`"
+		pidfile="${dn}/${base}.pid"
+		command_args="-f ${config} -P ${pidfile}"
+	else
+		# Default config
+		command_args=""
+	fi
+}
+
+apcupsd_restart_cmd()
+{
+	if [ -n "${apcupsd_configs}" ]; then
+		# One or more named configs
+		for config in ${apcupsd_configs}; do
+			apcupsd_precmd ${config}
+			run_rc_command stop
+		done
+		for config in ${apcupsd_configs}; do
+			apcupsd_precmd ${config}
+			run_rc_command start
+		done
+	else
+		# Default config
+		apcupsd_precmd
+		run_rc_command stop
+		run_rc_command start
+	fi
+}
+
+if [ "$1" = restart ]; then
+	apcupsd_precmd
+	run_rc_command $1
+elif [ -n "${apcupsd_configs}" ]; then
+	# One or more named configs
+	for config in ${apcupsd_configs}; do
+		apcupsd_precmd ${config}
+		run_rc_command $1
+	done
+else
+	# Default config
+	apcupsd_precmd
+	run_rc_command $1
+fi
