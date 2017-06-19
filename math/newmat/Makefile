@@ -8,7 +8,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.robertnz.net/ftp/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	C++ matrix library
 
 NO_WRKSUBDIR=	yes
