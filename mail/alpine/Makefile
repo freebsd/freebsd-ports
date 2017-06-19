@@ -2,7 +2,7 @@
 
 PORTNAME?=	alpine
 PORTVERSION=	2.21
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	http://alpine.freeiz.com/alpine/release/src/
 DIST_SUBDIR=	alpine-${PORTVERSION}
@@ -12,113 +12,76 @@ COMMENT?=	Mail and news client descended from Pine
 
 LICENSE=	APACHE20
 
-OPTIONS_DEFINE=		DOCS SSL THREADS MOUSE NLS ISPELL NOSPELL
-OPTIONS_DEFAULT+=	SSL THREADS MOUSE
-SSL_DESC=	Build with SSL (installs: security/openssl if pre 10.x)
-MOUSE_DESC=	Enable mouse support for xterm
-ISPELL_DESC=	Use ispell instead of aspell as default speller
-NOSPELL_DESC=	Use no default speller (overrides both)
-
-.if !defined(PICO_ALPINE_SLAVE)
-
-OPTIONS_DEFINE+=	PICO IPV6 LDAP PASSFILE CONS25 MAILDIR SSL
-OPTIONS_DEFAULT+=	PICO SSL
-PICO_DESC=	Build and install pico, the default editor
-PASSFILE_DESC=	Support for a stored password file (DANGEROUS)
-CONS25_DESC=	Add a patch to support color for default console
-MAILDIR_DESC=	Add a patch for maildir support
-.endif
-
-USES+=		libtool ncurses tar:xz gettext-runtime
-
+USES+=			ssl libtool ncurses tar:xz gettext-runtime
+GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
-
-GNU_CONFIGURE=	yes
-
-THREADS_CONFIGURE_WITH=	pthread
-MOUSE_CONFIGURE_ENABLE=	mouse
-NLS_CONFIGURE_ENABLE=	nls
-IPV6_CONFIGURE_WITH=	ipv6
-SSL_USES=		ssl
-
-.if !defined(PICO_ALPINE_SLAVE)
-
-PORTDOCSbase=	LICENSE NOTICE README
-PORTDOCSdoc=	brochure.txt
-PORTDOCShtml=	tech-notes/background.html tech-notes/cmd-line.html \
-		tech-notes/config-notes.html tech-notes/config.html \
-		tech-notes/index.html tech-notes/installation.html \
-		tech-notes/introduction.html tech-notes/low-level.html \
-		tech-notes/tech-notes.txt
-PORTDOCS=	${PORTDOCSbase} ${PORTDOCSdoc} ${PORTDOCShtml}
-
-CONFIGURE_ARGS+=--with-system-pinerc=${PREFIX}/etc/alpine.conf \
-		--with-system-fixed-pinerc=${PREFIX}/etc/alpine.conf.fixed \
-		--with-password-prog=/usr/bin/passwd \
-		--with-system-mail-directory=/var/mail
-
-.endif
-CONFIGURE_ARGS+=--with-debug-level=2 \
-		--enable-background-post --without-krb5 --without-tcl
-
-MAKE_ARGS+=	CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLDIR} \
+CONFIGURE_ARGS+=	--with-debug-level=2 \
+			--enable-background-post \
+			--without-krb5 \
+			--without-tcl \
+			--with-system-pinerc=${PREFIX}/etc/alpine.conf \
+			--with-system-fixed-pinerc=${PREFIX}/etc/alpine.conf.fixed \
+			--with-password-prog=/usr/bin/passwd \
+			--with-system-mail-directory=/var/mail \
+			--with-ssl-dir=${OPENSSLDIR} \
 			--with-ssl-include-dir=${OPENSSLINC} \
 			--with-ssl-lib-dir=${OPENSSLLIB} \
 			--with-ssl-certs-dir=${OPENSSLDIR}/certs
-.else
-CONFIGURE_ARGS+=	--without-ssl
+MAKE_ARGS+=		CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
+
+OPTIONS_DEFINE=		ASPELL CONS25 DOCS IPV6 LDAP MAILDIR MOUSE PASSFILE NLS THREADS
+OPTIONS_DEFAULT=	ASPELL MOUSE THREADS
+.if defined(PICO_ALPINE_SLAVE)
+OPTIONS_EXCLUDE=	CONS25 IPV6 LDAP MAILDIR PASSFILE
 .endif
 
-.include <bsd.port.pre.mk>
+CONS25_DESC=	Add a patch to support color for default console
+MAILDIR_DESC=	Add a patch for maildir support
+PASSFILE_DESC=	Support for a stored password file
 
-.if ${PORT_OPTIONS:MSSL} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
+# Option ASPELL
+ASPELL_CONFIGURE_ON=		--with-interactive-spellcheck=${LOCALBASE}/bin/aspell
+ASPELL_CONFIGURE_OFF=		--with-simple-spellcheck
+ASPELL_BUILD_DEPENDS=		aspell:textproc/aspell
+ASPELL_RUN_DEPENDS=		aspell:textproc/aspell
 
-.if ! ${PORT_OPTIONS:MNOSPELL}
-.if ! ${PORT_OPTIONS:MISPELL}
-CONFIGURE_ARGS+=--with-interactive-spellcheck=${LOCALBASE}/bin/aspell
-BUILD_DEPENDS+=	aspell:textproc/aspell
-RUN_DEPENDS+=	aspell:textproc/aspell
-.else
-CONFIGURE_ARGS+=	--with-interactive-spellcheck=${LOCALBASE}/bin/ispell
-BUILD_DEPENDS+=	ispell:textproc/aspell-ispell
-RUN_DEPENDS+=	ispell:textproc/aspell-ispell
-.endif
-.else
-CONFIGURE_ARGS+=--without-simple-spellcheck --without-interactive-spellcheck
-.endif
+# Option CONS25
+CONS25_EXTRA_PATCHES=		${FILESDIR}/cons25-alpine_keymenu.c
+
+# Option IPV6
+IPV6_CONFIGURE_WITH=		ipv6
+
+# Option LDAP
+LDAP_USE=			openldap=yes
+LDAP_CONFIGURE_WITH=		ldap
+LDAP_CONFIGURE_ON=		--with-ldap-dir=${LOCALBASE}
+
+# Option MAILDIR
+MAILDIR_PATCH_SITES=		http://alpine.freeiz.com/alpine/patches/alpine-${PORTVERSION}/
+MAILDIR_PATCHFILES+=		maildir.patch.gz:-p1
+
+# Option MOUSE
+MOUSE_CONFIGURE_ENABLE=		mouse
+
+# Option NLS
+NLS_CONFIGURE_ENABLE=		nls
+
+# Option PASSFILE
+PASSFILE_CONFIGURE_WITH=	passfile
+PASSFILE_CONFIGURE_ON=		--with-passfile=.alpine.pwd
+
+# Option THREADS
+THREADS_CONFIGURE_WITH=		pthread
 
 .if !defined(PICO_ALPINE_SLAVE)
-.if ${PORT_OPTIONS:MPICO}
-RUN_DEPENDS+=	pico:editors/pico-alpine
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--with-ldap-dir=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-ldap
-.endif
-
-.if ${PORT_OPTIONS:MPASSFILE}
-ALPINE_PASSFILE?=	.alpine.pwd
-CONFIGURE_ARGS+=	--with-passfile=.alpine.pwd
-.endif
-
-.if ${PORT_OPTIONS:MMAILDIR}
-PATCH_SITES=		http://alpine.freeiz.com/alpine/patches/alpine-${PORTVERSION}/
-PATCHFILES+=		maildir.patch.gz:-p1
-.endif
-
-.if ${PORT_OPTIONS:MCONS25}
-EXTRA_PATCHES=		${FILESDIR}/cons25-alpine_keymenu.c
-.endif
+PORTDOCSbase=		LICENSE NOTICE README
+PORTDOCSdoc=		brochure.txt
+PORTDOCShtml=		tech-notes/background.html tech-notes/cmd-line.html \
+			tech-notes/config-notes.html tech-notes/config.html \
+			tech-notes/index.html tech-notes/installation.html \
+			tech-notes/introduction.html tech-notes/low-level.html \
+			tech-notes/tech-notes.txt
+PORTDOCS=		${PORTDOCSbase} ${PORTDOCSdoc} ${PORTDOCShtml}
 
 post-patch:
 	@${CP} ${WRKSRC}/imap/Makefile ${WRKSRC}/imap/Makefile.presed
@@ -152,7 +115,8 @@ post-patch:
 
 post-install:
 	${STAGEDIR}${PREFIX}/bin/alpine -conf > ${STAGEDIR}${PREFIX}/etc/alpine.conf.sample
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${INSTALL} -d ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/tech-notes
 .for f in ${PORTDOCSbase}
 	${INSTALL_MAN} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
@@ -163,11 +127,6 @@ post-install:
 .for f in ${PORTDOCShtml}
 	${INSTALL_MAN} ${WRKSRC}/doc/$f ${STAGEDIR}${DOCSDIR}/tech-notes
 .endfor
-.endif
+.endif # !defined(PICO_ALPINE_SLAVE)
 
-#	PKG_PREFIX=${STAGEDIR}${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-#	@${CAT} ${PKGMESSAGE}
-
-.endif	# !defined(PICO_ALPINE_SLAVE)
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
