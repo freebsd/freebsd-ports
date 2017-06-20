@@ -44,7 +44,6 @@ include/proftpd/memcache.h
 include/proftpd/mkhome.h
 include/proftpd/mod_ctrls.h
 include/proftpd/mod_dnsbl.h
-include/proftpd/mod_log.h
 include/proftpd/mod_quotatab.h
 include/proftpd/mod_sftp.h
 include/proftpd/mod_snmp.h
@@ -75,7 +74,6 @@ include/proftpd/support.h
 include/proftpd/table.h
 include/proftpd/throttle.h
 include/proftpd/timers.h
-include/proftpd/tpl.h
 include/proftpd/trace.h
 include/proftpd/utf8.h
 include/proftpd/var.h

@@ -1,5 +1,5 @@
 # Created by: Stephane Legrand
-# $FreeBSD$
+# $FreeBSD: head/ftp/proftpd/Makefile 440871 2017-05-14 10:04:27Z brnrd $
 
 PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 .endif
 
-PROFTPD_VERSION=	1.3.5d
+PROFTPD_VERSION=	1.3.6
 
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -173,9 +173,6 @@ CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 
 .if ${SSL_DEFAULT:Mopenssl-devel}
 BROKEN=		Does not build with openssl-devel
-.endif
-.if ${SSL_DEFAULT:Mlibressl*}
-BROKEN=		Does not build with libressl
 .endif
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
