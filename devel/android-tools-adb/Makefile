@@ -33,7 +33,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-adb_sysdeps_mutex.h
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-base_file.cpp
 .endif
 
-USES=		compiler:c++11-lib pkgconfig ssl uidfix
+USES+=		compiler:c++11-lib pkgconfig ssl uidfix
 BUILD_WRKSRC=	${WRKSRC}/adb
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 TEST_WRKSRC=	${BUILD_WRKSRC}
