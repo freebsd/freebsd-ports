@@ -2,7 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	11.25.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -54,7 +54,7 @@ CONFLICTS_BUILD=	linuxthreads-* pjsip-*
 CONFLICTS_INSTALL=	asterisk*-13*
 
 OPTIONS_DEFINE=			BACKTRACE CURL EXCHANGE FREETDS LDAP LUA \
-				MP3PLAYER OOH323 RADIUS SNMP SPANDSP SRTP \
+				MP3PLAYER OOH323 OPTIMIZED_CFLAGS RADIUS SNMP SPANDSP SRTP \
 				SYSINFO UUID XMPP
 OPTIONS_DEFAULT=		BACKTRACE CURL FREETDS GSM LUA MP3PLAYER \
 				NEWT MYSQL ODBC PGSQL RADIUS SNMP SPANDSP SPEEX \
@@ -218,40 +218,43 @@ PLIST_SUB+=	ASTERISK_USER=${ASTERISK_USER} \
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.d' -delete
 
-.if ${PORT_OPTIONS:MG729}
+post-extract-G729-on:
 	${CP} ${DISTDIR}/${ASTERISK_CORE_G729_SOUNDS} ${WRKSRC}/sounds
 	${CP} ${DISTDIR}/${ASTERISK_MOH_G729_SOUNDS} ${WRKSRC}/sounds
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
-.if ${PORT_OPTIONS:MSYSINFO}
-	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
-.else
-	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
-.endif
 .if exists(${FILESDIR}/.asterisk.makeopts)
 	${CP} ${FILESDIR}/.asterisk.makeopts ${WRKSRC}/menuselect.makeopts
 .endif
+
+post-patch-SYSINFO-on:
+	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
+
+post-patch-SYSINFO-off:
+	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable res_timing_kqueue menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_mgcp menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_pktccops menuselect.makeopts
-.if ${PORT_OPTIONS:MMYSQL}
+
+post-configure-MYSQL-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_mysql menuselect.makeopts
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable cdr_mysql menuselect.makeopts
-.endif
-.if ${PORT_OPTIONS:MOOH323}
+
+post-configure-OOH323-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable chan_ooh323 menuselect.makeopts
-.endif
-.if ${PORT_OPTIONS:MNEWG711}
+
+post-configure-NEWG711-on:
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable G711_NEW_ALGORITHM menuselect.makeopts
-.endif
+
+post-configure-OPTIMIZED_CFLAGS-off:
+	@cd ${WRKSRC} && ./menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts
 
 pre-build:
 	@${MKDIR} ${WRKSRC}/res/pjproject/pjnath/lib ${WRKSRC}/res/pjproject/pjlib-util/lib \
