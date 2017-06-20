@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librsb
-PORTVERSION=	1.2.0r4
-PORTREVISION=	3
+PORTVERSION=	1.2.0r7
 CATEGORIES=	math
 MASTER_SITES=	SF/librsb
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-rc/}
@@ -22,17 +21,11 @@ INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--enable-fortran-module-install \
-		--enable-matrix-types="double, double complex" \
-		--with-memhinfo="${RSB_USER_SET_MEM_HIERARCHY_INFO}"
+		--enable-matrix-types="double, double complex"
 SHEBANG_FILES=	scripts/*.sh
+USE_LDCONFIG=	yes
 
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine
-
-pre-configure:
-	@if [ -z "${RSB_USER_SET_MEM_HIERARCHY_INFO}" ]; then \
-		${CAT} ${FILESDIR}/memhinfo.txt; \
-		exit 1; \
-	fi
 
 post-patch:
 	@${REINPLACE_CMD} -E s/sed/gsed/g ${WRKSRC}/scripts/*.sh
