@@ -1,6 +1,6 @@
---- chrome/common/chrome_switches.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/common/chrome_switches.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/common/chrome_switches.cc
-@@ -1138,7 +1138,7 @@ const char kAllowNaClSocketAPI[]        
+@@ -1144,7 +1144,7 @@ const char kAllowNaClSocketAPI[]            = "allow-n
  const char kEnableWaylandServer[] = "enable-wayland-server";
  #endif
  

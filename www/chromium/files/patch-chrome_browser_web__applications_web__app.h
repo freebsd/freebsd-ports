@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/web_app.h.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/web_applications/web_app.h.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/web_applications/web_app.h
-@@ -208,7 +208,7 @@ typedef std::vector<WebApplicationInfo::
+@@ -206,7 +206,7 @@ typedef std::vector<WebApplicationInfo::IconInfo> Icon
  void GetIconsInfo(const WebApplicationInfo& app_info, IconInfoList* icons);
  #endif
  

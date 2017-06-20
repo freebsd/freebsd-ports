@@ -1,5 +1,5 @@
---- third_party/WebKit/Source/wtf/Assertions.cpp.orig	2017-04-19 19:06:50 UTC
-+++ third_party/WebKit/Source/wtf/Assertions.cpp
+--- third_party/WebKit/Source/platform/wtf/Assertions.cpp.orig	2017-06-05 19:03:26 UTC
++++ third_party/WebKit/Source/platform/wtf/Assertions.cpp
 @@ -60,7 +60,7 @@
  #include <windows.h>
  #endif

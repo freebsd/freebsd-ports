@@ -1,4 +1,4 @@
---- ppapi/shared_impl/private/net_address_private_impl.cc.orig	2017-04-19 19:06:36 UTC
+--- ppapi/shared_impl/private/net_address_private_impl.cc.orig	2017-06-05 19:03:10 UTC
 +++ ppapi/shared_impl/private/net_address_private_impl.cc
 @@ -26,9 +26,12 @@
  #include <arpa/inet.h>
@@ -6,8 +6,8 @@
  #include <sys/types.h>
 +#if defined(OS_BSD)
 +#include <netinet/in.h>
-+#endif
  #endif
++#endif
  
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_BSD)

@@ -1,4 +1,4 @@
---- base/process/process_iterator_freebsd.cc.orig	2017-04-19 19:06:28 UTC
+--- base/process/process_iterator_freebsd.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/process/process_iterator_freebsd.cc
 @@ -10,6 +10,10 @@
  #include <sys/sysctl.h>
@@ -11,7 +11,7 @@
  #include "base/logging.h"
  #include "base/macros.h"
  #include "base/strings/string_split.h"
-@@ -72,19 +76,13 @@ bool ProcessIterator::CheckForNextProces
+@@ -72,19 +76,13 @@ bool ProcessIterator::CheckForNextProcess() {
    for (; index_of_kinfo_proc_ < kinfo_procs_.size(); ++index_of_kinfo_proc_) {
      size_t length;
      struct kinfo_proc kinfo = kinfo_procs_[index_of_kinfo_proc_];

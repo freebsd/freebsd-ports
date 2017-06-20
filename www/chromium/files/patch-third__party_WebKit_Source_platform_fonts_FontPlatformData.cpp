@@ -1,47 +1,47 @@
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2017-04-19 19:06:50 UTC
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp.orig	2017-06-05 19:03:26 UTC
 +++ third_party/WebKit/Source/platform/fonts/FontPlatformData.cpp
-@@ -99,7 +99,7 @@ FontPlatformData::FontPlatformData(const
-       m_syntheticBold(source.m_syntheticBold),
-       m_syntheticItalic(source.m_syntheticItalic),
-       m_orientation(source.m_orientation),
+@@ -93,7 +93,7 @@ FontPlatformData::FontPlatformData(const FontPlatformD
+       synthetic_bold_(source.synthetic_bold_),
+       synthetic_italic_(source.synthetic_italic_),
+       orientation_(source.orientation_),
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(BSD)
-       m_style(source.m_style),
+       style_(source.style_),
  #endif
-       m_harfBuzzFace(nullptr),
-@@ -122,7 +122,7 @@ FontPlatformData::FontPlatformData(const
-       m_syntheticBold(src.m_syntheticBold),
-       m_syntheticItalic(src.m_syntheticItalic),
-       m_orientation(src.m_orientation),
+       harf_buzz_face_(nullptr),
+@@ -114,7 +114,7 @@ FontPlatformData::FontPlatformData(const FontPlatformD
+       synthetic_bold_(src.synthetic_bold_),
+       synthetic_italic_(src.synthetic_italic_),
+       orientation_(src.orientation_),
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(BSD)
-       m_style(FontRenderStyle::querySystem(m_family,
-                                            m_textSize,
-                                            m_typeface->fontStyle())),
-@@ -155,7 +155,7 @@ FontPlatformData::FontPlatformData(sk_sp
-       m_syntheticBold(syntheticBold),
-       m_syntheticItalic(syntheticItalic),
-       m_orientation(orientation),
+       style_(FontRenderStyle::QuerySystem(family_,
+                                           text_size_,
+                                           typeface_->fontStyle())),
+@@ -145,7 +145,7 @@ FontPlatformData::FontPlatformData(sk_sp<SkTypeface> t
+       synthetic_bold_(synthetic_bold),
+       synthetic_italic_(synthetic_italic),
+       orientation_(orientation),
 -#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) | OS(BSD)
-       m_style(FontRenderStyle::querySystem(m_family,
-                                            m_textSize,
-                                            m_typeface->fontStyle())),
-@@ -200,7 +200,7 @@ const FontPlatformData& FontPlatformData
-   m_syntheticItalic = other.m_syntheticItalic;
-   m_harfBuzzFace = nullptr;
-   m_orientation = other.m_orientation;
++#if OS(LINUX) || OS(ANDROID) || OS(BSD)
+       style_(FontRenderStyle::QuerySystem(family_,
+                                           text_size_,
+                                           typeface_->fontStyle())),
+@@ -188,7 +188,7 @@ const FontPlatformData& FontPlatformData::operator=(
+   synthetic_italic_ = other.synthetic_italic_;
+   harf_buzz_face_ = nullptr;
+   orientation_ = other.orientation_;
 -#if OS(LINUX) || OS(ANDROID)
-+#if OS(LINUX) || OS(ANDROID) | OS(BSD)
-   m_style = other.m_style;
++#if OS(LINUX) || OS(ANDROID) || OS(BSD)
+   style_ = other.style_;
  #endif
  
-@@ -226,7 +226,7 @@ bool FontPlatformData::operator==(const 
-          m_isHashTableDeletedValue == a.m_isHashTableDeletedValue &&
-          m_syntheticBold == a.m_syntheticBold &&
-          m_syntheticItalic == a.m_syntheticItalic
+@@ -212,7 +212,7 @@ bool FontPlatformData::operator==(const FontPlatformDa
+          is_hash_table_deleted_value_ == a.is_hash_table_deleted_value_ &&
+          synthetic_bold_ == a.synthetic_bold_ &&
+          synthetic_italic_ == a.synthetic_italic_
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(BSD)
-          && m_style == a.m_style
+          && style_ == a.style_
  #endif
-          && m_orientation == a.m_orientation;
+          && orientation_ == a.orientation_;

@@ -1,4 +1,4 @@
---- base/posix/unix_domain_socket_linux.cc.orig	2017-04-19 19:06:28 UTC
+--- base/posix/unix_domain_socket_linux.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/posix/unix_domain_socket_linux.cc
 @@ -23,6 +23,15 @@
  
@@ -16,7 +16,7 @@
  const size_t UnixDomainSocket::kMaxFileDescriptors = 16;
  
  #if !defined(OS_NACL_NONSFI)
-@@ -40,8 +49,14 @@ static bool CreateSocketPair(ScopedFD* o
+@@ -37,8 +46,14 @@ bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
  
  // static
  bool UnixDomainSocket::EnableReceiveProcessId(int fd) {
@@ -31,7 +31,7 @@
  }
  #endif  // !defined(OS_NACL_NONSFI)
  
-@@ -147,7 +162,11 @@ ssize_t UnixDomainSocket::RecvMsgWithFla
+@@ -144,7 +159,11 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
        // The PNaCl toolchain for Non-SFI binary build does not support
        // SCM_CREDENTIALS.
        if (cmsg->cmsg_level == SOL_SOCKET &&

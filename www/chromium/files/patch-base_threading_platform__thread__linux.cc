@@ -1,4 +1,4 @@
---- base/threading/platform_thread_linux.cc.orig	2017-04-19 19:06:28 UTC
+--- base/threading/platform_thread_linux.cc.orig	2017-06-05 19:03:01 UTC
 +++ base/threading/platform_thread_linux.cc
 @@ -19,7 +19,9 @@
  
@@ -10,7 +10,7 @@
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -130,7 +132,7 @@ void PlatformThread::SetName(const std::
+@@ -130,7 +132,7 @@ void PlatformThread::SetName(const std::string& name) 
    ThreadIdNameManager::GetInstance()->SetName(CurrentId(), name);
    tracked_objects::ThreadData::InitializeThreadContext(name);
  
@@ -19,7 +19,7 @@
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall
-@@ -150,7 +152,7 @@ void PlatformThread::SetName(const std::
+@@ -150,7 +152,7 @@ void PlatformThread::SetName(const std::string& name) 
  #endif  //  !defined(OS_NACL)
  }
  

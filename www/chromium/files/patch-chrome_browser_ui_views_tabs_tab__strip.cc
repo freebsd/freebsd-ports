@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_strip.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/ui/views/tabs/tab_strip.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/ui/views/tabs/tab_strip.cc
-@@ -323,7 +323,7 @@ NewTabButton::NewTabButton(TabStrip* tab
+@@ -323,7 +323,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, views:
        tab_strip_(tab_strip),
        destroyed_(NULL) {
    set_animate_on_state_change(true);

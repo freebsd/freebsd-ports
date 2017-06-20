@@ -1,4 +1,4 @@
---- third_party/angle/src/tests/BUILD.gn.orig	2017-04-19 19:07:43 UTC
+--- third_party/angle/src/tests/BUILD.gn.orig	2017-06-05 19:04:15 UTC
 +++ third_party/angle/src/tests/BUILD.gn
 @@ -41,7 +41,7 @@ test("angle_unittests") {
    ]
@@ -9,7 +9,7 @@
    end2end_gypi = exec_script("//build/gypi_to_gn.py",
                               [
                                 rebase_path("angle_end2end_tests.gypi"),
-@@ -82,7 +82,7 @@ if (is_win || is_linux || is_mac || is_a
+@@ -82,7 +82,7 @@ if (is_win || is_linux || is_mac || is_android) {
        "//third_party/angle:libANGLE_config",
      ]
  
