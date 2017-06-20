@@ -18,6 +18,7 @@ NO_ARCH=	yes
 
 do-patch:
 	${REINPLACE_CMD} 's%\$$(PREFIX)%${STAGEDIR}/$$(PREFIX)%g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's%$$(INSTALL) -c $$(MAN).gz $$(MANDIR)/%$$(INSTALL) -c $$(MAN) $$(MANDIR)/; gzip $$(MANDIR)/$$(MAN)%g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} 's%setup_freenas $$val%__setup_freenas $$val%g' ${WRKSRC}/lib/ioh-setup
 
 .include <bsd.port.mk>
