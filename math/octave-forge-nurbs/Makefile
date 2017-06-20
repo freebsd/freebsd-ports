@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-nurbs
-PORTVERSION=	1.3.10
-PORTREVISION=	4
+PORTVERSION=	1.3.13
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,7 +15,7 @@ USES=		compiler:openmp
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
