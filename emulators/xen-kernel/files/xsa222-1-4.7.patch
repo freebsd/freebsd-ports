@@ -1,0 +1,119 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Subject: xen/memory: Fix return value handing of guest_remove_page()
+
+Despite the description in mm.h, guest_remove_page() previously returned 0 for
+paging errors.
+
+Switch guest_remove_page() to having regular 0/-error semantics, and propagate
+the return values from clear_mmio_p2m_entry() and mem_sharing_unshare_page()
+to the callers (although decrease_reservation() is the only caller which
+currently cares).
+
+This is part of XSA-222.
+
+Reported-by: Julien Grall <julien.grall@arm.com>
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+
+--- a/xen/common/memory.c
++++ b/xen/common/memory.c
+@@ -244,6 +244,7 @@ int guest_remove_page(struct domain *d,
+     p2m_type_t p2mt;
+ #endif
+     unsigned long mfn;
++    int rc;
+ 
+ #ifdef CONFIG_X86
+     mfn = mfn_x(get_gfn_query(d, gmfn, &p2mt)); 
+@@ -261,13 +262,15 @@ int guest_remove_page(struct domain *d,
+                 put_page(page);
+         }
+         p2m_mem_paging_drop_page(d, gmfn, p2mt);
+-        return 1;
++
++        return 0;
+     }
+     if ( p2mt == p2m_mmio_direct )
+     {
+-        clear_mmio_p2m_entry(d, gmfn, _mfn(mfn), 0);
++        rc = clear_mmio_p2m_entry(d, gmfn, _mfn(mfn), PAGE_ORDER_4K);
+         put_gfn(d, gmfn);
+-        return 1;
++
++        return rc;
+     }
+ #else
+     mfn = gmfn_to_mfn(d, gmfn);
+@@ -277,21 +280,25 @@ int guest_remove_page(struct domain *d,
+         put_gfn(d, gmfn);
+         gdprintk(XENLOG_INFO, "Domain %u page number %lx invalid\n",
+                 d->domain_id, gmfn);
+-        return 0;
++
++        return -EINVAL;
+     }
+             
+ #ifdef CONFIG_X86
+     if ( p2m_is_shared(p2mt) )
+     {
+-        /* Unshare the page, bail out on error. We unshare because 
+-         * we might be the only one using this shared page, and we
+-         * need to trigger proper cleanup. Once done, this is 
+-         * like any other page. */
+-        if ( mem_sharing_unshare_page(d, gmfn, 0) )
++        /*
++         * Unshare the page, bail out on error. We unshare because we
++         * might be the only one using this shared page, and we need to
++         * trigger proper cleanup. Once done, this is like any other page.
++         */
++        rc = mem_sharing_unshare_page(d, gmfn, 0);
++        if ( rc )
+         {
+             put_gfn(d, gmfn);
+             (void)mem_sharing_notify_enomem(d, gmfn, 0);
+-            return 0;
++
++            return rc;
+         }
+         /* Maybe the mfn changed */
+         mfn = mfn_x(get_gfn_query_unlocked(d, gmfn, &p2mt));
+@@ -304,7 +311,8 @@ int guest_remove_page(struct domain *d,
+     {
+         put_gfn(d, gmfn);
+         gdprintk(XENLOG_INFO, "Bad page free for domain %u\n", d->domain_id);
+-        return 0;
++
++        return -ENXIO;
+     }
+ 
+     if ( test_and_clear_bit(_PGT_pinned, &page->u.inuse.type_info) )
+@@ -327,7 +335,7 @@ int guest_remove_page(struct domain *d,
+     put_page(page);
+     put_gfn(d, gmfn);
+ 
+-    return 1;
++    return 0;
+ }
+ 
+ static void decrease_reservation(struct memop_args *a)
+@@ -371,7 +379,7 @@ static void decrease_reservation(struct
+             continue;
+ 
+         for ( j = 0; j < (1 << a->extent_order); j++ )
+-            if ( !guest_remove_page(a->domain, gmfn + j) )
++            if ( guest_remove_page(a->domain, gmfn + j) )
+                 goto out;
+     }
+ 
+--- a/xen/include/xen/mm.h
++++ b/xen/include/xen/mm.h
+@@ -509,8 +509,7 @@ int xenmem_add_to_physmap_one(struct dom
+                               union xen_add_to_physmap_batch_extra extra,
+                               unsigned long idx, xen_pfn_t gpfn);
+ 
+-/* Returns 1 on success, 0 on error, negative if the ring
+- * for event propagation is full in the presence of paging */
++/* Returns 0 on success, or negative on error. */
+ int guest_remove_page(struct domain *d, unsigned long gmfn);
+ 
+ #define RAM_TYPE_CONVENTIONAL 0x00000001
