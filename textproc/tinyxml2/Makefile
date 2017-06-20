@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinyxml2
-PORTVERSION=	4.0.1
+PORTVERSION=	5.0.0
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
@@ -13,24 +13,19 @@ LICENSE=	ZLIB
 
 OPTIONS_DEFINE=	EXAMPLES
 
-CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON -DBUILD_TESTS=OFF
 USE_LDCONFIG=	yes
 USES=		cmake dos2unix pathfix
 
-PLIST_FILES=	include/tinyxml2.h \
-		lib/libtinyxml2.a \
-		lib/libtinyxml2.so \
-		lib/libtinyxml2.so.${PORTVERSION:R:R} \
-		lib/libtinyxml2.so.${PORTVERSION} \
-		libdata/pkgconfig/tinyxml2.pc
-PORTEXAMPLES=	resources xmltest.cpp
+PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_VER=${PORTVERSION:R:R}
+PORTEXAMPLES=	*
 
 GH_ACCOUNT=	leethomason
 USE_GITHUB=	yes
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} resources ${STAGEDIR}${EXAMPLESDIR}/
 
 do-test:
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} xmltest && ./xmltest
