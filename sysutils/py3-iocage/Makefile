@@ -30,16 +30,4 @@ USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py-iocage-[0-9]* iocage-[0-9]* iocage-devel-[0-9]*
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "##################################################"
-	@${ECHO_MSG} " The new iocage needs python ${PYTHON_VER} or greater."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " If you want use the new iocage, stop the build now and"
-	@${ECHO_MSG} " add this line to your /etc/make.conf, and then restart the build."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " DEFAULT_VERSIONS+=python3=${PYTHON_VER}"
-	@${ECHO_MSG} "##################################################"
-	@${ECHO_MSG} ""
-
 .include <bsd.port.mk>
