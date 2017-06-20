@@ -1,9 +1,0 @@
---- tests/nonregression/test_suite.ctest.in.orig	2016-09-14 00:06:50 UTC
-+++ tests/nonregression/test_suite.ctest.in
-@@ -505,3 +505,6 @@ opj_decompress -i @INPUT_NR_PATH@/issue2
- # issue 326 + PR 559: CIELab colorspace
- opj_decompress -i @INPUT_NR_PATH@/issue559-eci-090-CIELab.jp2 -o @TEMP_PATH@/issue559-eci-090-CIELab.jp2.pgx
- opj_decompress -i @INPUT_NR_PATH@/issue559-eci-091-CIELab.jp2 -o @TEMP_PATH@/issue559-eci-091-CIELab.jp2.pgx
-+# issue 823 (yes, not a typo, test image is issue822)
-+!opj_decompress -i @INPUT_NR_PATH@/issue822.jp2 -o @TEMP_PATH@/issue822.png
-+
