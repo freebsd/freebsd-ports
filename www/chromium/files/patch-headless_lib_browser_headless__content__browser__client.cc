@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_content_browser_client.cc.orig	2017-05-09 19:02:47 UTC
+--- headless/lib/browser/headless_content_browser_client.cc.orig	2017-06-05 19:03:08 UTC
 +++ headless/lib/browser/headless_content_browser_client.cc
-@@ -171,7 +171,7 @@ void HeadlessContentBrowserClient::GetQu
+@@ -172,7 +172,7 @@ void HeadlessContentBrowserClient::GetQuotaSettings(
        callback);
  }
  
@@ -9,7 +9,7 @@
  void HeadlessContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -182,7 +182,7 @@ void HeadlessContentBrowserClient::GetAd
+@@ -183,7 +183,7 @@ void HeadlessContentBrowserClient::GetAdditionalMapped
      mappings->Share(kCrashDumpSignal, crash_signal_fd);
  #endif  // defined(HEADLESS_USE_BREAKPAD)
  }

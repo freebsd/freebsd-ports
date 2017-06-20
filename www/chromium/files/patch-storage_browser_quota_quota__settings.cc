@@ -1,6 +1,6 @@
---- storage/browser/quota/quota_settings.cc.orig	2017-04-19 19:06:37 UTC
+--- storage/browser/quota/quota_settings.cc.orig	2017-06-05 19:03:11 UTC
 +++ storage/browser/quota/quota_settings.cc
-@@ -53,7 +53,7 @@ base::Optional<storage::QuotaSettings> C
+@@ -78,7 +78,7 @@ base::Optional<storage::QuotaSettings> CalculateNomina
        1000 * kMBytes;
  #elif defined(OS_CHROMEOS)
        1000 * kMBytes;

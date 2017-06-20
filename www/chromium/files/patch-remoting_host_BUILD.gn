@@ -1,6 +1,6 @@
---- remoting/host/BUILD.gn.orig	2017-04-19 19:06:36 UTC
+--- remoting/host/BUILD.gn.orig	2017-06-05 19:03:10 UTC
 +++ remoting/host/BUILD.gn
-@@ -326,7 +326,7 @@ static_library("host") {
+@@ -325,7 +325,7 @@ static_library("host") {
      deps += [ "//components/policy:generated" ]
    }
  
@@ -9,7 +9,7 @@
      libs += [ "pam" ]
    }
  
-@@ -345,7 +345,7 @@ static_library("host") {
+@@ -344,7 +344,7 @@ static_library("host") {
        "input_injector_x11.cc",
        "local_input_monitor_x11.cc",
      ]
@@ -18,7 +18,7 @@
        # These will already be filtered out on non-Linux.
        sources -= [
          "linux/unicode_to_keysym.cc",
-@@ -531,7 +531,7 @@ source_set("unit_tests") {
+@@ -530,7 +530,7 @@ source_set("unit_tests") {
      "touch_injector_win_unittest.cc",
    ]
  

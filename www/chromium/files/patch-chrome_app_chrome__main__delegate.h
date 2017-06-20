@@ -1,6 +1,6 @@
---- chrome/app/chrome_main_delegate.h.orig	2017-04-19 19:06:28 UTC
+--- chrome/app/chrome_main_delegate.h.orig	2017-06-05 19:03:01 UTC
 +++ chrome/app/chrome_main_delegate.h
-@@ -42,7 +42,7 @@ class ChromeMainDelegate : public conten
+@@ -42,7 +42,7 @@ class ChromeMainDelegate : public content::ContentMain
        const std::string& process_type) override;
    bool ShouldSendMachPort(const std::string& process_type) override;
    bool DelaySandboxInitialization(const std::string& process_type) override;

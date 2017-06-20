@@ -1,16 +1,15 @@
---- gpu/ipc/service/BUILD.gn.orig	2017-04-19 19:06:34 UTC
+--- gpu/ipc/service/BUILD.gn.orig	2017-06-05 19:03:08 UTC
 +++ gpu/ipc/service/BUILD.gn
-@@ -110,11 +110,12 @@ target(link_target_type, "ipc_service_so
+@@ -118,8 +118,11 @@ target(link_target_type, "ipc_service_sources") {
+       "image_transport_surface_linux.cc",
      ]
-     libs += [ "android" ]
    }
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     sources += [ "image_transport_surface_linux.cc" ]
-   }
++  if (is_bsd) {
++    sources += [ "image_transport_surface_linux.cc" ]
++  }
    if (use_x11) {
-     sources += [ "x_util.h" ]
-+    configs += [ "//build/config/linux:x11" ]
+-    sources += [ "x_util.h" ]
++    sources += [ "//build/config/linux:x11" ]
    }
    if (use_ozone) {
-     sources += [
+     deps += [ "//ui/ozone" ]

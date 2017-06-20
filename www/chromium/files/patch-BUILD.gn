@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2017-04-19 19:06:27 UTC
+--- BUILD.gn.orig	2017-06-05 19:03:00 UTC
 +++ BUILD.gn
-@@ -220,7 +220,7 @@ group("both_gn_and_gyp") {
+@@ -95,7 +95,7 @@ group("gn_all") {
      ]
    }
  
@@ -9,7 +9,7 @@
      deps += [
        "//chrome",
        "//chrome/test:browser_tests",
-@@ -277,7 +277,7 @@ group("both_gn_and_gyp") {
+@@ -153,7 +153,7 @@ group("gn_all") {
      ]
    }
  
@@ -18,7 +18,7 @@
      # TODO(GYP): Figure out which of these should actually build on iOS,
      # and whether there should be other targets that are iOS-only and missing.
      deps += [
-@@ -322,7 +322,7 @@ group("both_gn_and_gyp") {
+@@ -199,7 +199,7 @@ group("gn_all") {
        "//ui/touch_selection:ui_touch_selection_unittests",
        "//url/ipc:url_ipc_unittests",
      ]
@@ -27,7 +27,7 @@
      deps += [ "//ios:all" ]
    }
  
-@@ -482,7 +482,7 @@ group("both_gn_and_gyp") {
+@@ -359,7 +359,7 @@ group("gn_all") {
      ]
    }
  
@@ -36,7 +36,7 @@
      # The following are definitely linux-only.
      deps += [
        "//chrome:manpage",
-@@ -505,9 +505,16 @@ group("both_gn_and_gyp") {
+@@ -382,9 +382,16 @@ group("gn_all") {
        # TODO(dpranke): add the linux_dump_symbols flag?
        deps += [ "//chrome:linux_symbols" ]
      }
@@ -54,7 +54,7 @@
      deps += [
        "//base:base_i18n_perftests",
        "//base:base_perftests",
-@@ -578,7 +585,7 @@ group("both_gn_and_gyp") {
+@@ -455,7 +462,7 @@ group("gn_all") {
      if (enable_nacl) {
        deps += [ "//components/nacl/loader:nacl_loader_unittests" ]
  
@@ -63,7 +63,7 @@
          # TODO(dpranke): Figure out what platforms should actually have this.
          deps += [ "//components/nacl/loader:nacl_helper" ]
  
-@@ -684,7 +691,7 @@ group("both_gn_and_gyp") {
+@@ -557,7 +564,7 @@ group("gn_all") {
        deps +=
            [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
      }
@@ -72,7 +72,7 @@
      deps += [ "//breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -728,7 +735,7 @@ group("gn_only") {
+@@ -595,7 +602,7 @@ group("gn_all") {
      deps += [ "//components/proximity_auth:proximity_auth_unittests" ]
    }
  
@@ -81,7 +81,7 @@
      deps += [
        "//mash:all",
        "//media/mojo/services:media_service_unittests",
-@@ -754,7 +761,7 @@ group("gn_only") {
+@@ -620,7 +627,7 @@ group("gn_all") {
      }
    }
  
@@ -90,7 +90,7 @@
      # TODO(GYP): Figure out if any of these should be in gn_all
      # and figure out how cross-platform they are
      deps += [
-@@ -794,7 +801,7 @@ group("gn_only") {
+@@ -659,7 +666,7 @@ group("gn_all") {
      }
  
      if (target_cpu == "x86" || target_cpu == "x64") {
@@ -99,7 +99,7 @@
          deps += [ "//chrome/test:load_library_perf_tests" ]
        }
        deps += [
-@@ -802,7 +809,7 @@ group("gn_only") {
+@@ -667,7 +674,7 @@ group("gn_all") {
          "//third_party/libjpeg_turbo:simd_asm",
        ]
      }
@@ -108,7 +108,7 @@
        deps += [ "//v8:v8_shell" ]
      }
    }
-@@ -812,7 +819,7 @@ group("gn_only") {
+@@ -677,7 +684,7 @@ group("gn_all") {
    }
  
    if ((is_linux && !is_chromeos && !is_chromecast) || (is_win && use_drfuzz) ||
@@ -117,7 +117,7 @@
      deps += [
        "//testing/libfuzzer/fuzzers",
        "//testing/libfuzzer/tests:libfuzzer_tests",
-@@ -844,7 +851,7 @@ group("gn_only") {
+@@ -828,7 +835,7 @@ if (is_chromeos) {
  
  group("gn_mojo_targets") {
    testonly = true
@@ -126,7 +126,7 @@
      # TODO(GYP): Figure out if any of these should be in gn_all
      # and figure out how cross-platform they are
      deps = [
-@@ -870,7 +877,7 @@ group("gn_visibility") {
+@@ -854,7 +861,7 @@ group("gn_visibility") {
    }
  }
  
@@ -135,7 +135,7 @@
    # This group includes all of the targets needed to build and test Blink,
    # including running the layout tests (see below).
    group("blink_tests") {
-@@ -935,7 +942,7 @@ if (!is_ios) {
+@@ -921,7 +928,7 @@ if (!is_ios) {
        data_deps += [ "//content/shell:content_shell_crash_service" ]
      }
  
@@ -144,7 +144,7 @@
        data_deps += [ "//breakpad:minidump_stackwalk($host_toolchain)" ]
      }
  
-@@ -943,7 +950,7 @@ if (!is_ios) {
+@@ -929,7 +936,7 @@ if (!is_ios) {
        data_deps += [ "//breakpad:dump_syms($host_toolchain)" ]
      }
  
