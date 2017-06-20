@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -45,7 +45,21 @@ EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patc
 		${FILESDIR}/xsa212.patch:-p1 \
 		${FILESDIR}/xsa213-4.7.patch:-p1 \
 		${FILESDIR}/xsa214.patch:-p1 \
-		${FILESDIR}/xsa215.patch:-p1
+		${FILESDIR}/xsa215.patch:-p1 \
+		${FILESDIR}/xsa217.patch:-p1 \
+		${FILESDIR}/0001-IOMMU-handle-IOMMU-mapping-and-unmapping-failures.patch:-p1 \
+		${FILESDIR}/0002-gnttab-fix-unmap-pin-accounting-race.patch:-p1 \
+		${FILESDIR}/0003-gnttab-Avoid-potential-double-put-of-maptrack-entry.patch:-p1 \
+		${FILESDIR}/0004-gnttab-correct-maptrack-table-accesses.patch:-p1 \
+		${FILESDIR}/xsa219-4.8.patch:-p1 \
+		${FILESDIR}/xsa220-4.7.patch:-p1 \
+		${FILESDIR}/xsa221.patch:-p1 \
+		${FILESDIR}/xsa222-1-4.7.patch:-p1 \
+		${FILESDIR}/xsa222-2-4.7.patch:-p1 \
+		${FILESDIR}/0001-gnttab-Fix-handling-of-dev_bus_addr-during-unmap.patch:-p1 \
+		${FILESDIR}/0002-gnttab-never-create-host-mapping-unless-asked-to.patch:-p1 \
+		${FILESDIR}/0003-gnttab-correct-logic-to-get-page-references-during-m.patch:-p1 \
+		${FILESDIR}/0004-gnttab-__gnttab_unmap_common_complete-is-all-or-noth.patch:-p1
 
 .include <bsd.port.options.mk>
 
