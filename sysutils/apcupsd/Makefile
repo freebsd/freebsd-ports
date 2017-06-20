@@ -3,14 +3,15 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.14.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20Stable/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Set of programs for controlling APC UPS
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -26,54 +27,55 @@ CONFIGURE_ENV+=	LD="${CXX}" \
 USE_RC_SUBR=	apcupsd
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	APCSMART_DRV APCDUMB_DRV CLIENT_ONLY CGI PCNET_DRV USB_DRV \
-		SNMP_DRV SNMP_DRV_OLD TCP_WRAPPERS TEST_DRV GAPCMON \
-		DOCS MODBUS
-OPTIONS_DEFAULT=	APCSMART_DRV APCDUMB_DRV PCNET_DRV SNMP_DRV USB_DRV \
-		TCP_WRAPPERS MODBUS
+OPTIONS_DEFINE=	APCDUMB_DRV APCSMART_DRV CGI CLIENT_ONLY DOCS GAPCMON MODBUS \
+		MODBUS_USB PCNET_DRV SHUTDOWN_POWEROFF SNMP_DRV SNMP_DRV_OLD \
+		TCP_WRAPPERS TEST_DRV USB_DRV
+OPTIONS_DEFAULT=	APCDUMB_DRV APCSMART_DRV MODBUS MODBUS_USB PCNET_DRV \
+		SNMP_DRV TCP_WRAPPERS USB_DRV
 OPTIONS_SUB=	yes
 
-APCSMART_DRV_DESC=	APC SmartUPS serial driver support
 APCDUMB_DRV_DESC=	Dumb UPS driver support
-CLIENT_ONLY_DESC=	Only NIS client (no network server or drivers)
+APCSMART_DRV_DESC=	APC SmartUPS serial driver support
 CGI_DESC=		Build CGI programs to show status
+CLIENT_ONLY_DESC=	Only NIS client (no network server or drivers)
+GAPCMON_DESC=		Build GTK GUI front-end
+MODBUS_DESC=		MODBUS driver support
+MODBUS_USB_DESC=	MODBUS USB driver support
 PCNET_DRV_DESC=		PowerChute Network Shutdown driver support
-USB_DRV_DESC=		USB driver support
+SHUTDOWN_POWEROFF_DESC=	Shutdown behavior with Halt and Power off
 SNMP_DRV_DESC=		SNMP driver support
 SNMP_DRV_OLD_DESC=	Old SNMP driver support
 TCP_WRAPPERS_DESC=	${LIBWRAP_DESC}
 TEST_DRV_DESC=		Test driver support
-GAPCMON_DESC=		Build GTK GUI front-end
-MODBUS_DESC=		MODBUS driver support
+USB_DRV_DESC=		USB driver support
 
-#PORTDOCS=	${PORTNAME}.pdf
-
-APCSMART_DRV_CONFIGURE_ENABLE=	apcsmart
 APCDUMB_DRV_CONFIGURE_ENABLE=	dumb
-CLIENT_ONLY_CONFIGURE_ON=	--enable-net \
-				--disable-apcsmart --disable-dumb --disable-usb \
-				--disable-snmp --disable-test --disable-pcnet
+APCSMART_DRV_CONFIGURE_ENABLE=	apcsmart
 CGI_CONFIGURE_ENABLE=		cgi
 CGI_CONFIGURE_ON=		--with-cgi-bin=${ETCDIR}/cgi
 CGI_LIB_DEPENDS=		libgd.so:graphics/gd
+CLIENT_ONLY_CONFIGURE_ON=	--enable-net \
+				--disable-apcsmart --disable-dumb --disable-usb \
+				--disable-snmp --disable-test --disable-pcnet
 GAPCMON_CONFIGURE_ENABLE=	gapcmon
 GAPCMON_USES=			pkgconfig
 GAPCMON_USE=			GNOME=gconf2
 GAPCMON_CONFLICTS=		gapcmon-[0-9]*
-PCNET_DRV_CONFIGURE_ENABLE=	pcnet
-USB_DRV_CONFIGURE_ENABLE=	usb
-SNMP_DRV_CONFIGURE_ENABLE=	snmp
 MODBUS_CONFIGURE_ENABLE=	modbus
+MODBUS_USB_CONFIGURE_ENABLE=	modbus-usb
+PCNET_DRV_CONFIGURE_ENABLE=	pcnet
+SNMP_DRV_CONFIGURE_ENABLE=	snmp
 SNMP_DRV_OLD_CONFIGURE_ENABLE=	net-snmp
 SNMP_DRV_OLD_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 TCP_WRAPPERS_CONFIGURE_WITH=	libwrap=yes
 TEST_DRV_CONFIGURE_ENABLE=	test
-
-#CONFIGURE_ARGS+=	--with-libwrap=yes
-#CONFIGURE_ENV+=		LIBS="-lcurses -lmenu"
-#PLIST_SUB+=		POWERFL=""
+USB_DRV_CONFIGURE_ENABLE=	usb
 
 .include <bsd.port.options.mk>
+
+post-patch-SHUTDOWN_POWEROFF-on:
+	${REINPLACE_CMD} -e 's|-h now|-p now|' \
+		${WRKSRC}/platforms/freebsd/apccontrol.in
 
 pre-configure:
 .if ${PORT_OPTIONS:MCLIENT_ONLY} && ( ${PORT_OPTIONS:MAPCSMART_DRV} || \
