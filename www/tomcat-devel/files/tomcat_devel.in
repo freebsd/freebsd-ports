@@ -3,58 +3,58 @@
 # $FreeBSD$
 #
 
-# PROVIDE: tomcat-devel
+# PROVIDE: tomcat_devel
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 #
-# Configuration settings for tomcat-devel in /etc/rc.conf:
+# Configuration settings for tomcat_devel in /etc/rc.conf:
 #
-# tomcat-devel_enable (bool):
+# tomcat_devel_enable (bool):
 #   Set to "NO" by default.
 #   Set it to "YES" to enable tomcat-devel
 #
-# tomcat-devel_catalina_base (str)
+# tomcat_devel_catalina_base (str)
 #   Set to "%%TOMCAT_HOME%%" by default.
 #   Set the CATALINA_BASE variable for the Tomcat process
 #
-# tomcat-devel_catalina_tmpdir (str)
+# tomcat_devel_catalina_tmpdir (str)
 #   Set to "${catalina.base}/temp" by default.
 #   Set the CATALINA_TMPDIR variable for the Tomcat process
 #
-# tomcat-devel_stdout (str)
+# tomcat_devel_stdout (str)
 #   Set to "${catalina.base}/logs/catalina.out" by default.
 #   Set the stdout redirection. It may also be '/dev/null', '&1' or '&2'
 #
-# tomcat-devel_stderr (str)
+# tomcat_devel_stderr (str)
 #   Set to "&1" by default.
 #   Set the stderr redirection. It may also be '/dev/null', '&1' or '&2'
 #
-# tomcat-devel_pipe_cmd (str):
+# tomcat_devel_pipe_cmd (str):
 #   Set to "" by default.
 #   Set a piped command to process stdout/stderr when passthru
 #
-# tomcat-devel_logging_manager (str):
+# tomcat_devel_logging_manager (str):
 #   Set to "org.apache.juli.ClassLoaderLogManager" by default.
 #   Set the JUL log manager
 #
-# tomcat-devel_logging_config (str):
+# tomcat_devel_logging_config (str):
 #   Set to "${catalina.base}/conf/logging.properties" by default.
 #   Set the JUL config file 
 #
-# tomcat-devel_java_home (str):
+# tomcat_devel_java_home (str):
 #   Set to "%%JAVA_HOME%%" by default.
 #   Specify the Java VM to use.
 #
-# tomcat-devel_classpath (str):
+# tomcat_devel_classpath (str):
 #   Set to "" by default.
 #   Addtional classes to add to the CLASSPATH. If set, must start with ':'
 #
-# tomcat-devel_java_opts (str):
+# tomcat_devel_java_opts (str):
 #   Set to "" by default.
 #   Java VM args to use.
 #
-# tomcat-devel_wait (int):
+# tomcat_devel_wait (int):
 #   Set to "30" by default.
 #   Set the wait time (in seconds) for Tomcat process startup
 #
