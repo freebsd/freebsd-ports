@@ -777,6 +777,7 @@
     SUBDIR += pc-firewall
     SUBDIR += pc-networkmanager
     SUBDIR += pc-sysinstall
+    SUBDIR += pc-updatemanager
     SUBDIR += pcapfix
     SUBDIR += pcbsd-appweb
     SUBDIR += pcbsd-libsh
