@@ -1153,6 +1153,7 @@
     SUBDIR += trueos-libsh
     SUBDIR += trueos-libqt5
     SUBDIR += trueos-utils
+    SUBDIR += trueos-utils-qt5
     SUBDIR += ts
     SUBDIR += tss
     SUBDIR += tty-clock
