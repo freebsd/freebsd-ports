@@ -1,0 +1,9 @@
+#!/sbin/opnerc-run
+
+name=sendd
+command="%%PREFIX%%/sbin/$name"
+required_files="%%PREFIX%%/etc/${name}/${name}.conf"
+
+depend() {
+	use net
+}

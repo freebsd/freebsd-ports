@@ -1,0 +1,33 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# p0f_user:		User to drop privileges and change to
+#
+# p0f_int:		Network interface to listen on
+#
+# p0f_sock (path):	Path to socket used to communicate with p0f
+#
+# p0f_args:		Additonal options passed to the p0f daemon
+#
+# p0f_log (path):	File where p0f logs matches
+#
+# p0f_db (path):	Location of fingerprint db. 
+#			Defaults to %%PREFIX%%/p0f/p0f.fp
+
+name="p0f"
+
+: ${p0f_user:="root"}
+: ${p0f_sock:="/var/run/${name}.sock"}
+: ${p0f_log:="/var/log/p0f.log"}
+: ${p0f_db:="%%PREFIX%%/etc/p0f/p0f.fp"}
+
+pidfile=/var/run/${name}.pid
+command_args="-i ${p0f_int} -u ${p0f_user} -Q ${p0f_sock} -o ${p0f_log} -f ${p0f_db} ${p0f_args}"
+command="/%%PREFIX%%/bin/${name}"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

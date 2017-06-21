@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=coovachilli
+
+command=%%PREFIX%%/sbin/chilli
+
+depend() {
+	uset netif
+	keyword -jail
+}

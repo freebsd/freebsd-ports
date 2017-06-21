@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable telegrafb:
+# telegraf_conf (str):		telegraf configuration file
+#				Default: ${PREFIX}/etc/telegraf.conf
+# telegraf_flags (str):		Extra flags passed to telegraf
+
+name="telegraf"
+
+: ${telegraf_flags:="-quiet"}
+: ${telegraf_conf:="%%PREFIX%%/etc/${name}.conf"}
+
+# daemon
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX&&/bin/$name"
+command_args="${telegraf_flags} -config=${telegraf_conf} >> /var/log/telegraf.log 2>&1"
+supervisor=supervise-daemon
+
+depend() {
+	use net
+	keyword -shutdown
+}

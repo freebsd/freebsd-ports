@@ -1,0 +1,45 @@
+#!/sbin/openrc-run
+#
+# Configuration settings for oxidized in /etc/rc.conf:
+#
+# oxidized_args (str):
+#   Extra arguments passed to start command
+#
+# oxidized_home (str)
+#   Set to "/var/db/oxidized" by default.
+#   Set the OXIDIZED_HOME variable for oxidized process
+#
+# oxidized_user (str):
+#   Set to "oxidized" by default.
+#   User to run oxidized as.
+#
+# oxidized_group (str):
+#   Set to "oxidized" by default.
+#   Group for data file ownership.
+
+name="oxidized"
+
+: ${oxidized_home="/var/db/oxidized"}
+: ${oxidized_args=""}
+: ${oxidized_user="oxidized"}
+: ${oxidized_group="oxidized"}
+
+piddir="/var/run/${name}"
+pidfile="${piddir}/${name}.pid"
+command="%%PREFIX%%/bin/oxidized"
+command_args="${oxidized_args}"
+supervisor=supervise-daemon
+
+export HOME=${oxidized_home}
+
+start_pre() {
+	if [ ! -d ${piddir} ]; then
+		install -d -o "${oxidized_user}" -g "${oxidized_group}" -m 750 ${piddir}
+	fi
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

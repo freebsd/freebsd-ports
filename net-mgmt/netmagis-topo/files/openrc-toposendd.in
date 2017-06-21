@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+# # Optionnal variables:
+# toposendd_flags=""
+# toposendd_user="rancid"
+
+name=toposendd
+
+: ${toposendd_user:=rancid}
+
+command=%%PREFIX%%/sbin/toposendd
+command_user=${toposendd_user}
+
+depend() {
+	keyword -shutdown
+}

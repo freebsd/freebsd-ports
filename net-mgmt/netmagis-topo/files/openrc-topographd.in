@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+# # Optionnal variables:
+# topographd_flags=""
+# topographd_user="rancid"
+
+name=topographd
+
+: ${topographd_user:=rancid}
+
+command=%%PREFIX%%/sbin/topographd
+command_user=${topographd_user}
+
+depend() {
+	keyword -shutdown
+}

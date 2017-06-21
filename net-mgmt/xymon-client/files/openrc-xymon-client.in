@@ -1,0 +1,47 @@
+#!/sbin/openrc-run
+
+name=xymon_client
+
+: ${xymon_client_user:=%%XYMONUSER%%}
+
+pidfile="%%WWWDIR%%/client/logs/clientlaunch.`hostname`.pid"
+command=%%WWWDIR%%/client/bin/xymonlaunch
+command_user=${xymon_client_user}
+command_args="--config=%%WWWDIR%%/client/etc/clientlaunch.cfg --log=%%WWWDIR%%/client/logs/clientlaunch.log --pidfile=${pidfile}"
+
+start_pre() {
+	# Ensure permissions of log dir
+	chown -R ${xymon_client_user} %%WWWDIR%%/client/logs
+
+	# Below is pulled almost directly from Xymon's runclient.sh script which we are bypassing due to redundancy
+
+	# Default settings for this client
+	MACHINEDOTS="`uname -n`"
+	SERVEROSTYPE="`uname -s | tr '[ABCDEFGHIJKLMNOPQRSTUVWXYZ/]' '[abcdefghijklmnopqrstuvwxyz_]'`"
+	XYMONOSSCRIPT="xymonclient-$SERVEROSTYPE.sh"
+	XYMONCLIENTHOME="%%WWWDIR%%/client"
+
+	for i in $xymon_client_flags; do
+		case "$i" in
+			--hostname=*)
+				MACHINEDOTS="`echo $i | sed -e 's/--hostname=//'`"
+				;;
+			--os=*)
+				SERVEROSTYPE="`echo $i | sed -e 's/--os=//' | tr '[ABCDEFGHIJKLMNOPQRSTUVWXYZ/]' '[abcdefghijklmnopqrstuvwxyz_]'`"
+				;;
+			--class=*)
+				CONFIGCLASS="`echo $i | sed -e 's/--class=//' | tr '[ABCDEFGHIJKLMNOPQRSTUVWXYZ/]' '[abcdefghijklmnopqrstuvwxyz_]'`"
+				;;
+		esac
+		shift
+	done
+
+	export MACHINEDOTS SERVEROSTYPE XYMONOSSCRIPT XYMONCLIENTHOME CONFIGCLASS
+
+	MACHINE="`echo $MACHINEDOTS | sed -e 's/\./,/g'`"
+	export MACHINE
+}
+
+depend() {
+	keyword -shutdown
+}
