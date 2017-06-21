@@ -13,6 +13,11 @@ EXTRACT_ONLY=	${PORTNAME}src.4_2${EXTRACT_SUFX} ${PORTNAME}mk.4_2${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrated Solution Algorithm for Arbitrary Configuration
 
+LICENSE=	ISAAC
+LICENSE_NAME=	ISAAC_LICENSE
+LICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CPPFLAGS=-I.
@@ -23,34 +28,30 @@ PORTDOCS=	man.4_2.ps.gz
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES OPTIMIZED_FFLAGS
-OPTIMIZED_FFLAGS_DESC=	Use extra compiler (fortran) optimizations
 
 DOCS_DISTFILES=	man.4_2.ps.gz
 EXAMPLES_DISTFILES=	example_cases${EXTRACT_SUFX}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPTIMIZED_FFLAGS}
-FFLAGS+=	-O2 -ffast-math
-.endif
+OPTIMIZED_FFLAGS_DESC=	Use extra compiler (fortran) optimizations
+OPTIMIZED_FFLAGS_VARS=	FFLAGS+="-O2 -ffast-math"
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+;' \
-	${WRKSRC}/makefile
-	${FIND} ${WRKSRC} -name "*.mk" -exec	\
+		${WRKSRC}/makefile
+	@${FIND} ${WRKSRC} -name "*.mk" -exec	\
 		${REINPLACE_CMD} -e 's|SRC= $$(HOME)/ISAAC/src|SRC= ${WRKSRC}|; \
 			s|$$(FFLAGS)|${FFLAGS} -I.|' {} \;
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/isaac ${STAGEDIR}${PREFIX}/bin/isaac
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/example_cases${EXTRACT_SUFX} \
 		-C ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
