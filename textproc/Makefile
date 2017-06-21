@@ -1417,6 +1417,7 @@
     SUBDIR += resume
     SUBDIR += resume-extensions
     SUBDIR += rfcdiff
+    SUBDIR += ripgrep
     SUBDIR += ripole
     SUBDIR += rl
     SUBDIR += rman
