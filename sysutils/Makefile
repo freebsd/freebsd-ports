@@ -914,7 +914,9 @@
     SUBDIR += qlogtools
     SUBDIR += qpxtool
     SUBDIR += qsynergy
+    SUBDIR += qt5-qtdiag
     SUBDIR += qt5-qtpaths
+    SUBDIR += qt5-qtplugininfo
     SUBDIR += qtpass
     SUBDIR += quicksynergy
     SUBDIR += qzeitgeist
