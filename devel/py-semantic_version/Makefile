@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	semantic_version
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,19 +15,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django18>0:www/py-django18
 
-OPTIONS_DEFINE=	TESTS
-
-TESTS_DESC=		Install test suite requirements
-TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbarrois
 GH_PROJECT=	python-semanticversion
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+# Actually 2.7,3.4+
+USES=		python:2.7+
+USE_PYTHON=	autoplist concurrent distutils
+
+do-test:
+	@(cd ${TEST_WRKSRC}; ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- tools/grit/grit_rule.gni.orig	2017-06-05 19:03:30 UTC
++++ tools/grit/grit_rule.gni
+@@ -214,7 +214,7 @@ if (current_toolchain != host_toolchain) {
+       "ios",
+     ]
+   }
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     grit_defines += [
+       "-t",
+       "linux2",

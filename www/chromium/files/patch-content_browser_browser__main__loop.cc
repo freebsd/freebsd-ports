@@ -1,4 +1,4 @@
---- content/browser/browser_main_loop.cc.orig	2017-04-19 19:06:33 UTC
+--- content/browser/browser_main_loop.cc.orig	2017-06-05 19:03:06 UTC
 +++ content/browser/browser_main_loop.cc
 @@ -210,6 +210,11 @@
  #include "gpu/vulkan/vulkan_implementation.h"
@@ -21,7 +21,7 @@
  void SetupSandbox(const base::CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    if (parsed_command_line.HasSwitch(switches::kNoZygote)) {
-@@ -584,10 +589,15 @@ void BrowserMainLoop::Init() {
+@@ -553,10 +558,15 @@ void BrowserMainLoop::Init() {
  void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  

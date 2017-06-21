@@ -1,4 +1,4 @@
---- base/process/process_metrics.h.orig	2017-04-19 19:06:28 UTC
+--- base/process/process_metrics.h.orig	2017-06-05 19:03:00 UTC
 +++ base/process/process_metrics.h
 @@ -22,6 +22,12 @@
  #include "base/values.h"
@@ -13,7 +13,34 @@
  #if defined(OS_MACOSX)
  #include <mach/mach.h>
  #include "base/process/port_provider_mac.h"
-@@ -329,13 +335,17 @@ BASE_EXPORT bool GetSystemMemoryInfo(Sys
+@@ -205,7 +211,7 @@ class BASE_EXPORT ProcessMetrics {
+   // otherwise.
+   bool GetIOCounters(IoCounters* io_counters) const;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Returns the number of file descriptors currently open by the process, or
+   // -1 on error.
+   int GetOpenFdCount() const;
+@@ -213,7 +219,7 @@ class BASE_EXPORT ProcessMetrics {
+   // Returns the soft limit of file descriptors that can be opened by the
+   // process, or -1 on error.
+   int GetOpenFdSoftLimit() const;
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+ 
+  private:
+ #if !defined(OS_MACOSX) || defined(OS_IOS)
+@@ -289,7 +295,7 @@ BASE_EXPORT void SetFdLimit(unsigned int max_descripto
+ #endif  // defined(OS_POSIX)
+ 
+ #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
+-    defined(OS_ANDROID)
++    defined(OS_ANDROID) || defined(OS_BSD)
+ // Data about system-wide memory consumption. Values are in KB. Available on
+ // Windows, Mac, Linux, Android and Chrome OS.
+ //
+@@ -383,13 +389,17 @@ BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoK
  // CPU-related ticks.  Returns -1 on parse error.
  // Exposed for testing.
  BASE_EXPORT int ParseProcStatCPU(const std::string& input);

@@ -1,6 +1,6 @@
---- components/tracing/common/process_metrics_memory_dump_provider.h.orig	2017-04-19 19:06:33 UTC
+--- components/tracing/common/process_metrics_memory_dump_provider.h.orig	2017-06-05 19:03:06 UTC
 +++ components/tracing/common/process_metrics_memory_dump_provider.h
-@@ -57,7 +57,7 @@ class TRACING_EXPORT ProcessMetricsMemor
+@@ -57,7 +57,7 @@ class TRACING_EXPORT ProcessMetricsMemoryDumpProvider
  #elif defined(OS_WIN)
    FRIEND_TEST_ALL_PREFIXES(ProcessMetricsMemoryDumpProviderTest,
                             TestWinModuleReading);
@@ -9,7 +9,7 @@
    FRIEND_TEST_ALL_PREFIXES(ProcessMetricsMemoryDumpProviderTest,
                             DoubleRegister);
  #endif
-@@ -70,7 +70,7 @@ class TRACING_EXPORT ProcessMetricsMemor
+@@ -70,7 +70,7 @@ class TRACING_EXPORT ProcessMetricsMemoryDumpProvider
    static uint64_t rss_bytes_for_testing;
    static FactoryFunction factory_for_testing;
  

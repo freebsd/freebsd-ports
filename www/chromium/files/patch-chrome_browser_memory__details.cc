@@ -1,4 +1,4 @@
---- chrome/browser/memory_details.cc.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/memory_details.cc.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/memory_details.cc
 @@ -35,7 +35,7 @@
  #include "extensions/features/features.h"
@@ -9,7 +9,7 @@
  #include "content/public/browser/zygote_host_linux.h"
  #endif
  
-@@ -337,7 +337,7 @@ void MemoryDetails::CollectChildInfoOnUI
+@@ -344,7 +344,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
        process.titles.push_back(title);
      }
  

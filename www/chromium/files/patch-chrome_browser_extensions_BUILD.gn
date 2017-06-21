@@ -1,6 +1,6 @@
---- chrome/browser/extensions/BUILD.gn.orig	2017-05-02 19:02:47 UTC
+--- chrome/browser/extensions/BUILD.gn.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1040,7 +1040,7 @@ static_library("extensions") {
+@@ -1033,7 +1033,7 @@ static_library("extensions") {
      sources -= [ "global_shortcut_listener_ozone.cc" ]
    }
  
@@ -9,7 +9,7 @@
      deps += [ "//build/linux:fontconfig" ]
  
      if (use_dbus) {
-@@ -1100,7 +1100,7 @@ static_library("extensions") {
+@@ -1095,7 +1095,7 @@ static_library("extensions") {
      ]
    }
  
@@ -18,16 +18,16 @@
      sources += [
        "api/input_ime/input_ime_api.cc",
        "api/input_ime/input_ime_api.h",
-@@ -1133,6 +1133,12 @@ static_library("extensions") {
-     defines += [ "ENABLE_HOTWORDING" ]
-   }
+@@ -1126,6 +1126,12 @@ static_library("extensions") {
  
+   if (enable_hotwording) {
+     defines += [ "ENABLE_HOTWORDING" ]
++  }
++
 +  if (is_bsd) {
 +    sources -= [
 +      "api/image_writer_private/removable_storage_provider_linux.cc",
 +    ]
-+  }
-+
+   }
+ 
    if (enable_service_discovery) {
-     sources += [
-       "api/mdns/dns_sd_delegate.cc",

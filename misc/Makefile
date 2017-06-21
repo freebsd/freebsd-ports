@@ -476,6 +476,7 @@
     SUBDIR += uk-postcodes
     SUBDIR += umodunpack
     SUBDIR += unclutter
+    SUBDIR += unclutter-xfixes
     SUBDIR += upclient
     SUBDIR += us-zipcodes
     SUBDIR += usbids

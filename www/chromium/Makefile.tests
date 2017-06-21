@@ -4,7 +4,6 @@ TEST_TARGETS=	base_unittests \
 		crypto_unittests \
 		cacheinvalidation_unittests \
 		gpu_unittests \
-		sync_unit_tests \
 		printing_unittests \
 		sql_unittests \
 		content_unittests \

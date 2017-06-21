@@ -1,16 +1,11 @@
---- build/config/allocator.gni.orig	2017-04-19 19:06:28 UTC
+--- build/config/allocator.gni.orig	2017-06-05 19:03:01 UTC
 +++ build/config/allocator.gni
-@@ -45,10 +45,10 @@ assert(use_allocator == "none" || use_al
- assert(!is_win || use_allocator == "none", "Tcmalloc doesn't work on Windows.")
- assert(!is_mac || use_allocator == "none", "Tcmalloc doesn't work on macOS.")
- 
--assert(!use_experimental_allocator_shim || is_linux || is_android || is_win ||
--           is_mac,
-+assert(!use_experimental_allocator_shim || is_linux || is_android || is_win || 
-+           is_mac || is_bsd,
-        "use_experimental_allocator_shim supported only on Linux, Android, " +
--           "Windows and macOS targets")
-+           "Windows, macOS and BSD targets")
- 
- if (is_win && use_experimental_allocator_shim) {
-   assert(!is_component_build,
+@@ -18,7 +18,7 @@ if (is_android || current_cpu == "mipsel" || is_mac ||
+ # against the debug CRT with "is_nacl=false".
+ if ((is_linux || is_android || is_mac ||
+      (is_win && !is_component_build && !is_debug)) && !is_asan && !is_lsan &&
+-    !is_tsan && !is_msan) {
++    !is_tsan && !is_msan && !is_bsd) {
+   _default_use_experimental_allocator_shim = true
+ } else {
+   _default_use_experimental_allocator_shim = false

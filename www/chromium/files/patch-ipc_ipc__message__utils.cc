@@ -1,6 +1,6 @@
---- ipc/ipc_message_utils.cc.orig	2017-04-19 19:06:35 UTC
+--- ipc/ipc_message_utils.cc.orig	2017-06-05 19:03:08 UTC
 +++ ipc/ipc_message_utils.cc
-@@ -421,7 +421,7 @@ void ParamTraits<unsigned int>::Log(cons
+@@ -421,7 +421,7 @@ void ParamTraits<unsigned int>::Log(const param_type& 
    l->append(base::UintToString(p));
  }
  

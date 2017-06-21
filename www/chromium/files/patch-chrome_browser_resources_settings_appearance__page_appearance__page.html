@@ -1,0 +1,29 @@
+--- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2017-06-05 19:03:02 UTC
++++ chrome/browser/resources/settings/appearance_page/appearance_page.html
+@@ -72,7 +72,7 @@
+                 aria-label="$i18n{themes}"
+                 aria-describedby="themesSecondary"></button>
+           </div>
+-<if expr="not is_linux or chromeos">
++<if expr="not is_posix or chromeos">
+           <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
+             <div class="secondary-action">
+               <paper-button id="useDefault" on-tap="onUseDefaultTap_"
+@@ -82,7 +82,7 @@
+             </div>
+           </template>
+ </if>
+-<if expr="is_linux and not chromeos">
++<if expr="is_posix and not chromeos">
+           <div class="secondary-action" hidden="[[!showThemesSecondary_(
+             prefs.extensions.theme.id.value, useSystemTheme_)]]">
+             <template is="dom-if" if="[[showUseClassic_(
+@@ -150,7 +150,7 @@
+           </settings-toggle-button>
+         </div>
+         <div class$="settings-box [[getFirst_(pageVisibility.bookmarksBar)]]">
+-<if expr="is_linux and not chromeos">
++<if expr="is_posix and not chromeos">
+           <settings-toggle-button class="start"
+               pref="{{prefs.browser.custom_chrome_frame}}"
+               label="$i18n{showWindowDecorations}"

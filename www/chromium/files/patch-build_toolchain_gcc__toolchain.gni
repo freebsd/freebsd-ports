@@ -1,8 +1,8 @@
---- build/toolchain/gcc_toolchain.gni.orig	2017-04-19 19:06:28 UTC
+--- build/toolchain/gcc_toolchain.gni.orig	2017-06-05 19:03:01 UTC
 +++ build/toolchain/gcc_toolchain.gni
-@@ -12,6 +12,11 @@ import("//build/toolchain/clang_static_a
- import("//build/toolchain/goma.gni")
- import("//build/toolchain/toolchain.gni")
+@@ -19,6 +19,11 @@ analyzer_wrapper =
+     rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
+                 root_build_dir) + " --mode=clang"
  
 +declare_args() {
 +  extra_cxxflags = ""
@@ -12,7 +12,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -483,10 +488,22 @@ template("clang_toolchain") {
+@@ -548,13 +553,22 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
@@ -20,6 +20,9 @@
 -    cc = "$prefix/clang"
 -    cxx = "$prefix/clang++"
 -    ld = cxx
+-    readelf = "${toolprefix}readelf"
+-    ar = "${prefix}/llvm-ar"
+-    nm = "${toolprefix}nm"
 +    if (is_bsd) {
 +      cc = "${toolprefix}clang40"
 +      cxx = "${toolprefix}clang++40"
@@ -33,20 +36,9 @@
 +      cxx = "$prefix/clang++"
 +      ld = cxx
 +      readelf = "${toolprefix}readelf"
-+      ar = "${toolprefix}ar"
++      ar = "${prefix}/llvm-ar"
 +      nm = "${toolprefix}nm"
 +    }
  
-     if (use_clang_static_analyzer) {
-       # Static analysis isn't supported under GOMA. See crbug.com/687245
-@@ -507,10 +524,6 @@ template("clang_toolchain") {
-                         root_build_dir)
-     }
- 
--    readelf = "${toolprefix}readelf"
--    ar = "${toolprefix}ar"
--    nm = "${toolprefix}nm"
--
-     forward_variables_from(invoker, [ "strip" ])
- 
-     toolchain_args = {
+     forward_variables_from(invoker,
+                            [
