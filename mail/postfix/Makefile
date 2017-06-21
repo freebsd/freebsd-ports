@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.2
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
@@ -25,7 +25,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
-PORTSCOUT=	limit:^3\.1\.
+PORTSCOUT=	limit:^3\.2\.
 
 CONFLICTS_INSTALL?=	courier-0.* opensmtpd-[0-9]* \
 		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* \
