@@ -66,9 +66,7 @@ post-patch:
 		${WRKSRC}/assets/gamecontrollerdb.txt
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/UI/NativeApp.cpp
-	@${REINPLACE_CMD} \
-		-e 's/"unknown"/"${GH_TAGNAME}"/' \
-		-e 's/^\(VERSION =\).*/\1 ${GH_TAGNAME}/' \
+	@${REINPLACE_CMD} -e 's/"unknown"/"${GH_TAGNAME}"/' \
 		${WRKSRC}/git-version.cmake
 
 do-install:

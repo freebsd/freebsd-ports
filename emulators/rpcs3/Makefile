@@ -46,9 +46,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/5\.8/5\.7/' ${WRKSRC}/${PORTNAME}/CMakeLists.txt
-	@${REINPLACE_CMD} \
-		-e 's/"unknown"/"${GH_TAGNAME}"/' \
-		-e 's/^\(VERSION =\).*/\1 ${GH_TAGNAME}/' \
+	@${REINPLACE_CMD} -e 's/"unknown"/"${GH_TAGNAME}"/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
 .include <bsd.port.mk>
