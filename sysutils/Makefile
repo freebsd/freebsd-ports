@@ -280,6 +280,7 @@
     SUBDIR += etcupdate
     SUBDIR += eventlog
     SUBDIR += evtviewer
+    SUBDIR += exa
     SUBDIR += exfat-utils
     SUBDIR += extipl
     SUBDIR += ezjail
