@@ -1,0 +1,87 @@
+#!/bin/sh
+# Script to install preload.conf
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+if [ "$2" != "POST-INSTALL" ] ; then
+   exit 0
+fi
+
+set +e
+
+# If this is during staging, we can skip for now
+echo $PREFIX | grep -q '/stage/'
+if [ $? -eq 0 ] ; then
+   exit 0
+fi
+
+# Copy over customizations for TrueOS
+  install -m 644 ${PREFIX}/share/trueos/conf/brand-trueos.4th /boot/brand-trueos.4th
+
+if [ ! -e "${PREFIX}/etc/trueos.conf" ] ; then
+  # Do the first-time setup
+  echo "Doing first-time bootstrap"
+  tar cvf - -C ${PREFIX}/share/trueos/desktop-defaults/ . 2>/dev/null | tar xvpf - -C / 2>/dev/null
+fi
+
+# Copy over some defaults on upgrade
+cp ${PREFIX}/share/trueos/desktop-defaults/etc/devfs.rules /etc/devfs.rules
+
+# Enable the OpenRC services
+
+if [ ! -e "/var/.openrc-migrate-1" ] ; then
+  /sbin/rc-update add ipfw boot
+  /sbin/rc-update add devd boot
+  /sbin/rc-update add devfs boot
+  /sbin/rc-update add routing boot
+  /sbin/rc-update add automount default
+  /sbin/rc-update add statd default
+  /sbin/rc-update add lockd default
+  /sbin/rc-update add rpcbind default
+  /sbin/rc-update add cupsd default
+  /sbin/rc-update add cups_browsed default
+  /sbin/rc-update delete dhcpcd default
+  /sbin/rc-update delete wpa_supplicant default
+  /sbin/rc-update add openntpd default
+  /sbin/rc-update add pcdm default
+  /sbin/rc-update add sysadm default
+  /sbin/rc-update add dbus default
+  /sbin/rc-update add hald default
+  /sbin/rc-update add trueosinit default
+  /sbin/rc-update add moused default
+fi
+touch /var/.openrc-migrate-1
+
+if [ ! -e "/var/.openrc-migrate-2" ] ; then
+  /sbin/rc-update add bsdstats default
+  /sbin/rc-update add automountd default
+  /sbin/rc-update add autounmountd default
+fi
+touch /var/.openrc-migrate-2
+
+if [ ! -e "/var/.openrc-migrate-3" ] ; then
+  if [ -e "/etc/conf.d/modules" ] ; then
+    cat /etc/conf.d/modules | grep -v "modules=" > /etc/conf.d/modules.new
+    mv /etc/conf.d/modules.new /etc/conf.d/modules
+    chmod 755 /etc/conf.d/modules
+  fi
+fi
+touch /var/.openrc-migrate-3
+
+if [ ! -e "/var/.openrc-migrate-4" ] ; then
+    /sbin/rc-update add sndiod default
+fi
+touch /var/.openrc-migrate-4
+
+if [ ! -e "/var/.openrc-migrate-5" ] ; then
+    /sbin/rc-update add mountlate default
+fi
+touch /var/.openrc-migrate-5
+
+if [ ! -e "/var/.openrc-migrate-6" ] ; then
+    /usr/sbin/sysrc -f /etc/rc.conf webcamd_enable=YES
+fi
+touch /var/.openrc-migrate-6
+
+
+exit 0

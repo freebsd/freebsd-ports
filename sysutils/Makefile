@@ -774,6 +774,9 @@
     SUBDIR += pax-utils
     SUBDIR += pbi-manager
     SUBDIR += pbimaker
+    SUBDIR += pc-firewall
+    SUBDIR += pc-networkmanager
+    SUBDIR += pc-sysinstall
     SUBDIR += pcapfix
     SUBDIR += pcbsd-appweb
     SUBDIR += pcbsd-libsh
@@ -798,6 +801,7 @@
     SUBDIR += pecl-mogilefs
     SUBDIR += pecl-proctitle
     SUBDIR += pefs-kmod
+    SUBDIR += personacrypt
     SUBDIR += personality
     SUBDIR += pesign
     SUBDIR += pflogx
@@ -904,6 +908,7 @@
     SUBDIR += qjail4
     SUBDIR += qlogtools
     SUBDIR += qpxtool
+    SUBDIR += qsudo
     SUBDIR += qsynergy
     SUBDIR += qt5-qtpaths
     SUBDIR += qtpass
@@ -1144,6 +1149,9 @@
     SUBDIR += tracker
     SUBDIR += tree
     SUBDIR += tren
+    SUBDIR += trueos-libsh
+    SUBDIR += trueos-libqt5
+    SUBDIR += trueos-utils
     SUBDIR += ts
     SUBDIR += tss
     SUBDIR += tty-clock

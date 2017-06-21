@@ -1,0 +1,54 @@
+#!/bin/sh
+# Script to install preload.conf
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+if [ "$2" != "POST-INSTALL" ] ; then
+   exit 0
+fi
+
+set +e
+
+# If this is during staging, we can skip for now
+echo $PREFIX | grep -q '/stage/'
+if [ $? -eq 0 ] ; then
+   exit 0
+fi
+
+# Copy over customizations for TrueOS
+  install -m 644 ${PREFIX}/share/trueos/conf/brand-trueos.4th /boot/brand-trueos.4th
+  install -m 644 ${PREFIX}/share/trueos/server-defaults/etc/conf.d/modules /etc/conf.d/modules/
+
+if [ ! -e "${PREFIX}/etc/trueos.conf" ] ; then
+  # Do the first-time setup
+  echo "Doing first-time bootstrap"
+  tar cvf - -C ${PREFIX}/share/trueos/server-defaults/ . 2>/dev/null | tar xvf - -C / 2>/dev/null
+fi
+
+# Enable the OpenRC services
+
+if [ ! -e "/var/.openrc-migrate-1" ] ; then
+  /sbin/rc-update add devd boot
+  /sbin/rc-update add routing boot
+  /sbin/rc-update delete dhcpcd default
+  /sbin/rc-update delete wpa_supplicant default
+  /sbin/rc-update add sysadm default
+  /sbin/rc-update add bsdstats default
+fi
+touch /var/.openrc-migrate-1
+
+if [ ! -e "/var/.openrc-migrate-3" ] ; then
+  if [ -e "/etc/conf.d/modules" ] ; then
+    cat /etc/conf.d/modules | grep -v "modules=" > /etc/conf.d/modules.new
+    mv /etc/conf.d/modules.new /etc/conf.d/modules
+    chmod 755 /etc/conf.d/modules
+  fi
+fi
+touch /var/.openrc-migrate-3
+
+if [ ! -e "/var/.openrc-migrate-4" ] ; then
+    /sbin/rc-update add mountlate default
+fi
+touch /var/.openrc-migrate-4
+
+exit 0
