@@ -22,6 +22,7 @@ RUN_DEPENDS=	soya_editor:graphics/py-soya3d \
 		${PYTHON_PKGNAMEPREFIX}cerealizer>0:security/py-cerealizer \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
+BROKEN=		fails to package: pkg-static: py27-twisted-17.5.0_1 conflicts with py27-twistedCore-15.2.1 (installs files into the same place)
 NO_ARCH=	yes
 
 USES=		gettext python tar:bzip2

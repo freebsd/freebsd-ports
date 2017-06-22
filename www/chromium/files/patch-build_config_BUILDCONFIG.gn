@@ -1,4 +1,4 @@
---- build/config/BUILDCONFIG.gn.orig	2017-04-19 19:06:28 UTC
+--- build/config/BUILDCONFIG.gn.orig	2017-06-05 19:03:01 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -131,12 +131,13 @@ declare_args() {
    is_official_build = false
@@ -36,7 +36,7 @@
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -342,8 +343,17 @@ if (current_os == "win" || current_os ==
+@@ -342,8 +343,17 @@ if (current_os == "win" || current_os == "winrt_81" ||
    is_nacl = false
    is_posix = true
    is_win = false

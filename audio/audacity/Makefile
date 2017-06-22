@@ -18,7 +18,8 @@ BUILD_DEPENDS=	autogen:devel/autogen \
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libsndfile.so:audio/libsndfile
 
-BROKEN_powerpc64=	Does not build
+BROKEN_aarch64=		fails to configure: checking whether C++ compiler accepts -msse... no
+BROKEN_powerpc64=	fails to build
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf compiler:gcc-c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix

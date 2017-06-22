@@ -1,6 +1,6 @@
---- content/browser/devtools/protocol/color_picker.cc.orig	2017-04-19 19:06:33 UTC
+--- content/browser/devtools/protocol/color_picker.cc.orig	2017-06-05 19:03:06 UTC
 +++ content/browser/devtools/protocol/color_picker.cc
-@@ -153,7 +153,7 @@ void ColorPicker::UpdateCursor() {
+@@ -154,7 +154,7 @@ void ColorPicker::UpdateCursor() {
    // magnified projection only with centered hotspot.
    // Mac Retina requires cursor to be > 120px in order to render smoothly.
  

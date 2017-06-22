@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:lang/f2c
 
-OPTIONS_DEFINE=	ATLAS EXAMPLES THREADS
+OPTIONS_DEFINE=	ATLAS EXAMPLES
 ATLAS_DESC=	Use ATLAS instead of BLAS/LAPACK
 
 WRKSRC=		${WRKDIR}/Sources/Tochnog-Latest-jan-2014
@@ -37,26 +37,16 @@ GID_PTYPES=	${PREFIX}/${GIDDIR}/problemtypes
 
 .if ${PORT_OPTIONS:MATLAS}
 LIB_DEPENDS+=	libatlas.so:math/atlas
-.if ${PORT_OPTIONS:MTHREADS}
-BLAS_LIBS=	-lptf77blas
-.else
 BLAS_LIBS=	-lf77blas
-.endif
 .else
 LIB_DEPENDS+=	libblas.so:math/blas	\
 		liblapack.so:math/lapack
 BLAS_LIBS=	-llapack -lblas
 .endif
 
-.if ${PORT_OPTIONS:MTHREADS}
-ALL_TARGET=	freebsd_parallel
-LIB_DEPENDS+=	libsuperlu_mt.so:math/superlu_mt
-SUPERLU=	superlu_mt
-.else
 ALL_TARGET=	freebsd_old
 LIB_DEPENDS+=	libsuperlu.so:math/superlu
 SUPERLU=	superlu
-.endif
 
 post-extract:
 .for sup in gid tools test
@@ -71,10 +61,6 @@ pre-configure:
 	s,%%SUPERLU%%,${SUPERLU},g ; \
 	s,%%BLAS_LIBS%%,-L${LOCALBASE}/lib ${BLAS_LIBS},g' \
 	${WRKSRC}/makefile
-pre-configure-THREADS-on:
-	${REINPLACE_CMD} -e 's,SUPERLU_MT_USE 0,SUPERLU_MT_USE 1,' \
-	${WRKSRC}/tnsuplu.h
-pre-configure-THREADS-off:
 	${REINPLACE_CMD} -e 's,SUPERLU_USE 0,SUPERLU_USE 1,' \
 	${WRKSRC}/tnsuplu.h
 

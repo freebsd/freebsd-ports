@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.158
-PORTREVISION=	2
+PORTVERSION=	1.3.159
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		ftp://ftp.dcc-servers.net/src/dcc/old/ \
@@ -22,7 +21,7 @@ LICENSE_PERMS=	no-pkg-sell no-dist-mirror no-pkg-mirror no-dist-sell
 
 HAS_CONFIGURE=	yes
 
-USES=		gmake tar:Z
+USES=		tar:Z
 
 OPTIONS_DEFINE=	DCCIFD DCCD DCCGREY IPV6 ALT_HOME
 OPTIONS_DEFAULT=	DCCIFD DCCM DCCD DCCGREY
@@ -52,12 +51,15 @@ SUB_LIST+=		WRKSRC=${WRKSRC} DCCHOME=${DCCHOME}
 ## Use the configure script to explicitly set the locations of all files,
 ## in case the standard locations have been locally overridden
 ## Also, use a similar hack to USES=desthack.
-CONFIGURE_ARGS=	--with-uid=${DCCUSER} \
+CONFIGURE_ARGS=	-q \
+		--with-uid=${DCCUSER} \
 		--bindir=${PREFIX}/bin \
 		--mandir=${MANPREFIX}/man \
 		--with-installroot=\$${${DESTDIRNAME}} \
 		--with-configsuffix=.sample \
-		--with-make-cmd=${MAKE_CMD}
+		--with-make-cmd=${MAKE_CMD} \
+		--with-install-cmd=${BSD_INSTALL_PROGRAM} \
+		--enable-pkg-make
 
 CONFIGURE_ENV=	ac_cv_header_histedit_h=no	# disable libedit detection
 
@@ -122,5 +124,26 @@ post-install:
 		${STAGEDIR}${PREFIX}/dcc/cgi-bin/footer.sample
 	@${MV} ${STAGEDIR}${PREFIX}/dcc/cgi-bin/header-dist \
 		${STAGEDIR}${PREFIX}/dcc/cgi-bin/header.sample
+.for sf in bin/dccproc bin/cdcc dcc/libexec/dccsight dcc/libexec/check_ip_range \
+	dcc/libexec/wlist dcc/libexec/ck2ip
+		${STRIP_CMD} ${STAGEDIR}/${PREFIX}/${sf}
+.endfor
+.if ${PORT_OPTIONS:MDCCIFD} || ${PORT_OPTIONS:MDCCM}
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/dcc/libexec/dns-helper
+.endif
+
+post-install-DCCIFD-on:
+.for sf in bin/dccif-test dcc/libexec/dccifd
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/${sf}
+.endfor
+
+post-install-DCCD-on:
+.for sf in dcc/libexec/dump-clients dcc/libexec/dbclean \
+	dcc/libexec/dblist dcc/libexec/dccd
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/${sf}
+.endfor
+
+post-install-DCCM-on:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/dcc/libexec/dccm
 
 .include <bsd.port.mk>

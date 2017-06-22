@@ -1,4 +1,4 @@
---- content/browser/memory/memory_monitor.cc.orig	2017-04-19 19:06:33 UTC
+--- content/browser/memory/memory_monitor.cc.orig	2017-06-05 19:03:07 UTC
 +++ content/browser/memory/memory_monitor.cc
 @@ -8,6 +8,7 @@
  
@@ -8,7 +8,7 @@
  // static
  MemoryMonitorDelegate* MemoryMonitorDelegate::GetInstance() {
    return base::Singleton<
-@@ -21,8 +22,9 @@ void MemoryMonitorDelegate::GetSystemMem
+@@ -21,8 +22,9 @@ void MemoryMonitorDelegate::GetSystemMemoryInfo(
      base::SystemMemoryInfoKB* mem_info) {
    base::GetSystemMemoryInfo(mem_info);
  }

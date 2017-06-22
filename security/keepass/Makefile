@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keepass
-PORTVERSION=	2.35
-PORTREVISION=	1
+PORTVERSION=	2.36
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/KeePass%202.x/${PORTVERSION}
 DISTNAME=	KeePass-${PORTVERSION}-Source
@@ -33,14 +32,19 @@ DESKTOP_ENTRIES="KeePass" \
 		"Utility;" \
 		true
 
-OPTIONS_DEFINE=	XDOTOOL XSEL
+OPTIONS_DEFINE=	DEBUG XDOTOOL XSEL
 XDOTOOL_DESC=	Use the xdotool utility for auto-typing passwords
 XSEL_DESC=	Use the xsel utility for clipboard copying
 
 OPTIONS_DEFAULT=	XDOTOOL XSEL
 
+DEBUG_VARS=		config=Debug
+DEBUG_VARS_OFF=		config=Release
 XDOTOOL_RUN_DEPENDS=	xdotool:x11/xdotool
 XSEL_RUN_DEPENDS=	xsel:x11/xsel-conrad
+
+post-patch:
+	${REINPLACE_CMD} -e 's|sed\ -i|sed\ -i\ \"\"|g' ${WRKSRC}/Build/PrepMonoDev.sh
 
 do-build:
 	# Extract icons
@@ -49,12 +53,12 @@ do-build:
 	(cd ${WRKSRC}/Build && ${SH} PrepMonoDev.sh)
 	# Do build
 	(cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/xbuild /t:KeePass /p:Configuration=Release)
+		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/xbuild /t:KeePass /p:Configuration=${CONFIG})
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Build/KeePass/Release/KeePass.exe ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/Build/KeePass/${CONFIG}/KeePass.exe ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/Ext/KeePass.config.xml ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/Ext/KeePass.exe.config ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC}/Ext && ${COPYTREE_SHARE} XSL ${STAGEDIR}${DATADIR})

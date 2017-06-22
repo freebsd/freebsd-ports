@@ -4,7 +4,6 @@
     COMMENT = Polish language support
 
     SUBDIR += aspell
-    SUBDIR += calligra-l10n
     SUBDIR += ekg
     SUBDIR += ekg2
     SUBDIR += fortunepl

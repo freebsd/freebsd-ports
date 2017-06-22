@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bayesm
+PORTREVISION=	1
 DISTVERSION=	3.0-2
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -14,6 +15,6 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-RcppArmadillo>=0:math/R-cran-RcppArmadillo
 
-USES=		cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

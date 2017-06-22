@@ -80,6 +80,7 @@ GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
 
 NO_ARCH=	yes
+NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
 STRIP=
 
 USE_RUBY=	yes

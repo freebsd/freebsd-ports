@@ -1,6 +1,6 @@
---- base/test/launcher/test_launcher.cc.orig	2017-04-19 19:06:28 UTC
+--- base/test/launcher/test_launcher.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/test/launcher/test_launcher.cc
-@@ -60,6 +60,10 @@
+@@ -61,6 +61,10 @@
  #include "base/win/windows_version.h"
  #endif
  

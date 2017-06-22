@@ -1,4 +1,4 @@
---- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2017-04-19 19:06:35 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2017-06-05 19:03:08 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
 @@ -4,8 +4,10 @@
  
@@ -11,9 +11,9 @@
  #include <poll.h>
  #include <sys/fcntl.h>
  #include <sys/ioctl.h>
-@@ -21,10 +23,10 @@
- #include "media/capture/video/blob_utils.h"
- #include "media/capture/video/linux/video_capture_device_linux.h"
+@@ -23,10 +25,10 @@
+ 
+ using media::mojom::MeteringMode;
  
 -#if LINUX_VERSION_CODE < KERNEL_VERSION(4, 6, 0)
 +// #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 6, 0)

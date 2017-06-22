@@ -3,7 +3,7 @@
 
 PORTNAME=	GDD
 DISTVERSION=	0.1-13.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,6 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

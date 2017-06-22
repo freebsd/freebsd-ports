@@ -1,6 +1,6 @@
---- third_party/expat/BUILD.gn.orig	2017-04-19 19:06:51 UTC
+--- third_party/expat/BUILD.gn.orig	2017-06-05 19:03:27 UTC
 +++ third_party/expat/BUILD.gn
-@@ -9,7 +9,7 @@ import("//testing/libfuzzer/fuzzer_test.
+@@ -9,7 +9,7 @@ import("//testing/libfuzzer/fuzzer_test.gni")
  # let's not pull it in twice.
  # Chromecast doesn't ship expat as a system library.
  # Libfuzzer and AFL need to build library from sources.

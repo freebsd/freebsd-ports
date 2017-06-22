@@ -1,0 +1,26 @@
+diff --git a/hw/i386/acpi-dsdt.dsl b/hw/i386/acpi-dsdt.dsl
+index a2d84ecf8f..e86d3eb263 100644
+--- a/hw/i386/acpi-dsdt.dsl
++++ b/hw/i386/acpi-dsdt.dsl
+@@ -62,8 +62,6 @@ DefinitionBlock (
+ 
+     Scope(\_SB.PCI0) {
+ 
+-        External(ISA, DeviceObj)
+-
+         Device(ISA) {
+             Name(_ADR, 0x00010000)
+ 
+diff --git a/hw/i386/q35-acpi-dsdt.dsl b/hw/i386/q35-acpi-dsdt.dsl
+index 16eaca3fae..44fa4a9c0c 100644
+--- a/hw/i386/q35-acpi-dsdt.dsl
++++ b/hw/i386/q35-acpi-dsdt.dsl
+@@ -55,8 +55,6 @@ DefinitionBlock (
+             Name(_ADR, 0x00)
+             Name(_UID, 1)
+ 
+-            External(ISA, DeviceObj)
+-
+             // _OSC: based on sample of ACPI3.0b spec
+             Name(SUPP, 0) // PCI _OSC Support Field value
+             Name(CTRL, 0) // PCI _OSC Control Field value

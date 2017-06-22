@@ -3,6 +3,7 @@
 
 PORTNAME=	minqa
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,6 +14,6 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	R-cran-Rcpp>=0.9.10:devel/R-cran-Rcpp
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

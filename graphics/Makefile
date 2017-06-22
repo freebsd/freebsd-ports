@@ -404,6 +404,7 @@
     SUBDIR += kdegraphics4-strigi-analyzer
     SUBDIR += kdegraphics4-svgpart
     SUBDIR += kdegraphics4-thumbnailers
+    SUBDIR += kdiagram
     SUBDIR += kf5-kimageformats
     SUBDIR += kf5-kplotting
     SUBDIR += kf5-prison
@@ -456,6 +457,7 @@
     SUBDIR += kphotoalbum-kde4
     SUBDIR += kpovmodeler
     SUBDIR += kqtquickcharts
+    SUBDIR += krita
     SUBDIR += ksaneplugin
     SUBDIR += ksnapshot
     SUBDIR += kudu
@@ -1048,6 +1050,7 @@
     SUBDIR += uniconvw
     SUBDIR += unpaper
     SUBDIR += urt
+    SUBDIR += vapoursynth-fmtconv
     SUBDIR += vapoursynth-waifu2x-w2xc
     SUBDIR += variety
     SUBDIR += vcg

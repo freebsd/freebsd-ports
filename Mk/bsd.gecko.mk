@@ -139,18 +139,10 @@ MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 
 LDFLAGS+=		-Wl,--as-needed
 
-.if ${MOZILLA_VER:R:R} < 55
-.if ${OPSYS} != DragonFly # XXX xpcshell crash during install
+.if ${MOZILLA_VER:R:R} < 55 && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200032
 # use jemalloc 3.0.0 (4.0 for firefox 43+) API for stats/tuning
-MOZ_EXPORT+=	MOZ_JEMALLOC3=1 MOZ_JEMALLOC4=1
-.if ${OPSYS} != FreeBSD || ${MOZILLA_VER:R:R} >= 37
-. if ${MOZILLA_VER:R:R} >= 48
+MOZ_EXPORT+=	MOZ_JEMALLOC4=1
 MOZ_OPTIONS+=	--enable-jemalloc=4
-.else
-MOZ_OPTIONS+=	--enable-jemalloc
-. endif
-.endif
-.endif # !DragonFly
 .endif # Mozilla < 55
 
 # Standard depends

@@ -1,6 +1,6 @@
---- chromecast/crash/BUILD.gn.orig	2017-04-19 19:06:32 UTC
+--- chromecast/crash/BUILD.gn.orig	2017-06-05 19:03:05 UTC
 +++ chromecast/crash/BUILD.gn
-@@ -78,7 +78,7 @@ source_set("test_support") {
+@@ -79,7 +79,7 @@ source_set("test_support") {
    ]
  }
  

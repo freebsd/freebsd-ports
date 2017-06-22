@@ -1,6 +1,6 @@
---- chrome/test/chromedriver/chrome/chrome_finder.cc.orig	2017-04-19 19:06:31 UTC
+--- chrome/test/chromedriver/chrome/chrome_finder.cc.orig	2017-06-05 19:03:04 UTC
 +++ chrome/test/chromedriver/chrome/chrome_finder.cc
-@@ -45,7 +45,7 @@ void GetApplicationDirs(std::vector<base
+@@ -45,7 +45,7 @@ void GetApplicationDirs(std::vector<base::FilePath>* l
          installation_locations[i].Append(L"Chromium\\Application"));
    }
  }
@@ -9,7 +9,7 @@
  void GetApplicationDirs(std::vector<base::FilePath>* locations) {
    locations->push_back(base::FilePath("/opt/google/chrome"));
    locations->push_back(base::FilePath("/usr/local/bin"));
-@@ -95,7 +95,7 @@ bool FindChrome(base::FilePath* browser_
+@@ -95,7 +95,7 @@ bool FindChrome(base::FilePath* browser_exe) {
  #elif defined(OS_MACOSX)
        base::FilePath("Google Chrome.app/Contents/MacOS/Google Chrome"),
        base::FilePath("Chromium.app/Contents/MacOS/Chromium")

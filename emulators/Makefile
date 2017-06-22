@@ -85,6 +85,7 @@
     SUBDIR += mupen64plus-core
     SUBDIR += mupen64plus-input-sdl
     SUBDIR += mupen64plus-plugins
+    SUBDIR += mupen64plus-qt
     SUBDIR += mupen64plus-rsp-cxd4
     SUBDIR += mupen64plus-rsp-hle
     SUBDIR += mupen64plus-rsp-z64
@@ -130,6 +131,7 @@
     SUBDIR += raine
     SUBDIR += riscv-fesvr
     SUBDIR += riscv-isa-sim
+    SUBDIR += rpcs3
     SUBDIR += rtc
     SUBDIR += rubygem-fission
     SUBDIR += simh

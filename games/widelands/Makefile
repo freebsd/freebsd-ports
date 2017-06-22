@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	widelands
-DISTVERSION=	build18
-PORTREVISION=	11
+DISTVERSION=	build19
 CATEGORIES=	games
-MASTER_SITES=	https://launchpadlibrarian.net/167260749/ \
+MASTER_SITES=	https://launchpad.net/widelands/${DISTVERSION}/${DISTVERSION}/+download/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
@@ -19,19 +18,18 @@ LIB_DEPENDS=	libpng.so:graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 USES=		cmake:outsource compiler:c++11-lib execinfo gettext \
-		lua:51 tar:bzip2 python:build
-CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
-		-DWL_INSTALL_DATADIR="share/widelands" \
+		lua:52 tar:bzip2 python:build
+CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
+		-DWL_INSTALL_DATADIR="${DATADIR}" \
+		-DWL_INSTALL_DOCDIR="${DOCSDIR}" \
 		-DWL_INSTALL_BINDIR="bin" \
 		-DWL_VERSION="${DISTVERSION}" \
-		-DWL_COMPILERFLAG_OPTIMIZATIONS=""
+		-DWL_OPTIMIZE_FLAGS=""
 USE_GL=		glew
-USE_SDL=	sdl mixer image net ttf gfx
+USE_SDL=	sdl2 mixer2 image2 net2 ttf2
 
-PLIST_FILES=	bin/widelands
 PORTDATA=	*
-PLIST_DIRS=	%%DATADIR%%/maps/Desert\ Tournament.wmf/scripting \
-		%%DATADIR%%/maps/Swamp\ Monks.wmf/scripting
+PORTDOCS=	*
 
 DESKTOP_ENTRIES="Widelands" \
 		"" \

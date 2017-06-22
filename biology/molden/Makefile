@@ -19,6 +19,8 @@ LICENSE_PERMS=	auto-accept
 
 RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
 
+BROKEN=		Fails to fetch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 USES=		fortran gmake

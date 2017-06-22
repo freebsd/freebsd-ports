@@ -1,4 +1,4 @@
---- net/tools/get_server_time/get_server_time.cc.orig	2017-04-19 19:06:36 UTC
+--- net/tools/get_server_time/get_server_time.cc.orig	2017-06-05 19:03:10 UTC
 +++ net/tools/get_server_time/get_server_time.cc
 @@ -46,7 +46,7 @@
  
@@ -9,7 +9,7 @@
  #include "net/proxy/proxy_config.h"
  #include "net/proxy/proxy_config_service_fixed.h"
  #endif
-@@ -142,7 +142,7 @@ class PrintingLogObserver : public net::
+@@ -142,7 +142,7 @@ class PrintingLogObserver : public net::NetLog::Thread
  std::unique_ptr<net::URLRequestContext> BuildURLRequestContext(
      net::NetLog* net_log) {
    net::URLRequestContextBuilder builder;

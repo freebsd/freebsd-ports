@@ -383,6 +383,7 @@
     SUBDIR += kmflcomp
     SUBDIR += kn-aspell
     SUBDIR += kompare
+    SUBDIR += kreport
     SUBDIR += ku-aspell
     SUBDIR += ky-aspell
     SUBDIR += l2a
@@ -528,6 +529,7 @@
     SUBDIR += p5-Algorithm-CheckDigits
     SUBDIR += p5-Algorithm-RabinKarp
     SUBDIR += p5-Apache-ParseLog
+    SUBDIR += p5-Apache-Solr
     SUBDIR += p5-BibTeX-Parser
     SUBDIR += p5-Bloom-Filter
     SUBDIR += p5-CAM-PDF
@@ -1415,6 +1417,7 @@
     SUBDIR += resume
     SUBDIR += resume-extensions
     SUBDIR += rfcdiff
+    SUBDIR += ripgrep
     SUBDIR += ripole
     SUBDIR += rl
     SUBDIR += rman
@@ -1639,6 +1642,7 @@
     SUBDIR += sr-hunspell
     SUBDIR += srilm
     SUBDIR += ss-hunspell
+    SUBDIR += ssddiff
     SUBDIR += stardict-dict-fa_IR
     SUBDIR += stardict-dictd_mova
     SUBDIR += stardict-quick

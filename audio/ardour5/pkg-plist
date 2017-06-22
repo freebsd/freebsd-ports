@@ -274,6 +274,7 @@ share/applications/ardour5.desktop
 %%DATADIR%%/midi_maps/midikb_wiimote.map
 %%DATADIR%%/midi_maps/xboard-61.map
 %%DATADIR%%/osc/TTC2.preset
+%%DATADIR%%/osc/basic-touchosc.preset
 %%DATADIR%%/patchfiles/Alesis_DM5.midnam
 %%DATADIR%%/patchfiles/Alesis_NanoBass.midnam
 %%DATADIR%%/patchfiles/Alesis_NanoPiano.midnam

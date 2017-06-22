@@ -6,6 +6,7 @@
     SUBDIR += 3ddesktop
     SUBDIR += 9box
     SUBDIR += 9menu
+    SUBDIR += alacritty
     SUBDIR += alltray
     SUBDIR += altyo
     SUBDIR += antimicro
@@ -66,6 +67,7 @@
     SUBDIR += fireflies
     SUBDIR += fixesproto
     SUBDIR += florence
+    SUBDIR += flruler
     SUBDIR += fluxbg
     SUBDIR += fpc-x11
     SUBDIR += fstobdf
@@ -249,6 +251,7 @@
     SUBDIR += p5-X11-XCB
     SUBDIR += p5-X11-Xlib
     SUBDIR += p5-XTerm-Conf
+    SUBDIR += pantheon-terminal
     SUBDIR += pipeglade
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python

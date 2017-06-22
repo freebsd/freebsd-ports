@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	azure-agent
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.13
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-DISTVERSIONPREFIX= v
 
 MAINTAINER=	honzhan@microsoft.com
-COMMENT=	The Microsoft Azure Linux Agent
+COMMENT=	Microsoft Azure Linux Agent
 
 LICENSE=	APACHE20
 
@@ -23,9 +23,10 @@ USES=		python:2 shebangfix
 SHEBANG_FILES=	bin/waagent bin/waagent2.0
 python_OLD_CMD=	"/usr/bin/env python"
 
-USE_GITHUB=     yes
-GH_ACCOUNT=     Azure
-GH_PROJECT=     WALinuxAgent
+USE_GITHUB=	yes
+GH_ACCOUNT=	Azure
+GH_PROJECT=	WALinuxAgent
+USE_PYTHON=	autoplist distutils
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/sbin/waagent,${PREFIX}/sbin/waagent,g" \
@@ -43,7 +44,7 @@ post-patch:
 		${WRKSRC}/bin/waagent2.0
 	${REINPLACE_CMD} -e "s,/usr/bin/python,${PREFIX}/bin/python,g" \
 		${WRKSRC}/init/waagent.service
-
-USE_PYTHON=	autoplist distutils
+	${REINPLACE_CMD} -e "s,:/usr/local/bin,:/usr/local/bin:/usr/local/sbin,g" \
+		${WRKSRC}/init/freebsd/waagent
 
 .include <bsd.port.mk>

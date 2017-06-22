@@ -1,5 +1,14 @@
---- include/private/gcconfig.h.orig	2016-08-08 20:30:40 UTC
+--- include/private/gcconfig.h.orig	2016-08-02 19:36:14 UTC
 +++ include/private/gcconfig.h
+@@ -176,7 +176,7 @@
+ #      define EWS4800
+ #    endif
+ #    if !defined(LINUX) && !defined(EWS4800) && !defined(NETBSD) \
+-        && !defined(OPENBSD)
++        && !defined(OPENBSD) && !defined(FREEBSD)
+ #      if defined(ultrix) || defined(__ultrix)
+ #        define ULTRIX
+ #      else
 @@ -2745,11 +2745,6 @@
  # define SUNOS5SIGS
  #endif

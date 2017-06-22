@@ -3,6 +3,7 @@
 
 PORTNAME=	rjson
 PORTVERSION=	0.2.15
+PORTREVISION=	1
 CATEGORIES=	converters
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,6 +12,6 @@ COMMENT=	JSON for R
 
 LICENSE=	GPLv2
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

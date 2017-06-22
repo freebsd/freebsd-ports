@@ -3,6 +3,7 @@
 PORTNAME=	influxdb
 PORTVERSION=	1.2.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	cheffo@freebsd-bg.org
@@ -11,6 +12,15 @@ COMMENT=	Open-source distributed time series database
 LICENSE=	MIT
 
 BUILD_DEPENDS=	go>=1.5.0:lang/go
+
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto \
+		asciidoc:textproc/asciidoc \
+		docbook-xml>0:textproc/docbook-xml
+MANPAGES_USES=	gmake
+OPTIONS_SUB=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 
@@ -83,6 +93,9 @@ do-build:
 		@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT} && \
 			${SETENV} GOPATH=${WRKSRC} go install -ldflags "-X main.version=${DISTVERSION}" ./...
 
+do-build-MANPAGES-on:
+		@cd ${WRKSRC}/src/github.com/influxdata/influxdb/man && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
+
 do-install:
 		${MKDIR} ${STAGEDIR}${INFLUXD_DBDIR} \
 		${STAGEDIR}${INFLUXD_PIDDIR} \
@@ -97,5 +110,12 @@ do-install:
 		${INSTALL_DATA} \
 			${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT}/etc/config.sample.toml  \
 			${STAGEDIR}${PREFIX}/etc/influxd.conf.sample
+
+do-install-MANPAGES-on:
+.for i in influx.1 influx_inspect.1 influx_stress.1 influx_tsm.1 \
+	influxd-backup.1 influxd-config.1 influxd-restore.1 \
+	influxd-run.1 influxd-version.1 influxd.1
+		${INSTALL_MAN} ${WRKSRC}/src/github.com/influxdata/influxdb/man/$i ${STAGEDIR}${MAN8PREFIX}/man/man1
+.endfor
 
 .include <bsd.port.mk>

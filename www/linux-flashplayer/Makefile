@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flashplayer
-PORTVERSION=	25.0.0.171
+PORTVERSION=	26.0.0.131
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-

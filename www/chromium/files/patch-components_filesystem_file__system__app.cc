@@ -1,6 +1,6 @@
---- components/filesystem/file_system_app.cc.orig	2017-05-02 19:02:50 UTC
+--- components/filesystem/file_system_app.cc.orig	2017-06-05 19:03:05 UTC
 +++ components/filesystem/file_system_app.cc
-@@ -23,7 +23,7 @@
+@@ -22,7 +22,7 @@
  #elif defined(OS_ANDROID)
  #include "base/base_paths_android.h"
  #include "base/path_service.h"
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #elif defined(OS_MACOSX)
-@@ -75,7 +75,7 @@ base::FilePath FileSystemApp::GetUserDat
+@@ -78,7 +78,7 @@ base::FilePath FileSystemApp::GetUserDataDir() {
      CHECK(PathService::Get(base::DIR_APP_DATA, &path));
  #elif defined(OS_ANDROID)
      CHECK(PathService::Get(base::DIR_ANDROID_APP_DATA, &path));

@@ -1,6 +1,6 @@
---- chrome/browser/diagnostics/diagnostics_writer.cc.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/diagnostics/diagnostics_writer.cc.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/diagnostics/diagnostics_writer.cc
-@@ -263,7 +263,7 @@ bool DiagnosticsWriter::WriteResult(bool
+@@ -263,7 +263,7 @@ bool DiagnosticsWriter::WriteResult(bool success,
        console_->SetColor(color);
        console_->Write(base::ASCIIToUTF16(result));
      }

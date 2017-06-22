@@ -1,98 +1,74 @@
 # $FreeBSD$
 
+# TODO (when these parts are available in KF5):
+#  - add calendarcore to USE_KDE when KDE PIM is available
+#  - add libOkular5Core.so:graphics/okular to LIB_DEPENDS
+#
 PORTNAME=	calligra
-PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVISION=	11
+PORTVERSION=	3.0.1
 CATEGORIES=	editors kde
-MASTER_SITES=	KDE/${CALLIGRA_BRANCH}/${PORTNAME}-${PORTVERSION}/
-DIST_SUBDIR=	KDE/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
+DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE graphic art and office suite
+COMMENT=	KDE office suite
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libIlmImf.so:graphics/OpenEXR \
+LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+		libImath-2_2.so:graphics/ilmbase \
+		libKPropertyCore3.so:x11-toolkits/kproperty \
+		libKReport3.so:textproc/kreport \
 		libboost_thread.so:devel/boost-libs \
-		libqca.so:devel/qca \
-		libexiv2.so:graphics/exiv2 \
-		liblcms2.so:graphics/lcms2 \
+		libetonyek-0.1.so:graphics/libetonyek01 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libgsl.so:math/gsl \
+		liblcms2.so:graphics/lcms2 \
+		libKGantt.so:graphics/kdiagram \
+		libodfgen-0.1.so:textproc/libodfgen01 \
+		libopenjpeg.so:graphics/openjpeg15 \
+		libpng.so:graphics/png \
+		libpoppler-qt5.so:graphics/poppler-qt5 \
+		libpoppler.so:graphics/poppler \
+		libqca-qt5.so:devel/qca-qt5 \
+		librevenge-0.0.so:textproc/librevenge \
+		libtiff.so:graphics/tiff \
+		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwpg-0.3.so:graphics/libwpg03 \
-		libpoppler-qt4.so:graphics/poppler-qt4 \
-		libopenjpeg.so:graphics/openjpeg15 \
-		libfftw3.so:math/fftw3 \
-		libtiff.so:graphics/tiff \
-		libgsl.so:math/gsl \
-		libwps-0.3.so:textproc/libwps03 \
-		libvisio-0.1.so:textproc/libvisio01 \
-		libOpenColorIO.so:graphics/opencolorio \
-		libodfgen-0.1.so:textproc/libodfgen01 \
-		libetonyek-0.1.so:graphics/libetonyek01 \
-		librevenge-0.0.so:textproc/librevenge
+		libwps-0.3.so:textproc/libwps03
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen3.pc:math/eigen3 \
 		pstoedit:graphics/pstoedit
 RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
-USE_GL=		glew
-USE_GNOME=	glib20 libxml2 libxslt
-USE_KDE=	kactivities kdelibs libkdcraw \
-		okular pimlibs attica automoc4 soprano
-USE_QT4=	corelib dbus designer_build gui opengl phonon \
-		qtestlib_build script sql svg webkit xml \
-		moc_build qmake_build rcc_build uic_build
-USES=		cmake:outsource cpe compiler:c++11-lang iconv:translit jpeg \
-		kde:4 perl5 pkgconfig shared-mime-info sqlite tar:xz
-CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
-		-DPRODUCTSET:STRING="DESKTOP"
+USES=		cmake:outsource cpe compiler:c++11-lib desktop-file-utils \
+		gettext iconv:translit jpeg kde:5 localbase:ldflags perl5 pkgconfig \
+		shared-mime-info sqlite tar:xz
+USE_KDE=	activities archive auth bookmarks codecs completion config \
+		configwidgets coreaddons crash dbusaddons doctools ecm \
+		emoticons guiaddons i18n iconthemes init itemmodels itemviews \
+		jobwidgets js kcmutils kdelibs4support khtml kio \
+		kross notifications notifyconfig parts service solid sonnet \
+		texteditor textwidgets threadweaver unitconversion wallet \
+		widgetsaddons windowsystem xmlgui
+USE_QT5=	buildtools_build core dbus gui network opengl \
+		phonon4 printsupport qmake_build qml \
+		quick script sql svg testlib webkit widgets x11extras xml
+USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
 
-PLIST_SUB+=     SHLIB_VER=14.0.0 \
-                SHLIB_SHVER=14
+CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
+		-DPRODUCTSET:STRING="DESKTOP"
 
-OPTIONS_DEFINE=	GMIC MARBLE MYSQL PGSQL SYBASE
-OPTIONS_DEFAULT=MARBLE MYSQL PGSQL
-OPTIONS_SUB=	yes
+# Requested by upstream, to not include unfinished modules
+CMAKE_ARGS+=	-DRELEASE_BUILD:BOOL=TRUE
+# Performance increase according to README.PACKAGERS
+CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS="-DKDE_NO_DEBUG_OUTPUT"
 
-# GMIC does not mix well with clang as compiler. It needs >20GB of memory to be
-# built, which is not sensible on most systems
-# See bug report: https://llvm.org/bugs/show_bug.cgi?id=22199
-GMIC_DESC=	Build the G'Mic plugin (needs lots and lots of RAM)
-GMIC_CMAKE_ON=	-DWITH_GMIC:BOOL=ON
-GMIC_CMAKE_OFF=	-DWITH_GMIC:BOOL=OFF
+# Disable KDE Pim support
+CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_KF5Akonadi:BOOL=FALSE \
+		-DCMAKE_DISABLE_FIND_PACKAGE_KF5AkonadiContact:BOOL=FALSE
 
-MARBLE_DESC=	World globe widget support via Marble
-MARBLE_USE=	KDE=marble
-MARBLE_CMAKE_OFF=-DWITH_Marble:BOOL=FALSE
-
-MYSQL_DESC=	MySQL database support in Kexi
-MYSQL_USE=	MYSQL=yes
-MYSQL_CMAKE_OFF=-DWITH_MySQL:BOOL=FALSE
-
-PGSQL_DESC=	PostgreSQL database support in Kexi
-PGSQL_LIB_DEPENDS=libpqxx-3.1.so:databases/postgresql-libpqxx3
-PGSQL_USES=	pgsql
-PGSQL_CMAKE_OFF=-DWITH_PostgreSQL:BOOL=FALSE
-
-SYBASE_DESC=	Sybase database support in Kexi
-SYBASE_LIB_DEPENDS=libsybdb.so:databases/freetds
-SYBASE_CMAKE_OFF=-DWITH_FreeTDS:BOOL=FALSE
-
-post-patch:
-# They require memalign() to build; as they're not installed, they're just a
-# waste of CPU cycles.
-	@${REINPLACE_CMD} -e '/add_subdirectory.*benchmarks/ d' \
-		${PATCH_WRKSRC}/krita/CMakeLists.txt
-# Prevent updating MIME during build/install.
-	@${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
-		${PATCH_WRKSRC}/filters/libmsooxml/CMakeLists.txt \
-		${PATCH_WRKSRC}/filters/plan/mpxj/import/CMakeLists.txt \
-		${PATCH_WRKSRC}/filters/stage/keynote/import/CMakeLists.txt \
-		${PATCH_WRKSRC}/filters/words/wiki/CMakeLists.txt \
-		${PATCH_WRKSRC}/krita/data/CMakeLists.txt \
-		${PATCH_WRKSRC}/krita/plugins/formats/ora/CMakeLists.txt \
-		${PATCH_WRKSRC}/krita/plugins/formats/ora/CMakeLists.txt \
-		${PATCH_WRKSRC}/plugins/vectorshape/CMakeLists.txt
+PLIST_SUB+=	SHLIB_VER=15.0.0
 
 .include <bsd.port.mk>

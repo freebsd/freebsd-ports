@@ -1,6 +1,6 @@
---- base/process/launch.cc.orig	2017-04-19 19:06:28 UTC
+--- base/process/launch.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/process/launch.cc
-@@ -15,7 +15,7 @@ LaunchOptions::~LaunchOptions() = defaul
+@@ -15,7 +15,7 @@ LaunchOptions::~LaunchOptions() = default;
  
  LaunchOptions LaunchOptionsForTest() {
    LaunchOptions options;

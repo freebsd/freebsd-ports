@@ -1,6 +1,6 @@
---- content/common/content_switches_internal.cc.orig	2017-04-19 19:06:33 UTC
+--- content/common/content_switches_internal.cc.orig	2017-06-05 19:03:07 UTC
 +++ content/common/content_switches_internal.cc
-@@ -27,7 +27,7 @@ const base::Feature kUseZoomForDsfEnable
+@@ -27,7 +27,7 @@ const base::Feature kUseZoomForDsfEnabledByDefault {
  #endif
  
  bool IsUseZoomForDSFEnabledByDefault() {
