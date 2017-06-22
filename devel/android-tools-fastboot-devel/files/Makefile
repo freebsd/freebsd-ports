@@ -4,7 +4,7 @@ PROG_CXX=fastboot
 BINDIR?=/usr/bin
 FILESDIR?=${DOCDIR}/${PROG}
 
-FILES=	*.[Tt][Xx][Tt]
+FILES=	*.md
 
 SRCS+=	bootimg_utils.cpp
 SRCS+=	engine.cpp
