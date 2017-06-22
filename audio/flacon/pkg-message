@@ -4,6 +4,6 @@
 
 		audio/faac		audio/flac
 		audio/lame		audio/mac
-		audio/mp3gain		audio/shntool
+		audio/mp3gain		audio/opus-tools
 		audio/tta		audio/vorbisgain
 		audio/vorbis-tools	audio/wavpack
