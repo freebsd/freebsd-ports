@@ -317,6 +317,7 @@
     SUBDIR += octave-forge-base
     SUBDIR += octave-forge-bim
     SUBDIR += octave-forge-bioinfo
+    SUBDIR += octave-forge-bsltl
     SUBDIR += octave-forge-cgi
     SUBDIR += octave-forge-civil-engineering
     SUBDIR += octave-forge-communications
