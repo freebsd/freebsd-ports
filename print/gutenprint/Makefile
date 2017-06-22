@@ -4,7 +4,7 @@
 
 PORTNAME=	gutenprint
 PORTVERSION=	5.2.12
-PORTREVISION?=	1	# also print/gimp-gutenprint
+PORTREVISION?=	2	# also print/gimp-gutenprint
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 
@@ -19,7 +19,7 @@ CONFLICTS=	gimp-print-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --enable-simplified-cups-ppds DLOPEN_LIBS=" "
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool pathfix perl5 pkgconfig tar:bzip2
 
 .if !defined(GUT_SLAVE)
 LIB_DEPENDS+=	libcupsimage.so:print/cups
