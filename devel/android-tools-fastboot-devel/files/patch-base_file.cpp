@@ -15,7 +15,7 @@
  #if defined(__APPLE__)
  #include <mach-o/dyld.h>
  #endif
-+#if defined(__DragonFly__) || defined(__FreeBSD__)
++#if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__)
 +#include <sys/sysctl.h>
 +#endif
  #if defined(_WIN32)
