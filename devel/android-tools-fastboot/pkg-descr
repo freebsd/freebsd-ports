@@ -1,6 +1,3 @@
 Fastboot protocol is a mechanism for communicating with bootloaders
-over USB or Ethernet. It is designed to be very straightforward to
-implement, to allow it to be used across a wide range of devices and
-from hosts running Linux, macOS, or Windows.
-
-WWW: https://android.googlesource.com/platform/system/core/+/master/fastboot/README.md
+over USB or Ethernet. The provided command line tool can be used
+to flash filesystems on Android-powered devices.
