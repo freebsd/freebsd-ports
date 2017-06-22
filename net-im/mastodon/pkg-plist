@@ -366,6 +366,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/controllers/oauth/authorizations_controller.rb
 %%WWWDIR%%/app/controllers/oauth/authorized_applications_controller.rb
 %%WWWDIR%%/app/controllers/remote_follow_controller.rb
+%%WWWDIR%%/app/controllers/settings/deletes_controller.rb
 %%WWWDIR%%/app/controllers/settings/exports/blocked_accounts_controller.rb
 %%WWWDIR%%/app/controllers/settings/exports/following_accounts_controller.rb
 %%WWWDIR%%/app/controllers/settings/exports/muted_accounts_controller.rb
@@ -743,6 +744,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/models/feed.rb
 %%WWWDIR%%/app/models/follow.rb
 %%WWWDIR%%/app/models/follow_request.rb
+%%WWWDIR%%/app/models/form/delete_confirmation.rb
 %%WWWDIR%%/app/models/form/two_factor_confirmation.rb
 %%WWWDIR%%/app/models/import.rb
 %%WWWDIR%%/app/models/instance.rb
@@ -769,6 +771,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/services/after_block_service.rb
 %%WWWDIR%%/app/services/authorize_follow_service.rb
 %%WWWDIR%%/app/services/base_service.rb
+%%WWWDIR%%/app/services/batched_remove_status_service.rb
 %%WWWDIR%%/app/services/block_domain_from_account_service.rb
 %%WWWDIR%%/app/services/block_domain_service.rb
 %%WWWDIR%%/app/services/block_service.rb
@@ -781,7 +784,6 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/services/fetch_remote_account_service.rb
 %%WWWDIR%%/app/services/fetch_remote_resource_service.rb
 %%WWWDIR%%/app/services/fetch_remote_status_service.rb
-%%WWWDIR%%/app/services/follow_remote_account_service.rb
 %%WWWDIR%%/app/services/follow_service.rb
 %%WWWDIR%%/app/services/mute_service.rb
 %%WWWDIR%%/app/services/notify_service.rb
@@ -796,6 +798,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/services/reblog_service.rb
 %%WWWDIR%%/app/services/reject_follow_service.rb
 %%WWWDIR%%/app/services/remove_status_service.rb
+%%WWWDIR%%/app/services/resolve_remote_account_service.rb
 %%WWWDIR%%/app/services/search_service.rb
 %%WWWDIR%%/app/services/send_interaction_service.rb
 %%WWWDIR%%/app/services/subscribe_service.rb
@@ -932,6 +935,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/views/oauth/authorizations/show.html.haml
 %%WWWDIR%%/app/views/oauth/authorized_applications/index.html.haml
 %%WWWDIR%%/app/views/remote_follow/new.html.haml
+%%WWWDIR%%/app/views/settings/deletes/show.html.haml
 %%WWWDIR%%/app/views/settings/exports/show.html.haml
 %%WWWDIR%%/app/views/settings/follower_domains/show.html.haml
 %%WWWDIR%%/app/views/settings/imports/show.html.haml
@@ -1274,18 +1278,16 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/config/sidekiq.yml
 %%WWWDIR%%/config/webpack/configuration.js
 %%WWWDIR%%/config/webpack/development.js
-%%WWWDIR%%/config/webpack/development.server.js
-%%WWWDIR%%/config/webpack/development.server.yml
 %%WWWDIR%%/config/webpack/generateLocalePacks.js
 %%WWWDIR%%/config/webpack/loaders/assets.js
 %%WWWDIR%%/config/webpack/loaders/babel.js
 %%WWWDIR%%/config/webpack/loaders/mark.js
 %%WWWDIR%%/config/webpack/loaders/sass.js
-%%WWWDIR%%/config/webpack/paths.yml
 %%WWWDIR%%/config/webpack/production.js
 %%WWWDIR%%/config/webpack/shared.js
 %%WWWDIR%%/config/webpack/test.js
 %%WWWDIR%%/config/webpack/translationRunner.js
+%%WWWDIR%%/config/webpacker.yml
 %%WWWDIR%%/db/migrate/20160220174730_create_accounts.rb
 %%WWWDIR%%/db/migrate/20160220211917_create_statuses.rb
 %%WWWDIR%%/db/migrate/20160221003140_create_users.rb
@@ -5173,6 +5175,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/controllers/oauth/authorizations_controller_spec.rb
 %%WWWDIR%%/spec/controllers/oauth/authorized_applications_controller_spec.rb
 %%WWWDIR%%/spec/controllers/remote_follow_controller_spec.rb
+%%WWWDIR%%/spec/controllers/settings/deletes_controller_spec.rb
 %%WWWDIR%%/spec/controllers/settings/exports/blocked_accounts_controller_spec.rb
 %%WWWDIR%%/spec/controllers/settings/exports/following_accounts_controller_spec.rb
 %%WWWDIR%%/spec/controllers/settings/exports/muted_accounts_controller_spec.rb
@@ -5272,6 +5275,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/lib/webfinger_resource_spec.rb
 %%WWWDIR%%/spec/mailers/notification_mailer_spec.rb
 %%WWWDIR%%/spec/mailers/previews/notification_mailer_preview.rb
+%%WWWDIR%%/spec/mailers/user_mailer_spec.rb
 %%WWWDIR%%/spec/models/account_domain_block_spec.rb
 %%WWWDIR%%/spec/models/account_filter_spec.rb
 %%WWWDIR%%/spec/models/account_spec.rb
@@ -5315,6 +5319,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/services/account_search_service_spec.rb
 %%WWWDIR%%/spec/services/after_block_service_spec.rb
 %%WWWDIR%%/spec/services/authorize_follow_service_spec.rb
+%%WWWDIR%%/spec/services/batched_remove_status_service_spec.rb
 %%WWWDIR%%/spec/services/block_domain_from_account_service_spec.rb
 %%WWWDIR%%/spec/services/block_domain_service_spec.rb
 %%WWWDIR%%/spec/services/block_service_spec.rb
@@ -5325,7 +5330,6 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/services/fetch_remote_account_service_spec.rb
 %%WWWDIR%%/spec/services/fetch_remote_resource_service_spec.rb
 %%WWWDIR%%/spec/services/fetch_remote_status_service_spec.rb
-%%WWWDIR%%/spec/services/follow_remote_account_service_spec.rb
 %%WWWDIR%%/spec/services/follow_service_spec.rb
 %%WWWDIR%%/spec/services/mute_service_spec.rb
 %%WWWDIR%%/spec/services/notify_service_spec.rb
@@ -5339,6 +5343,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/services/reblog_service_spec.rb
 %%WWWDIR%%/spec/services/reject_follow_service_spec.rb
 %%WWWDIR%%/spec/services/remove_status_service_spec.rb
+%%WWWDIR%%/spec/services/resolve_remote_account_service_spec.rb
 %%WWWDIR%%/spec/services/search_service_spec.rb
 %%WWWDIR%%/spec/services/send_interaction_service_spec.rb
 %%WWWDIR%%/spec/services/subscribe_service_spec.rb
@@ -5392,6 +5397,5 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/bin/update
 %%WWWDIR%%/bin/webpack
 %%WWWDIR%%/bin/webpack-dev-server
-%%WWWDIR%%/bin/yarn
 @owner root
 @group wheel
