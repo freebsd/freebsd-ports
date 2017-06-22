@@ -1,16 +1,6 @@
---- imap/sync_support.c.orig	2017-04-20 01:56:00 UTC
+--- imap/sync_support.c.orig	2017-06-22 03:05:45 UTC
 +++ imap/sync_support.c
-@@ -60,7 +60,9 @@
- #include <limits.h>
- 
- #include "assert.h"
-+#ifdef USE_CALALARMD
- #include "caldav_alarm.h"
-+#endif
- #include "global.h"
- #include "imap_proxy.h"
- #include "mboxlist.h"
-@@ -3479,7 +3481,7 @@ int sync_apply_message(struct dlist *kin
+@@ -3491,7 +3491,7 @@ int sync_apply_message(struct dlist *kin
          const char *fname;
  
          /* XXX - complain more? */
@@ -19,7 +9,7 @@
              continue;
  
          part_list = sync_reserve_partlist(reserve_list, part);
-@@ -4534,7 +4536,7 @@ static int fetch_file(struct mailbox *ma
+@@ -4546,7 +4546,7 @@ static int fetch_file(struct mailbox *ma
          return r;
      }
  
