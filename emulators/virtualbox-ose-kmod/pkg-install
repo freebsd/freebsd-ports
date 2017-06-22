@@ -9,5 +9,9 @@ case $2 in
 	POST-INSTALL) # Enable loading the VirtualBox Driver
 		sysrc -f /etc/rc.conf kldload_vbox="vboxdrv"
 		sysrc -f /etc/rc.conf vboxnet_enable="YES"
+		kldload vboxdrv
+		service vboxnet start
+		rc-update add vboxnet default
+		exit 0
 		;;
 esac
