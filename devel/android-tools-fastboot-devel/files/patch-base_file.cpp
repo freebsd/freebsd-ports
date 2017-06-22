@@ -21,7 +21,7 @@
  #if defined(_WIN32)
  #include <windows.h>
  #define O_CLOEXEC O_NOINHERIT
-@@ -251,6 +257,17 @@ std::string GetExecutablePath() {
+@@ -251,6 +258,23 @@ std::string GetExecutablePath() {
    if (result == 0 || result == sizeof(path) - 1) return "";
    path[PATH_MAX - 1] = 0;
    return path;
@@ -30,9 +30,15 @@
 +  size_t path_len = sizeof(path);
 +  int mib[] = {
 +    CTL_KERN,
++#if defined(__NetBSD__)
++    KERN_PROC_ARGS,
++    -1,
++    KERN_PROC_PATHNAME,
++#else
 +    KERN_PROC,
 +    KERN_PROC_PATHNAME,
-+    getpid()
++    -1,
++#endif
 +  };
 +  int rc = sysctl(mib, arraysize(mib), path, &path_len, NULL, 0);
 +  return rc ? "" : path;
