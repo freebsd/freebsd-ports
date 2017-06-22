@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Utility and library for computing and checking of file hashes
 
+USE_HARDENING=	nopie norelro
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
