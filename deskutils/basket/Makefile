@@ -3,7 +3,7 @@
 
 PORTNAME=	basket
 PORTVERSION=	1.81
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://basket.kde.org/downloads/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 USES=		cmake gettext-tools kde:4 tar:bzip2
 USE_XORG=	xft xpm
-USE_KDE=	automoc4 pimlibs qimageblitz
+USE_KDE=	automoc4 kdelibs qimageblitz
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
