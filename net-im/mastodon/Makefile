@@ -2,7 +2,7 @@
 
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.4
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -71,7 +71,7 @@ RUN_DEPENDS+=	rubygem-addressable>0:www/rubygem-addressable \
 		rubygem-statsd-instrument>0:devel/rubygem-statsd-instrument \
 		rubygem-twitter-text>0:textproc/rubygem-twitter-text \
 		rubygem-tzinfo-data>0:devel/rubygem-tzinfo-data \
-		rubygem-webpacker1-rails5>0:devel/rubygem-webpacker1-rails5
+		rubygem-webpacker-rails5>0:devel/rubygem-webpacker-rails5
 
 RUN_DEPENDS+=	rubygem-lograge-rails5>0:www/rubygem-lograge-rails5 \
 		rubygem-redis-rails-rails5>0:www/rubygem-redis-rails-rails5
