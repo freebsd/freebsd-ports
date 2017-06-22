@@ -1,4 +1,6 @@
-Fastboot is a diagnostic protocol primarily used to update the flash
-filesystem of Android devices over USB.
+Fastboot protocol is a mechanism for communicating with bootloaders
+over USB or Ethernet. It is designed to be very straightforward to
+implement, to allow it to be used across a wide range of devices and
+from hosts running Linux, macOS, or Windows.
 
-This package provides the fastboot command-line tool.
+WWW: https://android.googlesource.com/platform/system/core/+/master/fastboot/README.md

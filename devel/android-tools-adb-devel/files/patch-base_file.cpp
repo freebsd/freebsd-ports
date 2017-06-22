@@ -1,11 +1,12 @@
 --- base/file.cpp.orig	2017-06-20 10:50:27 UTC
 +++ base/file.cpp
-@@ -19,6 +19,9 @@
+@@ -19,6 +19,10 @@
  #include <errno.h>
  #include <fcntl.h>
  #include <libgen.h>
 +#include <limits.h> // PATH_MAX
 +#include <stdio.h> // BUFSIZ
++#include <stdlib.h> // realpath
 +#include <string.h> // strerror
  #include <sys/stat.h>
  #include <sys/types.h>
