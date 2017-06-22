@@ -14,6 +14,7 @@ COMMENT=	Provides zlib functionality in an iostream
 LICENSE=	LGPL21
 
 USES=		tar:tgz
+USE_HARDENING=	nopie norelro
 
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
