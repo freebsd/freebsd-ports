@@ -1,0 +1,41 @@
+#!/sbin/openrc-run
+
+# Also additional flags can be specified:
+#
+#ipacctd_flags="-v"
+#
+# See ipacctd(8) for flags.
+#
+# Enumerate all accounted interfaces in "ipacctd_rules":
+#
+#ipacctd_rules="xl0"
+#
+# ...and add related required "ipacctd_rule_*_flags"
+# and optional "ipacctd_rule_*_pid" (equal to "/var/run/ipacctd.*" by default)
+#
+#ipacctd_rule_xl0_flags="-p 666"
+#ipacctd_rule_xl0_pid="/var/run/ipacctd.xl0"
+
+name="ipacctd"
+
+command="%%PREFIX%%/sbin/ipacctd"
+
+start() {
+	for rule in ${ipacctd_rules}; do
+		debug "start ipacctd rule ${rule}"
+		local rule_flags
+
+		eval pidfile=\${ipacctd_rule_${rule}_pid:-"/var/run/ipacctd.${rule}"}
+		eval rule_flags=\$ipacctd_rule_${rule}_flags
+		if [ -z "$rule_flags" ]; then
+			echo " you must define flags for ipacctd rule '${rule}'"
+			exit 1
+		fi
+		$command ${ipacctd_flags} $rule_flags -r $pidfile
+	done
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

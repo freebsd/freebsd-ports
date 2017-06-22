@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# You can define flags for cdpd running. See cdpd(8) for details.
+#
+# Example:
+# cdpd_flags="-i em0"
+#
+# Default flags: -a
+
+name=cdpd
+
+# set defaults
+cdpd_flags=${cdpd_flags:-"-a"}
+
+command=%%PREFIX%%/sbin/$name
+command_args=${cdpd_flags}
+
+depend() {
+	use net
+	keyword -shutdown
+}

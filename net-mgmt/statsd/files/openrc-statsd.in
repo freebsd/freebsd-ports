@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable mysql:
+# statsd_config (str):	Default to "%%PREFIX%%/etc/statsd.js"
+#			Statsd configuration file.
+# statsd_user (str):	Default to "statsd".
+#			User to run as.
+
+name=statsd
+
+# set defaults
+: ${statsd_config="%%PREFIX%%/etc/statsd.js"}
+: ${statsd_user="%%USERS%%"}
+
+pidfile="/var/run/statsd/${name}.pid"
+required_files="${statsd_config}"
+
+command="%%PREFIX%%/bin/node" 
+command_args="%%DATADIR%%/stats.js ${statsd_config}"
+supervisor=supervise-daemon
+
+start_pre() {
+	install -d -o statsd -g statsd ${pidfile%/*}
+}
+
+depend() {
+	need localmount
+	use net
+	keyword -shutdown
+	after bootmisc
+}

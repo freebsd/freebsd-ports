@@ -1,0 +1,51 @@
+#!/sbin/openrc-run
+
+# $ipv6mon_interfaces:
+#	If specified, multiple instances of ipv6mon are invoked.
+#	Configuration files for each interfaces are automatically
+#	generated from %%PREFIX%%/etc/ipv6mon.conf.
+#
+#	Example:
+#		ipv6mon_interfaces="bge0 bge1"
+#
+#	An interface can be specified in a command line argument.  If
+#	not specified, the action is applied to all of the interfaces.
+#
+#		# service ipv6mon start bge0
+#
+
+name="ipv6mon"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+start_pre() {
+	for ifn in $ipv6mon_interfaces; do
+		(grep -v "LockFile=\|AddressLogFile=\|NetworkInterface=" \
+		    %%PREFIX%%/etc/${name}.conf
+		    echo "NetworkInterface=${ifn}"
+		    echo "LockFile=/var/run/${name}-${ifn}.pid"
+		    echo "AddressLogFile=/var/log/${name}-${ifn}.log"
+		) > "/var/run/${name}-${ifn}.conf"
+	done
+}
+
+start() {
+	case ${2:-$ipv6mon_interfaces} in
+	"")	
+		pidfile="/var/run/${name}.pid"
+		$command
+	;;
+	*)
+		for ifn in ${2:-$ipv6mon_interfaces}; do
+			pidfile="/var/run/${name}${ifn:+-}${ifn}.pid"
+			command_args="$command_args \
+				-c /var/run/${name}${ifn:+-}${ifn}.conf"
+			$command $command_args
+		done
+	;;
+	esac
+}
+
+depend() {
+	keyword -shutdown -jail
+}

@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name=semaphore
+
+: ${semaphore_config="%%PREFIX%%/etc/semaphore/semaphore_config.json"}
+
+export PATH=${PATH}:%%PREFIX%%/bin
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/semaphore"
+command_args="-config \"${semaphore_config}\""
+supervisor=supervise-daemon
+
+depend() {
+	need mysql
+	keyword -shutdown
+}
