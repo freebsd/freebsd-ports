@@ -139,6 +139,7 @@ lib/libcyrus_min.so.0.0.0
 lib/libcyrus_sieve.so
 lib/libcyrus_sieve.so.0
 lib/libcyrus_sieve.so.0.0.0
+%%SITE_PERL%%/Cyrus/Annotator/AnnotateInlinedCIDs.pm
 %%SITE_PERL%%/Cyrus/Annotator/Daemon.pm
 %%SITE_PERL%%/Cyrus/Annotator/Message.pm
 %%SITE_ARCH%%/Cyrus/IMAP.pm
