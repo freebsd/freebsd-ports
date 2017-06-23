@@ -1,24 +1,24 @@
---- third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp.orig	2017-04-19 19:06:50 UTC
+--- third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp.orig	2017-06-05 19:03:26 UTC
 +++ third_party/WebKit/Source/platform/fonts/SimpleFontData.cpp
 @@ -50,7 +50,7 @@ namespace blink {
- const float smallCapsFontSizeMultiplier = 0.7f;
- const float emphasisMarkFontSizeMultiplier = 0.5f;
+ const float kSmallCapsFontSizeMultiplier = 0.7f;
+ const float kEmphasisMarkFontSizeMultiplier = 0.5f;
  
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(BSD)
  // This is the largest VDMX table which we'll try to load and parse.
- static const size_t maxVDMXTableSize = 1024 * 1024;  // 1 MB
+ static const size_t kMaxVDMXTableSize = 1024 * 1024;  // 1 MB
  #endif
-@@ -109,7 +109,7 @@ void SimpleFontData::platformInit(bool s
-   int vdmxAscent = 0, vdmxDescent = 0;
-   bool isVDMXValid = false;
+@@ -105,7 +105,7 @@ void SimpleFontData::PlatformInit(bool subpixel_ascent
+   int vdmx_ascent = 0, vdmx_descent = 0;
+   bool is_vdmx_valid = false;
  
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(BSD)
    // Manually digging up VDMX metrics is only applicable when bytecode hinting
    // using FreeType.  With DirectWrite or CoreText, no bytecode hinting is ever
    // done.  This code should be pushed into FreeType (hinted font metrics).
-@@ -157,7 +157,7 @@ void SimpleFontData::platformInit(bool s
+@@ -154,7 +154,7 @@ void SimpleFontData::PlatformInit(bool subpixel_ascent
        visual_overflow_inflation_for_ascent_ = 1;
      if (descent < metrics.fDescent) {
        visual_overflow_inflation_for_descent_ = 1;

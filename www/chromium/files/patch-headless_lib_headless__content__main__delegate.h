@@ -1,6 +1,6 @@
---- headless/lib/headless_content_main_delegate.h.orig	2017-05-09 19:02:47 UTC
+--- headless/lib/headless_content_main_delegate.h.orig	2017-06-05 19:03:08 UTC
 +++ headless/lib/headless_content_main_delegate.h
-@@ -39,7 +39,7 @@ class HeadlessContentMainDelegate : publ
+@@ -44,7 +44,7 @@ class HEADLESS_EXPORT HeadlessContentMainDelegate
  
    HeadlessBrowserImpl* browser() const { return browser_.get(); }
  

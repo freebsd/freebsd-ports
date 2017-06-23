@@ -1,6 +1,6 @@
---- remoting/host/host_details.cc.orig	2017-05-09 19:02:49 UTC
+--- remoting/host/host_details.cc.orig	2017-06-05 19:03:10 UTC
 +++ remoting/host/host_details.cc
-@@ -26,6 +26,8 @@ std::string GetHostOperatingSystemName()
+@@ -26,6 +26,8 @@ std::string GetHostOperatingSystemName() {
    return "Linux";
  #elif defined(OS_ANDROID)
    return "Android";

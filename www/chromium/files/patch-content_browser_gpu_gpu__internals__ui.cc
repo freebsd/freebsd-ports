@@ -1,4 +1,4 @@
---- content/browser/gpu/gpu_internals_ui.cc.orig	2017-04-19 19:06:33 UTC
+--- content/browser/gpu/gpu_internals_ui.cc.orig	2017-06-05 19:03:07 UTC
 +++ content/browser/gpu/gpu_internals_ui.cc
 @@ -43,7 +43,7 @@
  #include "third_party/skia/include/core/SkMilestone.h"
@@ -18,7 +18,7 @@
  #include "ui/base/x/x11_util.h"       // nogncheck
  #include "ui/gfx/x/x11_atom_cache.h"  // nogncheck
  #endif
-@@ -204,7 +204,7 @@ base::DictionaryValue* GpuInfoAsDictiona
+@@ -206,7 +206,7 @@ base::DictionaryValue* GpuInfoAsDictionaryValue() {
                                               gpu_info.gl_ws_version));
    basic_info->Append(NewDescriptionValuePair("Window system binding extensions",
                                               gpu_info.gl_ws_extensions));

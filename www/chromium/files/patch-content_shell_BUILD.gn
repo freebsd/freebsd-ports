@@ -1,6 +1,6 @@
---- content/shell/BUILD.gn.orig	2017-04-19 19:06:34 UTC
+--- content/shell/BUILD.gn.orig	2017-06-05 19:03:07 UTC
 +++ content/shell/BUILD.gn
-@@ -295,7 +295,7 @@ static_library("content_shell_lib") {
+@@ -298,7 +298,7 @@ static_library("content_shell_lib") {
      ]
    }
  
@@ -9,7 +9,7 @@
      deps += [
        "//build/linux:fontconfig",
        "//ui/gfx:test_support",
-@@ -319,7 +319,7 @@ static_library("content_shell_lib") {
+@@ -322,7 +322,7 @@ static_library("content_shell_lib") {
      ]
    }
  
@@ -18,16 +18,16 @@
      deps += [
        "//components/crash/content/app",
        "//components/crash/content/browser",
-@@ -368,7 +368,7 @@ static_library("content_shell_lib") {
+@@ -371,7 +371,7 @@ static_library("content_shell_lib") {
      ]
    }
  
 -  if (is_linux) {
 +  if (is_linux || is_bsd) {
-     deps += [ "//third_party/freetype-android:freetype" ]
+     deps += [ "//third_party/freetype" ]
    }
  
-@@ -539,7 +539,7 @@ if (is_android) {
+@@ -543,7 +543,7 @@ if (is_android) {
        }
      }
  

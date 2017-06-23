@@ -1,6 +1,6 @@
---- headless/lib/headless_content_main_delegate.cc.orig	2017-05-09 19:02:47 UTC
+--- headless/lib/headless_content_main_delegate.cc.orig	2017-06-05 19:03:08 UTC
 +++ headless/lib/headless_content_main_delegate.cc
-@@ -147,7 +147,7 @@ void HeadlessContentMainDelegate::InitCr
+@@ -159,7 +159,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
    g_headless_crash_client.Pointer()->set_crash_dumps_dir(
        browser_->options()->crash_dumps_dir);
  
@@ -9,7 +9,7 @@
    if (!browser_->options()->enable_crash_reporter) {
      DCHECK(!breakpad::IsCrashReporterEnabled());
      return;
-@@ -156,7 +156,7 @@ void HeadlessContentMainDelegate::InitCr
+@@ -168,7 +168,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
    if (process_type != switches::kZygoteProcess)
      breakpad::InitCrashReporter(process_type);
  #endif  // defined(HEADLESS_USE_BREAKPAD)
@@ -18,7 +18,7 @@
  }
  
  void HeadlessContentMainDelegate::PreSandboxStartup() {
-@@ -170,7 +170,7 @@ void HeadlessContentMainDelegate::PreSan
+@@ -182,7 +182,7 @@ void HeadlessContentMainDelegate::PreSandboxStartup() 
    if (command_line.HasSwitch(switches::kEnableLogging))
      InitLogging(command_line);
  #endif
@@ -27,7 +27,7 @@
    InitCrashReporter(command_line);
  #endif
    InitializeResourceBundle();
-@@ -202,7 +202,7 @@ int HeadlessContentMainDelegate::RunProc
+@@ -214,7 +214,7 @@ int HeadlessContentMainDelegate::RunProcess(
    return 0;
  }
  

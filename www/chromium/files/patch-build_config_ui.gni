@@ -1,4 +1,4 @@
---- build/config/ui.gni.orig	2017-04-19 19:06:28 UTC
+--- build/config/ui.gni.orig	2017-06-05 19:03:01 UTC
 +++ build/config/ui.gni
 @@ -31,10 +31,10 @@ declare_args() {
  
@@ -10,15 +10,11 @@
    # Whether we should use glib, a low level C utility library.
 -  use_glib = is_linux
 +  use_glib = is_linux || is_bsd
+ }
  
-   # Indicates if Wayland display server support is enabled.
-   enable_wayland_server = is_chromeos
-@@ -55,17 +55,17 @@ declare_args() {
- 
- # Use GPU accelerated cross process image transport by default on linux builds
- # with the Aura window manager.
--ui_compositor_image_transport = use_aura && is_linux
-+ui_compositor_image_transport = use_aura && (is_linux || is_bsd)
+ declare_args() {
+@@ -48,14 +48,14 @@ declare_args() {
+ # These variables depend on other variables and can't be set externally.
  
  # Indicates if the UI toolkit depends on X11.
 -use_x11 = is_linux && !use_ozone

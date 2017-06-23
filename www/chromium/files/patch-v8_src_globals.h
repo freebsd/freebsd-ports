@@ -1,6 +1,6 @@
---- v8/src/globals.h.orig	2017-04-19 19:07:57 UTC
+--- v8/src/globals.h.orig	2017-06-05 19:04:29 UTC
 +++ v8/src/globals.h
-@@ -183,7 +183,11 @@ const size_t kCodeRangeAreaAlignment = 2
+@@ -184,7 +184,11 @@ const size_t kCodeRangeAreaAlignment = 256 * MB;
  const size_t kMaximalCodeRangeSize = 512 * MB;
  const size_t kCodeRangeAreaAlignment = 64 * KB;  // OS page on PPC Linux
  #else

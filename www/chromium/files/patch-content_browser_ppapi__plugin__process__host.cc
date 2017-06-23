@@ -1,6 +1,6 @@
---- content/browser/ppapi_plugin_process_host.cc.orig	2017-04-19 19:06:33 UTC
+--- content/browser/ppapi_plugin_process_host.cc.orig	2017-06-05 19:03:07 UTC
 +++ content/browser/ppapi_plugin_process_host.cc
-@@ -55,9 +55,9 @@
+@@ -54,9 +54,9 @@
  
  namespace content {
  
@@ -12,7 +12,7 @@
  
  // NOTE: changes to this class need to be reviewed by the security team.
  class PpapiPluginSandboxedProcessLauncherDelegate
-@@ -111,7 +111,7 @@ class PpapiPluginSandboxedProcessLaunche
+@@ -110,7 +110,7 @@ class PpapiPluginSandboxedProcessLauncherDelegate
      return true;
    }
  
@@ -21,7 +21,7 @@
    ZygoteHandle* GetZygote() override {
      const base::CommandLine& browser_command_line =
          *base::CommandLine::ForCurrentProcess();
-@@ -205,13 +205,13 @@ PpapiPluginProcessHost* PpapiPluginProce
+@@ -204,13 +204,13 @@ PpapiPluginProcessHost* PpapiPluginProcessHost::Create
    return NULL;
  }
  
@@ -37,7 +37,7 @@
  
  // static
  void PpapiPluginProcessHost::DidCreateOutOfProcessInstance(
-@@ -363,7 +363,7 @@ bool PpapiPluginProcessHost::Init(const 
+@@ -362,7 +362,7 @@ bool PpapiPluginProcessHost::Init(const PepperPluginIn
    base::CommandLine::StringType plugin_launcher =
        browser_command_line.GetSwitchValueNative(switches::kPpapiPluginLauncher);
  

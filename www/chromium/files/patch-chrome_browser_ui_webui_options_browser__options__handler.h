@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/options/browser_options_handler.h.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/ui/webui/options/browser_options_handler.h.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/ui/webui/options/browser_options_handler.h
-@@ -210,7 +210,7 @@ class BrowserOptionsHandler
+@@ -215,7 +215,7 @@ class BrowserOptionsHandler
  
    void ObserveThemeChanged();
    void ThemesReset(const base::ListValue* args);

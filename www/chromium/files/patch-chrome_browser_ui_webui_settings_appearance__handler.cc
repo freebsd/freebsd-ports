@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/settings/appearance_handler.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/ui/webui/settings/appearance_handler.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/ui/webui/settings/appearance_handler.cc
-@@ -32,7 +32,7 @@ void AppearanceHandler::RegisterMessages
+@@ -32,7 +32,7 @@ void AppearanceHandler::RegisterMessages() {
        "useDefaultTheme",
        base::Bind(&AppearanceHandler::HandleUseDefaultTheme,
                   base::Unretained(this)));
@@ -9,7 +9,7 @@
    web_ui()->RegisterMessageCallback(
        "useSystemTheme",
        base::Bind(&AppearanceHandler::HandleUseSystemTheme,
-@@ -50,7 +50,7 @@ void AppearanceHandler::HandleUseDefault
+@@ -50,7 +50,7 @@ void AppearanceHandler::HandleUseDefaultTheme(const ba
    ThemeServiceFactory::GetForProfile(profile_)->UseDefaultTheme();
  }
  
