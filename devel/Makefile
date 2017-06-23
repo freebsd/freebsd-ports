@@ -5325,6 +5325,7 @@
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-filesize
     SUBDIR += rubygem-flexmock
+    SUBDIR += rubygem-flipper
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-core
