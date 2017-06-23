@@ -26,18 +26,14 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-DLINUX -DNETWORKBYTEORDER -Dgfortran
 FFLAGS+=	-fno-range-check -ffixed-line-length-132
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
 
-IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
-=======
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	IMAGEMAGICK DOCS EXAMPLES
 OPTIONS_DEFAULT=IMAGEMAGICK
->>>>>>> upstream/master
 OPTIONS_SUB=		yes
 
 IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
