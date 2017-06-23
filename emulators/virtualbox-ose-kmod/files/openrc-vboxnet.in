@@ -16,7 +16,7 @@ start() {
 		_m=${_m#*:}
 		if ! kldstat -q -m ${_m}; then
 			if ! kldload ${_k} > /dev/null 2>&1; then
-				warn "Can't load ${_k} module."
+				ewarn "Can't load ${_k} module."
 				return 1
 			fi
 		fi
@@ -41,7 +41,7 @@ stop() {
 		_m=${_m#*:}
 		if kldstat -q -m ${_m}; then
 			if ! kldunload ${_k} > /dev/null 2>&1; then
-				warn "Can't unload ${_k} module."
+				ewarn "Can't unload ${_k} module."
 				return 1
 			fi
 		fi
