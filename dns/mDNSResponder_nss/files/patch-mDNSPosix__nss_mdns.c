@@ -1,6 +1,13 @@
 --- mDNSPosix/nss_mdns.c.orig	2012-04-15 06:07:19 UTC
 +++ mDNSPosix/nss_mdns.c
-@@ -379,7 +379,18 @@ init_config ();
+@@ -373,13 +373,24 @@ config_is_mdns_suffix (const char * name);
+         0 configuration ready
+         non-zero configuration error code
+  */
+-errcode_t
++static errcode_t
+ init_config ();
+ 
  #define ENTNAME  hostent
  #define DATABASE "hosts"
  
@@ -29,3 +36,12 @@
  #define CONF_LINE_SIZE 1024
  
  const char k_comment_char = '#';
+@@ -1789,7 +1800,7 @@ pthread_mutex_t g_config_mutex =
+         0 success
+         non-zero error code on failure
+  */
+-errcode_t
++static errcode_t
+ init_config ()
+ {
+     if (g_config)
