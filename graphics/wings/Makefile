@@ -3,7 +3,7 @@
 
 PORTNAME=	wings
 PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
@@ -47,7 +47,7 @@ post-patch:
 		${WRKSRC}/src/wings_sel_cmd.erl \
 		${WRKSRC}/e3d/e3d_util.erl \
 		${WRKSRC}/plugins_src/autouv/auv_mapping.erl
-	@${FIND} ${WRKSRC} -name "*.orig" -delete
+#	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "src ebin fonts plugins textures shaders patches" \

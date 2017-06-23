@@ -2,6 +2,7 @@
 
 PORTNAME=	erlware_commons
 PORTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
