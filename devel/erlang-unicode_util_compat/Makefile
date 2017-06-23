@@ -2,6 +2,7 @@
 
 PORTNAME=	unicode_util_compat
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
