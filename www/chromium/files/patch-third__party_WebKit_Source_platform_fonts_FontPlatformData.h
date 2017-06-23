@@ -1,8 +1,8 @@
---- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig	2017-04-19 19:06:50 UTC
+--- third_party/WebKit/Source/platform/fonts/FontPlatformData.h.orig	2017-06-05 19:03:26 UTC
 +++ third_party/WebKit/Source/platform/fonts/FontPlatformData.h
 @@ -47,9 +47,9 @@
- #include "wtf/text/CString.h"
- #include "wtf/text/StringImpl.h"
+ #include "platform/wtf/text/StringImpl.h"
+ #include "third_party/skia/include/core/SkRefCnt.h"
  
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(BSD)
@@ -12,21 +12,21 @@
  
  #if OS(MACOSX)
  OBJC_CLASS NSFont;
-@@ -151,7 +151,7 @@ class PLATFORM_EXPORT FontPlatformData {
-   PassRefPtr<OpenTypeVerticalData> verticalData() const;
-   PassRefPtr<SharedBuffer> openTypeTable(SkFontTableTag) const;
+@@ -147,7 +147,7 @@ class PLATFORM_EXPORT FontPlatformData {
+   PassRefPtr<OpenTypeVerticalData> VerticalData() const;
+   PassRefPtr<SharedBuffer> OpenTypeTable(SkFontTableTag) const;
  
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(BSD)
    // The returned styles are all actual styles without
    // FontRenderStyle::NoPreference.
-   const FontRenderStyle& getFontRenderStyle() const { return m_style; }
-@@ -179,7 +179,7 @@ class PLATFORM_EXPORT FontPlatformData {
-   FontOrientation m_orientation;
+   const FontRenderStyle& GetFontRenderStyle() const { return style_; }
+@@ -177,7 +177,7 @@ class PLATFORM_EXPORT FontPlatformData {
+   FontOrientation orientation_;
  
   private:
 -#if OS(LINUX) || OS(ANDROID)
 +#if OS(LINUX) || OS(ANDROID) || OS(BSD)
-   FontRenderStyle m_style;
+   FontRenderStyle style_;
  #endif
  

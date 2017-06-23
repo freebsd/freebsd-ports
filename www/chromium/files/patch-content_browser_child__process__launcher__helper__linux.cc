@@ -1,6 +1,6 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2017-04-19 19:06:33 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2017-06-05 19:03:06 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
-@@ -67,6 +67,7 @@ ChildProcessLauncherHelper::LaunchProces
+@@ -66,6 +66,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
  
@@ -8,7 +8,7 @@
    ZygoteHandle* zygote_handle =
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote) ?
        nullptr : delegate_->GetZygote();
-@@ -86,6 +87,7 @@ ChildProcessLauncherHelper::LaunchProces
+@@ -85,6 +86,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      process.zygote = *zygote_handle;
      return process;
    }
@@ -16,7 +16,7 @@
  
    Process process;
    process.process = base::LaunchProcess(*command_line(), options);
-@@ -105,10 +107,12 @@ base::TerminationStatus ChildProcessLaun
+@@ -103,10 +105,12 @@ base::TerminationStatus ChildProcessLauncherHelper::Ge
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead,
      int* exit_code) {
@@ -29,7 +29,7 @@
    if (known_dead) {
      return base::GetKnownDeadTerminationStatus(
          process.process.Handle(), exit_code);
-@@ -127,13 +131,17 @@ void ChildProcessLauncherHelper::ForceNo
+@@ -125,13 +129,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
      ChildProcessLauncherHelper::Process process) {
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
@@ -46,4 +46,4 @@
 +#endif
  }
  
- // static
+ void ChildProcessLauncherHelper::SetProcessBackgroundedOnLauncherThread(

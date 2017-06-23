@@ -1,6 +1,6 @@
---- third_party/WebKit/Source/core/layout/BUILD.gn.orig	2017-04-19 19:06:49 UTC
+--- third_party/WebKit/Source/core/layout/BUILD.gn.orig	2017-06-05 19:03:25 UTC
 +++ third_party/WebKit/Source/core/layout/BUILD.gn
-@@ -381,7 +381,7 @@ blink_core_sources("layout") {
+@@ -452,7 +452,7 @@ blink_core_sources("layout") {
      sources += [ "LayoutThemeFontProviderDefault.cpp" ]
    }
  

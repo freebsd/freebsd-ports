@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 @@ -38,7 +38,7 @@
  #include "ui/views/window/frame_background.h"
@@ -9,7 +9,7 @@
  #include "ui/views/controls/menu/menu_runner.h"
  #endif
  
-@@ -292,7 +292,7 @@ void OpaqueBrowserFrameView::ButtonPress
+@@ -292,7 +292,7 @@ void OpaqueBrowserFrameView::ButtonPressed(views::Butt
  void OpaqueBrowserFrameView::OnMenuButtonClicked(views::MenuButton* source,
                                                   const gfx::Point& point,
                                                   const ui::Event* event) {

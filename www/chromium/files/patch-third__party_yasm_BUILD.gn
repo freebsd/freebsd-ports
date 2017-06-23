@@ -1,6 +1,6 @@
---- third_party/yasm/BUILD.gn.orig	2017-04-19 19:06:53 UTC
+--- third_party/yasm/BUILD.gn.orig	2017-06-05 19:03:29 UTC
 +++ third_party/yasm/BUILD.gn
-@@ -32,7 +32,12 @@ import("//build/config/compiler/compiler
+@@ -32,7 +32,12 @@ import("//build/config/compiler/compiler.gni")
  if (current_toolchain == host_toolchain) {
    # Various files referenced by multiple targets.
    yasm_gen_include_dir = "$target_gen_dir/include"

@@ -1,6 +1,6 @@
---- extensions/browser/api/serial/serial_api.cc.orig	2017-04-19 19:06:34 UTC
+--- extensions/browser/api/serial/serial_api.cc.orig	2017-06-05 19:03:07 UTC
 +++ extensions/browser/api/serial/serial_api.cc
-@@ -86,11 +86,13 @@ bool SerialGetDevicesFunction::Prepare()
+@@ -86,11 +86,13 @@ bool SerialGetDevicesFunction::Prepare() {
  void SerialGetDevicesFunction::Work() {
    DCHECK_CURRENTLY_ON(BrowserThread::FILE);
  

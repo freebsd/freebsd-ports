@@ -1,6 +1,6 @@
---- base/process/memory.h.orig	2017-04-19 19:06:28 UTC
+--- base/process/memory.h.orig	2017-06-05 19:03:00 UTC
 +++ base/process/memory.h
-@@ -32,7 +32,7 @@ BASE_EXPORT void EnableTerminationOnOutO
+@@ -32,7 +32,7 @@ BASE_EXPORT void EnableTerminationOnOutOfMemory();
  // Crash reporting classifies such crashes as OOM.
  BASE_EXPORT void TerminateBecauseOutOfMemory(size_t size);
  

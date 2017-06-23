@@ -1,5 +1,5 @@
---- third_party/WebKit/Source/wtf/ContainerAnnotations.h.orig	2017-04-19 19:06:50 UTC
-+++ third_party/WebKit/Source/wtf/ContainerAnnotations.h
+--- third_party/WebKit/Source/platform/wtf/ContainerAnnotations.h.orig	2017-06-05 19:03:26 UTC
++++ third_party/WebKit/Source/platform/wtf/ContainerAnnotations.h
 @@ -10,7 +10,7 @@
  
  // TODO(ochang): Remove the CPU(X86_64) condition to enable this for X86 once

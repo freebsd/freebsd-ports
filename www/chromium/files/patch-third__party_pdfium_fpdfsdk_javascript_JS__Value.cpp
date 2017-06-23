@@ -1,6 +1,6 @@
---- third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig	2017-04-19 19:07:50 UTC
+--- third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp.orig	2017-06-05 19:04:22 UTC
 +++ third_party/pdfium/fpdfsdk/javascript/JS_Value.cpp
-@@ -457,11 +457,12 @@ v8::Local<v8::Date> CJS_Date::ToV8Date(C
+@@ -457,11 +457,12 @@ v8::Local<v8::Date> CJS_Date::ToV8Date(CJS_Runtime* pR
  }
  
  double _getLocalTZA() {

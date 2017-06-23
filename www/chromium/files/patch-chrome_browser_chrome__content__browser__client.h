@@ -1,6 +1,6 @@
---- chrome/browser/chrome_content_browser_client.h.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/chrome_content_browser_client.h.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/chrome_content_browser_client.h
-@@ -270,12 +270,12 @@ class ChromeContentBrowserClient : publi
+@@ -271,12 +271,12 @@ class ChromeContentBrowserClient : public content::Con
        content::RenderFrameHost* render_frame_host,
        blink::WebPageVisibilityState* visibility_state) override;
  

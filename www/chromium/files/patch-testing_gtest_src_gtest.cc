@@ -1,4 +1,4 @@
---- testing/gtest/src/gtest.cc.orig	2017-04-19 19:07:41 UTC
+--- testing/gtest/src/gtest.cc.orig	2017-06-05 19:04:13 UTC
 +++ testing/gtest/src/gtest.cc
 @@ -122,6 +122,10 @@
  
@@ -11,7 +11,7 @@
  #if GTEST_HAS_EXCEPTIONS
  # include <stdexcept>
  #endif
-@@ -1930,7 +1934,7 @@ bool String::CaseInsensitiveWideCStringE
+@@ -1930,7 +1934,7 @@ bool String::CaseInsensitiveWideCStringEquals(const wc
  
  #if GTEST_OS_WINDOWS
    return _wcsicmp(lhs, rhs) == 0;

@@ -1,6 +1,6 @@
---- content/common/BUILD.gn.orig	2017-04-19 19:06:33 UTC
+--- content/common/BUILD.gn.orig	2017-06-05 19:03:07 UTC
 +++ content/common/BUILD.gn
-@@ -503,7 +503,7 @@ source_set("common") {
+@@ -508,7 +508,7 @@ source_set("common") {
    }
  
    if (!use_seccomp_bpf) {
@@ -9,7 +9,7 @@
        sources -= [
          "sandbox_linux/bpf_cros_arm_gpu_policy_linux.cc",
          "sandbox_linux/bpf_cros_arm_gpu_policy_linux.h",
-@@ -517,6 +517,16 @@ source_set("common") {
+@@ -522,6 +522,16 @@ source_set("common") {
          "sandbox_linux/bpf_utility_policy_linux.h",
          "sandbox_linux/sandbox_bpf_base_policy_linux.cc",
          "sandbox_linux/sandbox_bpf_base_policy_linux.h",

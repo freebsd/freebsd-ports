@@ -1,6 +1,6 @@
---- media/audio/BUILD.gn.orig	2017-04-19 19:06:35 UTC
+--- media/audio/BUILD.gn.orig	2017-06-05 19:03:08 UTC
 +++ media/audio/BUILD.gn
-@@ -212,7 +212,7 @@ source_set("audio") {
+@@ -216,7 +216,7 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  
@@ -9,17 +9,16 @@
      sources += [ "linux/audio_manager_linux.cc" ]
    }
  
-@@ -261,10 +261,12 @@ source_set("audio") {
+@@ -265,9 +265,11 @@ source_set("audio") {
        configs += [ ":libpulse" ]
      } else {
        # TODO(ajwong): Technically, this dl should go in the action.
 -      libs += [ "dl" ]
        deps += [ ":pulse_generate_stubs" ]
        sources += get_target_outputs(":pulse_generate_stubs")
-     }
++    }
 +    if (is_linux) {
 +      libs += [ "dl" ]
-+    }
+     }
    }
  
-   configs += [ "//build/config/compiler:no_size_t_to_int_warning" ]
