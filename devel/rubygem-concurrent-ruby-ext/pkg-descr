@@ -1,0 +1,9 @@
+Potential performance improvements may be achieved under MRI by installing
+optional C extensions. To minimize installation errors the C extensions are
+available in the concurrent-ruby-ext extension gem. concurrent-ruby and
+concurrent-ruby-ext are always released together with same version.
+
+The concurrent-ruby gem will automatically detect the presence of the
+concurrent-ruby-ext gem and load the appropriate C extensions.
+
+WWW: https://github.com/ruby-concurrency/concurrent-ruby
