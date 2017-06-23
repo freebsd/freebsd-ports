@@ -1,5 +1,5 @@
-bin/perlmake
 %%SITE_PERL%%/Make.pm
-%%SITE_PERL%%/test_driver.pl
-%%PERL5_MAN1%%/perlmake.1.gz
+%%SITE_PERL%%/Make/Rule.pm
+%%SITE_PERL%%/Make/Rule/Vars.pm
+%%SITE_PERL%%/Make/Target.pm
 %%PERL5_MAN3%%/Make.3.gz

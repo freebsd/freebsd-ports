@@ -3,6 +3,7 @@
 
 PORTNAME=	Dancer2
 PORTVERSION=	0.205000
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny \
 		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \
 		p5-Config-Any>=0:devel/p5-Config-Any \
-		p5-ExtUtils-MakeMaker>=7.12:devel/p5-ExtUtils-MakeMaker \
 		p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		p5-Hash-Merge-Simple>=0:devel/p5-Hash-Merge-Simple \
 		p5-HTTP-Body>=0:www/p5-HTTP-Body \
@@ -69,4 +69,11 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502502
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.12:devel/p5-ExtUtils-MakeMaker
+RUN_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.12:devel/p5-ExtUtils-MakeMaker
+.endif
+
+.include <bsd.port.post.mk>
