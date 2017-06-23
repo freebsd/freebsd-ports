@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Unload
-PORTVERSION=	0.09
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Inspector>=0:devel/p5-Class-Inspector
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires
 
 NO_ARCH=	yes
 USES=		perl5
