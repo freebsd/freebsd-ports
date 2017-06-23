@@ -12,7 +12,7 @@
 ######################################################################
 
   Please consult the documentation:
-   - man knot.conf
+   - man knotd
    - https://www.knot-dns.cz/documentation/
 
 ######################################################################
