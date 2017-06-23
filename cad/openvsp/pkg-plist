@@ -25,6 +25,7 @@ bin/vsp
 bin/vspaero
 bin/vspscript
 bin/vspviewer
+matlab/OpenVSPParasiteDragPlotData.m
 matlab/plotDegenPlate.m
 matlab/plotDegenStick.m
 matlab/plotDegenSurf.m
@@ -33,6 +34,7 @@ scripts/CreateEditGeom.vspscript
 scripts/DegenGeom.vspscript
 scripts/DumpResults.vspscript
 scripts/Fuselage.vspscript
+scripts/ParasiteDragScriptTest.vspscript
 scripts/SnapToDemo.vspscript
 scripts/Stack.vspscript
 scripts/SubSurface.vspscript
@@ -61,6 +63,8 @@ scripts/Wing.vspscript
 %%DATADIR%%/N0012_VSP.af
 %%DATADIR%%/N0012_VSP_sym.af
 %%DATADIR%%/OnOffExample.vsppart
+%%DATADIR%%/OpenVSPParasiteDragPlotData.m
+%%DATADIR%%/ParasiteDragScriptTest.vspscript
 %%DATADIR%%/PodMan.vsppart
 %%DATADIR%%/Seat.vsppart
 %%DATADIR%%/SeatGroup.vsppart
