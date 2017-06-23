@@ -923,6 +923,7 @@
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-em-redis-unified
     SUBDIR += rubygem-familia
+    SUBDIR += rubygem-flipper-active_record
     SUBDIR += rubygem-globalid
     SUBDIR += rubygem-globalid-rails5
     SUBDIR += rubygem-globalid-rails50
