@@ -5357,6 +5357,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/spec_helper.rb
 %%WWWDIR%%/spec/support/examples/lib/settings/scoped_settings.rb
 %%WWWDIR%%/spec/support/examples/lib/settings/settings_extended.rb
+%%WWWDIR%%/spec/support/examples/models/concerns/account_avatar.rb
 %%WWWDIR%%/spec/support/matchers/model/model_have_error_on_field.rb
 %%WWWDIR%%/spec/views/about/_contact.html.haml_spec.rb
 %%WWWDIR%%/spec/views/about/_links.html.haml_spec.rb
