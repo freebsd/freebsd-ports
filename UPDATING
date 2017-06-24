@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170624:
+  AFFECTS: users of net/rabbitmq
+  AUTHOR: olgeni@FreeBSD.org
+
+  The rabbitmq-3.6.10_1 port has been changed to use version 19 of
+  the Erlang runtime, because RabbitMQ is not yet compatible with
+  version 20.
+
+  Upgrades to the previous rabbitmq-3.6.10 must be avoided as
+  they can lead to data corruption due to changes in Erlang 20.
+
 20170622:
   AFFECTS: users of database/postgresql* and other software using PostgreSQL to run
   AUTHOR: tz@FreeBSD.org
