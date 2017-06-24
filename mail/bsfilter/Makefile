@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	mail ruby
 MASTER_SITES=	SFJP/bsfilter/59804
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bayesian spam filter written in Ruby
 
 LICENSE=	GPLv2
