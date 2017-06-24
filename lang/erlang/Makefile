@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	20.0
-PORTEPOCH=	3
+PORTVERSION=	19.3.6
+PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -20,7 +20,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=
+PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3 \
+		patch-otp-19.3.4 patch-otp-19.3.5 patch-otp-19.3.6
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -65,7 +66,7 @@ OPTIONS_EXCLUDE_i386=		DTRACE
 # ld(1) fails to link probes: missing __dtrace_erlang___* symbols
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 
-ERL_RELEASE=	20.0
+ERL_RELEASE=	19.3
 
 USES=		gmake ncurses perl5
 USE_PERL5=	build
@@ -73,9 +74,9 @@ USE_RC_SUBR=	epmd
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-EI_VSN=		3.10
-SNMP_VSN=	5.2.6
-TOOLS_VSN=	2.10
+EI_VSN=		3.9.3
+SNMP_VSN=	5.2.5
+TOOLS_VSN=	2.9.1
 
 .include <bsd.port.options.mk>
 
@@ -233,6 +234,35 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3.5
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/crypto-3.7.3/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/crypto-3.7.4
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/crypto-3.7.3
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.6/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.9
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/inets-6.3.6
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.4.1/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.4.2
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssh-4.4.1
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.1.1/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.1.3
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/ssl-8.1.1
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-3.1/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-3.1.1
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-3.1
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/xmerl-1.3.13/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/xmerl-1.3.14
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/xmerl-1.3.13
+
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
