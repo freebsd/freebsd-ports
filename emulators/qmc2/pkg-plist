@@ -33,6 +33,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/activity_red.png
 %%DATADIR%%/img/add_to_favorites.png
 %%DATADIR%%/img/alien.png
+%%DATADIR%%/img/analyze.png
 %%DATADIR%%/img/animbase.png
 %%DATADIR%%/img/arcadecabinet.png
 %%DATADIR%%/img/arcademode.png
@@ -57,6 +58,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/activity_red.png
 %%DATADIR%%/img/circles/add_to_favorites.png
 %%DATADIR%%/img/circles/alien.png
+%%DATADIR%%/img/circles/analyze.png
 %%DATADIR%%/img/circles/animbase.png
 %%DATADIR%%/img/circles/arcadecabinet.png
 %%DATADIR%%/img/circles/arcademode.png
@@ -73,6 +75,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/characters.png
 %%DATADIR%%/img/circles/checkpoint.png
 %%DATADIR%%/img/circles/circuit.png
+%%DATADIR%%/img/circles/cleanup.png
 %%DATADIR%%/img/circles/clock.png
 %%DATADIR%%/img/circles/clone.png
 %%DATADIR%%/img/circles/colors.png
@@ -278,6 +281,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/circles/romalyzer_flipped.png
 %%DATADIR%%/img/circles/romalyzer_multiple.png
 %%DATADIR%%/img/circles/romalyzer_sw.png
+%%DATADIR%%/img/circles/rompath.png
 %%DATADIR%%/img/circles/scan_manuals.png
 %%DATADIR%%/img/circles/search.png
 %%DATADIR%%/img/circles/search_multiple.png
@@ -367,6 +371,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/activity_red.png
 %%DATADIR%%/img/classic/add_to_favorites.png
 %%DATADIR%%/img/classic/alien.png
+%%DATADIR%%/img/classic/analyze.png
 %%DATADIR%%/img/classic/animbase.png
 %%DATADIR%%/img/classic/arcadecabinet.png
 %%DATADIR%%/img/classic/arcademode.png
@@ -383,6 +388,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/characters.png
 %%DATADIR%%/img/classic/checkpoint.png
 %%DATADIR%%/img/classic/circuit.png
+%%DATADIR%%/img/classic/cleanup.png
 %%DATADIR%%/img/classic/clock.png
 %%DATADIR%%/img/classic/clone.png
 %%DATADIR%%/img/classic/colors.png
@@ -588,6 +594,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/romalyzer_flipped.png
 %%DATADIR%%/img/classic/romalyzer_multiple.png
 %%DATADIR%%/img/classic/romalyzer_sw.png
+%%DATADIR%%/img/classic/rompath.png
 %%DATADIR%%/img/classic/scan_manuals.png
 %%DATADIR%%/img/classic/search.png
 %%DATADIR%%/img/classic/search_multiple.png
@@ -667,6 +674,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/classic/zoom-in.png
 %%DATADIR%%/img/classic/zoom-none.png
 %%DATADIR%%/img/classic/zoom-out.png
+%%DATADIR%%/img/cleanup.png
 %%DATADIR%%/img/clock.png
 %%DATADIR%%/img/clone.png
 %%DATADIR%%/img/colors.png
@@ -697,6 +705,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/activity_red.png
 %%DATADIR%%/img/crazy-black/add_to_favorites.png
 %%DATADIR%%/img/crazy-black/alien.png
+%%DATADIR%%/img/crazy-black/analyze.png
 %%DATADIR%%/img/crazy-black/animbase.png
 %%DATADIR%%/img/crazy-black/arcadecabinet.png
 %%DATADIR%%/img/crazy-black/arcademode.png
@@ -713,6 +722,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/characters.png
 %%DATADIR%%/img/crazy-black/checkpoint.png
 %%DATADIR%%/img/crazy-black/circuit.png
+%%DATADIR%%/img/crazy-black/cleanup.png
 %%DATADIR%%/img/crazy-black/clock.png
 %%DATADIR%%/img/crazy-black/clone.png
 %%DATADIR%%/img/crazy-black/colors.png
@@ -918,6 +928,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy-black/romalyzer_flipped.png
 %%DATADIR%%/img/crazy-black/romalyzer_multiple.png
 %%DATADIR%%/img/crazy-black/romalyzer_sw.png
+%%DATADIR%%/img/crazy-black/rompath.png
 %%DATADIR%%/img/crazy-black/scan_manuals.png
 %%DATADIR%%/img/crazy-black/search.png
 %%DATADIR%%/img/crazy-black/search_multiple.png
@@ -1006,6 +1017,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/activity_red.png
 %%DATADIR%%/img/crazy/add_to_favorites.png
 %%DATADIR%%/img/crazy/alien.png
+%%DATADIR%%/img/crazy/analyze.png
 %%DATADIR%%/img/crazy/animbase.png
 %%DATADIR%%/img/crazy/arcadecabinet.png
 %%DATADIR%%/img/crazy/arcademode.png
@@ -1022,6 +1034,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/characters.png
 %%DATADIR%%/img/crazy/checkpoint.png
 %%DATADIR%%/img/crazy/circuit.png
+%%DATADIR%%/img/crazy/cleanup.png
 %%DATADIR%%/img/crazy/clock.png
 %%DATADIR%%/img/crazy/clone.png
 %%DATADIR%%/img/crazy/colors.png
@@ -1227,6 +1240,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/crazy/romalyzer_flipped.png
 %%DATADIR%%/img/crazy/romalyzer_multiple.png
 %%DATADIR%%/img/crazy/romalyzer_sw.png
+%%DATADIR%%/img/crazy/rompath.png
 %%DATADIR%%/img/crazy/scan_manuals.png
 %%DATADIR%%/img/crazy/search.png
 %%DATADIR%%/img/crazy/search_multiple.png
@@ -1315,6 +1329,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/activity_red.png
 %%DATADIR%%/img/cubes/add_to_favorites.png
 %%DATADIR%%/img/cubes/alien.png
+%%DATADIR%%/img/cubes/analyze.png
 %%DATADIR%%/img/cubes/animbase.png
 %%DATADIR%%/img/cubes/arcadecabinet.png
 %%DATADIR%%/img/cubes/arcademode.png
@@ -1331,6 +1346,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/characters.png
 %%DATADIR%%/img/cubes/checkpoint.png
 %%DATADIR%%/img/cubes/circuit.png
+%%DATADIR%%/img/cubes/cleanup.png
 %%DATADIR%%/img/cubes/clock.png
 %%DATADIR%%/img/cubes/clone.png
 %%DATADIR%%/img/cubes/colors.png
@@ -1536,6 +1552,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/cubes/romalyzer_flipped.png
 %%DATADIR%%/img/cubes/romalyzer_multiple.png
 %%DATADIR%%/img/cubes/romalyzer_sw.png
+%%DATADIR%%/img/cubes/rompath.png
 %%DATADIR%%/img/cubes/scan_manuals.png
 %%DATADIR%%/img/cubes/search.png
 %%DATADIR%%/img/cubes/search_multiple.png
@@ -1799,6 +1816,7 @@ bin/qmc2-sdlmame
 %%DATADIR%%/img/romalyzer_flipped.png
 %%DATADIR%%/img/romalyzer_multiple.png
 %%DATADIR%%/img/romalyzer_sw.png
+%%DATADIR%%/img/rompath.png
 %%DATADIR%%/img/scan_manuals.png
 %%DATADIR%%/img/search.png
 %%DATADIR%%/img/search_multiple.png
