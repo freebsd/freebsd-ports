@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSDBCSXZMTXM&dummy=/
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	MeCab IPA dictionary meta-port
 
 LICENSE=	NAIST ICOT
