@@ -8,6 +8,7 @@ bin/escript
 bin/run_erl
 bin/snmpc
 bin/to_erl
+bin/typer
 etc/man.d/erlang.conf
 %%PORTDOCS%%%%DOCSDIR%%/armstrong_thesis_2003.pdf
 %%PORTDOCS%%%%DOCSDIR%%/bjarnelic.pdf

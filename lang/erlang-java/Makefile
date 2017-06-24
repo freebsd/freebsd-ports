@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	20.0
+PORTVERSION=	19.3.6
+PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -14,7 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
-PATCHFILES=
+PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3 \
+		patch-otp-19.3.4 patch-otp-19.3.5 patch-otp-19.3.6
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang interface for Java
@@ -31,14 +33,14 @@ MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	DOCS
 
-ERL_RELEASE=	20.0
+ERL_RELEASE=	19.3
 
 USES=		gmake ncurses perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-APP_VERSION=	1.8
+APP_VERSION=	1.7.1
 APP_DIR=	${PREFIX}/lib/erlang/lib/jinterface-${APP_VERSION}
 
 .include <bsd.port.options.mk>
