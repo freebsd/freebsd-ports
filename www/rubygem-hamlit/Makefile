@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hamlit
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
