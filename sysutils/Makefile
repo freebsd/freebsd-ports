@@ -247,6 +247,7 @@
     SUBDIR += dsbbatmon
     SUBDIR += dsbdriverd
     SUBDIR += dsbmc
+    SUBDIR += dsbmc-cli
     SUBDIR += dsbmd
     SUBDIR += dsbwrtsysctl
     SUBDIR += dt

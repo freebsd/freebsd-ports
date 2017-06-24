@@ -1,5 +1,7 @@
+lib/erlang/lib/unicode_util_compat-%%VERSION%%/ebin/unicode_util.beam
 lib/erlang/lib/unicode_util_compat-%%VERSION%%/ebin/unicode_util_compat.app
 lib/erlang/lib/unicode_util_compat-%%VERSION%%/ebin/unicode_util_compat.beam
+lib/erlang/lib/unicode_util_compat-%%VERSION%%/src/unicode_util.erl
 lib/erlang/lib/unicode_util_compat-%%VERSION%%/src/unicode_util_compat.app.src
 lib/erlang/lib/unicode_util_compat-%%VERSION%%/src/unicode_util_compat.erl
 %%PORTDOCS%%%%DOCSDIR%%/README.md
