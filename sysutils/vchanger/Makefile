@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vchanger
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -18,5 +18,6 @@ SHEBANG_FILES=	scripts/vchanger-genudevrules \
 		scripts/vchanger-mount-uuid.sh
 GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
