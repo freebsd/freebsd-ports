@@ -1,18 +1,16 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	et-orbi
-PORTVERSION=	1.0.5
+PORTNAME=	flipper
+PORTVERSION=	0.10.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Time zones for fugit and rufus-scheduler
+COMMENT=	Act of enabling/disabling features in your application
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-RUN_DEPENDS=	rubygem-tzinfo>=0:devel/rubygem-tzinfo
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes

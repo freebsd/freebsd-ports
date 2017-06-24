@@ -5258,6 +5258,7 @@
     SUBDIR += rubygem-commander
     SUBDIR += rubygem-concurrent-ruby
     SUBDIR += rubygem-concurrent-ruby-edge
+    SUBDIR += rubygem-concurrent-ruby-ext
     SUBDIR += rubygem-configatron
     SUBDIR += rubygem-configstruct
     SUBDIR += rubygem-configuration
@@ -5324,6 +5325,7 @@
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-filesize
     SUBDIR += rubygem-flexmock
+    SUBDIR += rubygem-flipper
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-core
@@ -5498,6 +5500,7 @@
     SUBDIR += rubygem-parser
     SUBDIR += rubygem-patch_finder
     SUBDIR += rubygem-pathutil
+    SUBDIR += rubygem-peek
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform

@@ -1,20 +1,19 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	et-orbi
+PORTNAME=	concurrent-ruby-ext
 PORTVERSION=	1.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Time zones for fugit and rufus-scheduler
+COMMENT=	C extensions to optimize the concurrent-ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-tzinfo>=0:devel/rubygem-tzinfo
+RUN_DEPENDS=	rubygem-concurrent-ruby>=${PORTVERSION}:devel/rubygem-concurrent-ruby
 
-NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
