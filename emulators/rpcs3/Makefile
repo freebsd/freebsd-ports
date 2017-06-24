@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.2-346
-DISTVERSIONSUFFIX=	-g321f50bf
+DISTVERSION=	0.0.2-353
+DISTVERSIONSUFFIX=	-g6561ddae
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,11 +16,11 @@ LICENSE_FILE_BSL=	${WRKSRC}/Utilities/LICENSE_1_0.txt
 LICENSE_FILE_MIT=	${WRKSRC}/3rdparty/GSL/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC}/asmjit/LICENSE.md
 
-LIB_DEPENDS=	libLLVM-4.0.so:devel/llvm40 \
-		libpng.so:graphics/png \
+LIB_DEPENDS=	libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg
 
 ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	requires int128 and SSSE3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
@@ -43,6 +43,16 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
+
+OPTIONS_DEFINE=	GDB LLVM
+OPTIONS_DEFAULT=LLVM
+
+GDB_DESC=		GDB remote stub (powerpc64 target)
+GDB_CMAKE_BOOL=		WITH_GDB
+
+LLVM_DESC=		LLVM-based PPU recompiler
+LLVM_LIB_DEPENDS=	libLLVM-4.0.so:devel/llvm40
+LLVM_CMAKE_BOOL_OFF=	WITHOUT_LLVM
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/5\.8/5\.7/' ${WRKSRC}/${PORTNAME}/CMakeLists.txt
