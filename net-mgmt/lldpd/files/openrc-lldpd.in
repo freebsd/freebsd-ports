@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# lldpd_flags (str):	Flags passed to lldpd on startup.
+#			Default is "".
+
+name=lldpd
+
+: ${lldpd_flags=""}
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# libswift_user   (user):   Set to www by default.
+# libswift_group  (group):  Set to www by default.
+# libswift_port   (num):    Port for daemon to listen on, 7777 by default.
+# libswift_dir    (string): Optional full path to streaming content directory.
+
+name=libswift
+
+# defaults
+libswift_user=${libswift_user:-"www"}
+libswift_port=${libswift_port:-"7777"}
+libswift_dir=${libswift_dir:-"/var/db/${name}"}
+libswift_options=${libswift_options:-" --dir ${libswift_dir} --listen ${libswift_port}"}
+
+# daemon
+
+libswift_pidfile="%%SWIFT_PIDDIR%%${name}.pid"
+command="%%PREFIX%%/bin/${name}"
+command_user=${libswift_user}
+command_args="${libswift_flags} ${libswift_options}"
+supervisor=supervise-daemon
+
+start_pre() {
+	# create empty pidfile with correct permissions
+	install -o ${libswift_user} /dev/null ${libswift_pidfile}
+}
+
+depend() {
+		need localmount
+		use net
+		keyword -shutdown
+		after bootmisc
+}

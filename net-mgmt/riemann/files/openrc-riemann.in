@@ -1,0 +1,59 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# riemann_config          (string): Optional full path for riemann config file
+# riemann_user            (user):   Set to riemann by default.
+# riemann_group           (group):  Set to riemann by default.
+# riemann_jarfile         (string): Optional path to a custom jarfile.
+# riemann_java_home       (args):   Specify which JVM to use, if not default.
+# riemann_java_classpath  (args):   Specify a custom Java ClassPath.
+# riemann_min_mem         (num):    Minumum JVM heap size, 256m by default.
+# riemann_max_mem         (num):    Maximum JVM heap size, 1g by default.
+# riemann_java_opts       (args):   Additional JVM properties or arguments.
+
+name="riemann"
+
+: ${riemann_user:="%%RIEMANN_USER%%"}
+: ${riemann_group:="%%RIEMANN_GROUP%%"}
+: ${riemann_config:="%%PREFIX%%/etc/riemann/riemann.config.sample"}
+: ${riemann_jarfile:="%%JAVAJARDIR%%/riemann.jar"}
+: ${riemann_java_home:="%%JAVA_HOME%%"}
+: ${riemann_min_mem:="256m"}
+: ${riemann_max_mem:="1g"}
+: ${riemann_java_classpath:=${riemann_jarfile}}
+: ${riemann_java_opts:=" -server \
+	-cp ${riemann_java_classpath} \
+        -Dapp=${name} \
+        -Xms${riemann_min_mem} \
+        -Xmx${riemann_max_mem} \
+        -Xss256k \
+        -Djava.awt.headless=true \
+        -Djava.net.preferIPv4Stack=true \
+        -XX:+AggressiveOpts \
+        -XX:+CMSClassUnloadingEnabled \
+        -XX:+CMSParallelRemarkEnabled \
+        -XX:+DisableExplicitGC \
+        -XX:+HeapDumpOnOutOfMemoryError \
+        -XX:+UseCMSInitiatingOccupancyOnly \
+        -XX:+UseCompressedOops \
+        -XX:+UseConcMarkSweepGC \
+        -XX:+UseFastAccessorMethods \
+        -XX:+UseParNewGC \
+        -XX:CMSInitiatingOccupancyFraction=75 "}
+
+pidfile="%%RIEMANN_PIDFILE%%"
+command="${riemann_java_home}/bin/java"
+command_args="${riemann_java_opts} \
+    riemann.bin start ${riemann_config}"
+required_files="${java_cmd} ${riemann_config}"
+supervisor=supervise-daemon
+
+start_pre() {
+    	install -o ${riemann_user} /dev/null ${pidfile}
+}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,1 +1,1 @@
-USE_OPENRC_SUBR=	dhcpcd
+USE_OPENRC_SUBR=	openrc-dhcpcd

@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+#
+# Author: Mark Felder <feld@FreeBSD.org>
+
+name="radarr"
+
+: ${radarr_user:="radarr"}
+: ${radarr_data_dir:="%%PREFIX%%/radarr"}
+
+pidfile="${radarr_data_dir}/nzbdrone.pid"
+command="%%PREFIX%%/bin/mono"
+command_args="%%DATADIR%%/Radarr.exe --nobrowser --data=${radarr_data_dir}"
+supervisor=supervise-daemon
+
+start_pre() {
+	export XDG_CONFIG_HOME=${radarr_data_dir}
+
+	if [ ! -d ${radarr_data_dir} ]; then
+		install -d -o ${radarr_user} ${radarr_data_dir}
+	fi
+}
+
+depend() {
+		need localmount
+		keyword -shutdown
+		after bootmisc
+}

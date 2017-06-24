@@ -744,6 +744,7 @@
     SUBDIR += panoglview
     SUBDIR += panomatic
     SUBDIR += partio
+    SUBDIR += pc-pdfviewer
     SUBDIR += pdf2svg
     SUBDIR += pdfpc
     SUBDIR += pear-Horde_Image

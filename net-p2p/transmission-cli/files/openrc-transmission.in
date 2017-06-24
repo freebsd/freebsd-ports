@@ -1,0 +1,65 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# transmission_watch_dir:    Directory for torrent files to download
+#			     automatically. Off by default unless you add
+#			     a path.
+# transmission_conf_dir:     Directory where transmission configuration
+#			     data is stored.
+#			     Default: %%PREFIX%%/etc/transmission/home
+# transmission_download_dir: Directory to store downloaded data.
+#			     Default: %%PREFIX%%/etc/transmission/home/Downloads
+# transmission_user:	     The user account transmission daemon runs as what
+#			     you want it to be. It uses 'transmission' user by
+#			     default.
+# transmission_web_home:     Use alternative directory for the web interface
+#			     files, such as javascript, html and graphics.
+# transmission_chown:	     By default, transmission checks and fixes the
+#			     permissions for its home directory.  If this
+#			     causes problems, set this variable to no.
+
+name=transmission
+
+: ${transmission_conf_dir=%%PREFIX%%/etc/transmission/home}
+: ${transmission_download_dir=%%PREFIX%%/etc/transmission/home/Downloads}
+: ${transmission_user:=transmission}
+transmission_group=${transmission_group:-$transmission_user}
+: ${transmission_chown:=yes}
+
+command=%%PREFIX%%/bin/transmission-daemon
+pidfile=/var/run/transmission/daemon.pid
+
+transmission_flags=" \
+	${transmission_watch_dir:+-c ${transmission_watch_dir}} \
+	${transmission_conf_dir:+-g ${transmission_conf_dir}} \
+	${transmission_download_dir:+-w ${transmission_download_dir}} \
+	${pidfile:+-x $pidfile} \
+	${transmission_flags}"
+
+start_pre() {
+	install -d -o $transmission_user ${pidfile%/*}
+	if yesno transmission_chown; then
+		mkdir -p $transmission_conf_dir $transmission_download_dir
+		chown $transmission_user:$transmission_group $transmission_download_dir
+		chown -R $transmission_user:$transmission_group $transmission_conf_dir
+		chgrp $transmission_group $transmission_conf_dir
+		chmod 750 $transmission_conf_dir
+	fi
+	if [ -n "$transmission_web_home" ]; then
+		TRANSMISSION_WEB_HOME=$transmission_web_home
+		export TRANSMISSION_WEB_HOME
+	fi
+}
+
+# Unfortunately there was a typo in a previous version, which may have
+# left some people with /var/run/transmission/damon.pid .  Deal with
+# this for a few months at least, until everyone will have restarted
+# transmission
+if [ ! -f $pidfile -a -f /var/run/transmission/damon.pid ]; then
+	pidfile=/var/run/transmission/damon.pid
+fi
+
+depend() {
+		keyword -shutdown
+}

@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name="nxagentd"
+nxagentd_user="netxms"
+
+command="%%PREFIX%%/bin/nxagentd"
+command_user=${nxagentd_user}
+required_files="%%PREFIX%%/etc/nxagentd.conf"
+command_args="-c %%PREFIX%%/etc/nxagentd.conf -d"
+
+depend() {
+	keyword -shutdown
+}

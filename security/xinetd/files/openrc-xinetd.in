@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name=xinetd
+
+command=%%PREFIX%%/sbin/xinetd
+command_args='> /dev/null 2>&1'
+pidfile=/var/run/xinetd.pid
+
+xinetd_flags=${xinetd_flags:-"-f %%PREFIX%%/etc/xinetd.conf -pidfile ${pidfile}"}

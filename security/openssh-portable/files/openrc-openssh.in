@@ -14,14 +14,12 @@ command_args=$opensshd_args
 pidfile=@VARBASE@/run/opensshd.pid
 required_files=%%PREFIX%%/etc/ssh/sshd_config
 
-depend()
-{
+depend() {
 	use logger dns
 	need net
 }
 
-openssh_keygen()
-{
+start_pre() {
 	if [ -f %%ETCDIR%%/ssh_host_dsa_key -a \
 	    -f %%ETCDIR%%/ssh_host_rsa_key -a \
 	    -f %%ETCDIR%%/ssh_host_ecdsa_key -a \
@@ -33,7 +31,7 @@ openssh_keygen()
 
 	# Can't do anything if ssh is not installed
 	[ -x %%PREFIX%%/bin/ssh-keygen ] ||
-		err 1 "%%PREFIX%%/bin/ssh-keygen does not exist."
+		eerror "%%PREFIX%%/bin/ssh-keygen does not exist."
 
 	if [ -f %%ETCDIR%%/ssh_host_dsa_key ]; then
 		echo "You already have a DSA host key" \
@@ -70,9 +68,4 @@ openssh_keygen()
 		%%PREFIX%%/bin/ssh-keygen -t ed25519 \
 			-f %%ETCDIR%%/ssh_host_ed25519_key -N ''
 	fi
-}
-
-start_pre()
-{
-	openssh_keygen
 }

@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name=softether_bridge
+command="%%PREFIX%%/libexec/softether/vpnbridge"
+datadir="/var/db/softether"
+command_args=start
+
+start_pre() {
+	if [ ! -d "${datadir}" ]; then
+	    mkdir -p ${datadir}
+	fi
+}
+
+stop_pre() {
+		$command stop
+}
+
+depend() {
+		need localmount
+		use net
+		keyword -shutdown
+}

@@ -206,6 +206,8 @@
     SUBDIR += lsw
     SUBDIR += luit
     SUBDIR += lumina
+    SUBDIR += lumina-core
+    SUBDIR += lumina-coreutils
     SUBDIR += lupe
     SUBDIR += lxde-meta
     SUBDIR += lxhotkey
@@ -248,6 +250,7 @@
     SUBDIR += p5-X11-XCB
     SUBDIR += p5-X11-Xlib
     SUBDIR += p5-XTerm-Conf
+    SUBDIR += pcdm
     SUBDIR += picoserver
     SUBDIR += pipeglade
     SUBDIR += pixman

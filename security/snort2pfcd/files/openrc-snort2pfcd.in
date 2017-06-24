@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+name="snort2pfcd"
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+
+start_pre()
+{
+	if [ $(sysctl -n kern.securelevel) != "3" ]; then
+		${command} ${snort2pfcd_flags}
+	else
+		eerror "${name} cannot operate on pf at securelevel 3"
+	fi
+}
+
+depend() {
+		need snort pf
+		keyword -shutdown
+}

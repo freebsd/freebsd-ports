@@ -1,0 +1,38 @@
+#!/sbin/openrc-run
+
+# Define these racoon_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/racoon
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+
+name="racoon"
+
+racoon_create_dirs=${racoon_create_dirs:-"NO"}	# Create $required_dirs
+#racoon_flags=""				# Flags to racoon program
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+socketfile="%%STATEDIR%%/${name}.sock"
+required_files="%%PREFIX%%/etc/${name}/${name}.conf"
+required_dirs="%%STATEDIR%%"
+
+stop_post() {
+	/bin/rm -f ${pidfile}
+	/bin/rm -f ${socketfile}
+}
+
+start_pre()
+{
+	racoon_cleanup
+
+	if yesno "${name}_create_dirs"; then
+		/bin/mkdir -p $required_dirs
+	fi
+}
+
+depend() {
+		keyword -shutdown
+}

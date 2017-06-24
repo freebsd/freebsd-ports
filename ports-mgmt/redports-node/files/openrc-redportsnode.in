@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=redportsnode
+
+command="%%LOCALBASE%%/bin/redports-node"
+pidfile="/var/run/${name}.pid"
+supervisor=supervise-daemon
+
+depend() {
+		keyword -shutdown
+}

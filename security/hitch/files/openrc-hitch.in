@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+# Add some of the following variables to /etc/rc.conf to configure hitch:
+# hitch_config (str):		Default "%%PREFIX%%/etc/hitch.conf"
+#				Set it to the full path to the config file
+#				that hitch will use during the automated
+#				start-up.
+# hitch_pidfile (str):	Default "%%PREFIX%%/var/hitch/hitch.pid"
+#				Set it to the value of 'pid' in
+#				the hitch.conf file.
+
+name="hitch"
+: ${hitch_config="%%PREFIX%%/etc/hitch.conf"}
+
+command="%%PREFIX%%/sbin/hitch"
+command_args="--daemon -u nobody -g nobody -s --config=${hitch_config}"
+
+required_files=${hitch_config}
+
+depend() {
+		use net
+		keyword -shutdown
+}

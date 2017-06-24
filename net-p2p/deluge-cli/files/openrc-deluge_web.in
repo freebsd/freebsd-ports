@@ -1,0 +1,68 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# MANDATORY:
+#
+# deluge_web_user (str):	The UNPRIVILEGED user to run as
+#
+# OPTIONAL:
+#
+# deluge_web_flags (str):	Set as needed
+#				See deluge-web(1) for more information
+#
+# deluge_web_confdir (path):	Set to /home/$deluge_web_user/.config/deluge
+#				by default
+#
+# deluge_web_loglevel (str):	Set to "error" by default
+#
+# deluge_web_logfile (path):	Set to /var/tmp/deluge_web.log by default
+
+name="deluge_web"
+
+command=%%PREFIX%%/bin/deluge-web
+
+start_pre()
+{
+	if [ "$deluge_web_user" = 'asjklasdfjklasdf' ]; then
+		eerror "You must set deluge_web_user to a real, unprivileged user"
+	fi
+
+	if [ ! -d "/var/run/${name}" ]; then
+		if [ -e "/var/run/${name}" ]; then
+			unlink /var/run/${name}
+		fi
+		mkdir -p /var/run/${name}
+	fi
+
+	if [ ! -d "/home/${deluge_web_user}/.python-eggs" ]; then
+		mkdir -p /home/${deluge_web_user}/.python-eggs
+	fi
+
+	chmod 0755 /var/run/${name}
+	chown -R $deluge_web_user /var/run/${name}
+	chown -R $deluge_web_user /home/${deluge_web_user}/.python-eggs
+	export PYTHON_EGG_CACHE="/home/${deluge_web_user}/.python-eggs"
+}
+
+stop_psot()
+{
+	[ -e "$deluge_web_logfile" -a ! -s "$deluge_web_logfile" ] &&
+		unlink $deluge_web_logfile
+}
+
+: ${deluge_web_user:="asjklasdfjklasdf"}
+: ${deluge_web_confdir:="/home/${deluge_web_user}/.config/deluge"}
+: ${deluge_web_loglevel:="error"}
+: ${deluge_web_logfile:="/var/tmp/${name}.log"}
+
+required_dirs="$deluge_web_confdir"
+command_args="-f -c $required_dirs -L $deluge_web_loglevel -l $deluge_web_logfile"
+
+depend() {
+		need localmount
+		use net
+		keyword -shutdown
+		after bootmisc
+}

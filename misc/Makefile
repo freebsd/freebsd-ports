@@ -465,7 +465,10 @@
     SUBDIR += toilet
     SUBDIR += tpp
     SUBDIR += translate
+    SUBDIR += trueos-desktop
     SUBDIR += trueos-meta-hunspell
+    SUBDIR += trueos-handbook
+    SUBDIR += trueos-server
     SUBDIR += trueos-toolchain
     SUBDIR += ttyrec
     SUBDIR += tudu

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=hawk
+
+command=%%PREFIX%%/sbin/hawk
+command_args='&'
+
+depend() {
+	need mysql
+	keyword -shutdown
+}

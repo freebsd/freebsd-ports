@@ -1,0 +1,14 @@
+bin/pc-autoupdate
+bin/pc-updatemanager
+etc/init.d/trueos-ipfs
+etc/pcupdate.d/post/README
+etc/pcupdate.d/pre/README
+etc/pkg/repos/trueos.conf.dist
+etc/pkg/fingerprints/trueos/trusted/pkg.cdn.trueos.org.20160701
+man/man8/pc-updatemanager.8.gz
+share/trueos/pc-updatemanager/conf/security.key
+share/trueos/pc-updatemanager/conf/sysupdate.conf
+share/trueos/pc-updatemanager/fbsd-dist.pub
+share/trueos/pc-updatemanager/rc-doupdate
+share/trueos/pc-updatemanager/rc-update
+share/trueos/pc-updatemanager/ipfs

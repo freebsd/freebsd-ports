@@ -1,0 +1,8 @@
+bin/about
+bin/pc-checkxdisplay
+bin/pc-firstgui
+bin/pc-installdialog
+bin/pc-su
+bin/pc-systemflag
+man/man1/pc-systemflag.1.gz
+share/trueos/version

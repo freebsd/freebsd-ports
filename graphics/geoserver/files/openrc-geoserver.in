@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+name="geoserver"
+
+: ${geoserver_stdout_log="/var/log/geoserver_output.log"}
+: ${geoserver_stderr_log="/var/log/geoserver_error.log"}
+: ${geoserver_user="root"}
+: ${geoserver_chdir="%%GEOSERVERDIR%%"}
+: ${geoserver_pidfile="/var/run/geoserver.pid"}
+
+java_args="-DGEOSERVER_DATA_DIR=%%GEOSERVERDIR%%/data_dir -Djava.awt.headless=true \
+		-DSTOP.PORT=8079 -DSTOP.KEY=geoserver -jar start.jar"
+log_args=">> ${geoserver_stdout_log} 2>> ${geoserver_stderr_log}"
+
+pidfile=${geoserver_pidfile}
+command="%%JAVA%%"
+command_args="${java_args} ${geoserver_flags} ${log_args}"
+supervisor=supervise-daemon
+
+start_pre() {
+    touch $geoserver_stdout_log $geoserver_stderr_log
+    chown $geoserver_user $geoserver_stdout_log $geoserver_stderr_log
+}
+
+depend() {
+	use net
+}

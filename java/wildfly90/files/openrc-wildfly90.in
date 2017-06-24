@@ -1,0 +1,66 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable wildfly:
+# wildfly_args (str):         Optional arguments to OAJBoss
+# wildfly_log_stdout (str)       JBoss log output stdout, filename.
+# wildfly_log_stderr (str)       JBoss log output stderr, filename.
+
+name="wildfly"
+
+wildfly_logdir="%%LOG_DIR%%"
+wildfly_log_stdout="${wildfly_log_stdout:-"${wildfly_logdir}/log"}"
+wildfly_log_stderr="${wildfly_log_stderr:-"${wildfly_logdir}/error"}"
+wildfly_args="${wildfly_args:-""}"
+wildfly_sleep="${wildfly_sleep:-"5"}"
+wildfly_kill9="${wildfly_kill9:-""}"
+wildfly_additional_killall="${wildfly_additional_killall:-""}"
+wildfly_user="%%USER%%"
+wildfly_group="%%GROUP%%"
+pidfile="%%PID_FILE%%"
+
+WILDFLY_HOME="%%APP_HOME%%"
+#minimal requirements must be set for our javavmwrapper
+JAVA_VERSION="1.7+"
+export JAVA_VERSION
+
+start()
+{
+	if [ ! -d "${wildfly_logdir}" ]
+	then
+		install -d -o ${wildfly_user} ${wildfly_logdir}
+	fi
+
+	ebegin "Starting wildfly."
+	daemon -u ${wildfly_user} ${WILDFLY_HOME}/bin/standalone.sh ${wildfly_args} >> ${wildfly_log_stdout} 2>> ${wildfly_log_stderr}
+
+	sleep ${wildfly_sleep}	# let daemon(8) and sh(1) finish before executing pgrep(1)
+	pgrep -U ${wildfly_user} -f ${WILDFLY_HOME}/modules > ${pidfile}
+	chown ${wildfly_user} $pidfile
+}
+
+stop()
+{
+	# Subvert the check_pid_file procname check.
+	if [ -f ${pidfile} ]
+	then
+		kill `cat ${pidfile}`
+		# Only if we aware that our setup can hangs, and only after trying simple kill, we can kill it hard way.
+		if [ ! -z "${wildfly_kill9}" ]
+		then
+			sleep ${wildfly_sleep}
+			kill  -9 `cat ${pidfile}`
+		fi
+		# In some setups, JBoss can spawn some child processess, which could prevent it from stopping, and freeing net ports.
+		# Let's blindly kill them all, since we are really know what we are doing.
+		if [ ! -z "${wildfly_additional_killall}" ]
+		then
+			sleep ${wildfly_sleep}
+			killall ${wildfly_additional_killall}
+		fi
+	fi
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

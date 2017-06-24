@@ -1,0 +1,55 @@
+#!/sbin/openrc-run
+# Copyright (c) 2016 Joe Maloney <jmaloney@ixsystems.com>
+# Released under the 2-clause BSD license.
+
+command="/usr/local/sbin/PCDMd"
+pid=/var/run/PCDMd.pid
+command_args=""
+name="TrueOS Display Manager"
+
+depend() {
+	need urandom
+	after bootmisc syscons moused
+}
+
+check_running() {
+  #return 0 if already running, 1 otherwise
+  if [ ! -f ${pid} ]; then
+    return 1;
+  elif [ `pgrep -q -F ${pid}` ]; then
+    return 1;
+  fi
+  return 0
+}
+
+start() {
+  # Check if boot-loader set option to skip xorg
+  if [ "`kenv noxorg 2>/dev/null`" = "YES" ] ; then
+     return 0
+  fi
+  # Check if this is already running
+  check_running
+  if [ $? -eq 0 ]; then
+    return 0;
+  fi
+  ebegin "Starting PCDM"
+  #Start the PCDM login daemon
+  if [ ! -e /var/run/nologin ]; then
+    start-stop-daemon --start --exec "${command}" --name pcdm --pidfile ${pid} ${command_args}
+    status=$?
+    eend $status
+    return $status
+  fi
+  return 1;
+}
+
+stop() {
+      #Make sure PCDMd knows that we intend to stop X
+      ${command} stop
+      #Now stop all PCDM sessions
+      killall PCDM-session #
+      if [ -f ${pid} ]; then
+        rm ${pid}
+      fi
+      return 0;
+}

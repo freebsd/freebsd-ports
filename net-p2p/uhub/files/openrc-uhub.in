@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable uhub:
+#
+# uhub_pidfile (path):	Set full path to pid file.
+#			Default is "/var/run/uhub.pid".
+
+name="uhub"
+
+: ${uhub_flags:="-L -u uhub -g uhub"}
+: ${uhub_pidfile:="/var/run/${name}.pid"}
+
+command=%%PREFIX%%/bin/uhub
+command_args="-f -p ${uhub_pidfile}"
+pidfile=${uhub_pidfile}
+required_files=${uhub_conf}
+
+depend() {
+		keyword -shutdown
+}

@@ -11,7 +11,6 @@
 
 name="tor"
 
-: ${tor_enable="NO"}
 : ${tor_instances=""}
 : ${tor_conf="/usr/local/etc/tor/torrc"}
 : ${tor_user="_tor"}
@@ -38,7 +37,7 @@ if [ -n "${instance}" ]; then
     tor_pidfile=${inst_def%%:*}
     tor_datadir=${inst_def#$tor_pidfile:}
     if [ -z "${tor_conf}" -o -z "${tor_user}" -o -z "${tor_group}" -o -z "${tor_pidfile}" -o -z "${tor_datadir}" ]; then
-      warn "invalid tor instance ${inst_name} settings: ${instance}"
+      ewarn "invalid tor instance ${inst_name} settings: ${instance}"
       exit 1
     fi
   else
@@ -48,15 +47,15 @@ if [ -n "${instance}" ]; then
     tor_datadir=${tor_datadir}/instance@${inst_name}
   fi
   if ! [ -r ${tor_conf} ]; then
-    warn "tor instance ${inst_name} config file ${tor_conf} doesn't exist or isn't readable"
-    warn "you can copy the sample config /usr/local/etc/tor/torrc.sample and modify it"
+    ewarn "tor instance ${inst_name} config file ${tor_conf} doesn't exist or isn't readable"
+    ewarn "you can copy the sample config /usr/local/etc/tor/torrc.sample and modify it"
     exit 1
   fi
   if ! [ -d ${tor_datadir} ]; then
     mkdir -p ${tor_datadir} &&
     chown ${tor_user}:${tor_group} ${tor_datadir} &&
     chmod 0700 ${tor_datadir} &&
-    echo "${name}: created the instance data directory ${tor_datadir}"
+    einfo "${name}: created the instance data directory ${tor_datadir}"
   fi
 fi
 
@@ -74,7 +73,7 @@ if [ -z "${instance}" -a -n "${tor_instances}" ]; then
     fi
   done
   if [ -z "${inst_only}" -o "${inst_only}" = "main" ]; then
-    checkyesno tor_disable_default_instance && return $exit_code
+    yesno tor_disable_default_instance && return $exit_code
     echo -n "${name} main instance: "
   elif [ -n "${inst_only}" ]; then
     [ $inst_done -gt 0 ] || err 1 "${name} instance '$inst_only' isn't defined"
@@ -88,4 +87,3 @@ pidfile=${tor_pidfile}
 command="/usr/local/bin/${name}"
 command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir}"
 command_user="_tor"
-extra_commands="reload"

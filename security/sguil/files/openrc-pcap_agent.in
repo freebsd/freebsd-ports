@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# $FreeBSD: head/security/sguil-sensor/files/pcap_agent.in 312466 2013-02-18 00:56:47Z miwi $
+
+# Add the following line to /etc/rc.conf to enable pcap_agent:
+# pcap_agent_conf (str):        Pcap_agent configuration file
+#                               Default: %%PREFIX%%/etc/%%SGUILDIR%%/pcap_agent.conf
+# pcap_agent_flags (str):       Default: -D
+
+name="pcap_agent"
+
+#set defaults
+: ${pcap_agent_conf:="%%PREFIX%%/etc/%%SGUILDIR%%/pcap_agent.conf"}
+: ${pcap_agent_flags:="-D -c ${pcap_agent_conf}"}
+
+command="%%PREFIX%%/bin/%%SGUILDIR%%/pcap_agent.tcl"
+procname="%%PREFIX%%/bin/%%TCLSH%%"
+pidfile="/var/run/${name}.pid"
+
+depend() {
+		keyword -shutdown
+}

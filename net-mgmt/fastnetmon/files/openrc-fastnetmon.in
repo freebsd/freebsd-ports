@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name=fastnetmon
+description="fastnetmon startup script"
+
+: ${fastnetmon_user:=fastnetmon}
+: ${fastnetmon_flags:=--daemonize}
+
+command=%%PREFIX%%/bin/fastnetmon
+command_args=${fastnetmon_flags}
+command_user=${fastnetmon_user}
+pidfile=/var/run/fastnetmon/$name.pid
+
+depend() {
+	use net
+	keyword -shutdown
+}

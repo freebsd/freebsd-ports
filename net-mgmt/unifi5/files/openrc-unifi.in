@@ -2,18 +2,9 @@
 #
 # Original Author: Mark Felder <feld@FreeBSD.org>
 # Author:  Mike N. <c0psrul3@gmail.com>
-# $FreeBSD$
-#
-
-# PROVIDE: unifi
-# REQUIRE: LOGIN
-# KEYWORD: shutdown
 
 name=unifi
 
-#rcvar=unifi_enable
-
-#: ${unifi_enable:=NO}
 : ${unifi_user:=unifi}
 : ${unifi_group:=unifi}
 : ${unifi_chdir=%%PREFIX%%/share/java/${name}}
@@ -32,30 +23,19 @@ else
     fi
   done
 fi
-procname=${JREbin:-$Jbin}
 
-command_args="${procname} ${unifi_javaflags} -jar lib/ace.jar start"
+command=${JREbin:-$Jbin}
+command_args="${unifi_javaflags} -jar lib/ace.jar start"
+command_user=${unifi_user}
 
-start() {
-    ebegin "Starting ${name}"
-    start-stop-daemon --start --progress --make-pidfile --background \
-        --user ${unifi_user}:${unifi_group} \
-        --chdir ${unifi_chdir} \
-        --pidfile ${pidfile} \
-        -- ${procname} ${unifi_javaflags} -jar lib/ace.jar start
-    eend $?
-}
-
-stop() {
-    ebegin "Stopping ${name}"
-    start-stop-daemon --stop --exec ${procname} \
-        --pidfile ${pidfile}
-    eend $?
-}
-
-start_pre()
-{
+start_pre() {
 	if [ ! -e  ${piddir} ] ; then
 		install -d -o ${unifi_user} -g ${unifi_group} ${piddir};
 	fi
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
 }

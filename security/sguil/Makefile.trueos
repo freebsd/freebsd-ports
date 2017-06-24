@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-sancp_agent openrc-pcap_agent-sancp openrc-pads_agent openrc-pcap_agent openrc-sguild openrc-snort_agent

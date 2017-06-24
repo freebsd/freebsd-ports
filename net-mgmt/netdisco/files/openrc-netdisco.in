@@ -1,0 +1,63 @@
+#!/sbin/openrc-run
+
+name="netdisco"
+
+: ${netdisco_home="/var/run/netdisco"}
+: ${netdisco_user="netdisco"}
+: ${netdisco_group="netdisco"}
+netdisco_daemons="web daemon"
+
+start_pre() {
+  # /var/run and /var/log
+  if [ ! -d /var/run/netdisco ]; then
+    mkdir /var/run/netdisco
+    chown -R netdisco:netdisco /var/run/netdisco
+  fi
+  if [ ! -d /var/log/netdisco ]; then
+    mkdir /var/log/netdisco
+    chown netdisco:netdisco /var/log/netdisco
+  fi
+  if [ ! -d /usr/local/etc/netdisco/logs ]; then
+    ln -s /var/log/netdisco /usr/local/etc/netdisco/logs
+  fi
+  # populate /var/run/netdisco
+  for dir in environments perl5 netdisco-mibs; do
+    test -d /var/run/netdisco/$dir || ln -fs /usr/local/etc/netdisco/$dir /var/run/netdisco/$dir
+  done
+  test -d /var/run/netdisco/logs || ln -s /var/log/netdisco /var/run/netdisco/logs
+}
+
+start() {
+	netdisco_cmd
+}
+
+stop() {
+	netdisco_cmd
+}
+
+netdisco_cmd() {
+  for n in ${netdisco_daemons}; do
+    name="netdisco_$n"
+    command="/usr/local/bin/netdisco-${n}"
+    pidfile="/var/run/netdisco/netdisco-${n}.pid"
+    # Daemon should be enabled and running
+	$command 
+  done
+}
+
+netdisco_config_init() {
+  # Defaults
+  netdisco_web_enable=${netdisco_web_enable:-NO}
+  netdisco_web_pidfile=${netdisco_web_pidfile:-"/var/run/netdisco/netdisco-web.pid"}
+  netdisco_daemon_enable=${netdisco_daemon_enable:-NO}
+  netdisco_web_user=${netdisco_user}
+  netdisco_daemon_user=${netdisco_user}
+  netdisco_web_group=${netdisco_group}
+  netdisco_daemon_group=${netdisco_group}
+  export NETDISCO_HOME=/var/run/netdisco
+}
+
+depend() {
+	after postgresql
+	keyword -shutdown
+}

@@ -1,0 +1,33 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# tcsd_mode (string): Set to "native" by default.
+#                     Set it to "emulator" to use software TPM emulator.
+#                     "emulator" depends on tpmd (emulators/tpm-emulator).
+
+name=tcsd
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+start_pre() {
+	if [ $tcsd_mode = "emulator"]; then
+			command="%%PREFIX%%/sbin/tcsd_emu"
+	fi
+	/usr/bin/install -d -m 0700 -o %%USERS%% -g %%GROUPS%% \
+	    /var/run/tpm /var/run/ima %%PREFIX%%/var/lib/tpm
+	/usr/sbin/chown %%USERS%%:%%GROUPS%% \
+	    %%PREFIX%%/etc/tcsd.conf
+	/bin/chmod 0600 \
+	    %%PREFIX%%/etc/tcsd.conf
+}
+
+: ${tcsd_mode:="native"}
+
+depend() {
+		provide tcsd
+		need tpmd localmount
+		keyword -shutdown
+		after bootmisc
+}

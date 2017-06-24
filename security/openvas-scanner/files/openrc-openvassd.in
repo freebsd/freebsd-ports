@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name=openvassd
+command="%%PREFIX%%/sbin/openvassd"
+pidfile=/var/run/openvassd.pid
+
+depend() {
+		keyword -shutdown
+}

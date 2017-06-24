@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+snmptrapd_flags=${snmptrapd_flags-"-p /var/run/snmptrapd.pid"}
+
+[ ! -z "$net_snmptrapd_flags" ] && snmptrapd_flags="$net_snmptrapd_flags"
+
+name=snmptrapd
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid

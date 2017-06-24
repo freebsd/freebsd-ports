@@ -1,0 +1,39 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable suricata:
+# suricata_flags (str):		Extra flags passed to suricata
+#				Default: -D -q
+# suricata_interface (str):	Network interface to sniff
+#				Default: "" 
+# suricata_conf (str):		Suricata configuration file
+#				Default: ${PREFIX}/etc/suricata/suricata.yaml
+# suricata_divertport (int):	Port to create divert socket (Inline Mode)
+#				Default: 8000
+# suricata_netmap (str):	Set to YES to enable netmap (Inline Mode)
+#				Default: NO
+
+name="suricata"
+command="%%PREFIX%%/bin/suricata"
+
+[ -z "$suricata_conf" ]		&& suricata_conf="%%PREFIX%%/etc/suricata/suricata.yaml"
+[ -z "$suricata_flags" ]	&& suricata_flags="-D"
+[ -z "$suricata_divertport" ]	&& suricata_divertport="8000"
+[ -z "$suricata_netmap" ]	&& suricata_netmap="NO"
+
+if [ -n "$suricata_interface" ]; then
+	suricata_flags="$suricata_flags -i $suricata_interface"
+elif [ "$suricata_netmap" != "NO" ]; then
+	suricata_flags="$suricata_flags --netmap"
+else
+	suricata_flags="$suricata_flags -d $suricata_divertport"
+	info "Inline Mode on divert port $suricata_divertport (suricata_interface not defined)"
+fi
+
+pidfile="/var/run/suricata.pid"
+suricata_flags="$suricata_flags --pidfile $pidfile"
+
+[ -n "$suricata_conf" ]	&& suricata_flags="$suricata_flags -c $suricata_conf"
+
+depend() {
+		keyword -shutdown
+}

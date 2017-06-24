@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+name="mrtg_daemon"
+
+: ${mrtg_daemon_pidfile="/var/run/mrtg/mrtg.pid"}
+: ${mrtg_daemon_user="mrtg"}
+: ${mrtg_daemon_group="mrtg"}
+: ${mrtg_daemon_config="%%ETCDIR%%/mrtg.cfg"}
+
+: ${mrtg_daemon_flags="--pid-file $mrtg_daemon_pidfile --lock-file /var/run/mrtg/lockfile --confcache-file /var/run/mrtg/confcache --user $mrtg_daemon_user --group $mrtg_daemon_group --daemon $mrtg_daemon_config"}
+
+command="%%PREFIX%%/bin/mrtg"
+command_user=${mrtg_daemon_user}
+pidfile=${mrtg_daemon_pidfile}
+
+start_pre() {
+       rm -f /var/run/mrtg/lockfile /var/run/mrtg/confcache $mrtg_daemon_pidfile
+       export LANG=C
+}
+
+depend() {
+	use bsnmpd snmpd
+	keyword -shutdown
+}

@@ -1,0 +1,44 @@
+#!/sbin/openrc-run
+# Created by: Sean McAfee <smcafee@collaborativefusion.com>
+
+# Define these smokeping_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/smokeping
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# smokeping_flags="<set as needed>"
+
+name=smokeping
+
+extra_commands="configtest"
+
+# pidfile is hardcoded in Smokeping.pm, not configurable
+smokeping_pidfile="%%PREFIX%%/var/smokeping/pid"
+: ${smokeping_logfile=/var/log/smokeping.log}
+: ${smokeping_user="%%USERS%%"}
+: ${smokeping_group="%%GROUPS%%"}
+
+command="%%PREFIX%%/bin/smokeping"
+command_user=${smokeping_user}
+command_args="${smokeping_flags} --logfile=${smokeping_logfile}"
+pidfile="${smokeping_pidfile}"
+
+start_pre() {
+	if [ ! -e ${smokeping_logfile} ];
+	then
+		install -o ${smokeping_user} -g ${smokeping_group} -m 644 /dev/null ${smokeping_logfile} ||\
+			 eerror "ERROR: Could not initialize logfile at ${smokeping_logfile}.";
+	fi
+}
+
+configtest() {
+	${command} --check
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# $FreeBSD: head/security/sguil-sensor/files/snort_agent.in 312466 2013-02-18 00:56:47Z miwi $
+
+# Add the following line to /etc/rc.conf to enable snort_agent:
+# snort_agent_conf (str):        Snort_agent configuration file
+#                                Default: %%PREFIX%%/etc/%%SGUILDIR%%/snort_agent.conf
+# snort_agent_flags (str):       Default: -D
+
+name="snort_agent"
+
+#set defaults
+: ${snort_agent_conf:="%%PREFIX%%/etc/%%SGUILDIR%%/snort_agent.conf"}
+: ${snort_agent_flags:="-D -c ${snort_agent_conf}"}
+
+command="%%PREFIX%%/bin/%%SGUILDIR%%/snort_agent.tcl"
+procname="%%PREFIX%%/bin/%%TCLSH%%"
+pidfile="/var/run/${name}.pid"
+
+depend() {
+		keyword -shutdown
+}

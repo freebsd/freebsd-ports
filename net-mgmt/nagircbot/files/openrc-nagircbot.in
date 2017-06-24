@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable nagircbot:
+#
+# nagircbot_flags="<set as needed>"
+#
+# You must configure at least some flags to make it connect to a server. See -h.
+
+name=nagircbot
+
+pidfile=/var/run/nagios/${name}.pid
+command=%%PREFIX%%/bin/nagircbot
+command_args="-P $pidfile -z nagios"
+
+depend() {
+	keyword -shutdown
+}
