@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	certbot
-PORTVERSION=	0.13.0
-PORTREVISION=	2
+PORTVERSION=	0.15.0
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -18,18 +17,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme==${PKGVERSION}:security/py-acme \
 		${PYTHON_PKGNAMEPREFIX}configargparse>=0.9.3:devel/py-configargparse \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=0.7:security/py-cryptography \
+		${PYTHON_PKGNAMEPREFIX}cryptography>=1.2:security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}parsedatetime>=1.3:devel/py-parsedatetime \
-		${PYTHON_PKGNAMEPREFIX}psutil>=2.2.1:sysutils/py-psutil \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}pyrfc3339>0:devel/py-pyrfc3339 \
-		${PYTHON_PKGNAMEPREFIX}python2-pythondialog>=3.2.2r1:devel/py-python2-pythondialog \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=1.0:devel/${PYTHON_PKGNAMEPREFIX}setuptools \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
+		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock
 
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils
