@@ -13,6 +13,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT?=	GNU GDB of newer version than comes with the system
 
 BROKEN=		unfetchable
+BROKEN_powerpc=		Does not configure
 BROKEN_powerpc64=	Does not build
 
 PKGNAMESUFFIX=	66
@@ -76,10 +77,6 @@ pre-configure:
 PLIST_SUB+=	INSIGHT='@comment '
 CONFLICTS+=	gdb-insight*
 .endif
-
-.for a in ia64 powerpc
-BROKEN_${a}=	Does not configure on ia64 or powerpc
-.endfor
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}

@@ -12,7 +12,7 @@ COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-ONLY_FOR_ARCHS=	i386 amd64 ia64
+ONLY_FOR_ARCHS=		amd64 i386
 IA32_BINARY_PORT=	yes
 
 PLIST_FILES=	bin/fasm

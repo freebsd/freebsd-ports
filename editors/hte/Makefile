@@ -13,8 +13,6 @@ COMMENT=	File editor/viewer/analyzer for executables
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_ia64=	does not build
-
 USES=		ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 

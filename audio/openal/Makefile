@@ -41,9 +41,6 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 ASM_BUILD_DEPENDS=	nasm:devel/nasm
 
-NOT_FOR_ARCHS=	ia64
-NOT_FOR_ARCHS_REASON_ia64=	does not compile
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/x86_64\*/amd64\* | \*ia64\*/g; \
 		/CPPFLAGS=/ d; s/ \*linux\*)/ \*bsd\*)/' ${WRKSRC}/configure

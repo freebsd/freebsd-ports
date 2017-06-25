@@ -11,11 +11,11 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	FFmpeg wrapper
 
+LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0
+
 BROKEN=		Unfetchable (google code has gone away)
 DEPRECATED=	Unfetchable for more than six months (google code has gone away)
 EXPIRATION_DATE=	2017-04-30
-
-LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0
 
 LIBNAME=	libavbin.so.${PORTVERSION}
 PLIST_FILES=	include/avbin.h \
@@ -23,15 +23,13 @@ PLIST_FILES=	include/avbin.h \
 		lib/libavbin.so
 USE_LDCONFIG=	yes
 
+CFLAGS_amd64=	-fPIC
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
 
 do-build:
 	cd ${WRKSRC} && \

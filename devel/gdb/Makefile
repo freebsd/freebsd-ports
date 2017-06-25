@@ -38,7 +38,7 @@ LIB_DEPENDS+=	libexpat.so:textproc/expat2
 VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 armv6 mips	# untested elsewhere, might work
+ONLY_FOR_ARCHS=		amd64 armv6 i386 mips powerpc powerpc64		# untested elsewhere, might work
 
 OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB PYTHON TUI
 

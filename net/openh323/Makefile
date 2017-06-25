@@ -27,6 +27,10 @@ USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+CFLAGS_amd64=	-fPIC
+CFLAGS_powerpc=	-fPIC
+CFLAGS_sparc64=	-fPIC
+
 ALL_TARGET=	optshared
 CONFIGURE_ENV+=	BUILDTIME="YES"
 CPPFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}/include
@@ -42,10 +46,6 @@ SPEEX_CONFIGURE_ON=	--enable-localspeex=no
 SPEEX_CONFIGURE_OFF=	--enable-localspeex=yes
 
 .include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
-CFLAGS+=	-fPIC
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \

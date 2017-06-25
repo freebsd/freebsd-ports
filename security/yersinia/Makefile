@@ -28,7 +28,6 @@ CONFLICTS=	yersinia-gtk-[0-9]*
 .endif
 GNU_CONFIGURE=	yes
 
-#NOT_FOR_ARCHS=	ia64 sparc64
 PLIST_FILES=	sbin/yersinia \
 		man/man8/yersinia.8.gz
 
