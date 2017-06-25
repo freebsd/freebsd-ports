@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20170624:
+  AFFECTS: users of mail/dcc-dccd
+  AUTHOR: ultima@FreeBSD.org
+
+  The ALT_HOME option was removed in 1.3.159_1. If this option is being
+  used, please be sure to move the old home directory, /var/dcc to
+  ${PREFIX}/dcc.
+
+20170624:
   AFFECTS: users of net/rabbitmq
   AUTHOR: olgeni@FreeBSD.org
 
