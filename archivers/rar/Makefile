@@ -16,6 +16,9 @@ LICENSE_NAME=	RAR license
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_powerpc=		fails to install: File format not recognized
+BROKEN_sparc64=		fails to install: File format not recognized
+
 RESTRICTED=	only unmodified original package can be distributed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
@@ -29,9 +32,7 @@ SFX_DESC=	SFX archive support (implies compat9x on FreeBSD 10 and up)
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=	fails to install on ia64/powerpc/sparc64: File format not recognized
-.elif ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64"
 .if !defined(HAVE_COMPAT_IA32_KERN)
 HAVE_COMPAT_IA32_KERN!=	if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then ${ECHO_CMD} YES; fi
 .endif

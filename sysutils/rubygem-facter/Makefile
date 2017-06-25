@@ -25,8 +25,8 @@ OPTIONS_DEFAULT=	ZFS_FACTS
 
 .include <bsd.port.pre.mk>
 
-# Restrict dmidecode dependency to Intel based systems
-.if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64"
+# Restrict dmidecode dependency to x86-based systems
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
 RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 .endif
 

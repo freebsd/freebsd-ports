@@ -29,6 +29,4 @@ post-patch:
 	${REINPLACE_CMD} 's|#define fl_draw_box|#define fl_drw_box|'	\
 		${WRKSRC}/lib/include/Basic.h
 
-BROKEN_ia64=	Does not compile on ia64
-
 .include <bsd.port.mk>

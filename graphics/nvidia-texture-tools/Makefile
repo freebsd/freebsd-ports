@@ -16,7 +16,6 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libIlmImf.so:graphics/OpenEXR
 
-BROKEN_ia64=	does not build
 BROKEN_powerpc=	does not build
 BROKEN_sparc64=	does not build
 
@@ -32,7 +31,8 @@ CXXFLAGS+=	-fPIC
 
 PORTDOCS=	NVIDIA_Texture_Tools_README.txt ChangeLog
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 # see src/nvcore/nvcore.h
+# see src/nvcore/nvcore.h
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 
 OPTIONS_DEFINE=	COMPRESSUI DOCS
 OPTIONS_SUB=	yes

@@ -12,9 +12,9 @@ COMMENT=	LISP like scripting language
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	does not build: error: redefinition of typedef CPPFunction
-
 LIB_DEPENDS=	libffi.so:devel/libffi
+
+BROKEN_powerpc64=	does not build: error: redefinition of typedef CPPFunction
 
 CONFLICTS=	newlisp-[0-9]*
 
@@ -42,7 +42,7 @@ GUISERV_DESC=	Install GUI server (in Java)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 CFLAGS+=	-DNEWLISP64
 .endif
 

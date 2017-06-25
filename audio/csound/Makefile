@@ -21,6 +21,8 @@ BUILD_DEPENDS=	swig13>0:devel/swig13 \
 		gmm++>0:math/gmm++
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
+BROKEN_powerpc64=	Does not build
+
 PORTSCOUT=	limit:^5\.
 
 CONFLICTS_INSTALL=	outguess-* csound6
@@ -104,15 +106,13 @@ DOCS_DISTFILES=		Csound${PORTVERSION:R}_manual_html.zip:manual
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
+.if ${ARCH} == amd64 || ${ARCH} == sparc64
 MAKE_ARGS+=	Word64=1
 .endif
 
 .if ${OPSYS} == FreeBSD
 CXXLIB=		c++
 .endif
-
-BROKEN_powerpc64=	Does not build
 
 post-patch:
 	@${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \

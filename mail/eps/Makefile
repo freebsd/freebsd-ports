@@ -14,11 +14,7 @@ OPTIONS_DEFINE=	DOCS
 
 USE_CSTD=	gnu89
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
+CFLAGS_amd64=	-fPIC
 
 PORTDOCS=	howto
 
@@ -36,4 +32,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

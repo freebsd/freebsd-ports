@@ -19,12 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 NLS_USES=	gettext iconv
 NLS_CONFIGURE_OFF=--disable-nls --without-libiconv-prefix --without-libintl-prefix
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64"
-CFLAGS:=	${CFLAGS:C/-O[0-9]//g}
-.endif
-
 INSTALL_TARGET=	install install-man
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
