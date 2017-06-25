@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	liblinear
-PORTVERSION=	2.1
+PORTVERSION=	2.11
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/liblinear/ \
 		http://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Library for Large Linear Classification
 
 LICENSE=	BSD3CLAUSE
