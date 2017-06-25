@@ -21,7 +21,7 @@ LIB_DEPENDS=	libunibilium.so:devel/unibilium \
 		libuv.so:devel/libuv \
 		libmsgpackc.so:devel/msgpack
 
-USES=		cmake:outsource gettext iconv ninja lua:build pathfix pkgconfig
+USES=		cmake:outsource gettext iconv lua:build pathfix pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	libmpack:libmpack:1.0.5:libmpack \
 		libmpack:libmpack-lua:1.0.6:libmpack_lua

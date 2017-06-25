@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	build unit tests for flang
 
 USE_LDCONFIG=	${PREFIX}/flang/lib
-USES=		cmake:outsource compiler:c++11-lib libedit perl5 tar:xz \
+USES=		cmake:outsource,noninja compiler:c++11-lib libedit perl5 tar:xz \
 		shebangfix
 _USES_PYTHON?=	python:build
 USES+=		${_USES_PYTHON}

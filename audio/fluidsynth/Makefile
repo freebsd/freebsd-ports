@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO READLINE \
 OPTIONS_DEFAULT=	JACK READLINE
 
 USE_GNOME=	glib20
-USES=		cmake pkgconfig ninja tar:bzip2
+USES=		cmake pkgconfig tar:bzip2
 CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
 		-Denable-midishare:BOOL=FALSE
 USE_LDCONFIG=	yes

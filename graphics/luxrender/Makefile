@@ -28,7 +28,7 @@ CONFLICTS_INSTALL?=	${PORTNAME}14-1.4*
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 
-USES+=		bison cmake python:build tar:bzip2
+USES+=		bison cmake:noninja python:build tar:bzip2
 USE_GL=		glu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-lux-${LUX_REV}

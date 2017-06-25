@@ -1,0 +1,59 @@
+From 8eed7012c10f1a835385d750fd55f228d1d35df9 Mon Sep 17 00:00:00 2001
+From: Ralph Potter <r.potter@bath.ac.uk>
+Date: Wed, 5 Nov 2014 16:16:55 +0000
+Subject: [PATCH] Resolve dependency issue building eLut.h/toFloat.h with
+ CMake/Ninja.
+
+---
+ IlmBase/Half/CMakeLists.txt | 23 +++++++++++------------
+ 1 file changed, 11 insertions(+), 12 deletions(-)
+
+diff --git a/IlmBase/Half/CMakeLists.txt b/IlmBase/Half/CMakeLists.txt
+index 6f9714d..958d1b0 100644
+--- Half/CMakeLists.txt
++++ Half/CMakeLists.txt
+@@ -1,23 +1,24 @@
+ # yue.nicholas@gmail.com
+ 
+ ADD_EXECUTABLE ( eLut eLut.cpp )
+-
+-ADD_CUSTOM_COMMAND (
+-  TARGET eLut POST_BUILD
+-  COMMAND eLut > ${CMAKE_CURRENT_BINARY_DIR}/eLut.h
++ADD_CUSTOM_COMMAND(
++  OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/eLut.h
++  COMMAND eLut ARGS > ${CMAKE_CURRENT_BINARY_DIR}/eLut.h
++  DEPENDS eLut
+   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+-)
++  )
+ SET_SOURCE_FILES_PROPERTIES(
+   ${CMAKE_CURRENT_BINARY_DIR}/eLut.h
+   PROPERTIES HEADER_FILE_ONLY TRUE
+   )
+ 
+ ADD_EXECUTABLE ( toFloat toFloat.cpp )
+-ADD_CUSTOM_COMMAND (
+-  TARGET toFloat POST_BUILD
+-  COMMAND toFloat > ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
++ADD_CUSTOM_COMMAND(
++  OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
++  COMMAND toFloat ARGS > ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
++  DEPENDS toFloat
+   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+-)
++  )
+ SET_SOURCE_FILES_PROPERTIES(
+   ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
+   PROPERTIES HEADER_FILE_ONLY TRUE
+@@ -27,9 +28,7 @@ SET_SOURCE_FILES_PROPERTIES(
+   half.cpp
+   PROPERTIES
+   OBJECT_DEPENDS
+-  ${CMAKE_CURRENT_BINARY_DIR}/eLut.h
+-  OBJECT_DEPENDS
+-  ${CMAKE_CURRENT_BINARY_DIR}/toFloat.h
++  "${CMAKE_CURRENT_BINARY_DIR}/eLut.h;${CMAKE_CURRENT_BINARY_DIR}/toFloat.h"
+   )
+ 
+ IF(BUILD_SHARED_LIBS)

@@ -27,7 +27,7 @@ ONLY_FOR_ARCHS=		amd64 arm64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils	\
-		jpeg ninja pkgconfig sqlite tar:xz
+		jpeg pkgconfig sqlite tar:xz
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_XORG=	ice sm x11 xext xrandr
