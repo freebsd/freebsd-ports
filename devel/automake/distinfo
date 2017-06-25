@@ -1,2 +1,3 @@
-SHA256 (automake-1.15.tar.xz) = 9908c75aabd49d13661d6dcb1bc382252d22cc77bf733a2d55e87f2aa2db8636
-SIZE (automake-1.15.tar.xz) = 1496708
+TIMESTAMP = 1497951299
+SHA256 (automake-1.15.1.tar.xz) = af6ba39142220687c500f79b4aa2f181d9b24e4f8d8ec497cea4ba26c64bedaf
+SIZE (automake-1.15.1.tar.xz) = 1509496
