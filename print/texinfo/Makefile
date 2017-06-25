@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
 		LOCAL/sunpoet/${DIST_SUBDIR}:DEFAULT,local
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} htmlxref.cnf texinfo.tex:local texi2dvi
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} htmlxref.cnf texi2dvi:local texinfo.tex:local
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
