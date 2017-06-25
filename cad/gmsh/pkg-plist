@@ -250,6 +250,7 @@
 %%SHARED%%include/gmsh/partitionFace.h
 %%SHARED%%include/gmsh/partitionVertex.h
 %%SHARED%%include/gmsh/periodical.h
+%%SHARED%%include/gmsh/picojson.h
 %%SHARED%%include/gmsh/pointsGenerators.h
 %%SHARED%%include/gmsh/polynomialBasis.h
 %%SHARED%%include/gmsh/simple3D.h
