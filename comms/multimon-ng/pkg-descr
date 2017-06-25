@@ -15,4 +15,4 @@ It decodes the following digital transmission modes:
 As an example it can be used with rtl_sdr to decode radio amateurs packets:
 rtl_fm -f 144.390M -s 22050 | multimon-ng -v 10 -t raw -A -
 
-WWW: https://github.com/EliasOenal/multimon-ng/
+WWW: https://github.com/EliasOenal/multimon-ng
