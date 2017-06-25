@@ -20,7 +20,7 @@ LICENSE_PERMS=	auto-accept
 OPTIONS_DEFINE=	OPENMPI DOCS
 OPENMPI_DESC=	Use openmpi instead of mpich2
 
-USES=		cmake gmake
+USES=		cmake:noninja gmake
 
 PLIST_FILES=	include/parmetis/metis.h \
 		include/parmetis/parmetis.h \

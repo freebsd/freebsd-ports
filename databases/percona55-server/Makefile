@@ -12,7 +12,7 @@ MAINTAINER=	flo@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/percona55-client
-USES=		bison cmake readline shebangfix
+USES=		bison cmake:noninja readline shebangfix
 
 CXXFLAGS+=	${CPPFLAGS}
 

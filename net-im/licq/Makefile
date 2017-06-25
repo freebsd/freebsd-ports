@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 BROKEN_sparc64=		Does not build: fails to link
 
-USES=		cmake iconv ssl
+USES=		cmake:noninja iconv ssl
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
 

@@ -16,6 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	glassechidna
 GH_TAGNAME=	97e9c5c
 
-USES=		cmake:outsource gmake iconv
+USES=		cmake:outsource iconv
 
 .include <bsd.port.mk>

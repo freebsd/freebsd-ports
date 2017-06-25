@@ -34,7 +34,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	ZoneMinder
 GH_TUPLE=	FriendsOfCake:crud:c3976f1:crud
 
-USES=		cmake jpeg mysql perl5 php shebangfix ssl
+USES=		cmake:noninja jpeg mysql perl5 php shebangfix ssl
 USE_RC_SUBR=	zoneminder
 USE_PHP=	json pdo_mysql session gd sockets ctype opcache
 

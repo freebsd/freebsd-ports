@@ -21,7 +21,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/Overview.md
 # and ${WRKSRC}/dox/dev_guides/building
-USES=		alias:10 bison cmake compiler:c++11-lib dos2unix gmake \
+USES=		alias:10 bison cmake compiler:c++11-lib dos2unix \
 		shebangfix tk tar:tgz
 USE_XORG=	xmu
 DOS2UNIX_FILES=	adm/templates/*

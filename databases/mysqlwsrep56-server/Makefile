@@ -22,7 +22,7 @@ DATADIR=	${PREFIX}/share/mysql
 NOT_FOR_ARCHS=		aarch64 armv6 powerpc64
 NOT_FOR_ARCHS_REASON=	error: Unsupported platform
 
-USES=		cmake:outsource libedit shebangfix perl5
+USES=		cmake:outsource,noninja libedit shebangfix perl5
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 

@@ -16,7 +16,7 @@ BROKEN_armv6=		fails to link: cmTC_8106f uses VFP register arguments, testCCompi
 
 SHEBANG_FILES=	scripts/highlight-transitions
 
-USES=		cmake:outsource execinfo ninja python:run shebangfix
+USES=		cmake:outsource execinfo python:run shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-TESLA

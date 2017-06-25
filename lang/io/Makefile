@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	stevedekorte
 GH_TAGNAME=	23afbcc
 
-USES=		cmake:outsource compiler:c11
+USES=		cmake:outsource,noninja compiler:c11
 MAKE_JOBS_UNSAFE=yes
 USE_LDCONFIG=	yes
 
