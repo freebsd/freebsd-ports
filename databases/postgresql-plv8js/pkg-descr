@@ -2,4 +2,4 @@ plv8js is a procedural language add-on for PostgreSQL,
 which means you can define JavaScript functions
 that run inside a PostgreSQL server using google V8 Engine.
 
-WWW: https://github.com/plv8/plv8/
+WWW: https://github.com/plv8/plv8
