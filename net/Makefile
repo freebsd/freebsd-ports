@@ -1279,7 +1279,6 @@
     SUBDIR += sippy_b2bua
     SUBDIR += siproxd
     SUBDIR += sipsak
-    SUBDIR += sixxs-aiccu
     SUBDIR += skstream
     SUBDIR += sl2tps
     SUBDIR += slurm

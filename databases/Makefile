@@ -584,12 +584,9 @@
     SUBDIR += pglogical
     SUBDIR += pgmodeler
     SUBDIR += pgpool
-    SUBDIR += pgpool-II
-    SUBDIR += pgpool-II-30
     SUBDIR += pgpool-II-33
     SUBDIR += pgpool-II-35
     SUBDIR += pgpool-II-36
-    SUBDIR += pgpoolAdmin
     SUBDIR += pgreplay
     SUBDIR += pgrouting
     SUBDIR += pgsphere
