@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	miller
-PORTVERSION=	3.3.2
+PORTVERSION=	5.2.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	textproc
 
@@ -19,9 +19,5 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mlr man/man1/mlr.1.gz
 
 BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
-
-post-configure:
-	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-c_Makefile
-	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-libtool
 
 .include <bsd.port.mk>
