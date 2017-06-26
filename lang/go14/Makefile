@@ -28,7 +28,8 @@ sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
-ONLY_FOR_ARCHS=	amd64 armv6 i386
+
+ONLY_FOR_ARCHS=		amd64 armv6 i386
 
 # NB: apparently this failure is only when running under emulation via
 # qemu; it works fine on native hardware.  Let's leave the line in as a
@@ -48,7 +49,7 @@ GOOBJ=8
 .elif ${ARCH} == "amd64"
 GOARCH=amd64
 GOOBJ=6
-.elif ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
+.elif ${ARCH} == "armv6"
 GOARCH=arm
 GOOBJ=5
 .else
