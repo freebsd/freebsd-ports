@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170626:
+  AFFECTS: users of net-mgmt/zabbix24*
+  AUTHOR: dbaio@FreeBSD.org
+
+  Zabbix 2.4 has reached end of life and net-mgmt/zabbix24* ports have been
+  removed. Users that have not yet moved to a newer version, should use now
+  net-mgmt/zabbix3-* (LTS release) or net-mgmt/zabbix32-* (Standard release).
+
+  See more info about Zabbix releases here:
+  http://www.zabbix.com/life_cycle_and_release_policy
+
 20170624:
   AFFECTS: users of mail/dcc-dccd
   AUTHOR: ultima@FreeBSD.org
