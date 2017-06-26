@@ -27,7 +27,7 @@ USE_GNOME=	libxml2
 
 PORTDOCS=	*
 
-ONLY_FOR_ARCHS=		i386 amd64 armv6
+ONLY_FOR_ARCHS=		amd64 armv6 i386
 ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
 OPTIONS_DEFINE=	CAIRO DOCS
