@@ -36,7 +36,7 @@ PYGDB_USES=		python:2
 
 OPTIONS_SUB=		yes
 
-NOT_FOR_ARCHS=		aarch64 arm armeb armv6 armv6hf \
+NOT_FOR_ARCHS=		aarch64 arm armeb armv6 \
 			mips mips64 mips64el mipsel mipsn32
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
 
