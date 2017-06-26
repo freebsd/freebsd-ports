@@ -21,8 +21,6 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random \
 		p5-Net-DNS>=0.65:dns/p5-Net-DNS \
 		p5-Net-DNS-SEC>=0.15:dns/p5-Net-DNS-SEC \
 		p5-Socket6>=0.19:net/p5-Socket6 \
-		p5-Sys-Syslog>=0:sysutils/p5-Sys-Syslog \
-		p5-Time-HiRes>=0:devel/p5-Time-HiRes \
 		p5-YAML>=0:textproc/p5-YAML \
 		p5-Text-Template>=0:textproc/p5-Text-Template \
 		p5-Mail-RFC822-Address>=0:mail/p5-Mail-RFC822-Address \
@@ -32,9 +30,9 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql
 RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
-USES=		perl5
+NO_ARCH=	yes
+USES=		mysql perl5
 USE_PERL5=	configure
-USE_MYSQL=	yes
 CONFIGURE_SCRIPT+=	Makefile.PL INSTALLSITESCRIPT=${PREFIX}/libexec/dnscheck
 
 WRKSRC=		${WRKDIR}/engine
