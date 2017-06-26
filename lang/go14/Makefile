@@ -28,7 +28,7 @@ sh_OLD_CMD=	"/usr/bin/env bash"
 sh_CMD=		${SH}
 
 WRKSRC=		${WRKDIR}/go
-ONLY_FOR_ARCHS=	i386 amd64 armv6 armv6hf
+ONLY_FOR_ARCHS=	amd64 armv6 i386
 
 # NB: apparently this failure is only when running under emulation via
 # qemu; it works fine on native hardware.  Let's leave the line in as a
