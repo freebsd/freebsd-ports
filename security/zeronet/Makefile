@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zeronet
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security net-p2p
 
@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack-python>0:devel/py-msgpack-python \
 		${PYTHON_PKGNAMEPREFIX}gevent>=1.0.2:devel/py-gevent \
+		${PYTHON_PKGNAMEPREFIX}rsa>0:security/py-rsa \
+		${PYTHON_PKGNAMEPREFIX}maxminddb>0:net/py-maxminddb \
+		${PYTHON_PKGNAMEPREFIX}pyelliptic>0:security/py-pyelliptic \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 
 USE_GITHUB=	yes
@@ -30,7 +33,8 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	TOR DEBUG
 TOR_DESC=	Enable TOR anonymity network integration
 
-TOR_RUN_DEPENDS=	tor:security/tor
+TOR_RUN_DEPENDS=tor:security/tor \
+		${PYTHON_PKGNAMEPREFIX}stem>0:security/py-stem
 DEBUG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug
 
 .include <bsd.port.options.mk>
