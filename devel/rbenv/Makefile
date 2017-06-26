@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rbenv
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel ruby
 
@@ -33,5 +33,8 @@ do-install:
 	( cd ${WRKSRC}/completions && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR}/completions )
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rbenv.d
 	( cd ${WRKSRC}/rbenv.d && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/etc/rbenv.d )
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/rbenv-realpath.dylib
 
 .include <bsd.port.mk>
