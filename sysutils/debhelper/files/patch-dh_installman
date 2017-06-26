@@ -1,12 +1,12 @@
---- dh_installman.orig	2015-09-19 09:06:22 UTC
+--- dh_installman.orig	2017-06-25 09:59:44 UTC
 +++ dh_installman
-@@ -201,7 +201,8 @@ foreach my $package (@{$dh{DOPACKAGES}})
- 	}
+@@ -234,7 +234,8 @@ on_selected_pkgs_in_parallel(\@all_packa
+ 		}
  
- 	# Now utf-8 conversion.
--	if (defined `man --version`) {
-+	my $man_version = `man --version 2> /dev/null`;
-+	if (defined $man_version && length($man_version)) {
- 		foreach my $dir (qw{usr/share/man}) {
- 			next unless -e "$tmp/$dir";
- 			find(sub {
+ 		# Now utf-8 conversion.
+-		if (defined `man --version`) {
++		my $man_version = `man --version 2> /dev/null`;
++		if (defined $man_version && length($man_version)) {
+ 			foreach my $dir (qw{usr/share/man}) {
+ 				next unless -e "$tmp/$dir";
+ 				my @files;
