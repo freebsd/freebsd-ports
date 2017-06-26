@@ -1,7 +1,9 @@
 %%APP_HOME%%/COPYING.AFFERO
 %%APP_HOME%%/README.txt
+%%APP_HOME%%/Access-Third-Parties-Usage-About-Box.html
 %%APP_HOME%%/Third-Parties-Usage-About-Box.html
 @mode 0755
+%%APP_HOME%%/bin/%%APP_HOME%%Manage.sh
 %%APP_HOME%%/bin/artifactory.default
 %%APP_HOME%%/bin/artifactory.sh
 %%APP_HOME%%/bin/artifactoryctl
@@ -24,8 +26,11 @@
 %%APP_HOME%%/misc/db/oracle.properties
 %%APP_HOME%%/misc/db/postgresql.properties
 %%APP_HOME%%/misc/ha/ha-node.properties.template
+%%APP_HOME%%/misc/service/%%APP_HOME%%.service
 %%APP_HOME%%/misc/service/artifactory
 %%APP_HOME%%/misc/service/setenv.sh
+%%APP_HOME%%/misc/tomcat/access.xml
+%%APP_HOME%%/misc/tomcat/context.xml
 %%APP_HOME%%/misc/tomcat/NGNIX.txt
 %%APP_HOME%%/misc/tomcat/artifactory.httpd.conf
 %%APP_HOME%%/misc/tomcat/artifactory.xml
@@ -56,13 +61,16 @@
 %%APP_HOME%%/tomcat/bin/version.sh
 @mode
 %%APP_HOME%%/tomcat/conf/Catalina/localhost/artifactory.xml
+%%APP_HOME%%/tomcat/conf/Catalina/localhost/access.xml
 %%APP_HOME%%/tomcat/conf/catalina.policy
 %%APP_HOME%%/tomcat/conf/catalina.properties
+%%APP_HOME%%/tomcat/conf/context.xml
 %%APP_HOME%%/tomcat/conf/logging.properties
 %%APP_HOME%%/tomcat/conf/server.xml
 %%APP_HOME%%/tomcat/conf/web.xml
 %%APP_HOME%%/tomcat/lib/annotations-api.jar
 %%APP_HOME%%/tomcat/lib/catalina.jar
+%%APP_HOME%%/tomcat/lib/derby-10.11.1.1.jar
 %%APP_HOME%%/tomcat/lib/el-api.jar
 %%APP_HOME%%/tomcat/lib/servlet-api.jar
 %%APP_HOME%%/tomcat/lib/tomcat-api.jar
@@ -75,6 +83,7 @@
 %%APP_HOME%%/tomcat/webapps
 %%APP_HOME%%/tomcat/work
 %%APP_HOME%%/webapps/artifactory.war
+%%APP_HOME%%/webapps/access.war
 @owner artifactory
 @group artifactory
 %%VARDIR%%/tomcat/webapps/ROOT/index.html
