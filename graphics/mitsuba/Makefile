@@ -48,7 +48,6 @@ post-patch:
 
 post-install:
 # XXX: palliative; better fix installation routine not to pollute ${STAGEDIR}
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/mitsuba/data/ior/CMakeFiles/ior_database.dir
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/mitsuba/data/ior/CMakeFiles
 
 .include <bsd.port.mk>

@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libelf.so:devel/libelf
 
+BROKEN_powerpc=		fails to compile: invokes x86 assembler
+BROKEN_sparc64=		fails to compile: invokes x86 assembler
+
 CFLAGS+=	-I${PREFIX}/include/libelf
 
 CONFLICTS=	dynamips-[0-9]* dynamips-devel-[0-9]*
@@ -41,10 +44,6 @@ DYNAMIPS_CODE=	stable
 .if ${OPSYS} == FreeBSD
 DYNAMIPS_ARCH=	nojit
 .endif
-
-BROKEN_ia64=	does not compile: invokes i386 assembler
-BROKEN_sparc64=	${BROKEN_ia64}
-BROKEN_powerpc=	${BROKEN_ia64}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${DYNAMIPS_CODE}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

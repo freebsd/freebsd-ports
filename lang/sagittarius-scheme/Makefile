@@ -20,7 +20,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 		libgc-threaded.so:devel/boehm-gc-threaded
 
 USE_LDCONFIG=	yes
-USES=		cmake gmake pkgconfig
+USES=		cmake pkgconfig
 ONLY_FOR_ARCHS=	amd64 i386
 MAKE_JOBS_UNSAFE=	yes
 

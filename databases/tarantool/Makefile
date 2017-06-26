@@ -15,7 +15,7 @@ NOT_FOR_ARCHS=		armv6 powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
 MAKE_JOBS_UNSAFE=yes
-USES=		cmake compiler:c++11-lang gettext gmake perl5 readline
+USES=		cmake:noninja compiler:c++11-lang gettext gmake perl5 readline
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message

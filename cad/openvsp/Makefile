@@ -32,7 +32,7 @@ GH_ACCOUNT=	${GH_PROJECT}
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
 CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
-USES=		cmake:outsource compiler:gcc-c++11-lib jpeg
+USES=		cmake:outsource,noninja compiler:gcc-c++11-lib jpeg
 
 CMAKE_ARGS=	-DVSP_USE_SYSTEM_CMINPACK:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_CPPTEST:BOOLEAN=yes \

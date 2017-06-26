@@ -17,7 +17,7 @@ NOT_FOR_ARCHS_REASON=	unsupported platform
 
 SLAVEDIRS=	databases/percona56-client \
 		databases/percona-pam-for-mysql
-USES=		bison cmake perl5 shebangfix
+USES=		bison cmake:noninja perl5 shebangfix
 
 OPTIONS_DEFINE=	OPENSSL FASTMTX INNODBMEMCACHED TOKUDB
 OPTIONS_DEFAULT=	OPENSSL INNODBMEMCACHED

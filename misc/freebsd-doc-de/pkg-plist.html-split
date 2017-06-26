@@ -433,7 +433,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn-mirrors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/swap-encrypting.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/synching.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tcpwrappers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
@@ -455,6 +454,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest-vmware.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-bhyve.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-virtualbox.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-xen.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-compiz-fusion.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config.html

@@ -35,10 +35,6 @@ CONFLICTS_INSTALL=	yasm-[0-9]*
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if ${ARCH} == "ia64"
-CFLAGS:=	${CFLAGS:C/-O[0-9]//g}
-.endif
-
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} check
 

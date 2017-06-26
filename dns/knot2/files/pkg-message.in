@@ -1,4 +1,4 @@
-######################################################################
+################################################################################
 
   To start using Knot DNS, you should complete the following tasks:
 
@@ -9,10 +9,12 @@
     sysrc knot_config=%%ETCDIR%%/knot.conf
     service knot start
 
-######################################################################
-
   Please consult the documentation:
    - man knotd
    - https://www.knot-dns.cz/documentation/
 
-######################################################################
+  When upgrading from 2.4.x to 2.5.x read:
+   - https://www.knot-dns.cz/docs/2.5/html/migration.html#upgrade-2-4-x-to-2-5-x
+
+################################################################################
+

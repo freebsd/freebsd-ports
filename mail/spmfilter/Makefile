@@ -20,7 +20,7 @@ SMFUSER?=	nobody
 SMFGROUP?=	mail
 SMFDIR?=	/var/spool/spmfilter
 
-USES=		cmake pkgconfig
+USES=		cmake:noninja pkgconfig
 CMAKE_ARGS+=	--no-warn-unused-cli \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"

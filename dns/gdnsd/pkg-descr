@@ -10,4 +10,4 @@ gdnsd is written in C using libev and pthreads with a focus on high
 performance, low latency service. It does not offer any form of caching or
 recursive service, and does not support DNSSEC.
 
-WWW: https://github.com/blblack/gdnsd/
+WWW: https://github.com/blblack/gdnsd

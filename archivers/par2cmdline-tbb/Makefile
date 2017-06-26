@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtbb.so:devel/tbb
 
-ONLY_FOR_ARCHS=	i386 amd64 ia64
+ONLY_FOR_ARCHS=		amd64 i386
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf
 CPPFLAGS+=	-I${LOCALBASE}/include

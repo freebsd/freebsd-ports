@@ -12,8 +12,8 @@ COMMENT=	Graphical performance meter
 LICENSE=	BSD4CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	amd64 i386 ia64
-ONLY_FOR_ARCHS_REASON=	used i386-specific hardware resources
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	uses x86-specific hardware resources
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hills

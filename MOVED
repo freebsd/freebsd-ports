@@ -9440,3 +9440,8 @@ editors/calligra-l10n-sv||2017-06-12|Merged with editors/calligra
 editors/calligra-l10n-tr||2017-06-12|Merged with editors/calligra
 editors/calligra-l10n||2017-06-12|Merged with editors/calligra
 www/py-flask-restplus08||2017-06-21|Obsolete and not depended on anymore
+databases/pgpool-II|databases/pgpool|2017-06-25|Has expired: Deprecated by upstream; use database/pgpool instead
+databases/pgpool-II-30|databases/pgpool|2017-06-25|Has expired: Deprecated by upstream; use database/pgpool instead
+games/libgames-support||2017-06-25|Has expired: Superseded by libgnome-games-support, no longer used by anything
+net/sixxs-aiccu||2017-06-25|Has expired: SixXS shutdown on 2017-06-06, https://www.sixxs.net/sunset/
+databases/pgpoolAdmin||2017-06-25|Removed, depended on expired databases/pgpool-II and only supported PostgreSQL 9.2 which is will EOL in September 2017

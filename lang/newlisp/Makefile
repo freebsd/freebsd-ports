@@ -41,7 +41,7 @@ GUISERV_DESC=	Install GUI server (in Java)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 CFLAGS+=	-DNEWLISP64
 .endif
 

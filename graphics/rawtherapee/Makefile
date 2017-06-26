@@ -48,7 +48,6 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 # any more. The CMP0056 policy must be explicitly set to NEW to ensure
 # linker flags are passed. Else -lomp is not found with clang.
 # See: https://cmake.org/cmake/help/v3.4/policy/CMP0056.html
-CMAKE_NINJA=	yes
 
 INSTALLS_ICONS=	yes
 

@@ -16,9 +16,13 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
+<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
 
 USES=		cmake:outsource ncurses tar:xz
+=======
+USES=		cmake:outsource,noninja ncurses tar:xz
+>>>>>>> upstream/master
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DENABLE_GUILE=no \

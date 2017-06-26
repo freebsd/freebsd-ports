@@ -4,4 +4,4 @@ The driver does not have external dependencies, but includes the official
 light-weight Tarantool C client (a single C header which implements all
 protocol formatting) for packing requests and unpacking server responses.
 
-WWW: https://github.com/dr-co/dr-tarantool/
+WWW: https://github.com/dr-co/dr-tarantool

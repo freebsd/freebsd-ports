@@ -132,12 +132,6 @@ FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB		# common & lightweight
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000 && ${OSVERSION} < 1100000
-# workaround for make (?) problem leading to cflags
-# lost in osgjs
-USES+=			gmake
-.endif
-
 .if ${PORT_OPTIONS:MQT4} || ${PORT_OPTIONS:MQT5}
 CMAKE_ARGS+=		-DOSG_USE_QT:BOOL=ON
 PLIST_SUB+=		QT=""

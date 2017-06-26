@@ -33,10 +33,6 @@ SERVER_ONLY_DESC=Build dedicated server only
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "ia64"
-BROKEN=		Does not install on ia64: gets bus error
-.endif
-
 .if ${PORT_OPTIONS:MSERVER_ONLY}
 BAM_TARGET=	server_release
 PKGNAMESUFFX=	-server
