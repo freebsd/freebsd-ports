@@ -13,13 +13,9 @@ COMMENT=	Anonymizing overlay network for TCP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-<<<<<<< HEAD
 EXPLICIT_SAFESTACK=	yes
 
-BROKEN_mips64=	does not build: error: Need a uint128_t implementation!
-=======
 BROKEN_mips64=		does not build: error: Need a uint128_t implementation!
->>>>>>> upstream/master
 BROKEN_powerpc64=	does not build: error: Need a uint128_t implementation!
 BROKEN_sparc64=		does not build: error: Need a uint128_t implementation!
 
