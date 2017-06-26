@@ -5,7 +5,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	freebsd@netfence.it
+MAINTAINER=	ml@netfence.it
 COMMENT=	Disk-based virtual autochanger for Bacula
 
 LICENSE=	GPLv2
