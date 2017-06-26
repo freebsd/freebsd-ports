@@ -3,6 +3,7 @@
 
 PORTNAME=	MogileFS-Server
 PORTVERSION=	2.72
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -19,10 +20,10 @@ BUILD_DEPENDS=	p5-Danga-Socket>=1.56:devel/p5-Danga-Socket \
 		p5-MogileFS-Client>=0:sysutils/p5-MogileFS-Client \
 		p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \
 		p5-Perlbal>=1.79:www/perlbal \
-		p5-Sys-Syscall>=0.22:devel/p5-Sys-Syscall \
-		p5-Sys-Syslog>=0:sysutils/p5-Sys-Syslog
+		p5-Sys-Syscall>=0.22:devel/p5-Sys-Syscall
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 REINPLACE_ARGS=	-i ''
@@ -30,7 +31,7 @@ USE_RC_SUBR=	mogilefsd mogstored
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
