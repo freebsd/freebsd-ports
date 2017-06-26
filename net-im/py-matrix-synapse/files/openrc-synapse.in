@@ -1,0 +1,40 @@
+#!/sbin/openrc-run
+# Created by: Mark Felder <feld@FreeBSD.org>
+
+name=synapse
+
+: ${synapse_user:=%%USERS%%}
+: ${synapse_conf:=%%ETCDIR%%/homeserver.yaml}
+: ${synapse_dbdir:=%%DBDIR%%}
+: ${synapse_logdir:=%%LOGDIR%%}
+: ${synapse_pidfile:=%%PIDDIR%%/homeserver.pid}
+
+pidfile="${synapse_pidfile}"
+command=%%PYTHON_CMD%%
+command_args="-m synapse.app.homeserver --daemonize -c ${synapse_conf}"
+
+start_pre() {
+	if [ ! -d ${synapse_pidfile%/*} ] ; then
+		install -d -o %%USERS%% -g wheel ${synapse_pidfile%/*};
+	fi
+
+	if [ ! -d ${synapse_dbdir} ] ; then
+		install -d -o %%USERS%% -g wheel ${synapse_dbdir};
+	fi
+
+	if [ ! -d ${synapse_logdir} ] ; then
+		install -d -o %%USERS%% -g wheel ${synapse_logdir};
+	fi
+
+	if $(grep -q CHANGEME ${synapse_conf}) ; then
+		echo "Error: Default secret values in config."
+		echo "Please replace the CHANGEME values in ${synapse_conf}"
+		exit 1
+	fi
+}
+
+depend() {
+	need postgresql localmount
+	keyword -shutdown
+	after bootmisc
+}

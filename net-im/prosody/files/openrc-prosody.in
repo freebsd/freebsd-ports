@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name="prosody"
+command="%%PREFIX%%/bin/prosodyctl"
+command_args="start"
+
+pidfile=${prosody_pidfile:-"%%PREFIX%%/var/lib/prosody/prosody.pid"}
+config="%%PREFIX%%/etc/prosody/prosody.cfg.lua"
+
+start_pre() {
+	if grep -q '^daemonize[[:blank:]]*=[[:blank:]]*false' $config; then
+		supervisor=supervise-daemon
+	fi
+}
+
+stop_pre() {
+	$command stop
+}
+
+depend() {
+	keyword -shutdown
+}

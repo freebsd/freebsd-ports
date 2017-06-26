@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name="zhm"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+zhm_zephyr_servers="${zhm_zephyr_servers:-}"
+command_args="-f ${zhm_zephyr_servers}"
+
+start_pre() {
+	mkdir -p $(dirname ${pidfile})
+}
+
+depend() {
+	need named 
+}

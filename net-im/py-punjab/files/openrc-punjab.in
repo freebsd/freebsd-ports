@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="punjab"
+command="%%PREFIX%%/bin/twistd"
+
+punjab_uid=${punjab_uid-"65534"}
+punjab_gid=${punjab_gid-"65534"}
+punjab_logfile=${punjab_logfile-"/var/log/punjab.log"}
+punjab_pidfile=${punjab_pidfile-"/var/run/punjab.pid"}
+punjab_tac=${punjab_tac-"%%PREFIX%%/libexec/punjab.tac"}
+
+pidfile=${punjab_pidfile}
+
+command_args="-u ${punjab_uid} -g ${punjab_gid} --pidfile ${pidfile} -l ${punjab_logfile} -y ${punjab_tac}"

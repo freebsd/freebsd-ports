@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+
+# Define these mu_conference_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# mu_conference_config : path
+#   Path to the configuration file ("%%PREFIX%%/etc/muc.xml", the default).
+
+name="mu_conference"
+command="%%PREFIX%%/bin/mu-conference"
+
+: ${mu_conference_config="%%PREFIX%%/etc/muc.xml"}
+: ${mu_conference_user="%%JABBER_USER%%"}
+: ${mu_conference_pidfile="%%JABBER_PIDDIR%%/mu-conference.pid"}
+
+pidfile=${mu_conference_pidfile}
+command_args="-c ${mu_conference_config} -B >/dev/null 2>&1"
+
+depend() {
+	need %%JABBER_REQUIRE%%
+	keyword -shutdown
+}

@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Define these jabberd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+jabberd_chdir=${jabberd_chdir-"%%JABBER_RUNDIR%%/pid"}
+jabberd_user=${jabberd_user-"%%JABBER_USER%%"}
+
+name="jabberd"
+command="%%PREFIX%%/bin/jabberd"
+command_args="-b"
+
+stop_post() {
+	for file in c2s router s2s sm; do
+		rm -f ${jabberd_chdir}/$file.pid
+	done
+}
+
+depend() {
+	#need %%REQURE%%
+	provide jabberd
+	keyword -shutdown
+}

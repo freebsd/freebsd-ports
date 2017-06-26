@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+
+# Define these ejabberd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/ejabberd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+ejabberd_node=${ejabberd_node-"ejabberd@localhost"}
+ejabberd_epmd_address=${ejabberd_epmd_address-"127.0.0.1"}
+
+name="ejabberd"
+extra_commands="checkstatus"
+
+command=%%PREFIX%%/sbin/ejabberdctl
+command_user=ejabberd
+command_args="--node $ejabberd_node start"
+
+checkstatus() {
+	start_pre
+    $command --node $ejabberd_node status > /dev/null
+}
+
+start_pre() {
+   env ERL_EPMD_ADDRESS=\"${ejabberd_epmd_address}\" > /dev/null
+}
+
+depend() {
+	provide ejabberd
+	keyword -shutdown
+}

@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf 
+
+name="jggtrans"
+
+: ${jggtrans_program="%%PREFIX%%/sbin/jggtrans"}
+: ${jggtrans_flags="-u %%JABBER_USER%% -g %%JABBER_USER%%"}
+: ${jggtrans_pidfile="/var/jabberd/pid/jggtrans.pid"}
+
+start_cmd="/usr/bin/nice -5 ${jggtrans_program} ${jggtrans_flags}"
+pidfile=${jggtrans_pidfile}
+
+depend() {
+	need %%JABBER_USER%%
+	keyword -shutdown
+}
