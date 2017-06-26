@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# collectd_flags (string):      Set to "" by default.
+#               Additional flags to collectd, see manual page.
+
+name="collectd"
+command=%%PREFIX%%/sbin/${name}
+command_args=${collectd_flags}

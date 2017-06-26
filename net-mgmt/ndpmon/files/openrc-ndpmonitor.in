@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="ndpmonitor"
+
+command="%%PREFIX%%/sbin/ndpmon"
+required_files=%%ETCDIR%%/config_ndpmon.xml
+
+command_args=">/dev/null 2>&1 &"
+
+depend() {
+	keyword -shutdown
+}
