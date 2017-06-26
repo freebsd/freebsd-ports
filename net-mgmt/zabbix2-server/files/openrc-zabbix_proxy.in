@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable zabbix_proxy:
+#
+# zabbix_proxy_config (string): Set to the standard config file path by
+#         default.
+# zabbix_proxy_pidfile (string):    Location of the asterisk pid file
+#                               Default is /var/run/zabbix/zabbix_proxy.pid
+
+name="zabbix_proxy"
+
+: ${zabbix_proxy_config:=%%ETCDIR%%/${name}.conf}
+: ${zabbix_proxy_pidfile:=/var/run/zabbix/zabbix_proxy.pid}
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="${zabbix_proxy_config}"
+pidfile=${zabbix_proxy_pidfile}
+
+start_pre() {
+	local rundir=${zabbix_proxy_pidfile%/*}
+	if [ ! -d $rundir ] ; then
+		install -d -m 0755 -o zabbix -g zabbix $rundir
+	fi
+}
+
+depend() {
+	%%PGSQL%% need postgresql
+	%%MYSQL%% need mysql-server
+	keyword -shutdown
+}

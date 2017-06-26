@@ -1,0 +1,1 @@
+USE_OPENRC_SUBR=	openrc-zabbix_server openrc-zabbix_agentd openrc-zabbix_proxy

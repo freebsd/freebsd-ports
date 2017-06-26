@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable zabbix_agentd:
+#
+# zabbix_agentd_config (string): Set to the standard config file path by
+#         default.
+# zabbix_agentd_pidfile (string):    Location of the asterisk pid file
+#                               Default is /var/run/zabbix/zabbix_agentd.pid
+
+name="zabbix_agentd"
+
+: ${zabbix_agentd_config:=%%ETCDIR%%/${name}.conf}
+: ${zabbix_agentd_pidfile:=/var/run/zabbix/zabbix_agentd.pid}
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="${zabbix_agentd_config}"
+pidfile=${zabbix_agentd_pidfile}
+
+start_pre()
+{
+	local rundir=${zabbix_agentd_pidfile%/*}
+	if [ ! -d $rundir ] ; then
+		install -d -m 0755 -o zabbix -g zabbix $rundir
+	fi
+}
+
+depend() {
+	keyword -shutdown
+}
