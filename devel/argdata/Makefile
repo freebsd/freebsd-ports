@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	argdata
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel
 
@@ -10,6 +10,7 @@ MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Binary serialisation format inspired by YAML, MessagePack and nvlists
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL

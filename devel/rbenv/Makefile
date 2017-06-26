@@ -9,6 +9,7 @@ MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Manage multiple versions of ruby
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
@@ -29,8 +30,8 @@ do-install:
 	( ${INSTALL_SCRIPT} ${WRKSRC}/libexec/* ${STAGEDIR}${PREFIX}/libexec/ )
 	@${LN} -sf ../libexec/rbenv ${STAGEDIR}${PREFIX}/bin/rbenv
 	@${MKDIR} ${STAGEDIR}${DATADIR}/completions
-	( cd ${WRKSRC}/completions && ${COPYTREE_BIN} \* ${STAGEDIR}${DATADIR}/completions )
+	( cd ${WRKSRC}/completions && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR}/completions )
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rbenv.d
-	( cd ${WRKSRC}/rbenv.d && ${COPYTREE_BIN} \* ${STAGEDIR}${PREFIX}/etc/rbenv.d )
+	( cd ${WRKSRC}/rbenv.d && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/etc/rbenv.d )
 
 .include <bsd.port.mk>
