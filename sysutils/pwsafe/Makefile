@@ -3,7 +3,7 @@
 
 PORTNAME=	pwsafe
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://nsd.dyndns.org/pwsafe/releases/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	mathomatic
 PORTVERSION=	16.0.5
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	ehaupt@FreeBSD.org

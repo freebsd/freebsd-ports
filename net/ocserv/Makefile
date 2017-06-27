@@ -3,7 +3,7 @@
 
 PORTNAME=	ocserv
 PORTVERSION=	0.11.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/ \
 		LOCAL/cpm

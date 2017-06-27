@@ -2,6 +2,7 @@
 
 PORTNAME=	stanchion
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/stanchion/${PORTVERSION:R}/${PORTVERSION}/ \
 	http://downloads.basho.com.s3.amazonaws.com/stanchion/${PORTVERSION:R}/${PORTVERSION}/

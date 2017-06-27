@@ -3,7 +3,7 @@
 
 PORTNAME=	apachetop
 PORTVERSION=	0.12.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lukasz.wasikowski.net/files/
 

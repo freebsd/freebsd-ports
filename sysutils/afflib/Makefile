@@ -3,6 +3,7 @@
 
 PORTNAME=	afflib
 PORTVERSION=	3.7.15
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	antoine@FreeBSD.org

@@ -3,6 +3,7 @@
 
 PORTNAME=	bird
 PORTVERSION=	20130301
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://bird.mpls.in/distfiles/bird/
 PKGNAMESUFFIX=	-devel

@@ -2,7 +2,7 @@
 
 PORTNAME=	osiris
 PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/ \
 		http://redundancy.redundancy.org/mirror/
