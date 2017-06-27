@@ -837,6 +837,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest-vmware.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-bhyve.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-virtualbox.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-xen.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-compiz-fusion.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config.html
@@ -1007,6 +1008,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gnome.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-go.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gperf.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-groff.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gssapi.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-horde.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-iconv.html
