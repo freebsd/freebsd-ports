@@ -13,7 +13,7 @@ COMMENT=	Python Documentation Utilities
 LICENSE=	BSD2CLAUSE GPLv3+ PD PSFL
 LICENSE_COMB=	multi
 
-PORTSCOUT=	limit:^[0-9\.]*$
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
