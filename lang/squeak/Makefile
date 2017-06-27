@@ -12,8 +12,8 @@ MASTER_SITES=	http://www.squeakvm.org/unix/release/:vmsrc \
 DISTFILES=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}:vmsrc \
 		Squeak${IMAGE_FULL_VERSION}.zip:src \
 		${SQUEAK_SRC}.zip:sqsrc
-EXTRACT_ONLY=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	takeshi.mutoh@gmail.com
 COMMENT=	Full Smalltalk 80 with portability to Unix, Mac, and Windows
@@ -29,7 +29,7 @@ LIB_DEPENDS=	libaudio.so:audio/nas \
 		libpulse-simple.so:audio/pulseaudio \
 		libv4l2.so:multimedia/libv4l
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc
+ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
 USES=		pkgconfig
 USE_GNOME=	cairo pango
