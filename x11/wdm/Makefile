@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	PAM
 OPTIONS_DEFAULT=	PAM
 OPTIONS_SUB=	yes
 
-USES=		gettext tar:bzip2
+USES=		gettext localbase tar:bzip2
 USE_XORG=	x11 xmu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DEF_SERVER="${DEF_SERVER}" XRDB_PATH="${XRDB_PATH}"
@@ -41,8 +41,8 @@ CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-defsystempath=/bin:/usr/bin:/sbin:/usr/sbin:${LOCALBASE}/bin \
 		--with-wmlist=wmaker:afterstep:blackbox:ctwm:enlightenment:fvwm:fvwm2:fvwm95:olvwm:qvwm:tvtwm
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DCSRG_BASED -DHAS_SETUSERCONTEXT
-LIBS+=		-L${LOCALBASE}/lib -lintl
+CPPFLAGS+=	-DCSRG_BASED -DHAS_SETUSERCONTEXT
+LIBS+=		-lintl
 
 DEF_SERVER?=	${LOCALBASE}/bin/X
 XRDB_PATH?=	${LOCALBASE}/bin/xrdb
@@ -74,7 +74,7 @@ post-install:
 	@${MV} ${STAGEDIR}${WDMDIR}/wdm-config ${STAGEDIR}${WDMDIR}/wdm-config.sample
 	@${MV} ${STAGEDIR}${WDMDIR}/Xsetup_0 ${STAGEDIR}${WDMDIR}/Xsetup_0.sample
 .for file in beastie.xpm daemon1-HQ-1280x960.jpg
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${STAGEDIR}${WDMDIR}/pixmaps
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${STAGEDIR}${WDMDIR}/pixmaps
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/wdm.pam ${STAGEDIR}${LOCALBASE}/etc/pam.d/wdm
 

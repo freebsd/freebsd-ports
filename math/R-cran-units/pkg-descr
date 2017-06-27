@@ -1,0 +1,7 @@
+Support for measurement units in R vectors; automatic propagation,
+conversion, derivation and simplification of units; raising errors
+in case of unit incompatibility. Compatible with the difftime class.
+Uses the UNIDATA udunits library and unit database for unit conversion
+and compatibility checking.
+
+WWW: https://cran.r-project.org/web/packages/units/
