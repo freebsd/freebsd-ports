@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.4.18
-PORTREVISION=	5
+PORTVERSION=	0.4.19
 CATEGORIES=	mail
 MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -13,8 +12,8 @@ COMMENT=	Sieve plugin for the Dovecot 'deliver' LDA and LMTP
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	dovecot2>=2.2.26.0:mail/dovecot2
-RUN_DEPENDS=	dovecot2>=2.2.26.0:mail/dovecot2
+BUILD_DEPENDS=	dovecot2>=2.2.31:mail/dovecot2
+RUN_DEPENDS=	dovecot2>=2.2.31:mail/dovecot2
 
 DOVECOTVERSION=	2.2
 
