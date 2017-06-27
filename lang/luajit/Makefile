@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB+=	VERSION=${DISTVERSION}
 
-ONLY_FOR_ARCHS=	i386 amd64 armv6
+ONLY_FOR_ARCHS=		amd64 armv6 i386
 ONLY_FOR_ARCHS_REASON=	Requires newer gcc/clang to compile.
 
 post-install:

@@ -18,7 +18,7 @@ MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
 
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
 BROKEN_DragonFly=	fails to build: don't know how to make vnode_if.h
-ONLY_FOR_ARCHS=		i386 amd64 armv6
+ONLY_FOR_ARCHS=		amd64 armv6 i386
 ONLY_FOR_ARCHS_REASON=	untested on any other arch
 
 USES=		kmod uidfix

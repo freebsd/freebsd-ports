@@ -66,7 +66,7 @@ X11_LIB_DEPENDS+=	libXtst.so.6:x11/libXtst
 BUILD_DEPENDS+=	${UNZIP_CMD}:archivers/unzip
 .endif
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv6hf i386 powerpc powerpc64
+ONLY_FOR_ARCHS=	amd64 armv6 i386 powerpc powerpc64
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOS2UNIX_FILES= jdk/src/bsd/doc/man/appletviewer.1 \
