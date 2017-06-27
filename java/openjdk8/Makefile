@@ -38,8 +38,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	zip:archivers/zip \
 		${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libfreetype.so:print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 X11_LIB_DEPENDS= libfontconfig.so:x11-fonts/fontconfig \
 		libgif.so:graphics/giflib
 RUN_DEPENDS=	javavm:java/javavmwrapper \
@@ -237,7 +236,6 @@ CONFIGURE_ARGS+=	--with-update-version=${JDK_UPDATE_VERSION}
 CONFIGURE_ARGS+=	--disable-ccache \
 			--disable-freetype-bundling \
 			--disable-zip-debug-info \
-			--with-alsa=${LOCALBASE} \
 			--with-cacerts-file=${FILESDIR}/cacerts \
 			--with-cups=${LOCALBASE} \
 			--with-debug-level=${JDK_BUILD_TYPE} \
@@ -255,9 +253,9 @@ X11_CONFIGURE_OFF=	--disable-headful
 CONFIGURE_SCRIPT=	../../configure
 CONFIGURE_WRKSRC=	${WRKSRC}/common/autoconf
 
-OPTIONS_DEFINE=		POLICY TZUPDATE X11
+OPTIONS_DEFINE=		ALSA POLICY TZUPDATE X11
 OPTIONS_DEFINE_armv6=	FPUHACK
-OPTIONS_DEFAULT=	POLICY TZUPDATE X11
+OPTIONS_DEFAULT=	ALSA POLICY TZUPDATE X11
 OPTIONS_DEFAULT_armv6=	FPUHACK
 FPUHACK_DESC=		Hack denormalized numbers in flush-to-zero mode
 POLICY_DESC=		Install the Unlimited Strength Policy Files
@@ -280,6 +278,9 @@ DEBUGFAST_DESC=		Build for debugging (with optimizations)
 RELEASE_DESC=		Build for release (default)
 TEST_DESC=		Run regression tests
 
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_CONFIGURE_ON=	--with-alsa=${LOCALBASE}
+ALSA_CONFIGURE_ENV_OFF=	ALSA_NOT_NEEDED=yes
 DEBUG_VARS=		JDK_BUILD_TYPE=slowdebug
 DEBUGFAST_VARS=		JDK_BUILD_TYPE=fastdebug
 RELEASE_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/objcopy:devel/binutils
@@ -418,6 +419,10 @@ post-patch:
 	    ${WRKSRC}/jdk/make/BuildJdk.gmk
 .endif
 	@${CHMOD} 755 ${WRKSRC}/configure
+
+post-patch-ALSA-off:
+	@${REINPLACE_CMD} '/EXTRA_SOUND_JNI_LIBS += jsoundalsa/d' \
+		${WRKSRC}/jdk/make/lib/SoundLibraries.gmk
 
 pre-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
