@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20170111
+PORTVERSION=	3.20170622
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN_POOL \
@@ -35,7 +35,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gettext perl5 gmake cpe tar:xz
+USES=		gettext perl5 gmake cpe tar:xz python shebangfix
 USE_PERL5=	configure
 NO_ARCH=	yes
 
@@ -61,6 +61,8 @@ MULTI_RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:textproc/p5-Text-MultiMarkdown
 
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	*
+
+SHEBANG_FILES=	plugins/*
 
 post-patch:
 	@${REINPLACE_CMD} -i '' \
