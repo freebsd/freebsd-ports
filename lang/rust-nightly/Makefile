@@ -20,6 +20,8 @@ GH_TUPLE=	rust-lang:rust:282fa87 \
 		rust-lang:libc:8d8264b:liblibc/src/liblibc \
 		rust-lang:rust-installer:4f99485:rust_installer/src/rust-installer
 
+BROKEN=		needs to be adapted after changes in lang/rust
+
 CONFLICTS_BUILD=	rust # see FIXME in `pre-fetch` in lang/rust/Makefile
 CONFLICTS_INSTALL=	rust
 
