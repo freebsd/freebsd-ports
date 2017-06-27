@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	readline
-PORTVERSION=	6.3.${PATCHLEVEL}
-PORTREVISION=	1
+PORTVERSION=	7.0.${PATCHLEVEL}
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -31,16 +30,16 @@ CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
 CPE_UPDATE=	${PATCHLEVEL}
 
-PATCHES=	1 2 3 4 5 6 7 8
+PATCHES=	1 2 3
 PATCHLEVEL=	${PATCHES:O:[-1]}
 .for patch in ${PATCHES}
 PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
 .endfor
 
 post-patch-TERMCAP-on:
-	@${REINPLACE_CMD} -e '/SHOBJ_LDFLAGS = / s| = |&-ltermcap |' ${WRKSRC}/shlib/Makefile.in
+	@${REINPLACE_CMD} -e '/SHOBJ_LDFLAGS = / s| = |&-ltermcapw |' ${WRKSRC}/shlib/Makefile.in
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libhistory.so.6 ${STAGEDIR}${PREFIX}/lib/libreadline.so.6
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libhistory.so.7 ${STAGEDIR}${PREFIX}/lib/libreadline.so.7
 
 .include <bsd.port.mk>

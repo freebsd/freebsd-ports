@@ -3,6 +3,7 @@
 
 PORTNAME=	rubinius
 PORTVERSION=	3.70
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://releases.rubini.us/:source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source

@@ -3,7 +3,7 @@
 
 PORTNAME=	pilot-link
 PORTVERSION=	0.12.5
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	palm comms
 MASTER_SITES=	http://downloads.pilot-link.org/ \

@@ -3,7 +3,7 @@
 
 PORTNAME=	aamath
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math textproc
 MASTER_SITES=	http://fuse.superglue.se/${PORTNAME}/ \
 		LOCAL/ehaupt

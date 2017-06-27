@@ -3,6 +3,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.40
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/${PORTNAME}/ \
