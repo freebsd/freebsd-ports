@@ -8,4 +8,4 @@ Toolkit (VTK) files in Python:
  * DataSetAttr formats: Scalars, ColorScalars, LookupTable, Vectors, Normals,
    TextureCoordinates, Tensors, Field
 
-WWW: https://github.com/pearu/pyvtk/
+WWW: https://github.com/pearu/pyvtk
