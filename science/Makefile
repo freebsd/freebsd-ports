@@ -16,6 +16,7 @@
     SUBDIR += R-cran-etm
     SUBDIR += R-cran-snow
     SUBDIR += R-cran-som
+    SUBDIR += R-cran-udunits2
     SUBDIR += afni
     SUBDIR += avogadro
     SUBDIR += bddsolve
