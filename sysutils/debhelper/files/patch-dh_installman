@@ -1,12 +1,12 @@
---- dh_installman.orig	2017-06-25 09:59:44 UTC
+--- dh_installman.orig	2017-06-27 14:59:47 UTC
 +++ dh_installman
-@@ -234,7 +234,8 @@ on_selected_pkgs_in_parallel(\@all_packa
- 		}
+@@ -237,7 +237,8 @@ on_items_in_parallel(\@all_packages, sub
+ });
  
- 		# Now utf-8 conversion.
--		if (defined `man --version`) {
-+		my $man_version = `man --version 2> /dev/null`;
-+		if (defined $man_version && length($man_version)) {
- 			foreach my $dir (qw{usr/share/man}) {
- 				next unless -e "$tmp/$dir";
- 				my @files;
+ # Now utf-8 conversion.
+-if (defined `man --version`) {
++my $man_version = `man --version 2> /dev/null`;
++if (defined $man_version && length($man_version)) {
+ 	my (@manpages_to_reencode, @issues);
+ 	for my $package (@{$dh{DOPACKAGES}}) {
+ 		next if is_udeb($package);
