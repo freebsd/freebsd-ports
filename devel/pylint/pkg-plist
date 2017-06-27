@@ -179,7 +179,6 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/data/packages_No_Name.dot
 %%PYTHON_SITELIBDIR%%/pylint/test/data/suppliermodule_test.py
 %%PYTHON_SITELIBDIR%%/pylint/test/extensions/__init__.py
-%%PYTHON_SITELIBDIR%%/pylint/test/extensions/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/extensions/data/bad_builtin.py
 %%PYTHON_SITELIBDIR%%/pylint/test/extensions/data/compare_to_zero.py
 %%PYTHON_SITELIBDIR%%/pylint/test/extensions/data/docstring.py
@@ -203,7 +202,6 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/extensions/test_overlapping_exceptions.py
 %%PYTHON_SITELIBDIR%%/pylint/test/extensions/test_redefined.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/__init__.py
-%%PYTHON_SITELIBDIR%%/pylint/test/functional/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/abstract_abc_methods.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/abstract_class_instantiated_in_class.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/abstract_class_instantiated_py2.py
@@ -1002,7 +1000,6 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/dummy/dummy.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/dummy_plugin.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/dummy_plugin/dummy_plugin.py
-%%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/dummy_plugin/dummy_plugin.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/huge.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/import_assign.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/import_package_subpackage_module.py
