@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	axfr2acl
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	dns perl5
-MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/dnstools/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	http://download.gnu.org.ua/pub/release/dnstools/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transfer A records from DNS zones and convert to BIND ACLs
 
 LICENSE=	GPLv3
