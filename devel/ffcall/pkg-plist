@@ -10,7 +10,13 @@ include/trampoline_r.h
 include/vacall.h
 include/vacall_r.h
 lib/libavcall.a
+lib/libavcall.so
+lib/libavcall.so.0
+lib/libavcall.so.0.0.0
 lib/libcallback.a
+lib/libcallback.so
+lib/libcallback.so.0
+lib/libcallback.so.0.0.0
 lib/libtrampoline.a
 lib/libvacall.a
 share/html/avcall.html
