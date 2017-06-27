@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-DISTVERSION=	7.4.7
+PORTVERSION=	7.4.7
+PORTREVISION=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -40,7 +41,7 @@ PYTHON_USES=		python
 PYTHON_CONFIGURE_ON=	--with-python=yes
 
 .if !defined(WITH_CLIENT_ONLY)
-LIB_DEPENDS+=	libbac-${DISTVERSION}.so:sysutils/bacula-client
+LIB_DEPENDS+=	libbac-${PORTVERSION}.so:sysutils/bacula-client
 USE_RC_SUBR?=	bacula-dir bacula-sd
 .endif
 

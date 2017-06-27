@@ -4,7 +4,7 @@
 PORTNAME=	libreadline-java
 PORTVERSION=	0.8.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel java
 MASTER_SITES=	SF/java-readline/java-readline/${PORTVERSION}
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	varnish
 PORTVERSION=	5.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://repo.varnish-cache.org/source/
 PKGNAMESUFFIX=	5

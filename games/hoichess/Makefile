@@ -2,6 +2,7 @@
 
 PORTNAME=	hoichess
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.hoicher.de/hoichess/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/hoichess/

@@ -3,7 +3,7 @@
 
 PORTNAME=	yafc
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://www.yafc-ftp.com/downloads/
 

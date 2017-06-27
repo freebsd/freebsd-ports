@@ -3,7 +3,7 @@
 
 PORTNAME=	s10sh
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
 		http://www.edwinh.org/s10sh/

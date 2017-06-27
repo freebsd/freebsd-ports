@@ -3,6 +3,7 @@
 
 PORTNAME=	eval
 PORTVERSION=	113
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://wuarchive.wustl.edu/pub/aminet/util/cli/ \
 		http://www.netsw.org/math/calc/ \

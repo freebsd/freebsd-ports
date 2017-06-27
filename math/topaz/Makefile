@@ -3,6 +3,7 @@
 
 PORTNAME=	topaz
 DISTVERSION=	3_41
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
