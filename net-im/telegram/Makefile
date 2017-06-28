@@ -34,7 +34,7 @@ PLIST_FILES=	bin/telegram-cli \
 PORTDOCS=	*
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/telegram-cli
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/telegram-cli
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/telegram-cli ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/tg-server.pub ${STAGEDIR}${PREFIX}/etc/telegram-cli/server.pub
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
