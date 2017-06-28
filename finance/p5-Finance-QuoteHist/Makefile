@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Finance-QuoteHist
-PORTVERSION=	1.24
+PORTVERSION=	1.26
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Perl module for fetching historical stock quotes
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-HTML-TableExtract>=2.07:www/p5-HTML-TableExtract \
