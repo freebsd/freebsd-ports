@@ -319,6 +319,7 @@
     SUBDIR += cobf
     SUBDIR += coccinelle
     SUBDIR += codeblocks
+    SUBDIR += codesearch-py
     SUBDIR += codeville
     SUBDIR += codeworker
     SUBDIR += colorgcc

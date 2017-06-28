@@ -104,7 +104,7 @@ SUB_LIST+=	COMMENT="${COMMENT}"
 OPTIONS_DEFINE=	CODECS DEBUG GCONF KERBEROS
 CODECS_DESC=	Compile and enable patented codecs like H.264
 OPTIONS_GROUP=		AUDIO
-OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
+OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 
 OPTIONS_DEFAULT=	ALSA CODECS GCONF KERBEROS
 OPTIONS_SUB=		yes
@@ -114,6 +114,14 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
 			alsa-lib>=1.1.1_1:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+# With SNDIO=on we exclude audio_manager_linux from the build (see
+# media/audio/BUILD.gn) and use audio_manager_openbsd which does not
+# support falling back to ALSA.  In theory it supports falling back to
+# PulseAudio, but this is untested.
+SNDIO_PREVENTS=		ALSA PULSEAUDIO
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_VARS=		GN_ARGS+=use_sndio=true
+SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 .include <bsd.port.options.mk>
 
@@ -191,6 +199,12 @@ pre-everything::
 	@${ECHO_MSG} "and a fair amount of free diskspace (~ 3.7GB)."
 .endif
 	@${ECHO_MSG}
+
+post-patch-SNDIO-on:
+	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
+	@${CP} ${FILESDIR}/sndio_output.* ${WRKSRC}/media/audio/sndio
+	@${CP} ${FILESDIR}/sndio_input.* ${WRKSRC}/media/audio/sndio
+	@${CP} ${FILESDIR}/audio_manager_openbsd.* ${WRKSRC}/media/audio/openbsd
 
 pre-configure:
 	# We used to remove bundled libraries to be sure that iridium uses

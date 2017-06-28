@@ -2,7 +2,7 @@
 
 PORTNAME=	python33
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -16,7 +16,7 @@ LICENSE=	PSFL
 DEPRECATED=	No longer receives bug fixes, only security updates. Please update to Python 3.6
 EXPIRATION_DATE=	2017-09-01
 
-USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix
+USES=		cpe ncurses pathfix pkgconfig readline:port ssl tar:xz shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -108,6 +108,13 @@ PLIST_SUB+=	NO_NIS=""
 .endif
 
 post-patch:
+# readline shared library is present on base before FreeBSD 11 - r268461
+# force setup.py ignore base and use readline from ports
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+	${REINPLACE_CMD} -e \
+		"s|lib_dirs,\ \'readline\'|[\'${LOCALBASE}/lib\',\ \'.\'],\ \'readline\'|" \
+		${WRKSRC}/setup.py
+.endif
 	${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
 	${WRKSRC}/Lib/cgi.py
 .if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)

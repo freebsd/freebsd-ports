@@ -1,11 +1,11 @@
---- cgx_2.11/src/Makefile.orig	2016-07-03 12:08:31 UTC
-+++ cgx_2.11/src/Makefile
+--- cgx_2.12/src/Makefile.orig	2017-03-11 16:25:39 UTC
++++ cgx_2.12/src/Makefile
 @@ -1,14 +1,14 @@
- CFLAGS = -O3 -Wall \
+ CFLAGS = -O2 -Wall \
    -I./ \
    -I/usr/include \
 -  -I/usr/include/GL \
-+  -I$(LOCALBASE)/GL \
++  -I$(LOCALBASE)/include/GL \
    -I../../libSNL/src \
    -I../../glut-3.5/src \
 -  -I/usr/X11/include 
@@ -14,7 +14,7 @@
  LFLAGS = \
 -  -L/usr/lib64 -lGL -lGLU \
 -  -L/usr/X11R6/lib64 -lX11 -lXi -lXmu -lXext -lXt -lSM -lICE \
-+  -L$(LOCALBASE) -lGL -lGLU \
++  -L$(LOCALBASE)/lib -lGL -lGLU \
 +  -lX11 -lXi -lXmu -lXext -lXt -lSM -lICE \
    -lm -lpthread -lrt
  
