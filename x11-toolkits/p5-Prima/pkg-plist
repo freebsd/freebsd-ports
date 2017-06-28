@@ -50,6 +50,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Drawable.pod
 %%SITE_ARCH%%/Prima/Drawable/Basic.pm
 %%SITE_ARCH%%/Prima/Drawable/CurvedText.pm
+%%SITE_ARCH%%/Prima/Drawable/Gradient.pm
 %%SITE_ARCH%%/Prima/Drawable/Markup.pm
 %%SITE_ARCH%%/Prima/Drawable/Path.pm
 %%SITE_ARCH%%/Prima/Drawable/Subcanvas.pm
@@ -246,6 +247,8 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/spinner.pl
 %%SITE_ARCH%%/Prima/examples/spline.pl
 %%SITE_ARCH%%/Prima/examples/theme.pl
+%%SITE_ARCH%%/Prima/examples/tiger.eps
+%%SITE_ARCH%%/Prima/examples/tiger.pl
 %%SITE_ARCH%%/Prima/examples/transparent.pl
 %%SITE_ARCH%%/Prima/examples/triangle.pl
 %%SITE_ARCH%%/Prima/faq.pod
@@ -253,6 +256,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/fontabc.gif
 %%SITE_ARCH%%/Prima/gettextbox.gif
 %%SITE_ARCH%%/Prima/gp-problems.pod
+%%SITE_ARCH%%/Prima/gradient.gif
 %%SITE_ARCH%%/Prima/image-load.pod
 %%SITE_ARCH%%/Prima/internals.pod
 %%SITE_ARCH%%/Prima/leadings.gif
@@ -309,6 +313,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Docks.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Basic.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::CurvedText.3.gz
+%%PERL5_MAN3%%/Prima::Drawable::Gradient.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Markup.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Path.3.gz
 %%PERL5_MAN3%%/Prima::Drawable::Subcanvas.3.gz
