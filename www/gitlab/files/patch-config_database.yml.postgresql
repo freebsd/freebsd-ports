@@ -1,4 +1,4 @@
---- config/database.yml.postgresql.orig	2017-03-19 20:06:47 UTC
+--- config/database.yml.postgresql.orig	2017-06-07 20:58:14 UTC
 +++ config/database.yml.postgresql
 @@ -6,7 +6,7 @@ production:
    encoding: unicode
