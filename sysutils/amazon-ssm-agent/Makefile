@@ -1,30 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	amazon-ssm-agent
-PORTVERSION=	v1.2.252.0
+PORTVERSION=	2.0.790.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org
 COMMENT=	Amazon Simple Systems Manager Agent
 
-LICENSE=	Amazon
-LICENSE_NAME=	Amazon Software License
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	bash:shells/bash \
-		go:lang/go
+BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws
-
-WRKSRC=		${WRKDIR}/src/github.com/aws/amazon-ssm-agent
-USES=		gmake
-MAKEFILE=	makefile
-ALL_TARGET=	build-freebsd
-INSTALL_TARGET=	install-freebsd
-MAKE_ARGS=	SKIP_CHECKSTYLE="YES" DESTDIR=${STAGEDIR}${PREFIX}
+GH_SUBDIR=	src/github.com/aws/amazon-ssm-agent
 
 PLIST_FILES=	etc/amazon/ssm/amazon-ssm-agent.json.template	\
 		etc/amazon/ssm/seelog_unix.xml.template		\
@@ -32,8 +24,16 @@ PLIST_FILES=	etc/amazon/ssm/amazon-ssm-agent.json.template	\
 
 USE_RC_SUBR=	amazon-ssm-agent
 
-post-extract:
-	${MKDIR} ${WRKDIR}/src/github.com/aws
-	${MV} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/v//} ${WRKSRC}
+do-build:
+	@cd ${WRKSRC};							\
+	    ${SETENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor CGO_ENABLED=0	\
+	    go build -ldflags "-s -w" -o amazon-ssm-agent		\
+	    agent/agent.go agent/agent_unix.go agent/agent_parser.go
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/amazon-ssm-agent ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/amazon/ssm
+	${INSTALL_DATA} ${WRKSRC}/amazon-ssm-agent.json.template ${STAGEDIR}${PREFIX}/etc/amazon/ssm
+	${INSTALL_DATA} ${WRKSRC}/seelog_unix.xml ${STAGEDIR}${PREFIX}/etc/amazon/ssm/seelog_unix.xml.template
 
 .include <bsd.port.mk>

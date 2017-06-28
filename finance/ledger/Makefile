@@ -18,6 +18,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libboost_system.so:devel/boost-libs
 
+BROKEN_powerpc64=	fails to link: ibledger.so.3: undefined reference to boost::match_results
+
 USE_GITHUB=	yes
 
 USE_LDCONFIG=	yes

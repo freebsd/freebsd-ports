@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-music
 PORTVERSION=	3.18.2
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libgrilo-0.2.so:net/grilo \
+LIB_DEPENDS=	libgrilo-0.2.so:net/grilo2 \
 		libmediaart-2.0.so:multimedia/libmediaart
 
 PORTSCOUT=	limitw:1,even

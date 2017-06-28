@@ -2,17 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	pglogical
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://packages.2ndquadrant.com/pglogical/tarballs/
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Logical replication system as a PostgreSQL extension
 
 LICENSE=	PostgreSQL
 
-USES=		gmake pgsql:9.4+ tar:bzip2
+USES=		gmake pgsql:9.4+
 WANT_PGSQL=	client server
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	2ndQuadrant
+GH_PROJECT=	pglogical pglogical_dump:dump
+GH_TAGNAME=	REL2_0_1 9f3b0b1:dump
+GH_SUBDIR=	pglogical_dump:dump
 
 MAKE_ARGS=	USE_PGXS=1
 

@@ -24,7 +24,7 @@ TOOLS_ONLY_DESC=	Do not install window manager, only tools
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
+.if ${ARCH} == "armv6"
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_Toolbar.cc
 .endif
 

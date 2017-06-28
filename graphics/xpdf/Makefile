@@ -18,11 +18,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		gmake cpe
+USES=		gmake cpe localbase
 CPE_VENDOR=	foolabs
-CFLAGS+=	-I${LOCALBASE}/include -O0
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-opi \
 		--with-freetype2-library="${LOCALBASE}/lib" \
 		--with-freetype2-includes="${LOCALBASE}/include/freetype2" \

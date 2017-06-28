@@ -26,6 +26,7 @@ man/man1/scanadf-perl.1.gz
 man/man1/scanimage-perl.1.gz
 share/appdata/gscan2pdf.appdata.xml
 share/applications/gscan2pdf.desktop
+%%DATADIR%%/gscan2pdf-papyrus.svg
 %%DATADIR%%/gscan2pdf.svg
 %%DATADIR%%/hand-tool.svg
 %%DATADIR%%/mail-attach.svg

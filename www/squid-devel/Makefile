@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.0.19
+PORTVERSION=	4.0.20
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -25,6 +25,8 @@ COMMENT=	HTTP Caching Proxy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_powerpc64=	fails to link: ext_time_quota_acl.cc: undefined reference to std::ctype
 
 CONFLICTS=	squid*-3.*
 

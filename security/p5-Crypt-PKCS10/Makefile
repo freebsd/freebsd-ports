@@ -26,11 +26,4 @@ USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502108
-BUILD_DEPENDS+=	p5-Digest-SHA>=5.95:security/p5-Digest-SHA
-RUN_DEPENDS+=	p5-Digest-SHA>=5.95:security/p5-Digest-SHA
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

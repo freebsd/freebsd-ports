@@ -3,7 +3,7 @@
 
 PORTNAME=	corebird
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 USE_GITHUB=	yes
 GH_ACCOUNT=	baedert
 
-USES=		autoreconf gmake libtool pkgconfig sqlite
+USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig sqlite
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 pango

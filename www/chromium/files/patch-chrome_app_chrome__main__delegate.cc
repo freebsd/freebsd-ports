@@ -1,4 +1,4 @@
---- chrome/app/chrome_main_delegate.cc.orig	2017-04-19 19:06:28 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2017-06-05 19:03:01 UTC
 +++ chrome/app/chrome_main_delegate.cc
 @@ -89,7 +89,7 @@
  #include "chrome/app/chrome_crash_reporter_client.h"
@@ -23,8 +23,8 @@
  #include "base/environment.h"
  #endif
  
-@@ -163,7 +163,7 @@ base::LazyInstance<ChromeContentBrowserC
-     LAZY_INSTANCE_INITIALIZER;
+@@ -164,7 +164,7 @@ base::LazyInstance<ChromeContentBrowserClient>::Destru
+     g_chrome_content_browser_client = LAZY_INSTANCE_INITIALIZER;
  #endif
  
 -#if defined(OS_POSIX)
@@ -32,7 +32,7 @@
  base::LazyInstance<ChromeCrashReporterClient>::Leaky g_chrome_crash_client =
      LAZY_INSTANCE_INITIALIZER;
  #endif
-@@ -280,7 +280,7 @@ static void AdjustLinuxOOMScore(const st
+@@ -284,7 +284,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
  // and resources loaded.
  bool SubprocessNeedsResourceBundle(const std::string& process_type) {
    return
@@ -41,7 +41,7 @@
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -332,7 +332,7 @@ void HandleHelpSwitches(const base::Comm
+@@ -336,7 +336,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
  }
  #endif
  
@@ -50,7 +50,7 @@
  void SIGTERMProfilingShutdown(int signal) {
    Profiling::Stop();
    struct sigaction sigact;
-@@ -399,7 +399,7 @@ void InitializeUserDataDir(base::Command
+@@ -403,7 +403,7 @@ void InitializeUserDataDir(base::CommandLine* command_
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -59,7 +59,7 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -592,7 +592,7 @@ bool ChromeMainDelegate::BasicStartupCom
+@@ -596,7 +596,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
        std::string format_str =
            command_line.GetSwitchValueASCII(switches::kDiagnosticsFormat);
        if (format_str == "machine") {
@@ -68,7 +68,7 @@
        } else if (format_str == "log") {
          format = diagnostics::DiagnosticsWriter::LOG;
        } else {
-@@ -642,7 +642,7 @@ bool ChromeMainDelegate::BasicStartupCom
+@@ -646,7 +646,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
        std::string format_str =
            command_line.GetSwitchValueASCII(switches::kDiagnosticsFormat);
        if (format_str == "machine") {
@@ -77,7 +77,7 @@
        } else if (format_str == "human") {
          format = diagnostics::DiagnosticsWriter::HUMAN;
        } else {
-@@ -754,7 +754,7 @@ void ChromeMainDelegate::PreSandboxStart
+@@ -758,7 +758,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -86,7 +86,7 @@
    crash_reporter::SetCrashReporterClient(g_chrome_crash_client.Pointer());
  #endif
  
-@@ -884,7 +884,7 @@ void ChromeMainDelegate::PreSandboxStart
+@@ -888,7 +888,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    chrome::InitializePDF();
  #endif
  
@@ -95,7 +95,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -899,7 +899,7 @@ void ChromeMainDelegate::PreSandboxStart
+@@ -903,7 +903,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      breakpad::InitCrashReporter(process_type);
  #endif  // defined(OS_ANDROID)
    }
@@ -104,7 +104,7 @@
  
    // After all the platform Breakpads have been initialized, store the command
    // line for crash reporting.
-@@ -1005,7 +1005,7 @@ bool ChromeMainDelegate::DelaySandboxIni
+@@ -1009,7 +1009,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
  #endif
    return process_type == switches::kRelauncherProcess;
  }

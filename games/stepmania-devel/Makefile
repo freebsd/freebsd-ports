@@ -4,7 +4,7 @@
 PORTNAME=	stepmania
 PORTVERSION=	5.0.11
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/Docs/Licenses.txt
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpng.so:graphics/png
+
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-msse2"
 
 USE_GITHUB=	yes
 

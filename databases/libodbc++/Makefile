@@ -2,7 +2,7 @@
 
 PORTNAME=	libodbc++
 PORTVERSION=	0.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/libodbcxx/libodbc%2B%2B/${PORTVERSION}
 

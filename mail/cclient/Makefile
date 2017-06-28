@@ -26,6 +26,8 @@ OPTIONS_DEFAULT=	SSL
 SSL_AND_PLAINTEXT_DESC=	Allow plain text passwords and SSL
 MBX_DEFAULT_DESC=	Use MBX as default mailbox format
 
+BROKEN_SSL=	openssl-devel
+
 ALL_TARGET=	bsf
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes

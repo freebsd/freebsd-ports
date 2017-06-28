@@ -20,6 +20,10 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
+BROKEN_powerpc=		fails to compile: segfault
+BROKEN_powerpc64=	fails to install: gyp: Call to 'which clang' returned exit status 1 while in client/client.gyp
+BROKEN_sparc64=		fails to compile: segfault
+
 USE_GITHUB=	yes
 GH_TUPLE=	hrs-allbsd:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION} \
 		hiroyuki-komatsu:japanese-usage-dictionary:e5b3425:udic
@@ -67,10 +71,6 @@ _CCTYPE=	gcc
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile: segfault
-.endif
 
 GYP_DEFINES=	use_libprotobuf=1 \
 		channel_dev=0 \

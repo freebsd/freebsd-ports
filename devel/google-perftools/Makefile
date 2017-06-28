@@ -13,9 +13,11 @@ COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libunwind.so:devel/libunwind
+
+BROKEN_powerpc=		fails to build: assembly not supported, see PR#94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
+BROKEN_powerpc64=	fails to build: assembly not supported, see PR#94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
+BROKEN_sparc64=		fails to build: assembly not supported, see PR#94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
 
 WRKSRC=		${WRKDIR}/gperftools-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/gperftools
@@ -40,9 +42,6 @@ CXXFLAGS+=	-fno-builtin
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=--enable-frame-pointers
 .endif
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=	Does not build, assembly not supported, see PR#94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
-.endif
 
 post-patch:
 .if ${COMPILER_TYPE} == "clang" && !defined(USE_GCC)
@@ -64,8 +63,6 @@ post-build:
 	@${ECHO}
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata
-	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata
 	${MV} ${STAGEDIR}${PREFIX}/bin/pprof ${STAGEDIR}${PREFIX}/bin/perftools-pprof
 
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*

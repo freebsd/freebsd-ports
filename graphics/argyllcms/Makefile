@@ -29,10 +29,10 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} jam -q -fJambase -j${MAKE_JOBS_NUMBER}
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} PREFIX=${PREFIX} \
+	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${MAKE_ENV} \
 		REFSUBDIR=share/argyll/ref \
 		jam -q -fJambase -j${MAKE_JOBS_NUMBER} install
-	@${MV} ${STAGEDIR}${PREFIX}/bin/License.txt \
+	${MV} ${STAGEDIR}${PREFIX}/bin/License.txt \
 		${STAGEDIR}${PREFIX}/share/argyll/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 

@@ -8,6 +8,6 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Decode and Encode data in Bittorrent format
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

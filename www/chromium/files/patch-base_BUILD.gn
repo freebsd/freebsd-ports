@@ -1,6 +1,15 @@
---- base/BUILD.gn.orig	2017-04-19 19:06:28 UTC
-+++ base/BUILD.gn
-@@ -1156,6 +1156,9 @@ component("base") {
+--- base/BUILD.gn.orig	2017-06-05 21:03:00.000000000 +0200
++++ base/BUILD.gn	2017-06-13 19:23:34.211227000 +0200
+@@ -1098,7 +1098,7 @@
+       "base_paths_win.h",
+     ]
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       sources += [ "base_paths_posix.cc" ]
+     }
+   }
+@@ -1157,6 +1157,9 @@
        deps += [ "//base/allocator:tcmalloc" ]
      } else if (is_linux && use_allocator == "none") {
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
@@ -10,7 +19,7 @@
      } else if (is_android && use_allocator == "none") {
        sources += [
          "allocator/allocator_shim_default_dispatch_to_linker_wrapped_symbols.cc",
-@@ -1171,6 +1174,34 @@ component("base") {
+@@ -1172,6 +1175,33 @@
      }
    }
  
@@ -28,7 +37,6 @@
 +    ]
 +    sources += [
 +      "files/file_path_watcher_stub.cc",
-+      "process/memory_stubs.cc",
 +      "process/process_handle_freebsd.cc",
 +      "process/process_iterator_freebsd.cc",
 +      "process/process_metrics_freebsd.cc",
@@ -45,7 +53,7 @@
    # Allow more direct string conversions on platforms with native utf8
    # strings
    if (is_mac || is_ios || is_chromeos || is_chromecast) {
-@@ -1467,7 +1498,7 @@ component("base") {
+@@ -1469,7 +1499,7 @@
    }
  
    # Linux.
@@ -54,7 +62,7 @@
      if (is_asan || is_lsan || is_msan || is_tsan) {
        # For llvm-sanitizer.
        data += [ "//third_party/llvm-build/Release+Asserts/lib/libstdc++.so.6" ]
-@@ -1492,7 +1523,7 @@ component("base") {
+@@ -1494,7 +1524,7 @@
        "//base/third_party/xdg_user_dirs",
      ]
    } else {
@@ -63,30 +71,16 @@
      sources -= [
        "nix/mime_util_xdg.cc",
        "nix/mime_util_xdg.h",
-@@ -1508,6 +1539,13 @@ component("base") {
-     }
-   }
- 
-+  if (is_bsd) {
-+    sources -= [
-+      "threading/platform_thread_linux.cc",
-+    ]
-+    sources += [ "threading/platform_thread_freebsd.cc" ]
+@@ -2325,6 +2355,12 @@
+       "trace_event/trace_event_android_unittest.cc",
+     ]
+     set_sources_assignment_filter(sources_assignment_filter)
 +  }
 +
-   # iOS
-   if (is_ios) {
-     set_sources_assignment_filter([])
-@@ -2309,6 +2347,12 @@ test("base_unittests") {
-     set_sources_assignment_filter(sources_assignment_filter)
-   }
- 
 +  if (is_bsd) {
 +    sources -= [
 +      "debug/proc_maps_linux_unittest.cc",
 +    ]
-+  }
-+
+   }
+ 
    if (is_win) {
-     deps += [ "//base:scoped_handle_test_dll" ]
-     if (current_cpu == "x64") {

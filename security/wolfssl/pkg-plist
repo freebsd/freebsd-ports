@@ -79,6 +79,7 @@ include/cyassl/openssl/ripemd.h
 include/cyassl/openssl/rsa.h
 include/cyassl/openssl/sha.h
 include/cyassl/openssl/ssl.h
+include/cyassl/openssl/ssl23.h
 include/cyassl/openssl/stack.h
 include/cyassl/openssl/ui.h
 include/cyassl/openssl/x509.h
@@ -93,7 +94,9 @@ include/wolfssl/callbacks.h
 include/wolfssl/certs_test.h
 include/wolfssl/crl.h
 include/wolfssl/error-ssl.h
+include/wolfssl/io.h
 include/wolfssl/ocsp.h
+include/wolfssl/openssl/aes.h
 include/wolfssl/openssl/asn1.h
 include/wolfssl/openssl/bio.h
 include/wolfssl/openssl/bn.h
@@ -125,6 +128,7 @@ include/wolfssl/openssl/ripemd.h
 include/wolfssl/openssl/rsa.h
 include/wolfssl/openssl/sha.h
 include/wolfssl/openssl/ssl.h
+include/wolfssl/openssl/ssl23.h
 include/wolfssl/openssl/stack.h
 include/wolfssl/openssl/ui.h
 include/wolfssl/openssl/x509.h
@@ -192,8 +196,9 @@ include/wolfssl/wolfcrypt/visibility.h
 include/wolfssl/wolfcrypt/wc_encrypt.h
 include/wolfssl/wolfcrypt/wc_port.h
 include/wolfssl/wolfcrypt/wolfevent.h
+include/wolfssl/wolfcrypt/wolfmath.h
 lib/libwolfssl.a
 lib/libwolfssl.so
-lib/libwolfssl.so.3
-lib/libwolfssl.so.3.6.0
+lib/libwolfssl.so.12
+lib/libwolfssl.so.12.0.0
 libdata/pkgconfig/wolfssl.pc

@@ -20,7 +20,7 @@ SMFUSER?=	nobody
 SMFGROUP?=	mail
 SMFDIR?=	/var/spool/spmfilter
 
-USES=		cmake pkgconfig
+USES=		cmake:noninja pkgconfig
 CMAKE_ARGS+=	--no-warn-unused-cli \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"
@@ -86,7 +86,7 @@ post-patch:
 		${WRKSRC}/cmake/Modules/SMFMacros.cmake
 	@${REINPLACE_CMD} -E -e 's|(HAVE_DB4 )db|\1${BDB_LIB_NAME}|' \
 		${WRKSRC}/cmake/Modules/FindDB4.cmake
-	@${REINPLACE_CMD} -E -e 's|\$${CMAKE_INSTALL_LIBDIR}(/pkgconfig)|$${CMAKE_INSTALL_PREFIX}/libdata\1|' \
+	@${REINPLACE_CMD} -E -e 's|\$$\{CMAKE_INSTALL_LIBDIR\}(/pkgconfig)|$${CMAKE_INSTALL_PREFIX}/libdata\1|' \
 		-e 's|(COMMON_LIBS )db|\1${BDB_LIB_NAME}|' \
 		${WRKSRC}/src/CMakeLists.txt
 

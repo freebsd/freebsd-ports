@@ -1,4 +1,4 @@
---- device/usb/usb_context.cc.orig	2017-04-19 19:06:34 UTC
+--- device/usb/usb_context.cc.orig	2017-06-05 19:03:07 UTC
 +++ device/usb/usb_context.cc
 @@ -9,8 +9,13 @@
  #include "base/macros.h"
@@ -14,7 +14,7 @@
  
  namespace device {
  
-@@ -58,7 +63,9 @@ void UsbContext::UsbEventHandler::Run() 
+@@ -58,7 +63,9 @@ void UsbContext::UsbEventHandler::Run() {
  
  void UsbContext::UsbEventHandler::Stop() {
    base::subtle::Release_Store(&running_, 0);

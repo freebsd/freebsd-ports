@@ -32,7 +32,6 @@ PORTDOCS_FILE=	CHANGES.md LICENSE README.md READMEJP.md \
 PORTDOCS_SH=	makeskkcdb.sh skktocdbm.sh
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-patch:
 .for f in READMEJP.md makeskkcdb.sh

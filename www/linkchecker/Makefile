@@ -43,7 +43,7 @@ SQLITE3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3
 SYNTAX_DESC=		HTML/CSS syntax check
 SYNTAX_RUN_DEPENDS=\
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:www/py-cssutils \
-		${PYTHON_PKGNAMEPREFIX}utidy>=0.2:www/py-utidy
+		${PYTHON_PKGNAMEPREFIX}utidylib>=0.2:www/py-utidylib
 
 .include <bsd.port.options.mk>
 

@@ -1,6 +1,9 @@
-Dmidecode is a tool or dumping a computer's DMI (some say SMBIOS) table
-contents in a human-readable format. The output contains a description of the
-system's hardware components, as well as other useful pieces of information
-such as serial numbers and BIOS revision.
+Dmidecode reports information about your system's hardware as described in your
+system BIOS according to the SMBIOS/DMI standard. This information typically
+includes system manufacturer, model name, serial number, BIOS version, asset tag
+as well as a lot of other details of varying level of interest and reliability
+depending on the manufacturer. This will often include usage status for the CPU
+sockets, expansion slots (e.g. AGP, PCI, ISA) and memory module slots, and the
+list of I/O ports (e.g. serial, parallel, USB).
 
 WWW: http://www.nongnu.org/dmidecode/

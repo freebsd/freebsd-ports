@@ -3,6 +3,7 @@
 
 PORTNAME=	swi-pl
 PORTVERSION=	7.4.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${PORTVERSION}
@@ -16,6 +17,10 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libodbc.so:databases/unixODBC \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
+
+BROKEN_mips=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
+BROKEN_mips64=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
+BROKEN_powerpc64=	fails to compile: pce_principal.pl:155: Shared object "pl2xpce" not found, required by "swipl"
 
 SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 

@@ -4,7 +4,7 @@
 
 PORTNAME=	glitz
 PORTVERSION=	0.5.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 

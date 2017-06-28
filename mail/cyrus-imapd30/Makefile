@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -18,6 +18,8 @@ LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libicuuc.so:devel/icu \
 		libjansson.so:devel/jansson \
 		libpcre.so:devel/pcre
+
+BROKEN_powerpc64=	fails to compile: mailbox.h: redefinition of typedef 'message_t'
 
 CONFLICTS_INSTALL=	cyrus-imapd-2.* cyrus-imapd2*
 

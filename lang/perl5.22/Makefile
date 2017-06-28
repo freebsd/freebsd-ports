@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1=	${WRKSRC}/Copying
 
-DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
+DEPRECATED=	Support ends three years after .0 release, please upgrade to a more recent version of Perl
 EXPIRATION_DATE=2018-06-01
 
 TEST_TARGET=	test_harness

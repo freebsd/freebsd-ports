@@ -19,6 +19,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libsndfile.so:audio/libsndfile
 
+NOT_FOR_ARCHS=		powerpc64
+NOT_FOR_ARCHS_REASON=	fails to compile: invokes x86 assembly
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	rheit
 

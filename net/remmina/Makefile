@@ -3,7 +3,7 @@
 
 PORTNAME=	remmina
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.2.0-rcgit.17
+DISTVERSION=	1.2.0-rcgit.18
 CATEGORIES=	net gnome
 
 MAINTAINER=	woodsb02@FreeBSD.org

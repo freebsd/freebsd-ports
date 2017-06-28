@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/web_app.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/web_applications/web_app.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/web_applications/web_app.cc
 @@ -58,7 +58,7 @@ namespace {
  #if defined(OS_MACOSX)
@@ -9,7 +9,7 @@
  // Linux supports icons of any size. FreeDesktop Icon Theme Specification states
  // that "Minimally you should install a 48x48 icon in the hicolor theme."
  const int kDesiredSizes[] = {16, 32, 48, 128, 256, 512};
-@@ -501,7 +501,7 @@ void GetIconsInfo(const WebApplicationIn
+@@ -501,7 +501,7 @@ void GetIconsInfo(const WebApplicationInfo& app_info,
  }
  #endif
  

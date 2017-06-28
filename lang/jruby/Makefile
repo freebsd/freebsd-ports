@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	jruby
-PORTVERSION=	9.1.7.0
+PORTVERSION=	9.1.10.0
+DISTVERSIONPREFIX=	bin-
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of Ruby Interpreter in Pure Java
@@ -25,15 +25,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 REPLACE_LIST=	JAVA_HOME=${JAVA_HOME}
 REPLACE_LIST_TEMP=	${REPLACE_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 
-PLIST_SUB+=	PORTNAME=${PORTNAME} \
+PLIST_SUB=	PORTNAME=${PORTNAME} \
 		PORTVERSION=${PORTVERSION} \
 		JRUBY_HOME=${JRUBY_HOME:S,${PREFIX}/,,}
 
 OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	*
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${RM} -r \
@@ -64,10 +62,9 @@ do-install:
 	${LN} -sf ${JRUBY_HOME}/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 	${FIND} ${STAGEDIR}${JRUBY_HOME}/lib/jni/x86_64-FreeBSD -type f -name '*\.so' -exec ${STRIP_CMD} {} \;
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/samples \
-	  && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
-.include <bsd.port.post.mk>
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+
+.include <bsd.port.mk>

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	markdown-mode.el
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://jblevins.org/projects/markdown-mode/
 DISTNAME=	markdown-mode.el

@@ -12,6 +12,6 @@ COMMENT=	PEAR base class for XHTML page generation
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
 RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -8,6 +8,6 @@ CATEGORIES=	net www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Simple and flexible way to build nice URLs for web applications
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

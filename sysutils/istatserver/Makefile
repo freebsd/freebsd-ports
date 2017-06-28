@@ -3,7 +3,7 @@
 
 PORTNAME=	istatserver
 PORTVERSION=	3.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/bjango/files/istatserverlinux/
 
@@ -15,6 +15,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libsqlite3.so:databases/sqlite3
 
+USES=		ssl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 

@@ -8,6 +8,6 @@ CATEGORIES=	devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Binding - Once more unto the breach
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

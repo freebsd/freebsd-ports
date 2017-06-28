@@ -1496,8 +1496,8 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/magick-vector-graphics.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/magick-wand.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/magick.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/mirror.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/miff.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/mirror.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/mogrify.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/montage.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/motion-picture.html

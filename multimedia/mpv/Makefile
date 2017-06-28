@@ -4,6 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.25.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
@@ -27,10 +28,10 @@ USES=		compiler:c11 desktop-file-utils iconv jpeg localbase:ldflags \
 		pkgconfig python:build waf
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	BIN_PYTHON=${PYTHON_CMD}
-CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
-		--htmldir=${DOCSDIR}/html \
-		--mandir=${MANPREFIX}/man \
+CONFIGURE_ENV=	BIN_PYTHON="${PYTHON_CMD}"
+CONFIGURE_ARGS=	--docdir="${EXAMPLESDIR}" \
+		--htmldir="${DOCSDIR}/html" \
+		--mandir="${MANPREFIX}/man" \
 		--disable-debug-build \
 		--disable-d3d-hwaccel \
 		--disable-optimize \
@@ -44,8 +45,8 @@ CONFIGURE_ARGS=	--docdir=${EXAMPLESDIR} \
 		--disable-wayland \
 		--enable-libmpv-shared
 
-OPTIONS_DEFINE=		ASS DOCS LCMS2 LIBARCHIVE LUAJIT MANPAGES UCHARDET ZSH
-OPTIONS_DEFAULT=	ASS DVDREAD DVDNAV LIBARCHIVE MANPAGES OPENGL UCHARDET \
+OPTIONS_DEFINE=		ARCHIVE ASS DOCS LCMS2 LUAJIT MANPAGES TEST UCHARDET ZSH
+OPTIONS_DEFAULT=	ARCHIVE ASS DVDREAD DVDNAV MANPAGES OPENGL UCHARDET \
 			V4L VAAPI VDPAU X11 YTDL ZSH
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
@@ -56,16 +57,18 @@ OPTIONS_SUB=		yes
 ASS_DESC=		ASS/SSA subtitle and OSD rendering
 DVDREAD_DESC=		DVD Playback support
 DVDNAV_DESC=		DVD menu navigation
-LIBARCHIVE_DESC=	Enable libarchive support
 LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
-YTDL_DESC=		Install youtube-dl
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
+YTDL_DESC=		Install youtube-dl
 IN_DESC=		Input
 VO_DESC=		Video Output
 AO_DESC=		Audio Output
 
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_OFF=		--disable-alsa
+
+ARCHIVE_USES=			libarchive
+ARCHIVE_CONFIGURE_ON=		--enable-libarchive
 
 ASS_LIB_DEPENDS=		libass.so:multimedia/libass
 ASS_CONFIGURE_OFF=		--disable-libass
@@ -80,9 +83,11 @@ DOCS_BUILD_DEPENDS=		rst2html:textproc/py-docutils
 DOCS_CONFIGURE_ON=		--enable-html
 
 DVDNAV_LIB_DEPENDS=		libdvdnav.so:multimedia/libdvdnav
+DVDNAV_CONFIGURE_ON=		--enable-dvdnav
 DVDNAV_CONFIGURE_OFF=		--disable-dvdnav
 
 DVDREAD_LIB_DEPENDS=		libdvdread.so:multimedia/libdvdread
+DVDREAD_CONFIGURE_ON=		--enable-dvdread
 DVDREAD_CONFIGURE_OFF=		--disable-dvdread
 
 JACK_LIB_DEPENDS=		libjack.so:audio/jack
@@ -90,9 +95,6 @@ JACK_CONFIGURE_OFF=		--disable-jack
 
 LCMS2_LIB_DEPENDS=		liblcms2.so:graphics/lcms2
 LCMS2_CONFIGURE_OFF=		--disable-lcms2
-
-LIBARCHIVE_USES=		libarchive
-LIBARCHIVE_CONFIGURE_ON=	--enable-libarchive
 
 LIBBLURAY_LIB_DEPENDS=		libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_OFF=	--disable-libbluray
@@ -123,6 +125,10 @@ SNDIO_CONFIGURE_OFF=		--disable-sndio
 SMB_USES=			samba:lib
 SMB_CONFIGURE_OFF=		--disable-libsmbclient
 
+TEST_BUILD_DEPENDS=		cmocka>=1.1.0:sysutils/cmocka
+TEST_CONFIGURE_ON=		--enable-test
+TEST_UNITTESTFILES=		chmap chmap_sel gl_video
+
 UCHARDET_LIB_DEPENDS=		libuchardet.so:textproc/uchardet
 UCHARDET_CONFIGURE_OFF=		--disable-uchardet
 
@@ -144,16 +150,23 @@ YTDL_RUN_DEPENDS=		youtube-dl:www/youtube_dl
 
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build
-ZSH_CONFIGURE_ENV=		BIN_PERL=${PERL}
+ZSH_CONFIGURE_ENV=		BIN_PERL="${PERL}"
 ZSH_CONFIGURE_ENABLE=		zsh-comp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
 		${WRKSRC}/wscript_build.py
+	@${REINPLACE_CMD} -e 's|DBL_EPSILON|FLT_EPSILON|'g \
+		${WRKSRC}/test/test_helpers.h
 
 post-patch-MANPAGES-on:
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
+
+pre-install-TEST-on:
+.for test in ${TEST_UNITTESTFILES}
+	cd ${WRKSRC}/build/test && ./${test}
+.endfor
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mpv

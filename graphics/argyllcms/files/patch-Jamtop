@@ -1,0 +1,49 @@
+--- Jamtop.orig	2017-05-22 19:09:44 UTC
++++ Jamtop
+@@ -76,8 +76,8 @@ if $(UNIX) {
+ 			LibWinH = /usr/X11R6/include ;
+ 		} else if [ GLOB /usr/include/X11 : X.h ] {
+ 			LibWinH = /usr/include ;
+-		} else if [ GLOB /usr/local/include/X11 : X.h ] {
+-			LibWinH = /usr/local/include ;
++		} else if [ GLOB $(LOCALBASE)/include/X11 : X.h ] {
++			LibWinH = $(LOCALBASE)/include ;
+ 		} else {
+ 			EXIT Unable to locate the X11 include files ;
+ 		}
+@@ -91,8 +91,8 @@ if $(UNIX) {
+ 				LibWinD = /usr/lib64 ;
+ 			} else if [ GLOB /usr/lib : libX11.so libX11.a ] {
+ 				LibWinD = /usr/lib ;
+-			} else if [ GLOB /usr/local/lib : libX11.so libX11.a ] {
+-				LibWinD = /usr/local/lib ;
++			} else if [ GLOB $(LOCALBASE)/lib : libX11.so libX11.a ] {
++				LibWinD = $(LOCALBASE)/lib ;
+ 			} else {
+ 				ECHO Unable to locate the 64 bit X11 library files ;
+ 			}
+@@ -103,8 +103,8 @@ if $(UNIX) {
+ 				LibWinD = /usr/lib/i386-linux-gnu ;
+ 			} else if [ GLOB /usr/lib : libX11.so libX11.a ] {
+ 				LibWinD = /usr/lib ;
+-			} else if [ GLOB /usr/local/lib : libX11.so libX11.a ] {
+-				LibWinD = /usr/local/lib ;
++			} else if [ GLOB $(LOCALBASE)/lib : libX11.so libX11.a ] {
++				LibWinD = $(LOCALBASE)/lib ;
+ 			} else {
+ 				ECHO Unable to locate the 32 bit X11 library files ;
+ 			}
+@@ -140,11 +140,11 @@ rule CheckForLibrary {
+ 
+ 	if ! $(BUILTIN_$(UCASE)) && $(UNIX) {
+ 		if  [ GLOB /usr/include$(subd) : $(lcase).h $(lcase)lib.h ]
+-	     || [ GLOB /usr/local/include$(subd) : $(lcase).h $(lcase)lib.h ]
++	     || [ GLOB $(LOCALBASE)/include$(subd) : $(lcase).h $(lcase)lib.h ]
+ 		 || [ GLOB /usr/include/x86_64-linux-gnu$(subd) : $(lcase).h $(lcase)lib.h ]
+ 	     || [ GLOB /usr/include/i386-linux-gnu$(subd) : $(lcase).h $(lcase)lib.h ] {
+ 			if  [ GLOB /usr/lib : lib$(lcase).so ] || [ GLOB /usr/lib : lib$(lcase).a ]
+-			 || [ GLOB /usr/local/lib : lib$(lcase).so ] || [ GLOB /usr/local/lib : lib$(lcase).a ]
++			 || [ GLOB $(LOCALBASE)/lib : lib$(lcase).so ] || [ GLOB /usr/local/lib : lib$(lcase).a ]
+ 			 || [ GLOB /usr/lib64 : lib$(lcase).so ] || [ GLOB /usr/lib64 : lib$(lcase).a ]
+ 			 || [ GLOB /usr/lib/x86_64-linux-gnu : lib$(lcase).so ]
+ 			 || [ GLOB /usr/lib/x86_64-linux-gnu : lib$(lcase).a ]

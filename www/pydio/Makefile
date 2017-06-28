@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pydio
-PORTVERSION=	8.0.0
+PORTVERSION=	8.0.1
 CATEGORIES=	www
 MASTER_SITES=	https://download.pydio.com/pub/core/archives/
 DISTNAME=	${PORTNAME}-core-${PORTVERSION}

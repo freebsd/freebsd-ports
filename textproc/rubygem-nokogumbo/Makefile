@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nokogumbo
-PORTVERSION=	1.4.11
+PORTVERSION=	1.4.13
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

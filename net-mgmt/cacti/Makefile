@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cacti
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.10
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/
@@ -43,6 +43,8 @@ PLIST_SUB+=	CACTIDIR=${CACTIDIR}  CACTIUSER=${CACTIUSER} \
 		CACTIGROUP=${CACTIGROUP}
 SUB_LIST+=	CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
 		CACTIGROUP=${CACTIGROUP}
+
+CONFLICTS_INSTALL=	cacti88
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete; \

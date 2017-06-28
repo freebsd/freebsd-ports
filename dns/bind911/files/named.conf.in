@@ -130,7 +130,7 @@ zone "in-addr.arpa" {
 		2620:0:2830:202::132;   // iad.xfr.dns.icann.org
 	};
 	notify no;
-}
+};
 zone "ip6.arpa" {
 	type slave;
 	file "%%ETCDIR%%/slave/ip6.arpa.slave";
@@ -141,7 +141,7 @@ zone "ip6.arpa" {
 		2620:0:2830:202::132;   // iad.xfr.dns.icann.org
 	};
 	notify no;
-}
+};
 */
 
 /*	Serving the following zones locally will prevent any queries
@@ -260,14 +260,6 @@ zone "113.0.203.in-addr.arpa" { type master; file "%%ETCDIR%%/master/empty.db"; 
 
 // IPv6 Example Range for Documentation (RFCs 3849 and 6303)
 zone "8.b.d.0.1.0.0.2.ip6.arpa" { type master; file "%%ETCDIR%%/master/empty.db"; };
-
-// Domain Names for Documentation and Testing (BCP 32)
-zone "test" { type master; file "%%ETCDIR%%/master/empty.db"; };
-zone "example" { type master; file "%%ETCDIR%%/master/empty.db"; };
-zone "invalid" { type master; file "%%ETCDIR%%/master/empty.db"; };
-zone "example.com" { type master; file "%%ETCDIR%%/master/empty.db"; };
-zone "example.net" { type master; file "%%ETCDIR%%/master/empty.db"; };
-zone "example.org" { type master; file "%%ETCDIR%%/master/empty.db"; };
 
 // Router Benchmark Testing (RFCs 2544 and 5735)
 zone "18.198.in-addr.arpa" { type master; file "%%ETCDIR%%/master/empty.db"; };

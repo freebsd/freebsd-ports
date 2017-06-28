@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iortcw
-DISTVERSION=	1.5a
+DISTVERSION=	1.51
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -15,6 +15,9 @@ BUILD_DEPENDS=	opusfile>0:audio/opusfile
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopus.so:audio/opus \
 		libfreetype.so:print/freetype2
+
+NOT_FOR_ARCHS=		aarch64 armv6 powerpc64
+NOT_FOR_ARCHS_REASON=	fails to configure: Architecture not supported
 
 USES=		jpeg pkgconfig gmake
 USE_GL=		gl
@@ -44,9 +47,6 @@ SP_INSTALL_TARGET=	sp-install
 
 MP_ALL_TARGET=	mp
 MP_INSTALL_TARGET=	mp-install
-
-BROKEN_aarch64=		Fails to configure: error: Architecture not supported
-BROKEN_armv6=		Fails to configure: error: Architecture not supported
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}

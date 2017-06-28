@@ -26,7 +26,7 @@ CONFLICTS=	usrp-[0-9]*
 
 BROKEN_powerpc64=	fails to link: undefined reference to boost function
 
-USES=		compiler:c++0x cmake:outsource gmake ncurses pkgconfig \
+USES=		compiler:c++0x cmake:outsource ncurses pkgconfig \
 		dos2unix python:2.7 shebangfix
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
@@ -66,7 +66,7 @@ do-install:
 # hack the install prefix now
 	@${REINPLACE_CMD} -e "s|/usr/local|${STAGEDIR}${PREFIX}|g" \
 		${CONFIGURE_WRKSRC}/cmake_install.cmake
-	cd ${CONFIGURE_WRKSRC} && ${MAKE} install
+	cd ${CONFIGURE_WRKSRC} && ${MAKE_CMD} install
 .for subdir in images
 	${CP} -Rp ${WRKDIR}/${IMAGE_FILE:S|.zip||}/share/uhd/${subdir} ${STAGEDIR}${DATADIR}
 .endfor

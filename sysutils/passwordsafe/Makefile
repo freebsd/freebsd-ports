@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	passwordsafe
-DISTVERSION=	1.01BETA
+DISTVERSION=	1.02BETA
 CATEGORIES=	sysutils
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -12,6 +12,9 @@ LICENSE=	ART20
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libxerces-c-3.1.so:textproc/xerces-c3
 BUILD_DEPENDS=	zip:archivers/zip
+
+NOT_FOR_ARCHS=		aarch64 armv6
+NOT_FOR_ARCHS_REASON=	Cannot determine whether the target CPU is big or little endian - please fix PwsPlatform.h
 
 CONFLICTS=	pwsafe-[0-9]*
 

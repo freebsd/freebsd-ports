@@ -13,7 +13,7 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN_powerpc64=	does not build
+BROKEN_powerpc64=	does not build: __adjust.c: internal compiler error: Segmentation fault
 
 OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=PYGDB
@@ -36,7 +36,7 @@ PYGDB_USES=		python:2
 
 OPTIONS_SUB=		yes
 
-NOT_FOR_ARCHS=		aarch64 arm armeb armv6 armv6hf \
+NOT_FOR_ARCHS=		aarch64 arm armeb armv6 \
 			mips mips64 mips64el mipsel mipsn32
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
 

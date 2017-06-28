@@ -21,7 +21,7 @@ PLIST_FILES=	include/cmocka.h \
 		lib/libcmocka.so \
 		lib/libcmocka.so.0 \
 		lib/libcmocka.so.0.4.0 \
-		lib/pkgconfig/cmocka.pc
+		libdata/pkgconfig/cmocka.pc
 
 OPTIONS_DEFINE=	STATIC
 

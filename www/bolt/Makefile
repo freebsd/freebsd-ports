@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bolt
-PORTVERSION=	2.2.17
+PORTVERSION=	2.2.24
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://bolt.cm/distribution/
@@ -12,10 +12,11 @@ COMMENT=	Sophisticated, lightweight & simple CMS
 
 LICENSE=	MIT
 
+USES=	php:web
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	ctype curl dom gd json mbstring openssl simplexml tokenizer
-WANT_PHP_WEB=	yes
 
 PLIST_SUB+=	WWWGRP=${WWWGRP}
 
@@ -27,7 +28,7 @@ PGSQL_USE=	PHP=pdo_pgsql
 SQLITE_USE=	PHP=pdo_sqlite
 
 do-install:
-	${INSTALL} -d -m 755 ${STAGEDIR}${WWWDIR}/
-	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
+	${INSTALL} -d -m 755 ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>

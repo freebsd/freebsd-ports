@@ -10,8 +10,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP XMPP client interface
 
-USES=		python twisted:words,web,conch,names
-USE_PYTHON=	distutils autoplist
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
+
+NO_ARCH=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	punjab
 
 SUB_FILES=	pkg-message punjab.tac

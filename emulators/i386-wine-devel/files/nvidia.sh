@@ -72,6 +72,8 @@
 #  - handle nvidia-driver with package name suffix
 #  - handle i386-wine with arbitary package name suffix
 #  - remove support for old pkg_ tools
+# Version 1.16 - 2017/06/04
+#  - use https download site
 
 set -e
 
@@ -170,9 +172,9 @@ if [ ! -f NVIDIA-FreeBSD-x86-${NV}.tar.gz ] || !(tar -tf NVIDIA-FreeBSD-x86-${NV
 then
   [ -n "$NO_FETCH" ] \
     && terminate 8 "NVIDIA-FreeBSD-x86-${NV}.tar.gz unavailable"
-  echo "=> Downloading NVIDIA-FreeBSD-x86-${NV}.tar.gz from ftp://download.nvidia.com..."
+  echo "=> Downloading NVIDIA-FreeBSD-x86-${NV}.tar.gz from https://download.nvidia.com..."
   rm -f NVIDIA-FreeBSD-x86-${NV}.tar.gz
-  fetch -apRr ftp://download.nvidia.com/XFree86/FreeBSD-x86/${NV}/NVIDIA-FreeBSD-x86-${NV}.tar.gz \
+  fetch -aRr https://download.nvidia.com/XFree86/FreeBSD-x86/${NV}/NVIDIA-FreeBSD-x86-${NV}.tar.gz \
     || terminate 2 "Failed to download NVIDIA-FreeBSD-x86-${NV}.tar.gz"
   echo "=> Downloaded NVIDIA-FreeBSD-x86-${NV}.tar.gz"
   echo "Please check the following information against /usr/ports/x11/nvidia-driver/distinfo"

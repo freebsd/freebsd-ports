@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny
-PORTVERSION=	1.000006
+PORTVERSION=	1.002001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	p5-Exporter-Tiny>=0.026:devel/p5-Exporter-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
-		p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
 		p5-Function-Parameters>=0:devel/p5-Function-Parameters \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-Moo>=1.002001:devel/p5-Moo \
@@ -35,9 +34,9 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
 		p5-Validation-Class>=0:devel/p5-Validation-Class \
 		p5-match-simple>=0:devel/p5-match-simple
 
-OPTIONS_DEFINE=	XS
-OPTIONS_DEFAULT=XS
-XS_DESC=	Use Type::Tiny::XS for speed boost (recommended)
+OPTIONS_DEFINE=	RECOMMENDED
+OPTIONS_DEFAULT=RECOMMENDED
+RECOMMENDED_DESC=	Recommended dependencies by upstream
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
@@ -45,13 +44,13 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-XS_BUILD_DEPENDS=	p5-Type-Tiny-XS>=0.010:devel/p5-Type-Tiny-XS
-XS_RUN_DEPENDS=		p5-Type-Tiny-XS>=0.010:devel/p5-Type-Tiny-XS
+RECOMMENDED_BUILD_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
+				p5-Ref-Util-XS>=0.100:devel/p5-Ref-Util-XS \
+				p5-Type-Tie>=0:devel/p5-Type-Tie \
+				p5-Type-Tiny-XS>=0.011:devel/p5-Type-Tiny-XS
+RECOMMENDED_RUN_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
+				p5-Ref-Util-XS>=0.100:devel/p5-Ref-Util-XS \
+				p5-Type-Tie>=0:devel/p5-Type-Tie \
+				p5-Type-Tiny-XS>=0.011:devel/p5-Type-Tiny-XS
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001014:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

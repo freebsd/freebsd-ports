@@ -59,6 +59,14 @@ post-patch:
 .if ${OPSYS} == DragonFly || ${OSVERSION} >= 1100070
 	@${REINPLACE_CMD} -e 's|altq/|net/&|' ${WRKSRC}/pftop.c
 .endif
+	@${REINPLACE_CMD} -e 's|#include .pcap-int.h.|#include <pcap/pcap.h>|g' \
+		${WRKSRC}/bpf_image.c \
+		${WRKSRC}/bpf_optimize.c \
+		${WRKSRC}/pcap-nametoaddr.c \
+		${WRKSRC}/sf-gencode.c \
+		${WRKSRC}/sf-gencode.h \
+		${WRKSRC}/sf-grammer.y \
+		${WRKSRC}/sf-scanner.l
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pftop ${STAGEDIR}${PREFIX}/sbin

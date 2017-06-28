@@ -13,6 +13,8 @@ COMMENT=	Lightweight LLVM python binding for writing JIT compilers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to compile: clang++: not found
+
 # Python 2.7,3.4+
 USES=		python fortran
 USE_PYTHON=	distutils autoplist

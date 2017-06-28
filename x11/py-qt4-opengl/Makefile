@@ -3,6 +3,7 @@
 
 PORTNAME=	opengl
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	x11 devel python
 
 MAINTAINER=	kde@FreeBSD.org

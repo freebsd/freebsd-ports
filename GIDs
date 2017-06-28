@@ -110,7 +110,7 @@ uwsgi:*:165:
 yule:*:166:
 ceph:*:167:
 # free: 168
-# free: 169
+acme:*:169:
 tile38:*:170:
 sfs:*:171:
 agk:*:172:
@@ -155,7 +155,7 @@ shoutcast:*:210:
 git:*:211:
 hg:*:212:
 drizzle:*:213:
-# free: 214
+kyototycoon:*:214:
 opendnssec:*:215:
 nsd:*:216:
 # free: 217
@@ -185,7 +185,7 @@ aprsd:*:240:
 tnc:*:241:
 prosody:*:242:
 # free: 243
-# free: 244
+mastodon:*:244:
 # free: 245
 # free: 246
 fcron:*:247:

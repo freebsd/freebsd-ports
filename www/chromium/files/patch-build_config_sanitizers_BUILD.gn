@@ -1,6 +1,6 @@
---- build/config/sanitizers/BUILD.gn.orig	2017-04-19 19:06:28 UTC
+--- build/config/sanitizers/BUILD.gn.orig	2017-06-05 19:03:01 UTC
 +++ build/config/sanitizers/BUILD.gn
-@@ -428,7 +428,7 @@ config("lsan_flags") {
+@@ -438,7 +438,7 @@ config("lsan_flags") {
  
  config("msan_flags") {
    if (is_msan) {
@@ -9,7 +9,7 @@
      if (!defined(msan_blacklist_path)) {
        msan_blacklist_path =
            rebase_path("//tools/msan/blacklist.txt", root_build_dir)
-@@ -443,7 +443,7 @@ config("msan_flags") {
+@@ -453,7 +453,7 @@ config("msan_flags") {
  
  config("tsan_flags") {
    if (is_tsan) {

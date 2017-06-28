@@ -15,7 +15,6 @@ LICENSE=	GPLv2+
 USES=		compiler:c++11-lib cmake:outsource perl5 python
 USE_CXXSTD=	c++11
 USE_WX=		3.0
-WX_UNICODE=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/gui-wx
 

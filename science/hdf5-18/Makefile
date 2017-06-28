@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.18
-PORTREVISION=	2
+PORTVERSION=	1.8.19
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/current18/src/	\
 		http://support.hdfgroup.org/ftp/HDF5/current18/src/	\

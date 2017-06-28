@@ -13,7 +13,9 @@ COMMENT=	Scheduler program, designed to replace cron(8) and at(1)
 BUILD_DEPENDS=	${LOCALBASE}/bin/tai64nlocal:sysutils/daemontools
 RUN_DEPENDS=	${LOCALBASE}/bin/multilog:sysutils/daemontools
 
-BROKEN_aarch64=	Fails to build: regparm is not valid on this platform
+BROKEN_aarch64=		fails to build: regparm is not valid on this platform
+BROKEN_armv6=		fails to build: regparm is not valid on this platform
+
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 
 TEST_TARGET=	check

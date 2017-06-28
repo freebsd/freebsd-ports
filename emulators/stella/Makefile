@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+BROKEN_powerpc64=	fails to compile: CartDebug.cxx: 'snprintf' is not a member of 'std'
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_SDL=	sdl2

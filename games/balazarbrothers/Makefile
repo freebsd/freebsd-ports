@@ -3,7 +3,7 @@
 
 PORTNAME=	balazarbrothers
 PORTVERSION=	0.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/${PORTNAME:S/brothers//}/
 DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
@@ -14,16 +14,19 @@ COMMENT=	Free software 3D puzzle game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		conflicting dependencies
+
 LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis \
 		${PYTHON_PKGNAMEPREFIX}soya3d>0:graphics/py-soya3d \
 		${PYTHON_PKGNAMEPREFIX}tofu>0:net/py-tofu \
-		${PYTHON_PKGNAMEPREFIX}cerealizer>0:security/py-cerealizer
+		${PYTHON_PKGNAMEPREFIX}cerealizer>0:security/py-cerealizer \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
 NO_ARCH=	yes
 
-USES=		gettext python tar:bzip2 twisted
+USES=		gettext python tar:bzip2
 USE_GL=		glew
 USE_PYTHON=	autoplist distutils
 

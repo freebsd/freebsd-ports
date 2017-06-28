@@ -19,7 +19,7 @@ CONFLICTS=	libasr-[0-9]*
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-USES=		libtool
+USES=		groff libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

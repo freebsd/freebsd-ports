@@ -13,6 +13,10 @@ COMMENT?=	Record CD-R[W]s in disk-at-once mode
 
 LICENSE=	GPLv2
 
+BROKEN_mips=		fails to compile: cc1plus: error: unrecognized command line option "-std=c++11"
+BROKEN_mips64=		fails to compile: cc1plus: error: unrecognized command line option "-std=c++11"
+BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=c++11"
+
 GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++11
 USES=		alias gmake tar:bzip2

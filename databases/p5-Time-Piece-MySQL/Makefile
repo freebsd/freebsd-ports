@@ -3,7 +3,7 @@
 
 PORTNAME=	Time-Piece-MySQL
 PORTVERSION=	0.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Time::Piece::MySQL - Adds MySQL-specific methods to Time::Piece
 
-BUILD_DEPENDS=	p5-Time-Piece>=0:devel/p5-Time-Piece
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

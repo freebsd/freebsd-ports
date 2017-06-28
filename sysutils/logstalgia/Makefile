@@ -3,7 +3,7 @@
 
 PORTNAME=	logstalgia
 PORTVERSION=	1.0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils www
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -18,6 +18,8 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
 		libftgl.so:graphics/ftgl
+
+BROKEN_powerpc64=	fails to compile: custom.cpp: 'sscanf' was not declared in this scope
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	acaudwell

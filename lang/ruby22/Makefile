@@ -66,9 +66,8 @@ GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-dir=${LOCALBASE}
 LIBEDIT_USES=		libedit
 RDOC_CONFIGURE_ENABLE=	install-rdoc
-READLINE_BUILD_DEPENDS=	readline>=0:devel/readline
 READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-dir=${LOCALBASE}
-READLINE_RUN_DEPENDS=	readline>=0:devel/readline
+READLINE_USES=		readline:port
 
 CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}

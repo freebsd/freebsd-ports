@@ -27,7 +27,7 @@
  PROGS="$PROGS mkdictdb dlookup"
  else
  DICTS=""
-@@ -126,7 +128,7 @@ if test "$ac_cv_header_audio_audiolib_h"
+@@ -126,7 +128,7 @@ if test "$ac_cv_header_audio_audiolib_h" = yes ; then
    XLIBS="-laudio $XLIBS"
    AC_DEFINE(HAVE_NAS)
    ],,$XLIBS $LIBS)

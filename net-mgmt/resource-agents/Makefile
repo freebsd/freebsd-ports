@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	resource-agents
-PORTVERSION=	3.9.7
-PORTREVISION=	2
+PORTVERSION=	4.0.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -19,19 +19,23 @@ CONFLICTS=	heartbeat-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClusterLabs
-GH_PROJECT=	resource-agents
 
 USES=		autoreconf gmake pkgconfig python shebangfix
 USE_GCC=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ocf-root=${PREFIX}/etc/ocf
 
 SHEBANG_LANG=	sh
-sh_OLD_CMD=	${SH}
+sh_OLD_CMD=	/bin/sh
 sh_CMD=		${LOCALBASE}/bin/bash
 SHEBANG_FILES=	heartbeat/* \
 		ldirectord/ldirectord.in \
+		rgmanager/src/resources/*.sh \
+		rgmanager/src/resources/*.sh.in \
+		rgmanager/src/resources/ocf-shellfuncs \
+		rgmanager/src/resources/svclib_nfslock \
+		rgmanager/src/resources/utils/*.pl \
+		rgmanager/src/resources/utils/*.sh \
 		tools/ocft/ocft.in \
 		tools/ocf-tester.in
 

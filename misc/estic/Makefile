@@ -14,6 +14,8 @@ COMMENT=		Controller for ISDN TK-Anlage (PBX) made by Istec
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_armv6=		fails to compile: str.h: friend declaration specifying a default argument must be the only declaration
+
 USES=		ncurses zip
 USE_CSTD=	gnu89
 USE_CXXSTD=	gnu++98

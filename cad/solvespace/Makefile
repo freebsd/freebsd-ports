@@ -2,6 +2,7 @@
 
 PORTNAME=	solvespace
 PORTVERSION=	2.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
@@ -16,6 +17,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgtkmm-2.4.so:x11-toolkits/gtkmm24
+
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
 
 USE_GITHUB=	yes
 GH_PROJECT=	libdxfrw:libdxfrw

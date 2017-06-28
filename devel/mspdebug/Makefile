@@ -3,6 +3,7 @@
 
 PORTNAME=	mspdebug
 PORTVERSION=	0.23.20151024
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	peterjeremy@acm.org

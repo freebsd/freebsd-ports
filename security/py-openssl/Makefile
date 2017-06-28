@@ -14,12 +14,12 @@ COMMENT=	Python interface to the OpenSSL library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.2.1:security/py-cryptography \
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.2.1:security/py-cryptography \
 		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:devel/py-six
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		cpe python
+USES?=		cpe python
 USE_PYTHON=	autoplist concurrent distutils pythonprefix
 
 CPE_VENDOR=	jean-paul_calderone

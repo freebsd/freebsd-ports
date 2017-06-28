@@ -37,6 +37,9 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libisl.so:devel/isl
 
 BROKEN_aarch64=		fails to compile: c++: error: unsupported option -print-multi-os-directory
+BROKEN_mips=		fails to configure: cannot compute suffix of object files
+BROKEN_mips64=		fails to configure: cannot compute suffix of object files
+BROKEN_powerpc64=	fails to compile: longlong.h: internal compiler error: Segmentation fault
 
 USES=		bison compiler cpe gmake iconv libtool makeinfo ncurses \
 		tar:bzip2

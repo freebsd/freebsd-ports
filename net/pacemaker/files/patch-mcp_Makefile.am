@@ -1,0 +1,11 @@
+--- mcp/Makefile.am.orig	2016-04-18 16:07:35 UTC
++++ mcp/Makefile.am
+@@ -19,8 +19,6 @@ include $(top_srcdir)/Makefile.common
+ 
+ if BUILD_CS_SUPPORT
+ 
+-initdir			= $(INITDIR)
+-init_SCRIPTS		= pacemaker
+ sbin_PROGRAMS		= pacemakerd
+ 
+ if BUILD_SYSTEMD

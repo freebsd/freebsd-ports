@@ -882,6 +882,7 @@ share/applications/gajim-remote.desktop
 %%DATADIR%%/icons/hicolor/64x64/apps/gajim.png
 %%DATADIR%%/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/plugins/plugin_installer/__init__.py
+%%DATADIR%%/plugins/plugin_installer/DST_Root_CA_X3.pem
 %%DATADIR%%/plugins/plugin_installer/config_dialog.ui
 %%DATADIR%%/plugins/plugin_installer/manifest.ini
 %%DATADIR%%/plugins/plugin_installer/plugin_installer.png
@@ -1210,9 +1211,9 @@ share/applications/gajim-remote.desktop
 %%DATADIR%%/src/negotiation.py
 %%DATADIR%%/src/negotiation.pyc
 %%DATADIR%%/src/negotiation.pyo
-%%DATADIR%%/src/network_manager_listener.py
-%%DATADIR%%/src/network_manager_listener.pyc
-%%DATADIR%%/src/network_manager_listener.pyo
+%%DATADIR%%/src/network_watcher.py
+%%DATADIR%%/src/network_watcher.pyc
+%%DATADIR%%/src/network_watcher.pyo
 %%DATADIR%%/src/notify.py
 %%DATADIR%%/src/notify.pyc
 %%DATADIR%%/src/notify.pyo

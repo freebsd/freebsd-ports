@@ -1,6 +1,6 @@
 --- build.mak.in.orig	2016-08-25 01:36:33 UTC
 +++ build.mak.in
-@@ -106,7 +106,7 @@ APP_THIRD_PARTY_LIB_FILES += $(PJ_DIR)/t
+@@ -106,7 +106,7 @@ APP_THIRD_PARTY_LIB_FILES += $(PJ_DIR)/third_party/lib
  endif
  endif
  

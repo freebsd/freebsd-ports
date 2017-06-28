@@ -12,6 +12,6 @@ COMMENT=	PEAR implementation of the NNTP protocol
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
 %%SITE_PERL%%/Net/IMAP/Simple.pm
 %%SITE_PERL%%/Net/IMAP/Simple.pod
 %%SITE_PERL%%/Net/IMAP/Simple/PipeSocket.pm
-%%SX%%%%SITE_PERL%%/Net/IMAP/SimpleX.pm
-%%SX%%%%SITE_PERL%%/Net/IMAP/SimpleX.pod
+%%SITE_PERL%%/Net/IMAP/SimpleX.pm
+%%SITE_PERL%%/Net/IMAP/SimpleX.pod
 %%PERL5_MAN3%%/Net::IMAP::Simple.3.gz
 %%PERL5_MAN3%%/Net::IMAP::Simple::PipeSocket.3.gz
-%%SX%%%%PERL5_MAN3%%/Net::IMAP::SimpleX.3.gz
+%%PERL5_MAN3%%/Net::IMAP::SimpleX.3.gz

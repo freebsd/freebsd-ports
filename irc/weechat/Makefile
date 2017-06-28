@@ -16,7 +16,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake:outsource ncurses tar:xz
+USES=		cmake:outsource,noninja ncurses tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DENABLE_GUILE=no \
@@ -25,6 +25,9 @@ CMAKE_ARGS+=	-DENABLE_GUILE=no \
 OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE GNUTLS ICON ICONV MANPAGES NLS
 OPTIONS_DEFAULT=	ASPELL BACKTRACE CA_BUNDLE CHARSET GNUTLS ICON LUA MANPAGES PERL PYTHON RUBY TCL
 OPTIONS_SUB=		yes
+
+# BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
+OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 OPTIONS_GROUP=		PLUGINS
 OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET JAVASCRIPT LUA PERL PYTHON RUBY TCL

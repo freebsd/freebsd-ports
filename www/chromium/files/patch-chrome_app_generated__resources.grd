@@ -1,15 +1,6 @@
---- chrome/app/generated_resources.grd.orig	2017-04-19 19:06:28 UTC
+--- chrome/app/generated_resources.grd.orig	2017-06-05 19:03:01 UTC
 +++ chrome/app/generated_resources.grd
-@@ -6535,7 +6535,7 @@ Keep your key file in a safe place. You 
-       <message name="IDS_FLAGS_FORCE_UI_DIRECTION_RTL" desc="Name for the option to force right-to-left UI direction mode.">
-           Right-to-left
-       </message>
--      <if expr="is_win or is_linux">
-+      <if expr="is_win or is_linux or is_bsd">
-         <message name="IDS_FLAGS_ENABLE_INPUT_IME_API_NAME" desc="Name of the flag to enable che chrome.input.ime API.">
-           Enable Input IME API
-         </message>
-@@ -9629,7 +9629,7 @@ I don't think this site should be blocke
+@@ -8084,7 +8084,7 @@ I don't think this site should be blocked!
        <message name="IDS_APPEARANCE_GROUP_NAME" desc="The title of the appearance group">
          Appearance
        </message>
@@ -18,7 +9,7 @@
          <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
            Themes
          </message>
-@@ -9637,7 +9637,7 @@ I don't think this site should be blocke
+@@ -8092,7 +8092,7 @@ I don't think this site should be blocked!
        <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
          Reset to default theme
        </message>
@@ -27,7 +18,7 @@
          <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
            Use GTK+ theme
          </message>
-@@ -10903,7 +10903,7 @@ Tell us what happened exactly before you
+@@ -9347,7 +9347,7 @@ Tell us what happened exactly before you got the profi
          Set as default
        </message>
  

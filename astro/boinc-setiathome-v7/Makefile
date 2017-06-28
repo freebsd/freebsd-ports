@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-setiathome-v7
 PORTVERSION=	7.00
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/rene
 DISTNAME=	setiathome-svn-1924 # modified archive, see leftout in top directory
@@ -77,7 +77,7 @@ PLIST_SUB+=	PREFIX=${PREFIX} \
 		BOINC_CLIENT_USER=${BOINC_CLIENT_USER} \
 		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not compile: analyzeFuncs_altivec.cpp: CoreServices/CoreServices.h: No such file or directory
 
 # str_replace.h is included in newer versions of net/boinc-client,
 # but it is not needed on FreeBSD

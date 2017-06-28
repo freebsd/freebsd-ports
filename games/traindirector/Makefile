@@ -19,7 +19,6 @@ USE_GNOME=	gtk20
 
 USE_WX=		2.8
 WX_COMPS=	wx:lib
-WX_UNICODE=	yes
 
 DESKTOP_ENTRIES="Train Director" "${COMMENT}" "" "traindir3" \
 		"Game;Simulation;StrategyGame;" false

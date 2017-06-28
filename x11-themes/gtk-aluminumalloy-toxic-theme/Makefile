@@ -3,7 +3,7 @@
 
 PORTREVISION=	5
 
-FLAVOR=		toxic
+THEME_FLAVOR=	toxic
 
 MASTERDIR=	${.CURDIR}/../gtk-aluminumalloy-volcanic-theme
 

@@ -1,6 +1,6 @@
---- chrome/app/google_chrome_strings.grd.orig	2017-04-19 19:06:28 UTC
+--- chrome/app/google_chrome_strings.grd.orig	2017-06-05 19:03:01 UTC
 +++ chrome/app/google_chrome_strings.grd
-@@ -892,7 +892,7 @@ Signing in anyway will merge Chrome info
+@@ -887,7 +887,7 @@ Signing in anyway will merge Chrome information like b
        </message>
  
        <!-- ProcessSingleton -->

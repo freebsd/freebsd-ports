@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pefile
-PORTVERSION=	2016.3.28
+PORTVERSION=	2017.5.26
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP \
-		https://github.com/erocarrera/pefile/files/192316/
+MASTER_SITES=	https://github.com/erocarrera/pefile/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org

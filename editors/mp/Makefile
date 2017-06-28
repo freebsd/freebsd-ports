@@ -12,7 +12,8 @@ COMMENT=	Programming text editor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	fails to compile: error: conflicting types for __wcwidth
+BROKEN_aarch64=		fails to compile: conflicting types for __wcwidth
+BROKEN_armv6=		fails to compile: conflicting types for __wcwidth
 
 USES=		iconv ncurses
 HAS_CONFIGURE=	yes

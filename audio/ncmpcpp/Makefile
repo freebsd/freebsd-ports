@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.7.7
-PORTREVISION=	3
+PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ncmpcpp.rybczak.net/stable/
 
@@ -16,17 +16,19 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libfftw3.so:math/fftw3 \
 		libicudata.so:devel/icu \
 		libicuuc.so:devel/icu \
-		libboost_filesystem.so:devel/boost-libs
+		libboost_filesystem.so:devel/boost-libs \
+		libcurl.so:ftp/curl
 
-USES=		compiler:c++11-lib iconv libtool localbase ncurses pkgconfig readline tar:bzip2
+BROKEN_powerpc64=	fails to compile: tags.cpp: undefined reference to TagLib::String::to8Bit
+
+USES=		compiler:c++14-lang iconv libtool localbase ncurses:port pkgconfig readline tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 LDFLAGS+=	-lpthread
 CONFIGURE_ENV=	BOOST_LIB_SUFFIX=""
 
-OPTIONS_DEFINE=	CURL CLOCK DOCS OUTPUTS TAGLIB UTF8 VISUALIZER
-OPTIONS_DEFAULT=	CURL CLOCK OUTPUTS TAGLIB UTF8 VISUALIZER
-CURL_DESC=	Enable fetching lyrics from the Internet
+OPTIONS_DEFINE=	CLOCK DOCS OUTPUTS TAGLIB UTF8 VISUALIZER
+OPTIONS_DEFAULT=	CLOCK OUTPUTS TAGLIB UTF8 VISUALIZER
 CLOCK_DESC=	clock-screen support
 TAGLIB_DESC=	taglib support
 OUTPUTS_DESC=	Enable outputs screen
@@ -35,9 +37,6 @@ VISUALIZER_DESC=	Enable music visualizer screen
 PLIST_FILES=	bin/ncmpcpp \
 		man/man1/ncmpcpp.1.gz
 PORTDOCS=	AUTHORS COPYING NEWS bindings config
-
-CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-CURL_CONFIGURE_WITH=	curl
 
 CLOCK_CONFIGURE_ENABLE=	clock
 

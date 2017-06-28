@@ -3,6 +3,7 @@
 
 PORTNAME=	glmark2
 PORTVERSION=	2014.03
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://launchpadlibrarian.net/169075003/
 

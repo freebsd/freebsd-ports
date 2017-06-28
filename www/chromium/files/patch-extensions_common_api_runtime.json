@@ -1,0 +1,11 @@
+--- extensions/common/api/runtime.json.orig	2017-05-09 19:02:47 UTC
++++ extensions/common/api/runtime.json
+@@ -66,7 +66,7 @@
+         "id": "PlatformOs",
+         "type": "string",
+         "description": "The operating system chrome is running on.",
+-        "enum": ["mac", "win", "android", "cros", "linux", "openbsd"]
++        "enum": ["mac", "win", "android", "cros", "linux", "freebsd", "openbsd"]
+       },
+       {
+         "id": "PlatformArch",

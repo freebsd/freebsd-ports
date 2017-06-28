@@ -1,5 +1,5 @@
-TIMESTAMP = 1491660293
-SHA256 (grafana-releases/release/grafana-4.2.0.linux-x64.tar.gz) = e9927baaaf6cbcab64892dedd11ccf509e4edea54670db4250b9e7568466ec61
-SIZE (grafana-releases/release/grafana-4.2.0.linux-x64.tar.gz) = 45741731
-SHA256 (grafana-grafana-v4.2.0_GH0.tar.gz) = 87c9f123b2511dd57a6ff14c7b67dc3def678eefd9d22fd27e8fbb907a8e076a
-SIZE (grafana-grafana-v4.2.0_GH0.tar.gz) = 8463603
+TIMESTAMP = 1496234916
+SHA256 (grafana-4.3.2.linux-x64.tar.gz) = 0c835229d1dcba43cbb79014ef0782edbd7b58d156a6aa2886a07bb52232666e
+SIZE (grafana-4.3.2.linux-x64.tar.gz) = 47036583
+SHA256 (grafana-grafana-v4.3.2_GH0.tar.gz) = 02753931d9abb5d94e0695fdb44f5ede0a537cad57a7d60f44125056c04129ab
+SIZE (grafana-grafana-v4.3.2_GH0.tar.gz) = 9017723

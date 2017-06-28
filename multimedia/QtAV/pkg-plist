@@ -40,6 +40,8 @@ include/QtAV/FilterContext.h
 include/QtAV/Frame.h
 include/QtAV/FrameReader.h
 include/QtAV/GLSLFilter.h
+include/QtAV/Geometry.h
+include/QtAV/GeometryRenderer.h
 include/QtAV/LibAVFilter.h
 include/QtAV/MediaIO.h
 include/QtAV/OpenGLRendererBase.h
@@ -80,13 +82,13 @@ include/QtAVWidgets/version.h
 lib/libQtAV.prl
 lib/libQtAV.so
 lib/libQtAV.so.1
-lib/libQtAV.so.1.11
-lib/libQtAV.so.1.11.0
+lib/libQtAV.so.1.12
+lib/libQtAV.so.1.12.0
 lib/libQtAVWidgets.prl
 lib/libQtAVWidgets.so
 lib/libQtAVWidgets.so.1
-lib/libQtAVWidgets.so.1.11
-lib/libQtAVWidgets.so.1.11.0
+lib/libQtAVWidgets.so.1.12
+lib/libQtAVWidgets.so.1.12.0
 %%QT_MKSPECDIR%%/features/av.prf
 %%QT_MKSPECDIR%%/features/avwidgets.prf
 %%QT_MKSPECDIR%%/modules/qt_lib_av.pri

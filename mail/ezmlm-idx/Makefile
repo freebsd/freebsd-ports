@@ -11,7 +11,7 @@ COMMENT=	Improved version of the ezmlm mailing list manager
 
 LICENSE=	GPLv2
 
-USES=		qmail:run
+USES=		groff qmail:run
 
 CONFLICTS=	ezmlm-0.*
 

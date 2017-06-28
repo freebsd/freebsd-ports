@@ -12,6 +12,10 @@ COMMENT=	Extra anjuta 3 plugins
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libanjuta-3.so:devel/anjuta
 
+BROKEN=		Does not build with GTK+ 3.22
+DEPRECATED=	Last release in 2013 and doesn't build with recent GTK+
+EXPIRATION_DATE=2017-07-01
+
 USES=		gettext gmake libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

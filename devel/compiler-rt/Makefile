@@ -21,7 +21,6 @@ CMAKE_SOURCE_PATH=	${WRKSRC}
 
 USES=		cmake tar:bzip2
 USE_LDCONFIG=	yes
-MAKE_ARGS=	VERBOSE=1
 
 LLVM_SVN=	http://llvm.org/svn/llvm-project
 

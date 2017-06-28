@@ -10,6 +10,6 @@ COMMENT=	Interface to AT&T's GraphViz tools
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dot:graphics/graphviz
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

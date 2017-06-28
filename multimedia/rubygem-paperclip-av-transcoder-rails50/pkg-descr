@@ -1,0 +1,12 @@
+Audio/Video Transcoder for Paperclip using FFMPEG/Avconv.
+
+With a few lines of code, your application can produce
+
+- a transcoded FLV file with the requested dimensions if they will match the
+  aspect ratio of the original file, otherwise, width will be maintained and
+  height will be recalculated to keep the original aspect ratio
+
+- a screenshot thumbnail with the requested dimensions regardless of the aspect
+  ratio.
+
+WWW: https://github.com/ruby-av/paperclip-av-transcoder/

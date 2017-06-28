@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/freexl-sources/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Library to extract valid data from within an Excel (.xls) spreadsheet
 
 LICENSE=	MPL GPLv2 LGPL21

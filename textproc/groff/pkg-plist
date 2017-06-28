@@ -4,6 +4,9 @@ bin/chem
 bin/eqn
 bin/eqn2graph
 bin/gdiffmk
+bin/glilypond
+bin/gperl
+bin/gpinyin
 bin/grap2graph
 bin/grn
 bin/grodvi
@@ -43,11 +46,18 @@ bin/tbl
 bin/tfmtodit
 bin/troff
 %%X11%%bin/xtotroff
-lib/groff/groffer/func.pl
+lib/groff/glilypond/args.pl
+lib/groff/glilypond/oop_fh.pl
+lib/groff/glilypond/subs.pl
+lib/groff/gpinyin/subs.pl
+lib/groff/groff_opts_no_arg.txt
+lib/groff/groff_opts_with_arg.txt
+lib/groff/groffer/main_subs.pl
 lib/groff/groffer/man.pl
-lib/groff/groffer/perl_test.pl
 lib/groff/groffer/split_env.sh
+lib/groff/groffer/subs.pl
 lib/groff/groffer/version.sh
+lib/groff/grog/subs.pl
 %%X11%%lib/X11/app-defaults/GXditview
 %%X11%%lib/X11/app-defaults/GXditview-color
 man/man1/addftinfo.1.gz
@@ -56,6 +66,9 @@ man/man1/chem.1.gz
 man/man1/eqn.1.gz
 man/man1/eqn2graph.1.gz
 man/man1/gdiffmk.1.gz
+man/man1/glilypond.1.gz
+man/man1/gperl.1.gz
+man/man1/gpinyin.1.gz
 man/man1/grap2graph.1.gz
 man/man1/grn.1.gz
 man/man1/grodvi.1.gz
@@ -68,6 +81,7 @@ man/man1/grolj4.1.gz
 man/man1/gropdf.1.gz
 man/man1/grops.1.gz
 man/man1/grotty.1.gz
+man/man7/groff_filenames.7.gz
 %%X11%%man/man1/gxditview.1.gz
 man/man1/hpftodit.1.gz
 man/man1/indxbib.1.gz
@@ -113,6 +127,7 @@ man/man7/groff_ms.7.gz
 man/man7/groff_trace.7.gz
 man/man7/groff_www.7.gz
 man/man7/roff.7.gz
+%%EXAMPLESDIR%%/webpage-17.html
 %%EXAMPLESDIR%%/chem/122/README
 %%EXAMPLESDIR%%/chem/122/ch2a_ethyl.chem
 %%EXAMPLESDIR%%/chem/122/ch2b_benzene.chem
@@ -330,6 +345,8 @@ man/man7/roff.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/html/pic.html
 %%DOCSDIR%%/meintro.me
 %%DOCSDIR%%/meintro.ps
+%%DOCSDIR%%/meintro_fr.me
+%%DOCSDIR%%/meintro_fr.ps
 %%DOCSDIR%%/meref.me
 %%DOCSDIR%%/meref.ps
 %%DOCSDIR%%/pdf/mom-pdf.pdf
@@ -631,6 +648,7 @@ man/man7/roff.7.gz
 %%DATADIR%%/font/devpdf/map/symbolchars
 %%DATADIR%%/font/devpdf/map/symbolmap
 %%DATADIR%%/font/devpdf/map/textmap
+%%DATADIR%%/font/devpdf/util/BuildFoundries
 %%DATADIR%%/font/devps/AB
 %%DATADIR%%/font/devps/ABI
 %%DATADIR%%/font/devps/AI
@@ -814,5 +832,6 @@ man/man7/roff.7.gz
 share/groff/current
 share/groff/site-tmac/man.local
 share/groff/site-tmac/mdoc.local
+@dir lib/groff/refer
 @dir lib/groff/site-tmac
 @dir share/groff/site-font

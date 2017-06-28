@@ -3,7 +3,7 @@
 
 PORTNAME=	pixie
 PORTVERSION=	2.2.6
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Pixie%20${PORTVERSION}
 DISTNAME=	Pixie-src-${PORTVERSION}
@@ -17,6 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libtiff.so:graphics/tiff \
 		libfltk_gl.so:x11-toolkits/fltk
+
+BROKEN_aarch64=		fails to compile: use of undeclared identifier CRenderer
+BROKEN_armv6=		fails to compile: use of undeclared identifier CRenderer
+BROKEN_sparc64=		fails to compile
 
 USE_GL=		glu
 USES=		bison compiler:c++0x libtool pathfix tar:tgz
@@ -40,9 +44,6 @@ PORTDOCS=	*
 CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-BROKEN_aarch64=		Fails to compile: error: use of undeclared identifier CRenderer
-BROKEN_sparc64=		Does not compile on sparc64
 
 OPTIONS_DEFINE=	DOCS
 

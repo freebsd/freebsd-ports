@@ -1,3 +1,4 @@
+bin/check_epollexclusive
 bin/gen_hpack_tables
 bin/gen_legal_metadata_characters
 bin/gen_percent_encoding_tables
@@ -58,7 +59,6 @@ include/grpc++/impl/codegen/service_type.h
 include/grpc++/impl/codegen/slice.h
 include/grpc++/impl/codegen/status.h
 include/grpc++/impl/codegen/status_code_enum.h
-include/grpc++/impl/codegen/status_helper.h
 include/grpc++/impl/codegen/string_ref.h
 include/grpc++/impl/codegen/stub_options.h
 include/grpc++/impl/codegen/sync_stream.h
@@ -152,6 +152,7 @@ include/grpc/support/tls_gcc.h
 include/grpc/support/tls_msvc.h
 include/grpc/support/tls_pthread.h
 include/grpc/support/useful.h
+include/grpc/support/workaround_list.h
 lib/cmake/gRPC/gRPCConfig.cmake
 lib/cmake/gRPC/gRPCConfigVersion.cmake
 lib/libbenchmark.so

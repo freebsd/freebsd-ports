@@ -24,7 +24,7 @@ RUN_DEPENDS=	gawk:lang/gawk \
 		sgmlsasp:textproc/sgmls
 
 GNU_CONFIGURE=	yes
-USES=		gmake perl5
+USES=		gmake groff:both perl5
 CONFIGURE_ARGS=	--with-installed-sgmlsasp
 
 PORTDOCS=	*

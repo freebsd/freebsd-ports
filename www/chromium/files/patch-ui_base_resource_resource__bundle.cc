@@ -1,6 +1,6 @@
---- ui/base/resource/resource_bundle.cc.orig	2017-04-19 19:06:54 UTC
+--- ui/base/resource/resource_bundle.cc.orig	2017-06-05 19:03:30 UTC
 +++ ui/base/resource/resource_bundle.cc
-@@ -661,7 +661,7 @@ void ResourceBundle::ReloadFonts() {
+@@ -676,7 +676,7 @@ void ResourceBundle::ReloadFonts() {
  }
  
  ScaleFactor ResourceBundle::GetMaxScaleFactor() const {
@@ -9,7 +9,7 @@
    return max_scale_factor_;
  #else
    return GetSupportedScaleFactors().back();
-@@ -719,7 +719,7 @@ void ResourceBundle::InitSharedInstance(
+@@ -734,7 +734,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
      supported_scale_factors.push_back(SCALE_FACTOR_100P);
    }
  #elif defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \

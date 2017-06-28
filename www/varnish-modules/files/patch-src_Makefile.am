@@ -1,6 +1,6 @@
---- src/Makefile.am.orig	2016-07-07 14:48:43 UTC
+--- src/Makefile.am.orig	2017-05-31 20:08:36 UTC
 +++ src/Makefile.am
-@@ -5,7 +5,6 @@ vmod_LTLIBRARIES = libvmod_cookie.la \
+@@ -28,7 +28,6 @@ vmod_LTLIBRARIES = \
  	libvmod_header.la \
  	libvmod_saintmode.la \
  	libvmod_softpurge.la \
@@ -8,15 +8,35 @@
  	libvmod_var.la \
  	libvmod_vsthrottle.la \
  	libvmod_xkey.la
-@@ -40,11 +39,6 @@ libvmod_softpurge_la_SOURCES = \
- vcc_softpurge_if.c vcc_softpurge_if.h: @VMODTOOL@ $(top_srcdir)/src/vmod_softpurge.vcc
- 	@VMODTOOL@ -w ../docs/ -o vcc_softpurge_if $(top_srcdir)/src/vmod_softpurge.vcc
+@@ -39,7 +38,6 @@ dist_man_MANS = \
+ 	vmod_header.3 \
+ 	vmod_saintmode.3 \
+ 	vmod_softpurge.3 \
+-	vmod_tcp.3 \
+ 	vmod_var.3 \
+ 	vmod_vsthrottle.3 \
+ 	vmod_xkey.3
+@@ -52,7 +50,6 @@ libvmod_header_la_SOURCES = vmod_header.
+ libvmod_vsthrottle_la_SOURCES = vmod_vsthrottle.c
+ libvmod_saintmode_la_SOURCES = vmod_saintmode.c
+ libvmod_softpurge_la_SOURCES = vmod_softpurge.c foreign/hash/hash_slinger.h
+-libvmod_tcp_la_SOURCES = vmod_tcp.c
+ libvmod_var_la_SOURCES = vmod_var.c
+ libvmod_xkey_la_SOURCES = vmod_xkey.c
  
--libvmod_tcp_la_LDFLAGS = $(AM_LDFLAGS) -module -export-dynamic -avoid-version -shared
--libvmod_tcp_la_SOURCES = vcc_tcp_if.c vcc_tcp_if.h vmod_tcp.c
--vcc_tcp_if.c vcc_tcp_if.h: @VMODTOOL@ $(top_srcdir)/src/vmod_tcp.vcc
--	@VMODTOOL@ -w ../docs/ -o vcc_tcp_if $(top_srcdir)/src/vmod_tcp.vcc
--
- libvmod_var_la_LDFLAGS = $(AM_LDFLAGS) -module -export-dynamic -avoid-version -shared
- libvmod_var_la_SOURCES = vcc_var_if.c vcc_var_if.h vmod_var.c
- vcc_var_if.c vcc_var_if.h: @VMODTOOL@ $(top_srcdir)/src/vmod_var.vcc
+@@ -62,7 +59,6 @@ nodist_libvmod_header_la_SOURCES = vcc_h
+ nodist_libvmod_vsthrottle_la_SOURCES = vcc_vsthrottle_if.c vcc_vsthrottle_if.h
+ nodist_libvmod_saintmode_la_SOURCES = vcc_saintmode_if.c vcc_saintmode_if.h
+ nodist_libvmod_softpurge_la_SOURCES = vcc_softpurge_if.c vcc_softpurge_if.h
+-nodist_libvmod_tcp_la_SOURCES = vcc_tcp_if.c vcc_tcp_if.h
+ nodist_libvmod_var_la_SOURCES = vcc_var_if.c vcc_var_if.h
+ nodist_libvmod_xkey_la_SOURCES = vcc_xkey_if.c vcc_xkey_if.h
+ 
+@@ -105,7 +101,6 @@ EXTRA_DIST = \
+ 	vmod_header.vcc \
+ 	vmod_saintmode.vcc \
+ 	vmod_softpurge.vcc \
+-	vmod_tcp.vcc \
+ 	vmod_var.vcc \
+ 	vmod_vsthrottle.vcc \
+ 	vmod_xkey.vcc

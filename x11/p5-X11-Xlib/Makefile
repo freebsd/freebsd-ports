@@ -2,6 +2,7 @@
 
 PORTNAME=	X11-Xlib
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
-		devel/p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends
+		p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

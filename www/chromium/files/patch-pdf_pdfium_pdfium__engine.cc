@@ -1,6 +1,6 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2017-04-19 19:06:36 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2017-06-05 19:03:10 UTC
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -129,7 +129,7 @@ std::vector<uint32_t> GetPageNumbersFrom
+@@ -129,7 +129,7 @@ std::vector<uint32_t> GetPageNumbersFromPrintPageNumbe
    return page_numbers;
  }
  
@@ -27,7 +27,7 @@
    delete g_font_info;
  #endif
    TearDownV8();
-@@ -772,7 +772,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Cl
+@@ -772,7 +772,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client)
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
@@ -36,7 +36,7 @@
    // PreviewModeClient does not know its pp::Instance.
    pp::Instance* instance = client_->GetPluginInstance();
    if (instance)
-@@ -1513,7 +1513,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesA
+@@ -1516,7 +1516,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPDF(
      FPDF_ClosePage(pdf_page);
    }
  
@@ -45,7 +45,7 @@
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -2950,7 +2950,7 @@ bool PDFiumEngine::ContinuePaint(int pro
+@@ -2953,7 +2953,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
    DCHECK(image_data);
  
@@ -54,7 +54,7 @@
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3408,7 +3408,7 @@ void PDFiumEngine::SetCurrentPage(int in
+@@ -3411,7 +3411,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form_, FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

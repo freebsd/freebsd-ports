@@ -16,11 +16,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxapian.so:databases/xapian-core12
 
-CONFLICTS_INSTALL=	xapian-bindings-
+CONFLICTS=	xapian-bindings
 
 OPTIONS_DEFINE=	DOCS LUA PHP PYTHON RUBY
 OPTIONS_DEFAULT=PHP PYTHON RUBY
 OPTIONS_SUB=	yes
+
+# BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
+OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 PORTSCOUT=	limitw:1,even
 

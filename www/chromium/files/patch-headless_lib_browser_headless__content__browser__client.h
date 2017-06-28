@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_content_browser_client.h.orig	2017-05-09 19:02:47 UTC
+--- headless/lib/browser/headless_content_browser_client.h.orig	2017-06-05 19:03:08 UTC
 +++ headless/lib/browser/headless_content_browser_client.h
-@@ -28,7 +28,7 @@ class HeadlessContentBrowserClient : pub
+@@ -28,7 +28,7 @@ class HeadlessContentBrowserClient : public content::C
        content::BrowserContext* context,
        content::StoragePartition* partition,
        const storage::OptionalQuotaSettingsCallback& callback) override;

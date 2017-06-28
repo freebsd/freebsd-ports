@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	centos-release-7-3.1611.el7.centos \
@@ -13,7 +13,7 @@ BIN_DISTNAMES=	centos-release-7-3.1611.el7.centos \
 		elfutils-0.166-2.el7 \
 		filesystem-3.2-21.el7 \
 		findutils-4.5.11-5.el7 \
-		glibc-common-2.17-157.el7_3.1 \
+		glibc-common-2.17-157.el7_3.2 \
 		grep-2.20-2.el7 \
 		info-5.1-4.el7 \
 		keyutils-1.5.8-3.el7 \
@@ -30,13 +30,13 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		gamin-0.1.10-16.el7 \
 		gdbm-1.10-8.el7 \
 		glib2-2.46.2-4.el7 \
-		glibc-2.17-157.el7_3.1 \
+		glibc-2.17-157.el7_3.2 \
 		gmp-6.0.0-12.el7_1 \
 		keyutils-libs-1.5.8-3.el7 \
 		krb5-libs-1.14.1-27.el7_3 \
 		libacl-2.2.51-12.el7 \
 		libattr-2.4.46-12.el7 \
-		libblkid-2.23.2-33.el7 \
+		libblkid-2.23.2-33.el7_3.2 \
 		libcap-2.22-8.el7 \
 		libcom_err-1.42.9-9.el7 \
 		libdb-5.3.21-19.el7 \
@@ -46,14 +46,14 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		libselinux-2.5-6.el7 \
 		libsepol-2.5-6.el7 \
 		libstdc++-4.8.5-11.el7 \
-		libuuid-2.23.2-33.el7 \
+		libuuid-2.23.2-33.el7_3.2 \
 		ncurses-libs-5.9-13.20130511.el7 \
 		pcre-8.32-15.el7_2.1 \
 		popt-1.13-16.el7 \
 		readline-6.2-9.el7 \
 		redhat-lsb-core-4.1-27.el7.centos.1 \
 		slang-2.2.4-11.el7 \
-		util-linux-2.23.2-33.el7 \
+		util-linux-2.23.2-33.el7_3.2 \
 		xz-libs-5.2.2-1.el7 \
 		zlib-1.2.7-17.el7
 SHARE_DISTNAMES=basesystem-10.0-7.el7.centos \
@@ -76,7 +76,7 @@ SRC_DISTFILES=	acl-2.2.51-12.el7${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-11.el7${SRC_SUFX}:SOURCE \
 		gdbm-1.10-8.el7${SRC_SUFX}:SOURCE \
 		glib2-2.46.2-4.el7${SRC_SUFX}:SOURCE \
-		glibc-2.17-157.el7_3.1${SRC_SUFX}:SOURCE \
+		glibc-2.17-157.el7_3.2${SRC_SUFX}:SOURCE \
 		gmp-6.0.0-12.el7_1${SRC_SUFX}:SOURCE \
 		grep-2.20-2.el7${SRC_SUFX}:SOURCE \
 		keyutils-1.5.8-3.el7${SRC_SUFX}:SOURCE \
@@ -98,7 +98,7 @@ SRC_DISTFILES=	acl-2.2.51-12.el7${SRC_SUFX}:SOURCE \
 		setup-2.8.71-7.el7${SRC_SUFX}:SOURCE \
 		slang-2.2.4-11.el7${SRC_SUFX}:SOURCE \
 		texinfo-5.1-4.el7${SRC_SUFX}:SOURCE \
-		util-linux-2.23.2-33.el7${SRC_SUFX}:SOURCE \
+		util-linux-2.23.2-33.el7_3.2${SRC_SUFX}:SOURCE \
 		which-2.20-7.el7${SRC_SUFX}:SOURCE \
 		xz-5.2.2-1.el7${SRC_SUFX}:SOURCE \
 		zlib-1.2.7-17.el7${SRC_SUFX}:SOURCE

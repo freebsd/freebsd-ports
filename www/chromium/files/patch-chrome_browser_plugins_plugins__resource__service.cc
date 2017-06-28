@@ -1,9 +1,9 @@
---- chrome/browser/plugins/plugins_resource_service.cc.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/plugins/plugins_resource_service.cc.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/plugins/plugins_resource_service.cc
-@@ -31,7 +31,7 @@ GURL GetPluginsServerURL() {
-   std::string filename;
- #if defined(OS_WIN)
+@@ -59,7 +59,7 @@ GURL GetPluginsServerURL() {
    filename = "plugins_win.json";
+ #elif defined(OS_CHROMEOS)
+   filename = "plugins_chromeos.json";
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
    filename = "plugins_linux.json";

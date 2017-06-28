@@ -115,7 +115,7 @@ uwsgi:*:165:165::0:0:uwsgi Daemon:/nonexistent:/usr/sbin/nologin
 yule:*:166:166::0:0:Samhain Daemon:/nonexistent:/usr/sbin/nologin
 ceph:*:167:167::0:0:Ceph Daemons:/var/lib/ceph:/usr/sbin/nologin
 # free: 168
-# free: 169
+acme:*:169:169::0:0:ACME protocol client:/var/db/acme:/bin/sh
 tile38:*:170:170::0:0:Tile38 User:/var/db/tile38:/usr/sbin/nologin
 sfs:*:171:171::0:0:Self-Certifying File System:/nonexistent:/usr/sbin/nologin
 agk:*:172:172::0:0:AquaGateKeeper:/nonexistent:/nonexistent
@@ -160,7 +160,7 @@ shoutcast:*:210:210::0:0:Shoutcast sandbox:/nonexistent:/bin/sh
 git:*:211:211::0:0:gitosis user:/usr/local/git:/bin/sh
 hg:*:212:212::0:0:mercurial-server user:/usr/local/hg:/bin/sh
 drizzle:*:213:213::0:0:Drizzle daemon:/var/db/drizzle:/usr/sbin/nologin
-# free: 214
+kyototycoon:*:214:214::0:0:kyototycoon user:/var/empty:/usr/sbin/nologin
 opendnssec:*:215:215::0:0:Opendnssec Pseudo User:/nonexistent:/usr/sbin/nologin
 nsd:*:216:216::0:0:NSD DNS Server:/nonexistent:/usr/sbin/nologin
 # free: 217
@@ -190,7 +190,7 @@ aprsd:*:240:240::0:0:aprsd:/nonexistent:/bin/sh
 tnc:*:241:241::0:0:aprsd:/nonexistent:/bin/sh
 prosody:*:242:242::0:0:Prosody Jabber Server:/nonexistent:/usr/sbin/nologin
 # free: 243
-# free: 244
+mastodon:*:244:244::0:0:Mastodon User:/usr/local/www/mastodon:/bin/sh
 # free: 245
 # free: 246
 fcron:*:247:247::0:0:fcron pseudo-user:/nonexistent:/usr/sbin/nologin

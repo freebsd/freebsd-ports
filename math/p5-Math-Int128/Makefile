@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Math-Int64>=0.51:math/p5-Math-Int64
 USES=		perl5
 USE_PERL5=	configure
 
-NOT_FOR_ARCHS=	i386 armv6
+NOT_FOR_ARCHS=	armv6 i386
 
 .include <bsd.port.pre.mk>
 

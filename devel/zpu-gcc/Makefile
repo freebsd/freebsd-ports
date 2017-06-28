@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:devel/zpu-binutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	fails to compile: libgcc2.h: conflicting types for '__structdi3'
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/toolchain
 USES=		gettext gmake makeinfo

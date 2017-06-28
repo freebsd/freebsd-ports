@@ -3,7 +3,7 @@
 
 PORTNAME=	qslim
 PORTVERSION=	2.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	http://mgarland.org/files/dist/
 

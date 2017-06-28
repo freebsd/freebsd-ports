@@ -37,6 +37,7 @@
 %%SITE_PERL%%/Types/Common/String.pm
 %%SITE_PERL%%/Types/Standard.pm
 %%SITE_PERL%%/Types/Standard/ArrayRef.pm
+%%SITE_PERL%%/Types/Standard/CycleTuple.pm
 %%SITE_PERL%%/Types/Standard/Dict.pm
 %%SITE_PERL%%/Types/Standard/HashRef.pm
 %%SITE_PERL%%/Types/Standard/Map.pm
@@ -82,6 +83,7 @@
 %%PERL5_MAN3%%/Types::Common::String.3.gz
 %%PERL5_MAN3%%/Types::Standard.3.gz
 %%PERL5_MAN3%%/Types::Standard::ArrayRef.3.gz
+%%PERL5_MAN3%%/Types::Standard::CycleTuple.3.gz
 %%PERL5_MAN3%%/Types::Standard::Dict.3.gz
 %%PERL5_MAN3%%/Types::Standard::HashRef.3.gz
 %%PERL5_MAN3%%/Types::Standard::Map.3.gz

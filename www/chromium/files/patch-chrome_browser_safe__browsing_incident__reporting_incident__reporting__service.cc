@@ -1,6 +1,6 @@
---- chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc
-@@ -720,7 +720,7 @@ void IncidentReportingService::OnEnviron
+@@ -720,7 +720,7 @@ void IncidentReportingService::OnEnvironmentDataCollec
    environment_collection_pending_ = false;
  
  // CurrentProcessInfo::CreationTime() is missing on some platforms.

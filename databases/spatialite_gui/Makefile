@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Graphical User Interface (GUI) tool supporting SpatiaLite
 
 LICENSE=	GPLv3
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libgaiagraphics.so:graphics/libgaiagraphics \
 		libspatialite.so:databases/spatialite
 
 USE_WX=		2.8
-WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USES=		gmake pkgconfig iconv

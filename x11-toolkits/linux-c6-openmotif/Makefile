@@ -3,14 +3,14 @@
 
 PORTNAME=	openmotif
 PORTVERSION=	2.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Motif toolkit libraries (Linux CentOS ${LINUX_DIST_VER})
 
 DESCR=		${.CURDIR}/../open-motif/pkg-descr
-RPMVERSION=	8.el6
+RPMVERSION=	9.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs

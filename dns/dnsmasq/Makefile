@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.76
-PORTREVISION=	0	# leave this in even if 0 to avoid PORTEPOCH bumps
+DISTVERSION=	2.77
+PORTREVISION=	1	# leave this in even if 0 to avoid PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
@@ -20,7 +20,7 @@ PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
 SUB_FILES=	pkg-message
 
-CFLAGS+=	-Wall -Wno-unused-value -Wno-unused-parameter
+CFLAGS+=	-Wall -Wno-unused-value -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
@@ -47,18 +47,19 @@ IPSET_CFLAGS_OFF=-DNO_IPSET
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext gmake iconv pkgconfig
-LIB_DEPENDS+=	libidn.so:dns/libidn
+CFLAGS+=	-DHAVE_LIBIDN2
+LIB_DEPENDS+=	libidn2.so:dns/libidn2
 PLIST_SUB+=	NLS=""
 ALL_TARGET=	all-i18n
-_intllibs=	-lintl
+_intllibs=	-lidn2 -lintl
 .else
 _intllibs=
 PLIST_SUB+=	NLS="@comment "
 .if ${PORT_OPTIONS:MIDN}
 USES+=		iconv
-CFLAGS+=	-DHAVE_IDN
-LIB_DEPENDS+=	libidn.so:dns/libidn
-_intllibs+=	-lidn
+CFLAGS+=	-DHAVE_LIBIDN2
+LIB_DEPENDS+=	libidn2.so:dns/libidn2
+_intllibs+=	-lidn2
 .endif
 .endif
 
@@ -96,10 +97,10 @@ post-patch:
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
 .if empty(PORT_OPTIONS:MNLS)
-	@if ${READELF} -d ${LOCALBASE}/lib/libidn.so \
+	@if ${READELF} -d ${LOCALBASE}/lib/libidn2.so \
 		| ${EGREP} -q '\<NEEDED\>.*\[libintl\.so' ; \
-	then ${ECHO} ; ${ECHO} 'WARNING: dns/libidn was compiled with NLS support!' ; \
-	${ECHO} 'Recompile libidn WITHOUT_NLS to get rid of NLS dependencies.' ; ${ECHO} ; \
+	then ${ECHO} ; ${ECHO} 'WARNING: dns/libidn2 was compiled with NLS support!' ; \
+	${ECHO} 'Recompile libidn2 WITHOUT_NLS to get rid of NLS dependencies.' ; ${ECHO} ; \
 	fi
 .else
 	@${ECHO} 'WARNING: IDN and NLS enabled, building IDN WITH NLS.'

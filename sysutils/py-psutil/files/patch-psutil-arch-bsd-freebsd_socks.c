@@ -34,7 +34,44 @@
  
          if (so->so_type != kif->kf_sock_type ||
                  so->xso_family != kif->kf_sock_domain ||
-@@ -208,7 +221,11 @@ int psutil_gather_inet(int proto, PyObje
+@@ -135,20 +148,36 @@ psutil_search_tcplist(char *buf, struct 
+         if (kif->kf_sock_domain == AF_INET) {
+             if (!psutil_sockaddr_matches(
+                     AF_INET, inp->inp_lport, &inp->inp_laddr,
++#if __FreeBSD_version < 1200031
+                     &kif->kf_sa_local))
++#else
++                    &kif->kf_un.kf_sock.kf_sa_local))
++#endif
+                 continue;
+             if (!psutil_sockaddr_matches(
+                     AF_INET, inp->inp_fport, &inp->inp_faddr,
++#if __FreeBSD_version < 1200031
+                     &kif->kf_sa_peer))
++#else
++                    &kif->kf_un.kf_sock.kf_sa_peer))
++#endif
+                 continue;
+         } else {
+             if (!psutil_sockaddr_matches(
+                     AF_INET6, inp->inp_lport, &inp->in6p_laddr,
++#if __FreeBSD_version < 1200031
+                     &kif->kf_sa_local))
++#else
++                    &kif->kf_un.kf_sock.kf_sa_local))
++#endif
+                 continue;
+             if (!psutil_sockaddr_matches(
+                     AF_INET6, inp->inp_fport, &inp->in6p_faddr,
++#if __FreeBSD_version < 1200031
+                     &kif->kf_sa_peer))
++#else
++                    &kif->kf_un.kf_sock.kf_sa_peer))
++#endif
+                 continue;
+         }
+ 
+@@ -208,7 +237,11 @@ int psutil_gather_inet(int proto, PyObje
      struct xinpgen *xig, *exig;
      struct xinpcb *xip;
      struct xtcpcb *xtp;
@@ -46,7 +83,7 @@
      struct xsocket *so;
      const char *varname = NULL;
      size_t len, bufsize;
-@@ -273,8 +290,13 @@ int psutil_gather_inet(int proto, PyObje
+@@ -273,8 +306,13 @@ int psutil_gather_inet(int proto, PyObje
                      goto error;
                  }
                  inp = &xtp->xt_inp;
@@ -60,7 +97,7 @@
                  break;
              case IPPROTO_UDP:
                  xip = (struct xinpcb *)xig;
-@@ -283,7 +305,11 @@ int psutil_gather_inet(int proto, PyObje
+@@ -283,7 +321,11 @@ int psutil_gather_inet(int proto, PyObje
                                   "struct xinpcb size mismatch");
                      goto error;
                  }
@@ -72,7 +109,7 @@
                  so = &xip->xi_socket;
                  status = PSUTIL_CONN_NONE;
                  break;
-@@ -477,7 +503,11 @@ psutil_proc_connections(PyObject *self, 
+@@ -477,7 +519,11 @@ psutil_proc_connections(PyObject *self, 
      struct kinfo_file *freep = NULL;
      struct kinfo_file *kif;
      char *tcplist = NULL;
@@ -84,3 +121,51 @@
  
      PyObject *py_retlist = PyList_New(0);
      PyObject *py_tuple = NULL;
+@@ -547,19 +593,35 @@ psutil_proc_connections(PyObject *self, 
+                 inet_ntop(
+                     kif->kf_sock_domain,
+                     psutil_sockaddr_addr(kif->kf_sock_domain,
++#if __FreeBSD_version < 1200031
+                                          &kif->kf_sa_local),
++#else
++                                         &kif->kf_un.kf_sock.kf_sa_local),
++#endif
+                     lip,
+                     sizeof(lip));
+                 inet_ntop(
+                     kif->kf_sock_domain,
+                     psutil_sockaddr_addr(kif->kf_sock_domain,
++#if __FreeBSD_version < 1200031
+                                          &kif->kf_sa_peer),
++#else
++                                         &kif->kf_un.kf_sock.kf_sa_peer),
++#endif
+                     rip,
+                     sizeof(rip));
+                 lport = htons(psutil_sockaddr_port(kif->kf_sock_domain,
++#if __FreeBSD_version < 1200031
+                                                    &kif->kf_sa_local));
++#else
++                                                   &kif->kf_un.kf_sock.kf_sa_local));
++#endif
+                 rport = htons(psutil_sockaddr_port(kif->kf_sock_domain,
++#if __FreeBSD_version < 1200031
+                                                    &kif->kf_sa_peer));
++#else
++                                                   &kif->kf_un.kf_sock.kf_sa_peer));
++#endif
+ 
+                 // construct python tuple/list
+                 py_laddr = Py_BuildValue("(si)", lip, lport);
+@@ -590,7 +652,11 @@ psutil_proc_connections(PyObject *self, 
+             else if (kif->kf_sock_domain == AF_UNIX) {
+                 struct sockaddr_un *sun;
+ 
++#if __FreeBSD_version < 1200031
+                 sun = (struct sockaddr_un *)&kif->kf_sa_local;
++#else
++                sun = (struct sockaddr_un *)&kif->kf_un.kf_sock.kf_sa_local;
++#endif
+                 snprintf(
+                     path, sizeof(path), "%.*s",
+                     (int)(sun->sun_len - (sizeof(*sun) - sizeof(sun->sun_path))),

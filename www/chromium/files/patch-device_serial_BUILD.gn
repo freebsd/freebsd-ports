@@ -1,4 +1,4 @@
---- device/serial/BUILD.gn.orig	2017-04-19 19:06:34 UTC
+--- device/serial/BUILD.gn.orig	2017-06-05 19:03:07 UTC
 +++ device/serial/BUILD.gn
 @@ -6,7 +6,7 @@ import("//build/config/features.gni")
  import("//mojo/public/tools/bindings/mojom.gni")
@@ -9,16 +9,16 @@
  
  config("platform_support") {
    visibility = [ ":serial" ]
-@@ -55,6 +55,12 @@ static_library("serial") {
+@@ -54,6 +54,12 @@ static_library("serial") {
+ 
    if (use_udev) {
      deps += [ "//device/udev_linux" ]
-   }
++  }
 +  if (is_bsd) {
 +    sources -= [
 +      "serial_device_enumerator_linux.cc",
 +      "serial_device_enumerator_linux.h"
 +    ]
-+  }
+   }
    if (is_chromeos) {
      deps += [
-       "//chromeos",

@@ -1,8 +1,8 @@
 build: don't force SSE2/AVX, enable at runtime instead
 
---- CMakeLists.txt.orig	2016-12-07 13:47:54 UTC
+--- CMakeLists.txt.orig	2017-05-22 13:02:37 UTC
 +++ CMakeLists.txt
-@@ -16,8 +16,6 @@ include(CheckCXXCompilerFlag)
+@@ -17,8 +17,6 @@ include(CheckCXXCompilerFlag)
  # the CMake policies in this file
  include(${CMAKE_SOURCE_DIR}/cmake/CMakeHelper.cmake NO_POLICY_SCOPE)
  
@@ -11,11 +11,11 @@ build: don't force SSE2/AVX, enable at runtime instead
  if(EXISTS ${CMAKE_SOURCE_DIR}/LocalConfig.cmake)
      include(${CMAKE_SOURCE_DIR}/LocalConfig.cmake)
  endif()
-@@ -29,6 +27,7 @@ endif()
+@@ -28,6 +26,7 @@ endif()
+ # Options
+ ################################################################################
  
- enable_testing()
- 
-+option(SIMD_ENABLED "Wether to enable SIMD optimizations" ON)
++option(SIMD_ENABLED "Whether to enable SIMD optimizations" ON)
  option(OPENMP_ENABLED "Whether to enable OpenMP" ON)
  option(LTO_ENABLED "Whether to enable link-time optimization" ON)
  option(CUDA_ENABLED "Whether to enable CUDA, if available" ON)

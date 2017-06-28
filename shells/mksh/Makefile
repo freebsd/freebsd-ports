@@ -8,7 +8,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 		http://pub.allbsd.org/MirOS/dist/mir/mksh/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	schaiba@gmail.com
 COMMENT=	MirBSD Korn Shell
 
 LICENSE=	BSD3CLAUSE ISCL ML PD

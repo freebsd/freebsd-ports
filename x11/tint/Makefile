@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tint2
-PORTVERSION=	0.13
+PORTVERSION=	0.14.5
 CATEGORIES=	x11
 
 MAINTAINER=	yamagi@yamagi.org
@@ -14,6 +14,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libImlib2.so:graphics/imlib2 \
 		libstartup-notification-1.so:x11/startup-notification
+
+BROKEN_powerpc64=	fails to build: area.h: redefinition of typedef 'Area'
 
 USES=		alias cmake:outsource pkgconfig
 USE_GNOME=	cairo glib20 gtk20 librsvg2 pango

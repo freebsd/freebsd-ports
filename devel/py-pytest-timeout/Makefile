@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytest-timeout
-PORTVERSION=	0.4
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,16 @@ COMMENT=	Pytest plugin to abort hanging tests
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.6.4:devel/py-pytest
+RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8.0:devel/py-pytest
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8.0:devel/py-pytest
 
-USES=		python
+NO_ARCH=	yes
+
+USES?=		python:2.7+
 USE_PYTHON=	autoplist distutils
+
+TEST_ENV+=	PYTHONPATH=${TEST_WRKSRC}
+do-test:
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.mk>

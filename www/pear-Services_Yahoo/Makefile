@@ -8,6 +8,6 @@ CATEGORIES=	www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides access to the Yahoo! Web Services
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

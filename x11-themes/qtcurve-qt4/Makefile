@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcurve
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	QtCurve widget style for Qt 4
 

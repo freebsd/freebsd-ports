@@ -49,7 +49,6 @@ OPTIONS_DEFINE+=	LLVM
 
 .if ((!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html)) || exists(${HADDOCK_CMD})) && !defined(IGNORE_DOCS)
 OPTIONS_DEFINE+=	DOCS
-OPTIONS_DEFAULT+=	DOCS
 HADDOCK_AVAILABLE=	yes
 
 .if (${PORTNAME} != hscolour || exists(${HSCOLOUR_CMD})) && !defined(IGNORE_HSCOLOUR)

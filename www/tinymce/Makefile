@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinymce
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.4
 CATEGORIES=	www
 MASTER_SITES=	http://download.ephox.com/${PORTNAME}/community/ \
 		LOCAL/sunpoet
@@ -13,8 +13,6 @@ COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
-
-CONFLICTS_INSTALL=	tinymce-[0-35-9]* tinymce3-[0-9]*
 
 NO_ARCH=	yes
 NO_BUILD=	yes

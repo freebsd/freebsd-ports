@@ -1,0 +1,11 @@
+--- sbin/rt-test-dependencies.orig	2017-06-15 22:12:17 UTC
++++ sbin/rt-test-dependencies
+@@ -206,7 +206,7 @@ Devel::StackTrace 1.19
+ Digest::base
+ Digest::MD5 2.27
+ Digest::SHA
+-Email::Address 1.897
++Email::Address 1.908
+ Email::Address::List 0.02
+ Encode 2.64
+ Errno

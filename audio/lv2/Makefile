@@ -39,10 +39,6 @@ EXAMPLES_USE=		GNOME=cairo,gtk20
 EXAMPLES_CONFIGURE_ENV=	CC='${CC} -Wl,--as-needed' # Gtk deps
 
 post-install:
-# Waf doesn't support changing pkg-config data install path
-	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/*.pc \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/pkgconfig/
 # Waf doesn't have built-in strip support
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME} \
 		-name '*.so' -exec ${STRIP_CMD} {} +

@@ -2,7 +2,7 @@
 
 PORTNAME=	rt
 DISTVERSION=	4.4.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	44
@@ -199,10 +199,4 @@ post-install:
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-CORE_DEPS+=	p5-CGI>4.0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

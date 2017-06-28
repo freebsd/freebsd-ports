@@ -18,7 +18,7 @@
     To avoid excessive daily security run output consider adding the following
     line to /etc/periodic.conf:
 
-     daily_status_security_neggrpperm_enable="NO"
+     security_status_neggrpperm_enable="NO"
 
  - Users of Samba 4 smbclient should change debug level for smbclient
     restore command to 5 ('-d 5') in the main configuration, for instance

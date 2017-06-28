@@ -15,6 +15,9 @@ LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 		libwwwcore.so:www/libwww \
 		libadns.so:dns/adns
 
+BROKEN_aarch64=		fails to compile: conflicting types for __wcwidth
+BROKEN_armv6=		fails to compile: conflicting types for __wcwidth
+
 USES=		iconv libtool ncurses ssl
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
@@ -24,8 +27,6 @@ MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/w3c-libwww
 LIBS+=		-L${LOCALBASE}/lib
-
-BROKEN_aarch64=		Fails to compile: error: conflicting types for __wcwidth
 
 post-patch:
 	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure

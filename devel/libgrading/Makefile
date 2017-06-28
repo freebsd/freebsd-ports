@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libdistance.so:devel/libdistance
 
+BROKEN_powerpc64=	fails to compile: Arguments.cpp: 'atol' is not a member of 'std'
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	trombonehero
 

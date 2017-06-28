@@ -11,6 +11,6 @@ COMMENT=	PEAR::HTML_Select is a class for generating HTML form select elements
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
 RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

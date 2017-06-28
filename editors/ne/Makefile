@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	ne
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.di.unimi.it/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice and powerful editor
 
-LICENSE=	GPLv3+
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_WRKSRC=	${WRKSRC}/src

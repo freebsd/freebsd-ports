@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 USES=		dos2unix tar:tgz
 USE_WX=		2.8+
-WX_UNICODE=	yes
 WX_COMPS=	wx wx:build wx:run
 
 post-patch:

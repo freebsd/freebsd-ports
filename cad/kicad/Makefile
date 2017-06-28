@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	20140622%2Bbzr4027
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://launchpadlibrarian.net/179199115/
@@ -19,7 +19,7 @@ RUN_DEPENDS=	xpdf:graphics/xpdf
 
 CONFLICTS=	kicad-devel*
 
-USES=		cmake compiler:gcc-c++11-lib desktop-file-utils dos2unix \
+USES=		cmake:noninja compiler:gcc-c++11-lib desktop-file-utils dos2unix \
 		shared-mime-info tar:xz
 
 DOS2UNIX_GLOB=	*.cmake sch_bus_entry.h sch_line.h sch_no_connect.h

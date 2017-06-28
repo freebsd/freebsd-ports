@@ -147,7 +147,9 @@ CONFIGURE_ARGS+=-nomake examples -nomake tests \
 .  if ${ARCH} == i386 && empty(MACHINE_CPU:Msse2)
 CONFIGURE_ARGS+=-no-sse2
 .  endif
-
+# Work around a bug in current binutils, where the gold linker creates
+# duplicate symbols. See pr 218187. Disable the gold-linker for Qt5 ports.
+CONFIGURE_ARGS+=	-no-use-gold-linker
 . endif
 
 . if defined(WANT_QT_DEBUG) || defined(WITH_DEBUG)
@@ -173,6 +175,8 @@ CONFIGURE_ARGS+=-verbose
 .  if ${_QT_VERSION:M4*}
 _EXTRA_PATCHES_QT4=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h \
 					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-libtool
+# Patch in proper name for armv6 architecture: https://gcc.gnu.org/ml/gcc-patches/2015-06/msg01679.html
+_EXTRA_PATCHES_QT4+=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-armv6
 .  else
 _EXTRA_PATCHES_QT5=	${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_create__cmake.prf \
 					${.CURDIR:H:H}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf
@@ -312,8 +316,8 @@ _USE_QT4_ONLY=	accessible assistant-adp assistantclient clucene codecs-cn codecs
 				qtestlib qvfb rcc uic uic3 xmlpatterns-tool
 
 _USE_QT5_ONLY=	3d buildtools canvas3d charts concurrent connectivity \
-				core datavis3d declarative-render2d examples gamepad \
-				graphicaleffects location paths phonon4 printsupport \
+				core datavis3d declarative-render2d diag examples gamepad \
+				graphicaleffects location paths phonon4 plugininfo printsupport \
 				qdbus qdoc qdoc-data qev qml quick quickcontrols \
 				quickcontrols2 scxml sensors serialbus serialport \
 				sql-tds uiplugin uitools virtualkeyboard webchannel \
@@ -387,6 +391,9 @@ demo_PATH=			${QT_BINDIR}/qtdemo
 
 designer_PORT=		devel/${_QT_RELNAME}-designer
 designer_PATH=		${QT_BINDIR}/designer
+
+diag_PORT=		sysutils/${_QT_RELNAME}-qtdiag
+diag_PATH=		${QT_BINDIR}/qtdiag
 
 doc_PORT=			misc/${_QT_RELNAME}-doc
 doc_PATH=			${_QT_RELNAME}-doc>=${_QT_VERSION:R:R}
@@ -462,6 +469,9 @@ phonon4_LIB=		libphonon4${_QT_RELNAME}.so
 
 phonon-gst_PORT=	multimedia/phonon-gstreamer
 phonon-gst_PATH=	${QT_PLUGINDIR}/phonon_backend/libphonon_gstreamer.so
+
+plugininfo_PORT=		sysutils/${_QT_RELNAME}-qtplugininfo
+plugininfo_PATH=		${QT_BINDIR}/qtplugininfo
 
 porting_PORT=		devel/${_QT_RELNAME}-porting
 porting_PATH=		${QT_BINDIR}/qt3to4

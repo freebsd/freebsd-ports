@@ -9,7 +9,7 @@ MASTER_SITES=	http://cr.yp.to/software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dot-forward reads sendmail's .forward files under qmail
 
-USES=	gmake
+USES=		gmake groff
 
 ALL_TARGET=	default
 

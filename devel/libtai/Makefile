@@ -13,6 +13,7 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for storing and manipulating dates and times in second/attosecond
 
 ALL_TARGET=	it
+USES=		groff
 USE_LDCONFIG=	yes
 MAKE_ENV=	LIBVERSION="${LIBVERSION}"
 MAKE_JOBS_UNSAFE=	yes

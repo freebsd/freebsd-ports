@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request \
 
 BROKEN_powerpc64=	fails to package: Generating packing list with pear: Signal 11
 
-USES=	pear
-USE_PHP+=	xsl tidy
+USES=		pear php
+USE_PHP=	xsl tidy
 
 .include <bsd.port.mk>

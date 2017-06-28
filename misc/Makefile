@@ -45,6 +45,7 @@
     SUBDIR += colortail
     SUBDIR += colwide
     SUBDIR += compat10x
+    SUBDIR += compat11x
     SUBDIR += compat4x
     SUBDIR += compat5x
     SUBDIR += compat6x
@@ -393,6 +394,7 @@
     SUBDIR += py-spdx-lookup
     SUBDIR += py-tqdm
     SUBDIR += py-yolk
+    SUBDIR += py3-pexpect
     SUBDIR += py3-tqdm
     SUBDIR += pylize
     SUBDIR += qbrew
@@ -418,6 +420,7 @@
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-dotenv-rails
     SUBDIR += rubygem-dotenv-rails-rails5
+    SUBDIR += rubygem-dotenv-rails-rails50
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-mime-types-data
@@ -478,6 +481,7 @@
     SUBDIR += uk-postcodes
     SUBDIR += umodunpack
     SUBDIR += unclutter
+    SUBDIR += unclutter-xfixes
     SUBDIR += upclient
     SUBDIR += us-zipcodes
     SUBDIR += usbids

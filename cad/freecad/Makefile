@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.17.g20170310
-PORTREVISION=	2
+DISTVERSION=	0.17.g20170616
 CATEGORIES=	cad
 
 MAINTAINER=	tj+freebsd_ports@a13.fr
@@ -33,7 +32,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	pivy>0:graphics/py-pivy
 
 USE_GITHUB=	yes
-GH_TAGNAME=	91c59c7
+GH_TAGNAME=	d28bae3
 
 USES=		dos2unix compiler:c++11-lib cmake:outsource fortran jpeg \
 		python localbase

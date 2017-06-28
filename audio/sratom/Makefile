@@ -20,7 +20,6 @@ USES=		pkgconfig python:build tar:bzip2 waf
 USE_LDCONFIG=	yes
 
 post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/*.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsratom-0.so.0.6.0
 
 .include <bsd.port.mk>

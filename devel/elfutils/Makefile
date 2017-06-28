@@ -29,8 +29,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-USES=		gmake libtool tar:bzip2
-USE_AUTOTOOLS=	automake:env
+USES=		autoreconf gmake libtool tar:bzip2
 USE_GCC=	4.8	# fails to build with newer versions
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -48,8 +47,5 @@ post-patch:
 	    ${LOCALBASE}/share/gnulib/lib/obstack.h \
 	    ${LOCALBASE}/share/gnulib/lib/obstack_printf.c \
 	    ${WRKSRC}/lib
-
-pre-configure:
-	@cd ${WRKSRC} && ${AUTOMAKE}
 
 .include <bsd.port.mk>

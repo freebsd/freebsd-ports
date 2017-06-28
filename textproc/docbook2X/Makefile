@@ -22,7 +22,8 @@ BUILD_DEPENDS=	OpenSP>=0:textproc/opensp \
 		sdocbook-xml>=0:textproc/sdocbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS_INSTALL=	docbook-utils-*
+# bin/docbook2man bin/docbook2texi man/man1/docbook2man.1.gz man/man1/docbook2texi.1.gz
+CONFLICTS_INSTALL=	docbook-utils
 
 OPTIONS_DEFINE=	DOCS
 

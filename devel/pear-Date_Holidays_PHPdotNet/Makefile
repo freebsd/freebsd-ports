@@ -10,6 +10,6 @@ COMMENT=	Driver based class to calculate birthdays of members of PHP.net
 BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays
 RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:devel/pear-Date_Holidays
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

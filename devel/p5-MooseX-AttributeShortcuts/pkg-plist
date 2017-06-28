@@ -1,2 +1,8 @@
 %%SITE_PERL%%/MooseX/AttributeShortcuts.pm
+%%SITE_PERL%%/MooseX/AttributeShortcuts/Trait/Attribute.pm
+%%SITE_PERL%%/MooseX/AttributeShortcuts/Trait/Attribute/HasAnonBuilder.pm
+%%SITE_PERL%%/MooseX/AttributeShortcuts/Trait/Role/Attribute.pm
 %%PERL5_MAN3%%/MooseX::AttributeShortcuts.3.gz
+%%PERL5_MAN3%%/MooseX::AttributeShortcuts::Trait::Attribute.3.gz
+%%PERL5_MAN3%%/MooseX::AttributeShortcuts::Trait::Attribute::HasAnonBuilder.3.gz
+%%PERL5_MAN3%%/MooseX::AttributeShortcuts::Trait::Role::Attribute.3.gz

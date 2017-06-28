@@ -12,6 +12,6 @@ BROKEN_aarch64=		error: invalid output constraint '=a' in asm
 BROKEN_armv6=		fails to package
 BROKEN_mips=		configure: error: cannot compute suffix of object files: cannot compile
 BROKEN_mips64=		configure: error: cannot compute suffix of object files: cannot compile
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	error: invalid output constraint in asm
 
 .include "${MASTERDIR}/Makefile"

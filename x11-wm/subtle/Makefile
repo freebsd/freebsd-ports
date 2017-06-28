@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	rake:devel/rubygem-rake
 
+BROKEN_powerpc64=	fails to compile: ruby.h: wrong number of arguments specified for 'deprecated' attribute
+
 USES=		pkgconfig tar:tbz2
 USE_RUBY=	yes
 USE_XORG=	x11 xft xinerama xpm xrandr xtst

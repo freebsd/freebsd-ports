@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mumps
-PORTVERSION=	4.10.0
-PORTREVISION=	6
+PORTVERSION=	4.10.0	# Please do not upgrade to 5+: if needed repocopy to math/mumps5
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/		\
 		http://graal.ens-lyon.fr/MUMPS/		\
@@ -38,6 +38,9 @@ MAKE_JOBS_UNSAFE=yes
 
 FORTRANLIBS=	-lgfortran
 GCCLIBDIR=	${LDFLAGS}
+USE_LDCONFIG=	yes
+VEM=		${PORTVERSION:R:R}
+LIBS=		cmumps dmumps mumps_common pord smumps zmumps
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math
@@ -48,7 +51,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/oemetis:math/metis4
 MAKE_ENV+=	ORDERINGSF=-Dmetis
 .endif
 
-PLIST_SUB+=	MUMPSVERSION=${PORTVERSION}
+PLIST_SUB+=	MUMPSVERSION=${PORTVERSION} MUMPSV=${VEM}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -84,6 +87,7 @@ CONFLICTS=	mumps-mpich-4*
 
 .ifndef WITH_MPI
 PLIST_SUB+=	WITH_LIBSEQ=""
+LIBS+=		mpiseq
 .else
 PLIST_SUB+=	WITH_LIBSEQ="@comment "
 .endif
@@ -95,18 +99,22 @@ pre-configure:
 .else
 	${INSTALL_DATA} ${WRKSRC}/Make.inc/Makefile.inc.generic.SEQ \
 		${WRKSRC}/Makefile.inc
+	${REINPLACE_CMD} -e 's+LIBPAR+LIBSEQ+' ${WRKSRC}/src/Makefile
 .endif
 
 pre-build:
 	${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
+.for MF in Makefile Makefile.inc PORD/lib/Makefile libseq/Makefile src/Makefile
 	${REINPLACE_CMD} -e 's+@CC@+${CC}+g ; s+@FC@+${FC}+g ; \
-	s+@CFLAGS@+${CFLAGS}+g; \
-	s+@FCFLAGS@+${FCFLAGS}+g; \
+	s+@CFLAGS@+${CFLAGS} -fPIC+g; \
+	s+@FCFLAGS@+${FCFLAGS} -fPIC+g; \
+	s+@SOVER@+${VEM}+g; \
 	s+@GCCLIBDIR@+${GCCLIBDIR}+g; \
 	s+@FORTRANLIBS@+${FORTRANLIBS}+g; \
 	s+@BLAS_LIBS@+${BLAS_LIBS}+ ; \
 	s+@LOCALBASE@+${LOCALBASE}+g;' \
-		${WRKSRC}/Makefile.inc
+		${WRKSRC}/${MF}
+.endfor
 .ifdef WITH_MPI
 	${REINPLACE_CMD} -e 's+@LAPACK_LIBS@+${LAPACK_LIBS}+g;' ${WRKSRC}/Makefile.inc
 .endif
@@ -117,9 +125,14 @@ pre-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/lib/lib*.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib/lib*.so.${VEM} ${STAGEDIR}${PREFIX}/lib
 .ifndef WITH_MPI
 	${INSTALL_DATA} ${WRKSRC}/libseq/libmpiseq.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libseq/libmpiseq*.so.${VEM} ${STAGEDIR}${PREFIX}/lib
 .endif
+.for lib in ${LIBS}
+	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf lib${lib}.so.${VEM} ${STAGEDIR}${PREFIX}/lib/lib${lib}.so)
+. endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.ps ${STAGEDIR}${DOCSDIR}
@@ -132,7 +145,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/${ex} ${STAGEDIR}${EXAMPLESDIR}
 . endfor
 
-regression-test:
+regression-test:	install
 .if defined (WITH_MPI) && defined(MAINTAINER_MODE)
 .  if !exists(${HOME}/.mpd.conf)
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${HOME}/.mpd.conf

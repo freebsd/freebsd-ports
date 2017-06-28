@@ -12,6 +12,8 @@ COMMENT=	Library for making n-gram language models encoded as weighted FSTs
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	fails to compile: ngram-count.cc: 'to_string' is not a member of 'std'
+
 LIB_DEPENDS=	libfst.so:math/openfst
 
 USES=		compiler:c++11-lib libtool localbase

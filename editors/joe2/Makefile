@@ -12,7 +12,7 @@ MAINTAINER?=	toasty@dragondata.com
 COMMENT?=	Joe's Own Editor
 
 OPTIONS_DEFINE=	DOCS ISPELL
-OPTIONS_DEFAULT=	DOCS ISPELL
+OPTIONS_DEFAULT=	ISPELL
 
 ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 
@@ -25,7 +25,7 @@ LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 
 ALL_TARGET=	${PORTNAME}
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.cvs ${WRKSRC}/ChangeLog\
 		 ${WRKSRC}/INFO ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}

@@ -1,6 +1,6 @@
---- base/test/test_file_util_posix.cc.orig	2017-04-19 19:06:28 UTC
+--- base/test/test_file_util_posix.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/test/test_file_util_posix.cc
-@@ -79,7 +79,7 @@ bool DieFileDie(const FilePath& file, bo
+@@ -79,7 +79,7 @@ bool DieFileDie(const FilePath& file, bool recurse) {
    return DeleteFile(file, recurse);
  }
  

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	5.3.5
+PORTVERSION=	5.4.6
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	databases
 
@@ -53,11 +53,11 @@ LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .if !defined(LITE)
-CONFLICTS_INSTALL=	rocksdb-lite-
+CONFLICTS_INSTALL=	rocksdb-lite
 PLIST_SUB+=	LITE=""
 .else
 PKGNAMESUFFIX=	-lite
-CONFLICTS_INSTALL=	rocksdb-[0-9]*
+CONFLICTS_INSTALL=	rocksdb
 CFLAGS+=	-DROCKSDB_LITE=1
 MAKE_ENV+=	LIBNAME=librocksdb${PKGNAMESUFFIX}
 PLIST_SUB+=	LITE=${PKGNAMESUFFIX}

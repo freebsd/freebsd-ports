@@ -15,13 +15,12 @@ LICENSE_NAME=	BROADCOM
 LICENSE_TEXT=	Source recipient must acknowledge license.\
 		Reproduction or redistribution prohibited.\
 		See https://www.broadcom.com/cs/Satellite?pagename=AVG2/Utilities/EulaMsg
-
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 USES=		zip
 
-# i386 binary should work on ia64, but not tested
-ONLY_FOR_ARCHS=	i386 amd64 ia64
+ONLY_FOR_ARCHS=		amd64 i386
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -31,7 +30,7 @@ PLIST_FILES=	etc/periodic/daily/407.status-3ware-raid\
 		man/man8/tw_cli.8.gz sbin/tw_cli
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${ARCH:S,i386,x86,:S,amd64,x86_64,:S,ia64,x86,}/tw_cli\
+	${INSTALL_PROGRAM} ${WRKSRC}/${ARCH:S,i386,x86,:S,amd64,x86_64,}/tw_cli\
 		${STAGEDIR}${PREFIX}/sbin/tw_cli
 	${INSTALL_MAN} ${WRKSRC}/tw_cli.8.nroff\
 		${STAGEDIR}${MAN8PREFIX}/man/man8/tw_cli.8

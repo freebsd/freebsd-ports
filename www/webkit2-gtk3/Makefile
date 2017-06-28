@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.16.2
+PORTVERSION=	2.16.3
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -34,7 +34,7 @@ PORTSCOUT=	limitw:1,even
 USE_GSTREAMER1=	bad gl
 USE_XORG=	x11 xcomposite xdamage xext xrender xt ice
 USES=		bison cmake compiler:c++14-lang gettext gnome gperf \
-		jpeg ninja perl5 pkgconfig python:2.7,build sqlite tar:xz
+		jpeg perl5 pkgconfig python:2.7,build sqlite tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2 libxslt
@@ -69,7 +69,12 @@ DEBUG_CMAKE_ON=		-DCMAKE_BUILD_TYPE:STRING=Debug \
 			-DCMAKE_RANLIB=${LOCALBASE}/bin/ranlib \
 			-DCMAKE_LINKER=${LOCALBASE}/bin/ld
 DEBUG_CXXFLAGS=		-B${LOCALBASE}/bin
-DEBUG_CMAKE_OFF=	-DCMAKE_BUILD_TYPE:STRING=Release
+
+DEBUG_CMAKE_OFF=	-DCMAKE_BUILD_TYPE:STRING=Release \
+			-DCMAKE_AR=/usr/bin/ar \
+			-DCMAKE_RANLIB=/usr/bin/ranlib \
+			-DCMAKE_LINKER=/usr/bin/ld
+DEBUG_CXXFLAGS_OFF=	-B/usr/bin
 DEBUG_CFLAGS_OFF=	-DNDEBUG
 
 GEOIP_CMAKE_BOOL=	ENABLE_GEOLOCATION

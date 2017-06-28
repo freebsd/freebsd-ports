@@ -100,14 +100,13 @@ CONFIGURE_ARGS+=--with-gd \
 		--with-png-dir=${LOCALBASE} \
 		--with-zlib-dir=/usr
 
-OPTIONS_DEFINE=	T1LIB TRUETYPE JIS X11 VPX
-OPTIONS_DEFAULT=T1LIB TRUETYPE X11
+OPTIONS_DEFINE=TRUETYPE JIS WEBP X11
+OPTIONS_DEFAULT=TRUETYPE X11
 
-T1LIB_DESC=	Include T1lib support
 TRUETYPE_DESC=	Enable TrueType string function
 JIS_DESC=	Enable JIS-mapped Japanese font support
+WEBP_DESC=  Enable WebP image format support
 X11_DESC=	Enable XPM support
-VPX_DESC=	Enable VP8 codec support
 
 PHP_HEADER_DIRS=libgd
 .endif
@@ -505,26 +504,21 @@ USES+=	mysql
 .include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "gd"
-.	if ${PORT_OPTIONS:MT1LIB}
-LIB_DEPENDS+=	libt1.so:devel/t1lib
-
-CONFIGURE_ARGS+=--with-t1lib=${LOCALBASE}
-.	endif
 .	if ${PORT_OPTIONS:MTRUETYPE}
 CONFIGURE_ARGS+=--enable-gd-native-ttf
 .	endif
 .	if ${PORT_OPTIONS:MJIS}
 CONFIGURE_ARGS+=--enable-gd-jis-conv
 .	endif
+.   if ${PORT_OPTIONS:MWEBP}
+LIB_DEPENDS+=   libwebp.so:graphics/webp
+
+CONFIGURE_ARGS+=--with-webp-dir=${LOCALBASE}
+.   endif
 .	if ${PORT_OPTIONS:MX11}
 USE_XORG=	xpm
 
 CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
-.	endif
-.	if ${PORT_OPTIONS:MVPX}
-LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
-
-CONFIGURE_ARGS+=--with-vpx-dir=${LOCALBASE}
 .	endif
 .endif
 

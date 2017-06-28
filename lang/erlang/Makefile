@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.3.4
-PORTEPOCH=	3
+PORTVERSION=	19.3.6.1
+PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -21,7 +21,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
 		LOCAL/olgeni
 PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3 \
-		patch-otp-19.3.4
+		patch-otp-19.3.4 patch-otp-19.3.5 patch-otp-19.3.6 \
+		patch-otp-19.3.6.1
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
@@ -83,7 +84,7 @@ TOOLS_VSN=	2.9.1
 .if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	${ERLANG_DOCS}:erlangorg		\
 		${DOC_DISTFILES}
-DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
+DOC_DISTFILES=	armstrong_thesis_2003.pdf:local		\
 		bjarnelic.pdf:publications		\
 		erlang-book-part1.pdf:erlangorg		\
 		master_thesis_patterns.pdf:local	\
@@ -236,7 +237,7 @@ post-install:
 		-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3/* \
-		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3.3
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3.5.1
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/erts-8.3
 
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/crypto-3.7.3/* \
@@ -258,6 +259,10 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-3.1/* \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-3.1.1
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-3.1
+
+	${MV} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/xmerl-1.3.13/* \
+		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/xmerl-1.3.14
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/xmerl-1.3.13
 
 	${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib/dialyzer-*/doc/

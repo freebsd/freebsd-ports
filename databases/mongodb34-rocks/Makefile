@@ -5,14 +5,12 @@ PORTVERSION=	3.4.4
 DISTVERSIONPREFIX=	r
 PORTREVISION=	1
 CATEGORIES=	databases net
-MASTER_SITES=	https://fastdl.mongodb.org/src/:main \
-		http://fastdl.mongodb.org/src/:main \
-		http://download.mongodb.org/src/:main \
-		https://github.com/mongodb-partners/mongo-rocks/archive/:module
+MASTER_SITES=	https://fastdl.mongodb.org/src/ \
+		http://fastdl.mongodb.org/src/ \
+		http://download.mongodb.org/src/
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}-rocks
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${PORTVERSION}
-DISTFILES=	mongodb-src-r${PORTVERSION}.tar.gz:main \
-		r${PORTVERSION}.tar.gz:module
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Distributed document-oriented database with a RocksDB Storage Engine
@@ -45,6 +43,8 @@ SSL_USE=	yes
 SSL_MAKE_ARGS=	--ssl
 
 USES=		compiler:c++14-lang cpe execinfo python:build scons
+USE_GITHUB=	nodefault
+GH_TUPLE=	mongodb-partners:mongo-rocks:r${PORTVERSION}:module/src/mongo/db/modules/rocks
 
 WITH_DEBUG=yes
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
@@ -71,10 +71,6 @@ USES+=	ssl
 .endif
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${MKDIR} ${WRKSRC}/src/mongo/db/modules/
-	@${LN} -sf ${WRKDIR}/mongo-rocks-r${PORTVERSION} ${WRKSRC}/src/mongo/db/modules/rocks
 
 post-install:
 .for f in mongo mongod mongoperf mongos

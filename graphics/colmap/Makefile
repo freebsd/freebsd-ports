@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	colmap
-DISTVERSION=	2.1
-PORTREVISION=	6
+DISTVERSION=	3.1-4
+DISTVERSIONSUFFIX=	-g542ce21 # doc fixes
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -38,7 +38,7 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 LDFLAGS+=	-Wl,--as-needed # gflags, glu, xi, xmu
 TEST_TARGET=	test ARGS="-V"
 
-OPTIONS_DEFINE=		DOCS OPENMP SIMD
+OPTIONS_DEFINE=		DOCS OPENMP SIMD TEST
 OPTIONS_DEFAULT=	OPENMP SIMD
 
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
@@ -51,6 +51,8 @@ OPENMP_CMAKE_BOOL=	OPENMP_ENABLED
 OPENMP_VARS=		OPENMP=gcc-
 
 SIMD_CMAKE_BOOL=	SIMD_ENABLED
+
+TEST_CMAKE_BOOL=	TESTS_ENABLED
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/Qt5OpenGL/Qt5Widgets/' \
@@ -74,18 +76,10 @@ post-patch:
 post-build-DOCS-on:
 	@${DO_MAKE_BUILD} html -C${WRKSRC}/doc
 
-pre-install:	do-test
+pre-install-TEST-on: do-test
 
 post-install-DOCS-on:
 	(cd ${WRKSRC}/doc/_build/html && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
-
-# FreeBSD 11.0 i386 has:
-#          7 - base/database_test (Failed)
-#         26 - estimators/epnp_test (Failed)
-#         34 - mvs/depth_map_test (Failed)
-#         39 - optim/loransac_test (Failed)
-#         42 - optim/ransac_test (Failed)
-do-test:	.IGNORE

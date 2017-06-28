@@ -1,6 +1,6 @@
---- skia/ext/SkMemory_new_handler.cpp.orig	2017-04-19 19:06:37 UTC
+--- skia/ext/SkMemory_new_handler.cpp.orig	2017-06-05 19:03:11 UTC
 +++ skia/ext/SkMemory_new_handler.cpp
-@@ -68,7 +68,7 @@ static void* sk_malloc_nothrow(size_t si
+@@ -68,7 +68,7 @@ static void* sk_malloc_nothrow(size_t size) {
      // TODO(b.kelemen): we should always use UncheckedMalloc but currently it
      // doesn't work as intended everywhere.
      void* result;

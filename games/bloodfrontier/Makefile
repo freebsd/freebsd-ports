@@ -3,7 +3,7 @@
 
 PORTNAME=	bloodfrontier
 DISTVERSION=	B2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Blood%20Frontier%20Beta%202
 DISTNAME=	${PORTNAME}-${DISTVERSION}-linux
@@ -13,9 +13,9 @@ COMMENT=	Single- and multi-player first-person shooter based on Cube 2
 
 LICENSE=	ZLIB
 
-BROKEN_ia64=	does not compile
-BROKEN_powerpc=	does not compile
-BROKEN_sparc64=	does not compile
+BROKEN_powerpc=		fails to compile
+BROKEN_powerpc64=	fails to compile: tools.h: incompatible types in assignment
+BROKEN_sparc64=		fails to compile
 
 USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes

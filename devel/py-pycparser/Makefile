@@ -12,7 +12,8 @@ COMMENT=	C parser in Python
 
 LICENSE=	BSD3CLAUSE
 
+NO_ARCH=	yes
 USES?=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

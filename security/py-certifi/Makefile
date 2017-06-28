@@ -13,7 +13,7 @@ COMMENT=	Mozilla SSL certificates
 LICENSE=	ISCL
 
 NO_ARCH=	yes
-USES=		python
+USES?=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

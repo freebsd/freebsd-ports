@@ -9,7 +9,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP/source/p/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite
 
 LICENSE=	ZLIB

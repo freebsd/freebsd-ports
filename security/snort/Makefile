@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	snort
-PORTVERSION=	2.9.8.3
+PORTVERSION=	2.9.9.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
 		http://www.talosintel.com/downloads/ \
@@ -17,7 +18,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libdnet.so:net/libdnet
+		libdnet.so:net/libdnet \
+		libpcap.so:net/libpcap
+
 BUILD_DEPENDS=	daq>=2.0.0:net/daq
 RUN_DEPENDS=	daq>=2.0.0:net/daq
 
@@ -72,7 +75,8 @@ APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LOCALBASE}/include/luajit-2.0" \
 USE_RC_SUBR=	snort
 SUB_FILES=	pkg-message
 
-USES=		cpe libtool pathfix
+USES=		cpe libtool pathfix shebangfix ssl
+SHEBANG_FILES=	tools/appid_detector_builder.sh
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes

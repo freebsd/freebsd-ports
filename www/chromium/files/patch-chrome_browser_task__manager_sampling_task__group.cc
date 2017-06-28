@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/task_manager/sampling/task_group.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/task_manager/sampling/task_group.cc
 @@ -28,9 +28,9 @@ const int kBackgroundRefreshTypesMask =
  #if defined(OS_WIN)
@@ -37,7 +37,7 @@
                             base::Bind(&TaskGroup::OnProcessPriorityDone,
                                        weak_ptr_factory_.GetWeakPtr())));
    worker_thread_sampler_.swap(sampler);
-@@ -333,14 +333,14 @@ void TaskGroup::OnIdleWakeupsRefreshDone
+@@ -333,14 +333,14 @@ void TaskGroup::OnIdleWakeupsRefreshDone(int idle_wake
    OnBackgroundRefreshTypeFinished(REFRESH_TYPE_IDLE_WAKEUPS);
  }
  

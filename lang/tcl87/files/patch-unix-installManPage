@@ -1,4 +1,4 @@
---- unix/installManPage.orig	2016-06-01 12:03:50 UTC
+--- unix/installManPage.orig	2017-04-20 14:47:01 UTC
 +++ unix/installManPage
 @@ -100,7 +100,7 @@ SrcDir=`dirname $ManPage`
  

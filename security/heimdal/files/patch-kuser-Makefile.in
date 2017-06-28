@@ -1,4 +1,4 @@
---- kuser/Makefile.in.orig	2017-01-03 19:44:13 UTC
+--- kuser/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ kuser/Makefile.in
 @@ -157,9 +157,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
  PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS)
@@ -72,7 +72,7 @@
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1)
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -583,6 +604,8 @@ man_MANS = \
+@@ -584,6 +605,8 @@ man_MANS = \
  
  kinit_LDADD = \
  	$(afs_lib) \
@@ -81,7 +81,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la \
  	$(top_builddir)/lib/ntlm/libheimntlm.la \
  	$(LIB_hcrypto) \
-@@ -604,6 +627,8 @@ nodist_kdigest_SOURCES = kdigest-command
+@@ -605,6 +628,8 @@ nodist_kdigest_SOURCES = kdigest-command
  kdigest_LDADD = \
  	$(top_builddir)/lib/ntlm/libheimntlm.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \

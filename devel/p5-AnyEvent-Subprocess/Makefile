@@ -30,16 +30,10 @@ BUILD_DEPENDS=	p5-AnyEvent>=5.2:devel/p5-AnyEvent \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
 		p5-namespace-clean>0:devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Exception>0:devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001014:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kea
-PORTVERSION=	1.1.0
-PORTREVISION=	5
+PORTVERSION=	1.2.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ISC/kea/${PORTVERSION}
 
@@ -15,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 		libboost_system.so:devel/boost-libs
 
+BROKEN_powerpc64=	fails to configure: checking for log4cplus library... no
+
 USES=		autoreconf compiler:c++11-lang libtool pathfix python:3.3+ ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -25,6 +26,8 @@ CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 		--with-boost-lib-dir=${LOCALBASE}/lib \
 		--without-werror
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
 PORTDOCS=	AUTHORS COPYING ChangeLog README \
 		kea-guide.css kea-guide.html kea-guide.txt \
 		kea-messages.html kea-logo-100x70.png \

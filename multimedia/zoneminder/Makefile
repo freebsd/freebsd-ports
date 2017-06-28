@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneminder
-PORTVERSION=	1.30.3
+PORTVERSION=	1.30.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -34,9 +34,9 @@ USE_GITHUB=	yes
 GH_PROJECT=	ZoneMinder
 GH_TUPLE=	FriendsOfCake:crud:c3976f1:crud
 
-USES=		cmake jpeg mysql perl5 php shebangfix ssl
+USES=		cmake:noninja jpeg mysql perl5 php shebangfix ssl
 USE_RC_SUBR=	zoneminder
-USE_PHP=	json pdo_mysql session gd sockets ctype
+USE_PHP=	json pdo_mysql session gd sockets ctype opcache
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -46,7 +46,6 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-OPTIONS_DEFAULT=	NLS
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
@@ -79,6 +78,14 @@ CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \
 		-DGNUTLS_LIBRARIES=0 \
 		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 
+.include <bsd.port.pre.mk>
+
+.if ${PHP_VER} >= 70
+RUN_DEPENDS+= ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu
+.else
+RUN_DEPENDS+= ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu4
+.endif
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-extract:
@@ -103,4 +110,4 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

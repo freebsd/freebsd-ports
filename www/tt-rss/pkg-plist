@@ -1,6 +1,8 @@
 %%DATADIR%%/httpd-tt-rss.conf
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
+%%WWWDIR%%/CONTRIBUTING.md
+%%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
 %%WWWDIR%%/api/index.php
 %%WWWDIR%%/atom-to-html.xsl
@@ -14,6 +16,8 @@
 %%WWWDIR%%/classes/article.php
 %%WWWDIR%%/classes/auth/base.php
 %%WWWDIR%%/classes/backend.php
+%%WWWDIR%%/classes/ccache.php
+%%WWWDIR%%/classes/counters.php
 %%WWWDIR%%/classes/db.php
 %%WWWDIR%%/classes/db/mysqli.php
 %%WWWDIR%%/classes/db/pdo.php
@@ -21,6 +25,7 @@
 %%WWWDIR%%/classes/db/prefs.php
 %%WWWDIR%%/classes/db/stmt.php
 %%WWWDIR%%/classes/dbupdater.php
+%%WWWDIR%%/classes/digest.php
 %%WWWDIR%%/classes/dlg.php
 %%WWWDIR%%/classes/feedenclosure.php
 %%WWWDIR%%/classes/feeditem.php
@@ -35,6 +40,7 @@
 %%WWWDIR%%/classes/iauthmodule.php
 %%WWWDIR%%/classes/idb.php
 %%WWWDIR%%/classes/ihandler.php
+%%WWWDIR%%/classes/labels.php
 %%WWWDIR%%/classes/logger.php
 %%WWWDIR%%/classes/logger/sql.php
 %%WWWDIR%%/classes/logger/syslog.php
@@ -49,6 +55,7 @@
 %%WWWDIR%%/classes/pref/system.php
 %%WWWDIR%%/classes/pref/users.php
 %%WWWDIR%%/classes/rpc.php
+%%WWWDIR%%/classes/rssutils.php
 %%WWWDIR%%/classes/ttrssmailer.php
 @mode 0400
 @sample %%WWWDIR%%/config.php.sample
@@ -104,19 +111,15 @@
 %%WWWDIR%%/images/untick.png
 %%WWWDIR%%/images/user.png
 %%WWWDIR%%/include/autoload.php
-%%WWWDIR%%/include/ccache.php
 %%WWWDIR%%/include/colors.php
+%%WWWDIR%%/include/controls.php
 %%WWWDIR%%/include/crypt.php
 %%WWWDIR%%/include/db-prefs.php
 %%WWWDIR%%/include/db.php
-%%WWWDIR%%/include/digest.php
 %%WWWDIR%%/include/errorhandler.php
 %%WWWDIR%%/include/feedbrowser.php
 %%WWWDIR%%/include/functions.php
-%%WWWDIR%%/include/functions2.php
-%%WWWDIR%%/include/labels.php
 %%WWWDIR%%/include/login_form.php
-%%WWWDIR%%/include/rssfuncs.php
 %%WWWDIR%%/include/sanity_check.php
 %%WWWDIR%%/include/sanity_config.php
 %%WWWDIR%%/include/sessions.php
@@ -2329,8 +2332,6 @@
 %%WWWDIR%%/lib/phpqrcode/tools/merged_config.php
 %%WWWDIR%%/lib/phpqrcode/tools/merged_header.php
 %%WWWDIR%%/lib/prototype.js
-%%WWWDIR%%/lib/pubsubhubbub/Publisher.php
-%%WWWDIR%%/lib/pubsubhubbub/Subscriber.php
 %%WWWDIR%%/lib/readability/JSLikeHTMLElement.php
 %%WWWDIR%%/lib/readability/Readability.php
 %%WWWDIR%%/lib/scriptaculous/controls.js
@@ -2408,6 +2409,7 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_tfd.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_twp.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_whomp.php
+%%WWWDIR%%/plugins/af_comics/filters.local/.empty
 %%WWWDIR%%/plugins/af_comics/init.php
 %%WWWDIR%%/plugins/af_fsckportal/init.php
 %%WWWDIR%%/plugins/af_lang_detect/init.php
@@ -2426,9 +2428,10 @@
 %%WWWDIR%%/plugins/af_unburn/init.php
 %%WWWDIR%%/plugins/af_youtube_embed/init.php
 %%WWWDIR%%/plugins/af_zz_imgproxy/init.php
-%%WWWDIR%%/plugins/af_zz_imgsetsizes/init.php
 %%WWWDIR%%/plugins/af_zz_noautoplay/init.js
 %%WWWDIR%%/plugins/af_zz_noautoplay/init.php
+%%WWWDIR%%/plugins/af_zz_vidmute/init.js
+%%WWWDIR%%/plugins/af_zz_vidmute/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
 %%WWWDIR%%/plugins/auth_remote/init.php
 %%WWWDIR%%/plugins/auto_assign_labels/init.php
@@ -2444,8 +2447,6 @@
 %%WWWDIR%%/plugins/import_export/import_export.js
 %%WWWDIR%%/plugins/import_export/init.php
 %%WWWDIR%%/plugins/index.html
-%%WWWDIR%%/plugins/instances/init.php
-%%WWWDIR%%/plugins/instances/instances.js
 %%WWWDIR%%/plugins/mail/init.php
 %%WWWDIR%%/plugins/mail/mail.js
 %%WWWDIR%%/plugins/mail/mail.png
@@ -2745,6 +2746,9 @@
 %%WWWDIR%%/templates/generated_feed.txt
 %%WWWDIR%%/templates/resetpass_link_template.txt
 %%WWWDIR%%/templates/resetpass_template.txt
+%%WWWDIR%%/tests/ApiTest.php
+%%WWWDIR%%/tests/functional/BasicTest.php
+%%WWWDIR%%/tests/functional/PrefsTest.php
 %%WWWDIR%%/themes.local/.empty
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/compact.css
@@ -2757,6 +2761,12 @@
 %%WWWDIR%%/utils/localized_schema.txt
 @mode u=rx
 %%WWWDIR%%/utils/extract-i18n-js.pl
+%%WWWDIR%%/utils/gitlab-ci/check-schema.sh
+%%WWWDIR%%/utils/gitlab-ci/config-template.php
+%%WWWDIR%%/utils/gitlab-ci/nginx-default
+%%WWWDIR%%/utils/gitlab-ci/php-lint.sh
+%%WWWDIR%%/utils/gitlab-ci/phpmd-ruleset.xml
+%%WWWDIR%%/utils/gitlab-ci/phpmd.sh
 %%WWWDIR%%/utils/regen_config_checks.sh
 %%WWWDIR%%/utils/update-translations.sh
 @mode
@@ -2783,7 +2793,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/mark_button
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/mailto
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/mail
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/instances
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/import_export
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/googlereaderkeys
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/embed_original
@@ -2793,7 +2802,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/auto_assign_labels
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/auth_remote
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/auth_internal
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_zz_imgsetsizes
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_youtube_embed
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_unburn
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_tumblr_1280
@@ -2867,7 +2875,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/locale
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/scriptaculous
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/readability
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/pubsubhubbub
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/phpqrcode/tools
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/phpqrcode/cache/mask_7
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/lib/phpqrcode/cache/mask_6

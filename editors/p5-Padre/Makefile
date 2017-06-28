@@ -17,16 +17,15 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-JSON-XS>=2.29:converters/p5-JSON-XS \
-		p5-DBD-SQLite>=1.35:databases/p5-DBD-SQLite \
-		p5-DBI>=1.58:databases/p5-DBI \
-		databases/p5-ORLite-Migrate>0:databases/p5-ORLite-Migrate \
-		p5-Algorithm-Diff>=1.19:devel/p5-Algorithm-Diff \
+BUILD_DEPENDS=	p5-Algorithm-Diff>=1.19:devel/p5-Algorithm-Diff \
 		p5-App-cpanminus>=0.9923:devel/p5-App-cpanminus \
+		p5-CGI>=3.47:www/p5-CGI \
 		p5-Capture-Tiny>0:devel/p5-Capture-Tiny \
 		p5-Class-Adapter>=1.05:devel/p5-Class-Adapter \
 		p5-Class-Inspector>=1.22:devel/p5-Class-Inspector \
 		p5-Class-XSAccessor>=1.13:devel/p5-Class-XSAccessor \
+		p5-DBD-SQLite>=1.35:databases/p5-DBD-SQLite \
+		p5-DBI>=1.58:databases/p5-DBI \
 		p5-Debug-Client>=0.20:devel/p5-Debug-Client \
 		p5-Devel-Dumpvar>=0.04:devel/p5-Devel-Dumpvar \
 		p5-Devel-Refactor>=0.05:devel/p5-Devel-Refactor \
@@ -34,35 +33,37 @@ BUILD_DEPENDS=	p5-JSON-XS>=2.29:converters/p5-JSON-XS \
 		p5-File-Find-Rule>=0.30:devel/p5-File-Find-Rule \
 		p5-File-HomeDir>=0.84:devel/p5-File-HomeDir \
 		p5-File-ShareDir>=1.00:devel/p5-File-ShareDir \
+		p5-HTML-Parser>=3.58:www/p5-HTML-Parser \
 		p5-IO-stringy>=2.110:devel/p5-IO-stringy \
 		p5-IPC-Run>=0.83:devel/p5-IPC-Run \
+		p5-JSON-XS>=2.29:converters/p5-JSON-XS \
 		p5-List-MoreUtils>=0.22:lang/p5-List-MoreUtils \
 		p5-Locale-Msgfmt>=0.14:devel/p5-Locale-Msgfmt \
 		p5-Module-Manifest>=0.07:devel/p5-Module-Manifest \
-		p5-PPI>=1.213:textproc/p5-PPI \
 		p5-Module-Starter>=1.60:devel/p5-Module-Starter \
+		p5-ORLite-Migrate>0:databases/p5-ORLite-Migrate \
+		p5-POD2-Base>=0.043:textproc/p5-POD2-Base \
+		p5-PPI>=1.213:textproc/p5-PPI \
+		p5-PPIx-EditorTools>=0.13:textproc/p5-PPIx-EditorTools \
+		p5-PPIx-Regexp>=0.011:textproc/p5-PPIx-Regexp \
 		p5-Parse-ErrorString-Perl>=0.14:devel/p5-Parse-ErrorString-Perl \
 		p5-Parse-ExuberantCTags>=1.00:devel/p5-Parse-ExuberantCTags \
 		p5-Pod-Abstract>=0.16:textproc/p5-Pod-Abstract \
+		p5-Pod-POM>=0.17:textproc/p5-Pod-POM \
 		p5-Sort-Versions>=1.5:devel/p5-Sort-Versions \
+		p5-Template-Tiny>=0.11:textproc/p5-Template-Tiny \
 		p5-Test-Exception>=0.27:devel/p5-Test-Exception \
 		p5-Test-MockObject>=1.09:devel/p5-Test-MockObject \
 		p5-Test-NoWarnings>=0.084:devel/p5-Test-NoWarnings \
 		p5-Test-Script>=1.07:devel/p5-Test-Script \
-		p5-URI>0:net/p5-URI \
-		p5-Pod-POM>=0.17:textproc/p5-Pod-POM \
-		p5-POD2-Base>=0.043:textproc/p5-POD2-Base \
-		p5-PPIx-EditorTools>=0.13:textproc/p5-PPIx-EditorTools \
-		p5-PPIx-Regexp>=0.011:textproc/p5-PPIx-Regexp \
-		p5-Template-Tiny>=0.11:textproc/p5-Template-Tiny \
 		p5-Text-Diff>=1.41:textproc/p5-Text-Diff \
 		p5-Text-FindIndent>=0.10:textproc/p5-Text-FindIndent \
 		p5-Text-Patch>=1.8:textproc/p5-Text-Patch \
-		p5-YAML-Tiny>=1.32:textproc/p5-YAML-Tiny \
-		p5-HTML-Parser>=3.58:www/p5-HTML-Parser \
-		p5-libwww>=5.815:www/p5-libwww \
+		p5-URI>0:net/p5-URI \
+		p5-Wx-Perl-ProcessStream>=0.25:x11-toolkits/p5-Wx-Perl-ProcessStream \
 		p5-Wx>=0.9700:x11-toolkits/p5-Wx \
-		p5-Wx-Perl-ProcessStream>=0.25:x11-toolkits/p5-Wx-Perl-ProcessStream
+		p5-YAML-Tiny>=1.32:textproc/p5-YAML-Tiny \
+		p5-libwww>=5.815:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	p5-Module-Build>=0.36:devel/p5-Module-Build
 
@@ -87,11 +88,6 @@ WXSC_DISTNAME=	${WXSC_NAME}-${WXSC_VERSION}
 WXSC_DISTFILE=	${WXSC_DISTNAME}.tar.gz
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502100
-BUILD_DEPENDS+=	p5-CGI>=3.47:www/p5-CGI
-RUN_DEPENDS+=	p5-CGI>=3.47:www/p5-CGI
-.endif
 
 .if exists(${PERL})
 PERL_THREADS!=	${PERL} -V::useithreads

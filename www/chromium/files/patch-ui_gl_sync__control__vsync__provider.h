@@ -1,6 +1,6 @@
---- ui/gl/sync_control_vsync_provider.h.orig	2017-04-19 19:06:54 UTC
+--- ui/gl/sync_control_vsync_provider.h.orig	2017-06-05 19:03:30 UTC
 +++ ui/gl/sync_control_vsync_provider.h
-@@ -31,7 +31,7 @@ class SyncControlVSyncProvider : public 
+@@ -39,7 +39,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
    virtual bool GetMscRate(int32_t* numerator, int32_t* denominator) = 0;
  
   private:
@@ -9,7 +9,7 @@
    base::TimeTicks last_timebase_;
    uint64_t last_media_stream_counter_ = 0;
    base::TimeDelta last_good_interval_;
-@@ -42,7 +42,7 @@ class SyncControlVSyncProvider : public 
+@@ -50,7 +50,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
    // from configuration change (monitor reconfiguration, moving windows
    // between monitors, suspend and resume, etc.).
    std::queue<base::TimeDelta> last_computed_intervals_;

@@ -23,8 +23,6 @@ BUILD_DEPENDS=	p5-Error>=0:lang/p5-Error \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 
-CONFLICTS_INSTALL=	p5-Mail-SPF-Query-[0-9]*
-
 CONFIGURE_ARGS=	--install_path sbin=${PREFIX}/sbin
 NO_ARCH=	yes
 USE_PERL5=	modbuild

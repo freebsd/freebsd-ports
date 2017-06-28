@@ -8,6 +8,6 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to execute ping
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

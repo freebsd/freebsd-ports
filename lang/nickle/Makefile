@@ -3,6 +3,7 @@
 
 PORTNAME=	nickle
 PORTVERSION=	2.77
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 

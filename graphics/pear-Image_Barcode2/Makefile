@@ -9,6 +9,6 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR class for barcode generation
 
 USE_PHP=	gd
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

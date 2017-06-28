@@ -206,7 +206,6 @@
     SUBDIR += libsrs2
     SUBDIR += libsrs_alt
     SUBDIR += libvmime
-    SUBDIR += linux-thunderbird
     SUBDIR += listadmin
     SUBDIR += lmtp2nntp
     SUBDIR += lookout
@@ -490,7 +489,6 @@
     SUBDIR += perdition
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
-    SUBDIR += pgpsendmail
     SUBDIR += php56-imap
     SUBDIR += php70-imap
     SUBDIR += php71-imap
@@ -543,6 +541,7 @@
     SUBDIR += py-milter
     SUBDIR += py-notmuch
     SUBDIR += py-ppolicy
+    SUBDIR += py-pymailq
     SUBDIR += py-pyspf
     SUBDIR += py-spambayes
     SUBDIR += py-twistedMail

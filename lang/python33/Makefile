@@ -2,7 +2,7 @@
 
 PORTNAME=	python33
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -13,7 +13,7 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-DEPRECATED=	No longer receives bug fixes, only security updates. Please update to Python 3.5
+DEPRECATED=	No longer receives bug fixes, only security updates. Please update to Python 3.6
 EXPIRATION_DATE=	2017-09-01
 
 USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix
@@ -121,5 +121,7 @@ post-install:
 .endif
 	for i in ${STAGEDIR}${PREFIX}/lib/python3.3/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done								# Strip shared extensions
+	${INSTALL_DATA} ${WRKSRC}/Tools/gdb/libpython.py \
+		${STAGEDIR}${PREFIX}/lib/libpython3.3${ABIFLAGS}.so.1-gdb.py
 
 .include <bsd.port.mk>

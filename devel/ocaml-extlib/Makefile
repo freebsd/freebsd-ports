@@ -10,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete - yet small - standard library for OCaml
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BUILD_DEPENDS=	cppo:devel/ocaml-cppo
 

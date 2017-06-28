@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.40.1
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -27,10 +27,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAKE_ENV=	EXPR_COMPAT=yes
-
-SHEBANG_LANG=	tcl
-tcl_OLD_CMD=	/usr/bin/tclsh
-tcl_CMD=	${TCLSH}
 
 FIX_INCLUDE=	\
 		lib/cdt/dthdr.h \
@@ -139,21 +135,27 @@ DEVIL_CONFIGURE_WITH=		devil
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-ghostscript=no
 GHOSTSCRIPT_IMPLIES=		PANGOCAIRO
 PERL_CONFIGURE_ENABLE=		perl
+PERL_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.pl
 PHP_CONFIGURE_ENABLE=		php
 PHP_CPPFLAGS=		-I${LOCALBASE}/include/php/Zend
+PHP_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.php
 PYTHON_CONFIGURE_ENABLE=	python
-PYTHON_LDFLAGS=		"-L${PYTHON_LIBDIR}"
+PYTHON_LDFLAGS=		"-L${PYTHONBASE}/lib"
+PYTHON_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.py
 RUBY_CONFIGURE_ENABLE=		ruby
 RUBY_CONFIGURE_ENV=	RUBY="${RUBY}"
+RUBY_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.rb
 LUA_CONFIGURE_ENABLE=		lua
 LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR} -lm
 LUA_CONFIGURE_ENV=	LUA="${LUA_BINDIR}/lua" \
 			LUA_INSTALL_DIR=${PREFIX}/lib/lua/${LUA_VER}
+LUA_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.lua
 TCL_CONFIGURE_ENABLE=		tcl
 TCL_CPPFLAGS=		-I${TK_INCLUDEDIR}
 TCL_CONFIGURE_ON=	--with-tclsh=${TCLSH} --enable-tcl=yes
 TCL_CONFIGURE_ENV=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
+TCL_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.tcl
 TK_CPPFLAGS=		-I${TK_INCLUDEDIR}
 TK_CONFIGURE_ON=	--with-wish=${WISH}
 TK_CONFIGURE_ENV=	TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
@@ -208,20 +210,7 @@ CONFIGURE_ENV+=		SWIG="/nonexistent"
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.php
 IGNORE_WITH_PHP=	56 71
-.endif
-
-.if ${PORT_OPTIONS:MRUBY}
-SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.rb
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.lua
-.endif
-
-.if ${PORT_OPTIONS:MTCL}
-SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.tcl
 .endif
 
 post-patch:

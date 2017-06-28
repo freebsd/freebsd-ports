@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libunrar.so.5:archivers/libunrar5
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-Wno-unused-local-typedef"
+
 USES=		gmake
 USE_WX=		2.8+
 

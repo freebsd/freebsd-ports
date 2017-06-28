@@ -11,10 +11,11 @@ COMMENT=	Nim programming language
 
 LICENSE=	MIT
 
-BROKEN_aarch64=		Does not compile: crt1.c: undefined reference to main
-BROKEN_mips64=		Does not build: build.sh: clang: not found
-BROKEN_powerpc64=	Does not build: build.sh: clang: not found
-BROKEN_sparc64=		Does not build: build.sh: clang: not found
+BROKEN_aarch64=		fails to compile: crt1.c: undefined reference to main
+BROKEN_armv6=		fails to compile: crt1.c: undefined reference to main
+BROKEN_mips64=		fails to build: build.sh: clang: not found
+BROKEN_powerpc64=	fails to build: build.sh: clang: not found
+BROKEN_sparc64=		fails to build: build.sh: clang: not found
 
 TOOLS_DESC=	Build and install nimgrep and nimsuggest
 

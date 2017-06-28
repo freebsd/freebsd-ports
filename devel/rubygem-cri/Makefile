@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cri
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

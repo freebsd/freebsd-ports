@@ -13,8 +13,6 @@ COMMENT=	Validating XML parser from the Apache XML Project
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	xerces-c2-[0-9]* xerces-c2-devel-[0-9]*
-
 CONFIGURE_ARGS=	--enable-netaccessor-socket \
 		--enable-transcoder-iconv \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig

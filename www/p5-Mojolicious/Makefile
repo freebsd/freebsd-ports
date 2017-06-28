@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious
-PORTVERSION=	7.31
+PORTVERSION=	7.32
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,11 +27,4 @@ EV_RUN_DEPENDS=		p5-EV>=4:devel/p5-EV
 TLS_BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.75:security/p5-IO-Socket-SSL
 TLS_RUN_DEPENDS=	p5-IO-Socket-SSL>=1.75:security/p5-IO-Socket-SSL
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MIPV6} && ${PERL_LEVEL} < 502111
-BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.37:net/p5-IO-Socket-IP
-RUN_DEPENDS+=	p5-IO-Socket-IP>=0.37:net/p5-IO-Socket-IP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

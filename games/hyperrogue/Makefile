@@ -3,6 +3,7 @@
 
 PORTNAME=	hyperrogue
 PORTVERSION=	8.3j
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,6 +13,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
+
+BROKEN_powerpc64=	fails to link: langen-langen.o: relocation truncated to fit: R_PPC64_TOC16_DS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zenorogue

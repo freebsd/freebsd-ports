@@ -3,6 +3,7 @@
 
 PORTNAME=	PerformanceAnalytics
 PORTVERSION=	1.4.3541
+PORTREVISION=	1
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -15,6 +16,6 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	R-cran-zoo>0:math/R-cran-zoo \
 		R-cran-xts>=0.9:math/R-cran-xts
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

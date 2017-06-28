@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-App
-PORTVERSION=	1.37.01
+PORTVERSION=	1.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write user-friendly command line apps with even less suffering

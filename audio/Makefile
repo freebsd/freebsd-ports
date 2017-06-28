@@ -259,6 +259,7 @@
     SUBDIR += gstreamer-plugins-shout2
     SUBDIR += gstreamer-plugins-sidplay
     SUBDIR += gstreamer-plugins-sndfile
+    SUBDIR += gstreamer-plugins-sndio
     SUBDIR += gstreamer-plugins-soundtouch
     SUBDIR += gstreamer-plugins-spc
     SUBDIR += gstreamer-plugins-speex
@@ -647,6 +648,7 @@
     SUBDIR += py-pyliblo
     SUBDIR += py-shout
     SUBDIR += py-soundcloud
+    SUBDIR += py-soundscrape
     SUBDIR += py-speechrecognition
     SUBDIR += py-speex
     SUBDIR += py-tagpy

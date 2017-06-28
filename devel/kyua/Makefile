@@ -3,7 +3,7 @@
 PORTNAME=	kyua
 PORTVERSION=	0.13
 PORTEPOCH=	3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
 		LOCAL/jmmv
@@ -50,7 +50,7 @@ MAKE_FLAGS+=	dist_examples_DATA=
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/kyua/
-	${INSTALL_DATA} ${WRKDIR}/kyua.conf ${STAGEDIR}${PREFIX}/etc/kyua/
+	${INSTALL_DATA} ${WRKDIR}/kyua.conf ${STAGEDIR}${PREFIX}/etc/kyua/kyua.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/examples/Kyuafile.top \
 		${STAGEDIR}${PREFIX}/tests/Kyuafile
 

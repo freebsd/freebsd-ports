@@ -3,7 +3,7 @@
 
 PORTNAME=	teeworlds
 PORTVERSION=	0.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	https://downloads.teeworlds.com/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,10 +32,6 @@ OPTIONS_DEFINE=	SERVER_ONLY
 SERVER_ONLY_DESC=Build dedicated server only
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "ia64"
-BROKEN=		Does not install on ia64: gets bus error
-.endif
 
 .if ${PORT_OPTIONS:MSERVER_ONLY}
 BAM_TARGET=	server_release

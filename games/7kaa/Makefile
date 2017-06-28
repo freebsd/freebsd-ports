@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	7kaa
-PORTVERSION=	2.14.6
-PORTREVISION=	1
+PORTVERSION=	2.14.7
 CATEGORIES=	games
 MASTER_SITES=	SF/skfans/7KAA%20${PORTVERSION}
 
@@ -13,20 +12,30 @@ COMMENT=	Seven Kingdoms: Ancient Adversaries
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libenet.so:net/enet
+LIB_DEPENDS=	libenet.so:net/enet \
+		libcurl.so:ftp/curl
 
-USES=		gmake localbase openal:al tar:xz
+USES=		compiler:c++11-lib gmake localbase openal:al pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls # no translations ATM
 USE_SDL=	sdl2
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.ico
 PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
+DESKTOP_ENTRIES="7KAA" \
+		"" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
+		"${PORTNAME}" \
+		"Game;StrategyGame;" \
+		""
+
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING
+	${INSTALL_DATA} ${WRKSRC}/src/7k.ico ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
 
 .include <bsd.port.mk>

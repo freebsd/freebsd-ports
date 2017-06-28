@@ -6,6 +6,7 @@
 %%SITE_PERL%%/auto/DBIWrapper/ResultSet/autosplit.ix
 %%SITE_PERL%%/auto/DBIWrapper/XMLParser/autosplit.ix
 %%SITE_PERL%%/auto/DBIWrapper/autosplit.ix
+%%SITE_PERL%%/parse_test.pl
 %%PERL5_MAN3%%/DBIWrapper.3.gz
 %%PERL5_MAN3%%/DBIWrapper::ResultSet.3.gz
 %%PERL5_MAN3%%/DBIWrapper::Time::Now::HiRes.3.gz

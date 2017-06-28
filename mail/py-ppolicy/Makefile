@@ -3,7 +3,7 @@
 
 PORTNAME=	ppolicy
 PORTVERSION=	2.6.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail python
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~vokac/activities/ppolicy/download/%SUBDIR%/ \
 		http://www.chifeng.name/dist/ppolicy/%SUBDIR%/
@@ -11,12 +11,13 @@ MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~vokac/activities/ppolicy/download/%SU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPolicy is tool for extending Postfix checking capabilities
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:dns/py-dnspython
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython \
+		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted
 
-USES=		python twisted
-USE_PYTHON=	distutils autoplist
-NO_BUILD=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
+NO_BUILD=	yes
 USE_RC_SUBR=	ppolicyd
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

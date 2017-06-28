@@ -17,6 +17,8 @@ COMMENT=	Java library of self-contained mathematics and statistics components
 
 LICENSE=	APACHE20
 
+BROKEN_armv6=		fails to compile: build.xml: Compile failed; see the compiler error output for details
+
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

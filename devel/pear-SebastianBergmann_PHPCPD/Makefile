@@ -22,6 +22,8 @@ RUN_DEPENDS=	pear-ezc_ConsoleTools>=1.6:devel/pear-ezc_ConsoleTools \
 		pear-PHP_Timer>=1.0.4:devel/pear-PHP_Timer \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
+BROKEN=		unfetchable, redirects to https://phpunit.de/
+
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	phpunit
 USES=	pear

@@ -3,6 +3,7 @@
 
 PORTNAME=	timelimit
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/files/sys/timelimit/ \
 		LOCAL/sunpoet
@@ -12,9 +13,9 @@ COMMENT=	Limit the absolute execution time of a process
 
 LICENSE=	BSD2CLAUSE
 
-CONFLICTS_INSTALL=	netpipes-[0-9]*
+# bin/timelimit man/man1/timelimit.1.gz
+CONFLICTS_INSTALL=	netpipes
 
-NO_ARCH=	yes
 USES=		tar:xz
 
 PLIST_FILES=	bin/timelimit man/man1/timelimit.1.gz

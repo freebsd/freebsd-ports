@@ -3,7 +3,7 @@
 
 PORTNAME=	glosm
 PORTVERSION=	0.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics geography
 MASTER_SITES=	GHC http://mirror.amdmi3.ru/distfiles/
 

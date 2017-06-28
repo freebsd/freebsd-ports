@@ -9,6 +9,6 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	The PEAR::Net_DIME class implements DIME encoding
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

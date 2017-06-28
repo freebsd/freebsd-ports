@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freecell-solver
-PORTVERSION=	4.8.0
-PORTREVISION=	1
+PORTVERSION=	4.12.1
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 
@@ -14,9 +13,10 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	p5-Path-Tiny>=0.076:devel/p5-Path-Tiny \
 		p5-Template-Toolkit>=2.26:www/p5-Template-Toolkit \
-		gperf:devel/gperf
+		gperf:devel/gperf \
+		asciidoc:textproc/asciidoc
 
-OPTIONS_DEFINE=	TCMALLOC DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES TCMALLOC
 TCMALLOC_DESC=	Use Google's TCMalloc
 
 USES=		cmake:outsource compiler:c11 perl5 shebangfix tar:xz
@@ -31,9 +31,6 @@ TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 TCMALLOC_CMAKE_OFF=	-DFCS_AVOID_TCMALLOC:BOOL=ON
 
 post-patch:
-.for f in CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|"pthread"|"-pthread"|' ${WRKSRC}/${f}
-.endfor
 .for f in Shlomif_Common.cmake
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/cmake/${f}
 .endfor

@@ -3,7 +3,7 @@
 
 PORTNAME=	vavoom
 PORTVERSION=	1.33
-PORTREVISION=	12
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 
@@ -14,17 +14,12 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake dos2unix jpeg tar:bzip2
-# Force GCC because llvm (starting from 4.0) generates
-# non working binary for vcc
-USE_GCC=	yes
+USES=		cmake:noninja dos2unix jpeg tar:bzip2
 DOS2UNIX_REGEX=	((.*\.(c|cpp|h|s|asm|inc|vc|ls|acs|cfg|txt|vs|mak|mgw"))$$|\/(makefile\..*|makefile|Makefile)$$)
 
-# Removed LAUNCHER because it segfaults
-#OPTIONS_DEFINE=	FLAC LAUNCHER MAD MIKMOD OPENAL OPTIMIZED_CFLAGS VORBIS SDL DOCS
-OPTIONS_DEFINE=	FLAC MAD MIKMOD OPENAL OPTIMIZED_CFLAGS VORBIS SDL DOCS
+OPTIONS_DEFINE=	FLAC LAUNCHER MAD MIKMOD OPENAL OPTIMIZED_CFLAGS VORBIS SDL DOCS
 OPTIONS_DEFAULT=	OPENGL SDL
-#LAUNCHER_DESC=	Build GUI launcher
+LAUNCHER_DESC=	Build GUI launcher
 OPENAL_DESC=	Enable OpenAL support
 SDL_DESC=	Use SDL for OpenGL support
 
@@ -41,13 +36,10 @@ FLAC_LIB_DEPENDS=			libFLAC.so:audio/flac
 FLAC_CMAKE_ON=				-DWITH_FLAC:BOOL=ON
 FLAC_CMAKE_OFF=				-DWITH_FLAC:BOOL=OFF
 
-# Removed LAUNCHER because it segfaults - check also pkg-plist
-#LAUNCHER_USE=				WX=2.8+
-#LAUNCHER_CMAKE_ON=			-DENABLE_LAUNCHER:BOOL=ON \
-#	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
-#LAUNCHER_CMAKE_OFF=			-DENABLE_LAUNCHER:BOOL=OFF
-# Force disable LAUNCHER
-CMAKE_ARGS+=				-DENABLE_LAUNCHER:BOOL=OFF
+LAUNCHER_USE=				WX=2.8+
+LAUNCHER_CMAKE_ON=			-DENABLE_LAUNCHER:BOOL=ON \
+	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
+LAUNCHER_CMAKE_OFF=			-DENABLE_LAUNCHER:BOOL=OFF
 
 MAD_LIB_DEPENDS=			libmad.so:audio/libmad
 MAD_CMAKE_ON=				-DWITH_LIBMAD:BOOL=ON

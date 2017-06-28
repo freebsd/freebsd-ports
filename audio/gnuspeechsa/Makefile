@@ -14,7 +14,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		Does not build: the clang compiler does not support -march=native
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: the clang compiler does not support -march=native
 
 USES=		cmake compiler:c++11-lib
 

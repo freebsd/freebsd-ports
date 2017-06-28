@@ -17,6 +17,7 @@
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
+    SUBDIR += OpenTomb
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abuse_sdl
@@ -64,6 +65,7 @@
     SUBDIR += atr3d
     SUBDIR += atris
     SUBDIR += atris-sounds
+    SUBDIR += auralquiz
     SUBDIR += avanor
     SUBDIR += avoision
     SUBDIR += awale
@@ -523,7 +525,6 @@
     SUBDIR += lgeneral
     SUBDIR += lianliankan
     SUBDIR += libdungeonmaker
-    SUBDIR += libgames-support
     SUBDIR += libggz
     SUBDIR += libgnome-games-support
     SUBDIR += libkdegames
@@ -740,6 +741,7 @@
     SUBDIR += pengpong
     SUBDIR += penguin-command
     SUBDIR += pengupop
+    SUBDIR += pentobi
     SUBDIR += phalanx
     SUBDIR += phlipple
     SUBDIR += picmi

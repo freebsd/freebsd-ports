@@ -2,23 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b41
+PORTVERSION=	b43
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/ant/binaries/:ant \
 		https://java.net/downloads/openjdk6/:jdk \
 		LOCAL/jkim:jdk,jtreg
-DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
+PATCH_SITES=	LOCAL/glewis/openjdk6
 DISTFILES=	${ANTFILE}:ant \
-		${DISTNAME}${EXTRACT_SUFX}:jdk
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
+		${JDK_SRC_DISTFILE}${EXTRACT_SUFX}:jdk
+EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} ${ANTFILE}
+PATCHFILES=	patch-6-b42.xz \
+		patch-6-b43.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Oracle's Java 6 virtual machine release under the GPL v2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+LICENSE_DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:archivers/zip \
 		${LOCALBASE}/bin/unzip:archivers/unzip \
@@ -28,6 +30,7 @@ RUN_DEPENDS=	javavm:java/javavmwrapper \
 		dejavu>0:x11-fonts/dejavu
 
 OPENJDK_BUILDDATE=	04_jan_2017
+JDK_SRC_DISTFILE=	openjdk-6-src-b41-${OPENJDK_BUILDDATE}
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA TZUPDATE

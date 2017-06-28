@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}+
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	System secureness checker
 
-USES=		perl5 shebangfix
+USES=		groff perl5 shebangfix
 USE_PERL5=	run
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//g}+
 HAS_CONFIGURE=	yes

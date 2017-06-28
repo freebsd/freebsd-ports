@@ -49,10 +49,10 @@ lib/julia/libopenspecfun.so.1.3
 lib/julia/sys.so
 %%DEBUG%%lib/libjulia-debug.so
 %%DEBUG%%lib/libjulia-debug.so.0.5
-%%DEBUG%%lib/libjulia-debug.so.0.5.1
+%%DEBUG%%lib/libjulia-debug.so.0.5.2
 lib/libjulia.so
 lib/libjulia.so.0.5
-lib/libjulia.so.0.5.1
+lib/libjulia.so.0.5.2
 %%DESKTOP%%share/appdata/julia.appdata.xml
 %%DESKTOP%%share/applications/julia.desktop
 %%DESKTOP%%share/icons/hicolor/scalable/apps/julia.svg
@@ -465,6 +465,7 @@ lib/libjulia.so.0.5.1
 %%DATADIR%%/test/replcompletions.jl
 %%DATADIR%%/test/replutil.jl
 %%DATADIR%%/test/resolve.jl
+%%DATADIR%%/test/resolvedata1.jl
 %%DATADIR%%/test/rounding.jl
 %%DATADIR%%/test/runtests.jl
 %%DATADIR%%/test/serialize.jl

@@ -16,9 +16,16 @@ case "$daily_ddclient_force_enable" in
 		echo
 		echo 'Forcing ddclient update:'
 
-		out=`%%PREFIX%%/sbin/ddclient -force`
-		echo "$out"
-		rc=0
+		# sleep randomly to reduce congestion on dyn dns server.  In
+		# FreeBSD 12.0 the anticongestion function should be used
+		# instead of a hard-coded sleep
+		if [ -n "$anticongestion_sleeptime" ]; then
+			anticongestion
+		else
+			sleep `jot -r 1 0 900`
+		fi
+
+		%%PREFIX%%/sbin/ddclient -force || rc=3
 		;;
 	*)
 		rc=0

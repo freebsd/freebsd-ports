@@ -1,19 +1,19 @@
---- Makefile.orig	2016-05-15 22:24:33 UTC
+--- Makefile.orig	2017-04-01 06:34:29 UTC
 +++ Makefile
-@@ -1,12 +1,13 @@
+@@ -2,11 +2,13 @@
+ SDL_CFLAGS   := `sdl2-config --cflags`
+ SDL_LIBS     := `sdl2-config --libs`
  
- SDL_CFLAGS = `sdl-config --cflags`
- SDL_LIBS = `sdl-config --libs`
--MODPLUG_LIBS = -lmodplug
-+MODPLUG_CFLAGS = `pkg-config --cflags libmodplug`
-+MODPLUG_LIBS = `pkg-config --libs libmodplug`
- # TREMOR_LIBS = -lvorbisidec -logg
- ZLIB_LIBS = -lz
+-MODPLUG_LIBS := -lmodplug
+-TREMOR_LIBS  := -lvorbisidec -logg
++MODPLUG_CFLAGS := `pkg-config --cflags libmodplug`
++MODPLUG_LIBS := `pkg-config --libs libmodplug`
++TREMOR_CFLAGS := `pkg-config --cflags vorbisidec`
++TREMOR_LIBS  := `pkg-config --libs vorbisidec`
+ ZLIB_LIBS    := -lz
  
--CXX := clang++
--CXXFLAGS := -Wall -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_ZLIB # -DUSE_TREMOR
-+CXX ?= clang++
-+CXXFLAGS += -Wall -MMD $(SDL_CFLAGS) $(MODPLUG_CFLAGS) -DUSE_MODPLUG -DUSE_ZLIB # -DUSE_TREMOR
+-CXXFLAGS += -Wall -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_TREMOR -DUSE_ZLIB
++CXXFLAGS += -Wall -MMD $(SDL_CFLAGS) $(MODPLUG_CFLAGS) $(TREMOR_CFLAGS) -DUSE_MODPLUG -DUSE_TREMOR -DUSE_ZLIB
  
  SRCS = collision.cpp cutscene.cpp file.cpp fs.cpp game.cpp graphics.cpp main.cpp menu.cpp \
  	mixer.cpp mod_player.cpp ogg_player.cpp piege.cpp resource.cpp resource_aba.cpp \

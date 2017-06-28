@@ -1,5 +1,5 @@
---- setup.py.orig	2011-12-14 04:24:18.000000000 +0800
-+++ setup.py	2012-01-05 17:57:29.000000000 +0800
+--- setup.py.orig	2011-12-13 20:24:18 UTC
++++ setup.py
 @@ -52,8 +52,7 @@
      'url': meta.url,
      'license': meta.license,

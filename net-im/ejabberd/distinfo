@@ -1,5 +1,5 @@
-TIMESTAMP = 1486880394
-SHA256 (ejabberd-17.01.tgz) = 7efa8f25fe01bce876f9379ba7b4f49752a0fddc6a78e5ae82196fdc7f70c90b
-SIZE (ejabberd-17.01.tgz) = 1638418
-SHA256 (ejabberd-deps-10.tar.xz) = d646c3e5c26ee2d6f3d8d8eb31f4442a6237896670a91c6ad97528433bb8c8ef
-SIZE (ejabberd-deps-10.tar.xz) = 31892972
+TIMESTAMP = 1497186727
+SHA256 (ejabberd-17.04.tgz) = b8395bc65b09f135a60320b62338258acd6056cc241e9e245fde267fb18dd3c9
+SIZE (ejabberd-17.04.tgz) = 1690441
+SHA256 (ejabberd-deps-11.tar.xz) = 2f93c8d54921d4c6edbd4e7efce50a70a0dcc432fa4141d916df45d1a57de4d2
+SIZE (ejabberd-deps-11.tar.xz) = 29033236

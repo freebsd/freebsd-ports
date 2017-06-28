@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-PORTVERSION=	1.8.2
-PORTREVISION?=	1
+PORTVERSION=	1.8.3
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -17,10 +17,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		https://www.schrab.com/aaron/mutt/:ats \
+		https://github.com/aschrab/mutt/compare/dev-base...feature/:ats \
 		http://vc.org.ua/mutt/:vc
 PATCH_DIST_STRIP=	-p1
-PATCHFILES=	patch-1.7.0.ats.date_conditional.1:ats
+PATCHFILES=	date-conditional.diff:ats
 
 MAINTAINER?=	dereks@lifeofadishwasher.com
 COMMENT?=	Small but powerful text based program for read/writing e-mail
@@ -187,6 +187,8 @@ IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_WITH=	idn
 IDN_IMPLIES=	ICONV
 
+IFDEF_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ifdef
+
 GPGME_LIB_DEPENDS+=	libgpgme.so:security/gpgme
 GPGME_LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error
 GPGME_LIB_DEPENDS+=	libassuan.so:security/libassuan
@@ -212,8 +214,8 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
-#VVV_PATCH_VERSION=	1.8.0
-#GREETING_PATCH_VERSION=	1.8.1
+VVV_PATCH_VERSION=	1.8.2
+#GREETING_PATCH_VERSION=	1.8.3
 
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
@@ -264,12 +266,9 @@ post-install:
 post-install-NNTP-on:
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog.nntp ${STAGEDIR}${DOCSDIR}
 
-post-patch-IFDEF_PATCH-on:
-	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-ifdef
-
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 
-post-patch:
+pre-configure::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
 	@${REINPLACE_CMD} -e 's,pgp6,pgp,g' \

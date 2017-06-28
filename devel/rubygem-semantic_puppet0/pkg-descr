@@ -1,0 +1,4 @@
+Library of tools used by Puppet to parse, validate, and compare Semantic
+Versions and Version Ranges and to query and resolve module dependencies.
+
+WWW: https://github.com/puppetlabs/semantic_puppet

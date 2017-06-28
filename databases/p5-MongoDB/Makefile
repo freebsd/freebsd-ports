@@ -44,11 +44,4 @@ USE_PERL5=	configure
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/MongoDB/MongoDB.so
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-BUILD_DEPENDS+=	p5-JSON-PP>=2.27300:converters/p5-JSON-PP
-RUN_DEPENDS+=	p5-JSON-PP>=2.27300:converters/p5-JSON-PP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

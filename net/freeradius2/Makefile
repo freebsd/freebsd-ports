@@ -28,6 +28,9 @@ CONFLICTS_INSTALL=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 
 USE_RC_SUBR=	radiusd
 
+DEPRECATED=	EoL, use net/freeradius3 instead
+EXPIRATION_DATE=2017-06-30
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool shebangfix ssl tar:bzip2
 SHEBANG_FILES=	scripts/radsqlrelay src/modules/rlm_counter/rad_counter

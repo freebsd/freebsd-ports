@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SSH-Perl
-PORTVERSION=	2.09.01
+PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,11 +27,11 @@ BUILD_DEPENDS=	p5-Crypt-Curve25519>=0.05:security/p5-Crypt-Curve25519 \
 		p5-String-CRC32>=1.2:devel/p5-String-CRC32
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN_powerpc64=	fails to compile: src/chacha/poly1305.c: subscripted value is neither array nor pointer
+
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="1"
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 OPTIONS_DEFINE=	GMP
 OPTIONS_DEFAULT=GMP

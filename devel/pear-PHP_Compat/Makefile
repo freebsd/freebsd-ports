@@ -9,6 +9,6 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides missing functionality for older versions of PHP
 
 PORTSCOUT=	skipv:1.6.0a1,1.6.0a2
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

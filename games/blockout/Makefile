@@ -3,7 +3,7 @@
 
 PORTNAME=	blockout
 PORTVERSION=	2.5
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BlockOut%20${PORTVERSION}/ \
 		http://www.stasyan.com/devel/distfiles/
@@ -13,8 +13,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BlockOut II is an adaptation of the original Blockout DOS game
 
 LICENSE=	GPLv2+
-
-LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 ONLY_FOR_ARCHS=	i386 amd64
 

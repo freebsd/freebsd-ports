@@ -1,4 +1,4 @@
---- tools/heimdal-gssapi.pc.in.orig	2016-12-14 18:01:18 UTC
+--- tools/heimdal-gssapi.pc.in.orig	2017-04-11 21:38:21 UTC
 +++ tools/heimdal-gssapi.pc.in
 @@ -9,6 +9,6 @@ Description: Heimdal is an implementatio
  Version: @VERSION@

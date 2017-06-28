@@ -228,6 +228,6 @@ include/rudiments/xmlsax.h
 lib/librudiments.a
 lib/librudiments.so
 lib/librudiments.so.4
-lib/librudiments.so.4.0.4
+lib/librudiments.so.4.0.5
 libdata/pkgconfig/rudiments.pc
 man/man1/rudiments-config.1.gz

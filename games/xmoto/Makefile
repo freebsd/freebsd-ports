@@ -3,7 +3,7 @@
 
 PORTNAME=	xmoto
 PORTVERSION=	0.5.11
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -19,6 +19,8 @@ LIB_DEPENDS=	libode.so:devel/ode \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
 		libxdg-basedir.so:x11/libxdg-basedir
+
+BROKEN_powerpc64=	fails to compile: hashtable.h: no match for call to __gnu_cxx::hash
 
 GNU_CONFIGURE=	yes
 USES=		compiler:features dos2unix gmake jpeg localbase lua:51 sqlite

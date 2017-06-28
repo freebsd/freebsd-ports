@@ -1,21 +1,18 @@
---- setup.py.orig	2017-04-30 10:33:38 UTC
+--- setup.py.orig	2017-06-26 10:13:14 UTC
 +++ setup.py
-@@ -36,7 +36,6 @@ version = meta['version']
- # https://github.com/pypa/pip/issues/988 for more info.
- install_requires = [
-     'acme=={0}'.format(version),
--    'argparse',
-     # We technically need ConfigArgParse 0.10.0 for Python 2.6 support, but
-     # saying so here causes a runtime error against our temporary fork of 0.9.3
-     # in which we added 2.6 support (see #2243), so we relax the requirement.
-@@ -56,6 +55,10 @@ install_requires = [
-     'zope.interface',
- ]
- 
-+# env markers cause problems with older pip and setuptools
-+if sys.version_info < (2, 7):
-+    install_requires.append('argparse')
-+
- dev_extras = [
-     # Pin astroid==1.3.5, pylint==1.4.2 as a workaround for #289
+@@ -42,7 +42,6 @@ install_requires = [
+     'ConfigArgParse>=0.9.3',
+     'configobj',
+     'cryptography>=1.2',  # load_pem_x509_certificate
+-    'mock',
+     'parsedatetime>=1.3',  # Calendar.parseDT
+     'PyOpenSSL',
+     'pyrfc3339',
+@@ -67,6 +66,7 @@ dev_extras = [
      'astroid==1.3.5',
+     'coverage',
+     'ipdb',
++    'mock',
+     'nose',
+     'pylint==1.4.2',  # upstream #248
+     'tox',

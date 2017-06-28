@@ -16,6 +16,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem \
 		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg
 
+BROKEN_powerpc64=	fails to compile: th_map_overlays.cpp: 'to_string' is not a member of 'std'
+
 USES=		cmake compiler:c++11-lib dos2unix iconv lua pkgconfig
 USE_SDL=	mixer2
 DOS2UNIX_FILES=	CMake/FindFFmpeg.cmake \

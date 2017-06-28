@@ -3,7 +3,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	1.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-1.0/
 PKGNAMESUFFIX=	1

@@ -27,6 +27,7 @@ BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
 RUN_DEPENDS=	munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		rrdtool>=0:databases/rrdtool \
 		p5-CGI>=0:www/p5-CGI \
+		p5-CGI-Fast>=0:www/p5-CGI-Fast \
 		p5-Storable>=0:devel/p5-Storable \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
 		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
@@ -63,10 +64,4 @@ post-install:
 	${MV} ${STAGEDIR}${WWWDIR}/.htaccess ${STAGEDIR}${WWWDIR}/.htaccess.sample
 	${INSTALL_DATA} ${FILESDIR}/newsyslog ${STAGEDIR}${ETCDIR}/munin-master.newsyslog
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502100
-RUN_DEPENDS+=	p5-CGI-Fast>=0:www/p5-CGI-Fast
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

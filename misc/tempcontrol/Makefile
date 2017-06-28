@@ -3,7 +3,7 @@
 
 PORTNAME=	tempcontrol
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lemis.com/grog/brewing/src/brewing/tempcontrol/
 

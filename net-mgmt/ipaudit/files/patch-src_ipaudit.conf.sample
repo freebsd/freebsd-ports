@@ -1,0 +1,11 @@
+--- src/ipaudit.conf.sample.orig	2017-06-18 04:09:55 UTC
++++ src/ipaudit.conf.sample
+@@ -0,0 +1,8 @@
++#
++#  test configuration file for ipaudit
++#
++# interface lo eth0
++interface lo eth0
++writetime on
++icmptype  on
++# saveport 1:6,21,23,111,6667,65301

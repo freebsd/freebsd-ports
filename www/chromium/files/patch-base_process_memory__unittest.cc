@@ -1,7 +1,7 @@
---- base/process/memory_unittest.cc.orig	2017-04-19 19:06:28 UTC
+--- base/process/memory_unittest.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/process/memory_unittest.cc
-@@ -93,10 +93,10 @@ TEST(MemoryTest, AllocatorShimWorking) {
-   ASSERT_TRUE(base::allocator::IsAllocatorInitialized());
+@@ -101,10 +101,10 @@ TEST(MemoryTest, AllocatorShimWorking) {
+ #endif
  }
  
 -// OpenBSD does not support these tests. Don't test these on ASan/TSan/MSan
@@ -13,7 +13,7 @@
      BUILDFLAG(ENABLE_WIN_ALLOCATOR_SHIM_TESTS) && \
      !defined(MEMORY_TOOL_REPLACES_ALLOCATOR)
  
-@@ -488,5 +488,5 @@ TEST_F(OutOfMemoryHandledTest, Unchecked
+@@ -508,5 +508,5 @@ TEST_F(OutOfMemoryHandledTest, UncheckedCalloc) {
    EXPECT_FALSE(base::UncheckedCalloc(1, test_size_, &value_));
    EXPECT_TRUE(value_ == NULL);
  }

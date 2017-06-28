@@ -1,9 +1,9 @@
-# Created by: Björn König <bkoenig@alpha-tierchen.de>
+# Created by: BjÃ¶rn KÃ¶nig <bkoenig@alpha-tierchen.de>
 # $FreeBSD$
 
 PORTNAME=	libvisual
 PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-plugins/${PORTNAME}-plugins-${PORTVERSION}
 PKGNAMESUFFIX=	04-plugins

@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	igraph
+PORTREVISION=	1
 DISTVERSION=	1.0.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -17,7 +18,7 @@ RUN_DEPENDS=	R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-NMF>0:math/R-cran-NMF \
 		R-cran-irlba>0:math/R-cran-irlba
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 USE_GNOME=	libxml2
 
 .include <bsd.port.pre.mk>

@@ -3,7 +3,7 @@
 
 PORTREVISION=	5
 
-FLAVOR=		smog
+THEME_FLAVOR=	smog
 
 MASTERDIR=	${.CURDIR}/../gtk-aluminumalloy-volcanic-theme
 

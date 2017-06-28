@@ -1,3 +1,3 @@
-TIMESTAMP = 1486300843
-SHA256 (flake8-quotes-0.9.0.tar.gz) = e853d7d009d6b66fb3a4091bca606e2f458e4bf0f608804e10a6f4ac2ba8ba06
-SIZE (flake8-quotes-0.9.0.tar.gz) = 6113
+TIMESTAMP = 1495713384
+SHA256 (flake8-quotes-0.11.0.tar.gz) = 0b8e5ea5407e8308ff237ab814414a1dcd4c309c5c47363b6ad07a35068684e1
+SIZE (flake8-quotes-0.11.0.tar.gz) = 6846

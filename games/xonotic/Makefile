@@ -3,6 +3,7 @@
 
 PORTNAME=	xonotic
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://nl.dl.xonotic.org/ \
 		http://mirror.bitmissile.com/xonotic/releases/
@@ -64,6 +65,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/data
 	${INSTALL_DATA} ${WRKSRC}/data/*.pk3 ${STAGEDIR}${DATADIR}/data/
+	${INSTALL_DATA} ${WRKSRC}/key_0.d0pk ${STAGEDIR}${DATADIR}/
 
 do-install-CLIENT-on:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/darkplaces-sdl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -75,8 +77,5 @@ do-install-DEDICATED-on:
 # Fixup lost +x permissions on scripts after COPYTREE_SHARE
 	${FIND} ${STAGEDIR}${DATADIR}/server -type f -name *.sh -o -name rcon*.pl | \
 		${XARGS} ${CHMOD} +x
-
-do-install-ENCRYPTION-on:
-	${INSTALL_DATA} ${WRKSRC}/key_0.d0pk ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

@@ -16,6 +16,8 @@ BUILD_DEPENDS=	gm4:devel/m4 \
 		vala>=0:lang/vala
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
+BROKEN_powerpc64=	fails to compile: gexiv2-metadata-gps.cpp: 'overflow_error' is not a member of 'std'
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-introspection=yes \
 			--enable-vala=yes

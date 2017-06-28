@@ -3,7 +3,7 @@
 
 PORTNAME=	opensonic
 PORTVERSION=	0.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/opensnc/Open%20Sonic/${PORTVERSION}
 DISTNAME=	opensnc-src-${PORTVERSION}
@@ -14,6 +14,7 @@ COMMENT=	Game based on the "Sonic the Hedgehog" universe
 BUILD_DEPENDS=	alpng>=1.3:graphics/alpng
 LIB_DEPENDS=	liballeg.so:devel/allegro \
 		libogg.so:audio/libogg \
+		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 
 DESKTOP_ENTRIES="${PORTNAME}" \

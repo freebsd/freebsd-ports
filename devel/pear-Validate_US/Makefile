@@ -11,6 +11,6 @@ COMMENT=	PEAR data validation class for US
 BUILD_DEPENDS=	pear-Validate>=0.5.0:devel/pear-Validate
 RUN_DEPENDS=	pear-Validate>=0.5.0:devel/pear-Validate
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

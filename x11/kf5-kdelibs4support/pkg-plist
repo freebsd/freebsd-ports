@@ -1016,6 +1016,7 @@ man/es/man1/kf5-config.1.gz
 man/it/man1/kf5-config.1.gz
 man/man1/kf5-config.1.gz
 man/nl/man1/kf5-config.1.gz
+man/pt/man1/kf5-config.1.gz
 man/pt_BR/man1/kf5-config.1.gz
 man/sv/man1/kf5-config.1.gz
 man/uk/man1/kf5-config.1.gz
@@ -1049,6 +1050,10 @@ share/doc/HTML/nl/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/nl/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/nl/kdebugdialog5/index.cache.bz2
 share/doc/HTML/nl/kdebugdialog5/index.docbook
+share/doc/HTML/pt/kcontrol5/kcm_ssl/index.cache.bz2
+share/doc/HTML/pt/kcontrol5/kcm_ssl/index.docbook
+share/doc/HTML/pt/kdebugdialog5/index.cache.bz2
+share/doc/HTML/pt/kdebugdialog5/index.docbook
 share/doc/HTML/pt_BR/kcontrol5/kcm_ssl/details.png
 share/doc/HTML/pt_BR/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol5/kcm_ssl/index.docbook

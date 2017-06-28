@@ -13,8 +13,6 @@ COMMENT=	Simple but powerful tool for parsing
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BROKEN_ia64=	does not build on ia64
-
 WRKSRC=		${WRKDIR}/d
 
 EXTRACT_AFTER_ARGS=	--exclude "*my*"

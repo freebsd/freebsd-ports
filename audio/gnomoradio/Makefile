@@ -10,10 +10,10 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for finding and playing free music from the Internet
 
-BROKEN=		fails to build
-
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libao.so:audio/libao
+
+BROKEN=		fails to compile: trackable.h: expected ';' at end of declaration list
 
 USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes

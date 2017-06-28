@@ -21,8 +21,6 @@ PORTEXAMPLES=	example.gpr excel_out_demo.adb runme.sh
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	${CP} ${FILESDIR}/construct.gpr ${FILESDIR}/biff_dump.gpr ${WRKSRC}
 	${MKDIR} ${WRKSRC}/src ${WRKDIR}/data
@@ -34,7 +32,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s|Big.xls|${DATADIR}/Big.xls|" \
 		-e 's|\$$Dump\$$|_dump_|g' ${WRKSRC}/extras/biff_dump.adb
-	${REINPLACE_CMD} -e 's/"\(.*\.xls\)"/"\/tmp\/\1"/g' \
+	@${REINPLACE_CMD} -e 's/"\(.*\.xls\)"/"\/tmp\/\1"/g' \
 		${WRKSRC}/excel_out_demo.adb
 
 do-build:
@@ -42,7 +40,7 @@ do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -p -Pbiff_dump)
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat \
 		${STAGEDIR}${PREFIX}/lib/excel_writer \
 		${STAGEDIR}${PREFIX}/include/excel_writer \
 		${STAGEDIR}${DATADIR}
@@ -54,15 +52,15 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/excel_writer
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/biff_dump ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/data/Big.xls ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/excel_writer.txt ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/runme.sh ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/excel_out_demo.adb \
 		${FILESDIR}/example.gpr ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

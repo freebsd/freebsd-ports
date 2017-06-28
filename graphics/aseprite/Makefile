@@ -3,8 +3,8 @@
 
 PORTNAME=		aseprite
 PORTVERSION=		1.1.13
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=		2
 CATEGORIES=		graphics
 
 MAINTAINER=		yuri@rawbw.com
@@ -23,6 +23,11 @@ LIB_DEPENDS=		libfreetype.so:print/freetype2 \
 			libcurl.so:ftp/curl \
 			libtinyxml.so:textproc/tinyxml
 
+BROKEN_aarch64=		fails to compile: undefined reference to __va_copy
+BROKEN_armv6=		fails to compile: undefined reference to __va_copy
+BROKEN_powerpc64=	fails to compile: arena.h: Failed assertion: "arena_mapbits_allocated_get(chunk, pageind) != 0"
+BROKEN_sparc64=		fails to compile: vsnprintf is not a member of std
+
 OPTIONS_DEFINE=		WEBP
 OPTIONS_DEFAULT=	WEBP
 
@@ -40,7 +45,7 @@ GH_TUPLE+=		aseprite:laf:e6d79aa:laf/laf
 GH_TUPLE+=		aseprite:stringencoders:f963507:stringencoders/laf/third_party/stringencoders
 GH_TUPLE+=		dacap:observable:27fa7f6:observable/src/observable
 
-USES=			cmake:outsource compiler:c++11-lib jpeg ninja pkgconfig
+USES=			cmake:outsource compiler:c++11-lib jpeg pkgconfig
 USE_XORG=		x11 xcursor xext xpm ice pixman sm xxf86dga xxf86vm
 USE_LDCONFIG=		yes
 
@@ -60,9 +65,6 @@ CXXFLAGS+=		-I${LOCALBASE}/include
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2
 CXXFLAGS+=		-I${LOCALBASE}/include/freetype2/freetype
 CXXFLAGS+=		-D_GLIBCXX_USE_C99 # XXX ports/193528
-
-BROKEN_aarch64=		Fails to build: undefined reference to __va_copy
-BROKEN_sparc64=		Fails to build: error: vsnprintf is not a member of std
 
 post-extract:
 	@${RM} -r ${WRKSRC}/src/allegro

@@ -2,39 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	sysbench
-PORTVERSION=	0.4.12
-PORTREVISION=	3
+PORTVERSION=	1.0.7
 CATEGORIES=	benchmarks databases
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
-#		Project gone from sourceforge, both site and downloads
-#		Something exists on launchpad (https://code.launchpad.net/sysbench)
-#		maybe the port swould be switched there, however there are no
-#		direct downloads
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Modular, cross-platform, and multi-threaded benchmark tool
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Scriptable database and system performance benchmark
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool
+BUILD_DEPENDS=	xxd:editors/vim
+LIB_DEPENDS=	libck.so:devel/concurrencykit \
+		libluajit-5.1.so:lang/luajit
+
+OPTIONS_DEFINE=	LFS MYSQL PGSQL
+OPTIONS_DEFAULT=LFS MYSQL
+
+CONFIGURE_ARGS=	--with-system-ck --with-system-luajit
 GNU_CONFIGURE=	yes
+USES=		autoreconf gmake libtool pkgconfig
 
-PLIST_FILES=	bin/sysbench
-PORTDOCS=	manual.html
+GH_ACCOUNT=	akopytov
+USE_GITHUB=	yes
 
-OPTIONS_DEFINE=	LARGEFILE MYSQL PGSQL DOCS
-OPTIONS_DEFAULT=	LARGEFILE MYSQL
-
-LARGEFILE_DESC=			Largefile support
-LARGEFILE_CONFIGURE_ENABLE=	largefile
-
-MYSQL_CONFIGURE_ON=	--with-mysql
-MYSQL_CONFIGURE_OFF=	--with-mysql=no
-MYSQL_USE=		MYSQL=yes
-
-PGSQL_CONFIGURE_ON=	--with-pgsql
-PGSQL_CONFIGURE_OFF=	--with-pgsql=no
+LFS_CONFIGURE_ENABLE=	largefile
+MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_USES=		mysql
+PGSQL_CONFIGURE_WITH=	pgsql
 PGSQL_USES=		pgsql
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|__linux__|__FreeBSD__|' ${WRKSRC}/src/sb_util.h
 
 .include <bsd.port.mk>

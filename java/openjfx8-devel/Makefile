@@ -3,7 +3,7 @@
 
 PORTNAME=	openjfx8
 PORTVERSION=	20160228
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://bitbucket.org/tobik/openjfx-rt/get/ \
 		http://bitbucket.org/tobik/openjfx-rt/get/

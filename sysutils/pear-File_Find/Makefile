@@ -10,6 +10,6 @@ COMMENT=	PEAR class that facilitates the search of filesystems
 
 LICENSE=	PHP301
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

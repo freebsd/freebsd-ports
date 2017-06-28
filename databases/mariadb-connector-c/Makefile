@@ -19,6 +19,9 @@ COMMENT=	MariaDB database connector for C
 
 LICENSE=	LGPL21
 
+BROKEN_armv6=		fails to configure: CMake Error: Generator: execution of make failed
+BROKEN_powerpc64=	fails to compile: my_stmt_codec.c: error: invalid use of void expression
+
 CONFLICTS_INSTALL=	mariadb[0-9]*-client-* \
 			mariadb102-server-* \
 			mysql[0-9]*-client-* \

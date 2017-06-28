@@ -1489,7 +1489,6 @@ llvm-devel/include/llvm/DebugInfo/CodeView/CVDebugRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVSymbolTypes.def
 llvm-devel/include/llvm/DebugInfo/CodeView/CVSymbolVisitor.h
-llvm-devel/include/llvm/DebugInfo/CodeView/CVTypeDumper.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVTypeVisitor.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CodeView.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CodeViewError.h
@@ -1497,6 +1496,7 @@ llvm-devel/include/llvm/DebugInfo/CodeView/CodeViewRecordIO.h
 llvm-devel/include/llvm/DebugInfo/CodeView/EnumTables.h
 llvm-devel/include/llvm/DebugInfo/CodeView/Formatters.h
 llvm-devel/include/llvm/DebugInfo/CodeView/FunctionId.h
+llvm-devel/include/llvm/DebugInfo/CodeView/LazyRandomTypeCollection.h
 llvm-devel/include/llvm/DebugInfo/CodeView/Line.h
 llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugFileChecksumFragment.h
 llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugFragment.h
@@ -1505,7 +1505,6 @@ llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugFragmentVisitor.h
 llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugInlineeLinesFragment.h
 llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugLineFragment.h
 llvm-devel/include/llvm/DebugInfo/CodeView/ModuleDebugUnknownFragment.h
-llvm-devel/include/llvm/DebugInfo/CodeView/RandomAccessTypeVisitor.h
 llvm-devel/include/llvm/DebugInfo/CodeView/RecordSerialization.h
 llvm-devel/include/llvm/DebugInfo/CodeView/StringTable.h
 llvm-devel/include/llvm/DebugInfo/CodeView/SymbolDeserializer.h
@@ -1517,6 +1516,7 @@ llvm-devel/include/llvm/DebugInfo/CodeView/SymbolSerializer.h
 llvm-devel/include/llvm/DebugInfo/CodeView/SymbolVisitorCallbackPipeline.h
 llvm-devel/include/llvm/DebugInfo/CodeView/SymbolVisitorCallbacks.h
 llvm-devel/include/llvm/DebugInfo/CodeView/SymbolVisitorDelegate.h
+llvm-devel/include/llvm/DebugInfo/CodeView/TypeCollection.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeDatabase.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeDatabaseVisitor.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeDeserializer.h
@@ -1531,6 +1531,7 @@ llvm-devel/include/llvm/DebugInfo/CodeView/TypeServerHandler.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeStreamMerger.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeSymbolEmitter.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeTableBuilder.h
+llvm-devel/include/llvm/DebugInfo/CodeView/TypeTableCollection.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeVisitorCallbackPipeline.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeVisitorCallbacks.h
 llvm-devel/include/llvm/DebugInfo/DIContext.h
@@ -1715,6 +1716,7 @@ llvm-devel/include/llvm/IR/DebugInfoFlags.def
 llvm-devel/include/llvm/IR/DebugInfoMetadata.h
 llvm-devel/include/llvm/IR/DebugLoc.h
 llvm-devel/include/llvm/IR/DerivedTypes.h
+llvm-devel/include/llvm/IR/DerivedUser.h
 llvm-devel/include/llvm/IR/DiagnosticInfo.h
 llvm-devel/include/llvm/IR/DiagnosticPrinter.h
 llvm-devel/include/llvm/IR/Dominators.h
@@ -1882,6 +1884,7 @@ llvm-devel/include/llvm/Object/ArchiveWriter.h
 llvm-devel/include/llvm/Object/Binary.h
 llvm-devel/include/llvm/Object/COFF.h
 llvm-devel/include/llvm/Object/COFFImportFile.h
+llvm-devel/include/llvm/Object/COFFModuleDefinition.h
 llvm-devel/include/llvm/Object/Decompressor.h
 llvm-devel/include/llvm/Object/ELF.h
 llvm-devel/include/llvm/Object/ELFObjectFile.h
@@ -1898,6 +1901,7 @@ llvm-devel/include/llvm/Object/StackMapParser.h
 llvm-devel/include/llvm/Object/SymbolSize.h
 llvm-devel/include/llvm/Object/SymbolicFile.h
 llvm-devel/include/llvm/Object/Wasm.h
+llvm-devel/include/llvm/Object/WindowsResource.h
 llvm-devel/include/llvm/ObjectYAML/COFFYAML.h
 llvm-devel/include/llvm/ObjectYAML/DWARFEmitter.h
 llvm-devel/include/llvm/ObjectYAML/DWARFYAML.h
@@ -2529,6 +2533,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%CLANG%%llvm-devel/lib/libclangBasic.a
 %%CLANG%%llvm-devel/lib/libclangChangeNamespace.a
 %%CLANG%%llvm-devel/lib/libclangCodeGen.a
+%%CLANG%%llvm-devel/lib/libclangDaemon.a
 %%CLANG%%llvm-devel/lib/libclangDriver.a
 %%CLANG%%llvm-devel/lib/libclangDynamicASTMatchers.a
 %%CLANG%%llvm-devel/lib/libclangEdit.a
@@ -2673,6 +2678,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_RELEASE%%svn
 %%OPENMP%%llvm-devel/lib/libomptarget.so
 %%CLANG%%llvm-devel/libexec/c++-analyzer
 %%CLANG%%llvm-devel/libexec/ccc-analyzer
+%%CLANG%%llvm-devel/share/clang/bash-autocomplete.sh
 %%CLANG%%llvm-devel/share/clang/clang-format-bbedit.applescript
 %%CLANG%%llvm-devel/share/clang/clang-format-diff.py
 %%CLANG%%llvm-devel/share/clang/clang-format-sublime.py

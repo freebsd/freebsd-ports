@@ -1,6 +1,6 @@
---- tools/gn/bootstrap/bootstrap.py.orig	2017-04-24 14:40:24 UTC
-+++ tools/gn/bootstrap/bootstrap.py
-@@ -23,6 +23,7 @@ import os
+--- tools/gn/bootstrap/bootstrap.py.orig	2017-04-24 16:40:24.605680492 +0200
++++ tools/gn/bootstrap/bootstrap.py	2017-06-15 22:19:51.805806000 +0200
+@@ -23,6 +23,7 @@
  import shutil
  import subprocess
  import sys
@@ -8,7 +8,7 @@
  import tempfile
  
  BOOTSTRAP_DIR = os.path.dirname(os.path.abspath(__file__))
-@@ -31,8 +32,9 @@ SRC_ROOT = os.path.dirname(os.path.dirna
+@@ -31,8 +32,9 @@
  
  is_win = sys.platform.startswith('win')
  is_linux = sys.platform.startswith('linux')
@@ -19,7 +19,7 @@
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -625,6 +627,40 @@ def write_gn_ninja(path, root_gen_dir, o
+@@ -625,6 +627,39 @@
          'base/third_party/libevent/epoll.c',
      ])
  
@@ -38,8 +38,7 @@
 +        'base/allocator/allocator_shim_default_dispatch_to_glibc.cc',
 +        'base/memory/shared_memory_posix.cc',
 +        'base/nix/xdg_util.cc',
-+        'base/process/memory_stubs.cc',
-+        #'base/process/internal_linux.cc',
++        'base/process/internal_linux.cc',
 +        'base/process/process_handle_' + platform.system().lower() + '.cc',
 +        'base/process/process_iterator_' + platform.system().lower() + '.cc',
 +        # 'base/process/process_linux.cc',

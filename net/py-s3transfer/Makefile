@@ -6,7 +6,7 @@ CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bradleythughes@fastmail.fm
+MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	Amazon S3 Transfer Manager for Python
 
 LICENSE=	APACHE20

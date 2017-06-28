@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/GutenMark-source
 USES=		compiler:c++11-lib gmake
 USE_CXXSTD=	c++11
 USE_WX=		3.0
-WX_UNICODE=	yes
 ALL_TARGET=	default
 
 PLIST_FILES=	bin/GutenMark bin/GutenSplit bin/GUItenMark \

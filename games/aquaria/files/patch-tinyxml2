@@ -1,0 +1,24 @@
+https://github.com/AquariaOSE/Aquaria/issues/59
+
+--- Aquaria/Continuity.cpp.orig	2016-06-19 23:56:27 UTC
++++ Aquaria/Continuity.cpp
+@@ -2737,7 +2737,7 @@ void Continuity::loadFileData(int slot, XMLDocument &d
+ 		}
+ 		if (doc.Parse(buf, size) != XML_SUCCESS)
+ 		{
+-			errorLog("Failed to load save data: " + teh_file + " -- Error: " + doc.GetErrorStr1());
++			errorLog("Failed to load save data: " + teh_file + " -- Error: " + doc.ErrorName());
+ 			return;
+ 		}
+ 	}
+--- Aquaria/DSQ.cpp.orig	2016-06-19 23:56:27 UTC
++++ Aquaria/DSQ.cpp
+@@ -2079,7 +2079,7 @@ void DSQ::loadModsCallback(const std::string &filename
+ 	if(!Mod::loadModXML(&d, name))
+ 	{
+ 		std::ostringstream os;
+-		os << "Failed to load mod xml: " << filename << " -- Error: " << d.GetErrorStr1();
++		os << "Failed to load mod xml: " << filename << " -- Error: " << d.ErrorName();
+ 		dsq->debugLog(os.str());
+ 		return;
+ 	}

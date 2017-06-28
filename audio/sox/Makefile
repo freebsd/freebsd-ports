@@ -3,7 +3,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	14.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -21,12 +21,14 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 CONFLICTS=	play-[0-9]*
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf pkgconfig libtool
+USES=		autoreconf libtool localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	ALSA AO AMRNB AMRWB FLAC GSM ID3TAG LADSPA LAME \
-		MAD OPUS PNG PULSEAUDIO SNDFILE TWOLAME VORBIS WAVPACK
-OPTIONS_DEFAULT=	AO FLAC GSM ID3TAG MAD OPUS PNG SNDFILE VORBIS
+OPTIONS_DEFINE=	AMRNB AMRWB FLAC GSM ID3TAG LADSPA LAME MAD OPUS PNG \
+		SNDFILE TWOLAME VORBIS WAVPACK
+OPTIONS_DEFAULT=	AO FLAC GSM ID3TAG MAD OPUS OSS PNG SNDFILE VORBIS
+OPTIONS_GROUP=	SOUND
+OPTIONS_GROUP_SOUND=	ALSA AO OSS PULSEAUDIO SNDIO
 # Default LAME to off for packages so we don't end up RESTRICTED
 .if !defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	LAME
@@ -37,8 +39,7 @@ AMRWB_DESC=	AMR Speech Codec (Wideband)
 GSM_DESC=	Use libgsm from ports (else use bundled lib)
 PNG_DESC=	PNG spectrogram creation
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread
 CONFIGURE_ARGS+=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 CONFIGURE_ARGS+=	--with-distro="${CONFIGURE_TARGET} ${PKGNAME}"
 CONFIGURE_ARGS+=	--with-gsm
@@ -76,11 +77,16 @@ FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 MAD_CONFIGURE_WITH=	mad
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 
+OSS_CONFIGURE_WITH=	oss
+
 PNG_CONFIGURE_WITH=	png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+
+SNDIO_CONFIGURE_WITH=	sndio
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 

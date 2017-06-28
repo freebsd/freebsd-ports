@@ -1,7 +1,7 @@
---- v8/BUILD.gn.orig	2017-04-19 19:07:57 UTC
+--- v8/BUILD.gn.orig	2017-06-05 19:04:29 UTC
 +++ v8/BUILD.gn
-@@ -2336,7 +2336,7 @@ v8_component("v8_libbase") {
-     sources += [ "src/base/platform/platform-posix.cc" ]
+@@ -2455,7 +2455,7 @@ v8_component("v8_libbase") {
+     ]
    }
  
 -  if (is_linux) {
@@ -9,7 +9,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -2346,6 +2346,12 @@ v8_component("v8_libbase") {
+@@ -2465,6 +2465,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
@@ -22,7 +22,7 @@
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -2479,6 +2485,7 @@ if (current_toolchain == v8_snapshot_too
+@@ -2598,6 +2604,7 @@ if (current_toolchain == v8_snapshot_toolchain) {
      sources = [
        "src/snapshot/mksnapshot.cc",
      ]

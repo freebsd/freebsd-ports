@@ -17,13 +17,12 @@ TEST_DEPENDS=	p5-Devel-Declare>=0:devel/p5-Devel-Declare \
 		p5-Lexical-Import>=0:devel/p5-Lexical-Import \
 		p5-Sub-Identify>=0:devel/p5-Sub-Identify
 
+BROKEN=		Fails to build with Perl >= 5.22
+
+DEPRECATED=	does not build with Perl >= 5.22
+EXPIRATION_DATE=2017-07-31
+
 USES=		perl5
 USE_PERL5=	modbuild
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-BROKEN=		Fails to build with Perl >= 5.22
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

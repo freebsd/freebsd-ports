@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.morettoni.net/qmail/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qmail RBL filter
 
-USES=		qmail:run
+USES=		groff qmail:run
 
 LDFLAGS?=	-s
 CFLAGS?=	-O2 -Wimplicit -Wunused -Wcomment -Wchar-subscripts -Wuninitialized \

@@ -9,6 +9,7 @@ MASTER_SITES=	http://cr.yp.to/primegen/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast library to generate prime numbers in order
 
+USES=		groff
 ALL_TARGET=	default
 
 PLIST_FILES=	bin/primes bin/primegaps \

@@ -89,6 +89,7 @@ include/nss/nss/pkcs11n.h
 include/nss/nss/pkcs11p.h
 include/nss/nss/pkcs11t.h
 include/nss/nss/pkcs11u.h
+include/nss/nss/pkcs11uri.h
 include/nss/nss/pkcs12.h
 include/nss/nss/pkcs12t.h
 include/nss/nss/pkcs7t.h

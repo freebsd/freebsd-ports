@@ -3,7 +3,7 @@
 
 PORTNAME=	quetoo
 PORTVERSION=	0.6.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://tastyspleen.net/~jdolan/ \
 		http://freebsd.nsu.ru/distfiles/

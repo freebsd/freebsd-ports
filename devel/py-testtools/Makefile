@@ -2,21 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	testtools
-PORTVERSION=	0.9.35
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://launchpadlibrarian.net/164010578/ \
-		http://www.c-s.li/ports/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johannes@perceivon.net
 COMMENT=	Extensions to the Python library's unit testing framework
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.3:devel/py-pbr
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}extras>=0.0.3:devel/py-extras
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils autoplist concurrent
+
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	api.rst for-framework-folk.rst for-test-authors.rst hacking.rst \
+		index.rst overview.rst twisted-support.rst
+
+post-install-DOCS-on:
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${CP} ${WRKSRC}/doc/*.rst ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

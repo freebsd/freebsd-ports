@@ -11,9 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Yet Another parser for binary structures
 
-BUILD_DEPENDS=	p5-Math-BigInt>=1.993:math/p5-Math-BigInt
-TEST_DEPENDS=	p5-Test-Simple>=0.96:devel/p5-Test-Simple
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

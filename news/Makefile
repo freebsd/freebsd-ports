@@ -23,6 +23,7 @@
     SUBDIR += husky-htick
     SUBDIR += husky-huskylib
     SUBDIR += husky-smapi
+    SUBDIR += husky-sqpack
     SUBDIR += ifmail
     SUBDIR += inn
     SUBDIR += knews
@@ -58,6 +59,7 @@
     SUBDIR += pgpmoose
     SUBDIR += plor
     SUBDIR += py-pynzb
+    SUBDIR += py-sabyenc
     SUBDIR += py-twistedNews
     SUBDIR += py-yenc
     SUBDIR += rawdog

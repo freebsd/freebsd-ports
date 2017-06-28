@@ -22,6 +22,8 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	jhindexer:java/javahelp
 
+BROKEN_armv6=		fails to compile: build.xml: exec returned: 1
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ktgw0316
 GH_PROJECT=	LightZone

@@ -1,3 +1,4 @@
+%%WWWDIR%%/.gitignore
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/LICENSE
@@ -7,6 +8,7 @@
 %%WWWDIR%%/carddav_common.php
 %%WWWDIR%%/carddav_discovery.php
 %%WWWDIR%%/composer.json
+%%WWWDIR%%/composer.lock
 %%WWWDIR%%/config.inc.php.dist
 %%WWWDIR%%/dbmigrations/0000-dbinit/mysql.sql
 %%WWWDIR%%/dbmigrations/0000-dbinit/postgres.sql
@@ -20,7 +22,13 @@
 %%WWWDIR%%/dbmigrations/0002-increasetextfieldlengths/mysql.sql
 %%WWWDIR%%/dbmigrations/0002-increasetextfieldlengths/postgres.sql
 %%WWWDIR%%/dbmigrations/0002-increasetextfieldlengths/sqlite3.sql
-%%WWWDIR%%/foo.php
+%%WWWDIR%%/dbmigrations/0003-fixtimestampdefaultvalue/README.md
+%%WWWDIR%%/dbmigrations/0003-fixtimestampdefaultvalue/mysql.sql
+%%WWWDIR%%/dbmigrations/0003-fixtimestampdefaultvalue/postgres.sql
+%%WWWDIR%%/dbmigrations/0003-fixtimestampdefaultvalue/sqlite3.sql
+%%WWWDIR%%/dbmigrations/0004-fixtimestampdefaultvalue/mysql.sql
+%%WWWDIR%%/dbmigrations/0004-fixtimestampdefaultvalue/postgres.sql
+%%WWWDIR%%/dbmigrations/0004-fixtimestampdefaultvalue/sqlite3.sql
 %%WWWDIR%%/localization/cs_CZ.inc
 %%WWWDIR%%/localization/de_DE.inc
 %%WWWDIR%%/localization/en_US.inc
@@ -123,14 +131,14 @@
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/Binary.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/Boolean.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/FlatText.php
-%%WWWDIR%%/vendor/sabre/vobject/lib/Property/Float.php
+%%WWWDIR%%/vendor/sabre/vobject/lib/Property/FloatValue.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/ICalendar/CalAddress.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/ICalendar/Date.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/ICalendar/DateTime.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/ICalendar/Duration.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/ICalendar/Period.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/ICalendar/Recur.php
-%%WWWDIR%%/vendor/sabre/vobject/lib/Property/Integer.php
+%%WWWDIR%%/vendor/sabre/vobject/lib/Property/IntegerValue.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/Text.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/Time.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/Property/Unknown.php
@@ -187,6 +195,7 @@
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerProcessMessageTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerProcessReplyTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerTester.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerTimezoneInParseEventInfoWithoutMasterTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/BrokerUpdateEventTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/EvolutionTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ITip/MessageTest.php
@@ -217,6 +226,7 @@
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/PropertyTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/ReaderTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/ByMonthInDailyTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/BySetPosHangTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/ExpandFloatingTimesTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/FifthTuesdayProblemTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/IncorrectExpandTest.php
@@ -227,6 +237,7 @@
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/MissingOverriddenTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/NoInstancesTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/OverrideFirstEventTest.php
+%%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/EventIterator/SameDateForRecurringEventsTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/RDateIteratorTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/Recur/RRuleIteratorTest.php
 %%WWWDIR%%/vendor/sabre/vobject/tests/VObject/RecurrenceIterator/UntilRespectsTimezoneTest.ics

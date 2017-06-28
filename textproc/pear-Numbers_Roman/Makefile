@@ -8,6 +8,6 @@ CATEGORIES=	textproc devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR methods for converting to and from Roman Numerals
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

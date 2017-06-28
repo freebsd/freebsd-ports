@@ -25,7 +25,4 @@ and important ones have been audited and tested.
 If you have issues with Python 3, please set
 ansible_python_interpreter=%%LOCALBASE%%/bin/python2
 
-Ansible 2 requires that lang/python port is built
-with SEM option enabled, which is the default
-
 ===============================================================================

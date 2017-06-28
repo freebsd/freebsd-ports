@@ -14,6 +14,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 
 GNU_CONFIGURE=	yes
 
+USES=		groff
 USE_RC_SUBR=	dnsproxy
 
 PLIST_FILES=	sbin/dnsproxy etc/${PORTNAME}/dnsproxy.conf.sample \

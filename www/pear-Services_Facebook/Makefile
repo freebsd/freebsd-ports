@@ -11,7 +11,7 @@ COMMENT=	PHP interface to Facebook's API
 BUILD_DEPENDS=	${PEARDIR}/Validate.php:devel/pear-Validate
 RUN_DEPENDS=	${PEARDIR}/Validate.php:devel/pear-Validate
 
-USES=	pear
+USES=		pear php
 USE_PHP=	curl
 
 .include <bsd.port.mk>

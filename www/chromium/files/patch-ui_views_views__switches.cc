@@ -1,7 +1,7 @@
---- ui/views/views_switches.cc.orig	2017-04-19 19:06:55 UTC
+--- ui/views/views_switches.cc.orig	2017-06-05 19:03:30 UTC
 +++ ui/views/views_switches.cc
-@@ -18,7 +18,7 @@ const char kDisableViewsRectBasedTargeti
-     "disable-views-rect-based-targeting";
+@@ -21,7 +21,7 @@ const char kDisableViewsRectBasedTargeting[] =
+ const char kDrawViewBoundsRects[] = "draw-view-bounds-rects";
  
  bool IsRectBasedTargetingEnabled() {
 -#if defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_LINUX)

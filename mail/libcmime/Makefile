@@ -12,7 +12,7 @@ COMMENT=	Lightweight C mime library
 
 LICENSE=	MIT
 
-USES=		bison cmake pkgconfig
+USES=		bison cmake:noninja pkgconfig
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	--no-warn-unused-cli
 

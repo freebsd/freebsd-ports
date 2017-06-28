@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		docker-machine
-PORTVERSION=		0.11.0
+PORTVERSION=		0.12.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=		sysutils
 
@@ -23,8 +23,6 @@ GH_PROJECT=	machine
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	github.com/${GH_ACCOUNT}/${GH_PROJECT}/cmd
-
-STRIP=		# stripping can break go binaries
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/bin/cmd ${STAGEDIR}${PREFIX}/bin/docker-machine

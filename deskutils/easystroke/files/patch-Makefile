@@ -1,6 +1,30 @@
---- Makefile.orig	2013-05-18 19:53:39.780480687 +0200
-+++ Makefile	2013-05-18 19:54:36.579483230 +0200
-@@ -82,9 +82,9 @@
+--- Makefile.orig	2013-03-27 15:52:38 UTC
++++ Makefile
+@@ -12,19 +12,15 @@
+ #  OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+ #  CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ 
+-DESTDIR  =
+-PREFIX   = /usr/local
+ BINDIR   = $(PREFIX)/bin
+ ICONDIR  = $(PREFIX)/share/icons/hicolor/scalable/apps
+ MENUDIR  = $(PREFIX)/share/applications
+ LOCALEDIR= $(PREFIX)/share/locale
+ DFLAGS   =
+-OFLAGS   = -O2
+-AOFLAGS  = -O3
+-STROKEFLAGS  = -Wall -std=c99 $(DFLAGS)
+-CXXFLAGS = -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" `pkg-config gtkmm-3.0 dbus-glib-1 --cflags`
+-CFLAGS   = -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" `pkg-config gtk+-3.0 --cflags` -DGETTEXT_PACKAGE='"easystroke"'
+-LDFLAGS  = $(DFLAGS)
++STROKEFLAGS  = -Wall -std=c99 $(CFLAGS)
++CXXFLAGS += -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" `pkg-config gtkmm-3.0 dbus-glib-1 --cflags`
++CFLAGS   += -Wall $(DFLAGS) -DLOCALEDIR=\"$(LOCALEDIR)\" `pkg-config gtk+-3.0 --cflags` -DGETTEXT_PACKAGE='"easystroke"'
++LDFLAGS  += $(DFLAGS)
+ 
+ LIBS     = $(DFLAGS) -lboost_serialization -lX11 -lXext -lXi -lXfixes -lXtst `pkg-config gtkmm-3.0 dbus-glib-1 --libs`
+ 
+@@ -82,9 +78,9 @@ gui.c: gui.glade
  easystroke.desktop: easystroke.desktop.in $(MOFILES)
  	intltool-merge po/ -d -u $< $@
  

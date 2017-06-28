@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dtcms
+# REQUIRE: rpcbind
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable dtcms:
+#
+# dtcms_enable=YES
+
+. /etc/rc.subr
+
+name=dtcms
+rcvar=dtcms_enable
+desc="CDE calendar manager service daemon"
+start_precmd="force_depend rpcbind || exit 1"
+
+load_rc_config $name
+
+: ${dtcms_enable:=NO}
+
+command=/usr/sbin/daemon
+pidfile=/var/run/dtcms.pid
+command_args="-P $pidfile %%PREFIX%%/dt/bin/rpc.cmsd"
+
+run_rc_command $1

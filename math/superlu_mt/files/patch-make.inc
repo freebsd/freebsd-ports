@@ -1,62 +1,57 @@
---- make.inc.orig	2008-02-22 22:45:36 UTC
+--- make.inc.orig	2015-04-30 00:46:42 UTC
 +++ make.inc
-@@ -16,13 +16,13 @@
- #
- #  The machine (platform) identifier to append to the library names
- #
--PLAT = _sp
-+PLAT = _PTHREAD
- 
- #
- #  The name of the libraries to be created/linked to
- #
--TMGLIB       = libtmglib.a
--SUPERLULIB   = libsuperlu_mt$(PLAT).a
-+TMGLIB       = libtmg.a
-+SUPERLULIB   = libsuperlu_mt.a
- 
- # 
- # If you don't have ESSL, you can use the following blaslib instead:
-@@ -30,7 +30,7 @@ SUPERLULIB   = libsuperlu_mt$(PLAT).a
- # which may be slower than ESSL
- #
- BLASDEF	  = -DUSE_VENDOR_BLAS
--BLASLIB   = -lessl
-+BLASLIB   = %%BLAS%%
- #BLASLIB   = ../lib/libblas$(PLAT).a
- MATHLIB	  = -lm 
- MPLIB	  = -lpthread
-@@ -38,7 +38,7 @@ MPLIB	  = -lpthread
+@@ -22,7 +22,7 @@ PLAT = _PTHREAD
+ TMGLIB       	= libtmglib$(PLAT).a
+ SUPERLULIB   	= libsuperlu_mt$(PLAT).a
+ BLASDEF	        = -DUSE_VENDOR_BLAS
+-BLASLIB		= -L/usr/lib -lf77blas -latlas
++BLASLIB		= %%BLAS%%
+ #BLASLIB = ../lib/libblas$(PLAT).a
+ MATHLIB		= -lm 
+ MPLIB		= -lpthread
+@@ -31,7 +31,7 @@ MPLIB		= -lpthread
  #  The archiver and the flag(s) to use when building archive (library)
  #  If your system has no ranlib, set RANLIB = echo.
  #
--ARCH         = ar
-+ARCMD        = ar
- ARCHFLAGS    = cr
- RANLIB       = ranlib
+-ARCH          	= ar
++ARCMD          	= ar
+ ARCHFLAGS     	= cr
+ RANLIB       	= ranlib
  
-@@ -46,16 +46,17 @@ RANLIB       = ranlib
- PREDEFS      	= -D_PTHREAD
+@@ -40,8 +40,8 @@ RANLIB       	= ranlib
+ # Definitions used by CPP:
+ PREDEFS      	= -D__PTHREAD  ## -DDEBUGlevel=0 -DPRNTlevel=0
  #
+-CC           	= gcc
+-CFLAGS       	= $(PREDEFS) -g #-O3
++CC           	= %%CC%%
++CFLAGS       	= $(PREDEFS) %%CFLAGS%%
+ # Uncomment the following to use 64-bit integer
+ CFLAGS          += -D_LONGINT
  
--CC           = xlc_r
--CFLAGS       = -qarch=pwr5 -qalias=allptrs $(PREDEFS) -DPRNTlevel=0 -O3
--FORTRAN	     = xlf
--FFLAGS       = -O3 -qarch=pwr5
--LOADER       = xlc_r
--LOADOPTS     = -bmaxdata:0x80000000
-+CC           = %%CC%%
-+CFLAGS       = $(PREDEFS) %%CPPFLAGS%% %%CFLAGS%%
-+FORTRAN      = %%FC%%
-+FFLAGS       = %%FFLAGS%%
-+LOADER       = %%CC%%
-+LOADOPTS     = %%LDFLAGS%%
-+NOOPTS       = %%FPIC%%
+@@ -49,19 +49,19 @@ CFLAGS          += -D_LONGINT
+ # There are a few files that should NOT be optimized, which appear in the
+ # end of SRC/Makefile, taking the flag $(NOOPTS)
+ # NOOPTS should be defined to explicitly turn off any optimization.
+-NOOPTS	     	= -O0
++NOOPTS	     	= -O0 %%FPIC%%
+ 
+-BLASOPTS	=
++BLASOPTS	= 
+ 
+ ############################################################################
+ 
+-FORTRAN		= gfortran
+-FFLAGS		= -O -fdefault-integer-8
++FORTRAN		= %%FC%%
++FFLAGS		= %%FFLAGS%% -fdefault-integer-8
+ 
+ ############################################################################
+ 
+-LOADER       	= gcc
+-LOADOPTS     	= -O #-pthread
++LOADER       	= %%CC%%
++LOADOPTS     	= -O %%LDFLAGS%%
+ 
+ ############################################################################
  #
- #  C preprocessor defs for compilation for the Fortran interface
- #  (-DNoChange, -DAdd_, -DAdd__, or -DUpCase)
- #
--CDEFS        = -DNoChange
-+CDEFS        = -DAdd_
- 
- 

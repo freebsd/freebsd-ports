@@ -1,0 +1,3 @@
+Multidicts are useful for working with HTTP headers, URL query args etc.
+
+WWW: https://github.com/aio-libs/multidict

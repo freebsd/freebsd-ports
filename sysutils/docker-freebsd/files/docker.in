@@ -19,6 +19,7 @@ load_rc_config $name
 : ${docker_dir=/usr/docker}
 : ${docker_nat_pf=YES}
 : ${docker_nat_iface=NONE}
+: ${docker_flags=}
 
 docker_start()
 {
@@ -36,7 +37,7 @@ docker_start()
 	fi
 
 	echo "Starting docker..."
-	daemon -p /var/run/docker.pid ${command} -d -e jail -s zfs -g ${docker_dir} -D >/var/log/docker.log 2>/var/log/docker.log
+	daemon -p /var/run/docker.pid ${command} -d -e jail -s zfs -g ${docker_dir} -D ${docker_flags} >/var/log/docker.log 2>/var/log/docker.log
 
 	# Check for linux 64bit support and enable
 	kldstat | grep -q 'linux64'

@@ -202,21 +202,22 @@ anope/lib/modules/os_sxline.so
 anope/lib/modules/os_update.so
 anope/lib/modules/plexus.so
 anope/lib/modules/ratbox.so
+anope/lib/modules/unreal4.so
 anope/lib/modules/unreal.so
 anope/lib/modules/webcpanel.so
-anope/locale/ca_ES/LC_MESSAGES/anope.mo
-anope/locale/de_DE/LC_MESSAGES/anope.mo
-anope/locale/el_GR/LC_MESSAGES/anope.mo
-anope/locale/en_US/LC_MESSAGES/anope.mo
-anope/locale/es_ES/LC_MESSAGES/anope.mo
-anope/locale/fr_FR/LC_MESSAGES/anope.mo
-anope/locale/hu_HU/LC_MESSAGES/anope.mo
-anope/locale/it_IT/LC_MESSAGES/anope.mo
-anope/locale/nl_NL/LC_MESSAGES/anope.mo
-anope/locale/pl_PL/LC_MESSAGES/anope.mo
-anope/locale/pt_PT/LC_MESSAGES/anope.mo
-anope/locale/ru_RU/LC_MESSAGES/anope.mo
-anope/locale/tr_TR/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/ca_ES/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/de_DE/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/el_GR/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/en_US/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/es_ES/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/fr_FR/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/hu_HU/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/it_IT/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/nl_NL/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/pl_PL/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/pt_PT/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/ru_RU/LC_MESSAGES/anope.mo
+%%NLS%%anope/locale/tr_TR/LC_MESSAGES/anope.mo
 @dir(nobody,,) anope/data/backups
 @dir(nobody,,) anope/data
 @dir(nobody,,) anope/logs

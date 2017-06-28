@@ -6,8 +6,6 @@ PKGNAMESUFFIX=	-nightly
 DISTNAME=	#
 DISTFILES=	${BOOTSTRAP_FILES}
 
-MAINTAINER=	dumbbell@FreeBSD.org
-
 MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
@@ -19,6 +17,8 @@ GH_TUPLE=	rust-lang:rust:282fa87 \
 		rust-lang:jemalloc:11bfb0d:jemalloc/src/jemalloc \
 		rust-lang:libc:8d8264b:liblibc/src/liblibc \
 		rust-lang:rust-installer:4f99485:rust_installer/src/rust-installer
+
+BROKEN=		needs to be adapted after changes in lang/rust
 
 CONFLICTS_BUILD=	rust # see FIXME in `pre-fetch` in lang/rust/Makefile
 CONFLICTS_INSTALL=	rust

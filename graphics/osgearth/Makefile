@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	1
 CATEGORIES=	graphics geography
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	C++ terrain rendering toolkit for OpenSceneGraph
 
 LICENSE=	LGPL3
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gwaldron
 
 USE_LDCONFIG=	yes
-USES=		cmake gmake pkgconfig sqlite
+USES=		cmake pkgconfig sqlite
 PLIST_SUB=	OSGVERSION=3.4.0
 
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:PATH=${LOCALBASE}/include \

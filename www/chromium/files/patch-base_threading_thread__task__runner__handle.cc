@@ -1,4 +1,4 @@
---- base/threading/thread_task_runner_handle.cc.orig	2017-04-19 19:06:28 UTC
+--- base/threading/thread_task_runner_handle.cc.orig	2017-06-05 19:03:01 UTC
 +++ base/threading/thread_task_runner_handle.cc
 @@ -7,6 +7,7 @@
  #include <utility>
@@ -16,7 +16,7 @@
  // static
  ScopedClosureRunner ThreadTaskRunnerHandle::OverrideForTesting(
      scoped_refptr<SingleThreadTaskRunner> overriding_task_runner) {
-@@ -77,6 +79,7 @@ ScopedClosureRunner ThreadTaskRunnerHand
+@@ -77,6 +79,7 @@ ScopedClosureRunner ThreadTaskRunnerHandle::OverrideFo
        base::Passed(&overriding_task_runner),
        base::Unretained(ttrh->task_runner_.get())));
  }

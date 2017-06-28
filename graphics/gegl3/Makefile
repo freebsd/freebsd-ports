@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gegl
-PORTVERSION=	0.3.4
-PORTREVISION=	6
+PORTVERSION=	0.3.18
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 PKGNAMESUFFIX=	3
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.a1//}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
@@ -20,19 +18,17 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 LIB_DEPENDS=	libbabl-0.1.so:x11/babl \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		cpe gettext gmake libtool pathfix pkgconfig shebangfix tar:bzip2
+USES=		cpe gettext gmake libtool localbase pathfix pkgconfig \
+		shebangfix tar:bzip2
 USE_GNOME=	glib20 intltool introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_execinfo_h=no
 CONFIGURE_ARGS=	--without-vala --disable-docs
-CONFIGURE_ARGS+=--without-mrg
+CONFIGURE_ARGS+=--without-mrg --without-lensfun
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-GEGL_MINOR=	304
+GEGL_MINOR=	318
 GEGL_VER=	0.3
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}" GEGL_VER=${GEGL_VER}
 
@@ -83,7 +79,8 @@ LCMS2_CONFIGURE_WITH=	lcms
 LUA_USES=		lua
 LUA_CONFIGURE_WITH=	lua
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+			libImath-2_2.so:graphics/ilmbase
 OPENEXR_CONFIGURE_WITH=	openexr
 
 RAW_LIB_DEPENDS=	libraw.so:graphics/libraw

@@ -1,0 +1,11 @@
+--- share/bcih/Makefile.in.orig	2017-06-01 20:13:36 UTC
++++ share/bcih/Makefile.in
+@@ -2,7 +2,7 @@ topsrc = @top_srcdir@
+ 
+ CC = @CC@
+ HOSTCC = @HOSTCC@
+-INSTALL_DATA = cp -fp
++INSTALL_DATA = @INSTALL_DATA@
+ swap_ends = @swap_ends@
+ 
+ ifeq ($(HOSTCC),)

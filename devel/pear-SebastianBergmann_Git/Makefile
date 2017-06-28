@@ -17,6 +17,8 @@ BUILD_DEPENDS=	pear>=1.9.4:devel/pear \
 RUN_DEPENDS=	pear>=1.9.4:devel/pear \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:devel/pear-channel-phpunit
 
+BROKEN=		unfetchable, redirects to https://phpunit.de/
+
 USES=	pear
 PEAR_CHANNEL=	phpunit
 

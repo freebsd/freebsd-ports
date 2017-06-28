@@ -18,6 +18,9 @@ BUILD_DEPENDS=	ghc:lang/ghc
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libffi.so.6:devel/libffi
 
+DEPRECATED=	Mastersite disappeared
+EXPIRATION_DATE=	2017-08-21
+
 USES=		perl5 gmake tar:tgz
 USE_PERL5=	build
 WRKSRC=		${WRKDIR}/WSpace

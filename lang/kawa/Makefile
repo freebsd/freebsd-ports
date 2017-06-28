@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	kawa
-PORTVERSION=	2.3
+PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	lang scheme java
 MASTER_SITES=	GNU
 
@@ -11,7 +12,7 @@ COMMENT=	Java-based Scheme implementation
 
 LICENSE=	MIT
 
-USES=		gmake readline
+USES=		gmake groff readline
 USE_JAVA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \

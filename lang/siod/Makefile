@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small footprint implementation of the Scheme programming language
 
+BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on output
+BROKEN_mips64=		fails to link: final link failed: Nonrepresentable section on output
+
 USE_LDCONFIG=	yes
 
 NO_WRKSUBDIR=	yes

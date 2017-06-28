@@ -595,3 +595,15 @@ lib/libhashcat.so
 %%DATADIR%%/OpenCL/markov_le.cl
 %%DATADIR%%/hashcat.hcstat
 %%DATADIR%%/hashcat.hctune
+%%DATADIR%%/OpenCL/m00600_a0.cl
+%%DATADIR%%/OpenCL/m00600_a1.cl
+%%DATADIR%%/OpenCL/m00600_a3.cl
+%%DATADIR%%/OpenCL/m15300.cl
+%%DATADIR%%/OpenCL/m15400_a0.cl
+%%DATADIR%%/OpenCL/m15400_a1.cl
+%%DATADIR%%/OpenCL/m15400_a3.cl
+%%DATADIR%%/OpenCL/m15500_a0.cl
+%%DATADIR%%/OpenCL/m15500_a1.cl
+%%DATADIR%%/OpenCL/m15500_a3.cl
+%%DATADIR%%/OpenCL/m15600.cl
+%%DATADIR%%/OpenCL/m15700.cl

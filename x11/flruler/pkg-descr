@@ -1,0 +1,9 @@
+A program for measuring the pixel size of on-screen elements. Intended for
+GUI debugging to verify widget separations and sizes, though may also be
+used for general computer graphics debugging purposes, including measuring
+pixel distances of images, web applications, etc.
+
+You can easily make copies of the ruler and reoriented it via either the
+keyboard or mouse.
+
+WWW: http://seriss.com/people/erco/fltk/flruler/

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uncrustify
-PORTVERSION=	0.64
+PORTVERSION=	0.65
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,8 +12,13 @@ COMMENT=	Highly configurable source code beautifier
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_mips=		fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
+BROKEN_mips64=		fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
+BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
+
 NO_WRKSUBDIR=	yes
 USES=		cmake:outsource
+CMAKE_ARGS=	-DCURRENT_VERSION="${PORTVERSION}"
 TEST_TARGET=	test
 
 PORTDOCS=	*

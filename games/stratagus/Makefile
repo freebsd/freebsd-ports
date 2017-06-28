@@ -3,6 +3,7 @@
 
 PORTNAME=	stratagus
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -14,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtolua++-${LUA_VER}.so:lang/tolua++
+
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=gnu++0x"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Wargus

@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2016-12-22 22:14:17 UTC
+--- src/CMakeLists.txt.orig	2017-06-03 18:42:10 UTC
 +++ src/CMakeLists.txt
-@@ -344,11 +344,6 @@ else()
+@@ -325,11 +325,6 @@ else()
  		endif(HAVE_LIBRT)
  	endif(APPLE)
  
@@ -12,12 +12,11 @@
  	# Prefer local iconv if installed
  	find_library(ICONV_LIBRARY iconv)
  	mark_as_advanced(ICONV_LIBRARY)
-@@ -760,7 +755,7 @@ else()
- 		set(OTHER_FLAGS "${OTHER_FLAGS} -mthreads -fexceptions")
- 	endif()
+@@ -756,7 +751,6 @@ else()
  
--	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -ffast-math -Wall -pipe -funroll-loops")
-+	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -Wall -pipe -funroll-loops")
- 	if(APPLE)
- 		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os")
+ 	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -Wall -pipe -funroll-loops")
+ 	if(CMAKE_SYSTEM_NAME MATCHES "(Darwin|FreeBSD)")
+-		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os")
  	else()
+ 		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -ffast-math -fomit-frame-pointer")
+ 	endif(CMAKE_SYSTEM_NAME MATCHES "(Darwin|FreeBSD)")

@@ -5,4 +5,4 @@ principles. These were originally designed by Kent Beck, creator of extreme
 programming software development methodology, for Smalltalk's SUnit. It allows
 writing tests, checking results and automated testing in Ruby.
 
-WWW: https://github.com/test-unit/test-unit/
+WWW: https://github.com/test-unit/test-unit

@@ -13,6 +13,7 @@ COMMENT=	Python program for SSL stripping
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl
 
+NO_ARCH=	yes
 USES=		python twisted:web
 USE_PYTHON=	distutils autoplist
 

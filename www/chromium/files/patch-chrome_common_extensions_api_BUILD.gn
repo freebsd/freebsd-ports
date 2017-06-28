@@ -1,6 +1,6 @@
---- chrome/common/extensions/api/BUILD.gn.orig	2017-05-02 19:02:48 UTC
+--- chrome/common/extensions/api/BUILD.gn.orig	2017-06-05 19:03:03 UTC
 +++ chrome/common/extensions/api/BUILD.gn
-@@ -116,7 +116,7 @@ if (is_chromeos) {
+@@ -121,7 +121,7 @@ if (is_chromeos) {
      "wallpaper.json",
      "wallpaper_private.json",
    ]

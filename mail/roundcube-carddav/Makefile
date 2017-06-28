@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	carddav
-PORTVERSION=	2.0.0
-DISTVERSIONPREFIX=${PORTNAME}_
+PORTVERSION=	2.0.4
 CATEGORIES=	mail
-MASTER_SITES=	https://github.com/blind-coder/rcmcarddav/releases/download/${PORTNAME}_${PORTVERSION}/
+MASTER_SITES=	https://github.com/blind-coder/rcmcarddav/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	roundcube-
-DISTNAME=	rcm${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Roundcube CardDAV plugin
@@ -16,6 +14,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	roundcube>=1.0:mail/roundcube
 RUN_DEPENDS=	roundcube>=1.0:mail/roundcube
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 NO_ARCH=	yes

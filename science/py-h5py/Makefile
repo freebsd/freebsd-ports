@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	h5py
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -30,6 +30,9 @@ PORTEXAMPLES=	multiprocessing_example.py swmr_multiprocess.py \
 		swmr_inotify_example.py  threading_example.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/setup_build.py
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

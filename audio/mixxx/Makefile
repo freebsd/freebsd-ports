@@ -4,7 +4,7 @@
 PORTNAME=	mixxx
 PORTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
 
@@ -28,7 +28,8 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-BROKEN_aarch64=		Fails to compile: Exception("invalid machine type")
+BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
+BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprotobuf, libchromaprint, libmp4, and libwavpack
 
 USES=		scons iconv pkgconfig
 USE_QT4=	corelib gui network opengl script scripttools sql svg \

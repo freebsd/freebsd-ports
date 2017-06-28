@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -42,12 +42,14 @@
+@@ -39,12 +39,14 @@
  
  #if defined(OS_LINUX) && !defined(OS_CHROMEOS)
  #include <gnu/libc-version.h>

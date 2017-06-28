@@ -20,6 +20,8 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 		libtiff.so:graphics/tiff \
 		libfltk.so:x11-toolkits/fltk
 
+BROKEN_powerpc64=	fails to link: ld: undefined reference to symbol __gxx_personality_v0(try adding -lstdc++)
+
 OPTIONS_DEFINE=	OYRANOS PRINT
 OYRANOS_DESC=	ICC profile support via Oyranos
 PRINT_DESC=	Gutenprint (gimp-print) plugin
@@ -46,7 +48,7 @@ CONFIGURE_ENV+=	ac_cv_path_OY_CONFIG=no
 .endif
 
 .if ${PORT_OPTIONS:MPRINT}
-LIB_DEPENDS+=	libgutenprint.so:print/gutenprint-base
+LIB_DEPENDS+=	libgutenprint.so:print/gutenprint
 PLIST_SUB+=	PRINT=""
 .else
 CONFIGURE_ARGS+=	--disable-print

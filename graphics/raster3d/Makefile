@@ -16,9 +16,6 @@ LICENSE=	ART20
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libtiff.so:graphics/tiff
 
-OPTIONS_DEFINE=	IMAGEMAGICK DOCS EXAMPLES
-OPTIONS_DEFAULT=IMAGEMAGICK
-
 USES=		fortran
 MAKE_ARGS=	INCDIRS="-I${LOCALBASE}/include" LIBDIRS="-L${LOCALBASE}/lib" \
 		CC="${CC}" CFLAGS="${CFLAGS}" FC="${FC}" FFLAGS="${FFLAGS}" \
@@ -29,36 +26,37 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-DLINUX -DNETWORKBYTEORDER -Dgfortran
 FFLAGS+=	-fno-range-check -ffixed-line-length-132
 
-IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	IMAGEMAGICK DOCS EXAMPLES
+OPTIONS_DEFAULT=IMAGEMAGICK
 OPTIONS_SUB=		yes
 
-.include <bsd.port.options.mk>
+IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
 
 do-install:
-.for install_file in avs2ps balls normal3d rastep render ribbon rings3d rods
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${install_file} ${STAGEDIR}${PREFIX}/bin
+.for f in avs2ps balls normal3d rastep render ribbon rings3d rods
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.for install_file in worms
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${install_file} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/worms ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/*.l ${STAGEDIR}${MANLPREFIX}/man/manl
+	@${MKDIR} ${STAGEDIR}${DATADIR}/materials
+	${INSTALL_DATA} ${WRKSRC}/materials/* ${STAGEDIR}${DATADIR}/materials
+
+do-install-IMAGEMAGICK-on:
+.for f in label3d stereo3d
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if ${PORT_OPTIONS:MIMAGEMAGICK}
-.for install_file in label3d stereo3d
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${install_file} ${STAGEDIR}${PREFIX}/bin
-.endfor
-.endif
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.l ${STAGEDIR}${MANLPREFIX}/man/manl
-	${MKDIR} ${STAGEDIR}${DATADIR}/materials
-	cd ${WRKSRC}/materials && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}/materials
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} R3D_manual.pdf ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	cd ${WRKSRC}/html && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/html
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/R3D_manual.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/* ${STAGEDIR}${DOCSDIR}/html
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/msms/CVS
-.endif
 
 .include <bsd.port.mk>

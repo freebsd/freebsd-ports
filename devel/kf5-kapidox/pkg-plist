@@ -47,6 +47,8 @@ bin/kapidox_generate
 %%PYTHON_SITELIBDIR%%/kapidox/doxyfilewriter.%%PYC_SUFFIX%%
 %%PYTHON_SITELIBDIR%%/kapidox/generator.py
 %%PYTHON_SITELIBDIR%%/kapidox/generator.%%PYC_SUFFIX%%
+%%PYTHON_SITELIBDIR%%/kapidox/hlfunctions.py
+%%PYTHON_SITELIBDIR%%/kapidox/hlfunctions.%%PYC_SUFFIX%%
 %%PYTHON_SITELIBDIR%%/kapidox/models.py
 %%PYTHON_SITELIBDIR%%/kapidox/models.%%PYC_SUFFIX%%
 %%PYTHON_SITELIBDIR%%/kapidox/preprocessing.py

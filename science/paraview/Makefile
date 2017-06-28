@@ -3,6 +3,7 @@
 
 PORTNAME=	paraview
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -41,7 +42,7 @@ USE_GL=		gl
 USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
-USES=		alias desktop-file-utils cmake:outsource execinfo gmake jpeg python shebangfix
+USES=		alias desktop-file-utils cmake:outsource execinfo jpeg python shebangfix
 INSTALLS_ICONS=	yes
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \

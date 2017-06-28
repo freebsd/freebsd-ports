@@ -1,4 +1,4 @@
---- base/sys_info_posix.cc.orig	2017-04-19 19:06:28 UTC
+--- base/sys_info_posix.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/sys_info_posix.cc
 @@ -35,7 +35,7 @@
  
@@ -9,7 +9,7 @@
  int NumberOfProcessors() {
    // sysconf returns the number of "logical" (not "physical") processors on both
    // Mac and Linux.  So we get the number of max available "logical" processors.
-@@ -128,7 +128,7 @@ bool GetDiskSpaceInfo(const base::FilePa
+@@ -128,7 +128,7 @@ bool GetDiskSpaceInfo(const base::FilePath& path,
  
  namespace base {
  

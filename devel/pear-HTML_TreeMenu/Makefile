@@ -8,6 +8,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides an API to create a HTML tree
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

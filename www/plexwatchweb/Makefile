@@ -3,13 +3,14 @@
 
 PORTNAME=	plexWatchWeb
 PORTVERSION=	1.5.4.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	ultima1252@gmail.com
 COMMENT=	Web front-end for plexWatch
 
-RUN_DEPENDS=	multimedia/plexwatch>=0.1.6:multimedia/plexwatch
+RUN_DEPENDS=	plexWatch>=0.1.6:multimedia/plexwatch
 
 USE_PHP=	curl json session simplexml sqlite3
 

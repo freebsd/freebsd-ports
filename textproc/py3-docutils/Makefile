@@ -3,7 +3,9 @@
 
 MASTERDIR=	${.CURDIR}/../py-docutils
 
-USES=	python:3.3+
+PORTSCOUT=	ignore:1
+
+USES=		python:3.3+
 
 PYGMENTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py3-pygments
 

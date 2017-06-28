@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 BUILD_DEPENDS=	clang39:devel/llvm39
 RUN_DEPENDS=	clang39:devel/llvm39
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
+
 USES=		cmake:outsource ncurses python:run shebangfix
 USE_GITHUB=	yes
 

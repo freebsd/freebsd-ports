@@ -8,6 +8,6 @@ CATEGORIES=	devel pear
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Engine for performing and rendering text diffs
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

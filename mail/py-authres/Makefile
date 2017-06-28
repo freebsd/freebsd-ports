@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	authres
-PORTVERSION=	0.800
+PORTVERSION=	0.900
 CATEGORIES=	mail python
-MASTER_SITES=	http://launchpad.net/authentication-results-python/${PORTVERSION}/0.8/+download/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Python module for RFC 5451 Authentication-Results headers
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 

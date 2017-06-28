@@ -18,8 +18,8 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-alsalib --without-arts
 
-BROKEN_sparc64=	Does not compile on sparc64
-BROKEN_powerpc64=	Does not build on powerpc64
+BROKEN_powerpc64=	fails to compile on powerpc64: convert_inc.c: conflicting types for 'C_FLOAT_PCM32SBEPM'
+BROKEN_sparc64=		fails to compile on sparc64
 
 OPTIONS_DEFINE=		DOUBLE_SAMPLES ESOUND JACK LADSPA OSS PORTAUDIO \
 			PULSEAUDIO SAMPLERATE SDL SNDFILE NLS

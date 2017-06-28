@@ -3,7 +3,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.8.12
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows/${PORTVERSION}
 PKGNAMESUFFIX=	28-${WXGTK_FLAVOR}
@@ -81,7 +81,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 .if ${WXGTK_FLAVOR} != "gtk2-contrib-common"
 USE_WX=		2.8
 RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/stc/stc.h:x11-toolkits/wxgtk28-contrib-common
-WX_UNICODE=	yes
 
 pre-configure:
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \

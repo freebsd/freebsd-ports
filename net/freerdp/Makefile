@@ -3,7 +3,7 @@
 
 PORTNAME=	freerdp
 PORTVERSION=	2.0.0.g2016.11.24
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	bsdports@kyle-evans.net

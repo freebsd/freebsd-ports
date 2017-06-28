@@ -1,7 +1,4 @@
-# disable build time stamp in favor of reproducible build
-# except building with DEBUG
-==============================================================
---- server/buildmark.c.orig	2016-07-03 16:09:18 UTC
+--- server/buildmark.c.orig	2017-06-09 18:42:01 UTC
 +++ server/buildmark.c
 @@ -17,6 +17,9 @@
  #include "ap_config.h"

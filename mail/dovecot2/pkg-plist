@@ -229,6 +229,7 @@ include/dovecot/imap-seqset.h
 include/dovecot/imap-settings.h
 include/dovecot/imap-state.h
 include/dovecot/imap-status.h
+include/dovecot/imap-sync-private.h
 include/dovecot/imap-sync.h
 include/dovecot/imap-url.h
 include/dovecot/imap-urlauth-backend.h
@@ -370,6 +371,7 @@ include/dovecot/mailbox-list-fs.h
 include/dovecot/mailbox-list-index-storage.h
 include/dovecot/mailbox-list-index-sync.h
 include/dovecot/mailbox-list-index.h
+include/dovecot/mailbox-list-iter-private.h
 include/dovecot/mailbox-list-iter.h
 include/dovecot/mailbox-list-maildir.h
 include/dovecot/mailbox-list-notify-tree.h
@@ -462,6 +464,7 @@ include/dovecot/ostream-metawrap.h
 include/dovecot/ostream-null.h
 include/dovecot/ostream-private.h
 include/dovecot/ostream-rawlog.h
+include/dovecot/ostream-unix.h
 include/dovecot/ostream-zlib.h
 include/dovecot/ostream.h
 include/dovecot/passdb-blocking.h
@@ -505,6 +508,7 @@ include/dovecot/push-notification-triggers.h
 include/dovecot/push-notification-txn-mbox.h
 include/dovecot/push-notification-txn-msg.h
 include/dovecot/qp-decoder.h
+include/dovecot/qp-encoder.h
 include/dovecot/quota-fs.h
 include/dovecot/quota-plugin.h
 include/dovecot/quota-private.h

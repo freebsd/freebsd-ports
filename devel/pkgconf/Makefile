@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkgconf
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.dereferenced.org/pkgconf/ \
@@ -14,6 +14,8 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to help to configure compiler and linker flags
 
 LICENSE=	ISCL
+
+TEST_DEPENDS=	kyua:devel/kyua
 
 USES=		tar:xz libtool pathfix
 GNU_CONFIGURE=	yes

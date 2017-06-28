@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2017-05-20 02:25:06 UTC
++++ Makefile.in
+@@ -34,7 +34,7 @@ SAY_OBJS = say.o saynum.o darray.o ASCII.o phones.o te
+            getarg.o Revision.o 
+ 
+ say : $(SAY_OBJS) hplay.o 
+-	$(CC) -o $@ $(LDFLAGS) $(SAY_OBJS) hplay.o $(LDLIBS)
++	$(CC) -o $@ $(LDFLAGS) $(SAY_OBJS) hplay.o $(SAY_LIBS) $(LDLIBS)
+ 
+ nasay : $(SAY_OBJS) naplay.o 
+ 	$(CC) -o $@ $(LDFLAGS) $(SAY_OBJS) naplay.o $(XLIBS) $(LDLIBS)

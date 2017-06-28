@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloud
-PORTVERSION=	11.0.3
+PORTVERSION=	12.0.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 
@@ -41,6 +41,9 @@ PGSQL_USE=	PHP=pdo_pgsql,pgsql
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
 SMB_RUN_DEPENDS=	pecl-smbclient>=0.8.0:net/pecl-smbclient
 SSL_USE=	PHP=openssl
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/var/www/|${WWWDIR}|' ${WRKSRC}/config/config.sample.php
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}

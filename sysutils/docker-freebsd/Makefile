@@ -3,6 +3,7 @@
 
 PORTNAME=	docker-freebsd
 PORTVERSION=	20150625
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	amutu@amutu.com

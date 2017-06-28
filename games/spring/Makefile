@@ -3,7 +3,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	98.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION} \
 		http://springrts.com/dl/
@@ -114,6 +114,6 @@ post-patch:
 .endif
 
 pre-build:
-	cd ${WRKSRC} && ${MAKE} generateVersionFiles
+	cd ${WRKSRC} && ${MAKE_CMD} generateVersionFiles
 
 .include <bsd.port.post.mk>

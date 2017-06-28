@@ -17,6 +17,8 @@ BUILD_DEPENDS=	xsltproc:textproc/libxslt
 RUN_DEPENDS=	libtool:devel/libtool
 LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
+ONLY_FOR_ARCHS=		amd64 i386
+
 DOCSDIR=	lib/${PORTNAME}
 USES=		gmake libtool:build tar:bzip2
 GNU_CONFIGURE=	yes
@@ -25,8 +27,6 @@ USE_CSTD=	gnu89
 USE_GCC=	any
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-ONLY_FOR_ARCHS=	i386 amd64 ia64
 
 OPTIONS_DEFINE=	DOCS
 

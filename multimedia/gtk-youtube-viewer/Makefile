@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.2.5
-PORTREVISION=	2
+PORTVERSION=	3.2.7
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,7 +22,8 @@ BUILD_DEPENDS=	p5-JSON>0:converters/p5-JSON \
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
 		p5-Mozilla-CA>0:www/p5-Mozilla-CA \
 		p5-libwww>0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		p5-common-sense>=2.02:devel/p5-common-sense
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trizen

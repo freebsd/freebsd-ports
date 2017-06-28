@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
-CONFLICTS_INSTALL=	ja-ming-[0-9]*
+CONFLICTS_INSTALL=	ja-ming
 
 OPTIONS_DEFINE=	DOCS
 

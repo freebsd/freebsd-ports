@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-pipeline
-PORTVERSION=	1.6.12
+PORTVERSION=	1.6.13
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NO_ARCH=	yes
 USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
-
-CONFLICTS=	py[23][0-9]-django-pipeline13-[0-9]*
 
 .include <bsd.port.pre.mk>
 

@@ -60,7 +60,6 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 
 UUCP_RNEWS_CONFIGURE_ON=--enable-uucp-rnews
 UUCP_RNEWS_RUN_DEPENDS=	uucp:net/freebsd-uucp
-SETGID_INEWS_CONFIGURE_ON=	--enable-setgid-inews
 
 INNLIB_LONG=		4.0.0
 LIBVER_LONG=		3.0.1
@@ -129,6 +128,11 @@ BUILD_DEPENDS+=		gpg:security/gnupg
 RUN_DEPENDS+=		gpg:security/gnupg
 .endif
 
+.if ${PORT_OPTIONS:MSETGID_INEWS}
+PLIST_SUB+=		MODE_INEWS="2555"
+.else
+PLIST_SUB+=		MODE_INEWS=""
+.endif
 PORTDOCS=	CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
 
 TO_BE_STRIPPED=	bin/actsync bin/archive bin/auth/passwd/auth_krb5 \

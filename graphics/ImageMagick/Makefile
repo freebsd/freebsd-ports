@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.6-4
-PORTREVISION=	2
+DISTVERSION=	6.9.8-9
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
 		http://www.imagemagick.org/download/legacy/ \
 		http://servingzone.com/mirrors/ImageMagick/ \
 		http://mirror.checkdomain.de/imagemagick/ \
-		http://image_magick.veidrodis.com/image_magick/ \
 		http://imagemagick.spd.co.il/ \
 		http://www.champground.com/imagemagick/ \
 		http://ftp.surfnet.nl/pub/ImageMagick/ \

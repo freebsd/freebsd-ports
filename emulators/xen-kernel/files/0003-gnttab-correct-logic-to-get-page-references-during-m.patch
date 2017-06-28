@@ -1,0 +1,186 @@
+From 5d491e3cf32ff03552db9d66e842964fec06dcd4 Mon Sep 17 00:00:00 2001
+From: George Dunlap <george.dunlap@citrix.com>
+Date: Fri, 2 Jun 2017 15:21:27 +0100
+Subject: [PATCH 3/4] gnttab: correct logic to get page references during map
+ requests
+
+The rules for reference counting are somewhat complicated:
+
+* Each of GNTTAB_host_map and GNTTAB_device_map need their own
+reference count
+
+* If the mapping is writeable:
+ - GNTTAB_host_map needs a type count under only some conditions
+ - GNTTAB_device_map always needs a type count
+
+If the mapping succeeds, we need to keep all of these; if the mapping
+fails, we need to release whatever references we have acquired so far.
+
+Additionally, the code that does a lot of this calculation "inherits"
+a reference as part of the process of finding out who the owner is.
+
+Finally, if the grant is mapped as writeable (without the
+GNTMAP_readonly flag), but the hypervisor cannot grab a
+PGT_writeable_page type, the entire operation should fail.
+
+Unfortunately, the current code has several logic holes:
+
+* If a grant is mapped only GNTTAB_device_map, and with a writeable
+  mapping, but in conditions where a *host* type count is not
+  necessary, the code will fail to grab the necessary type count.
+
+* If a grant is mapped both GNTTAB_device_map and GNTTAB_host_map,
+  with a writeable mapping, in conditions where the host type count is
+  not necessary, *and* where the page cannot be changed to type
+  PGT_writeable, the condition will not be detected.
+
+In both cases, this means that on success, the type count will be
+erroneously reduced when the grant is unmapped.  In the second case,
+the type count will be erroneously reduced on the failure path as
+well.  (In the first case the failure path logic has the same hole
+as the reference grabbing logic.)
+
+Additionally, the return value of get_page() is not checked; but this
+may fail even if the first get_page() succeeded due to a reference
+counting overflow.
+
+First of all, simplify the restoration logic by explicitly counting
+the reference and type references acquired.
+
+Consider each mapping type separately, explicitly marking the
+'incoming' reference as used so we know when we need to grab a second
+one.
+
+Finally, always check the return value of get_page[_type]() and go to
+the failure path if appropriate.
+
+This is part of XSA-224.
+
+Reported-by: Jan Beulich <jbeulich@suse.com>
+Signed-off-by: George Dunlap <george.dunlap@citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/common/grant_table.c | 58 +++++++++++++++++++++++++++---------------------
+ 1 file changed, 33 insertions(+), 25 deletions(-)
+
+diff --git a/xen/common/grant_table.c b/xen/common/grant_table.c
+index 452538e..5e92e2c 100644
+--- a/xen/common/grant_table.c
++++ b/xen/common/grant_table.c
+@@ -758,12 +758,12 @@ __gnttab_map_grant_ref(
+     struct grant_table *lgt, *rgt;
+     struct vcpu   *led;
+     int            handle;
+-    unsigned long  frame = 0, nr_gets = 0;
++    unsigned long  frame = 0;
+     struct page_info *pg = NULL;
+     int            rc = GNTST_okay;
+     u32            old_pin;
+     u32            act_pin;
+-    unsigned int   cache_flags;
++    unsigned int   cache_flags, refcnt = 0, typecnt = 0;
+     struct active_grant_entry *act = NULL;
+     struct grant_mapping *mt;
+     grant_entry_header_t *shah;
+@@ -889,11 +889,17 @@ __gnttab_map_grant_ref(
+     else
+         owner = page_get_owner(pg);
+ 
++    if ( owner )
++        refcnt++;
++
+     if ( !pg || (owner == dom_io) )
+     {
+         /* Only needed the reference to confirm dom_io ownership. */
+         if ( pg )
++        {
+             put_page(pg);
++            refcnt--;
++        }
+ 
+         if ( paging_mode_external(ld) )
+         {
+@@ -921,27 +927,38 @@ __gnttab_map_grant_ref(
+     }
+     else if ( owner == rd || owner == dom_cow )
+     {
+-        if ( gnttab_host_mapping_get_page_type(op, ld, rd) )
++        if ( (op->flags & GNTMAP_device_map) && !(op->flags & GNTMAP_readonly) )
+         {
+             if ( (owner == dom_cow) ||
+                  !get_page_type(pg, PGT_writable_page) )
+                 goto could_not_pin;
++            typecnt++;
+         }
+ 
+-        nr_gets++;
+         if ( op->flags & GNTMAP_host_map )
+         {
+-            rc = create_grant_host_mapping(op->host_addr, frame, op->flags, 0);
+-            if ( rc != GNTST_okay )
+-                goto undo_out;
+-
++            /*
++             * Only need to grab another reference if device_map claimed
++             * the other one.
++             */
+             if ( op->flags & GNTMAP_device_map )
+             {
+-                nr_gets++;
+-                (void)get_page(pg, rd);
+-                if ( !(op->flags & GNTMAP_readonly) )
+-                    get_page_type(pg, PGT_writable_page);
++                if ( !get_page(pg, rd) )
++                    goto could_not_pin;
++                refcnt++;
++            }
++
++            if ( gnttab_host_mapping_get_page_type(op, ld, rd) )
++            {
++                if ( (owner == dom_cow) ||
++                     !get_page_type(pg, PGT_writable_page) )
++                    goto could_not_pin;
++                typecnt++;
+             }
++
++            rc = create_grant_host_mapping(op->host_addr, frame, op->flags, 0);
++            if ( rc != GNTST_okay )
++                goto undo_out;
+         }
+     }
+     else
+@@ -950,8 +967,6 @@ __gnttab_map_grant_ref(
+         if ( !rd->is_dying )
+             gdprintk(XENLOG_WARNING, "Could not pin grant frame %lx\n",
+                      frame);
+-        if ( owner != NULL )
+-            put_page(pg);
+         rc = GNTST_general_error;
+         goto undo_out;
+     }
+@@ -1014,18 +1029,11 @@ __gnttab_map_grant_ref(
+     return;
+ 
+  undo_out:
+-    if ( nr_gets > 1 )
+-    {
+-        if ( !(op->flags & GNTMAP_readonly) )
+-            put_page_type(pg);
+-        put_page(pg);
+-    }
+-    if ( nr_gets > 0 )
+-    {
+-        if ( gnttab_host_mapping_get_page_type(op, ld, rd) )
+-            put_page_type(pg);
++    while ( typecnt-- )
++        put_page_type(pg);
++
++    while ( refcnt-- )
+         put_page(pg);
+-    }
+ 
+     grant_read_lock(rgt);
+ 
+-- 
+2.1.4
+

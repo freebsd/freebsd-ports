@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojo-Pg
-PORTVERSION=	3.05
+PORTVERSION=	3.06
 CATEGORIES=	databases www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SRI
@@ -15,7 +15,7 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-DBD-Pg>=3.5.1:databases/p5-DBD-Pg \
-		p5-Mojolicious>=7.15:www/p5-Mojolicious \
+		p5-Mojolicious>=7.32:www/p5-Mojolicious \
 		p5-SQL-Abstract>=1.81:databases/p5-SQL-Abstract
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

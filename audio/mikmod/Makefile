@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikmod
-PORTVERSION=	3.2.7
+PORTVERSION=	3.2.8
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		LOCAL/ehaupt

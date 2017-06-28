@@ -14,17 +14,10 @@ COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
+		libpkg.so:ports-mgmt/pkg
 
-LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
-
-LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
-
-CONFLICTS=	${PKGBASE}-1.[0-8]*
-
-.if ${PKGNAMESUFFIX} != "-agent"
-CONFLICTS+=	${PORTNAME}-1.[0-8]*
-.endif
+CONFLICTS=	zabbix[0-9][0-9]${PKGNAMESUFFIX} zabbix[0-13-9]${PKGNAMESUFFIX}
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
@@ -35,7 +28,7 @@ USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}
 USE_RC_SUBR=	zabbix_${ZABBIX_BUILD}d
 .endif
 
-USES=		pkgconfig iconv
+USES=		pkgconfig iconv ssl
 
 USERS=		zabbix
 GROUPS=		zabbix

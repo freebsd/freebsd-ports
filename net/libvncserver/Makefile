@@ -6,7 +6,7 @@ PORTVERSION=	0.9.11
 DISTVERSIONPREFIX=	LibVNCServer-
 CATEGORIES=	net devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Provide an easy API to a custom vnc server
 
 LICENSE=	GPLv2

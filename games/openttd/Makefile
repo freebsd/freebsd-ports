@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.1
 CATEGORIES=	games
 MASTER_SITES=	http://ca.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
 		http://cz.binaries.openttd.org/binaries/releases/${DISTVERSION}/ \
@@ -20,6 +20,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		liblzo2.so:archivers/lzo2
+
+BROKEN_powerpc64=	fails to compile: libicuuc.so: undefined reference to __cxa_throw_bad_array_new_length
 
 USES=		cpe gmake pkgconfig tar:xz
 HAS_CONFIGURE=	yes

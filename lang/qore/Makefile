@@ -15,8 +15,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		${LOCALBASE}/bin/bison:devel/bison \
 		${LOCALBASE}/bin/bash:shells/bash
 
+BROKEN_armv6=		fails to compile: calling a private constructor of class 'ReferenceNode'
 BROKEN_powerpc=		fails to build
-BROKEN_powerpc64=	fails to build: Error: unsupported relocation against r1
+BROKEN_powerpc64=	fails to compile: unsupported relocation against r1
 
 USES=	gmake iconv libtool:build pathfix autoreconf ssl
 USE_LDCONFIG=	yes

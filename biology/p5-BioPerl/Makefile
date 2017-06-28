@@ -17,6 +17,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Algorithm-Munkres>=0:math/p5-Algorithm-Munkres \
 		p5-Array-Compare>=0:misc/p5-Array-Compare \
+		p5-CGI>=0:www/p5-CGI \
 		p5-Clone>=0:devel/p5-Clone \
 		p5-Convert-Binary-C>=0:converters/p5-Convert-Binary-C \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
@@ -92,11 +93,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-BUILD_DEPENDS+=	p5-CGI>=0:www/p5-CGI
-RUN_DEPENDS+=	p5-CGI>=0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

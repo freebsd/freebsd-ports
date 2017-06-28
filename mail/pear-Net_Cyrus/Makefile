@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
 RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:net/pear-Net_Socket \
 		${PEARDIR}/Net/IMAP.php:mail/pear-Net_IMAP
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

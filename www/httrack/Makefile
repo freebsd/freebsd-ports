@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httrack
-PORTVERSION=	3.49.1
+PORTVERSION=	3.49.2
 CATEGORIES=	www
 MASTER_SITES=	https://download.httrack.com/ \
 		https://mirror.httrack.com/ \

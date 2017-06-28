@@ -6,6 +6,7 @@
     SUBDIR += 3ddesktop
     SUBDIR += 9box
     SUBDIR += 9menu
+    SUBDIR += alacritty
     SUBDIR += alltray
     SUBDIR += altyo
     SUBDIR += antimicro
@@ -66,6 +67,7 @@
     SUBDIR += fireflies
     SUBDIR += fixesproto
     SUBDIR += florence
+    SUBDIR += flruler
     SUBDIR += fluxbg
     SUBDIR += fpc-x11
     SUBDIR += fstobdf
@@ -99,6 +101,7 @@
     SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
     SUBDIR += guake
+    SUBDIR += gxkb
     SUBDIR += hs-X11
     SUBDIR += hs-X11-xft
     SUBDIR += hs-xmobar
@@ -252,6 +255,7 @@
     SUBDIR += p5-XTerm-Conf
     SUBDIR += pcdm
     SUBDIR += picoserver
+    SUBDIR += pantheon-terminal
     SUBDIR += pipeglade
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python
@@ -429,6 +433,7 @@
     SUBDIR += xkbcomp
     SUBDIR += xkbctrl
     SUBDIR += xkbevd
+    SUBDIR += xkbind
     SUBDIR += xkbprint
     SUBDIR += xkbset
     SUBDIR += xkbutils

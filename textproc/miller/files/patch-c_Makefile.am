@@ -1,0 +1,11 @@
+--- c/Makefile.am.orig	2017-06-26 15:16:11 UTC
++++ c/Makefile.am
+@@ -3,8 +3,6 @@ SUBDIRS=		lib cli stream input dsl mappi
+ AM_CPPFLAGS=		-I${srcdir}
+ AM_CFLAGS=		-Wall -std=gnu99
+ bin_PROGRAMS=		mlr
+-noinst_PROGRAMS=	mlrg \
+-			mlrp
+ 
+ mlr_SOURCES=		mlrmain.c
+ 

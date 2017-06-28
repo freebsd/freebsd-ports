@@ -3,16 +3,20 @@
 
 PORTNAME=	redshift
 PORTVERSION=	1.7
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	accessibility
 MASTER_SITES=	http://launchpad.net/redshift/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Adjusts the color temperature of your screen
 
-USES=		gmake pkgconfig tar:bzip2
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake pkgconfig shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+SHEBANG_FILES=	src/gtk-redshift/gtk-redshift
 
 CONFIGURE_ARGS+=	--disable-wingdi
 

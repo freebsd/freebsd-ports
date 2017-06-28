@@ -6,6 +6,7 @@ PORTVERSION=	20140911
 PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/enlightenment/
+DIST_SUBDIR=	enlightenment
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Module to set Alarms in Enlightenment
@@ -15,7 +16,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	enlightenment:x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:x11-wm/enlightenment
 
-DIST_SUBDIR=	enlightenment
+BROKEN_armv6=		dumps core: gmake: Makefile:899: Abort trap (core dumped)
+
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig tar:xz
 INSTALL_TARGET=	install-strip

@@ -18,6 +18,8 @@ LIB_DEPENDS=	liballeg.so:devel/allegro \
 		libvorbis.so:audio/libvorbis \
 		libfreetype.so:print/freetype2
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	adventuregamestudio
 

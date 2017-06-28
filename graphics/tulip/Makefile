@@ -18,9 +18,11 @@ LIB_DEPENDS=	libquazip.so:archivers/quazip \
 		libOGDF.so:math/ogdf \
 		libfreetype.so:print/freetype2
 
+BROKEN_powerpc64=	fails to link: libOGDF.so: undefined reference to CoinPackedVector::CoinPackedVector
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		cmake:outsource compiler:c++11-lib dos2unix execinfo jpeg python \
+USES=		cmake:outsource,noninja compiler:c++11-lib dos2unix execinfo jpeg python \
 		shebangfix
 SHEBANG_FILES=	tulip-config.in
 DOS2UNIX_FILES=	software/tulip/src/main.cpp

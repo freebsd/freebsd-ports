@@ -3,7 +3,7 @@
 
 PORTNAME=	RSvgDevice
 PORTVERSION=	0.6.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,6 +13,6 @@ COMMENT=	R SVG graphics device
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

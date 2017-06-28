@@ -16,9 +16,9 @@
 %%PYTHON_SITELIBDIR%%/enchant/checker/tests.py
 %%PYTHON_SITELIBDIR%%/enchant/checker/tests.pyc
 %%PYTHON_SITELIBDIR%%/enchant/checker/tests.pyo
-%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.py
-%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.pyc
-%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.pyo
+%%WX%%%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.py
+%%WX%%%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.pyc
+%%WX%%%%PYTHON_SITELIBDIR%%/enchant/checker/wxSpellCheckerDialog.pyo
 %%PYTHON_SITELIBDIR%%/enchant/errors.py
 %%PYTHON_SITELIBDIR%%/enchant/errors.pyc
 %%PYTHON_SITELIBDIR%%/enchant/errors.pyo

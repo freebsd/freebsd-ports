@@ -24,6 +24,7 @@
     SUBDIR += forkbomb
     SUBDIR += glmark2
     SUBDIR += gtkperf
+    SUBDIR += hey
     SUBDIR += himenobench
     SUBDIR += hpl
     SUBDIR += hs-criterion

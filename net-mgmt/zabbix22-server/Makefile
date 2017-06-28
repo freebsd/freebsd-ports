@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix22
-PORTVERSION=	2.2.17
+PORTVERSION=	2.2.18
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
 DISTNAME=	zabbix-${PORTVERSION}
 
 MAINTAINER=	pg@pakhom.spb.ru
-COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//})
+COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
 
 LICENSE=	GPLv2
 
-CONFLICTS=	zabbix2${PKGNAMESUFFIX}-[0-9]* zabbix24${PKGNAMESUFFIX}[0-9]* zabbix3${PKGNAMESUFFIX}-[0-9]*
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+
+CONFLICTS=	zabbix[0-13-9][0-13-9]${PKGNAMESUFFIX} zabbix[0-9]${PKGNAMESUFFIX}
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
@@ -63,7 +64,7 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=	--with-net-snmp
 
 OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW LIBXML2
-OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL UNIXODBC
+OPTIONS_DEFAULT=	MYSQL FPING JABBER CURL UNIXODBC
 OPTIONS_SUB=	yes
 
 CURL_DESC=	Support for web monitoring

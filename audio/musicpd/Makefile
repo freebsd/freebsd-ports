@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.20.6
-PORTREVISION=	6
+PORTVERSION=	0.20.9
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -28,7 +27,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/sidplay/builders
 #Workaround (transient?) link error with libwrap
 CONFIGURE_ARGS+=--disable-libwrap
 
-BROKEN_aarch64=		Does not build: fatal error: 'endian.h' file not found
 BROKEN_powerpc64=	Does not build on powerpc64
 
 PORTDOCS=	AUTHORS README.md COPYING NEWS

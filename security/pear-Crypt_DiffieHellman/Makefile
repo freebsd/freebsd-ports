@@ -8,7 +8,7 @@ CATEGORIES=	security www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class implementing Diffie-Hellman Key Exchange protocol for PHP5
 
-USES=	pear
+USES=		pear php
 USE_PHP=	bcmath mbstring gmp
 
 .include <bsd.port.mk>

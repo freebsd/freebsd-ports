@@ -71,6 +71,8 @@ cran-strip:
 	${FIND} ${STAGEDIR}${PREFIX}/${R_MOD_DIR} -name '*.so' -exec ${STRIP_CMD} {} +
 .include "${PORTSDIR}/math/R/compiler.mk"
 .include "${USESDIR}/fortran.mk"
+.else
+NO_ARCH=	yes
 .endif
 
 .endif #_INCLUDE_USES_CRAN_MK

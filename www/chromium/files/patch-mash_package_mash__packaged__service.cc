@@ -1,6 +1,6 @@
---- mash/package/mash_packaged_service.cc.orig	2017-04-19 19:06:35 UTC
+--- mash/package/mash_packaged_service.cc.orig	2017-06-05 19:03:08 UTC
 +++ mash/package/mash_packaged_service.cc
-@@ -30,7 +30,7 @@
+@@ -29,7 +29,7 @@
  #include "ash/touch_hud/mus/touch_hud_application.h"  // nogncheck
  #endif
  
@@ -9,7 +9,7 @@
  #include "components/font_service/font_service_app.h"
  #endif
  
-@@ -104,7 +104,7 @@ std::unique_ptr<service_manager::Service
+@@ -106,7 +106,7 @@ std::unique_ptr<service_manager::Service> MashPackaged
      return base::WrapUnique(new mash::task_viewer::TaskViewer);
    if (name == "test_ime_driver")
      return base::WrapUnique(new ui::test::TestIMEApplication);

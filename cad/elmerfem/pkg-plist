@@ -44,7 +44,7 @@ share/elmersolver/include/gebhardtfactorglobals.mod
 share/elmersolver/include/generalutils.mod
 share/elmersolver/include/globmat.mod
 share/elmersolver/include/globmatc.mod
-share/elmersolver/include/h1elementbasisfunctions.mod
+share/elmersolver/include/h1basis.mod
 share/elmersolver/include/harmutils.mod
 share/elmersolver/include/hashtable.mod
 share/elmersolver/include/huti_aux.mod
@@ -134,9 +134,11 @@ share/elmersolver/lib/ElementSizeSolver.so
 share/elmersolver/lib/ElementStats.so
 share/elmersolver/lib/EliminateDirichlet.so
 share/elmersolver/lib/EliminatePeriodic.so
+share/elmersolver/lib/Elmer2OpenFoamIO.so
 share/elmersolver/lib/EnergyRelease.so
 share/elmersolver/lib/FDiffusion.so
 share/elmersolver/lib/FDiffusion3D.so
+share/elmersolver/lib/FacetShellSolve.so
 share/elmersolver/lib/FilterTimeSeries.so
 share/elmersolver/lib/FindOptimum.so
 share/elmersolver/lib/FlowSolve.so
@@ -145,10 +147,10 @@ share/elmersolver/lib/FluxSolver.so
 share/elmersolver/lib/FourierLoss.so
 share/elmersolver/lib/FreeSurfaceReduced.so
 share/elmersolver/lib/FreeSurfaceSolver.so
+share/elmersolver/lib/HarmonicSignals.so
 share/elmersolver/lib/HeatSolve.so
 share/elmersolver/lib/HelmholtzBEM.so
 share/elmersolver/lib/HelmholtzSolve.so
-share/elmersolver/lib/I26.so
 share/elmersolver/lib/Isosurface.so
 share/elmersolver/lib/KESolver.so
 share/elmersolver/lib/Komega.so
@@ -187,9 +189,10 @@ share/elmersolver/lib/SaveData.so
 share/elmersolver/lib/SaveGridData.so
 share/elmersolver/lib/SaveMesh.so
 share/elmersolver/lib/ScalarPotentialSolver.so
+share/elmersolver/lib/ScannedFieldSolver.so
 share/elmersolver/lib/ShallowWaterNS.so
 share/elmersolver/lib/ShearrateSolver.so
-share/elmersolver/lib/ShellSolve.so
+share/elmersolver/lib/ShellSolver.so
 share/elmersolver/lib/Smitc.so
 share/elmersolver/lib/Spalart-Allmaras.so
 share/elmersolver/lib/StatCurrentSolve.so
@@ -213,9 +216,7 @@ share/elmersolver/lib/ViscousCompressibility.so
 share/elmersolver/lib/VorticitySolver.so
 share/elmersolver/lib/WPotentialSolver.so
 share/elmersolver/lib/WaveSolver.so
-share/elmersolver/lib/Wsolver.so
 share/elmersolver/lib/elements.def
-share/elmersolver/lib/phasecurrents.so
 share/elmersolver/license_texts/GPL-2.txt
 share/elmersolver/license_texts/LGPL-2.1.txt
 share/elmersolver/license_texts/LICENSES

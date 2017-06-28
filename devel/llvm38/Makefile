@@ -12,7 +12,8 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
-BROKEN_powerpc64=	Does not build: internal compiler error: Killed (program cc1plus)
+BROKEN_armv6=		fails to compile: fatal error: llvm/IR/Attributes.inc file not found
+BROKEN_powerpc64=	fails to compile: internal compiler error: Killed (program cc1plus)
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 RCDIR=		${DISTVERSION:S/${LLVM_RELEASE}//:C|(rc.*)|\1/|}
@@ -23,7 +24,7 @@ LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
-USES=		cmake:outsource compiler:c++11-lib libedit ninja perl5 tar:xz \
+USES=		cmake:outsource compiler:c++11-lib libedit perl5 tar:xz \
 		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
@@ -299,10 +300,14 @@ post-patch:
 	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py
+	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
+	    ${WRKSRC}/CMakeLists.txt
 
 post-patch-COMPILER_RT-on:
 	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-svn-261229
 	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-svn-294806
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-canonical-syscalls
+	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-ino64
 .if ${ARCH} == "amd64"
 	cd ${WRKSRC_compiler_rt} && patch < ${PATCHDIR}/compiler-rt-patch-no-m32
 .endif

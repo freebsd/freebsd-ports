@@ -18,7 +18,7 @@ USE_RC_SUBR=	iked
 USERS=		_iked
 GROUPS=		_iked
 
-USES=           autoreconf libtool ssl
+USES=           autoreconf groff libtool ssl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-libevent-dir=${PREFIX}

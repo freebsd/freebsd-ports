@@ -4,10 +4,14 @@
 PORTNAME=	hsflowd
 PORTVERSION=	1.24.1
 CATEGORIES=	net
-MASTER_SITES= http://mirrors.rit.edu/zi/
+MASTER_SITES=	http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Agent that exports metrics using the sFlow protocol
+
+BROKEN_armv6=		fails to compile: src/FreeBSD/Makefile: Malformed conditional (empty $(BINDIR))
+BROKEN_mips=		fails to compile: src/FreeBSD/Makefile: Malformed conditional (empty $(BINDIR))
+BROKEN_mips64=		fails to compile: src/FreeBSD/Makefile: Malformed conditional (empty $(BINDIR))
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	${PORTNAME}

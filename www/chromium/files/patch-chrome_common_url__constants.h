@@ -1,6 +1,6 @@
---- chrome/common/url_constants.h.orig	2017-04-19 19:06:30 UTC
+--- chrome/common/url_constants.h.orig	2017-06-05 19:03:03 UTC
 +++ chrome/common/url_constants.h
-@@ -128,7 +128,7 @@ extern const char kChromeUIMdCupsSetting
+@@ -131,7 +131,7 @@ extern const char kChromeUICleanupToolURL[];
  extern const char kChromeUIMetroFlowURL[];
  #endif
  
@@ -9,7 +9,16 @@
  extern const char kChromeUITabModalConfirmDialogURL[];
  #endif
  
-@@ -314,7 +314,7 @@ extern const char kChromeOSAssetPath[];
+@@ -146,7 +146,7 @@ extern const char kChromeUICastURL[];
+ #endif
+ #endif
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ extern const char kChromeUIDiscardsHost[];
+ extern const char kChromeUIDiscardsURL[];
+ #endif
+@@ -318,7 +318,7 @@ extern const char kChromeUICleanupToolHost[];
  extern const char kChromeUIMetroFlowHost[];
  #endif
  

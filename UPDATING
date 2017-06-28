@@ -5,6 +5,150 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170626:
+  AFFECTS: users of net-mgmt/zabbix24*
+  AUTHOR: dbaio@FreeBSD.org
+
+  Zabbix 2.4 has reached end of life and net-mgmt/zabbix24* ports have been
+  removed. Users that have not yet moved to a newer version, should use now
+  net-mgmt/zabbix3-* (LTS release) or net-mgmt/zabbix32-* (Standard release).
+
+  See more info about Zabbix releases here:
+  http://www.zabbix.com/life_cycle_and_release_policy
+
+20170624:
+  AFFECTS: users of mail/dcc-dccd
+  AUTHOR: ultima@FreeBSD.org
+
+  The ALT_HOME option was removed in 1.3.159_1. If this option is being
+  used, please be sure to move the old home directory, /var/dcc to
+  ${PREFIX}/dcc.
+
+20170624:
+  AFFECTS: users of net/rabbitmq
+  AUTHOR: olgeni@FreeBSD.org
+
+  The rabbitmq-3.6.10_1 port has been changed to use version 19 of
+  the Erlang runtime, because RabbitMQ is not yet compatible with
+  version 20.
+
+  Upgrades to the previous rabbitmq-3.6.10 must be avoided as
+  they can lead to data corruption due to changes in Erlang 20.
+
+20170622:
+  AFFECTS: users of database/postgresql* and other software using PostgreSQL to run
+  AUTHOR: tz@FreeBSD.org
+
+  The default version of PostgreSQL has been switched from 9.3 to 9.5.
+  The upgrade procedure can use up twice the space the databases
+  currently needs. If you have a big amount of stored data take a
+  closer look at the manpage of pg_upgrade for avoidance and/or
+  speedup of the upgrade.
+
+  The upgrade instructions consider a basic usage and do not match
+  complex scenarious like replication, sharding or similar.
+  
+  Upgrade instructions:
+
+  First stop your PostgreSQL, create PostgreSQL-binaries and backup your data.
+  If you have another Version of PostgreSQL installed, for example 9.3.12, your
+  files are named accourding to this.
+  
+  # service postgresql stop
+  # pkg create postgresql93-server postgresql93-contrib
+  # mkdir /tmp/pg-upgrade
+  # tar xf postgresql93-server-9.3.17.txz -C /tmp/pg-upgrade
+  # tar xf postgresql93-contrib-9.3.17.txz -C /tmp/pg-upgrade
+  # mv /usr/local/pgsql/data /usr/local/pgsql/data93
+  # pkg delete -f databases/postgresql93-server databases/postgresql93-contrib databases/postgresql93-client
+
+  Now update PostgreSQL:
+
+    pkg user:
+    # pkg install databases/postgresql95-server databases/postgresql95-contrib
+    # pkg upgrade
+
+    Portmaster users:
+    # portmaster databases/postgresql95-server databases/postgresql95-contrib
+    # portmaster -a
+
+    Portupgrade users:
+    # portinstall databases/postgresql95-server databases/postgresql95-contrib
+    # portupgrade -a
+
+  After installing the new PostgreSQL version you need to convert
+  all your databases to new version:
+  
+  # service postgresql initdb
+  # su -l pgsql -c "pg_upgrade -b /tmp/pg-upgrade/usr/local/bin/ -d /usr/local/pgsql/data93/ -B /usr/local/bin/ -D /usr/local/pgsql/data/"
+
+  Now the migration is finished. You can start PostgreSQL again with:
+
+  # service postgresql start
+
+20170614:
+  AFFECTS: users of editors/calligra
+  AUTHOR: groot@kde.org
+
+  Calligra has been updated to 3.0.1, which is a KDE Frameworks 5 (KF5)
+  based application. Calligra now uses Qt5 and KF5. The translations have
+  been merged (upstream) into the application, so separate language /
+  translation ports are no longer provided. Krita has been split out
+  (upstream) into a separate application, which is packaged as 
+  graphics/krita. Kexi, the visual database applications creator,
+  is packaged separately as databases/kexi.
+
+  Users of Calligra are encouraged to install Krita and Kexi separately,
+  and to report issues with the upgrade to kde@.
+
+20170613:
+  AFFECTS: users of net-im/ejabberd
+  AUTHOR: ashish@FreeBSD.org
+
+  After update to 17.04, there is an issue[1] expected with S2S connections,
+  which can be resolved by adding 'mod_s2s_dialback: {}' to 'modules' section
+  of configuration file.
+
+  [1] - https://github.com/processone/ejabberd/issues/1700  
+
+20170603:
+  AFFECTS: users of www/kanboard
+  AUTHOR: joneum@FreeBSD.org
+
+  After update to 1.0.44, there are following breaking changes:
+  * Move calendar to external plugin: https://github.com/kanboard/plugin-calendar
+  * Move Gantt charts to external plugin: https://github.com/kanboard/plugin-gantt
+  * Move Gravatar to external plugin: https://github.com/kanboard/plugin-gravatar
+
+20170602:
+  AFFECTS: users of Qt 5 in presence of binutils
+  AUTHOR: amdmi3@FreeBSD.org
+
+  gold linker from binutils 2.28 may produce duplicate library
+  symbols, which makes shared libraries created with it not usable
+  with conventional ld linker.
+
+  This affects Qt, as qt5-qmake will detect gold and use it to build
+  Qt libraries. Broken libQt5Core will be produced and ports which
+  depend on it will then fail to link with the following errors:
+
+    ...lib/libQt5Core.so:(.dynamic+0x27ac8): multiple definition of `__bss_start at Qt_5'
+    ...lib/libQt5Core.so:(.dynamic+0x27ac8): first defined here
+    ...lib/libQt5Core.so:(.dynamic+0x27ac8): multiple definition of `_edata at Qt_5'
+    ...lib/libQt5Core.so:(.dynamic+0x27ac8): first defined here
+    ...lib/libQt5Core.so:(.dynamic+0x2b2d0): multiple definition of `_end at Qt_5'
+
+  Qt5 was fixed to ignore gold. If you see these errors, you
+  need to rebuild qt5-qmake, then all qt5-* ports.
+
+20170529:
+  AFFECTS: users of sysutils/dsbmd
+  AUTHOR: mk@freeshell.de
+
+  Due to new configuration variables and semantic changes, users of dsbmd
+  version 0.2 and earlier should consider recreating their dsbmd.conf from
+  the new dsbmd.conf.sample.
+
 20170518:
   AFFECTS: users of www/yarn
   AUTHOR: adamw@FreeBSD.org
@@ -116,7 +260,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Xapian has been updated to 1.4.3. The 1.2.x series has been renamed with
   suffix "12". The Perl binding for Xapian 1.4.x is databases/p5-Xapian.
-  Since www/ikiwiki depends on Search::Xapian, it stays with Xapian 1.2. 
+  Since www/ikiwiki depends on Search::Xapian, it stays with Xapian 1.2.
   If you would like to keep using 1.2, please run the following commands
   to update pkg database:
 

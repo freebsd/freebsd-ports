@@ -434,6 +434,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%PYTHON_SITELIBDIR%%/samba/com.so
 %%PYTHON_SITELIBDIR%%/samba/common.py
 %%PYTHON_SITELIBDIR%%/samba/credentials.so
+%%PYTHON_SITELIBDIR%%/samba/crypto.so
 %%PYTHON_SITELIBDIR%%/samba/dbchecker.py
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/atsvc.so

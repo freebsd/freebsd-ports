@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/NOTICE
 BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
 LIB_DEPENDS=	libsigar.so:devel/sigar
 
+BROKEN_armv6=		fails to compile: jni-build.xml: gcc failed with return code 1
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	amishHammer
 GH_TAGNAME=	b5af695

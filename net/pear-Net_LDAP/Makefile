@@ -9,6 +9,6 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	OO interface for searching and manipulating LDAP-entries
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

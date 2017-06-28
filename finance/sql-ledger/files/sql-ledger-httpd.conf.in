@@ -1,5 +1,5 @@
-Alias /sql-ledger %%PREFIX%%/sql-ledger/
-<Directory %%PREFIX%%/sql-ledger>
+Alias /sql-ledger %%WWWDIR%%
+<Directory %%WWWDIR%%>
   AllowOverride All
   AddHandler cgi-script .pl
   Options ExecCGI Includes FollowSymlinks
@@ -7,7 +7,7 @@ Alias /sql-ledger %%PREFIX%%/sql-ledger/
   Allow from All
 </Directory>
 
-<Directory %%PREFIX%%/sql-ledger/users>
+<Directory %%WWWDIR%%/users>
   Order Deny,Allow
   Deny from All
 </Directory>

@@ -3,8 +3,6 @@
 PORTNAME=	enchive
 PORTVERSION=	3.2
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/skeeto/enchive/archive/
-DISTFILES=	${PORTVERSION}.tar.gz
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Tool to encrypt files to yourself for long-term archival
@@ -13,6 +11,9 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
 USES=		gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	skeeto
+
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
