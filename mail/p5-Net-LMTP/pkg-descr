@@ -1,0 +1,4 @@
+This module implements a client interface to the LMTP protocol,
+enabling a perl5 application to talk to LMTP servers.
+
+WWW: http://search.cpan.org/dist/Net-LMTP/
