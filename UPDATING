@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170628:
+  AFFECTS: users of www/node
+  AUTHOR: bhughes@freebsd.org
+
+  The www/node port has been updated to Node.js v8.1.2, the latest
+  upstream release. This is a major release, including many significant
+  changes. Users are encouraged to read the release announcements before
+  upgrading:
+
+  https://nodejs.org/en/blog/release/v8.0.0/
+  https://nodejs.org/en/blog/release/v8.1.0/
+
 20170626:
   AFFECTS: users of net-mgmt/zabbix24*
   AUTHOR: dbaio@FreeBSD.org
