@@ -431,6 +431,7 @@
     SUBDIR += p5-Net-IMAP-Server
     SUBDIR += p5-Net-IMAP-Simple
     SUBDIR += p5-Net-IMAP-Simple-SSL
+    SUBDIR += p5-Net-LMTP
     SUBDIR += p5-Net-ManageSieve
     SUBDIR += p5-Net-POP3-SSLWrapper
     SUBDIR += p5-Net-QMTP
