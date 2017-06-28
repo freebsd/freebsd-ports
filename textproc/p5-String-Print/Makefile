@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	String-Print
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-TimeDate>=2.30:devel/p5-TimeDate \
 		p5-Unicode-LineBreak>=0:textproc/p5-Unicode-LineBreak
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
