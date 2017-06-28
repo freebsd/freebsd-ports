@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf to enable openradius:
+#
+# openradius_flags (flags);	Set extra flags to openradius.
+#				Default is "-o %%LOGFILE%%".
+
+name=openradius
+
+: ${openradius_flags=-o %%LOGFILE%%}
+
+command=%%PREFIX%%/sbin/radiusd
+command_args=${openradius_flags}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+# Configuration flags can be set with qadsl_flags=""
+#
+# See qadsl(8) for flags.
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# Default flags
+qadsl_flags=${qadsl_flags-"-l"}
+qadsl_pidfile=${qadsl_pidfile-"/var/run/qadsl.pid"}
+
+name="qadsl"
+command=%%PREFIX%%/sbin/qadsl
+pidfile=${qadsl_pidfile}
+required_files=%%PREFIX%%/etc/qadsl.conf
+command_args="${qadsl_flags} -p ${qadsl_pidfile}"
+
+depend() {
+	provide qadsl
+	use net
+	keyword -shutdown
+}

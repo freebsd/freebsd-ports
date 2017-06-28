@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name="mesgd"
+command=%%PREFIX%%/sbin/${name}
+
+depend() {
+	keyword -shutdown
+}

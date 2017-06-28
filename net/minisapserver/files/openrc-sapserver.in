@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=sapserver
+command=%%PREFIX%%/bin/${name}
+required_files=%%PREFIX%%/etc/sap.cfg
+
+depend() {
+	use net
+	keyword -shutdown
+}

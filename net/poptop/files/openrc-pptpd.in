@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name=pptpd
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+depend() {
+	provide pptpd
+}

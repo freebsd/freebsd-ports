@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to run NATS:
+#
+# gnatsd_username:		User name to run as. default "nobody"
+# gnatsd_options:		Options to pass gnatsd server
+
+name="gnatsd"
+
+: ${gnatsd_username="nobody"}
+: ${gnatsd_options="-c %%PREFIX%%/etc/gnatsd.conf"}
+
+command=%%PREFIX%%/bin/gnatsd
+command_user=${gnatsd_username}
+command_args=${gnatsd_options}
+pidfile="/var/run/gnatsd.pid"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,43 @@
+#!/sbin/openrc-run
+
+name="sixxs_aiccu"
+command="%%PREFIX%%/sbin/sixxs-aiccu"
+
+# set default
+: ${sixxs_aiccu_config="%%PREFIX%%/etc/aiccu.conf"}
+
+command_args="start ${sixxs_aiccu_config}"
+required_files="${sixxs_aiccu_config}"
+extra_commands="brokers tunnels test autotest license version"
+
+stop() {
+	$command stop $command_args
+}
+
+brokers() {
+	$command brokers
+}
+
+tunnels() {
+	$command tunnels $command_args
+}
+
+test() {
+	$command test $command_args
+}
+
+autotest() {
+	$command autotest $command_args
+}
+
+license() {
+	$command license
+}
+
+version() {
+	$command version $command_args
+}
+
+depend() {
+	use net
+}
