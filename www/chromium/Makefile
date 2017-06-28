@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	59.0.3071.109
+PORTVERSION=	59.0.3071.115
 CATEGORIES=	www
-MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
+MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:source1 \
+		LOCAL/cpm:source2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source1 \
+		${PORTNAME}-freetype2${EXTRACT_SUFX}:source2
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -139,7 +141,7 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 DRIVER_MAKE_ARGS=chromedriver
-TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
+TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:source1
 
 .include <bsd.port.options.mk>
 
@@ -222,6 +224,9 @@ pre-everything::
 	@${ECHO_MSG} "and a fair amount of free diskspace (~ 3.7GB)."
 .endif
 	@${ECHO_MSG}
+
+post-extract:
+	@${MV} ${WRKDIR}/freetype2 ${WRKSRC}/third_party/freetype/src
 
 post-patch-SNDIO-on:
 	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd

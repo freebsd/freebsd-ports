@@ -1,0 +1,10 @@
+--- third_party/swiftshader/BUILD.gn.orig	2017-06-26 22:05:22.958335000 +0200
++++ third_party/swiftshader/BUILD.gn	2017-06-26 22:05:34.834212000 +0200
+@@ -85,7 +85,6 @@
+ 
+     if (is_linux) {
+       ldflags = [
+-        "-Wl,--hash-style=both",
+         "-Wl,--gc-sections",
+       ]
+     }
