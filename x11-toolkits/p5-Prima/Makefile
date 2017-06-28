@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Prima
-PORTVERSION=	1.51
+PORTVERSION=	1.52
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,7 @@ OPTIONS_DEFAULT=ICONV XFT
 
 USES=		jpeg perl5 pkgconfig
 USE_PERL5=	configure
-USE_XORG=	x11 xext xpm xrender xrandr
+USE_XORG=	x11 xcursor xext xpm xrender xrandr
 MAKE_JOBS_UNSAFE=	yes
 
 GTK2_CONFIGURE_OFF=	WITH_GTK2=0
