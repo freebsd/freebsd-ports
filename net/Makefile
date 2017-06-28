@@ -1183,6 +1183,7 @@
     SUBDIR += rubygem-fog-vsphere
     SUBDIR += rubygem-fog-xenserver
     SUBDIR += rubygem-geoip
+    SUBDIR += rubygem-gitaly
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-gitlab_omniauth-ldap1
     SUBDIR += rubygem-http_parser.rb
