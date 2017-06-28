@@ -1,4 +1,4 @@
---- lib/support/nginx/gitlab.orig	2017-03-19 20:06:47 UTC
+--- lib/support/nginx/gitlab.orig	2017-06-07 20:58:14 UTC
 +++ lib/support/nginx/gitlab
 @@ -17,7 +17,7 @@
  ## See installation.md#using-https for additional HTTPS configuration details.
