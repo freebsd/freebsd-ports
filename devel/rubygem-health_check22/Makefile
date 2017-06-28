@@ -14,6 +14,9 @@ COMMENT=	Simple health check of Rails app for uptime monitoring
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
+DEPRECATED=	Only created for www/gitlab; please use devel/rubygem-health_check instead
+EXPIRATION_DATE=	2017-07-31
+
 PORTSCOUT=	limit:^2\.2\.
 
 NO_ARCH=	yes
