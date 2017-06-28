@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	CalculiX
-PORTVERSION=	2.11
-PORTREVISION=	4
+PORTVERSION=	2.12
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
 DIST_SUBDIR=	calculix
 EXTRACT_ONLY=	${DIST_SOURCES}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three-Dimensional Structural Finite Element Program
 
 LICENSE=	GPLv2
@@ -33,9 +32,8 @@ CCX_VER=	ccx_${PORTVERSION}
 CGX_VER=	cgx_${PORTVERSION}
 
 USES=		compiler:openmp fortran gmake tar:bzip2
-USE_GCC=	yes
 USE_XORG=	ice sm x11 xext xi xmu xt
-USE_GL= 	gl glu glut
+USE_GL= 	gl glu # uses its own glut
 
 BROWSER?=	firefox
 PSVIEWER?=	gv
