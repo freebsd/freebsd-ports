@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.3.4
+PORTVERSION=	6.4.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Adaptive Communication Environment for C++
 
 LICENSE=	ACE
