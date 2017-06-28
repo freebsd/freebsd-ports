@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://gitlab.com/gitlab-org/${PORTNAME}/repository/archive.tar.gz?ref=${DISTVERSIONPREFIX}${PORTVERSION}&dummy=/
