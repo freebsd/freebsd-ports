@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+# Created by: Mark Felder <feld@FreeBSD.org>
+
+name=plexpy
+
+: ${plexpy_user=nobody}
+
+pidfile=%%PREFIX%%/plexpy/plexpy.pid
+command=%%PREFIX%%/plexpy/PlexPy.py
+command_user=${plexpy_user}
+command_args="-d --nolaunch --pid ${pidfile}"
+
+start_pre()
+{
+	if ! [ -e /etc/localtime ] ; then
+		eerror "Plexpy needs the system timezone to be set."
+		eerror "Please run /usr/sbin/tzsetup"
+		exit 1
+	fi
+}
+
+depend()
+{
+	keyword -shutdown
+}

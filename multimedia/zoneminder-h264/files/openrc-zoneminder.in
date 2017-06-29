@@ -16,5 +16,5 @@ version() {
 depend()
 {
 	keyword -shutdown
-	require mysql
+	need mysql
 }
