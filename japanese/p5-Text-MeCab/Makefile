@@ -3,7 +3,7 @@
 
 PORTNAME=	Text-MeCab
 PORTVERSION=	0.20009
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=	CPAN
 
@@ -13,8 +13,7 @@ COMMENT=	Alternate Interface To libmecab
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Class-Accessor>0:devel/p5-Class-Accessor \
-		p5-XSLoader>0.1:devel/p5-XSLoader
+RUN_DEPENDS=	p5-Class-Accessor>0:devel/p5-Class-Accessor
 LIB_DEPENDS=	libmecab.so:japanese/mecab
 TEST_DEPENDS=	p5-Test-Requires>0:devel/p5-Test-Requires
 
