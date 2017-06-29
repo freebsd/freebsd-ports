@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-DISTVERSION=	3.9.1
+DISTVERSION=	3.10.1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
@@ -60,6 +60,10 @@ TCP_WRAPPERS_CONFIGURE_ENABLE=	tcp-wrapper
 
 SPOOF_LIB_DEPENDS=		libnet.so:net/libnet
 SPOOF_CONFIGURE_ENABLE=		spoof-source
+SPOOF_CONFIGURE_ON=		--with-libnet=/usr/local/bin
+SPOOF_CONFIGURE_ENV=		LIBNET_CFLAGS="-I/usr/local/include" \
+				LIBNET_LIBS="-L/usr/local/lib -lnet"
+
 
 IPV6_CONFIGURE_ENABLE=		ipv6
 
@@ -98,7 +102,6 @@ JAVA_PLIST_FILES= 		lib/syslog-ng/libmod-java.so \
 				lib/syslog-ng/java-modules/syslog-ng-core.jar
 
 JAVA_MOD_CONFIGURE_ENABLE=	java-modules
-# JAVA_MOD_BROKEN=		Unsupported maven downloads.
 JAVA_MOD_USE_JAVA=		yes
 JAVA_MOD_BUILD_DEPENDS=		gradle:devel/gradle \
 				bash:shells/bash
@@ -132,7 +135,6 @@ PYTHON_PLIST_FILES= 		lib/syslog-ng/libmod-python.so
 
 CURL_CONFIGURE_OFF=		--with-libcurl=off
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
-CURL_PLIST_FILES= 		lib/syslog-ng/libcurl.so
 
 .include <bsd.port.pre.mk>
 
