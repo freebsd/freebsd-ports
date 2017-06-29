@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=motion
+
+command=%%PREFIX%%/bin/${name}
+pidfile="/var/run/${name}.pid"
+required_files=%%ETCDIR%%/${name}.conf
+
+depend()
+{
+	keyword -shutdown
+}

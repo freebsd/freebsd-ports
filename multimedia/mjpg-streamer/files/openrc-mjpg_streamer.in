@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=mjpg_streamer
+
+command=%%PREFIX%%/bin/${name}
+command_args="-b -o 'output_http.so -w %%WWWDIR%%'"
+
+depend()
+{
+	keyword -shutdown
+}

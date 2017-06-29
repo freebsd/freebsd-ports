@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+#
+# Script to start and stop the KiSS DX deamon, using the rc.subr functionality
+
+# Name of program to start
+name="kissdx"
+
+# Full path to program
+command="%%PREFIX%%/sbin/${name}"
+
+# Arguments used to start program
+command_args="-kd"
+
+required_files="%%PREFIX%%/etc/${name}.conf"
