@@ -56,12 +56,9 @@ lib/elixir/lib/ex_doc/lib/ex_doc/markdown/hoedown.ex
 lib/elixir/lib/ex_doc/lib/ex_doc/retriever.ex
 lib/elixir/lib/ex_doc/lib/mix/tasks/docs.ex
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/epub/assets/dist/app-75ab88af99.js
-lib/elixir/lib/ex_doc/priv/ex_doc/formatter/epub/assets/dist/epub-cbd1e3d153.css
+lib/elixir/lib/ex_doc/priv/ex_doc/formatter/epub/assets/dist/epub-3f654f2a47.css
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/epub/assets/metainfo/com.apple.ibooks.display-options.xml
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/epub/assets/metainfo/container.xml
-lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/dist/app-126b5f0e90.js
-lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/dist/app-126b5f0e90.js.map
-lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/dist/app-ce74982f08.css
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/fonts/icomoon.eot
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/fonts/icomoon.svg
 lib/elixir/lib/ex_doc/priv/ex_doc/formatter/html/assets/fonts/icomoon.ttf
