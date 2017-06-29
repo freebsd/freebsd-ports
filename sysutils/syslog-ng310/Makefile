@@ -3,7 +3,6 @@
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.10.1
-PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
