@@ -16,6 +16,7 @@ USES=		cmake localbase perl5
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=1
 USE_LDCONFIG=	yes
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib
+TEST_TARGET=	run_tests
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tool/bssl ${STAGEDIR}${PREFIX}/bin/
@@ -26,8 +27,5 @@ do-install:
 	${LN} -sf libcrypto.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libcrypto.so.1
 	${LN} -sf libssl.so.1 ${STAGEDIR}${PREFIX}/lib/libssl.so
 	${LN} -sf libssl.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libssl.so.1
-
-test: build
-	cd ${WRKSRC} ; ${MAKE_CMD} run_tests
 
 .include <bsd.port.mk>
