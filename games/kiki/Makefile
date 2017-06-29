@@ -39,6 +39,10 @@ DESKTOP_ENTRIES="kiki the nanobot" \
 CXXFLAGS+=	-Werror=tautological-constant-out-of-range-compare
 .endif
 
+.if ${OSVERSION} > 1200031
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-ino64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|.*|CXXFLAGS+=$$(KODI_INCLUDES) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`|' ${WRKSRC}/kodilib/linux/Makefile
 	@${REINPLACE_CMD} -e 's|getenv("KIKI_HOME")|"${DATADIR}"|' ${WRKSRC}/src/main/KikiController.cpp
@@ -50,7 +54,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/linux/kiki ${STAGEDIR}${PREFIX}/bin/
-	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "py sound" ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.post.mk>

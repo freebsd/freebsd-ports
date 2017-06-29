@@ -4149,6 +4149,7 @@
     SUBDIR += py-argparse
     SUBDIR += py-args
     SUBDIR += py-arrow
+    SUBDIR += py-asn1crypto
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astor
