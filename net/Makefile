@@ -151,6 +151,7 @@
     SUBDIR += freerdp1
     SUBDIR += freeswitch
     SUBDIR += freevrrpd
+    SUBDIR += frr
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib

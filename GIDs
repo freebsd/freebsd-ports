@@ -93,7 +93,7 @@ ipv6mon:*:148:
 avenger:*:149:
 cbsd:*:150:
 # free: 151
-# free: 152
+frrvty:*:152:frr
 rbldns:*:153:
 trircd:*:154:
 xorp:*:155:
@@ -109,7 +109,7 @@ lightdm:*:164:
 uwsgi:*:165:
 yule:*:166:
 ceph:*:167:
-# free: 168
+frr:*:168:
 acme:*:169:
 tile38:*:170:
 sfs:*:171:

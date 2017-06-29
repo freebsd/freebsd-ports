@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	3proxy
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 CATEGORIES=	net
 
 MAINTAINER=	timp87@gmail.com
