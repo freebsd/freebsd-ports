@@ -313,7 +313,7 @@
     SUBDIR += flexbackup
     SUBDIR += flock
     SUBDIR += flog
-    SUBIDR += flowgger
+    SUBDIR += flowgger
     SUBDIR += fluent-bit
     SUBDIR += flyback
     SUBDIR += fonteditfs
