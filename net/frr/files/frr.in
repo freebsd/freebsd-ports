@@ -1,0 +1,154 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: frr
+# REQUIRE: netif routing 
+# KEYWORD: nojail shutdown
+
+# Add the following line to /etc/rc.conf to enable frr:
+#  frr_enable="YES"
+#
+# You may also wish to use the following variables to fine-tune startup:
+#  frr_flags=""
+#  frr_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"
+#  frr_vysh_boot="YES"
+# Per daemon tuning may be done with daemon_name_flags
+#  zebra_flags="-P 0"
+#  bgpd_flags="-nrP 0" and so on
+# If you want to give the routing deamons a chance to catchup before
+# continueing, set frr_wait_for to a "default" or certain prefix.
+#  frr_wait_for="default"
+# Set the time limit for the wait.
+#  frr_wait_seconds="90"
+#
+# If the frr daemons require additional shared libraries to start,
+# use the following variable to run ldconfig(8) in advance:
+#  frr_extralibs_path="/usr/local/lib ..."
+#
+# This RC script was adapted from the net/quagga port
+
+. /etc/rc.subr
+
+name=frr
+rcvar=$name_enable
+
+start_postcmd=start_postcmd
+stop_postcmd="rm -f $pidfile"
+configtest_cmd=check_config
+extra_commands=configtest
+command_args="-d"
+
+load_rc_config $name
+: ${frr_enable:="NO"}
+: ${frr_flags:=""}
+: ${frr_daemons:="zebra ripd ripngd ospfd ospf6d bgpd isisd"}
+: ${frr_vtysh_boot:="NO"}
+: ${frr_wait_for:=""}
+: ${frr_wait_seconds:="90"}
+
+check_config()
+{
+    echo "Checking $daemon.conf"
+	# pimd doesn't support -C
+	if [ "$daemon" == "pimd" ]; then
+		echo "Ignored"
+	else
+    	$command $daemon_flags -C
+    	result=$?
+    	if [ "$result" -eq "0" ]; then
+			echo "OK"
+    	else
+			echo "FAILED"
+			exit
+    	fi
+	fi
+}
+
+start_postcmd()
+{
+	local waited_for
+	waited_for=0
+	# Wait only when last daemon has started.
+	if [ "${frr_daemons}" = "${frr_daemons% ${name}}" ]; then
+		return;
+	fi
+        if [ -n "${frr_wait_for}" ]; then
+		echo Waiting for ${frr_wait_for} route...
+		while [ ${waited_for} -lt ${frr_wait_seconds} ]; do
+			/sbin/route -n get ${frr_wait_for} >/dev/null 2>&1 && break;
+			waited_for=$((${waited_for}+1))
+			sleep 1;
+		done
+		[ ${waited_for} -lt ${frr_wait_seconds} ] || echo Giving up...
+	fi
+}
+
+do_cmd()
+{
+	local ret
+	ret=0
+	for daemon in ${frr_daemons}; do
+	    command=%%PREFIX%%/sbin/${daemon}
+	    required_files=%%ETCDIR%%/${daemon}.conf
+	    pidfile=/var/run/frr/${daemon}.pid
+	    if [ ${frr_cmd} = "restart" -o ${frr_cmd} = "start" ]; then
+		check_config
+	    fi
+	    if [ ${frr_cmd} = "start" -a ! -f ${required_files} ]; then
+			continue
+	    fi
+	    if [ ${frr_cmd} = "stop" -a -z $(check_process ${command}) ]; then
+			continue
+	    fi
+	    eval flags=\$\{${daemon}_flags:-\"${frr_flags}\"\}
+	    name=${daemon}
+	    _rc_restart_done=false
+	    run_rc_command "$1" || ret=1
+	done
+	if checkyesno frr_vtysh_boot; then
+	    echo "Booting for integrated-vtysh-config..."
+	    %%PREFIX%%/bin/vtysh -b
+	fi
+	return ${ret}
+}
+
+frr_cmd=$1
+
+case "$1" in
+    force*)
+	frr_cmd=${frr_cmd#force}
+	;;
+    fast*)
+	frr_cmd=${frr_cmd#fast}
+	;;
+esac
+shift
+
+if [ $# -ge 1 ]; then
+	frr_daemons="$*"
+fi
+
+case "${frr_cmd}" in
+    start)
+	if [ -n "${frr_extralibs_path}" ]; then
+	    /sbin/ldconfig -m ${frr_extralibs_path}
+	fi
+	# Why should I need to add this check ?
+	checkyesno frr_enable && do_cmd "start"
+	;;
+    stop)
+	frr_daemons=$(reverse_list ${frr_daemons})
+	do_cmd "stop"
+	;;
+    restart)
+	frr_daemons=$(reverse_list ${frr_daemons})
+    	do_cmd "stop"
+	frr_daemons=$(reverse_list ${frr_daemons})
+	checkyesno frr_enable && do_cmd "start"
+	;;
+    *)
+	do_cmd "${frr_cmd}"
+	;;
+esac
