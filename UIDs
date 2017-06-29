@@ -114,7 +114,7 @@ lightdm:*:164:164::0:0:Light Display Manager:/var/lib/lightdm-data:/usr/sbin/nol
 uwsgi:*:165:165::0:0:uwsgi Daemon:/nonexistent:/usr/sbin/nologin
 yule:*:166:166::0:0:Samhain Daemon:/nonexistent:/usr/sbin/nologin
 ceph:*:167:167::0:0:Ceph Daemons:/var/lib/ceph:/usr/sbin/nologin
-# free: 168
+frr:*:168:168::0:0:FRRouting user:/var/empty:/usr/sbin/nologin
 acme:*:169:169::0:0:ACME protocol client:/var/db/acme:/bin/sh
 tile38:*:170:170::0:0:Tile38 User:/var/db/tile38:/usr/sbin/nologin
 sfs:*:171:171::0:0:Self-Certifying File System:/nonexistent:/usr/sbin/nologin
