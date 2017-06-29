@@ -116,6 +116,9 @@ lib/exaile/xl/migrations/database/__init__.pyo
 lib/exaile/xl/migrations/database/from1to2.py
 lib/exaile/xl/migrations/database/from1to2.pyc
 lib/exaile/xl/migrations/database/from1to2.pyo
+lib/exaile/xl/migrations/database/to_bsddb.py
+lib/exaile/xl/migrations/database/to_bsddb.pyc
+lib/exaile/xl/migrations/database/to_bsddb.pyo
 lib/exaile/xl/migrations/settings/__init__.py
 lib/exaile/xl/migrations/settings/__init__.pyc
 lib/exaile/xl/migrations/settings/__init__.pyo
