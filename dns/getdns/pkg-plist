@@ -7,7 +7,7 @@ include/getdns/getdns_extra.h
 %%LIBUV%%include/getdns/getdns_ext_libuv.h
 lib/libgetdns.so
 lib/libgetdns.so.%%SOMAJVER%%
-lib/libgetdns.so.%%SOVERSION%%
+lib/libgetdns.so.%%SOMAJVER%%.0.1
 lib/libgetdns.a
 libdata/pkgconfig/getdns.pc
 libdata/pkgconfig/getdns_ext_event.pc
@@ -101,12 +101,3 @@ man/man3/libgetdns.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/spec/index.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-all-functions.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-reverse.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-simple-answers.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-synchronous.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-tree.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getdns_core_only.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getdns_libevent.h
