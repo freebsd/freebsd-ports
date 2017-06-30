@@ -3,6 +3,7 @@
 
 PORTNAME=	tdl
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rpcurnow.force9.co.uk/tdl/
 

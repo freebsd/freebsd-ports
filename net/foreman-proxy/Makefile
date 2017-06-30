@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.15.0
+PORTVERSION=	1.15.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.theforeman.org/foreman-proxy/
 

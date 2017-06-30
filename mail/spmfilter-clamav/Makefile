@@ -12,7 +12,7 @@ COMMENT=	ClamAV plugin for spmfilter
 BUILD_DEPENDS=	spmfilter>=0.6:mail/spmfilter
 RUN_DEPENDS=	spmfilter>=0.6:mail/spmfilter
 
-USES=		cmake pkgconfig
+USES=		cmake:noninja pkgconfig
 CMAKE_ARGS+=	--no-warn-unused-cli \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"

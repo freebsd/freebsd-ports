@@ -525,7 +525,6 @@
     SUBDIR += lgeneral
     SUBDIR += lianliankan
     SUBDIR += libdungeonmaker
-    SUBDIR += libgames-support
     SUBDIR += libggz
     SUBDIR += libgnome-games-support
     SUBDIR += libkdegames

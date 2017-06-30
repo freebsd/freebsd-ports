@@ -13,6 +13,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-railties4>=4.1.4:www/rubygem-railties4
 
+DEPRECATED=	Only created for www/gitlab; please use www/rubygem-jquery-ui-rails-rails4 instead
+EXPIRATION_DATE=	2017-07-31
+
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem

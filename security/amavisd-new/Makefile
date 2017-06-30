@@ -152,8 +152,7 @@ RUN_DEPENDS+=	file>=4.21:sysutils/file
 # not suit rar.
 
 .if ${PORT_OPTIONS:MRAR}
-# support for archivers/rar is broken on ia64
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == "i386"
 RUN_DEPENDS+=	${LOCALBASE}/bin/rar:archivers/rar
 .else
 IGNORE=	archviers/rar is a 32-bit binary port and is not compatible with ${ARCH}

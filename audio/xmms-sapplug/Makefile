@@ -28,7 +28,6 @@ PLIST_FILES=	lib/xmms/Input/libsap.so
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 CFLAGS_amd64=	-fpic -DPIC
-CFLAGS_ia64=	-fpic -DPIC
 
 .include <bsd.port.pre.mk>
 

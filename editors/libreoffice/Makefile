@@ -2,7 +2,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	2
+PORTREVISION=	0
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		http://dev-www.libreoffice.org/src/:src \
 		http://dev-www.libreoffice.org/extern/:ext
@@ -92,7 +92,7 @@ MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
 
 CONFLICTS_INSTALL=	libreoffice4-4.*
 
-INSTALL_TARGET=	distro-pack-install
+INSTALL_TARGET=	distro-pack-install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
 GNU_CONFIGURE=	yes

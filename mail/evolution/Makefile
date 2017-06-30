@@ -41,7 +41,7 @@ RUN_DEPENDS=	highlight:textproc/highlight \
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils cmake gettext gnome iconv:wchar_t \
-		sqlite libarchive ninja localbase pathfix pkgconfig tar:xz
+		sqlite libarchive localbase pathfix pkgconfig tar:xz
 USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 intltool
 GNU_CONFIGURE=	yes
 USE_XORG=	x11

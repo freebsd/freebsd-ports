@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 

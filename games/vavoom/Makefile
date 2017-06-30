@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake dos2unix jpeg tar:bzip2
+USES=		cmake:noninja dos2unix jpeg tar:bzip2
 DOS2UNIX_REGEX=	((.*\.(c|cpp|h|s|asm|inc|vc|ls|acs|cfg|txt|vs|mak|mgw"))$$|\/(makefile\..*|makefile|Makefile)$$)
 
 OPTIONS_DEFINE=	FLAC LAUNCHER MAD MIKMOD OPENAL OPTIMIZED_CFLAGS VORBIS SDL DOCS

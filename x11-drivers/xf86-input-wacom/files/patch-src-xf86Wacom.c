@@ -18,13 +18,3 @@
  		/* for all other errors, hope that the hotplugging code will
  		 * remove the device */
  		if (errno != EAGAIN && errno != EINTR)
-@@ -823,9 +834,7 @@ static void wcmUnlinkTouchAndPen(InputIn
- static int wcmDevProc(DeviceIntPtr pWcm, int what)
- {
- 	InputInfoPtr pInfo = (InputInfoPtr)pWcm->public.devicePrivate;
--#ifdef DEBUG
- 	WacomDevicePtr priv = (WacomDevicePtr)pInfo->private;
--#endif
- 	Status rc = !Success;
- 
- 	DBG(2, priv, "BEGIN dev=%p priv=%p "

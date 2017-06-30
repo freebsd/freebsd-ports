@@ -36,6 +36,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/MergerSite/__init__.py
 %%DATADIR%%/plugins/MergerSite/__init__.pyc
 %%DATADIR%%/plugins/MergerSite/__init__.pyo
+%%DATADIR%%/plugins/MergerSite/languages/es.json
 %%DATADIR%%/plugins/MergerSite/languages/fr.json
 %%DATADIR%%/plugins/MergerSite/languages/hu.json
 %%DATADIR%%/plugins/MergerSite/languages/it.json
@@ -49,6 +50,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/Mute/__init__.py
 %%DATADIR%%/plugins/Mute/__init__.pyc
 %%DATADIR%%/plugins/Mute/__init__.pyo
+%%DATADIR%%/plugins/Mute/languages/es.json
 %%DATADIR%%/plugins/Mute/languages/hu.json
 %%DATADIR%%/plugins/Mute/languages/it.json
 %%DATADIR%%/plugins/Mute/languages/pt-br.json
@@ -81,6 +83,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/OptionalManager/__init__.py
 %%DATADIR%%/plugins/OptionalManager/__init__.pyc
 %%DATADIR%%/plugins/OptionalManager/__init__.pyo
+%%DATADIR%%/plugins/OptionalManager/languages/es.json
 %%DATADIR%%/plugins/OptionalManager/languages/fr.json
 %%DATADIR%%/plugins/OptionalManager/languages/hu.json
 %%DATADIR%%/plugins/OptionalManager/languages/pt-br.json
@@ -168,6 +171,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/Trayicon/__init__.py
 %%DATADIR%%/plugins/Trayicon/__init__.pyc
 %%DATADIR%%/plugins/Trayicon/__init__.pyo
+%%DATADIR%%/plugins/Trayicon/languages/es.json
 %%DATADIR%%/plugins/Trayicon/languages/fr.json
 %%DATADIR%%/plugins/Trayicon/languages/hu.json
 %%DATADIR%%/plugins/Trayicon/languages/it.json

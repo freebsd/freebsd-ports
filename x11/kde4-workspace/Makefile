@@ -40,7 +40,7 @@ RUN_DEPENDS=	${KDE_PREFIX}/env/xdg-env.sh:misc/kde4-xdg-env \
 		${LOCALBASE}/etc/pam.d/kde:security/pam_kde \
 		${KDE_PREFIX}/share/apps/ksplash/Themes/Default/Theme.rc:x11-themes/kde4-base-artwork
 
-USES=		cmake:outsource compiler:c++11-lib gettext gmake jpeg kde:4 \
+USES=		cmake:outsource,noninja compiler:c++11-lib gettext gmake jpeg kde:4 \
 		pkgconfig shebangfix tar:xz
 USE_GL=		gl glu
 USE_GNOME=	glib20 libxml2

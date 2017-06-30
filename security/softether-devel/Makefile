@@ -2,6 +2,7 @@
 
 PORTNAME=	softether-devel
 PORTVERSION=	4.21.9613
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	hrs@FreeBSD.org

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-assets
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
 		rubygem-fastimage>=2.0:graphics/rubygem-fastimage \
 		rubygem-jekyll>=3.1:www/rubygem-jekyll \
 		rubygem-pathutil>=0.8:devel/rubygem-pathutil \
-		rubygem-rack>=1:www/rubygem-rack \
+		rubygem-rack16>=1.6:www/rubygem-rack16 \
 		rubygem-sprockets3>=3.3:devel/rubygem-sprockets3
 
 NO_ARCH=	yes

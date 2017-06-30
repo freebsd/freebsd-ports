@@ -182,6 +182,7 @@ include/postgresql/server/catalog/pg_ts_template.h
 include/postgresql/server/catalog/pg_type.h
 include/postgresql/server/catalog/pg_type_fn.h
 include/postgresql/server/catalog/pg_user_mapping.h
+include/postgresql/server/catalog/schemapg.h
 include/postgresql/server/catalog/storage.h
 include/postgresql/server/catalog/storage_xlog.h
 include/postgresql/server/catalog/toasting.h
@@ -671,6 +672,7 @@ lib/postgresql/pgxs/src/Makefile.port
 lib/postgresql/pgxs/src/Makefile.shlib
 lib/postgresql/pgxs/src/makefiles/pgxs.mk
 lib/postgresql/pgxs/src/nls-global.mk
+lib/postgresql/pgxs/src/test/regress/pg_regress
 libdata/pkgconfig/libecpg.pc
 libdata/pkgconfig/libecpg_compat.pc
 libdata/pkgconfig/libpgtypes.pc

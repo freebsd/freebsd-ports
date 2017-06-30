@@ -3,6 +3,7 @@
 
 PORTNAME=	tarantool
 PORTVERSION=	1.7.4.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tarantool.org/tarantool/1.7/src/
 
@@ -15,7 +16,7 @@ NOT_FOR_ARCHS=		armv6 powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
 MAKE_JOBS_UNSAFE=yes
-USES=		cmake compiler:c++11-lang gettext gmake perl5 readline
+USES=		cmake:noninja compiler:c++11-lang gettext gmake perl5 readline
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message

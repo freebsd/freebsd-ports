@@ -17,6 +17,8 @@ CXXFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh
 
+CFLAGS_amd64=	-fPIC
+
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	anope
@@ -53,11 +55,6 @@ TRE_LIB_DEPENDS=	libtre.so:textproc/libtre
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
-
-# XXX Add here other arch which needs -fPIC :-)
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
 
 post-patch:
 .if ${PORT_OPTIONS:MGNUTLS}

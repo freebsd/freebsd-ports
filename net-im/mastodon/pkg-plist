@@ -5253,12 +5253,12 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/helpers/routing_helper.rb
 %%WWWDIR%%/spec/helpers/settings_helper_spec.rb
 %%WWWDIR%%/spec/helpers/stream_entries_helper_spec.rb
+%%WWWDIR%%/spec/javascript/.eslintrc.yml
 %%WWWDIR%%/spec/javascript/components/avatar.test.js
 %%WWWDIR%%/spec/javascript/components/button.test.js
 %%WWWDIR%%/spec/javascript/components/display_name.test.js
 %%WWWDIR%%/spec/javascript/components/dropdown_menu.test.js
 %%WWWDIR%%/spec/javascript/components/features/ui/components/column.test.js
-%%WWWDIR%%/spec/javascript/components/loading_indicator.test.js
 %%WWWDIR%%/spec/javascript/setup.js
 %%WWWDIR%%/spec/lib/atom_serializer_spec.rb
 %%WWWDIR%%/spec/lib/extractor_spec.rb
@@ -5357,6 +5357,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/spec_helper.rb
 %%WWWDIR%%/spec/support/examples/lib/settings/scoped_settings.rb
 %%WWWDIR%%/spec/support/examples/lib/settings/settings_extended.rb
+%%WWWDIR%%/spec/support/examples/models/concerns/account_avatar.rb
 %%WWWDIR%%/spec/support/matchers/model/model_have_error_on_field.rb
 %%WWWDIR%%/spec/views/about/_contact.html.haml_spec.rb
 %%WWWDIR%%/spec/views/about/_links.html.haml_spec.rb

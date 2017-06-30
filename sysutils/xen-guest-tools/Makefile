@@ -15,8 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/lib/libargp.so:devel/argp-standalone \
 		${LOCALBASE}/lib/libyajl.so:devel/yajl
 
-ONLY_FOR_ARCHS=		amd64 i386 ia64
-ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386, or ia64"
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64 or i386
 CONFLICTS=	xen-tools-[0-9]*
 
 USES=		gmake python:2.7:configure perl5 gettext-runtime:build gettext-tools:build pkgconfig

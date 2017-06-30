@@ -10,7 +10,7 @@ DISTNAME=		cl${PORTVERSION:S/.//g}
 MAINTAINER=		ale@FreeBSD.org
 COMMENT=		Powerful security programming toolkit
 
-ONLY_FOR_ARCHS=		i386 amd64 armv6
+ONLY_FOR_ARCHS=		amd64 armv6 i386
 
 OPTIONS_DEFINE=		DOCS
 

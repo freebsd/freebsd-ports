@@ -3,6 +3,7 @@
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	1.3.159
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		ftp://ftp.dcc-servers.net/src/dcc/old/ \
@@ -23,16 +24,15 @@ HAS_CONFIGURE=	yes
 
 USES=		tar:Z
 
-OPTIONS_DEFINE=	DCCIFD DCCD DCCGREY IPV6 ALT_HOME
+OPTIONS_DEFINE=	DCCIFD DCCD DCCGREY IPV6
 OPTIONS_DEFAULT=	DCCIFD DCCM DCCD DCCGREY
 OPTIONS_GROUP=	MILTER
-OPTIONS_GROUP_MILTER=	DCCM PORTS_SENDMAIL
+OPTIONS_GROUP_MILTER=	DCCM PORTS_MILTER
 DCCIFD_DESC=		DCC interface daemon (for SpamAssassin etc)
-DCCM_DESC=		DCC milter (for Sendmail only)
+DCCM_DESC=		DCC milter
 DCCD_DESC=		DCC server
 DCCGREY_DESC=		DCC greylisting server
-ALT_HOME_DESC=		DCC home in /var/dcc (see help)
-PORTS_SENDMAIL_DESC=	Use ports Sendmail instead of base
+PORTS_MILTER_DESC=	Use ports milter instead of base
 
 OPTIONS_SUB=	yes
 
@@ -43,6 +43,8 @@ DCCGROUP?=	dcc
 
 USERS=		${DCCUSER}
 GROUPS=		${DCCGROUP}
+
+DCCHOME=	${PREFIX}/dcc
 
 PLIST_SUB+=	DCCUSER="${DCCUSER}" DCCGROUP="${DCCGROUP}"
 SUB_FILES=		pkg-install pkg-message
@@ -59,15 +61,17 @@ CONFIGURE_ARGS=	-q \
 		--with-configsuffix=.sample \
 		--with-make-cmd=${MAKE_CMD} \
 		--with-install-cmd=${BSD_INSTALL_PROGRAM} \
-		--enable-pkg-make
+		--enable-pkg-make \
+		--homedir=${DCCHOME} \
+		--libexecdir=${DCCHOME}/libexec \
+		--with-cgibin=${DCCHOME}/cgi-bin
 
 CONFIGURE_ENV=	ac_cv_header_histedit_h=no	# disable libedit detection
 
-ALT_HOME_CONFIGURE_ON=	--libexecdir=${PREFIX}/dcc/libexec --with-cgibin=${PREFIX}/dcc/cgi-bin
 DCCM_CONFIGURE_ENABLE=	dccm
 DCCM_USE=	rc_subr=dccm
-PORTS_SENDMAIL_BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:mail/libmilter
-PORTS_SENDMAIL_CONFIGURE_ON=	--with-sendmail=yes
+PORTS_MILTER_BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:mail/libmilter
+PORTS_MILTER_CONFIGURE_ON=	--with-sendmail=yes
 DCCIFD_CONFIGURE_ENABLE=	dccifd
 DCCIFD_USE=	rc_subr=dccifd
 DCCD_CONFIGURE_ENABLE=	server
@@ -77,33 +81,10 @@ DCCGREY_USE=	rc_subr=dccgrey
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MALT_HOME}
-DCCHOME=		/var/dcc
-.else
-DCCHOME=		${PREFIX}/dcc
-.endif
-
-CONFIGURE_ARGS+=	--homedir=${DCCHOME}
-
 ## dccm milter support
 #
-.if ${PORT_OPTIONS:MDCCM}
-
-.if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
-IGNORE=		neither base system nor Ports version of Sendmail installed, cannot build milter
-.endif
-.if ! ${PORT_OPTIONS:MPORTS_SENDMAIL} && !exists(/usr/lib/libmilter.a)
-IGNORE=		base system Sendmail not found or too old, rebuild with WITH_PORTS_SENDMAIL=yes or WITHOUT_DCCM=yes
-.endif
-.if ${PORT_OPTIONS:MPORTS_SENDMAIL} && !exists(${LOCALBASE}/lib/libmilter.a)
-IGNORE=		ports Sendmail not found, rebuild with WITHOUT_PORTS_SENDMAIL=yes or WITHOUT_DCCM=yes
-.endif
-
-.if ! ${PORT_OPTIONS:MPORTS_SENDMAIL}
-MILTERBASE=	/usr
-.else
+.if ${PORT_OPTIONS:MPORTS_MILTER}
 MILTERBASE?=	${LOCALBASE}
-.endif
 
 MILTERINC=	${MILTERBASE}/include
 MILTERLIB=	${MILTERBASE}/lib

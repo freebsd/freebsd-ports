@@ -15,22 +15,19 @@ COMMENT=	Modular packet filter
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc=		fails to compile
 BROKEN_powerpc64=	fails to compile: pcpu.h: size of array '__assert_0' is negative
+BROKEN_FreeBSD_11=	fails to build on FreeBSD 11+
+BROKEN_FreeBSD_12=	fails to build on FreeBSD 11+
 
 SSP_UNSAFE=	kernel module does not support ssp
 USES=		cmake:outsource kmod tar:xz uidfix
 USE_LDCONFIG=	yes
 
-BROKEN_powerpc=	does not compile
-
 .include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/sys/module.h)
 IGNORE=		requires kernel source files
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
-BROKEN=		does not build on FreeBSD 11+
 .endif
 
 CMAKE_ARGS+=	-DDOMAIN_STUB:BOOL=OFF

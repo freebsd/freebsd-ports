@@ -3,6 +3,7 @@
 
 PORTNAME=	pmf
 PORTVERSION=	1.13.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.ntua.gr/pub/net/mud/lpmud/clients/pmf/ \
 		LOCAL/glarkin

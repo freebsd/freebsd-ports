@@ -3,7 +3,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.8.20p2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -88,7 +88,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/sudo.default
-	${TOUCH} ${STAGEDIR}${PREFIX}/etc/sudoers.d/.keep-me
 	${RM} ${STAGEDIR}${PREFIX}/etc/sudoers
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sudoreplay
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/visudo

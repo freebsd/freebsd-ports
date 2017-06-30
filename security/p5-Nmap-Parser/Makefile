@@ -3,6 +3,7 @@
 
 PORTNAME=	Nmap-Parser
 PORTVERSION=	1.33
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,11 +11,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Parse nmap scan data with perl
 
-BUILD_DEPENDS=	p5-XML-Twig>=3.16:textproc/p5-XML-Twig \
-		p5-Storable>=2:devel/p5-Storable
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	p5-XML-Twig>=3.16:textproc/p5-XML-Twig
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		nmap:security/nmap
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

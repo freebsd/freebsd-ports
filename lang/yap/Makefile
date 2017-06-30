@@ -3,7 +3,7 @@
 
 PORTNAME=	yap
 PORTVERSION=	6.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 

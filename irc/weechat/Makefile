@@ -18,7 +18,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 
 EXPLICIT_SAFESTACK=	yes
 
-USES=		cmake:outsource ncurses tar:xz
+USES=		cmake:outsource,noninja ncurses tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DENABLE_GUILE=no \

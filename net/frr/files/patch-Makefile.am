@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2017-04-02 05:22:47 UTC
++++ Makefile.am
+@@ -3,7 +3,7 @@
+ SUBDIRS = lib qpb fpm @ZEBRA@ @LIBRFP@ @RFPTEST@ \
+ 	 @BGPD@ @RIPD@ @RIPNGD@ @OSPFD@ @OSPF6D@ @LDPD@ \
+          @ISISD@ @PIMD@ @WATCHFRR@ @VTYSH@ @OSPFCLIENT@ @DOC@ m4 @pkgsrcdir@ \
+-         redhat @SOLARIS@ tests tools cumulus snapcraft
++         redhat @SOLARIS@ tests cumulus snapcraft
+ 
+ DIST_SUBDIRS = lib qpb fpm zebra bgpd ripd ripngd ospfd ospf6d ldpd \
+ 	  isisd watchfrr vtysh ospfclient doc m4 pkgsrc redhat tests \

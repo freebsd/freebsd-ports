@@ -3,6 +3,7 @@
 
 PORTNAME=	Data-Page-Pageset
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHUNZI
@@ -16,11 +17,11 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Data-Page>=2:databases/p5-Data-Page \
-	p5-Class-Accessor>0:devel/p5-Class-Accessor \
-	p5-Carp>0:devel/p5-Carp
+	p5-Class-Accessor>0:devel/p5-Class-Accessor
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>0:devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

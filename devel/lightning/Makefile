@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	JIT_ARCH=${ARCH:S/i386/x86/:S/amd64/x86/:S/x86_64/x86/:S/sparc64/sparc/:S/powerpc/ppc/}
 
-ONLY_FOR_ARCHS=	i386 amd64 arm ia64 powerpc sparc64 mips
+ONLY_FOR_ARCHS=	amd64 arm i386 mips powerpc sparc64
 
 INFO=		lightning
 

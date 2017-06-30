@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	totem-pl-parser
-PORTVERSION=	3.10.7
+PORTVERSION=	3.10.8
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -31,5 +31,9 @@ OPTIONS_DEFAULT=QUVI
 QUVI_DESC=	Flash media stream URL support
 QUVI_CONFIGURE_ENABLE=	quvi
 QUVI_LIB_DEPENDS=	libquvi-0.9.so:multimedia/libquvi09
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gmime-3.0|disabled-gmime-3.0|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

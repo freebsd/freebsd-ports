@@ -2,8 +2,12 @@ bin/scamper
 bin/sc_ally
 bin/sc_analysis_dump
 bin/sc_attach
+bin/sc_bdrmap
 bin/sc_filterpolicy
 bin/sc_ipiddump
+bin/sc_prefixscan
+bin/sc_radargun
+bin/sc_remoted
 bin/sc_speedtrap
 bin/sc_tbitblind
 bin/sc_tracediff
@@ -21,8 +25,12 @@ lib/libscamperfile.so
 man/man1/sc_ally.1.gz
 man/man1/sc_analysis_dump.1.gz
 man/man1/sc_attach.1.gz
+man/man1/sc_bdrmap.1.gz
 man/man1/sc_filterpolicy.1.gz
 man/man1/sc_ipiddump.1.gz
+man/man1/sc_prefixscan.1.gz
+man/man1/sc_radargun.1.gz
+man/man1/sc_remoted.1.gz
 man/man1/sc_speedtrap.1.gz
 man/man1/sc_tbitblind.1.gz
 man/man1/sc_tracediff.1.gz

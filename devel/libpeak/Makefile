@@ -12,7 +12,7 @@ COMMENT=	Parallel Events and Asynchronous tasKing Library
 
 LICENSE=	BSD2CLAUSE
 
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
+ONLY_FOR_ARCHS=		amd64 i386 sparc64
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

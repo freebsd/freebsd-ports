@@ -18,4 +18,4 @@ Tiny C Compiler is perhaps the smallest ANSI C compiler, by Fabrice Bellard.
   - C script supported: just add '#!/bin/env tcc -run' at the first line
     of your C source, and execute it directly from the command line.
 
-WWW: https://github.com/TinyCC/tinycc/
+WWW: https://github.com/TinyCC/tinycc

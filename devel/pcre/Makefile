@@ -3,6 +3,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.40
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/${PORTNAME}/ \
@@ -80,7 +81,7 @@ CONFIGURE_ARGS+=	--with-parens-nest-limit=${WITH_PARENS_NEST_LIMIT}
 CONFIGURE_ARGS+=	--with-posix-malloc-threshold=${WITH_POSIX_MALLOC_THRESHOLD}
 .endif
 
-.if ${ARCH} != "sparc64" && ${ARCH} != "ia64" && empty(ARCH:Mmips64*)
+.if ${ARCH} != "sparc64" && empty(ARCH:Mmips64*)
 CONFIGURE_ARGS+=	--enable-jit
 .else
 CONFIGURE_ARGS+=	--disable-jit

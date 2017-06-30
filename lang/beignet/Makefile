@@ -23,7 +23,7 @@ RUN_DEPENDS=	opencl>=0:devel/opencl \
 
 WRKSRC=		${WRKDIR}/Beignet-${PORTVERSION}-Source
 
-USES=		cmake gmake ncurses pkgconfig shebangfix
+USES=		cmake ncurses pkgconfig shebangfix
 USE_XORG=	sm ice x11 xext xfixes
 USE_GL=		gl egl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}

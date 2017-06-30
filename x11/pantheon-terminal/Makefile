@@ -3,6 +3,7 @@
 
 PORTNAME=	pantheon-terminal
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgranite.so:x11-toolkits/granite
 BUILD_DEPENDS=	valac:lang/vala
+RUN_DEPENDS=	dbus-send:devel/dbus
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
@@ -26,6 +28,10 @@ GLIB_SCHEMAS=	org.pantheon.terminal.gschema.xml
 PORTDOCS=	AUTHORS README.md
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/proc|/compat/linux/proc|' \
+		${WRKSRC}/src/TerminalWidget.vala
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

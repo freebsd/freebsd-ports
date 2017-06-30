@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polarssl
-PORTVERSION=	1.3.19
+PORTVERSION=	1.3.20
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	https://polarssl.org/download/

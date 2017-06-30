@@ -11,4 +11,4 @@ to do it wrong.
 
 django-transaction-hooks does the heavy lifting so you don't have to.
 
-WWW: https://github.com/arljm/django-transaction-hooks/
+WWW: https://github.com/carljm/django-transaction-hooks

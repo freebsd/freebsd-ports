@@ -19,7 +19,7 @@ RUN_DEPENDS=	llvm39>=0:devel/llvm39 \
 		openmp>=0:devel/openmp
 
 USE_LDCONFIG=	${PREFIX}/flang/lib
-USES=		cmake:outsource compiler:c++11-lib libedit ninja tar:xz perl5 \
+USES=		cmake:outsource compiler:c++11-lib libedit tar:xz perl5 \
 		python shebangfix
 
 USE_GNOME+=	libxml2

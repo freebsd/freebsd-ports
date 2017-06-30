@@ -29,7 +29,7 @@ BROKEN_mips64=		fails to compile: 'fpsetmask' was not declared in this scope
 BROKEN_powerpc64=	fails to link: ld: final link failed: Bad value
 
 # autotool is in use for 5.1 builds
-USES=		alias autoreconf:build cpe gettext cmake libtool perl5 shebangfix
+USES=		alias autoreconf:build cpe gettext cmake:noninja libtool perl5 shebangfix
 CPE_VENDOR=	percona
 SHEBANG_FILES=	storage/innobase/xtrabackup/xbcloud_osenv.sh
 

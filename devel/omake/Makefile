@@ -3,7 +3,7 @@
 
 PORTNAME=	omake
 DISTVERSION=	0.9.8.6-0.rc1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/ocaml-omake/omake-0.9.8.6-0.rc1.tar.gz/fe39a476ef4e33b7ba2ca77a6bcaded2/ \
 		http://download.camlcity.org/download/

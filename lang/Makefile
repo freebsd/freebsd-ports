@@ -68,6 +68,7 @@
     SUBDIR += erlang-runtime17
     SUBDIR += erlang-runtime18
     SUBDIR += erlang-runtime19
+    SUBDIR += erlang-runtime20
     SUBDIR += erlang-wx
     SUBDIR += execline
     SUBDIR += expect

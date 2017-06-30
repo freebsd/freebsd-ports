@@ -16,8 +16,6 @@ LIB_DEPENDS=	libssh2.so:security/libssh2
 
 USES=	ssl
 
-BROKEN_ia64=	Does not build on ia64
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-module-ncp=no --enable-module-afp=no
 

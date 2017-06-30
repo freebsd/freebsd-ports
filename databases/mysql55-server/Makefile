@@ -3,7 +3,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.5.55
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.5
 PKGNAMESUFFIX?=	55-server
@@ -14,7 +14,7 @@ COMMENT?=	Multithreaded SQL database (server)
 LICENSE=	GPLv2
 
 SLAVEDIRS=	databases/mysql55-client
-USES=		cmake readline shebangfix
+USES=		cmake:noninja readline shebangfix
 CXXFLAGS+=	${CPPFLAGS}
 NO_OPTIONS_SORT=yes
 

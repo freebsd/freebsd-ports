@@ -22,6 +22,7 @@ BROKEN_sparc64=		fails to compile: gcc core dump
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
+		syslog-ng[0-9][0-9][0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 

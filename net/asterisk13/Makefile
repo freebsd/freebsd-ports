@@ -20,7 +20,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 
 BROKEN_armv6=		fails to configure: the SPANDSP installation appears to be missing or broken
-ONLY_FOR_ARCHS=		armv6 amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc sparc64
 
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 

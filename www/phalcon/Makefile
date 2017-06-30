@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 USES=		php:ext
 USE_PHP=	hash:build json:build pdo:build
 
-ONLY_FOR_ARCHS=	amd64 armv6 i386
+ONLY_FOR_ARCHS=		amd64 armv6 i386
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phalcon

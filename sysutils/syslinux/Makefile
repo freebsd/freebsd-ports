@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	nasm:devel/nasm
 RUN_DEPENDS=	mtools:emulators/mtools
 
-ONLY_FOR_ARCHS=		amd64 arm64 armv6 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 i386
 ONLY_FOR_ARCHS_REASON=	linux is not available for ${ARCH}
 
 USES=		perl5 gmake tar:xz

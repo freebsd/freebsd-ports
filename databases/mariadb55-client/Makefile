@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
+PORTREVISION=	1
 PKGNAMESUFFIX=	55-client
 
 COMMENT=	Multithreaded SQL database (client)
@@ -22,7 +23,6 @@ CMAKE_ARGS+=	-DWITHOUT_SERVER=1
 CLIENT_ONLY=	yes
 
 USES+=		ncurses readline
-
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/mysqld_safe_helper

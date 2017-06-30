@@ -2,17 +2,17 @@
 
 PORTNAME=	leiningen
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	devel lisp java
-MASTER_SITES=	GH:source1 \
-		https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:source2
-DISTFILES=	${DISTNAME}.tar.gz:source1 \
-		leiningen-${PORTVERSION}-standalone.zip:source2
+MASTER_SITES=	https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:standalone
+DISTFILES=	leiningen-${PORTVERSION}-standalone.zip:standalone
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Automate Clojure projects
 
 LICENSE=	EPL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	technomancy
@@ -27,12 +27,17 @@ PLIST_FILES=	bin/lein \
 		etc/bash_completion.d/_lein.bash \
 		man/man1/lein.1.gz \
 		share/zsh/site-functions/_lein \
-		%%JAVAJARDIR%%/leiningen.jar
+		${JAVAJARDIR}/leiningen.jar
 
 SHEBANG_FILES=	bin/lein-pkg
+bash_CMD=	/bin/sh
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|LEIN_JAR=.*|LEIN_JAR=${JAVAJARDIR}/leiningen.jar|" \
+	@${REINPLACE_CMD} -E -e 's|function (.*) {|\1() {|' \
+		-e 's|(local )-i |\1|' \
+		-e 's|^if \[\[ (.*) \]\];|if [ \1 ];|' \
+		-e 's|(BOOTCLASSPATH)\[@\]|\1|' \
+		-e 's|^LEIN_JAR=.*|LEIN_JAR=${JAVAJARDIR}/leiningen.jar|' \
 		${WRKSRC}/bin/lein-pkg
 
 do-install:

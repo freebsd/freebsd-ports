@@ -4,7 +4,7 @@ PORTNAME=	mupen64plus-qt
 PORTVERSION=	1.10
 CATEGORIES=	emulators
 
-MAINTAINER=	dan@hasting.info
+MAINTAINER=	maintainer@hasting.email
 COMMENT=	Basic launcher for Mupen64Plus
 
 LICENSE=	BSD3CLAUSE

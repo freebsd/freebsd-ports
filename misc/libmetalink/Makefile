@@ -32,6 +32,7 @@ EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 LIBXML2_CONFIGURE_WITH=	libxml2
 LIBXML2_CPPFLAGS=	-I${LOCALBASE}/include/libxml2
 LIBXML2_USE=		GNOME=libxml2
+LIBXML2_USES=		gnome
 TEST_BUILD_DEPENDS=	cunit>=2.1:devel/cunit
 
 post-install-EXAMPLES-on:

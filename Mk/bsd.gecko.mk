@@ -142,7 +142,11 @@ LDFLAGS+=		-Wl,--as-needed
 .if ${MOZILLA_VER:R:R} < 55 && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200032
 # use jemalloc 3.0.0 (4.0 for firefox 43+) API for stats/tuning
 MOZ_EXPORT+=	MOZ_JEMALLOC4=1
+.if ${MOZILLA_VER:R:R} >= 48
 MOZ_OPTIONS+=	--enable-jemalloc=4
+.elif ${OSVERSION} < 1100079
+MOZ_OPTIONS+=	--enable-jemalloc
+.endif # Mozilla >= 48
 .endif # Mozilla < 55
 
 # Standard depends

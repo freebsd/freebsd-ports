@@ -11,11 +11,6 @@ COMMENT=	ASCII Monitor for system resources and process activity
 
 LICENSE=	GPLv2
 
-BROKEN_armv6=		fails to build: photosyst.c: 'struct xtcpcb' has no member named 'xt_tp'
-BROKEN_mips=		fails to build: photosyst.c: 'struct xtcpcb' has no member named 'xt_tp'
-BROKEN_mips64=		fails to build: photosyst.c: 'struct xtcpcb' has no member named 'xt_tp'
-BROKEN_powerpc64=	fails to build: photosyst.c: 'struct xtcpcb' has no member named 'xt_tp'
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	samm-git
 GH_PROJECT=	atop-freebsd

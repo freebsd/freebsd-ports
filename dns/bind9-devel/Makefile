@@ -31,8 +31,8 @@ LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.12.0a.2017.06.17
-HASH=		5aa648e
+ISCVERSION=	9.12.0a.2017.06.26
+HASH=		accadd4
 
 USES=	cpe libedit
 

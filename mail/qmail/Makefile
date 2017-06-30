@@ -386,7 +386,7 @@ NO_PREFIX_RMDIR=yes
 
 .include <bsd.port.options.mk>
 
-.if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && !defined(SLAVE_LDAP) \
+.if ${ARCH} == "amd64" && !defined(SLAVE_LDAP) \
     && !defined(SLAVE_SPAMCONTROL)
 EXTRA_PATCHES+=			${FILESDIR}/extra-patch-amd64
 .endif

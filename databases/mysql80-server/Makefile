@@ -18,7 +18,7 @@ LICENSE=		GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql80-client
-USES=		bison:build cmake:outsource compiler:c11 compiler:c++11-lib \
+USES=		bison:build cmake:outsource,noninja compiler:c11 compiler:c++11-lib \
 		cpe libedit localbase perl5 shebangfix ssl
 
 USE_PERL5=	run

@@ -8,10 +8,10 @@ include/readline/rltypedefs.h
 include/readline/tilde.h
 lib/libhistory.a
 lib/libhistory.so
-lib/libhistory.so.6
+lib/libhistory.so.7
 lib/libreadline.a
 lib/libreadline.so
-lib/libreadline.so.6
+lib/libreadline.so.7
 man/man3/history.3.gz
 man/man3/readline.3.gz
 %%DATADIR%%/excallback.c
@@ -23,6 +23,7 @@ man/man3/readline.3.gz
 %%DATADIR%%/rl-callbacktest.c
 %%DATADIR%%/rl-fgets.c
 %%DATADIR%%/rl.c
+%%DATADIR%%/rlbasic.c
 %%DATADIR%%/rlcat.c
 %%DATADIR%%/rlevent.c
 %%DATADIR%%/rlptytest.c

@@ -1,6 +1,6 @@
---- content/test/BUILD.gn.orig	2017-06-05 19:03:07 UTC
-+++ content/test/BUILD.gn
-@@ -815,7 +815,7 @@ test("content_browsertests") {
+--- content/test/BUILD.gn.orig	2017-06-15 21:03:05.000000000 +0200
++++ content/test/BUILD.gn	2017-06-22 13:52:52.066701000 +0200
+@@ -815,7 +815,7 @@
      }
    }
  
@@ -9,8 +9,22 @@
      data += [
        "$root_out_dir/content_shell.pak",
        "data/",
-@@ -1442,7 +1442,7 @@ test("content_unittests") {
-     sources += [ "../browser/memory/memory_monitor_linux_unittest.cc" ]
+@@ -1435,14 +1435,19 @@
+     sources += [ "../common/quarantine/quarantine_unittest.cc" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "../browser/memory/test_memory_monitor.cc",
++      "../common/quarantine/quarantine_linux_unittest.cc",
++    ]
++  }
++
+   # ChromeOS also defines linux but their memory-monitors conflict.
+   if (is_chromeos) {
+     sources += [ "../browser/memory/memory_monitor_chromeos_unittest.cc" ]
+-  } else {
+-    sources += [ "../browser/memory/memory_monitor_linux_unittest.cc" ]
    }
  
 -  if (is_android || is_linux || is_mac || is_win) {
@@ -18,7 +32,7 @@
      data = [
        "$root_out_dir/content_shell.pak",
        "data/",
-@@ -1657,7 +1657,7 @@ test("content_unittests") {
+@@ -1657,7 +1662,7 @@
        "//ui/shell_dialogs:shell_dialogs",
      ]
  
@@ -27,7 +41,7 @@
        sources +=
            [ "../browser/media/capture/desktop_capture_device_unittest.cc" ]
        deps += [ "//third_party/webrtc/modules/desktop_capture" ]
-@@ -1695,7 +1695,7 @@ test("content_unittests") {
+@@ -1695,7 +1700,7 @@
      }
    }
  

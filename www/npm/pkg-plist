@@ -5,13 +5,11 @@ lib/node_modules/npm/.mailmap
 lib/node_modules/npm/.npmignore
 lib/node_modules/npm/.travis.yml
 lib/node_modules/npm/AUTHORS
-lib/node_modules/npm/BROKEN.org
 lib/node_modules/npm/CHANGELOG.md
 lib/node_modules/npm/CONTRIBUTING.md
 lib/node_modules/npm/LICENSE
 lib/node_modules/npm/Makefile
 lib/node_modules/npm/README.md
-lib/node_modules/npm/TODO.org
 lib/node_modules/npm/TROUBLESHOOTING.md
 lib/node_modules/npm/appveyor.yml
 @(,,755) lib/node_modules/npm/bin/node-gyp-bin/node-gyp
@@ -3323,7 +3321,6 @@ lib/node_modules/npm/test/fixtures/config/globalconfig
 lib/node_modules/npm/test/fixtures/config/malformed
 lib/node_modules/npm/test/fixtures/config/multi-ca
 lib/node_modules/npm/test/fixtures/config/userconfig
-lib/node_modules/npm/test/fixtures/config/userconfig-with-gc
 lib/node_modules/npm/test/fixtures/forked-underscore-1.5.1.tgz
 lib/node_modules/npm/test/fixtures/github-com-BryanDonovan-dummy-npm-bar.git.tar.gz
 lib/node_modules/npm/test/fixtures/github-com-BryanDonovan-dummy-npm-buzz.git.tar.gz

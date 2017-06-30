@@ -12,7 +12,7 @@ COMMENT=	Firmware modules for the linuxkpi-based KMS components
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64
 
-NO_PACKAGE=	yes
+NO_PACKAGE=	Distribution in binary form without license file not allowed
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		https://mirrors.rit.edu/zi/ \
@@ -33,7 +33,7 @@ PLIST_SUB+=	SOVERSION="${SOVERSION}" SOMAJVER="${SOMAJVER}"
 SUB_FILES+=	pkg-message
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	DOCS EXAMPLES LIBEV LIBEVENT LIBUV
+OPTIONS_DEFINE=	DOCS LIBEV LIBEVENT LIBUV
 
 LIBEV_DESC=	Build with libev extension
 LIBEVENT_DESC=	Build with libevent extension
@@ -54,8 +54,5 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns*.so.*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/getdns_query \
 		${STAGEDIR}${PREFIX}/bin/stubby
-
-post-install-EXAMPLES-on:
-	(cd ${WRKSRC}/spec/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
 
 .include <bsd.port.mk>

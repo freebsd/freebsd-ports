@@ -332,7 +332,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-ftp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-rsync.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors.html
@@ -406,12 +405,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-setup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/swap-encrypting.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/synching.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tcpwrappers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-src.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html

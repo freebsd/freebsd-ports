@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	3.11.0
-PORTREVISION=	2
+PORTVERSION=	3.12.1
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 CATEGORIES=	cad
 
@@ -24,9 +23,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libGLEW.so:graphics/glew \
 		libcpptest.so:devel/cpptest
 BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
-		${LOCALBASE}/include/eli/code_eli.hpp:graphics/code-eli \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
-		${LOCALBASE}/include/eigen3/Eigen/Array:math/eigen3 \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 
 USE_GITHUB=	yes
@@ -35,12 +32,13 @@ GH_ACCOUNT=	${GH_PROJECT}
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
 CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
-USES=		cmake:outsource compiler:gcc-c++11-lib jpeg
+USES=		cmake:outsource,noninja compiler:gcc-c++11-lib jpeg
 
 CMAKE_ARGS=	-DVSP_USE_SYSTEM_CMINPACK:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_CPPTEST:BOOLEAN=yes \
+		-DVSP_USE_SYSTEM_CODEELI:BOOLEAN=no \
+		-DVSP_USE_SYSTEM_EIGEN:BOOLEAN=no \
 		-DVSP_USE_SYSTEM_LIBXML2:BOOLEAN=yes \
-		-DVSP_USE_SYSTEM_EIGEN:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_FLTK:boolean=yes \
 		-DVSP_USE_SYSTEM_CMINPACK:boolean=no \
 		-DVSP_USE_SYSTEM_GLM:BOOLEAN=yes \

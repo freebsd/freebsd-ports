@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
 		orcc:devel/orc \
 		sdcc:lang/sdcc
 
-USES=			compiler:c++0x cmake:outsource gmake pkgconfig python:run \
+USES=			compiler:c++0x cmake:outsource,noninja gmake pkgconfig python:run \
 			dos2unix shebangfix
 COMPILER_FEATURES=	libc++
 USE_LDCONFIG=		yes

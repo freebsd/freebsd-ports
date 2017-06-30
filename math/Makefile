@@ -67,6 +67,7 @@
     SUBDIR += R-cran-quantreg
     SUBDIR += R-cran-rgenoud
     SUBDIR += R-cran-sandwich
+    SUBDIR += R-cran-sf
     SUBDIR += R-cran-sm
     SUBDIR += R-cran-sp
     SUBDIR += R-cran-spdep
@@ -74,6 +75,7 @@
     SUBDIR += R-cran-stabledist
     SUBDIR += R-cran-survey
     SUBDIR += R-cran-truncnorm
+    SUBDIR += R-cran-units
     SUBDIR += R-cran-xts
     SUBDIR += R-cran-zoo
     SUBDIR += aamath
@@ -317,6 +319,7 @@
     SUBDIR += octave-forge-base
     SUBDIR += octave-forge-bim
     SUBDIR += octave-forge-bioinfo
+    SUBDIR += octave-forge-bsltl
     SUBDIR += octave-forge-cgi
     SUBDIR += octave-forge-civil-engineering
     SUBDIR += octave-forge-communications

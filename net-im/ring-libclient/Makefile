@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 #GH_TUPLE+=	savoirfairelinux:ring-lrc:9eaac77
 GH_TUPLE+=	savoirfairelinux:ring-lrc:cb5ee04
 
-USES=		cmake compiler:c++14-lang gmake
+USES=		cmake compiler:c++14-lang
 USE_GNOME=	glib20 gtk20 cairo gdkpixbuf2
 USE_XORG=	x11 xscrnsaver
 USE_GL=		gl

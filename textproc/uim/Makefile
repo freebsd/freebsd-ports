@@ -59,11 +59,7 @@ PLIST_SUB+=	X11=""
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
-IGNORE=		not yet ported to ia64
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--enable-storage=fatty
 .endif
 

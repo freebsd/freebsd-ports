@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iperf
-PORTVERSION=	3.1.7
+PORTVERSION=	3.2
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	http://downloads.es.net/pub/iperf/
 PKGNAMESUFFIX=	3
@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
 GNU_CONFIGURE=	yes
-USES=		libtool
+USES=		libtool ssl
 USE_LDCONFIG=	yes
 
 PORTDOCS=	README.md RELEASE_NOTES

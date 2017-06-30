@@ -13,10 +13,9 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.2.30.2
-PORTREVISION=	1
+PORTVERSION=	2.2.31
 CATEGORIES=	mail ipv6
-MASTER_SITES=	https://www.dovecot.org/releases/${PORTVERSION:R:R}/
+MASTER_SITES=	https://www.dovecot.org/releases/2.2/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	adamw@FreeBSD.org

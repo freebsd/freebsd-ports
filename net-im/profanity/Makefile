@@ -2,7 +2,7 @@
 
 PORTNAME=	profanity
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.profanity.im/
 

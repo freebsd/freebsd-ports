@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.3.4
+PORTVERSION=	6.4.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Adaptive Communication Environment for C++
 
 LICENSE=	ACE
@@ -63,10 +63,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/$$libdir/pkgconfig|/libdata/pkgconfig|g' \
 		${WRKSRC}/bin/ace_install_pkgconfig.pl
-	@${REINPLACE_CMD} -e \
-		's|bin/moc)|bin/moc-qt4)|g ; \
-		 s|bin/moc,|bin/moc-qt4,|g' \
-		${WRKSRC}/ace/QtReactor/GNUmakefile.ACE_Qt4Reactor_moc
 	@${REINPLACE_CMD} -i "" -e \
 		'/^C[CX]/s|\([[:space:]]\)=|\1?=| ; \
 		 s|/usr/local|${LOCALBASE}| ; \

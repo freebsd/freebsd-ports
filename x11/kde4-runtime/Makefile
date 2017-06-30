@@ -24,7 +24,7 @@ LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 RUN_DEPENDS=	cagibid:net/cagibi
 
-USES=		cmake:outsource gettext gmake jpeg kde:4 samba:lib shared-mime-info \
+USES=		cmake:outsource gettext jpeg kde:4 samba:lib shared-mime-info \
 		shebangfix tar:xz
 USE_KDE=	kactivities kdelibs oxygen-icons5 \
 		attica automoc4 pimlibs soprano strigi nepomuk-core
