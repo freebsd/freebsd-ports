@@ -12,7 +12,8 @@ COMMENT=	Python module to read MS OLE2 files
 
 LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/olefile/LICENSE.txt
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/olefile/LICENSE.txt
+LICENSE_FILE_MIT=	${WRKSRC}/olefile/LICENSE.txt
 
 NO_ARCH=	yes
 USES=		dos2unix python zip
