@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-06-21 17:05:33 UTC
+--- CMakeLists.txt.orig	2017-06-27 19:46:01 UTC
 +++ CMakeLists.txt
 @@ -150,7 +150,8 @@ if("${gRPC_CARES_PROVIDER}" STREQUAL "mo
      message(WARNING "gRPC_CARES_PROVIDER is \"module\" but CARES_ROOT_DIR is wrong")

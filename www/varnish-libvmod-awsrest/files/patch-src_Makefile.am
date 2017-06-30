@@ -1,8 +1,7 @@
---- src/Makefile.am.orig	2016-10-31 08:14:11 UTC
+--- src/Makefile.am.orig	2017-04-20 14:12:56 UTC
 +++ src/Makefile.am
-@@ -1,4 +1,4 @@
--AM_CPPFLAGS = @VMOD_INCLUDES@ -Wall -Werror
-+AM_CPPFLAGS = @VMOD_INCLUDES@
+@@ -1,4 +1,3 @@
+-AM_CFLAGS = $(VARNISHAPI_CFLAGS) -Wall -Werror
+ AM_LDFLAGS = $(VARNISHAPI_LIBS) $(VMOD_LDFLAGS) -lmhash
  
- vmoddir = @VMOD_DIR@
  vmod_LTLIBRARIES = libvmod_awsrest.la

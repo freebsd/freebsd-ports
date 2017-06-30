@@ -9,6 +9,8 @@ COMMENT=	Online backup and restore tool for PostgreSQL
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		checksum and size mismatch
+
 USES=		gettext-runtime gmake pgsql
 USE_GITHUB=	yes
 PG_TAG_VERSION=	${PGSQL_DEFAULT:S/./_/}
