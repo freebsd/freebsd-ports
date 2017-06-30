@@ -3,7 +3,7 @@
 
 PORTNAME=	gcstar
 PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/gcstar/ \
 		http://djdomics.free.fr/distfiles/
@@ -16,14 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
-		p5-Archive-Tar>=0:archivers/p5-Archive-Tar \
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-libwww>=0:www/p5-libwww \
 		p5-MP3-Info>=0:audio/p5-MP3-Info \
 		p5-MP3-Tag>=0:audio/p5-MP3-Tag \
 		p5-Ogg-Vorbis-Header-PurePerl>=0:audio/p5-Ogg-Vorbis-Header-PurePerl \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
-		p5-Time-Piece>=0:devel/p5-Time-Piece \
 		p5-Gtk2-Spell>=0:devel/p5-Gtk2-Spell \
 		p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
 		p5-Date-Calc>=0:devel/p5-Date-Calc \

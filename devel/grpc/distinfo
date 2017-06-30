@@ -1,7 +1,7 @@
-TIMESTAMP = 1498113591
-SHA256 (grpc-grpc-v1.4.0_GH0.tar.gz) = 26da0fa694111cb073f09c1273355a63930e2127479a64271a81b71d8ac78592
-SIZE (grpc-grpc-v1.4.0_GH0.tar.gz) = 4818770
-SHA256 (boringssl-boringssl-ebcb5be_GH0.tar.gz) = 324b80025f73eba48791fdfcf82e81b4496b8a002fd985d68cca137f31d25e4c
-SIZE (boringssl-boringssl-ebcb5be_GH0.tar.gz) = 5936046
+TIMESTAMP = 1498816372
+SHA256 (grpc-grpc-v1.4.1_GH0.tar.gz) = 60840ef0e9b71f47cb73d4e220089b3d1e78dbfa011ae128f7688622f287b543
+SIZE (grpc-grpc-v1.4.1_GH0.tar.gz) = 4819488
+SHA256 (google-boringssl-a93bc11_GH0.tar.gz) = d44ae3ff107d857ff8f8cb7a85910ad059a9723479a1f642b11580aa6f4b7b20
+SIZE (google-boringssl-a93bc11_GH0.tar.gz) = 12810927
 SHA256 (google-benchmark-v1.1.0_GH0.tar.gz) = e7334dd254434c6668e33a54c8f839194c7c61840d52f4b6258eee28e9f3b20e
 SIZE (google-benchmark-v1.1.0_GH0.tar.gz) = 87199

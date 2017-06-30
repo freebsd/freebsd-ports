@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-ShareDir
-PORTVERSION=	1.102
-PORTREVISION=	2
+PORTVERSION=	1.104
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,9 +12,10 @@ COMMENT=	Locate per-dist and per-module shared files
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Class-Inspector>=1.12:devel/p5-Class-Inspector
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Class-Inspector>=1.12:devel/p5-Class-Inspector
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
