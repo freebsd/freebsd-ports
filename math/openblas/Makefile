@@ -33,17 +33,20 @@ OPENBLAS_SVER=	0
 OPENBLAS_FILES=	${OPENBLAS_LIBS:S|$|.so|} ${OPENBLAS_LIBS:S|$|.so.${OPENBLAS_SVER}|} ${OPENBLAS_LIBS:S|$|.a|}
 PLIST_FILES=	${OPENBLAS_FILES:S|^|lib/|}
 
-OPTIONS_DEFINE=		DYNAMIC_ARCH INTERFACE64 OPENMP AVX AVX2
+OPTIONS_DEFINE=		INTERFACE64 OPENMP
+OPTIONS_DEFINE_i386=	DYNAMIC_ARCH AVX AVX2
+OPTIONS_DEFINE_amd64=	${OPTIONS_DEFINE_i386}
+
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT_i386=	DYNAMIC_ARCH
+OPTIONS_DEFAULT_amd64=	DYNAMIC_ARCH
+.endif
 
 DYNAMIC_ARCH_DESC=	Support multiple CPU types on i386 and amd64
 INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
 OPENMP_DESC=		Use OpenMP for threading
 AVX_DESC=		Support Advanced Vector Extensions (AVX)
 AVX2_DESC=		Support Advanced Vector Extensions 2 (AVX2)
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-OPTIONS_DEFAULT=	DYNAMIC_ARCH
-.endif
 
 .include <bsd.port.options.mk>
 
@@ -60,7 +63,7 @@ BUILDFLAGS+=	BINARY32=1
 BUILDFLAGS+=	BINARY64=1
 .endif
 
-.if ! ( ${PORT_OPTIONS:MDYNAMIC_ARCH} && ( ${ARCH} == "amd64" || ${ARCH} == "i386" ) )
+.if ! ${PORT_OPTIONS:MDYNAMIC_ARCH} && ( ${ARCH} == "amd64" || ${ARCH} == "i386" )
 MANUAL_PACKAGE_BUILD=	Optimizes for the build machine.
 .endif
 
