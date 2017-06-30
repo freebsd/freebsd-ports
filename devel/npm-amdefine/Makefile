@@ -10,6 +10,8 @@ COMMENT=	Implementation of AMD's define() in Node
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to package
+
 BUILD_DEPENDS=	npm>=0:www/npm
 RUN_DEPENDS=	npm>=0:www/npm
 
