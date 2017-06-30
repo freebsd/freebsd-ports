@@ -3,7 +3,7 @@
 
 PORTNAME=	coda
 PORTVERSION=	6.9.4
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/ \
 		ftp://ftp.planetmirror.com/pub/coda/src/ \

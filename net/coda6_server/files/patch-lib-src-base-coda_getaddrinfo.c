@@ -1,6 +1,6 @@
---- lib-src/base/coda_getaddrinfo.c.orig	Mon Aug 16 10:42:57 2004
-+++ lib-src/base/coda_getaddrinfo.c	Mon Aug 16 10:46:09 2004
-@@ -37,6 +37,10 @@
+--- lib-src/base/coda_getaddrinfo.c.orig	2007-07-20 21:34:55 UTC
++++ lib-src/base/coda_getaddrinfo.c
+@@ -37,6 +37,10 @@ Coda are listed in the file CREDITS.
  #endif
  
  #include <sys/types.h>

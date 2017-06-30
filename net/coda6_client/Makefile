@@ -1,7 +1,7 @@
 # Created by: Tim Robbins <tim@robbins.dropbear.id.au>
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	4
 
 COMMENT=	Client programs for a replicated high-performance network file system
 
