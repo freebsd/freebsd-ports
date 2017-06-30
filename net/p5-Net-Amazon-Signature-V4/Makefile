@@ -2,7 +2,7 @@
 
 PORTNAME=	Net-Amazon-Signature-V4
 PORTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	\
 	p5-DateTime-Format-Strptime>0:devel/p5-DateTime-Format-Strptime \
 	p5-File-Slurp>0:devel/p5-File-Slurp \
-	p5-libwww>0:www/p5-libwww \
-	p5-Net>0:net/p5-Net
+	p5-HTTP-Message>=0:www/p5-HTTP-Message \
+	p5-libwww>0:www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5
