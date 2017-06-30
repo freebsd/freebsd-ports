@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	59.0.3071.115
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:source1 \
 		LOCAL/cpm:source2
