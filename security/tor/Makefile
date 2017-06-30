@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-PORTVERSION=	0.3.0.8
-PORTREVISION=	1
+PORTVERSION=	0.3.0.9
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -17,7 +16,7 @@ BROKEN_mips64=		does not build: error: Need a uint128_t implementation!
 BROKEN_powerpc64=	does not build: error: Need a uint128_t implementation!
 BROKEN_sparc64=		does not build: error: Need a uint128_t implementation!
 
-USES=		cpe gmake
+USES=		cpe gmake pkgconfig
 CPE_VENDOR=	torproject
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}"
