@@ -1,7 +1,7 @@
 %%SITE_PERL%%/Test/Reporter.pm
+%%SITE_PERL%%/Test/Reporter/Transport.pm
 %%SITE_PERL%%/Test/Reporter/Transport/File.pm
 %%SITE_PERL%%/Test/Reporter/Transport/Null.pm
-%%SITE_PERL%%/Test/Reporter/Transport.pm
 %%PERL5_MAN3%%/Test::Reporter.3.gz
 %%PERL5_MAN3%%/Test::Reporter::Transport.3.gz
 %%PERL5_MAN3%%/Test::Reporter::Transport::File.3.gz
