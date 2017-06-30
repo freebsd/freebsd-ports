@@ -1,5 +1,5 @@
---- install.pl.orig	2014-08-07 10:15:08.515422863 +0800
-+++ install.pl	2014-08-07 10:20:46.374398334 +0800
+--- install.pl.orig	2005-01-14 10:54:36 UTC
++++ install.pl
 @@ -23,10 +23,11 @@ $default_install_man = "/usr/local/man/m
  #-----------------------------------------------------------------------
  use Getopt::Long;
@@ -54,7 +54,15 @@
 -system ("chmod 644 $prefix/VERSION");
 -system ("cp -f fsbackup.1 $prefix/fsbackup.1");
 -system ("chmod 644 $prefix/fsbackup.1");
--
++system ("cp -f FAQ $dest$prefix/FAQ");
++system ("chmod 644 $dest$prefix/FAQ");
++system ("cp -f README $dest$prefix/README");
++system ("chmod 644 $dest$prefix/README");
++system ("cp -f VERSION $dest$prefix/VERSION");
++system ("chmod 644 $dest$prefix/VERSION");
++system ("cp -f fsbackup.1 $dest$prefix/fsbackup.1");
++system ("chmod 644 $dest$prefix/fsbackup.1");
+ 
 -copyfile("fsbackup.pl", "$prefix/fsbackup.pl");
 -system ("chmod 711 $prefix/fsbackup.pl");
 -copyfile("cfg_example", "$prefix/cfg_example");
@@ -73,15 +81,6 @@
 -system ("chmod 711 $prefix/scripts/sysrestore.sh");
 -copyfile("scripts/sqlite_backup.sh", "$prefix/scripts/sqlite_backup.sh");
 -system ("chmod 711 $prefix/scripts/sqlite_backup.sh");
-+system ("cp -f FAQ $dest$prefix/FAQ");
-+system ("chmod 644 $dest$prefix/FAQ");
-+system ("cp -f README $dest$prefix/README");
-+system ("chmod 644 $dest$prefix/README");
-+system ("cp -f VERSION $dest$prefix/VERSION");
-+system ("chmod 644 $dest$prefix/VERSION");
-+system ("cp -f fsbackup.1 $dest$prefix/fsbackup.1");
-+system ("chmod 644 $dest$prefix/fsbackup.1");
-+
 +copyfile("fsbackup.pl", "$dest$prefix/fsbackup.pl");
 +system ("chmod 711 $dest$prefix/fsbackup.pl");
 +copyfile("cfg_example", "$dest$prefix/cfg_example");
