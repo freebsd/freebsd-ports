@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	POE-Filter-SSL
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,6 @@ BUILD_DEPENDS=	p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
 		p5-POE>=0:devel/p5-POE \
 		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-BROKEN_SSL=	openssl-devel
 
 PORTSCOUT=	skipv:0.291
 
