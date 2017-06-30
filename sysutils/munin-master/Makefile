@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
@@ -13,31 +14,25 @@ COMMENT=	Collector part of Munin
 BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
 		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		rrdtool>=0:databases/rrdtool \
-		p5-Storable>=0:devel/p5-Storable \
 		p5-CGI>=0:www/p5-CGI \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
 		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
-		p5-Getopt-Long>=0:devel/p5-Getopt-Long \
 		p5-HTML-Template>=0:www/p5-HTML-Template \
 		p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
 		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
-		p5-Params-Validate>=0:devel/p5-Params-Validate \
-		p5-Text-Balanced>=0:textproc/p5-Text-Balanced
+		p5-Params-Validate>=0:devel/p5-Params-Validate
 RUN_DEPENDS=	munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		rrdtool>=0:databases/rrdtool \
 		p5-CGI>=0:www/p5-CGI \
 		p5-CGI-Fast>=0:www/p5-CGI-Fast \
-		p5-Storable>=0:devel/p5-Storable \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
 		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
-		p5-Getopt-Long>=0:devel/p5-Getopt-Long \
 		p5-HTML-Template>=0:www/p5-HTML-Template \
 		p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
 		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
 		p5-Params-Validate>=0:devel/p5-Params-Validate \
-		p5-Text-Balanced>=0:textproc/p5-Text-Balanced \
 		p5-URI>=0:net/p5-URI \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-FCGI>=0:www/p5-FCGI
