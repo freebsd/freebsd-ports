@@ -24,6 +24,7 @@ include/rocksdb/db.h
 include/rocksdb/db_bench_tool.h
 include/rocksdb/db_dump_tool.h
 include/rocksdb/env.h
+include/rocksdb/env_encryption.h
 include/rocksdb/experimental.h
 include/rocksdb/filter_policy.h
 include/rocksdb/flush_block_policy.h
@@ -59,6 +60,7 @@ include/rocksdb/utilities/checkpoint.h
 include/rocksdb/utilities/convenience.h
 include/rocksdb/utilities/date_tiered_db.h
 include/rocksdb/utilities/db_ttl.h
+include/rocksdb/utilities/debug.h
 include/rocksdb/utilities/document_db.h
 include/rocksdb/utilities/env_librados.h
 include/rocksdb/utilities/env_mirror.h
@@ -92,7 +94,7 @@ include/rocksdb/write_batch_base.h
 include/rocksdb/write_buffer_manager.h
 lib/librocksdb%%LITE%%.a
 lib/librocksdb%%LITE%%.so
-lib/librocksdb%%LITE%%.so.%%SHLIB_MAJOR%%
-lib/librocksdb%%LITE%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
-lib/librocksdb%%LITE%%.so.%%PORTVERSION%%
+lib/librocksdb%%LITE%%.so.5
+lib/librocksdb%%LITE%%.so.5.6
+lib/librocksdb%%LITE%%.so.5.6.0
 lib/librocksdb%%LITE%%_tools.a
