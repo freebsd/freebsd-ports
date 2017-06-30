@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mcollective-puppet-common
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
