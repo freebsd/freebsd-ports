@@ -1,6 +1,6 @@
---- vmware-user-suid-wrapper/Makefile.am.orig	2010-10-20 05:19:54.000000000 +0900
-+++ vmware-user-suid-wrapper/Makefile.am	2010-11-16 17:52:55.000000000 +0900
-@@ -19,6 +19,8 @@
+--- vmware-user-suid-wrapper/Makefile.am.orig	2017-04-25 03:59:07 UTC
++++ vmware-user-suid-wrapper/Makefile.am
+@@ -19,6 +19,8 @@ bin_PROGRAMS = vmware-user-suid-wrapper
  
  AM_CPPFLAGS =
  AM_CPPFLAGS += -DVMTOOLSD_PATH=\"$(bindir)/vmtoolsd\"
