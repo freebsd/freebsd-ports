@@ -1178,6 +1178,7 @@
     SUBDIR += tclgpg
     SUBDIR += tclsasl
     SUBDIR += tcpcrypt
+    SUBDIR += testssl.sh
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += titus
