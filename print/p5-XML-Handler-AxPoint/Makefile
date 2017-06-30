@@ -1,16 +1,17 @@
 # Created by: ijliao
 # $FreeBSD$
 
-PORTNAME=	axpoint
-PORTVERSION=	1.50
-PORTREVISION=	2
+PORTNAME=	XML-Handler-AxPoint
+PORTVERSION=	1.5
 CATEGORIES=	print perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MSERGEANT
-DISTNAME=	XML-Handler-AxPoint-${PORTVERSION:S/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML Based Presentations
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-PDFLib>=0.14:print/p5-PDFLib \
 		p5-Text-Iconv>=0:converters/p5-Text-Iconv \
