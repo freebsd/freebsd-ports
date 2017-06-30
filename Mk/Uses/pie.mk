@@ -14,8 +14,8 @@ _INCLUDE_USES_PIE_MK=    yes
 .if ${pie_ARGS:Mconfigure}
 CONFIGURE_ARGS+=	--enable-pie
 .else
-CFLAGS+=		-fPIC -fPIE
-CXXFLAGS+=		-fPIC -fPIE
+CFLAGS+=		-fPIE -fPIC
+CXXFLAGS+=		-fPIE -fPIC
 LDFLAGS+=		-pie
 .endif
 
