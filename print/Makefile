@@ -14,7 +14,6 @@
     SUBDIR += apsfilter
     SUBDIR += asprint
     SUBDIR += auctex
-    SUBDIR += axpoint
     SUBDIR += bibcursed
     SUBDIR += biblio-py
     SUBDIR += bibview
@@ -148,6 +147,7 @@
     SUBDIR += p5-PostScript-Simple
     SUBDIR += p5-Text-PDF
     SUBDIR += p5-XML-ApacheFOP
+    SUBDIR += p5-XML-Handler-AxPoint
     SUBDIR += p910nd
     SUBDIR += panda
     SUBDIR += papersize-default-a4
