@@ -3,6 +3,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	5.0.18
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-Crypt-Eksblowfish>=0:security/p5-Crypt-Eksblowfish \
 		p5-Crypt-PasswdMD5>=0:security/p5-Crypt-PasswdMD5 \
-		p5-Digest-SHA>=0:security/p5-Digest-SHA \
 		p5-MIME-Tools>=5.427:mail/p5-MIME-Tools \
 		p5-libwww>=0:www/p5-libwww \
 		p5-Net-DNS>=0.66:dns/p5-Net-DNS \
@@ -45,7 +45,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Class-Inspector>=0:devel/p5-Class-Inspector \
 		p5-Mozilla-CA>=0:www/p5-Mozilla-CA \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit
-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe shebangfix perl5 tar:bzip2
@@ -88,40 +87,40 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-4.0/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
-PLIST_SUB+=	VER_CKEDITOR="4.5.6" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
+PLIST_SUB=	VER_CKEDITOR="4.5.6" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
 
-PGSQL_RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 PGSQL_USES=		pgsql
 
-MYSQL_RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
-SSL_RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
+SSL_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
 
-APACHE_RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:www/mod_perl2 \
+APACHE_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:www/mod_perl2 \
 			p5-Apache-DBI>0:www/p5-Apache-DBI
 
-REPORTS_RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD \
+REPORTS_RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD \
 			p5-GD-Graph>=0:graphics/p5-GD-Graph \
 			p5-GD-TextUtil>=0:graphics/p5-GD-TextUtil
 
-SMTP_RUN_DEPENDS+=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
+SMTP_RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
 			p5-Net-SSLGlue>=0:security/p5-Net-SSLGlue
 
-POP3_RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+POP3_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 			p5-Net-SSLGlue>=0:security/p5-Net-SSLGlue
 
-IMAP_RUN_DEPENDS+=	p5-Mail-IMAPClient>=0:mail/p5-Mail-IMAPClient \
+IMAP_RUN_DEPENDS=	p5-Mail-IMAPClient>=0:mail/p5-Mail-IMAPClient \
 			p5-Net-IMAP-Simple>=0:mail/p5-Net-IMAP-Simple
 
-LDAP_RUN_DEPENDS+=	p5-perl-ldap>=0:net/p5-perl-ldap
+LDAP_RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap
 
-PDF_RUN_DEPENDS+=	p5-PDF-API2>=0.57:textproc/p5-PDF-API2
+PDF_RUN_DEPENDS=	p5-PDF-API2>=0.57:textproc/p5-PDF-API2
 
-ISPELL_RUN_DEPENDS+=	ispell:textproc/aspell-ispell
+ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 
-ASPELL_RUN_DEPENDS+=	aspell:textproc/aspell
+ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
 
-GNUPG_RUN_DEPENDS+=	gpg:security/gnupg1
+GNUPG_RUN_DEPENDS=	gpg:security/gnupg1
 
 .include <bsd.port.pre.mk>
 
