@@ -58,7 +58,6 @@ make-twdep: extract
 			o=\`echo ${PORTSDIR}/*/$$n\`; : $${o:=${PORTSDIR}/X/$$n}; \
 			echo $$n$$v:'$${PORTSDIR}'$${o##${PORTSDIR}}; done`"
 
-
 make-port:
 	@for n in ${name} ${names}; do\
 	cd ../ &&\
