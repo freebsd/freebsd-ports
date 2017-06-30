@@ -112,9 +112,6 @@ lib/calibre/calibre/devices/hanlin/__init__.py
 lib/calibre/calibre/devices/hanlin/driver.py
 lib/calibre/calibre/devices/hanvon/__init__.py
 lib/calibre/calibre/devices/hanvon/driver.py
-lib/calibre/calibre/devices/idevice/__init__.py
-lib/calibre/calibre/devices/idevice/libimobiledevice.py
-lib/calibre/calibre/devices/idevice/parse_xml.py
 lib/calibre/calibre/devices/iliad/__init__.py
 lib/calibre/calibre/devices/iliad/driver.py
 lib/calibre/calibre/devices/interface.py
@@ -1227,6 +1224,7 @@ lib/calibre/calibre/srv/jobs.py
 lib/calibre/calibre/srv/legacy.py
 lib/calibre/calibre/srv/library_broker.py
 lib/calibre/calibre/srv/loop.py
+lib/calibre/calibre/srv/manage_users_cli.py
 lib/calibre/calibre/srv/metadata.py
 lib/calibre/calibre/srv/opds.py
 lib/calibre/calibre/srv/opts.py
@@ -1247,6 +1245,7 @@ lib/calibre/calibre/srv/tests/main.py
 lib/calibre/calibre/srv/tests/routes.py
 lib/calibre/calibre/srv/tests/web_sockets.py
 lib/calibre/calibre/srv/users.py
+lib/calibre/calibre/srv/users_api.py
 lib/calibre/calibre/srv/utils.py
 lib/calibre/calibre/srv/web_socket.py
 lib/calibre/calibre/startup.py
