@@ -176,62 +176,8 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
-<<<<<<< HEAD
-DRIVER_MAKE_ARGS=chromedriver
-TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:source1
-
 NORELRO_PORTS=	yes
-.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MALSA}
-GN_ARGS+=	use_alsa=true
-.else
-GN_ARGS+=	use_alsa=false
-.endif
-
-.if ${PORT_OPTIONS:MCODECS}
-GN_ARGS+=	ffmpeg_branding="Chrome"
-GN_ARGS+=	proprietary_codecs=true
-GN_ARGS+=	enable_hevc_demuxing=true
-.else
-GN_ARGS+=	ffmpeg_branding="Chromium"
-GN_ARGS+=	proprietary_codecs=false
-GN_ARGS+=	enable_hevc_demuxing=false
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-BUILDTYPE=	Debug
-GN_ARGS+=	is_debug=true
-GN_BOOTSTRAP_FLAGS+=	--debug
-MAKE_ENV+=	V=1
-.else
-BUILDTYPE=	Release
-GN_ARGS+=	is_debug=false
-GN_ARGS+=	symbol_level=0
-GN_ARGS+=	remove_webcore_debug_symbols=true
-.endif
-
-.if ${PORT_OPTIONS:MGCONF}
-GN_ARGS+=	use_gconf=true
-.else
-GN_ARGS+=	use_gconf=false
-.endif
-
-.if ${PORT_OPTIONS:MKERBEROS}
-GN_ARGS+=	use_kerberos=true
-.else
-GN_ARGS+=	use_kerberos=false
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-GN_ARGS+=	use_pulseaudio=true
-.else
-GN_ARGS+=	use_pulseaudio=false
-.endif
-
-.if ${PORT_OPTIONS:MTEST}
-=======
->>>>>>> upstream/master
 .include "Makefile.tests"
 TEST_ALL_TARGET=	${TEST_TARGETS}
 TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:source1

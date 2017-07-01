@@ -62,12 +62,10 @@ CONFLICTS+=		vmware-guestd[0-9]* vmware-tools[0-9]*
 
 USE_RC_SUBR=		vmware-guestd vmware-kmod
 
-<<<<<<< HEAD
 NOPIE_PORTS=	yes
 NORELRO_PORTS=	yes
-=======
+
 INSTALL_TARGET=		install-strip
->>>>>>> upstream/master
 
 .include <bsd.port.options.mk>
 
