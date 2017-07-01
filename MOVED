@@ -9447,3 +9447,10 @@ net/sixxs-aiccu||2017-06-25|Has expired: SixXS shutdown on 2017-06-06, https://w
 databases/pgpoolAdmin||2017-06-25|Removed, depended on expired databases/pgpool-II and only supported PostgreSQL 9.2 which is will EOL in September 2017
 sysutils/syslog-ng-devel|sysutils/syslog-ng310|2017-06-28|Balabit's syslog-ng team has switched to a rolling release model now
 print/axpoint|print/p5-XML-Handler-AxPoint|2017-06-30|Rename to match CPAN naming
+misc/p5-Geo-Coder-Many||2017-07-01|Has expired: deprecated and no longer maintained by upstream
+graphics/gimp-elsamuko-script||2017-07-01|Has expired: Broken for more than 2 years
+devel/anjuta-extras||2017-07-01|Has expired: Last release in 2013 and doesn't build with recent GTK+
+www/apache22-worker-mpm||2017-07-01|Has expired: Upstream propose EoL of apache 2.2.x during the next 12 months
+www/apache22-itk-mpm||2017-07-01|Has expired: Upstream propose EoL of apache 2.2.x during the next 12 months
+www/apache22-peruser-mpm||2017-07-01|Has expired: Upstream propose EoL of apache 2.2.x during the next 12 months
+www/apache22-event-mpm||2017-07-01|Has expired: Upstream propose EoL of apache 2.2.x during the next 12 months
