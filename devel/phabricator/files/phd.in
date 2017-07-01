@@ -49,7 +49,8 @@ phd_poll()
 
 phd_restart()
 {
-	run_rc_command stop
+	${stop_cmd}
+	phd_poll
 	run_rc_command start
 }
 
