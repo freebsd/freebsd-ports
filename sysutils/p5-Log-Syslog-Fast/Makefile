@@ -3,6 +3,7 @@
 
 PORTNAME=	Log-Syslog-Fast
 PORTVERSION=	0.65
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,10 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Send syslog messages over TCP, UDP, or UNIX sockets
 
-RUN_DEPENDS=	p5-IO-Socket-IP>=0.19:net/p5-IO-Socket-IP \
-		p5-Log-Syslog-Constants>-1.01:sysutils/p5-Log-Syslog-Constants
-BUILD_DEPENDS=	p5-IO-Socket-IP>=0.19:net/p5-IO-Socket-IP \
-		p5-Log-Syslog-Constants>-1.01:sysutils/p5-Log-Syslog-Constants
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Log-Syslog-Constants>-1.01:sysutils/p5-Log-Syslog-Constants
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

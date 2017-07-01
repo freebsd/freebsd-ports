@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radcli
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	net
 
 MAINTAINER=	amutu@amutu.com
@@ -22,11 +22,7 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 
 pre-configure:
-	@cd ${WRKSRC} && ./autogen.sh
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|1000000000.0d|1000000000.0|g' \
-		${WRKSRC}/lib/util.c
+	@${TOUCH} ${WRKSRC}/config.rpath
 
 post-install:
 .for f in radiusclient.conf radiusclient-tls.conf servers servers-tls

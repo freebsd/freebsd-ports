@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2013-07-07 14:55:00 UTC
++++ CMakeLists.txt
+@@ -110,6 +110,10 @@ target_link_libraries(sdcv
+   ${ZLIB_LIBRARIES}
+   ${READLINE_LIBRARY}
+ )
++set_target_properties(sdcv
++	PROPERTIES
++	LINK_FLAGS ${GLIB2_LDFLAGS}
++)
+ if (ENABLE_NLS)
+ set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES "locale")
+ endif ()
+@@ -117,8 +121,10 @@ endif ()
+ include(CPack)
+ 
+ INSTALL(TARGETS sdcv DESTINATION "bin")
+-INSTALL(FILES doc/sdcv.1 DESTINATION "share/man/man1")
+-INSTALL(FILES doc/uk/sdcv.1 DESTINATION "share/man/uk/man1")
++
++include(GNUInstallDirs)
++INSTALL(FILES doc/sdcv.1 DESTINATION "${CMAKE_INSTALL_MANDIR}/man1")
++INSTALL(FILES doc/uk/sdcv.1 DESTINATION "${CMAKE_INSTALL_MANDIR}/uk.UTF-8/man1")
+ 
+ if (ENABLE_NLS)
+   INSTALL(DIRECTORY "${gettext_outDir}" DESTINATION "share")

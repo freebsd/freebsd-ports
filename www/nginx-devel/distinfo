@@ -1,6 +1,6 @@
-TIMESTAMP = 1497052311
-SHA256 (nginx-1.13.1.tar.gz) = a5856c72a6609a4dc68c88a7f3c33b79e6693343b62952e021e043fe347b6776
-SIZE (nginx-1.13.1.tar.gz) = 984142
+TIMESTAMP = 1498917837
+SHA256 (nginx-1.13.2.tar.gz) = d77f234d14989d273a363f570e1d892395c006fef2ec04789be90f41a1919b70
+SIZE (nginx-1.13.2.tar.gz) = 985802
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
 SIZE (ngx_cache_purge-2.3.tar.gz) = 12248
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae

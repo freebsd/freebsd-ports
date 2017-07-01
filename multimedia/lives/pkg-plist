@@ -202,6 +202,7 @@ lib/lives/plugins/playback/video/SDL.so
 lib/lives/plugins/playback/video/icecast_output.so
 lib/lives/plugins/playback/video/lives2lives_stream.so
 lib/lives/plugins/playback/video/oggstream.so
+lib/lives/plugins/playback/video/openGL.so
 lib/lives/plugins/playback/video/vloopback.so
 lib/lives/plugins/playback/video/vloopback2.so
 lib/lives/plugins/playback/video/yuv4mpeg_stream.so

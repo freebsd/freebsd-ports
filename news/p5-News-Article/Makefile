@@ -3,7 +3,7 @@
 
 PORTNAME=	News-Article
 PORTVERSION=	1.27
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object for handling Usenet articles in mail or news form
 
-BUILD_DEPENDS=	p5-Net>=0:net/p5-Net
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

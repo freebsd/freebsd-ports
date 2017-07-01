@@ -14,12 +14,3 @@ lpass.* or within your $SECURE_TMPDIR.  For example, with vim:
 
 	autocmd BufRead lpass.* setlocal noundofile nowritebackup noswapfile
 
-
-===============================================================================
-Other steps
-===============================================================================
-
-lpass requires /proc to be mounted for correct operation.  To enable it add
-the following to /etc/fstab and run 'mount /proc':
-
-	proc		/proc		procfs	rw		0	0

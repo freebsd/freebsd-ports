@@ -1,0 +1,4 @@
+To activate timescaledb on your PostgreSQL server, add 'timescaledb' to
+shared_preload_libraries in $PGDATA/postgresql.conf. For every database,
+run
+	CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;

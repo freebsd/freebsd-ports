@@ -37,12 +37,15 @@ GH_ACCOUNT=	codership
 GH_TAGNAME?=	release_${DISTVERSION}
 
 LDFLAGS+=	-lboost_program_options -lboost_system
-MAKE_ARGS+=	--config=force \
-		deterministic_tests=1 \
-		revno=${GH_TAGNAME} \
-		system_asio=0
+MAKE_ARGS+=	revno=${GH_TAGNAME} system_asio=0 tests=0
 
 USE_RC_SUBR=	garb.sh
+
+# Abuse TEST_TARGET to append tests=1 (which is not a target, strictly
+# speaking) at the end of the "scons ..." command so that it overrides
+# tests=0 from ${MAKE_ARGS}. To rerun the tests a second time, remove
+# all *.passed files: find ./work -name *.passed -print -delete
+TEST_TARGET=	deterministic_tests=1 tests=1
 
 PLIST_FILES=	bin/garbd \
 		lib/libgalera.so \
