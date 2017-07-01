@@ -9457,3 +9457,4 @@ www/apache22-event-mpm||2017-07-01|Has expired: Upstream propose EoL of apache 2
 net/freeradius2|net/freeradius3|2017-07-01|Has expired: EoL, use net/freeradius3 instead
 net/abills||2017-07-01|Removed, unmaintained and depends on expired net/freeradius2
 net-mgmt/ezradius||2017-07-01|Removed, unmaintained and depends on expired net/freeradius2
+x11-toolkits/qt5-declarative||2017-07-01|Has expired: Has not been released since Qt 5.5 -- installation can lead to runtime conflicts with qt5-quick
