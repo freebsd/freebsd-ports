@@ -1,0 +1,407 @@
+--- bin/accountadmin~	2017-06-28 17:47:20.000000000 +0200
++++ bin/accountadmin	2017-07-01 13:51:34.930544995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $table = new PhabricatorUser();
+--- bin/almanac~	2017-06-28 17:47:20.000000000 +0200
++++ bin/almanac	2017-07-01 13:51:35.214537995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/aphlict~	2017-06-28 17:47:20.000000000 +0200
++++ bin/aphlict	2017-07-01 13:51:35.370541995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(dirname(__FILE__))));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/init/init-aphlict.php';
+ 
+ PhabricatorAphlictManagementWorkflow::requireExtensions();
+--- bin/audit~	2017-06-28 17:47:20.000000000 +0200
++++ bin/audit	2017-07-01 13:51:35.538578995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/auth~	2017-06-28 17:47:20.000000000 +0200
++++ bin/auth	2017-07-01 13:51:35.724540995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/cache~	2017-06-28 17:47:20.000000000 +0200
++++ bin/cache	2017-07-01 13:51:35.922542995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/calendar~	2017-06-28 17:47:20.000000000 +0200
++++ bin/calendar	2017-07-01 13:51:36.106546995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/celerity~	2017-06-28 17:47:20.000000000 +0200
++++ bin/celerity	2017-07-01 13:51:36.298540995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/commit-hook~	2017-06-28 17:47:20.000000000 +0200
++++ bin/commit-hook	2017-07-01 13:51:36.481559995 +0200
+@@ -28,7 +28,7 @@
+   }
+ }
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ if ($argc < 2) {
+--- bin/config~	2017-06-28 17:47:20.000000000 +0200
++++ bin/config	2017-07-01 13:51:36.681699995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/init/init-setup.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/differential~	2017-06-28 17:47:20.000000000 +0200
++++ bin/differential	2017-07-01 13:51:36.890540995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/diviner~	2017-06-28 17:47:20.000000000 +0200
++++ bin/diviner	2017-07-01 13:51:37.090565995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/drydock~	2017-06-28 17:47:20.000000000 +0200
++++ bin/drydock	2017-07-01 13:51:37.298538995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/fact~	2017-06-28 17:47:20.000000000 +0200
++++ bin/fact	2017-07-01 13:51:37.529571995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/feed~	2017-06-28 17:47:20.000000000 +0200
++++ bin/feed	2017-07-01 13:51:37.754542995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/files~	2017-06-28 17:47:20.000000000 +0200
++++ bin/files	2017-07-01 13:51:38.170547995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/garbage~	2017-06-28 17:47:20.000000000 +0200
++++ bin/garbage	2017-07-01 13:51:38.570546995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/harbormaster~	2017-06-28 17:47:20.000000000 +0200
++++ bin/harbormaster	2017-07-01 13:51:38.866553995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/i18n~	2017-06-28 17:47:20.000000000 +0200
++++ bin/i18n	2017-07-01 13:51:39.161574995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/lipsum~	2017-06-28 17:47:20.000000000 +0200
++++ bin/lipsum	2017-07-01 13:51:39.474566995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/mail~	2017-06-28 17:47:20.000000000 +0200
++++ bin/mail	2017-07-01 13:51:39.770547995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/nuance~	2017-06-28 17:47:20.000000000 +0200
++++ bin/nuance	2017-07-01 13:51:40.058544995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/people~	2017-06-28 17:47:20.000000000 +0200
++++ bin/people	2017-07-01 13:51:40.386542995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/phd~	2017-06-28 17:47:20.000000000 +0200
++++ bin/phd	2017-07-01 13:51:40.722541995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ PhabricatorDaemonManagementWorkflow::requireExtensions();
+--- bin/phortune~	2017-06-28 17:47:20.000000000 +0200
++++ bin/phortune	2017-07-01 13:51:41.082540995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/policy~	2017-06-28 17:47:20.000000000 +0200
++++ bin/policy	2017-07-01 13:51:41.361589995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/remove~	2017-06-28 17:47:20.000000000 +0200
++++ bin/remove	2017-07-01 13:51:41.723540995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/repository~	2017-06-28 17:47:20.000000000 +0200
++++ bin/repository	2017-07-01 13:51:41.994545995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/search~	2017-06-28 17:47:20.000000000 +0200
++++ bin/search	2017-07-01 13:51:42.313685995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/sms~	2017-06-28 17:47:20.000000000 +0200
++++ bin/sms	2017-07-01 13:51:42.650562995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/ssh-auth-key~	2017-06-28 17:47:20.000000000 +0200
++++ bin/ssh-auth-key	2017-07-01 13:51:43.361588995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ try {
+--- bin/ssh-auth~	2017-06-28 17:47:20.000000000 +0200
++++ bin/ssh-auth	2017-07-01 13:51:42.994553995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $cache = PhabricatorCaches::getMutableCache();
+--- bin/ssh-connect~	2017-06-28 17:47:20.000000000 +0200
++++ bin/ssh-connect	2017-07-01 13:51:44.730535995 +0200
+@@ -13,7 +13,7 @@
+   declare(ticks = 1);
+ }
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ // Contrary to the documentation, Git may pass a "-p" flag. If it does, respect
+--- bin/ssh-exec~	2017-06-28 17:47:20.000000000 +0200
++++ bin/ssh-exec	2017-07-01 13:51:45.105561995 +0200
+@@ -3,7 +3,7 @@
+ 
+ $ssh_start_time = microtime(true);
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $ssh_log = PhabricatorSSHLog::getLog();
+--- bin/storage~	2017-06-28 17:47:20.000000000 +0200
++++ bin/storage	2017-07-01 13:51:45.595548995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/init/init-setup.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/trigger~	2017-06-28 17:47:20.000000000 +0200
++++ bin/trigger	2017-07-01 13:51:46.089539995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
+--- bin/worker~	2017-06-28 17:47:20.000000000 +0200
++++ bin/worker	2017-07-01 13:51:46.593537995 +0200
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env php
+ <?php
+ 
+-$root = dirname(dirname(dirname(__FILE__)));
++$root = dirname(dirname(__FILE__));
+ require_once $root.'/scripts/__init_script__.php';
+ 
+ $args = new PhutilArgumentParser($argv);
