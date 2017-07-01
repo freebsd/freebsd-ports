@@ -80,6 +80,7 @@ share/applications/xcas.desktop
 %%PORTDOCS%%%%DOCSDIR%%/FileSaver.js
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/aide_cas
+%%PORTDOCS%%%%DOCSDIR%%/algoseconde.html
 %%PORTDOCS%%%%DOCSDIR%%/codemirror.css
 %%PORTDOCS%%%%DOCSDIR%%/codemirror.js
 %%PORTDOCS%%%%DOCSDIR%%/de/aide_cas
@@ -3257,6 +3258,7 @@ share/applications/xcas.desktop
 %%PORTDOCS%%%%DOCSDIR%%/fr/castor/index.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/castor/next_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/fr/castor/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/fr/giac.js
 %%PORTDOCS%%%%DOCSDIR%%/fr/html_mall
 %%PORTDOCS%%%%DOCSDIR%%/fr/html_mtt
 %%PORTDOCS%%%%DOCSDIR%%/fr/html_vall
@@ -3297,6 +3299,8 @@ share/applications/xcas.desktop
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/longhelp.js
 %%PORTDOCS%%%%DOCSDIR%%/matchbrackets.js
+%%PORTDOCS%%%%DOCSDIR%%/menuen.js
+%%PORTDOCS%%%%DOCSDIR%%/menufr.js
 %%PORTDOCS%%%%DOCSDIR%%/pari/Arithmetic_functions.html
 %%PORTDOCS%%%%DOCSDIR%%/pari/Conversions_and_similar_elementary_functions_or_commands.html
 %%PORTDOCS%%%%DOCSDIR%%/pari/Functions_related_to_elliptic_curves.html
@@ -3372,10 +3376,13 @@ share/applications/xcas.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pt/keywords
 %%PORTDOCS%%%%DOCSDIR%%/pt/xcasex
 %%PORTDOCS%%%%DOCSDIR%%/pt/xcasmenu
+%%PORTDOCS%%%%DOCSDIR%%/show-hint.css
+%%PORTDOCS%%%%DOCSDIR%%/show-hint.js
 %%PORTDOCS%%%%DOCSDIR%%/test.html
 %%PORTDOCS%%%%DOCSDIR%%/test.tex
 %%PORTDOCS%%%%DOCSDIR%%/testfr.html
 %%PORTDOCS%%%%DOCSDIR%%/testfr.tex
+%%PORTDOCS%%%%DOCSDIR%%/w3data.js
 %%PORTDOCS%%%%DOCSDIR%%/xcasen.html
 %%PORTDOCS%%%%DOCSDIR%%/xcasfr.html
 %%PORTDOCS%%%%DOCSDIR%%/xcasmode.js
