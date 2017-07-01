@@ -2,23 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	ffcall
-PORTVERSION=	1.10
-PORTREVISION=	3
+PORTVERSION=	1.13
 CATEGORIES=	devel
-MASTER_SITES=	GNUSTEP/libs
+MASTER_SITES=	GNU/lib${PORTNAME}
+DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Foreign function call libraries
 
-LICENSE=	GPLv2
-
-BROKEN_aarch64=		Does not build: No rule to make target avcall-aarch64.lo
-BROKEN_armv6=		Does not build: error: invalid instruction
-BROKEN_mips64==		Does not build: error: duplicate member anum
-BROKEN_powerpc64=	Does not build: No rule to make target avcall-powerpc64.lo
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
@@ -28,6 +24,7 @@ CFLAGS+=	-fPIC
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavcall.so \
-		${STAGEDIR}${PREFIX}/lib/libcallback.so
+		${STAGEDIR}${PREFIX}/lib/libcallback.so \
+		${STAGEDIR}${PREFIX}/lib/libtrampoline.so
 
 .include <bsd.port.mk>
