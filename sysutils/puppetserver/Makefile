@@ -2,6 +2,7 @@
 
 PORTNAME=	puppetserver
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
