@@ -9454,3 +9454,6 @@ www/apache22-worker-mpm||2017-07-01|Has expired: Upstream propose EoL of apache 
 www/apache22-itk-mpm||2017-07-01|Has expired: Upstream propose EoL of apache 2.2.x during the next 12 months
 www/apache22-peruser-mpm||2017-07-01|Has expired: Upstream propose EoL of apache 2.2.x during the next 12 months
 www/apache22-event-mpm||2017-07-01|Has expired: Upstream propose EoL of apache 2.2.x during the next 12 months
+net/freeradius2|net/freeradius3|2017-07-01|Has expired: EoL, use net/freeradius3 instead
+net/abills||2017-07-01|Removed, unmaintained and depends on expired net/freeradius2
+net-mgmt/ezradius||2017-07-01|Removed, unmaintained and depends on expired net/freeradius2
