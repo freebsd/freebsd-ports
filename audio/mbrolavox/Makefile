@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voices for MBROLA voice synthesizer
 
+BROKEN=		unfetchable
+
 USES=		zip:infozip
 NO_BUILD=	yes
 NO_ARCH=	yes
