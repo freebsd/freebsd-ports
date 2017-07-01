@@ -1,6 +1,6 @@
---- src/lib/mapfile.hpp.orig
+--- src/lib/mapfile.hpp.orig	2013-07-06 22:28:17 UTC
 +++ src/lib/mapfile.hpp
-@@ -5,6 +5,9 @@
+@@ -4,6 +4,9 @@
  #  include "config.h"
  #endif
  

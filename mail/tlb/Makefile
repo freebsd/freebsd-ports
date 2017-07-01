@@ -3,6 +3,7 @@
 
 PORTNAME=	tlb
 PORTVERSION=	0.11a
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/tlb/ \
 		http://www.freenix.no/~anders/ \
@@ -13,9 +14,9 @@ MAINTAINER=	tz@FreeBSD.org
 COMMENT=	The List Batcher, a general purpose mail list delivery engine
 
 RUN_DEPENDS=	p5-Mail-Tools>=0:mail/p5-Mail-Tools \
-		p5-TimeDate>=0:devel/p5-TimeDate \
-		p5-Net>=0:net/p5-Net
+		p5-TimeDate>=0:devel/p5-TimeDate
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 DOCS=	FAQ INSTALL README README.loglevels README.mungelist TIPS TODO \

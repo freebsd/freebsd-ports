@@ -262,7 +262,9 @@ lib/php/arcanist/src/lint/linter/__tests__/text/dos-newline.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/text/empty.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/text/eof-whitespace.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/text/line-wrap.lint-test
-lib/php/arcanist/src/lint/linter/__tests__/text/trailing-whitespace.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/text/trailing-whitespace-1.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/text/trailing-whitespace-2.lint-test
+lib/php/arcanist/src/lint/linter/__tests__/text/trailing-whitespace-3.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/text/variable-dividers.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/xhpast/embedded-tags.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/xhpast/empty.lint-test

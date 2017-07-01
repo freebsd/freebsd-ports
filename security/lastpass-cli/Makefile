@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lastpass-cli
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake pkgconfig ssl
+USES=		cmake:noninja pkgconfig ssl
 USE_GNOME=	libxml2
 
 USE_GITHUB=	YES
@@ -22,6 +22,8 @@ GH_ACCOUNT=	lastpass
 
 PLIST_FILES=	bin/lpass share/bash-completion/completions/lpass
 CMAKE_ARGS=	-DBASH_COMPLETION_COMPLETIONSDIR=${PREFIX}/share/bash-completion/completions
+
+TEST_TARGET=	lpass-test test
 
 OPTIONS_DEFINE=		MANPAGES PINENTRY XCLIP XSEL
 OPTIONS_DEFAULT=	MANPAGES
@@ -42,6 +44,8 @@ XSEL_RUN_DEPENDS=	xsel:x11/xsel
 post-extract:
 	@${REINPLACE_CMD} -e 's/-Wno-language-extension-token//g' \
 		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's/build\/lpass-test/lpass-test/' \
+		${WRKSRC}/test/include.sh
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lpass

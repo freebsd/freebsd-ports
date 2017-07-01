@@ -1,6 +1,6 @@
-TIMESTAMP = 1498183203
-SHA256 (citra-emu-citra-s20170622-cac1133bc_GH0.tar.gz) = 5a7164c55f8ca147b40e33ad80119a8e84714b6f19cfc721b24da3f072425948
-SIZE (citra-emu-citra-s20170622-cac1133bc_GH0.tar.gz) = 2264625
+TIMESTAMP = 1498773922
+SHA256 (citra-emu-citra-s20170629-56d718b2a_GH0.tar.gz) = b97d15f858ea883d6534ca0e6f0c84c5a474ea1347dbac3289b4fd9e51be644e
+SIZE (citra-emu-citra-s20170629-56d718b2a_GH0.tar.gz) = 2269560
 SHA256 (citra-emu-ext-soundtouch-5274ec4_GH0.tar.gz) = de5e101818ba38b5ea30d8cde0b2b788b53bc7c0f5d77b380b8968569872c2cb
 SIZE (citra-emu-ext-soundtouch-5274ec4_GH0.tar.gz) = 34535
 SHA256 (MerryMage-dynarmic-8f15e3f_GH0.tar.gz) = 3e5b184c8d190849374fa426ee6a511f3375682232b46aaa8e060632eaa4cadb

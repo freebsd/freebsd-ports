@@ -1,6 +1,6 @@
---- lib/include/vm_basic_defs.h.orig	2013-09-23 15:51:10 UTC
+--- lib/include/vm_basic_defs.h.orig	2017-02-24 22:15:37 UTC
 +++ lib/include/vm_basic_defs.h
-@@ -81,7 +81,11 @@
+@@ -76,7 +76,11 @@
  #include "vm_basic_types.h" // For INLINE.
  
  /* Checks for FreeBSD, filtering out VMKERNEL. */

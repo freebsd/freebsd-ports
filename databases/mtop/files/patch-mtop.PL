@@ -1,6 +1,6 @@
---- mtop.PL.orig	2004-09-12 22:22:03.000000000 +0000
-+++ mtop.PL	2008-10-04 13:26:58.000000000 +0000
-@@ -1253,7 +1253,7 @@
+--- mtop.PL.orig	2004-09-12 22:22:03 UTC
++++ mtop.PL
+@@ -1253,7 +1253,7 @@ sub refresh_screen {
              $data =~ s/\.$DOMAIN//o if $col eq "Host";
              if ($col eq "Info") {
                  $data = strip_comments($data);

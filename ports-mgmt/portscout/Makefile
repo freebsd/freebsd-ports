@@ -3,7 +3,7 @@
 
 PORTNAME=	portscout
 PORTVERSION=	0.8.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 		http://www.atarininja.org/~wxs/distfiles/ \
@@ -16,7 +16,6 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-Proc-Queue>=0:devel/p5-Proc-Queue \
-		p5-Net>=0:net/p5-Net \
 		p5-URI>=0:net/p5-URI \
 		p5-XML-XPath>=0:textproc/p5-XML-XPath \
 		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
@@ -32,6 +31,7 @@ OPTIONS_MULTI_DATABASE=	SQLITE PGSQL
 DATABASE_DESC=	Database Backends
 USES=		perl5 shebangfix
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 SHEBANG_FILES=	${WRKSRC}/portscout.pl
 
@@ -61,16 +61,16 @@ post-extract:
 	@${CP} ${FILESDIR}/files-Portscout-SiteHandler-PyPI.pm ${WRKSRC}/Portscout/SiteHandler/PyPI.pm
 
 pre-install:
-.if ${PORT_OPTIONS:MSQLITE}
-	@${REINPLACE_CMD} 's/^\([^#]*DBI:Pg.*\)$$/#\1/g' ${WRKSRC}/portscout.conf
-	@${REINPLACE_CMD} 's/^#\(.*DBI:SQLite.*\)$$/\1/g' ${WRKSRC}/portscout.conf
-.endif
 	@${REINPLACE_CMD} -e "s#^\(templates .*\)/etc#\1/share#"	\
 	                  -e "s#^prefix\( *= *\).*#prefix\1${PREFIX}#"	\
 	                  ${WRKSRC}/portscout.conf
 	@${REINPLACE_CMD} -e "s#^\(.*PREFIX.*=> *\)'.*'#\1'${PREFIX}'#"	\
 	                  ${WRKSRC}/Portscout/Const.pm
 	@${MV} ${WRKSRC}/docs/*.* ${WRKSRC}
+
+pre-install-SQLITE-on:
+	@${REINPLACE_CMD} 's/^\([^#]*DBI:Pg.*\)$$/#\1/g' ${WRKSRC}/portscout.conf
+	@${REINPLACE_CMD} 's/^#\(.*DBI:SQLite.*\)$$/\1/g' ${WRKSRC}/portscout.conf
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Portscout
@@ -98,12 +98,11 @@ do-install:
 
 	${INSTALL_DATA} ${WRKSRC}/portscout.conf ${STAGEDIR}${PREFIX}/etc/portscout.conf.sample
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for f in ${PORTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .	endfor
-.endif
 
 test:
 	${PERL} ${WRKSRC}/t/00-use.t
