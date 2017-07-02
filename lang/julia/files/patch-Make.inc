@@ -1,6 +1,6 @@
---- Make.inc.orig	2017-05-08 07:00:02 UTC
+--- Make.inc.orig	2017-06-19 17:48:45 UTC
 +++ Make.inc
-@@ -128,12 +128,7 @@ endif
+@@ -133,12 +133,7 @@ endif
  # disable automatic Makefile rules
  .SUFFIXES:
  
@@ -13,7 +13,7 @@
  
  # Julia's Semantic Versioning system labels the three decimal places in a version number as
  # the major, minor and patch versions.  Typically the major version would be incremented
-@@ -178,7 +173,7 @@ libdir := $(prefix)/lib
+@@ -183,7 +178,7 @@ libdir := $(prefix)/lib
  libexecdir := $(prefix)/libexec
  datarootdir := $(prefix)/share
  docdir := $(datarootdir)/doc/julia
@@ -22,7 +22,7 @@
  man1dir := $(mandir)/man1
  includedir := $(prefix)/include
  sysconfdir := $(prefix)/etc
-@@ -192,7 +187,7 @@ build_libdir := $(build_prefix)/lib
+@@ -197,7 +192,7 @@ build_libdir := $(build_prefix)/lib
  build_libexecdir := $(build_prefix)/libexec
  build_datarootdir := $(build_prefix)/share
  build_docdir := $(build_datarootdir)/doc/julia
@@ -31,7 +31,7 @@
  build_man1dir := $(build_mandir)/man1
  build_includedir := $(build_prefix)/include
  build_sysconfdir := $(build_prefix)/etc
-@@ -340,7 +335,7 @@ endif
+@@ -350,7 +345,7 @@ endif
  ifeq ($(USEIFC), 1)
  FC := ifort
  else
@@ -40,7 +40,7 @@
  endif
  
  STDLIBCPP_FLAG :=
-@@ -393,14 +388,14 @@ SHIPFLAGS := -O3 -ggdb2 -falign-functions
+@@ -403,14 +398,14 @@ SHIPFLAGS := -O3 -ggdb2 -falign-functions
  endif
  
  ifeq ($(USECLANG),1)
@@ -57,13 +57,4 @@
 +SHIPFLAGS := -O3
  ifeq ($(OS), Darwin)
  ifeq ($(USE_LIBCPP), 1)
- CC += -stdlib=libc++ -mmacosx-version-min=10.7
-@@ -833,7 +828,7 @@ endif
- 
- ifeq ($(USE_SYSTEM_UTF8PROC), 1)
-   LIBUTF8PROC := -lutf8proc
--  UTF8PROC_INC := /usr/include
-+  UTF8PROC_INC := $(LOCALBASE)/include
- else
-   LIBUTF8PROC := $(build_libdir)/libutf8proc.a
-   UTF8PROC_INC := $(build_includedir)
+ MACOSX_VERSION_MIN := 10.8
