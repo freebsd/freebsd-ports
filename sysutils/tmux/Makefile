@@ -18,8 +18,7 @@ USES=		pkgconfig ncurses
 USE_GITHUB=	nodefault
 GH_TUPLE=	imomaliev:tmux-bash-completion:ef56d3e:bash
 
-EXPLICIT_SAFESTACK=	yes
-EXPLICIT_CFI=		yes
+USE_HARDENING=	cfi pie relro safestack
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
