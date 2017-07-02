@@ -18,7 +18,6 @@ SRCS+=	util.cpp
 
 .PATH: ${EXTRADIR}
 SRCS+=	usb_freebsd.cpp
-SRCS+=	util_freebsd.cpp
 
 # required by fastboot
 .PATH: ${.CURDIR}/../adb
