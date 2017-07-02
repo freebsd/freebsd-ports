@@ -333,6 +333,10 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/num/NumberGuessBean.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/sessions/DummyCart.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/sessions/DummyCart.java
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.class
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.java
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$1.class
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$TrailerFieldSupplier.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/util/CookieFilter.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/util/CookieFilter.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/util/HTMLFilter.class
