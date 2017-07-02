@@ -189,9 +189,7 @@ OPTIONS_GROUP_HARDENING+=SAFESTACK
 .if ${HARDENING_OFF:Mcfi} == ""
 .if ${OSVERSION} >= 1200020 && ${LLD_IS_LD} == "yes" && ${ARCH} == "amd64"
 
-.if defined(EXPLICIT_CFIHARDEN) # XXX
-USE_HARDENING+=		cfi
-.elif ${_USE_HARDENING:Mstatic}
+.if ${_USE_HARDENING:Mstatic}
 USE_HARDENING+=		nocfi
 .endif
 
