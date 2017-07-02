@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpc-qt
-DISTVERSION=	0.0.0.s20170630
+DISTVERSIONPREFIX=	v
+DISTVERSION=	17.07
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://aur.archlinux.org/cgit/aur.git/plain/${PORTNAME}.desktop?h=${PORTNAME}-git&id=b1a6b91&dummy=/:desktop
 DISTFILES=	${PORTNAME}.desktop:desktop
@@ -16,7 +17,6 @@ LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cmdrkotori
-GH_TAGNAME=	8835b7f
 
 USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake
 USE_QT5=	qmake_build buildtools_build linguisttools_build \
