@@ -22,10 +22,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
 
-# PIE is picked up via configure argument.
-NOPIE_PORTS=	yes
-
-EXPLICIT_SAFESTACK=	yes
+USE_HARDENING=	pie:configure relro safestack
 
 CPE_VENDOR=	openinfosecfoundation
 
@@ -116,7 +113,6 @@ TESTS_CONFIGURE_ENABLE=		unittests
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=--enable-gccprotect \
-		--enable-pie \
 		--with-libpcre-includes=${LOCALBASE}/include \
 		--with-libpcre-libraries=${LOCALBASE}/lib \
 		--with-libyaml-includes=${LOCALBASE}/include \
