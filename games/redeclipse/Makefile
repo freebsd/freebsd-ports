@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redeclipse
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.5.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -13,7 +12,7 @@ COMMENT=	Single-player and multi-player first-person ego-shooter
 LICENSE=	MIT ZLIB
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	redeclipse-data>=1.5.3:games/redeclipse-data
+RUN_DEPENDS=	redeclipse-data>=${PORTVERSION}:games/redeclipse-data
 
 BROKEN_sparc64=	does not build on sparc64
 
@@ -35,7 +34,7 @@ OPTIONS_MULTI_COMPONENTS=CLIENT DEDICATED
 OPTIONS_DEFAULT=	CLIENT DEDICATED OPTIMIZED_CFLAGS
 
 CLIENT_DESC=		Build client
-CLIENT_USE=		GL=gl SDL=image,mixer,sdl XORG=x11
+CLIENT_USE=		GL=gl SDL=image2,mixer2,sdl2 XORG=x11
 CLIENT_ALL_TARGET=	client
 CLIENT_PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME} \
 			share/pixmaps/${PORTNAME}.ico
@@ -52,6 +51,9 @@ DEDICATED_PLIST_FILES=	bin/${PORTNAME}_server libexec/${PORTNAME}_server
 
 OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fomit-frame-pointer -ffast-math
 OPTIMIZED_CFLAGS_CXXFLAGS=	-O3 -fomit-frame-pointer -ffast-math
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/src/include ${WRKSRC}/src/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CLIENT_PCH=.*|CLIENT_PCH=|' ${WRKSRC}/src/Makefile
