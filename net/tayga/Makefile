@@ -13,6 +13,9 @@ LICENSE=	GPLv2
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
-EXPLICIT_SAFESTACK=yes
+USE_HARDENING=	pie relro safestack
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS ?=|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
