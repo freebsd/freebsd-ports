@@ -68,6 +68,7 @@ TEST_SRCS+= stringprintf_test.cpp
 TEST_SRCS+= strings_test.cpp
 TEST_SRCS+= test_main.cpp
 TEST_SRCS+= test_utils.cpp
+CPPFLAGS.logging_test.cpp+= -DNDEBUG # XXX DCHECK vs. timestamps
 
 .PATH: ${.CURDIR}/../libcrypto_utils
 SRCS+= android_pubkey.c
