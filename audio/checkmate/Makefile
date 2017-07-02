@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	checkmate
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	audio
 MASTER_SITES=	http://checkmate.gissen.nl/ \
 		LOCAL/ehaupt

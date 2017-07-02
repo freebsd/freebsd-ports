@@ -20,7 +20,6 @@
     SUBDIR += cal
     SUBDIR += calcurse
     SUBDIR += calibre
-    SUBDIR += california
     SUBDIR += cartotheque
     SUBDIR += cdcat
     SUBDIR += charmap

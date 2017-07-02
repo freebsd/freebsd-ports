@@ -3,6 +3,7 @@
 
 PORTNAME=	xmp
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -14,28 +15,33 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxmp.so:audio/libxmp
 
-USES=		pkgconfig gmake
+USES=		gmake localbase:ldflags pkgconfig
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 CONFIG_FILES=	xmp.conf modules.conf
 
-OPTIONS_DEFINE=	ALSA PULSEAUDIO
+OPTIONS_DEFAULT=	OSS
+OPTIONS_DEFINE=	ALSA OSS PULSEAUDIO SNDIO
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 ALSA_CONFIGURE_ENABLE=	alsa
 
+OSS_CONFIGURE_ENABLE=	oss
+
 PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|\ install-conf||' ${WRKSRC}/Makefile.in
+
+post-patch-SNDIO-on:
+	@${REINPLACE_CMD} -e 's|openbsd\*)|\*)|' ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
