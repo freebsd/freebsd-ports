@@ -2,6 +2,7 @@
 
 PORTNAME=	phabricator
 PORTVERSION=	20170630
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php-
 
@@ -20,14 +21,12 @@ OPTIONS_DEFAULT=OPCACHE
 OPCACHE_DESC?=	Use OPcache to improve performance
 
 USES=		php shebangfix
-SHEBANG_FILES=	bin/* \
-		externals/httpful/build \
+SHEBANG_FILES=	externals/httpful/build \
 		externals/restful/build-phar \
 		scripts/almanac/*.php \
 		scripts/cache/*.php \
 		scripts/celerity/*.php \
 		scripts/daemon/*.php \
-		scripts/daemon/phd-daemon \
 		scripts/diviner/*.php \
 		scripts/drydock/*.php \
 		scripts/fact/*.php \

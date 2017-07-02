@@ -7,6 +7,8 @@ bin/texi2any
 bin/texi2dvi
 bin/texi2pdf
 bin/texindex
+lib/texinfo/MiscXS.a
+lib/texinfo/MiscXS.so
 man/man1/info.1.gz
 man/man1/install-info.1.gz
 man/man1/makeinfo.1.gz
@@ -22,7 +24,9 @@ man/man5/texinfo.5.gz
 %%NLS%%share/locale/ca/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/da/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/da/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/de.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/de/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/de/LC_MESSAGES/texinfo_document.mo
@@ -66,7 +70,6 @@ man/man5/texinfo.5.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/texinfo.mo
-%%DATADIR%%/DebugTexinfo/DebugCount.pm
 %%DATADIR%%/DebugTexinfo/DebugTree.pm
 %%DATADIR%%/Pod-Simple-Texinfo/Pod/Simple/Texinfo.pm
 %%DATADIR%%/Texinfo/Common.pm
@@ -92,10 +95,13 @@ man/man5/texinfo.5.gz
 %%DATADIR%%/Texinfo/Convert/XSParagraph/TestXS.pm
 %%DATADIR%%/Texinfo/Documentlanguages.pm
 %%DATADIR%%/Texinfo/Encoding.pm
+%%DATADIR%%/Texinfo/MiscXS.pm
 %%DATADIR%%/Texinfo/ModulePath.pm
 %%DATADIR%%/Texinfo/Parser.pm
 %%DATADIR%%/Texinfo/Report.pm
 %%DATADIR%%/Texinfo/Structuring.pm
+%%DATADIR%%/Texinfo/Transformations.pm
+%%DATADIR%%/Texinfo/XSLoader.pm
 %%DATADIR%%/htmlxref.cnf
 %%DATADIR%%/init/book.pm
 %%DATADIR%%/init/chm.pm

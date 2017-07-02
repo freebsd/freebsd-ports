@@ -2,6 +2,7 @@
 
 PORTNAME=	seahub
 PORTVERSION=	${SEAHUB_VER}
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www
@@ -25,6 +26,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}flup>=0:www/py-flup \
 		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
