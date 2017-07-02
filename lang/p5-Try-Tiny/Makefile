@@ -12,6 +12,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Minimal try/catch with proper localization of $$@
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 TEST_DEPENDS=	p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny
 

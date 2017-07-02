@@ -24,6 +24,8 @@ USES=		ssl
 
 .include <bsd.port.options.mk>
 
+MAKE_ARGS+=	OSVERSION=${OSVERSION}
+
 .if ${PORT_OPTIONS:MNG_IPACCT}
 BUILD_DEPENDS+=	${LOCALBASE}/include/netgraph/ng_ipacct.h:net-mgmt/ng_ipacct
 .if exists(${KMODDIR}/ng_ipacct.ko)
