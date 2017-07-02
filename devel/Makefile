@@ -91,7 +91,6 @@
     SUBDIR += android-tools-fastboot-devel
     SUBDIR += android-tools-simpleperf
     SUBDIR += anjuta
-    SUBDIR += anjuta-extras
     SUBDIR += antlr
     SUBDIR += antlr3
     SUBDIR += antlr4
