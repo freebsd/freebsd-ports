@@ -99,8 +99,6 @@ USE_HARDENING+=		nopie
 .endif
 .endif
 
-pie_ARGS:=		${PIE_ARGS} ${pie_ARGS} # XXX
-
 PIE_DESC=		Build as PIE
 PIE_USES=		pie
 
@@ -166,8 +164,6 @@ USE_HARDENING+=		safestack
 .elif ${_USE_HARDENING:Mstatic}
 USE_HARDENING+=		nosafestack
 .endif
-
-safestack_ARGS:=	${SAFESTACK_ARGS} ${safestack_ARGS} # XXX
 
 SAFESTACK_DESC=		Build with SafeStack
 SAFESTACK_USES=		safestack
