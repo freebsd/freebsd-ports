@@ -99,7 +99,7 @@ USE_HARDENING+=		nopie
 .endif
 .endif
 
-pie_ARGS:=		${PIE_ARGS} # XXX
+pie_ARGS:=		${PIE_ARGS} ${pie_ARGS} # XXX
 
 PIE_DESC=		Build as PIE
 PIE_USES=		pie
@@ -109,7 +109,7 @@ OPTIONS_GROUP_HARDENING+=PIE
 .endif
 
 .if ${USE_HARDENING:Mpie} && ${USE_HARDENING:Mnopie} == ""
-.if !defined(NOPIE_PORTS)
+.if !defined(NOPIE_PORTS) # XXX
 OPTIONS_DEFAULT+=	PIE
 .endif
 .if ${_USE_HARDENING:Mbatch} != ""
@@ -142,7 +142,7 @@ OPTIONS_GROUP_HARDENING+=RELRO
 .endif
 
 .if ${USE_HARDENING:Mrelro} && ${USE_HARDENING:Mnorelro} == ""
-.if !defined(NORELRO_PORTS)
+.if !defined(NORELRO_PORTS) # XXX
 OPTIONS_DEFAULT+=	RELRO
 .endif
 .if ${_USE_HARDENING:Mbatch} != ""
@@ -167,7 +167,7 @@ USE_HARDENING+=		safestack
 USE_HARDENING+=		nosafestack
 .endif
 
-safestack_ARGS:=	${SAFESTACK_ARGS} # XXX
+safestack_ARGS:=	${SAFESTACK_ARGS} ${safestack_ARGS} # XXX
 
 SAFESTACK_DESC=		Build with SafeStack
 SAFESTACK_USES=		safestack
