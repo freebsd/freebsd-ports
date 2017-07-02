@@ -1,6 +1,9 @@
 libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/bash_completion
 %%DATADIR%%/bash_completion.sh
+%%DATADIR%%/completions/2to3
+%%DATADIR%%/completions/7z
+%%DATADIR%%/completions/7za
 %%DATADIR%%/completions/_cal
 %%DATADIR%%/completions/_chfn
 %%DATADIR%%/completions/_chsh
@@ -26,9 +29,6 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_udevadm
 %%DATADIR%%/completions/_write
 %%DATADIR%%/completions/_yum
-%%DATADIR%%/completions/2to3
-%%DATADIR%%/completions/7z
-%%DATADIR%%/completions/7za
 %%DATADIR%%/completions/a2x
 %%DATADIR%%/completions/abook
 %%DATADIR%%/completions/aclocal
@@ -76,6 +76,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/autoupdate
 %%DATADIR%%/completions/avctrl
 %%DATADIR%%/completions/badblocks
+%%DATADIR%%/completions/bind
 %%DATADIR%%/completions/bk
 %%DATADIR%%/completions/brctl
 %%DATADIR%%/completions/btdownloadcurses.py
@@ -199,6 +200,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/gfortran
 %%DATADIR%%/completions/gkrellm
 %%DATADIR%%/completions/gkrellm2
+%%DATADIR%%/completions/gm
 %%DATADIR%%/completions/gmake
 %%DATADIR%%/completions/gmplayer
 %%DATADIR%%/completions/gnatmake
@@ -340,6 +342,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/mdtool
 %%DATADIR%%/completions/medusa
 %%DATADIR%%/completions/mencoder
+%%DATADIR%%/completions/micropython
 %%DATADIR%%/completions/mii-diag
 %%DATADIR%%/completions/mii-tool
 %%DATADIR%%/completions/minicom
@@ -452,6 +455,9 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/pwdx
 %%DATADIR%%/completions/pwgen
 %%DATADIR%%/completions/pxz
+%%DATADIR%%/completions/py.test
+%%DATADIR%%/completions/py.test-2
+%%DATADIR%%/completions/py.test-3
 %%DATADIR%%/completions/pydoc
 %%DATADIR%%/completions/pydoc3
 %%DATADIR%%/completions/pyflakes
@@ -465,10 +471,10 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/pyvenv-3.4
 %%DATADIR%%/completions/pyvenv-3.5
 %%DATADIR%%/completions/qdbus
+%%DATADIR%%/completions/qemu
 %%DATADIR%%/completions/qemu-kvm
 %%DATADIR%%/completions/qemu-system-i386
 %%DATADIR%%/completions/qemu-system-x86_64
-%%DATADIR%%/completions/qemu
 %%DATADIR%%/completions/qrunner
 %%DATADIR%%/completions/querybts
 %%DATADIR%%/completions/quota
@@ -631,6 +637,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/zopfli
 %%DATADIR%%/completions/zopflipng
 %%DATADIR%%/helpers/perl
+%%DATADIR%%/helpers/python
 %%CMAKE_MODULES%%share/cmake/Modules/bash-completion/bash-completion-config-version.cmake
 %%CMAKE_MODULES%%share/cmake/Modules/bash-completion/bash-completion-config.cmake
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
