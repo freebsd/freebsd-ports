@@ -40,6 +40,8 @@ MOZILLA_NAME=	Firefox
 USE_GL=		gl
 USES=		tar:xz
 
+USE_HARDENING=	pie:configure relro
+
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--enable-application=browser \
@@ -51,8 +53,6 @@ OPTIONS_DEFAULT=	BUNDLED_CAIRO
 OPTIONS_DEFAULT_aarch64=RUST
 OPTIONS_DEFAULT_amd64=	RUST
 OPTIONS_DEFAULT_i386=	RUST
-
-PIE_ARGS=		configure
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
