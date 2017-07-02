@@ -34,7 +34,7 @@ SSL_DESC=	SSL proxying (not scanned, only forwarded!)
 CLAMAV_DESC=	libclamav support
 TROPHIE_DESC=	Trend Micro (Trophie) support
 
-EXPLICIT_SAFESTACK=	yes
+USE_HARDENING=	pie relro safestack
 
 .include <bsd.port.options.mk>
 
