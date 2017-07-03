@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+: ${stund_pidfile:=/var/run/stund.pid}
+: ${stund_flags="-h \"\$stund_ip1\" -a \"\$stund_ip2\" -b"}
+
+name="stund"
+command="%%PREFIX%%/sbin/stund"
+pidfile="$stund_pidfile"
+
+start_pre() {
+	if [ -z "$stund_ip1" -o -z "$stund_ip2" ]; then
+		eerror stund: failed: you must set stund_ip1 and stund_ip2 1>&2
+		return 1
+	fi
+	return 0
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="kea"
+command="%%PREFIX%%/sbin/keactrl"
+required_files="%%PREFIX%%/etc/${name}/keactrl.conf"
+command_args="start"
+
+depend() {
+	keyword -jail
+}

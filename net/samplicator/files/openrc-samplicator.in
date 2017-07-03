@@ -1,0 +1,46 @@
+#!/sbin/openrc-run
+
+# Add the following line(s) to /etc/rc.conf to enable samplicator:
+#
+#  # optional
+#  samplicator_flags="-S -p 2055 -c %%PREFIX%%/etc/samplicator.conf"
+#  samplicator_runas="nobody"
+#
+# The default is to run samplicator as nobody, which will prevent you from
+# using the -S flag (maintain (spoof) source addresses).
+# If you want to maintain (spoof) source addresses, you will need to run as
+# root.
+# This can be accomplished by adding samplicator_runas="root" to /etc/rc.conf
+
+name=samplicator
+
+# Set defaults
+: ${samplicator_flags="-p 2055 -c %%PREFIX%%/etc/samplicator.conf"}
+: ${samplicator_runas:=nobody}
+
+pidfile=/var/run/samplicator.pid
+command=%%PREFIX%%/bin/samplicate
+command_args=${samplicator_flags}
+command_user=${samplicator_runas}
+required_files=%%PREFIX%%/etc/samplicator.conf
+supervisor=supervise-daemon
+
+start_pre()
+{
+    # create empty pidfile with correct permissions
+    install -o ${samplicator_runas} /dev/null ${pidfile}
+
+    # since we are using daemon(8) to drop privs, we cannot let samplicator fork
+    echo "${samplicator_flags}" | egrep -q "(^\-f| \-f)"
+    if [ $? -eq 0 ]; then
+        eerror "Please remove parameter -f from samplicator_flags"
+        return 1
+    fi
+
+    # root is required for -S, do a pre-launch sanity check
+    echo "${samplicator_flags}" | egrep -q "(^\-S| \-S)"
+    if [ $? -eq 0 ] && [ $(id -u ${samplicator_runas}) -ne 0 ]; then
+        eerror "-S requires that samplicator_runas be set to root."
+        return 1
+    fi
+}

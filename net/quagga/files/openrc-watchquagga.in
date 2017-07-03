@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+# You may also wish to use the following variables to fine-tune startup:
+# watchquagga_flags
+
+name=watchquagga
+
+command=%%PREFIX%%/sbin/watchquagga
+pidfile=%%LOCALSTATE_DIR%%/watchquagga.pid
+
+depend() {
+	need quagga
+	use net
+	keyword -shutdown
+}

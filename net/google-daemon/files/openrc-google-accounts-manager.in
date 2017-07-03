@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="google_accounts_manager"
+
+command=%%PREFIX%%/share/google/google_daemon/manage_accounts.py
+pidfile=/var/run/manage_accounts.pid
+command_args=--daemon
+
+depend() {
+	need syslogd
+	keyword -shutdown
+}
