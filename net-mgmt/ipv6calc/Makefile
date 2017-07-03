@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipv6calc
-PORTVERSION=	0.99.2
+PORTVERSION=	1.0.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
@@ -14,8 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to build: libipv6addr.c: addr_test_method may be used uninitialized in this function
 
-USES=		gmake perl5 ssl
+USES=		gmake perl5 shebangfix ssl
 GNU_CONFIGURE=	yes
+
+SHEBANG_FILES=	tools/*.pl tools/*.sh.in
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
