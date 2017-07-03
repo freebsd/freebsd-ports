@@ -12,4 +12,3 @@ repository. It can also restrict who can push to what branch or tag, which is
 very important in a corporate environment.
 
 WWW: https://github.com/sitaramc/gitolite
-WWW: http://milki.github.com/gitolite
