@@ -31,7 +31,7 @@ LIB_DEPENDS=	libsnappy.so:archivers/snappy
 RUN_DEPENDS=	bash:shells/bash \
 		ssid:sysutils/ssid
 
-CONFLICTS_INSTALL=	hadoop-1*
+CONFLICTS_INSTALL=	hadoop-1* yarn
 
 USES=		cpe shebangfix
 CPE_VENDOR=	apache
@@ -55,7 +55,7 @@ HADOOP_GROUP=	hadoop
 USERS=		${HDFS_USER} ${MAPRED_USER}
 GROUPS=		${HADOOP_GROUP}
 
-SUB_FILES=	hadoop-layout.sh httpfs-env.sh kms-env.sh 
+SUB_FILES=	hadoop-layout.sh httpfs-env.sh kms-env.sh
 USE_RC_SUBR=	historyserver nodemanager resourcemanager webappproxyserver datanode namenode secondarynamenode journalnode zkfc
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
