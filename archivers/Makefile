@@ -198,6 +198,7 @@
     SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip2
+    SUBDIR += rubygem-snappy
     SUBDIR += rvm
     SUBDIR += rzip
     SUBDIR += sectar
