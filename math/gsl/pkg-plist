@@ -165,6 +165,7 @@ include/gsl/gsl_sf_expint.h
 include/gsl/gsl_sf_fermi_dirac.h
 include/gsl/gsl_sf_gamma.h
 include/gsl/gsl_sf_gegenbauer.h
+include/gsl/gsl_sf_hermite.h
 include/gsl/gsl_sf_hyperg.h
 include/gsl/gsl_sf_laguerre.h
 include/gsl/gsl_sf_lambert.h
@@ -246,8 +247,8 @@ include/gsl/gsl_wavelet.h
 include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
 lib/libgsl.so
-lib/libgsl.so.19
-lib/libgsl.so.19.3.0
+lib/libgsl.so.23
+lib/libgsl.so.23.0.0
 lib/libgslcblas.a
 lib/libgslcblas.so
 lib/libgslcblas.so.0
