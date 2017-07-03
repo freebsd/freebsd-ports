@@ -11,6 +11,9 @@ DISTNAME=	mini
 MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Mini bandwidth speed test on your own server
 
+DEPRECATED=	Discontinued upstream (on June 30, 2017)
+EXPIRATION_DATE=2017-08-30
+
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
