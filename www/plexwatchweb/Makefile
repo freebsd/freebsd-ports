@@ -1,4 +1,4 @@
-# Created by: ultima <ultima1252@gmail.com>
+# Created by: Richard Gallamore <ultima@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	plexWatchWeb
@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Web front-end for plexWatch
 
 RUN_DEPENDS=	plexWatch>=0.1.6:multimedia/plexwatch
