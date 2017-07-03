@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	rofi
-PORTVERSION=	0.15.12
+PORTVERSION=	1.3.1
 CATEGORIES=	x11
+MASTER_SITES=	https://github.com/DaveDavenport/rofi/releases/download/${PORTVERSION}/
 
 MAINTAINER=	nomoo@nomoo.ru
 COMMENT=	Window switcher, run dialog and dmenu replacement
@@ -10,24 +11,25 @@ COMMENT=	Window switcher, run dialog and dmenu replacement
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
+LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
+		libxcb-ewmh.so:x11/xcb-util-wm \
+		libxcb-icccm.so:x11/xcb-util-wm \
+		libxcb-util.so:x11/xcb-util \
+		libxcb-xrm.so:x11/xcb-util-xrm \
+		libxkbcommon-x11.so:x11/libxkbcommon
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	DaveDavenport
+USES=		gmake pkgconfig shebangfix
+USE_GNOME=	cairo pango
+USE_XORG=	xcb
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake pkgconfig shebangfix
-SHEBANG_FILES=	${WRKSRC}/script/rofi-sensible-terminal
-USE_XORG=	x11 xinerama xft
-USE_GNOME=	pango
+SHEBANG_FILES=	script/get_git_rev.sh \
+		script/rofi-sensible-terminal
+bash_CMD=	/bin/sh
 
-OPTIONS_DEFINE=	I3
-
-I3_DESC=	I3 support
-I3_BUILD_DEPENDS=	i3:x11-wm/i3
-I3_CFLAGS=	-I${LOCALBASE}/include
-
-PLIST_FILES=	bin/rofi bin/rofi-sensible-terminal man/man1/rofi.1.gz \
-		man/man1/rofi-sensible-terminal.1.gz
+post-patch:
+# Fix rofi-theme-selector which assumes we have GNU sed
+	@${REINPLACE_CMD} 's|$${SED} -i |$${SED} -i "" |' \
+		${WRKSRC}/script/rofi-theme-selector
 
 .include <bsd.port.mk>
