@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	gitolite
-PORTVERSION=	3.6.6
 DISTVERSIONPREFIX=v
+DISTVERSION=	3.6.7
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	GH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Access control layer on top of git
 
 LICENSE=	GPLv2
@@ -16,14 +15,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	git>=0:devel/git \
 		p5-JSON>=0:converters/p5-JSON
 
+USES=		cpe perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	sitaramc
 
 CONFLICTS=	gitolite-[^3]*
 
-USES=		cpe perl5
 CPE_VENDOR=	sitaram_chamarty
 NO_ARCH=	yes
+
+SHEBANG_REGEX=	.*
+bash_CMD=	/bin/sh
 
 SUB_FILES=	pkg-message
 
@@ -32,14 +34,6 @@ OPTIONS_SUB=	yes
 
 GITUSER_DESC=	Create git user as gitolite provider
 GITUSER_VARS=	USERS=git GROUPS=git
-
-post-patch:
-	@${FIND} ${WRKSRC} \
-		-exec ${GREP} -qs \#\!/usr/bin/perl {} \; \
-		-exec ${REINPLACE_CMD} -Ee 's|#!/usr/bin/perl|#!${PERL}|' {} \;
-	@${FIND} ${WRKSRC} \
-		-exec ${GREP} -qs \#\!/bin/bash {} \; \
-		-exec ${REINPLACE_CMD} -Ee 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' {} \;
 
 do-build:
 	echo "${GH_TAGNAME}" > ${WRKSRC}/src/VERSION
@@ -56,7 +50,7 @@ post-build:
 do-install:
 	(cd ${WRKSRC}/src && ${COPYTREE_BIN} \* ${STAGEDIR}${PREFIX}/libexec/gitolite)
 	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} Gitolite ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/)
-	${LN} -s ${PREFIX}/libexec/gitolite/gitolite ${STAGEDIR}${PREFIX}/bin/gitolite
+	${RLN} -s ${STAGEDIR}${PREFIX}/libexec/gitolite/gitolite ${STAGEDIR}${PREFIX}/bin/gitolite
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
