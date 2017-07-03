@@ -1,0 +1,19 @@
+
+
+This script will create the following directories if they do not exist:
+
+ ~acme/.acme.sh
+ ~acme/certs
+
+The script will also install ~acme/.acme.sh/account.conf.sample which has
+sane defaults.  Copy this to ~acme/.acme.sh/account.conf and edit contents
+to suit.
+
+In the %%EXAMPLESDIR%% directory, you can find the dnsapi 
+scripts which will be useful if you decide to use dns-01 challenges. Also 
+included are the deploy scripts.
+
+A newsyslog.conf sample file is provided at %%EXAMPLESDIR%%/acme.sh
+and you could create a symlink from that to %%PREFIX%%/etc/newsyslog.conf.d/
+
+
