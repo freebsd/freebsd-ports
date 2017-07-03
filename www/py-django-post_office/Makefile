@@ -1,4 +1,4 @@
-# Created by: Ultima <ultima1252@gmail.com>
+# Created by: Richard Gallamore <ultima@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	django-post_office
@@ -8,7 +8,7 @@ CATEGORIES=	www python
 MASTER_SITES=	GH
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Django app to monitor and send mail asynchronously
 
 LICENSE=	MIT

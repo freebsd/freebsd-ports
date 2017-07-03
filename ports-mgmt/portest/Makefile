@@ -1,11 +1,11 @@
-# Created by: Ultima <ultima1252@gmail.com>
+# Created by: Richard Gallamore <ultima@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	portest
 PORTVERSION=	0.1.9
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Patch file automation for FreeBSD-ports
 
 LICENSE=	BSD2CLAUSE

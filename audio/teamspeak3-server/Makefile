@@ -9,7 +9,7 @@ MASTER_SITES=	http://dl.4players.de/ts/releases/${PORTVERSION}/ \
 		http://teamspeak.gameserver.gamed.de/ts3/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_freebsd_${TEAMSPEAK_ARCH}-${PORTVERSION}
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Server side of the TeamSpeak group voice chat system
 
 LICENSE=	teamspeak

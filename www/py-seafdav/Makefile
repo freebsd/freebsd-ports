@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-pro
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Python library for accessing seafile data model
 
 LICENSE=	MIT
