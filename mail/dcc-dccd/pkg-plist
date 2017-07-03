@@ -76,6 +76,4 @@ man/man8/dccsight.8.gz
 %%DCCGREY%%@unexec [ -e %D/dcc/grey_flod.map ] && rm -f %D/dcc/grey_flod.map || true
 %%DCCGREY%%@unexec [ -e %D/dcc/grey_clients ] && rm -f %D/dcc/grey_clients || true
 @dir dcc/log
-@group wheel
-@owner root
 @dir dcc
