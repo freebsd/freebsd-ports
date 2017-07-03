@@ -27,7 +27,9 @@ SUB_FILES=	zeronet-service zeronet-cmd pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE} USER=${USER} GROUP=${GROUP}
 PLIST_SUB=	USER=${USER} GROUP=${GROUP}
 
-USES=		python
+# ZeroNet hasn't been ported to Python 3 yet
+# https://github.com/HelloZeroNet/ZeroNet/issues/149
+USES=		python:2.7
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	TOR DEBUG
