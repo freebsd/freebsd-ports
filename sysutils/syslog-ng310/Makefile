@@ -135,6 +135,7 @@ PYTHON_PLIST_FILES= 		lib/syslog-ng/libmod-python.so
 
 CURL_CONFIGURE_OFF=		--with-libcurl=off
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
+CURL_PLIST_FILES= 		lib/syslog-ng/libhttp.so
 
 .include <bsd.port.pre.mk>
 
