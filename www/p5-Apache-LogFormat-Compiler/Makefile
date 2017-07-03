@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Apache-LogFormat-Compiler
-PORTVERSION=	0.32
-PORTREVISION=	1
+PORTVERSION=	0.35
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +14,14 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-POSIX-strftime-Compiler>=0.30:devel/p5-POSIX-strftime-Compiler
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+
+TEST_DEPENDS=	\
+	p5-HTTP-Message>=0:www/p5-HTTP-Message \
+	p5-Test-MockTime>=0:devel/p5-Test-MockTime \
+	p5-Try-Tiny>=0.12:lang/p5-Try-Tiny
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 NO_ARCH=	YES
 
 .include <bsd.port.mk>
