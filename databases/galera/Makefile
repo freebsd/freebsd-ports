@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	galera
-PORTVERSION?=	25.3.20
-PORTREVISION?=	2
+PORTVERSION?=	25.3.21
 CATEGORIES=	databases
 
 MAINTAINER=	devel@galeracluster.com
@@ -58,9 +57,12 @@ BPOSTATIC_DESC=	Use static boost_program_options
 
 .include <bsd.port.pre.mk>
 
-# COMPILER_TYPE could be empty on older FreeBSD versions.
-.if "${COMPILER_TYPE}" == gcc || ${OSVERSION} < 1000000
-USE_GCC=	4.8+
+# Clang is available on FreeBSD 9.x but the default
+# compiler (e.g. /usr/bin/cc) is GCC. Force the usage of Clang.
+.if ${OSVERSION} < 1000024
+CC=		clang
+CXX=		clang++
+CPP=		clang-cpp
 .endif
 
 .if ${PORT_OPTIONS:MBOOSTPOOL}
@@ -72,7 +74,7 @@ MAKE_ARGS+=	bpostatic=${LOCALBASE}/lib/libboost_program_options.a
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-MAKE_ARGS+=	debug=3
+MAKE_ARGS+=	debug=0
 .endif
 
 do-install:
