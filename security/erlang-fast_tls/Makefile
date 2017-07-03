@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fast_tls
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.13
 CATEGORIES=	security
 PKGNAMEPREFIX=	erlang-
 
