@@ -31,12 +31,12 @@ lib/libpmi.so.0
 lib/libpmi.so.0.0.0
 lib/libslurm.a
 lib/libslurm.so
-lib/libslurm.so.30
-lib/libslurm.so.30.0.0
+lib/libslurm.so.31
+lib/libslurm.so.31.0.0
 lib/libslurmdb.a
 lib/libslurmdb.so
-lib/libslurmdb.so.30
-lib/libslurmdb.so.30.0.0
+lib/libslurmdb.so.31
+lib/libslurmdb.so.31.0.0
 lib/slurm/accounting_storage_filetxt.a
 lib/slurm/accounting_storage_filetxt.so
 %%MYSQL%%lib/slurm/accounting_storage_mysql.a
@@ -117,8 +117,6 @@ lib/slurm/job_submit_require_timelimit.a
 lib/slurm/job_submit_require_timelimit.so
 lib/slurm/job_submit_throttle.a
 lib/slurm/job_submit_throttle.so
-lib/slurm/jobacct_gather_aix.a
-lib/slurm/jobacct_gather_aix.so
 lib/slurm/jobacct_gather_cgroup.a
 lib/slurm/jobacct_gather_cgroup.so
 lib/slurm/jobacct_gather_linux.a
@@ -143,6 +141,8 @@ lib/slurm/layouts_power_default.a
 lib/slurm/layouts_power_default.so
 lib/slurm/layouts_unit_default.a
 lib/slurm/layouts_unit_default.so
+lib/slurm/mcs_account.a
+lib/slurm/mcs_account.so
 lib/slurm/mcs_group.a
 lib/slurm/mcs_group.so
 lib/slurm/mcs_none.a
@@ -201,10 +201,6 @@ lib/slurm/sched_builtin.a
 lib/slurm/sched_builtin.so
 lib/slurm/sched_hold.a
 lib/slurm/sched_hold.so
-lib/slurm/sched_wiki.a
-lib/slurm/sched_wiki.so
-lib/slurm/sched_wiki2.a
-lib/slurm/sched_wiki2.so
 lib/slurm/select_alps.a
 lib/slurm/select_alps.so
 lib/slurm/select_cons_res.a
@@ -254,7 +250,7 @@ man/man1/sbcast.1.gz
 man/man1/scancel.1.gz
 man/man1/scontrol.1.gz
 man/man1/sdiag.1.gz
-man/man1/sh5util.1.gz
+%%HDF5%%man/man1/sh5util.1.gz
 man/man1/sinfo.1.gz
 man/man1/slurm.1.gz
 man/man1/smap.1.gz
@@ -262,7 +258,6 @@ man/man1/sprio.1.gz
 man/man1/squeue.1.gz
 man/man1/sreport.1.gz
 man/man1/srun.1.gz
-man/man1/srun_cr.1.gz
 man/man1/sshare.1.gz
 man/man1/sstat.1.gz
 man/man1/strigger.1.gz
@@ -486,7 +481,6 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/hdf5_task_attr.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/high_throughput.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/ibm-pe.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/ibm.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/ibm_pe_fig1.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/ibm_pe_fig2.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/intel_knl.html
@@ -581,12 +575,11 @@ sbin/slurmstepd
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/squeue_color.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sreport.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/srun.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/srun_cr.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sshare.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sstat.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/strigger.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/style.css
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/sview.html
+%%PORTDOCS%%%%GTK2%%%%DOCSDIR%%-%%PORTVERSION%%/html/sview.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/switchplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/taskplugins.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/html/team.html
