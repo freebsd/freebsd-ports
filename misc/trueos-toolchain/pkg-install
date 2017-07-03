@@ -1,9 +1,0 @@
-#!/bin/sh
-
-PREFIX=${PKG_PREFIX-/usr/local}
-
-if [ "$2" != "POST-INSTALL" ] ; then
-   exit 0
-fi
-
-exit 0
