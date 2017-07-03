@@ -3,7 +3,7 @@
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	1.3.159
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		ftp://ftp.dcc-servers.net/src/dcc/old/ \
@@ -48,7 +48,7 @@ DCCHOME=	${PREFIX}/dcc
 
 PLIST_SUB+=	DCCUSER="${DCCUSER}" DCCGROUP="${DCCGROUP}"
 SUB_FILES=		pkg-install pkg-message
-SUB_LIST+=		WRKSRC=${WRKSRC} DCCHOME=${DCCHOME}
+SUB_LIST+=		WRKSRC=${WRKSRC} DCCHOME=${DCCHOME} DCCUSER="${DCCUSER}"
 
 ## Use the configure script to explicitly set the locations of all files,
 ## in case the standard locations have been locally overridden
@@ -107,24 +107,24 @@ post-install:
 		${STAGEDIR}${PREFIX}/dcc/cgi-bin/header.sample
 .for sf in bin/dccproc bin/cdcc dcc/libexec/dccsight dcc/libexec/check_ip_range \
 	dcc/libexec/wlist dcc/libexec/ck2ip
-		${STRIP_CMD} ${STAGEDIR}/${PREFIX}/${sf}
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${sf}
 .endfor
 .if ${PORT_OPTIONS:MDCCIFD} || ${PORT_OPTIONS:MDCCM}
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/dcc/libexec/dns-helper
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dcc/libexec/dns-helper
 .endif
 
 post-install-DCCIFD-on:
 .for sf in bin/dccif-test dcc/libexec/dccifd
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/${sf}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${sf}
 .endfor
 
 post-install-DCCD-on:
 .for sf in dcc/libexec/dump-clients dcc/libexec/dbclean \
 	dcc/libexec/dblist dcc/libexec/dccd
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/${sf}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${sf}
 .endfor
 
 post-install-DCCM-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/dcc/libexec/dccm
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dcc/libexec/dccm
 
 .include <bsd.port.mk>

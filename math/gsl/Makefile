@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsl
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -11,16 +11,12 @@ COMMENT=	The GNU Scientific Library - mathematical libs
 
 LICENSE=	GPLv3
 
-USES=		libtool makeinfo pathfix
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'
 INSTALL_TARGET=	install-strip
 
 INFO=		gsl-ref
-
-post-extract:
-	@${RM} ${WRKSRC}/doc/gsl-ref.info*
 
 #prevent regression test coredumps from causing failures on the
 #package-building cluster:

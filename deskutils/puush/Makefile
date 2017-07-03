@@ -1,11 +1,11 @@
-# Created by: Ultima <ultima1252@gmail.com>
+# Created by: Richard Gallamore <ultima@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	puush
 PORTVERSION=	0.0.2
 CATEGORIES=	deskutils
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Screen capture and Puush image-bin client
 
 RUN_DEPENDS=	gnome-screenshot:deskutils/gnome-screenshot \

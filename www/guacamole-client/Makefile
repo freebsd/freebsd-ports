@@ -1,4 +1,4 @@
-# Created by: Ultima <ultima1252@gmail.com>
+# Created by: Richard Gallamore <ultima@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	guacamole-client
@@ -11,7 +11,7 @@ MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:rep
 DISTFILES=	repository-${PORTVERSION}${EXTRACT_SUFX}:repo
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	HTML5 Clientless Remote Desktop
 
 LICENSE=	APACHE20

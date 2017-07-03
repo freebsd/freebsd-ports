@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Server)
 
 LICENSE=	GPLv3

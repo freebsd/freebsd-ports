@@ -1,4 +1,4 @@
-# Created by: Ultima <ultima1252@gmail.com>
+# Created by: Richard Gallamore <ultima@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	guacamole-server
@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-incubating
 PORTREVISION=	2
 CATEGORIES=	net
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	HTML5 Clientless Remote Desktop
 
 LICENSE=	APACHE20

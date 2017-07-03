@@ -5,7 +5,7 @@ PORTVERSION=	3.0.8
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Simple RPC framework based on GObject System in C
 
 LICENSE=	APACHE20
