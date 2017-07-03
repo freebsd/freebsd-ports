@@ -3,7 +3,7 @@
 
 PORTNAME=	dieharder
 PORTVERSION=	3.31.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/ LOCAL/bf
 
