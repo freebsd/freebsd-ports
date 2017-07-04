@@ -27,7 +27,7 @@ start_pre() {
 
 depend() {
 		provide tcsd
-		need tpmd localmount
+		need localmount
 		keyword -shutdown
 		after bootmisc
 }
