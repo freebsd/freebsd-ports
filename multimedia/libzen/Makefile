@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libzen
-PORTVERSION=	0.7.96
+PORTVERSION=	0.7.97
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
