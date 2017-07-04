@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-system-monitor
-PORTVERSION=	1.12.1
-PORTREVISION=	1
+PORTVERSION=	1.18.0
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -17,15 +16,13 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		alias compiler:c++11-lang gettext gmake pathfix \
-		pkgconfig tar:xz
+USES=		alias compiler:c++11-lib gettext gmake localbase \
+		pathfix pkgconfig tar:xz
 USE_MATE=	icontheme
-USE_GNOME=	gtk20 gtkmm24 intlhack librsvg2 libwnck libxml2
-CONFIGURE_ARGS=	--with-gtk=2.0
+USE_GNOME=	gtkmm30 intlhack librsvg2 libwnck3 libxml2
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-systemd
 CONFIGURE_ENV=	LIBS="-lutil" DATADIRNAME="share"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.mate.system-monitor.enums.xml \
 		org.mate.system-monitor.gschema.xml

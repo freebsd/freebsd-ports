@@ -47,7 +47,6 @@ libexec/msd-locate-pointer
 man/man1/mate-settings-daemon.1.gz
 man/man1/msd-datetime-mechanism.1.gz
 man/man1/msd-locate-pointer.1.gz
-share/MateConf/gsettings/mate-settings-daemon.convert
 share/dbus-1/services/org.mate.SettingsDaemon.service
 share/dbus-1/system-services/org.mate.SettingsDaemon.DateTimeMechanism.service
 share/icons/hicolor/16x16/apps/msd-xrandr.png
@@ -72,7 +71,6 @@ share/locale/as/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ast/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/az/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/be/LC_MESSAGES/mate-settings-daemon.mo
-share/locale/be@latin/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/bg/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/bn/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/bn_IN/LC_MESSAGES/mate-settings-daemon.mo
@@ -88,17 +86,17 @@ share/locale/da/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/de/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/dz/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/el/LC_MESSAGES/mate-settings-daemon.mo
-share/locale/en@shaw/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/en_AU/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/en_CA/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/en_GB/LC_MESSAGES/mate-settings-daemon.mo
-share/locale/en_US/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/es/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/es_CO/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/et/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/eu/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/fa/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/fi/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/fr/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/frp/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ga/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/gl/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/gu/LC_MESSAGES/mate-settings-daemon.mo
@@ -106,6 +104,7 @@ share/locale/he/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/hi/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/hr/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/hu/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/hy/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/id/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/is/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/it/LC_MESSAGES/mate-settings-daemon.mo
@@ -115,6 +114,7 @@ share/locale/kk/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/kn/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ko/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ku/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/ku_IQ/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ky/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/lt/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/lv/LC_MESSAGES/mate-settings-daemon.mo
@@ -135,6 +135,7 @@ share/locale/oc/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/or/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/pa/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/pl/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/pms/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/pt/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/pt_BR/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ro/LC_MESSAGES/mate-settings-daemon.mo
@@ -153,6 +154,7 @@ share/locale/th/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/tr/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/uk/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ur/LC_MESSAGES/mate-settings-daemon.mo
+share/locale/uz/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/vi/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/wa/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/xh/LC_MESSAGES/mate-settings-daemon.mo
