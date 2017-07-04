@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dunelegacy
-PORTVERSION=	0.96.3
-PORTREVISION=	3
+PORTVERSION=	0.96.4
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to compile: functional.h: 'std::bind' has not been declared
 
-USES=		autoreconf compiler:c++11-lib tar:bzip2
+USES=		autoreconf compiler:c++11-lib tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes
-USE_SDL=	sdl mixer
+USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
