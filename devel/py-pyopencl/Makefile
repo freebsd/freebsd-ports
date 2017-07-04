@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyopencl
-PORTVERSION=	2017.1.1
+PORTVERSION=	2017.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.3.6:textproc/py-mako \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy \
 		${PYTHON_PKGNAMEPREFIX}pytest>=2:devel/py-pytest \
-		${PYTHON_PKGNAMEPREFIX}pytools>=2015.1.2:devel/py-pytools \
+		${PYTHON_PKGNAMEPREFIX}pytools>=2017.2:devel/py-pytools \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six
 
 CONFIGURE_ARGS=	BOOST_INC_DIR="${LOCALBASE}/include" \
