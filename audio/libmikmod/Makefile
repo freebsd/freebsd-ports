@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmikmod
-PORTVERSION=	3.3.8
+PORTVERSION=	3.3.11
 CATEGORIES=	audio
 MASTER_SITES=	SF/mikmod/libmikmod/${PORTVERSION}/
 
