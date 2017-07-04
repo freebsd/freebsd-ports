@@ -1,4 +1,4 @@
-TIMESTAMP = 1498921298
+TIMESTAMP = 1499182840
 SHA256 (nginx-1.13.2.tar.gz) = d77f234d14989d273a363f570e1d892395c006fef2ec04789be90f41a1919b70
 SIZE (nginx-1.13.2.tar.gz) = 985802
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -33,8 +33,8 @@ SHA256 (yaoweibin-nginx_ajp_module-bf6cd93_GH0.tar.gz) = 9e3f78ea73e2d606a95ee64
 SIZE (yaoweibin-nginx_ajp_module-bf6cd93_GH0.tar.gz) = 109704
 SHA256 (anomalizer-ngx_aws_auth-1e62670_GH0.tar.gz) = db7ceef4ae22cf5bfaf5abae64830dfeef203ca85f9f40f7d1f1d90f277478c0
 SIZE (anomalizer-ngx_aws_auth-1e62670_GH0.tar.gz) = 8260
-SHA256 (nginx-clojure-nginx-clojure-v0.4.4_GH0.tar.gz) = 642ebf4724fa7c3efd5349e60b442ac8671497406834804c903ec548bfdcb691
-SIZE (nginx-clojure-nginx-clojure-v0.4.4_GH0.tar.gz) = 603856
+SHA256 (nginx-clojure-nginx-clojure-v0.4.5_GH0.tar.gz) = c6d500f935dde5f87a6eb47ca473094a8ee2c9b4bb4578c9f99ccdc70a12d59e
+SIZE (nginx-clojure-nginx-clojure-v0.4.5_GH0.tar.gz) = 602064
 SHA256 (grahamedgecombe-nginx-ct-v1.3.2_GH0.tar.gz) = b4ceae549b9dbf84b2e511633982e4efeee0388e3b7a038a8bac555008a77b88
 SIZE (grahamedgecombe-nginx-ct-v1.3.2_GH0.tar.gz) = 6844
 SHA256 (openresty-echo-nginx-module-46334b3_GH0.tar.gz) = 00d42a5f562a0be5570110d9b70c8f2cace93b292421a6f994cf4ec76a8979f0
