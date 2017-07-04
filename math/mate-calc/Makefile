@@ -13,7 +13,7 @@ COMMENT=	MATE calculator tool based on the old calctool for OpenWindows
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 
