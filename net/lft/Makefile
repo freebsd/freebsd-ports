@@ -3,6 +3,7 @@
 
 PORTNAME=	lft
 PORTVERSION=	3.79
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://pwhois.org/get/
@@ -14,8 +15,6 @@ LICENSE=	VOSTROM
 LICENSE_NAME=	VOSTROM
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror auto-accept
-
-BROKEN_FreeBSD_12=	fails to compile: lft_types.h: pcap-int.h: No such file or directory
 
 GNU_CONFIGURE=	yes
 
