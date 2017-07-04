@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-notification-daemon
-PORTVERSION=	1.12.1
+PORTVERSION=	1.18.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,21 +15,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libcanberra-gtk.so:audio/libcanberra \
+		libcanberra.so:audio/libcanberra \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libnotify.so:devel/libnotify
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool localbase pathfix \
+		pkgconfig tar:xz
 USE_XORG=	x11
-USE_GNOME=	glib20 gtk20 librsvg2 intlhack libwnck
+USE_GNOME=	cairo glib20 gtk30 librsvg2 libwnck3 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services \
-		--disable-static \
-		--with-gtk=2.0
+		--disable-static
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.NotificationDaemon.gschema.xml

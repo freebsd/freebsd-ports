@@ -1,5 +1,5 @@
---- configure.ac.orig	2015-11-29 20:13:23.000000000 +0100
-+++ configure.ac	2016-01-08 23:56:37.487626000 +0100
+--- configure.ac.orig	2016-01-05 02:12:51.000000000 +0100
++++ configure.ac	2016-02-01 10:03:19.854824000 +0100
 @@ -269,7 +269,7 @@
  GETTEXT_PACKAGE=mate-applets
  AC_SUBST(GETTEXT_PACKAGE)
@@ -28,7 +28,7 @@
        *)
           AC_MSG_WARN([${host} is not supported by cpufreq applet, not building])
  	 build_cpufreq_applet=no
-@@ -526,14 +529,14 @@
+@@ -546,17 +549,17 @@
  builderdir="${pkgdatadir}/builder"
  AC_SUBST(builderdir)
  
@@ -37,6 +37,7 @@
 -AC_DEFINE_DIR(PKGDATADIR, "${pkgdatadir}", [Mate Applets Directory])
 -AC_DEFINE_DIR(GTK_BUILDERDIR, "${builderdir}", [GtkBuilder Resources Directory])
 -AC_DEFINE_DIR(DATADIR, "${datadir}", [datadir])
+-AC_DEFINE_DIR(PKG_DATA_DIR, "${pkgdatadir}", [pkgdatadir])
 -AC_DEFINE_DIR(SYSCONFDIR, "${sysconfdir}", [sysconfdir])
 -AC_DEFINE_DIR(LIBDIR, "${libdir}", [libdir])
 -AC_DEFINE_DIR(PREFIX, "$prefix", [install prefix])
@@ -45,9 +46,13 @@
 +AC_DEFINE_DIR(PKGDATADIR, [pkgdatadir], [Mate Applets Directory])
 +AC_DEFINE_DIR(GTK_BUILDERDIR, [builderdir], [GtkBuilder Resources Directory])
 +AC_DEFINE_DIR(DATADIR, [datadir], [datadir])
++AC_DEFINE_DIR(PKG_DATA_DIR, [pkgdatadir], [pkgdatadir])
 +AC_DEFINE_DIR(SYSCONFDIR, [sysconfdir], [sysconfdir])
 +AC_DEFINE_DIR(LIBDIR, [libdir], [libdir])
 +AC_DEFINE_DIR(PREFIX, [prefix], [install prefix])
  
- AS_AC_EXPAND(DATADIR, "${datadir}")
+-AS_AC_EXPAND(DATADIR, "${datadir}")
++AS_AC_EXPAND(DATADIR, $datadir)
  AS_AC_EXPAND(PYTHONDIR, $pythondir)
+ AS_AC_EXPAND(BUILDERDIR, $builderdir)
+ 

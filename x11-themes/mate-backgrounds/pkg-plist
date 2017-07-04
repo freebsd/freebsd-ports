@@ -36,6 +36,7 @@ share/locale/be@latin/LC_MESSAGES/mate-backgrounds.mo
 share/locale/bg/LC_MESSAGES/mate-backgrounds.mo
 share/locale/bn/LC_MESSAGES/mate-backgrounds.mo
 share/locale/bn_IN/LC_MESSAGES/mate-backgrounds.mo
+share/locale/bs/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ca/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-backgrounds.mo
 share/locale/cmn/LC_MESSAGES/mate-backgrounds.mo
@@ -51,12 +52,15 @@ share/locale/en_CA/LC_MESSAGES/mate-backgrounds.mo
 share/locale/en_GB/LC_MESSAGES/mate-backgrounds.mo
 share/locale/eo/LC_MESSAGES/mate-backgrounds.mo
 share/locale/es/LC_MESSAGES/mate-backgrounds.mo
+share/locale/es_CO/LC_MESSAGES/mate-backgrounds.mo
 share/locale/es_MX/LC_MESSAGES/mate-backgrounds.mo
 share/locale/et/LC_MESSAGES/mate-backgrounds.mo
 share/locale/eu/LC_MESSAGES/mate-backgrounds.mo
 share/locale/fa/LC_MESSAGES/mate-backgrounds.mo
 share/locale/fi/LC_MESSAGES/mate-backgrounds.mo
 share/locale/fr/LC_MESSAGES/mate-backgrounds.mo
+share/locale/fr_CA/LC_MESSAGES/mate-backgrounds.mo
+share/locale/frp/LC_MESSAGES/mate-backgrounds.mo
 share/locale/fur/LC_MESSAGES/mate-backgrounds.mo
 share/locale/fy/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ga/LC_MESSAGES/mate-backgrounds.mo
@@ -68,6 +72,7 @@ share/locale/hr/LC_MESSAGES/mate-backgrounds.mo
 share/locale/hu/LC_MESSAGES/mate-backgrounds.mo
 share/locale/hy/LC_MESSAGES/mate-backgrounds.mo
 share/locale/id/LC_MESSAGES/mate-backgrounds.mo
+share/locale/is/LC_MESSAGES/mate-backgrounds.mo
 share/locale/it/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ja/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ka/LC_MESSAGES/mate-backgrounds.mo
@@ -75,6 +80,7 @@ share/locale/kk/LC_MESSAGES/mate-backgrounds.mo
 share/locale/kn/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ko/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ku/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ku_IQ/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ky/LC_MESSAGES/mate-backgrounds.mo
 share/locale/lt/LC_MESSAGES/mate-backgrounds.mo
 share/locale/lv/LC_MESSAGES/mate-backgrounds.mo
