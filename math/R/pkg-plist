@@ -443,7 +443,9 @@ lib/R/library/foreign/R/foreign.rdb
 lib/R/library/foreign/R/foreign.rdx
 lib/R/library/foreign/files/HillRace.SYD
 lib/R/library/foreign/files/Iris.syd
+lib/R/library/foreign/files/electric.sav
 lib/R/library/foreign/files/sids.dbf
+lib/R/library/foreign/files/testdata.sav
 lib/R/library/foreign/help/AnIndex
 lib/R/library/foreign/help/aliases.rds
 lib/R/library/foreign/help/foreign.rdb

@@ -1,4 +1,4 @@
-# Created by: Gerhard Häring <gh@ghaering.de>
+# Created by: Gerhard HÃ¤ring <gh@ghaering.de>
 # $FreeBSD$
 
 PORTNAME=	rdiff-backup
@@ -9,7 +9,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SAVANNAH \
 		LOCAL/vd/${PORTNAME}${PKGNAMESUFFIX}
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Local/remote mirroring+incremental backup
 
 LICENSE=	GPLv2

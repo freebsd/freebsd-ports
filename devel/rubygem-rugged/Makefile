@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rugged
-PORTVERSION=	0.25.1
+PORTVERSION=	0.25.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cmake:devel/cmake \
-		libgit2>=${PORTVERSION}:devel/libgit2
+		libgit2>=${PORTVERSION:R}:devel/libgit2
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
 CONFIGURE_ARGS=	--use-system-libraries

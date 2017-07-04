@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	newrelic_rpm
-PORTVERSION=	4.1.0.333
+PORTVERSION=	4.2.0.334
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,10 +16,8 @@ LICENSE_PERMS_NEWRELIC=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-acc
 
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem shebangfix
+USES=		gem
 
 PLIST_FILES=	bin/mongrel_rpm bin/newrelic bin/newrelic_cmd bin/nrdebug
-
-SHEBANG_FILES=	test/script/*.sh test/script/before_*/*.sh
 
 .include <bsd.port.mk>

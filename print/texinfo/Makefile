@@ -3,6 +3,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	6.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
@@ -40,8 +41,9 @@ NLS_USES=		gettext
 post-patch:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/texinfo.tex ${WRKSRC}/doc/
 	@${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi ${WRKSRC}/util/
-	@${REINPLACE_CMD} '/rm -f ..DESTDIR/s:$$: $$(DESTDIR)$$(xsdir)/XSParagraph.*:' \
+	@${REINPLACE_CMD} -e '/rm -f $$(DESTDIR)/ s|$$| $$(DESTDIR)$$(xsdir)/XSParagraph.*|' \
 		${WRKSRC}/tp/Texinfo/Convert/XSParagraph/Makefile.in
+	@${REINPLACE_CMD} -e 's|free (.*)|Safe&|' ${WRKSRC}/tp/Texinfo/MiscXS/misc.c
 
 post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/htmlxref.cnf ${STAGEDIR}${DATADIR}
