@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-settings-daemon
-PORTVERSION=	1.12.1
-PORTREVISION=	1
+PORTVERSION=	1.18.0
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,26 +14,29 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libxklavier.so:x11/libxklavier \
 		libnss3.so:security/nss \
+		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpolkit-gobject-1.so:sysutils/polkit \
+		libstartup-notification-1.so:x11/startup-notification \
+		libcanberra-gtk.so:audio/libcanberra \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libnspr4.so:devel/nspr \
 		libnotify.so:devel/libnotify
 RUN_DEPENDS=	xrdb:x11/xrdb
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_MATE=	desktop libmatekbd
-USE_XORG=	xxf86misc
-USE_GNOME=	dconf gtk20 intlhack
+USES=		gettext gmake libtool localbase pathfix \
+		pkgconfig tar:xz
+USE_MATE=	desktop libmatekbd mixer
+USE_XORG=	ice sm x11 xext xi xxf86misc
+USE_GNOME=	cairo dconf gtk30 intlhack
 USE_LDCONFIG=	yes
-USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services \
-		--with-gtk=2.0 \
+		--with-gtk=3.0 \
 		--disable-static
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-panel
-PORTVERSION=	1.12.2
+PORTVERSION=	1.18.3
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -10,27 +10,28 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the MATE Desktop
 
+LICENSE=	GPLv2 GFDL LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_GFDL=	${WRKSRC}/COPYING-DOCS
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
+
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-		libcanberra-gtk.so:audio/libcanberra
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
+		libstartup-notification-1.so:x11/startup-notification
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
-USE_MATE=	desktop libmateweather  menus
+USES=		gettext gmake libtool localbase pathfix pkgconfig \
+		tar:xz
+USE_MATE=	desktop libmateweather menus
 USE_XORG=	ice sm x11 xau xrandr
-USE_GNOME=	cairo dconf gdkpixbuf2 glib20 gtk20 \
-		intlhack introspection:build librsvg2 pango libwnck
+USE_GNOME=	cairo dconf gnomeprefix gtk30 intltool \
+		introspection:build librsvg2 libwnck3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-network-manager \
-		--disable-gtk-doc \
-		--with-gtk=2.0 \
-		--with-html-dir=${PREFIX}/share/doc \
-		--libexecdir=${PREFIX}/lib/mate-panel
 INSTALLS_ICONS=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.panel.applet.clock.gschema.xml \
@@ -42,8 +43,5 @@ GLIB_SCHEMAS=	org.mate.panel.applet.clock.gschema.xml \
 		org.mate.panel.menubar.gschema.xml \
 		org.mate.panel.object.gschema.xml \
 		org.mate.panel.toplevel.gschema.xml
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mate-panel/modules
 
 .include <bsd.port.mk>

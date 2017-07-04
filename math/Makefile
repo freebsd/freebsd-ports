@@ -274,6 +274,7 @@
     SUBDIR += ltl
     SUBDIR += ltl2ba
     SUBDIR += lybniz
+    SUBDIR += mate-calc
     SUBDIR += math77
     SUBDIR += mathmod
     SUBDIR += mathomatic
