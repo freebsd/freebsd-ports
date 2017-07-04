@@ -20,7 +20,7 @@ PLIST_FILES=	etc/miniupnpd.conf.sample sbin/miniupnpd \
 MAKE_JOBS_UNSAFE=yes
 USE_RC_SUBR=	miniupnpd
 
-EXPLICIT_SAFESTACK=	yes
+USE_HARDENING=	pie relro safestack
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
