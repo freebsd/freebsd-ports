@@ -10,7 +10,7 @@ MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://timetabling.de/download/ \
 		http://timetabling.de/download/old/
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Free timetabling software
 
 LICENSE=	GPLv3+

@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Terminal Image Viewer
 
 LICENSE=	GPLv2

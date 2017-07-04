@@ -10,7 +10,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.mupdf.com/downloads/ \
 		http://www.mupdf.com/downloads/archive/
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Lightweight PDF viewer and toolkit
 
 LICENSE=	AGPLv3
