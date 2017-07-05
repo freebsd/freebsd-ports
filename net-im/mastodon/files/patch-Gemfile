@@ -1,14 +1,14 @@
---- Gemfile.orig	2017-06-21 18:22:27 UTC
+--- Gemfile.orig	2017-07-02 14:52:42 UTC
 +++ Gemfile
 @@ -19,7 +19,6 @@ gem 'paperclip', '~> 5.1'
  gem 'paperclip-av-transcoder', '~> 0.6'
  
  gem 'addressable', '~> 2.5'
 -gem 'bootsnap'
+ gem 'browser'
  gem 'cld3', '~> 3.1'
  gem 'devise', '~> 4.2'
- gem 'devise-two-factor', '~> 3.0'
-@@ -61,45 +60,6 @@ gem 'twitter-text', '~> 1.14'
+@@ -62,45 +61,6 @@ gem 'twitter-text', '~> 1.14'
  gem 'tzinfo-data', '~> 1.2017'
  gem 'webpacker', '~> 2.0'
  

@@ -460,7 +460,6 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/javascript/mastodon/components/column.js
 %%WWWDIR%%/app/javascript/mastodon/components/column_back_button.js
 %%WWWDIR%%/app/javascript/mastodon/components/column_back_button_slim.js
-%%WWWDIR%%/app/javascript/mastodon/components/column_collapsable.js
 %%WWWDIR%%/app/javascript/mastodon/components/column_header.js
 %%WWWDIR%%/app/javascript/mastodon/components/display_name.js
 %%WWWDIR%%/app/javascript/mastodon/components/dropdown_menu.js
@@ -549,7 +548,6 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/javascript/mastodon/features/reblogs/index.js
 %%WWWDIR%%/app/javascript/mastodon/features/report/components/status_check_box.js
 %%WWWDIR%%/app/javascript/mastodon/features/report/containers/status_check_box_container.js
-%%WWWDIR%%/app/javascript/mastodon/features/report/index.js
 %%WWWDIR%%/app/javascript/mastodon/features/status/components/action_bar.js
 %%WWWDIR%%/app/javascript/mastodon/features/status/components/card.js
 %%WWWDIR%%/app/javascript/mastodon/features/status/components/detailed_status.js
@@ -566,6 +564,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/javascript/mastodon/features/ui/components/media_modal.js
 %%WWWDIR%%/app/javascript/mastodon/features/ui/components/modal_root.js
 %%WWWDIR%%/app/javascript/mastodon/features/ui/components/onboarding_modal.js
+%%WWWDIR%%/app/javascript/mastodon/features/ui/components/report_modal.js
 %%WWWDIR%%/app/javascript/mastodon/features/ui/components/tabs_bar.js
 %%WWWDIR%%/app/javascript/mastodon/features/ui/components/upload_area.js
 %%WWWDIR%%/app/javascript/mastodon/features/ui/components/video_modal.js
@@ -718,6 +717,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/lib/tag_manager.rb
 %%WWWDIR%%/app/lib/user_settings_decorator.rb
 %%WWWDIR%%/app/lib/webfinger_resource.rb
+%%WWWDIR%%/app/mailers/admin_mailer.rb
 %%WWWDIR%%/app/mailers/application_mailer.rb
 %%WWWDIR%%/app/mailers/notification_mailer.rb
 %%WWWDIR%%/app/mailers/user_mailer.rb
@@ -757,6 +757,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/models/remote_profile.rb
 %%WWWDIR%%/app/models/report.rb
 %%WWWDIR%%/app/models/report_filter.rb
+%%WWWDIR%%/app/models/session_activation.rb
 %%WWWDIR%%/app/models/setting.rb
 %%WWWDIR%%/app/models/status.rb
 %%WWWDIR%%/app/models/stream_entry.rb
@@ -856,6 +857,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/views/admin/settings/edit.html.haml
 %%WWWDIR%%/app/views/admin/subscriptions/_subscription.html.haml
 %%WWWDIR%%/app/views/admin/subscriptions/index.html.haml
+%%WWWDIR%%/app/views/admin_mailer/new_report.text.erb
 %%WWWDIR%%/app/views/api/activitypub/activities/_show_status.activitystreams2.rabl
 %%WWWDIR%%/app/views/api/activitypub/activities/show_status_announce.activitystreams2.rabl
 %%WWWDIR%%/app/views/api/activitypub/activities/show_status_create.activitystreams2.rabl
@@ -896,6 +898,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/views/auth/confirmations/new.html.haml
 %%WWWDIR%%/app/views/auth/passwords/edit.html.haml
 %%WWWDIR%%/app/views/auth/passwords/new.html.haml
+%%WWWDIR%%/app/views/auth/registrations/_sessions.html.haml
 %%WWWDIR%%/app/views/auth/registrations/edit.html.haml
 %%WWWDIR%%/app/views/auth/registrations/new.html.haml
 %%WWWDIR%%/app/views/auth/sessions/new.html.haml
@@ -1088,6 +1091,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/app/workers/remote_profile_update_worker.rb
 %%WWWDIR%%/app/workers/removal_worker.rb
 %%WWWDIR%%/app/workers/salmon_worker.rb
+%%WWWDIR%%/app/workers/scheduler/doorkeeper_cleanup_scheduler.rb
 %%WWWDIR%%/app/workers/scheduler/feed_cleanup_scheduler.rb
 %%WWWDIR%%/app/workers/scheduler/media_cleanup_scheduler.rb
 %%WWWDIR%%/app/workers/scheduler/subscriptions_scheduler.rb
@@ -1130,6 +1134,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/config/initializers/rabl_init.rb
 %%WWWDIR%%/config/initializers/rack_attack.rb
 %%WWWDIR%%/config/initializers/redis.rb
+%%WWWDIR%%/config/initializers/session_activations.rb
 %%WWWDIR%%/config/initializers/session_store.rb
 %%WWWDIR%%/config/initializers/sidekiq.rb
 %%WWWDIR%%/config/initializers/simple_form.rb
@@ -1377,10 +1382,14 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/db/migrate/20170508230434_create_conversation_mutes.rb
 %%WWWDIR%%/db/migrate/20170516072309_add_index_accounts_on_uri.rb
 %%WWWDIR%%/db/migrate/20170520145338_change_language_filter_to_opt_out.rb
+%%WWWDIR%%/db/migrate/201706%%RUBY_SUFFIX%%152212_create_session_activations.rb
 %%WWWDIR%%/db/migrate/20170601210557_add_index_on_media_attachments_account_id.rb
 %%WWWDIR%%/db/migrate/20170604144747_add_foreign_keys_for_accounts.rb
 %%WWWDIR%%/db/migrate/20170606113804_change_tag_search_index_to_btree.rb
 %%WWWDIR%%/db/migrate/20170609145826_remove_default_language_from_statuses.rb
+%%WWWDIR%%/db/migrate/20170610000000_add_statuses_index_on_account_id_id.rb
+%%WWWDIR%%/db/migrate/20170624134742_add_description_to_session_activations.rb
+%%WWWDIR%%/db/migrate/20170625140443_add_access_token_id_to_session_activations.rb
 %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/docker-compose.yml
@@ -5171,6 +5180,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/controllers/follower_accounts_controller_spec.rb
 %%WWWDIR%%/spec/controllers/following_accounts_controller_spec.rb
 %%WWWDIR%%/spec/controllers/home_controller_spec.rb
+%%WWWDIR%%/spec/controllers/manifests_controller_spec.rb
 %%WWWDIR%%/spec/controllers/media_controller_spec.rb
 %%WWWDIR%%/spec/controllers/oauth/authorizations_controller_spec.rb
 %%WWWDIR%%/spec/controllers/oauth/authorized_applications_controller_spec.rb
@@ -5209,6 +5219,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/fabricators/notification_fabricator.rb
 %%WWWDIR%%/spec/fabricators/preview_card_fabricator.rb
 %%WWWDIR%%/spec/fabricators/report_fabricator.rb
+%%WWWDIR%%/spec/fabricators/session_activation_fabricator.rb
 %%WWWDIR%%/spec/fabricators/status_fabricator.rb
 %%WWWDIR%%/spec/fabricators/stream_entry_fabricator.rb
 %%WWWDIR%%/spec/fabricators/subscription_fabricator.rb
@@ -5258,6 +5269,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/javascript/components/button.test.js
 %%WWWDIR%%/spec/javascript/components/display_name.test.js
 %%WWWDIR%%/spec/javascript/components/dropdown_menu.test.js
+%%WWWDIR%%/spec/javascript/components/emojify.test.js
 %%WWWDIR%%/spec/javascript/components/features/ui/components/column.test.js
 %%WWWDIR%%/spec/javascript/setup.js
 %%WWWDIR%%/spec/lib/atom_serializer_spec.rb
@@ -5298,6 +5310,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/spec/models/preview_card_spec.rb
 %%WWWDIR%%/spec/models/report_filter_spec.rb
 %%WWWDIR%%/spec/models/report_spec.rb
+%%WWWDIR%%/spec/models/session_activation_spec.rb
 %%WWWDIR%%/spec/models/status_spec.rb
 %%WWWDIR%%/spec/models/stream_entry_spec.rb
 %%WWWDIR%%/spec/models/subscription_spec.rb
@@ -5384,7 +5397,6 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/storybook/stories/onboarding_modal.story.js
 %%WWWDIR%%/storybook/storybook.scss
 %%WWWDIR%%/storybook/webpack.config.js
-%%WWWDIR%%/streaming/.babelrc
 %%WWWDIR%%/streaming/index.js
 %%WWWDIR%%/vendor/assets/javascripts/.keep
 %%WWWDIR%%/vendor/assets/stylesheets/.keep
