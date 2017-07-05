@@ -1,0 +1,51 @@
+#!/sbin/openrc-run
+
+# emby_server_user:	The user account used to run the emby-server daemon.
+#			This is op"tional, however do not specifically set this to an
+#			empty string a(s this will cause the daemon to run as root.
+#			Default: emby (or mediabrowser with UID 989 if it exists)
+# emby_server_group:	The group account used to run the emby-server daemon.
+#			This is optional, however do not specifically set this to an
+#			empty string as this will cause the daemon to run with group wheel.
+#			Default: emby (or mediabrowser with GID 989 if it exists)
+# emby_server_data_dir:	Directory where emby-server configuration
+#			data is stored.
+#			Default: /var/db/emby-server (or /var/db/mediabrowser if it exists)
+
+name=emby_server
+
+if [ "$(id -u mediabrowser 2>&1)" = "989" ] && ! [ -n "${emby_server_user}" ]; then
+	emby_server_user=mediabrowser;
+	emby_server_group=mediabrowser;
+fi
+
+if [ -d "/var/db/mediabrowser" ] && ! [ -n "${emby_server_data_dir}" ]; then
+	emby_server_data_dir="/var/db/mediabrowser";
+fi
+
+: ${emby_server_user:="emby"}
+: ${emby_server_group:="emby"}
+: ${emby_server_data_dir:="/var/db/emby-server"}
+
+command="%%LOCALBASE%%/bin/mono"
+supervisor=supervise-daemon
+command_args="%%PREFIX%%/lib/emby-server/MediaBrowser.Server.Mono.exe -ffmpeg %%LOCALBASE%%/bin/ffmpeg -ffprobe %%LOCALBASE%%/bin/ffprobe -programdata ${emby_server_data_dir}"
+command_user=${emby_server-user}
+
+start_pre()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -g ${emby_server_group} -o ${emby_server_user} -- /dev/null "${pidfile}";
+	fi
+
+	if [ ! -d "${emby_server_data_dir}" ]; then
+		install -d -g ${emby_server_group} -o ${emby_server_user} -- "${emby_server_data_dir}";
+	fi
+}
+
+depend()
+{
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}
