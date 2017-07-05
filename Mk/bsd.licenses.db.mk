@@ -20,6 +20,8 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 #   https://spdx.org/licenses/
 #
 # See also:
+# - Copyfree Licenses
+#   http://copyfree.org/standard/licenses
 # - Wikipedia (article "Comparison of Free Software Licenses")
 #   http://en.wikipedia.org/wiki/Comparison_of_free_software_licences
 #
@@ -41,7 +43,7 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 
 _LICENSE_LIST= 	BSL CDDL CPAL-1.0 ClArtistic EPL GFDL GMGPL \
 				ISCL MIT MPL NCSA OFL10 OFL11 OWL OpenSSL PD PSFL PostgreSQL \
-				RUBY WTFPL1 WTFPL ZLIB ZPL21
+				RUBY UNLICENSE WTFPL1 WTFPL ZLIB ZPL21
 
 # GNU family
 _LICENSE_LIST+= AGPLv3 GPLv1 GPLv2 GPLv3 GPLv3RLE LGPL20 LGPL21 LGPL3
@@ -388,6 +390,9 @@ _LICENSE_GROUPS_RUBY=	FSF
 _LICENSE_NAME_NONE=	No license specified
 _LICENSE_GROUPS_NONE=	# empty
 _LICENSE_PERMS_NONE=	none
+
+_LICENSE_NAME_UNLICENSE=	The Unlicense
+_LICENSE_GROUPS_UNLICENSE=	COPYFREE FSF GPL
 
 _LICENSE_NAME_WTFPL1=	Do What the Fuck You Want To Public License version 1
 _LICENSE_GROUPS_WTFPL1=	GPL FSF COPYFREE

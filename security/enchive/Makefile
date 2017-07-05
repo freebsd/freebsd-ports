@@ -7,7 +7,7 @@ CATEGORIES=	security
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Tool to encrypt files to yourself for long-term archival
 
-LICENSE=	PD
+LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
 USES=		gmake

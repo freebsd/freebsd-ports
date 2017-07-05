@@ -579,6 +579,7 @@
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
     SUBDIR += pgespresso
+    SUBDIR += pgFormatter
     SUBDIR += pgfouine
     SUBDIR += pgloader
     SUBDIR += pglogical
@@ -649,6 +650,7 @@
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += pldebugger
+    SUBDIR += plpgsql_check
     SUBDIR += postgis-jdbc
     SUBDIR += postgis20
     SUBDIR += postgis21
