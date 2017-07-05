@@ -1,0 +1,12 @@
+--- include/dix-config.h.in.orig	2016-07-19 17:07:29 UTC
++++ include/dix-config.h.in
+@@ -140,6 +140,9 @@
+ /* Define to 1 if you have the <linux/fb.h> header file. */
+ #undef HAVE_LINUX_FB_H
+ 
++/* Define to 1 if you have the `mkostemp' function. */
++#undef HAVE_MKOSTEMP
++
+ /* Define to 1 if you have the `mmap' function. */
+ #undef HAVE_MMAP
+ 
