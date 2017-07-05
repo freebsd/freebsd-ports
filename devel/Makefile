@@ -339,6 +339,7 @@
     SUBDIR += cpp-hocon
     SUBDIR += cpp-netlib
     SUBDIR += cppcheck
+    SUBDIR += cppcheck-gui
     SUBDIR += cppi
     SUBDIR += cpprestsdk
     SUBDIR += cpptest
