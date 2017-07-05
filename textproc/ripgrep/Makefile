@@ -11,11 +11,9 @@ MAINTAINER=	petteri.valkonen@iki.fi
 COMMENT=	Command line search tool
 
 LICENSE=	MIT UNLICENSE
-LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_COMB=	dual
-LICENSE_NAME_UNLICENSE=	The Unlicense
+LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
-LICENSE_PERMS_UNLICENSE=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cargo
 USE_GITHUB=	yes

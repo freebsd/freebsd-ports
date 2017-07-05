@@ -10,9 +10,7 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Program for downloading videos from YouTube.com
 
 LICENSE=	UNLICENSE
-LICENSE_NAME=	The Unlicense
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	zip:archivers/zip
 
