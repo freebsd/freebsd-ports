@@ -1,29 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	terraform
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Provides a common configuration to launch infrastructure
 
 LICENSE=	MPL
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-do-build:
-	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}; \
-		${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} \
-		go build -o bin/${PORTNAME}
+USES=	go
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 .include <bsd.port.mk>
