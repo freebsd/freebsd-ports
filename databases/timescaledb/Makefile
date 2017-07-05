@@ -16,7 +16,7 @@ GH_ACCOUNT=	timescale
 MAKE_ARGS=	PG_CONFIG=${LOCALBASE}/bin/pg_config USE_PGXS=1 \
 		install_bin=/usr/bin/install
 USE_LDCONFIG=	yes
-USES=		gmake pgsql:9.6
+USES=		compiler:c11 gmake pgsql:9.6
 
 PLIST_FILES=	lib/postgresql/timescaledb.so \
 		share/postgresql/extension/timescaledb--0.1.0.sql \
