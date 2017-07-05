@@ -1,6 +1,12 @@
 --- Gemfile.orig	2017-06-07 20:58:14 UTC
 +++ Gemfile
-@@ -6,41 +6,36 @@ gem 'rails-deprecated_sanitizer', '~> 1.
+@@ -1,46 +1,41 @@
+ source 'https://rubygems.org'
+ 
+-gem 'rails', '4.2.8'
++gem 'rails', '>= 4.2.8'
+ gem 'rails-deprecated_sanitizer', '~> 1.0.3'
+ 
  # Responders respond_to and respond_with
  gem 'responders', '~> 2.0'
  
