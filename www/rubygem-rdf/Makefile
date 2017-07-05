@@ -10,9 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure-Ruby library for working with RDF data
 
 LICENSE=	UNLICENSE
-LICENSE_NAME=	Unlicense
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	rubygem-hamster>=3.0:devel/rubygem-hamster \
 		rubygem-link_header>=0.0.8:www/rubygem-link_header
