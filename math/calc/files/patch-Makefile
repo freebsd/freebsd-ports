@@ -1,6 +1,6 @@
---- Makefile.orig	2016-02-08 22:10:13 UTC
-+++ Makefile
-@@ -573,7 +573,7 @@ HAVE_UNUSED=
+--- Makefile.orig	2017-06-02 23:50:17.000000000 +0200
++++ Makefile	2017-07-05 21:12:24.953147000 +0200
+@@ -571,7 +571,7 @@ HAVE_UNUSED=
  
  #INCDIR= /usr/local/include
  #INCDIR= /dev/env/DJDIR/include
@@ -9,7 +9,7 @@
  
  # Where to install calc related things
  #
-@@ -612,15 +612,15 @@ INCDIR= /usr/include
+@@ -610,15 +610,15 @@ INCDIR= /usr/include
  #
  #BINDIR= /usr/local/bin
  #BINDIR= /dev/env/DJDIR/bin
@@ -28,7 +28,7 @@
  
  # NOTE: Do not set CALC_INCDIR to /usr/include or /usr/local/include!!!
  #	Always be sure that the CALC_INCDIR path ends in /calc to avoid
-@@ -687,7 +687,7 @@ SCRIPTDIR= ${BINDIR}/cscript
+@@ -685,7 +685,7 @@ SCRIPTDIR= ${BINDIR}/cscript
  #
  # If in doubt, use T=
  #
@@ -37,7 +37,7 @@
  
  # where man pages are installed
  #
-@@ -698,7 +698,7 @@ T=
+@@ -696,7 +696,7 @@ T=
  #MANDIR=
  #MANDIR= /usr/local/man/man1
  #MANDIR= /usr/man/man1
@@ -46,7 +46,7 @@
  #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
-@@ -825,14 +825,14 @@ CALCRC= ${CALC_SHAREDIR}/startup:~/.calc
+@@ -831,14 +831,14 @@ CALCRC= ${CALC_SHAREDIR}/startup:~/.calc
  #
  # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
  #
@@ -67,7 +67,7 @@
  #
  #READLINE_LIB= -L/usr/gnu/lib -lreadline
  #READLINE_EXTRAS= -lhistory -lncurses
-@@ -866,7 +866,7 @@ READLINE_INCLUDE=
+@@ -872,7 +872,7 @@ READLINE_INCLUDE=
  #CALCPAGER= more
  #CALCPAGER= pg
  #CALCPAGER= cat
@@ -76,7 +76,7 @@
  #CALCPAGER= less.exe -ci
  
  # Debug/Optimize options for ${CC} and ${LCC}
-@@ -993,35 +993,36 @@ LIB_EXT_VERSION= ${LIB_EXT}.${VERSION}
+@@ -999,35 +999,36 @@ LIB_EXT_VERSION= ${LIB_EXT}.${VERSION}
  
  # standard utilities used during make
  #
@@ -126,7 +126,7 @@
  # assume the X11 makedepend tool for the depend rule
  MAKEDEPEND= makedepend
  STRIP= strip
-@@ -1269,13 +1270,15 @@ WNO_IMPLICT= -Wno-implicit
+@@ -1327,13 +1328,15 @@ WNO_IMPLICT= -Wno-implicit
  WNO_ERROR_LONG_LONG= -Wno-error=long-long
  WNO_LONG_LONG= -Wno-long-long
  CCWERR=
@@ -146,7 +146,7 @@
  #
  endif
  
-@@ -1554,7 +1557,8 @@ ICFLAGS= ${COMMON_CFLAGS} ${CC_STATIC}
+@@ -1680,7 +1683,8 @@ ICFLAGS= ${COMMON_CFLAGS} ${CC_STATIC}
  else
  ICFLAGS= ${COMMON_CFLAGS} ${CC_SHARE}
  endif
@@ -156,8 +156,8 @@
  
  # Required flags to link files for calc
  #
-@@ -1738,7 +1742,7 @@ CUSTOM_PASSDOWN=  \
-     CO=${CO} \
+@@ -1865,7 +1869,7 @@ CUSTOM_PASSDOWN=  \
+     COMMON_ADD="${COMMON_ADD}" \
      COMMON_CFLAGS="${COMMON_CFLAGS} -I.." \
      COMMON_LDFLAGS="${COMMON_LDFLAGS}" \
 -    CP=${CP} \
@@ -165,7 +165,7 @@
      CUSTOMCALDIR="${CUSTOMCALDIR}" \
      CUSTOMHELPDIR="${CUSTOMHELPDIR}" \
      CUSTOMINCDIR="${CUSTOMINCDIR}" \
-@@ -1766,7 +1770,7 @@ CUSTOM_PASSDOWN=  \
+@@ -1893,7 +1897,7 @@ CUSTOM_PASSDOWN=  \
      PURIFY="${PURIFY}" \
      Q="${Q}" \
      RANLIB="${RANLIB}" \
@@ -174,16 +174,16 @@
      RMDIR=${RMDIR} \
      SCRIPTDIR="${SCRIPTDIR}" \
      SED=${SED} \
-@@ -1792,7 +1796,7 @@ HELP_PASSDOWN= \
-     CO=${CO} \
+@@ -1920,7 +1924,7 @@ HELP_PASSDOWN= \
+     COMMON_ADD="${COMMON_ADD}" \
      COMMON_CFLAGS="${COMMON_CFLAGS}" \
      COMMON_LDFLAGS="${COMMON_LDFLAGS}" \
 -    CP=${CP} \
 +    CP="${CP}" \
      EXT=${EXT} \
      FMT=${FMT} \
-     HELPDIR="${HELPDIR}" \
-@@ -1806,7 +1810,7 @@ HELP_PASSDOWN= \
+     GREP=${GREP} \
+@@ -1935,7 +1939,7 @@ HELP_PASSDOWN= \
      MKDIR=${MKDIR} \
      MV=${MV} \
      Q="${Q}" \
@@ -192,16 +192,7 @@
      RMDIR=${RMDIR} \
      SCRIPTDIR="${SCRIPTDIR}" \
      SED=${SED} \
-@@ -1826,7 +1830,7 @@ CAL_PASSDOWN= \
-     CHMOD=${CHMOD} \
-     CMP=${CMP} \
-     CO=${CO} \
--    CP=${CP} \
-+    CP="${CP}" \
-     HELPDIR="${HELPDIR}" \
-     INCDIR="${INCDIR}" \
-     LANG=${LANG} \
-@@ -1835,7 +1839,7 @@ CAL_PASSDOWN= \
+@@ -1964,7 +1968,7 @@ CAL_PASSDOWN= \
      MKDIR=${MKDIR} \
      MV=${MV} \
      Q="${Q}" \
@@ -210,7 +201,7 @@
      RMDIR=${RMDIR} \
      SCRIPTDIR="${SCRIPTDIR}" \
      T=${T} \
-@@ -1854,7 +1858,7 @@ CSCRIPT_PASSDOWN= \
+@@ -1983,7 +1987,7 @@ CSCRIPT_PASSDOWN= \
      CHMOD=${CHMOD} \
      CMP=${CMP} \
      CO=${CO} \
@@ -219,7 +210,7 @@
      FMT=${FMT} \
      HELPDIR="${HELPDIR}" \
      INCDIR="${INCDIR}" \
-@@ -1864,7 +1868,7 @@ CSCRIPT_PASSDOWN= \
+@@ -1993,7 +1997,7 @@ CSCRIPT_PASSDOWN= \
      MKDIR=${MKDIR} \
      MV=${MV} \
      Q="${Q}" \

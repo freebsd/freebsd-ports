@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	calc
-PORTVERSION=	2.12.5.3
-PORTREVISION=	1
+PORTVERSION=	2.12.6.0
 CATEGORIES=	math
 MASTER_SITES=	SF
+
+LICENSE=	LGPL21
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Arbitrary precision calculator
