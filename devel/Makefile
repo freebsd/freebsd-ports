@@ -5523,6 +5523,7 @@
     SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-progressbar09
     SUBDIR += rubygem-protected_attributes
+    SUBDIR += rubygem-protocol
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-rails
     SUBDIR += rubygem-pry-remote-em
