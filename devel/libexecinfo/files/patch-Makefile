@@ -1,6 +1,6 @@
---- Makefile.orgi	2013-02-05 23:13:54.375834807 +0800
-+++ Makefile	2013-02-05 23:14:13.106833334 +0800
-@@ -34,6 +34,7 @@
+--- Makefile.orig	2004-07-19 05:19:55 UTC
++++ Makefile
+@@ -34,6 +34,7 @@ SHLIB_MAJOR=	1
  SHLIB_MINOR=	0
  
  NOPROFILE=	yes
