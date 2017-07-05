@@ -6,8 +6,3 @@ bin/pymsgauth-mail
 %%DATADIR%%/pymsgauth-clean
 %%DATADIR%%/pymsgauth-confirm
 %%DATADIR%%/pymsgauth-mail
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/pymsgauth.html
-%%PORTDOCS%%%%DOCSDIR%%/pymsgauth.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pymsgauthrc-example
