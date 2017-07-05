@@ -1188,6 +1188,7 @@ GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailDeletion.wox
 GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailICalReply.wox
 GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailInvitation.wox
 GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailReceipt.wox
+GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailReminder.wox
 GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailUpdate.wox
 GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactEditor.wox
 GNUstep/Local/Library/SOGo/Templates/ContactsUI/UIxContactEditorTemplate.wox
@@ -1601,6 +1602,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgFocus.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgFocus.service.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgFolderStylesheet.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgHotkeys.service.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgNoDirtyCheck.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgPlaceholder.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgResetOnDisabled.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgRippleClick.directive.js
