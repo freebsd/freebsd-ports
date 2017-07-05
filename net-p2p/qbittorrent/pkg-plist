@@ -1,7 +1,7 @@
 bin/qbittorrent
 man/man1/qbittorrent.1.gz
-share/appdata/qBittorrent.appdata.xml
-share/applications/qBittorrent.desktop
+share/appdata/qbittorrent.appdata.xml
+share/applications/qbittorrent.desktop
 share/icons/hicolor/128x128/apps/qbittorrent.png
 share/icons/hicolor/128x128/status/qbittorrent-tray.png
 share/icons/hicolor/16x16/apps/qbittorrent.png
