@@ -20,6 +20,7 @@ BROKEN_armv6=		dumps core: Assertion failed: (!signbit(Port::ldbl_nan)), functio
 BROKEN_mips64=		fails to compile: cc1: unrecognized command line option -m32
 BROKEN_powerpc64=	fails to build: can't mangle function with unknown linkage (void*())
 BROKEN_sparc64=		fails to install: divide-by-zero error
+BROKEN_FreeBSD_12=	stack corruption in generated dmd tool caused by inode64 resulting in segfault
 NOT_FOR_ARCHS=		aarch64
 NOT_FOR_ARCHS_REASON=	no cpu specified, assuming X86
 
