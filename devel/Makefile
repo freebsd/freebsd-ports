@@ -5457,6 +5457,7 @@
     SUBDIR += rubygem-mixlib-config
     SUBDIR += rubygem-mixlib-log
     SUBDIR += rubygem-mixlib-shellout
+    SUBDIR += rubygem-mize
     SUBDIR += rubygem-mkrf
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-moneta
