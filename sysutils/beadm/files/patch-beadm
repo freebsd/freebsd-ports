@@ -1,0 +1,83 @@
+diff --git beadm beadm
+index 6a0e397..f817e40 100755
+--- beadm
++++ beadm
+@@ -128,6 +128,24 @@ __be_new() { # 1=SOURCE 2=TARGET
+   unset NAME_NEW
+   unset NAME_SANITY
+   local SOURCE=$( echo ${1} | cut -d '@' -f 1 )
++  local ENTROPY=0
++  # secure current /boot/entropy file
++  if [ -f /boot/entropy ]
++  then
++    if ! cp -p /boot/entropy /boot/entropy.OLD 1> /dev/null 2> /dev/null
++    then
++      echo "ERROR: Can not copy current '/boot/entropy' file"
++      exit 1
++    fi
++    ENTROPY=1
++  fi
++  # create new /boot/entropy file that would be used in new boot environment
++  if ! dd if=/dev/random of=/boot/entropy bs=4096 count=1 1> /dev/null 2> /dev/null
++  then
++    echo "ERROR: Can not generate new '/boot/entropy' file"
++    exit 1
++  fi
++  # create snapshot that will be used as a base for new boot environment
+   if __be_snapshot ${1}
+   then
+     # create boot environment from snapshot
+@@ -138,6 +156,13 @@ __be_new() { # 1=SOURCE 2=TARGET
+           if ! zfs list -H -o name ${FS}@${SNAPSHOT} 1> /dev/null 2> /dev/null
+           then
+             echo "ERROR: Child snapshot '${FS}@${SNAPSHOT}' does not exist"
++            if [ ${ENTROPY} -ne 0 ]
++            then
++              if ! mv /boot/entropy.OLD /boot/entropy 1> /dev/null 2> /dev/null
++              then
++                echo "WARNING: Can not bring back original '/boot/entropy' file"
++              fi
++            fi
+             exit 1
+           fi
+         done
+@@ -146,6 +171,13 @@ __be_new() { # 1=SOURCE 2=TARGET
+     if zfs list -H -o name ${1}@${2##*/} 1> /dev/null 2> /dev/null
+     then
+       echo "ERROR: Snapshot '${1}@${2##*/}' already exists"
++      if [ ${ENTROPY} -ne 0 ]
++      then
++        if ! mv /boot/entropy.OLD /boot/entropy 1> /dev/null 2> /dev/null
++        then
++          echo "WARNING: Can not bring back original '/boot/entropy' file"
++        fi
++      fi
+       exit 1
+     fi
+     # snapshot format
+@@ -153,9 +185,25 @@ __be_new() { # 1=SOURCE 2=TARGET
+     if ! zfs snapshot -r ${1}@${FMT} 1> /dev/null 2> /dev/null
+     then
+       echo "ERROR: Cannot create snapshot '${1}@${FMT}'"
++      if [ ${ENTROPY} -ne 0 ]
++      then
++        if ! mv /boot/entropy.OLD /boot/entropy 1> /dev/null 2> /dev/null
++        then
++          echo "WARNING: Can not bring back original '/boot/entropy' file"
++        fi
++      fi
+       exit 1
+     fi
+   fi
++  # bring back secured /boot/entropy.OLD file
++  if [ -f /boot/entropy.OLD ]
++  then
++    if ! mv /boot/entropy.OLD /boot/entropy 1> /dev/null 2> /dev/null
++    then
++      echo "WARNING: Can not bring back original '/boot/entropy' file"
++    fi
++  fi
++  unset ENTROPY
+   # clone properties of source boot environment
+   zfs list -H -o name -r ${SOURCE} \
+     | grep -v '@' \
