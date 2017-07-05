@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xen-guest-tools
-PORTVERSION=	4.7.1
+PORTVERSION=	4.6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bits.xensource.com/oss-xen/release/${PORTVERSION}/
 DISTNAME=	xen-${PORTVERSION}
@@ -15,11 +15,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/lib/libargp.so:devel/argp-standalone \
 		${LOCALBASE}/lib/libyajl.so:devel/yajl
 
-ONLY_FOR_ARCHS=		amd64 i386 ia64
-ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386, or ia64"
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64 or i386
 CONFLICTS=	xen-tools-[0-9]*
 
-USES=		gmake python:configure perl5 gettext-runtime:build gettext-tools:build pkgconfig
+USES=		gmake python:2.7:configure perl5 gettext-runtime:build gettext-tools:build pkgconfig
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD} PYTHON_PATH=${PYTHON_CMD}
