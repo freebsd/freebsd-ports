@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		docker-machine
-PORTVERSION=		0.12.0
+PORTVERSION=		0.12.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		sysutils
 
