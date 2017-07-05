@@ -6,4 +6,4 @@
  	-L../SOPE/NGCards/$(GNUSTEP_OBJ_DIR)/ -lNGCards \
 -        -lEOControl -lNGStreams -lNGMime -lNGExtensions -lNGObjWeb
 +        -lEOControl -lNGStreams -lNGMime -lNGExtensions -lNGObjWeb \
-+	-lGDLAccess -lDOM -lSaxObjC -lNGLdap -lSBJson
++	-lGDLAccess -lDOM -lSaxObjC -lNGLdap -lSBJson -lWEExtensions
