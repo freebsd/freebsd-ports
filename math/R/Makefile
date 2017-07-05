@@ -42,10 +42,10 @@ OPTIONS_SINGLE_FORTRAN_amd64=	GFORTRAN FLANG
 OPTIONS_SUB=		YES
 
 ATLAS_DESC=		ATLAS BLAS implementation
-FLANG_DESC=		Experimental Fortan support via flang
+FLANG_DESC=		Experimental Fortran support via flang
 GHOSTSCRIPT_DESC=	Graphics device for bitmap files via Ghostscript
 CAIROPANGO_DESC=	Cairo graphics device and Pango multi-language text
-GFORTRAN_DESC=		Fortan support via gfortran
+GFORTRAN_DESC=		Fortran support via gfortran
 INFO_DESC=		GNU info manuals
 JPEG_DESC=		JPEG graphics device
 LDOUBLE_DESC=		Long double data type
