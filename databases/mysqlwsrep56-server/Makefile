@@ -64,8 +64,7 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh scripts/wsrep_sst_*
 .endif
 
 CONFLICTS_INSTALL=	mariadb*-server-* \
-			mysql5[0-57-9]-server-* \
-			mysql8*-server-* \
+			mysql[0-9]*-server-* \
 			percona*-server-*
 
 USE_RC_SUBR=	mysql-server
