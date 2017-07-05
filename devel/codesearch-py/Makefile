@@ -3,6 +3,7 @@
 
 PORTNAME=	codesearch-py
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +18,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chromium
-GH_TAGNAME=	ec3ad68
+GH_TAGNAME=	86cf193
 
 NO_ARCH=	yes
 
