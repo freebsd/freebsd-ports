@@ -52,8 +52,7 @@ MODEL=		32
 .endif
 
 .if defined(WITH_DEBUG)
-BUILD=		debug
-MAKE_ARGS+=	DEBUG_FLAGS=-g\ -DDEBUG=1\ -DUNITTEST
+MAKE_ARGS+=	DEBUG_FLAGS=-g\ -DDEBUG=1\ -DUNITTEST BUILD=debug
 .endif
 
 MODULEDIR=	${PREFIX}/include/d/phobos2
