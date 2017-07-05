@@ -2,7 +2,7 @@
 
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.6
+DISTVERSION=	1.4.7
 CATEGORIES=	net-im www
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -32,6 +32,7 @@ RUN_DEPENDS+=	rubygem-aws-sdk>0:devel/rubygem-aws-sdk \
 		rubygem-paperclip-av-transcoder>0:multimedia/rubygem-paperclip-av-transcoder
 
 RUN_DEPENDS+=	rubygem-addressable>0:www/rubygem-addressable \
+		rubygem-browser>0:www/rubygem-browser \
 		rubygem-cld3>0:textproc/rubygem-cld3 \
 		rubygem-devise-rails5>0:devel/rubygem-devise-rails5 \
 		rubygem-devise-two-factor-rails5>0:security/rubygem-devise-two-factor-rails5 \

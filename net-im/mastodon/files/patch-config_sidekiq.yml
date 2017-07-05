@@ -1,7 +1,7 @@
---- config/sidekiq.yml.orig	2017-05-22 21:30:15 UTC
+--- config/sidekiq.yml.orig	2017-07-05 18:36:34 UTC
 +++ config/sidekiq.yml
-@@ -15,3 +15,4 @@
-   feed_cleanup_scheduler:
-     cron: '0 0 * * *'
-     class: Scheduler::FeedCleanupScheduler
+@@ -18,3 +18,4 @@
+   doorkeeper_cleanup_scheduler:
+     cron: '1 1 * * 0'
+     class: Scheduler::DoorkeeperCleanupScheduler
 +:pidfile: tmp/mastodon_workers.pid
