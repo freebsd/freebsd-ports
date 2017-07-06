@@ -1,5 +1,5 @@
---- authvchkpw.c.orig	2009-07-02 09:56:41.000000000 +0200
-+++ authvchkpw.c	2009-07-02 09:56:41.000000000 +0200
+--- authvchkpw.c.orig	2017-07-03 08:38:16 UTC
++++ authvchkpw.c
 @@ -0,0 +1,242 @@
 +/*
 +** Copyright 1998 - 2007 Double Precision, Inc.  See COPYING for
@@ -243,8 +243,8 @@
 +{
 +	return &authvchkpw_info;
 +}
---- authvchkpwlib.c.orig	2009-07-02 09:56:41.000000000 +0200
-+++ authvchkpwlib.c	2009-07-02 09:56:41.000000000 +0200
+--- authvchkpwlib.c.orig	2017-07-03 08:38:16 UTC
++++ authvchkpwlib.c
 @@ -0,0 +1,33 @@
 +/*
 +** Copyright 1998 - 2000 Double Precision, Inc.  See COPYING for
@@ -279,9 +279,9 @@
 +	if ((p=strchr(c, ':')) != 0)    return (p);
 +	return (0);
 +}
---- courier_auth_config.h.orig	2009-06-27 17:59:04.000000000 +0200
-+++ courier_auth_config.h	2009-07-02 09:56:41.000000000 +0200
-@@ -122,6 +122,9 @@
+--- courier_auth_config.h.orig	2016-09-04 23:37:40 UTC
++++ courier_auth_config.h
+@@ -125,6 +125,9 @@
  /* Define to 1 if you have the `opendir' function. */
  #define HAVE_OPENDIR 1
  
@@ -291,19 +291,19 @@
  /* Define to 1 if you have the <Pam/pam_appl.h> header file. */
  /* #undef HAVE_PAM_PAM_APPL_H */
  
-@@ -217,6 +220,9 @@
-    */
- #define LT_OBJDIR ".libs/"
+@@ -227,6 +230,9 @@
  
+ /* Define to the shared archive member specification, say "(shr.o)". */
+ /* #undef LT_SHARED_LIB_MEMBER */
++
 +/* Whether -lvpopmail has the vset_lastauth() function */
 +/* #undef HAVE_VSET_LASTAUTH */
-+
+ 
  /* Whether we must a prototype for crypt() */
  #define NEED_CRYPT_PROTOTYPE 0
- 
---- courier_auth_config.h.in.orig	2009-06-27 18:09:18.000000000 +0200
-+++ courier_auth_config.h.in	2009-07-02 09:56:41.000000000 +0200
-@@ -121,6 +121,9 @@
+--- courier_auth_config.h.in.orig	2017-07-02 14:41:47 UTC
++++ courier_auth_config.h.in
+@@ -124,6 +124,9 @@
  /* Define to 1 if you have the `opendir' function. */
  #undef HAVE_OPENDIR
  
@@ -313,18 +313,18 @@
  /* Define to 1 if you have the <Pam/pam_appl.h> header file. */
  #undef HAVE_PAM_PAM_APPL_H
  
-@@ -216,6 +219,9 @@
-    */
- #undef LT_OBJDIR
+@@ -226,6 +229,9 @@
  
+ /* Define to the shared archive member specification, say "(shr.o)". */
+ #undef LT_SHARED_LIB_MEMBER
++
 +/* Whether -lvpopmail has the vset_lastauth() function */
 +#undef HAVE_VSET_LASTAUTH
-+
+ 
  /* Whether we must a prototype for crypt() */
  #undef NEED_CRYPT_PROTOTYPE
- 
---- preauthvchkpw.c.orig	2009-07-02 09:56:41.000000000 +0200
-+++ preauthvchkpw.c	2009-07-02 09:56:41.000000000 +0200
+--- preauthvchkpw.c.orig	2017-07-03 08:38:16 UTC
++++ preauthvchkpw.c
 @@ -0,0 +1,159 @@
 +/*
 +** Copyright 1998 - 2001 Double Precision, Inc.  See COPYING for
@@ -485,9 +485,46 @@
 +
 +	return ((*callback)(&auth, arg));
 +}
---- userdb/configure.orig	2009-06-27 17:55:53.000000000 +0200
-+++ userdb/configure	2009-07-02 09:56:41.000000000 +0200
-@@ -12452,7 +12452,7 @@
+--- userdb/Makefile.in.orig	2016-06-23 12:29:59 UTC
++++ userdb/Makefile.in
+@@ -107,7 +107,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cach
+  configure.lineno config.status.lineno
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb
++CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb vchkpw2userdb
+ CONFIG_CLEAN_VPATH_FILES =
+ LTLIBRARIES = $(noinst_LTLIBRARIES)
+ libuserdb_la_LIBADD =
+@@ -222,6 +222,7 @@ CSCOPE = cscope
+ AM_RECURSIVE_TARGETS = cscope
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	$(srcdir)/makeuserdb.in $(srcdir)/pw2userdb.in \
++	$(srcdir)/vchkpw2userdb.in \
+ 	$(srcdir)/userdb.pl.in $(top_srcdir)/../compile \
+ 	$(top_srcdir)/../config.guess $(top_srcdir)/../config.sub \
+ 	$(top_srcdir)/../depcomp $(top_srcdir)/../install-sh \
+@@ -377,7 +378,7 @@ BUILT_SOURCES = makeuserdb.html.in makeuserdb.8.in \
+ 		userdb.html.in userdb.8.in \
+ 		userdbpw.html.in userdbpw.8.in
+ 
+-noinst_SCRIPTS = makeuserdb pw2userdb dummy
++noinst_SCRIPTS = makeuserdb pw2userdb vchkpw2userdb dummy
+ noinst_DATA = makeuserdb.html userdb.html userdbpw.html
+ userdbpw_SOURCES = userdbpw.c
+ userdbpw_LDADD = libuserdb.la @HMACLIB@ @MD5LIB@ @SHA1LIB@ @CRYPTLIBS@
+@@ -444,6 +445,8 @@ userdb.pl: $(top_builddir)/config.status $(srcdir)/use
+ makeuserdb: $(top_builddir)/config.status $(srcdir)/makeuserdb.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2userdb.in
++	cd $(top_builddir) && $(SHELL) ./config.status $@
++vchkpw2userdb: $(top_builddir)/config.status $(srcdir)/vchkpw2userdb.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ 
+ clean-noinstLTLIBRARIES:
+--- userdb/configure.orig	2016-06-23 12:29:59 UTC
++++ userdb/configure
+@@ -12873,7 +12873,7 @@ else
  fi
  
  
@@ -496,16 +533,16 @@
  
  cat >confcache <<\_ACEOF
  # This file is a shell script that caches the results of configure
-@@ -13364,6 +13364,7 @@
+@@ -13894,6 +13894,7 @@ do
      "userdb.pl") CONFIG_FILES="$CONFIG_FILES userdb.pl" ;;
      "makeuserdb") CONFIG_FILES="$CONFIG_FILES makeuserdb" ;;
      "pw2userdb") CONFIG_FILES="$CONFIG_FILES pw2userdb" ;;
 +    "vchkpw2userdb") CONFIG_FILES="$CONFIG_FILES vchkpw2userdb" ;;
  
-   *) { { $as_echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
- $as_echo "$as_me: error: invalid argument: $ac_config_target" >&2;}
---- userdb/vchkpw2userdb.in.orig	2009-07-02 09:56:41.000000000 +0200
-+++ userdb/vchkpw2userdb.in	2009-07-02 09:56:41.000000000 +0200
+   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
+   esac
+--- userdb/vchkpw2userdb.in.orig	2017-07-03 08:38:16 UTC
++++ userdb/vchkpw2userdb.in
 @@ -0,0 +1,80 @@
 +#! @PERL@
 +#
@@ -587,40 +624,3 @@
 +	close(DIR);
 +}
 +
---- userdb/Makefile.in.orig	2015-06-06 14:37:22 UTC
-+++ userdb/Makefile.in
-@@ -107,7 +107,7 @@ am__CONFIG_DISTCLEAN_FILES = config.stat
-  configure.lineno config.status.lineno
- mkinstalldirs = $(install_sh) -d
- CONFIG_HEADER = config.h
--CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb
-+CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb vchkpw2userdb
- CONFIG_CLEAN_VPATH_FILES =
- LTLIBRARIES = $(noinst_LTLIBRARIES)
- libuserdb_la_LIBADD =
-@@ -222,6 +222,7 @@ CSCOPE = cscope
- AM_RECURSIVE_TARGETS = cscope
- am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
- 	$(srcdir)/makeuserdb.in $(srcdir)/pw2userdb.in \
-+	$(srcdir)/vchkpw2userdb.in \
- 	$(srcdir)/userdb.pl.in $(top_srcdir)/../compile \
- 	$(top_srcdir)/../config.guess $(top_srcdir)/../config.sub \
- 	$(top_srcdir)/../depcomp $(top_srcdir)/../install-sh \
-@@ -376,7 +377,7 @@ BUILT_SOURCES = makeuserdb.html.in makeu
- 		userdb.html.in userdb.8.in \
- 		userdbpw.html.in userdbpw.8.in
- 
--noinst_SCRIPTS = makeuserdb pw2userdb dummy
-+noinst_SCRIPTS = makeuserdb pw2userdb vchkpw2userdb dummy
- noinst_DATA = makeuserdb.html userdb.html userdbpw.html
- userdbpw_SOURCES = userdbpw.c
- userdbpw_LDADD = libuserdb.la @HMACLIB@ @MD5LIB@ @SHA1LIB@ @CRYPTLIBS@
-@@ -444,6 +445,8 @@ makeuserdb: $(top_builddir)/config.statu
- 	cd $(top_builddir) && $(SHELL) ./config.status $@
- pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2userdb.in
- 	cd $(top_builddir) && $(SHELL) ./config.status $@
-+vchkpw2userdb: $(top_builddir)/config.status $(srcdir)/vchkpw2userdb.in
-+	cd $(top_builddir) && $(SHELL) ./config.status $@
- 
- clean-noinstLTLIBRARIES:
- 	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)

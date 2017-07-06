@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.66.3
+PORTVERSION=	0.68.0
 PORTREVISION?=	0
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
@@ -13,7 +13,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 .endif
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT?=	Meta-port for the courier authentication library
 
 CONFLICTS=	courier-0.45*
