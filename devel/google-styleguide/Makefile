@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	styleguide
-PORTVERSION=	20170302
+PORTVERSION=	20170630
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Tool to assist with Google style guide compliance
 
 # cpplint.py and cpplint_unittest.py under BSD3CLAUSE
@@ -19,7 +19,7 @@ USES=		python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	15f2836
+GH_TAGNAME=	d75bd35
 
 NO_ARCH=	yes
 NO_BUILD=	yes
