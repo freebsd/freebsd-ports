@@ -1074,6 +1074,8 @@
     SUBDIR += shmcat
     SUBDIR += showbeastie
     SUBDIR += siegfried
+    SUBDIR += signon-qt5
+    SUBDIR += signon-ui
     SUBDIR += skill
     SUBDIR += slack
     SUBDIR += sleuthkit
