@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	whois
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

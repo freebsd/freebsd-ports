@@ -63,6 +63,7 @@
     SUBDIR += libnice-gst1
     SUBDIR += libpurple
     SUBDIR += libqtelegram-ae
+    SUBDIR += libsignon-glib
     SUBDIR += libstrophe
     SUBDIR += libtelepathy
     SUBDIR += libyahoo2
@@ -169,6 +170,7 @@
     SUBDIR += telegram
     SUBDIR += telegram-purple
     SUBDIR += telegramqml
+    SUBDIR += telepathy-accounts-signon
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farsight
     SUBDIR += telepathy-farstream

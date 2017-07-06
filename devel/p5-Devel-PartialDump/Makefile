@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-PartialDump
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Partial dumping of data structures, optimized for argument printing
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 BUILD_DEPENDS=	p5-Class-Tiny>=0:devel/p5-Class-Tiny \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \

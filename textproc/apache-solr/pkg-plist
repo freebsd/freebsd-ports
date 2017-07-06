@@ -1,6 +1,6 @@
 @sample etc/solr.in.sh-dist etc/solr.in.sh
-@sample /var/db/solr/solr.xml-dist /var/db/solr/solr.xml
-@sample /var/db/solr/log4j.properties-dist /var/db/solr/log4j.properties
+@sample(solr,solr) /var/db/solr/solr.xml-dist /var/db/solr/solr.xml
+@sample(solr,solr) /var/db/solr/log4j.properties-dist /var/db/solr/log4j.properties
 solr/CHANGES.txt
 solr/LICENSE.txt
 solr/LUCENE_CHANGES.txt
@@ -1829,5 +1829,5 @@ solr/server/solr/configsets/sample_techproducts_configs/conf/xslt/updateXml.xsl
 solr/server/solr/solr.xml
 solr/server/solr/zoo.cfg
 solr/server/start.jar
-@dir /var/db/solr
-@dir /var/log/solr
+@dir(solr,solr) /var/db/solr
+@dir(solr,solr) /var/log/solr

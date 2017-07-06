@@ -161,8 +161,12 @@
  
  # Cache
  gem 'redis-rails', '~> 5.0.1'
-@@ -173,7 +168,7 @@ gem 'connection_pool', '~> 2.0'
- gem 'hipchat', '~> 1.5.0'
+@@ -170,10 +165,10 @@ gem 'redis', '~> 3.2'
+ gem 'connection_pool', '~> 2.0'
+ 
+ # HipChat integration
+-gem 'hipchat', '~> 1.5.0'
++gem 'hipchat', '~> 1.5'
  
  # JIRA integration
 -gem 'jira-ruby', '~> 1.1.2'
