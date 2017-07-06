@@ -1,4 +1,4 @@
-# Created by: Kyle Evans <bsdports@kyle-evans.net>
+# Created by: Kyle Evans <kevans@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	zdoom
@@ -6,7 +6,7 @@ PORTVERSION=	2.8.1
 PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Source port for Doom-engine games
 
 LICENSE=	DOOM

@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH/avrdude
 PKGNAMEPREFIX=	arduino-
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Program for programming the on-chip memory of Atmel AVR Arduino CPUs
 
 LICENSE=	GPLv2
