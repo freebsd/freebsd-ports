@@ -1,8 +1,8 @@
---- authdaemond.in.orig	Wed Oct 20 20:10:49 2004
-+++ authdaemond.in	Wed Oct 20 20:10:49 2004
-@@ -15,4 +15,4 @@
+--- authdaemond.in.orig	2013-08-25 18:57:37 UTC
++++ authdaemond.in
+@@ -14,4 +14,4 @@ localstatedir=@localstatedir@
  set -a
  . @authdaemonrc@
  
--exec ${sbindir}/courierlogger -pid=@authdaemonvar@/pid -$1 @libexecdir@/courier-authlib/authdaemond
+-exec ${sbindir}/courierlogger -pid=@authdaemonvar@/pid $LOGGEROPTS -$1 @libexecdir@/courier-authlib/authdaemond
 +exec ${sbindir}/courierlogger -facility=${subsystem:-mail} -pid=@authdaemonvar@/pid -$1 @libexecdir@/courier-authlib/authdaemond
