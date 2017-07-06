@@ -153,7 +153,7 @@ TOKUDB_PORTDOCS=	README.md
 TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 
-#NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS=		i386
 NOT_FOR_ARCHS_REASON=	currently does not compile on i386, see \
 			https://mariadb.atlassian.net/browse/MDEV-9627
 
