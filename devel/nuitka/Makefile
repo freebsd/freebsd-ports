@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nuitka
-PORTVERSION=	0.5.26.3
+PORTVERSION=	0.5.26.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://nuitka.net/releases/
 DISTNAME=	Nuitka-${PORTVERSION}

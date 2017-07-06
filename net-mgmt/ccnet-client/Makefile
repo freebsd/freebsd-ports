@@ -3,6 +3,7 @@
 PORTNAME=	ccnet-client
 PORTVERSION=	${SEAFILE_CLIENT_VER}
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -21,19 +22,17 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 
 CONFLICTS=	ccnet-server-[0-9]*
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	haiwen
-GH_PROJECT=	ccnet
-
 USES=		autoreconf gettext libtool localbase pathfix pkgconfig \
 		python:-2.7 ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	haiwen
+GH_PROJECT=	ccnet
 
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-ldap
 INSTALL_TARGET=	install-strip
 
 .include "${.CURDIR}/../seafile-client/Makefile.include"

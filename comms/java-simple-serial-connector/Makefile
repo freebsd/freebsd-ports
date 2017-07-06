@@ -5,7 +5,7 @@ PORTVERSION=	2.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms java
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Library for working with serial ports from Java
 
 LICENSE=	LGPL3

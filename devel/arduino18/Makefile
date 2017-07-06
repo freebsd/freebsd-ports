@@ -7,7 +7,7 @@ CATEGORIES=	devel java
 PKGNAMESUFFIX=	18
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Open-source electronics prototyping platform
 
 LICENSE=	GPLv2

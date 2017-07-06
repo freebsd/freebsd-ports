@@ -4,7 +4,7 @@ PORTNAME=	arduinoOTA
 PORTVERSION=	1.2.0
 CATEGORIES=	devel
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	OTA upload tool for Arduino/ESP8266
 
 LICENSE=	GPLv3

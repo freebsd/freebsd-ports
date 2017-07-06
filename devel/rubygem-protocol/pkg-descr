@@ -1,0 +1,8 @@
+This library offers an implementation of protocols against which you can check
+the conformity of your classes or instances of your classes. They are a bit like
+Java Interfaces, but as mixin modules they can also contain already implemented
+methods. Additionally you can define preconditions/postconditions for methods
+specified in a protocol.
+
+WWW: http://flori.github.io/protocol/
+WWW: https://github.com/flori/protocol

@@ -6,7 +6,7 @@ PORTVERSION=	2.0.0.g2016.11.24
 PORTREVISION=	4
 CATEGORIES=	net comms ipv6
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
 
 LICENSE=	APACHE20

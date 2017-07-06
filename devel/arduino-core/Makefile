@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 DIST_SUBDIR=	arduino
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Core board support for Arduino devices
 
 LICENSE=	LGPL21
