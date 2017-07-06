@@ -1,6 +1,6 @@
---- Gemfile.orig	2017-06-07 20:58:14 UTC
+--- Gemfile.orig	2017-06-07 20:48:31 UTC
 +++ Gemfile
-@@ -1,46 +1,41 @@
+@@ -1,48 +1,43 @@
  source 'https://rubygems.org'
  
 -gem 'rails', '4.2.8'
@@ -21,8 +21,10 @@
 -gem 'pg', '~> 0.18.2', group: :postgres
 +gem 'default_value_for', '>= 3.0.0'
  
--gem 'rugged', '~> 0.24.0'
-+gem 'rugged', '>= 0.24.0'
+ gem 'rugged', '~> 0.25.1.1'
+ 
+-gem 'faraday', '~> 0.11.0'
++gem 'faraday', '>= 0.11.0'
  
  # Authentication libraries
  gem 'devise', '~> 4.2'
@@ -56,8 +58,8 @@
  gem 'akismet', '~> 2.0'
  
  # Two-factor authentication
-@@ -66,7 +61,7 @@ gem 'gollum-lib', '~> 4.2', require: fal
- gem 'gollum-rugged_adapter', '~> 0.4.2', require: false
+@@ -68,7 +63,7 @@ gem 'gollum-lib', '~> 4.2', require: fal
+ gem 'gollum-rugged_adapter', '~> 0.4.4', require: false
  
  # Language detection
 -gem 'github-linguist', '~> 4.7.0', require: 'linguist'
@@ -65,7 +67,7 @@
  
  # API
  gem 'grape', '~> 0.19.0'
-@@ -77,13 +72,13 @@ gem 'rack-cors', '~> 0.4.0', require: 'r
+@@ -79,13 +74,13 @@ gem 'rack-cors', '~> 0.4.0', require: 'r
  gem 'kaminari', '~> 0.17.0'
  
  # HAML
@@ -82,7 +84,7 @@
  
  # for backups
  gem 'fog-aws', '~> 0.9'
-@@ -94,7 +89,7 @@ gem 'fog-openstack', '~> 0.1'
+@@ -96,7 +91,7 @@ gem 'fog-openstack', '~> 0.1'
  gem 'fog-rackspace', '~> 0.1.1'
  
  # for Google storage
@@ -91,7 +93,7 @@
  
  # for aws storage
  gem 'unf', '~> 0.1.4'
-@@ -104,34 +99,34 @@ gem 'seed-fu', '~> 2.3.5'
+@@ -106,34 +101,34 @@ gem 'seed-fu', '~> 2.3.5'
  
  # Markdown and HTML processing
  gem 'html-pipeline', '~> 1.11.0'
@@ -134,8 +136,12 @@
  # Run events after state machine commits
  gem 'after_commit_queue', '~> 1.3.0'
  
-@@ -145,17 +140,17 @@ gem 'redis-namespace', '~> 1.5.2'
+@@ -147,20 +142,20 @@ gem 'redis-namespace', '~> 1.5.2'
  gem 'sidekiq-limit_fetch', '~> 3.4'
+ 
+ # Cron Parser
+-gem 'rufus-scheduler', '~> 3.1.10'
++gem 'rufus-scheduler', '>= 3.1.10'
  
  # HTTP requests
 -gem 'httparty', '~> 0.13.3'
@@ -155,7 +161,7 @@
  
  # Cache
  gem 'redis-rails', '~> 5.0.1'
-@@ -168,7 +163,7 @@ gem 'connection_pool', '~> 2.0'
+@@ -173,7 +168,7 @@ gem 'connection_pool', '~> 2.0'
  gem 'hipchat', '~> 1.5.0'
  
  # JIRA integration
@@ -164,14 +170,7 @@
  
  # Flowdock integration
  gem 'gitlab-flowdock-git-hook', '~> 1.0.1'
-@@ -180,13 +175,13 @@ gem 'gemnasium-gitlab-service', '~> 0.2'
- gem 'slack-notifier', '~> 1.5.1'
- 
- # Asana integration
--gem 'asana', '~> 0.4.0'
-+gem 'asana', '>= 0.4.0'
- 
- # FogBugz integration
+@@ -191,7 +186,7 @@ gem 'asana', '~> 0.6.0'
  gem 'ruby-fogbugz', '~> 0.2.1'
  
  # Kubernetes integration
@@ -180,7 +179,7 @@
  
  # d3
  gem 'd3_rails', '~> 3.5.0'
-@@ -195,7 +190,7 @@ gem 'd3_rails', '~> 3.5.0'
+@@ -200,7 +195,7 @@ gem 'd3_rails', '~> 3.5.0'
  gem 'underscore-rails', '~> 1.8.0'
  
  # Sanitize user input
@@ -189,7 +188,7 @@
  gem 'babosa', '~> 1.0.2'
  
  # Sanitizes SVG input
-@@ -205,7 +200,7 @@ gem 'loofah', '~> 2.0.3'
+@@ -210,7 +205,7 @@ gem 'loofah', '~> 2.0.3'
  gem 'licensee', '~> 8.7.0'
  
  # Protect against bruteforcing
@@ -198,10 +197,10 @@
  
  # Ace editor
  gem 'ace-rails-ap', '~> 4.1.0'
-@@ -224,122 +219,41 @@ gem 'chronic', '~> 0.10.2'
+@@ -229,122 +224,41 @@ gem 'chronic', '~> 0.10.2'
  gem 'chronic_duration', '~> 0.10.6'
  
- gem 'webpack-rails', '~> 0.9.9'
+ gem 'webpack-rails', '~> 0.9.10'
 -gem 'rack-proxy', '~> 0.6.0'
 +gem 'rack-proxy', '>= 0.6.0'
  
@@ -228,8 +227,8 @@
  gem 'base32', '~> 0.3.0'
  
  # Sentry integration
--gem 'sentry-raven', '~> 2.0.0'
-+gem 'sentry-raven', '>= 2.0.0'
+-gem 'sentry-raven', '~> 2.4.0'
++gem 'sentry-raven', '>= 2.4.0'
  
  gem 'premailer-rails', '~> 1.9.0'
  
@@ -242,15 +241,13 @@
 -
 -group :development do
 -  gem 'foreman', '~> 0.78.0'
--  gem 'brakeman', '~> 3.4.0', require: false
+-  gem 'brakeman', '~> 3.6.0', require: false
 -
 -  gem 'letter_opener_web', '~> 1.3.0'
--  gem 'bullet', '~> 5.2.0', require: false
 -  gem 'rblineprof', '~> 0.3.6', platform: :mri, require: false
--  gem 'web-console', '~> 2.0'
 -
 -  # Better errors handler
--  gem 'better_errors', '~> 1.0.1'
+-  gem 'better_errors', '~> 2.1.0'
 -  gem 'binding_of_caller', '~> 0.7.2'
 -
 -  # thin instead webrick
@@ -258,6 +255,7 @@
 -end
 -
 -group :development, :test do
+-  gem 'bullet', '~> 5.5.0', require: !!ENV['ENABLE_BULLET']
 -  gem 'pry-byebug', '~> 3.4.1', platform: :mri
 -  gem 'pry-rails', '~> 0.3.4'
 -
@@ -282,16 +280,16 @@
 -  gem 'capybara-screenshot', '~> 1.0.0'
 -  gem 'poltergeist', '~> 1.9.0'
 -
--  gem 'spring', '~> 1.7.0'
+-  gem 'spring', '~> 2.0.0'
 -  gem 'spring-commands-rspec', '~> 1.0.4'
 -  gem 'spring-commands-spinach', '~> 1.1.0'
 -
 -  gem 'rubocop', '~> 0.47.1', require: false
--  gem 'rubocop-rspec', '~> 1.12.0', require: false
+-  gem 'rubocop-rspec', '~> 1.15.0', require: false
 -  gem 'scss_lint', '~> 0.47.0', require: false
 -  gem 'haml_lint', '~> 0.21.0', require: false
--  gem 'simplecov', '0.12.0', require: false
--  gem 'flay', '~> 2.6.1', require: false
+-  gem 'simplecov', '~> 0.14.0', require: false
+-  gem 'flay', '~> 2.8.0', require: false
 -  gem 'bundler-audit', '~> 0.5.0', require: false
 -
 -  gem 'benchmark-ips', '~> 2.3.0', require: false
@@ -308,10 +306,11 @@
 -  gem 'shoulda-matchers', '~> 2.8.0', require: false
 -  gem 'email_spec', '~> 1.6.0'
 -  gem 'json-schema', '~> 2.6.2'
--  gem 'webmock', '~> 1.21.0'
+-  gem 'webmock', '~> 1.24.0'
 -  gem 'test_after_commit', '~> 1.1'
 -  gem 'sham_rack', '~> 1.3.6'
 -  gem 'timecop', '~> 0.8.0'
+-  gem 'concurrent-ruby', '~> 1.0.5'
 -end
 -
 -gem 'octokit', '~> 4.6.2'
@@ -326,14 +325,16 @@
  gem 'ruby-prof', '~> 0.16.2'
  
  # OAuth
--gem 'oauth2', '~> 1.2.0'
-+gem 'oauth2', '>= 1.2.0'
+-gem 'oauth2', '~> 1.3.0'
++gem 'oauth2', '>= 1.3.0'
  
  # Soft deletion
  gem 'paranoia', '~> 2.2'
-@@ -353,3 +267,5 @@ gem 'sys-filesystem', '~> 1.1.6'
- 
+@@ -359,4 +273,6 @@ gem 'sys-filesystem', '~> 1.1.6'
  # Gitaly GRPC client
- gem 'gitaly', '~> 0.2.1'
+ gem 'gitaly', '~> 0.5.0'
+ 
+-gem 'toml-rb', '~> 0.3.15', require: false
++gem 'toml-rb', '>= 0.3.15', require: false
 +
 +gem 'rinku'
