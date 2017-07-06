@@ -3,6 +3,7 @@
 
 PORTNAME=	apache-solr
 PORTVERSION=	6.5.1
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
@@ -23,7 +24,7 @@ JAVA_RUN=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
-SUB_FILES=	pkg-message pkg-install
+SUB_FILES=	pkg-message
 USE_RC_SUBR=	solr
 USERS=		solr
 GROUPS=		${USERS}
