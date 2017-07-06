@@ -99,5 +99,5 @@ SHA256 (rust/crates/winapi-0.2.8.tar.gz) = 167dc9d6949a9b857f3451275e911c3f44255
 SIZE (rust/crates/winapi-0.2.8.tar.gz) = 455145
 SHA256 (rust/crates/winapi-build-0.1.1.tar.gz) = 2d315eee3b34aca4797b2da6b13ed88266e6d612562a0c46390af8299fc699bc
 SIZE (rust/crates/winapi-build-0.1.1.tar.gz) = 669
-SHA256 (phildawes-racer-2.0.9_GH0.tar.gz) = 31185317118a069569611572daf28890989d52222c390448feacf17bb469fb87
-SIZE (phildawes-racer-2.0.9_GH0.tar.gz) = 145302
+SHA256 (racer-rust-racer-2.0.9_GH0.tar.gz) = 31185317118a069569611572daf28890989d52222c390448feacf17bb469fb87
+SIZE (racer-rust-racer-2.0.9_GH0.tar.gz) = 145302
