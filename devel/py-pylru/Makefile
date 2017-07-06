@@ -1,4 +1,4 @@
-# Created by: Kyle Evans <bsdports@kyle-evans.net>
+# Created by: Kyle Evans <kevans@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pylru
@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Least recently used (lru) cache implementation
 
 LICENSE=	GPLv2

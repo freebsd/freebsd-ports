@@ -4,7 +4,7 @@ PORTNAME=	arduino-builder
 PORTVERSION=	1.3.25
 CATEGORIES=	devel
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Command line tool for building Arduino sketches
 
 LICENSE=	GPLv2

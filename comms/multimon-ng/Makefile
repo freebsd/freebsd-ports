@@ -4,7 +4,7 @@ PORTNAME=	multimon-ng
 PORTVERSION=	1.1.0
 CATEGORIES=	comms hamradio
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Digital transmission decoder
 
 LICENSE=	GPLv2

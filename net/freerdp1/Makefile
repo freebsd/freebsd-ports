@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	net comms ipv6
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
 
 LICENSE=	APACHE20
