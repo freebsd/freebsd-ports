@@ -1,4 +1,4 @@
---- SConstruct.orig	2017-04-20 21:43:42 UTC
+--- SConstruct.orig	2017-06-08 16:11:03 UTC
 +++ SConstruct
 @@ -929,9 +929,9 @@ if has_option('variables-help'):
      print env_vars.GenerateHelpText(env)
@@ -70,3 +70,11 @@
          context.Result(ret)
          return ret
  
+@@ -2645,6 +2645,7 @@ def doConfigure(myenv):
+ 
+         conf = Configure(myenv, custom_tests = {
+             'CheckPThreadSetNameNP': CheckPThreadSetNameNP,
++            'CheckBoostMinVersion': CheckBoostMinVersion,
+         })
+ 
+         if conf.CheckPThreadSetNameNP():
