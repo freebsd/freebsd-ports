@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 CATEGORIES=	www
+PORTREVISION=	1
 
 MASTERDIR=	${.CURDIR}/../../lang/php71
 
