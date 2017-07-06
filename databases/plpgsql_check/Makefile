@@ -4,6 +4,7 @@
 PORTNAME=	plpgsql_check
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
@@ -26,5 +27,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	okbob
 
 WANT_PGSQL=	server
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/plpgsql_check.so
 
 .include <bsd.port.mk>
