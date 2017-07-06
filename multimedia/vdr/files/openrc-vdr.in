@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+# And if you are using vdr plugins etc. add those including any plugin
+# parameters to /etc/rc.conf[.local] similar to this:
+#
+# vdr_flags="'-Pxineliboutput --local=none --remote=127.1:37890' \
+#	-Pfemon -Posdpip \
+#	-Posdteletext --cache-system=packed --max-cache=128' \
+#	-Pstreamdev-server '-Plive -i127.1' -Pepgsearch \
+#	-Pinfosatepg"
+
+name=vdr
+
+: ${vdr_chdir="%%VIDEODIR%%"}
+: ${vdr_waitdvb="YES"}
+
+command="%%PREFIX%%/bin/vdr"
+command_args="-d"
+
+start_pre()
+{
+	if yesno "${name}_waitdvb"; then
+		supervisor=supervise-daemon
+		command=%%PREFIX%%/bin/vdr-waitdvb
+	fi
+}
+
+depend()
+{
+	keyword -shutdown
+}
