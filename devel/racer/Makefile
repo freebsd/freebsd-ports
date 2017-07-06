@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_ACCOUNT=	phildawes
+GH_ACCOUNT=	racer-rust
 
 PLIST_FILES=	bin/racer
 
