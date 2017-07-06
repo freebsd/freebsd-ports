@@ -27,13 +27,7 @@ CONFIGURE_ARGS=	--program-prefix='' --enable-multithread --with-mpi=no \
 		--with-ginac=no
 INSTALL_TARGET=	install-strip
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
-
-OPTIONS_DEFINE=	MPI METIS CHACO GINAC
-=======
 OPTIONS_DEFINE=	METIS CHACO
->>>>>>> upstream/master
 OPTIONS_RADIO=	BLAS
 OPTIONS_RADIO_BLAS=	REFERENCE GOTOBLAS ATLAS
 OPTIONS_DEFAULT=	REFERENCE
