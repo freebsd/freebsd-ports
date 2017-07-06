@@ -140,8 +140,7 @@ PERL_CONFIGURE_ENABLE=		perl
 PERL_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.pl
 PHP_CONFIGURE_ENABLE=		php
 PHP_CPPFLAGS=		-I${LOCALBASE}/include/php/Zend
-PHP_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.php \
-			IGNORE_WITH_PHP=56
+PHP_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.php
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_LDFLAGS=		"-L${PYTHONBASE}/lib"
 PYTHON_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.py
@@ -207,6 +206,15 @@ CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig3.0"
 .else
 CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MPHP}
+.if ${PHP_VER} < 70
+# force old PHP API
+MAKE_ARGS+=	SWIG_PHP_OPT=-php5
+.endif
 .endif
 
 post-patch:
@@ -290,4 +298,4 @@ post-install-EXAMPLES-on:
 		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan_data/*.dat \
 		${STAGEDIR}${EXAMPLESDIR}/pathplan_data/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

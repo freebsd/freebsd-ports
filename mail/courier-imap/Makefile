@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.16.2
-PORTREVISION=	2
+PORTVERSION=	4.18.0
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 
 BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
