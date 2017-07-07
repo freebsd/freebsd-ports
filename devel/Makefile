@@ -568,7 +568,7 @@
     SUBDIR += erlang-unicode_util_compat
     SUBDIR += es-eric6
     SUBDIR += etcd
-    SUBDIR += etcd3
+    SUBDIR += etcd31
     SUBDIR += etl
     SUBDIR += euca2ools
     SUBDIR += eventxx
