@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-post_office
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 MASTER_SITES=	GH
@@ -22,6 +22,5 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ui
-GH_TAGNAME=	v3.0
 
 .include <bsd.port.mk>
