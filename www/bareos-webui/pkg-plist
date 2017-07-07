@@ -154,6 +154,9 @@
 %%BAREOSWEBUIDIR%%/phpunit.xml
 %%BAREOSWEBUIDIR%%/public/css/32px.png
 %%BAREOSWEBUIDIR%%/public/css/40px.png
+%%BAREOSWEBUIDIR%%/public/css/Bootstrap-3.3.7/fonts/glyphicons-halflings-regular.ttf
+%%BAREOSWEBUIDIR%%/public/css/Bootstrap-3.3.7/fonts/glyphicons-halflings-regular.woff
+%%BAREOSWEBUIDIR%%/public/css/Bootstrap-3.3.7/fonts/glyphicons-halflings-regular.woff2
 %%BAREOSWEBUIDIR%%/public/css/bootstrap-datetimepicker.css
 %%BAREOSWEBUIDIR%%/public/css/bootstrap-datetimepicker.min.css
 %%BAREOSWEBUIDIR%%/public/css/bootstrap-select.css
@@ -165,8 +168,8 @@
 %%BAREOSWEBUIDIR%%/public/css/bootstrap.css
 %%BAREOSWEBUIDIR%%/public/css/bootstrap.css.map
 %%BAREOSWEBUIDIR%%/public/css/bootstrap.min.css
-%%BAREOSWEBUIDIR%%/public/css/datatables-ext.css
-%%BAREOSWEBUIDIR%%/public/css/datatables-ext.min.css
+%%BAREOSWEBUIDIR%%/public/css/buttons.dataTables.css
+%%BAREOSWEBUIDIR%%/public/css/buttons.dataTables.min.css
 %%BAREOSWEBUIDIR%%/public/css/datatables.css
 %%BAREOSWEBUIDIR%%/public/css/datatables.min.css
 %%BAREOSWEBUIDIR%%/public/css/jquery.jqplot.css
@@ -205,6 +208,8 @@
 %%BAREOSWEBUIDIR%%/public/js/bootstrap-select.min.js
 %%BAREOSWEBUIDIR%%/public/js/bootstrap.js
 %%BAREOSWEBUIDIR%%/public/js/bootstrap.min.js
+%%BAREOSWEBUIDIR%%/public/js/dataTables.buttons.js
+%%BAREOSWEBUIDIR%%/public/js/dataTables.buttons.min.js
 %%BAREOSWEBUIDIR%%/public/js/dataTables/language/Chinese.json
 %%BAREOSWEBUIDIR%%/public/js/dataTables/language/English.json
 %%BAREOSWEBUIDIR%%/public/js/dataTables/language/French.json
@@ -212,8 +217,6 @@
 %%BAREOSWEBUIDIR%%/public/js/dataTables/language/Italian.json
 %%BAREOSWEBUIDIR%%/public/js/dataTables/language/Russian.json
 %%BAREOSWEBUIDIR%%/public/js/dataTables/language/Spanish.json
-%%BAREOSWEBUIDIR%%/public/js/datatables-ext.js
-%%BAREOSWEBUIDIR%%/public/js/datatables-ext.min.js
 %%BAREOSWEBUIDIR%%/public/js/datatables.functions.js
 %%BAREOSWEBUIDIR%%/public/js/datatables.js
 %%BAREOSWEBUIDIR%%/public/js/datatables.min.js
