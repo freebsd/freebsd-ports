@@ -1629,6 +1629,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/format-text-bold.png
 %%DATADIR%%/images/format-text-color.png
 %%DATADIR%%/images/format-text-heading.png
+%%DATADIR%%/images/format-text-hr.png
 %%DATADIR%%/images/format-text-italic.png
 %%DATADIR%%/images/format-text-strikethrough.png
 %%DATADIR%%/images/format-text-subscript.png
@@ -1720,6 +1721,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/previous.png
 %%DATADIR%%/images/print.png
 %%DATADIR%%/images/publisher.png
+%%DATADIR%%/images/quickview.png
 %%DATADIR%%/images/random.png
 %%DATADIR%%/images/rating.png
 %%DATADIR%%/images/reader.png
