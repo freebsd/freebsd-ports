@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldc
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/ldc/releases/download/v${PORTVERSION}/:source \
 		https://github.com/ldc-developers/ldc/releases/download/v${BOOTVER}/:bootstrap
