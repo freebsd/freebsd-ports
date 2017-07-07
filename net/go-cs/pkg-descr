@@ -1,5 +1,4 @@
-cs is a program for concurrently executing ssh(1) or scp(1) on a number
-of hosts.  It is intended to automate running remote commands or copying
-files between hosts on a network.
+cs is a program for concurrently executing local or remote commands on
+multiple hosts.  It is using OpenSSH for running remote commands.
 
 WWW: https://github.com/akosela/go-cs
