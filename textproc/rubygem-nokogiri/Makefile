@@ -2,6 +2,7 @@
 
 PORTNAME=	nokogiri
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 CONFIGURE_ARGS=	--use-system-libraries
 USE_GNOME=	libxml2 libxslt
