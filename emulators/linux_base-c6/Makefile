@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	bash-4.1.2-48.el6 \
@@ -13,7 +13,7 @@ BIN_DISTNAMES=	bash-4.1.2-48.el6 \
 		e2fsprogs-1.41.12-23.el6 \
 		elfutils-0.164-2.el6 \
 		findutils-4.4.2-9.el6 \
-		glibc-common-2.12-1.209.el6_9.1 \
+		glibc-common-2.12-1.209.el6_9.2 \
 		grep-2.20-6.el6 \
 		info-4.13a-8.el6 \
 		keyutils-1.4-5.el6 \
@@ -32,7 +32,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.5-7.el6_0 \
 		gamin-0.1.10-9.el6 \
 		gdbm-1.8.0-39.el6 \
 		glib2-2.28.8-9.el6 \
-		glibc-2.12-1.209.el6_9.1 \
+		glibc-2.12-1.209.el6_9.2 \
 		gmp-4.3.1-12.el6 \
 		keyutils-libs-1.4-5.el6 \
 		krb5-libs-1.10.3-65.el6 \
@@ -78,7 +78,7 @@ SRC_DISTFILES=	acl-2.2.49-7.el6${SRC_SUFX}:SOURCE \
 		gcc-4.4.7-18.el6${SRC_SUFX}:SOURCE \
 		gdbm-1.8.0-39.el6${SRC_SUFX}:SOURCE \
 		glib2-2.28.8-9.el6${SRC_SUFX}:SOURCE \
-		glibc-2.12-1.209.el6_9.1${SRC_SUFX}:SOURCE \
+		glibc-2.12-1.209.el6_9.2${SRC_SUFX}:SOURCE \
 		gmp-4.3.1-12.el6${SRC_SUFX}:SOURCE \
 		grep-2.20-6.el6${SRC_SUFX}:SOURCE \
 		keyutils-1.4-5.el6${SRC_SUFX}:SOURCE \
