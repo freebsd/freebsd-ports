@@ -361,6 +361,7 @@
     SUBDIR += linux-c7-libgpg-error
     SUBDIR += linux-c7-libssh2
     SUBDIR += linux-c7-libtasn1
+    SUBDIR += linux-c7-nettle
     SUBDIR += linux-c7-nss
     SUBDIR += linux-c7-openssl
     SUBDIR += lockdown
