@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	centos-release-7-3.1611.el7.centos \
@@ -13,7 +13,7 @@ BIN_DISTNAMES=	centos-release-7-3.1611.el7.centos \
 		elfutils-0.166-2.el7 \
 		filesystem-3.2-21.el7 \
 		findutils-4.5.11-5.el7 \
-		glibc-common-2.17-157.el7_3.2 \
+		glibc-common-2.17-157.el7_3.4 \
 		grep-2.20-2.el7 \
 		info-5.1-4.el7 \
 		keyutils-1.5.8-3.el7 \
@@ -30,7 +30,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		gamin-0.1.10-16.el7 \
 		gdbm-1.10-8.el7 \
 		glib2-2.46.2-4.el7 \
-		glibc-2.17-157.el7_3.2 \
+		glibc-2.17-157.el7_3.4 \
 		gmp-6.0.0-12.el7_1 \
 		keyutils-libs-1.5.8-3.el7 \
 		krb5-libs-1.14.1-27.el7_3 \
@@ -76,7 +76,7 @@ SRC_DISTFILES=	acl-2.2.51-12.el7${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-11.el7${SRC_SUFX}:SOURCE \
 		gdbm-1.10-8.el7${SRC_SUFX}:SOURCE \
 		glib2-2.46.2-4.el7${SRC_SUFX}:SOURCE \
-		glibc-2.17-157.el7_3.2${SRC_SUFX}:SOURCE \
+		glibc-2.17-157.el7_3.4${SRC_SUFX}:SOURCE \
 		gmp-6.0.0-12.el7_1${SRC_SUFX}:SOURCE \
 		grep-2.20-2.el7${SRC_SUFX}:SOURCE \
 		keyutils-1.5.8-3.el7${SRC_SUFX}:SOURCE \
