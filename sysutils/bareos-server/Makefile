@@ -3,8 +3,8 @@
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	16.2.5
-PORTREVISION?=	1
+DISTVERSION=	16.2.6
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -17,7 +17,7 @@ LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
 
-USES+=		libtool:keepla pkgconfig shebangfix
+USES+=		libtool:keepla pkgconfig readline:port shebangfix
 
 CONFLICTS?=	bacula*-server-*
 
@@ -34,7 +34,7 @@ USE_LDCONFIG=	yes
 SHEBANG_LANG=	perl
 SHEBANG_FILES=	${WRKSRC}/src/cats/make_catalog_backup.pl.in
 
-CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE?=	MTX PYTHON NDMP NLS OPENSSL SCSICRYPTO
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 		--with-working-dir=${BAREOS_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
 		--with-logdir=/var/log/bareos \
-		--with-readline=yes \
+		--with-readline=${LOCALBASE} \
 		--disable-conio \
 		--enable-batch-insert \
 		--with-plugindir=${PREFIX}/lib/bareos/plugins \
