@@ -12,9 +12,6 @@ COMMENT=	Metaport of Twisted, an event-driven networking engine
 
 LICENSE=	MIT
 
-DEPRECATED=	Deprecated by upstream years ago. Use "USES=twisted" instead
-EXPIRATION_DATE=2017-08-07
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:devel/py-twistedCore
 
 USES=		metaport python:2
