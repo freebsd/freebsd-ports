@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	electrum
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
 DISTNAME=	Electrum-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Easy to use Bitcoin client
 
 LICENSE=	MIT
