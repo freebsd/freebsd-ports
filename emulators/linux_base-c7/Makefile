@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	centos-release-7-3.1611.el7.centos \
@@ -48,6 +48,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		libstdc++-4.8.5-11.el7 \
 		libuuid-2.23.2-33.el7_3.2 \
 		ncurses-libs-5.9-13.20130511.el7 \
+		nss-softokn-freebl-3.16.2.3-14.4.el7 \
 		pcre-8.32-15.el7_2.1 \
 		popt-1.13-16.el7 \
 		readline-6.2-9.el7 \
@@ -89,6 +90,7 @@ SRC_DISTFILES=	acl-2.2.51-12.el7${SRC_SUFX}:SOURCE \
 		libselinux-2.5-6.el7${SRC_SUFX}:SOURCE \
 		libsepol-2.5-6.el7${SRC_SUFX}:SOURCE \
 		ncurses-5.9-13.20130511.el7${SRC_SUFX}:SOURCE \
+		nss-softokn-3.16.2.3-14.4.el7${SRC_SUFX}:SOURCE \
 		pcre-8.32-15.el7_2.1${SRC_SUFX}:SOURCE \
 		popt-1.13-16.el7${SRC_SUFX}:SOURCE \
 		readline-6.2-9.el7${SRC_SUFX}:SOURCE \
