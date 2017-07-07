@@ -5,7 +5,7 @@ PORTVERSION=	3.1.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
-PKGNAMESUFFIX=	3
+PKGNAMESUFFIX=	31
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Highly-available key value store and service discovery
