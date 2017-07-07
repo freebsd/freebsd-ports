@@ -569,6 +569,7 @@
     SUBDIR += es-eric6
     SUBDIR += etcd
     SUBDIR += etcd31
+    SUBDIR += etcd32
     SUBDIR += etl
     SUBDIR += euca2ools
     SUBDIR += eventxx
