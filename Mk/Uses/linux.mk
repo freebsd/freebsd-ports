@@ -132,6 +132,7 @@ linux_openssl_DEP=		linux-${linux_ARGS}-openssl>0:security/linux-${linux_ARGS}-o
 .else
 linux_openssl_DEP=		linux-${linux_ARGS}-openssl-libs>0:security/linux-${linux_ARGS}-openssl
 .endif
+linux_p11-kit_DEP=		linux-${linux_ARGS}-p11-kit>0:security/linux-${linux_ARGS}-p11-kit
 linux_pango_DEP=		linux-${linux_ARGS}-pango>0:x11-toolkits/linux-${linux_ARGS}-pango
 linux_pixman_DEP=		linux-${linux_ARGS}-pixman>0:x11/linux-${linux_ARGS}-pixman
 linux_png_DEP=			linux-${linux_ARGS}-libpng>0:graphics/linux-${linux_ARGS}-png
