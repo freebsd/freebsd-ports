@@ -2,7 +2,7 @@
 
 PORTNAME=	libffi
 PORTVERSION=	3.0.13
-CATEGORIES=	security linux
+CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Foreign Function Interface (Linux CentOS ${LINUX_DIST_VER})
