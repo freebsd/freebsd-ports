@@ -19,6 +19,8 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/scala-${PORTVERSION}
 
+PORTSCOUT=	limit:^2\.12\.
+
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}
