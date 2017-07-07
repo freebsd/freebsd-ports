@@ -1,0 +1,11 @@
+bin/ballerburg
+man/man6/ballerburg.6.gz
+share/pixmaps/ballerburg.png
+%%DATADIR%%/baller.dat
+%%DATADIR%%/baller.mus
+%%PORTDOCS%%%%DOCSDIR%%/anleitung.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%NLS%%share/locale/de/LC_MESSAGES/ballerburg.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/ballerburg.mo
+%%NLS%%share/locale/it/LC_MESSAGES/ballerburg.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/ballerburg.mo
