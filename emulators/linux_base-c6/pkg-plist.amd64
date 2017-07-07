@@ -50,6 +50,7 @@ etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Debug-6
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Security-6
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Testing-6
+etc/prelink.conf.d/nss-softokn-prelink.conf
 etc/profile
 etc/profile.d/colorls.csh
 etc/profile.d/colorls.sh
@@ -630,6 +631,10 @@ usr/lib/libform.so.5
 usr/lib/libform.so.5.7
 usr/lib/libformw.so.5
 usr/lib/libformw.so.5.7
+usr/lib/libfreebl3.chk
+usr/lib/libfreebl3.so
+usr/lib/libfreeblpriv3.chk
+usr/lib/libfreeblpriv3.so
 usr/lib/libfreetype.so.6
 usr/lib/libfreetype.so.6.3.22
 usr/lib/libgamin-1.so.0
@@ -1055,6 +1060,10 @@ usr/lib64/libform.so.5
 usr/lib64/libform.so.5.7
 usr/lib64/libformw.so.5
 usr/lib64/libformw.so.5.7
+usr/lib64/libfreebl3.chk
+usr/lib64/libfreebl3.so
+usr/lib64/libfreeblpriv3.chk
+usr/lib64/libfreeblpriv3.so
 usr/lib64/libfreetype.so.6
 usr/lib64/libfreetype.so.6.3.22
 usr/lib64/libgamin-1.so.0
@@ -1467,6 +1476,7 @@ usr/sbin/zic
 %%PORTDOCS%%usr/share/doc/zlib-1.2.3/ChangeLog
 %%PORTDOCS%%usr/share/doc/zlib-1.2.3/FAQ
 %%PORTDOCS%%usr/share/doc/zlib-1.2.3/README
+usr/share/dracut/modules.d/05nss-softokn/install
 usr/share/emacs/site-lisp/idna.el
 usr/share/emacs/site-lisp/punycode.el
 usr/share/i18n/charmaps/ANSI_X3.110-1983.gz
