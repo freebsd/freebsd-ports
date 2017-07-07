@@ -568,7 +568,8 @@
     SUBDIR += erlang-unicode_util_compat
     SUBDIR += es-eric6
     SUBDIR += etcd
-    SUBDIR += etcd3
+    SUBDIR += etcd31
+    SUBDIR += etcd32
     SUBDIR += etl
     SUBDIR += euca2ools
     SUBDIR += eventxx
@@ -1534,6 +1535,7 @@
     SUBDIR += linux-c7-dbus-libs
     SUBDIR += linux-c7-devtools
     SUBDIR += linux-c7-libelf
+    SUBDIR += linux-c7-libffi
     SUBDIR += linux-c7-libgfortran
     SUBDIR += linux-c7-libglade2
     SUBDIR += linux-c7-libpciaccess

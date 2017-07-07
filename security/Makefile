@@ -361,8 +361,11 @@
     SUBDIR += linux-c7-libgpg-error
     SUBDIR += linux-c7-libssh2
     SUBDIR += linux-c7-libtasn1
+    SUBDIR += linux-c7-nettle
     SUBDIR += linux-c7-nss
     SUBDIR += linux-c7-openssl
+    SUBDIR += linux-c7-p11-kit
+    SUBDIR += linux-c7-trousers
     SUBDIR += lockdown
     SUBDIR += log2timeline
     SUBDIR += logcheck

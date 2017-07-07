@@ -97,6 +97,7 @@ linux_libaudiofile_DEP=		linux-${linux_ARGS}-audiofile>0:audio/linux-${linux_ARG
 linux_libaudiofile_DEP=		linux-${linux_ARGS}-audiofile>0:audio/linux-${linux_ARGS}-audiofile
 .endif
 linux_libelf_DEP=		linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-libelf
+linux_libffi_DEP=		linux-${linux_ARGS}-libffi>0:devel/linux-${linux_ARGS}-libffi
 linux_libgcrypt_DEP=		linux-${linux_ARGS}-libgcrypt>0:security/linux-${linux_ARGS}-libgcrypt
 linux_libgfortran_DEP=		linux-${linux_ARGS}-libgfortran>0:devel/linux-${linux_ARGS}-libgfortran
 linux_libgpg-error_DEP=		linux-${linux_ARGS}-libgpg-error>0:security/linux-${linux_ARGS}-libgpg-error
@@ -115,6 +116,7 @@ linux_libxml2_DEP=		linux-${linux_ARGS}-libxml2>0:textproc/linux-${linux_ARGS}-l
 linux_mikmod_DEP=		linux-${linux_ARGS}-libmikmod>0:audio/linux-${linux_ARGS}-mikmod
 linux_naslibs_DEP=		linux-${linux_ARGS}-nas>0:audio/linux-${linux_ARGS}-nas-libs
 linux_ncurses-base_DEP=		linux-${linux_ARGS}-ncurses-base>0:devel/linux-${linux_ARGS}-ncurses-base
+linux_nettle_DEP=		linux-${linux_ARGS}-nettle>0:security/linux-${linux_ARGS}-nettle
 linux_nspr_DEP=			linux-${linux_ARGS}-nspr>0:devel/linux-${linux_ARGS}-nspr
 linux_nss_DEP=			linux-${linux_ARGS}-nss>0:security/linux-${linux_ARGS}-nss
 linux_openal_DEP=		linux-${linux_ARGS}-openal>0:audio/linux-${linux_ARGS}-openal
@@ -130,6 +132,7 @@ linux_openssl_DEP=		linux-${linux_ARGS}-openssl>0:security/linux-${linux_ARGS}-o
 .else
 linux_openssl_DEP=		linux-${linux_ARGS}-openssl-libs>0:security/linux-${linux_ARGS}-openssl
 .endif
+linux_p11-kit_DEP=		linux-${linux_ARGS}-p11-kit>0:security/linux-${linux_ARGS}-p11-kit
 linux_pango_DEP=		linux-${linux_ARGS}-pango>0:x11-toolkits/linux-${linux_ARGS}-pango
 linux_pixman_DEP=		linux-${linux_ARGS}-pixman>0:x11/linux-${linux_ARGS}-pixman
 linux_png_DEP=			linux-${linux_ARGS}-libpng>0:graphics/linux-${linux_ARGS}-png
@@ -152,6 +155,7 @@ linux_tcl85_DEP=		linux-${linux_ARGS}-tcl85>0:lang/linux-${linux_ARGS}-tcl85
 linux_tcp_wrappers-libs_DEP=	linux-${linux_ARGS}-tcp_wrappers-libs>0:net/linux-${linux_ARGS}-tcp_wrappers-libs
 linux_tiff_DEP=			linux-${linux_ARGS}-libtiff>0:graphics/linux-${linux_ARGS}-tiff
 linux_tk85_DEP=			linux-${linux_ARGS}-tk85>0:x11-toolkits/linux-${linux_ARGS}-tk85
+linux_trousers_DEP=		linux-${linux_ARGS}-trousers>0:security/linux-${linux_ARGS}-trousers
 linux_ucl_DEP=			linux-${linux_ARGS}-ucl>0:archivers/linux-${linux_ARGS}-ucl
 linux_xorglibs_DEP=		linux-${linux_ARGS}-xorg-libs>0:x11/linux-${linux_ARGS}-xorg-libs
 

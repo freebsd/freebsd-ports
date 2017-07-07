@@ -5,7 +5,7 @@ PORTVERSION=	3.1.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
-PKGNAMESUFFIX=	3
+PKGNAMESUFFIX=	31
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Highly-available key value store and service discovery
@@ -13,7 +13,7 @@ COMMENT=	Highly-available key value store and service discovery
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=coreos-etcdctl-0.* coreos-etcd-*
+CONFLICTS_INSTALL=coreos-etcdctl-0.* coreos-etcd-* coreos-etcd32-*
 
 USES=		go
 GO_PKGNAME=	github.com/coreos/etcd
