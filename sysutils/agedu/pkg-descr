@@ -19,4 +19,4 @@ as du, but it also records the last-access times of everything it scans. Then it
 builds an index that lets it efficiently generate reports giving a summary of
 the results for each subdirectory, and then it produces those reports on demand.
 
-WWW: http://www.chiark.greenend.org.uk/~sgtatham/agedu/
+WWW: https://www.chiark.greenend.org.uk/~sgtatham/agedu/
