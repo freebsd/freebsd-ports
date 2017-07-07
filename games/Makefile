@@ -624,6 +624,7 @@
     SUBDIR += mopesnake
     SUBDIR += moria
     SUBDIR += motogt
+    SUBDIR += mrboom
     SUBDIR += mt_dolphin_ia
     SUBDIR += mt_gtk_client
     SUBDIR += mtaserver
