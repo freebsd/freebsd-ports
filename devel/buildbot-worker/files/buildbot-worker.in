@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # $FreeBSD$
-# PROVIDE: buildbot-worker
+# PROVIDE: buildbot_worker
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
@@ -44,7 +44,7 @@
 
 export PATH=${PATH}:%%LOCALBASE%%/bin
 
-name=buildbot-worker
+name=buildbot_worker
 desc="Buildbot Buildworker"
 rcvar=buildbot_worker_enable
 

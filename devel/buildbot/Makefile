@@ -3,6 +3,7 @@
 
 PORTNAME=	buildbot
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 
@@ -29,8 +30,11 @@ TEST_DEPENDS=	trial:devel/py-twisted \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3 \
 		${PYTHON_PKGNAMEPREFIX}txrequests>0:www/py-txrequests
 
+USE_RC_SUBR=	buildbot
 USES=		python:-2.7
 USE_PYTHON=	autoplist distutils
+
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 NO_ARCH=	yes
 
