@@ -1,10 +1,11 @@
 include/libp11.h
+include/p11_err.h
 lib/engines/libpkcs11.so
 lib/engines/pkcs11.so
 lib/libp11.a
 lib/libp11.so
 lib/libp11.so.2
-lib/libp11.so.2.4.5
+lib/libp11.so.2.4.7
 libdata/pkgconfig/libp11.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
