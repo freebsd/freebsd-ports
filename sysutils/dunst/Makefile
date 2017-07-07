@@ -6,7 +6,7 @@ PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	rodperson@rodperson.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight notification daemon
 
 LICENSE=	BSD3CLAUSE

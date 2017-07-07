@@ -44,6 +44,7 @@ etc/pam.d/su-l
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Debug-7
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Testing-7
+etc/prelink.conf.d/nss-softokn-prelink.conf
 etc/profile
 etc/profile.d/colorgrep.csh
 etc/profile.d/colorgrep.sh
@@ -353,6 +354,8 @@ usr/bin/yes
 usr/lib/audit/sotruss-lib.so
 usr/lib/db4.7.25/libdb.so
 usr/lib/db4.7.25/libdb_cxx.so
+usr/lib/dracut/dracut.conf.d/50-nss-softokn.conf
+usr/lib/dracut/modules.d/05nss-softokn/module-setup.sh
 usr/lib/fipscheck/libgmp.so.10.2.0.hmac
 usr/lib/fipscheck/libgmp.so.10.hmac
 usr/lib/gconv/ANSI_X3.110.so
@@ -665,6 +668,10 @@ usr/lib/libform.so.5
 usr/lib/libform.so.5.9
 usr/lib/libformw.so.5
 usr/lib/libformw.so.5.9
+usr/lib/libfreebl3.chk
+usr/lib/libfreebl3.so
+usr/lib/libfreeblpriv3.chk
+usr/lib/libfreeblpriv3.so
 usr/lib/libfreetype.so.6
 usr/lib/libfreetype.so.6.10.0
 usr/lib/libgamin-1.so.0
@@ -1113,6 +1120,10 @@ usr/lib64/libform.so.5
 usr/lib64/libform.so.5.9
 usr/lib64/libformw.so.5
 usr/lib64/libformw.so.5.9
+usr/lib64/libfreebl3.chk
+usr/lib64/libfreebl3.so
+usr/lib64/libfreeblpriv3.chk
+usr/lib64/libfreeblpriv3.so
 usr/lib64/libfreetype.so.6
 usr/lib64/libfreetype.so.6.10.0
 usr/lib64/libgamin-1.so.0

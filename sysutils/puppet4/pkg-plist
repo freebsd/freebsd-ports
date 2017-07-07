@@ -38,6 +38,8 @@ man/man8/puppet-resource.8.gz
 man/man8/puppet-resource_type.8.gz
 man/man8/puppet-status.8.gz
 man/man8/puppet.8.gz
+/var/puppet/share/locales/config.yaml
+/var/puppet/share/locales/puppet.pot
 @(puppet,puppet,) %%WWWDIR%%/config.ru
 @dir(puppet,puppet,) %%ETCDIR%%/manifests
 @dir(puppet,puppet,) %%ETCDIR%%/modules

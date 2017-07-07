@@ -1,4 +1,4 @@
-TIMESTAMP = 1495828096
+TIMESTAMP = 1499444844
 SHA256 (centos/libICE-1.0.6-1.el6.i686.rpm) = b0b4e98058cfa3d75429b5bb1f209b475c8bcecf14f8ce8382f8ec5e24ac4c32
 SIZE (centos/libICE-1.0.6-1.el6.i686.rpm) = 53292
 SHA256 (centos/libICE-1.0.6-1.el6.x86_64.rpm) = c04a69d96c850fa6e179a09cc1738bd8837fb79870f78d1039f5080b4e765598
@@ -11,6 +11,8 @@ SHA256 (centos/libX11-1.6.4-3.el6.i686.rpm) = 102dbbb0c303cf02f0cdb3ff20f361f6a4
 SIZE (centos/libX11-1.6.4-3.el6.i686.rpm) = 607816
 SHA256 (centos/libX11-1.6.4-3.el6.x86_64.rpm) = 10a698d15cfef14bb09a2ce4e569e8f42dca5c7197dacc04978f86d7b01c2224
 SIZE (centos/libX11-1.6.4-3.el6.x86_64.rpm) = 600736
+SHA256 (centos/libX11-common-1.6.4-3.el6.noarch.rpm) = d2309178d1508403a377d92e25682583be9559119e6efd90b44b970a527a3b6e
+SIZE (centos/libX11-common-1.6.4-3.el6.noarch.rpm) = 175008
 SHA256 (centos/libXScrnSaver-1.2.2-2.el6.i686.rpm) = 2173a076e7cefc99c982601a701eaec864a418d7c544d80ef72fc7ac0a42218f
 SIZE (centos/libXScrnSaver-1.2.2-2.el6.i686.rpm) = 22580
 SHA256 (centos/libXScrnSaver-1.2.2-2.el6.x86_64.rpm) = 81b34282c3bca2f38f8ee7cf64a15c8516be0df608b144fa1efbeffd28b578e4
