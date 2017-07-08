@@ -9,6 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20(Stable)/
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Cross-platform C++ library for network and low-level I/O programming
 
+LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
 RUN_DEPENDS=	${LOCALBASE}/include/boost/chrono/system_clocks.hpp:devel/boost-libs
