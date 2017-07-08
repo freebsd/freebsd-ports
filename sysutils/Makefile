@@ -1011,6 +1011,7 @@
     SUBDIR += rubygem-puppet_forge1
     SUBDIR += rubygem-r10k
     SUBDIR += rubygem-rubyipmi
+    SUBDIR += rubygem-serverspec
     SUBDIR += rubygem-shellany
     SUBDIR += rubygem-smart_proxy_chef
     SUBDIR += rubygem-smart_proxy_dynflow
