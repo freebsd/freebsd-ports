@@ -230,6 +230,7 @@
     SUBDIR += teapot
     SUBDIR += tel
     SUBDIR += thinkingrock
+    SUBDIR += timewarrior
     SUBDIR += tine20
     SUBDIR += tnote
     SUBDIR += todo
