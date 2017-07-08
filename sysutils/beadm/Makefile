@@ -2,7 +2,7 @@
 
 PORTNAME=	beadm
 PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
