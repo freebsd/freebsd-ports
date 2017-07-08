@@ -5584,6 +5584,7 @@
     SUBDIR += rubygem-rspec-core
     SUBDIR += rubygem-rspec-expectations
     SUBDIR += rubygem-rspec-logsplit
+    SUBDIR += rubygem-rspec-its
     SUBDIR += rubygem-rspec-mocks
     SUBDIR += rubygem-rspec-rails
     SUBDIR += rubygem-rspec-support
