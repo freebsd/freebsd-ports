@@ -17,6 +17,7 @@ share/icons/hicolor/96x96/apps/corebird.png
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/de/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/corebird.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/es_419/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/es/LC_MESSAGES/corebird.mo
 %%NLS%%share/locale/es_MX/LC_MESSAGES/corebird.mo
