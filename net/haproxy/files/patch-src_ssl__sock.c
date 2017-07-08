@@ -1,20 +1,19 @@
---- src/ssl_sock.c.orig	2017-04-03 08:28:32 UTC
+--- src/ssl_sock.c.orig	2017-07-07 09:49:34 UTC
 +++ src/ssl_sock.c
-@@ -794,8 +795,11 @@ static int ssl_sock_load_ocsp(SSL_CTX *c
+@@ -794,8 +794,11 @@ static int ssl_sock_load_ocsp(SSL_CTX *c
  		ocsp = NULL;
  
  #ifndef SSL_CTX_get_tlsext_status_cb
--# define SSL_CTX_get_tlsext_status_cb(ctx, cb) \
--	*cb = (void (*) (void))ctx->tlsext_status_cb;
 +#ifndef SSL_CTRL_GET_TLSEXT_STATUS_REQ_CB
 +#define SSL_CTRL_GET_TLSEXT_STATUS_REQ_CB 128
 +#endif
-+#define SSL_CTX_get_tlsext_status_cb(ctx, cb) \
+ # define SSL_CTX_get_tlsext_status_cb(ctx, cb) \
+-	*cb = (void (*) (void))ctx->tlsext_status_cb;
 +	*cb = SSL_CTX_ctrl(ctx,SSL_CTRL_GET_TLSEXT_STATUS_REQ_CB,0, (void (**)(void))cb)
  #endif
  	SSL_CTX_get_tlsext_status_cb(ctx, &callback);
  
-@@ -823,7 +827,10 @@ static int ssl_sock_load_ocsp(SSL_CTX *c
+@@ -823,7 +826,10 @@ static int ssl_sock_load_ocsp(SSL_CTX *c
  		int key_type;
  		EVP_PKEY *pkey;
  
@@ -26,7 +25,7 @@
  		SSL_CTX_ctrl(ctx, SSL_CTRL_GET_TLSEXT_STATUS_REQ_CB_ARG, 0, &cb_arg);
  #else
  		cb_arg = ctx->tlsext_status_arg;
-@@ -3539,7 +3546,7 @@ int ssl_sock_handshake(struct connection
+@@ -3539,7 +3545,7 @@ int ssl_sock_handshake(struct connection
  					OSSL_HANDSHAKE_STATE state = SSL_get_state((SSL *)conn->xprt_ctx);
  					empty_handshake = state == TLS_ST_BEFORE;
  #else
@@ -35,7 +34,7 @@
  #endif
  
  					if (empty_handshake) {
-@@ -3617,7 +3624,7 @@ int ssl_sock_handshake(struct connection
+@@ -3617,7 +3623,7 @@ int ssl_sock_handshake(struct connection
  			state = SSL_get_state((SSL *)conn->xprt_ctx);
  			empty_handshake = state == TLS_ST_BEFORE;
  #else
