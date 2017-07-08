@@ -2,6 +2,7 @@
 
 PORTNAME=	p11-kit
 PORTVERSION=	0.20.7
+PORTREVISION=	1
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,7 +12,6 @@ DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	3.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
-USE_LINUX=	libffi
 USE_LINUX_RPM=	yes
 
 .include <bsd.port.mk>
