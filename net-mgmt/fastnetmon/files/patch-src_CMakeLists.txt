@@ -35,7 +35,14 @@
  
  set(FASTNETMON_PROFILER OFF)
  
-@@ -190,15 +199,15 @@ if (ENABLE_DPI_SUPPORT) 
+@@ -184,21 +193,21 @@ add_library(sflow_plugin STATIC sflow_pl
+ add_library(netflow_plugin STATIC netflow_plugin/netflow_collector.cpp)
+ target_link_libraries(netflow_plugin ipfix_rfc)
+ 
+-set(ENABLE_DPI_SUPPORT YES)
++#set(ENABLE_DPI_SUPPORT YES)
+ if (ENABLE_DPI_SUPPORT) 
+     message(STATUS "We will enable nDPI support")
  
      add_library(fast_dpi STATIC fast_dpi.cpp)
  

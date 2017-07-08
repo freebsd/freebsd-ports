@@ -1,0 +1,68 @@
+--- src/xml/papers.xml.orig	2017-06-04 21:07:10 UTC
++++ src/xml/papers.xml
+@@ -1712,6 +1712,65 @@
+       <unit value="metric"/>
+     </paper>
+ 
++    <!-- Group: Greeting Card Sizes -->
++    <paper name="7x10TopFoldCard">
++      <description translate="value" value="5x7 Top Fold Card (7x10)"/>
++      <comment value="5in x 7in Top Fold Card (7x10 paper)"/>
++      <width value="504"/>
++      <height value="720"/>
++      <unit value="english-extended"/>
++    </paper>
++    <paper name="6x8TopFoldCard">
++      <description translate="value" value="4x6 Top Fold Card (6x8)"/>
++      <comment value="5in x 7in Top Fold Card (6x8 paper)"/>
++      <width value="432"/>
++      <height value="576"/>
++      <unit value="english-extended"/>
++    </paper>
++    <paper name="6.25x9TopFoldCard">
++      <description translate="value" value="4.5x6.25 Top Fold Card (6.25x9)"/>
++      <comment value="4.5in x 6.25in Top Fold Card (6.25x9 paper)"/>
++      <width value="450"/>
++      <height value="648"/>
++      <unit value="english-extended"/>
++    </paper>
++    <paper name="5.5x8.5TopFoldCard">
++      <description translate="value" value="4.25x5.5 Top Fold Card (5.5x8.5)"/>
++      <comment value="4.25in x 5.5in Top Fold Card (5.5x8.5 paper)"/>
++      <width value="396"/>
++      <height value="612"/>
++      <unit value="english-extended"/>
++    </paper>
++    <paper name="9x8TopFoldCard">
++      <description translate="value" value="4x9 Top Fold Card (9x8)"/>
++      <comment value="4in x 9in Top Fold Card (9x8 paper)"/>
++      <width value="648"/>
++      <height value="576"/>
++      <unit value="english-extended"/>
++    </paper>
++    <paper name="8.5x11TopFoldCard">
++      <description translate="value" value="5.5x8.5 Top Fold Card (8.5x11)"/>
++      <comment value="5.5in x 8.5in Top Fold Card (8.5x11 paper)"/>
++      <width value="612"/>
++      <height value="792"/>
++      <unit value="english-extended"/>
++    </paper>
++    <paper name="5.25x10.5TopFoldCard">
++      <description translate="value" value="5.25x5.25 Top Fold Card (5.25x10.5)"/>
++      <comment value="5.25in x 5.25in Top Fold Card (5.25x10.5 paper)"/>
++      <width value="378"/>
++      <height value="756"/>
++      <unit value="english-extended"/>
++    </paper>
++    <paper name="14x5SideFoldCard">
++      <description translate="value" value="5x7 Side Fold Card (14x5)"/>
++      <comment value="5in x 7in Side Fold Card (14x5 paper)"/>
++      <width value="1008"/>
++      <height value="360"/>
++      <unit value="english-extended"/>
++    </paper>
++    <!-- End of Greeting Card Sizes -->
++
+     <!--
+ 	Special dyesub-specific sizes
+ 

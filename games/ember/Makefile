@@ -15,8 +15,6 @@ COMMENT=	Ember is a WorldForge 3D client using the OGRE 3D library
 
 LICENSE=	GPLv3
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:graphics/ogre3d
 RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so:graphics/ogre3d
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
@@ -26,6 +24,8 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libwfut-0.2.so:devel/libwfut \
 		libboost_thread.so:devel/boost-libs \
 		libCEGUIBase-0.so:graphics/cegui
+
+BROKEN=		fails to compile: ServerService.h: 'sigc++/object_slot.h' file not found
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc \
 		--program-transform-name= --disable-cppunit --disable-debug \

@@ -1,7 +1,11 @@
-TIMESTAMP = 1484767726
+TIMESTAMP = 1496029915
 SHA256 (apache-ant-1.9.7-bin.tar.bz2) = be2ff3026cc655dc002bbcce100bd6724d448c63f702aa82b6d9899b22db7808
 SIZE (apache-ant-1.9.7-bin.tar.bz2) = 4392108
 SHA256 (openjdk-6-src-b41-04_jan_2017.tar.xz) = 8e34d451cec65fae8b4304651058ed4dc8d07bd45baa2f49780009097afc1a15
 SIZE (openjdk-6-src-b41-04_jan_2017.tar.xz) = 34402516
 SHA256 (jtreg-4.1-bin-b05_29_nov_2012.zip) = 9291eb4a14501232b35614e88686ff66ad8b69d0098dbd4322b28f97b672653d
 SIZE (jtreg-4.1-bin-b05_29_nov_2012.zip) = 5993382
+SHA256 (patch-6-b42.xz) = be3cbf875b4731540908e9fe10aae4d3e48777b597787e8adf95c58084dd82eb
+SIZE (patch-6-b42.xz) = 113664
+SHA256 (patch-6-b43.xz) = e806751c1997d292130eca855ffe6811c6b66e823a877213a74ef9b01596098b
+SIZE (patch-6-b43.xz) = 64716

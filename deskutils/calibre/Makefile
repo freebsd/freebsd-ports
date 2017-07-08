@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	2.85.1
+PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -23,10 +24,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9,1:www/py-cssutils \
-		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw
+		${PYTHON_PKGNAMEPREFIX}cssutils>=1.0.1,1:www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw \
+		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python \
+		${PYTHON_PKGNAMEPREFIX}regex>=0:textproc/py-regex
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.9,1:www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}cssutils>=1.0.1,1:www/py-cssutils \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:www/py-beautifulsoup32 \
@@ -38,6 +41,9 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0:net/py-netifaces \
 		${PYTHON_PKGNAMEPREFIX}cssselect>=0:www/py-cssselect \
 		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw \
+		${PYTHON_PKGNAMEPREFIX}msgpack-python>=0.3:devel/py-msgpack-python \
+		${PYTHON_PKGNAMEPREFIX}regex>=0:textproc/py-regex \
+		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet \
 		pdftohtml:graphics/poppler-utils
 
 USE_RC_SUBR=	calibre
@@ -69,9 +75,6 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		QMAKE=${QMAKE}
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${FIND} ${WRKSRC}/resources/content_server -name "*.orig" -delete
 
 do-build:
 	@${MKDIR} ${WRKDIR}/calibre-config ${WRKDIR}/xdg-config

@@ -11,10 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Time::Piece::Range - deal with a range of Time::Piece objects
 
-BUILD_DEPENDS=	p5-Time-Piece>=0:devel/p5-Time-Piece \
-		p5-Date-Range>=0:devel/p5-Date-Range
+LICENSE=	GPLv2+
+
+BUILD_DEPENDS=	p5-Date-Range>=0:devel/p5-Date-Range
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

@@ -26,8 +26,6 @@ FONTSDIR=	${PREFIX}/share/fonts
 JFMDIR=		${WRKDIR}/share/texmf/fonts/tfm/ptex
 TARGETDIRS=	vf-n2a vf-a2n vf-a2bk vf-p2pn
 
-BROKEN_ia64=	Coredump during build on ia64
-
 OPTIONS_DEFINE=	DOCS
 
 post-extract:

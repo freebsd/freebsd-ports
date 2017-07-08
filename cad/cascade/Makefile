@@ -10,6 +10,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Simple tool to analyze noise and distortion of a RF system
 
 GNU_CONFIGURE=	yes
+USES=		groff
 PORTDOCS=	ex1.gif index.html
 PORTEXAMPLES=	README.examples ex1.cas ex1.gif ex1.out cascade-mode.el
 PLIST_FILES=	bin/cascade man/man1/cascade.1.gz

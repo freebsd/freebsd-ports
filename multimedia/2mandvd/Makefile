@@ -3,7 +3,7 @@
 
 PORTNAME=	2ManDVD
 PORTVERSION=	1.8.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.tuxfamily.org/2mandvd/
 

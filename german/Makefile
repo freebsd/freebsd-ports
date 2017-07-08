@@ -7,7 +7,6 @@
     SUBDIR += alt-aspell
     SUBDIR += aspell
     SUBDIR += bugzilla44
-    SUBDIR += calligra-l10n
     SUBDIR += dict
     SUBDIR += ding
     SUBDIR += dtaus

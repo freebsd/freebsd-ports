@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.26.1
+PORTVERSION=	0.26.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
@@ -49,10 +49,9 @@ PORTSCOUT=	limitw:1,even
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	OPENMP NLS
-OPTIONS_DEFAULT=	NLS
 OPENMP_DESC=	libraw uses OpenMP (implies GCC 4.9+)
 
-NLS_CONFIGURE_ENABLE=   nls
+NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 

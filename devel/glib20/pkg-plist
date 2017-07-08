@@ -324,8 +324,8 @@ share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
 share/bash-completion/completions/gapplication
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.%%LIBVERSION%%-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.%%LIBVERSION%%-gdb.py
+share/gdb/auto-load%%RESETPREFIX%%/lib/libglib-2.0.so.%%LIBVERSION%%-gdb.py
+share/gdb/auto-load%%RESETPREFIX%%/lib/libgobject-2.0.so.%%LIBVERSION%%-gdb.py
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
 share/glib-2.0/codegen/__init__.py

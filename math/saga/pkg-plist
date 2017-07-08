@@ -88,6 +88,7 @@ lib/saga/libsim_cellular_automata.so
 lib/saga/libsim_ecosystems_hugget.so
 lib/saga/libsim_erosion.so
 lib/saga/libsim_fire_spreading.so
+lib/saga/libsim_geomorphology.so
 lib/saga/libsim_hydrology.so
 lib/saga/libsim_ihacres.so
 lib/saga/libsim_qm_of_esp.so
@@ -126,6 +127,7 @@ share/icons/hicolor/80x80/apps/saga.png
 share/icons/hicolor/8x8/apps/saga.png
 share/icons/hicolor/96x96/apps/saga.png
 share/pixmaps/saga.png
+%%DATADIR%%/accessories/CMakeLists.txt
 %%DATADIR%%/accessories/helper/make_arcsaga_toolboxes.bat
 %%DATADIR%%/accessories/helper/make_saga_release.bat
 %%DATADIR%%/accessories/helper/make_saga_snapshot.bat
@@ -180,13 +182,18 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga_tip.txt
 %%DATADIR%%/toolchains/climate.xml
 %%DATADIR%%/toolchains/cluster_terrain.xml
+%%DATADIR%%/toolchains/grid_list_simple_filter.xml
 %%DATADIR%%/toolchains/gridding.xml
+%%DATADIR%%/toolchains/group_files.xml
 %%DATADIR%%/toolchains/imagery.xml
 %%DATADIR%%/toolchains/imagery_lczc.xml
+%%DATADIR%%/toolchains/import_text_tables.xml
 %%DATADIR%%/toolchains/obia.xml
 %%DATADIR%%/toolchains/points_to_contour.xml
+%%DATADIR%%/toolchains/polygons_max_interior_circles.xml
 %%DATADIR%%/toolchains/sieve_and_clump.xml
 %%DATADIR%%/toolchains/temperature_downscaling.xml
+%%DATADIR%%/toolchains/temperature_downscaling_bulk.xml
 %%DATADIR%%/toolchains/terrain_analysis.xml
 %%DATADIR%%/toolchains/terrain_segmentation.xml
 %%DATADIR%%/toolchains/tta_LandCover.xml

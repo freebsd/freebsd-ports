@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable redir:
+#
+# redir_flags (flags):		Set flags to redir.
+#				Default is "". see redir(1).
+#				Example: "--lport=80 --cport=3128 --syslog"
+
+name="redir"
+command=%%PREFIX%%/bin/redir
+command_args="&"
+
+start_pre() {
+	if [ "${redir_flags}" = "" ]; then
+		eerror "\$redir_flags are required. see available options in redir(1)"
+	fi
+}

@@ -1,8 +1,11 @@
---- build/config/features.gni.orig	2017-04-19 19:06:28 UTC
+--- build/config/features.gni.orig	2017-06-05 19:03:01 UTC
 +++ build/config/features.gni
-@@ -60,13 +60,13 @@ declare_args() {
+@@ -58,15 +58,15 @@ declare_args() {
+   fieldtrial_testing_like_official_build = is_chrome_branded
+ 
    # libudev usage. This currently only affects the content layer.
-   use_udev = is_linux && !is_chromecast
+-  use_udev = is_linux && !is_chromecast
++  use_udev = is_linux && !is_chromecast && !is_bsd
  
 -  use_dbus = is_linux && !is_chromecast
 +  use_dbus = (is_linux || is_bsd) && !is_chromecast
@@ -14,6 +17,6 @@
  
 -  use_gio = is_linux && !is_chromeos && !is_chromecast
 +  use_gio = (is_linux || is_bsd) && !is_chromeos && !is_chromecast
- 
-   # Whether or not to use external popup menu.
-   use_external_popup_menu = is_android || is_mac
+ }
+ #
+ # =============================================

@@ -15,6 +15,8 @@ BUILD_DEPENDS=	desktop-file-install:devel/desktop-file-utils
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libdbus-glib-1.so:devel/dbus-glib
 
+BROKEN_powerpc64=	fails to compile: balloon.c:160: error: nested functions are disabled, use -fnested-functions to re-enable
+
 CONFIGURE_ARGS=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
 GH_ACCOUNT=	mattn

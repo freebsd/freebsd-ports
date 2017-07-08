@@ -17,7 +17,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CXXFLAGS+=	-fPIC
 
-NOT_FOR_ARCHS=		armv6 aarch64 mips mips64 powerpc powerpc64 sparc64
+NOT_FOR_ARCHS=		aarch64 armv6 mips mips64 powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
 
 post-patch:

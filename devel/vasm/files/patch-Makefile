@@ -1,0 +1,11 @@
+--- Makefile.orig	2017-06-02 21:05:38 UTC
++++ Makefile
+@@ -5,7 +5,7 @@ TARGETEXTENSION = 
+ OUTFMTS = -DOUTAOUT -DOUTBIN -DOUTELF -DOUTHUNK -DOUTSREC -DOUTTOS -DOUTVOBJ
+ 
+ CCOUT = -o 
+-COPTS = -c -O2 $(OUTFMTS)
++COPTS = -c -O2 $(OUTFMTS) -Wno-parentheses -Wno-return-type
+ 
+ LD = $(CC)
+ LDOUT = $(CCOUT)

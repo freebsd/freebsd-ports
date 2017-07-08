@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtksourceview3
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,7 @@ COMMENT=	Ruby/GtkSourceView3 is a Ruby binding of gtksourceview-3.x
 
 LICENSE=	LGPL21+
 
+BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
 		rubygem-gtk3>=${PORTVERSION}:x11-toolkits/rubygem-gtk3
 

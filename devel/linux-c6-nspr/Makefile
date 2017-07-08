@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nspr
-PORTVERSION=	4.11.0
-PORTREVISION=	2
+PORTVERSION=	4.13.1
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org

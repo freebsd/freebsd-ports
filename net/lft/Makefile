@@ -15,6 +15,8 @@ LICENSE_NAME=	VOSTROM
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror auto-accept
 
+BROKEN_FreeBSD_12=	fails to compile: lft_types.h: pcap-int.h: No such file or directory
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/lft bin/whob man/man8/lft.8.gz man/man8/whob.8.gz

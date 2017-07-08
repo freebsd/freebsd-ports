@@ -1,10 +1,10 @@
 # Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
 
-FIREFOX_I18N_ALL_=	ach af an ar as ast az bg bn-BD bn-IN br bs ca cs	\
+FIREFOX_I18N_ALL_=	ach af an ar as ast az bg bn-BD bn-IN br bs ca cak cs	\
 			cy da de dsb el en-GB en-US en-ZA eo es-AR es-CL	\
 			es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl	gn	\
-			gu-IN he hi-IN hr hsb hu hy-AM id is it ja kk km	\
+			gu-IN he hi-IN hr hsb hu hy-AM id is it ja ka kab kk km	\
 			kn ko lij lt lv mai mk ml mr ms nb-NO nl nn-NO	\
 			or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq	\
 			sr sv-SE ta te th tr uk uz vi xh zh-CN zh-TW
@@ -50,6 +50,9 @@ FIREFOX_I18N+=  bs
 .endif
 .if ${PORT_OPTIONS:MLANG_CA}
 FIREFOX_I18N+=  ca
+.endif
+.if ${PORT_OPTIONS:MLANG_CAK}
+FIREFOX_I18N+=  cak
 .endif
 .if ${PORT_OPTIONS:MLANG_CS}
 FIREFOX_I18N+=  cs
@@ -158,6 +161,12 @@ FIREFOX_I18N+=  it
 .endif
 .if ${PORT_OPTIONS:MLANG_JA}
 FIREFOX_I18N+=  ja
+.endif
+.if ${PORT_OPTIONS:MLANG_KA}
+FIREFOX_I18N+=  ka
+.endif
+.if ${PORT_OPTIONS:MLANG_KAB}
+FIREFOX_I18N+=  kab
 .endif
 .if ${PORT_OPTIONS:MLANG_KK}
 FIREFOX_I18N+=  kk

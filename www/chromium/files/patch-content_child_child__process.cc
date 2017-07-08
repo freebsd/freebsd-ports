@@ -1,6 +1,6 @@
---- content/child/child_process.cc.orig	2017-04-19 19:06:33 UTC
+--- content/child/child_process.cc.orig	2017-06-05 19:03:07 UTC
 +++ content/child/child_process.cc
-@@ -133,7 +133,7 @@ void ChildProcess::ReleaseProcess() {
+@@ -129,7 +129,7 @@ void ChildProcess::ReleaseProcess() {
      main_thread_->OnProcessFinalRelease();
  }
  

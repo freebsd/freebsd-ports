@@ -1,4 +1,4 @@
---- deps/rabbit/scripts/rabbitmq-plugins.orig	2016-11-22 00:22:17 UTC
+--- deps/rabbit/scripts/rabbitmq-plugins.orig	2017-03-16 21:19:29 UTC
 +++ deps/rabbit/scripts/rabbitmq-plugins
 @@ -25,6 +25,7 @@ if [ -z "$ERL_CRASH_DUMP_SECONDS" ]; the
  fi

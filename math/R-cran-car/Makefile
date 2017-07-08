@@ -23,6 +23,4 @@ TEST_DEPENDS=	R-cran-lmtest>0:finance/R-cran-lmtest \
 
 USES=		cran:auto-plist
 
-NO_ARCH=	yes
-
 .include <bsd.port.mk>

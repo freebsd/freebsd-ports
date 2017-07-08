@@ -13,9 +13,9 @@ COMMENT=	Resource tracing, debugging, and profiling tool
 
 LICENSE=	GPLv3
 
-BROKEN=		fails to build
-
 LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26
+
+BROKEN=		fails to compile: ustring.h: expected ';' at end of declaration list
 
 USES=	gmake pkgconfig
 

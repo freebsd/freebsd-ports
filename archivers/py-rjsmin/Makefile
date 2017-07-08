@@ -3,6 +3,7 @@
 
 PORTNAME=	rjsmin
 PORTVERSION=	1.0.12
+PORTREVISION=	1
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +15,5 @@ LICENSE=	APACHE20
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

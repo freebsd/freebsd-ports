@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nano
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ GNU
 
@@ -23,6 +23,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
+
+DOCS_USES=	groff
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls

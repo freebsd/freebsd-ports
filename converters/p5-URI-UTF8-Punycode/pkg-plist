@@ -1,3 +1,5 @@
+bin/puny
 %%SITE_ARCH%%/URI/UTF8/Punycode.pm
 %%SITE_ARCH%%/auto/URI/UTF8/Punycode/Punycode.so
+%%PERL5_MAN1%%/puny.1.gz
 %%PERL5_MAN3%%/URI::UTF8::Punycode.3.gz

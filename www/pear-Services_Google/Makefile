@@ -8,7 +8,7 @@ CATEGORIES=	www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP interface to access the Google SOAP Web APIs
 
-USES=	pear
+USES=		pear php
 USE_PHP=	soap
 
 .include <bsd.port.mk>

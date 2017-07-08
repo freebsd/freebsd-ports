@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-DISTVERSION=	7.4.7
+PORTVERSION=	7.4.7
+PORTREVISION=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -31,7 +32,7 @@ CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS IPV6
-OPTIONS_DEFAULT?=	NLS PGSQL
+OPTIONS_DEFAULT?=	PGSQL
 MTX_DESC=		Install mtx for control of autochanger devices
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
@@ -40,7 +41,7 @@ PYTHON_USES=		python
 PYTHON_CONFIGURE_ON=	--with-python=yes
 
 .if !defined(WITH_CLIENT_ONLY)
-LIB_DEPENDS+=	libbac-${DISTVERSION}.so:sysutils/bacula-client
+LIB_DEPENDS+=	libbac-${PORTVERSION}.so:sysutils/bacula-client
 USE_RC_SUBR?=	bacula-dir bacula-sd
 .endif
 

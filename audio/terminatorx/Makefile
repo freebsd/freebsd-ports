@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		liblrdf.so:textproc/liblrdf
 
+BROKEN_powerpc64=	fails to configure: checking for XOpenDisplay in -lX11... no
+
 OPTIONS_DEFINE=	ALSA JACK MPG123 SOX VORBIS MAD
 OPTIONS_DEFAULT=	JACK MPG123 SOX VORBIS MAD
 SOX_DESC=	sox (.au) support

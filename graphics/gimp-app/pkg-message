@@ -1,0 +1,7 @@
+On FreeBSD 10.3 gimp can cause the following error.
+
+(script-fu:3985): LibGimp-ERROR **: shmat() failed: Invalid argument
+Could not attach to gimp shared memory segment
+
+This can be fixed by setting kern.ipc.shm_allow_removed=1 in /etc/sysctl.conf.
+FreeBSD 11.0-R and newer have this set by default.

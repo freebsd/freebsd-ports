@@ -1,4 +1,4 @@
---- Makefile.in.orig	2016-11-19 17:40:20 UTC
+--- Makefile.in.orig	2017-05-21 18:49:35 UTC
 +++ Makefile.in
 @@ -495,19 +495,6 @@ distclean-libtool:
  	-rm -f libtool config.lt

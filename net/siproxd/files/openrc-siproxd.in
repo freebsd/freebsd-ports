@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+# Define these siproxd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/siproxd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# siproxd_flags	Flags to siproxd program
+
+name="siproxd"
+command="%%PREFIX%%/sbin/${name}"

@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="chillispot"
+command="%%PREFIX%%/sbin/chilli"
+pidfile=/var/run/chilli.pid
+
+: ${chillispot_config="%%PREFIX%%/etc/chilli.conf"}
+
+command_args="--conf=${chillispot_config}"
+
+depend() {
+	keyword -jail
+	use netif
+}

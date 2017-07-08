@@ -16,6 +16,13 @@ if [ -r /etc/defaults/periodic.conf ]; then
    source_periodic_confs
 fi
 
+SLEEP=/bin/sleep
+JOT=/usr/bin/jot
+
+random() {
+	${JOT} -r 1 0 900
+}
+
 : ${daily_rkhunter_update_flags="--update --nocolors"}
 : ${daily_rkhunter_check_flags="--checkall --nocolors --skip-keypress"}
 
@@ -24,6 +31,16 @@ case "$daily_rkhunter_update_enable" in
 
 	echo ""
 	echo "Updating the rkhunter database..."
+	# When non-interactive, sleep to reduce congestion on rkhunter site
+	if [ "$1" != -nodelay ]; then
+		# In FreeBSD 12.0 the anticongestion function should be used
+		# instead of a hard-coded sleep
+		if [ -n "$anticongestion_sleeptime" ]; then
+			anticongestion
+		else
+			${SLEEP} $(random)
+		fi
+	fi
 	%%PREFIX%%/bin/rkhunter ${daily_rkhunter_update_flags}
 	;;
 esac

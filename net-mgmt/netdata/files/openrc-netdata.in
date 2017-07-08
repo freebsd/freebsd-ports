@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf to enable netdata:
+# netdata_args (str):		Custom additional arguments to be passed
+#				to netdata (default empty).
+
+name="netdata"
+
+netdata_user="netdata"
+pidfile="%%NETDATA_PERST%%/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+command_args="-u ${netdata_user} -P ${pidfile} ${netdata_args}"
+supervisor=supervise-daemon
+
+required_files="%%ETCDIR%%/${name}.conf"
+
+depend() {
+	keyword -shutdown
+}

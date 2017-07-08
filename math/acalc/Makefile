@@ -10,6 +10,8 @@ COMMENT=	Simple and pretty Qt4-based expression calculator
 
 LICENSE=	BSD4CLAUSE
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	anpp
 

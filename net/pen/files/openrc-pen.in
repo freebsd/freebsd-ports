@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name=pen
+command=%%PREFIX%%/bin/pen
+
+depend() {
+	use net
+	keyword -shutdown
+}

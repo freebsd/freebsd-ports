@@ -15,8 +15,8 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-nut_upsmon_enable=${nut_upsmon_enable-"NO"}
-nut_upsmon_prefix=${nut_upsmon_prefix-"%%PREFIX%%"}
+nut_upsmon_enable=${nut_upsmon_enable:-"NO"}
+nut_upsmon_prefix=${nut_upsmon_prefix:-"%%PREFIX%%"}
 
 . /etc/rc.subr
 
@@ -32,9 +32,16 @@ pidfile="%%STATEDIR%%/upsmon.pid"
 nut_upsmon_flags=${nut_upsmon_flags-"localhost"}
 
 extra_commands=reload
+stop_cmd="upsmon_stop"
+
 reload()
 {
 	${command} -c reload
+}
+
+upsmon_stop()
+{
+	${command} -c stop
 }
 
 run_rc_command "$1"

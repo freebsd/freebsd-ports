@@ -1,6 +1,6 @@
---- content/app/BUILD.gn.orig	2017-04-19 19:06:33 UTC
+--- content/app/BUILD.gn.orig	2017-06-05 19:03:06 UTC
 +++ content/app/BUILD.gn
-@@ -68,7 +68,7 @@ template("implement_content_app") {
+@@ -67,7 +67,7 @@ template("implement_content_app") {
      ]
    }
  

@@ -1,6 +1,6 @@
---- configure.orig	2017-02-23 20:00:40 UTC
+--- configure.orig	2017-05-09 17:03:31 UTC
 +++ configure
-@@ -4775,7 +4775,6 @@ cat >>confdefs.h <<_ACEOF
+@@ -4776,7 +4776,6 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
  _ACEOF
  
@@ -8,7 +8,7 @@
  
  
  
-@@ -4796,7 +4795,6 @@ fi
+@@ -4797,7 +4796,6 @@ fi
  
  
  

@@ -19,8 +19,6 @@
     SUBDIR += bsdconv-opencc
     SUBDIR += bug5
     SUBDIR += c2t
-    SUBDIR += calligra-l10n-zh_CN
-    SUBDIR += calligra-l10n-zh_TW
     SUBDIR += cconv
     SUBDIR += celvis
     SUBDIR += chiconv

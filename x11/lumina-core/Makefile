@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-core
-PORTVERSION=	1.2.2
-PORTREVISION=	201706211636
+PORTVERSION=	1.3.0
+PORTREVISION=	201707030836
 CATEGORIES=	x11
 
 MAINTAINER=	kmoore@FreeBSD.org
@@ -16,14 +16,13 @@ RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 		xbrightness>=0:x11/xbrightness \
 		compton>=0:x11-wm/compton \
 		xrandr>=0:x11/xrandr \
-		numlockx>=0:x11/numlockx \
-		xinput>=0:x11/xinput
+		numlockx>=0:x11/numlockx
 LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-util.so:x11/xcb-util
 
-CONFLICTS=	lumina-1.2.1
+CONFLICTS_INSTALL=	lumina-1.2.*
 
 OPTIONS_DEFINE=	MULTIMEDIA TRUEOS I18N
 OPTIONS_DEFAULT=	MULTIMEDIA I18N
@@ -44,11 +43,11 @@ USE_XORG=	x11 xdamage xcb
 USE_LDCONFIG=	yes
 USE_QT5=	core gui widgets network svg multimedia imageformats \
 		buildtools_build x11extras concurrent
-USES=		desktop-file-utils qmake
+USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina
-GH_TAGNAME=	c5cd53f89b8a456166e8d22ddf74377626991a92
+GH_TAGNAME=	fac572aaa139f470481bb870779ebaa16621f74a
 WRKSRC_SUBDIR=	src-qt5/core
 
 #Setup the qmake configuration options

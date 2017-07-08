@@ -4,7 +4,7 @@
 PORTNAME=	gitlab
 PORTVERSION=	8.17.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	7
 CATEGORIES=	www devel
 
 MAINTAINER=	tz@FreeBSD.org
@@ -61,7 +61,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.6:dns/rubygem-validates_hostname \
 	rubygem-browser>=2.2:www/rubygem-browser \
-	rubygem-gitlab_omniauth-ldap>=1.2.1:net/rubygem-gitlab_omniauth-ldap \
+	rubygem-gitlab_omniauth-ldap1>=1.2.1:net/rubygem-gitlab_omniauth-ldap1 \
 	rubygem-gollum-lib-gitlab>=4.2.0:www/rubygem-gollum-lib-gitlab \
 	rubygem-gollum-rugged_adapter>=0.4.2:www/rubygem-gollum-rugged_adapter \
 	rubygem-github-linguist>=4.7.0:textproc/rubygem-github-linguist \
@@ -82,7 +82,7 @@ RUN_DEPENDS=	git>=2.8.4:devel/git \
 	rubygem-unf>=0.1.4:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.5:databases/rubygem-seed-fu \
 	rubygem-html-pipeline1>=1.11.0:textproc/rubygem-html-pipeline1 \
-	rubygem-deckar01-task_list>=1.0.6:www/rubygem-deckar01-task_list \
+	rubygem-deckar01-task_list1>=1.0.6:www/rubygem-deckar01-task_list1 \
 	rubygem-gitlab-markup>=1.5.1:textproc/rubygem-gitlab-markup \
 	rubygem-redcarpet>=3.3.3:textproc/rubygem-redcarpet \
 	rubygem-redcloth>=4.3.2:www/rubygem-redcloth \

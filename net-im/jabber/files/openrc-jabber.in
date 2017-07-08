@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name="jabber"
+
+required_files=%%JABBER_ETCDIR%%/jabber.xml
+
+: ${jabber_pidfile="%%JABBER_RUNDIR%%/jabber.pid"}
+: ${jabber_flags="-B -c ${required_files}"}
+: ${jabber_user="%%JABBER_USER%%"}
+: ${jabber_group="%%JABBER_GROUP%%"}
+
+command=%%PREFIX%%/bin/jabberd14
+pidfile=${jabber_pidfile}
+
+depend() {
+	provide jabber
+	keyword -shutdown
+}

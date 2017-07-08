@@ -1,8 +1,10 @@
-JRuby is a 100% Java implementation of the Ruby programming language.
-It is Ruby for the JVM, offering high performance, real threading and
-support for vast array of libraries.
+JRuby is a 100% Java implementation of the Ruby programming language. It is Ruby
+for the JVM.
 
-JRuby is highly compatible with Ruby 1.8.7 & 1.9.2 (both versions in
-single install).
+JRuby provides a complete set of core "builtin" classes and syntax for the Ruby
+language, as well as most of the Ruby Standard Libraries. The standard libraries
+are mostly Ruby's own complement of .rb files, but a few that depend on C
+language-based extensions have been reimplemented. Some are still missing, but
+we hope to implement as many as is feasible.
 
-WWW: http://www.jruby.org/
+WWW: http://jruby.org/

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cargo
-PORTVERSION=	0.17.0
+PORTVERSION=	0.19.0
 CATEGORIES=	devel
 
-MAINTAINER=	dumbbell@FreeBSD.org
+MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Rust's Package Manager
 # ' <-- Help Vim syntax hilighting...
 
@@ -33,7 +33,9 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 #   This is a collection of mainly shell scripts which are used to
 #   install Cargo.
 
-MASTER_SITES=	https://s3.amazonaws.com/rust-lang-ci/cargo-builds/:cargo_bootstrap
+MASTER_SITES=	https://static.rust-lang.org/dist/:cargo_bootstrap \
+		https://s3.amazonaws.com/rust-lang-ci/cargo-builds/:cargo_bootstrap \
+		LOCAL/dumbbell/rust:cargo_bootstrap
 .if !defined(SKIP_CARGO_REGISTRY)
 MASTER_SITES+=	LOCAL/dumbbell/rust:registry
 DISTFILES+=	${CARGO_REGISTRY}:registry
@@ -43,27 +45,30 @@ DIST_SUBDIR?=	rust
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
 GH_PROJECT=	rust-installer:rust_installer
-GH_TAGNAME=	755bc3d:rust_installer
+GH_TAGNAME=	4f99485:rust_installer
 GH_SUBDIR=	src/rust-installer:rust_installer
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap cargo
 
 # Rust's target arch string is different from *BSD arch strings
-RUST_ARCH_x86_64=	x86_64 # dragonfly
+RUST_ARCH_aarch64=	aarch64
 RUST_ARCH_amd64=	x86_64
 RUST_ARCH_i386=		i686
+RUST_ARCH_x86_64=	x86_64 # dragonfly
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
 
-CARGO_BOOTSTRAP_DIR?=		fbeea902d2c9a5be6d99cc35681565d8f7832592
-CARGO_BOOTSTRAP_VERSION?=	nightly
-CARGO_BOOTSTRAP=		${CARGO_BOOTSTRAP_DIR}/cargo-${CARGO_BOOTSTRAP_VERSION}-${RUST_TARGET}${EXTRACT_SUFX}
+CARGO_BOOTSTRAP_DIR?=		2017-04-27
+CARGO_BOOTSTRAP_DIR_aarch64?=	2017-04-24
+CARGO_BOOTSTRAP_VERSION?=	0.18.0
+CARGO_BOOTSTRAP_VERSION_aarch64?=0.18.0
+CARGO_BOOTSTRAP=		${CARGO_BOOTSTRAP_DIR_${ARCH}:U${CARGO_BOOTSTRAP_DIR}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}${EXTRACT_SUFX}
 CARGO_REGISTRY=			${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
 
 # We don't USES=cmake here, because cmake is not Cargo's build system.
 # It's used by a bundled dependency (libgit2).
 BUILD_DEPENDS=	cmake:devel/cmake \
-		${RUST_PORT:T}>=1.14.0:${RUST_PORT}
+		${RUST_PORT:T}>=1.18.0:${RUST_PORT}
 LIB_DEPENDS=	libssh2.so:security/libssh2 \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	rustc:${RUST_PORT}
@@ -82,7 +87,7 @@ OPTIONS_DEFINE=	BOOTSTRAP
 OPTIONS_DEFAULT=BOOTSTRAP
 
 BOOTSTRAP_DESC=		Bootstrap using pre-built vendor snapshot
-BOOTSTRAP_CONFIGURE_ON=	--cargo="${WRKDIR}/${PORTNAME}-nightly-${RUST_TARGET}/cargo/bin/cargo"
+BOOTSTRAP_CONFIGURE_ON=	--cargo="${WRKDIR}/${PORTNAME}-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}/cargo/bin/cargo"
 BOOTSTRAP_CONFIGURE_OFF=--cargo="$$(command -v cargo)" # respect PATH
 BOOTSTRAP_DISTFILES=	${CARGO_BOOTSTRAP}:cargo_bootstrap
 BOOTSTRAP_MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/target/snapshot/cargo/lib"

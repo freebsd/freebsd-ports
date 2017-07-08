@@ -1,6 +1,0 @@
-The Penguin module provides a framework within which a user on one host
-electronically signs a piece of Perl code, sends it to another host where the
-signature is checked and the code is executed with privileges that are
-particular to that user.
-
-WWW: http://search.cpan.org/dist/Penguin/

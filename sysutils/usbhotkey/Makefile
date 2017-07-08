@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libhid.so:devel/libhid \
 		libXtst.so:x11/libXtst
 
+BROKEN_powerpc64=	fails to compile: ruby.h: wrong number of arguments specified for 'deprecated' attribute
+
 USES=		gmake
 USE_RUBY=	yes
 GNU_CONFIGURE=	yes

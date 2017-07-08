@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.8.20
-PORTREVISION=	2
+PORTVERSION=	1.8.21
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/39/

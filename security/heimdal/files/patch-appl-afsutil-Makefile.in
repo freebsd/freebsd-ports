@@ -1,4 +1,4 @@
---- appl/afsutil/Makefile.in.orig	2017-01-03 19:44:14 UTC
+--- appl/afsutil/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ appl/afsutil/Makefile.in
 @@ -152,13 +152,17 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
  PROGRAMS = $(bin_PROGRAMS)

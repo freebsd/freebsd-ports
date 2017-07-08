@@ -12,6 +12,6 @@ BUILD_DEPENDS=	${PEARDIR}/Log/null.php:sysutils/pear-Log
 RUN_DEPENDS=	${PEARDIR}/Log/null.php:sysutils/pear-Log
 
 USE_PHP=	gettext
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

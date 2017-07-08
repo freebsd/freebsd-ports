@@ -2825,7 +2825,7 @@
 %%WWWDIR%%/db/post_migrate/20170206101030_validate_foreign_keys_on_timelogs.rb
 %%WWWDIR%%/db/post_migrate/20170211073944_disable_invalid_service_templates.rb
 %%WWWDIR%%/db/post_migrate/20170214111112_delete_deprecated_gitlab_ci_service.rb
-%%WWWDIR%%/db/schema.rb
+@(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
 %%WWWDIR%%/doc/administration/auth/README.md

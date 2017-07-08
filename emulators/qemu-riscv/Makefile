@@ -11,6 +11,8 @@ COMMENT=	QEMU with RISC-V (RV64GC, RV32GC) emulation support
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to compile: async.c: internal compiler error: Segmentation fault
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	riscv
 GH_PROJECT=	riscv-qemu

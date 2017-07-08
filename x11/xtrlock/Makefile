@@ -11,19 +11,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Transparent Lock
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/GPL-3.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USES=		localbase
 USE_XORG=	x11
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lcrypt
-
-PLIST_FILES=	bin/xtrlock man/man1/${PORTNAME}.1.gz
-BINMODE=	4555
-
-post-extract:
-	@${LN} -sf xtrlock.man ${WRKSRC}/xtrlock.1
+LIBS+=		-lX11 -lcrypt
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -31,10 +26,10 @@ post-patch:
 		 s|<values.h>|<limits.h>|' ${WRKSRC}/xtrlock.c
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o xtrlock xtrlock.c ${LDFLAGS})
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o xtrlock xtrlock.c ${LDFLAGS} ${LIBS})
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xtrlock ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} xtrlock.1 ${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/xtrlock ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xtrlock.man ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>

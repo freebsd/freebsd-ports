@@ -1,0 +1,49 @@
+commit a2dff5ad917b
+Author: Jim Chen <nchen@mozilla.com>
+Date:   Wed May 17 13:06:23 2017 -0400
+
+    Bug 1360321 - 10. Fix opt build warnings in VIXL; r=me
+    
+    Fix an unused variable warning for `visitor` because it's only used in
+    the assertion macro.
+    
+    Fix several no-return-value errors because the compiler cannot assume
+    the VIXL_UNREACHABLE() macro is actually unreachable.
+    
+    r=me for trivial patch.
+    
+    MozReview-Commit-ID: 13IlMyUsXUN
+---
+ js/src/jit/arm64/vixl/Decoder-vixl.h | 2 ++
+ js/src/jit/arm64/vixl/Globals-vixl.h | 2 +-
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git js/src/jit/arm64/vixl/Decoder-vixl.h js/src/jit/arm64/vixl/Decoder-vixl.h
+index 95dd589e8ab0..742c6f954c72 100644
+--- js/src/jit/arm64/vixl/Decoder-vixl.h
++++ js/src/jit/arm64/vixl/Decoder-vixl.h
+@@ -151,9 +151,11 @@ class Decoder {
+ 
+   // Top-level wrappers around the actual decoding function.
+   void Decode(const Instruction* instr) {
++#ifdef DEBUG
+     for (auto visitor : visitors_) {
+       VIXL_ASSERT(visitor->IsConstVisitor());
+     }
++#endif
+     DecodeInstruction(instr);
+   }
+   void Decode(Instruction* instr) {
+diff --git js/src/jit/arm64/vixl/Globals-vixl.h js/src/jit/arm64/vixl/Globals-vixl.h
+index 8a7418eb8c47..39d9c1d3f37d 100644
+--- js/src/jit/arm64/vixl/Globals-vixl.h
++++ js/src/jit/arm64/vixl/Globals-vixl.h
+@@ -76,7 +76,7 @@ const int MBytes = 1024 * KBytes;
+   #define VIXL_ASSERT(condition) ((void) 0)
+   #define VIXL_CHECK(condition) ((void) 0)
+   #define VIXL_UNIMPLEMENTED() ((void) 0)
+-  #define VIXL_UNREACHABLE() ((void) 0)
++  #define VIXL_UNREACHABLE() MOZ_MAKE_COMPILER_ASSUME_IS_UNREACHABLE()
+ #endif
+ // This is not as powerful as template based assertions, but it is simple.
+ // It assumes that the descriptions are unique. If this starts being a problem,

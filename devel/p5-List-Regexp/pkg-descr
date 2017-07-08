@@ -1,0 +1,5 @@
+Returns a regular expression that will match any string from the input
+list @strings.  First argument can be a reference to a hash, which
+controls how the regular expression is built.
+
+WWW: http://search.cpan.org/dist/List-Regexp/

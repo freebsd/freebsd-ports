@@ -3,6 +3,7 @@
 
 PORTNAME=	davmail
 PORTVERSION=	4.8.0
+PORTREVISION=	1
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
@@ -30,7 +31,7 @@ GROUPS=		davmail
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 USE_RC_SUBR=	davmail
-SUB_FILES=	davmail.sh
+SUB_FILES=	davmail.sh pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#exec=\"davmail\"#exec=\"${PREFIX}/bin/davmail\"#' \

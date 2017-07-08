@@ -16,7 +16,8 @@ LIB_DEPENDS=	libticables2.so:comms/libticables2	\
 		libticalcs2.so:comms/libticalcs2	\
 		libticonv.so:converters/libticonv
 
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info tar:bzip2
+USES=		desktop-file-utils gmake groff pkgconfig shared-mime-info \
+		tar:bzip2
 USE_GNOME=	gtk20 intltool
 
 OPTIONS_DEFINE=	NLS

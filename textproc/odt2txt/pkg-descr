@@ -15,4 +15,4 @@ odt2txt is:
 - written in C, has few dependencies
 - portable (runs on Linux, Mac OS X, Windows, *BSD, Cygwin, Solaris, HP-UX)
 
-WWW: https://github.com/dstosberg/odt2txt/
+WWW: https://github.com/dstosberg/odt2txt

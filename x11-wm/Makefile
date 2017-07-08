@@ -9,14 +9,15 @@
     SUBDIR += amiwm
     SUBDIR += antiwm
     SUBDIR += awesome
-    SUBDIR += awesome3
     SUBDIR += awesome-vicious
     SUBDIR += awesome2
+    SUBDIR += awesome3
     SUBDIR += bbkeys
     SUBDIR += bbpager
     SUBDIR += blackbox
     SUBDIR += bspwm
     SUBDIR += ccsm
+    SUBDIR += cde
     SUBDIR += clementine-wm
     SUBDIR += compiz
     SUBDIR += compiz-fusion

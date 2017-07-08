@@ -17,8 +17,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-CONFLICTS=	netcdf-ftn-[0-9]* netcdf3-ftn-[0-9]*
-
 CPPFLAGS+=	-fPIC -DPIC -DgFortran
 GNU_CONFIGURE=	yes
 MAKE_ENV=	MAKEINFOFLAGS=--no-split

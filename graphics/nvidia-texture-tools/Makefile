@@ -3,7 +3,7 @@
 
 PORTNAME=	nvidia-texture-tools
 PORTVERSION=	2.0.8.1 # needed to not bump PORTEPOCH; remove on next update
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,9 +16,11 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libIlmImf.so:graphics/OpenEXR
 
-BROKEN_ia64=	does not build
-BROKEN_powerpc=	does not build
-BROKEN_sparc64=	does not build
+BROKEN_powerpc=		does not build
+BROKEN_sparc64=		does not build
+
+# see src/nvcore/nvcore.h
+ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	castano
@@ -31,8 +33,6 @@ CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
 
 PORTDOCS=	NVIDIA_Texture_Tools_README.txt ChangeLog
-
-ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 # see src/nvcore/nvcore.h
 
 OPTIONS_DEFINE=	COMPRESSUI DOCS
 OPTIONS_SUB=	yes

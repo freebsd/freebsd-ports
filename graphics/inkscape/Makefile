@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	inkscape
-PORTVERSION=	0.92.0
-PORTREVISION=	3
+PORTVERSION=	0.92.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	https://media.inkscape.org/dl/resources/file/ \
+MASTER_SITES=	https://launchpadlibrarian.net/306309537/ \
 		LOCAL/kwm
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -29,16 +29,13 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libpng.so:graphics/png \
 		libMagick++-6.so:graphics/ImageMagick
 #aspell?
-#RUN_DEPENDS=	p5-XML-XQL>=0:textproc/p5-XML-XQL
 
-USE_GNOME=	gtkmm24 libxslt
-USES=		compiler:c++11-lib cmake cpe desktop-file-utils \
-		gmake iconv jpeg pathfix perl5 pkgconfig python:2 \
+USE_GNOME=	gtkmm24 libxml2 libxslt
+USES=		compiler:c++11-lib cmake cpe desktop-file-utils gnome \
+		iconv:wchar_t jpeg pathfix pkgconfig python:2,build \
 		shebangfix tar:bzip2
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DWITH_GNOME_VFS:BOOL=NO
 
 python_CMD?=	${LOCALBASE}/bin/python2

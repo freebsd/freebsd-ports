@@ -17,6 +17,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jiffy.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jsone.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jsx.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_ojson.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_poison.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_poison_compat_encoder.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_poison_lexical_encoder.beam
@@ -79,6 +80,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jws_alg_poly1305.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jws_alg_rsa_pkcs1_v1_5.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jws_alg_rsa_pss.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_jwt.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_public_key.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_server.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_keccakf1600_driver.beam
@@ -91,6 +93,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jwe.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jwk.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jws.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jwt.hrl
+lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_public_key.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/priv/Dockerfile
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose.app.src
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose.erl
@@ -111,6 +114,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jiffy.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jsone.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jsx.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_ojson.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_poison.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_poison_compat_encoder.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_poison_lexical_encoder.erl
@@ -173,6 +177,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jws_alg_poly1305.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jws_alg_rsa_pkcs1_v1_5.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jws_alg_rsa_pss.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_jwt.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_public_key.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_server.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_sha3_keccakf1600_driver.erl

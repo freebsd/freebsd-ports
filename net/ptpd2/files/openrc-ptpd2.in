@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="ptpd2"
+command="%%PREFIX%%/sbin/${name}"
+
+depend() {
+	use net
+	keyword -jail
+}

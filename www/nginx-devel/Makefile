@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.13.0
-PORTREVISION=	2
+PORTVERSION=	1.13.1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	LOCAL/osa
@@ -122,6 +121,7 @@ OPTIONS_DEFINE=	\
 	SLOWFS_CACHE \
 	SMALL_LIGHT \
 	SRCACHE \
+	VOD \
 	X11 \
 	XSS
 
@@ -231,6 +231,7 @@ SHIBBOLETH_DESC=		3rd party shibboleth module
 SLOWFS_CACHE_DESC=		3rd party slowfs_cache module
 SMALL_LIGHT_DESC=		3rd party small_light module
 SRCACHE_DESC=			3rd party srcache module
+VOD_DESC=			3rd party vod module
 X11_DESC=			graphics/ImageMagick[-nox11] dependency
 XSS_DESC=			3rd party xss module
 VIDEO_DESC=			Video module support
@@ -1035,6 +1036,18 @@ GH_TAGNAME+=	v${NGINX_SRCACHE_VERSION}:srcache
 CONFIGURE_ARGS+=--add-module=${WRKSRC_srcache}
 .endif
 
+.if ${PORT_OPTIONS:MVOD}
+NGINX_VOD_VERSION=	1.18
+GH_ACCOUNT+=	kaltura:vod
+GH_PROJECT+=	nginx-vod-module:vod
+GH_TAGNAME+=	${NGINX_VOD_VERSION}:vod
+.if !empty(PORT_OPTIONS:MDSO)
+CONFIGURE_ARGS+=--add-dynamic-module=${WRKSRC_vod}
+.else
+CONFIGURE_ARGS+=--add-module=${WRKSRC_vod}
+.endif
+.endif
+
 .if ${PORT_OPTIONS:MXSS}
 NGINX_XSS_VERSION=	0.05
 GH_ACCOUNT+=	openresty:xss
@@ -1345,11 +1358,6 @@ post-install:
 .if !empty(PORT_OPTIONS:MDSO)
 	(cd ${STAGEDIR}${PREFIX} && ${FIND} ${MODULESDIR:S|${PREFIX}/||} \
 		! -type d >>${TMPPLIST})
-# Update nginx.conf-dist with a list of staged dynamic modules
-	(cd ${STAGEDIR} && \
-		${FIND} ${MODULESDIR:S|^/||} -type f -name '*.so' \
-			-exec ${ECHO_CMD} "load_module /{};" \; \
-			>>${STAGEDIR}${ETCDIR}/nginx.conf-dist)
 .endif
 	${CAT} ${WRKSRC}/conf/nginx.conf \
 		>>${STAGEDIR}${ETCDIR}/nginx.conf-dist

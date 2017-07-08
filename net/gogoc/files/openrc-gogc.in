@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# Additional configurable variables:
+# gogoc_config (path):   Set to %%LOCALBASE%%/etc/gogoc.conf
+#               by default.
+
+name="gogoc"
+stopsig="HUP"
+
+command=%%LOCALBASE%%/bin/${name}
+: ${gogoc_config="%%LOCALBASE%%/etc/gogoc.conf"}
+
+command_args="-f $gogoc_config"
+
+depend() {
+	use net
+}

@@ -13,9 +13,10 @@ COMMENT=	Framework for manipulating Bible texts
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_12= does not build on 12.X
-
 BUILD_DEPENDS=	cppunit-config:devel/cppunit
+
+BROKEN_FreeBSD_12=	does not build on 12.X
+BROKEN_powerpc64=	does not compile: libicui18n.so: undefined reference to __cxa_throw_bad_array_new_length
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-conf --with-zlib

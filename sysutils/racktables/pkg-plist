@@ -1,3 +1,4 @@
+%%WWWDIR_REL%%/gateways/git-commit
 %%WWWDIR_REL%%/gateways/netcat
 %%WWWDIR_REL%%/gateways/ssh
 %%WWWDIR_REL%%/gateways/sshnokey
@@ -19,6 +20,7 @@
 %%WWWDIR_REL%%/wwwroot/inc/functions.php
 %%WWWDIR_REL%%/wwwroot/inc/init.php
 %%WWWDIR_REL%%/wwwroot/inc/install.php
+%%WWWDIR_REL%%/wwwroot/inc/interface-8021q.php
 %%WWWDIR_REL%%/wwwroot/inc/interface-cables.php
 %%WWWDIR_REL%%/wwwroot/inc/interface-config.php
 %%WWWDIR_REL%%/wwwroot/inc/interface-lib.php

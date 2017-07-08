@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=pxe
+command="%%PREFIX%%/sbin/pxe"
+required_files=%%PREFIX%%/etc/pxe.conf
+command_args="-c ${required_files}"
+pidfile=/var/run/${name}.pid
+
+depend() {
+	use net
+	keyword -shutdown
+}

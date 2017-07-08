@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+# You can define flags for lldpd running. See lldpd(8) for details.
+#
+# Example:
+# lldpd_flags="-i em0"
+
+name=lldpd
+
+command=%%PREFIX%%/sbin/$name
+command_args=">/dev/null 2>/dev/null &"
+
+depend() {
+	use net
+	keyword -shutdown
+}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sentry-raven
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,5 +17,7 @@ RUN_DEPENDS=	rubygem-faraday>=0.7.6:www/rubygem-faraday
 NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
+
+PLIST_FILES=	bin/raven
 
 .include <bsd.port.mk>

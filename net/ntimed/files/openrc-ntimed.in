@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+# Author: Mark Felder <feld@FreeBSD.org>
+
+name=ntimed
+
+: ${ntimed_flags:="0.freebsd.pool.ntp.org"}
+
+pidfile=/var/run/ntimed.pid
+command="/usr/local/sbin/ntimed-client"
+command_args=${ntimed_flags}
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

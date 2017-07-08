@@ -3,7 +3,7 @@
 
 PORTNAME=	python
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PYTHON_PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -15,14 +15,14 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-BROKEN_SSL=	openssl-devel
-
 USES=		cpe ncurses pathfix pkgconfig readline ssl tar:xz shebangfix
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 python_CMD=	${PREFIX}/bin/python${PYTHON_PORTVERSION:R}
 SHEBANG_FILES=	Lib/lib2to3/tests/data/*.py Lib/encodings/*.py
+
+BROKEN_SSL=	openssl-devel
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}
@@ -133,5 +133,7 @@ post-install:
 .endif
 	for i in ${STAGEDIR}${PREFIX}/lib/python${PYTHON_VER}/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done								# Strip shared extensions
+	${INSTALL_DATA} ${WRKSRC}/Tools/gdb/libpython.py \
+		${STAGEDIR}${PREFIX}/lib/libpython${PYTHON_VER}${ABIFLAGS}.so.1.0-gdb.py
 
 .include <bsd.port.mk>

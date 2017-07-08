@@ -11,6 +11,6 @@ COMMENT=	PEAR internationalization package
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:devel/pear
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

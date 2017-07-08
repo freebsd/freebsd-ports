@@ -5,9 +5,9 @@ bin/feersum
 %%SITE_ARCH%%/Feersum/Runner.pm
 %%SITE_ARCH%%/Plack/Handler/Feersum.pm
 %%SITE_ARCH%%/auto/Feersum/Feersum.so
+%%PERL5_MAN1%%/feersum.1.gz
 %%PERL5_MAN3%%/Feersum.3.gz
 %%PERL5_MAN3%%/Feersum::Connection.3.gz
 %%PERL5_MAN3%%/Feersum::Connection::Handle.3.gz
 %%PERL5_MAN3%%/Feersum::Runner.3.gz
 %%PERL5_MAN3%%/Plack::Handler::Feersum.3.gz
-%%PERL5_MAN1%%/feersum.1.gz

@@ -3,7 +3,7 @@
 
 PORTNAME=	quadprog
 DISTVERSION=	1.5-5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,6 +13,6 @@ COMMENT=	Functions to solve Quadratic Programming Problems
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

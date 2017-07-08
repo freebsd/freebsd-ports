@@ -3,7 +3,7 @@
 
 PORTNAME=	gogglesmm
 PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libexpat.so:textproc/expat2 \
 		libFOX-1.7.so:x11-toolkits/fox17
+
+BROKEN_powerpc64=	fails to compile: ap_mad.cpp:358:2: \#error fixme
 
 USE_GITHUB=	yes
 

@@ -1,0 +1,102 @@
+From 2c146b4f763f47180a0effb8d8045b0ebb93652c Mon Sep 17 00:00:00 2001
+From: Jan Beulich <jbeulich@suse.com>
+Date: Fri, 2 Jun 2017 12:22:42 +0100
+Subject: [PATCH 2/4] gnttab: fix unmap pin accounting race
+
+Once all {writable} mappings of a grant entry have been unmapped, the
+hypervisor informs the guest that the grant entry has been released by
+clearing the _GTF_{reading,writing} usage flags in the guest's grant
+table as appropriate.
+
+Unfortunately, at the moment, the code that updates the accounting
+happens in a different critical section than the one which updates the
+usage flags; this means that under the right circumstances, there may be
+a window in time after the hypervisor reported the grant as being free
+during which the grant referee still had access to the page.
+
+Move the grant accounting code into the same critical section as the
+reporting code to make sure this kind of race can't happen.
+
+This is part of XSA-218.
+
+Reported-by: Jann Horn <jannh.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/common/grant_table.c | 32 +++++++++++++++++---------------
+ 1 file changed, 17 insertions(+), 15 deletions(-)
+
+diff --git a/xen/common/grant_table.c b/xen/common/grant_table.c
+index 8b22299..cfc483f 100644
+--- a/xen/common/grant_table.c
++++ b/xen/common/grant_table.c
+@@ -1150,15 +1150,8 @@ __gnttab_unmap_common(
+             PIN_FAIL(act_release_out, GNTST_general_error,
+                      "Bad frame number doesn't match gntref. (%lx != %lx)\n",
+                      op->frame, act->frame);
+-        if ( op->flags & GNTMAP_device_map )
+-        {
+-            ASSERT(act->pin & (GNTPIN_devw_mask | GNTPIN_devr_mask));
+-            op->map->flags &= ~GNTMAP_device_map;
+-            if ( op->flags & GNTMAP_readonly )
+-                act->pin -= GNTPIN_devr_inc;
+-            else
+-                act->pin -= GNTPIN_devw_inc;
+-        }
++
++        op->map->flags &= ~GNTMAP_device_map;
+     }
+ 
+     if ( (op->host_addr != 0) && (op->flags & GNTMAP_host_map) )
+@@ -1168,12 +1161,7 @@ __gnttab_unmap_common(
+                                               op->flags)) < 0 )
+             goto act_release_out;
+ 
+-        ASSERT(act->pin & (GNTPIN_hstw_mask | GNTPIN_hstr_mask));
+         op->map->flags &= ~GNTMAP_host_map;
+-        if ( op->flags & GNTMAP_readonly )
+-            act->pin -= GNTPIN_hstr_inc;
+-        else
+-            act->pin -= GNTPIN_hstw_inc;
+     }
+ 
+  act_release_out:
+@@ -1266,6 +1254,12 @@ __gnttab_unmap_common_complete(struct gnttab_unmap_common *op)
+             else
+                 put_page_and_type(pg);
+         }
++
++        ASSERT(act->pin & (GNTPIN_devw_mask | GNTPIN_devr_mask));
++        if ( op->flags & GNTMAP_readonly )
++            act->pin -= GNTPIN_devr_inc;
++        else
++            act->pin -= GNTPIN_devw_inc;
+     }
+ 
+     if ( (op->host_addr != 0) && (op->flags & GNTMAP_host_map) )
+@@ -1274,7 +1268,9 @@ __gnttab_unmap_common_complete(struct gnttab_unmap_common *op)
+         {
+             /*
+              * Suggests that __gntab_unmap_common failed in
+-             * replace_grant_host_mapping() so nothing further to do
++             * replace_grant_host_mapping() or IOMMU handling, so nothing
++             * further to do (short of re-establishing the mapping in the
++             * latter case).
+              */
+             goto act_release_out;
+         }
+@@ -1285,6 +1281,12 @@ __gnttab_unmap_common_complete(struct gnttab_unmap_common *op)
+                 put_page_type(pg);
+             put_page(pg);
+         }
++
++        ASSERT(act->pin & (GNTPIN_hstw_mask | GNTPIN_hstr_mask));
++        if ( op->flags & GNTMAP_readonly )
++            act->pin -= GNTPIN_hstr_inc;
++        else
++            act->pin -= GNTPIN_hstw_inc;
+     }
+ 
+     if ( (op->map->flags & (GNTMAP_device_map|GNTMAP_host_map)) == 0 )
+-- 
+2.1.4
+

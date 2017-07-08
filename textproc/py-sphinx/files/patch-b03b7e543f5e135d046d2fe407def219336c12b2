@@ -1,0 +1,171 @@
+From e1e82e43c9280e7486aad49c7f84a75f4ee1654b Mon Sep 17 00:00:00 2001
+From: Takeshi KOMIYA <i.tkomiya@gmail.com>
+Date: Tue, 12 Jul 2016 02:33:19 +0900
+Subject: [PATCH 1/3] Load some library lazily on sphinx.util to lessen
+ dependency
+
+---
+ sphinx/util/__init__.py | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/sphinx/util/__init__.py b/sphinx/util/__init__.py
+--- sphinx/util/__init__.py.orig
++++ sphinx/util/__init__.py
+@@ -24,12 +24,8 @@
+ from six import iteritems, text_type, binary_type
+ from six.moves import range
+ from six.moves.urllib.parse import urlsplit, urlunsplit, quote_plus, parse_qsl, urlencode
+-import docutils
+ from docutils.utils import relative_path
+ 
+-import jinja2
+-
+-import sphinx
+ from sphinx.errors import PycodeError, SphinxParallelError, ExtensionError
+ from sphinx.util.console import strip_colors
+ from sphinx.util.fileutil import copy_asset_file
+@@ -186,6 +182,9 @@ def copy_static_entry(source, targetdir, builder, context={},
+ 
+ def save_traceback(app):
+     """Save the current exception's traceback in a temporary file."""
++    import sphinx
++    import jinja2
++    import docutils
+     import platform
+     exc = sys.exc_info()[1]
+     if isinstance(exc, SphinxParallelError):
+
+From 2ccb75c98fbe7e69e4689725affa268e7c538315 Mon Sep 17 00:00:00 2001
+From: Takeshi KOMIYA <i.tkomiya@gmail.com>
+Date: Mon, 11 Jul 2016 00:27:06 +0900
+Subject: [PATCH 2/3] Bundle sphinx/pycode/Grammar-*.pickle (ref: #2765)
+
+So far, sphinx generates the grammar files on demand.
+It causes uninstallation does not remove whole of files.
+With this fix, Sphinx bundles the files in the package.
+---
+ MANIFEST.in                   |  3 +--
+ setup.py                      |  5 +++++
+ sphinx/pycode/pgen2/driver.py | 42 ++++++++++++++++++++++++++----------------
+ tox.ini                       |  2 ++
+ 4 files changed, 34 insertions(+), 18 deletions(-)
+
+diff --git a/MANIFEST.in b/MANIFEST.in
+--- MANIFEST.in.orig
++++ MANIFEST.in
+@@ -20,8 +20,7 @@ recursive-include sphinx/search/non-minified-js *.js
+ recursive-include sphinx/ext/autosummary/templates *
+ recursive-include tests *
+ recursive-include utils *
+-include sphinx/pycode/Grammar-py2.txt
+-include sphinx/pycode/Grammar-py3.txt
++include sphinx/pycode/Grammar-py*
+ 
+ recursive-include doc *
+ prune doc/_build
+diff --git a/setup.py b/setup.py
+--- setup.py.orig
++++ setup.py
+@@ -6,6 +6,7 @@
+ from distutils import log
+ 
+ import sphinx
++from sphinx.pycode.pgen2.driver import compile_grammar
+ 
+ long_desc = '''
+ Sphinx is a tool that makes it easy to create intelligent and beautiful
+@@ -72,6 +73,10 @@
+ if sys.platform == 'win32':
+     requires.append('colorama>=0.3.5')
+ 
++# Compile grammars before packaging
++compile_grammar('sphinx/pycode/Grammar-py2.txt')
++compile_grammar('sphinx/pycode/Grammar-py3.txt')
++
+ # Provide a "compile_catalog" command that also creates the translated
+ # JavaScript files if Babel is available.
+ 
+diff --git a/sphinx/pycode/pgen2/driver.py b/sphinx/pycode/pgen2/driver.py
+--- sphinx/pycode/pgen2/driver.py.orig
++++ sphinx/pycode/pgen2/driver.py
+@@ -109,27 +109,37 @@ def generate_lines(text):
+         yield ""
+ 
+ 
+-def load_grammar(gt="Grammar.txt", gp=None,
+-                 save=True, force=False, logger=None):
++def get_compiled_path(filename):
++    head, tail = os.path.splitext(filename)
++    if tail == ".txt":
++        tail = ""
++    # embed Sphinx major version for the case we ever change the grammar...
++    return "%s%s-sphinx%s.pickle" % (head, tail, ".".join(map(str, sphinx.version_info[:2])))
++
++
++def compile_grammar(gt='Grammar.txt', logger=None):
++    """Compile the grammer."""
++    if logger is None:
++        logger = logging.getLogger()
++
++    logger.info("Generating grammar tables from %s", gt)
++    g = pgen.generate_grammar(gt)
++    gp = get_compiled_path(gt)
++    logger.info("Writing grammar tables to %s", gp)
++    try:
++        g.dump(gp)
++    except IOError as e:
++        logger.info("Writing failed:"+str(e))
++
++
++def load_grammar(gt="Grammar.txt", logger=None):
+     """Load the grammar (maybe from a pickle)."""
+     if logger is None:
+         logger = logging.getLogger()
+-    if gp is None:
+-        head, tail = os.path.splitext(gt)
+-        if tail == ".txt":
+-            tail = ""
+-        # embed Sphinx major version for the case we ever change the grammar...
+-        gp = head + tail + "-sphinx" + \
+-             ".".join(map(str, sphinx.version_info[:2])) + ".pickle"
+-    if force or not _newer(gp, gt):
++    gp = get_compiled_path(gt)
++    if not os.path.exists(gp):
+         logger.info("Generating grammar tables from %s", gt)
+         g = pgen.generate_grammar(gt)
+-        if save:
+-            logger.info("Writing grammar tables to %s", gp)
+-            try:
+-                g.dump(gp)
+-            except IOError as e:
+-                logger.info("Writing failed:"+str(e))
+     else:
+         g = grammar.Grammar()
+         g.load(gp)
+
+From 1cabc17edb0c61a7c702c72f98ada38ae0ecaa22 Mon Sep 17 00:00:00 2001
+From: Takeshi KOMIYA <i.tkomiya@gmail.com>
+Date: Tue, 12 Jul 2016 12:10:36 +0900
+Subject: [PATCH 3/3] Remove sphinx version from the filename of compiled
+ grammar files
+
+Now sphinx bundles the compiled grammar files.  Then it will be replaced
+on upgrading sphinx.  So the sphinx version is not needed on its
+filename.
+---
+ sphinx/pycode/pgen2/driver.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/sphinx/pycode/pgen2/driver.py b/sphinx/pycode/pgen2/driver.py
+--- sphinx/pycode/pgen2/driver.py.orig
++++ sphinx/pycode/pgen2/driver.py
+@@ -113,8 +113,7 @@ def get_compiled_path(filename):
+     head, tail = os.path.splitext(filename)
+     if tail == ".txt":
+         tail = ""
+-    # embed Sphinx major version for the case we ever change the grammar...
+-    return "%s%s-sphinx%s.pickle" % (head, tail, ".".join(map(str, sphinx.version_info[:2])))
++    return "%s%s.pickle" % (head, tail)
+ 
+ 
+ def compile_grammar(gt='Grammar.txt', logger=None):

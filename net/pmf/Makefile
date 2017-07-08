@@ -3,12 +3,15 @@
 
 PORTNAME=	pmf
 PORTVERSION=	1.13.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.ntua.gr/pub/net/mud/lpmud/clients/pmf/ \
 		LOCAL/glarkin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Padrone's Mud Frontend
+
+BROKEN_powerpc64=	fails to link: ld: cannot find -lreadline
 
 WRKSRC=		${WRKDIR}/pmfdir
 BUILD_WRKSRC=	${WRKDIR}/pmfdir/src

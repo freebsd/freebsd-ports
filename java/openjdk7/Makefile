@@ -3,7 +3,6 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
-PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
@@ -31,7 +30,10 @@ PATCHFILES=	patch-7u45-b30.xz \
 		patch-7u91-b02.xz \
 		patch-7u95-b00.xz \
 		patch-7u101-b00.xz \
-		patch-7u111-b01.xz
+		patch-7u111-b01.xz \
+		patch-7u121-b00.xz \
+		patch-7u131-b00.xz \
+		patch-7u141-b02.xz
 
 MAINTAINER?=	glewis@FreeBSD.org
 COMMENT?=	Java Development Kit 7
@@ -74,8 +76,8 @@ JAVAVMS_COMMENT+=	JRE
 INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}-jre
 .endif
 
-PORT_MINOR_VERSION=	111
-PORT_BUILD_NUMBER=	01
+PORT_MINOR_VERSION=	141
+PORT_BUILD_NUMBER=	02
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	40
 JDK_BUILD_NUMBER=	43

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cybox
-PORTVERSION=	2.1.0.13
+PORTVERSION=	2.1.0.14
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -15,8 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.2.3:devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}mixbox>=0.0.13:security/py-mixbox
+		${PYTHON_PKGNAMEPREFIX}mixbox>=1.0.2:security/py-mixbox
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	CybOXProject
+GH_PROJECT=	python-${PORTNAME}
 
 NO_ARCH=	yes
 USES=		python

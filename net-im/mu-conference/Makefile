@@ -72,7 +72,6 @@ JABBER_PIDDIR?=         /var/jabberd/pid
 JABBER_SPOOLDIR?=       /var/spool/jabber
 RUN_DEPENDS+=           ejabberdctl:net-im/ejabberd
 .elif ${PORT_OPTIONS:MDAEMON}
-JABBER_REQUIRE?=        DAEMON
 JABBER_USER?=           nobody
 JABBER_PIDDIR?=         /var/run/mu-conference
 JABBER_SPOOLDIR?=       /var/spool/mu-conference

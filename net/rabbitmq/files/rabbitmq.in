@@ -54,9 +54,9 @@ rabbitmq_start()
 		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_HOME}
 	fi
 
-	if [ -d ${RABBITMQ_LOG_BASE} ]; then
-		chown -R ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOG_BASE}
-	fi
+	mkdir -p ${RABBITMQ_LOG_BASE}
+ 
+	chown ${rabbitmq_user}:${rabbitmq_user} ${RABBITMQ_LOG_BASE}
 
 	if [ -f ${RABBITMQ_HOME}/.erlang.cookie ]; then
 		chmod 600 ${RABBITMQ_HOME}/.erlang.cookie

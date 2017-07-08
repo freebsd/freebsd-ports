@@ -12,8 +12,10 @@ COMMENT=	Library for rendering safe templates
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-NO_ARCH=	yes
+DEPRECATED=	Use textproc/rubygem-liquid instead
+EXPIRATION_DATE=2017-07-31
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

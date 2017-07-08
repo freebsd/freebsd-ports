@@ -9,6 +9,7 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	Another hyper make utility
 
 LICENSE=	GPLv1
+LICENSE_FILE=	${WRKSRC}/readme/license.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mohawk2

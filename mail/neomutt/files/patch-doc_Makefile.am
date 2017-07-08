@@ -1,0 +1,11 @@
+--- doc/Makefile.am.orig	2017-06-04 15:16:18 UTC
++++ doc/Makefile.am
+@@ -41,7 +41,7 @@ HTML_DOCFILES = manual.html index.html $(CHUNKED_DOCFI
+ 
+ BUILT_DISTFILES = manual.txt $(HTML_DOCFILES)
+ 
+-srcdir_DOCFILES = PGP-Notes.txt devel-notes.txt smime-notes.txt
++srcdir_DOCFILES = PGP-Notes.txt smime-notes.txt
+ 
+ topsrcdir_DOCFILES = COPYRIGHT LICENSE.md INSTALL ChangeLog ChangeLog.neomutt	\
+ 	README.SSL README.md

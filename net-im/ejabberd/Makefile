@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	17.01
+PORTVERSION=	17.04
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
 		LOCAL/ashish:deps
-DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-10.tar.xz:deps
+DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-11.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -88,7 +88,7 @@ post-install:
 .if ${PORT_OPTIONS:MPAM}
 	@${INSTALL} -m 444 ${FILESDIR}/pam_ejabberd \
 		${STAGEDIR}${PREFIX}/etc/pam.d/ejabberd
-	@${INSTALL} -m 0750 ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/p1_pam-1.0.0/priv/bin/epam \
+	@${INSTALL} -m 0750 ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/epam-1.0.2/priv/bin/epam \
 		${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/priv/bin/epam
 .endif
 	@${FIND} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR} -type f \

@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE.LGPL
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.AL
 
+BROKEN_armv6=		fails to compile: build.xml: compilation failed
+
 USES=		autoreconf:build gmake libtool
 USE_ANT=	yes
 USE_JAVA=	yes

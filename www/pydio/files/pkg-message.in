@@ -60,20 +60,6 @@ is completed, Pydio may be updated using the web interface.
 
 If you are upgrading from Pydio 7 to Pydio 8, please read follow the
 following quickstart guide for FreeBSD users.
-If the installer / upgrader fails upon trying to access it and there is
-an error message in your PHP log about "open_basedir" restriction from
-
-%%WWWDIR%%/pydio/plugins/gui.ajax/RichClient.php
-
-editing the file and changing line 512 from:
-
-if(file_exists(AJXP_INSTALL_PATH . "." . $imagesFolder)){
-
-to
-
-if(file_exists(AJXP_INSTALL_PATH . "/" . $imagesFolder)){
-
-should help with this issue.
 
 When using MySQL as database backend and the user you use for accessing
 the database might temporary need all privileges (GRANT ALL PRIVILEGES)

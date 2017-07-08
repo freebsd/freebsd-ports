@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/librasterlite-sources/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Library that stores and retrieves raster coverages using a SpatiaLite
 
 LICENSE=	MPL GPLv2 LGPL21

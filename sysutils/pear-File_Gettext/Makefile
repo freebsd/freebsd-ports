@@ -8,6 +8,6 @@ CATEGORIES=	sysutils devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR GNU Gettext file parser
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

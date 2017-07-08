@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="corosync_notifyd"
+command="%%PREFIX%%/sbin/corosync-notifyd"
+command_args="-l"
+
+depend() {
+	keyword -shutdown
+}

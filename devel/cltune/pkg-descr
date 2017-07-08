@@ -1,0 +1,5 @@
+CLTune is a C++ library which can be used to automatically tune your OpenCL
+and CUDA kernels. The only thing you'll need to provide is a tuneable kerne 
+and a list of allowed parameters and values.
+
+WWW: https://github.com/CNugteren/CLTune

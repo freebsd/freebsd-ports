@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=portfwd
+
+: ${portfwd_config:="%%PREFIX%%/etc/portfwd.conf"}
+
+required_files="${portfwd_config}"
+command="%%PREFIX%%/sbin/portfwd"
+command_args="-g -c ${portfwd_config}"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

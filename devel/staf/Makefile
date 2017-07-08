@@ -108,9 +108,7 @@ STAF_VAR_DIR?=	/var/db/STAF
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPERL}
-.if ${PERL_LEVEL} >= 502200
 BROKEN=	Perl >= 5.22 is not supported
-.endif
 
 .for i in ${STAF_PERL_VERSIONS}
 .if ${PERL_V} != ${i}

@@ -10,6 +10,8 @@ COMMENT=	Time tracker
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++0x"
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDAB
 GH_PROJECT=	Charm

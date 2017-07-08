@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	URI-Fetch
-PORTVERSION=	0.110
+PORTVERSION=	0.130
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-RequiresInternet>=0.05:devel/p5-Test-RequiresInternet
 
 OPTIONS_DEFINE=	CACHE
 CACHE_DESC=	Caching support

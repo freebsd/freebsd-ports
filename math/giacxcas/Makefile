@@ -3,7 +3,7 @@
 
 PORTNAME=	giacxcas
 DISTVERSION=	1.2.2-57
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/
@@ -17,6 +17,8 @@ COMMENT=	Computer algebra system
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to link
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp \

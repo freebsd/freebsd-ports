@@ -1,6 +1,6 @@
---- chrome/browser/extensions/external_provider_impl.cc.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/extensions/external_provider_impl.cc.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/extensions/external_provider_impl.cc
-@@ -638,7 +638,7 @@ void ExternalProviderImpl::CreateExterna
+@@ -655,7 +655,7 @@ void ExternalProviderImpl::CreateExternalProviders(
          Manifest::EXTERNAL_PREF, Manifest::EXTERNAL_PREF_DOWNLOAD,
          oem_extension_creation_flags));
    }
@@ -9,7 +9,7 @@
    if (!profile->IsLegacySupervised()) {
      provider_list->push_back(base::MakeUnique<ExternalProviderImpl>(
          service,
-@@ -664,7 +664,7 @@ void ExternalProviderImpl::CreateExterna
+@@ -681,7 +681,7 @@ void ExternalProviderImpl::CreateExternalProviders(
          bundled_extension_creation_flags));
  
      // Define a per-user source of external extensions.

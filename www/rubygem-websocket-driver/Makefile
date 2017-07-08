@@ -2,6 +2,7 @@
 
 PORTNAME=	websocket-driver
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,6 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-websocket-extensions>=0.1.0:www/rubygem-websocket-extensions
 
-NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

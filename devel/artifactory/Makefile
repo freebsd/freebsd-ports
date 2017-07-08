@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	artifactory
-PORTVERSION=	5.2.1
+PORTVERSION=	5.4.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://bintray.com/artifact/download/jfrog/artifactory/
 DISTNAME=	jfrog-${PORTNAME}-oss-${PORTVERSION}

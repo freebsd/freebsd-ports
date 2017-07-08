@@ -13,7 +13,7 @@ COMMENT=	Adaptive entropy coding library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	hdf-szip-
+CONFLICTS_INSTALL=	hdf-szip
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

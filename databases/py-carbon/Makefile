@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}txamqp>=0.3:net/py-txamqp \
 		${PYTHON_PKGNAMEPREFIX}whisper>=0.9.10:databases/py-whisper \
 		${PYTHON_PKGNAMEPREFIX}django18>=1.4:www/py-django18
 
+NO_ARCH=	yes
 USE_PYTHON=	distutils
 USES=		python:2 twisted:run
 USE_RC_SUBR=	carbon

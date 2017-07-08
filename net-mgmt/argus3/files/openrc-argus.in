@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name="argus"
+
+# Set defaults
+: ${argus_procname="%%PREFIX%%/sbin/argus"}
+: ${argus_flags="-F %%PREFIX%%/etc/argus.conf"}
+
+pidfile=${argus_pidfile:-'/var/run/argus.pid'}
+required_files="${argus_config}"
+command="%%PREFIX%%/sbin/argus"
+command_args="${argus_flags}"
+supervisor=supervise-daemon
+
+depend() {
+	use net
+}

@@ -1,15 +1,15 @@
---- examples/Makefile.orig	2016-08-11 10:21:42 UTC
+--- examples/Makefile.orig	2017-05-29 13:37:28 UTC
 +++ examples/Makefile
-@@ -85,7 +85,7 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
+@@ -84,7 +84,7 @@ CIMG_EXTRA_FILES = use_tiff_stream use_j
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = _cimg_version
+ CIMG_VERSION = `grep 'cimg_version\ ' ../CImg.h | tail -c4 | head -c3`
 -X11PATH      = /usr/X11R6
 +X11PATH      = $(LOCALBASE)
  EXEPFX       =
  ifeq ($(MSYSTEM),MINGW32)
  EXESFX       = .exe
-@@ -104,7 +104,7 @@ CXXVER       = "icpc \( `$(CXX) -v 2>&1`
+@@ -103,7 +103,7 @@ CXXVER       = "icpc \( `$(CXX) -v 2>&1`
  CFLAGS       = -I..
  LIBS         =
  else
@@ -18,7 +18,7 @@
  LIBS         = -lm
  endif
  
-@@ -128,7 +128,7 @@ CIMG_VT100_CFLAGS = -Dcimg_use_vt100
+@@ -127,7 +127,7 @@ CIMG_VT100_CFLAGS = -Dcimg_use_vt100
  
  # Flags to enable code optimization by the compiler.
  ifeq ($(notdir $(CXX)),g++)
@@ -27,7 +27,7 @@
  else
  ifeq ($(notdir $(CXX)),icpc)
  CIMG_OPT_CFLAGS = -fast
-@@ -148,7 +148,7 @@ endif
+@@ -147,7 +147,7 @@ endif
  
  # Flags to enable OpenCV support.
  CIMG_OPENCV_DEFINE = -Dcimg_use_opencv
@@ -36,7 +36,7 @@
  CIMG_OPENCV_CFLAGS = $(CIMG_OPENCV_DEFINE) $(CIMG_OPENCV_INCDIR)
  CIMG_OPENCV_LIBS = `pkg-config opencv --libs || echo -lopencv_core -lopencv_highgui`
  
-@@ -160,7 +160,7 @@ CIMG_NODISPLAY_CFLAGS = -Dcimg_display=0
+@@ -159,7 +159,7 @@ CIMG_NODISPLAY_CFLAGS = -Dcimg_display=0
  CIMG_X11_DEFINE = -Dcimg_display=1
  CIMG_X11_INCDIR = `pkg-config --cflags x11 || echo -I/usr/X11R6/include`
  CIMG_X11_CFLAGS = $(CIMG_X11_DEFINE) $(CIMG_X11_INCDIR)
@@ -45,7 +45,7 @@
  
  # Flags to enable fast image display, using the XSHM library (when using X11).
  # !!! Seems to randomly crash when used on MacOSX and 64bits systems, so use it only when necessary !!!
-@@ -200,7 +200,7 @@ CIMG_JPEG_LIBS = -ljpeg
+@@ -199,7 +199,7 @@ CIMG_JPEG_LIBS = -ljpeg
  CIMG_TIFF_DEFINE = -Dcimg_use_tiff
  CIMG_TIFF_INCDIR =
  CIMG_TIFF_CFLAGS = $(CIMG_TIFF_DEFINE) $(CIMG_TIFF_INCDIR)
@@ -54,7 +54,7 @@
  
  # Flags to enable native support for MINC2 image files, using the MINC2 library.
  # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
-@@ -212,14 +212,14 @@ CIMG_MINC2_LIBS = -lminc_io -lvolume_io2
+@@ -211,14 +211,14 @@ CIMG_MINC2_LIBS = -lminc_io -lvolume_io2
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
  CIMG_OPENEXR_DEFINE = -Dcimg_use_openexr
@@ -71,7 +71,7 @@
  CIMG_FFMPEG_CFLAGS = $(CIMG_FFMPEG_DEFINE) $(CIMG_FFMPEG_INCDIR)
  CIMG_FFMPEG_LIBS = -lavcodec -lavformat -lswscale
  
-@@ -237,10 +237,10 @@ CIMG_CURL_INCDIR =
+@@ -236,10 +236,10 @@ CIMG_CURL_INCDIR =
  CIMG_CURL_CFLAGS = $(CIMG_CURL_DEFINE)
  CIMG_CURL_LIBS = -lcurl
  
@@ -84,7 +84,7 @@
  CIMG_MAGICK_CFLAGS = $(CIMG_MAGICK_DEFINE) $(CIMG_MAGICK_INCDIR)
  CIMG_MAGICK_LIBS = `pkg-config --libs GraphicsMagick++ || echo -lGraphicsMagick++`
  
-@@ -259,16 +259,19 @@ endif
+@@ -258,16 +258,19 @@ endif
  # ( http://www.netlib.org/lapack/ )
  CIMG_LAPACK_DEFINE = -Dcimg_use_lapack
  CIMG_LAPACK_INCDIR =
@@ -107,7 +107,7 @@
  # Flags to compile on Sun Solaris
  CIMG_SOLARIS_LIBS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
-@@ -343,7 +346,8 @@ $(CIMG_XSHM_CFLAGS)" \
+@@ -342,7 +345,8 @@ $(CIMG_XSHM_CFLAGS)" \
  $(CIMG_X11_LIBS) \
  $(CIMG_TIFF_LIBS) \
  $(CIMG_LAPACK_LIBS) \
@@ -117,7 +117,7 @@
  all $(CIMG_EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -436,8 +440,10 @@ $(CIMG_ZLIB_CFLAGS) \
+@@ -435,8 +439,10 @@ $(CIMG_ZLIB_CFLAGS) \
  $(CIMG_CURL_CFLAGS) \
  $(CIMG_OPENCV_CFLAGS) \
  $(CIMG_MAGICK_CFLAGS) \
@@ -128,7 +128,7 @@
  $(CIMG_X11_LIBS) \
  $(CIMG_XSHM_LIBS) \
  $(CIMG_XRANDR_LIBS) \
-@@ -449,6 +455,7 @@ $(CIMG_ZLIB_LIBS) \
+@@ -448,6 +454,7 @@ $(CIMG_ZLIB_LIBS) \
  $(CIMG_CURL_LIBS) \
  $(CIMG_OPENCV_LIBS) \
  $(CIMG_MAGICK_LIBS) \

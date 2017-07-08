@@ -1,34 +1,32 @@
---- chrome/browser/about_flags.cc.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/about_flags.cc.orig	2017-06-05 19:03:01 UTC
 +++ chrome/browser/about_flags.cc
-@@ -856,7 +856,7 @@ const FeatureEntry kFeatureEntries[] = {
-      kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
-      ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
-                                switches::kDisableSmoothScrolling)},
--#if defined(USE_AURA) || defined(OS_LINUX)
-+#if defined(USE_AURA) || defined(OS_LINUX) || defined(OS_BSD)
-     {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
-      IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
-      // Uses the system preference on Mac (a different implementation).
-@@ -1374,11 +1374,11 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1588,12 +1588,12 @@ const FeatureEntry kFeatureEntries[] = {
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableTranslateNewUX,
                                 switches::kDisableTranslateNewUX)},
  #endif  // OS_MACOSX
 -#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD)
-     {"translate-2016q2-ui", IDS_FLAGS_TRANSLATE_2016Q2_UI_NAME,
-      IDS_FLAGS_TRANSLATE_2016Q2_UI_DESCRIPTION, kOsCrOS | kOsWin | kOsLinux,
+     {"translate-2016q2-ui", flag_descriptions::kTranslate2016q2UiName,
+      flag_descriptions::kTranslate2016q2UiDescription,
+      kOsCrOS | kOsWin | kOsLinux,
       FEATURE_VALUE_TYPE(translate::kTranslateUI2016Q2)},
 -#endif  // OS_LINUX || OS_WIN || OS_CHROMEOS
 +#endif  // OS_LINUX || OS_WIN || OS_CHROMEOS || OS_BSD
-     {"translate-lang-by-ulp", IDS_FLAGS_TRANSLATE_LANGUAGE_BY_ULP_NAME,
-      IDS_FLAGS_TRANSLATE_LANGUAGE_BY_ULP_DESCRIPTION, kOsAll,
+     {"translate-lang-by-ulp", flag_descriptions::kTranslateLanguageByUlpName,
+      flag_descriptions::kTranslateLanguageByUlpDescription, kOsAll,
       FEATURE_VALUE_TYPE(translate::kTranslateLanguageByULP)},
-@@ -1802,7 +1802,7 @@ const FeatureEntry kFeatureEntries[] = {
-      IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
+@@ -2071,12 +2071,12 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kEnableMaterialDesignExtensionsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
  #endif  // ENABLE_EXTENSIONS
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
-     {"enable-input-ime-api", IDS_FLAGS_ENABLE_INPUT_IME_API_NAME,
-      IDS_FLAGS_ENABLE_INPUT_IME_API_DESCRIPTION, kOsWin | kOsLinux,
+     {"enable-input-ime-api", flag_descriptions::kEnableInputImeApiName,
+      flag_descriptions::kEnableInputImeApiDescription, kOsWin | kOsLinux,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,
+                                switches::kDisableInputImeAPI)},
+-#endif  // OS_WIN || OS_LINUX
++#endif  // OS_WIN || OS_LINUX || OS_BSD
+     {"enable-origin-trials", flag_descriptions::kOriginTrialsName,
+      flag_descriptions::kOriginTrialsDescription, kOsAll,
+      FEATURE_VALUE_TYPE(features::kOriginTrials)},

@@ -9,4 +9,4 @@ keyword access require much less memory when compared
 to hashes/objects and yet still provide fast lookup and
 preserve data order.
 
-WWW: https://github.com/ahoward/arrayfields/tree/master
+WWW: https://github.com/ahoward/arrayfields

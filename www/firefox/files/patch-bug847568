@@ -145,10 +145,10 @@ index 2118677ca3a8..e4978b413784 100644
      CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
      CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
 diff --git gfx/thebes/moz.build gfx/thebes/moz.build
-index dee9b7bfa2cb..bd801f3a468e 100644
+index 56f1b9fe3f4b..0ac1100b0df3 100644
 --- gfx/thebes/moz.build
 +++ gfx/thebes/moz.build
-@@ -273,7 +273,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3'):
+@@ -269,7 +269,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3'):
  
  LOCAL_INCLUDES += CONFIG['SKIA_INCLUDES']
  
@@ -167,14 +167,14 @@ diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
 index cb1233c56d7e..06fb1f9f174b 100644
 --- intl/unicharutil/util/moz.build
 +++ intl/unicharutil/util/moz.build
-@@ -40,4 +40,7 @@ if CONFIG['_MSC_VER']:
- if CONFIG['ENABLE_INTL_API']:
-     USE_LIBS += ['icu']
+@@ -29,4 +29,7 @@ if CONFIG['ENABLE_INTL_API']:
+         'ICUUtils.cpp',
+     ]
  
 +if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- DIST_INSTALL = True
+ FINAL_LIBRARY = 'xul'
 diff --git netwerk/dns/moz.build netwerk/dns/moz.build
 index 79c26e3e7001..c4d93bc5f7dc 100644
 --- netwerk/dns/moz.build
@@ -209,7 +209,7 @@ index 95a58b634593..b614eef85c89 100644
 +                               * 100 + GR2_VERSION_BUGFIX >= \
 +                               (major) * 10000 + (minor) * 100 + (bugfix) )
 +                   ], [
-+                     #if !GR2_VERSION_REQUIRE(1,3,8)
++                     #if !GR2_VERSION_REQUIRE(1,3,10)
 +                     #error "Insufficient graphite2 version."
 +                     #endif
 +                   ], [],
@@ -225,7 +225,7 @@ diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 24f940e1ed7e..079a575adec3 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -228,6 +228,12 @@ if CONFIG['MOZ_SYSTEM_JPEG']:
+@@ -224,6 +224,12 @@ if CONFIG['MOZ_SYSTEM_JPEG']:
  if CONFIG['MOZ_SYSTEM_PNG']:
      OS_LIBS += CONFIG['MOZ_PNG_LIBS']
  
@@ -242,7 +242,7 @@ diff --git toolkit/moz.configure toolkit/moz.configure
 index 9297e4d6f501..d8e273887e4b 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -343,6 +343,26 @@ add_old_configure_assignment('FT2_LIBS',
+@@ -356,6 +356,26 @@ add_old_configure_assignment('FT2_LIBS',
  add_old_configure_assignment('FT2_CFLAGS',
                               delayed_getattr(ft2_info, 'cflags'))
  
@@ -261,7 +261,7 @@ index 9297e4d6f501..d8e273887e4b 100644
 +option('--with-system-harfbuzz',
 +       help="Use system harfbuzz (located with pkgconfig)")
 +
-+system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 1.4.1',
++system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 1.4.3',
 +                                    when='--with-system-harfbuzz')
 +
 +set_config('MOZ_SYSTEM_HARFBUZZ', depends_if(system_harfbuzz)(lambda _: True))

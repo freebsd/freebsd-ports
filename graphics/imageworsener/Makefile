@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imageworsener
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/imageworsener/ \
 		LOCAL/sunpoet

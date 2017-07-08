@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name=vmpsd
+
+# Define these vmpsd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/vmpsd
+# 
+# DO NOT CHANGE THESE DEFAULT VALUES HERE 
+
+: ${vmpsd_flags=-f /usr/local/etc/vmps.db}	# Flags to vmpsd program
+
+command=%%PREFIX%%/sbin/${name}
+
+depend() {
+	keyword -shutdown
+}

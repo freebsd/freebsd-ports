@@ -3,7 +3,7 @@
 
 PORTNAME=	knightcap
 PORTVERSION=	3.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.samba.org/pub/KnightCap/ \
 		ftp://ftp.samba.org/pub/KnightCap/

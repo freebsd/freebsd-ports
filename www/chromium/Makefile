@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	58.0.3029.110
-PORTREVISION=	1
+PORTVERSION=	59.0.3071.109
 CATEGORIES=	www
-MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
+MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
 
 MAINTAINER=	chromium@FreeBSD.org
@@ -59,16 +58,17 @@ LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf
 
-ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler bison cpe desktop-file-utils execinfo jpeg \
+ONLY_FOR_ARCHS=	amd64 i386
+USES=		bison compiler cpe desktop-file-utils execinfo jpeg \
 		ninja perl5 pkgconfig python:2,build shebangfix tar:xz
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
+USE_LDCONFIG=	${DATADIR}
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xdamage xfixes xi \
 		xproto xrandr xrender xscrnsaver xtst
-USE_GNOME=	atk glib20 gtk20 gtk30 dconf libxslt libxml2
+USE_GNOME=	atk dconf glib20 gtk20 gtk30 libxml2 libxslt
 MAKE_ARGS=	-C out/${BUILDTYPE}
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 ALL_TARGET=	chrome
@@ -80,20 +80,22 @@ INSTALLS_ICONS=	yes
 # Some parts don't have use_system_* flag, and can be turned on/off by using
 # replace_gn_files.py script, some parts just turned on/off for target host
 # OS "target_os == is_bsd", like libusb, libpci.
-GN_ARGS+=	is_clang=true \
-		clang_use_chrome_plugins=false \
+GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_media_router=true \
 		enable_nacl=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		enable_webrtc=false \
 		fieldtrial_testing_like_official_build=true \
+		is_clang=true \
 		toolkit_views=true \
+		treat_warnings_as_errors=false \
 		use_allocator="none" \
 		use_aura=true \
 		use_cups=true \
 		use_experimental_allocator_shim=false \
-		treat_warnings_as_errors=false \
+		use_gtk3=true \
+		use_lld=true \
 		use_sysroot=false \
 		use_system_libjpeg=true \
 		use_system_sqlite=false   # chrome has additional patches
@@ -116,7 +118,7 @@ OPTIONS_DEFINE=	CODECS GCONF KERBEROS DRIVER
 CODECS_DESC=	Compile and enable patented codecs like H.264
 DRIVER_DESC=	Install chromedriver
 OPTIONS_GROUP=		AUDIO TESTS
-OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
+OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 OPTIONS_GROUP_TESTS=	DEBUG TEST
 
 OPTIONS_DEFAULT=	ALSA CODECS DRIVER GCONF KERBEROS
@@ -127,6 +129,15 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
 			alsa-lib>=1.1.1_1:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+# With SNDIO=on we exclude audio_manager_linux from the build (see
+# media/audio/BUILD.gn) and use audio_manager_openbsd which does not
+# support falling back to ALSA.  In theory it supports falling back to
+# PulseAudio, but this is untested.
+SNDIO_PREVENTS=		ALSA PULSEAUDIO
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_VARS=		GN_ARGS+=use_sndio=true
+SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
+
 DRIVER_MAKE_ARGS=chromedriver
 TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 
@@ -148,17 +159,13 @@ GN_ARGS+=	proprietary_codecs=false
 GN_ARGS+=	enable_hevc_demuxing=false
 .endif
 
-DEBUG_MAKE_ENV=	V=1
 .if ${PORT_OPTIONS:MDEBUG}
 BUILDTYPE=	Debug
 GN_ARGS+=	is_debug=true
 GN_BOOTSTRAP_FLAGS+=	--debug
-#GN_ARGS+=	is_component_build=true
+MAKE_ENV+=	V=1
 .else
 BUILDTYPE=	Release
-.if ${ARCH} == amd64
-GN_ARGS+=	use_lld=true # harder, better, faster, stronger
-.endif
 GN_ARGS+=	is_debug=false
 GN_ARGS+=	symbol_level=0
 GN_ARGS+=	remove_webcore_debug_symbols=true
@@ -216,6 +223,12 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
+post-patch-SNDIO-on:
+	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
+	@${CP} ${FILESDIR}/sndio_output.* ${WRKSRC}/media/audio/sndio
+	@${CP} ${FILESDIR}/sndio_input.* ${WRKSRC}/media/audio/sndio
+	@${CP} ${FILESDIR}/audio_manager_openbsd.* ${WRKSRC}/media/audio/openbsd
+
 pre-configure:
 	# We used to remove bundled libraries to be sure that chromium uses
 	# system libraries and not shippen ones.
@@ -246,8 +259,8 @@ test regression-test: build
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.for t in font_service test_ime_driver ui
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${t}.service \
+.for m in font_service test_ime_driver ui
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${m}.service \
 		${STAGEDIR}${DATADIR}
 .endfor
 .for s in 22 24 48 64 128 256
@@ -276,6 +289,12 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/chrome ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/mksnapshot \
 		${STAGEDIR}${DATADIR}
+.if ${PORT_OPTIONS:MDEBUG}
+	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/*.so \
+		${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/character_data_generator \
+		${STAGEDIR}${DATADIR}
+.endif
 .if ${PORT_OPTIONS:MDRIVER}
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chromedriver \
 		${STAGEDIR}${PREFIX}/bin

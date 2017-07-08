@@ -12,6 +12,7 @@ COMMENT=	Extensions to MooseX::Types::DateTime
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-DateTime>=0.43.02:devel/p5-DateTime \
 		p5-DateTimeX-Easy>=0.085:devel/p5-DateTimeX-Easy \
@@ -27,10 +28,4 @@ NO_ARCH=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001014:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

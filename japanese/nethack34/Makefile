@@ -15,6 +15,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanized NetHack
 
+BROKEN_FreeBSD_12=	fails to build: stdlib.h: conflicting types for 'srandom'
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gmake tar:tgz

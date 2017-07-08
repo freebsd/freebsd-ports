@@ -67,6 +67,7 @@
     SUBDIR += R-cran-quantreg
     SUBDIR += R-cran-rgenoud
     SUBDIR += R-cran-sandwich
+    SUBDIR += R-cran-sf
     SUBDIR += R-cran-sm
     SUBDIR += R-cran-sp
     SUBDIR += R-cran-spdep
@@ -74,6 +75,7 @@
     SUBDIR += R-cran-stabledist
     SUBDIR += R-cran-survey
     SUBDIR += R-cran-truncnorm
+    SUBDIR += R-cran-units
     SUBDIR += R-cran-xts
     SUBDIR += R-cran-zoo
     SUBDIR += aamath
@@ -103,6 +105,7 @@
     SUBDIR += biggles
     SUBDIR += blacs
     SUBDIR += blas
+    SUBDIR += blis
     SUBDIR += blitz++
     SUBDIR += blocksolve95
     SUBDIR += bsdnt
@@ -120,6 +123,7 @@
     SUBDIR += clarence
     SUBDIR += clasp
     SUBDIR += clblas
+    SUBDIR += clblast
     SUBDIR += clfft
     SUBDIR += clipper
     SUBDIR += cln
@@ -315,6 +319,7 @@
     SUBDIR += octave-forge-base
     SUBDIR += octave-forge-bim
     SUBDIR += octave-forge-bioinfo
+    SUBDIR += octave-forge-bsltl
     SUBDIR += octave-forge-cgi
     SUBDIR += octave-forge-civil-engineering
     SUBDIR += octave-forge-communications
@@ -711,6 +716,7 @@
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += unuran
+    SUBDIR += viennacl
     SUBDIR += vowpal_wabbit
     SUBDIR += vtk5
     SUBDIR += vtk5-data

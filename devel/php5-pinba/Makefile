@@ -12,6 +12,8 @@ COMMENT=	PHP-extension part of statistics server for PHP
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
+BROKEN_powerpc64=	fails to compile: class 'google::protobuf::internal::InternalMetadataWithArenaLite' does not have any field named 'InternalMetadataWithArenaBase'
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tony2001
 GH_PROJECT=	pinba_extension

@@ -3,7 +3,7 @@
 
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
@@ -21,6 +21,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libflickcurl.so:www/flickcurl \
 		libgphoto2.so:graphics/libgphoto2
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
+
+BROKEN_powerpc64=	fails to link: libicuuc.so. undefined reference to __cxa_throw_bad_array_new_length
 
 USES=		desktop-file-utils gettext gmake jpeg libtool pathfix pkgconfig \
 		sqlite

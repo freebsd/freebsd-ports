@@ -12,6 +12,8 @@ COMMENT=	Generic sound synthesizer for Java
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv6=		fails to package: find: *: No such file or directory
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

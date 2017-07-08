@@ -1,11 +1,11 @@
---- dh_fixperms.orig	2017-05-05 19:50:42 UTC
+--- dh_fixperms.orig	2017-06-13 20:32:42 UTC
 +++ dh_fixperms
-@@ -96,7 +96,7 @@ foreach my $package (@{$dh{DOPACKAGES}})
+@@ -97,7 +97,7 @@ on_pkgs_in_parallel {
  
- 	# General permissions fixing.
- 	complex_doit("find $tmp ${find_exclude_options} -print0",
--		"2>/dev/null | xargs -0r chown --no-dereference 0:0");
-+		"2>/dev/null | xargs -0r chown 0:0");
- 	find_and_reset_perm($tmp, 'go=rX,u+rw,a-s', '! -type l');
+ 		# General permissions fixing.
+ 		complex_doit("find $tmp ${find_exclude_options} -print0",
+-					 "2>/dev/null | xargs -0r chown --no-dereference 0:0");
++					 "2>/dev/null | xargs -0r chown 0:0");
+ 		find_and_reset_perm($tmp, 'go=rX,u+rw,a-s', '! -type l');
  	
- 	# Fix up permissions in usr/share/doc, setting everything to not
+ 		# Fix up permissions in usr/share/doc, setting everything to not

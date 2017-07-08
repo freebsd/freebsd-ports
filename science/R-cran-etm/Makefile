@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	etm
+PORTREVISION=	1
 DISTVERSION=	0.6-2
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -12,6 +13,6 @@ COMMENT=	Empirical Transition Matrix
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

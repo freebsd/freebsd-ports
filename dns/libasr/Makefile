@@ -18,7 +18,7 @@ CONFLICTS=	libasr-devel-[0-9]*
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-USES=		libtool ssl:build
+USES=		groff libtool ssl:build
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${OPENSSLINC}

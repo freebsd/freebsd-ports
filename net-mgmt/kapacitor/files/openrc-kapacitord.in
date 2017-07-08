@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable telegrafb:
+# kapacitord_conf (str):          telegraf configuration file
+#                               Default: ${PREFIX}/etc/telegraf.conf
+# kapacitord_flags (str):         Extra flags passed to telegraf
+
+name="kapacitord"
+
+: ${kapacitord_flags:=""}
+: ${kapacitord_conf:="%%PREFIX%%/etc/kapacitor.conf"}
+
+# daemon
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/${name}"
+command_args="${kapacitord_flags} -config=${kapacitord_conf} >> /var/log/kapacitord.log 2>&1"
+supervisor=supervise-daemon
+
+depend() {
+	use net
+	keyword -shutdown
+}

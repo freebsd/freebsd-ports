@@ -584,7 +584,6 @@ usr/lib/i686/nosegneg/librt-2.12.so
 usr/lib/i686/nosegneg/librt.so.1
 usr/lib/i686/nosegneg/libthread_db-1.0.so
 usr/lib/i686/nosegneg/libthread_db.so.1
-usr/lib/krb5/plugins/kdb/db2.so
 usr/lib/ld-2.12.so
 usr/lib/ld-linux.so.2
 usr/lib/ld-lsb.so.3
@@ -658,10 +657,6 @@ usr/lib/libidn.so.11
 usr/lib/libidn.so.11.6.1
 usr/lib/libk5crypto.so.3
 usr/lib/libk5crypto.so.3.1
-usr/lib/libkadm5clnt_mit.so.8
-usr/lib/libkadm5clnt_mit.so.8.0
-usr/lib/libkadm5srv_mit.so.8
-usr/lib/libkadm5srv_mit.so.8.0
 usr/lib/libkdb5.so.6
 usr/lib/libkdb5.so.6.0
 usr/lib/libkeyutils.so.1

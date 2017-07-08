@@ -13,6 +13,8 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 .endif
 PKGDIR=		${.CURDIR}
 
+BROKEN_powerpc64=	fails to compile: swigutil_rb.c: 'ruby_errinfo' undeclared
+
 USE_RUBY=	yes
 
 SVN_BUILD_BINDINGS=	yes

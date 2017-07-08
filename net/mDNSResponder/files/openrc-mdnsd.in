@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=mdnsd
+
+: ${mdnsd_pidfile="/var/run/${name}.pid"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="${mdnsd_pidfile}"
+
+depend() {
+	keyword -shutdown
+}

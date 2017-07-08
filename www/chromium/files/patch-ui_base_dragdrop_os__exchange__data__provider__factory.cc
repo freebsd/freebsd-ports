@@ -1,4 +1,4 @@
---- ui/base/dragdrop/os_exchange_data_provider_factory.cc.orig	2017-04-19 19:06:54 UTC
+--- ui/base/dragdrop/os_exchange_data_provider_factory.cc.orig	2017-06-05 19:03:30 UTC
 +++ ui/base/dragdrop/os_exchange_data_provider_factory.cc
 @@ -8,7 +8,7 @@
  
@@ -9,7 +9,7 @@
  #include "ui/base/dragdrop/os_exchange_data_provider_aura.h"
  #elif defined(OS_MACOSX)
  #include "ui/base/dragdrop/os_exchange_data_provider_builder_mac.h"
-@@ -34,7 +34,7 @@ OSExchangeDataProviderFactory::CreatePro
+@@ -42,7 +42,7 @@ OSExchangeDataProviderFactory::CreateProvider() {
  
  #if defined(USE_X11) && !defined(OS_CHROMEOS)
    return base::MakeUnique<OSExchangeDataProviderAuraX11>();

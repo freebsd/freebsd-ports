@@ -1,6 +1,6 @@
---- src/netstat.c.orig	2007-08-17 13:07:10.654911645 -0500
-+++ src/netstat.c	2007-08-17 13:07:19.496912514 -0500
-@@ -243,7 +243,6 @@
+--- src/netstat.c.orig	2005-05-08 06:55:00 UTC
++++ src/netstat.c
+@@ -243,7 +243,6 @@ PyFB_ifstats(PyObject *self)
  		Py_DECREF(t);
  		p_int(type);        p_int(physical);
  		p_int(addrlen);     p_int(hdrlen);

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cadabra2
-PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTVERSION=	2.1.4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@rawbw.com

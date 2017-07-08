@@ -58,11 +58,11 @@
            AC_COMPILE_IFELSE([AC_LANG_SOURCE(
            [[__asm__(
 -                ".arch armv8-a+crypto\n\t"
-+		".cpu generic+simd\n\t"
++		 ".cpu generic+simd\n\t"
 +
-+		"mov w0, \#42;\n\t"
-+		"dup v0.8b, w0;\n\t"
-+		"ld4 {v0.8b,v1.8b,v2.8b,v3.8b},[x0],\#32;\n\t"
++		 "mov w0, \#42;\n\t"
++		 "dup v0.8b, w0;\n\t"
++		 "ld4 {v0.8b,v1.8b,v2.8b,v3.8b},[x0],\#32;\n\t"
  
                  "sha1h s0, s0;\n\t"
                  "sha1c q0, s0, v0.4s;\n\t"

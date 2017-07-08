@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name="%%NAME%%"
+
+: ${fprobe_flags:="-i lo0 127.0.0.1:2055"}
+
+command="%%PREFIX%%/sbin/fprobe"
+pidfile="/var/run/$name.pid"
+
+depend() {
+	use net
+	keyword -shutdown
+}

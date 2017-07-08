@@ -1,6 +1,6 @@
---- components/storage_monitor/storage_monitor_freebsd.cc.orig	2017-04-22 13:58:19 UTC
+--- components/storage_monitor/storage_monitor_freebsd.cc.orig	2017-06-11 01:51:38 UTC
 +++ components/storage_monitor/storage_monitor_freebsd.cc
-@@ -0,0 +1,101 @@
+@@ -0,0 +1,54 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -30,53 +30,6 @@
 +namespace storage_monitor {
 +
 +namespace {
-+
-+// udev device property constants.
-+const char kBlockSubsystemKey[] = "block";
-+const char kDiskDeviceTypeKey[] = "disk";
-+const char kFsUUID[] = "ID_FS_UUID";
-+const char kLabel[] = "ID_FS_LABEL";
-+const char kModel[] = "ID_MODEL";
-+const char kModelID[] = "ID_MODEL_ID";
-+const char kRemovableSysAttr[] = "removable";
-+const char kSerialShort[] = "ID_SERIAL_SHORT";
-+const char kSizeSysAttr[] = "size";
-+const char kVendor[] = "ID_VENDOR";
-+const char kVendorID[] = "ID_VENDOR_ID";
-+
-+StorageMonitor::EjectStatus EjectPathOnFileThread(
-+    const base::FilePath& path,
-+    const base::FilePath& device) {
-+  DCHECK(BrowserThread::CurrentlyOn(BrowserThread::FILE));
-+
-+  static const char kUmountBinary[] = "/sbin/umount";
-+  std::vector<std::string> command;
-+  command.push_back(kUmountBinary);
-+  command.push_back(path.value());
-+
-+  base::LaunchOptions options;
-+  base::Process process = base::LaunchProcess(command, options);
-+  if (!process.IsValid())
-+    return StorageMonitor::EJECT_FAILURE;
-+
-+  int exit_code = -1;
-+  if (!process.WaitForExitWithTimeout(base::TimeDelta::FromMilliseconds(3000),
-+                                      &exit_code)) {
-+    process.Terminate(-1, false);
-+    base::EnsureProcessTerminated(std::move(process));
-+    return StorageMonitor::EJECT_FAILURE;
-+  }
-+
-+  // TODO(gbillock): Make sure this is found in documentation
-+  // somewhere. Experimentally it seems to hold that exit code
-+  // 1 means device is in use.
-+  if (exit_code == 1)
-+    return StorageMonitor::EJECT_IN_USE;
-+  if (exit_code != 0)
-+    return StorageMonitor::EJECT_FAILURE;
-+
-+  return StorageMonitor::EJECT_OK;
-+}
 +
 +}  // namespace
 +

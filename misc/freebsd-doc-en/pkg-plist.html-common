@@ -13,6 +13,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts/2.png

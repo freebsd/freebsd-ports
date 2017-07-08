@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	atk
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES=	accessibility rubygems
 MASTER_SITES=	RG
 

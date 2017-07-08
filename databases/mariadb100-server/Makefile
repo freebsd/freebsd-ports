@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.30
-PORTREVISION?=	2
+PORTVERSION=	10.0.31
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -24,13 +24,12 @@ LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		Fails to link: missing sbrk
-BROKEN_powerpc64=	Does not build: g++49: internal compiler error: Killed (program cc1plus)
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SLAVEDIRS=	databases/mariadb100-client
-USES=		bison:build cmake compiler:c++11-lib cpe execinfo \
+USES=		bison:build cmake:noninja compiler:c++11-lib cpe execinfo \
 		ncurses shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql ${PREFIX}/lib/mysql/plugin
 SHEBANG_FILES=	scripts/*.sh
@@ -76,7 +75,6 @@ CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 
 .if !defined(CLIENT_ONLY)
 # MySQL-Server options
-USE_LDCONFIG+=		${PREFIX}/lib/mysql/plugin
 OPTIONS_DEFINE+=	MAXKEY
 OPTIONS_DEFAULT+=	MAXKEY
 OPTIONS_GROUP=		ENGINES
@@ -102,7 +100,9 @@ FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
 USES+=		readline
 .else
 # MySQL-Server part
+BROKEN_powerpc64=	Does not build: fatal error: sys/platform/ppc.h: No such file or directory
 USES+=		mysql:100m
+USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 USE_RC_SUBR=	mysql-server
 USERS=		mysql
 GROUPS=		mysql

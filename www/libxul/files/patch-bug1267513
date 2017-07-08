@@ -1,0 +1,24 @@
+commit 3b7f1ae5dfd5
+Author: Matt Brubeck <mbrubeck@limpet.net>
+Date:   Mon Apr 25 09:33:12 2016 -0700
+
+    Don't redefine max_align_t if defined by GCC or Clang
+    
+    Fixes "conflicting types" error when building with `-std=c11`.
+---
+ halloc/src/align.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git media/libnestegg/src/align.h media/libnestegg/src/align.h
+index 58c82b4354ff..1753b504fc2b 100644
+--- media/libnestegg/src/align.h
++++ media/libnestegg/src/align.h
+@@ -22,7 +22,7 @@
+  */
+ typedef double max_align_t;
+ 
+-#else
++#elif !defined(__CLANG_MAX_ALIGN_T_DEFINED) && !defined(_GCC_MAX_ALIGN_T)
+ 
+ /*
+  *	a type with the most strict alignment requirements

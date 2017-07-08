@@ -1,0 +1,36 @@
+#! /bin/sh
+
+# PROVIDE: mastodon_stream
+# REQUIRE: LOGIN postgresql nginx redis
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable the Mastodon streaming
+# service.
+#
+#  mastodon_stream_enable="YES"
+
+. /etc/rc.subr
+
+name=mastodon_stream
+rcvar="${name}_enable"
+
+sig_stop="HUP"
+
+load_rc_config "$name"
+
+: ${mastodon_stream_enable:="NO"}
+: ${mastodon_stream_port="4000"}
+
+mastodon_stream_chdir="%%WWWDIR%%"
+mastodon_stream_env="HOME=%%WWWDIR%% \
+NODE_ENV=production \
+PORT=\"${mastodon_stream_port}\" \
+USER=mastodon"
+mastodon_stream_user="mastodon"
+
+command="%%PREFIX%%/bin/node"
+command_args="%%WWWDIR%%/node_modules/.bin/babel-node ./streaming/index.js \
+>> /var/log/mastodon/${name}.log 2>&1 &"
+
+run_rc_command "$1"

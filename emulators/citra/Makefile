@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20170516
+PORTVERSION=	s20170622
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -10,9 +10,9 @@ COMMENT=	Nintendo 3DS emulator/debugger
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE BSL GPLv2+ LGPL21+ UNLICENSE
 LICENSE_COMB=	multi
-LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/externals/dynarmic/externals/fmt/LICENSE.rst
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/externals/fmt/LICENSE.rst
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/externals/inih/inih/LICENSE.txt
-LICENSE_FILE_BSL=	${WRKSRC}/externals/catch/LICENSE_1_0.txt
+LICENSE_FILE_BSL=	${WRKSRC}/externals/catch/LICENSE.txt
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/license.txt
 LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 LICENSE_NAME_UNLICENSE=	The Unlicense
@@ -29,13 +29,13 @@ ONLY_FOR_ARCHS_REASON=	https://github.com/MerryMage/dynarmic/issues/35
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	8d558777a
+GH_TAGNAME=	cac1133bc
 GH_TUPLE=	citra-emu:ext-soundtouch:5274ec4:soundtouch/externals/soundtouch \
-		MerryMage:dynarmic:358cf7c:dynarmic/externals/dynarmic \
-		fmtlib:fmt:3.0.0-146-g796beaa:fmt/externals/dynarmic/externals/fmt \
+		MerryMage:dynarmic:8f15e3f:dynarmic/externals/dynarmic \
+		fmtlib:fmt:3.0.0-187-gac5484c:fmt/externals/fmt \
 		herumi:xbyak:v5.40:xbyak/externals/xbyak \
 		neobrain:nihstro:7e24743:nihstro/externals/nihstro \
-		philsquared:Catch:v1.4.0:catch/externals/catch \
+		philsquared:Catch:v1.9.4:catch/externals/catch \
 		svn2github:inih:603729d:inih/externals/inih/inih \
 		weidai11:cryptopp:CRYPTOPP_5_6_5-164-g841c37e:cryptopp/externals/cryptopp/cryptopp
 

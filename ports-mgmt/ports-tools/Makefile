@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ports-tools
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	pawel@FreeBSD.org

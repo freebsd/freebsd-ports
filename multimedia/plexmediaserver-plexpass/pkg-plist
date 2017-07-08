@@ -72,6 +72,7 @@
 %%DATADIR%%/Resources/Graphics/dvr/dvr-program-guide-icon.png
 %%DATADIR%%/Resources/Graphics/dvr/dvr-schedule-icon.png
 %%DATADIR%%/Resources/Graphics/dvr/dvr-sports-icon.png
+%%DATADIR%%/Resources/Graphics/dvr/dvr-watchnow-icon.png
 %%DATADIR%%/Resources/Graphics/favicon.ico
 %%DATADIR%%/Resources/Graphics/iphoto-fanart.jpg
 %%DATADIR%%/Resources/Graphics/iphoto-icon.png
@@ -1454,11 +1455,10 @@
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/img/desktop/ios/startup-iphone5-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/index.html
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-0-f0760d99ddbdda27597f-plex-3.4.1-827e8cb.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/manifest-2-3451af85e340b264b8cd-plex-3.4.1-827e8cb.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-1-e538f87cdbf422b15ee9-plex-3.4.1-827e8cb.js
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.9d919f19480decf266abdf363d7e44c7.css
-%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.98047c016701899f273132d460113470.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/main-0-99755cd0d68fb34ec303-plex-3.9.1-85417e0.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/js/vendors-1-05ee7eb11f0adf375042-plex-3.9.1-85417e0.js
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.571a2c1e67571148c8a3e747308c8c7d.css
+%%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/main.v3.9353e9cd31668f10add16b224dfe5d78.css
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
 %%DATADIR%%/Resources/Plug-ins-%%PLEX_BUILD%%/WebClient.bundle/Contents/Resources/swf/jwplayer/plex.xml

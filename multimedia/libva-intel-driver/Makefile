@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva-intel-driver
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org

@@ -1,0 +1,14 @@
+--- configure.orig	2016-04-20 21:18:10 UTC
++++ configure
+@@ -1696,9 +1696,8 @@ MOZJS_MINOR_VERSION=`echo $MOZILLA_VERSION | sed "s|^[
+ MOZJS_PATCH_VERSION=`echo $MOZILLA_VERSION | sed "s|^[0-9]*\.[0-9]*[^0-9]*||"`
+ IS_ALPHA=`echo $MOZILLA_VERSION | grep '[ab]'`
+ 
+-JS_SHELL_NAME=js
+-JS_CONFIG_NAME=js-config
+-
++JS_SHELL_NAME=js$MOZJS_MAJOR_VERSION
++JS_CONFIG_NAME=js$MOZJS_MAJOR_VERSION-config
+ 
+ if test -n "$IS_ALPHA"; then
+   

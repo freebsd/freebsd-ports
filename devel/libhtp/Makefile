@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libhtp
-PORTVERSION=	0.5.23
+PORTVERSION=	0.5.24
 CATEGORIES=	devel
 
 MAINTAINER=	koobs@FreeBSD.org

@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/WWW::RobotRules.3.gz
-%%PERL5_MAN3%%/WWW::RobotRules::AnyDBM_File.3.gz
 %%SITE_PERL%%/WWW/RobotRules.pm
 %%SITE_PERL%%/WWW/RobotRules/AnyDBM_File.pm
+%%PERL5_MAN3%%/WWW::RobotRules.3.gz
+%%PERL5_MAN3%%/WWW::RobotRules::AnyDBM_File.3.gz

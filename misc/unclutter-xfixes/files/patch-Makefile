@@ -1,0 +1,32 @@
+Index: Makefile
+===================================================================
+--- Makefile.orig	2016-05-16 09:27:55 UTC
++++ Makefile
+@@ -4,9 +4,9 @@ IDIR = include
+ ODIR = obj
+ 
+ INSTALL = install
+-PREFIX = /usr/bin
+ 
+-MANDIR = /usr/share/man/man1
++BINDIR = /bin
++MANDIR = /man/man1
+ 
+ CC = gcc
+ CFLAGS += -I$(IDIR)
+@@ -32,12 +32,12 @@ $(TARGET): $(OBJS)
+ 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(LIBS)
+ 
+ $(ODIR)/%.o: $(SDIR)/%.c $(INCS)
+-	$(CC) -D'__VERSION="$(shell git describe --all --long --always)"' $(CFLAGS) -o $@ -c $<
++	$(CC) -D'__VERSION="$(UNCLUTTER_VERSION)"' $(CFLAGS) -o $@ -c $<
+ 
+ .PHONY: install
+ install: $(TARGET)
+-	$(INSTALL) -Dm 0755 $(TARGET) $(DESTDIR)$(PREFIX)/$(TARGET)
+-	$(INSTALL) -Dm 0644 man/unclutter-xfixes.1 $(DESTDIR)$(MANDIR)/unclutter.1
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(PREFIX)$(BINDIR)/$(TARGET)
++	$(BSD_INSTALL_MAN) man/unclutter-xfixes.1 $(DESTDIR)$(PREFIX)$(MANDIR)/$(TARGET).1
+ 
+ .PHONY: uninstall
+ uninstall:

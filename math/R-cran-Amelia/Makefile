@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Amelia
+PORTREVISION=	1
 DISTVERSION=	1.7.4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -17,6 +18,6 @@ BUILD_DEPENDS=	R-cran-Rcpp>=0.11:devel/R-cran-Rcpp \
 RUN_DEPENDS=	R-cran-Rcpp>=0.11:devel/R-cran-Rcpp \
 		R-cran-RcppArmadillo>=0:math/R-cran-RcppArmadillo
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

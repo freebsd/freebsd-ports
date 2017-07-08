@@ -13,6 +13,8 @@ LICENSE=	GPLv3
 BUILD_DEPENDS+=	${LOCALBASE}/include/uuid/uuid.h:misc/e2fsprogs-libuuid
 LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
 
+BROKEN_FreeBSD_12=	fails to compile: freebsd_sysctl.c: storage size of 'vmmeter_data' isn't known
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	firehol
 GH_TAGNAME=	f5fa346

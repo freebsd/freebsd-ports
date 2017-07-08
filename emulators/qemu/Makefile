@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -21,6 +22,8 @@ USE_XORG=	pixman
 USE_GNOME+=	cairo glib20
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 .endif
+
+BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
@@ -107,11 +110,11 @@ MAKE_ARGS+=	ARCH=ppc64
 CONFIGURE_ARGS+=	--sparc_cpu=v9
 .endif
 
-# clang in freebsd 10 is unable to assemble linuxboot_dma.bin 
-.if (${OSVERSION} < 1100000) 
-PLIST_SUB+=     LINUXBOOT_DMA="@comment " 
-.else 
-PLIST_SUB+=     LINUXBOOT_DMA="" 
+# clang in freebsd 10 is unable to assemble linuxboot_dma.bin
+.if (${OSVERSION} < 1100000)
+PLIST_SUB+=     LINUXBOOT_DMA="@comment "
+.else
+PLIST_SUB+=     LINUXBOOT_DMA=""
 .endif
 
 # -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)

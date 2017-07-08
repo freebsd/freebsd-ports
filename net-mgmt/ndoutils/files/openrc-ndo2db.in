@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable ndo2db:
+# ndo2db_flags (str):      Set to "" by default.
+# ndo2db_configfile (str): Set to "%%PREFIX%%/etc/nagios/ndo2db.cfg" by default.
+
+: ${ndo2db_configfile="%%PREFIX%%/etc/nagios/ndo2db.cfg"}
+
+name="ndo2db"
+
+command="%%PREFIX%%/bin/ndo2db-3x"
+required_files="${ndo2db_configfile}"
+command_args="-c ${ndo2db_configfile}"
+
+depend() {
+	need nagios
+	keyword -shutdown
+}

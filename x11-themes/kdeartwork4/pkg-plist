@@ -9,9 +9,7 @@ bin/kgravity.kss
 bin/klines.kss
 bin/klorenz.kss
 bin/kpartsaver.kss
-bin/kpendulum.kss
 bin/kpolygon.kss
-bin/krotation.kss
 bin/kscience.kss
 bin/kslideshow.kss
 bin/ksolarwinds.kss

@@ -3,16 +3,16 @@
 
 PORTNAME=	wping
 PORTVERSION=	0.1a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Web-based graphical ping log
 
-RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD \
-		p5-Time-HiRes>=0:devel/p5-Time-HiRes
+RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD
 
+NO_ARCH=	yes
 USES=		perl5 tar:bzip2 shebangfix
 SHEBANG_FILES=	wping.pl
 NO_BUILD=	yes

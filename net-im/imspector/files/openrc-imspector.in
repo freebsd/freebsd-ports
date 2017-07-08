@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# imspector_config (path):   Set to %%ETCDIR%%/imspector.conf
+#               by default.
+
+name="imspector"
+command=%%PREFIX%%/sbin/${name}
+
+: ${imspector_config="%%ETCDIR%%/imspector.conf"}
+
+command_args="-c $imspector_config"
+
+depend() {
+	keyword -shutdown
+}

@@ -8,6 +8,6 @@ CATEGORIES=	devel pear
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Implements singly and doubly-linked lists
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

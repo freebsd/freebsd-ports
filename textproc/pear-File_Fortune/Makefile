@@ -9,6 +9,6 @@ CATEGORIES=	textproc pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Interface for reading from and writing to fortune files
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

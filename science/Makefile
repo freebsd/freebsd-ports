@@ -16,6 +16,7 @@
     SUBDIR += R-cran-etm
     SUBDIR += R-cran-snow
     SUBDIR += R-cran-som
+    SUBDIR += R-cran-udunits2
     SUBDIR += afni
     SUBDIR += avogadro
     SUBDIR += bddsolve
@@ -63,6 +64,7 @@
     SUBDIR += hdf5
     SUBDIR += hdf5-18
     SUBDIR += hs-bio
+    SUBDIR += hypre
     SUBDIR += iboview
     SUBDIR += isaac-cfd
     SUBDIR += jstrack

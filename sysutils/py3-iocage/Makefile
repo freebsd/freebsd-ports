@@ -11,8 +11,6 @@ COMMENT=	FreeBSD jail manager written in Python3
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_PACKAGE=	should be compiled using python ${PYTHON_VER} or greater
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py3-pytest-runner
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py3-click \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.10.0:misc/py3-tqdm \
@@ -31,17 +29,5 @@ USES=		python:3.6
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py-iocage-[0-9]* iocage-[0-9]* iocage-devel-[0-9]*
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "##################################################"
-	@${ECHO_MSG} " The new iocage needs python ${PYTHON_VER} or greater."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " If you want use the new iocage, stop the build now and"
-	@${ECHO_MSG} " add this line to your /etc/make.conf, and then restart the build."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " DEFAULT_VERSIONS+=python3=${PYTHON_VER}"
-	@${ECHO_MSG} "##################################################"
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

@@ -22,3 +22,28 @@
          BASE_LDFLAGS=""
          ;;
  esac
+@@ -20999,6 +20993,16 @@
+         fi
+     fi
+ }
++ 
++CheckSndio()
++{
++if test "x${enable_sndio}" = "xyes"; then :
++  SOURCES="$SOURCES $srcdir/src/audio/sndio/SDL_sndioaudio.c"
++  EXTRA_CFLAGS="$EXTRA_CFLAGS -DSDL_AUDIO_DRIVER_SNDIO=1"
++  EXTRA_LDFLAGS="$EXTRA_LDFLAGS -lsndio"
++  have_audio=yes
++fi
++}
+ 
+ CheckPulseAudio()
+ {
+@@ -29551,6 +29555,7 @@
+         CheckALSA
+         CheckARTSC
+         CheckESD
++        CheckSndio
+         CheckPulseAudio
+         CheckNAS
+         CheckX11

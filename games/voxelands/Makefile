@@ -2,7 +2,7 @@
 
 PORTNAME=		voxelands
 PORTVERSION=		1604.00
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		games
 MASTER_SITES=		http://voxelands.com/downloads/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src
@@ -14,6 +14,8 @@ LICENSE=		GPLv3+
 
 LIB_DEPENDS=		libIrrlicht.so:x11-toolkits/irrlicht \
 			libfreetype.so:print/freetype2
+
+BROKEN_powerpc64=	fails to link: sibling call optimization does not allow automatic multiple TOCs
 
 USES=			cmake tar:bzip2
 

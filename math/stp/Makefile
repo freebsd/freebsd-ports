@@ -15,7 +15,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=		bison:build cmake perl5 tar:xz
+USES=		bison:build cmake:noninja perl5 tar:xz
 USE_PERL5=	build
 CMAKE_ARGS=	-DFL_LIBRARY=/usr/lib/libfl.a
 

@@ -33,6 +33,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 RUN_DEPENDS=	duk:lang/duktape \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
+BROKEN_powerpc64=	fails to compile: dukky.h:40: expected declaration specifiers or '...' before 'dom_string'
+
 ALL_TARGET=	#empty
 LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto ${ICONV_LIB}
 CFLAGS+=	-I${OPENSSLINC}

@@ -145,6 +145,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/gui/scrollbuttons_pressed.xml
 %%DATADIR%%/data/graphics/gui/sell.xml
 %%DATADIR%%/data/graphics/gui/server.xml
+%%DATADIR%%/data/graphics/gui/serverinfo.xml
 %%DATADIR%%/data/graphics/gui/shop.xml
 %%DATADIR%%/data/graphics/gui/skillrectanglelistbox.xml
 %%DATADIR%%/data/graphics/gui/slider.xml
@@ -326,6 +327,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/enchilado/quests.xml
 %%DATADIR%%/data/themes/enchilado/sell.xml
 %%DATADIR%%/data/themes/enchilado/server.xml
+%%DATADIR%%/data/themes/enchilado/serverinfo.xml
 %%DATADIR%%/data/themes/enchilado/shop.xml
 %%DATADIR%%/data/themes/enchilado/window.png
 %%DATADIR%%/data/themes/enchilado/window.xml
@@ -425,6 +427,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/golden-delicious/scrollbuttons_pressed.xml
 %%DATADIR%%/data/themes/golden-delicious/sell.xml
 %%DATADIR%%/data/themes/golden-delicious/server.xml
+%%DATADIR%%/data/themes/golden-delicious/serverinfo.xml
 %%DATADIR%%/data/themes/golden-delicious/serverslistbox.xml
 %%DATADIR%%/data/themes/golden-delicious/shop.xml
 %%DATADIR%%/data/themes/golden-delicious/shoplistbox.xml
@@ -539,6 +542,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/jewelry/scrollbuttons_pressed.xml
 %%DATADIR%%/data/themes/jewelry/sell.xml
 %%DATADIR%%/data/themes/jewelry/server.xml
+%%DATADIR%%/data/themes/jewelry/serverinfo.xml
 %%DATADIR%%/data/themes/jewelry/serverslistbox.xml
 %%DATADIR%%/data/themes/jewelry/shop.xml
 %%DATADIR%%/data/themes/jewelry/shoplistbox.xml
@@ -595,6 +599,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/pink/quests.xml
 %%DATADIR%%/data/themes/pink/sell.xml
 %%DATADIR%%/data/themes/pink/server.xml
+%%DATADIR%%/data/themes/pink/serverinfo.xml
 %%DATADIR%%/data/themes/pink/shop.xml
 %%DATADIR%%/data/themes/pink/unknown-item.png
 %%DATADIR%%/data/themes/pink/window.png
@@ -616,6 +621,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/unity/quests.xml
 %%DATADIR%%/data/themes/unity/sell.xml
 %%DATADIR%%/data/themes/unity/server.xml
+%%DATADIR%%/data/themes/unity/serverinfo.xml
 %%DATADIR%%/data/themes/unity/shop.xml
 %%DATADIR%%/data/themes/unity/social.xml
 %%DATADIR%%/data/themes/unity/window.png
@@ -638,6 +644,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/wood/quests.xml
 %%DATADIR%%/data/themes/wood/sell.xml
 %%DATADIR%%/data/themes/wood/server.xml
+%%DATADIR%%/data/themes/wood/serverinfo.xml
 %%DATADIR%%/data/themes/wood/shop.xml
 %%DATADIR%%/data/themes/wood/window.png
 %%DATADIR%%/data/themes/wood/window.xml

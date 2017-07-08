@@ -17,7 +17,8 @@ LIB_DEPENDS=	libtcl84.so:lang/tcl84 \
 		libtk84.so:x11-toolkits/tk84 \
 		libc-client4.so:mail/cclient
 
-BROKEN_sparc64=	fails to build
+BROKEN_armv6=		fails to link: ./ratatosk2.1.so: Undefined symbol "__aeabi_uidivmod"
+BROKEN_sparc64=		fails to build
 
 USES=		ssl
 USE_XORG=	x11 xt

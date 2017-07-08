@@ -1,6 +1,6 @@
---- third_party/webrtc/modules/audio_device/BUILD.gn.orig	2017-04-19 19:07:52 UTC
+--- third_party/webrtc/modules/audio_device/BUILD.gn.orig	2017-06-05 19:04:24 UTC
 +++ third_party/webrtc/modules/audio_device/BUILD.gn
-@@ -82,7 +82,7 @@ rtc_static_library("audio_device") {
+@@ -74,7 +74,7 @@ rtc_static_library("audio_device") {
    ]
  
    include_dirs = []
@@ -9,7 +9,7 @@
      include_dirs += [ "linux" ]
    }
    if (is_ios) {
-@@ -130,7 +130,7 @@ rtc_static_library("audio_device") {
+@@ -124,7 +124,7 @@ rtc_static_library("audio_device") {
      if (rtc_use_dummy_audio_file_devices) {
        defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
      } else {

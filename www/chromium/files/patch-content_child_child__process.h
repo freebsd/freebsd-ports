@@ -1,6 +1,6 @@
---- content/child/child_process.h.orig	2017-04-19 19:06:33 UTC
+--- content/child/child_process.h.orig	2017-06-05 19:03:07 UTC
 +++ content/child/child_process.h
-@@ -82,7 +82,7 @@ class CONTENT_EXPORT ChildProcess {
+@@ -79,7 +79,7 @@ class CONTENT_EXPORT ChildProcess {
    void AddRefProcess();
    void ReleaseProcess();
  

@@ -1,4 +1,4 @@
---- appl/test/Makefile.in.orig	2017-01-03 19:44:14 UTC
+--- appl/test/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ appl/test/Makefile.in
 @@ -170,11 +170,15 @@ am_gssapi_server_OBJECTS = gssapi_server
  	gss_common.$(OBJEXT) common.$(OBJEXT)
@@ -63,7 +63,7 @@
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1)
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -545,9 +565,13 @@ http_client_SOURCES = http_client.c gss_
+@@ -546,9 +566,13 @@ http_client_SOURCES = http_client.c gss_
  
  uu_server_SOURCES = uu_server.c common.c test_locl.h
  uu_client_SOURCES = uu_client.c common.c test_locl.h

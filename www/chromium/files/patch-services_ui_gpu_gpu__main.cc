@@ -1,6 +1,6 @@
---- services/ui/gpu/gpu_main.cc.orig	2017-04-19 19:06:37 UTC
+--- services/ui/gpu/gpu_main.cc.orig	2017-06-05 19:03:11 UTC
 +++ services/ui/gpu/gpu_main.cc
-@@ -59,7 +59,7 @@ GpuMain::GpuMain(mojom::GpuMainRequest r
+@@ -64,7 +64,7 @@ GpuMain::GpuMain(mojom::GpuMainRequest request)
    // runtime.
    thread_options.message_loop_type =
        ui::OzonePlatform::EnsureInstance()->GetMessageLoopTypeForGpu();

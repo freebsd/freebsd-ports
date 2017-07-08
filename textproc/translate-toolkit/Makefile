@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	2.0.0b7
+PORTVERSION=	2.2.3
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -20,12 +20,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml \
 		iso-codes>=1.3:misc/iso-codes \
 		bash:shells/bash \
-		${PYTHON_PKGNAMEPREFIX}utidy>=0:www/py-utidy
+		${PYTHON_PKGNAMEPREFIX}utidylib>=0:www/py-utidylib
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 
 NO_ARCH=	yes
-USES=		gettext python:2.7+ tar:bzip2
+USES=		gettext python:2.7+
 USE_PYTHON=	autoplist distutils
 
 # list of manual pages to generate

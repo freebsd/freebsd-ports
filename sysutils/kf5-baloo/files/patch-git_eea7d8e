@@ -1,0 +1,53 @@
+From eea7d8ec9ecd30649b5f71cdf1f1c903fd1594b4 Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@gmail.com>
+Date: Tue, 9 May 2017 11:02:43 +0200
+Subject: [PATCH] Add support for FreeBSD in FSUtils::getDirectoryFileSystem().
+
+---
+ src/engine/fsutils.cpp | 19 ++++++++++++++++---
+ 1 file changed, 16 insertions(+), 3 deletions(-)
+
+diff --git a/src/engine/fsutils.cpp b/src/engine/fsutils.cpp
+index 76ab12f8..32439873 100644
+--- src/engine/fsutils.cpp
++++ src/engine/fsutils.cpp
+@@ -32,13 +32,16 @@
+ #include <fcntl.h>
+ #endif
+
++#ifdef Q_OS_FREEBSD
++#include <sys/param.h>
++#include <sys/mount.h>
++#endif
++
+ using namespace Baloo;
+
+ QString FSUtils::getDirectoryFileSystem(const QString &directory)
+ {
+-#ifndef Q_OS_LINUX
+-    return QString();
+-#else
++#ifdef Q_OS_LINUX
+     QString bestMatchPath;
+     QString bestMatchFS;
+
+@@ -63,6 +66,16 @@ QString FSUtils::getDirectoryFileSystem(const QString &directory)
+     endmntent(mtab);
+
+     return bestMatchFS;
++#elifdef Q_OS_FREEBSD
++    struct statfs statbuf;
++    if ( statfs(directory.toLocal8Bit(), &statbuf) < 0 )
++    {
++        qWarning() << "statfs error: failed to get file system information";
++        return "";
++    }
++    return statbuf.f_fstypename;
++#else
++    return QString();
+ #endif
+ }
+
+--
+2.12.1
+

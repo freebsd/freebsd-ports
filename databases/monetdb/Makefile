@@ -226,7 +226,6 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/sql/dump-restore.* ${STAGEDIR}${DOCSDIR}
 
 post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/lib/pkgconfig
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/MonetDB-SQL-11.15.19
 	${RM} -r ${STAGEDIR}${PREFIX}/etc/tmpfiles.d
 	${MV} ${STAGEDIR}${PREFIX}/var/*  ${STAGEDIR}${PREFIX}

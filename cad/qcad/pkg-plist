@@ -1200,8 +1200,10 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_zh_CN.ts
 %%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_zh_TW.qm
 %%DATADIR%%/scripts/Block/InsertBlockItem/ts/InsertBlockItem_zh_TW.ts
+%%DATADIR%%/scripts/Block/InsertScriptItem/InsertScriptItem-inverse.svg
 %%DATADIR%%/scripts/Block/InsertScriptItem/InsertScriptItem.js
 %%DATADIR%%/scripts/Block/InsertScriptItem/InsertScriptItem.pro
+%%DATADIR%%/scripts/Block/InsertScriptItem/InsertScriptItem.svg
 %%DATADIR%%/scripts/Block/InsertScriptItem/InsertScriptItemInit.js
 %%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_cs.qm
 %%DATADIR%%/scripts/Block/InsertScriptItem/ts/InsertScriptItem_cs.ts
@@ -7680,6 +7682,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/ClipboardOperation.js
 %%DATADIR%%/scripts/Edit/Collapse-inverse.svg
 %%DATADIR%%/scripts/Edit/Collapse.svg
+%%DATADIR%%/scripts/Edit/ConvertUnit/ConvertUnit-inverse.svg
 %%DATADIR%%/scripts/Edit/ConvertUnit/ConvertUnit.js
 %%DATADIR%%/scripts/Edit/ConvertUnit/ConvertUnit.pro
 %%DATADIR%%/scripts/Edit/ConvertUnit/ConvertUnit.svg
@@ -11874,6 +11877,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ExAddBlock/ExAddBlock.pro
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ExAddBlock/ts/ExAddBlock_de.qm
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ExAddBlock/ts/ExAddBlock_de.ts
+%%DATADIR%%/scripts/Misc/Examples/BlockExamples/ExAddBlock/ts/ExAddBlock_it.qm
+%%DATADIR%%/scripts/Misc/Examples/BlockExamples/ExAddBlock/ts/ExAddBlock_it.ts
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ExAddBlock/ts/ExAddBlock_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ExAddBlock/ts/ExAddBlock_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ExAddBlock/ts/ExAddBlock_sk.qm
@@ -11882,6 +11887,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ExAddBlock/ts/ExAddBlock_sl.ts
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ts/BlockExamples_de.qm
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ts/BlockExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/BlockExamples/ts/BlockExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/BlockExamples/ts/BlockExamples_it.ts
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ts/BlockExamples_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ts/BlockExamples_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/BlockExamples/ts/BlockExamples_sk.qm
@@ -11896,6 +11903,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/CommandLineExamples/ExSetColor/test.dxf
 %%DATADIR%%/scripts/Misc/Examples/CommandLineExamples/ts/CommandLineExamples_de.qm
 %%DATADIR%%/scripts/Misc/Examples/CommandLineExamples/ts/CommandLineExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/CommandLineExamples/ts/CommandLineExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/CommandLineExamples/ts/CommandLineExamples_it.ts
 %%DATADIR%%/scripts/Misc/Examples/CommandLineExamples/ts/CommandLineExamples_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/CommandLineExamples/ts/CommandLineExamples_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/CommandLineExamples/ts/CommandLineExamples_sk.qm
@@ -11909,6 +11918,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExDrawColors/ExDrawColors.pro
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExDrawColors/ts/ExDrawColors_de.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExDrawColors/ts/ExDrawColors_de.ts
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExDrawColors/ts/ExDrawColors_it.qm
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExDrawColors/ts/ExDrawColors_it.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExDrawColors/ts/ExDrawColors_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExDrawColors/ts/ExDrawColors_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExDrawColors/ts/ExDrawColors_sk.qm
@@ -11922,6 +11933,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExLineDove/ExLineDoveInit.js
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExLineDove/ts/ExLineDove_de.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExLineDove/ts/ExLineDove_de.ts
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExLineDove/ts/ExLineDove_it.qm
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExLineDove/ts/ExLineDove_it.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExLineDove/ts/ExLineDove_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExLineDove/ts/ExLineDove_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExLineDove/ts/ExLineDove_sk.qm
@@ -11932,6 +11945,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExText/ExText.pro
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExText/ts/ExText_de.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExText/ts/ExText_de.ts
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExText/ts/ExText_it.qm
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExText/ts/ExText_it.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExText/ts/ExText_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExText/ts/ExText_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExText/ts/ExText_sk.qm
@@ -11942,6 +11957,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExThreePoints/ExThreePoints.pro
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExThreePoints/ts/ExThreePoints_de.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExThreePoints/ts/ExThreePoints_de.ts
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExThreePoints/ts/ExThreePoints_it.qm
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExThreePoints/ts/ExThreePoints_it.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExThreePoints/ts/ExThreePoints_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExThreePoints/ts/ExThreePoints_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExThreePoints/ts/ExThreePoints_sk.qm
@@ -11950,6 +11967,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ExThreePoints/ts/ExThreePoints_sl.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ts/DrawExamples_de.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ts/DrawExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ts/DrawExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/DrawExamples/ts/DrawExamples_it.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ts/DrawExamples_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ts/DrawExamples_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/DrawExamples/ts/DrawExamples_sk.qm
@@ -11964,6 +11983,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/points.txt
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ts/ExDumpPolyline_de.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ts/ExDumpPolyline_de.ts
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ts/ExDumpPolyline_it.qm
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ts/ExDumpPolyline_it.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ts/ExDumpPolyline_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ts/ExDumpPolyline_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ts/ExDumpPolyline_sk.qm
@@ -11974,6 +11995,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileExporter/ExRegisterFileExporter.pro
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileExporter/ts/ExRegisterFileExporter_de.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileExporter/ts/ExRegisterFileExporter_de.ts
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileExporter/ts/ExRegisterFileExporter_it.qm
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileExporter/ts/ExRegisterFileExporter_it.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileExporter/ts/ExRegisterFileExporter_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileExporter/ts/ExRegisterFileExporter_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileExporter/ts/ExRegisterFileExporter_sk.qm
@@ -11984,6 +12007,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileImporter/ExRegisterFileImporter.pro
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileImporter/ts/ExRegisterFileImporter_de.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileImporter/ts/ExRegisterFileImporter_de.ts
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileImporter/ts/ExRegisterFileImporter_it.qm
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileImporter/ts/ExRegisterFileImporter_it.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileImporter/ts/ExRegisterFileImporter_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileImporter/ts/ExRegisterFileImporter_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExRegisterFileImporter/ts/ExRegisterFileImporter_sk.qm
@@ -11995,6 +12020,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlExport/ExXmlExportInit.js
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlExport/ts/ExXmlExport_de.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlExport/ts/ExXmlExport_de.ts
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlExport/ts/ExXmlExport_it.qm
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlExport/ts/ExXmlExport_it.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlExport/ts/ExXmlExport_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlExport/ts/ExXmlExport_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlExport/ts/ExXmlExport_sk.qm
@@ -12006,6 +12033,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlImport/ExXmlImportInit.js
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlImport/ts/ExXmlImport_de.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlImport/ts/ExXmlImport_de.ts
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlImport/ts/ExXmlImport_it.qm
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlImport/ts/ExXmlImport_it.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlImport/ts/ExXmlImport_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlImport/ts/ExXmlImport_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExXmlImport/ts/ExXmlImport_sk.qm
@@ -12019,6 +12048,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/_AutoLoadInitFileDialog/readme.txt
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ts/IOExamples_de.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ts/IOExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ts/IOExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ts/IOExamples_it.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ts/IOExamples_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ts/IOExamples_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ts/IOExamples_sk.qm
@@ -12030,6 +12061,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExAddLayer/ExAddLayer.pro
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExAddLayer/ts/ExAddLayer_de.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExAddLayer/ts/ExAddLayer_de.ts
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExAddLayer/ts/ExAddLayer_it.qm
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExAddLayer/ts/ExAddLayer_it.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExAddLayer/ts/ExAddLayer_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExAddLayer/ts/ExAddLayer_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExAddLayer/ts/ExAddLayer_sk.qm
@@ -12040,6 +12073,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerCustomProperty/ExLayerCustomProperty.pro
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerCustomProperty/ts/ExLayerCustomProperty_de.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerCustomProperty/ts/ExLayerCustomProperty_de.ts
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerCustomProperty/ts/ExLayerCustomProperty_it.qm
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerCustomProperty/ts/ExLayerCustomProperty_it.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerCustomProperty/ts/ExLayerCustomProperty_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerCustomProperty/ts/ExLayerCustomProperty_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerCustomProperty/ts/ExLayerCustomProperty_sk.qm
@@ -12051,6 +12086,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerFromHatches/ExLayerFromHatchesInit.js
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerFromHatches/ts/ExLayerFromHatches_de.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerFromHatches/ts/ExLayerFromHatches_de.ts
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerFromHatches/ts/ExLayerFromHatches_it.qm
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerFromHatches/ts/ExLayerFromHatches_it.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerFromHatches/ts/ExLayerFromHatches_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerFromHatches/ts/ExLayerFromHatches_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerFromHatches/ts/ExLayerFromHatches_sk.qm
@@ -12061,6 +12098,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerWhiteToBlack/ExLayerWhiteToBlack.pro
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerWhiteToBlack/ts/ExLayerWhiteToBlack_de.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerWhiteToBlack/ts/ExLayerWhiteToBlack_de.ts
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerWhiteToBlack/ts/ExLayerWhiteToBlack_it.qm
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerWhiteToBlack/ts/ExLayerWhiteToBlack_it.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerWhiteToBlack/ts/ExLayerWhiteToBlack_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerWhiteToBlack/ts/ExLayerWhiteToBlack_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ExLayerWhiteToBlack/ts/ExLayerWhiteToBlack_sk.qm
@@ -12071,6 +12110,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/LayerExamples.pro
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/LayerExamples_de.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/LayerExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/LayerExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/LayerExamples_it.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/LayerExamples_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/LayerExamples_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/LayerExamples/ts/LayerExamples_sk.qm
@@ -12084,6 +12125,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ExTransactionListener.pro
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ts/ExTransactionListener_de.qm
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ts/ExTransactionListener_de.ts
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ts/ExTransactionListener_it.qm
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ts/ExTransactionListener_it.ts
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ts/ExTransactionListener_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ts/ExTransactionListener_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ExTransactionListener/ts/ExTransactionListener_sk.qm
@@ -12094,6 +12137,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ListenerExamples.pro
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_de.qm
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_it.ts
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/ListenerExamples/ts/ListenerExamples_sk.qm
@@ -12105,6 +12150,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ExMathSpiral.pro
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ts/ExMathSpiral_de.qm
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ts/ExMathSpiral_de.ts
+%%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ts/ExMathSpiral_it.qm
+%%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ts/ExMathSpiral_it.ts
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ts/ExMathSpiral_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ts/ExMathSpiral_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ExMathSpiral/ts/ExMathSpiral_sk.qm
@@ -12115,6 +12162,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/MathExamples.pro
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ts/MathExamples_de.qm
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ts/MathExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/MathExamples/ts/MathExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/MathExamples/ts/MathExamples_it.ts
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ts/MathExamples_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ts/MathExamples_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/MathExamples/ts/MathExamples_sk.qm
@@ -12126,6 +12175,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExDirListing/ExDirListing.pro
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExDirListing/ts/ExDirListing_de.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExDirListing/ts/ExDirListing_de.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExDirListing/ts/ExDirListing_it.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExDirListing/ts/ExDirListing_it.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExDirListing/ts/ExDirListing_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExDirListing/ts/ExDirListing_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExDirListing/ts/ExDirListing_sk.qm
@@ -12137,6 +12188,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/MyAction.png
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/ts/ExMainWindow_de.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/ts/ExMainWindow_de.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/ts/ExMainWindow_it.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/ts/ExMainWindow_it.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/ts/ExMainWindow_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/ts/ExMainWindow_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExMainWindow/ts/ExMainWindow_sk.qm
@@ -12147,6 +12200,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExProcess/ExProcess.pro
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExProcess/ts/ExProcess_de.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExProcess/ts/ExProcess_de.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExProcess/ts/ExProcess_it.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExProcess/ts/ExProcess_it.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExProcess/ts/ExProcess_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExProcess/ts/ExProcess_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExProcess/ts/ExProcess_sk.qm
@@ -12158,6 +12213,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExResizeWindow/ExResizeWindow.ui
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExResizeWindow/ts/ExResizeWindow_de.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExResizeWindow/ts/ExResizeWindow_de.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExResizeWindow/ts/ExResizeWindow_it.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ExResizeWindow/ts/ExResizeWindow_it.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExResizeWindow/ts/ExResizeWindow_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExResizeWindow/ts/ExResizeWindow_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ExResizeWindow/ts/ExResizeWindow_sk.qm
@@ -12168,6 +12225,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/QtExamples.pro
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_de.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_it.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/QtExamples_sk.qm
@@ -12177,6 +12236,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Examples/QtExamples/ts/ts.pro
 %%DATADIR%%/scripts/Misc/Examples/ts/Examples_de.qm
 %%DATADIR%%/scripts/Misc/Examples/ts/Examples_de.ts
+%%DATADIR%%/scripts/Misc/Examples/ts/Examples_it.qm
+%%DATADIR%%/scripts/Misc/Examples/ts/Examples_it.ts
 %%DATADIR%%/scripts/Misc/Examples/ts/Examples_ru.qm
 %%DATADIR%%/scripts/Misc/Examples/ts/Examples_ru.ts
 %%DATADIR%%/scripts/Misc/Examples/ts/Examples_sk.qm
@@ -12190,6 +12251,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockFixNames/BlockFixNames.pro
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockFixNames/ts/BlockFixNames_de.qm
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockFixNames/ts/BlockFixNames_de.ts
+%%DATADIR%%/scripts/Misc/MiscBlock/BlockFixNames/ts/BlockFixNames_it.qm
+%%DATADIR%%/scripts/Misc/MiscBlock/BlockFixNames/ts/BlockFixNames_it.ts
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockFixNames/ts/BlockFixNames_ru.qm
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockFixNames/ts/BlockFixNames_ru.ts
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockFixNames/ts/BlockFixNames_sk.qm
@@ -12200,6 +12263,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListAttributes/BlockListAttributes.pro
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListAttributes/ts/BlockListAttributes_de.qm
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListAttributes/ts/BlockListAttributes_de.ts
+%%DATADIR%%/scripts/Misc/MiscBlock/BlockListAttributes/ts/BlockListAttributes_it.qm
+%%DATADIR%%/scripts/Misc/MiscBlock/BlockListAttributes/ts/BlockListAttributes_it.ts
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListAttributes/ts/BlockListAttributes_ru.qm
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListAttributes/ts/BlockListAttributes_ru.ts
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListAttributes/ts/BlockListAttributes_sk.qm
@@ -12210,6 +12275,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListExport/BlockListExport.pro
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListExport/ts/BlockListExport_de.qm
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListExport/ts/BlockListExport_de.ts
+%%DATADIR%%/scripts/Misc/MiscBlock/BlockListExport/ts/BlockListExport_it.qm
+%%DATADIR%%/scripts/Misc/MiscBlock/BlockListExport/ts/BlockListExport_it.ts
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListExport/ts/BlockListExport_ru.qm
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListExport/ts/BlockListExport_ru.ts
 %%DATADIR%%/scripts/Misc/MiscBlock/BlockListExport/ts/BlockListExport_sk.qm
@@ -12220,6 +12287,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscBlock/MiscBlock.pro
 %%DATADIR%%/scripts/Misc/MiscBlock/ts/MiscBlock_de.qm
 %%DATADIR%%/scripts/Misc/MiscBlock/ts/MiscBlock_de.ts
+%%DATADIR%%/scripts/Misc/MiscBlock/ts/MiscBlock_it.qm
+%%DATADIR%%/scripts/Misc/MiscBlock/ts/MiscBlock_it.ts
 %%DATADIR%%/scripts/Misc/MiscBlock/ts/MiscBlock_ru.qm
 %%DATADIR%%/scripts/Misc/MiscBlock/ts/MiscBlock_ru.ts
 %%DATADIR%%/scripts/Misc/MiscBlock/ts/MiscBlock_sk.qm
@@ -12231,6 +12300,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDevelopment/DevDebug/DevDebug.pro
 %%DATADIR%%/scripts/Misc/MiscDevelopment/DevDebug/ts/DevDebug_de.qm
 %%DATADIR%%/scripts/Misc/MiscDevelopment/DevDebug/ts/DevDebug_de.ts
+%%DATADIR%%/scripts/Misc/MiscDevelopment/DevDebug/ts/DevDebug_it.qm
+%%DATADIR%%/scripts/Misc/MiscDevelopment/DevDebug/ts/DevDebug_it.ts
 %%DATADIR%%/scripts/Misc/MiscDevelopment/DevDebug/ts/DevDebug_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDevelopment/DevDebug/ts/DevDebug_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDevelopment/DevDebug/ts/DevDebug_sk.qm
@@ -12247,6 +12318,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDevelopment/EcmaScriptShell/ToggleTitleBar.svg
 %%DATADIR%%/scripts/Misc/MiscDevelopment/EcmaScriptShell/ts/EcmaScriptShell_de.qm
 %%DATADIR%%/scripts/Misc/MiscDevelopment/EcmaScriptShell/ts/EcmaScriptShell_de.ts
+%%DATADIR%%/scripts/Misc/MiscDevelopment/EcmaScriptShell/ts/EcmaScriptShell_it.qm
+%%DATADIR%%/scripts/Misc/MiscDevelopment/EcmaScriptShell/ts/EcmaScriptShell_it.ts
 %%DATADIR%%/scripts/Misc/MiscDevelopment/EcmaScriptShell/ts/EcmaScriptShell_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDevelopment/EcmaScriptShell/ts/EcmaScriptShell_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDevelopment/EcmaScriptShell/ts/EcmaScriptShell_sk.qm
@@ -12263,6 +12336,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDevelopment/RunScript/doc/RunScript.png
 %%DATADIR%%/scripts/Misc/MiscDevelopment/RunScript/ts/RunScript_de.qm
 %%DATADIR%%/scripts/Misc/MiscDevelopment/RunScript/ts/RunScript_de.ts
+%%DATADIR%%/scripts/Misc/MiscDevelopment/RunScript/ts/RunScript_it.qm
+%%DATADIR%%/scripts/Misc/MiscDevelopment/RunScript/ts/RunScript_it.ts
 %%DATADIR%%/scripts/Misc/MiscDevelopment/RunScript/ts/RunScript_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDevelopment/RunScript/ts/RunScript_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDevelopment/RunScript/ts/RunScript_sk.qm
@@ -12271,6 +12346,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDevelopment/RunScript/ts/RunScript_sl.ts
 %%DATADIR%%/scripts/Misc/MiscDevelopment/ts/MiscDevelopment_de.qm
 %%DATADIR%%/scripts/Misc/MiscDevelopment/ts/MiscDevelopment_de.ts
+%%DATADIR%%/scripts/Misc/MiscDevelopment/ts/MiscDevelopment_it.qm
+%%DATADIR%%/scripts/Misc/MiscDevelopment/ts/MiscDevelopment_it.ts
 %%DATADIR%%/scripts/Misc/MiscDevelopment/ts/MiscDevelopment_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDevelopment/ts/MiscDevelopment_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDevelopment/ts/MiscDevelopment_sk.qm
@@ -12286,6 +12363,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/Counter/CounterInit.js
 %%DATADIR%%/scripts/Misc/MiscDraw/Counter/ts/Counter_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/Counter/ts/Counter_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/Counter/ts/Counter_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/Counter/ts/Counter_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/Counter/ts/Counter_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/Counter/ts/Counter_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/Counter/ts/Counter_sk.qm
@@ -12304,6 +12383,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/Cross/doc/CrossFigure.svg
 %%DATADIR%%/scripts/Misc/MiscDraw/Cross/ts/Cross_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/Cross/ts/Cross_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/Cross/ts/Cross_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/Cross/ts/Cross_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/Cross/ts/Cross_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/Cross/ts/Cross_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/Cross/ts/Cross_sk.qm
@@ -12314,6 +12395,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/DrawBoundingBox/DrawBoundingBox.pro
 %%DATADIR%%/scripts/Misc/MiscDraw/DrawBoundingBox/ts/DrawBoundingBox_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/DrawBoundingBox/ts/DrawBoundingBox_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/DrawBoundingBox/ts/DrawBoundingBox_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/DrawBoundingBox/ts/DrawBoundingBox_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/DrawBoundingBox/ts/DrawBoundingBox_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/DrawBoundingBox/ts/DrawBoundingBox_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/DrawBoundingBox/ts/DrawBoundingBox_sk.qm
@@ -12328,6 +12411,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/LineBoxJoint/LineBoxJointInit.js
 %%DATADIR%%/scripts/Misc/MiscDraw/LineBoxJoint/ts/LineBoxJoint_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/LineBoxJoint/ts/LineBoxJoint_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/LineBoxJoint/ts/LineBoxJoint_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/LineBoxJoint/ts/LineBoxJoint_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/LineBoxJoint/ts/LineBoxJoint_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/LineBoxJoint/ts/LineBoxJoint_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/LineBoxJoint/ts/LineBoxJoint_sk.qm
@@ -12342,6 +12427,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/LineDove/LineDoveInit.js
 %%DATADIR%%/scripts/Misc/MiscDraw/LineDove/ts/LineDove_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/LineDove/ts/LineDove_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/LineDove/ts/LineDove_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/LineDove/ts/LineDove_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/LineDove/ts/LineDove_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/LineDove/ts/LineDove_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/LineDove/ts/LineDove_sk.qm
@@ -12356,6 +12443,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/LineRadicalAxis/LineRadicalAxisInit.js
 %%DATADIR%%/scripts/Misc/MiscDraw/LineRadicalAxis/ts/LineRadicalAxis_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/LineRadicalAxis/ts/LineRadicalAxis_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/LineRadicalAxis/ts/LineRadicalAxis_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/LineRadicalAxis/ts/LineRadicalAxis_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/LineRadicalAxis/ts/LineRadicalAxis_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/LineRadicalAxis/ts/LineRadicalAxis_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/LineRadicalAxis/ts/LineRadicalAxis_sk.qm
@@ -12369,6 +12458,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/LineSimilarityAxes/LineSimilarityAxesInit.js
 %%DATADIR%%/scripts/Misc/MiscDraw/LineSimilarityAxes/ts/LineSimilarityAxes_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/LineSimilarityAxes/ts/LineSimilarityAxes_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/LineSimilarityAxes/ts/LineSimilarityAxes_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/LineSimilarityAxes/ts/LineSimilarityAxes_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/LineSimilarityAxes/ts/LineSimilarityAxes_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/LineSimilarityAxes/ts/LineSimilarityAxes_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/LineSimilarityAxes/ts/LineSimilarityAxes_sk.qm
@@ -12384,6 +12475,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPole/PointPoleInit.js
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPole/ts/PointPole_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPole/ts/PointPole_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/PointPole/ts/PointPole_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/PointPole/ts/PointPole_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPole/ts/PointPole_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPole/ts/PointPole_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPole/ts/PointPole_sk.qm
@@ -12397,6 +12490,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/PointPowerCenterInit.js
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/PointPowerCenter/ts/PointPowerCenter_sk.qm
@@ -12410,6 +12505,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/XLineHorizontalInit.js
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/ts/XLineHorizontal_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/ts/XLineHorizontal_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/ts/XLineHorizontal_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/ts/XLineHorizontal_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/ts/XLineHorizontal_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/ts/XLineHorizontal_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineHorizontal/ts/XLineHorizontal_sk.qm
@@ -12423,6 +12520,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineVertical/XLineVerticalInit.js
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineVertical/ts/XLineVertical_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineVertical/ts/XLineVertical_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/XLineVertical/ts/XLineVertical_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/XLineVertical/ts/XLineVertical_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineVertical/ts/XLineVertical_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineVertical/ts/XLineVertical_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineVertical/ts/XLineVertical_sk.qm
@@ -12431,6 +12530,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscDraw/XLineVertical/ts/XLineVertical_sl.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/ts/MiscDraw_de.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/ts/MiscDraw_de.ts
+%%DATADIR%%/scripts/Misc/MiscDraw/ts/MiscDraw_it.qm
+%%DATADIR%%/scripts/Misc/MiscDraw/ts/MiscDraw_it.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/ts/MiscDraw_ru.qm
 %%DATADIR%%/scripts/Misc/MiscDraw/ts/MiscDraw_ru.ts
 %%DATADIR%%/scripts/Misc/MiscDraw/ts/MiscDraw_sk.qm
@@ -12443,6 +12544,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscIO/ImportPoints/data.txt
 %%DATADIR%%/scripts/Misc/MiscIO/ImportPoints/ts/ImportPoints_de.qm
 %%DATADIR%%/scripts/Misc/MiscIO/ImportPoints/ts/ImportPoints_de.ts
+%%DATADIR%%/scripts/Misc/MiscIO/ImportPoints/ts/ImportPoints_it.qm
+%%DATADIR%%/scripts/Misc/MiscIO/ImportPoints/ts/ImportPoints_it.ts
 %%DATADIR%%/scripts/Misc/MiscIO/ImportPoints/ts/ImportPoints_ru.qm
 %%DATADIR%%/scripts/Misc/MiscIO/ImportPoints/ts/ImportPoints_ru.ts
 %%DATADIR%%/scripts/Misc/MiscIO/ImportPoints/ts/ImportPoints_sk.qm
@@ -12460,6 +12563,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscIO/MolImport/mol/1x1cm.mol
 %%DATADIR%%/scripts/Misc/MiscIO/MolImport/ts/MolImport_de.qm
 %%DATADIR%%/scripts/Misc/MiscIO/MolImport/ts/MolImport_de.ts
+%%DATADIR%%/scripts/Misc/MiscIO/MolImport/ts/MolImport_it.qm
+%%DATADIR%%/scripts/Misc/MiscIO/MolImport/ts/MolImport_it.ts
 %%DATADIR%%/scripts/Misc/MiscIO/MolImport/ts/MolImport_ru.qm
 %%DATADIR%%/scripts/Misc/MiscIO/MolImport/ts/MolImport_ru.ts
 %%DATADIR%%/scripts/Misc/MiscIO/MolImport/ts/MolImport_sk.qm
@@ -12468,6 +12573,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscIO/MolImport/ts/MolImport_sl.ts
 %%DATADIR%%/scripts/Misc/MiscIO/ts/MiscIO_de.qm
 %%DATADIR%%/scripts/Misc/MiscIO/ts/MiscIO_de.ts
+%%DATADIR%%/scripts/Misc/MiscIO/ts/MiscIO_it.qm
+%%DATADIR%%/scripts/Misc/MiscIO/ts/MiscIO_it.ts
 %%DATADIR%%/scripts/Misc/MiscIO/ts/MiscIO_ru.qm
 %%DATADIR%%/scripts/Misc/MiscIO/ts/MiscIO_ru.ts
 %%DATADIR%%/scripts/Misc/MiscIO/ts/MiscIO_sk.qm
@@ -12479,6 +12586,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscModify/ChangeFontToArial/ChangeFontToArial.pro
 %%DATADIR%%/scripts/Misc/MiscModify/ChangeFontToArial/ts/ChangeFontToArial_de.qm
 %%DATADIR%%/scripts/Misc/MiscModify/ChangeFontToArial/ts/ChangeFontToArial_de.ts
+%%DATADIR%%/scripts/Misc/MiscModify/ChangeFontToArial/ts/ChangeFontToArial_it.qm
+%%DATADIR%%/scripts/Misc/MiscModify/ChangeFontToArial/ts/ChangeFontToArial_it.ts
 %%DATADIR%%/scripts/Misc/MiscModify/ChangeFontToArial/ts/ChangeFontToArial_ru.qm
 %%DATADIR%%/scripts/Misc/MiscModify/ChangeFontToArial/ts/ChangeFontToArial_ru.ts
 %%DATADIR%%/scripts/Misc/MiscModify/ChangeFontToArial/ts/ChangeFontToArial_sk.qm
@@ -12489,6 +12598,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscModify/FlushBackLog/FlushBackLog.pro
 %%DATADIR%%/scripts/Misc/MiscModify/FlushBackLog/ts/FlushBackLog_de.qm
 %%DATADIR%%/scripts/Misc/MiscModify/FlushBackLog/ts/FlushBackLog_de.ts
+%%DATADIR%%/scripts/Misc/MiscModify/FlushBackLog/ts/FlushBackLog_it.qm
+%%DATADIR%%/scripts/Misc/MiscModify/FlushBackLog/ts/FlushBackLog_it.ts
 %%DATADIR%%/scripts/Misc/MiscModify/FlushBackLog/ts/FlushBackLog_ru.qm
 %%DATADIR%%/scripts/Misc/MiscModify/FlushBackLog/ts/FlushBackLog_ru.ts
 %%DATADIR%%/scripts/Misc/MiscModify/FlushBackLog/ts/FlushBackLog_sk.qm
@@ -12501,6 +12612,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscModify/ReloadLinetypes/ReloadLinetypes.pro
 %%DATADIR%%/scripts/Misc/MiscModify/ReloadLinetypes/ts/ReloadLinetypes_de.qm
 %%DATADIR%%/scripts/Misc/MiscModify/ReloadLinetypes/ts/ReloadLinetypes_de.ts
+%%DATADIR%%/scripts/Misc/MiscModify/ReloadLinetypes/ts/ReloadLinetypes_it.qm
+%%DATADIR%%/scripts/Misc/MiscModify/ReloadLinetypes/ts/ReloadLinetypes_it.ts
 %%DATADIR%%/scripts/Misc/MiscModify/ReloadLinetypes/ts/ReloadLinetypes_ru.qm
 %%DATADIR%%/scripts/Misc/MiscModify/ReloadLinetypes/ts/ReloadLinetypes_ru.ts
 %%DATADIR%%/scripts/Misc/MiscModify/ReloadLinetypes/ts/ReloadLinetypes_sk.qm
@@ -12511,6 +12624,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscModify/SplineToLine/SplineToLine.pro
 %%DATADIR%%/scripts/Misc/MiscModify/SplineToLine/ts/SplineToLine_de.qm
 %%DATADIR%%/scripts/Misc/MiscModify/SplineToLine/ts/SplineToLine_de.ts
+%%DATADIR%%/scripts/Misc/MiscModify/SplineToLine/ts/SplineToLine_it.qm
+%%DATADIR%%/scripts/Misc/MiscModify/SplineToLine/ts/SplineToLine_it.ts
 %%DATADIR%%/scripts/Misc/MiscModify/SplineToLine/ts/SplineToLine_ru.qm
 %%DATADIR%%/scripts/Misc/MiscModify/SplineToLine/ts/SplineToLine_ru.ts
 %%DATADIR%%/scripts/Misc/MiscModify/SplineToLine/ts/SplineToLine_sk.qm
@@ -12519,6 +12634,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscModify/SplineToLine/ts/SplineToLine_sl.ts
 %%DATADIR%%/scripts/Misc/MiscModify/ts/MiscModify_de.qm
 %%DATADIR%%/scripts/Misc/MiscModify/ts/MiscModify_de.ts
+%%DATADIR%%/scripts/Misc/MiscModify/ts/MiscModify_it.qm
+%%DATADIR%%/scripts/Misc/MiscModify/ts/MiscModify_it.ts
 %%DATADIR%%/scripts/Misc/MiscModify/ts/MiscModify_ru.qm
 %%DATADIR%%/scripts/Misc/MiscModify/ts/MiscModify_ru.ts
 %%DATADIR%%/scripts/Misc/MiscModify/ts/MiscModify_sk.qm
@@ -12534,6 +12651,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscSelect/SelectByHandle/SelectByHandleInit.js
 %%DATADIR%%/scripts/Misc/MiscSelect/SelectByHandle/ts/SelectByHandle_de.qm
 %%DATADIR%%/scripts/Misc/MiscSelect/SelectByHandle/ts/SelectByHandle_de.ts
+%%DATADIR%%/scripts/Misc/MiscSelect/SelectByHandle/ts/SelectByHandle_it.qm
+%%DATADIR%%/scripts/Misc/MiscSelect/SelectByHandle/ts/SelectByHandle_it.ts
 %%DATADIR%%/scripts/Misc/MiscSelect/SelectByHandle/ts/SelectByHandle_ru.qm
 %%DATADIR%%/scripts/Misc/MiscSelect/SelectByHandle/ts/SelectByHandle_ru.ts
 %%DATADIR%%/scripts/Misc/MiscSelect/SelectByHandle/ts/SelectByHandle_sk.qm
@@ -12542,6 +12661,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/MiscSelect/SelectByHandle/ts/SelectByHandle_sl.ts
 %%DATADIR%%/scripts/Misc/MiscSelect/ts/MiscSelect_de.qm
 %%DATADIR%%/scripts/Misc/MiscSelect/ts/MiscSelect_de.ts
+%%DATADIR%%/scripts/Misc/MiscSelect/ts/MiscSelect_it.qm
+%%DATADIR%%/scripts/Misc/MiscSelect/ts/MiscSelect_it.ts
 %%DATADIR%%/scripts/Misc/MiscSelect/ts/MiscSelect_ru.qm
 %%DATADIR%%/scripts/Misc/MiscSelect/ts/MiscSelect_ru.ts
 %%DATADIR%%/scripts/Misc/MiscSelect/ts/MiscSelect_sk.qm
@@ -12597,6 +12718,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/LaunchCommandLineTool/LaunchCommandLineTool.pro
 %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/ts/CommandLineTools_de.qm
 %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/ts/CommandLineTools_de.ts
+%%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/ts/CommandLineTools_it.qm
+%%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/ts/CommandLineTools_it.ts
 %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/ts/CommandLineTools_ru.qm
 %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/ts/CommandLineTools_ru.ts
 %%DATADIR%%/scripts/Misc/Tutorials/CommandLineTools/ts/CommandLineTools_sk.qm
@@ -12618,6 +12741,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Tutorials/MenusAndToolBars/MyScripts.js
 %%DATADIR%%/scripts/Misc/Tutorials/MenusAndToolBars/ts/MenusAndToolBars_de.qm
 %%DATADIR%%/scripts/Misc/Tutorials/MenusAndToolBars/ts/MenusAndToolBars_de.ts
+%%DATADIR%%/scripts/Misc/Tutorials/MenusAndToolBars/ts/MenusAndToolBars_it.qm
+%%DATADIR%%/scripts/Misc/Tutorials/MenusAndToolBars/ts/MenusAndToolBars_it.ts
 %%DATADIR%%/scripts/Misc/Tutorials/MenusAndToolBars/ts/MenusAndToolBars_ru.qm
 %%DATADIR%%/scripts/Misc/Tutorials/MenusAndToolBars/ts/MenusAndToolBars_ru.ts
 %%DATADIR%%/scripts/Misc/Tutorials/MenusAndToolBars/ts/MenusAndToolBars_sk.qm
@@ -12631,6 +12756,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Tutorials/PersistentWidgets/PersistentWidgets.ui
 %%DATADIR%%/scripts/Misc/Tutorials/PersistentWidgets/ts/PersistentWidgets_de.qm
 %%DATADIR%%/scripts/Misc/Tutorials/PersistentWidgets/ts/PersistentWidgets_de.ts
+%%DATADIR%%/scripts/Misc/Tutorials/PersistentWidgets/ts/PersistentWidgets_it.qm
+%%DATADIR%%/scripts/Misc/Tutorials/PersistentWidgets/ts/PersistentWidgets_it.ts
 %%DATADIR%%/scripts/Misc/Tutorials/PersistentWidgets/ts/PersistentWidgets_ru.qm
 %%DATADIR%%/scripts/Misc/Tutorials/PersistentWidgets/ts/PersistentWidgets_ru.ts
 %%DATADIR%%/scripts/Misc/Tutorials/PersistentWidgets/ts/PersistentWidgets_sk.qm
@@ -12643,6 +12770,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Misc/Tutorials/Tutorials.pro
 %%DATADIR%%/scripts/Misc/Tutorials/ts/Tutorials_de.qm
 %%DATADIR%%/scripts/Misc/Tutorials/ts/Tutorials_de.ts
+%%DATADIR%%/scripts/Misc/Tutorials/ts/Tutorials_it.qm
+%%DATADIR%%/scripts/Misc/Tutorials/ts/Tutorials_it.ts
 %%DATADIR%%/scripts/Misc/Tutorials/ts/Tutorials_ru.qm
 %%DATADIR%%/scripts/Misc/Tutorials/ts/Tutorials_ru.ts
 %%DATADIR%%/scripts/Misc/Tutorials/ts/Tutorials_sk.qm
@@ -13418,6 +13547,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/FlipHorizontal/Tests/required/FlipHorizontalTest00_000.dxf
 %%DATADIR%%/scripts/Modify/FlipHorizontal/doc/FlipHorizontal.png
 %%DATADIR%%/scripts/Modify/FlipHorizontal/doc/FlipHorizontal_de.html
+%%DATADIR%%/scripts/Modify/FlipHorizontal/doc/FlipHorizontal_desc_de.html
+%%DATADIR%%/scripts/Modify/FlipHorizontal/doc/FlipHorizontal_desc_en.html
 %%DATADIR%%/scripts/Modify/FlipHorizontal/doc/FlipHorizontal_en.html
 %%DATADIR%%/scripts/Modify/FlipHorizontal/doc/FlipHorizontal_it.html
 %%DATADIR%%/scripts/Modify/FlipHorizontal/doc/FlipHorizontal_ja.html
@@ -13470,6 +13601,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/FlipVertical/Tests/required/FlipVerticalTest00_000.dxf
 %%DATADIR%%/scripts/Modify/FlipVertical/doc/FlipVertical.png
 %%DATADIR%%/scripts/Modify/FlipVertical/doc/FlipVertical_de.html
+%%DATADIR%%/scripts/Modify/FlipVertical/doc/FlipVertical_desc_de.html
+%%DATADIR%%/scripts/Modify/FlipVertical/doc/FlipVertical_desc_en.html
 %%DATADIR%%/scripts/Modify/FlipVertical/doc/FlipVertical_en.html
 %%DATADIR%%/scripts/Modify/FlipVertical/doc/FlipVertical_it.html
 %%DATADIR%%/scripts/Modify/FlipVertical/doc/FlipVertical_ja.html

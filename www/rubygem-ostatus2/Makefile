@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ostatus2
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

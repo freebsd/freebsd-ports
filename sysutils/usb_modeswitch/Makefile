@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME:S|_|-|}-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2 \
 		${DATANAME}.tar.bz2
 
-MAINTAINER=	melifaro@ipfw.ru
+MAINTAINER=	franco@opnsense.org
 COMMENT=	Handling Mode-Switching USB Devices
 
 LICENSE=	GPLv2

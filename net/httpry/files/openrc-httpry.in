@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable httpry:
+#
+# httpry_flags (flags):		Set extra flags to httpry
+#				Default is "-d -q -o /var/log/httpry.log".
+#				See httpry(1) for more information.
+
+name=httpry
+
+: ${httpry_flags="-d -q -o /var/log/httpry.log"}
+
+command=%%PREFIX%%/bin/httpry
+
+depend() {
+	keyword -shutdown
+}

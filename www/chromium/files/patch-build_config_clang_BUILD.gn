@@ -1,6 +1,6 @@
---- build/config/clang/BUILD.gn.orig	2017-04-19 19:06:28 UTC
+--- build/config/clang/BUILD.gn.orig	2017-06-05 19:03:01 UTC
 +++ build/config/clang/BUILD.gn
-@@ -20,7 +20,7 @@ config("find_bad_constructs") {
+@@ -19,7 +19,7 @@ config("find_bad_constructs") {
          rebase_path("${clang_base_path}/lib/libFindBadConstructs.dylib",
                      root_build_dir),
        ]
@@ -9,12 +9,12 @@
        cflags += [
          "-Xclang",
          "-load",
-@@ -41,7 +41,7 @@ config("find_bad_constructs") {
+@@ -40,7 +40,7 @@ config("find_bad_constructs") {
        "check-auto-raw-pointer",
      ]
  
--    if ((is_linux || is_android) && !is_chromecast) {
-+    if ((is_linux || is_bsd || is_android) && !is_chromecast) {
+-    if (is_linux || is_android) {
++    if (is_linux || is_bsd || is_android) {
        cflags += [
          "-Xclang",
          "-plugin-arg-find-bad-constructs",

@@ -1,6 +1,6 @@
---- chrome/browser/ui/BUILD.gn.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/ui/BUILD.gn.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/ui/BUILD.gn
-@@ -3135,7 +3135,7 @@ split_static_library("ui") {
+@@ -3170,7 +3170,7 @@ split_static_library("ui") {
        ]
      }
    }

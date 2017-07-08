@@ -1,11 +1,5 @@
 --- ArmoryQt.py.orig	2015-06-10 21:49:31 UTC
 +++ ArmoryQt.py
-@@ -1,4 +1,4 @@
--#! /usr/bin/python
-+#!/usr/bin/env python
- # -*- coding: UTF-8 -*-
- ################################################################################
- #                                                                              #
 @@ -1236,6 +1236,9 @@ class ArmoryMainWindow(QMainWindow):
           elif OS_LINUX:
              tempDir = '/var/log'

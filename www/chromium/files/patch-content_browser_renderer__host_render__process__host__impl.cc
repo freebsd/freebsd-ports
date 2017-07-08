@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2017-04-19 19:06:33 UTC
-+++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -378,11 +378,11 @@ SiteProcessMap* GetSiteProcessMapForBrow
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2017-06-15 21:03:05.000000000 +0200
++++ content/browser/renderer_host/render_process_host_impl.cc	2017-06-18 13:40:02.058069000 +0200
+@@ -381,11 +381,11 @@
    return map;
  }
  
@@ -14,7 +14,7 @@
  
  // NOTE: changes to this class need to be reviewed by the security team.
  class RendererSandboxedProcessLauncherDelegate
-@@ -405,7 +405,7 @@ class RendererSandboxedProcessLauncherDe
+@@ -408,7 +408,7 @@
      return GetContentClient()->browser()->PreSpawnRenderer(policy);
    }
  
@@ -23,7 +23,7 @@
    ZygoteHandle* GetZygote() override {
      const base::CommandLine& browser_command_line =
          *base::CommandLine::ForCurrentProcess();
-@@ -655,7 +655,7 @@ void RenderProcessHost::SetMaxRendererPr
+@@ -647,7 +647,7 @@
    g_max_renderer_count_override = count;
  }
  
@@ -32,7 +32,7 @@
  // static
  void RenderProcessHostImpl::EarlyZygoteLaunch() {
    DCHECK(!g_render_zygote);
-@@ -665,7 +665,7 @@ void RenderProcessHostImpl::EarlyZygoteL
+@@ -657,7 +657,7 @@
    ZygoteHostImpl::GetInstance()->SetRendererSandboxStatus(
        (*GetGenericZygote())->GetSandboxStatus());
  }
@@ -41,7 +41,7 @@
  
  RenderProcessHostImpl::RenderProcessHostImpl(
      BrowserContext* browser_context,
-@@ -813,7 +813,7 @@ bool RenderProcessHostImpl::Init() {
+@@ -807,7 +807,7 @@
    renderer_prefix =
        browser_command_line.GetSwitchValueNative(switches::kRendererCmdPrefix);
  
@@ -50,3 +50,11 @@
    int flags = renderer_prefix.empty() ? ChildProcessHost::CHILD_ALLOW_SELF
                                        : ChildProcessHost::CHILD_NORMAL;
  #else
+@@ -1551,7 +1551,6 @@
+ 
+   --visible_widgets_;
+   if (visible_widgets_ == 0) {
+-    DCHECK(!is_process_backgrounded_);
+     UpdateProcessPriority();
+   }
+ }

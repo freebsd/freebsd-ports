@@ -17,8 +17,9 @@ LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 MILTER_SOVER?=	6
 
 OPTIONS_DEFINE?=	IPV6 MILTER_SHARED MILTER_POOL DOCS
-OPTIONS_DEFAULT?=	IPV6 MILTER_SHARED MILTER_POOL
+OPTIONS_DEFAULT?=	MILTER_SHARED MILTER_POOL
 NO_OPTIONS_SORT=yes
+OPTIONS_SUB=	yes
 MILTER_SHARED_DESC=	Build shared libmilter
 MILTER_POOL_DESC=	Enable milter thread pools
 
@@ -26,32 +27,18 @@ WRKSRC=		${WRKDIR}/sendmail-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
 SITE=		${FILESDIR}/site.config.m4
 
-.include <bsd.port.options.mk>
+IPV6_VARS=		SITE+=${FILESDIR}/site.config.m4.ipv6
+MILTER_POOL_VARS=	SITE+=${FILESDIR}/site.config.m4.pool
+MILTER_SHARED_MAKE_ENV=	MILTER_SOVER=${MILTER_SOVER}
+MILTER_SHARED_PLIST_SUB=MILTER_SOVER=${MILTER_SOVER}
+MILTER_SHARED_USE=	LDCONFIG=yes
 
-.if ${PORT_OPTIONS:MIPV6}
-SITE+=		${FILESDIR}/site.config.m4.ipv6
-.endif
-.if ${PORT_OPTIONS:MMILTER_POOL}
-SITE+=		${FILESDIR}/site.config.m4.pool
-.endif
-
-.if ${PORT_OPTIONS:MMILTER_SHARED}
-PLIST_SUB+=	MILTER_SHARED=""
-PLIST_SUB+=	MILTER_SOVER=${MILTER_SOVER}
-MAKE_ENV+=	MILTER_SOVER=${MILTER_SOVER}
-USE_LDCONFIG=	yes
-.else
-PLIST_SUB+=	MILTER_SHARED="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMILTER_SHARED}
-post-patch:
+post-patch-MILTER_SHARED-on:
 	@${CP} -pR ${WRKSRC}/libmilter ${WRKSRC}/libsharedmilter
 	${CP} ${FILESDIR}/sharedlibrary.m4 \
 		${WRKSRC}/devtools/M4/UNIX/sharedlibrary.m4
 	${REINPLACE_CMD} -e 's=`library=`sharedlibrary=' \
 		${WRKSRC}/libsharedmilter/Makefile.m4
-.endif
 
 do-configure:
 	${REINPLACE_CMD} -e "s|\`-O\'|\`${CFLAGS}\'|" \

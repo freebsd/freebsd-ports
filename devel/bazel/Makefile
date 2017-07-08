@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bazel
-PORTVERSION=		0.4.5
+PORTVERSION=		0.5.0
 CATEGORIES=		devel java
 MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -11,15 +11,17 @@ MAINTAINER=		aehlig@linta.de
 COMMENT=		Fast and correct build system
 
 LICENSE=		APACHE20
-LICENSE_FILE=		${WRKSRC}/LICENSE.txt
+LICENSE_FILE=		${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=		bash:shells/bash \
 			zip:archivers/zip
 
+BROKEN_armv6=		fails to package: cp: bazel: No such file or directory
+
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=		7
+FINALRC=		9
 
 NO_WRKSUBDIR=		YES
 USES=			shebangfix zip
@@ -41,10 +43,15 @@ post-patch:
 
 do-build:
 	@${MKDIR} ${WRKDIR}/bazel_tmp
-	(cd ${WRKSRC} && \
+	(if [ -z "$${SOURCE_DATE_EPOCH}" ] ; \
+	  then SOURCE_DATE_EPOCH=`grep TIMESTAMP ${DISTINFO_FILE} \
+	    | ${SED} -e 's/[^0-9]//g'`; \
+	fi ; \
+	cd ${WRKSRC} && \
 	${SETENV} BAZEL_SH=${LOCALBASE}/bin/bash \
 	TMPDIR=${WRKDIR}/bazel_tmp \
 	EMBED_LABEL='${PORTVERSION}' \
+	SOURCE_DATE_EPOCH=$${SOURCE_DATE_EPOCH} \
 	${LOCALBASE}/bin/bash ./compile.sh)
 
 do-install:

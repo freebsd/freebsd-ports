@@ -1,6 +1,6 @@
---- content/child/child_thread_impl.h.orig	2017-04-19 19:06:33 UTC
+--- content/child/child_thread_impl.h.orig	2017-06-05 19:03:07 UTC
 +++ content/child/child_thread_impl.h
-@@ -116,7 +116,7 @@ class CONTENT_EXPORT ChildThreadImpl
+@@ -112,7 +112,7 @@ class CONTENT_EXPORT ChildThreadImpl
    static std::unique_ptr<base::SharedMemory> AllocateSharedMemory(
        size_t buf_size);
  

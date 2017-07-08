@@ -1,0 +1,11 @@
+The ndmpd daemon handles client Network Data Management Protocol (NDMP)
+requests.
+
+NDMP is an open, enterprise-wide, network-based data management protocol
+used for backup and recovery. The ndmpd daemon enables users to manage
+data backup and recovery using Data Management Application (DMA) clients.
+
+The NDMP protocol is used to coordinate data movement and control
+between a DMA and an NDMP server or between two NDMP servers.
+
+WWW: https://bitbucket.org/araujobsd/ndmp-freebsd

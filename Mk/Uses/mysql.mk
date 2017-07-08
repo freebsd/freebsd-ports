@@ -47,6 +47,13 @@ _MYSQL_ARGS:=	${_MYSQL_ARGS:Nclient}
 # Port requested a version
 .if !empty(_MYSQL_ARGS)
 _WANT_MYSQL_VER=	${_MYSQL_ARGS}
+.if   (${_WANT_MYSQL_VER:C/[0-9]*//} == "m")
+_WANT_MYSQL_FLAVOUR=	mariadb
+.elif (${_WANT_MYSQL_VER:C/[0-9]*//} == "p")
+_WANT_MYSQL_FLAVOUR=	percona
+.else
+_WANT_MYSQL_FLAVOUR=	mysql
+.endif
 .endif
 .endif # !empty(mysql_ARGS)
 
@@ -58,17 +65,13 @@ DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # MySQL client version currently supported.
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-MYSQL55_LIBVER=		18
-MYSQL55m_LIBVER=	18
-MYSQL55p_LIBVER=	18
-MYSQL56_LIBVER=		18
-MYSQL56p_LIBVER=	18
-MYSQL56w_LIBVER=	18
+.for v in 55 55m 55p 56 56p 56w 100m 101m
+MYSQL${v}_LIBVER=	18
+.endfor
 MYSQL57_LIBVER=		20
 MYSQL57p_LIBVER=	20
 MYSQL80_LIBVER=		21
-MYSQL100m_LIBVER=	18
-MYSQL101m_LIBVER=	18
+MYSQL102m_LIBVER=	3
 
 # Setting/finding MySQL version we want.
 .if exists(${LOCALBASE}/bin/mysql)
@@ -78,16 +81,26 @@ _MARIADB!=	${LOCALBASE}/bin/mysql --version | ${GREP} MariaDB | wc -l
 
 .if ${_PERCONA} == 1
 _MYSQL_VER=	${_MYSQL}p
+_MYSQL_FLAVOUR=	percona
 .elif ${_MARIADB} == 1
 _MYSQL_VER=	${_MYSQL}m
+_MYSQL_FLAVOUR=	mariadb
 .else
 _MYSQL_VER=	${_MYSQL}
+_MYSQL_FLAVOUR=	mysql
 .endif
 .endif
 
 .if defined(_WANT_MYSQL_VER)
+.if   defined(WITH_MYSQL_VER) && (${WITH_MYSQL_VER:C/[0-9]*//} == "m")
+WITH_MYSQL_FLAVOUR=	mariadb
+.elif defined(WITH_MYSQL_VER) && (${WITH_MYSQL_VER:C/[0-9]*//} == "p")
+WITH_MYSQL_FLAVOUR=	percona
+.else
+WITH_MYSQL_FLAVOUR=	mysql
+.endif
 .if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER} != ${_WANT_MYSQL_VER}
-IGNORE=		cannot install: the port wants mysql${_WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client
+IGNORE=		cannot install: the port wants ${_WANT_MYSQL_FLAVOUR}${_WANT_MYSQL_VER:C/[mpw]//}-client and you try to install ${WITH_MYSQL_FLAVOUR}${WITH_MYSQL_VER:C/[mpw]//}-client
 .endif
 MYSQL_VER=	${_WANT_MYSQL_VER}
 .elif defined(WITH_MYSQL_VER)
@@ -100,15 +113,27 @@ MYSQL_VER=	${DEFAULT_MYSQL_VER}
 .endif
 .endif # _WANT_MYSQL_VER
 
+.if   ${MYSQL_VER:C/[0-9]*//} == "m"
+MYSQL_FLAVOUR=     mariadb
+.elif ${MYSQL_VER:C/[0-9]*//} == "p"
+MYSQL_FLAVOUR=     percona
+.else
+MYSQL_FLAVOUR=     mysql
+.endif
+
 .if defined(_MYSQL_VER)
 .if ${_MYSQL_VER} != ${MYSQL_VER}
-IGNORE=		cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is installed and wanted version is mysql${MYSQL_VER}-client
+IGNORE=		cannot install: MySQL versions mismatch: ${_MYSQL_FLAVOUR}${_MYSQL_VER:C/[mpw]//}-client is installed and wanted version is ${MYSQL_FLAVOUR}${MYSQL_VER:C/[mpw]//}-client
 .endif
 .endif
 
+_MYSQL_SHLIB=	libmysqlclient
 .if (${MYSQL_VER:C/[0-9]*//} == "m")
 _MYSQL_SERVER_FLAVOUR=	mariadb
 _MYSQL_CLIENT_FLAVOUR=	mariadb
+.  if ${MYSQL_VER:C/m//} >= 102
+_MYSQL_SHLIB=	libmariadb
+.  endif
 .elif (${MYSQL_VER:C/[0-9]*//} == "p")
 _MYSQL_SERVER_FLAVOUR=	percona
 _MYSQL_CLIENT_FLAVOUR=	percona
@@ -140,7 +165,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/mysql/libmysqld.a:${_MYSQL_SERVER}
 .endif
 .if defined(_WANT_MYSQL_CLIENT) || \
 	!(defined(_WANT_MYSQL_SERVER) || defined(_WANT_MYSQL_EMBEDDED))
-LIB_DEPENDS+=	libmysqlclient.so.${MYSQL${MYSQL_VER}_LIBVER}:${_MYSQL_CLIENT}
+LIB_DEPENDS+=	${_MYSQL_SHLIB}.so.${MYSQL${MYSQL_VER}_LIBVER}:${_MYSQL_CLIENT}
 .endif
 .else
 IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}

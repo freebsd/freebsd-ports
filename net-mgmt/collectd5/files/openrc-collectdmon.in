@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# collectdmon_flags (string):  Set to "-c %%PREFIX%%/sbin/collectd" by default.
+#               Additional flags to collectdmon, see manual page.
+
+name="collectdmon"
+command=%%PREFIX%%/sbin/${name}
+: ${collectdmon_flags="-c %%PREFIX%%/sbin/collectd"}
+command_args=${collectdmon_flags}

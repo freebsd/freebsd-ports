@@ -11,7 +11,7 @@ COMMENT=	SysAdm API server
 LICENSE=	BSD3CLAUSE
 
 WRKSRC_SUBDIR=	src
-USE_QT5=	concurrent core network buildtools qmake gui websockets sql
+USE_QT5=	concurrent core network buildtools_build qmake_build websockets sql
 USES=		pkgconfig tar:xz qmake ssl
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 

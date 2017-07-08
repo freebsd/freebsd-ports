@@ -75,6 +75,7 @@
 ### XML::RSS 1.05
 
 CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
+		p5-CGI>4.0:www/p5-CGI							\
 		p5-CGI-Emulate-PSGI>0:www/p5-CGI-Emulate-PSGI				\
 		p5-CGI-PSGI>=0.12:www/p5-CGI-PSGI						\
 		p5-CSS-Squish>=0.06:textproc/p5-CSS-Squish					\
@@ -93,7 +94,6 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Devel-StackTrace>=1.30:devel/p5-Devel-StackTrace				\
 		p5-Email-Address>=1.897:mail/p5-Email-Address				\
 		p5-Email-Address-List>=0.03:mail/p5-Email-Address-List			\
-		p5-Encode>=2.64:converters/p5-Encode					\
 		p5-File-ShareDir>0:devel/p5-File-ShareDir					\
 		p5-HTML-FormatExternal>0:textproc/p5-HTML-FormatExternal			\
 		p5-HTML-FormatText-WithLinks-AndTables>0:textproc/p5-HTML-FormatText-WithLinks-AndTables	\

@@ -3,7 +3,7 @@
 
 PORTNAME=	fishsupper
 PORTVERSION=	0.1.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -14,6 +14,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:devel/boost-libs
+
+BROKEN_powerpc64=	fails to compile: Log.h: expected initializer before '<' token
 
 GNU_CONFIGURE=	yes
 USES=		gmake localbase:ldflags

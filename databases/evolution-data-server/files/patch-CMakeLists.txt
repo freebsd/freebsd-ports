@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2017-06-02 14:29:11 UTC
++++ CMakeLists.txt
+@@ -503,6 +503,7 @@ endif(WITH_LIBDB)
+ # ******************************
+ 
+ set(CMAKE_REQUIRED_LIBRARIES "-liconv")
++set(CMAKE_REQUIRED_FLAGS "-L/usr/local/lib")
+ CHECK_C_SOURCE_COMPILES("#include <iconv.h>
+ 			#include <stdlib.h>
+ 			int main(void) { iconv_t cd; cd = iconv_open (\"UTF-8\", \"ISO-8859-1\"); return 0; }" HAVE_LIBICONV)

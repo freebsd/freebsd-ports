@@ -4,7 +4,7 @@
 PORTNAME=	openclonk
 PORTVERSION=	7.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/
 
@@ -21,7 +21,9 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 
-USES=		compiler:c++14-lang cmake desktop-file-utils jpeg pkgconfig tar:bzip2
+BROKEN_powerpc64=	fails to compile: C4Texture.cpp:260:13: error: 'stoul' is not a member of 'std'
+
+USES=		compiler:c++14-lang cmake:noninja desktop-file-utils jpeg pkgconfig tar:bzip2
 USE_GL=		glew
 USE_GNOME=	gtk30
 USE_SDL=	sdl mixer

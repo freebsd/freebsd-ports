@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	influxdb
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	cheffo@freebsd-bg.org
@@ -12,13 +13,21 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	go>=1.5.0:lang/go
 
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto \
+		asciidoc:textproc/asciidoc \
+		docbook-xml>0:textproc/docbook-xml
+MANPAGES_USES=	gmake
+OPTIONS_SUB=	yes
+
 ONLY_FOR_ARCHS=	i386 amd64 armv6
 
 USE_RC_SUBR=	influxd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	influxdata:DEFAULT
-
 
 GH_TUPLE=	BurntSushi:toml:9906417:toml/src/github.com/BurntSushi/toml \
 		bmizerany:pat:c068ca2:pat/src/github.com/bmizerany/pat \
@@ -37,8 +46,8 @@ GH_TUPLE=	BurntSushi:toml:9906417:toml/src/github.com/BurntSushi/toml \
 		rakyll:statik:e383bbf:statik/src/github.com/rakyll/statik \
 		retailnext:hllpp:38a7bb7:hllpp/src/github.com/retailnext/hllpp \
 		collectd:go-collectd:e84e8af:go_collectd/src/collectd.org \
-		uber-go:atomic:74ca5ec:atomic/src/go.uber.org/atomic \
-		uber-go:zap:416270f:zap/src/go.uber.org/zap \
+		uber-go:atomic:74ca5ec:atomic/src/github.com/uber-go/atomic \
+		uber-go:zap:fbae028:zap/src/github.com/uber-go/zap \
 		golang:crypto:9477e0b:crypto/src/golang.org/x/crypto
 
 SUB_FILES=	influxd
@@ -84,6 +93,9 @@ do-build:
 		@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT} && \
 			${SETENV} GOPATH=${WRKSRC} go install -ldflags "-X main.version=${DISTVERSION}" ./...
 
+do-build-MANPAGES-on:
+		@cd ${WRKSRC}/src/github.com/influxdata/influxdb/man && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
+
 do-install:
 		${MKDIR} ${STAGEDIR}${INFLUXD_DBDIR} \
 		${STAGEDIR}${INFLUXD_PIDDIR} \
@@ -93,12 +105,17 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/influx_inspect ${STAGEDIR}${PREFIX}/bin/influx_inspect
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/influx_tsm ${STAGEDIR}${PREFIX}/bin/influx_tsm
 		@${SED} -i .bak -e \
-			"s|/tmp/influxdb/development|/var/db/influxdb|g" \
+			"s|/var/lib/influxdb|/var/db/influxdb|g" \
 			${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT}/etc/config.sample.toml
 		${INSTALL_DATA} \
 			${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT}/etc/config.sample.toml  \
 			${STAGEDIR}${PREFIX}/etc/influxd.conf.sample
-		@${MKDIR} ${STAGEDIR}/var/db/influxdb
-		@${MKDIR} ${STAGEDIR}/var/log/influxdb
+
+do-install-MANPAGES-on:
+.for i in influx.1 influx_inspect.1 influx_stress.1 influx_tsm.1 \
+	influxd-backup.1 influxd-config.1 influxd-restore.1 \
+	influxd-run.1 influxd-version.1 influxd.1
+		${INSTALL_MAN} ${WRKSRC}/src/github.com/influxdata/influxdb/man/$i ${STAGEDIR}${MAN8PREFIX}/man/man1
+.endfor
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	glusterfs
 PORTVERSION=	3.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://bits.gluster.org/pub/gluster/glusterfs/src/
 
@@ -18,6 +18,8 @@ USE_GCC=	any
 
 USES=		bison gettext libtool pkgconfig python readline shebangfix \
 		sqlite ssl
+
+BROKEN_SSL=	libressl
 
 SHEBANG_FILES=	extras/ganesha/scripts/create-export-ganesha.sh \
 		extras/ganesha/scripts/dbus-send.sh \

@@ -38,8 +38,7 @@
 %%WWWDIR%%/library/Preprocessor.php
 %%WWWDIR%%/library/Reader.php
 %%WWWDIR%%/library/gprof2dot.py
-%%WWWDIR%%/license.txt
-%%WWWDIR%%/package.sh
+%%WWWDIR%%/styles/custom.css
 %%WWWDIR%%/styles/style.css
 %%WWWDIR%%/templates/fileviewer.phtml
 %%WWWDIR%%/templates/index.phtml

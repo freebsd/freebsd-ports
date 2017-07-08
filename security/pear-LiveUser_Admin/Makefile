@@ -21,7 +21,7 @@ PEAR_LOG_DESC=	PEAR::Log support
 PEAR_XML_TREE_DESC=	PEAR::XML_Tree support
 PEAR_CRYPT_RC4_DESC=	PEAR::Crypt_RC4 support
 
-USES=	pear
+USES=		pear
 
 PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
 PEAR_MDB_RUN_DEPENDS=	${PEARDIR}/MDB.php:databases/pear-MDB

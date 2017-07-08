@@ -8,6 +8,6 @@ CATEGORIES=	www devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Easy and secure management of files submitted via HTML Forms
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

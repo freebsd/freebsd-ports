@@ -3,7 +3,7 @@
 
 PORTNAME=	rabbyt
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP/source/R/Rabbyt \
 		http://mirror.amdmi3.ru/distfiles/

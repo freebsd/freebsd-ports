@@ -8,7 +8,7 @@ CATEGORIES=	sysutils devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Internationalization
 
-USES=	pear
+USES=		pear php
 USE_PHP=	iconv
 
 .include <bsd.port.mk>

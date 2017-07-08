@@ -13,7 +13,6 @@ export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
 name="gdm"
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
-procname="%%PREFIX%%/sbin/gdm-binary"
 
 start()
 {
@@ -48,12 +47,7 @@ start()
 
 stop_pre()
 {
-    /bin/kill -9 $(/bin/cat "${pidfile}")
     pkill -9 -u gdm
     pkill -9 X
     pkill -9 gdm-session-worker
-}
-
-depend() {
-
 }

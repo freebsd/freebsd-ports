@@ -122,7 +122,6 @@
 %%WWWDIR%%/app/Controller/BoardPopoverController.php
 %%WWWDIR%%/app/Controller/BoardTooltipController.php
 %%WWWDIR%%/app/Controller/BoardViewController.php
-%%WWWDIR%%/app/Controller/CalendarController.php
 %%WWWDIR%%/app/Controller/CaptchaController.php
 %%WWWDIR%%/app/Controller/CategoryController.php
 %%WWWDIR%%/app/Controller/ColumnController.php
@@ -154,7 +153,6 @@
 %%WWWDIR%%/app/Controller/ProjectCreationController.php
 %%WWWDIR%%/app/Controller/ProjectEditController.php
 %%WWWDIR%%/app/Controller/ProjectFileController.php
-%%WWWDIR%%/app/Controller/ProjectGanttController.php
 %%WWWDIR%%/app/Controller/ProjectListController.php
 %%WWWDIR%%/app/Controller/ProjectOverviewController.php
 %%WWWDIR%%/app/Controller/ProjectPermissionController.php
@@ -177,7 +175,6 @@
 %%WWWDIR%%/app/Controller/TaskDuplicationController.php
 %%WWWDIR%%/app/Controller/TaskExternalLinkController.php
 %%WWWDIR%%/app/Controller/TaskFileController.php
-%%WWWDIR%%/app/Controller/TaskGanttController.php
 %%WWWDIR%%/app/Controller/TaskImportController.php
 %%WWWDIR%%/app/Controller/TaskInternalLinkController.php
 %%WWWDIR%%/app/Controller/TaskListController.php
@@ -388,17 +385,18 @@
 %%WWWDIR%%/app/Formatter/BoardTaskFormatter.php
 %%WWWDIR%%/app/Formatter/GroupAutoCompleteFormatter.php
 %%WWWDIR%%/app/Formatter/ProjectActivityEventFormatter.php
-%%WWWDIR%%/app/Formatter/ProjectGanttFormatter.php
+%%WWWDIR%%/app/Formatter/ProjectApiApiFormatter.php
+%%WWWDIR%%/app/Formatter/ProjectsApiFormatter.php
 %%WWWDIR%%/app/Formatter/SubtaskListFormatter.php
 %%WWWDIR%%/app/Formatter/SubtaskTimeTrackingCalendarFormatter.php
+%%WWWDIR%%/app/Formatter/TaskApiFormatter.php
 %%WWWDIR%%/app/Formatter/TaskAutoCompleteFormatter.php
-%%WWWDIR%%/app/Formatter/TaskCalendarFormatter.php
-%%WWWDIR%%/app/Formatter/TaskGanttFormatter.php
 %%WWWDIR%%/app/Formatter/TaskICalFormatter.php
 %%WWWDIR%%/app/Formatter/TaskListFormatter.php
 %%WWWDIR%%/app/Formatter/TaskListSubtaskAssigneeFormatter.php
 %%WWWDIR%%/app/Formatter/TaskListSubtaskFormatter.php
 %%WWWDIR%%/app/Formatter/TaskSuggestMenuFormatter.php
+%%WWWDIR%%/app/Formatter/TasksApiFormatter.php
 %%WWWDIR%%/app/Formatter/UserAutoCompleteFormatter.php
 %%WWWDIR%%/app/Formatter/UserMentionFormatter.php
 %%WWWDIR%%/app/Group/DatabaseBackendGroupProvider.php
@@ -409,7 +407,6 @@
 %%WWWDIR%%/app/Helper/AssetHelper.php
 %%WWWDIR%%/app/Helper/AvatarHelper.php
 %%WWWDIR%%/app/Helper/BoardHelper.php
-%%WWWDIR%%/app/Helper/CalendarHelper.php
 %%WWWDIR%%/app/Helper/CommentHelper.php
 %%WWWDIR%%/app/Helper/DateHelper.php
 %%WWWDIR%%/app/Helper/FileHelper.php
@@ -444,6 +441,7 @@
 %%WWWDIR%%/app/Job/UserMentionJob.php
 %%WWWDIR%%/app/Library/password.php
 %%WWWDIR%%/app/Locale/bs_BA/translations.php
+%%WWWDIR%%/app/Locale/ca_ES/translations.php
 %%WWWDIR%%/app/Locale/cs_CZ/translations.php
 %%WWWDIR%%/app/Locale/da_DK/translations.php
 %%WWWDIR%%/app/Locale/de_DE/translations.php
@@ -554,6 +552,9 @@
 %%WWWDIR%%/app/Notification/WebNotification.php
 %%WWWDIR%%/app/Notification/WebhookNotification.php
 %%WWWDIR%%/app/Pagination/DashboardPagination.php
+%%WWWDIR%%/app/Pagination/ProjectPagination.php
+%%WWWDIR%%/app/Pagination/SubtaskPagination.php
+%%WWWDIR%%/app/Pagination/TaskPagination.php
 %%WWWDIR%%/app/Pagination/UserPagination.php
 %%WWWDIR%%/app/Schema/Migration.php
 %%WWWDIR%%/app/Schema/Mysql.php
@@ -633,8 +634,6 @@
 %%WWWDIR%%/app/Template/board/view_private.php
 %%WWWDIR%%/app/Template/board/view_public.php
 %%WWWDIR%%/app/Template/board_popover/close_all_tasks_column.php
-%%WWWDIR%%/app/Template/calendar/project.php
-%%WWWDIR%%/app/Template/calendar/user.php
 %%WWWDIR%%/app/Template/category/create.php
 %%WWWDIR%%/app/Template/category/edit.php
 %%WWWDIR%%/app/Template/category/index.php
@@ -659,7 +658,6 @@
 %%WWWDIR%%/app/Template/config/api.php
 %%WWWDIR%%/app/Template/config/application.php
 %%WWWDIR%%/app/Template/config/board.php
-%%WWWDIR%%/app/Template/config/calendar.php
 %%WWWDIR%%/app/Template/config/email.php
 %%WWWDIR%%/app/Template/config/integrations.php
 %%WWWDIR%%/app/Template/config/keyboard_shortcuts.php
@@ -675,7 +673,12 @@
 %%WWWDIR%%/app/Template/custom_filter/edit.php
 %%WWWDIR%%/app/Template/custom_filter/index.php
 %%WWWDIR%%/app/Template/custom_filter/remove.php
-%%WWWDIR%%/app/Template/dashboard/show.php
+%%WWWDIR%%/app/Template/dashboard/layout.php
+%%WWWDIR%%/app/Template/dashboard/overview.php
+%%WWWDIR%%/app/Template/dashboard/projects.php
+%%WWWDIR%%/app/Template/dashboard/sidebar.php
+%%WWWDIR%%/app/Template/dashboard/subtasks.php
+%%WWWDIR%%/app/Template/dashboard/tasks.php
 %%WWWDIR%%/app/Template/doc/show.php
 %%WWWDIR%%/app/Template/event/comment_create.php
 %%WWWDIR%%/app/Template/event/comment_delete.php
@@ -709,6 +712,7 @@
 %%WWWDIR%%/app/Template/group/dropdown.php
 %%WWWDIR%%/app/Template/group/index.php
 %%WWWDIR%%/app/Template/group/remove.php
+%%WWWDIR%%/app/Template/group/user_dropdown.php
 %%WWWDIR%%/app/Template/group/users.php
 %%WWWDIR%%/app/Template/group_creation/show.php
 %%WWWDIR%%/app/Template/group_modification/show.php
@@ -760,7 +764,6 @@
 %%WWWDIR%%/app/Template/project_edit/show.php
 %%WWWDIR%%/app/Template/project_file/create.php
 %%WWWDIR%%/app/Template/project_file/remove.php
-%%WWWDIR%%/app/Template/project_gantt/show.php
 %%WWWDIR%%/app/Template/project_header/dropdown.php
 %%WWWDIR%%/app/Template/project_header/header.php
 %%WWWDIR%%/app/Template/project_header/search.php
@@ -859,7 +862,6 @@
 %%WWWDIR%%/app/Template/task_file/remove.php
 %%WWWDIR%%/app/Template/task_file/screenshot.php
 %%WWWDIR%%/app/Template/task_file/show.php
-%%WWWDIR%%/app/Template/task_gantt/show.php
 %%WWWDIR%%/app/Template/task_import/show.php
 %%WWWDIR%%/app/Template/task_internal_link/create.php
 %%WWWDIR%%/app/Template/task_internal_link/edit.php
@@ -920,7 +922,6 @@
 %%WWWDIR%%/app/Template/user_view/timesheet.php
 %%WWWDIR%%/app/Template/web_notification/show.php
 %%WWWDIR%%/app/User/Avatar/AvatarFileProvider.php
-%%WWWDIR%%/app/User/Avatar/GravatarProvider.php
 %%WWWDIR%%/app/User/Avatar/LetterAvatarProvider.php
 %%WWWDIR%%/app/User/DatabaseUserProvider.php
 %%WWWDIR%%/app/User/LdapUserProvider.php
@@ -980,7 +981,6 @@
 %%WWWDIR%%/assets/fonts/fontawesome-webfont.woff
 %%WWWDIR%%/assets/fonts/fontawesome-webfont.woff2
 %%WWWDIR%%/assets/img/favicon.png
-%%WWWDIR%%/assets/img/gravatar-icon.png
 %%WWWDIR%%/assets/img/icon.svg
 %%WWWDIR%%/assets/img/touch-icon-ipad-retina.png
 %%WWWDIR%%/assets/img/touch-icon-ipad.png
@@ -989,7 +989,6 @@
 %%WWWDIR%%/assets/js/app.min.js
 %%WWWDIR%%/assets/js/components/accordion.js
 %%WWWDIR%%/assets/js/components/board-task-click.js
-%%WWWDIR%%/assets/js/components/calendar.js
 %%WWWDIR%%/assets/js/components/chart-project-avg-time-column.js
 %%WWWDIR%%/assets/js/components/chart-project-burndown.js
 %%WWWDIR%%/assets/js/components/chart-project-cumulative-flow.js
@@ -1035,7 +1034,6 @@
 %%WWWDIR%%/assets/js/src/Bootstrap.js
 %%WWWDIR%%/assets/js/src/Column.js
 %%WWWDIR%%/assets/js/src/Dropdown.js
-%%WWWDIR%%/assets/js/src/Gantt.js
 %%WWWDIR%%/assets/js/src/Namespace.js
 %%WWWDIR%%/assets/js/src/Search.js
 %%WWWDIR%%/assets/js/src/Swimlane.js
@@ -1057,7 +1055,6 @@
 %%WWWDIR%%/assets/sass/_file_upload.sass
 %%WWWDIR%%/assets/sass/_filter_box.sass
 %%WWWDIR%%/assets/sass/_form.sass
-%%WWWDIR%%/assets/sass/_gantt_chart.sass
 %%WWWDIR%%/assets/sass/_header.sass
 %%WWWDIR%%/assets/sass/_icon.sass
 %%WWWDIR%%/assets/sass/_image_slideshow.sass
@@ -1104,6 +1101,21 @@
 %%WWWDIR%%/config.default.php
 %%WWWDIR%%/data/.htaccess
 %%WWWDIR%%/data/web.config
+%%WWWDIR%%/doc/cs_CZ/board-collapsed-expanded.markdown
+%%WWWDIR%%/doc/cs_CZ/board-horizontal-scrolling-and-compact-view.markdown
+%%WWWDIR%%/doc/cs_CZ/board-show-hide-columns.markdown
+%%WWWDIR%%/doc/cs_CZ/closing-tasks.markdown
+%%WWWDIR%%/doc/cs_CZ/creating-projects.markdown
+%%WWWDIR%%/doc/cs_CZ/creating-tasks.markdown
+%%WWWDIR%%/doc/cs_CZ/duplicate-move-tasks.markdown
+%%WWWDIR%%/doc/cs_CZ/editing-projects.markdown
+%%WWWDIR%%/doc/cs_CZ/index.markdown
+%%WWWDIR%%/doc/cs_CZ/project-configuration.markdown
+%%WWWDIR%%/doc/cs_CZ/project-permissions.markdown
+%%WWWDIR%%/doc/cs_CZ/project-types.markdown
+%%WWWDIR%%/doc/cs_CZ/project-views.markdown
+%%WWWDIR%%/doc/cs_CZ/removing-projects.markdown
+%%WWWDIR%%/doc/cs_CZ/what-is-kanban.markdown
 %%WWWDIR%%/doc/en_US/2fa.markdown
 %%WWWDIR%%/doc/en_US/analytics-tasks.markdown
 %%WWWDIR%%/doc/en_US/analytics.markdown

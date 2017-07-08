@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	state_machines-activemodel
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activemodel4>=4.1:databases/rubygem-activemodel4 \
-		rubygem-state_machines>=0.4.0:devel/rubygem-state_machines
+		rubygem-state_machines>=0.5.0:devel/rubygem-state_machines
 
 NO_ARCH=	yes
 USE_RUBY=	yes

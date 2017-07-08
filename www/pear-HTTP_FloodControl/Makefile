@@ -17,7 +17,7 @@ PEAR_DB_DESC=	PEAR::DB support
 PEAR_MDB_DESC=	PEAR::MDB support
 PEAR_MDB2_DESC=	PEAR::MDB2 support
 
-USES=	pear
+USES=		pear
 
 PEAR_DB_RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
 PEAR_MDB_RUN_DEPENDS=	${PEARDIR}/MDB.php:databases/pear-MDB

@@ -12,6 +12,7 @@ lib/bzflag/autoFlagReset.so
 lib/bzflag/bzfscron.so
 lib/bzflag/chathistory.so
 lib/bzflag/customflagsample.so
+lib/bzflag/customPollTypeSample.so
 lib/bzflag/fairCTF.so
 lib/bzflag/fastmap.so
 lib/bzflag/flagStay.so
@@ -132,6 +133,7 @@ man/man6/bzfs.6.gz
 %%DATADIR%%/l10n/bzflag_lt.po
 %%DATADIR%%/l10n/bzflag_nl.po
 %%DATADIR%%/l10n/bzflag_pt.po
+%%DATADIR%%/l10n/bzflag_ru.po
 %%DATADIR%%/l10n/bzflag_sv.po
 %%DATADIR%%/land.wav
 %%DATADIR%%/laser.wav

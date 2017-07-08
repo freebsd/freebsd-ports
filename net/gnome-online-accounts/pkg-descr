@@ -1,4 +1,7 @@
-gnome-online-accounts provides interfaces so applications and
-libraries in GNOME can access the user's online accounts.
+GOA provides a centralized service that allows a set of online accounts
+to be configured for use with core GNOME applications. In UX terms, GOA
+provides a static list of online accounts that can be setup by users
+(through the Online Accounts panel in System Settings). These accounts
+can then be used by core GNOME applications.
 
-WWW: https://wiki.gnome.org/Projects/GnomeOnlineAccounts
+WWW: https://wiki.gnome.org/Projects/GnomeOnlineAccounts/

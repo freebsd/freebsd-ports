@@ -21,6 +21,7 @@ BUILD_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
 		p5-XML-RSS>=0:textproc/p5-XML-RSS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

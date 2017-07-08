@@ -2,6 +2,7 @@
 
 PORTNAME=	nestopia
 PORTVERSION=	1.47
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	neel@neelc.org

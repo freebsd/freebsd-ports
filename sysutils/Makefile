@@ -64,8 +64,8 @@
     SUBDIR += b43-fwcutter
     SUBDIR += backupchecker
     SUBDIR += backuppc
-    SUBDIR += backuppc4
     SUBDIR += backuppc-devel
+    SUBDIR += backuppc4
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-static
@@ -136,12 +136,13 @@
     SUBDIR += cdrtools-devel
     SUBDIR += cfengine
     SUBDIR += cfengine-masterfiles
+    SUBDIR += cfengine-masterfiles310
     SUBDIR += cfengine-masterfiles36
     SUBDIR += cfengine-masterfiles37
     SUBDIR += cfengine-masterfiles38
     SUBDIR += cfengine-masterfiles39
-    SUBDIR += cfengine-masterfiles310
     SUBDIR += cfengine22
+    SUBDIR += cfengine310
     SUBDIR += cfengine32
     SUBDIR += cfengine33
     SUBDIR += cfengine34
@@ -150,7 +151,6 @@
     SUBDIR += cfengine37
     SUBDIR += cfengine38
     SUBDIR += cfengine39
-    SUBDIR += cfengine310
     SUBDIR += chgrep
     SUBDIR += chyves
     SUBDIR += cinnamon-control-center
@@ -247,6 +247,7 @@
     SUBDIR += dsbbatmon
     SUBDIR += dsbdriverd
     SUBDIR += dsbmc
+    SUBDIR += dsbmc-cli
     SUBDIR += dsbmd
     SUBDIR += dsbwrtsysctl
     SUBDIR += dt
@@ -280,6 +281,7 @@
     SUBDIR += etcupdate
     SUBDIR += eventlog
     SUBDIR += evtviewer
+    SUBDIR += exa
     SUBDIR += exfat-utils
     SUBDIR += extipl
     SUBDIR += ezjail
@@ -311,6 +313,7 @@
     SUBDIR += flexbackup
     SUBDIR += flock
     SUBDIR += flog
+    SUBIDR += flowgger
     SUBDIR += fluent-bit
     SUBDIR += flyback
     SUBDIR += fonteditfs
@@ -617,6 +620,7 @@
     SUBDIR += mksunbootcd
     SUBDIR += mmc-utils
     SUBDIR += mnrpes
+    SUBDIR += modman
     SUBDIR += modules
     SUBDIR += mog
     SUBDIR += monit
@@ -662,6 +666,7 @@
     SUBDIR += namefix
     SUBDIR += nbosd
     SUBDIR += ncdu
+    SUBDIR += ndmpd
     SUBDIR += nepomuk-core
     SUBDIR += nepomuk-widgets
     SUBDIR += nfcutils
@@ -871,6 +876,7 @@
     SUBDIR += py-filelike
     SUBDIR += py-freenas.cli
     SUBDIR += py-glances
+    SUBDIR += py-gmailfs-fuse
     SUBDIR += py-halite
     SUBDIR += py-honcho
     SUBDIR += py-iowait
@@ -901,8 +907,11 @@
     SUBDIR += py-uptime
     SUBDIR += py-zdaemon
     SUBDIR += py-zfs
-    SUBDIR += pydf
+    SUBDIR += py3-execnet
     SUBDIR += py3-iocage
+    SUBDIR += py3-pkginfo
+    SUBDIR += py3-ptyprocess
+    SUBDIR += pydf
     SUBDIR += qchroot
     SUBDIR += qjail
     SUBDIR += qjail2
@@ -911,7 +920,9 @@
     SUBDIR += qpxtool
     SUBDIR += qsudo
     SUBDIR += qsynergy
+    SUBDIR += qt5-qtdiag
     SUBDIR += qt5-qtpaths
+    SUBDIR += qt5-qtplugininfo
     SUBDIR += qtpass
     SUBDIR += quicksynergy
     SUBDIR += qzeitgeist
@@ -941,6 +952,7 @@
     SUBDIR += respond
     SUBDIR += restic
     SUBDIR += retail
+    SUBDIR += rex
     SUBDIR += rfstool
     SUBDIR += rhc
     SUBDIR += riak-cs
@@ -1166,14 +1178,17 @@
     SUBDIR += u-boot-bananapi
     SUBDIR += u-boot-bananapim2
     SUBDIR += u-boot-beaglebone
+    SUBDIR += u-boot-chip
     SUBDIR += u-boot-cubieboard
     SUBDIR += u-boot-cubieboard2
     SUBDIR += u-boot-cubox-hummingboard
     SUBDIR += u-boot-duovero
+    SUBDIR += u-boot-imx-serial-loader
     SUBDIR += u-boot-master
     SUBDIR += u-boot-olimex-a20-som-evb
     SUBDIR += u-boot-olinuxino-lime
     SUBDIR += u-boot-orangepi-one
+    SUBDIR += u-boot-orangepi-plus-2e
     SUBDIR += u-boot-pandaboard
     SUBDIR += u-boot-pcduino3
     SUBDIR += u-boot-pine64

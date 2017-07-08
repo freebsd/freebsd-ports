@@ -9,6 +9,6 @@ CATEGORIES=	math pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Package that produces combinations and permutations
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

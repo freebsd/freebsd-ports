@@ -3,7 +3,7 @@
 PORTNAME=	opensubdiv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3_0_5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,7 +20,7 @@ GH_PROJECT=	OpenSubdiv
 
 USE_LDCONFIG=	yes
 USE_GL=		glew
-USES=		cmake:outsource compiler pkgconfig
+USES=		cmake:outsource,noninja compiler pkgconfig
 USE_XORG=	x11 xi xcursor xrandr xxf86vm xinerama
 
 CMAKE_ARGS+=	-DNO_TUTORIALS:BOOL=ON -DNO_EXAMPLES:BOOL=ON \

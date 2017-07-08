@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencoarrays
-PORTVERSION=	1.8.4
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 CATEGORIES=	lang parallel
 
 MAINTAINER=	mexas@bris.ac.uk
@@ -44,8 +43,7 @@ OPENMPI2_CONFIGURE_ENV=	MPI_HOME=${LOCALBASE}/mpi/openmpi2
 .include <bsd.port.options.mk>
 
 .if ${GCC_DEFAULT:R} < 5
-IGNORE=		This port requires GCC 5 or higher.  Add\
-		DEFAULT_VERSIONS+=gcc=5 to /etc/make.conf
+IGNORE=		requires GCC 5 or higher.  Add DEFAULT_VERSIONS+=gcc=5 to /etc/make.conf
 .endif
 
 post-patch:

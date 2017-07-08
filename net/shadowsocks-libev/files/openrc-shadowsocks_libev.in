@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable shadowsocks-libev:
+# shadowsocks_libev_config (path): Shadowsocks config file.
+#      Defaults to "%%PREFIX%%/etc/shadowsocks-libev/config.json"
+
+name="shadowsocks_libev"
+
+: ${shadowsocks_libev_config="%%PREFIX%%/etc/shadowsocks-libev/config.json"}
+
+command="%%PREFIX%%/bin/ss-server" 
+pidfile="/var/run/shadowsocks-libev.pid"
+required_files="${shadowsocks_libev_config}"
+command_args="-f $pidfile -c $shadowsocks_libev_config"
+
+depend() {
+	keyword -shutdown
+}

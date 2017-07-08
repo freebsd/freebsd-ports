@@ -3,7 +3,7 @@
 
 PORTNAME=	xforms
 DISTVERSION=	1.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SAVANNAH
@@ -28,7 +28,5 @@ INSTALL_TARGET=	install-strip
 post-patch:
 	${REINPLACE_CMD} 's|#define fl_draw_box|#define fl_drw_box|'	\
 		${WRKSRC}/lib/include/Basic.h
-
-BROKEN_ia64=	Does not compile on ia64
 
 .include <bsd.port.mk>

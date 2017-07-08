@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	psychopy
-PORTVERSION=	1.83.04
-PORTREVISION=	2
+PORTVERSION=	1.85.1
 CATEGORIES=	science python
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +10,9 @@ COMMENT=	Psychophysics toolkit for Python
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet>=0:graphics/py-pyglet \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas \

@@ -1,4 +1,4 @@
---- components/sync/base/get_session_name.cc.orig	2017-04-19 19:06:33 UTC
+--- components/sync/base/get_session_name.cc.orig	2017-06-05 19:03:06 UTC
 +++ components/sync/base/get_session_name.cc
 @@ -15,7 +15,7 @@
  
@@ -9,7 +9,7 @@
  #include "components/sync/base/get_session_name_linux.h"
  #elif defined(OS_IOS)
  #include "components/sync/base/get_session_name_ios.h"
-@@ -51,7 +51,7 @@ std::string GetSessionNameSynchronously(
+@@ -51,7 +51,7 @@ std::string GetSessionNameSynchronously() {
        session_name = "Chromebook";
        break;
    }

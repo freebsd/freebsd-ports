@@ -15,13 +15,9 @@ COMMENT=	Python extension embedding SWI-Prolog
 BUILD_DEPENDS=	swipl:lang/swi-pl
 RUN_DEPENDS=	swipl:lang/swi-pl
 
+BROKEN_amd64=	fails to build: can't link shared libraries to static
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		Does not build on ia64 or amd64 (can't link shared libraries to static)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

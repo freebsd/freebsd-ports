@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	1.2.2
-PORTREVISION=	201706211636
+PORTVERSION=	1.3.0
+PORTREVISION=	201707030836
 PORTEPOCH=	3
 CATEGORIES=	x11
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	lumina-core>=0:x11/lumina-core \
 		lumina-textedit>=0:deskutils/lumina-textedit \
 		lumina-xdg-entry>=0:deskutils/lumina-xdg-entry
 
-CONFLICTS=	lumina-1.2.1
+CONFLICTS_INSTALL=	lumina-1.2.*
 
 USES=		metaport
 

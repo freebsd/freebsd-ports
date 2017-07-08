@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.14.16
+PORTVERSION=	4.14.28
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -15,6 +15,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-activerecord4>=4.2.6:databases/rubygem-activerecord4 \
 		rubygem-activesupport4>=4.2.6:devel/rubygem-activesupport4 \
 		rubygem-actionpack4>=4.2.6:www/rubygem-actionpack4 \
+		rubygem-backports>=0:devel/rubygem-backports \
 		rubygem-bcrypt>=0:security/rubygem-bcrypt \
 		rubygem-bundler>=0:sysutils/rubygem-bundler \
 		rubygem-jsobfu>=0:www/rubygem-jsobfu \
@@ -24,13 +25,13 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.2.24:security/rubygem-metasploit-payloads \
+		rubygem-metasploit-payloads>=1.2.32:security/rubygem-metasploit-payloads \
 		rubygem-metasploit_payloads-mettle>=0.1.9:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
-		rubygem-packetfu>=1.1.13.p:net/rubygem-packetfu \
+		rubygem-packetfu>=0:net/rubygem-packetfu \
 		rubygem-pcaprub>=0:net/rubygem-pcaprub \
 		rubygem-pg>=0:databases/rubygem-pg \
 		rubygem-railties4>=4.2.6:www/rubygem-railties4 \
@@ -44,7 +45,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
-		rubygem-rex-arch>=0.1.4:security/rubygem-rex-arch \
+		rubygem-rex-arch>=0:security/rubygem-rex-arch \
 		rubygem-rex-bin_tools>=0:security/rubygem-rex-bin_tools \
 		rubygem-rex-core>=0:security/rubygem-rex-core \
 		rubygem-rex-encoder>=0:security/rubygem-rex-encoder \
@@ -79,12 +80,15 @@ GH_ACCOUNT=	rapid7
 GH_PROJECT=	metasploit-framework
 
 NO_ARCH=	yes
+NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
 STRIP=
 
 USE_RUBY=	yes
 USES=		python shebangfix
 PYTHON_NO_DEPENDS=	yes
-SHEBANG_FILES=	external/source/shellcode/windows/build.sh \
+SHEBANG_FILES=	data/exploits/CVE-2017-7494/build.sh \
+		data/exploits/CVE-2017-7494/install-deps.sh \
+		external/source/shellcode/windows/build.sh \
 		external/source/msfJavaToolkit/compile.sh \
 		external/source/msfJavaToolkit/testKeytool.rb \
 		external/source/msfJavaToolkit/testCompilation.rb \
@@ -107,6 +111,7 @@ post-patch:
 		/rb-readline/d ; \
 		/metasploit-aggregator/d' \
 		${WRKSRC}/metasploit-framework.gemspec
+	${REINPLACE_CMD} "/pg/s|, '0.20.0'||" ${WRKSRC}/metasploit-framework.gemspec
 .if ${RUBY_VER} < 2.4
 	${REINPLACE_CMD} '/xmlrpc/d' ${WRKSRC}/metasploit-framework.gemspec
 .endif

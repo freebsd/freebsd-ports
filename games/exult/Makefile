@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libpng.so:graphics/png
 
+BROKEN_armv6=		fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char
+BROKEN_aarch64=		fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char
+
 USE_GITHUB=	yes
 GH_TAGNAME=	b15afba
 
@@ -59,7 +62,5 @@ post-install-DOCS-on:
 .for i in FAQ NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-BROKEN_aarch64=		Fails to compile: error: constant expression evaluates to -1 which cannot be narrowed to type char
 
 .include <bsd.port.mk>

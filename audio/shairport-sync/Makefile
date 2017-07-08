@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shairport-sync
-DISTVERSION=	3.1.d6
+DISTVERSION=	3.1d16
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -24,7 +24,7 @@ GH_ACCOUNT=	mikebrady
 
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=	ALAC ALSA SNDIO
+OPTIONS_DEFINE=	ALAC ALSA SNDIO PULSEAUDIO
 OPTIONS_DEFAULT=SNDIO
 ALAC_DESC=	Build with libalac support (experimental)
 
@@ -46,5 +46,8 @@ ALSA_CONFIGURE_ON=	--with-alsa
 
 SNDIO_CONFIGURE_ON=	--with-sndio
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+
+PULSEAUDIO_CONFIGURE_ON=--with-pa
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ PEAR_HTML_JAVASCRIPT_DESC=	PEAR::HTML_Javascript support
 PEAR_FILE_GETTEXT_DESC=	PEAR::File_Gettext support
 PEAR_TRANSLATION2_DESC=	PEAR::Translation2 support
 
-USES=	pear
+USES=		pear
 
 PEAR_HTML_JAVASCRIPT_RUN_DEPENDS=	${PEARDIR}/HTML/Javascript.php:devel/pear-HTML_Javascript
 PEAR_FILE_GETTEXT_RUN_DEPENDS=	${PEARDIR}/File/Gettext.php:sysutils/pear-File_Gettext

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hexcompare
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20v${PORTVERSION}
-DISTNAME=	${PORTNAME}-102
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Compare and identify differences between two binary files

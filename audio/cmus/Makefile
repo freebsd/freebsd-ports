@@ -18,6 +18,8 @@ COMMENT=	Console-based music player with really cool features
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to configure: checking for successful build of ffmpeg.c... no
+
 USE_GITHUB=	yes
 
 USES=		gmake iconv ncurses pkgconfig

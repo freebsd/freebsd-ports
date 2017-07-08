@@ -2,13 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	heimdal
-PORTVERSION=	7.1.0
-PORTREVISION=	2
+PORTVERSION=	7.3.0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
-MASTER_SITES=	http://www.h5l.org/dist/src/ \
-		http://ftp.pdc.kth.se/pub/heimdal/src/ \
-		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
-		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/heimdal/src/
+MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Popular BSD-licensed implementation of Kerberos 5

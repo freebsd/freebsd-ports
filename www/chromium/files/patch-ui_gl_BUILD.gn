@@ -1,7 +1,7 @@
---- ui/gl/BUILD.gn.orig	2017-04-19 19:06:54 UTC
+--- ui/gl/BUILD.gn.orig	2017-06-05 19:03:30 UTC
 +++ ui/gl/BUILD.gn
-@@ -13,7 +13,7 @@ declare_args() {
-   enable_swiftshader = is_chrome_branded && is_win
+@@ -14,7 +14,7 @@ declare_args() {
+                        (target_cpu == "x86" || target_cpu == "x64")
  }
  
 -use_egl = is_win || is_android || is_linux
@@ -9,9 +9,9 @@
  use_glx = use_x11 || ozone_platform_x11
  
  if (is_android) {
-@@ -170,7 +170,7 @@ component("gl") {
-       "gl_surface_egl.h",
-     ]
+@@ -180,7 +180,7 @@ component("gl") {
+       ]
+     }
    }
 -  if (is_android || is_linux) {
 +  if (is_android || is_linux || is_bsd) {

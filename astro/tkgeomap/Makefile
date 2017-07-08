@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtclgeomap.so:astro/tclgeomap
 
+BROKEN_armv6=		fails to configure: shared build specified but could not find shared tclgeomap library
+
 USES+=		tk:tea
 CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x \
 		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include

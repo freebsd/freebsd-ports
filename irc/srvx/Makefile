@@ -12,6 +12,8 @@ COMMENT=	Services for ircu P10 protocol networks
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=		fails to configure: Cannot detect format string for time_t
+
 USES=		cpe
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-getopt

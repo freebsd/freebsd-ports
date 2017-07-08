@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcelog
-PORTVERSION=	149
+PORTVERSION=	153
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -16,7 +16,7 @@ TEST_DEPENDS=	bash:shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	andikleen
 
-ONLY_FOR_ARCHS=	amd64 i386 ia64
+ONLY_FOR_ARCHS=		amd64 i386
 
 USES=		alias gmake shebangfix
 
@@ -31,6 +31,7 @@ LDFLAGS+=	-lkvm
 PLIST_FILES=	bin/mcelog man/man8/mcelog.8.gz
 
 post-patch:
+	@${ECHO} "${DISTVERSIONPREFIX}${PORTVERSION}" >${WRKSRC}/.os_version
 	@${CP} ${FILESDIR}/memstream.c ${WRKSRC}/memstream.c
 	@${REINPLACE_CMD} 's/\"unknown\"/\"${PORTVERSION}\"/' \
 		${WRKSRC}/Makefile

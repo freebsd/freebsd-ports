@@ -1,4 +1,4 @@
---- libtest/lite.h.orig	2014-12-09 03:34:21 UTC
+--- libtest/lite.h.orig	2014-02-09 11:52:42 UTC
 +++ libtest/lite.h
 @@ -54,8 +54,10 @@
  #if defined(WIN32)

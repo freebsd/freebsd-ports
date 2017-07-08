@@ -8,6 +8,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR object-oriented API for building SVG documents
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

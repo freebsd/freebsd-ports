@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="pimdd"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+depend() {
+	use net
+	keyword -jail
+}

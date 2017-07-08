@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
 RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB
 
 USE_PHP=	ldap
-USES=		pear
+USES=		pear php
 
 .include <bsd.port.mk>

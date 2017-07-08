@@ -9,6 +9,6 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR template API
 
 USE_PHP=	ctype
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

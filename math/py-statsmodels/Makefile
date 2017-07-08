@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	statsmodels
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,10 +23,12 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist distutils concurrent
 USE_GITHUB=	yes
 GH_TAGNAME=	8e812cd
+SHEBANG_FILES=	tools/*.py statsmodels/datasets/*/data.py statsmodels/tools/print_version.py \
+	statsmodels/regression/quantile_regression.py
 
 PORTEXAMPLES=	*
 PORTDOCS=	README.rst README_l1.txt
@@ -36,6 +37,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/nonparametric/_smoothers_lowess.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/nonparametric/linbin.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/tsa/kalmanf/kalman_loglike.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/tsa/statespace/_statespace.so
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

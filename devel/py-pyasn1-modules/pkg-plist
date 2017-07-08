@@ -1,3 +1,4 @@
+bin/cmcdump.py
 bin/cmpdump.py
 bin/crldump.py
 bin/crmfdump.py
@@ -9,4 +10,5 @@ bin/pkcs1dump.py
 bin/pkcs7dump.py
 bin/pkcs8dump.py
 bin/snmpget.py
+bin/x509dump-rfc5280.py
 bin/x509dump.py

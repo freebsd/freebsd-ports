@@ -3,6 +3,7 @@
 
 PORTNAME=	mythtv
 PORTVERSION=	0.28.7
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org

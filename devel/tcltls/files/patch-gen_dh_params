@@ -1,0 +1,27 @@
+--- gen_dh_params	2017-05-01 10:45:59.000000000 -0400
++++ gen_dh_params	2017-05-16 18:19:20.703957000 -0400
+@@ -12,11 +12,8 @@
+ 
+ openssl_dhparam() {
+-	if [ -x "`which openssl 2>/dev/null`" ]; then
+-		o_output="`openssl dhparam -C "$@" 2>/dev/null`" || return 1
+-		o_output="`echo "${o_output}" | sed 's/get_dh[0-9]\+/get_dhParams/'`" || return 1
+-		o_output="`echo "${o_output}" | sed '/^-----BEGIN DH PARAMETERS-----$/,/^-----END DH PARAMETERS-----$/ d;/^#/ d'`" || return 1
+-
+-		echo "${o_output}"
+-
++	if openssl dhparam -C "$@" | sed	\
++	    -e 's/^DH \*get_dh[0-9]*/static DH *get_dhParams/'	\
++	    -e '/^-----BEGIN DH PARAMETERS-----$/,/^-----END DH PARAMETERS-----$/ d;/^#/ d'
++	then
+ 		return 0
+ 	fi
+@@ -273,6 +270,6 @@
+ echo "*****************************" >&2
+ gen_dh_params_openssl && exit 0
+-gen_dh_params_remote && exit 0
+-gen_dh_params_fallback && exit 0
++# gen_dh_params_remote && exit 0
++# gen_dh_params_fallback && exit 0
+ 
+ echo "Unable to generate parameters for DH of ${bits} bits" >&2

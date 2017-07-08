@@ -2,6 +2,7 @@
 
 PORTNAME=	softether
 PORTVERSION=	4.20.9608
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.softether-download.com/files/softether/v4.20-9608-rtm-2016.04.17-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v4.20-9608-rtm

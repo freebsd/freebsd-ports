@@ -1,0 +1,4 @@
+DBD::Oracle is a Perl module which works with the DBI module to provide
+access to Oracle databases.
+
+WWW: http://search.cpan.org/dist/DBD-Oracle/

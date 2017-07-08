@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seafile-gui
-PORTVERSION=	6.0.4
-PORTREVISION=	1
+PORTVERSION=	${SEAFILE_CLIENT_VER}
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt devel
 
@@ -39,5 +38,7 @@ OPTIONS_DEFINE=		DEBUG
 
 # Note that per PR 197984, cairo must be built with X11 and XCB options
 # otherwise configure fails with "cairo needs x11 enabled" message
+
+.include "${.CURDIR}/../seafile-client/Makefile.include"
 
 .include <bsd.port.mk>

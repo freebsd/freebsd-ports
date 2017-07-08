@@ -3,7 +3,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	6.06
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}6/${PORTNAME:S/c/C/}${PORTVERSION}
 PKGNAMESUFFIX=	6
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile
 
-USES=		alias bison cmake:outsource localbase python:2
+USES=		alias bison cmake:outsource,noninja localbase python:2
 # math/gmm++ requires c++11
 USE_CXXSTD=	c++11
 CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \

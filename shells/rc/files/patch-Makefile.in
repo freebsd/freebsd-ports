@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2003-07-17 14:24:25.000000000 +0200
-+++ ./Makefile.in	2014-03-06 18:42:44.943985391 +0100
-@@ -716,10 +716,10 @@
+--- Makefile.in.orig	2017-05-27 01:41:41 UTC
++++ Makefile.in
+@@ -945,10 +945,10 @@ trip: rc tripping
  	./rc -p < $(srcdir)/trip.rc
  
  install-exec-hook:
@@ -12,6 +12,6 @@
 +@AMC_HISTORY_TRUE@	rm -f $(DESTDIR)$(bindir)/--;  $(LN) $(DESTDIR)$(bindir)/- $(DESTDIR)$(bindir)/-- ;\
 +@AMC_HISTORY_TRUE@	rm -f $(DESTDIR)$(bindir)/-p;  $(LN) $(DESTDIR)$(bindir)/- $(DESTDIR)$(bindir)/-p ;\
 +@AMC_HISTORY_TRUE@	rm -f $(DESTDIR)$(bindir)/--p; $(LN) $(DESTDIR)$(bindir)/- $(DESTDIR)$(bindir)/--p
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:

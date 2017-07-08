@@ -11,6 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Transport agnostic JSON RPC helper objects
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	p5-libwww>=5:www/p5-libwww \
 		p5-Moose>=0.81:devel/p5-Moose \
 		p5-JSON>=2.11:converters/p5-JSON \
@@ -21,13 +25,8 @@ BUILD_DEPENDS=	p5-libwww>=5:www/p5-libwww \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502200
-TEST_DEPENDS+=	p5-Test-Simple>=1.001014:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -14,8 +14,7 @@ COMMENT=	Conversion routines for the HTTP protocol date formats
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-CONFLICTS=	p5-libwww-5*
-
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 

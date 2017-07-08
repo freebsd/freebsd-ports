@@ -11,8 +11,6 @@ COMMENT=	JSON (JavaScript Object Notation) implementation in C
 
 LICENSE=	MIT
 
-CONFLICTS_INSTALL=	cocaine-core-[0-9]*
-
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

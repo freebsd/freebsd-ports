@@ -10,3 +10,27 @@
            VISIBILITY_FLAGS='-I$(DIST)/system_wrappers_js -include $(topsrcdir)/config/gcc_hidden.h'
            WRAP_SYSTEM_INCLUDES=1
            STL_FLAGS='-I$(DIST)/stl_wrappers'
+@@ -4656,6 +4657,9 @@ MOZ_ARG_HEADER(Individual module options
+ 
+ dnl Setup default CPU arch for arm target
+ case "$target_cpu" in
++  armv6*)
++    MOZ_ARM_ARCH=armv6
++  ;;
+   arm*)
+     MOZ_ARM_ARCH=armv7
+   ;;
+@@ -4716,6 +4720,13 @@ elif test "$MOZ_ARM_ARCH" = "armv7"; the
+   esac
+ else
+   case "$target_cpu" in
++    armv6*)
++      if test "$GNU_CC"; then
++        CFLAGS="$CFLAGS"
++        CXXFLAGS="$CXXFLAGS"
++        ASFLAGS="$ASFLAGS"
++      fi
++      ;;
+     arm*)
+       if test "$GNU_CC"; then
+         CFLAGS="$CFLAGS -march=armv5te -mthumb-interwork -msoft-float"

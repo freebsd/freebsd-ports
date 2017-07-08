@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler \
 
 USE_RUBY=	yes
 USES=		gem
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/appraisal
 

@@ -68,6 +68,7 @@
     SUBDIR += erlang-runtime17
     SUBDIR += erlang-runtime18
     SUBDIR += erlang-runtime19
+    SUBDIR += erlang-runtime20
     SUBDIR += erlang-wx
     SUBDIR += execline
     SUBDIR += expect
@@ -244,9 +245,9 @@
     SUBDIR += pcc
     SUBDIR += pecl-perl
     SUBDIR += perl5-devel
-    SUBDIR += perl5.20
     SUBDIR += perl5.22
     SUBDIR += perl5.24
+    SUBDIR += perl5.26
     SUBDIR += petite-chez
     SUBDIR += pfe
     SUBDIR += phantomjs
@@ -333,6 +334,7 @@
     SUBDIR += spidermonkey170
     SUBDIR += spidermonkey185
     SUBDIR += spidermonkey24
+    SUBDIR += spidermonkey38
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel

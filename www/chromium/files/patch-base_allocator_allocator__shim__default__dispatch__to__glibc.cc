@@ -1,15 +1,15 @@
---- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2017-04-19 19:06:28 UTC
+--- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/allocator/allocator_shim_default_dispatch_to_glibc.cc
 @@ -3,19 +3,28 @@
  // found in the LICENSE file.
  
  #include "base/allocator/allocator_shim.h"
--
--#include <malloc.h>
 +#include <stdio.h>
 +#include <stdlib.h>
 +#include <malloc_np.h>
  
+-#include <malloc.h>
+-
  // This translation unit defines a default dispatch for the allocator shim which
  // routes allocations to libc functions.
 -// The code here is strongly inspired from tcmalloc's libc_override_glibc.h.

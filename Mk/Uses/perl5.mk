@@ -42,21 +42,14 @@ IGNORE=	Incorrect 'USES+=perl5:${perl5_ARGS}' perl5 takes no arguments
 
 USE_PERL5?=	run build
 
-# remove when 5.20 goes away.
-.sinclude "${LOCALBASE}/etc/perl5_version"
-.  if defined(PERL_VERSION)
-PERL5_DEPEND=	${PERL5}
-THIS_IS_OLD_PERL=	yes
-.  else
-# end of remove
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.    if ${PERL5_DEFAULT} == 5.20
-.include "${PORTSDIR}/lang/perl5.20/version.mk"
-.    elif ${PERL5_DEFAULT} == 5.22
+.    if ${PERL5_DEFAULT} == 5.22
 .include "${PORTSDIR}/lang/perl5.22/version.mk"
 .    elif ${PERL5_DEFAULT} == 5.24
 .include "${PORTSDIR}/lang/perl5.24/version.mk"
+.    elif ${PERL5_DEFAULT} == 5.26
+.include "${PORTSDIR}/lang/perl5.26/version.mk"
 .    elif ${PERL5_DEFAULT} == devel
 .include "${PORTSDIR}/lang/perl5-devel/version.mk"
 # Force PERL_PORT here in case two identical PERL_VERSION.
@@ -64,7 +57,6 @@ PERL_PORT?=	perl5-devel
 .    else
 IGNORE=	Invalid perl5 version ${PERL5_DEFAULT}
 .    endif
-.  endif
 
 PERL_VER?=	${PERL_VERSION:C/\.[0-9]+$//}
 
@@ -91,12 +83,12 @@ PERL_ARCH?=	mach
 # perl5_default file, or up there in the default versions selection.
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.  if   ${PERL_LEVEL} >= 502400
+.  if   ${PERL_LEVEL} >= 502600
+PERL_PORT?=	perl5.26
+.  elif   ${PERL_LEVEL} >= 502400
 PERL_PORT?=	perl5.24
-.  elif   ${PERL_LEVEL} >= 502200
+.  else # ${PERL_LEVEL} < 502400
 PERL_PORT?=	perl5.22
-.  else # ${PERL_LEVEL} < 502200
-PERL_PORT?=	perl5.20
 .  endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl

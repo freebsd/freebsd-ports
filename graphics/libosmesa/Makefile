@@ -7,20 +7,23 @@ CATEGORIES=	graphics
 
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
-LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libglapi.so:graphics/mesa-libs
-
 USE_XORG=	glproto
 
+# As of version 17.0.5 / 17.1.2, the Gallium variant fails to build due to
+# incorrectly ordered linker flags. Fortunately, autoreconf fixes the problem.
+# Unfortunately, we must reconf before we know if we're doing a Gallium build.
+USES=		autoreconf
+EXTRA_PATCHES=	${PATCHDIR}/configure.ac
+
 .include <bsd.port.options.mk>
-.include "${.CURDIR}/../../graphics/mesa-dri/Makefile.common"
+.include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
 CONFIGURE_ARGS+=	--disable-dri --disable-egl --disable-gbm \
-			--with-gallium-drivers=swrast
+			--disable-gles2 --with-gallium-drivers=swrast
 MESA_BUILD_WRKSRC=	src/util src/compiler src/mapi src/mesa
 
 .if "${MESA_LLVM_VER}" != ""
-CONFGIURE_ARGS+=	--enable-osmesa-gallium
+CONFIGURE_ARGS+=	--enable-osmesa-gallium
 MESA_BUILD_WRKSRC+=	src/gallium
 MESA_INSTALL_WRKSRC=	src/gallium/state_trackers/osmesa src/gallium/targets/osmesa
 .else
@@ -28,11 +31,11 @@ CONFIGURE_ARGS+=	--enable-osmesa
 MESA_INSTALL_WRKSRC=	src/mesa/drivers/osmesa
 .endif
 
-.include "${.CURDIR}/../../graphics/mesa-dri/Makefile.targets"
+.include "${MASTERDIR}/Makefile.targets"
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/GL
 	${INSTALL_DATA} ${WRKSRC}/include/GL/osmesa.h \
 		${STAGEDIR}${PREFIX}/include/GL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

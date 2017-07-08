@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	virtualpg
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Loadable dynamic extension to both SQLite and SpatiaLite
 
 LICENSE=	MPL LGPL21 GPLv2
 LICENSE_COMB=	dual
+LICENSE_FILE_MPL=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake iconv pathfix pkgconfig libtool pgsql sqlite

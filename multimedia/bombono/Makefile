@@ -14,8 +14,6 @@ COMMENT=	DVD authoring program
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	gm:graphics/GraphicsMagick
 LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26 \
 		liblavfile.so:multimedia/mjpegtools \
@@ -26,6 +24,8 @@ RUN_DEPENDS=	gm:graphics/GraphicsMagick \
 		enca:converters/enca \
 		growisofs:sysutils/dvd+rw-tools \
 		toolame:audio/toolame
+
+BROKEN=		fails to compile: weakref.h: macro "static_assert" passed 3 arguments, but takes just 2
 
 USES=		desktop-file-utils gettext pkgconfig scons shared-mime-info \
 		tar:bzip2

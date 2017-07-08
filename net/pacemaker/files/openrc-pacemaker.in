@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+name="pacemaker"
+
+: ${pacemaker_ipc_buffer:=0}
+
+pidfile="/var/run/pacemakerd.pid"
+command="%%PREFIX%%/sbin/pacemakerd"
+supervisor=supervise-daemon
+
+start_pre() {
+	export PATH="${PATH}:/usr/local/sbin:/usr/local/bin"
+	export PCMK_ipc_buffer=${pacemaker_ipc_buffer}
+	export PCMK_ipc_type=socket
+}
+
+depend() {
+	need corosync
+	keyword -shutdown
+}

@@ -9,18 +9,19 @@ PKGNAMESUFFIX=	37
 .endif
 CATEGORIES=	sysutils
 #MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
-DISTNAME=      syslog-ng-${DISTVERSION}_with_man
+DISTNAME=	syslog-ng-${DISTVERSION}_with_man
 MASTER_SITES=   http://peter.czanik.hu/freebsd/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-BROKEN_sparc64=		Does not compile on sparc64: gcc core dump
-
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
-BUILD_DEPENDS=		xsltproc:textproc/libxslt \
+BUILD_DEPENDS=		xsltproc:textproc/libxslt
+
+BROKEN_powerpc64=	fails to link: Internal error: Segmentation fault (program ld)
+BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -51,7 +52,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--disable-linux-caps \
-		--datadir=${PREFIX}/share/syslog-ng/ 
+		--datadir=${PREFIX}/share/syslog-ng/
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"

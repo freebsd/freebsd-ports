@@ -3,7 +3,7 @@
 
 PORTNAME=	yap
 PORTVERSION=	6.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 
@@ -24,7 +24,8 @@ DOCS_INSTALL_TARGET=	install install_docs
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-max-performance
+CONFIGURE_ARGS=	--enable-max-performance \
+		--disable-myddas
 USES=		gmake localbase readline
 
 DOCSDIR=	${PREFIX}/share/doc/Yap

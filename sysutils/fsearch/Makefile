@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/License
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_compile_flag.m4:devel/autoconf-archive
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
+BROKEN_powerpc64=	fails to configure: checking whether C compiler accepts -std=c11... no
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	cboxdoerfer
 

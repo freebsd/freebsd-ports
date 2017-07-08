@@ -36,7 +36,7 @@ PYTHONLIBDIR=	${LLVM_PREFIX}/lib/python
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
-USES=		compiler:c++11-lib gmake libedit perl5 python:build tar:xz
+USES=		compiler:c++11-lib gmake groff libedit perl5 python:build tar:xz
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \

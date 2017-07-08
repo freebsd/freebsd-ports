@@ -1,6 +1,6 @@
---- cc/trees/property_tree.cc.orig	2017-04-19 19:06:28 UTC
+--- cc/trees/property_tree.cc.orig	2017-06-05 19:03:01 UTC
 +++ cc/trees/property_tree.cc
-@@ -1229,13 +1229,13 @@ gfx::ScrollOffset ScrollTree::MaxScrollO
+@@ -1256,13 +1256,13 @@ gfx::ScrollOffset ScrollTree::MaxScrollOffset(int scro
  
    gfx::Size clip_layer_bounds = scroll_clip_layer_bounds(scroll_node->id);
  

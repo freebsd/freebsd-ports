@@ -1,4 +1,4 @@
---- chrome/browser/download/download_status_updater.cc.orig	2017-05-02 19:02:47 UTC
+--- chrome/browser/download/download_status_updater.cc.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/download/download_status_updater.cc
 @@ -13,7 +13,7 @@
  #include "base/memory/ptr_util.h"
@@ -9,7 +9,7 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -136,7 +136,7 @@ void DownloadStatusUpdater::OnDownloadUp
+@@ -136,7 +136,7 @@ void DownloadStatusUpdater::OnDownloadUpdated(
  #if defined(OS_ANDROID) || (defined(USE_AURA) && !defined(OS_WIN))
  void DownloadStatusUpdater::UpdateAppIconDownloadProgress(
      content::DownloadItem* download) {

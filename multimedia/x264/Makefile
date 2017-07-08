@@ -19,7 +19,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -39,10 +39,10 @@ BUILD_DEPENDS=	yasm>=1.2.0:devel/yasm \
 LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
 X264_BUILD=	148
-X264_REV=	2728
-X264_COMMIT=	4d5c8b01a48f72f9c40651e92c39294326a0863f
+X264_REV=	2768
+X264_COMMIT=	d32d7bf1c6923a42cbd5ac2fd540ecbb009ba681
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
-X264_SNAPSHOT=	20161202
+X264_SNAPSHOT=	20170522
 
 USES?=		pkgconfig
 USES+=		gmake localbase shebangfix tar:bzip2

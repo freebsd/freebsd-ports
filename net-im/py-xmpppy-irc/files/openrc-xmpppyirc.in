@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+name="xmpppyirc"
+pidfile="/var/run/$name.pid"
+
+command="%%FEXEC%%"
+command_args="&"
+required_files="%%PREFIX%%/etc/$name.conf"
+
+start_pre() {
+	touch $pidfile && export PID=$pidfile
+}
+
+depend() {
+	keyword -shutdown
+}

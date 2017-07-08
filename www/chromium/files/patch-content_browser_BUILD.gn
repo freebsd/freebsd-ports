@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2017-04-19 19:06:33 UTC
+--- content/browser/BUILD.gn.orig	2017-06-05 19:03:06 UTC
 +++ content/browser/BUILD.gn
-@@ -1464,11 +1464,6 @@ source_set("browser") {
+@@ -1498,11 +1498,6 @@ source_set("browser") {
        "memory/memory_monitor_chromeos.cc",
        "memory/memory_monitor_chromeos.h",
      ]
@@ -12,7 +12,7 @@
    }
  
    if (!is_win) {
-@@ -1540,7 +1535,7 @@ source_set("browser") {
+@@ -1571,7 +1566,7 @@ source_set("browser") {
  
    # Desktop screen capture implementations, conditionally built depending on
    # the available implementations for each platform.
@@ -21,7 +21,7 @@
      defines += [ "ENABLE_SCREEN_CAPTURE=1" ]
      sources += [
        "media/capture/cursor_renderer.cc",
-@@ -1727,7 +1722,7 @@ source_set("browser") {
+@@ -1759,7 +1754,7 @@ source_set("browser") {
      }
    }
  
@@ -30,7 +30,7 @@
      deps += [ "//build/linux:fontconfig" ]
    }
  
-@@ -1880,6 +1875,17 @@ source_set("browser") {
+@@ -1919,6 +1914,17 @@ source_set("browser") {
        "//chromeos",
        "//chromeos:power_manager_proto",
      ]
@@ -47,8 +47,8 @@
 +    ]
    }
  
-   if (enable_mojo_media) {
-@@ -1998,11 +2004,11 @@ source_set("browser") {
+   if (use_aura) {
+@@ -2029,11 +2035,11 @@ source_set("browser") {
      ]
    }
  

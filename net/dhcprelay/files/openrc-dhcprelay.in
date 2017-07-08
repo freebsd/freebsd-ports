@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+#
+# dhcprelay_server	dhcprelay server(s)
+# dhcprelay_ifaces	ethernet interface(s)
+
+name=dhcprelay
+
+: ${dhcprelay_ifaces=""}
+
+pidfile=/var/run/${name}.pid
+command=%%PREFIX%%/bin/${name}
+command_args="${dhcprelay_ifaces} ${dhcprelay_server}"

@@ -23,13 +23,4 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-# Test::Builder::Module 0.99+ (in core since 5.19.5) and
-# Test::Tester (in core since 5.21.6) are required
-.if ${PERL_LEVEL} < 502200
-BUILD_DEPENDS+=	p5-Test-Simple>=0.99:devel/p5-Test-Simple
-RUN_DEPENDS+=	p5-Test-Simple>=0.99:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

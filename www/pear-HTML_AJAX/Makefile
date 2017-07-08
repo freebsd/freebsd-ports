@@ -8,6 +8,6 @@ CATEGORIES=	www devel pear
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	PHP and JavaScript AJAX library
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

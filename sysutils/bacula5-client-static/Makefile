@@ -25,4 +25,6 @@ CONFIGURE_ARGS+=	--enable-client-only \
 
 BROKEN_aarch64=		Fails to link: missing sbrk
 
+BROKEN_SSL=	libressl
+
 .include "${MASTERDIR}/Makefile"

@@ -1,8 +1,8 @@
---- third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp.orig	2017-04-19 19:07:50 UTC
+--- third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp.orig	2017-06-05 19:04:22 UTC
 +++ third_party/pdfium/fpdfsdk/javascript/PublicMethods.cpp
-@@ -68,6 +68,103 @@ const FX_WCHAR* const fullmonths[] = {L"
-                                       L"July",    L"August",   L"September",
-                                       L"October", L"November", L"December"};
+@@ -68,6 +68,103 @@ const wchar_t* const fullmonths[] = {L"January", L"Feb
+                                      L"July",    L"August",   L"September",
+                                      L"October", L"November", L"December"};
  
 +#if defined(__FreeBSD__)
 +/*

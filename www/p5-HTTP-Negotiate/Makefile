@@ -17,8 +17,6 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-HTTP-Message>=6:www/p5-HTTP-Message
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS_INSTALL=	p5-libwww-5*
-
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure

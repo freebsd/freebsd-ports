@@ -1,6 +1,6 @@
---- third_party/webrtc/modules/video_coding/BUILD.gn.orig	2017-04-19 19:07:53 UTC
+--- third_party/webrtc/modules/video_coding/BUILD.gn.orig	2017-06-05 19:04:24 UTC
 +++ third_party/webrtc/modules/video_coding/BUILD.gn
-@@ -154,12 +154,7 @@ rtc_static_library("webrtc_h264") {
+@@ -151,12 +151,7 @@ rtc_static_library("webrtc_h264") {
    }
  
    defines = []
@@ -14,7 +14,7 @@
  
    if (rtc_use_h264) {
      defines += [ "WEBRTC_USE_H264" ]
-@@ -173,10 +168,10 @@ rtc_static_library("webrtc_h264") {
+@@ -170,10 +165,10 @@ rtc_static_library("webrtc_h264") {
        "codecs/h264/h264_encoder_impl.h",
      ]
      deps += [

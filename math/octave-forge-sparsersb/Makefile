@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-sparsersb
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -12,7 +11,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/librsb.a:math/librsb
+LIB_DEPENDS=	librsb.so:math/librsb
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.

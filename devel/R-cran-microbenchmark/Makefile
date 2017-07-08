@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	microbenchmark
+PORTREVISION=	1
 DISTVERSION=	1.4-2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -13,6 +14,6 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

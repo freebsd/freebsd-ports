@@ -27,6 +27,8 @@
     SUBDIR += bwm-ng
     SUBDIR += cacti
     SUBDIR += cacti-spine
+    SUBDIR += cacti88
+    SUBDIR += cacti88-spine
     SUBDIR += ccnet-client
     SUBDIR += ccnet-server
     SUBDIR += cdpd
@@ -363,10 +365,6 @@
     SUBDIR += zabbix22-frontend
     SUBDIR += zabbix22-proxy
     SUBDIR += zabbix22-server
-    SUBDIR += zabbix24-agent
-    SUBDIR += zabbix24-frontend
-    SUBDIR += zabbix24-proxy
-    SUBDIR += zabbix24-server
     SUBDIR += zabbix3-agent
     SUBDIR += zabbix3-frontend
     SUBDIR += zabbix3-proxy

@@ -1,0 +1,11 @@
+--- src/modules/db_berkeley/Makefile.orig	2017-04-21 12:46:05 UTC
++++ src/modules/db_berkeley/Makefile
+@@ -25,7 +25,7 @@ ifeq ($(INSTALL_FLAVOUR),kamailio)
+ # extra install for kamailio
+ 
+ install-berkeley-scripts: $(bin_prefix)/$(bin_dir)
+-		BERKELEYDBON=yes make -C ../../../utils/kamctl/ install-modules
++		BERKELEYDBON=yes $(MAKE) -C ../../../utils/kamctl/ install-modules
+ 
+ install-scripts: install-berkeley-scripts
+ 

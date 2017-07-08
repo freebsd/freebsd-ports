@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/messaging/message_service.cc.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/extensions/api/messaging/message_service.cc.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/extensions/api/messaging/message_service.cc
-@@ -106,7 +106,7 @@ MessageService::PolicyPermission Message
+@@ -105,7 +105,7 @@ MessageService::PolicyPermission MessageService::IsNat
  
  const char kReceivingEndDoesntExistError[] =
      "Could not establish connection. Receiving end does not exist.";
@@ -9,7 +9,7 @@
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -383,7 +383,7 @@ void MessageService::OpenChannelToNative
+@@ -383,7 +383,7 @@ void MessageService::OpenChannelToNativeApp(
    if (!source)
      return;
  
@@ -18,7 +18,7 @@
    content::WebContents* web_contents =
        content::WebContents::FromRenderFrameHost(source);
    ExtensionWebContentsObserver* extension_web_contents_observer =
-@@ -446,12 +446,12 @@ void MessageService::OpenChannelToNative
+@@ -446,12 +446,12 @@ void MessageService::OpenChannelToNativeApp(
    channel->opener->IncrementLazyKeepaliveCount();
  
    AddChannel(std::move(channel), receiver_port_id);

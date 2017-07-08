@@ -1,0 +1,11 @@
+--- src/modules/db_sqlite/Makefile.orig	2017-04-21 12:46:06 UTC
++++ src/modules/db_sqlite/Makefile
+@@ -22,7 +22,7 @@ ifeq ($(INSTALL_FLAVOUR),kamailio)
+ # extra install for kamailio
+ 
+ install-sqlite-scripts: $(bin_prefix)/$(bin_dir)
+-		SQLITEON=yes make -C ../../../utils/kamctl/ install-modules
++		SQLITEON=yes $(MAKE) -C ../../../utils/kamctl/ install-modules
+ 
+ install-scripts: install-sqlite-scripts
+ 

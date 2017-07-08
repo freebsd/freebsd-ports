@@ -3,7 +3,7 @@
 
 PORTNAME=	SoXt
 PORTVERSION=	1.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 

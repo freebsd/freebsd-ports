@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2017-06-05 19:03:02 UTC
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
-@@ -83,7 +83,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil
+@@ -84,7 +84,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetWhitelist
        settings_private::PrefType::PREF_TYPE_BOOLEAN;
    (*s_whitelist)[bookmarks::prefs::kShowBookmarkBar] =
        settings_private::PrefType::PREF_TYPE_BOOLEAN;
@@ -9,7 +9,7 @@
    (*s_whitelist)[::prefs::kUseCustomChromeFrame] =
        settings_private::PrefType::PREF_TYPE_BOOLEAN;
  #endif
-@@ -93,7 +93,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil
+@@ -94,7 +94,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetWhitelist
    // Appearance settings.
    (*s_whitelist)[::prefs::kCurrentThemeID] =
        settings_private::PrefType::PREF_TYPE_STRING;

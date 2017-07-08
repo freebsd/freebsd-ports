@@ -3,7 +3,7 @@
 
 PORTNAME=	jasper
 PORTVERSION=	1.900.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		ftp://ftp.imagemagick.org/pub/ImageMagick/delegates/

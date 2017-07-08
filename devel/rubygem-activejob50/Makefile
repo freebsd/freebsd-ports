@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activejob
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	50
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport50>=${PORTVERSION}:devel/rubygem-activesupport50 \
-		rubygem-globalid>=0.3.6:databases/rubygem-globalid
+		rubygem-globalid-rails50>=0.3.6:databases/rubygem-globalid-rails50
 
 PORTSCOUT=	limit:^5\.0\.
 

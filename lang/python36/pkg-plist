@@ -106,6 +106,7 @@ include/python%%XYDOT%%%%ABI%%/warnings.h
 include/python%%XYDOT%%%%ABI%%/weakrefobject.h
 lib/libpython%%XYDOT%%%%ABI%%.so
 lib/libpython%%XYDOT%%%%ABI%%.so.1.0
+lib/libpython%%XYDOT%%%%ABI%%.so.1.0-gdb.py
 lib/python%%XYDOT%%/LICENSE.txt
 lib/python%%XYDOT%%/__future__.py
 lib/python%%XYDOT%%/__phello__.foo.py

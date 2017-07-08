@@ -1,0 +1,13 @@
+# enable NEON instructions in the compiler when building the NEON codepath
+#
+--- src/gallium/drivers/vc4/Makefile.in.orig	2017-05-16 13:55:49 UTC
++++ src/gallium/drivers/vc4/Makefile.in
+@@ -669,7 +669,7 @@ libvc4_la_SOURCES = $(C_SOURCES)
+ libvc4_la_LIBADD = $(SIM_LIB) $(VC4_LIBS) libvc4_neon.la
+ libvc4_la_LDFLAGS = $(SIM_LDFLAGS)
+ libvc4_neon_la_SOURCES = vc4_tiling_lt.c
+-libvc4_neon_la_CFLAGS = $(AM_CFLAGS) -DVC4_BUILD_NEON
++libvc4_neon_la_CFLAGS = $(AM_CFLAGS) -DVC4_BUILD_NEON -march=armv7-a -mfpu=neon
+ EXTRA_DIST = kernel/README
+ all: all-am
+ 

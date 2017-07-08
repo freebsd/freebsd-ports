@@ -2,7 +2,7 @@
 
 PORTNAME=	simgear
 PORTVERSION=	2017.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -15,6 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libosg.so:graphics/osg
+
+BROKEN_powerpc64=	fails to compile: Package.cxx: 'to_string' is not a member of 'std
 
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu glut

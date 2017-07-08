@@ -15,6 +15,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libtelldus-core.so:comms/telldus-core
 
+BROKEN_armv6=		fails to compile: HarmonyHub.cpp: ordered comparison between pointer and zero
+
 CONFLICTS_INSTALL?=	domoticz-[23]*
 
 OPTIONS_SUB=	YES

@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	libsvm
-PORTVERSION=	3.21
+PORTVERSION=	3.22
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 		http://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	Library for Support Vector Machines
 
 LICENSE=	BSD3CLAUSE

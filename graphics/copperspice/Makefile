@@ -3,7 +3,7 @@
 
 PORTNAME=	copperspice
 PORTVERSION=	1.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.copperspice.com/copperspice/source/
 
@@ -45,10 +45,11 @@ CONFIGURE_ARGS=	${OVERRIDE_INS}
 MAKE_ARGS=	${OVERRIDE_INS}
 PLIST_SUB=	LONG_VER=1.3
 
-BROKEN_aarch64=		Fails to build: Unable to detect architecture, please update
 BROKEN_i386=		qx11embed_x11.cpp:470:20: non-constant-expression\
 			cannot be narrowed from type 'unsigned int' to 'long'\
 			in initializer list [-Wc++11-narrowing]
+NOT_FOR_ARCHS=		aarch64 armv6 powerpc64
+NOT_FOR_ARCHS_REASON=	fails to build: Unable to detect architecture, please update
 
 post-patch:
 	# fix something wrong with v1.3.2 generatior

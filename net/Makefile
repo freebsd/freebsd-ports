@@ -194,6 +194,8 @@
     SUBDIR += grdesktop
     SUBDIR += grilo
     SUBDIR += grilo-plugins
+    SUBDIR += grilo-plugins2
+    SUBDIR += grilo2
     SUBDIR += grive
     SUBDIR += grive2
     SUBDIR += grsync
@@ -335,6 +337,7 @@
     SUBDIR += libmaia
     SUBDIR += libmateweather
     SUBDIR += libmaxminddb
+    SUBDIR += libmdf
     SUBDIR += libmediawiki
     SUBDIR += libmms
     SUBDIR += libmxp
@@ -397,6 +400,7 @@
     SUBDIR += mDNSResponder
     SUBDIR += macchanger
     SUBDIR += mad_fcl
+    SUBDIR += madonctl
     SUBDIR += malo-firmware-kmod
     SUBDIR += mdns-repeater
     SUBDIR += mediastreamer
@@ -968,7 +972,6 @@
     SUBDIR += py-avahi
     SUBDIR += py-beanstalkc
     SUBDIR += py-cjdns
-    SUBDIR += py-cloudfiles
     SUBDIR += py-cloudflare-scrape
     SUBDIR += py-coherence
     SUBDIR += py-cymruwhois
@@ -1027,6 +1030,7 @@
     SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-python-ceilometerclient
     SUBDIR += py-python-cinderclient
+    SUBDIR += py-python-cloudfiles
     SUBDIR += py-python-designateclient
     SUBDIR += py-python-glanceclient
     SUBDIR += py-python-heatclient
@@ -1073,6 +1077,8 @@
     SUBDIR += py-zope.proxy
     SUBDIR += py-zsi
     SUBDIR += py3-netifaces
+    SUBDIR += py3-pysocks
+    SUBDIR += py3-urllib3
     SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pyrad
@@ -1178,6 +1184,7 @@
     SUBDIR += rubygem-fog-xenserver
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitlab_omniauth-ldap
+    SUBDIR += rubygem-gitlab_omniauth-ldap1
     SUBDIR += rubygem-http_parser.rb
     SUBDIR += rubygem-httpauth
     SUBDIR += rubygem-ipaddress
@@ -1242,8 +1249,6 @@
     SUBDIR += rubygem-xmlrpc
     SUBDIR += rude
     SUBDIR += s3ql
-    SUBDIR += samba42
-    SUBDIR += samba43
     SUBDIR += samba44
     SUBDIR += samba45
     SUBDIR += samba46
@@ -1274,7 +1279,6 @@
     SUBDIR += sippy_b2bua
     SUBDIR += siproxd
     SUBDIR += sipsak
-    SUBDIR += sixxs-aiccu
     SUBDIR += skstream
     SUBDIR += sl2tps
     SUBDIR += slurm

@@ -4,7 +4,7 @@
 PORTNAME=	RetroArch
 PORTVERSION=	1.3.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 
 MAINTAINER=	yuri@rawbw.com
@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libdrm.so:graphics/libdrm \
 		libass.so:multimedia/libass
+
+BROKEN_powerpc64=	fails to compile: features_cpu.c: undefined reference to __mftb
 
 OPTIONS_DEFINE=	FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO
 OPTIONS_DEFAULT=FFMPEG OSS PULSEAUDIO SDL OPENGL OPENAL NETPLAY PYTHON V4L FREETYPE FBO

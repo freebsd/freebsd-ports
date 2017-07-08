@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+
+name="netustad"
+
+command=%%PREFIX%%/sbin/${name}
+
+depend() {
+	use net
+	keyword -shutdown
+}

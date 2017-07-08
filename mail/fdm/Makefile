@@ -13,6 +13,8 @@ LICENSE=	ISCL
 
 LIB_DEPENDS=	libtdb.so:databases/tdb
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	nicm
 USES=		autoreconf:build ssl

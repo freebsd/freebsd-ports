@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitube
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	multimedia www
 
 MAINTAINER=	ports@FreeBSD.org

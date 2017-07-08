@@ -1,6 +1,6 @@
---- tools/gn/bootstrap/bootstrap.py.orig	2017-04-19 19:06:54 UTC
-+++ tools/gn/bootstrap/bootstrap.py
-@@ -23,6 +23,7 @@ import os
+--- tools/gn/bootstrap/bootstrap.py.orig	2017-06-05 21:03:29.000000000 +0200
++++ tools/gn/bootstrap/bootstrap.py	2017-06-13 19:25:21.449012000 +0200
+@@ -23,6 +23,7 @@
  import shutil
  import subprocess
  import sys
@@ -8,7 +8,7 @@
  import tempfile
  
  BOOTSTRAP_DIR = os.path.dirname(os.path.abspath(__file__))
-@@ -31,8 +32,9 @@ SRC_ROOT = os.path.dirname(os.path.dirna
+@@ -31,8 +32,9 @@
  
  is_win = sys.platform.startswith('win')
  is_linux = sys.platform.startswith('linux')
@@ -19,7 +19,7 @@
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -624,6 +626,41 @@ def write_gn_ninja(path, root_gen_dir, o
+@@ -632,6 +634,40 @@
          'base/third_party/libevent/epoll.c',
      ])
  
@@ -36,19 +36,18 @@
 +    static_libraries['base']['sources'].extend([
 +        'base/allocator/allocator_shim.cc',
 +        'base/allocator/allocator_shim_default_dispatch_to_glibc.cc',
-+        'base/callback_helpers.cc',
 +        'base/memory/shared_memory_posix.cc',
++        'base/memory/shared_memory_tracker.cc',
 +        'base/nix/xdg_util.cc',
-+        'base/process/memory_stubs.cc',
-+        #'base/process/internal_linux.cc',
++        'base/process/internal_linux.cc',
 +        'base/process/process_handle_' + platform.system().lower() + '.cc',
 +        'base/process/process_iterator_' + platform.system().lower() + '.cc',
-+        # 'base/process/process_linux.cc',
++        #'base/process/process_linux.cc',
 +        'base/process/process_metrics_'+ platform.system().lower() + '.cc',
 +        'base/strings/sys_string_conversions_posix.cc',
 +        'base/sys_info_' + platform.system().lower() + '.cc',
-+        'base/threading/platform_thread_' + platform.system().lower() + '.cc',
-+        # 'base/trace_event/malloc_dump_provider.cc',
++        'base/threading/platform_thread_linux.cc',
++        #'base/trace_event/malloc_dump_provider.cc',
 +    ])
 +    static_libraries['libevent']['include_dirs'].extend([
 +        os.path.join(SRC_ROOT, 'base', 'third_party', 'libevent', 'freebsd')

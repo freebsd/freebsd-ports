@@ -11,6 +11,6 @@ COMMENT=	Console_Table Renderer for pear-Structures_DataGrid
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid \
 		${PEARDIR}/Console/Table.php:devel/pear-Console_Table
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

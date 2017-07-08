@@ -16,8 +16,8 @@
 %%DATADIR%%/conf/slaves.template
 %%DATADIR%%/conf/spark-defaults.conf.template
 %%DATADIR%%/conf/spark-env.sh.template
-%%DATADIR%%/examples/jars/spark-examples_2.11-2.1.0-sources.jar
-%%DATADIR%%/examples/jars/spark-examples_2.11-2.1.0-test-sources.jar
+%%DATADIR%%/examples/jars/spark-examples_2.11-%%VER%%-sources.jar
+%%DATADIR%%/examples/jars/spark-examples_2.11-%%VER%%-test-sources.jar
 %%DATADIR%%/examples/src/main/java/org/apache/spark/examples/JavaHdfsLR.java
 %%DATADIR%%/examples/src/main/java/org/apache/spark/examples/JavaLogQuery.java
 %%DATADIR%%/examples/src/main/java/org/apache/spark/examples/JavaPageRank.java
@@ -121,6 +121,8 @@
 %%DATADIR%%/examples/src/main/java/org/apache/spark/examples/mllib/JavaSummaryStatisticsExample.java
 %%DATADIR%%/examples/src/main/java/org/apache/spark/examples/sql/JavaSQLDataSourceExample.java
 %%DATADIR%%/examples/src/main/java/org/apache/spark/examples/sql/JavaSparkSQLExample.java
+%%DATADIR%%/examples/src/main/java/org/apache/spark/examples/sql/JavaUserDefinedTypedAggregation.java
+%%DATADIR%%/examples/src/main/java/org/apache/spark/examples/sql/JavaUserDefinedUntypedAggregation.java
 %%DATADIR%%/examples/src/main/java/org/apache/spark/examples/sql/hive/JavaSparkHiveExample.java
 %%DATADIR%%/examples/src/main/java/org/apache/spark/examples/sql/streaming/JavaStructuredKafkaWordCount.java
 %%DATADIR%%/examples/src/main/java/org/apache/spark/examples/sql/streaming/JavaStructuredNetworkWordCount.java
@@ -274,6 +276,7 @@
 %%DATADIR%%/examples/src/main/r/ml/naiveBayes.R
 %%DATADIR%%/examples/src/main/r/ml/randomForest.R
 %%DATADIR%%/examples/src/main/r/ml/survreg.R
+%%DATADIR%%/examples/src/main/resources/employees.json
 %%DATADIR%%/examples/src/main/resources/full_user.avsc
 %%DATADIR%%/examples/src/main/resources/kv1.txt
 %%DATADIR%%/examples/src/main/resources/people.json
@@ -442,6 +445,8 @@
 %%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/sql/RDDRelation.scala
 %%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/sql/SQLDataSourceExample.scala
 %%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/sql/SparkSQLExample.scala
+%%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/sql/UserDefinedTypedAggregation.scala
+%%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/sql/UserDefinedUntypedAggregation.scala
 %%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/sql/hive/SparkHiveExample.scala
 %%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/sql/streaming/StructuredKafkaWordCount.scala
 %%DATADIR%%/examples/src/main/scala/org/apache/spark/examples/sql/streaming/StructuredNetworkWordCount.scala

@@ -1,4 +1,5 @@
-SHA256 (UDFclient.0.7.5.tgz) = 73694e186c7b1b4b309abf181a9a7519d0da3dfcace90eb85c5efed0b3c7475b
-SIZE (UDFclient.0.7.5.tgz) = 251270
-SHA256 (udfclientfs-0.4.tgz) = a18f49acc05f4067be34b4657c22d8697bde4917225b080044308570838c505c
-SIZE (udfclientfs-0.4.tgz) = 7375
+TIMESTAMP = 1495723683
+SHA256 (UDFclient.0.8.8.tgz) = 962bd2aa578f9056fba19f920bb8444501020774298dc809d6239c480c96c6c5
+SIZE (UDFclient.0.8.8.tgz) = 257978
+SHA256 (udfclientfs-0.6.tgz) = a115ef941ee56df3a14a3919e7225f046bef9577afbed7e873b1a868b3c0b301
+SIZE (udfclientfs-0.6.tgz) = 27648

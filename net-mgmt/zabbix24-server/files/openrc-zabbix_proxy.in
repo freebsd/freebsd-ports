@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable zabbix_proxy:
+#
+# zabbix_proxy_paths (string): Set to standard path by default.  Set a search
+#         if you have custom externals that need binaries elsewhere.
+# zabbix_proxy_config (string): Set to the standard config file path by
+#         default.
+
+name="zabbix_proxy"
+
+: ${zabbix_proxy_paths=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin}
+: ${zabbix_proxy_config="%%ETCDIR%%/${name}.conf"}
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="${zabbix_proxy_config}"
+pidfile="/tmp/${name}.pid"
+export PATH="${zabbix_proxy_paths}"
+
+depend() {
+	%%PGSQL%% need postgresql
+	%%MYSQL%% need mysql-server
+	keyword -shutdown
+}

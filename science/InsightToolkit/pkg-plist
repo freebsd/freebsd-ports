@@ -1939,6 +1939,10 @@ include/ITK-%%ITK_VER%%/itkMomentsThresholdCalculator.hxx
 include/ITK-%%ITK_VER%%/itkMomentsThresholdImageFilter.h
 include/ITK-%%ITK_VER%%/itkMorphologicalGradientImageFilter.h
 include/ITK-%%ITK_VER%%/itkMorphologicalGradientImageFilter.hxx
+include/ITK-%%ITK_VER%%/itkMorphologicalWatershedFromMarkersImageFilter.h
+include/ITK-%%ITK_VER%%/itkMorphologicalWatershedFromMarkersImageFilter.hxx
+include/ITK-%%ITK_VER%%/itkMorphologicalWatershedImageFilter.h
+include/ITK-%%ITK_VER%%/itkMorphologicalWatershedImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkMorphologyHistogram.h
 include/ITK-%%ITK_VER%%/itkMorphologyImageFilter.h
 include/ITK-%%ITK_VER%%/itkMorphologyImageFilter.hxx
@@ -2382,6 +2386,10 @@ include/ITK-%%ITK_VER%%/itkRegionGrowImageFilter.h
 include/ITK-%%ITK_VER%%/itkRegionGrowImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkRegionOfInterestImageFilter.h
 include/ITK-%%ITK_VER%%/itkRegionOfInterestImageFilter.hxx
+include/ITK-%%ITK_VER%%/itkRegionalMaximaImageFilter.h
+include/ITK-%%ITK_VER%%/itkRegionalMaximaImageFilter.hxx
+include/ITK-%%ITK_VER%%/itkRegionalMinimaImageFilter.h
+include/ITK-%%ITK_VER%%/itkRegionalMinimaImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkRegistrationParameterScalesEstimator.h
 include/ITK-%%ITK_VER%%/itkRegistrationParameterScalesEstimator.hxx
 include/ITK-%%ITK_VER%%/itkRegistrationParameterScalesFromIndexShift.h
@@ -2895,6 +2903,10 @@ include/ITK-%%ITK_VER%%/itkVTKPolyDataReader.hxx
 include/ITK-%%ITK_VER%%/itkVTKPolyDataWriter.h
 include/ITK-%%ITK_VER%%/itkVTKPolyDataWriter.hxx
 include/ITK-%%ITK_VER%%/itkValarrayImageContainer.h
+include/ITK-%%ITK_VER%%/itkValuedRegionalExtremaImageFilter.h
+include/ITK-%%ITK_VER%%/itkValuedRegionalExtremaImageFilter.hxx
+include/ITK-%%ITK_VER%%/itkValuedRegionalMaximaImageFilter.h
+include/ITK-%%ITK_VER%%/itkValuedRegionalMinimaImageFilter.h
 include/ITK-%%ITK_VER%%/itkVanHerkGilWermanDilateImageFilter.h
 include/ITK-%%ITK_VER%%/itkVanHerkGilWermanErodeDilateImageFilter.h
 include/ITK-%%ITK_VER%%/itkVanHerkGilWermanErodeDilateImageFilter.hxx

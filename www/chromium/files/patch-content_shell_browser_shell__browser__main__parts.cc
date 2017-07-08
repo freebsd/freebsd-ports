@@ -1,4 +1,4 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2017-04-19 19:06:34 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2017-06-05 19:03:07 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
 @@ -46,7 +46,7 @@
  #if defined(USE_AURA) && defined(USE_X11)
@@ -9,7 +9,7 @@
  #include "ui/base/ime/input_method_initializer.h"
  #endif
  #if defined(OS_CHROMEOS)
-@@ -142,7 +142,7 @@ void ShellBrowserMainParts::PostMainMess
+@@ -142,7 +142,7 @@ void ShellBrowserMainParts::PostMainMessageLoopStart()
  }
  
  void ShellBrowserMainParts::PreEarlyInitialization() {

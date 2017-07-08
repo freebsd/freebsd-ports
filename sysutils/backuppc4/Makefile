@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	backuppc
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/backuppc/backuppc/releases/download/${PORTVERSION}/ \
+		SF
 PKGNAMESUFFIX=	4
 DISTNAME=	BackupPC-${DISTVERSION}
 
@@ -14,10 +16,11 @@ COMMENT=	Multi-platform backup to disk-based storage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-File-Listing>=0:sysutils/p5-File-Listing \
-		p5-BackupPC-XS>=0.50:sysutils/p5-BackupPC-XS
+RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
+		p5-File-Listing>=0:sysutils/p5-File-Listing \
+		p5-BackupPC-XS>=0.53:sysutils/p5-BackupPC-XS
 
-CONFLICTS=	backuppc-[0-9]* backuppc-devel-[0-9]*
+CONFLICTS=	backuppc backuppc-devel
 
 USE_RC_SUBR=	backuppc
 
@@ -51,7 +54,7 @@ SMB_DESC=		Install Samba (for "smb" transfer and NetBIOS lookup)
 XML_RSS_DESC=		Install Perl extension to manage RSS files
 
 ARCHIVE_ZIP_RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip
-RSYNC_BPC_RUN_DEPENDS=		rsync-bpc>=3.0.9.5:net/rsync-bpc
+RSYNC_BPC_RUN_DEPENDS=		rsync-bpc>=3.0.9.6:net/rsync-bpc
 RRDTOOL_RUN_DEPENDS=		rrdtool:databases/rrdtool
 SMB_USES=			samba:run # nmblookup, smbclient
 XML_RSS_RUN_DEPENDS=		p5-XML-RSS>=0:textproc/p5-XML-RSS
@@ -85,10 +88,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/backuppc
 	${CP} ${WRKSRC}/configure.pl ${STAGEDIR}${PREFIX}/libexec/backuppc/configure.pl
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502200
-RUN_DEPENDS+=	p5-CGI>0:www/p5-CGI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

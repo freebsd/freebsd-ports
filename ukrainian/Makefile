@@ -4,7 +4,6 @@
     COMMENT = Ukrainian support
 
     SUBDIR += aspell
-    SUBDIR += calligra-l10n
     SUBDIR += emacs-koi8u
     SUBDIR += gd
     SUBDIR += hunspell

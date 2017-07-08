@@ -7,6 +7,12 @@ PKGNAMESUFFIX=	-pam-for-mysql
 
 COMMENT=	PAM plugin for MySQL
 
+BROKEN_armv6=		fails to compile: cannot combine with previous 'type-name' declaration specifier
+BROKEN_mips=		fails to configure: CMake Error: Generator: execution of make failed
+BROKEN_mips64=		fails to configure: CMake Error: Generator: execution of make failed
+NOT_FOR_ARCHS=		powerpc64
+NOT_FOR_ARCHS_REASON=	unsupported platform
+
 MASTERDIR=	${.CURDIR}/../percona56-server
 
 PKGMESSAGE=	${.CURDIR}/pkg-message

@@ -17,6 +17,6 @@ RUN_DEPENDS=	tracd:www/trac
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 USES=		python
 USE_PYTHON=	distutils autoplist
-NO_ARCH=	yes`
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

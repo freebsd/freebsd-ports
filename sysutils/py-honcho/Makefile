@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	honcho
-PORTVERSION=	0.6.6
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,14 +14,17 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7:devel/py-Jinja2
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock \
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nickstenning
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
+USES=		python:2.7+
+USE_PYTHON=	autoplist concurrent distutils
 
-regression-test:
+do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.mk>

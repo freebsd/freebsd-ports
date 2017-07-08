@@ -1,7 +1,8 @@
 # Created by: Kyle Martin <mkm@ieee.org>
 # $FreeBSD$
+
 PORTNAME=	cmake
-DISTVERSION=	3.8.0
+DISTVERSION=	3.8.2
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/

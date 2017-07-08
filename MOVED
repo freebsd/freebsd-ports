@@ -4568,7 +4568,6 @@ hebrew/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 hungarian/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 irc/eggcreator||2013-07-26|Has expired: Depends on Qt 3.x
 irc/kmyirc||2013-07-26|Has expired: Depends on Qt 3.x
-irc/konversation||2013-07-26|Has expired: Depends on Qt 3.x
 irc/kwirc||2013-07-26|Has expired: Depends on Qt 3.x
 japanese/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 korean/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
@@ -6398,7 +6397,6 @@ news/husky-hptsqfix||2014-08-19|Obsolete due to husky-*-devel => husky-* migrati
 news/husky-hpucode||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-msged||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-nltools||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
-news/husky-sqpack||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 net/rsmb|net/mosquitto|2014-08-19|Superseded by net/mosquitto
 deskutils/horde3-hermes||2014-08-20|Has expired: EOL in April 2012
 deskutils/horde3-klutz||2014-08-20|Has expired: EOL in April 2012
@@ -8409,7 +8407,6 @@ lang/stalin||2016-07-04|Has expired: Broken for more than 6 months
 french/eric4||2016-07-04|Has expired: Depends on expiring devel/eric4
 textproc/exslt||2016-07-04|Has expired: Broken for more than 6 months
 textproc/xt||2016-07-04|Has expired: Broken for more than 6 months
-textproc/ssddiff||2016-07-04|Has expired: Broken for more than 6 months
 textproc/xslint||2016-07-04|Has expired: Broken for more than 6 months
 textproc/cbedic||2016-07-04|Has expired: Broken for more than 6 months
 textproc/tralics||2016-07-04|Has expired: Broken for more than 6 months
@@ -9110,7 +9107,6 @@ net/tcpdump398|net/tcpdump|2017-03-05|Has expired: multiple security vulnerabili
 databases/oracle7-client||2017-03-07|Has expired: Oracle 7 EOL by 13 years
 databases/yasql||2017-03-07|Has expired: Dependent on deprecated oracle7-client
 databases/jdbc-oracle10g||2017-03-07|Has expired: Oracle 10g EOL almost 4 years
-databases/p5-DBD-Oracle||2017-03-07|Has expired: Depends on deprecated Oracle 7 (or 8) client
 databases/jdbc-oracle8i||2017-03-07|Has expired: Oracle8i unsupported and unavailable; fetch site redirects
 databases/jdbc-oracle9i||2017-03-07|Has expired: Oracle 9i is no more supported
 x11/rsibreak-kde4|x11/rsibreak|2017-03-11|Renamed to drop the -kde4 suffix
@@ -9173,7 +9169,6 @@ accessibility/java-access-bridge||2017-04-01|Obsolete and not depend on anymore
 accessibility/dasher||2017-04-01|Obsolete and not depend on anymore
 accessibility/at-spi||2017-04-01|Obsolete and not depend on anymore
 accessibility/at-spi-reference||2017-04-01|Obsolete and not depend on anymore
-archivers/gnome-autoar||2017-04-01|Obsolete and not depend on anymore
 deskutils/gnome-blog||2017-04-01|Obsolete and not depend on anymore
 deskutils/gnome-epub-thumbnailer||2017-04-01|Obsolete and not depend on anymore
 databases/libgdamm||2017-04-01|Obsolete and not depend on anymore
@@ -9211,7 +9206,7 @@ textproc/p5-XML-XSH||2017-04-10|Has expired: Deprecated by upstream
 www/rubygem-jquery-atwho-rails-rails4|www/rubygem-jquery-atwho-rails|2017-04-10|Has expired: Use www/rubygem-jquery-atwho-rails instead
 www/p5-Catalyst-Plugin-Singleton||2017-04-10|Has expired: Deprecated by upstream
 x11/lumina-i18n||2017-04-10|Has expired: Obsolete, i18n files included in x11/lumina
-sysutils/jail2||2017-04-10|Has expired: Starting with 10.0 functionality has been merged into base.
+sysutils/jail2||2017-04-10|Has expired: Starting with 10.0 functionality has been merged into base
 sysutils/iocage-devel||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
 sysutils/iocage||2017-04-10|Has expired: Outdated version. Please use sysutils/py-iocage instead
 databases/puppetdb||2017-04-10|Has expired: Depends on expired sysutils/puppet38, use puppetdb[34] instead
@@ -9391,3 +9386,62 @@ games/ioquake3-devel|games/ioquake3|2017-05-18|GitHub master is the new release 
 games/ioquake3-devel-server|games/ioquake3-server|2017-05-18|GitHub master is the new release model
 devel/rubygem-generator_spec|devel/rubygem-generator_spec-rails5|2017-05-19|Use devel/rubygem-generator_spec-rails4 or devel/rubygem-generator_spec-rails5
 deskutils/openproj|deskutils/projectlibre|2017-05-19|Has expired: Development ceased, superseded by deskutils/projectlibre
+net/go-madonctl|net/madonctl|2017-05-21|Remove go- prefix
+net-mgmt/zabbix24-agent||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
+net-mgmt/zabbix24-frontend||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
+net-mgmt/zabbix24-proxy||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
+net-mgmt/zabbix24-server||2017-05-29|Has expired: Upstream has declared this version EoL in 2016 (Q1)
+net/py-cloudfiles|net/py-python-cloudfiles|2017-05-30|Rename to match PyPI naming
+irc/konversation-kde4|irc/konversation|2017-05-30|Renamed to irc/konversation
+lang/perl5.20|lang/perl5.24|2017-06-01|Support ends three years after .0 release, please upgrade to a more recent version of Perl
+misc/unicode-ucd|textproc/UCD|2017-06-02|unicode-ucd was a duplicate of textproc/UCD, remove the younger port
+print/gutenprint-base|print/gutenprint|2017-06-04|Folded into gutenprint port
+print/gutenprint-cups|print/gutenprint|2017-06-04|Folded into gutenprint port
+print/gutenprint-foomatic||2017-06-04|Component removed upstream
+print/gutenprint-ijs||2017-06-04|Component removed upstream
+devel/py-PyDispatcher|devel/py-pydispatcher|2017-06-05|Change name to lower case
+mail/linux-thunderbird||2017-06-07|Has expired: Use the native thunderbird mail/thunderbird instead
+devel/p5-Penguin||2017-06-07|Has expired: Depends on expired security/pgp
+security/p5-Crypt-PGPSimple||2017-06-07|Has expired: Depends on expired security/pgp
+mail/pgpsendmail||2017-06-07|Has expired: Depends on expired security/pgp
+security/pgp||2017-06-07|Has expired: This software was last updated in 1996, use security/gnupg1 as a drop-in replacement with legacy PGP support.
+dns/pear-Net_DNS||2017-06-07|Has expired: This Port use PHP4.2 - This PHP-Version is not longer supporded
+net/samba42|net/samba44|2016-09-07|Has expired: not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
+net/samba43|net/samba44|2017-03-07|Has expired: not supported upstream https://wiki.samba.org/index.php/Samba_Release_Planning
+www/py-utidy|www/py-utidylib|2017-06-08|Rename to comply with PyPI scheme
+chinese/calligra-l10n-zh_CN||2017-06-12|Merged with editors/calligra
+chinese/calligra-l10n-zh_TW||2017-06-12|Merged with editors/calligra
+french/calligra-l10n||2017-06-12|Merged with editors/calligra
+german/calligra-l10n||2017-06-12|Merged with editors/calligra
+hungarian/calligra-l10n||2017-06-12|Merged with editors/calligra
+japanese/calligra-l10n||2017-06-12|Merged with editors/calligra
+polish/calligra-l10n||2017-06-12|Merged with editors/calligra
+portuguese/calligra-l10n-pt_BR||2017-06-12|Merged with editors/calligra
+portuguese/calligra-l10n||2017-06-12|Merged with editors/calligra
+russian/calligra-l10n||2017-06-12|Merged with editors/calligra
+ukrainian/calligra-l10n||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-bs||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-ca||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-ca_valencia||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-cs||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-da||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-el||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-en_GB||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-es||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-et||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-fi||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-gl||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-it||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-kk||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-nb||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-nl||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-sk||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-sv||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n-tr||2017-06-12|Merged with editors/calligra
+editors/calligra-l10n||2017-06-12|Merged with editors/calligra
+www/py-flask-restplus08||2017-06-21|Obsolete and not depended on anymore
+databases/pgpool-II|databases/pgpool|2017-06-25|Has expired: Deprecated by upstream; use database/pgpool instead
+databases/pgpool-II-30|databases/pgpool|2017-06-25|Has expired: Deprecated by upstream; use database/pgpool instead
+games/libgames-support||2017-06-25|Has expired: Superseded by libgnome-games-support, no longer used by anything
+net/sixxs-aiccu||2017-06-25|Has expired: SixXS shutdown on 2017-06-06, https://www.sixxs.net/sunset/
+databases/pgpoolAdmin||2017-06-25|Removed, depended on expired databases/pgpool-II and only supported PostgreSQL 9.2 which is will EOL in September 2017

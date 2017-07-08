@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooX-ConfigFromFile
-PORTVERSION=	0.007
+PORTVERSION=	0.008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-MooX-File-ConfigDir>=0.002:devel/p5-MooX-File-ConfigDir
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 

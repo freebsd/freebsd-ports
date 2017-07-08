@@ -17,6 +17,8 @@ LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
 		libvdpau.so:multimedia/libvdpau \
 		libhogweed.so:security/nettle
 
+BROKEN_armv6=		fails to compile: cc: warning: joined argument expects additional value: -mcpu=
+
 USES=		cpe gmake perl5 pkgconfig tar:xz
 USE_XORG=	x11
 HAS_CONFIGURE=	yes

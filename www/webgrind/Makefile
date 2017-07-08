@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webgrind
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	www
 
@@ -26,6 +26,8 @@ PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 CALLGRAPH_USES=		python
 CALLGRAPH_RUN_DEPENDS=	dot:graphics/graphviz
 
+CALLGRAPH_DESC=		Enable call graph
+
 post-patch-CALLGRAPH-on:
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' ${WRKSRC}/config.php
 	@${REINPLACE_CMD} -e 's,/usr/bin/dot,/usr/local/bin/dot,' ${WRKSRC}/config.php
@@ -33,7 +35,8 @@ post-patch-CALLGRAPH-on:
 do-install:
 	@${RM} ${WRKSRC}/library/preprocessor.cpp ${WRKSRC}/makefile
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/bin
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR})
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} \
+		'! -name license.txt ! -name package.sh')
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/preprocessor ${STAGEDIR}${WWWDIR}/bin
 
 .include <bsd.port.mk>

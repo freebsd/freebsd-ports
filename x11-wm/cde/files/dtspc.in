@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dtspc
+# REQUIRE: rpcbind
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable dtspc:
+#
+# dtspc_enable=YES
+
+. /etc/rc.subr
+
+name=dtspc
+rcvar=dtspc_enable
+desc="CDE Subprocess Control Service"
+start_precmd="force_depend rpcbind || exit 1"
+
+load_rc_config $name
+
+: ${dtspc_enable:=NO}
+
+command=/usr/sbin/daemon
+pidfile=/var/run/dtspc.pid
+command_args="-P $pidfile %%PREFIX%%/dt/bin/dtspcd"
+start_precmd="ln -sf %%PREFIX%%/dt /usr/dt && ln -sf %%PREFIX%%/etc/dt /etc/dt"
+stop_postcmd="[ -L /usr/dt -a -L /etc/dt ] && rm /usr/dt /etc/dt"
+
+run_rc_command $1

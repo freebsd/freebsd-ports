@@ -1,6 +1,6 @@
---- Makefile.orig	2017-05-06 12:36:12 UTC
+--- Makefile.orig	2017-05-18 12:29:44 UTC
 +++ Makefile
-@@ -21,7 +21,7 @@ VERSION=0.08.00
+@@ -21,7 +21,7 @@ VERSION=0.08.02
  # Codename "harmful hardware harasser"
  #
  
@@ -9,12 +9,12 @@
  
  #
  # Pedantic flags
-@@ -783,7 +783,7 @@ stress-cpu.o: stress-cpu.c
+@@ -786,7 +786,7 @@ stress-cpu.o: stress-cpu.c
  	@rm -f test-decimal.c test-decimal.o
  
  perf.o: perf.c perf-event.c
 -	@gcc -E perf-event.c | grep "PERF_COUNT" | sed 's/,/ /' | awk {'print "#define _SNG_" $$1 " (1)"'} > perf-event.h
 +	@$(CC) -E perf-event.c | grep "PERF_COUNT" | sed 's/,/ /' | awk {'print "#define _SNG_" $$1 " (1)"'} > perf-event.h
- 	$(CC) $(CFLAGS) -c -o $@ $<
+ 	@echo $(CC) $(CFLAGS) -c -o $@ $<
+ 	@$(CC) $(CFLAGS) -c -o $@ $<
  
- stress-wcstr.o: stress-wcstr.c

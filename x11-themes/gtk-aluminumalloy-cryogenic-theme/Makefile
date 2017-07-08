@@ -3,7 +3,7 @@
 
 PORTREVISION=	5
 
-FLAVOR=		cryogenic
+THEME_FLAVOR=	cryogenic
 
 MASTERDIR=	${.CURDIR}/../gtk-aluminumalloy-volcanic-theme
 

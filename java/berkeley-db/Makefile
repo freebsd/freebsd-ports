@@ -11,9 +11,11 @@ MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Berkeley DB Java Edition
 
-OPTIONS_DEFINE=	DOCS EXAMPLES TEST
-
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
+
+BROKEN_armv6=		fails to build: build.xml: Java returned: 1
+
+OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+

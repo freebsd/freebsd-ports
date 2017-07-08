@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	13.15.0
-PORTREVISION=	1
+PORTVERSION=	13.16.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -20,9 +19,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 
-EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
+BROKEN_armv6=		fails to configure: the SPANDSP installation appears to be missing or broken
+ONLY_FOR_ARCHS=		amd64 armv6 i386 powerpc sparc64
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 armv6
+EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 USES=		bison cpe gmake iconv libedit localbase \
 		shebangfix sqlite ssl ncurses
@@ -250,6 +250,9 @@ post-extract-G729-on:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
+.if exists(${FILESDIR}/.asterisk.makeopts)
+	${CP} ${FILESDIR}/.asterisk.makeopts ${WRKSRC}/menuselect.makeopts
+.endif
 
 post-patch-SYSINFO-on:
 	@${REINPLACE_CMD} -e 's/%%LIBSYSINFO%%/-lsysinfo/' ${WRKSRC}/main/Makefile
@@ -257,9 +260,6 @@ post-patch-SYSINFO-on:
 post-patch-SYSINFO-off:
 	@${REINPLACE_CMD} -e '/#define HAVE_SYSINFO 1/d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/%%LIBSYSINFO%%/d' ${WRKSRC}/main/Makefile
-.if exists(${FILESDIR}/.asterisk.makeopts)
-	${CP} ${USER_MAKEOPTS_FILE} ${WRKSRC}/menuselect.makeopts
-.endif
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_CMD} menuselect.makeopts

@@ -1,0 +1,7 @@
+include/clblast.h
+include/clblast_c.h
+include/clblast_half.h
+lib/cmake/CLBLast/CLBlastConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CLBLast/CLBlastConfig.cmake
+lib/libclblast.so
+libdata/pkgconfig/clblast.pc

@@ -14,7 +14,7 @@ LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
 
 # lib/libdns_sd.so.1 sbin/mdnsd
-CONFLICTS_INSTALL=	avahi-libdns- openmdns-
+CONFLICTS_INSTALL=	avahi-libdns openmdns
 
 OPTIONS_DEFINE=	IPV6
 

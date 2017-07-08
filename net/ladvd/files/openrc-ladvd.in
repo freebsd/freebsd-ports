@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=ladvd
+command=%%PREFIX%%/sbin/ladvd
+ladvd_flags=${ladvd_flags:-"-a"}
+
+start_pre()
+{
+	if [ -z "${ladvd_flags}" ]; then
+		eerror "ladvd_flags should be set"
+	fi
+}

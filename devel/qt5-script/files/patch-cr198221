@@ -1,0 +1,21 @@
+From e6c7e47d85399dbedf86491ed3b7f582ddf7c740 Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Wed, 21 Jun 2017 21:38:23 +0200
+Subject: [PATCH] cat c.tDisable c++1z as it breaks compilation with libc++5.
+
+Change-Id: I7efa59433cd06ee8ff43d231e6ff1d4712fe65aa
+---
+ src/script/script.pro | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/script/script.pro b/src/script/script.pro
+index e9f15e2..27fa434 100644
+--- src/script/script.pro
++++ src/script/script.pro
+@@ -58,3 +58,4 @@ integrity {
+ TR_EXCLUDE = $$WEBKITDIR/*
+
+ load(qt_module)
++CONFIG -= c++1z
+--
+2.13.1

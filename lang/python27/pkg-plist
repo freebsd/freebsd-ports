@@ -97,6 +97,7 @@ include/python2.7/warnings.h
 include/python2.7/weakrefobject.h
 lib/libpython2.7.so
 lib/libpython2.7.so.1
+lib/libpython2.7.so.1-gdb.py
 lib/python2.7/BaseHTTPServer.py
 lib/python2.7/BaseHTTPServer.pyc
 lib/python2.7/BaseHTTPServer.pyo

@@ -4,7 +4,7 @@
 PORTNAME=	cpu-x
 PORTVERSION=	3.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,19 +15,26 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libcpuid.so:sysutils/libcpuid \
 		libpci.so:devel/libpci \
-		libstatgrab.so:devel/libstatgrab
+		libstatgrab.so:devel/libstatgrab \
+		libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	X0rg
 GH_PROJECT=	${PORTNAME:tu}
 
-USES=		cmake execinfo gettext-tools ncurses pkgconfig
-USE_GNOME=	gtk30
-INSTALLS_ICONS=	yes
+USES=		cmake execinfo gettext ncurses pkgconfig
 
 PORTDOCS=	ChangeLog README.md
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS X11
+OPTIONS_DEFAULT=	X11
+OPTIONS_SUB=	yes
+
+X11_DESC=	Build GTK+3 frontend in addition to ncurses one
+
+X11_USE=	GNOME=gtk30
+X11_CMAKE_OFF=	-DWITH_GTK:BOOL=OFF
+X11_VARS=	INSTALLS_ICONS=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt

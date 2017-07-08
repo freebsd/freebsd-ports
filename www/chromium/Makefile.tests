@@ -1,10 +1,10 @@
 #$FreeBSD$
+#net_unittests : fatal error: 'sys/epoll.h' file not found
 #telemetry_unittests : unknown ninja target
 TEST_TARGETS=	base_unittests \
 		crypto_unittests \
 		cacheinvalidation_unittests \
 		gpu_unittests \
-		sync_unit_tests \
 		printing_unittests \
 		sql_unittests \
 		content_unittests \
@@ -13,7 +13,6 @@ TEST_TARGETS=	base_unittests \
 		compositor_unittests \
 		ipc_tests \
 		dbus_unittests \
-		net_unittests \
 		media_unittests \
 		chromedriver_unittests \
 		chromedriver_tests \

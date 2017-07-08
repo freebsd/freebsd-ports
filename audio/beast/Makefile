@@ -18,6 +18,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libguile.so:lang/guile
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
+BROKEN_armv6=		fails to package: bseblockutils.SSE.so: No such file or directory
+BROKEN_powerpc64=	fails to package: bseblockutils.SSE.so: No such file or directory
+
 USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		shared-mime-info shebangfix tar:bzip2
 SHEBANG_FILES=	autotools/intltool-merge
@@ -47,8 +50,6 @@ DEBUG_CONFIGURE_ENABLE=	debug
 SSE_VARS=	SSE_FLAGS="-mmmx -msse"
 
 .include <bsd.port.pre.mk>
-
-BROKEN_powerpc64=	Does not build
 
 MAKE_JOBS_UNSAFE=	yes
 

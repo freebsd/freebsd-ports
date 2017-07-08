@@ -11,7 +11,8 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	does not compile: libLLVMMipsCodeGen.a: sibling call optimization does not allow automatic multiple TOCs
+BROKEN_sparc64=		does not compile: llvm::Function::lookupIntrinsicID() Function.cpp: internal compiler error: Abort trap
 
 LLVM_SUFFIX=	${PORTVERSION:C/([0-9]\.[0-9]).*/\1/:S/.//g:C/r.//}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
@@ -167,6 +168,8 @@ post-patch:
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/utils/lit/lit.py ${WRKSRC}/utils/lit/lit/*.py \
 	    ${WRKSRC}/utils/lit/lit/formats/*.py
+	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
+	    ${WRKSRC}/CMakeLists.txt
 
 .if ${PORT_OPTIONS:MCMAKE}
 post-configure:

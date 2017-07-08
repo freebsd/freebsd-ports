@@ -10,9 +10,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	CSS parser based on the CSS Syntax Level 3 draft
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

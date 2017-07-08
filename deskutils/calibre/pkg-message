@@ -32,3 +32,14 @@ supported by calibre.  The calibre FAQ recommends that either of the
 free apps Aldiko or WordPlayer are used instead.
 
 ---
+
+A basic startup script for calibre-server has been installed.
+
+It can be customized and configured using the flags described in the
+headers of the startup script.
+
+The command line options are documented here:
+
+https://manual.calibre-ebook.com/generated/en/calibre-server.html
+
+---

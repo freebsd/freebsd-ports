@@ -1,0 +1,23 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable zabbix_agentd:
+#
+# zabbix_agentd_paths (string): Set to standard path by default.  Set a search
+#         if you have custom userparams that need binaries elsewhere.
+# zabbix_agentd_config (string): Set to the standard config file path by
+#         default.
+
+name="zabbix_agentd"
+
+: ${zabbix_agentd_paths=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin}
+: ${zabbix_agentd_config="%%ETCDIR%%/${name}.conf"}
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="${zabbix_agentd_config}"
+pidfile="/tmp/${name}.pid"
+export PATH="${zabbix_agentd_paths}"
+
+depend() {
+	keyword -shutdown
+}

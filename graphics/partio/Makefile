@@ -2,7 +2,7 @@
 
 PORTNAME=	partio
 PORTVERSION=	1.1.0.20150221
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -46,7 +46,7 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-build:
-	@(cd ${BUILD_WRKSRC}; make doc)
+	@(cd ${BUILD_WRKSRC}; ${MAKE_CMD} doc)
 .endif
 
 .include <bsd.port.mk>

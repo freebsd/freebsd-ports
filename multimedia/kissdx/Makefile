@@ -16,7 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libdvdread.so:multimedia/libdvdread
 
-BROKEN_powerpc64=	Does not build
+BROKEN_armv6=		fails to compile: kissdx.c: function definition is not allowed here
+BROKEN_mips64=		fails to compile: kissdx.c: nested functions are disabled, use -fnested-functions to re-enable
+BROKEN_powerpc64=	fails to compile: kissdx.c: nested functions are disabled, use -fnested-functions to re-enable
 
 USES=		compiler:nestedfct dos2unix iconv jpeg
 MAKE_ENV=	FreeBSD=defined

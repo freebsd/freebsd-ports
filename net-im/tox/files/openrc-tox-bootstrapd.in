@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name="tox_bootstrapd"
+description="Tox DHT bootstrap daemon."
+
+required_files=${tox_bootstrapd_config:="%%PREFIX%%/etc/tox-bootstrapd.conf"}
+pidfile=${tox_bootstrapd_pidfile:="/var/run/tox-bootstrapd/tox-bootstrapd.pid"}
+tox_bootstrapd_user="%%TOXDHT%%"
+command="%%PREFIX%%/bin/tox-bootstrapd"
+command_args="--config ${tox_bootstrapd_config}"
+
+stop() {
+	[ -f $pidfile ] || (eerror "$name not running?"; exit 1)
+	eend "Stopping $description"
+	kill `ps ax | grep $command | grep -v grep | awk '{print $1}'`
+	rm -f $pidfile
+}
+
+depend() {
+	keyword -shutdown
+}

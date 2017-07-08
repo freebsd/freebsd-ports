@@ -21,10 +21,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NO_ARCH=	yes
 USES=		cpe python shebangfix
 USE_PYTHON=	autoplist distutils
-SHEBANG_FILES=	django/conf/project_template/manage.py \
-		django/bin/django-admin.py
+SHEBANG_FILES=	django/bin/django-admin.py \
+		django/conf/project_template/manage.py
 
-CONFLICTS_INSTALL=	py??-django-devel-* py??-django1[69]-* py??-django11[01]-*
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-devel ${PYTHON_PKGNAMEPREFIX}django1[69] ${PYTHON_PKGNAMEPREFIX}django110
 CPE_VENDOR=		djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django

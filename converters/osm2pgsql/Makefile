@@ -17,6 +17,8 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 
+BROKEN_powerpc64=	fails to compile: node-ram-cache.hpp: cstdint: No such file or directory
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 

@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=rotorouter
+
+command=%%PREFIX%%/sbin/${name}
+command_args='&'
+
+: ${rotorouter_flags-"-h %%PREFIX%%/etc/rotorouter.conf"}
+
+depend() {
+	keyword -shutdown
+}

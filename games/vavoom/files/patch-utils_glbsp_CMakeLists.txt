@@ -1,0 +1,11 @@
+--- utils/glbsp/CMakeLists.txt.orig	2017-06-04 12:56:34.555084000 +0200
++++ utils/glbsp/CMakeLists.txt	2017-06-04 13:15:12.279215000 +0200
+@@ -1,7 +1,7 @@
+ include_directories(${ZLIB_INCLUDE_DIR})
+ add_definitions(-DGLBSP_PLUGIN -DUNIX -DINLINE_G=inline)
+ 
+-add_library(glbsp
++add_library(glbsp STATIC
+ 	analyze.c
+ 	analyze.h
+ 	blockmap.c

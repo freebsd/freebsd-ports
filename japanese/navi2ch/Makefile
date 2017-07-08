@@ -12,6 +12,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	2ch.net and 2ch-like BBS navigator for Emacsen
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/2chproxy.pl:japanese/p5-2chproxy
 
@@ -32,7 +33,7 @@ PORTDOC_LISPS=	gikope.el navi2ch-logo.el navi2ch-migemo.el
 LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 
 OPTIONS_DEFINE=	DOCS X11
-OPTIONS_DEFAULT=DOCS X11
+OPTIONS_DEFAULT=X11
 X11_RUN_DEPENDS=${LOCALBASE}/share/mona/monak12.pcf.gz:japanese/font-mona
 
 post-install-DOCS-on:

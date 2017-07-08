@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+name=zoneminder
+command=%%PREFIX%%/bin/zmpkg.pl
+pidfile=/var/run/zm/zm.pid
+extra_commands="logrot version"
+
+logrot() {
+	$command logrot
+}
+
+version() {
+	$command version
+}
+
+depend()
+{
+	keyword -shutdown
+	need mysql
+}

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clutter
-PORTVERSION=	1.24.2
+PORTVERSION=	1.26.2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -13,14 +13,16 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libcogl.so:graphics/cogl
 
 PORTSCOUT=	limit:1,even
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gtk30 introspection:build
-USE_GL=		gl egl
-USE_XORG=	glproto x11 xfixes xdamage xcomposite xi
+USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
+USE_GNOME=	atk cairo gdkpixbuf2 pango introspection:build
+USE_GL=		egl
+USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-x --enable-conformance=no \
@@ -29,8 +31,6 @@ CONFIGURE_ARGS=	--with-x --enable-conformance=no \
 		--enable-x11-backend=yes \
 		--enable-gdk-backend=no \
 		--enable-wayland-compositor=no
-CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

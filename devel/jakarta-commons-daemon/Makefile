@@ -13,6 +13,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-native-src${EXTRACT_SUFX}:src \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Wrapper code to start/stop a Java application as a daemon
 
+BROKEN_armv6=		fails to compile: 'jni_md.h' file not found
+
 LICENSE=	APACHE20
 
 OPTIONS_DEFINE=	DOCS

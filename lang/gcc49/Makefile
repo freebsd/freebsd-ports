@@ -64,9 +64,9 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 CFLAGS:=	${CFLAGS:S/-O/-O2/g}
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
-MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
+MAKE_ARGS+=CXXFLAGS+=-fbracket-depth=512
 .  else
-MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
+MAKE_ARGS+=STAGE1_CXXFLAGS+=-fbracket-depth=512
 .  endif
 . endif
 .endif

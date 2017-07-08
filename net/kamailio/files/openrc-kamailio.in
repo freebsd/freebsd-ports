@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=kamailio
+
+command="/usr/local/sbin/kamailio"
+required_files="/usr/local/etc/kamailio/kamailio.cfg"
+
+depend() {
+	keyword -shutdown
+}

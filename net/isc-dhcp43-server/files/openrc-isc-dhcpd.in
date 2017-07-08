@@ -1,8 +1,6 @@
 #!/sbin/openrc-run
-#
 
-depend()
-{
+depend() {
 	need localmount
 	use net
 	keyword -shutdown -stop
@@ -209,7 +207,7 @@ mounted ()	# dir...
 	local _rc
 
 	_rc=1
-	if checkyesno ${name}_devfs_enable; then
+	if yesno ${name}_devfs_enable; then
 		mount -t devfs | awk '
 		    BEGIN { n = ARGC; ARGC = 2 }
 		    { for (i = 2; i != n; i++) if ($3 == ARGV[i]) exit 1 }
@@ -225,7 +223,7 @@ safe_mount ()	# dir
 	_dir=$1
 
 	_rc=0
-	if checkyesno ${name}_devfs_enable &&
+	if yesno ${name}_devfs_enable &&
 	   ! mounted ${_dir} &&
 	   ! safe_run ${_rc} mount -t devfs devfs ${_dir}; then
 		err 1 "unable to mount ${_dir}"
@@ -241,7 +239,7 @@ safe_umount ()	# dir
 	_dir=$1
 
 	_rc=0
-	if checkyesno ${name}_devfs_enable &&
+	if yesno ${name}_devfs_enable &&
 	   mounted ${_dir} &&
 	   ! safe_run ${_rc} umount ${_dir}; then
 		ewarn "unable to unmount ${_dir}"
@@ -252,14 +250,14 @@ safe_umount ()	# dir
 
 check_chuser ()
 {
-	if checkyesno paranoia; then
-		if checkyesno ${name}_chuser_enable &&
+	if yesno paranoia; then
+		if yesno ${name}_chuser_enable &&
 		   eval "[ -z \"\${${name}_withuser}\" -a -z \"\${${name}_withgroup}\" ]"; then
 			err 1 "one of ${name}_withuser and ${name}_withgroup" \
 			      "must be set if ${name}_chuser_enable is enabled"
 		fi
 	else
-		if checkyesno ${name}_chuser_enable; then
+		if yesno ${name}_chuser_enable; then
 			ewarn "${name}_chuser_enable disabled -- not compiled in"
 			eval "${name}_chuser_enable=NO"
 		fi
@@ -268,8 +266,8 @@ check_chuser ()
 
 check_chroot ()
 {
-	if checkyesno paranoia; then
-		if checkyesno ${name}_chroot_enable; then
+	if yesno paranoia; then
+		if yesno ${name}_chroot_enable; then
 			if eval "[ -z \"\${${name}_rootdir}\" ]"; then
 				err 1 "${name}_rootdir must be set" \
 				      "if ${name}_chroot_enable is enabled"
@@ -278,7 +276,7 @@ check_chroot ()
 			eval "${name}_devfs_enable=NO"
 		fi
 	else
-		if checkyesno ${name}_chroot_enable; then
+		if yesno ${name}_chroot_enable; then
 			ewarn "${name}_chroot_enable disabled -- not compiled in"
 			eval "${name}_chroot_enable=NO"
 		fi
@@ -288,7 +286,7 @@ check_chroot ()
 
 rcvar_chuser ()
 {
-	if checkyesno paranoia && checkyesno ${name}_chuser_enable; then
+	if yesno paranoia && yesno ${name}_chuser_enable; then
 		eval "${name}_piddir=\${__dhcpd_piddir}/\${name}"
 		eval "${name}_leasesdir=\${__dhcpd_leasesdir}/\${name}"
 	else
@@ -298,9 +296,9 @@ rcvar_chuser ()
 
 rcvar_chroot ()
 {
-	if ! checkyesno paranoia || ! checkyesno ${name}_chroot_enable; then
+	if ! yesno paranoia || ! yesno ${name}_chroot_enable; then
 		eval "${name}_rootdir="
-	elif checkyesno paranoia && checkyesno ${name}_chroot_enable; then
+	elif yesno paranoia && yesno ${name}_chroot_enable; then
 		eval "${name}_devdir=\${__dhcpd_devdir}"
 		eval "${name}_etcdir=\${__dhcpd_etcdir}"
 	fi
@@ -308,7 +306,7 @@ rcvar_chroot ()
 
 rcvar_pidnleases ()
 {
-	if ! checkyesno ${name}_chuser_enable; then
+	if ! yesno ${name}_chuser_enable; then
 		eval "${name}_piddir=\${__dhcpd_piddir}"
 		eval "${name}_leasesdir=\${__dhcpd_leasesdir}"
 	fi
@@ -348,14 +346,14 @@ setup_chroot ()
 	_ltime=localtime
 	_rconf=resolv.conf
 
-	if checkyesno paranoia && checkyesno ${name}_chroot_enable; then
+	if yesno paranoia && yesno ${name}_chroot_enable; then
 		if ! mounted ${_dhcpd_devdir}; then
 			safe_mkdir ${_dhcpd_devdir}/_
 			# XXX /_ hack! so, .../dev is root owned.
 		fi
 		safe_mkdir ${_dhcpd_rootdir} ${_dhcpd_etcdir}/_ ${_dhcpd_confdir}
 		# XXX /_ hack! so, .../etc is root owned.
-		if checkyesno ${name}_devfs_enable; then
+		if yesno ${name}_devfs_enable; then
 			safe_mount ${_dhcpd_devdir}
 		else
 			eval "safe_copy \${${name}_devdir} \${_dhcpd_devdir}"
@@ -378,8 +376,8 @@ setup_chroot ()
 
 setup_chuser ()
 {
-	if checkyesno paranoia && {
-	   checkyesno ${name}_chuser_enable || checkyesno ${name}_chroot_enable
+	if yesno paranoia && {
+	   yesno ${name}_chuser_enable || yesno ${name}_chroot_enable
 	}; then
 		safe_mkdir ${_dhcpd_piddir} ${_dhcpd_leasesdir}
 	fi
@@ -419,7 +417,7 @@ setup_flags ()
 
 cleanup_chroot ()
 {
-	if checkyesno paranoia && checkyesno ${name}_chroot_enable; then
+	if yesno paranoia && yesno ${name}_chroot_enable; then
 		safe_umount ${_dhcpd_devdir}
 	fi
 }
@@ -476,7 +474,7 @@ dhcpd_checkconfig ()
 	*-q*)	rc_flags_mod=`echo "${rc_flags}" | sed -Ee 's/(^-q | -q | -q$)//'` ;;
 	esac
         if ! ${command} -t -q ${rc_flags_mod}; then
-                err 1 "`${command} -t ${rc_flags_mod}` Configuration file sanity check failed"
+                eerro "`${command} -t ${rc_flags_mod}` Configuration file sanity check failed"
         fi
 }
 

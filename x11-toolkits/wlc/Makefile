@@ -2,6 +2,7 @@
 
 PORTNAME=	wlc
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits wayland
 
 MAINTAINER=	x11@FreeBSD.org

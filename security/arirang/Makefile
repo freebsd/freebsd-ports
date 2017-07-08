@@ -15,6 +15,8 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT}
 
+BROKEN_powerpc64=	fails to compile: ruby.h: wrong number of arguments specified for 'deprecated' attribute
+
 USES=		ssl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

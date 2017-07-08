@@ -1,4 +1,4 @@
---- content/common/sandbox_linux/sandbox_debug_handling_linux.cc.orig	2017-04-19 19:06:34 UTC
+--- content/common/sandbox_linux/sandbox_debug_handling_linux.cc.orig	2017-06-05 19:03:07 UTC
 +++ content/common/sandbox_linux/sandbox_debug_handling_linux.cc
 @@ -7,7 +7,9 @@
  #include <errno.h>
@@ -10,7 +10,7 @@
  #include <unistd.h>
  
  #include "base/command_line.h"
-@@ -69,12 +71,16 @@ bool SandboxDebugHandling::SetDumpableSt
+@@ -69,12 +71,16 @@ bool SandboxDebugHandling::SetDumpableStatusAndHandler
      return true;
    }
  

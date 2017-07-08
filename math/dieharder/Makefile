@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgsl.so:math/gsl
 
+BROKEN_sparc64=		fails to compile
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		dos2unix libtool tar:tgz
@@ -22,13 +23,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64 or sparc64
-.endif
-
 check test: build
 	${WRKSRC}/dieharder/dieharder -a
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

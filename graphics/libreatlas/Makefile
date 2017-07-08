@@ -7,7 +7,7 @@ PORTREVISION=	21
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	lbartoletti@tuxfamily.org
 COMMENT=	Open Source Geography Education application
 
 LICENSE=	GPLv3
@@ -36,7 +36,6 @@ USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender xxf86vm
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango
 USE_WX=		2.8
-WX_UNICODE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

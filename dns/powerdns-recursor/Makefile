@@ -17,7 +17,9 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_context.so:devel/boost-libs
 
-BROKEN_sparc64=	Does not compile on sparc64
+BROKEN_armv6=		fails to compile: use of overloaded operator << is ambiguous
+BROKEN_sparc64=		fails to compile: json11.cpp: undefined reference to std::__throw_out_of_range_fmt
+BROKEN_powerpc64=	fails to compile: dnslabeltext.cc: undefined reference to std::__cxx11::basic_string
 
 USES=		compiler:c++11-lib cpe gmake localbase pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	YES

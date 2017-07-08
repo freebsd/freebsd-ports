@@ -37,7 +37,7 @@ BDB_DEFAULT?=		5
 FIREBIRD_DEFAULT?=	2.5
 # Possible values: 3.0.0
 FPC_DEFAULT?=		3.0.2
-# Possible values: 4.7, 4.8, 4.9, 5, 6
+# Possible values: 4.8, 4.9, 5, 6
 GCC_DEFAULT?=		5
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
@@ -56,7 +56,7 @@ WARNING+=		"OVERRIDE_LINUX_BASE_PORT is deprecated, please use DEFAULT_VERSIONS+
 LUA_DEFAULT?=		5.2
 # Possible values: 5.1, 5.5, 5.6, 5.7, 8.0, 5.5m, 10.0m, 10.1m, 5.5p, 5.6p, 5.7p, 5.6w
 MYSQL_DEFAULT?=		5.6
-# Possible values: 5.20, 5.22, 5.24, devel
+# Possible values: 5.22, 5.24, 5.26, devel
 .if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
 PERL5_DEFAULT?=		5.24
@@ -72,7 +72,7 @@ _EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .endif
 # Possible values: 9.2, 9.3, 9.4, 9.5, 9.6
-PGSQL_DEFAULT?=		9.3
+PGSQL_DEFAULT?=		9.5
 # Possible values: 5.6, 7.0, 7.1
 PHP_DEFAULT?=		5.6
 # Possible values: 2.7, 3.3, 3.4, 3.5, 3.6
@@ -83,7 +83,7 @@ PYTHON2_DEFAULT?=	2.7
 PYTHON3_DEFAULT?=	3.6
 # Possible values: 2.2, 2.3, 2.4
 RUBY_DEFAULT?=		2.3
-# Possible values: 4.2, 4.3, 4.4, 4.5, 4.6
+# Possible values: 4.4, 4.5, 4.6
 SAMBA_DEFAULT?=		4.4
 # Possible values: base, openssl, openssl-devel, libressl, libressl-devel
 .if !defined(SSL_DEFAULT)

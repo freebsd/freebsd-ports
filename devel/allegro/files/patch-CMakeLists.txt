@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig
+--- CMakeLists.txt.orig	2011-03-24 23:18:50 UTC
 +++ CMakeLists.txt
-@@ -66,7 +66,7 @@
+@@ -66,7 +66,7 @@ if(WIN32)
  endif(WIN32)
  
  set(ALLEGRO_VERSION 4.4.2)
@@ -9,7 +9,33 @@
  
  # Mac OS X -compatibility_version.
  # XXX doesn't seem to work
-@@ -961,7 +961,7 @@
+@@ -408,6 +408,7 @@ option(WANT_OSS "Build OSS support" on)
+ option(WANT_ALSA "Build ALSA support" on)
+ option(WANT_JACK "Build JACK support" on)
+ option(WANT_SGIAUDIO "Build SGI audio support" on)
++option(WANT_SNDIO "Build sndio audio support" on)
+ 
+ if(ALLEGRO_UNIX) # not MACOSX
+     find_package(Threads)
+@@ -471,6 +472,17 @@ if(ALLEGRO_UNIX) # not MACOSX
+         endif(SGIAUDIO_FOUND)
+     endif(WANT_SGIAUDIO)
+ 
++    if(WANT_SNDIO)
++        find_path(SNDIO_INCLUDE_DIR sndio.h)
++        find_library(SNDIO_LIBRARY NAMES sndio)
++        if(SNDIO_INCLUDE_DIR AND SNDIO_LIBRARY)
++            set(ALLEGRO_WITH_SNDIODIGI 1)
++            include_directories(SYSTEM ${SNDIO_INCLUDE_DIR})
++            list(APPEND PLATFORM_LIBS_NON_MODULES ${SNDIO_LIBRARY})
++            add_our_module(alleg-sndiodigi src/unix/sndio.c ${SNDIO_LIBRARY})
++        endif(SNDIO_INCLUDE_DIR AND SNDIO_LIBRARY)
++    endif(WANT_SNDIO)
++
+     # aRts is obsolete
+     # esd is obsolete
+ endif(ALLEGRO_UNIX)
+@@ -961,7 +973,7 @@ if(UNIX)
              @ONLY
              )
          install(FILES ${LIBRARY_OUTPUT_PATH}/pkgconfig/${name}${lib_type}.pc

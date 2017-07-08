@@ -1,0 +1,64 @@
+#!/sbin/openrc-run
+# Created by: Mark Felder <feld@FreeBSD.org>
+
+# Add the following line to /etc/rc.conf to enable vnstat:
+#
+# vnstat_additional_ifaces="em1"
+
+name=vnstat
+
+: ${vnstat_pidfile=/var/run/vnstat/vnstat.pid}
+: ${vnstat_config=%%PREFIX%%/etc/vnstat.conf}
+: ${vnstat_flags="-d --noadd"}
+: ${vnstat_user:=%%USERS%%}
+: ${vnstat_group:=%%GROUPS%%}
+
+command="%%PREFIX%%/sbin/vnstatd"
+command_args="-p ${vnstat_pidfile} --config ${vnstat_config}"
+pidfile="${vnstat_pidfile}"
+user_cmd="%%PREFIX%%/bin/vnstat"
+
+create_iface_database()
+{
+	local iface="$1"
+	local descr="$2"
+	su -m ${vnstat_user} -c "${user_cmd} --create --iface $iface" >/dev/null 2>&1 ||
+	  ! eerror "$name: Failed to create database for the $descr interface $iface" || return 1
+	einfo "$name: Created the database for the $descr interface $iface"
+}
+
+start_pre()
+{
+	local dbdir iface
+
+	if [ ! -e ${pidfile%/*} ]; then
+		install -d -o ${vnstat_user} -g ${vnstat_group} ${pidfile%/*};
+	fi
+
+	dbdir=$(grep "^DatabaseDir" ${vnstat_config} | awk 'BEGIN{FS="\042"}{print $2}')
+	if [ ! -d ${dbdir} ]; then
+		install -d -o ${vnstat_user} -g ${vnstat_group} ${dbdir};
+	fi
+
+	iface=$(grep "^Interface" ${vnstat_config} | head -1 | awk 'BEGIN{FS="\042"}{print $2}')
+	if [ -n "${iface}" -a ! -f ${dbdir}/${iface} ]; then
+		create_iface_database $iface "default" || return 1
+	fi
+	if [ -n "${vnstat_additional_ifaces}" ]; then
+		for iface in ${vnstat_additional_ifaces}; do 
+			if [ ! -f ${dbdir}/${iface} ]; then
+				create_iface_database $iface "additional" || return 1
+			fi
+		done
+	fi
+
+	if [ ! -d "/var/run/vnstat" ]; then
+		install -d -o ${vnstat_user} -g ${vnstat_group} /var/run/vnstat;
+	fi
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

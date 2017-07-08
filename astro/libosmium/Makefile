@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libosmium
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -20,6 +19,8 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 BUILD_DEPENDS=	sparsehash>=0:devel/sparsehash \
 		${LOCALBASE}/include/utf8.h:devel/utf8cpp
 RUN_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
+
+BROKEN_powerpc64=	fails to compile: types_from_string.hpp: error: 'strtoll' is not a member of 'std'
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	osmcode

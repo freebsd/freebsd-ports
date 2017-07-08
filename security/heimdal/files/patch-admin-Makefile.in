@@ -1,4 +1,4 @@
---- admin/Makefile.in.orig	2017-01-03 19:44:18 UTC
+--- admin/Makefile.in.orig	2017-06-10 19:27:47 UTC
 +++ admin/Makefile.in
 @@ -156,9 +156,13 @@ dist_ktutil_OBJECTS = add.$(OBJEXT) chan
  	rename.$(OBJEXT)

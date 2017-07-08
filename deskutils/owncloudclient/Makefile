@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloudclient
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt5keychain.so:security/qtkeychain-qt5
 
-USES=		cmake:outsource compiler:c++11-lib gmake iconv \
+USES=		cmake:outsource,noninja compiler:c++11-lib gmake iconv \
 		localbase:ldflags pkgconfig sqlite ssl
 USE_QT5=	buildtools_build concurrent core dbus gui linguist_build network \
 		qmake_build sql webkit widgets xml

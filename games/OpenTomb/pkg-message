@@ -1,0 +1,14 @@
+You need the following files to play OpenTomb:
+* Data folders from each game. Get them from your retail game CDs or
+  Steam/GOG bundles.
+* CD audio tracks. OpenTomb only supports OGG audiotracks for a
+  moment, so you should convert original soundtracks by yourself, or
+  just download whole TR1-5 music package here:
+  http://trep.trlevel.de/opentomb/files/tr_soundtracks_for_opentomb.zip
+
+  PLEASE NOTE: script file bundled in this archive is outdated, so
+  don't overwrite existing soundtrack.lua file with one provided in
+  archive.
+* Loading screens for TR1-3 and TR5. For TR3, get them from pix
+  directory of your installed official game.  For other versions
+  download them from http://trep.trlevel.de/temp/loading_screens.zip

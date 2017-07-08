@@ -2,11 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.17.0
+PORTVERSION?=	1.18.0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		https://static.rust-lang.org/dist/:rust_bootstrap \
+		LOCAL/dumbbell/rust:rust_bootstrap \
+		https://static.rust-lang.org/dist/:cargo_bootstrap \
 		https://s3.amazonaws.com/rust-lang-ci/cargo-builds/:cargo_bootstrap \
+		LOCAL/dumbbell/rust:cargo_bootstrap \
 		LOCAL/marino:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 BOOTSTRAP_FILES=${RUSTC_BOOTSTRAP}:rust_bootstrap \
@@ -22,7 +25,7 @@ DISTFILES+=	${CARGO_REGISTRY}:registry
 DIST_SUBDIR?=	rust
 EXTRACT_ONLY?=	${DISTFILES:N*\:*bootstrap:C/:.*//}
 
-MAINTAINER?=	riggs@FreeBSD.org
+MAINTAINER?=	rust@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
 
 LICENSE=	APACHE20 \
@@ -33,7 +36,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 BUILD_DEPENDS=		cmake:devel/cmake
 
-ONLY_FOR_ARCHS?=	amd64 i386
+ONLY_FOR_ARCHS?=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
 # FIXME: The bootstrapped rustc adds -L/usr/local/lib in front of
@@ -43,26 +46,31 @@ CONFLICTS_BUILD?=	rust-nightly
 CONFLICTS_BUILD+=	${PKGBASE}
 CONFLICTS_INSTALL?=	rust-nightly
 
-RUST_BOOTSTRAP_DIR?=		2017-03-11
-RUST_BOOTSTRAP_VERSION?=	1.16.0
-RUSTC_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR}/rustc-${RUST_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
-RUST_STD_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR}/rust-std-${RUST_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
+RUST_BOOTSTRAP_DIR?=		2017-04-27
+RUST_BOOTSTRAP_DIR_aarch64?=	2017-04-24
+RUST_BOOTSTRAP_VERSION?=	1.17.0
+RUST_BOOTSTRAP_VERSION_aarch64?=1.17.0
+RUSTC_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR_${ARCH}:U${RUST_BOOTSTRAP_DIR}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
+RUST_STD_BOOTSTRAP=		${RUST_BOOTSTRAP_DIR_${ARCH}:U${RUST_BOOTSTRAP_DIR}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
-CARGO_BOOTSTRAP_DIR?=		6b05583d71f982bcad049b9fa094c637c062e751
-CARGO_BOOTSTRAP_VERSION?=	nightly
-CARGO_BOOTSTRAP=		${CARGO_BOOTSTRAP_DIR}/cargo-${CARGO_BOOTSTRAP_VERSION}-${RUST_TARGET}.tar.gz
+CARGO_BOOTSTRAP_DIR?=		${RUST_BOOTSTRAP_DIR}
+CARGO_BOOTSTRAP_DIR_aarch64?=	${RUST_BOOTSTRAP_DIR_aarch64}
+CARGO_BOOTSTRAP_VERSION?=	0.18.0
+CARGO_BOOTSTRAP_VERSION_aarch64?=0.18.0
+CARGO_BOOTSTRAP=		${CARGO_BOOTSTRAP_DIR_${ARCH}:U${CARGO_BOOTSTRAP_DIR}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}${EXTRACT_SUFX}
 CARGO_REGISTRY=			${PORTNAME}-registry-${DISTVERSIONFULL}.tar.xz
 
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
 
 # Rust's target arch string is different from *BSD arch strings
-RUST_ARCH_x86_64=	x86_64 # dragonfly
+RUST_ARCH_aarch64=	aarch64
 RUST_ARCH_amd64=	x86_64
 RUST_ARCH_i386=		i686
+RUST_ARCH_x86_64=	x86_64 # dragonfly
 RUST_TARGET=		${RUST_ARCH_${ARCH}}-unknown-${OPSYS:tl}
 PLIST_SUB+=		RUST_TARGET=${RUST_TARGET}
 
-USES=		compiler gmake libedit python:2,build
+USES=		compiler gmake libedit python:2.7,build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-valgrind \
 		${CHOSEN_COMPILER_TYPE:Mclang:C/.+/--enable-&/} \
@@ -70,7 +78,8 @@ CONFIGURE_ARGS=	--disable-valgrind \
 		--musl-root=${PREFIX}	\
 		--local-rust-root=${PREFIX} \
 		--mandir=${MANPREFIX}/man \
-		--release-channel=${RUST_CHANNEL}
+		--release-channel=${RUST_CHANNEL} \
+		--python="${PYTHON_CMD}"
 
 MAKE_ARGS+=	VERBOSE=1
 
@@ -105,6 +114,11 @@ DOCS_VARS=		rust_manifests+=${RUST_DOCS_MANIFESTS}
 PLIST_FILES=		lib/rustlib/components \
 			lib/rustlib/rust-installer-version
 
+.include <bsd.port.pre.mk>
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
+EXTRA_PATCHES+=        ${PATCHDIR}/extra-patch-ino64
+.endif
+
 pre-fetch:
 	# FIXME: This is the same check for CONFLICTS as the standard
 	# one, except port origins are not compared. This allows
@@ -129,16 +143,34 @@ pre-fetch:
 		exit 1;\
 	fi
 
+RUST_STD_DIR=		${RUST_STD_BOOTSTRAP:T:R:R}
+LIBSTD_SUFFIX=		f4594d3e53dcb114
+LIBSTD_SUFFIX_aarch64=	b41e0ffe8c1bd541
+LIBSTD=			${RUST_STD_DIR}/rust-std-${RUST_TARGET}/lib/rustlib/${RUST_TARGET}/lib/libstd-${LIBSTD_SUFFIX_${ARCH}:U${LIBSTD_SUFFIX}}.rlib
+STDF=			${LIBSTD:T:R:S/lib//}.0.o
+
 post-extract:
 	@${MKDIR} \
-		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR} \
-		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR}
+		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR_${ARCH}:U${RUST_BOOTSTRAP_DIR}} \
+		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR_${ARCH}:U${CARGO_BOOTSTRAP_DIR}}
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUSTC_BOOTSTRAP} \
-		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR}
+		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR_${ARCH}:U${RUST_BOOTSTRAP_DIR}}
+.if ${OPSYS} != FreeBSD || ${OSVERSION} < 1200031
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP} \
-		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR}
+		${WRKSRC}/build/cache/${RUST_BOOTSTRAP_DIR_${ARCH}:U${RUST_BOOTSTRAP_DIR}}
+.endif
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${CARGO_BOOTSTRAP} \
-		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR}
+		${WRKSRC}/build/cache/${CARGO_BOOTSTRAP_DIR_${ARCH}:U${CARGO_BOOTSTRAP_DIR}}
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031
+	${TAR} -x -C ${WRKSRC} -f ${DISTDIR}/${DIST_SUBDIR}/${RUST_STD_BOOTSTRAP}
+	${CC} ${CFLAGS} -fPIC -c -o ${WRKSRC}/old_fstat.o ${FILESDIR}/old_fstat.c
+	(cd ${WRKSRC} && ${AR} x ${WRKSRC}/${LIBSTD} ${STDF})
+	${LD} -r -o ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF} ${WRKSRC}/old_fstat.o
+	${MV} ${WRKSRC}/std.xx.o ${WRKSRC}/${STDF}
+	(cd ${WRKSRC} && ${AR} r ${WRKSRC}/${LIBSTD} ${STDF})
+	${TAR} -cy --format=ustar -C ${WRKSRC} -f ${WRKSRC}/rustc.tbz ${RUST_STD_DIR}
+	${MV} ${WRKSRC}/rustc.tbz ${WRKSRC}/build/cache/${RUST_STD_BOOTSTRAP}
+.endif
 
 post-patch:
 	@test ! -f ${WRKSRC}/mk/main.mk || \
@@ -146,6 +178,21 @@ post-patch:
 		${WRKSRC}/mk/main.mk
 	@${REINPLACE_CMD} -e 's|gdb|${LOCALBASE}/bin/gdb|' \
 		${WRKSRC}/src/etc/rust-gdb
+	@if test "${RUST_BOOTSTRAP_DIR_${ARCH}}" -o "${RUST_BOOTSTRAP_VERSION_${ARCH}}"; then \
+		${REINPLACE_CMD} -e \
+		's|^rustc:.*|rustc: ${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_BOOTSTRAP_DIR_${ARCH}:U${RUST_BOOTSTRAP_DIR}}|' \
+		${WRKSRC}/src/stage0.txt; \
+	fi
+	@if test "${CARGO_BOOTSTRAP_DIR_${ARCH}}"; then \
+		${REINPLACE_CMD} -e \
+		's|^cargo:.*|cargo: ${RUST_BOOTSTRAP_DIR_${ARCH}:U${RUST_BOOTSTRAP_DIR}}|' \
+		${WRKSRC}/src/stage0.txt; \
+	fi
+	@if test "${CARGO_BOOTSTRAP_VERSION_${ARCH}}"; then \
+		${REINPLACE_CMD} -e \
+		's|cargo-nightly-|cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-|' \
+		${WRKSRC}/src/bootstrap/bootstrap.py; \
+	fi
 
 # In case the previous "make stage" failed, this ensures rust's
 # install.sh won't backup previously staged files before reinstalling
@@ -204,7 +251,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/*.so \
 		${STAGEDIR}${PREFIX}/lib/rustlib/*/lib/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
 
 # "make gen-registry" is a special target to ease this port update.
 #

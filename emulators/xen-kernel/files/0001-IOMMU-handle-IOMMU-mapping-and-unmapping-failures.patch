@@ -1,0 +1,78 @@
+From 03f872b98f24e25cafb478b5d7c34e1eb18e1e4c Mon Sep 17 00:00:00 2001
+From: Quan Xu <quan.xu@intel.com>
+Date: Fri, 2 Jun 2017 12:30:34 +0100
+Subject: [PATCH 1/4] IOMMU: handle IOMMU mapping and unmapping failures
+
+Treat IOMMU mapping and unmapping failures as a fatal to the DomU
+If IOMMU mapping and unmapping failed, crash the DomU and propagate
+the error up to the call trees.
+
+No spamming of the log can occur. For DomU, we avoid logging any
+message for already dying domains. For Dom0, that'll still be more
+verbose than we'd really like, but it at least wouldn't outright
+flood the console.
+
+Signed-off-by: Quan Xu <quan.xu@intel.com>
+Reviewed-by: Kevin Tian <kevin.tian@intel.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/drivers/passthrough/iommu.c | 30 ++++++++++++++++++++++++++++--
+ 1 file changed, 28 insertions(+), 2 deletions(-)
+
+diff --git a/xen/drivers/passthrough/iommu.c b/xen/drivers/passthrough/iommu.c
+index 1a315ee..927966f 100644
+--- a/xen/drivers/passthrough/iommu.c
++++ b/xen/drivers/passthrough/iommu.c
+@@ -239,21 +239,47 @@ int iommu_map_page(struct domain *d, unsigned long gfn, unsigned long mfn,
+                    unsigned int flags)
+ {
+     const struct domain_iommu *hd = dom_iommu(d);
++    int rc;
+ 
+     if ( !iommu_enabled || !hd->platform_ops )
+         return 0;
+ 
+-    return hd->platform_ops->map_page(d, gfn, mfn, flags);
++    rc = hd->platform_ops->map_page(d, gfn, mfn, flags);
++    if ( unlikely(rc) )
++    {
++        if ( !d->is_shutting_down && printk_ratelimit() )
++            printk(XENLOG_ERR
++                   "d%d: IOMMU mapping gfn %#lx to mfn %#lx failed: %d\n",
++                   d->domain_id, gfn, mfn, rc);
++
++        if ( !is_hardware_domain(d) )
++            domain_crash(d);
++    }
++
++    return rc;
+ }
+ 
+ int iommu_unmap_page(struct domain *d, unsigned long gfn)
+ {
+     const struct domain_iommu *hd = dom_iommu(d);
++    int rc;
+ 
+     if ( !iommu_enabled || !hd->platform_ops )
+         return 0;
+ 
+-    return hd->platform_ops->unmap_page(d, gfn);
++    rc = hd->platform_ops->unmap_page(d, gfn);
++    if ( unlikely(rc) )
++    {
++        if ( !d->is_shutting_down && printk_ratelimit() )
++            printk(XENLOG_ERR
++                   "d%d: IOMMU unmapping gfn %#lx failed: %d\n",
++                   d->domain_id, gfn, rc);
++
++        if ( !is_hardware_domain(d) )
++            domain_crash(d);
++    }
++
++    return rc;
+ }
+ 
+ static void iommu_free_pagetables(unsigned long unused)
+-- 
+2.1.4
+

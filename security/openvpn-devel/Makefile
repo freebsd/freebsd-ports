@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		201719
+DISTVERSION=		201725
 PORTREVISION?=		0
 CATEGORIES=		security net
 MASTER_SITES=		https://secure-computing.net/files/openvpn/ \
@@ -14,7 +14,7 @@ COMMENT?=		Secure IP/Ethernet tunnel daemon
 
 LICENSE=		GPLv2
 
-CONFLICTS_INSTALL=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]*
+CONFLICTS_INSTALL=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-devel-[0-9]*
 
 GNU_CONFIGURE=		yes
 WRKSRC=			${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}

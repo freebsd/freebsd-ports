@@ -3,6 +3,7 @@
 
 PORTNAME=	wt
 PORTVERSION=	3.3.7
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
@@ -14,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS+=	libpng.so:graphics/png \
 		libboost_system.so:devel/boost-libs \
 		libGraphicsMagick.so:graphics/GraphicsMagick
+
+BROKEN_powerpc64=	fails to link: libwthttp.so. undefined reference to boost::program_options::abstract_variables_map::operator
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kdeforche

@@ -3,7 +3,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.8.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/
@@ -20,6 +20,7 @@ SHEBANG_FILES=	misc/mcedit.menu.in configure configure.ac \
 		${WRKSRC}/src/vfs/extfs/helpers/Makefile.in \
 		${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
 		${WRKSRC}/src/vfs/extfs/helpers/uc1541.in
+python_CMD=	${LOCALBASE}/bin/python2
 python_OLD_CMD=	@PYTHON@
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
@@ -90,4 +91,11 @@ post-install-X11-on:
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200030
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_diffviewer_ydiff.c
+RUN_DEPENDS=    gdiff:textproc/diffutils
+.endif
+
+.include <bsd.port.post.mk>

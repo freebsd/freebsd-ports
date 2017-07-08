@@ -21,6 +21,8 @@ COMMENT=	Web viewer plugin for Orthanc
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc \
 		gtest-config:devel/googletest
 LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \

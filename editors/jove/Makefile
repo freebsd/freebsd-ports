@@ -16,7 +16,7 @@ LICENSE_NAME=	JOVE License
 LICENSE_FILE=	${WRKSRC}/README
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		ncurses
+USES=		groff ncurses
 MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.5.7
+PORTVERSION=	1.6.1
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libevent.so:devel/libevent \
@@ -18,10 +19,8 @@ BUILD_DEPENDS=	ragel:devel/ragel
 
 CONFLICTS_INSTALL=	rspamd-devel
 
-OPTIONS_DEFINE=	GPERF REDIRECTOR HYPERSCAN GD CGP
-OPTIONS_DEFAULT=	GD
+OPTIONS_DEFINE=	GPERF HYPERSCAN GD CGP
 GPERF_DESC=		Google perf-tools profiling
-REDIRECTOR_DESC=	Install HTTP redirector
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
 GD_DESC=		Enable libgd support for images fuzzy hashes
 CGP_DESC=		Install Communigate Pro(tm) helper
@@ -45,7 +44,7 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 USES=		cmake:outsource pkgconfig perl5 \
 		compiler:c11 sqlite ssl
 USE_LDCONFIG=	yes
-USE_PERL5=	build
+USE_PERL5=	build run
 
 USE_GNOME=	glib20
 
@@ -72,28 +71,7 @@ GH_ACCOUNT=	vstakhov
  ONLY_FOR_ARCHS=	amd64
 .endif
 
-.if ${PORT_OPTIONS:MREDIRECTOR}
- USE_PERL5+=	run
- CMAKE_ARGS+=	-DENABLE_REDIRECTOR=ON
- PLIST_SUB+=	REDIRECTOR=""
- USE_RC_SUBR+=	rspamd_redirector
- RUN_DEPENDS+=	\
-	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
-	p5-IO-String>=0:devel/p5-IO-String \
-	p5-XML-Parser>=0:textproc/p5-XML-Parser \
-	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
-	p5-POE-Component-Client-DNS>=0:dns/p5-POE-Component-Client-DNS \
-	p5-POE-Component-Client-HTTP>=0:www/p5-POE-Component-Client-HTTP \
-	p5-POE-Component-Server-HTTP>=0:www/p5-POE-Component-Server-HTTP \
-	p5-Cache-Memcached-Fast>=0:databases/p5-Cache-Memcached-Fast \
-	p5-Proc-PidUtil>=0:sysutils/p5-Proc-PidUtil \
-	p5-Proc-Daemon>=0:devel/p5-Proc-Daemon
-.else
- PLIST_SUB+=	REDIRECTOR="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MCGP}
- USE_PERL5+=	run
  PLIST_SUB+=	CGP=""
  RUN_DEPENDS+=	\
 	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \

@@ -3,7 +3,7 @@
 
 PORTNAME=	endless-sky
 PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -16,6 +16,8 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmad.so:audio/libmad
+
+BROKEN_powerpc64=	fails to compile: Dialog.h: 'to_string' is not a member of 'std'
 
 USE_GITHUB=	yes
 

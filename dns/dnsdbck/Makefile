@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdbck
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	dns perl5
-MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/dnstools/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	http://download.gnu.org.ua/pub/release/dnstools/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verify consistency of DNS information in an SQL database
 
 LICENSE=	GPLv3

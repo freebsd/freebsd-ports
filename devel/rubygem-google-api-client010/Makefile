@@ -21,6 +21,8 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 		rubygem-representable>=3.0:textproc/rubygem-representable \
 		rubygem-retriable>=2.0:devel/rubygem-retriable
 
+BROKEN_powerpc64=	fails to package: call-i.ri: No such file or directory
+
 PORTSCOUT=	limit:^0\.10\.
 
 NO_ARCH=	yes

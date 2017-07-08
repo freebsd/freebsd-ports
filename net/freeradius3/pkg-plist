@@ -551,6 +551,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/mac2ip
 %%EXAMPLESDIR%%/raddb/mods-available/mac2vlan
 %%EXAMPLESDIR%%/raddb/mods-available/mschap
+%%EXAMPLESDIR%%/raddb/mods-available/moonshot-targeted-ids
 %%EXAMPLESDIR%%/raddb/mods-available/ntlm_auth
 %%EXAMPLESDIR%%/raddb/mods-available/opendirectory
 %%EXAMPLESDIR%%/raddb/mods-available/otp
@@ -647,6 +648,12 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/postgresql/setup.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/sqlite/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/mysql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/mysql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/postgresql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/postgresql/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/sqlite/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/moonshot-targeted-ids/sqlite/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/unbound/default.conf
 %%EXAMPLESDIR%%/raddb/mods-enabled/always
 %%EXAMPLESDIR%%/raddb/mods-enabled/attr_filter
@@ -781,6 +788,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.compatible
 %%DATADIR%%/dictionary.cosine
 %%DATADIR%%/dictionary.dante
+%%DATADIR%%/dictionary.dellemc
 %%DATADIR%%/dictionary.dhcp
 %%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.dlink

@@ -4,10 +4,7 @@
 PORTNAME=	redis
 DISTVERSION=	4.0-rc3
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/antirez/redis/archive/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${DISTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
@@ -15,6 +12,8 @@ COMMENT=	Persistent key-value database with built-in net interface
 LICENSE=	BSD3CLAUSE
 
 USES=		execinfo
+USE_GITHUB=	yes
+GH_ACCOUNT=	antirez
 
 OPTIONS_DEFINE=	TESTS TRIB
 OPTIONS_RADIO=	EXTLUA
@@ -24,8 +23,6 @@ LUA_DESC=	Use lang/lua instead of builtin lua
 LUAJIT_DESC=	Use lang/luajit instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
 TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 .include <bsd.port.options.mk>
 

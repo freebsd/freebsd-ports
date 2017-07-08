@@ -14,7 +14,9 @@ COMMENT=	Probabilistic text search database engine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	xapian-core10- xapian-core12-
+BROKEN_powerpc64=	fails to configure: A compiler with support for C++11 language features is required
+
+CONFLICTS_INSTALL=	xapian-core10 xapian-core12
 
 OPTIONS_DEFINE=	DOCS SSE2
 SSE2_DESC=	Use SSE2 for floating point

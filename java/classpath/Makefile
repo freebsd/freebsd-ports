@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 
 BROKEN_aarch64=		fails to configure: error: The jar tool /usr/local/bin/gjar5 was not found
 BROKEN_armv6=		fails to configure: error: The jar tool /usr/local/bin/gjar5 was not found
+BROKEN_powerpc64=	fails to configure: error: The jar tool /usr/local/bin/gjar5 was not found
 
 GNU_CONFIGURE=	yes
 USES=		gmake iconv libtool perl5 pkgconfig

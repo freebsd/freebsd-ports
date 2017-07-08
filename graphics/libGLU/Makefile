@@ -3,7 +3,7 @@
 
 PORTNAME=	libGLU
 PORTVERSION=	9.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/glu/
 DISTNAME=	glu-${PORTVERSION}

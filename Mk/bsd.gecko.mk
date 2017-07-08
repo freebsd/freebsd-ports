@@ -139,17 +139,15 @@ MOZ_MK_OPTIONS+=MOZ_OBJDIR="${MOZ_OBJDIR}"
 
 LDFLAGS+=		-Wl,--as-needed
 
-.if ${OPSYS} != DragonFly # XXX xpcshell crash during install
+.if ${MOZILLA_VER:R:R} < 55 && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200032
 # use jemalloc 3.0.0 (4.0 for firefox 43+) API for stats/tuning
-MOZ_EXPORT+=	MOZ_JEMALLOC3=1 MOZ_JEMALLOC4=1
-.if ${OPSYS} != FreeBSD || ${MOZILLA_VER:R:R} >= 37
-. if ${MOZILLA_VER:R:R} >= 48
+MOZ_EXPORT+=	MOZ_JEMALLOC4=1
+.if ${MOZILLA_VER:R:R} >= 48
 MOZ_OPTIONS+=	--enable-jemalloc=4
-.else
+.elif ${OSVERSION} < 1100079
 MOZ_OPTIONS+=	--enable-jemalloc
-. endif
-.endif
-.endif # !DragonFly
+.endif # Mozilla >= 48
+.endif # Mozilla < 55
 
 # Standard depends
 _ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss png pixman soundtouch sqlite vpx
@@ -328,6 +326,7 @@ MOZ_OPTIONS+=	--enable-gconf
 MOZ_OPTIONS+=	--disable-gconf
 .endif
 
+.if ${MOZILLA_VER:R:R} < 55
 .if ${PORT_OPTIONS:MGNOMEUI}
 BUILD_DEPENDS+=	${libgnomeui_DETECT}:${libgnomeui_LIB_DEPENDS:C/.*://}
 USE_GNOME+=		libgnomeui:build
@@ -335,6 +334,7 @@ MOZ_OPTIONS+=	--enable-gnomeui
 .else
 MOZ_OPTIONS+=	--disable-gnomeui
 .endif
+.endif # Mozilla < 55
 
 .if ${PORT_OPTIONS:MLIBPROXY}
 LIB_DEPENDS+=	libproxy.so:net/libproxy
@@ -389,7 +389,7 @@ post-patch-SNDIO-on:
 .endif
 
 .if ${PORT_OPTIONS:MRUST}
-BUILD_DEPENDS+=	rustc:${RUST_PORT}
+BUILD_DEPENDS+=	rust>=1.15.1:${RUST_PORT}
 . if ${MOZILLA_VER:R:R} >= 51
 BUILD_DEPENDS+=	cargo>=0.16.0:devel/cargo
 . endif

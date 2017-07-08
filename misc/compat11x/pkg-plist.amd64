@@ -1,0 +1,10 @@
+lib/compat/libarchive.so.6
+lib/compat/libbsnmptools.so.0
+lib/compat/libmilter.so.5
+lib/compat/libproc.so.3
+lib/compat/libzfs.so.2
+lib/compat/snmp_atm.so.6
+lib32/compat/libarchive.so.6
+lib32/compat/libmilter.so.5
+lib32/compat/libproc.so.3
+lib32/compat/libzfs.so.2

@@ -1,4 +1,4 @@
 lib/mediastreamer/plugins/libmsbcg729.so
 lib/mediastreamer/plugins/libmsbcg729.so.0
 lib/mediastreamer/plugins/libmsbcg729.so.0.0.0
-@comment lib/pkgconfig/libbcg729.pc
+@comment libdata/pkgconfig/libbcg729.pc

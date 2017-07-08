@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+name="neubotd"
+
+command="%%PREFIX%%/bin/neubot"
+pidfile="/var/run/${name}.pid"
+description="neubot daemon"
+neubotd_log="/var/log/${name}.log"
+
+start_pre() {
+	%%PREFIX%%/bin/neubot start > $neubotd_log
+}
+
+stop_pre() {
+	%%PREFIX%%/bin/neubot stop > $neubotd_log
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

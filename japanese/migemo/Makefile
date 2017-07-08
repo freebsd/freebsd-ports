@@ -53,8 +53,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.am.ruby19 \
 		${PATCHDIR}/extra-patch-migemo.rb.in \
 		${PATCHDIR}/extra-patch-tests_Makefile.am
 
-BROKEN_ia64=	Does not compile
-
 .include <bsd.port.options.mk>
 
 post-extract:

@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# Define these jabber_pyaim_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+
+name="xmpppy_yahoo"
+
+: ${xmpppy_yahoo_dir="%%BINDIR%%"}
+: ${xmpppy_yahoo_piddir="/var/jabberd/pid"}
+: ${xmpppy_yahoo_user="%%JABBER_USER%%"}
+
+pidfile="${xmpppy_yahoo_piddir}/PyYIMt.pid"
+command_args="&"
+command="${xmpppy_yahoo_dir}/yahoo.py"
+
+depend() {
+	need %%JABBER_REQUIRE%%
+	keyword -shutdown
+}

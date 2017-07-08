@@ -13,6 +13,8 @@ COMMENT=	C++ code generator for calling Java from C++/Python
 
 LICENSE=	APACHE20
 
+BROKEN_armv6=		fails to link: /nxb-bin/usr/bin/ld: cannot find -ljava
+
 USES=		python
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	JCC

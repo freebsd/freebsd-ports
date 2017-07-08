@@ -3,7 +3,7 @@
 
 PORTNAME=	AMORE
 PORTVERSION=	0.2.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/./1}
 
@@ -13,6 +13,6 @@ COMMENT=	MORE flexible neural network package
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

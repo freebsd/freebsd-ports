@@ -7,8 +7,11 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.linuxco.de/tcping/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Do a TCP connect to the given IP/port combination
+
+LICENSE=        LGPL3
+LICENSE_FILE=   ${WRKSRC}/LICENSE
 
 PLIST_FILES=	bin/tcping
 PORTDOCS=	README

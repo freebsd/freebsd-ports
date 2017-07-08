@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Apache/Solr.pm
+%%SITE_PERL%%/Apache/Solr.pod
+%%SITE_PERL%%/Apache/Solr/Document.pm
+%%SITE_PERL%%/Apache/Solr/Document.pod
+%%SITE_PERL%%/Apache/Solr/JSON.pm
+%%SITE_PERL%%/Apache/Solr/JSON.pod
+%%SITE_PERL%%/Apache/Solr/Result.pm
+%%SITE_PERL%%/Apache/Solr/Result.pod
+%%SITE_PERL%%/Apache/Solr/Tables.pm
+%%SITE_PERL%%/Apache/Solr/XML.pm
+%%SITE_PERL%%/Apache/Solr/XML.pod
+%%PERL5_MAN3%%/Apache::Solr.3.gz
+%%PERL5_MAN3%%/Apache::Solr::Document.3.gz
+%%PERL5_MAN3%%/Apache::Solr::JSON.3.gz
+%%PERL5_MAN3%%/Apache::Solr::Result.3.gz
+%%PERL5_MAN3%%/Apache::Solr::XML.3.gz

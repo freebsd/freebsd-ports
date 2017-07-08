@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		libaravis
-PORTVERSION=		0.5.8
+PORTVERSION=		0.5.9
 CATEGORIES=		devel
 
 MAINTAINER=		rozhuk.im@gmail.com
@@ -13,7 +13,7 @@ LICENSE=		LGPL21+
 USE_GITHUB=		yes
 GH_ACCOUNT=		AravisProject
 GH_PROJECT=		aravis
-GH_TAGNAME=		1b67490cf9c18d3ff3aa023054d79302726e5a66
+GH_TAGNAME=		c681c52
 
 CONFLICTS_INSTALL=	${PORTNAME}*
 DOCSDIR=		${PREFIX}/share/doc/aravis/aravis-0.6
@@ -29,7 +29,7 @@ AUTOMAKE_ARGS=		--add-missing --copy
 MAKE_ARGS=		pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
 OPTIONS_DEFINE=		DOCS NLS FAST_HEARTBEAT USB
-OPTIONS_DEFAULT=	NLS USB
+OPTIONS_DEFAULT=	USB
 OPTIONS_SUB=		yes
 
 CONFIGURE_ARGS=		--enable-packet-socket=no --enable-viewer=no	\
@@ -43,8 +43,6 @@ FAST_HEARTBEAT_CONFIGURE_ENABLE=	fast-heartbeat
 
 USB_DESC=		build with USB support
 USB_CONFIGURE_ENABLE=	usb
-
-.include <bsd.port.options.mk>
 
 pre-configure:
 	${ECHO_CMD} "EXTRA_DIST =" >> ${WRKSRC}/gtk-doc.make

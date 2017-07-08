@@ -38,7 +38,6 @@ OPTIONS_DEFAULT=	WXGTK
 .if ${PORT_OPTIONS:MWXGTK}
 USE_WX=		2.8
 WX_COMP=	wx:lib:build
-WX_UNICODE=	yes
 WX_CONFIG_ARGS=	absolute
 GUI_BIN=	tools_gui
 PLIST_SUB=	WX=""

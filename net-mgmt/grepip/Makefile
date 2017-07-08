@@ -15,14 +15,14 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 PLIST_FILES=	bin/grepip
 PORTDOCS=	README.txt
+USES=		localbase
 
 OPTIONS_DEFINE=	DOCS
 
 do-build:
 	cd ${WRKSRC}; \
 	${CC} ${CFLAGS} -c patricia.c; \
-	${CC} ${CFLAGS} -I${LOCALBASE}/include -o grepip grepip.c patricia.o \
-		-L${LOCALBASE}/lib -lpcre
+	${CC} ${CFLAGS} -o grepip grepip.c patricia.o ${LIBS} -lpcre
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/grepip ${STAGEDIR}${PREFIX}/bin

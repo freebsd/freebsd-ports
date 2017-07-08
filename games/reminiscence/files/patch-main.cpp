@@ -4,8 +4,8 @@
  
  #undef main
  int main(int argc, char *argv[]) {
-+	char *homedir = getenv("HOME");
-+	char *dotdir = "/.REminiscence";
++	const char *homedir = getenv("HOME");
++	const char *dotdir = "/.REminiscence";
 +	char *buf = (char*)malloc(strlen(homedir) + strlen(dotdir) + 1);
 +	strcpy(buf, homedir);
 +	strcat(buf, dotdir);

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libqb
-PORTVERSION=	1.0
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ClusterLabs/libqb/releases/download/v${PORTVERSION}/
 
@@ -18,10 +18,11 @@ QB_SOCKET_DIR?=	/var/run/qb
 PLIST_SUB+=	QB_SOCKET_DIR=${QB_SOCKET_DIR}
 
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		autoreconf gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-socket-dir=${QB_SOCKET_DIR}
 INSTALL_TARGET=	install-strip
+PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_SUB=	yes

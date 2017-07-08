@@ -26,6 +26,8 @@ LIB_DEPENDS=	libbotan-1.10.so:security/botan110 \
 		libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/${PYTHON_PKGNAMEPREFIX}sqlite3
 
+BROKEN_powerpc64=	fails to configure: checking for botan/botan.h... no
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bundy-dns
 GH_TAGNAME=	d310c5d

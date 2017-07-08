@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hugo
-PORTVERSION=	0.19
+PORTVERSION=	0.22.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
@@ -12,47 +12,57 @@ COMMENT=	Fast and modern static website engine
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	go>=1.5.0:lang/go
+BUILD_DEPENDS=	go>=1.8.0:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	spf13
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
-GH_TUPLE=	BurntSushi:toml:9906417:toml/src/github.com/BurntSushi/toml \
-		PuerkitoBio:purell:0bcb03f:purell/src/github.com/PuerkitoBio/purell \
-		PuerkitoBio:urlesc:5bd2802:urlesc/src/github.com/PuerkitoBio/urlesc \
+GH_TUPLE=	BurntSushi:toml:b26d9c3:toml/src/github.com/BurntSushi/toml \
+		PuerkitoBio:purell:b938d81:purell/src/github.com/PuerkitoBio/purell \
+		PuerkitoBio:urlesc:bbf7a2a:urlesc/src/github.com/PuerkitoBio/urlesc \
 		bep:gitmap:dcb907b:gitmap/src/github.com/bep/gitmap \
 		bep:inflect:b896c45:inflect/src/github.com/bep/inflect \
-		chaseadamsio:goorgeous:054aba6:goorgeous/src/github.com/chaseadamsio/goorgeous \
-		cpuguy83:go-md2man:a65d4d2:go_md2man/src/github.com/cpuguy83/go-md2man \
+		chaseadamsio:goorgeous:677defd:goorgeous/src/github.com/chaseadamsio/goorgeous \
+		cpuguy83:go-md2man:bcc0a71:go_md2man/src/github.com/cpuguy83/go-md2man \
 		dchest:cssmin:fb8d9b4:cssmin/src/github.com/dchest/cssmin \
-		eknkc:amber:9be5e8a:amber/src/github.com/eknkc/amber \
-		fsnotify:fsnotify:7d7316e:fsnotify/src/github.com/fsnotify/fsnotify \
-		gorilla:websocket:b258b4f:websocket/src/github.com/gorilla/websocket \
-		hashicorp:hcl:630949a:hcl/src/github.com/hashicorp/hcl \
-		kardianos:osext:9b883c5:osext/src/github.com/kardianos/osext \
-		kyokomi:emoji:7ad0be7:emoji/src/github.com/kyokomi/emoji \
-		magiconair:properties:b3b15ef:properties/src/github.com/magiconair/properties \
-		miekg:mmark:2d4f1dd:mmark/src/github.com/miekg/mmark \
-		mitchellh:mapstructure:db1efb5:mapstructure/src/github.com/mitchellh/mapstructure \
-		nicksnyder:go-i18n:2c24b78:go_i18n/src/github.com/nicksnyder/go-i18n \
+		eknkc:amber:f0d8fdb:amber/src/github.com/eknkc/amber \
+		fortytw2:leaktest:7dad533:leaktest/src/github.com/fortytw2/leaktest \
+		fsnotify:fsnotify:4da3e2c:fsnotify/src/github.com/fsnotify/fsnotify \
+		gorilla:websocket:a91eba7:websocket/src/github.com/gorilla/websocket \
+		hashicorp:go-immutable-radix:30664b8:go_immutable_radix/src/github.com/hashicorp/go-immutable-radix \
+		hashicorp:golang-lru:0a025b7:golang_lru/src/github.com/hashicorp/golang-lru \
+		hashicorp:hcl:392dba7:hcl/src/github.com/hashicorp/hcl \
+		inconshreveable:mousetrap:76626ae:mousetrap/src/github.com/inconshreveable/mousetrap \
+		kardianos:osext:ae77be6:osext/src/github.com/kardianos/osext \
+		kr:fs:2788f0d:fs/src/github.com/kr/fs \
+		kyokomi:emoji:ddd4753:emoji/src/github.com/kyokomi/emoji \
+		magiconair:properties:51463bf:properties/src/github.com/magiconair/properties \
+		miekg:mmark:f809cc9:mmark/src/github.com/miekg/mmark \
+		mitchellh:mapstructure:d0303fe:mapstructure/src/github.com/mitchellh/mapstructure \
+		nicksnyder:go-i18n:3e70a1a:go_i18n/src/github.com/nicksnyder/go-i18n \
 		pelletier:go-buffruneio:c37440a:go_buffruneio/src/github.com/pelletier/go-buffruneio \
-		pelletier:go-toml:13d49d4:go_toml/src/github.com/pelletier/go-toml \
-		russross:blackfriday:5f33e7b:blackfriday/src/github.com/russross/blackfriday \
-		shurcooL:sanitized_anchor_name:1dba4b3:sanitized_anchor_name/src/github.com/shurcooL/sanitized_anchor_name \
+		pelletier:go-toml:26ae43f:go_toml/src/github.com/pelletier/go-toml \
+		pkg:errors:c605e28:errors/src/github.com/pkg/errors \
+		pkg:sftp:a5f8514:sftp/src/github.com/pkg/sftp \
+		russross:blackfriday:0ba0f2b:blackfriday/src/github.com/russross/blackfriday \
+		shurcooL:sanitized_anchor_name:541ff5e:sanitized_anchor_name/src/github.com/shurcooL/sanitized_anchor_name \
 		spf13:afero:9be6508:afero/src/github.com/spf13/afero \
-		spf13:cast:ce135a4:cast/src/github.com/spf13/cast \
-		spf13:cobra:fcd0c5a:cobra/src/github.com/spf13/cobra \
-		spf13:fsync:cb2da33:fsync/src/github.com/spf13/fsync \
-		spf13:hugo:d0e2a1f:hugo/src/github.com/spf13/hugo \
-		spf13:jWalterWeatherman:fa7ca7e:jWalterWeatherman/src/github.com/spf13/jwalterweatherman \
+		spf13:cast:acbeb36:cast/src/github.com/spf13/cast \
+		spf13:cobra:ca57f0f:cobra/src/github.com/spf13/cobra \
+		spf13:fsync:12a01e6:fsync/src/github.com/spf13/fsync \
+		spf13:jWalterWeatherman:0efa520:jWalterWeatherman/src/github.com/spf13/jwalterweatherman \
 		spf13:nitro:24d7ef3:nitro/src/github.com/spf13/nitro \
-		spf13:pflag:9ff6c69:pflag/src/github.com/spf13/pflag \
-		spf13:viper:7538d73:viper/src/github.com/spf13/viper \
+		spf13:pflag:e57e3ee:pflag/src/github.com/spf13/pflag \
+		spf13:viper:0967fc9:viper/src/github.com/spf13/viper \
+		stretchr:testify:4d4bfba:testify/src/github.com/stretchr/testify \
 		yosssi:ace:ea038f4:ace/src/github.com/yosssi/ace \
-		golang:net:d379faa:net/src/golang.org/x/net \
-		golang:sys:e48874b:sys/src/golang.org/x/sys \
-		golang:text:f28f367:text/src/golang.org/x/text \
-		go-yaml:yaml:a3f3340:yaml/src/gopkg.in/yaml.v2
+		golang:crypto:7e91053:crypto/src/golang.org/x/crypto \
+		golang:net:5961165:net/src/golang.org/x/net \
+		golang:sys:dbc2be9:sys/src/golang.org/x/sys \
+		golang:text:19e5161:text/src/golang.org/x/text \
+		go-yaml:yaml:cd8b52f:yaml/src/gopkg.in/yaml.v2 \
+		davecgh:go-spew:04cdfd4:go_spew/src/github.com/davecgh/go-spew \
+		pmezard:go-difflib:d8ed262:go_difflib/src/github.com/pmezard/go-difflib
 
 OPTIONS_DEFINE=	MANPAGES
 MANPAGES_DESC=	Build and/or install manual pages

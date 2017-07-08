@@ -13,6 +13,6 @@ BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pea
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array \
 		${PEARDIR}/Spreadsheet/Excel/Writer.php:textproc/pear-Spreadsheet_Excel_Writer
 
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>

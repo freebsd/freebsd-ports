@@ -1,0 +1,31 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to
+# enable zabbix_server:
+#
+# zabbix_server_config (string): Set to the standard config file path by
+#         default.
+# zabbix_server_pidfile (string):    Location of the asterisk pid file
+#                               Default is /var/run/zabbix/zabbix_server.pid
+
+name="zabbix_server"
+
+: ${zabbix_server_config:=%%ETCDIR%%/${name}.conf}
+: ${zabbix_server_pidfile:=/var/run/zabbix/zabbix_server.pid}
+
+command="%%PREFIX%%/sbin/${name}"
+required_files="${zabbix_server_config}"
+pidfile=${zabbix_server_pidfile}
+
+start_pre() {
+	local rundir=${zabbix_server_pidfile%/*}
+	if [ ! -d $rundir ] ; then
+		install -d -m 0755 -o zabbix -g zabbix $rundir
+	fi
+}
+
+depend() {
+	%%PGSQL%% need postgresql
+	%%MYSQL%% need mysql-server
+	keyword -shutdown
+}

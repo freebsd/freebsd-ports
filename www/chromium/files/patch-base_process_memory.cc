@@ -1,6 +1,6 @@
---- base/process/memory.cc.orig	2017-04-19 19:06:28 UTC
+--- base/process/memory.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/process/memory.cc
-@@ -31,7 +31,7 @@ void TerminateBecauseOutOfMemory(size_t 
+@@ -31,7 +31,7 @@ void TerminateBecauseOutOfMemory(size_t size) {
  #endif
  
  // Defined in memory_mac.mm for Mac.

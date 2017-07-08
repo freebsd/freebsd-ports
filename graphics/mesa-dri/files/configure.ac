@@ -1,38 +1,5 @@
 --- configure.ac.orig	2017-04-01 15:33:36 UTC
 +++ configure.ac
-@@ -942,19 +942,19 @@ llvm_add_target() {
- # Call this inside ` ` to get the return value.
- # $1 is the llvm-config command with arguments.
- strip_unwanted_llvm_flags() {
--    # Use \> (marks the end of the word)
--    echo " `$1`" | sed \
--        -e 's/\s\+-m\S*//g' \
--        -e 's/\s\+-DNDEBUG\>//g' \
--        -e 's/\s\+-D_GNU_SOURCE\>//g' \
--        -e 's/\s\+-pedantic\>//g' \
--        -e 's/\s\+-W\S*//g' \
--        -e 's/\s\+-O\S*//g' \
--        -e 's/\s\+-g\S*//g' \
--        -e 's/-fno-rtti\>/-Fno-rtti/g' \
--        -e 's/\s\+-f\S*//g' \
--        -e 's/-Fno-rtti\>/-fno-rtti/g' \
--        -e 's/^ //'
-+    echo " `$1` " | sed -E \
-+        -e 's/[[[:space:]]]+-m[[^[:space:]]]*//g' \
-+        -e 's/[[[:space:]]]+-DNDEBUG[[[:space:]]]/ /g' \
-+        -e 's/[[[:space:]]]+-D_GNU_SOURCE[[[:space:]]]/ /g' \
-+        -e 's/[[[:space:]]]+-pedantic[[[:space:]]]/ /g' \
-+        -e 's/[[[:space:]]]+-W[[^[:space:]]]*//g' \
-+        -e 's/[[[:space:]]]+-O[[^[:space:]]]*//g' \
-+        -e 's/[[[:space:]]]+-g[[^[:space:]]]*//g' \
-+        -e 's/-fno-rtti[[[:space:]]]/-Fno-rtti /g' \
-+        -e 's/[[[:space:]]]+-f[[^[:space:]]]*//g' \
-+        -e 's/-Fno-rtti[[[:space:]]]/-fno-rtti /g' \
-+        -e 's/^[[[:space:]]]//' \
-+        -e 's/[[[:space:]]]$//'
- }
- 
- llvm_set_environment_variables() {
 @@ -1121,7 +1121,7 @@ fi
  AC_SUBST(LIBSENSORS_LIBS)
  
@@ -42,15 +9,6 @@
      dri3_default=yes
      ;;
  *)
-@@ -1631,7 +1631,7 @@ dnl platform checks. Set DEFINES and LIB
- if test "x$enable_dri" = xyes; then
-     # Platform specific settings and drivers to build
-     case "$host_os" in
--    linux*)
-+    linux* | freebsd*)
-         if test "x$enable_dri3" = xyes; then
-             DEFINES="$DEFINES -DHAVE_DRI3"
-         fi
 @@ -2002,9 +2002,18 @@ if test "x$enable_opencl" = xyes; then
          AC_MSG_ERROR([cannot enable OpenCL without Gallium])
      fi
