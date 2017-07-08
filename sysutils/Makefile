@@ -832,6 +832,7 @@
     SUBDIR += polkit-qt5
     SUBDIR += powerdxx
     SUBDIR += powerman
+    SUBDIR += powermon
     SUBDIR += pp
     SUBDIR += pprotectd
     SUBDIR += prelink

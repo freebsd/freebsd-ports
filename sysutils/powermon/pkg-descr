@@ -1,0 +1,10 @@
+Powermon is a small utility that reads the CPU internal power counters,
+calculates the current power consumption and displays it together with
+some nice statistics on an interactive curses interface. 
+
+All Intel CPUs starting with Sandy Bridge are supported. Older Intel
+CPUs and CPUs from other vendors don't expose the necessary performance
+counters. Additionally some server CPUs like those based on Haswell and
+Broadwell do not provide the necessary data.
+
+WWW: https://github.com/Yamagi/powermon
