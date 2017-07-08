@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hub
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.9
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel
 
@@ -17,8 +17,6 @@ BUILD_DEPENDS=	go:lang/go \
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
 
-STRIP=		# stripping can break go binaries
-
 PLIST_FILES=	bin/hub \
 		etc/bash_completion.d/hub \
 		share/zsh/site-functions/_hub \
@@ -27,7 +25,7 @@ do-build:
 	@cd ${WRKSRC} ; ${SETENV} ${LOCALBASE}/bin/bash script/build
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hub ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/hub ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/hub.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/etc/hub.bash_completion.sh ${STAGEDIR}${PREFIX}/etc/bash_completion.d/hub
