@@ -14,6 +14,7 @@ bin/gcc-ar%%SUFFIX%%
 bin/gcc-nm%%SUFFIX%%
 bin/gcc-ranlib%%SUFFIX%%
 bin/gcov%%SUFFIX%%
+bin/gcov-dump%%SUFFIX%%
 bin/gcov-tool%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 @comment info/gcc%%SUFFIX%%/dir
@@ -21,6 +22,8 @@ man/man1/cpp%%SUFFIX%%.1.gz
 man/man1/g++%%SUFFIX%%.1.gz
 man/man1/gcc%%SUFFIX%%.1.gz
 man/man1/gcov%%SUFFIX%%.1.gz
+man/man1/gcov-dump%%SUFFIX%%.1.gz
+man/man1/gcov-tool%%SUFFIX%%.1.gz
 man/man1/gfortran%%SUFFIX%%.1.gz
 %%JAVA%%share/gcc-%%GCC_VERSION%%/python/libjava/aotcompile.py
 %%JAVA%%share/gcc-%%GCC_VERSION%%/python/libjava/classfile.py

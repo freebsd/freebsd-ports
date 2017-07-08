@@ -5,6 +5,7 @@
 
 PORTNAME=	ripgrep
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -12,15 +13,22 @@ COMMENT=	Command line search tool
 
 LICENSE=	MIT UNLICENSE
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
 
+OPTIONS_DEFINE=	BASH FISH ZSH
+OPTIONS_DEFAULT=BASH FISH ZSH
+FISH_DESC=	Install programmable completions for Fish
+
 PLIST_FILES=	bin/rg \
 		man/man1/rg.1.gz
+BASH_PLIST_FILES=	etc/bash_completion.d/rg.bash-completion
+FISH_PLIST_FILES=	share/fish/completions/rg.fish
+ZSH_PLIST_FILES=	share/zsh/site-functions/_rg
 
 CARGO_CRATES=	aho-corasick-0.6.3 \
 		ansi_term-0.9.0 \
@@ -59,7 +67,29 @@ CARGO_CRATES=	aho-corasick-0.6.3 \
 		winapi-0.2.8 \
 		winapi-build-0.1.1
 
+RIPGREP_OUTDIR=	${WRKDIR}/cargo-out
+CARGO_ENV=	RIPGREP_OUTDIR=${RIPGREP_OUTDIR}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|OUT_DIR|RIPGREP_OUTDIR|' ${WRKSRC}/build.rs
+
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rg
 	${INSTALL_MAN} ${WRKSRC}/doc/rg.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+
+post-install-BASH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.bash-completion \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+
+post-install-FISH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.fish \
+		${STAGEDIR}${PREFIX}/share/fish/completions/
+
+post-install-ZSH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${RIPGREP_OUTDIR}/_rg \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 
 .include <bsd.port.mk>

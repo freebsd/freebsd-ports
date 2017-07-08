@@ -596,7 +596,7 @@ websockets_PORT=	www/${_QT_RELNAME}-websockets
 websockets_LIB=	libQt${_QT_LIBVER}WebSockets.so
 
 websockets-qml_PORT=	www/${_QT_RELNAME}-websockets-qml
-websockets-qml_LIB=	${QT_QMLDIR}/QtWebSockets/libdeclarative_qmlwebsockets.so
+websockets-qml_PATH=	${QT_QMLDIR}/QtWebSockets/qmldir
 
 webkit_PORT=		www/${_QT_RELNAME}-webkit
 webkit_LIB=	libQt${_QT_LIBVER}WebKit.so

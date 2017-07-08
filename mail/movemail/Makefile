@@ -10,6 +10,9 @@ MASTER_SITES=	http://wolfram.schneider.org/src/
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Move your mail box to another location
 
+DEPRECATED=	Out of date
+EXPIRATION_DATE=	2017-09-01
+
 USES=		uidfix
 
 PLIST_FILES=	bin/movemail \
