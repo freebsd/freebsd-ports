@@ -866,6 +866,7 @@
     SUBDIR += rtb
     SUBDIR += rubix
     SUBDIR += rubygem-fortune_gem
+    SUBDIR += rubygem-vimgolf
     SUBDIR += sampsvr
     SUBDIR += sarien
     SUBDIR += sauerbraten
