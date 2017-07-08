@@ -6,7 +6,7 @@ CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	antoine@FreeBSD.org
-COMMENT=	proxy for Meterpreter sessions
+COMMENT=	Proxy for Meterpreter sessions
 
 LICENSE=	BSD3CLAUSE
 
