@@ -13,6 +13,10 @@ _INCLUDE_USES_PIE_MK=    yes
 
 .if ${pie_ARGS:Mconfigure}
 CONFIGURE_ARGS+=	--enable-pie
+.elif ${pie_ARGS:Mjava}
+CONFIGURE_ARGS+=	--with-extra-cflags="-fPIE -fPIC" \
+			--with-extra-cxxflags="-fPIE -fPIC" \
+			--with-extra-ldflags="-pie"
 .else
 CFLAGS+=		-fPIE -fPIC
 CXXFLAGS+=		-fPIE -fPIC
