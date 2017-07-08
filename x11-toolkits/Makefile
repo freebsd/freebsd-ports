@@ -239,6 +239,7 @@
     SUBDIR += qt5-uiplugin
     SUBDIR += qt5-virtualkeyboard
     SUBDIR += qt5-widgets
+    SUBDIR += qt5pas
     SUBDIR += qtermwidget
     SUBDIR += qwt5
     SUBDIR += qwt5-designerplugin
