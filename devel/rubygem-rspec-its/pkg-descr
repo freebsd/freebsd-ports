@@ -1,0 +1,4 @@
+RSpec::Its provides the `its` method as a short-hand
+to specify the expected value of an attribute.
+
+WWW: https://github.com/rspec/rspec-its

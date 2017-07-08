@@ -993,6 +993,7 @@
     SUBDIR += rubygem-hammer_cli_foreman_salt
     SUBDIR += rubygem-hammer_cli_foreman_ssh
     SUBDIR += rubygem-hiera
+    SUBDIR += rubygem-hiera-eyaml
     SUBDIR += rubygem-hiera-file
     SUBDIR += rubygem-hiera1
     SUBDIR += rubygem-hieracles
@@ -1010,6 +1011,7 @@
     SUBDIR += rubygem-puppet_forge1
     SUBDIR += rubygem-r10k
     SUBDIR += rubygem-rubyipmi
+    SUBDIR += rubygem-serverspec
     SUBDIR += rubygem-shellany
     SUBDIR += rubygem-smart_proxy_chef
     SUBDIR += rubygem-smart_proxy_dynflow

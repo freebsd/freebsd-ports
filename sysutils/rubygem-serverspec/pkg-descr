@@ -1,0 +1,7 @@
+Serverspec tests your servers' actual state by executing command local,
+via SSH, via WinRM, via Docker API and so on.
+So you don't need to install any agent software on your serves
+and can use any configuration management tools,
+Puppet, Ansible, CFEngine, Itamae and so on.
+
+WWW: https://serverspec.org

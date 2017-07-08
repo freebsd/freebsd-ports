@@ -1,0 +1,4 @@
+Tasksh is a shell command that wraps Taskwarrior commands. It is intended to
+provide simpler Taskwarrior access, and add a few new features of its own.
+
+WWW: https://tasktools.org/projects/tasksh.html
