@@ -3,7 +3,7 @@
 
 PORTNAME=	mdk
 PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNU/${PORTNAME}/v${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Set of utilities for developing programs using MIX and MIXAL
 LICENSE=	GPLv3
 
 USE_GNOME=	glib20 intltool
-USES=		gettext ncurses readline gmake pkgconfig readline:port
+USES=		gettext gmake ncurses pkgconfig readline:port
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
