@@ -4,8 +4,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-PORTVERSION=	1.10.6
-PORTREVISION=	1
+PORTVERSION=	1.10.7
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
@@ -16,7 +15,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
-		libltdl.so:devel/libltdl
+		libltdl.so:devel/libltdl \
+		libevent.so:devel/libevent
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -36,6 +36,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--with-hwloc=${LOCALBASE} \
 			--with-libltdl=${LOCALBASE} \
 			--enable-mpi-fortran=usempi \
+			--with-libevent=external \
+			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 			ompi_cv_fortran_ignore_tkr_data=0
 
 LDFLAGS+=	-L${LOCALBASE}/lib
