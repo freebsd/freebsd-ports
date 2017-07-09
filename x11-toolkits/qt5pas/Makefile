@@ -20,4 +20,7 @@ QT5_VER_MIN=	5.6.1
 IGNORE=		please update your current qt5 version to ${QT5_VER_MIN}
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-mincoming-stack-boundary=2||g' ${WRKSRC}/Qt5Pas.pro
+
 .include <bsd.port.post.mk>
