@@ -3,7 +3,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.6.31
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -19,19 +19,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 GROUPS=		${PORTNAME}
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake iconv libtool localbase pathfix pkgconfig readline \
+		tar:bzip2
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 USE_GNOME=	glib20 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-security
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 SUB_FILES+=	pkg-message
 PORTDOCS=	*
 
 CONFLICTS=	smstools-[0-9]* sendsms-[0-9]*
+
+FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
+		common/cfgreader.c
 
 OPTIONS_DEFINE=	DOCS ICAL PCSC SMSD SMSDDB USB X11
 OPTIONS_MULTI=	SMSDDB
@@ -50,50 +52,34 @@ ICAL_LIB_DEPENDS=	libical.so:devel/libical
 USB_CONFIGURE_ENABLE=	libusb
 PCSC_CONFIGURE_ENABLE=	libpcsclite
 PCSC_LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
+MYSQL_IMPLIES=		SMSD
+PGSQL_IMPLIES=		SMSD
+SQLITE_IMPLIES=		SMSD
+SMSD_PLIST_SUB=		SMSD=''
+SMSD_PLIST_SUB_OFF=	SMSD='@comment ' MSM='@comment ' PGM='@comment ' SQLT='@comment '
+SMSD_CONFIGURE_OFF=	--disable-smsd
+MYSQL_USES=		mysql ssl
+MYSQL_PLIST_SUB=	MSM=''
+MYSQL_PLIST_SUB_OFF=	MSM='@comment '
+MYSQL_CONFIGURE_OFF=	--disable-mysql
+PGSQL_USES=		pgsql
+PGSQL_PLIST_SUB=	PGM=''
+PGSQL_PLIST_SUB_OFF=	PGM='@comment '
+PGSQL_CONFIGURE_OFF=	--disable-postgres
+SQLITE_USES=		sqlite
+SQLITE_PLIST_SUB=	SQLT=''
+SQLITE_PLIST_SUB_OFF=	SQLT='@comment '
+SQLITE_CONFIGURE_OFF=	--disable-sqlite
+X11_CONFIGURE_WITH=	x
+X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+X11_USE=		XORG=x11 XORG=xpm \
+			GNOME=cairo GNOME=gdkpixbuf2 GNOME=gtk20
+X11_PLIST_SUB=		X11=''
+X11_PLIST_SUB_OFF=	X11='@comment '
 
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MSMSD)
-PLIST_SUB+=	SMSD='@comment ' MSM='@comment ' PGM='@comment ' SQLT='@comment '
-CONFIGURE_ARGS+=	--disable-smsd
-.else
-PLIST_SUB+=	SMSD=''
-. if ${PORT_OPTIONS:MMYSQL}
-USES+=		mysql
-PLIST_SUB+=	MSM=''
-. else
-CONFIGURE_ARGS+=	--disable-mysql
-PLIST_SUB+=	MSM='@comment '
-. endif
-. if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-PLIST_SUB+=	PGM=''
-. else
-CONFIGURE_ARGS+=	--disable-postgres
-PLIST_SUB+=	PGM='@comment '
-. endif
-. if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
-PLIST_SUB+=	SQLT=''
-. else
-CONFIGURE_ARGS+=	--disable-sqlite
-PLIST_SUB+=	SQLT='@comment '
-. endif
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=	--with-x
-USE_XORG=	xpm
-USE_GNOME+=	gtk20
-PLIST_SUB+=	X11=''
-.else
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=	X11='@comment '
-.endif
-
-FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
-		common/cfgreader.c
 post-patch:
+	@${REINPLACE_CMD} -e "s/bash/sh/" ${WRKSRC}/smsd/action
 .for f in ${FIXPREFIX}
 	@${REINPLACE_CMD} -e "s:/etc/gnokiirc:${PREFIX}/etc/gnokiirc:g" \
 		${WRKSRC}/${f}
@@ -110,24 +96,29 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/xgnokii/xgnokii.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-.if ${PORT_OPTIONS:MDOCS}
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install -C ${WRKSRC}/Docs
-.else
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install -C ${WRKSRC}/Docs/man
-.endif
 	${INSTALL_DATA} ${WRKSRC}/Docs/sample/gnokiirc \
 		${STAGEDIR}${PREFIX}/etc/gnokiirc.sample
-.if ${PORT_OPTIONS:MSMSD}
-	@cd ${WRKSRC}/smsd && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/smsd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnokii.so.7.0.0
+
+post-install-DOCS-on:
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install -C ${WRKSRC}/Docs
+
+post-install-DOCS-off:
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install -C ${WRKSRC}/Docs/man
+
+post-install-SMSD-on:
+	@${MKDIR} -p ${STAGEDIR}${PREFIX}/share/smsd
+	@cd ${WRKSRC}/smsd && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
 	${INSTALL_SCRIPT} ${WRKSRC}/smsd/action ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/README ${STAGEDIR}${PREFIX}/share/smsd
-.  if ${PORT_OPTIONS:MMYSQL}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/smsd/*.so
+
+post-install-MYSQL-on:
+	@${MKDIR} -p ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.mysql.sql ${STAGEDIR}${PREFIX}/share/smsd
-.  endif
-.  if ${PORT_OPTIONS:MPGSQL}
+
+post-install-PGSQL-on:
+	@${MKDIR} -p ${STAGEDIR}${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.pq.sql ${STAGEDIR}${PREFIX}/share/smsd
-.  endif
-.endif
 
 .include <bsd.port.mk>
