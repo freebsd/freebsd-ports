@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.6
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 

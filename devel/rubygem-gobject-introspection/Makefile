@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobject-introspection
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	LGPL21+
 BUILD_DEPENDS=	rubygem-pkg-config>=0:devel/rubygem-pkg-config
 RUN_DEPENDS=	rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
 
-BROKEN_sparc64=	Does not build: fails to compile rb-gi-function-info.c
+BROKEN_sparc64=	does not build: fails to compile rb-gi-function-info.c
 
 USE_GNOME=	introspection
 USE_RUBY=	yes

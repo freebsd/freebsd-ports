@@ -1,6 +1,6 @@
---- ext/poppler/extconf.rb.orig	2017-01-01 10:59:42.019656000 -0500
-+++ ext/poppler/extconf.rb	2017-01-01 11:01:12.967319000 -0500
-@@ -30,7 +30,7 @@
+--- ext/poppler/extconf.rb.orig	2017-07-08 14:37:54 UTC
++++ ext/poppler/extconf.rb
+@@ -30,7 +30,7 @@ rescue LoadError
    require 'mkmf-gnome2'
  end
  
