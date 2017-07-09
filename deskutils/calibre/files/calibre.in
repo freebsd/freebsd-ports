@@ -43,8 +43,8 @@ load_rc_config $name
 : ${calibre_logsize:=10}
 
 pidfile=/var/run/${name}/${name}.pid
-command=/usr/local/bin/calibre-server
-command_interpreter=python2
+command=%%PREFIX%%/bin/calibre-server
+command_interpreter=%%LOCALBASE%%/bin/python2.7
 required_dirs=${calibre_library}
 
 start_precmd=calibre_prestart

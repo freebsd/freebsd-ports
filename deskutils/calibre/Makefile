@@ -3,6 +3,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -50,10 +51,9 @@ EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 
 USES=		desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig \
 		python:2 pyqt:5 shared-mime-info shebangfix ssl tar:xz
-SHEBANG_FILES=	resources/calibre-portable.sh \
-		src/calibre/ebooks/metadata/odt.py \
-		src/calibre/utils/*.py \
-		src/odf/*.py
+SHEBANG_GLOB=	*.sh *.py
+python_OLD_CMD=	"/usr/bin/env python" /bin/python /usr/bin/python /usr/local/bin/python \
+		"/usr/bin/env python2" /bin/python2 /usr/bin/python2 /usr/local/bin/python2
 USE_PYQT=	core gui network sip svg webkit widgets webkitwidgets xmlpatterns
 USE_QT5=	buildtools_build core dbus gui qmake_build widgets
 USE_GL=		egl gl
@@ -73,7 +73,9 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		XDG_UTILS_INSTALL_MODE=system \
 		QMAKE=${QMAKE}
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e "s|#!/usr/bin/env python2|#!${PYTHON_CMD}|" \
+		${WRKSRC}/setup/install.py
 
 do-build:
 	@${MKDIR} ${WRKDIR}/calibre-config ${WRKDIR}/xdg-config
@@ -96,4 +98,4 @@ do-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/desktop-directories
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/calibre/calibre/plugins/*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
