@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit-gtk
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
