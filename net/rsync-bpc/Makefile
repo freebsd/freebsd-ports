@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsync-bpc
-DISTVERSIONPREFIX=	v
-DISTVERSION=	3_0_9_6
+PORTVERSION=	3.0.9.8
 CATEGORIES=	net
 
 MAINTAINER=	moiseev@mezonplus.ru

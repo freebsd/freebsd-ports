@@ -1,0 +1,46 @@
+--- configure.orig	2017-07-09 02:56:22 UTC
++++ configure
+@@ -5471,24 +5471,25 @@ fi
+ # ping seems to take one of two formats for count (N)
+ # BSD: ping -c N host
+ # SVR: ping host N
+-$PING_PATH -c 1 -v 127.0.0.1 > /dev/null 2>&1
+-if test $? -eq 0 ; then
+-    LG_PING_CMD="$PING_PATH -c 1"
+-else
+-    $PING_PATH 127.0.0.1 56 1 > /dev/null 2>&1
+-    if test $? -eq 0 ; then
+-	LG_PING_CMD="$PING_PATH"
+-    else
+-	# cygwin using windows ping?
+-	$PING_PATH -n 1 127.0.0.1 > /dev/null 2>&1
+-	if test $? -eq 0 ; then
+-	    LG_PING_CMD="$PING_PATH -n 1"
+-	else
+-            as_fn_error $? "can't figure out how to pass count == 1 to $PING_PATH." "$LINENO" 5
+-	    exit 1
+-	fi
+-    fi
+-fi
++#$PING_PATH -c 1 -v 127.0.0.1 > /dev/null 2>&1
++#if test $? -eq 0 ; then
++#    LG_PING_CMD="$PING_PATH -c 1"
++#else
++#    $PING_PATH 127.0.0.1 56 1 > /dev/null 2>&1
++#    if test $? -eq 0 ; then
++#	LG_PING_CMD="$PING_PATH"
++#    else
++#	# cygwin using windows ping?
++#	$PING_PATH -n 1 127.0.0.1 > /dev/null 2>&1
++#	if test $? -eq 0 ; then
++#	    LG_PING_CMD="$PING_PATH -n 1"
++#	else
++#            as_fn_error $? "can't figure out how to pass count == 1 to $PING_PATH." "$LINENO" 5
++#	    exit 1
++#	fi
++#    fi
++#fi
++LG_PING_CMD="$PING_PATH -c 1"
+ 
+ rd_cv_lg_ping_cmd=$LG_PING_CMD
+ 
