@@ -3,6 +3,7 @@
 
 PORTNAME=	msmtp
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -34,6 +35,7 @@ IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 LIBSECRET_CONFIGURE_WITH=	libsecret
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 MSMTPQ_PORTDOCS=	README.msmtpq
+MSMTPQ_RUN_DEPENDS=	bash:shells/bash
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
