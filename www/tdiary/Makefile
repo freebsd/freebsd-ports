@@ -2,37 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	5.0.5
 CATEGORIES?=	www ruby
-MASTER_SITES=	http://www.tdiary.org/download/
+MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Web-based diary system (like weblog) written in Ruby
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-emot>=0.0.4:textproc/rubygem-emot \
-		rubygem-fastimage>=1.8.1:graphics/rubygem-fastimage \
+RUN_DEPENDS=	rubygem-bundler>=1.14.6:sysutils/rubygem-bundler \
+		rubygem-emot>=0.0.4:textproc/rubygem-emot \
+		rubygem-fastimage>=2.1.0:graphics/rubygem-fastimage \
 		rubygem-hikidoc>=0.1.0:textproc/rubygem-hikidoc \
-		rubygem-mail>=2.6.3:mail/rubygem-mail \
-		rubygem-sprockets3>=3.5.2:devel/rubygem-sprockets3
+		rubygem-mail>=2.6.6:mail/rubygem-mail \
+		rubygem-rack16>=1.6.8:www/rubygem-rack16 \
+		rubygem-rake>=12.0.0:devel/rubygem-rake
 
+USES=		shebangfix
+USE_RUBY=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_RUBY=	yes
-USES=		shebangfix
 
-SHEBANG_FILES=	index.fcgi \
+SHEBANG_FILES=	bin/tdiary \
+		index.fcgi \
 		index.rb \
+		misc/convert2.rb \
+		misc/migrate.rb \
+		misc/plugin/xmlrpc/xmlrpc.rb \
 		update.fcgi \
-		update.rb \
-		bin/tdiary \
-		misc/plugin/amazon/amazonimg.rb \
-		misc/plugin/squeeze.rb \
-		misc/plugin/xmlrpc/xmlrpc.rb
+		update.rb
 
 DOCFILES=	HOWTO-authenticate-in-rack HOWTO-make-io \
 		HOWTO-make-plugin HOWTO-make-theme \
@@ -67,9 +68,11 @@ OPTIONS_DEFINE=	DOCS
 
 pre-patch:
 	@${RM} ${WRKSRC}/.coveralls.yml
+	@${RM} ${WRKSRC}/.dockerignore
+	@${RM} ${WRKSRC}/.editorconfig
 	@${RM} ${WRKSRC}/.gitignore
 	@${RM} ${WRKSRC}/.travis.yml
-	@${RM} ${WRKSRC}/Gemfile
+	@${RM} ${WRKSRC}/Dockerfile
 	@${RM} ${WRKSRC}/Gemfile.lock
 	@${RM} ${WRKSRC}/Procfile
 	@${RM} ${WRKSRC}/Rakefile
@@ -77,7 +80,7 @@ pre-patch:
 	@${RM} ${WRKSRC}/tdiary.gemspec
 	@${RM} ${WRKSRC}/tmp/.gitkeep
 	@${RM} -r ${WRKSRC}/.bundle
-	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.11.2
+	@${RM} -r ${WRKSRC}/misc/lib/bundler-1.14.6
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test
