@@ -6,10 +6,6 @@
     SUBDIR += 3dm
     SUBDIR += 44bsd-more
     SUBDIR += 915resolution
-    SUBDIR += DTraceToolkit
-    SUBDIR += LPRng
-    SUBDIR += LPRngTool
-    SUBDIR += UEFITool
     SUBDIR += abck
     SUBDIR += abduco
     SUBDIR += abgx360
@@ -253,6 +249,7 @@
     SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += dtpstree
+    SUBDIR += DTraceToolkit
     SUBDIR += du2ps
     SUBDIR += duff
     SUBDIR += dunst
@@ -313,7 +310,7 @@
     SUBDIR += flexbackup
     SUBDIR += flock
     SUBDIR += flog
-    SUBIDR += flowgger
+    SUBDIR += flowgger
     SUBDIR += fluent-bit
     SUBDIR += flyback
     SUBDIR += fonteditfs
@@ -396,6 +393,7 @@
     SUBDIR += gkrellm2
     SUBDIR += gkrelltop
     SUBDIR += gksu
+    SUBDIR += gnome_subr
     SUBDIR += gnome-control-center
     SUBDIR += gnome-device-manager
     SUBDIR += gnome-mount
@@ -404,7 +402,6 @@
     SUBDIR += gnome-schedule
     SUBDIR += gnome-settings-daemon
     SUBDIR += gnome-system-monitor
-    SUBDIR += gnome_subr
     SUBDIR += goaccess
     SUBDIR += gpart
     SUBDIR += gpte
@@ -559,6 +556,8 @@
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += lookat
+    SUBDIR += LPRng
+    SUBDIR += LPRngTool
     SUBDIR += lr
     SUBDIR += lsof
     SUBDIR += lsop
@@ -692,11 +691,12 @@
     SUBDIR += ori
     SUBDIR += osinfo-db-tools
     SUBDIR += osquery
+    SUBDIR += p5-arclog
+    SUBDIR += p5-BackupPC-XS
+    SUBDIR += p5-Brackup
     SUBDIR += p5-BSD-Jail-Object
     SUBDIR += p5-BSD-Process
     SUBDIR += p5-BSD-Sysctl
-    SUBDIR += p5-BackupPC-XS
-    SUBDIR += p5-Brackup
     SUBDIR += p5-Dir-Purge
     SUBDIR += p5-File-DirCompare
     SUBDIR += p5-File-Listing
@@ -732,6 +732,7 @@
     SUBDIR += p5-Proc-PidUtil
     SUBDIR += p5-Proclet
     SUBDIR += p5-Quota
+    SUBDIR += p5-reslog
     SUBDIR += p5-Rex
     SUBDIR += p5-Samba-SIDhelper
     SUBDIR += p5-Schedule-At
@@ -763,8 +764,6 @@
     SUBDIR += p5-Unix-Syslog
     SUBDIR += p5-User
     SUBDIR += p5-ZConf-Cron
-    SUBDIR += p5-arclog
-    SUBDIR += p5-reslog
     SUBDIR += packer
     SUBDIR += pacman
     SUBDIR += paicc
@@ -859,7 +858,6 @@
     SUBDIR += pwgen
     SUBDIR += pwsafe
     SUBDIR += pxattr
-    SUBDIR += py-XenAPI
     SUBDIR += py-analyzemft
     SUBDIR += py-bcfg2
     SUBDIR += py-cdmi
@@ -905,6 +903,7 @@
     SUBDIR += py-supervisor
     SUBDIR += py-tmuxp
     SUBDIR += py-uptime
+    SUBDIR += py-XenAPI
     SUBDIR += py-zdaemon
     SUBDIR += py-zfs
     SUBDIR += py3-execnet
@@ -965,10 +964,9 @@
     SUBDIR += rsyncrypto
     SUBDIR += rsyslog8
     SUBDIR += rtty
-    SUBDIR += rubygem-SyslogLogger
     SUBDIR += rubygem-backup
-    SUBDIR += rubygem-bosh-gen
     SUBDIR += rubygem-bosh_cli
+    SUBDIR += rubygem-bosh-gen
     SUBDIR += rubygem-bundler
     SUBDIR += rubygem-bundler_ext
     SUBDIR += rubygem-capistrano
@@ -1028,6 +1026,7 @@
     SUBDIR += rubygem-sys-proctable
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
+    SUBDIR += rubygem-SyslogLogger
     SUBDIR += rubygem-teamocil
     SUBDIR += rubygem-tmuxinator
     SUBDIR += rubygem-vagrant-bhyve
@@ -1162,8 +1161,8 @@
     SUBDIR += tracker
     SUBDIR += tree
     SUBDIR += tren
-    SUBDIR += trueos-libsh
     SUBDIR += trueos-libqt5
+    SUBDIR += trueos-libsh
     SUBDIR += trueos-utils
     SUBDIR += trueos-utils-qt5
     SUBDIR += ts
@@ -1207,6 +1206,7 @@
     SUBDIR += udfclient
     SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
+    SUBDIR += UEFITool
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
