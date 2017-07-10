@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	fxt
-PORTVERSION=	2016.06.02
+DISTVERSION=	2017.06.27
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amutu@amutu.com
 COMMENT=	FFT code and related stuff
 
 LICENSE=	GPLv3+
