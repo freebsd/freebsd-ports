@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170710:
+  AFFECTS: users of net-im/ejabberd
+  AUTHOR: ashish@FreeBSD.org
+
+  After update to 17.07, there is an issue[1] expected related to certificate
+  verification with TLS connections.
+
+  [1] - https://github.com/processone/ejabberd/issues/1833
+
 20170628:
   AFFECTS: users of www/node
   AUTHOR: bhughes@freebsd.org
