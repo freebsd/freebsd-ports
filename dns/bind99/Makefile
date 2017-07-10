@@ -16,7 +16,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.10-P2
+ISCVERSION=	9.9.10-P3
 
 USES=	cpe libedit
 
