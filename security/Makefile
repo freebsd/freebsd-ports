@@ -343,6 +343,7 @@
     SUBDIR += libssh2
     SUBDIR += libtasn1
     SUBDIR += libtomcrypt
+    SUBDIR += libu2f-host
     SUBDIR += libuecc
     SUBDIR += libwhisker
     SUBDIR += libyubikey
