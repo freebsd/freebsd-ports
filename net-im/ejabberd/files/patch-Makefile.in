@@ -1,4 +1,4 @@
---- Makefile.in.orig	2017-01-20 11:19:55 UTC
+--- Makefile.in.orig	2017-07-06 11:49:21 UTC
 +++ Makefile.in
 @@ -21,7 +21,7 @@ SBINDIR = $(DESTDIR)@sbindir@
  LIBDIR =  $(DESTDIR)@libdir@

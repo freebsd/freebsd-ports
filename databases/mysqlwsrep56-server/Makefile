@@ -4,6 +4,7 @@
 PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.6.36
 DISTVERSIONSUFFIX?=	-25.20
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 PKGNAMESUFFIX=	56-server
 
@@ -17,6 +18,7 @@ RUN_DEPENDS=	socat:net/socat lsof:sysutils/lsof netcat:net/netcat rsync:net/rsyn
 BROKEN_powerpc64=	Does not build
 
 DATADIR=	${PREFIX}/share/mysql
+ETCDIR=		${PREFIX}/etc/mysql
 
 NOT_FOR_ARCHS=	aarch64 armv6 powerpc64
 NOT_FOR_ARCHS_REASON=	error: Unsupported platform
@@ -38,22 +40,39 @@ GH_ACCOUNT=	codership
 GH_PROJECT?=	mysql-wsrep
 GH_TAGNAME?=	wsrep_${DISTVERSION}${DISTVERSIONSUFFIX}
 
-CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
+MY_DBDIR=	/var/db/mysql
+MY_SECDIR=	/var/db/mysql_secure
+MY_TMPDIR=	/var/db/mysql_tmpdir
+
+CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
+		-DINSTALL_LDCONFIGDIR="${LOCALBASE}/libdata/ldconfig" \
+		-DINSTALL_PKGCONFIGDIR="${LOCALBASE}/libdata/pkgconfig" \
+		-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
 		-DINSTALL_INCLUDEDIR="include/mysql" \
 		-DINSTALL_INFODIR="info" \
 		-DINSTALL_LIBDIR="lib/mysql" \
 		-DINSTALL_MANDIR="man" \
-		-DINSTALL_MYSQLDATADIR="/var/db/mysql" \
+		-DINSTALL_MYSQLDATADIR="${MY_DBDIR}" \
+		-DINSTALL_MYSQLKEYRINGDIR="etc/mysql/keyring" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
 		-DINSTALL_MYSQLTESTDIR="share/mysql/tests" \
 		-DINSTALL_PLUGINDIR="lib/mysql/plugin" \
 		-DINSTALL_SBINDIR="libexec" \
 		-DINSTALL_SCRIPTDIR="bin" \
+		-DINSTALL_SECURE_FILE_PRIVDIR="${MY_SECDIR}" \
 		-DINSTALL_SHAREDIR="share" \
 		-DINSTALL_SQLBENCHDIR="share/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
+		-DMYSQL_KEYRINGDIR="${ETCDIR}/keyring" \
 		-DWITH_EDITLINE=system \
+		-DWITH_LIBEVENT=system \
+		-DWITH_LZ4=system \
+		-DWITH_ZLIB=system \
+		-DWITH_SSL=${OPENSSLBASE} \
+		-DCRYPTO_LIBRARY=${OPENSSLLIB}/libcrypto.so \
+		-DOPENSSL_LIBRARY=${OPENSSLLIB}/libssl.so \
+		-DINSTALL_MYSQLTESTDIR=0 \
 		-DWITH_LIBWRAP=1 \
 		-DWITH_WSREP=1
 
@@ -63,11 +82,21 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh scripts/wsrep_sst_*
 .error You have USE_MYSQL variable defined either in environment or in make(1) arguments. Please undefine it and try again.
 .endif
 
+SUB_LIST=	MY_DBDIR=${MY_DBDIR} \
+		MY_SECDIR=${MY_SECDIR} \
+		MY_TMPDIR=${MY_TMPDIR}
+
+PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
+		MY_SECDIR=${MY_SECDIR} \
+		MY_TMPDIR=${MY_TMPDIR}
+
 CONFLICTS_INSTALL=	mariadb*-server-* \
 			mysql[0-9]*-server-* \
 			percona*-server-*
 
 USE_RC_SUBR=	mysql-server
+
+SUB_FILES=	my.cnf.sample
 
 USERS=		mysql
 GROUPS=		mysql
@@ -99,10 +128,17 @@ MMAN1=		my_print_defaults.1 \
 		resolve_stack_dump.1 \
 		resolveip.1
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
 
-.include <bsd.port.pre.mk>
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKDIR}/my.cnf.sample ${STAGEDIR}${ETCDIR}/my.cnf.sample
+	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
+	${MKDIR} ${STAGEDIR}${MY_SECDIR}
+	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
 
 .if ${ARCH} == "armv6"
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config.h.cmake

@@ -21,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_GNU_GPL_2.txt
 LIB_DEPENDS=	libosg.so:graphics/osg
 
 USES=		alias cmake:noninja lua:51 tar:xz
-USE_GL=		gl
+USE_GL=		gl glu
 
 MISC_VER=	20091027
 MODELS_VER=	20090615
@@ -30,27 +30,20 @@ TERRAIN_VER=	20080206
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	GUI PLIB SDL
-OPTIONS_DEFAULT=	GUI SDL
-
-PLIB_DESC=	Enable sound support through plib
-GUI_DESC=	Enable FLTK GUI
-
-OPTIONS_SUB=	yes
-
-GUI_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
-PLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
-
 PORTDOCS=	*
 
 DESKTOP_ENTRIES=	"Palomino" "" "${PORTNAME}" \
 			"${PORTNAME}" "Game;ArcadeGame;" ""
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	GUI PLIB SDL
+OPTIONS_DEFAULT=GUI SDL
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL+=	sdl mixer
-.endif
+PLIB_DESC=		Enable sound support through plib
+PLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
+GUI_DESC=		Enable FLTK GUI
+GUI_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+SDL_USE=		SDL=sdl,mixer
 
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
@@ -62,20 +55,8 @@ post-patch:
 		${WRKSRC}/CMakeModules/libraries.cmake
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_OSSIM/ d' ${WRKSRC}/CMakeLists.txt
 
-# Please look MOVED devel/linux-js||2013-06-04
+# Please see MOVED entry devel/linux-js||2013-06-04
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_LINUX_JOYSTICK/ d' ${WRKSRC}/CMakeLists.txt
-
-.if ! ${PORT_OPTIONS:MSDL}
-	@${REINPLACE_CMD} -e '/COMPILE_WITH_SDL/ d' ${WRKSRC}/CMakeLists.txt
-.endif
-
-.if ! ${PORT_OPTIONS:MPLIB}
-	@${REINPLACE_CMD} -e '/COMPILE_WITH_PLIB/ d' ${WRKSRC}/CMakeLists.txt
-.endif
-
-.if ! ${PORT_OPTIONS:MGUI}
-	@${REINPLACE_CMD} -e '/COMPILE_WITH_FLTK/ d' ${WRKSRC}/CMakeLists.txt
-.endif
 
 	@${REINPLACE_CMD} -e 's|string sDataDir|&="${DATADIR}/data/"|'\
 		${WRKSRC}/src/base/conf.cc
@@ -92,6 +73,15 @@ post-patch:
 		${WRKSRC}/src/hud/hud.hh \
 		${WRKSRC}/src/hud/hud_text.cc
 
+post-patch-SDL-off:
+	@${REINPLACE_CMD} -e '/COMPILE_WITH_SDL/ d' ${WRKSRC}/CMakeLists.txt
+
+post-patch-PLIB-off:
+	@${REINPLACE_CMD} -e '/COMPILE_WITH_PLIB/ d' ${WRKSRC}/CMakeLists.txt
+
+post-patch-GUI-off:
+	@${REINPLACE_CMD} -e '/COMPILE_WITH_FLTK/ d' ${WRKSRC}/CMakeLists.txt
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data scripts" ${STAGEDIR}${DATADIR})
@@ -99,7 +89,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-	${LN} -sf ${DOCSDIR}/images/palominoLogo.png \
+	${LN} -sf ../../${DOCSDIR_REL}/images/palominoLogo.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

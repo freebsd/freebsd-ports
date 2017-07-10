@@ -14,9 +14,9 @@ chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%POR
 find %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chmod %%SHAREMODE%%
 find %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chown %%SHAREOWN%%:%%SHAREGRP%%
 
-%%PAM%%chmod 4750 %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pam-1.0.0/priv/bin/epam \
+%%PAM%%chmod 4750 %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/epam-1.0.3/priv/bin/epam \
 %%PAM%%	     %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
-%%PAM%%chown root:%%GROUPS%% %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_pam-1.0.0/priv/bin/epam \
+%%PAM%%chown root:%%GROUPS%% %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/epam-1.0.3/priv/bin/epam \
 %%PAM%%	     %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
 
 exit 0
