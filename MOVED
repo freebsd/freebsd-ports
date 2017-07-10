@@ -9459,3 +9459,5 @@ net-mgmt/ezradius||2017-07-01|Removed, unmaintained and depends on expired net/f
 x11-toolkits/qt5-declarative||2017-07-01|Has expired: Has not been released since Qt 5.5 -- installation can lead to runtime conflicts with qt5-quick
 deskutils/california|deskutils/gnome-calendar|2017-07-02|Has expired: Orphaned upstream, replaced by gnome-calendar
 devel/etcd3|devel/etcd31|2017-07-07|Version 3.2 introduces breaking changes
+sysutils/py-iocage|sysutils/py3-iocage|2017-07-10|Has expired: obsoleted by sysutils/py3-iocage port using Python 3 instead of Python 2
+www/mediawiki126|www/mediawiki127|2017-07-10|Has expired: Upstream support EoL
