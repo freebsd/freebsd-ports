@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	valyriatear
-PORTVERSION=	0.6.0
-PORTREVISION=	8
+PORTVERSION=	1.0.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -21,30 +20,41 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Bertram25
 GH_PROJECT=	ValyriaTear
+GH_TAGNAME=	${PORTVERSION}-gcc5 # contains relevant tolua++ fixes
 
-USES=		alias cmake iconv lua:51 openal
+USES=		alias cmake gettext-tools iconv lua:51 openal
 CMAKE_ARGS=	-DUSE_PCH_COMPILATION=OFF
 USE_SDL=	sdl image ttf
-USE_GL=		gl
+USE_GL=		gl glu
+USE_XORG=	x11 xext sm ice
 INSTALLS_ICONS=	yes
-LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB} -lintl
 
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	EDITOR DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_CMAKE_OFF=	-DDISABLE_TRANSLATIONS=ON
-NLS_CMAKE_ON=	-DDISABLE_TRANSLATIONS=OFF
+EDITOR_DESC=	Compile the Qt editor along with the game
+EDITOR_CMAKE_BOOL=	EDITOR_SUPPORT
+EDITOR_USE=	QT4=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
+EDITOR_DESKTOP_ENTRIES=	\
+		"Valyria Tear Editor" \
+		"Map editor for Valyria Tear game" \
+		"valyriatear" \
+		"vt-editor" \
+		"Graphics;2DGraphics;" \
+		""
+
+NLS_CMAKE_OFF=	-DDISABLE_TRANSLATIONS:BOOL=OFF
 NLS_USES=	gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/CMake/Modules/*.cmake
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MANUAL ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
