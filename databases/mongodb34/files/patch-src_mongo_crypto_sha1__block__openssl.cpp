@@ -1,6 +1,6 @@
---- src/mongo/crypto/crypto_openssl.cpp.orig	2017-06-08 16:11:03 UTC
-+++ src/mongo/crypto/crypto_openssl.cpp
-@@ -41,7 +41,7 @@
+--- src/mongo/crypto/sha1_block_openssl.cpp.orig	2017-06-27 19:02:43 UTC
++++ src/mongo/crypto/sha1_block_openssl.cpp
+@@ -42,7 +42,7 @@
  #include <openssl/evp.h>
  #include <openssl/hmac.h>
  #include <openssl/sha.h>
