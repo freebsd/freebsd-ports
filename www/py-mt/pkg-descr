@@ -9,4 +9,4 @@ about trackback pings. Every XML-RPC method is accessed using a PyMT method
 with exactly the same name. PyMT is basically just a light wrapper, which
 hides the xml-rpc part of the work.
 
-WWW: http://pymt.sourceforge.net/
+WWW: https://sourceforge.net/projects/pymt/
