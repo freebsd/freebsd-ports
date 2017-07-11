@@ -14,6 +14,7 @@ COMMENT=	MySQL database enhanced with Galera replication (server package)
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	socat:net/socat lsof:sysutils/lsof netcat:net/netcat rsync:net/rsync
+LIB_DEPENDS=	libevent.so:devel/libevent liblz4.so:archivers/liblz4
 
 BROKEN_powerpc64=	Does not build
 
