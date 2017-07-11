@@ -11,12 +11,16 @@ DISTNAME=	PyMT-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module which provides Movable Type XML-RPC connectivity
 
+LICENSE=	PSFL  # says License: python
+
 USES=		python:2
 NO_BUILD=	yes
+NO_ARCH=	yes
+
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/PyMT.py
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	@${INSTALL_DATA} ${WRKSRC}/PyMT.py ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/PyMT.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>
