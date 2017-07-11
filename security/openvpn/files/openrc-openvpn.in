@@ -1,12 +1,13 @@
 #!/sbin/openrc-run
 
-name=openvpn
-command="%%PREFIX%%/sbin/openvpn"
-pidfile="/var/run/openvpn.pid"
-vpnconf="%%PREFIX%%/etc/openvpn/openvpn.conf"
-required_files=$vpnconf
-supervisor=supervise-daemon
-command_args="--config ${vpnconf} --writepid ${pidfile} --daemon ${name}"
+VPNDIR="%%PREFIX%%/etc/openvpn"
+VPN="${SVCNAME#*.}"
+if [ -n "${VPN}" ] && [ "${SVCNAME}" != "openvpn" ]; then
+	VPNPID="/var/run/openvpn.${VPN}.pid"
+else
+	VPNPID="/var/run/openvpn.pid"
+fi
+VPNCONF="${VPNDIR}/${VPN}.conf"
 
 depend() {
 	need localmount net
@@ -14,10 +15,31 @@ depend() {
 	after bootmisc
 }
 
-start_pre() {
+start() {
+	ebegin "Starting ${SVCNAME}"
+
+	if [ ! -e "${VPNCONF}" ]; then
+		eend 1 "${VPNCONF} does not exist"
+		return 1
+	fi
+
+	local args=""
 	# If the config file does not specify the cd option, we do
 	# But if we specify it, we override the config option which we do not want
-	if ! grep -q "^[ 	]*cd[ 	].*" "${vpnconf}" ; then
-		#$command_args+="${args} --cd %%PREFIX%%/etc/openvpn"
+	if ! grep -q "^[ 	]*cd[ 	].*" "${VPNCONF}" ; then
+		args="${args} --cd ${VPNDIR}"
 	fi
+	stty -echo
+	start-stop-daemon --start --exec %%PREFIX%%/sbin/openvpn --pidfile "${VPNPID}" \
+		-- --config "${VPNCONF}" --writepid "${VPNPID}" --daemon ${VPN} ${args}
+	stty echo
+	eend $? "Check your logs to see why startup failed"
 }
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --exec %%PREFIX%%/sbin/openvpn --pidfile "${VPNPID}"
+	eend $?
+}
+
+# vim: ts=4
