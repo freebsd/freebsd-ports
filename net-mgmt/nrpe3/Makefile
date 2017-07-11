@@ -5,13 +5,14 @@ PORTNAME=	nrpe
 PORTVERSION=	3.2.0
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT?=	Nagios Remote Plugin Executor
 
 LICENSE=	GPLv2
 
-CONFLICTS=	nrpe-2.* nrpe-ssl-2.*
+CONFLICTS=	nrpe nrpe-ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NagiosEnterprises
