@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+#
+# Add the following line to /etc/rc.conf to enable srelay:
+#
+# srelay_flags="-i 127.0.0.1"
+
+name=srelay
+command="%%LOCALBASE%%/sbin/srelay"
+pidfile="/var/run/srelay.pid"
+
+depend() {
+	need jail
+	keyword -shutdown
+}

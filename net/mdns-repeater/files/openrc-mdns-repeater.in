@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+# Add the following lines to /etc/rc.conf to enable mdns-repeater
+# mdns_repeater_interfaces="vr0 vr1"
+
+name=mdns_repeater
+
+: ${mdns_repeater_interfaces:="vr0 vr1"}
+
+pidfile="/var/run/mdns-repeater.pid"
+command="%%PREFIX%%/bin/mdns-repeater"
+command_args=" -p ${pidfile} ${mdns_repeater_interfaces}"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,2 +1,3 @@
 PKG_NOTES+=	icon
 PKG_NOTE_icon=http://www.pcbsd.org/appcafe/icons/net_get_iplayer.png
+USE_OPENRC_SUBR=	openrc-get_iplayer

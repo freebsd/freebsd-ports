@@ -1,0 +1,47 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable dnscrypt-proxy:
+#
+# dnscrypt_proxy_instances (str): Set to "dnscrypt_proxy" by default.
+#                                 List of dnscrypt_proxy instance id's,
+#                                 e.g. "dnscrypt_proxy_1 dnscrypt_proxy_2", etc.
+# {instance_id}_uid (str):        Set to "_dnscrypt-proxy" by default.
+#                              	  User to switch to after starting.
+# {instance_id}_resolver (str):   Set to "opendns" by default.
+#                              	  Choose a different upstream resolver.
+# {instance_id}_pidfile (str):    default: "/var/run/dnscrypt-proxy.pid"
+#                              	  Location of pid file.
+# {instance_id}_logfile (str):	  default: "/var/log/dnscrypt-proxy.log"
+#                                 Location of log file.
+#
+# To redirect a local resolver through dnscrypt-proxy, point it at 127.0.0.2
+# and add the following to rc.conf:
+# ifconfig_lo0_alias0="inet 127.0.0.2 netmask 0xffffffff"
+# dnscrypt_proxy_flags='-a 127.0.0.2'
+
+name=dnscrypt_proxy
+
+: ${dnscrypt_proxy_instances="${name}"}
+
+command=%%PREFIX%%/sbin/dnscrypt-proxy
+
+start() {
+	for i in $dnscrypt_proxy_instances; do
+		name=${i}
+
+		eval dnscrypt_proxy_uid_tmp=\${${i}_uid}
+		eval dnscrypt_proxy_resolver_tmp=\${${i}_resolver}
+		eval dnscrypt_proxy_pidfile_tmp=\${${i}_pidfile}
+		eval dnscrypt_proxy_logfile_tmp=\${${i}_logfile}
+
+	:   ${dnscrypt_proxy_uid_tmp:=_dnscrypt-proxy}       # User to run daemon as
+	:   ${dnscrypt_proxy_resolver_tmp:=cisco}            # resolver to use
+	:   ${dnscrypt_proxy_pidfile_tmp:=/var/run/${i}.pid} # Path to pid file
+	:   ${dnscrypt_proxy_logfile_tmp:=/var/log/${i}.log} # Path to log file
+
+		command_args="-d -p ${dnscrypt_proxy_pidfile_tmp} -l ${dnscrypt_proxy_logfile_tmp} -u ${dnscrypt_proxy_uid_tmp} -R ${dnscrypt_proxy_resolver_tmp}"
+
+		pidfile=${dnscrypt_proxy_pidfile_tmp}
+		$command $command_args
+	done
+}

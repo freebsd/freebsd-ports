@@ -1,0 +1,70 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to run beanstalkd:
+#
+# beanstalkd_flags (flags):	Set extra flags here. More options in beanstalkd(1)
+#				Default is empty "".
+# beanstalkd_user (user):	Set user to run beanstalkd.
+#				Default is "nobody".
+# beanstalkd_profiles (str):     Set to "" by default.
+#                               Define your profiles here.
+
+name="beanstalkd"
+_piddir="/var/run/beanstalkd"
+pidfile="${_piddir}/beanstalkd.pid"
+
+stop_post()
+{
+	if [ -n "${profile}" ]; then
+		[ -e "$pidfile" ] && unlink $pidfile
+	else
+		local file
+
+		for file in ${_piddir}/* ; do
+			case "$file" in
+			*\*)
+				continue ;;
+			esac
+			unlink $file
+		done
+	fi
+}
+
+start_pre() {
+	install -d -o $beanstalkd_user -g $beanstalkd_user -m 755 $_piddir
+
+	if [ -n "$2" ]; then
+		profile="$2"
+		if [ -n "${beanstalkd_profiles}" ]; then
+			pidfile="${_piddir}/beanstalkd.${profile}.pid"
+			eval beanstalkd_flags="\${beanstalkd_${profile}_flags:-${beanstalkd_flags}}"
+		else
+			echo "%%PREFIX%%/etc/rc.d/beanstalkd%%RC_SUBR_SUFFIX%%: extra argument ignored"
+		fi
+	else
+		if [ -n "${beanstalkd_profiles}" -a -n "$1" ]; then
+			for profile in ${beanstalkd_profiles}; do
+				echo "===> beanstalkd profile: ${profile}"
+				if %%PREFIX%%/etc/rc.d/beanstalkd%%RC_SUBR_SUFFIX%% $1 ${profile} ; then
+					success="${profile} ${success:-}"
+				else
+					failed="${profile} (${retcode}) ${failed:-}"
+				fi
+			done
+			exit 0
+		fi
+	fi
+}
+
+: ${beanstalkd_user="nobody"}
+
+command=%%PREFIX%%/bin/beanstalkd
+command_args="${beanstalkd_flags}"
+unset beanstalkd_flags
+supervisor=supervise-daemon
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

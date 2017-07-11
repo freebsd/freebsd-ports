@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable rinetd:
+# rinetd_flags (str):   Set to "" by default.
+#                       Extra flags passed to start command
+
+name="rinetd"
+command="%%PREFIX%%/sbin/rinetd"
+pidfile="/var/run/rinetd.pid"
+
+depend() {
+	keyword -shutdown
+}

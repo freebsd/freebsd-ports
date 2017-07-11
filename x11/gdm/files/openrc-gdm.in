@@ -1,8 +1,5 @@
 #!/sbin/openrc-run
 
-# PROVIDE: gdm
-# REQUIRE: LOGIN cleanvar moused syscons dbus
-
 . %%GNOME_SUBR%%
 
 gdm_preserve_base_pam_conf=${gdm_preserve_base_pam_conf-NO}
@@ -13,10 +10,8 @@ export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
 name="gdm"
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
-procname="%%PREFIX%%/sbin/gdm-binary"
 
-start()
-{
+start() {
     # we need to remove locking files under $gdm_home/.cache/gnome-shell/
     # until XDG_RUNTIME_DIR can be set and used
     rm -fr %%PREFIX%%/etc/gdm/home/.cache/gnome-shell/runtime-state*
@@ -46,14 +41,13 @@ start()
     LANG=${gdm_lang} ${command} ${gdm_flags} ) &
 }
 
-stop_pre()
-{
-    /bin/kill -9 $(/bin/cat "${pidfile}")
+stop_pre() {
     pkill -9 -u gdm
     pkill -9 X
     pkill -9 gdm-session-worker
 }
 
 depend() {
-
+	provide gdm
+	use dbus
 }

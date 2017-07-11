@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=splatd
+
+command=%%PREFIX%%/sbin/splatd
+command_args="-f %%PREFIX%%/etc/splat.conf -p /var/run/$name.pid"
+pidfile="/var/run/$name.pid"
+required_files=%%PREFIX%%/etc/splat.conf
+
+depend() {
+	keyword -shutdown
+}

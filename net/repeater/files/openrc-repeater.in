@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=repeater
+
+repeater_log=${repeater_log:-"/var/log/repeater.log"}
+command=%%PREFIX%%/sbin/repeater
+command_args="%%PREFIX%%/etc/uvncrepeater.ini > ${repeater_log} 2>&1"
+supervisor=supervise-daemon
+
+depend() {
+	use net
+	keyword -shutdown
+}

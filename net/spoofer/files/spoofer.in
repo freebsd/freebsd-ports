@@ -1,5 +1,5 @@
-# $FreeBSD$
 #!/bin/sh
+# $FreeBSD$
 #
 # PROVIDE: spoofer
 # REQUIRE: LOGIN

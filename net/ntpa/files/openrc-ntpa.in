@@ -1,0 +1,66 @@
+#!/sbin/openrc-run
+#
+# Add these lines to /etc/rc.conf to enable ntpa:
+#
+# ntpa_config (path):   Set to %%PREFIX%%/etc/ntpa/ntpa.conf
+#                       by default.
+# ntpa_tempdir (path):  Set to /tmp by default.
+# ntpa_user (user):     Set to ntpa by default.
+#
+# Run additional instances of ntpa with:
+# ln -s ntpa ntpa_name
+
+# taken from security/openvpn.
+name="$file" ;
+
+case "$0" in
+/etc/rc*)
+        # during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+        # so get the name of the script from $_file
+        name="$_file"
+        ;;
+*/service)
+        # do not use this as $0
+        ;;
+*)
+        name="$0"
+        ;;
+esac
+
+# default name to "ntpa" if guessing failed
+# Trailing semicolon for service(8)'s benefit:
+name="${name:-ntpa}" ;
+name="${name##*/}"
+description="Monitors NTP daemon"
+
+eval ": \${${name}_config:=\"%%PREFIX%%/etc/ntpa/${name}.conf\"}"
+eval ": \${${name}_tempdir:=\"/tmp/\"}"
+eval ": \${${name}_user:=\"ntpa\"}"
+
+config="$(eval echo \${${name}_config})"
+tempdir="$(eval echo \${${name}_tempdir})"
+ntpauser="$(eval echo \${${name}_user})"
+
+pid_dir=/var/run/ntpa
+pidfile="$pid_dir/${name}.pid"
+extra_commands="configtest"
+
+start()
+{
+    if [ ! -d "$pid_dir" ]; then
+        install -m 0775 -g $ntpauser -o $ntpauser -d "$pid_dir"
+    fi
+	su -m ${ntpauser} -c "sh -c '%%PREFIX%%/sbin/ntpa --config ${config} --writepid ${pidfile} --temp ${tempdir} --daemon ${name} &'"
+}
+
+configtest()
+{
+    su -m ${ntpauser} -c "sh -c '%%PREFIX%%/sbin/ntpav -v ${config}'"
+}
+
+depend() {
+	need localmount
+	use net
+	keyword -shutdown
+	after bootmisc
+}

@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+name="ovsdb_server"
+command="/usr/local/sbin/ovsdb-server"
+pidfile="/var/run/ovsdb-server.pid"
+
+: ${ovsdb_server_sock="/var/run/openvswitch/db.sock"}
+: ${ovsdb_server_database="/var/db/openvswitch/conf.db"}
+
+start_pre() {
+	[ -e "`dirname $ovsdb_server_database`" ] || \
+		mkdir -p "`dirname $ovsdb_server_database`"
+	[ -e "$ovsdb_server_database" ] || \
+		/usr/local/bin/ovsdb-tool create "$ovsdb_server_database" \
+		/usr/local/share/openvswitch/vswitch.ovsschema
+}
+
+command_args="--detach --pidfile=$pidfile \
+	--remote=punix:$ovsdb_server_sock \
+ 	--remote=db:Open_vSwitch,Open_vSwitch,manager_options \
+	--private-key=db:Open_vSwitch,SSL,private_key \
+	--certificate=db:Open_vSwitch,SSL,certificate \
+	--bootstrap-ca-cert=db:Open_vSwitch,SSL,ca_cert"
+
+depend() {
+	need localmount
+	provide ovsdb_server
+	keyword -shutdown
+	after bootmisc
+}

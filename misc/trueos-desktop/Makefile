@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	trueos-desktop
-PORTVERSION=	201706210948
+PORTVERSION=	201707111911
 CATEGORIES=	misc
 MASTER_SITES=
 DISTFILES=
@@ -67,6 +67,6 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 USE_GITHUB=     yes
 GH_ACCOUNT=     trueos
 GH_PROJECT=     trueos-core
-GH_TAGNAME=     cbea08f8eb32bd922ac5f27ba828a0fc8ac00ddd
+GH_TAGNAME=     6acd0c75d0c94c94a96c07f26c04ef553ad8ea90
 
 .include <bsd.port.mk>

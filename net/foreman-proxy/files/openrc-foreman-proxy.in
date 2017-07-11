@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="foreman_proxy"
+command="%%PREFIX%%/sbin/smart-proxy"
+pidfile="%%FOREMAN_PROXY_RUNDIR%%/foreman-proxy.pid"
+
+foreman_proxy_user=${foreman_proxy_user-"%%FOREMAN_PROXY_USER%%"}
+
+required_files="%%PREFIX%%/etc/foreman-proxy/settings.yml"
+command_user=${foreman_proxy_user}
+
+depend() {
+	keyword -shutdown
+}

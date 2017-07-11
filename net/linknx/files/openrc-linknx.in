@@ -1,0 +1,35 @@
+#!/sbin/openrc-run
+
+# linknx_console (str):		The output of the daemon goes to this
+#				file. It is set to "/var/log/linknx.log"
+#				by default. Set it to "" to disable it.
+#				Recommended for production use.
+#
+# linknx_config (str):		The default configuration file. By default
+#				there is no configuration file set.
+
+name="linknx"
+
+: ${linknx_console:="/var/log/linknx.log"}
+: ${linknx_pidfile:="/var/run/linknx.pid"}
+: ${linknx_flags:="--pid-file=${linknx_pidfile}"}
+
+command="/usr/local/bin/linknx"
+pidfile=${linknx_pidfile}
+
+start_pre()
+{
+	if [ "x${linknx_console}" != "x" ]; then
+		linknx_flags="${linknx_flags} --daemon=${linknx_console}"
+	else
+		linknx_flags="${linknx_flags} --daemon"
+	fi
+
+	if [ "x${linknx_config}" != "x" ]; then
+		linknx_flags="${linknx_flags} --config=${linknx_config}"
+	f
+	if [ -f "${linknx_console}" ]; then
+		echo "----------------" `date` "----------------" >> ${linknx_console}
+	fi
+	command_args=${linknx_flags}
+}

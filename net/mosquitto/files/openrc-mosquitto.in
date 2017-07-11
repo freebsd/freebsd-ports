@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=mosquitto
+mosquitto_config=${mosquitto_config:="%%PREFIX%%/etc/mosquitto/mosquitto.conf"}
+
+command=%%PREFIX%%/sbin/mosquitto
+command_args="-c ${mosquitto_config} -d"
+pidfile=$(grep pidfile ${mosquitto_config} | awk '{print($2)}')
+required_files=${mosquitto_config}
+
+depend() {
+	keyword -shutdown
+}

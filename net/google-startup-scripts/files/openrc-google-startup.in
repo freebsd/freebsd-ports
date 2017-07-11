@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+name="google_startup"
+command="%%PREFIX%%/share/google/run-startup-scripts"
+
+start()
+{
+  %%PREFIX%%/share/google/onboot
+  $command
+}
+
+stop()
+{
+  %%PREFIX%%/share/google/run-shutdown-scripts
+}
+
+depend() {
+	need syslogd
+	keyword -shutdown
+}

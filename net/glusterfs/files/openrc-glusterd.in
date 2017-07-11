@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name="glusterd"
+
+start_pre() {
+	mkdir -p /var/db/glusterd /var/log/glusterfs
+}
+
+: ${glusterd_program:="%%PREFIX%%/sbin/$name"}
+: ${glusterd_pidfile:="/var/run/${name}.pid"}
+pidfile="$glusterd_pidfile"
+glusterd_flags="--pid-file=\"${glusterd_pidfile}\" ${glusterd_flags}"
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

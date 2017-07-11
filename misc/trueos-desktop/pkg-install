@@ -16,7 +16,8 @@ if [ $? -eq 0 ] ; then
 fi
 
 # Copy over customizations for TrueOS
-  install -m 644 ${PREFIX}/share/trueos/conf/brand-trueos.4th /boot/brand-trueos.4th
+install -m 644 ${PREFIX}/share/trueos/conf/rc.conf.desktop /etc/rc.conf.trueos
+install -m 644 ${PREFIX}/share/trueos/conf/brand-trueos.4th /boot/brand-trueos.4th
 
 if [ ! -e "${PREFIX}/etc/trueos.conf" ] ; then
   # Do the first-time setup

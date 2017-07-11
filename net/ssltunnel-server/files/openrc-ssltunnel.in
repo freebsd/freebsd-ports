@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=ssltunnel
+command="%%PREFIX%%/libexec/pppserver"
+command_args="%%ETCDIR%%/tunnel.conf"
+required_files="%%ETCDIR%%/tunnel.conf"
+pidfile=/var/run/pppserver.pid
+
+depend() {
+	keyword -shutdown
+}

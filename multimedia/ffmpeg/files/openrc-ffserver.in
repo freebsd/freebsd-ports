@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name=ffserver
+
+command="%%PREFIX%%/bin/${name}"
+command_args="&"
+required_files=%%PREFIX%%/etc/ffserver.conf
+
+depend() {
+	keyword -shutdown
+	use net
+}

@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable bounce
+#
+# bounce_connections (str):		Name for each bounce connection.
+# bounce_connectionname_options (str):	Commandline for each bounce connection.
+
+name="bounce"
+command="%%PREFIX%%/sbin/${name}"
+
+start()
+{
+    if [ -z "${bounce_connections}" ]; then
+		eerror "can't find bounce_connections in /etc/rc.conf"
+    fi	
+    ebegin Starting ${name}.
+    for connection in ${bounce_connections}; do
+	eval options=\$bounce_${connection}_options
+	if [ -z "${options}" ]; then
+	    continue
+	fi
+	cmd="${command} ${options}"
+	if [ -n "$bounce_user" ]; then
+	    cmd="su -m $bounce_user -c '$cmd'"
+	fi
+	eval "$cmd"
+	done
+}
+
+depend() {
+	use net
+}

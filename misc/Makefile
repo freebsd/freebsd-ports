@@ -3,7 +3,6 @@
 
     COMMENT = Miscellaneous utilities
 
-    SUBDIR += R-cran-mime
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += amanda-client
@@ -321,8 +320,8 @@
     SUBDIR += p5-Geo-Coder-Multimap
     SUBDIR += p5-Geo-Coder-Multiple
     SUBDIR += p5-Geo-Coder-Navteq
-    SUBDIR += p5-Geo-Coder-OSM
     SUBDIR += p5-Geo-Coder-OpenCage
+    SUBDIR += p5-Geo-Coder-OSM
     SUBDIR += p5-Geo-Coder-Ovi
     SUBDIR += p5-Geo-Coder-PlaceFinder
     SUBDIR += p5-Geo-Coder-TomTom
@@ -372,7 +371,6 @@
     SUBDIR += posixtestsuite
     SUBDIR += proxyper
     SUBDIR += pspresent
-    SUBDIR += py-YABT
     SUBDIR += py-cinder
     SUBDIR += py-crudini
     SUBDIR += py-fuzzy
@@ -393,6 +391,7 @@
     SUBDIR += py-spdx
     SUBDIR += py-spdx-lookup
     SUBDIR += py-tqdm
+    SUBDIR += py-YABT
     SUBDIR += py-yolk
     SUBDIR += py3-pexpect
     SUBDIR += py3-tqdm
@@ -409,6 +408,7 @@
     SUBDIR += qt5-l10n
     SUBDIR += qt5ct
     SUBDIR += qtchooser
+    SUBDIR += R-cran-mime
     SUBDIR += raspberrypi-userland
     SUBDIR += raspbsd-led
     SUBDIR += ree
@@ -469,8 +469,8 @@
     SUBDIR += tpp
     SUBDIR += translate
     SUBDIR += trueos-desktop
-    SUBDIR += trueos-meta-hunspell
     SUBDIR += trueos-handbook
+    SUBDIR += trueos-meta-hunspell
     SUBDIR += trueos-server
     SUBDIR += trueos-toolchain
     SUBDIR += ttyrec
@@ -494,10 +494,10 @@
     SUBDIR += viz
     SUBDIR += whichman
     SUBDIR += window
-    SUBDIR += wmScoreBoard
     SUBDIR += wmcalendar
     SUBDIR += wmjulia
     SUBDIR += wmpal
+    SUBDIR += wmScoreBoard
     SUBDIR += wmtunlo
     SUBDIR += wmweather+
     SUBDIR += wmwork

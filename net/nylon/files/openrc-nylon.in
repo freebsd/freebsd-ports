@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name=nylon
+command=%%PREFIX%%/bin/nylon
+nylon_flags=${nylon_flags:-"-s"}
+
+depend() {
+	keyword -shutdown
+}

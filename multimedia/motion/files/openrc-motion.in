@@ -9,4 +9,4 @@ required_files=%%ETCDIR%%/${name}.conf
 depend()
 {
 	keyword -shutdown
-}
+} 
