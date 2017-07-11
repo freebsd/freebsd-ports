@@ -1,0 +1,12 @@
+bin/genhtml
+bin/geninfo
+bin/genpng
+bin/gendesc
+bin/lcov
+etc/lcovrc
+man/man1/genhtml.1.gz
+man/man1/geninfo.1.gz
+man/man1/genpng.1.gz
+man/man1/gendesc.1.gz
+man/man1/lcov.1.gz
+man/man5/lcovrc.5.gz
