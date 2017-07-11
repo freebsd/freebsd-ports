@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable stone:
+# Add at least one of the followings to /etc/rc.conf to give rules to stone:
+# stone_flags (str):		See stone(1).
+#				Default: "" (-D will be added automatically)
+# stone_conffile (str):		Stone config file
+#				Default: ""
+
+name="stone"
+command="%%PREFIX%%/bin/stone"
+
+start_pre()
+{
+    if [ -z "${stone_flags}" -a -z "${stone_conffile}" ]; then
+        ewarn "set at least stone_flags or stone_conffile."
+	return 1
+    fi
+
+    # doesn't use required_files because stone accepts only one conffile
+    if [ -n "${stone_conffile}" ]; then
+        if [ ! -r "${stone_conffile}" ]; then
+            ewarn "${stone_conffile} is not readable."
+            if [ -n "$stone_conffile" -a -n "$rc_force" ]; then
+				ewarn "start without ${stone_conffile} anyway."
+			else
+				return 1
+			fi
+        else
+            command_args="-C ${stone_conffile} ${rc_flags}"
+		fi
+    fi
+}
+
+depend() {
+	keyword -shutdown
+}

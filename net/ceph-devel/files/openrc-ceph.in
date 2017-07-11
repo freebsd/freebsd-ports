@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+PATH=$PATH:%%PREFIX%%/bin:%%PREFIX%%/sbin
+
+name="ceph"
+extra_commands="condrestart"
+
+# read configuration and set defaults
+: ${ceph_configfile:=%%PREFIX%%/etc/ceph/ceph.conf}
+
+depend() {
+	keyword -shutdown
+}

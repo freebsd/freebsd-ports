@@ -1,0 +1,39 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# rtgpoll_config (path):   Set to %%PREFIX%%/etc/rtg/rtg.conf by default.
+# rtgpoll_targets (path):  Set to %%PREFIX%%/etc/rtg/targets.cfg by default.
+# rtgpoll_pidfile (path):  Set to /var/run/rtgpoll.pid by default.
+
+name="rtgpoll"
+command=%%PREFIX%%/bin/rtgpoll
+supervisor=supervise-daemon
+
+: ${rtgpoll_config="%%PREFIX%%/etc/rtg/rtg.conf"}
+: ${rtgpoll_targets="%%PREFIX%%/etc/rtg/targets.cfg"}
+: ${rtgpoll_pidfile="/var/run/${name}.pid"}
+: ${rtgpoll_user="rtg"}
+: ${rtgpoll_group="rtg"}
+
+required_files="$rtgpoll_targets"
+command_args="-c $rtgpoll_config -t $rtgpoll_targets"
+command_user=${rtgpoll_user}
+
+start_pre() {
+  if [ ! -e "${rtgpoll_pidfile}" ]; then
+	touch $rtgpoll_pidfile
+  fi
+
+  chown "${rtgpoll_user}:${rtgpoll_group}" "$rtgpoll_pidfile"
+  chmod 640 "$rtgpoll_pidfile"
+  chown -R "${rtgpoll_user}:${rtgpoll_group}" "%%PREFIX%%/etc/rtg"
+  chmod -R u+rwX,g+rX "%%PREFIX%%/etc/rtg"
+}
+
+depend() {
+	need mysql localmount
+	keyword -shutdown
+	after bootmisc
+}

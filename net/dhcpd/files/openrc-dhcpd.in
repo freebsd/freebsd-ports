@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable dhcpd:
+# dhcpd_flags="<set as needed>"
+
+name=dhcpd
+command="%%PREFIX%%/sbin/dhcpd"
+dhcpd_flags=${dhcpd_flags:-"-c %%PREFIX%%/etc/dhcpd.conf"}
+command_args=${dhcpd_flags}
+
+depend() {
+	keyword -shutdown
+}

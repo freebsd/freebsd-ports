@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name="ovs_vswitchd"
+command="/usr/local/sbin/ovs-vswitchd"
+
+start_pre() {
+	load_kld if_tap || return 1
+}
+
+command_args="--detach --pidfile"
+
+depend() {
+	need ovsdb_server
+	keyword -shutdown
+}
