@@ -52,8 +52,7 @@ EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
 USES=		desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig \
 		python:2 pyqt:5 shared-mime-info shebangfix ssl tar:xz
 SHEBANG_GLOB=	*.sh *.py
-python_OLD_CMD=	"/usr/bin/env python" /bin/python /usr/bin/python /usr/local/bin/python \
-		"/usr/bin/env python2" /bin/python2 /usr/bin/python2 /usr/local/bin/python2
+python_OLD_CMD=	"/usr/bin/env python2" /bin/python2 /usr/bin/python2 /usr/local/bin/python2
 USE_PYQT=	core gui network sip svg webkit widgets webkitwidgets xmlpatterns
 USE_QT5=	buildtools_build core dbus gui qmake_build widgets
 USE_GL=		egl gl
