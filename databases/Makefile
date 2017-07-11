@@ -231,6 +231,7 @@
     SUBDIR += mysqltcl
     SUBDIR += mysqltuner
     SUBDIR += mysqlwsrep56-server
+    SUBDIR += mysqlwsrep57-server
     SUBDIR += mytop
     SUBDIR += nagios-check_mongodb
     SUBDIR += nagios-check_postgres_replication

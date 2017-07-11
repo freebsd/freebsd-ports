@@ -1,12 +1,11 @@
-# Created by: Philip Stoev <philip.stoev@galeracluster.com>
+# Created by: Vasil Dimov <vd@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mysqlwsrep
-PORTVERSION?=	5.6.36
-DISTVERSIONSUFFIX?=	-25.20
-PORTREVISION?=	1
+PORTVERSION?=	5.7.18
+DISTVERSIONSUFFIX?=	-25.12
 CATEGORIES=	databases ipv6
-PKGNAMESUFFIX=	56-server
+PKGNAMESUFFIX=	57-server
 
 MAINTAINER=	devel@galeracluster.com
 COMMENT=	MySQL database enhanced with Galera replication (server package)
@@ -16,37 +15,34 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	socat:net/socat lsof:sysutils/lsof netcat:net/netcat rsync:net/rsync
 LIB_DEPENDS=	libevent.so:devel/libevent liblz4.so:archivers/liblz4
 
-BROKEN_powerpc64=	Does not build
-
-DATADIR=	${PREFIX}/share/mysql
-ETCDIR=		${PREFIX}/etc/mysql
-
-NOT_FOR_ARCHS=	aarch64 armv6 powerpc64
-NOT_FOR_ARCHS_REASON=	error: Unsupported platform
-
 USES=		bison \
 		cmake:outsource,noninja \
 		compiler:c++11-lib \
 		compiler:c11 \
 		libedit \
+		mysql:57 \
 		perl5 \
 		shebangfix \
 		ssl
 
 USE_PERL5=	run
-USE_LDCONFIG=	yes
+
+MY_DBDIR=	/var/db/mysql
+MY_SECDIR=	/var/db/mysql_secure
+MY_TMPDIR=	/var/db/mysql_tmpdir
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	codership
 GH_PROJECT?=	mysql-wsrep
 GH_TAGNAME?=	wsrep_${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MY_DBDIR=	/var/db/mysql
-MY_SECDIR=	/var/db/mysql_secure
-MY_TMPDIR=	/var/db/mysql_tmpdir
+DATADIR=	${PREFIX}/share/mysql
+ETCDIR=		${PREFIX}/etc/mysql
+
+NOT_FOR_ARCHS=	aarch64 armv6 powerpc64
+NOT_FOR_ARCHS_REASON=	Not supported platform
 
 CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
-		-DINSTALL_LDCONFIGDIR="${LOCALBASE}/libdata/ldconfig" \
 		-DINSTALL_PKGCONFIGDIR="${LOCALBASE}/libdata/pkgconfig" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
@@ -63,18 +59,15 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_SCRIPTDIR="bin" \
 		-DINSTALL_SECURE_FILE_PRIVDIR="${MY_SECDIR}" \
 		-DINSTALL_SHAREDIR="share" \
-		-DINSTALL_SQLBENCHDIR="share/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
 		-DMYSQL_KEYRINGDIR="${ETCDIR}/keyring" \
+		-DWITH_BOOST="${WRKSRC}/boost" \
 		-DWITH_EDITLINE=system \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
 		-DWITH_ZLIB=system \
-		-DWITH_SSL=${OPENSSLBASE} \
-		-DCRYPTO_LIBRARY=${OPENSSLLIB}/libcrypto.so \
-		-DOPENSSL_LIBRARY=${OPENSSLLIB}/libssl.so \
 		-DINSTALL_MYSQLTESTDIR=0 \
-		-DWITH_LIBWRAP=1 \
+		-DDOWNLOAD_BOOST=1 \
 		-DWITH_WSREP=1
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh scripts/wsrep_sst_*
@@ -93,7 +86,7 @@ PLIST_SUB=	MY_DBDIR=${MY_DBDIR} \
 
 CONFLICTS_INSTALL=	mariadb*-server-* \
 			mysql[0-9]*-server-* \
-			mysqlwsrep57*-server-* \
+			mysqlwsrep56*-server-* \
 			mysqlwsrep[1-489]*-server-* \
 			percona*-server-*
 
@@ -103,6 +96,8 @@ SUB_FILES=	my.cnf.sample
 
 USERS=		mysql
 GROUPS=		mysql
+
+USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 
 MMAN1=		my_print_defaults.1 \
 		myisam_ftdump.1 \
@@ -131,7 +126,47 @@ MMAN1=		my_print_defaults.1 \
 		resolve_stack_dump.1 \
 		resolveip.1
 
+OPTIONS_GROUP=		STORAGE
+OPTIONS_GROUP_STORAGE=	ARCHIVE BLACKHOLE EXAMPLE FEDERATED INNOBASE PARTITION PERFSCHEMA
+OPTIONS_SUB=		YES
+STORAGE_DESC=		Permissible "Storage Engines" (to compile statically into the server)
+ARCHIVE_DESC=		Compile "Archive Storage" statically in server
+BLACKHOLE_DESC=		Compile "Blackhole Storage" statically in server
+EXAMPLE_DESC=		Compile "Example Storage" statically in server
+FEDERATED_DESC=		Compile "Federated Storage" statically in server
+INNOBASE_DESC=		Compile "InnoDB Storage" statically in server
+PARTITION_DESC=		Compile "Partitioning support Storage" statically in server
+PERFSCHEMA_DESC=	Compile "Performance Schema Storage" statically in server
+
+ARCHIVE_CMAKE_ON=	-DWITH_ARCHIVE_STORAGE_ENGINE=1
+BLACKHOLE_CMAKE_ON=	-DWITH_BLACKHOLE_STORAGE_ENGINE=1
+EXAMPLE_CMAKE_ON=	-DWITH_EXAMPLE_STORAGE_ENGINE=1
+FEDERATED_CMAKE_ON=	-DWITH_FEDERATED_STORAGE_ENGINE=1
+INNOBASE_CMAKE_ON=	-DWITH_INNOBASE_STORAGE_ENGINE=1
+PARTITION_CMAKE_ON=	-DWITH_PARTITION_STORAGE_ENGINE=1
+PERFSCHEMA_CMAKE_ON=	-DWITH_PERFSCHEMA_STORAGE_ENGINE=1
+
+OPTIONS_GROUP+=		FEATURES
+OPTIONS_GROUP_FEATURES=	PERFSCHM
+FEATURES_DESC=		Default features knobs
+PERFSCHM_DESC=		Enable "Performance Schema" by default (High RAM usage)
+OPTIONS_DEFAULT+=	PERFSCHM
+
+PERFSCHM_SUB_LIST+=	PERFSCHEMRC=""
+PERFSCHM_SUB_LIST_OFF+=	PERFSCHEMRC="--skip-performance-schema"
+FEDERATED_SUB_LIST+=	FEDER="--federated"
+FEDERATED_SUB_LIST_OFF+=FEDER=""
+
 .include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+CMAKE_ARGS+=		-DWITH_SSL=system
+.else
+CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
+.endif
+
+post-extract:
+	${RM} -fv ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
 post-patch:
 	${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
@@ -144,7 +179,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
 
 .if ${ARCH} == "armv6"
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config.h.cmake
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-config.h.cmake
 .endif
 
 .include <bsd.port.post.mk>
