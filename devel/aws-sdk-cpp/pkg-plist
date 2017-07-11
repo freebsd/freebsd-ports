@@ -1562,6 +1562,8 @@ include/aws/codepipeline/model/JobDetails.h
 include/aws/codepipeline/model/JobStatus.h
 include/aws/codepipeline/model/ListActionTypesRequest.h
 include/aws/codepipeline/model/ListActionTypesResult.h
+include/aws/codepipeline/model/ListPipelineExecutionsRequest.h
+include/aws/codepipeline/model/ListPipelineExecutionsResult.h
 include/aws/codepipeline/model/ListPipelinesRequest.h
 include/aws/codepipeline/model/ListPipelinesResult.h
 include/aws/codepipeline/model/OutputArtifact.h
@@ -1569,6 +1571,7 @@ include/aws/codepipeline/model/PipelineContext.h
 include/aws/codepipeline/model/PipelineDeclaration.h
 include/aws/codepipeline/model/PipelineExecution.h
 include/aws/codepipeline/model/PipelineExecutionStatus.h
+include/aws/codepipeline/model/PipelineExecutionSummary.h
 include/aws/codepipeline/model/PipelineSummary.h
 include/aws/codepipeline/model/PollForJobsRequest.h
 include/aws/codepipeline/model/PollForJobsResult.h
@@ -2619,6 +2622,8 @@ include/aws/ds/model/DescribeConditionalForwardersRequest.h
 include/aws/ds/model/DescribeConditionalForwardersResult.h
 include/aws/ds/model/DescribeDirectoriesRequest.h
 include/aws/ds/model/DescribeDirectoriesResult.h
+include/aws/ds/model/DescribeDomainControllersRequest.h
+include/aws/ds/model/DescribeDomainControllersResult.h
 include/aws/ds/model/DescribeEventTopicsRequest.h
 include/aws/ds/model/DescribeEventTopicsResult.h
 include/aws/ds/model/DescribeSnapshotsRequest.h
@@ -2638,6 +2643,8 @@ include/aws/ds/model/DisableRadiusRequest.h
 include/aws/ds/model/DisableRadiusResult.h
 include/aws/ds/model/DisableSsoRequest.h
 include/aws/ds/model/DisableSsoResult.h
+include/aws/ds/model/DomainController.h
+include/aws/ds/model/DomainControllerStatus.h
 include/aws/ds/model/EnableRadiusRequest.h
 include/aws/ds/model/EnableRadiusResult.h
 include/aws/ds/model/EnableSsoRequest.h
@@ -2684,6 +2691,8 @@ include/aws/ds/model/TrustState.h
 include/aws/ds/model/TrustType.h
 include/aws/ds/model/UpdateConditionalForwarderRequest.h
 include/aws/ds/model/UpdateConditionalForwarderResult.h
+include/aws/ds/model/UpdateNumberOfDomainControllersRequest.h
+include/aws/ds/model/UpdateNumberOfDomainControllersResult.h
 include/aws/ds/model/UpdateRadiusRequest.h
 include/aws/ds/model/UpdateRadiusResult.h
 include/aws/ds/model/VerifyTrustRequest.h
@@ -4602,6 +4611,8 @@ include/aws/events/CloudWatchEventsErrors.h
 include/aws/events/CloudWatchEventsRequest.h
 include/aws/events/CloudWatchEvents_EXPORTS.h
 include/aws/events/model/DeleteRuleRequest.h
+include/aws/events/model/DescribeEventBusRequest.h
+include/aws/events/model/DescribeEventBusResult.h
 include/aws/events/model/DescribeRuleRequest.h
 include/aws/events/model/DescribeRuleResult.h
 include/aws/events/model/DisableRuleRequest.h
@@ -4619,11 +4630,13 @@ include/aws/events/model/PutEventsRequest.h
 include/aws/events/model/PutEventsRequestEntry.h
 include/aws/events/model/PutEventsResult.h
 include/aws/events/model/PutEventsResultEntry.h
+include/aws/events/model/PutPermissionRequest.h
 include/aws/events/model/PutRuleRequest.h
 include/aws/events/model/PutRuleResult.h
 include/aws/events/model/PutTargetsRequest.h
 include/aws/events/model/PutTargetsResult.h
 include/aws/events/model/PutTargetsResultEntry.h
+include/aws/events/model/RemovePermissionRequest.h
 include/aws/events/model/RemoveTargetsRequest.h
 include/aws/events/model/RemoveTargetsResult.h
 include/aws/events/model/RemoveTargetsResultEntry.h
@@ -5647,6 +5660,7 @@ include/aws/kinesis/model/DisableEnhancedMonitoringRequest.h
 include/aws/kinesis/model/DisableEnhancedMonitoringResult.h
 include/aws/kinesis/model/EnableEnhancedMonitoringRequest.h
 include/aws/kinesis/model/EnableEnhancedMonitoringResult.h
+include/aws/kinesis/model/EncryptionType.h
 include/aws/kinesis/model/EnhancedMetrics.h
 include/aws/kinesis/model/GetRecordsRequest.h
 include/aws/kinesis/model/GetRecordsResult.h
@@ -5673,6 +5687,8 @@ include/aws/kinesis/model/SequenceNumberRange.h
 include/aws/kinesis/model/Shard.h
 include/aws/kinesis/model/ShardIteratorType.h
 include/aws/kinesis/model/SplitShardRequest.h
+include/aws/kinesis/model/StartStreamEncryptionRequest.h
+include/aws/kinesis/model/StopStreamEncryptionRequest.h
 include/aws/kinesis/model/StreamDescription.h
 include/aws/kinesis/model/StreamStatus.h
 include/aws/kinesis/model/Tag.h
@@ -5806,6 +5822,7 @@ include/aws/kms/model/GrantOperation.h
 include/aws/kms/model/ImportKeyMaterialRequest.h
 include/aws/kms/model/ImportKeyMaterialResult.h
 include/aws/kms/model/KeyListEntry.h
+include/aws/kms/model/KeyManagerType.h
 include/aws/kms/model/KeyMetadata.h
 include/aws/kms/model/KeyState.h
 include/aws/kms/model/KeyUsageType.h
@@ -6355,8 +6372,12 @@ include/aws/monitoring/CloudWatchRequest.h
 include/aws/monitoring/CloudWatch_EXPORTS.h
 include/aws/monitoring/model/AlarmHistoryItem.h
 include/aws/monitoring/model/ComparisonOperator.h
+include/aws/monitoring/model/DashboardEntry.h
+include/aws/monitoring/model/DashboardValidationMessage.h
 include/aws/monitoring/model/Datapoint.h
 include/aws/monitoring/model/DeleteAlarmsRequest.h
+include/aws/monitoring/model/DeleteDashboardsRequest.h
+include/aws/monitoring/model/DeleteDashboardsResult.h
 include/aws/monitoring/model/DescribeAlarmHistoryRequest.h
 include/aws/monitoring/model/DescribeAlarmHistoryResult.h
 include/aws/monitoring/model/DescribeAlarmsForMetricRequest.h
@@ -6367,14 +6388,20 @@ include/aws/monitoring/model/Dimension.h
 include/aws/monitoring/model/DimensionFilter.h
 include/aws/monitoring/model/DisableAlarmActionsRequest.h
 include/aws/monitoring/model/EnableAlarmActionsRequest.h
+include/aws/monitoring/model/GetDashboardRequest.h
+include/aws/monitoring/model/GetDashboardResult.h
 include/aws/monitoring/model/GetMetricStatisticsRequest.h
 include/aws/monitoring/model/GetMetricStatisticsResult.h
 include/aws/monitoring/model/HistoryItemType.h
+include/aws/monitoring/model/ListDashboardsRequest.h
+include/aws/monitoring/model/ListDashboardsResult.h
 include/aws/monitoring/model/ListMetricsRequest.h
 include/aws/monitoring/model/ListMetricsResult.h
 include/aws/monitoring/model/Metric.h
 include/aws/monitoring/model/MetricAlarm.h
 include/aws/monitoring/model/MetricDatum.h
+include/aws/monitoring/model/PutDashboardRequest.h
+include/aws/monitoring/model/PutDashboardResult.h
 include/aws/monitoring/model/PutMetricAlarmRequest.h
 include/aws/monitoring/model/PutMetricDataRequest.h
 include/aws/monitoring/model/ResponseMetadata.h
@@ -7992,6 +8019,8 @@ include/aws/servicecatalog/model/AssociatePrincipalWithPortfolioRequest.h
 include/aws/servicecatalog/model/AssociatePrincipalWithPortfolioResult.h
 include/aws/servicecatalog/model/AssociateProductWithPortfolioRequest.h
 include/aws/servicecatalog/model/AssociateProductWithPortfolioResult.h
+include/aws/servicecatalog/model/AssociateTagOptionWithResourceRequest.h
+include/aws/servicecatalog/model/AssociateTagOptionWithResourceResult.h
 include/aws/servicecatalog/model/ConstraintDetail.h
 include/aws/servicecatalog/model/ConstraintSummary.h
 include/aws/servicecatalog/model/CreateConstraintRequest.h
@@ -8004,6 +8033,8 @@ include/aws/servicecatalog/model/CreateProductRequest.h
 include/aws/servicecatalog/model/CreateProductResult.h
 include/aws/servicecatalog/model/CreateProvisioningArtifactRequest.h
 include/aws/servicecatalog/model/CreateProvisioningArtifactResult.h
+include/aws/servicecatalog/model/CreateTagOptionRequest.h
+include/aws/servicecatalog/model/CreateTagOptionResult.h
 include/aws/servicecatalog/model/DeleteConstraintRequest.h
 include/aws/servicecatalog/model/DeleteConstraintResult.h
 include/aws/servicecatalog/model/DeletePortfolioRequest.h
@@ -8032,10 +8063,14 @@ include/aws/servicecatalog/model/DescribeProvisioningParametersRequest.h
 include/aws/servicecatalog/model/DescribeProvisioningParametersResult.h
 include/aws/servicecatalog/model/DescribeRecordRequest.h
 include/aws/servicecatalog/model/DescribeRecordResult.h
+include/aws/servicecatalog/model/DescribeTagOptionRequest.h
+include/aws/servicecatalog/model/DescribeTagOptionResult.h
 include/aws/servicecatalog/model/DisassociatePrincipalFromPortfolioRequest.h
 include/aws/servicecatalog/model/DisassociatePrincipalFromPortfolioResult.h
 include/aws/servicecatalog/model/DisassociateProductFromPortfolioRequest.h
 include/aws/servicecatalog/model/DisassociateProductFromPortfolioResult.h
+include/aws/servicecatalog/model/DisassociateTagOptionFromResourceRequest.h
+include/aws/servicecatalog/model/DisassociateTagOptionFromResourceResult.h
 include/aws/servicecatalog/model/LaunchPathSummary.h
 include/aws/servicecatalog/model/ListAcceptedPortfolioSharesRequest.h
 include/aws/servicecatalog/model/ListAcceptedPortfolioSharesResult.h
@@ -8056,6 +8091,11 @@ include/aws/servicecatalog/model/ListProvisioningArtifactsResult.h
 include/aws/servicecatalog/model/ListRecordHistoryRequest.h
 include/aws/servicecatalog/model/ListRecordHistoryResult.h
 include/aws/servicecatalog/model/ListRecordHistorySearchFilter.h
+include/aws/servicecatalog/model/ListResourcesForTagOptionRequest.h
+include/aws/servicecatalog/model/ListResourcesForTagOptionResult.h
+include/aws/servicecatalog/model/ListTagOptionsFilters.h
+include/aws/servicecatalog/model/ListTagOptionsRequest.h
+include/aws/servicecatalog/model/ListTagOptionsResult.h
 include/aws/servicecatalog/model/ParameterConstraints.h
 include/aws/servicecatalog/model/PortfolioDetail.h
 include/aws/servicecatalog/model/Principal.h
@@ -8085,6 +8125,7 @@ include/aws/servicecatalog/model/RecordStatus.h
 include/aws/servicecatalog/model/RecordTag.h
 include/aws/servicecatalog/model/RejectPortfolioShareRequest.h
 include/aws/servicecatalog/model/RejectPortfolioShareResult.h
+include/aws/servicecatalog/model/ResourceDetail.h
 include/aws/servicecatalog/model/ScanProvisionedProductsRequest.h
 include/aws/servicecatalog/model/ScanProvisionedProductsResult.h
 include/aws/servicecatalog/model/SearchProductsAsAdminRequest.h
@@ -8094,6 +8135,8 @@ include/aws/servicecatalog/model/SearchProductsResult.h
 include/aws/servicecatalog/model/SortOrder.h
 include/aws/servicecatalog/model/Status.h
 include/aws/servicecatalog/model/Tag.h
+include/aws/servicecatalog/model/TagOptionDetail.h
+include/aws/servicecatalog/model/TagOptionSummary.h
 include/aws/servicecatalog/model/TerminateProvisionedProductRequest.h
 include/aws/servicecatalog/model/TerminateProvisionedProductResult.h
 include/aws/servicecatalog/model/UpdateConstraintRequest.h
@@ -8107,6 +8150,8 @@ include/aws/servicecatalog/model/UpdateProvisionedProductResult.h
 include/aws/servicecatalog/model/UpdateProvisioningArtifactRequest.h
 include/aws/servicecatalog/model/UpdateProvisioningArtifactResult.h
 include/aws/servicecatalog/model/UpdateProvisioningParameter.h
+include/aws/servicecatalog/model/UpdateTagOptionRequest.h
+include/aws/servicecatalog/model/UpdateTagOptionResult.h
 include/aws/servicecatalog/model/UsageInstruction.h
 include/aws/shield/ShieldClient.h
 include/aws/shield/ShieldEndpoint.h
@@ -8397,6 +8442,8 @@ include/aws/ssm/model/CreateMaintenanceWindowRequest.h
 include/aws/ssm/model/CreateMaintenanceWindowResult.h
 include/aws/ssm/model/CreatePatchBaselineRequest.h
 include/aws/ssm/model/CreatePatchBaselineResult.h
+include/aws/ssm/model/CreateResourceDataSyncRequest.h
+include/aws/ssm/model/CreateResourceDataSyncResult.h
 include/aws/ssm/model/DeleteActivationRequest.h
 include/aws/ssm/model/DeleteActivationResult.h
 include/aws/ssm/model/DeleteAssociationRequest.h
@@ -8407,8 +8454,12 @@ include/aws/ssm/model/DeleteMaintenanceWindowRequest.h
 include/aws/ssm/model/DeleteMaintenanceWindowResult.h
 include/aws/ssm/model/DeleteParameterRequest.h
 include/aws/ssm/model/DeleteParameterResult.h
+include/aws/ssm/model/DeleteParametersRequest.h
+include/aws/ssm/model/DeleteParametersResult.h
 include/aws/ssm/model/DeletePatchBaselineRequest.h
 include/aws/ssm/model/DeletePatchBaselineResult.h
+include/aws/ssm/model/DeleteResourceDataSyncRequest.h
+include/aws/ssm/model/DeleteResourceDataSyncResult.h
 include/aws/ssm/model/DeregisterManagedInstanceRequest.h
 include/aws/ssm/model/DeregisterManagedInstanceResult.h
 include/aws/ssm/model/DeregisterPatchBaselineForPatchGroupRequest.h
@@ -8503,6 +8554,10 @@ include/aws/ssm/model/GetMaintenanceWindowRequest.h
 include/aws/ssm/model/GetMaintenanceWindowResult.h
 include/aws/ssm/model/GetParameterHistoryRequest.h
 include/aws/ssm/model/GetParameterHistoryResult.h
+include/aws/ssm/model/GetParameterRequest.h
+include/aws/ssm/model/GetParameterResult.h
+include/aws/ssm/model/GetParametersByPathRequest.h
+include/aws/ssm/model/GetParametersByPathResult.h
 include/aws/ssm/model/GetParametersRequest.h
 include/aws/ssm/model/GetParametersResult.h
 include/aws/ssm/model/GetPatchBaselineForPatchGroupRequest.h
@@ -8529,6 +8584,7 @@ include/aws/ssm/model/InventoryItemSchema.h
 include/aws/ssm/model/InventoryQueryOperatorType.h
 include/aws/ssm/model/InventoryResultEntity.h
 include/aws/ssm/model/InventoryResultItem.h
+include/aws/ssm/model/LastResourceDataSyncStatus.h
 include/aws/ssm/model/ListAssociationsRequest.h
 include/aws/ssm/model/ListAssociationsResult.h
 include/aws/ssm/model/ListCommandInvocationsRequest.h
@@ -8541,6 +8597,8 @@ include/aws/ssm/model/ListDocumentsRequest.h
 include/aws/ssm/model/ListDocumentsResult.h
 include/aws/ssm/model/ListInventoryEntriesRequest.h
 include/aws/ssm/model/ListInventoryEntriesResult.h
+include/aws/ssm/model/ListResourceDataSyncRequest.h
+include/aws/ssm/model/ListResourceDataSyncResult.h
 include/aws/ssm/model/ListTagsForResourceRequest.h
 include/aws/ssm/model/ListTagsForResourceResult.h
 include/aws/ssm/model/LoggingInfo.h
@@ -8560,9 +8618,11 @@ include/aws/ssm/model/ModifyDocumentPermissionResult.h
 include/aws/ssm/model/NotificationConfig.h
 include/aws/ssm/model/NotificationEvent.h
 include/aws/ssm/model/NotificationType.h
+include/aws/ssm/model/OperatingSystem.h
 include/aws/ssm/model/Parameter.h
 include/aws/ssm/model/ParameterHistory.h
 include/aws/ssm/model/ParameterMetadata.h
+include/aws/ssm/model/ParameterStringFilter.h
 include/aws/ssm/model/ParameterType.h
 include/aws/ssm/model/ParametersFilter.h
 include/aws/ssm/model/ParametersFilterKey.h
@@ -8570,6 +8630,7 @@ include/aws/ssm/model/Patch.h
 include/aws/ssm/model/PatchBaselineIdentity.h
 include/aws/ssm/model/PatchComplianceData.h
 include/aws/ssm/model/PatchComplianceDataState.h
+include/aws/ssm/model/PatchComplianceLevel.h
 include/aws/ssm/model/PatchDeploymentStatus.h
 include/aws/ssm/model/PatchFilter.h
 include/aws/ssm/model/PatchFilterGroup.h
@@ -8596,6 +8657,9 @@ include/aws/ssm/model/RegisterTaskWithMaintenanceWindowRequest.h
 include/aws/ssm/model/RegisterTaskWithMaintenanceWindowResult.h
 include/aws/ssm/model/RemoveTagsFromResourceRequest.h
 include/aws/ssm/model/RemoveTagsFromResourceResult.h
+include/aws/ssm/model/ResourceDataSyncItem.h
+include/aws/ssm/model/ResourceDataSyncS3Destination.h
+include/aws/ssm/model/ResourceDataSyncS3Format.h
 include/aws/ssm/model/ResourceType.h
 include/aws/ssm/model/ResourceTypeForTagging.h
 include/aws/ssm/model/ResultAttribute.h
@@ -9109,6 +9173,8 @@ include/aws/waf-regional/model/CreateByteMatchSetRequest.h
 include/aws/waf-regional/model/CreateByteMatchSetResult.h
 include/aws/waf-regional/model/CreateIPSetRequest.h
 include/aws/waf-regional/model/CreateIPSetResult.h
+include/aws/waf-regional/model/CreateRateBasedRuleRequest.h
+include/aws/waf-regional/model/CreateRateBasedRuleResult.h
 include/aws/waf-regional/model/CreateRuleRequest.h
 include/aws/waf-regional/model/CreateRuleResult.h
 include/aws/waf-regional/model/CreateSizeConstraintSetRequest.h
@@ -9123,6 +9189,8 @@ include/aws/waf-regional/model/DeleteByteMatchSetRequest.h
 include/aws/waf-regional/model/DeleteByteMatchSetResult.h
 include/aws/waf-regional/model/DeleteIPSetRequest.h
 include/aws/waf-regional/model/DeleteIPSetResult.h
+include/aws/waf-regional/model/DeleteRateBasedRuleRequest.h
+include/aws/waf-regional/model/DeleteRateBasedRuleResult.h
 include/aws/waf-regional/model/DeleteRuleRequest.h
 include/aws/waf-regional/model/DeleteRuleResult.h
 include/aws/waf-regional/model/DeleteSizeConstraintSetRequest.h
@@ -9144,6 +9212,10 @@ include/aws/waf-regional/model/GetChangeTokenStatusRequest.h
 include/aws/waf-regional/model/GetChangeTokenStatusResult.h
 include/aws/waf-regional/model/GetIPSetRequest.h
 include/aws/waf-regional/model/GetIPSetResult.h
+include/aws/waf-regional/model/GetRateBasedRuleManagedKeysRequest.h
+include/aws/waf-regional/model/GetRateBasedRuleManagedKeysResult.h
+include/aws/waf-regional/model/GetRateBasedRuleRequest.h
+include/aws/waf-regional/model/GetRateBasedRuleResult.h
 include/aws/waf-regional/model/GetRuleRequest.h
 include/aws/waf-regional/model/GetRuleResult.h
 include/aws/waf-regional/model/GetSampledRequestsRequest.h
@@ -9169,6 +9241,8 @@ include/aws/waf-regional/model/ListByteMatchSetsRequest.h
 include/aws/waf-regional/model/ListByteMatchSetsResult.h
 include/aws/waf-regional/model/ListIPSetsRequest.h
 include/aws/waf-regional/model/ListIPSetsResult.h
+include/aws/waf-regional/model/ListRateBasedRulesRequest.h
+include/aws/waf-regional/model/ListRateBasedRulesResult.h
 include/aws/waf-regional/model/ListResourcesForWebACLRequest.h
 include/aws/waf-regional/model/ListResourcesForWebACLResult.h
 include/aws/waf-regional/model/ListRulesRequest.h
@@ -9187,6 +9261,8 @@ include/aws/waf-regional/model/ParameterExceptionReason.h
 include/aws/waf-regional/model/PositionalConstraint.h
 include/aws/waf-regional/model/Predicate.h
 include/aws/waf-regional/model/PredicateType.h
+include/aws/waf-regional/model/RateBasedRule.h
+include/aws/waf-regional/model/RateKey.h
 include/aws/waf-regional/model/Rule.h
 include/aws/waf-regional/model/RuleSummary.h
 include/aws/waf-regional/model/RuleUpdate.h
@@ -9205,6 +9281,8 @@ include/aws/waf-regional/model/UpdateByteMatchSetRequest.h
 include/aws/waf-regional/model/UpdateByteMatchSetResult.h
 include/aws/waf-regional/model/UpdateIPSetRequest.h
 include/aws/waf-regional/model/UpdateIPSetResult.h
+include/aws/waf-regional/model/UpdateRateBasedRuleRequest.h
+include/aws/waf-regional/model/UpdateRateBasedRuleResult.h
 include/aws/waf-regional/model/UpdateRuleRequest.h
 include/aws/waf-regional/model/UpdateRuleResult.h
 include/aws/waf-regional/model/UpdateSizeConstraintSetRequest.h
@@ -9217,6 +9295,7 @@ include/aws/waf-regional/model/UpdateXssMatchSetRequest.h
 include/aws/waf-regional/model/UpdateXssMatchSetResult.h
 include/aws/waf-regional/model/WafAction.h
 include/aws/waf-regional/model/WafActionType.h
+include/aws/waf-regional/model/WafRuleType.h
 include/aws/waf-regional/model/WebACL.h
 include/aws/waf-regional/model/WebACLSummary.h
 include/aws/waf-regional/model/WebACLUpdate.h
@@ -9242,6 +9321,8 @@ include/aws/waf/model/CreateByteMatchSetRequest.h
 include/aws/waf/model/CreateByteMatchSetResult.h
 include/aws/waf/model/CreateIPSetRequest.h
 include/aws/waf/model/CreateIPSetResult.h
+include/aws/waf/model/CreateRateBasedRuleRequest.h
+include/aws/waf/model/CreateRateBasedRuleResult.h
 include/aws/waf/model/CreateRuleRequest.h
 include/aws/waf/model/CreateRuleResult.h
 include/aws/waf/model/CreateSizeConstraintSetRequest.h
@@ -9256,6 +9337,8 @@ include/aws/waf/model/DeleteByteMatchSetRequest.h
 include/aws/waf/model/DeleteByteMatchSetResult.h
 include/aws/waf/model/DeleteIPSetRequest.h
 include/aws/waf/model/DeleteIPSetResult.h
+include/aws/waf/model/DeleteRateBasedRuleRequest.h
+include/aws/waf/model/DeleteRateBasedRuleResult.h
 include/aws/waf/model/DeleteRuleRequest.h
 include/aws/waf/model/DeleteRuleResult.h
 include/aws/waf/model/DeleteSizeConstraintSetRequest.h
@@ -9275,6 +9358,10 @@ include/aws/waf/model/GetChangeTokenStatusRequest.h
 include/aws/waf/model/GetChangeTokenStatusResult.h
 include/aws/waf/model/GetIPSetRequest.h
 include/aws/waf/model/GetIPSetResult.h
+include/aws/waf/model/GetRateBasedRuleManagedKeysRequest.h
+include/aws/waf/model/GetRateBasedRuleManagedKeysResult.h
+include/aws/waf/model/GetRateBasedRuleRequest.h
+include/aws/waf/model/GetRateBasedRuleResult.h
 include/aws/waf/model/GetRuleRequest.h
 include/aws/waf/model/GetRuleResult.h
 include/aws/waf/model/GetSampledRequestsRequest.h
@@ -9298,6 +9385,8 @@ include/aws/waf/model/ListByteMatchSetsRequest.h
 include/aws/waf/model/ListByteMatchSetsResult.h
 include/aws/waf/model/ListIPSetsRequest.h
 include/aws/waf/model/ListIPSetsResult.h
+include/aws/waf/model/ListRateBasedRulesRequest.h
+include/aws/waf/model/ListRateBasedRulesResult.h
 include/aws/waf/model/ListRulesRequest.h
 include/aws/waf/model/ListRulesResult.h
 include/aws/waf/model/ListSizeConstraintSetsRequest.h
@@ -9314,6 +9403,8 @@ include/aws/waf/model/ParameterExceptionReason.h
 include/aws/waf/model/PositionalConstraint.h
 include/aws/waf/model/Predicate.h
 include/aws/waf/model/PredicateType.h
+include/aws/waf/model/RateBasedRule.h
+include/aws/waf/model/RateKey.h
 include/aws/waf/model/Rule.h
 include/aws/waf/model/RuleSummary.h
 include/aws/waf/model/RuleUpdate.h
@@ -9332,6 +9423,8 @@ include/aws/waf/model/UpdateByteMatchSetRequest.h
 include/aws/waf/model/UpdateByteMatchSetResult.h
 include/aws/waf/model/UpdateIPSetRequest.h
 include/aws/waf/model/UpdateIPSetResult.h
+include/aws/waf/model/UpdateRateBasedRuleRequest.h
+include/aws/waf/model/UpdateRateBasedRuleResult.h
 include/aws/waf/model/UpdateRuleRequest.h
 include/aws/waf/model/UpdateRuleResult.h
 include/aws/waf/model/UpdateSizeConstraintSetRequest.h
@@ -9344,6 +9437,7 @@ include/aws/waf/model/UpdateXssMatchSetRequest.h
 include/aws/waf/model/UpdateXssMatchSetResult.h
 include/aws/waf/model/WafAction.h
 include/aws/waf/model/WafActionType.h
+include/aws/waf/model/WafRuleType.h
 include/aws/waf/model/WebACL.h
 include/aws/waf/model/WebACLSummary.h
 include/aws/waf/model/WebACLUpdate.h
