@@ -22,7 +22,4 @@ SHEBANG_FILES=	bin/lcov bin/gendesc bin/genhtml bin/genpng bin/geninfo \
 post-patch:
 	${REINPLACE_CMD} -e 's:$$(PREFIX)/share/man:$$(PREFIX)/man:' ${WRKSRC}/Makefile
 
-do-install:
-	cd ${WRKSRC} && DESTDIR=${STAGEDIR} ${MAKE_CMD} install
-
 .include <bsd.port.mk>
