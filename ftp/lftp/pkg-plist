@@ -25,3 +25,5 @@ man/man5/lftp.conf.5.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lftp.mo
+share/applications/lftp.desktop
+share/icons/hicolor/48x48/apps/lftp-icon.png
