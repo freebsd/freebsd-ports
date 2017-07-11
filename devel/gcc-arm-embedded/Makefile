@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	6.3.20170223
+PORTVERSION=	6.3.20170628
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/6_1-2017q1/
+MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -15,20 +15,11 @@ LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	does not build: __adjust.c: internal compiler error: Segmentation fault
 
-OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS
+OPTIONS_DEFINE=	PYGDB EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=PYGDB
-PURE_DESC=	Use all libraries from bundle, do not depend on anything
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
 PYGDB_DESC=	Build and install pyhon-enabled gdb in addition to standard one
-
-PURE_LIB_DEPENDS_OFF=	\
-			libexpat.so:textproc/expat2 \
-			libgmp.so:math/gmp \
-			libmpfr.so:math/mpfr \
-			libmpc.so:math/mpc \
-			libisl.so:devel/isl \
-			libelf.so:devel/libelf
 
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
@@ -40,6 +31,13 @@ NOT_FOR_ARCHS=		aarch64 arm armeb armv6 \
 			mips mips64 mips64el mipsel mipsn32
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
 
+LIB_DEPENDS=		libexpat.so:textproc/expat2 \
+			libgmp.so:math/gmp \
+			libmpfr.so:math/mpfr \
+			libmpc.so:math/mpc \
+			libisl.so:devel/isl \
+			libelf.so:devel/libelf
+
 USES=			bison compiler cpe gmake iconv makeinfo tar:bzip2
 
 GNU_CONFIGURE=	yes
@@ -48,7 +46,7 @@ PATCH_WRKSRC=	${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
 GCC_VERSION=		6.3.1
-FULL_VERSION=		6-2017-q1-update
+FULL_VERSION=		6-2017-q2-update
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
@@ -73,16 +71,6 @@ BUILD_DIR=	${WRKDIR}/build
 INTERIM_WORLD=	${WRKDIR}/install
 INTERIM_PREFIX=	${INTERIM_WORLD}/${PORTNAME}-${FULL_VERSION}
 
-BUNDLED_LIBS=			EXPAT:bz2 ZLIB:gz LIBELF:gz \
-				GMP:bz2 MPFR:bz2 MPC:gz ISL:bz2
-BUNDLED_VERSION_EXPAT=		2.1.1
-BUNDLED_VERSION_ZLIB=		1.2.8
-BUNDLED_VERSION_LIBELF=		0.8.13
-BUNDLED_VERSION_GMP=		6.1.0
-BUNDLED_VERSION_MPFR=		3.1.4
-BUNDLED_VERSION_MPC=		1.0.3
-BUNDLED_VERSION_ISL=		0.15
-
 VAR_TO_SUBMAKE=	BUILD_DIR CC CFLAGS CHOSEN_COMPILER_TYPE CONFIG_SITE \
 		CONFIGURE_MAX_CMD_LEN CONFIGURE_SHELL CP CPP CPPFLAGS CXX \
 		CXXFLAGS DOCS_SUFFIX ECHO_MSG EXAMPLESDIR FILE FIND GMAKE \
@@ -96,13 +84,11 @@ VAR_TO_SUBMAKE_NOEXPAND=	CONFIGURE_ENV MAKE_ENV
 
 .include <bsd.port.pre.mk>
 
-post-extract:
 .if ${PORT_OPTIONS:MPURE}
-.for L in ${BUNDLED_LIBS}
-	@${ECHO_MSG} "====>  Extracting bundled ${L:C/[:].+//:tl}"
-	@${TAR} -xf ${SRC_DIR}/${L:C/[:].+//:tl}-${BUNDLED_VERSION_${L:C/[:].+//}}.tar.${L:C/.+[:]//} -C ${SRC_DIR}
-.endfor
+IGNORE=	"PURE option is not valid anymore, no libraries are bundled"
 .endif
+
+post-extract:
 	@${ECHO_MSG} "====>  Extracting bundled binutils"
 	@${TAR} -xf ${SRC_DIR}/binutils.tar.bz2 -C ${SRC_DIR}
 	@${ECHO_MSG} "====>  Extracting bundled gcc"
