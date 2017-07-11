@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	pr1ntf
 
-NO_BUILD=	yes
 NO_ARCH=	yes
 
 do-patch:
