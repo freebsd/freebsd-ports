@@ -18,6 +18,9 @@ COMMENT=	High-level Python Web Framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unsupported upstream
+EXPIRATION_DATE=2017-09-01
+
 NO_ARCH=	yes
 USES=		cpe python shebangfix
 USE_PYTHON=	autoplist distutils
