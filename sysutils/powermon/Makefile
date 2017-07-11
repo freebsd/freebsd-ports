@@ -9,14 +9,13 @@ MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Displays the CPUs current power consumption
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	 ${WRKDIR}/${PORTNAME}-${PORTVERSION}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	specific to recent x86 processors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yamagi
-GH_TAGNAME=	${DISTVERSIONPREFIX}${PORTVERSION}
 
 USES=		gmake
 
