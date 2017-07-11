@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-ProgressBar
-PORTVERSION=	2.18
+PORTVERSION=	2.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,7 @@ USE_PERL5=	configure
 
 PORTEXAMPLES=	*
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
 

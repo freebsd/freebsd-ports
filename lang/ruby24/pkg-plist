@@ -1862,6 +1862,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d48/nkf_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d48/nkf_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d48/nkf_8h__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d49/etc_2constdefs_8h.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d49/etc_2constdefs_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d49/return__sc_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d49/return__sc_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d4f/structtest__structure__4.html
@@ -1946,8 +1948,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db4/fiddle_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dc0/closure__simple_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dc0/closure__simple_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dc4/constdefs_8h.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dc4/constdefs_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dc5/continuation_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dc5/continuation_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/dc5/continuation_8c__incl.png
@@ -2191,6 +2191,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dca/strscan_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dca/strscan_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dca/strscan_8c__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd1/socket_2constdefs_8h.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd1/socket_2constdefs_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd7/ossl__config_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd7/ossl__config_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd9/reader_8c.html
@@ -2332,6 +2334,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d60/nkf_2nkf-utf8_2config_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d61/float3_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d61/float3_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d64/etc_2constdefs_8h__dep__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d64/etc_2constdefs_8h__dep__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d64/etc_2constdefs_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d69/structstruct__108byte.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d6a/proc_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d6a/proc_8c__incl.md5
@@ -3006,6 +3011,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d32/tcpserver_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/resolv_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/resolv_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/socket_2constdefs_8h__dep__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/socket_2constdefs_8h__dep__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d34/socket_2constdefs_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3a/cls__12byte_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3a/cls__12byte_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3a/cls__12byte_8c__incl.png
@@ -3366,9 +3374,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dda/generator_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dda/generator_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dda/generator_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/ddc/constdefs_8h__dep__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/ddc/constdefs_8h__dep__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/ddc/constdefs_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dde/id__table_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dde/id__table_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dde/id__table_8h__incl.png
@@ -3439,8 +3444,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d31/structfpreg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3a/tgamma_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3a/tgamma_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/conftest_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/conftest_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/ossl__pkey_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3c/ossl__pkey_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/d3f/cls__pointer_8c.html

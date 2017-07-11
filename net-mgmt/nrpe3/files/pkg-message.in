@@ -1,0 +1,10 @@
+**********************************************************************
+
+ Enable NRPE in /etc/rc.conf with the following line:
+
+   nrpe3_enable="YES"
+
+ A sample configuration is available in %%PREFIX%%/etc/nrpe.cfg.sample.
+ Copy to nrpe.cfg where required and edit to suit your needs.
+
+**********************************************************************
