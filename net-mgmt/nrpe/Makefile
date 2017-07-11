@@ -12,7 +12,7 @@ COMMENT?=	Nagios Remote Plugin Executor
 
 LICENSE=	GPLv2
 
-CONFLICTS=	nrpe-ssl-2.* nrpe-3.*
+CONFLICTS?=	nrpe-ssl nrpe3
 
 USES=		perl5
 USE_PERL5=	build
