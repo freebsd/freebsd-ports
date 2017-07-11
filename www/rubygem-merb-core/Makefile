@@ -22,13 +22,12 @@ RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler \
 
 USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	spec10/public/webrat/test_app/gems/gems/erubis-2.6.2/bin/erubis \
-		spec10/public/webrat/test_app/gems/gems/erubis-2.6.2/contrib/erubis
 
 PLIST_FILES=	bin/merb
 
-post-patch:
-	@${REINPLACE_CMD} -i '' -e '1s|/.*ruby|${ruby_CMD}|' \
-		${WRKSRC}/spec10/public/core_ext/fixtures/gems/bin/edit_json.rb
+SHEBANG_FILES=	spec10/public/core_ext/fixtures/gems/bin/edit_json.rb \
+		spec10/public/webrat/test_app/gems/gems/erubis-2.6.2/bin/erubis \
+		spec10/public/webrat/test_app/gems/gems/erubis-2.6.2/contrib/erubis
+ruby_OLD_CMD=	/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
 
 .include <bsd.port.mk>
