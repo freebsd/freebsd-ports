@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+
+name=nslcd
+
+: ${nslcd_supervisor=NO}
+
+command="%%PREFIX%%/sbin/nslcd"
+pidfile=%%NSLCD_PIDFILE%%
+supervisor=supervise-daemon
+
+start_pre()
+{
+	if yesno nslcd_supervisor ; then
+	    	notsupported=$(${command} -r 3>&1 1>&2 2>&3 | grep -c illegal)
+		if [ ${notsupported} -eq 0 ]; then
+			command_args="-n"
+		else
+		    eerror "Your FreeBSD version's daemon(8) does not support supervision.";
+			eerror "${name} was not started.";
+			exit 1
+		fi
+	fi
+}
+
+depend() {
+	use net
+	keyword -shutdown
+}

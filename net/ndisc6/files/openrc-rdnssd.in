@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=rdnssd
+
+pidfile=/var/run/${name}.pid
+command="%%PREFIX%%/sbin/${name}"
+command_args="-p ${pidfile}"
+
+depend() {
+	use net
+}

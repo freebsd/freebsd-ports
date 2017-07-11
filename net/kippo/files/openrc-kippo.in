@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable kippo:
+#
+# kippo_logfile (path):		Set to /tmp/kippo.log by default.
+# kippo_pidfile (path):         Set to /tmp/kippo.pid by default.
+
+name=kippo
+: ${kippo_logfile="/tmp/kippo.log"}
+: ${kippo_pidfile="/tmp/kippo.pid"}
+
+kippo_user="kippo"
+kippo_chdir="%%DATADIR%%"
+pidfile=$kippo_pidfile
+command="%%LOCALBASE%%/bin/twistd"
+command_args="-y %%DATADIR%%/kippo.tac --pidfile $pidfile --logfile $kippo_logfile"
+command_user=${kippo_user}
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,42 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf to enable asterisk:
+#
+# asterisk_user (string):	User asterisk runs as
+#				Default is %%ASTERISK_USER%%
+# asterisk_args (string):	Extra argumeents to pass to asterisk at startup
+# 				Default is "-n"
+# asterisk_pidfile (string):	Location of the asterisk pid file
+#				Default is /var/run/asterisk/asterisk.pid
+
+name=asterisk
+description="Asterisk PBX server"
+
+: ${asterisk_user:=%%ASTERISK_USER%%}
+: ${asterisk_args=-n}
+: ${asterisk_pidfile:=/var/run/asterisk/asterisk.pid}
+
+command="%%PREFIX%%/sbin/asterisk"
+command_args="${asterisk_args} -F -U ${asterisk_user}"
+command_user=${asterisk_user}
+pidfile=${asterisk_pidfile}
+
+start_pre()
+{
+	local rundir=${asterisk_pidfile%/*}
+	if [ ! -d $rundir ] ; then
+		install -d -m 0755 -o asterisk -g asterisk $rundir
+	fi
+}
+
+stop_pre()
+{
+	echo 'Stopping asterisk'
+	$command -nqrx 'core stop now'
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

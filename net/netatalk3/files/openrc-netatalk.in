@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name=netatalk
+command=%%PREFIX%%/sbin/netatalk
+
+depend() {
+	need %%ZEROCONF%%
+	keyword -shutdown
+}

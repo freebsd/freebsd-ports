@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+# Add the following line to /etc/rc.conf[.local] to enable lvwimax:
+#
+# lvwimax_mac_address="XX:XX:XX:XX:XX:XX", default is "00:00:00:00:00:00"
+
+# XXX: tap0 interface is hardcoded at the driver
+lvwimax_tap_dev="tap0"
+
+name=lvwimax
+lvwimax_mac_address=${lvwimax_mac_address-"00:00:00:00:00:00"}
+command=%%PREFIX%%/sbin/${name}
+
+start_pre()
+{
+  ifconfig ${lvwimax_tap_dev} create
+  ifconfig ${lvwimax_tap_dev} mtu 1386
+  ifconfig ${lvwimax_tap_dev} ether ${lvwimax_mac_address}
+  ifconfig ${lvwimax_tap_dev} up
+}
+
+start_post()
+{
+  dhclient ${lvwimax_tap_dev}
+}
+
+stop_post()
+{
+  ifconfig ${lvwimax_tap_dev} destroy
+}

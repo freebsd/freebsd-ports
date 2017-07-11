@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="onioncat"
+
+: ${onioncat_options="-C"}
+: ${onioncat_hostname="-R"}
+
+command="%%PREFIX%%/bin/ocat"
+command_args="${onioncat_options} ${onioncat_hostname}"
+
+depend() {
+	use net
+	need tor
+}

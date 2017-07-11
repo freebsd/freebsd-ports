@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=spoofer
+command="%%PREFIX%%/bin/spoofer-scheduler"
+command_args="-D"
+
+stop_pre() {
+    %%PREFIX%%/bin/spoofer-cli shutdown
+}
+
+depend() {
+	keyword -shutdown
+}
