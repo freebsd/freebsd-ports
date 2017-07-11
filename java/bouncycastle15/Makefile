@@ -47,6 +47,11 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
+# PR 220612: remove fork="true" in javac and fork="yes" in junit tasks
+.if ${ARCH}=="armv6"
+EXTRA_PATCHES+=	${FILESDIR}/armv6-patch-bc+-build.xml
+.endif
+
 do-install:
 .for jar in ${JARS}
 	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/jars/${jar}-jdk${JDKNVERSION}on-${DVERSION}.jar \
