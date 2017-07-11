@@ -15,14 +15,9 @@ LICENSE_COMB=	multi
 
 BROKEN_powerpc64=	does not build: __adjust.c: internal compiler error: Segmentation fault
 
-<<<<<<< HEAD
-NOPIE_PORTS=	yes
-NORELRO_PORTS=	yes
+USE_HARDENING=	nopie norelro
 
-OPTIONS_DEFINE=	PURE PYGDB EXAMPLES HTML PDF DOCS
-=======
 OPTIONS_DEFINE=	PYGDB EXAMPLES HTML PDF DOCS
->>>>>>> upstream/master
 OPTIONS_DEFAULT=PYGDB
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
