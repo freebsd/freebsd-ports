@@ -8,6 +8,7 @@
 %%JAVASHAREDIR%%/unifi/dl/firmware/U7P/%%BUNDLEDFW%%/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/U7PG2/%%BUNDLEDFW%%/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/US24P250/%%BUNDLEDFW%%/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/US24PL2/%%BUNDLEDFW%%/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/USXG/%%BUNDLEDFW%%/firmware.bin
 %%JAVASHAREDIR%%/unifi/dl/firmware/bundles.json
 %%JAVASHAREDIR%%/unifi/dl/firmware/p2N/3.3.22.4024/firmware.bin
@@ -51,24 +52,25 @@
 %%JAVASHAREDIR%%/unifi/lib/mongo-java-driver-2.14.3.jar
 @comment %%JAVASHAREDIR%%/unifi/lib/native/Linux/amd64/libubnt_webrtc_jni.so
 @comment %%JAVASHAREDIR%%/unifi/lib/native/Linux/armhf/libubnt_webrtc_jni.so
+@comment %%JAVASHAREDIR%%/unifi/lib/native/Linux/x86_64/libubnt_webrtc_jni.so
 @comment %%JAVASHAREDIR%%/unifi/lib/native/Mac/x86_64/libubnt_webrtc_jni.jnilib
-@comment %%JAVASHAREDIR%%/unifi/lib/native/Windows/amd64/ubnt_webrtc_jni.dll
+@comment %%JAVASHAREDIR%%/unifi/lib/native/Windows/x86_64/ubnt_webrtc_jni.dll
 %%JAVASHAREDIR%%/unifi/lib/servo-core-0.9.4.jar
 %%JAVASHAREDIR%%/unifi/lib/servo-graphite-0.9.4.jar
 %%JAVASHAREDIR%%/unifi/lib/slf4j-api-1.7.6.jar
 %%JAVASHAREDIR%%/unifi/lib/slf4j-log4j12-1.7.6.jar
-%%JAVASHAREDIR%%/unifi/lib/snappy-java-1.0.5.jar
+%%JAVASHAREDIR%%/unifi/lib/snappy-java-1.1.2.6.jar
 %%JAVASHAREDIR%%/unifi/lib/spring-beans-3.2.8.RELEASE.jar
 %%JAVASHAREDIR%%/unifi/lib/spring-context-3.2.8.RELEASE.jar
 %%JAVASHAREDIR%%/unifi/lib/spring-core-3.2.8.RELEASE.jar
 %%JAVASHAREDIR%%/unifi/lib/spring-expression-3.2.8.RELEASE.jar
 %%JAVASHAREDIR%%/unifi/lib/spring-test-3.2.8.RELEASE.jar
 %%JAVASHAREDIR%%/unifi/lib/sshj-0.9.0.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-core-7.0.75.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-el-7.0.75.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-jasper-7.0.75.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-juli-7.0.75.jar
-%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-log4j-7.0.75.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-core-%%TOMCATVER%%.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-el-%%TOMCATVER%%.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-jasper-%%TOMCATVER%%.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-juli-%%TOMCATVER%%.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-embed-logging-log4j-%%TOMCATVER%%.jar
 %%JAVASHAREDIR%%/unifi/lib/urlrewritefilter-4.0.4.jar
 %%JAVASHAREDIR%%/unifi/readme.txt
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/WEB-INF/resourcerewrite.xml
@@ -207,6 +209,12 @@
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IW/static@2x.png
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IW/success.png
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IW/success@2x.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/danger.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/danger@2x.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/static.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/static@2x.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/success.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7IWP/success@2x.png
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7MSH/danger.png
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7MSH/danger@2x.png
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/devices/uap/U7MSH/static.png
@@ -305,7 +313,10 @@
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/diagrams/port-mirror.svg
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/diagrams/port-poe-plus.svg
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/diagrams/port-poe.svg
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/diagrams/port-spacer-round.png
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/diagrams/port-spacer.png
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/diagrams/port-uplink.svg
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/diagrams/port-warning.svg
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/dpi/amazon.com/favicon.ico
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/dpi/aol.com/favicon.ico
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/images/dpi/apple.com/favicon.ico
@@ -366,10 +377,6 @@
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/js/main.manage.js
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/js/main.overview.js
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/js/main.wizard.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/js/vendor.hotspot.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/js/vendor.manage.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/js/vendor.overview.js
-%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/js/vendor.wizard.js
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/locales/ca/account.json
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/locales/ca/alerts.json
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/locales/ca/clients.json
@@ -811,6 +818,7 @@
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/locales/zh_CN/transactions.json
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/locales/zh_CN/vouchers.json
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/locales/zh_CN/wizard.json
+%%JAVASHAREDIR%%/unifi/webapps/ROOT/app-unifi/migration.html
 %%JAVASHAREDIR%%/unifi/webapps/ROOT/pages/voucher.jsp
 @dir %%JAVASHAREDIR%%/unifi/conf
 @dir(unifi,,) %%JAVASHAREDIR%%/unifi/data
