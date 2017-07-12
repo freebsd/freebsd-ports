@@ -1382,7 +1382,7 @@ etc/periodic/daily/900.mastodon
 %%WWWDIR%%/db/migrate/20170508230434_create_conversation_mutes.rb
 %%WWWDIR%%/db/migrate/20170516072309_add_index_accounts_on_uri.rb
 %%WWWDIR%%/db/migrate/20170520145338_change_language_filter_to_opt_out.rb
-%%WWWDIR%%/db/migrate/201706%%RUBY_SUFFIX%%152212_create_session_activations.rb
+%%WWWDIR%%/db/migrate/20170623152212_create_session_activations.rb
 %%WWWDIR%%/db/migrate/20170601210557_add_index_on_media_attachments_account_id.rb
 %%WWWDIR%%/db/migrate/20170604144747_add_foreign_keys_for_accounts.rb
 %%WWWDIR%%/db/migrate/20170606113804_change_tag_search_index_to_btree.rb
