@@ -799,6 +799,7 @@
     SUBDIR += py-redis
     SUBDIR += py-riak
     SUBDIR += py-rrdtool_lgpl
+    SUBDIR += py-sispy
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy-migrate
     SUBDIR += py-sqlalchemy10
