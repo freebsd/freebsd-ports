@@ -1259,7 +1259,6 @@
     SUBDIR += libbobcat
     SUBDIR += libbonobo
     SUBDIR += libbonobo-reference
-    SUBDIR += libbrotli
     SUBDIR += libbson
     SUBDIR += libburn
     SUBDIR += libccid
