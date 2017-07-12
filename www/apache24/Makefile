@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.26
+PORTVERSION=	2.4.27
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -78,6 +78,8 @@ IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 
+BROTLI_CONFIGURE_ON=		--with-brotli=${LOCALBASE}
+BROTLI_LIB_DEPENDS=		libbrotlicommon.so:archivers/brotli
 HTTP2_CONFIGURE_ON=		--with-nghttp2=${LOCALBASE}
 HTTP2_LIB_DEPENDS=		libnghttp2.so:www/libnghttp2
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
@@ -85,7 +87,6 @@ LUA_CONFIGURE_WITH=		lua
 LUA_USES=			lua
 PROXY_HTTP2_CONFIGURE_ON=	--with-nghttp2=${LOCALBASE}
 PROXY_HTTP2_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
-
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
 SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
 
@@ -98,7 +99,6 @@ SSL_LDFLAGS=			-L${OPENSSLLIB}
 SSL_USES=			ssl
 
 .include <bsd.port.options.mk>
-
 ETC_SUBDIRS=		Includes envvars.d extra modules.d
 
 APR_CONFIG?=		${LOCALBASE}/bin/apr-1-config
@@ -149,6 +149,11 @@ USE_GNOME=	libxml2
 
 .include <bsd.port.pre.mk>
 .include "${APACHEDIR}/Makefile.modules"
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 &&\
+	${PORT_OPTIONS:MHTTP2} && ${OPENSSLBASE} == /usr
+SUB_FILES+=    pkg-message
+.endif
 
 post-extract:
 # remove possible leftover .svn directories in the sources
