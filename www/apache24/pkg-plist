@@ -109,6 +109,7 @@ libexec/apache24/httpd.exp
 %%MOD_AUTHZ_OWNER%%libexec/apache24/mod_authz_owner.so
 %%MOD_AUTHZ_USER%%libexec/apache24/mod_authz_user.so
 %%MOD_AUTOINDEX%%libexec/apache24/mod_autoindex.so
+%%MOD_BROTLI%%libexec/apache24/mod_brotli.so
 %%MOD_BUCKETEER%%libexec/apache24/mod_bucketeer.so
 %%MOD_BUFFER%%libexec/apache24/mod_buffer.so
 %%MOD_CACHE%%libexec/apache24/mod_cache.so
