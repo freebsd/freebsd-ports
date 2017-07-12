@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.13.2
+DISTVERSION=	2.13.3
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -42,7 +42,7 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		contrib/remote-helpers/git-remote-bzr \
 		contrib/remote-helpers/git-remote-hg \
 		contrib/credential/netrc/git-credential-netrc \
-		contrib/diff-highlight/diff-highlight \
+		contrib/diff-highlight/diff-highlight.perl \
 		contrib/buildsystems/generate contrib/contacts/git-contacts \
 		contrib/svn-fe/svnrdump_sim.py
 TEST_TARGET=	test
