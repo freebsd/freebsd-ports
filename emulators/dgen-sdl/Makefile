@@ -29,4 +29,10 @@ BUILD_DEPENDS+=	nasm:devel/nasm
 CONFIGURE_ARGS+=	--disable-asm
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/@NASM@/s/--//' \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/mz80/Makefile.in \
+		${WRKSRC}/star/Makefile.in
+
 .include <bsd.port.post.mk>
