@@ -1,6 +1,6 @@
---- config/environments/production.rb.orig	2017-05-24 01:40:57 UTC
+--- config/environments/production.rb.orig	2017-07-07 14:09:38 UTC
 +++ config/environments/production.rb
-@@ -104,4 +104,9 @@ Rails.application.configure do
+@@ -98,4 +98,9 @@ Rails.application.configure do
      'X-Content-Type-Options' => 'nosniff',
      'X-XSS-Protection'       => '1; mode=block',
    }
