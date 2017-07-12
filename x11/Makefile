@@ -260,6 +260,7 @@
     SUBDIR += printproto
     SUBDIR += printscreen
     SUBDIR += props
+    SUBDIR += py-pyvirtualdisplay
     SUBDIR += py-qt4-opengl
     SUBDIR += py-qt5-opengl
     SUBDIR += py-xdot
