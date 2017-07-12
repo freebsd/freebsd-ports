@@ -4274,6 +4274,7 @@
     SUBDIR += py-doit
     SUBDIR += py-durus
     SUBDIR += py-dynrules
+    SUBDIR += py-easyprocess
     SUBDIR += py-editdistance
     SUBDIR += py-efilter
     SUBDIR += py-efl
