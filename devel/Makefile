@@ -4167,6 +4167,7 @@
     SUBDIR += py-backports.functools_lru_cache
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports_abc
+    SUBDIR += py-backports.weakref
     SUBDIR += py-bandit
     SUBDIR += py-bcdoc
     SUBDIR += py-billiard
