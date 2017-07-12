@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	httplog
-PORTVERSION=	0.99.5
+PORTVERSION=	0.99.6
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
