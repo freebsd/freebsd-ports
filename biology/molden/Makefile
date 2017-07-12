@@ -3,7 +3,7 @@
 
 PORTNAME=	molden
 PORTVERSION=	5.7
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/
@@ -19,13 +19,11 @@ LICENSE_PERMS=	auto-accept
 
 RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
 
-BROKEN=		Fails to fetch
-
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 USES=		fortran gmake
 USE_XORG=	x11
-USE_GL=		glu
+USE_GL=		gl glu
 MAKEFILE=	makefile
 MAKE_JOBS_UNSAFE=yes
 
