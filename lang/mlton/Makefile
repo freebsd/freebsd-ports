@@ -37,10 +37,6 @@ USE_GCC=	any
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386
-FORBIDDEN=	mlton-compile loops infinitely and is unkillable
-.endif
-
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	gsed:textproc/gsed \
 		htmldoc:textproc/htmldoc
