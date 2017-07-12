@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20170712:
+  AFFECTS: users of devel/apr1
+  AUTHOR: brnrd@FreeBSD.org
+
+  APR was updated to 1.6.0 and APR-util was updated to 1.6.2
+
+  The Apache Portable Runtime project removed support for FreeTDS from the
+  APR Utilities in version 1.6. Users of FreeTDS will have to migrate
+  configurations to use the newly added ODBC support in conjunction with
+  FreeTDS using FreeTDS' ODBC capabilities.
+
+  Please rebuild all ports which are using functions from APR/APR-util
+  such as Apache, Subversion, etc. Normally, you can obtain the list of
+  dependent software by running the following command:
+
+  # pkg info -r libressl
+
+  Then you should rebuild all ports depending on APR(-util) to avoid
+  dangling shared library dependencies. Poudriere and pkg handle this
+  correctly, portmaster and portupgrade users can use the following to
+  rebuild all dependent ports.
+
+  Portmaster users:
+      portmaster -r apr1
+  Portupgrade users:
+      portupgrade -fr devel/apr1
+
 20170710:
   AFFECTS: users of net-im/ejabberd
   AUTHOR: ashish@FreeBSD.org

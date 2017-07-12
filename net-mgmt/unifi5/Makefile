@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unifi5
-PORTVERSION=	5.4.15
+PORTVERSION=	5.5.19
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://www.ubnt.com/downloads/unifi/${PORTVERSION}/ \
@@ -17,12 +17,13 @@ RUN_DEPENDS=	mongodb>0:databases/mongodb \
 		snappyjava>0:archivers/snappy-java
 
 BUILD=		0
-BUNDLEDFW=	3.7.51.6230
+BUNDLEDFW=	3.8.3.6587
+TOMCATVER=	7.0.78
 #UNIFI_TAG=	6cbeae59e7
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR} \
 		JAVA=${JAVA}
-PLIST_SUB+=	BUILDVERSION="${PORTVERSION}.${BUILD}" BUNDLEDFW="${BUNDLEDFW}"
+PLIST_SUB+=	BUILDVERSION="${PORTVERSION}.${BUILD}" BUNDLEDFW="${BUNDLEDFW}" TOMCATVER="${TOMCATVER}"
 
 USES=		cpe zip
 CPE_VENDOR=	ubnt
@@ -47,8 +48,8 @@ RESTRICTED=	Redistribution of bundled firmware images is not permitted
 CONFLICTS=	unifi2-* unifi3-* unifi4-*
 
 post-patch:
-	${RM} ${WRKSRC}/lib/snappy-java-1.0.5.jar
-	(cd ${WRKSRC}/lib && ${LN} -s ${JAVAJARDIR}/snappy-java.jar snappy-java-1.0.5.jar)
+	${RM} ${WRKSRC}/lib/snappy-java-1.1.2.6.jar
+	(cd ${WRKSRC}/lib && ${LN} -s ${JAVAJARDIR}/snappy-java.jar snappy-java-1.1.2.6.jar)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
