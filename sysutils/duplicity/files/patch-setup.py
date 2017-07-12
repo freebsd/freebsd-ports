@@ -1,4 +1,4 @@
---- setup.py.orig	2016-12-31 16:33:12 UTC
+--- setup.py.orig	2017-06-15 18:48:07 UTC
 +++ setup.py
 @@ -23,7 +23,6 @@
  import sys
@@ -18,7 +18,7 @@
  
  if os.name == 'posix':
      LIBRSYNC_DIR = os.environ.get('LIBRSYNC_DIR', '')
-@@ -47,16 +49,10 @@ if os.name == 'posix':
+@@ -47,15 +49,9 @@ if os.name == 'posix':
          incdir_list = [os.path.join(LIBRSYNC_DIR, 'include')]
          libdir_list = [os.path.join(LIBRSYNC_DIR, 'lib')]
  
@@ -32,11 +32,9 @@
 -                'README-REPO',
 -                'README-LOG',
 -                'CHANGELOG']),
--              ]
-+                 ]
+               ]
  
  top_dir = os.path.dirname(os.path.abspath(__file__))
- assert os.path.exists(os.path.join(top_dir, "po")), "Missing 'po' directory."
 @@ -70,46 +66,9 @@ for root, dirs, files in os.walk(os.path
                   ["po/%s/duplicity.mo" % lang]))
  
@@ -100,8 +98,8 @@
 @@ -192,10 +147,7 @@ setup(name="duplicity",
        scripts=['bin/rdiffdir', 'bin/duplicity'],
        data_files=data_files,
-       install_requires=['lockfile'],
--      tests_require=['lockfile', 'mock', 'pexpect'],
+       install_requires=['fasteners'],
+-      tests_require=['fasteners', 'mock', 'pexpect'],
 -      test_suite='testing',
 -      cmdclass={'test': TestCommand,
 -                'install': InstallCommand,
