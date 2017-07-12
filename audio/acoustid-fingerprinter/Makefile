@@ -9,6 +9,7 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	AcoustID audio fingerprint submission tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libtag.so:audio/taglib \
