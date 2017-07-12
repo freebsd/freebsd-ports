@@ -1124,9 +1124,8 @@ CONFIGURE_ARGS+=--add-module=${WRKSRC_arrayvar}
 .endif
 
 .if ${PORT_OPTIONS:MBROTLI}
-NGINX_BROTLI_VERSION=	ada972b
-LIB_DEPENDS+=	libbrotlidec.so:devel/libbrotli \
-		libbrotlienc.so:devel/libbrotli
+NGINX_BROTLI_VERSION=	12529813
+LIB_DEPENDS+=	libbrotlicommon.so:archivers/brotli
 GH_ACCOUNT+=	google:brotli
 GH_PROJECT+=	ngx_brotli:brotli
 GH_TAGNAME+=	${NGINX_BROTLI_VERSION}:brotli
