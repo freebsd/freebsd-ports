@@ -596,6 +596,7 @@ include/wine/windows/netlistmgr.h
 include/wine/windows/netlistmgr.idl
 include/wine/windows/nldef.h
 include/wine/windows/npapi.h
+include/wine/windows/nserror.h
 include/wine/windows/nspapi.h
 include/wine/windows/ntddcdrm.h
 include/wine/windows/ntddndis.h
@@ -883,6 +884,7 @@ include/wine/windows/wmp.h
 include/wine/windows/wmp.idl
 include/wine/windows/wmsbuffer.h
 include/wine/windows/wmsbuffer.idl
+include/wine/windows/wmsdk.h
 include/wine/windows/wmsdkidl.h
 include/wine/windows/wmsdkidl.idl
 include/wine/windows/wnaspi32.h
@@ -988,6 +990,7 @@ lib32/libxcb-dri3.so.0
 lib32/libxcb-glx.so.0
 lib32/libxcb-present.so.0
 lib32/libxcb-sync.so.1
+lib32/libxcb-xfixes.so.0
 lib32/libxcb.so.1
 lib32/libxml2.so.2
 lib32/libxshmfence.so.1
@@ -1011,6 +1014,8 @@ lib32/wine/api-ms-win-core-com-l1-1-1.dll.so
 lib32/wine/api-ms-win-core-com-private-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-console-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-console-l2-1-0.dll.so
+lib32/wine/api-ms-win-core-crt-l1-1-0.dll.so
+lib32/wine/api-ms-win-core-crt-l2-1-0.dll.so
 lib32/wine/api-ms-win-core-datetime-l1-1-0.dll.so
 lib32/wine/api-ms-win-core-datetime-l1-1-1.dll.so
 lib32/wine/api-ms-win-core-debug-l1-1-0.dll.so
@@ -1158,6 +1163,7 @@ lib32/wine/api-ms-win-security-audit-l1-1-1.dll.so
 lib32/wine/api-ms-win-security-base-l1-1-0.dll.so
 lib32/wine/api-ms-win-security-base-l1-2-0.dll.so
 lib32/wine/api-ms-win-security-base-private-l1-1-1.dll.so
+lib32/wine/api-ms-win-security-credentials-l1-1-0.dll.so
 %%STAGING%%lib32/wine/api-ms-win-security-grouppolicy-l1-1-0.dll.so
 lib32/wine/api-ms-win-security-lsalookup-l1-1-0.dll.so
 lib32/wine/api-ms-win-security-lsalookup-l1-1-1.dll.so
@@ -1383,6 +1389,8 @@ lib32/wine/fakedlls/api-ms-win-core-com-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-com-private-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-console-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-console-l2-1-0.dll
+lib32/wine/fakedlls/api-ms-win-core-crt-l1-1-0.dll
+lib32/wine/fakedlls/api-ms-win-core-crt-l2-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-datetime-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-core-datetime-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-core-debug-l1-1-0.dll
@@ -1530,6 +1538,7 @@ lib32/wine/fakedlls/api-ms-win-security-audit-l1-1-1.dll
 lib32/wine/fakedlls/api-ms-win-security-base-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-security-base-l1-2-0.dll
 lib32/wine/fakedlls/api-ms-win-security-base-private-l1-1-1.dll
+lib32/wine/fakedlls/api-ms-win-security-credentials-l1-1-0.dll
 %%STAGING%%lib32/wine/fakedlls/api-ms-win-security-grouppolicy-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-security-lsalookup-l1-1-0.dll
 lib32/wine/fakedlls/api-ms-win-security-lsalookup-l1-1-1.dll

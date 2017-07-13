@@ -4,7 +4,7 @@
 PORTNAME=	openpgm
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	5-2-122
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net devel
 
 MAINTAINER=	vg@FreeBSD.org
@@ -20,6 +20,7 @@ GH_ACCOUNT=	steve-o
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf pathfix perl5 libtool python:build
+USE_PERL5=	build
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	openpgm/pgm
 INSTALL_TARGET=	install-strip
@@ -28,9 +29,11 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTDOCS=	draft-ietf-rmt-bb-pgmcc-03.txt rfc3208.txt
 PORTEXAMPLES=	*
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/../doc/,} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
