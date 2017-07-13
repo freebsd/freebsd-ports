@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zim
-DISTVERSION=	0.67-rc2
+PORTVERSION=	0.67
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
