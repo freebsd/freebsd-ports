@@ -1,0 +1,12 @@
+--- lib/Log/Dispatch/File/Rolling.pm	2014-01-27 05:37:14.000000000 -0500
++++ lib/Log/Dispatch/File/Rolling.pm	2017-06-16 15:18:22.956608000 -0400
+@@ -39,7 +39,8 @@
+ 	my $self = bless {}, $class;
+ 
+ 	# only append mode is supported
+-	$p{mode} = 'append';
++	$p{mode} = 'append';  # Specifies append for Log::Dispatch::File 2.37 through 2.58
++	$self->{mode} = '>>'; # Specifies append for Log::Dispatch::File 2.59+ (no longer done by _basic_init)
+ 
+ 	# base class initialization
+ 	$self->_basic_init(%p);
