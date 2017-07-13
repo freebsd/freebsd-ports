@@ -161,6 +161,7 @@
     SUBDIR += rubygem-bsdconv
     SUBDIR += rubygem-po_to_json
     SUBDIR += rubygem-url_safe_base64
+    SUBDIR += rubygem-xdr
     SUBDIR += shftool
     SUBDIR += showkey
     SUBDIR += ta2as
