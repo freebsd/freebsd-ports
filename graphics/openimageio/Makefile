@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openimageio
-PORTVERSION=	1.6.12
+PORTVERSION=	1.7.10
 DISTVERSIONPREFIX=	Release-
-PORTREVISION=	13
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -12,20 +11,26 @@ COMMENT?=	OpenImageIO graphics library
 
 LICENSE=	BSD3CLAUSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	OpenImageIO
-GH_PROJECT=	oiio
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libImath.so:graphics/ilmbase \
+		libIlmImf.so:graphics/OpenEXR \
+		libpng16.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp \
+		libhdf5.so:science/hdf5
 
 # fbm also installs bin/idiff
 CONFLICTS=	fbm-[0-9]*
 
-USES=		cmake:outsource compiler:c11
+USE_GITHUB=	yes
+GH_ACCOUNT=	OpenImageIO
+GH_PROJECT=	oiio
+
+USES=		cmake:outsource jpeg compiler:c++11-lib
 CMAKE_ARGS=	-DBUILDSTATIC:BOOL=OFF \
 		-DLINKSTATIC:BOOL=OFF \
 		-DNOTHREADS:BOOL=OFF \
 		-DSTOP_ON_WARNING:BOOL=OFF \
-		-DOIIO_BUILD_CPP11:BOOL=OFF \
-		-DOIIO_BUILD_CPP14:BOOL=OFF \
 		-DUSE_OPENSSL:BOOL=OFF
 
 OPTIONS_DEFINE=		DOCS FFMPEG FREETYPE GIF IMAGEVIEWER OCIO OPENCV \
@@ -54,7 +59,8 @@ GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
 IMAGEVIEWER_CMAKE_ON=	-DUSE_QT:BOOL=ON -DUSE_OPENGL:BOOL=ON
 IMAGEVIEWER_CMAKE_OFF=	-DUSE_OPENGL:BOOL=OFF -DUSE_QT:BOOL=OFF
-IMAGEVIEWER_USE=	GL=glew QT4=corelib,gui,opengl,qmake_build,moc_build,rcc_build,uic_build
+IMAGEVIEWER_USE=	GL=gl,glu,glew \
+			QT4=corelib,gui,opengl,qmake_build,moc_build,rcc_build,uic_build
 
 OCIO_CMAKE_ON=		-DUSE_OCIO:BOOL=ON
 OCIO_CMAKE_OFF=		-DUSE_OCIO:BOOL=OFF
@@ -62,11 +68,13 @@ OCIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio
 
 OPENCV_CMAKE_ON=	-DUSE_OPENCV:BOOL=ON
 OPENCV_CMAKE_OFF=	-DUSE_OPENCV:BOOL=OFF
-OPENCV_LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv
+OPENCV_LIB_DEPENDS=	libopencv_highgui.so:graphics/opencv \
+			libopencv_core.so:graphics/opencv2-core \
+			libopenjpeg.so:graphics/openjpeg15
 
 OPENJPEG_CMAKE_ON=	-DUSE_OPENJPEG:BOOL=ON
 OPENJPEG_CMAKE_OFF=	-DUSE_OPENJPEG:BOOL=OFF
-OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15
+OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 
 RAW_CMAKE_ON=		-DUSE_LIBRAW:BOOL=ON
 RAW_CMAKE_OFF=		-DUSE_LIBRAW:BOOL=OFF
@@ -79,20 +87,12 @@ PLIST_SUB+=		LIBVERS=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc
-USE_GCC=	yes
-.endif
-
 .if ${SLAVE_PORT} == no
-LIB_DEPENDS+=	libIlmImf.so:graphics/OpenEXR \
-		libboost_thread.so:devel/boost-libs \
-		libhdf5.so:science/hdf5 \
-		libwebp.so:graphics/webp
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=OFF -DUSE_PYTHON3:BOOL=OFF \
 		-DOIIO_BUILD_TOOLS:BOOL=ON
 .else
-LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
+LIB_DEPENDS+=	libOpenImageIO.so:graphics/openimageio \
 		libboost_python.so:devel/boost-python-libs
 PLIST=		${PKGDIR}/pkg-plist-pybind
 #while oiio supports py3, ports doesn't have py3 support for boost-python yet
