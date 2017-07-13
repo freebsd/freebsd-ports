@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keepassxc
-PORTVERSION=	2.1.4
+PORTVERSION=	2.2.0
 CATEGORIES=	security
 
 MAINTAINER=	melanhit@gmail.com
@@ -33,7 +33,7 @@ GH_ACCOUNT=	keepassxreboot
 
 CMAKE_ARGS+=	-DZLIB_SUPPORTS_GZIP:BOOL=ON
 
-OPTIONS_DEFINE=		AUTOTYPE HTTP TEST
+OPTIONS_DEFINE=		AUTOTYPE HTTP YUBIKEY TEST
 OPTIONS_DEFAULT=	AUTOTYPE HTTP
 OPTIONS_SUB=		yes
 
@@ -44,7 +44,18 @@ AUTOTYPE_USE=		QT5=x11extras XORG=xi,xtst
 HTTP_CMAKE_BOOL=	WITH_XC_HTTP
 HTTP_DESC=		KeePassHTTP support for ChromeIPass and PassIFox
 
+YUBIKEY_CMAKE_BOOL=	WITH_XC_YUBIKEY
+YUBIKEY_DESC=		Include YubiKey support
+YUBIKEY_LIB_DEPENDS=	libyubikey.so:security/libyubikey \
+			libykpers-1.so:security/ykpers
+
 TEST_CMAKE_BOOL=	WITH_TESTS WITH_GUI_TESTS
 TEST_TEST_TARGET=	test
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|Q_OS_LINUX|Q_OS_UNIX|g' \
+		${WRKSRC}/src/core/ScreenLockListenerPrivate.cpp \
+		${WRKSRC}/src/gui/MainWindow.cpp \
+		${WRKSRC}/src/main.cpp
 
 .include <bsd.port.mk>

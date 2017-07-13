@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-06-25 21:52:43 UTC
++++ CMakeLists.txt
+@@ -89,7 +89,7 @@ add_gcc_compiler_flags("-Wformat=2 -Wmis
+ add_gcc_compiler_flags("-fvisibility=hidden")
+ add_gcc_compiler_cxxflags("-fvisibility-inlines-hidden")
+ 
+-if((CMAKE_COMPILER_IS_GNUCXX AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.8.999) OR CMAKE_COMPILER_IS_CLANGXX)
++if((CMAKE_COMPILER_IS_GNUCXX AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.8.999) OR (CMAKE_COMPILER_IS_CLANGXX AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 3.8))
+     add_gcc_compiler_flags("-fstack-protector-strong")
+ else()
+     add_gcc_compiler_flags("-fstack-protector --param=ssp-buffer-size=4")
