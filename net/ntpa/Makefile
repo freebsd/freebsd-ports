@@ -3,6 +3,7 @@
 
 PORTNAME=	ntpa
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://dist.innolan.net/
 
@@ -11,6 +12,9 @@ COMMENT=	NTP data collection and charting
 
 LICENSE=	MIT BSD3CLAUSE PostgreSQL GPLv2
 LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	newtonsoft-json>=0:devel/newtonsoft-json
+RUN_DEPENDS=	newtonsoft-json>=0:devel/newtonsoft-json
 
 USES=		mono pkgconfig autoreconf gmake
 GNU_CONFIGURE=	yes
@@ -27,7 +31,7 @@ OPTIONS_DEFINE=	WEBFILES GRAPH
 WEBFILES_DESC=	Install web files
 GRAPH_DESC=	Graph generation (requires Cairo)
 
-GRAPH_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/NPlot.pc:graphics/nplot
+GRAPH_BUILD_DEPENDS=	nplot>=0:graphics/nplot
 GRAPH_RUN_DEPENDS=	nplot>=0:graphics/nplot
 
 CONFIGURE_ARGS+=	--libdir=${LOCALBASE}/libexec --bindir=${LOCALBASE}/libexec/ntpa
