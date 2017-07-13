@@ -83,7 +83,7 @@ DEVRANDOM_VARS_OFF=	APR_CONF_ARGS+=--without-devrandom
 # to avoid failures if previous apr_version.h is present
 APU_CPPFLAGS=	-I${APR_WRKDIR}/include
 
-BDB_VARS=		APU_CONF_ARGS+=--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
+BDB_VARS=	APU_CONF_ARGS+=--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
 BDB_VARS_OFF=	APU_CONF_ARGS+=--without-berkeley-db
 GDBM_VARS=	APU_CONF_ARGS+=--with-gdbm=${LOCALBASE}
 LDAP_VARS=	APU_CONF_ARGS+="--with-ldap-include=${LOCALBASE}/include \
@@ -91,7 +91,6 @@ LDAP_VARS=	APU_CONF_ARGS+="--with-ldap-include=${LOCALBASE}/include \
 MYSQL_VARS=	APU_CONF_ARGS+=--with-mysql=${LOCALBASE} \
 		APU_CPPFLAGS+="-I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H" \
 		LIBS+=-L${LOCALBASE}/lib/mysql
-
 NDBM_VARS=	APU_CONF_ARGS+=--with-ndbm=/usr
 NSS_VARS=	APU_CONF_ARGS+=--with-nss=${LOCALBASE} \
 		APU_CPPFLAGS+=-I${LOCALBASE}/include/nss \
@@ -103,7 +102,7 @@ SSL_VARS=	APU_CONF_ARGS+=--with-openssl=${OPENSSLBASE} \
 SSL_VARS_OFF=	APU_CONF_ARGS+=--without-openssl
 PGSQL_VARS=	APU_CONF_ARGS+=--with-pgsql=${LOCALBASE} \
 		APU_CONF_ENV+=ac_cv_path_PGSQL_CONFIG=""
-SQLITE_VARS=		APU_CONF_ENV+=--with-sqlite3=${LOCALBASE}
+SQLITE_VARS=		APU_CONF_ARGS+=--with-sqlite3=${LOCALBASE}
 SQLITE_VARS_OFF=	APU_CONF_ARGS+=--without-sqlite3
 
 .for db in GDBM NDBM LDAP ODBC MYSQL NSS PGSQL

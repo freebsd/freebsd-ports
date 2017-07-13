@@ -20,7 +20,7 @@ you update your ports collection, before attempting any port upgrades.
   such as Apache, Subversion, etc. Normally, you can obtain the list of
   dependent software by running the following command:
 
-  # pkg info -r libressl
+  # pkg info -r apr1
 
   Then you should rebuild all ports depending on APR(-util) to avoid
   dangling shared library dependencies. Poudriere and pkg handle this
