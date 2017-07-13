@@ -3680,6 +3680,7 @@
     SUBDIR += p8-platform
     SUBDIR += paexec
     SUBDIR += papi
+    SUBDIR += papilio-loader
     SUBDIR += pas2dox
     SUBDIR += pasm
     SUBDIR += patch
