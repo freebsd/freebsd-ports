@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nexpose
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
