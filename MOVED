@@ -9462,3 +9462,5 @@ devel/etcd3|devel/etcd31|2017-07-07|Version 3.2 introduces breaking changes
 sysutils/py-iocage|sysutils/py3-iocage|2017-07-10|Has expired: obsoleted by sysutils/py3-iocage port using Python 3 instead of Python 2
 www/mediawiki126|www/mediawiki127|2017-07-10|Has expired: Upstream support EoL
 devel/libbrotli|archivers/brotli|2017-07-12|meta project no longer required to build libs
+dns/opendnssec13|dns/opendnssec14|2017-07-13|Has expired: Approaching EOL, upgrade to opendnssec 1.4 or 2
+multimedia/banshee||2017-07-13|Has expired: Project is not being actively maintained upstream anymore
