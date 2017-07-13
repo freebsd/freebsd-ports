@@ -289,6 +289,8 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/netlink/tc.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/protocol/enum.py
+%%PYTHON_SITELIBDIR%%/exabgp/protocol/enum.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/family.py
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/family.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/protocol/ip/__init__.py
@@ -375,18 +377,15 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/util/usage.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/version.py
 %%PYTHON_SITELIBDIR%%/exabgp/version.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/watchdog-1.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/watchdog-1.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/tcp-server
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/stderr-1.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/syslog-1.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/read-write.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/dynamic-1.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/processes/dynamic-1.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-tcpcontrol.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exabgp/ibgp4-healthcheck.txt
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/exabgp/processes
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/exabgp
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ibgp4-healthcheck.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ibgp4-tcpcontrol.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/processes/dynamic-1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/processes/dynamic-1.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/processes/read-write.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/processes/stderr-1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/processes/syslog-1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/processes/tcp-server
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/processes/watchdog-1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/processes/watchdog-1.sh
 @dir etc/exabgp
 @unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/exabgp`` to remove any configuration files left."; fi
