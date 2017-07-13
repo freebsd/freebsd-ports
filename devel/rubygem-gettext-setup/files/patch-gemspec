@@ -5,7 +5,7 @@
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
 -      s.add_runtime_dependency(%q<fast_gettext>.freeze, ["~> 1.1.0"])
-+      s.add_runtime_dependency(%q<fast_gettext>.freeze, [">= 1.1.0"])
++      s.add_runtime_dependency(%q<fast_gettext>.freeze, ["~> 1.1"])
        s.add_runtime_dependency(%q<gettext>.freeze, [">= 3.0.2"])
        s.add_runtime_dependency(%q<locale>.freeze, [">= 0"])
        s.add_development_dependency(%q<bundler>.freeze, ["~> 1.3"])
