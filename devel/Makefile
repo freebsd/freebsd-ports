@@ -4203,6 +4203,7 @@
     SUBDIR += py-circuits
     SUBDIR += py-cjson
     SUBDIR += py-cld
+    SUBDIR += py-cli-helpers
     SUBDIR += py-cliapp
     SUBDIR += py-click
     SUBDIR += py-click-log
