@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.14.28
+PORTVERSION=	4.15.0
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -21,12 +21,13 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-jsobfu>=0:www/rubygem-jsobfu \
 		rubygem-json1>=0:devel/rubygem-json1 \
 		rubygem-metasm>=0:devel/rubygem-metasm \
+		rubygem-metasploit-aggregator>=0:security/rubygem-metasploit-aggregator \
 		rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.2.32:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.1.9:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=1.2.37:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.1.10:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
@@ -43,6 +44,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
 		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
+		rubygem-pdf-reader>=0:print/rubygem-pdf-reader \
+		rubygem-dnsruby>=0:dns/rubygem-dnsruby \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
 		rubygem-rex-arch>=0:security/rubygem-rex-arch \
@@ -71,7 +74,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-filesize>=0:devel/rubygem-filesize \
 		rubygem-openvas-omp>=0:security/rubygem-openvas-omp \
 		rubygem-nessus_rest>=0:security/rubygem-nessus_rest \
-		rubygem-nexpose>=0:security/rubygem-nexpose
+		rubygem-nexpose>=0:security/rubygem-nexpose \
+		rubygem-xdr>=0:converters/rubygem-xdr
 
 SCRIPTS=	msfconsole msfd msfrpc msfrpcd msfvenom
 
@@ -108,8 +112,7 @@ RUN_DEPENDS+=	rubygem-xmlrpc>=0:net/rubygem-xmlrpc
 
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
-		/rb-readline/d ; \
-		/metasploit-aggregator/d' \
+		/rb-readline/d' \
 		${WRKSRC}/metasploit-framework.gemspec
 	${REINPLACE_CMD} "/pg/s|, '0.20.0'||" ${WRKSRC}/metasploit-framework.gemspec
 .if ${RUBY_VER} < 2.4
