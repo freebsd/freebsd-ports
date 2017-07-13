@@ -19,10 +19,10 @@ BROKEN_aarch64=		Fails to link: missing sbrk
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	bdf4115
+GH_TAGNAME=	01a98e9
 
 EMACS_VER=	26.0.50
-EMACS_REV=	20170610
+EMACS_REV=	20170712
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build cpe gmake makeinfo ncurses pkgconfig
 INFO_PATH=	${DATADIR_REL}/info

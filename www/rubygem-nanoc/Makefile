@@ -10,6 +10,7 @@ MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Simple but flexible static site generator
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-cri>=2.3:devel/rubygem-cri \
 		rubygem-ddplugin>=1.0:devel/rubygem-ddplugin \
@@ -17,7 +18,6 @@ RUN_DEPENDS=	rubygem-cri>=2.3:devel/rubygem-cri \
 		rubygem-ref>=2.0:devel/rubygem-ref \
 
 NO_ARCH=	yes
-
 USE_RUBY=	yes
 USES=		gem
 

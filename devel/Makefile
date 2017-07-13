@@ -3680,6 +3680,7 @@
     SUBDIR += p8-platform
     SUBDIR += paexec
     SUBDIR += papi
+    SUBDIR += papilio-loader
     SUBDIR += pas2dox
     SUBDIR += pasm
     SUBDIR += patch
@@ -4163,6 +4164,7 @@
     SUBDIR += py-avro
     SUBDIR += py-babel
     SUBDIR += py-babelfish
+    SUBDIR += py-backports.csv
     SUBDIR += py-backports.functools_lru_cache
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports.weakref
@@ -4201,6 +4203,7 @@
     SUBDIR += py-circuits
     SUBDIR += py-cjson
     SUBDIR += py-cld
+    SUBDIR += py-cli-helpers
     SUBDIR += py-cliapp
     SUBDIR += py-click
     SUBDIR += py-click-log
