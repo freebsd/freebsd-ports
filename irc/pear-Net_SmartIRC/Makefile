@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_SmartIRC
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	irc www pear
 
 MAINTAINER=	joneum@FreeBSD.org
