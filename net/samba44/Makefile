@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}44
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=		${SAMBA4_DISTNAME}
@@ -13,13 +13,13 @@ COMMENT?=		Free SMB/CIFS and AD/DC server and client for Unix
 
 LICENSE=		GPLv3
 
-CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba4[1-356]-4.* p5-Parse-Pidl-4.*
+CONFLICTS?=		*samba3[2-6]-3.* samba4-4.0.* samba4[1-35-9]-4.* p5-Parse-Pidl-4.*
 
 #EXTRA_PATCHES=		${PATCHDIR}/extra-patch-security:-p1
 
 SAMBA4_BASENAME=	samba
 SAMBA4_PORTNAME=	${SAMBA4_BASENAME}4
-SAMBA4_VERSION=		4.4.14
+SAMBA4_VERSION=		4.4.15
 SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=		${WRKDIR}/${DISTNAME}
@@ -159,11 +159,6 @@ CONFIGURE_ARGS+=	\
 			--without-gettext \
 			--with-sendfile-support \
 			${ICONV_CONFIGURE_BASE}
-# for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
-.if ${ARCH} == "amd64"
-CFLAGS+=		-fno-omit-frame-pointer
-.endif
-
 .if ${PORT_OPTIONS:MBIND99}
 RUN_DEPENDS+=		bind99>=9.9.0.0:dns/bind99
 SUB_LIST+=		NSUPDATE="@comment "
@@ -399,10 +394,19 @@ SUB_FILES=		pkg-message README.FreeBSD
 # Make sure that the right version of Python is used by the tools
 # https://bugzilla.samba.org/show_bug.cgi?id=7305
 SHEBANG_FILES=		${PATCH_WRKSRC}/source4/scripting/bin/*
+
+# for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
+.if ${ARCH} == "amd64"
+CFLAGS+=		-fno-omit-frame-pointer
+.endif
 # No fancy color error messages
 .if ${COMPILER_TYPE} == "clang"
 CFLAGS+=		-fno-color-diagnostics
 .endif
+.if ${readline_ARGS} == port
+CFLAGS+=			-D_FUNCTION_DEF
+.endif
+
 CONFIGURE_ENV+=		NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
 MAKE_ENV+=		NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
 
