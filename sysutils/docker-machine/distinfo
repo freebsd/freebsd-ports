@@ -1,3 +1,3 @@
-TIMESTAMP = 1499279855
-SHA256 (docker-machine-v0.12.1_GH0.tar.gz) = 5da636dda6f048709dfb65a371fc8429151c52af4f345bdaa492cb1952bc0ccc
-SIZE (docker-machine-v0.12.1_GH0.tar.gz) = 1663990
+TIMESTAMP = 1499950844
+SHA256 (docker-machine-v0.12.2_GH0.tar.gz) = 94331c66bf9dc4200c20c8bbf48920783507f804f9698df9cd8a720eaff9b74c
+SIZE (docker-machine-v0.12.2_GH0.tar.gz) = 1726467
