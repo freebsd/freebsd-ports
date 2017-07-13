@@ -5,6 +5,8 @@ PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.7.18
 DISTVERSIONSUFFIX?=	-25.12
 CATEGORIES=	databases ipv6
+MASTER_SITES+=	SF/boost/boost/1.59.0:boost
+DISTFILES+=	boost_1_59_0${EXTRACT_SUFX}:boost
 PKGNAMESUFFIX=	57-server
 
 MAINTAINER=	devel@galeracluster.com
@@ -61,7 +63,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_SHAREDIR="share" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
 		-DMYSQL_KEYRINGDIR="${ETCDIR}/keyring" \
-		-DWITH_BOOST="${WRKSRC}/boost" \
+		-DWITH_BOOST="${WRKDIR}/boost_1_59_0" \
 		-DWITH_EDITLINE=system \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
