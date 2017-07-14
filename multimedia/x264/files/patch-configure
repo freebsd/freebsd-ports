@@ -31,6 +31,15 @@
          ARCH="AARCH64"
          stack_alignment=16
          AS="${AS-${CC}}"
+@@ -875,7 +869,7 @@ elif [ $compiler = ICC -a $ARCH = X86 ]; then
+     fi
+ fi
+ 
+-if [ $asm = auto -a \( $ARCH = X86 -o $ARCH = X86_64 \) ] ; then
++if [ $cli_libx264 != system -a $asm = auto -a \( $ARCH = X86 -o $ARCH = X86_64 \) ] ; then
+     if ! as_check "vpmovzxwd ymm0, xmm0" ; then
+         VER=`($AS --version || echo no assembler) 2>/dev/null | head -n 1`
+         echo "Found $VER"
 @@ -889,9 +883,6 @@ if [ $asm = auto -a \( $ARCH = X86 -o $ARCH = X86_64 \
  fi
  
