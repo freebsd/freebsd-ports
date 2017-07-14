@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8
 CATEGORIES=	print
 MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		SF/freetype/freetype-demos/${PORTVERSION}
