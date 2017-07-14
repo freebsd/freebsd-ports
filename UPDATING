@@ -28,7 +28,7 @@ you update your ports collection, before attempting any port upgrades.
   rebuild all dependent ports.
 
   Portmaster users:
-      portmaster -r apr1
+      portmaster -r apr
   Portupgrade users:
       portupgrade -fr devel/apr1
 
