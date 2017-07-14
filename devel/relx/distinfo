@@ -1,4 +1,4 @@
-TIMESTAMP = 1495717817
+TIMESTAMP = 1500056002
 SHA256 (relx-cache-14.tar.gz) = e276a312204b0667b44b5ac939a5f92e2aab7d30888a3ab24e0491195ea901e3
 SIZE (relx-cache-14.tar.gz) = 1904129
 SHA256 (bbmustache-1.0.4.tar) = 03b0d47db66e86df993896dce7578d7e4aae5f84636809b45fa8a3e34ee59b12
@@ -11,5 +11,5 @@ SHA256 (getopt-0.8.2.tar) = 736e6db3679fbbad46373efb96b69509f8e420281635e9d92989
 SIZE (getopt-0.8.2.tar) = 20480
 SHA256 (providers-1.6.0.tar) = 0f6876529a613d34224de8c61d3660388eb981142360f2699486d8536050ce2f
 SIZE (providers-1.6.0.tar) = 20480
-SHA256 (erlware-relx-v3.23.0_GH0.tar.gz) = 605c39be8ddf3276466770171b6835800657fd1e8e9ad28022a63f1abd09e881
-SIZE (erlware-relx-v3.23.0_GH0.tar.gz) = 114342
+SHA256 (erlware-relx-v3.23.1_GH0.tar.gz) = 55b9af46c0a2ad8f9f38cc3345ccb78d42b31f7a42ed1dce14fdedca38774441
+SIZE (erlware-relx-v3.23.1_GH0.tar.gz) = 114403
