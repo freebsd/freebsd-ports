@@ -39,6 +39,7 @@
     SUBDIR += android-file-transfer-qt5
     SUBDIR += ansible
     SUBDIR += ansible1
+    SUBDIR += anvil
     SUBDIR += apachetop
     SUBDIR += apcpwr
     SUBDIR += apcupsd

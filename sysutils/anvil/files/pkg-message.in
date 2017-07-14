@@ -1,0 +1,26 @@
+After installing anvil, this is a short checklist of things to do:
+
+* adjust anvil.conf
+
+* run 'cert-puller -s' to see the visudo settings you need
+
+* adjust the service configuration files if cert filenames are different
+
+* By default, anvil uses:
+
+  * example.org.fullchain.cer
+  * example.org.key
+
+* anvil does not distribute .key files. Do that manually.
+
+* install the crontab for anvil: sudo crontab -e -u anvil:
+
+###
+# use /bin/sh to run commands, overriding the default set by cron
+SHELL=/bin/sh
+# mail any output to here, no matter whose crontab this is
+MAILTO=you@example.org
+
+7 13 * * * %%PREFIX%%/bin/cert-puller
+###
+
