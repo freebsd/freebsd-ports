@@ -214,44 +214,30 @@ check-makevars::
 
 # Error checking: JAVA_VERSION
 .if !defined(_JAVA_VERSION_LIST_REGEXP)
-.	for v in ${_JAVA_VERSION_LIST}
-.		if defined(_JAVA_VERSION_LIST_REGEXP)
-_JAVA_VERSION_LIST_REGEXP:=		${_JAVA_VERSION_LIST_REGEXP}\|
-.		endif
-_JAVA_VERSION_LIST_REGEXP:=		${_JAVA_VERSION_LIST_REGEXP}$v
-.	endfor
+_JAVA_VERSION_LIST_REGEXP=	${_JAVA_VERSION_LIST:C/\+/\\+/:ts|}
 .endif
 
-
 check-makevars::
-	@test ! -z "${JAVA_VERSION}" && ( ${ECHO_CMD} "${JAVA_VERSION}" | ${TR} " " "\n" | ${GREP} -q "${_JAVA_VERSION_LIST_REGEXP}" || \
+	@test ! -z "${JAVA_VERSION}" && ( ${ECHO_CMD} "${JAVA_VERSION}" | ${TR} " " "\n" | ${GREP} -Eq "${_JAVA_VERSION_LIST_REGEXP}" || \
 	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${__JAVA_VERSION_LIST} (with an optional \"+\" suffix.)"; ${FALSE})) || true
 
 # Error checking: JAVA_VENDOR
 .if !defined(_JAVA_VENDOR_LIST_REGEXP)
-.	for v in ${_JAVA_VENDOR_LIST}
-.		if defined(_JAVA_VENDOR_LIST_REGEXP)
-_JAVA_VENDOR_LIST_REGEXP:=		${_JAVA_VENDOR_LIST_REGEXP}\|
-.		endif
-_JAVA_VENDOR_LIST_REGEXP:=		${_JAVA_VENDOR_LIST_REGEXP}$v
-.	endfor
+_JAVA_VENDOR_LIST_REGEXP=	${_JAVA_VENDOR_LIST:ts|}
 .endif
+
 check-makevars::
-	@test ! -z "${JAVA_VENDOR}" && ( ${ECHO_CMD} "${JAVA_VENDOR}" | ${TR} " " "\n" | ${GREP} -q "${_JAVA_VENDOR_LIST_REGEXP}" || \
+	@test ! -z "${JAVA_VENDOR}" && ( ${ECHO_CMD} "${JAVA_VENDOR}" | ${TR} " " "\n" | ${GREP} -Eq "${_JAVA_VENDOR_LIST_REGEXP}" || \
 	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VENDOR}\" is not a valid value for JAVA_VENDOR. It should be one or more of: ${_JAVA_VENDOR_LIST}"; \
 	${FALSE})) || true
 
 # Error checking: JAVA_OS
 .if !defined(_JAVA_OS_LIST_REGEXP)
-.	for v in ${_JAVA_OS_LIST}
-.		if defined(_JAVA_OS_LIST_REGEXP)
-_JAVA_OS_LIST_REGEXP:=		${_JAVA_OS_LIST_REGEXP}\|
-.		endif
-_JAVA_OS_LIST_REGEXP:=		${_JAVA_OS_LIST_REGEXP}$v
-.	endfor
+_JAVA_OS_LIST_REGEXP=	${_JAVA_OS_LIST:ts|}
 .endif
+
 check-makevars::
-	@test ! -z "${JAVA_OS}" && ( ${ECHO_CMD} "${JAVA_OS}" | ${TR} " " "\n" | ${GREP} -q "${_JAVA_OS_LIST_REGEXP}" || \
+	@test ! -z "${JAVA_OS}" && ( ${ECHO_CMD} "${JAVA_OS}" | ${TR} " " "\n" | ${GREP} -Eq "${_JAVA_OS_LIST_REGEXP}" || \
 	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}"; \
 	${FALSE})) || true
 
