@@ -1,6 +1,6 @@
---- src/pingus/pingus_main.cpp.orig	2011-12-25 01:46:47.000000000 +0400
-+++ src/pingus/pingus_main.cpp	2014-10-17 23:57:58.000000000 +0400
-@@ -465,7 +465,7 @@
+--- src/pingus/pingus_main.cpp.orig	2011-12-24 21:46:47 UTC
++++ src/pingus/pingus_main.cpp
+@@ -465,7 +465,7 @@ PingusMain::init_path_finder()
  void
  PingusMain::print_greeting_message()
  {
