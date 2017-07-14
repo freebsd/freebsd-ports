@@ -3,6 +3,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,7 +22,7 @@ GH_TUPLE=	imomaliev:tmux-bash-completion:ef56d3e:bash
 USE_HARDENING=	cfi pie relro safestack
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --enable-utempter
 
 PLIST_FILES=	bin/tmux \
 		man/man1/tmux.1.gz \
