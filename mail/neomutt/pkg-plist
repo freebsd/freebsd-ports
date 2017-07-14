@@ -2,7 +2,6 @@ bin/mutt
 bin/pgpewrap
 bin/pgpring
 bin/smime_keys
-@sample etc/Muttrc.dist etc/Muttrc
 man/man1/mutt.1.gz
 man/man1/pgpewrap.1.gz
 man/man1/pgpring.1.gz
@@ -10,6 +9,7 @@ man/man1/smime_keys.1.gz
 man/man5/mbox.5.gz
 man/man5/mmdf.5.gz
 man/man5/muttrc.5.gz
+@sample etc/Muttrc.dist etc/Muttrc
 %%NLS%%share/locale/bg/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/mutt.mo
@@ -40,22 +40,24 @@ man/man5/muttrc.5.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mutt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mutt.mo
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/hcache-bench/README.md
-%%PORTDOCS%%%%DOCSDIR%%/hcache-bench/muttrc
-%%PORTDOCS%%%%DOCSDIR%%/hcache-bench/neomutt-hcache-bench.sh
-%%PORTDOCS%%%%DOCSDIR%%/lua/test_lua-api_runner.muttrc
-%%PORTDOCS%%%%DOCSDIR%%/lua/test_lua-api_spec.lua
+%%PORTDOCS%%%%DOCSDIR%%/CODE_OF_CONDUCT.md
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.neomutt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/PGP-Notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.SSL
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/advancedusage.html
+%%PORTDOCS%%%%DOCSDIR%%/colorschemes/neonwolf-256.muttrc
+%%PORTDOCS%%%%DOCSDIR%%/colorschemes/solarized-dark-256.muttrc
+%%PORTDOCS%%%%DOCSDIR%%/colorschemes/vombatidae.mutt
+%%PORTDOCS%%%%DOCSDIR%%/colorschemes/zenburn.muttrc
 %%PORTDOCS%%%%DOCSDIR%%/configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/gettingstarted.html
+%%PORTDOCS%%%%DOCSDIR%%/hcache-bench/README.md
+%%PORTDOCS%%%%DOCSDIR%%/hcache-bench/muttrc
+%%PORTDOCS%%%%DOCSDIR%%/hcache-bench/neomutt-hcache-bench.sh
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/keybase/LICENSE
@@ -69,6 +71,13 @@ man/man5/muttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/keybase/pgpdecrypt.sh
 %%PORTDOCS%%%%DOCSDIR%%/keybase/pgpverify.sh
 %%PORTDOCS%%%%DOCSDIR%%/keybase/verify.sh
+%%PORTDOCS%%%%DOCSDIR%%/logo/mutt-128.png
+%%PORTDOCS%%%%DOCSDIR%%/logo/mutt-256.png
+%%PORTDOCS%%%%DOCSDIR%%/logo/mutt-32.png
+%%PORTDOCS%%%%DOCSDIR%%/logo/mutt-64.png
+%%PORTDOCS%%%%DOCSDIR%%/logo/mutt.svg
+%%PORTDOCS%%%%DOCSDIR%%/lua/test_lua-api_runner.muttrc
+%%PORTDOCS%%%%DOCSDIR%%/lua/test_lua-api_spec.lua
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%PORTDOCS%%%%DOCSDIR%%/mimesupport.html
