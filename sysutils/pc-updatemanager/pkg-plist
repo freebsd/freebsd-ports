@@ -11,4 +11,3 @@ share/trueos/pc-updatemanager/conf/sysupdate.conf
 share/trueos/pc-updatemanager/fbsd-dist.pub
 share/trueos/pc-updatemanager/rc-doupdate
 share/trueos/pc-updatemanager/rc-update
-share/trueos/pc-updatemanager/ipfs
