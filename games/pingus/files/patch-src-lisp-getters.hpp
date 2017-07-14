@@ -1,6 +1,6 @@
---- src/lisp/getters.hpp.orig	2007-08-17 20:20:09.000000000 +0400
-+++ src/lisp/getters.hpp	2013-08-09 13:42:19.551761882 +0400
-@@ -30,7 +30,7 @@
+--- src/lisp/getters.hpp.orig	2011-12-24 21:46:47 UTC
++++ src/lisp/getters.hpp
+@@ -30,7 +30,7 @@ static inline bool property_get(const Li
    if(lisp->get_list_size() != 2)
      return false;
    

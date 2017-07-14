@@ -1,6 +1,6 @@
---- src/pingus/screens/pingus_menu.cpp.orig	2011-12-25 01:46:47.000000000 +0400
-+++ src/pingus/screens/pingus_menu.cpp	2014-10-17 23:58:35.000000000 +0400
-@@ -153,7 +153,7 @@
+--- src/pingus/screens/pingus_menu.cpp.orig	2011-12-24 21:46:47 UTC
++++ src/pingus/screens/pingus_menu.cpp
+@@ -153,7 +153,7 @@ PingusMenu::draw_background(DrawingConte
                           gc.get_height()/2 - 280));
  
    gc.print_left(Fonts::pingus_small, Vector2i(gc.get_width()/2 - 400 + 25, gc.get_height()-140),
