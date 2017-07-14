@@ -31,12 +31,10 @@ SAMD_DESC=	Core support for SAMD boards (Zero/MKR1000)
 SAMD_GH_TUPLE=	arduino:ArduinoCore-samd:1.6.12:samd/hardware/arduino/samd
 SAMD_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-hardware_arduino_samd_platform.txt
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%ARCH%%|${ARCH}|g' -e 's|%%OSREL%%|${OSREL:R}|g' ${WRKSRC}/hardware/package_index_bundled.json
 
 do-install:
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "hardware" ${STAGEDIR}${PREFIX}/arduino ${FIND_EXPR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
