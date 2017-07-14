@@ -17,10 +17,10 @@ GH_ACCOUNT=	chazomaticus
 GH_TAGNAME=	64869df
 
 USES=		cmake
-USE_GL=		glut
+USE_GL=		gl glu glut
 USE_SDL=	mixer sdl
 USE_GNOME=	gtk30
-USE_XORG=	xmu
+USE_XORG=	xmu xi
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-lm
 
