@@ -19,7 +19,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION?=	0
+PORTREVISION?=	1 # 0 in libx264
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -53,7 +53,7 @@ PLIST_FILES?=	bin/x264
 OPTIONS_DEFINE+=	DEBUG FFMS GCC LAVF PGO SWSCALE
 OPTIONS_RADIO+=		MP4
 OPTIONS_RADIO_MP4+=	GPAC LSMASH
-OPTIONS_DEFAULT+=	LSMASH
+OPTIONS_DEFAULT+=	FFMS LAVF LSMASH SWSCALE
 
 FFMS_DESC=		FFmpeg Source input support
 GPAC_DESC=		GPAC library support
