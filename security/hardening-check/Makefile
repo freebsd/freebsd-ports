@@ -4,8 +4,7 @@
 PORTNAME=	hardening-check
 PORTVERSION=	2.6
 CATEGORIES=	security
-MASTER_SITES=	DEBIAN
-MASTER_SITE_SUBDIR=	pool/main/h/hardening-wrapper
+MASTER_SITES=	DEBIAN/pool/main/h/hardening-wrapper
 DISTNAME=	hardening-wrapper_${PORTVERSION}
 
 MAINTAINER=	amutu@amutu.com
