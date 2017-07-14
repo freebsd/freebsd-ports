@@ -39,10 +39,10 @@ BUILD_DEPENDS=	yasm>=1.2.0:devel/yasm \
 LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
 X264_BUILD=	148
-X264_REV=	2768
-X264_COMMIT=	d32d7bf1c6923a42cbd5ac2fd540ecbb009ba681
+X264_REV=	2795
+X264_COMMIT=	aaa9aa83a111ed6f1db253d5afa91c5fc844583f
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
-X264_SNAPSHOT=	20170522
+X264_SNAPSHOT=	20170626
 
 USES?=		pkgconfig
 USES+=		gmake localbase shebangfix tar:bzip2
