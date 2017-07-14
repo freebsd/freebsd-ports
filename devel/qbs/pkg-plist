@@ -35,6 +35,7 @@ include/qbs/tools/settings.h
 include/qbs/tools/settingsmodel.h
 include/qbs/tools/setupprojectparameters.h
 include/qbs/tools/toolchains.h
+include/qbs/tools/version.h
 include/qbs/use_installed_corelib.pri
 include/qbs/use_installed_qtprofilesetup.pri
 lib/libqbscore.prl
