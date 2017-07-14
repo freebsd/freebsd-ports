@@ -1,38 +1,48 @@
 bin/keepassxc
+bin/keepassxc-cli
 %%AUTOTYPE%%lib/keepassxc/libkeepassx-autotype-xcb.so
 share/applications/keepassxc.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
 share/icons/hicolor/128x128/apps/keepassxc-locked.png
+share/icons/hicolor/128x128/apps/keepassxc-unlocked.png
 share/icons/hicolor/128x128/apps/keepassxc.png
 share/icons/hicolor/128x128/mimetypes/application-x-keepassxc.png
 share/icons/hicolor/16x16/apps/keepassxc-dark.png
 share/icons/hicolor/16x16/apps/keepassxc-locked.png
+share/icons/hicolor/16x16/apps/keepassxc-unlocked.png
 share/icons/hicolor/16x16/apps/keepassxc.png
 share/icons/hicolor/16x16/mimetypes/application-x-keepassxc.png
 share/icons/hicolor/22x22/mimetypes/application-x-keepassxc.png
 share/icons/hicolor/24x24/apps/keepassxc-dark.png
 share/icons/hicolor/24x24/apps/keepassxc-locked.png
+share/icons/hicolor/24x24/apps/keepassxc-unlocked.png
 share/icons/hicolor/24x24/apps/keepassxc.png
 share/icons/hicolor/256x256/apps/keepassxc-dark.png
 share/icons/hicolor/256x256/apps/keepassxc-locked.png
+share/icons/hicolor/256x256/apps/keepassxc-unlocked.png
 share/icons/hicolor/256x256/apps/keepassxc.png
 share/icons/hicolor/32x32/apps/keepassxc-dark.png
 share/icons/hicolor/32x32/apps/keepassxc-locked.png
+share/icons/hicolor/32x32/apps/keepassxc-unlocked.png
 share/icons/hicolor/32x32/apps/keepassxc.png
 share/icons/hicolor/32x32/mimetypes/application-x-keepassxc.png
 share/icons/hicolor/48x48/apps/keepassxc-dark.png
 share/icons/hicolor/48x48/apps/keepassxc-locked.png
+share/icons/hicolor/48x48/apps/keepassxc-unlocked.png
 share/icons/hicolor/48x48/apps/keepassxc.png
 share/icons/hicolor/64x64/apps/keepassxc-dark.png
 share/icons/hicolor/64x64/apps/keepassxc-locked.png
+share/icons/hicolor/64x64/apps/keepassxc-unlocked.png
 share/icons/hicolor/64x64/apps/keepassxc.png
 share/icons/hicolor/64x64/mimetypes/application-x-keepassxc.png
 share/icons/hicolor/scalable/apps/keepassxc-dark.svgz
 share/icons/hicolor/scalable/apps/keepassxc-locked.svgz
+share/icons/hicolor/scalable/apps/keepassxc-unlocked.svgz
 share/icons/hicolor/scalable/apps/keepassxc.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/icons/application/128x128/apps/keepassxc-dark.png
 %%DATADIR%%/icons/application/128x128/apps/keepassxc-locked.png
+%%DATADIR%%/icons/application/128x128/apps/keepassxc-unlocked.png
 %%DATADIR%%/icons/application/128x128/apps/keepassxc.png
 %%DATADIR%%/icons/application/128x128/mimetypes/application-x-keepassxc.png
 %%DATADIR%%/icons/application/16x16/actions/application-exit.png
@@ -54,8 +64,10 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/icons/application/16x16/actions/entry-new.png
 %%DATADIR%%/icons/application/16x16/actions/group-delete.png
 %%DATADIR%%/icons/application/16x16/actions/group-edit.png
+%%DATADIR%%/icons/application/16x16/actions/group-empty-trash.png
 %%DATADIR%%/icons/application/16x16/actions/group-new.png
 %%DATADIR%%/icons/application/16x16/actions/help-about.png
+%%DATADIR%%/icons/application/16x16/actions/message-close.png
 %%DATADIR%%/icons/application/16x16/actions/password-copy.png
 %%DATADIR%%/icons/application/16x16/actions/password-generate.png
 %%DATADIR%%/icons/application/16x16/actions/password-generator.png
@@ -65,16 +77,19 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/icons/application/16x16/actions/username-copy.png
 %%DATADIR%%/icons/application/16x16/apps/keepassxc-dark.png
 %%DATADIR%%/icons/application/16x16/apps/keepassxc-locked.png
+%%DATADIR%%/icons/application/16x16/apps/keepassxc-unlocked.png
 %%DATADIR%%/icons/application/16x16/apps/keepassxc.png
 %%DATADIR%%/icons/application/16x16/mimetypes/application-x-keepassxc.png
 %%DATADIR%%/icons/application/22x22/actions/dialog-close.png
 %%DATADIR%%/icons/application/22x22/actions/dialog-ok.png
 %%DATADIR%%/icons/application/22x22/actions/document-encrypt.png
+%%DATADIR%%/icons/application/22x22/actions/document-new.png
 %%DATADIR%%/icons/application/22x22/actions/document-open.png
 %%DATADIR%%/icons/application/22x22/actions/document-save.png
 %%DATADIR%%/icons/application/22x22/actions/entry-delete.png
 %%DATADIR%%/icons/application/22x22/actions/entry-edit.png
 %%DATADIR%%/icons/application/22x22/actions/entry-new.png
+%%DATADIR%%/icons/application/22x22/actions/message-close.png
 %%DATADIR%%/icons/application/22x22/actions/password-copy.png
 %%DATADIR%%/icons/application/22x22/actions/password-generator.png
 %%DATADIR%%/icons/application/22x22/actions/system-search.png
@@ -85,23 +100,37 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/icons/application/22x22/status/dialog-warning.png
 %%DATADIR%%/icons/application/24x24/apps/keepassxc-dark.png
 %%DATADIR%%/icons/application/24x24/apps/keepassxc-locked.png
+%%DATADIR%%/icons/application/24x24/apps/keepassxc-unlocked.png
 %%DATADIR%%/icons/application/24x24/apps/keepassxc.png
 %%DATADIR%%/icons/application/256x256/apps/keepassxc-dark.png
 %%DATADIR%%/icons/application/256x256/apps/keepassxc-locked.png
+%%DATADIR%%/icons/application/256x256/apps/keepassxc-unlocked.png
 %%DATADIR%%/icons/application/256x256/apps/keepassxc.png
+%%DATADIR%%/icons/application/32x32/actions/document-edit.png
+%%DATADIR%%/icons/application/32x32/actions/document-properties.png
+%%DATADIR%%/icons/application/32x32/actions/key-enter.png
+%%DATADIR%%/icons/application/32x32/actions/view-history.png
+%%DATADIR%%/icons/application/32x32/apps/internet-web-browser.png
 %%DATADIR%%/icons/application/32x32/apps/keepassxc-dark.png
 %%DATADIR%%/icons/application/32x32/apps/keepassxc-locked.png
+%%DATADIR%%/icons/application/32x32/apps/keepassxc-unlocked.png
 %%DATADIR%%/icons/application/32x32/apps/keepassxc.png
+%%DATADIR%%/icons/application/32x32/apps/preferences-desktop-icons.png
+%%DATADIR%%/icons/application/32x32/categories/preferences-other.png
 %%DATADIR%%/icons/application/32x32/mimetypes/application-x-keepassxc.png
+%%DATADIR%%/icons/application/32x32/status/security-high.png
 %%DATADIR%%/icons/application/48x48/apps/keepassxc-dark.png
 %%DATADIR%%/icons/application/48x48/apps/keepassxc-locked.png
+%%DATADIR%%/icons/application/48x48/apps/keepassxc-unlocked.png
 %%DATADIR%%/icons/application/48x48/apps/keepassxc.png
 %%DATADIR%%/icons/application/64x64/apps/keepassxc-dark.png
 %%DATADIR%%/icons/application/64x64/apps/keepassxc-locked.png
+%%DATADIR%%/icons/application/64x64/apps/keepassxc-unlocked.png
 %%DATADIR%%/icons/application/64x64/apps/keepassxc.png
 %%DATADIR%%/icons/application/64x64/mimetypes/application-x-keepassxc.png
 %%DATADIR%%/icons/application/scalable/apps/keepassxc-dark.svgz
 %%DATADIR%%/icons/application/scalable/apps/keepassxc-locked.svgz
+%%DATADIR%%/icons/application/scalable/apps/keepassxc-unlocked.svgz
 %%DATADIR%%/icons/application/scalable/apps/keepassxc.svgz
 %%DATADIR%%/icons/application/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/icons/database/C00_Password.png
@@ -179,10 +208,12 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/translations/keepassx_el.qm
 %%DATADIR%%/translations/keepassx_en_plurals.qm
 %%DATADIR%%/translations/keepassx_es.qm
+%%DATADIR%%/translations/keepassx_fi.qm
 %%DATADIR%%/translations/keepassx_fr.qm
 %%DATADIR%%/translations/keepassx_id.qm
 %%DATADIR%%/translations/keepassx_it.qm
 %%DATADIR%%/translations/keepassx_ja.qm
+%%DATADIR%%/translations/keepassx_kk.qm
 %%DATADIR%%/translations/keepassx_ko.qm
 %%DATADIR%%/translations/keepassx_lt.qm
 %%DATADIR%%/translations/keepassx_nl_NL.qm
@@ -195,6 +226,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/translations/keepassx_uk.qm
 %%DATADIR%%/translations/keepassx_zh_CN.qm
 %%DATADIR%%/translations/keepassx_zh_TW.qm
+%%DATADIR%%/wordlists/eff_large.wordlist
 share/mime/packages/keepassxc.xml
 @dir share/icons/hicolor/scalable/apps
 @dir share/icons/hicolor/scalable
@@ -218,8 +250,10 @@ share/mime/packages/keepassxc.xml
 @dir share/icons/hicolor/128x128/mimetypes
 @dir share/icons/hicolor/128x128/apps
 @dir share/icons/hicolor/128x128
+@dir %%DATADIR%%/wordlists
 @dir %%DATADIR%%/translations
 @dir %%DATADIR%%/icons/database
+@dir %%DATADIR%%/icons/application/scalable/mimetypes
 @dir %%DATADIR%%/icons/application/scalable/apps
 @dir %%DATADIR%%/icons/application/scalable
 @dir %%DATADIR%%/icons/application/64x64/mimetypes
@@ -227,8 +261,11 @@ share/mime/packages/keepassxc.xml
 @dir %%DATADIR%%/icons/application/64x64
 @dir %%DATADIR%%/icons/application/48x48/apps
 @dir %%DATADIR%%/icons/application/48x48
+@dir %%DATADIR%%/icons/application/32x32/status
 @dir %%DATADIR%%/icons/application/32x32/mimetypes
+@dir %%DATADIR%%/icons/application/32x32/categories
 @dir %%DATADIR%%/icons/application/32x32/apps
+@dir %%DATADIR%%/icons/application/32x32/actions
 @dir %%DATADIR%%/icons/application/32x32
 @dir %%DATADIR%%/icons/application/256x256/apps
 @dir %%DATADIR%%/icons/application/256x256

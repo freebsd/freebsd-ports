@@ -24,7 +24,6 @@
     SUBDIR += avidemux-qt4
     SUBDIR += avinfo
     SUBDIR += baka-mplayer
-    SUBDIR += banshee
     SUBDIR += bino
     SUBDIR += bitstream
     SUBDIR += bombono

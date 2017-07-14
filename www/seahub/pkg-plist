@@ -261,7 +261,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/myhome-repos.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/myhome-shared-repos.31e9a0699bee.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/myhome-shared-repos.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/notifications.51462e66a7d8.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/notifications.9be57fd2b10a.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/notifications.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/organization-repo.efd2c5ae8430.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/organization-repo.js
@@ -373,7 +373,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/jquery.iframe-transport.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.75e6d0132deb.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.9a133d0ce16d.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.474678548e22.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/main.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.dd9eb9a2c219.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.js

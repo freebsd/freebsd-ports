@@ -18,7 +18,7 @@ GH_ACCOUNT=	kkos
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-CONFLICTS_INSTALL=	oniguruma[45]-.*
+CONFLICTS_INSTALL=	oniguruma[45]
 
 USES=		pathfix autoreconf libtool
 PATHFIX_MAKEFILEIN=	Makefile.am
