@@ -3,7 +3,7 @@
 
 PORTNAME=	pfstools
 PORTVERSION=	1.8.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -60,6 +60,7 @@ OCTAVE_CONFIGURE_ENABLE=	octave
 OCTAVE_PATCH_DEPENDS=		octave-config:math/octave
 OCTAVE_BUILD_DEPENDS=		mkoctfile:math/octave
 OCTAVE_RUN_DEPENDS=		octave:math/octave
+OCTAVE_USES=			shebangfix
 
 .include <bsd.port.options.mk>
 
@@ -72,7 +73,6 @@ PLIST_SUB+=	\
 		OCTAVE_BASE=${OCTAVE_BASE} \
 		OCTAVE_SITE_M=${OCTAVE_SITE_M:S|^${OCTAVE_BASE}/||} \
 		OCTAVE_SITE_OCT=${OCTAVE_SITE_OCT:S|^${OCTAVE_BASE}/||}
-USES+=		shebangfix
 SHEBANG_FILES=	src/octave/*
 SHEBANG_LANG+=	octave
 octave_OLD_CMD?=/usr/bin/octave
