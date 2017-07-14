@@ -14,23 +14,20 @@ SUB_FILES=	pkg-message
 PORTDOCS=	INSTALL
 PLIST_FILES=	bin/webreport etc/webreport.conf-dist
 
-OPTIONS_DEFINE=	DOCS
-
 # silence clang errors on 10.0+
 CFLAGS+=	-Wno-return-type
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,ulong,unsigned long,;s,/etc/,${PREFIX}/etc/,' ${WRKSRC}/webreport.h
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/webreport ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/webreport.conf ${STAGEDIR}${PREFIX}/etc/webreport.conf-dist
+	${INSTALL_PROGRAM} ${WRKSRC}/webreport ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/webreport.conf ${STAGEDIR}${PREFIX}/etc/webreport.conf-dist
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

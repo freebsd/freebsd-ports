@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xosview
-PORTVERSION=	1.17
-PORTREVISION=	1
+PORTVERSION=	1.19
 CATEGORIES=	sysutils
 
 MAINTAINER=	otacilio.neto@bsd.com.br

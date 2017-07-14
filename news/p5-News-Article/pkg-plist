@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/News::Article.3.gz
-%%PERL5_MAN3%%/News::AutoReply.3.gz
-%%PERL5_MAN3%%/News::FormArticle.3.gz
-%%PERL5_MAN3%%/News::FormReply.3.gz
 %%SITE_PERL%%/News/Article.pm
 %%SITE_PERL%%/News/AutoReply.pm
 %%SITE_PERL%%/News/FormArticle.pm
 %%SITE_PERL%%/News/FormReply.pm
+%%PERL5_MAN3%%/News::Article.3.gz
+%%PERL5_MAN3%%/News::AutoReply.3.gz
+%%PERL5_MAN3%%/News::FormArticle.3.gz
+%%PERL5_MAN3%%/News::FormReply.3.gz

@@ -17,6 +17,9 @@ COMMENT=	Open Source PBX and telephony toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Asterisk 11.x will reach EOL on 2017-10-25. Please migrate to net/asterisk13
+EXPIRATION_DATE=2017-10-25
+
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 BROKEN_armv6=		fails to configure: the SPANDSP installation appears to be missing or broken

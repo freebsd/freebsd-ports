@@ -6,7 +6,7 @@ PORTVERSION=	153
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ultima1252@gmail.com
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Collects and decodes Machine Check Exception data
 
 LICENSE=	GPLv2

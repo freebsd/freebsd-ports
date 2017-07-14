@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	heimdal
-PORTVERSION=	7.3.0
-PORTREVISION=	1
+PORTVERSION=	7.4.0
 CATEGORIES=	security ipv6
 MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 

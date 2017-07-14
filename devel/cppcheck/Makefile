@@ -7,27 +7,41 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Static analysis of C/C++ code
+COMMENT?=	Static analysis of C/C++ code
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to compile: analyzerinfo.cpp: 'to_string' is not a member of 'std'
 
-USES=		compiler:c++11-lib cmake shebangfix tar:bzip2
-SHEBANG_FILES=	htmlreport/cppcheck-htmlreport
+USES=			compiler:c++11-lib cmake tar:bzip2
 
-OPTIONS_DEFINE=		RULES GUI HTMLREPORT MANPAGES MATCHCOMPILER TEST
-OPTIONS_DEFAULT=	RULES GUI HTMLREPORT MANPAGES MATCHCOMPILER
+.if defined(GUI_ONLY)
+COMMENT=		Static analysis of C/C++ code (GUI)
+
+RUN_DEPENDS=		cppcheck:devel/cppcheck
+
+CMAKE_ARGS=		-DBUILD_GUI=TRUE
+USE_QT4=		corelib gui xml qmake_build moc_build uic_build rcc_build linguisttools_build
+
+BUILD_WRKSRC=		${WRKSRC}/gui
+INSTALL_WRKSRC=		${WRKSRC}/gui
+
+PLIST=			${PKGDIR}/pkg-plist-gui
+
+PKGNAMESUFFIX=		-gui
+.else
+USES+=			shebangfix
+SHEBANG_FILES=		htmlreport/cppcheck-htmlreport
+
+OPTIONS_DEFINE=		RULES HTMLREPORT MANPAGES MATCHCOMPILER TEST
+OPTIONS_DEFAULT=	RULES HTMLREPORT MANPAGES MATCHCOMPILER
 OPTIONS_SUB=		yes
 
 RULES_DESC=		User-defined rule support (requires PCRE)
 RULES_CMAKE_BOOL=	HAVE_RULES
 RULES_LIB_DEPENDS=	libpcre.so:devel/pcre
 RULES_USES=		localbase:ldflags
-
-GUI_CMAKE_BOOL=		BUILD_GUI
-GUI_USE=		QT4=corelib,gui,xml,qmake_build,moc_build,uic_build,rcc_build,linguisttools_build
 
 TEST_CMAKE_BOOL=	BUILD_TESTS
 
@@ -57,5 +71,6 @@ post-install-MANPAGES-on:
 
 do-test-TEST-on:
 	cd ${WRKSRC} && ctest
+.endif
 
 .include <bsd.port.mk>

@@ -20,7 +20,6 @@
     SUBDIR += cal
     SUBDIR += calcurse
     SUBDIR += calibre
-    SUBDIR += california
     SUBDIR += cartotheque
     SUBDIR += cdcat
     SUBDIR += charmap
@@ -235,10 +234,12 @@
     SUBDIR += tagutils
     SUBDIR += taskcoach
     SUBDIR += taskd
+    SUBDIR += tasksh
     SUBDIR += taskwarrior
     SUBDIR += teapot
     SUBDIR += tel
     SUBDIR += thinkingrock
+    SUBDIR += timewarrior
     SUBDIR += tine20
     SUBDIR += tnote
     SUBDIR += todo

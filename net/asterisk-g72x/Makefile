@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk-g72x
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://asterisk.hosting.lv/src/
 

@@ -1,6 +1,10 @@
 bin/%%TDIARY_SCRIPT%%
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
+%%WWWDIR%%/Gemfile
+%%WWWDIR%%/app.json
+%%WWWDIR%%/benchmark/benchmark_amazon_plugin.rb
+%%WWWDIR%%/benchmark/benchmark_io_default.rb
 %%WWWDIR%%/bin/tdiary
 %%WWWDIR%%/data/.htaccess
 %%WWWDIR%%/dot.htaccess
@@ -20,6 +24,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/js/draft.js
 %%WWWDIR%%/js/highlight.js
 %%WWWDIR%%/js/image.js
+%%WWWDIR%%/js/preview.js
 %%WWWDIR%%/lib/tdiary.rb
 %%WWWDIR%%/lib/tdiary/admin.rb
 %%WWWDIR%%/lib/tdiary/application.rb
@@ -88,6 +93,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/lib/tdiary/tasks/doc.rake
 %%WWWDIR%%/lib/tdiary/tasks/heroku.rake
 %%WWWDIR%%/lib/tdiary/tasks/jasmine.rake
+%%WWWDIR%%/lib/tdiary/tasks/mongodb.rake
 %%WWWDIR%%/lib/tdiary/tasks/rdoc.rake
 %%WWWDIR%%/lib/tdiary/tasks/release.rake
 %%WWWDIR%%/lib/tdiary/tasks/rspec.rake
@@ -111,9 +117,8 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/paas/cloudfoundry/Gemfile.lock
 %%WWWDIR%%/misc/paas/cloudfoundry/tdiary.conf
 %%WWWDIR%%/misc/paas/heroku/Gemfile.local
-%%WWWDIR%%/misc/paas/heroku/app.json
-%%WWWDIR%%/misc/paas/heroku/config.ru
-%%WWWDIR%%/misc/paas/heroku/tasks/mongodb.rake
+%%WWWDIR%%/misc/paas/heroku/Gemfile.lock
+%%WWWDIR%%/misc/paas/heroku/misc/plugin/system_update.rb
 %%WWWDIR%%/misc/paas/heroku/tdiary.conf
 %%WWWDIR%%/misc/paas/sqale/Gemfile
 %%WWWDIR%%/misc/paas/sqale/Gemfile.lock
@@ -123,16 +128,12 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/plugin/ChangeLog.DO_NOT_UPDATE
 %%WWWDIR%%/misc/plugin/a.rb
 %%WWWDIR%%/misc/plugin/amazon.rb
-%%WWWDIR%%/misc/plugin/amazon/README.en
-%%WWWDIR%%/misc/plugin/amazon/README.ja
-%%WWWDIR%%/misc/plugin/amazon/amazonimg.rb
-%%WWWDIR%%/misc/plugin/amazon/large.png
-%%WWWDIR%%/misc/plugin/amazon/medium.png
-%%WWWDIR%%/misc/plugin/amazon/small.png
+%%WWWDIR%%/misc/plugin/amp.rb
 %%WWWDIR%%/misc/plugin/append-css.rb
 %%WWWDIR%%/misc/plugin/bq.rb
 %%WWWDIR%%/misc/plugin/calendar2.rb
 %%WWWDIR%%/misc/plugin/calendar3.rb
+%%WWWDIR%%/misc/plugin/category-legacy.rb
 %%WWWDIR%%/misc/plugin/category.rb
 %%WWWDIR%%/misc/plugin/category_autocomplete.rb
 %%WWWDIR%%/misc/plugin/comment_ajax.rb
@@ -153,6 +154,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/plugin/en/append-css.rb
 %%WWWDIR%%/misc/plugin/en/bq.rb
 %%WWWDIR%%/misc/plugin/en/calendar2.rb
+%%WWWDIR%%/misc/plugin/en/category-legacy.rb
 %%WWWDIR%%/misc/plugin/en/category.rb
 %%WWWDIR%%/misc/plugin/en/counter.rb
 %%WWWDIR%%/misc/plugin/en/daily_theme.rb
@@ -166,6 +168,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/plugin/en/makerss.rb
 %%WWWDIR%%/misc/plugin/en/pb-show.rb
 %%WWWDIR%%/misc/plugin/en/ping.rb
+%%WWWDIR%%/misc/plugin/en/preview.rb
 %%WWWDIR%%/misc/plugin/en/recent_comment.rb
 %%WWWDIR%%/misc/plugin/en/recent_comment3.rb
 %%WWWDIR%%/misc/plugin/en/recent_rss.rb
@@ -187,6 +190,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/plugin/ja/amazon.rb
 %%WWWDIR%%/misc/plugin/ja/bq.rb
 %%WWWDIR%%/misc/plugin/ja/calendar2.rb
+%%WWWDIR%%/misc/plugin/ja/category-legacy.rb
 %%WWWDIR%%/misc/plugin/ja/category.rb
 %%WWWDIR%%/misc/plugin/ja/daily_theme.rb
 %%WWWDIR%%/misc/plugin/ja/disp_referrer.rb
@@ -197,6 +201,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/plugin/ja/my-sequel.rb
 %%WWWDIR%%/misc/plugin/ja/pb-show.rb
 %%WWWDIR%%/misc/plugin/ja/ping.rb
+%%WWWDIR%%/misc/plugin/ja/preview.rb
 %%WWWDIR%%/misc/plugin/ja/recent_comment.rb
 %%WWWDIR%%/misc/plugin/ja/recent_comment3.rb
 %%WWWDIR%%/misc/plugin/ja/recent_rss.rb
@@ -218,6 +223,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/plugin/pb-show.rb
 %%WWWDIR%%/misc/plugin/ping.rb
 %%WWWDIR%%/misc/plugin/pre_wrap.rb
+%%WWWDIR%%/misc/plugin/preview.rb
 %%WWWDIR%%/misc/plugin/random_google.rb
 %%WWWDIR%%/misc/plugin/recent_comment.rb
 %%WWWDIR%%/misc/plugin/recent_comment3.rb
@@ -232,7 +238,6 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/plugin/search_form.rb
 %%WWWDIR%%/misc/plugin/sn.rb
 %%WWWDIR%%/misc/plugin/speed_comment.rb
-%%WWWDIR%%/misc/plugin/squeeze.rb
 %%WWWDIR%%/misc/plugin/src.rb
 %%WWWDIR%%/misc/plugin/tb-show.rb
 %%WWWDIR%%/misc/plugin/theme_online.rb
@@ -246,9 +251,6 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/plugin/xmlrpc/README
 %%WWWDIR%%/misc/plugin/xmlrpc/xmlrpc.rb
 %%WWWDIR%%/misc/templates/Gemfile.local.erb
-%%WWWDIR%%/misc/theme_convert/Readme.rd
-%%WWWDIR%%/misc/theme_convert/append.rcss
-%%WWWDIR%%/misc/theme_convert/theme_convert.rb
 %%WWWDIR%%/package.json
 %%WWWDIR%%/tdiary.conf.beginner
 %%WWWDIR%%/tdiary.conf.sample
@@ -403,6 +405,8 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/theme/blackbox/blackbox_backh2.png
 %%WWWDIR%%/theme/blackbox/blackbox_backpre.png
 %%WWWDIR%%/theme/blackbox/blackbox_smallanchorback.png
+%%WWWDIR%%/theme/blog/README
+%%WWWDIR%%/theme/blog/blog.css
 %%WWWDIR%%/theme/blue-border/README
 %%WWWDIR%%/theme/blue-border/blue-border.css
 %%WWWDIR%%/theme/blue-border/blue-border_bg.png
@@ -1663,6 +1667,20 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/theme/smoking_white/white.png
 %%WWWDIR%%/theme/snake/README
 %%WWWDIR%%/theme/snake/snake.css
+%%WWWDIR%%/theme/snest/README
+%%WWWDIR%%/theme/snest/gulpfile.js
+%%WWWDIR%%/theme/snest/h1back.jpg
+%%WWWDIR%%/theme/snest/package.json
+%%WWWDIR%%/theme/snest/scss/_base.scss
+%%WWWDIR%%/theme/snest/scss/_button.scss
+%%WWWDIR%%/theme/snest/scss/_form.scss
+%%WWWDIR%%/theme/snest/scss/_sanitize.scss
+%%WWWDIR%%/theme/snest/scss/_table.scss
+%%WWWDIR%%/theme/snest/scss/_typography.scss
+%%WWWDIR%%/theme/snest/scss/_variables.scss
+%%WWWDIR%%/theme/snest/scss/snest.scss
+%%WWWDIR%%/theme/snest/snest.css
+%%WWWDIR%%/theme/snest/snest.css.map
 %%WWWDIR%%/theme/snow_man/README
 %%WWWDIR%%/theme/snow_man/snow_man.css
 %%WWWDIR%%/theme/snow_man/snow_man.jpg
@@ -1874,6 +1892,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/theme/zef/zef.css
 %%WWWDIR%%/update.fcgi
 %%WWWDIR%%/update.rb
+%%WWWDIR%%/views/amp.rhtml
 %%WWWDIR%%/views/category.rhtml
 %%WWWDIR%%/views/conf.rhtml
 %%WWWDIR%%/views/day.rhtml
@@ -1944,6 +1963,8 @@ bin/%%TDIARY_SCRIPT%%
 @dir %%WWWDIR%%/theme/soda
 @dir %%WWWDIR%%/theme/snowy
 @dir %%WWWDIR%%/theme/snow_man
+@dir %%WWWDIR%%/theme/snest
+@dir %%WWWDIR%%/theme/snest/scss
 @dir %%WWWDIR%%/theme/snake
 @dir %%WWWDIR%%/theme/smoking_white
 @dir %%WWWDIR%%/theme/smoking_gray
@@ -2211,6 +2232,7 @@ bin/%%TDIARY_SCRIPT%%
 @dir %%WWWDIR%%/theme/blue-feather
 @dir %%WWWDIR%%/theme/blue-dash
 @dir %%WWWDIR%%/theme/blue-border
+@dir %%WWWDIR%%/theme/blog
 @dir %%WWWDIR%%/theme/blackbox
 @dir %%WWWDIR%%/theme/blackboard
 @dir %%WWWDIR%%/theme/black_mamba
@@ -2241,16 +2263,15 @@ bin/%%TDIARY_SCRIPT%%
 @dir %%WWWDIR%%/theme/3pink
 @dir %%WWWDIR%%/theme/3minutes
 @dir %%WWWDIR%%/theme
-@dir %%WWWDIR%%/misc/theme_convert
 @dir %%WWWDIR%%/misc/templates
 @dir %%WWWDIR%%/misc/plugin/xmlrpc
 @dir %%WWWDIR%%/misc/plugin/ja
 @dir %%WWWDIR%%/misc/plugin/en
-@dir %%WWWDIR%%/misc/plugin/amazon
 @dir %%WWWDIR%%/misc/plugin
 @dir %%WWWDIR%%/misc/paas/sqale
-@dir %%WWWDIR%%/misc/paas/heroku/tasks
 @dir %%WWWDIR%%/misc/paas/heroku
+@dir %%WWWDIR%%/misc/paas/heroku/misc
+@dir %%WWWDIR%%/misc/paas/heroku/misc/plugin
 @dir %%WWWDIR%%/misc/paas/cloudfoundry
 @dir %%WWWDIR%%/misc/paas
 @dir %%WWWDIR%%/misc/lib
@@ -2278,6 +2299,7 @@ bin/%%TDIARY_SCRIPT%%
 @dir %%WWWDIR%%/js
 @dir %%WWWDIR%%/data
 @dir %%WWWDIR%%/bin
+@dir %%WWWDIR%%/benchmark
 @dir %%WWWDIR%%
 @owner
 @group

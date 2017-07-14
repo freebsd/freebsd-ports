@@ -3,6 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	3.3.24
+PORTREVISION=	1
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -14,7 +15,7 @@ DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	1.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
-USE_LINUX=	libtasn1 libgcrypt libgpg-error
+USE_LINUX=	libtasn1 nettle p11-kit trousers
 USE_LINUX_RPM=	yes
 
 OPTIONS_DEFINE=	DOCS NLS

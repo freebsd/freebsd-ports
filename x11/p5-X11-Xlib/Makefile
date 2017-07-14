@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	X11-Xlib
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_XORG=	x11 xcomposite xext xfixes xproto xinerama xtst
+USE_XORG=	x11 xcomposite xext xfixes xinerama xproto xrender xtst
 
 pre-configure:
 	cd ${WRKSRC} && ${PERL} Makefile.PL

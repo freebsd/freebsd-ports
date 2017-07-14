@@ -13,6 +13,9 @@ COMMENT=	Create TCP socket and connect to stdin/out
 
 LICENSE=	GPLv1
 
+DEPRECATED=	Out of date
+EXPIRATION_DATE=	2017-09-01
+
 MAKE_ENV+=	SWITCHES="-DUSE_INET6 -DHAVE_SYS_PARAM_H -Wall"
 PLIST_FILES=	bin/socket man/man1/socket.1.gz
 

@@ -27,7 +27,8 @@ CPE_VENDOR=	openinfosecfoundation
 INSTALL_TARGET=		install-strip
 TEST_TARGET=		check
 
-OPTIONS_DEFINE=		GEOIP HTP_PORT IPFW JSON NETMAP NSS PORTS_PCAP PRELUDE SC TESTS
+OPTIONS_DEFINE=		GEOIP HTP_PORT IPFW JSON NETMAP NSS PORTS_PCAP PRELUDE \
+			REDIS SC TESTS
 OPTIONS_DEFINE_amd64=	HYPERSCAN
 OPTIONS_DEFAULT=	HTP_PORT IPFW JSON NETMAP PRELUDE
 OPTIONS_SUB=		yes
@@ -48,6 +49,7 @@ NETMAP_DESC=		Netmap support for inline IDP
 NSS_DESC=		File checksums and SSL/TLS fingerprinting
 PORTS_PCAP_DESC=	Use libpcap from ports
 PRELUDE_DESC=		Prelude support for NIDS alerts
+REDIS_DESC=		Redis output support
 SC_DESC=		Suricata socket client (suricatasc)
 TESTS_DESC=		Unit tests in suricata binary
 
@@ -101,6 +103,11 @@ PRELUDE_LIB_DEPENDS=		libprelude.so:security/libprelude \
 				libltdl.so:devel/libltdl
 PRELUDE_CONFIGURE_ENABLE=	prelude
 PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
+
+REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
+REDIS_CONFIGURE_ON=		--enable-hiredis \
+				--with-libhiredis-includes=${LOCALBASE}/include \
+				--with-libhiredis-libraries=${LOCALBASE}/lib
 
 SC_USES=			python
 SC_CONFIGURE_ENV=		ac_cv_path_HAVE_PYTHON_CONFIG=yes

@@ -1,20 +1,7 @@
-%%GUI%%bin/cppcheck-gui
 bin/cppcheck
 %%DATADIR%%/avr.cfg
 %%DATADIR%%/gnu.cfg
 %%DATADIR%%/gtk.cfg
-%%GUI%%%%DATADIR%%/lang/cppcheck_de.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_es.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_fi.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_fr.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_it.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_ja.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_ko.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_nl.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_ru.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_sr.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_sv.qm
-%%GUI%%%%DATADIR%%/lang/cppcheck_zh_CN.qm
 %%DATADIR%%/microsoft_sal.cfg
 %%DATADIR%%/posix.cfg
 %%DATADIR%%/qt.cfg
@@ -24,6 +11,3 @@ bin/cppcheck
 %%DATADIR%%/windows.cfg
 %%DATADIR%%/wxwidgets.cfg
 %%MANPAGES%%man/man1/cppcheck.1.gz
-%%GUI%%share/applications/cppcheck-gui.desktop
-%%GUI%%share/icons/hicolor/64x64/apps/cppcheck-gui.png
-%%GUI%%share/icons/hicolor/scalable/apps/cppcheck-gui.svg

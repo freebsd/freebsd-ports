@@ -110,7 +110,6 @@
     SUBDIR += nss_resinit
     SUBDIR += opendd
     SUBDIR += opendnssec
-    SUBDIR += opendnssec13
     SUBDIR += opendnssec2
     SUBDIR += openmdns
     SUBDIR += openresolv

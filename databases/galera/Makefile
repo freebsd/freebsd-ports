@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	galera
-PORTVERSION?=	25.3.20
-PORTREVISION?=	2
+PORTVERSION?=	25.3.21
 CATEGORIES=	databases
 
 MAINTAINER=	devel@galeracluster.com
@@ -37,12 +36,15 @@ GH_ACCOUNT=	codership
 GH_TAGNAME?=	release_${DISTVERSION}
 
 LDFLAGS+=	-lboost_program_options -lboost_system
-MAKE_ARGS+=	--config=force \
-		deterministic_tests=1 \
-		revno=${GH_TAGNAME} \
-		system_asio=0
+MAKE_ARGS+=	revno=${GH_TAGNAME} system_asio=0 tests=0
 
 USE_RC_SUBR=	garb.sh
+
+# Abuse TEST_TARGET to append tests=1 (which is not a target, strictly
+# speaking) at the end of the "scons ..." command so that it overrides
+# tests=0 from ${MAKE_ARGS}. To rerun the tests a second time, remove
+# all *.passed files: find ./work -name *.passed -print -delete
+TEST_TARGET=	deterministic_tests=1 tests=1
 
 PLIST_FILES=	bin/garbd \
 		lib/libgalera.so \
@@ -55,9 +57,12 @@ BPOSTATIC_DESC=	Use static boost_program_options
 
 .include <bsd.port.pre.mk>
 
-# COMPILER_TYPE could be empty on older FreeBSD versions.
-.if "${COMPILER_TYPE}" == gcc || ${OSVERSION} < 1000000
-USE_GCC=	4.8+
+# Clang is available on FreeBSD 9.x but the default
+# compiler (e.g. /usr/bin/cc) is GCC. Force the usage of Clang.
+.if ${OSVERSION} < 1000024
+CC=		clang
+CXX=		clang++
+CPP=		clang-cpp
 .endif
 
 .if ${PORT_OPTIONS:MBOOSTPOOL}
@@ -69,7 +74,7 @@ MAKE_ARGS+=	bpostatic=${LOCALBASE}/lib/libboost_program_options.a
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-MAKE_ARGS+=	debug=3
+MAKE_ARGS+=	debug=0
 .endif
 
 do-install:

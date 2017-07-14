@@ -390,7 +390,7 @@ restart_gitlab(){
 ### Finally the input handling.
 
 case "$1" in
-  start|quietstart)
+  start|quietstart|faststart)
         start_gitlab
         ;;
   stop|faststop)

@@ -836,6 +836,7 @@
     SUBDIR += polkit-qt5
     SUBDIR += powerdxx
     SUBDIR += powerman
+    SUBDIR += powermon
     SUBDIR += pp
     SUBDIR += pprotectd
     SUBDIR += prelink
@@ -996,6 +997,7 @@
     SUBDIR += rubygem-hammer_cli_foreman_salt
     SUBDIR += rubygem-hammer_cli_foreman_ssh
     SUBDIR += rubygem-hiera
+    SUBDIR += rubygem-hiera-eyaml
     SUBDIR += rubygem-hiera-file
     SUBDIR += rubygem-hiera1
     SUBDIR += rubygem-hieracles
@@ -1013,6 +1015,7 @@
     SUBDIR += rubygem-puppet_forge1
     SUBDIR += rubygem-r10k
     SUBDIR += rubygem-rubyipmi
+    SUBDIR += rubygem-serverspec
     SUBDIR += rubygem-shellany
     SUBDIR += rubygem-smart_proxy_chef
     SUBDIR += rubygem-smart_proxy_dynflow
@@ -1078,6 +1081,8 @@
     SUBDIR += shmcat
     SUBDIR += showbeastie
     SUBDIR += siegfried
+    SUBDIR += signon-qt5
+    SUBDIR += signon-ui
     SUBDIR += skill
     SUBDIR += slack
     SUBDIR += sleuthkit
@@ -1121,10 +1126,11 @@
     SUBDIR += sysinfo
     SUBDIR += syslinux
     SUBDIR += syslog-ng
-    SUBDIR += syslog-ng-devel
     SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng36
     SUBDIR += syslog-ng37
+    SUBDIR += syslog-ng39
+    SUBDIR += syslog-ng310
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends

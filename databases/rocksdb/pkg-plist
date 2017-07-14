@@ -59,6 +59,7 @@ include/rocksdb/utilities/checkpoint.h
 include/rocksdb/utilities/convenience.h
 include/rocksdb/utilities/date_tiered_db.h
 include/rocksdb/utilities/db_ttl.h
+include/rocksdb/utilities/debug.h
 include/rocksdb/utilities/document_db.h
 include/rocksdb/utilities/env_librados.h
 include/rocksdb/utilities/env_mirror.h

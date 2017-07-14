@@ -1,0 +1,3 @@
+bin/signon-ui
+share/dbus-1/services/com.canonical.indicators.webcredentials.service
+share/dbus-1/services/com.nokia.singlesignonui.service

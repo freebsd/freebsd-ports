@@ -17,14 +17,11 @@ BUILD_DEPENDS=	gpasm:devel/gputils
 LIB_DEPENDS=	libpopt.so:devel/popt
 RUN_DEPENDS=	gpasm:devel/gputils
 
-USES=		gmake libtool pathfix pkgconfig readline
+USES=		gmake libtool localbase:ldflags pathfix pkgconfig readline
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		DOCS EXAMPLES GTK2
 OPTIONS_DEFAULT=	GTK2
@@ -41,12 +38,14 @@ post-patch:
 		's|-lstdc++||' ${WRKSRC}/${i}
 .endfor
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog PROCESSORS README* doc/gpsim.pdf
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${DOCSDIR})
 .endfor
+
+post-install-EXAMPLES-on:
 .for i in led_test logic_test mod_test usart_gui usart_test
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/modules/${i}
 	(cd ${WRKSRC}/examples/modules/${i} && ${INSTALL_DATA} *.asm *.stc \

@@ -2,37 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	sdcv
-PORTVERSION=	0.4.2
-PORTREVISION=	4
+PORTVERSION=	0.5.1
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Text-based utility for work with dictionaries in StarDict's format
+MAINTAINER=	citrin@citrin.ru
+COMMENT=	Text-based utility for work with dictionaries in StarDict's format #'
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
-USES=		autoreconf gettext pkgconfig readline tar:bzip2
+USES=		cmake:outsource pkgconfig readline
 USE_GNOME=	glib20
 
 SUB_FILES=	pkg-message
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+USE_GITHUB=	yes
+GH_ACCOUNT=	Dushistov
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+NLS_CMAKE_OFF=	-DENABLE_NLS:BOOL=OFF
 
 post-patch:
 .for i in doc/sdcv.1 src/sdcv.cpp
 	@${REINPLACE_CMD} -e \
 		's|/usr/share|${PREFIX}/share|' ${WRKSRC}/${i}
 .endfor
-	@${REINPLACE_CMD} -e \
-		's|@mandir@/uk|@mandir@|' ${WRKSRC}/doc/uk/Makefile.am
-	@${REINPLACE_CMD} -e \
-		's|getopt1.c getopt.h||' ${WRKSRC}/src/Makefile.am
-	@${RM} ${WRKSRC}/src/getopt.h
-	@${REINPLACE_CMD} '/AM_GNU_GETTEXT_VERSION/s/0\.14\.1/0.19.1/' \
-		${WRKSRC}/configure.ac
+
+post-build-NLS-on:
+	cd ${BUILD_WRKSRC} && ${MAKE_CMD} lang
 
 .include <bsd.port.mk>

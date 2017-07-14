@@ -3,7 +3,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.4.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,6 +13,7 @@ DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 RPMVERSION=	12.el6_8
 USES=		linux:c6
 USE_LDCONFIG=	yes
+USE_LINUX=	libgpg-error
 USE_LINUX_RPM=	yes
 
 .include <bsd.port.mk>

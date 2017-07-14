@@ -20,6 +20,9 @@ RUN_DEPENDS=	rubygem-faraday>=0.8:www/rubygem-faraday \
 		rubygem-multi_xml>=0.5:textproc/rubygem-multi_xml \
 		rubygem-rack>=1.2:www/rubygem-rack
 
+DEPRECATED=	Only created for www/gitlab; please use net/rubygem-oauth2 instead
+EXPIRATION_DATE=	2017-07-31
+
 PORTSCOUT=	limit:^1\.2\.
 
 NO_ARCH=	yes

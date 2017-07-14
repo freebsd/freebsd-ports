@@ -2,7 +2,7 @@
 
 PORTNAME=	fpm
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
@@ -31,5 +31,6 @@ PLIST_FILES=	bin/fpm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/1\.0\.0/1.0/' ${WRKSRC}/fpm.gemspec
+	@${REINPLACE_CMD} -e 's/= 0\.5\.2/>= 0.5.2/' ${WRKSRC}/fpm.gemspec
 
 .include <bsd.port.mk>

@@ -10,6 +10,7 @@ bin/cpandb
 %%SITE_PERL%%/CPAN/SQLite/Search.pm
 %%SITE_PERL%%/CPAN/SQLite/State.pm
 %%SITE_PERL%%/CPAN/SQLite/Util.pm
+%%PERL5_MAN1%%/cpandb.1.gz
 %%PERL5_MAN3%%/CPAN::SQLite.3.gz
 %%PERL5_MAN3%%/CPAN::SQLite::DBI.3.gz
 %%PERL5_MAN3%%/CPAN::SQLite::DBI::Index.3.gz
@@ -21,4 +22,3 @@ bin/cpandb
 %%PERL5_MAN3%%/CPAN::SQLite::Search.3.gz
 %%PERL5_MAN3%%/CPAN::SQLite::State.3.gz
 %%PERL5_MAN3%%/CPAN::SQLite::Util.3.gz
-%%PERL5_MAN1%%/cpandb.1.gz

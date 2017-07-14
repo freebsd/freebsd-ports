@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		R
-PORTVERSION=		3.4.0
-PORTREVISION=	1
+PORTVERSION=		3.4.1
+PORTREVISION=		1
 CATEGORIES=		math lang
 MASTER_SITES=		CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -15,15 +15,16 @@ LICENSE=		GPLv2
 LIB_DEPENDS=		libcurl.so:ftp/curl \
 			libpcre.so:devel/pcre
 BUILD_DEPENDS=		texi2any:print/texinfo
+RUN_DEPENDS=		gmake:devel/gmake
 
 CONFIGURE_ARGS=		--disable-java \
 			--with-readline \
 			rdocdir=${DOCSDIR}
 GNU_CONFIGURE=		yes
 INSTALL_TARGET=		install-strip
-ONLY_FOR_ARCHS=		i386 amd64
-USES=			fortran iconv libtool localbase objc:compiler pathfix \
-			perl5 readline
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
+USES=			gmake iconv libtool localbase objc:compiler \
+			pathfix perl5 readline:port
 
 USE_PERL5=		build
 
@@ -31,14 +32,20 @@ OPTIONS_DEFINE=		ICU INFO LDOUBLE LETTER LIBR MEMPROF NLS RPROF X11
 OPTIONS_GROUP=		NEEDGCC NEEDX11
 OPTIONS_GROUP_NEEDGCC=	LTO OPENMP
 OPTIONS_GROUP_NEEDX11=	GHOSTSCRIPT JPEG CAIROPANGO PNG TCLTK TEXDOCS TIFF
-OPTIONS_SINGLE=		BLAS
+OPTIONS_SINGLE=		BLAS FORTRAN
 OPTIONS_SINGLE_BLAS=	ATLAS OPENBLAS NETLIB RBLAS
+OPTIONS_SINGLE_FORTRAN=	${OPTIONS_SINGLE_FORTRAN_${MACHINE_ARCH}}
+OPTIONS_SINGLE_FORTRAN_i386=	GFORTRAN
+OPTIONS_SINGLE_FORTRAN_aarch64=	GFORTRAN
+OPTIONS_SINGLE_FORTRAN_amd64=	GFORTRAN FLANG
 
 OPTIONS_SUB=		YES
 
 ATLAS_DESC=		ATLAS BLAS implementation
+FLANG_DESC=		Experimental Fortran support via flang
 GHOSTSCRIPT_DESC=	Graphics device for bitmap files via Ghostscript
 CAIROPANGO_DESC=	Cairo graphics device and Pango multi-language text
+GFORTRAN_DESC=		Fortran support via gfortran
 INFO_DESC=		GNU info manuals
 JPEG_DESC=		JPEG graphics device
 LDOUBLE_DESC=		Long double data type
@@ -56,8 +63,8 @@ RPROF_DESC=		R profiling via Rprof()
 TEXDOCS_DESC=		Build/Install TeX-dependent documentation files
 X11_DESC=		X11 graphics device
 
-OPTIONS_DEFAULT=	CAIROPANGO GHOSTSCRIPT ICU INFO JPEG LDOUBLE LIBR PNG \
-			RBLAS RPROF TCLTK TIFF X11
+OPTIONS_DEFAULT=	CAIROPANGO GFORTRAN GHOSTSCRIPT ICU INFO JPEG LDOUBLE \
+			LIBR PNG RBLAS RPROF TCLTK TIFF X11
 
 ATLAS_USES=		blaslapack:atlas
 ATLAS_CONFIGURE_ON=	--disable-BLAS-shlib
@@ -67,6 +74,14 @@ CAIROPANGO_IMPLIES=	X11
 CAIROPANGO_CONFIGURE_WITH=cairo
 CAIROPANGO_USES=	gettext jpeg pkgconfig
 CAIROPANGO_USE=		GNOME=pango,cairo
+FLANG_USE=		binutils
+FLANG_BUILD_DEPENDS=	flang:devel/flang
+FLANG_RUN_DEPENDS=	flang:devel/flang
+FLANG_VARS=		F77=flang FC=flang
+FLANG_LDFLAGS=		-L${LOCALBASE}/flang/lib -lflang -lexecinfo
+FLANG_CONFIGURE_ENV=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
+FLANG_MAKE_ENV=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
+GFORTRAN_USES=		fortran
 GHOSTSCRIPT_IMPLIES=	X11
 GHOSTSCRIPT_USES=	ghostscript
 ICU_CONFIGURE_WITH=	ICU
@@ -83,6 +98,7 @@ LIBR_CONFIGURE_ENABLE=	R-shlib
 LTO_CONFIGURE_ENABLE=	lto
 LTO_CONFIGURE_ENV=	AR="${LOCALBASE}/bin/gcc-ar${GCC_DEFAULT:S/.//g}" \
 			RANLIB="${LOCALBASE}/bin/gcc-ranlib${GCC_DEFAULT:S/.//g}"
+LTO_PREVENTS=		FLANG
 LTO_USE=		GCC=yes
 LTO_VARS=		BINUTILS="ADDR2LINE AS CPPFILT GPROF LD NM OBJCOPY \
 			OBJDUMP READELF SIZE STRINGS"
@@ -94,6 +110,7 @@ NLS_USES=		gettext
 OPENBLAS_USES=		blaslapack:openblas
 OPENBLAS_CONFIGURE_ON=	--disable-BLAS-shlib
 OPENMP_CONFIGURE_ENABLE=openmp
+OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 OPENMP_USES=		compiler:openmp
 PNG_IMPLIES=		X11
 PNG_LIB_DEPENDS=	libpng.so:graphics/png

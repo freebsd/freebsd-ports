@@ -1,4 +1,5 @@
 sbin/acme.sh
+%%EXAMPLESDIR%%/acme.sh
 %%EXAMPLESDIR%%/deploy/README.md
 %%EXAMPLESDIR%%/deploy/apache.sh
 %%EXAMPLESDIR%%/deploy/cpanel.sh

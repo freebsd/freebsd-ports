@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch-Dir
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-File-Slurp-Tiny>=0:devel/p5-File-Slurp-Tiny \
+BUILD_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper \
 		p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
 		p5-Params-Validate>=0:devel/p5-Params-Validate \
 		p5-Probe-Perl>=0:sysutils/p5-Probe-Perl

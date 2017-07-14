@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xorgxrdp
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-drivers
 DIST_SUBDIR=	xrdp
@@ -28,17 +28,13 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-I${LOCALBASE}/lib
-CONFIGURE_ENV+=	XRDP_CFLAGS=-I${WRKSRC_xrdp}/common
+LIBS=		-I${LOCALBASE}/lib
+CONFIGURE_ENV=	XRDP_CFLAGS=-I${WRKSRC_xrdp}/common
 
 OPTIONS_DEFINE=	DEBUG
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ${PORT_OPTIONS:MDEBUG}
+post-patch-DEBUG-on:
 	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|#define LOG_LEVEL [0-9]*|#define LOG_LEVEL 20|'
-.endif
 
 pre-configure:
 	@cd ${WRKSRC} && ./bootstrap

@@ -1107,11 +1107,13 @@ include/ace/config-lynxos-178.h
 include/ace/config-macosx-elcapitan.h
 include/ace/config-macosx-iOS-hardware.h
 include/ace/config-macosx-iOS-simulator.h
+include/ace/config-macosx-jaguar.h
 include/ace/config-macosx-leopard.h
 include/ace/config-macosx-lion.h
 include/ace/config-macosx-mavericks.h
 include/ace/config-macosx-mountainlion.h
 include/ace/config-macosx-panther.h
+include/ace/config-macosx-sierra.h
 include/ace/config-macosx-snowleopard.h
 include/ace/config-macosx-tiger.h
 include/ace/config-macosx-yosemite.h
@@ -1154,6 +1156,7 @@ include/ace/config-win32-msvc-10.h
 include/ace/config-win32-msvc-11.h
 include/ace/config-win32-msvc-12.h
 include/ace/config-win32-msvc-14.h
+include/ace/config-win32-msvc-141.h
 include/ace/config-win32-msvc-7.h
 include/ace/config-win32-msvc-8.h
 include/ace/config-win32-msvc-9.h
@@ -1448,6 +1451,8 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/bin/MakeProjectCreator/config/vcl.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/vcpartialmacros.mpt
 %%DATADIR%%/bin/MakeProjectCreator/config/versioned_namespace.mpb
+%%DATADIR%%/bin/MakeProjectCreator/config/vs2017.features
+%%DATADIR%%/bin/MakeProjectCreator/config/vs2017nmake.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/wb26.features
 %%DATADIR%%/bin/MakeProjectCreator/config/wfmo.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/winregistry.mpb
@@ -1520,11 +1525,13 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/include/makeinclude/platform_macosx_elcapitan.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_iOS.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_icc.GNU
+%%DATADIR%%/include/makeinclude/platform_macosx_jaguar.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_leopard.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_lion.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_mavericks.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_mountainlion.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_panther.GNU
+%%DATADIR%%/include/makeinclude/platform_macosx_sierra.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_snowleopard.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_tiger.GNU
 %%DATADIR%%/include/makeinclude/platform_macosx_yosemite.GNU

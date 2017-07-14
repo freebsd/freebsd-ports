@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oniguruma
-PORTVERSION=	6.1.3
+PORTVERSION=	6.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel textproc
 PKGNAMESUFFIX=	6
@@ -18,7 +18,7 @@ GH_ACCOUNT=	kkos
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-CONFLICTS_INSTALL=	oniguruma[45]-.*
+CONFLICTS_INSTALL=	oniguruma[45]
 
 USES=		pathfix autoreconf libtool
 PATHFIX_MAKEFILEIN=	Makefile.am

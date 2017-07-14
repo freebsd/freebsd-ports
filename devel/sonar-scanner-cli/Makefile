@@ -3,6 +3,7 @@
 
 PORTNAME=	sonar-scanner-cli
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://sonarsource.bintray.com/Distribution/${PORTNAME}/
 DISTNAME=	sonar-scanner-${PORTVERSION}
@@ -38,7 +39,6 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${PORTNAME})
 	@${MV} -f ${STAGEDIR}${PREFIX}/${PORTNAME}/conf/${SQ_CLI}.properties \
 	 ${STAGEDIR}${PREFIX}/${PORTNAME}/conf/${SQ_CLI}.properties.sample
-	@${CHMOD} -R 644 ${STAGEDIR}${PREFIX}/${PORTNAME}
 
 post-install:
 	@${LN} -f ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/${SR} \

@@ -1,0 +1,8 @@
+Hardening-check is a perl script to verify that the resulting binary
+does, in fact, have hardening features enabled, you can use it to
+test each ELF binary and the output will show if the binary has
+position independent executable, stack protected, fortify source
+functions(not supported on FreeBSD now), read only relocations or
+immediate binding supported.
+
+WWW: https://wiki.debian.org/Hardening

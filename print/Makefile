@@ -14,7 +14,6 @@
     SUBDIR += apsfilter
     SUBDIR += asprint
     SUBDIR += auctex
-    SUBDIR += axpoint
     SUBDIR += bibcursed
     SUBDIR += biblio-py
     SUBDIR += bibview
@@ -42,6 +41,7 @@
     SUBDIR += enscript-a4
     SUBDIR += enscript-letter
     SUBDIR += enscript-letterdj
+    SUBDIR += epson-inkjet-printer-201401w
     SUBDIR += epson-inkjet-printer-escpr
     SUBDIR += epsonepl
     SUBDIR += fig2dev
@@ -148,6 +148,7 @@
     SUBDIR += p5-PostScript-Simple
     SUBDIR += p5-Text-PDF
     SUBDIR += p5-XML-ApacheFOP
+    SUBDIR += p5-XML-Handler-AxPoint
     SUBDIR += p910nd
     SUBDIR += panda
     SUBDIR += papersize-default-a4

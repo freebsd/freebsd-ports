@@ -1,5 +1,6 @@
 bin/gentrigrams
 bin/parsetrigrams
+etc/xdg/sonnet.categories
 include/KF5/SonnetCore/Sonnet/BackgroundChecker
 include/KF5/SonnetCore/Sonnet/GuessLanguage
 include/KF5/SonnetCore/Sonnet/Speller

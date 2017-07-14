@@ -63,7 +63,6 @@
     SUBDIR += ehnt
     SUBDIR += etherape
     SUBDIR += ettercap
-    SUBDIR += ezradius
     SUBDIR += fastnetmon
     SUBDIR += fetchconfig
     SUBDIR += flow-extract
@@ -189,6 +188,7 @@
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker
     SUBDIR += nrpe
+    SUBDIR += nrpe3
     SUBDIR += nrpe-ssl
     SUBDIR += nsca
     SUBDIR += nsca-client

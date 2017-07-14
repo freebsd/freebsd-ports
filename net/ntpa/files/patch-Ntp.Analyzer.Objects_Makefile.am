@@ -1,0 +1,39 @@
+--- Ntp.Analyzer.Objects/Makefile.am.orig	2016-12-25 16:19:23 UTC
++++ Ntp.Analyzer.Objects/Makefile.am
+@@ -12,7 +12,6 @@ BUILD_DIR = ../bin
+ 
+ NTP_ANALYZER_OBJECTS_DLL_MDB_SOURCE=../bin/Ntp.Analyzer.Objects.dll.mdb
+ NTP_ANALYZER_OBJECTS_DLL_MDB=$(BUILD_DIR)/Ntp.Analyzer.Objects.dll.mdb
+-NEWTONSOFT_DLL_SOURCE=../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll
+ 
+ endif
+ 
+@@ -26,7 +25,6 @@ PROJECT_REFERENCES =
+ BUILD_DIR = ../bin
+ 
+ NTP_ANALYZER_OBJECTS_DLL_MDB=
+-NEWTONSOFT_DLL_SOURCE=../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll
+ 
+ endif
+ 
+@@ -68,18 +66,14 @@ RESOURCES =
+ 
+ EXTRAS =
+ 
+-REFERENCES = System
++REFERENCES = System $(NEWTONSOFT_LIBS)
+ 
+-DLL_REFERENCES = $(NEWTONSOFT_DLL)
++DLL_REFERENCES =
+ 
+ CLEANFILES = $(PROGRAMFILES)
+ 
+ include $(top_srcdir)/Makefile.include
+ 
+-NEWTONSOFT_DLL = $(BUILD_DIR)/Newtonsoft.Json.dll
+-
+-$(eval $(call emit-deploy-target,NEWTONSOFT_DLL))
+-
+ $(eval $(call emit_resgen_targets))
+ $(build_xamlg_list): %.xaml.g.cs: %.xaml
+ 	xamlg '$<'

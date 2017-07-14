@@ -1,0 +1,5 @@
+A mission control plugin for Telepathy, integrating with libaccounts and libsignon
+to provide IM accounts and authentication. This code is based on Nemo Mobile's
+fork of the plugin from Empathy's ubuntu-online-account support.
+
+WWW: https://gitlab.com/accounts-sso/telepathy-accounts-signon

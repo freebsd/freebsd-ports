@@ -1,0 +1,16 @@
+bin/cppcheck-gui
+share/applications/cppcheck-gui.desktop
+%%DATADIR%%/lang/cppcheck_de.qm
+%%DATADIR%%/lang/cppcheck_es.qm
+%%DATADIR%%/lang/cppcheck_fi.qm
+%%DATADIR%%/lang/cppcheck_fr.qm
+%%DATADIR%%/lang/cppcheck_it.qm
+%%DATADIR%%/lang/cppcheck_ja.qm
+%%DATADIR%%/lang/cppcheck_ko.qm
+%%DATADIR%%/lang/cppcheck_nl.qm
+%%DATADIR%%/lang/cppcheck_ru.qm
+%%DATADIR%%/lang/cppcheck_sr.qm
+%%DATADIR%%/lang/cppcheck_sv.qm
+%%DATADIR%%/lang/cppcheck_zh_CN.qm
+share/icons/hicolor/64x64/apps/cppcheck-gui.png
+share/icons/hicolor/scalable/apps/cppcheck-gui.svg

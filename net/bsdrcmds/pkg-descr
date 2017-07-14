@@ -1,0 +1,10 @@
+This is a port of the BSD "rcmds", which were formerly part of the
+FreeBSD base system.  This port includes the following binaries:
+rcp(1)
+rlogin(1)
+rlogind(8)
+rsh(1)
+rshd(8)
+ruptime(1)
+rwho(1)
+rwhod(8)

@@ -1,0 +1,9 @@
+The logutils package provides a set of handlers for the Python standard
+library's logging package.
+
+Some of these handlers are out-of-scope for the standard library, and so
+they are packaged here. Others are updated versions which have appeared
+in recent Python releases, but are usable with older versions of Python
+and so are packaged here.
+
+WWW: https://bitbucket.org/vinay.sajip/logutils/

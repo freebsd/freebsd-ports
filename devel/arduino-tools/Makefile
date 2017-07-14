@@ -7,7 +7,7 @@ MASTER_SITES=	# Mostly metaport - installs files, no build
 DISTFILES=	#
 EXTRACT_ONLY=	#
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Brings together all of the tool dependencies used for Arduino 1.6+
 
 LICENSE=	BSD3CLAUSE

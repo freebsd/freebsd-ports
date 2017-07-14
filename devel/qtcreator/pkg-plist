@@ -1741,6 +1741,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-build-dependencies.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-build-environment.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-build-issues.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-build-settings-ios.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-build-steps-custom.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-build-steps.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-clang-code-model-options.png
@@ -1774,6 +1775,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-debugger-cdb-paths.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-debugger-views.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-debugging-continue.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-deployment-steps-b2qt-58.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-edit-code-snippets.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-editor-settings.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-editortoolbar-symbols.png

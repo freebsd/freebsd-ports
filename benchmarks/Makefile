@@ -83,6 +83,7 @@
     SUBDIR += thrulay
     SUBDIR += tsung
     SUBDIR += ttcp
+    SUBDIR += typometer
     SUBDIR += ubench
     SUBDIR += unixbench
     SUBDIR += webbench

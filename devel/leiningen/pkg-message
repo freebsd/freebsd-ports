@@ -1,6 +1,0 @@
-
-If you want to use the ``lein exec'' command to run Clojure scripts,
-please add the following to ~/.lein/profiles.clj:
-
-{ :user
- { :plugins [[lein-exec "0.3.4"]]}

@@ -3,7 +3,7 @@
 
 PORTNAME=	openjfx8
 PORTVERSION=	20160228
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://bitbucket.org/tobik/openjfx-rt/get/ \
 		http://bitbucket.org/tobik/openjfx-rt/get/
@@ -43,12 +43,16 @@ WRKSRC=	${WRKDIR}/tobik-openjfx-rt-2de985ca8377
 # non-pristine environment.
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/build.gradle ${WRKSRC}/buildSrc/build.gradle
+# Fix build directories which are now language specific with Gradle 4.0
+	@${REINPLACE_CMD} -E -e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|"(\$$buildDir/classes)/main"|"\1/java/main"|g' \
+		-e 's|"(modules/.*/build/classes)/main"|"\1/java/main"|g' \
+		${WRKSRC}/build.gradle ${WRKSRC}/buildSrc/build.gradle
 
 do-build:
 # Gradle creates ${HOME}/.gradle, pretend home is somewhere else
 	@${MKDIR} ${WRKDIR}/dot-gradle
-	@(cd ${WRKSRC}; ${SETENV} GRADLE_USER_HOME=${WRKDIR}/dot-gradle gradle zips)
+	@(cd ${WRKSRC}; ${SETENV} GRADLE_USER_HOME=${WRKDIR}/dot-gradle gradle --no-daemon zips)
 
 do-install:
 	@(${MKDIR} ${STAGEDIR}${JAVA_HOME} \

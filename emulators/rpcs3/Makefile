@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.2-353
-DISTVERSIONSUFFIX=	-g6561ddae
+DISTVERSION=	0.0.2-463
+DISTVERSIONSUFFIX=	-g25fcde95
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -55,7 +55,6 @@ LLVM_LIB_DEPENDS=	libLLVM-4.0.so:devel/llvm40
 LLVM_CMAKE_BOOL_OFF=	WITHOUT_LLVM
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/5\.8/5\.7/' ${WRKSRC}/${PORTNAME}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/"unknown"/"${GH_TAGNAME}"/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 

@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# $FreeBSD$
+# PROVIDE: buildbot
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable buildbot:
+# buildbot_enable (bool):	Set to "NO" by default
+# buildbot_basedir (path):	Must be set to the path of the buildbot directory
+#				file, e.g. /var/www/buildbot
+# buildbot_user (str):		Set to "root" by default.  Change it to run
+#				buildbot as a different user.
+
+. /etc/rc.subr
+
+export PATH=${PATH}:%%PREFIX%%/bin
+
+name="buildbot"
+rcvar=buildbot_enable
+command="%%PREFIX%%/bin/buildbot"
+load_rc_config $name
+
+check_cmd="${name}_check"
+extra_commands="check reload"
+reload_cmd="${name}_reload"
+start_precmd="${name}_prestart"
+stop_precmd="${name}_prestop"
+
+pidfile="${buildbot_basedir}/twistd.pid"
+procname="%%PYTHON_CMD%%"
+
+buildbot_check()
+{
+	echo "Checking BuildBot config"
+	rc_flags="${buildbot_basedir} ${rc_flags}"
+	${command} checkconfig ${rc_flags}
+}
+
+buildbot_prestart()
+{
+	rc_flags="start ${buildbot_basedir} ${rc_flags}"
+}
+
+buildbot_prestop()
+{
+	rc_flags="stop ${buildbot_basedir} ${rc_flags}"
+}
+
+buildbot_reload()
+{
+	rc_flags="${buildbot_basedir} ${rc_flags}"
+	${command} sighup ${rc_flags}
+}
+
+run_rc_command "$1"

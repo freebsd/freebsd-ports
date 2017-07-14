@@ -5,7 +5,7 @@ PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
-MAINTAINER=	bsdports@kyle-evans.net
+MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Software "soundcard" modem/TNC and APRS encoder/decoder
 
 LICENSE=	GPLv2

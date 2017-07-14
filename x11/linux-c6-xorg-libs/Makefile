@@ -3,7 +3,7 @@
 
 PORTNAME=	xorg-libs
 PORTVERSION=	7.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11 linux
 LIB_DISTNAMES=	libICE-1.0.6-1.el6 \
 		libSM-1.2.1-2.el6 \
@@ -38,6 +38,7 @@ LIB_DISTNAMES=	libICE-1.0.6-1.el6 \
 		libfontenc-1.1.2-3.el6 \
 		libxcb-1.12-4.el6 \
 		libxkbfile-1.0.6-1.1.el6
+SHARE_DISTNAMES=libX11-common-1.6.4-3.el6
 SRC_DISTFILES=	libICE-1.0.6-1.el6${SRC_SUFX}:SOURCE \
 		libSM-1.2.1-2.el6${SRC_SUFX}:SOURCE \
 		libX11-1.6.4-3.el6${SRC_SUFX}:SOURCE \

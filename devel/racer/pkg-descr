@@ -1,0 +1,5 @@
+RACER = Rust Auto-Complete-er. A utility intended to provide Rust code
+completion for editors and IDEs. Maybe one day the 'er' bit will be
+exploring + refactoring or something.
+
+WWW: https://github.com/racer-rust/racer

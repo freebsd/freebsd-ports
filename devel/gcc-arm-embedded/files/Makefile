@@ -8,11 +8,7 @@ PKGVERSION=	GNU Tools for ARM Embedded Processors
 BUILD_PREFIX=	${WRKDIR}/build
 DOC_PREFIX=	${INTERIM_PREFIX}/${DOCS_SUFFIX}
 
-.if ${PORT_OPTIONS:MPURE}
-WORLD_LIB=${INTERIM_WORLD}
-.else
 WORLD_LIB=${LOCALBASE}
-.endif
 
 LDFLAGS+=	-L${WORLD_LIB}/lib
 
@@ -22,17 +18,7 @@ MAKE_ARGS+=     CFLAGS="-Wno-error -fbracket-depth=512" CXXFLAGS="-Wno-error -fb
 
 MISC_DOCS=	license.txt readme.txt release.txt
 
-.if ${PORT_OPTIONS:MPURE}
-PREREQUISITES=		expat \
-			zlib \
-			libelf \
-			gmp \
-			mpfr \
-			mpc \
-			isl
-.else
 PREREQUISITES=
-.endif
 
 .if ${PORT_OPTIONS:MPYGDB}
 _pygdb=		build-pygdb
@@ -74,120 +60,9 @@ ALL_BUILD=	build-binutils \
 		strip-binaries \
 		strip-target-libraries
 
-.PHONY: ${PREREQUISITES} ${ALL_BUILD}
+.PHONY: ${ALL_BUILD}
 
-all: ${PREREQUISITES} ${ALL_BUILD}
-
-expat:
-	@${ECHO_MSG} "====>  Build expat"
-	@${RM} -rf ${BUILD_PREFIX}/expat
-	@${MKDIR} ${BUILD_PREFIX}/expat
-	@${ECHO_MSG} "=====>  Configure"
-	@cd ${BUILD_PREFIX}/expat && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/expat-${BUNDLED_VERSION_EXPAT}/configure \
-	 --prefix=${INTERIM_WORLD} \
-	 --disable-shared \
-	 --disable-nls
-	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/expat all ${MAKE_ARGS}
-	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/expat install ${MAKE_ARGS}
-
-zlib:
-	@${ECHO_MSG} "====>  Build zlib"
-	@${RM} -rf ${BUILD_PREFIX}/zlib
-	@${MKDIR} ${BUILD_PREFIX}/zlib
-	@${ECHO_MSG} "=====>  Copy to build dir"
-	@${TAR} -cf - -C ${SRC_DIR}/zlib-${BUNDLED_VERSION_ZLIB} . | ${TAR} -xf - -C ${BUILD_PREFIX}/zlib
-	@${ECHO_MSG} "=====>  Configure"
-	@cd ${BUILD_PREFIX}/zlib && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ./configure \
-	 --static \
-	 --prefix=${INTERIM_WORLD}
-	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/zlib ${MAKE_ARGS}
-	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/zlib install ${MAKE_ARGS}
-
-libelf:
-	@${ECHO_MSG} "====>  Build libelf"
-	@${RM} -rf ${BUILD_PREFIX}/libelf
-	@${MKDIR} ${BUILD_PREFIX}/libelf
-	@${ECHO_MSG} "=====>  Configure"
-	@cd ${BUILD_PREFIX}/libelf && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/libelf-${BUNDLED_VERSION_LIBELF}/configure \
-	 --prefix=${INTERIM_WORLD} \
-	 --disable-shared \
-	 --disable-nls
-	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/libelf all ${MAKE_ARGS}
-	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/libelf install ${MAKE_ARGS}
-
-gmp:
-	@${ECHO_MSG} "====>  Build gmp"
-	@${RM} -rf ${BUILD_PREFIX}/gmp
-	@${MKDIR} ${BUILD_PREFIX}/gmp
-	@${ECHO_MSG} "=====>  Configure"
-	@cd ${BUILD_PREFIX}/gmp && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/gmp-${BUNDLED_VERSION_GMP}/configure \
-	 --prefix=${INTERIM_WORLD} \
-	 --enable-cxx \
-	 --disable-shared \
-	 --disable-nls
-	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/gmp all ${MAKE_ARGS}
-	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/gmp install ${MAKE_ARGS}
-
-mpfr:
-	@${ECHO_MSG} "====>  Build mpfr"
-	@${RM} -rf ${BUILD_PREFIX}/mpfr
-	@${MKDIR} ${BUILD_PREFIX}/mpfr
-	@${ECHO_MSG} "=====>  Configure"
-	@cd ${BUILD_PREFIX}/mpfr && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/mpfr-${BUNDLED_VERSION_MPFR}/configure \
-	 --prefix=${INTERIM_WORLD} \
-	 --with-gmp=${INTERIM_WORLD} \
-	 --disable-shared \
-	 --disable-nls
-	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/mpfr all ${MAKE_ARGS}
-	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/mpfr install ${MAKE_ARGS}
-
-mpc:
-	@${ECHO_MSG} "====>  Build mpc"
-	@${RM} -rf ${BUILD_PREFIX}/mpc
-	@${MKDIR} ${BUILD_PREFIX}/mpc
-	@${ECHO_MSG} "=====>  Configure"
-	@cd ${BUILD_PREFIX}/mpc && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/mpc-${BUNDLED_VERSION_MPC}/configure \
-	 --prefix=${INTERIM_WORLD} \
-	 --with-gmp=${INTERIM_WORLD} \
-	 --with-mpfr=${INTERIM_WORLD} \
-	 --disable-shared \
-	 --disable-nls
-	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/mpc all ${MAKE_ARGS}
-	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/mpc install ${MAKE_ARGS}
-
-isl:
-	@${ECHO_MSG} "====>  Build isl"
-	@${RM} -rf ${BUILD_PREFIX}/isl
-	@${MKDIR} ${BUILD_PREFIX}/isl
-	@${ECHO_MSG} "=====>  Configure"
-	@cd ${BUILD_PREFIX}/isl && \
-	 ${MAKE_ENV} ${CONFIGURE_ENV} ${SRC_DIR}/isl-${BUNDLED_VERSION_ISL}/configure \
-	 --prefix=${INTERIM_WORLD} \
-	 --with-gmp-prefix=${INTERIM_WORLD} \
-	 --disable-shared \
-	 --disable-nls
-	@${ECHO_MSG} "=====>  Build"
-	@${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${BUILD_PREFIX}/isl all ${MAKE_ARGS}
-	@${ECHO_MSG} "=====>  Install into intermediate directory"
-	@${MAKE_ENV} ${MAKE_CMD} -C ${BUILD_PREFIX}/isl install ${MAKE_ARGS}
+all: ${ALL_BUILD}
 
 build-binutils:
 	@${ECHO_MSG} "====>  Build binutils"

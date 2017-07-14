@@ -16,6 +16,9 @@ LICENSE_NAME_NEWRELIC=	New Relic License
 LICENSE_FILE_NEWRELIC=	${WRKSRC}/LICENSE
 LICENSE_PERMS_NEWRELIC=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+DEPRECATED=	Only created for www/gitlab; please use devel/rubygem-newrelic_rpm instead
+EXPIRATION_DATE=	2017-07-31
+
 PORTSCOUT=	limit:^3\.
 
 NO_ARCH=	yes

@@ -94,6 +94,11 @@ CONFIGURE_ARGS+=--disable-dtrace
 .endif
 .endif
 
+# keep in sync with all platforms where libunwind is available
+.if (${ARCH} == "amd64" || ${ARCH} == "i386")
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
+.endif
+
 .if (${ARCH} == "powerpc64" || ${ARCH} == "powerpc")
 USE_GCC=	yes
 .endif
@@ -101,6 +106,10 @@ USE_GCC=	yes
 .if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
 CONFIGURE_ARGS+=--with-setjmp-type=_setjmp
 CONFIGURE_ENV+=	ac_cv_func__setjmp=yes
+.endif
+
+.if ${PORT_OPTIONS:MCAPIDOCS}
+MAKE_JOBS_UNSAFE=	yes
 .endif
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}

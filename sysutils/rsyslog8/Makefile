@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	8.27.0
-PORTREVISION=	1
+PORTVERSION=	8.28.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -22,6 +21,8 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils
 PORTSCOUT=	limit:^8\.
 
 USE_LDCONFIG=	yes
+
+CONFLICTS_BUILD=	libinotify-*
 
 OPTIONS_DEFINE=	DBI DOCS ELASTIC GCRYPT GNUTLS GSSAPI JSONPARSE  MYSQL PGSQL \
 		RELP SNMP NORMALIZE

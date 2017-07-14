@@ -1,20 +1,11 @@
---- Makefile.am.orig	2016-08-26 16:36:03 UTC
+--- Makefile.am.orig	2017-04-15 02:52:00 UTC
 +++ Makefile.am
-@@ -6,15 +6,14 @@ dist_doc_DATA = README.md
+@@ -6,7 +6,7 @@ dist_doc_DATA = README.md
  hyperrogue_SOURCES = hyper.cpp savepng.c
  
  # Some definitions used in graph.cpp
--hyperrogue_CPPFLAGS = -DFONTDESTDIR=\"$(pkgdatadir)/DejaVuSans-Bold.ttf\" -DMUSICDESTDIR=\"$(pkgdatadir)/hyperrogue-music.txt\" -O2
-+hyperrogue_CPPFLAGS = -DFONTDESTDIR=\"$(pkgdatadir)/DejaVuSans-Bold.ttf\" -DMUSICDESTDIR=\"$(pkgdatadir)/hyperrogue-music.txt\"
+-hyperrogue_CPPFLAGS = -DFONTDESTDIR=\"$(pkgdatadir)/DejaVuSans-Bold.ttf\" -DMUSICDESTDIR=\"$(pkgdatadir)/hyperrogue-music.txt\" -DSOUNDDESTDIR=\"$(pkgdatadir)/sounds/\" -O2
++hyperrogue_CPPFLAGS = -DFONTDESTDIR=\"$(pkgdatadir)/DejaVuSans-Bold.ttf\" -DMUSICDESTDIR=\"$(pkgdatadir)/hyperrogue-music.txt\" -DSOUNDDESTDIR=\"$(pkgdatadir)/sounds/\"
  
  # Musicdir
  musicdir=$(datadir)/hyperrogue/music
- dist_music_DATA = music/hr3-caves.ogg music/hr3-desert.ogg music/hr3-hell.ogg music/hr3-jungle.ogg music/hr3-mirror.ogg music/hr3-rlyeh.ogg music/hr3-crossroads.ogg music/hr3-graveyard.ogg music/hr3-icyland.ogg music/hr3-laboratory.ogg music/hr3-motion.ogg
- 
- music/hyperrogue-music.txt: hyperrogue
--	cp hyperrogue-music.txt music/hyperrogue-music.txt
--	sed -i 's+music+$(pkgdatadir)/music+g' music/hyperrogue-music.txt
-+	sed 's+music+$(pkgdatadir)/music+g' <hyperrogue-music.txt >music/hyperrogue-music.txt
- 
- # Langen binary rules
- noinst_PROGRAMS = langen

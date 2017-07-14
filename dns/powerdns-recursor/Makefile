@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-PORTVERSION=	4.0.4
-PORTREVISION=	3
+PORTVERSION=	4.0.6
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -24,20 +23,20 @@ BROKEN_powerpc64=	fails to compile: dnslabeltext.cc: undefined reference to std:
 USES=		compiler:c++11-lib cpe gmake localbase pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	YES
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pdns
 
 CPE_VENDOR=	powerdns
 
-OPTIONS_DEFINE=	SETUID
+USE_RC_SUBR=	pdns-recursor
+
+OPTIONS_DEFINE=	OPTALGO SETUID
 OPTIONS_DEFAULT=	LUA SETUID
 OPTIONS_RADIO=	LUA_RG
 OPTIONS_RADIO_LUA_RG=	LUA LUAJIT
 LUAJIT_DESC=		Enable LuaJIT
 LUA_RG_DESC=		Lua Engine
+OPTALGO_DESC=		Enable optional algorithms (12 & 15)
 SETUID_DESC=		Run as pdns_recursor user
-
-CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/pdns
-
-SUB_FILES=	pkg-message
 
 LUA_CONFIGURE_WITH=	lua
 LUA_USES=		lua
@@ -45,15 +44,14 @@ LUA_USES=		lua
 LUAJIT_CONFIGURE_WITH=	luajit
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit
 
+OPTALGO_CONFIGURE_ON=	--enable-botan1.10 \
+			--enable-libsodium
+OPTALGO_LIB_DEPENDS=	libbotan-1.10.so:security/botan110 \
+			libsodium.so:security/libsodium
+
+SETUID_VARS=	USERS=pdns_recursor GROUPS=pdns
 SETUID_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-setuid
 
-USE_RC_SUBR+=	pdns-recursor
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSETUID}
-USERS=		pdns_recursor
-GROUPS=		pdns
-.endif
+SUB_FILES=	pkg-message
 
 .include <bsd.port.mk>

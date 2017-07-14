@@ -93,6 +93,11 @@ CONFIGURE_ARGS+=	--disable-dtrace
 .endif
 .endif
 
+# keep in sync with all platforms where libunwind is available
+.if (${ARCH} == "amd64" || ${ARCH} == "i386")
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
+.endif
+
 .if ${ARCH} == "powerpc64"
 USE_GCC=	yes
 .endif

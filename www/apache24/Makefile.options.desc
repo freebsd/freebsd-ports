@@ -63,6 +63,7 @@ AUTH_DIGEST_DESC=		RFC2617 Digest authentication
 AUTH_FORM_DESC=			Form authentication
 AUTOINDEX_DESC=			Directory listing
 
+BROTLI_DESC=			Brotli compression support
 BUCKETEER_DESC=			(dev) buckets manipulation filter
 BUFFER_DESC=			Filter Buffering
 
@@ -99,7 +100,7 @@ FILTER_DESC=			Smart Filtering
 HEADERS_DESC=			HTTP header control
 HEARTBEAT_DESC=			Generates Heartbeats
 HEARTMONITOR_DESC=		Collects Heartbeats
-HTTP2_DESC=			HTTP/2 (RFC 7540) support (experimental)
+HTTP2_DESC=			HTTP/2 (RFC 7540) support
 
 IDENT_DESC=			RFC 1413 ident lookups
 IMAGEMAP_DESC=			Server-side imagemaps

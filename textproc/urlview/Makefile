@@ -6,7 +6,7 @@ PORTVERSION=	0.9.20131021
 PORTREVISION=	1
 CATEGORIES=	textproc www
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	URL extractor/launcher
 
 LICENSE=	GPLv2

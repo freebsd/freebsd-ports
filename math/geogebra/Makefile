@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.341.0
+PORTVERSION=	5.0.367.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		http://freebsd.uzsolt.hu/src/
@@ -10,7 +10,7 @@ DISTNAME=	GeoGebra-Linux-Portable-${PORTVERSION:S/./-/g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} geogebra.png
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	udvzsolt@gmail.com
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Dynamic software that joins geometry, algebra, and calculus
 
 LICENSE=	GEOGEBRA

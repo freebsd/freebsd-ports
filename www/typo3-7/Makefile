@@ -16,10 +16,7 @@ LICENSE_FILE=	${WRKDIR}/${TYPO3SRC}/LICENSE.txt
 PORTSCOUT=	limit:^${PORT_V_MAJOR}\.${PORT_V_MINOR}\.
 
 USES=		cpe shebangfix php:web
-SHEBANG_FILES=	typo3/sysext/core/Build/Scripts/cglFixMyCommit.sh \
-		typo3/sysext/core/Build/Scripts/splitFunctionalTests.sh \
-		typo3/sysext/core/Build/Scripts/xlfcheck.sh \
-		vendor/doctrine/instantiator/.travis.install.sh
+SHEBANG_GLOB=	*.sh *.php
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	ctype fileinfo filter hash json mysqli openssl pcre session simplexml soap xml zip
@@ -27,7 +24,7 @@ WRKSRC=		${WRKDIR}/${TYPO3SRC}
 
 PORT_V_MAJOR=	7
 PORT_V_MINOR=	6
-PORT_V_PATCH=	19
+PORT_V_PATCH=	20
 
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}

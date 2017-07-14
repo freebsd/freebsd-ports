@@ -11,10 +11,8 @@ DISTNAME=	URLObject-${PORTVERSION}
 MAINTAINER=	freebsd@skinc.ru
 COMMENT=	Utility class for manipulating URLs
 
-LICENSE=	Unlicense
-LICENSE_NAME=	The Unlicense
+LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		python:2.7+
 USE_PYTHON=	distutils autoplist

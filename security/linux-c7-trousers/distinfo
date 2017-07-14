@@ -1,0 +1,7 @@
+TIMESTAMP = 1499430338
+SHA256 (centos/trousers-0.3.13-1.el7.i686.rpm) = 89c1e500e32ba2917ad993516e1fbd9145b409058e439adc746e754ecd30affd
+SIZE (centos/trousers-0.3.13-1.el7.i686.rpm) = 296616
+SHA256 (centos/trousers-0.3.13-1.el7.x86_64.rpm) = 1954499008c3408f52418b90a923d923896514cabd61be022340a388c89101e3
+SIZE (centos/trousers-0.3.13-1.el7.x86_64.rpm) = 295992
+SHA256 (centos/trousers-0.3.13-1.el7.src.rpm) = 2a4e4fac17ccf37db1645d7479ebd51ca2a833d283582fd06ad5311f58960736
+SIZE (centos/trousers-0.3.13-1.el7.src.rpm) = 1382488

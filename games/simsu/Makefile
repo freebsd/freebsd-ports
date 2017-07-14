@@ -3,10 +3,11 @@
 
 PORTNAME=	simsu
 PORTVERSION=	1.3.3
-PORTREVISION=	2
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://gottcode.org/${PORTNAME}/
+MASTER_SITES=	https://gottcode.org/${PORTNAME}/ \
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Basic Sudoku game

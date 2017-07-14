@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sigv4
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,7 @@ COMMENT=	Amazon Web Services Signature Version 4 signing library
 
 LICENSE=	APACHE20
 
+NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 

@@ -6,6 +6,6 @@ include/opus/opus_types.h
 lib/libopus.a
 lib/libopus.so
 lib/libopus.so.0
-lib/libopus.so.0.5.4
+lib/libopus.so.0.6.1
 libdata/pkgconfig/opus.pc
 share/aclocal/opus.m4

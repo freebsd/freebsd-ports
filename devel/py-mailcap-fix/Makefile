@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Mailcap module that correctly handles windcard entries
 
-LICENSE=	PD
+LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
 USE_GITHUB=	yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	iridium
 PORTVERSION=	58.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -61,8 +61,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf
 
 ONLY_FOR_ARCHS=	amd64 i386
-USES=		bison compiler cpe desktop-file-utils execinfo jpeg \
-		ninja perl5 pkgconfig python:2,build shebangfix tar:xz
+USES=		bison cpe desktop-file-utils execinfo jpeg ninja perl5 \
+		pkgconfig python:2,build shebangfix tar:xz
 
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xcb xcomposite xcursor xext xdamage xfixes xi \
@@ -71,6 +71,10 @@ USE_GNOME=	atk dconf glib20 gtk20 gtk30 libxml2 libxslt
 MAKE_ARGS=	-C out/${BUILDTYPE}
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
+
+CC=		clang40
+CXX=		clang++40
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
 # Run "./out/${BUILDTYPE}/gn args out/${BUILDTYPE} --list" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
@@ -109,11 +113,40 @@ OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 OPTIONS_DEFAULT=	ALSA CODECS GCONF KERBEROS
 OPTIONS_SUB=		yes
 
-GCONF_USE=	GNOME=gconf2
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
 			alsa-lib>=1.1.1_1:audio/alsa-lib
+ALSA_VARS=		GN_ARGS+=use_alsa=true
+ALSA_VARS_OFF=		GN_ARGS+=use_alsa=false
+
+CODECS_VARS=		GN_ARGS+=ffmpeg_branding="Chrome" \
+			GN_ARGS+=proprietary_codecs=true \
+			GN_ARGS+=enable_hevc_demuxing=true
+CODECS_VARS_OFF=	GN_ARGS+=ffmpeg_branding="Chromium" \
+			GN_ARGS+=proprietary_codecs=false \
+			GN_ARGS+=enable_hevc_demuxing=false
+
+DEBUG_VARS=		BUILDTYPE=Debug \
+			GN_ARGS+=is_debug=true \
+			GN_BOOTSTRAP_FLAGS+=--debug \
+			WANTSPACE="lots of free diskspace (~ 8.5GB)"
+DEBUG_VARS_OFF=		BUILDTYPE=Release \
+			GN_ARGS+=is_debug=false \
+			GN_ARGS+=symbol_level=0 \
+			GN_ARGS+=remove_webcore_debug_symbols=true \
+			WANTSPACE="a fair amount of free diskspace (~ 3.7GB)"
+
+GCONF_USE=		GNOME=gconf2
+GCONF_VARS=		GN_ARGS+=use_gconf=true
+GCONF_VARS_OFF=		GN_ARGS+=use_gconf=false
+
+KERBEROS_VARS=		GN_ARGS+=use_kerberos=true
+KERBEROS_VARS_OFF=	GN_ARGS+=use_kerberos=false
+
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_VARS=	GN_ARGS+=use_pulseaudio=true
+PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
+
 # With SNDIO=on we exclude audio_manager_linux from the build (see
 # media/audio/BUILD.gn) and use audio_manager_openbsd which does not
 # support falling back to ALSA.  In theory it supports falling back to
@@ -125,64 +158,10 @@ SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MALSA}
-GN_ARGS+=	use_alsa=true
-.else
-GN_ARGS+=	use_alsa=false
-.endif
-
-.if ${PORT_OPTIONS:MCODECS}
-GN_ARGS+=	ffmpeg_branding="Chrome"
-GN_ARGS+=	proprietary_codecs=true
-GN_ARGS+=	enable_hevc_demuxing=true
-.else
-GN_ARGS+=	ffmpeg_branding="Chromium"
-GN_ARGS+=	proprietary_codecs=false
-GN_ARGS+=	enable_hevc_demuxing=false
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-BUILDTYPE=	Debug
-GN_ARGS+=	is_debug=true
-GN_BOOTSTRAP_FLAGS+=	--debug
-MAKE_ENV+=	V=1
-.else
-BUILDTYPE=	Release
-GN_ARGS+=	is_debug=false
-GN_ARGS+=	symbol_level=0
-GN_ARGS+=	remove_webcore_debug_symbols=true
-.endif
-
-.if ${PORT_OPTIONS:MGCONF}
-GN_ARGS+=	use_gconf=true
-.else
-GN_ARGS+=	use_gconf=false
-.endif
-
-.if ${PORT_OPTIONS:MKERBEROS}
-GN_ARGS+=	use_kerberos=true
-.else
-GN_ARGS+=	use_kerberos=false
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-GN_ARGS+=	use_pulseaudio=true
-.else
-GN_ARGS+=	use_pulseaudio=false
-.endif
-
-.include <bsd.port.pre.mk>
-
-CC=		clang40
-CXX=		clang++40
-#optionally set AR, LD, NM, READELF ?
-
 # TODO: -isystem, would be just as ugly as this approach, but more reliably
 # build would fail without C_INCLUDE_PATH/CPLUS_INCLUDE_PATH env var set.
 MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 		CPLUS_INCLUDE_PATH=${LOCALBASE}/include
-# TODO: move this big extra to small ones
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
 # Work around base r261801
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100508
@@ -191,13 +170,8 @@ GN_ARGS+=	extra_cxxflags="-D_LIBCPP_TRIVIAL_PAIR_COPY_CTOR=1"
 
 pre-everything::
 	@${ECHO_MSG}
-	@${ECHO_MSG} "To build Iridium, you should have around 2GB of memory,"
-.if ${PORT_OPTIONS:MDEBUG}
-	@${ECHO_MSG} "lots of free diskspace (~ 40GB)"
-	@${ECHO_MSG} "and no less then 16GB of memory for linking."
-.else
-	@${ECHO_MSG} "and a fair amount of free diskspace (~ 3.7GB)."
-.endif
+	@${ECHO_MSG} "To build Iridium, you should have around 2GB of memory"
+	@${ECHO_MSG} "and ${WANTSPACE}."
 	@${ECHO_MSG}
 
 post-patch-SNDIO-on:
@@ -259,4 +233,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/mksnapshot \
 		${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

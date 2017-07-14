@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	2
 
 COMMENT=	PostgreSQL database (client)
 
@@ -10,7 +10,7 @@ MASTERDIR=	${.CURDIR}/../postgresql96-server
 
 BUILD_DIRS=	config src/include src/interfaces src/port \
 		src/bin/pg_dump src/bin/psql src/bin/scripts src/bin/pg_config \
-		src/bin/pgbench doc src/makefiles
+		src/bin/pgbench doc src/makefiles src/test/regress
 INSTALL_DIRS=	${BUILD_DIRS}
 
 CLIENT_ONLY=	yes

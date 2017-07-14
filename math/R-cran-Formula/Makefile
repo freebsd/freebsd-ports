@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	Formula
-DISTVERSION=	1.2-1
+DISTVERSION=	1.2-2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Extended Model Formulas
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 USES=	cran:auto-plist
 

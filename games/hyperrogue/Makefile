@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	hyperrogue
-PORTVERSION=	8.3j
-PORTREVISION=	1
+PORTVERSION=	9.4g
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -41,8 +41,6 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/hr-icon.ico ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
-	@${MV} ${STAGEDIR}${DATADIR}/music/* ${STAGEDIR}${DATADIR}
-	@${RMDIR} ${STAGEDIR}${DATADIR}/music
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

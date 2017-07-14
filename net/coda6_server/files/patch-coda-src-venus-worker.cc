@@ -1,6 +1,6 @@
---- coda-src/venus/worker.cc.orig	2007-12-18 01:19:57.000000000 +0800
-+++ coda-src/venus/worker.cc	2008-04-18 14:07:24.000000000 +0800
-@@ -397,17 +397,17 @@
+--- coda-src/venus/worker.cc.orig	2008-10-06 16:52:22 UTC
++++ coda-src/venus/worker.cc
+@@ -397,17 +397,17 @@ void VFSMount()
  	    md[0].iov_base = (char *)"fstype"; md[0].iov_len = sizeof("fstype");
  	    md[1].iov_base = (char *)"coda";   md[1].iov_len = sizeof("coda");
  	    md[2].iov_base = (char *)"fspath"; md[2].iov_len = sizeof("fspath");

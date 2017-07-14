@@ -1,7 +1,7 @@
 # Created by: Yarema <yds@CoolRat.org>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-usergdbm
 
 COMMENT=	Userdb support for the Courier authentication library

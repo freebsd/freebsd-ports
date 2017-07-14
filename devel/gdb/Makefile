@@ -64,7 +64,7 @@ GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
 PORT_READLINE_USES=	readline:port
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python
-PYTHON_USES=		python:2
+PYTHON_USES=		python
 TUI_CONFIGURE_ENABLE=	tui
 
 .include <bsd.port.pre.mk>

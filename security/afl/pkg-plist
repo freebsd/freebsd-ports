@@ -18,12 +18,14 @@ bin/afl-tmin
 bin/afl-whatsup
 lib/afl/afl-as
 lib/afl/as
+lib/afl/libdislocator.so
 %%DATADIR%%/README.dictionaries
 %%DATADIR%%/README.testcases
 %%DATADIR%%/gif.dict
 %%DATADIR%%/html_tags.dict
 %%DATADIR%%/jpeg.dict
 %%DATADIR%%/js.dict
+%%DATADIR%%/json.dict
 %%DATADIR%%/pdf.dict
 %%DATADIR%%/png.dict
 %%DATADIR%%/sql.dict
@@ -71,6 +73,8 @@ lib/afl/as
 %%DATADIR%%/others/xml/small_document.xml
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.dislocator
+%%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/README.llvm
 %%PORTDOCS%%%%DOCSDIR%%/env_variables.txt
 %%PORTDOCS%%%%DOCSDIR%%/historical_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/life_pro_tips.txt

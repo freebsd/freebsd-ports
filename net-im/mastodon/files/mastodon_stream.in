@@ -30,7 +30,7 @@ USER=mastodon"
 mastodon_stream_user="mastodon"
 
 command="%%PREFIX%%/bin/node"
-command_args="%%WWWDIR%%/node_modules/.bin/babel-node ./streaming/index.js \
+command_args="./streaming/index.js \
 >> /var/log/mastodon/${name}.log 2>&1 &"
 
 run_rc_command "$1"

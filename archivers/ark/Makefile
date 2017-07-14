@@ -11,6 +11,9 @@ COMMENT=	Archiving tool for KDE
 
 LIB_DEPENDS=	libqjson.so:devel/qjson
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		cmake:outsource kde:4 libarchive cpe tar:xz
 USE_KDE=	automoc4 kdelibs libkonq
 CPE_VENDOR=	kde

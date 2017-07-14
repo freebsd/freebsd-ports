@@ -1,5 +1,5 @@
---- label.c.orig	2006-11-01 18:23:28.000000000 +0200
-+++ label.c	2010-08-31 21:45:43.000000000 +0300
+--- label.c.orig	2006-11-01 16:23:28 UTC
++++ label.c
 @@ -40,7 +40,7 @@
  #include "opcodes.h"
  
@@ -9,7 +9,7 @@
  unsigned numLabels = 0;
  
  #ifndef __STDC__
-@@ -55,7 +55,7 @@
+@@ -55,7 +55,7 @@ void AddLabel (ADDR_T address, char *nam
    label *entry;
    char *buffer;
  
@@ -18,4 +18,3 @@
      return;
  
    entry = numLabels ?
-

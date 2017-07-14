@@ -10,6 +10,7 @@ share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPng2Ico.cmake
 share/ECM/find-modules/FindPoppler.cmake
 share/ECM/find-modules/FindPythonModuleGeneration.cmake
+share/ECM/find-modules/FindQHelpGenerator.cmake
 share/ECM/find-modules/FindQtWaylandScanner.cmake
 share/ECM/find-modules/FindSharedMimeInfo.cmake
 share/ECM/find-modules/FindWayland.cmake
@@ -28,6 +29,9 @@ share/ECM/kde-modules/KDEInstallDirs.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
 share/ECM/kde-modules/appstreamtest.cmake
 share/ECM/modules/ECMAddAppIcon.cmake
+share/ECM/modules/ECMAddQch.cmake
+share/ECM/modules/ECMQchDoxygen.config.in
+share/ECM/modules/ECMQchDoxygenLayout.xml
 share/ECM/modules/ECMAddTests.cmake
 share/ECM/modules/ECMCoverageOption.cmake
 share/ECM/modules/ECMCreateQmFromPoFiles.cmake
@@ -83,6 +87,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/manual/ecm-toolchains.7.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/manual/ecm.7.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMAddAppIcon.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMAddQch.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMAddTests.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMCoverageOption.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMCreateQmFromPoFiles.txt
@@ -152,6 +157,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/ecm-toolchains.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/ecm.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMAddAppIcon.html
+%%PORTDOCS%%%%DOCSDIR%%/html/module/ECMAddQch.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMAddTests.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMCoverageOption.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMCreateQmFromPoFiles.html

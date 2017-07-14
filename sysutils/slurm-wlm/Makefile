@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-PORTVERSION=	16.05.9
-PORTREVISION=	4
+PORTVERSION=	17.02.5
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \
@@ -29,8 +29,8 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	slurmctld slurmd
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig python:build readline shebangfix ssl \
-		tar:bz2
+USES=		gmake libtool pkgconfig python:build readline:port shebangfix \
+		ssl tar:bz2
 USE_PERL5=	configure
 SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
 
@@ -90,7 +90,7 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/bin/mail|/usr/bin/mail|g' \
 		${WRKSRC}/src/common/read_config.h \
-		${WRKSRC}/contribs/seff/smail.in \
+		${WRKSRC}/contribs/seff/smail \
 		${WRKSRC}/doc/html/configurator.easy.html.in \
 		${WRKSRC}/doc/html/configurator.html.in \
 		${WRKSRC}/contribs/cray/slurm.conf.template \
@@ -118,7 +118,6 @@ post-patch:
 		${WRKSRC}/src/plugins/jobacct_gather/cgroup/jobacct_gather_cgroup.c \
 		${WRKSRC}/src/plugins/jobacct_gather/common/common_jag.c \
 		${WRKSRC}/src/plugins/jobacct_gather/linux/jobacct_gather_linux.c \
-		${WRKSRC}/src/plugins/jobacct_gather/aix/jobacct_gather_aix.c \
 		${WRKSRC}/src/plugins/switch/cray/scaling.c \
 		${WRKSRC}/src/plugins/proctrack/cray/proctrack_cray.c \
 		${WRKSRC}/src/plugins/proctrack/cgroup/proctrack_cgroup.c \

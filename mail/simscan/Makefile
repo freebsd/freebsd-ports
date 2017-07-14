@@ -3,7 +3,7 @@
 
 PORTNAME=	simscan
 PORTVERSION=	1.4.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -51,6 +51,7 @@ CLAMAV_BUILD_DEPENDS=	clamdscan:security/clamav
 
 RIPMIME_CONFIGURE_OFF=	--disable-ripmime
 RIPMIME_BUILD_DEPENDS=	ripmime:mail/ripmime
+RIPMIME_RUN_DEPENDS=	ripmime:mail/ripmime
 
 SPAMD_BUILD_DEPENDS=	spamassassin:mail/spamassassin
 SPAMD_CONFIGURE_ON=	--enable-spam=y \

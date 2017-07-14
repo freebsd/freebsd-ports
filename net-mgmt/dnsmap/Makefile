@@ -9,7 +9,8 @@ CATEGORIES=	net-mgmt
 MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	DNS domain name brute forcing tool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lifanov

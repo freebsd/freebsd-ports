@@ -44,7 +44,7 @@
 
 export PATH=${PATH}:%%LOCALBASE%%/bin
 
-name=buildbot-worker
+name=buildbot_worker
 desc="Buildbot Buildworker"
 rcvar=buildbot_worker_enable
 

@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: watchfrr
+# REQUIRE: NETWORKING frr
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable watchfrr:
+# watchfrr_enable="YES"
+#
+# You may also wish to use the following variables to fine-tune startup:
+# watchquagga_flags
+
+. /etc/rc.subr
+
+name=watchfrr
+rcvar=${name}_enable
+
+load_rc_config $name
+
+stop_postcmd="rm -f $pidfile"
+
+watchfrr_enable=${watchfrr_enable:-"NO"}
+
+command=%%PREFIX%%/sbin/watchfrr
+pidfile=%%LOCALSTATE_DIR%%/watchfrr.pid
+
+run_rc_command "$1"

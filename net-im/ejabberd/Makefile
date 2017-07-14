@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	17.04
+PORTVERSION=	17.07
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/ashish/:deps \
 		LOCAL/ashish:deps
-DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-11.tar.xz:deps
+DISTFILES+=	${DISTNAME}.tgz:p1 ejabberd-deps-12.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -16,8 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	erlc:lang/erlang \
 		git:devel/git
-RUN_DEPENDS=	erl:lang/erlang \
-		bash:shells/bash
+RUN_DEPENDS=	erl:lang/erlang
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libyaml.so:textproc/libyaml
 
@@ -30,7 +29,7 @@ USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 CPE_VENDOR=	process-one
 
-OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL ICONV RIAK ZLIB REDIS SQLITE TOOLS FULLXML
+OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL ICONV RIAK ZLIB REDIS SIP SQLITE STUN TOOLS FULLXML
 OPTIONS_DEFAULT=	ICONV
 
 EJABBERD_LIBDIR=lib/erlang/lib
@@ -53,6 +52,8 @@ SHEBANG_FILES=	${WRKSRC}/ejabberdctl.template
 
 OPTIONS_SUB=		yes
 RIAK_DESC=	Riak database support
+SIP_DESC=	SIP support
+STUN_DESC=	STUN/TURN support
 TOOLS_DESC=	Build development tools
 FULLXML_DESC=	Full XML support
 PAM_CONFIGURE_ENABLE=	pam
@@ -62,6 +63,8 @@ PGSQL_CONFIGURE_ENABLE=	pgsql
 RIAK_CONFIGURE_ENABLE=	riak
 ICONV_CONFIGURE_ENABLE=	iconv
 REDIS_CONFIGURE_ENABLE=	redis
+SIP_CONFIGURE_ENABLE=	sip
+STUN_CONFIGURE_ENABLE=	stun
 SQLITE_CONFIGURE_ENABLE=sqlite
 TOOLS_CONFIGURE_ENABLE=	tools
 FULLXML_CONFIGURE_ENABLE=	full-xml
@@ -88,7 +91,7 @@ post-install:
 .if ${PORT_OPTIONS:MPAM}
 	@${INSTALL} -m 444 ${FILESDIR}/pam_ejabberd \
 		${STAGEDIR}${PREFIX}/etc/pam.d/ejabberd
-	@${INSTALL} -m 0750 ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/epam-1.0.2/priv/bin/epam \
+	@${INSTALL} -m 0750 ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/epam-1.0.3/priv/bin/epam \
 		${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/priv/bin/epam
 .endif
 	@${FIND} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR} -type f \

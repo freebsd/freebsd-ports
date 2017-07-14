@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cltune
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	jmd@FreeBSD.org

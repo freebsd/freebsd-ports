@@ -1,15 +1,17 @@
---- config/gitlab.yml.example.orig	2017-03-19 20:06:47 UTC
+--- config/gitlab.yml.example.orig	2017-06-07 20:48:31 UTC
 +++ config/gitlab.yml.example
-@@ -454,7 +454,7 @@ production: &base
-     # gitlab-shell invokes Dir.pwd inside the repository path and that results
+@@ -463,8 +463,8 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
--      default: /home/git/repositories/
-+      default: /usr/home/git/repositories/
+       default:
+-        path: /home/git/repositories/
+-        gitaly_address: unix:/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
++        path: /usr/home/git/repositories/
++        gitaly_address: unix:/usr/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
  
    ## Backup settings
    backup:
-@@ -479,12 +479,12 @@ production: &base
+@@ -491,12 +491,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -25,7 +27,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -497,7 +497,7 @@ production: &base
+@@ -509,7 +509,7 @@ production: &base
    # CAUTION!
    # Use the default values unless you really know what you are doing
    git:

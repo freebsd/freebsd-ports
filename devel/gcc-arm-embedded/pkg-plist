@@ -1269,7 +1269,6 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/string.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/strings.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_default_fcntl.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_intsup.h
-gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_locale.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_pthreadtypes.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_sigset.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_stdint.h
@@ -1319,6 +1318,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/utmp.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/wchar.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/wctype.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/wordexp.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/xlocale.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/aprofile-validation.specs
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/aprofile-ve.specs
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/lib/cpu-init/rdimon-aem.o
@@ -2056,6 +2056,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/bin/%%TARGET%%-gcc-ar
 gcc-arm-embedded-%%FULL_VERSION%%/bin/%%TARGET%%-gcc-nm
 gcc-arm-embedded-%%FULL_VERSION%%/bin/%%TARGET%%-gcc-ranlib
 gcc-arm-embedded-%%FULL_VERSION%%/bin/%%TARGET%%-gcov
+gcc-arm-embedded-%%FULL_VERSION%%/bin/%%TARGET%%-gcov-dump
 gcc-arm-embedded-%%FULL_VERSION%%/bin/%%TARGET%%-gcov-tool
 gcc-arm-embedded-%%FULL_VERSION%%/bin/%%TARGET%%-gdb
 gcc-arm-embedded-%%FULL_VERSION%%/bin/%%TARGET%%-gprof

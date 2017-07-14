@@ -36,11 +36,15 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/pccts
 	(cd ${WRKSRC}/h && ${INSTALL_DATA} *.c *.cpp *.h \
 		${STAGEDIR}${PREFIX}/include/pccts)
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} CHANGES_FROM_131.txt \
 		CHANGES_FROM_133.txt CHANGES_FROM_133_BEFORE_MR13.txt \
 		KNOWN_PROBLEMS.txt README RIGHTS history.ps history.txt \
 		${STAGEDIR}${DOCSDIR})
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/testcpp && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR} "! -name *.bak")

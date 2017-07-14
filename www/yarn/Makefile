@@ -2,7 +2,7 @@
 
 PORTNAME=	yarn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.6
+DISTVERSION=	0.27.5
 CATEGORIES=	www
 MASTER_SITES=	https://yarnpkg.com/downloads/${PORTVERSION}/
 
@@ -24,6 +24,8 @@ NODE4_DESC=	Use www/node4 as backend
 NODE_RUN_DEPENDS=	node>=0.8.0:www/node
 NODE6_RUN_DEPENDS=	node6>=0.8.0:www/node6
 NODE4_RUN_DEPENDS=	node4>=0.8.0:www/node4
+
+CONFLICTS_INSTALL=	hadoop-2*
 
 NO_ARCH=	yes
 NO_BUILD=	yes

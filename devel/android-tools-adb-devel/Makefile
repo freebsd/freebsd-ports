@@ -3,7 +3,7 @@
 # Hint: git describe --abbrev=12 --match android-o-preview-2
 DISTVERSION=	o-preview-2-332
 DISTVERSIONSUFFIX=	-gd1e9e7bc06f0
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 
 CONFLICTS_INSTALL=	${PORTNAME}-[0-9]*
@@ -17,15 +17,13 @@ GH_MYTAG=	${DISTVERSIONPREFIX}${DISTVERSION:C/-[0-9]*$//}
 
 USES=		compiler:c++14-lang
 
-OPTIONS_DEFAULT=MDNSRESPONDER
 OPTIONS_DEFINE=	MDNSRESPONDER TEST_PYTHON
+OPTIONS_DEFAULT=MDNSRESPONDER
 
 MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 MDNSRESPONDER_USES=		localbase:ldflags
 MDNSRESPONDER_LDFLAGS=		-ldns_sd
 MDNSRESPONDER_MAKE_ENV_OFF=	MDNSEXT=_unsupported
-
-TEST_BROKEN=	logging.* tests always fail after 4e5fd111d84d
 
 TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}
 TEST_PYTHON_GH_PROJECT=	platform_development:development

@@ -1,5 +1,5 @@
 To run the phabricator daemons from startup, add phd_enable="YES"
-in your /etc/rc.conf. You can control the daemons using
+to /etc/rc.conf. You can control the daemons using
 
 service start
 service stop
@@ -20,3 +20,12 @@ so if the documentation refers to ./bin, this means
 if it refers to webroot, this means
 
   %%PREFIX%%/lib/php/phabricator/webroot.
+
+You might want to install textproc/py-pygments to improve syntax
+highlighting.
+
+Starting with version 20170630, phabricator daemons run as user www
+by default. If you're updating from a version before 20170630 you will need
+to fix permissions of /var/tmp/phd and repositories. Alternatively
+you can continue to run phabricator daemons as root by adding
+phd_user="root" to /etc/rc.conf.

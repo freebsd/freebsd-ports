@@ -6,11 +6,16 @@ Additional features compared to KeePassX:
   * Auto-Type on all three major platforms (Linux, Windows, OS X)
   * Stand-alone password generator
   * Password strength meter
+  * A generator for time-based one-time passwords
   * Using website favicons as entry icons
   * Merging of databases
   * Automatic reload when the database changed on disk
   * KeePassHTTP support for use with PassIFox in Mozilla Firefox and
     chromeIPass in Google Chrome or Chromium.
+  * YubiKey challenge-response support for strengthening 
+    your database encryption key
+  * Support for Twofish encryption
+  * Command line interface
   * Many bug fixes
 
-WWW: https://keepassxc.org/
+WWW: https://keepassxc.org

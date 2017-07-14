@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	phabricator
-PORTVERSION=	20161003
-PORTREVISION=	2
+PORTVERSION=	20170630
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php-
 
@@ -23,8 +23,29 @@ OPCACHE_DESC?=	Use OPcache to improve performance
 USES=		php shebangfix
 SHEBANG_FILES=	externals/httpful/build \
 		externals/restful/build-phar \
+		scripts/almanac/*.php \
+		scripts/cache/*.php \
+		scripts/celerity/*.php \
+		scripts/daemon/*.php \
+		scripts/diviner/*.php \
+		scripts/drydock/*.php \
+		scripts/fact/*.php \
+		scripts/files/*.php \
 		scripts/install/install_rhel-derivs.sh \
-		scripts/install/install_ubuntu.sh
+		scripts/install/install_ubuntu.sh \
+		scripts/lipsum/*.php \
+		scripts/mail/*.php \
+		scripts/people/*.php \
+		scripts/repository/*.php \
+		scripts/search/*.php \
+		scripts/setup/*.php \
+		scripts/sms/*.php \
+		scripts/sql/*.php \
+		scripts/ssh/*.php \
+		scripts/symbols/*.php \
+		scripts/user/*.php \
+		scripts/util/*.php \
+		support/aphlict/server/*.php
 USE_PHP=	ctype curl fileinfo filter hash iconv mbstring mysqli openssl \
 		pcntl posix
 
@@ -46,7 +67,7 @@ NO_BUILD=	yes
 USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	55a56c0
+GH_TAGNAME=	83266e8
 
 PHP_DESTDIR=	lib/php/phabricator
 

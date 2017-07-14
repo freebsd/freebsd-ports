@@ -1,0 +1,19 @@
+--- modules/Makefile.am.orig	2017-04-25 03:59:07 UTC
++++ modules/Makefile.am
+@@ -63,11 +63,11 @@ if SOLARIS
+ 	done
+ endif
+ if FREEBSD
+-	for MOD in $(MODULES); do                                              \
+-	   $(INSTALL) -d $(DESTDIR)$(MODULES_DIR);                             \
+-	   $(INSTALL) -m644 $(modulesrc)/$(MODULES_OS)/$$MOD.ko                \
+-	      $(DESTDIR)$(MODULES_DIR);                                        \
+-	done
++#	for MOD in $(MODULES); do                                              \
++#	   $(INSTALL) -d $(DESTDIR)$(MODULES_DIR);                             \
++#	   $(INSTALL) -m644 $(modulesrc)/$(MODULES_OS)/$$MOD.ko                \
++#	      $(DESTDIR)$(MODULES_DIR);                                        \
++#	done
+ endif
+ if LINUX
+ 	for MOD in $(MODULES); do                                              \
