@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rocksdb
-PORTVERSION=	5.5.1
+PORTVERSION=	5.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -36,6 +36,7 @@ USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 USES=		compiler:c++11-lib gmake localbase:ldflags shebangfix
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION} SHLIB_MAJOR=${PORTVERSION:R:R} SHLIB_MINOR=${PORTVERSION:R:E}
 PORTDATA=	make_config.mk
 
 GH_ACCOUNT=	facebook
