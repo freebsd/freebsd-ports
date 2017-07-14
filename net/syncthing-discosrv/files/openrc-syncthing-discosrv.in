@@ -1,0 +1,50 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# syncthingdiscosrv_user (user):        Set user to run syncthing-discosrv.
+#                               Default is "syncthing".
+# syncthingdiscosrv_group (group):      Set group to run syncthing-discosrv.
+#                               Default is "syncthing".
+# syncthingdiscosrv_dir (dir):          Set dir to run syncthing-discosrv in.
+#                               Default is "/var/db/syncthing-discosrv".
+# syncthingdiscosrv_key (file):         Set key file to use
+#                               Default is "${syncthingdiscosrv_dir}/syncthing.key".
+# syncthingdiscosrv_cert (file):        Set cert file to use
+#                               Default is "${syncthingdiscosrv_dir}/syncthing.cert".
+# syncthingdiscosrv_args (string):      Extra args to pass to syncthing-discosrv
+#                               Default is ""
+
+name=syncthingdiscosrv
+
+: ${syncthingdiscosrv_user:="syncthing"}
+: ${syncthingdiscosrv_group:="syncthing"}
+: ${syncthingdiscosrv_dir:="/var/db/syncthing-discosrv"}
+: ${syncthingdiscosrv_key:="${syncthingdiscosrv_dir}/syncthing.key"}
+: ${syncthingdiscosrv_cert:="${syncthingdiscosrv_dir}/syncthing.cert"}
+
+export STNORESTART=true
+
+pidfile=/var/run/syncthingdiscosrv.pid
+command="%%PREFIX%%/bin/syncthing-discosrv"
+command_args="-key ${syncthingdiscosrv_key} -cert ${syncthingdiscosrv_cert} ${syncthingdiscosrv_args}"
+supervisor=supervise-daemon
+
+start_pre()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${syncthingdiscosrv_user} -g ${syncthingdiscosrv_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${syncthingdiscosrv_dir} ]; then
+                install -d -o ${syncthingdiscosrv_user} -g ${syncthingdiscosrv_group} ${syncthingdiscosrv_dir}
+        fi
+
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

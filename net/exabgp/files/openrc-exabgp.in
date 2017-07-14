@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name=exabgp
+
+exabgp_conf=${exabgp_conf:-"%%ETCDIR%%/exabgp.conf"}
+
+pidfile=/var/run/${name}/${name}.pid
+required_files=${exabgp_conf}
+command="%%PYTHON_SITELIBDIR%%/${name}/application/bgp.py"
+command_args="--folder %%ETCDIR%% ${exabgp_conf}"
+
+start_pre()
+{
+	install -d -o _bgpd -g _bgpd -m 755 /var/run/${name}
+	install -d -o _bgpd -g _bgpd -m 755 /var/log/${name}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name="iplog"
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}/${name}.pid
+command_args="-d -z"
+
+start_pre() {
+	install -d /var/run/${name}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

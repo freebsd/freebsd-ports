@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable ntopng:
+#
+# ntopng_flags (flags):		Set extra flags to ntopng
+#				Empty by default.
+# ntopng_pidfile (path):	Path to the pidfile
+#				Default /var/run/ntopng/ntopng.pid
+
+name=ntopng
+description="Monitors network traffic in realtime"
+
+: ${ntopng_pidfile:=/var/run/ntopng/ntopng.pid}
+
+httpdocs_path=%%DATADIR%%/httpdocs
+scripts_path=%%DATADIR%%/scripts
+callbacks_path=%%DATADIR%%/scripts/callbacks
+user_path=%%PREFIX%%/etc/ntopng-users.conf
+
+command_args="-U ntopng -G ${ntopng_pidfile} -1 ${httpdocs_path} -2 ${scripts_path} -3 ${callbacks_path} -e"
+
+start_pre()
+{
+	local rundir=${ntopng_pidfile%/*}
+	if [ ! -d $rundir ] ; then
+		install -d -m 0755 -o ntopng -g ntopng $rundir
+	fi
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

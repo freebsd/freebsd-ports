@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="radsecproxy"
+
+: ${radsecproxy_pidfile:="/var/run/radsecproxy/radsecproxy.pid"}
+
+pidfile=${radsecproxy_pidfile}
+required_files=%%PREFIX%%/etc/radsecproxy.conf
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="-c %%PREFIX%%/etc/radsecproxy.conf -i ${pidfile}"

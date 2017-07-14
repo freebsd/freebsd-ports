@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+# isnsd_config (path):	Set to %%PREFIX%%/etc/isns/${name}.conf
+#			by default.
+# isnsd_flags (str):	Set to "" by default.
+#			Extra flags passed to start command.
+
+name="isnsd"
+description="Internet Storage Name Service daemon"
+
+: ${isnsd_config="%%PREFIX%%/etc/isns/isnsd.conf"}
+: ${isnsd_flags=""}
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+command_args="--config \"${isnsd_config}\" ${isnsd_flags}"
+
+depend() {
+	keyword -shutdown
+}

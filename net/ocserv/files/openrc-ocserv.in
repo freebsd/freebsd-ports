@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="ocserv"
+
+: ${ocserv_pidfile:=/var/run/${name}/pid}
+
+command=/usr/local/sbin/${name}
+pidfile=${ocserv_pidfile}
+
+depend() {
+	keyword -shutdown
+}

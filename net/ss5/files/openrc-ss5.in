@@ -1,0 +1,7 @@
+#!/sbin/openrc-run
+
+name="ss5"
+pidfile="/var/run/ss5/ss5.pid"
+command=%%PREFIX%%/sbin/${name}
+: ${ss5_flags="-t"}
+command_args=${ss5_flags}

@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable opentracker:
+# opentracker_config (path):	Set to 
+#				"%%PREFIX%%/etc/opentracker/opentracker.conf"
+#				by default
+
+name="opentracker"
+
+: ${opentracker_config="%%PREFIX%%/etc/opentracker/opentracker.conf"}
+
+command_args="-f ${opentracker_config}"
+command="%%PREFIX%%/bin/opentracker"
+pidfile="/var/run/opentracker.pid"
+required_files=${opentracker_config}
+supervisor=supervise-daemon

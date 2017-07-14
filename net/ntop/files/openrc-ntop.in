@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+#
+# Add the following lines to /etc/rc.conf to enable ntop:
+#
+# ntop_flags (flags):		Set extra flags to ntop
+#				Default is "-d --use-syslog=daemon". see ntop(8).
+
+name=ntop
+
+: ${ntop_flags="-d --use-syslog=daemon"}
+
+command=%%PREFIX%%/bin/ntop
+
+start_pre()
+{
+	if [ ! -f %%DBDIR%%/ntop/ntop_pw.db ]; then
+		eerror "Please set admin password for ntop. Run '%%PREFIX%%/bin/ntop -u nobody -A'"
+		exit 1
+	fi
+}

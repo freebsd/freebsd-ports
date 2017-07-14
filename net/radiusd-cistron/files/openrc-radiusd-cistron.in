@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+name="radiusd"
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+command_args="-y"
+
+depend() {
+	provide radiusd-cistron
+	keyword -shutdown
+}

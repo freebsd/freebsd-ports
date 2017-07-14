@@ -1,0 +1,26 @@
+#!/sbin/openrc-run
+
+# Define these dtcpc_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/dtcpc
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+#dtcpc_program="%%PREFIX%%/sbin/dtcpc"		# Location of dtcpc
+dtcpc_server=${dtcpc_server:-""}		# DTCP server name
+dtcpc_username=${dtcpc_username:-""}		# DTCP user name
+dtcpc_flags=${dtcpc_flags:-"-t network -Dl"}	# Flags to dtcpc program
+
+name="dtcpc"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+command_args="-u ${dtcpc_username} ${dtcpc_server}"
+if [ -n "${dtcpc_fib}" ]; then
+	command_args="-F ${dtcpc_fib} ${command_args}"
+fi
+
+depend() {
+	keyword -shutdown
+}

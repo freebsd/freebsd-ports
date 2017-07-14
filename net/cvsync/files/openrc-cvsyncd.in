@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+cvsyncd_pidfile=${cvsyncd_pidfile-"/var/run/cvsyncd.pid"}
+cvsyncd_conffile=${cvsyncd_conffile-"%%PREFIX%%/etc/cvsyncd.conf"}
+
+name=cvsyncd
+command=%%PREFIX%%/bin/${name}
+
+case "${cvsyncd_flags}" in
+*-p\ *)
+	ewarn "Warning: \$cvsyncd_flags includes -p option." \
+	    "Please use \$cvsyncd_pidfile instead."
+	;;
+*)
+	cvsyncd_flags="-p ${cvsyncd_pidfile} ${cvsyncd_flags}"
+	;;
+esac
+
+case "${cvsyncd_flags}" in
+*-c\ *)
+	ewarn "Warning: \$cvsyncd_flags includes -c option." \
+	    "Please use \$cvsyncd_conffile instead."
+	;;
+*)
+	cvsyncd_flags="-c ${cvsyncd_conffile} ${cvsyncd_flags}"
+	;;
+esac
+
+pidfile=${cvsyncd_pidfile}
+required_files=${cvsyncd_conffile}

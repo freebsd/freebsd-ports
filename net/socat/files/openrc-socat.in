@@ -10,20 +10,7 @@
 # except according to the terms contained in the LICENSE file.
 
 name="socat"
-rcvar=socat_enable
 
-: ${socat_enable="NO"}
-
-start_precmd="socat_prestart"
 pidfile=/var/run/socat.pid
-procname="/usr/local/bin/socat"
-command=/usr/sbin/daemon
-command_args=" -f -p ${pidfile} ${procname} ${socat_flags}"
-
-socat_prestart()
-{
-        # socat_flags gets applied too early if we don't do this.
-        # I didn't want to force people to update their rc.conf files
-        # and change the socat_flags to something else.
-        rc_flags=""
-}
+command="/usr/local/bin/socat"
+supervisor=supervise-daemon

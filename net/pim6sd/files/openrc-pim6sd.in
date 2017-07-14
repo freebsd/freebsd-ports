@@ -1,0 +1,9 @@
+#!/sbin/openrc-run
+
+name="pim6sd"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+depend() {
+	keyword -jail
+}

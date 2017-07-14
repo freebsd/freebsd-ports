@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+# The following variables are provided to control startup of igmpproxy
+# rc configuration file (eg /etc/rc.conf):
+# igmpproxy_conf (path):	Set full path to configuration file.
+#				Default is "%%PREFIX%%/etc/igmpproxy.conf"
+
+name="igmpproxy"
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+required_files="%%PREFIX%%/etc/igmpproxy.conf"
+supervisor=supervise-daemon
+
+igmpproxy_conf=${igmpproxy_config-"%%PREFIX%%/etc/igmpproxy.conf"}
+command_args="$igmpproxy_conf"
+
+depend() {
+	keyword -shutdown
+}

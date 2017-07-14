@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+#radiator_config="/path/to/radiator.conf"
+#(default config location is %%LOCALBASE%%/etc/radiator/radius.cfg)
+#
+#radiator_flags=""
+#
+# Start %%LOCALBASE%%/etc/rc.d/radiator to see a list of options.
+
+name="radiator"
+pidfile="/var/run/radiator.pid"
+command="%%LOCALBASE%%/bin/radiusd"
+
+: ${radiator_flags=""}
+: ${radiator_config="%%LOCALBASE%%/etc/radiator/radius.cfg"}
+
+required_files="$radiator_config"
+command_args="-pid_file=${pidfile} -config_file=$radiator_config -daemon"
+
+depend() {
+	keyword -shutdown
+}

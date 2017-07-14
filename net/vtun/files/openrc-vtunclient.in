@@ -1,0 +1,39 @@
+#!/sbin/openrc-run
+#
+# vtunclient_flags="<session> <server address>"
+#
+# If you want to use multiple connections, use $vtunclient_list.
+# Usual $vtunclient_flags will be ignored when $vtunclient_list is
+# set.
+#
+# vtunclient_list="site1 site2"
+# vtunclient_site1_flags="<session> <server address>"
+# vtunclient_site1_pidfile="/var/run/vtun-site1.pid"
+# vtunclient_site2_flags="<session> <server address>"
+# vtunclient_site2_pidfile="/var/run/vtun-site2.pid"
+# ...
+#
+
+name=vtunclient
+required_files="%%PREFIX%%/etc/vtund.conf"
+
+command=%%PREFIX%%/sbin/vtund
+
+start_pre() {
+	cmd=$1
+	if [ $# -gt 0 ]; then
+		shift
+	fi
+	if [ -n "$*" ]; then
+		vtunclient_list="$*"
+	fi
+
+	if ![ -z "$vtunclient_list" ]; then
+		for _client in ${vtunclient_list}; do
+			eval vtunclient_flags=\$vtunclient_${_client}_flags
+			eval pidfile=\$vtunclient_${_client}_pidfile
+			vtunclient_flags="-z $pidfile $vtunclient_flags"
+			#run_rc_command "$cmd"
+		done
+	fi
+}

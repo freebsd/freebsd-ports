@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+name=pwhoisd
+
+_logdir=/var/log/pwhois
+_dbdir=/var/db/pwhois
+pidfile=/var/run/pwhoisd.pid
+command=%%PREFIX%%/sbin/pwhoisd
+command_args="-d -u 512 -g 512"
+required_files=%%PREFIX%%/etc/pwhois/pwhoisd.conf
+
+start_pre()
+{
+    [ ! -f $pidfile ] && %%TOUCH%% $pidfile && %%CHOWN%% %%USER%%:%%GROUP%% $pidfile
+    %%INSTALL%% -d -o %%USER%% -g %%GROUP%% $_dbdir
+    %%INSTALL%% -d -o %%USER%% -g %%GROUP%% $_logdir
+    return 0
+}
+
+depend() {
+	keyword -shutdown
+}

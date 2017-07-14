@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+
+name=spread
+
+spread_user=%%USERS%%
+spread_group=%%GROUPS%%
+
+command="%%PREFIX%%/sbin/spread"
+command_user=${spread_user}
+required_files=%%PREFIX%%/etc/${name}.conf
+pidfile=/var/run/${name}.pid
+supervisor=supervise-daemon
+command_args=${spread_flags}
+
+start_pre() {
+	/usr/bin/install -o ${spread_user} -g ${spread_group} -d /var/log/spread
+	/usr/bin/touch ${pidfile} && /usr/sbin/chown ${spread_user}:${spread_group} ${pidfile}
+}
+
+depend() {
+	need localmount
+	keyword -shutdown
+	after bootmisc
+}

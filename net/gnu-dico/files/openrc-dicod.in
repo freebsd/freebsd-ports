@@ -1,0 +1,4 @@
+#!/sbin/openrc-run
+
+name=dicod
+command=%%PREFIX%%/sbin/dicod

@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+prefix=/usr/local
+
+name=opensips
+
+opensips_shmem_size=${opensips_shmem_size:-"32"}
+opensips_pkmem_size=${opensips_pkmem_size:-"2"}
+
+command="${prefix}/sbin/opensips"
+command_args="-m ${opensips_shmem_size} -M ${opensips_pkmem_size}"
+required_files="${prefix}/etc/opensips/opensipsctlrc"
+
+depend() {
+	keyword -shutdown
+}

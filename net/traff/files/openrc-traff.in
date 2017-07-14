@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name=traff
+
+command=%%PREFIX%%/sbin/traff
+pidfile=/var/run/traff.pid
+required_files=%%PREFIX%%/etc/traff.conf
+
+depend() {
+	keyword -shutdown
+}

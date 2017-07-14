@@ -1,0 +1,43 @@
+#!/sbin/openrc-run
+
+# You can fine tune other variables too:
+# sslh_mode="fork | select"
+# fork: stable but slow performance
+# select: new but high performance
+# sslh_fib: routing table number
+
+start_pre() {
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
+	sysctl net.fibs > /dev/null 2>&1 || return 0
+
+	sslh_fib=${sslh_fib:-"NONE"}
+	case "$sslh_fib" in
+	[Nn][Oo][Nn][Ee])
+		;;
+	*)
+		command="setfib -F ${sslh_fib} ${command}"
+		;;
+	esac
+}
+
+name="sslh"
+description="sslh startup script"
+
+sslh_mode=${sslh_mode:-"fork"}
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+for value in listening openvpntarget sshtarget sshtimeout ssltarget \
+    tinctarget xmpptarget; do
+	eval "[ -n \"\${sslh_${value}}\" ]" && \
+	    ewarn "${name}_${value} no longer used: configuration file available"
+done
+
+command="%%PREFIX%%/sbin/${name}-${sslh_mode}"
+command_args="-F%%PREFIX%%/etc/${name}.conf"
+
+depend() {
+	use sshd
+	keyword -shutdown
+}

@@ -1,0 +1,16 @@
+#!/sbin/openrc-run
+
+name=openbgpd
+
+command="%%PREFIX%%/sbin/bgpd"
+required_files="%%PREFIX%%/etc/bgpd.conf"
+extra_commands="checkprocess"
+
+checkprocess()
+{
+	/bin/pgrep -f 'bgpd: parent.*'
+}
+
+depend() {
+	keyword -shutdown
+}

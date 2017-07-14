@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+name=linuxigd
+
+command=%%PREFIX%%/sbin/upnpd
+required_files="%%PREFIX%%/etc/linuxigd/gatedesc.xml %%PREFIX%%/etc/upnpd.conf"
+
+: ${linuxigd_extif="fxp0"}
+: ${linuxigd_intif="fxp1"}
+: ${command_args="${linuxigd_extif} ${linuxigd_intif}"}
+
+depend() {
+	use net
+	keyword -shutdown
+}

@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+vtund_flags=${vtund_flags:-"-s"}
+
+name=vtund
+required_files="%%PREFIX%%/etc/vtund.conf"
+pidfile=/var/run/vtund.pid
+
+command=%%PREFIX%%/sbin/vtund
+
+depend() {
+	provide vtun
+	keyword -shutdown
+}

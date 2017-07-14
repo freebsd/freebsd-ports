@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=radvd
+pidfile=/var/run/${name}.pid
+command="%%PREFIX%%/sbin/${name}"
+
+: ${radvd_config="%%PREFIX%%/etc/${name}.conf"}
+
+required_files="${radvd_config}"
+command_args="-p ${pidfile} -C ${radvd_config}"
+
+depend() {
+	keyword -shutdown
+}

@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="scribe"
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/scribed"
+command_args="${scribe_flags} 2>>/var/log/scribe.log"
+supervisor=supervise-daemon
+
+depend() {
+	keyword -shutdown
+}

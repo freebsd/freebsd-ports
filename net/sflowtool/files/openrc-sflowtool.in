@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name="sflowtool"
+command="%%PREFIX%%/bin/sflowtool"
+supervisor=supervise-daemon
+
+: ${sflowtool_pidfile="/var/run/${name}.pid"}
+pidfile=${sflowtool_pidfile}

@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name="afsserver"
+
+command="%%PREFIX%%/sbin/bosserver"
+vicedir="%%PREFIX%%/etc/openafs/server"
+required_files="${vicedir}/CellServDB ${vicedir}/KeyFile ${vicedir}/ThisCell ${vicedir}/UserList"
+
+stop_pre()
+{
+	%%PREFIX%%/bin/bos shutdown -localauth -server localhost
+}
+
+depend() {
+	provide afsserver
+	use net
+	keyword -shutdown
+}

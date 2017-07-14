@@ -1,0 +1,56 @@
+#!/sbin/openrc-run
+
+# AppleTalk daemons. Make sure not to start atalkd in the background:
+# its data structures must have time to stablize before running the
+# other processes.
+
+# Set defaults. Please overide these in %%PREFIX%%/etc/netatalk.conf
+ATALK_ZONE=
+ATALK_NAME="`/bin/hostname -s`"
+AFPD_UAMLIST=
+AFPD_MAX_CLIENTS=50
+AFPD_GUEST=nobody
+
+# Load user config
+if [ -f %%PREFIX%%/etc/netatalk.conf ]; then . %%PREFIX%%/etc/netatalk.conf; fi
+
+atalkd_enable=${atalkd_enable-"NO"}
+papd_enable=${papd_enable-"NO"}
+cnid_metad_enable=${cnid_metad_enable-"NO"}
+afpd_enable=${afpd_enable-"NO"}
+timelord_enable=${timelord_enable-"NO"}
+
+name=netatalk
+hostname=`hostname -s`
+
+start_pre() {
+    yesno atalkd_enable && %%PREFIX%%/sbin/atalkd
+    yesno atalkd_enable && \
+    	%%PREFIX%%/bin/nbprgstr -p 4 "${ATALK_NAME}:Workstation${ATALK_ZONE}" &
+    yesno atalkd_enable && \
+    	%%PREFIX%%/bin/nbprgstr -p 4 "${ATALK_NAME}:netatalk${ATALK_ZONE}" &
+    yesno papd_enable && %%PREFIX%%/sbin/papd
+    yesno cnid_metad_enable && %%PREFIX%%/sbin/cnid_metad
+    yesno timelord_enable && %%PREFIX%%/sbin/timelord
+    yesno afpd_enable && \
+    	%%PREFIX%%/sbin/afpd -n "${ATALK_NAME}${ATALK_ZONE}" \
+		-s %%PREFIX%%/etc/AppleVolumes.system \
+		-f %%PREFIX%%/etc/AppleVolumes.default \
+		-g ${AFPD_GUEST} \
+		-c ${AFPD_MAX_CLIENTS} \
+		${AFPD_UAMLIST}
+}
+
+stop_pre() {
+    yesno timelord_enable && killall timelord
+    yesno afpd_enable && killall afpd
+    yesno cnid_metad_enable && killall cnid_metad
+    yesno papd_enable && killall papd
+    yesno atalkd_enable && killall atalkd
+}
+
+depend() {
+	provide atalkd papd cnid_metad timelord afpd
+	need %%SRVLOC%% %%ZEROCONF%%
+	keyword -shutdown
+}

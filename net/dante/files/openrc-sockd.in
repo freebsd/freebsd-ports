@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name=sockd
+
+sockd_flags=${sockd_flags:-"-D"}
+
+command=%%PREFIX%%/sbin/sockd
+command_args=${sockd_flags}
+required_files=%%PREFIX%%/etc/sockd.conf
+
+depend() {
+	use net
+	keyword -shutdown
+}

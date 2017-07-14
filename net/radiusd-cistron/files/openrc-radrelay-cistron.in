@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+name="radrelay"
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+depend() {
+	need radiusd-cistron
+	keyword -shutdown
+}

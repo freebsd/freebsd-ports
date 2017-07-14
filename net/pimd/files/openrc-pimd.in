@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name="pimd"
+command="%%PREFIX%%/sbin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+depend() {
+#	need netif routing
+	keyword -jail
+}

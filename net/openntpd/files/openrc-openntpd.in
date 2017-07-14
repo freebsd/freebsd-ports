@@ -15,14 +15,14 @@
 
 #Cleaned up by Ken Moore <ken@ixsystems.com> 6/20/17
 
+name="ntpd"
 command=%%PREFIX%%/sbin/ntpd
 required_files=$openntpd_config
 pidfile=/var/run/ntpd.pid
 command_args="$ntpd_args -f $openntpd_config -p ${pidfile} -s"
-name="Network Time Protocol Daemon"
+description="Network Time Protocol Daemon"
 
 depend()
 {
 	need localmount
-	before pcdm
 }

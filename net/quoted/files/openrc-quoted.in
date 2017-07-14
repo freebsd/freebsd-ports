@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+# AUTHOR:  Bob Frazier
+
+user="nobody"
+name="quoted"
+command="%%PREFIX%%/bin/${name}"
+command_args="-d -p:17"
+required_files="%%PREFIX%%/etc/quotes"
+
+depend() {
+	keyword -shutdown
+}

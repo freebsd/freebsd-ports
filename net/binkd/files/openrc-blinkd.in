@@ -1,0 +1,24 @@
+#!/sbin/openrc-run
+#
+# Define these binkd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/apache
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+binkd_config=${binkd_config:-"%%PREFIX%%/etc/binkd.cfg"}
+binkd_flags=${binkd_flags:-"-D"}
+binkd_user=${binkd_user:-"fido"}
+binkd_pidfile=${binkd_pidfile:-"/var/run/binkd/binkd.pid"}
+
+name="binkd"
+command="%%PREFIX%%/sbin/binkd"
+command_args="${blinkd_flags} ${binkd_config}"
+required_files="${binkd_config}"
+pidfile="${binkd_pidfile}"
+command_user=${blinkd_user}
+
+depend() {
+	keyword -shutdown
+}

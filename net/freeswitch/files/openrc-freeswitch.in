@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=freeswitch
+
+: ${freeswitch_user:=freeswitch}
+: ${freeswitch_group:=freeswitch}
+
+command=%%PREFIX%%/bin/freeswitch
+command_args="-nc"
+
+depend() {
+	keyword -shutdown
+}

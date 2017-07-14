@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+# Add the following line to /etc/rc.conf to enable minissdpd
+# minissdpd_flags="-i listen_addr"
+
+name=minissdpd
+
+command="%%PREFIX%%/sbin/minissdpd"
+pidfile="/var/run/${name}.pid"
+sockfile="/var/run/${name}.sock"
+command_args="-s ${sockfile} -p ${pidfile}"
+
+depend() {
+	provide minissdpd
+	#use resolv
+	keyword -shutdown
+}
