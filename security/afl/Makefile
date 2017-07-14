@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	2.43
+PORTVERSION=	2.47
 DISTVERSIONSUFFIX=	b
 CATEGORIES=	security
 MASTER_SITES=	http://lcamtuf.coredump.cx/afl/releases/
@@ -20,6 +20,7 @@ ONLY_FOR_ARCHS_REASON=	Uses binary instrumentation
 
 USES=	gmake tar:tgz
 
+ALL_TARGET=	all libdislocator
 TEST_TARGET=	test_build
 
 OPTIONS_DEFINE=	DEBUG DOCS LLVM
@@ -27,9 +28,13 @@ OPTIONS_DEFAULT=	LLVM
 OPTIONS_SUB=	yes
 
 LLVM_DESC=	LLVM-based instrumentation
+
 LLVM_VERSION=	40
+
+LLVM_ALL_TARGET=	llvm_mode
 LLVM_BUILD_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 LLVM_RUN_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+LLVM_TEST_TARGET=	test_llvm_mode
 LLVM_VARS=	CC=clang${LLVM_VERSION} CXX=clang++${LLVM_VERSION} \
 		MAKE_ARGS=LLVM_CONFIG=llvm-config${LLVM_VERSION}
 
@@ -51,18 +56,13 @@ post-patch:
 	@${REINPLACE_CMD} 's@\(  as_params\[0\] = afl_as ? afl_as : \)\(.*\)@\1(u8*)"${LOCALBASE}/bin/as";@' \
 		${WRKSRC}/afl-as.c
 .endif
+	@${CAT} ${FILESDIR}/Makefile.extra >> ${WRKSRC}/Makefile
 
 post-patch-LLVM-on:
 	@${REINPLACE_CMD} \
 		-e 's|"clang"|"clang${LLVM_VERSION}"|g' \
 		-e 's|"clang\+\+"|"clang\+\+${LLVM_VERSION}"|g' \
 		${WRKSRC}/llvm_mode/afl-clang-fast.c
-
-post-build-LLVM-on:
-	@(cd ${WRKSRC}/llvm_mode; ${DO_MAKE_BUILD} ${ALL_TARGET})
-
-post-test-LLVM-on:
-	@(cd ${WRKSRC}/llvm_mode; ${DO_MAKE_BUILD} ${TEST_TARGET})
 
 post-install:
 .for script in afl-cmin afl-plot afl-whatsup
@@ -72,9 +72,15 @@ post-install:
 .for prog in afl-analyze afl-fuzz afl-gcc afl-gotcpu afl-showmap afl-tmin
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${prog}
 .endfor
+	${INSTALL_LIB} ${WRKSRC}/libdislocator/libdislocator.so \
+		${STAGEDIR}${PREFIX}/lib/afl
+	${INSTALL_DATA} ${WRKSRC}/libdislocator/README.dislocator \
+		${STAGEDIR}${DOCSDIR}
 
 post-install-LLVM-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/afl/afl-llvm-pass.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/afl-clang-fast
+	${INSTALL_DATA} ${WRKSRC}/llvm_mode/README.llvm \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
